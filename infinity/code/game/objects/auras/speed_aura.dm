@@ -1,6 +1,5 @@
 /obj/aura/speed
 	name = "speed aura"
-	var/speedbuff = 0.4
 	var/consument = 14 //consumes nutrtiments every tick
 	var/toggled = FALSE
 
@@ -54,7 +53,6 @@
 				to_chat(user, SPAN_NOTICE("Your natural feets were removed. Robotic one don't gives you that ability."))
 				return
 
-
 		if(legs != 4)
 			to_chat(user, SPAN_WARNING("You lose some parts of your legs, you cannot sprint!"))
 			return
@@ -81,7 +79,7 @@
 		return
 	if((H.nutrition > consument) && (deactivation + 1 MINUTE  > world.time))
 		H.nutrition -= consument
-		H.reagents.add_reagent(/datum/reagent/torvicent, 1.1)
+		H.reagents.add_reagent(/datum/reagent/torvicent, 10.1)
 		if(!checks())
 			to_chat(user, SPAN_DANGER("Your legs are too damaged, you cannot sprint!"))
 			announced_deact = 0
@@ -93,28 +91,110 @@
 		toggled = 0
 		return
 
-/datum/reagent/torvicent //technically, hyperzine, but weaker
-	name = "Torvicent"
-	description = "Biological tajaran muscle stimulant, gifted from ancients."
-	taste_description = "sourness"
-	reagent_state = LIQUID
-	color = "#862a51"
-	metabolism = REM * 5 // 1(!) per tick
-	value = 4.3
+/obj/aura/speed/bio/tajaran
+	name = "sprint"
+	var/energy = 11
+	var/energy_max = 180
+	var/energy_min = 30
+	var/energy_ano = 0
+	consument = 8
 
-/datum/reagent/torvicent/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	if(alien == IS_DIONA)
+/obj/aura/speed/bio/tajaran/toggle()
+	if(!checks()) return
+	if(!toggled)
+		to_chat(user, SPAN_NOTICE("Internal reserves of your body were realised! It's time for action!"))
+	else
+		to_chat(user, SPAN_NOTICE("You stop sprint."))
+	deactivation = world.time
+	announced_deact = 0
+	energy_ano = 1
+	toggled = !toggled
+
+/obj/aura/speed/bio/tajaran/life_tick()
+	var/mob/living/carbon/H = user
+	if((energy > energy_min) && !announced_deact && !toggled)
+		to_chat(user, SPAN_NOTICE("You would sprint again."))
+		announced_deact = 1
+	if(!toggled || H.stat == DEAD)
+		if(energy < energy_max)
+			energy++
+		if(energy == energy_max && !energy_ano)
+			to_chat(user, SPAN_NOTICE("Your internal reserves are full."))
+			energy_ano = 1
 		return
-	if(!M.stat) //don't do that as dead person, please
-		if(prob(2))
-			to_chat(M, pick(SPAN_NOTICE("Нужно действовать!"), SPAN_NOTICE("Бежать, бежать!")))
-		if(prob(2))
-			M.custom_emote(VISIBLE_MESSAGE, pick("глубоко дышит", "озираетс&#255; по сторонам"))
-		if(prob(4))
-			to_chat(M, SPAN_WARNING("My heart hurts me!"))
-			M.stun_effect_act(0, 5, BP_CHEST, "heart damage")
-		M.add_chemical_effect(CE_SLOWDOWN, -0.45)
-		M.add_chemical_effect(CE_PULSE, 2)
+	if((H.nutrition > consument) && (energy > 0))
+		H.nutrition -= consument
+		energy -= 2
+		H.reagents.add_reagent(/datum/reagent/torvicent, 10.1)
+		if(!checks())
+			to_chat(user, SPAN_DANGER("Your legs are too damaged, you cannot sprint!"))
+			announced_deact = 0
+			toggled = 0
+			energy_ano = 0
+			return
+	else
+		to_chat(user, SPAN_NOTICE("You are too exhausted..."))
+		announced_deact = 0
+		toggled = 0
+		energy_ano = 0
+		return
 
 /obj/aura/speed/mech
 	name = "motion overload"
+
+/*
+	setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	var/legs = 0
+	for(var/obj/item/organ/external/leg/L in external_organs)
+		legs++
+		if(!L.status)
+			to_chat(src, SPAN_NOTICE("You cannot sprint without legs."))
+			return
+		if(robotic)
+			if(ORGAN_ROBOTIC)
+				if(ORGAN_BROKEN || ORGAN_SABOTAGED || ORGAN_BRITTLE)
+					to_chat(src, SPAN_WARNING("Your robotic legs were too damaged to sprint!"))
+					return
+			else
+				to_chat(src, SPAN_NOTICE("Your robotic legs were removed. You cannot sprint."))
+				return
+
+		else if(!ORGAN_ROBOTIC)
+			if(ORGAN_BROKEN || ORGAN_TENDON_CUT || ORGAN_ARTERY_CUT || ORGAN_MUTATED || ORGAN_DEAD || ORGAN_CUT_AWAY)
+				to_chat(src, SPAN_WARNING("Your legs are too damaged, you cannot sprint!"))
+				return
+		else
+			to_chat(src, SPAN_NOTICE("Your natural legs was removed. Robotic one don't gives you that ability."))
+			return
+
+	switch(legs)
+		if(<=0)
+			to_chat(src, SPAN_NOTICE("You cannot sprint without legs."))
+			return
+		if(1)
+			to_chat(src, SPAN_NOTICE("You cannot sprint with just one leg."))
+			return
+
+	if(robotic)
+		for(var/obj/item/organ/internal/cell/C in internal_organs)
+			if(C.charge < 700)
+				to_chat(src, SPAN_NOTICE("Internal power charge is too low. You cannot sprint."))
+				return
+	else if(nutrition < 200)
+		var/confirm = alert("You are too tired! Are you sure? That will cause damage in future.", "Emergency sprint", "Yes", "No")
+		switch(confirm)
+			if("No") return
+			if("Yes")
+				for(var/obj/item/organ/internal/heart/H in internal_organs)
+					H.damage += prob(1,3)
+				M.adjustToxLoss(prob(5,10)
+				nutrition = 0
+
+	to_chat(src, SPAN_NOTICE("Internal reserves of your body were realised! It's time for action!"))
+	speed -= 0.4
+	add_chemical_effect(CE_PULSE, 4)
+	sleep(500) //50 seconds of fun
+	speed += 0.4
+	add_chemical_effect(CE_PULSE, -4)
+	to_chat(src, SPAN_NOTICE("You feel yourself a bit tired after sprint."))
+*/

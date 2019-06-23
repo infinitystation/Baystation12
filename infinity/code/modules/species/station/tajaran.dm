@@ -61,7 +61,7 @@
 	move_trail = /obj/effect/decal/cleanable/blood/tracks/paw
 
 	base_auras = list(
-		/obj/aura/speed/bio
+		/obj/aura/speed/bio/tajaran
 		)
 
 	inherent_verbs = list(
