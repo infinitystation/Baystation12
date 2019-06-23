@@ -3,22 +3,7 @@
 	icon_state ="bookEngineering2"
 	author = "Engineering Encyclopedia"
 	title = "Engineering Textbook"
-
-/obj/item/weapon/book/manual/New()
-	..()
-	if(url)
-		dat = {"
-
-			<html><head>
-			</head>
-
-			<body>
-				<iframe width='100%' height='100%' src="[config.wikiurl]index.php?title=Guide_to_Engineering&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
-				</body>
-
-			</html>
-
-			"}
+	url = "Руководство_инженера"
 
 /obj/item/weapon/book/manual/robotics_cyborgs
 	name = "Cyborgs for Dummies"

@@ -97,39 +97,36 @@
 	)
 	flags = OUTFIT_HAS_BACKPACK
 
-/obj/cryo_spawner/thunderdome/elsa
+/obj/structure/cryo_spawner/thunderdome/elsa
+	default_outfit = /decl/hierarchy/outfit/job/elsa_detective
 
-/obj/cryo_spawner/thunderdome/elsa/attack_ghost(mob/user)
+/obj/structure/cryo_spawner/thunderdome/elsa/attack_ghost(mob/user)
 	if (user.ckey && (user.ckey == "auesti" || user.ckey == "skonoplich"))
 		..()
 
-/obj/cryo_spawner/thunderdome/elsa/equip_character(mob/living/carbon/human/H, is_admin = 0)
-	var/decl/hierarchy/outfit/job/elsa_detective/O = new /decl/hierarchy/outfit/job/elsa_detective
-	O.equip(H)
-	qdel(O)
-	H.skillset.skill_list = list (
-			SKILL_BUREAUCRACY  		=	SKILL_EXPERT,
-			SKILL_FINANCE 			=	SKILL_BASIC,
-			SKILL_EVA				=	SKILL_NONE,
-			SKILL_MECH	  		=	SKILL_NONE,
-			SKILL_PILOT	   		=	SKILL_EXPERT,
-			SKILL_HAULING   		=	SKILL_EXPERT,
-			SKILL_COMPUTER			=	SKILL_BASIC,
-			SKILL_BOTANY	  		=	SKILL_NONE,
-			SKILL_COOKING	 		=	SKILL_NONE,
-			SKILL_COMBAT	   		=	SKILL_EXPERT,
-			SKILL_WEAPONS	 		=	SKILL_EXPERT,
-			SKILL_FORENSICS			=	SKILL_PROF,
-			SKILL_CONSTRUCTION 		=	SKILL_NONE,
-			SKILL_ELECTRICAL   		=	SKILL_NONE,
-			SKILL_ATMOS		 	=	SKILL_NONE,
-			SKILL_ENGINES	 		=	SKILL_NONE,
-			SKILL_DEVICES	 		=	SKILL_NONE,
-			SKILL_SCIENCE	  		=	SKILL_NONE,
-			SKILL_MEDICAL  			=	SKILL_BASIC,
-			SKILL_ANATOMY	  		=	SKILL_NONE,
-			SKILL_VIROLOGY	  	=	SKILL_NONE,
-			SKILL_CHEMISTRY			=	SKILL_NONE
-		)
-
-
+/obj/structure/cryo_spawner/thunderdome/elsa/post_spawn_procedure(mob/living/carbon/human/H)
+	if(..())
+		H.skillset.skill_list = list (
+				SKILL_BUREAUCRACY  		=	SKILL_EXPERT,
+				SKILL_FINANCE 			=	SKILL_BASIC,
+				SKILL_EVA				=	SKILL_NONE,
+				SKILL_MECH	  		=	SKILL_NONE,
+				SKILL_PILOT	   		=	SKILL_EXPERT,
+				SKILL_HAULING   		=	SKILL_EXPERT,
+				SKILL_COMPUTER			=	SKILL_BASIC,
+				SKILL_BOTANY	  		=	SKILL_NONE,
+				SKILL_COOKING	 		=	SKILL_NONE,
+				SKILL_COMBAT	   		=	SKILL_EXPERT,
+				SKILL_WEAPONS	 		=	SKILL_EXPERT,
+				SKILL_FORENSICS			=	SKILL_PROF,
+				SKILL_CONSTRUCTION 		=	SKILL_NONE,
+				SKILL_ELECTRICAL   		=	SKILL_NONE,
+				SKILL_ATMOS		 	=	SKILL_NONE,
+				SKILL_ENGINES	 		=	SKILL_NONE,
+				SKILL_DEVICES	 		=	SKILL_NONE,
+				SKILL_SCIENCE	  		=	SKILL_NONE,
+				SKILL_MEDICAL  			=	SKILL_BASIC,
+				SKILL_ANATOMY	  		=	SKILL_NONE,
+				SKILL_VIROLOGY	  	=	SKILL_NONE,
+				SKILL_CHEMISTRY			=	SKILL_NONE
+			)

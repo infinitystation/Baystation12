@@ -244,13 +244,19 @@
 	name = "TG_gondola"
 	alive_icon = "ai-gondola"
 
-//Elar Icon
+//Elar Icons
 /datum/ai_icon/citadel
-	name = "Citadel_AI"
+	name = "Citadel AI"
 	alive_icon = "citadel"
 	alive_light = "#5600ff"
 
-//Bay Custom Icon
+/datum/ai_icon/vega
+	name = "Vega"
+	alive_icon = "ai-vega"
+	alive_light = "#6000ff"
+	dead_icon = "ai-vega-dead"
+
+//Bay Custom Icons
 /datum/ai_icon/atlantiscze
 	name = "Atlantiscze"
 	alive_icon = "atlantiscze-ai"
