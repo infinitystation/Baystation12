@@ -5,7 +5,7 @@
 /obj/item/device/remote_device
 	name = "door remote"
 	desc = "Remotely controls airlocks."
-	icon = 'icons/obj/remote_device.dmi'
+	icon = 'infinity/icons/obj/remote_device.dmi'
 	icon_state = "gangtool-white"
 	item_state = "electronic"
 	w_class = ITEM_SIZE_TINY
@@ -41,7 +41,10 @@
 		if((ID.access && region_access) && (ID.access & region_access))
 			safety = !safety
 			to_chat(user, SPAN_NOTICE("You swipe your indefication card on \the [src]. The safety lock [safety ? "has been reset" : "off"]."))
-			var/static/list/beepsounds = list('sound/effects/compbeep1.ogg','sound/effects/compbeep2.ogg','sound/effects/compbeep3.ogg','sound/effects/compbeep4.ogg','sound/effects/compbeep5.ogg')
+			var/static/list/beepsounds = list(
+				'sound/effects/compbeep1.ogg','sound/effects/compbeep2.ogg', \
+				'sound/effects/compbeep3.ogg','sound/effects/compbeep4.ogg', \
+				'sound/effects/compbeep5.ogg')
 			playsound(src.loc, pick(beepsounds),15,1,10)
 			create_access(ID)
 
