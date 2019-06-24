@@ -12,3 +12,13 @@
 		/obj/item/weapon/reagent_containers/food/snacks/fish = 2,
 		/obj/item/weapon/reagent_containers/food/condiment/small/peppermill = 1,
 		/obj/item/weapon/reagent_containers/food/condiment/small/saltshaker = 1)
+
+/* back here, uncommited
+/obj/structure/closet/secure_closet/freezer
+	var/jones = FALSE
+
+/obj/structure/closet/secure_closet/freezer/ex_act()
+	if(!jones)
+		jones = TRUE
+		return
+	..()*/
