@@ -92,18 +92,24 @@
 		rag = R
 		rag.forceMove(src)
 		atom_flags &= ~ATOM_FLAG_OPEN_CONTAINER
-		verbs -= /obj/item/weapon/reagent_containers/food/drinks/proc/gulp_whole
 		update_icon()
+
+		// INF@CODE - START
+		verbs -= /obj/item/weapon/reagent_containers/food/drinks/proc/gulp_whole
+		// INF@CODE - END
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/proc/remove_rag(mob/user)
 	if(!rag) return
 	user.put_in_hands(rag)
 	rag = null
+	update_icon()
+
+	// INF@CODE - START
 	var/is_open_container = initial(atom_flags) & ATOM_FLAG_OPEN_CONTAINER
 	if(is_open_container)
 		atom_flags |= ATOM_FLAG_OPEN_CONTAINER
 		verbs += /obj/item/weapon/reagent_containers/food/drinks/proc/gulp_whole
-	update_icon()
+	// INF@CODE - END
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/open(mob/user)
 	if(rag) return
@@ -131,7 +137,7 @@
 		var/obj/item/organ/affecting = H.get_organ(hit_zone) //headcheck should ensure that affecting is not null
 		user.visible_message("<span class='danger'>[user] smashes [src] into [H]'s [affecting.name]!</span>")
 		// You are going to knock someone out for longer if they are not wearing a helmet.
-		var/blocked = target.get_blocked_ratio(hit_zone, BRUTE) * 100 
+		var/blocked = target.get_blocked_ratio(hit_zone, BRUTE) * 100
 		var/weaken_duration = smash_duration + min(0, force - blocked + 10)
 		if(weaken_duration)
 			target.apply_effect(min(weaken_duration, 5), WEAKEN, blocked) // Never weaken more than a flash!

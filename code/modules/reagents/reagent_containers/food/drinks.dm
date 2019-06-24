@@ -13,11 +13,6 @@
 	var/base_name = null // Name to put in front of drinks, i.e. "[base_name] of [contents]"
 	var/base_icon = null // Base icon name for fill states
 
-/obj/item/weapon/reagent_containers/food/drinks/Initialize()
-	. = ..()
-	if(is_open_container())
-		verbs += /obj/item/weapon/reagent_containers/food/drinks/proc/gulp_whole
-
 /obj/item/weapon/reagent_containers/food/drinks/on_reagent_change()
 	update_icon()
 	return
@@ -30,7 +25,10 @@
 	playsound(loc,'sound/effects/canopen.ogg', rand(10,50), 1)
 	to_chat(user, "<span class='notice'>You open \the [src] with an audible pop!</span>")
 	atom_flags |= ATOM_FLAG_OPEN_CONTAINER
+
+	// INF@CODE - START
 	verbs += /obj/item/weapon/reagent_containers/food/drinks/proc/gulp_whole
+	// INF@CODE - END
 
 /obj/item/weapon/reagent_containers/food/drinks/attack(mob/M as mob, mob/user as mob, def_zone)
 	if(force && !(item_flags & ITEM_FLAG_NO_BLUDGEON) && user.a_intent == I_HURT)
@@ -119,43 +117,6 @@
 	else
 		SetName(initial(name))
 		desc = initial(desc)
-
-/obj/item/weapon/reagent_containers/food/drinks/proc/gulp_whole()
-	set category = "Object"
-	set name = "Gulp Down"
-	set src in view(1)
-
-	if(!istype(usr.get_active_hand(), src))
-		to_chat(usr, SPAN_WARNING("You need to hold \the [src] in hands!"))
-		return
-
-	if(is_open_container())
-		if(!reagents || reagents.total_volume == 0)
-			to_chat(usr, "<span class='notice'>\The [src] is empty!</span>")
-		else
-			if(ishuman(usr))
-				var/mob/living/carbon/human/H = usr
-				if(!H.check_has_mouth())
-					to_chat(H, "Where do you intend to put \the [src]? You don't have a mouth!")
-					return
-				var/obj/item/blocked = H.check_mouth_coverage()
-				if(blocked)
-					to_chat(H, SPAN_WARNING("\The [blocked] is in the way!"))
-					return
-			if(reagents.total_volume > 30) // 30 equates to 3 SECONDS.
-				usr.visible_message(SPAN_NOTICE("[usr] prepares to gulp down [src]."), SPAN_NOTICE("You prepare to gulp down [src]."))
-			playsound(usr, 'sound/items/drinking.ogg', reagents.total_volume, 1)
-			if(!do_after(usr, reagents.total_volume))
-				if(!Adjacent(usr))
-					return
-				standard_splash_mob(src, src)
-			if(!Adjacent(usr))
-				return
-			usr.visible_message(SPAN_NOTICE("[usr] gulped down the whole [src]!"),SPAN_NOTICE("You gulped down the whole [src]!"))
-			playsound(usr, 'sound/items/drinking_after.ogg', reagents.total_volume, 1)
-			reagents.trans_to_mob(usr, reagents.total_volume, CHEM_INGEST)
-	else
-		to_chat(usr, SPAN_NOTICE("You need to open \the [src] first!"))
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Drinks. END
