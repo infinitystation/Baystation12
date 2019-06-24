@@ -1,7 +1,7 @@
 /obj/machinery/xmaslights
 	name = "xmas lights"
 	desc = "You can see a small button on it's plastic branch and a label near it - ON/OFF."
-	icon = 'icons/obj/christmas_inf.dmi'
+	icon = 'infinity/icons/obj/christmas.dmi'
 	icon_state = "xmaslights_off"
 	anchored = 1
 	plane = BLOB_PLANE
@@ -56,7 +56,7 @@
 /obj/machinery/xmas_plant //yeah, it consumes power.
 	name = "small christmas tree"
 	desc = "This is a tiny well lit decorative christmas tree. You can see a small button on it's pot and a label near it - ON/OFF"
-	icon = 'icons/obj/christmas_inf.dmi'
+	icon = 'infinity/icons/obj/christmas.dmi'
 	icon_state = "plant-xmas"
 	use_power = 1
 	idle_power_usage = 1
@@ -106,7 +106,7 @@
 /obj/structure/sign/doorwreath
 	name = "door wreath"
 	desc = "A decorative flourish. The rounds are too narrow, a head won't fit."
-	icon = 'icons/obj/christmas_inf.dmi'
+	icon = 'infinity/icons/obj/christmas.dmi'
 	icon_state = "doorwreath"
 	mouse_opacity = 0
 	plane = BLOB_PLANE
@@ -115,7 +115,7 @@
 /obj/structure/sign/tinsel
 	name = "tinsel"
 	desc = "A decorative flourish, the socity often calls them tinsels."
-	icon = 'icons/obj/christmas_inf.dmi'
+	icon = 'infinity/icons/obj/christmas.dmi'
 	icon_state = "tinsel1"
 	mouse_opacity = 0
 	plane = BLOB_PLANE
