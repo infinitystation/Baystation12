@@ -4,7 +4,7 @@
 /obj/machinery/crusher_base
 	name = "trash compactor"
 	desc = "A colossal piston used for crushing garbage."
-	icon = 'icons/obj/machines/crusherbase.dmi'
+	icon = 'infinity/icons/obj/machines/crusher_base.dmi'
 	icon_state = "standalone"
 	anchored = 1
 	density = 1

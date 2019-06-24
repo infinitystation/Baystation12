@@ -113,3 +113,7 @@
 /datum/nano_module/program/crushercontrol/proc/crush_stop()
 	for(var/obj/machinery/crusher_base/pstn in pistons)
 		pstn.crush_abort()
+
+/obj/item/modular_computer/telescreen/preset/trashcompactor/install_default_programs()
+	..()
+	hard_drive.store_file(new/datum/computer_file/program/crushercontrol())
