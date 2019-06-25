@@ -2,7 +2,6 @@ var/global/list/sparring_attack_cache = list()
 
 //Species unarmed attacks
 /datum/unarmed_attack
-	attack_sound = "unarmed" // INF@CODE
 	var/attack_verb = list("attack")	// Empty hand hurt intent verb.
 	var/attack_noun = list("fist")
 	var/damage = 0						// Extra empty hand attack damage.
@@ -287,3 +286,4 @@ var/global/list/sparring_attack_cache = list()
 	sharp = 0
 	edge = 0
 	attack_name = "light hit"
+	attack_sound = "light_strike" // INF@INFO в оригинале "punch"
