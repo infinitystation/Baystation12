@@ -3137,7 +3137,7 @@
 #include "infinity\code\game\objects\items\customs\moghes.dm"
 #include "infinity\code\game\objects\items\customs\os_uniform.dm"
 #include "infinity\code\game\objects\items\customs\pink_guitar.dm"
-#include "infinity\code\game\objects\items\customs\ronin_mask.dm"
+#include "infinity\code\game\objects\items\customs\ronin_helmet.dm"
 #include "infinity\code\game\objects\items\customs\scp_carrier.dm"
 #include "infinity\code\game\objects\items\customs\shizukana_hikaro.dm"
 #include "infinity\code\game\objects\items\customs\sprites_kits.dm"
