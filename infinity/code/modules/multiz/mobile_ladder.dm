@@ -3,7 +3,7 @@
 	desc = "A lightweight deployable ladder, which you can use to move up or down. Or alternatively, you can bash some faces in."
 	icon_state = "mobile_ladder"
 	item_state = "mobile_ladder"
-	icon = 'icons/obj/mobile_ladders.dmi'
+	icon = 'infinity/icons/obj/mobile_ladder.dmi'
 	throw_range = 3
 	force = 10
 	w_class = ITEM_SIZE_LARGE
@@ -68,7 +68,7 @@
 	return TRUE
 
 /obj/structure/ladder/mobile
-	icon = 'icons/obj/mobile_ladders.dmi'
+	icon = 'infinity/icons/obj/mobile_ladder.dmi'
 
 /obj/structure/ladder/mobile/New()
 	..()
