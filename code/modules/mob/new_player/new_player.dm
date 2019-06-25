@@ -395,13 +395,9 @@
 
 	// INF@CODE
 	var/decl/cultural_info/religion/muslim = SSculture.get_culture(character.client.prefs.cultural_info[TAG_RELIGION])
-	to_world(muslim)
 	if(istype(muslim))
-		to_world("doot!")
-		character.default_emotes += /decl/emote/audible/scream_battle
-		character.verbs += /mob/living/verb/scream_battle
-	else
-		to_world("no doot :(")
+		character.usable_emotes += /decl/emote/audible/scream_battle
+		character.verbs += /mob/living/proc/scream_battle
 
 	qdel(src)
 

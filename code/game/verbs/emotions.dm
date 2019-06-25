@@ -219,7 +219,7 @@
 	set category = "Emote"
 	emote("eyebrow")
 
-/mob/living/verb/scream_battle()
+/mob/living/proc/scream_battle()
 	set name = "Восславить Аллаха"
 	set category = "Emote"
 	set hidden = 1

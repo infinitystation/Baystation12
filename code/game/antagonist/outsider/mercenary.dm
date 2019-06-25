@@ -52,7 +52,7 @@ GLOBAL_DATUM_INIT(mercs, /datum/antagonist/mercenary, new)
 		player.put_in_hands(paper)
 
 	// inf
-	player.default_emotes += /decl/emote/audible/scream_battle
-	player.verbs += /mob/living/verb/scream_battle
+	player.usable_emotes += /decl/emote/audible/scream_battle
+	player.verbs += /mob/living/proc/scream_battle
 
 	return 1
