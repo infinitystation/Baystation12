@@ -9,5 +9,5 @@
 		slot_head_str = CUSTOM_ITEM_MOB
 	)
 	item_state_slots = list(
-		slot_head_str = "ronin_mask"
+		slot_head_str = "ronin_helmet"
 	)
