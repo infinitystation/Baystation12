@@ -571,7 +571,7 @@
 	var/b_inner_range = 1
 	var/b_outer_range = 5
 	var/b_curve = 2
-	var/b_colour = LIGHT_COLOR_LYELLOW
+	var/b_colour = "#fffee0"
 	var/list/lighting_modes = list()
 	var/sound_on
 
@@ -584,6 +584,7 @@
 	matter = list(MATERIAL_GLASS = 100, MATERIAL_ALUMINIUM = 20)
 
 	b_outer_range = 5
+	b_colour = "#fffee0"
 	lighting_modes = list(
 		LIGHTMODE_EMERGENCY = list(l_outer_range = 4, l_max_bright = 1, l_color = "#da0205"),
 		)
@@ -618,7 +619,7 @@
 	b_inner_range = 0.1
 	b_outer_range = 4
 	b_curve = 3
-	b_colour = LIGHT_COLOR_TUNGSTEN
+	b_colour = "#fcfcc7"
 	lighting_modes = list(
 		LIGHTMODE_EMERGENCY = list(l_outer_range = 3, l_max_bright = 1, l_color = "#da0205"),
 		)
