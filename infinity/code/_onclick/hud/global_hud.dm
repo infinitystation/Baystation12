@@ -6,7 +6,7 @@
 	screen.plane = FULLSCREEN_PLANE
 	screen.layer = FULLSCREEN_LAYER
 	screen.mouse_opacity = 0
-	screen.alpha = 100
+	screen.alpha = 125
 
 	screen.blend_mode = BLEND_MULTIPLY
 
