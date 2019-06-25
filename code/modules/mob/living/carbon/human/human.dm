@@ -57,14 +57,6 @@
 		sync_organ_dna()
 	make_blood()
 
-	// INF@CODE
-	if(cultural_info[TAG_RELIGION] == RELIGION_ISLAM)
-		to_world("doot!")
-		default_emotes += /decl/emote/audible/scream_battle
-		verbs += /mob/living/verb/scream_b
-	else
-		to_world("no doot :(")
-
 /mob/living/carbon/human/Destroy()
 	GLOB.human_mob_list -= src
 	worn_underwear = null
