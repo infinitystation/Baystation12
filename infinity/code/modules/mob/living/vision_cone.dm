@@ -161,12 +161,21 @@
 	if(src.vis_overlay)
 		src.vis_overlay.alpha = 0
 
-/mob/living/Move()
+/mob/living/Move(NewLoc, direct)
+	for(var/client/C in in_vision_cones)
+		if(src in C.hidden_mobs)
+			var/turf/T = get_turf(src)
+			var/image/I = image('infinity/icons/effects/footstepsound.dmi', loc = T, icon_state = "blip", layer = 18)
+			C.images += I
+			spawn(6)
+				if(C)
+					C.images -= I
+		else
+			in_vision_cones.Remove(C)
+	for(var/mob/M in oview(src))
+		M.update_vision_cone()
+	update_vision_cone()
 	. = ..()
-	if(.)
-		for(var/mob/M in oview(src))
-			M.update_vision_cone()
-		update_vision_cone()
 
 /mob/living/set_dir()
 	. = ..()
