@@ -122,7 +122,8 @@
 	center_of_mass = null
 	randpixel = 0
 	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_DIONA, "Xenophage")
-	valid_accessory_slots = list(ACCESSORY_SLOT_INSIGNIA)
+	valid_accessory_slots = list(ACCESSORY_SLOT_INSIGNIA, \
+									ACCESSORY_SLOT_ARMBAND, ACCESSORY_SLOT_OVER) // INF@CODE
 
 /obj/item/clothing/suit/space/New()
 	..()

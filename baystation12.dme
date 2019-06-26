@@ -3184,6 +3184,7 @@
 #include "infinity\code\modules\client\preference_setup\loadout\lists\infinity.dm"
 #include "infinity\code\modules\clothing\accessories.dm"
 #include "infinity\code\modules\clothing\armor.dm"
+#include "infinity\code\modules\clothing\cloak.dm"
 #include "infinity\code\modules\clothing\ears.dm"
 #include "infinity\code\modules\clothing\glasses.dm"
 #include "infinity\code\modules\clothing\glasses_xeno.dm"
