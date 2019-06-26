@@ -245,12 +245,18 @@
 		mymob.nutrition_icon.screen_loc = ui_nutrition
 		hud_elements |= mymob.nutrition_icon
 
+//Fixeye inf
 	mymob.fixeye = new /obj/screen()
 	mymob.fixeye.icon = 'icons/mob/screen/infinity.dmi'
 	mymob.fixeye.icon_state = "fixeye"
 	mymob.fixeye.name = "fixeye"
 	mymob.fixeye.screen_loc = ui_fixeye
 	hud_elements |= mymob.fixeye
+
+//Viscone inf
+	if(target.vision_restructed == 1)
+		target.vis_overlay = new /obj/screen/vis_overlay()
+		hud_elements |= target.vis_overlay
 
 	mymob.pain = new /obj/screen/fullscreen/pain( null )
 	hud_elements |= mymob.pain

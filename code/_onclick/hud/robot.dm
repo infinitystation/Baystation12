@@ -10,6 +10,12 @@ var/obj/screen/robot_inventory
 
 	var/obj/screen/using
 
+//Viscone inf
+	var/mob/living/silicon/robot/r = mymob
+	if(r.vision_restructed == 1)
+		r.vis_overlay = new /obj/screen/vis_overlay()
+		src.adding += r.vis_overlay
+
 //Radio
 	using = new /obj/screen()
 	using.SetName("radio")

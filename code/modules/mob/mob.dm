@@ -735,6 +735,9 @@
 	else if( lying != lying_prev )
 		update_icons()
 
+	// INF
+	update_vision_cone()
+
 /mob/proc/reset_layer()
 	if(lying)
 		plane = LYING_MOB_PLANE
@@ -1103,7 +1106,7 @@
 	else
 		to_chat(usr, "You must be observing or in the lobby to join the antag pool.")
 /mob/proc/is_invisible_to(var/mob/viewer)
-	return (!alpha || !mouse_opacity || viewer.see_invisible < invisibility)
+	return (!alpha || !mouse_opacity || viewer.see_invisible < invisibility || (viewer.client && (src in (viewer.client.hidden_mobs || viewer.client.hidden_atoms))))
 
 /client/proc/check_has_body_select()
 	return mob && mob.hud_used && istype(mob.zone_sel, /obj/screen/zone_sel)
