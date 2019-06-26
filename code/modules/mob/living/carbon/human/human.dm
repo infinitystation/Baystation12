@@ -57,6 +57,9 @@
 		sync_organ_dna()
 	make_blood()
 
+	if(species.vision_restruction)
+		vision_restructed = 1
+
 /mob/living/carbon/human/Destroy()
 	GLOB.human_mob_list -= src
 	worn_underwear = null

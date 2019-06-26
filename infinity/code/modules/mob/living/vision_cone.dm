@@ -41,11 +41,6 @@
 /datum/species/nabber
 	vision_restruction = FALSE
 
-/mob/living/carbon/human/New()
-	if(..())
-		if(species.vision_restruction)
-			vision_restructed = VISCONE_SHOW
-
 /mob/living/silicon
 	vision_restructed = VISCONE_SHOW
 
