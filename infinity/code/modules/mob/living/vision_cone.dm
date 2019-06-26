@@ -33,6 +33,8 @@
 	var/obj/screen/vis_overlay
 	var/vision_restructed = VISCONE_DISABLED
 
+	var/list/in_vision_cones = list()
+
 /datum/species
 	var/vision_restruction = TRUE
 
@@ -107,7 +109,7 @@
 			src.client.hidden_atoms = list()
 			src.client.hidden_mobs = list()
 			src.vis_overlay.dir = src.dir
-			if(vis_overlay.alpha != 0)
+			if(vision_restructed == VISCONE_SHOW)
 				var/mob/living/M
 				for(M in cone(src, OPPOSITE_DIR(src.dir), view(10, src)))
 					I = image("split", M)
@@ -118,7 +120,10 @@
 					// If we're pulling them we don't want them to be invisible, too hard to play like that.
 					if(src.pulling == M)
 						I.override = 0
-			update_fov_position()
+
+					M.in_vision_cones[src.client] = 1
+
+				update_fov_position()
 
 /mob/living/proc/SetFov(var/n)
 	if(vision_restructed == VISCONE_DISABLED)
@@ -165,7 +170,7 @@
 	for(var/client/C in in_vision_cones)
 		if(src in C.hidden_mobs)
 			var/turf/T = get_turf(src)
-			var/image/I = image('infinity/icons/effects/footstepsound.dmi', loc = T, icon_state = "blip", layer = 18)
+			var/image/I = image('infnity/icons/effects/footstepsound.dmi', loc = T, icon_state = "blip", layer = 18)
 			C.images += I
 			spawn(6)
 				if(C)
