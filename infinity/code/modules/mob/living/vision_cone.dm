@@ -170,7 +170,7 @@
 	for(var/client/C in in_vision_cones)
 		if(src in C.hidden_mobs)
 			var/turf/T = get_turf(src)
-			var/image/I = image('infnity/icons/effects/footstepsound.dmi', loc = T, icon_state = "blip", layer = 18)
+			var/image/I = image('infinity/icons/mob/footstepsound.dmi', loc = T, icon_state = "blip", layer = 18)
 			C.images += I
 			spawn(6)
 				if(C)
