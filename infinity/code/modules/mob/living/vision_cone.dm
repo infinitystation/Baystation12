@@ -35,6 +35,17 @@
 
 	var/list/in_vision_cones = list()
 
+/mob/living/Initialize()
+	. = ..()
+	if(vision_restructed == VISCONE_SHOW)
+		GLOB.dir_set_event.register(src, src, /mob/proc/update_vision_cone)
+		GLOB.moved_event.register(src, src, /mob/proc/update_vision_cone)
+
+/mob/living/Destroy()
+	GLOB.dir_set_event.unregister(src, src, /mob/proc/update_vision_cone)
+	GLOB.moved_event.unregister(src, src, /mob/proc/update_vision_cone)
+	..()
+
 /datum/species
 	var/vision_restruction = TRUE
 
@@ -164,23 +175,21 @@
 /mob/living/Move(NewLoc, direct)
 	for(var/client/C in in_vision_cones)
 		if(src in C.hidden_mobs)
-			var/turf/T = get_turf(src)
-			var/image/I = image('infinity/icons/mob/footstepsound.dmi', loc = T, icon_state = "blip", layer = 18)
-			C.images += I
-			spawn(6)
-				if(C)
-					C.images -= I
+			var/image/noise = image(icon = 'icons/effects/noise.dmi', icon_state = "noise", loc = src, layer = 18)
+			noise.alpha = 200
+			show_image(C, noise)
+			addtimer(CALLBACK(src, .proc/clear_noise_effect, C, noise), 7)
 		else
 			in_vision_cones.Remove(C)
-	for(var/mob/M in oview(src))
-		M.update_vision_cone()
-	update_vision_cone()
 	. = ..()
+
+/mob/living/proc/clear_noise_effect(var/client/C, var/image/I)
+	if(C && I) C.images -= I
 
 /mob/living/set_dir()
-	. = ..()
-	if(.) update_vision_cone()
+	..()
+	update_vision_cone()
 
 /mob/lviing/UpdateLyingBuckledAndVerbStatus()
-	. = ..()
-	if(.) update_vision_cone()
+	..()
+	update_vision_cone()

@@ -57,6 +57,7 @@
 		sync_organ_dna()
 	make_blood()
 
+	// inf
 	if(species.vision_restruction)
 		vision_restructed = 1
 
