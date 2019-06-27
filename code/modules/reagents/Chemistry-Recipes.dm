@@ -2151,13 +2151,6 @@
 	required_reagents = list(/datum/reagent/ethanol/rum = 1, /datum/reagent/drink/dr_gibb = 2, /datum/reagent/drink/ice = 1)
 	result_amount = 4
 
-/datum/chemical_reaction/github
-	name = "GitHub"
-	result = /datum/reagent/ethanol/github
-	required_reagents = list(/datum/reagent/drink/juice/watermelon = 1, /datum/reagent/fuel = 1, /datum/reagent/iron = 1)
-	result_amount = 10
-	mix_message = "Microchips are starting to blur in the water..."
-
 /datum/chemical_reaction/luminol
 	name = "Luminol"
 	result = /datum/reagent/luminol
