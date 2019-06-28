@@ -65,22 +65,28 @@ var/global/floorIsLava = 0
 		<a href='?src=\ref[usr];priv_msg=\ref[M]'>PM</a> -
 		<a href='?src=\ref[src];narrateto=\ref[M]'>DN</a> -
 		[admin_jump_link(M, src)] -
-		<a href='?src=\ref[src];show_skills=\ref[M]'>SS</a>\] <br>
-	"}
+		<a href='?src=\ref[src];show_skills=\ref[M]'>SS</a>\]"}
 
-	body += {"
-		<b>Client Information:</b><br>
+	// INF START
+	body += "<br>"
+	body += "<b>Client Information:</b><br>"
 
-		<b>Client [M.client ? "On" : "Off"]line</b><br>
-		<b>Ckey:</b> [M.client ? M.client.ckey : M.ckey]<br>
-		<b>Client Age:</b> [M.client ? "[M.client.player_age] days" : "Logged out"]<br>
-		<b>Client Gender:</b> [M.client ? M.client.gender : "Logged out"]<br>
-		<b>CID:</b> [M.client ?  M.client.computer_id : M.computer_id]<br>
-		<b>CID Related Accounts:</b> [M.client ? M.client.related_accounts_cid : "Logged out"]<br>
-		<b>IP:</b> [M.client ?  M.client.address : M.lastKnownIP]<br>
-		<b>IP Related Accounts:</b> [M.client ? M.client.related_accounts_ip : "Logged out"]<br>
-	"}
+	body += "<br>\[<b>Client [M.client ? "On" : "Off"]line</b>\]"
+	body += "<br>\[<b>Ckey:</b> [M.client ? M.client.ckey : M.ckey]\]"
+	body += "<br>\[<b>Client Age:</b> [M.client ? "[M.client.player_age] days" : "Logged out"]\]"
+	body += "<br>\[<b>Client Gender:</b> [M.client ? M.client.gender : "Logged out"]\]"
+	body += "<br>\[<b>CID:</b> [M.client ?  M.client.computer_id : M.computer_id]\]"
+	body += "<br>\[<b>CID Related Accounts:</b> [M.client ? M.client.related_accounts_cid : "Logged out"]\]"
+	body += "<br>\[<b>IP:</b> [M.client ?  M.client.address : M.lastKnownIP]\]"
+	body += "<br>\[<b>IP Related Accounts:</b> [M.client ? M.client.related_accounts_ip : "Logged out"]\]"
+	var/full_version = "Unknown"
+	if(M.client.byond_version)
+		full_version = "[M.client.byond_version].[M.client.byond_build ? M.client.byond_build : "xxx"]"
+	body += "<br>\[<b>Byond version:</b> [full_version]\]"
+	body += "<br>"
+	// INF END
 
+	body += "<br>"
 	body += {"
 		<b>Mob type:</b> [M.type]<br>
 		<b>Inactivity time:</b> [M.client ? "[M.client.inactivity/600] minutes" : "Logged out"]<br/><br/>
@@ -118,7 +124,7 @@ var/global/floorIsLava = 0
 		<br><br>
 		[check_rights(R_ADMIN|R_MOD,0) ? "<A href='?src=\ref[src];traitor=\ref[M]'>Traitor panel</A> | " : "" ]
 		[check_rights(R_INVESTIGATE,0) ? "<A href='?src=\ref[src];skillpanel=\ref[M]'>Skill panel</A> | " : "" ]
-		<A href='?src=\ref[src];narrateto=\ref[M]'>Narrate to</A> |
+		<A href='?src=\ref[src];narrateto=\ref[M]'>Narrate to</A>
 	"}
 
 	if(M.mind)
@@ -129,9 +135,11 @@ var/global/floorIsLava = 0
 		body += "<br>"
 		body += "<a href='?src=\ref[M.mind];add_goal=1'>Add Random Goal</a>"
 
-	body += "<br><br>"
-	body += "<b>Psionics:</b><br/>"
+	//body += "<br><br>"
+	//body += "<b>Psionics:</b><br/>" inf, see below
 	if(isliving(M))
+		body += "<br><br>"
+		body += "<b>Psionics:</b><br/>"
 		var/mob/living/psyker = M
 		if(psyker.psi)
 			body += "<a href='?src=\ref[psyker.psi];remove_psionics=1'>Remove psionics.</a><br/><br/>"
@@ -254,16 +262,26 @@ var/global/floorIsLava = 0
 		if(!(L.flags & INNATE))
 			if(!f) body += " | "
 			else f = 0
-			if(L in M.languages)
+		/*	if(L in M.languages) infinity, see below
 				body += "<a href='?src=\ref[src];toglang=\ref[M];lang=[html_encode(k)]' style='color:#006600'>[k]</a>"
 			else
-				body += "<a href='?src=\ref[src];toglang=\ref[M];lang=[html_encode(k)]' style='color:#ff0000'>[k]</a>"
+				body += "<a href='?src=\ref[src];toglang=\ref[M];lang=[html_encode(k)]' style='color:#ff0000'>[k]</a>"*/
+
+			// INF START
+			var/text_color = (L in M.languages) ? "#55cc55" : "#cc5555"
+			body += "<a href='?src=\ref[src];toglang=\ref[M];lang=[html_encode(k)]' style='color:[text_color]'>[k]</a>"
+			// INF END
 
 	body += {"<br>
 		</body></html>
 	"}
 
-	usr << browse(body, "window=adminplayeropts;size=550x515")
+	// INF START
+	var/datum/browser/popup = new(usr, "adminplayeropts", "Player Panel", 560, 515, src)
+	popup.set_content(jointext(body, null))
+	popup.open()
+	// INF END
+	//usr << browse(body, "window=adminplayeropts;size=550x515")
 	SSstatistics.add_field_details("admin_verb","SPP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 
