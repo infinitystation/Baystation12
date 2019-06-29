@@ -25,17 +25,18 @@
 		SSticker.end_game_state = END_GAME_READY_TO_END
 		return
 
-	var/datum/map/M = result[1]
-	fdel("maps/~mapsystem/map_in_use.dm")
-	text2file("#if !defined(using_map_DATUM)\n\
-					#include \"../[M.path]/[M.path].dm\"\n\
-				#elif !defined(MAP_OVERRIDE)\n\
-					#warn A map has already been included, ignoring map rotates.\n\
-				#endif",
-	 "maps/~mapsystem/map_in_use.dm")
-	if(!SSticker.update_server)
-		SSvote.reset()
-		SSticker.update_map(M.full_name)
-	else
-		send2mainirc("Следующей картой будет - [M.full_name]!")
-		SSticker.end_game_state = END_GAME_READY_TO_END
+	if(result[1])
+		var/datum/map/M = result[1]
+		fdel("maps/~mapsystem/map_in_use.dm")
+		text2file("#if !defined(using_map_DATUM)\n\
+						#include \"../[M.path]/[M.path].dm\"\n\
+					#elif !defined(MAP_OVERRIDE)\n\
+						#warn A map has already been included, ignoring map rotates.\n\
+					#endif",
+		 "maps/~mapsystem/map_in_use.dm")
+		if(!SSticker.update_server)
+			SSvote.reset()
+			SSticker.update_map(M.full_name)
+		else
+			send2mainirc("Следующей картой будет - [M.full_name]!")
+			SSticker.end_game_state = END_GAME_READY_TO_END
