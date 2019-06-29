@@ -3082,6 +3082,7 @@
 #include "code\unit_tests\zas_tests.dm"
 #include "code\unit_tests\~helpers.dm"
 #include "code\unit_tests\~unit_test_types.dm"
+#include "infinity\code\__helpers\animations.dm"
 #include "infinity\code\_onclick\hud\global_hud.dm"
 #include "infinity\code\controllers\subsystems\ticker.dm"
 #include "infinity\code\datums\outfits\infinity.dm"
