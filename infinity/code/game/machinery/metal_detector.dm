@@ -1,7 +1,7 @@
 /obj/machinery/metal_detector
 	name = "weapon detector"
-	desc = "...Don't pass it with weapon or grenade if you don't want to be spotted..."
-	icon = 'icons/obj/machines/metal_detector.dmi'
+	desc = "Don't pass it with weapon or grenade if you don't want to be spotted..."
+	icon = 'infinity/icons/obj/machines/metal_detector.dmi'
 	icon_state = "metal-detector"
 	anchored = 1
 	var/on = 0
@@ -13,9 +13,10 @@
 	layer = 3
 	req_access = list(access_security)
 	var/ignore_access = 1 // It won't check persons who have security access
-	var/check_guns = 1
-	var/check_grenades = 1
 	var/cooldown = 0 //Uses to pervent spamming
+
+	var/list/banned_items = list(/obj/item/weapon/gun, /obj/item/weapon/grenade)
+	var/list/banned_materials = list(MATERIAL_STEEL)
 
 /obj/machinery/metal_detector/power_change()
 	if(powered())
@@ -37,7 +38,7 @@
 	if(istype(W, /obj/item/weapon/card/id))
 		if(allowed(usr))
 			locked = !locked
-			to_chat(user, "<span class='notice'>You [ locked ? "lock" : "unlock"] the metal detector interface.</span>")
+			to_chat(user, "<span class='notice'>You [locked ? "lock" : "unlock"] the metal detector interface.</span>")
 		else
 			to_chat(user, "<span class='warning'>Access denied.</span>")
 			return
@@ -84,8 +85,6 @@
 		dat += text({"
 			Status: <a href='?src=\ref[src];on=1'>[on ? "On" : "Off"]</a><br>
 			Ignore access: <a href='?src=\ref[src];ignore_access=1'>[ignore_access ? "Yes" : "No"]</a><br>
-			Check guns: <a href='?src=\ref[src];check_guns=1'>[check_guns ? "Yes" : "No"]</a><br>
-			Check grenades: <a href='?src=\ref[src];check_grenades=1'>[check_grenades ? "Yes" : "No"]</a><br>
 			</tt>"})
 
 	var/datum/browser/popup = new(user, "metal_detector", "Security Metal Detector")
@@ -103,10 +102,6 @@
 		update_icon()
 	else if(href_list["ignore_access"])
 		ignore_access = !ignore_access
-	else if(href_list["check_guns"])
-		check_guns = !check_guns
-	else if(href_list["check_grenades"])
-		check_grenades = !check_grenades
 
 	updateUsrDialog()
 	return
@@ -118,9 +113,16 @@
 		icon_state = "metal-detector"
 
 /obj/machinery/metal_detector/proc/try_detect_banned(obj/item/I) //meh
-	if(cooldown)
-		return 0
-	if((check_guns && istype(I,/obj/item/weapon/gun)) || (check_grenades && istype(I,/obj/item/weapon/grenade)))
+	if(cooldown) return FALSE
+	var/triggered
+	if(istype(I, banned_items))
+		triggered = TRUE
+	if(istype(I, /obj/item/weapon/material))
+		var/obj/item/weapon/material/M = I
+		if(M.default_material in banned_materials)
+			triggered = TRUE
+
+	if(triggered)
 		icon_state = "metal-detector-warning"
 		visible_message("<span class='warning'>[src] triggers!</span>")
 		playsound(loc, 'sound/effects/alert.ogg', 50, 1)
@@ -130,7 +132,7 @@
 			sleep(30)
 			cooldown = 0
 			return 1
-	else return 0
+	else return FALSE
 
 /obj/machinery/metal_detector/Crossed(var/mob/living/carbon/M)
 	if(anchored && on && !(stat & NOPOWER))
@@ -149,18 +151,23 @@
 					for(var/obj/item/I in S.contents)
 						if(try_detect_banned(I))
 							return
+				if(istype(O, /obj/item/clothing/suit/storage))
+					var/obj/item/clothing/S = O
+					for(var/obj/item/I in S.contents)
+						if(try_detect_banned(I))
+							return
 				else
 					if(try_detect_banned(O))
 						return
 
 /obj/machinery/metal_detector/emag_act()
 	if(!emagged)
-		emagged = 1
+		emagged = TRUE
 		playsound(loc, 'sound/effects/sparks4.ogg', 50, 1)
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 		s.set_up(5, 1, src)
 		s.start()
-		desc += "<span class='warning'>It seems malfunctioning.</span>"
+		desc += "<br><span class='warning'>It seems malfunctioning.</span>"
 		return
 
 /obj/machinery/metal_detector/emp_act(severity)
