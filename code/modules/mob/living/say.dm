@@ -377,7 +377,8 @@ proc/get_radio_key_from_channel(var/channel)
 				if(O) //It's possible that it could be deleted in the meantime.
 					O.hear_talk(src, stars(message), verb, speaking)
 
-	flick_overlay(speech_bubble, speech_bubble_recipients, 30)
+	// flick_overlay(speech_bubble, speech_bubble_recipients, 30) infinity
+	INVOKE_ASYNC(GLOBAL_PROC, /.proc/animate_speech_bubble, speech_bubble, speech_bubble_recipients, 30)
 
 	if(whispering)
 		log_whisper("[name]/[key] : [message]")

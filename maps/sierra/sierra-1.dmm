@@ -2313,7 +2313,7 @@
 "Sy" = (/obj/machinery/door/airlock/glass/mining{id_tag = null; name = "Shuttle Fuel Bay Interior"; req_access = newlist()},/obj/machinery/door/firedoor,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/quartermaster/shuttlefuel)
 "Sz" = (/obj/machinery/door/airlock/civilian{name = "Toilets"; req_access = newlist()},/obj/machinery/door/firedoor,/turf/simulated/floor/tiled/freezer,/area/vacant/cargo)
 "SA" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/machinery/light/small{dir = 8},/obj/machinery/portable_atmospherics/powered/pump/filled,/turf/simulated/floor/plating,/area/vacant/cargo)
-"SB" = (/obj/effect/landmark/start{name = "Stowaway"},/obj/item/weapon/paper/sticky{pixel_y = -25; text = "ÿÀﬁ« - “ŒÀ Õ”“‹ —“≈Õ”"},/turf/simulated/floor/plating,/area/vacant/cargo)
+"SB" = (/obj/effect/landmark/start{name = "Stowaway"},/obj/item/weapon/paper/sticky{pixel_y = -25},/turf/simulated/floor/plating,/area/vacant/cargo)
 "SC" = (/obj/machinery/door/airlock/external{autoset_access = 0; req_access = newlist()},/turf/simulated/floor/plating,/area/vacant/cargo)
 "SD" = (/obj/item/device/radio/intercom{dir = 1; pixel_y = -28},/obj/machinery/light/small,/turf/simulated/floor/tiled,/area/vacant/cargo)
 "SE" = (/obj/item/weapon/stool/padded/red,/turf/simulated/floor/tiled,/area/vacant/cargo)
