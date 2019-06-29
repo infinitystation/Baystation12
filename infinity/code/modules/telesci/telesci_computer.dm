@@ -326,7 +326,7 @@
 		var/new_z = input("Please input desired sector.", name, z_co) as num
 		if(..())
 			return
-		z_co = Clamp(round(new_z), 1, 15)
+		z_co = Clamp(round(new_z), 1, 25)
 
 	if(href_list["ejectGPS"])
 		if(inserted_gps)
