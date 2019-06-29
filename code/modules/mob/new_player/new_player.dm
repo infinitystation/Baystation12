@@ -424,6 +424,23 @@
 	dat += "<table>"
 	dat += "<tr><td colspan = 3><b>[GLOB.using_map.station_name]:</b></td></tr>"
 
+	//INF@CODE
+	var/list/categorizedJobs = list(
+		"Command" = list(jobs = list(), titles = SSjobs.titles_by_department(COM), color = "#aac1ee"),
+		"Command Support" = list(jobs = list(), titles = SSjobs.titles_by_department(SPT), color = "#aac1ee"),
+		"Engineering" = list(jobs = list(), titles = SSjobs.titles_by_department(ENG), color = "#ffd699"),
+		"Security" = list(jobs = list(), titles = SSjobs.titles_by_department(SEC), color = "#ff9999"),
+		"Miscellaneous" = list(jobs = list(), titles = SSjobs.titles_by_department(MSC), color = "#ffffff", colBreak = 1),
+		//"Synthetic" = list(jobs = list(), titles = SSjobs.titles_by_department(MSC), color = "#ccffcc"),
+		"Support / Service" = list(jobs = list(), titles = SSjobs.titles_by_department(SRV), color = "#cccccc"),
+		"Medical" = list(jobs = list(), titles = SSjobs.titles_by_department(MED), color = "#99ffe6", colBreak = 1),
+		"Science" = list(jobs = list(), titles = SSjobs.titles_by_department(SCI), color = "#e6b3e6"),
+		"Supply" = list(jobs = list(), titles = SSjobs.titles_by_department(SUP), color = "#ead4ae"),
+		"Expedition" = list(jobs = list(), titles = SSjobs.titles_by_department(EXP), color = "#ffd699"),
+		"ERROR" = list(jobs = list(), titles = list(), color = "#ffffff", colBreak = 1)
+		)
+	//END OF INF@CODE
+
 	// TORCH JOBS
 	var/list/job_summaries
 	var/list/hidden_reasons = list()
