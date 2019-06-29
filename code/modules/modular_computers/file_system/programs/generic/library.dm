@@ -103,6 +103,9 @@ The answer was five and a half years -ZeroBits
 			error_message = "User Error: Upload something original."
 			return 1
 
+		if(usr.key)
+			B.author += " (OOC ckey [usr.key])"
+
 		if(!B.title)
 			B.title = "Untitled"
 

@@ -7776,7 +7776,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/specops/centcom)
 "aqW" = (
-/obj/cryo_spawner/thunderdome/elsa{
+/obj/structure/cryo_spawner/thunderdome/elsa{
 	icon_state = "body_scanner_1";
 	dir = 1
 	},

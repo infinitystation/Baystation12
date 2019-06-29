@@ -5236,7 +5236,7 @@
 /obj/structure/sign/double/solgovflag/left{
 	pixel_y = 32
 	},
-/obj/cryo_spawner/patrol_craft/marine_lead,
+/obj/structure/cryo_spawner/patrol_craft/marine_lead,
 /obj/effect/floor_decal/corner/red/full,
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/barracks)
@@ -5538,7 +5538,7 @@
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/lower/port)
 "kc" = (
-/obj/cryo_spawner/patrol_craft/marine{
+/obj/structure/cryo_spawner/patrol_craft/marine{
 	icon_state = "body_scanner_1";
 	dir = 4
 	},
@@ -5776,7 +5776,7 @@
 /turf/simulated/floor,
 /area/ship/patrol/barracks)
 "kz" = (
-/obj/cryo_spawner/patrol_craft/marine{
+/obj/structure/cryo_spawner/patrol_craft/marine{
 	icon_state = "body_scanner_1";
 	dir = 4
 	},
@@ -5812,7 +5812,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/barracks)
 "kC" = (
-/obj/cryo_spawner/patrol_craft/marine_eng{
+/obj/structure/cryo_spawner/patrol_craft/marine_eng{
 	icon_state = "body_scanner_1";
 	dir = 8
 	},
@@ -6045,7 +6045,7 @@
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/lower/port)
 "kY" = (
-/obj/cryo_spawner/patrol_craft/marine{
+/obj/structure/cryo_spawner/patrol_craft/marine{
 	icon_state = "body_scanner_1";
 	dir = 4
 	},
@@ -6092,7 +6092,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/barracks)
 "lb" = (
-/obj/cryo_spawner/patrol_craft/marine_med{
+/obj/structure/cryo_spawner/patrol_craft/marine_med{
 	icon_state = "body_scanner_1";
 	dir = 8
 	},

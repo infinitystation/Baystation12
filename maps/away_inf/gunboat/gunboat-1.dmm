@@ -1994,7 +1994,7 @@
 /turf/simulated/floor/tiled/white,
 /area/ship/gunboat/living/cryo)
 "dn" = (
-/obj/cryo_spawner/gunboat/captain,
+/obj/structure/cryo_spawner/gunboat/captain,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/sign/warning/nosmoking_1{
 	pixel_x = 0;
@@ -2004,7 +2004,7 @@
 /area/ship/gunboat/living/cryo)
 "do" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/cryo_spawner/gunboat/doctor,
+/obj/structure/cryo_spawner/gunboat/doctor,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white,
 /area/ship/gunboat/living/cryo)
@@ -2206,7 +2206,7 @@
 /turf/simulated/floor/tiled/white,
 /area/ship/gunboat/living/cryo)
 "dE" = (
-/obj/cryo_spawner/gunboat/engineer{
+/obj/structure/cryo_spawner/gunboat/engineer{
 	icon_state = "body_scanner_1";
 	dir = 1
 	},
@@ -2217,7 +2217,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
-/obj/cryo_spawner/gunboat/gunner{
+/obj/structure/cryo_spawner/gunboat/gunner{
 	icon_state = "body_scanner_1";
 	dir = 1
 	},
