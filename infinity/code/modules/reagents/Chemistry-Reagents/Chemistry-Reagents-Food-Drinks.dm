@@ -59,3 +59,23 @@
 	reagent_state = LIQUID
 	nutriment_factor = 10
 	color = "#6d2d26" //rgb: 121, 35, 0
+
+/datum/reagent/ethanol/github
+	name = "GitHub"
+	description = "The famous cocktail. Coined by programmers for programmers. Made not from programmers. Where's my merge, Elar?"
+	taste_description = "sweet microchips, steel and Elar's merge"
+	color = "#3d3d3d"
+	strength = 20
+
+	glass_name = "github cocktail"
+	glass_desc = "The famous cocktail. Coined by programmers for programmers. Made not from programmers. Where's my merge, Elar?"
+
+/datum/reagent/ethanol/discord
+	name = "Discord"
+	description = "You did it, Verhniy! Where's the Discord Nitro cocktail, though?"
+	taste_description = "Well Played Good Games and CO-OP"
+	color = "#36393f"
+	strength = 10
+
+	glass_name = "Discord cocktail"
+	glass_desc = "You did it, Verhniy! Where's the Discord Nitro cocktail, though?"
