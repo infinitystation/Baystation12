@@ -421,23 +421,23 @@
 	var/list/dat = list()
 	dat += "Choose from the following open/valid positions:<br>"
 	dat += "<a href='byond://?src=\ref[src];invalid_jobs=1'>[show_invalid_jobs ? "Hide":"Show"] unavailable jobs.</a><br>"
-	dat += "<table>"
-	dat += "<tr><td colspan = 3><b>[GLOB.using_map.station_name]</b></td></tr>"
+	dat += "<table align='center'>"
+	dat += "<tr><td colspan = 3, align='center'><b>[GLOB.using_map.station_name]</b></td></tr>"
 
-	//INF@CODE
+	//INF@CODE WARNING NOT MORE THAN 2 colBreak!!!!
 	var/list/categorizedJobs = list(
 		"Command" = list(jobs = list(), dep = COM, color = "#aac1ee"),
 		"Command Support" = list(jobs = list(), dep = SPT, color = "#aac1ee"),
 		"Engineering" = list(jobs = list(), dep = ENG, color = "#ffd699"),
 		"Security" = list(jobs = list(), dep = SEC, color = "#ff9999"),
-		"Miscellaneous" = list(jobs = list(), dep = CIV, color = "#ffffff", colBreak = 1),
+		"Civilian" = list(jobs = list(), dep = CIV, color = "#ffffff", colBreak = 1),
 		"Synthetic" = list(jobs = list(), dep = MSC, color = "#ccffcc"),
 		"Service" = list(jobs = list(), dep = SRV, color = "#cccccc"),
 		"Medical" = list(jobs = list(), dep = MED, color = "#99ffe6"),
 		"Science" = list(jobs = list(), dep = SCI, color = "#e6b3e6", colBreak = 1),
 		"Supply" = list(jobs = list(), dep = SUP, color = "#ead4ae"),
 		"Expedition" = list(jobs = list(), dep = EXP, color = "#ffd699"),
-		"ERROR" = list(jobs = list(), color = "#ffffff", colBreak = 1)
+		"ERROR" = list(jobs = list(), color = "#ffffff")
 		)
 
 	// TORCH JOBS
@@ -465,10 +465,10 @@
 			for(var/raisin in job.get_unavailable_reasons(client))
 				hidden_reasons[raisin] = TRUE
 
-	dat += "<tr><td valign='top'>"
+	dat += "<tr><td valign='top', align='center'>"
 	for(var/jobcat in categorizedJobs)
 		if(categorizedJobs[jobcat]["colBreak"])
-			dat += "</td><td valign='top'>"
+			dat += "</td><td valign='top', align='center'>"
 		if((length(categorizedJobs[jobcat]["jobs"]) < 1) && (jobcat == "ERROR"))
 			continue
 		var/color = categorizedJobs[jobcat]["color"]
@@ -481,12 +481,12 @@
 		for(var/datum/job/prof in categorizedJobs[jobcat]["jobs"])
 			dat += prof.get_join_link(client, "byond://?src=\ref[src];SelectedJob=[prof.title]", show_invalid_jobs)
 		dat += "</fieldset><br>"
-	dat += "</td></tr></table>"
+	dat += "</td></tr>"
 	// END TORCH JOBS
 
 	// SUBMAP JOBS
 	if(SSmapping.submaps)
-		dat += "<table><tr><td>"
+		dat += "<tr><td colspan = 3, align='center'>"
 		for(var/thing in SSmapping.submaps)
 			var/datum/submap/submap = thing
 			if(submap && submap.available())
@@ -509,9 +509,9 @@
 				else
 					dat += "No available positions."
 					dat += "</fieldset><br>"
-		dat += "</td></tr></table>"
+		dat += "</td></tr>"
+	dat += "</table></center>"
 	// END SUBMAP JOBS
-	dat += "</center></body></html>"
 	if(LAZYLEN(hidden_reasons))
 		var/list/additional_dat = list("<br><b>Some roles have been hidden from this list for the following reasons:</b><br>")
 		for(var/raisin in hidden_reasons)
