@@ -73,7 +73,7 @@
 	if (required_language)
 		H.add_language(required_language)
 		H.set_default_language(all_languages[required_language])
-	
+
 	if (!H.languages.len)
 		H.add_language(LANGUAGE_SPACER)
 		H.set_default_language(all_languages[LANGUAGE_SPACER])
@@ -211,9 +211,9 @@
 	if(is_available(caller))
 		if(is_restricted(caller.prefs))
 			if(show_invalid_jobs)
-				return "<tr><td><a style='text-decoration: line-through' href='[href_string]'>[title]</a></td><td>[current_positions]</td><td>(Active: [get_active_count()])</td></tr>"
+				return "<a style='text-decoration: line-through' href='[href_string]'>[title]</a> [current_positions] (Active: [get_active_count()])<br>"
 		else
-			return "<tr><td><a href='[href_string]'>[title]</a></td><td>[current_positions]</td><td>(Active: [get_active_count()])</td></tr>"
+			return "<a href='[href_string]'>[title]</a> [current_positions] (Active: [get_active_count()])<br>"
 	return ""
 
 // Only players with the job assigned and AFK for less than 10 minutes count as active
