@@ -23,6 +23,8 @@
 			return global.Failsafe;
 		if("GLOB")
 			return global.GLOB;
+		if("GPS_list")
+			return global.GPS_list;
 		if("Holiday")
 			return global.Holiday;
 		if("IClog")
@@ -111,10 +113,10 @@
 			return global.SSshuttle;
 		if("SSskybox")
 			return global.SSskybox;
-		if("SSstickyban")
-			return global.SSstickyban;
 		if("SSstatistics")
 			return global.SSstatistics;
+		if("SSstickyban")
+			return global.SSstickyban;
 		if("SSsun")
 			return global.SSsun;
 		if("SSsupply")
@@ -325,6 +327,8 @@
 			return global.client_preference_stats_;
 		if("client_repository")
 			return global.client_repository;
+		if("coding_languages")
+			return global.coding_languages;
 		if("combatlog")
 			return global.combatlog;
 		if("comm_message_listeners")
@@ -477,6 +481,8 @@
 			return global.global_message_listener;
 		if("global_vars_")
 			return global.global_vars_;
+		if("gps_by_type")
+			return global.gps_by_type;
 		if("gravity_is_on")
 			return global.gravity_is_on;
 		if("gzn_check")
@@ -952,6 +958,8 @@
 			global.Failsafe=newval;
 		if("GLOB")
 			global.GLOB=newval;
+		if("GPS_list")
+			global.GPS_list=newval;
 		if("Holiday")
 			global.Holiday=newval;
 		if("IClog")
@@ -1042,6 +1050,8 @@
 			global.SSskybox=newval;
 		if("SSstatistics")
 			global.SSstatistics=newval;
+		if("SSstickyban")
+			global.SSstickyban=newval;
 		if("SSsun")
 			global.SSsun=newval;
 		if("SSsupply")
@@ -1106,6 +1116,8 @@
 			global.admin_verbs_fun=newval;
 		if("admin_verbs_hideable")
 			global.admin_verbs_hideable=newval;
+		if("admin_verbs_judge")
+			global.admin_verbs_judge=newval;
 		if("admin_verbs_mentor")
 			global.admin_verbs_mentor=newval;
 		if("admin_verbs_mod")
@@ -1250,6 +1262,8 @@
 			global.client_preference_stats_=newval;
 		if("client_repository")
 			global.client_repository=newval;
+		if("coding_languages")
+			global.coding_languages=newval;
 		if("combatlog")
 			global.combatlog=newval;
 		if("comm_message_listeners")
@@ -1402,6 +1416,8 @@
 			global.global_message_listener=newval;
 		if("global_vars_")
 			global.global_vars_=newval;
+		if("gps_by_type")
+			global.gps_by_type=newval;
 		if("gravity_is_on")
 			global.gravity_is_on=newval;
 		if("gzn_check")
@@ -1865,6 +1881,7 @@
 	"Debug2",
 	"Failsafe",
 	"GLOB",
+	"GPS_list",
 	"Holiday",
 	"IClog",
 	"LIGHTING_CORNER_DIAGONAL",
@@ -2016,6 +2033,7 @@
 	"church_name",
 	"client_preference_stats_",
 	"client_repository",
+	"coding_languages",
 	"combatlog",
 	"comm_message_listeners",
 	"command_announcement",
@@ -2024,7 +2042,6 @@
 	"config",
 	"contamination_overlay",
 	"create_mob_html",
-	"create_object_forms",
 	"create_object_html",
 	"create_turf_html",
 	"created",
@@ -2093,6 +2110,7 @@
 	"ghost_traps",
 	"global_message_listener",
 	"global_vars_",
+	"gps_by_type",
 	"gravity_is_on",
 	"gzn_check",
 	"hadevent",
