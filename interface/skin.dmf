@@ -1288,7 +1288,7 @@ window "rpane"
 		command = "Bug-Report"
 	elem "rulesb"
 		type = BUTTON
-		pos = 120,0
+		pos = 125,0
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
@@ -1308,7 +1308,7 @@ window "rpane"
 		group = "rpanemode"
 	elem "changelog_infinity"
 		type = BUTTON
-		pos = 194,0
+		pos = 197,0
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
