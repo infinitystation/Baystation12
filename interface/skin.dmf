@@ -1257,7 +1257,6 @@ window "rpane"
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-pane = true
 	elem "rpanewindow"
@@ -1266,70 +1265,73 @@ window "rpane"
 		size = 640x474
 		anchor1 = 0,0
 		anchor2 = 100,100
-		background-color = none
 		saved-params = "splitter"
 		right = "outputwindow"
 		is-vert = false
 	elem "github"
 		type = BUTTON
-		pos = 505,0
+		pos = 476,0
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
-		background-color = #ffffff
 		saved-params = "is-checked"
 		text = "GitHub"
 		command = "GitHub"
 	elem "BugReport"
 		type = BUTTON
-		pos = 565,0
+		pos = 536,0
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
-		background-color = #ffffff
 		saved-params = "is-checked"
 		text = "Bug Report"
 		command = "Bug-Report"
-	elem "changelog"
+	elem "rulesb"
 		type = BUTTON
-		pos = 203,0
-		size = 72x15
+		pos = 120,0
+		size = 60x15
 		anchor1 = none
 		anchor2 = none
-		background-color = #ffffff
 		saved-params = "is-checked"
-		text = "BayChangelog"
+		text = "Rules"
+		command = "servinfo"
+		group = "rpanemode"
+	elem "changelog"
+		type = BUTTON
+		pos = 416,0
+		size = 60x15
+		anchor1 = none
+		anchor2 = none
+		saved-params = "is-checked"
+		text = "Changelog"
 		command = "Baystation12-Changelog"
 		group = "rpanemode"
 	elem "changelog_infinity"
 		type = BUTTON
-		pos = 400,0
-		size = 105x15
+		pos = 416,15
+		size = 60x15
 		anchor1 = none
 		anchor2 = none
-		background-color = #ffffff
 		saved-params = "is-checked"
-		text = "Infinity Changelog"
+		text = "Infinity"
 		command = "Infinity-Changelog"
 		group = "rpanemode"
 	elem "forumb"
 		type = BUTTON
-		pos = 335,0
+		pos = 328,0
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
-		background-color = #ffffff
 		saved-params = "is-checked"
 		text = "Forum"
 		command = "forum"
 		group = "rpanemode"
 	elem "wikib"
 		type = BUTTON
-		pos = 275,0
+		pos = 268,0
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
-		background-color = #ffffff
 		saved-params = "is-checked"
 		text = "Wiki"
 		command = "wiki"
@@ -1340,7 +1342,6 @@ window "rpane"
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		is-visible = false
 		saved-params = "is-checked"
 		text = "Text"
@@ -1354,7 +1355,6 @@ window "rpane"
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		is-visible = false
 		saved-params = "is-checked"
 		text = "Browser"
@@ -1367,24 +1367,12 @@ window "rpane"
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
-		background-color = #ffffff
 		is-visible = false
 		saved-params = "is-checked"
 		text = "Info"
 		command = ".winset \"rpanewindow.left=infowindow\""
 		group = "rpanemode"
 		button-type = pushbox
-	elem "referenseb"
-		type = BUTTON
-		pos = 143,0
-		size = 60x15
-		anchor1 = none
-		anchor2 = none
-		background-color = #ffffff
-		saved-params = "is-checked"
-		text = "Rules"
-		command = "servinfo"
-		group = "rpanemode"
 
 window "browserwindow"
 	elem "browserwindow"
