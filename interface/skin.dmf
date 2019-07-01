@@ -1308,7 +1308,7 @@ window "rpane"
 		group = "rpanemode"
 	elem "changelog_infinity"
 		type = BUTTON
-		pos = 416,15
+		pos = 194,0
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
