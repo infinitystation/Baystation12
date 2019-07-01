@@ -6,16 +6,18 @@
 	sort_order = 5
 
 /datum/category_item/player_setup_item/player_global/settings/load_preferences(var/savefile/S)
-	from_file(S["lastinfchangelog"], pref.lastinfchangelog)
 	from_file(S["lastchangelog"], pref.lastchangelog)
 	from_file(S["default_slot"], pref.default_slot)
 	from_file(S["preference_values"], pref.preference_values)
 
+	from_file(S["lastchangelog_infinity"], pref.lastchangelog_infinity)
+
 /datum/category_item/player_setup_item/player_global/settings/save_preferences(var/savefile/S)
-	to_file(S["lastinfchangelog"], pref.lastinfchangelog)
 	to_file(S["lastchangelog"], pref.lastchangelog)
 	to_file(S["default_slot"], pref.default_slot)
 	to_file(S["preference_values"], pref.preference_values)
+
+	to_file(S["lastchangelog_infinity"], pref.lastchangelog_infinity)
 
 /datum/category_item/player_setup_item/player_global/settings/update_setup(var/savefile/preferences, var/savefile/character)
 	if(preferences["version"] < 16)
@@ -62,8 +64,9 @@
 			pref.preference_values -= key
 
 	pref.lastchangelog	= sanitize_text(pref.lastchangelog, initial(pref.lastchangelog))
-	pref.lastinfchangelog	= sanitize_text(pref.lastinfchangelog, initial(pref.lastinfchangelog))
 	pref.default_slot	= sanitize_integer(pref.default_slot, 1, config.character_slots, initial(pref.default_slot))
+
+	pref.lastchangelog_infinity = sanitize_text(pref.lastchangelog_infinity, initial(pref.lastchangelog_infinity))
 
 /datum/category_item/player_setup_item/player_global/settings/content(var/mob/user)
 	. = list()
