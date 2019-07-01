@@ -28,10 +28,10 @@
 			return
 
 		if(M.gender == MALE)
-			emote_sound = "sound/voice/gasp_male_[rand(1,7)].ogg"
+			emote_sound = "infinity/voice/gasp_male_[rand(1,7)].ogg"
 
 		if(M.gender == FEMALE)
-			emote_sound = "sound/voice/gasp_female[rand(1,7)].ogg"
+			emote_sound = "infinity/sound/voice/gasp_female[rand(1,7)].ogg"
 
 		if(emote_sound)
 			playsound(M, emote_sound, 30, 0, 1)
@@ -83,7 +83,7 @@
 		if(H.isMonkey())//|| M.gender == NEUTER) It would be nice to whistle in Machine body. ~Quardbreak
 			return
 
-		emote_sound = "sound/voice/whistle.ogg"
+		emote_sound = "infinity/sound/voice/whistle.ogg"
 
 		if(emote_sound)
 			playsound(M, emote_sound, 30, 0, 1)
@@ -108,10 +108,10 @@
 			return
 
 		if(M.gender == MALE)
-			emote_sound = "sound/voice/sneeze_male_[rand(1,2)].ogg"
+			emote_sound = "infinity/sound/voice/sneeze_male_[rand(1,2)].ogg"
 
 		if(M.gender == FEMALE)
-			emote_sound = "sound/voice/sneeze_female_[rand(1,2)].ogg"
+			emote_sound = "infinity/sound/voice/sneeze_female_[rand(1,2)].ogg"
 
 		if(emote_sound)
 			playsound(M, emote_sound, 30, 0, 1)
@@ -132,7 +132,7 @@
 		if(H.isMonkey()|| M.gender == NEUTER)
 			return
 
-		emote_sound = "sound/voice/snore_[rand(1,7)].ogg"
+		emote_sound = "infinity/sound/voice/snore_[rand(1,7)].ogg"
 
 		if(emote_sound)
 			playsound(M, emote_sound, 30, 0, 1)
@@ -156,10 +156,10 @@
 			return
 
 		if(M.gender == MALE)
-			emote_sound = "sound/voice/yawn_male_[rand(1,2)].ogg"
+			emote_sound = "infinity/sound/voice/yawn_male_[rand(1,2)].ogg"
 
 		if(M.gender == FEMALE)
-			emote_sound = "sound/voice/yawn_female_[rand(1,3)].ogg"
+			emote_sound = "infinity/sound/voice/yawn_female_[rand(1,3)].ogg"
 
 		if(emote_sound)
 			playsound(M, emote_sound, 30, 0, 1)
@@ -178,7 +178,7 @@
 		if(H.isMonkey())
 			return
 
-		emote_sound = "sound/effects/clap.ogg"
+		emote_sound = "infinity/sound/effects/clap.ogg"
 
 		if(emote_sound)
 			playsound(M, emote_sound, 30, 0, 1)
@@ -198,7 +198,7 @@
 			return
 
 		if(H.get_species() == SPECIES_RESOMI)
-			emote_sound = "sound/voice/resomicougha.ogg"
+			emote_sound = "infinity/sound/voice/resomicougha.ogg"
 
 		if(emote_sound)
 			playsound(M, emote_sound, 30, 0, 1)
@@ -219,13 +219,13 @@
 			return
 
 		if(M.gender == MALE)
-			emote_sound = "sound/voice/cough_male.ogg"
+			emote_sound = "infinity/sound/voice/cough_male.ogg"
 
 		if(M.gender == FEMALE)
-			emote_sound = "sound/voice/cough_female.ogg"
+			emote_sound = "infinity/sound/voice/cough_female.ogg"
 
 		if(H.get_species() == SPECIES_RESOMI)
-			emote_sound = "sound/voice/resomicoughb.ogg"
+			emote_sound = "infinity/sound/voice/resomicoughb.ogg"
 
 		if(emote_sound)
 			playsound(M, emote_sound, 30, 0, 1)
@@ -244,7 +244,7 @@
 		if(H.isMonkey())
 			return
 
-		emote_sound = "sound/effects/salute.ogg"
+		emote_sound = "infinity/sound/effects/salute.ogg"
 
 		if(emote_sound)
 			playsound(M, emote_sound, 30, 0, 1)
@@ -264,10 +264,10 @@
 			return
 
 		if(M.gender == MALE)
-			emote_sound = "sound/voice/cry_male_[rand(1,2)].ogg"
+			emote_sound = "infinity/sound/voice/cry_male_[rand(1,2)].ogg"
 
 		if(M.gender == FEMALE)
-			emote_sound = "sound/voice/cry_female_[rand(1,3)].ogg"
+			emote_sound = "infinity/sound/voice/cry_female_[rand(1,3)].ogg"
 
 		if(emote_sound)
 			playsound(M, emote_sound, 30, 0, 1)
@@ -287,10 +287,10 @@
 			return
 
 		if(M.gender == MALE)
-			emote_sound = "sound/voice/sigh_male.ogg"
+			emote_sound = "infinity/sound/voice/sigh_male.ogg"
 
 		if(M.gender == FEMALE)
-			emote_sound = "sound/voice/sigh_female.ogg"
+			emote_sound = "infinity/sound/voice/sigh_female.ogg"
 
 		if(emote_sound)
 			playsound(M, emote_sound, 30, 0, 1)
@@ -312,13 +312,13 @@
 			return
 
 		if(M.gender == MALE)
-			emote_sound = "sound/voice/laugh_male_1.ogg" //we also have 2, 3
+			emote_sound = "infinity/sound/voice/laugh_male_1.ogg" //we also have 2, 3
 
 		if(M.gender == FEMALE)
-			emote_sound = "sound/voice/laugh_female_2.ogg" //we also have 1, 3
+			emote_sound = "infinity/sound/voice/laugh_female_2.ogg" //we also have 1, 3
 
 		if(H.get_species() == SPECIES_RESOMI)
-			emote_sound = "sound/voice/resomicougha.ogg"
+			emote_sound = "infinity/sound/voice/resomicougha.ogg"
 
 		if(emote_sound)
 			playsound(M, emote_sound, 30, 0, 1)
@@ -356,10 +356,10 @@
 			return
 
 		if(M.gender == MALE)
-			emote_sound = "sound/voice/giggle_male_2.ogg" //we also have 1
+			emote_sound = "infinity/sound/voice/giggle_male_2.ogg" //we also have 1
 
 		if(M.gender == FEMALE)
-			emote_sound = "sound/voice/giggle_female_3.ogg" //we also have 1, 2
+			emote_sound = "infinity/sound/voice/giggle_female_3.ogg" //we also have 1, 2
 
 		if(emote_sound)
 			playsound(M, emote_sound, 30, 0, 1)
@@ -379,16 +379,16 @@
 			return
 
 		if(M.gender == MALE)
-			emote_sound = "sound/voice/scream_male_[rand(1,3)].ogg"
+			emote_sound = "infinity/sound/voice/scream_male_[rand(1,3)].ogg"
 
 		if(M.gender == FEMALE)
-			emote_sound = "sound/voice/scream_female_[rand(1,2)].ogg"
+			emote_sound = "infinity/sound/voice/scream_female_[rand(1,2)].ogg"
 
 		if(H.get_species() == SPECIES_XENO)
-			emote_sound = "sound/voice/alien_pain.ogg"
+			emote_sound = "infinity/sound/voice/alien_pain.ogg"
 
 		if(H.get_species() == SPECIES_RESOMI)
-			emote_sound = "sound/voice/resomisneeze.ogg"
+			emote_sound = "infinity/sound/voice/resomisneeze.ogg"
 
 		if(emote_sound)
 			playsound(M, emote_sound, 30, 0, 1)

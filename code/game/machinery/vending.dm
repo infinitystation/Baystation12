@@ -186,9 +186,11 @@
 		return
 	else if(istype(W, /obj/item/weapon/screwdriver))
 		src.panel_open = !src.panel_open
-		var/interact_sound = "[src.panel_open ? "open" : "close"]"
-		to_chat(user, "You [interact_sound] the maintenance panel.")
-		playsound(src.loc, "sound/machines/Custom_screwdriver[interact_sound].ogg", 50, 1)
+
+		to_chat(user, "You [panel_open ? "open" : "close"] the maintenance panel.")
+		var/interact_sound = panel_open ? GLOB.machinery_exposed_sound[1] : GLOB.machinery_exposed_sound[2]
+		playsound(src, pick(interact_sound), 50, 1)
+
 		src.overlays.Cut()
 		if(src.panel_open)
 			src.overlays += image(src.icon, "[initial(icon_state)]-panel")
@@ -306,7 +308,7 @@
 	else
 		// Okay to move the money at this point
 		customer_account.transfer(vendor_account, currently_vending.price, "Purchase of [currently_vending.item_name]")
-		
+
 		return 1
 
 /**
@@ -484,7 +486,7 @@
 				if(R.get_product(get_turf(src)))
 					src.visible_message("<span class='notice'>\The [src] clunks as it vends an additional [R.item_name].</span>")
 
-		playsound(src.loc, 'sound/machines/vending_drop.ogg', 65, 1)
+		playsound(src.loc, 'infinity/sound/machines/vending_drop.ogg', 65, 1)
 		src.status_message = ""
 		src.status_error = 0
 		src.vend_ready = 1

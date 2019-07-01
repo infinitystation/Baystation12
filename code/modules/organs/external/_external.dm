@@ -1032,7 +1032,7 @@ obj/item/organ/external/proc/remove_clamps()
 		jostle_bone()
 		if(can_feel_pain())
 			if(prob(50))
-				agony_scream(owner)
+				owner.agony_scream()
 			owner.emote("scream")
 
 	playsound(src.loc, "fracture", 100, 1, -2)

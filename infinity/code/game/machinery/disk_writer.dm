@@ -81,7 +81,7 @@
 	if(disk && !writing)
 		dat += "<br><a href='?src=\ref[src];eject=1'>Eject Disk</a>"
 
-	playsound(src, 'sound/machines/console/console2.ogg', 40, 1)
+	playsound(src, 'infinity/sound/machines/console/console2.ogg', 40, 1)
 
 	var/datum/browser/popup = new(user, "musicwriter", "Music Writer", 200, 100)
 	popup.set_content(dat)
@@ -100,13 +100,13 @@
 					cooldown += 5 MINUTES
 					sleep(40)
 
-					playsound(src, 'sound/machines/console/console_success.ogg', 40, 1)
+					playsound(src, 'infinity/sound/machines/console/console_success.ogg', 40, 1)
 					sleep(20)
 
 					eject(usr)
 					set_off()
 			else
-				playsound(src, 'sound/machines/console/console_error.ogg', 40, 1)
+				playsound(src, 'infinity/sound/machines/console/console_error.ogg', 40, 1)
 				to_chat(usr, "<span class='danger'>You can't rewrite this disk.</span>")
 
 	if(href_list["eject"])
@@ -129,29 +129,26 @@
 /obj/machinery/media/music_writer/proc/write_disk(mob/user)
 	set_on(user)
 
-	var/interact_sound = "sound/machines/console/console_interact[rand(1,7)].ogg"
-	playsound(src, interact_sound, 40, 1)
+	playsound(src, pick(GLOB.console_interact_sound), 40, 1)
 
 	var/new_sound_file = input(user, "Pick file:","File") as null|sound
 	if(!new_sound_file)
-		playsound(src, 'sound/machines/console/console_error.ogg', 40, 1)
+		playsound(src, 'infinity/sound/machines/console/console_error.ogg', 40, 1)
 		return
 
-	interact_sound = "sound/machines/console/console_interact[rand(1,7)].ogg"
-	playsound(src, interact_sound, 40, 1)
+	playsound(src, pick(GLOB.console_interact_sound), 40, 1)
 
 	var/new_name = input(user, "Name the cassette:") as null|text
 	if(!new_name)
-		playsound(src, 'sound/machines/console/console_error.ogg', 40, 1)
+		playsound(src, 'infinity/sound/machines/console/console_error.ogg', 40, 1)
 		return
 
-	interact_sound = "sound/machines/console/console_interact[rand(1,7)].ogg"
-	playsound(src, interact_sound, 40, 1)
+	playsound(src, pick(GLOB.console_interact_sound), 40, 1)
 
 	new_name = sanitizeSafe(new_name)
 
 	if(new_sound_file && new_name && writing)
-		playsound(src, 'sound/machines/console/console.ogg', 40)
+		playsound(src, 'infinity/sound/machines/console/console.ogg', 40)
 
 		disk.SetName("cassette - \"[new_name]\"")
 
@@ -167,7 +164,7 @@
 	return 0
 
 /obj/machinery/media/music_writer/proc/eject(mob/user)
-	playsound(src, 'sound/machines/console/console3.ogg', 40, 1)
+	playsound(src, 'infinity/sound/machines/console/console3.ogg', 40, 1)
 	user.put_in_hands(disk)
 	disk = null
 

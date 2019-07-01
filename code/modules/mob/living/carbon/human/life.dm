@@ -127,7 +127,7 @@
 		if(zone_exposure >= 1)
 			return 1
 		pressure_adjustment_coefficient = max(pressure_adjustment_coefficient, zone_exposure)
-	
+
 	pressure_adjustment_coefficient = Clamp(pressure_adjustment_coefficient, 0, 1) // So it isn't less than 0 or larger than 1.
 
 	return pressure_adjustment_coefficient
@@ -291,6 +291,9 @@
 /mob/living/carbon/human/get_breath_from_internal(volume_needed=STD_BREATH_VOLUME)
 	if(internal)
 
+		if((head && (head.item_flags & ITEM_FLAG_AIRTIGHT))) // INFINITY
+			playsound(src, pick(GLOB.rig_breath_sound), 100, 1)
+
 		var/obj/item/weapon/tank/rig_supply
 		if(istype(back,/obj/item/weapon/rig))
 			var/obj/item/weapon/rig/rig = back
@@ -301,8 +304,6 @@
 			internal = null
 
 		if(internal)
-			if((head && (head.item_flags & ITEM_FLAG_AIRTIGHT)))
-				playsound(loc, "sound/voice/gasmask[rand(1, 10)].ogg", 75, 1)
 			return internal.remove_air_volume(volume_needed)
 		else if(internals)
 			internals.icon_state = "internal0"

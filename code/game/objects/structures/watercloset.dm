@@ -274,8 +274,8 @@
 	update_icon()
 	if(on)
 		QDEL_NULL(sound_token)
-		playsound(src.loc, 'sound/machines/shower_start.ogg', 40)
-		sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, 'sound/machines/shower_mid3.ogg', volume = 20, range = 7, falloff = 4, prefer_mute = TRUE)
+		playsound(src.loc, 'infinity/sound/machines/shower_start.ogg', 40)
+		sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, 'infinity/sound/machines/shower_mid3.ogg', volume = 20, range = 7, falloff = 4, prefer_mute = TRUE)
 		if (M.loc == loc)
 			wash(M)
 			process_heat(M)
@@ -283,7 +283,7 @@
 			G.clean_blood()
 	else
 		QDEL_NULL(sound_token)
-		playsound(src.loc, 'sound/machines/shower_end.ogg', 40)
+		playsound(src.loc, 'infinity/sound/machines/shower_end.ogg', 40)
 
 /obj/structure/hygiene/shower/attackby(obj/item/I as obj, var/mob/user)
 	if(istype(I, /obj/item/device/scanner/gas))

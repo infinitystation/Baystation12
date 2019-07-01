@@ -15,11 +15,11 @@
 	matter = list(DEFAULT_WALL_MATERIAL = 5000, "silver" = 2000)
 	center_of_mass = "x=16;y=7"
 	attack_verb = list("drilled", "screwed", "jabbed","whacked")
-	hitsound = 'sound/items/drill_hit.ogg'
+	hitsound = 'infinity/sound/items/drill_hit.ogg'
 	//usesound = 'sound/items/drill_use.ogg'
 
 /obj/item/weapon/screwdriver/power/attack_self(mob/user)
-	playsound(get_turf(user),'sound/items/change_drill.ogg',50,1)
+	playsound(get_turf(user),'infinity/sound/items/change_drill.ogg',50,1)
 	var/obj/item/weapon/wrench/power/b_drill = new /obj/item/weapon/wrench/power
 	to_chat(user, "<span class='notice'>You attach the bolt driver bit to [src].</span>")
 	qdel(src)

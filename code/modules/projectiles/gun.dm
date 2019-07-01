@@ -100,7 +100,7 @@
 
 	if(isnull(scoped_accuracy))
 		scoped_accuracy = accuracy
-	
+
 	if(scope_zoom)
 		verbs += /obj/item/weapon/gun/proc/scope
 
@@ -354,7 +354,7 @@
 	stood_still = max(0,round((world.time - stood_still)/10) - 1)
 	if(stood_still)
 		acc_mod += min(max(2, accuracy), stood_still)
-	else 
+	else
 		acc_mod -= w_class - ITEM_SIZE_NORMAL
 		acc_mod -= bulk
 
@@ -438,7 +438,7 @@
 		user.visible_message("<span class = 'warning'>[user] pulls the trigger.</span>")
 		var/shot_sound = in_chamber.fire_sound? in_chamber.fire_sound : fire_sound
 		if(safety())
-			playsound(src.loc, 'sound/weapons/gun_empty.ogg', 100, 1)
+			playsound(src.loc, 'infinity/sound/weapons/gun_empty.ogg', 100, 1)
 			spawn(5)
 			to_chat(user, "<span class = 'notice'>...Sounds like it was on safety...</span>")
 			mouthshoot = 0

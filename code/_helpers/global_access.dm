@@ -111,10 +111,10 @@
 			return global.SSshuttle;
 		if("SSskybox")
 			return global.SSskybox;
-		if("SSstickyban")
-			return global.SSstickyban;
 		if("SSstatistics")
 			return global.SSstatistics;
+		if("SSstickyban")
+			return global.SSstickyban;
 		if("SSsun")
 			return global.SSsun;
 		if("SSsupply")
@@ -1044,6 +1044,8 @@
 			global.SSskybox=newval;
 		if("SSstatistics")
 			global.SSstatistics=newval;
+		if("SSstickyban")
+			global.SSstickyban=newval;
 		if("SSsun")
 			global.SSsun=newval;
 		if("SSsupply")
@@ -1108,6 +1110,8 @@
 			global.admin_verbs_fun=newval;
 		if("admin_verbs_hideable")
 			global.admin_verbs_hideable=newval;
+		if("admin_verbs_judge")
+			global.admin_verbs_judge=newval;
 		if("admin_verbs_mentor")
 			global.admin_verbs_mentor=newval;
 		if("admin_verbs_mod")

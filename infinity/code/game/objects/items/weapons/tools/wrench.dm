@@ -18,7 +18,7 @@
 	//usesound = 'sound/items/drill_use.ogg'
 
 /obj/item/weapon/wrench/power/attack_self(mob/user)
-	playsound(get_turf(user),'sound/items/change_drill.ogg',50,1)
+	playsound(get_turf(user),'infinity/sound/items/change_drill.ogg',50,1)
 	var/obj/item/weapon/screwdriver/power/s_drill = new /obj/item/weapon/screwdriver/power
 	to_chat(user, "<span class='notice'>You attach the screw driver bit to [src].</span>")
 	qdel(src)

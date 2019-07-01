@@ -19,7 +19,7 @@
 	//usesound = 'sound/items/jaws_cut.ogg'
 
 /obj/item/weapon/crowbar/power/attack_self(mob/user)
-	playsound(get_turf(user), 'sound/items/change_jaws.ogg', 50, 1)
+	playsound(get_turf(user), 'infinity/sound/items/change_jaws.ogg', 50, 1)
 	var/obj/item/weapon/wirecutters/power/cutjaws = new /obj/item/weapon/wirecutters/power
 	to_chat(user, "<span class='notice'>You attach the cutting jaws to [src].</span>")
 	qdel(src)
