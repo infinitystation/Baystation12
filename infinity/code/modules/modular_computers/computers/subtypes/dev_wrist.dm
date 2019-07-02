@@ -14,6 +14,8 @@
 	color = COLOR_GUNMETAL
 	item_state_slots = list(slot_wear_id_str = "wc_base")
 
+	interact_sounds = list('infinity/sound/items/ui_pipboy_select.wav')
+
 	var/stripe_color
 
 /obj/item/modular_computer/pda/wrist/get_mob_overlay(var/mob/user_mob, var/slot)
