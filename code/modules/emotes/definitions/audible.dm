@@ -83,7 +83,7 @@
 		if(H.isMonkey())//|| M.gender == NEUTER) It would be nice to whistle in Machine body. ~Quardbreak
 			return
 
-		emote_sound = "infinity/sound/voice/whistle.ogg"
+		emote_sound = 'infinity/sound/voice/whistle.ogg'
 
 		if(emote_sound)
 			playsound(M, emote_sound, 30, 0, 1)
