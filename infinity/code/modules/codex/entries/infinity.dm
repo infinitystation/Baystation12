@@ -6,10 +6,10 @@
 	associated_paths = list(/obj/item/clothing/accessory/locket)
 	mechanics_text = "Also, you can write in locket with a pen."
 
-/datum/codex_entry/wrist_pda
-	associated_paths = list(/obj/item/modular_computer/wrist)
+/datum/codex_entry/wrist_computer
+	associated_paths = list(/obj/item/modular_computer/pda/wrist)
 	lore_text = "Morally obsolete and replaced by a more compact and perfect personal computer, \
-	the wrist PDA has been used to this day as a cheap replacement for more expensive equipment in some small corporations, \
+	the wrist computer has been used to this day as a cheap replacement for more expensive equipment in some small corporations, \
 	and sometimes for the sake of aesthetic pleasure of it's owner."
 
 /datum/codex_entry/floor_light

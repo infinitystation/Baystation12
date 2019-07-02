@@ -16,18 +16,6 @@
 
 	var/stripe_color
 
-/obj/item/modular_computer/pda/wrist/on_update_icon()
-	..()
-	if(stripe_color)
-		var/image/I = image(icon = icon, icon_state = "wc_stripe")
-		I.appearance_flags |= RESET_COLOR
-		I.color = stripe_color
-		overlays.Add(I)
-
-	var/mob/living/carbon/human/H = loc
-	if(istype(H) && H.wear_id == src)
-		H.update_inv_wear_id()
-
 /obj/item/modular_computer/pda/wrist/get_mob_overlay(var/mob/user_mob, var/slot)
 	var/image/ret = ..()
 	if(slot == slot_wear_id_str)
@@ -44,6 +32,47 @@
 			I.color = stripe_color
 			overlays.Add(I)
 	return ret
+
+/obj/item/modular_computer/pda/wrist/on_update_icon()
+	icon_state = icon_state_unpowered
+	overlays.Cut()
+
+	if(stripe_color)
+		var/image/I = image(icon = icon, icon_state = "wc_stripe")
+		I.appearance_flags |= RESET_COLOR
+		I.color = stripe_color
+		overlays.Add(I)
+
+	var/mob/living/carbon/human/H = loc
+	if(istype(H) && H.wear_id == src)
+		H.update_inv_wear_id()
+
+	if(bsod || updating)
+		var/image/I = image(icon = icon, icon_state ="bsod")
+		I.appearance_flags |= RESET_COLOR
+		overlays.Add(I)
+		return
+	if(!enabled)
+		if(icon_state_screensaver)
+			var/image/I = image(icon = icon, icon_state = icon_state_screensaver)
+			I.appearance_flags |= RESET_COLOR
+			overlays.Add(I)
+		set_light(0)
+		return
+	set_light(0.2, 0.1, light_strength)
+	if(active_program)
+		var/image/I = image(icon = icon, icon_state = active_program.program_icon_state ? active_program.program_icon_state : icon_state_menu)
+		I.appearance_flags |= RESET_COLOR
+		overlays.Add(I)
+		if(active_program.program_key_state)
+			I = image(icon = icon, icon_state = active_program.program_key_state)
+			I.appearance_flags |= RESET_COLOR
+			overlays.Add(I)
+	else
+		overlays.Add(icon_state_menu)
+		var/image/I = image(icon = icon, icon_state = icon_state_menu)
+		I.appearance_flags |= RESET_COLOR
+		overlays.Add(I)
 
 /obj/item/modular_computer/pda/wrist/AltClick(var/mob/user)
 	if(!CanPhysicallyInteract(user))
@@ -80,90 +109,81 @@
 	startswith = list(/obj/item/modular_computer/pda/wrist = 5)
 
 // wrist types
-/* to-do - set color and stripe_color
+
 /obj/item/modular_computer/pda/wrist/medical
-	icon_state = "wrist-m"
-	icon_state_unpowered = "wrist-m"
+	color = COLOR_OFF_WHITE
+	stripe_color = COLOR_BLUE_GRAY
 
 /obj/item/modular_computer/pda/wrist/chemistry
-	icon_state = "wrist-m"
-	icon_state_unpowered = "wrist-m"
+	color = COLOR_OFF_WHITE
+	stripe_color = COLOR_BLUE_GRAY
 
 /obj/item/modular_computer/pda/wrist/engineering
-	icon_state = "wrist-e"
-	icon_state_unpowered = "wrist-e"
+	stripe_color = COLOR_ORANGE
 
 /obj/item/modular_computer/pda/wrist/security
-	icon_state = "wrist-s"
-	icon_state_unpowered = "wrist-s"
+	stripe_color = COLOR_MAROON
 
 /obj/item/modular_computer/pda/wrist/forensics
-	icon_state = "wrist-s"
-	icon_state_unpowered = "wrist-s"
+	stripe_color = COLOR_MAROON
 
 /obj/item/modular_computer/pda/wrist/science
-	icon_state = "wrist-nt"
-	icon_state_unpowered = "wrist-nt"
+	stripe_color = COLOR_RESEARCH
 
 /obj/item/modular_computer/pda/wrist/heads
-	icon_state = "wrist-h"
-	icon_state_unpowered = "wrist-h"
+	color = PIPE_COLOR_BLACK
+	stripe_color = COLOR_BLUE_GRAY
 
 /obj/item/modular_computer/pda/wrist/heads/paperpusher
 	stored_pen = /obj/item/weapon/pen/fancy
 
 /obj/item/modular_computer/pda/wrist/heads/hop
-	icon_state = "wrist-hop"
-	icon_state_unpowered = "wrist-hop"
+	stripe_color = COLOR_SKY_BLUE
 
 /obj/item/modular_computer/pda/wrist/heads/hos
-	icon_state = "wrist-hos"
-	icon_state_unpowered = "wrist-hos"
+	stripe_color = COLOR_MAROON
 
 /obj/item/modular_computer/pda/wrist/heads/ce
-	icon_state = "wrist-ce"
-	icon_state_unpowered = "wrist-ce"
+	color = COLOR_OFF_WHITE
+	stripe_color = COLOR_ORANGE
 
 /obj/item/modular_computer/pda/wrist/heads/cmo
-	icon_state = "wrist-cmo"
-	icon_state_unpowered = "wrist-cmo"
+	color = COLOR_OFF_WHITE
+	stripe_color = COLOR_BLUE_GRAY
 
 /obj/item/modular_computer/pda/wrist/heads/rd
-	icon_state = "wrist-rd"
-	icon_state_unpowered = "wrist-rd"
+	stripe_color = COLOR_RESEARCH
 
 /obj/item/modular_computer/pda/wrist/captain
-	icon_state = "wrist-c"
-	icon_state_unpowered = "wrist-c"
+	color = PIPE_COLOR_BLACK
+	stripe_color = COLOR_YELLOW
 
 /obj/item/modular_computer/pda/wrist/ert
-	icon_state = "wrist-h"
-	icon_state_unpowered = "wrist-h"
+	color = PIPE_COLOR_BLACK
+	stripe_color = COLOR_YELLOW
 
 /obj/item/modular_computer/pda/wrist/cargo
-	icon_state = "wrist-sup"
-	icon_state_unpowered = "wrist-sup"
+	stripe_color = COLOR_PALE_YELLOW
 
 /obj/item/modular_computer/pda/wrist/syndicate
-	icon_state = "wrist-syn"
-	icon_state_unpowered = "wrist-syn"
+	color = PIPE_COLOR_BLACK
+	stripe_color = COLOR_MAROON
 
 /obj/item/modular_computer/pda/wrist/roboticist
-	icon_state = "wrist-robot"
-	icon_state_unpowered = "wrist-robot"
+	stripe_color = COLOR_ORANGE
 
 /obj/item/modular_computer/pda/wrist/explorer
-	icon_state = "wrist-exp"
-	icon_state_unpowered = "wrist-exp"
+	color = PIPE_COLOR_BLACK
+	stripe_color = COLOR_INDIGO
 
 /obj/item/modular_computer/pda/wrist/grey
-	icon_state = "wrist-grey"
-	icon_state_unpowered = "wrist-grey"
+	color = COLOR_GRAY
 
 /obj/item/modular_computer/pda/wrist/lila
+	color = null
 	icon_state = "wrist-lila"
 	icon_state_unpowered = "wrist-lila"
 
 /obj/item/modular_computer/pda/wrist/lila/black
 	icon_state = "wrist-lila-black"
-	icon_state_unpowered = "wrist-lila-black"*/
+	icon_state_unpowered = "wrist-lila-black"

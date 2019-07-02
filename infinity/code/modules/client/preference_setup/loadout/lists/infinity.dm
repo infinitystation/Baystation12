@@ -142,38 +142,38 @@
 	if(H.equip_to_slot_if_possible(item, slot, del_on_fail = 1))
 		. = item
 
-/datum/gear/utility/wristpda
-	display_name = "Wrist PDA selection"
-	path = /obj/item/modular_computer/wrist
+/datum/gear/utility/wrist_computer
+	display_name = "Wrist computer selection"
+	path = /obj/item/modular_computer/pda/wrist
 	cost = 2
 
-/datum/gear/utility/wristpda/New()
+/datum/gear/utility/wrist_computer/New()
 	..()
-	var/wpdas = list()
+	var/wcomp = list()
 	slot = slot_wear_id
-	wpdas["black"]                   = /obj/item/modular_computer/wrist/
-	wpdas["lightgrey"]               = /obj/item/modular_computer/wrist/grey
-	wpdas["black-red (sec)"]         = /obj/item/modular_computer/wrist/security
-	wpdas["brown (sup)"]             = /obj/item/modular_computer/wrist/cargo
-	wpdas["yellow (eng)"]            = /obj/item/modular_computer/wrist/engineering
-	wpdas["navy (heads)"]            = /obj/item/modular_computer/wrist/heads
-	wpdas["navy-red (hos)"]          = /obj/item/modular_computer/wrist/heads/hos
-	wpdas["navy-gold (capt)"]        = /obj/item/modular_computer/wrist/captain
-	wpdas["navy-blue (cmo)"]         = /obj/item/modular_computer/wrist/heads/cmo
-	wpdas["navy-white (hop)"]        = /obj/item/modular_computer/wrist/heads/hop
-	wpdas["navy-yellow (ce)"]        = /obj/item/modular_computer/wrist/heads/ce
-	wpdas["navy-darkgreen (rd)"]     = /obj/item/modular_computer/wrist/heads/rd
-	wpdas["blue (med)"]              = /obj/item/modular_computer/wrist/medical
-	wpdas["purple (exp)"]            = /obj/item/modular_computer/wrist/explorer
-	wpdas["lightgrey-darkgreen (sci)"]   = /obj/item/modular_computer/wrist/science
-	wpdas["lightgrey-yellowblue (robot)"]= /obj/item/modular_computer/wrist/roboticist
-	wpdas["black (mercs)"]           = /obj/item/modular_computer/wrist/syndicate
-	wpdas["short (lightgrey)"]       = /obj/item/modular_computer/wrist/lila
-	wpdas["short (black)"]           = /obj/item/modular_computer/wrist/lila/black
-	gear_tweaks += new/datum/gear_tweak/path(wpdas)
+	wcomp["black"]                   = /obj/item/modular_computer/pda/wrist/
+	wcomp["lightgrey"]               = /obj/item/modular_computer/pda/wrist/grey
+	wcomp["black-red (sec)"]         = /obj/item/modular_computer/pda/wrist/security
+	wcomp["brown (sup)"]             = /obj/item/modular_computer/pda/wrist/cargo
+	wcomp["yellow (eng)"]            = /obj/item/modular_computer/pda/wrist/engineering
+	wcomp["navy (heads)"]            = /obj/item/modular_computer/pda/wrist/heads
+	wcomp["navy-red (hos)"]          = /obj/item/modular_computer/pda/wrist/heads/hos
+	wcomp["navy-gold (capt)"]        = /obj/item/modular_computer/pda/wrist/captain
+	wcomp["navy-blue (cmo)"]         = /obj/item/modular_computer/pda/wrist/heads/cmo
+	wcomp["navy-white (hop)"]        = /obj/item/modular_computer/pda/wrist/heads/hop
+	wcomp["navy-yellow (ce)"]        = /obj/item/modular_computer/pda/wrist/heads/ce
+	wcomp["navy-darkgreen (rd)"]     = /obj/item/modular_computer/pda/wrist/heads/rd
+	wcomp["blue (med)"]              = /obj/item/modular_computer/pda/wrist/medical
+	wcomp["purple (exp)"]            = /obj/item/modular_computer/pda/wrist/explorer
+	wcomp["lightgrey-darkgreen (sci)"]   = /obj/item/modular_computer/pda/wrist/science
+	wcomp["lightgrey-yellowblue (robot)"]= /obj/item/modular_computer/pda/wrist/roboticist
+	wcomp["black (mercs)"]           = /obj/item/modular_computer/pda/wrist/syndicate
+	wcomp["short (lightgrey)"]       = /obj/item/modular_computer/pda/wrist/lila
+	wcomp["short (black)"]           = /obj/item/modular_computer/pda/wrist/lila/black
+	gear_tweaks += new/datum/gear_tweak/path(wcomp)
 
-/datum/gear/utility/wristpda/spawn_on_mob(var/mob/living/carbon/human/H, var/metadata)
-	var/obj/item/modular_computer/wrist/item = spawn_item(H, metadata)
+/datum/gear/utility/wrist_computer/spawn_on_mob(var/mob/living/carbon/human/H, var/metadata)
+	var/obj/item/modular_computer/pda/wrist/item = spawn_item(H, metadata)
 	var/obj/item/weapon/card/id = H.GetIdCard()
 	if(id)
 		item.attackby(id, H)
