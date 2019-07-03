@@ -341,8 +341,6 @@
 			return global.contamination_overlay;
 		if("create_mob_html")
 			return global.create_mob_html;
-		if("create_object_forms")
-			return global.create_object_forms;
 		if("create_object_html")
 			return global.create_object_html;
 		if("create_turf_html")
@@ -1272,8 +1270,6 @@
 			global.contamination_overlay=newval;
 		if("create_mob_html")
 			global.create_mob_html=newval;
-		if("create_object_forms")
-			global.create_object_forms=newval;
 		if("create_object_html")
 			global.create_object_html=newval;
 		if("create_turf_html")
@@ -2032,7 +2028,6 @@
 	"config",
 	"contamination_overlay",
 	"create_mob_html",
-	"create_object_forms",
 	"create_object_html",
 	"create_turf_html",
 	"created",
