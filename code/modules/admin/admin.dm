@@ -64,33 +64,39 @@ var/global/floorIsLava = 0
 		<a href='?src=\ref[src];traitor=\ref[M]'>TP</a> -
 		<a href='?src=\ref[usr];priv_msg=\ref[M]'>PM</a> -
 		<a href='?src=\ref[src];narrateto=\ref[M]'>DN</a> -
-		[admin_jump_link(M, src)] -
-		<a href='?src=\ref[src];show_skills=\ref[M]'>SS</a>\] <br>
+		<a href='?src=\ref[src];show_skills=\ref[M]'>SS</a> -
+		[admin_jump_link(M, src)]\]
 	"}
 
-	body += {"
-		<b>Client Information:</b><br>
+	// INF START
+	body += "<br>"
+	body += "<b>Client Information:</b><br>"
 
-		<b>Client [M.client ? "On" : "Off"]line</b><br>
-		<b>Ckey:</b> [M.client ? M.client.ckey : M.ckey]<br>
-		<b>Client Age:</b> [M.client ? "[M.client.player_age] days" : "Logged out"]<br>
-		<b>Client Gender:</b> [M.client ? M.client.gender : "Logged out"]<br>
-		<b>CID:</b> [M.client ?  M.client.computer_id : M.computer_id]<br>
-		<b>CID Related Accounts:</b> [M.client ? M.client.related_accounts_cid : "Logged out"]<br>
-		<b>IP:</b> [M.client ?  M.client.address : M.lastKnownIP]<br>
-		<b>IP Related Accounts:</b> [M.client ? M.client.related_accounts_ip : "Logged out"]<br>
-	"}
+	body += "<br>\[<b>Client [M.client ? "On" : "Off"]line</b>\]"
+	body += "<br>\[<b>Ckey:</b> [M.client ? M.client.ckey : M.ckey]\]"
+	body += "<br>\[<b>Client Age:</b> [M.client ? "[M.client.player_age] days" : "Logged out"]\]"
+	body += "<br>\[<b>Client Gender:</b> [M.client ? M.client.gender : "Logged out"]\]"
+	body += "<br>\[<b>CID:</b> [M.client ?  M.client.computer_id : M.computer_id]\]"
+	body += "<br>\[<b>CID Related Accounts:</b> [M.client ? M.client.related_accounts_cid : "Logged out"]\]"
+	body += "<br>\[<b>IP:</b> [M.client ?  M.client.address : M.lastKnownIP]\]"
+	body += "<br>\[<b>IP Related Accounts:</b> [M.client ? M.client.related_accounts_ip : "Logged out"]\]"
+	var/full_version = "Unknown"
+	if(M.client.byond_version)
+		full_version = "[M.client.byond_version].[M.client.byond_build ? M.client.byond_build : "xxx"]"
+	body += "<br>\[<b>Byond version:</b> [full_version]\]"
+	body += "<br><br>"
+	// INF END
 
 	body += {"
 		<b>Mob type:</b> [M.type]<br>
 		<b>Inactivity time:</b> [M.client ? "[M.client.inactivity/600] minutes" : "Logged out"]<br/><br/>
 		<A href='?src=\ref[src];boot2=\ref[M]'>Kick</A> |
 		<A href='?_src_=holder;warn=[M.ckey]'>Warn</A> |
-		<A href='?src=\ref[src];softban=\ref[M]'>Soft Ban</A> |
 		<A href='?src=\ref[src];newban=\ref[M]'>Ban</A> |
+		<A href='?src=\ref[src];softban=\ref[M]'>Soft Ban</A> |
 		<A href='?src=\ref[src];jobban2=\ref[M]'>Jobban</A> |
-		<A href='?_src_=holder;sendbacktolobby=\ref[M]'>Send back to Lobby</A> |
-		<A href='?src=\ref[src];notes=show;mob=\ref[M]'>Notes</A>
+		<A href='?src=\ref[src];notes=show;mob=\ref[M]'>Notes</A> |
+		<A href='?_src_=holder;sendbacktolobby=\ref[M]'>Send back to Lobby</A>
 	"}
 
 	if(M.client)
@@ -118,7 +124,7 @@ var/global/floorIsLava = 0
 		<br><br>
 		[check_rights(R_ADMIN|R_MOD,0) ? "<A href='?src=\ref[src];traitor=\ref[M]'>Traitor panel</A> | " : "" ]
 		[check_rights(R_INVESTIGATE,0) ? "<A href='?src=\ref[src];skillpanel=\ref[M]'>Skill panel</A> | " : "" ]
-		<A href='?src=\ref[src];narrateto=\ref[M]'>Narrate to</A> |
+		<A href='?src=\ref[src];narrateto=\ref[M]'>Narrate to</A>
 	"}
 
 	if(M.mind)
@@ -129,9 +135,11 @@ var/global/floorIsLava = 0
 		body += "<br>"
 		body += "<a href='?src=\ref[M.mind];add_goal=1'>Add Random Goal</a>"
 
-	body += "<br><br>"
-	body += "<b>Psionics:</b><br/>"
+	//body += "<br><br>"
+	//body += "<b>Psionics:</b><br/>" inf, see below
 	if(isliving(M))
+		body += "<br><br>"
+		body += "<b>Psionics:</b><br/>"
 		var/mob/living/psyker = M
 		if(psyker.psi)
 			body += "<a href='?src=\ref[psyker.psi];remove_psionics=1'>Remove psionics.</a><br/><br/>"
