@@ -64,8 +64,9 @@ var/global/floorIsLava = 0
 		<a href='?src=\ref[src];traitor=\ref[M]'>TP</a> -
 		<a href='?src=\ref[usr];priv_msg=\ref[M]'>PM</a> -
 		<a href='?src=\ref[src];narrateto=\ref[M]'>DN</a> -
-		[admin_jump_link(M, src)] -
-		<a href='?src=\ref[src];show_skills=\ref[M]'>SS</a>\]"}
+		<a href='?src=\ref[src];show_skills=\ref[M]'>SS</a> -
+		[admin_jump_link(M, src)]\]
+	"}
 
 	// INF START
 	body += "<br>"
@@ -83,20 +84,19 @@ var/global/floorIsLava = 0
 	if(M.client.byond_version)
 		full_version = "[M.client.byond_version].[M.client.byond_build ? M.client.byond_build : "xxx"]"
 	body += "<br>\[<b>Byond version:</b> [full_version]\]"
-	body += "<br>"
+	body += "<br><br>"
 	// INF END
 
-	body += "<br>"
 	body += {"
 		<b>Mob type:</b> [M.type]<br>
 		<b>Inactivity time:</b> [M.client ? "[M.client.inactivity/600] minutes" : "Logged out"]<br/><br/>
 		<A href='?src=\ref[src];boot2=\ref[M]'>Kick</A> |
 		<A href='?_src_=holder;warn=[M.ckey]'>Warn</A> |
-		<A href='?src=\ref[src];softban=\ref[M]'>Soft Ban</A> |
 		<A href='?src=\ref[src];newban=\ref[M]'>Ban</A> |
+		<A href='?src=\ref[src];softban=\ref[M]'>Soft Ban</A> |
 		<A href='?src=\ref[src];jobban2=\ref[M]'>Jobban</A> |
-		<A href='?_src_=holder;sendbacktolobby=\ref[M]'>Send back to Lobby</A> |
-		<A href='?src=\ref[src];notes=show;mob=\ref[M]'>Notes</A>
+		<A href='?src=\ref[src];notes=show;mob=\ref[M]'>Notes</A> |
+		<A href='?_src_=holder;sendbacktolobby=\ref[M]'>Send back to Lobby</A>
 	"}
 
 	if(M.client)
