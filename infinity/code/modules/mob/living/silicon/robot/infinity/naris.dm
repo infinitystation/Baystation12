@@ -69,7 +69,7 @@
 	last_sound_time = world.time
 	var/snd =  input("Sound", "Sound", null, null) as null|anything in cust_sounds
 	if (snd != null)
-		playsound(get_turf(src), "sound/voice/naris_" + cust_sounds[snd] + ".ogg", 30, 1)
+		playsound(get_turf(src), "infinity/sound/voice/naris_" + cust_sounds[snd] + ".ogg", 30, 1)
 
 /obj/item/device/radio/borg/naris
 	keyslot = /obj/item/device/encryptionkey/headset_eng

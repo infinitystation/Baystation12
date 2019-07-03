@@ -178,7 +178,7 @@
 		if(!do_after(user, 4, src))
 			return
 		is_jammed = 0
-		playsound(src.loc, 'sound/weapons/guns/interact/gun_bullet_insert.ogg', 50, 1)
+		playsound(src.loc, 'infinity/sound/weapons/guns/interact/gun_bullet_insert.ogg', 50, 1)
 	if(ammo_magazine)
 		user.put_in_hands(ammo_magazine)
 		user.visible_message("[user] removes [ammo_magazine] from [src].", "<span class='notice'>You remove [ammo_magazine] from [src].</span>")
@@ -199,13 +199,13 @@
 				loaded.Cut()
 			if(count)
 				user.visible_message("[user] unloads [src].", "<span class='notice'>You unload [count] round\s from [src].</span>")
-				playsound(src.loc, 'sound/weapons/guns/interact/gun_bullet_insert.ogg', 50, 1)
+				playsound(src.loc, 'infinity/sound/weapons/guns/interact/gun_bullet_insert.ogg', 50, 1)
 		else if(load_method & SINGLE_CASING)
 			var/obj/item/ammo_casing/C = loaded[loaded.len]
 			loaded.len--
 			user.put_in_hands(C)
 			user.visible_message("[user] removes \a [C] from [src].", "<span class='notice'>You remove \a [C] from [src].</span>")
-			playsound(src.loc, 'sound/weapons/guns/interact/gun_bullet_insert.ogg', 50, 1)
+			playsound(src.loc, 'infinity/sound/weapons/guns/interact/gun_bullet_insert.ogg', 50, 1)
 	else
 		to_chat(user, "<span class='warning'>[src] is empty.</span>")
 	update_icon()

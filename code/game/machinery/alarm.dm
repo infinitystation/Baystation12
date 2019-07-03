@@ -793,9 +793,11 @@
 			if(isScrewdriver(W))  // Opening that Air Alarm up.
 //				to_chat(user, "You pop the Air Alarm's maintence panel open.")
 				wiresexposed = !wiresexposed
-				var/interact_sound = "[wiresexposed ? "open" : "close"]"
+
 				to_chat(user, "The wires have been [wiresexposed ? "exposed" : "unexposed"].")
-				playsound(src.loc, "sound/machines/Custom_screwdriver[interact_sound].ogg", 50, 1)
+				var/interact_sound = wiresexposed ? GLOB.machinery_exposed_sound[1] : GLOB.machinery_exposed_sound[2]
+				playsound(src, pick(interact_sound), 50, 1)
+
 				update_icon()
 				return
 
@@ -972,9 +974,11 @@ FIRE ALARM
 /obj/machinery/firealarm/attackby(obj/item/W as obj, mob/user as mob)
 	if(isScrewdriver(W) && buildstage == 2)
 		wiresexposed = !wiresexposed
-		var/interact_sound = "[wiresexposed ? "open" : "close"]"
+
 		to_chat(user, "The wires have been [wiresexposed ? "exposed" : "unexposed"].")
-		playsound(src.loc, "sound/machines/Custom_screwdriver[interact_sound].ogg", 50, 1)
+		var/interact_sound = wiresexposed ? GLOB.machinery_exposed_sound[1] : GLOB.machinery_exposed_sound[2]
+		playsound(src, pick(interact_sound), 50, 1)
+
 		update_icon()
 		return
 
@@ -1220,9 +1224,11 @@ Just a object used in constructing party alarms
 
 	if (istype(W, /obj/item/weapon/screwdriver) && buildstage == 2)
 		wiresexposed = !wiresexposed
-		var/interact_sound = "[wiresexposed ? "open" : "close"]"
+
 		to_chat(user, "The wires have been [wiresexposed ? "exposed" : "unexposed"].")
-		playsound(src.loc, "sound/machines/Custom_screwdriver[interact_sound].ogg", 50, 1)
+		var/interact_sound = wiresexposed ? GLOB.machinery_exposed_sound[1] : GLOB.machinery_exposed_sound[2]
+		playsound(src, pick(interact_sound), 50, 1)
+
 		update_icon()
 		return
 

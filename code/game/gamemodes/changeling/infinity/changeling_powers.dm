@@ -208,7 +208,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 					return
 			if(2)
 				src.visible_message(SPAN_WARNING("[src] extends a proboscis!"), SPAN_LING("We extend a proboscis, let's find a good point for extraction..."))
-				playsound(get_turf(src), 'sound/effects/lingextends.ogg', 50, 1)
+				playsound(get_turf(src), 'infinity/sound/effects/lingextends.ogg', 50, 1)
 				if(!do_mob(src, T, 80))
 					to_chat(src, SPAN_LING("Our absorption has been interrupted!"))
 					changeling.isabsorbing = 0
@@ -216,11 +216,11 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 			if(3)
 				src.visible_message(SPAN_DANGER("[src] stabs \the [T] with the proboscis!"), SPAN_NOTICE("We stab \the [T] with the proboscis."))
 				to_chat(T, SPAN_DANGER("You feel a sharp stabbing pain in your [affecting.name]!"))
-				playsound(get_turf(src), 'sound/effects/lingstabs.ogg', 50, 1)
+				playsound(get_turf(src), 'infinity/sound/effects/lingstabs.ogg', 50, 1)
 				affecting.take_external_damage(30, 0, DAM_SHARP, "large organic needle")
 				T.stun_effect_act(0, 60, affecting, "large organic needle")
 				spawn(25)
-					playsound(get_turf(src), 'sound/effects/lingabsorbs.ogg', 40, 1)
+					playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 40, 1)
 					to_chat(src, SPAN_LING("We start to absorb the sweetness DNA from [T]..."))
 					T.visible_message(SPAN_NOTICE("\the [T] quickly turns pale..."), SPAN_NOTICE("\the [src] sucks the life from me..."))
 					T.eye_blurry += 20
@@ -235,14 +235,14 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 					if(prob(20))
 						to_chat(T, pick(SPAN_NOTICE("Someone must help me... Please..."), SPAN_NOTICE("It's so merciless..."), SPAN_NOTICE("I already just wanna die!...")))
 						to_chat(src, pick(SPAN_LING("We would do this all day..."), SPAN_LING("[T]'s DNA tastes sweat..."), SPAN_LING("We feel ourselve much more better...")))
-						playsound(get_turf(src), 'sound/effects/lingabsorbs.ogg', 25, 1)
+						playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 25, 1)
 						src.visible_message(SPAN_WARNING("\the [src]'s proboscis loudly sucks something from \the [T]'s [affecting.name]!"))
 				changeling.isabsorbing = 0
 
 		SSstatistics.add_field_details("changeling_powers","A[stage]")
 	visible_message("<span class='warning'>[src] removes it's proboscis from \the [T]!</span>", SPAN_LING("We have absorbed the all fluids from [T]!"))
 	to_chat(T, "<span class='warning'>You have been absorbed by the changeling!</span>")
-	playsound(get_turf(src), 'sound/effects/lingabsorbs.ogg', 70, 1)
+	playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 70, 1)
 
 	changeling.chem_charges += 10
 	changeling.geneticpoints += 5
@@ -1033,12 +1033,12 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 	M.visible_message("<span class='danger'>[M]\'s arm begins to twist and rip!</span>",
 							"<span class='danger'>Our arm twists and mutates, transforming it into a deadly blade.</span>",
 							"<span class='danger'>You hear organic matter ripping and tearing!</span>")
-	playsound(get_turf(src), 'sound/effects/lingextends.ogg', 50, 1)
+	playsound(get_turf(src), 'infinity/sound/effects/lingextends.ogg', 50, 1)
 	sleep(6)
 	blade = new(M)
 	blade.creator = M
 	M.put_in_hands(blade)
-	playsound(loc, 'sound/weapons/bloodyslice.ogg', 30, 1)
+	playsound(loc, 'infinity/sound/weapons/bloodyslice.ogg', 30, 1)
 
 /mob/proc/changeling_shield()
 	set category = "Changeling"
@@ -1063,7 +1063,7 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 	M.visible_message("<span class='danger'>[M]\'s arm begins to twist and rip!</span>",
 							SPAN_LING("Our arm twists and mutates, transforming it into a deadly blade."),
 							"<span class='danger'>You hear organic matter ripping and tearing!</span>")
-	playsound(get_turf(src), 'sound/effects/lingextends.ogg', 50, 1)
+	playsound(get_turf(src), 'infinity/sound/effects/lingextends.ogg', 50, 1)
 	sleep(6)
 	shield = new(M)
 	shield.creator = M
@@ -1089,7 +1089,7 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 		return 0
 
 	M.visible_message("<span class='danger'>[M] grows into an abomination and lets out an awful scream!</span>")
-	playsound(loc, 'sound/effects/greaterling.ogg', 100, 1)
+	playsound(loc, 'infinity/sound/effects/greaterling.ogg', 100, 1)
 
 	var/mob/living/simple_animal/hostile/true_changeling/ling = new (get_turf(M))
 

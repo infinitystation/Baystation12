@@ -116,7 +116,7 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 	if(istype(traitor_mob, /mob/living/silicon))
 		sound_to(traitor_mob, 'sound/voice/AISyndiHack.ogg')
 	else
-		sound_to(traitor_mob, 'sound/voice/syndicate_intro.ogg')
+		sound_to(traitor_mob, 'infinity/sound/voice/syndicate_intro.ogg')
 
 /datum/antagonist/traitor/proc/spawn_uplink(var/mob/living/carbon/human/traitor_mob)
 	setup_uplink_source(traitor_mob, DEFAULT_TELECRYSTAL_AMOUNT)

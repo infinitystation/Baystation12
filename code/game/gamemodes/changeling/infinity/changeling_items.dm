@@ -10,7 +10,7 @@
 	item_state_slots = list(
 		slot_l_hand_str = "arm_blade_rh",
 		slot_r_hand_str = "arm_blade_lh")
-	hitsound = 'sound/weapons/bloodyslice.ogg'
+	hitsound = 'infinity/sound/weapons/bloodyslice.ogg'
 	w_class = 4
 	force = 23
 	siemens_coefficient = 0.4

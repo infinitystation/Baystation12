@@ -15,9 +15,9 @@
 	armor = list(melee = 10, bullet = 10, laser = 10, energy = 0, bomb = 0, bio = 75, rad = 0)
 
 	var/last_time
-	var/sound1 = 'sound/items/creo_1.ogg'
-	var/sound2 = 'sound/items/creo_2.ogg'
-	var/sound3 = 'sound/items/creo_3.ogg'
+	var/sound1 = 'infinity/sound/items/creo_1.ogg'
+	var/sound2 = 'infinity/sound/items/creo_2.ogg'
+	var/sound3 = 'infinity/sound/items/creo_3.ogg'
 	var/can_sound = TRUE
 
 /obj/item/clothing/mask/gas/creo/New()
