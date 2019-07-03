@@ -29,7 +29,7 @@
 		animate(src, transform = flipit, time = 2, easing = QUAD_EASING)
 		side = sides[3]
 
-	playsound(src, 'sound/items/coinflip.ogg', 50, 1)
+	playsound(src, 'infinity/sound/items/coinflip.ogg', 50, 1)
 	if (!thrown)
 		user.visible_message(
 		"<span class='notice'>[user] flips [src]. It lands [side].</span>", \
