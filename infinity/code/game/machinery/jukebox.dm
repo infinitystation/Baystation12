@@ -2,16 +2,14 @@
 	var/obj/item/device/cassette/cassette
 
 /obj/machinery/media/jukebox/verb/eject()
-	set name = "Eject Disk"
+	set name = "Eject"
 	set category = "Object"
 	set src in oview(1)
 
-	if(usr.incapacitated())
+	if(!CanPhysicallyInteract(usr))
 		return
 
-	if(!cassette)
-		to_chat(usr, "<span class='notice'>There is no cassette inside \the [src].</span>")
-	else
+	if(cassette)
 		StopPlaying()
 		current_track = null
 		for(var/datum/track/T in tracks)
@@ -20,4 +18,4 @@
 		visible_message("<span class='notice'>[usr] eject the cassette from \the [src].</span>")
 		usr.put_in_hands(cassette)
 		cassette = null
-	return
+		verbs -= /obj/machinery/media/jukebox/verb/eject
