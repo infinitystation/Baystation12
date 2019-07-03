@@ -21,7 +21,7 @@
 
 	attack_verb = list("ripped", "slashed", "torn")
 
-	hitsound = 'sound/items/chainsword_attack.ogg'
+	hitsound = 'infinity/sound/items/chainsword_attack.ogg'
 
 	var/force_off = 5
 	var/force_on = 18
@@ -38,7 +38,7 @@
 		return
 	if (fuel)
 		status = new_status
-		playsound(get_turf(user), 'sound/items/chainsword_on.ogg', 50, 1)
+		playsound(get_turf(user), 'infinity/sound/items/chainsword_on.ogg', 50, 1)
 		force = force_on
 		update_icon()
 		return

@@ -21,8 +21,8 @@
 	var/welding_resource = "welding fuel"
 	var/obj/item/weapon/welder_tank/tank = /obj/item/weapon/welder_tank // where the fuel is stored
 
-	var/activate_sound = 'sound/items/WelderActivate.ogg'
-	var/deactivate_sound = 'sound/items/WelderDeactivate.ogg'
+	var/activate_sound = 'infinity/sound/items/WelderActivate.ogg'
+	var/deactivate_sound = 'infinity/sound/items/WelderDeactivate.ogg'
 
 /obj/item/weapon/weldingtool/Initialize()
 	if(ispath(tank))

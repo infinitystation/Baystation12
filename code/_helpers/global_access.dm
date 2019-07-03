@@ -23,8 +23,6 @@
 			return global.Failsafe;
 		if("GLOB")
 			return global.GLOB;
-		if("GPS_list")
-			return global.GPS_list;
 		if("Holiday")
 			return global.Holiday;
 		if("IClog")
@@ -327,8 +325,6 @@
 			return global.client_preference_stats_;
 		if("client_repository")
 			return global.client_repository;
-		if("coding_languages")
-			return global.coding_languages;
 		if("combatlog")
 			return global.combatlog;
 		if("comm_message_listeners")
@@ -345,8 +341,6 @@
 			return global.contamination_overlay;
 		if("create_mob_html")
 			return global.create_mob_html;
-		if("create_object_forms")
-			return global.create_object_forms;
 		if("create_object_html")
 			return global.create_object_html;
 		if("create_turf_html")
@@ -483,8 +477,6 @@
 			return global.global_message_listener;
 		if("global_vars_")
 			return global.global_vars_;
-		if("gps_by_type")
-			return global.gps_by_type;
 		if("gravity_is_on")
 			return global.gravity_is_on;
 		if("gzn_check")
@@ -958,8 +950,6 @@
 			global.Failsafe=newval;
 		if("GLOB")
 			global.GLOB=newval;
-		if("GPS_list")
-			global.GPS_list=newval;
 		if("Holiday")
 			global.Holiday=newval;
 		if("IClog")
@@ -1262,8 +1252,6 @@
 			global.client_preference_stats_=newval;
 		if("client_repository")
 			global.client_repository=newval;
-		if("coding_languages")
-			global.coding_languages=newval;
 		if("combatlog")
 			global.combatlog=newval;
 		if("comm_message_listeners")
@@ -1280,8 +1268,6 @@
 			global.contamination_overlay=newval;
 		if("create_mob_html")
 			global.create_mob_html=newval;
-		if("create_object_forms")
-			global.create_object_forms=newval;
 		if("create_object_html")
 			global.create_object_html=newval;
 		if("create_turf_html")
@@ -1418,8 +1404,6 @@
 			global.global_message_listener=newval;
 		if("global_vars_")
 			global.global_vars_=newval;
-		if("gps_by_type")
-			global.gps_by_type=newval;
 		if("gravity_is_on")
 			global.gravity_is_on=newval;
 		if("gzn_check")
@@ -1881,7 +1865,6 @@
 	"Debug2",
 	"Failsafe",
 	"GLOB",
-	"GPS_list",
 	"Holiday",
 	"IClog",
 	"LIGHTING_CORNER_DIAGONAL",
@@ -2033,7 +2016,6 @@
 	"church_name",
 	"client_preference_stats_",
 	"client_repository",
-	"coding_languages",
 	"combatlog",
 	"comm_message_listeners",
 	"command_announcement",
@@ -2042,7 +2024,6 @@
 	"config",
 	"contamination_overlay",
 	"create_mob_html",
-	"create_object_forms",
 	"create_object_html",
 	"create_turf_html",
 	"created",
@@ -2111,7 +2092,6 @@
 	"ghost_traps",
 	"global_message_listener",
 	"global_vars_",
-	"gps_by_type",
 	"gravity_is_on",
 	"gzn_check",
 	"hadevent",

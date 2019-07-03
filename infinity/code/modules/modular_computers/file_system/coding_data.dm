@@ -1,4 +1,4 @@
-var/global/list/coding_languages = list("Batch")//,"Anaconda", "NTML")
+GLOBAL_VAR_INIT(coding_languages, list("Batch")) //,"Anaconda", "NTML")
 
 /datum/computer_file/data/coding
 	filetype = "COD"

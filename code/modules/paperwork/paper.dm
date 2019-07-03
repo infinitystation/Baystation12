@@ -406,7 +406,7 @@
 		if((!in_range(src, usr) && loc != user && !( istype(loc, /obj/item/weapon/material/clipboard) ) && loc.loc != user && user.get_active_hand() != P))
 			return
 
-		playsound(src,'sound/effects/Stamp2.ogg',40,1)
+		playsound(src,'infinity/sound/effects/Stamp2.ogg',40,1)
 		stamps += (stamps=="" ? "<HR>" : "<BR>") + "<i>This paper has been stamped with the [P.name].</i>"
 
 		var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
@@ -438,7 +438,7 @@
 		stamped += P.type
 		overlays += stampoverlay
 
-		playsound(src, 'sound/effects/stamp2.ogg', 50, 1)
+		playsound(src, 'infinity/sound/effects/stamp2.ogg', 50, 1)
 		to_chat(user, "<span class='notice'>You stamp the paper with your [P.name].</span>")
 
 	else if(istype(P, /obj/item/weapon/flame))

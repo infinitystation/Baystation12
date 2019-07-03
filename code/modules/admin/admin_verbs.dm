@@ -967,20 +967,3 @@ var/list/admin_verbs_mentor = list(
 	T.add_spell(new S)
 	SSstatistics.add_field_details("admin_verb","GS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	log_and_message_admins("gave [key_name(T)] the spell [S].")
-
-/client/proc/observe_delay()
-	set name = "Change roundstart observe delay"
-	set category = "Server"
-
-	if(!holder)
-		return
-
-	var/oldtime = config.observe_delay
-	var/newtime = input("Set a new time. Its must be in MINUTES (not in seconds/byond tick). Set 0 to remove delay.", "Set Delay") as num|null
-
-	if(newtime <= 0)
-		log_and_message_admins("Admin [key_name_admin(usr)] has disabled observe delay.")
-	else
-		log_and_message_admins("Admin [key_name_admin(usr)] has changed observe delay from [oldtime] to [newtime] minutes.")
-
-	config.observe_delay = newtime

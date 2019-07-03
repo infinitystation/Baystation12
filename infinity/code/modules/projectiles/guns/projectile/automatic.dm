@@ -130,7 +130,7 @@
 	else
 		if(src == user.get_active_hand())
 			projetcile_type = !projetcile_type
-			playsound(user, 'sound/weapons/selector.ogg', 50, 1)
+			playsound(user, 'infinity/sound/weapons/selector.ogg', 50, 1)
 			to_chat(user, "<span class='notice'>You toggle the bullet penetration mode [projetcile_type ? "on":"off"].</span>")
 
 /obj/item/weapon/gun/projectile/automatic/invider/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, var/list/params = list())

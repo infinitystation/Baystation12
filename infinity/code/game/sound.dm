@@ -1,5 +1,46 @@
-GLOBAL_LIST_INIT(smash_sound,list('sound/effects/gore/smash1.ogg', 'sound/effects/gore/smash2.ogg', 'sound/effects/gore/smash3.ogg', 'sound/effects/gore/trauma1.ogg'))
-GLOBAL_LIST_INIT(heavystep_sound,list('sound/effects/x1.ogg','sound/effects/x2.ogg','sound/effects/x3.ogg','sound/effects/x4.ogg'))
-GLOBAL_LIST_INIT(light_strike_sound,list('sound/effects/hit_kick.ogg', 'sound/effects/hit_punch.ogg'))
-GLOBAL_LIST_INIT(gun_sound, list('sound/weapons/gunshot.ogg', 'sound/weapons/gunshot2.ogg', 'sound/weapons/gunshot3.ogg', 'sound/weapons/gunshot4.ogg'))
-GLOBAL_LIST_INIT(human_clearing_throat, list(FEMALE = "infinity/sound/voice/clearing-throat-f.ogg", MALE = "infinity/sound/voice/clearing-throat-m.ogg"))
+GLOBAL_LIST_INIT(smash_sound,list(
+'infinity/sound/effects/gore/smash1.ogg',
+'infinity/sound/effects/gore/smash2.ogg',
+'infinity/sound/effects/gore/smash3.ogg',
+'infinity/sound/effects/gore/trauma1.ogg'
+))
+GLOBAL_LIST_INIT(heavystep_sound,list(
+'infinity/sound/effects/x1.ogg',
+'infinity/sound/effects/x2.ogg',
+'infinity/sound/effects/x3.ogg',
+'infinity/sound/effects/x4.ogg'
+))
+GLOBAL_LIST_INIT(light_strike_sound,list(
+'infinity/sound/effects/hit_kick.ogg',
+'infinity/sound/effects/hit_punch.ogg'
+))
+GLOBAL_LIST_INIT(gun_sound, list(
+'infinity/sound/weapons/gunshot.ogg',
+'infinity/sound/weapons/gunshot2.ogg',
+'infinity/sound/weapons/gunshot3.ogg',
+'infinity/sound/weapons/gunshot4.ogg'
+))
+GLOBAL_LIST_INIT(human_clearing_throat, list(
+	FEMALE = "infinity/sound/voice/clearing-throat-f.ogg",
+	MALE = "infinity/sound/voice/clearing-throat-m.ogg"
+))
+GLOBAL_LIST_INIT(machinery_exposed_sound, list(
+'infinity/sound/machines/Custom_screwdriveropen.ogg',
+'infinity/sound/machines/Custom_screwdriverclose.ogg'
+))
+GLOBAL_LIST_INIT(rig_breath_sound, list(
+'infinity/sound/voice/gasmask1.ogg','infinity/sound/voice/gasmask2.ogg',
+'infinity/sound/voice/gasmask3.ogg','infinity/sound/voice/gasmask4.ogg',
+'infinity/sound/voice/gasmask5.ogg','infinity/sound/voice/gasmask6.ogg',
+'infinity/sound/voice/gasmask7.ogg','infinity/sound/voice/gasmask8.ogg',
+'infinity/sound/voice/gasmask9.ogg','infinity/sound/voice/gasmask10.ogg'
+))
+GLOBAL_LIST_INIT(console_interact_sound, list(
+'infinity/sound/machines/console/console_interact1.ogg',
+'infinity/sound/machines/console/console_interact2.ogg',
+'infinity/sound/machines/console/console_interact3.ogg',
+'infinity/sound/machines/console/console_interact4.ogg',
+'infinity/sound/machines/console/console_interact5.ogg',
+'infinity/sound/machines/console/console_interact6.ogg',
+'infinity/sound/machines/console/console_interact7.ogg'
+))

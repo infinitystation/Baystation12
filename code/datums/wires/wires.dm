@@ -179,7 +179,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 								solved_colour_function = SolveWireFunction(colour_function)
 								if(solved_colour_function != "")
 									to_chat(L, "the [colour] wire connected to [solved_colour_function]")
-									playsound(O.loc, 'sound/machines/mbeep.ogg', 20, 1)
+									playsound(O.loc, 'infinity/sound/machines/mbeep.ogg', 20, 1)
 								else
 									to_chat(L, "the [colour] wire not connected")
 							else
@@ -226,7 +226,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 										solved_colour_function = SolveWireFunction(colour_function)
 										if(solved_colour_function != "")
 											to_chat(L, "the [colour] wire connected to [solved_colour_function]")
-											playsound(O.loc, 'sound/machines/mbeep.ogg', 20, 1)
+											playsound(O.loc, 'infinity/sound/machines/mbeep.ogg', 20, 1)
 										else
 											to_chat(L, "the [colour] wire not connected")
 									else
@@ -312,7 +312,7 @@ var/const/POWER = 8
 /datum/wires/proc/PulseIndex(var/index)
 	if(IsIndexCut(index))
 		return
-	playsound(holder.loc, 'sound/items/multitool_pulse.ogg', 20, 1)
+	playsound(holder.loc, 'infinity/sound/items/multitool_pulse.ogg', 20, 1)
 	UpdatePulsed(index)
 
 /datum/wires/proc/GetIndex(var/colour)

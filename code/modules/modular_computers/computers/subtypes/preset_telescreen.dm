@@ -25,7 +25,3 @@
 	hard_drive.store_file(new/datum/computer_file/program/shields_monitor())
 	hard_drive.store_file(new/datum/computer_file/program/supermatter_monitor())
 	set_autorun("alarmmonitor")
-
-/obj/item/modular_computer/telescreen/preset/trashcompactor/install_default_programs()
-	..()
-	hard_drive.store_file(new/datum/computer_file/program/crushercontrol())

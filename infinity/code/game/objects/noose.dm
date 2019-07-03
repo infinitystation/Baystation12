@@ -123,7 +123,7 @@
 		M.visible_message(\
 			"<span class='warning'>[M] ties \the [src] over their neck!</span>",\
 			"<span class='warning'>You tie \the [src] over your neck!</span>")
-		playsound(src, 'sound/effects/noosed.ogg', 50, 1, -1)
+		playsound(src, 'infinity/sound/effects/noosed.ogg', 50, 1, -1)
 		return TRUE
 	else
 		M.visible_message(\
@@ -135,7 +135,7 @@
 				M.visible_message(\
 					"<span class='danger'>[user] ties \the [src] over [M]'s neck!</span>",\
 					"<span class='userdanger'>[user] ties \the [src] over your neck!</span>")
-				playsound(user.loc, 'sound/effects/noosed.ogg', 50, 1, -1)
+				playsound(user.loc, 'infinity/sound/effects/noosed.ogg', 50, 1, -1)
 				return TRUE
 			else
 				user.visible_message(\
@@ -178,7 +178,7 @@
 						flavor_text = list("<span class='warning'>[buckled_mob]'s limbs lifelessly sway back and forth.</span>",\
 											"<span class='warning'>[buckled_mob]'s eyes stare straight ahead.</span>")
 					buckled_mob.visible_message(pick(flavor_text))
-				playsound(buckled_mob.loc, 'sound/effects/noose_idle.ogg', 50, 1, -3)
+				playsound(buckled_mob.loc, 'infinity/sound/effects/noose_idle.ogg', 50, 1, -3)
 		if(4)
 			pixel_x = initial(pixel_x)
 			buckled_mob.pixel_x = initial(buckled_mob.pixel_x)
