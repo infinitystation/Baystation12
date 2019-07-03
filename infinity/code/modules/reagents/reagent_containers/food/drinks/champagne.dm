@@ -48,10 +48,10 @@
 		user.visible_message(SPAN_NOTICE("[user] tried to open \the [src], but failed!"))
 		opening = 0
 		return
-	playsound(loc,'sound/effects/open.ogg', 100, 1)
+	playsound(loc,'infinity/sound/effects/open.ogg', 100, 1)
 	if(!user.skill_check(SKILL_COOKING, SKILL_BASIC))
 		sleep(4)
-		playsound(loc,'sound/effects/psh.ogg', 100)
+		playsound(loc,'infinity/sound/effects/psh.ogg', 100)
 		user.visible_message(SPAN_WARNING("[user] unprofessionaly opens \the [src]."))
 		new /obj/effect/decal/cleanable/champagne(user.loc)
 	else

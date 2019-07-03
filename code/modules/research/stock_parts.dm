@@ -15,7 +15,7 @@
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = 100
 	var/works_from_distance = 0
-	var/pshoom_or_beepboopblorpzingshadashwoosh = 'sound/items/rped.ogg'
+	var/pshoom_or_beepboopblorpzingshadashwoosh = 'infinity/sound/items/rped.ogg'
 
 /obj/item/weapon/storage/part_replacer/bluespace
 	name = "bluespace rapid part exchange device"
@@ -27,7 +27,7 @@
 	max_w_class = 3
 	max_storage_space = 200
 	works_from_distance = 1
-	pshoom_or_beepboopblorpzingshadashwoosh = 'sound/items/PSHOOM.ogg'
+	pshoom_or_beepboopblorpzingshadashwoosh = 'infinity/sound/items/PSHOOM.ogg'
 
 /obj/item/weapon/storage/part_replacer/proc/play_rped_sound()
 	//Plays the sound for RPED exhanging or installing parts.

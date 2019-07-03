@@ -55,7 +55,7 @@
 		cooldown = world.time + 15
 //		flick("coin_[default_material]_flip", src)
 //		icon_state = "coin_[default_material]_[coinflip]"
-		playsound(user.loc, 'sound/items/coinflip.ogg', 50, 1)
+		playsound(user.loc, 'infinity/sound/items/coinflip.ogg', 50, 1)
 		var/oldloc = loc
 		sleep(15)
 		if(loc == oldloc && user && !user.incapacitated())

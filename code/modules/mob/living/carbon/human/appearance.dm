@@ -78,7 +78,7 @@
 
 	update_hair()
 
-/mob/living/carbon/human/proc/change_eye_color(var/red, var/green, var/blue, var/ignoreblink = 0)
+/mob/living/carbon/human/proc/change_eye_color(var/red, var/green, var/blue, var/ignore_blink = 0)
 	if(red == r_eyes && green == g_eyes && blue == b_eyes)
 		return
 
@@ -88,8 +88,10 @@
 
 	update_eyes()
 	update_body()
-	if(ignoreblink == 0)
+	// INF@CODE START
+	if(ignore_blink == 0)
 		create_eye_blink()
+	// INF@CODE END
 	return 1
 
 /mob/living/carbon/human/proc/change_hair_color(var/red, var/green, var/blue)

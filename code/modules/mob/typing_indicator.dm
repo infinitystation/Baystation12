@@ -29,12 +29,12 @@ I IS TYPIN'!'
 		if(!typing_indicator)
 			typing_indicator = new(src)
 		typing_indicator.set_invisibility(0)
-	// inf
-	var/matrix/M = matrix()
-	M.Scale(0,0)
-	typing_indicator.transform = M
-	typing_indicator.alpha = 0
-	animate(typing_indicator, transform = 0, alpha = 255, time = 0.2 SECONDS, easing = EASE_IN)
+		// inf
+		var/matrix/M = matrix()
+		M.Scale(0,0)
+		typing_indicator.transform = M
+		typing_indicator.alpha = 0
+		animate(typing_indicator, transform = 0, alpha = 255, time = 0.2 SECONDS, easing = EASE_IN)
 
 /mob/proc/remove_typing_indicator() // A bit excessive, but goes with the creation of the indicator I suppose
 	if(typing_indicator)

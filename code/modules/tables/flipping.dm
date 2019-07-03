@@ -30,7 +30,7 @@
 	if(atom_flags & ATOM_FLAG_CLIMBABLE)
 		object_shaken()
 
-	playsound(src,'sound/machines/Table_Fall.ogg',100,1)
+	playsound(src,'infinity/sound/machines/Table_Fall.ogg',100,1)
 
 	return
 
