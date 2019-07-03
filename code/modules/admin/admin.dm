@@ -262,26 +262,16 @@ var/global/floorIsLava = 0
 		if(!(L.flags & INNATE))
 			if(!f) body += " | "
 			else f = 0
-		/*	if(L in M.languages) infinity, see below
+			if(L in M.languages)
 				body += "<a href='?src=\ref[src];toglang=\ref[M];lang=[html_encode(k)]' style='color:#006600'>[k]</a>"
 			else
-				body += "<a href='?src=\ref[src];toglang=\ref[M];lang=[html_encode(k)]' style='color:#ff0000'>[k]</a>"*/
-
-			// INF START
-			var/text_color = (L in M.languages) ? "#55cc55" : "#cc5555"
-			body += "<a href='?src=\ref[src];toglang=\ref[M];lang=[html_encode(k)]' style='color:[text_color]'>[k]</a>"
-			// INF END
+				body += "<a href='?src=\ref[src];toglang=\ref[M];lang=[html_encode(k)]' style='color:#ff0000'>[k]</a>"
 
 	body += {"<br>
 		</body></html>
 	"}
 
-	// INF START
-	var/datum/browser/popup = new(usr, "adminplayeropts", "Player Panel", 560, 515, src)
-	popup.set_content(jointext(body, null))
-	popup.open()
-	// INF END
-	//usr << browse(body, "window=adminplayeropts;size=550x515")
+	usr << browse(body, "window=adminplayeropts;size=550x515")
 	SSstatistics.add_field_details("admin_verb","SPP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 
