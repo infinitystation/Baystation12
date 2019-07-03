@@ -3158,6 +3158,7 @@
 #include "infinity\code\game\objects\items\weapons\circuitboards\machinery\chargers.dm"
 #include "infinity\code\game\objects\items\weapons\circuitboards\machinery\power.dm"
 #include "infinity\code\game\objects\items\weapons\circuitboards\machinery\teleporter.dm"
+#include "infinity\code\game\objects\items\weapons\material\coins.dm"
 #include "infinity\code\game\objects\items\weapons\storage\backpack.dm"
 #include "infinity\code\game\objects\items\weapons\storage\belt.dm"
 #include "infinity\code\game\objects\items\weapons\storage\boxes.dm"
