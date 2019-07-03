@@ -23,5 +23,5 @@
 	if(user)
 		to_chat(user, "<span class='notice'>Your [src.name] deploys!</span>")
 		user.forceMove(deployed_bag)
-	playsound(deployed_bag, 'sound/effects/bamfgas.ogg', 100, 1)
+	playsound(deployed_bag, 'infinity/sound/effects/bamfgas.ogg', 100, 1)
 	qdel(src)

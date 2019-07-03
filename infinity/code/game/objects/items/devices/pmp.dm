@@ -349,7 +349,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 	if(playing)
 		StopPlaying()
 
-	playsound(src.loc, "sound/machines/Custom_screwdriveropen.ogg", 20, 1)
+	playsound(src, GLOB.machinery_exposed_sound[1], 20, 1)
 	if(user)
 		visible_message(
 			SPAN_NOTICE("[user] eject the cassette."),

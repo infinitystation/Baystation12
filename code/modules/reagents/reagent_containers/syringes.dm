@@ -74,7 +74,7 @@
 			return
 		if(reagents && reagents.total_volume)
 			to_chat(user, "<span class='notice'>You splash the contents of \the [src] onto [target].</span>")
-			playsound(src,'sound/effects/Splash_Small_01_mono.ogg',50,1)
+			playsound(src,'infinity/sound/effects/Splash_Small_01_mono.ogg',50,1)
 			reagents.splash(target, reagents.total_volume)
 			mode = SYRINGE_DRAW
 			update_icon()
@@ -149,7 +149,7 @@
 			var/allow = T.can_inject(user, check_zone(user.zone_sel.selecting))
 			if(!allow || allow == INJECTION_PORT)
 				return
-			
+
 			if(prob(user.skill_fail_chance(SKILL_MEDICAL, 60, SKILL_BASIC)))
 				to_chat(user, "<span class='warning'>You miss the vein!</span>")
 				var/target_zone = check_zone(user.zone_sel.selecting)

@@ -294,7 +294,7 @@ var/list/global/tank_gauge_cache = list()
 			if(can_open_valve)
 				location.internal = src
 				to_chat(user, "<span class='notice'>You open \the [src] valve.</span>")
-				playsound(location.loc, 'sound/items/internals_on.ogg', 145, 1)
+				playsound(location.loc, 'infinity/sound/items/internals_on.ogg', 145, 1)
 				if (location.internals)
 					location.internals.icon_state = "internal1"
 			else

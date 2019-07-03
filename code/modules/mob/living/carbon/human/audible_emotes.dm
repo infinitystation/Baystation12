@@ -9,10 +9,10 @@
 			return
 
 		if(M.gender == MALE)
-			screamsound = "sound/voice/man_pain[rand(1,3)].ogg"
+			screamsound = "infinity/sound/voice/man_pain[rand(1,3)].ogg"
 
 		if(M.gender == FEMALE)
-			screamsound = "sound/voice/woman_pain[rand(1,4)].ogg"
+			screamsound = "infinity/sound/voice/woman_pain[rand(1,4)].ogg"
 
 		if(screamsound)
 			playsound(M, screamsound, 25, 0, 1)
@@ -28,10 +28,10 @@
 			return
 
 		if(M.gender == MALE)
-			moansound = "sound/voice/male_moan[rand(1,3)].ogg"
+			moansound = "infinity/sound/voice/male_moan[rand(1,3)].ogg"
 
 		if(M.gender == FEMALE)
-			moansound = "sound/voice/woman_agony1.ogg"
+			moansound = "infinity/sound/voice/woman_agony1.ogg"
 
 		if(moansound)
 			playsound(M, moansound, 25, 0, 1)
