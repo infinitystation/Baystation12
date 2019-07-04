@@ -19,10 +19,7 @@ datum/preferences
 	var/loadcharcooldown
 
 	//game-preferences
-
-	//Saved changlog filesize to detect if there was a change
-	var/lastchangelog = ""
-	var/lastinfchangelog = ""
+	var/lastchangelog = ""				//Saved changlog filesize to detect if there was a change
 
 		//Mob preview
 	var/icon/preview_icon = null

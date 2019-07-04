@@ -457,35 +457,6 @@
 		SScharacter_setup.queue_preferences_save(prefs)
 		winset(src, "rpane.changelog", "background-color=none;font-style=;")
 
-/client/verb/changes_infinity()
-	set name = "Infinity Changelog"
-	set category = "OOC"
-	getFiles(
-		'html/88x31.png',
-		'html/bug-minus.png',
-		'html/burn-exclamation.png',
-		'html/chevron.png',
-		'html/chevron-expand.png',
-		'html/cross-circle.png',
-		'html/hard-hat-exclamation.png',
-		'html/image-minus.png',
-		'html/image-plus.png',
-		'html/map-pencil.png',
-		'html/music-minus.png',
-		'html/music-plus.png',
-		'html/tick-circle.png',
-		'html/scales.png',
-		'html/spell-check.png',
-		'html/wrench-screwdriver.png',
-		'html/changelog.css',
-		'html/changelog.html'
-		)
-	src << browse('html/changelog_infinity.html', "window=changes;size=675x650")
-	if(prefs.lastinfchangelog != inf_changelog_hash)
-		prefs.lastinfchangelog = inf_changelog_hash
-		prefs.save_preferences()
-		winset(src, "rpane.changelog_infinity", "background-color=none;font-style=;")
-
 /mob/verb/cancel_camera()
 	set name = "Cancel Camera View"
 	set category = "OOC"

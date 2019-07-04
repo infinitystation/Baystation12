@@ -499,8 +499,6 @@
 			return global.image_repository;
 		if("inactive_keys")
 			return global.inactive_keys;
-		if("inf_changelog_hash")
-			return global.inf_changelog_hash;
 		if("init")
 			return global.init;
 		if("intents")
@@ -1426,8 +1424,6 @@
 			global.image_repository=newval;
 		if("inactive_keys")
 			global.inactive_keys=newval;
-		if("inf_changelog_hash")
-			global.inf_changelog_hash=newval;
 		if("init")
 			global.init=newval;
 		if("intents")
@@ -2103,7 +2099,6 @@
 	"id_card_states",
 	"image_repository",
 	"inactive_keys",
-	"inf_changelog_hash",
 	"init",
 	"intents",
 	"intercom_range_display_status",
