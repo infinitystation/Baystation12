@@ -87,17 +87,17 @@
 	if(isturf(target))
 		target.ex_act(2)
 	..()
-	
+
 /obj/item/projectile/beam/pulse/skrell
 	icon_state = "pu_laser"
 	damage = 20
 	muzzle_type = /obj/effect/projectile/laser/pulse/skrell/muzzle
 	tracer_type = /obj/effect/projectile/laser/pulse/skrell/tracer
 	impact_type = /obj/effect/projectile/laser/pulse/skrell/impact
-	
+
 /obj/item/projectile/beam/pulse/skrell/heavy
 	damage = 30
-	
+
 /obj/item/projectile/beam/pulse/skrell/single
 	damage = 50
 
@@ -198,13 +198,13 @@
 	name = "shock beam"
 	damage_type = ELECTROCUTE
 	damage = 10
-	agony  = 15
+	agony  = 5
 	fire_sound='sound/weapons/pulse.ogg'
 
 /obj/item/projectile/beam/stun/shock/heavy
 	name = "heavy shock beam"
 	damage = 20
-	agony  = 30
+	agony  = 10
 
 /obj/item/projectile/beam/plasmacutter
 	name = "plasma arc"

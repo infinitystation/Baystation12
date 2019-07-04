@@ -393,8 +393,6 @@
 			return global.dreams;
 		if("dummy_lighting_corner")
 			return global.dummy_lighting_corner;
-		if("emojis")
-			return global.emojis;
 		if("empty_playable_ai_cores")
 			return global.empty_playable_ai_cores;
 		if("endgame_exits")
@@ -1320,8 +1318,6 @@
 			global.dreams=newval;
 		if("dummy_lighting_corner")
 			global.dummy_lighting_corner=newval;
-		if("emojis")
-			global.emojis=newval;
 		if("empty_playable_ai_cores")
 			global.empty_playable_ai_cores=newval;
 		if("endgame_exits")
@@ -2050,7 +2046,6 @@
 	"doppler_arrays",
 	"dreams",
 	"dummy_lighting_corner",
-	"emojis",
 	"empty_playable_ai_cores",
 	"endgame_exits",
 	"endgame_safespawns",

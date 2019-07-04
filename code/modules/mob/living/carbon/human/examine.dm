@@ -1,4 +1,4 @@
-/mob/living/carbon/human/examine(mob/user, show_look_message)
+/mob/living/carbon/human/examine(mob/user)
 	var/skipgloves = 0
 	var/skipsuitstorage = 0
 	var/skipjumpsuit = 0
@@ -7,9 +7,6 @@
 	var/skipears = 0
 	var/skipeyes = 0
 	var/skipface = 0
-
-	if(show_look_message && !isobserver(user)) // necessary check in case the eyes of the beholder are hidden
-		user.visible_message("<span class='notice'><font size=1><i>[user] looks at [src].</i></font></span>")
 
 	//exosuits and helmets obscure our view and stuff.
 	if(wear_suit)

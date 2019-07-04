@@ -28,6 +28,7 @@
 	high_visibility = 1
 
 	species_restricted = null
+	valid_accessory_slots = null
 
 /obj/item/clothing/accessory/cloak/ce
 	name = "chief engineer's cloak"

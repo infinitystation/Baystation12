@@ -1,11 +1,9 @@
-var/list/emojis
+GLOBAL_VAR_INIT(emojis, 'infinity/code/modules/emoji/emoji.dmi')
 
 /proc/emoji_parse(text)
 	. = text
 	if(!config.emojis)
 		return
-	if(!emojis)
-		emojis = icon_states(icon('infinity/icons/emoji.dmi'))
 	var/parsed = ""
 	var/pos = 1
 	var/search = 0
@@ -18,8 +16,8 @@ var/list/emojis
 			search = findtext(text, ":", pos+1)
 			if(search)
 				emoji = lowertext(copytext(text, pos+1, search))
-				if(emoji in emojis)
-					parsed += " <img class=icon src=\ref['infinity/icons/emoji.dmi'] iconstate='[emoji]'>"
+				if(emoji in icon_states(GLOB.emojis))
+					parsed += " <img class=icon src=\ref[GLOB.emojis] iconstate='[emoji]'>"
 					pos = search + 1
 				else
 					parsed += copytext(text, pos, search)

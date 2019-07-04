@@ -112,7 +112,8 @@ datum/track/proc/GetTrack()
 		"current_track" = current_track != null ? current_track.title : "No track selected",
 		"playing" = playing,
 		"tracks" = juke_tracks,
-		"volume" = volume
+		"volume" = volume,
+		"cassette" = cassette
 	)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -145,6 +146,10 @@ datum/track/proc/GetTrack()
 
 	if (href_list["volume"])
 		AdjustVolume(text2num(href_list["volume"]))
+		return TOPIC_REFRESH
+
+	if (href_list["eject"])
+		eject()
 		return TOPIC_REFRESH
 
 /obj/machinery/media/jukebox/proc/emag_play()
@@ -208,7 +213,7 @@ datum/track/proc/GetTrack()
 		D.forceMove(src)
 		cassette = D
 		tracks += cassette.track
-		//current_track = cassette.track
+		verbs += /obj/machinery/media/jukebox/verb/eject
 		return
 	// INF@CODE - END
 
