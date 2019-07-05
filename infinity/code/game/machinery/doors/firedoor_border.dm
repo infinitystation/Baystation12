@@ -1,10 +1,13 @@
 //Single direction firedoors.
 /obj/machinery/door/firedoor/border_only
-	icon = 'icons/obj/doors/edge_Doorfire.dmi'
+	icon = 'infinity/icons/obj/doors/hazard/border/door.dmi'
+	welded_file = 'infinity/icons/obj/doors/hazard/border/welded.dmi'
+	icon_state = "open"
 	glass = TRUE // There is a glass window so you can see through the door.
 				 // This is needed due to BYOND limitations in controlling visibility
 	heat_proof = TRUE
 	air_properties_vary_with_direction = TRUE
+	// atom_flags = ATOM_FLAG_CHECKS_BORDER
 
 /obj/machinery/door/firedoor/border_only/CanPass(atom/movable/mover, turf/target, height = FALSE, air_group = FALSE)
 	if(istype(mover) && mover.checkpass(PASS_FLAG_GLASS))
