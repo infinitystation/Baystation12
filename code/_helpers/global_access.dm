@@ -111,10 +111,10 @@
 			return global.SSshuttle;
 		if("SSskybox")
 			return global.SSskybox;
-		if("SSstickyban")
-			return global.SSstickyban;
 		if("SSstatistics")
 			return global.SSstatistics;
+		if("SSstickyban")
+			return global.SSstickyban;
 		if("SSsun")
 			return global.SSsun;
 		if("SSsupply")
@@ -341,8 +341,6 @@
 			return global.contamination_overlay;
 		if("create_mob_html")
 			return global.create_mob_html;
-		if("create_object_forms")
-			return global.create_object_forms;
 		if("create_object_html")
 			return global.create_object_html;
 		if("create_turf_html")
@@ -395,8 +393,6 @@
 			return global.dreams;
 		if("dummy_lighting_corner")
 			return global.dummy_lighting_corner;
-		if("emojis")
-			return global.emojis;
 		if("empty_playable_ai_cores")
 			return global.empty_playable_ai_cores;
 		if("endgame_exits")
@@ -503,8 +499,6 @@
 			return global.image_repository;
 		if("inactive_keys")
 			return global.inactive_keys;
-		if("inf_changelog_hash")
-			return global.inf_changelog_hash;
 		if("init")
 			return global.init;
 		if("intents")
@@ -1044,6 +1038,8 @@
 			global.SSskybox=newval;
 		if("SSstatistics")
 			global.SSstatistics=newval;
+		if("SSstickyban")
+			global.SSstickyban=newval;
 		if("SSsun")
 			global.SSsun=newval;
 		if("SSsupply")
@@ -1108,6 +1104,8 @@
 			global.admin_verbs_fun=newval;
 		if("admin_verbs_hideable")
 			global.admin_verbs_hideable=newval;
+		if("admin_verbs_judge")
+			global.admin_verbs_judge=newval;
 		if("admin_verbs_mentor")
 			global.admin_verbs_mentor=newval;
 		if("admin_verbs_mod")
@@ -1268,8 +1266,6 @@
 			global.contamination_overlay=newval;
 		if("create_mob_html")
 			global.create_mob_html=newval;
-		if("create_object_forms")
-			global.create_object_forms=newval;
 		if("create_object_html")
 			global.create_object_html=newval;
 		if("create_turf_html")
@@ -1322,8 +1318,6 @@
 			global.dreams=newval;
 		if("dummy_lighting_corner")
 			global.dummy_lighting_corner=newval;
-		if("emojis")
-			global.emojis=newval;
 		if("empty_playable_ai_cores")
 			global.empty_playable_ai_cores=newval;
 		if("endgame_exits")
@@ -1430,8 +1424,6 @@
 			global.image_repository=newval;
 		if("inactive_keys")
 			global.inactive_keys=newval;
-		if("inf_changelog_hash")
-			global.inf_changelog_hash=newval;
 		if("init")
 			global.init=newval;
 		if("intents")
@@ -2028,7 +2020,6 @@
 	"config",
 	"contamination_overlay",
 	"create_mob_html",
-	"create_object_forms",
 	"create_object_html",
 	"create_turf_html",
 	"created",
@@ -2055,7 +2046,6 @@
 	"doppler_arrays",
 	"dreams",
 	"dummy_lighting_corner",
-	"emojis",
 	"empty_playable_ai_cores",
 	"endgame_exits",
 	"endgame_safespawns",
@@ -2109,7 +2099,6 @@
 	"id_card_states",
 	"image_repository",
 	"inactive_keys",
-	"inf_changelog_hash",
 	"init",
 	"intents",
 	"intercom_range_display_status",

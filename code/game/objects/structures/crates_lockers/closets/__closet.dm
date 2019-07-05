@@ -625,7 +625,7 @@
 				if(code2[i] == code1[i])
 					validate++
 					to_chat(usr, "<span class='notice'>Ключ подходит.</span>")
-					playsound(W.loc, 'sound/machines/mbeep.ogg', 30, 1, frequency = rand(50000, 55000))
+					playsound(W.loc, 'infinity/sound/machines/mbeep.ogg', 30, 1, frequency = rand(50000, 55000))
 				else
 					to_chat(usr, "<span class='notice'>Ключ не подходит.</span>")
 		W.in_use = FALSE

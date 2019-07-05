@@ -219,12 +219,6 @@
 			movment_mod *= 0.5
 	miss_modifier -= movment_mod
 */
-
-	if(def_zone == BP_R_FOOT)
-		def_zone = BP_R_LEG
-	if(def_zone == BP_L_FOOT)
-		def_zone = BP_L_LEG
-	
 	var/hit_zone = get_zone_with_miss_chance(def_zone, target_mob, miss_modifier, ranged_attack=(distance > 1 || original != target_mob)) //if the projectile hits a target we weren't originally aiming at then retain the chance to miss
 
 	var/result = PROJECTILE_FORCE_MISS
@@ -247,7 +241,7 @@
 	else
 		target_mob.visible_message("<span class='danger'>\The [target_mob] is hit by \the [src] in the [parse_zone(def_zone)]!</span>")//X has fired Y is now given by the guns so you cant tell who shot you if you could not see the shooter
 		if(damage_type == BRUTE)
-			playsound(target_mob.loc, pick('sound/effects/bullethit1.ogg', 'sound/effects/bullethit2.ogg', 'sound/effects/bullethit3.ogg', 'sound/effects/bullethit4.ogg'), 100, 1)
+			playsound(target_mob.loc, pick('infinity/sound/effects/bullethit1.ogg', 'infinity/sound/effects/bullethit2.ogg', 'infinity/sound/effects/bullethit3.ogg', 'infinity/sound/effects/bullethit4.ogg'), 100, 1)
 	//admin logs
 	if(!no_attack_log)
 		if(istype(firer, /mob))

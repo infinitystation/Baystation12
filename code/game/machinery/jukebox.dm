@@ -28,8 +28,6 @@ datum/track/proc/GetTrack()
 	clicksound = 'sound/machines/buttonbeep.ogg'
 	pixel_x = -8
 
-	var/obj/item/device/cassette/cassette
-
 	var/playing = 0
 	var/volume = 20
 
@@ -58,10 +56,12 @@ datum/track/proc/GetTrack()
 
 /obj/machinery/media/jukebox/Destroy()
 	StopPlaying()
-	if(cassette)
-		QDEL_NULL(cassette)
 	QDEL_NULL_LIST(tracks)
 	current_track = null
+
+	if(cassette) // INF@CODE
+		QDEL_NULL(cassette)
+
 	. = ..()
 
 /obj/machinery/media/jukebox/powered()
@@ -112,7 +112,8 @@ datum/track/proc/GetTrack()
 		"current_track" = current_track != null ? current_track.title : "No track selected",
 		"playing" = playing,
 		"tracks" = juke_tracks,
-		"volume" = volume
+		"volume" = volume,
+		"cassette" = cassette
 	)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -142,9 +143,13 @@ datum/track/proc/GetTrack()
 		else
 			StartPlaying()
 		return TOPIC_REFRESH
-	
+
 	if (href_list["volume"])
 		AdjustVolume(text2num(href_list["volume"]))
+		return TOPIC_REFRESH
+
+	if (href_list["eject"])
+		eject()
 		return TOPIC_REFRESH
 
 /obj/machinery/media/jukebox/proc/emag_play()
@@ -192,6 +197,7 @@ datum/track/proc/GetTrack()
 		power_change()
 		return
 
+	// INF@CODE - START
 	if(istype(W, /obj/item/device/cassette))
 		var/obj/item/device/cassette/D = W
 		if(cassette)
@@ -207,8 +213,9 @@ datum/track/proc/GetTrack()
 		D.forceMove(src)
 		cassette = D
 		tracks += cassette.track
-		//current_track = cassette.track
+		verbs += /obj/machinery/media/jukebox/verb/eject
 		return
+	// INF@CODE - END
 
 	return ..()
 
@@ -243,24 +250,3 @@ datum/track/proc/GetTrack()
 	volume = Clamp(new_volume, 0, 50)
 	if(sound_token)
 		sound_token.SetVolume(volume)
-
-/obj/machinery/media/jukebox/verb/eject()
-	set name = "Eject Disk"
-	set category = "Object"
-	set src in oview(1)
-
-	if(usr.incapacitated())
-		return
-
-	if(!cassette)
-		to_chat(usr, "<span class='notice'>There is no cassette inside \the [src].</span>")
-	else
-		StopPlaying()
-		current_track = null
-		for(var/datum/track/T in tracks)
-			if(T == cassette.track)
-				tracks -= T
-		visible_message("<span class='notice'>[usr] eject the cassette from \the [src].</span>")
-		usr.put_in_hands(cassette)
-		cassette = null
-	return

@@ -91,8 +91,3 @@ modular computers
 	display_name = "laptop computer, advanced"
 	path = /obj/item/modular_computer/laptop/preset/custom_loadout/advanced
 	cost = 6
-
-/datum/gear/utility/wheelchair
-	display_name = "compressed wheelchair kit"
-	path = /obj/item/wheelchair_kit
-	cost = 2

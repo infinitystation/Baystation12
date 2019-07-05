@@ -793,9 +793,11 @@
 			if(isScrewdriver(W))  // Opening that Air Alarm up.
 //				to_chat(user, "You pop the Air Alarm's maintence panel open.")
 				wiresexposed = !wiresexposed
-				var/interact_sound = "[wiresexposed ? "open" : "close"]"
+
 				to_chat(user, "The wires have been [wiresexposed ? "exposed" : "unexposed"].")
-				playsound(src.loc, "sound/machines/Custom_screwdriver[interact_sound].ogg", 50, 1)
+				var/interact_sound = wiresexposed ? GLOB.machinery_exposed_sound[1] : GLOB.machinery_exposed_sound[2]
+				playsound(src, pick(interact_sound), 50, 1)
+
 				update_icon()
 				return
 
@@ -972,9 +974,11 @@ FIRE ALARM
 /obj/machinery/firealarm/attackby(obj/item/W as obj, mob/user as mob)
 	if(isScrewdriver(W) && buildstage == 2)
 		wiresexposed = !wiresexposed
-		var/interact_sound = "[wiresexposed ? "open" : "close"]"
+
 		to_chat(user, "The wires have been [wiresexposed ? "exposed" : "unexposed"].")
-		playsound(src.loc, "sound/machines/Custom_screwdriver[interact_sound].ogg", 50, 1)
+		var/interact_sound = wiresexposed ? GLOB.machinery_exposed_sound[1] : GLOB.machinery_exposed_sound[2]
+		playsound(src, pick(interact_sound), 50, 1)
+
 		update_icon()
 		return
 
@@ -1005,11 +1009,9 @@ FIRE ALARM
 						to_chat(user, "<span class='warning'>You need 5 pieces of cable to wire \the [src].</span>")
 						return
 				else if(isCrowbar(W))
-					to_chat(user, "You start prying out the circuit...")
+					to_chat(user, "You start prying out the circuit.")
 					playsound(src.loc, 'sound/items/Crowbar.ogg', 50, 1)
-					if(do_after(user, 20, src))
-						if(!src)
-							return
+					if (do_after(user,20,src))
 						to_chat(user, "You pry out the circuit!")
 						var/obj/item/weapon/firealarm_electronics/circuit = new /obj/item/weapon/firealarm_electronics()
 						circuit.dropInto(user.loc)
@@ -1174,112 +1176,22 @@ Just a object used in constructing fire alarms
 	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_STEEL = 50, MATERIAL_GLASS = 50)
 
-/*
-PARTY ALARM CIRCUIT
-Just a object used in constructing party alarms
-*/
-/obj/item/weapon/partyalarm_electronics
-	name = "party alarm electronics"
-	icon = 'icons/obj/doors/door_assembly.dmi'
-	icon_state = "door_electronics"
-	desc = "A circuit. It has a label on it, it says \"Can handle heat levels up to 40 degrees celsius!\"."
-	w_class = ITEM_SIZE_SMALL
-	matter = list(DEFAULT_WALL_MATERIAL = 50, "glass" = 50)
-
 /obj/machinery/partyalarm
 	name = "\improper PARTY BUTTON"
 	desc = "Cuban Pete is in the house!"
 	icon = 'icons/obj/monitors.dmi'
 	icon_state = "fire0"
-	var/detecting = 1
-	var/working = 1
-	var/time = 10
-	var/timing = 0
+	var/detecting = 1.0
+	var/working = 1.0
+	var/time = 10.0
+	var/timing = 0.0
 	var/lockdownbyai = 0
-	var/buildstage = 2 // 2 = complete, 1 = no wires,  0 = circuit gone
-	var/wiresexposed = 0
-	anchored = 1
+	anchored = 1.0
 	idle_power_usage = 2
 	active_power_usage = 6
 
-/obj/machinery/partyalarm/New(loc, dir, atom/frame)
-	..(loc)
-
-	if(dir)
-		src.set_dir(dir)
-
-	if(istype(frame))
-		buildstage = 0
-		wiresexposed = 1
-		pixel_x = (dir & 3)? 0 : (dir == 4 ? -24 : 24)
-		pixel_y = (dir & 3)? (dir ==1 ? -24 : 24) : 0
-		frame.transfer_fingerprints_to(src)
-
-/obj/machinery/partyalarm/attackby(obj/item/W as obj, mob/user as mob)
-	src.add_fingerprint(user)
-
-	if (istype(W, /obj/item/weapon/screwdriver) && buildstage == 2)
-		wiresexposed = !wiresexposed
-		var/interact_sound = "[wiresexposed ? "open" : "close"]"
-		to_chat(user, "The wires have been [wiresexposed ? "exposed" : "unexposed"].")
-		playsound(src.loc, "sound/machines/Custom_screwdriver[interact_sound].ogg", 50, 1)
-		update_icon()
-		return
-
-	if(wiresexposed)
-		switch(buildstage)
-			if(2)
-				if(istype(W, /obj/item/device/multitool))
-					src.detecting = !(src.detecting)
-					if(src.detecting)
-						user.visible_message("<span class='notice'>\The [user] has reconnected [src]'s detecting unit!</span>", "<span class='notice'>You have reconnected [src]'s detecting unit.</span>")
-					else
-						user.visible_message("<span class='notice'>\The [user] has disconnected [src]'s detecting unit!</span>", "<span class='notice'>You have disconnected [src]'s detecting unit.</span>")
-				else if(istype(W, /obj/item/weapon/wirecutters))
-					user.visible_message("<span class='notice'>\The [user] has cut the wires inside \the [src]!</span>", "<span class='notice'>You have cut the wires inside \the [src].</span>")
-					new/obj/item/stack/cable_coil(get_turf(src), 5)
-					playsound(src.loc, 'sound/items/Wirecutter.ogg', 50, 1)
-					buildstage = 1
-					update_icon()
-			if(1)
-				if(istype(W, /obj/item/stack/cable_coil))
-					var/obj/item/stack/cable_coil/C = W
-					if (C.use(5))
-						to_chat(user, "<span class='notice'>You wire \the [src].</span>")
-						buildstage = 2
-						return
-					else
-						to_chat(user, "<span class='warning'>You need 5 pieces of cable to wire \the [src].</span>")
-						return
-				else if(istype(W, /obj/item/weapon/crowbar))
-					to_chat(user, "Prying out the circuit...")
-					playsound(src.loc, 'sound/items/Crowbar.ogg', 50, 1)
-					if(do_after(user, 30, src))
-						if(!src) return
-						to_chat(user, "You pry out the circuit!")
-						var/obj/item/weapon/partyalarm_electronics/circuit = new /obj/item/weapon/partyalarm_electronics()
-						circuit.dropInto(user.loc)
-						buildstage = 0
-						update_icon()
-			if(0)
-				if(istype(W, /obj/item/weapon/partyalarm_electronics))
-					to_chat(user, "You insert the circuit!")
-					qdel(W)
-					buildstage = 1
-					update_icon()
-
-				else if(istype(W, /obj/item/weapon/wrench))
-					to_chat(user, "You remove the party alarm assembly from the wall!")
-					new /obj/item/frame/party_alarm(get_turf(user))
-					playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
-					qdel(src)
-		return
-
-	src.alarm()
-	return
-
 /obj/machinery/partyalarm/attack_hand(mob/user as mob)
-	if(user.stat || stat & (NOPOWER|BROKEN) || wiresexposed)
+	if(user.stat || stat & (NOPOWER|BROKEN))
 		return
 
 	user.machine = src
@@ -1352,30 +1264,3 @@ Just a object used in constructing party alarms
 
 	if(. == TOPIC_REFRESH)
 		attack_hand(user)
-
-/obj/machinery/partyalarm/on_update_icon()
-	overlays.Cut()
-
-	if(wiresexposed)
-		switch(buildstage)
-			if(2)
-				icon_state="fire_b2"
-			if(1)
-				icon_state="fire_b1"
-			if(0)
-				icon_state="fire_b0"
-		set_light(0)
-		return
-
-	if(stat & BROKEN)
-		icon_state = "firex"
-		set_light(0)
-	else if(stat & NOPOWER)
-		icon_state = "firep"
-		set_light(0)
-	else
-		if(!src.detecting)
-			icon_state = "fire1"
-			set_light(l_range = 4, l_power = 2, l_color = COLOR_CYAN)
-		else
-			icon_state = "fire0"

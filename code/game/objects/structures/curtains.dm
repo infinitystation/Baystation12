@@ -26,7 +26,7 @@
 	..()
 
 /obj/structure/curtain/proc/toggle()
-	playsound(get_turf(loc), 'sound/effects/curtain.ogg', 15, 1, -5)
+	playsound(get_turf(loc), 'infinity/sound/effects/curtain.ogg', 15, 1, -5)
 	set_opacity(!opacity)
 	if(opacity)
 		icon_state = "closed"

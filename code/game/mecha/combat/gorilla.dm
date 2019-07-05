@@ -4,7 +4,7 @@
 	icon_state = "mecha_uac2"
 	equip_cooldown = 60 // 6 seconds
 	projectile = /obj/item/projectile/bullet/cannon
-	fire_sound = 'sound/weapons/cannon.ogg'
+	fire_sound = 'infinity/sound/weapons/cannon.ogg'
 	projectiles = 1
 	projectile_energy_cost = 1000
 	salvageable = 0 // We don't want players ripping this off a dead mech. Could potentially be a prize for beating it if Devs bless me and someone offers a nerf idea.
@@ -102,9 +102,9 @@
 	if(result)
 		switch(stepsound)
 			if(1)
-				playsound(src,'sound/mecha/bigmech_lstep.ogg',40,1)
+				playsound(src,'infinity/sound/mecha/bigmech_lstep.ogg',40,1)
 			if(2)
-				playsound(src,'sound/mecha/bigmech_rstep.ogg',40,1)
+				playsound(src,'infinity/sound/mecha/bigmech_rstep.ogg',40,1)
 	return result
 
 /obj/mecha/combat/gorilla/mechturn(direction)
@@ -112,9 +112,9 @@
 	var/turnsound = rand(1,2)
 	switch(turnsound)
 		if(1)
-			playsound(src,'sound/mecha/bigmech_lturn.ogg',40,1)
+			playsound(src,'infinity/sound/mecha/bigmech_lturn.ogg',40,1)
 		if(2)
-			playsound(src,'sound/mecha/bigmech_rturn.ogg',40,1)
+			playsound(src,'infinity/sound/mecha/bigmech_rturn.ogg',40,1)
 	return 1
 
 

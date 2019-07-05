@@ -196,7 +196,7 @@
 		to_chat(user, "<span class='warning'>Access denied.</span>")
 		return
 
-	playsound(src, 'sound/machines/Conveyor_switch.ogg', 100, 1)
+	playsound(src, 'infinity/sound/machines/Conveyor_switch.ogg', 100, 1)
 	if(position == 0)
 		if(last_pos < 0)
 			position = 1
@@ -232,7 +232,7 @@
 
 // attack with hand, switch position
 /obj/machinery/conveyor_switch/oneway/attack_hand(mob/user)
-	playsound(src, 'sound/machines/Conveyor_switch.ogg', 100, 1)
+	playsound(src, 'infinity/sound/machines/Conveyor_switch.ogg', 100, 1)
 	if(position == 0)
 		position = convdir
 	else

@@ -38,7 +38,7 @@
 
 	handle_regular_hud_updates()
 
-	eye_blink()
+	eye_blink() // INF@CODE
 
 	return 1
 

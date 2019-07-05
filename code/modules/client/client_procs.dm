@@ -220,9 +220,9 @@
 		if(config.aggressive_changelog)
 			src.changes()
 
-	if(prefs.lastinfchangelog != inf_changelog_hash) //bolds the changelog button on the interface so we know there are updates.
+	if(prefs.lastchangelog_infinity != GLOB.changelog_hash_infinity)
 		to_chat(src, "<span class='info'>You have unread updates in the Infinity changelog.</span>")
-		winset(src, "rpane.changelog_infinity", "background-color=#5fe65c;font-style=bold")
+		winset(src, "rpane.changelog_infinity", "background-color=#8053ad;font-style=bold")
 		if(config.aggressive_changelog)
 			src.changes_infinity()
 
