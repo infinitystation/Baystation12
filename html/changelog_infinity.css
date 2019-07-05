@@ -1,13 +1,12 @@
 body {
 	margin: 0; padding: 0;
-	font-family: Arial, Calibri, sans-serif;
-	color: #d3daeb
+	font-family: Tahoma, sans-serif;
 }
 .hero-bkg-animated {
   background: gray url(Space.png) repeat 0 0;
   width: 100%;
   margin: 0;
-  height: 325px;
+  height: 335px;
   box-sizing: border-box;
   -webkit-animation: slide 20s linear infinite;
 }
