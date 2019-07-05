@@ -18,9 +18,6 @@ var/bomb_set
 	var/code = ""
 	var/yes_code = 0
 	var/safety = 1
-	var/spam_check = 0
-	var/escaped = 0
-	var/time_before_launch = 60
 	var/obj/item/weapon/disk/nuclear/auth = null
 	var/removal_stage = 0 // 0 is no removal, 1 is covers removed, 2 is covers open, 3 is sealant open, 4 is unwrenched, 5 is removed from bolts.
 	var/lastentered
@@ -47,7 +44,7 @@ var/bomb_set
 		if(timeleft <= 0)
 			addtimer(CALLBACK(src, .proc/explode), 0)
 		SSnano.update_uis(src)
-		if(!escaped && timeleft <= time_before_launch)
+		if(!escaped && timeleft <= time_before_launch && GLOB.using_map.evac_on_delta_code)
 			escaped = 1
 			start_evacuation()
 
@@ -296,10 +293,10 @@ var/bomb_set
 					spam_check = world.time + 100
 				if(!timing && !safety)
 					start_bomb()
-					prepare_evacuation()
+					if(GLOB.using_map.evac_on_delta_code) prepare_evacuation()
 				else
 					check_cutoff()
-					addtimer(CALLBACK(src, .proc/stop_evacuation), 10 SECONDS)
+					if(GLOB.using_map.evac_on_delta_code) addtimer(CALLBACK(src, .proc/stop_evacuation), 10 SECONDS)
 			if(href_list["safety"])
 				if (wires.IsIndexCut(NUCLEARBOMB_WIRE_SAFETY))
 					to_chat(usr, "<span class='warning'>Nothing happens, something might be wrong with the wiring.</span>")
@@ -333,30 +330,6 @@ var/bomb_set
 	original_level = security_state.current_security_level
 	security_state.set_security_level(security_state.severe_security_level, TRUE)
 	update_icon()
-
-/obj/machinery/nuclearbomb/proc/prepare_evacuation()
-	GLOB.using_map.make_maint_all_access()
-	var/zlevels = GetConnectedZlevels(z)
-	for(var/obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod/E in world)
-		if(!(E.z in zlevels))
-			continue
-		E.pod.arming_controller.arm()
-
-/obj/machinery/nuclearbomb/proc/start_evacuation()
-	var/zlevels = GetConnectedZlevels(z)
-	for(var/obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod/E in world)
-		if(!(E.z in zlevels))
-			continue
-		E.pod.launch()
-
-/obj/machinery/nuclearbomb/proc/stop_evacuation()
-	GLOB.using_map.revoke_maint_all_access()
-	if(!escaped)
-		var/zlevels = GetConnectedZlevels(z)
-		for(var/obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod/E in world)
-			if(!(E.z in zlevels))
-				continue
-			E.pod.arming_controller.unarm()
 
 /obj/machinery/nuclearbomb/proc/check_cutoff()
 	secure_device()

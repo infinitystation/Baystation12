@@ -3096,6 +3096,7 @@
 #include "infinity\code\game\machinery\disk_writer.dm"
 #include "infinity\code\game\machinery\jukebox.dm"
 #include "infinity\code\game\machinery\metal_detector.dm"
+#include "infinity\code\game\machinery\nuclear_bomb.dm"
 #include "infinity\code\game\machinery\suit_storage_units.dm"
 #include "infinity\code\game\machinery\doors\airlocks.dm"
 #include "infinity\code\game\machinery\doors\blast.dm"
