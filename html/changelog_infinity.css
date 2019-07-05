@@ -6,7 +6,7 @@ body {
   background: gray url(Space.png) repeat 0 0;
   width: 100%;
   margin: 0;
-  height: 335px;
+  height: 365px;
   box-sizing: border-box;
   -webkit-animation: slide 20s linear infinite;
 }
