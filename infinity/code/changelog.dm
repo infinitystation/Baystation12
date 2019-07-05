@@ -24,7 +24,9 @@ GLOBAL_VAR_INIT(changelog_hash_infinity, "")
 		'html/spell-check.png',
 		'html/wrench-screwdriver.png',
 		'html/changelog.css',
-		'html/changelog_infinity.html'
+		'html/changelog_infinity.html',
+		'html/changelog_infinity.css',
+		'html/Space.png',
 		)
 
 	src << browse('html/changelog_infinity.html', "window=changes_infinity;size=675x650")
