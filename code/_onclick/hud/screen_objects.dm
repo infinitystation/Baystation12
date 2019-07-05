@@ -57,7 +57,7 @@
 	if(!usr.canClick())
 		return
 
-	if(usr.stat || usr.restrained() || usr.stunned || usr.lying)
+	if(usr.incapacitated(INCAPACITATION_DISABLED & ~INCAPACITATION_FORCELYING)) // inf usr.stat || usr.restrained() || usr.stunned || usr.lying)
 		return 1
 
 	if(!(owner in usr))
@@ -375,7 +375,7 @@
 	// We don't even know if it's a middle click
 	if(!usr.canClick())
 		return 1
-	if(usr.incapacitated())
+	if(usr.incapacitated(INCAPACITATION_DISABLED & ~INCAPACITATION_FORCELYING)) // inf usr.incapacitated())
 		return 1
 	if (istype(usr.loc,/obj/mecha)) // stops inventory actions in a mech
 		return 1
@@ -405,7 +405,7 @@
 	return 1
 
 /obj/screen/health
-		
+
 /obj/screen/health/Click(var/location, var/control, var/params)
 	usr.Click(usr, params)
 
