@@ -1,9 +1,9 @@
 /obj/structure/barrier
 	name = "defensive barrier"
-	desc = "A portable barrier — usually, you can see it on defensive positions or in storages in important areas. \
+	desc = "A portable barrier - usually, you can see it on defensive positions or in storages in important areas. \
 	You can deploy it with a screwdriver for maximum protection, or keep it in mobile position. \
-	Also, demontage can be done with a crowbar.In case of structural damage, can be repaired with welding tool."
-	icon = 'icons/obj/infinity_barrier.dmi'
+	Also, demontage can be done with a crowbar. In case of structural damage, can be repaired with welding tool."
+	icon = 'infinity/icons/obj/barrier.dmi'
 	icon_state = "barrier_rised"
 	density = 1
 	throwpass = 1
@@ -71,18 +71,8 @@
 		if(proj.firer && Adjacent(proj.firer))
 			return 1
 
-		if(dir==1) //sorry my
-			if(mover.dir!=2)
-				return 1
-		if(dir==2)
-			if(mover.dir!=1)
-				return 1
-		if(dir==4)
-			if(mover.dir!=8)
-				return 1
-		if(dir==8)
-			if(mover.dir!=4)
-				return 1
+		if(mover.dir != reverse_direction(dir))
+			return 1
 
 		if(get_dist(proj.starting, loc) <= 1)//allows to fire from 1 tile away of barrier
 			return 1
@@ -91,8 +81,6 @@
 
 	if(get_dir(get_turf(src), target) == dir && density)//turned in front of barrier
 		return 0
-	else
-		return 1
 	return 1
 
 /obj/structure/barrier/CheckExit(atom/movable/O as mob|obj, target as turf)
@@ -240,7 +228,7 @@
 
 /obj/item/weapon/barrier
 	name = "portable barrier"
-	desc = "A portable barrier — usually, you can see it on defensive positions or in storages at important areas. \
+	desc = "A portable barrier ï¿½ usually, you can see it on defensive positions or in storages at important areas. \
 	You can deploy it with a screwdriver for maximum protection, or keep it in mobile position. \
 	Also, demontage can be done with a crowbar.In case of structural damage, can be repaired with welding tool."
 	icon = 'icons/obj/items_inf.dmi'
