@@ -104,14 +104,14 @@
 #define MIN_SUPPLIED_LAW_NUMBER 15
 #define MAX_SUPPLIED_LAW_NUMBER 50
 
-// Character's economic class
-#define CLASS_UPPER 		"Wealthy"
-#define CLASS_UPMID			"Well-off"
-#define CLASS_MIDDLE 		"Average"
-#define CLASS_LOWMID		"Underpaid"
-#define CLASS_LOWER			"Poor"
+// NT's alignment towards the character
+#define COMPANY_LOYAL 			"Loyal"
+#define COMPANY_SUPPORTATIVE	"Supportive"
+#define COMPANY_NEUTRAL 		"Neutral"
+#define COMPANY_SKEPTICAL		"Skeptical"
+#define COMPANY_OPPOSED			"Opposed"
 
-#define ECONOMIC_CLASS		list(CLASS_UPPER,CLASS_UPMID,CLASS_MIDDLE,CLASS_LOWMID,CLASS_LOWER)
+#define COMPANY_ALIGNMENTS		list(COMPANY_LOYAL,COMPANY_SUPPORTATIVE,COMPANY_NEUTRAL,COMPANY_SKEPTICAL,COMPANY_OPPOSED)
 
 // Defines mob sizes, used by lockers and to determine what is considered a small sized mob, etc.
 #define MOB_LARGE  		40
@@ -154,7 +154,6 @@
 
 #define ANIMAL_SPAWN_DELAY round(config.respawn_delay / 6)
 #define DRONE_SPAWN_DELAY  round(config.respawn_delay / 3)
-#define OBSERV_SPAWN_DELAY round(config.respawn_delay / 2)
 
 // Incapacitation flags, used by the mob/proc/incapacitated() proc
 #define INCAPACITATION_NONE 0
@@ -240,23 +239,6 @@
 #define BP_ALL_LIMBS list(BP_CHEST, BP_GROIN, BP_HEAD, BP_L_ARM, BP_R_ARM, BP_L_HAND, BP_R_HAND, BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT)
 #define BP_BY_DEPTH list(BP_HEAD, BP_L_HAND, BP_R_HAND, BP_L_ARM, BP_R_ARM, BP_L_FOOT, BP_R_FOOT, BP_L_LEG, BP_R_LEG, BP_GROIN, BP_CHEST)
 
-//Swarm Limbs
-#define BP_L_F_LEG 		"left front leg"
-#define BP_R_F_LEG 		"right front leg"
-#define BP_L_B_LEG 		"left back leg"
-#define BP_R_B_LEG 		"right back leg"
-#define BP_SHELL   		"shell"
-#define BP_MANIPULATOR	"manipulator"
-
-//Swarm Organs
-#define BP_SENSOR			"sensor"
-#define BP_GENERATOR		"generator"
-#define BP_CORE				"core"
-#define BP_THRUSTER			"thruster"
-#define BP_ARMOR			"armor"
-#define BP_ANTI_EMP_PLATING	"anti EMP plating"
-#define BP_MATTER_TANK		"matter tank"
-
 // Prosthetic helpers.
 #define BP_IS_ROBOTIC(org)  (org.status & ORGAN_ROBOTIC)
 #define BP_IS_ASSISTED(org) (org.status & ORGAN_ASSISTED)
@@ -302,7 +284,6 @@
 #define CORPSE_CAN_REENTER_AND_RESPAWN 2
 
 #define SPECIES_HUMAN       "Human"
-#define SPECIES_TAJARA      "Tajara"
 #define SPECIES_DIONA       "Diona"
 #define SPECIES_VOX         "Vox"
 #define SPECIES_VOX_ARMALIS "Vox Armalis"
@@ -312,17 +293,14 @@
 #define SPECIES_NABBER      "giant armoured serpentid"
 #define SPECIES_PROMETHEAN  "Promethean"
 #define SPECIES_XENO        "Xenophage"
-#define SPECIES_RESOMI      "Resomi"
 #define SPECIES_ALIEN       "Humanoid"
 #define SPECIES_ADHERENT    "Adherent"
 #define SPECIES_GOLEM       "Golem"
 #define SPECIES_YEOSA       "Yeosa'Unathi"
-#define SPECIES_EROSAN      "Erosan'Unathi"
 #define SPECIES_VATGROWN    "Vat-Grown Human"
 #define SPECIES_SPACER      "Space-Adapted Human"
 #define SPECIES_TRITONIAN   "Tritonian"
 #define SPECIES_GRAVWORLDER "Grav-Adapted Human"
-#define SPECIES_SWARM		"Swarm"
 
 #define STATION_SPECIES list(SPECIES_HUMAN, SPECIES_DIONA, SPECIES_IPC, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_TRITONIAN, SPECIES_SPACER, SPECIES_VATGROWN, SPECIES_GRAVWORLDER, SPECIES_RESOMI, SPECIES_TAJARA)
 #define RESTRICTED_SPECIES list(SPECIES_VOX, SPECIES_XENO, SPECIES_ALIEN, SPECIES_GOLEM)
@@ -356,6 +334,7 @@
 #define MOB_CLIMB_TIME_MEDIUM 50
 
 #define MOB_FACTION_NEUTRAL "neutral"
+
 #define ROBOT_MODULE_TYPE_GROUNDED "grounded"
 #define ROBOT_MODULE_TYPE_FLYING   "flying"
 
