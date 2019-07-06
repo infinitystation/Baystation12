@@ -32,5 +32,5 @@ GLOBAL_VAR_INIT(changelog_hash_infinity, "")
 	src << browse('html/changelog_infinity.html', "window=changes_infinity;size=675x650")
 	if(prefs.lastchangelog_infinity != GLOB.changelog_hash_infinity)
 		prefs.lastchangelog_infinity = GLOB.changelog_hash_infinity
-		prefs.save_preferences()
+		SScharacter_setup.queue_preferences_save(prefs)
 		winset(src, "rpane.changelog_infinity", "background-color=none;font-style=;")
