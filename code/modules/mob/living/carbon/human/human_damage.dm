@@ -416,6 +416,9 @@ This function restores all organs.
 		if(CLONE)
 			organ.add_genetic_damage(damage)
 
+	if(damagetype == BRUTE) //infinity
+		if(stat != DEAD) receive_damage()
+
 	// Will set our damageoverlay icon to the next level, which will then be set back to the normal level the next mob.Life().
 	updatehealth()
 	BITSET(hud_updateflag, HEALTH_HUD)

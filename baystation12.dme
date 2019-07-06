@@ -3236,6 +3236,7 @@
 #include "infinity\code\modules\culture_descriptor\religion\religion_resomi.dm"
 #include "infinity\code\modules\emoji\emoji_parse.dm"
 #include "infinity\code\modules\food\recipes_microwave.dm"
+#include "infinity\code\modules\mob\animations.dm"
 #include "infinity\code\modules\mob\holder.dm"
 #include "infinity\code\modules\mob\language\alien\resomi.dm"
 #include "infinity\code\modules\mob\language\alien\tajaran.dm"

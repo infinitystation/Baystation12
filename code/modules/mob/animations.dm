@@ -231,12 +231,3 @@ note dizziness decrements automatically in the mob's Life() proc.
 		return
 	playsound(T, "sparks", 50, 1)
 	anim(src,'icons/mob/mob.dmi',,"phaseout",,dir)
-
-/atom/movable/proc/receive_damage(atom/A)
-	var/pixel_x_diff = rand(-2,2)
-	var/pixel_y_diff = rand(-2,2)
-	animate(src, pixel_x = pixel_x + pixel_x_diff, pixel_y = pixel_y + pixel_y_diff, time = 2)
-	animate(pixel_x = initial(pixel_x), pixel_y = initial(pixel_y), time = 2)
-
-/mob/living/receive_damage(atom/A)
-	..()
