@@ -94,7 +94,7 @@
 
 /obj/structure/barrier/attack_hand(mob/living/carbon/human/user as mob)
 	if(user.species.can_shred(user) || user.get_species() == SPECIES_XENO)
-		take_damage(user.species.)
+		take_damage(user.species)
 		return
 	if(deployed)
 		to_chat(user, "<span class='notice'>[src] is already deployed. You can't move it.</span>")
