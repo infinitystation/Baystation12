@@ -213,7 +213,7 @@ item_path: /obj/item/weapon/clothingbag/zone
 {
 ckey: courierr
 character_name: Mia Lee
-item_path: /obj/item/modular_computer/wrist/advanced 
+item_path: /obj/item/modular_computer/pda/wrist/advanced 
 }
 {
 ckey: auesti
@@ -248,7 +248,7 @@ item_path: /obj/item/weapon/flame/lighter/zippo/infinity/cust_zippo
 {
 ckey: m1am1
 character_name: Edward Paige
-item_path: /obj/item/modular_computer/wrist/advanced
+item_path: /obj/item/modular_computer/pda/wrist/advanced
 }
 {
 ckey: quietproject 
@@ -455,7 +455,7 @@ item_desc: Grim periapt made of sinew and fangs of unknown monstrosity. Most lik
 {
 ckey: coltrane97
 character_name: Terry Linton
-item_path: /obj/item/modular_computer/wrist/grayson
+item_path: /obj/item/modular_computer/pda/wrist/grayson
 }
 {
 ckey: courierr

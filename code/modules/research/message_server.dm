@@ -142,9 +142,8 @@ var/global/list/obj/machinery/message_server/message_servers = list()
 		if(!(H.z in connected_levels))
 			continue
 		var/obj/item/modular_computer/pda/pda = locate() in H
-		var/obj/item/modular_computer/wrist/w = locate() in H
 		var/obj/item/device/radio/headset/hs = locate() in H
-		if(!pda && !w && !hs)
+		if(!pda && !hs)
 			continue
 
 		var/datum/job/J = SSjobs.get_by_title(H.get_authentification_rank())
@@ -154,9 +153,6 @@ var/global/list/obj/machinery/message_server/message_servers = list()
 		if(J.department_flag & department)
 			if(pda)
 				to_chat(H, SPAN_NOTICE("Your [pda] alerts you to the fact that somebody is requesting your presence at your department."))
-				reached++
-			else if(w)
-				to_chat(H, SPAN_NOTICE("Your [w] alerts you to the fact that somebody is requesting your presence at your department."))
 				reached++
 			else if(hs && hs.listening)
 				to_chat(H, SPAN_NOTICE("Your [hs] vibrates and alerts you to the fact that somebody is requesting your presence at your department."))
