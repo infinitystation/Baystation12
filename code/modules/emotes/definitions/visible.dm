@@ -69,11 +69,6 @@
 	key = "blink"
 	emote_message_3p = "USER моргает."
 
-/decl/emote/visible/blink/do_emote(var/mob/user)
-	if(isliving(user))
-		var/mob/living/L = user
-		L.eye_blink()
-
 /decl/emote/visible/airguitar
 	key = "airguitar"
 	check_restraints = TRUE
@@ -87,6 +82,11 @@
 	key = "bow"
 	emote_message_3p_target = "USER делает поклон TARGET."
 	emote_message_3p = "USER делает поклон."
+
+/decl/emote/visible/salute
+	key = "salute"
+	emote_message_3p_target = "USER выполн&#255;ет воинское приветствие TARGET."
+	emote_message_3p = "USER выполн&#255;ет воинское приветствие."
 
 /decl/emote/visible/flap
 	key = "flap"
