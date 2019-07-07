@@ -29,7 +29,6 @@
 #define BP_MATTER_TANK		"matter tank"
 
 #define SPECIES_TAJARA "Tajara"
-#define SPECIES_YEOSA  "Yeosa'Unathi"
 #define SPECIES_EROSAN "Erosan'Unathi"
 #define SPECIES_RESOMI "Resomi"
 #define SPECIES_SWARM  "Swarm"

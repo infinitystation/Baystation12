@@ -11,8 +11,6 @@
 /datum/universal_state/bluespace_jump/OnEnter()
 	var/space_zlevel = GLOB.using_map.get_empty_zlevel() //get a place for stragglers
 	for(var/mob/living/M in SSmobs.mob_list)
-		if(is_bot(M))
-			continue
 		if(M.z in affected_levels)
 			var/area/A = get_area(M)
 			if(istype(A,/area/space)) //straggler

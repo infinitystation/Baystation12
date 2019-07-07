@@ -15,7 +15,7 @@
 	icon = 'icons/obj/tables_inf.dmi'
 	icon_state = "wallf_regular"
 	color = COLOR_OFF_WHITE
-	material = DEFAULT_TABLE_MATERIAL
+	material = MATERIAL_PLASTIC
 	reinforced = DEFAULT_WALL_MATERIAL
 	flipped = -1
 

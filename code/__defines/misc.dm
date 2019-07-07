@@ -249,11 +249,6 @@
 //Lying animation
 #define ANIM_LYING_TIME 2
 
-#define GET_ANNOUNCEMENT_FREQ(X) GLOB.using_map.use_job_frequency_announcement ? get_announcement_frequency(X) : "Common"
-
-//Preference save/load cooldown
-#define PREF_SAVELOAD_COOLDOWN 2
-
 //Planet habitability class
 #define HABITABILITY_IDEAL  1
 #define HABITABILITY_OKAY  2
