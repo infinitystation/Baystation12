@@ -1,5 +1,5 @@
 /obj/item/clothing/accessory/cloak // A colorable cloak
-	name = "cloak"
+	name = "blank cloak"
 	desc = "A simple, bland cloak."
 	icon = 'infinity/icons/obj/clothing/ties.dmi'
 	icon_state = "colorcloak"

@@ -41,3 +41,40 @@
 	display_name = "zippo (decorated)"
 	path = /obj/item/weapon/flame/lighter/zippo/infinity
 	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/accessory/tags
+	display_name = "dog tags"
+	path = /obj/item/clothing/accessory/badge/dog_tags
+
+/datum/gear/uniform/pmc
+	display_name = "PMC uniform selection"
+	allowed_roles = list(/datum/job/detective, /datum/job/officer, /datum/job/hos)
+	path = /obj/item/clothing/under
+
+/datum/gear/uniform/pmc/New()
+	..()
+	var/pmc = list()
+	pmc["SAARE utility uniform"]= /obj/item/clothing/under/saare
+	pmc["PCRC utility uniform"]	= /obj/item/clothing/under/pcrc
+	pmc["PCRC formal uniform"]	= /obj/item/clothing/under/pcrcsuit
+	pmc["SCP utility uniform"]	= /obj/item/clothing/under/scp_uniform
+	pmc["ZPCI utility uniform"]	= /obj/item/clothing/under/zpci_uniform
+	gear_tweaks += new/datum/gear_tweak/path(pmc)
+
+/datum/gear/head/scp_cap
+	display_name = "SCP cap"
+	path = /obj/item/clothing/head/soft/scp_cap
+	allowed_roles = list(/datum/job/detective, /datum/job/officer, /datum/job/hos)
+
+/datum/gear/gloves/insulated
+	display_name = "insulated gloves selection"
+	path = /obj/item/clothing/gloves/insulated
+//	allowed_roles = write_engineers_here
+	cost = 3
+
+/datum/gear/gloves/insulated/New()
+	..()
+	var/glovtype = list()
+	glovtype["yellow insulated"] = /obj/item/clothing/gloves/insulated
+	glovtype["black insulated"] = /obj/item/clothing/gloves/insulated/black
+	gear_tweaks += new/datum/gear_tweak/path(glovtype)

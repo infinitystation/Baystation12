@@ -1,6 +1,7 @@
 /datum/gear/tactical/bloodpatch
 	display_name = "blood patch selection"
 	path = /obj/item/clothing/accessory/armor/tag
+	allowed_roles = list(/datum/job/detective, /datum/job/officer, /datum/job/hos)
 
 /datum/gear/tactical/bloodpatch/New()
 	..()
@@ -15,10 +16,11 @@
 	blatch["AB- blood patch"] = /obj/item/clothing/accessory/armor/tag/abneg
 	gear_tweaks += new/datum/gear_tweak/path(blatch)
 
-/* moved into maps/sierra/loadout/tactical due torch's problems
+
 /datum/gear/tactical/armor_pouches
 	display_name = "armor pouches selection"
 	path = /obj/item/clothing/accessory/storage/pouches
+	allowed_roles = list(/datum/job/detective, /datum/job/officer, /datum/job/hos)
 	cost = 3
 
 /datum/gear/tactical/armor_pouches/New()
@@ -34,6 +36,7 @@
 /datum/gear/tactical/large_pouches
 	display_name = "large armor pouches selection"
 	path = /obj/item/clothing/accessory/storage/pouches/large
+	allowed_roles = list(/datum/job/detective, /datum/job/officer, /datum/job/hos)
 	cost = 6
 
 /datum/gear/tactical/large_pouches/New()
@@ -45,11 +48,12 @@
 	lpouches["large blue storage pouches"] = /obj/item/clothing/accessory/storage/pouches/large/blue
 	lpouches["large black storage pouches"] = /obj/item/clothing/accessory/storage/pouches/large
 	gear_tweaks += new/datum/gear_tweak/path(lpouches)
-*/
+
 
 /datum/gear/tactical/armor_deco
 	display_name = "armor tags selection"
 	path = /obj/item/clothing/accessory/armor/tag
+	allowed_roles = list(/datum/job/detective, /datum/job/officer, /datum/job/hos)
 
 /datum/gear/tactical/armor_deco/New()
 	..()
@@ -60,3 +64,20 @@
 	atags["SCP tag"] = /obj/item/clothing/accessory/armor/tag/scp
 	atags["ZPCI tag"] = /obj/item/clothing/accessory/armor/tag/zpci
 	gear_tweaks += new/datum/gear_tweak/path(atags)
+
+/datum/gear/tactical/pcarrier
+	display_name = "empty plate carriers selection"
+	path = /obj/item/clothing/suit/armor/pcarrier
+	cost = 1
+	slot = slot_wear_suit
+	allowed_roles = list(/datum/job/detective, /datum/job/officer, /datum/job/hos)
+
+/datum/gear/tactical/pcarrier/New()
+	..()
+	var/armor = list()
+	armor["black plate carrier"]	= /obj/item/clothing/suit/armor/pcarrier
+	armor["blue plate carrier"] 	= /obj/item/clothing/suit/armor/pcarrier/blue
+	armor["navy plate carrier"] 	= /obj/item/clothing/suit/armor/pcarrier/navy
+	armor["green plate carrier"] 	= /obj/item/clothing/suit/armor/pcarrier/green
+	armor["tan plate carrier"] 		= /obj/item/clothing/suit/armor/pcarrier/tan
+	gear_tweaks += new/datum/gear_tweak/path(armor)
