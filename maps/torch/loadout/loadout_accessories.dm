@@ -107,10 +107,10 @@
 	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/accessory/tie
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/accessory/tie_color
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/accessory/stethoscope
 	allowed_roles = STERILE_ROLES
@@ -150,56 +150,56 @@
 	allowed_roles = ARMORED_ROLES
 
 /datum/gear/clothing/hawaii
-	allowed_roles = SEMIFORMAL_ROLES
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_roles = null //INF, WAS: SEMIFORMAL_ROLES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/clothing/scarf
-	allowed_roles = SEMIANDFORMAL_ROLES
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_roles = null //INF, WAS: SEMIFORMAL_ROLES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/clothing/flannel
-	allowed_roles = SEMIFORMAL_ROLES
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_roles = null //INF, WAS: SEMIFORMAL_ROLES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/clothing/vest
-	allowed_roles = FORMAL_ROLES
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_roles = null //INF, WAS: FORMAL_ROLES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/clothing/suspenders
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/clothing/wcoat
-	allowed_roles = FORMAL_ROLES
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_roles = null //INF, WAS: FORMAL_ROLES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/clothing/zhongshan
-	allowed_roles = FORMAL_ROLES
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_roles = null //INF, WAS: FORMAL_ROLES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/clothing/dashiki
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/clothing/thawb
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/clothing/sherwani
-	allowed_roles = FORMAL_ROLES
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_roles = null //INF, WAS: FORMAL_ROLES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/clothing/qipao
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/clothing/sweater
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/clothing/tangzhuang
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/accessory/bowtie
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/accessory/ftupin
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /*********************
  tactical accessories

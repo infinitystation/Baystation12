@@ -1,8 +1,8 @@
 /datum/gear/eyes/eyepatch
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/eyes/fashionglasses
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/eyes/sciencegoggles
 	allowed_roles = RESEARCH_ROLES
