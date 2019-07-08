@@ -1,6 +1,6 @@
 /obj/item/clothing/suit/bio_suit/virology/jacking
-	name = "The biohazard suit"
-	desc = "In general, the kit is a well-prepared kit for epidemiological analysis, planning anti-epidemic measures, epidemiological surveys of foci of infectious diseases."
+	name = "biohazard suit"
+	desc = "A well-prepared kit for epidemiological analysis, planning anti-epidemic measures, epidemiological surveys of foci of infectious diseases."
 	item_icons = list(
 		slot_wear_suit_str = CUSTOM_ITEM_MOB,
 		)
@@ -9,15 +9,15 @@
 	)
 
 /obj/item/clothing/head/bio_hood/virology/jacking
-	name = "The biohazard hood"
-	desc = "In general, the kit is a well-prepared kit for epidemiological analysis, planning anti-epidemic measures, epidemiological surveys of foci of infectious diseases."
+	name = "biohazard hood"
+	desc = "A well-prepared kit for epidemiological analysis, planning anti-epidemic measures, epidemiological surveys of foci of infectious diseases."
 	item_state = "biohazard_hood"
 	item_icons = list(
 		slot_head_str = CUSTOM_ITEM_MOB,
 		)
 
 /obj/item/clothing/accessory/badge/holo/jacking
-	name = "IHO representation card"
+	name = "representation card"
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "IHO_badge"
 	badge_string = "Medical"
@@ -38,8 +38,8 @@
 	..()
 
 /obj/item/weapon/storage/backpack/dufflebag/biohazard
-	name = "The biohazard dufflebag."
-	desc = "In general, the kit is a well-prepared kit for epidemiological analysis, planning anti-epidemic measures, epidemiological surveys of foci of infectious diseases."
+	name = "biohazard dufflebag"
+	desc = "A well-prepared kit for epidemiological analysis, planning anti-epidemic measures, epidemiological surveys of foci of infectious diseases."
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "biohazard_duffle"
 	item_state = "biohazard_duffle"

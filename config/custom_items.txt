@@ -101,6 +101,11 @@ character_name: Milo Moon
 item_path: /obj/item/device/pmp/personal
 }
 {
+ckey: xharlemix
+character_name: Henry Mudington
+item_path: /obj/item/device/pmp/personal
+}
+{
 ckey: furrydog
 character_name: Niar Seras'sar
 item_path: /obj/item/device/pmp/personal/dusty
@@ -116,14 +121,14 @@ character_name: Q'uark Ris'shel
 item_path: /obj/item/device/pmp/personal/csplayer
 }
 {
-ckey: DieSiege
+ckey: diesiege
 character_name: Nyreen Hor'lis
 item_path: /obj/item/device/pmp/personal/csplayer
 }
 {
-ckey: Nicroz
-character_name: Isabel Weil
-item_path: /obj/item/weapon/reagent_containers/food/snacks/monkeycube/lizard/custom/with_bow
+ckey: farwa87
+character_name: Adelina Belle
+item_path: /obj/item/device/pmp/personal/csplayer
 }
 
 #	SHORT ITEMS HERE (3-4)
@@ -353,7 +358,7 @@ req_access: "ACCESS_SECURITY"
 {
 ckey: bob46
 character_name: Drake Hauhurst
-item_path: /obj/item/clothing/mask/gas/gm15m
+item_path: /obj/item/clothing/mask/gas/custom
 req_access: "ACCESS_SECURITY"
 }
 {
@@ -365,7 +370,7 @@ req_access: "ACCESS_SECURITY"
 {
 ckey: jacking
 character_name: Juan Stern
-item_path: /obj/item/clothing/under/os_uniform
+item_path: /obj/item/clothing/under/custom_flunif
 }
 {
 ckey: jacking
@@ -431,7 +436,7 @@ req_access: "ACCESS_SECURITY"
 {
 ckey: chowny
 character_name: Alice Goldstain
-item_path: /obj/item/weapon/storage/box/large/chowny
+item_path: /obj/item/weapon/clothingbag/chowny_clothing
 }
 {
 ckey: jacking
@@ -443,6 +448,17 @@ ckey: forrya
 character_name: Niyarkszherch Kchrashchjrj
 item_path: /obj/item/weapon/clothingbag/forrya_tajar
 }
+{
+ckey: nicroz
+character_name: Isabel Weil
+item_path: /obj/item/weapon/reagent_containers/food/snacks/monkeycube/lizard/custom/with_bow
+}
+{
+ckey: farwa87
+character_name: Alexandra Price
+item_path: /obj/item/toy/plushie/jones
+}
+
 #	MEDIUM ITEMS HERE (5-6)
 
 {

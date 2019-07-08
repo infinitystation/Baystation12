@@ -1,6 +1,6 @@
-/obj/item/clothing/under/os_uniform
-	name ="Officer service uniform of the fleet"
-	desc = "On  uniform can see inscription \[Juan Stern\] \[Fleet\].On  stripe you can see \[Lieutenant\]. A uniform ribbon angs on the uniform. On the uniform can see the gold medal at the chest."
+/obj/item/clothing/under/custom_flunif
+	name = "service uniform"
+	desc = "An uniform of SCG Fleet. This one belongs to officers."
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "os_uniform"
 	item_state = "os_uniform"
@@ -13,3 +13,4 @@
 		slot_l_hand_str = "os_uniform_lefthand",
 		slot_r_hand_str = "os_uniform_righthand"
 	)
+	starting_accessories = list(/obj/item/clothing/accessory/medal/solgov/silver/sword, /obj/item/clothing/accessory/ribbon/solgov/marksman, /obj/item/clothing/accessory/solgov/rank/fleet/officer/o3)

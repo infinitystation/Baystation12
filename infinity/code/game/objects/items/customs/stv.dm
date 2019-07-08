@@ -1,6 +1,6 @@
 /obj/item/clothing/glasses/sunglasses/sechud/toggle/stv
-	name = "Special tactical Visor(S.T.V)"
-	desc = "Pink edition"
+	name = "tactical visor"
+	desc = "The special tactical visor, pink one."
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "stv"
 	item_state = "stv"

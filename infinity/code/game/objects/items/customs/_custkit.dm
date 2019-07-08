@@ -1,6 +1,6 @@
 /obj/item/custkit
 	name = "customization kit"
-	desc = "It is OOC object, you should not see it. Ударьте этот подарок предметом, который нужно изменить."
+	desc = "This is OOC object, you should not see it. Ударьте этот подарок предметом, который нужно изменить."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "gift2"
 	w_class = 2
