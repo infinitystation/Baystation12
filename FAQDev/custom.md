@@ -1,10 +1,8 @@
-# === F.A.Q. - кастомные вещи и не только===
+# === F.A.Q. - кастомные вещи и не только ===
 
-## Q:
-Как и где прописать кастомку?
-### A:
-Прописывать кастомки надо в:
-Baystation12/config/custom_items.txt
+## Q: Как и где прописать кастомку?
+### A: Прописывать кастомки надо в:
+<i>Baystation12/config/custom_items.txt</i>
 ### Примеры:
 Baystation12/config/example/custom_items.txt
 ЕСЛИ кастомка это простой респрайт - то прописывать прямо в файле.
@@ -12,23 +10,22 @@ Baystation12/config/example/custom_items.txt
 Baystation12/infinity/customs/
 
 ### Иконки кастомок лежат по пути:
-Baystation12/icons/infinity_custom_items_mob.dmi
+<i>Baystation12/icons/infinity_custom_items_mob.dmi</i>
 
-Baystation12/icons/infinity_custom_items_obj.dmi
+<i>Baystation12/icons/infinity_custom_items_obj.dmi</i>
 
-**obj - спрайт как обьект
-mob - спрайт на персонаже**
+**obj - спрайт как обьект**
 
+**mob - спрайт на персонаже**
 
-## Q:
-Как и где прописать кастомный спрайт на борга/робота?
-### A:
-Обьясняю, как все работает.
+## Q: Как и где прописать кастомный спрайт на борга/робота?
+### A: Обьясняю, как все работает:
 Когда обладатель кастомного спрайта, берет название, соответсвующее прописанному в файлике по пути Baystation12/config/custom_sprites.txt, то ему устанавливается спрайт, прописанный в файлике с иконками.
 ### Пример:
 
 coltrane97-Tails
+
 Где coltrane97 сикей нужного нам человека, а Tails - название прописанного в файлике с иконками спрайта. (В файлике должны быть прописаны названия для модулей, смотреть как у других)
 
-## Иконки роботов лежат по пути:
-Baystation12/icons/infinity_custom_synthetic.dmi
+## Иконки роботов лежат по пути: 
+<i>Baystation12/icons/infinity_custom_synthetic.dmi</i>
