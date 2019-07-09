@@ -161,24 +161,23 @@
 
 /obj/item/clothing/mask/gas/vox
 	name = "vox breathing mask"
-	desc = "A small oxygen filter for use by Vox"
+	desc = "A small oxygen filter for use by Vox. WARNING: DOESN'T FILTERS HOT SPRAY!"
 	icon_state = "respirator"
 	item_state = "respirator"
 	flags_inv = 0
-	body_parts_covered = FACE
+	body_parts_covered = 0
 	species_restricted = list(SPECIES_VOX, SPECIES_VOX_ARMALIS)
-	filtered_gases = list("phoron", "sleeping_agent", "oxygen")
+	filtered_gases = list("phoron", "sleeping_agent", "oxygen", "chlorine","ammonia","carbon_monoxide","methyl_bromide")
 	w_class = ITEM_SIZE_SMALL
-
 
 /obj/item/clothing/mask/gas/swat/vox
 	name = "alien mask"
-	desc = "Clearly not designed for a human face."
+	desc = "Clearly not designed for a human face. WARNING: DOESN'T FILTERS HOT SPRAY!"
 	icon_state = "voxswat"
 	item_state = "voxswat"
-	body_parts_covered = 0 //Hack to allow vox to eat while wearing this mask.
+	body_parts_covered = 0
 	species_restricted = list(SPECIES_VOX, SPECIES_VOX_ARMALIS)
-	filtered_gases = list("phoron", "sleeping_agent", "oxygen")
+	filtered_gases = list("phoron", "sleeping_agent", "oxygen", "chlorine","ammonia","carbon_monoxide","methyl_bromide")
 
 /obj/item/clothing/mask/gas/aquabreather
 	name = "aquabreather"
