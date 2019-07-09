@@ -12,40 +12,12 @@
 	allowed_roles = TECHNICAL_ROLES
 
 /datum/gear/uniform/pmc
-	display_name = "PMC uniform selection"
 	allowed_roles = list(/datum/job/detective, /datum/job/officer)
 	allowed_branches = list(/datum/mil_branch/contractor)
-	path = /obj/item/clothing/under
-
-/datum/gear/uniform/pmc/New()
-	..()
-	var/pmc = list()
-	pmc["SAARE utility uniform"]= /obj/item/clothing/under/saare
-	pmc["PCRC utility uniform"]	= /obj/item/clothing/under/pcrc
-	pmc["PCRC formal uniform"]	= /obj/item/clothing/under/pcrcsuit
-	pmc["SCP utility uniform"]	= /obj/item/clothing/under/scp_uniform
-	pmc["ZPCI utility uniform"]	= /obj/item/clothing/under/zpci_uniform
-	gear_tweaks += new/datum/gear_tweak/path(pmc)
 
 /datum/gear/uniform/corpsi
 	display_name = "contractor uniform selection"
-	path = /obj/item/clothing/under
 	allowed_branches = list(/datum/mil_branch/contractor)
-
-/datum/gear/uniform/corpsi/New()
-	..()
-	var/corpsi = list()
-	corpsi["Major Bill's uniform"]		= /obj/item/clothing/under/mbill
-	corpsi["Aether uniform"]			= /obj/item/clothing/under/aether
-	corpsi["Hephaestus science uniform"]= /obj/item/clothing/under/rank/scientist/heph
-	corpsi["Hephaestus uniform"]		= /obj/item/clothing/under/hephaestus
-	corpsi["Ward-Takahashi uniform"]	= /obj/item/clothing/under/wardt
-	corpsi["Grayson uniform"]			= /obj/item/clothing/under/grayson
-	corpsi["Focal Point uniform"]		= /obj/item/clothing/under/focal
-	corpsi["Morpheus uniform"]			= /obj/item/clothing/under/morpheus
-	corpsi["Skinner uniform"]			= /obj/item/clothing/under/skinner
-	corpsi["DAIS uniform"]				= /obj/item/clothing/under/dais
-	gear_tweaks += new/datum/gear_tweak/path(corpsi)
 
 /datum/gear/uniform/si_guard
 	display_name = "NanoTrasen guard uniform"

@@ -66,6 +66,26 @@
 	path = /obj/item/clothing/head/soft/scp_cap
 	allowed_roles = list(/datum/job/detective, /datum/job/officer, /datum/job/hos)
 
+/datum/gear/uniform/corpsi
+	display_name = "corporate uniform selection"
+	path = /obj/item/clothing/under
+
+/datum/gear/uniform/corpsi/New()
+	..()
+	var/corpsi = list()
+	corpsi["Major Bill's uniform"]		= /obj/item/clothing/under/mbill
+	corpsi["Aether uniform"]			= /obj/item/clothing/under/aether
+	corpsi["Hephaestus science uniform"]= /obj/item/clothing/under/rank/scientist/heph
+	corpsi["Hephaestus uniform"]		= /obj/item/clothing/under/hephaestus
+	corpsi["Ward-Takahashi uniform"]	= /obj/item/clothing/under/wardt
+	corpsi["Grayson uniform"]			= /obj/item/clothing/under/grayson
+	corpsi["Focal Point uniform"]		= /obj/item/clothing/under/focal
+	corpsi["Morpheus uniform"]			= /obj/item/clothing/under/morpheus
+	corpsi["Skinner uniform"]			= /obj/item/clothing/under/skinner
+	corpsi["DAIS uniform"]				= /obj/item/clothing/under/dais
+	gear_tweaks += new/datum/gear_tweak/path(corpsi)
+
+
 /datum/gear/gloves/insulated
 	display_name = "insulated gloves selection"
 	path = /obj/item/clothing/gloves/insulated
