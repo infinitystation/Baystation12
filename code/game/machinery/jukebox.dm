@@ -59,8 +59,8 @@ datum/track/proc/GetTrack()
 	QDEL_NULL_LIST(tracks)
 	current_track = null
 
-	if(cassette) // INF@CODE
-		QDEL_NULL(cassette)
+	if(tape) // INF@CODE
+		QDEL_NULL(tape)
 
 	. = ..()
 
@@ -113,7 +113,7 @@ datum/track/proc/GetTrack()
 		"playing" = playing,
 		"tracks" = juke_tracks,
 		"volume" = volume,
-		"cassette" = cassette
+		"tape" = tape
 	)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -198,21 +198,21 @@ datum/track/proc/GetTrack()
 		return
 
 	// INF@CODE - START
-	if(istype(W, /obj/item/device/cassette))
-		var/obj/item/device/cassette/D = W
-		if(cassette)
-			to_chat(user, "<span class='notice'>There is already a cassette inside.</span>")
+	if(istype(W, /obj/item/music_tape))
+		var/obj/item/music_tape/D = W
+		if(tape)
+			to_chat(user, "<span class='notice'>There is already \a [tape] inside.</span>")
 			return
 
 		if(D.ruined)
 			to_chat(user, "<span class='warning'>\The [D] is ruined, you can't use it.</span>")
 			return
 
-		visible_message("<span class='notice'>[usr] insert the cassette in to \the [src].</span>")
+		visible_message("<span class='notice'>[usr] insert \the [tape] in to \the [src].</span>")
 		user.drop_item()
 		D.forceMove(src)
-		cassette = D
-		tracks += cassette.track
+		tape = D
+		tracks += tape.track
 		verbs += /obj/machinery/media/jukebox/verb/eject
 		return
 	// INF@CODE - END

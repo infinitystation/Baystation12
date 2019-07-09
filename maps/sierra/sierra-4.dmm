@@ -27951,10 +27951,10 @@
 /area/smugglers/base)
 "bki" = (
 /obj/structure/table/woodentable,
-/obj/item/device/cassette/custom,
-/obj/item/device/cassette/custom,
-/obj/item/device/cassette/custom,
-/obj/item/device/pmp,
+/obj/item/music_tape/custom,
+/obj/item/music_tape/custom,
+/obj/item/music_tape/custom,
+/obj/item/music_player,
 /turf/simulated/floor/wood/walnut,
 /area/smugglers/office)
 "bkj" = (

@@ -1,5 +1,5 @@
 /obj/machinery/media/jukebox
-	var/obj/item/device/cassette/cassette
+	var/obj/item/music_tape/tape
 
 /obj/machinery/media/jukebox/verb/eject()
 	set name = "Eject"
@@ -9,13 +9,13 @@
 	if(!CanPhysicallyInteract(usr))
 		return
 
-	if(cassette)
+	if(tape)
 		StopPlaying()
 		current_track = null
 		for(var/datum/track/T in tracks)
-			if(T == cassette.track)
+			if(T == tape.track)
 				tracks -= T
-		visible_message("<span class='notice'>[usr] eject the cassette from \the [src].</span>")
-		usr.put_in_hands(cassette)
-		cassette = null
+		visible_message("<span class='notice'>[usr] eject \the [tape] from \the [src].</span>")
+		usr.put_in_hands(tape)
+		tape = null
 		verbs -= /obj/machinery/media/jukebox/verb/eject
