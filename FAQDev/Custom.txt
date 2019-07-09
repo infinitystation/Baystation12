@@ -9,7 +9,7 @@ Baystation12/config/custom_items.txt
 Baystation12/config/example/custom_items.txt
 ЕСЛИ кастомка это простой респрайт - то прописывать прямо в файле.
 ЕСЛИ кастомка это НЕ респрайт - то нужно создать отдельный файлик по пути:
-Baystation12/infinity/code/game/objects/items/customs/
+Baystation12/infinity/customs/
 
 Иконки кастомок лежат по пути:
 Baystation12/icons/infinity_custom_items_mob.dmi
