@@ -6,8 +6,8 @@
 #define PREF_SAVELOAD_COOLDOWN 2
 
 // Multimeter defines
-#define METER_MESURING "Измерение" // Measuring
-#define METER_CHECKING "Прозвонки" // Checking
+#define METER_MESURING "Measuring"
+#define METER_CHECKING "Checking"
 
 // /atom/proc/use_check flags.
 #define USE_ALLOW_NONLIVING 1
