@@ -75,11 +75,13 @@
 
 						var/race = C.parameters["race"]			   // The actual race of the mob
 						var/language = C.parameters["language"] // The language spoken, or null/""
+						var/time = C.parameters["messagetime"] //inf
 
 						// -- If the orator is a human, or universal translate is active, OR mob has universal speech on --
 
 						if(universal_translate || C.parameters["uspeech"] || C.parameters["intelligible"])
 							dat += "<u><font color = #18743e>Data type</font></u>: [C.input_type]<br>"
+							dat += "<u><font color = #18743e>Message Receiving Time</font></u>: [time]<br>" //inf
 							dat += "<u><font color = #18743e>Source</font></u>: [C.parameters["name"]] (Job: [C.parameters["job"]])<br>"
 							dat += "<u><font color = #18743e>Class</font></u>: [race]<br>"
 							dat += "<u><font color = #18743e>Contents</font></u>: \"[C.parameters["message"]]\"<br>"

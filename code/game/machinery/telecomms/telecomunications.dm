@@ -557,6 +557,7 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 				log.parameters["name"] = signal.data["name"]
 				log.parameters["realname"] = signal.data["realname"]
 				log.parameters["language"] = signal.data["language"]
+				log.parameters["messagetime"] = stationtime2text() //inf
 
 				var/race = "Unknown"
 				if(ishuman(M) || isbrain(M))
@@ -586,6 +587,7 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 					log.parameters["name"] = Gibberish(signal.data["name"], signal.data["compression"] + 50)
 					log.parameters["realname"] = Gibberish(signal.data["realname"], signal.data["compression"] + 50)
 					log.parameters["vname"] = Gibberish(signal.data["vname"], signal.data["compression"] + 50)
+					log.parameters["messagetime"] = world.time//inf
 					log.input_type = "Corrupt File"
 
 				// Log and store everything that needs to be logged
