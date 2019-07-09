@@ -11,7 +11,7 @@
 /datum/gear/head/skrell_helmet //overrides torch's loadout
 	whitelisted = list(SPECIES_SKRELL)
 
-/datum/gear/uniform/pmc/allowed_roles = list(/datum/job/detective, /datum/job/officer, /datum/job/hos, /datum/job/bodyguard)
+/datum/gear/uniform/pmc/allowed_roles = list(/datum/job/bodyguard)
 
 /datum/gear/gloves/insulated
 	allowed_roles = ENGINEERING_ROLES
