@@ -136,11 +136,6 @@ character_name: Alex Morgan
 item_path: /obj/item/music_player/csplayer/custom_tape
 }
 {
-ckey: xharlemix
-character_name: Henry Mudington
-item_path: /obj/item/music_player/csplayer/custom_tape
-}
-{
 ckey: arbuzpersikov
 character_name: Xuel-Qermzix Zixxrim
 item_path: /obj/item/music_player/csplayer/custom_tape
