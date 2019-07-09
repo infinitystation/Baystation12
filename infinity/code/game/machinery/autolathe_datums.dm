@@ -40,6 +40,18 @@
  * ==========
  */
 
+/datum/autolathe/recipe/magazine_nt41
+	name = "ammunition (NT41 magazine)"
+	path = /obj/item/ammo_magazine/n10mm
+	hidden = 1
+	category = "Arms and Ammunition"
+
+/datum/autolathe/recipe/magazine_throwback
+	name = "ammunition (junk pistol magazine)"
+	path = /obj/item/ammo_magazine/pistol/throwback
+	hidden = 1
+	category = "Arms and Ammunition"
+
 /*
 /datum/autolathe/recipe/magazine_rubber
 	name = "ammunition (.45, rubber)"
