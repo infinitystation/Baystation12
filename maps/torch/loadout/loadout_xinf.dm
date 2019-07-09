@@ -1,7 +1,7 @@
 //xinf for sorting.
 /datum/map/torch
-	loadout_blacklist = list(/datum/gear/tactical/armor_pouches,/datum/gear/tactical/armor_pouches/navy,\
-	/datum/gear/tactical/armor_pouches/misc, /datum/gear/tactical/large_pouches, /datum/gear/tactical/large_pouches/navy,\
+	loadout_blacklist = list(/datum/gear/tactical/armor_pouches/navy,\
+	/datum/gear/tactical/armor_pouches/misc, /datum/gear/tactical/large_pouches/navy,\
 	/datum/gear/tactical/large_pouches/misc, /datum/gear/tactical/pcarrier/navy, /datum/gear/tactical/pcarrier/misc,\
 	)
 
@@ -31,15 +31,9 @@
 ///////////
 
 /datum/gear/tactical/pcarrier
-	allowed_roles = ARMORED_ROLES
+	display_name = "empty plate carriers selection"
 
 /datum/gear/tactical/bloodpatch
-	allowed_roles = ARMORED_ROLES
-
-/datum/gear/tactical/armor_pouches
-	allowed_roles = ARMORED_ROLES
-
-/datum/gear/tactical/large_pouches
 	allowed_roles = ARMORED_ROLES
 
 /datum/gear/tactical/armor_deco //tags
