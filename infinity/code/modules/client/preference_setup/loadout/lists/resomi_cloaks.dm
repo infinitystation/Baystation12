@@ -1,63 +1,13 @@
-/datum/gear/clothing/cloak //master type
-	display_name = "(Resomi) cloak, command (captain)"
-	path = /obj/item/clothing/accessory/cloak/captain
-	sort_category = "Xenowear"
-	whitelisted = list(SPECIES_RESOMI)
-	allowed_roles = list(/datum/job/captain)
-
-/datum/gear/clothing/cloak/custom // common cloak
-	display_name = "(Resomi) cloak, colorable"
-	path = /obj/item/clothing/accessory/cloak
-	flags = GEAR_HAS_COLOR_SELECTION
-	allowed_roles = null
-
-//command cloaks
-
-/datum/gear/clothing/cloak/hop
-	display_name = "(Resomi) cloak, command (head of personnel)"
-	path = /obj/item/clothing/accessory/cloak/hop
-	allowed_roles = list(/datum/job/hop)
-
-/datum/gear/clothing/cloak/hos
-	display_name = "(Resomi) cloak, command (head of security)"
-	path = /obj/item/clothing/accessory/cloak/hos
-	allowed_roles = list(/datum/job/hos)
-
-/datum/gear/clothing/cloak/cmo
-	display_name = "(Resomi) cloak, command (chief medical officer)"
-	path = /obj/item/clothing/accessory/cloak/cmo
-	allowed_roles = list(/datum/job/cmo)
-
-/datum/gear/clothing/cloak/ce
-	display_name = "(Resomi) cloak, command (chief engineer)"
-	path = /obj/item/clothing/accessory/cloak/ce
-	allowed_roles = list(/datum/job/chief_engineer)
-
-/datum/gear/clothing/cloak/rd
-	display_name = "(Resomi) cloak, command (research director)"
-	path = /obj/item/clothing/accessory/cloak/rd
-	allowed_roles = list(/datum/job/rd)
-
-/datum/gear/clothing/cloak/qm
-	display_name = "(Resomi) cloak, command (quartermaster)"
-	path = /obj/item/clothing/accessory/cloak/qm
-	allowed_roles = list(/datum/job/qm)
-
-// departaments cloaks
-
-/datum/gear/clothing/cloak/departmental
-	display_name = "(Resomi) cloaks, precolored"
-	path = /obj/item/clothing/accessory/cloak
-	flags = GEAR_HAS_TYPE_SELECTION
-	allowed_roles = null
-
-//
-
 /datum/gear/suit/resomicloak
 	display_name = "(Resomi) standard/job cloaks"
 	sort_category = "Xenowear"
 	path = /obj/item/clothing/suit/storage/resomicloak
 	whitelisted = list(SPECIES_RESOMI)
+	flags = GEAR_HAS_SUBTYPE_SELECTION
+
+/datum/gear/uniform/resomi/undercoat
+	display_name = "(Resomi) standard/job undercoat"
+	path = /obj/item/clothing/under/resomi/undercoat
 	flags = GEAR_HAS_SUBTYPE_SELECTION
 /*
 /datum/gear/suit/resomicloak/New()
@@ -113,10 +63,7 @@
 	resomicloaks += /obj/item/clothing/suit/storage/resomicloak/jobs/cargo
 	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(resomicloaks)
 */
-/datum/gear/uniform/resomi/undercoat
-	display_name = "(Resomi) standard/job undercoat"
-	path = /obj/item/clothing/under/resomi/undercoat
-	flags = GEAR_HAS_SUBTYPE_SELECTION
+
 /*
 /datum/gear/uniform/resomi/undercoat/New()
 	..()
