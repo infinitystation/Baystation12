@@ -126,7 +126,7 @@ var/list/admin_verbs_fun = list(
 	/datum/admins/proc/ai_hologram_set,
 	/datum/admins/proc/intercom,		//send a fake intercom message, like an arrivals announcement,
 	/datum/admins/proc/intercom_convo,	//send a fake intercom conversation, like an ATC exchange,
-	/datum/admins/proc/pmp_control_panel,
+	/datum/admins/proc/mp_panel,
 	/proc/possess,
 	/proc/release
 	)

@@ -3,142 +3,142 @@
 {
 ckey: sallyvadordomold
 character_name: Sally Kimberly
-item_path: /obj/item/device/pmp/personal/csplayer
+item_path: /obj/item/music_player/csplayer/custom_tape
 }
 {
 ckey: billluxe
 character_name: Villyx
-item_path: /obj/item/device/pmp/personal
+item_path: /obj/item/music_player/custom_tape
 }
 {
 ckey: vankoska
 character_name: Terill Qerr
-item_path: /obj/item/device/pmp/personal
+item_path: /obj/item/music_player/custom_tape
 }
 {
 ckey: korramy
 character_name: Quentin Willo
-item_path: /obj/item/device/pmp/personal
+item_path: /obj/item/music_player/custom_tape
 }
 {
 ckey: s1334
 character_name: WP-316
-item_path: /obj/item/device/pmp/personal/csplayer
+item_path: /obj/item/music_player/csplayer/custom_tape
 }
 {
 ckey: s1334
 character_name: Remi-su
-item_path: /obj/item/device/pmp/personal/csplayer
+item_path: /obj/item/music_player/csplayer/custom_tape
 }
 {
 ckey: kordvik
 character_name: Lyx Omaya
-item_path: /obj/item/device/pmp/personal/csplayer
+item_path: /obj/item/music_player/csplayer/custom_tape
 }
 {
 ckey: wheatley2013
 character_name: Joshua
-item_path: /obj/item/device/pmp/personal
+item_path: /obj/item/music_player/custom_tape
 }
 {
 ckey: wheatley2013
 character_name: Shaisa
-item_path: /obj/item/device/pmp/personal
+item_path: /obj/item/music_player/custom_tape
 }
 {
 ckey: wheatley2013
 character_name: Sergey Luster
-item_path: /obj/item/device/pmp/personal
+item_path: /obj/item/music_player/custom_tape
 }
 {
 ckey: coltrane97
 character_name: TA-Il-S
-item_path: /obj/item/device/pmp/personal
+item_path: /obj/item/music_player/custom_tape
 }
 {
 ckey: coltrane97
 character_name: Kayden-200
-item_path: /obj/item/device/pmp/personal
+item_path: /obj/item/music_player/custom_tape
 }
 {
 ckey: coltrane97
 character_name: Miguel Blackburn
-item_path: /obj/item/device/pmp/personal
+item_path: /obj/item/music_player/custom_tape
 }
 {
 ckey: coltrane97
 character_name: Iris Bickerson
-item_path: /obj/item/device/pmp/personal
+item_path: /obj/item/music_player/custom_tape
 }
 {
 ckey: Ka6a4ok
 character_name: Mike Sound
-item_path: /obj/item/device/pmp/personal
+item_path: /obj/item/music_player/custom_tape
 }
 {
 ckey: Byxloy
 character_name: Phoenix Ann
-item_path: /obj/item/device/pmp/personal
+item_path: /obj/item/music_player/custom_tape
 }
 {
 ckey: m1am1
 character_name: Edward Paige
-item_path: /obj/item/device/pmp/personal/csplayer
+item_path: /obj/item/music_player/csplayer/custom_tape
 }
 {
 ckey: redknighthero
 character_name: Robert Witter
-item_path: /obj/item/device/pmp/personal
+item_path: /obj/item/music_player/custom_tape
 }
 {
 ckey: deda565
 character_name: Wayne Hutton
-item_path: /obj/item/device/pmp/personal
+item_path: /obj/item/music_player/custom_tape
 }
 {
 ckey: unbidden
 character_name: Milo Moon
-item_path: /obj/item/device/pmp/personal
+item_path: /obj/item/music_player/custom_tape
 }
 {
 ckey: xharlemix
 character_name: Henry Mudington
-item_path: /obj/item/device/pmp/personal
+item_path: /obj/item/music_player/custom_tape
 }
 {
 ckey: furrydog
 character_name: Niar Seras'sar
-item_path: /obj/item/device/pmp/personal/dusty
+item_path: /obj/item/music_player/dusty/custom_tape
 }
 {
 ckey: forrya
 character_name: Niyarkszherch Kchrashchjrj
-item_path: /obj/item/device/pmp/personal/csplayer
+item_path: /obj/item/music_player/csplayer/custom_tape
 }
 {
 ckey: interl0per
 character_name: Q'uark Ris'shel
-item_path: /obj/item/device/pmp/personal/csplayer
+item_path: /obj/item/music_player/csplayer/custom_tape
 }
 {
 ckey: diesiege
 character_name: Nyreen Hor'lis
-item_path: /obj/item/device/pmp/personal/csplayer
+item_path: /obj/item/music_player/csplayer/custom_tape
 }
 {
 ckey: farwa87
 character_name: Adelina Belle
-item_path: /obj/item/device/pmp/personal/csplayer
+item_path: /obj/item/music_player/csplayer/custom_tape
 }
 {
 ckey: elar
 character_name: Alex Morgan
-item_path: /obj/item/device/pmp/personal/csplayer
+item_path: /obj/item/music_player/csplayer/custom_tape
 }
 {
 ckey: arbuzpersikov
 character_name: Xuel-Qermzix Zixxrim
-item_path: /obj/item/device/pmp/personal/csplayer
+item_path: /obj/item/music_player/csplayer/custom_tape
 }
 
 #	SHORT ITEMS HERE (3-4)
@@ -324,7 +324,7 @@ item_path: /obj/item/naris_box
 {
 ckey: quietproject
 character_name: Eno Quiet
-item_path: /obj/item/device/cassette/custom
+item_path: /obj/item/music_tape/custom
 }
 {
 ckey: quietproject

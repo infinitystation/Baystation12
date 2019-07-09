@@ -14,7 +14,7 @@
 
 	var/writing = FALSE
 
-	var/obj/item/device/cassette/disk
+	var/obj/item/music_tape/disk
 
 /obj/machinery/media/music_writer/Initialize(mapload)
 	pixel_x = (dir & 3)? 0 : (dir == 4 ? -28 : 28)
@@ -51,8 +51,8 @@
 		qdel(O)
 		coin++
 
-	if(istype(O, /obj/item/device/cassette))
-		var/obj/item/device/cassette/D = O
+	if(istype(O, /obj/item/music_tape))
+		var/obj/item/music_tape/D = O
 		if(disk)
 			to_chat(user, "<span class='notice'>There is already a disk inside.</span>")
 			return
