@@ -11,9 +11,7 @@
 /datum/gear/uniform/hazard
 	allowed_roles = TECHNICAL_ROLES
 
-/datum/gear/uniform/pmc
-	allowed_roles = list(/datum/job/detective, /datum/job/officer)
-	allowed_branches = list(/datum/mil_branch/contractor)
+/datum/gear/uniform/pmc/allowed_branches = list(/datum/mil_branch/contractor)
 
 /datum/gear/uniform/corpsi
 	display_name = "contractor uniform selection"

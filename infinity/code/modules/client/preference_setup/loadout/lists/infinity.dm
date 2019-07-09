@@ -46,7 +46,7 @@
 	display_name = "dog tags"
 	path = /obj/item/clothing/accessory/badge/dog_tags
 
-/datum/gear/uniform/pmc
+/datum/gear/uniform/pmc //Please don't dublicate it in maps anymore, ok?
 	display_name = "PMC uniform selection"
 	allowed_roles = list(/datum/job/detective, /datum/job/officer, /datum/job/hos)
 	path = /obj/item/clothing/under
