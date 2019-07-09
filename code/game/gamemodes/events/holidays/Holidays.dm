@@ -79,10 +79,19 @@ var/global/Holiday = null
 
 		if(7)	//Jul
 			switch(DD)
-				if(1)							Holiday = "Doctor's Day"
-				if(2)							Holiday = "UFO Day"
-				if(8)							Holiday = "Writer's Day"
-				if(30)							Holiday = "Friendship Day"
+				if(1)							Holiday = "Днём Врача! Крепких нервов им"
+				if(2)							Holiday = "Днём НЛО! Опять скреллы пшеницу воровали"
+				if(8)							Holiday = "Днём Писателя! И уберите уже Вуди из библиотеки"
+				if(11)							Holiday = "Днём Шоколада! Убедитесь, что повар занят делом"
+				if(15)							Holiday = "Днём Российской Почты, что был 14 числа"
+				if(17)							Holiday = "Днём Правосудия, гражданин"
+				if(20)							Holiday = "Днём Шахматиста... И Тортиков"
+				if(21)							Holiday = "Днём Металлурга, славяне"
+				if(22)							Holiday = "Днём Бокса! Поздравим наших баттлтрапов"
+				if(23)							Holiday = "Днём Китов и Дельфинов! Возможно, сегодня ЭК сможет поймать одного"
+				if(29)							Holiday = "Днём Тигра! Не забудьте раскрасить ближайшего Таяра (с его разрешения)"
+				if(30)							Holiday = "Днём Дружбы, токсичные вы люди"
+				if(31)							Holiday = "Днём Рейнджера! Не забудьте мачете"
 
 		if(8)	//Aug
 			switch(DD)
@@ -146,8 +155,8 @@ var/global/Holiday = null
 //Run at the  start of a round
 /proc/Holiday_Game_Start()
 	if(Holiday)
-		to_world("<font color='blue'>and...</font>")
-		to_world("<h4>Всех с [Holiday]!</h4>")
+		to_world("<font color='blue'>А также...</font>")
+		to_world("<h4>Всех с [sanitize_a0(Holiday)]!</h4>")
 		switch(Holiday)			//special holidays
 			if("Easter")
 				//do easter stuff
