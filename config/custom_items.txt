@@ -130,6 +130,21 @@ ckey: farwa87
 character_name: Adelina Belle
 item_path: /obj/item/device/pmp/personal/csplayer
 }
+{
+ckey: elar
+character_name: Alex Morgan
+item_path: /obj/item/device/pmp/personal/csplayer
+}
+{
+ckey: xharlemix
+character_name: Henry Mudington
+item_path: /obj/item/device/pmp/personal/csplayer
+}
+{
+ckey: arbuzpersikov
+character_name: Henry Mudington
+item_path: /obj/item/device/pmp/personal/csplayer
+}
 
 #	SHORT ITEMS HERE (3-4)
 
