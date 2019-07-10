@@ -8,6 +8,7 @@ GLOBAL_VAR_INIT(changelog_hash_infinity, "")
 	set category = "OOC"
 	getFiles(
 		'html/88x31.png',
+		'html/auction-hammer-gavel.png',
 		'html/bug-minus.png',
 		'html/burn-exclamation.png',
 		'html/chevron.png',
