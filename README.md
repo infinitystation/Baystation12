@@ -72,8 +72,9 @@ https://discord.gg/N4atUkH
 4. В поле Remote Repo Link введите <i>"https://github.com/infinitystation/Baystation12"</i>
 5. В поле Remote Repo Branch введите master.<details>или другую ветку изменения которой вы хотите перенести на свою ветвь.</details>
 6. В поле Local Repo Branch введите master.<details>или другую ветку которую вы хотите обновить.</details>
-7. Нажмите кнопку <font color='#00ff00'>Merge!</font> и ожидайте завершения.
-8. Дождавшись окончания, нажмите кнопку <font color='#ff0000'>End Merge</font>.
+7. Нажмите кнопку <u>"TOGGLE UPDATE MODE"</u> для коректного обновления.
+8. Нажмите кнопку <font color='#00ff00'>GO!</font> и ожидайте завершения.
+9. Дождавшись окончания, нажмите кнопку <font color='#ff0000'>End</font>.
 
 ## ЛИЦЕНЗИЯ
 Весь исходный код после 8-го Января 2015-го года в 03:00 по Московскому времени лицензируется на условиях лицензионного соглашения [GNU Affero General Public License v3](http://www.gnu.org/licenses/agpl.html).  
