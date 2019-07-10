@@ -17,5 +17,5 @@ git remote
 set /p locbranch="Choose local branch to update by %merbranch% commits from %repname%: "
 
 git checkout %locbranch%
-git pull %repname% %merbranch%
+git merge %repname%/%merbranch%
 echo Merge Complite. Now resolve conflicts, if they exist.
