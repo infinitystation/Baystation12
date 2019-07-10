@@ -67,7 +67,7 @@ https://discord.gg/N4atUkH
 
 ## ОБНОВЛЕНИЕ ОТВЕТВЛЕНИЯ БИЛДА ИСПОЛЬЗУЯ GUI И PYTHON (Fork)
 1. В корневой директории репозитория найдите и запустите программу mergetool.py
-2. После запуска вы увидите окно в котором вы должны ввести 4 параметра. <img src="https://pp.userapi.com/c850220/v850220012/18c457/8RMlq-Au1AQ.jpg" alt="Mergetool GUI" style="float: right; margin-right: 10px;">
+2. После запуска вы увидите окно в котором вы должны ввести 4 параметра. <img src="https://pp.userapi.com/c857436/v857436830/1499d/TR6XdraONeA.jpg" alt="Mergetool GUI" style="float: right; margin-right: 10px;">
 3. В поле Remote Repo name введите любое значение, необязательно осмысленное.
 4. В поле Remote Repo Link введите <i>"https://github.com/infinitystation/Baystation12"</i>
 5. В поле Remote Repo Branch введите master.<details>или другую ветку изменения которой вы хотите перенести на свою ветвь.</details>
