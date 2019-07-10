@@ -40,6 +40,7 @@ em						{font-style: normal;font-weight: bold;}
 
 .staff_channel			{color: #a66300;	font-weight: bold;}
 .staff_channel .admin	{color: #b82e00;	font-weight: bold;}
+.staff_channel .developer {color: #1b521f;	font-weight: bold;}
 
 /* Radio: Misc */
 .deadsay				{color: #530fad;}
