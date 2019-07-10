@@ -39,6 +39,7 @@ GLOBAL_LIST_EMPTY(mp_list)
 	var/panel = PANEL_CLOSED
 
 	var/obj/item/weapon/cell/device/cell = /obj/item/weapon/cell/device
+	var/power_usage = 250
 	var/obj/item/music_tape/tape = null
 
 	var/serial_number
@@ -99,13 +100,11 @@ GLOBAL_LIST_EMPTY(mp_list)
 			overlays += image(icon, "[icon_state]_open-cell")
 
 /obj/item/music_player/Process()
-	if(get_cell() && mode)
-		if(cell.charge <= 0.0833333333)
-			StopPlaying()
-			visible_message(SPAN_WARNING("\The [src] is suddenly turned off."))
-			return PROCESS_KILL
-		else
-			cell.use(0.0833333333)
+	if(!get_cell() || !cell.checked_use(power_usage * CELLRATE))
+		StopPlaying()
+		visible_message(SPAN_WARNING("\The [src]'s power meter flashes a battery warning and refuses to operate."))
+		return PROCESS_KILL
+//	to_world(cell.charge)
 
 /obj/item/music_player/proc/set_mode(value)
 	if(value == mode) return
@@ -118,7 +117,8 @@ GLOBAL_LIST_EMPTY(mp_list)
 		if(OFF)
 			StopPlaying()
 		if(PLAY)
-			if(!get_cell() && cell.charge <= 0.0833333333)
+			if(!get_cell() || !cell.check_charge(power_usage * CELLRATE))
+				visible_message(SPAN_NOTICE("\The [src]'s power meter flashes a battery warning and refuses to operate."))
 				return
 			StartPlaying()
 
@@ -169,60 +169,64 @@ GLOBAL_LIST_EMPTY(mp_list)
 		return
 
 	if(isScrewdriver(I))
-		if(panel == PANEL_UNSCREWED)
-			user.visible_message(SPAN_NOTICE("\The [user] screw \the [src]'s front panel with \the [I]."), SPAN_NOTICE("You screw \the [src]'s front panel."))
-			playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
-			panel = PANEL_CLOSED
-			return TRUE
-		else if(panel == PANEL_CLOSED)
-			user.visible_message(SPAN_NOTICE("\The [user] unscrew \the [src]'s front panel with \the [I]."), SPAN_NOTICE("You unscrew \the [src]'s front panel."))
-			playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
-			panel = PANEL_UNSCREWED
-			return TRUE
+		switch(panel)
+			if(PANEL_UNSCREWED)
+				user.visible_message(SPAN_NOTICE("\The [user] screw \the [src]'s front panel with \the [I]."), SPAN_NOTICE("You screw \the [src]'s front panel."))
+				playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
+				panel = PANEL_CLOSED
+				return TRUE
 
-		if(panel == PANEL_OPENED)
-			var/choices = list()
-			if(cell)
-				choices += "Remove cell"
-			if(!broken)
-				choices += "Adjust player"
+			if(PANEL_CLOSED)
+				user.visible_message(SPAN_NOTICE("\The [user] unscrew \the [src]'s front panel with \the [I]."), SPAN_NOTICE("You unscrew \the [src]'s front panel."))
+				playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
+				panel = PANEL_UNSCREWED
+				return TRUE
 
-			var/response = input(user, "What do you want to do?", "[src]") as null|anything in choices
+			if(PANEL_OPENED)
+				var/choices = list()
+				if(cell)
+					choices += "Remove cell"
+				if(!broken)
+					choices += "Adjust player"
 
-			if(!Adjacent(user) || !response)	//moved away or cancelled
-				return
+				var/response = input(user, "What do you want to do?", "[src]") as null|anything in choices
 
-			switch(response)
-				if("Remove cell")
-					if(cell)
-						if(!MayAdjust(user))
-							return FALSE
-						playsound(src.loc, 'sound/items/Screwdriver.ogg', 45, 1)
-						to_chat(user, SPAN_NOTICE("You pulled out [cell] out of [src] with [I]."))
-						user.put_in_hands(cell)
-						cell = null
-						update_icon()
-					else
-						to_chat(user, SPAN_WARNING("\The [src] doesn't have a cell installed."))
-				if("Adjust player")
-					if(!broken)
-						AdjustFrequency(I, user)
-						return TRUE
+				if(!Adjacent(user) || !response)	//moved away or cancelled
+					return
+
+				switch(response)
+					if("Remove cell")
+						if(cell)
+							if(!MayAdjust(user))
+								return FALSE
+							playsound(src.loc, 'sound/items/Screwdriver.ogg', 45, 1)
+							to_chat(user, SPAN_NOTICE("You pulled out [cell] out of [src] with [I]."))
+							user.put_in_hands(cell)
+							cell = null
+							update_icon()
+						else
+							to_chat(user, SPAN_WARNING("\The [src] doesn't have a cell installed."))
+					if("Adjust player")
+						if(!broken)
+							AdjustFrequency(I, user)
+							return TRUE
 		return
 
 	if(isCrowbar(I))
-		if(panel == PANEL_OPENED)
-			user.visible_message(SPAN_NOTICE("\The [user] re-attaches \the [src]'s front panel with \the [I]."), SPAN_NOTICE("You re-attach \the [src]'s front panel."))
-			playsound(src.loc, 'sound/items/Crowbar.ogg', 100, 1)
-			panel = PANEL_UNSCREWED
-			update_icon()
-			return TRUE
-		else if(PANEL_UNSCREWED)
-			user.visible_message(SPAN_NOTICE("\The [user] unhinges \the [src]'s front panel with \the [I]."), SPAN_NOTICE("You unhinge \the [src]'s front panel."))
-			playsound(src.loc, 'sound/items/Crowbar.ogg', 100, 1)
-			panel = PANEL_OPENED
-			update_icon()
-			return TRUE
+		switch(panel)
+			if(PANEL_OPENED)
+				user.visible_message(SPAN_NOTICE("\The [user] re-attaches \the [src]'s front panel with \the [I]."), SPAN_NOTICE("You re-attach \the [src]'s front panel."))
+				playsound(src.loc, 'sound/items/Crowbar.ogg', 100, 1)
+				panel = PANEL_UNSCREWED
+				update_icon()
+				return TRUE
+
+			if(PANEL_UNSCREWED)
+				user.visible_message(SPAN_NOTICE("\The [user] unhinges \the [src]'s front panel with \the [I]."), SPAN_NOTICE("You unhinge \the [src]'s front panel."))
+				playsound(src.loc, 'sound/items/Crowbar.ogg', 100, 1)
+				panel = PANEL_OPENED
+				update_icon()
+				return TRUE
 		return
 
 	if(istype(I,/obj/item/stack/nanopaste))
