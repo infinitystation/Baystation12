@@ -44,3 +44,10 @@ GLOBAL_LIST_INIT(console_interact_sound, list(
 'infinity/sound/machines/console/console_interact6.ogg',
 'infinity/sound/machines/console/console_interact7.ogg'
 ))
+GLOBAL_LIST_INIT(radio_chatter_sound, list(
+'infinity/sound/effects/radio1.ogg',
+'infinity/sound/effects/radio2.ogg',
+'infinity/sound/effects/radio3.ogg',
+'infinity/sound/effects/radio4.ogg',
+))
+
