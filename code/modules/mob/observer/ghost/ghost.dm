@@ -158,15 +158,15 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set name = "Ghost"
 	set desc = "Relinquish your life and enter the land of the dead."
 
-	if(client && client.banprisoned)
-		return
+	if(client && client.banprisoned) return
 
 	if(stat == DEAD)
 		announce_ghost_joinleave(ghostize(1))
 	else
-		if(world.time - round_start_time < (config.observe_delay MINUTES))
-			if(!client.holder)
-				to_chat(src, "<span class='warning'>Sorry, you should wait [config.observe_delay] minutes from the start of the round to be observer. See \"Round Duration\" timer in Status tab to check how much time has passed from the round start.</span>")
+		if(!check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
+			if((world.time - round_start_time < (config.observe_delay MINUTES)))
+				to_chat(src, SPAN_WARNING("»звините, вам следует подождать [config.observe_delay] минут со старта раунда чтобы перейти в режим наблюдател&#255;."))
+				to_chat(src, SPAN_NOTICE("ѕроверьте таймер \"Round Duration\" во вкладке Status чтобы узнать сколько времени прошло."))
 				return
 
 		var/response

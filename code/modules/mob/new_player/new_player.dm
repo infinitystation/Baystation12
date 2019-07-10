@@ -45,12 +45,12 @@
 			output += "<p>\[ <span class='linkOn'><b>Ready</b></span> | <a href='byond://?src=\ref[src];ready=0'>Not Ready</a> \]</p>"
 		else
 			output += "<p>\[ <a href='byond://?src=\ref[src];ready=1'>Ready</a> | <span class='linkOn'><b>Not Ready</b></span> \]</p>"
-		if(client.holder || config.observers_allowed || check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
+		if(check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
 			output += "<p><a href='byond://?src=\ref[src];observe=1'>Observe</A></p>"
 	else
 		output += "<a href='byond://?src=\ref[src];manifest=1'>View the Crew Manifest</A><br><br>"
 		output += "<a href='byond://?src=\ref[src];late_join=1'>Join Game!</A>"
-		if(client.holder || config.observers_allowed || check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
+		if(config.observers_allowed || check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
 			output += "<p><a href='byond://?src=\ref[src];observe=1'>Observe</A></p>"
 
 	output += "<hr>Current character:<br>"
@@ -73,8 +73,8 @@
 			stat("Game Mode:", PUBLIC_GAME_MODE)
 
 		var/extra_antags = list2params(additional_antag_types)
-		if(extra_antags)
-			stat("Added Antagonists:", extra_antags)
+		if(extra_antags) stat("Added Antagonists:", extra_antags) // ? extra_antags : "None")
+
 		if(GAME_STATE <= RUNLEVEL_LOBBY)
 			stat("Time To Start:", "[round(SSticker.pregame_timeleft/10)][SSticker.round_progressing ? "" : " (DELAYED)"]")
 			stat("Players: [totalPlayers]", "Players Ready: [totalPlayersReady]")
@@ -104,8 +104,8 @@
 		return 1
 
 	if(href_list["ready"])
-		if(client && client.banprisoned)
-			return
+		if(client && client.banprisoned) return
+
 		if(GAME_STATE <= RUNLEVEL_LOBBY) // Make sure we don't ready up after the round has started
 			ready = text2num(href_list["ready"])
 		else
@@ -120,25 +120,36 @@
 				new_player_panel()
 
 	if(href_list["observe"])
-		if(client && client.banprisoned)
-			return
-		if(!config.observers_allowed && !check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
-			to_chat(src, SPAN_WARNING("¬ы не можете зайти в раунд за призрака, поскольку это было запрещено настройками сервера."))
-			return
+		if(client && client.banprisoned) return
+
 		if(GAME_STATE < RUNLEVEL_LOBBY)
 			to_chat(src, "<span class='warning'>Please wait for server initialization to complete...</span>")
 			return
 
-		if(world.time - round_start_time < (config.observe_delay MINUTES))
-			if(!client.holder)
-				to_chat(src, "<span class='warning'>Sorry, you should wait [config.observe_delay] minutes from the start of the round to be observer. See \"Round Duration\" timer in Status tab to check how much time has passed from the round start.</span>")
+		if(!check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
+			if(!config.observers_allowed)
+				to_chat(src, SPAN_WARNING("¬ы не можете зайти в раунд за призрака, поскольку это было запрещено настройками сервера."))
+				return
+
+			if((world.time - round_start_time < (config.observe_delay MINUTES)))
+				to_chat(src, SPAN_WARNING("»звините, вам следует подождать [config.observe_delay] минут со старта раунда чтобы перейти в режим наблюдател&#255;."))
+				to_chat(src, SPAN_NOTICE("ѕроверьте таймер \"Round Duration\" во вкладке Status чтобы узнать сколько времени прошло."))
 				return
 
 		if(!config.respawn_delay || client.holder || alert(src,"Are you sure you wish to observe? You will have to wait [OBSERV_SPAWN_DELAY] minute\s before being able to respawn!","Player Setup","Yes","No") == "Yes")
-			if(!client)
-				return 1
-			if(!config.observers_allowed && !check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
-				return 1
+			if(!client) return 1
+
+			// eckff-inf@dev: Safety checks
+			if(!check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
+				if(!config.observers_allowed)
+					to_chat(src, SPAN_WARNING("¬ы не можете зайти в раунд за призрака, поскольку это было запрещено настройками сервера."))
+					return 1
+
+				if((world.time - round_start_time < (config.observe_delay MINUTES)))
+					to_chat(src, SPAN_WARNING("»звините, вам следует подождать [config.observe_delay] минут со старта раунда чтобы перейти в режим наблюдател&#255;."))
+					to_chat(src, SPAN_NOTICE("ѕроверьте таймер \"Round Duration\" во вкладке Status чтобы узнать сколько времени прошло."))
+					return 1
+
 			var/mob/observer/ghost/observer = new()
 
 			spawning = 1
@@ -178,8 +189,7 @@
 		Spawn_Prisoner()
 
 	if(href_list["late_join"])
-		if(client && client.banprisoned)
-			return
+		if(client && client.banprisoned) return
 
 		if(GAME_STATE != RUNLEVEL_GAME)
 			to_chat(usr, "<span class='warning'>The round is either not ready, or has already finished...</span>")
@@ -187,13 +197,13 @@
 		LateChoices() //show the latejoin job selection menu
 
 	if(href_list["manifest"])
-		if(client && client.banprisoned)
-			return
+		if(client && client.banprisoned) return
+
 		ViewManifest()
 
 	if(href_list["SelectedJob"])
-		if(client && client.banprisoned)
-			return
+		if(client && client.banprisoned) return
+
 		var/datum/job/job = SSjobs.get_by_title(href_list["SelectedJob"])
 
 		if(!SSjobs.check_general_join_blockers(src, job))
@@ -207,8 +217,8 @@
 		return
 
 	if(href_list["privacy_poll"])
-		if(client && client.banprisoned)
-			return
+		if(client && client.banprisoned) return
+
 		establish_db_connection()
 		if(!dbcon.IsConnected())
 			return
@@ -325,8 +335,8 @@
 	if(!config.enter_allowed)
 		to_chat(usr, "<span class='notice'>There is an administrative lock on entering the game!</span>")
 		return 0
-	if(client && client.banprisoned)
-		return 0
+
+	if(client && client.banprisoned) return 0
 
 	if(!job || !job.is_available(client))
 		alert("[job.title] is not available. Please try another.")

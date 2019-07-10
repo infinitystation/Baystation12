@@ -4,6 +4,7 @@
 	set name="Toggle observers"
 	if(!check_rights(R_SERVER))
 		return
+
 	config.observers_allowed = !config.observers_allowed
 
 	if(GAME_STATE > RUNLEVEL_LOBBY)
@@ -33,12 +34,11 @@
 		return
 
 	var/oldtime = config.observe_delay
-	var/newtime = input("Set a new time. Its must be in MINUTES (not in seconds/byond tick). Set 0 to remove delay.", "Set Delay") as num|null
+	var/newtime = input("Set a new time. Its must be in MINUTES (not in seconds/byond tick). Set 0 to remove delay.", "Set Delay", oldtime) as num|null
+	if(!newtime || newtime == oldtime) return
 
-	if(newtime <= 0)
-		log_and_message_admins("Admin [key_name_admin(usr)] has disabled observe delay.")
-	else
-		log_and_message_admins("Admin [key_name_admin(usr)] has changed observe delay from [oldtime] to [newtime] minutes.")
+	var/message = newtime <= 0 ? "отключил(а) задержку дл&#255; наблюдателей" : "изменил(а) задержку дл&#255; наблюдателей с [oldtime] на [newtime] минут(ы)"
+	log_and_message_admins("Администратор [key_name_admin(usr)] [message].")
 
 	config.observe_delay = newtime
 	SSstatistics.add_field_details("admin_verb","CROD") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
