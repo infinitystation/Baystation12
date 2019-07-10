@@ -3083,7 +3083,6 @@
 #include "infinity\code\game\items\toys.dm"
 #include "infinity\code\game\items\devices\blackout.dm"
 #include "infinity\code\game\items\weapons\cards_Id.dm"
-#include "infinity\code\game\items\weapons\handcuffs.dm"
 #include "infinity\code\game\items\weapons\lighter.dm"
 #include "infinity\code\game\items\weapons\surgery_tools.dm"
 #include "infinity\code\game\items\weapons\towels.dm"
