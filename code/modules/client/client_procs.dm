@@ -213,9 +213,8 @@
 
 	send_resources()
 
-
 	if(prefs.lastchangelog != changelog_hash) //bolds the changelog button on the interface so we know there are updates.
-		to_chat(src, "<span class='info'>You have unread updates in the Baystation 12 changelog.</span>")
+		to_chat(src, "<span class='info'>You have unread updates in the changelog.</span>")
 		winset(src, "rpane.changelog", "background-color=#eaeaea;font-style=bold")
 		if(config.aggressive_changelog)
 			src.changes()
@@ -235,22 +234,6 @@
 
 	if(holder)
 		src.control_freak = 0 //Devs need 0 for profiler access
-
-/client/proc/handle_staff_login()
-	if(admin_datums[ckey] && SSticker)
-		var/datum/admins/holder = admin_datums[ckey]
-		message_staff("[key_name(src)] ([holder.rank]) logged.")
-
-/client/proc/handle_staff_logout()
-	if(admin_datums[ckey] && SSticker)
-		var/datum/admins/holder = admin_datums[ckey]
-		message_staff("[key_name(src)] ([holder.rank]) logout.")
-		if(!GLOB.admins.len) //Apparently the admin logging out is no longer an admin at this point, so we have to check this towards 0 and not towards 1. Awell.
-			send2adminirc("[key_name(src)] logged out - no more admins online.")
-			if(config.delist_when_no_admins && world.visibility)
-				world.visibility = FALSE
-				send2adminirc("Toggled hub visibility. The server is now invisible ([world.visibility]).")
-
 	//////////////
 	//DISCONNECT//
 	//////////////
