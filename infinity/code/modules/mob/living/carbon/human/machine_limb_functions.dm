@@ -31,6 +31,8 @@
 		to_chat(src,"<span class='warning'>Your safety system stops you from removing \the [E].</span>")
 		return
 
+	if(!do_after(src, 2 SECONDS, src)) return
+
 	last_special = world.time + 20
 
 	E.removed(src)
@@ -72,6 +74,8 @@
 	if(E)
 		to_chat(src,"<span class='warning'>You are not missing that limb.</span>")
 		return
+
+	if(!do_after(src, 2 SECONDS, src)) return
 
 	last_special = world.time + 20
 
