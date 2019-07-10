@@ -23984,7 +23984,6 @@
 /obj/structure/bed/padded,
 /obj/structure/curtain/open/bed,
 /obj/item/weapon/melee/whip,
-/obj/item/weapon/handcuffs/plush,
 /turf/simulated/floor/plating,
 /area/merchant_station)
 "baZ" = (
