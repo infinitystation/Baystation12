@@ -3216,6 +3216,7 @@
 #include "infinity\code\modules\mob\living\eye_blink.dm"
 #include "infinity\code\modules\mob\living\living_powers.dm"
 #include "infinity\code\modules\mob\living\carbon\human\human.dm"
+#include "infinity\code\modules\mob\living\carbon\human\human_machine_limb_function.dm"
 #include "infinity\code\modules\mob\living\carbon\human\human_powers.dm"
 #include "infinity\code\modules\mob\living\carbon\human\interactions.dm"
 #include "infinity\code\modules\mob\living\silicon\ai\ai.dm"
