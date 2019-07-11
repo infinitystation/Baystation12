@@ -5,7 +5,7 @@
 	name = "High Pulse Electricity Outage Tool"
 	item_cost = 24
 	path = /obj/item/device/blackout
-	desc = "A device wich can create power virus in SMES, spread it in power network and temporally creating blackout."
+	desc = "A device wich can create power virus in terminal, spread it in power network and temporally creating blackout."
 
 /obj/item/device/blackout
 	name = "high pulse electricity outage tool"
@@ -13,6 +13,7 @@
 	icon = 'infinity/icons/obj/items.dmi'
 	icon_state = "device_blackout-off"
 
+	var/severity = 2
 	var/shots = 1
 	var/lastUse = 0
 	var/Cooldown = (20 MINUTES)
@@ -24,24 +25,13 @@
 		return
 
 	target.add_fingerprint(user)
-	if(istype(target, /obj/machinery/power/apc) || istype(target, /obj/machinery/power/smes)) // bit tricky
-		if(istype(target, /obj/machinery/power/apc))
-			var/obj/machinery/power/apc/A = target
-			if(!A.wiresexposed)
-				return
 
-			if(!A.terminal)
-				to_chat(user, SPAN_WARNING("This power station isn't connected to global power channel."))
-				return
+	if(istype(target, /obj/machinery/power/terminal))
+		var/obj/machinery/power/terminal/terminal = target
 
-		if(istype(target, /obj/machinery/power/smes))
-			var/obj/machinery/power/smes/S = target
-			if(!S.panel_open)
-				return
-
-			if(S.outputting != 2)
-				to_chat(user, SPAN_WARNING("This power station isn't connected to global power channel."))
-				return
+		if(!terminal.powernet)
+			to_chat(user, SPAN_WARNING("This power station isn't connected to power net."))
+			return
 
 		if(check_to_use())
 			to_chat(user, SPAN_WARNING("Device does not respond. Perhaps you need to try later."))
@@ -51,28 +41,40 @@
 			to_chat(user, SPAN_WARNING("Device does not respond."))
 			return
 
-		hacktheenergy(target, user)
+		hacktheenergy(terminal, user)
 
-/obj/item/device/blackout/proc/hacktheenergy(var/obj/target, mob/user)
-	if(!target || !user) return // security
+/obj/item/device/blackout/proc/hacktheenergy(var/obj/machinery/power/terminal/terminal_in, mob/user)
+	if(!istype(terminal_in) || !user) return // security
 
-	src.audible_message("<font color=Maroon><b>Blackout Assistant</b></font> says, \"-- START -- Connecting to power supply... --\"")
+	src.audible_message("<font color=Maroon><b>HackTheEnergy.exe Assistant</b></font> says, \"-- Начало. Подключаемс&#255; к терминалу. --\"")
+	if(!do_after(user, 30, terminal_in)) return
 
-	if(do_after(user, 80, target))
-		icon_state = "device_blackout-on"
-		src.audible_message("<font color=Maroon><b>Blackout Assistant</b></font> says, \"-- PROCESS -- Connected. Sending pulse... --\"")
-		playsound(get_turf(target), 'sound/items/goggles_charge.ogg', 50, 1)
+	src.audible_message("<font color=Maroon><b>HackTheEnergy.exe Assistant</b></font> says, \"-- Подключение к терминалу успешно. Получаем информацию о электросети... --\"")
+	if(!do_after(user, 80, terminal_in)) return
 
-		if(do_after(user, 40, target))
-			src.audible_message("<font color=Maroon><b>Blackout Assistant</b></font> says, \"-- DONE -- Pulsing procedure done. \
-				Thank you, and have a very safe, and productive day. --\"")
+	src.audible_message("<font color=Maroon><b>HackTheEnergy.exe Assistant</b></font> says, \"-- Сканирование электросети успешно. Начинаем процедуру пульсации. --\"")
+	icon_state = "device_blackout-on"
+	playsound(src, 'sound/items/goggles_charge.ogg', 50, 1)
 
-			shots--
-			Cooldown = world.time
+	if(do_after(user, 40, terminal_in))
+		src.audible_message("<font color=Maroon><b>HackTheEnergy.exe Assistant</b></font> says, \"-- Готово. Пульсаци&#255; завершена. \
+			Спасибо за пользование нашими услугами, желаем Вам удачной и продуктивной миссии. --\"")
 
-			power_failure(1, 2, GetConnectedZlevels(target.z))
+		shots--
+		Cooldown = world.time
 
-			log_and_message_admins("[key_name(usr)] used \the [src.name] on \the [admin_jump_link(target, src)] to shutdown entire ship.")
+	//	power_failure(1, 2, GetConnectedZlevels(P.z))
+
+		var/datum/powernet/powernet = terminal_in.powernet
+		for(var/obj/machinery/power/terminal/terminal_out in powernet.nodes)
+			if(istype(terminal_out.master, /obj/machinery/power/apc))
+				var/obj/machinery/power/apc/A = terminal_out.master
+				A.energy_fail(rand(30 * severity,60 * severity))
+			if(istype(terminal_out.master, /obj/machinery/power/smes/buildable))
+				var/obj/machinery/power/smes/buildable/S = terminal_out.master
+				S.energy_fail(rand(15 * severity,30 * severity))
+
+		log_and_message_admins("[key_name(usr)] used \the [src.name] on \the [admin_jump_link(terminal_in, src)] to shutdown entire ship.")
 
 	icon_state = "device_blackout-off"
 
