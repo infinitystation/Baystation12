@@ -2,7 +2,7 @@
 
 /obj/item/weapon/rpd
 	name = "rapid pipe dispencer"
-	icon = 'icons/obj/items_inf.dmi'
+	icon = 'infinity/icons/obj/items.dmi'
 	icon_state = "rpd"
 	item_state = "rpd"
 	opacity = 0

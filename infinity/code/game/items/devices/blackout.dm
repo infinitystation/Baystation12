@@ -10,7 +10,7 @@
 /obj/item/device/blackout
 	name = "high pulse electricity outage tool"
 	desc = "A unknown device, probably only cool electrics can know what this can do."
-	icon = 'icons/obj/items_inf.dmi'
+	icon = 'infinity/icons/obj/items.dmi'
 	icon_state = "device_blackout-off"
 
 	var/shots = 1

@@ -231,7 +231,7 @@
 	desc = "A portable barrier � usually, you can see it on defensive positions or in storages at important areas. \
 	You can deploy it with a screwdriver for maximum protection, or keep it in mobile position. \
 	Also, demontage can be done with a crowbar.In case of structural damage, can be repaired with welding tool."
-	icon = 'icons/obj/items_inf.dmi'
+	icon = 'infinity/icons/obj/items.dmi'
 	icon_state = "barrier_hand"
 	w_class = 4
 	health = 200

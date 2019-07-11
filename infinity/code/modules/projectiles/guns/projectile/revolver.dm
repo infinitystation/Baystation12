@@ -1,7 +1,7 @@
 /obj/item/weapon/gun/projectile/revolver/lr22
 	name = ".22LR revolver"
 	desc = "A rugged revolver based on the Smith & Wesson 617 model, with modern improvements. Uses .22LR rounds."
-	icon = 'icons/obj/infinity_guns.dmi'
+	icon = 'infinity/icons/obj/guns.dmi'
 	icon_state = "22lr_revolver"
 	item_state = "revolver"
 	max_shells = 10

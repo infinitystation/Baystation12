@@ -1,7 +1,7 @@
 /obj/item/airbag
 	name = "personal airbag"
 	desc = "One-use protection from high-speed collisions."
-	icon = 'icons/obj/airbag.dmi'
+	icon = 'infinity/icons/obj/airbag.dmi'
 	icon_state = "airbag"
 	item_state = "syringe_kit"
 	w_class = ITEM_SIZE_SMALL

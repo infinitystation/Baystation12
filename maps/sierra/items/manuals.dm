@@ -68,7 +68,7 @@
 /obj/item/weapon/book/manual/nt_sop
 	name = "NT Standard Operating Procedures"
 	desc = "SOP aboard the NSV Sierra."
-	icon = 'icons/obj/library_inf.dmi'
+	icon = 'infinity/icons/obj/library.dmi'
 	icon_state = "bookNTsop"
 	author = "Employee Materials"
 	title = "Standard Operating Procedure"
@@ -91,7 +91,7 @@
 /obj/item/weapon/book/manual/nt_tc
 	name = "NT Threat Codes"
 	desc = "TC aboard the NSV Sierra."
-	icon = 'icons/obj/library_inf.dmi'
+	icon = 'infinity/icons/obj/library.dmi'
 	icon_state = "bookNTtc"
 	author = "Ship Rule Materials"
 	title = "Threat Codes"

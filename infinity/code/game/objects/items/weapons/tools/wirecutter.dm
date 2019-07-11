@@ -1,7 +1,7 @@
 /obj/item/weapon/wirecutters/power
 	name = "jaws of life"
 	desc = "A set of jaws of life, compressed through the magic of science. It's fitted with a cutting head."
-	icon = 'icons/obj/items_inf.dmi'
+	icon = 'infinity/icons/obj/items.dmi'
 	icon_state = "jaws_cutter"
 	item_state = "jawsoflife"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE

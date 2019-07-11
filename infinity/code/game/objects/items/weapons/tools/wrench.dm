@@ -1,7 +1,7 @@
 /obj/item/weapon/wrench/power
 	name = "hand drill"
 	desc = "A simple powered hand drill. It's fitted with a bolt bit."
-	icon = 'icons/obj/items_inf.dmi'
+	icon = 'infinity/icons/obj/items.dmi'
 	icon_state = "drill_bolt"
 	item_state = "drill"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE

@@ -1,7 +1,7 @@
 /obj/item/modular_computer/laptop
 	name = "laptop computer"
 	desc = "A portable clamshell computer."
-	icon = 'icons/obj/modular_laptop_inf.dmi'
+	icon = 'infinity/icons/obj/modular_laptop.dmi'
 	icon_state = "laptop-open"
 	icon_state_unpowered = "laptop-open"
 	var/icon_state_closed = "laptop-closed"

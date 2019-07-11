@@ -15,7 +15,7 @@
 	name = "champagne"
 	desc = "Is this gold?"
 	gender = PLURAL
-	icon = 'icons/obj/infinity_champagne.dmi'
+	icon = 'infinity/icons/effects/effects.dmi'
 	icon_state = "fchampagne1"
 	color = COLOR_BRASS
 	random_icon_states = list("fchampagne1", "fchampagne2", "fchampagne3", "fchampagne4")
@@ -23,7 +23,7 @@
 /obj/item/weapon/reagent_containers/food/drinks/bottle/champagne
 	name = "Champagne bottle"
 	desc = "Sparkling wine made from exquisite grape varieties by the method of secondary fermentation in a bottle. Bubbling."
-	icon = 'icons/obj/infinity_champagne.dmi'
+	icon = 'infinity/icons/obj/food.dmi'
 	icon_state = "champagnebottle"
 	center_of_mass = "x=12;y=5"
 
