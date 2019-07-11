@@ -1,6 +1,6 @@
 /obj/machinery/vending/clothing
 	name = "ClothesMate" //renamed to make the slogan rhyme
-	icon = 'icons/obj/infinity_vend.dmi'
+	icon = 'infinity/icons/obj/vending.dmi'
 	desc = "A clothing vending machine"
 	icon_state = "clothes"
 	product_slogans = "Dress for success!;Prepare to look swagalicious!;Look at all this free swag!;Why leave style up to fate? Use the ClothesMate!"
@@ -23,7 +23,7 @@
 /obj/machinery/vending/security_clothes
 	name = "Security clothes"
 	desc = "All our clothes - it is your clothes!"
-	icon = 'icons/obj/infinity_vend.dmi'
+	icon = 'infinity/icons/obj/vending.dmi'
 	icon_state = "sec"
 	icon_deny = "sec-deny"
 	vend_delay = 15
@@ -54,7 +54,7 @@
 	name = "Robust Softdrinks"
 	desc = "A softdrink vendor provided by Robust Industries, LLC."
 	density = 0
-	icon = 'icons/obj/infinity_vend.dmi'
+	icon = 'infinity/icons/obj/vending.dmi'
 	icon_state = "Cola_Machine_small"
 	icon_vend = "Cola_Machine_small-vend"
 	products = list(/obj/item/weapon/reagent_containers/food/drinks/cans/cola = 5,/obj/item/weapon/reagent_containers/food/drinks/cans/space_mountain_wind = 5,
@@ -71,7 +71,7 @@
 	name = "Hot Drinks machine"
 	desc = "A vending machine which dispenses hot drinks."
 	density = 0
-	icon = 'icons/obj/infinity_vend.dmi'
+	icon = 'infinity/icons/obj/vending.dmi'
 	icon_state = "Covfefe_Machine_small"
 	icon_vend = "Covfefe_Machine_small-vend"
 	products = list(/obj/item/weapon/reagent_containers/food/drinks/coffee = 5,/obj/item/weapon/reagent_containers/food/drinks/tea = 5,/obj/item/weapon/reagent_containers/food/drinks/h_chocolate = 5)
@@ -83,7 +83,7 @@
 	desc = "A specialized vending machine designed to contribute to your slow and uncomfortable death."
 	vend_delay = 21
 	density = 0
-	icon = 'icons/obj/infinity_vend.dmi'
+	icon = 'infinity/icons/obj/vending.dmi'
 	icon_state = "Cigs_Machine_small"
 	icon_vend = "Cigs_Machine_small-vend"
 	products = list(/obj/item/weapon/storage/fancy/cigarettes = 2,
@@ -110,7 +110,7 @@
 /obj/machinery/vending/thundervend
 	name = "Violence-o-Mate"
 	desc = "That's a guns and ammo vendor."
-	icon = 'icons/obj/infinity_vend.dmi'
+	icon = 'infinity/icons/obj/vending.dmi'
 	density = 0
 	ads_list = list(
 		"ULTRAVIOLENCE!",
@@ -165,7 +165,7 @@
 /obj/machinery/vending/armoryvend
 	density = 0
 	vend_delay = 10
-	icon = 'icons/obj/infinity_vend.dmi'
+	icon = 'infinity/icons/obj/vending.dmi'
 	icon_state = "thundervendor"
 	req_access = list(access_security)
 
@@ -196,7 +196,7 @@
 /obj/machinery/vending/paimod
 	name = "IntelegenceTech"
 	desc = "A pai modification vendor. Inside of showcase you see many of circuits, devices and etc."
-	icon = 'icons/obj/infinity_vend.dmi'
+	icon = 'infinity/icons/obj/vending.dmi'
 	density = 1
 	icon_state = "pai"
 	products = list(/obj/item/weapon/paimod/advanced_holo = 3,

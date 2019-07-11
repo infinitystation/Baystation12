@@ -1,7 +1,7 @@
 /obj/structure/mattress
 	name = "mattress"
 	desc = "A bare mattress. It doesn't look very comfortable."
-	icon = 'icons/obj/furniture_inf.dmi'
+	icon = 'infinity/icons/obj/furniture.dmi'
 	icon_state = "mattress"
 
 /obj/structure/mattress/dirty

@@ -139,7 +139,7 @@
 /obj/item/weapon/gun/launcher/syringe/rapid/
 	name = "Harlus MK4 Dart Rifle"
 	desc = "Special police rifle for shooting darts and syringes."
-	icon = 'icons/obj/infinity_guns.dmi'
+	icon = 'infinity/icons/obj/guns.dmi'
 	icon_state = "stunrifle"
 	item_state = "gun"
 

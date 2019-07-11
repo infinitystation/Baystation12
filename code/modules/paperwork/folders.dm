@@ -1,7 +1,7 @@
 /obj/item/weapon/folder
 	name = "folder"
 	desc = "A folder."
-	icon = 'icons/obj/bureaucracy_inf.dmi'
+	icon = 'infinity/icons/obj/bureaucracy.dmi'
 	icon_state = "folder"
 	w_class = ITEM_SIZE_SMALL
 
@@ -74,7 +74,7 @@
 				playsound(src,'sound/effects/Paper_Remove.ogg',40,1)
 				usr.put_in_hands(P)
 
-		else if(href_list["read"])			
+		else if(href_list["read"])
 			var/obj/item/weapon/paper/P = locate(href_list["read"])
 			playsound(src,'sound/effects/Paper_Shake.ogg',40,1)
 			if(P && (P.loc == src) && istype(P))

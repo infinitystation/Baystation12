@@ -1,7 +1,7 @@
 /obj/item/rolled_towel
 	name = "rolled big towel"
 	desc = "A collapsed big towel - looks like you can't use it as a normal one... Try it on a beach."
-	icon = 'icons/obj/items_inf.dmi'
+	icon = 'infinity/icons/obj/items.dmi'
 	icon_state = "rolled_towel"
 	w_class = 2
 	var/beach_towel = /obj/structure/towel
@@ -13,7 +13,7 @@
 
 /obj/structure/towel
 	name = "big towel"
-	icon = 'icons/obj/infinity_object.dmi'
+	icon = 'infinity/icons/obj/towels.dmi'
 	icon_state = "beach_towel"
 	anchored = 0
 	var/rolled_towel = /obj/item/rolled_towel
@@ -110,7 +110,7 @@
 
 /obj/structure/towel/holo
 	name = "big holographic towel"
-	icon = 'icons/obj/infinity_object.dmi'
+	icon = 'infinity/icons/obj/towels.dmi'
 	icon_state = "beach_towel"
 	anchored = 1
 	rolled_towel = null

@@ -20,7 +20,7 @@
 /obj/item/weapon/storage/part_replacer/bluespace
 	name = "bluespace rapid part exchange device"
 	desc = "A version of the RPED that allows for replacement of parts and scanning from a distance, along with higher capacity for parts."
-	icon = 'icons/obj/bluespace_rped.dmi'
+	icon = 'infinity/icons/obj/bluespace_rped.dmi'
 	icon_state = "BS_RPED"
 	w_class = ITEM_SIZE_NORMAL
 	storage_slots = 400
@@ -41,7 +41,7 @@
 			if(istype(T))
 				if(T.component_parts)
 					T.default_part_replacement(user, src)
-					user.Beam(T,icon_state="rped_upgrade",icon='icons/obj/bluespace_rped.dmi',time=5)
+					user.Beam(T,icon_state="rped_upgrade",icon='infinity/icons/obj/bluespace_rped.dmi',time=5)
 	return
 
 /obj/item/weapon/stock_parts

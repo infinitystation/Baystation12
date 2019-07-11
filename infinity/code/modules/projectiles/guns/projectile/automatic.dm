@@ -7,7 +7,7 @@
 	desc = "The NT41 Enforcer is a self-defense weapon made on bullpup system. Produced by NanoTrasen for it's Security Force. Looks cool and stylish, but sometimes too uncomfortably to run with it. Uses 5.7x28mm rounds."
 	icon_state = "nt41"
 	item_state = "nt41"
-	icon = 'icons/obj/infinity_guns.dmi'
+	icon = 'infinity/icons/obj/guns.dmi'
 	wielded_item_state = "nt41-wielded"
 	item_icons = list(
 		slot_r_hand_str = 'icons/mob/infinity/misc.dmi',
@@ -37,7 +37,7 @@
 /obj/item/weapon/gun/projectile/automatic/amrcarabine
 	name = "LDC-542 carabine"
 	desc = "The sielent and deadly and manufactured by Aussec Armory, bullpup carabine LDC-542 is a common weapon for a long-medium ranged combat units in Private Military Companies. Uses 12.7x55mm rounds."
-	icon = 'icons/obj/infinity_guns.dmi'
+	icon = 'infinity/icons/obj/guns.dmi'
 	icon_state = "amrcarabine"
 	item_state = "z8carbine"
 	w_class = ITEM_SIZE_HUGE

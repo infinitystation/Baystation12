@@ -4,7 +4,7 @@
 /obj/item/weapon/reagent_containers/food/snacks/can
 	name = "canned stew"
 	desc = "With You Since 20 century! This can has mix of meat, rice and some spice."
-	icon = 'icons/obj/infinity_food.dmi'
+	icon = 'infinity/icons/obj/food.dmi'
 	icon_state = "can1"
 	obj_flags = 0
 	trash = /obj/item/trash/canfood
@@ -54,7 +54,7 @@
 /obj/item/trash/canfood
 	name = "empty can"
 	desc = "With You Since 20 century! This can has mix of air, bacteries and food parts."
-	icon = 'icons/obj/infinity_food.dmi'
+	icon = 'infinity/icons/obj/food.dmi'
 	icon_state = "can1_empty"
 
 /obj/item/trash/canfood/Initialize()
@@ -64,7 +64,7 @@
 /obj/item/weapon/material/canknife
 	name = "can-opener"
 	desc = "Simple can-opener"
-	icon = 'icons/obj/items_inf.dmi'
+	icon = 'infinity/icons/obj/items.dmi'
 	icon_state = "opener"
 
 /obj/item/weapon/reagent_containers/food/snacks/can/attack_self(mob/user as mob)

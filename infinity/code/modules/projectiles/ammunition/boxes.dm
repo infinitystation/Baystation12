@@ -13,7 +13,7 @@
 
 /obj/item/ammo_magazine/c22m
 	name = "magazine (.22LR)"
-	icon = 'icons/obj/infinity_ammo.dmi'
+	icon = 'infinity/icons/obj/ammo.dmi'
 	icon_state = "letal22"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/a22lr
@@ -32,7 +32,7 @@
 
 /obj/item/ammo_magazine/c22m/rubber
 	name = "magazine (.22LR, rubber)"
-	icon = 'icons/obj/infinity_ammo.dmi'
+	icon = 'infinity/icons/obj/ammo.dmi'
 	icon_state = "ruber22"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/a22lr/rubber
@@ -42,7 +42,7 @@
 
 /obj/item/ammo_magazine/c12m
 	name = "magazine (12 gauge)"
-	icon = 'icons/obj/infinity_ammo.dmi'
+	icon = 'infinity/icons/obj/ammo.dmi'
 	icon_state = "m12gb"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/shotgun
@@ -97,7 +97,7 @@
 
 /obj/item/ammo_magazine/n10mm
 	name = "NT41 magazine (5.7x28mm)"
-	icon = 'icons/obj/infinity_ammo.dmi'
+	icon = 'infinity/icons/obj/ammo.dmi'
 	icon_state = "10mm"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/nt28mm

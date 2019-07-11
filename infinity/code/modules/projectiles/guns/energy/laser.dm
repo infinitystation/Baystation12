@@ -1,7 +1,7 @@
 /obj/item/weapon/gun/energy/laser/alien
 	name = "alien rifle"
 	desc = "An alien weapon never before seen by the likes of your species."
-	icon = 'icons/obj/infinity_guns.dmi'
+	icon = 'infinity/icons/obj/guns.dmi'
 	icon_state = "alienrifle"
 	item_state = "alienrifle"
 	wielded_item_state = "alienrifle-wielded"
