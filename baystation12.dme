@@ -3263,6 +3263,7 @@
 #include "infinity\code\modules\reagents\reagent_containers\food\drinks\champagne.dm"
 #include "infinity\code\modules\reagents\reagents_containers\food\drinks\bottle.dm"
 #include "infinity\code\modules\research\infinity_designs.dm"
+#include "infinity\code\modules\research\stock_parts.dm"
 #include "infinity\code\modules\scrap\scrap_pileripper.dm"
 #include "infinity\code\modules\scrap\scrap_refine.dm"
 #include "infinity\code\modules\scrap\scrap_refinery.dm"
