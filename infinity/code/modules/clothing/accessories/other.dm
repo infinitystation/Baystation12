@@ -25,4 +25,4 @@
 	name = "red striped scarf"
 	icon = 'icons/obj/clothing/infinity/TG_copy/neck.dmi'
 	icon_state = "stripedredscarf"
-	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/sprite_accessories.dmi', slot_wear_suit_str = 'icons/mob/infinity/sprite_accessories.dmi', slot_wear_mask_str  = 'icons/mob/infinity/sprite_accessories.dmi')
+	accessory_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', slot_wear_mask_str  = 'infinity/icons/mob/onmob/onmob_accessories.dmi')

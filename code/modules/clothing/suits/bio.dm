@@ -3,7 +3,7 @@
 	name = "bio hood"
 	icon_state = "bio"
 	icon = 'icons/obj/clothing/infinity/hats.dmi'
-	item_icons = list(slot_head_str = 'icons/mob/infinity/hats.dmi',
+	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi',
 		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_hats.dmi',
 		slot_r_hand_str = 'icons/mob/onmob/items/righthand_hats.dmi',)
 	item_state_slots = list(
@@ -23,7 +23,7 @@
 	desc = "A suit that protects against biological contamination."
 	icon_state = "bio"
 	icon = 'icons/obj/clothing/infinity/suits.dmi'
-	item_icons = list(slot_wear_suit_str = 'icons/mob/infinity/suits.dmi')
+	item_icons = list(slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi')
 	item_state_slots = list(
 		slot_l_hand_str = "bio_suit",
 		slot_r_hand_str = "bio_suit",

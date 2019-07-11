@@ -14,7 +14,7 @@
 	item_icons = list(
 		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_backpacks.dmi',
 		slot_r_hand_str = 'icons/mob/onmob/items/righthand_backpacks.dmi',
-		slot_back_str = 'icons/mob/infinity/backs.dmi'
+		slot_back_str = 'infinity/icons/mob/onmob/onmob_back.dmi'
 		)
 
 	item_state_slots = list(

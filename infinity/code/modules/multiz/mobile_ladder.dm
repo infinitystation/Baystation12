@@ -9,9 +9,9 @@
 	w_class = ITEM_SIZE_LARGE
 	slot_flags = SLOT_BACK
 	item_icons = list(
-		slot_l_hand_str = 'icons/mob/infinity/lefthand.dmi',
-		slot_r_hand_str = 'icons/mob/infinity/righthand.dmi',
-		slot_back_str = 'icons/mob/infinity/backs.dmi'
+		slot_l_hand_str = 'infinity/icons/mob/onmob/lefthand.dmi',
+		slot_r_hand_str = 'infinity/icons/mob/onmob/righthand.dmi',
+		slot_back_str = 'infinity/icons/mob/onmob/onmob_back.dmi'
 		)
 
 /obj/item/weapon/ladder_mobile/proc/place_ladder(atom/A, mob/user)

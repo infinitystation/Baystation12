@@ -20,7 +20,7 @@
 /obj/item/clothing/under/solgov/fleet/special
 	name = "old fleet utility"
 	icon = 'icons/obj/clothing/infinity/uniform.dmi'
-	icon_override = 'icons/mob/infinity/uniform.dmi'
+	icon_override = 'infinity/icons/mob/onmob/onmob_under.dmi'
 	icon_state = "fleet"
 	worn_state = "fleet"
 
@@ -38,5 +38,5 @@
 	name = "\improper old fleet cap"
 	desc = "A navy blue utility cover bearing the crest of the SCG Fleet."
 	icon = 'icons/obj/clothing/infinity/hats.dmi'
-	icon_override = 'icons/mob/infinity/hats.dmi'
+	icon_override = 'infinity/icons/mob/onmob/onmob_head.dmi'
 	icon_state = "fleetsoft"

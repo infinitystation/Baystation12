@@ -6,8 +6,8 @@
 	item_state = "alienrifle"
 	wielded_item_state = "alienrifle-wielded"
 	item_icons = list(
-		slot_r_hand_str = 'icons/mob/infinity/misc.dmi',
-		slot_l_hand_str = 'icons/mob/infinity/misctwo.dmi',
+		slot_r_hand_str = 'infinity/icons/mob/onmob/righthand.dmi',
+		slot_l_hand_str = 'infinity/icons/mob/onmob/lefthand.dmi',
 		)
 	self_recharge = 1
 	charge_cost = 40

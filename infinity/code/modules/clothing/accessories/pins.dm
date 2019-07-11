@@ -3,7 +3,7 @@
 	desc = "A red Nanotrasen pin."
 	icon = 'icons/obj/clothing/infinity/ties.dmi'
 	icon_state = "nt_r"
-	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/ties.dmi', slot_wear_suit_str = 'icons/mob/infinity/ties.dmi')
+	accessory_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi')
 	high_visibility = 1
 
 /obj/item/clothing/accessory/inf_pin/ntblue

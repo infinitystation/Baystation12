@@ -2,7 +2,7 @@
 	name = "leather shoes"
 	desc = "The best choice for haired assistants."
 	icon = 'icons/obj/clothing/infinity/shoes.dmi'
-	item_icons = list(slot_shoes_str = 'icons/mob/infinity/shoes.dmi')
+	item_icons = list(slot_shoes_str = 'infinity/icons/mob/onmob/onmob_feet.dmi')
 	icon_state = "leather_shoes"
 	item_state = "leather_shoes"
 
@@ -22,7 +22,7 @@
 	icon_state = "workboots"
 	item_state = "workboots"
 	icon = 'icons/obj/clothing/infinity/shoes.dmi'
-	item_icons = list(slot_shoes_str = 'icons/mob/infinity/shoes.dmi')
+	item_icons = list(slot_shoes_str = 'infinity/icons/mob/onmob/onmob_feet.dmi')
 
 /obj/item/clothing/shoes/combat/marine
 	icon_state = "swat"

@@ -489,7 +489,7 @@
 /obj/item/clothing/under/suit_jacket/charcoal
 	name = "charcoal suit"
 	desc = "A charcoal suit and red tie. Very professional."
-	item_icons = list(slot_w_uniform_str = 'icons/mob/infinity/uniform.dmi')
+	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
 	icon_state = "charcoal_suit"
 	item_state = "bl_suit"
 	worn_state = "charcoal_suit"
@@ -499,7 +499,7 @@
 /obj/item/clothing/under/suit_jacket/navy
 	name = "navy suit"
 	desc = "A navy suit and red tie, intended for the galaxy's finest."
-	item_icons = list(slot_w_uniform_str = 'icons/mob/infinity/uniform.dmi')
+	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
 	icon_state = "navy_suit"
 	item_state = "bl_suit"
 	worn_state = "navy_suit"
@@ -509,7 +509,7 @@
 /obj/item/clothing/under/suit_jacket/burgundy
 	name = "burgundy suit"
 	desc = "A burgundy suit and black tie. Somewhat formal."
-	item_icons = list(slot_w_uniform_str = 'icons/mob/infinity/uniform.dmi')
+	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
 	icon_state = "burgundy_suit"
 	item_state = "r_suit"
 	worn_state = "burgundy_suit"

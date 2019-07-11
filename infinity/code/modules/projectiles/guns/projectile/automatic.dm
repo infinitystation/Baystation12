@@ -10,8 +10,8 @@
 	icon = 'icons/obj/infinity_guns.dmi'
 	wielded_item_state = "nt41-wielded"
 	item_icons = list(
-		slot_r_hand_str = 'icons/mob/infinity/misc.dmi',
-		slot_l_hand_str = 'icons/mob/infinity/misctwo.dmi',
+		slot_r_hand_str = 'infinity/icons/mob/onmob/righthand.dmi',
+		slot_l_hand_str = 'infinity/icons/mob/onmob/lefthand.dmi',
 		)
 
 	w_class = ITEM_SIZE_NORMAL

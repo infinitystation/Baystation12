@@ -2,32 +2,32 @@
 	name = "Daft Punk helm"
 	desc = "This fancy helm gives you the ability to see through clothes! Well, at least that's what rumors say.."
 	icon = 'icons/obj/clothing/infinity/hats.dmi'
-	item_icons = list(slot_head_str = 'icons/mob/infinity/hats.dmi')
+	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
 	icon_state = "daft_helmet"
 
 /obj/item/clothing/head/soft/darkred
 	name = "darkred cap"
 	desc = "It's a peaked hat in a tasteless darkred color."
 	icon = 'icons/obj/clothing/infinity/hats.dmi'
-	item_icons = list(slot_head_str = 'icons/mob/infinity/hats.dmi')
+	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
 	icon_state = "darkred_cap"
 
 /obj/item/clothing/head/kitty/tailless
 	name = "tailless kitty ears"
 	desc = "The fur feels.....a little bit realistic."
-	item_icons = list(slot_head_str = 'icons/mob/infinity/hats.dmi')
+	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
 	item_state = "kitty_tailless"
 
 /obj/item/clothing/head/kitty/fake
 	name = "fake kitty ears"
 	desc = "The fur feels.....a bit too realistic."
-	item_icons = list(slot_head_str = 'icons/mob/infinity/hats.dmi')
+	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
 	item_state = "kitty_tailless"
 	body_parts_covered = 0
 
 	update_icon(var/mob/living/carbon/human/user)
 		if(!istype(user)) return
-		var/icon/ears = new/icon("icon" = 'icons/mob/infinity/hats.dmi', "icon_state" = "kitty")
+		var/icon/ears = new/icon("icon" = 'infinity/icons/mob/onmob/onmob_head.dmi', "icon_state" = "kitty")
 		ears.Blend(rgb(user.r_hair, user.g_hair, user.b_hair), ICON_ADD)
 
 		var/icon/earbit = new/icon("icon" = 'icons/mob/onmob/head.dmi', "icon_state" = "kittyinner")
@@ -48,14 +48,14 @@
 	name = "SCP guard cap"
 	desc = "A simple security dark grey cap.\nThis one has SCP tag, GGS's organization of NT asset protection."
 	icon = 'icons/obj/clothing/infinity/hats.dmi'
-	item_icons = list(slot_head_str = 'icons/mob/infinity/hats.dmi')
+	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
 	icon_state = "scp_cap"
 
 /obj/item/clothing/head/christhat
 	name = "christ's hat"
 	desc = "Ho ho ho. Merrry X-mas! (if use it, will show/hide hair)."
 	icon = 'icons/obj/clothing/infinity/hats.dmi'
-	item_icons = list(slot_head_str = 'icons/mob/infinity/hats.dmi')
+	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
 	icon_state = "christ_hat"
 	item_state = "christ_hat"
 	flags_inv = BLOCKHAIR

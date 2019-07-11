@@ -7,7 +7,6 @@
 
 	icon = 'icons/obj/clothing/infinity/ears.dmi'
 	item_icons = list(
-		slot_l_ear_str = 'icons/mob/infinity/ears.dmi',
-		slot_r_ear_str = 'icons/mob/infinity/ears.dmi'
+		slot_l_ear_str = 'infinity/icons/mob/onmob/onmob_ears.dmi',
+		slot_r_ear_str = 'infinity/icons/mob/onmob/onmob_ears.dmi'
 		)
-	

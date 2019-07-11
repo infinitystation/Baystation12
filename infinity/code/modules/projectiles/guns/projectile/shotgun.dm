@@ -5,8 +5,8 @@
 	icon_state = "bulldog"
 	item_state = "bulldog"
 	item_icons = list(
-		slot_r_hand_str = 'icons/mob/infinity/misc.dmi',
-		slot_l_hand_str = 'icons/mob/infinity/misctwo.dmi',
+		slot_r_hand_str = 'infinity/icons/mob/onmob/righthand.dmi',
+		slot_l_hand_str = 'infinity/icons/mob/onmob/lefthand.dmi',
 		)
 	one_hand_penalty = 4
 	wielded_item_state = "bulldog-wielded"

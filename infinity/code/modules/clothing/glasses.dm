@@ -4,7 +4,7 @@
 	icon = 'icons/obj/clothing/infinity/glasses.dmi'
 	icon_state = "hybrid"
 	item_state = "glasses"
-	item_icons = list(slot_glasses_str = 'icons/mob/infinity/glasses.dmi')
+	item_icons = list(slot_glasses_str = 'infinity/icons/mob/onmob/onmob_eyes.dmi')
 	vision_flags = null
 	var/on = FALSE
 	var/mode = FALSE
