@@ -74,6 +74,7 @@
 		to_chat(src, "No matches for that age range found.")
 
 
+/*Check out infinity/code/modules/admin/verbs/randomverbs.dm
 /client/proc/cmd_admin_world_narrate() // Allows administrators to fluff events a little easier -- TLE
 	set category = "Special Verbs"
 	set name = "Global Narrate"
@@ -90,6 +91,7 @@
 
 	log_and_message_admins(" - GlobalNarrate [result[2]]/[result[3]]: [result[4]]")
 	SSstatistics.add_field_details("admin_verb","GLN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+*/
 
 
 /proc/cmd_admin_narrate_helper(var/user, var/style, var/size, var/message)
