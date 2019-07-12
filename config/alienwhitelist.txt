@@ -94,6 +94,8 @@ ted201 - giant armoured serpentid
 s1334 - giant armoured serpentid
 dermanic - giant armoured serpentid
 wolfetd - giant armoured serpentid
+yourbro - giant armoured serpentid
+logfol - giant armoured serpentid
 inubashirimomiji - diona
 bartstarter - diona
 wolforbykot - diona
