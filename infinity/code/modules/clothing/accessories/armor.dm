@@ -10,7 +10,7 @@
 	name = "SCP cover"
 	desc = "A fabric cover for armored helmets. This one has SCP's colors."
 	icon_override = 'infinity/icons/mob/onmob/onmob_accessories.dmi'
-	icon = 'icons/obj/clothing/infinity/ties.dmi'
+	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
 	icon_state = "scp_cover"
 	accessory_icons = list(slot_tie_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', slot_head_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi')
 
@@ -18,7 +18,7 @@
 	name = "SCP tag"
 	desc = "An armor tag with the words SECURITY CORPORATE PERSONAL printed in red lettering on it."
 	icon_override = 'infinity/icons/mob/onmob/onmob_accessories.dmi'
-	icon = 'icons/obj/clothing/infinity/ties.dmi'
+	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
 	icon_state = "scp_tag"
 	accessory_icons = list(slot_tie_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi')
 

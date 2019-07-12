@@ -5,7 +5,7 @@
 	state_on = "dr_headphones_on"
 	state_off = "dr_headphones_off"
 
-	icon = 'icons/obj/clothing/infinity/ears.dmi'
+	icon = 'infinity/icons/obj/clothing/obj_ears.dmi'
 	item_icons = list(
 		slot_l_ear_str = 'infinity/icons/mob/onmob/onmob_ears.dmi',
 		slot_r_ear_str = 'infinity/icons/mob/onmob/onmob_ears.dmi'

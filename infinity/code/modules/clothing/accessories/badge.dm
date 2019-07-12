@@ -44,7 +44,7 @@
 	desc = "A technological titanium amulet, also know as Soul Deliverance Device.\
 	Various information about its owner engraved on sides. Looks pretty durable and has a strange glowing crystal inside."
 	gender = PLURAL
-	icon = 'icons/obj/clothing/infinity/ties.dmi'
+	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
 	icon_state = "cls"
 	badge_string = null
 	slot_flags = SLOT_MASK | SLOT_TIE

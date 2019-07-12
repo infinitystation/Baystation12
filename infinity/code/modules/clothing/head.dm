@@ -1,14 +1,14 @@
 /obj/item/clothing/head/helmet/daft_punk //By KaReTa
 	name = "Daft Punk helm"
 	desc = "This fancy helm gives you the ability to see through clothes! Well, at least that's what rumors say.."
-	icon = 'icons/obj/clothing/infinity/hats.dmi'
+	icon = 'infinity/icons/obj/clothing/obj_head.dmi'
 	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
 	icon_state = "daft_helmet"
 
 /obj/item/clothing/head/soft/darkred
 	name = "darkred cap"
 	desc = "It's a peaked hat in a tasteless darkred color."
-	icon = 'icons/obj/clothing/infinity/hats.dmi'
+	icon = 'infinity/icons/obj/clothing/obj_head.dmi'
 	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
 	icon_state = "darkred_cap"
 
@@ -47,14 +47,14 @@
 /obj/item/clothing/head/soft/scp_cap
 	name = "SCP guard cap"
 	desc = "A simple security dark grey cap.\nThis one has SCP tag, GGS's organization of NT asset protection."
-	icon = 'icons/obj/clothing/infinity/hats.dmi'
+	icon = 'infinity/icons/obj/clothing/obj_head.dmi'
 	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
 	icon_state = "scp_cap"
 
 /obj/item/clothing/head/christhat
 	name = "christ's hat"
 	desc = "Ho ho ho. Merrry X-mas! (if use it, will show/hide hair)."
-	icon = 'icons/obj/clothing/infinity/hats.dmi'
+	icon = 'infinity/icons/obj/clothing/obj_head.dmi'
 	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
 	icon_state = "christ_hat"
 	item_state = "christ_hat"

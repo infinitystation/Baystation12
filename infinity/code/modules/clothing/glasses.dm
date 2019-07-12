@@ -1,7 +1,7 @@
 /obj/item/clothing/glasses/material/hybrid
 	name = "advanced optical material scanner"
 	desc = "Prototype hybrid glasses with toggleable welding shielding"
-	icon = 'icons/obj/clothing/infinity/glasses.dmi'
+	icon = 'infinity/icons/obj/clothing/obj_eyes.dmi'
 	icon_state = "hybrid"
 	item_state = "glasses"
 	item_icons = list(slot_glasses_str = 'infinity/icons/mob/onmob/onmob_eyes.dmi')

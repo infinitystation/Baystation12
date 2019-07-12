@@ -1,7 +1,7 @@
 /obj/item/clothing/accessory/inf_pin
 	name = "NT pin"
 	desc = "A red Nanotrasen pin."
-	icon = 'icons/obj/clothing/infinity/ties.dmi'
+	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
 	icon_state = "nt_r"
 	accessory_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi')
 	high_visibility = 1
@@ -24,6 +24,6 @@
 /obj/item/clothing/accessory/inf_pin/ccapin
 	name = "CCA patch"
 	desc = "A small patch, decorated with a CCA symbol pattern embroidered with titanium threads. It looks minimalistic, beautiful and strict. "
-	icon = 'icons/obj/clothing/infinity/ties.dmi'
+	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
 	icon_state = "ccapatch"
 

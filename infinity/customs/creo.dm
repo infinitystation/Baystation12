@@ -1,7 +1,7 @@
 /obj/item/clothing/mask/gas/creo
 	name = "heavy unit mask"
 	desc = "BFM \"Cyclops\" - A plasteel military facemask designed with intimidation in mind. Has an in-built voice amplifier and enchanced optics to assist it's wearer in combat situation assessment and control. Due to higher production value issued only to promising combat personnel."
-	icon = 'icons/obj/clothing/infinity/masks.dmi'
+	icon = 'infinity/icons/obj/clothing/obj_mask.dmi'
 	icon_override = 'infinity/icons/mob/onmob/onmob_mask.dmi'
 	icon_state = "creo"
 	item_state = "creo"

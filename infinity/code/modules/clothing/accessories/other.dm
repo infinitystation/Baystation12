@@ -17,12 +17,12 @@
 /obj/item/clothing/accessory/scarf/resomi
 	name = "small mantle"
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
-	icon = 'icons/obj/clothing/infinity/ties.dmi'
+	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
 	icon_state = "small_mantle"
 	species_restricted = list(SPECIES_RESOMI)
 
 /obj/item/clothing/accessory/scarf/red
 	name = "red striped scarf"
-	icon = 'icons/obj/clothing/infinity/TG_copy/neck.dmi'
+	icon = 'infinity/icons/obj/clothing/TG_copy/neck.dmi'
 	icon_state = "stripedredscarf"
 	accessory_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', slot_wear_mask_str  = 'infinity/icons/mob/onmob/onmob_accessories.dmi')
