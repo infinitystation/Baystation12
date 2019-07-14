@@ -95,7 +95,6 @@ obj/item/organ/external/take_general_damage(var/amount, var/silent = FALSE)
 				if(laser)
 					burn /= 2
 				damage_amt -= max(damage_amt*victim.damage_reduction, 0)
-				damage_amt *= 2
 				victim.take_internal_damage(damage_amt)
 
 	if(status & ORGAN_BROKEN && brute)
