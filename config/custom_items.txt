@@ -468,6 +468,12 @@ ckey: farwa87
 character_name: Alexandra Price
 item_path: /obj/item/toy/plushie/jones
 }
+{
+ckey: evgen00751
+character_name: Andy Robberts
+item_path: /obj/item/device/synthesized_instrument/guitar/multi/eguitar
+item_desc: An electric guitar with text 'With love from Rey <З'.
+}
 
 #	MEDIUM ITEMS HERE (5-6)
 
@@ -577,6 +583,14 @@ item_path: /obj/item/weapon/flame/lighter/zippo/infinity/fancy
 item_name: April Kiss
 item_desc: Zippo lighter with the image of a rose bud. Strange, but you are ready to swear that the lighter smells like a flower.
 }
+{
+ckey: evgen00751
+character_name: Andy Robberts
+item_path: /obj/item/clothing/head/beret/sec/corporate/hos
+item_name: frontier assault squad leader beret
+item_desc: This is an old and shabby beret of a veteran of one of the many wars to the frontier, who paid the price with his blood.
+}
+
 #	LONG ITEMS HERE (+7)
 
 {
