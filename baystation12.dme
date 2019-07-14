@@ -3304,6 +3304,7 @@
 #include "infinity\code\modules\telesci\gps.dm"
 #include "infinity\code\modules\telesci\telepad.dm"
 #include "infinity\code\modules\telesci\telesci_computer.dm"
+#include "infinity\code\modules\ZAS\Fire.dm"
 #include "infinity\code\procs\announce.dm"
 #include "infinity\customs\_custkit.dm"
 #include "infinity\customs\army_overcoat.dm"
