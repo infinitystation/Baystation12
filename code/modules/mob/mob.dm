@@ -621,8 +621,17 @@
 			stat("Local Time", stationtime2text())
 			stat("Local Date", stationdate2text())
 			stat("Round Duration", roundduration2text())
+			// infinity code start
 			if(game_id)
 				stat("Round ID:", game_id)
+			var/server_status_info
+			if(SSticker.update_server)
+				server_status_info = "Server Update"
+			else if(SSticker.scheduled_map_change)
+				server_status_info = "Map Change"
+			if(server_status_info)
+				stat("Round End type:", server_status_info)
+			// infinity code end
 			stat("Server Time", time2text(world.realtime, "YYYY-MM-DD hh:mm"))
 		if(client.holder || isghost(client.mob))
 			stat("Location:", "([x], [y], [z]) [loc]")
