@@ -1052,7 +1052,7 @@ obj/item/organ/external/proc/remove_clamps()
 		//	owner.emote("scream")
 			owner.agony_scream() // inf-dev
 
-	playsound(src.loc, GLOB.trauma_sound, 100, 1, -2) // inf-dev
+	playsound(src.loc, pick(GLOB.trauma_sound), 100, 1, -2) // inf-dev
 //	playsound(src.loc, "fracture", 100, 1, -2)
 	status |= ORGAN_BROKEN
 	broken_description = pick("broken","fracture","hairline fracture")
