@@ -1,3 +1,6 @@
+/obj/item/weapon/reagent_containers/food/drinks
+	var/open_sound = 'sound/effects/canopen.ogg'
+
 //Механика питья залпом
 /obj/item/weapon/reagent_containers/food/drinks/Initialize()
 	. = ..()
