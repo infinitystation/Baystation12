@@ -3130,6 +3130,7 @@
 #include "infinity\code\game\objects\items\weapons\tools\wrench.dm"
 #include "infinity\code\game\objects\random\random.dm"
 #include "infinity\code\game\objects\structures\barrier.dm"
+#include "infinity\code\game\objects\structures\barsign.dm"
 #include "infinity\code\game\objects\structures\crates_lockers\crates.dm"
 #include "infinity\code\game\objects\structures\crates_lockers\closets\gimmick.dm"
 #include "infinity\code\game\objects\structures\crates_lockers\closets\l3closets.dm"
