@@ -48,6 +48,10 @@ GLOBAL_LIST_INIT(radio_chatter_sound, list(
 'infinity/sound/effects/radio1.ogg',
 'infinity/sound/effects/radio2.ogg',
 'infinity/sound/effects/radio3.ogg',
-'infinity/sound/effects/radio4.ogg',
+'infinity/sound/effects/radio4.ogg'
 ))
-
+GLOBAL_LIST_INIT(trauma_sound, list(
+'infinity/sound/effects/gore/trauma1.ogg',
+'infinity/sound/effects/gore/trauma2.ogg',
+'infinity/sound/effects/gore/trauma3.ogg'
+))
