@@ -287,12 +287,11 @@
 		for(var/mob/living/carbon/M in view(1,src))
 			src.spread_disease_to(M)
 
+	if(internal && head && head.item_flags & ITEM_FLAG_AIRTIGHT) // inf-dev
+		playsound(src, pick(GLOB.rig_breath_sound), 100, 1, -2)
 
 /mob/living/carbon/human/get_breath_from_internal(volume_needed=STD_BREATH_VOLUME)
 	if(internal)
-
-		if((head && (head.item_flags & ITEM_FLAG_AIRTIGHT))) // INFINITY
-			playsound(src, pick(GLOB.rig_breath_sound), 100, 1)
 
 		var/obj/item/weapon/tank/rig_supply
 		if(istype(back,/obj/item/weapon/rig))

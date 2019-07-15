@@ -177,7 +177,7 @@
 			owner.Stun(1)
 			owner.eye_blurry = 2
 
-			playsound(owner, 'infinity/sound/effects/gore/blood_splat.ogg', 100, 0) // inf-dev
+			playsound(owner, 'infinity/sound/effects/gore/blood_splat.ogg', 100, 0, -2) // inf-dev
 
 			//AB occurs every heartbeat, this only throttles the visible effect
 			next_blood_squirt = world.time + 80
