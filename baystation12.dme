@@ -3262,6 +3262,7 @@
 #include "infinity\code\modules\reagents\reagent_containers\food\condiment.dm"
 #include "infinity\code\modules\reagents\reagent_containers\food\drinks.dm"
 #include "infinity\code\modules\reagents\reagent_containers\food\snacks.dm"
+#include "infinity\code\modules\reagents\reagent_containers\food\drinks\bottle.dm"
 #include "infinity\code\modules\reagents\reagent_containers\food\drinks\champagne.dm"
 #include "infinity\code\modules\reagents\reagents_containers\food\drinks\bottle.dm"
 #include "infinity\code\modules\research\infinity_designs.dm"
