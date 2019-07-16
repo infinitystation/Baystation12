@@ -364,8 +364,8 @@
 				new_objective = new /datum/objective/nuclear
 				new_objective.owner = src
 
-			if ("kidnap")
-				new_objective = new /datum/objective/heist/kidnap_nuke
+			if ("kidnap") // inf-dev
+				new_objective = new /datum/objective/kidnap
 				new_objective.owner = src
 
 			if ("steal")

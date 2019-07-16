@@ -26,7 +26,7 @@ GLOBAL_DATUM_INIT(mercs, /datum/antagonist/mercenary, new)
 	global_objectives = list()
 	global_objectives |= new /datum/objective/nuclear
 	var/datum/objective/heist/K //raider's C_G_O copypaste
-	K = new /datum/objective/heist/kidnap_nuke()
+	K = new /datum/objective/kidnap()
 	K.choose_target()
 	global_objectives |= K
 	return 1
