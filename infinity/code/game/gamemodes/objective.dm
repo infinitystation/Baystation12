@@ -40,19 +40,21 @@
 					return 1
 	return 0
 
-/datum/objective/kidnap/proc/choose_target()
+/datum/objective/nuclear/kidnap
+	var/list/roles = list(/datum/job/captain, /datum/job/lawyer, /datum/job/chief_engineer, /datum/job/rd, /datum/job/senior_engineer, /datum/job/engineer)
+
+/datum/objective/nuclear/kidnap/proc/choose_target()
 	return
 
-/datum/objective/kidnap/choose_target()
-	var/list/roles = list(/datum/job/captain, /datum/job/lawyer, /datum/job/chief_engineer, /datum/job/rd, /datum/job/engineer)
+/datum/objective/nuclear/kidnap/choose_target()
 	var/list/possible_targets = list()
 	var/list/priority_targets = list()
 
 	for(var/datum/mind/possible_target in SSticker.minds)
 		if(possible_target != owner && ishuman(possible_target.current) && (possible_target.current.stat != 2) && (!possible_target.special_role))
 			possible_targets += possible_target
-			for(var/role in SSjobs.get_by_path(roles))
-				if(possible_target.assigned_role == role)
+			for(var/datum/job/role in SSjobs.get_by_path(roles))
+				if(possible_target.assigned_role == role.title)
 					priority_targets += possible_target
 					continue
 
@@ -67,7 +69,7 @@
 		explanation_text = "Захвать по крайней мере одного высокопоставленного или обладающего ценными данными члена экипажа живым. Приоритет - ученые, главы, инженеры, пассажиры."
 	return target
 
-/datum/objective/kidnap/check_completion()
+/datum/objective/nuclear/kidnap/check_completion()
 	if(target && target.current)
 		if (target.current.stat == DEAD)
 			return 0 // They're dead. Fail.
