@@ -141,13 +141,13 @@
 				current_turf.bullet_act(src)
 				in_flight = 0
 				sleep(0)
-				qdel(src)
+				QDEL_IN(src, 0)
 				return
 
 		if(scan_a_turf(next_turf)) //We hit something! Get out of all of this.
 			in_flight = 0
 			sleep(0)
-			qdel(src)
+			QDEL_IN(src, 0)
 			return
 
 		loc = next_turf

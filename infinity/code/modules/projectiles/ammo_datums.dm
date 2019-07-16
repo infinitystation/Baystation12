@@ -52,9 +52,9 @@
 	var/list/ammo_reagents			= null		// Type of reagent transmitted by the projectile on hit.
 	var/barricade_clear_distance	= 1			// How far the bullet can travel before incurring a chance of hitting barricades; normally 1.
 	var/armor_type					= "bullet"	// Does this have an override for the armor type the ammo should test? Bullet by default
+	var/flags_ammo_behavior = 0
 
-
-	New()
+/datum/ammo/New()
 		accuracy 			= config.min_hit_accuracy 	// This is added to the bullet's base accuracy.
 		accuracy_var_low	= config.min_proj_variance	// How much the accuracy varies when fired.
 		accuracy_var_high	= config.min_proj_variance
@@ -65,112 +65,110 @@
 		damage_falloff 		= config.reg_damage_falloff 	// How much damage the bullet loses per turf traveled.
 		shell_speed 		= config.slow_shell_speed 	// How fast the projectile moves.
 
-	var/flags_ammo_behavior = 0
+/datum/ammo/proc/do_at_half_range(obj/item/projectile/P)
+	return
 
-	proc/do_at_half_range(obj/item/projectile/P)
+/datum/ammo/proc/do_at_max_range(obj/item/projectile/P)
+	return
+
+/datum/ammo/proc/on_shield_block(mob/M, obj/item/projectile/P) //Does it do something special when shield blocked? Ie. a flare or grenade that still blows up.
+	return
+
+/datum/ammo/proc/on_hit_turf(turf/T, obj/item/projectile/P) //Special effects when hitting dense turfs.
+	return
+
+/datum/ammo/proc/on_hit_mob(mob/M, obj/item/projectile/P) //Special effects when hitting mobs.
+	return
+
+/datum/ammo/proc/on_hit_obj(obj/O, obj/item/projectile/P) //Special effects when hitting objects.
+	return
+
+/datum/ammo/proc/knockback(mob/M, obj/item/projectile/P, var/max_range = 2)
+	if(!M || M == P.firer)
 		return
+	if(P.distance_travelled > max_range || M.lying) shake_camera(M, 2, 1) //Three tiles away or more, basically.
 
-	proc/do_at_max_range(obj/item/projectile/P)
+	else //Two tiles away or less.
+		shake_camera(M, 3, 4)
+		if(isliving(M)) //This is pretty ugly, but what can you do.
+			var/mob/living/target = M
+			target.apply_effects(1,2) //Humans get stunned a bit.
+			to_chat(target, "<span class='highdanger'>The blast knocks you off your feet!</span>")
+		step_away(M,P)
+
+/datum/ammo/proc/staggerstun(mob/M, obj/item/projectile/P, var/max_range = 2, var/stun = 0, var/weaken = 1, var/stagger = 2, var/slowdown = 1, var/knockback = 1, var/shake = 1, var/soft_size_threshold = 3, var/hard_size_threshold = 2)
+	if(!M || M == P.firer)
 		return
-
-	proc/on_shield_block(mob/M, obj/item/projectile/P) //Does it do something special when shield blocked? Ie. a flare or grenade that still blows up.
+	if(shake && (P.distance_travelled > max_range || M.lying))
+		shake_camera(M, shake+1, shake)
 		return
-
-	proc/on_hit_turf(turf/T, obj/item/projectile/P) //Special effects when hitting dense turfs.
+	if(!isliving(M))
 		return
+	var/impact_message = ""
+	if(shake)
+		shake_camera(M, shake+2, shake+3)
+		impact_message += "<span class='warning'>You are shaken by the sudden impact!</span>"
 
-	proc/on_hit_mob(mob/M, obj/item/projectile/P) //Special effects when hitting mobs.
+	//Check for and apply hard CC.
+	if(ishuman(M) && hard_size_threshold > 0)
+		var/mob/living/L = M
+		if(!L.stunned && !L.weakened) //Prevent chain stunning.
+			L.apply_effects(stun,weaken)
+		if(knockback)
+			impact_message += "<span class='highdanger'>The blast knocks you off your feet!</span>"
+			for(var/i=0, i<knockback, i++)
+				step_away(M,P)
+	to_chat(M, "[impact_message]") //Summarize all the bad shit that happened
+/datum/ammo/proc/area_stagger_burst(turf/Center, obj/item/projectile/P, var/max_range = 2, var/stun = 0, var/weaken = 1, var/stagger = 2, var/slowdown = 1, var/knockback = 1, var/shake = 1, var/soft_size_threshold = 3, var/hard_size_threshold = 2)	//by Jeser specifically for autocannon. Mix of Burst() and Stagger(): Deals damage in area + applies stagger to mobs in area
+	if(!Center || !P)
 		return
+	for(var/mob/living/carbon/M in range(1,Center))
+		M.visible_message("<span class='danger'>[M] got a concussion from \a [P.name]!</span>","<span class='highdanger'>You are concussed from \a </b>[P.name] explosion</b>!</span>")
+		M.apply_damage(rand(10,P.damage/2))
+		staggerstun(M, P, max_range, stun, weaken, stagger, slowdown, knockback, shake, soft_size_threshold, hard_size_threshold)
 
-	proc/on_hit_obj(obj/O, obj/item/projectile/P) //Special effects when hitting objects.
+/datum/ammo/proc/burst(atom/target, obj/item/projectile/P, damage_type = BRUTE, radius = 1, modifier = 0.5, attack_type = "bullet", apply_armor = TRUE)
+	if(!target || !P)
 		return
-
-	proc/knockback(mob/M, obj/item/projectile/P, var/max_range = 2)
-		if(!M || M == P.firer)
-			return
-		if(P.distance_travelled > max_range || M.lying) shake_camera(M, 2, 1) //Three tiles away or more, basically.
-
-		else //Two tiles away or less.
-			shake_camera(M, 3, 4)
-			if(isliving(M)) //This is pretty ugly, but what can you do.
-				var/mob/living/target = M
-				target.apply_effects(1,2) //Humans get stunned a bit.
-				to_chat(target, "<span class='highdanger'>The blast knocks you off your feet!</span>")
-			step_away(M,P)
-
-	proc/staggerstun(mob/M, obj/item/projectile/P, var/max_range = 2, var/stun = 0, var/weaken = 1, var/stagger = 2, var/slowdown = 1, var/knockback = 1, var/shake = 1, var/soft_size_threshold = 3, var/hard_size_threshold = 2)
-		if(!M || M == P.firer)
-			return
-		if(shake && (P.distance_travelled > max_range || M.lying))
-			shake_camera(M, shake+1, shake)
-			return
-		if(!isliving(M))
-			return
-		var/impact_message = ""
-		if(shake)
-			shake_camera(M, shake+2, shake+3)
-			impact_message += "<span class='warning'>You are shaken by the sudden impact!</span>"
-
-		//Check for and apply hard CC.
-		if(ishuman(M) && hard_size_threshold > 0)
-			var/mob/living/L = M
-			if(!L.stunned && !L.weakened) //Prevent chain stunning.
-				L.apply_effects(stun,weaken)
-			if(knockback)
-				impact_message += "<span class='highdanger'>The blast knocks you off your feet!</span>"
-				for(var/i=0, i<knockback, i++)
-					step_away(M,P)
-		to_chat(M, "[impact_message]") //Summarize all the bad shit that happened
-	proc/area_stagger_burst(turf/Center, obj/item/projectile/P, var/max_range = 2, var/stun = 0, var/weaken = 1, var/stagger = 2, var/slowdown = 1, var/knockback = 1, var/shake = 1, var/soft_size_threshold = 3, var/hard_size_threshold = 2)	//by Jeser specifically for autocannon. Mix of Burst() and Stagger(): Deals damage in area + applies stagger to mobs in area
-		if(!Center || !P)
-			return
-		for(var/mob/living/carbon/M in range(1,Center))
-			M.visible_message("<span class='danger'>[M] got a concussion from \a [P.name]!</span>","<span class='highdanger'>You are concussed from \a </b>[P.name] explosion</b>!</span>")
-			M.apply_damage(rand(10,P.damage/2))
-			staggerstun(M, P, max_range, stun, weaken, stagger, slowdown, knockback, shake, soft_size_threshold, hard_size_threshold)
-
-	proc/burst(atom/target, obj/item/projectile/P, damage_type = BRUTE, radius = 1, modifier = 0.5, attack_type = "bullet", apply_armor = TRUE)
-		if(!target || !P)
-			return
-		for(var/mob/living/carbon/M in orange(radius,target))
-			if(P.firer == M)
-				continue
-			M.visible_message("<span class='danger'>[M] is hit by backlash from \a [P.name]!</span>","<span class='highdanger'>You are hit by backlash from \a </b>[P.name]</b>!</span>")
-			if(apply_armor)
-				var/armor_block = M.run_armor_check(M, attack_type)
-				M.apply_damage(rand(P.damage * modifier * 0.1,P.damage * modifier),damage_type, null, armor_block)
-			else
-				M.apply_damage(rand(P.damage * modifier * 0.1,P.damage * modifier),damage_type)
+	for(var/mob/living/carbon/M in orange(radius,target))
+		if(P.firer == M)
+			continue
+		M.visible_message("<span class='danger'>[M] is hit by backlash from \a [P.name]!</span>","<span class='highdanger'>You are hit by backlash from \a </b>[P.name]</b>!</span>")
+		if(apply_armor)
+			var/armor_block = M.run_armor_check(M, attack_type)
+			M.apply_damage(rand(P.damage * modifier * 0.1,P.damage * modifier),damage_type, null, armor_block)
+		else
+			M.apply_damage(rand(P.damage * modifier * 0.1,P.damage * modifier),damage_type)
 
 
-	proc/fire_bonus_projectiles(obj/item/projectile/original_P)
-		set waitfor = 0
-		var/i
-		for(i = 1 to bonus_projectiles_amount) //Want to run this for the number of bonus projectiles.
-			var/obj/item/projectile/P = new /obj/item/projectile(original_P.shot_from)
-			P.generate_bullet(ammo_list[bonus_projectiles_type]) //No bonus damage or anything.
-			var/turf/new_target = null
+/datum/ammo/proc/fire_bonus_projectiles(obj/item/projectile/original_P)
+	set waitfor = 0
+	var/i
+	for(i = 1 to bonus_projectiles_amount) //Want to run this for the number of bonus projectiles.
+		var/obj/item/projectile/P = new /obj/item/projectile(original_P.shot_from)
+		P.generate_bullet(ammo_list[bonus_projectiles_type]) //No bonus damage or anything.
+		var/turf/new_target = null
 
-			P.scatter = round(P.scatter - (initial(original_P.scatter) - original_P.scatter) ) //if the gun changes the scatter of the main projectile, it also affects the bonus ones.
+		P.scatter = round(P.scatter - (initial(original_P.scatter) - original_P.scatter) ) //if the gun changes the scatter of the main projectile, it also affects the bonus ones.
 
-			if(prob(P.scatter))
-				var/scatter_x = rand(-1,1)
-				var/scatter_y = rand(-1,1)
-				new_target = locate(original_P.target_turf.x + round(scatter_x),original_P.target_turf.y + round(scatter_y),original_P.target_turf.z)
-				if(!istype(new_target) || isnull(new_target))
-					continue	//If we didn't find anything, make another pass.
-				P.original = new_target
+		if(prob(P.scatter))
+			var/scatter_x = rand(-1,1)
+			var/scatter_y = rand(-1,1)
+			new_target = locate(original_P.target_turf.x + round(scatter_x),original_P.target_turf.y + round(scatter_y),original_P.target_turf.z)
+			if(!istype(new_target) || isnull(new_target))
+				continue	//If we didn't find anything, make another pass.
+			P.original = new_target
 
-			P.accuracy = round(P.accuracy * original_P.accuracy/initial(original_P.accuracy)) //if the gun changes the accuracy of the main projectile, it also affects the bonus ones.
+		P.accuracy = round(P.accuracy * original_P.accuracy/initial(original_P.accuracy)) //if the gun changes the accuracy of the main projectile, it also affects the bonus ones.
 
-			if(!new_target)
-				new_target = original_P.target_turf
-			P.fire_at(new_target,original_P.firer,original_P.shot_from,P.ammo.max_range,P.ammo.shell_speed) //Fire!
+		if(!new_target)
+			new_target = original_P.target_turf
+		P.fire_at(new_target,original_P.firer,original_P.shot_from,P.ammo.max_range,P.ammo.shell_speed) //Fire!
 
 	//This is sort of a workaround for now. There are better ways of doing this ~N.
-	proc/stun_living(mob/living/target, obj/item/projectile/P) //Taser proc to stun folks.
-		if(istype(target))
-			target.apply_effects(12,20)
+/datum/ammo/proc/stun_living(mob/living/target, obj/item/projectile/P) //Taser proc to stun folks.
+	if(istype(target))
+		target.apply_effects(12,20)
 	
 /datum/ammo/proc/set_smoke()
 	return
