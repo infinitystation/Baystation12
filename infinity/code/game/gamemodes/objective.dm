@@ -41,7 +41,7 @@
 	return 0
 
 /datum/objective/nuclear/kidnap
-	var/list/roles = list(/datum/job/captain, /datum/job/lawyer, /datum/job/chief_engineer, /datum/job/rd, /datum/job/senior_engineer, /datum/job/engineer)
+	var/list/roles = list(/datum/job/captain, /datum/job/lawyer, /datum/job/chief_engineer, /datum/job/rd, /datum/job/engineer)
 
 /datum/objective/nuclear/kidnap/proc/choose_target()
 	return
