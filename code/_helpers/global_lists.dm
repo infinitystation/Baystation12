@@ -5,6 +5,7 @@ var/global/list/cable_list = list()					//Index for all cables, so that powernet
 var/global/list/landmarks_list = list()				//list of all landmarks created
 var/global/list/side_effects = list()				//list of all medical sideeffects types by thier names |BS12
 var/global/list/mechas_list = list()				//list of all mechs. Used by hostile mobs target tracking.
+var/global/list/ammo_list = list()					//List of all ammo types. Used by guns to tell the projectile how to act.
 
 #define all_genders_define_list list(MALE,FEMALE,PLURAL,NEUTER)
 #define all_genders_text_list list("Male","Female","Plural","Neuter")
@@ -150,7 +151,13 @@ var/global/list/string_slot_flags = list(
 	for(var/grabstate_name in all_grabstates)
 		var/datum/grab/G = all_grabstates[grabstate_name]
 		G.refresh_updown()
-
+	
+	var/blacklist[] = list()
+	paths = typesof(/datum/ammo) - blacklist
+	for(var/T in paths)
+		var/datum/ammo/A = new T
+		ammo_list[A.type] = A
+	
 	return 1
 
 //*** params cache
