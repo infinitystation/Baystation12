@@ -11460,10 +11460,6 @@
 	},
 /area/tdome)
 "azI" = (
-/obj/machinery/camera/network/thunder{
-	c_tag = "Thunderdome Blue Team Access";
-	invisibility = 101
-	},
 /obj/structure/table/rack,
 /obj/item/weapon/storage/pill_bottle/inaprovaline,
 /obj/item/weapon/storage/pill_bottle/inaprovaline,
@@ -27753,6 +27749,15 @@
 	},
 /turf/simulated/floor/wood/ebony,
 /area/admin_prison)
+"hTb" = (
+/obj/machinery/camera/network/thunder{
+	c_tag = "Thunderdome Arena Right";
+	invisibility = 101
+	},
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/tdome)
 "icu" = (
 /obj/structure/table/woodentable,
 /obj/item/weapon/reagent_containers/food/snacks/poppypretzel,
@@ -27791,6 +27796,15 @@
 /obj/item/weapon/reagent_containers/glass/beaker,
 /turf/simulated/floor/wood/ebony,
 /area/admin_prison)
+"iCL" = (
+/obj/machinery/camera/network/thunder{
+	c_tag = "Thunderdome Arena Left";
+	invisibility = 101
+	},
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/tdome)
 "iPb" = (
 /turf/simulated/floor/wood/ebony,
 /area/merchant_station)
@@ -28010,6 +28024,21 @@
 	icon_state = "wood"
 	},
 /area/tdome/tdomeadmin)
+"qhY" = (
+/obj/structure/table/glass,
+/obj/item/weapon/storage/firstaid/combat,
+/obj/item/weapon/storage/firstaid/combat,
+/obj/item/weapon/storage/firstaid/combat,
+/obj/item/weapon/storage/firstaid/combat,
+/obj/item/weapon/storage/firstaid/combat,
+/obj/machinery/camera/network/thunder{
+	c_tag = "Thunderdome Red Team Supply Room";
+	invisibility = 101
+	},
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/tdome)
 "qje" = (
 /obj/structure/bed/sofa/black/right{
 	dir = 1
@@ -28083,6 +28112,21 @@
 /obj/structure/bed/chair/wood,
 /turf/simulated/floor/lino,
 /area/admin_prison)
+"txz" = (
+/obj/structure/table/glass,
+/obj/item/weapon/storage/firstaid/combat,
+/obj/item/weapon/storage/firstaid/combat,
+/obj/item/weapon/storage/firstaid/combat,
+/obj/item/weapon/storage/firstaid/combat,
+/obj/item/weapon/storage/firstaid/combat,
+/obj/machinery/camera/network/thunder{
+	c_tag = "Thunderdome Blue Team Supply Room";
+	invisibility = 101
+	},
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/tdome)
 "tGA" = (
 /obj/structure/table/woodentable,
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer,
@@ -28095,6 +28139,15 @@
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer,
 /turf/simulated/floor/holofloor/beach/sand,
 /area/admin_prison)
+"tIL" = (
+/obj/machinery/camera/network/thunder{
+	c_tag = "Thunderdome Arena Middle";
+	invisibility = 101
+	},
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/tdome)
 "tYV" = (
 /obj/machinery/chemical_dispenser/bar_soft/full,
 /obj/structure/table/woodentable,
@@ -28929,7 +28982,7 @@ aab
 aab
 aab
 azs
-aAd
+txz
 azu
 azu
 aAc
@@ -31157,7 +31210,7 @@ azu
 azu
 azu
 azu
-azu
+iCL
 azu
 aAk
 azu
@@ -32773,7 +32826,7 @@ azu
 azs
 azR
 azu
-azu
+tIL
 azQ
 azs
 azu
@@ -34187,7 +34240,7 @@ azu
 azu
 azu
 azu
-azu
+hTb
 azu
 azu
 azu
@@ -36605,7 +36658,7 @@ aab
 aab
 aab
 azs
-aAd
+qhY
 azu
 azu
 aAc
