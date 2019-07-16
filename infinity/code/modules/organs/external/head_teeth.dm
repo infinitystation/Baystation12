@@ -38,13 +38,14 @@
 	var/max_teeth = 32
 
 /mob/living/carbon/human/proc/add_teeth()
-	var/obj/item/organ/external/head/U = get_organ(BP_HEAD)
-	if(istype(U))
-		U.teeth_list.Cut() //Clear out their mouth of teeth
-		var/obj/item/stack/teeth/T = new species.teeth_type(U)
-		U.max_teeth = T.max_amount //Set max teeth for the head based on teeth spawntype
-		T.amount = T.max_amount
-		U.teeth_list += T
+	if(species && species.teeth_type)
+		var/obj/item/organ/external/head/U = get_organ(BP_HEAD)
+		if(istype(U))
+			U.teeth_list.Cut() //Clear out their mouth of teeth
+			var/obj/item/stack/teeth/T = new species.teeth_type(U)
+			U.max_teeth = T.max_amount //Set max teeth for the head based on teeth spawntype
+			T.amount = T.max_amount
+			U.teeth_list += T
 
 /obj/item/organ/external/head/proc/get_teeth() //returns collective amount of teeth
 	var/amt = 0

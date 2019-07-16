@@ -410,7 +410,7 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/weapon/card/id/centcom/ERT/New()
 	..()
-	access |= get_all_station_access()
+//	access |= get_all_station_access() inf-dev
 
 /obj/item/weapon/card/id/foundation
 	name = "\improper Foundation warrant card"

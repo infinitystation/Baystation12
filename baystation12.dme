@@ -3080,6 +3080,7 @@
 #include "infinity\code\datums\outfits\infinity.dm"
 #include "infinity\code\datums\uplink\uplink_sources_inf.dm"
 #include "infinity\code\game\sound.dm"
+#include "infinity\code\game\gamemodes\objective.dm"
 #include "infinity\code\game\gamemodes\malfunction\newmalf_ability_trees\infinity.dm"
 #include "infinity\code\game\items\toys.dm"
 #include "infinity\code\game\items\devices\blackout.dm"
