@@ -17,7 +17,8 @@ GLOBAL_VAR_INIT(coding_languages, list("Batch")) //,"Anaconda", "NTML")
 					Due of possible breakthroughs in cybersecurity, this programming language is limited and very simple, and it does not include loops and logical branches.\[hr\]\
 					All key words of batch you can get from terminal by using command \'man\'.\[br\]\
 					All key words must divide by \';\'. After \';\' you must not write space.\[br\]\
-					If command last in program, don't write \';\' after this command.\[hr\]\[/center\]"
+					If command last in program, don't write \';\' after this command.\[hr\]\[/center\]\
+					To compile your code, you should input in terminal \'alias -ex \[code file name without square brackets\]"
 
 /*/datum/computer_file/data/coding/python_borned/anaconda
 	filetype = "ANC"
