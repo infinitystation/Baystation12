@@ -65,6 +65,11 @@
 		code = "[rand(10000, 99999)]"
 		nuke.r_code = code
 
+	/* inf-dev: unused wip
+	var/obj/machinery/nuclearbomb/station/station_nuke = locate() in SSmachines.machinery
+	if(station_nuke)
+		code = station_nuke.r_code */
+
 	if(code)
 		if(!paper_spawn_loc)
 			if(leader && leader.current)
@@ -104,8 +109,8 @@
 	if (config.objectives_disabled == CONFIG_OBJECTIVE_NONE || !player.objectives.len)
 		to_chat(player.current, "<span class='notice'>[antag_text]</span>")
 
-	if((flags & ANTAG_HAS_NUKE) && !spawned_nuke)
-		create_nuke()
+//	if((flags & ANTAG_HAS_NUKE) && !spawned_nuke) inf-dev: for play test
+//		create_nuke()
 
 	src.show_objectives_at_creation(player)
 	return 1
