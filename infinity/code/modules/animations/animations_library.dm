@@ -28,7 +28,7 @@ Instead of being uniform, it starts out a littler slower, goes fast in the middl
 
 
 //Flashes a color, then goes back to regular.
-/proc/animation_flash_color(atom/A, flash_color = "#FF0000", speed = 3) //Flashes red on default.
+/proc/animation_flash_color(atom/A, flash_color = "#ff0000", speed = 3) //Flashes red on default.
 	var/oldcolor = A.color
 	animate(A, color = flash_color, time = speed)
 	animate(color = oldcolor, time = speed)
@@ -36,7 +36,7 @@ Instead of being uniform, it starts out a littler slower, goes fast in the middl
 //Gives it a spooky overlay and animation. Same as above, mostly, only adds a cool overlay effect.
 /proc/animation_horror_flick(atom/A, flash_color = "#000000", speed = 4)
 	animate(A, color = flash_color, time = speed)
-	animate(color = "#FFFFFF", time = speed)
+	animate(color = "#ffffff", time = speed)
 	var/image/I = image('icons/mob/mob.dmi',A,"spook")
 	flick_overlay_view(I, A, 7)
 
@@ -56,13 +56,13 @@ Instead of being uniform, it starts out a littler slower, goes fast in the middl
 /proc/animation_teleport_quick_in(atom/A, speed = 10)
 	A.transform = matrix(0, 4, MATRIX_SCALE)
 	A.alpha = 0 //Start with transparency, just in case.
-	animate(A, alpha = 255, transform = null, color = "#FFFFFF", time = speed, easing = BACK_EASING)
+	animate(A, alpha = 255, transform = null, color = "#ffffff", time = speed, easing = BACK_EASING)
 
 /*A magical teleport animation, for when the person is transported with some magic. Good for Halloween type events.
 Can look good elsewhere as well.*/
 /proc/animation_teleport_magic_out(atom/A, speed = 6)
 	animate(A, transform = matrix(1.5, 0, MATRIX_SCALE), time = speed, easing = BACK_EASING)
-	animate(transform = matrix(0, 4, MATRIX_SCALE) * matrix(0, 6, MATRIX_TRANSLATE), color = "#FFFF00", time = speed, alpha = 100, easing = BOUNCE_EASING|EASE_IN)
+	animate(transform = matrix(0, 4, MATRIX_SCALE) * matrix(0, 6, MATRIX_TRANSLATE), color = "#ffff00", time = speed, alpha = 100, easing = BOUNCE_EASING|EASE_IN)
 	animate(alpha = 0, time = speed)
 	var/image/I = image('icons/effects/effects.dmi',A,"sparkle")
 	flick_overlay_view(I, A, 9)
@@ -71,8 +71,8 @@ Can look good elsewhere as well.*/
 /proc/animation_teleport_magic_in(atom/A, speed = 6)
 	A.transform = matrix(0,3.5, MATRIX_SCALE)
 	A.alpha = 0
-	animate(A, alpha = 255, color = "#FFFF00", time = speed, easing = BACK_EASING)
-	animate(transform = matrix(1.5, 0, MATRIX_SCALE), color = "#FFFFFF", time = speed, easing = CIRCULAR_EASING|EASE_OUT)
+	animate(A, alpha = 255, color = "#ffff00", time = speed, easing = BACK_EASING)
+	animate(transform = matrix(1.5, 0, MATRIX_SCALE), color = "#ffffff", time = speed, easing = CIRCULAR_EASING|EASE_OUT)
 	animate(transform = null, time = speed-1)
 	var/image/I = image('icons/effects/effects.dmi',A,"sparkle")
 	flick_overlay_view(I, A, 10)
@@ -90,7 +90,7 @@ Can look good elsewhere as well.*/
 	A.transform *= 1.2
 	A.alpha = 0
 	animate(A, alpha = 255, color = "#551a8b", time = speed)
-	animate(transform = null, color = "#FFFFFF", time = speed, easing = QUAD_EASING|EASE_OUT)
+	animate(transform = null, color = "#ffffff", time = speed, easing = QUAD_EASING|EASE_OUT)
 	var/image/I = image('icons/effects/effects.dmi',A,"spooky")
 	flick_overlay_view(I, A, 10)
 
