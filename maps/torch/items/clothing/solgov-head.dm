@@ -4,6 +4,9 @@
 	item_icons = list(slot_head_str = 'maps/torch/icons/mob/onmob_head_solgov.dmi')
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.9
+	sprite_sheets = list(
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/head.dmi'
+		)
 
 //Utility
 /obj/item/clothing/head/soft/solgov
@@ -23,9 +26,9 @@
 	desc = "It's a black ballcap bearing the Expeditonary Corps crest."
 	icon_state = "expeditionsoft"
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_head_unathi.dmi'
+		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_head_unathi.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/head.dmi'
 		)
-
 /obj/item/clothing/head/soft/solgov/expedition/co
 	name = "\improper Expeditionary Corps captain's cap"
 	desc = "It's a black ballcap bearing the Expeditonary Corps crest. The brim has gold trim."
@@ -225,7 +228,8 @@
 	desc = "A black beret belonging to the SCG Expeditionary Corps. For personnel that are more inclined towards style than safety."
 	icon_state = "beret_black"
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_head_unathi.dmi'
+		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_head_unathi.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/head.dmi'
 		)
 
 /obj/item/clothing/head/beret/solgov/expedition/security
