@@ -142,6 +142,40 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	req_access = list(access_brig)
 
+/area/security/brig/Initialize()
+	.=..()
+	GLOB.entered_event.register(src, src, /area/security/brig/proc/register_brigged)
+	GLOB.exited_event.register(src, src, /area/security/brig/proc/clear_brigged)
+
+/area/security/brig/Destroy()
+	GLOB.entered_event.unregister(src, src)
+	GLOB.exited_event.unregister(src, src)
+	for(var/mob/living/A in contents)
+		clear_brigged_mob(A)
+	return ..()
+
+/area/security/brig/proc/check_brigged(var/mob/living/equipper, var/obj/item/item, var/slot)
+	if(istype(equipper) && equipper.mind)
+		equipper.mind.is_brigged(0)
+
+/area/security/brig/proc/register_brigged(var/atom/entered, var/atom/movable/enterer, var/old_loc)
+	var/mob/living/A = enterer
+	if(istype(A) && A.mind)
+		A.mind.is_brigged(0)
+		GLOB.destroyed_event.register(A, entered, /area/security/brig/proc/clear_brigged_mob)
+		GLOB.mob_equipped_event.register(A, entered, /datum/mind/proc/is_brigged)
+		GLOB.mob_unequipped_event.register(A, entered, /datum/mind/proc/is_brigged)
+
+/area/security/brig/proc/clear_brigged_mob(var/destroyed)
+	clear_brigged(src, destroyed)
+
+/area/security/brig/proc/clear_brigged(var/atom/entered, var/atom/movable/enterer, var/new_loc)
+	var/mob/living/A = enterer
+	if(istype(A) && A.mind)
+		GLOB.destroyed_event.unregister(A, entered)
+		GLOB.mob_equipped_event.unregister(A, entered)
+		GLOB.mob_unequipped_event.unregister(A, entered)
+
 /area/security/prison
 	name = "\improper Security - Prison Wing"
 	icon_state = "sec_prison"
