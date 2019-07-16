@@ -8,12 +8,9 @@
 //The actual bullet objects.
 /obj/item/projectile
 	name = "projectile"
-	icon = 'infinity/icons/obj/items/projectiles.dmi'
 	icon_state = "bullet"
 	density = FALSE
-//	var/resistance_flags = UNACIDABLE|INDESTRUCTIBLE
 	anchored = TRUE //You will not have me, space wind!
-//	flags_atom = NOINTERACT //No real need for this, but whatever. Maybe this flag will do something useful in the future.
 	mouse_opacity = 0
 	invisibility = 100 // We want this thing to be invisible when it drops on a turf because it will be on the user's turf. We then want to make it visible as it travels.
 	layer = FLY_LAYER
