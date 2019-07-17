@@ -21,7 +21,7 @@
 	blood_volume = 800
 
 	health_hud_intensity = 2
-	hunger_factor = DEFAULT_HUNGER_FACTOR * 0.8
+//	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.5
 
 	min_age = 18
 	max_age = 260

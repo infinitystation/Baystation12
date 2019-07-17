@@ -865,7 +865,7 @@
 	taste_description = "creamy chocolate"
 	reagent_state = LIQUID
 	color = "#403010"
-	nutrition = 2
+//	nutrition = 2 //INF, WAS WITHOUT //
 	adj_temp = 5
 
 	glass_name = "hot chocolate"

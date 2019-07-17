@@ -1,3 +1,11 @@
+/obj/item/weapon/reagent_containers/food/snacks
+	var/junk = 0 //if the snack is junk, you cannot eat it too much.
+
+/obj/item/weapon/reagent_containers/food/snacks/examine(mob/user)
+	..()
+	if(junk)
+		to_chat(user, "It is junk food.")
+
 /obj/item/weapon/reagent_containers/food/snacks/monkeycube/lizard
 	name = "lizard cube"
 	monkey_type = /mob/living/simple_animal/lizard
@@ -28,3 +36,25 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/slice/ryebread
 	filled = TRUE
+
+//junk food ahead
+//food from vendors
+
+/obj/item/weapon/reagent_containers/food/snacks/sosjerky
+	junk = 1
+/obj/item/weapon/reagent_containers/food/snacks/no_raisin
+	junk = 1
+/obj/item/weapon/reagent_containers/food/snacks/spacetwinkie
+	junk = 1
+/obj/item/weapon/reagent_containers/food/snacks/cheesiehonkers
+	junk = 1
+/obj/item/weapon/reagent_containers/food/snacks/syndicake
+	junk = 1
+/obj/item/weapon/reagent_containers/food/snacks/chips
+	junk = 1
+
+//kitchen
+/*
+/obj/item/weapon/reagent_containers/food/snacks/popcorn
+	junk = 1
+*/
