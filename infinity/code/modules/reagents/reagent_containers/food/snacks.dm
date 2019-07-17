@@ -58,3 +58,7 @@
 /obj/item/weapon/reagent_containers/food/snacks/popcorn
 	junk = 1
 */
+
+/obj/item/weapon/reagent_containers/food/snacks/mint/Initialize()
+	. = ..()
+	reagents.add_reagent(/datum/reagent/toxin/mint, 1)
