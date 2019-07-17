@@ -406,7 +406,7 @@
 	min_cold_protection_temperature = T0C - 20
 	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/suit.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_suit_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/suit.dmi'
 		)
 

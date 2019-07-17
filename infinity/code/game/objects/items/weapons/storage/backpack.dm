@@ -24,7 +24,7 @@
 /obj/item/weapon/storage/backpack
 	max_w_class = ITEM_SIZE_NORMAL
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/back.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_back_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/back.dmi'
 		)
 
@@ -43,7 +43,7 @@
 /obj/item/weapon/storage/backpack/rucksack
 	max_storage_space = DEFAULT_BACKPACK_STORAGE + 8
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/back.dmi'
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_back_resomi.dmi'
 		)
 
 /obj/item/weapon/storage/backpack/dufflebag

@@ -164,7 +164,7 @@ var/const/NO_EMAG_ACT = -50
 	slot_flags = SLOT_ID
 
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/id.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_id_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/id.dmi'
 		)
 

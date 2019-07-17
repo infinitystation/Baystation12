@@ -5,7 +5,7 @@
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.9
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/head.dmi'
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi'
 		)
 
 //Utility
@@ -27,7 +27,7 @@
 	icon_state = "expeditionsoft"
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_head_unathi.dmi',
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/head.dmi'
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi'
 		)
 /obj/item/clothing/head/soft/solgov/expedition/co
 	name = "\improper Expeditionary Corps captain's cap"
@@ -229,7 +229,7 @@
 	icon_state = "beret_black"
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_head_unathi.dmi',
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/head.dmi'
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi'
 		)
 
 /obj/item/clothing/head/beret/solgov/expedition/security
@@ -430,7 +430,7 @@
 		SPECIES_UNATHI = 'maps/torch/icons/mob/unathi/onmob_head_solgov_unathi.dmi',
 		SPECIES_SKRELL = 'maps/torch/icons/mob/skrell/onmob_head_solgov_skrell.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi',
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/head.dmi'
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi'
 		)
 	sprite_sheets_obj = list(
 		SPECIES_UNATHI = 'maps/torch/icons/obj/unathi/obj_head_solgov_unathi.dmi',
@@ -446,7 +446,7 @@
 		SPECIES_UNATHI = 'maps/torch/icons/mob/unathi/onmob_head_solgov_unathi.dmi',
 		SPECIES_SKRELL = 'maps/torch/icons/mob/skrell/onmob_head_solgov_skrell.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi',
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/head.dmi'
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi'
 		)
 	sprite_sheets_obj = list(
 		SPECIES_UNATHI = 'maps/torch/icons/obj/unathi/obj_head_solgov_unathi.dmi',
@@ -462,7 +462,7 @@
 		SPECIES_UNATHI = 'maps/torch/icons/mob/unathi/onmob_head_solgov_unathi.dmi',
 		SPECIES_SKRELL = 'maps/torch/icons/mob/skrell/onmob_head_solgov_skrell.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi',
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/head.dmi'
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi'
 		)
 	sprite_sheets_obj = list(
 		SPECIES_UNATHI = 'maps/torch/icons/obj/unathi/obj_head_solgov_unathi.dmi',
@@ -478,7 +478,7 @@
 		SPECIES_UNATHI = 'maps/torch/icons/mob/unathi/onmob_head_solgov_unathi.dmi',
 		SPECIES_SKRELL = 'maps/torch/icons/mob/skrell/onmob_head_solgov_skrell.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi',
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/head.dmi'
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi'
 		)
 	sprite_sheets_obj = list(
 		SPECIES_UNATHI = 'maps/torch/icons/obj/unathi/obj_head_solgov_unathi.dmi',
