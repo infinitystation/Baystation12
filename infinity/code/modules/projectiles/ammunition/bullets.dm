@@ -93,3 +93,13 @@
 
 /obj/item/ammo_casing/e/pistol
 	projectile_type = /obj/item/projectile/bullet/Erifle/pistol
+
+// Instagib //
+/obj/item/ammo_casing/energy/instakill
+	projectile_type = /obj/item/projectile/beam/instakill
+
+/obj/item/ammo_casing/energy/instakill/blue
+	projectile_type = /obj/item/projectile/beam/instakill/blue
+
+/obj/item/ammo_casing/energy/instakill/red
+	projectile_type = /obj/item/projectile/beam/instakill/red

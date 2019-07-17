@@ -81,7 +81,7 @@
 					return 0
 
 				var/pumping_skill = max(M.get_skill_value(SKILL_MEDICAL),M.get_skill_value(SKILL_ANATOMY))
-				var/cpr_delay = 15 * M.skill_delay_mult(SKILL_ANATOMY, 0.2) 
+				var/cpr_delay = 15 * M.skill_delay_mult(SKILL_ANATOMY, 0.2)
 				cpr_time = 0
 
 				H.visible_message("<span class='notice'>\The [H] is trying to perform CPR on \the [src].</span>")
@@ -221,6 +221,15 @@
 						attack_message = "[H] attempted to strike [src], but \he rolled out of the way!"
 						src.set_dir(pick(GLOB.cardinal))
 					miss_type = 1
+
+			// infinity code start
+			var/hitcheck = rand(0, 9)
+			if(!istype(src, /mob/living/carbon/human/machine) && istype(affecting, /obj/item/organ/external/head) && prob(hitcheck * (hit_zone == BP_MOUTH ? 5 : 1))) //MUCH higher chance to knock out teeth if you aim for mouth
+				var/obj/item/organ/external/head/U = affecting
+				if(U.knock_out_teeth(get_dir(H, src), round(rand(28, 38) * ((hitcheck*2)/100))))
+					src.visible_message("<span class='danger'>[src]'s teeth sail off in an arc!</span>", \
+										"<span class='userdanger'>[src]'s teeth sail off in an arc!</span>")
+			// infinity code end
 
 			if(!miss_type && block)
 				attack_message = "[H] went for [src]'s [affecting.name] but was blocked!"

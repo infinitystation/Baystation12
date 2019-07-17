@@ -8,16 +8,13 @@
 /mob/living/carbon/human/proc/toggle_sprint()
 	set category = "Abilities"
 	set name = "Sprint"
-	set desc = "Temporary acceleration for nutrients and internal energy. Dangerous for health, especials for heart."
+	set desc = "Acceleration for nutrients."
 
 	var/obj/aura/speed/bio/tajaran/aura = locate() in auras
 	if(!aura)
 		to_chat(src, SPAN_WARNING("You don't possess a sprint ability."))
 		return
-/*	if(aura.toggled && (aura.deactivation + 30 SECONDS < world.time)) //switches off itself overtime
-		to_chat(src, SPAN_WARNING("You're too excited to stop! DO SOMETHING!"))
-		return*/
-	if(aura.energy < aura.energy_min)
-		to_chat(src, SPAN_WARNING("You're a bit tired after sprint, you cannot do again."))
+	if(nutrition < aura.minimal_nutrition)
+		to_chat(src, SPAN_WARNING("You are too exhausted..."))
 		return
 	aura.toggle()

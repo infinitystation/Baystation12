@@ -105,7 +105,8 @@
 			G.action_used()
 			O.dislocate(1)
 			assailant.visible_message("<span class='danger'>[affecting]'s [O.joint] [pick("gives way","caves in","crumbles","collapses")]!</span>")
-			playsound(assailant.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+		//	playsound(assailant.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+			playsound(assailant.loc, pick(GLOB.trauma_sound), 50, 1, -1)
 			return 1
 
 		else

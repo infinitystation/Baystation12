@@ -66,6 +66,8 @@
 			var/turflist = getline(user, target_turf)
 			flame_turf(turflist)
 
+			playsound(loc, pick('infinity/sound/effects/fire01.ogg','infinity/sound/effects/fire02.ogg','infinity/sound/effects/fire03.ogg'), 50, 1, -1) // inf-dev
+
 /obj/item/weapon/flamethrower/attackby(obj/item/W as obj, mob/user as mob)
 	if(user.stat || user.restrained() || user.lying)	return
 	if(isWrench(W) && !status)//Taking this apart

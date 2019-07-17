@@ -22,12 +22,14 @@
 		open(user)
 
 /obj/item/weapon/reagent_containers/food/drinks/proc/open(mob/user)
-	playsound(loc,'sound/effects/canopen.ogg', rand(10,50), 1)
+//	playsound(loc,'sound/effects/canopen.ogg', rand(10,50), 1) inf-dev: see below
 	to_chat(user, "<span class='notice'>You open \the [src] with an audible pop!</span>")
 	atom_flags |= ATOM_FLAG_OPEN_CONTAINER
 
 	// INF@CODE - START
 	verbs += /obj/item/weapon/reagent_containers/food/drinks/proc/gulp_whole
+	if(open_sound)
+		playsound(src, open_sound, rand(10, 50), 1)
 	// INF@CODE - END
 
 /obj/item/weapon/reagent_containers/food/drinks/attack(mob/M as mob, mob/user as mob, def_zone)

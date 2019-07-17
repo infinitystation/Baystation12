@@ -172,7 +172,7 @@
 	throwforce = 2
 	slot_flags = SLOT_EARS
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/ears.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_ears_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/ears.dmi'
 		)
 
@@ -244,7 +244,7 @@ BLIND     // can't see anything
 	var/see_invisible = -1
 	var/light_protection = 0
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/eyes.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_eyes_resomi.dmi',
 		SPECIES_VOX = 'icons/mob/species/vox/onmob_eyes_vox.dmi',
 		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_eyes_vox_armalis.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_eyes_unathi.dmi',
@@ -284,7 +284,7 @@ BLIND     // can't see anything
 		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_hands_vox_armalis.dmi',
 		SPECIES_NABBER = 'icons/mob/species/nabber/onmob_hands_gas.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_hands_unathi.dmi',
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/hands.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_hands_resomi.dmi',
 		)
 	blood_overlay_type = "bloodyhands"
 
@@ -398,7 +398,7 @@ BLIND     // can't see anything
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/species/vox/onmob_head_vox.dmi',
 		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_head_vox_armalis.dmi',
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/head.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_head_unathi.dmi',
 		)
 	blood_overlay_type = "helmetblood"
@@ -511,7 +511,7 @@ BLIND     // can't see anything
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/species/vox/onmob_mask_vox.dmi',
 		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_mask_vox_armalis.dmi',
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/masks.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_mask_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_mask_unathi.dmi',
 		SPECIES_EROSAN = 'infinity/icons/mob/species/erosan/mask.dmi',
 		)
@@ -603,7 +603,7 @@ BLIND     // can't see anything
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/species/vox/onmob_feet_vox.dmi',
 		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_feet_vox_armalis.dmi',
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/feet.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_feet_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_feet_unathi.dmi',
 		)
 	blood_overlay_type = "shoeblood"
@@ -695,7 +695,7 @@ BLIND     // can't see anything
 		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_suit_vox_armalis.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_suit_unathi.dmi',
 		SPECIES_NABBER = 'icons/mob/species/nabber/onmob_suit_gas.dmi',
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/suit.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_suit_resomi.dmi',
 		)
 
 
@@ -753,7 +753,7 @@ BLIND     // can't see anything
 		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_under_vox_armalis.dmi',
 		SPECIES_NABBER = 'icons/mob/species/nabber/onmob_under_gas.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_under_unathi.dmi',
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/uniform.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_under_resomi.dmi',
 	)
 
 	//convenience var for defining the icon state for the overlay used when the clothing is worn.

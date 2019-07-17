@@ -1,4 +1,4 @@
-#define DEFAULT_HUNGER_FACTOR 0.03 // Factor of how fast mob nutrition decreases
+#define DEFAULT_HUNGER_FACTOR 0.1 // Factor of how fast mob nutrition decreases //INF, WAS 0.3
 
 #define REM 0.2 // Means 'Reagent Effect Multiplier'. This is how many units of reagent are consumed per tick
 

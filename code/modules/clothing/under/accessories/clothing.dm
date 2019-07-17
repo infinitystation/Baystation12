@@ -213,7 +213,7 @@
 	icon_state = "hawaii"
 	sprite_sheets = list(
 		SPECIES_NABBER = 'icons/mob/species/nabber/ties.dmi',
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/ties.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_accessories_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/ties.dmi',
 		"Monkey" = 'icons/mob/species/monkey/onmob_accessories_monkey.dmi'
 		)

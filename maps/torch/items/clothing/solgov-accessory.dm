@@ -546,7 +546,8 @@ ranks - ec
 	gender = PLURAL
 	high_visibility = 1
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_accessories_sol_unathi.dmi'
+		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_accessories_sol_unathi.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_accessories_resomi.dmi'
 		)
 
 /obj/item/clothing/accessory/solgov/rank/get_fibers()

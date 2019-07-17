@@ -29,7 +29,7 @@ meteor_act
 	var/penetrating_damage = ((P.damage + P.armor_penetration) * P.penetration_modifier) - blocked
 
 	//Embed or sever artery
-	if(blocked < 1)
+	if(blocked < 1) //inf-dev
 		if(P.can_embed() && !(species.species_flags & SPECIES_FLAG_NO_EMBED) && prob(22.5 + max(penetrating_damage, -10)) && !(prob(50) && (organ.sever_artery())))
 			var/obj/item/weapon/material/shard/shrapnel/SP = new P.shrapnel_type()
 			SP.SetName((P.name != "shrapnel")? "[P.name] shrapnel" : "shrapnel")
@@ -195,6 +195,15 @@ meteor_act
 		attack_joint(affecting, I, effective_force, 0.5, blocked) //...but can dislocate joints
 	else if(!..())
 		return 0
+
+	// infinity code start
+	var/obj/item/organ/external/head/O = get_organ(BP_HEAD)
+	if(O)
+		if(I.damtype == BRUTE && !I.edge && prob(I.force * (hit_zone == BP_MOUTH ? 6 : 0)) && O)
+			if(O.knock_out_teeth(get_dir(user, src), round(rand(28, 38) * ((I.force*1.5)/100))))
+				src.visible_message("<span class='danger'>[src]'s teeth sail off in an arc!</span>", \
+									"<span class='userdanger'>[src]'s teeth sail off in an arc!</span>")
+	// infinity code end
 
 	if(effective_force > 10 || effective_force >= 5 && prob(33))
 		forcesay(GLOB.hit_appends)	//forcesay checks stat already

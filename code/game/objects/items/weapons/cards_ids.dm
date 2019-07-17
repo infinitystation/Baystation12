@@ -164,7 +164,7 @@ var/const/NO_EMAG_ACT = -50
 	slot_flags = SLOT_ID
 
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/id.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_id_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/id.dmi'
 		)
 
@@ -410,7 +410,7 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/weapon/card/id/centcom/ERT/New()
 	..()
-	access |= get_all_station_access()
+//	access |= get_all_station_access() inf-dev
 
 /obj/item/weapon/card/id/foundation
 	name = "\improper Foundation warrant card"
