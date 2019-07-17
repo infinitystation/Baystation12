@@ -151,6 +151,14 @@ var/global/list/string_slot_flags = list(
 		var/datum/grab/G = all_grabstates[grabstate_name]
 		G.refresh_updown()
 
+	// infinity ahead
+	var/blacklist[] = list()
+	paths = typesof(/datum/ammo) - blacklist
+	for(var/T in paths)
+		var/datum/ammo/A = new T
+		GLOB.ammo_list[A.type] = A
+	// infinity end
+
 	return 1
 
 //*** params cache
