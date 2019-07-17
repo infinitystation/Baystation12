@@ -4,6 +4,8 @@
 /mob/living/proc/handle_lisp()
 	if(ishuman(src))
 		var/mob/living/carbon/human/H = src
+		if(!H.species || !H.species.teeth_type)
+			return
 		var/obj/item/organ/external/head/O = H.get_organ(BP_HEAD)
 		if(O)
 			if(!O.teeth_list.len || O.get_teeth() <= 0)
