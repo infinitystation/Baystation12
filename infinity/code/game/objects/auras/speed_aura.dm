@@ -77,9 +77,9 @@
 		announced_deact = 1
 	if(!toggled || H.stat == DEAD)
 		return
-	if((H.nutrition > consument) && (deactivation + 1 MINUTE  > world.time))
+	if(H.nutrition > consument) //if((H.nutrition > consument) && (deactivation + 1 MINUTE  > world.time))
 		H.nutrition -= consument
-		H.reagents.add_reagent(/datum/reagent/torvicent, 10.1)
+		H.reagents.add_reagent(/datum/reagent/torvicent, 0.201)
 		if(!checks())
 			to_chat(user, SPAN_DANGER("Your legs are too damaged, you cannot sprint!"))
 			announced_deact = 0
@@ -92,51 +92,34 @@
 		return
 
 /obj/aura/speed/bio/tajaran
-	name = "sprint"
-	var/energy = 11
-	var/energy_max = 180
-	var/energy_min = 30
-	var/energy_ano = 0
-	consument = 8
+	name = "action mode"
+	consument = 1.5
+	var/minimal_nutrition = 100
 
 /obj/aura/speed/bio/tajaran/toggle()
 	if(!checks()) return
 	if(!toggled)
-		to_chat(user, SPAN_NOTICE("Internal reserves of your body were realised! It's time for action!"))
+		to_chat(user, SPAN_NOTICE("It is time to do something, you run a bit faster."))
 	else
-		to_chat(user, SPAN_NOTICE("You stop sprint."))
-	deactivation = world.time
-	announced_deact = 0
-	energy_ano = 1
+		to_chat(user, SPAN_NOTICE("It is time for resting..."))
 	toggled = !toggled
 
 /obj/aura/speed/bio/tajaran/life_tick()
-	var/mob/living/carbon/H = user
-	if((energy > energy_min) && !announced_deact && !toggled)
-		to_chat(user, SPAN_NOTICE("You would sprint again."))
-		announced_deact = 1
-	if(!toggled || H.stat == DEAD)
-		if(energy < energy_max)
-			energy++
-		if(energy == energy_max && !energy_ano)
-			to_chat(user, SPAN_NOTICE("Your internal reserves are full."))
-			energy_ano = 1
+	var/mob/living/carbon/human/H = user
+	if(!toggled)
 		return
-	if((H.nutrition > consument) && (energy > 0))
+	if(H.stat == DEAD)
+		return
+	if(H.nutrition > minimal_nutrition)
 		H.nutrition -= consument
-		energy -= 2
-		H.reagents.add_reagent(/datum/reagent/torvicent, 10.1)
+		H.reagents.add_reagent(/datum/reagent/torvicent, 0.201)
 		if(!checks())
-			to_chat(user, SPAN_DANGER("Your legs are too damaged, you cannot sprint!"))
-			announced_deact = 0
+			to_chat(user, SPAN_DANGER("Your legs are too damaged, you cannot run faster!"))
 			toggled = 0
-			energy_ano = 0
 			return
 	else
 		to_chat(user, SPAN_NOTICE("You are too exhausted..."))
-		announced_deact = 0
 		toggled = 0
-		energy_ano = 0
 		return
 
 /obj/aura/speed/mech

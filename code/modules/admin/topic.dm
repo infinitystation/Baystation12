@@ -897,6 +897,11 @@
 		var/mob/M = locate(href_list["newban"])
 		if(!ismob(M)) return
 
+		if(alert("ВНИМАНИЕ!\n \
+		Данный тип блокировки подразумевает полное отлучение игрока от сервера и он применим в случае экстренной ситуации (нарушение УК России, обход блокировок или эксплойты).\n \
+		Если случай не подходит под критерий \"серьёзно\" то используйте softban.",,"Continue", "Cancel") == "Cancel")
+			return
+
 		if(M.client && M.client.holder)	return	//admins cannot be banned. Even if they could, the ban doesn't affect them anyway
 
 		switch(alert("Temporary Ban?",,"Yes","No", "Cancel"))
@@ -908,13 +913,13 @@
 					to_chat(usr, "<span class='warning'>Moderators can only job tempban up to [config.mod_tempban_max] minutes!</span>")
 					return
 				if(mins >= 525600) mins = 525599
-				var/reason = sanitize(input(usr,"Reason?","reason","Griefer") as text|null)
+				var/reason = sanitize(input(usr,"Reason?","reason","Ultra-Griefer") as text|null)
 				reason = sanitize_a0(reason)
 				if(!reason)
 					return
 				AddBan(M.ckey, M.computer_id, reason, usr.ckey, 1, mins)
 				ban_unban_log_save("[usr.client.ckey] has HARD banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.")
-				add_note(M.ckey,"[usr.client.ckey] has banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.", null, usr.ckey, 0)
+				add_note(M.ckey,"[usr.client.ckey] has hard banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.", null, usr.ckey, 0)
 				to_chat(M, "<span class='danger'><BIG>Вы были ЖЕСТКО забанены администратором [key_name(usr)].\nПричина: [reason]</BIG></span>")
 				to_chat(M, "<span class='warning'>Это временный бан, он истечет через [mins] минут.</span>")
 				SSstatistics.add_field("ban_tmp",1)
@@ -924,7 +929,7 @@
 					to_chat(M, "<span class='warning'>Чтобы оспорить решение администратора, перейдите сюда: [config.banappeals]</span>")
 				else
 					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
-				log_and_message_admins("has banned [M.ckey].\nReason: [reason]\nThis will be removed in [mins] minutes.")
+				log_and_message_admins("has hard banned [M.ckey].\nReason: [reason]\nThis will be removed in [mins] minutes.")
 
 				qdel(M.client)
 				//qdel(M)	// See no reason why to delete mob. Important stuff can be lost. And ban can be lifted before round ends.

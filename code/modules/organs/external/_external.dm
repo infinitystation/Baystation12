@@ -888,11 +888,24 @@ Note that amputating the affected organ does in fact remove the infection from t
 				if(src && istype(loc,/turf))
 					throw_at(get_edge_target_turf(src,pick(GLOB.alldirs)),rand(1,3),30)
 				dir = 2
+			// infinity code start
+			if(!clean)
+				playsound(victim, pick('infinity/sound/effects/gore/chop2.ogg', 'infinity/sound/effects/gore/chop3.ogg', 'infinity/sound/effects/gore/chop4.ogg'), 100, 0)
+			else
+				playsound(victim, 'infinity/sound/effects/gore/severed.ogg', 100, 0)
+
+			if(victim.can_feel_pain() && prob(50))
+				victim.agony_scream()
+			// infinity code end
 		if(DROPLIMB_BURN)
 			new /obj/effect/decal/cleanable/ash(get_turf(victim))
 			for(var/obj/item/I in src)
 				if(I.w_class > ITEM_SIZE_SMALL && !istype(I,/obj/item/organ))
 					I.dropInto(loc)
+
+			if(victim.can_feel_pain() && prob(50)) // inf-dev
+				victim.agony_scream()
+
 			qdel(src)
 		if(DROPLIMB_BLUNT)
 			var/obj/gore
@@ -907,7 +920,12 @@ Note that amputating the affected organ does in fact remove the infection from t
 					G.fleshcolor = use_flesh_colour
 					G.basecolor =  use_blood_colour
 					G.update_icon()
+				// infinity code start
+				playsound(victim, 'infinity/sound/effects/gore/chop6.ogg', 100 , 0)//Splat.
 
+				if(victim.can_feel_pain() && prob(50))
+					victim.agony_scream()
+				// infinity code end
 			gore.throw_at(get_edge_target_turf(src,pick(GLOB.alldirs)),rand(1,3),30)
 
 			for(var/obj/item/organ/I in internal_organs)
@@ -1031,11 +1049,11 @@ obj/item/organ/external/proc/remove_clamps()
 			"<span class='danger'>You hear a sickening crack.</span>")
 		jostle_bone()
 		if(can_feel_pain())
-			if(prob(50))
-				agony_scream(owner)
-			owner.emote("scream")
+		//	owner.emote("scream")
+			owner.agony_scream() // inf-dev
 
-	playsound(src.loc, "fracture", 100, 1, -2)
+	playsound(src.loc, pick(GLOB.trauma_sound), 100, 1, -2) // inf-dev
+//	playsound(src.loc, "fracture", 100, 1, -2)
 	status |= ORGAN_BROKEN
 	broken_description = pick("broken","fracture","hairline fracture")
 

@@ -13,7 +13,7 @@
 
 /obj/item/weapon/towel/equipped(var/M, var/slot)
 	..()
-	sprite_sheets = list(SPECIES_RESOMI = (slot == slot_head ? 'infinity/icons/mob/species/resomi/head.dmi' : 'infinity/icons/mob/species/resomi/suit.dmi'))
+	sprite_sheets = list(SPECIES_RESOMI = (slot == slot_head ? 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi' : 'infinity/icons/mob/species/resomi/onmob_suit_resomi.dmi'))
 
 /obj/item/weapon/towel/attack_self(mob/living/user as mob)
 	user.visible_message(text("<span class='notice'>[] uses [] to towel themselves off.</span>", user, src))

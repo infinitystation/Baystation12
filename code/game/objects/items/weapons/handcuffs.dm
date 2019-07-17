@@ -104,6 +104,8 @@
 
 	user.visible_message("<span class='danger'>\The [user] has put [cuff_type] on \the [H]!</span>")
 
+	playsound(loc, 'infinity/sound/weapons/handcuffs_finish.ogg', 30, 1, -2) // inf-dev
+
 	// Apply cuffs.
 	target.equip_to_slot(cuffs,slot_handcuffed)
 	return 1

@@ -49,7 +49,7 @@
 		return 0
 
 	var/effective_armor = (armor - armor_pen)/100
-	var/fullblock = effective_armor ** 2
+	var/fullblock = effective_armor //inf-dev
 	//this makes it so that X armour blocks X% damage, when including the chance of hard block.
 	//I double checked and this formula will also ensure that a higher effective_armor
 	//will always result in higher (non-fullblock) damage absorption too, which is also a nice property

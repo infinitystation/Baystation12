@@ -115,7 +115,7 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 
 	reason = sql_sanitize_text(reason)
 	reason = sanitize_a0(reason)
-	var/reason_public = reason
+	var/reason_public = sanitize_a0(reason)
 
 	if(!computerid)
 		computerid = "0"
@@ -135,16 +135,16 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 	switch(bantype_str)
 		if("PERMABAN")
 			to_world(SPAN_NOTICE("<b>BAN: Администратор [setter] ЖЕСТКО и НАВСЕГДА заблокировал(а) игрока [ckey]. Причина: \"[reason_public]\"</b>"))
-			send2adminlogirc("BAN: Администратор [setter_key] ЖЕСТКО и НАВСЕГДА заблокировал(а) игрока [ckey]. Причина: \"[reason_public]\"")
+			send2adminlogirc("BAN: Администратор [setter_key] ЖЕСТКО и НАВСЕГДА заблокировал(а) игрока [ckey]. Причина: \"```[reason_public]```\"")
 		if("TEMPBAN")
 			to_world(SPAN_NOTICE("<b>BAN: Администратор [setter] ЖЕСТКО заблокировал(а) игрока [ckey]. Причина: \"[reason_public]\"; Срок - [duration] минут.</b>"))
-			send2adminlogirc("BAN: Администратор [setter_key] ЖЕСТКО заблокировал(а) игрока [ckey]. Причина: \"[reason_public]\"; Срок - [duration] минут.")
+			send2adminlogirc("BAN: Администратор [setter_key] ЖЕСТКО заблокировал(а) игрока [ckey]. Причина: \"```[reason_public]```\"; Срок - [duration] минут.")
 		if("SOFT_PERMBAN")
 			to_world(SPAN_NOTICE("<b>BAN: Администратор [setter] перманентно отправил(а) игрока [ckey] в бан-тюрьму. Причина: \"[reason_public]\"</b>"))
-			send2adminlogirc("BAN: Администратор [setter_key] перманентно отправил(а) игрока [ckey] в бан-тюрьму. Причина: \"[reason_public]\"")
+			send2adminlogirc("BAN: Администратор [setter_key] перманентно отправил(а) игрока [ckey] в бан-тюрьму. Причина: \"```[reason_public]```\"")
 		if("SOFT_TEMPBAN")
 			to_world(SPAN_NOTICE("<b>BAN: Администратор [setter] временно отправил(а) игрока [ckey] в бан-тюрьму. Причина: \"[reason_public]\"; Срок - [duration] минут.</b>"))
-			send2adminlogirc("BAN: Администратор [setter_key] временно отправил(а) игрока [ckey] в бан-тюрьму. Причина: \"[reason_public]\"; Срок - [duration] минут.")
+			send2adminlogirc("BAN: Администратор [setter_key] временно отправил(а) игрока [ckey] в бан-тюрьму. Причина: \"```[reason_public]```\"; Срок - [duration] минут.")
 	return 1
 
 
@@ -356,12 +356,12 @@ datum/admins/proc/DB_ban_unban_by_id(var/id)
 	output += "<table width='100%'><tr>"
 	output += "<td width='50%' align='right'><b>Ban type:</b><select name='dbbanaddtype'>"
 	output += "<option value=''>--</option>"
+	output += "<option value='[BANTYPE_SOFTPERMA]'>SOFT PERMABAN</option>"
+	output += "<option value='[BANTYPE_SOFTBAN]'>SOFT TEMPBAN</option>"
 	output += "<option value='[BANTYPE_PERMA]'>PERMABAN</option>"
 	output += "<option value='[BANTYPE_TEMP]'>TEMPBAN</option>"
 	output += "<option value='[BANTYPE_JOB_PERMA]'>JOB PERMABAN</option>"
 	output += "<option value='[BANTYPE_JOB_TEMP]'>JOB TEMPBAN</option>"
-	output += "<option value='[BANTYPE_SOFTPERMA]'>SOFT PERMABAN</option>"
-	output += "<option value='[BANTYPE_SOFTBAN]'>SOFT TEMPBAN</option>"
 	output += "</select></td>"
 	output += "<td width='50%' align='right'><b>Ckey:</b> <input type='text' name='dbbanaddckey'></td></tr>"
 	output += "<tr><td width='50%' align='right'><b>IP:</b> <input type='text' name='dbbanaddip'></td>"
@@ -397,12 +397,12 @@ datum/admins/proc/DB_ban_unban_by_id(var/id)
 	output += "<td width='50%' align='right'><b>CID:</b> <input type='text' name='dbsearchcid' value='[playercid]'></td></tr>"
 	output += "<tr><td width='50%' align='right' colspan='2'><b>Ban type:</b><select name='dbsearchbantype'>"
 	output += "<option value=''>--</option>"
+	output += "<option value='[BANTYPE_SOFTPERMA]'>SOFT PERMABAN</option>"
+	output += "<option value='[BANTYPE_SOFTBAN]'>SOFT TEMPBAN</option>"
 	output += "<option value='[BANTYPE_PERMA]'>PERMABAN</option>"
 	output += "<option value='[BANTYPE_TEMP]'>TEMPBAN</option>"
 	output += "<option value='[BANTYPE_JOB_PERMA]'>JOB PERMABAN</option>"
 	output += "<option value='[BANTYPE_JOB_TEMP]'>JOB TEMPBAN</option>"
-	output += "<option value='[BANTYPE_SOFTPERMA]'>SOFT PERMABAN</option>"
-	output += "<option value='[BANTYPE_SOFTBAN]'>SOFT TEMPBAN</option>"
 	output += "</select></td></tr></table>"
 	output += "<br><input type='submit' value='search'><br>"
 	output += "<input type='checkbox' value='[match]' name='dbmatch' [match? "checked=\"1\"" : null]> Match(min. 3 characters to search by key or ip, and 7 to search by cid)<br>"
@@ -471,9 +471,9 @@ datum/admins/proc/DB_ban_unban_by_id(var/id)
 					if(BANTYPE_JOB_TEMP)
 						bantypesearch += "'JOB_TEMPBAN' "
 					if(BANTYPE_SOFTPERMA)
-						bantypesearch += "'SOFT_PERMABAN'"
+						bantypesearch += "'SOFT_PERMABAN' " // todo@dev-inf
 					if(BANTYPE_SOFTBAN)
-						bantypesearch += "'SOFT_TEMPBAN'"
+						bantypesearch += "'SOFT_TEMPBAN' " // todo@dev-inf
 					else
 						bantypesearch += "'PERMABAN' "
 

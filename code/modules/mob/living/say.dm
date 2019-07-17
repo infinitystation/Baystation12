@@ -156,6 +156,12 @@ proc/get_radio_key_from_channel(var/channel)
 		message = "<font face = 'Comic Sans MS'>[message]</font>"
 		verb = "squeaks"
 		. = 1
+	//infinity code start
+	else if(lisp)
+		message = lisp(message, lisp)
+		verb = "lisps"
+		. = 1
+	//infinity code end
 
 	message_data[1] = message
 	message_data[2] = verb
@@ -184,7 +190,7 @@ proc/get_radio_key_from_channel(var/channel)
 	if(!message)
 		return
 
-	message = replacetext(message, "&#255;", "__:Гџ:_") // ГЌГЁГЄГ®Г¬Гі Г¦ГҐ Гў ГЈГ®Г«Г®ГўГі Г­ГҐ ГЇГ°ГЁГ¤ГҐГІ ГІГ ГЄГ®ГҐ Г­Г ГЇГЁГ±Г ГІГј? ~bear1ake@inf-dev
+	message = replacetext(message, "&#255;", "__:�:_") // ������ �� � ������ �� ������ ����� ��������? ~bear1ake@inf-dev
 	message = html_decode(message)
 
 	var/end_char = copytext(message, lentext(message), lentext(message) + 1)
@@ -192,7 +198,7 @@ proc/get_radio_key_from_channel(var/channel)
 		message += "."
 
 	message = html_encode(message)
-	message = replacetext(message, "__:Гџ:_", "&#255;")
+	message = replacetext(message, "__:�:_", "&#255;")
 	return message
 
 /mob/living/say(var/message, var/datum/language/speaking = null, var/verb="says", var/alt_name="", whispering)
@@ -377,7 +383,7 @@ proc/get_radio_key_from_channel(var/channel)
 				if(O) //It's possible that it could be deleted in the meantime.
 					O.hear_talk(src, stars(message), verb, speaking)
 
-	// flick_overlay(speech_bubble, speech_bubble_recipients, 30) infinity
+//	flick_overlay(speech_bubble, speech_bubble_recipients, 30) inf-dev
 	INVOKE_ASYNC(GLOBAL_PROC, /.proc/animate_speech_bubble, speech_bubble, speech_bubble_recipients, 30)
 
 	if(whispering)

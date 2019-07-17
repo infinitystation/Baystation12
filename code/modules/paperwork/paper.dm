@@ -22,7 +22,7 @@
 	body_parts_covered = HEAD
 	attack_verb = list("bapped")
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/head.dmi'
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi'
 		)
 
 	var/info		//What's actually written on the paper.

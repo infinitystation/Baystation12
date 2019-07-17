@@ -83,6 +83,7 @@
 	handle_drugged()
 	handle_slurring()
 	handle_confused()
+	handle_lisp() // inf-dev
 
 /mob/living/proc/handle_stunned()
 	if(stunned)

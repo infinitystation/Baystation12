@@ -95,7 +95,6 @@ obj/item/organ/external/take_general_damage(var/amount, var/silent = FALSE)
 				if(laser)
 					burn /= 2
 				damage_amt -= max(damage_amt*victim.damage_reduction, 0)
-				damage_amt *= 3
 				victim.take_internal_damage(damage_amt)
 
 	if(status & ORGAN_BROKEN && brute)
@@ -255,8 +254,8 @@ obj/item/organ/external/take_general_damage(var/amount, var/silent = FALSE)
 	var/last_pain = pain
 	pain = max(0,min(max_damage,pain+amount))
 	if(owner && ((amount > 15 && prob(20)) || (amount > 30 && prob(60))))
-		owner.emote("scream")
-		agony_scream(owner)
+	//	owner.emote("scream")
+		owner.agony_scream() // inf-dev
 	return pain-last_pain
 
 /obj/item/organ/external/proc/stun_act(var/stun_amount, var/agony_amount)
