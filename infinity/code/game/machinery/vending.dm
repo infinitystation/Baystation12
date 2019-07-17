@@ -215,3 +215,27 @@
 	contraband = list(/obj/item/weapon/paimod/hack_camo = 2,
 					/obj/item/weapon/paimod/hack_speed/standart = 2,
 					/obj/item/weapon/paimod/hack_speed/advanced = 1)
+
+// overrides ahead
+
+/obj/machinery/vending/fitness/build_inventory()
+	var/list/all_products = list(
+		list(src.products, CAT_NORMAL),
+		list(src.contraband, CAT_HIDDEN),
+		list(src.premium, CAT_COIN))
+
+	for(var/current_list in all_products)
+		var/category = current_list[2]
+
+		for(var/entry in current_list[1])
+			var/datum/stored_items/vending_products/product = new/datum/stored_items/vending_products(src, entry)
+
+			product.price = (entry in src.prices) ? src.prices[entry] : 0
+			product.amount = (current_list[1][entry]) ? current_list[1][entry] : 1
+			product.category = category
+			//inf ahead. Yeah, I (Terror4000rus) have to copy that all.
+			if(product.item_path != (/obj/item/weapon/towel/random||/obj/item/weapon/reagent_containers/pill/diet))
+				product.amount = rand(0,1)
+			//inf end
+
+			src.product_records.Add(product)

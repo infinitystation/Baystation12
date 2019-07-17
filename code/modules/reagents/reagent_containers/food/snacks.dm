@@ -66,6 +66,11 @@
 				to_chat(C, "<span class='danger'>You hungrily chew out a piece of [src] and gobble it!</span>")
 			if (fullness > 50 && fullness <= 150)
 				to_chat(C, "<span class='notice'>You hungrily begin to eat [src].</span>")
+			//inf ahead
+			if (fullness > 250 && junk)
+				to_chat(C, "<span class='notice'>You don't want to eat junk food anymore.</span>")
+				return 0
+			//inf end
 			if (fullness > 150 && fullness <= 350)
 				to_chat(C, "<span class='notice'>You take a bite of [src].</span>")
 			if (fullness > 350 && fullness <= 550)
