@@ -29,6 +29,6 @@
 	for(var/gear in protective_gear)
 		if(gear && istype(gear ,/obj/item/clothing))
 			var/obj/item/clothing/C = gear
-			if(C.flags_armor_protection & def_zone?.body_part)
+			if(C.body_parts_covered & def_zone?.body_part)
 				protection += C.armors.getRating(type)
 	return protection

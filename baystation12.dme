@@ -3106,6 +3106,7 @@
 #include "infinity\code\game\machinery\doors\firedoor_assembly.dm"
 #include "infinity\code\game\machinery\doors\firedoor_border.dm"
 #include "infinity\code\game\objects\cryo_spawner.dm"
+#include "infinity\code\game\objects\item.dm"
 #include "infinity\code\game\objects\noose.dm"
 #include "infinity\code\game\objects\auras\speed_aura.dm"
 #include "infinity\code\game\objects\effects\decals\contraband.dm"

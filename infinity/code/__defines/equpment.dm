@@ -29,26 +29,3 @@
 #define WIELDED					(1<<5)	// The item is wielded with both hands.
 #define	ITEM_ABSTRACT			(1<<6)	//The item is abstract (grab, powerloader_clamp, etc)
 #define BEING_REMOVED			(1<<7)	//Cuffs and legcuffs
-
-//==========================================================================================
-
-// bitflags for clothing parts
-//thermal_protection_flags
-#define HEAD			(1<<0)
-#define FACE			(1<<1)
-#define EYES			(1<<2)
-#define CHEST			(1<<3)
-#define GROIN			(1<<4)
-#define LEG_LEFT		(1<<5)
-#define LEG_RIGHT		(1<<6)
-#define LEGS			(LEG_RIGHT|LEG_LEFT)
-#define FOOT_LEFT		(1<<7)
-#define FOOT_RIGHT		(1<<8)
-#define FEET			(FOOT_RIGHT|FOOT_LEFT)
-#define ARM_LEFT		(1<<9)
-#define ARM_RIGHT		(1<<10)
-#define ARMS			(ARM_RIGHT|ARM_LEFT)
-#define HAND_LEFT		(1<<11)
-#define HAND_RIGHT		(1<<12)
-#define HANDS			(HAND_RIGHT|HAND_LEFT)
-#define FULL_BODY		(~0)
