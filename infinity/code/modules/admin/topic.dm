@@ -97,30 +97,30 @@
 
 		switch(response)
 			if("Give Cookie")
-				if(H.equip_to_storage_or_drop(new /obj/item/weapon/reagent_containers/food/snacks/cookie(H)))
+				if(H.equip_to_slot_or_store_or_drop(new /obj/item/weapon/reagent_containers/food/snacks/cookie(H), slot_l_hand))
 					log_admin("[key_name(H)] got their cookie, spawned by [key_name(usr)]")
 					message_admins("[key_name(H)] got their cookie, spawned by [key_name(usr)]")
 					SSstatistics.add_field("admin_cookies_spawned",1)
 					to_chat(H, "<span class='notice'>Your prayers have been answered!! You received the <b>best cookie</b>!</span>")
 
 			if("Give Cup of Coffee")
-				var/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/coffee = new /obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup(get_turf(H))
+				var/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/coffee = new(H)
 				coffee.reagents.add_reagent(/datum/reagent/drink/coffee, 30)
-				if(H.equip_to_storage_or_drop(coffee))
+				if(H.equip_to_slot_or_store_or_drop(coffee, slot_l_hand))
 					log_admin("[key_name(H)] got their cup of coffee, spawned by [key_name(usr)]")
 					message_admins("[key_name(H)] got their cup of coffee, spawned by [key_name(usr)]")
 					SSstatistics.add_field("admin_coffe_spawned",1)
 					to_chat(H, "<span class='notice'>Your prayers have been answered!! You received the <b>cup of coffee</b>!</span>")
 
 			if("Give Cup of Tea")
-				if(H.equip_to_storage_or_drop(new /obj/item/weapon/reagent_containers/food/drinks/tea/green))
+				if(H.equip_to_slot_or_store_or_drop(new /obj/item/weapon/reagent_containers/food/drinks/tea/green(H), slot_l_hand))
 					log_admin("[key_name(H)] got their cup of green tea, spawned by [key_name(usr)]")
 					message_admins("[key_name(H)] got their cup of green tea, spawned by [key_name(usr)]")
 					SSstatistics.add_field("admin_tea_spawned",1)
 					to_chat(H, "<span class='notice'>Your prayers have been answered!! You received the <b>cup of green tea</b>!</span>")
 
 			if("Punish")
-				var/list/punishment_list = list("Lightning bolt", "Brain damage", "Gib", "Rod")
+				var/list/punishment_list = list("Lightning bolt", "Brain damage", "Gib")
 
 				var/punishment = input("Choose a punishment", "DIVINE SMITING") as null|anything in punishment_list
 
@@ -132,19 +132,12 @@
 						var/turf/T = get_step(get_step(H, NORTH), NORTH)
 						T.Beam(H, icon_state = "lightning[rand(1,12)]", icon = 'infinity/icons/effects/beam.dmi', time = 5)
 						H.adjustFireLoss(75)
-						H.electrocution_animation(40)
+					//	INVOKE_ASYNC(H,/mob/living/carbon/human/proc/electrocution_animation, 40)
 						to_chat(H, SPAN_DANGER("The gods have punished you for your sins!"))
 					if("Brain damage")
 						H.adjustBrainLoss(75)
 					if("Gib")
 						H.gib(FALSE)
-
-					if("Rod")
-						var/turf/T = get_turf(H)
-						var/startside = pick(GLOB.cardinal)
-						var/turf/startT = spaceDebrisStartLoc(startside, T.z)
-						var/turf/endT = spaceDebrisFinishLoc(startside, T.z)
-						new /obj/effect/immovablerod(startT, endT, H)
 
 				message_admins("[key_name_admin(usr)] punished [key_name_admin(H)] with [punishment].")
 				log_admin("[key_name(usr)] punished [key_name(H)] with [punishment].")

@@ -15,15 +15,11 @@
 //Turns a mob black, flashes a skeleton overlay
 //Just like a cartoon!
 /mob/living/carbon/human/proc/electrocution_animation(anim_duration)
-	if(species)
-		var/static/mutable_appearance/electrocution_skeleton_anim
-		if(!electrocution_skeleton_anim)
-			electrocution_skeleton_anim = mutable_appearance('infinity/icons/mob/mob.dmi', "electrocuted_base")
-			electrocution_skeleton_anim.appearance_flags |= RESET_COLOR|KEEP_APART
-		overlays.Add(electrocution_skeleton_anim)
-		addtimer(CALLBACK(src, .proc/end_electrocution_animation, electrocution_skeleton_anim), anim_duration)
-	else //or just do a generic animation
-		flick_overlay_view(image('infinity/icons/mob/mob.dmi',src,"electrocuted_generic", MOB_LAYER + 1), src, anim_duration)
-
-/mob/living/carbon/human/proc/end_electrocution_animation(mutable_appearance/MA)
-	overlays.Cut(MA)
+	if(species && (species.name in SPECIES_LIST_HUMAN || species.name in SPECIES_LIST_HUMANOID)) // TODO@inf
+		var/atom/movable/overlay/animation = new(src)
+		animation.plane = src.plane
+		animation.layer = src.layer + 1
+		animation.icon_state = "blank"
+		animation.icon = 'infinity/icons/mob/mob.dmi'
+		flick("electrocuted_base", animation)
+		QDEL_IN(animation, anim_duration)
