@@ -191,3 +191,12 @@
 					if (istype(P.loc, /obj/structure/closet))
 						P.visible_message("<B>[H]</B> пытаетс[ya] поймать <B>[P]</B> за хвост!")
 	..()
+
+/mob/living/carbon/human/ClickOn(atom/A, list/params)
+	if(interactee)
+		return interactee.handle_click(src, A, params)
+
+	return ..()
+
+/atom/movable/proc/handle_click(mob/living/carbon/human/user, atom/A, params) //Heres our handle click relay proc thing.
+	return
