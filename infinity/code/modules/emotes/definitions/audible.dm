@@ -79,3 +79,10 @@
 /decl/emote/audible/scream/resomi
 	emote_sound = 'infinity/sound/voice/resomisneeze.ogg'
 
+/decl/emote/audible/scream/monkey
+	emote_sound = list(
+		'infinity/sound/voice/pain_monkey_1.ogg',
+		'infinity/sound/voice/pain_monkey_2.ogg',
+		'infinity/sound/voice/pain_monkey_3.ogg'
+		)
+
