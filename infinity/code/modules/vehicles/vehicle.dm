@@ -42,7 +42,7 @@
 
 	if(cell)
 		cell.forceMove(Tsec)
-		cell.update_icon()
+		cell.on_update_icon()
 		cell = null
 
 	new /obj/effect/gibspawner/robot(Tsec)

@@ -260,7 +260,7 @@ var/list/apc_dmg_distributions = list(
 	sleep(20)
 	var/obj/item/ammo_magazine/A = HP.clips[1]
 	HP.clips[1].Move(entrance.loc)	//LISTS START AT 1 REEEEEEEEEEEE
-	HP.clips[1].update_icon()
+	HP.clips[1].on_update_icon()
 	HP.clips.Remove(A)
 	if(HP.clips.len > 0)
 		to_chat(usr, "<span class='notice'>You reload the [HP.name].</span>")
@@ -356,12 +356,12 @@ var/list/apc_dmg_distributions = list(
 		if(!luminosity)
 			set_light(7)
 
-	update_icon()
+	on_update_icon()
 
 
 //Since the vics are 3x4 we need to swap between the two files with different dimensions
 //Also need to offset to center the APC about the root object
-/obj/vehicle_infinity/multitile/root/transport/update_icon()
+/obj/vehicle_infinity/multitile/root/transport/on_update_icon()
 
 	overlays.Cut()
 
@@ -554,7 +554,9 @@ var/list/apc_dmg_distributions = list(
 		var/obj/item/hardpoint/apc/HP = hardpoints[i]
 		if(!istype(HP)) continue
 		HP.health -= damage * dmg_distribs[i] * get_dmg_multi(type)
+	
 	healthcheck()
+
 	if(istype(attacker, /mob))
 		var/mob/M = attacker
 		log_attack("[src] took [damage] [type] damage from [M] ([M.client ? M.client.ckey : "disconnected"]).")
@@ -572,8 +574,6 @@ var/list/apc_dmg_distributions = list(
 
 	take_damage_type(P.damage * (0.75 + P.armor_penetration/100), dam_type, P.firer)
 	playsound(src.loc, pick('infinity/sound/bullets/bullet_ricochet2.ogg', 'infinity/sound/bullets/bullet_ricochet3.ogg', 'infinity/sound/bullets/bullet_ricochet4.ogg', 'infinity/sound/bullets/bullet_ricochet5.ogg'), 25, 1)
-
-	healthcheck()
 
 //severity 1.0 explosions never really happen so we're gonna follow everyone else's example
 /obj/vehicle_infinity/multitile/root/transport/ex_act(severity)
@@ -736,7 +736,7 @@ var/list/apc_dmg_distributions = list(
 
 	damaged_hps -= slot //We repaired it, good job
 
-	update_icon()
+	on_update_icon()
 
 //Reloading stuff, pretty bare-bones and basic
 /obj/vehicle_infinity/multitile/root/transport/proc/handle_ammomag_attackby(obj/item/ammo_magazine/apc/AM, var/mob/user)
@@ -843,7 +843,7 @@ var/list/apc_dmg_distributions = list(
 			for(i = 0; i <= old.clips.len; i++)
 				A = old.clips[1]
 				old.clips[1].Move(entrance.loc)
-				old.clips[1].update_icon()
+				old.clips[1].on_update_icon()
 				old.clips.Remove(A)
 			user.visible_message("<span class='notice'>[user] removes ammunition from \the [old].</span>", "<span class='notice'>You remove ammunition from \the [old].</span>")
 
@@ -862,7 +862,7 @@ var/list/apc_dmg_distributions = list(
 
 	hardpoints[HP.slot] = HP
 
-	update_icon()
+	on_update_icon()
 
 //General proc for taking off hardpoints
 //ALWAYS CALL THIS WHEN REMOVING HARDPOINTS
@@ -877,4 +877,4 @@ var/list/apc_dmg_distributions = list(
 	//	cdel(old)
 
 	hardpoints[old.slot] = null
-	update_icon()
+	on_update_icon()

@@ -1,4 +1,3 @@
-GLOBAL_LIST_EMPTY(ammo_list) //List of all ammo types. Used by guns to tell the projectile how to act.
 //Bitflag defines are in setup.dm. Referenced here.
 
 #define AMMO_EXPLOSIVE 		1
@@ -124,7 +123,7 @@ GLOBAL_LIST_EMPTY(ammo_list) //List of all ammo types. Used by guns to tell the 
 	if(!Center || !P)
 		return
 	for(var/mob/living/carbon/M in range(1,Center))
-		M.visible_message("<span class='danger'>[M] got a concussion from \a [P.name]!</span>","<span class='highdanger'>You are concussed from \a </b>[P.name] explosion</b>!</span>")
+		M.visible_message("<span class='danger'>[M] got a concussion from \a [P.name]!</span>","<span class='highdanger'>You are concussed from \a <b>[P.name] explosion</b>!</span>")
 		M.apply_damage(rand(10,P.damage/2))
 		staggerstun(M, P, max_range, stun, weaken, stagger, slowdown, knockback, shake, soft_size_threshold, hard_size_threshold)
 
@@ -134,7 +133,7 @@ GLOBAL_LIST_EMPTY(ammo_list) //List of all ammo types. Used by guns to tell the 
 	for(var/mob/living/carbon/M in orange(radius,target))
 		if(P.firer == M)
 			continue
-		M.visible_message("<span class='danger'>[M] is hit by backlash from \a [P.name]!</span>","<span class='highdanger'>You are hit by backlash from \a </b>[P.name]</b>!</span>")
+		M.visible_message("<span class='danger'>[M] is hit by backlash from \a [P.name]!</span>","<span class='highdanger'>You are hit by backlash from \a <b>[P.name]</b>!</span>")
 		if(apply_armor)
 			var/armor_block = M.run_armor_check(M, attack_type)
 			M.apply_damage(rand(P.damage * modifier * 0.1,P.damage * modifier),damage_type, null, armor_block)

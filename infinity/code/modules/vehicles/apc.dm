@@ -1,6 +1,5 @@
 //APCS, HURRAY
 //Read the documentation in transport.dm and multitile.dm before trying to decipher this stuff
-var/list/free_modules = list("Transport","Transport","Transport","Transport","Transport","Transport","Transport","Transport","Transport","Transport")
 
 /obj/vehicle_infinity/multitile/root/transport/apc
 	name = "APC"
@@ -39,6 +38,8 @@ var/list/free_modules = list("Transport","Transport","Transport","Transport","Tr
 	var/vehicle_area
 	var/number = 0 // Max 10. If 0 he don't load.
 	var/network = ""
+	var/list/spawn_hardpoints = list()
+	var/list/damaged_hps = list()
 
 /obj/effect/multitile_spawner/transport/apc/proc/choose_area()
 	switch(number)
@@ -70,14 +71,19 @@ var/list/free_modules = list("Transport","Transport","Transport","Transport","Tr
 
 	R.load_hitboxes(dimensions, root_pos)
 	R.load_entrance_marker(entr_mark)
-	R.update_icon(src)
 
 	R.camera = new /obj/machinery/camera(R)
 	R.camera.network = list(network)
 	R.camera.c_tag = "Armored Personnel Carrier #[number]" //ARMORED to be at the start of cams list, numbers in case of events with multiple vehicles
-	R.add_hardpoint(new /obj/item/hardpoint/apc/primary/cannon_25mm)
-	R.add_hardpoint(new /obj/item/hardpoint/apc/wheels)
+	var/hardpoint_path
+	for(var/slot in spawn_hardpoints)
+		hardpoint_path = spawn_hardpoints[slot]
+		R.add_hardpoint(new hardpoint_path)
+	R.damaged_hps = damaged_hps
 
+	R.on_update_icon()
+
+// Loaad passengers room
 	R.camera.network.Add("apc_[number]")
 	vehicle_area = choose_area()
 	R.interior_area = locate(vehicle_area) in world
@@ -95,6 +101,17 @@ var/list/free_modules = list("Transport","Transport","Transport","Transport","Tr
 	R.passengers_max = 10
 
 	del(src)
+
+/obj/effect/multitile_spawner/transport/apc/Fixed_with_gun
+	spawn_hardpoints = list(HDPT_PRIMARY = /obj/item/hardpoint/apc/primary/cannon_25mm,
+							HDPT_WHEELS = /obj/item/hardpoint/apc/wheels/)
+
+/obj/effect/multitile_spawner/transport/apc/Fixed
+	spawn_hardpoints = list(HDPT_WHEELS = /obj/item/hardpoint/apc/wheels/)
+
+/obj/effect/multitile_spawner/transport/apc/Decreipt
+	damaged_hps =  list("primary",
+						"wheels")
 
 /obj/vehicle_infinity/multitile/root/transport/apc/Destroy()
 
