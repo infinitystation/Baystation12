@@ -92,7 +92,6 @@
 	if(prob(1))
 		H.emote(pick("scratch","jump","roll","tail"))
 
-/* // rest in peace.
 	if(H.get_shock() && H.shock_stage < 40 && prob(3))
 		H.custom_emote("chimpers pitifully")
 
@@ -104,7 +103,6 @@
 
 	if(!H.restrained() && H.lying && H.shock_stage >= 60 && prob(3))
 		H.custom_emote("thrashes in agony")
-*/
 
 /datum/species/monkey/handle_post_spawn(var/mob/living/carbon/human/H)
 	..()
