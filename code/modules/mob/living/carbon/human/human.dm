@@ -50,9 +50,6 @@
 	GLOB.human_mob_list |= src
 	..()
 
-	if(species && species.teeth_type)
-		add_teeth() // inf-dev
-
 	if(dna)
 		dna.ready_dna(src)
 		dna.real_name = real_name
@@ -895,9 +892,6 @@
 
 	species.create_organs(src) // Reset our organs/limbs.
 	restore_all_organs()       // Reapply robotics/amputated status from preferences.
-
-	if(species && species.teeth_type)
-		add_teeth() // inf-dev
 
 	if(!client || !key) //Don't boot out anyone already in the mob.
 		for (var/obj/item/organ/internal/brain/H in world)

@@ -287,13 +287,6 @@
 	if(digitalcamo)
 		msg += "[T.He] [T.is] repulsively uncanny!\n"
 
-	// infinity code start
-	if(species && species.teeth_type)
-		var/obj/item/organ/external/head/O = organs_by_name[BP_HEAD]
-		if(O && O.get_teeth() < O.max_teeth)
-			msg += "<span class='warning'><B>[O.get_teeth() <= 0 ? "All" : "[O.max_teeth - O.get_teeth()]"] of [T.his] teeth are missing!</B></span>\n"
-	// infinity code end
-
 	if(hasHUD(user, HUD_SECURITY))
 		var/perpname = "wot"
 		var/criminal = "None"
