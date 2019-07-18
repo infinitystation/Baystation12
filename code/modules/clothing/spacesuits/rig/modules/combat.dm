@@ -306,7 +306,7 @@
 		var/obj/item/weapon/rig/light/ninja/rig = M.back
 		if(rig)
 			var/obj/item/rig_module/stealth_field/S = locate() in rig.installed_modules
-			if(S && H.is_cloaked())
+			if(S && M.is_cloaked())
 				S.deactivate()
 	// infinity end
 
