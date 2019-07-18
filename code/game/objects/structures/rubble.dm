@@ -14,7 +14,7 @@
 	var/health = 40
 	var/is_rummaging = 0
 
-	color = "#54362e" // inf-dev
+//	color = "#54362e" // inf-dev
 
 /obj/structure/rubble/New()
 	if(prob(emptyprob))
@@ -30,7 +30,7 @@
 	var/list/parts = list()
 	for(var/i = 1 to 7)
 		var/image/I = image(icon,"rubble[rand(1,76)]")
-		I.color = "#54362e" // inf-dev
+//		I.color = "#54362e" // inf-dev
 		if(prob(10))
 			var/atom/A = pick(loot)
 			if(initial(A.icon) && initial(A.icon_state))

@@ -128,6 +128,7 @@ GLOBAL_LIST_EMPTY(mp_list)
 			set_mode(PLAY)
 		if(PLAY)
 			set_mode(OFF)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 
 /obj/item/music_player/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/music_tape))
