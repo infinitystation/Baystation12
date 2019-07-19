@@ -4,9 +4,7 @@
 #define HDPT_WHEELS "wheels"
 
 //Percentages of what hardpoints take what damage, e.g. armor takes 37.5% of the damage
-var/list/apc_dmg_distributions = list(
-	HDPT_PRIMARY = 0.65,
-	HDPT_WHEELS = 0.35)
+GLOBAL_LIST_INIT(apc_dmg_distributions, list(HDPT_PRIMARY = 0.65, HDPT_WHEELS = 0.35))
 
 /client/proc/remove_players_from_apc()
 	set name = "Eject ALL from APC (emergency only)"
@@ -638,7 +636,7 @@ var/list/apc_dmg_distributions = list(
 
 //Redistributes damage ratios based off of what things are attached (no armor means the armor doesn't mitigate any damage)
 /obj/vehicle_infinity/multitile/root/transport/proc/update_damage_distribs()
-	dmg_distribs = apc_dmg_distributions.Copy() //Assume full installs
+	dmg_distribs = GLOB.apc_dmg_distributions.Copy() //Assume full installs
 	for(var/slot in hardpoints)
 		var/obj/item/hardpoint/apc/HP = hardpoints[slot]
 		if(!HP) dmg_distribs[slot] = 0.0 //Remove empty slots' damage mitigation
