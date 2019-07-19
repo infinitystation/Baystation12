@@ -316,7 +316,7 @@
 "gd" = (/obj/structure/table/rack{dir = 8},/obj/structure/railing/mapped,/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/simulated/floor/plating,/area/space)
 "ge" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/structure/railing/mapped,/obj/structure/flora/ausbushes/algae/glowing,/turf/simulated/floor/grass,/area/space)
 "gf" = (/obj/structure/closet/secure_closet/personal/empty,/turf/simulated/floor/tiled/white,/area/space)
-"gg" = (/obj/structure/flora/pottedplant/xmas,/obj/effect/decal/cleanable/greenglow,/turf/simulated/floor/grass,/area/space)
+"gg" = (/obj/effect/decal/cleanable/greenglow,/turf/simulated/floor/grass,/area/space)
 "gh" = (/obj/structure/handrai{icon_state = "handrail"; dir = 1},/turf/simulated/floor/plating,/area/space)
 "gi" = (/obj/structure/largecrate,/turf/simulated/floor/plating,/area/space)
 "gj" = (/obj/structure/table/rack{dir = 8},/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/item/instrument/guitar,/turf/simulated/floor/plating,/area/space)
