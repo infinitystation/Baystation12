@@ -1,5 +1,5 @@
 /obj/item
-    var/datum/armor/armors
+	var/datum/armor/armors
 
 /obj/item/Initialize()
 	. = ..()
