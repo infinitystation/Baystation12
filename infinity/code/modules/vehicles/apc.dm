@@ -37,7 +37,7 @@
 	spawn_dir = EAST
 	var/vehicle_area
 	var/number = 0 // Max 10. If 0 he don't load.
-	var/network = ""
+	var/network = "vehicle_1"
 	var/list/spawn_hardpoints = list()
 	var/list/damaged_hps = list()
 
@@ -81,7 +81,7 @@
 		R.add_hardpoint(new hardpoint_path)
 	R.damaged_hps = damaged_hps
 
-	R.on_update_icon()
+	R.update_icon()
 
 // Loaad passengers room
 	R.camera.network.Add("apc_[number]")
@@ -109,7 +109,7 @@
 /obj/effect/multitile_spawner/transport/apc/Fixed
 	spawn_hardpoints = list(HDPT_WHEELS = /obj/item/hardpoint/apc/wheels/)
 
-/obj/effect/multitile_spawner/transport/apc/Decreipt
+/obj/effect/multitile_spawner/transport/apc/Decpreipt
 	damaged_hps =  list("primary",
 						"wheels")
 
@@ -223,26 +223,26 @@
 
 	access_camera(usr)
 
-/obj/vehicle_infinity/multitile/root/transport/apc/proc/access_camera(mob/living/M)
+/obj/vehicle_infinity/multitile/root/transport/apc/proc/access_camera(mob/user as mob)
 
 	if(camera_user)
-		if(camera_user == M)
+		if(camera_user == user)
 			return
 		else
-			to_chat(M, "<span class='warning'>Camera is being used by another cabin crewman!</span>")
+			to_chat(user, "<span class='warning'>Camera is being used by another cabin crewman!</span>")
 			return
 	else
-		camera_user = M
-		M.reset_view(interior_cam)
-		to_chat(M, "<span class='notice'>You move closer and take a quick look into interior camera monitor.</span>")
-		M.unset_interaction()
+		camera_user = user
+		user.reset_view(interior_cam)
+		to_chat(user, "<span class='notice'>You move closer and take a quick look into interior camera monitor.</span>")
+		user.unset_interaction()
 		if(gunner)
 			deactivate_all_hardpoints()
-		sleep(10)
-		M.set_interaction(src)
-		M.reset_view(null)
+		sleep(100)
+		user.set_interaction(src)
+		user.reset_view(null)
 		camera_user = null
-		to_chat(M, "<span class='notice'>You move away from interior camera monitor.</span>")
+		to_chat(user, "<span class='notice'>You move away from interior camera monitor.</span>")
 		return
 
 //Let's you switch into the other seat, doesn't work if it's occupied or gunner is not an AC

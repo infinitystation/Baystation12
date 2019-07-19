@@ -235,7 +235,7 @@ All of the hardpoints, for the tank and APC
 	disp_icon_state = "wheels"
 
 	get_icon_image(x_offset, y_offset, new_dir)
-		return null //Handled in on_update_icon()
+		return null //Handled in update_icon()
 
 	apply_buff()
 		owner.move_delay = 2.5

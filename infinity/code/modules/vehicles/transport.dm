@@ -260,7 +260,7 @@ var/list/apc_dmg_distributions = list(
 	sleep(20)
 	var/obj/item/ammo_magazine/A = HP.clips[1]
 	HP.clips[1].Move(entrance.loc)	//LISTS START AT 1 REEEEEEEEEEEE
-	HP.clips[1].on_update_icon()
+	HP.clips[1].update_icon()
 	HP.clips.Remove(A)
 	if(HP.clips.len > 0)
 		to_chat(usr, "<span class='notice'>You reload the [HP.name].</span>")
@@ -356,7 +356,7 @@ var/list/apc_dmg_distributions = list(
 		if(!luminosity)
 			set_light(7)
 
-	on_update_icon()
+	update_icon()
 
 
 //Since the vics are 3x4 we need to swap between the two files with different dimensions
@@ -736,7 +736,7 @@ var/list/apc_dmg_distributions = list(
 
 	damaged_hps -= slot //We repaired it, good job
 
-	on_update_icon()
+	update_icon()
 
 //Reloading stuff, pretty bare-bones and basic
 /obj/vehicle_infinity/multitile/root/transport/proc/handle_ammomag_attackby(obj/item/ammo_magazine/apc/AM, var/mob/user)
@@ -843,7 +843,7 @@ var/list/apc_dmg_distributions = list(
 			for(i = 0; i <= old.clips.len; i++)
 				A = old.clips[1]
 				old.clips[1].Move(entrance.loc)
-				old.clips[1].on_update_icon()
+				old.clips[1].update_icon()
 				old.clips.Remove(A)
 			user.visible_message("<span class='notice'>[user] removes ammunition from \the [old].</span>", "<span class='notice'>You remove ammunition from \the [old].</span>")
 
@@ -862,7 +862,7 @@ var/list/apc_dmg_distributions = list(
 
 	hardpoints[HP.slot] = HP
 
-	on_update_icon()
+	update_icon()
 
 //General proc for taking off hardpoints
 //ALWAYS CALL THIS WHEN REMOVING HARDPOINTS
@@ -877,4 +877,4 @@ var/list/apc_dmg_distributions = list(
 	//	cdel(old)
 
 	hardpoints[old.slot] = null
-	on_update_icon()
+	update_icon()

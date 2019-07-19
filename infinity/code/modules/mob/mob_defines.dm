@@ -1,2 +1,2 @@
-mob
+/mob
     var/atom/movable/interactee
