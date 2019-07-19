@@ -7,7 +7,7 @@
 	w_class = ITEM_SIZE_SMALL
 	origin_tech = list(TECH_BLUESPACE = 6)
 
-	var/locking_access = access_warden
+	var/locking_access = access_rd
 	var/silk_id = "" //using by snare controller to teleport user to controller's mark
 
 /obj/item/clothing/accessory/bs_silk/proc/toggle_lock()
