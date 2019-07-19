@@ -1,9 +1,11 @@
 /datum/map/sierra
 	species_to_job_whitelist = list(
-		/datum/species/adherent = list(/datum/job/ai, /datum/job/cyborg, /datum/job/assistant, /datum/job/janitor, /datum/job/chef, /datum/job/cargo_assistant,
-										/datum/job/doctor_trainee, /datum/job/engineer_trainee, /datum/job/scientist_assistant),
-		/datum/species/nabber = list(/datum/job/ai, /datum/job/cyborg, /datum/job/janitor, /datum/job/scientist_assistant, /datum/job/chemist,
-									 /datum/job/roboticist, /datum/job/cargo_assistant, /datum/job/chef, /datum/job/engineer_trainee, /datum/job/doctor_trainee, /datum/job/bartender),
+		/datum/species/adherent = list(/datum/job/ai, /datum/job/cyborg, /datum/job/assistant, /datum/job/janitor,\
+									   /datum/job/chef, /datum/job/cargo_assistant, /datum/job/scientist_assistant,\
+									   /datum/job/doctor_trainee, /datum/job/engineer_trainee),
+		/datum/species/nabber = list(/datum/job/ai, /datum/job/cyborg, /datum/job/janitor, /datum/job/scientist_assistant,\
+									 /datum/job/chemist, /datum/job/roboticist, /datum/job/cargo_assistant, /datum/job/chef,\
+									 /datum/job/engineer_trainee, /datum/job/doctor_trainee, /datum/job/bartender),
 		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/merchant_trainee)
 	)
 
@@ -15,8 +17,13 @@
 		/datum/species/skrell  		 = list(HUMAN_ONLY_JOBS),
 		/datum/species/tajaran 		 = list(HUMAN_ONLY_JOBS),
 		/datum/species/machine 		 = list(HUMAN_ONLY_JOBS),
-		/datum/species/resomi  		 = list(HUMAN_ONLY_JOBS, /datum/job/officer, /datum/job/exploration_leader, /datum/job/warden, /datum/job/chief_engineer, /datum/job/rd, /datum/job/iaa),
-		/datum/species/diona   		 = list(HUMAN_ONLY_JOBS, /datum/job/officer, /datum/job/exploration_leader, /datum/job/warden, /datum/job/iaa),
+		/datum/species/resomi  		 = list(HUMAN_ONLY_JOBS, /datum/job/officer, /datum/job/exploration_leader,\
+									/datum/job/warden, /datum/job/chief_engineer, /datum/job/rd, /datum/job/iaa),
+		/datum/species/diona   		 = list(HUMAN_ONLY_JOBS, /datum/job/exploration_leader, /datum/job/explorer_pilot,\
+									/datum/job/officer, /datum/job/warden, /datum/job/detective, /datum/job/iaa,\
+									/datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer,/datum/job/qm,\
+									/datum/job/senior_engineer, /datum/job/senior_doctor, /datum/job/psychiatrist,\
+									/datum/job/stowaway, /datum/job/senior_scientist),
 	)
 #undef HUMAN_ONLY_JOBS
 
