@@ -156,12 +156,6 @@ proc/get_radio_key_from_channel(var/channel)
 		message = "<font face = 'Comic Sans MS'>[message]</font>"
 		verb = "squeaks"
 		. = 1
-	//infinity code start
-	else if(lisp)
-		message = lisp(message, lisp)
-		verb = "lisps"
-		. = 1
-	//infinity code end
 
 	message_data[1] = message
 	message_data[2] = verb

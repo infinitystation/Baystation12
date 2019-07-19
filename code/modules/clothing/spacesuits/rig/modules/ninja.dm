@@ -37,12 +37,14 @@
 
 	var/mob/living/carbon/human/H = holder.wearer
 
+	// infinity ahead
 	if(istype(H.get_active_hand(), /obj/item/weapon/melee/energy/blade/))
 		H.drop_item()
 
 	if(istype(H.get_inactive_hand(), /obj/item/weapon/melee/energy/blade))
 		H.swap_hand()
 		H.drop_item()
+	//infinity end
 
 	if(H.add_cloaking_source(src))
 		anim(H, 'icons/effects/effects.dmi', "electricity",null,20,null)

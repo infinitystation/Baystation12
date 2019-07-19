@@ -62,7 +62,8 @@ validPrefixes = [
     'maptweak',
     'spellcheck',
     'experiment',
-	'admin'
+    'balance',
+    'admin'
 ]
 
 

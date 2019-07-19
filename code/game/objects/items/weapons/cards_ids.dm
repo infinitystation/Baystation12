@@ -411,6 +411,12 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/weapon/card/id/centcom/ERT/New()
 	..()
 //	access |= get_all_station_access() inf-dev
+	access |= list(
+		access_security, access_medical, access_engine, access_network, access_maint_tunnels,
+		access_emergency_storage, access_bridge, access_janitor, access_kitchen,
+		access_cargo, access_mailsorting, access_RC_announce, access_keycard_auth,
+		access_external_airlocks, access_eva, access_cent_creed
+		)
 
 /obj/item/weapon/card/id/foundation
 	name = "\improper Foundation warrant card"

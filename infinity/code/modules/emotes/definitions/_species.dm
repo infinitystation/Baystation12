@@ -16,3 +16,8 @@
 		/decl/emote/audible/laugh/resomi,
 		/decl/emote/audible/scream/resomi,
 		)
+
+/datum/species/monkey
+	default_emotes = list(
+		/decl/emote/audible/scream/monkey
+		)

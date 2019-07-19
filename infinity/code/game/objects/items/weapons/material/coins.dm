@@ -50,6 +50,7 @@
 
 /obj/item/weapon/material/coin/attack_self(var/mob/user)
 	coinflip(user, 0)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 
 /obj/item/weapon/material/coin/throw_impact(atom/hit_atom, speed, user)
 	..()

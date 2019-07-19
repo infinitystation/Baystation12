@@ -301,6 +301,15 @@
 		deactivate()
 		return
 
+	// infinity ahead
+	if(M.back && istype(M.back, /obj/item/weapon/rig/light/ninja))
+		var/obj/item/weapon/rig/light/ninja/rig = M.back
+		if(rig)
+			var/obj/item/rig_module/stealth_field/S = locate() in rig.installed_modules
+			if(S && M.is_cloaked())
+				S.deactivate()
+	// infinity end
+
 	var/obj/item/weapon/melee/energy/blade/blade = new(M)
 	blade.creator = M
 	M.put_in_hands(blade)

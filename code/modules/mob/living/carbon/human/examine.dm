@@ -287,12 +287,6 @@
 	if(digitalcamo)
 		msg += "[T.He] [T.is] repulsively uncanny!\n"
 
-	// infinity code start
-	var/obj/item/organ/external/head/O = locate(/obj/item/organ/external/head) in organs
-	if(O && O.get_teeth() < O.max_teeth)
-		msg += "<span class='warning'><B>[O.get_teeth() <= 0 ? "All" : "[O.max_teeth - O.get_teeth()]"] of [T.his] teeth are missing!</B></span>\n"
-	// infinity code end
-
 	if(hasHUD(user, HUD_SECURITY))
 		var/perpname = "wot"
 		var/criminal = "None"

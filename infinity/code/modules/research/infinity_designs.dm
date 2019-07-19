@@ -133,21 +133,84 @@
 	name = "lambda battery module"
 	id = "bat_lambda"
 	req_tech = list(TECH_POWER = 7, TECH_ENGINEERING = 6)
-	build_type = PROTOLATHE
 	materials = list(MATERIAL_STEEL = 3200)
 	build_path = /obj/item/weapon/computer_hardware/battery_module/lambda
 	sort_string = "VBAEK"
 
+/datum/design/item/bluespace/bs_silk
+	name = "BlueSpace Snare"
+	id = "bs_snare"
+	req_tech = list(TECH_BLUESPACE = 5, TECH_DATA = 4)	
+	materials = list(MATERIAL_STEEL = 3200)
+	build_path = /obj/item/clothing/accessory/bs_silk
+	sort_string = "VAFAF"
+
+
+
+/datum/design/item/paimod
+	req_tech = list(TECH_DATA = 2)
+	materials = list(MATERIAL_STEEL = 500)
+
+
+/datum/design/item/paimod/memory
+	req_tech = list(TECH_DATA = 3)
+/datum/design/item/paimod/memory/standart
+	name = "Standart memory PAImod"
+	id = "pai_mem_mod_std"
+	build_path = /obj/item/weapon/paimod/memory/standart
+	sort_string = "VBAGA"
+/datum/design/item/paimod/memory/advanced
+	name = "Advanced memory PAImod"
+	id = "pai_mem_mod_adv"
+	req_tech = list(TECH_DATA = 4)
+	build_path = /obj/item/weapon/paimod/memory/advanced
+	sort_string = "VBAGB"
+/datum/design/item/paimod/memory/lambda
+	name = "Lambda memory PAImod"
+	id = "pai_mem_mod_lmbd"
+	req_tech = list(TECH_DATA = 5)
+	build_path = /obj/item/weapon/paimod/memory/lambda
+	sort_string = "VBAGC"
+
+
+/datum/design/item/paimod/hack_speed
+	req_tech = list(TECH_DATA = 4)
+/datum/design/item/paimod/hack_speed/standart
+	name = "Standart Hack Speed PAIMod"
+	id = "pai_hack_mod_std"
+	build_path = /obj/item/weapon/paimod/hack_speed/standart
+	sort_string = "VBAGD"
+/datum/design/item/paimod/hack_speed/advanced
+	name = "Advanced Hack Speed PAIMod"
+	id = "pai_hack_mod_adv"
+	req_tech = list(TECH_DATA = 5)
+	build_path = /obj/item/weapon/paimod/hack_speed/advanced
+	sort_string = "VBAGE"
+
+
+/datum/design/item/paimod/hack_camo
+	name = "Hack Camouflage PAIMod"
+	id = "pai_hc_mod"
+	req_tech = list(TECH_DATA = 5, TECH_ENGINEERING = 4)
+	build_path = /obj/item/weapon/paimod/hack_camo
+	sort_string = "VBAGF"
+/datum/design/item/paimod/advanced_holo
+	name = "Advanced Holo Mod"
+	id = "pai_ah_mod"
+	req_tech = list(TECH_DATA = 3, TECH_MAGNET = 2)
+	build_path = /obj/item/weapon/paimod/advanced_holo
+	sort_string = "VBAGG"
+
 // CIRCUITS
 
-datum/design/circuit/telesci_console
+/datum/design/circuit/telesci_console
 	name = "telepad control console"
 	id = "telesci_console"
 	req_tech = list(TECH_DATA = 3, TECH_BLUESPACE = 2)
 	build_path = /obj/item/weapon/circuitboard/telesci_console
 	sort_string = "HAAAD"
 
-datum/design/circuit/telepad
+/datum/design/circuit/telepad
 	name = "telepad board"
 	id = "telepad"
 	req_tech = list(TECH_DATA = 4, TECH_ENGINEERING = 3, TECH_MATERIAL = 3, TECH_BLUESPACE = 4)
@@ -161,3 +224,16 @@ datum/design/circuit/telepad
 	build_path = /obj/item/weapon/circuitboard/bsa
 	sort_string = "KCAAG"
 
+/datum/design/circuit/bs_silk_control
+	name = "bluespace snare control"
+	id = "bsc"
+	req_tech = list(TECH_BLUESPACE = 5, TECH_DATA = 4)
+	build_path = /obj/item/weapon/circuitboard/bssilk/console
+	sort_string = "KCAAH"
+
+/datum/design/circuit/bs_silk_hub
+	name = "bluespace snare hub"
+	id = "bsh"
+	req_tech = list(TECH_BLUESPACE = 5, TECH_DATA = 4)
+	build_path = /obj/item/weapon/circuitboard/bssilk/hub
+	sort_string = "KCAAI"

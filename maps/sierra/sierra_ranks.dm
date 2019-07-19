@@ -50,7 +50,6 @@
 			/datum/mil_branch/skrell_fleet),
 		/datum/species/diona    = list(
 			/datum/mil_branch/contractor,
-			/datum/mil_branch/employee,
 			/datum/mil_branch/alien,
 			/datum/mil_branch/skrell_fleet),
 		/datum/species/tajaran  = list(
@@ -67,7 +66,8 @@
 	)
 
 	species_to_branch_whitelist = list(
-		/datum/species/diona      = list(/datum/mil_branch/civilian),
+		/datum/species/diona      = list(/datum/mil_branch/civilian,
+		 								 /datum/mil_branch/employee),
 		/datum/species/nabber     = list(/datum/mil_branch/contractor),
 		/datum/species/skrell     = list(/datum/mil_branch/civilian,
 		 								 /datum/mil_branch/employee,
