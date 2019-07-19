@@ -141,41 +141,50 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "brig"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	req_access = list(access_brig)
+/*
+		BRIGGED objective check begin ~Archemagus INF@DEV aka Laxesh
+*/
+/area/security/brig/Entered(var/mob/A)	// Kinda shity. But...
+	.=..(A)
+	for(var/datum/antagonist/antag in GLOB.all_antag_types_)
+		for(var/datum/mind/P in antag.current_antagonists)
+			if(P.objectives && P.objectives.len)
+				for(var/datum/objective/O in P.objectives)
+					if(istype(O, /datum/objective/anti_revolution/brig) || istype(O, /datum/objective/brig))
+						if(O.target == A.mind)
+							O.check_completion()
+							register_brigged(src, A, O)
 
-/area/security/brig/Initialize()
-	.=..()
-	GLOB.entered_event.register(src, src, /area/security/brig/proc/register_brigged)
-	GLOB.exited_event.register(src, src, /area/security/brig/proc/clear_brigged)
+/area/security/brig/Exited(A)
+	if(istype(A,/mob/living))
+		clear_brigged(A)
+	..()
 
 /area/security/brig/Destroy()
-	GLOB.entered_event.unregister(src, src)
-	GLOB.exited_event.unregister(src, src)
-	for(var/mob/living/A in contents)
-		clear_brigged_mob(A)
+	for(var/mob/A in contents)
+		clear_brigged(A)
 	return ..()
 
-/area/security/brig/proc/check_brigged(var/mob/living/equipper, var/obj/item/item, var/slot)
-	if(istype(equipper) && equipper.mind)
-		equipper.mind.is_brigged(0)
+/area/security/brig/proc/register_brigged(var/atom/entered, var/mob/enterer, var/datum/objective/O)
+	GLOB.destroyed_event.register(enterer, entered, /area/security/brig/proc/clear_brigged)
+	GLOB.mob_equipped_event.register(enterer, O, /datum/objective/proc/check_completion)
+	GLOB.mob_unequipped_event.register(enterer, O, /datum/objective/proc/check_completion)
 
-/area/security/brig/proc/register_brigged(var/atom/entered, var/atom/movable/enterer, var/old_loc)
-	var/mob/living/A = enterer
-	if(istype(A) && A.mind)
-		A.mind.is_brigged(0)
-		GLOB.destroyed_event.register(A, entered, /area/security/brig/proc/clear_brigged_mob)
-		GLOB.mob_equipped_event.register(A, entered, /datum/mind/proc/is_brigged)
-		GLOB.mob_unequipped_event.register(A, entered, /datum/mind/proc/is_brigged)
-
-/area/security/brig/proc/clear_brigged_mob(var/destroyed)
-	clear_brigged(src, destroyed)
-
-/area/security/brig/proc/clear_brigged(var/atom/entered, var/atom/movable/enterer, var/new_loc)
-	var/mob/living/A = enterer
-	if(istype(A) && A.mind)
-		GLOB.destroyed_event.unregister(A, entered)
-		GLOB.mob_equipped_event.unregister(A, entered)
-		GLOB.mob_unequipped_event.unregister(A, entered)
-
+/area/security/brig/proc/clear_brigged(var/mob/enterer)
+	if(enterer.mind)
+		GLOB.destroyed_event.unregister(enterer, src)
+		for(var/datum/antagonist/antag in GLOB.all_antag_types_)
+			for(var/datum/mind/P in antag.current_antagonists)
+				if(P.objectives && P.objectives.len)
+					for(var/datum/objective/O in P.objectives)
+						if(istype(O, /datum/objective/anti_revolution/brig) || istype(O, /datum/objective/brig))
+							if(O.target == enterer.mind)
+								O.check_completion()
+								GLOB.mob_equipped_event.unregister(enterer, O)
+								GLOB.mob_unequipped_event.unregister(enterer, O)
+/*
+		BRIGGED objective check end
+*/
 /area/security/prison
 	name = "\improper Security - Prison Wing"
 	icon_state = "sec_prison"
