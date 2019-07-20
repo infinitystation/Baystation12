@@ -57,6 +57,8 @@
 		/area/vacant/monitoring = NO_SCRUBBER|NO_VENT,
 		//area/vacant/cabin = 0,
 		/area/rnd/xenobiology/atmos  = NO_SCRUBBER|NO_VENT,
+		/area/bridge/hall/level_two = 0,
+		/area/bridge/nano = 0,
 //EXOPLANETS AND SPACE RUINS START HERE,
 		/area/exoplanet          = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/exoplanet/desert   = NO_SCRUBBER|NO_VENT|NO_APC,

@@ -166,7 +166,7 @@
 	turf_initializer = /decl/turf_initializer/maintenance/heavy
 
 /area/maintenance/abandoned_common
-	name = "Abandoned Ñommon Room"
+	name = "Abandoned Common Room"
 	icon_state = "music_room"
 
 //First Deck (Z-3)
