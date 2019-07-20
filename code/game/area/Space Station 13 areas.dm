@@ -142,18 +142,16 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	req_access = list(access_brig)
 /*
-		BRIGGED objective check begin ~Archemagus INF@DEV aka Laxesh
+		BRIGGED antag objective check begin ~Archemagus INF@DEV aka Laxesh
 */
-/area/security/brig/Entered(var/mob/A)	// Kinda shity. But...
+/area/security/brig/Entered(var/mob/A)	// Kinda dirty. But...
 	.=..(A)
-	for(var/datum/antagonist/antag in GLOB.all_antag_types_)
-		for(var/datum/mind/P in antag.current_antagonists)
-			if(P.objectives && P.objectives.len)
-				for(var/datum/objective/O in P.objectives)
-					if(istype(O, /datum/objective/anti_revolution/brig) || istype(O, /datum/objective/brig))
-						if(O.target == A.mind)
-							O.check_completion()
-							register_brigged(src, A, O)
+	if(istype(A) && A.mind)
+		for(var/datum/objective/O in all_objectives)
+			if(istype(O, /datum/objective/anti_revolution/brig) || istype(O, /datum/objective/brig))
+				if(O.target == A.mind)
+					O.check_completion()
+					register_brigged(src, A, O)
 
 /area/security/brig/Exited(A)
 	if(istype(A,/mob/living))
@@ -170,20 +168,17 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	GLOB.mob_equipped_event.register(enterer, O, /datum/objective/proc/check_completion)
 	GLOB.mob_unequipped_event.register(enterer, O, /datum/objective/proc/check_completion)
 
-/area/security/brig/proc/clear_brigged(var/mob/enterer)
-	if(enterer.mind)
-		GLOB.destroyed_event.unregister(enterer, src)
-		for(var/datum/antagonist/antag in GLOB.all_antag_types_)
-			for(var/datum/mind/P in antag.current_antagonists)
-				if(P.objectives && P.objectives.len)
-					for(var/datum/objective/O in P.objectives)
-						if(istype(O, /datum/objective/anti_revolution/brig) || istype(O, /datum/objective/brig))
-							if(O.target == enterer.mind)
-								O.check_completion()
-								GLOB.mob_equipped_event.unregister(enterer, O)
-								GLOB.mob_unequipped_event.unregister(enterer, O)
+/area/security/brig/proc/clear_brigged(var/mob/enterer)	// We need find objective to unregister event. So... Here we come again...
+	if(istype(enterer) && enterer.mind)
+		for(var/datum/objective/O in all_objectives)
+			if(istype(O, /datum/objective/anti_revolution/brig) || istype(O, /datum/objective/brig))
+				if(O.target == enterer.mind)
+					O.check_completion()
+					GLOB.destroyed_event.unregister(enterer, src)
+					GLOB.mob_equipped_event.unregister(enterer, O)
+					GLOB.mob_unequipped_event.unregister(enterer, O)
 /*
-		BRIGGED objective check end
+		BRIGGED antag objective check end
 */
 /area/security/prison
 	name = "\improper Security - Prison Wing"
