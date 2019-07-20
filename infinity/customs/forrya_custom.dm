@@ -1,6 +1,29 @@
 /obj/item/weapon/clothingbag/forrya_tajar/Initialize()
 	new /obj/item/clothing/accessory/inf_pin/ccapin(src)
 	new /obj/item/clothing/accessory/badge/tajamc(src)
+	new /obj/item/clothing/shoes/workboots/winta(src)
+	new /obj/item/weapon/storage/backpack/satchel/wintaforba(src)
+
+/obj/item/clothing/shoes/workboots/winta
+	name = "small winter boots"
+	desc = "A pair of steel-toed winter boots designed for use in extremely settings. But their size and shape is unusual."
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(slot_shoes_str = CUSTOM_ITEM_MOB)
+	icon_state = "wintabuts"
+	item_state = "wintabuts"
+	body_parts_covered = FEET
+	cold_protection = FEET
+	item_flags = ITEM_FLAG_THICKMATERIAL
+	min_cold_protection_temperature = T0C - 175
+	max_heat_protection_temperature = T0C +55
+	species_restricted = list(SPECIES_TAJARA)
+
+/obj/item/weapon/storage/backpack/satchel/wintaforba
+	name = "winter satchel"
+	desc = "White satchel with winter camouflage."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "satchel-winta"
+	item_state = "satchel-winta"
 
 /obj/item/clothing/suit/storage/hooded/wintercoat/wintercam
 	name = "Winter cape-tent"
@@ -17,7 +40,18 @@
 	sprite_sheets = list(
 		SPECIES_UNATHI = CUSTOM_ITEM_MOB,
 	)
-	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_HUMAN, SPECIES_VOX, SPECIES_IPC, SPECIES_SKRELL, SPECIES_SPACER, SPECIES_GRAVWORLDER, SPECIES_TRITONIAN, SPECIES_VATGROWN)
+	species_restricted = list(SPECIES_TAJARA)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|HANDS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
+	item_flags = ITEM_FLAG_THICKMATERIAL
+	min_cold_protection_temperature = T0C - 175
+	max_heat_protection_temperature = T0C +55
+	valid_accessory_slots = list(ACCESSORY_SLOT_ARMOR_C,ACCESSORY_SLOT_ARMBAND,ACCESSORY_SLOT_UTILITY,ACCESSORY_SLOT_ARMBAND,ACCESSORY_SLOT_RANK,ACCESSORY_SLOT_DEPT,ACCESSORY_SLOT_DECOR,ACCESSORY_SLOT_MEDAL,ACCESSORY_SLOT_INSIGNIA,ACCESSORY_SLOT_OVER)
+	slots = 4
+	allowed = list (/obj/item/weapon/pen,/obj/item/weapon/paper,/obj/item/weapon/storage/fancy/cigarettes,/obj/item/weapon/storage/box/matches,/obj/item/weapon/reagent_containers/food/drinks/flask, /obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/weapon/gun,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/melee/energy/sword,/obj/item/weapon/handcuffs,/obj/item/weapon/storage/briefcase/inflatable)
+	siemens_coefficient = 0.6
+	gas_transfer_coefficient = 0.90
+	flags_inv = HIDEJUMPSUIT|HIDETAIL
 
 /obj/item/clothing/suit/storage/hooded/wintercoat/wintercam/on_update_icon()
 	if(suittoggled)
@@ -43,7 +77,14 @@
 	sprite_sheets = list(
 		SPECIES_UNATHI = CUSTOM_ITEM_MOB,
 	)
-	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_HUMAN, SPECIES_VOX, SPECIES_IPC, SPECIES_SKRELL, SPECIES_SPACER, SPECIES_GRAVWORLDER, SPECIES_TRITONIAN, SPECIES_VATGROWN)
+	species_restricted = list(SPECIES_TAJARA)
+	body_parts_covered = HEAD|FACE
+	cold_protection = HEAD
+	item_flags = ITEM_FLAG_THICKMATERIAL
+	min_cold_protection_temperature = T0C - 175
+	max_heat_protection_temperature = T0C +55
+	flags_inv = HIDEEARS | BLOCKHAIR
+	gas_transfer_coefficient = 0.90
 	action_button_name = "Camouflaging"
 	var/can_use = 1
 	var/obj/effect/dummy/chameleon/active_dummy = null
@@ -69,14 +110,14 @@
 		eject_all()
 		qdel(active_dummy)
 		active_dummy = null
-		to_chat(usr, "<span class='notice'>You deactivate the [src].</span>")
+		to_chat(usr, "<span class='notice'>You stop hiding under [src].</span>")
 	else
 		var/obj/O = new saved_item(src)
 		if(!O) return
 		var/obj/effect/dummy/cam/C = new /obj/effect/dummy/cam(usr.loc)
 		C.activate(O, usr, saved_icon, saved_icon_state, saved_overlays, src)
 		qdel(O)
-		to_chat(usr, "<span class='notice'>You activate the [src].</span>")
+		to_chat(usr, "<span class='notice'>You hide under [src].</span>")
 
 /obj/item/clothing/head/winterhood/wintercam/proc/disrupt(var/delete_dummy = 1)
 	if(active_dummy)
