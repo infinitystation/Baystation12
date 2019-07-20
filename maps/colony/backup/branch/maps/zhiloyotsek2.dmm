@@ -6,7 +6,7 @@
 "af" = (/turf/simulated/wall,/area/space)
 "ag" = (/obj/structure/fitness/punchingbag,/turf/simulated/floor/carpet/red,/area/space)
 "ah" = (/obj/machinery/light,/turf/simulated/floor/tiled/dark/monotile,/area/space)
-"ai" = (/obj/machinery/light/small{dir = 4},/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/obj/structure/hygiene/sink{dir = 4; icon_state = "sink"; pixel_x = 22; pixel_y = 0},/obj/item/weapon/storage/mirror{step_x = 31},/turf/simulated/floor/tiled/freezer,/area/space)
+"ai" = (/obj/machinery/light/small{dir = 4},/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/obj/structure/hygiene/sink{dir = 4; icon_state = "sink"; pixel_x = 22},/obj/item/weapon/storage/mirror{pixel_x = 32},/turf/simulated/floor/tiled/freezer,/area/space)
 "aj" = (/obj/effect/floor_decal/corner/blue{icon_state = "corner_white"; dir = 4},/obj/effect/floor_decal/corner/blue{icon_state = "corner_white"; dir = 8},/obj/machinery/disposal,/turf/simulated/floor/tiled/white,/area/space)
 "ak" = (/turf/simulated/floor/reinforced{name = "Holodeck Projector Floor"},/area/space)
 "al" = (/obj/machinery/cooker/fryer,/turf/simulated/floor/tiled/freezer,/area/space)
@@ -18,7 +18,7 @@
 "ar" = (/obj/structure/closet/secure_closet/freezer/meat,/turf/simulated/floor/tiled/freezer,/area/space)
 "as" = (/obj/structure/closet/secure_closet/freezer/kitchen,/turf/simulated/floor/tiled/freezer,/area/space)
 "at" = (/obj/machinery/icecream_vat,/turf/simulated/floor/tiled/freezer,/area/space)
-"au" = (/obj/machinery/chem_master/condimaster{name = "CondiMaster Neo"; pixel_x = 0},/turf/simulated/floor/tiled/freezer,/area/space)
+"au" = (/obj/machinery/chem_master/condimaster{name = "CondiMaster Neo"},/turf/simulated/floor/tiled/freezer,/area/space)
 "av" = (/obj/effect/floor_decal/corner/green/border{icon_state = "bordercolor"; dir = 9},/obj/machinery/botany,/turf/simulated/floor/tiled/white,/area/space)
 "aw" = (/obj/effect/floor_decal/corner/green/border{icon_state = "bordercolor"; dir = 1},/turf/simulated/floor/tiled/white,/area/space)
 "ax" = (/obj/effect/floor_decal/corner/green/border{icon_state = "bordercolor"; dir = 1},/obj/machinery/botany,/turf/simulated/floor/tiled/white,/area/space)
@@ -176,7 +176,7 @@
 "dt" = (/obj/machinery/vending/hydroseeds,/turf/simulated/floor/tiled/white/monotile,/area/space)
 "du" = (/obj/effect/floor_decal/steeldecal/steel_decals6{icon_state = "steel_decals6"; dir = 6},/turf/simulated/floor/tiled/white/monotile,/area/space)
 "dv" = (/obj/effect/floor_decal/steeldecal/steel_decals6{icon_state = "steel_decals6"; dir = 5},/turf/simulated/floor/tiled/white/monotile,/area/space)
-"dw" = (/obj/structure/hygiene/sink{dir = 4; icon_state = "sink"; pixel_x = 22; pixel_y = 0},/obj/structure/table/steel,/turf/simulated/floor/tiled/white/monotile,/area/space)
+"dw" = (/obj/structure/hygiene/sink{dir = 4; icon_state = "sink"; pixel_x = 22},/obj/structure/table/steel,/turf/simulated/floor/tiled/white/monotile,/area/space)
 "dx" = (/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/structure/flora/ausbushes/algae/glowing,/turf/simulated/floor/grass,/area/space)
 "dy" = (/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/structure/flora/ausbushes/algae/random,/turf/simulated/floor/grass,/area/space)
 "dz" = (/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/structure/flora/ausbushes/algae/glowing,/turf/simulated/floor/grass,/area/space)
@@ -355,6 +355,7 @@
 "gQ" = (/obj/structure/table/rack{dir = 8},/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/structure/railing/mapped,/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/random/maintenance,/turf/simulated/floor/plating,/area/space)
 "gR" = (/obj/structure/foamedmetal,/obj/structure/catwalk,/turf/simulated/floor/plating,/area/space)
 "gS" = (/obj/structure/table/rack{dir = 8},/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/random/maintenance,/obj/random/loot,/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/turf/simulated/floor/plating,/area/space)
+"gT" = (/obj/machinery/light/small{dir = 4},/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/obj/structure/hygiene/sink{dir = 4; icon_state = "sink"; pixel_x = 22},/obj/item/weapon/storage/mirror{pixel_x = 32},/turf/simulated/floor/tiled/freezer,/area/space)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -449,7 +450,7 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafdjeyafgKdjafafaHaHaHaHaHafafdjafaRfxaHaDafahbsbrafaNaOaBcraBaOehafaDaDaDaDaDfJaBfHfIfIaffeafaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafdjgQafdPdjafafaHaHaHaHaHafafdjafafafafazafafafafafafafafafafafafafafafafafafafafafafafaffeafaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafdjdjgRdjdjafafaHaHaHaHaHafafdjafaRaSffaTffaUaRafaVaWaXaYaoafbabbbcaYaoafbdbebfaYaoaffefefeafaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafdjdPafgSdjafafaHaHaHaHaHafafdjafaRbwaHaTaHbxaRafbybzbAbBaiafbDbEbFbBaiafbGbHbIbBaiaffefefeafaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafdjdPafgSdjafafaHaHaHaHaHafafdjafaRbwaHaTaHbxaRafbybzbAbBaiafbDbEbFbBaiafbGbHbIbBgTaffefefeafaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafdjfaafcedjafafafafafafafafafafafaRbwaHaTaHbxaRafbNbObPbQbRafbSbTbUbQbRafbVbWbXbQbRaffefefeafaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafdjdPafafafafafckaHaDaHckafafafafaRclaHaTaHcmaRafafazafafafafafazafafafafafazafafafafafafafafafaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafdjgQafcsctclcuaHaHaDaHaHcvafcsctclaHaHaTaHaHcmctclcwcmcxctcxclcycmcxctcxclcwcmctcxaffyfyfyfyafaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

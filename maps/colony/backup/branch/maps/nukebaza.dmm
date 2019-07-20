@@ -20,11 +20,10 @@
 "at" = (/obj/structure/table/steel_reinforced,/obj/machinery/recharger,/turf/simulated/floor/tiled/steel_grid,/area/syndicate_mothership)
 "au" = (/obj/machinery/door/unpowered/simple/wood,/turf/simulated/wall/mahogany,/area/syndicate_mothership)
 "av" = (/obj/effect/floor_decal/snow,/turf/simulated/floor/plating,/area/syndicate_mothership)
-"aw" = (/obj/machinery/door/blast/regular/admin{dir = 4; id = "blinblyat"},/turf/simulated/floor/plating,/area/syndicate_mothership)
+"aw" = (/obj/machinery/button/remote/blast_door{id = "blinblyat"; pixel_y = 24},/turf/simulated/floor/plating,/area/syndicate_mothership)
 "ax" = (/turf/simulated/floor/plating,/area/syndicate_mothership)
 "ay" = (/obj/effect/floor_decal/borderfloorblack{icon_state = "borderfloor_white"; dir = 8},/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"; tag = "icon-railing0 (EAST)"},/turf/simulated/floor/tiled/steel_grid,/area/syndicate_mothership)
 "az" = (/obj/effect/floor_decal/floordetail/traction,/obj/effect/floor_decal/snow,/obj/effect/floor_decal/floordetail,/turf/simulated/floor/plating,/area/syndicate_mothership)
-"aA" = (/obj/machinery/button/remote/blast_door{id = "blinblyat"; step_y = 31},/turf/simulated/floor/plating,/area/syndicate_mothership)
 "aB" = (/obj/effect/floor_decal/floordetail/traction,/obj/effect/floor_decal/floordetail/tiled,/obj/effect/floor_decal/floordetail,/turf/simulated/floor/plating,/area/syndicate_mothership)
 "aC" = (/obj/item/device/multitool,/obj/item/device/multitool,/obj/item/weapon/tape_roll,/obj/item/weapon/tape_roll,/obj/structure/table/rack/dark,/turf/simulated/floor/tiled/steel_grid,/area/syndicate_mothership)
 "aD" = (/obj/machinery/door/unpowered/simple/wood,/turf/simulated/floor/wood/mahogany,/area/syndicate_mothership)
@@ -85,7 +84,7 @@
 "bG" = (/obj/machinery/portable_atmospherics/powered/scrubber,/obj/structure/railing/mapped,/obj/machinery/light/halogen{icon_state = "tube_map"; dir = 1},/turf/simulated/floor/tiled/steel_grid,/area/syndicate_mothership)
 "bH" = (/obj/structure/flora/pottedplant/dead,/turf/simulated/floor/tiled/steel_grid,/area/syndicate_mothership)
 "bI" = (/obj/effect/floor_decal/snow,/obj/machinery/light/small/red{icon_state = "bulb_map"; dir = 1},/turf/simulated/floor/plating,/area/syndicate_mothership)
-"bJ" = (/obj/item/weapon/storage/mirror{pixel_x = -32},/obj/structure/hygiene/sink{dir = 8; icon_state = "sink"; pixel_x = -22; pixel_y = 0},/turf/unsimulated/floor{icon_state = "freezerfloor"; dir = 2},/area/syndicate_mothership)
+"bJ" = (/obj/item/weapon/storage/mirror{pixel_x = -32},/obj/structure/hygiene/sink{dir = 8; icon_state = "sink"; pixel_x = -22},/turf/unsimulated/floor{icon_state = "freezerfloor"; dir = 2},/area/syndicate_mothership)
 "bK" = (/obj/structure/flora/pottedplant/bamboo,/turf/unsimulated/floor{icon_state = "freezerfloor"; dir = 2},/area/syndicate_mothership)
 "bL" = (/obj/machinery/door/airlock{id_tag = "syndie_toilet"; name = "nuclear toilet"},/turf/unsimulated/floor{icon_state = "freezerfloor"; dir = 2},/area/syndicate_mothership)
 "bM" = (/obj/machinery/button/remote/airlock{id = "syndie_toilet"; name = "lock"; pixel_y = -26; req_access = list("ACCESS_SYNDICATE"); specialfunctions = 4},/turf/unsimulated/floor{icon_state = "freezerfloor"; dir = 2},/area/syndicate_mothership)
@@ -200,7 +199,7 @@
 "dR" = (/obj/structure/flora/pottedplant/largebush,/turf/simulated/floor/lino,/area/syndicate_mothership)
 "dS" = (/obj/structure/flora/pottedplant/subterranean,/turf/simulated/floor/lino,/area/syndicate_mothership)
 "dT" = (/obj/structure/flora/pottedplant{icon_state = "plant-22"},/turf/simulated/floor/shuttle/red{icon_state = "floor7"},/area/syndicate_mothership)
-"dU" = (/obj/structure/table/steel_reinforced,/obj/item/weapon/storage/fancy/cigar,/obj/item/weapon/flame/lighter/zippo,/obj/machinery/button/remote/blast_door{id = "blinblyat"; step_y = 0},/turf/simulated/floor/tiled/techfloor/grid,/area/syndicate_mothership)
+"dU" = (/obj/structure/table/steel_reinforced,/obj/item/weapon/storage/fancy/cigar,/obj/item/weapon/flame/lighter/zippo,/obj/machinery/button/remote/blast_door{id = "blinblyat"},/turf/simulated/floor/tiled/techfloor/grid,/area/syndicate_mothership)
 "dV" = (/obj/structure/flora/pottedplant/mysterious,/turf/simulated/floor/tiled/techfloor/grid,/area/syndicate_mothership)
 
 (1,1,1) = {"
@@ -212,11 +211,11 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababababacacacacac
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababababacacacacacacacacacacacacacacacacadahajahahadahahajahadacacacac
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabacacacacakakakakakakakakakakakakakakacadadalamahadahamaladadacacacac
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabacakakakakananaQananaoapapbGarbHatakacadadadadauadauadadadadacacacac
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabIawdiaxaAaxaxaxaxaxaxayasasasasasdjakacadalamadahdkahadamaladacacacac
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabIdIdiaxawaxaxaxaxaxaxayasasasasasdjakacadalamadahdkahadamaladacacacac
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaazcYaBaBaBaBaBaBaxaxaxayasasasasasaCakacadahahauahahahaDahahadacacacac
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaavawaxaxaxaxaxaxaBaxaxaEasasasasasaFakacadaGagadahahahadagaGadacacacac
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaavdIaxaxaxaxaxaxaBaxaxaEasasasasasaFakacadaGagadahahahadagaGadacacacac
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaazcYaBaBaBaBaxaxaxaBaxaEasasasasasaHakacadaIafaddlahdmadafaIadacacacac
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaavawaxaxaxaxaBaxaxaBaxayasasasasasaJakacadadadaddGahdHadadadadacacacac
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaavdIaxaxaxaxaBaxaxaBaxayasasasasasaJakacadadadaddGahdHadadadadacacacac
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadndIdoaxaxaxaxaBaxaBaxayasasasasasdpakacadalamadahahahadamaladacacacac
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabacakakakakaLaMaNaOaPdqaRaSaTaUasaVakacadahahaDahahahaDahahadacacacac
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabacacacacakdraWaXaYdsakakakakakaZakakacadaGagadahahahadagaGadacacacac
