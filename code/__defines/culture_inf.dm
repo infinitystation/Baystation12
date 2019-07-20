@@ -25,8 +25,8 @@
 //#define CULTURE_RESOMI_SAVEEL     		"Saveel, Sav"
 #define CULTURE_RESOMI_REFUGEE 			"Imperial refugee"
 #define CULTURE_RESOMI_NEWGENERATION	"New generation"
-//#define CULTURE_RESOMI_LOSTCOLONYRICH "A native of a thriving "lost" colony"
-//#define CULTURE_RESOMI_LOSTCOLONYPOOR  "A native of a impoverished "lost" colony"
+#define CULTURE_RESOMI_LOSTCOLONYRICH  "A native of a thriving lost colony"
+#define CULTURE_RESOMI_LOSTCOLONYPOOR  "A native of a impoverished lost colony"
 
 //#define FACTION_RESOMI     |There are no fractions, as well as the soil for their appearance.
 
