@@ -3245,6 +3245,7 @@
 #include "infinity\code\modules\organs\external\species\resomi.dm"
 #include "infinity\code\modules\organs\internal\cancer.dm"
 #include "infinity\code\modules\organs\internal\species\resomi.dm"
+#include "infinity\code\modules\organs\internal\species\unathi.dm"
 #include "infinity\code\modules\power\apc.dm"
 #include "infinity\code\modules\power\cell.dm"
 #include "infinity\code\modules\power\lighting.dm"
