@@ -165,6 +165,10 @@
 	icon_state = "hydro"
 	turf_initializer = /decl/turf_initializer/maintenance/heavy
 
+/area/maintenance/abandoned_common
+	name = "Abandoned Ñommon Room"
+	icon_state = "music_room"
+
 //First Deck (Z-3)
 /area/maintenance/firstdeck
 	name = "First Deck Maintenance"
@@ -486,10 +490,33 @@
 	sound_env = MEDIUM_SOFTFLOOR
 	req_access = list(access_captain)
 
+/area/crew_quarters/heads/captain
+	req_access = list(access_captain)
+	icon_state = "heads_cap"
+
+/area/crew_quarters/heads/captain/office_anteroom
+	name = "Command - Captain's Office Anteroom"
+	sound_env = MEDIUM_SOFTFLOOR
+
+/area/crew_quarters/heads/captain/beach
+	icon_state = "heads_cap"
+	name = "Command - Captain's Beach Room"
+	sound_env = PLAIN
+	req_access = list()
+
+/area/crew_quarters/heads/captain/secret_room/level_one
+	name = "Captain's toilet"
+
+/area/crew_quarters/heads/captain/secret_room/level_two
+	name = "Sys#tem e%or: bay not re#&gnized"
+
 /area/crew_quarters/heads/office/hop
 	icon_state = "heads_hop"
 	name = "Command - HoP's Office"
 	req_access = list(access_hop)
+
+/area/crew_quarters/heads/office/hop/cobed
+	name = "Command - HoP's Quarters"
 
 /area/crew_quarters/heads/office/rd
 	icon_state = "heads_rd"
@@ -521,14 +548,28 @@
 	icon_state = "bridge"
 	req_access = list(access_bridge)
 
+/area/bridge/nano
+	icon_state = "bridge_nano"  // Yes, this is exactly what no one has ever done, probably.
+	dynamic_lighting = 1
+
 /area/bridge/meeting_room
 	name = "Meeting Room"
 	ambience = list()
 	sound_env = MEDIUM_SOFTFLOOR
 
+/area/bridge/hall/level_one
+	name = "Bridge Hall Level One"
+
+/area/bridge/hall/level_two
+	name = "Bridge Hall Level Two"
+
 /area/bridge/lobby
 	name = "Bridge Lobby"
 	req_access = list()
+
+/area/bridge/gun/energy
+	name = "Ship laser weapons"
+	icon_state = "bridge_gun"
 
 /* not found on Sierra
 /area/bridge/canteen
@@ -885,6 +926,10 @@
 /area/crew_quarters/sleep/cryo
 	name = "Cryogenic Storage"
 	icon_state = "Sleep"
+
+/area/crew_quarters/sleep/cryo/upper
+	name = "Cryogenic Storage Upper Tier"
+
 // Security
 /area/security/sierra/hallway
 	name = "Security - Fore Hallway"
