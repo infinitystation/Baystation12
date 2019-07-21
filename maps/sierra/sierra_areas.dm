@@ -508,7 +508,7 @@
 	name = "Captain's toilet"
 
 /area/crew_quarters/heads/captain/secret_room/level_two
-	name = "Sys#tem e%or: bay not re#&gnized"
+	name = "Captain's bathroom"
 
 /area/crew_quarters/heads/office/hop
 	icon_state = "heads_hop"

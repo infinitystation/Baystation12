@@ -4713,13 +4713,6 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/syndicate_station/start)
-"akY" = (
-/obj/structure/flora/pottedplant/minitree,
-/obj/effect/floor_decal/corner/red{
-	dir = 9
-	},
-/turf/simulated/floor/tiled/dark,
-/area/syndicate_mothership)
 "akZ" = (
 /obj/effect/floor_decal/corner/red{
 	dir = 6
@@ -4878,14 +4871,6 @@
 	dir = 1
 	},
 /area/centcom/specops)
-"alp" = (
-/obj/machinery/door/airlock/centcom{
-	name = "Meeting room";
-	opacity = 1;
-	req_access = newlist()
-	},
-/turf/simulated/floor/cult,
-/area/syndicate_mothership)
 "alq" = (
 /obj/machinery/chem_master,
 /turf/simulated/floor/tiled/white,
@@ -5561,6 +5546,7 @@
 /obj/effect/floor_decal/corner/red{
 	dir = 5
 	},
+/obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/tiled/dark,
 /area/syndicate_mothership)
 "amM" = (
@@ -6131,15 +6117,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/syndicate_mothership)
-"anQ" = (
-/obj/effect/floor_decal/corner/red{
-	dir = 10
-	},
-/obj/machinery/vending/fitness{
-	prices = list()
-	},
-/turf/simulated/floor/tiled/dark,
-/area/syndicate_mothership)
 "anR" = (
 /obj/machinery/suit_cycler/syndicate{
 	locked = 0
@@ -6478,13 +6455,6 @@
 "aoA" = (
 /turf/unsimulated/wall,
 /area/centcom/test)
-"aoB" = (
-/obj/machinery/door/airlock/vault{
-	name = "Equipment";
-	req_access = newlist()
-	},
-/turf/simulated/floor/tiled/dark,
-/area/syndicate_mothership)
 "aoC" = (
 /obj/structure/table/glass,
 /obj/effect/floor_decal/techfloor{
@@ -8107,6 +8077,10 @@
 	icon_state = "techfloor_edges";
 	dir = 4
 	},
+/obj/machinery/vending/wallmed1{
+	dir = 8;
+	pixel_x = 23
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/specops/centcom)
 "arA" = (
@@ -9360,21 +9334,15 @@
 	pixel_x = -30
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/light{
-	dir = 8
-	},
 /turf/simulated/floor/tiled,
 /area/shuttle/transport1/centcom)
 "aun" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
-/obj/machinery/vending/wallmed1{
-	pixel_x = 30
-	},
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube_map"
+/obj/machinery/vending/wallmed1{
+	dir = 8;
+	pixel_x = 23
 	},
 /turf/simulated/floor/tiled,
 /area/shuttle/transport1/centcom)
@@ -9567,12 +9535,6 @@
 	icon_state = "white"
 	},
 /area/centcom/holding)
-"auK" = (
-/obj/structure/sign/warning/secure_area,
-/obj/effect/paint/nt_white,
-/obj/effect/paint_stripe/nt_red,
-/turf/simulated/wall/r_titanium,
-/area/shuttle/transport1/centcom)
 "auL" = (
 /obj/effect/floor_decal/industrial/warning/half{
 	icon_state = "warninghalf";
@@ -9654,10 +9616,6 @@
 	dir = 4;
 	icon_state = "sink";
 	pixel_x = 11
-	},
-/obj/machinery/vending/wallmed1{
-	name = "Emergency NanoMed";
-	pixel_x = 28
 	},
 /obj/effect/floor_decal/corner/paleblue{
 	icon_state = "corner_white";
@@ -11180,8 +11138,9 @@
 "ayK" = (
 /turf/unsimulated/wall{
 	desc = "A secure airlock. Doesn't look like you can get through easily.";
+	dir = 4;
 	icon = 'icons/obj/doors/centcomm/door.dmi';
-	icon_state = "door_locked";
+	icon_state = "closed";
 	name = "Outer Gate"
 	},
 /area/ninja_dojo/dojo)
@@ -12590,7 +12549,7 @@
 /turf/unsimulated/wall{
 	desc = "A secure airlock. Doesn't look like you can get through easily.";
 	icon = 'icons/obj/doors/centcomm/door.dmi';
-	icon_state = "door_locked";
+	icon_state = "closed";
 	name = "Facility Access"
 	},
 /area/rescue_base/base)
@@ -14381,7 +14340,7 @@
 /turf/unsimulated/wall{
 	desc = "A secure airlock. Doesn't look like you can get through easily.";
 	icon = 'icons/obj/doors/centcomm/door.dmi';
-	icon_state = "door_locked";
+	icon_state = "closed";
 	name = "Foxtrot Barracks"
 	},
 /area/rescue_base/base)
@@ -14603,8 +14562,9 @@
 "aGO" = (
 /turf/unsimulated/wall{
 	desc = "A secure airlock. Doesn't look like you can get through easily.";
+	dir = 4;
 	icon = 'icons/obj/doors/centcomm/door.dmi';
-	icon_state = "door_locked";
+	icon_state = "closed";
 	name = "Delta Barracks"
 	},
 /area/rescue_base/base)
@@ -17527,14 +17487,6 @@
 	},
 /turf/simulated/floor/shuttle/darkred,
 /area/rescue_base/start)
-"aNX" = (
-/obj/machinery/vending/wallmed1{
-	layer = 3.3;
-	name = "Emergency NanoMed";
-	pixel_x = 28
-	},
-/turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
 "aNY" = (
 /obj/item/modular_computer/console/preset/sysadmin{
 	dir = 4
@@ -17614,8 +17566,12 @@
 /turf/simulated/floor/shuttle/darkred,
 /area/rescue_base/start)
 "aOl" = (
-/obj/structure/sign/bluecross_2{
-	pixel_y = -24
+/obj/machinery/vending/wallmed1{
+	dir = 1;
+	layer = 3;
+	name = "Emergency NanoMed";
+	pixel_x = 0;
+	pixel_y = -29
 	},
 /turf/simulated/floor/shuttle/darkred,
 /area/rescue_base/start)
@@ -17786,6 +17742,8 @@
 /area/beach)
 "aOO" = (
 /obj/effect/wallframe_spawn/reinforced,
+/obj/effect/paint/nt_white,
+/obj/effect/paint_stripe/nt_red,
 /turf/simulated/floor/plating,
 /area/rescue_base/start)
 "aOP" = (
@@ -19477,11 +19435,6 @@
 	},
 /area/wizard_station)
 "aST" = (
-/obj/machinery/vending/wallmed1{
-	layer = 3.3;
-	name = "Emergency NanoMed";
-	pixel_y = -32
-	},
 /obj/machinery/light/small/readylight,
 /obj/machinery/recharger/wallcharger{
 	dir = 8;
@@ -23482,7 +23435,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
+	layer = 3;
 	pixel_x = 26
 	},
 /obj/effect/catwalk_plated,
@@ -27722,6 +27675,14 @@
 	},
 /turf/simulated/floor/tiled,
 /area/admin_prison)
+"htQ" = (
+/obj/machinery/door/airlock/multi_tile/antagonist{
+	dir = 8;
+	icon_state = "closed";
+	name = "Equipment"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/syndicate_mothership)
 "hyE" = (
 /obj/structure/table/woodentable,
 /obj/item/weapon/reagent_containers/food/snacks/amanita_pie,
@@ -28108,6 +28069,10 @@
 	name = "plating"
 	},
 /area/syndicate_mothership/elite_squad)
+"tep" = (
+/obj/machinery/door/airlock/multi_tile/antagonist,
+/turf/simulated/floor/cult,
+/area/syndicate_mothership)
 "trR" = (
 /obj/structure/bed/chair/wood,
 /turf/simulated/floor/lino,
@@ -28160,6 +28125,22 @@
 	name = "plating"
 	},
 /area/centcom/suppy)
+"umC" = (
+/obj/structure/bed/chair/shuttle/blue{
+	icon_state = "shuttle_chair_preview";
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/light{
+	icon_state = "tube_map";
+	dir = 8
+	},
+/obj/machinery/light{
+	icon_state = "tube_map";
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
+/area/shuttle/transport1/centcom)
 "uWo" = (
 /obj/structure/table/woodentable,
 /obj/item/weapon/towel/random,
@@ -28282,6 +28263,18 @@
 	icon_state = "dark"
 	},
 /area/tdome)
+"yia" = (
+/obj/structure/bed/chair/shuttle/blue{
+	icon_state = "shuttle_chair_preview";
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube_map"
+	},
+/turf/simulated/floor/tiled,
+/area/shuttle/transport1/centcom)
 
 (1,1,1) = {"
 aaa
@@ -49151,7 +49144,7 @@ atJ
 atV
 atV
 aus
-auK
+atV
 aus
 aus
 avk
@@ -49353,7 +49346,7 @@ atK
 atV
 aum
 aut
-aut
+umC
 aut
 aut
 aut
@@ -49757,7 +49750,7 @@ atK
 atV
 aun
 auv
-auv
+yia
 auv
 auv
 auv
@@ -49959,7 +49952,7 @@ atM
 atV
 atV
 aus
-auK
+atV
 aus
 aus
 avl
@@ -64470,8 +64463,8 @@ ahv
 ahv
 ahv
 ahv
-adi
-akY
+tep
+alC
 alC
 alC
 amJ
@@ -64590,7 +64583,7 @@ aLH
 aLH
 aLJ
 aNL
-aNX
+aNp
 aNp
 aNN
 aLJ
@@ -64672,7 +64665,7 @@ ahv
 ahv
 ahv
 ahv
-alp
+ahv
 aeT
 aeT
 aeT
@@ -65082,7 +65075,7 @@ aeg
 aeg
 amL
 aeT
-anQ
+aeT
 adi
 aab
 aab
@@ -65283,8 +65276,8 @@ alb
 alD
 aeg
 aeg
-aoB
-adi
+aeT
+htQ
 adi
 adi
 aad
