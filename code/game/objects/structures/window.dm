@@ -22,7 +22,7 @@
 	var/basestate = "window"
 	var/reinf_basestate = "rwindow"
 	blend_objects = list(/obj/machinery/door, /turf/simulated/wall) // Objects which to blend with
-	noblend_objects = list(/obj/machinery/door/window, /obj/machinery/door/blast/regular/evacshield)
+	noblend_objects = list(/obj/machinery/door/window, /obj/machinery/door/blast/regular/evacshield, /obj/machinery/door/firedoor/border_only) //INF, WAS: /obj/machinery/door/window
 	atmos_canpass = CANPASS_PROC
 
 /obj/structure/window/get_material()
@@ -353,7 +353,7 @@
 
 	if (anchored)
 		to_chat(user, SPAN_NOTICE("\The [src] is secured to the floor!"))
-		return 
+		return
 
 	update_nearby_tiles(need_rebuild=1) //Compel updates before
 	set_dir(turn(dir, 90))

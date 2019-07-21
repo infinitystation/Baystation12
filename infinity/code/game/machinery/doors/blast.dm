@@ -11,7 +11,6 @@
 	for(var/obj/mecha/M in get_turf(src))
 		M.take_damage(DOOR_CRUSH_DAMAGE)
 
-//??? ???? ???
 /obj/machinery/door/blast/regular/admin/ex_act()
 	return
 
