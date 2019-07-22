@@ -71,8 +71,11 @@ SUBSYSTEM_DEF(vote)
 		var/next_allowed_time = (last_started_time + config.vote_delay)
 		if(next_allowed_time > world.time)
 			return FALSE
-	
+
 	var/datum/vote/new_vote = new vote_type
+	if(new_vote.startshow)
+		for(var/mob/M in GLOB.player_list)
+			show_panel(M)
 	if(!new_vote.setup(creator, automatic))
 		return FALSE
 

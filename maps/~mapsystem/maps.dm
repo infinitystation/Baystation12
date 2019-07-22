@@ -207,6 +207,8 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 
 	var/evac_on_delta_code //inf, decides if station need to evacuate if delta code reached
 
+	var/minimum_players = 0 //inf
+
 /datum/map/New()
 	if(!map_levels)
 		map_levels = station_levels.Copy()

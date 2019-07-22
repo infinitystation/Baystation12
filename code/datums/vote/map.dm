@@ -3,6 +3,7 @@
 	manual_allowed = 0
 	time_set = 60
 	additional_header = "<td align = 'center'><b>Recommended Players</b></td></tr>"
+	startshow = 1
 
 /datum/vote/map/can_run(mob/creator, automatic)
 	if(automatic)
@@ -12,7 +13,9 @@
 	initiator = (!automatic && istype(creator)) ? creator.ckey : "the server"
 	choices += GLOB.playable_maps
 	for(var/datum/map/M in choices)
-		display_choices[M] = M.full_name
+		if(M.minimum_players < GLOB.clients.len)
+			LAZYREMOVE(choices, M)
+			break
 		additional_text[M] ="<td align = 'center'>~[M.recommended_players]</td>"
 	choices += "extend"
 	display_choices["extend"] = "Продлить эту карту"

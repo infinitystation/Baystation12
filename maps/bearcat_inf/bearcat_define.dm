@@ -21,8 +21,8 @@
 	shuttle_called_message = "Attention all hands: Jump sequence initiated. Transit procedures are now in effect. Jump in %ETA%."
 	shuttle_recall_message = "Attention all hands: Jump sequence aborted, return to normal operating conditions."
 
-	evac_controller_type = /datum/evacuation_controller/lifepods
-	evac_controller_type = /datum/evacuation_controller/starship
+	evac_controller_type = /datum/evacuation_controller/lifepods //don't remove
+	evac_controller_type = /datum/evacuation_controller/starship //don't remove
 	lobby_icon = 'maps/bearcat_inf/bearcat_lobby.dmi'
 	lobby_screens = list("spess","aesthetic")
 
@@ -33,6 +33,7 @@
 
 	playable = 1
 	recommended_players = 10
+//	minimum_players = 0 its already 0
 
 	away_site_budget = 2
 	welcome_sound = 'sound/effects/cowboysting.ogg'
