@@ -1,7 +1,18 @@
-/obj/machinery/door/airlock/command/autoname/New()
-	var/area/A = get_area(src)
-	name = A.name
-	..()
+/obj/machinery/door/airlock/autoname/command
+	door_color = COLOR_COMMAND_BLUE
+
+/obj/machinery/door/airlock/autoname/engineering
+	door_color = COLOR_AMBER
+
+/obj/machinery/door/airlock/autoname/centcom
+	airlock_type = "centcomm"
+	name = "\improper Airlock"
+	icon = 'icons/obj/doors/centcomm/door.dmi'
+	fill_file = 'icons/obj/doors/centcomm/fill_steel.dmi'
+	paintable = AIRLOCK_PAINTABLE|AIRLOCK_STRIPABLE
+
+/obj/machinery/door/airlock/autoname/civilian
+	stripe_color = COLOR_CIVIE_GREEN
 
 /obj/machinery/door/airlock/security/striped
 	stripe_color = COLOR_ORANGE
@@ -12,11 +23,6 @@
 /obj/machinery/door/airlock/centcom
 	name = "Airlock"
 	icon = 'icons/obj/doors/centcomm/door.dmi'
-
-/obj/machinery/door/airlock/centcom/autoname/New()
-	var/area/A = get_area(src)
-	name = A.name
-	..()
 
 
 /obj/machinery/door/airlock/glass/command/no_stripe

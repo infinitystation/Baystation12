@@ -9,6 +9,22 @@
 	air_properties_vary_with_direction = TRUE
 	// atom_flags = ATOM_FLAG_CHECKS_BORDER
 
+/obj/machinery/door/firedoor/on_update_icon()
+	var/icon/weld_overlay
+
+	overlays.Cut()
+	set_light(0)
+
+	if(density)
+		icon_state = "closed"
+	else
+		icon_state = "open"
+
+	if(blocked)
+		weld_overlay = welded_file
+
+	overlays += weld_overlay
+
 /obj/machinery/door/firedoor/border_only/CanPass(atom/movable/mover, turf/target, height = FALSE, air_group = FALSE)
 	if(istype(mover) && mover.checkpass(PASS_FLAG_GLASS))
 		return TRUE
