@@ -1,23 +1,6 @@
 /datum/map/bearcat
 	allowed_jobs = list(/datum/job/captain, /datum/job/chief_engineer, /datum/job/hop, /datum/job/officer, /datum/job/bartender, /datum/job/doctor, /datum/job/engineer, /datum/job/qm, /datum/job/roboticist, /datum/job/assistant, /datum/job/cyborg)
 
-/datum/job/captain
-	supervisors = "the Merchant Code and your conscience"
-	outfit_type = /decl/hierarchy/outfit/job/bearcat/captain
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_SCIENCE     = SKILL_ADEPT,
-	                    SKILL_PILOT       = SKILL_ADEPT)
-
-	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
-	                    SKILL_SCIENCE     = SKILL_MAX)
-	skill_points = 30
-
-/datum/job/captain/equip(var/mob/living/carbon/human/H)
-	. = ..()
-	if(H.client)
-		H.client.verbs += /client/proc/rename_ship
-		H.client.verbs += /client/proc/rename_company
-
 /client/proc/rename_ship()
 	set name = "Rename Ship"
 	set category = "Captain's Powers"
@@ -47,6 +30,23 @@
 			GLOB.using_map.company_short = company_s
 		command_announcement.Announce("Congratulations to all employes of [capitalize(GLOB.using_map.company_name)] on the new name. The rebranding have changed the [GLOB.using_map.company_short] market value by [0.01*rand(-10,10)]%.", "Company name change approved")
 	verbs -= /client/proc/rename_company
+
+/datum/job/captain
+	supervisors = "the Merchant Code and your conscience"
+	outfit_type = /decl/hierarchy/outfit/job/bearcat/captain
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_SCIENCE     = SKILL_ADEPT,
+	                    SKILL_PILOT       = SKILL_ADEPT)
+
+	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
+	                    SKILL_SCIENCE     = SKILL_MAX)
+	skill_points = 30
+
+/datum/job/captain/equip(var/mob/living/carbon/human/H)
+	. = ..()
+	if(H.client)
+		H.client.verbs += /client/proc/rename_ship
+		H.client.verbs += /client/proc/rename_company
 
 /datum/job/captain/get_access()
 	return get_all_station_access()
@@ -136,6 +136,7 @@
 	total_positions = 2
 	spawn_positions = 2
 	hud_icon = "hudengineer"
+	outfit_type = /decl/hierarchy/outfit/job/bearcat/engineer
 	alt_titles = null
 	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
 	                    SKILL_EVA          = SKILL_BASIC,
@@ -258,6 +259,24 @@
 	id_type = /obj/item/weapon/card/id/engineering/head
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 
+/decl/hierarchy/outfit/job/bearcat/chief_engineer/New()
+	..()
+	BACKPACK_OVERRIDE_ENGINEERING
+
+/decl/hierarchy/outfit/job/bearcat/engineer
+	name = OUTFIT_JOB_NAME("Engineer")
+	head = /obj/item/clothing/head/hardhat
+	uniform = /obj/item/clothing/under/rank/engineer
+	r_pocket = /obj/item/device/t_scanner
+	id_type = /obj/item/weapon/card/id/engineering
+	belt = /obj/item/weapon/storage/belt/utility/full
+	l_ear = null
+	l_hand = /obj/item/device/radio
+
+/decl/hierarchy/outfit/job/bearcat/engineer/New()
+	..()
+	BACKPACK_OVERRIDE_ENGINEERING
+
 /decl/hierarchy/outfit/job/bearcat/doc
 	name = BEARCAT_OUTFIT_JOB_NAME("Doctor")
 	uniform = /obj/item/clothing/under/det/black
@@ -311,31 +330,6 @@
 	l_hand = null
 	suit = /obj/item/clothing/suit/armor/pcarrier/medium
 	gloves = /obj/item/clothing/gloves/thick
-
-/obj/structure/closet/secure_closet/security/bearcat
-	name = "security guard's locker"
-	req_access = list(access_brig)
-/*	icon_state = "sec1"
-	icon_closed = "sec"
-	icon_locked = "sec1"
-	icon_opened = "secopen"
-	icon_broken = "secbroken"
-	icon_off = "secoff"*/
-
-/obj/structure/closet/secure_closet/security/bearcat/WillContain()
-	return list(
-		new/datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/security, /obj/item/weapon/storage/backpack/satchel/sec)),
-		new/datum/atom_creator/simple(/obj/item/weapon/storage/backpack/dufflebag/sec, 50),
-		/obj/item/clothing/mask/gas/half,
-		/obj/item/weapon/handcuffs,
-		/obj/item/weapon/storage/belt/holster/security,
-		/obj/item/device/flash,
-		/obj/item/device/radio/off,
-		/obj/item/taperoll/police,
-		/obj/item/device/hailer,
-		/obj/item/weapon/gun/energy/stunrevolver,
-		/obj/item/device/holowarrant,
-	)
 
 /decl/hierarchy/outfit/job/bearcat/bartender
 	name = BEARCAT_OUTFIT_JOB_NAME("Bartender")
