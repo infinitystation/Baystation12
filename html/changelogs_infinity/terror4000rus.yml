@@ -1,0 +1,50 @@
+################################
+# Example Changelog File
+#
+# Note: This file, and files beginning with ".", and files that don't end in ".yml" will not be read. If you change this file, you will look really dumb.
+#
+# Your changelog will be merged with a master changelog. (New stuff added only, and only on the date entry for the day it was merged.)
+# When it is, any changes listed below will disappear.
+#
+# Valid Prefixes: 
+#   bugfix
+#   balance
+#   wip (For works in progress)
+#   tweak
+#   soundadd
+#   sounddel
+#   rscadd (general adding of nice things)
+#   rscdel (general deleting of nice things)
+#   imageadd
+#   imagedel
+#   maptweak
+#   spellcheck (typo fixes)
+#   experiment
+#   admin
+#################################
+
+# Your name.  
+author: Terror4000rus
+
+# Optional: Remove this file after generating master changelog.  Useful for PR changelogs that won't get used again.
+delete-after: True
+
+# Any changes you've made.  See valid prefix list above.
+# INDENT WITH TWO SPACES.  NOT TABS.  SPACES.
+# SCREW THIS UP AND IT WON'T WORK.
+# Also, all entries are changed into a single [] after a master changelog generation. Just remove the brackets when you add new entries.
+# Please surround your changes in  double quotes ("), as certain characters otherwise screws up compiling. The quotes will not show up in the changelog.
+changes: 
+  - tweak: "Bearcat возвращается в ротацию карт."
+  - tweak: "Bearcat отремонтирован. Самые важные изменения из ~сотни дальше."
+  - bugfix: "Шаттл снова летает. Для полета требует доступ глав."
+  - bugfix: "Лифт снова перемещается между палубами."
+  - bugfix: "У рейдеров появилась связь через наушнк (:x)."
+  - tweak: "Множество декоративных и логических изменений."
+  - maptweak: "Съезжаем с третьей палубы и пробуем уместить на двух - дормиторий с первой перенесен на третью."
+  - bugfix: "Исправлен доступ к шлюзам."
+  - rscadd: "Шерифу возвращен шкафчик со снаряжением."
+  - rscadd: "Увеличено количество спавнящихся объектов на овермапе."
+  - rscadd: "Капитан получил пистолет в шкафчик. При клике, ему можно выставить особый спрайт."
+  - bugfix: "Исправлен доступ к медицинскому шкафчику в медбее (в котором ящик с хирургическими инструментами)."
+  - rscadd: "На кухни добавлен подогреватель."
