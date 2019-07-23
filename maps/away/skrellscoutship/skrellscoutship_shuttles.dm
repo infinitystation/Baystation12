@@ -55,7 +55,10 @@
 	knockdown = FALSE
 	flags = SHUTTLE_FLAGS_PROCESS
 	skill_needed = SKILL_NONE
-	ceiling_type = /turf/simulated/floor/shuttle_ceiling/torch
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling/scout/skrell //inf was: /turf/simulated/floor/shuttle_ceiling/torch
+
+/turf/simulated/floor/shuttle_ceiling/scout/skrell //inf
+	color = COLOR_HULL	//inf
 
 /obj/effect/shuttle_landmark/skrellscoutship/start
 	name = "Uncharted Space"
@@ -71,7 +74,7 @@
 	defer_initialisation = TRUE
 	flags = SHUTTLE_FLAGS_PROCESS
 	skill_needed = SKILL_NONE
-	ceiling_type = /turf/simulated/floor/shuttle_ceiling/torch
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling/scout/skrell //inf was: /turf/simulated/floor/shuttle_ceiling/torch
 	mothershuttle = "Skrellian Scout"
 
 /obj/effect/shuttle_landmark/skrellscoutshuttle/start
