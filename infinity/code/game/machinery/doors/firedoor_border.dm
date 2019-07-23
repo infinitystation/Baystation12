@@ -9,7 +9,7 @@
 	air_properties_vary_with_direction = TRUE
 	// atom_flags = ATOM_FLAG_CHECKS_BORDER
 
-/obj/machinery/door/firedoor/on_update_icon()
+/obj/machinery/door/firedoor/border_only/on_update_icon()
 	var/icon/weld_overlay
 
 	overlays.Cut()
