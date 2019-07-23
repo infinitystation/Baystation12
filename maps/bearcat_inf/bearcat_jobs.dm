@@ -234,7 +234,6 @@
 	r_pocket = /obj/item/device/radio
 	id_type = /obj/item/weapon/card/id/gold
 
-
 /decl/hierarchy/outfit/job/bearcat/captain/post_equip(var/mob/living/carbon/human/H)
 	..()
 	var/obj/item/clothing/uniform = H.w_uniform
@@ -264,11 +263,10 @@
 	BACKPACK_OVERRIDE_ENGINEERING
 
 /decl/hierarchy/outfit/job/bearcat/engineer
-	name = OUTFIT_JOB_NAME("Engineer")
+	name = BEARCAT_OUTFIT_JOB_NAME("Engineer")
 	head = /obj/item/clothing/head/hardhat
-	uniform = /obj/item/clothing/under/rank/engineer
+	uniform = /obj/item/clothing/under/hazard
 	r_pocket = /obj/item/device/t_scanner
-	id_type = /obj/item/weapon/card/id/engineering
 	belt = /obj/item/weapon/storage/belt/utility/full
 	l_ear = null
 	l_hand = /obj/item/device/radio

@@ -14,6 +14,18 @@
 /obj/machinery/door/airlock/autoname/civilian
 	stripe_color = COLOR_CIVIE_GREEN
 
+/obj/machinery/door/airlock/autoname/medical
+	door_color = COLOR_WHITE
+	stripe_color = COLOR_DEEP_SKY_BLUE
+
+/obj/machinery/door/airlock/autoname/mining
+	door_color = COLOR_PALE_ORANGE
+	stripe_color = COLOR_BEASTY_BROWN
+
+/obj/machinery/door/airlock/autoname/maintenance
+	name = "Maintenance Access"
+	stripe_color = COLOR_AMBER
+
 /obj/machinery/door/airlock/security/striped
 	stripe_color = COLOR_ORANGE
 

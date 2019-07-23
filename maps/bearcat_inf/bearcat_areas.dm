@@ -72,6 +72,7 @@
 /area/ship/scrap/other/security
 	name = "\improper Brig"
 	icon_state = "red"
+	req_access = list(access_security)
 
 /area/ship/scrap/other/robotics
 	name = "\improper Robotic Maintenance"

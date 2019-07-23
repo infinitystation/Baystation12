@@ -3,15 +3,14 @@
 /datum/shuttle/autodock/multi/lift
 	name = "Cargo Lift"
 	warmup_time = 3
-	move_time = 0
 	destination_tags = list(
 		"nav_bearcat_lift_top",
 		"nav_bearcat_lift_middle",
 		"nav_bearcat_lift_bottom"
 		)
+	ceiling_type = null
 	shuttle_area = /area/ship/scrap/shuttle/lift
 	current_location = "nav_bearcat_lift_bottom"
-	landmark_transition = null
 	sound_takeoff = 'sound/effects/lift_heavy_start.ogg'
 	sound_landing = 'sound/effects/lift_heavy_stop.ogg'
 	knockdown = 0
@@ -19,10 +18,12 @@
 /obj/machinery/computer/shuttle_control/multi/lift
 	name = "cargo lift controls"
 	shuttle_tag = "Cargo Lift"
+	ui_template = "shuttle_control_console_lift.tmpl"
 	icon_state = "tiny"
 	icon_keyboard = "tiny_keyboard"
 	icon_screen = "lift"
 	density = 0
+
 //Lift's personal landmarkers
 /obj/effect/shuttle_landmark/lift/top
 	name = "Top Deck"

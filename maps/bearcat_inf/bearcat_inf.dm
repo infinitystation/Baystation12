@@ -3,6 +3,7 @@
 	#include "bearcat_announcements.dm"
 	#include "bearcat_areas.dm"
 	#include "bearcat_define.dm"
+	#include "bearcat_goals.dm"
 	#include "bearcat_jobs.dm"
 	#include "bearcat_loadouts.dm"
 	#include "bearcat_misc.dm"

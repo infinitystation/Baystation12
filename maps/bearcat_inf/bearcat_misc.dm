@@ -10,24 +10,21 @@
 /decl/flooring/tiling
 	name = "deck"
 
+/obj/machinery/power/smes/buildable/preset/bearcat/shuttle/configure_and_install_coils()
+	component_parts += new /obj/item/weapon/smes_coil/weak(src)
+	_input_maxed = TRUE
+	_output_maxed = TRUE
+	_input_on = TRUE
+	_output_on = TRUE
+	_fully_charged = TRUE
+
 //wild capitalism (no)
 /datum/computer_file/program/merchant
-	required_access = list("ACCESS_MERCHANT")
-
-/obj/machinery/power/smes/buildable/explor_shuttle/New()
-	..(0)
-	component_parts += new /obj/item/weapon/smes_coil/weak(src)
-	recalc_coils()
+	required_access = list(access_merchant)
 
 /obj/structure/closet/secure_closet/security/bearcat
 	name = "security guard's locker"
 	req_access = list(access_brig)
-/*	icon_state = "sec1"
-	icon_closed = "sec"
-	icon_locked = "sec1"
-	icon_opened = "secopen"
-	icon_broken = "secbroken"
-	icon_off = "secoff"*/
 
 /obj/structure/closet/secure_closet/security/bearcat/WillContain()
 	return list(
