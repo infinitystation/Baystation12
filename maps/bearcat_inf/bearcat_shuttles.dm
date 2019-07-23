@@ -28,15 +28,13 @@
 	name = "Top Deck"
 	landmark_tag = "nav_bearcat_lift_top"
 	base_turf = /turf/simulated/open
-	base_area = /area/ship/scrap/hallway/port
-	flags = SLANDMARK_FLAG_AUTOSET
+	base_area = /area/ship/scrap/hallway/port/upper
 
 /obj/effect/shuttle_landmark/lift/middle
 	name = "Middle Deck"
 	landmark_tag = "nav_bearcat_lift_middle"
 	base_turf = /turf/simulated/open
 	base_area = /area/ship/scrap/cargo
-	flags = SLANDMARK_FLAG_AUTOSET
 
 /obj/effect/shuttle_landmark/lift/bottom
 	name = "Lower Deck"
