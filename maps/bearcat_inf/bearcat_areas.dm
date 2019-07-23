@@ -226,6 +226,7 @@
 	name = "\improper Cargo Lift"
 	icon_state = "shuttle3"
 	base_turf = /turf/simulated/open
+	requires_power = 0
 
 // ACTORS GUILD
 
