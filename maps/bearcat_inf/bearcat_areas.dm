@@ -33,7 +33,7 @@
 	icon_state = "cryo"
 
 /area/ship/scrap/crew/dorms
-	name = "\improper Crew Dormitory"
+	name = "\improper Dormitory"
 	icon_state = "green"
 
 /area/ship/scrap/hallway/port
@@ -60,6 +60,7 @@
 /area/ship/scrap/other/research
 	name = "\improper Research"
 	icon_state = "devlab"
+	turf_initializer = /decl/turf_initializer/maintenance/heavy
 
 /area/ship/scrap/other/eva
 	name = "\improper EVA Storage"
@@ -131,11 +132,12 @@
 /area/ship/scrap/maintenance/hidden
 	name = "\improper Library" //shielded compartment
 	icon_state = "auxstorage"
+	turf_initializer = /decl/turf_initializer/maintenance/heavy
 
 /area/ship/scrap/maintenance/unused
 	name = "\improper Compartment 2-B"
 	icon_state = "yellow"
-	turf_initializer = /decl/turf_initializer/maintenance
+	turf_initializer = /decl/turf_initializer/maintenance/heavy
 	ambience = list('sound/ambience/ambigen3.ogg','sound/ambience/ambigen4.ogg','sound/ambience/ambigen5.ogg','sound/ambience/ambigen6.ogg','sound/ambience/ambimo1.ogg','sound/ambience/ambimo2.ogg')
 
 /area/ship/scrap/engineering
@@ -162,6 +164,7 @@
 
 /area/ship/scrap/engineering/nacelles
 	name = "\improper Main Engine"
+	area_flags = AREA_FLAG_ION_SHIELDED
 
 /area/ship/scrap/engineering/nacelles/port
 	name = "\improper Port Thruster"
@@ -177,10 +180,6 @@
 	name = "\improper Aft Solars Array"
 	icon_state = "SolarcontrolS"
 	area_flags = AREA_FLAG_EXTERNAL
-	requires_power = 1
-	always_unpowered = 1
-	has_gravity = FALSE
-	base_turf = /turf/space
 	turf_initializer = null
 
 /area/ship/scrap/command //hallway
@@ -191,6 +190,7 @@
 /area/ship/scrap/command/bridge
 	name = "\improper Bridge"
 	icon_state = "bridge"
+	area_flags = AREA_FLAG_ION_SHIELDED
 
 /area/ship/scrap/command/captain
 	name = "\improper Captain's Quarters"
@@ -207,6 +207,7 @@
 /area/ship/scrap/shuttle/outgoing
 	name = "\improper Exploration Shuttle"
 	icon_state = "tcomsatcham"
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/skipjack_station
 	name = "\improper Pirats Bay"

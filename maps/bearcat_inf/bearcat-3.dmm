@@ -199,14 +199,11 @@
 /turf/simulated/floor/plating,
 /area/ship/scrap/hallway/port/upper)
 "aN" = (
-/obj/structure/bed/chair/wood/walnut{
-	icon_state = "wooden_chair_preview";
-	dir = 1
-	},
 /obj/item/device/radio/intercom{
 	dir = 4;
 	pixel_x = -22
 	},
+/obj/item/weapon/stool/bar/padded,
 /turf/simulated/floor/wood/walnut,
 /area/ship/scrap)
 "aO" = (
@@ -1078,20 +1075,12 @@
 	icon_state = "bulb_map"
 	},
 /obj/structure/catwalk,
-/obj/structure/bed/chair/wood,
+/obj/item/weapon/stool/padded,
 /turf/simulated/floor/plating,
 /area/ship/scrap/hallway/aft/upper)
 "cJ" = (
-/obj/effect/wallframe_spawn/reinforced/hull,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/firedoor,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	dir = 4;
-	icon_state = "pdoor0";
-	id = "scraplock";
-	name = "External Blast Doors";
-	opacity = 0
-	},
 /turf/simulated/floor/plating,
 /area/ship/scrap/hallway/aft/upper)
 "cL" = (
@@ -1344,11 +1333,7 @@
 	dir = 4
 	},
 /obj/structure/catwalk,
-/obj/structure/bed/chair/wood{
-	tag = "icon-wooden_chair_preview (NORTH)";
-	icon_state = "wooden_chair_preview";
-	dir = 1
-	},
+/obj/item/weapon/stool/padded,
 /turf/simulated/floor/plating,
 /area/ship/scrap/hallway/aft/upper)
 "dg" = (
@@ -1624,7 +1609,6 @@
 /turf/simulated/floor/tiled,
 /area/ship/scrap/other/robotics)
 "dC" = (
-/obj/item/weapon/stool,
 /obj/effect/landmark/start{
 	name = "Roboticist"
 	},
@@ -1807,9 +1791,8 @@
 /turf/simulated/floor/plating,
 /area/ship/scrap/hallway/aft/upper)
 "dX" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1
-	},
+/obj/machinery/atmospherics/pipe/simple/hidden/universal,
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/ship/scrap/hallway/aft/upper)
 "dY" = (
@@ -1961,10 +1944,8 @@
 /turf/simulated/wall/prepainted,
 /area/ship/scrap/engineering/solars)
 "ei" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 8
-	},
-/obj/machinery/portable_atmospherics/canister/air/airlock,
+/obj/machinery/atmospherics/pipe/manifold/hidden,
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/ship/scrap/hallway/aft/upper)
 "ej" = (
@@ -2290,6 +2271,9 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/wood/walnut,
 /area/ship/scrap)
+"uI" = (
+/turf/simulated/floor/shuttle_ceiling/bearcat,
+/area/space)
 "uO" = (
 /obj/structure/table/woodentable_reinforced/walnut,
 /turf/simulated/floor/wood/walnut,
@@ -2312,6 +2296,10 @@
 	},
 /turf/simulated/open,
 /area/ship/scrap/hallway/port/upper)
+"xG" = (
+/obj/structure/lattice,
+/turf/simulated/floor/shuttle_ceiling/bearcat,
+/area/space)
 "yl" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -2331,6 +2319,7 @@
 /turf/simulated/wall/r_wall/hull,
 /area/ship/scrap/escape/starboard/upper)
 "AI" = (
+/obj/item/weapon/stool/padded,
 /turf/simulated/floor/tiled,
 /area/ship/scrap/other/robotics)
 "AU" = (
@@ -2409,11 +2398,10 @@
 /turf/simulated/wall/r_wall/hull,
 /area/ship/scrap/hallway/starboard/upper)
 "Je" = (
-/obj/machinery/alarm{
-	dir = 1;
-	icon_state = "alarm0";
-	pixel_x = 0;
-	pixel_y = -22
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	icon_state = "intact";
+	dir = 9
 	},
 /turf/simulated/floor/plating,
 /area/ship/scrap/hallway/aft/upper)
@@ -2441,10 +2429,11 @@
 /turf/simulated/wall/r_wall/hull,
 /area/space)
 "OA" = (
-/obj/machinery/power/emitter{
+/obj/machinery/atmospherics/binary/pump/on{
 	dir = 8;
-	name = "dusty emitter"
+	target_pressure = 200
 	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/ship/scrap/hallway/aft/upper)
 "Pa" = (
@@ -2477,6 +2466,13 @@
 "UN" = (
 /turf/simulated/wall/r_wall/hull,
 /area/ship/scrap/other/robotics)
+"VK" = (
+/obj/machinery/power/emitter{
+	dir = 8;
+	name = "dusty emitter"
+	},
+/turf/simulated/floor/plating,
+/area/ship/scrap/other/research)
 "VZ" = (
 /obj/machinery/door/blast/regular{
 	dir = 4
@@ -2499,6 +2495,11 @@
 	},
 /turf/simulated/floor/plating,
 /area/ship/scrap/hallway/starboard/upper)
+"Wy" = (
+/obj/machinery/atmospherics/portables_connector,
+/obj/machinery/portable_atmospherics/canister/air/airlock,
+/turf/simulated/floor/plating,
+/area/ship/scrap/hallway/aft/upper)
 "Xr" = (
 /turf/simulated/wall/prepainted,
 /area/ship/scrap/engineering/solars)
@@ -4504,18 +4505,18 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
 aa
 aa
 aa
@@ -4584,20 +4585,20 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
 aa
 aa
 aa
@@ -4666,20 +4667,20 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
 aa
 aa
 aa
@@ -4748,20 +4749,20 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
 aa
 aa
 aa
@@ -4830,20 +4831,20 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aj
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+xG
 aj
 aj
 ag
@@ -4912,21 +4913,21 @@ aa
 aa
 aa
 aa
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-Da
-Da
 Da
 Da
 ad
@@ -4996,19 +4997,19 @@ aa
 aa
 aa
 aa
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-Oh
-Oh
 Da
 Oh
 Oh
@@ -5024,7 +5025,7 @@ cA
 cF
 cP
 dc
-Iz
+VK
 dq
 dE
 Yq
@@ -5089,8 +5090,8 @@ ag
 aj
 aj
 aj
-ad
-Oh
+aa
+aa
 aB
 aI
 Ls
@@ -5930,7 +5931,7 @@ tE
 dy
 dJ
 tE
-dV
+Wy
 ei
 IH
 ag

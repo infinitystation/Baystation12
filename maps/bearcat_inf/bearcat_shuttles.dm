@@ -51,7 +51,7 @@
 	current_location = "nav_bearcat_port_dock_shuttle"
 	landmark_transition = "exploration_transit"
 	logging_access = access_heads
-	ceiling_type = /turf/simulated/floor/shuttle_ceiling
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling/bearcat
 	range = 1
 	fuel_consumption = 3
 	move_time = 25
@@ -60,13 +60,6 @@
 /obj/machinery/computer/shuttle_control/explore/bearcat
 	name = "shuttle console"
 	shuttle_tag = "Exploration Shuttle"
-
-/obj/effect/overmap/ship/landable/exploration_shuttle
-	name = "Exploration Shuttle"
-	shuttle = "Exploration Shuttle"
-	max_speed = 1/(10 SECONDS)
-	burn_delay = 5 SECONDS
-	fore_dir = NORTH
 
 //Raiders' shuttle
 /datum/shuttle/autodock/multi/antag/skipjack

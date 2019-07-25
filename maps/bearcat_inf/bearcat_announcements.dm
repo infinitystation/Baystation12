@@ -1,4 +1,4 @@
-/datum/map/sierra
+/datum/map/bearcat
 	shuttle_called_message = "Внимание всему экипажу: запущена процедура подготовки к подпространственному прыжку в следующий сектор. Расчетное время окончания зарядки генератора блюспейса: %ETA%."
 	shuttle_docked_message = "Внимание всему экипажу: подготовка к подпространственному прыжку завершена. Начата процедура безопасной активации генератора подпространства. Расчетное время до начала прыжка: %ETD%."
 	shuttle_leaving_dock = "Внимание всему экипажу: прыжок начат. Примерное время окончания прыжка: %ETA%. Сохраняйте спокойствие и трезвость мышления."
@@ -18,10 +18,10 @@
 	grid_restored_message = "Накопители энергии %STATION_NAME% были заряжены из аварийного хранилища."
 	grid_restored_sound = sound('sound/AI/torch/poweron.ogg', volume = 45)
 
-	meteor_detected_message = "Внимание всему персоналу, обнаружены метеориты прямо по курсу %STATION_NAME%. Настоятельно рекомендуется пройти в центр корабля до выхода из опасной зоны."
+	meteor_detected_message = "Внимание всему экипажу, обнаружены метеориты прямо по курсу %STATION_NAME%. Настоятельно рекомендуется пройти в центр корабля до выхода из опасной зоны."
 	meteor_detected_sound = sound('sound/AI/torch/meteors.ogg', volume = 45)
 
-	radiation_detected_message = "Зафиксировано повышение уровня радиации поблизости %STATION_NAME%. Всему персоналу настоятельно рекомендуется пройти в экранированные отсеки до покидания зоны повышенной радиоактивности. Экранированные отсеки - технические тоннели, челноки, камеры охраны, экстренные убежища, лифт, дормиторий."
+	radiation_detected_message = "Зафиксировано повышение уровня радиации поблизости %STATION_NAME%. Всему экипажу настоятельно рекомендуется пройти в экранированные отсеки до покидания зоны повышенной радиоактивности. Коридор третьей палубы и челнок экранированы."
 	radiation_detected_sound = sound('sound/AI/torch/radiation.ogg', volume = 45)
 
 	space_time_anomaly_sound = sound('sound/AI/torch/spanomalies.ogg', volume = 45)
@@ -39,7 +39,7 @@
 	use_job_frequency_announcement = FALSE
 	use_radio_announcement = TRUE
 
-/datum/map/sierra/level_x_biohazard_announcement(var/bio_level)
+/datum/map/bearcat/level_x_biohazard_announcement(var/bio_level)
 	if(!isnum(bio_level))
 		CRASH("Expected a number, was: [log_info_line(bio_level)]")
 	if(bio_level < 1 || bio_level > 9)
@@ -73,4 +73,4 @@
 			msg = "мелкие вредители"
 			crew = "Обслуживающему"
 
-	priority_announcement.Announce("Подтверждено наличие объекта [bio_level] уровня биологической угрозы на борту [station_name()] - [msg]. [crew] персоналу требуется предпринять меры по ликвидации угрозы.", "Биоугроза")
+	priority_announcement.Announce("Подтверждено наличие объекта [bio_level] уровня биологической угрозы на борту [station_name()] - [msg]. [crew] экипажу требуется предпринять меры по ликвидации угрозы.", "Биоугроза")
