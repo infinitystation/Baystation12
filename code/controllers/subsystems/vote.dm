@@ -73,11 +73,11 @@ SUBSYSTEM_DEF(vote)
 			return FALSE
 
 	var/datum/vote/new_vote = new vote_type
+	if(!new_vote.setup(creator, automatic))
+		return FALSE
 	if(new_vote.startshow)
 		for(var/mob/M in GLOB.player_list)
 			show_panel(M)
-	if(!new_vote.setup(creator, automatic))
-		return FALSE
 
 	active_vote = new_vote
 	last_started_time = world.time
