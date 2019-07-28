@@ -3,7 +3,6 @@
 	new /obj/item/clothing/accessory/badge/tajamc(src)
 	new /obj/item/clothing/shoes/workboots/winta(src)
 	new /obj/item/weapon/storage/backpack/satchel/wintaforba(src)
-	new /obj/item/clothing/suit/storage/hooded/wintercoat/wintercam(src)
 
 /obj/item/clothing/shoes/workboots/winta
 	name = "small winter boots"
