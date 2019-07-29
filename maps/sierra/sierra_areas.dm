@@ -1387,6 +1387,7 @@
 	name = "Cyborg Station"
 	icon_state = "ai_cyborg"
 	sound_env = SMALL_ENCLOSED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
 /area/turret_protected/ai_upload
 	name = "AI Upload Chamber"
