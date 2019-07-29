@@ -951,7 +951,8 @@
 /area/ship/scrap/hallway/port/upper)
 "cu" = (
 /obj/machinery/computer/shuttle_control/multi/lift,
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/industrial/hatch/red,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/ship/scrap/hallway/port/upper)
 "cv" = (
 /obj/structure/cable{
@@ -5179,7 +5180,7 @@ Da
 Da
 Da
 aC
-Cf
+bB
 bI
 bS
 cb
@@ -5261,7 +5262,7 @@ aK
 eL
 aK
 eL
-Cf
+bB
 Cf
 bT
 Cf
@@ -6245,7 +6246,7 @@ aR
 JO
 aR
 JO
-UM
+qr
 UM
 rn
 UM
@@ -6409,7 +6410,7 @@ Da
 ad
 Da
 Da
-UM
+qr
 bR
 bR
 bR

@@ -86,6 +86,8 @@
 "an" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/structure/railing/mapped,
+/obj/machinery/computer/shuttle_control/multi/lift,
+/obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled,
 /area/ship/scrap/cargo/lower)
 "ao" = (
@@ -178,7 +180,16 @@
 	icon_state = "corner_white_three_quarters";
 	dir = 8
 	},
-/obj/machinery/computer/shuttle_control/multi/lift,
+/obj/structure/railing/mapped{
+	dir = 8;
+	icon_state = "railing0-1";
+	tag = "icon-railing0 (WEST)"
+	},
+/obj/structure/railing/mapped{
+	dir = 1;
+	icon_state = "railing0-1";
+	tag = "icon-railing0 (NORTH)"
+	},
 /turf/simulated/floor/tiled,
 /area/ship/scrap/shuttle/lift)
 "ay" = (
@@ -193,6 +204,16 @@
 	tag = "icon-corner_white_three_quarters (NORTH)";
 	icon_state = "corner_white_three_quarters";
 	dir = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1";
+	tag = "icon-railing0 (EAST)"
+	},
+/obj/structure/railing/mapped{
+	dir = 1;
+	icon_state = "railing0-1";
+	tag = "icon-railing0 (NORTH)"
 	},
 /turf/simulated/floor/tiled,
 /area/ship/scrap/shuttle/lift)
@@ -237,6 +258,11 @@
 	icon_state = "corner_white";
 	dir = 9
 	},
+/obj/structure/railing/mapped{
+	dir = 8;
+	icon_state = "railing0-1";
+	tag = "icon-railing0 (WEST)"
+	},
 /turf/simulated/floor/tiled,
 /area/ship/scrap/shuttle/lift)
 "aE" = (
@@ -250,6 +276,11 @@
 /obj/effect/floor_decal/corner/beige{
 	icon_state = "corner_white";
 	dir = 6
+	},
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1";
+	tag = "icon-railing0 (EAST)"
 	},
 /turf/simulated/floor/tiled,
 /area/ship/scrap/shuttle/lift)
@@ -291,6 +322,12 @@
 /area/ship/scrap/maintenance/lower)
 "aJ" = (
 /obj/effect/floor_decal/corner/beige/three_quarters,
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
+	dir = 8;
+	icon_state = "railing0-1";
+	tag = "icon-railing0 (WEST)"
+	},
 /turf/simulated/floor/tiled,
 /area/ship/scrap/shuttle/lift)
 "aK" = (
@@ -298,6 +335,7 @@
 	icon_state = "corner_white";
 	dir = 10
 	},
+/obj/structure/railing/mapped,
 /turf/simulated/floor/tiled,
 /area/ship/scrap/shuttle/lift)
 "aL" = (
@@ -305,6 +343,12 @@
 	tag = "icon-corner_white_three_quarters (EAST)";
 	icon_state = "corner_white_three_quarters";
 	dir = 4
+	},
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1";
+	tag = "icon-railing0 (EAST)"
 	},
 /turf/simulated/floor/tiled,
 /area/ship/scrap/shuttle/lift)
@@ -457,11 +501,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/scrap/escape/starboard)
-"aX" = (
-/obj/machinery/suit_cycler/engineering,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/monotile,
-/area/ship/scrap/other/eva)
 "aY" = (
 /obj/structure/plasticflaps,
 /obj/machinery/conveyor{
@@ -1242,11 +1281,6 @@
 /area/ship/scrap/maintenance/lower)
 "cD" = (
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2";
@@ -1744,7 +1778,9 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/autoname/centcom,
+/obj/machinery/door/airlock/security/striped{
+	name = "Brig"
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/scrap/other/security)
 "dA" = (
@@ -2605,6 +2641,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
+/obj/machinery/suit_cycler/engineering,
 /turf/simulated/floor/plating,
 /area/ship/scrap/other/eva)
 "fo" = (
@@ -3183,7 +3220,6 @@
 	pixel_x = 0
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/autoname/engineering,
 /turf/simulated/floor/tiled/monotile,
 /area/ship/scrap/other/eva)
@@ -3317,6 +3353,10 @@
 "iV" = (
 /turf/simulated/wall/r_wall/hull,
 /area/ship/scrap/escape/port)
+"jI" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled,
+/area/ship/scrap/other/eva)
 "jZ" = (
 /turf/simulated/wall/prepainted,
 /area/ship/scrap/crew/wash)
@@ -3382,6 +3422,11 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/plating,
 /area/ship/scrap/cargo/ore_melting)
+"rK" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/autoname/engineering,
+/turf/simulated/floor/tiled,
+/area/ship/scrap/other/eva)
 "wf" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/ship/scrap/cargo/ore_melting)
@@ -7087,8 +7132,8 @@ bC
 dq
 ej
 cs
-ew
-cZ
+rK
+jI
 dO
 ev
 eW
@@ -7157,7 +7202,7 @@ eD
 eQ
 cv
 cs
-cF
+MC
 Td
 Oi
 cs
@@ -7170,7 +7215,7 @@ fB
 fC
 fz
 ew
-aX
+cZ
 dR
 ba
 fc
