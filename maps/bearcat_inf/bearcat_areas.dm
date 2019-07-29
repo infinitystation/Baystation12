@@ -65,6 +65,7 @@
 /area/ship/scrap/other/eva
 	name = "\improper EVA Storage"
 	icon_state = "eva"
+	req_access = list(access_eva)
 
 /area/ship/scrap/other/dock
 	name = "\improper Docking Bay"
@@ -73,16 +74,17 @@
 /area/ship/scrap/other/security
 	name = "\improper Brig"
 	icon_state = "red"
-	req_access = list(access_security)
+	req_access = list(access_brig)
 
 /area/ship/scrap/other/robotics
 	name = "\improper Robotic Maintenance"
 	icon_state = "robotics"
+	req_access = list(access_robotics)
 
 /area/ship/scrap/other/requisition
 	name = "\improper Requisition"
 	icon_state = "storage"
-	req_access = list(access_cargo)
+	req_access = list(access_qm)
 
 /area/ship/scrap/other/lounge
 	name = "\improper Lounge"
@@ -91,6 +93,7 @@
 /area/ship/scrap/medbay
 	name = "\improper Medical Bay"
 	icon_state = "medbay"
+	//req_access = list(access_medical)
 
 /area/ship/scrap/escape/port
 	name = "\improper Port Escape Pods"
@@ -112,6 +115,9 @@
 
 /area/ship/scrap/cargo/lower
 	name = "\improper Lower Cargo Hold"
+
+/area/ship/scrap/cargo/upper
+	name = "\improper Upper Cargo Hold"
 
 /area/ship/scrap/cargo/ore_melting
 	name = "\improper Smelting Section"

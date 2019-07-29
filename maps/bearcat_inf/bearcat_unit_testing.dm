@@ -7,7 +7,7 @@
 		/area/ship/scrap/shuttle/outgoing = NO_SCRUBBER,
 		/area/ship/scrap/other/research = NO_APC,
 		/area/ship/scrap/engineering/solars = NO_SCRUBBER|NO_VENT|NO_APC,
-		/area/ship/scrap/engineering/solars/array = NO_SCRUBBER,
+		/area/ship/scrap/engineering/solars/array = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/ship/scrap/maintenance/unused = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/exoplanet          = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/exoplanet/desert   = NO_SCRUBBER|NO_VENT|NO_APC,
