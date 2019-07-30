@@ -18,11 +18,10 @@
 /obj/machinery/computer/shuttle_control/multi/lift
 	name = "cargo lift controls"
 	shuttle_tag = "Cargo Lift"
-	ui_template = "shuttle_control_console_lift.tmpl"
+	ui_template = "shuttle_control_console_multi_lift.tmpl"
 	icon_state = "tiny"
 	icon_keyboard = "tiny_keyboard"
 	icon_screen = "lift"
-	density = 0
 
 //Lift's personal landmarkers
 /obj/effect/shuttle_landmark/lift/top
@@ -35,13 +34,13 @@
 	name = "Middle Deck"
 	landmark_tag = "nav_bearcat_lift_middle"
 	base_turf = /turf/simulated/open
-	base_area = /area/ship/scrap/cargo
+	base_area = /area/ship/scrap/cargo/upper
 
 /obj/effect/shuttle_landmark/lift/bottom
 	name = "Lower Deck"
 	landmark_tag = "nav_bearcat_lift_bottom"
-	base_area = /area/ship/scrap/cargo/lower
 	base_turf = /turf/simulated/floor
+	base_area = /area/ship/scrap/cargo/lower
 
 //Bearcat's exploration
 /datum/shuttle/autodock/overmap/exploration

@@ -51,6 +51,24 @@
 /datum/job/captain/get_access()
 	return get_all_station_access()
 
+/datum/job/hop
+	title = "First Mate"
+	supervisors = "the Captain and the Merchant Code"
+	outfit_type = /decl/hierarchy/outfit/job/bearcat/mate
+	hud_icon = "hudheadofpersonnel"
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
+	                    SKILL_COMPUTER    = SKILL_BASIC,
+	                    SKILL_PILOT       = SKILL_BASIC)
+
+	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
+	                    SKILL_SCIENCE     = SKILL_MAX)
+
+	skill_points = 30
+	access = list(access_brig, access_eva, access_bar,
+			            access_medical, access_medical_equip, access_engine, access_change_ids, access_ai_upload, access_eva, access_heads,
+			            access_all_personal_lockers, access_cargo_bot, access_qm, access_mining_station, access_robotics,
+			            access_hop, access_RC_announce, access_keycard_auth)
+
 /datum/job/chief_engineer
 	title = "Chief Engineer"
 	supervisors = "the Captain"
@@ -69,6 +87,45 @@
 	                    SKILL_ATMOS        = SKILL_MAX,
 	                    SKILL_ENGINES      = SKILL_MAX)
 	skill_points = 30
+	access = list(access_engine, access_heads, access_eva, access_robotics, access_ai_upload, access_RC_announce, access_keycard_auth, access_ce)
+
+/datum/job/qm
+	title = "Quartermaster"
+	supervisors = "your greed, the Captain and the First Mate."
+	outfit_type = /decl/hierarchy/outfit/job/bearcat/qm
+	total_positions = 1
+	spawn_positions = 1
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
+	                    SKILL_FINANCE     = SKILL_BASIC,
+	                    SKILL_HAULING     = SKILL_BASIC,
+	                    SKILL_EVA         = SKILL_BASIC,
+	                    SKILL_PILOT       = SKILL_BASIC)
+
+	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
+	skill_points = 18
+	access = list(access_qm, access_cargo_bot)
+
+/datum/job/assistant
+	title = "Deck Hand"
+	supervisors = "Quartermaster, the Captain and the First Mate"
+	outfit_type = /decl/hierarchy/outfit/job/bearcat/hand
+	alt_titles = list(
+		"Steward" = /decl/hierarchy/outfit/job/bearcat/hand/cook,
+		"Cargo Hand",
+		"Digger" = /decl/hierarchy/outfit/job/bearcat/hand/digger,
+		)
+	hud_icon = "hudcargotechnician"
+
+/datum/job/bartender
+	title = "Bartender"
+	supervisors = "the Captain"
+	outfit_type = /decl/hierarchy/outfit/job/bearcat/bartender
+	total_positions = 1
+	spawn_positions = 1
+	min_skill = list(   SKILL_COOKING   = SKILL_BASIC,
+	                    SKILL_BOTANY    = SKILL_BASIC,
+	                    SKILL_CHEMISTRY = SKILL_BASIC)
+	access = list(access_bar)
 
 /datum/job/doctor
 	title = "Doctor"
@@ -88,47 +145,7 @@
 	                    SKILL_CHEMISTRY   = SKILL_MAX,
 	                    SKILL_VIROLOGY    = SKILL_MAX)
 	skill_points = 32
-	access = list(access_medical_equip, access_kitchen)
-
-/datum/job/hop
-	title = "First Mate"
-	supervisors = "the Captain and the Merchant Code"
-	outfit_type = /decl/hierarchy/outfit/job/bearcat/mate
-	hud_icon = "hudheadofpersonnel"
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
-	                    SKILL_COMPUTER    = SKILL_BASIC,
-	                    SKILL_PILOT       = SKILL_BASIC)
-
-	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
-	                    SKILL_SCIENCE     = SKILL_MAX)
-
-	skill_points = 30
-	access = list(access_security, access_sec_doors, access_brig, access_forensics_lockers,
-			            access_medical, access_engine, access_change_ids, access_ai_upload, access_eva, access_heads,
-			            access_all_personal_lockers, access_maint_tunnels, access_bar, access_janitor, access_construction, access_morgue,
-			            access_crematorium, access_kitchen, access_cargo, access_cargo_bot, access_mailsorting, access_qm, access_hydroponics, access_lawyer,
-			            access_chapel_office, access_library, access_research, access_mining, access_heads_vault, access_mining_station,
-			            access_hop, access_RC_announce, access_keycard_auth, access_gateway)
-/datum/job/bartender
-	title = "Bartender"
-	supervisors = "the Captain"
-	outfit_type = /decl/hierarchy/outfit/job/bearcat/bartender
-	total_positions = 1
-	spawn_positions = 1
-	min_skill = list(   SKILL_COOKING   = SKILL_BASIC,
-	                    SKILL_BOTANY    = SKILL_BASIC,
-	                    SKILL_CHEMISTRY = SKILL_BASIC)
-
-/datum/job/assistant
-	title = "Deck Hand"
-	supervisors = "Quartermaster, the Captain and the First Mate"
-	outfit_type = /decl/hierarchy/outfit/job/bearcat/hand
-	alt_titles = list(
-		"Steward" = /decl/hierarchy/outfit/job/bearcat/hand/cook,
-		"Cargo Hand",
-		"Digger" = /decl/hierarchy/outfit/job/bearcat/hand/digger,
-		)
-	hud_icon = "hudcargotechnician"
+	access = list(access_medical_equip, access_medical)
 
 /datum/job/engineer
 	title = "Junior Engineer"
@@ -150,6 +167,7 @@
 	                    SKILL_ATMOS        = SKILL_MAX,
 	                    SKILL_ENGINES      = SKILL_MAX)
 	skill_points = 20
+	access = list(access_engine, access_eva)
 
 /datum/job/roboticist
 	title = "Roboticist"
@@ -170,22 +188,7 @@
 	                    SKILL_ANATOMY      = SKILL_MAX,
 	                    SKILL_MEDICAL      = SKILL_MAX)
 	skill_points = 18
-
-/datum/job/qm
-	title = "Quartermaster"
-	supervisors = "your greed, the Captain and the First Mate."
-	outfit_type = /decl/hierarchy/outfit/job/bearcat/qm
-	total_positions = 1
-	spawn_positions = 1
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
-	                    SKILL_FINANCE     = SKILL_BASIC,
-	                    SKILL_HAULING     = SKILL_BASIC,
-	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_PILOT       = SKILL_BASIC)
-
-	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
-	skill_points = 18
-
+	access = list(access_robotics)
 
 /datum/job/officer
 	title = "Security"
@@ -207,6 +210,7 @@
 	                    SKILL_WEAPONS     = SKILL_MAX,
 	                    SKILL_FORENSICS   = SKILL_MAX)
 	skill_points = 18
+	access = list(access_brig, access_eva)
 
 /datum/job/cyborg
 	supervisors = "your laws and the Captain"
