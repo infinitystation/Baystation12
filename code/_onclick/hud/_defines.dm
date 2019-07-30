@@ -57,6 +57,7 @@
 #define ui_movi "EAST-3:24,SOUTH:5"
 #define ui_zonesel "EAST-1:28,SOUTH:5"
 #define ui_acti_alt "EAST-1:28,SOUTH:5" //alternative intent switcher for when the interface is hidden (F12)
+#define ui_stamina "EAST-3:24,SOUTH+1:5"
 
 #define ui_borg_pull "EAST-3:24,SOUTH+1:7"
 #define ui_borg_module "EAST-2:26,SOUTH+1:7"
@@ -80,7 +81,8 @@
 #define ui_alien_oxygen "EAST-1:28,NORTH-4:25"
 
 //Middle right (status indicators)
-#define ui_nutrition "EAST-1:28,CENTER-3:11"
+#define ui_nutrition "EAST-1:28,CENTER-2:11"
+#define ui_nutrition_small "EAST-1:28,CENTER-2:24"
 #define ui_temp "EAST-1:28,CENTER-1:13"
 #define ui_mintemp "EAST-0:7,CENTER-2:22"
 #define ui_health "EAST-1:28,CENTER:15"

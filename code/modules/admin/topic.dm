@@ -260,8 +260,8 @@
 			if("ian")				M.change_mob_type( /mob/living/simple_animal/corgi/Ian , null, null, delmob )
 			if("crab")				M.change_mob_type( /mob/living/simple_animal/crab , null, null, delmob )
 			if("coffee")			M.change_mob_type( /mob/living/simple_animal/crab/Coffee , null, null, delmob )
-			if("parrot")			M.change_mob_type( /mob/living/simple_animal/parrot , null, null, delmob )
-			if("polyparrot")		M.change_mob_type( /mob/living/simple_animal/parrot/Poly , null, null, delmob )
+			if("parrot")			M.change_mob_type( /mob/living/simple_animal/hostile/retaliate/parrot , null, null, delmob )
+			if("polyparrot")		M.change_mob_type( /mob/living/simple_animal/hostile/retaliate/parrot/Poly , null, null, delmob )
 			if("constructarmoured")	M.change_mob_type( /mob/living/simple_animal/construct/armoured , null, null, delmob )
 			if("constructbuilder")	M.change_mob_type( /mob/living/simple_animal/construct/builder , null, null, delmob )
 			if("constructwraith")	M.change_mob_type( /mob/living/simple_animal/construct/wraith , null, null, delmob )
@@ -345,7 +345,7 @@
 			to_chat(usr, "This can only be used on instances of type /mob")
 			return
 
-		if(!M.ckey)	//sanity
+		if(!(LAST_CKEY(M)))	//sanity
 			to_chat(usr, "This mob has no ckey")
 			return
 
@@ -610,7 +610,9 @@
 		jobs += "<tr bgcolor='ffeeaa'><th colspan='10'><a href='?src=\ref[src];jobban3=Syndicate;jobban4=\ref[M]'>Antagonist Positions</a></th></tr><tr align='center'>"
 
 		// Antagonists.
+		#define ANTAG_COLUMNS 5
 		var/list/all_antag_types = GLOB.all_antag_types_
+		var/i = 1
 		for(var/antag_type in all_antag_types)
 			var/datum/antagonist/antag = all_antag_types[antag_type]
 			if(!antag || !antag.id)
@@ -619,8 +621,11 @@
 				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[antag.id];jobban4=\ref[M]'><font color=red>[replacetext("[antag.role_text]", " ", "&nbsp")]</font></a></td>"
 			else
 				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[antag.id];jobban4=\ref[M]'>[replacetext("[antag.role_text]", " ", "&nbsp")]</a></td>"
-
+			if(i % ANTAG_COLUMNS == 0 && i < length(all_antag_types))
+				jobs += "</tr><tr align='center'>"
+			i++
 		jobs += "</tr></table>"
+		#undef ANTAG_COLUMNS
 
 		var/list/misc_roles = list("Dionaea", "Graffiti")
 		//Other roles  (BLUE, because I have no idea what other color to make this)
@@ -904,6 +909,11 @@
 
 		if(M.client && M.client.holder)	return	//admins cannot be banned. Even if they could, the ban doesn't affect them anyway
 
+		var/given_key = href_list["last_key"]
+		if(!given_key)
+			to_chat(usr, SPAN_DANGER("This mob has no known last occupant and cannot be banned."))
+			return
+
 		switch(alert("Temporary Ban?",,"Yes","No", "Cancel"))
 			if("Yes")
 				var/mins = input(usr,"How long (in minutes)?","Ban time",1440) as num|null
@@ -939,10 +949,15 @@
 				reason = sanitize_a0(reason)
 				if(!reason)
 					return
+				var/mob_key = LAST_CKEY(M)
+				if(mob_key != given_key)
+					to_chat(usr, SPAN_DANGER("This mob's occupant has changed from [given_key] to [mob_key]. Please try again."))
+					show_player_panel(M)
+					return
 				switch(alert(usr,"IP ban?",,"Yes","No","Cancel"))
 					if("Cancel")	return
 					if("Yes")
-						AddBan(M.ckey, M.computer_id, reason, usr.ckey, 0, 0, M.lastKnownIP)
+						AddBan(mob_key, M.computer_id, reason, usr.ckey, 0, 0, M.lastKnownIP)
 					if("No")
 						AddBan(M.ckey, M.computer_id, reason, usr.ckey, 0, 0)
 				to_chat(M, "<span class='danger'><BIG>Вы были ЖЕСТКО забанены администратором [usr.client.ckey].\nПричина: [reason]</BIG></span>")
@@ -2137,8 +2152,6 @@
 				ckey = M.ckey
 		show_note(ckey)
 		return
-
-
 	if(href_list["setstaffwarn"])
 		var/mob/M = locate(href_list["setstaffwarn"])
 		if(!ismob(M)) return
@@ -2147,6 +2160,7 @@
 
 		switch(alert("Really set staff warn?",,"Yes","No"))
 			if("Yes")
+				var/last_ckey = LAST_CKEY(M)
 				var/reason = sanitize(input(usr,"Staff warn message","Staff Warn","Problem Player") as text|null)
 				if (!reason || reason == "")
 					return
@@ -2156,7 +2170,7 @@
 				if(M.client)
 					M.client.staffwarn = reason
 				SSstatistics.add_field("staff_warn",1)
-				log_and_message_admins("has enabled staffwarn on [M.ckey].\nMessage: [reason]\n")
+				log_and_message_admins("has enabled staffwarn on [last_ckey].\nMessage: [reason]\n")
 				show_player_panel(M)
 			if("No")
 				return
@@ -2166,12 +2180,13 @@
 
 		switch(alert("Really remove staff warn?",,"Yes","No"))
 			if("Yes")
-				if(!DB_staffwarn_remove(M.ckey))
+				var/last_ckey = LAST_CKEY(M)
+				if(!DB_staffwarn_remove(last_ckey))
 					return
 				add_note(M.ckey,"\[AUTO\] Staff warn disabled", null, usr.ckey, 0)
 				if(M.client)
 					M.client.staffwarn = null
-				log_and_message_admins("has removed the staffwarn on [M.ckey].\n")
+				log_and_message_admins("has removed the staffwarn on [last_ckey].\n")
 				show_player_panel(M)
 			if("No")
 				return
@@ -2229,6 +2244,6 @@ mob/living/silicon/ai/can_centcom_reply()
 	return client && client.get_admin_jump_link(target, delimiter, prefix, sufix)
 
 /client/get_admin_jump_link(var/atom/target, var/delimiter, var/prefix, var/sufix)
-	if(check_rights(R_INVESTIGATE, 0, src))
+	if(holder && check_rights(R_INVESTIGATE, 0, src))
 		var/short_links = get_preference_value(/datum/client_preference/ghost_follow_link_length) == GLOB.PREF_SHORT
 		return admin_jump_link(target, src, delimiter, prefix, sufix, short_links)

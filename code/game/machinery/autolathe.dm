@@ -8,7 +8,10 @@
 	active_power_usage = 2000
 	clicksound = "keyboard"
 	clickvol = 30
-	layer = BELOW_OBJ_LAYER
+	base_type = /obj/machinery/autolathe
+	construct_state = /decl/machine_construction/default/panel_closed
+	uncreated_component_parts = null
+	stat_immune = 0
 
 	var/list/machine_recipes
 	var/list/stored_material =  list(MATERIAL_STEEL = 0, MATERIAL_ALUMINIUM = 0, MATERIAL_GLASS = 0, MATERIAL_PLASTIC = 0)
@@ -23,42 +26,15 @@
 	var/mat_efficiency = 1
 	var/build_time = 50
 
-	var/datum/wires/autolathe/wires = null
-
-
-/obj/machinery/autolathe/New()
-
-	..()
-	wires = new(src)
-	//Create parts for lathe.
-	component_parts = list()
-	component_parts += new /obj/item/weapon/circuitboard/autolathe(src)
-	component_parts += new /obj/item/weapon/stock_parts/matter_bin(src)
-	component_parts += new /obj/item/weapon/stock_parts/matter_bin(src)
-	component_parts += new /obj/item/weapon/stock_parts/matter_bin(src)
-	component_parts += new /obj/item/weapon/stock_parts/manipulator(src)
-	component_parts += new /obj/item/weapon/stock_parts/console_screen(src)
-	RefreshParts()
-
-/obj/machinery/autolathe/Destroy()
-	qdel(wires)
-	wires = null
-	return ..()
+	wires = /datum/wires/autolathe
 
 /obj/machinery/autolathe/proc/update_recipe_list()
 	if(!machine_recipes)
 		machine_recipes = autolathe_recipes
 
-/obj/machinery/autolathe/interact(mob/user as mob)
-
+/obj/machinery/autolathe/interact(mob/user)
+	user.set_machine(src)
 	update_recipe_list()
-
-	if(..() || (disabled && !panel_open))
-		to_chat(user, "<span class='danger'>\The [src] is disabled!</span>")
-		return
-
-	if(shocked)
-		shock(user, 50)
 
 	var/dat = "<center><h1>Autolathe Control Panel</h1><hr/>"
 	var/operator_device_skill = list(1.5, 1, 0.9, 0.8, 0.75)[user.get_skill_value(SKILL_DEVICES)]
@@ -114,33 +90,30 @@
 			dat += "<tr><td width = 180>[R.hidden ? "<font color = 'red'>*</font>" : ""]<b>[can_make ? "<a href='?src=\ref[src];make=[index];multiplier=1'>" : ""][R.name][can_make ? "</a>" : ""]</b>[R.hidden ? "<font color = 'red'>*</font>" : ""][multiplier_string]</td><td align = right>[material_string]</tr>"
 
 		dat += "</table><hr>"
-	//Hacking.
-	if(panel_open)
-		dat += "<h2>Maintenance Panel</h2>"
-		dat += wires.GetInteractWindow(user)
-
-		dat += "<hr>"
 
 	var/datum/browser/popup = new(user, "autolathenew", "Autholathe", 450, 600)
 	popup.set_content(dat)
 	popup.open()
 
-/obj/machinery/autolathe/attackby(var/obj/item/O as obj, var/mob/user as mob)
-
-	if(busy)
-		to_chat(user, SPAN_NOTICE("\The [src] is busy. Please wait for completion of previous operation."))
-		return
-
-	if(default_deconstruction_screwdriver(user, O))
+/obj/machinery/autolathe/state_transition(var/decl/machine_construction/default/new_state)
+	. = ..()
+	if(istype(new_state))
 		updateUsrDialog()
-		return
-	if(default_deconstruction_crowbar(user, O))
-		return
 
-	if(panel_open)
-		if(default_part_replacement(user, O))
-			return
+/obj/machinery/autolathe/components_are_accessible(path)
+	return !busy && ..()
 
+/obj/machinery/autolathe/cannot_transition_to(state_path)
+	if(busy)
+		return SPAN_NOTICE("You must wait for \the [src] to finish first.")
+	return ..()
+
+/obj/machinery/autolathe/attackby(var/obj/item/O as obj, var/mob/user as mob)
+	if(busy)
+		to_chat(user, "<span class='notice'>\The [src] is busy. Please wait for completion of previous operation.</span>")
+		return
+	if(component_attackby(O, user))
+		return TRUE
 	if(stat)
 		return
 
@@ -148,57 +121,7 @@
 		if(isMultitool(O) || isWirecutter(O))
 			attack_hand(user)
 			return
-	else
-		if(istype(O, /obj/item/weapon/storage/part_replacer))
-			var/obj/item/weapon/storage/part_replacer/R = O
-			var/hasparts = 0
-			var/filltype = 0
-			for(var/obj/item/weapon/stock_parts/S in R.contents)
-				if(S.rating >= 3)	//i'm not sure but eh.
-					continue
 
-				var/list/taking_matter = S.matter
-				var/eaten = 0
-				hasparts = 1
-				for(var/material in taking_matter)
-					if(stored_material[material] >= storage_capacity[material])
-						continue
-
-					var/total_material = taking_matter[material]
-
-					if(stored_material[material] + total_material > storage_capacity[material])
-						total_material = storage_capacity[material] - stored_material[material]
-						filltype = 1
-
-					else
-						filltype = 2
-
-					eaten = 1
-					stored_material[material] += total_material
-				if(eaten)
-					R.remove_from_storage(S, src)
-					qdel(S)
-
-			if(!hasparts)
-				to_chat(user, SPAN_NOTICE("\The [R] is empty.\nFollowing parts detected in the machine:"))
-				for(var/var/obj/item/C in component_parts)
-					to_chat(user, SPAN_NOTICE("	[C.name]"))
-				return
-
-			if(!filltype)
-				to_chat(user, "<span class='notice'>\The [src] is full. Please remove material from the autolathe in order to insert more.\nFollowing parts detected in the machine:</span>")
-				for(var/var/obj/item/C in component_parts)
-					to_chat(user, SPAN_NOTICE("	[C.name]"))
-				return
-			else if(filltype == 1)
-				to_chat(user, SPAN_NOTICE("You fill \the [src] to capacity with \the [O]."))
-			else
-				to_chat(user, SPAN_NOTICE("You empty \the [O] into \the [src]."))
-
-			flick("autolathe_o", src)
-			updateUsrDialog()
-
-			return
 	if(O.loc != user && !(istype(O,/obj/item/stack)))
 		return 0
 
@@ -227,10 +150,17 @@
 	if(!found_useful_mat)
 		to_chat(user, "<span class='warning'>\The [eating] does not contain any accessible useful materials and cannot be accepted.</span>")
 		return
-
+//[inf]
 	var/filltype = 0       // Used to determine message.
 	var/total_used = 0     // Amount of material used.
 	var/mass_per_sheet = 0 // Amount of material constituting one sheet.
+//[/inf]
+	var/amount_available = 1
+	if(istype(eating, /obj/item/stack))
+		var/obj/item/stack/stack = eating
+		amount_available = stack.get_amount()
+	var/amount_used = 0    // Amount of material sheets used, if a stack, or whether the item was used, if not.
+	var/space_left = FALSE
 
 	for(var/material in taking_matter)
 
@@ -272,9 +202,17 @@
 
 	updateUsrDialog()
 
-/obj/machinery/autolathe/attack_hand(mob/user as mob)
-	user.set_machine(src)
+/obj/machinery/autolathe/physical_attack_hand(mob/user)
+	if(shocked)
+		shock(user, 50)
+		return TRUE
+
+/obj/machinery/autolathe/interface_interact(mob/user)
+	if(disabled && !panel_open)
+		to_chat(user, "<span class='danger'>\The [src] is disabled!</span>")
+		return TRUE
 	interact(user)
+	return TRUE
 
 /obj/machinery/autolathe/CanUseTopic(user, href_list)
 	if(busy)
@@ -302,10 +240,11 @@
 		if(index > 0 && index <= machine_recipes.len)
 			making = machine_recipes[index]
 
-		//Exploit detection, not sure if necessary after rewrite.
-		if(!making || multiplier < 0 || multiplier > 100)
-			log_and_message_admins("tried to exploit an autolathe to duplicate an item!", user)
+		if(!making)
 			return TOPIC_HANDLED
+		if(!making.is_stack && multiplier != 1)
+			return TOPIC_HANDLED
+		multiplier = sanitize_integer(multiplier, 1, 100, 1)
 
 		busy = 1
 		update_use_power(POWER_USE_ACTIVE)
@@ -358,19 +297,15 @@
 //Updates overall lathe storage size.
 /obj/machinery/autolathe/RefreshParts()
 	..()
-	var/mb_rating = 0
-	var/man_rating = 0
-	for(var/obj/item/weapon/stock_parts/matter_bin/MB in component_parts)
-		mb_rating += MB.rating
-	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
-		man_rating += M.rating
+	var/mb_rating = Clamp(total_component_rating_of_type(/obj/item/weapon/stock_parts/matter_bin), 0, 10)
+	var/man_rating = Clamp(total_component_rating_of_type(/obj/item/weapon/stock_parts/manipulator), 0.5, 3.5)
 
 	storage_capacity[MATERIAL_STEEL] = mb_rating  * 25000
 	storage_capacity[MATERIAL_ALUMINIUM] = mb_rating  * 25000
 	storage_capacity[MATERIAL_GLASS] = mb_rating  * 12500
 	storage_capacity[MATERIAL_PLASTIC] = mb_rating  * 12500
 	build_time = 50 / man_rating
-	mat_efficiency = 1.1 - man_rating * 0.1// Normally, price is 1.25 the amount of material, so this shouldn't go higher than 0.8. Maximum rating of parts is 3
+	mat_efficiency = 1.1 - man_rating * 0.1// Normally, price is 1.25 the amount of material.
 
 /obj/machinery/autolathe/dismantle()
 

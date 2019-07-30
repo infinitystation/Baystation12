@@ -78,6 +78,9 @@
 
 	var/proj_damage = Proj.get_structure_damage()
 
+	if(Proj.ricochet_sounds && prob(15))
+		playsound(src, pick(Proj.ricochet_sounds), 100, 1)
+
 	if(reinf_material)
 		if(Proj.damage_type == BURN)
 			proj_damage /= reinf_material.burn_armor
@@ -291,3 +294,6 @@
 
 /turf/simulated/wall/can_engrave()
 	return (material && material.hardness >= 10 && material.hardness <= 100)
+
+/turf/simulated/wall/is_wall()
+	return TRUE

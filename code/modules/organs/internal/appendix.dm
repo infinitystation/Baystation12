@@ -32,7 +32,7 @@
 				if (owner.nutrition > 100)
 					owner.vomit()
 				else
-					to_chat(owner, "<span class='danger'>Вас было вырвало, но желудок пуст!</span>")
+					to_chat(owner, "<span class='danger'>Вас чуть не вырвало, но желудок пуст!</span>")
 					owner.Weaken(10)
 		if(inflamed > 600)
 			if(prob(1))

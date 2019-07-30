@@ -55,10 +55,7 @@
 	knockdown = FALSE
 	flags = SHUTTLE_FLAGS_PROCESS
 	skill_needed = SKILL_NONE
-	ceiling_type = /turf/simulated/floor/shuttle_ceiling/scout/skrell //inf was: /turf/simulated/floor/shuttle_ceiling/torch
-
-/turf/simulated/floor/shuttle_ceiling/scout/skrell //inf
-	color = COLOR_HULL	//inf
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling/skrell
 
 /obj/effect/shuttle_landmark/skrellscoutship/start
 	name = "Uncharted Space"
@@ -74,7 +71,7 @@
 	defer_initialisation = TRUE
 	flags = SHUTTLE_FLAGS_PROCESS
 	skill_needed = SKILL_NONE
-	ceiling_type = /turf/simulated/floor/shuttle_ceiling/scout/skrell //inf was: /turf/simulated/floor/shuttle_ceiling/torch
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling/skrell
 	mothershuttle = "Skrellian Scout"
 
 /obj/effect/shuttle_landmark/skrellscoutshuttle/start
@@ -89,29 +86,9 @@
 	name = "Docking Port"
 	landmark_tag = "nav_skrellscoutsh_altdock"
 
-/*
- * Infinity: Presets from torch (map's author, I hate you)
- */
-/obj/machinery/power/apc/shuttle
-	req_access = list(access_engine_equip)
 
-/obj/machinery/vending/medical/torch
-	req_access = list(access_medical)
+/turf/simulated/floor/shuttle_ceiling/skrell
+	color = COLOR_HULL
 
-/obj/machinery/power/smes/buildable/preset/torch/engine_main/configure_and_install_coils()
-	component_parts += new /obj/item/weapon/smes_coil/super_io(src)
-	component_parts += new /obj/item/weapon/smes_coil/super_io(src)
-	component_parts += new /obj/item/weapon/smes_coil/super_capacity(src)
-	component_parts += new /obj/item/weapon/smes_coil/super_capacity(src)
-	_input_maxed = TRUE
-	_output_maxed = TRUE
-	_input_on = TRUE
-	_output_on = TRUE
-	_fully_charged = TRUE
-
-/obj/effect/paint/expeditionary
-	color = "#68099e"
-
-/*
- * Infinity: Presets from torch: Ending
- */
+/turf/simulated/floor/shuttle_ceiling/skrell/air
+	initial_gas = list("oxygen" = MOLES_O2STANDARD, "nitrogen" = MOLES_N2STANDARD)

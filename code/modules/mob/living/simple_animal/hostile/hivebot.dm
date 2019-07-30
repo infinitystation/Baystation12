@@ -1,11 +1,7 @@
-/obj/item/projectile/hivebotbullet
-	damage = 15
-	damage_type = BRUTE
-
 /mob/living/simple_animal/hostile/hivebot
-	name = "Hivebot"
-	desc = "A small robot."
-	icon = 'icons/mob/hivebot.dmi'
+	name = "hivebot"
+	desc = "A junky looking robot with four spiky legs."
+	icon = 'icons/mob/simple_animal/hivebot.dmi'
 	icon_state = "basic"
 	icon_living = "basic"
 	icon_dead = "basic"
@@ -16,7 +12,7 @@
 	melee_damage_flags = DAM_SHARP|DAM_EDGE
 	attacktext = "clawed"
 	projectilesound = 'sound/weapons/gunshot/gunshot_pistol.ogg'
-	projectiletype = /obj/item/projectile/hivebotbullet
+	projectiletype = /obj/item/projectile/bullet/pistol/holdout/hivebot
 	faction = "hivebot"
 	min_gas = null
 	max_gas = null
@@ -34,7 +30,7 @@
 
 /mob/living/simple_animal/hostile/hivebot/range
 	name = "Hivebot"
-	desc = "A smallish robot, this one is armed!"
+	desc = "A junky looking robot with four spiky legs. It's equipped with some kind of small-bore gun."
 	icon_state = "smallbot"
 	icon_living = "smallbot"
 	icon_dead = "smallbot"
@@ -55,7 +51,7 @@
 
 /mob/living/simple_animal/hostile/hivebot/strong
 	name = "Strong Hivebot"
-	desc = "A robot, this one is armed and looks tough!"
+	desc = "A junky looking robot with four spiky legs - this one has thicker armour plating."
 	icon_state = "bigbot"
 	icon_living = "bigbot"
 	icon_dead = "bigbot"
@@ -93,10 +89,12 @@
 	qdel(src)
 	return
 
+/*
+Teleporter beacon, and its subtypes
+*/
 /mob/living/simple_animal/hostile/hivebot/tele
-	name = "Beacon"
-	desc = "Some odd beacon thing"
-	icon = 'icons/mob/hivebot.dmi'
+	name = "beacon"
+	desc = "Some odd beacon thing."
 	icon_state = "def_radar-off"
 	icon_living = "def_radar-off"
 	health = 200
@@ -117,18 +115,6 @@
 	visible_message("<span class='danger'>\The [src] warps in!</span>")
 	playsound(src.loc, 'sound/effects/EMPulse.ogg', 25, 1)
 
-/mob/living/simple_animal/hostile/hivebot/tele/FindTarget()
-	if(..() && !spawn_time)
-		spawn_time = world.time + spawn_delay
-		visible_message("<span class='danger'>\The [src] turns on!</span>")
-		icon_state = "def_radar"
-	return null
-
-/mob/living/simple_animal/hostile/hivebot/tele/Life()
-	. = ..()
-	if(. && spawn_time && spawn_time <= world.time)
-		warpbots()
-
 /mob/living/simple_animal/hostile/hivebot/tele/proc/warpbots()
 	icon_state = "def_radar"
 	visible_message("<span class='danger'>The [src] turns on!</span>")
@@ -145,6 +131,18 @@
 		playsound(src.loc, 'sound/effects/EMPulse.ogg', 25, 1)
 		qdel(src)
 		return
+/mob/living/simple_animal/hostile/hivebot/tele/FindTarget()
+	if(..() && !spawn_time)
+		spawn_time = world.time + spawn_delay
+		visible_message("<span class='danger'>\The [src] turns on!</span>")
+		icon_state = "def_radar"
+	return null
+
+/mob/living/simple_animal/hostile/hivebot/tele/Life()
+	. = ..()
+	if(. && spawn_time && spawn_time <= world.time)
+		warpbots()
+
 
 /mob/living/simple_animal/hostile/hivebot/verb/RepairSelf()
 	set name = "Self Repair"
@@ -154,16 +152,163 @@
 	if(!isturf(loc))
 		return
 
-	if(health < maxHealth)
-		to_chat(src, "<span class='info'>Attempting to repair damage to our body, stand by...</span>")
-		if(do_mob(src, src, 1 MINUTES))
-			if(prob(60))
-				health = min(maxHealth, health + 50)
-				to_chat(src, "<span class='notice'>We successfully repaired half of our ourselves. The current value of the system in [health / 2]%.</span>")
-			else
-				health = maxHealth
-				to_chat(src, "<span class='notice'>We successfully repaired ourselves. The current value of the system in [health / 2]%.</span>")
-			return
-	else
-		to_chat(src, "<span class='notice'>We are already in perfect condition, there are no requirements for repair.</span>")
+/mob/living/simple_animal/hostile/hivebot/tele/strong
+	bot_type = /mob/living/simple_animal/hostile/hivebot/strong
+
+/mob/living/simple_animal/hostile/hivebot/tele/range
+	bot_type = /mob/living/simple_animal/hostile/hivebot/range
+
+/mob/living/simple_animal/hostile/hivebot/tele/rapid
+	bot_type = /mob/living/simple_animal/hostile/hivebot/rapid
+
+/*
+Special projectiles
+*/
+/obj/item/projectile/bullet/pistol/holdout/hivebot
+	damage = 20
+
+/obj/item/projectile/bullet/gyro/megabot
+	name = "microrocket"
+	gyro_light_impact = 1
+	distance_falloff = 1.3
+
+/obj/item/projectile/beam/megabot
+	damage = 35
+	distance_falloff = 0.5
+
+/*
+The megabot
+*/
+#define ATTACK_MODE_MELEE    "melee"
+#define ATTACK_MODE_LASER    "laser"
+#define ATTACK_MODE_ROCKET   "rocket"
+
+/mob/living/simple_animal/hostile/hivebot/mega
+	name = "hivemind"
+	desc = "A huge quadruped robot equipped with a myriad of weaponry."
+	icon = 'icons/mob/simple_animal/megabot.dmi'
+	icon_state = "megabot"
+	icon_living = "megabot"
+	icon_dead = "megabot_dead"
+	health = 325
+	maxHealth = 325
+	melee_damage_lower = 12
+	melee_damage_upper = 17
+	melee_damage_flags = DAM_SHARP|DAM_EDGE
+	attacktext = "sawed"
+	speed = 0
+	natural_armor = list(melee = 40, bullet = 20)
+	can_escape = TRUE
+	armor_type = /datum/extension/armor/toggle
+
+	pixel_x = -32
+	default_pixel_x = -32
+
+	var/attack_mode = ATTACK_MODE_MELEE
+	var/num_shots
+	var/last_cycled
+	var/cycle_cooldown = 4 MINUTES
+	var/deactivated
+
+/mob/living/simple_animal/hostile/hivebot/mega/Initialize()
+	. = ..()
+	switch_mode(ATTACK_MODE_ROCKET)
+
+/mob/living/simple_animal/hostile/hivebot/mega/Life()
+	. = ..()
+	if(!.)
 		return
+	
+	if(last_cycled < world.time)
+		switch_mode(ATTACK_MODE_ROCKET)
+
+/mob/living/simple_animal/hostile/hivebot/mega/emp_act(severity)
+	. = ..()
+	if(severity >= 1)
+		deactivate()
+
+/mob/living/simple_animal/hostile/hivebot/mega/on_update_icon()
+	if(stat != DEAD)
+		if(deactivated)
+			icon_state = "megabot_deactivate"
+			icon_living = "megabot_deactivate"
+			return
+
+		switch(attack_mode)
+			if(ATTACK_MODE_MELEE)
+				icon_state = "megabot"
+				icon_living = "megabot"
+			if(ATTACK_MODE_LASER)
+				icon_state = "megabot_laser"
+				icon_living = "megabot_laser"
+			if(ATTACK_MODE_ROCKET)
+				icon_state = "megabot_rocket"
+				icon_living = "megabot_rocket"
+		
+/mob/living/simple_animal/hostile/hivebot/mega/proc/switch_mode(var/new_mode)
+	if(!new_mode || new_mode == attack_mode)
+		return
+
+	switch(new_mode)
+		if(ATTACK_MODE_MELEE)
+			attack_mode = ATTACK_MODE_MELEE
+			ranged = FALSE
+			projectilesound = null
+			projectiletype = null
+			num_shots = 0
+			visible_message(SPAN_MFAUNA("\The [src]'s circular saw spins up!"))
+			deactivate()
+		if(ATTACK_MODE_LASER)
+			attack_mode = ATTACK_MODE_LASER
+			ranged = TRUE
+			projectilesound = 'sound/weapons/Laser.ogg'
+			projectiletype = /obj/item/projectile/beam/megabot
+			num_shots = 8
+			fire_desc = "fires a laser"
+			visible_message(SPAN_MFAUNA("\The [src]'s laser cannon whines!"))
+		if(ATTACK_MODE_ROCKET)
+			attack_mode = ATTACK_MODE_ROCKET
+			ranged = TRUE
+			projectilesound = 'sound/effects/Explosion1.ogg'
+			projectiletype = /obj/item/projectile/bullet/gyro/megabot
+			num_shots = 2
+			last_cycled = world.time + cycle_cooldown
+			fire_desc = "launches a microrocket"
+			visible_message(SPAN_MFAUNA("\The [src]'s missile pod rumbles!"))
+
+	update_icon()
+
+/mob/living/simple_animal/hostile/hivebot/mega/proc/deactivate()
+	stop_automation = TRUE
+	deactivated = TRUE
+	visible_message(SPAN_MFAUNA("\The [src] clicks loudly as its lights fade and its motors grind to a halt!"))
+	update_icon()
+	var/datum/extension/armor/toggle/armor = get_extension(src, /datum/extension/armor)
+	if(armor)
+		armor.toggle(FALSE)
+	addtimer(CALLBACK(src, .proc/reactivate), 6 SECONDS)
+
+/mob/living/simple_animal/hostile/hivebot/mega/proc/reactivate()
+	stop_automation = FALSE
+	deactivated = FALSE
+	visible_message(SPAN_MFAUNA("\The [src] whirs back to life!"))
+	var/datum/extension/armor/toggle/armor = get_extension(src, /datum/extension/armor)
+	if(armor)
+		armor.toggle(TRUE)
+	update_icon()
+
+/mob/living/simple_animal/hostile/hivebot/mega/OpenFire(target_mob)
+	if(num_shots <= 0)
+		if(attack_mode == ATTACK_MODE_ROCKET)
+			switch_mode(ATTACK_MODE_LASER)
+		else
+			switch_mode(ATTACK_MODE_MELEE)
+		return
+	..()
+
+/mob/living/simple_animal/hostile/hivebot/mega/Shoot(target, start, user, bullet)
+	..()
+	num_shots--
+
+#undef ATTACK_MODE_MELEE
+#undef ATTACK_MODE_LASER

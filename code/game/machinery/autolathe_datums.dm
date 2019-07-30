@@ -352,6 +352,41 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	path = /obj/item/weapon/stock_parts/console_screen
 	category = "Devices and Components"
 
+/datum/autolathe/recipe/keyboard
+	name = "input controller"
+	path = /obj/item/weapon/stock_parts/keyboard
+	category = "Devices and Components"
+
+/datum/autolathe/recipe/tesla_component
+	name = "tesla link"
+	path = /obj/item/weapon/stock_parts/power/apc/buildable
+	category = "Devices and Components"
+
+/datum/autolathe/recipe/battery_backup_crap
+	name = "battery backup (weak)"
+	path = /obj/item/weapon/stock_parts/power/battery/buildable/crap
+	category = "Devices and Components"
+
+/datum/autolathe/recipe/battery_backup_stock
+	name = "battery backup (standard)"
+	path = /obj/item/weapon/stock_parts/power/battery/buildable/stock
+	category = "Devices and Components"
+
+/datum/autolathe/recipe/battery_backup_turbo
+	name = "battery backup (rapid)"
+	path = /obj/item/weapon/stock_parts/power/battery/buildable/turbo
+	category = "Devices and Components"
+
+/datum/autolathe/recipe/battery_backup_responsive
+	name = "battery backup (responsive)"
+	path = /obj/item/weapon/stock_parts/power/battery/buildable/responsive
+	category = "Devices and Components"
+
+/datum/autolathe/recipe/terminal
+	name = "terminal power connector"
+	path = /obj/item/weapon/stock_parts/power/terminal/buildable
+	category = "Devices and Components"
+
 /datum/autolathe/recipe/igniter
 	name = "igniter"
 	path = /obj/item/device/assembly/igniter
@@ -621,6 +656,21 @@ var/const/EXTRA_COST_FACTOR = 1.25
 /datum/autolathe/recipe/ecigcartridge
 	name = "ecigarette cartridge"
 	path = /obj/item/weapon/reagent_containers/ecig_cartridge/blank
+	category = "Devices and Components"
+
+/datum/autolathe/recipe/conveyor_construct
+	name = "conveyor belt assembly"
+	path = /obj/item/conveyor_construct
+	category = "Devices and Components"
+
+/datum/autolathe/recipe/conveyor_switch_construct
+	name = "conveyor belt switch"
+	path = /obj/item/conveyor_switch_construct
+	category = "Devices and Components"
+
+/datum/autolathe/recipe/conveyor_switch_oneway_construct
+	name = "one-way conveyor belt switch"
+	path = /obj/item/conveyor_switch_construct/oneway
 	category = "Devices and Components"
 
 /datum/autolathe/recipe/plunger

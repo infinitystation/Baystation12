@@ -195,11 +195,11 @@
 	economic_power = 5
 	minimal_player_age = 0
 	supervisors = "the Chief Medical Officer"
-	alt_titles = list(
-		"Psychiatrist" = /decl/hierarchy/outfit/job/torch/crew/medical/counselor/psychiatrist,
-		"Chaplain" = /decl/hierarchy/outfit/job/torch/crew/medical/counselor/chaplain,
-	)
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/medical/counselor
+	alt_titles = list(
+		"Mentalist" = /decl/hierarchy/outfit/job/torch/crew/medical/counselor/mentalist
+	)
+
 	allowed_branches = list(
 		/datum/mil_branch/civilian,
 		/datum/mil_branch/expeditionary_corps = /decl/hierarchy/outfit/job/torch/crew/medical/counselor/ec,
@@ -209,13 +209,28 @@
 		/datum/mil_rank/fleet/o2,
 		/datum/mil_rank/fleet/o1,
 		/datum/mil_rank/ec/o1)
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_MEDICAL     = SKILL_BASIC)
-
-	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX)
-
-	access = list(access_medical, access_morgue, access_chapel_office, access_crematorium, access_psychiatrist, access_solgov_crew, access_medical_equip)
+	min_skill = list(
+		SKILL_BUREAUCRACY = SKILL_BASIC,
+		SKILL_MEDICAL     = SKILL_BASIC
+	)
+	max_skill = list(
+		SKILL_MEDICAL     = SKILL_MAX
+	)
+	access = list(access_medical, access_psychiatrist, access_solgov_crew, access_medical_equip)
 	minimal_access = list()
+	software_on_spawn = list(
+		/datum/computer_file/program/suit_sensors,
+		/datum/computer_file/program/camera_monitor
+	)
+	give_psionic_implant_on_join = FALSE
 
-	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
-							 /datum/computer_file/program/camera_monitor)
+/datum/job/psychiatrist/equip(var/mob/living/carbon/human/H)
+	if(H.mind.role_alt_title == "Counselor")
+		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_OPERANT)
+	if(H.mind.role_alt_title == "Mentalist")
+		psi_faculties = list("[PSI_COERCION]" = PSI_RANK_OPERANT)
+	return ..()
+
+
+/datum/job/psychiatrist/get_description_blurb()
+	return "You are the Counselor. You are psionically awakened, part of a tiny minority, and you are the first and only exposure most of the crew will have to the mentally gifted. Your main responsibility is the mental health and wellbeing of the crew. You are subordinate to the Chief Medical Officer."

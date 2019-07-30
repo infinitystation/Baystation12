@@ -1,3 +1,5 @@
+#define WEBHOOK_SUBMAP_LOADED_VOX "webhook_submap_vox"
+
 #include "voxship_areas.dm"
 #include "voxship_jobs.dm"
 
@@ -62,6 +64,9 @@
 	name = "[pidgin.get_random_name()]-[pidgin.get_random_name()]"
 	..()
 
+/decl/webhook/submap_loaded/vox
+	id = WEBHOOK_SUBMAP_LOADED_VOX
+
 /decl/submap_archetype/derelict/voxship
 	descriptor = "Shoal forward base"
 	map = "Vox Base"
@@ -70,6 +75,7 @@
 	)
 	whitelisted_species = list(SPECIES_VOX)
 	blacklisted_species = null
+	call_webhook = WEBHOOK_SUBMAP_LOADED_VOX
 
 /turf/simulated/floor/plating/vox
 	initial_gas = list("nitrogen" = MOLES_N2STANDARD*1.25)
@@ -88,10 +94,12 @@
 	TLV["oxygen"] =	list(-1, -1, 0.1, 0.1) // Partial pressure, kpa
 	TLV["nitrogen"] = list(16, 19, 135, 140) // Partial pressure, kpa
 
-/obj/machinery/power/smes/buildable/preset/voxship/ship/configure_and_install_coils()
-	component_parts += new /obj/item/weapon/smes_coil/super_capacity(src)
+/obj/machinery/power/smes/buildable/preset/voxship/ship
+	uncreated_component_parts = list(/obj/item/weapon/stock_parts/smes_coil/super_capacity = 1)
 	_input_maxed = TRUE
 	_output_maxed = TRUE
 	_input_on = TRUE
 	_output_on = TRUE
 	_fully_charged = TRUE
+
+#undef WEBHOOK_SUBMAP_LOADED_VOX

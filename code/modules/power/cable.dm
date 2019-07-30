@@ -371,12 +371,13 @@ obj/structure/cable/proc/cableColor(var/colorC)
 
 		else if(istype(AM,/obj/machinery/power/apc))
 			var/obj/machinery/power/apc/N = AM
-			if(!N.terminal)	continue // APC are connected through their terminal
+			var/obj/machinery/power/terminal/terminal = N.terminal()
+			if(!terminal)	continue // APC are connected through their terminal
 
-			if(N.terminal.powernet == powernet)
+			if(terminal.powernet == powernet)
 				continue
 
-			to_connect += N.terminal //we'll connect the machines after all cables are merged
+			to_connect += terminal //we'll connect the machines after all cables are merged
 
 		else if(istype(AM,/obj/machinery/power)) //other power machines
 			var/obj/machinery/power/M = AM
@@ -644,11 +645,11 @@ obj/structure/cable/proc/cableColor(var/colorC)
 
 /obj/item/stack/cable_coil/transfer_to(obj/item/stack/cable_coil/S)
 	if(!istype(S))
-		return
+		return 0
 	if(!(can_merge(S) || S.can_merge(src)))
-		return
+		return 0
 
-	..()
+	return ..()
 
 ///////////////////////////////////////////////
 // Cable laying procedures
@@ -851,3 +852,31 @@ obj/structure/cable/proc/cableColor(var/colorC)
 /obj/item/stack/cable_coil/random/New()
 	color = GLOB.possible_cable_colours[pick(GLOB.possible_cable_colours)]
 	..()
+
+// Produces cable coil from a rig power cell.
+/obj/item/stack/cable_coil/fabricator
+	name = "cable fabricator"
+	var/cost_per_cable = 10
+
+/obj/item/stack/cable_coil/fabricator/split(var/tamount, var/force=FALSE)
+	return
+
+/obj/item/stack/cable_coil/fabricator/get_cell()
+	if(istype(loc, /obj/item/rig_module))
+		var/obj/item/rig_module/module = loc
+		return module.get_cell()
+	if(istype(loc, /mob/living/silicon/robot))
+		var/mob/living/silicon/robot/R = loc
+		return R.get_cell()
+
+/obj/item/stack/cable_coil/fabricator/use(var/used)
+	var/obj/item/weapon/cell/cell = get_cell()
+	if(cell) cell.use(used * cost_per_cable)
+
+/obj/item/stack/cable_coil/fabricator/get_amount()
+	var/obj/item/weapon/cell/cell = get_cell()
+	. = (cell ? Floor(cell.charge / cost_per_cable) : 0)
+
+/obj/item/stack/cable_coil/fabricator/get_max_amount()
+	var/obj/item/weapon/cell/cell = get_cell()
+	. = (cell ? Floor(cell.maxcharge / cost_per_cable) : 0)

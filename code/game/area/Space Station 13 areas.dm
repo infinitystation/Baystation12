@@ -248,6 +248,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	process()
 
 /area/beach/Entered(atom/movable/Obj,atom/OldLoc)
+	. = ..()
 	if(ismob(Obj))
 		var/mob/M = Obj
 		if(M.client)

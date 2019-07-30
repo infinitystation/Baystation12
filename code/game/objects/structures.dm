@@ -110,19 +110,10 @@
 /obj/structure/proc/can_visually_connect_to(var/obj/structure/S)
 	return istype(S, src)
 
-/obj/structure/proc/neighbor_turf_passable()
-	var/turf/T = get_step(src, src.dir)
-	if(!T || !istype(T))
-		return 0
-	if(T.density == 1)
-		return 0
-	for(var/obj/O in T.contents)
-		if(istype(O,/obj/structure))
-			if(istype(O,/obj/structure/railing))
-				return 1
-			else if(O.density == 1)
-				return 0
-	return 1
+/obj/structure/proc/refresh_neighbors()
+	for(var/thing in RANGE_TURFS(src, 1))
+		var/turf/T = thing
+		T.update_icon()
 
 /obj/structure/proc/update_connections(propagate = 0)
 	var/list/dirs = list()
@@ -139,7 +130,7 @@
 	if(!can_visually_connect())
 		connections = list("0", "0", "0", "0")
 		other_connections = list("0", "0", "0", "0")
-		return
+		return FALSE
 
 	for(var/direction in GLOB.cardinal)
 		var/turf/T = get_step(src, direction)
@@ -177,5 +168,8 @@
 			dirs += get_dir(src, T)
 			other_dirs += get_dir(src, T)
 
+	refresh_neighbors()
+
 	connections = dirs_to_corner_states(dirs)
 	other_connections = dirs_to_corner_states(other_dirs)
+	return TRUE

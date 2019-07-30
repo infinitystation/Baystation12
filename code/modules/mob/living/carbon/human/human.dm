@@ -104,10 +104,6 @@
 				stat("Tank Pressure", internal.air_contents.return_pressure())
 				stat("Distribution Pressure", internal.distribute_pressure)
 
-		var/obj/item/organ/internal/xeno/plasmavessel/P = internal_organs_by_name[BP_PLASMA]
-		if(P)
-			stat(null, "Phoron Stored: [P.stored_plasma]/[P.max_plasma]")
-
 		var/obj/item/organ/internal/cell/potato = internal_organs_by_name[BP_CELL]
 		if(potato && potato.cell)
 			stat("Battery charge:", "[potato.get_charge()]/[potato.cell.maxcharge]")
@@ -141,7 +137,7 @@
 			b_loss = 60
 			f_loss = 60
 
-			if (!istype(l_ear, /obj/item/clothing/ears/earmuffs) && !istype(r_ear, /obj/item/clothing/ears/earmuffs))
+			if (get_sound_volume_multiplier() >= 0.2)
 				ear_damage += 30
 				ear_deaf += 120
 			if (prob(70))
@@ -149,7 +145,7 @@
 
 		if(3.0)
 			b_loss = 30
-			if (!istype(l_ear, /obj/item/clothing/ears/earmuffs) && !istype(r_ear, /obj/item/clothing/ears/earmuffs))
+			if (get_sound_volume_multiplier() >= 0.2)
 				ear_damage += 15
 				ear_deaf += 60
 			if (prob(50))
@@ -235,6 +231,8 @@
 		dat += "<BR><b>Pockets:</b> <A href='?src=\ref[src];item=pockets'>Empty or Place Item</A>"
 		if(suit.has_sensor == 1)
 			dat += "<BR><A href='?src=\ref[src];item=sensors'>Set sensors</A>"
+		if (suit.has_sensor && user.get_multitool())
+			dat += "<BR><A href='?src=\ref[src];item=lock_sensors'>[suit.has_sensor == SUIT_LOCKED_SENSORS ? "Unl" : "L"]ock sensors</A>"
 	if(handcuffed)
 		dat += "<BR><A href='?src=\ref[src];item=[slot_handcuffed]'>Handcuffed</A>"
 
@@ -960,13 +958,16 @@
 				return 1
 	return 0
 
-/mob/living/carbon/human/proc/handle_embedded_and_stomach_objects()
-	for(var/obj/item/organ/external/organ in src.organs)
-		if(organ.splinted)
-			continue
-		for(var/obj/item/O in organ.implants)
-			if(!istype(O,/obj/item/weapon/implant) && O.w_class > 1 && prob(5)) //Moving with things stuck in you could be bad.
-				jossle_internal_object(organ, O)
+/mob/living/carbon/human/handle_embedded_and_stomach_objects()
+
+	if(embedded_flag)
+		for(var/obj/item/organ/external/organ in organs)
+			if(organ.splinted)
+				continue
+			for(var/obj/item/O in organ.implants)
+				if(!istype(O,/obj/item/weapon/implant) && O.w_class > 1 && prob(5)) //Moving with things stuck in you could be bad.
+					jostle_internal_object(organ, O)
+
 	var/obj/item/organ/internal/stomach/stomach = internal_organs_by_name[BP_STOMACH]
 	if(stomach && stomach.contents.len)
 		for(var/obj/item/O in stomach.contents)
@@ -978,9 +979,9 @@
 					if(parent)
 						parent.embed(O)
 				else
-					jossle_internal_object(parent, O)
+					jostle_internal_object(parent, O)
 
-/mob/living/carbon/human/proc/jossle_internal_object(var/obj/item/organ/external/organ, var/obj/item/O)
+/mob/living/carbon/human/proc/jostle_internal_object(var/obj/item/organ/external/organ, var/obj/item/O)
 	// All kinds of embedded objects cause bleeding.
 	if(!organ.can_feel_pain())
 		to_chat(src, SPAN_DANGER("You feel [O] moving inside your [organ.name]."))
@@ -1103,8 +1104,10 @@
 
 	default_pixel_x = initial(pixel_x) + species.pixel_offset_x
 	default_pixel_y = initial(pixel_y) + species.pixel_offset_y
+	default_pixel_z = initial(pixel_z) + species.pixel_offset_z
 	pixel_x = default_pixel_x
 	pixel_y = default_pixel_y
+	pixel_z = default_pixel_z
 
 	if(LAZYLEN(descriptors))
 		descriptors = null
@@ -1117,6 +1120,8 @@
 
 	if(!(species.appearance_flags & HAS_UNDERWEAR))
 		QDEL_NULL_LIST(worn_underwear)
+
+	available_maneuvers = species.maneuvers.Copy()
 
 	spawn(0)
 		regenerate_icons()
@@ -1142,6 +1147,14 @@
 		else if(!cultural_info[token] || !(cultural_info[token] in species.available_cultural_info[token]))
 			update_lang = TRUE
 			set_cultural_value(token, species.default_cultural_info[token], defer_language_update = TRUE)
+
+	default_walk_intent = null
+	default_run_intent = null
+	move_intent = null
+	move_intents = species.move_intents.Copy()
+	set_move_intent(decls_repository.get_decl(move_intents[1]))
+	if(!istype(move_intent))
+		set_next_usable_move_intent()
 
 	if(update_lang)
 		languages.Cut()
@@ -1557,19 +1570,19 @@
 
 			switch(brutedamage)
 				if(1 to 20)
-					status += "bruised"
+					status += "slightly sore"
 				if(20 to 40)
-					status += "wounded"
+					status += "very sore"
 				if(40 to INFINITY)
-					status += "mangled"
+					status += "throbbing with agony"
 
 			switch(burndamage)
 				if(1 to 10)
-					status += "numb"
+					status += "tingling"
 				if(10 to 40)
-					status += "blistered"
+					status += "stinging"
 				if(40 to INFINITY)
-					status += "peeling away"
+					status += "burning fiercely"
 
 			if(org.is_stump())
 				status += "MISSING"
@@ -1580,7 +1593,7 @@
 			if(org.status & ORGAN_BROKEN)
 				status += "hurts when touched"
 			if(org.status & ORGAN_DEAD)
-				status += "is bruised and necrotic"
+				status += "is grey and necrotic"
 			if(!org.is_usable() || org.is_dislocated())
 				status += "dangling uselessly"
 			if(status.len)
@@ -1728,3 +1741,8 @@
 
 /mob/living/carbon/human/get_footstep(var/footstep_type)
 	. = species.get_footstep(src, footstep_type) || ..()
+
+/mob/living/carbon/human/get_sound_volume_multiplier()
+	. = ..()
+	for(var/obj/item/clothing/ears/C in list(l_ear, r_ear))
+		. = min(., C.volume_multiplier)

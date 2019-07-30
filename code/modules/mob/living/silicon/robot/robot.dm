@@ -11,6 +11,7 @@
 	mob_bump_flag = ROBOT
 	mob_swap_flags = ROBOT|MONKEY|SLIME|SIMPLE_ANIMAL
 	mob_push_flags = ~HEAVY //trundle trundle
+	skillset = /datum/skillset/silicon/robot
 
 	var/lights_on = 0 // Is our integrated light on?
 	var/used_power_this_tick = 0
@@ -44,10 +45,10 @@
 
 //3 Modules can be activated at any one time.
 	var/obj/item/weapon/robot_module/module = null
-	var/module_active = null
-	var/module_state_1 = null
-	var/module_state_2 = null
-	var/module_state_3 = null
+	var/obj/item/module_active
+	var/obj/item/module_state_1
+	var/obj/item/module_state_2
+	var/obj/item/module_state_3
 
 	silicon_camera = /obj/item/device/camera/siliconcam/robot_camera
 	silicon_radio = /obj/item/device/radio/borg
@@ -107,7 +108,7 @@
 	spark_system.set_up(5, 0, src)
 	spark_system.attach(src)
 
-	add_language("Robot Talk", 1)
+	add_language(LANGUAGE_ROBOT_GLOBAL, 1)
 	add_language(LANGUAGE_EAL, 1)
 
 	wires = new(src)
@@ -169,7 +170,7 @@
 	if(ispath(module))
 		new module(src)
 	if(lawupdate)
-		var/new_ai = select_active_ai_with_fewest_borgs((get_turf(src))?.z)
+		var/new_ai = select_active_ai_with_fewest_borgs(get_z(src))
 		if(new_ai)
 			lawupdate = 1
 			connect_to_ai(new_ai)
@@ -312,7 +313,6 @@
 		braintype = "Drone"
 	else
 		braintype = "Cyborg"
-
 
 	var/changed_name = ""
 	if(custom_name)
@@ -493,7 +493,7 @@
 	if(opened) // Are they trying to insert something?
 		for(var/V in components)
 			var/datum/robot_component/C = components[V]
-			if(!C.installed && istype(W, C.external_type))
+			if(!C.installed && C.accepts_component(W))
 				if(!user.unEquip(W))
 					return
 				C.installed = 1
@@ -830,19 +830,19 @@
 		if(!module_state_1)
 			module_state_1 = O
 			O.hud_layerise()
-			contents += O
+			O.forceMove(src)
 			if(istype(module_state_1,/obj/item/borg/sight))
 				sight_mode |= module_state_1:sight_mode
 		else if(!module_state_2)
 			module_state_2 = O
 			O.hud_layerise()
-			contents += O
+			O.forceMove(src)
 			if(istype(module_state_2,/obj/item/borg/sight))
 				sight_mode |= module_state_2:sight_mode
 		else if(!module_state_3)
 			module_state_3 = O
 			O.hud_layerise()
-			contents += O
+			O.forceMove(src)
 			if(istype(module_state_3,/obj/item/borg/sight))
 				sight_mode |= module_state_3:sight_mode
 		else
@@ -855,13 +855,13 @@
 		if(activated(O))
 			if(module_state_1 == O)
 				module_state_1 = null
-				contents -= O
+				O.forceMove(null)
 			else if(module_state_2 == O)
 				module_state_2 = null
-				contents -= O
+				O.forceMove(null)
 			else if(module_state_3 == O)
 				module_state_3 = null
-				contents -= O
+				O.forceMove(null)
 			else
 				to_chat(src, "Module isn't activated.")
 		else
@@ -1075,8 +1075,7 @@
 				lawupdate = 0
 				disconnect_from_ai()
 				to_chat(user, "You emag [src]'s interface.")
-				message_admins("[key_name_admin(user)] emagged cyborg [key_name_admin(src)].  Laws overridden.")
-				log_game("[key_name(user)] emagged cyborg [key_name(src)].  Laws overridden.")
+				log_and_message_admins("emagged cyborg [key_name_admin(src)].  Laws overridden.", src)
 				clear_supplied_laws()
 				clear_inherent_laws()
 				laws = new /datum/ai_laws/syndicate_override

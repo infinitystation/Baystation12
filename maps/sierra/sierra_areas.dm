@@ -167,6 +167,7 @@
 
 /area/maintenance/abandoned_common
 	name = "Abandoned Common Room"
+	icon = 'infinity/icons/turf/areas.dmi'
 	icon_state = "music_room"
 
 //First Deck (Z-3)
@@ -549,6 +550,7 @@
 	req_access = list(access_bridge)
 
 /area/bridge/nano
+	icon = 'infinity/icons/turf/areas.dmi'
 	icon_state = "bridge_nano"  // Yes, this is exactly what no one has ever done, probably.
 	dynamic_lighting = 1
 
@@ -569,6 +571,7 @@
 
 /area/bridge/gun/energy
 	name = "Ship laser weapons"
+	icon = 'infinity/icons/turf/areas.dmi'
 	icon_state = "bridge_gun"
 
 /* not found on Sierra

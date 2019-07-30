@@ -9,6 +9,10 @@
 			//Or someone snoring.  So we make it where they won't hear it.
 		return
 
+	if(language && (language.flags & (NONVERBAL|SIGNLANG)))
+		sound_vol = 0
+		speech_sound = null
+
 	//make sure the air can transmit speech - hearer's side
 	var/turf/T = get_turf(src)
 	if ((T) && (!(isghost(src)))) //Ghosts can hear even in vacuum.
@@ -60,7 +64,7 @@
 		if(get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_ALL_SPEECH && (speaker in view(src)))
 			message = "<b>[message]</b>"
 
-	if(is_deaf())
+	if(is_deaf() || get_sound_volume_multiplier() < 0.2)
 		if(!language || !(language.flags & INNATE)) // INNATE is the flag for audible-emote-language, so we don't want to show an "x talks but you cannot hear them" message if it's set
 			if(speaker == src)
 				to_chat(src, "<span class='warning'>You cannot hear yourself speak!</span>")
@@ -100,11 +104,11 @@
 
 	if(!client)
 		return
-
+//[inf]
 	if((last_radio_sound + 0.5 SECOND) < world.time && src != speaker)
 		playsound(loc, 'sound/effects/radio_chatter.ogg', 10, 0, -1, falloff = -3)
 		last_radio_sound = world.time
-
+//[/inf]
 	if(sleeping || stat==1) //If unconscious or sleeping
 		hear_sleep(message)
 		return
@@ -213,25 +217,28 @@
 		track = "([ghost_follow_link(speaker, src)]) [speaker_name]"
 
 	var/formatted
-	if(language)
-		if(!say_understands(speaker,language)) //Check if we understand the message. If so, add the language name after the verb. Don't do this for Galactic Common.
-			formatted = language.format_message_radio(message, verb)
-		else
-			var/nverb = null
-			switch(src.get_preference_value(/datum/client_preference/language_display))
-				if(GLOB.PREF_FULL) // Full language name
-					nverb = "[verb] in [language.name]"
-				if(GLOB.PREF_SHORTHAND) //Shorthand codes
-					nverb = "[verb] ([language.shorthand])"
-				if(GLOB.PREF_OFF)//Regular output
-					nverb = verb
-			formatted = language.format_message_radio(message, nverb)
+	if (language)
+		var/nverb = verb
+		if (say_understands(speaker, language))
+			var/skip = FALSE
+			if (isliving(src))
+				var/mob/living/L = src
+				skip = L.default_language == language
+			if (!skip)
+				switch(src.get_preference_value(/datum/client_preference/language_display))
+					if (GLOB.PREF_FULL)
+						nverb = "[verb] in [language.name]"
+					if(GLOB.PREF_SHORTHAND)
+						nverb = "[verb] ([language.shorthand])"
+					if(GLOB.PREF_OFF)
+						nverb = verb
+		formatted = language.format_message_radio(message, nverb)
 	else
 		formatted = "[verb], <span class=\"body\">\"[message]\"</span>"
 	if(sdisabilities & DEAF || ear_deaf)
 		var/mob/living/carbon/human/H = src
 		if(istype(H) && H.has_headset_in_ears() && prob(20))
-			to_chat(src, "<span class='warning'>You feel your headset vibrate but can hear nothing from it!</span>")
+			to_chat(src, SPAN_WARNING("You feel your headset vibrate but can hear nothing from it!"))
 	else
 		on_hear_radio(part_a, speaker_name, track, part_b, part_c, formatted)
 

@@ -9,6 +9,9 @@
 	icon_state = "bus"
 	anchored = 1
 	density = 1
+	construct_state = /decl/machine_construction/default/panel_closed
+	uncreated_component_parts = null
+	stat_immune = 0
 	var/datum/ntnet/NTNet = null // This is mostly for backwards reference and to allow varedit modifications from ingame.
 	var/enabled = 1				// Set to 0 if the relay was turned off
 	var/dos_failure = 0			// Set to 1 if the relay failed due to (D)DoS attack
@@ -55,7 +58,6 @@
 		dos_failure = 0
 		update_icon()
 		ntnet_global.add_log("Quantum relay switched from overload recovery mode to normal operation mode.")
-	..()
 
 /obj/machinery/ntnet_relay/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.default_state)
 	var/list/data = list()
@@ -71,8 +73,9 @@
 		ui.open()
 		ui.set_auto_update(1)
 
-/obj/machinery/ntnet_relay/attack_hand(var/mob/living/user)
+/obj/machinery/ntnet_relay/interface_interact(var/mob/living/user)
 	ui_interact(user)
+	return TRUE
 
 /obj/machinery/ntnet_relay/Topic(href, href_list)
 	if(..())
@@ -96,10 +99,6 @@
 /obj/machinery/ntnet_relay/New()
 	uid = gl_uid
 	gl_uid++
-	component_parts = list()
-	component_parts += new /obj/item/stack/cable_coil(src,15)
-	component_parts += new /obj/item/weapon/circuitboard/ntnet_relay(src)
-
 	if(ntnet_global)
 		ntnet_global.relays.Add(src)
 		NTNet = ntnet_global
@@ -114,24 +113,4 @@
 	for(var/datum/computer_file/program/ntnet_dos/D in dos_sources)
 		D.target = null
 		D.error = "Connection to quantum relay severed"
-	..()
-
-/obj/machinery/ntnet_relay/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
-	if(isScrewdriver(W))
-		playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
-		panel_open = !panel_open
-		to_chat(user, "You [panel_open ? "open" : "close"] the maintenance hatch")
-		return
-	if(isCrowbar(W))
-		if(!panel_open)
-			to_chat(user, "Open the maintenance panel first.")
-			return
-		playsound(src.loc, 'sound/items/Crowbar.ogg', 50, 1)
-		to_chat(user, "You disassemble \the [src]!")
-
-		for(var/atom/movable/A in component_parts)
-			A.forceMove(src.loc)
-		new/obj/machinery/constructable_frame/machine_frame(src.loc)
-		qdel(src)
-		return
 	..()

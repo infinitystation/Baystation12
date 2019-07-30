@@ -2,6 +2,8 @@
 	name = "R&D Server"
 	icon = 'icons/obj/machines/research_infinity.dmi'
 	icon_state = "server"
+	base_type = /obj/machinery/r_n_d/server
+	construct_state = /decl/machine_construction/default/panel_closed
 	var/datum/research/files
 	var/health = 100
 	var/list/id_with_upload = list()	//List of R&D consoles with upload to server access.
@@ -13,15 +15,6 @@
 	idle_power_usage = 800
 	var/delay = 10
 	req_access = list(access_rd) //Only the R&D can change server settings.
-
-/obj/machinery/r_n_d/server/Initialize()
-	. = ..()
-	component_parts = list()
-	component_parts += new /obj/item/weapon/circuitboard/rdserver(src)
-	component_parts += new /obj/item/weapon/stock_parts/scanning_module(src)
-	component_parts += new /obj/item/stack/cable_coil(src)
-	component_parts += new /obj/item/stack/cable_coil(src)
-	RefreshParts()
 
 /obj/machinery/r_n_d/server/RefreshParts()
 	var/tot_rating = 0
@@ -46,6 +39,7 @@
 			id_with_download += text2num(N)
 
 /obj/machinery/r_n_d/server/Process()
+	..()
 	var/datum/gas_mixture/environment = loc.return_air()
 	switch(environment.temperature)
 		if(0 to T0C)
@@ -89,14 +83,6 @@
 
 			env.merge(removed)
 
-/obj/machinery/r_n_d/server/attackby(var/obj/item/O as obj, var/mob/user as mob)
-	if(default_deconstruction_screwdriver(user, O))
-		return
-	if(default_deconstruction_crowbar(user, O))
-		return
-	if(default_part_replacement(user, O))
-		return
-
 /obj/machinery/r_n_d/server/centcom
 	name = "Central R&D Database"
 	server_id = -1
@@ -131,7 +117,6 @@
 	icon_keyboard = "rd_key"
 	icon_screen = "rdcomp"
 	light_color = "#a97faa"
-	circuit = /obj/item/weapon/circuitboard/rdservercontrol
 	var/screen = 0
 	var/obj/machinery/r_n_d/server/temp_server
 	var/list/servers = list()
@@ -208,12 +193,11 @@
 		temp_server.files.RefreshResearch()
 		. = TOPIC_REFRESH
 
-	if(. == TOPIC_REFRESH)
-		attack_hand(user)
+/obj/machinery/computer/rdservercontrol/interface_interact(mob/user)
+	interact(user)
+	return TRUE
 
-/obj/machinery/computer/rdservercontrol/attack_hand(mob/user as mob)
-	if(stat & (BROKEN|NOPOWER))
-		return
+/obj/machinery/computer/rdservercontrol/interact(mob/user)
 	user.set_machine(src)
 	var/dat = ""
 
@@ -276,6 +260,7 @@
 	if(!emagged)
 		playsound(src.loc, 'sound/effects/sparks4.ogg', 75, 1)
 		emagged = 1
+		req_access.Cut()
 		to_chat(user, "<span class='notice'>You you disable the security protocols.</span>")
 		src.updateUsrDialog()
 		return 1

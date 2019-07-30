@@ -6,7 +6,7 @@ GLOBAL_DATUM_INIT(wizards, /datum/antagonist/wizard, new)
 	role_text_plural = ANTAG_WIZARD + "s"
 	landmark_id = "wizard"
 	welcome_text = "You will find a list of available spells in your spell book. Choose your magic arsenal carefully.<br>In your pockets you will find a teleport scroll. Use it as needed."
-	flags = ANTAG_OVERRIDE_JOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_CHOOSE_NAME | ANTAG_VOTABLE | ANTAG_SET_APPEARANCE
+	flags = ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_CHOOSE_NAME | ANTAG_VOTABLE | ANTAG_SET_APPEARANCE
 	antaghud_indicator = "hudwizard"
 
 	hard_cap = 1
@@ -80,7 +80,7 @@ GLOBAL_DATUM_INIT(wizards, /datum/antagonist/wizard, new)
 /datum/antagonist/wizard/check_victory()
 	var/survivor
 	for(var/datum/mind/player in current_antagonists)
-		if(!player.current || player.current.stat)
+		if(!player.current || player.current.stat == DEAD)
 			continue
 		survivor = 1
 		break

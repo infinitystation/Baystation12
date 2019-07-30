@@ -51,10 +51,14 @@
 
 /obj/item/weapon/a_gift/attack_self(mob/M as mob)
 	var/gift_type = pick(
+		/obj/item/weapon/storage/wallet,
+		/obj/item/weapon/storage/photo_album,
 		/obj/item/weapon/storage/box/snappops,
 		/obj/item/weapon/storage/fancy/crayons,
+		/obj/item/weapon/storage/backpack/holding,
 		/obj/item/weapon/storage/belt/champion,
 		/obj/item/weapon/soap/deluxe,
+		/obj/item/weapon/pickaxe/silver,
 		/obj/item/weapon/pen/invisible,
 		/obj/item/weapon/lipstick/random,
 		/obj/item/weapon/grenade/smokebomb,
@@ -109,10 +113,16 @@
 		/obj/item/toy/prize/odysseus,
 		/obj/item/toy/prize/phazon,
 		/obj/item/toy/prize/ripley,
+		/obj/item/toy/prize/powerloader,
 		/obj/item/toy/prize/seraph,
 		/obj/item/toy/spinningtoy,
 		/obj/item/toy/sword,
-		/obj/item/device/paicard)
+		/obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiadeus,
+		/obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiavulgaris,
+		/obj/item/device/paicard,
+		/obj/item/device/synthesized_instrument/violin,
+		/obj/item/weapon/storage/belt/utility/full,
+		/obj/item/clothing/accessory/horrible)
 
 	if(!ispath(gift_type,/obj/item))	return
 

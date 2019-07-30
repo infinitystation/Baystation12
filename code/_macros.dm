@@ -111,9 +111,9 @@
 
 #define CanInteractWith(user, target, state) (target.CanUseTopic(user, state) == STATUS_INTERACTIVE)
 
-#define CanPhysicallyInteract(user) CanInteract(user, GLOB.physical_state)
+#define CanPhysicallyInteract(user) (CanUseTopicPhysical(user) == STATUS_INTERACTIVE)
 
-#define CanPhysicallyInteractWith(user, target) CanInteractWith(user, target, GLOB.physical_state)
+#define CanPhysicallyInteractWith(user, target) (target.CanUseTopicPhysical(user) == STATUS_INTERACTIVE)
 
 #define QDEL_NULL_LIST(x) if(x) { for(var/y in x) { qdel(y) }}; if(x) {x.Cut(); x = null } // Second x check to handle items that LAZYREMOVE on qdel.
 
@@ -180,6 +180,8 @@
 #define SPAN_DANGER(X) "<span class='danger'>[X]</span>"
 
 #define SPAN_OCCULT(X) "<span class='cult'>[X]</span>"
+
+#define SPAN_MFAUNA(X) "<span class='mfauna'>[X]</span>"
 
 #define FONT_SMALL(X) "<font size='1'>[X]</font>"
 

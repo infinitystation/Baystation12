@@ -68,6 +68,12 @@ medals
 	desc = "A white heart emblazoned with a red cross awarded to members of the SCG for service as a medical professional in a combat zone."
 	icon_state = "white_heart"
 
+/obj/item/clothing/accessory/solgov
+	var/check_codex_val = FACTION_FLEET
+
+/obj/item/clothing/accessory/solgov/get_codex_value()
+	return check_codex_val || ..()
+
 /obj/item/clothing/accessory/solgov/torch_patch
 	name = "\improper Torch mission patch"
 	desc = "A fire resistant shoulder patch, worn by the personnel involved in the Torch Project."
@@ -87,6 +93,7 @@ patches
 	icon_state = "ecpatch1"
 	on_rolled = list("down" = "none")
 	slot = ACCESSORY_SLOT_INSIGNIA
+	check_codex_val = FACTION_EXPEDITIONARY
 
 /obj/item/clothing/accessory/solgov/ec_patch/fieldops
 	name = "\improper Field Operations patch"
@@ -98,6 +105,7 @@ patches
 	desc = "A radiation-shielded shoulder patch, denoting service in the the Sol Central Government Expeditionary Corps Cultural Exchange program."
 	icon_state = "ecpatch3"
 	slot = ACCESSORY_SLOT_INSIGNIA
+	check_codex_val = FACTION_EXPEDITIONARY
 
 /obj/item/clothing/accessory/solgov/fleet_patch
 	name = "\improper First Fleet patch"
@@ -137,6 +145,7 @@ scarves
 	icon_state = "whitescarf"
 	on_rolled = list("down" = "none")
 	color = "#68a0ce"
+	check_codex_val = FACTION_EXPEDITIONARY
 
 /obj/item/clothing/accessory/solgov/ec_scarf/observatory
 	name = "\improper Observatory dress scarf"
@@ -200,7 +209,7 @@ specialty pins
 
 /obj/item/clothing/accessory/solgov/specialty/brig
 	name = "brig blazes"
-	desc = "Red blazes denoting a brig officer."
+	desc = "Red blazes denoting a brig chief."
 	icon_state = "fleetspec_brig"
 
 /obj/item/clothing/accessory/solgov/specialty/forensic
@@ -260,6 +269,9 @@ badges
 	icon_state = "tags"
 	badge_string = "Sol Central Government"
 	slot_flags = SLOT_MASK | SLOT_TIE
+	var/owner_rank
+	var/owner_name
+	var/owner_branch
 
 /obj/item/clothing/accessory/badge/solgov/tags/Initialize()
 	. = ..()
@@ -272,6 +284,9 @@ badges
 /obj/item/clothing/accessory/badge/solgov/tags/set_desc(var/mob/living/carbon/human/H)
 	if(!istype(H))
 		return
+	owner_rank = H.char_rank && H.char_rank.name
+	owner_name = H.real_name
+	owner_branch = H.char_branch && H.char_branch.name
 	var/decl/cultural_info/culture = H.get_cultural_value(TAG_RELIGION)
 	var/religion = culture ? culture.name : "Unset"
 	desc = "[initial(desc)]\nName: [H.real_name] ([H.get_species()])[H.char_branch ? "\nBranch: [H.char_branch.name]" : ""]\nReligion: [religion]\nBlood type: [H.b_type]"

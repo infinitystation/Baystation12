@@ -184,3 +184,33 @@
 	light_outer_range = 5
 	light_max_bright = 1
 	light_color = COLOR_MUZZLE_FLASH
+
+//----------------------------
+// confuse ray
+//----------------------------
+/obj/effect/projectile/confuseray
+	light_color = COLOR_GREEN_GRAY
+
+/obj/effect/projectile/confuseray/tracer
+	icon_state = "beam_grass"
+
+/obj/effect/projectile/confuseray/muzzle
+	icon_state = "muzzle_grass"
+
+/obj/effect/projectile/confuseray/impact
+	icon_state = "impact_grass"
+
+//----------------------------
+// Particle beam
+//----------------------------
+/obj/effect/projectile/laser_particle
+	light_color = COLOR_CYAN
+
+/obj/effect/projectile/laser_particle/tracer
+	icon_state = "beam_particle"
+
+/obj/effect/projectile/laser_particle/muzzle
+	icon_state = "muzzle_particle"
+
+/obj/effect/projectile/laser_particle/impact
+	icon_state = "impact_particle" 

@@ -24,8 +24,7 @@
 			//Must be done here, as light data is not fully carried over by ChangeTurf (but overlays are).
 			set_light(E.lightlevel, 0.1, 2)
 			if(E.planetary_area && istype(loc, world.area))
-				E.planetary_area.contents.Add(src)
-				E.planetary_area.Entered(src)
+				ChangeArea(src, E.planetary_area)
 	..()
 
 /turf/simulated/floor/exoplanet/attackby(obj/item/C, mob/user)
@@ -37,6 +36,11 @@
 			diggable = 0
 		else
 			to_chat(user,"<span class='notice'>You stop shoveling.</span>")
+	else if(istype(C, /obj/item/stack/tile))
+		var/obj/item/stack/tile/T = C
+		if(T.use(1))
+			playsound(src, 'sound/items/Deconstruct.ogg', 80, 1)
+			ChangeTurf(/turf/simulated/floor, FALSE, FALSE, TRUE)
 	else
 		..()
 
@@ -47,6 +51,9 @@
 		if(2)
 			if(prob(40))
 				ChangeTurf(get_base_turf_by_area(src))
+
+/turf/simulated/floor/exoplanet/water/is_flooded(lying_mob, absolute)
+	. = absolute ? ..() : lying_mob
 
 /turf/simulated/floor/exoplanet/water/shallow
 	name = "shallow water"
@@ -137,7 +144,7 @@
 	if(!istype(E))
 		return
 	if(E.planetary_area && istype(loc, world.area))
-		E.planetary_area.contents.Add(src)
+		ChangeArea(src, E.planetary_area)
 	var/new_x = A.x
 	var/new_y = A.y
 	if(x <= TRANSITIONEDGE)

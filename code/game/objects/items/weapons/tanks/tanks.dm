@@ -63,7 +63,8 @@ var/list/global/tank_gauge_cache = list()
 	if(istype(loc, /obj/item/device/transfer_valve))
 		var/obj/item/device/transfer_valve/TTV = loc
 		TTV.remove_tank(src)
-		qdel(TTV)
+		if(!QDELETED(TTV)) // It will delete tanks inside it on qdel.
+			qdel(TTV)
 
 	. = ..()
 
@@ -160,7 +161,7 @@ var/list/global/tank_gauge_cache = list()
 			if(do_after(user, 50, src))
 				to_chat(user, "<span class='notice'>You finish attaching the assembly to \the [src].</span>")
 				GLOB.bombers += "[key_name(user)] attached an assembly to a wired [src]. Temp: [air_contents.temperature-T0C]"
-				message_admins("[key_name_admin(user)] attached an assembly to a wired [src]. Temp: [air_contents.temperature-T0C]")
+				log_and_message_admins("attached an assembly to a wired [src]. Temp: [air_contents.temperature-T0C]", user)
 				assemble_bomb(W,user)
 			else
 				to_chat(user, "<span class='notice'>You stop attaching the assembly.</span>")
@@ -178,7 +179,7 @@ var/list/global/tank_gauge_cache = list()
 					leaking = 0
 				else
 					GLOB.bombers += "[key_name(user)] attempted to weld a [src]. [air_contents.temperature-T0C]"
-					message_admins("[key_name_admin(user)] attempted to weld a [src]. [air_contents.temperature-T0C]")
+					log_and_message_admins("attempted to weld a [src]. [air_contents.temperature-T0C]", user)
 					if(WT.welding)
 						to_chat(user, "<span class='danger'>You accidentally rake \the [W] across \the [src]!</span>")
 						maxintegrity -= rand(2,6)
@@ -187,6 +188,13 @@ var/list/global/tank_gauge_cache = list()
 			else
 				to_chat(user, "<span class='notice'>The emergency pressure relief valve has already been welded.</span>")
 		add_fingerprint(user)
+
+	if(istype(W, /obj/item/weapon/flamethrower))
+		var/obj/item/weapon/flamethrower/F = W
+		if(!F.status || F.tank || !user.unEquip(src, F))
+			return
+		master = F
+		F.tank = src
 
 /obj/item/weapon/tank/attack_self(mob/user as mob)
 	add_fingerprint(user)
@@ -216,7 +224,7 @@ var/list/global/tank_gauge_cache = list()
 	var/data[0]
 	data["tankPressure"] = round(air_contents && air_contents.return_pressure() ? air_contents.return_pressure() : 0)
 	data["releasePressure"] = round(distribute_pressure ? distribute_pressure : 0)
-	data["defaultReleasePressure"] = round(TANK_DEFAULT_RELEASE_PRESSURE)
+	data["defaultReleasePressure"] = round(initial(distribute_pressure))
 	data["maxReleasePressure"] = round(TANK_MAX_RELEASE_PRESSURE)
 	data["valveOpen"] = using_internal ? 1 : 0
 	data["maskConnected"] = 0
@@ -260,7 +268,7 @@ var/list/global/tank_gauge_cache = list()
 /obj/item/weapon/tank/OnTopic(user, href_list)
 	if (href_list["dist_p"])
 		if (href_list["dist_p"] == "reset")
-			distribute_pressure = TANK_DEFAULT_RELEASE_PRESSURE
+			distribute_pressure = initial(distribute_pressure)
 		else if (href_list["dist_p"] == "max")
 			distribute_pressure = TANK_MAX_RELEASE_PRESSURE
 		else
@@ -274,6 +282,8 @@ var/list/global/tank_gauge_cache = list()
 		return TOPIC_REFRESH
 
 /obj/item/weapon/tank/proc/toggle_valve(var/mob/user)
+
+	var/mob/living/carbon/location
 	if(istype(loc,/mob/living/carbon))
 		var/mob/living/carbon/location = loc
 		if(location.internal == src)
@@ -385,8 +395,7 @@ var/list/global/tank_gauge_cache = list()
 	if(pressure > TANK_FRAGMENT_PRESSURE)
 		if(integrity <= 7)
 			if(!istype(loc,/obj/item/device/transfer_valve))
-				message_admins("Explosive tank rupture! last key to touch the tank was [fingerprintslast].")
-				log_game("Explosive tank rupture! last key to touch the tank was [fingerprintslast].")
+				log_and_message_admins("Explosive tank rupture! last key to touch the tank was [fingerprintslast].")
 
 			//Give the gas a chance to build up more pressure through reacting
 			air_contents.react()

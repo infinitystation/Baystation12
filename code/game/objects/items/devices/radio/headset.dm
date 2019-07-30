@@ -12,7 +12,6 @@
 	cell = null
 	power_usage = 0
 	var/translate_binary = 0
-	var/translate_hive = 0
 	var/list/encryption_keys = list()
 	var/max_keys = 2
 
@@ -55,11 +54,8 @@
 /obj/item/device/radio/headset/handle_message_mode(mob/living/M as mob, message, channel)
 	if (channel == "special")
 		if (translate_binary)
-			var/datum/language/binary = all_languages["Robot Talk"]
+			var/datum/language/binary = all_languages[LANGUAGE_ROBOT_GLOBAL]
 			binary.broadcast(M, message)
-		if (translate_hive)
-			var/datum/language/hivemind = all_languages["Hivemind"]
-			hivemind.broadcast(M, message)
 		return null
 
 	return ..()
@@ -355,7 +351,6 @@
 /obj/item/device/radio/headset/recalculateChannels(var/setDescription = 0)
 	src.channels = list()
 	src.translate_binary = 0
-	src.translate_hive = 0
 	src.syndie = 0
 	for(var/obj/ekey in encryption_keys)
 		import_key_data(ekey)
@@ -379,8 +374,6 @@
 		src.channels[ch_name] = key.channels[ch_name]
 	if(key.translate_binary)
 		src.translate_binary = 1
-	if(key.translate_hive)
-		src.translate_hive = 1
 	if(key.syndie)
 		src.syndie = 1
 

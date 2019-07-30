@@ -142,7 +142,7 @@
 			sloppy = !sloppy
 
 		else if (href_list["main"])
-			attack_hand(user)
+			interact(user)
 			return
 		else if (href_list["eject"])
 			beaker.forceMove(loc)
@@ -238,12 +238,14 @@
 	reagents.trans_to_obj(P,60)
 	P.update_icon()
 
-/obj/machinery/chem_master/attack_ai(mob/user)
-	return attack_hand(user)
+/obj/machinery/chem_master/DefaultTopicState()
+	return GLOB.physical_state
 
-/obj/machinery/chem_master/attack_hand(mob/user)
-	if(inoperable())
-		return
+/obj/machinery/chem_master/interface_interact(mob/user)
+	interact(user)
+	return TRUE
+
+/obj/machinery/chem_master/interact(mob/user)
 	user.set_machine(src)
 	if(!(user.client in has_sprites))
 		spawn()

@@ -16,7 +16,7 @@
 	reagents = new/datum/reagents(1000, src)
 	if(istype(loc, /obj/item/organ/internal/posibrain))
 		container = loc
-	add_language("Robot Talk")
+	add_language(LANGUAGE_ROBOT_GLOBAL)
 	..()
 
 /mob/living/silicon/sil_brainmob/Destroy()
@@ -27,9 +27,7 @@
 	return ..()
 
 /mob/living/silicon/sil_brainmob/UpdateLyingBuckledAndVerbStatus()
-	if(in_contents_of(/obj/mecha))
-		use_me = 1
-	else if(container && istype(container, /obj/item/organ/internal/posibrain) && istype(container.loc, /turf))
+	if(container && istype(container, /obj/item/organ/internal/posibrain) && istype(container.loc, /turf))
 		use_me = 1
 
 /mob/living/silicon/sil_brainmob/isSynthetic()

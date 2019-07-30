@@ -27,6 +27,7 @@
 	name = MATERIAL_REINFORCED_CULT
 	display_name = "runic inscriptions"
 
+//[inf]
 /material/scrap
 	name = "scrap"
 	stack_type = /obj/item/stack/material/scrap
@@ -72,3 +73,4 @@
 	if(istype(M) && locate(/obj/item/organ/internal/xeno/hivenode) in M.internal_organs)
 		return 1
 	return 0
+//[/inf]
