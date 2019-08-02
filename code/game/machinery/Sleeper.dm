@@ -35,7 +35,7 @@
 	if(populate_parts)
 		beaker = new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
 //[inf]
-		install_component(/obj/item/weapon/circuitboard/sleeper)
+		install_component(/obj/item/weapon/stock_parts/circuitboard/sleeper)
 		install_component(/obj/item/weapon/stock_parts/scanning_module)
 		install_component(/obj/item/weapon/stock_parts/manipulator)
 		install_component(/obj/item/weapon/stock_parts/manipulator)
@@ -316,7 +316,7 @@
 /obj/machinery/sleeper/proc/inject_chemical(var/mob/living/user, var/chemical_name, var/amount)
 	if(stat & (BROKEN|NOPOWER))
 		return
-		
+
 	var/chemical_type = available_chemicals[chemical_name]
 	if(occupant && occupant.reagents)
 		if(occupant.reagents.get_reagent_amount(chemical_type) + amount <= 20)

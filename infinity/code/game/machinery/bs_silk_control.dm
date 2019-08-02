@@ -92,7 +92,7 @@
 	name = "bluespace snare control"
 	icon = 'icons/obj/computer.dmi'
 	icon_state = "computer"
-	circuit = /obj/item/weapon/circuitboard/bssilk/console
+	//circuit = /obj/item/weapon/circuitboard/bssilk/console
 
 	icon_keyboard = "rd_key"
 	icon_screen = "ai-fixer-404"

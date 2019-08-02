@@ -25,8 +25,7 @@
 	var/list/products = list()
 
 /obj/machinery/organ_printer/attackby(var/obj/item/O, var/mob/user)
-	if(default_deconstruction_screwdriver(user, O))
-		updateUsrDialog()
+	return ..()
 
 /obj/machinery/organ_printer/on_update_icon()
 	overlays.Cut()

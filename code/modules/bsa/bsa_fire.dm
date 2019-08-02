@@ -46,13 +46,13 @@
 	handle_overbeam()
 
 	for(var/obj/machinery/power/apc/apc in get_area(src))
-		if(apc.cell.charge < (300+80*strength))
+		if(apc.get_cell().charge < (300+80*strength))
 			if(prob(80))
 				apc.failure_timer = rand(10,40)
 				apc.update_icon()
 			if(prob(cool_failchance()) || prob(20)) //good luck
 				apc.set_broken()
-		apc.cell.use(300+80*strength)
+		apc.get_cell().use(300+80*strength)
 
 	//Some moron disregarded the cooldown warning. Let's blow in their face.
 	if(prob(cool_failchance()))

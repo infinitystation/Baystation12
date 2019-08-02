@@ -151,13 +151,7 @@ var/global/list/rad_collectors = list()
 	if(anchored)
 		to_chat(user, "<span class='warning'>The [src] needs to be unsecured from the floor first.</span>")
 		return
-	if(default_deconstruction_screwdriver(user, W))
-		return
-	if(default_deconstruction_crowbar(user, W))
-		return
-	if(default_part_replacement(user, W))
-		return
-	return
+	return ..()
 
 /obj/machinery/power/rad_collector/examine(mob/user)
 	if (..(user, 3) && !(stat & BROKEN))

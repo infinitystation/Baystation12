@@ -72,6 +72,8 @@
 	var/obj/item/weapon/material/coin/coin
 	wires = /datum/wires/vending
 
+	var/cooldown = 0 //inf
+
 /obj/machinery/vending/Initialize(mapload, d=0, populate_parts = TRUE)
 	. = ..()
 	if(product_slogans)

@@ -253,7 +253,10 @@
 
 /obj/item/stack/tile/carpetblue2/fifty
 	amount = 50
-
+//[inf]
+/obj/item/stack/tile/carpetblue2/ten
+	amount = 10
+//[/inf]
 /obj/item/stack/tile/carpetblue3
 	name = "sea blue carpet"
 	desc = "A piece of blue and green carpet."
