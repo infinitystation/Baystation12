@@ -32,7 +32,7 @@
 
 	slowdown = -0.8 //speed fix?
 	
-	darksight_range = 3
+	darksight_range = 1
 	darksight_tint = DARKTINT_GOOD
 	flash_mod = 2
 	total_health = 150
