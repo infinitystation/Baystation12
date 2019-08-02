@@ -31,6 +31,10 @@
 	husk_icon = 		'infinity/icons/mob/human_races/species/resomi/husk.dmi'
 
 	slowdown = -0.8 //speed fix?
+	
+	darksight_range = 3
+	darksight_tint = DARKTINT_GOOD
+	flash_mod = 2
 	total_health = 150
 	brute_mod = 1.35
 	burn_mod =  1.35
