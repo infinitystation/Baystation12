@@ -31,7 +31,7 @@
 		var/obj/item/device/kit/suit/kit = O
 //[INF]
 		for(var/type in P.allowed_types)
-			if(type==src.initial_icon || type = "anything")
+			if(type == src.initial_icon || type == "anything")
 				found = 1
 				break
 

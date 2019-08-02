@@ -134,13 +134,13 @@
 	id = "bat_lambda"
 	req_tech = list(TECH_POWER = 7, TECH_ENGINEERING = 6)
 	materials = list(MATERIAL_STEEL = 3200)
-	build_path = /obj/item/weapon/computer_hardware/battery_module/lambda
+	build_path = /obj/item/weapon/stock_parts/computer/battery_module/lambda
 	sort_string = "VBAEK"
 
 /datum/design/item/bluespace/bs_silk
 	name = "BlueSpace Snare"
 	id = "bs_snare"
-	req_tech = list(TECH_BLUESPACE = 5, TECH_DATA = 4)	
+	req_tech = list(TECH_BLUESPACE = 5, TECH_DATA = 4)
 	materials = list(MATERIAL_STEEL = 3200)
 	build_path = /obj/item/clothing/accessory/bs_silk
 	sort_string = "VAFAF"
@@ -221,7 +221,7 @@
 	name = "bluespace artillery control"
 	id = "bsa"
 	req_tech = list(TECH_ENGINEERING = 5, TECH_COMBAT = 5, TECH_BLUESPACE = 5)
-	build_path = /obj/item/weapon/circuitboard/bsa
+	build_path = /obj/item/weapon/stock_parts/circuitboard/bsa
 	sort_string = "KCAAG"
 
 /datum/design/circuit/bs_silk_control

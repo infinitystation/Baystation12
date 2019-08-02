@@ -8,7 +8,7 @@
 				H.emote("scream")
 		else //for simple_animals & borgs
 			L.adjustBruteLoss(DOOR_CRUSH_DAMAGE)
-	for(var/obj/mecha/M in get_turf(src))
+	for(var/mob/living/exosuit/M in get_turf(src))
 		M.take_damage(DOOR_CRUSH_DAMAGE)
 
 /obj/machinery/door/blast/regular/admin/ex_act()

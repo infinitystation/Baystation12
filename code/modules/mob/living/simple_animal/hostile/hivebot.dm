@@ -70,7 +70,7 @@
 //	var/max_resources = 10
 
 /mob/living/simple_animal/hostile/hivebot/CanPass(atom/movable/O)
-	if(istype(O, /obj/item/projectile/hivebotbullet))//Allows for swarmers to fight as a group without wasting their shots hitting each other
+	if(istype(O, projectiletype))//Allows for swarmers to fight as a group without wasting their shots hitting each other
 		return 1
 	if(istype(O, /mob/living/simple_animal/hostile/hivebot))
 		return 1
@@ -218,7 +218,7 @@ The megabot
 	. = ..()
 	if(!.)
 		return
-	
+
 	if(last_cycled < world.time)
 		switch_mode(ATTACK_MODE_ROCKET)
 
@@ -244,7 +244,7 @@ The megabot
 			if(ATTACK_MODE_ROCKET)
 				icon_state = "megabot_rocket"
 				icon_living = "megabot_rocket"
-		
+
 /mob/living/simple_animal/hostile/hivebot/mega/proc/switch_mode(var/new_mode)
 	if(!new_mode || new_mode == attack_mode)
 		return

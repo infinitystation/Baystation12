@@ -6,7 +6,7 @@ GLOBAL_DATUM_INIT(raiders, /datum/antagonist/raider, new)
 	role_text_plural = "Raiders"
 	antag_indicator = "hudraider"
 	landmark_id = "voxstart"
-	welcome_text = "Используйте префикс ':x' или ":h" чтобы общатьс&#255; на частоте вашей банды."
+	welcome_text = "Используйте префикс ':x' или ':h' чтобы общатьс&#255; на частоте вашей банды."
 	flags = ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_CHOOSE_NAME | ANTAG_VOTABLE | ANTAG_SET_APPEARANCE | ANTAG_HAS_LEADER
 	antaghud_indicator = "hudraider"
 

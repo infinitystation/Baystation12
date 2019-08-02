@@ -18,13 +18,13 @@
 	var/alert_title
 	var/alert_text
 	var/start_text
+
 	var/maximal_severity = 40
 	var/meteor_wave_delay = 30 SECONDS //minimum wait between waves in tenths of seconds
 
 	// Moved these from defines to variables, to allow for in-round tweaking via varedit:
 	var/time_between_waves_minutes = 2
 	var/escalation_probability = 90
-	var/maximal_severity = 80
 	var/send_admin_broadcasts = FALSE	// Enables debugging/information mode, sending admin messages when waves occur and when severity escalates.
 
 	event_delay_mod_moderate = 0.5		// As a bonus, more frequent events.
