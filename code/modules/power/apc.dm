@@ -234,7 +234,7 @@
 		var/terminal = terminal()
 		if(opened)
 			if(has_electronics && terminal)
-				to_chat(user, "The cover is [opened==2?"removed":"open"] and the power cell is [ cell ? "installed" : "missing"].")
+				to_chat(user, "The cover is [opened==2?"removed":"open"] and the power cell is [ get_cell() ? "installed" : "missing"].")
 			else if (!has_electronics && terminal)
 				to_chat(user, "There are some wires but no any electronics.")
 			else if (has_electronics && !terminal)
@@ -1152,9 +1152,9 @@ obj/machinery/power/apc/proc/autoset(var/cur_state, var/on)
 	switch(val)
 		if(2)
 			return POWERCHAN_OFF_AUTO
-		if(1) 
+		if(1)
 			return POWERCHAN_OFF_TEMP
-		else 
+		else
 			return POWERCHAN_OFF
 
 // Malfunction: Transfers APC under AI's control

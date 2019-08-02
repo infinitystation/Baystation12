@@ -2655,7 +2655,7 @@
 	},
 /obj/structure/catwalk,
 /obj/structure/closet/crate,
-/obj/item/weapon/smes_coil,
+/obj/item/weapon/stock_parts/smes_coil,
 /obj/item/weapon/circuitboard/batteryrack,
 /obj/item/weapon/circuitboard/unary_atmos/heater,
 /obj/item/weapon/circuitboard/unary_atmos/cooler,

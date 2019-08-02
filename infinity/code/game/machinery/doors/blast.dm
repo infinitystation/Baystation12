@@ -1,4 +1,4 @@
-/obj/machinery/door/proc/crush()
+/*/obj/machinery/door/proc/crush()
 	for(var/mob/living/L in get_turf(src))
 		if(ishuman(L)) //For humans
 			var/mob/living/carbon/human/H = L
@@ -9,7 +9,7 @@
 		else //for simple_animals & borgs
 			L.adjustBruteLoss(DOOR_CRUSH_DAMAGE)
 	for(var/mob/living/exosuit/M in get_turf(src))
-		M.take_damage(DOOR_CRUSH_DAMAGE)
+		M.take_damage(DOOR_CRUSH_DAMAGE)*/
 
 /obj/machinery/door/blast/regular/admin/ex_act()
 	return

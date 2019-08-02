@@ -238,7 +238,7 @@
 "fe" = (/obj/machinery/navbeacon/CHE,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi';icon_state = "snowplating"},/area/adherent_base/base)
 "ff" = (/obj/item/stack/nanopaste,/obj/structure/closet/crate,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi';icon_state = "snowplating"},/area/adherent_base/base)
 "fg" = (/obj/structure/flora/pottedplant/mysterious,/obj/effect/decal/cleanable/cobweb2,/turf/simulated/floor/crystal,/area/adherent_base/base)
-"fj" = (/obj/item/weapon/wrench/crystal,/obj/item/weapon/smes_coil/super_capacity,/obj/structure/closet/crate/plastic,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi';icon_state = "snowplating"},/area/adherent_base/base)
+"fj" = (/obj/item/weapon/wrench/crystal,/obj/item/weapon/stock_parts/smes_coil/super_capacity,/obj/structure/closet/crate/plastic,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi';icon_state = "snowplating"},/area/adherent_base/base)
 "fk" = (/obj/item/weapon/tank/phoron,/obj/item/weapon/tank/phoron,/obj/structure/closet/crate,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi';icon_state = "snowplating"},/area/adherent_base/base)
 "fl" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/turf/simulated/floor/crystal,/area/adherent_base/base)
 "fn" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/cap/hidden/supply{icon_state = "cap";dir = 8},/turf/simulated/floor/crystal,/area/adherent_base/base)

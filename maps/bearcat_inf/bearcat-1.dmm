@@ -1596,7 +1596,7 @@
 /obj/item/weapon/stock_parts/scanning_module,
 /obj/item/weapon/stock_parts/scanning_module,
 /obj/item/weapon/stock_parts/scanning_module/adv,
-/obj/item/weapon/smes_coil/weak,
+/obj/item/weapon/stock_parts/smes_coil/weak,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/monotile,
 /area/ship/scrap/engineering/storage/tech)

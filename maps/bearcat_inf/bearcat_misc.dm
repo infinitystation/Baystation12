@@ -11,7 +11,7 @@
 	name = "deck"
 
 /obj/machinery/power/smes/buildable/preset/bearcat/shuttle/configure_and_install_coils()
-	component_parts += new /obj/item/weapon/smes_coil/weak(src)
+	component_parts += new /obj/item/weapon/stock_parts/smes_coil/weak(src)
 	_input_maxed = TRUE
 	_output_maxed = TRUE
 	_input_on = TRUE
