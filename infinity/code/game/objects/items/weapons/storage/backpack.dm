@@ -1,24 +1,26 @@
 /obj/item/weapon/storage/backpack/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(!worn_check(user)) return
+	if(!worn_check(user, 1)) return
 	..(W, user)
-
-/obj/item/weapon/storage/backpack/attack_hand(mob/user as mob)
-	if(!worn_check(user)) return
-	..(user)
 
 /obj/item/weapon/storage/backpack/open(mob/user)
 	if(!worn_check(user)) return
 	..(user)
 
 /obj/item/weapon/storage/backpack/equipped(var/mob/user, var/slot)
-	if(!worn_check(user, show_warning = FALSE)) close(user)
+	close(user)
 	..(user, slot)
 
-/obj/item/weapon/storage/backpack/proc/worn_check(var/mob/L, var/show_warning = TRUE)
-	if(!worn_access && L.get_equipped_item(slot_back) == src)
-		if(show_warning)
-			to_chat(L, SPAN_WARNING("You need take off \the [src] before you can use it!"))
-		return FALSE
+/obj/item/weapon/storage/backpack/proc/worn_check(var/mob/living/carbon/human/user, var/put = 0)
+	if(!canremove)
+		return
+	if(!worn_access && user.get_equipped_item(slot_back) == src)
+		if(put)
+			to_chat(user, "Take off [src] first!")
+			return FALSE
+		if(user.unEquip(src))
+			user.put_in_hands(src)
+			user.swap_hand()
+//			open(L)
 	return TRUE
 
 /obj/item/weapon/storage/backpack
