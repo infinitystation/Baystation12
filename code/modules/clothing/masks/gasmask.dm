@@ -11,6 +11,7 @@
 	permeability_coefficient = 0.01
 	siemens_coefficient = 0.9
 	armor = list(melee = 5, bullet = 5, laser = 5, energy = 0, bomb = 0, bio = 75, rad = 0)
+	tint = 2 //INF, WAS NOTHING(0)
 	var/clogged
 	var/filter_water
 	var/gas_filter_strength = 1			//For gas mask filters
@@ -54,6 +55,7 @@
 	siemens_coefficient = 0.7
 	body_parts_covered = FACE
 	w_class = ITEM_SIZE_SMALL
+	tint = 0 //INF, WAS NOTHING(0)
 	armor = list(melee = 10, bullet = 10, laser = 10, energy = 0, bomb = 0, bio = 55, rad = 0)
 	sprite_sheets = list(
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/mask.dmi',
@@ -85,6 +87,7 @@
 	desc = "A close-fitting tactical mask that can be connected to an air supply."
 	icon_state = "swat"
 	item_state = "swat"
+	tint = 0 //INF, WAS NOTHING(0)
 	siemens_coefficient = 0.7
 	body_parts_covered = FACE|EYES
 	armor = list(melee = 15, bullet = 15, laser = 15, energy = 0, bomb = 0, bio = 75, rad = 0)
@@ -94,6 +97,7 @@
 	desc = "A close-fitting tactical mask that can be connected to an air supply."
 	icon_state = "swat"
 	item_state = "swat"
+	tint = 0 //INF, WAS NOTHING(0)
 	siemens_coefficient = 0.7
 	armor = list(melee = 15, bullet = 15, laser = 15, energy = 0, bomb = 0, bio = 75, rad = 0)
 
@@ -166,6 +170,7 @@
 	item_state = "respirator"
 	flags_inv = 0
 	body_parts_covered = 0
+	tint = 0 //INF, WAS NOTHING(0)
 	species_restricted = list(SPECIES_VOX, SPECIES_VOX_ARMALIS)
 	filtered_gases = list("phoron", "sleeping_agent", "oxygen", "chlorine","ammonia","carbon_monoxide","methyl_bromide")
 	w_class = ITEM_SIZE_SMALL
@@ -176,6 +181,7 @@
 	icon_state = "voxswat"
 	item_state = "voxswat"
 	body_parts_covered = 0
+	tint = 0 //INF, WAS NOTHING(0)
 	species_restricted = list(SPECIES_VOX, SPECIES_VOX_ARMALIS)
 	filtered_gases = list("phoron", "sleeping_agent", "oxygen", "chlorine","ammonia","carbon_monoxide","methyl_bromide")
 
@@ -185,4 +191,5 @@
 	icon_state = "halfgas"
 	filter_water = TRUE
 	body_parts_covered = FACE
+	tint = 0 //INF, WAS NOTHING(0)
 	w_class = 2

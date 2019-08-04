@@ -4,4 +4,5 @@
 	item_icons = list(slot_wear_mask_str = 'infinity/icons/mob/onmob/onmob_mask.dmi')
 	icon_state = "gas_alt"
 	item_state = "gas_alt"
+	tint = 1
 	flags_inv = HIDEEARS

@@ -1,3 +1,14 @@
+#define TINT_NONE 0
+#define TINT_ONE 1
+#define TINT_TWO 2
+#define TINT_THREE 3
+#define TINT_MODERATE 3
+#define TINT_FOUR 4
+#define TINT_FIVE 5
+#define TINT_HEAVY 5
+#define TINT_SIX 6
+#define TINT_BLIND 7
+
 #define SPECIES_BIONIC "Bionic"
 
 #define BP_CANCER "cancer"

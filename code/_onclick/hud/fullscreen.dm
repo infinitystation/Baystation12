@@ -95,6 +95,7 @@
 	layer = BLIND_LAYER
 
 /obj/screen/fullscreen/impaired
+	icon = 'infinity/icons/mob/screen_full.dmi' //inf, was nothing
 	icon_state = "impairedoverlay"
 	layer = IMPAIRED_LAYER
 

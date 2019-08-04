@@ -140,12 +140,12 @@
 // Devour speeds, returned by can_devour()
 #define DEVOUR_SLOW 1
 #define DEVOUR_FAST 2
-
+/*INF, WAS. SEE MOBS_INF.DM
 #define TINT_NONE 0
 #define TINT_MODERATE 1
 #define TINT_HEAVY 2
 #define TINT_BLIND 3
-
+*/
 #define FLASH_PROTECTION_VULNERABLE -2
 #define FLASH_PROTECTION_REDUCED -1
 #define FLASH_PROTECTION_NONE 0
