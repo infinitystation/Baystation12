@@ -135,7 +135,7 @@
 	number = 14
 /obj/effect/shuttle_landmark/escape_pod/transit/pod14
 	number = 14
-
+/*
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod15
 	shuttle_area = /area/shuttle/escape_pod15/station
 	number = 15
@@ -168,7 +168,7 @@
 	number = 17
 /obj/effect/shuttle_landmark/escape_pod/transit/pod17
 	number = 17
-
+*/
 //Petrov
 
 /datum/shuttle/autodock/ferry/petrov

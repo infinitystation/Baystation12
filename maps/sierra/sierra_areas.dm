@@ -886,7 +886,11 @@
 	icon_state = "locker"
 
 /area/crew_quarters/head
-	name = "Head"
+	name = "Restroom"
+	icon_state = "toilet"
+
+/area/crew_quarters/showers
+	name = "Private Showers"
 	icon_state = "toilet"
 
 /area/crew_quarters/gym
@@ -907,9 +911,12 @@
 	icon_state = "kitchen"
 
 /area/crew_quarters/lounge
-	name = "Lounge"
+	name = "Lower Lounge"
 	icon_state = "crew_quarters"
 	sound_env = MEDIUM_SOFTFLOOR
+
+/area/crew_quarters/lounge/upper
+	name = "Upper Lounge"
 
 /area/crew_quarters/safe_room
 	name = "Safe Room"
