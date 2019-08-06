@@ -10,8 +10,8 @@
 /decl/flooring/tiling
 	name = "deck"
 
-/obj/machinery/power/smes/buildable/preset/bearcat/shuttle/configure_and_install_coils()
-	component_parts += new /obj/item/weapon/stock_parts/smes_coil/weak(src)
+/obj/machinery/power/smes/buildable/preset/bearcat/shuttle
+	uncreated_component_parts = list(/obj/item/weapon/stock_parts/smes_coil/weak = 1)
 	_input_maxed = TRUE
 	_output_maxed = TRUE
 	_input_on = TRUE
