@@ -13,7 +13,7 @@
 /obj/machinery/cell_charger/Initialize()
 	. = ..()
 	component_parts = list(
-		new /obj/item/weapon/circuitboard/cell_charger(src),
+		new /obj/item/weapon/stock_parts/circuitboard/cell_charger(src),
 		new /obj/item/weapon/stock_parts/capacitor(src))
 	RefreshParts()
 

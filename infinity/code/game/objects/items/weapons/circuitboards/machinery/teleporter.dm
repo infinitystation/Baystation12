@@ -1,4 +1,4 @@
-/obj/item/weapon/circuitboard/teleporter_hub
+/obj/item/weapon/stock_parts/circuitboard/teleporter_hub
 	name = T_BOARD("teleporter hub")
 	build_path = /obj/machinery/teleport/hub
 	board_type = "machine"
@@ -7,7 +7,7 @@
 							/obj/item/weapon/stock_parts/micro_laser/ultra = 4,
 							/obj/item/bluespace_crystal/artificial = 4)
 
-/obj/item/weapon/circuitboard/teleporter_station
+/obj/item/weapon/stock_parts/circuitboard/teleporter_station
 	name = T_BOARD("teleporter station")
 	build_path = /obj/machinery/teleport/station
 	board_type = "machine"

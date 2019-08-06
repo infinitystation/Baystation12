@@ -56,7 +56,7 @@
 
 	//Create parts for crusher.
 	component_parts = list()
-	component_parts += new /obj/item/weapon/circuitboard/crusher(src)
+	component_parts += new /obj/item/weapon/stock_parts/circuitboard/crusher(src)
 	component_parts += new /obj/item/weapon/stock_parts/matter_bin(src)
 	component_parts += new /obj/item/weapon/stock_parts/matter_bin(src)
 	component_parts += new /obj/item/weapon/stock_parts/matter_bin(src)

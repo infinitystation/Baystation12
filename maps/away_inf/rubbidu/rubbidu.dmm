@@ -2656,16 +2656,16 @@
 /obj/structure/catwalk,
 /obj/structure/closet/crate,
 /obj/item/weapon/stock_parts/smes_coil,
-/obj/item/weapon/circuitboard/batteryrack,
-/obj/item/weapon/circuitboard/unary_atmos/heater,
-/obj/item/weapon/circuitboard/unary_atmos/cooler,
-/obj/item/weapon/circuitboard/powermonitor,
-/obj/item/weapon/circuitboard/stationalert,
-/obj/item/weapon/circuitboard/atmos_alert,
+/obj/item/weapon/stock_parts/circuitboard/batteryrack,
+/obj/item/weapon/stock_parts/circuitboard/unary_atmos/heater,
+/obj/item/weapon/stock_parts/circuitboard/unary_atmos/cooler,
+/obj/item/weapon/stock_parts/circuitboard/powermonitor,
+/obj/item/weapon/stock_parts/circuitboard/stationalert,
+/obj/item/weapon/stock_parts/circuitboard/atmos_alert,
 /obj/item/weapon/stock_parts/subspace/crystal,
 /obj/item/weapon/stock_parts/subspace/treatment,
 /obj/item/weapon/stock_parts/subspace/filter,
-/obj/item/weapon/circuitboard/helm,
+/obj/item/weapon/stock_parts/circuitboard/helm,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8;
 	layer = 4;
@@ -4787,7 +4787,7 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/RD_torch,
-/obj/item/weapon/circuitboard/teleporter,
+/obj/item/weapon/stock_parts/circuitboard/teleporter,
 /obj/item/weapon/gun/energy/gun/small,
 /obj/item/weapon/storage/secure/briefcase,
 /obj/item/device/radio/off,

@@ -238,7 +238,7 @@
 	overlays.Cut()
 	overlays += image('icons/obj/stationobjs.dmi', icon_state = "controller-wires")
 	component_parts = list(
-		new /obj/item/weapon/circuitboard/teleporter_station(src),
+		new /obj/item/weapon/stock_parts/circuitboard/teleporter_station(src),
 		new /obj/item/weapon/stock_parts/manipulator/pico(src),
 		new /obj/item/weapon/stock_parts/scanning_module/phasic(src),
 		new /obj/item/weapon/stock_parts/scanning_module/phasic(src),

@@ -1,4 +1,4 @@
-/obj/item/weapon/circuitboard/pile_ripper
+/obj/item/weapon/stock_parts/circuitboard/pile_ripper
 	name = "Circuit board (Pile Ripper)"
 	board_type = "machine"
 	build_path = /obj/machinery/pile_ripper
@@ -26,7 +26,7 @@
 	// On us
 	. = ..()
 	component_parts = list()
-	component_parts += new /obj/item/weapon/circuitboard/pile_ripper(null)
+	component_parts += new /obj/item/weapon/stock_parts/circuitboard/pile_ripper(null)
 	component_parts += new /obj/item/weapon/stock_parts/manipulator(null)
 	RefreshParts()
 	update_icon()

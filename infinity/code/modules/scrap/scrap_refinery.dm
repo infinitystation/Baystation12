@@ -1,6 +1,6 @@
 var/const/SAFETY_COOLDOWN = 100
 
-/obj/item/weapon/circuitboard/recycler
+/obj/item/weapon/stock_parts/circuitboard/recycler
 	name = "Circuit board (Recycler)"
 	board_type = "machine"
 	build_path = /obj/machinery/recycler
@@ -27,7 +27,7 @@ var/const/SAFETY_COOLDOWN = 100
 	// On us
 	. = ..()
 	component_parts = list()
-	component_parts += new /obj/item/weapon/circuitboard/recycler(null)
+	component_parts += new /obj/item/weapon/stock_parts/circuitboard/recycler(null)
 	component_parts += new /obj/item/weapon/stock_parts/manipulator(null)
 	RefreshParts()
 	update_icon()

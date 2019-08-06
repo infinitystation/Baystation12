@@ -212,7 +212,7 @@
 					to_chat(user, "<span class='notice'>The broken glass falls out.</span>")
 					var/obj/machinery/constructable_frame/computerframe/deconstruct/A = new frame_type(loc)
 					new /obj/item/weapon/material/shard( src.loc )
-					var/obj/item/weapon/circuitboard/comm_traffic/M = new /obj/item/weapon/circuitboard/comm_traffic( A )
+					var/obj/item/weapon/stock_parts/circuitboard/comm_traffic/M = new /obj/item/weapon/stock_parts/circuitboard/comm_traffic( A )
 					for (var/obj/C in src)
 						C.dropInto(loc)
 					A.circuit = M
@@ -223,7 +223,7 @@
 				else
 					to_chat(user, "<span class='notice'>You disconnect the monitor.</span>")
 					var/obj/machinery/constructable_frame/computerframe/deconstruct/A = new frame_type(loc)
-					var/obj/item/weapon/circuitboard/comm_traffic/M = new /obj/item/weapon/circuitboard/comm_traffic( A )
+					var/obj/item/weapon/stock_parts/circuitboard/comm_traffic/M = new /obj/item/weapon/stock_parts/circuitboard/comm_traffic( A )
 					for (var/obj/C in src)
 						C.dropInto(loc)
 					A.circuit = M

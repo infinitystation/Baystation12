@@ -26,7 +26,7 @@ var/global/list/rad_collectors = list()
 	. = ..()
 	rad_collectors += src
 	component_parts = list(
-		new /obj/item/weapon/circuitboard/rad_collector,
+		new /obj/item/weapon/stock_parts/circuitboard/rad_collector,
 		new /obj/item/weapon/stock_parts/manipulator,
 		new /obj/item/weapon/stock_parts/manipulator,
 		new /obj/item/weapon/stock_parts/capacitor,

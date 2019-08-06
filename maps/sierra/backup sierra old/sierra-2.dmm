@@ -659,13 +659,13 @@
 "abm" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/circuitboard/autolathe,
-/obj/item/weapon/circuitboard/unary_atmos/cooler,
-/obj/item/weapon/circuitboard/unary_atmos/heater,
+/obj/item/weapon/stock_parts/circuitboard/autolathe,
+/obj/item/weapon/stock_parts/circuitboard/unary_atmos/cooler,
+/obj/item/weapon/stock_parts/circuitboard/unary_atmos/heater,
 /obj/machinery/camera/network/engineering{
 	c_tag = "Tech Storage - Main"
 	},
-/obj/item/weapon/circuitboard/oxyregenerator,
+/obj/item/weapon/stock_parts/circuitboard/oxyregenerator,
 /turf/simulated/floor/tiled/techmaint,
 /area/storage/tech)
 "abn" = (
@@ -784,10 +784,10 @@
 /area/engineering/hardstorage)
 "abw" = (
 /obj/structure/closet/crate,
-/obj/item/weapon/circuitboard/batteryrack,
-/obj/item/weapon/circuitboard/batteryrack,
-/obj/item/weapon/circuitboard/smes,
-/obj/item/weapon/circuitboard/smes,
+/obj/item/weapon/stock_parts/circuitboard/batteryrack,
+/obj/item/weapon/stock_parts/circuitboard/batteryrack,
+/obj/item/weapon/stock_parts/circuitboard/smes,
+/obj/item/weapon/stock_parts/circuitboard/smes,
 /obj/item/weapon/stock_parts/smes_coil/super_io,
 /obj/item/weapon/stock_parts/smes_coil/super_io,
 /obj/item/weapon/stock_parts/smes_coil/super_capacity,
@@ -2667,14 +2667,14 @@
 /area/tcommsat/storage)
 "aew" = (
 /obj/structure/table/rack,
-/obj/item/weapon/circuitboard/telecomms/processor,
-/obj/item/weapon/circuitboard/telecomms/processor,
-/obj/item/weapon/circuitboard/telecomms/receiver,
-/obj/item/weapon/circuitboard/telecomms/server,
-/obj/item/weapon/circuitboard/telecomms/server,
-/obj/item/weapon/circuitboard/telecomms/bus,
-/obj/item/weapon/circuitboard/telecomms/bus,
-/obj/item/weapon/circuitboard/telecomms/broadcaster,
+/obj/item/weapon/stock_parts/circuitboard/telecomms/processor,
+/obj/item/weapon/stock_parts/circuitboard/telecomms/processor,
+/obj/item/weapon/stock_parts/circuitboard/telecomms/receiver,
+/obj/item/weapon/stock_parts/circuitboard/telecomms/server,
+/obj/item/weapon/stock_parts/circuitboard/telecomms/server,
+/obj/item/weapon/stock_parts/circuitboard/telecomms/bus,
+/obj/item/weapon/stock_parts/circuitboard/telecomms/bus,
+/obj/item/weapon/stock_parts/circuitboard/telecomms/broadcaster,
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_y = -24
@@ -7692,14 +7692,14 @@
 /turf/simulated/floor/lino,
 /area/crew_quarters/bar)
 "ams" = (
-/obj/item/weapon/circuitboard/shield_diffuser,
-/obj/item/weapon/circuitboard/shield_diffuser,
-/obj/item/weapon/circuitboard/shield_diffuser,
-/obj/item/weapon/circuitboard/shield_generator,
-/obj/item/weapon/circuitboard/shield_generator,
-/obj/item/weapon/circuitboard/shield_generator,
-/obj/item/weapon/circuitboard/shield_generator,
-/obj/item/weapon/circuitboard/shield_generator,
+/obj/item/weapon/stock_parts/circuitboard/shield_diffuser,
+/obj/item/weapon/stock_parts/circuitboard/shield_diffuser,
+/obj/item/weapon/stock_parts/circuitboard/shield_diffuser,
+/obj/item/weapon/stock_parts/circuitboard/shield_generator,
+/obj/item/weapon/stock_parts/circuitboard/shield_generator,
+/obj/item/weapon/stock_parts/circuitboard/shield_generator,
+/obj/item/weapon/stock_parts/circuitboard/shield_generator,
+/obj/item/weapon/stock_parts/circuitboard/shield_generator,
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/camera/network/engineering{
@@ -14526,8 +14526,8 @@
 	dir = 4;
 	icon_state = "bulb_map"
 	},
-/obj/item/weapon/circuitboard/arcade/battle,
-/obj/item/weapon/circuitboard/arcade/orion_trail,
+/obj/item/weapon/stock_parts/circuitboard/arcade/battle,
+/obj/item/weapon/stock_parts/circuitboard/arcade/orion_trail,
 /turf/simulated/floor/tiled/techmaint,
 /area/storage/tech)
 "awX" = (
@@ -17389,7 +17389,7 @@
 "aBs" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/circuitboard/helm,
+/obj/item/weapon/stock_parts/circuitboard/helm,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -23478,8 +23478,8 @@
 "aLK" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/circuitboard/borgupload,
-/obj/item/weapon/circuitboard/aiupload,
+/obj/item/weapon/stock_parts/circuitboard/borgupload,
+/obj/item/weapon/stock_parts/circuitboard/aiupload,
 /turf/simulated/floor/tiled/techmaint,
 /area/storage/tech)
 "aLL" = (
@@ -24922,11 +24922,11 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/forestarboard)
 "aOp" = (
-/obj/item/weapon/circuitboard/telecomms/processor,
-/obj/item/weapon/circuitboard/telecomms/receiver,
-/obj/item/weapon/circuitboard/telecomms/server,
-/obj/item/weapon/circuitboard/telecomms/bus,
-/obj/item/weapon/circuitboard/telecomms/broadcaster,
+/obj/item/weapon/stock_parts/circuitboard/telecomms/processor,
+/obj/item/weapon/stock_parts/circuitboard/telecomms/receiver,
+/obj/item/weapon/stock_parts/circuitboard/telecomms/server,
+/obj/item/weapon/stock_parts/circuitboard/telecomms/bus,
+/obj/item/weapon/stock_parts/circuitboard/telecomms/broadcaster,
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/light/small,
@@ -26116,9 +26116,9 @@
 "aQw" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/circuitboard/holodeckcontrol,
-/obj/item/weapon/circuitboard/mech_recharger,
-/obj/item/weapon/circuitboard/solar_control,
+/obj/item/weapon/stock_parts/circuitboard/holodeckcontrol,
+/obj/item/weapon/stock_parts/circuitboard/mech_recharger,
+/obj/item/weapon/stock_parts/circuitboard/solar_control,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
@@ -26352,9 +26352,9 @@
 "aQR" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/circuitboard/atmos_alert,
-/obj/item/weapon/circuitboard/powermonitor,
-/obj/item/weapon/circuitboard/stationalert,
+/obj/item/weapon/stock_parts/circuitboard/atmos_alert,
+/obj/item/weapon/stock_parts/circuitboard/powermonitor,
+/obj/item/weapon/stock_parts/circuitboard/stationalert,
 /turf/simulated/floor/tiled/techmaint,
 /area/storage/tech)
 "aQS" = (
@@ -26420,10 +26420,10 @@
 "aQZ" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/circuitboard/rdserver,
-/obj/item/weapon/circuitboard/protolathe,
-/obj/item/weapon/circuitboard/destructive_analyzer,
-/obj/item/weapon/circuitboard/rdconsole,
+/obj/item/weapon/stock_parts/circuitboard/rdserver,
+/obj/item/weapon/stock_parts/circuitboard/protolathe,
+/obj/item/weapon/stock_parts/circuitboard/destructive_analyzer,
+/obj/item/weapon/stock_parts/circuitboard/rdconsole,
 /obj/machinery/alarm{
 	dir = 4;
 	pixel_x = -23
@@ -26992,7 +26992,7 @@
 /area/maintenance/seconddeck/forestarboard)
 "aSa" = (
 /obj/structure/table/rack,
-/obj/item/weapon/circuitboard/bluespacerelay,
+/obj/item/weapon/stock_parts/circuitboard/bluespacerelay,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -28936,8 +28936,8 @@
 "aVf" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/circuitboard/mecha_control,
-/obj/item/weapon/circuitboard/robotics,
+/obj/item/weapon/stock_parts/circuitboard/mecha_control,
+/obj/item/weapon/stock_parts/circuitboard/robotics,
 /turf/simulated/floor/tiled/techmaint,
 /area/storage/tech)
 "aVg" = (
@@ -31446,7 +31446,7 @@
 "aZw" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/circuitboard/message_monitor,
+/obj/item/weapon/stock_parts/circuitboard/message_monitor,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},

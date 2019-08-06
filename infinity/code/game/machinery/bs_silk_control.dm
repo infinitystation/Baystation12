@@ -28,7 +28,7 @@
 /obj/machinery/bssilk_hub/New()
 	..()
 	component_parts = list()
-	component_parts += new /obj/item/weapon/circuitboard/bssilk/hub(src)
+	component_parts += new /obj/item/weapon/stock_parts/circuitboard/bssilk/hub(src)
 	component_parts += new /obj/item/bluespace_crystal(src)
 	component_parts += new /obj/item/bluespace_crystal(src)
 	component_parts += new /obj/item/weapon/stock_parts/capacitor/super(src)
@@ -92,7 +92,7 @@
 	name = "bluespace snare control"
 	icon = 'icons/obj/computer.dmi'
 	icon_state = "computer"
-	//circuit = /obj/item/weapon/circuitboard/bssilk/console
+	//circuit = /obj/item/weapon/stock_parts/circuitboard/bssilk/console
 
 	icon_keyboard = "rd_key"
 	icon_screen = "ai-fixer-404"
