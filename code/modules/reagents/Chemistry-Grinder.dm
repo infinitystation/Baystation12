@@ -56,7 +56,7 @@
 	if(is_type_in_list(O, blacklisted_types))
 		to_chat(user, SPAN_NOTICE("\The [src] cannot grind \the [O]."))
 		return
-	
+
 	if(O.w_class > item_size_limit)
 		to_chat(user, SPAN_NOTICE("\The [src] cannot fit \the [O]."))
 		return
@@ -296,4 +296,4 @@
 		return
 	visible_message(SPAN_NOTICE("\The [src] whirrs violently and spills its contents all over \the [user]!"))
 	if(beaker && beaker.reagents)
-		beaker.reagents.splash(user, beaker.reagents.total_volume)
+		beaker.reagents.splash(user, reagents.total_volume)
