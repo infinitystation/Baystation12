@@ -4278,7 +4278,7 @@
 /obj/structure/table/reinforced,
 /obj/item/weapon/aicard,
 /obj/item/weapon/pinpointer/advpinpointer,
-/obj/item/weapon/stamp/centcomm,
+/obj/item/weapon/stamp/boss,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -5992,7 +5992,7 @@
 /area/centcom/specops)
 "anD" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/stamp/centcomm,
+/obj/item/weapon/stamp/boss,
 /obj/item/weapon/pen,
 /obj/item/weapon/paper_bin,
 /turf/unsimulated/floor{
@@ -13989,7 +13989,7 @@
 /area/rescue_base/base)
 "aFw" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/stamp/centcomm,
+/obj/item/weapon/stamp/boss,
 /obj/item/weapon/pen,
 /turf/unsimulated/floor{
 	icon_state = "vault";
@@ -18709,7 +18709,7 @@
 /area/syndicate_mothership/elite_squad)
 "aRk" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/stamp/centcomm,
+/obj/item/weapon/stamp/boss,
 /obj/item/weapon/pen,
 /obj/effect/floor_decal/corner/red{
 	dir = 5
