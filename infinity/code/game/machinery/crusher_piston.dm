@@ -130,13 +130,13 @@
 			return
 	..()
 
-/obj/machinery/crusher_base/default_deconstruction_crowbar(var/mob/user, var/obj/item/weapon/crowbar/C)
+/*/obj/machinery/crusher_base/default_deconstruction_crowbar(var/mob/user, var/obj/item/weapon/crowbar/C)
 	if(!istype(C))
 		return 0
 	if(num_progress != 0) //Piston needs to be retracted before you are able to deconstruct it
 		to_chat(user, "<span class='notice'>You can not deconstruct [src] while the piston is extended.</span>")
 		return 0
-	return ..()
+	return ..()*/
 
 /obj/machinery/crusher_base/proc/change_neighbor_base_icons()
 	var/obj/machinery/crusher_base/left = locate(/obj/machinery/crusher_base, get_step(src, WEST))
