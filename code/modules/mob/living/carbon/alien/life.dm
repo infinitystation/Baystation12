@@ -18,7 +18,7 @@
 	update_icons()
 
 /mob/living/carbon/alien/proc/can_progress()
-	if(src.auto_progress == 1)
+	if(auto_progress == 1)
 		return 1
 	else
 		return 0

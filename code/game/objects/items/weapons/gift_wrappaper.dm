@@ -69,7 +69,7 @@
 		/obj/item/weapon/bikehorn,
 		/obj/item/weapon/beach_ball,
 		/obj/item/weapon/beach_ball/holoball,
-		/obj/item/weapon/stock_parts/computer_hardware/tesla_link,
+		/obj/item/weapon/stock_parts/computer/tesla_link,
 		/obj/item/toy/water_balloon,
 		/obj/item/clothing/mask/gas/radical,
 		/obj/item/weapon/marshalling_wand,

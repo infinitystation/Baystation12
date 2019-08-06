@@ -776,8 +776,8 @@
 /obj/item/toy/canary
 	name = "canary"
 	desc = "Small mechanical canary in a cage, does absolutely nothing of any importance!"
-	icon = 'icons/mob/animal.dmi'
-	icon_state = "canary"
+	icon = 'icons/mob/simple_animal/animal.dmi'
+	icon_state = "chick"
 
 //Toy cult sword
 /obj/item/toy/cultsword

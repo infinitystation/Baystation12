@@ -97,7 +97,7 @@
 // Detective
 /obj/item/modular_computer/console/preset/security/detective/install_default_programs()
 	..()
-	nano_printer = new/obj/item/weapon/computer_hardware/nano_printer(src)
+	nano_printer = new/obj/item/weapon/stock_parts/computer/nano_printer(src)
 
 // Civilian
 /obj/item/modular_computer/console/preset/civilian/install_default_programs()

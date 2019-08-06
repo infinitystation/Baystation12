@@ -285,7 +285,7 @@ var/list/global/tank_gauge_cache = list()
 
 	var/mob/living/carbon/location
 	if(istype(loc,/mob/living/carbon))
-		var/mob/living/carbon/location = loc
+		location = loc
 		if(location.internal == src)
 			location.internal = null
 			location.internals.icon_state = "internal0"

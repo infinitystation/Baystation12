@@ -265,7 +265,7 @@
 	if(A == src)
 		return 0 //no
 
-	if(A == firer || istype(A, /obj/mecha) && get_turf(A) == get_turf(firer))
+	if(A == firer || istype(A, /mob/living/exosuit) && get_turf(A) == get_turf(firer))
 		forceMove(A.loc)
 		return 0 //cannot shoot yourself
 
@@ -444,7 +444,7 @@
 	var/result = 0 //To pass the message back to the gun.
 
 /obj/item/projectile/test/Bump(atom/A as mob|obj|turf|area)
-	if(A == firer || istype(A, /obj/mecha) && get_turf(A) == get_turf(firer))
+	if(A == firer || istype(A, /mob/living/exosuit) && get_turf(A) == get_turf(firer))
 		forceMove(A.loc)
 		return //cannot shoot yourself
 	if(istype(A, /obj/item/projectile))

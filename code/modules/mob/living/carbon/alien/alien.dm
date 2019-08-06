@@ -13,6 +13,9 @@
 	var/death_msg = "lets out a waning guttural screech, green blood bubbling from its maw."
 	var/instance_num
 
+
+	var/auto_progress = 1 //inf
+
 /mob/living/carbon/alien/New()
 
 	verbs += /mob/living/proc/ventcrawl

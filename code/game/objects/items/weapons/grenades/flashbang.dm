@@ -44,7 +44,7 @@
 				ear_safety += 1
 			if(istype(M:head, /obj/item/clothing/head/helmet))
 				ear_safety += 1
-	for(var/obj/mecha/mecha in M.loc)
+	for(var/mob/living/exosuit/mecha in M.loc)
 		if(M in mecha.contents)
 			ear_safety += 1
 
