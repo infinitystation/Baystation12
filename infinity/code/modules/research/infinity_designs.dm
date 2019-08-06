@@ -7,14 +7,14 @@
 	build_path = /obj/item/weapon/disk/botany
 	sort_string = "AAAAC"
 
-/datum/design/item/stock_part/BS_RPED
+/*/datum/design/item/stock_part/BS_RPED
 	name = "bluespace rapid part exchange device"
 	desc = "Powered by bluespace technology, this RPED variant can upgrade buildings from a distance, without needing to remove the panel first."
 	id = "bs_rped"
 	req_tech = list(TECH_ENGINEERING = 5, TECH_MATERIAL = 5, TECH_BLUESPACE = 4)
 	materials = list(MATERIAL_STEEL = 20000, MATERIAL_GLASS = 5000, MATERIAL_SILVER = 2000)
 	build_path = /obj/item/weapon/storage/part_replacer/bluespace
-	sort_string = "CBAAB"
+	sort_string = "CBAAB"*/
 
 /datum/design/item/hud/health
 	name = "health scanner"
