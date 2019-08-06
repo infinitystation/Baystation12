@@ -115,12 +115,7 @@
 			M.visible_message("<span class='danger'>[user]'s hand catches in the [src]!</span>", "<span class='danger'>Your hand gets caught in the [src]!</span>")
 			M.say("*scream")
 		return
-	if(default_deconstruction_screwdriver(user, O))
-		return
-	if(default_deconstruction_crowbar(user, O))
-		return
-	if(default_part_replacement(user, O))
-		return
+	return ..()
 
 	//Stuff you can do if the maint hatch is open
 	if(panel_open)

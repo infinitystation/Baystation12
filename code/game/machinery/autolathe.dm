@@ -155,13 +155,6 @@
 	var/total_used = 0     // Amount of material used.
 	var/mass_per_sheet = 0 // Amount of material constituting one sheet.
 //[/inf]
-	var/amount_available = 1
-	if(istype(eating, /obj/item/stack))
-		var/obj/item/stack/stack = eating
-		amount_available = stack.get_amount()
-	var/amount_used = 0    // Amount of material sheets used, if a stack, or whether the item was used, if not.
-	var/space_left = FALSE
-
 	for(var/material in taking_matter)
 
 		if(stored_material[material] >= storage_capacity[material])

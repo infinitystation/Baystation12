@@ -29,16 +29,6 @@
 /obj/item/clothing/head/helmet/space/void/attackby(var/obj/item/O, var/mob/user)
 	if(istype(O,/obj/item/device/kit/suit))
 		var/obj/item/device/kit/suit/kit = O
-//[INF]
-		for(var/type in P.allowed_types)
-			if(type == src.initial_icon || type == "anything")
-				found = 1
-				break
-
-		if(!found)
-			to_chat(user, "That kit isn't meant for use on this class of exosuit.")
-			return
-//[/INF]
 		SetName("[kit.new_name] suit helmet")
 		desc = kit.new_desc
 		icon_state = "[kit.new_icon]_helmet"
@@ -81,7 +71,7 @@
 	name = "exosuit customisation kit"
 	desc = "A kit containing all the needed tools and parts to repaint a exosuit."
 	var/removable = null
-	allowed_types = list("anything")//inf
+
 /obj/item/device/kit/paint/examine()
 	. = ..()
 	to_chat(usr, "This kit will add a '[new_name]' decal to a exosuit'.")
@@ -98,6 +88,7 @@
 	new_icon = "flames_blue"
 
 
+/*
 //[inf]
 	//Ripley
 /obj/item/device/kit/paint/ripley
@@ -155,3 +146,4 @@
 	new_icon = "recitence"
 
 //[/inf]
+*/
