@@ -91,7 +91,7 @@
 	generation = gen
 	set_borer_name()
 
-	if(!roundstart) 
+	if(!roundstart)
 		request_player()
 
 	aura_image = create_aura_image(src)
@@ -184,9 +184,10 @@
 				if(prob(host.getBrainLoss()/20))
 					host.say("*[pick(list("blink","blink_r","choke","aflap","drool","twitch","twitch_v","gasp"))]")
 
+/*//This All cool, but bay create verb that give you control under DEAD host
 		if(host.getBrainLoss() >= 100 && !src.now_escaping == 1)
 			to_chat(src, sanitize_a0("<span class='notice'>Мозг жертвы теряет былую функциональность. Нужно найти другого...</span>"))
-			src.release_host()
+			src.release_host()*/
 
 /mob/living/simple_animal/borer/Stat()
 	. = ..()

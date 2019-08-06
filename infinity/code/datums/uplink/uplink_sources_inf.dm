@@ -8,7 +8,7 @@
 	var/obj/item/modular_computer/pda/P = find_in_mob(M, /obj/item/modular_computer/pda)
 	var/obj/item/weapon/computer_hardware/hard_drive/portable/uplink = new
 	var/pda_pass = "[rand(100,999)] [pick(GLOB.greek_letters)]"
-	var/obj/item/device/uplink/T = new(uplink, M.mind, amount)
+	var/obj/item/device/uplink/T = new Type(uplink, M.mind, amount)
 	uplink.hidden_uplink = T
 	var/datum/computer_file/program/uplink/program = new(pda_pass)
 	if(!uplink.try_store_file(program))
