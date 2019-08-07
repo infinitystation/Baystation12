@@ -291,10 +291,8 @@
 
 	if(src.operating) return
 
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		if(H.get_species() == SPECIES_XENO)
-			H.pry_open(src)
+	if(isxenomorph(user)) //inf
+		H.pry_open(src) //inf
 
 	if(src.allowed(user) && operable())
 		if(src.density)
