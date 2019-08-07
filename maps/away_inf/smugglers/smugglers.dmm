@@ -186,7 +186,7 @@
 	dir = 4
 	},
 /obj/machinery/button/blast_door{
-	id = "ab_blast";
+	id_tag = "ab_blast";
 	name = "Observation Section";
 	pixel_x = 0;
 	pixel_y = 24
@@ -663,7 +663,7 @@
 /obj/random/cash,
 /obj/random/cash,
 /obj/machinery/button/blast_door{
-	id = "ab_blast";
+	id_tag = "ab_blast";
 	name = "Observation Section";
 	pixel_x = 0;
 	pixel_y = 24

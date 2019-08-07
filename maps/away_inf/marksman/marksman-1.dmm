@@ -2326,7 +2326,7 @@
 	},
 /obj/machinery/button/blast_door{
 	desc = "A remote control-switch for the torpedos launcher door.";
-	id = "las_patrol";
+	id_tag = "las_patrol";
 	name = "MRSL Platform Blastdoor Control";
 	pixel_x = -24;
 	pixel_y = 0;
@@ -3955,7 +3955,7 @@
 	dir = 4
 	},
 /obj/machinery/button/alternate/door{
-	id = "miss_pod";
+	id_tag = "miss_pod";
 	name = "Missile Section Bolts Control";
 	pixel_x = 0;
 	pixel_y = -24;
@@ -4689,7 +4689,7 @@
 	},
 /obj/machinery/button/alternate/door{
 	desc = "A remote control switch for the medbay foyer.";
-	id = "MedbayFoyer";
+	id_tag = "MedbayFoyer";
 	name = "Infirmary Entrance Control";
 	pixel_x = 24;
 	pixel_y = 24
@@ -7146,7 +7146,7 @@
 	pixel_y = 5
 	},
 /obj/machinery/button/windowtint{
-	id = "surgery_windows";
+	id_tag = "surgery_windows";
 	pixel_x = -25;
 	pixel_y = -5
 	},
@@ -7568,7 +7568,7 @@
 "oG" = (
 /obj/machinery/button/blast_door{
 	desc = "A remote control-switch for the prototype exhaust";
-	id = "prototype_exhaust_patrol";
+	id_tag = "prototype_exhaust_patrol";
 	name = "Chamber Exhaust";
 	pixel_x = 0;
 	pixel_y = 21;
@@ -7576,7 +7576,7 @@
 	},
 /obj/machinery/button/blast_door{
 	desc = "A remote control-switch for the observation shutters";
-	id = "fusion_observation_patrol";
+	id_tag = "fusion_observation_patrol";
 	name = "Chamber Observation";
 	pixel_x = 0;
 	pixel_y = 29;
@@ -7584,7 +7584,7 @@
 	},
 /obj/machinery/button/blast_door{
 	desc = "A remote control-switch for the engine containment doors";
-	id = "prototype_chamber_blast_patrol";
+	id_tag = "prototype_chamber_blast_patrol";
 	name = "Chamber Containment";
 	pixel_x = 0;
 	pixel_y = 37;

@@ -496,7 +496,7 @@
 /obj/item/weapon/pen,
 /obj/machinery/button/blast_door{
 	dir = 2;
-	id = "mbase_room_shutters_solar";
+	id_tag = "mbase_room_shutters_solar";
 	name = "Space Shutters Control";
 	pixel_x = 0;
 	pixel_y = 26
@@ -715,7 +715,7 @@
 /obj/item/weapon/towel/random,
 /obj/machinery/button/blast_door{
 	dir = 8;
-	id = "mbase_room_shutters1";
+	id_tag = "mbase_room_shutters1";
 	name = "Space Shutters Control";
 	pixel_x = 24
 	},
@@ -778,7 +778,7 @@
 /obj/item/weapon/pen,
 /obj/machinery/button/blast_door{
 	dir = 8;
-	id = "mbase_room_shutters2";
+	id_tag = "mbase_room_shutters2";
 	name = "Space Shutters Control";
 	pixel_x = 24
 	},

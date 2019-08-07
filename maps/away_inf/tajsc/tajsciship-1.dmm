@@ -572,7 +572,7 @@
 	},
 /obj/structure/table/steel_reinforced,
 /obj/machinery/button/blast_door{
-	id = "cz";
+	id_tag = "cz";
 	req_access = list("access_tajsciship")
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -1527,7 +1527,7 @@
 "dD" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
-	id = "immadora";
+	id_tag = "immadora";
 	req_access = list("access_tajsciship")
 	},
 /obj/machinery/light/halogen,
@@ -1661,7 +1661,7 @@
 	},
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/button/blast_door{
-	id = "immadora";
+	id_tag = "immadora";
 	req_access = list("access_tajsciship")
 	},
 /obj/structure/table/reinforced,
@@ -2061,7 +2061,7 @@
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
-	id = "immadora";
+	id_tag = "immadora";
 	req_access = list("access_tajsciship")
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -2495,7 +2495,7 @@
 /area/ship/tajsciship/dormitory)
 "fG" = (
 /obj/machinery/button/blast_door{
-	id = "eff";
+	id_tag = "eff";
 	name = "Last-Stand";
 	req_access = list("access_tajsciship");
 	pixel_y = 32
@@ -2684,7 +2684,7 @@
 	dir = 6
 	},
 /obj/machinery/button/blast_door{
-	id = "lold";
+	id_tag = "lold";
 	name = "To-Core";
 	req_access = list("access_tajsciship");
 	pixel_y = 32
@@ -2981,7 +2981,7 @@
 	dir = 4
 	},
 /obj/machinery/button/blast_door{
-	id = "iron";
+	id_tag = "iron";
 	name = "To-Space";
 	req_access = list("access_tajsciship");
 	pixel_y = 32
@@ -3118,7 +3118,7 @@
 /area/ship/tajsciship/shuttle)
 "gW" = (
 /obj/machinery/button/blast_door{
-	id = "sex1";
+	id_tag = "sex1";
 	req_access = list("access_tajsciship")
 	},
 /obj/structure/table/steel_reinforced,
@@ -3238,7 +3238,7 @@
 /area/ship/tajsciship/shuttle)
 "hj" = (
 /obj/machinery/button/blast_door{
-	id = "immashata"
+	id_tag = "immashata"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/ship/tajsciship/shuttle)
@@ -4406,7 +4406,7 @@
 	dir = 4
 	},
 /obj/machinery/button/blast_door{
-	id = "saa";
+	id_tag = "saa";
 	req_access = list("access_tajsciship")
 	},
 /obj/structure/table/steel_reinforced,
@@ -5455,7 +5455,7 @@
 /obj/structure/window/reinforced,
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
-	id = "away_tajsciship_sensor";
+	id_tag = "away_tajsciship_sensor";
 	name = "Sensor";
 	pixel_x = 0;
 	req_access = list("access_tajsciship")
@@ -6194,7 +6194,7 @@
 	icon_state = "railing0-1"
 	},
 /obj/machinery/button/blast_door{
-	id = "sha-a"
+	id_tag = "sha-a"
 	},
 /turf/simulated/floor/tiled/old_cargo,
 /area/ship/tajsciship/solars)
@@ -7024,7 +7024,7 @@
 "pp" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/button/blast_door{
-	id = "cz1"
+	id_tag = "cz1"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/ship/tajsciship/hangar)
@@ -7181,7 +7181,7 @@
 "pJ" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/button/blast_door{
-	id = "cz2"
+	id_tag = "cz2"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/ship/tajsciship/hangar)

@@ -678,7 +678,7 @@
 	},
 /obj/machinery/button/blast_door{
 	dir = 2;
-	id = "rub_bridge";
+	id_tag = "rub_bridge";
 	name = "Bridge Shield";
 	pixel_x = 0;
 	pixel_y = 32;
@@ -725,7 +725,7 @@
 /area/rubbidu/civil/canteen)
 "bH" = (
 /obj/machinery/button/blast_door{
-	id = "toxin_exhaust";
+	id_tag = "toxin_exhaust";
 	name = "Toxins Chamber Vent";
 	pixel_x = 6;
 	pixel_y = 26;
@@ -789,7 +789,7 @@
 /obj/machinery/shield_diffuser,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/button/blast_door{
-	id = "aquila_hatch";
+	id_tag = "aquila_hatch";
 	name = "Starboard Hatch Control";
 	pixel_y = 28
 	},
@@ -1142,7 +1142,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id = "rub_bar";
+	id_tag = "rub_bar";
 	name = "button";
 	pixel_x = -24;
 	pixel_y = -6;
@@ -4002,7 +4002,7 @@
 /obj/machinery/button/blast_door{
 	desc = "A remote control-switch for shutters.";
 	dir = 8;
-	id = "rub_hangar";
+	id_tag = "rub_hangar";
 	name = "Hangar shutter";
 	pixel_x = 24;
 	pixel_y = -6;
@@ -4676,7 +4676,7 @@
 /obj/machinery/button/blast_door{
 	desc = "A remote control-switch for shutters.";
 	dir = 8;
-	id = "rub_cryo_window";
+	id_tag = "rub_cryo_window";
 	name = "Dormitory Window Shutters";
 	pixel_x = 24;
 	pixel_y = 0
@@ -5738,7 +5738,7 @@
 "kg" = (
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id = "aquila_windows";
+	id_tag = "aquila_windows";
 	name = "Window Shield Control";
 	pixel_x = -32
 	},
@@ -6495,7 +6495,7 @@
 /obj/machinery/button/blast_door{
 	desc = "A remote control-switch for shutters.";
 	dir = 4;
-	id = "rub_hangar_window";
+	id_tag = "rub_hangar_window";
 	name = "Hangar Window Shutters";
 	pixel_x = -24;
 	pixel_y = 0;
@@ -7006,7 +7006,7 @@
 	},
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id = "rubb_nt_v1";
+	id_tag = "rubb_nt_v1";
 	name = "button";
 	pixel_x = -24;
 	pixel_y = -6;
@@ -7014,7 +7014,7 @@
 	},
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id = "rubb_nt_v2";
+	id_tag = "rubb_nt_v2";
 	name = "button";
 	pixel_x = -24;
 	pixel_y = 6;
@@ -7575,7 +7575,7 @@
 "mZ" = (
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id = "calypso_shutters";
+	id_tag = "calypso_shutters";
 	name = "Protective Shutters Control";
 	pixel_x = -32
 	},
@@ -7705,7 +7705,7 @@
 "nj" = (
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id = "rub_dock_window";
+	id_tag = "rub_dock_window";
 	name = "Dock Window Shutters Control";
 	pixel_x = -24;
 	pixel_y = 0
@@ -7946,7 +7946,7 @@
 	},
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id = "rubb_han_a";
+	id_tag = "rubb_han_a";
 	name = "Fore Dock Doors";
 	pixel_x = -24;
 	pixel_y = 0;
@@ -8173,7 +8173,7 @@
 /obj/machinery/button/blast_door{
 	desc = "A remote control-switch for shutters.";
 	dir = 8;
-	id = "rub_han_h";
+	id_tag = "rub_han_h";
 	name = "Aft Dock Doors";
 	pixel_x = 24;
 	pixel_y = 0;
@@ -9463,7 +9463,7 @@
 /obj/machinery/button/blast_door{
 	desc = "A remote control-switch for shutters.";
 	dir = 1;
-	id = "rub_bar_window";
+	id_tag = "rub_bar_window";
 	name = "Canteen Window Shutters";
 	pixel_x = 0;
 	pixel_y = -22
@@ -10859,7 +10859,7 @@
 "si" = (
 /obj/machinery/button/blast_door{
 	desc = "A remote control-switch for shutters.";
-	id = "hop_office_desk";
+	id_tag = "hop_office_desk";
 	name = "Desk Privacy Shutter";
 	pixel_x = 24;
 	pixel_y = -6
@@ -11119,7 +11119,7 @@
 /obj/machinery/light,
 /obj/machinery/button/blast_door{
 	dir = 1;
-	id = "rub_sensor";
+	id_tag = "rub_sensor";
 	name = "Sensor Shield";
 	pixel_x = 0;
 	pixel_y = -22;
@@ -13782,7 +13782,7 @@
 	},
 /obj/machinery/button/blast_door{
 	dir = 1;
-	id = "guppy_hatch";
+	id_tag = "guppy_hatch";
 	name = "Rear Hatch Control";
 	pixel_y = -24;
 	req_access = list("ACCESS_GUPPY")
@@ -13896,7 +13896,7 @@
 /area/guppy_hangar/start)
 "KF" = (
 /obj/machinery/button/blast_door{
-	id = "guppy_hatch";
+	id_tag = "guppy_hatch";
 	name = "Rear Hatch Control";
 	pixel_x = 32;
 	pixel_y = -32;

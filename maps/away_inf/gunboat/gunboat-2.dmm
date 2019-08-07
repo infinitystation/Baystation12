@@ -167,7 +167,7 @@
 	dir = 4
 	},
 /obj/machinery/button/blast_door{
-	id = "gunboat_armory";
+	id_tag = "gunboat_armory";
 	name = "Armory Shutters Contol";
 	pixel_x = 24;
 	pixel_y = -24;
@@ -180,7 +180,7 @@
 	density = 1;
 	dir = 8;
 	icon_state = "shutter1";
-	id = "gunboat_armory";
+	id_tag = "gunboat_armory";
 	name = "Armory Shutters";
 	opacity = 1
 	},
@@ -348,7 +348,7 @@
 	dir = 6
 	},
 /obj/machinery/button/blast_door{
-	id = "gunboat_armory";
+	id_tag = "gunboat_armory";
 	name = "Armory Shutters Contol";
 	pixel_x = 0;
 	pixel_y = 24;
@@ -924,7 +924,7 @@
 "bI" = (
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
-	id = "gunboat_bridge";
+	id_tag = "gunboat_bridge";
 	name = "Bridge Windows Blastdoor Contol";
 	pixel_x = 0;
 	pixel_y = -24
@@ -1077,13 +1077,13 @@
 "bX" = (
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
-	id = "mb_torpedo_l";
+	id_tag = "mb_torpedo_l";
 	name = "Port Launch Pod Blastdoor Control";
 	pixel_x = -6;
 	pixel_y = -24
 	},
 /obj/machinery/button/blast_door{
-	id = "mb_torpedo_r";
+	id_tag = "mb_torpedo_r";
 	name = "Starboard Launch Pod Blastdoor Control";
 	pixel_x = 6;
 	pixel_y = -24

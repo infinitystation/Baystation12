@@ -414,7 +414,7 @@
 /area/ship/gunboat/command/gun)
 "aY" = (
 /obj/machinery/button/blast_door{
-	id = "mb_torpedo_r";
+	id_tag = "mb_torpedo_r";
 	name = "Torpedo Fire Door Control";
 	pixel_x = -6;
 	pixel_y = -23
@@ -767,13 +767,13 @@
 /area/space)
 "bt" = (
 /obj/machinery/button/blast_door{
-	id = "mb_laser_maint";
+	id_tag = "mb_laser_maint";
 	name = "Laser Cannon Inner Shield";
 	pixel_x = 6;
 	pixel_y = 24
 	},
 /obj/machinery/button/blast_door{
-	id = "mb_laser";
+	id_tag = "mb_laser";
 	name = "Laser Cannon Fire Door";
 	pixel_x = -6;
 	pixel_y = 24
@@ -1172,7 +1172,7 @@
 /area/ship/gunboat/living)
 "bW" = (
 /obj/machinery/button/alternate/door{
-	id = "shower_boat";
+	id_tag = "shower_boat";
 	name = "Lock";
 	pixel_y = -27
 	},
@@ -1540,7 +1540,7 @@
 /area/ship/gunboat/command/gun)
 "cy" = (
 /obj/machinery/button/blast_door{
-	id = "mb_torpedo_l";
+	id_tag = "mb_torpedo_l";
 	name = "Torpedo Fire Door Control";
 	pixel_x = -6;
 	pixel_y = 24
@@ -1606,7 +1606,7 @@
 	dir = 4
 	},
 /obj/machinery/button/alternate/door{
-	id = "head_boat";
+	id_tag = "head_boat";
 	name = "Lock";
 	pixel_y = 26
 	},
@@ -1903,7 +1903,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/button/blast_door{
-	id = "mb_reactor";
+	id_tag = "mb_reactor";
 	pixel_y = -24
 	},
 /obj/effect/floor_decal/industrial/warning/cee{

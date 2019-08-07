@@ -846,7 +846,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/button/blast_door{
-	id = "xil_shuttle";
+	id_tag = "xil_shuttle";
 	name = "Shuttle Blast Doors";
 	pixel_x = 24;
 	req_access = list("ACCESS_SKRELLSCOUT")
@@ -1672,7 +1672,7 @@
 	},
 /obj/machinery/button/blast_door{
 	dir = 1;
-	id = "xil_bridge";
+	id_tag = "xil_bridge";
 	name = "Mess Hall Blast Doors";
 	pixel_y = -21;
 	req_access = list("ACCESS_SKRELLSCOUT")

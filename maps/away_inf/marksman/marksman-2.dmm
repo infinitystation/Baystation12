@@ -472,7 +472,7 @@
 	dir = 6
 	},
 /obj/machinery/button/alternate/door{
-	id = "cabinp_1";
+	id_tag = "cabinp_1";
 	name = "Lock";
 	pixel_x = -24;
 	pixel_y = 0;
@@ -502,7 +502,7 @@
 	dir = 10
 	},
 /obj/machinery/button/alternate/door{
-	id = "cabinp_2";
+	id_tag = "cabinp_2";
 	name = "Lock";
 	pixel_x = 24;
 	pixel_y = 0;
@@ -1731,7 +1731,7 @@
 /area/ship/marksman/crew/brig/office)
 "dx" = (
 /obj/machinery/button/blast_door{
-	id = "parmory";
+	id_tag = "parmory";
 	name = "Desk Shutters Control";
 	pixel_x = -24;
 	pixel_y = 14;
@@ -2505,7 +2505,7 @@
 	dir = 4
 	},
 /obj/machinery/button/alternate/door{
-	id = "showerp";
+	id_tag = "showerp";
 	name = "Lock";
 	pixel_x = 24;
 	pixel_y = -8;
@@ -2518,7 +2518,7 @@
 /area/ship/marksman/crew/toilet)
 "eX" = (
 /obj/machinery/button/alternate/door{
-	id = "toiletp";
+	id_tag = "toiletp";
 	name = "Lock";
 	pixel_x = 24;
 	pixel_y = -8;
@@ -3961,7 +3961,7 @@
 	},
 /obj/machinery/vending/dinnerware,
 /obj/machinery/button/blast_door{
-	id = "kitchenshowp";
+	id_tag = "kitchenshowp";
 	name = "Kitchen Showcase";
 	pixel_x = -26;
 	pixel_y = 0;

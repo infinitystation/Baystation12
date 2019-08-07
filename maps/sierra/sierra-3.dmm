@@ -22508,7 +22508,7 @@
 /obj/item/weapon/pen,
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/purple/border,
-/obj/item/weapon/stamp/rd,
+/obj/item/weapon/stamp/rd/nt,
 /obj/item/device/radio/intercom{
 	dir = 1;
 	pixel_y = -29

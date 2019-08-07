@@ -812,7 +812,7 @@
 	pixel_y = 0
 	},
 /obj/machinery/button/blast_door{
-	id = "mc_chamber_doors";
+	id_tag = "mc_chamber_doors";
 	name = "Combustion Chamber Blast Doors";
 	pixel_x = 24;
 	pixel_y = 26
@@ -862,19 +862,19 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/button/blast_door{
-	id = "mc_bridge";
+	id_tag = "mc_bridge";
 	name = "Bridge Window Blastdoors";
 	pixel_y = 2;
 	wifi_sender = 2
 	},
 /obj/machinery/button/blast_door{
-	id = "mc_sensors";
+	id_tag = "mc_sensors";
 	name = "Sonar Blastdoor";
 	pixel_y = -6;
 	wifi_sender = 3
 	},
 /obj/machinery/button/blast_door{
-	id = "mc_laser";
+	id_tag = "mc_laser";
 	name = "Laser Blastdoor";
 	pixel_y = 10;
 	wifi_sender = 4
