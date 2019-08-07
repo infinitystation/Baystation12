@@ -522,7 +522,7 @@
 	req_access = newlist()
 	},
 /obj/effect/shuttle_landmark/skrellscoutship/start,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "xil_airlock_right";
 	name = "Starboard Airlock Blast Doors";
 	pixel_x = 32;
@@ -1123,21 +1123,21 @@
 /area/ship/skrellscoutship/maintenance/power)
 "cq" = (
 /obj/structure/table/steel,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "xil_airlock_right";
 	name = "Starboard Airlock Blast Doors";
 	pixel_x = -2;
 	pixel_y = 5;
 	req_access = list("ACCESS_SKRELLSCOUT")
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "xil_airlock";
 	name = "Rear Airlock Blast Doors";
 	pixel_x = 7;
 	pixel_y = 0;
 	req_access = list("ACCESS_SKRELLSCOUT")
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "xil_airlock_left";
 	name = "Larboard Airlock Blast Doors";
 	pixel_x = -2;
@@ -1419,7 +1419,7 @@
 	locked = 1;
 	req_access = newlist()
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "xil_airlock";
 	name = "Airlock Blast Doors";
 	pixel_y = 32;
@@ -1702,7 +1702,7 @@
 	locked = 1;
 	req_access = newlist()
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "xil_airlock_left";
 	name = "Larboard Airlock Blast Doors";
 	pixel_x = 32;
@@ -1896,7 +1896,7 @@
 /area/ship/skrellscoutship/crew/toilets)
 "wS" = (
 /obj/structure/table/steel,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "xil_bridge";
 	name = "Mess Hall Blast Doors"
 	},

@@ -1408,7 +1408,7 @@
 /obj/effect/floor_decal/industrial/danger{
 	dir = 1
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 8;
 	id = "Skynet_launch";
 	name = "Charging Bay Door Control";
@@ -2733,7 +2733,7 @@
 /area/rnd/xenobiology)
 "gz" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "xenobio3";
 	name = "Containment Blast Doors";
 	pixel_x = 6;
@@ -2884,7 +2884,7 @@
 /area/assembly/robotics)
 "gO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "xenobio2";
 	name = "Containment Blast Doors";
 	pixel_x = 6;
@@ -2956,7 +2956,7 @@
 /area/assembly/chargebay)
 "gV" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "xenobio1";
 	name = "Containment Blast Doors";
 	pixel_x = 6;
@@ -3152,7 +3152,7 @@
 /area/rnd/anomaly/Lab)
 "hp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "xenobio4";
 	name = "Containment Blast Doors";
 	pixel_x = -6;
@@ -3329,7 +3329,7 @@
 "hG" = (
 /obj/effect/floor_decal/corner/purple/mono,
 /obj/machinery/disposal,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 8;
 	id = "Skynet_launch";
 	name = "Charging Bay Door Control";
@@ -4385,7 +4385,7 @@
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/xenoflora)
 "jE" = (
-/obj/machinery/computer/general_air_control{
+/obj/machinery/computer/air_control{
 	frequency = 1441;
 	name = "Xenoflora Gas Monitor";
 	sensors = list("xenobot_sensor" = "Xenoflora Environment")
@@ -5094,7 +5094,7 @@
 "kS" = (
 /obj/structure/table/glass,
 /obj/item/weapon/folder/envelope/blanks,
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	desc = "A remote control-switch for the office door.";
 	dir = 1;
 	id = "rddoor";

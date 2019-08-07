@@ -401,7 +401,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/hangar/cargo/storage)
 "dY" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 8;
 	id = "qm_warehouse";
 	name = "Warehouse Shutters Control";

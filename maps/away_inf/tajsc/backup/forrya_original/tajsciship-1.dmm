@@ -2085,7 +2085,7 @@
 	icon_state = "railing0-1"
 	},
 /obj/structure/table/steel_reinforced,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "cz";
 	req_access = list("access_tajsciship")
 	},
@@ -2382,7 +2382,7 @@
 /turf/simulated/floor/greengrid,
 /area/ship/tajsciship)
 "fs" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "eff";
 	name = "Last-Stand";
 	req_access = list("access_tajsciship");
@@ -2865,7 +2865,7 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/ship/tajsciship/sklad1)
 "gq" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "lold";
 	name = "To-Core";
 	req_access = list("access_tajsciship");
@@ -3307,7 +3307,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/ship/tajscishuttle)
 "hj" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "immashata"
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -3793,7 +3793,7 @@
 	icon_state = "railing0-1"
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "immadora";
 	req_access = list("access_tajsciship")
 	},
@@ -5149,7 +5149,7 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/ship/tajsciship/botany)
 "lm" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "iron";
 	name = "To-Space";
 	req_access = list("access_tajsciship");
@@ -5756,7 +5756,7 @@
 	dir = 4;
 	icon_state = "railing0-1"
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "sha-a"
 	},
 /turf/simulated/floor/tiled/old_cargo,
@@ -5952,7 +5952,7 @@
 /area/ship/tajscishuttle)
 "mN" = (
 /obj/structure/table/reinforced,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "immadora";
 	req_access = list("access_tajsciship")
 	},
@@ -5986,7 +5986,7 @@
 	dir = 4
 	},
 /obj/effect/catwalk_plated/dark,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "immadora";
 	req_access = list("access_tajsciship")
 	},
@@ -6165,7 +6165,7 @@
 /turf/space,
 /area/ship/tajsciship)
 "ni" = (
-/obj/machinery/computer/general_air_control{
+/obj/machinery/computer/air_control{
 	dir = 1;
 	icon_state = "computer";
 	name = "Atmospheric Sensors";
@@ -6343,7 +6343,7 @@
 /area/ship/tajsciship/solari)
 "nC" = (
 /obj/structure/table/reinforced,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "sex1";
 	req_access = list("access_tajsciship")
 	},
@@ -6802,7 +6802,7 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "saa";
 	req_access = list("access_tajsciship")
 	},
@@ -7239,7 +7239,7 @@
 /area/ship/tajsciship/hangar)
 "pp" = (
 /obj/structure/table/steel_reinforced,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "cz1"
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -7433,7 +7433,7 @@
 /area/ship/tajsciship/hangar)
 "pJ" = (
 /obj/structure/table/steel_reinforced,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "cz2"
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -7705,7 +7705,7 @@
 "qg" = (
 /obj/structure/window/reinforced,
 /obj/structure/table/reinforced,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "sesensor";
 	name = "Sensor";
 	req_access = list("access_tajsciship");

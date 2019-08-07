@@ -810,7 +810,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/expedition/storage)
 "bJ" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 8;
 	id = "mine_warehouse";
 	name = "Storage Door Control";
@@ -840,7 +840,7 @@
 /turf/simulated/floor/plating,
 /area/vacant/monitoring)
 "bL" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "mine_warehouse";
 	name = "Storage Door Control";
@@ -2059,7 +2059,7 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/shuttle/petrov/ship)
 "dR" = (
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control/large_tank_control{
 	input_tag = "toxins_in";
 	name = "Toxins Gas Monitor";
 	output_tag = "toxins_out";
@@ -2165,7 +2165,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aft)
 "eb" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "toxin_exhaust";
 	name = "Toxins Chamber Vent";
 	pixel_x = 6;
@@ -3145,7 +3145,7 @@
 	icon_state = "bordercolor";
 	dir = 9
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "comissary_shutters";
 	name = "Counter Shutters";
 	pixel_x = 0;
@@ -5574,7 +5574,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "bsa_space";
 	name = "BSA Space";
@@ -8225,7 +8225,7 @@
 /turf/simulated/floor/plating,
 /area/shuttle/petrov/ship)
 "nC" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "petrovcell1";
 	name = "Test Chamber Vent";
@@ -8302,7 +8302,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
 	id = "petrovcell2";
 	name = "Test Chamber Vent";
@@ -8633,7 +8633,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
 	id = "petrovcell3";
 	name = "Test Chamber Vent";
@@ -10953,7 +10953,7 @@
 	pixel_y = 24
 	},
 /obj/structure/table/steel,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	desc = "A remote control-switch for shutters.";
 	id = "hangar_checkpoint_shutters";
 	name = "Checkpoint Window Shutters";
@@ -10961,7 +10961,7 @@
 	pixel_y = 7;
 	req_access = list("ACCESS_SECURITY")
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	desc = "A remote control-switch for shutters.";
 	id = "hangar_hallway_shutters";
 	name = "Hallway Checkpoint Shutters";
@@ -12179,7 +12179,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "do_office";
 	name = "QM Shutter Control";
 	pixel_x = 6;
@@ -13390,7 +13390,7 @@
 /obj/effect/floor_decal/corner/blue{
 	dir = 5
 	},
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/oxygen/first,
+/obj/machinery/computer/air_control/large_tank_control/nacelle/oxygen/first,
 /obj/machinery/atmospherics/pipe/simple/visible/blue{
 	icon_state = "intact";
 	dir = 4
@@ -13569,7 +13569,7 @@
 /obj/item/device/radio/intercom{
 	pixel_y = 26
 	},
-/obj/machinery/computer/general_air_control/engines_flame/second,
+/obj/machinery/computer/air_control/engines_flame/second,
 /turf/simulated/floor/reinforced,
 /area/thruster/d3port)
 "vt" = (
@@ -13590,7 +13590,7 @@
 /obj/effect/floor_decal/corner/purple{
 	dir = 5
 	},
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/phoron/first,
+/obj/machinery/computer/air_control/large_tank_control/nacelle/phoron/first,
 /turf/simulated/floor/reinforced,
 /area/thruster/d3starboard)
 "vv" = (
@@ -14082,7 +14082,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
 "wg" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "calypso_shutters";
 	name = "Protective Shutters Control";
@@ -14447,7 +14447,7 @@
 /obj/effect/floor_decal/corner/grey{
 	dir = 10
 	},
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/co2/first{
+/obj/machinery/computer/air_control/large_tank_control/nacelle/co2/first{
 	dir = 1
 	},
 /turf/simulated/floor/reinforced,
@@ -15373,7 +15373,7 @@
 	icon_state = "intact";
 	dir = 4
 	},
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/co2/second,
+/obj/machinery/computer/air_control/large_tank_control/nacelle/co2/second,
 /turf/simulated/floor/reinforced,
 /area/thruster/d3port)
 "yf" = (
@@ -15861,7 +15861,7 @@
 /obj/structure/table/standard{
 	name = "plastic table frame"
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	desc = "A remote control-switch for the office door.";
 	dir = 4;
 	id = "qmdoor-hallway";
@@ -15878,7 +15878,7 @@
 	icon_state = "bordercolor";
 	dir = 8
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	desc = "A remote control-switch for the office door.";
 	dir = 4;
 	id = "qmdoor-supply";
@@ -16206,14 +16206,14 @@
 	operating = 1;
 	pixel_y = -34
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
 	id = "d1portnacelle";
 	name = "Combustion Chamber Blast Door Control";
 	pixel_x = -8;
 	pixel_y = -24
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
 	id = "cChamber1pV";
 	name = "Third Deck Starboard Chamber Vent";
@@ -16243,7 +16243,7 @@
 /obj/effect/floor_decal/corner/blue{
 	dir = 10
 	},
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/oxygen/second{
+/obj/machinery/computer/air_control/large_tank_control/nacelle/oxygen/second{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/blue{
@@ -16298,7 +16298,7 @@
 	icon_state = "intact";
 	dir = 6
 	},
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/phoron/second{
+/obj/machinery/computer/air_control/large_tank_control/nacelle/phoron/second{
 	dir = 1
 	},
 /turf/simulated/floor/reinforced,
@@ -16868,7 +16868,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/storage/auxillary/port)
 "AH" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 8;
 	id = "portaux_warehouse";
 	name = "Warehouse Shutters Control";
@@ -16911,7 +16911,7 @@
 	icon_state = "bordercolorcorner2";
 	dir = 10
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "portaux_warehouse";
 	name = "Warehouse Shutters Control";
@@ -17133,7 +17133,7 @@
 	icon_state = "intact";
 	dir = 9
 	},
-/obj/machinery/computer/general_air_control/engines_flame/first{
+/obj/machinery/computer/air_control/engines_flame/first{
 	dir = 1
 	},
 /obj/item/device/radio/intercom{
@@ -17198,7 +17198,7 @@
 	icon_state = "warningcorner";
 	dir = 8
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "qm_warehouse";
 	name = "Warehouse Shutters Control";
@@ -17328,13 +17328,13 @@
 	dir = 1;
 	target_pressure = 15000
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "cChamber2pV";
 	name = "Third Deck Port Chamber Vent";
 	pixel_x = 8;
 	pixel_y = 24
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "d2portnacelle";
 	name = "Combustion Chamber Blast Door Control";
 	pixel_x = -8;
@@ -17620,7 +17620,7 @@
 /obj/random/maintenance,
 /obj/random/maintenance,
 /obj/random/maintenance,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "qm_warehouse2";
 	name = "Warehouse Door Control";
 	pixel_x = -6;
@@ -18696,7 +18696,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/foreport)
 "DA" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 8;
 	id = "qm_warehouse";
 	name = "Warehouse Shutters Control";
@@ -18738,7 +18738,7 @@
 	id = "guppy_hatch";
 	name = "Rear Hatch"
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
 	id = "guppy_hatch";
 	name = "Rear Hatch Control";
@@ -20653,7 +20653,7 @@
 	icon_state = "camera";
 	dir = 1
 	},
-/obj/machinery/computer/general_air_control{
+/obj/machinery/computer/air_control{
 	dir = 8;
 	name = "Atmospheric Sensors";
 	sensors = list("calypso_out")
@@ -21289,7 +21289,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/guppy_hangar/start)
 "HC" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "guppy_hatch";
 	name = "Rear Hatch Control";
 	pixel_x = 32;
@@ -21910,7 +21910,7 @@
 /area/exploration_shuttle/cargo)
 "Iz" = (
 /obj/item/modular_computer/console/preset/civilian/professional,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "sup_office";
 	name = "Desk Shutter Control";
 	pixel_y = 22;
@@ -24048,7 +24048,7 @@
 	dir = 8
 	},
 /obj/item/device/spaceflare,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
 	id = "guppy_shield";
 	name = "Window Shield Control";
@@ -25089,7 +25089,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 2;
 	id = "xenobioa2";
 	name = "Containment Blast Doors";
@@ -25774,7 +25774,7 @@
 	icon_state = "warning";
 	dir = 5
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	desc = "A remote control switch for the medical chamber.";
 	dir = 2;
 	id = "bsa_door1";
@@ -25827,7 +25827,7 @@
 /turf/simulated/floor/tiled,
 /area/command/bsa)
 "Pf" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	desc = "";
 	dir = 1;
 	id = "bsa_door1";
@@ -26165,7 +26165,7 @@
 "PF" = (
 /obj/structure/ship_munition/bsa_charge/fire,
 /obj/effect/floor_decal/industrial/outline/orange,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 8;
 	id = "bsa_door2";
 	name = "BSA Blast Door";
@@ -26187,7 +26187,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "bsa_door2";
 	name = "BSA Blast Door";
@@ -26256,7 +26256,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	dir = 1;
 	id = "bsa_safe_room";
 	name = "Lock";
@@ -26832,7 +26832,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 2;
 	id = "xenobioa1";
 	name = "Containment Blast Doors";
@@ -26863,7 +26863,7 @@
 	icon_state = "bordercolor";
 	dir = 1
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 2;
 	id = "xenobioa3";
 	name = "Containment Blast Doors";
@@ -27308,7 +27308,7 @@
 /area/rnd/xenobiology/level2)
 "RD" = (
 /obj/effect/floor_decal/industrial/warning/corner,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
 	id = "xenobio_lower_desk";
 	name = "Blast Doors";

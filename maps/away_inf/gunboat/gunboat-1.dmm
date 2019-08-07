@@ -413,7 +413,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/ship/gunboat/command/gun)
 "aY" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "mb_torpedo_r";
 	name = "Torpedo Fire Door Control";
 	pixel_x = -6;
@@ -766,13 +766,13 @@
 /turf/space,
 /area/space)
 "bt" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "mb_laser_maint";
 	name = "Laser Cannon Inner Shield";
 	pixel_x = 6;
 	pixel_y = 24
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "mb_laser";
 	name = "Laser Cannon Fire Door";
 	pixel_x = -6;
@@ -881,7 +881,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/table/rack,
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control/large_tank_control{
 	dir = 8;
 	frequency = 1700;
 	input_tag = "fuel_in";
@@ -1171,7 +1171,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/ship/gunboat/living)
 "bW" = (
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	id = "shower_boat";
 	name = "Lock";
 	pixel_y = -27
@@ -1488,7 +1488,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/industrial/warning,
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control/large_tank_control{
 	dir = 8;
 	frequency = 1700;
 	input_tag = null;
@@ -1539,7 +1539,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/ship/gunboat/command/gun)
 "cy" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "mb_torpedo_l";
 	name = "Torpedo Fire Door Control";
 	pixel_x = -6;
@@ -1605,7 +1605,7 @@
 	icon_state = "toilet00";
 	dir = 4
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	id = "head_boat";
 	name = "Lock";
 	pixel_y = 26
@@ -1902,7 +1902,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "mb_reactor";
 	pixel_y = -24
 	},

@@ -1041,7 +1041,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "melt_shut";
 	name = "Shutters Control";
 	pixel_x = 28;
@@ -2904,7 +2904,7 @@
 "fO" = (
 /obj/structure/table/woodentable/walnut,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 8;
 	id = "dorms1";
 	name = "Shutters Control";
@@ -2957,7 +2957,7 @@
 	layer = 2.4;
 	level = 2
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	dir = 4;
 	id = "dorms1door";
 	name = "Bolts Control";
@@ -3007,7 +3007,7 @@
 "gc" = (
 /obj/structure/table/woodentable/walnut,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 8;
 	id = "dorms2";
 	name = "Shutters Control";
@@ -3177,7 +3177,7 @@
 	layer = 2.4;
 	level = 2
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	dir = 4;
 	id = "dorms2door";
 	name = "Bolts Control";

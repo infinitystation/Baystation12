@@ -1150,7 +1150,7 @@
 /obj/structure/table/glass,
 /obj/item/weapon/folder/white,
 /obj/item/weapon/pen,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "vir_blast";
 	name = "Virology Blast Door";
@@ -3892,7 +3892,7 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/engineering/engine_room)
 "agr" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	desc = "A remote control-switch for the engine thruster blast doors.";
 	id = "ThrusterVents";
 	name = "Thruster Blast Door control";
@@ -6455,7 +6455,7 @@
 	dir = 4
 	},
 /obj/machinery/light,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
 	id = "kitchen";
 	name = "Kitchen Shutters";
@@ -6496,7 +6496,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 8;
 	id = "bar";
 	name = "Bar Shutters";
@@ -7240,7 +7240,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/seconddeck/fore)
 "alG" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	desc = "A remote control-switch for the engine radiator viewport shutters.";
 	dir = 8;
 	id = "EngineRadiatorViewport";
@@ -8556,7 +8556,7 @@
 /area/crew_quarters/mess)
 "anO" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan,
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	dir = 4;
 	id = "engine_electrical_maintenance";
 	name = "Door Bolt Control";
@@ -8982,7 +8982,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/computer/general_air_control/supermatter_core{
+/obj/machinery/computer/air_control/supermatter_core{
 	dir = 8;
 	frequency = 1438;
 	input_tag = "cooling_in";
@@ -9621,7 +9621,7 @@
 /turf/simulated/floor/plating,
 /area/engineering/engine_monitoring)
 "apE" = (
-/obj/machinery/button/remote/driver{
+/obj/machinery/button/driver{
 	dir = 1;
 	id = "enginecore";
 	name = "Emergency Core Eject";
@@ -9637,7 +9637,7 @@
 	name = "emergency core eject";
 	req_access = list("ACCESS_ENGINE_EQUIP")
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	desc = "A remote control-switch for engine core.";
 	dir = 1;
 	id = "EngineVent";
@@ -9646,7 +9646,7 @@
 	pixel_y = -20;
 	req_access = list("ACCESS_ENGINE_EQUIP")
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	desc = "A remote control-switch for the engine core airlock hatch bolts.";
 	dir = 4;
 	id = "engine_access_hatch";
@@ -10436,7 +10436,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/seconddeck/fore)
 "aqU" = (
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control/large_tank_control{
 	dir = 4;
 	frequency = 1441;
 	input_tag = "n2_in";
@@ -10828,7 +10828,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	desc = "A remote control-switch for the office door.";
 	dir = 4;
 	id = "cedoor";
@@ -11775,7 +11775,7 @@
 /area/crew_quarters/mess)
 "asZ" = (
 /obj/structure/bed/sofa/brown/right,
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	dir = 8;
 	id = "bar_room_two";
 	name = "Unlock";
@@ -11797,7 +11797,7 @@
 	pixel_x = 6;
 	pixel_y = -21
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	dir = 1;
 	id = "bar_room_two";
 	name = "Lock";
@@ -11966,7 +11966,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/atmos)
 "atl" = (
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control/large_tank_control{
 	dir = 8;
 	frequency = 1441;
 	input_tag = "co2_in";
@@ -13804,7 +13804,7 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/virology)
 "avQ" = (
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	id = "privatedorm5";
 	name = "Lock";
 	pixel_y = 24;
@@ -16324,14 +16324,14 @@
 /area/hallway/primary/seconddeck/fore)
 "azM" = (
 /obj/structure/table/steel_reinforced,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	desc = "A remote control-switch for the engine control room blast doors.";
 	id = "EngineBlast";
 	name = "Engine Monitoring Room Blast Doors";
 	pixel_y = -3;
 	req_access = list("ACCESS_ENGINEERING")
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	desc = "A remote control-switch for the engine charging port.";
 	id = "SupermatterPort";
 	name = "Reactor Blast Doors";
@@ -16339,7 +16339,7 @@
 	pixel_y = 7;
 	req_access = list("ACCESS_ENGINEERING")
 	},
-/obj/machinery/button/remote/emitter{
+/obj/machinery/button/emitter{
 	desc = "A remote control-switch for the engine emitter.";
 	id = "EngineEmitter";
 	name = "Engine Emitter";
@@ -17010,7 +17010,7 @@
 /obj/machinery/alarm{
 	pixel_y = 30
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "engineeringdeskshutters";
 	name = "Desk Shutter Control";
@@ -17087,7 +17087,7 @@
 	id_tag = "civsafedoor";
 	name = "Third Deck Safe Room"
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	dir = 8;
 	id = "civsafedoor";
 	name = "safe room door-control";
@@ -17282,7 +17282,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	dir = 4;
 	id = "toilet1";
 	name = "Lock";
@@ -17299,7 +17299,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	dir = 8;
 	id = "toilet2";
 	name = "Lock";
@@ -17680,7 +17680,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/teleporter/seconddeck)
 "aBR" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "teleport3";
 	name = "Third Deck Teleporter Access Shutter Control";
 	pixel_x = -6;
@@ -19891,7 +19891,7 @@
 	pixel_x = 6;
 	pixel_y = -21
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	desc = "A remote control-switch for the office door.";
 	dir = 1;
 	id = "cedoor";
@@ -20154,7 +20154,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/shield/seconddeck)
 "aGf" = (
-/obj/machinery/computer/general_air_control/engines_tanks{
+/obj/machinery/computer/air_control/engines_tanks{
 	icon_state = "computer";
 	dir = 1
 	},
@@ -20165,28 +20165,28 @@
 	operating = 1;
 	pixel_y = -21
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "cChamber2pV";
 	name = "Third Deck Port Chamber Vent";
 	pixel_x = -26;
 	pixel_y = 6
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "cChamber4pV";
 	name = "First Deck Port Chamber Vent";
 	pixel_x = -26;
 	pixel_y = -6
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "cChamber3pV";
 	name = "First Deck Starboard Chamber Vent";
 	pixel_x = -37;
 	pixel_y = -6
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "cChamber1pV";
 	name = "Third Deck Starboard Chamber Vent";
@@ -20600,7 +20600,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/safe_room/seconddeck)
 "aGP" = (
-/obj/machinery/computer/general_air_control/engines_flame{
+/obj/machinery/computer/air_control/engines_flame{
 	icon_state = "computer";
 	dir = 1
 	},
@@ -20763,7 +20763,7 @@
 /area/engineering/atmos)
 "aHg" = (
 /obj/machinery/atmospherics/pipe/manifold4w/visible/cyan,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	desc = "A remote control-switch for the engine radiator viewport shutters.";
 	dir = 8;
 	id = "EngineRadiatorViewport";
@@ -21216,7 +21216,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	dir = 8;
 	id = "privatedorm1";
 	name = "Lock";
@@ -21588,7 +21588,7 @@
 	id_tag = "civsafedoorport";
 	name = "Third Deck Safe Room"
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	dir = 8;
 	id = "civsafedoorport";
 	name = "safe room door-control";
@@ -21699,7 +21699,7 @@
 	pixel_x = -5;
 	pixel_y = 2
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	dir = 4;
 	id = "privatedorm2";
 	name = "Lock";
@@ -21718,7 +21718,7 @@
 	pixel_x = 5;
 	pixel_y = 9
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	dir = 8;
 	id = "privatedorm3";
 	name = "Lock";
@@ -21952,7 +21952,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/atmos)
 "aJb" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	desc = "A remote control-switch for the engine thruster blast doors.";
 	dir = 1;
 	id = "ThrusterVents";
@@ -22184,7 +22184,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/cryolocker)
 "aJy" = (
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control/large_tank_control{
 	dir = 8;
 	frequency = 1441;
 	input_tag = "h2_in";
@@ -22285,7 +22285,7 @@
 	pixel_x = -5;
 	pixel_y = 9
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	dir = 4;
 	id = "privatedorm4";
 	name = "Lock";
@@ -22658,7 +22658,7 @@
 	icon_state = "bordercolor";
 	dir = 1
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 2;
 	id = "vir_blast";
 	name = "Virology Blast Door";
@@ -23703,7 +23703,7 @@
 	c_tag = "Bar - Aft Port";
 	dir = 8
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	dir = 8;
 	id = "bar_room_one";
 	name = "Unlock";
@@ -23746,7 +23746,7 @@
 	pixel_x = 6;
 	pixel_y = -21
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	dir = 1;
 	id = "bar_room_one";
 	name = "Lock";
@@ -24042,7 +24042,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "aMJ" = (
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control/large_tank_control{
 	dir = 8;
 	frequency = 1441;
 	input_tag = "n2o_in";
@@ -24258,7 +24258,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/hallway/primary/seconddeck/aft)
 "aMZ" = (
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control/large_tank_control{
 	dir = 1;
 	frequency = 1441;
 	input_tag = "o2_in";
@@ -28368,7 +28368,7 @@
 	},
 /obj/effect/catwalk_plated/white,
 /obj/structure/hygiene/sink,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
 	id = "xenobio1";
 	name = "Containment Blast Doors";
@@ -28376,7 +28376,7 @@
 	pixel_y = -21;
 	req_access = list("ACCESS_RESEARCH")
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
 	id = "xenobio1_vent";
 	name = "Cell 1 Vent";
@@ -28536,7 +28536,7 @@
 	},
 /obj/effect/catwalk_plated/white,
 /obj/structure/hygiene/sink,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
 	id = "xenobio2";
 	name = "Containment Blast Doors";
@@ -28544,7 +28544,7 @@
 	pixel_y = -21;
 	req_access = list("ACCESS_RESEARCH")
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
 	id = "xenobio2_vent";
 	name = "Cell 2 Vent";
@@ -28565,7 +28565,7 @@
 	},
 /obj/effect/catwalk_plated/white,
 /obj/structure/hygiene/sink,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
 	id = "xenobio3_vent";
 	name = "Cell 3 Vent";
@@ -28573,7 +28573,7 @@
 	pixel_y = -21;
 	req_access = list("ACCESS_RESEARCH")
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
 	id = "xenobio3";
 	name = "Containment Blast Doors";
@@ -28663,7 +28663,7 @@
 	dir = 4;
 	icon_state = "intact"
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 2;
 	id = "xenobioaqua";
 	name = "Aqua Containment Blast Doors";
@@ -28879,7 +28879,7 @@
 	dir = 9
 	},
 /obj/item/weapon/folder/nt,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
 	id = "xenobio_desk";
 	name = "Containment Blast Doors";
@@ -29074,7 +29074,7 @@
 	dir = 8
 	},
 /obj/machinery/smartfridge/secure/extract,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
 	id = "xenobio_surg";
 	name = "Containment Blast Doors";
@@ -29102,7 +29102,7 @@
 "aVv" = (
 /obj/structure/table/standard,
 /obj/item/weapon/storage/box/monkeycubes,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
 	id = "xenobio4_vent";
 	name = "Cell 4 Vent";
@@ -29110,7 +29110,7 @@
 	pixel_y = -21;
 	req_access = list("ACCESS_RESEARCH")
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
 	id = "xenobio4";
 	name = "Containment Blast Doors";
@@ -30631,7 +30631,7 @@
 /area/hallway/primary/seconddeck/center)
 "aXW" = (
 /obj/random/junk,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 2;
 	id = "rubroom_blast";
 	name = "Blast Door";
@@ -31320,7 +31320,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/virology)
 "aZm" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "vir_isol";
 	name = "Isolation Room Shutters";
 	pixel_x = 0;
@@ -32224,7 +32224,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/virology)
 "baT" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	desc = "A remote control-switch for shutters.";
 	dir = 1;
 	id = "virologyquar";
@@ -32858,7 +32858,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/blood/oil,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 2;
 	id = "abahyd_blast";
 	name = "Hydro Blast Door";

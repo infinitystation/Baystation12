@@ -471,7 +471,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	id = "cabinp_1";
 	name = "Lock";
 	pixel_x = -24;
@@ -501,7 +501,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	id = "cabinp_2";
 	name = "Lock";
 	pixel_x = 24;
@@ -1730,7 +1730,7 @@
 /turf/simulated/floor/tiled,
 /area/ship/marksman/crew/brig/office)
 "dx" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "parmory";
 	name = "Desk Shutters Control";
 	pixel_x = -24;
@@ -2504,7 +2504,7 @@
 	icon_state = "shower";
 	dir = 4
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	id = "showerp";
 	name = "Lock";
 	pixel_x = 24;
@@ -2517,7 +2517,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/ship/marksman/crew/toilet)
 "eX" = (
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	id = "toiletp";
 	name = "Lock";
 	pixel_x = 24;
@@ -3960,7 +3960,7 @@
 	dir = 4
 	},
 /obj/machinery/vending/dinnerware,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "kitchenshowp";
 	name = "Kitchen Showcase";
 	pixel_x = -26;

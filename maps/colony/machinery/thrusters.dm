@@ -83,7 +83,7 @@
 
 //monitoring computers
 
-/obj/machinery/computer/general_air_control/engines_tanks
+/obj/machinery/computer/air_control/engines_tanks
 	name = "Nacelles Tank Monitoring"
 	frequency = 1439
 	sensors = list("ReacEngPlasma1" = "Third Deck Starboard H2",
@@ -99,7 +99,7 @@
 				"ReacEngCO23" = "First Deck Starboard CO2",
 				"ReacEngCO24" = "First Deck Port CO2")
 
-/obj/machinery/computer/general_air_control/engines_flame
+/obj/machinery/computer/air_control/engines_flame
 	name = "Nacelles Chamber Monitoring"
 	frequency = 1439
 	sensors = list("ReacEng1" = "Third Deck Starboard Chamber",
@@ -107,86 +107,86 @@
 				"ReacEng3" = "First Deck Starboard Chamber",
 				"ReacEng4" = "First Deck Port Chamber")
 
-/obj/machinery/computer/general_air_control/engines_flame/first
+/obj/machinery/computer/air_control/engines_flame/first
 	sensors = list("ReacEng1" = "Chamber")
 
-/obj/machinery/computer/general_air_control/engines_flame/second
+/obj/machinery/computer/air_control/engines_flame/second
 	sensors = list("ReacEng2" = "Chamber")
 
-/obj/machinery/computer/general_air_control/engines_flame/third
+/obj/machinery/computer/air_control/engines_flame/third
 	sensors = list("ReacEng3" = "Chamber")
 
-/obj/machinery/computer/general_air_control/engines_flame/fourth
+/obj/machinery/computer/air_control/engines_flame/fourth
 	sensors = list("ReacEng4" = "Chamber")
 
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle
+/obj/machinery/computer/air_control/large_tank_control/nacelle
 	frequency = 1439
 
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/oxygen
+/obj/machinery/computer/air_control/large_tank_control/nacelle/oxygen
 	name = "Oxygen Supply Control"
 
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/phoron
+/obj/machinery/computer/air_control/large_tank_control/nacelle/phoron
 	name = "Fuel Supply Control"
 
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/co2
+/obj/machinery/computer/air_control/large_tank_control/nacelle/co2
 	name = "Propellent Supply Control"
 
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/oxygen/first
+/obj/machinery/computer/air_control/large_tank_control/nacelle/oxygen/first
 	input_tag = "o21p_in"
 	output_tag = "o21p_out"
 	sensors = list("ReacEngOxygen1" = "Tank")
 
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/oxygen/second
+/obj/machinery/computer/air_control/large_tank_control/nacelle/oxygen/second
 	input_tag = "o22p_in"
 	output_tag = "o22p_out"
 	sensors = list("ReacEngOxygen2" = "Tank")
 
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/oxygen/third
+/obj/machinery/computer/air_control/large_tank_control/nacelle/oxygen/third
 	input_tag = "o23p_in"
 	output_tag = "o23p_out"
 	sensors = list("ReacEngOxygen3" = "Tank")
 
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/oxygen/fourth
+/obj/machinery/computer/air_control/large_tank_control/nacelle/oxygen/fourth
 	input_tag = "o24p_in"
 	output_tag = "o24p_out"
 	sensors = list("ReacEngOxygen4" = "Tank")
 
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/phoron/first
+/obj/machinery/computer/air_control/large_tank_control/nacelle/phoron/first
 	input_tag = "fuel1p_in"
 	output_tag = "fuel1p_out"
 	sensors = list("ReacEngPlasma1" = "Tank")
 
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/phoron/second
+/obj/machinery/computer/air_control/large_tank_control/nacelle/phoron/second
 	input_tag = "fuel2p_in"
 	output_tag = "fuel2p_out"
 	sensors = list("ReacEngPlasma2" = "Tank")
 
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/phoron/third
+/obj/machinery/computer/air_control/large_tank_control/nacelle/phoron/third
 	input_tag = "fuel3p_in"
 	output_tag = "fuel3p_out"
 	sensors = list("ReacEngPlasma3" = "Tank")
 
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/phoron/fourth
+/obj/machinery/computer/air_control/large_tank_control/nacelle/phoron/fourth
 	input_tag = "fuel4p_in"
 	output_tag = "fuel4p_out"
 	sensors = list("ReacEngPlasma4" = "Tank")
 
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/co2/first
+/obj/machinery/computer/air_control/large_tank_control/nacelle/co2/first
 	input_tag = "CO21p_in"
 	output_tag = "CO21p_out"
 	sensors = list("ReacEngCO21" = "Tank")
 
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/co2/second
+/obj/machinery/computer/air_control/large_tank_control/nacelle/co2/second
 	input_tag = "CO22p_in"
 	output_tag = "CO22p_out"
 	sensors = list("ReacEngCO22" = "Tank")
 
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/co2/third
+/obj/machinery/computer/air_control/large_tank_control/nacelle/co2/third
 	input_tag = "CO23p_in"
 	output_tag = "CO23p_out"
 	sensors = list("ReacEngCO23" = "Tank")
 
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/co2/fourth
+/obj/machinery/computer/air_control/large_tank_control/nacelle/co2/fourth
 	input_tag = "CO24p_in"
 	output_tag = "CO24p_out"
 	sensors = list("ReacEngCO24" = "Tank")

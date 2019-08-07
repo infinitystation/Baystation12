@@ -113,7 +113,7 @@
 /turf/simulated/floor/tiled,
 /area/salvage/bridge)
 "ap" = (
-/obj/machinery/computer/general_air_control{
+/obj/machinery/computer/air_control{
 	dir = 2;
 	name = "Atmospheric Sensors";
 	req_access = list(3074);
@@ -219,7 +219,7 @@
 /turf/simulated/floor/carpet,
 /area/salvage/captain)
 "aC" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 8;
 	id = "salvage4";
 	name = "Captain Shutters";
@@ -464,7 +464,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "salvage1";
 	name = "Canteen shutters";
 	pixel_y = 27;
@@ -1742,7 +1742,7 @@
 /obj/structure/bed/chair{
 	dir = 4
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "salvage5";
 	name = "Counter Shutters";
@@ -2337,7 +2337,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "salvage2";
 	name = "Room 1 shutters";
@@ -2655,7 +2655,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "salvage1";
 	name = "Room 1 shutters";

@@ -185,7 +185,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/black{
 	dir = 4
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "ab_blast";
 	name = "Observation Section";
 	pixel_x = 0;
@@ -662,7 +662,7 @@
 /obj/random/cash,
 /obj/random/cash,
 /obj/random/cash,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "ab_blast";
 	name = "Observation Section";
 	pixel_x = 0;

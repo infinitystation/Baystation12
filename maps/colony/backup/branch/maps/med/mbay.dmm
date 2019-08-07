@@ -3148,7 +3148,7 @@
 /turf/simulated/floor/tiled/old_cargo,
 /area/mbay/morgue)
 "ia" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "bibis228";
 	pixel_y = 31
 	},
@@ -3163,7 +3163,7 @@
 /area/mbay/surgery)
 "ic" = (
 /obj/structure/table/reinforced,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "bibis228"
 	},
 /turf/simulated/floor/tiled/white,
@@ -3489,7 +3489,7 @@
 /area/mbay/koridor)
 "iO" = (
 /obj/structure/table/reinforced,
-/obj/machinery/button/remote{
+/obj/machinery/button{
 	id = "piskakota"
 	},
 /obj/machinery/light/halogen{
@@ -3500,7 +3500,7 @@
 /area/mbay/surgery)
 "iP" = (
 /obj/structure/table/reinforced,
-/obj/machinery/button/remote{
+/obj/machinery/button{
 	id = "piskakota"
 	},
 /obj/machinery/light/halogen{
@@ -3689,7 +3689,7 @@
 	icon_state = "wallf_regular";
 	dir = 4
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "pizdavalim"
 	},
 /turf/simulated/floor/tiled/old_cargo,
@@ -7393,7 +7393,7 @@
 "qm" = (
 /obj/structure/table/marble,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "medlock";
 	name = "Shutters on windows"
 	},
@@ -8899,7 +8899,7 @@
 /turf/simulated/floor/tiled/white,
 /area/mbay/virology)
 "tk" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "bibis228"
 	},
 /obj/structure/wall_frame/prepainted,

@@ -455,7 +455,7 @@
 /obj/effect/floor_decal/corner/blue/three_quarters{
 	dir = 8
 	},
-/obj/machinery/computer/general_air_control{
+/obj/machinery/computer/air_control{
 	name = "Atmospheric Sensors";
 	sensors = list("calypso_out")
 	},
@@ -676,7 +676,7 @@
 /obj/item/modular_computer/console/preset/command{
 	dir = 4
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 2;
 	id = "rub_bridge";
 	name = "Bridge Shield";
@@ -724,7 +724,7 @@
 /turf/simulated/floor/carpet,
 /area/rubbidu/civil/canteen)
 "bH" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "toxin_exhaust";
 	name = "Toxins Chamber Vent";
 	pixel_x = 6;
@@ -788,7 +788,7 @@
 	},
 /obj/machinery/shield_diffuser,
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "aquila_hatch";
 	name = "Starboard Hatch Control";
 	pixel_y = 28
@@ -1140,7 +1140,7 @@
 /area/rubbidu/civil/canteen)
 "cA" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "rub_bar";
 	name = "button";
@@ -3999,7 +3999,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/rubbidu/rad)
 "hn" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	desc = "A remote control-switch for shutters.";
 	dir = 8;
 	id = "rub_hangar";
@@ -4673,7 +4673,7 @@
 	dir = 8
 	},
 /obj/structure/bed/chair/office/light,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	desc = "A remote control-switch for shutters.";
 	dir = 8;
 	id = "rub_cryo_window";
@@ -5736,7 +5736,7 @@
 /turf/simulated/floor/tiled,
 /area/guppy_hangar/start)
 "kg" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "aquila_windows";
 	name = "Window Shield Control";
@@ -6492,7 +6492,7 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/rubbidu/nt)
 "li" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	desc = "A remote control-switch for shutters.";
 	dir = 4;
 	id = "rub_hangar_window";
@@ -7004,7 +7004,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 9
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "rubb_nt_v1";
 	name = "button";
@@ -7012,7 +7012,7 @@
 	pixel_y = -6;
 	req_access = list("ACCESS_PETROV")
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "rubb_nt_v2";
 	name = "button";
@@ -7573,7 +7573,7 @@
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cockpit)
 "mZ" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "calypso_shutters";
 	name = "Protective Shutters Control";
@@ -7703,7 +7703,7 @@
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/crew)
 "nj" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "rub_dock_window";
 	name = "Dock Window Shutters Control";
@@ -7944,7 +7944,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "rubb_han_a";
 	name = "Fore Dock Doors";
@@ -8170,7 +8170,7 @@
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	desc = "A remote control-switch for shutters.";
 	dir = 8;
 	id = "rub_han_h";
@@ -9460,7 +9460,7 @@
 	pixel_y = 0;
 	req_access = list(list(24,11))
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	desc = "A remote control-switch for shutters.";
 	dir = 1;
 	id = "rub_bar_window";
@@ -10857,7 +10857,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/rubbidu/command/xo)
 "si" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	desc = "A remote control-switch for shutters.";
 	id = "hop_office_desk";
 	name = "Desk Privacy Shutter";
@@ -11117,7 +11117,7 @@
 	dir = 5
 	},
 /obj/machinery/light,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
 	id = "rub_sensor";
 	name = "Sensor Shield";
@@ -13780,7 +13780,7 @@
 	id = "guppy_hatch";
 	name = "Rear Hatch"
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
 	id = "guppy_hatch";
 	name = "Rear Hatch Control";
@@ -13895,7 +13895,7 @@
 /turf/simulated/floor/tiled,
 /area/guppy_hangar/start)
 "KF" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "guppy_hatch";
 	name = "Rear Hatch Control";
 	pixel_x = 32;

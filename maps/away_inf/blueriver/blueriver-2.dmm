@@ -214,7 +214,7 @@
 	icon_state = "bordercolorcorner2";
 	dir = 10
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "blueriver_airlock_shield";
 	name = "Airlock Window Shield Control";
@@ -555,7 +555,7 @@
 	icon_state = "bordercolor";
 	dir = 9
 	},
-/obj/machinery/computer/general_air_control{
+/obj/machinery/computer/air_control{
 	dir = 2;
 	name = "Atmospheric Sensors";
 	sensors = list("blueriver_out")
@@ -694,14 +694,14 @@
 	dir = 5
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 2;
 	id = "blueriver_shutters_cockpit";
 	name = "Protective Cockpit Shutters Control";
 	pixel_x = -6;
 	pixel_y = 0
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 2;
 	id = "blueriver_shutters";
 	name = "Protective Shutters Control";

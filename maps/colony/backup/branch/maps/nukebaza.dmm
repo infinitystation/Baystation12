@@ -115,7 +115,7 @@
 /turf/simulated/floor/plating,
 /area/syndicate_mothership)
 "aw" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "blinblyat";
 	pixel_y = 24
 	},
@@ -589,7 +589,7 @@
 	},
 /area/syndicate_mothership)
 "bM" = (
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/airlock{
 	id = "syndie_toilet";
 	name = "lock";
 	pixel_y = -26;
@@ -1548,7 +1548,7 @@
 /obj/structure/table/steel_reinforced,
 /obj/item/weapon/storage/fancy/cigar,
 /obj/item/weapon/flame/lighter/zippo,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "blinblyat"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,

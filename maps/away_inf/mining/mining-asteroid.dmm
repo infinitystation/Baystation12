@@ -494,7 +494,7 @@
 /obj/structure/table/steel,
 /obj/item/weapon/paper_bin,
 /obj/item/weapon/pen,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 2;
 	id = "mbase_room_shutters_solar";
 	name = "Space Shutters Control";
@@ -713,7 +713,7 @@
 	dir = 8
 	},
 /obj/item/weapon/towel/random,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 8;
 	id = "mbase_room_shutters1";
 	name = "Space Shutters Control";
@@ -776,7 +776,7 @@
 	},
 /obj/item/weapon/paper/mining_base/note,
 /obj/item/weapon/pen,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 8;
 	id = "mbase_room_shutters2";
 	name = "Space Shutters Control";

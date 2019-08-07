@@ -166,7 +166,7 @@
 	icon_state = "warning";
 	dir = 4
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "gunboat_armory";
 	name = "Armory Shutters Contol";
 	pixel_x = 24;
@@ -347,7 +347,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "gunboat_armory";
 	name = "Armory Shutters Contol";
 	pixel_x = 0;
@@ -923,7 +923,7 @@
 /area/ship/gunboat/command/bridge)
 "bI" = (
 /obj/structure/table/standard,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "gunboat_bridge";
 	name = "Bridge Windows Blastdoor Contol";
 	pixel_x = 0;
@@ -1047,7 +1047,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
 	},
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control/large_tank_control{
 	dir = 8;
 	frequency = 1700;
 	input_tag = "air_in";
@@ -1076,13 +1076,13 @@
 /area/ship/gunboat/command/bridge)
 "bX" = (
 /obj/structure/table/standard,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "mb_torpedo_l";
 	name = "Port Launch Pod Blastdoor Control";
 	pixel_x = -6;
 	pixel_y = -24
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "mb_torpedo_r";
 	name = "Starboard Launch Pod Blastdoor Control";
 	pixel_x = 6;

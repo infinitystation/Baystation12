@@ -845,7 +845,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "xil_shuttle";
 	name = "Shuttle Blast Doors";
 	pixel_x = 24;
@@ -1670,7 +1670,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
 	id = "xil_bridge";
 	name = "Mess Hall Blast Doors";
