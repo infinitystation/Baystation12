@@ -5315,6 +5315,7 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
+	
 	},
 /turf/simulated/floor,
 /area/ship/patrol/engineering/shield)
@@ -5507,6 +5508,7 @@
 	dir = 4;
 	pixel_x = -22;
 	pixel_y = 0;
+	
 	},
 /obj/machinery/ntnet_relay,
 /turf/simulated/floor/greengrid,
@@ -7762,6 +7764,7 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
+	
 	},
 /obj/item/stack/nanopaste,
 /obj/item/stack/nanopaste,
@@ -8511,6 +8514,7 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
+	
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/barracks)
@@ -8544,6 +8548,7 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
+	
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/engineering/fussion/control)

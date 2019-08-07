@@ -1898,8 +1898,7 @@
 "dF" = (
 /obj/effect/floor_decal/corner/yellow/full,
 /obj/machinery/computer/air_control{
-	name = "O2 Sensor"
-	sensor_tag = "sev_oxygen"
+	name = "O2 Sensor"sensor_tag = "sev_oxygen"
 	},
 /turf/simulated/floor,
 /area/map_template/ecship/engineering)

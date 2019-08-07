@@ -134,9 +134,6 @@
 /obj/random/closet,
 /turf/simulated/floor/carpet/blue2,
 /area/template_noop)
-"aD" = (
-/turf/simulated/floor/tiled/steel_ridged,
-/area/template_noop)
 "aE" = (
 /obj/structure/bookcase/manuals/xenoarchaeology,
 /turf/simulated/floor/carpet/blue2,
@@ -341,7 +338,7 @@ aV
 aL
 ab
 aB
-aD
+au
 ab
 ao
 "}
@@ -355,7 +352,7 @@ aq
 aJ
 ac
 aP
-aD
+au
 aW
 ab
 aa
@@ -424,7 +421,7 @@ aa
 aa
 ab
 at
-aD
+au
 aT
 bd
 av
