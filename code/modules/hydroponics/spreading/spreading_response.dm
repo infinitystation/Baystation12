@@ -47,7 +47,7 @@
 		buckled_mob = null
 	START_PROCESSING(SSvines, src)
 	return
-
+/* infinity override ahead
 /obj/effect/vine/proc/manual_unbuckle(mob/user as mob)
 	if(buckled_mob)
 		var/chance = 20
@@ -111,7 +111,7 @@
 				victim.set_dir(pick(GLOB.cardinal))
 				to_chat(victim, "<span class='danger'>The tendrils [pick("wind", "tangle", "tighten", "coil", "knot", "snag", "twist", "constrict", "squeeze", "clench", "tense")] around you!</span>")
 			Process(0)
-
+original override ended, infinity*/
 /obj/effect/vine/buckle_mob()
 	. = ..()
 	if(.) START_PROCESSING(SSvines, src)

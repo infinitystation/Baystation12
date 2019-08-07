@@ -292,6 +292,7 @@
 	if(src.operating) return
 
 	if(isxenomorph(user)) //inf
+		var/mob/living/carbon/human/H = user
 		H.pry_open(src) //inf
 
 	if(src.allowed(user) && operable())
