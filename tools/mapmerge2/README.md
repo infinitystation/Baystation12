@@ -34,6 +34,9 @@ or to perform merges manually, follow the steps below.
 3. Run mapmerge.bat
 
 4. Commit your changes and you're done!
+<details id = 'inf'>
+	5. If you wish, you can run the backup_clearer.bat and delete all <b><i>.backup</i></b>s and <b><i>.before</i></b>
+</details>
 
 **Note: Do not open the map in dreammaker before committing the results of mapmerger - this can cause dreammaker to save back into the default dmm format. If you're having issues with your map getting stuck in dmm mode, try committing and pushing the mapmerger changes before reopening in dreammaker.
 
