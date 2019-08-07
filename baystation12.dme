@@ -3216,6 +3216,7 @@
 #include "infinity\code\modules\emotes\definitions\_species.dm"
 #include "infinity\code\modules\emotes\definitions\audible.dm"
 #include "infinity\code\modules\emotes\definitions\visible.dm"
+#include "infinity\code\modules\events\alien.dm"
 #include "infinity\code\modules\events\cancer.dm"
 #include "infinity\code\modules\food\recipes_microwave.dm"
 #include "infinity\code\modules\mob\animations.dm"
