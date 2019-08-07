@@ -10,18 +10,24 @@
 		return TRUE
 
 /datum/vote/map/setup_vote(mob/creator, automatic)
-	initiator = (!automatic && istype(creator)) ? creator.ckey : "the server"
+	..()
 	choices += GLOB.playable_maps
 	for(var/datum/map/M in choices)
-		if(M.minimum_players < GLOB.clients.len)
-			LAZYREMOVE(choices, M)
+		if(M.minimum_players > GLOB.clients.len)
+			choices -= M
 			break
+		display_choices[M] = capitalize(M.full_name)
 		additional_text[M] ="<td align = 'center'>~[M.recommended_players]</td>"
 	choices += "extend"
 	display_choices["extend"] = "Продлить эту карту"
 
 /datum/vote/map/report_result()
 	if(..())
+		if(!(result[result[1]] > 0))
+			log_game("Никто не проголосовал за смену карты, будет продлена текущая карта.")
+		else
+			log_game("Не найдены результаты голосования. Продление текущей карты.")
+		SSticker.end_game_state = END_GAME_READY_TO_END
 		return 1
 	if(result[1] == "extend")
 		log_game("Игроки выбрали продление текущей карты.")
@@ -43,3 +49,7 @@
 		else
 			send2mainirc("Следующей картой будет - [M.full_name]!")
 			SSticker.end_game_state = END_GAME_READY_TO_END
+	else
+		log_game("Неизвестная ошибка. Продление текущей карты.")
+		SSticker.end_game_state = END_GAME_READY_TO_END
+		return

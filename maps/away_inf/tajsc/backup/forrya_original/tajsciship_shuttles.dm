@@ -1,8 +1,8 @@
+
 /obj/effect/overmap/ship/tajsciship
 	name = "light tajaran station"
 	fore_dir = WEST
 	vessel_mass = 64000
-	base = 1
 	color = "#800080"
 	icon = 'maps/away_inf/tajsc/tajsciship.dmi'
 	icon_state = "shipstay"
@@ -13,21 +13,22 @@
 	)
 
 /obj/effect/overmap/ship/landable/tajscishuttle
-	name = "Nas'tishs"
-	shuttle = "Nas'tishs"
+	name = "CCA EC Shuttle"
+	shuttle = "CCA EC Shuttle"
 	fore_dir = WEST
 	color = "#800080"
 	max_speed = 1/(2 SECONDS)
 	burn_delay = 2 SECONDS
 
 /datum/shuttle/autodock/overmap/tajscishuttle
-	name = "Nas'tishs"
+	name = "CCA EC Shuttle"
 	warmup_time = 5
-	shuttle_area = /area/ship/tajsciship/shuttle
+	shuttle_area = /area/ship/tajscishuttle
 	current_location = "nav_tajscishuttle_dock"
 	range = 2
-	logging_home_tag = "Dock"
-	logging_access = list(access_tajsciship)
+	logging_home_tag = "Hangar"
+	logging_access =  access_tajsciship
+	ceiling_type = /turf/simulated/floor/reinforced
 	sound_takeoff = 'sound/effects/rocket.ogg'
 	sound_landing = 'sound/effects/rocket_backwards.ogg'
 

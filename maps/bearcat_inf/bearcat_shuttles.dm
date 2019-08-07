@@ -18,11 +18,10 @@
 /obj/machinery/computer/shuttle_control/multi/lift
 	name = "cargo lift controls"
 	shuttle_tag = "Cargo Lift"
-	ui_template = "shuttle_control_console_lift.tmpl"
+	ui_template = "shuttle_control_console_multi_lift.tmpl"
 	icon_state = "tiny"
 	icon_keyboard = "tiny_keyboard"
 	icon_screen = "lift"
-	density = 0
 
 //Lift's personal landmarkers
 /obj/effect/shuttle_landmark/lift/top
@@ -35,13 +34,13 @@
 	name = "Middle Deck"
 	landmark_tag = "nav_bearcat_lift_middle"
 	base_turf = /turf/simulated/open
-	base_area = /area/ship/scrap/cargo
+	base_area = /area/ship/scrap/cargo/upper
 
 /obj/effect/shuttle_landmark/lift/bottom
 	name = "Lower Deck"
 	landmark_tag = "nav_bearcat_lift_bottom"
-	base_area = /area/ship/scrap/cargo/lower
 	base_turf = /turf/simulated/floor
+	base_area = /area/ship/scrap/cargo/lower
 
 //Bearcat's exploration
 /datum/shuttle/autodock/overmap/exploration
@@ -51,7 +50,7 @@
 	current_location = "nav_bearcat_port_dock_shuttle"
 	landmark_transition = "exploration_transit"
 	logging_access = access_heads
-	ceiling_type = /turf/simulated/floor/shuttle_ceiling
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling/bearcat
 	range = 1
 	fuel_consumption = 3
 	move_time = 25
@@ -60,13 +59,6 @@
 /obj/machinery/computer/shuttle_control/explore/bearcat
 	name = "shuttle console"
 	shuttle_tag = "Exploration Shuttle"
-
-/obj/effect/overmap/ship/landable/exploration_shuttle
-	name = "Exploration Shuttle"
-	shuttle = "Exploration Shuttle"
-	max_speed = 1/(10 SECONDS)
-	burn_delay = 5 SECONDS
-	fore_dir = NORTH
 
 //Raiders' shuttle
 /datum/shuttle/autodock/multi/antag/skipjack

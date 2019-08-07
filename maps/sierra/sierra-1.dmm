@@ -19619,9 +19619,6 @@
 /area/maintenance/thirddeck/port)
 "Fg" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/light/small{
-	dir = 1
-	},
 /obj/structure/bed/chair/office/dark{
 	dir = 8
 	},
@@ -25717,15 +25714,8 @@
 /turf/simulated/floor/reinforced,
 /area/command/bsa)
 "OR" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/deployable/barrier,
-/obj/machinery/light/small,
-/obj/structure/railing/mapped{
-	dir = 1;
-	icon_state = "railing0-1"
-	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/portable_atmospherics/powered/pump/filled,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/thirddeck/aft)
 "OS" = (
@@ -25979,12 +25969,16 @@
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/expedition)
 "Pr" = (
-/obj/machinery/light/small{
-	dir = 1
+/obj/structure/table/rack,
+/obj/random/maintenance,
+/obj/random/maintenance,
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1";
+	tag = "icon-railing0 (EAST)"
 	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/portable_atmospherics/powered/pump/filled,
-/turf/simulated/floor/tiled/techfloor,
+/turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aft)
 "Ps" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -26410,9 +26404,8 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/thirddeck/aft)
 "Qb" = (
-/obj/machinery/light/small,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/reagent_dispensers/fueltank,
+/obj/machinery/field_generator,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/thirddeck/aft)
 "Qc" = (
@@ -27006,20 +26999,9 @@
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology/level2)
 "QV" = (
-/obj/structure/table/rack,
-/obj/random/maintenance,
-/obj/random/maintenance,
-/obj/structure/railing/mapped,
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
-	},
-/obj/machinery/light/small{
-	dir = 1;
-	icon_state = "bulb_map"
-	},
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/reagent_dispensers/fueltank,
+/turf/simulated/floor/tiled/techfloor,
 /area/maintenance/thirddeck/aft)
 "QW" = (
 /obj/structure/table/rack,
@@ -27055,19 +27037,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/thirddeck/aft)
-"Ra" = (
-/obj/structure/catwalk,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/light/small,
-/turf/simulated/floor/plating,
-/area/maintenance/thirddeck/aft)
 "Rb" = (
 /obj/item/weapon/reagent_containers/spray/sterilizine,
 /turf/simulated/floor/tiled/white,
@@ -27081,15 +27050,6 @@
 	},
 /turf/simulated/wall/r_titanium,
 /area/guppy_hangar/start)
-"Rd" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/light/small{
-	dir = 1;
-	icon_state = "bulb_map"
-	},
-/obj/machinery/field_generator,
-/turf/simulated/floor/tiled/techfloor,
-/area/maintenance/thirddeck/aft)
 "Re" = (
 /obj/random/closet,
 /turf/simulated/floor/plating,
@@ -27730,14 +27690,13 @@
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/port)
 "Sr" = (
-/obj/structure/table/rack,
-/obj/random/maintenance,
-/obj/machinery/light/small{
-	dir = 8
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1"
 	},
-/obj/random/maintenance,
+/obj/machinery/portable_atmospherics/powered/pump/filled,
 /turf/simulated/floor/plating,
-/area/maintenance/thirddeck/port)
+/area/vacant/cargo)
 "Ss" = (
 /obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/plating,
@@ -27839,17 +27798,6 @@
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/freezer,
-/area/vacant/cargo)
-"SA" = (
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/machinery/portable_atmospherics/powered/pump/filled,
-/turf/simulated/floor/plating,
 /area/vacant/cargo)
 "SB" = (
 /obj/effect/landmark/start{
@@ -45899,7 +45847,7 @@ KG
 Nw
 RP
 Sp
-Sr
+Sp
 Ss
 Pa
 Pa
@@ -52319,11 +52267,11 @@ Is
 Is
 ah
 ah
-Pr
+OR
 kQ
 PR
 QM
-Qb
+QV
 LM
 JW
 KW
@@ -53329,10 +53277,10 @@ Is
 Is
 ah
 ah
-QV
+Pr
 Pz
 QC
-Ra
+QS
 LM
 LM
 Ri
@@ -53935,10 +53883,10 @@ Is
 Is
 ah
 ah
-Rd
+Qb
 dT
 cH
-OR
+OU
 LM
 Ro
 Rj
@@ -54594,7 +54542,7 @@ Nv
 Nv
 Nv
 RL
-SA
+Sr
 Or
 Is
 Is

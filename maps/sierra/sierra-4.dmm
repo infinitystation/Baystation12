@@ -27565,7 +27565,7 @@
 /area/admin_prison)
 "cZL" = (
 /obj/machinery/vending/medical{
-	req_access = list(0)
+	req_access = newlist()
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 6
@@ -27908,7 +27908,7 @@
 /area/admin_prison)
 "mfh" = (
 /obj/machinery/vending/boozeomat{
-	req_access = newlist(/obj/item/weapon/nullrod)
+	req_access = newlist()
 	},
 /turf/simulated/floor/wood/ebony,
 /area/admin_prison)

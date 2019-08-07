@@ -9,6 +9,8 @@
 
 /decl/flooring/tiling
 	name = "deck"
+/turf/simulated/floor/shuttle_ceiling/bearcat
+	color = COLOR_DARK_BROWN
 
 /obj/machinery/power/smes/buildable/preset/bearcat/shuttle
 	uncreated_component_parts = list(/obj/item/weapon/stock_parts/smes_coil/weak = 1)
