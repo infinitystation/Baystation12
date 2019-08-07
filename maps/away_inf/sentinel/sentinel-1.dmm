@@ -4154,7 +4154,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	id = "miss_pod";
 	name = "Missile Section Bolts Control";
 	pixel_x = 0;
@@ -5161,7 +5161,7 @@
 /obj/effect/floor_decal/corner/pink{
 	dir = 6
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	desc = "A remote control switch for the medbay foyer.";
 	id = "MedbayFoyer";
 	name = "Infirmary Entrance Control";

@@ -15861,7 +15861,7 @@
 /obj/structure/table/standard{
 	name = "plastic table frame"
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
 	dir = 4;
 	id = "qmdoor-hallway";
@@ -15878,7 +15878,7 @@
 	icon_state = "bordercolor";
 	dir = 8
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
 	dir = 4;
 	id = "qmdoor-supply";
@@ -26256,7 +26256,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	dir = 1;
 	id = "bsa_safe_room";
 	name = "Lock";

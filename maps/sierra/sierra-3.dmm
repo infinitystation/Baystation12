@@ -874,7 +874,7 @@
 	icon_state = "steel_decals_central6";
 	dir = 4
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	dir = 8;
 	id = "capt_valaut_door";
 	name = "Captain Room Bolt Control";
@@ -2118,7 +2118,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	dir = 8;
 	id = "selfsddoor";
 	name = "Self Destruct Airlock Bolt Control";
@@ -2980,7 +2980,7 @@
 	pixel_x = -42;
 	pixel_y = -21
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
 	dir = 1;
 	id = "iaadoorleft";
@@ -3534,7 +3534,7 @@
 	pixel_x = 42;
 	pixel_y = -21
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
 	dir = 1;
 	id = "iaadoorright";
@@ -6964,7 +6964,7 @@
 	pixel_x = -20
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	desc = "A remote control switch for the medical chamber.";
 	dir = 2;
 	id = "medical_chamer_2";
@@ -7659,7 +7659,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "amk" = (
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	desc = "A remote control switch for the medbay foyer.";
 	dir = 1;
 	id = "MedbayER";
@@ -9238,7 +9238,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	desc = "A remote control switch for the medical chamber.";
 	dir = 1;
 	id = "medical_chamer_1";
@@ -9290,7 +9290,7 @@
 "aoy" = (
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/paleblue/border,
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	desc = "A remote control switch for the medbay foyer.";
 	dir = 1;
 	id = "MedbayFoyer";
@@ -10963,7 +10963,7 @@
 /area/security/sierra/armory)
 "aqQ" = (
 /obj/item/modular_computer/console/preset/medical,
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	desc = "A remote control switch for the medbay foyer.";
 	dir = 2;
 	id = "MedbayFoyer";
@@ -11444,7 +11444,7 @@
 	icon_state = "techfloor_edges";
 	dir = 4
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	dir = 4;
 	id = "panicbunker";
 	name = "safe room door-control";
@@ -12694,7 +12694,7 @@
 	pixel_y = 0;
 	req_access = list("ACCESS_WARDEN")
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
 	id = "security_entry_airlock_exit";
 	name = "Security Exit Airlock";
@@ -12702,7 +12702,7 @@
 	pixel_y = 10;
 	req_access = list("ACCESS_WARDEN")
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
 	id = "security_entry_airlock_enter";
 	name = "Security Entry Airlock";
@@ -16250,7 +16250,7 @@
 	icon_state = "console";
 	dir = 1
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
 	dir = 1;
 	id = "cmodoor";
@@ -18067,7 +18067,7 @@
 	icon_state = "console";
 	dir = 1
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	desc = "A remote control switch for the medbay foyer.";
 	dir = 1;
 	id = "MedbayFoyer";
@@ -19216,7 +19216,7 @@
 	icon_state = "bordercolor";
 	dir = 4
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
 	dir = 4;
 	id = "hosdoor";
@@ -19683,7 +19683,7 @@
 	dir = 9;
 	pixel_y = 0
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
 	dir = 8;
 	id = "wardoor";
@@ -22529,7 +22529,7 @@
 	pixel_y = -21;
 	range = 11
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
 	dir = 1;
 	id = "rddoor";
@@ -23073,7 +23073,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
 	id = "security_perm_airlock_enter";
 	name = "Chamber Entry Airlock";
@@ -23081,7 +23081,7 @@
 	pixel_y = 29;
 	req_access = list("ACCESS_BRIG")
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
 	id = "security_perm_airlock_exit";
 	name = "Chamber Exit Airlock";
@@ -24800,7 +24800,7 @@
 	pixel_y = -24;
 	req_access = list("ACCESS_RESEARCH")
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the cargo doors.";
 	dir = 1;
 	id = "researchdoor_interior";
@@ -37467,7 +37467,7 @@
 	pixel_x = 6;
 	pixel_y = -21
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
 	id = "pmdoor";
 	name = "Office Door Control";

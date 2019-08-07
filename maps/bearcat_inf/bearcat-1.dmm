@@ -2957,7 +2957,7 @@
 	layer = 2.4;
 	level = 2
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	dir = 4;
 	id = "dorms1door";
 	name = "Bolts Control";
@@ -3177,7 +3177,7 @@
 	layer = 2.4;
 	level = 2
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	dir = 4;
 	id = "dorms2door";
 	name = "Bolts Control";

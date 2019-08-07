@@ -5153,7 +5153,7 @@
 "kS" = (
 /obj/structure/table/glass,
 /obj/item/weapon/folder/envelope/blanks,
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
 	dir = 1;
 	id = "rddoor";

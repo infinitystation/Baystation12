@@ -589,7 +589,7 @@
 	},
 /area/syndicate_mothership)
 "bM" = (
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	id = "syndie_toilet";
 	name = "lock";
 	pixel_y = -26;

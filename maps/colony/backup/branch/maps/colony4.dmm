@@ -3944,7 +3944,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/space)
 "qH" = (
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	dir = 2;
 	id = "toilet3";
 	name = "Lock";
@@ -5299,7 +5299,7 @@
 	icon_state = "techfloor_edges";
 	dir = 4
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	dir = 4;
 	id = "panicbunker";
 	name = "safe room door-control";
@@ -5546,7 +5546,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/space)
 "wi" = (
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	dir = 2;
 	id = "toilet2";
 	name = "Lock";
@@ -6652,7 +6652,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/space)
 "yb" = (
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	dir = 2;
 	id = "toilet1";
 	name = "Lock";
@@ -7731,7 +7731,7 @@
 	pixel_y = -21;
 	req_access = list(5)
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	desc = "A remote control switch for the medbay foyer.";
 	dir = 1;
 	id = "EMTCenterFoyer";

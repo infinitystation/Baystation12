@@ -408,7 +408,7 @@
 /obj/structure/bed/chair/office/dark{
 	dir = 8
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	id = "adm_of";
 	name = "Open";
 	pixel_x = 26;
@@ -4746,7 +4746,7 @@
 	},
 /area/syndicate_mothership)
 "ald" = (
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	id = "syndie_toilet";
 	name = "lock";
 	pixel_y = -26;
@@ -7844,7 +7844,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/syndicate_station/start)
 "arf" = (
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	dir = 1;
 	id = "syndieshutters_nuke";
 	name = "Nuclear Storage Bolts";
@@ -26869,7 +26869,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	dir = 8;
 	id = "blockdoor";
 	name = "Airlock Bolt Control";

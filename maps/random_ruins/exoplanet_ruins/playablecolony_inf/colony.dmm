@@ -6204,7 +6204,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	id = "colj";
 	name = "Jail Bolt Control";
 	pixel_x = 28;

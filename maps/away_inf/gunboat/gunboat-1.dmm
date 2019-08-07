@@ -1171,7 +1171,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/ship/gunboat/living)
 "bW" = (
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	id = "shower_boat";
 	name = "Lock";
 	pixel_y = -27
@@ -1605,7 +1605,7 @@
 	icon_state = "toilet00";
 	dir = 4
 	},
-/obj/machinery/button/airlock{
+/obj/machinery/button/alternate/door{
 	id = "head_boat";
 	name = "Lock";
 	pixel_y = 26
