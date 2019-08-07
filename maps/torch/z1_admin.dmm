@@ -8606,9 +8606,6 @@
 	},
 /turf/simulated/floor/shuttle/white,
 /area/shuttle/administration/centcom)
-"auS" = (
-/turf/simulated/floor/shuttle/white,
-/area/shuttle/administration/centcom)
 "auT" = (
 /obj/item/weapon/reagent_containers/food/condiment/small/saltshaker{
 	pixel_x = -6
@@ -9748,11 +9745,6 @@
 	icon_state = "steel"
 	},
 /area/centcom/control)
-"axM" = (
-/turf/unsimulated/floor{
-	icon_state = "white"
-	},
-/area/centcom/test)
 "axN" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -29208,7 +29200,7 @@ atd
 auh
 izl
 auD
-auS
+auD
 auZ
 avj
 avp
@@ -29410,10 +29402,10 @@ atd
 aui
 izl
 auE
-auS
-auS
-auS
-auS
+auD
+auD
+auD
+auD
 avF
 izl
 asR
@@ -29612,10 +29604,10 @@ atd
 auj
 izl
 auD
-auS
-auS
-auS
-auS
+auD
+auD
+auD
+auD
 avG
 izl
 asR
@@ -29814,8 +29806,8 @@ atd
 auk
 izl
 auF
-auS
-auS
+auD
+auD
 avk
 avq
 avH
@@ -36694,8 +36686,8 @@ aab
 aab
 awU
 axA
-axM
-axM
+axA
+axA
 ays
 awU
 aab
@@ -36897,7 +36889,7 @@ aab
 awU
 axB
 axN
-axM
+axA
 ayt
 awU
 aab
@@ -37098,8 +37090,8 @@ aab
 aab
 awU
 axA
-axM
-axM
+axA
+axA
 ayu
 awU
 aab
@@ -37301,7 +37293,7 @@ aab
 awU
 axA
 axN
-axM
+axA
 ayv
 awU
 aab
@@ -37502,9 +37494,9 @@ aab
 aab
 awU
 axC
-axM
-axM
-axM
+axA
+axA
+axA
 awU
 aab
 aab

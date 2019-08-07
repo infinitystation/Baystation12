@@ -193,6 +193,7 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
+	
 	},
 /obj/item/weapon/gun/energy/gun,
 /obj/item/weapon/gun/energy/gun,
@@ -1019,6 +1020,7 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
+	
 	},
 /turf/simulated/floor/tiled,
 /area/ship/gunboat/hallway)
@@ -1026,6 +1028,7 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
+	
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	icon_state = "intact-supply";

@@ -299,7 +299,7 @@
 "ht" = (/obj/effect/fluid_mapped,/turf/simulated/floor/plating,/area/adherent_base/underwater)
 "hu" = (/obj/structure/flora/ausbushes/algae/glowing,/obj/structure/flora/ausbushes/algae/random,/mob/living/simple_animal/aquatic/fish/grump,/turf/simulated/floor/asteroid/sea/algae,/area/adherent_base/underwater)
 "hv" = (/obj/effect/decal/cleanable/greenglow,/obj/structure/sign/adh_base/solgov{pixel_x = -32},/obj/structure/adh_base/broken_cryo{icon_state = "broken_cryo";dir = 4},/turf/simulated/floor/tiled/steel_grid,/area/adherent_base/underwater)
-"hw" = (/obj/item/weapon/paper/crumpled/bloody{info = "Радиоотчет #721, date: 02.02.02?2<br>><i>Черт подери... Господи... Приземление было жестким... Мы потерпели крушение. Чертовы двигатели отказали еще в атмосфере, и мы грохнулись прЯмо в море. Корпус порвало как бумагу, и Я еле-еле успел закрыть пробоины резиновыми стенами, прежде чем мы пошли на дно. Мы... Ох черт! Тут за окном здоровенный осьминог! Здоровенный, мать его, железный осьминог! Господи, оно смотрит на менЯ, но кажетсЯ не спешит лезть внутрь... Ладно, Я не должен обращать внимание... Надо остановить кровотечение...</i>"},/turf/simulated/floor/tiled/steel_grid,/area/adherent_base/underwater)
+"hw" = (/obj/item/weapon/paper/crumpled/bloody/adherent_base/report/diary_1,/turf/simulated/floor/tiled/steel_grid,/area/adherent_base/underwater)
 "hx" = (/obj/structure/inflatable/wall,/turf/simulated/floor/plating,/area/adherent_base/underwater)
 "hy" = (/obj/structure/girder/reinforced,/turf/simulated/floor/plating,/area/adherent_base/underwater)
 "hz" = (/turf/simulated/floor/plating,/area/adherent_base/underwater)

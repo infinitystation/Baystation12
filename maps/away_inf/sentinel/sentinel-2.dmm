@@ -3187,6 +3187,7 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
+	
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/toilet)
@@ -3933,6 +3934,7 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
+	
 	},
 /obj/structure/table/standard,
 /obj/item/weapon/storage/box/cups,
@@ -4051,6 +4053,7 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
+	
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/port)
@@ -4108,6 +4111,7 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
+	
 	},
 /obj/structure/cable{
 	d1 = 4;
