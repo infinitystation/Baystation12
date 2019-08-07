@@ -10,7 +10,7 @@
 	var/pda_pass = "[rand(100,999)] [pick(GLOB.greek_letters)]"
 	var/obj/item/device/uplink/T = new Type(uplink, M.mind, amount)
 	uplink.hidden_uplink = T
-	var/datum/computer_file/program/uplink/program = new(pda_pass)
+	var/datum/computer_file/program/uplink/program = new Type(pda_pass)
 	if(!uplink.try_store_file(program))
 		uplink.remove_file(uplink.find_file_by_name(program.filename))	//Maybe it already has a fake copy. //Nope, but who care
 	if(!uplink.try_store_file(program))
