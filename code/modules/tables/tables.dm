@@ -281,7 +281,7 @@
 	health -= damage
 	attack_animation(user)
 	if(health <= 0)
-		user.visible_message("<span class='danger'>[user] [attack_verb] crushes [src]!</span>")
+		user.visible_message("<span class='danger'>[user] crushes [src]!</span>")
 		spawn(1) break_to_parts()
 	else
 		user.visible_message("<span class='danger'>[user] [attack_verb] \the [src]!</span>")
