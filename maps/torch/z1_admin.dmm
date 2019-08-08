@@ -14219,7 +14219,7 @@
 	dir = 5
 	},
 /obj/item/clothing/under/suit_jacket,
-/obj/item/clothing/shoes/sandal/xeno/caligae/black,
+/obj/item/clothing/shoes/sandal/tajaran/caligae/black,
 /obj/item/clothing/head/that{
 	pixel_x = 4;
 	pixel_y = 6
