@@ -63,15 +63,15 @@
 	req_access = list(access_tajsciship)
 
 /obj/machinery/power/smes/buildable/preset/tajsciship/configure_and_install_coils()
-	component_parts += new /obj/item/weapon/smes_coil(src)
-	component_parts += new /obj/item/weapon/smes_coil(src)
+	component_parts += new /obj/item/weapon/stock_parts/smes_coil(src)
+	component_parts += new /obj/item/weapon/stock_parts/smes_coil(src)
 	_input_maxed = TRUE
 	_output_maxed = TRUE
 	_input_on = TRUE
 	_output_on = TRUE
 
 /obj/machinery/power/smes/buildable/preset/tajsciship/substation/configure_and_install_coils()
-	component_parts += new /obj/item/weapon/smes_coil/weak(src)
+	component_parts += new /obj/item/weapon/stock_parts/smes_coil/weak(src)
 	_input_maxed = TRUE
 	_output_maxed = TRUE
 	_input_on = TRUE

@@ -4062,7 +4062,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/forestarboard)
 "agF" = (
-/obj/structure/computerframe{
+/obj/machinery/constructable_frame/computerframe/deconstruct{
 	icon_state = "0";
 	dir = 4
 	},
@@ -4127,7 +4127,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/seconddeck/forestarboard)
 "agK" = (
-/obj/structure/computerframe,
+/obj/machinery/constructable_frame/computerframe/deconstruct,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/seconddeck/forestarboard)
 "agL" = (

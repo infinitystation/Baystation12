@@ -27217,7 +27217,7 @@
 /turf/simulated/floor/bluegrid,
 /area/tcommsat/chamber)
 "aMO" = (
-/obj/structure/computerframe{
+/obj/machinery/constructable_frame/computerframe/deconstruct{
 	icon_state = "0";
 	dir = 4
 	},
@@ -37663,7 +37663,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/tcommsat/storage)
 "bhs" = (
-/obj/structure/computerframe{
+/obj/machinery/constructable_frame/computerframe/deconstruct{
 	icon_state = "0";
 	dir = 1
 	},
@@ -37898,7 +37898,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/bridge/hall/level_two)
 "bio" = (
-/obj/structure/computerframe{
+/obj/machinery/constructable_frame/computerframe/deconstruct{
 	icon_state = "0";
 	dir = 4
 	},
@@ -38104,7 +38104,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/sierra/hallway)
 "bjO" = (
-/obj/structure/computerframe{
+/obj/machinery/constructable_frame/computerframe/deconstruct{
 	icon_state = "0";
 	dir = 4
 	},

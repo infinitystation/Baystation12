@@ -290,7 +290,7 @@
 	dir = 4
 	},
 /obj/machinery/sparker{
-	id = "toxin_igniter";
+	id_tag = "toxin_igniter";
 	pixel_x = -18
 	},
 /turf/simulated/floor/reinforced/airless,
@@ -2063,7 +2063,8 @@
 	input_tag = "toxins_in";
 	name = "Toxins Gas Monitor";
 	output_tag = "toxins_out";
-	sensors = list("toxins_sensor" = "Toxins Test Chamber")
+	sensor_tag = "toxins_sensor"
+	sensor_name = "Toxins Test Chamber"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -10655,7 +10656,7 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/sparker{
-	id = "Isocell1";
+	id_tag = "Isocell1";
 	pixel_x = -18
 	},
 /turf/simulated/floor/reinforced,
@@ -10690,7 +10691,7 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/sparker{
-	id = "Isocell2";
+	id_tag = "Isocell2";
 	pixel_x = -18
 	},
 /turf/simulated/floor/reinforced,
@@ -10734,7 +10735,7 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/sparker{
-	id = "Isocell3";
+	id_tag = "Isocell3";
 	pixel_x = -18
 	},
 /turf/simulated/floor/reinforced,
@@ -12077,7 +12078,7 @@
 	dir = 6
 	},
 /obj/machinery/sparker{
-	id = "engines-2";
+	id_tag = "engines-2";
 	pixel_x = -24
 	},
 /obj/effect/floor_decal/industrial/warning{
@@ -12900,7 +12901,7 @@
 	dir = 5
 	},
 /obj/machinery/sparker{
-	id = "engines";
+	id_tag = "engines";
 	pixel_x = -24
 	},
 /obj/effect/floor_decal/industrial/warning{
@@ -14565,8 +14566,7 @@
 	id_tag = "d2portnacelle"
 	},
 /obj/machinery/atmospherics/valve/digital{
-	frequency = 1490;
-	id = "RE2F";
+	id_tag = "RE2F";
 	name = "RE2F digital valve"
 	},
 /turf/simulated/floor/reinforced,
@@ -15040,7 +15040,6 @@
 	},
 /obj/machinery/atmospherics/valve/digital{
 	dir = 2;
-	frequency = 1490;
 	id = "RE1F";
 	name = "RE1 digital valve"
 	},
@@ -15204,7 +15203,6 @@
 	},
 /obj/machinery/access_button{
 	command = "cycle_interior";
-	frequency = 1431;
 	master_tag = "guppy_shuttle";
 	name = "interior access button";
 	pixel_x = -22;
@@ -15303,7 +15301,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 4;
-	frequency = 1331;
 	id_tag = "rescue_shuttle_dock_pump"
 	},
 /obj/structure/catwalk,
@@ -15487,7 +15484,6 @@
 "yp" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
-	frequency = 1331;
 	id_tag = "nuke_shuttle_dock_pump"
 	},
 /obj/structure/catwalk,
@@ -15903,7 +15899,6 @@
 /area/exploration_shuttle/atmos)
 "yP" = (
 /obj/machinery/door/airlock/external{
-	frequency = 1380;
 	icon_state = "closed";
 	id_tag = "escape_pod_9_hatch";
 	locked = 1;
@@ -15925,7 +15920,6 @@
 	dir = 10
 	},
 /obj/machinery/airlock_sensor{
-	frequency = 1331;
 	id_tag = "rescue_shuttle_dock_sensor";
 	pixel_x = -28;
 	pixel_y = 6
@@ -15939,7 +15933,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
-	frequency = 1331;
 	id_tag = "rescue_shuttle_dock_pump"
 	},
 /obj/item/device/radio/intercom{
@@ -17056,7 +17049,7 @@
 	dir = 6
 	},
 /obj/machinery/sparker{
-	id = "engines";
+	id_tag = "engines";
 	pixel_x = -24
 	},
 /obj/machinery/atmospherics/unary/outlet_injector{
@@ -17277,7 +17270,7 @@
 	dir = 5
 	},
 /obj/machinery/sparker{
-	id = "engines-1";
+	id_tag = "engines-1";
 	pixel_x = -24
 	},
 /turf/simulated/floor/reinforced/airless,
@@ -19558,7 +19551,7 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/hallway/primary/thirddeck/center)
 "Fa" = (
-/obj/structure/computerframe,
+/obj/machinery/constructable_frame/computerframe/deconstruct,
 /turf/simulated/floor/plating,
 /area/vacant/monitoring)
 "Fb" = (
@@ -20656,6 +20649,7 @@
 /obj/machinery/computer/air_control{
 	dir = 8;
 	name = "Atmospheric Sensors";
+
 	sensors = list("calypso_out")
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -21224,7 +21218,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/central_stairwell)
 "Hw" = (
-/obj/structure/computerframe{
+/obj/machinery/constructable_frame/computerframe/deconstruct{
 	icon_state = "0";
 	dir = 8
 	},
@@ -23760,7 +23754,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
 "LA" = (
-/obj/structure/computerframe{
+/obj/machinery/constructable_frame/computerframe/deconstruct{
 	icon_state = "0";
 	dir = 4
 	},
@@ -28126,7 +28120,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
 "UW" = (
-/obj/structure/computerframe{
+/obj/machinery/constructable_frame/computerframe/deconstruct{
 	icon_state = "0";
 	dir = 4
 	},

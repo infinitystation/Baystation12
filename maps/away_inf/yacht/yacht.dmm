@@ -873,7 +873,7 @@
 /area/space)
 "ci" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/computerframe,
+/obj/machinery/constructable_frame/computerframe/deconstruct,
 /obj/structure/cable{
 	d2 = 2;
 	icon_state = "0-2";

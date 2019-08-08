@@ -3039,7 +3039,7 @@
 /turf/simulated/floor/shuttle/red,
 /area/skipjack_station/start)
 "ahH" = (
-/obj/structure/computerframe{
+/obj/machinery/constructable_frame/computerframe/deconstruct{
 	dir = 8
 	},
 /obj/machinery/light/small{
@@ -3249,7 +3249,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/syndicate_station/start)
 "aif" = (
-/obj/structure/computerframe,
+/obj/machinery/constructable_frame/computerframe/deconstruct,
 /obj/effect/floor_decal/techfloor{
 	icon_state = "techfloor_edges";
 	dir = 1
@@ -3438,7 +3438,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/syndicate_station/start)
 "aiE" = (
-/obj/structure/computerframe{
+/obj/machinery/constructable_frame/computerframe/deconstruct{
 	icon_state = "0";
 	dir = 8
 	},
@@ -8468,7 +8468,7 @@
 /turf/simulated/floor/tiled/white,
 /area/syndicate_station/start)
 "ask" = (
-/obj/structure/computerframe{
+/obj/machinery/constructable_frame/computerframe/deconstruct{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor/grid,

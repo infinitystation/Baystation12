@@ -400,7 +400,7 @@
 	},
 /area/skipjack_station/start)
 "be" = (
-/obj/structure/computerframe,
+/obj/machinery/constructable_frame/computerframe/deconstruct,
 /obj/machinery/light/small{
 	icon_state = "bulb1";
 	dir = 1
