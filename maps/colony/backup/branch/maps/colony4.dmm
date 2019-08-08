@@ -2160,7 +2160,7 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/space)
 "eS" = (
-/obj/structure/drain,
+/obj/structure/hygiene/drain,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/freezer,
@@ -4993,7 +4993,7 @@
 /obj/machinery/door/airlock/civilian{
 	name = "Bunker Restroom"
 	},
-/obj/structure/drain,
+/obj/structure/hygiene/drain,
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/freezer,

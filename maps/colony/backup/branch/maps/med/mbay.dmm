@@ -1959,7 +1959,7 @@
 /turf/simulated/floor/tiled/white,
 /area/mbay/surgery)
 "fh" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	icon_state = "air_map";
 	dir = 4
 	},

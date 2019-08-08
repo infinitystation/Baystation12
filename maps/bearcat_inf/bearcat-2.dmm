@@ -5820,7 +5820,7 @@
 /turf/simulated/floor/plating,
 /area/ship/scrap/engineering/nacelles)
 "jZ" = (
-/obj/machinery/atmospherics/pipe/tank/carbon_dioxide,
+/obj/machinery/atmospherics/unary/tank/carbon_dioxide,
 /obj/structure/sign/warning/fire{
 	pixel_y = 32
 	},

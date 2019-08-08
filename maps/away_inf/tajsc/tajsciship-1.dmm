@@ -985,7 +985,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/ship/tajsciship/shuttle)
 "cz" = (
-/obj/machinery/atmospherics/pipe/tank/air,
+/obj/machinery/atmospherics/unary/tank/air,
 /turf/simulated/floor/tiled/old_tile,
 /area/ship/tajsciship/engines)
 "cA" = (
@@ -1235,7 +1235,7 @@
 /turf/simulated/floor/tiled/old_cargo,
 /area/ship/tajsciship/hangar)
 "de" = (
-/obj/machinery/atmospherics/pipe/tank/carbon_dioxide{
+/obj/machinery/atmospherics/unary/tank/carbon_dioxide{
 	icon_state = "co2_map";
 	dir = 4
 	},
@@ -1816,7 +1816,7 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/structure/drain,
+/obj/structure/hygiene/drain,
 /turf/simulated/floor/plating,
 /area/ship/tajsciship/shuttle)
 "eh" = (
@@ -3107,7 +3107,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/ship/tajsciship/storage)
 "gU" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/old_cargo,
@@ -3140,7 +3140,7 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/ship/tajsciship/storage)
 "gZ" = (
-/obj/machinery/atmospherics/pipe/tank/oxygen{
+/obj/machinery/atmospherics/unary/tank/oxygen{
 	icon_state = "o2_map";
 	dir = 8
 	},
@@ -3551,7 +3551,7 @@
 /turf/simulated/floor/tiled/old_cargo,
 /area/ship/tajsciship/storage)
 "hY" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/old_cargo,
@@ -4028,7 +4028,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/ship/tajsciship/engines)
 "iU" = (
-/obj/machinery/atmospherics/pipe/tank/carbon_dioxide{
+/obj/machinery/atmospherics/unary/tank/carbon_dioxide{
 	icon_state = "co2_map";
 	dir = 8
 	},
@@ -4040,7 +4040,7 @@
 	pixel_x = -24;
 	pixel_y = 4
 	},
-/obj/machinery/atmospherics/pipe/tank/carbon_dioxide{
+/obj/machinery/atmospherics/unary/tank/carbon_dioxide{
 	icon_state = "co2_map";
 	dir = 4
 	},
@@ -4164,7 +4164,7 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/ship/tajsciship/engines)
 "jp" = (
-/obj/machinery/atmospherics/pipe/tank/carbon_dioxide{
+/obj/machinery/atmospherics/unary/tank/carbon_dioxide{
 	icon_state = "co2_map";
 	dir = 8
 	},
@@ -4283,7 +4283,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/tank/oxygen{
+/obj/machinery/atmospherics/unary/tank/oxygen{
 	icon_state = "o2_map";
 	dir = 8
 	},
@@ -7033,7 +7033,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
 	},
-/obj/structure/drain,
+/obj/structure/hygiene/drain,
 /turf/simulated/floor/tiled/kafel_full,
 /area/ship/tajsciship/kitchen)
 "pr" = (
@@ -7281,7 +7281,7 @@
 "pT" = (
 /obj/effect/floor_decal/floordetail/tiled,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/obj/structure/drain,
+/obj/structure/hygiene/drain,
 /obj/machinery/alarm/tajsciship{
 	dir = 1;
 	icon_state = "alarm0";
@@ -7297,7 +7297,7 @@
 /obj/effect/floor_decal/floordetail/tiled,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/drain,
+/obj/structure/hygiene/drain,
 /turf/simulated/floor/tiled/kafel_full,
 /area/ship/tajsciship/kitchen)
 "pW" = (
@@ -7330,7 +7330,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/drain,
+/obj/structure/hygiene/drain,
 /turf/simulated/floor/tiled/kafel_full,
 /area/ship/tajsciship/kitchen)
 "pZ" = (

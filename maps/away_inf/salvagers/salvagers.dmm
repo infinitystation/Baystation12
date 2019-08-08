@@ -3549,7 +3549,7 @@
 /turf/simulated/wall,
 /area/salvage/engineering)
 "fZ" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	icon_state = "air_map";
 	dir = 1
 	},
@@ -3560,7 +3560,7 @@
 /turf/simulated/floor/plating,
 /area/salvage/engineering)
 "ga" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	icon_state = "air_map";
 	dir = 1
 	},

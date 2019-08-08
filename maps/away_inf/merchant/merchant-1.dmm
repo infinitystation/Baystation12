@@ -1269,7 +1269,7 @@
 /turf/simulated/wall/r_wall,
 /area/space)
 "cS" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	tag = "icon-air_map (EAST)";
 	icon_state = "air_map";
 	dir = 4
@@ -1299,7 +1299,7 @@
 /turf/simulated/floor/tiled,
 /area/space)
 "cV" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	tag = "icon-air_map (WEST)";
 	icon_state = "air_map";
 	dir = 8
@@ -1357,7 +1357,7 @@
 /turf/simulated/floor,
 /area/space)
 "dl" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	tag = "icon-air_map (EAST)";
 	icon_state = "air_map";
 	dir = 4
@@ -1386,7 +1386,7 @@
 /turf/simulated/floor/tiled,
 /area/space)
 "dp" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	tag = "icon-air_map (WEST)";
 	icon_state = "air_map";
 	dir = 8

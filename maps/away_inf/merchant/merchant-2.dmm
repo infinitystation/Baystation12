@@ -147,7 +147,7 @@
 	icon_state = "shower";
 	pixel_x = -9
 	},
-/obj/structure/drain,
+/obj/structure/hygiene/drain,
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/white,
 /area/space)

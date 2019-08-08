@@ -6556,7 +6556,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/syndicate_station/start)
 "aoH" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	dir = 4;
 	start_pressure = 740.5
 	},
@@ -17231,7 +17231,7 @@
 /turf/simulated/floor/shuttle/black,
 /area/rescue_base/start)
 "aNf" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	dir = 4;
 	start_pressure = 740.5
 	},
@@ -17259,7 +17259,7 @@
 /turf/simulated/floor/shuttle/darkred,
 /area/rescue_base/start)
 "aNi" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/darkred,
@@ -17959,7 +17959,7 @@
 /turf/simulated/floor/shuttle/darkred,
 /area/rescue_base/start)
 "aPk" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	dir = 4;
 	start_pressure = 740.5
 	},
@@ -23454,7 +23454,7 @@
 /turf/simulated/floor/plating,
 /area/merchant_station)
 "bbv" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	dir = 8
 	},
 /turf/simulated/floor/plating,
@@ -23947,7 +23947,7 @@
 /turf/simulated/floor/plating,
 /area/merchant_station)
 "bcx" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	icon_state = "air_map";
 	dir = 1;
 	start_pressure = 740.5
@@ -23956,7 +23956,7 @@
 /turf/simulated/floor/plating,
 /area/merchant_station)
 "bcy" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	icon_state = "air_map";
 	dir = 1;
 	start_pressure = 740.5

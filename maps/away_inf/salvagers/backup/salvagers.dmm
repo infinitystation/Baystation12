@@ -2496,7 +2496,7 @@
 /turf/simulated/floor/plating,
 /area/salvage/engineering)
 "ey" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	icon_state = "air_map";
 	dir = 1
 	},
@@ -2592,7 +2592,7 @@
 /turf/simulated/floor/plating,
 /area/salvage/engineering)
 "eH" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	icon_state = "air_map";
 	dir = 1
 	},

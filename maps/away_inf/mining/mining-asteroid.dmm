@@ -2305,7 +2305,7 @@
 /turf/simulated/floor/plating,
 /area/outpost/mining/atmos)
 "eh" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	icon_state = "air_map";
 	dir = 8
 	},
@@ -2630,7 +2630,7 @@
 /turf/simulated/floor/plating,
 /area/outpost/mining/atmos)
 "eP" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	icon_state = "air_map";
 	dir = 8
 	},

@@ -11468,7 +11468,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
 "sq" = (
-/obj/machinery/atmospherics/pipe/tank/air,
+/obj/machinery/atmospherics/unary/tank/air,
 /obj/structure/railing/mapped,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aft)
@@ -12413,7 +12413,7 @@
 /turf/simulated/floor/reinforced/hydrogen/fuel,
 /area/thruster/d3starboard)
 "tJ" = (
-/obj/machinery/atmospherics/pipe/tank/air,
+/obj/machinery/atmospherics/unary/tank/air,
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
 	dir = 4;
@@ -18628,7 +18628,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/shuttle/escape_pod9/station)
 "Du" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -19344,7 +19344,7 @@
 /area/vacant/monitoring)
 "EE" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -24398,7 +24398,7 @@
 /area/rnd/xenobiology/storage)
 "MD" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -27888,7 +27888,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/drain,
+/obj/structure/hygiene/drain,
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/xenobiology/level2)
 "SJ" = (
@@ -27912,14 +27912,14 @@
 /area/guppy_hangar/start)
 "SL" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/shuttle/escape_pod8/station)
 "SM" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
