@@ -41,7 +41,7 @@
 "ae" = (
 /obj/machinery/door/blast/shutters{
 	dir = 2;
-	id = "salvage4";
+	id_tag = "salvage4";
 	name = "Captain Shutters"
 	},
 /obj/effect/wallframe_spawn/reinforced,
@@ -453,7 +453,7 @@
 "aS" = (
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "salvage1";
+	id_tag = "salvage1";
 	name = "Canteen Shutters"
 	},
 /obj/effect/wallframe_spawn/reinforced,
@@ -1340,7 +1340,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "salvage5";
+	id_tag = "salvage5";
 	name = "Stall Shutters"
 	},
 /turf/simulated/floor/plating,
@@ -1765,7 +1765,7 @@
 	},
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "salvage5";
+	id_tag = "salvage5";
 	name = "Stall Shutters"
 	},
 /turf/simulated/floor/plating,
@@ -2223,7 +2223,7 @@
 "dB" = (
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "salvage2";
+	id_tag = "salvage2";
 	name = "Room 2 Shutters";
 	req_access = list(3074)
 	},
@@ -2560,7 +2560,7 @@
 "eh" = (
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "salvage1";
+	id_tag = "salvage1";
 	name = "Room 2 Shutters"
 	},
 /obj/effect/wallframe_spawn/reinforced,

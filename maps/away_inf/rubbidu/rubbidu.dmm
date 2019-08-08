@@ -19,7 +19,7 @@
 "ac" = (
 /obj/machinery/door/blast/regular{
 	dir = 2;
-	id = "rub_sensor";
+	id_tag = "rub_sensor";
 	name = "Sensor Shield"
 	},
 /turf/simulated/floor/airless,
@@ -85,7 +85,7 @@
 	density = 0;
 	dir = 1;
 	icon_state = "pdoor0";
-	id = "rub_bridge";
+	id_tag = "rub_bridge";
 	name = "Bridge Shield";
 	opacity = 0
 	},
@@ -181,7 +181,7 @@
 	density = 1;
 	dir = 1;
 	icon_state = "pdoor1";
-	id = "toxin_exhaust";
+	id_tag = "toxin_exhaust";
 	name = "Toxins Exhaust Blast Doors";
 	opacity = 1
 	},
@@ -217,7 +217,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "rub_bar_window";
+	id_tag = "rub_bar_window";
 	name = "Bar Window Shutters";
 	opacity = 0
 	},
@@ -283,7 +283,7 @@
 	density = 0;
 	dir = 1;
 	icon_state = "pdoor0";
-	id = "rub_bridge";
+	id_tag = "rub_bridge";
 	name = "Bridge Shield";
 	opacity = 0
 	},
@@ -346,7 +346,7 @@
 	density = 0;
 	dir = 1;
 	icon_state = "pdoor0";
-	id = "rub_bridge";
+	id_tag = "rub_bridge";
 	name = "Bridge Shield";
 	opacity = 0
 	},
@@ -378,7 +378,7 @@
 	density = 0;
 	dir = 1;
 	icon_state = "pdoor0";
-	id = "calypso_shutters";
+	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -420,7 +420,7 @@
 	density = 0;
 	dir = 1;
 	icon_state = "pdoor0";
-	id = "calypso_shutters";
+	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -436,7 +436,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "calypso_shutters";
+	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -611,7 +611,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "rub_bridge";
+	id_tag = "rub_bridge";
 	name = "Bridge Shield";
 	opacity = 0
 	},
@@ -657,7 +657,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "rub_bridge";
+	id_tag = "rub_bridge";
 	name = "Bridge Shield";
 	opacity = 0
 	},
@@ -783,7 +783,7 @@
 "bO" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "aquila_hatch";
+	id_tag = "aquila_hatch";
 	name = "Starboard Hatch"
 	},
 /obj/machinery/shield_diffuser,
@@ -1510,7 +1510,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "rub_bridge";
+	id_tag = "rub_bridge";
 	name = "Bridge Shield";
 	opacity = 0
 	},
@@ -1532,7 +1532,7 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "rub_bar";
+	id_tag = "rub_bar";
 	name = "Bar Shutters"
 	},
 /turf/simulated/floor/lino,
@@ -1992,7 +1992,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "pdoor0";
-	id = "aquila_windows";
+	id_tag = "aquila_windows";
 	name = "Window Shutter";
 	opacity = 0
 	},
@@ -2549,7 +2549,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "rub_bridge";
+	id_tag = "rub_bridge";
 	name = "Bridge Shield";
 	opacity = 0
 	},
@@ -2809,7 +2809,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "rub_bridge";
+	id_tag = "rub_bridge";
 	name = "Bridge Shield";
 	opacity = 0
 	},
@@ -2893,7 +2893,7 @@
 "fA" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "aquila_hatch";
+	id_tag = "aquila_hatch";
 	name = "Starboard Hatch"
 	},
 /obj/machinery/shield_diffuser,
@@ -2925,7 +2925,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "rub_bridge";
+	id_tag = "rub_bridge";
 	name = "Bridge Shield";
 	opacity = 0
 	},
@@ -2999,7 +2999,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "shutter0";
-	id = "rub_hangar";
+	id_tag = "rub_hangar";
 	name = "Hangar Shutters";
 	opacity = 0
 	},
@@ -3184,7 +3184,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "shutter0";
-	id = "rub_bar_window";
+	id_tag = "rub_bar_window";
 	name = "Bar Window Shutters";
 	opacity = 0
 	},
@@ -4021,7 +4021,7 @@
 "ho" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "aquila_hatch";
+	id_tag = "aquila_hatch";
 	name = "Starboard Hatch"
 	},
 /obj/machinery/shield_diffuser,
@@ -4038,7 +4038,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "shutter0";
-	id = "rub_hangar_window";
+	id_tag = "rub_hangar_window";
 	name = "Hangar Window Shutters";
 	opacity = 0
 	},
@@ -4091,7 +4091,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "shutter0";
-	id = "rub_dock_window";
+	id_tag = "rub_dock_window";
 	name = "Dock Window Shutters";
 	opacity = 0
 	},
@@ -5067,7 +5067,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "aquila_windows";
+	id_tag = "aquila_windows";
 	name = "Window Shutter";
 	opacity = 0
 	},
@@ -5262,7 +5262,7 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "rub_bar";
+	id_tag = "rub_bar";
 	name = "Bar Shutters"
 	},
 /turf/simulated/floor/tiled/white,
@@ -5675,7 +5675,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "shutter0";
-	id = "rub_cryo_window";
+	id_tag = "rub_cryo_window";
 	name = "Cryo Window Shutters";
 	opacity = 0
 	},
@@ -5689,7 +5689,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "shutter0";
-	id = "rub_cryo_window";
+	id_tag = "rub_cryo_window";
 	name = "Cryo Window Shutters";
 	opacity = 0
 	},
@@ -5719,7 +5719,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "shutter0";
-	id = "rub_cryo_window";
+	id_tag = "rub_cryo_window";
 	name = "Cryo Window Shutters";
 	opacity = 0
 	},
@@ -5918,7 +5918,7 @@
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "rubb_nt_v1"
+	id_tag = "rubb_nt_v1"
 	},
 /turf/simulated/floor/plating,
 /area/rubbidu/nt)
@@ -6009,7 +6009,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "rub_bridge";
+	id_tag = "rub_bridge";
 	name = "Bridge Shield";
 	opacity = 0
 	},
@@ -6269,7 +6269,7 @@
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "rubb_nt_v2"
+	id_tag = "rubb_nt_v2"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/rubbidu/nt)
@@ -7336,7 +7336,7 @@
 "mC" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "rub_han_h";
+	id_tag = "rub_han_h";
 	name = "Starboard Hatch"
 	},
 /turf/simulated/floor/reinforced,
@@ -7368,7 +7368,7 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "rub_bar";
+	id_tag = "rub_bar";
 	name = "Bar Shutters"
 	},
 /turf/simulated/floor/tiled/white,
@@ -7694,7 +7694,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "calypso_shutters";
+	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -7877,7 +7877,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "calypso_shutters";
+	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -8133,7 +8133,7 @@
 "nW" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "rubb_han_a";
+	id_tag = "rubb_han_a";
 	name = "Starboard Hatch"
 	},
 /turf/simulated/floor/reinforced,
@@ -8189,7 +8189,7 @@
 	},
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "rubb_han_a";
+	id_tag = "rubb_han_a";
 	name = "Starboard Hatch"
 	},
 /turf/simulated/floor/reinforced,
@@ -8428,7 +8428,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "calypso_shutters";
+	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -8487,7 +8487,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "calypso_shutters";
+	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -9878,7 +9878,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "aquila_windows";
+	id_tag = "aquila_windows";
 	name = "Window Shutter";
 	opacity = 0
 	},
@@ -10179,7 +10179,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "shutter0";
-	id = "rub_hangar";
+	id_tag = "rub_hangar";
 	name = "Hangar Shutters";
 	opacity = 0
 	},
@@ -10892,7 +10892,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "hop_office_desk";
+	id_tag = "hop_office_desk";
 	name = "HoP Office Privacy Shutters";
 	opacity = 0
 	},
@@ -11025,7 +11025,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "rub_bridge";
+	id_tag = "rub_bridge";
 	name = "Bridge Shield";
 	opacity = 0
 	},
@@ -11228,7 +11228,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "rub_bridge";
+	id_tag = "rub_bridge";
 	name = "Bridge Shield";
 	opacity = 0
 	},
@@ -12928,7 +12928,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "calypso_shutters";
+	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -13777,7 +13777,7 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "guppy_hatch";
+	id_tag = "guppy_hatch";
 	name = "Rear Hatch"
 	},
 /obj/machinery/button/blast_door{

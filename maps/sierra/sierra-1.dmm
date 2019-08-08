@@ -198,7 +198,7 @@
 	density = 1;
 	dir = 1;
 	icon_state = "pdoor1";
-	id = "toxin_exhaust";
+	id_tag = "toxin_exhaust";
 	name = "Toxins Exhaust Blast Doors";
 	opacity = 1
 	},
@@ -859,7 +859,7 @@
 "bM" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "bsa_space";
+	id_tag = "bsa_space";
 	name = "BSA Hatch"
 	},
 /turf/simulated/floor/reinforced/airless,
@@ -1217,7 +1217,7 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "mine_warehouse";
+	id_tag = "mine_warehouse";
 	name = "Storage Shutters"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -1303,7 +1303,7 @@
 	density = 0;
 	dir = 1;
 	icon_state = "pdoor0";
-	id = "calypso_shutters";
+	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -1322,7 +1322,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "calypso_shutters";
+	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -1380,7 +1380,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "bsa_space";
+	id_tag = "bsa_space";
 	name = "BSA Shell Loader";
 	opacity = 0
 	},
@@ -5433,7 +5433,7 @@
 /obj/structure/table/marble,
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "comissary_shutters";
+	id_tag = "comissary_shutters";
 	name = "Commissary Shutters"
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -7751,7 +7751,7 @@
 	density = 0;
 	dir = 8;
 	icon_state = "shutter0";
-	id = "hangar_hallway_shutters";
+	id_tag = "hangar_hallway_shutters";
 	name = "Hangar Deck Hallway Shutters";
 	opacity = 0
 	},
@@ -8893,7 +8893,7 @@
 	},
 /obj/machinery/door/blast/shutters{
 	dir = 2;
-	id = "do_office";
+	id_tag = "do_office";
 	name = "QM Office Shutters"
 	},
 /obj/structure/wall_frame/prepainted,
@@ -8908,7 +8908,7 @@
 	density = 0;
 	dir = 1;
 	icon_state = "pdoor0";
-	id = "calypso_shutters";
+	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -10751,7 +10751,7 @@
 "rt" = (
 /obj/machinery/door/blast/regular{
 	dir = 2;
-	id = "cChamber2pV";
+	id_tag = "cChamber2pV";
 	name = "Chamber Vent"
 	},
 /obj/machinery/shield_diffuser,
@@ -10896,7 +10896,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "hangar_checkpoint_shutters";
+	id_tag = "hangar_checkpoint_shutters";
 	name = "Hangar Deck Checkpoint Shutters";
 	opacity = 0
 	},
@@ -11058,7 +11058,7 @@
 	density = 1;
 	dir = 1;
 	icon_state = "pdoor1";
-	id = "petrovcell1";
+	id_tag = "petrovcell1";
 	name = "Test Chamber Blast Doors";
 	opacity = 1
 	},
@@ -11142,7 +11142,7 @@
 	density = 1;
 	dir = 1;
 	icon_state = "pdoor1";
-	id = "petrovcell1";
+	id_tag = "petrovcell1";
 	name = "Test Chamber Blast Doors";
 	opacity = 1
 	},
@@ -11198,7 +11198,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "hangar_checkpoint_shutters";
+	id_tag = "hangar_checkpoint_shutters";
 	name = "Hangar Deck Checkpoint Shutters";
 	opacity = 0
 	},
@@ -11255,7 +11255,7 @@
 	density = 1;
 	dir = 1;
 	icon_state = "pdoor1";
-	id = "petrovcell2";
+	id_tag = "petrovcell2";
 	name = "Test Chamber Blast Doors";
 	opacity = 1
 	},
@@ -11332,7 +11332,7 @@
 	density = 1;
 	dir = 1;
 	icon_state = "pdoor1";
-	id = "petrovcell2";
+	id_tag = "petrovcell2";
 	name = "Test Chamber Blast Doors";
 	opacity = 1
 	},
@@ -11506,7 +11506,7 @@
 	density = 1;
 	dir = 1;
 	icon_state = "pdoor1";
-	id = "petrovcell3";
+	id_tag = "petrovcell3";
 	name = "Test Chamber Blast Doors";
 	opacity = 1
 	},
@@ -11626,7 +11626,7 @@
 	density = 0;
 	dir = 1;
 	icon_state = "pdoor0";
-	id = "calypso_shutters";
+	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -11691,7 +11691,7 @@
 	density = 0;
 	dir = 1;
 	icon_state = "pdoor0";
-	id = "calypso_shutters";
+	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -11760,7 +11760,7 @@
 	density = 1;
 	dir = 1;
 	icon_state = "pdoor1";
-	id = "petrovcell3";
+	id_tag = "petrovcell3";
 	name = "Test Chamber Blast Doors";
 	opacity = 1
 	},
@@ -12319,7 +12319,7 @@
 	density = 0;
 	dir = 8;
 	icon_state = "shutter0";
-	id = "hangar_checkpoint_shutters";
+	id_tag = "hangar_checkpoint_shutters";
 	name = "Hangar Deck Checkpoint Shutters";
 	opacity = 0
 	},
@@ -12523,7 +12523,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "shutter0";
-	id = "hangar_checkpoint_shutters";
+	id_tag = "hangar_checkpoint_shutters";
 	name = "Hangar Deck Checkpoint Shutters";
 	opacity = 0
 	},
@@ -13218,7 +13218,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "hangar_hallway_shutters";
+	id_tag = "hangar_hallway_shutters";
 	name = "Hangar Deck Hallway Shutters";
 	opacity = 0
 	},
@@ -13235,7 +13235,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "hangar_hallway_shutters";
+	id_tag = "hangar_hallway_shutters";
 	name = "Hangar Deck Hallway Shutters";
 	opacity = 0
 	},
@@ -13254,7 +13254,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "shutter0";
-	id = "hangar_checkpoint_shutters";
+	id_tag = "hangar_checkpoint_shutters";
 	name = "Hangar Deck Checkpoint Shutters";
 	opacity = 0
 	},
@@ -13350,7 +13350,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
 	dir = 2;
-	id = "sup_office";
+	id_tag = "sup_office";
 	name = "Supply Office Shutters"
 	},
 /obj/machinery/door/firedoor,
@@ -13368,7 +13368,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
 	dir = 2;
-	id = "sup_office";
+	id_tag = "sup_office";
 	name = "Supply Office Shutters"
 	},
 /obj/machinery/door/firedoor,
@@ -13382,7 +13382,7 @@
 /obj/effect/wallframe_spawn/reinforced_phoron/osmium,
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "d2portnacelle"
+	id_tag = "d2portnacelle"
 	},
 /turf/simulated/floor/reinforced,
 /area/thruster/d3port)
@@ -13405,7 +13405,7 @@
 	density = 0;
 	dir = 8;
 	icon_state = "shutter0";
-	id = "hangar_checkpoint_shutters";
+	id_tag = "hangar_checkpoint_shutters";
 	name = "Hangar Deck Checkpoint Shutters";
 	opacity = 0
 	},
@@ -14040,7 +14040,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "calypso_shutters";
+	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -14150,7 +14150,7 @@
 	},
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "sup_office";
+	id_tag = "sup_office";
 	name = "Supply Desk Shutters"
 	},
 /obj/structure/wall_frame/prepainted,
@@ -14562,7 +14562,7 @@
 /obj/effect/wallframe_spawn/reinforced_phoron/osmium,
 /obj/machinery/door/blast/regular{
 	dir = 2;
-	id = "d2portnacelle"
+	id_tag = "d2portnacelle"
 	},
 /obj/machinery/atmospherics/valve/digital{
 	frequency = 1490;
@@ -14974,7 +14974,7 @@
 /obj/effect/wallframe_spawn/reinforced_phoron/osmium,
 /obj/machinery/door/blast/regular{
 	dir = 2;
-	id = "d2portnacelle"
+	id_tag = "d2portnacelle"
 	},
 /turf/simulated/floor/reinforced,
 /area/thruster/d3port)
@@ -15036,7 +15036,7 @@
 /obj/effect/wallframe_spawn/reinforced_phoron/osmium,
 /obj/machinery/door/blast/regular{
 	dir = 2;
-	id = "d1portnacelle"
+	id_tag = "d1portnacelle"
 	},
 /obj/machinery/atmospherics/valve/digital{
 	dir = 2;
@@ -15100,7 +15100,7 @@
 /obj/effect/wallframe_spawn/reinforced_phoron/osmium,
 /obj/machinery/door/blast/regular{
 	dir = 2;
-	id = "d1portnacelle"
+	id_tag = "d1portnacelle"
 	},
 /turf/simulated/floor/reinforced,
 /area/thruster/d3starboard)
@@ -15991,7 +15991,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "sup_office";
+	id_tag = "sup_office";
 	name = "Supply Desk Shutters"
 	},
 /obj/structure/cable/green{
@@ -17120,7 +17120,7 @@
 /obj/effect/wallframe_spawn/reinforced_phoron/osmium,
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "d1portnacelle"
+	id_tag = "d1portnacelle"
 	},
 /turf/simulated/floor/reinforced,
 /area/thruster/d3starboard)
@@ -17391,7 +17391,7 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "portaux_warehouse";
+	id_tag = "portaux_warehouse";
 	name = "Warehouse Shutters"
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -17452,7 +17452,7 @@
 "BI" = (
 /obj/machinery/door/blast/regular{
 	dir = 2;
-	id = "cChamber1pV";
+	id_tag = "cChamber1pV";
 	name = "Chamber Vent"
 	},
 /obj/machinery/shield_diffuser,
@@ -18011,7 +18011,7 @@
 /obj/effect/paint/nt_white,
 /obj/machinery/door/blast/regular{
 	dir = 2;
-	id = "guppy_shield";
+	id_tag = "guppy_shield";
 	name = "Window Shield"
 	},
 /obj/effect/paint_stripe/nt_red,
@@ -18735,7 +18735,7 @@
 "DE" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "guppy_hatch";
+	id_tag = "guppy_hatch";
 	name = "Rear Hatch"
 	},
 /obj/machinery/button/blast_door{
@@ -19326,7 +19326,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "calypso_shutters";
+	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -19860,7 +19860,7 @@
 	},
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "bsa_door2";
+	id_tag = "bsa_door2";
 	name = "BSA Blast Door"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -20454,7 +20454,7 @@
 "Gt" = (
 /obj/machinery/door/blast/shutters{
 	dir = 2;
-	id = "qm_warehouse2";
+	id_tag = "qm_warehouse2";
 	name = "Warehouse Shutters"
 	},
 /obj/effect/floor_decal/industrial/warning/corner{
@@ -20528,7 +20528,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "calypso_shutters";
+	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -21637,7 +21637,7 @@
 	density = 0;
 	dir = 8;
 	icon_state = "shutter0";
-	id = "hangar_checkpoint_shutters";
+	id_tag = "hangar_checkpoint_shutters";
 	name = "Hangar Deck Checkpoint Shutters";
 	opacity = 0
 	},
@@ -21682,7 +21682,7 @@
 "Ie" = (
 /obj/machinery/door/blast/shutters{
 	dir = 2;
-	id = "qm_warehouse2";
+	id_tag = "qm_warehouse2";
 	name = "Warehouse Shutters"
 	},
 /obj/machinery/door/firedoor,
@@ -22022,7 +22022,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "calypso_shutters";
+	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -22121,7 +22121,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "calypso_shutters";
+	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -22148,7 +22148,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "calypso_shutters";
+	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -22278,7 +22278,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "calypso_shutters";
+	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -22465,7 +22465,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "calypso_shutters";
+	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -22837,7 +22837,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
 	dir = 2;
-	id = "sup_office";
+	id_tag = "sup_office";
 	name = "Supply Office Shutters"
 	},
 /obj/machinery/door/firedoor,
@@ -23134,7 +23134,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "calypso_shutters";
+	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -23663,7 +23663,7 @@
 "Lt" = (
 /obj/machinery/door/blast/shutters{
 	dir = 8;
-	id = "qm_warehouse";
+	id_tag = "qm_warehouse";
 	name = "Warehouse Shutters"
 	},
 /obj/machinery/door/firedoor,
@@ -24740,7 +24740,7 @@
 	density = 0;
 	dir = 8;
 	icon_state = "shutter0";
-	id = "hangar_hallway_shutters";
+	id_tag = "hangar_hallway_shutters";
 	name = "Hangar Deck Hallway Shutters";
 	opacity = 0
 	},
@@ -24825,7 +24825,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "xenobioa1";
+	id_tag = "xenobioa1";
 	name = "Containment Blast Doors";
 	opacity = 0
 	},
@@ -25326,7 +25326,7 @@
 	density = 0;
 	dir = 1;
 	icon_state = "pdoor0";
-	id = "xenobio_lower_desk";
+	id_tag = "xenobio_lower_desk";
 	name = "Space Shutters";
 	opacity = 0
 	},
@@ -26062,7 +26062,7 @@
 	dir = 8
 	},
 /obj/machinery/door/blast/regular{
-	id = "bsa_door1";
+	id_tag = "bsa_door1";
 	name = "BSA Blast Door"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -26594,7 +26594,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "xenobioa2";
+	id_tag = "xenobioa2";
 	name = "Containment Blast Doors";
 	opacity = 0
 	},
@@ -26717,7 +26717,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "xenobioa1";
+	id_tag = "xenobioa1";
 	name = "Containment Blast Doors";
 	opacity = 0
 	},
@@ -26775,7 +26775,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "xenobioa3";
+	id_tag = "xenobioa3";
 	name = "Containment Blast Doors";
 	opacity = 0
 	},
@@ -26797,7 +26797,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "xenobioa2";
+	id_tag = "xenobioa2";
 	name = "Containment Blast Doors";
 	opacity = 0
 	},
@@ -27866,7 +27866,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "xenobioa3";
+	id_tag = "xenobioa3";
 	name = "Containment Blast Doors";
 	opacity = 0
 	},
@@ -28303,7 +28303,7 @@
 "Xs" = (
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "mine_warehouse";
+	id_tag = "mine_warehouse";
 	name = "Storage Shutters"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,

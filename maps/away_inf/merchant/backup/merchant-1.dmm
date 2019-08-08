@@ -15,7 +15,7 @@
 /obj/machinery/door/blast/regular{
 	dir = 8;
 	icon_state = "pdoor1";
-	id = "mc_chamber_vent";
+	id_tag = "mc_chamber_vent";
 	tag = "icon-pdoor1 (WEST)"
 	},
 /turf/simulated/floor,
@@ -69,7 +69,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "pdoor0";
-	id = "mc_laser";
+	id_tag = "mc_laser";
 	name = "Protective Shutters";
 	opacity = 0;
 	tag = "icon-pdoor0"
@@ -110,7 +110,7 @@
 	density = 0;
 	dir = 8;
 	icon_state = "pdoor0";
-	id = "mc_bridge";
+	id_tag = "mc_bridge";
 	name = "Reinforsed Secret Wall";
 	opacity = 0;
 	tag = "icon-pdoor0 (WEST)";
@@ -159,7 +159,7 @@
 /obj/machinery/door/blast/shutters/open{
 	dir = 2;
 	icon_state = "shutter0";
-	id = "mc_trade";
+	id_tag = "mc_trade";
 	name = "Trade Zone Shutters";
 	tag = "icon-shutter1"
 	},
@@ -232,7 +232,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "pdoor0";
-	id = "mc_bridge";
+	id_tag = "mc_bridge";
 	name = "Protective Shutters";
 	opacity = 0;
 	tag = "icon-pdoor0";
@@ -252,7 +252,7 @@
 	density = 0;
 	dir = 8;
 	icon_state = "pdoor0";
-	id = "mc_bridge";
+	id_tag = "mc_bridge";
 	name = "Emergency Blast Door";
 	opacity = 0;
 	tag = "icon-pdoor0 (WEST)";
@@ -555,7 +555,7 @@
 	density = 0;
 	dir = 1;
 	icon_state = "pdoor0";
-	id = "mc_chamber_doors";
+	id_tag = "mc_chamber_doors";
 	name = "Blast Door";
 	opacity = 0
 	},
@@ -575,7 +575,7 @@
 	density = 0;
 	dir = 1;
 	icon_state = "pdoor0";
-	id = "mc_chamber_doors";
+	id_tag = "mc_chamber_doors";
 	name = "Blast Door";
 	opacity = 0
 	},
@@ -599,7 +599,7 @@
 	density = 0;
 	dir = 1;
 	icon_state = "pdoor0";
-	id = "mc_chamber_doors";
+	id_tag = "mc_chamber_doors";
 	name = "Blast Door";
 	opacity = 0
 	},
@@ -1499,7 +1499,7 @@
 	density = 0;
 	dir = 8;
 	icon_state = "pdoor0";
-	id = "mc_bridge";
+	id_tag = "mc_bridge";
 	name = "Emergency Blast Door";
 	opacity = 0;
 	tag = "icon-pdoor0 (WEST)"
@@ -1616,7 +1616,7 @@
 	density = 0;
 	dir = 8;
 	icon_state = "pdoor0";
-	id = "mc_bridge";
+	id_tag = "mc_bridge";
 	name = "Reinforsed Secret Wall";
 	opacity = 0;
 	tag = "icon-pdoor0 (WEST)";
@@ -1633,7 +1633,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "pdoor0";
-	id = "mc_sensors";
+	id_tag = "mc_sensors";
 	name = "Protective Shutters";
 	opacity = 0;
 	tag = "icon-pdoor0";
@@ -1692,7 +1692,7 @@
 	density = 0;
 	dir = 8;
 	icon_state = "pdoor0";
-	id = "mc_bridge";
+	id_tag = "mc_bridge";
 	name = "Emergency Blast Door";
 	opacity = 0;
 	tag = "icon-pdoor0 (WEST)"

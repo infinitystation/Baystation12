@@ -515,7 +515,7 @@
 "aaS" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "ship_sensor";
+	id_tag = "ship_sensor";
 	name = "Ship Sensor Blastdoor"
 	},
 /obj/machinery/camera/network/command{
@@ -898,7 +898,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter";
 	opacity = 0
 	},
@@ -1678,7 +1678,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "infirmaryquar";
+	id_tag = "infirmaryquar";
 	name = "Infirmary Emergency Quarantine Shutters";
 	opacity = 0
 	},
@@ -2307,7 +2307,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "Skynet_launch";
+	id_tag = "Skynet_launch";
 	name = "Mech Bay";
 	opacity = 0
 	},
@@ -2324,7 +2324,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "Skynet_launch";
+	id_tag = "Skynet_launch";
 	name = "Mech Bay";
 	opacity = 0
 	},
@@ -2696,7 +2696,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "infirmaryquar";
+	id_tag = "infirmaryquar";
 	name = "Infirmary Emergency Quarantine Shutters";
 	opacity = 0
 	},
@@ -3465,7 +3465,7 @@
 "afW" = (
 /obj/machinery/door/blast/regular{
 	dir = 2;
-	id = "d3portnacelle"
+	id_tag = "d3portnacelle"
 	},
 /obj/machinery/atmospherics/valve/digital{
 	dir = 2;
@@ -3486,7 +3486,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /obj/machinery/door/blast/regular{
 	dir = 2;
-	id = "d3portnacelle"
+	id_tag = "d3portnacelle"
 	},
 /obj/effect/wallframe_spawn/reinforced_phoron/osmium,
 /turf/simulated/floor/reinforced,
@@ -4090,7 +4090,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "infirmaryquar";
+	id_tag = "infirmaryquar";
 	name = "Infirmary Emergency Quarantine Shutters";
 	opacity = 0
 	},
@@ -4314,7 +4314,7 @@
 	},
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "d3portnacelle"
+	id_tag = "d3portnacelle"
 	},
 /obj/effect/wallframe_spawn/reinforced_phoron/osmium,
 /turf/simulated/floor/reinforced,
@@ -5179,7 +5179,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "pdoor0";
-	id = "AICore";
+	id_tag = "AICore";
 	name = "AI Core Shield";
 	opacity = 0
 	},
@@ -5715,7 +5715,7 @@
 "ajq" = (
 /obj/machinery/door/blast/regular{
 	dir = 2;
-	id = "cChamber3pV";
+	id_tag = "cChamber3pV";
 	name = "Chamber Vent"
 	},
 /obj/machinery/shield_diffuser,
@@ -6067,7 +6067,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "shutter0";
-	id = "infirmaryquar";
+	id_tag = "infirmaryquar";
 	name = "Infirmary Emergency Quarantine Shutters";
 	opacity = 0
 	},
@@ -6734,7 +6734,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "shutter0";
-	id = "infirmaryquar";
+	id_tag = "infirmaryquar";
 	name = "Infirmary Emergency Quarantine Shutters";
 	opacity = 0
 	},
@@ -7784,7 +7784,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "chemcounter";
+	id_tag = "chemcounter";
 	name = "Chemistry Counter Shutters";
 	opacity = 0
 	},
@@ -7796,7 +7796,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "infirmaryquar";
+	id_tag = "infirmaryquar";
 	name = "Infirmary Emergency Quarantine Shutters";
 	opacity = 0
 	},
@@ -9968,7 +9968,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "infirmaryquar";
+	id_tag = "infirmaryquar";
 	name = "Infirmary Emergency Quarantine Shutters";
 	opacity = 0
 	},
@@ -10007,7 +10007,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "infirmaryquar";
+	id_tag = "infirmaryquar";
 	name = "Infirmary Emergency Quarantine Shutters";
 	opacity = 0
 	},
@@ -10139,7 +10139,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "infirmaryquar";
+	id_tag = "infirmaryquar";
 	name = "Infirmary Emergency Quarantine Shutters";
 	opacity = 0
 	},
@@ -10156,7 +10156,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "infirmaryquar";
+	id_tag = "infirmaryquar";
 	name = "Infirmary Emergency Quarantine Shutters";
 	opacity = 0
 	},
@@ -10284,7 +10284,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter";
 	opacity = 0
 	},
@@ -10318,7 +10318,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "pdoor0";
-	id = "AILockdown";
+	id_tag = "AILockdown";
 	name = "AI Core Blastdoor";
 	opacity = 0
 	},
@@ -10736,7 +10736,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "infirmaryquar";
+	id_tag = "infirmaryquar";
 	name = "Infirmary Emergency Quarantine Shutters";
 	opacity = 0
 	},
@@ -10862,7 +10862,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "infirmaryquar";
+	id_tag = "infirmaryquar";
 	name = "Infirmary Emergency Quarantine Shutters";
 	opacity = 0
 	},
@@ -13454,7 +13454,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular{
 	dir = 2;
-	id = "armory"
+	id_tag = "armory"
 	},
 /obj/effect/floor_decal/techfloor{
 	icon_state = "techfloor_edges";
@@ -13665,7 +13665,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter";
 	opacity = 0
 	},
@@ -14616,7 +14616,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "shutter0";
-	id = "infirmaryquar";
+	id_tag = "infirmaryquar";
 	name = "Infirmary Emergency Quarantine Shutters";
 	opacity = 0
 	},
@@ -15317,7 +15317,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter";
 	opacity = 0
 	},
@@ -15446,7 +15446,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "infirmaryentrylock";
+	id_tag = "infirmaryentrylock";
 	name = "Infirmary Entry Shutters";
 	opacity = 0
 	},
@@ -15888,7 +15888,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular{
 	dir = 2;
-	id = "armory"
+	id_tag = "armory"
 	},
 /obj/effect/floor_decal/techfloor{
 	icon_state = "techfloor_edges";
@@ -16012,7 +16012,7 @@
 	density = 1;
 	dir = 2;
 	icon_state = "shutter1";
-	id = "armory_shutters";
+	id_tag = "armory_shutters";
 	name = "Armory Desk";
 	opacity = 1
 	},
@@ -17030,7 +17030,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "infirmaryentrylock";
+	id_tag = "infirmaryentrylock";
 	name = "Infirmary Entry Shutters";
 	opacity = 0
 	},
@@ -18097,7 +18097,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "infirmaryquar";
+	id_tag = "infirmaryquar";
 	name = "Infirmary Emergency Quarantine Shutters";
 	opacity = 0
 	},
@@ -18487,7 +18487,7 @@
 	density = 1;
 	dir = 4;
 	icon_state = "shutter1";
-	id = "security_sergeant_shutters";
+	id_tag = "security_sergeant_shutters";
 	name = "Warden Desk";
 	opacity = 1
 	},
@@ -18818,7 +18818,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter";
 	opacity = 0
 	},
@@ -18858,7 +18858,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter";
 	opacity = 0
 	},
@@ -18971,7 +18971,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter";
 	opacity = 0
 	},
@@ -18983,7 +18983,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter";
 	opacity = 0
 	},
@@ -19013,7 +19013,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter";
 	opacity = 0
 	},
@@ -19068,7 +19068,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter";
 	opacity = 0
 	},
@@ -19816,7 +19816,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "infirmaryentrylock";
+	id_tag = "infirmaryentrylock";
 	name = "Infirmary Entry Shutters";
 	opacity = 0
 	},
@@ -19868,7 +19868,7 @@
 	density = 1;
 	dir = 4;
 	icon_state = "shutter1";
-	id = "security_sergeant_shutters";
+	id_tag = "security_sergeant_shutters";
 	name = "Warden Desk";
 	opacity = 1
 	},
@@ -19882,7 +19882,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter";
 	opacity = 0
 	},
@@ -20030,7 +20030,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "infirmaryquar";
+	id_tag = "infirmaryquar";
 	name = "Infirmary Emergency Quarantine Shutters";
 	opacity = 0
 	},
@@ -20584,7 +20584,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "infirmaryquar";
+	id_tag = "infirmaryquar";
 	name = "Infirmary Emergency Quarantine Shutters";
 	opacity = 0
 	},
@@ -20592,7 +20592,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "chemwindow";
+	id_tag = "chemwindow";
 	name = "Chemistry Shutters";
 	opacity = 0
 	},
@@ -20680,7 +20680,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter";
 	opacity = 0
 	},
@@ -21791,7 +21791,7 @@
 	density = 1;
 	dir = 2;
 	icon_state = "shutter1";
-	id = "medgarage";
+	id_tag = "medgarage";
 	name = "Charging Port Shutters";
 	opacity = 1
 	},
@@ -21805,7 +21805,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "infirmaryquar";
+	id_tag = "infirmaryquar";
 	name = "Infirmary Emergency Quarantine Shutters";
 	opacity = 0
 	},
@@ -22162,7 +22162,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "AILockdown";
+	id_tag = "AILockdown";
 	name = "AI Core Blastdoor";
 	opacity = 0
 	},
@@ -22393,7 +22393,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter";
 	opacity = 0
 	},
@@ -23306,7 +23306,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter";
 	opacity = 0
 	},
@@ -23790,7 +23790,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/door/blast/shutters/open{
-	id = "security_permabrig_shutters"
+	id_tag = "security_permabrig_shutters"
 	},
 /turf/simulated/floor/plating,
 /area/security/prison)
@@ -24312,7 +24312,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/blast/shutters/open{
-	id = "security_permabrig_shutters"
+	id_tag = "security_permabrig_shutters"
 	},
 /turf/simulated/floor/plating,
 /area/security/prison)
@@ -24344,7 +24344,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter";
 	opacity = 0
 	},
@@ -24634,7 +24634,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter";
 	opacity = 0
 	},
@@ -26002,7 +26002,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "shutter0";
-	id = "infirmaryquar";
+	id_tag = "infirmaryquar";
 	name = "Infirmary Emergency Quarantine Shutters";
 	opacity = 0
 	},
@@ -26613,7 +26613,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "infirmaryquar";
+	id_tag = "infirmaryquar";
 	name = "Infirmary Emergency Quarantine Shutters";
 	opacity = 0
 	},
@@ -29030,7 +29030,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter";
 	opacity = 0
 	},
@@ -29051,7 +29051,7 @@
 	density = 0;
 	dir = 1;
 	icon_state = "pdoor0";
-	id = "misclab";
+	id_tag = "misclab";
 	name = "Test Chamber Blast Doors";
 	opacity = 0
 	},
@@ -29370,7 +29370,7 @@
 	density = 0;
 	dir = 1;
 	icon_state = "pdoor0";
-	id = "misclab";
+	id_tag = "misclab";
 	name = "Test Chamber Blast Doors";
 	opacity = 0
 	},
@@ -30547,7 +30547,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular{
-	id = "telecoms_s"
+	id_tag = "telecoms_s"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tcommsat/storage)
@@ -30648,7 +30648,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter";
 	opacity = 0
 	},
@@ -30938,7 +30938,7 @@
 	},
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "d4portnacelle"
+	id_tag = "d4portnacelle"
 	},
 /obj/effect/wallframe_spawn/reinforced_phoron/osmium,
 /turf/simulated/floor/reinforced,
@@ -31459,7 +31459,7 @@
 	density = 0;
 	dir = 1;
 	icon_state = "pdoor0";
-	id = "misclab";
+	id_tag = "misclab";
 	name = "Test Chamber Blast Doors";
 	opacity = 0
 	},
@@ -31475,7 +31475,7 @@
 /area/thruster/d1port)
 "aTE" = (
 /obj/machinery/door/blast/regular{
-	id = "d4portnacelle"
+	id_tag = "d4portnacelle"
 	},
 /obj/machinery/atmospherics/valve/digital{
 	dir = 2;
@@ -31494,7 +31494,7 @@
 "aTG" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /obj/machinery/door/blast/regular{
-	id = "d4portnacelle"
+	id_tag = "d4portnacelle"
 	},
 /obj/effect/wallframe_spawn/reinforced_phoron/osmium,
 /turf/simulated/floor/reinforced,
@@ -31777,7 +31777,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "infirmaryquar";
+	id_tag = "infirmaryquar";
 	name = "Infirmary Emergency Quarantine Shutters";
 	opacity = 0
 	},
@@ -32065,7 +32065,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter";
 	opacity = 0
 	},
@@ -32294,7 +32294,7 @@
 	req_access = list("ACCESS_VAULT")
 	},
 /obj/machinery/door/blast/regular{
-	id = "selfdestruct";
+	id_tag = "selfdestruct";
 	name = "Self Destruct Access Blast Door"
 	},
 /obj/machinery/door/firedoor,
@@ -32615,7 +32615,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter";
 	opacity = 0
 	},
@@ -33841,7 +33841,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter";
 	opacity = 0
 	},
@@ -35236,7 +35236,7 @@
 "aZN" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "e_gun_blast"
+	id_tag = "e_gun_blast"
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/bridge/gun/energy)
@@ -36564,7 +36564,7 @@
 	density = 0;
 	dir = 1;
 	icon_state = "pdoor0";
-	id = "library_space_upper";
+	id_tag = "library_space_upper";
 	name = "Space Shutters";
 	opacity = 0
 	},
@@ -36951,7 +36951,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "hop_road_shutters";
+	id_tag = "hop_road_shutters";
 	name = "HoP Line's Shutters";
 	opacity = 0
 	},
@@ -36997,7 +36997,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "hop_road_shutters";
+	id_tag = "hop_road_shutters";
 	name = "HoP Line's Shutters";
 	opacity = 0
 	},
@@ -37043,7 +37043,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "hop_shutters";
+	id_tag = "hop_shutters";
 	name = "HoP Desk's Shutters";
 	opacity = 0
 	},
@@ -39767,7 +39767,7 @@
 "hom" = (
 /obj/machinery/door/blast/regular{
 	dir = 2;
-	id = "cChamber4pV";
+	id_tag = "cChamber4pV";
 	name = "Chamber Vent"
 	},
 /obj/machinery/shield_diffuser,

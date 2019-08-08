@@ -77,7 +77,7 @@
 	d2 = 4
 	},
 /obj/machinery/door/blast/regular{
-	id = "ab_blast";
+	id_tag = "ab_blast";
 	name = "Observation Window"
 	},
 /turf/simulated/floor,
@@ -95,7 +95,7 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/door/blast/regular{
-	id = "ab_blast";
+	id_tag = "ab_blast";
 	name = "Observation Window"
 	},
 /turf/simulated/floor,
@@ -107,7 +107,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/blast/regular{
-	id = "ab_blast";
+	id_tag = "ab_blast";
 	name = "Observation Window"
 	},
 /turf/simulated/floor,

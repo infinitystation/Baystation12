@@ -202,7 +202,7 @@
 "ay" = (
 /obj/machinery/door/blast/regular{
 	dir = 2;
-	id = "mb_torpedo_r";
+	id_tag = "mb_torpedo_r";
 	name = "Torpedo Launcher Door"
 	},
 /obj/machinery/shield_diffuser,
@@ -971,7 +971,7 @@
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/door/blast/regular{
 	dir = 2;
-	id = "mb_laser_maint";
+	id_tag = "mb_laser_maint";
 	name = "Laser Cannon Blast Door"
 	},
 /turf/simulated/floor/plating,
@@ -1736,7 +1736,7 @@
 "cP" = (
 /obj/machinery/door/blast/regular{
 	dir = 2;
-	id = "mb_torpedo_l";
+	id_tag = "mb_torpedo_l";
 	name = "Torpedo Launcher Door"
 	},
 /obj/machinery/shield_diffuser,
@@ -1914,7 +1914,7 @@
 "dg" = (
 /obj/machinery/door/blast/regular{
 	dir = 2;
-	id = "mb_reactor";
+	id_tag = "mb_reactor";
 	name = "Reactor Maintenance Hatch"
 	},
 /obj/structure/cable/yellow{

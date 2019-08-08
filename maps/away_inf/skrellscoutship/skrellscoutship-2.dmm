@@ -143,7 +143,7 @@
 "ap" = (
 /obj/machinery/door/blast/regular/open{
 	dir = 2;
-	id = "xil_airlock_right";
+	id_tag = "xil_airlock_right";
 	name = "Starboard Blast Door"
 	},
 /obj/machinery/door/airlock/external/glass{
@@ -512,7 +512,7 @@
 "bg" = (
 /obj/machinery/door/blast/regular/open{
 	dir = 2;
-	id = "xil_airlock_right";
+	id_tag = "xil_airlock_right";
 	name = "Starboard Blast Door"
 	},
 /obj/machinery/door/airlock/external/glass{
@@ -1410,7 +1410,7 @@
 	},
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
-	id = "xil_airlock";
+	id_tag = "xil_airlock";
 	name = "Rear Blast Door"
 	},
 /obj/machinery/door/airlock/external/glass{
@@ -1693,7 +1693,7 @@
 "dh" = (
 /obj/machinery/door/blast/regular/open{
 	dir = 2;
-	id = "xil_airlock_left";
+	id_tag = "xil_airlock_left";
 	name = "Larboard Blast Door"
 	},
 /obj/machinery/door/airlock/external/glass{

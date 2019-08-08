@@ -2569,7 +2569,7 @@
 /obj/machinery/door/firedoor,
 /obj/effect/wingrille_spawn/reinforced/full,
 /obj/machinery/door/blast/regular{
-	id = "las_patrol"
+	id_tag = "las_patrol"
 	},
 /turf/simulated/floor,
 /area/ship/patrol/command/lasers)
@@ -4049,7 +4049,7 @@
 /area/ship/patrol/command/hangar)
 "hL" = (
 /obj/machinery/door/blast/regular{
-	id = "torp_patrol"
+	id_tag = "torp_patrol"
 	},
 /turf/simulated/floor/airless,
 /area/ship/patrol/command/torpedos)
@@ -7065,7 +7065,7 @@
 "mK" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "prototype_exhaust_patrol"
+	id_tag = "prototype_exhaust_patrol"
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/ship/patrol/engineering/fussion)
@@ -7307,7 +7307,7 @@
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "prototype_chamber_blast_patrol"
+	id_tag = "prototype_chamber_blast_patrol"
 	},
 /turf/simulated/floor,
 /area/ship/patrol/engineering/fussion)
@@ -8178,7 +8178,7 @@
 /obj/effect/wingrille_spawn/reinforced_phoron,
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "fusion_observation_patrol"
+	id_tag = "fusion_observation_patrol"
 	},
 /obj/structure/cable/green{
 	d1 = 2;
@@ -8395,7 +8395,7 @@
 /obj/effect/wingrille_spawn/reinforced_phoron,
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "fusion_observation_patrol"
+	id_tag = "fusion_observation_patrol"
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -8568,7 +8568,7 @@
 /obj/effect/wingrille_spawn/reinforced_phoron,
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "fusion_observation_patrol"
+	id_tag = "fusion_observation_patrol"
 	},
 /turf/simulated/floor,
 /area/ship/patrol/engineering/fussion/control)
@@ -8640,7 +8640,7 @@
 "pL" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "prototype_exhaust_patrol"
+	id_tag = "prototype_exhaust_patrol"
 	},
 /obj/machinery/shield_diffuser,
 /turf/simulated/floor/reinforced/airless,

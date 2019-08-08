@@ -643,7 +643,7 @@
 "bz" = (
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
-	id = "xil_shuttle";
+	id_tag = "xil_shuttle";
 	name = "Blast Doors"
 	},
 /obj/machinery/door/firedoor/autoset,
@@ -1111,7 +1111,7 @@
 /obj/effect/wallframe_spawn/reinforced/bare,
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
-	id = "xil_bridge";
+	id_tag = "xil_bridge";
 	name = "Blast Doors"
 	},
 /obj/machinery/door/firedoor/autoset,
@@ -1184,7 +1184,7 @@
 "cz" = (
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
-	id = "xil_shuttle";
+	id_tag = "xil_shuttle";
 	name = "Blast Doors"
 	},
 /obj/effect/paint/silver,
@@ -1509,7 +1509,7 @@
 	},
 /obj/machinery/door/blast/regular/open{
 	dir = 2;
-	id = "xil_shuttle";
+	id_tag = "xil_shuttle";
 	name = "Blast Doors"
 	},
 /obj/machinery/access_button/airlock_exterior{
@@ -2198,7 +2198,7 @@
 "eD" = (
 /obj/machinery/door/blast/regular/open{
 	dir = 2;
-	id = "xil_shuttle";
+	id_tag = "xil_shuttle";
 	name = "Blast Doors"
 	},
 /obj/structure/cable/cyan{

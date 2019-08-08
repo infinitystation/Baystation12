@@ -100,7 +100,7 @@
 	density = 1;
 	dir = 8;
 	icon_state = "shutter1";
-	id = "gunboat_armory";
+	id_tag = "gunboat_armory";
 	name = "Armory Shutters";
 	opacity = 1
 	},
@@ -329,7 +329,7 @@
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "gunboat_bridge"
+	id_tag = "gunboat_bridge"
 	},
 /turf/simulated/floor/plating,
 /area/ship/gunboat/command/bridge)
@@ -1308,7 +1308,7 @@
 /obj/machinery/door/blast/regular/open{
 	dir = 2;
 	icon_state = "pdoor0";
-	id = "gunboat_sensor"
+	id_tag = "gunboat_sensor"
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/ship/gunboat/command/bridge)

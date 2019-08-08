@@ -2539,7 +2539,7 @@
 /obj/machinery/door/firedoor,
 /obj/effect/wingrille_spawn/reinforced/full,
 /obj/machinery/door/blast/regular{
-	id = "las_patrol"
+	id_tag = "las_patrol"
 	},
 /turf/simulated/floor,
 /area/ship/marksman/command/lasers)
@@ -6666,7 +6666,7 @@
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "prototype_chamber_blast_patrol"
+	id_tag = "prototype_chamber_blast_patrol"
 	},
 /turf/simulated/floor,
 /area/ship/marksman/engineering/fussion)
@@ -7605,7 +7605,7 @@
 /obj/effect/wingrille_spawn/reinforced_phoron,
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "fusion_observation_patrol"
+	id_tag = "fusion_observation_patrol"
 	},
 /obj/structure/cable/green{
 	d1 = 2;
@@ -7838,7 +7838,7 @@
 /obj/effect/wingrille_spawn/reinforced_phoron,
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "fusion_observation_patrol"
+	id_tag = "fusion_observation_patrol"
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -8041,7 +8041,7 @@
 /obj/effect/wingrille_spawn/reinforced_phoron,
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "fusion_observation_patrol"
+	id_tag = "fusion_observation_patrol"
 	},
 /turf/simulated/floor,
 /area/ship/marksman/engineering/fussion/control)
@@ -8117,7 +8117,7 @@
 "pI" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "prototype_exhaust_patrol"
+	id_tag = "prototype_exhaust_patrol"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
 	icon_state = "intact";
@@ -8139,7 +8139,7 @@
 "pL" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "prototype_exhaust_patrol"
+	id_tag = "prototype_exhaust_patrol"
 	},
 /obj/machinery/shield_diffuser,
 /turf/simulated/floor/reinforced/airless,

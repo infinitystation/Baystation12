@@ -1552,7 +1552,7 @@
 	density = 1;
 	dir = 2;
 	icon_state = "shutter1";
-	id = "parmory";
+	id_tag = "parmory";
 	name = "Armory Shutters";
 	opacity = 1
 	},
@@ -3459,7 +3459,7 @@
 	density = 1;
 	dir = 2;
 	icon_state = "closed";
-	id = "kitchenshowp";
+	id_tag = "kitchenshowp";
 	name = "kitchen showcase"
 	},
 /turf/simulated/floor/tiled/white,

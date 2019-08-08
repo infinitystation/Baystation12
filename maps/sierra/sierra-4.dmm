@@ -1568,7 +1568,7 @@
 /area/syndicate_mothership/raider_base)
 "aek" = (
 /obj/machinery/door/blast/shutters{
-	id = "raidgar";
+	id_tag = "raidgar";
 	name = "Garage Shutters"
 	},
 /turf/simulated/floor/plating,
@@ -2449,7 +2449,7 @@
 /area/centcom/specops)
 "agn" = (
 /obj/machinery/door/blast/regular{
-	id = "ert_synth_equipment";
+	id_tag = "ert_synth_equipment";
 	name = "Synthetics Modification Equipment"
 	},
 /turf/unsimulated/floor{
@@ -2624,7 +2624,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "pdoor0";
-	id = "SkipjackShuttersNorth";
+	id_tag = "SkipjackShuttersNorth";
 	name = "Blast Doors";
 	opacity = 0
 	},
@@ -2644,7 +2644,7 @@
 "agN" = (
 /obj/machinery/door/blast/regular{
 	icon_state = "pdoor1";
-	id = "ASSAULT";
+	id_tag = "ASSAULT";
 	name = "Assault Weapon Storage";
 	p_open = 0
 	},
@@ -2828,7 +2828,7 @@
 "ahh" = (
 /obj/machinery/door/blast/regular{
 	icon_state = "pdoor1";
-	id = "ASSAULT";
+	id_tag = "ASSAULT";
 	name = "Assault Armor Storage";
 	p_open = 0
 	},
@@ -2887,7 +2887,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "pdoor0";
-	id = "syndieshutters";
+	id_tag = "syndieshutters";
 	name = "Blast Doors";
 	opacity = 0
 	},
@@ -4188,7 +4188,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "shutter0";
-	id = "SkipjackShuttersWest";
+	id_tag = "SkipjackShuttersWest";
 	name = "Skipjack Shutters";
 	opacity = 0
 	},
@@ -4225,7 +4225,7 @@
 	density = 0;
 	dir = 8;
 	icon_state = "shutter0";
-	id = "SkipjackShuttersEast";
+	id_tag = "SkipjackShuttersEast";
 	name = "Skipjack Shutters";
 	opacity = 0
 	},
@@ -4878,7 +4878,7 @@
 "alr" = (
 /obj/machinery/door/blast/regular{
 	icon_state = "pdoor1";
-	id = "CREED";
+	id_tag = "CREED";
 	name = "Ready Room";
 	p_open = 0
 	},
@@ -4920,7 +4920,7 @@
 	},
 /obj/machinery/door/blast/regular/admin{
 	dir = 4;
-	id = "heavyrescue"
+	id_tag = "heavyrescue"
 	},
 /turf/unsimulated/floor{
 	icon_state = "vault";
@@ -6057,7 +6057,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "smindicate";
+	id_tag = "smindicate";
 	name = "Outer Airlock";
 	opacity = 0
 	},
@@ -6091,7 +6091,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "smindicate";
+	id_tag = "smindicate";
 	name = "Outer Airlock";
 	opacity = 0
 	},
@@ -6440,7 +6440,7 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/blast/regular{
 	icon_state = "pdoor1";
-	id = "CREED";
+	id_tag = "CREED";
 	name = "Ready Room";
 	p_open = 0
 	},
@@ -7270,7 +7270,7 @@
 /area/centcom/holding)
 "aqb" = (
 /obj/machinery/door/blast/regular{
-	id = "CentComPort";
+	id_tag = "CentComPort";
 	name = "Security Doors"
 	},
 /turf/unsimulated/floor{
@@ -7511,7 +7511,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "syndieshutters_infirmary";
+	id_tag = "syndieshutters_infirmary";
 	name = "Blast Doors";
 	opacity = 0
 	},
@@ -7587,7 +7587,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "syndieshutters_workshop";
+	id_tag = "syndieshutters_workshop";
 	name = "Blast Doors";
 	opacity = 0
 	},
@@ -7776,7 +7776,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "CentComPort";
+	id_tag = "CentComPort";
 	name = "Security Doors";
 	opacity = 0
 	},
@@ -8105,7 +8105,7 @@
 	req_access = newlist()
 	},
 /obj/machinery/door/blast/regular{
-	id = "crescent_checkpoint_access";
+	id_tag = "crescent_checkpoint_access";
 	name = "Crescent Checkpoint"
 	},
 /turf/unsimulated/floor{
@@ -8228,14 +8228,14 @@
 	dir = 8
 	},
 /obj/machinery/door/blast/regular{
-	id = "syndieshutters_telebay";
+	id_tag = "syndieshutters_telebay";
 	name = "Teleport"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/syndicate_station/start)
 "arP" = (
 /obj/machinery/door/blast/regular{
-	id = "syndieshutters_telebay";
+	id_tag = "syndieshutters_telebay";
 	name = "Teleport"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -8246,7 +8246,7 @@
 	dir = 4
 	},
 /obj/machinery/door/blast/regular{
-	id = "syndieshutters_telebay";
+	id_tag = "syndieshutters_telebay";
 	name = "Teleport"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -8485,7 +8485,7 @@
 	},
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "CentComAsteroid";
+	id_tag = "CentComAsteroid";
 	name = "Security Doors"
 	},
 /turf/simulated/floor,
@@ -9117,7 +9117,7 @@
 	req_access = newlist()
 	},
 /obj/machinery/door/blast/regular{
-	id = "crescent_checkpoint_access";
+	id_tag = "crescent_checkpoint_access";
 	name = "Crescent Checkpoint"
 	},
 /turf/unsimulated/floor{
@@ -11463,7 +11463,7 @@
 "azM" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "Thundernewblue";
+	id_tag = "Thundernewblue";
 	name = "Security Doors"
 	},
 /turf/unsimulated/floor{
@@ -11548,7 +11548,7 @@
 "azV" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "Thundernewred";
+	id_tag = "Thundernewred";
 	name = "Security Doors"
 	},
 /turf/unsimulated/floor{
@@ -12132,7 +12132,7 @@
 /obj/machinery/door/blast/regular{
 	density = 1;
 	icon_state = "pdoor1";
-	id = "ninjawindow";
+	id_tag = "ninjawindow";
 	name = "Blast Shutter";
 	opacity = 1
 	},
@@ -12361,7 +12361,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "shutter0";
-	id = "merchantdesk";
+	id_tag = "merchantdesk";
 	name = "Merchant Desk Shutters";
 	opacity = 0
 	},
@@ -12502,7 +12502,7 @@
 /area/rescue_base/base)
 "aCu" = (
 /obj/machinery/door/blast/regular/admin{
-	id = "heavyrescue";
+	id_tag = "heavyrescue";
 	name = "Restricted Equipment"
 	},
 /turf/unsimulated/floor{
@@ -12891,7 +12891,7 @@
 "aDm" = (
 /obj/machinery/door/blast/regular/admin{
 	dir = 4;
-	id = "standardrescue";
+	id_tag = "standardrescue";
 	name = "Heavy Equipment"
 	},
 /turf/unsimulated/floor{
@@ -13009,7 +13009,7 @@
 /area/rescue_base/base)
 "aDz" = (
 /obj/machinery/door/blast/regular/admin{
-	id = "rescueteleport";
+	id_tag = "rescueteleport";
 	name = "Teleport"
 	},
 /turf/unsimulated/floor{
@@ -14447,7 +14447,7 @@
 /area/rescue_base/base)
 "aGy" = (
 /obj/machinery/door/blast/regular/admin{
-	id = "standardrescue";
+	id_tag = "standardrescue";
 	name = "EVA"
 	},
 /turf/unsimulated/floor{
@@ -14991,7 +14991,7 @@
 "aIa" = (
 /obj/machinery/door/blast/regular/admin{
 	dir = 2;
-	id = "rescuegarage"
+	id_tag = "rescuegarage"
 	},
 /turf/unsimulated/floor{
 	icon_state = "vault";
@@ -15626,7 +15626,7 @@
 "aJr" = (
 /obj/machinery/door/blast/regular/admin{
 	dir = 4;
-	id = "rescuegarage"
+	id_tag = "rescuegarage"
 	},
 /turf/unsimulated/floor{
 	icon_state = "vault";
@@ -16637,7 +16637,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "pdoor0";
-	id = "rescuebridge";
+	id_tag = "rescuebridge";
 	name = "Cockpit Blast Shutters";
 	opacity = 0
 	},
@@ -16659,7 +16659,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "rescuedock";
+	id_tag = "rescuedock";
 	name = "Blast Shutters";
 	opacity = 0
 	},
@@ -17091,7 +17091,7 @@
 	locked = 1
 	},
 /obj/machinery/door/blast/regular{
-	id = "gg_blast";
+	id_tag = "gg_blast";
 	name = "Heavy Blastdors"
 	},
 /turf/simulated/floor,
@@ -17159,7 +17159,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "rescuebridge";
+	id_tag = "rescuebridge";
 	name = "Cockpit Blast Shutters";
 	opacity = 0
 	},
@@ -17230,7 +17230,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "rescueeva";
+	id_tag = "rescueeva";
 	name = "Blast Shutters";
 	opacity = 0
 	},
@@ -18019,7 +18019,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "rescueinfirm";
+	id_tag = "rescueinfirm";
 	name = "Blast Shutters";
 	opacity = 0
 	},
@@ -18643,7 +18643,7 @@
 "aRf" = (
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "supply_shuttle";
+	id_tag = "supply_shuttle";
 	name = "Supply Drone Shutters"
 	},
 /obj/machinery/button/blast_door{
@@ -18817,7 +18817,7 @@
 "aRx" = (
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "supply_shuttle";
+	id_tag = "supply_shuttle";
 	name = "Supply Drone Shutters"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -18971,7 +18971,7 @@
 "aRS" = (
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "supply_shuttle";
+	id_tag = "supply_shuttle";
 	name = "Supply Drone Shutters"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -18987,7 +18987,7 @@
 "aRT" = (
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "supply_shuttle";
+	id_tag = "supply_shuttle";
 	name = "Supply Drone Shutters"
 	},
 /obj/machinery/button/blast_door{
@@ -19332,7 +19332,7 @@
 	},
 /obj/effect/floor_decal/industrial/warning,
 /obj/machinery/door/blast/regular{
-	id = "syndicate_elite_mech_room";
+	id_tag = "syndicate_elite_mech_room";
 	name = "Mech Room Door"
 	},
 /turf/unsimulated/floor{
@@ -19527,7 +19527,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/black,
 /obj/machinery/door/blast/regular{
-	id = "gg_blast";
+	id_tag = "gg_blast";
 	name = "Heavy Blastdors"
 	},
 /turf/simulated/floor,
@@ -19540,7 +19540,7 @@
 	d2 = 4
 	},
 /obj/machinery/door/blast/regular{
-	id = "ab_blast";
+	id_tag = "ab_blast";
 	name = "Observation Window"
 	},
 /turf/simulated/floor,
@@ -19558,7 +19558,7 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/door/blast/regular{
-	id = "ab_blast";
+	id_tag = "ab_blast";
 	name = "Observation Window"
 	},
 /turf/simulated/floor,
@@ -19570,7 +19570,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/blast/regular{
-	id = "ab_blast";
+	id_tag = "ab_blast";
 	name = "Observation Window"
 	},
 /turf/simulated/floor,
@@ -19837,7 +19837,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "shutter0";
-	id = "merchantshuttle";
+	id_tag = "merchantshuttle";
 	name = "Merchant Window Shutters";
 	opacity = 0
 	},
@@ -20473,7 +20473,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "shutter0";
-	id = "merchantdesk";
+	id_tag = "merchantdesk";
 	name = "Merchant Desk Shutters";
 	opacity = 0
 	},
@@ -21364,7 +21364,7 @@
 "aWB" = (
 /obj/machinery/door/blast/shutters{
 	dir = 8;
-	id = "merchantbase";
+	id_tag = "merchantbase";
 	name = "Merchant Loading Shutters"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -26308,7 +26308,7 @@
 	},
 /obj/machinery/door/blast/regular{
 	icon_state = "pdoor1";
-	id = "syndicate_elite";
+	id_tag = "syndicate_elite";
 	name = "Front Hull Door";
 	opacity = 1
 	},
@@ -26447,7 +26447,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "ninjadoor";
+	id_tag = "ninjadoor";
 	name = "Blast Door";
 	opacity = 0
 	},
@@ -26632,7 +26632,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "syndicate_elite";
+	id_tag = "syndicate_elite";
 	name = "Side Hull Door";
 	opacity = 0
 	},
@@ -26712,7 +26712,7 @@
 	dir = 4
 	},
 /obj/machinery/door/blast/regular{
-	id = "gg_blast";
+	id_tag = "gg_blast";
 	name = "Heavy Blastdors"
 	},
 /turf/simulated/floor,
@@ -26744,7 +26744,7 @@
 	locked = 1
 	},
 /obj/machinery/door/blast/regular{
-	id = "gg_blast";
+	id_tag = "gg_blast";
 	name = "Heavy Blastdors"
 	},
 /turf/simulated/floor,
@@ -27093,7 +27093,7 @@
 "bjN" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular{
-	id = "ab_blast";
+	id_tag = "ab_blast";
 	name = "Observation Window"
 	},
 /turf/simulated/floor,
@@ -27108,7 +27108,7 @@
 	},
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "gg_blast";
+	id_tag = "gg_blast";
 	name = "Heavy Blastdors"
 	},
 /turf/simulated/floor,
@@ -27539,7 +27539,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "pdoor0";
-	id = "Thundernewred";
+	id_tag = "Thundernewred";
 	name = "Security Doors";
 	opacity = 0
 	},
@@ -28242,7 +28242,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "pdoor0";
-	id = "Thundernewblue";
+	id_tag = "Thundernewblue";
 	name = "Security Doors";
 	opacity = 0
 	},

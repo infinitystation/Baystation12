@@ -14,27 +14,27 @@
 "ac" = (
 /obj/machinery/conveyor,
 /obj/machinery/door/blast/regular{
-	id = "immadora"
+	id_tag = "immadora"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/tajsciship/hangar)
 "ad" = (
 /obj/machinery/door/blast/regular{
-	id = "immadora"
+	id_tag = "immadora"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/ship/tajsciship/hangar)
 "ae" = (
 /obj/machinery/conveyor,
 /obj/machinery/door/blast/regular{
-	id = "immadora"
+	id_tag = "immadora"
 	},
 /obj/machinery/door/airlock/autoname/civilian,
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/tajsciship/hangar)
 "af" = (
 /obj/machinery/door/blast/regular{
-	id = "immadora"
+	id_tag = "immadora"
 	},
 /obj/machinery/door/airlock/autoname/civilian,
 /turf/simulated/floor/tiled/techmaint,
@@ -489,7 +489,7 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
 	dir = 2;
-	id = "immashata"
+	id_tag = "immashata"
 	},
 /turf/simulated/floor/plating,
 /area/ship/tajsciship/shuttle)
@@ -668,7 +668,7 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
-	id = "immashata"
+	id_tag = "immashata"
 	},
 /turf/simulated/floor/plating,
 /area/ship/tajsciship/shuttle)
@@ -910,7 +910,7 @@
 	},
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
-	id = "immadora"
+	id_tag = "immadora"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/ship/tajsciship/shuttle)
@@ -1008,7 +1008,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "cz";
+	id_tag = "cz";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -1044,10 +1044,10 @@
 /area/ship/tajsciship/shuttle)
 "cH" = (
 /obj/machinery/door/blast/regular/open{
-	id = "immashata"
+	id_tag = "immashata"
 	},
 /obj/machinery/door/blast/regular{
-	id = "immadora"
+	id_tag = "immadora"
 	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/ship/tajsciship/shuttle)
@@ -1285,7 +1285,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "cz1";
+	id_tag = "cz1";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -1609,10 +1609,10 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/blast/regular/open{
-	id = "immashata"
+	id_tag = "immashata"
 	},
 /obj/machinery/door/blast/regular{
-	id = "immadora"
+	id_tag = "immadora"
 	},
 /obj/effect/shuttle_landmark/tajscishuttle,
 /turf/simulated/floor/tiled/steel_ridged,
@@ -1695,7 +1695,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "cz";
+	id_tag = "cz";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -1790,7 +1790,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/blast/regular{
-	id = "lold"
+	id_tag = "lold"
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -2045,7 +2045,7 @@
 	},
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
-	id = "eff"
+	id_tag = "eff"
 	},
 /obj/machinery/door/airlock/autoname/civilian,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -2541,7 +2541,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "cz1";
+	id_tag = "cz1";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -2632,7 +2632,7 @@
 /area/ship/tajsciship/solars)
 "fV" = (
 /obj/machinery/door/blast/regular{
-	id = "iron"
+	id_tag = "iron"
 	},
 /turf/simulated/floor/tiled/old_cargo,
 /area/ship/tajsciship/solars)
@@ -5214,7 +5214,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "cz2";
+	id_tag = "cz2";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -5235,7 +5235,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "cz2";
+	id_tag = "cz2";
 	name = "Protective Shutters";
 	opacity = 0
 	},
@@ -5264,7 +5264,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/blast/regular{
-	id = "lold"
+	id_tag = "lold"
 	},
 /obj/machinery/door/airlock/autoname/civilian,
 /turf/simulated/floor/tiled/monotile,
@@ -5874,7 +5874,7 @@
 "mT" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "away_tajsciship_sensor";
+	id_tag = "away_tajsciship_sensor";
 	name = "sensor blast door"
 	},
 /turf/simulated/floor/airless,
@@ -5962,7 +5962,7 @@
 /area/ship/tajsciship/solars)
 "nd" = (
 /obj/machinery/door/blast/regular{
-	id = "saa"
+	id_tag = "saa"
 	},
 /turf/simulated/floor/tiled/old_cargo,
 /area/ship/tajsciship/solars)
@@ -6003,7 +6003,7 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/door/blast/regular{
-	id = "saa"
+	id_tag = "saa"
 	},
 /turf/simulated/floor/tiled/old_cargo,
 /area/ship/tajsciship/solars)
@@ -6029,7 +6029,7 @@
 "nm" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "saa"
+	id_tag = "saa"
 	},
 /obj/machinery/door/airlock/autoname/civilian,
 /turf/simulated/floor/tiled/old_cargo,
@@ -6270,10 +6270,10 @@
 "nN" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/door/blast/regular/open{
-	id = "sha-a"
+	id_tag = "sha-a"
 	},
 /obj/machinery/door/blast/regular{
-	id = "saa"
+	id_tag = "saa"
 	},
 /turf/simulated/floor/tiled/old_cargo,
 /area/ship/tajsciship/solars)
@@ -6371,7 +6371,7 @@
 "ob" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "iron"
+	id_tag = "iron"
 	},
 /turf/simulated/floor/airless,
 /area/ship/tajsciship/solars)
@@ -6552,7 +6552,7 @@
 "os" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "sex1"
+	id_tag = "sex1"
 	},
 /turf/simulated/floor/airless,
 /area/ship/tajsciship/solars)
@@ -6643,7 +6643,7 @@
 	icon_state = "intact"
 	},
 /obj/machinery/door/blast/regular{
-	id = "sha-a"
+	id_tag = "sha-a"
 	},
 /turf/simulated/floor/tiled/old_cargo,
 /area/ship/tajsciship/solars)
