@@ -28936,7 +28936,6 @@
 "aVf" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/stock_parts/circuitboard/mecha_control,
 /obj/item/weapon/stock_parts/circuitboard/robotics,
 /turf/simulated/floor/tiled/techmaint,
 /area/storage/tech)
