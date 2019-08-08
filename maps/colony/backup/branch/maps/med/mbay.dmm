@@ -5666,7 +5666,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Chief Medical Officer";
-	sortType = "Chief Medical Officer"
+	sort_type = "Chief Medical Officer"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/mbay/cmo)
@@ -5702,7 +5702,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Medical Equipment";
-	sortType = "Medical Equipment"
+	sort_type = "Medical Equipment"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/mbay/snaryaga)

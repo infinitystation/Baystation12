@@ -1225,7 +1225,7 @@
 /area/shuttle/administration/centcom)
 "ado" = (
 /obj/machinery/mech_recharger,
-/obj/mecha/working/ripley/mining{
+/mob/living/exosuit/premade/light{
 	internals_req_access = list("ACCESS_SYNDICATE")
 	},
 /turf/simulated/floor/tiled/dark,
@@ -2799,7 +2799,7 @@
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "ahe" = (
-/obj/mecha/combat/gygax/dark,
+/mob/living/exosuit/premade/heavy,
 /obj/machinery/camera/network/ert{
 	c_tag = "Assault Armor North"
 	},
@@ -3626,7 +3626,7 @@
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "aiX" = (
-/obj/mecha/medical/odysseus/loaded,
+/mob/living/exosuit/premade/light,
 /obj/machinery/mech_recharger,
 /turf/unsimulated/floor{
 	icon_state = "plating";
@@ -4233,7 +4233,7 @@
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "akb" = (
-/obj/mecha/working/ripley/firefighter,
+/mob/living/exosuit/premade/powerloader,
 /obj/machinery/mech_recharger,
 /turf/unsimulated/floor{
 	icon_state = "plating";
@@ -4746,12 +4746,11 @@
 	},
 /area/syndicate_mothership)
 "ald" = (
-/obj/machinery/button/alternate/door{
+/obj/machinery/button/alternate/door/bolts{
 	id = "syndie_toilet";
 	name = "lock";
 	pixel_y = -26;
-	req_access = list("ACCESS_SYNDICATE");
-	specialfunctions = 4
+	req_access = list("ACCESS_SYNDICATE")
 	},
 /turf/unsimulated/floor{
 	icon_state = "freezerfloor";
@@ -4824,7 +4823,6 @@
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "alm" = (
-/obj/mecha/working/hoverpod,
 /obj/machinery/mech_recharger,
 /turf/unsimulated/floor{
 	icon_state = "plating";
@@ -7844,13 +7842,12 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/syndicate_station/start)
 "arf" = (
-/obj/machinery/button/alternate/door{
+/obj/machinery/button/alternate/door/bolts{
 	dir = 1;
 	id = "syndieshutters_nuke";
 	name = "Nuclear Storage Bolts";
 	pixel_y = -20;
-	req_access = list("ACCESS_SYNDICATE");
-	specialfunctions = 4
+	req_access = list("ACCESS_SYNDICATE")
 	},
 /obj/effect/floor_decal/techfloor,
 /obj/effect/floor_decal/corner_techfloor_grid{
@@ -15635,7 +15632,7 @@
 /area/rescue_base/base)
 "aJs" = (
 /obj/machinery/mech_recharger,
-/obj/mecha/medical/odysseus/loaded,
+/mob/living/exosuit/premade/light,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 8
@@ -15769,7 +15766,7 @@
 /area/rescue_base/base)
 "aJK" = (
 /obj/machinery/mech_recharger,
-/obj/mecha/working/ripley/firefighter,
+/mob/living/exosuit/premade/powerloader,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 8
@@ -16108,7 +16105,6 @@
 /area/rescue_base/base)
 "aKi" = (
 /obj/machinery/mech_recharger,
-/obj/mecha/working/hoverpod,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 8
@@ -16184,7 +16180,7 @@
 /turf/space,
 /area/space)
 "aKt" = (
-/obj/mecha/combat/gygax/dark,
+/mob/living/exosuit/premade/heavy,
 /obj/machinery/mech_recharger,
 /turf/unsimulated/floor{
 	icon_state = "vault";
@@ -19698,7 +19694,7 @@
 /area/shuttle/syndicate_elite/mothership)
 "aTw" = (
 /obj/machinery/mech_recharger,
-/obj/mecha/combat/marauder/mauler,
+/mob/living/exosuit/premade/combat,
 /obj/effect/floor_decal/corner/black{
 	icon_state = "corner_white";
 	dir = 5
@@ -19718,7 +19714,7 @@
 /area/syndicate_mothership/elite_squad)
 "aTy" = (
 /obj/machinery/mech_recharger,
-/obj/mecha/combat/marauder/mauler,
+/mob/living/exosuit/premade/combat,
 /obj/effect/floor_decal/corner/black{
 	icon_state = "corner_white";
 	dir = 5
@@ -20184,7 +20180,7 @@
 /area/centcom/specops)
 "aUq" = (
 /obj/machinery/mech_recharger,
-/obj/mecha/combat/marauder/mauler,
+/mob/living/exosuit/premade/combat,
 /obj/effect/floor_decal/corner/black{
 	icon_state = "corner_white";
 	dir = 10
@@ -21104,7 +21100,6 @@
 /turf/unsimulated/wall/fakeglass,
 /area/wizard_station)
 "aWg" = (
-/obj/item/weapon/soap/deluxe,
 /turf/unsimulated/floor{
 	dir = 2;
 	icon = 'icons/misc/beach.dmi';
@@ -22582,7 +22577,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/merchant_station)
 "aZv" = (
-/obj/effect/decal/mecha_wreckage/hoverpod,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
@@ -26869,13 +26863,12 @@
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
-/obj/machinery/button/alternate/door{
+/obj/machinery/button/alternate/door/bolts{
 	dir = 8;
 	id = "blockdoor";
 	name = "Airlock Bolt Control";
 	pixel_x = -24;
-	req_access = list("ACCESS_VAULT");
-	specialfunctions = 4
+	req_access = list("ACCESS_VAULT")
 	},
 /turf/simulated/floor,
 /area/smugglers/base)

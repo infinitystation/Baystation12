@@ -4448,7 +4448,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Hydroponics";
-	sortType = "Hydroponics"
+	sort_type = "Hydroponics"
 	},
 /turf/simulated/floor/lino,
 /area/crew_quarters/bar)
@@ -6407,7 +6407,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 1;
 	name = "Kitchen";
-	sortType = "Kitchen"
+	sort_type = "Kitchen"
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/bar)
@@ -6929,7 +6929,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 1;
 	name = "Bar";
-	sortType = "Bar"
+	sort_type = "Bar"
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/bar)
@@ -14497,7 +14497,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 4;
 	name = "Engineering Bay";
-	sortType = "Engineering Bay"
+	sort_type = "Engineering Bay"
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
@@ -23636,7 +23636,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Chief Engineer";
-	sortType = "Chief Engineer"
+	sort_type = "Chief Engineer"
 	},
 /turf/simulated/floor/plating,
 /area/engineering/locker_room)

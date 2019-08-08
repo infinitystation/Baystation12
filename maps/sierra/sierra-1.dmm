@@ -654,7 +654,6 @@
 /obj/machinery/air_sensor{
 	frequency = 1441;
 	id_tag = "toxins_sensor";
-	output = 63
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/shuttle/petrov/ship)
@@ -3458,7 +3457,6 @@
 /area/maintenance/thirddeck/port)
 "fZ" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/effect/decal/mecha_wreckage/hoverpod,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/thirddeck/port)
 "ga" = (
@@ -15040,7 +15038,7 @@
 	},
 /obj/machinery/atmospherics/valve/digital{
 	dir = 2;
-	id = "RE1F";
+	id_tag = "RE1F";
 	name = "RE1 digital valve"
 	},
 /turf/simulated/floor/reinforced,
@@ -17152,7 +17150,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 1;
 	name = "Expedition Prep";
-	sortType = "Expedition Prep"
+	sort_type = "Expedition Prep"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/aft)
@@ -17543,7 +17541,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 1;
 	name = "Deck Officer";
-	sortType = "Deck Officer"
+	sort_type = "Deck Officer"
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
@@ -21003,7 +21001,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 8;
 	name = "Pathfinder's Office";
-	sortType = "Pathfinder's Office"
+	sort_type = "Pathfinder's Office"
 	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/center)
@@ -23711,7 +23709,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 1;
 	name = "Commissary";
-	sortType = "Commissary"
+	sort_type = "Commissary"
 	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/fore)
@@ -26250,13 +26248,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/button/alternate/door{
+/obj/machinery/button/alternate/door/bolts{
 	dir = 1;
 	id_tag = "bsa_safe_room";
 	name = "Lock";
 	pixel_x = -6;
 	pixel_y = -21;
-	specialfunctions = 4
 	},
 /obj/structure/hygiene/sink{
 	dir = 1;
@@ -26646,7 +26643,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 8;
 	name = "Sorting Office";
-	sortType = "Sorting Office"
+	sort_type = "Sorting Office"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -27468,7 +27465,7 @@
 /obj/random/trash,
 /obj/random/maintenance,
 /obj/random/maintenance/clean,
-/obj/item/weapon/soap/syndie,
+/obj/item/weapon/soap,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aft)
 "RU" = (
@@ -28199,7 +28196,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 8;
 	name = "Security Checkpoint";
-	sortType = "Security Checkpoint"
+	sort_type = "Security Checkpoint"
 	},
 /obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,

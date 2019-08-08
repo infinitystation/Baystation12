@@ -502,7 +502,7 @@
 "aaS" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "ship_sensor";
+	id_tag = "ship_sensor";
 	name = "Ship Sensor Blastdoor"
 	},
 /obj/machinery/camera/network/command{
@@ -852,7 +852,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter";
 	opacity = 0
 	},
@@ -1694,7 +1694,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "infirmaryquar";
+	id_tag = "infirmaryquar";
 	name = "Infirmary Emergency Quarantine Shutters";
 	opacity = 0
 	},
@@ -2343,7 +2343,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "Skynet_launch";
+	id_tag = "Skynet_launch";
 	name = "Mech Bay";
 	opacity = 0
 	},
@@ -2360,7 +2360,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "Skynet_launch";
+	id_tag = "Skynet_launch";
 	name = "Mech Bay";
 	opacity = 0
 	},
@@ -2726,7 +2726,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "infirmaryquar";
+	id_tag = "infirmaryquar";
 	name = "Infirmary Emergency Quarantine Shutters";
 	opacity = 0
 	},
@@ -3512,12 +3512,12 @@
 "afW" = (
 /obj/machinery/door/blast/regular{
 	dir = 2;
-	id = "d3portnacelle"
+	id_tag = "d3portnacelle"
 	},
 /obj/machinery/atmospherics/valve/digital{
 	dir = 2;
 	frequency = 1490;
-	id = "RE3F";
+	id_tag = "RE3F";
 	name = "RE3 digital valve"
 	},
 /obj/effect/wallframe_spawn/reinforced_phoron/osmium,
@@ -5315,7 +5315,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 4;
 	name = "Drone Station";
-	sortType = "Drone Station"
+	sort_type = "Drone Station"
 	},
 /turf/simulated/floor/plating,
 /turf/simulated/open,
@@ -11206,7 +11206,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 1;
 	name = "Bridge";
-	sortType = "Bridge"
+	sort_type = "Bridge"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/bridge)
@@ -14613,7 +14613,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Internal Affairs Agent";
-	sortType = "Internal Affairs Agent"
+	sort_type = "Internal Affairs Agent"
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/center)
@@ -15303,7 +15303,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Forensic Office";
-	sortType = "Forensic Office"
+	sort_type = "Forensic Office"
 	},
 /turf/simulated/floor/plating,
 /area/security/sierra/hallway/aft)
@@ -16654,7 +16654,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 8;
 	name = "Head Of Security";
-	sortType = "Head Of Security"
+	sort_type = "Head Of Security"
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	icon_state = "steel_decals4";
@@ -17158,7 +17158,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 8;
 	name = "Security Equipment";
-	sortType = "Security Equipment"
+	sort_type = "Security Equipment"
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	icon_state = "steel_decals4";
@@ -17399,7 +17399,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 4;
 	name = "Research Equipment";
-	sortType = "Research Equipment"
+	sort_type = "Research Equipment"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
@@ -17532,7 +17532,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Chapel";
-	sortType = "Chapel"
+	sort_type = "Chapel"
 	},
 /obj/effect/landmark{
 	name = "lightsout"
@@ -18955,7 +18955,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Chief Medical Officer";
-	sortType = "Chief Medical Officer"
+	sort_type = "Chief Medical Officer"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -19032,7 +19032,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 4;
 	name = "Research Development";
-	sortType = "Research and Development"
+	sort_type = "Research and Development"
 	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
@@ -19227,7 +19227,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 4;
 	name = "Robotics Laboratory";
-	sortType = "Robotics Laboratory"
+	sort_type = "Robotics Laboratory"
 	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
@@ -19582,7 +19582,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 2;
 	name = "Warden";
-	sortType = "Warden"
+	sort_type = "Warden"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/sierra/hallway/port)
@@ -21765,7 +21765,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 1;
 	name = "Captain";
-	sortType = "Captain"
+	sort_type = "Captain"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/floor/tiled,
@@ -22063,7 +22063,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 2;
 	name = "Head of Personnel";
-	sortType = "Head of Personnel"
+	sort_type = "Head of Personnel"
 	},
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
@@ -30886,7 +30886,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Conference Room";
-	sortType = "Conference Room"
+	sort_type = "Conference Room"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
@@ -31875,7 +31875,7 @@
 	density = 0;
 	dir = 1;
 	icon_state = "pdoor0";
-	id = "misclab";
+	id_tag = "misclab";
 	name = "Test Chamber Blast Doors";
 	opacity = 0
 	},
@@ -31891,12 +31891,11 @@
 /area/thruster/d1port)
 "aTE" = (
 /obj/machinery/door/blast/regular{
-	id = "d4portnacelle"
+	id_tag = "d4portnacelle"
 	},
 /obj/machinery/atmospherics/valve/digital{
 	dir = 2;
-	frequency = 1490;
-	id = "RE4F";
+	id_tag = "RE4F";
 	name = "RE4 digital valve"
 	},
 /obj/effect/wallframe_spawn/reinforced_phoron/osmium,
@@ -31916,7 +31915,7 @@
 "aTG" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /obj/machinery/door/blast/regular{
-	id = "d4portnacelle"
+	id_tag = "d4portnacelle"
 	},
 /obj/effect/wallframe_spawn/reinforced_phoron/osmium,
 /turf/simulated/floor/reinforced,
@@ -32195,7 +32194,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "infirmaryquar";
+	id_tag = "infirmaryquar";
 	name = "Infirmary Emergency Quarantine Shutters";
 	opacity = 0
 	},
@@ -32299,7 +32298,7 @@
 /area/maintenance/substation/firstdeck)
 "aUj" = (
 /obj/structure/curtain/open/shower,
-/obj/item/weapon/soap/deluxe,
+/obj/item/weapon/soap,
 /obj/item/weapon/bikehorn/rubberducky,
 /obj/structure/hygiene/shower{
 	dir = 4;
@@ -32482,7 +32481,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter";
 	opacity = 0
 	},
@@ -32680,7 +32679,7 @@
 	req_access = list("ACCESS_VAULT")
 	},
 /obj/machinery/door/blast/regular{
-	id = "selfdestruct";
+	id_tag = "selfdestruct";
 	name = "Self Destruct Access Blast Door"
 	},
 /obj/machinery/door/firedoor,
@@ -33048,7 +33047,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter";
 	opacity = 0
 	},
@@ -34341,7 +34340,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter";
 	opacity = 0
 	},
@@ -36533,7 +36532,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Chemistry";
-	sortType = "Chemistry"
+	sort_type = "Chemistry"
 	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
@@ -36553,7 +36552,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 4;
 	name = "Research Director";
-	sortType = "Research Director"
+	sort_type = "Research Director"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -36570,7 +36569,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 4;
 	name = "Xenobotany";
-	sortType = "Xenobotany"
+	sort_type = "Xenobotany"
 	},
 /obj/effect/catwalk_plated,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -36725,7 +36724,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Medical Equipment";
-	sortType = "Medical Equipment"
+	sort_type = "Medical Equipment"
 	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
@@ -37036,7 +37035,7 @@
 "hom" = (
 /obj/machinery/door/blast/regular{
 	dir = 2;
-	id = "cChamber4pV";
+	id_tag = "cChamber4pV";
 	name = "Chamber Vent"
 	},
 /obj/machinery/shield_diffuser,
@@ -37442,7 +37441,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "heads_meeting";
+	id_tag = "heads_meeting";
 	name = "Meeting Room Window Shutters";
 	opacity = 0
 	},

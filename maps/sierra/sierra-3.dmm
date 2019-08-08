@@ -874,13 +874,12 @@
 	icon_state = "steel_decals_central6";
 	dir = 4
 	},
-/obj/machinery/button/alternate/door{
+/obj/machinery/button/alternate/door/bolts{
 	dir = 8;
 	id = "capt_valaut_door";
 	name = "Captain Room Bolt Control";
 	pixel_x = 24;
 	req_access = list("ACCESS_VAULT");
-	specialfunctions = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled,
@@ -2118,13 +2117,12 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/button/alternate/door{
+/obj/machinery/button/alternate/door/bolts{
 	dir = 8;
 	id = "selfsddoor";
 	name = "Self Destruct Airlock Bolt Control";
 	pixel_x = 24;
-	req_access = list("ACCESS_VAULT");
-	specialfunctions = 4
+	req_access = list("ACCESS_VAULT")
 	},
 /obj/machinery/door/airlock/vault/bolted{
 	id_tag = "selfsddoor";
@@ -3469,8 +3467,7 @@
 	},
 /obj/machinery/atmospherics/valve/digital{
 	dir = 2;
-	frequency = 1490;
-	id = "RE3F";
+	id_tag = "RE3F";
 	name = "RE3 digital valve"
 	},
 /obj/effect/wallframe_spawn/reinforced_phoron/osmium,
@@ -6270,7 +6267,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 4;
 	name = "Drone Station";
-	sortType = "Drone Station"
+	sort_type = "Drone Station"
 	},
 /turf/simulated/floor/plating,
 /turf/simulated/open,
@@ -8666,7 +8663,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 4;
 	name = "Head of Personnel";
-	sortType = "Head of Personnel"
+	sort_type = "Head of Personnel"
 	},
 /obj/structure/cable/green{
 	d1 = 2;
@@ -11444,13 +11441,12 @@
 	icon_state = "techfloor_edges";
 	dir = 4
 	},
-/obj/machinery/button/alternate/door{
+/obj/machinery/button/alternate/door/bolts{
 	dir = 4;
 	id = "panicbunker";
 	name = "safe room door-control";
 	pixel_x = -24;
-	req_access = list("ACCESS_BRIDGE");
-	specialfunctions = 4
+	req_access = list("ACCESS_BRIDGE")
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -14402,7 +14398,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Internal Affairs Agent";
-	sortType = "Internal Affairs Agent"
+	sort_type = "Internal Affairs Agent"
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/center)
@@ -15084,7 +15080,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Forensic Office";
-	sortType = "Forensic Office"
+	sort_type = "Forensic Office"
 	},
 /turf/simulated/floor/plating,
 /area/security/sierra/hallway/aft)
@@ -16917,7 +16913,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 8;
 	name = "Security Equipment";
-	sortType = "Security Equipment"
+	sort_type = "Security Equipment"
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	icon_state = "steel_decals4";
@@ -17158,7 +17154,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 4;
 	name = "Research Equipment";
-	sortType = "Research Equipment"
+	sort_type = "Research Equipment"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
@@ -17303,7 +17299,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Chapel";
-	sortType = "Chapel"
+	sort_type = "Chapel"
 	},
 /obj/effect/landmark{
 	name = "lightsout"
@@ -18772,7 +18768,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Chief Medical Officer";
-	sortType = "Chief Medical Officer"
+	sort_type = "Chief Medical Officer"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -18849,7 +18845,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 4;
 	name = "Research Development";
-	sortType = "Research and Development"
+	sort_type = "Research and Development"
 	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
@@ -19040,7 +19036,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 4;
 	name = "Robotics Laboratory";
-	sortType = "Robotics Laboratory"
+	sort_type = "Robotics Laboratory"
 	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
@@ -19401,7 +19397,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 2;
 	name = "Warden";
-	sortType = "Warden"
+	sort_type = "Warden"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/sierra/hallway/port)
@@ -31479,8 +31475,7 @@
 	},
 /obj/machinery/atmospherics/valve/digital{
 	dir = 2;
-	frequency = 1490;
-	id = "RE4F";
+	id_tag = "RE4F";
 	name = "RE4 digital valve"
 	},
 /obj/effect/wallframe_spawn/reinforced_phoron/osmium,
@@ -38085,7 +38080,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 8;
 	name = "Head Of Security";
-	sortType = "Head Of Security"
+	sort_type = "Head Of Security"
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	icon_state = "steel_decals4";
@@ -39397,7 +39392,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Chemistry";
-	sortType = "Chemistry"
+	sort_type = "Chemistry"
 	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
@@ -39417,7 +39412,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 4;
 	name = "Research Director";
-	sortType = "Research Director"
+	sort_type = "Research Director"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -39434,7 +39429,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 4;
 	name = "Xenobotany";
-	sortType = "Xenobotany"
+	sort_type = "Xenobotany"
 	},
 /obj/effect/catwalk_plated,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -39581,7 +39576,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Medical Equipment";
-	sortType = "Medical Equipment"
+	sort_type = "Medical Equipment"
 	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)

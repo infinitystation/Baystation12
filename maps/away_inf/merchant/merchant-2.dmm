@@ -1175,7 +1175,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/space)
 "cN" = (
-/obj/mecha/working/ripley,
+/mob/living/exosuit/premade/powerloader,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/space)
 "cO" = (
@@ -1187,7 +1187,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/space)
 "cQ" = (
-/obj/mecha/combat/durand,
+/mob/living/exosuit/premade/heavy,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/space)
 "cR" = (
