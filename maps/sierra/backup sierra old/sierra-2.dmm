@@ -9621,7 +9621,7 @@
 /turf/simulated/floor/plating,
 /area/engineering/engine_monitoring)
 "apE" = (
-/obj/machinery/button/driver{
+/obj/machinery/button/mass_driver{
 	dir = 1;
 	id = "enginecore";
 	name = "Emergency Core Eject";

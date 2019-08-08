@@ -20647,8 +20647,8 @@
 /obj/machinery/computer/air_control{
 	dir = 8;
 	name = "Atmospheric Sensors";
-
-	sensors = list("calypso_out")
+	sensor_tag = "calypso_out"
+	sensor_name = "Charon Out"
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 6;
