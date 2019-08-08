@@ -1611,7 +1611,7 @@
 /obj/item/stack/material/ocp/ten,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/item/weapon/tank/hydrogen,
-/obj/item/weapon/circuitboard/bluespacerelay,
+/obj/item/weapon/stock_parts/circuitboard/bluespacerelay,
 /turf/simulated/floor/tiled/monotile,
 /area/ship/scrap/engineering/storage/tech)
 "dn" = (

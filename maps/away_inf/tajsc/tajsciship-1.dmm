@@ -1490,9 +1490,9 @@
 "dA" = (
 /obj/structure/closet/crate,
 /obj/item/weapon/smes_coil/super_capacity,
-/obj/item/weapon/circuitboard/smes,
+/obj/item/weapon/stock_parts/circuitboard/smes,
 /obj/item/weapon/smes_coil/super_io,
-/obj/item/weapon/circuitboard/smes,
+/obj/item/weapon/stock_parts/circuitboard/smes,
 /obj/item/stack/cable_coil,
 /obj/item/weapon/cell/potato,
 /obj/item/weapon/cell/standard,
@@ -1501,8 +1501,8 @@
 /area/ship/tajsciship/storage)
 "dB" = (
 /obj/structure/closet/crate,
-/obj/item/weapon/circuitboard/solar_control,
-/obj/item/weapon/circuitboard/solar_control,
+/obj/item/weapon/stock_parts/circuitboard/solar_control,
+/obj/item/weapon/stock_parts/circuitboard/solar_control,
 /obj/item/weapon/cell/high,
 /obj/item/weapon/cell/high,
 /obj/item/weapon/cell/high,
