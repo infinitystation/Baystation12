@@ -217,13 +217,6 @@
 	build_path = /obj/item/weapon/stock_parts/circuitboard/telesci_pad
 	sort_string = "HAAAF"
 
-/datum/design/circuit/bsa
-	name = "bluespace artillery control"
-	id = "bsa"
-	req_tech = list(TECH_ENGINEERING = 5, TECH_COMBAT = 5, TECH_BLUESPACE = 5)
-	build_path = /obj/item/weapon/stock_parts/circuitboard/bsa
-	sort_string = "KCAAG"
-
 /datum/design/circuit/bs_silk_control
 	name = "bluespace snare control"
 	id = "bsc"

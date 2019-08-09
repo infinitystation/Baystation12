@@ -38,9 +38,7 @@
 		install_component(/obj/item/weapon/stock_parts/circuitboard/sleeper)
 		install_component(/obj/item/weapon/stock_parts/scanning_module)
 		install_component(/obj/item/weapon/stock_parts/manipulator)
-		install_component(/obj/item/weapon/stock_parts/manipulator)
 		install_component(/obj/item/weapon/stock_parts/console_screen)
-		install_component(/obj/item/weapon/reagent_containers/syringe)
 		install_component(/obj/item/weapon/reagent_containers/syringe)
 //[/inf]
 	update_icon()
