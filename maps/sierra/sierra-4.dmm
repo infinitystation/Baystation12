@@ -661,7 +661,7 @@
 /obj/structure/hygiene/urinal{
 	pixel_y = 32
 	},
-/obj/item/weapon/soap/syndie,
+/obj/item/weapon/soap,
 /turf/unsimulated/floor{
 	icon_state = "freezerfloor";
 	dir = 2
@@ -1225,9 +1225,7 @@
 /area/shuttle/administration/centcom)
 "ado" = (
 /obj/machinery/mech_recharger,
-/mob/living/exosuit/premade/light{
-	internals_req_access = list("ACCESS_SYNDICATE")
-	},
+/mob/living/exosuit/premade/light,
 /turf/simulated/floor/tiled/dark,
 /area/syndicate_mothership/raider_base)
 "adp" = (
@@ -1297,11 +1295,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/syndicate_mothership/raider_base)
 "adz" = (
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/ion,
+/obj/item/mech_equipment/mounted_system/taser/ion,
 /turf/simulated/floor/plating,
 /area/syndicate_mothership/raider_base)
 "adA" = (
-/obj/effect/decal/mecha_wreckage/gygax/dark,
 /obj/effect/decal/cleanable/blood/oil/streak,
 /turf/simulated/floor/plating,
 /area/syndicate_mothership/raider_base)
@@ -1479,7 +1476,7 @@
 /obj/random/trash,
 /obj/machinery/button/blast_door{
 	dir = 1;
-	id = "raidgar";
+	id_tag = "raidgar";
 	name = "Garage Shutters Control";
 	pixel_y = -21
 	},
@@ -2680,7 +2677,7 @@
 "agQ" = (
 /obj/structure/table/woodentable/walnut,
 /obj/machinery/button/blast_door{
-	id = "CREED";
+	id_tag = "CREED";
 	name = "Spec Ops Ready Room";
 	pixel_x = -5;
 	pixel_y = 4;
@@ -2688,13 +2685,13 @@
 	},
 /obj/machinery/button/blast_door{
 	icon_state = "blastctrl";
-	id = "ASSAULT";
+	id_tag = "ASSAULT";
 	name = "Mech Storage";
 	pixel_y = -4;
 	req_access = list("ACCESS_CENT_CREED")
 	},
 /obj/machinery/button/blast_door{
-	id = "ert_synth_equipment";
+	id_tag = "ert_synth_equipment";
 	name = "Synth Equipment";
 	pixel_x = 5;
 	pixel_y = 4;
@@ -3011,20 +3008,20 @@
 /area/skipjack_station/start)
 "ahF" = (
 /obj/machinery/button/blast_door{
-	id = "SkipjackShuttersNorth";
+	id_tag = "SkipjackShuttersNorth";
 	name = "Skipjack North Shutters";
 	pixel_y = 39;
 	req_access = list("ACCESS_SYNDICATE")
 	},
 /obj/machinery/button/blast_door{
-	id = "SkipjackShuttersWest";
+	id_tag = "SkipjackShuttersWest";
 	name = "Skipjack West Shutters";
 	pixel_x = -5;
 	pixel_y = 31;
 	req_access = list("ACCESS_SYNDICATE")
 	},
 /obj/machinery/button/blast_door{
-	id = "SkipjackShuttersEast";
+	id_tag = "SkipjackShuttersEast";
 	name = "Skipjack East Shutters";
 	pixel_x = 5;
 	pixel_y = 31;
@@ -3081,10 +3078,9 @@
 /area/centcom/specops)
 "ahL" = (
 /obj/structure/table/reinforced,
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/ion,
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/taser,
-/obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster,
-/obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster,
+/obj/item/mech_equipment/mounted_system/taser/ion,
+/obj/item/mech_equipment/mounted_system/taser,
+/obj/item/robot_parts/robot_component/armour/exosuit/combat,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -3152,11 +3148,6 @@
 	},
 /area/centcom/creed)
 "ahU" = (
-/obj/machinery/computer/pod{
-	dir = 8;
-	id = "NTrasen";
-	name = "Hull Door Control"
-	},
 /turf/unsimulated/floor{
 	icon_state = "lino";
 	name = "linoleum"
@@ -3258,7 +3249,7 @@
 /area/syndicate_station/start)
 "aig" = (
 /obj/machinery/button/blast_door{
-	id = "syndieshutters";
+	id_tag = "syndieshutters";
 	name = "remote shutter control";
 	req_access = list("ACCESS_SYNDICATE")
 	},
@@ -3634,9 +3625,8 @@
 	},
 /area/centcom/specops)
 "aiY" = (
-/obj/item/mecha_parts/mecha_equipment/tool/sleeper,
-/obj/item/mecha_parts/mecha_equipment/tool/sleeper,
-/obj/item/mecha_parts/mecha_equipment/tool/syringe_gun,
+/obj/item/mech_equipment/sleeper,
+/obj/item/mech_equipment/sleeper,
 /obj/structure/table/steel_reinforced,
 /turf/unsimulated/floor{
 	icon_state = "vault";
@@ -4057,11 +4047,7 @@
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "ajI" = (
-/obj/item/mecha_parts/mecha_equipment/teleporter,
-/obj/item/mecha_parts/mecha_tracking,
-/obj/item/mecha_parts/mecha_tracking,
-/obj/item/mecha_parts/mecha_tracking,
-/obj/item/mecha_parts/mecha_tracking,
+/obj/item/mech_equipment/catapult,
 /obj/structure/table/steel_reinforced,
 /turf/unsimulated/floor{
 	icon_state = "vault";
@@ -4241,8 +4227,8 @@
 	},
 /area/centcom/specops)
 "akc" = (
-/obj/item/mecha_parts/mecha_equipment/tool/extinguisher,
-/obj/item/mecha_parts/mecha_equipment/tool/rcd,
+/obj/item/mech_equipment/mounted_system/extinguisher,
+/obj/item/mech_equipment/mounted_system/rcd,
 /obj/item/weapon/pickaxe/diamonddrill,
 /obj/structure/table/steel_reinforced,
 /turf/unsimulated/floor{
@@ -4425,7 +4411,7 @@
 	icon_state = "shower";
 	pixel_x = -5
 	},
-/obj/item/weapon/soap/syndie,
+/obj/item/weapon/soap,
 /obj/machinery/door/window/southright,
 /turf/unsimulated/floor{
 	icon_state = "freezerfloor";
@@ -4507,8 +4493,8 @@
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "akD" = (
-/obj/item/mecha_parts/mecha_equipment/tool/drill/diamonddrill,
-/obj/item/mecha_parts/mecha_equipment/tool/cable_layer,
+/obj/item/mech_equipment/drill,
+/obj/item/mech_equipment/clamp,
 /obj/structure/table/steel_reinforced,
 /turf/unsimulated/floor{
 	icon_state = "vault";
@@ -4830,14 +4816,10 @@
 	},
 /area/centcom/specops)
 "aln" = (
-/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay,
-/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay,
-/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay,
-/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay,
-/obj/item/mecha_parts/mecha_equipment/repair_droid,
-/obj/item/mecha_parts/mecha_equipment/repair_droid,
-/obj/item/mecha_parts/mecha_equipment/repair_droid,
-/obj/item/mecha_parts/mecha_equipment/repair_droid,
+/obj/item/mech_equipment/light,
+/obj/item/mech_equipment/light,
+/obj/item/mech_equipment/light,
+/obj/item/mech_equipment/light,
 /obj/structure/table/steel_reinforced,
 /turf/unsimulated/floor{
 	icon_state = "vault";
@@ -5469,28 +5451,28 @@
 /area/centcom/control)
 "amG" = (
 /obj/machinery/button/blast_door{
-	id = "crescent_checkpoint_access";
+	id_tag = "crescent_checkpoint_access";
 	name = "Crescent Checkpoint Access";
 	pixel_x = -6;
 	pixel_y = -24;
 	req_access = list("ACCESS_CENT_GENERAL")
 	},
 /obj/machinery/button/blast_door{
-	id = "crescent_thunderdome";
+	id_tag = "crescent_thunderdome";
 	name = "Thunderdome Access";
 	pixel_x = 6;
 	pixel_y = -24;
 	req_access = list("ACCESS_CENT_GENERAL")
 	},
 /obj/machinery/button/blast_door{
-	id = "crescent_vip_shuttle";
+	id_tag = "crescent_vip_shuttle";
 	name = "VIP Shuttle Access";
 	pixel_x = 6;
 	pixel_y = -34;
 	req_access = list("ACCESS_CENT_GENERAL")
 	},
 /obj/machinery/button/blast_door{
-	id = "CREED";
+	id_tag = "CREED";
 	name = "Spec Ops Ready Room";
 	pixel_x = -6;
 	pixel_y = -34;
@@ -5612,10 +5594,8 @@
 /area/skipjack_station/start)
 "amU" = (
 /obj/structure/table/reinforced,
-/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp,
-/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp,
-/obj/item/mecha_parts/mecha_equipment/tool/passenger,
-/obj/item/mecha_parts/mecha_equipment/tool/passenger,
+/obj/item/mech_equipment/clamp,
+/obj/item/mech_equipment/clamp,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -5800,15 +5780,6 @@
 	id_tag = "merc_shuttle_pump"
 	},
 /obj/structure/catwalk,
-/obj/machinery/computer/pod/old/syndicate{
-	density = 0;
-	icon = 'icons/obj/airlock_machines.dmi';
-	icon_screen = null;
-	icon_state = "airlock_control_standby";
-	id = "smindicate";
-	name = "Outer Shield Control";
-	pixel_y = 26
-	},
 /turf/simulated/floor/plating,
 /area/syndicate_station/start)
 "ano" = (
@@ -6465,7 +6436,7 @@
 /area/syndicate_station/start)
 "aoD" = (
 /obj/machinery/button/flasher{
-	id = "syndieflash";
+	id_tag = "syndieflash";
 	name = "Flasher";
 	pixel_x = 0;
 	pixel_y = 26
@@ -7641,7 +7612,7 @@
 /obj/structure/bed/chair/office/dark,
 /obj/machinery/button/blast_door{
 	desc = "A remote control switch for port-side blast doors.";
-	id = "CentComPort";
+	id_tag = "CentComPort";
 	name = "Security Doors";
 	pixel_x = -12;
 	pixel_y = -25;
@@ -7965,7 +7936,7 @@
 "arp" = (
 /obj/effect/floor_decal/corner/pink/diagonal,
 /obj/machinery/button/blast_door{
-	id = "syndieshutters_infirmary";
+	id_tag = "syndieshutters_infirmary";
 	name = "remote shutter control";
 	pixel_x = -25
 	},
@@ -8035,7 +8006,7 @@
 /obj/item/weapon/tape_roll,
 /obj/item/weapon/tape_roll,
 /obj/machinery/button/blast_door{
-	id = "syndieshutters_telebay";
+	id_tag = "syndieshutters_telebay";
 	name = "remote shutter control";
 	pixel_y = -25;
 	req_access = list("ACCESS_SYNDICATE")
@@ -8054,7 +8025,7 @@
 "ary" = (
 /obj/machinery/button/blast_door{
 	dir = 8;
-	id = "syndieshutters_workshop";
+	id_tag = "syndieshutters_workshop";
 	name = "Space Shield";
 	pixel_x = 24;
 	pixel_y = 0
@@ -11990,7 +11961,7 @@
 	id_tag = "ninja_shuttle_pump"
 	},
 /obj/machinery/button/blast_door{
-	id = "ninjadoor";
+	id_tag = "ninjadoor";
 	name = "remote shutter control";
 	pixel_x = 25
 	},
@@ -12030,7 +12001,7 @@
 	pixel_y = -24
 	},
 /obj/machinery/button/blast_door{
-	id = "ninjawindow";
+	id_tag = "ninjawindow";
 	name = "remote shutter control";
 	pixel_x = 36;
 	pixel_y = -24
@@ -15189,9 +15160,8 @@
 /area/rescue_base/base)
 "aIB" = (
 /obj/structure/table/reinforced,
-/obj/item/mecha_parts/mecha_equipment/tool/sleeper,
-/obj/item/mecha_parts/mecha_equipment/tool/sleeper,
-/obj/item/mecha_parts/mecha_equipment/tool/syringe_gun,
+/obj/item/mech_equipment/sleeper,
+/obj/item/mech_equipment/sleeper,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 8
@@ -15199,11 +15169,7 @@
 /area/rescue_base/base)
 "aIC" = (
 /obj/structure/table/reinforced,
-/obj/item/mecha_parts/mecha_equipment/teleporter,
-/obj/item/mecha_parts/mecha_tracking,
-/obj/item/mecha_parts/mecha_tracking,
-/obj/item/mecha_parts/mecha_tracking,
-/obj/item/mecha_parts/mecha_tracking,
+/obj/item/mech_equipment/catapult,
 /obj/item/device/radio/intercom/specops{
 	dir = 2;
 	pixel_y = 22
@@ -15521,7 +15487,7 @@
 "aJg" = (
 /obj/structure/table/woodentable/walnut,
 /obj/machinery/button/blast_door{
-	id = "heavyrescue";
+	id_tag = "heavyrescue";
 	name = "Heavy Gear";
 	pixel_x = -5;
 	pixel_y = 4
@@ -15533,7 +15499,7 @@
 "aJh" = (
 /obj/structure/table/woodentable/walnut,
 /obj/machinery/button/blast_door{
-	id = "standardrescue";
+	id_tag = "standardrescue";
 	name = "Standard Gear";
 	pixel_x = 5;
 	pixel_y = 4
@@ -15729,14 +15695,14 @@
 /area/rescue_base/base)
 "aJH" = (
 /obj/machinery/button/blast_door{
-	id = "rescueteleport";
+	id_tag = "rescueteleport";
 	name = "Teleporter";
 	pixel_x = -17;
 	pixel_y = 26;
 	req_access = list("ACCESS_CENT_SPECOPS")
 	},
 /obj/machinery/button/blast_door{
-	id = "rescuegarage";
+	id_tag = "rescuegarage";
 	name = "Garage";
 	pixel_x = -17;
 	pixel_y = 36;
@@ -16121,8 +16087,8 @@
 /area/rescue_base/base)
 "aKk" = (
 /obj/structure/table/reinforced,
-/obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster,
-/obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster,
+/obj/item/robot_parts/robot_component/armour/exosuit/combat,
+/obj/item/robot_parts/robot_component/armour/exosuit/combat,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -16285,8 +16251,8 @@
 /area/rescue_base/base)
 "aKJ" = (
 /obj/structure/table/reinforced,
-/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp,
-/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp,
+/obj/item/mech_equipment/clamp,
+/obj/item/mech_equipment/clamp,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -16294,14 +16260,8 @@
 /area/rescue_base/base)
 "aKK" = (
 /obj/structure/table/reinforced,
-/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay,
-/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay,
-/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay,
-/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay,
-/obj/item/mecha_parts/mecha_equipment/repair_droid,
-/obj/item/mecha_parts/mecha_equipment/repair_droid,
-/obj/item/mecha_parts/mecha_equipment/repair_droid,
-/obj/item/mecha_parts/mecha_equipment/repair_droid,
+/obj/item/mech_equipment/light,
+/obj/item/mech_equipment/light,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -16309,8 +16269,8 @@
 /area/rescue_base/base)
 "aKL" = (
 /obj/structure/table/reinforced,
-/obj/item/mecha_parts/mecha_equipment/tool/drill/diamonddrill,
-/obj/item/mecha_parts/mecha_equipment/tool/cable_layer,
+/obj/item/mech_equipment/drill,
+/obj/item/mech_equipment/light,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 8
@@ -16318,8 +16278,8 @@
 /area/rescue_base/base)
 "aKM" = (
 /obj/structure/table/reinforced,
-/obj/item/mecha_parts/mecha_equipment/tool/extinguisher,
-/obj/item/mecha_parts/mecha_equipment/tool/rcd,
+/obj/item/mech_equipment/mounted_system/extinguisher,
+/obj/item/mech_equipment/mounted_system/rcd,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -16327,8 +16287,6 @@
 /area/rescue_base/base)
 "aKN" = (
 /obj/structure/table/reinforced,
-/obj/item/mecha_parts/mecha_equipment/tool/passenger,
-/obj/item/mecha_parts/mecha_equipment/tool/passenger,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -16336,8 +16294,8 @@
 /area/rescue_base/base)
 "aKO" = (
 /obj/structure/table/reinforced,
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/ion,
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/taser,
+/obj/item/mech_equipment/mounted_system/taser/ion,
+/obj/item/mech_equipment/mounted_system/taser,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -16696,7 +16654,7 @@
 /obj/structure/table/steel_reinforced,
 /obj/machinery/button/blast_door{
 	icon_state = "blastctrl";
-	id = "rescuebridge";
+	id_tag = "rescuebridge";
 	name = "Window Shutters Control";
 	pixel_y = -4;
 	req_access = list("ACCESS_CENT_CREED")
@@ -16834,7 +16792,7 @@
 "aMi" = (
 /obj/machinery/button/blast_door{
 	icon_state = "blastctrl";
-	id = "rescuedock";
+	id_tag = "rescuedock";
 	name = "Window Shutters Control";
 	pixel_x = 24;
 	pixel_y = -4;
@@ -17419,7 +17377,7 @@
 /obj/item/weapon/tank/jetpack/carbondioxide,
 /obj/machinery/button/blast_door{
 	icon_state = "blastctrl";
-	id = "rescueeva";
+	id_tag = "rescueeva";
 	name = "Window Shutters Control";
 	pixel_x = 24;
 	pixel_y = -4;
@@ -17801,7 +17759,7 @@
 "aOV" = (
 /obj/machinery/button/blast_door{
 	icon_state = "blastctrl";
-	id = "rescueinfirm";
+	id_tag = "rescueinfirm";
 	name = "Window Shutters Control";
 	pixel_x = 24;
 	pixel_y = -4;
@@ -17873,7 +17831,7 @@
 /area/rescue_base/start)
 "aPf" = (
 /obj/machinery/button/flasher{
-	id = "rescueflash";
+	id_tag = "rescueflash";
 	name = "Flasher";
 	pixel_x = 27
 	},
@@ -18643,7 +18601,7 @@
 	name = "Supply Drone Shutters"
 	},
 /obj/machinery/button/blast_door{
-	id = "supply_shuttle";
+	id_tag = "supply_shuttle";
 	name = "Supply Drone Shutter Control";
 	pixel_y = 26;
 	req_access = list("ACCESS_CARGO")
@@ -18666,10 +18624,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/syndicate_elite/mothership)
 "aRh" = (
-/obj/machinery/computer/pod{
-	id = "syndicate_elite";
-	name = "Hull Door Control"
-	},
 /obj/effect/floor_decal/corner/red{
 	dir = 5
 	},
@@ -18795,10 +18749,10 @@
 /area/merchant_station)
 "aRv" = (
 /obj/structure/table/rack,
-/obj/item/weapon/computer_hardware/tesla_link,
-/obj/item/weapon/computer_hardware/tesla_link,
-/obj/item/weapon/computer_hardware/tesla_link,
-/obj/item/weapon/computer_hardware/tesla_link,
+/obj/item/weapon/stock_parts/computer/tesla_link,
+/obj/item/weapon/stock_parts/computer/tesla_link,
+/obj/item/weapon/stock_parts/computer/tesla_link,
+/obj/item/weapon/stock_parts/computer/tesla_link,
 /turf/simulated/floor/tiled/techmaint,
 /area/merchant_station)
 "aRw" = (
@@ -18973,7 +18927,7 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/button/blast_door{
 	dir = 1;
-	id = "supply_shuttle";
+	id_tag = "supply_shuttle";
 	name = "Supply Drone Shutter Control";
 	pixel_y = -20;
 	req_access = list("ACCESS_CARGO")
@@ -18988,7 +18942,7 @@
 	},
 /obj/machinery/button/blast_door{
 	dir = 1;
-	id = "supply_shuttle";
+	id_tag = "supply_shuttle";
 	name = "Supply Drone Shutter Control";
 	pixel_y = -20;
 	req_access = list("ACCESS_CARGO")
@@ -19118,7 +19072,7 @@
 /area/merchant_station)
 "aSk" = (
 /obj/machinery/button/blast_door{
-	id = "merchantwarehouse";
+	id_tag = "merchantwarehouse";
 	name = "Warehouse Shutters";
 	pixel_x = 9;
 	pixel_y = -27;
@@ -19222,7 +19176,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "merchantshuttle";
+	id_tag = "merchantshuttle";
 	name = "Merchant Window Shutters";
 	opacity = 0
 	},
@@ -19266,7 +19220,7 @@
 /area/merchant_station)
 "aSC" = (
 /obj/machinery/door/blast/shutters{
-	id = "merchantwarehouse";
+	id_tag = "merchantwarehouse";
 	name = "Warehouse Shutters"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -19277,7 +19231,7 @@
 /area/merchant_station)
 "aSD" = (
 /obj/machinery/door/blast/shutters{
-	id = "merchantwarehouse";
+	id_tag = "merchantwarehouse";
 	name = "Warehouse Shutters"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -19622,7 +19576,7 @@
 /obj/random/loot,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/button/blast_door{
-	id = "merchantwarehouse";
+	id_tag = "merchantwarehouse";
 	name = "Warehouse Shutters";
 	pixel_x = 9;
 	pixel_y = 27;
@@ -20204,7 +20158,7 @@
 	pixel_y = -28
 	},
 /obj/machinery/button/blast_door{
-	id = "syndicate_elite_mech_room";
+	id_tag = "syndicate_elite_mech_room";
 	name = "Mech Access";
 	pixel_x = 32;
 	req_access = list("ACCESS_SYNDICATE")
@@ -20364,7 +20318,7 @@
 /area/shuttle/merchant/home)
 "aUK" = (
 /obj/machinery/button/blast_door{
-	id = "merchantshuttle";
+	id_tag = "merchantshuttle";
 	name = "Merchant Window Shutters";
 	pixel_y = -28;
 	req_access = list("ACCESS_MERCHANT")
@@ -21019,7 +20973,7 @@
 /area/merchant_station)
 "aVT" = (
 /obj/machinery/button/blast_door{
-	id = "merchantbase";
+	id_tag = "merchantbase";
 	name = "Merchant Loading Shutters";
 	pixel_x = 27;
 	pixel_y = -9;
@@ -21228,7 +21182,7 @@
 /obj/item/weapon/pen,
 /obj/machinery/button/blast_door{
 	dir = 1;
-	id = "merchantdesk";
+	id_tag = "merchantdesk";
 	name = "Merchant Desk Shutters";
 	pixel_x = 0;
 	pixel_y = -21;
@@ -21380,7 +21334,7 @@
 	id = "merchantbelt2"
 	},
 /obj/machinery/button/blast_door{
-	id = "merchantbase";
+	id_tag = "merchantbase";
 	name = "Merchant Loading Shutters";
 	pixel_x = 27;
 	pixel_y = -9;
@@ -26498,13 +26452,13 @@
 	dir = 4
 	},
 /obj/machinery/button/blast_door{
-	id = "ab_blast";
+	id_tag = "ab_blast";
 	name = "Observation Section";
 	pixel_x = -5;
 	pixel_y = 24
 	},
 /obj/machinery/button/blast_door{
-	id = "gg_blast";
+	id_tag = "gg_blast";
 	name = "Heavy Blastdoors";
 	pixel_x = 5;
 	pixel_y = 24
@@ -26989,7 +26943,7 @@
 /area/smugglers/office)
 "bjC" = (
 /obj/machinery/button/blast_door{
-	id = "CentComAsteroid";
+	id_tag = "CentComAsteroid";
 	name = "CentCom Asteroid";
 	pixel_x = -6;
 	pixel_y = -34;
@@ -27653,7 +27607,7 @@
 	maxhealth = 10000
 	},
 /obj/machinery/button/blast_door{
-	id = "Thundernewred";
+	id_tag = "Thundernewred";
 	pixel_x = -32;
 	pixel_y = 0
 	},
@@ -27792,7 +27746,7 @@
 	name = "tdome1"
 	},
 /obj/machinery/button/blast_door{
-	id = "Thundernewblue";
+	id_tag = "Thundernewblue";
 	pixel_x = 32;
 	pixel_y = 0
 	},
@@ -27862,11 +27816,6 @@
 	},
 /area/admin_prison)
 "ljb" = (
-/obj/machinery/computer/pod{
-	dir = 1;
-	id = "syndicate_elite";
-	name = "Hull Door Control"
-	},
 /obj/machinery/light/small,
 /obj/effect/floor_decal/corner/red/full,
 /turf/simulated/floor/tiled/dark,
@@ -28163,7 +28112,7 @@
 /area/admin_prison)
 "vDk" = (
 /obj/machinery/button/blast_door{
-	id = "Thundernewblue";
+	id_tag = "Thundernewblue";
 	pixel_x = 32
 	},
 /obj/structure/barrier{
@@ -28196,7 +28145,7 @@
 	name = "tdome1"
 	},
 /obj/machinery/button/blast_door{
-	id = "Thundernewred";
+	id_tag = "Thundernewred";
 	pixel_x = -32;
 	pixel_y = 0
 	},
