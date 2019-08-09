@@ -4012,7 +4012,7 @@
 "agJ" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/holosign/surgery{
-	id = "surg"
+	id_tag = "surg"
 	},
 /obj/machinery/door/airlock/medical{
 	name = "Operating Theatre";
@@ -4259,7 +4259,7 @@
 	dir = 6
 	},
 /obj/machinery/sparker{
-	id = "engines";
+	id_tag = "engines";
 	pixel_x = -24
 	},
 /obj/machinery/atmospherics/unary/outlet_injector{
@@ -5025,7 +5025,7 @@
 	dir = 5
 	},
 /obj/machinery/sparker{
-	id = "engines-3";
+	id_tag = "engines-3";
 	pixel_x = -24
 	},
 /turf/simulated/floor/reinforced/airless,
@@ -6545,7 +6545,7 @@
 /area/hallway/primary/firstdeck/center)
 "akH" = (
 /obj/machinery/holosign/surgery{
-	id = "surg"
+	id_tag = "surg"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/firedoor,
@@ -7457,7 +7457,7 @@
 "alW" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/holosign/surgery{
-	id = "surg"
+	id_tag = "surg"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/cable/green{
@@ -14478,7 +14478,7 @@
 /obj/machinery/button/blast_door{
 	desc = "A remote control-switch for shutters.";
 	id_tag = 4;
-	id = "virologyquar";
+	id_tag = "virologyquar";
 	name = "Virology Emergency Quarantine Control";
 	pixel_x = -34;
 	pixel_y = 0;
@@ -27313,8 +27313,7 @@
 "aMY" = (
 /obj/machinery/air_sensor{
 	frequency = 1441;
-	id_tag = "xenobot_sensor";
-	output = 63
+	id_tag = "xenobot_sensor"
 	},
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology/xenoflora_storage)
@@ -28911,7 +28910,8 @@
 /obj/machinery/computer/air_control{
 	frequency = 1441;
 	name = "Xenoflora Gas Monitor";
-	sensors = list("xenobot_sensor" = "Xenoflora Environment")
+	sensor_tag = "xenobot_sensor";
+	sensor_name = "Xenoflora Environment"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -29807,7 +29807,8 @@
 	input_tag = "test_in";
 	name = "Test Chamber Gas Monitor";
 	output_tag = "test_out";
-	sensors = list("testchamber_sensor" = "Test Chamber")
+	sensor_tag = "testchamber_sensor";
+	sensor_name = "Test Chamber"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
@@ -30197,7 +30198,7 @@
 	dir = 9
 	},
 /obj/machinery/sparker{
-	id = "engines-4";
+	id_tag = "engines-4";
 	pixel_x = -24
 	},
 /turf/simulated/floor/reinforced/airless,
@@ -30694,7 +30695,7 @@
 /area/rnd/xenobiology/xenoflora)
 "aSn" = (
 /obj/machinery/sparker{
-	id = "Xenobio";
+	id_tag = "Xenobio";
 	pixel_x = -18
 	},
 /turf/simulated/floor/reinforced,
@@ -30702,8 +30703,7 @@
 "aSo" = (
 /obj/machinery/air_sensor{
 	frequency = 1441;
-	id_tag = "testchamber_sensor";
-	output = 63
+	id_tag = "testchamber_sensor"
 	},
 /obj/effect/landmark{
 	name = "bluespacerift"
@@ -30886,7 +30886,7 @@
 	dir = 10
 	},
 /obj/machinery/sparker{
-	id = "engines";
+	id_tag = "engines";
 	pixel_x = -24
 	},
 /obj/machinery/atmospherics/unary/outlet_injector{
@@ -38362,7 +38362,7 @@
 /turf/simulated/floor/plating,
 /area/bridge/gun/energy)
 "bma" = (
-/obj/item/weapon/soap/nanotrasen,
+/obj/item/weapon/soap,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/bridge/gun/energy)
@@ -38863,7 +38863,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/weapon/soap/nanotrasen,
+/obj/item/weapon/soap,
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/heads/captain/secret_room/level_two)
 "bnu" = (
