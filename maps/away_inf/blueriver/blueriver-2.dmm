@@ -216,7 +216,7 @@
 	},
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id = "blueriver_airlock_shield";
+	id_tag = "blueriver_airlock_shield";
 	name = "Airlock Window Shield Control";
 	pixel_x = -24;
 	pixel_y = 0
@@ -696,14 +696,14 @@
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
 	dir = 2;
-	id = "blueriver_shutters_cockpit";
+	id_tag = "blueriver_shutters_cockpit";
 	name = "Protective Cockpit Shutters Control";
 	pixel_x = -6;
 	pixel_y = 0
 	},
 /obj/machinery/button/blast_door{
 	dir = 2;
-	id = "blueriver_shutters";
+	id_tag = "blueriver_shutters";
 	name = "Protective Shutters Control";
 	pixel_x = 6;
 	pixel_y = 0

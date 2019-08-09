@@ -21749,7 +21749,7 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/assembly/robotics)
 "aFd" = (
-/obj/machinery/mecha_part_fabricator,
+/obj/machinery/robotic_fabricator,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white/monotile,
 /area/assembly/robotics)
@@ -26722,7 +26722,6 @@
 	dir = 9;
 	pixel_y = 0
 	},
-/obj/structure/closet/crate/mechabeacons,
 /obj/item/weapon/storage/box/lights/mixed,
 /obj/random/maintenance,
 /turf/simulated/floor/tiled/white/monotile,

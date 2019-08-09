@@ -876,7 +876,7 @@
 	},
 /obj/machinery/button/alternate/door/bolts{
 	dir = 8;
-	id = "capt_valaut_door";
+	id_tag = "capt_valaut_door";
 	name = "Captain Room Bolt Control";
 	pixel_x = 24;
 	req_access = list("ACCESS_VAULT");
@@ -2119,7 +2119,7 @@
 	},
 /obj/machinery/button/alternate/door/bolts{
 	dir = 8;
-	id = "selfsddoor";
+	id_tag = "selfsddoor";
 	name = "Self Destruct Airlock Bolt Control";
 	pixel_x = 24;
 	req_access = list("ACCESS_VAULT")
@@ -2848,20 +2848,20 @@
 	},
 /obj/machinery/button/ignition{
 	dir = 1;
-	id = "engines-3";
+	id_tag = "engines-3";
 	operating = 1;
 	pixel_y = -34
 	},
 /obj/machinery/button/blast_door{
 	dir = 1;
-	id = "cChamber3pV";
+	id_tag = "cChamber3pV";
 	name = "First Deck Starboard Chamber Vent";
 	pixel_x = 8;
 	pixel_y = -24
 	},
 /obj/machinery/button/blast_door{
 	dir = 1;
-	id = "d3portnacelle";
+	id_tag = "d3portnacelle";
 	name = "Combustion Chamber Blast Door Control";
 	pixel_x = -8;
 	pixel_y = -24
@@ -2981,7 +2981,7 @@
 /obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
 	dir = 1;
-	id = "iaadoorleft";
+	id_tag = "iaadoorleft";
 	name = "Office Door Control";
 	pixel_x = -42;
 	pixel_y = -28;
@@ -3129,7 +3129,7 @@
 /obj/machinery/libraryscanner,
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id = "library_space_upper";
+	id_tag = "library_space_upper";
 	name = "Space Shields";
 	pixel_x = -24;
 	pixel_y = 0;
@@ -3534,7 +3534,7 @@
 /obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
 	dir = 1;
-	id = "iaadoorright";
+	id_tag = "iaadoorright";
 	name = "Office Door Control";
 	pixel_x = 42;
 	pixel_y = -28;
@@ -3613,7 +3613,7 @@
 /area/crew_quarters/heads/office/iaa)
 "agi" = (
 /obj/machinery/flasher{
-	id = "AI Core Flasher";
+	id_tag = "AI Core Flasher";
 	pixel_x = 0;
 	pixel_y = 32
 	},
@@ -5922,7 +5922,7 @@
 /area/security/sierra/forensic/lab)
 "ajH" = (
 /obj/machinery/flasher{
-	id = "AI Core Flasher";
+	id_tag = "AI Core Flasher";
 	pixel_x = -24;
 	pixel_y = 0
 	},
@@ -6006,7 +6006,7 @@
 /area/medical/locker)
 "ajS" = (
 /obj/machinery/flasher{
-	id = "AI Core Flasher";
+	id_tag = "AI Core Flasher";
 	pixel_x = 24;
 	pixel_y = 0
 	},
@@ -6460,7 +6460,7 @@
 	},
 /obj/machinery/button/flasher{
 	dir = 8;
-	id = "AI Core Flasher";
+	id_tag = "AI Core Flasher";
 	name = "Chamber Flasher";
 	pixel_x = 34;
 	pixel_y = 0
@@ -6964,7 +6964,7 @@
 /obj/machinery/button/alternate/door{
 	desc = "A remote control switch for the medical chamber.";
 	dir = 2;
-	id = "medical_chamer_2";
+	id_tag = "medical_chamer_2";
 	name = "Open Chamber";
 	pixel_y = 28
 	},
@@ -7049,7 +7049,7 @@
 /obj/machinery/button/blast_door{
 	desc = "A remote control-switch for the AI core maintenance door.";
 	dir = 8;
-	id = "AICore";
+	id_tag = "AICore";
 	name = "AI Core Last Resort";
 	pixel_x = 24;
 	pixel_y = 24;
@@ -7058,7 +7058,7 @@
 /obj/machinery/button/blast_door{
 	desc = "A remote control-switch for the AI core maintenance door.";
 	dir = 8;
-	id = "AILockdown";
+	id_tag = "AILockdown";
 	name = "AI Core Lockdown";
 	pixel_x = 24;
 	pixel_y = 36;
@@ -7189,7 +7189,7 @@
 /area/maintenance/firstdeck/centralstarboard)
 "alF" = (
 /obj/machinery/flasher{
-	id = "AI Core Flasher";
+	id_tag = "AI Core Flasher";
 	pixel_x = 0;
 	pixel_y = 32
 	},
@@ -7659,7 +7659,7 @@
 /obj/machinery/button/alternate/door{
 	desc = "A remote control switch for the medbay foyer.";
 	dir = 1;
-	id = "MedbayER";
+	id_tag = "MedbayER";
 	name = "Treatment Center Door Control";
 	pixel_x = 21;
 	pixel_y = -21
@@ -7729,7 +7729,7 @@
 	},
 /obj/machinery/button/holosign{
 	dir = 4;
-	id = "surg";
+	id_tag = "surg";
 	pixel_x = -23;
 	pixel_y = 10
 	},
@@ -9238,7 +9238,7 @@
 /obj/machinery/button/alternate/door{
 	desc = "A remote control switch for the medical chamber.";
 	dir = 1;
-	id = "medical_chamer_1";
+	id_tag = "medical_chamer_1";
 	name = "Open Chamber";
 	pixel_y = -21
 	},
@@ -9290,7 +9290,7 @@
 /obj/machinery/button/alternate/door{
 	desc = "A remote control switch for the medbay foyer.";
 	dir = 1;
-	id = "MedbayFoyer";
+	id_tag = "MedbayFoyer";
 	name = "Infirmary Entrance Control";
 	pixel_y = -21
 	},
@@ -10963,7 +10963,7 @@
 /obj/machinery/button/alternate/door{
 	desc = "A remote control switch for the medbay foyer.";
 	dir = 2;
-	id = "MedbayFoyer";
+	id_tag = "MedbayFoyer";
 	name = "Infirmary Entrance Control";
 	pixel_x = 0;
 	pixel_y = 28;
@@ -11443,7 +11443,7 @@
 	},
 /obj/machinery/button/alternate/door/bolts{
 	dir = 4;
-	id = "panicbunker";
+	id_tag = "panicbunker";
 	name = "safe room door-control";
 	pixel_x = -24;
 	req_access = list("ACCESS_BRIDGE")
@@ -12684,7 +12684,7 @@
 	},
 /obj/machinery/button/blast_door{
 	dir = 8;
-	id = "security_sergeant_shutters";
+	id_tag = "security_sergeant_shutters";
 	name = "Desk Shutters";
 	pixel_x = 23;
 	pixel_y = 0;
@@ -12692,7 +12692,7 @@
 	},
 /obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
-	id = "security_entry_airlock_exit";
+	id_tag = "security_entry_airlock_exit";
 	name = "Security Exit Airlock";
 	pixel_x = -6;
 	pixel_y = 10;
@@ -12700,7 +12700,7 @@
 	},
 /obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
-	id = "security_entry_airlock_enter";
+	id_tag = "security_entry_airlock_enter";
 	name = "Security Entry Airlock";
 	pixel_x = 6;
 	pixel_y = 10;
@@ -12810,7 +12810,7 @@
 	},
 /obj/machinery/button/blast_door{
 	dir = 1;
-	id = "armory";
+	id_tag = "armory";
 	name = "Armory Blast Door";
 	pixel_x = 0;
 	pixel_y = -20;
@@ -14459,7 +14459,7 @@
 "avU" = (
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id = "infirmaryentrylock";
+	id_tag = "infirmaryentrylock";
 	name = "Infirmary Entrance Lockdown Control";
 	pixel_x = -24;
 	pixel_y = 6;
@@ -14468,7 +14468,7 @@
 /obj/machinery/button/blast_door{
 	desc = "A remote control-switch for shutters.";
 	dir = 4;
-	id = "infirmaryquar";
+	id_tag = "infirmaryquar";
 	name = "Infirmary Emergency Quarantine Control";
 	pixel_x = -24;
 	pixel_y = -6;
@@ -14477,7 +14477,7 @@
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/machinery/button/blast_door{
 	desc = "A remote control-switch for shutters.";
-	dir = 4;
+	id_tag = 4;
 	id = "virologyquar";
 	name = "Virology Emergency Quarantine Control";
 	pixel_x = -34;
@@ -14974,7 +14974,7 @@
 	},
 /obj/machinery/button/blast_door{
 	dir = 1;
-	id = "armory_shutters";
+	id_tag = "armory_shutters";
 	name = "Desk Shutters";
 	pixel_x = 0;
 	pixel_y = -20;
@@ -15283,7 +15283,7 @@
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id = "medgarage";
+	id_tag = "medgarage";
 	name = "Charging Port Shutter Control";
 	pixel_x = -24;
 	req_access = list("ACCESS_MEDICAL_EQUIP")
@@ -16249,7 +16249,7 @@
 /obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
 	dir = 1;
-	id = "cmodoor";
+	id_tag = "cmodoor";
 	name = "Office Door Control";
 	pixel_x = -6;
 	pixel_y = -21;
@@ -17425,14 +17425,14 @@
 	},
 /obj/machinery/button/blast_door{
 	dir = 1;
-	id = "chemcounter";
+	id_tag = "chemcounter";
 	name = "Chemistry Counter Lockdown Control";
 	pixel_x = -6;
 	pixel_y = -20
 	},
 /obj/machinery/button/blast_door{
 	dir = 1;
-	id = "chemwindow";
+	id_tag = "chemwindow";
 	name = "Chemistry Window Shutters Control";
 	pixel_x = 6;
 	pixel_y = -20
@@ -18066,7 +18066,7 @@
 /obj/machinery/button/alternate/door{
 	desc = "A remote control switch for the medbay foyer.";
 	dir = 1;
-	id = "MedbayFoyer";
+	id_tag = "MedbayFoyer";
 	name = "Infirmary Entrance Control";
 	pixel_x = -6;
 	pixel_y = -21;
@@ -18074,7 +18074,7 @@
 	},
 /obj/machinery/button/blast_door{
 	dir = 1;
-	id = "infirmaryentrylock";
+	id_tag = "infirmaryentrylock";
 	name = "Infirmary Entrance Lockdown Control";
 	pixel_x = 6;
 	pixel_y = -21;
@@ -19215,7 +19215,7 @@
 /obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
 	dir = 4;
-	id = "hosdoor";
+	id_tag = "hosdoor";
 	name = "Office Door Control";
 	pixel_x = -24;
 	pixel_y = 21;
@@ -19682,7 +19682,7 @@
 /obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
 	dir = 8;
-	id = "wardoor";
+	id_tag = "wardoor";
 	name = "Office Door Control";
 	pixel_x = 24;
 	pixel_y = -21;
@@ -20096,7 +20096,7 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id = "Skynet_launch";
+	id_tag = "Skynet_launch";
 	name = "Charging Bay Door Control";
 	pixel_x = -24;
 	pixel_y = 0;
@@ -21444,7 +21444,7 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/assembly/robotics)
 "aFd" = (
-/obj/machinery/mecha_part_fabricator,
+/obj/machinery/robotic_fabricator,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white/monotile,
 /area/assembly/robotics)
@@ -21975,7 +21975,7 @@
 	},
 /obj/machinery/button/blast_door{
 	dir = 1;
-	id = "security_permabrig_shutters";
+	id_tag = "security_permabrig_shutters";
 	name = "LTC Windows Shutters";
 	pixel_x = 0;
 	pixel_y = -20
@@ -22528,7 +22528,7 @@
 /obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
 	dir = 1;
-	id = "rddoor";
+	id_tag = "rddoor";
 	name = "Office Door Control";
 	pixel_x = -10;
 	pixel_y = -21;
@@ -23034,13 +23034,13 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/button/flasher{
-	id = "security_perm_airlock_flash";
+	id_tag = "security_perm_airlock_flash";
 	name = "Airlock Flasher";
 	pixel_x = -6;
 	pixel_y = 29
 	},
 /obj/machinery/button/flasher{
-	id = "security_perm_chamber_flash";
+	id_tag = "security_perm_chamber_flash";
 	name = "Chamber Flasher";
 	pixel_x = 6;
 	pixel_y = 29
@@ -23071,7 +23071,7 @@
 	},
 /obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
-	id = "security_perm_airlock_enter";
+	id_tag = "security_perm_airlock_enter";
 	name = "Chamber Entry Airlock";
 	pixel_x = -6;
 	pixel_y = 29;
@@ -23079,7 +23079,7 @@
 	},
 /obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
-	id = "security_perm_airlock_exit";
+	id_tag = "security_perm_airlock_exit";
 	name = "Chamber Exit Airlock";
 	pixel_x = 6;
 	pixel_y = 29;
@@ -23616,7 +23616,7 @@
 	},
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id = "security_permabrig_shutters";
+	id_tag = "security_permabrig_shutters";
 	name = "LTC Windows Shutters";
 	pixel_x = -20;
 	pixel_y = 0
@@ -24506,7 +24506,7 @@
 /area/security/prison)
 "aJt" = (
 /obj/machinery/flasher{
-	id = "security_perm_chamber_flash";
+	id_tag = "security_perm_chamber_flash";
 	name = "Floor mounted flash"
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -24790,7 +24790,7 @@
 "aJM" = (
 /obj/machinery/button/blast_door{
 	dir = 1;
-	id = "Biohazard";
+	id_tag = "Biohazard";
 	name = "Biohazard Shutter Control";
 	pixel_x = -6;
 	pixel_y = -24;
@@ -24799,7 +24799,7 @@
 /obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the cargo doors.";
 	dir = 1;
-	id = "researchdoor_interior";
+	id_tag = "researchdoor_interior";
 	name = "Research Door Control";
 	pixel_x = 6;
 	pixel_y = -24;
@@ -25093,7 +25093,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/flasher{
-	id = "security_perm_chamber_flash";
+	id_tag = "security_perm_chamber_flash";
 	name = "Floor mounted flash"
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -26201,7 +26201,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/flasher{
-	id = "security_perm_airlock_flash";
+	id_tag = "security_perm_airlock_flash";
 	name = "Floor mounted flash"
 	},
 /obj/effect/floor_decal/industrial/outline/grey,
@@ -26252,7 +26252,6 @@
 	dir = 9;
 	pixel_y = 0
 	},
-/obj/structure/closet/crate/mechabeacons,
 /obj/item/weapon/storage/box/lights/mixed,
 /obj/random/maintenance,
 /turf/simulated/floor/tiled/white/monotile,
@@ -26752,7 +26751,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/flasher{
-	id = "security_perm_chamber_flash";
+	id_tag = "security_perm_chamber_flash";
 	name = "Floor mounted flash"
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -26820,7 +26819,7 @@
 	dir = 9
 	},
 /obj/machinery/flasher{
-	id = "security_perm_chamber_flash";
+	id_tag = "security_perm_chamber_flash";
 	name = "Floor mounted flash"
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -27730,7 +27729,7 @@
 "aND" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/flasher{
-	id = "security_perm_chamber_flash";
+	id_tag = "security_perm_chamber_flash";
 	name = "Floor mounted flash"
 	},
 /turf/simulated/floor/tiled,
@@ -28103,13 +28102,13 @@
 "aOi" = (
 /obj/machinery/button/ignition{
 	dir = 1;
-	id = "Xenobio";
+	id_tag = "Xenobio";
 	pixel_x = 6;
 	pixel_y = -26
 	},
 /obj/machinery/button/blast_door{
 	dir = 1;
-	id = "misclab";
+	id_tag = "misclab";
 	name = "Test Chamber Blast Doors";
 	pixel_x = 6;
 	pixel_y = -38;
@@ -30283,7 +30282,7 @@
 	},
 /obj/machinery/button/blast_door{
 	dir = 1;
-	id = "telecoms_s";
+	id_tag = "telecoms_s";
 	name = "Telecoms Blast Door";
 	pixel_x = 0;
 	pixel_y = -20;
@@ -32022,18 +32021,18 @@
 	target_pressure = 15000
 	},
 /obj/machinery/button/ignition{
-	id = "engines-4";
+	id_tag = "engines-4";
 	operating = 1;
 	pixel_y = 34
 	},
 /obj/machinery/button/blast_door{
-	id = "d4portnacelle";
+	id_tag = "d4portnacelle";
 	name = "Combustion Chamber Blast Door Control";
 	pixel_x = -8;
 	pixel_y = 24
 	},
 /obj/machinery/button/blast_door{
-	id = "cChamber4pV";
+	id_tag = "cChamber4pV";
 	name = "First Deck Port Chamber Vent";
 	pixel_x = 8;
 	pixel_y = 24
@@ -32282,7 +32281,7 @@
 	},
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id = "selfdestruct";
+	id_tag = "selfdestruct";
 	name = "Self-Destruct Access Blast Door Control";
 	pixel_x = -24;
 	pixel_y = 0;
@@ -35251,7 +35250,7 @@
 /obj/structure/catwalk,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/blast_door{
-	id = "e_gun_blast";
+	id_tag = "e_gun_blast";
 	name = "Gun Blast Door";
 	pixel_y = 22;
 	req_access = list("ACCESS_CARGO")
@@ -37129,14 +37128,14 @@
 	},
 /obj/machinery/button/blast_door{
 	dir = 2;
-	id = "hop_road_shutters";
+	id_tag = "hop_road_shutters";
 	name = "Line Shutters Control";
 	pixel_x = -6;
 	pixel_y = 27
 	},
 /obj/machinery/button/blast_door{
 	dir = 2;
-	id = "hop_shutters";
+	id_tag = "hop_shutters";
 	name = "Desk Shutters Control";
 	pixel_x = 6;
 	pixel_y = 27
@@ -37464,7 +37463,7 @@
 	},
 /obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
-	id = "pmdoor";
+	id_tag = "pmdoor";
 	name = "Office Door Control";
 	pixel_x = -7;
 	pixel_y = -21;

@@ -1373,7 +1373,7 @@
 "dJ" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/machinery/light/halogen,
-/mob/living/simple_animal/parrot,
+/mob/living/simple_animal/hostile/retaliate/parrot,
 /turf/simulated/floor/grass,
 /area/mbay/zoo)
 "dK" = (
@@ -2490,7 +2490,7 @@
 "gy" = (
 /obj/structure/railing/mapped,
 /obj/structure/flora/grass/both,
-/mob/living/simple_animal/parrot,
+/mob/living/simple_animal/hostile/retaliate/parrot,
 /turf/simulated/floor/grass,
 /area/mbay/mentalhealth)
 "gz" = (

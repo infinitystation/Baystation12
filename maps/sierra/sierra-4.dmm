@@ -409,7 +409,7 @@
 	dir = 8
 	},
 /obj/machinery/button/alternate/door{
-	id = "adm_of";
+	id_tag = "adm_of";
 	name = "Open";
 	pixel_x = 26;
 	pixel_y = 24
@@ -2062,7 +2062,7 @@
 /turf/simulated/floor/plating,
 /area/syndicate_mothership)
 "afs" = (
-/mob/living/simple_animal/parrot{
+/mob/living/simple_animal/hostile/retaliate/parrot{
 	available_channels = list();
 	ears = list();
 	name = "\proper Meatbag";
@@ -4747,7 +4747,7 @@
 /area/syndicate_mothership)
 "ald" = (
 /obj/machinery/button/alternate/door/bolts{
-	id = "syndie_toilet";
+	id_tag = "syndie_toilet";
 	name = "lock";
 	pixel_y = -26;
 	req_access = list("ACCESS_SYNDICATE")
@@ -5707,7 +5707,7 @@
 	dir = 4
 	},
 /obj/machinery/flasher{
-	id = "syndieflash";
+	id_tag = "syndieflash";
 	pixel_y = 28
 	},
 /turf/simulated/floor/shuttle/red{
@@ -7844,7 +7844,7 @@
 "arf" = (
 /obj/machinery/button/alternate/door/bolts{
 	dir = 1;
-	id = "syndieshutters_nuke";
+	id_tag = "syndieshutters_nuke";
 	name = "Nuclear Storage Bolts";
 	pixel_y = -20;
 	req_access = list("ACCESS_SYNDICATE")
@@ -17602,7 +17602,7 @@
 /area/rescue_base/start)
 "aOs" = (
 /obj/machinery/flasher{
-	id = "rescueflash";
+	id_tag = "rescueflash";
 	pixel_y = 28
 	},
 /turf/simulated/floor/shuttle/red{
@@ -26865,7 +26865,7 @@
 /obj/structure/catwalk,
 /obj/machinery/button/alternate/door/bolts{
 	dir = 8;
-	id = "blockdoor";
+	id_tag = "blockdoor";
 	name = "Airlock Bolt Control";
 	pixel_x = -24;
 	req_access = list("ACCESS_VAULT")

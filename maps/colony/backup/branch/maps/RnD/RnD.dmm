@@ -2304,7 +2304,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/assembly/robotics)
 "fP" = (
-/obj/machinery/mecha_part_fabricator,
+/obj/machinery/robotic_fabricator,
 /obj/structure/railing/mapped{
 	icon_state = "railing0";
 	dir = 1

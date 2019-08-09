@@ -1042,7 +1042,7 @@
 	dir = 10
 	},
 /obj/machinery/button/blast_door{
-	id = "melt_shut";
+	id_tag = "melt_shut";
 	name = "Shutters Control";
 	pixel_x = 28;
 	pixel_y = 24
@@ -2906,7 +2906,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/machinery/button/blast_door{
 	dir = 8;
-	id = "dorms1";
+	id_tag = "dorms1";
 	name = "Shutters Control";
 	pixel_x = 24;
 	pixel_y = 0
@@ -2959,7 +2959,7 @@
 	},
 /obj/machinery/button/alternate/door{
 	dir = 4;
-	id = "dorms1door";
+	id_tag = "dorms1door";
 	name = "Bolts Control";
 	pixel_x = -24;
 	specialfunctions = 4
@@ -3009,7 +3009,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/machinery/button/blast_door{
 	dir = 8;
-	id = "dorms2";
+	id_tag = "dorms2";
 	name = "Shutters Control";
 	pixel_x = 24;
 	pixel_y = 0
@@ -3179,7 +3179,7 @@
 	},
 /obj/machinery/button/alternate/door{
 	dir = 4;
-	id = "dorms2door";
+	id_tag = "dorms2door";
 	name = "Bolts Control";
 	pixel_x = -24;
 	specialfunctions = 4

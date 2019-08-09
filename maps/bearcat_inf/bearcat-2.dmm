@@ -93,7 +93,7 @@
 "aj" = (
 /obj/item/toy/figure/captain,
 /obj/machinery/button/blast_door{
-	id = "sensor";
+	id_tag = "sensor";
 	name = "Sensor Shroud"
 	},
 /obj/item/device/radio,
@@ -114,7 +114,7 @@
 /area/ship/scrap/command/bridge)
 "al" = (
 /obj/machinery/button/blast_door{
-	id = "scraplock";
+	id_tag = "scraplock";
 	name = "External Lockdown"
 	},
 /obj/random_multi/single_item/captains_spare_id,
@@ -702,7 +702,7 @@
 	},
 /obj/machinery/button/blast_door{
 	dir = 1;
-	id = "cappriv";
+	id_tag = "cappriv";
 	name = "Private Shutters";
 	pixel_y = -21
 	},
@@ -4306,7 +4306,7 @@
 	dir = 1
 	},
 /obj/machinery/button/blast_door{
-	id = "scram";
+	id_tag = "scram";
 	name = "CORE SCRAM";
 	pixel_y = -26
 	},
@@ -5503,12 +5503,12 @@
 	},
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
-	id = "engwindow";
+	id_tag = "engwindow";
 	name = "Engine Observation";
 	pixel_x = 6
 	},
 /obj/machinery/button/ignition{
-	id = "engine";
+	id_tag = "engine";
 	pixel_x = -5
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -5895,7 +5895,7 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/button/blast_door{
 	dir = 1;
-	id = "radaway";
+	id_tag = "radaway";
 	name = "Radiation shields";
 	pixel_x = 0;
 	pixel_y = -21
