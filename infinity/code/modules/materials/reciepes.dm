@@ -63,7 +63,10 @@
 	name = "plastic plate carrier"
 	desc = "Someone made it out of plastic with their own hands. There you can hang a sheet of armor."
 	icon_state = "pvest"
-	slowdown = 0.45
+
+/obj/item/clothing/suit/armor/pcarrier/mainkraft/plastic/New()
+	..()
+	slowdown_per_slot[slot_wear_suit] = 0.65
 
 /obj/item/weapon/reagent_containers/glass/beaker/large/mitoll
 	name = "iron beaker"
