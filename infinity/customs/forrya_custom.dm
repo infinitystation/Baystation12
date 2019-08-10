@@ -209,23 +209,14 @@
 /obj/item/weapon/storage/box/large/wintershmotree
 	name = "white box"
 	icon = CUSTOM_ITEM_OBJ
-	max_w_class = ITEM_SIZE_NORMAL
+	max_w_class = ITEM_SIZE_LARGE
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 	icon_state = "clwbox"
-	desc = "White box, similar to zinc, with ammunition, but with something more light inside."
-
-/obj/item/weapon/clothingbag/forbakloka/Initialize()
-	new /obj/item/clothing/accessory/cloak/wintercamfg(src)
-
-/obj/item/weapon/clothingbag/forbaplabzh/Initialize()
-	new /obj/item/clothing/suit/storage/hooded/wintercoat/wintercam(src)
-
-/obj/item/weapon/clothingbag/forbabutoz/Initialize()
-	new /obj/item/clothing/shoes/workboots/winta(src)
+	desc = "White box, similar to zinc with ammunition, but with something more light inside. Or not..."
 
 /obj/item/weapon/storage/box/wintershmotree/Initialize()
-	new /obj/item/weapon/clothingbag/forbakloka(src)
+	new /obj/item/clothing/accessory/cloak/wintercamfg(src)
 	new /obj/item/clothing/accessory/inf_pin/ccapin(src)
-	new /obj/item/weapon/clothingbag/forbabutoz(src)
+	new /obj/item/clothing/suit/storage/hooded/wintercoat/wintercam(src)
 	new /obj/item/clothing/accessory/badge/tajamc(src)
-	new /obj/item/weapon/clothingbag/forbaplabzh(src)
+	new /obj/item/clothing/shoes/workboots/winta(src)
