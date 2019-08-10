@@ -224,6 +224,6 @@
 /obj/item/weapon/storage/box/wintershmotree/Initialize()
 	new /obj/item/weapon/clothingbag/forbakloka(src)
 	new /obj/item/clothing/accessory/inf_pin/ccapin(src)
-	new /obj/item/weapon/clothingbag/forbabutozsrc)
+	new /obj/item/weapon/clothingbag/forbabutoz(src)
 	new /obj/item/clothing/accessory/badge/tajamc(src)
 	new /obj/item/weapon/clothingbag/forbaplabzh(src)
