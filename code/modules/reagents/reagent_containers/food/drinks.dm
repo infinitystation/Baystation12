@@ -221,7 +221,7 @@
 		reagents.add_reagent(/datum/reagent/drink/dry_ramen, 30)
 
 
-//obj/item/weapon/reagent_containers/food/drinks/sillycup
+/obj/item/weapon/reagent_containers/food/drinks/sillycup
 	name = "paper cup"
 	desc = "A paper water cup."
 	icon_state = "water_cup_e"

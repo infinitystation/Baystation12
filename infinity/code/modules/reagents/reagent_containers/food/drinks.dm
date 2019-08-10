@@ -45,10 +45,6 @@
 		to_chat(usr, SPAN_NOTICE("You need to open \the [src] first!"))
 
 obj/item/weapon/reagent_containers/food/drinks/sillycup
-	name = "paper cup"
-	desc = "A paper water cup."
-	icon_state = "water_cup_e"
-	item_state = "water_cup"
 	possible_transfer_amounts = null
 	layer = ABOVE_OBJ_LAYER
 	slot_flags = SLOT_EARS
@@ -60,15 +56,6 @@ obj/item/weapon/reagent_containers/food/drinks/sillycup
 		SPECIES_HUMAN ='infinity/icons/mob/onmob/onmob_ears.dmi',
 		SPECIES_IPC = 'infinity/icons/mob/onmob/onmob_ears.dmi'
 		)
-	volume = 10
-	center_of_mass = "x=16;y=12"
-	New()
-		..()
-	on_reagent_change()
-		if(reagents.total_volume)
-			icon_state = "water_cup"
-		else
-			icon_state = "water_cup_e"
 
 obj/item/weapon/reagent_containers/food/drinks/sillycup/equipped(var/M, var/slot)
 	..()
