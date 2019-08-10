@@ -256,7 +256,7 @@ mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in ovi
 		return
 
 	src.visible_message(SPAN_DANGER("[src] протыкает грудь [M] с помощью полой трубки и вводит что-то внутрь!"))
-	to_chat(M, SPAN_DANGER("Уродливая и бесформенная масса вводится под ваши ребра через трубку!</span>"))
+	to_chat(M, SPAN_DANGER("Уродливая и бесформенная масса вводится под ваши ребра через трубку!"))
 	var/obj/item/organ/internal/xeno/hivenode/node = new(affecting)
 	node.replaced(M,affecting)
 
