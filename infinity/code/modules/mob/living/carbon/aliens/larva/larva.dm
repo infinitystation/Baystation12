@@ -2,7 +2,7 @@
 	name = "alien larva"
 	real_name = "alien larva"
 
-	speak_emote = list("hisses")
+	speak_emote = list("шипит")
 	icon_state = "larva"
 	language = "Hivemind"
 	maxHealth = 25

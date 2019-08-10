@@ -35,6 +35,7 @@
 	if(amount_grown >= max_grown)
 		to_chat(src, SPAN_LING("Вы готовы к продолжению эволюции!"))
 		leave_host()
+		return
 	if(M.vessel.total_volume > M.vessel.total_volume/2)
 		M.vessel.trans_to(src,min(M.vessel.total_volume,MIN_LARVA_BLOOD_DRINK))
 		update_progression()
