@@ -206,7 +206,7 @@
 /obj/item/weapon/storage/backpack/satchel/wintaforba/Initialize()
 	new /obj/item/weapon/storage/box/wintershmotree(src)
 
-/obj/item/weapon/storage/box/large/wintershmotree
+/obj/item/weapon/storage/box/wintershmotree
 	name = "white box"
 	icon = CUSTOM_ITEM_OBJ
 	max_w_class = ITEM_SIZE_LARGE
