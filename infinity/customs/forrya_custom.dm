@@ -204,15 +204,15 @@
 	icon_state = "wintercloak"
 
 /obj/item/weapon/storage/backpack/satchel/wintaforba
-	new /obj/item/weapon/storage/box/large/wintershmot(src)
+	new /obj/item/weapon/storage/box/large/wintershmotree(src)
 
-/obj/item/weapon/storage/box/large/wintershmot
+/obj/item/weapon/storage/box/large/wintershmotree
 	name = "white box"
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "clwbox"
 	desc = "White box, similar to zinc, with ammunition, but with something more light inside."
 
-/obj/item/weapon/storage/box/large/wintershmot/Initialize()
+/obj/item/weapon/storage/box/large/wintershmotree/Initialize()
 	new /obj/item/clothing/shoes/workboots/winta(src)
 	new /obj/item/clothing/suit/storage/hooded/wintercoat/wintercam(src)
 	new /obj/item/clothing/accessory/cloak/wintercamfg(src)
