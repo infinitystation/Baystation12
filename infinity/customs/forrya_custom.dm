@@ -1,7 +1,7 @@
 /obj/item/weapon/clothingbag/forrya_tajar/Initialize()
 	new /obj/item/clothing/accessory/inf_pin/ccapin(src)
 	new /obj/item/clothing/accessory/badge/tajamc(src)
-	new /obj/item/weapon/storage/box/wintershmot(src)
+	new /obj/item/weapon/storage/box/large/wintershmot(src)
 
 /obj/item/clothing/shoes/workboots/winta
 	name = "small winter boots"
@@ -205,7 +205,7 @@
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "wintercloak"
 
-/obj/item/weapon/storage/box/wintershmot
+/obj/item/weapon/storage/box/large/wintershmot
 	name = "white box"
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "clwbox"
