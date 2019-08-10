@@ -211,8 +211,11 @@
 	icon_state = "clwbox"
 	desc = "White box, similar to zinc, with ammunition, but with something more light inside."
 
+/obj/item/weapon/clothingbag/wintabapak
+	new /obj/item/weapon/storage/backpack/satchel/wintaforba(src)
+
 /obj/item/weapon/storage/box/large/wintershmot/Initialize()
 	new /obj/item/clothing/shoes/workboots/winta(src)
-	new /obj/item/weapon/storage/backpack/satchel/wintaforba(src)
+	new /obj/item/weapon/clothingbag/wintabapak(src)
 	new /obj/item/clothing/suit/storage/hooded/wintercoat/wintercam(src)
 	new /obj/item/clothing/accessory/cloak/wintercamfg(src)
