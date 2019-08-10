@@ -63,6 +63,7 @@
 	name = "plastic plate carrier"
 	desc = "Someone made it out of plastic with their own hands. There you can hang a sheet of armor."
 	icon_state = "pvest"
+	slowdown = 0.45
 
 /obj/item/weapon/reagent_containers/glass/beaker/large/mitoll
 	name = "iron beaker"
