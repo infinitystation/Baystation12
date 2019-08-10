@@ -386,15 +386,15 @@
 	scope_zoom = 2
 	wielded_item_state = "z8carbine-wielded"
 
-/obj/item/weapon/storage/box/cinkpulek
-	name = "box of ammo"
-	desc = "A box containing ammo for LDC-542M carabine."
-	icon_state = "ammo"
-	startswith = list(/obj/item/ammo_casing/rifle/military = 60)
+//obj/item/weapon/storage/box/cinkpulek
+//	name = "box of ammo"
+//	desc = "A box containing ammo for LDC-542M carabine."
+//	icon_state = "ammo"
+//	startswith = list(/obj/item/ammo_casing/rifle/military = 60)
 
 /obj/structure/closet/crate/secure/weapon/snaipak/WillContain()
 	return list(
 		/obj/item/weapon/gun/projectile/automatic/amrcarabine/balans,
 		/obj/item/ammo_magazine/mil_rifle/empty = 3,							//жалко того кто будет их набивать лол
-		/obj/item/weapon/storage/box/cinkpulek = 2
+		//obj/item/weapon/storage/box/cinkpulek = 2
 	)
