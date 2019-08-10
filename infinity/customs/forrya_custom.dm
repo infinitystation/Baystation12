@@ -1,7 +1,4 @@
 /obj/item/weapon/clothingbag/forrya_tajar/Initialize()
-	new /obj/item/clothing/accessory/inf_pin/ccapin(src)
-	new /obj/item/clothing/accessory/badge/tajamc(src)
-	new /obj/item/weapon/storage/box/large/wintershmot(src)
 	new /obj/item/weapon/storage/backpack/satchel/wintaforba(src)
 
 /obj/item/clothing/shoes/workboots/winta
@@ -219,3 +216,5 @@
 	new /obj/item/clothing/shoes/workboots/winta(src)
 	new /obj/item/clothing/suit/storage/hooded/wintercoat/wintercam(src)
 	new /obj/item/clothing/accessory/cloak/wintercamfg(src)
+	new /obj/item/clothing/accessory/inf_pin/ccapin(src)
+	new /obj/item/clothing/accessory/badge/tajamc(src)
