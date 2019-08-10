@@ -58,7 +58,7 @@ obj/item/weapon/reagent_containers/food/drinks/sillycup
 		)
 
 obj/item/weapon/reagent_containers/food/drinks/sillycup/mob_can_equip(M as mob)
-	if(reagents.volume)
+	if(reagents.total_volume)
 		to_chat(M, "<span class='warning'>You cannot put [src] on your ears, there is something in it.</span>")
 		return 0
 	..()
