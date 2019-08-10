@@ -57,6 +57,12 @@ obj/item/weapon/reagent_containers/food/drinks/sillycup
 		SPECIES_IPC = 'infinity/icons/mob/onmob/onmob_ears.dmi'
 		)
 
+obj/item/weapon/reagent_containers/food/drinks/sillycup/mob_can_equip(M as mob)
+	if(reagents.volume)
+		to_chat(H, "<span class='warning'>You cannot put [src] on your ears, there is something in it.</span>")
+		return 0
+	..()
+
 obj/item/weapon/reagent_containers/food/drinks/sillycup/equipped(var/M, var/slot)
 	..()
 	if(slot == slot_l_ear)
