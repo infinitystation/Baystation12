@@ -77,3 +77,14 @@
 	name = "military jacket"
 	desc = "A canvas jacket styled classical American military garb. Feels sturdy, yet comfortable."
 	icon_state = "militaryjacket"
+
+/obj/item/clothing/suit/armor/pcarrier/mainkraft/plastic
+	name = "plastic plate carrier"
+	desc = "Someone made it out of plastic with their own hands. There you can hang a sheet of armor."
+	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi')
+	icon_state = "plvest"
+
+/obj/item/clothing/suit/armor/pcarrier/mainkraft/plastic/New()
+	..()
+	slowdown_per_slot[slot_wear_suit] = 0.75

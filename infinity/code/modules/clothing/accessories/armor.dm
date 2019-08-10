@@ -47,12 +47,3 @@
 	icon_state = "armor_merc"
 	armor = list(melee = 60, bullet = 60, laser = 60, energy = 40, bomb = 40, bio = 0, rad = 0)
 	slowdown = 0.75
-
-/obj/item/clothing/suit/armor/pcarrier/mainkraft/plastic
-	name = "plastic plate carrier"
-	desc = "Someone made it out of plastic with their own hands. There you can hang a sheet of armor."
-	icon_state = "pvest"
-
-/obj/item/clothing/suit/armor/pcarrier/mainkraft/plastic/New()
-	..()
-	slowdown_per_slot[slot_wear_suit] = 0.65
