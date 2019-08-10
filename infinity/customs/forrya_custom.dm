@@ -203,7 +203,7 @@
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "wintercloak"
 
-/obj/item/weapon/storage/backpack/satchel/wintaforba
+/obj/item/weapon/storage/backpack/satchel/wintaforba/Initialize()
 	new /obj/item/weapon/storage/box/large/wintershmotree(src)
 
 /obj/item/weapon/storage/box/large/wintershmotree
