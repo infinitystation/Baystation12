@@ -99,95 +99,95 @@
 
 /datum/sprite_accessory/hair/taj/ears_clean_noear
 	name = "Tajara Clean (No ears)"
-	icon_state = "hair_clean_noear"
+	icon_state = "hair_clean_s_noear"
 
 /datum/sprite_accessory/hair/taj/ears_bangs_noear
 	name = "Tajara Bangs (No ears)"
-	icon_state = "hair_bangs_noear"
+	icon_state = "hair_bangs_s_noear"
 
 /datum/sprite_accessory/hair/taj/ears_braid_noear
 	name = "Tajara Braid (No ears)"
-	icon_state = "hair_tbraid_noear"
+	icon_state = "hair_tbraid_s_noear"
 
 /datum/sprite_accessory/hair/taj/ears_shaggy_noear
 	name = "Tajara Shaggy (No ears)"
-	icon_state = "hair_shaggy_noear"
+	icon_state = "hair_shaggy_s_noear"
 
 /datum/sprite_accessory/hair/taj/ears_mohawk_noear
 	name = "Tajaran Mohawk (No ears)"
-	icon_state = "hair_mohawk_noear"
+	icon_state = "hair_mohawk_s_noear"
 
 /datum/sprite_accessory/hair/taj/ears_plait_noear
 	name = "Tajara Plait (No ears)"
-	icon_state = "hair_plait_noear"
+	icon_state = "hair_plait_s_noear"
 
 /datum/sprite_accessory/hair/taj/ears_straight_noear
 	name = "Tajara Straight (No ears)"
-	icon_state = "hair_straight_noear"
+	icon_state = "hair_straight_s_noear"
 
 /datum/sprite_accessory/hair/taj/ears_long_noear
 	name = "Tajara Long (No ears)"
-	icon_state = "hair_long_noear"
+	icon_state = "hair_long_s_noear"
 
 /datum/sprite_accessory/hair/taj/ears_rattail_noear
 	name = "Tajara Rat Tail (No ears)"
-	icon_state = "hair_rattail_noear"
+	icon_state = "hair_rattail_s_noear"
 
 /datum/sprite_accessory/hair/taj/ears_spiky_noear
 	name = "Tajara Spiky (No ears)"
-	icon_state = "hair_tajspiky_noear"
+	icon_state = "hair_tajspiky_s_noear"
 
 /datum/sprite_accessory/hair/taj/ears_messy_noear
 	name = "Tajara Messy (No ears)"
-	icon_state = "hair_messy_noear"
+	icon_state = "hair_messy_s_noear"
 
 /datum/sprite_accessory/hair/taj/ears_bob_noear
 	name = "Tajara Bob (No ears)"
-	icon_state = "hair_tbob_noear"
+	icon_state = "hair_tbob_s_noear"
 
 /datum/sprite_accessory/hair/taj/ears_sidebraid_noear
 	name = "Tajara Sidebraid (No ears)"
-	icon_state = "hair_sidebraid_noear"
+	icon_state = "hair_sidebraid_s_noear"
 
 /datum/sprite_accessory/hair/taj/ears_ribbons_noear
 	name = "Tajara Ribbons (No ears)"
-	icon_state = "hair_ribbons_noear"
+	icon_state = "hair_ribbons_s_noear"
 
 /datum/sprite_accessory/hair/taj/ears_combedback_noear
 	name = "Tajara Combedback (No ears)"
-	icon_state = "hair_combedback_noear"
+	icon_state = "hair_combedback_s_noear"
 
 /datum/sprite_accessory/hair/taj/ears_tailedbangs_noear
 	name = "Tajara Tailedbangs (No ears)"
-	icon_state = "hair_tailedbangs_noear"
+	icon_state = "hair_tailedbangs_s_noear"
 
 /datum/sprite_accessory/hair/taj/ears_longtail_noear
 	name = "Tajara Longtail (No ears)"
-	icon_state = "hair_longtail_noear"
+	icon_state = "hair_longtail_s_noear"
 
 /datum/sprite_accessory/hair/taj/ears_shy_noear
 	name = "Tajara Shy (No ears)"
-	icon_state = "hair_shy_noear"
+	icon_state = "hair_shy_s_noear"
 
 /datum/sprite_accessory/hair/taj/ears_ponytail_noear
 	name = "Tajara Ponytail (No ears)"
-	icon_state = "hair_ponytail_noear"
+	icon_state = "hair_ponytail_s_noear"
 
 /datum/sprite_accessory/hair/taj/ears_overeye_noear
 	name = "Tajara Overeye (No ears)"
-	icon_state = "hair_overeye_noear"
+	icon_state = "hair_overeye_s_noear"
 
 /datum/sprite_accessory/hair/taj/ears_tough_noear
 	name = "Tajara Tough (No ears)"
-	icon_state = "hair_tough_noear"
+	icon_state = "hair_tough_s_noear"
 
 /datum/sprite_accessory/hair/taj/ears_cuttail_noear
 	name = "Tajara Cuttail (No ears)"
-	icon_state = "hair_cuttail_noear"
+	icon_state = "hair_cuttail_s_noear"
 
 /datum/sprite_accessory/hair/taj/ears_dreadlocks_noear
 	name = "Tajara Dreadlocks (No ears)"
-	icon_state = "hair_dreadlocks_noear"
+	icon_state = "hair_dreadlocks_s_noear"
 
 // FACIAL
 
