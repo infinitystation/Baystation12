@@ -18,8 +18,7 @@
 #define FACTION_TAJARAN_JAR					"Jar'Nash'Karr'Ree Family"
 #define FACTION_TAJARAN_OTHER				"Other Family"
 
-
-#define HOME_SYSTEM_AHDOMAI		"Ahdomai"
+#define HOME_SYSTEM_AHDOMAI					"Ahdomai"
 
 // Resomi cultures.
 
