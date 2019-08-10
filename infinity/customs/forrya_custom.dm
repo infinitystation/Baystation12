@@ -1,9 +1,7 @@
 /obj/item/weapon/clothingbag/forrya_tajar/Initialize()
 	new /obj/item/clothing/accessory/inf_pin/ccapin(src)
 	new /obj/item/clothing/accessory/badge/tajamc(src)
-	new /obj/item/clothing/shoes/workboots/winta(src)
-	new /obj/item/weapon/storage/backpack/satchel/wintaforba(src)
-	new /obj/item/clothing/suit/storage/hooded/wintercoat/wintercam(src)
+	new /obj/item/weapon/storage/box/wintershmot(src)
 
 /obj/item/clothing/shoes/workboots/winta
 	name = "small winter boots"
@@ -200,3 +198,21 @@
 /obj/effect/dummy/cam/Destroy()
 	master.disrupt(0)
 	..()
+
+/obj/item/clothing/accessory/cloak/wintercamfg
+	name = "winter camouflage cloak"
+	desc = "Simple winter camouflaging cloak."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "wintercloak"
+
+/obj/item/weapon/storage/box/wintershmot
+	name = "white box"
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "clwbox"
+	desc = "White box, similar to zinc, with ammunition, but with something more light inside."
+
+/obj/item/weapon/storage/box/wintershmot/Initialize()
+	new /obj/item/clothing/shoes/workboots/winta(src)
+	new /obj/item/weapon/storage/backpack/satchel/wintaforba(src)
+	new /obj/item/clothing/suit/storage/hooded/wintercoat/wintercam(src)
+	new /obj/item/clothing/accessory/cloak/wintercamfg(src)
