@@ -209,6 +209,8 @@
 /obj/item/weapon/storage/box/large/wintershmotree
 	name = "white box"
 	icon = CUSTOM_ITEM_OBJ
+	max_w_class = ITEM_SIZE_NORMAL
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 	icon_state = "clwbox"
 	desc = "White box, similar to zinc, with ammunition, but with something more light inside."
 
