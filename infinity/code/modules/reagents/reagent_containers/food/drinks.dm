@@ -71,3 +71,11 @@ obj/item/weapon/reagent_containers/food/drinks/sillycup/equipped(var/M, var/slot
 		item_state = "watercup_r"
 	else
 		item_state = initial(item_state)
+
+/obj/item/weapon/reagent_containers/glass/beaker/large/mitoll
+	name = "iron beaker"
+	desc = "Large steel capacity made by own hands."
+	icon = 'infinity/icons/obj/items.dmi'
+	icon_state = "mbeaker"
+	matter = list(MATERIAL_GLASS = 6000)
+	volume = 150
