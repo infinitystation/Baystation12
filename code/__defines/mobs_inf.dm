@@ -9,7 +9,6 @@
 #define TINT_SIX 6
 #define TINT_BLIND 7
 
-#define SPECIES_BIONIC "Bionic"
 
 #define BP_CANCER "cancer"
 
@@ -45,5 +44,7 @@
 #define SPECIES_EROSAN "Erosan'Unathi"
 #define SPECIES_RESOMI "Resomi"
 #define SPECIES_SWARM  "Swarm"
+#define SPECIES_XENO   "Xenophage"
+#define SPECIES_BIONIC "Bionic"
 
 #define HUMAN_SPECIES list(SPECIES_HUMAN, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_GRAVWORLDER, SPECIES_TRITONIAN)

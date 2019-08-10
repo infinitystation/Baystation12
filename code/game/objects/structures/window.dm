@@ -219,7 +219,7 @@
 		if (istype(user,/mob/living/carbon/human))
 			var/mob/living/carbon/human/H = user
 			if(H.species.can_shred(H))
-				attack_generic(H,25)
+				attack_generic(H,25,pick("strikes")) //inf, was without ',pick("strikes")'
 				return
 
 		playsound(src.loc, 'sound/effects/glassknock.ogg', 80, 1)

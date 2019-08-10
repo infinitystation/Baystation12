@@ -72,9 +72,9 @@
 		..()
 
 /obj/machinery/computer/telescience/attack_ai(mob/user)
-	src.attack_hand(user)
+	src.physical_attack_hand(user)
 
-/obj/machinery/computer/telescience/attack_hand(mob/user)
+/obj/machinery/computer/telescience/physical_attack_hand(mob/user)
 	if(..())
 		return
 	if(!user.skill_check(SKILL_SCIENCE, SKILL_EXPERT))

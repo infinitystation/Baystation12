@@ -109,8 +109,10 @@
 	name = "neuro"
 	icon_state = "neurotoxin"
 	damage = 5
-	damage_type = TOX
-	weaken = 5
+	damage_type = BURN
+	weaken = 6
+	agony = 20
+	life_span = 6
 
 /obj/item/projectile/energy/phoron
 	name = "phoron bolt"

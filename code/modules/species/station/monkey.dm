@@ -28,9 +28,10 @@
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/monkey
 
 	rarity_value = 0.1
-	total_health = 150
+	total_health = 120 //inf, was 150
 	brute_mod = 1.5
 	burn_mod = 1.5
+	blood_volume = 220 //inf, was NOTHING (560)
 
 	spawn_flags = SPECIES_IS_RESTRICTED
 

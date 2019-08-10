@@ -160,12 +160,6 @@
 	eye_attack_text_victim = "a forelimb"
 	attack_name = "forelimb slash"
 
-/datum/unarmed_attack/terminator
-	attack_verb = list("pulverized", "crushed", "pounded")
-	attack_noun = list("power fist")
-	damage = 12
-	attack_sound = 'sound/weapons/heavysmash.ogg'
-
 /datum/unarmed_attack/punch/starborn
 	attack_verb = list("scorched", "burned", "fried")
 	shredding = 1

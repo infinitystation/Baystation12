@@ -31,7 +31,7 @@
 	husk_icon = 		'infinity/icons/mob/human_races/species/resomi/husk.dmi'
 
 	slowdown = -0.8 //speed fix?
-	
+
 	darksight_range = 2
 	darksight_tint = DARKTINT_GOOD
 	flash_mod = 2
@@ -104,7 +104,7 @@
 		)
 
 	inherent_verbs = list(
-		/mob/living/carbon/human/proc/sonar_ping,
+		/mob/living/carbon/human/proc/resomi_sonar_ping,
 		/mob/living/proc/toggle_pass_table
 		)
 

@@ -60,7 +60,7 @@
 		emag_act()
 		return
 
-/obj/machinery/metal_detector/attack_hand(mob/user as mob)
+/obj/machinery/metal_detector/physical_attack_hand(mob/user as mob)
 	if(stat & NOPOWER)
 		to_chat(user, "<span class='warning'>The [src] seems unpowered.</span>")
 		return
@@ -75,7 +75,7 @@
 	usr.set_machine(src)
 
 /obj/machinery/metal_detector/attack_ai(mob/user as mob)
-	return attack_hand(user)
+	return physical_attack_hand(user)
 
 /obj/machinery/metal_detector/interact(mob/user as mob)
 	var/dat

@@ -281,11 +281,9 @@
 
 	if(src.operating) return
 
-	/*INF@ALIUM DELETE
-	if(ishuman(user))
+	if(isxenomorph(user))
 		var/mob/living/carbon/human/H = user
-		if(H.get_species() == SPECIES_XENO)
-			H.pry_open(src)*/
+		H.pry_open(src)
 
 	if(src.allowed(user) && operable())
 		if(src.density)

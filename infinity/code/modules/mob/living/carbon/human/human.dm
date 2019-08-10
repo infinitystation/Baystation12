@@ -191,3 +191,8 @@
 					if (istype(P.loc, /obj/structure/closet))
 						P.visible_message("<B>[H]</B> пытаетс[ya] поймать <B>[P]</B> за хвост!")
 	..()
+/mob/living/carbon/human/Stat()
+	..()
+	var/obj/item/organ/internal/xeno/plasmavessel/P = internal_organs_by_name[BP_PLASMA]
+	if(P)
+		stat(null, "Phoron Stored: [P.stored_plasma]/[P.max_plasma]")

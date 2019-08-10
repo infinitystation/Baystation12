@@ -1,6 +1,8 @@
 #define LANGUAGE_SIIK_MAAS		"Siik'maas"
 #define LANGUAGE_SIIK_TAJR		"Siik'tajr"
 #define LANGUAGE_RESOMI			"Schechi"
+#define LANGUAGE_XENOPHAGE      "Xenophage"
+#define LANGUAGE_XENOPHAGE_HIVE "Hivemind"
 
 //WOLF_SWARM-INF
 /*

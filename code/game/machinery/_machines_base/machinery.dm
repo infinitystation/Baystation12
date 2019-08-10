@@ -283,13 +283,20 @@ Class Procs:
 /obj/machinery/attack_ghost(mob/user)
 	interface_interact(user)
 
-// If you don't call parent in this proc, you must make all appropriate checks yourself. 
+// If you don't call parent in this proc, you must make all appropriate checks yourself.
 // If you do, you must respect the return value.
 /obj/machinery/attack_hand(mob/user)
 	if((. = ..())) // Buckling, climbers; unlikely to return true.
 		return
 	if(!CanPhysicallyInteract(user))
 		return FALSE // The interactions below all assume physical access to the machine. If this is not the case, we let the machine take further action.
+//inf ahead
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.species.can_shred(H)) //it sounds more like "fuck your hard code, bay"
+			if((. = physical_attack_hand(user))) //
+				return
+//inf end
 	if(!user.IsAdvancedToolUser())
 		to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
 		return TRUE
@@ -305,8 +312,8 @@ Class Procs:
 		return
 	if(wires && (. = wires.Interact(user)))
 		return
-	if((. = physical_attack_hand(user)))
-		return
+	if((. = physical_attack_hand(user))) //
+		return //
 	if(CanUseTopic(user, DefaultTopicState()) > STATUS_CLOSE)
 		return interface_interact(user)
 

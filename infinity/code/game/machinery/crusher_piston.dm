@@ -53,7 +53,7 @@
 
 /obj/machinery/crusher_base/Initialize()
 	. = ..()
-
+/*
 	//Create parts for crusher.
 	component_parts = list()
 	component_parts += new /obj/item/weapon/stock_parts/circuitboard/crusher(src)
@@ -68,7 +68,7 @@
 	component_parts += new /obj/item/weapon/reagent_containers/glass/beaker(src)
 	component_parts += new /obj/item/weapon/reagent_containers/glass/beaker(src)
 	RefreshParts()
-
+*/
 	action_start_time = world.time
 
 	//Spawn the stage 1 pistons south of it with a density of 0

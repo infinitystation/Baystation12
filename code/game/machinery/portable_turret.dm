@@ -506,7 +506,10 @@ var/list/turret_icons
 
 	if(iscuffed(L)) // If the target is handcuffed, leave it alone
 		return TURRET_NOT_TARGET
-
+//inf ahead. cause defines. fuck you, bay.
+	if(isxenomorph(L) || isalien(L)) // Xenos are dangerous
+		return check_anomalies ? TURRET_PRIORITY_TARGET	: TURRET_NOT_TARGET
+//inf end
 	if(isanimal(L) || issmall(L)) // Animals are not so dangerous
 		return check_anomalies ? TURRET_SECONDARY_TARGET : TURRET_NOT_TARGET
 
