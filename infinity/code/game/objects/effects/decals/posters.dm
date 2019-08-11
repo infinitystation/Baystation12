@@ -1,4 +1,4 @@
-//постеры космокотов
+//spice kittenz posters
 
 /decl/poster/tjpost/New()
 	..()
@@ -231,7 +231,7 @@
 	Didn't take it too high, or too low. Also, make sure your weapon is not placed in the holster. \
 	If you follow these simple rules and do not blunt, the floor in the toilet will stay clean."
 
-//человечьи постеры
+//spess humen posterz
 
 /obj/structure/sign/poster/tjpost
 	name = "poster"
