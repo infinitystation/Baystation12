@@ -238,9 +238,9 @@
 	icon = 'infinity/icons/obj/posters.dmi'
 	icon_state= "humposter"
 
-/obj/structure/sign/poster/humpost/hum
+/obj/structure/sign/poster/humpost
 	icon_state = "humposter"
-	poster_type = /decl/poster/humpost/hum
+	poster_type = /decl/poster/humpost
 
 /obj/structure/sign/poster/humpost/hum_1
 	icon_state = "humposter_1"
