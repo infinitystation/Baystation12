@@ -32,6 +32,7 @@
 	light_overlay = "helmet_light"
 	brightness_on = 0.5
 	on = 0
+	tint = 2 //INF, WAS NOTHING (0)
 
 	var/tinted = null	//Set to non-null for toggleable tint helmets
 

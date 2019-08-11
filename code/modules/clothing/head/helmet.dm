@@ -116,6 +116,7 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE
 	siemens_coefficient = 1
+	tint = 1  //INF, WAS NOTHING(0)
 
 /*
 /obj/item/clothing/head/helmet/tactical

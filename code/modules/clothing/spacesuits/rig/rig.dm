@@ -93,6 +93,11 @@
 
 	var/banned_modules = list()
 
+//inf ahead
+	vision_restriction = 2 //rigs can hold your broken bones, have modules and moremoremore
+	offline_vision_restriction = 3
+//ind end
+
 /obj/item/weapon/rig/get_cell()
 	return cell
 

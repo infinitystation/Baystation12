@@ -72,6 +72,7 @@
 	icon_state = "hasturhood"
 	flags_inv = BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EYES
+	tint = 1  //INF, WAS NOTHING(0)
 
 /obj/item/clothing/head/nursehat
 	name = "nurse's hat"
@@ -107,6 +108,7 @@
 	item_state = "cardborg_h"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
 	body_parts_covered = HEAD|FACE|EYES
+	tint = 1  //INF, WAS NOTHING(0)
 
 /obj/item/clothing/head/cardborg/Initialize()
 	. = ..()
@@ -118,6 +120,7 @@
 	icon_state = "justicered"
 	flags_inv = BLOCKHAIR
 	body_parts_covered = HEAD|EYES
+	tint = 1  //INF, WAS NOTHING(0)
 
 /obj/item/clothing/head/justice/blue
 	icon_state = "justiceblue"
@@ -235,6 +238,7 @@
 	flags_inv = BLOCKHAIR
 	siemens_coefficient = 0.7
 	body_parts_covered = HEAD|FACE|EYES
+	tint = 1  //INF, WAS NOTHING(0)
 
 /obj/item/clothing/head/bearpelt
 	name = "bear pelt hat"
@@ -255,6 +259,7 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 	siemens_coefficient = 2.0
 	body_parts_covered = HEAD|FACE|EYES
+	tint = 1  //INF, WAS NOTHING(0)
 
 /obj/item/clothing/head/philosopher_wig
 	name = "natural philosopher's wig"
