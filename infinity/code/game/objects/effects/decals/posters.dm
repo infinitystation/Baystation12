@@ -237,3 +237,18 @@
 	name = "poster"
 	icon = 'infinity/icons/obj/posters.dmi'
 	icon_state= "tposter"
+
+/obj/structure/sign/poster/tjpost/tj_1
+	icon_state = "tposter_1"
+	poster_type = /decl/poster/tjpost/tj_1
+
+/decl/poster/tjpost
+	icon_state = "tposter"
+	name = "CCA emblem"
+	desc = "A poster with an emblem of CCA."
+
+/decl/poster/tjpost/tj_1
+	icon_state = "tposter_1"
+	name = "Liberation day"
+	desc = "A memorable photo, which depicted how the soldiers of the Kaytam clan raise their flag \
+	over the overseer citadel in Naliar"
