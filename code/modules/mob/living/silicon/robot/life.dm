@@ -234,18 +234,6 @@
 			else
 				src.bodytemp.icon_state = "temp-2"
 
-		switch(src.bodytemperature) //310.055 optimal body temp
-			if(320 to INFINITY)
-				src.bodytemp.icon_state = "mintemp2"
-			if(315 to 320)
-				src.bodytemp.icon_state = "mintemp1"
-			if(305 to 315)
-				src.bodytemp.icon_state = "mintemp0"
-			if(205 to 302)
-				src.bodytemp.icon_state = "mintemp-1"
-			else
-				src.bodytemp.icon_state = "mintemp-2"
-
 //Oxygen and fire does nothing yet!!
 //	if (src.oxygen) src.oxygen.icon_state = "oxy[src.oxygen_alert ? 1 : 0]"
 //	if (src.fire) src.fire.icon_state = "fire[src.fire_alert ? 1 : 0]"
@@ -292,7 +280,7 @@
 		set_see_invisible(SEE_INVISIBLE_LEVEL_TWO)
 	else if (src.stat != DEAD)
 		set_sight(sight&(~SEE_TURFS)&(~SEE_MOBS)&(~SEE_OBJS))
-		set_see_in_dark(8) 			 // see_in_dark means you can FAINTLY see in the dark, humans have a range of 3 or so, tajaran have it at 8
+		set_see_in_dark(8) 			 // see_in_dark means you can FAINTLY see in the dark, humans have a range of 3 or so
 		set_see_invisible(SEE_INVISIBLE_LIVING) // This is normal vision (25), setting it lower for normal vision means you don't "see" things like darkness since darkness
 							 // has a "invisible" value of 15
 

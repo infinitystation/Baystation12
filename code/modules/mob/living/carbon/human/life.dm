@@ -321,7 +321,7 @@
 			if(!rig.offline && (rig.air_supply && internal == rig.air_supply))
 				rig_supply = rig.air_supply
 
-		if (!rig_supply && (!contents.Find(internal) || !((wear_mask && (wear_mask.item_flags & ITEM_FLAG_AIRTIGHT)) || (head && (head.item_flags & ITEM_FLAG_AIRTIGHT)))))	
+		if (!rig_supply && (!contents.Find(internal) || !((wear_mask && (wear_mask.item_flags & ITEM_FLAG_AIRTIGHT)) || (head && (head.item_flags & ITEM_FLAG_AIRTIGHT)))))
 			set_internals(null)
 
 		if(internal)
@@ -677,7 +677,6 @@
 	return 1
 
 /mob/living/carbon/human/handle_regular_hud_updates()
-	var/datum/gas_mixture/environment = loc.return_air()
 	if(hud_updateflag) // update our mob's hud overlays, AKA what others see flaoting above our head
 		handle_hud_list()
 
@@ -817,15 +816,6 @@
 					if(280 to 295)			bodytemp.icon_state = "temp-2"
 					if(260 to 280)			bodytemp.icon_state = "temp-3"
 					else					bodytemp.icon_state = "temp-4"
-				switch(environment.temperature) //292 = 20 cel
-					if(311 to INFINITY)		minsbodytemp.icon_state = "mintemp3" //+38
-					if(303 to 311)			minsbodytemp.icon_state = "mintemp2" //32 to 38
-					if(299 to 305)			minsbodytemp.icon_state = "mintemp1" //25 to 32
-					if(287 to 299)			minsbodytemp.icon_state = "mintemp0" // 14 to 25 cel 320fuck
-					if(281 to 287)			minsbodytemp.icon_state = "mintemp-1" //8 to 14
-					if(273 to 281)			minsbodytemp.icon_state = "mintemp-2" //0 to 8
-					if(266 to 273)			minsbodytemp.icon_state = "mintemp-3" //-7 to 0
-					else					minsbodytemp.icon_state = "mintemp-4"
 			else
 				//TODO: precalculate all of this stuff when the species datum is created
 				var/base_temperature = species.body_temperature
@@ -860,46 +850,6 @@
 						bodytemp.icon_state = "temp-1"
 					else
 						bodytemp.icon_state = "temp0"
-
-				var/minitemp_step
-				var/middle_temp = ((getSpeciesOrSynthTemp(HEAT_LEVEL_1) + getSpeciesOrSynthTemp(COLD_LEVEL_1)))/2
-				if(middle_temp >= 340)
-					middle_temp = middle_temp -= 35
-				if(middle_temp >= 330)
-					middle_temp = middle_temp -= 10
-				if(middle_temp <= 253)
-					middle_temp = middle_temp += 10
-				if (environment.temperature >= middle_temp)
-					minitemp_step = (getSpeciesOrSynthTemp(HEAT_LEVEL_1) - middle_temp)/6
-
-					if (environment.temperature >= getSpeciesOrSynthTemp(HEAT_LEVEL_1))
-						minsbodytemp.icon_state = "mintemp5"
-					else if (environment.temperature >= middle_temp + minitemp_step*4)
-						minsbodytemp.icon_state = "mintemp4"
-					else if (environment.temperature >= middle_temp + minitemp_step*3)
-						minsbodytemp.icon_state = "mintemp3"
-					else if (environment.temperature >= middle_temp + minitemp_step*2)
-						minsbodytemp.icon_state = "mintemp2"
-					else if (environment.temperature >= middle_temp + minitemp_step*1)
-						minsbodytemp.icon_state = "mintemp1"
-					else
-						minsbodytemp.icon_state = "mintemp0"
-
-				else if (environment.temperature <= middle_temp)
-					minitemp_step = (middle_temp - getSpeciesOrSynthTemp(COLD_LEVEL_1))/6
-
-					if (environment.temperature <= getSpeciesOrSynthTemp(COLD_LEVEL_1))
-						minsbodytemp.icon_state = "mintemp-5"
-					else if (environment.temperature <= middle_temp - minitemp_step*4)
-						minsbodytemp.icon_state = "mintemp-4"
-					else if (environment.temperature <= middle_temp - minitemp_step*3)
-						minsbodytemp.icon_state = "mintemp-3"
-					else if (environment.temperature <= middle_temp - minitemp_step*2)
-						minsbodytemp.icon_state = "mintemp-2"
-					else if (environment.temperature <= middle_temp - minitemp_step*1)
-						minsbodytemp.icon_state = "mintemp-1"
-					else
-						minsbodytemp.icon_state = "mintemp0"
 	return 1
 
 /mob/living/carbon/human/handle_random_events()

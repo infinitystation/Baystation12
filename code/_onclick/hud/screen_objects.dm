@@ -300,10 +300,6 @@
 			else
 				usr.fixeye.icon_state = "fixeye"
 
-		if("air_temperature")
-			if(usr.client)
-				usr.air_temperature()
-
 		if("module")
 			if(isrobot(usr))
 				var/mob/living/silicon/robot/R = usr

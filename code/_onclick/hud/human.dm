@@ -187,7 +187,7 @@
 		mymob.healths.SetName("health")
 		mymob.healths.screen_loc = ui_health
 		hud_elements |= mymob.healths
-		
+
 		mymob.oxygen = new /obj/screen/oxygen()
 		mymob.oxygen.icon = 'icons/mob/status_indicators.dmi'
 		mymob.oxygen.icon_state = "oxy0"
@@ -224,13 +224,6 @@
 		mymob.bodytemp.SetName("body temperature")
 		mymob.bodytemp.screen_loc = ui_temp
 		hud_elements |= mymob.bodytemp
-
-		mymob.minsbodytemp = new /obj/screen()
-		mymob.minsbodytemp.icon = 'icons/mob/screen/status.dmi'
-		mymob.minsbodytemp.icon_state = "mintemp0"
-		mymob.minsbodytemp.name = "air_temperature"
-		mymob.minsbodytemp.screen_loc = ui_mintemp
-		hud_elements |= mymob.minsbodytemp
 
 	if(target.isSynthetic())
 		target.cells = new /obj/screen()
@@ -315,7 +308,7 @@
 		client.screen -= hud_used.hotkeybuttons
 		hud_used.hotkey_ui_hidden = 1
 
-// Yes, these use icon state. Yes, these are terrible. The alternative is duplicating 
+// Yes, these use icon state. Yes, these are terrible. The alternative is duplicating
 // a bunch of fairly blobby logic for every click override on these objects.
 
 /obj/screen/food/Click(var/location, var/control, var/params)

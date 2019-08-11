@@ -3309,6 +3309,7 @@
 #include "infinity\code\modules\mob\animations.dm"
 #include "infinity\code\modules\mob\holder.dm"
 #include "infinity\code\modules\mob\logout.dm"
+#include "infinity\code\modules\mob\mob_defines.dm"
 #include "infinity\code\modules\mob\mob_helpers.dm"
 #include "infinity\code\modules\mob\language\alien\resomi.dm"
 #include "infinity\code\modules\mob\language\alien\tajaran.dm"
