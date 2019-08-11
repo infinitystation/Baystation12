@@ -63,7 +63,7 @@
 #endif
 		blocked = 1
 	else
-		blocked = (effective_armor - fullblock)/(1 - fullblock)
+		blocked = (effective_armor - (fullblock * fullblock))/(1 - (fullblock * fullblock))
 	return blocked
 
 /datum/extension/armor/proc/get_value(key)
