@@ -427,4 +427,4 @@
 	name = "hero"
 	desc = "You see a very pumped-up guy with a huge machete. He is huge, he is muscular, \
 	he is beautiful and you want children from him. Join the ranks of the Expeditionary Corps\
-	 - advises us the hero from the poster."
+	- advises us the hero from the poster."
