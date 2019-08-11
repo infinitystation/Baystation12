@@ -418,7 +418,9 @@
 /decl/poster/humpost/hum_19
 	icon_state = "humposter_19"
 	name = "resomi"
-	desc = "The poster, which shows very lustly resomi lying on the bed and looking straight into your soul. Oh, it's hot, very hot."
+	desc = "The poster, which shows very lustly resomi lying on the bed and looking straight into your soul. Oh, it's hot, very hot.\
+	On the edge of the poster in small print printed: <<Adaptive miracle, a great sensation in the porn industry, testing a variety \
+	of ways of penetration. Read more in our magazine page 5>>"
 
 /decl/poster/humpost/hum_20
 	icon_state = "humposter_20"
