@@ -1,9 +1,5 @@
 /obj/item/weapon/clothingbag/forrya_tajar/Initialize()
-	new /obj/item/clothing/accessory/inf_pin/ccapin(src)
-	new /obj/item/clothing/accessory/badge/tajamc(src)
-	new /obj/item/clothing/shoes/workboots/winta(src)
 	new /obj/item/weapon/storage/backpack/satchel/wintaforba(src)
-	new /obj/item/clothing/suit/storage/hooded/wintercoat/wintercam(src)
 
 /obj/item/clothing/shoes/workboots/winta
 	name = "small winter boots"
@@ -200,3 +196,27 @@
 /obj/effect/dummy/cam/Destroy()
 	master.disrupt(0)
 	..()
+
+/obj/item/clothing/accessory/cloak/wintercamfg
+	name = "winter camouflage cloak"
+	desc = "Simple winter camouflaging cloak."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "wintercloak"
+
+/obj/item/weapon/storage/backpack/satchel/wintaforba/Initialize()
+	new /obj/item/weapon/storage/box/wintershmotree(src)
+
+/obj/item/weapon/storage/box/wintershmotree
+	name = "white box"
+	icon = CUSTOM_ITEM_OBJ
+	max_w_class = ITEM_SIZE_LARGE
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
+	icon_state = "clwbox"
+	desc = "White box, similar to zinc with ammunition, but with something more light inside. Or not..."
+
+/obj/item/weapon/storage/box/wintershmotree/Initialize()
+	new /obj/item/clothing/accessory/cloak/wintercamfg(src)
+	new /obj/item/clothing/accessory/inf_pin/ccapin(src)
+	new /obj/item/clothing/suit/storage/hooded/wintercoat/wintercam(src)
+	new /obj/item/clothing/accessory/badge/tajamc(src)
+	new /obj/item/clothing/shoes/workboots/winta(src)

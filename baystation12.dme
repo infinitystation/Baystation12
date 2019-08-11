@@ -3219,6 +3219,7 @@
 #include "infinity\code\modules\events\alien.dm"
 #include "infinity\code\modules\events\cancer.dm"
 #include "infinity\code\modules\food\recipes_microwave.dm"
+#include "infinity\code\modules\materials\reciepes.dm"
 #include "infinity\code\modules\mob\animations.dm"
 #include "infinity\code\modules\mob\holder.dm"
 #include "infinity\code\modules\mob\logout.dm"
