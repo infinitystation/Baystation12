@@ -1,3 +1,5 @@
+//постеры космокотов
+
 /decl/poster/tjpost/New()
 	..()
 	. = pick(subtypesof(/decl/poster/tjpost))
@@ -5,7 +7,7 @@
 /obj/structure/sign/poster/tjpost
 	name = "poster"
 //	desc = "A large piece of space-resistant printed paper with emblem of CCA."
-	icon = 'infinity/icons/obj/contraband.dmi'
+	icon = 'infinity/icons/obj/posters.dmi'
 	icon_state= "tposter"
 
 /obj/structure/sign/poster/tjpost/tj_1
@@ -98,7 +100,7 @@
 
 /obj/structure/sign/poster/guide_to_pee
 	icon_state = "guide_to_pee"
-	icon = 'infinity/icons/obj/contraband.dmi'
+	icon = 'infinity/icons/obj/posters.dmi'
 	poster_type = /decl/poster/guide_to_pee
 
 /decl/poster/tjpost
@@ -227,4 +229,11 @@
 	desc = "If you want to avoid obossaniy pol and unitaz, then follow a couple of simple rules \
 	that will help you in this: For starters, get a hold of your gun. Make sure you get your sights right. \
 	Didn't take it too high, or too low. Also, make sure your weapon is not placed in the holster. \
-	If you follow these simple rules and do not blunt, the floor in the toilet will not be obossan."
+	If you follow these simple rules and do not blunt, the floor in the toilet will stay clean."
+
+//человечьи постеры
+
+/obj/structure/sign/poster/tjpost
+	name = "poster"
+	icon = 'infinity/icons/obj/posters.dmi'
+	icon_state= "tposter"
