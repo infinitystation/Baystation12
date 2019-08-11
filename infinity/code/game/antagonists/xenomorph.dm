@@ -70,6 +70,3 @@ GLOBAL_DATUM_INIT(xenomorphs, /datum/antagonist/xenos, new)
 		return
 	global_objectives |= new /datum/objective/survive
 	return 1
-
-/datum/antagonist/xenos/place_mob(var/mob/living/player)
-	player.forceMove(get_turf(pick(get_vents())))
