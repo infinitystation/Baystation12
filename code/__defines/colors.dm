@@ -113,7 +113,7 @@
 #define WOOD_COLOR_PALE        "#d2bc9d"
 #define WOOD_COLOR_PALE2       "#e6d2ba"
 #define WOOD_COLOR_BLACK       "#332521"
-#define WOOD_COLOR_CHOCOLATE   "#543c30"
+#define WOOD_COLOR_CHOCOLATE   "#78523b" //inf, was: "#543c30"
 #define WOOD_COLOR_YELLOW      "#e3994e"
 
 #define GLASS_COLOR            "#74c1ee"
