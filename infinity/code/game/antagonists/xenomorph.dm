@@ -5,6 +5,7 @@ GLOBAL_DATUM_INIT(xenomorphs, /datum/antagonist/xenos, new)
 	role_text = "Xenophage"
 	role_text_plural = "Xenophages"
 	flags = ANTAG_OVERRIDE_MOB | ANTAG_RANDSPAWN | ANTAG_OVERRIDE_JOB
+	mob_path = /mob/living/carbon/alien/larva
 	welcome_text = "<span class='changeling'><b>ВСТУПЛЕНИЕ</b>:<br>\
 	Вы - 'неизвестна&#255; форма жизни', как думает Экипаж. Чтобы общатьс&#255; со своими <b>СЕСТРАМИ</b> \
 	как через рацию, используйте префикс ',a' (с английской буквой).<br>\
@@ -57,18 +58,18 @@ GLOBAL_DATUM_INIT(xenomorphs, /datum/antagonist/xenos, new)
 /datum/antagonist/xenos/attempt_random_spawn()
 	if(config.aliens_allowed) ..()
 
-/datum/antagonist/xenos/proc/get_vents()
-	var/list/vents = list()
-	for(var/obj/machinery/atmospherics/unary/vent_pump/temp_vent in SSmachines.machinery)
-		if(!temp_vent.welded && temp_vent.network && (temp_vent.loc.z in GLOB.using_map.station_levels))
-			if(temp_vent.network.normal_members.len > 50)
-				vents += temp_vent
-	return vents
-
+/*
 /datum/antagonist/xenos/create_objectives(var/datum/mind/player)
 	if(!..())
 		return
 	player.objectives += new /datum/objective/survive()
+*/
+
+/datum/antagonist/xenos/create_global_objectives()
+	if(!..())
+		return
+	global_objectives |= new /datum/objective/survive
+	return 1
 
 /datum/antagonist/xenos/place_mob(var/mob/living/player)
 	player.forceMove(get_turf(pick(get_vents())))

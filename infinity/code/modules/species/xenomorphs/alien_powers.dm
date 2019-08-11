@@ -219,25 +219,25 @@ mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in ovi
 	set category = "Abilities"
 
 	if(!M.Adjacent(src))
-		to_chat(src, SPAN_LING("Оно слишком далеко."))
+		to_chat(src, SPAN_ALIEN("Оно слишком далеко."))
 		return
 
 	if(!M.mind)
-		to_chat(src, SPAN_LING("Плоть без разума принесёт пользу Улью лишь в качестве пищи."))
+		to_chat(src, SPAN_ALIEN("Плоть без разума принесёт пользу Улью лишь в качестве пищи."))
 		return
 
 	if(M.species.get_bodytype(M) == "Xenophage" || !isnull(M.internal_organs_by_name["hive node"]))
-		to_chat(src, SPAN_LING("Оно уже часть нашего Улья."))
+		to_chat(src, SPAN_ALIEN("Оно уже часть нашего Улья."))
 		return
 
 	var/obj/item/organ/affecting = M.get_organ(BP_CHEST)
 	if(!affecting || BP_IS_ROBOTIC(affecting))
-		to_chat(src, SPAN_LING("Это тело несовметимо с нашей физиологией..."))
+		to_chat(src, SPAN_ALIEN("Это тело несовметимо с нашей физиологией..."))
 		return
 
 	var/confirm = alert(M, "Королева хочет сделать вас часть ульЯ. Вы согласны?", "Become Larva", "No", "Yes")
 	if(!M || confirm != "Yes")
-		to_chat(src, SPAN_LING("Несовместим с Ульем и не может стать его часть (требуется согласие жертвы)."))
+		to_chat(src, SPAN_ALIEN("Несовместим с Ульем и не может стать его часть (требуется согласие жертвы)."))
 		return
 
 	src.visible_message(SPAN_DANGER("[src] встает перед [M], а затем, из её головы появляется полое, прозрачное жало!"))

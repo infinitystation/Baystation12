@@ -33,7 +33,7 @@
 			choices += H
 
 	if(!choices.len)
-		to_chat(src, SPAN_LING("There are no viable hosts within range."))
+		to_chat(src, SPAN_ALIEN("There are no viable hosts within range."))
 		return
 
 	var/mob/living/carbon/human/H = input(src,"Who do you wish to infest?") as null|anything in choices
@@ -49,7 +49,7 @@
 		return
 
 	var/obj/item/organ/external/E = pick(H.organs)
-	to_chat(src, SPAN_LING("You burrow deeply into \the [H]'s [E.name]."))
+	to_chat(src, SPAN_ALIEN("You burrow deeply into \the [H]'s [E.name]."))
 	var/obj/item/weapon/holder/holder = new (loc)
 	src.forceMove(holder)
 	holder.SetName(src.name)
@@ -61,20 +61,20 @@
 	set desc = "Release your host."
 
 	if(incapacitated())
-		to_chat(src, SPAN_LING("You cannot leave your host in your current state."))
+		to_chat(src, SPAN_ALIEN("You cannot leave your host in your current state."))
 		return
 
 	if(!loc || !loc.loc)
-		to_chat(src, SPAN_LING("You are not inside a host."))
+		to_chat(src, SPAN_ALIEN("You are not inside a host."))
 		return
 
 	var/mob/living/carbon/human/H = loc.loc
 
 	if(!istype(H))
-		to_chat(src, SPAN_LING("You are not inside a host."))
+		to_chat(src, SPAN_ALIEN("You are not inside a host."))
 		return
 
-	to_chat(src, SPAN_LING("You begin writhing your way free of \the [H]'s flesh..."))
+	to_chat(src, SPAN_ALIEN("You begin writhing your way free of \the [H]'s flesh..."))
 
 	if(!do_after(src, 30, H))
 		return
@@ -86,11 +86,11 @@
 
 /mob/living/carbon/alien/larva/proc/leave_host()
 	if(!loc || !loc.loc)
-		to_chat(src, SPAN_LING("You are not inside a host."))
+		to_chat(src, SPAN_ALIEN("You are not inside a host."))
 		return
 	var/mob/living/carbon/human/H = loc.loc
 	if(!istype(H))
-		to_chat(src, SPAN_LING("You are not inside a host."))
+		to_chat(src, SPAN_ALIEN("You are not inside a host."))
 		return
 	var/obj/item/weapon/holder/holder = loc
 	var/obj/item/organ/external/affected
@@ -104,6 +104,6 @@
 	else
 		dropInto(loc)
 	if(affected)
-		to_chat(src, SPAN_LING("You crawl out of \the [H]'s [affected.name] and plop to the ground."))
+		to_chat(src, SPAN_ALIEN("You crawl out of \the [H]'s [affected.name] and plop to the ground."))
 	else
-		to_chat(src, SPAN_LING("You plop to the ground."))
+		to_chat(src, SPAN_ALIEN("You plop to the ground."))
