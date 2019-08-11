@@ -37,7 +37,7 @@
 	recommended_players = 20
 //	minimum_players = 0 its already 0
 
-	away_site_budget = 0
+	away_site_budget = 2
 	id_hud_icons = 'maps/sierra/icons/assignment_hud.dmi'
 
 	available_cultural_info = list(
@@ -108,12 +108,17 @@
 			RELIGION_JUDAISM,
 			RELIGION_HINDUISM,
 			RELIGION_BUDDHISM,
+			RELIGION_SIKHISM,
+			RELIGION_JAINISM,
 			RELIGION_ISLAM,
 			RELIGION_CHRISTIANITY,
+			RELIGION_BAHAI_FAITH,
 			RELIGION_AGNOSTICISM,
 			RELIGION_DEISM,
 			RELIGION_ATHEISM,
 			RELIGION_THELEMA,
-			RELIGION_SPIRITUALISM
+			RELIGION_SPIRITUALISM,
+			RELIGION_SHINTO,
+			RELIGION_TAOISM
 		)
 	)
