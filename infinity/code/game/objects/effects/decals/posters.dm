@@ -396,7 +396,7 @@
 /decl/poster/humpost/hum_14
 	icon_state = "humposter_14"
 	name = "olympus"
-	desc = "Spires of Olympus - the capital of Mars and humanity.
+	desc = "Spires of Olympus - the capital of Mars and humanity."
 
 /decl/poster/humpost/hum_15
 	icon_state = "humposter_15"
