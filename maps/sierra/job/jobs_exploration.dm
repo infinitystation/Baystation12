@@ -8,7 +8,7 @@
 	supervisors = "the Captain"
 	selection_color = "#68099e"
 	minimal_player_age = 7
-	economic_power = 7
+	economic_power = 9
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/el
 	allowed_branches = list(/datum/mil_branch/employee)
@@ -31,6 +31,13 @@
 	software_on_spawn = list(/datum/computer_file/program/deck_management,
 							 /datum/computer_file/program/reports)
 
+/datum/job/exploration_leader/get_description_blurb()
+	return "Вы - Экспедиционный Лидер. В ваши обязанности входит организация и участие в миссиях на удаленные объекты. \
+	Вы ищите всё, что может предоставить НТ экономическую или научную выгоду - залежи драгоценных металлов, новые \
+	формы жизни, инопланетные артефакты и неизвестные технологии. Вы будете вести свою экспедицию прямиком через ад - \
+	опасную атмосферу, агрессивную флору и фауну, сбойных дронов, враждебно настроенными к вам роботов и \
+	аномалии... Но не это ли то, за что Корпорация платит вам почти столько же, сколько главе?"
+
 /datum/job/explorer
 	title = "Explorer"
 	department = "Exploration"
@@ -40,7 +47,7 @@
 	supervisors = "the Captain and the Exploration Leader"
 	selection_color = "#68099e"
 	ideal_character_age = 20
-	economic_power = 3
+	economic_power = 6
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/explorer
 	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
 	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor)
@@ -58,8 +65,12 @@
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
 
 /datum/job/explorer/get_description_blurb()
-	return "You are an Explorer. Your duty is to go on expeditions to away sites. The Exploration Leader is your team leader. You are to look for anything of economic or scientific interest to the NT - mineral deposits, alien flora/fauna, artifacts. You will also likely encounter hazardous environments, aggressive wildlife or malfunctioning defense systems, so tread carefully."
-
+	return "Вы - Исследователь. В ваши обязанности входит участие в миссиях на удаленные объекты, \
+	организуемые Лидером Экспедиции или заменяющим его лицом. Вы ищите всё, что может предоставить НТ \
+	экономическую или научную выгоду - залежи драгоценных металлов, новые формы жизни, инопланетные артефакты и \
+	неизвестные технологии. Вы будете иметь дело с опасной атмосферой, агрессивной флорой и фауной, сбойными дронами \
+	на заброшенных объектах, враждебно настроенными к вам роботами и аномалиями... Но не это ли то, за что Корпорация \
+	вам так хорошо платит?"
 
 /datum/job/explorer_pilot
 	title = "Expeditionary Pilot"
@@ -70,7 +81,7 @@
 	supervisors = "the Captain and the Exploration Leader"
 	selection_color = "#68099e"
 	ideal_character_age = 24
-	economic_power = 4
+	economic_power = 7
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/pilot
 	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
 	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor)
@@ -91,6 +102,14 @@
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
 
+/datum/job/explorer_pilot/get_description_blurb()
+	return "Вы - Исследователь. В ваши обязанности входит участие в миссиях на удаленные объекты, \
+	организуемые Лидером Экспедиции или заменяющим его лицом. Вы ищите всё, что может предоставить НТ \
+	экономическую или научную выгоду - залежи драгоценных металлов, новые формы жизни, инопланетные артефакты и \
+	неизвестные технологии. Вы будете иметь дело с опасной атмосферой, агрессивной флорой и фауной, сбойными дронами \
+	на заброшенных объектах, враждебно настроенными к вам роботами и аномалиями... Но не это ли то, за что Корпорация \
+	вам так хорошо платит?"
+
 /datum/job/explorer_medic
 	title = "Field Medic"
 	department = "Exploration"
@@ -105,7 +124,7 @@
 	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor)
 
 	skill_points = 26
-	economic_power = 4
+	economic_power = 8
 
 
 	min_skill = list(	SKILL_EVA	= SKILL_BASIC,
@@ -129,6 +148,14 @@
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
 
+/datum/job/explorer_medic/get_description_blurb()
+	return "Вы - Исследователь. В ваши обязанности входит участие в миссиях на удаленные объекты, \
+	организуемые Лидером Экспедиции или заменяющим его лицом. Вы ищите всё, что может предоставить НТ \
+	экономическую или научную выгоду - залежи драгоценных металлов, новые формы жизни, инопланетные артефакты и \
+	неизвестные технологии. Вы будете иметь дело с опасной атмосферой, агрессивной флорой и фауной, сбойными дронами \
+	на заброшенных объектах, враждебно настроенными к вам роботами и аномалиями... Но не это ли то, за что Корпорация \
+	вам так хорошо платит?"
+
 /datum/job/explorer_engineer
 	title = "Field Engineer"
 	department = "Exploration"
@@ -138,7 +165,7 @@
 	supervisors = "the Captain and the Exploration Leader"
 	selection_color = "#68099e"
 	ideal_character_age = 28
-	economic_power = 4
+	economic_power = 7
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/engineer
 	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
 	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor)
@@ -168,3 +195,11 @@
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
+
+/datum/job/explorer_engineer/get_description_blurb()
+	return "Вы - Исследователь. В ваши обязанности входит участие в миссиях на удаленные объекты, \
+	организуемые Лидером Экспедиции или заменяющим его лицом. Вы ищите всё, что может предоставить НТ \
+	экономическую или научную выгоду - залежи драгоценных металлов, новые формы жизни, инопланетные артефакты и \
+	неизвестные технологии. Вы будете иметь дело с опасной атмосферой, агрессивной флорой и фауной, сбойными дронами \
+	на заброшенных объектах, враждебно настроенными к вам роботами и аномалиями... Но не это ли то, за что Корпорация \
+	вам так хорошо платит?"
