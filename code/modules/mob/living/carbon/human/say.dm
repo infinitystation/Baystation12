@@ -133,14 +133,14 @@
 
 /mob/living/carbon/human/say_quote(var/message, var/datum/language/speaking = null)
 	var/verb = "says"
-	var/ending = copytext(message, length(message) - 1)
+	var/ending = copytext(message, length(message))
 
 	if(speaking)
 		verb = speaking.get_spoken_verb(ending)
 	else
-		if(copytext(ending, length(ending))=="!")
+		if(ending == "!")
 			verb=pick("exclaims","shouts","yells")
-		else if(copytext(ending, length(ending))=="?")
+		else if(ending == "?")
 			verb="asks"
 
 	return verb
