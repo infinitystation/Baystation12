@@ -42,6 +42,7 @@
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_emergency
 	name = "emergency smartgun guncabinet"
+	req_access = list(access_security) //even adjutant/guard can open
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_emergency/WillContain()
 	return list(/obj/item/weapon/gun/energy/gun/small/secure = 4)
