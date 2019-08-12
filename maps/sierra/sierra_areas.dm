@@ -309,11 +309,11 @@
 	icon_state = "shuttlered"
 	base_turf = /turf/simulated/floor/plating
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
-	req_access = list(access_expedition_shuttle)
+//	req_access = list(access_expedition_shuttle)
 
 /area/exploration_shuttle/cockpit
 	name = "Charon - Cockpit"
-	req_access = list(access_expedition_shuttle_helm)
+//	req_access = list(access_expedition_shuttle_helm)
 /area/exploration_shuttle/atmos
 	name = "Charon - Atmos Compartment"
 /area/exploration_shuttle/power
@@ -759,6 +759,7 @@
 	name = "Shuttle Fuel Bay"
 	icon_state = "toxstorage"
 	sound_env = SMALL_ENCLOSED
+	req_access = list(list(access_cargo, access_expedition_shuttle_helm, access_guppy_helm))
 
 /area/quartermaster/hangar
 	name = "Hangar Deck"
