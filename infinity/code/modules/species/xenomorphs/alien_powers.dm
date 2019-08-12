@@ -280,14 +280,14 @@ mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in ovi
 
 	if(A.stat != NOPOWER)
 		playsound(A.loc, 'infinity/sound/effects/metal_creaking.ogg', 25, 1)
-		if(!do_mob(src,src,80))
+		if(!do_mob(src,src,65))
 			return
 
 	if(!A.density)
 		return
 
-	A.do_animate("spark")
-	sleep(10)
+//	A.do_animate("spark")
+//	sleep(5)
 //	A.set_broken(TRUE)
 	A.open(1) //var/check =
 //	src.visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")

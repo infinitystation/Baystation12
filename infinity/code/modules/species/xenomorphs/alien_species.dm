@@ -19,13 +19,13 @@
 	damage_mask =     null //no icons
 	blood_mask =      null //no icons
 
-	darksight_range = 7
+	darksight_range = 8
 	darksight_tint = DARKTINT_GREAT
 
 	antaghud_offset_x = -16
 	pixel_offset_x = -16
 	has_fine_manipulation = 0
-	siemens_coefficient = 0.5
+	siemens_coefficient = 0.25
 	gluttonous = GLUT_ANYTHING
 	stomach_capacity = MOB_MEDIUM
 
@@ -140,8 +140,6 @@
 		)
 
 	inherent_verbs = list(
-		/mob/living/proc/ventcrawl,
-		/mob/living/carbon/human/proc/pry_open,
 		/mob/living/carbon/human/proc/plant,
 		/mob/living/carbon/human/proc/transfer_plasma,
 		/mob/living/carbon/human/proc/evolve,
@@ -167,7 +165,7 @@
 
 //	brute_mod =     0.8
 //	burn_mod =      0.8
-//	weeds_plasma_rate = 5
+//	weeds_plasma_rate = 10
 //	slowdown = -0.5
 
 	has_organ = list(
@@ -180,7 +178,7 @@
 		)
 
 	inherent_verbs = list(
-		/mob/living/proc/ventcrawl,
+		/mob/living/carbon/human/proc/plant,
 		/mob/living/carbon/human/proc/pry_open,
 		/mob/living/carbon/human/proc/tackle,
 		/mob/living/carbon/human/proc/leap,
@@ -202,7 +200,7 @@
 	icobase = 'infinity/icons/mob/human_races/species/xenophage/body_sentinel.dmi'
 	deform =  'infinity/icons/mob/human_races/species/xenophage/body_sentinel.dmi'
 
-	weeds_plasma_rate = 10
+	weeds_plasma_rate = 15
 	slowdown = 0.5
 
 	has_organ = list(
@@ -216,7 +214,7 @@
 		)
 
 	inherent_verbs = list(
-		/mob/living/proc/ventcrawl,
+		/mob/living/carbon/human/proc/plant,
 		/mob/living/carbon/human/proc/pry_open,
 		/mob/living/carbon/human/proc/tackle,
 		/mob/living/carbon/human/proc/transfer_plasma,
@@ -259,7 +257,6 @@
 		)
 
 	inherent_verbs = list(
-		/mob/living/proc/ventcrawl,
 		/mob/living/carbon/human/proc/pry_open,
 		/mob/living/carbon/human/proc/psychic_whisper,
 		/mob/living/carbon/human/proc/lay_egg,
