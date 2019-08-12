@@ -134,11 +134,11 @@
 	total_positions = 1
 	spawn_positions = 1
 	ideal_character_age = 40
-	economic_power = 5
+	economic_power = 8
 	supervisors = "the Chief Medical Officer"
 	alt_titles = list(
 		"Psychiatrist" = /decl/hierarchy/outfit/job/sierra/crew/medical/counselor/psychiatrist,
-		"Chaplain" = /decl/hierarchy/outfit/job/sierra/crew/medical/counselor/chaplain,
+		"Mentalist" = /decl/hierarchy/outfit/job/sierra/crew/medical/counselor/mentalist
 	)
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/counselor
 	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/civilian, /datum/mil_branch/contractor)
@@ -154,3 +154,21 @@
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
+
+	give_psionic_implant_on_join = FALSE
+
+/datum/job/psychiatrist/equip(var/mob/living/carbon/human/H)
+	if(H.mind.role_alt_title == "Counselor")
+		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_OPERANT)
+	if(H.mind.role_alt_title == "Psychiatrist")
+		psi_faculties = list("[PSI_COERCION]" = PSI_RANK_OPERANT)
+	if(H.mind.role_alt_title == "Mentalist")
+		psi_faculties = list("[PSI_COERCION]" = PSI_RANK_OPERANT)
+	return ..()
+
+/datum/job/psychiatrist/get_description_blurb()
+	return "Вы - друг, наставник, священник... Или обычный психотерапевт. Помимо своих прямых обязанностей в обеспечении \
+	персонала качественной (насколько это возможно) психологической помощью, у вас имеется особенность - вы псионически \
+	одарены. Корпорация хорошо платит вам за то, чтобы вы проводили псионическое обследования членов экипажа на \
+	предмет обладания особыми силами, естественно, с отчетом об этом. Ваша зарплата превышает таковую у \
+	среднестатистческого менталиста из Фонда, и, вероятно, не просто так."
