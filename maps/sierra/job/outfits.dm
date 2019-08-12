@@ -302,14 +302,14 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	uniform = /obj/item/clothing/under/rank/psych/turtleneck
 	id_type = /obj/item/weapon/card/id/sierra/crew/medical/counselor
 
+/decl/hierarchy/outfit/job/sierra/crew/medical/counselor/mentalist
+	name = OUTFIT_JOB_NAME("Counselor - Mentalist")
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat
+	shoes = /obj/item/clothing/shoes/laceup
+
 /decl/hierarchy/outfit/job/sierra/crew/medical/counselor/psychiatrist
 	name = OUTFIT_JOB_NAME("Psychiatrist - Sierra")
 	uniform = /obj/item/clothing/under/rank/psych
-
-/decl/hierarchy/outfit/job/sierra/crew/medical/counselor/chaplain
-	name = OUTFIT_JOB_NAME("Chaplain - Sierra")
-	uniform = /obj/item/clothing/under/rank/chaplain
-	l_hand = /obj/item/weapon/storage/bible
 
 	/////////
 	//CARGO//
