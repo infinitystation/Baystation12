@@ -2160,7 +2160,7 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/space)
 "eS" = (
-/obj/structure/drain,
+/obj/structure/hygiene/drain,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/freezer,
@@ -2239,7 +2239,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/space)
 "fa" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 8;
 	id = "mine_warehouse";
 	name = "Storage Door Control";
@@ -3048,7 +3048,7 @@
 	dir = 4
 	},
 /obj/machinery/cooker/fryer,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 0;
 	id = "kitchen";
 	name = "Kitchen Shutters";
@@ -3944,7 +3944,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/space)
 "qH" = (
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/alternate/door{
 	dir = 2;
 	id = "toilet3";
 	name = "Lock";
@@ -4993,7 +4993,7 @@
 /obj/machinery/door/airlock/civilian{
 	name = "Bunker Restroom"
 	},
-/obj/structure/drain,
+/obj/structure/hygiene/drain,
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/freezer,
@@ -5064,7 +5064,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/space)
 "ub" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
 	id = "bunkerlock";
 	name = "Bunker Lockdown";
@@ -5299,7 +5299,7 @@
 	icon_state = "techfloor_edges";
 	dir = 4
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/alternate/door{
 	dir = 4;
 	id = "panicbunker";
 	name = "safe room door-control";
@@ -5411,7 +5411,7 @@
 /area/space)
 "vV" = (
 /obj/structure/table/steel_reinforced,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 8;
 	id = "comissary_shutters";
 	name = "Counter Shutters";
@@ -5546,7 +5546,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/space)
 "wi" = (
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/alternate/door{
 	dir = 2;
 	id = "toilet2";
 	name = "Lock";
@@ -6652,7 +6652,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/space)
 "yb" = (
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/alternate/door{
 	dir = 2;
 	id = "toilet1";
 	name = "Lock";
@@ -7624,7 +7624,7 @@
 /turf/simulated/floor/tiled/white,
 /area/space)
 "zD" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	desc = "A remote control-switch for shutters.";
 	dir = 4;
 	id = "surface_checkpoint_shutters";
@@ -7633,7 +7633,7 @@
 	pixel_y = 6;
 	req_access = list(1)
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "surface_level_lockdown";
 	name = "Surface Level Lockdown";
@@ -7723,7 +7723,7 @@
 /area/space)
 "zL" = (
 /obj/structure/filingcabinet/chestdrawer,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
 	id = "emtcenterentrylock";
 	name = "EMT Center Lockdown Control";
@@ -7731,7 +7731,7 @@
 	pixel_y = -21;
 	req_access = list(5)
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/alternate/door{
 	desc = "A remote control switch for the medbay foyer.";
 	dir = 1;
 	id = "EMTCenterFoyer";

@@ -115,7 +115,7 @@ GLOBAL_LIST_EMPTY(skills)
 						"Master"		= "You are just as much at home in a vacuum as in atmosphere. You probably do your job almost entirely EVA.<br>- You cannot get floored anymore.<br>- You get bonus speed for jetpacks.")
 
 /decl/hierarchy/skill/general/EVA/mech
-	ID = "mech"
+	ID = "exosuit"
 	name = "Exosuit Operation"
 	desc = "Allows you to operate exosuits well."
 	levels = list("Untrained" = "You are unfamiliar with exosuit controls, and if you attempt to use them you are liable to make mistakes.",
@@ -140,7 +140,7 @@ GLOBAL_LIST_EMPTY(skills)
 	ID = "hauling"
 	name = "Athletics"
 	desc = "Your ability to perform tasks requiring great strength, dexterity, or endurance."
-	levels = list( "Unskilled"			= "You are not used to manual labor, tire easily, and are likely not in great shape. Extended heavy labor may be dangerous for you.<br>- You can pull objects but start to generate Lactate after tiring out. Your strength increases with level.<br>- You can throw objects. Their speed, thrown distance, and force increases with level.",
+	levels = list( "Unskilled"			= "You are not used to manual labor, tire easily, and are likely not in great shape. Extended heavy labor may be dangerous for you.<br>- You can pull objects but start to generate Lactate after tiring out. Your strength increases with level.<br>- You can throw objects. Their speed, thrown distance, and force increases with level.<br>- You can sprint, the stamina consumption rate is lowered with each level.<br>- You can leap by clicking on a distant target with grab intent, leap range is increased and chances of falling over are decreased with each level.",
 						"Basic"				= "You have some familiarity with manual labor, and are in reasonable physical shape. Tasks requiring great dexterity or strength may still elude you.<br>- You can throw \"huge\" items or normal-sized mobs without getting weakened.",
 						"Trained"			= "You have sufficient strength and dexterity for even very strenuous tasks, and can work for a long time without tiring.",
 						"Experienced"		= "You have experience with heavy work in trying physical conditions, and are in excellent shape. You visit the gym frequently.",
@@ -173,7 +173,7 @@ GLOBAL_LIST_EMPTY(skills)
 	name = "Cooking"
 	desc = "Describes a character's skill at preparing meals and other consumable goods. This includes mixing alcoholic beverages."
 	levels = list( "Unskilled"			= "You barely know anything about cooking, and stick to vending machines when you can. The microwave is a device of black magic to you, and you avoid it when possible.",
-						"Basic"				= "You can make simple meals and do the cooking for your family. Things like spaghetti, grilled cheese, or simple mixed drinks are your usual fare.<br>- You can safely use the All-In-One Grinder.",
+						"Basic"				= "You can make simple meals and do the cooking for your family. Things like spaghetti, grilled cheese, or simple mixed drinks are your usual fare.<br>- You can safely use the blender.",
 						"Trained"			= "You can make most meals while following instructions, and they generally turn out well. You have some experience with hosting, catering, and/or bartending.<br>- You can fully operate the drink dispensers.",
 						"Experienced"		= "You can cook professionally, keeping an entire crew fed easily. Your food is tasty and you don't have a problem with tricky or complicated dishes. You can be depended on to make just about any commonly-served drink.",
 						"Master"		= "Not only are you good at cooking and mixing drinks, but you can manage a kitchen staff and cater for special events. You can safely prepare exotic foods and drinks that would be poisonous if prepared incorrectly.")
@@ -184,9 +184,9 @@ GLOBAL_LIST_EMPTY(skills)
 	ID = "combat"
 	name = "Close Combat"
 	desc = "This skill describes your training in hand-to-hand combat or melee weapon usage. While expertise in this area is rare in the era of firearms, experts still exist among athletes."
-	levels = list( "Unskilled"			= "You can throw a punch or a kick, but it'll knock you off-balance. You're inexperienced and have probably never been in a serious hand-to-hand fight. In a fight, you might panic and run, grab whatever's nearby and blindly strike out with it, or (if the other guy is just as much of a beginner as you are) make a fool out of yourself.<br>- You can disarm, grab, and hit. Their success chance depends on the fighters' skill difference.",
+	levels = list( "Unskilled"			= "You can throw a punch or a kick, but it'll knock you off-balance. You're inexperienced and have probably never been in a serious hand-to-hand fight. In a fight, you might panic and run, grab whatever's nearby and blindly strike out with it, or (if the other guy is just as much of a beginner as you are) make a fool out of yourself.<br>- You can disarm, grab, and hit. Their success chance depends on the fighters' skill difference.<br>- The chance of falling over when tackled is reduced with level.",
 						"Basic"				= "You either have some experience with fistfights, or you have some training in a martial art. You can handle yourself if you really have to, and if you're a security officer, can handle a stun baton at least well enough to get the handcuffs onto a criminal.",
-						"Trained"			= "You have had close-combat training, and can easily defeat unskilled opponents. Close combat may not be your specialty, and you don't engage in it more than needed, but you know how to handle yourself in a fight.<br>- You can parry with weapons. This increases with level.<br>- You can do grab maneuvers (pinning, dislocating).",
+						"Trained"			= "You have had close-combat training, and can easily defeat unskilled opponents. Close combat may not be your specialty, and you don't engage in it more than needed, but you know how to handle yourself in a fight.<br>- You can parry with weapons. This increases with level.<br>- You can do grab maneuvers (pinning, dislocating).<br>- You can grab targets when leaping at them and not fall over, if your species is able to do so.",
 						"Experienced"		= "You're good at hand-to-hand combat. You've trained explicitly in a martial art or as a close combatant as part of a military or police unit. You can use weaponry competently and you can think strategically and quickly in a melee. You're in good shape and you spend time training.",
 						"Master"		= "You specialize in hand-to-hand combat. You're well-trained in a practical martial art, and in good shape. You spend a lot of time practicing. You can take on just about anyone, use just about any weapon, and usually come out on top. You may be a professional athlete or special forces member.")
 
@@ -347,7 +347,7 @@ GLOBAL_LIST_EMPTY(skills)
 	name = "Chemistry"
 	desc = "Experience with mixing chemicals, and an understanding of what the effect will be. This doesn't cover an understanding of the effect of chemicals on the human body, as such the medical skill is also required for medical chemists."
 	levels = list( "Unskilled"			= "You know that chemists work with chemicals; you know that they can make medicine or poison or useful chemicals. You probably know what an element is and have a vague idea of what a chemical reaction is from some chemistry class in your high school days.",
-						"Basic"				= "You can make basic chemicals or medication--things like space cleaner or anti-toxin. You have some training in safety and you won't blow up the lab... probably.<br>- You can safely use the All-In-One Grinder but lose some ingredients. Its amount decreases with skill level.",
+						"Basic"				= "You can make basic chemicals or medication--things like space cleaner or anti-toxin. You have some training in safety and you won't blow up the lab... probably.<br>- You can safely use the industrial grinder but lose some ingredients. Its amount decreases with skill level.",
 						"Trained"			= "You can accurately measure out reagents, grind powders, and perform chemical reactions. You may still lose some product on occasion, but are unlikely to endanger yourself or those around you.<br>- You can fully operate the chem dispenser.",
 						"Experienced"		= "You work as a chemist, or else you are a doctor with training in chemistry. If you are a research chemist, you can create most useful chemicals; if you are a pharmacist, you can make most medications. At this stage, you're working mostly by-the-book. You can weaponize your chemicals by making grenades, smoke bombs, and similar devices.<br>- You can examine held containers for scannable reagents.",
 						"Master"		= "You specialized in chemistry or pharmaceuticals; you are either a medical researcher or professional chemist. You can create custom mixes and make even the trickiest of medications easily. You understand how your pharmaceuticals interact with the bodies of your patients. You are probably the originator of at least one new chemical innovation.<br>- You can examine held containers for all reagents.")

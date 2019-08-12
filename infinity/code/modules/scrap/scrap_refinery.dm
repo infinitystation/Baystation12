@@ -1,6 +1,6 @@
 var/const/SAFETY_COOLDOWN = 100
 
-/obj/item/weapon/circuitboard/recycler
+/obj/item/weapon/stock_parts/circuitboard/recycler
 	name = "Circuit board (Recycler)"
 	board_type = "machine"
 	build_path = /obj/machinery/recycler
@@ -27,7 +27,7 @@ var/const/SAFETY_COOLDOWN = 100
 	// On us
 	. = ..()
 	component_parts = list()
-	component_parts += new /obj/item/weapon/circuitboard/recycler(null)
+	component_parts += new /obj/item/weapon/stock_parts/circuitboard/recycler(null)
 	component_parts += new /obj/item/weapon/stock_parts/manipulator(null)
 	RefreshParts()
 	update_icon()
@@ -54,18 +54,7 @@ var/const/SAFETY_COOLDOWN = 100
 		emag_act(user)
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		return
-	if(default_deconstruction_screwdriver(user, I))
-		return
-
-	if(default_part_replacement(user, I))
-		return
-
-	if(default_deconstruction_crowbar(user, I))
-		return
-
-	default_deconstruction_crowbar(user, I)
-	..()
-	return
+	return ..()
 
 /obj/machinery/recycler/emag_act(mob/user)
 	if(!emagged)

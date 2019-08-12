@@ -4,14 +4,15 @@ GLOBAL_DATUM_INIT(xenomorphs, /datum/antagonist/xenos, new)
 	id = MODE_XENOMORPH
 	role_text = "Xenophage"
 	role_text_plural = "Xenophages"
-	mob_path = /mob/living/carbon/alien/larva
 	flags = ANTAG_OVERRIDE_MOB | ANTAG_RANDSPAWN | ANTAG_OVERRIDE_JOB
+	mob_path = /mob/living/carbon/alien/larva
 	welcome_text = "<span class='changeling'><b>ВСТУПЛЕНИЕ</b>:<br>\
 	Вы - 'неизвестна&#255; форма жизни', как думает Экипаж. Чтобы общатьс&#255; со своими <b>СЕСТРАМИ</b> \
-	как через рацию, используйте префикс ':a' (с английской буквой).<br>\
+	как через рацию, используйте префикс ',a' (с английской буквой).<br>\
 	Про&#255;вите уважение к остальным игрокам и не используйте интернет-сленг и мемы.<br>\
 	Вы не быстрее людей. Загон&#255;йте их в угол и на траву, чтобы обездвижить или убить.<br>\
 	Избегайте групп - сородичь может погибнуть от 7~ попаданий лазером или 9 пуль, не счита&#255; личинок.<br>\
+	Исполняйте приказы Королевы.<br>\
 	<b>ЛИЧИНКАМ</b>:<br>\
 	Дл&#255; всех личинок, кроме самой первой, дл&#255; роста требуетс&#255; пить кровь людей (или приматов).<br>\
 	Ищите трупы (или сп&#255;щих) в отсеках через вентил&#255;цию или ждите в Улье р&#255;дом с Королевой, \
@@ -52,24 +53,20 @@ GLOBAL_DATUM_INIT(xenomorphs, /datum/antagonist/xenos, new)
 /datum/antagonist/xenos/Initialize()
 //	spawn_announcement = replacetext(GLOB.using_map.unidentified_lifesigns_message, "%STATION_NAME%", station_name())
 	spawn_announcement = GLOB.using_map.level_x_biohazard_announcement(9)
-	spawn_announcement_sound = GLOB.using_map.xenomorph_spawn_sound
 	..()
 
 /datum/antagonist/xenos/attempt_random_spawn()
 	if(config.aliens_allowed) ..()
 
-/datum/antagonist/xenos/proc/get_vents()
-	var/list/vents = list()
-	for(var/obj/machinery/atmospherics/unary/vent_pump/temp_vent in SSmachines.machinery)
-		if(!temp_vent.welded && temp_vent.network && (temp_vent.loc.z in GLOB.using_map.station_levels))
-			if(temp_vent.network.normal_members.len > 50)
-				vents += temp_vent
-	return vents
-
+/*
 /datum/antagonist/xenos/create_objectives(var/datum/mind/player)
 	if(!..())
 		return
 	player.objectives += new /datum/objective/survive()
+*/
 
-/datum/antagonist/xenos/place_mob(var/mob/living/player)
-	player.forceMove(get_turf(pick(get_vents())))
+/datum/antagonist/xenos/create_global_objectives()
+	if(!..())
+		return
+	global_objectives |= new /datum/objective/survive
+	return 1

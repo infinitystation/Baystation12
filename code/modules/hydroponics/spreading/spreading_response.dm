@@ -93,8 +93,8 @@
 	if(!victim.anchored && (Adjacent(victim) || victim.loc == src.loc))
 		var/can_grab = 1
 		if(istype(victim, /mob/living/carbon/human))
-			if(H.species.reagent_tag == IS_XENOS)
-				can_grab = FALSE
+			/*if(H.species.reagent_tag == IS_XENOS)
+				can_grab = FALSE*/
 			if(((istype(H.shoes, /obj/item/clothing/shoes/magboots) && (H.shoes.item_flags & ITEM_FLAG_NOSLIP)) || (H.species.check_no_slip(H))) && victim.loc != src.loc)
 				if(prob(90))
 					src.visible_message("<span class='danger'>Tendrils lash to drag \the [victim] but \the [src] can't pull them across the ground!</span>")

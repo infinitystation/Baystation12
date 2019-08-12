@@ -933,7 +933,7 @@
 /turf/simulated/floor/plating,
 /area/ship/scrap/other/research)
 "cs" = (
-/obj/structure/computerframe,
+/obj/machinery/constructable_frame/computerframe/deconstruct,
 /obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/tiled,
 /area/ship/scrap/other/research)
@@ -1017,7 +1017,7 @@
 /turf/simulated/floor/tiled,
 /area/ship/scrap/other/research)
 "cB" = (
-/obj/structure/computerframe,
+/obj/machinery/constructable_frame/computerframe/deconstruct,
 /turf/simulated/floor/plating,
 /area/ship/scrap/other/research)
 "cC" = (

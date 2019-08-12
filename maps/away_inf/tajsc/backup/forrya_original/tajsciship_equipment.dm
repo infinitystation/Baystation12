@@ -1,12 +1,12 @@
 
-/obj/item/weapon/circuitboard/telecomms/allinone/tajsciship
+/obj/item/weapon/stock_parts/circuitboard/telecomms/allinone/tajsciship
 	build_path = /obj/machinery/telecomms/allinone/tajsciship
 
 /obj/machinery/telecomms/allinone/tajsciship
 	listening_freqs = list(TAJSCISHIP_FREQ)
 	channel_color = COMMS_COLOR_SYNDICATE
 	channel_name = "CCA EC"
-	circuitboard = /obj/item/weapon/circuitboard/telecomms/allinone/tajsciship
+	circuitboard = /obj/item/weapon/stock_parts/circuitboard/telecomms/allinone/tajsciship
 
 /obj/item/device/radio/headset/tajsciship
 	name = "CCA EC headset"

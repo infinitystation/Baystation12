@@ -1,7 +1,7 @@
 /obj/item/organ/internal/brain/xeno
 	name = "thinkpan"
 	desc = "It looks kind of like an enormous wad of purple bubblegum."
-	icon = 'icons/mob/alien.dmi'
+	icon = 'infinity/icons/mob/alien.dmi'
 	icon_state = "chitin"
 	damage_reduction = 0 //they cannot take damage. F to species mechanic
 
@@ -116,7 +116,7 @@
 /obj/item/organ/internal/eyes/xeno
 	phoron_guard = 1
 	innate_flash_protection = FLASH_PROTECTION_MODERATE
-	eye_icon = 'icons/mob/human_races/species/xenos/eyes.dmi'
+	eye_icon = 'infinity/icons/mob/human_races/species/xenophage/eyes.dmi'
 	damage_reduction = 0
 
 /obj/item/organ/internal/eyes/xeno/update_colour()

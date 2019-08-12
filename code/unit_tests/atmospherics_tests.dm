@@ -4,6 +4,7 @@
 #define ALL_GASIDS gas_data.gases
 
 /datum/unit_test/atmos_machinery
+	template = /datum/unit_test/atmos_machinery
 	var/list/test_cases = list()
 
 /datum/unit_test/atmos_machinery/proc/create_gas_mixes(gas_mix_data)
@@ -61,6 +62,7 @@
 		pass("[case_name]: conserved moles of each gas ID.")
 
 /datum/unit_test/atmos_machinery/conserve_moles
+	template = /datum/unit_test/atmos_machinery/conserve_moles
 	test_cases = list(
 		uphill = list(
 			source = list(
@@ -264,6 +266,53 @@
 
 		check_moles_conserved(case_name, before_gas_mixes, after_gas_mixes)
 
+	return 1
+
+/datum/unit_test/pipes_shall_belong_to_unique_pipelines
+	name = "ATMOS MACHINERY: all pipes shall belong to a unique pipeline"
+
+/datum/unit_test/pipes_shall_belong_to_unique_pipelines/start_test()
+	var/list/checked_pipes = list()
+	var/list/bad_pipelines = list()
+	for(var/datum/pipeline/P)
+		for(var/thing in P.members)
+			var/obj/machinery/atmospherics/pipe/pipe = thing
+			if(!checked_pipes[thing])
+				checked_pipes[thing] = P
+				continue
+			LAZYDISTINCTADD(bad_pipelines[P], pipe)
+			LAZYDISTINCTADD(bad_pipelines[checked_pipes[thing]], pipe) // Missed it the first time; thought it was good.
+
+	if(length(bad_pipelines))
+		for(var/datum/pipeline/badboy in bad_pipelines)
+			var/info = list()
+			for(var/bad_pipe in bad_pipelines[badboy])
+				info += log_info_line(bad_pipe)
+			log_bad("A pipeline with overlapping members contained the following overlapping pipes: [english_list(info)]")
+		fail("Some pipes were in multiple pipelines at once.")
+	else
+		pass("All pipes belonged to a unique pipeline.")
+	return 1
+
+/datum/unit_test/atmos_machinery_shall_not_have_conflicting_connections
+	name = "ATMOS MACHINERY: all mapped atmos machinery shall not have more than one connection of each type per dir."
+
+/datum/unit_test/atmos_machinery_shall_not_have_conflicting_connections/start_test()
+	var/fail = FALSE
+	for(var/obj/machinery/atmospherics/machine in SSmachines.machinery)
+		for(var/obj/machinery/atmospherics/M in machine.loc)
+			if(M == machine)
+				continue
+			if(!machine.check_connect_types(M, machine))
+				continue
+			if(M.initialize_directions & machine.initialize_directions)
+				log_bad("[log_info_line(machine)] has conflicting connections.")
+				fail = TRUE
+
+	if(fail)
+		fail("Some pipes had conflicting connections.")
+	else
+		pass("All pipes were mapped properly.")
 	return 1
 
 #undef ALL_GASIDS

@@ -1,4 +1,3 @@
-
 /obj/item/toy/ringbell/tajalarm
 	name = "Alarm terminal"
 	desc = "Very suspicious red button. I really want to click on it."

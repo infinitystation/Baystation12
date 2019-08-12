@@ -9,7 +9,7 @@
 	name = "acid"
 	desc = "Burbling corrosive stuff. Probably a bad idea to roll around in it."
 	icon_state = "acid"
-	icon = 'icons/mob/alien.dmi'
+	icon = 'infinity/icons/mob/alien.dmi'
 
 	density = 0
 	opacity = 0

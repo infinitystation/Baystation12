@@ -9,7 +9,7 @@ GLOBAL_DATUM_INIT(mercs, /datum/antagonist/mercenary, new)
 	leader_welcome_text = "Вы - формальный лидер отр&#255;да наемников. Используйте префикс ':t' чтобы общатьс&#255; с вашими соратниками по рации.\
 	<span class='info'>С начала раунда в вашем аплинке 780 телекристаллов. Разделите их между товарищами, передайте более умелому руководителю или обсудите покупку оборудовани&#255;.</span>"
 	welcome_text = "Дл&#255; общени&#255; через частоту оперативников, используйте префикс ':t'. На лидера надет берет."
-	flags = ANTAG_VOTABLE | ANTAG_OVERRIDE_JOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_CHOOSE_NAME | ANTAG_HAS_NUKE | ANTAG_SET_APPEARANCE | ANTAG_HAS_LEADER
+	flags = ANTAG_VOTABLE | ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_CHOOSE_NAME | ANTAG_HAS_NUKE | ANTAG_SET_APPEARANCE | ANTAG_HAS_LEADER
 	antaghud_indicator = "hudoperative"
 
 	hard_cap = 4

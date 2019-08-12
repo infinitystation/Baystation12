@@ -643,7 +643,7 @@
 "bz" = (
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
-	id = "xil_shuttle";
+	id_tag = "xil_shuttle";
 	name = "Blast Doors"
 	},
 /obj/machinery/door/firedoor/autoset,
@@ -845,8 +845,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "xil_shuttle";
+/obj/machinery/button/blast_door{
+	id_tag = "xil_shuttle";
 	name = "Shuttle Blast Doors";
 	pixel_x = 24;
 	req_access = list("ACCESS_SKRELLSCOUT")
@@ -1111,7 +1111,7 @@
 /obj/effect/wallframe_spawn/reinforced/bare,
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
-	id = "xil_bridge";
+	id_tag = "xil_bridge";
 	name = "Blast Doors"
 	},
 /obj/machinery/door/firedoor/autoset,
@@ -1184,7 +1184,7 @@
 "cz" = (
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
-	id = "xil_shuttle";
+	id_tag = "xil_shuttle";
 	name = "Blast Doors"
 	},
 /obj/effect/paint/silver,
@@ -1509,7 +1509,7 @@
 	},
 /obj/machinery/door/blast/regular/open{
 	dir = 2;
-	id = "xil_shuttle";
+	id_tag = "xil_shuttle";
 	name = "Blast Doors"
 	},
 /obj/machinery/access_button/airlock_exterior{
@@ -1670,9 +1670,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
-	id = "xil_bridge";
+	id_tag = "xil_bridge";
 	name = "Mess Hall Blast Doors";
 	pixel_y = -21;
 	req_access = list("ACCESS_SKRELLSCOUT")
@@ -2198,7 +2198,7 @@
 "eD" = (
 /obj/machinery/door/blast/regular/open{
 	dir = 2;
-	id = "xil_shuttle";
+	id_tag = "xil_shuttle";
 	name = "Blast Doors"
 	},
 /obj/structure/cable/cyan{
@@ -2395,14 +2395,14 @@
 /area/ship/skrellscoutship/crew/hallway/d2)
 "eZ" = (
 /obj/structure/closet/crate,
-/obj/item/weapon/circuitboard/smes,
-/obj/item/weapon/circuitboard/smes,
-/obj/item/weapon/smes_coil/super_capacity,
-/obj/item/weapon/smes_coil/super_capacity,
-/obj/item/weapon/smes_coil/super_io,
-/obj/item/weapon/smes_coil/super_io,
-/obj/item/weapon/smes_coil,
-/obj/item/weapon/smes_coil,
+/obj/item/weapon/stock_parts/circuitboard/smes,
+/obj/item/weapon/stock_parts/circuitboard/smes,
+/obj/item/weapon/stock_parts/smes_coil/super_capacity,
+/obj/item/weapon/stock_parts/smes_coil/super_capacity,
+/obj/item/weapon/stock_parts/smes_coil/super_io,
+/obj/item/weapon/stock_parts/smes_coil/super_io,
+/obj/item/weapon/stock_parts/smes_coil,
+/obj/item/weapon/stock_parts/smes_coil,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},

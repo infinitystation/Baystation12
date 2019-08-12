@@ -173,7 +173,7 @@
 /turf/simulated/floor/plating,
 /area/adherent_base/surface)
 "aD" = (
-/obj/structure/computerframe{
+/obj/machinery/constructable_frame/computerframe/deconstruct{
 	icon_state = "0";
 	dir = 4
 	},

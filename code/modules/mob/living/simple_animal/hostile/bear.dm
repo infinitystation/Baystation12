@@ -23,7 +23,7 @@
 	melee_damage_lower = 20
 	melee_damage_upper = 30
 	melee_damage_flags = DAM_SHARP
-	can_escape = 1
+	can_escape = TRUE
 
 	//Space bears aren't affected by atmos.
 	min_gas = null
@@ -134,32 +134,3 @@
 		var/mob/living/L = target_mob
 		L.adjustBruteLoss(damage)
 		return L
-	//else if(istype(target_mob,/obj/mecha))
-		//var/obj/mecha/M = target_mob
-		//M.attack_animal(src)
-		//return M
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

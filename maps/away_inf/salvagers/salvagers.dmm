@@ -41,7 +41,7 @@
 "ae" = (
 /obj/machinery/door/blast/shutters{
 	dir = 2;
-	id = "salvage4";
+	id_tag = "salvage4";
 	name = "Captain Shutters"
 	},
 /obj/effect/wallframe_spawn/reinforced,
@@ -113,7 +113,7 @@
 /turf/simulated/floor/tiled,
 /area/salvage/bridge)
 "ap" = (
-/obj/machinery/computer/general_air_control{
+/obj/machinery/computer/air_control{
 	dir = 2;
 	name = "Atmospheric Sensors";
 	req_access = list(3074);
@@ -219,7 +219,7 @@
 /turf/simulated/floor/carpet,
 /area/salvage/captain)
 "aC" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 8;
 	id = "salvage4";
 	name = "Captain Shutters";
@@ -453,7 +453,7 @@
 "aS" = (
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "salvage1";
+	id_tag = "salvage1";
 	name = "Canteen Shutters"
 	},
 /obj/effect/wallframe_spawn/reinforced,
@@ -464,7 +464,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "salvage1";
 	name = "Canteen shutters";
 	pixel_y = 27;
@@ -1340,7 +1340,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "salvage5";
+	id_tag = "salvage5";
 	name = "Stall Shutters"
 	},
 /turf/simulated/floor/plating,
@@ -1742,7 +1742,7 @@
 /obj/structure/bed/chair{
 	dir = 4
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "salvage5";
 	name = "Counter Shutters";
@@ -1765,7 +1765,7 @@
 	},
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "salvage5";
+	id_tag = "salvage5";
 	name = "Stall Shutters"
 	},
 /turf/simulated/floor/plating,
@@ -2223,7 +2223,7 @@
 "dB" = (
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "salvage2";
+	id_tag = "salvage2";
 	name = "Room 2 Shutters";
 	req_access = list(3074)
 	},
@@ -2337,7 +2337,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "salvage2";
 	name = "Room 1 shutters";
@@ -2560,7 +2560,7 @@
 "eh" = (
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "salvage1";
+	id_tag = "salvage1";
 	name = "Room 2 Shutters"
 	},
 /obj/effect/wallframe_spawn/reinforced,
@@ -2655,7 +2655,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
 	id = "salvage1";
 	name = "Room 1 shutters";
@@ -3549,7 +3549,7 @@
 /turf/simulated/wall,
 /area/salvage/engineering)
 "fZ" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	icon_state = "air_map";
 	dir = 1
 	},
@@ -3560,7 +3560,7 @@
 /turf/simulated/floor/plating,
 /area/salvage/engineering)
 "ga" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	icon_state = "air_map";
 	dir = 1
 	},

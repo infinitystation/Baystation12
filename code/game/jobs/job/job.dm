@@ -22,7 +22,7 @@
 	var/minimum_character_age = 0
 	var/ideal_character_age = 30
 	var/create_record = 1                 // Do we announce/make records for people who spawn on this job?
-
+	var/is_semi_antagonist = FALSE        // Whether or not this job is given semi-antagonist status.
 	var/account_allowed = 1               // Does this job type come with a station account?
 	var/economic_power = 2             // With how much does this job modify the initial account amount?
 
@@ -51,6 +51,7 @@
 	var/list/species_branch_rank_cache_ = list()
 	var/list/psi_faculties                // Starting psi faculties, if any.
 	var/psi_latency_chance = 0            // Chance of an additional psi latency, if any.
+	var/give_psionic_implant_on_join = TRUE // If psionic, will be implanted for control.
 
 	var/required_language
 
@@ -85,7 +86,17 @@
 			H.set_psi_rank(psi, psi_faculties[psi], take_larger = TRUE, defer_update = TRUE)
 	if(H.psi)
 		H.psi.update()
-		H.give_psi_implant()
+		if(give_psionic_implant_on_join)
+			var/obj/item/weapon/implant/psi_control/imp = new
+			imp.implanted(H)
+			imp.forceMove(H)
+			imp.imp_in = H
+			imp.implanted = TRUE
+			var/obj/item/organ/external/affected = H.get_organ(BP_HEAD)
+			if(affected)
+				affected.implants += imp
+				imp.part = affected
+			to_chat(H, SPAN_DANGER("As a registered psionic, you are fitted with a psi-dampening control implant. Using psi-power while the implant is active will result in neural shocks and your violation being reported."))
 
 	var/decl/hierarchy/outfit/outfit = get_outfit(H, alt_title, branch, grade)
 	if(outfit) . = outfit.equip(H, title, alt_title)
@@ -342,6 +353,8 @@
 	var/list/reasons = list()
 	if(jobban_isbanned(caller, title))
 		reasons["You are jobbanned."] = TRUE
+	if(is_semi_antagonist && jobban_isbanned(caller, MODE_MISC_AGITATOR))
+		reasons["You are semi-antagonist banned."] = TRUE
 	if(!player_old_enough(caller))
 		reasons["Your player age is too low."] = TRUE
 	if(!is_position_available())
@@ -367,6 +380,8 @@
 	if(!is_position_available())
 		return FALSE
 	if(jobban_isbanned(caller, title))
+		return FALSE
+	if(is_semi_antagonist && jobban_isbanned(caller, MODE_MISC_AGITATOR))
 		return FALSE
 	if(!player_old_enough(caller))
 		return FALSE
@@ -433,8 +448,9 @@
 
 	return spawnpos
 
-/datum/job/proc/post_equip_rank(var/mob/person)
-	return
+/datum/job/proc/post_equip_rank(var/mob/person, var/alt_title)
+	if(is_semi_antagonist && person.mind)
+		GLOB.provocateurs.add_antagonist(person.mind)
 
 /datum/job/proc/get_alt_title_for(var/client/C)
 	return C.prefs.GetPlayerAltTitle(src)
@@ -444,3 +460,6 @@
 		current_positions -= 1
 		return TRUE
 	return FALSE
+
+/datum/job/proc/handle_variant_join(var/mob/living/carbon/human/H, var/alt_title)
+	return

@@ -28,7 +28,7 @@
 		return
 	var/datum/computer_file/program/uplink/prog = program
 	var/obj/item/modular_computer/computer = host
-	var/obj/item/weapon/computer_hardware/hard_drive/portable/uplink = computer.portable_drive
+	var/obj/item/weapon/stock_parts/computer/hard_drive/portable/uplink = computer.portable_drive
 	if(istype(computer) && istype(prog))
 		if(computer.hidden_uplink && prog.password)
 			if(prog.authenticated)

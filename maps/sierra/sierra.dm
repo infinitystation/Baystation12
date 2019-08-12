@@ -41,6 +41,7 @@
 	#include "items/papers.dm"
 	#include "items/manuals.dm"
 	#include "items/rigs.dm"
+	#include "items/stamps.dm"
 
 	#include "items/clothing/clothing.dm"
 	#include "items/clothing/exploration.dm"

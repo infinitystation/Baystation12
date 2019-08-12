@@ -64,3 +64,11 @@
 #define FACTION_ZPCI            "Zone Protection Control Inc."
 #define FACTION_SCP             "Security Corporate Personal"
 #define FACTION_SEPTENERGO      "SeptEnergo Public Joint-Stock Company"
+
+// Xenophage cultures
+#define CULTURE_XENOPHAGE_D    "Xenophage Drone"
+#define CULTURE_XENOPHAGE_H    "Xenophage Hunter"
+#define CULTURE_XENOPHAGE_S    "Xenophage Sentinel"
+#define CULTURE_XENOPHAGE_Q    "Xenophage Queen"
+#define FACTION_XENOPHAGE      "Xenophage Hive"
+

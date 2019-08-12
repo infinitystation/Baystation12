@@ -31,8 +31,6 @@
 	unidentified_lifesigns_message = "Обнаружена неопознанная форма жизни на борту %STATION_NAME%. Настоятельно рекомендуется заблокировать все внешние шлюзы и запретить стыковку гражданским судам."
 	unidentified_lifesigns_sound = sound('sound/AI/torch/aliens.ogg', volume = 45)
 
-	xenomorph_spawn_sound = sound('sound/AI/aliens.ogg', volume = 45) //torch version is bad(
-
 	electrical_storm_moderate_sound = sound('sound/AI/torch/electricalstormmoderate.ogg', volume = 45)
 	electrical_storm_major_sound = sound('sound/AI/torch/electricalstormmajor.ogg', volume = 45)
 
@@ -52,7 +50,7 @@
 		if(9)
 			msg = "неопознанная форма жизни. Рекомендуется изолировать неизвестный организм и заварить вентиляционные шахты до постановки на содержание. Это максимальный уровень потенциальной угрозы"
 			crew = "Командующему"
-			sound = GLOB.using_map.xenomorph_spawn_sound
+			sound = sound('sound/AI/aliens.ogg', volume = 100)
 		if(8)
 			msg = "враждебные коррозийные организмы. Зафиксировано нарушение структурной целостности переборок"
 			crew = "Инженерному и Охранному"

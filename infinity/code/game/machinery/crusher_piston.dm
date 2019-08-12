@@ -53,10 +53,10 @@
 
 /obj/machinery/crusher_base/Initialize()
 	. = ..()
-
+/*
 	//Create parts for crusher.
 	component_parts = list()
-	component_parts += new /obj/item/weapon/circuitboard/crusher(src)
+	component_parts += new /obj/item/weapon/stock_parts/circuitboard/crusher(src)
 	component_parts += new /obj/item/weapon/stock_parts/matter_bin(src)
 	component_parts += new /obj/item/weapon/stock_parts/matter_bin(src)
 	component_parts += new /obj/item/weapon/stock_parts/matter_bin(src)
@@ -68,7 +68,7 @@
 	component_parts += new /obj/item/weapon/reagent_containers/glass/beaker(src)
 	component_parts += new /obj/item/weapon/reagent_containers/glass/beaker(src)
 	RefreshParts()
-
+*/
 	action_start_time = world.time
 
 	//Spawn the stage 1 pistons south of it with a density of 0
@@ -115,12 +115,7 @@
 			M.visible_message("<span class='danger'>[user]'s hand catches in the [src]!</span>", "<span class='danger'>Your hand gets caught in the [src]!</span>")
 			M.say("*scream")
 		return
-	if(default_deconstruction_screwdriver(user, O))
-		return
-	if(default_deconstruction_crowbar(user, O))
-		return
-	if(default_part_replacement(user, O))
-		return
+	return ..()
 
 	//Stuff you can do if the maint hatch is open
 	if(panel_open)
@@ -135,13 +130,13 @@
 			return
 	..()
 
-/obj/machinery/crusher_base/default_deconstruction_crowbar(var/mob/user, var/obj/item/weapon/crowbar/C)
+/*/obj/machinery/crusher_base/default_deconstruction_crowbar(var/mob/user, var/obj/item/weapon/crowbar/C)
 	if(!istype(C))
 		return 0
 	if(num_progress != 0) //Piston needs to be retracted before you are able to deconstruct it
 		to_chat(user, "<span class='notice'>You can not deconstruct [src] while the piston is extended.</span>")
 		return 0
-	return ..()
+	return ..()*/
 
 /obj/machinery/crusher_base/proc/change_neighbor_base_icons()
 	var/obj/machinery/crusher_base/left = locate(/obj/machinery/crusher_base, get_step(src, WEST))

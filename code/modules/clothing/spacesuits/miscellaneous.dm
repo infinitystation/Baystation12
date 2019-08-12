@@ -80,3 +80,4 @@
 	icon_state = "spacebowl"
 	light_overlay = "yellow_light"
 	tinted = FALSE
+	tint = 0 //INF, WAS NOTHING (0)

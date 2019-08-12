@@ -143,7 +143,7 @@
 "ap" = (
 /obj/machinery/door/blast/regular/open{
 	dir = 2;
-	id = "xil_airlock_right";
+	id_tag = "xil_airlock_right";
 	name = "Starboard Blast Door"
 	},
 /obj/machinery/door/airlock/external/glass{
@@ -512,7 +512,7 @@
 "bg" = (
 /obj/machinery/door/blast/regular/open{
 	dir = 2;
-	id = "xil_airlock_right";
+	id_tag = "xil_airlock_right";
 	name = "Starboard Blast Door"
 	},
 /obj/machinery/door/airlock/external/glass{
@@ -522,8 +522,8 @@
 	req_access = newlist()
 	},
 /obj/effect/shuttle_landmark/skrellscoutship/start,
-/obj/machinery/button/remote/blast_door{
-	id = "xil_airlock_right";
+/obj/machinery/button/blast_door{
+	id_tag = "xil_airlock_right";
 	name = "Starboard Airlock Blast Doors";
 	pixel_x = 32;
 	req_access = list("ACCESS_SKRELLSCOUT")
@@ -1123,22 +1123,22 @@
 /area/ship/skrellscoutship/maintenance/power)
 "cq" = (
 /obj/structure/table/steel,
-/obj/machinery/button/remote/blast_door{
-	id = "xil_airlock_right";
+/obj/machinery/button/blast_door{
+	id_tag = "xil_airlock_right";
 	name = "Starboard Airlock Blast Doors";
 	pixel_x = -2;
 	pixel_y = 5;
 	req_access = list("ACCESS_SKRELLSCOUT")
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "xil_airlock";
+/obj/machinery/button/blast_door{
+	id_tag = "xil_airlock";
 	name = "Rear Airlock Blast Doors";
 	pixel_x = 7;
 	pixel_y = 0;
 	req_access = list("ACCESS_SKRELLSCOUT")
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "xil_airlock_left";
+/obj/machinery/button/blast_door{
+	id_tag = "xil_airlock_left";
 	name = "Larboard Airlock Blast Doors";
 	pixel_x = -2;
 	pixel_y = -5;
@@ -1410,7 +1410,7 @@
 	},
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
-	id = "xil_airlock";
+	id_tag = "xil_airlock";
 	name = "Rear Blast Door"
 	},
 /obj/machinery/door/airlock/external/glass{
@@ -1419,8 +1419,8 @@
 	locked = 1;
 	req_access = newlist()
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "xil_airlock";
+/obj/machinery/button/blast_door{
+	id_tag = "xil_airlock";
 	name = "Airlock Blast Doors";
 	pixel_y = 32;
 	req_access = list("ACCESS_SKRELLSCOUT")
@@ -1693,7 +1693,7 @@
 "dh" = (
 /obj/machinery/door/blast/regular/open{
 	dir = 2;
-	id = "xil_airlock_left";
+	id_tag = "xil_airlock_left";
 	name = "Larboard Blast Door"
 	},
 /obj/machinery/door/airlock/external/glass{
@@ -1702,8 +1702,8 @@
 	locked = 1;
 	req_access = newlist()
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "xil_airlock_left";
+/obj/machinery/button/blast_door{
+	id_tag = "xil_airlock_left";
 	name = "Larboard Airlock Blast Doors";
 	pixel_x = 32;
 	req_access = list("ACCESS_SKRELLSCOUT")
@@ -1896,8 +1896,8 @@
 /area/ship/skrellscoutship/crew/toilets)
 "wS" = (
 /obj/structure/table/steel,
-/obj/machinery/button/remote/blast_door{
-	id = "xil_bridge";
+/obj/machinery/button/blast_door{
+	id_tag = "xil_bridge";
 	name = "Mess Hall Blast Doors"
 	},
 /turf/simulated/floor/tiled/skrell/red,

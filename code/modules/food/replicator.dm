@@ -7,6 +7,11 @@
 	anchored = 1
 	idle_power_usage = 40
 	obj_flags = OBJ_FLAG_ANCHORABLE
+	base_type = /obj/machinery/food_replicator
+	construct_state = /decl/machine_construction/default/panel_closed
+	uncreated_component_parts = null
+	stat_immune = 0
+
 	var/biomass = 100
 	var/biomass_max = 100
 	var/biomass_per = 10
@@ -20,16 +25,6 @@
 					 "nutrition fries" = /obj/item/weapon/reagent_containers/food/snacks/fries,
 					 "liquid nutrition" = /obj/item/weapon/reagent_containers/food/snacks/soydope,
 					 "pudding substitute" = /obj/item/weapon/reagent_containers/food/snacks/ricepudding)
-
-/obj/machinery/food_replicator/New()
-	..()
-	component_parts = list()
-	component_parts += new /obj/item/weapon/circuitboard/replicator(src)
-	component_parts += new /obj/item/weapon/stock_parts/matter_bin(src) //used to hold the biomass
-	component_parts += new /obj/item/weapon/stock_parts/manipulator(src) //used to cook the food
-	component_parts += new /obj/item/weapon/stock_parts/micro_laser(src) //used to deconstruct the stuff
-
-	RefreshParts()
 
 /obj/machinery/food_replicator/attackby(var/obj/item/O, var/mob/user)
 	if(istype(O, /obj/item/weapon/reagent_containers/food/snacks))
@@ -49,16 +44,7 @@
 		if(success)
 			S.finish_bulk_removal()
 			to_chat(user, "You empty \the [O] into \the [src]")
-
-	if(default_deconstruction_screwdriver(user, O))
-		return
-	else if(default_deconstruction_crowbar(user, O))
-		return
-	else if(default_part_replacement(user, O))
-		return
-	else
-		..()
-	return
+	return ..()
 
 /obj/machinery/food_replicator/on_update_icon()
 	if(stat & BROKEN)
@@ -119,17 +105,12 @@
 	return 1
 
 /obj/machinery/food_replicator/RefreshParts()
-	deconstruct_eff = 0
-	biomass_max = 0
-	biomass_per = 20
-	for(var/obj/item/weapon/stock_parts/P in component_parts)
-		if(istype(P, /obj/item/weapon/stock_parts/matter_bin))
-			biomass_max += 100 * P.rating
-		if(istype(P, /obj/item/weapon/stock_parts/manipulator))
-			biomass_per = max(1, biomass_per - 5 * P.rating)
-		if(istype(P, /obj/item/weapon/stock_parts/micro_laser))
-			deconstruct_eff += 0.5 * P.rating
+	deconstruct_eff = 0.5 * Clamp(total_component_rating_of_type(/obj/item/weapon/stock_parts/micro_laser), 0, 10)
+	biomass_max = 100 * Clamp(total_component_rating_of_type(/obj/item/weapon/stock_parts/matter_bin), 0, 10)
+	biomass_per = max(1, 20 - 5 * total_component_rating_of_type(/obj/item/weapon/stock_parts/manipulator))
+
 	biomass = min(biomass,biomass_max)
+	..()
 
 /obj/machinery/food_replicator/proc/queue_dish(var/text)
 	if(!(text in menu))
@@ -146,7 +127,7 @@
 	if(queued_dishes && queued_dishes.len)
 		if(start_making) //want to do this first so that the first dish won't instantly come out
 			src.audible_message("<b>\The [src]</b> rumbles and vibrates.")
-			playsound(src.loc, 'sound/machines/juicer.ogg', 50, 1)
+			playsound(src.loc, 'sound/machines/juicer_old.ogg', 50, 1)
 			make_time = world.time + rand(100, 300)
 			start_making = 0
 		if(world.time > make_time)
@@ -154,7 +135,6 @@
 			if(queued_dishes && queued_dishes.len) //more to come
 				queued_dishes -= queued_dishes[1]
 				start_making = 1
-	..()
 
 /obj/machinery/food_replicator/examine(mob/user)
 	. = ..(user)

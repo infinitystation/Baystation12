@@ -1,4 +1,4 @@
-/obj/item/weapon/circuitboard/bssilk
+/obj/item/weapon/stock_parts/circuitboard/bssilk
 	icon = 'icons/obj/module.dmi'
 	icon_state = "mainboard"
 	item_state = "electronic"
@@ -9,13 +9,13 @@
 
 
 
-/obj/item/weapon/circuitboard/bssilk/console
+/obj/item/weapon/stock_parts/circuitboard/bssilk/console
 	name = T_BOARD("bluespace snare console")
 	build_path = /obj/machinery/computer/bssilk_control
 
 
 
-/obj/item/weapon/circuitboard/bssilk/hub
+/obj/item/weapon/stock_parts/circuitboard/bssilk/hub
 	name = T_BOARD("bluespace snare hub")
 	build_path = /obj/machinery/bssilk_hub
 	req_components = list(

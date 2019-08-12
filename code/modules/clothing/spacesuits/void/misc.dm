@@ -12,7 +12,7 @@
 /obj/item/clothing/suit/space/void/swat/New()
 	..()
 	slowdown_per_slot[slot_wear_suit] = 1
-	
+
 //Skrell space gear. Sleek like a wetsuit.
 /obj/item/clothing/head/helmet/space/void/skrell
 	name = "Skrellian helmet"
@@ -20,6 +20,7 @@
 	armor = list(melee = 20, bullet = 20, laser = 50,energy = 50, bomb = 50, bio = 100, rad = 100)
 	max_heat_protection_temperature = SPACE_SUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	species_restricted = list(SPECIES_SKRELL,SPECIES_HUMAN)
+	tint = 1 //INF, WAS NOTHING (0) //skrellian tek
 
 /obj/item/clothing/head/helmet/space/void/skrell/white
 	icon_state = "skrell_helmet_white"

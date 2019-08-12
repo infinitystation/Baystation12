@@ -282,7 +282,7 @@
 
 /datum/gear/storage/adherent_harness
 	display_name = "(Adherent) tools harness"
-	path = /obj/item/weapon/storage/belt/utility/vigil
+	path = /obj/item/weapon/storage/belt/utility/crystal
 	sort_category = "Xenowear"
 	slot = slot_belt
 	cost = 4
