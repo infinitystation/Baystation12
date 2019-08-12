@@ -236,6 +236,10 @@
 		to_chat(user, "<span class='danger'>\The [src] is welded shut!</span>")
 		return
 
+	if(isxenomorph(user))
+		var/mob/living/carbon/human/H = user
+		H.pry_open(src)
+
 	if(isCrowbar(C) || istype(C,/obj/item/weapon/material/twohanded/fireaxe))
 		if(operating)
 			return

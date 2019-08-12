@@ -1079,6 +1079,11 @@ About the new airlock wires panel:
 	if(istype(C, /obj/item/taperoll))
 		return
 
+	if(isxenomorph(user))
+		var/mob/living/carbon/human/H = user
+		if(!locked || welded || brace)
+			H.pry_open(src)
+
 	if (!repairing && (stat & BROKEN) && src.locked) //bolted and broken
 		if (!cut_bolts(C,user))
 			..()
