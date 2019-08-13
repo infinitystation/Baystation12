@@ -1,3 +1,5 @@
+//spice kittenz posters
+
 /decl/poster/tjpost/New()
 	..()
 	. = pick(subtypesof(/decl/poster/tjpost))
@@ -5,7 +7,7 @@
 /obj/structure/sign/poster/tjpost
 	name = "poster"
 //	desc = "A large piece of space-resistant printed paper with emblem of CCA."
-	icon = 'infinity/icons/obj/contraband.dmi'
+	icon = 'infinity/icons/obj/posters.dmi'
 	icon_state= "tposter"
 
 /obj/structure/sign/poster/tjpost/tj_1
@@ -98,7 +100,7 @@
 
 /obj/structure/sign/poster/guide_to_pee
 	icon_state = "guide_to_pee"
-	icon = 'infinity/icons/obj/contraband.dmi'
+	icon = 'infinity/icons/obj/posters.dmi'
 	poster_type = /decl/poster/guide_to_pee
 
 /decl/poster/tjpost
@@ -227,4 +229,202 @@
 	desc = "If you want to avoid obossaniy pol and unitaz, then follow a couple of simple rules \
 	that will help you in this: For starters, get a hold of your gun. Make sure you get your sights right. \
 	Didn't take it too high, or too low. Also, make sure your weapon is not placed in the holster. \
-	If you follow these simple rules and do not blunt, the floor in the toilet will not be obossan."
+	If you follow these simple rules and do not blunt, the floor in the toilet will stay clean."
+
+//spess humen posterz (humpost-kompost hddd)
+
+/obj/structure/sign/poster/humpost
+	name = "poster"
+	icon = 'infinity/icons/obj/posters.dmi'
+	icon_state= "humposter"
+	poster_type = /decl/poster/humpost
+
+/obj/structure/sign/poster/humpost/hum_1
+	icon_state = "humposter_1"
+	poster_type = /decl/poster/humpost/hum_1
+
+/obj/structure/sign/poster/humpost/hum_2
+	icon_state = "humposter_2"
+	poster_type = /decl/poster/humpost/hum_2
+
+/obj/structure/sign/poster/humpost/hum_3
+	icon_state = "humposter_3"
+	poster_type = /decl/poster/humpost/hum_3
+
+/obj/structure/sign/poster/humpost/hum_4
+	icon_state = "humposter_4"
+	poster_type = /decl/poster/humpost/hum_4
+
+/obj/structure/sign/poster/humpost/hum_5
+	icon_state = "humposter_5"
+	poster_type = /decl/poster/humpost/hum_5
+
+/obj/structure/sign/poster/humpost/hum_6
+	icon_state = "humposter_6"
+	poster_type = /decl/poster/humpost/hum_6
+
+/obj/structure/sign/poster/humpost/hum_7
+	icon_state = "humposter_7"
+	poster_type = /decl/poster/humpost/hum_7
+
+/obj/structure/sign/poster/humpost/hum_8
+	icon_state = "humposter_8"
+	poster_type = /decl/poster/humpost/hum_8
+
+/obj/structure/sign/poster/humpost/hum_9
+	icon_state = "humposter_9"
+	poster_type = /decl/poster/humpost/hum_9
+
+/obj/structure/sign/poster/humpost/hum_10
+	icon_state = "humposter_10"
+	poster_type = /decl/poster/humpost/hum_10
+
+/obj/structure/sign/poster/humpost/hum_11
+	icon_state = "humposter_11"
+	poster_type = /decl/poster/humpost/hum_11
+
+/obj/structure/sign/poster/humpost/hum_12
+	icon_state = "humposter_12"
+	poster_type = /decl/poster/humpost/hum_12
+
+/obj/structure/sign/poster/humpost/hum_13
+	icon_state = "humposter_13"
+	poster_type = /decl/poster/humpost/hum_13
+
+/obj/structure/sign/poster/humpost/hum_14
+	icon_state = "humposter_14"
+	poster_type = /decl/poster/humpost/hum_14
+
+/obj/structure/sign/poster/humpost/hum_15
+	icon_state = "humposter_15"
+	poster_type = /decl/poster/humpost/hum_15
+
+/obj/structure/sign/poster/humpost/hum_16
+	icon_state = "humposter_16"
+	poster_type = /decl/poster/humpost/hum_16
+
+/obj/structure/sign/poster/humpost/hum_17
+	icon_state = "humposter_17"
+	poster_type = /decl/poster/humpost/hum_17
+
+/obj/structure/sign/poster/humpost/hum_18
+	icon_state = "humposter_18"
+	poster_type = /decl/poster/humpost/hum_18
+
+/obj/structure/sign/poster/humpost/hum_19
+	icon_state = "humposter_19"
+	poster_type = /decl/poster/humpost/hum_19
+
+/obj/structure/sign/poster/humpost/hum_20
+	icon_state = "humposter_20"
+	poster_type = /decl/poster/humpost/hum_20
+
+/decl/poster/humpost
+	icon_state = "humposter"
+	name = "SCG emblem"
+	desc = "Patriotic poster with an emblem of SCG and some text on it."
+
+/decl/poster/humpost/hum_1
+	icon_state = "humposter_1"
+	name = "scg peacemakers"
+	desc = "Poster calling to join the ranks of the peacemaking forces of the SCG... Wow, it's animated!"
+
+/decl/poster/humpost/hum_2
+	icon_state = "humposter_2"
+	name = "nanotrasen"
+	desc = "Boring poster of a boring corporation with boring text from a boring person. Nothing interesting."
+
+/decl/poster/humpost/hum_3
+	icon_state = "humposter_3"
+	name = "bodka"
+	desc = "Advertising poster of vodka, drink from real men for real men. Feel like a space bear."
+
+/decl/poster/humpost/hum_4
+	icon_state = "humposter_4"
+	name = "salo"
+	desc = "This poster has a beautiful view of a golden field under azure skies. \
+	In the corner - a package of fat, which looks at you seductive boar. Salo - zakuson for real men!"
+
+/decl/poster/humpost/hum_5
+	icon_state = "humposter_5"
+	name = "mars terraforming"
+	desc = "What it was before and what it is now, our future is in our hands."
+
+/decl/poster/humpost/hum_6
+	icon_state = "humposter_6"
+	name = "moon city"
+	desc = "Hundreds of years ago Selena, the first city of the Moon was like that."
+
+/decl/poster/humpost/hum_7
+	icon_state = "humposter_7"
+	name = "jeneva"
+	desc = "Uhh, Geneva!"
+
+/decl/poster/humpost/hum_8
+	icon_state = "humposter_8"
+	name = "alpha centauri"
+	desc = "This poster is dedicated to the colonization of Alpha Centauri, one of the oldest human colonies."
+
+/decl/poster/humpost/hum_9
+	icon_state = "humposter_9"
+	name = "gateway"
+	desc = "In 2171 first gateway is built in the solar system, connecting it with the Tau Ceti system."
+
+/decl/poster/humpost/hum_10
+	icon_state = "humposter_10"
+	name = "illuminator"
+	desc = "In 2145, humanity accidentally opened the blue space, and on the poster one of the pictures taken from inside the first ship that got there."
+
+/decl/poster/humpost/hum_11
+	icon_state = "humposter_11"
+	name = "sea"
+	desc = "On the poster view from one of the Islands of Bermuda. A great place, a ticket to which can buy the best workers for only 999.9 thallers."
+
+/decl/poster/humpost/hum_12
+	icon_state = "humposter_12"
+	name = "first martian"
+	desc = "Jimmy Gideon is the first man to set foot on Mars, the first Martian, the first father of the Governor of Mars."
+
+/decl/poster/humpost/hum_13
+	icon_state = "humposter_13"
+	name = "expedition"
+	desc = "2301: the Twenty-third Moges expedition started EC."
+
+/decl/poster/humpost/hum_14
+	icon_state = "humposter_14"
+	name = "olympus"
+	desc = "Spires of Olympus - the capital of Mars and humanity."
+
+/decl/poster/humpost/hum_15
+	icon_state = "humposter_15"
+	name = "gaya"
+	desc = "Join the SCG fleet! Liberate Gaia! Avenge your comrades! Kill Gilgamesh people!"
+
+/decl/poster/humpost/hum_16
+	icon_state = "humposter_16"
+	name = "venus"
+	desc = "View of one of the best resorts in the galaxy - Verena resorts. Venus - the most expensive, popular and pleasant place to stay!"
+
+/decl/poster/humpost/hum_17
+	icon_state = "humposter_17"
+	name = "ship"
+	desc = "2284: the First spacecraft of mankind, equipped with bluspels engine makes its first successful jump."
+
+/decl/poster/humpost/hum_18
+	icon_state = "humposter_18"
+	name = "wetskrell"
+	desc = "You see a wet, very wet skrell on the poster. Its just advertising of site wetskrell.nt"
+
+/decl/poster/humpost/hum_19
+	icon_state = "humposter_19"
+	name = "resomi"
+	desc = "The poster, which shows very lustly resomi lying on the bed and looking straight into your soul. Oh, it's hot, very hot.\
+	On the edge of the poster in small print printed: <<Adaptive miracle, a great sensation in the porn industry, testing a variety \
+	of ways of penetration. Read more in our magazine page 5>>"
+
+/decl/poster/humpost/hum_20
+	icon_state = "humposter_20"
+	name = "hero"
+	desc = "You see a very pumped-up guy with a huge machete. He is huge, he is muscular, \
+	he is beautiful and you want children from him. Join the ranks of the Expeditionary Corps\
+	- advises us the hero from the poster."
