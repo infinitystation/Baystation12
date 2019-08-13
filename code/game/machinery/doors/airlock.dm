@@ -98,6 +98,8 @@ var/list/airlock_overlays = list()
 	)
 	stock_part_presets = list(/decl/stock_part_preset/radio/receiver/airlock = 1)
 
+	var/t_ntnet_id
+
 /obj/machinery/door/airlock/attack_generic(var/mob/user, var/damage)
 	if(stat & (BROKEN|NOPOWER))
 		if(damage >= 10)
@@ -819,6 +821,8 @@ About the new airlock wires panel:
 	data["electrified"] 		= round(electrified_until		> 0 ? max(electrified_until - world.time, 	0) / 10 	: electrified_until,		1)
 	data["open"] = !density
 
+	data["airlock_ntnet_id"]	= t_ntnet_id //inf
+
 	var/commands[0]
 	commands[++commands.len] = list("name" = "IdScan",					"command"= "idscan",				"active" = !aiDisabledIdScanner,	"enabled" = "Enabled",	"disabled" = "Disable",		"danger" = 0, "act" = 1)
 	commands[++commands.len] = list("name" = "Bolts",					"command"= "bolts",					"active" = !locked,					"enabled" = "Raised ",	"disabled" = "Dropped",		"danger" = 0, "act" = 0)
@@ -1386,6 +1390,7 @@ About the new airlock wires panel:
 		wires = new/datum/wires/airlock(src)
 
 /obj/machinery/door/airlock/Initialize()
+	get_new_ntnet_id()
 	if(src.closeOtherId != null)
 		for (var/obj/machinery/door/airlock/A in world)
 			if(A.closeOtherId == src.closeOtherId && A != src)

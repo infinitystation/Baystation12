@@ -217,7 +217,8 @@ var/list/admin_verbs_debug = list(
 	/client/proc/visualpower,
 	/client/proc/visualpower_remove,
 	/client/proc/ping_webhook,//inf
-	/client/proc/reload_webhooks//inf
+	/client/proc/reload_webhooks,//inf
+	/client/proc/debug_airlocks_id//inf
 	)
 
 var/list/admin_verbs_paranoid_debug = list(

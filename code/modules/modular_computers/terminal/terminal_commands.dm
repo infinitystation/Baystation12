@@ -569,4 +569,87 @@ Subtypes
 	return "alias: options not found."
 ///BATCH Compilator
 
+//remote door control
+/datum/terminal_command/connect
+	name = "connect"
+	man_entry = list("Format: connect \[door id].",
+					"Standard format show you data about door, it needn't access of door.",
+					"Open format: connect \[door id] -open. To close door, replace \'-open\' by \'-close\'. Need airlock accessible",
+					"Locking (bolting) format: connect \[door id] -lock. To unlock use -unlock. Need airlock access."
+					)
+	pattern = "^connect"
+
+/datum/terminal_command/connect/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	var/obj/item/modular_computer/CT = terminal.computer
+	var/list/txt = splittext(text, " ")
+	var/obj/machinery/door/airlock/DOOR = terminal.get_airlock_by_ID(txt[2])
+	if(DOOR && CT.network_card.check_functionality())
+		if(!DOOR.aiControlDisabled)
+			switch(length(txt))
+				if(2)
+					. += "Outputting data about airlock([txt[2]]):<hr>"
+					. += "Energy: [DOOR.main_power_lost_until ? "<font color = '#ff0000'>OFFLINE</font>" : "<font color = '#00ff00'>ONLINE</font>"]"
+					. += "<pre>Network data:<br>"
+					. += "	NTNet connection: [DOOR.aiControlDisabled ? "<font color = '#ff0000'>ERROR</font>" : "<font color = '#00ff00'>STABLE</font>"].<br>"
+					. += "	AI cover: [DOOR.hackProof ? "<font color = '#00ff00'>ACTIVE</font>" : "<font color = '#ff0000'>OUT OF SERVICE</font>"].<hr></pre>"
+					var/electrified_state
+					switch(DOOR.electrified_until)
+						if(-1)
+							electrified_state = "<font color = '#fffa29'>PERMANENT</font>"
+						if(0)
+							electrified_state = "<font color ='#00ff00'>FALSE</font>"
+						else
+							electrified_state = "<font color = '#ff0000'>TRUE</font>"
+					. += "<pre>Local functional data:<br>"
+					. += "	Electrified: [electrified_state].<br>"
+					. += "	Bolts: [DOOR.locked ? "<font color = '#ff0000'>LOCKED DOWN</font>" : "<font color = '#00ff00'>OUT OF SERVICE</font>"].<br>"
+					. += "	Lights: [DOOR.lights ? "<font color = '#00ff00'>STABLE</font>" : "<font color = '#ff0000'>OUT OF SERVICE</font>"].<br><hr>"
+					. += "	<font color = '#ff0000' size = 2>SAFETY DATA</font>:<br>"
+					. += "		Airlock timing: [DOOR.normalspeed ? "<font color = '#00ff00'>STABLE</font>" : "<font color = '#ff0000'>OVERRIDEN</font>"].<br>"
+					. += "		Safety protocols: [DOOR.safe ? "<font color = '#00ff00'>STABLE</font>" : "<font color = '#ff0000'>OVERRIDEN</font>"].<br></pre>"
+					/*var/ac = ""
+					if(DOOR.req_access)
+						ac = "(
+						for(var/i in DOOR.req_access)
+							ac += i + ", "
+						ac += ")"*/
+					. += "Required Access: [DOOR.req_access ? "([jointext(DOOR.req_access, ", ") ])" : "ACCESS NOT REQUIRED"].<hr>"
+					return
+				if(3)
+					switch(txt[3])
+						//density
+						if("-open")
+							if(!has_access(DOOR.req_access, user.GetAccess()))
+								return "connect: <font color = '#ff0000'>ACCESS ERROR.</font>"
+							if(!DOOR.open())
+								return "connect: unable to open airlock, maybe it bolted or already opened or lack for energy."
+							return "connect: Airlock with id([txt[2]]) was opened."
+
+						if("-close")
+							if(!has_access(DOOR.req_access, user.GetAccess()))
+								return "connect: <font color = '#ff0000'>ACCESS ERROR.</font>"
+							if(!DOOR.close())
+								return "connect: unable to close airlock, maybe it bolted or already closed or lack for energy."
+							return "connect: Airlock with id([txt[2]]) was closed."
+
+						//bolts
+						if("-lock")
+							if(!has_access(DOOR.req_access, user.GetAccess()))
+								return "connect: <font color = '#ff0000'>ACCESS ERROR.</font>"
+							if(!DOOR.lock())
+								return "connect: unable to close airlock, maybe it bolted or already locked or lack for energy."
+							return "connect: Airlock with id([txt[2]]) was locked."
+
+						if("-unlock")
+							if(!has_access(DOOR.req_access, user.GetAccess()))
+								return "connect: <font color = '#ff0000'>ACCESS ERROR.</font>"
+							if(!DOOR.unlock())
+								return "connect: unable to close airlock, maybe it bolted or already unlocked or lack for energy."
+							return "connect: Airlock with id([txt[2]]) was unlocked."
+
+		else
+			return "connect: <font color = '#ff0000'>ERROR</font>: Unable to establish a stable NTNet connection with airlock."
+	else
+		return "connect: <font color = '#ff0000'>ERROR 404:</font>: Unable to found airlock."
+	//SSmachines.machinery
 //[/INFINITY]_______________________________________________________________________________________________________________
