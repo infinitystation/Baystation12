@@ -21,6 +21,7 @@
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "satchel-winta"
 	item_state = "satchel-winta"
+	startswith = list(/obj/item/weapon/storage/box/wintershmotree)
 
 /obj/item/clothing/suit/storage/hooded/wintercoat/wintercam
 	name = "Winter cape-tent"
@@ -200,11 +201,18 @@
 /obj/item/clothing/accessory/cloak/wintercamfg
 	name = "winter camouflage cloak"
 	desc = "Simple winter camouflaging cloak."
-	icon = CUSTOM_ITEM_OBJ
+	icon = 'infinity/icons/customs/infinity_custom_items_obj.dmi'
 	icon_state = "wintercloak"
-
-/obj/item/weapon/storage/backpack/satchel/wintaforba/Initialize()
-	new /obj/item/weapon/storage/box/wintershmotree(src)
+	item_flags = ITEM_FLAG_THICKMATERIAL
+	flags_inv = HIDETAIL
+	accessory_icons = list(
+		slot_w_uniform_str = 'infinity/icons/customs/infinity_custom_items_mob.dmi', \
+		slot_tie_str = 'infinity/icons/customs/infinity_custom_items_mob.dmi', \
+		slot_wear_suit_str = 'infinity/icons/customs/infinity_custom_items_mob.dmi')
+	item_icons = list(
+		slot_w_uniform_str = 'infinity/icons/customs/infinity_custom_items_mob.dmi', \
+		slot_tie_str = 'infinity/icons/customs/infinity_custom_items_mob.dmi', \
+		slot_wear_suit_str = 'infinity/icons/customs/infinity_custom_items_mob.dmi')
 
 /obj/item/weapon/storage/box/wintershmotree
 	name = "white box"
@@ -213,10 +221,8 @@
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 	icon_state = "clwbox"
 	desc = "White box, similar to zinc with ammunition, but with something more light inside. Or not..."
-
-/obj/item/weapon/storage/box/wintershmotree/Initialize()
-	new /obj/item/clothing/accessory/cloak/wintercamfg(src)
-	new /obj/item/clothing/accessory/inf_pin/ccapin(src)
-	new /obj/item/clothing/suit/storage/hooded/wintercoat/wintercam(src)
-	new /obj/item/clothing/accessory/badge/tajamc(src)
-	new /obj/item/clothing/shoes/workboots/winta(src)
+	startswith = list(/obj/item/clothing/accessory/cloak/wintercamfg = 1,
+				/obj/item/clothing/suit/storage/hooded/wintercoat/wintercam = 1,
+				/obj/item/clothing/shoes/workboots/winta = 1,
+				/obj/item/clothing/accessory/badge/tajamc = 1,
+				/obj/item/clothing/accessory/inf_pin/ccapin = 1)
