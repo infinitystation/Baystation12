@@ -13,7 +13,7 @@
 /obj/machinery/computer/shuttle_control/bridge
 	name = "bridge mode change system"
 	shuttle_tag = "Bridge Operation Mode"
-//	ui_template = "shuttle_control_console_lift.tmpl"
+	ui_template = "shuttle_control_console_lift.tmpl"
 //	icon_state = "tiny"
 //	icon_keyboard = "tiny_keyboard"
 //	icon_screen = "lift"
