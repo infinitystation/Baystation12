@@ -13,19 +13,19 @@
 
 	natural_armour_values = list(melee = 30, bullet = 28, laser = 25, energy = 0, bomb = 0, bio = 100, rad = 100)
 
-	icon_template = 'icons/mob/human_races/species/xenos/template.dmi'
+	icon_template = 'infinity/icons/mob/human_races/species/xenophage/template.dmi'
 
 	damage_overlays = null //no icons
 	damage_mask =     null //no icons
 	blood_mask =      null //no icons
 
-	darksight_range = 7
+	darksight_range = 8
 	darksight_tint = DARKTINT_GREAT
 
 	antaghud_offset_x = -16
 	pixel_offset_x = -16
 	has_fine_manipulation = 0
-	siemens_coefficient = 0.5
+	siemens_coefficient = 0.25
 	gluttonous = GLUT_ANYTHING
 	stomach_capacity = MOB_MEDIUM
 
@@ -36,6 +36,8 @@
 	stun_mod =      0.25  // Halved stun times.
 	paralysis_mod = 0.25 // Quartered paralysis times.
 	weaken_mod =    0    // Cannot be weakened.
+	virus_immune = 1
+	blood_oxy = 0
 
 	warning_low_pressure = 50
 	hazard_low_pressure = -1
@@ -77,6 +79,7 @@
 		BP_HIVE =     /obj/item/organ/internal/xeno/hivenode,
 		)
 
+	move_intents = list(/decl/move_intent/walk)
 	var/list/started_healing = list()
 	var/accelerated_healing_threshold = 10 SECONDS
 
@@ -122,8 +125,8 @@
 
 	rarity_value = 5
 	base_color = "#000d1a"
-	icobase = 'icons/mob/human_races/species/xenos/body_drone.dmi'
-	deform =  'icons/mob/human_races/species/xenos/body_drone.dmi'
+	icobase = 'infinity/icons/mob/human_races/species/xenophage/body_drone.dmi'
+	deform =  'infinity/icons/mob/human_races/species/xenophage/body_drone.dmi'
 
 	has_organ = list(
 		BP_EYES =     /obj/item/organ/internal/eyes/xeno,
@@ -137,7 +140,6 @@
 		)
 
 	inherent_verbs = list(
-		/mob/living/proc/ventcrawl,
 		/mob/living/carbon/human/proc/plant,
 		/mob/living/carbon/human/proc/transfer_plasma,
 		/mob/living/carbon/human/proc/evolve,
@@ -158,12 +160,12 @@
 	total_health = 150
 //	base_color = "#001a33"
 
-	icobase = 'icons/mob/human_races/species/xenos/body_hunter.dmi'
-	deform =  'icons/mob/human_races/species/xenos/body_hunter.dmi'
+	icobase = 'infinity/icons/mob/human_races/species/xenophage/body_hunter.dmi'
+	deform =  'infinity/icons/mob/human_races/species/xenophage/body_hunter.dmi'
 
 //	brute_mod =     0.8
 //	burn_mod =      0.8
-//	weeds_plasma_rate = 5
+//	weeds_plasma_rate = 10
 //	slowdown = -0.5
 
 	has_organ = list(
@@ -176,7 +178,7 @@
 		)
 
 	inherent_verbs = list(
-		/mob/living/proc/ventcrawl,
+		/mob/living/carbon/human/proc/plant,
 		/mob/living/carbon/human/proc/pry_open,
 		/mob/living/carbon/human/proc/tackle,
 		/mob/living/carbon/human/proc/leap,
@@ -190,14 +192,15 @@
 		TAG_RELIGION =  RELIGION_OTHER
 	)
 
+
 /datum/species/xenos/sentinel
 	name = "Xenophage Sentinel"
 	base_color = "#00284d"
 	total_health = 220
-	icobase = 'icons/mob/human_races/species/xenos/body_sentinel.dmi'
-	deform =  'icons/mob/human_races/species/xenos/body_sentinel.dmi'
+	icobase = 'infinity/icons/mob/human_races/species/xenophage/body_sentinel.dmi'
+	deform =  'infinity/icons/mob/human_races/species/xenophage/body_sentinel.dmi'
 
-	weeds_plasma_rate = 10
+	weeds_plasma_rate = 15
 	slowdown = 0.5
 
 	has_organ = list(
@@ -211,7 +214,8 @@
 		)
 
 	inherent_verbs = list(
-		/mob/living/proc/ventcrawl,
+		/mob/living/carbon/human/proc/plant,
+		/mob/living/carbon/human/proc/pry_open,
 		/mob/living/carbon/human/proc/tackle,
 		/mob/living/carbon/human/proc/transfer_plasma,
 		/mob/living/carbon/human/proc/corrosive_acid,
@@ -237,8 +241,8 @@
 	weeds_plasma_rate = 20
 	slowdown = 1
 
-	icobase = 'icons/mob/human_races/species/xenos/body_queen.dmi'
-	deform =  'icons/mob/human_races/species/xenos/body_queen.dmi'
+	icobase = 'infinity/icons/mob/human_races/species/xenophage/body_queen.dmi'
+	deform =  'infinity/icons/mob/human_races/species/xenophage/body_queen.dmi'
 
 	has_organ = list(
 		BP_EYES =     /obj/item/organ/internal/eyes/xeno,
@@ -253,7 +257,7 @@
 		)
 
 	inherent_verbs = list(
-		/mob/living/proc/ventcrawl,
+		/mob/living/carbon/human/proc/pry_open,
 		/mob/living/carbon/human/proc/psychic_whisper,
 		/mob/living/carbon/human/proc/lay_egg,
 		/mob/living/carbon/human/proc/plant,
@@ -272,4 +276,3 @@
 		TAG_FACTION =   FACTION_XENOPHAGE,
 		TAG_RELIGION =  RELIGION_OTHER
 	)
-

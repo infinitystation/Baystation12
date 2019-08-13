@@ -469,7 +469,7 @@
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
-/obj/machinery/reagentgrinder,
+/obj/machinery/reagentgrinder/juicer,
 /turf/simulated/floor/tiled,
 /area/icarus/vessel)
 "bO" = (
@@ -1999,7 +1999,7 @@
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "prototype_chamber_blast"
+	id_tag = "prototype_chamber_blast"
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
@@ -2132,14 +2132,14 @@
 /turf/simulated/floor/plating,
 /area/icarus/open)
 "gS" = (
-/obj/machinery/atmospherics/pipe/tank/oxygen,
+/obj/machinery/atmospherics/unary/tank/oxygen,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/icarus/open)
 "gT" = (
-/obj/machinery/atmospherics/pipe/tank/oxygen,
+/obj/machinery/atmospherics/unary/tank/oxygen,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -2153,7 +2153,7 @@
 /turf/simulated/floor/plating,
 /area/icarus/vessel)
 "gV" = (
-/obj/machinery/atmospherics/pipe/tank/nitrogen,
+/obj/machinery/atmospherics/unary/tank/nitrogen,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -2188,11 +2188,11 @@
 /turf/simulated/floor/plating,
 /area/icarus/vessel)
 "hb" = (
-/obj/machinery/atmospherics/pipe/tank/oxygen,
+/obj/machinery/atmospherics/unary/tank/oxygen,
 /turf/simulated/floor/plating,
 /area/icarus/vessel)
 "hc" = (
-/obj/machinery/atmospherics/pipe/tank/hydrogen,
+/obj/machinery/atmospherics/unary/tank/hydrogen,
 /turf/simulated/floor/plating,
 /area/icarus/vessel)
 "hd" = (
@@ -2261,7 +2261,7 @@
 	},
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "d1starboardnacelle"
+	id_tag = "d1starboardnacelle"
 	},
 /obj/structure/window/phoronreinforced{
 	icon_state = "phoronrwindow";
@@ -2309,8 +2309,17 @@
 /turf/simulated/floor/plating,
 /area/icarus/vessel)
 "ht" = (
-/obj/machinery/atmospherics/trinary/mixer/m_mixer{
-	dir = 4
+/obj/machinery/atmospherics/omni/mixer{
+	active_power_usage = 7500;
+	tag_east = 2;
+	tag_east_con = null;
+	tag_north = 1;
+	tag_north_con = 0.79;
+	tag_south = 0;
+	tag_south_con = null;
+	tag_west = 1;
+	tag_west_con = 0.21;
+	use_power = 1
 	},
 /turf/simulated/floor/plating,
 /area/icarus/vessel)
@@ -2365,7 +2374,7 @@
 /obj/structure/grille,
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "d1starboardnacelle"
+	id_tag = "d1starboardnacelle"
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/blue{
 	dir = 4
@@ -2413,7 +2422,7 @@
 /obj/structure/grille,
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "d1starboardnacelle"
+	id_tag = "d1starboardnacelle"
 	},
 /turf/simulated/floor/reinforced,
 /area/icarus/vessel)

@@ -779,7 +779,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/effect/decal/mecha_wreckage/ripley,
+/obj/structure/mech_wreckage/powerloader,
 /turf/simulated/floor/plating/vox,
 /area/voxship/base)
 "cl" = (
@@ -1122,10 +1122,10 @@
 "df" = (
 /obj/item/stack/material/rods,
 /obj/item/weapon/reagent_containers/food/snacks/bearmeat,
-/obj/item/weapon/reagent_containers/food/snacks/caviar,
-/obj/item/weapon/reagent_containers/food/snacks/caviar,
-/obj/item/weapon/reagent_containers/food/snacks/caviar,
-/obj/item/weapon/reagent_containers/food/snacks/caviar,
+/obj/item/weapon/reagent_containers/food/snacks/canned/caviar,
+/obj/item/weapon/reagent_containers/food/snacks/canned/caviar,
+/obj/item/weapon/reagent_containers/food/snacks/canned/caviar,
+/obj/item/weapon/reagent_containers/food/snacks/canned/caviar,
 /turf/simulated/floor/plating/vox{
 	icon_state = "dmg4"
 	},
@@ -1244,15 +1244,14 @@
 /turf/simulated/floor/plating/vox,
 /area/voxship/ship)
 "dz" = (
-/obj/machinery/atmospherics/pipe/tank/hydrogen{
-	icon_state = "h2_map";
+/obj/machinery/atmospherics/unary/tank/hydrogen{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloor/full,
 /turf/simulated/floor/plating/vox,
 /area/voxship/ship)
 "dA" = (
-/obj/machinery/atmospherics/pipe/tank/oxygen{
+/obj/machinery/atmospherics/unary/tank/oxygen{
 	dir = 1;
 	icon_state = "o2"
 	},
@@ -1275,7 +1274,7 @@
 /turf/simulated/wall/iron,
 /area/voxship/base)
 "dD" = (
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control{
 	dir = 4;
 	frequency = 2002;
 	input_tag = "vox_ship_in";
@@ -1578,11 +1577,15 @@
 /turf/simulated/floor/plating/vox,
 /area/voxship/base)
 "eq" = (
-/obj/machinery/vending/engivend,
+/obj/machinery/vending/engivend{
+	req_access = list()
+	},
 /turf/simulated/floor/plating/vox,
 /area/voxship/base)
 "er" = (
-/obj/machinery/vending/engineering,
+/obj/machinery/vending/engineering{
+	req_access = list()
+	},
 /turf/simulated/floor/plating/vox,
 /area/voxship/base)
 "es" = (
@@ -1711,8 +1714,7 @@
 /turf/simulated/floor/plating/vox,
 /area/voxship/ship)
 "eJ" = (
-/obj/machinery/atmospherics/pipe/tank/nitrogen{
-	icon_state = "n2_map";
+/obj/machinery/atmospherics/unary/tank/nitrogen{
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloor/full,
@@ -1845,7 +1847,7 @@
 /area/voxship/ship)
 "fe" = (
 /obj/item/weapon/storage/toolbox/syndicate,
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control{
 	dir = 4;
 	frequency = 2002;
 	input_tag = "vox_base_in";
@@ -1882,8 +1884,7 @@
 	icon_state = "bulb1";
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/tank/nitrogen{
-	icon_state = "n2_map";
+/obj/machinery/atmospherics/unary/tank/nitrogen{
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloor/full,
@@ -2148,30 +2149,7 @@
 	icon_state = "dmg2"
 	},
 /area/voxship/base)
-"lB" = (
-/obj/machinery/atmospherics/unary/outlet_injector{
-	injecting = 1;
-	use_power = 1
-	},
-/obj/machinery/sparker{
-	id = "voxship";
-	pixel_x = -20
-	},
-/turf/simulated/floor/airless,
-/area/voxship/ship)
-"pc" = (
-/obj/machinery/atmospherics/pipe/simple/visible/black{
-	icon_state = "intact";
-	dir = 9
-	},
-/obj/machinery/portable_atmospherics/canister/oxygen,
-/turf/simulated/floor/plating/vox,
-/area/voxship/ship)
-"tD" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/black,
-/turf/simulated/floor/plating/vox,
-/area/voxship/ship)
-"zx" = (
+"va" = (
 /obj/machinery/atmospherics/pipe/simple/visible/black,
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -2186,11 +2164,15 @@
 	},
 /turf/simulated/floor/plating/vox,
 /area/voxship/ship)
-"Er" = (
-/obj/structure/inflatable/door,
-/turf/simulated/floor/tiled/techmaint/vox,
-/area/space)
-"Es" = (
+"ve" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	icon_state = "intact";
+	dir = 9
+	},
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/simulated/floor/plating/vox,
+/area/voxship/ship)
+"wJ" = (
 /obj/machinery/light/small{
 	dir = 8
 	},
@@ -2199,23 +2181,42 @@
 	dir = 4
 	},
 /obj/machinery/button/ignition{
-	id = "voxship";
+	id_tag = "voxship";
 	pixel_x = -28
 	},
 /turf/simulated/floor/plating/vox,
 /area/voxship/ship)
-"TI" = (
+"Cj" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/black,
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/simulated/floor/plating/vox,
+/area/voxship/ship)
+"Fm" = (
+/obj/structure/inflatable/door,
+/turf/simulated/floor/tiled/techmaint/vox,
+/area/space)
+"Ut" = (
+/obj/machinery/atmospherics/unary/outlet_injector{
+	injecting = 1;
+	use_power = 1
+	},
+/obj/machinery/sparker{
+	id_tag = "voxship";
+	pixel_x = -20
+	},
+/turf/simulated/floor/airless,
+/area/voxship/ship)
+"Wm" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/black,
+/turf/simulated/floor/plating/vox,
+/area/voxship/ship)
+"Zl" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/black{
 	dir = 4
 	},
-/turf/simulated/floor/plating/vox,
-/area/voxship/ship)
-"Ww" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/black,
-/obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/simulated/floor/plating/vox,
 /area/voxship/ship)
 
@@ -5509,7 +5510,7 @@ aX
 bh
 bp
 bq
-lB
+Ut
 dI
 cI
 dz
@@ -5606,7 +5607,7 @@ aa
 aa
 aa
 aC
-Ww
+Cj
 aY
 bO
 bq
@@ -5708,7 +5709,7 @@ aa
 aa
 aa
 aC
-tD
+Wm
 bg
 bO
 bt
@@ -5811,12 +5812,12 @@ aa
 aa
 aC
 aS
-TI
+Zl
 bC
 bK
 bC
 cg
-Es
+wJ
 bH
 dE
 el
@@ -5912,14 +5913,14 @@ aa
 aa
 aa
 aC
-tD
+Wm
 bg
 bD
 bu
 bW
 ch
 cq
-zx
+va
 dF
 eH
 bH
@@ -6014,7 +6015,7 @@ aa
 aa
 aa
 aC
-Ww
+Cj
 bg
 bH
 bv
@@ -6116,7 +6117,7 @@ aa
 aa
 aa
 aC
-pc
+ve
 ba
 bI
 bw
@@ -8462,7 +8463,7 @@ aa
 aa
 aa
 ab
-Er
+Fm
 ab
 aa
 aa
@@ -8564,7 +8565,7 @@ aa
 aa
 aa
 ab
-Er
+Fm
 ab
 aa
 aa

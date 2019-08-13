@@ -1,12 +1,31 @@
 /datum/event/aliens
-	announceWhen = 250
+	announceWhen = 495
 	var/spawncount = 1
 
 /datum/event/aliens/announce()
 	GLOB.using_map.level_x_biohazard_announcement(9)
 
 /datum/event/aliens/start()
+	var/list/candidates = list()
 	var/list/spawn_locations = list()
+
+//searching of candidates
+
+	var/i = 0
+	while(candidates.len <= 0 && i < 5)
+		for(var/mob/observer/ghost/G in GLOB.player_list)
+//			if(MODE_XENOMORPH in G.client.prefs.be_special_role)
+			if(((G.client.inactivity/10)/60) <= 1 + i) // the most active players are more likely to become an alien
+				if(!(G.mind && G.mind.current))
+					if(alert(G, "Do you want to join as a Xenophage larva?", "Become Larva", "No", "Yes")== "Yes")
+						candidates += G.key
+		i++
+
+	if(!candidates.len)
+		kill()
+		return
+
+//searching for spawning locations
 
 	for(var/obj/effect/landmark/L in landmarks_list)
 		if(L.name == "xeno_spawn" && (L.z in affecting_z))
@@ -20,12 +39,21 @@
 
 	spawn_locations = shuffle(spawn_locations)
 
-	while((spawncount >= 1) && spawn_locations.len)
+// spawning
+
+	if(prob(40)) spawncount++ //sometimes, have two larvae spawn instead of one
+	while((spawncount >= 1) && spawn_locations.len && candidates.len)
 		var/obj/spot = pick(spawn_locations)
-		var/mob/living/carbon/alien/larva/nodle = new /mob/living/carbon/alien/larva(spot)
-		nodle.auto_progress = 1
-		for(var/mob/observer/ghost/O in GLOB.ghost_mob_list)
-			to_chat(O, FONT_LARGE(SPAN_NOTICE(
-			"По&#255;вилась личинка пришельцев! Нажмите на неё, чтобы зан&#255;ть тело. ([ghost_follow_link(nodle, O)])")))
+		var/xeno = pick(candidates)
+
+		var/mob/living/carbon/alien/larva/new_xeno = new(spot)
+		new_xeno.key = xeno
+		new_xeno.auto_progress = 1
+		GLOB.xenomorphs.add_antagonist_mind(new_xeno.mind, 1)
+
+//		for(var/mob/observer/ghost/O in GLOB.ghost_mob_list)
+//			to_chat(O, FONT_LARGE(SPAN_NOTICE(
+//			"По&#255;вилась личинка пришельцев! [new_xeno.key ? "" : "Нажмите на неё, чтобы зан&#255;ть тело."] ([ghost_follow_link(new_xeno, O)])")))
 		spawn_locations -= spot
 		spawncount--
+		xeno -= candidates

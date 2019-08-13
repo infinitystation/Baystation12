@@ -99,8 +99,8 @@ SUBSYSTEM_DEF(ticker)
 	spawn(0)//Forking here so we dont have to wait for this to finish
 		mode.post_setup() // Drafts antags who don't override jobs.
 		to_world("<FONT color='blue'><B>При&#255;тной игры!</B></FONT>")
-		send2maindiscord("Раунд с режимом [SSticker.master_mode] началс&#255;. Игроков: [GLOB.player_list.len].")
-		send2mainirc("Раунд с режимом [SSticker.master_mode] началс&#255;. Игроков: [GLOB.player_list.len].")
+		send2maindiscord("Раунд с режимом [SSticker.master_mode] начался. Игроков: [GLOB.player_list.len].")
+		send2mainirc("Раунд с режимом [SSticker.master_mode] начался;. Игроков: [GLOB.player_list.len].")
 		sound_to(world, sound(GLOB.using_map.welcome_sound))
 
 		//Holiday Round-start stuff	~Carn

@@ -7,14 +7,14 @@
 	build_path = /obj/item/weapon/disk/botany
 	sort_string = "AAAAC"
 
-/datum/design/item/stock_part/BS_RPED
+/*/datum/design/item/stock_part/BS_RPED
 	name = "bluespace rapid part exchange device"
 	desc = "Powered by bluespace technology, this RPED variant can upgrade buildings from a distance, without needing to remove the panel first."
 	id = "bs_rped"
 	req_tech = list(TECH_ENGINEERING = 5, TECH_MATERIAL = 5, TECH_BLUESPACE = 4)
 	materials = list(MATERIAL_STEEL = 20000, MATERIAL_GLASS = 5000, MATERIAL_SILVER = 2000)
 	build_path = /obj/item/weapon/storage/part_replacer/bluespace
-	sort_string = "CBAAB"
+	sort_string = "CBAAB"*/
 
 /datum/design/item/hud/health
 	name = "health scanner"
@@ -134,13 +134,13 @@
 	id = "bat_lambda"
 	req_tech = list(TECH_POWER = 7, TECH_ENGINEERING = 6)
 	materials = list(MATERIAL_STEEL = 3200)
-	build_path = /obj/item/weapon/computer_hardware/battery_module/lambda
+	build_path = /obj/item/weapon/stock_parts/computer/battery_module/lambda
 	sort_string = "VBAEK"
 
 /datum/design/item/bluespace/bs_silk
 	name = "BlueSpace Snare"
 	id = "bs_snare"
-	req_tech = list(TECH_BLUESPACE = 5, TECH_DATA = 4)	
+	req_tech = list(TECH_BLUESPACE = 5, TECH_DATA = 4)
 	materials = list(MATERIAL_STEEL = 3200)
 	build_path = /obj/item/clothing/accessory/bs_silk
 	sort_string = "VAFAF"
@@ -207,33 +207,26 @@
 	name = "telepad control console"
 	id = "telesci_console"
 	req_tech = list(TECH_DATA = 3, TECH_BLUESPACE = 2)
-	build_path = /obj/item/weapon/circuitboard/telesci_console
+	build_path = /obj/item/weapon/stock_parts/circuitboard/telesci_console
 	sort_string = "HAAAD"
 
 /datum/design/circuit/telepad
 	name = "telepad board"
 	id = "telepad"
 	req_tech = list(TECH_DATA = 4, TECH_ENGINEERING = 3, TECH_MATERIAL = 3, TECH_BLUESPACE = 4)
-	build_path = /obj/item/weapon/circuitboard/telesci_pad
+	build_path = /obj/item/weapon/stock_parts/circuitboard/telesci_pad
 	sort_string = "HAAAF"
-
-/datum/design/circuit/bsa
-	name = "bluespace artillery control"
-	id = "bsa"
-	req_tech = list(TECH_ENGINEERING = 5, TECH_COMBAT = 5, TECH_BLUESPACE = 5)
-	build_path = /obj/item/weapon/circuitboard/bsa
-	sort_string = "KCAAG"
 
 /datum/design/circuit/bs_silk_control
 	name = "bluespace snare control"
 	id = "bsc"
 	req_tech = list(TECH_BLUESPACE = 5, TECH_DATA = 4)
-	build_path = /obj/item/weapon/circuitboard/bssilk/console
+	build_path = /obj/item/weapon/stock_parts/circuitboard/bssilk/console
 	sort_string = "KCAAH"
 
 /datum/design/circuit/bs_silk_hub
 	name = "bluespace snare hub"
 	id = "bsh"
 	req_tech = list(TECH_BLUESPACE = 5, TECH_DATA = 4)
-	build_path = /obj/item/weapon/circuitboard/bssilk/hub
+	build_path = /obj/item/weapon/stock_parts/circuitboard/bssilk/hub
 	sort_string = "KCAAI"

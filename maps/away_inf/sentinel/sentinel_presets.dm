@@ -86,26 +86,26 @@
 		//SMES//
 		////////
 
-/obj/machinery/power/smes/buildable/preset/patrol/engine_main/configure_and_install_coils()
-	component_parts += new /obj/item/weapon/smes_coil/super_capacity(src)
-	component_parts += new /obj/item/weapon/smes_coil(src)
+/obj/machinery/power/smes/buildable/preset/patrol/engine_main
+	uncreated_component_parts = list(/obj/item/weapon/stock_parts/smes_coil/super_capacity = 1,
+									/obj/item/weapon/stock_parts/smes_coil = 1)
 	_input_maxed = TRUE
 	_output_maxed = TRUE
 	_input_on = TRUE
 	_output_on = TRUE
 	_fully_charged = TRUE
 
-/obj/machinery/power/smes/buildable/preset/patrol/shuttle/configure_and_install_coils()
-	component_parts += new /obj/item/weapon/smes_coil(src)
+/obj/machinery/power/smes/buildable/preset/patrol/shuttle
+	uncreated_component_parts = list(/obj/item/weapon/stock_parts/smes_coil = 1)
 	_input_maxed = TRUE
 	_output_maxed = TRUE
 	_input_on = TRUE
 	_output_on = TRUE
 	_fully_charged = TRUE
 
-/obj/machinery/power/smes/buildable/preset/patrol/laser/configure_and_install_coils()
-	component_parts += new /obj/item/weapon/smes_coil(src)
-	component_parts += new /obj/item/weapon/smes_coil(src)
+/obj/machinery/power/smes/buildable/preset/patrol/laser
+	uncreated_component_parts = list(/obj/item/weapon/stock_parts/smes_coil = 1,
+									/obj/item/weapon/stock_parts/smes_coil = 1)
 	_input_maxed = TRUE
 	_output_maxed = TRUE
 	_input_on = TRUE

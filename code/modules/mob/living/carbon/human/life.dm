@@ -38,6 +38,7 @@
 	var/pressure_alert = 0
 	var/temperature_alert = 0
 	var/heartbeat = 0
+	var/stamina = 100
 
 /mob/living/carbon/human/Life()
 	set invisibility = 0
@@ -76,6 +77,8 @@
 
 		handle_pain()
 
+		handle_stamina()
+
 		handle_medical_side_effects()
 
 		if(!client && !mind)
@@ -87,6 +90,27 @@
 
 	//Update our name based on whether our face is obscured/disfigured
 	SetName(get_visible_name())
+
+/mob/living/carbon/human/get_stamina()
+	return stamina
+
+/mob/living/carbon/human/adjust_stamina(var/amt)
+	var/last_stamina = stamina
+	if(stat == DEAD)
+		stamina = 0
+	else
+		stamina = Clamp(stamina + amt, 0, 100)
+		if(stamina <= 0)
+			to_chat(src, SPAN_WARNING("You are exhausted!"))
+			if(MOVING_QUICKLY(src))
+				set_moving_slowly()
+	if(last_stamina != stamina && hud_used)
+		hud_used.update_stamina()
+
+/mob/living/carbon/human/proc/handle_stamina()
+	if((world.time - last_quick_move_time) > 5 SECONDS)
+		var/mod = (lying + (nutrition / initial(nutrition))) / 2
+		adjust_stamina(max(config.minimum_stamina_recovery, config.maximum_stamina_recovery * mod) * (1+chem_effects[CE_ENERGETIC]))
 
 /mob/living/carbon/human/set_stat(var/new_stat)
 	var/old_stat = stat
@@ -216,12 +240,10 @@
 			var/rads = radiation/25
 
 			radiation -= rads
-			nutrition += rads
+			set_nutrition(Clamp(nutrition+rads, 0, 550))
 
 			if (radiation < 2)
 				radiation = 0
-
-			nutrition = Clamp(nutrition, 0, 550)
 
 			return
 
@@ -300,12 +322,10 @@
 				rig_supply = rig.air_supply
 
 		if (!rig_supply && (!contents.Find(internal) || !((wear_mask && (wear_mask.item_flags & ITEM_FLAG_AIRTIGHT)) || (head && (head.item_flags & ITEM_FLAG_AIRTIGHT)))))
-			internal = null
+			set_internals(null)
 
 		if(internal)
 			return internal.remove_air_volume(volume_needed)
-		else if(internals)
-			internals.icon_state = "internal0"
 	return null
 
 /mob/living/carbon/human/handle_breath(datum/gas_mixture/breath)
@@ -326,7 +346,7 @@
 	if(!environment || (MUTATION_SPACERES in mutations))
 		return
 
-	//Stuff like the xenomorph's plasma regen happens here.
+	//Stuff like diona water absorbtion happens here.
 	species.handle_environment_special(src)
 
 	//Moved pressure calculations here for use in skip-processing check.
@@ -451,20 +471,17 @@
 		return //too busy for pesky metabolic regulation
 
 	if(bodytemperature < species.cold_level_1) //260.15 is 310.15 - 50, the temperature where you start to feel effects.
-		if(nutrition >= 2) //If we are very, very cold we'll use up quite a bit of nutriment to heat us up.
-			nutrition -= 2
-		var/recovery_amt = max((body_temperature_difference / BODYTEMP_AUTORECOVERY_DIVISOR), BODYTEMP_AUTORECOVERY_MINIMUM)
-//		log_debug("Cold. Difference = [body_temperature_difference]. Recovering [recovery_amt]")
-		bodytemperature += recovery_amt
+		var/nut_remove = 10 * DEFAULT_HUNGER_FACTOR
+		if(nutrition >= nut_remove) //If we are very, very cold we'll use up quite a bit of nutriment to heat us up.
+			adjust_nutrition(-nut_remove)
+			bodytemperature += max((body_temperature_difference / BODYTEMP_AUTORECOVERY_DIVISOR), BODYTEMP_AUTORECOVERY_MINIMUM)
 	else if(species.cold_level_1 <= bodytemperature && bodytemperature <= species.heat_level_1)
-		var/recovery_amt = body_temperature_difference / BODYTEMP_AUTORECOVERY_DIVISOR
-//		log_debug("Norm. Difference = [body_temperature_difference]. Recovering [recovery_amt]")
-		bodytemperature += recovery_amt
+		bodytemperature += body_temperature_difference / BODYTEMP_AUTORECOVERY_DIVISOR
 	else if(bodytemperature > species.heat_level_1) //360.15 is 310.15 + 50, the temperature where you start to feel effects.
-		//We totally need a sweat system cause it totally makes sense...~
-		var/recovery_amt = min((body_temperature_difference / BODYTEMP_AUTORECOVERY_DIVISOR), -BODYTEMP_AUTORECOVERY_MINIMUM)	//We're dealing with negative numbers
-//		log_debug("Hot. Difference = [body_temperature_difference]. Recovering [recovery_amt]")
-		bodytemperature += recovery_amt
+		var/hyd_remove = 10 * DEFAULT_THIRST_FACTOR
+		if(hydration >= hyd_remove)
+			adjust_hydration(-hyd_remove)
+			bodytemperature += min((body_temperature_difference / BODYTEMP_AUTORECOVERY_DIVISOR), -BODYTEMP_AUTORECOVERY_MINIMUM)
 
 	//This proc returns a number made up of the flags for body parts which you are protected on. (such as HEAD, UPPER_TORSO, LOWER_TORSO, etc. See setup.dm for the full list)
 /mob/living/carbon/human/proc/get_heat_protection_flags(temperature) //Temperature is the temperature you're being exposed to.
@@ -603,7 +620,7 @@
 						AdjustSleeping(-1)
 				species.handle_sleeping(src)
 			if(prob(2) && is_asystole() && isSynthetic())
-				visible_message(src, "<b>[src]</b> [pick("emits low pitched whirr","beeps urgently")]")
+				visible_message("<b>[src]</b> [pick("emits low pitched whirr","beeps urgently")]")
 		//CONSCIOUS
 		else
 			set_stat(CONSCIOUS)
@@ -647,8 +664,10 @@
 			adjustToxLoss(total_phoronloss)
 
 		// nutrition decrease
-		if (nutrition > 0)
-			nutrition = max (0, nutrition - species.hunger_factor)
+		if(nutrition > 0)
+			adjust_nutrition(-species.hunger_factor)
+		if(hydration > 0)
+			adjust_hydration(-species.thirst_factor)
 
 		if(stasis_value > 1 && drowsyness < stasis_value * 4)
 			drowsyness += min(stasis_value, 3)
@@ -658,7 +677,6 @@
 	return 1
 
 /mob/living/carbon/human/handle_regular_hud_updates()
-	var/datum/gas_mixture/environment = loc.return_air()
 	if(hud_updateflag) // update our mob's hud overlays, AKA what others see flaoting above our head
 		handle_hud_list()
 
@@ -761,6 +779,14 @@
 				if(150 to 250)					nutrition_icon.icon_state = "nutrition3"
 				else							nutrition_icon.icon_state = "nutrition4"
 
+		if(hydration_icon)
+			switch(hydration)
+				if(450 to INFINITY)				hydration_icon.icon_state = "hydration0"
+				if(350 to 450)					hydration_icon.icon_state = "hydration1"
+				if(250 to 350)					hydration_icon.icon_state = "hydration2"
+				if(150 to 250)					hydration_icon.icon_state = "hydration3"
+				else							hydration_icon.icon_state = "hydration4"
+
 		if(isSynthetic())
 			var/obj/item/organ/internal/cell/C = internal_organs_by_name[BP_CELL]
 			if (istype(C))
@@ -772,14 +798,11 @@
 		if(pressure)
 			pressure.icon_state = "pressure[pressure_alert]"
 		if(toxin)
-			if(phoron_alert)	toxin.icon_state = "tox1"
-			else									toxin.icon_state = "tox0"
+			toxin.icon_state = "tox[phoron_alert ? "1" : "0"]"
 		if(oxygen)
-			if(oxygen_alert)	oxygen.icon_state = "oxy1"
-			else									oxygen.icon_state = "oxy0"
+			oxygen.icon_state = "oxy[oxygen_alert ? "1" : "0"]"
 		if(fire)
-			if(fire_alert)							fire.icon_state = "fire[fire_alert]" //fire_alert is either 0 if no alert, 1 for cold and 2 for heat.
-			else									fire.icon_state = "fire0"
+			fire.icon_state = "fire[fire_alert ? fire_alert : 0]"
 
 		if(bodytemp)
 			if (!species)
@@ -793,15 +816,6 @@
 					if(280 to 295)			bodytemp.icon_state = "temp-2"
 					if(260 to 280)			bodytemp.icon_state = "temp-3"
 					else					bodytemp.icon_state = "temp-4"
-				switch(environment.temperature) //292 = 20 cel
-					if(311 to INFINITY)		minsbodytemp.icon_state = "mintemp3" //+38
-					if(303 to 311)			minsbodytemp.icon_state = "mintemp2" //32 to 38
-					if(299 to 305)			minsbodytemp.icon_state = "mintemp1" //25 to 32
-					if(287 to 299)			minsbodytemp.icon_state = "mintemp0" // 14 to 25 cel 320fuck
-					if(281 to 287)			minsbodytemp.icon_state = "mintemp-1" //8 to 14
-					if(273 to 281)			minsbodytemp.icon_state = "mintemp-2" //0 to 8
-					if(266 to 273)			minsbodytemp.icon_state = "mintemp-3" //-7 to 0
-					else					minsbodytemp.icon_state = "mintemp-4"
 			else
 				//TODO: precalculate all of this stuff when the species datum is created
 				var/base_temperature = species.body_temperature
@@ -836,46 +850,6 @@
 						bodytemp.icon_state = "temp-1"
 					else
 						bodytemp.icon_state = "temp0"
-
-				var/minitemp_step
-				var/middle_temp = ((getSpeciesOrSynthTemp(HEAT_LEVEL_1) + getSpeciesOrSynthTemp(COLD_LEVEL_1)))/2
-				if(middle_temp >= 340)
-					middle_temp = middle_temp -= 35
-				if(middle_temp >= 330)
-					middle_temp = middle_temp -= 10
-				if(middle_temp <= 253)
-					middle_temp = middle_temp += 10
-				if (environment.temperature >= middle_temp)
-					minitemp_step = (getSpeciesOrSynthTemp(HEAT_LEVEL_1) - middle_temp)/6
-
-					if (environment.temperature >= getSpeciesOrSynthTemp(HEAT_LEVEL_1))
-						minsbodytemp.icon_state = "mintemp5"
-					else if (environment.temperature >= middle_temp + minitemp_step*4)
-						minsbodytemp.icon_state = "mintemp4"
-					else if (environment.temperature >= middle_temp + minitemp_step*3)
-						minsbodytemp.icon_state = "mintemp3"
-					else if (environment.temperature >= middle_temp + minitemp_step*2)
-						minsbodytemp.icon_state = "mintemp2"
-					else if (environment.temperature >= middle_temp + minitemp_step*1)
-						minsbodytemp.icon_state = "mintemp1"
-					else
-						minsbodytemp.icon_state = "mintemp0"
-
-				else if (environment.temperature <= middle_temp)
-					minitemp_step = (middle_temp - getSpeciesOrSynthTemp(COLD_LEVEL_1))/6
-
-					if (environment.temperature <= getSpeciesOrSynthTemp(COLD_LEVEL_1))
-						minsbodytemp.icon_state = "mintemp-5"
-					else if (environment.temperature <= middle_temp - minitemp_step*4)
-						minsbodytemp.icon_state = "mintemp-4"
-					else if (environment.temperature <= middle_temp - minitemp_step*3)
-						minsbodytemp.icon_state = "mintemp-3"
-					else if (environment.temperature <= middle_temp - minitemp_step*2)
-						minsbodytemp.icon_state = "mintemp-2"
-					else if (environment.temperature <= middle_temp - minitemp_step*1)
-						minsbodytemp.icon_state = "mintemp-1"
-					else
-						minsbodytemp.icon_state = "mintemp0"
 	return 1
 
 /mob/living/carbon/human/handle_random_events()
@@ -1011,8 +985,6 @@
 		var/image/holder = hud_list[STATUS_HUD]
 		if(stat == DEAD)
 			holder.icon_state = "huddead"
-		else if(status_flags & XENO_HOST)
-			holder.icon_state = "hudxeno"
 		else if(foundVirus)
 			holder.icon_state = "hudill"
 		else if(has_brain_worms())
@@ -1027,8 +999,6 @@
 		var/image/holder2 = hud_list[STATUS_HUD_OOC]
 		if(stat == DEAD)
 			holder2.icon_state = "huddead"
-		else if(status_flags & XENO_HOST)
-			holder2.icon_state = "hudxeno"
 		else if(has_brain_worms())
 			holder2.icon_state = "hudbrainworm"
 		else if(virus2.len)
@@ -1143,7 +1113,7 @@
 
 	for(var/obj/item/organ/external/E in organs)
 		if(!(E.body_part & protected_limbs) && prob(20))
-			E.take_external_damage(burn = round(species_heat_mod * log(10, (burn_temperature + 10)), 0.1), used_weapon = fire)
+			E.take_external_damage(burn = round(species_heat_mod * log(10, (burn_temperature + 10)), 0.1), used_weapon = "fire")
 
 /mob/living/carbon/human/rejuvenate()
 	restore_blood()

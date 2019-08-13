@@ -13,7 +13,7 @@
 /obj/machinery/telepad/New()
 	..()
 	component_parts = list(
-	new /obj/item/weapon/circuitboard/telesci_pad,
+	new /obj/item/weapon/stock_parts/circuitboard/telesci_pad,
 	new /obj/item/bluespace_crystal/artificial,
 	new /obj/item/bluespace_crystal/artificial,
 	new /obj/item/weapon/stock_parts/capacitor,
@@ -28,13 +28,7 @@
 	efficiency = E
 
 /obj/machinery/telepad/attackby(obj/item/I, mob/user, params)
-	if(default_deconstruction_screwdriver(user, I))
-		return
-	if(default_deconstruction_crowbar(user, I))
-		return
-	if(default_part_replacement(user, I))
-		return
-
+	if(component_attackby(I, user)) return TRUE
 	if(panel_open)
 		if(istype(I, /obj/item/device/multitool))
 			var/obj/item/device/multitool/M = I

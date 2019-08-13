@@ -52,10 +52,10 @@
 /mob/living/bot/secbot/ed209/handleRangedTarget()
 	RangedAttack(target)
 
-/mob/living/bot/secbot/ed209/RangedAttack(var/atom/A)
+/mob/living/bot/secbot/ed209/RangedAttack(var/atom/A, var/params)
 	if(last_shot + shot_delay > world.time)
 		to_chat(src, "You are not ready to fire yet!")
-		return
+		return TRUE
 
 	last_shot = world.time
 	var/projectile = /obj/item/projectile/beam/stun
@@ -66,6 +66,8 @@
 	var/obj/item/projectile/P = new projectile(loc)
 	var/def_zone = get_exposed_defense_zone(A)
 	P.launch(A, def_zone)
+	return TRUE
+
 // Assembly
 
 /obj/item/weapon/secbot_assembly/ed209_assembly

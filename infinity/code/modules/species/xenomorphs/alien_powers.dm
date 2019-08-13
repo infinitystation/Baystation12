@@ -170,17 +170,18 @@
 	set desc = "Spits neurotoxin at someone, paralyzing them for a short time if they are not wearing protective gear."
 	set category = "Abilities"
 
-	if(!check_alien_ability(50,0,BP_ACID) && !is_ventcrawling)
-		return
 
 	if(stat || paralysis || stunned || weakened || lying || restrained() || buckled)
 		to_chat(src, "You cannot spit neurotoxin in your current state.")
 		return
 
-	visible_message("<span class='warning'>[src] spits neurotoxin at [target]!</span>", "<span class='alium'>You spit neurotoxin at [target].</span>")
+	if(!(isxenomorph(target) || isalien(target)))
+		visible_message("<span class='warning'>[src] spits neurotoxin at [target]!</span>", "<span class='alium'>You spit neurotoxin at [target].</span>")
+		if(!check_alien_ability(50,0,BP_ACID) && !is_ventcrawling)
+			return
 
-	var/obj/item/projectile/energy/neurotoxin/A = new /obj/item/projectile/energy/neurotoxin(usr.loc)
-	A.launch(target,get_organ_target())
+		var/obj/item/projectile/energy/neurotoxin/A = new /obj/item/projectile/energy/neurotoxin(usr.loc)
+		A.launch(target,get_organ_target())
 
 /mob/living/carbon/human/proc/resin() // -- TLE
 	set name = "Secrete Resin (75)"
@@ -218,25 +219,25 @@ mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in ovi
 	set category = "Abilities"
 
 	if(!M.Adjacent(src))
-		to_chat(src, SPAN_LING("Оно слишком далеко."))
+		to_chat(src, SPAN_ALIEN("Оно слишком далеко."))
 		return
 
 	if(!M.mind)
-		to_chat(src, SPAN_LING("Плоть без разума принесёт пользу Улью лишь в качестве пищи."))
+		to_chat(src, SPAN_ALIEN("Плоть без разума принесёт пользу Улью лишь в качестве пищи."))
 		return
 
 	if(M.species.get_bodytype(M) == "Xenophage" || !isnull(M.internal_organs_by_name["hive node"]))
-		to_chat(src, SPAN_LING("Оно уже часть нашего Улья."))
+		to_chat(src, SPAN_ALIEN("Оно уже часть нашего Улья."))
 		return
 
 	var/obj/item/organ/affecting = M.get_organ(BP_CHEST)
 	if(!affecting || BP_IS_ROBOTIC(affecting))
-		to_chat(src, SPAN_LING("Это тело несовметимо с нашей физиологией..."))
+		to_chat(src, SPAN_ALIEN("Это тело несовметимо с нашей физиологией..."))
 		return
 
 	var/confirm = alert(M, "Королева хочет сделать вас часть ульЯ. Вы согласны?", "Become Larva", "No", "Yes")
 	if(!M || confirm != "Yes")
-		to_chat(src, SPAN_LING("Несовместим с Ульем и не может стать его часть (требуется согласие жертвы)."))
+		to_chat(src, SPAN_ALIEN("Несовместим с Ульем и не может стать его часть (требуется согласие жертвы)."))
 		return
 
 	src.visible_message(SPAN_DANGER("[src] встает перед [M], а затем, из её головы появляется полое, прозрачное жало!"))
@@ -255,7 +256,7 @@ mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in ovi
 		return
 
 	src.visible_message(SPAN_DANGER("[src] протыкает грудь [M] с помощью полой трубки и вводит что-то внутрь!"))
-	to_chat(M, SPAN_DANGER("Уродливая и бесформенная масса вводится под ваши ребра через трубку!</span>"))
+	to_chat(M, SPAN_DANGER("Уродливая и бесформенная масса вводится под ваши ребра через трубку!"))
 	var/obj/item/organ/internal/xeno/hivenode/node = new(affecting)
 	node.replaced(M,affecting)
 
@@ -276,15 +277,17 @@ mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in ovi
 
 	src.visible_message("\The [src] begins to pry open \the [A]!")
 
+
 	if(A.stat != NOPOWER)
-		if(!do_mob(src,src,70))
+		playsound(A.loc, 'infinity/sound/effects/metal_creaking.ogg', 25, 1)
+		if(!do_mob(src,src,65))
 			return
 
 	if(!A.density)
 		return
 
-	A.do_animate("spark")
-	sleep(6)
-	A.set_broken(TRUE)
-	var/check = A.open(1)
-	src.visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")
+//	A.do_animate("spark")
+//	sleep(5)
+//	A.set_broken(TRUE)
+	A.open(1) //var/check =
+//	src.visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")

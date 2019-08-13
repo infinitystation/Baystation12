@@ -26,7 +26,7 @@
 
 	var/unknown_biological_entities_message = "Unknown biological entities have been detected near the %STATION_NAME%, please stand-by."
 
-	var/xenomorph_spawn_sound = 'sound/AI/aliens.ogg'
+	var/lifesign_spawn_sound = 'sound/AI/aliens.ogg'
 
 	var/use_job_frequency_announcement = TRUE
 	var/use_radio_announcement = TRUE

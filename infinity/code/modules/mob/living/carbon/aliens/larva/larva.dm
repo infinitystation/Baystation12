@@ -1,10 +1,15 @@
 /mob/living/carbon/alien/larva
 	name = "alien larva"
 	real_name = "alien larva"
+	icon = 'infinity/icons/mob/alien.dmi'
+	icon_state = "alien"
+	mob_size = MOB_TINY
+	see_in_dark = 8
 
 	speak_emote = list("шипит")
 	icon_state = "larva"
 	language = "Hivemind"
+	species_language = "Xenophage"
 	maxHealth = 25
 	health = 25
 	auto_progress = 0
@@ -17,9 +22,10 @@
 	var/adult_name
 
 /mob/living/carbon/alien/larva/New()
+	verbs += /mob/living/proc/night_vision
 	..()
 	time_of_birth = world.time
-	add_language("Xenophage") //Bonus language.
+	add_language("Xenophage")
 	internal_organs |= new /obj/item/organ/internal/xeno/hivenode(src)
 	create_reagents(100)
 
@@ -57,3 +63,6 @@
 	GLOB.xenomorphs.add_antagonist(src.mind, 1)
 	spawn(-1)
 		if(user) qdel(user) // Remove the keyless ghost if it exists.
+
+/mob/living/carbon/alien/larva/on_table_offset() //too small
+	return

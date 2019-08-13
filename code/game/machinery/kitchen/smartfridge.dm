@@ -21,7 +21,6 @@
 	var/locked = 0
 	var/scan_id = 1
 	var/is_secure = 0
-	var/datum/wires/smartfridge/wires = null
 
 /obj/machinery/smartfridge/secure
 	is_secure = 1
@@ -35,11 +34,14 @@
 	update_icon()
 
 /obj/machinery/smartfridge/Destroy()
-	qdel(wires)
-	wires = null
 	for(var/datum/stored_items/S in item_records)
 		qdel(S)
 	item_records = null
+	return ..()
+
+/obj/machinery/smartfridge/get_req_access()
+	if(!scan_id)
+		return list()
 	return ..()
 
 /obj/machinery/smartfridge/proc/accept_check(var/obj/item/O as obj)
@@ -277,6 +279,7 @@
 	if(!emagged)
 		emagged = 1
 		locked = -1
+		req_access.Cut()
 		to_chat(user, "You short out the product lock on [src].")
 		return 1
 
@@ -294,14 +297,9 @@
 	I.add_product(O)
 	SSnano.update_uis(src)
 
-/obj/machinery/smartfridge/attack_ai(mob/user as mob)
-	attack_hand(user)
-
-/obj/machinery/smartfridge/attack_hand(mob/user as mob)
-	if(stat & (NOPOWER|BROKEN))
-		return
-	wires.Interact(user)
+/obj/machinery/smartfridge/interface_interact(mob/user)
 	ui_interact(user)
+	return TRUE
 
 /*******************
 *   SmartFridge Menu
@@ -385,10 +383,8 @@
 *   Secure SmartFridges
 *************************/
 
-/obj/machinery/smartfridge/secure/Topic(href, href_list)
-	if(stat & (NOPOWER|BROKEN)) return 0
-	if(usr.contents.Find(src) || (in_range(src, usr) && istype(loc, /turf)))
-		if(!allowed(usr) && !emagged && locked != -1 && href_list["vend"] && scan_id)
-			to_chat(usr, "<span class='warning'>Access denied.</span>")
-			return 0
+/obj/machinery/smartfridge/secure/CanUseTopic(mob/user, datum/topic_state/state, href_list)
+	if(!allowed(user) && !emagged && locked != -1 && href_list && href_list["vend"] && scan_id)
+		to_chat(user, "<span class='warning'>Access denied.</span>")
+		return STATUS_CLOSE
 	return ..()

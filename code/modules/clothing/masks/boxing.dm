@@ -3,7 +3,7 @@
 	desc = "Designed to both hide identities and keep your face comfy and warm."
 	icon_state = "balaclava"
 	item_state = "balaclava"
-	flags_inv = HIDEFACE|BLOCKHAIR
+	flags_inv = HIDEFACE|BLOCKHAIR|HIDEEARS
 	body_parts_covered = FACE|HEAD
 	down_body_parts_covered = HEAD
 	down_flags_inv = BLOCKHEADHAIR
@@ -15,6 +15,7 @@
 		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_mask_unathi.dmi',
 		SPECIES_EROSAN = 'infinity/icons/mob/species/erosan/mask.dmi',
 		)
+	tint = 1  //INF, WAS NOTHING(0)
 
 /obj/item/clothing/mask/balaclava/tactical
 	name = "green balaclava"
@@ -26,10 +27,11 @@
 	desc = "Worn by robust fighters, flying high to defeat their foes!"
 	icon_state = "luchag"
 	item_state = "luchag"
-	flags_inv = HIDEFACE|BLOCKHAIR
+	flags_inv = HIDEFACE|BLOCKHAIR|HIDEEARS
 	body_parts_covered = HEAD|FACE
 	w_class = ITEM_SIZE_SMALL
 	siemens_coefficient = 3.0
+	tint = 1  //INF, WAS NOTHING(0)
 
 /obj/item/clothing/mask/luchador/tecnicos
 	name = "Tecnicos Mask"

@@ -49,14 +49,24 @@ var/global/floorIsLava = 0
 
 	var/body = "<html><head><title>Options for [M.key]</title></head>"
 	body += "<body>Options panel for <b>[M]</b>"
+	var/last_ckey = LAST_CKEY(M)
 	if(M.client)
 		body += " played by <b>[M.client]</b> "
 		body += "\[<A href='?src=\ref[src];editrights=show'>[M.client.holder ? M.client.holder.rank : "Player"]</A>\]"
+	else if(last_ckey)
+		body += " (last occupied by ckey <b>[last_ckey]</b>)"
 
 	if(istype(M, /mob/new_player))
 		body += " <B>Hasn't Entered Game</B> "
 	else
 		body += " \[<A href='?src=\ref[src];revive=\ref[M]'>Heal</A>\] "
+
+	var/mob/living/exosuit/E = M
+	if(istype(E) && E.pilots)
+		body += "<br><b>Exosuit pilots:</b><br>"
+		for(var/mob/living/pilot in E.pilots)
+			body += "[pilot] "
+			body += " \[<A href='?src=\ref[src];pilot=\ref[pilot]'>link</a>\]<br>"
 
 	body += {"
 		<br><br>\[
@@ -726,7 +736,7 @@ var/global/floorIsLava = 0
 	set desc="Restarts the world"
 	if(!check_rights(R_SERVER))
 		return
-	if(alert("Restart the game world?", "Restart", "Yes", "Cancel") == "Yes")
+	if(alert("Restart the game world?", "Restart", "Cancel", "Yes") == "Yes")
 		to_world("<span class='danger'>Restarting world!</span> <span class='notice'>Initiated by [usr.key]!</span>")
 		log_admin("[key_name(usr)] initiated a reboot.")
 
@@ -761,9 +771,9 @@ var/global/floorIsLava = 0
 
 	config.ooc_allowed = !(config.ooc_allowed)
 	if (config.ooc_allowed)
-		to_world("<B>The OOC channel has been globally enabled!</B>")
+		to_world("<B>OOC чат включен!</B>")
 	else
-		to_world("<B>The OOC channel has been globally disabled!</B>")
+		to_world("<B>OOC чат отключён!</B>")
 	log_and_message_admins("toggled OOC.")
 	SSstatistics.add_field_details("admin_verb","TOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -777,9 +787,9 @@ var/global/floorIsLava = 0
 
 	config.aooc_allowed = !(config.aooc_allowed)
 	if (config.aooc_allowed)
-		to_world("<B>The AOOC channel has been globally enabled!</B>")
+		to_world("<B>AOOC чат включён!</B>")
 	else
-		to_world("<B>The AOOC channel has been globally disabled!</B>")
+		to_world("<B>AOOC чат отключён!</B>")
 	log_and_message_admins("toggled AOOC.")
 	SSstatistics.add_field_details("admin_verb","TAOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -793,9 +803,9 @@ var/global/floorIsLava = 0
 
 	config.looc_allowed = !(config.looc_allowed)
 	if (config.looc_allowed)
-		to_world("<B>The LOOC channel has been globally enabled!</B>")
+		to_world("<B>LOOC чат включён!</B>")
 	else
-		to_world("<B>The LOOC channel has been globally disabled!</B>")
+		to_world("<B>LOOC чат отключён!</B>")
 	log_and_message_admins("toggled LOOC.")
 	SSstatistics.add_field_details("admin_verb","TLOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -810,9 +820,9 @@ var/global/floorIsLava = 0
 
 	config.dsay_allowed = !(config.dsay_allowed)
 	if (config.dsay_allowed)
-		to_world("<B>Deadchat has been globally enabled!</B>")
+		to_world("<B>Чат мертвых включён!</B>")
 	else
-		to_world("<B>Deadchat has been globally disabled!</B>")
+		to_world("<B>Чат мертвых отключён!</B>")
 	log_and_message_admins("toggled deadchat.")
 	SSstatistics.add_field_details("admin_verb","TDSAY") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc
 
@@ -825,6 +835,10 @@ var/global/floorIsLava = 0
 		return
 
 	config.dooc_allowed = !( config.dooc_allowed )
+	if(config.dooc_allowed)
+		to_world("<B>Мертвые снова могут писать в OOC чат!</B>")
+	else
+		to_world("<B>Мертвые больше не могут писать в OOC чат!</B>")
 	log_admin("[key_name(usr)] toggled Dead OOC.")
 	message_admins("[key_name_admin(usr)] toggled Dead OOC.", 1)
 	SSstatistics.add_field_details("admin_verb","TDOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -886,8 +900,8 @@ var/global/floorIsLava = 0
 
 	var/confirm = alert("End the game round?", "Game Ending", "Yes", "Cancel")
 	if(confirm == "Yes")
-		log_admin("[key_name(usr)] initiated a game ending.")
-		to_world("<span class='danger'>Game ending!</span> <span class='notice'>Initiated by [usr.key]!</span>")
+		log_admin("[key_name(usr)] инициировал завершение раунда.")
+		to_world("<span class='danger'>Раунд завершен!</span> <span class='notice'>Инициировано [usr.key].</span>")
 		SSstatistics.add_field("admin_verb","ER") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 		SSticker.force_ending = 1
 
@@ -941,19 +955,6 @@ var/global/floorIsLava = 0
 	log_admin("[key_name(usr)] toggled Aliens to [config.aliens_allowed].")
 	message_admins("[key_name_admin(usr)] toggled Aliens [config.aliens_allowed ? "on" : "off"].", 1)
 	SSstatistics.add_field_details("admin_verb","TA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
-/datum/admins/proc/toggle_alien_eggs()
-	set category = "Server"
-	set desc="Toggle xenomorph egg laying"
-	set name="Toggle Alien Eggs"
-
-	if(!check_rights(R_ADMIN))
-		return
-	config.alien_eggs_allowed = !config.alien_eggs_allowed
-	log_admin("[key_name(usr)] toggled Alien Egg Laying to [config.alien_eggs_allowed].")
-	message_admins("[key_name_admin(usr)] toggled Alien Egg Laying [config.alien_eggs_allowed ? "on" : "off"].", 1)
-	SSstatistics.add_field_details("admin_verb","AEA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
 
 /datum/admins/proc/toggle_space_ninja()
 	set category = "Server"
@@ -1014,7 +1015,7 @@ var/global/floorIsLava = 0
 	set desc="Reboots the server post haste"
 	set name="Immediate Reboot"
 	if(!usr.client.holder)	return
-	if( alert("Reboot server?",,"Yes","No") == "No")
+	if( alert("Reboot server?",,"No","Yes") == "No")
 		return
 	to_world("<span class='danger'>Rebooting world!</span> <span class='notice'>Initiated by [usr.key]!</span>")
 	log_admin("[key_name(usr)] initiated an immediate reboot.")
@@ -1561,12 +1562,12 @@ datum/admins/var/obj/item/weapon/paper/admin/faxreply // var to hold fax replies
 
 		if(!P.ico)
 			P.ico = new
-		P.ico += "paper_stamp-cent"
-		stampoverlay.icon_state = "paper_stamp-cent"
+		P.ico += "paper_stamp-boss"
+		stampoverlay.icon_state = "paper_stamp-boss"
 
 		if(!P.stamped)
 			P.stamped = new
-		P.stamped += /obj/item/weapon/stamp/centcomm
+		P.stamped += /obj/item/weapon/stamp/boss
 		P.overlays += stampoverlay
 
 	var/obj/item/rcvdcopy

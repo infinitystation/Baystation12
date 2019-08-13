@@ -1,7 +1,7 @@
 /obj/structure/alien
 	name = "alien thing"
 	desc = "There's something alien about this."
-	icon = 'icons/mob/alien.dmi'
+	icon = 'infinity/icons/mob/alien.dmi'
 	layer = ABOVE_OBJ_LAYER
 	anchored = 1
 	var/health = 50

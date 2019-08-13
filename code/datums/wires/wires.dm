@@ -92,6 +92,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 	popup.set_content(html)
 	popup.set_title_image(user.browse_rsc_icon(holder.icon, holder.icon_state))
 	popup.open()
+	return TRUE
 
 /datum/wires/proc/GetInteractWindow(mob/user)
 	var/html = list()

@@ -23,6 +23,14 @@
 	var/shorthand = "???"			  // Shorthand that shows up in chat for this language.
 	var/list/partial_understanding				  // List of languages that can /somehwat/ understand it, format is: name = chance of understanding a word
 	var/warning = ""
+	var/hidden_from_codex			  // If it should not show up in Codex
+	var/category = /datum/language    // Used to point at root language types that shouldn't be visible
+
+/datum/language/proc/can_be_spoken_properly_by(var/mob/speaker)
+	return TRUE
+
+/datum/language/proc/muddle(var/message)
+	return message
 
 /datum/language/proc/get_random_name(var/gender, name_count=2, syllable_count=4, syllable_divisor=2)
 	if(!syllables || !syllables.len)

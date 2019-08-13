@@ -47,8 +47,9 @@
 	siemens_coefficient = 0.9
 	center_of_mass = null
 	randpixel = 0
-	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_DIONA, "Xenophage")
+	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_DIONA)
 	flash_protection = FLASH_PROTECTION_MAJOR
+	tint = 2  //INF, WAS NOTHING(0) //it's space helmet
 
 /obj/item/clothing/head/hardhat/firefighter/Chief
 	icon_state = "Firefighter-Helmet-Chief"

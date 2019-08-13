@@ -173,7 +173,7 @@
 		take_external_damage(0, burn_damage, 0, used_weapon = "Hot metal")
 
 /obj/item/organ/external/attack_self(var/mob/user)
-	if(!contents.len)
+	if((owner && loc == owner) || !contents.len)
 		return ..()
 	var/list/removable_objects = list()
 	for(var/obj/item/organ/external/E in (contents + src))
@@ -453,7 +453,7 @@ This function completely restores a damaged organ to perfect condition.
 	if(damage <= 0)
 		return
 
-	if(BP_IS_CRYSTAL(src))
+	if(BP_IS_CRYSTAL(src) && (damage >= 15 || prob(1)))
 		type = SHATTER
 		playsound(loc, 'sound/effects/hit_on_shattered_glass.ogg', 40, 1) // Crash!
 
@@ -841,34 +841,32 @@ Note that amputating the affected organ does in fact remove the infection from t
 			"<span class='danger'>[organ_msgs[3]]</span>")
 
 	var/mob/living/carbon/human/victim = owner //Keep a reference for post-removed().
-	var/obj/item/organ/external/parent_organ = parent
+	var/obj/item/organ/external/original_parent = parent
 
 	var/use_flesh_colour = species.get_flesh_colour(owner)
 	var/use_blood_colour = species.get_blood_colour(owner)
 
-	removed(null, ignore_children)
 	add_pain(60)
 	if(!clean)
 		victim.shock_stage += min_broken_damage
 
-	if(parent_organ)
+	removed(null, ignore_children)
+	if(QDELETED(src))
+		return
+
+	if(original_parent)
 		var/datum/wound/lost_limb/W = new (src, disintegrate, clean)
-		if(clean)
-			W.parent_organ = parent_organ
-			LAZYADD(parent_organ.wounds, W)
-			parent_organ.update_damages()
-		else
+		var/obj/item/organ/external/damaged_organ = original_parent
+		if(!clean)
 			var/obj/item/organ/external/stump/stump = new (victim, 0, src)
-			stump.SetName("stump of \a [name]")
-			stump.artery_name = "mangled [artery_name]"
-			stump.arterial_bleed_severity = arterial_bleed_severity
 			stump.add_pain(max_damage)
-			W.parent_organ = stump
-			LAZYADD(stump.wounds, W)
-			victim.organs |= stump
+			damaged_organ = stump
 			if(disintegrate != DROPLIMB_BURN)
 				stump.sever_artery()
-			stump.update_damages()
+		W.parent_organ = damaged_organ
+		LAZYADD(damaged_organ.wounds, W)
+		damaged_organ.update_damages()
+
 	spawn(1)
 		victim.updatehealth()
 		victim.UpdateDamageIcon()
@@ -930,7 +928,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 
 			for(var/obj/item/organ/I in internal_organs)
 				I.removed()
-				if(istype(loc,/turf))
+				if(!QDELETED(I) && isturf(loc))
 					I.throw_at(get_edge_target_turf(src,pick(GLOB.alldirs)),rand(1,3),30)
 
 			for(var/obj/item/I in src)
@@ -1247,7 +1245,7 @@ obj/item/organ/external/proc/remove_clamps()
 	if(!ignore_children)
 		for(var/obj/item/organ/external/O in children)
 			O.removed()
-			if(O)
+			if(!QDELETED(O))
 				O.forceMove(src)
 
 				// if we didn't lose the organ we still want it as a child
@@ -1257,7 +1255,8 @@ obj/item/organ/external/proc/remove_clamps()
 	// Grab all the internal giblets too.
 	for(var/obj/item/organ/organ in internal_organs)
 		organ.removed(user, 0, 0)  // Organ stays inside and connected
-		organ.forceMove(src)
+		if(!QDELETED(organ))
+			organ.forceMove(src)
 
 	// Remove parent references
 	if(parent)
@@ -1270,6 +1269,7 @@ obj/item/organ/external/proc/remove_clamps()
 	release_restraints(victim)
 	victim.organs -= src
 	victim.organs_by_name[organ_tag] = null // Remove from owner's vars.
+	victim.organs_by_name -= organ_tag
 
 	//Robotic limbs explode if sabotaged.
 	if(is_robotic && (status & ORGAN_SABOTAGED))
@@ -1418,6 +1418,8 @@ obj/item/organ/external/proc/remove_clamps()
 			var/list/bits = list()
 			for(var/obj/item/organ/internal/organ in internal_organs)
 				bits += organ.get_visible_state()
+			for(var/obj/item/weapon/implant in implants)
+				bits += implant.name
 			if(bits.len)
 				wound_descriptors["[english_list(bits)] visible in the wounds"] = 1
 
@@ -1452,10 +1454,11 @@ obj/item/organ/external/proc/remove_clamps()
 		var/unknown_body = 0
 		for(var/I in implants)
 			var/obj/item/weapon/implant/imp = I
-			if(istype(imp) && imp.known)
-				. += "[capitalize(imp.name)] implanted"
-			else
-				unknown_body++
+			if(istype(I,/obj/item/weapon/implant) && !imp.hidden)
+				if (imp.known)
+					. += "[capitalize(imp.name)] implanted"
+				else
+					unknown_body++
 		if(unknown_body)
 			. += "Unknown body present"
 	for(var/obj/item/organ/internal/augment/aug in internal_organs)

@@ -8,6 +8,9 @@
 	density = 1
 	anchored = 1
 	req_access = list(access_kitchen,access_morgue)
+	construct_state = /decl/machine_construction/default/panel_closed
+	uncreated_component_parts = null
+	stat_immune = 0
 
 	var/operating = 0        //Is it on?
 	var/dirty = 0            // Does it need cleaning?
@@ -21,6 +24,12 @@
 /obj/machinery/gibber/Initialize()
 	. = ..()
 	update_icon()
+
+/obj/machinery/gibber/Destroy()
+	if(occupant)
+		occupant.dropInto(loc)
+		occupant = null
+	. = ..()
 
 /obj/machinery/gibber/on_update_icon()
 	overlays.Cut()
@@ -39,14 +48,12 @@
 	src.go_out()
 	return
 
-/obj/machinery/gibber/attack_hand(mob/user as mob)
-	if(stat & (NOPOWER|BROKEN))
-		return
+/obj/machinery/gibber/physical_attack_hand(mob/user)
 	if(operating)
 		to_chat(user, "<span class='danger'>\The [src] is locked and running, wait for it to finish.</span>")
-		return
-	else
-		src.startgibbing(user)
+		return TRUE
+	src.startgibbing(user)
+	return TRUE
 
 /obj/machinery/gibber/examine()
 	. = ..()
@@ -57,7 +64,17 @@
 	to_chat(user, "<span class='danger'>You [emagged ? "disable" : "enable"] \the [src]'s safety guard.</span>")
 	return 1
 
+/obj/machinery/gibber/components_are_accessible(path)
+	return !operating && ..()	
+
+/obj/machinery/gibber/cannot_transition_to(state_path, mob/user)
+	if(operating)
+		return SPAN_NOTICE("You must wait for \the [src] to finish operating first!")
+	return ..()	
+
 /obj/machinery/gibber/attackby(var/obj/item/W, var/mob/user)
+	if(!operating)
+		return
 	if(istype(W, /obj/item/grab))
 		var/obj/item/grab/G = W
 		if(!G.force_danger())
@@ -183,22 +200,22 @@
 
 	admin_attack_log(user, occupant, "Gibbed the victim", "Was gibbed", "gibbed")
 	src.occupant.ghostize()
+	addtimer(CALLBACK(src, .proc/finish_gibbing), gib_time)
 
-	spawn(gib_time)
+/obj/machinery/gibber/proc/finish_gibbing()
+	operating = 0
+	if(QDELETED(occupant))
+		occupant = null
+		return
+	occupant.gib()
+	qdel(occupant)
 
-		src.operating = 0
-		src.occupant.gib()
-		qdel(src.occupant)
-
-		playsound(src.loc, 'sound/effects/splat.ogg', 50, 1)
-		operating = 0
-		for (var/obj/thing in contents)
-			// There's a chance that the gibber will fail to destroy some evidence.
-			if(istype(thing,/obj/item/organ) && prob(80))
-				qdel(thing)
-				continue
-			thing.dropInto(loc) // Attempts to drop it onto the turf for throwing.
-			thing.throw_at(get_edge_target_turf(src,gib_throw_dir),rand(0,3),emagged ? 100 : 50) // Being pelted with bits of meat and bone would hurt.
-		update_icon()
-
-
+	playsound(loc, 'sound/effects/splat.ogg', 50, 1)
+	for (var/obj/thing in (contents - component_parts))
+		// There's a chance that the gibber will fail to destroy some evidence.
+		if(istype(thing,/obj/item/organ) && prob(80))
+			qdel(thing)
+			continue
+		thing.dropInto(loc) // Attempts to drop it onto the turf for throwing.
+		thing.throw_at(get_edge_target_turf(src,gib_throw_dir),rand(0,3),emagged ? 100 : 50) // Being pelted with bits of meat and bone would hurt.
+	update_icon()

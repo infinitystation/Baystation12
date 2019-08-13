@@ -867,7 +867,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "eff";
 	name = "Last-Stand";
 	req_access = list("access_tajsciship");
@@ -936,7 +936,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/ship/tajscishuttle)
 "cr" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "lold";
 	name = "To-Core";
 	req_access = list("access_tajsciship");
@@ -950,7 +950,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/space)
 "cs" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "iron";
 	name = "To-Space";
 	req_access = list("access_tajsciship");
@@ -1028,7 +1028,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/ship/tajscishuttle)
 "cz" = (
-/obj/machinery/atmospherics/pipe/tank/air,
+/obj/machinery/atmospherics/unary/tank/air,
 /turf/simulated/floor/tiled/old_tile,
 /area/ship/tajsciship/engines)
 "cA" = (
@@ -1260,7 +1260,7 @@
 /turf/simulated/floor/tiled/old_cargo,
 /area/ship/tajsciship/hangar)
 "de" = (
-/obj/machinery/atmospherics/pipe/tank/carbon_dioxide{
+/obj/machinery/atmospherics/unary/tank/carbon_dioxide{
 	icon_state = "co2_map";
 	dir = 4
 	},
@@ -1498,10 +1498,10 @@
 /area/space)
 "dA" = (
 /obj/structure/closet/crate,
-/obj/item/weapon/smes_coil/super_capacity,
-/obj/item/weapon/circuitboard/smes,
-/obj/item/weapon/smes_coil/super_io,
-/obj/item/weapon/circuitboard/smes,
+/obj/item/weapon/stock_parts/smes_coil/super_capacity,
+/obj/item/weapon/stock_parts/circuitboard/smes,
+/obj/item/weapon/stock_parts/smes_coil/super_io,
+/obj/item/weapon/stock_parts/circuitboard/smes,
 /obj/item/stack/cable_coil,
 /obj/item/weapon/cell/potato,
 /obj/item/weapon/cell/standard,
@@ -1510,8 +1510,8 @@
 /area/ship/tajsciship/sklad1)
 "dB" = (
 /obj/structure/closet/crate,
-/obj/item/weapon/circuitboard/solar_control,
-/obj/item/weapon/circuitboard/solar_control,
+/obj/item/weapon/stock_parts/circuitboard/solar_control,
+/obj/item/weapon/stock_parts/circuitboard/solar_control,
 /obj/item/weapon/cell/high,
 /obj/item/weapon/cell/high,
 /obj/item/weapon/cell/high,
@@ -2094,7 +2094,7 @@
 	icon_state = "railing0-1"
 	},
 /obj/structure/table/steel_reinforced,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "cz";
 	req_access = list("access_tajsciship")
 	},
@@ -2989,7 +2989,7 @@
 /area/ship/tajsciship/meatbay)
 "gE" = (
 /obj/structure/table/reinforced,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "sex1";
 	req_access = list("access_tajsciship")
 	},
@@ -3162,7 +3162,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/space)
 "gU" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/old_cargo,
@@ -3204,7 +3204,7 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/ship/tajsciship/sklad1)
 "gZ" = (
-/obj/machinery/atmospherics/pipe/tank/oxygen{
+/obj/machinery/atmospherics/unary/tank/oxygen{
 	icon_state = "o2_map";
 	dir = 8
 	},
@@ -3301,7 +3301,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/ship/tajscishuttle)
 "hj" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "immashata"
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -3583,7 +3583,7 @@
 /area/space)
 "hO" = (
 /obj/item/taperoll/atmos,
-/obj/machinery/atmospherics/pipe/tank/hydrogen,
+/obj/machinery/atmospherics/unary/tank/hydrogen,
 /turf/simulated/floor/tiled/steel_grid,
 /area/ship/tajsciship/engines)
 "hP" = (
@@ -3654,7 +3654,7 @@
 /turf/simulated/floor/tiled/old_cargo,
 /area/ship/tajsciship/sklad1)
 "hY" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/old_cargo,
@@ -3733,7 +3733,7 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "saa";
 	req_access = list("access_tajsciship")
 	},
@@ -3845,7 +3845,7 @@
 	icon_state = "railing0-1"
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "immadora";
 	req_access = list("access_tajsciship")
 	},
@@ -3876,7 +3876,7 @@
 "iu" = (
 /obj/structure/window/reinforced,
 /obj/structure/table/reinforced,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "sesensor";
 	name = "Sensor";
 	req_access = list("access_tajsciship");
@@ -4162,7 +4162,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/ship/tajsciship/engines)
 "iU" = (
-/obj/machinery/atmospherics/pipe/tank/carbon_dioxide{
+/obj/machinery/atmospherics/unary/tank/carbon_dioxide{
 	icon_state = "co2_map";
 	dir = 8
 	},
@@ -4174,7 +4174,7 @@
 	pixel_x = -24;
 	pixel_y = 4
 	},
-/obj/machinery/atmospherics/pipe/tank/carbon_dioxide{
+/obj/machinery/atmospherics/unary/tank/carbon_dioxide{
 	icon_state = "co2_map";
 	dir = 4
 	},
@@ -4302,7 +4302,7 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/ship/tajsciship/engines)
 "jp" = (
-/obj/machinery/atmospherics/pipe/tank/carbon_dioxide{
+/obj/machinery/atmospherics/unary/tank/carbon_dioxide{
 	icon_state = "co2_map";
 	dir = 8
 	},
@@ -4419,7 +4419,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/tank/oxygen{
+/obj/machinery/atmospherics/unary/tank/oxygen{
 	icon_state = "o2_map";
 	dir = 8
 	},
@@ -5782,7 +5782,7 @@
 	dir = 4;
 	icon_state = "railing0-1"
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "sha-a"
 	},
 /turf/simulated/floor/tiled/old_cargo,
@@ -5974,7 +5974,7 @@
 /area/ship/tajscishuttle)
 "mN" = (
 /obj/structure/table/reinforced,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "immadora";
 	req_access = list("access_tajsciship")
 	},
@@ -6008,7 +6008,7 @@
 	dir = 4
 	},
 /obj/effect/catwalk_plated/dark,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "immadora";
 	req_access = list("access_tajsciship")
 	},
@@ -6042,7 +6042,7 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/structure/drain,
+/obj/structure/hygiene/drain,
 /turf/simulated/floor/plating,
 /area/ship/tajscishuttle)
 "mV" = (
@@ -6178,7 +6178,7 @@
 /turf/simulated/wall/r_wall/hull/tajsciship,
 /area/space)
 "ni" = (
-/obj/machinery/computer/general_air_control{
+/obj/machinery/computer/air_control{
 	dir = 1;
 	icon_state = "computer";
 	name = "Atmospheric Sensors";
@@ -7196,7 +7196,7 @@
 /area/ship/tajsciship/hangar)
 "pp" = (
 /obj/structure/table/steel_reinforced,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "cz1"
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -7362,7 +7362,7 @@
 /area/ship/tajsciship/hangar)
 "pJ" = (
 /obj/structure/table/steel_reinforced,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "cz2"
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -7463,7 +7463,7 @@
 "pT" = (
 /obj/effect/floor_decal/floordetail/tiled,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/obj/structure/drain,
+/obj/structure/hygiene/drain,
 /obj/machinery/alarm/tajsciship{
 	dir = 1;
 	icon_state = "alarm0";
@@ -7476,7 +7476,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
 	},
-/obj/structure/drain,
+/obj/structure/hygiene/drain,
 /obj/machinery/alarm/tajsciship{
 	dir = 4;
 	icon_state = "alarm0";
@@ -7488,7 +7488,7 @@
 /obj/effect/floor_decal/floordetail/tiled,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/drain,
+/obj/structure/hygiene/drain,
 /turf/simulated/floor/tiled/kafel_full,
 /area/ship/tajsciship/kitchen)
 "pW" = (
@@ -7521,7 +7521,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/drain,
+/obj/structure/hygiene/drain,
 /turf/simulated/floor/tiled/kafel_full,
 /area/ship/tajsciship/kitchen)
 "pZ" = (

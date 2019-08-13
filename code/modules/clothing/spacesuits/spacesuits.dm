@@ -23,7 +23,7 @@
 	siemens_coefficient = 0.9
 	center_of_mass = null
 	randpixel = 0
-	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_DIONA, "Xenophage")
+	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_DIONA)
 	flash_protection = FLASH_PROTECTION_MAJOR
 
 	var/obj/machinery/camera/camera
@@ -32,6 +32,7 @@
 	light_overlay = "helmet_light"
 	brightness_on = 0.5
 	on = 0
+	tint = 2 //INF, WAS NOTHING (0)
 
 	var/tinted = null	//Set to non-null for toggleable tint helmets
 
@@ -121,9 +122,9 @@
 	siemens_coefficient = 0.9
 	center_of_mass = null
 	randpixel = 0
-	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_DIONA, "Xenophage")
+	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_DIONA)
 	valid_accessory_slots = list(ACCESSORY_SLOT_INSIGNIA, \
-									ACCESSORY_SLOT_ARMBAND, ACCESSORY_SLOT_OVER) // INF@CODE
+								ACCESSORY_SLOT_ARMBAND, ACCESSORY_SLOT_OVER) // INF@CODE
 
 /obj/item/clothing/suit/space/New()
 	..()

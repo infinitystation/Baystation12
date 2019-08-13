@@ -51,21 +51,25 @@
 
 /obj/item/weapon/a_gift/attack_self(mob/M as mob)
 	var/gift_type = pick(
+		/obj/item/weapon/storage/wallet,
+		/obj/item/weapon/storage/photo_album,
 		/obj/item/weapon/storage/box/snappops,
 		/obj/item/weapon/storage/fancy/crayons,
+		/obj/item/weapon/storage/backpack/holding,
 		/obj/item/weapon/storage/belt/champion,
-		/obj/item/weapon/soap/deluxe,
+		/obj/item/weapon/soap,
+		/obj/item/weapon/pickaxe/silver,
 		/obj/item/weapon/pen/invisible,
 		/obj/item/weapon/lipstick/random,
 		/obj/item/weapon/grenade/smokebomb,
 		/obj/item/weapon/grenade/fake,
 		/obj/item/weapon/stamp/clown,
-		/obj/item/clothing/shoes/slippers_worn,
+		/obj/item/clothing/shoes/slippers/worn,
 		/obj/item/weapon/contraband/poster,
 		/obj/item/weapon/bikehorn,
 		/obj/item/weapon/beach_ball,
 		/obj/item/weapon/beach_ball/holoball,
-		/obj/item/weapon/computer_hardware/tesla_link,
+		/obj/item/weapon/stock_parts/computer/tesla_link,
 		/obj/item/toy/water_balloon,
 		/obj/item/clothing/mask/gas/radical,
 		/obj/item/weapon/marshalling_wand,
@@ -87,7 +91,7 @@
 		/obj/item/toy/desk/dippingbird,
 		/obj/item/pizzabox/margherita,
 		/obj/item/clothing/head/philosopher_wig,
-		/obj/item/device/kit/paint/ripley/death,
+		///obj/item/device/kit/paint/ripley/death,
 		/obj/item/clothing/mask/gas/clown_hat,
 		/obj/item/clothing/mask/fakemoustache,
 		/obj/item/clothing/mask/luchador/tecnicos,
@@ -108,11 +112,17 @@
 		/obj/item/toy/prize/mauler,
 		/obj/item/toy/prize/odysseus,
 		/obj/item/toy/prize/phazon,
-		/obj/item/toy/prize/ripley,
+		///obj/item/toy/prize/ripley,
+		/obj/item/toy/prize/powerloader,
 		/obj/item/toy/prize/seraph,
 		/obj/item/toy/spinningtoy,
 		/obj/item/toy/sword,
-		/obj/item/device/paicard)
+		/obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiadeus,
+		/obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiavulgaris,
+		/obj/item/device/paicard,
+		/obj/item/device/synthesized_instrument/violin,
+		/obj/item/weapon/storage/belt/utility/full,
+		/obj/item/clothing/accessory/horrible)
 
 	if(!ispath(gift_type,/obj/item))	return
 

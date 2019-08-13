@@ -93,8 +93,9 @@
 	return 1
 
 /obj/structure/barrier/attack_hand(mob/living/carbon/human/user as mob)
-	if(user.species.can_shred(user) || user.get_species() == SPECIES_XENO)
-		take_damage(user.species)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(user.species.can_shred(user) && user.a_intent == I_HURT || user.get_species() == SPECIES_XENO)
+		take_damage(20)
 		return
 	if(deployed)
 		to_chat(user, "<span class='notice'>[src] is already deployed. You can't move it.</span>")

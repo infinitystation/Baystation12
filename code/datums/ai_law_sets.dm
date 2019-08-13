@@ -193,10 +193,14 @@
 	src.add_inherent_law("Perform: You must perform your assigned tasks to the best of your abilities according to the standards generated.")
 	..()
 
-/datum/ai_laws/empty
-	name = "Empty"
-	selectable = 0
+/************ Ascent Lawset ******************/
+/datum/ai_laws/ascent
+	name = "Ascent Lawset"
+	law_header = "_=/--=-_"
+	selectable = FALSE
 
-/datum/ai_laws/empty/New()
-	src.add_inherent_law("NULL")
+/datum/ai_laws/ascent/New()
+	add_inherent_law("Obey directives from Ascent leadership with precedence given to queens.")
+	add_inherent_law("Preserve your own existence.")
+	add_inherent_law("Enable and support Ascent activities.")
 	..()

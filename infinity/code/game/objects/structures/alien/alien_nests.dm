@@ -4,7 +4,7 @@
 /obj/structure/bed/nest
 	name = "alien nest"
 	desc = "It's a gruesome pile of thick, sticky resin shaped like a nest."
-	icon = 'icons/mob/alien.dmi'
+	icon = 'infinity/icons/mob/alien.dmi'
 	icon_state = "nest"
 	buckle_pixel_shift = "x=0;y=6"
 	var/health = 100
@@ -63,6 +63,7 @@
 	return
 
 /obj/structure/bed/nest/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	var/aforce = W.force
 	health = max(0, health - aforce)
 	playsound(loc, 'sound/effects/attackblob.ogg', 100, 1)

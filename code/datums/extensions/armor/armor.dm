@@ -63,7 +63,7 @@
 #endif
 		blocked = 1
 	else
-		blocked = (effective_armor - fullblock)/(1 - fullblock)
+		blocked = (effective_armor - (fullblock * fullblock))/(1 - (fullblock * fullblock))
 	return blocked
 
 /datum/extension/armor/proc/get_value(key)
@@ -92,6 +92,15 @@
 				key = "bio" // Otherwise just not blocked by default.
 		if(IRRADIATE)
 			key = "rad"
-		if("psi")
-			key = "psi"
+		if(PSIONIC)
+			key = PSIONIC
 	return key
+
+/datum/extension/armor/toggle
+	var/active = TRUE
+
+/datum/extension/armor/toggle/proc/toggle(new_state)
+	active = new_state
+
+/datum/extension/armor/toggle/get_value(key)
+	return active ? ..() : 0

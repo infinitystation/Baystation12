@@ -161,6 +161,16 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	else
 		icon_state = "[initial(icon_state)]_off"
 
+/obj/machinery/telecomms/Move()
+	. = ..()
+	listening_levels = GetConnectedZlevels(z)
+	update_power()
+
+/obj/machinery/telecomms/forceMove(var/newloc)
+	. = ..(newloc)
+	listening_levels = GetConnectedZlevels(z)
+	update_power()
+
 /obj/machinery/telecomms/proc/update_power()
 	if(toggled)
 		if(stat & (BROKEN|NOPOWER|EMPED) || integrity <= 0) // if powered, on. if not powered, off. if too damaged, off
@@ -259,7 +269,8 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	idle_power_usage = 600
 	machinetype = 1
 	produces_heat = 0
-	circuitboard = /obj/item/weapon/circuitboard/telecomms/receiver
+	circuitboard = /obj/item/weapon/stock_parts/circuitboard/telecomms/receiver
+	base_type = /obj/machinery/telecomms/receiver
 	outage_probability = 10
 
 /obj/machinery/telecomms/receiver/receive_signal(datum/signal/signal)
@@ -315,7 +326,8 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	anchored = 1
 	idle_power_usage = 1600
 	machinetype = 7
-	circuitboard = /obj/item/weapon/circuitboard/telecomms/hub
+	circuitboard = /obj/item/weapon/stock_parts/circuitboard/telecomms/hub
+	base_type = /obj/machinery/telecomms/hub
 	long_range_link = 1
 	netspeed = 40
 	outage_probability = 10
@@ -348,16 +360,12 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	anchored = 1
 	machinetype = 8
 	produces_heat = 0
-	circuitboard = /obj/item/weapon/circuitboard/telecomms/relay
+	circuitboard = /obj/item/weapon/stock_parts/circuitboard/telecomms/relay
+	base_type = /obj/machinery/telecomms/relay
 	netspeed = 5
 	long_range_link = 1
 	var/broadcasting = 1
 	var/receiving = 1
-
-/obj/machinery/telecomms/relay/forceMove(var/newloc)
-	. = ..(newloc)
-	listening_levels = GetConnectedZlevels(z)
-	update_power()
 
 // Relays on ship's Z levels use less power as they don't have to transmit over such large distances.
 /obj/machinery/telecomms/relay/update_power()
@@ -411,7 +419,8 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	anchored = 1
 	idle_power_usage = 1000
 	machinetype = 2
-	circuitboard = /obj/item/weapon/circuitboard/telecomms/bus
+	circuitboard = /obj/item/weapon/stock_parts/circuitboard/telecomms/bus
+	base_type = /obj/machinery/telecomms/bus
 	netspeed = 40
 	var/change_frequency = 0
 
@@ -463,7 +472,8 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	idle_power_usage = 600
 	machinetype = 3
 	delay = 5
-	circuitboard = /obj/item/weapon/circuitboard/telecomms/processor
+	circuitboard = /obj/item/weapon/stock_parts/circuitboard/telecomms/processor
+	base_type = /obj/machinery/telecomms/processor
 	var/process_mode = 1 // 1 = Uncompress Signals, 0 = Compress Signals
 
 /obj/machinery/telecomms/processor/receive_information(datum/signal/signal, obj/machinery/telecomms/machine_from)
@@ -499,7 +509,8 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	anchored = 1
 	idle_power_usage = 300
 	machinetype = 4
-	circuitboard = /obj/item/weapon/circuitboard/telecomms/server
+	circuitboard = /obj/item/weapon/stock_parts/circuitboard/telecomms/server
+	base_type = /obj/machinery/telecomms/server
 	var/list/log_entries = list()
 	var/list/stored_names = list()
 	var/list/TrafficActions = list()

@@ -400,7 +400,7 @@
 	},
 /area/skipjack_station/start)
 "be" = (
-/obj/structure/computerframe,
+/obj/machinery/constructable_frame/computerframe/deconstruct,
 /obj/machinery/light/small{
 	icon_state = "bulb1";
 	dir = 1
@@ -408,21 +408,21 @@
 /turf/simulated/floor/shuttle/darkred,
 /area/skipjack_station/start)
 "bf" = (
-/obj/machinery/button/remote/blast_door{
-	id = "SkipjackShuttersNorth";
+/obj/machinery/button/blast_door{
+	id_tag = "SkipjackShuttersNorth";
 	name = "Skipjack North Shutters";
 	pixel_y = 39;
 	req_access = list("ACCESS_SYNDICATE")
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "SkipjackShuttersWest";
+/obj/machinery/button/blast_door{
+	id_tag = "SkipjackShuttersWest";
 	name = "Skipjack West Shutters";
 	pixel_x = -5;
 	pixel_y = 31;
 	req_access = list("ACCESS_SYNDICATE")
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "SkipjackShuttersEast";
+/obj/machinery/button/blast_door{
+	id_tag = "SkipjackShuttersEast";
 	name = "Skipjack East Shutters";
 	pixel_x = 5;
 	pixel_y = 31;

@@ -138,14 +138,6 @@
 				open()
 		return
 
-	if(istype(AM, /obj/mecha))
-		var/obj/mecha/mecha = AM
-		if(density)
-			if(mecha.occupant && (src.allowed(mecha.occupant) || src.check_access_list(mecha.operation_req_access)))
-				open()
-			else
-				do_animate("deny")
-		return
 	if(istype(AM, /obj/structure/bed/chair/wheelchair))
 		var/obj/structure/bed/chair/wheelchair/wheel = AM
 		if(density)
@@ -213,12 +205,10 @@
 	take_damage(tforce)
 	return
 
-/obj/machinery/door/attack_ai(mob/user as mob)
-	return src.attack_hand(user)
-
-/obj/machinery/door/attack_hand(mob/user as mob)
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-	return src.attackby(user, user)
+// This is legacy code that should be revisited, probably by moving the bulk of the logic into here.
+/obj/machinery/door/interface_interact(user)
+	if(CanInteract(user, DefaultTopicState()))
+		return attackby(user, user)
 
 /obj/machinery/door/attack_tk(mob/user as mob)
 	if(requiresID() && !allowed(null))
@@ -290,10 +280,6 @@
 	if(src.operating > 0 || isrobot(user))	return //borgs can't attack doors open because it conflicts with their AI-like interaction with them.
 
 	if(src.operating) return
-
-	if(isxenomorph(user)) //inf
-		var/mob/living/carbon/human/H = user
-		H.pry_open(src) //inf
 
 	if(src.allowed(user) && operable())
 		if(src.density)
@@ -468,6 +454,12 @@
 		qdel(fire)
 	return
 
+/obj/machinery/door/proc/toggle(forced = 0)
+	if(density)
+		open(forced)
+	else
+		close(forced)
+
 /obj/machinery/door/proc/requiresID()
 	return 1
 
@@ -577,3 +569,15 @@
 		req_access = req_access_union(fore, aft)
 	else
 		req_access = req_access_diff(fore, aft)
+
+// Public access
+
+/decl/public_access/public_method/open_door
+	name = "open door"
+	desc = "Opens the door if possible."
+	call_proc = /obj/machinery/door/proc/open
+
+/decl/public_access/public_method/toggle_door
+	name = "toggle door"
+	desc = "Toggles whether the door is open or not, if possible."
+	call_proc = /obj/machinery/door/proc/toggle

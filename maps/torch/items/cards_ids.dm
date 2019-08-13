@@ -62,7 +62,6 @@
 /obj/item/weapon/card/id/torch/contractor/medical/counselor
 	job_access_type = /datum/job/psychiatrist
 
-
 /obj/item/weapon/card/id/torch/silver/security
 	job_access_type = /datum/job/hos
 	detail_color = "#e00000"
@@ -71,7 +70,7 @@
 	job_access_type = /datum/job/officer
 	detail_color = "#e00000"
 
-/obj/item/weapon/card/id/torch/crew/security/brigofficer
+/obj/item/weapon/card/id/torch/crew/security/brigchief
 	job_access_type = /datum/job/warden
 	extra_details = list("onegoldstripe")
 
@@ -121,6 +120,9 @@
 
 /obj/item/weapon/card/id/torch/crew/service/chef
 	job_access_type = /datum/job/chef
+
+/obj/item/weapon/card/id/torch/crew/service/chaplain
+	job_access_type = /datum/job/chaplain
 
 /obj/item/weapon/card/id/torch/contractor/service //unused
 	job_access_type = /datum/job/assistant

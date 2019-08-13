@@ -31,6 +31,7 @@
 	. = ..()
 
 /obj/machinery/meter/Process()
+	..()
 	if(!target)
 		icon_state = "meterX"
 		return 0

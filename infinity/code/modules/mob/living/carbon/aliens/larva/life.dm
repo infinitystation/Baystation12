@@ -33,14 +33,14 @@
 	if(!istype(M))
 		return
 	if(amount_grown >= max_grown)
-		to_chat(src, SPAN_LING("Вы готовы к продолжению эволюции!"))
+		to_chat(src, SPAN_ALIEN("Вы готовы к продолжению эволюции!"))
 		leave_host()
 		return
 	if(M.vessel.total_volume > M.vessel.total_volume/2)
 		M.vessel.trans_to(src,min(M.vessel.total_volume,MIN_LARVA_BLOOD_DRINK))
 		update_progression()
 	else
-		to_chat(src, SPAN_LING("Это существо уже слишком обескровлено..."))
+		to_chat(src, SPAN_ALIEN("Это существо уже слишком обескровлено..."))
 		leave_host()
 
 #undef MIN_LARVA_BLOOD_DRINK
