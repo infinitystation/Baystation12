@@ -417,7 +417,8 @@
 			dat += "<a href='?src=\ref[src];job_wiki=[rank]'>Open wiki page in browser</a>"
 
 		var/description = job.get_description_blurb()
-		if(description) //html_encode
+		if(description)
+//inf		dat += html_encode(description) //inf below
 			dat += description
 		var/datum/browser/popup = new(user, "Job Info", "[capitalize(rank)]", 430, 520, src)
 		popup.set_content(jointext(dat,"<br>"))
