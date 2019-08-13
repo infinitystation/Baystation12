@@ -16,6 +16,7 @@
 	var/unboosted_rank = PSI_RANK_MASTER
 	var/max_boosted_faculties = 3
 	var/boosted_psipower = 120
+	tint = 0 //INF, WAS NOTHING (0) (we have tint = 2 at space helmets)
 
 /obj/item/clothing/head/helmet/space/psi_amp/lesser
 	name = "psionic amplifier"
@@ -91,7 +92,7 @@
 
 	sleep(80)
 
-	if(H.psi) 
+	if(H.psi)
 		H.psi.reset()
 
 	to_chat(H, SPAN_NOTICE("\The [src] chimes quietly as it finishes removing the slave-minds from your brain."))

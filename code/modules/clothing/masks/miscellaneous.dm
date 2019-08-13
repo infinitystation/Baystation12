@@ -204,7 +204,6 @@
 	flags_inv = HIDEFACE|BLOCKHAIR
 	siemens_coefficient = 0.9
 	body_parts_covered = HEAD|FACE|EYES
-	tint = 1  //INF, WAS NOTHING(0)
 
 /obj/item/clothing/mask/rubber/trasen
 	name = "Jack Trasen mask"
