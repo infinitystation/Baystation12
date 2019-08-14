@@ -77,6 +77,7 @@
 	desc = "A common rifle with three togglable fire modes."
 	item_cost = 80
 	path = /obj/item/weapon/gun/projectile/automatic/assault_rifle
+	antag_roles = list(MODE_MERCENARY) //inf, was nothing
 
 /datum/uplink_item/item/visible_weapons/advanced_energy_gun
 	name = "Advanced Energy Gun"
@@ -84,6 +85,7 @@
 	item_cost = 80
 	antag_costs = list(MODE_MERCENARY = 60)
 	path = /obj/item/weapon/gun/energy/gun/nuclear
+	antag_roles = list(MODE_MERCENARY) //inf, was nothing
 
 /datum/uplink_item/item/visible_weapons/sniper
 	name = "Sniper Carabine"
@@ -124,13 +126,13 @@
 	desc = "A shortened double-barrel shotgun, able to fire either one, or both, barrels at once."
 	item_cost = 25
 	path = /obj/item/weapon/gun/projectile/shotgun/doublebarrel/sawn
-
+/*inf. Too powerful
 /datum/uplink_item/item/visible_weapons/deagle
 	name = "Magnum Pistol"
 	desc = "A high-caliber pistol that uses 15mm ammunition."
 	item_cost = 70
 	path = /obj/item/weapon/gun/projectile/pistol/magnum_pistol
-
+*/
 /datum/uplink_item/item/visible_weapons/sigsauer
 	name = "Standard Military Pistol"
 	desc = "A regularly used and reliable weapon that is standard issue in the Navy."
