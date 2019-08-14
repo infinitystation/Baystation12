@@ -15,7 +15,6 @@
 		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_mask_unathi.dmi',
 		SPECIES_EROSAN = 'infinity/icons/mob/species/erosan/mask.dmi',
 		)
-	tint = 1  //INF, WAS NOTHING(0)
 
 /obj/item/clothing/mask/balaclava/tactical
 	name = "green balaclava"
@@ -31,7 +30,6 @@
 	body_parts_covered = HEAD|FACE
 	w_class = ITEM_SIZE_SMALL
 	siemens_coefficient = 3.0
-	tint = 1  //INF, WAS NOTHING(0)
 
 /obj/item/clothing/mask/luchador/tecnicos
 	name = "Tecnicos Mask"
