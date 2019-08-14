@@ -3,3 +3,5 @@
 #SPECIFYING AN INVALID MAP WILL RESULT IN RUNTIMES ON GAME START
 
 #maps/random_ruins/exoplanet_ruins/example.dmm
+maps/random_ruins/exoplanet_ruins/playablecolony_inf/playablecolony.dmm
+maps/random_ruins/exoplanet_ruins/crashed_pod_inf/crashed_pod.dmm
