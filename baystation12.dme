@@ -3351,6 +3351,7 @@
 #include "infinity\code\modules\power\apc.dm"
 #include "infinity\code\modules\power\cell.dm"
 #include "infinity\code\modules\power\lighting.dm"
+#include "infinity\code\modules\power\solar.dm"
 #include "infinity\code\modules\projectiles\gun.dm"
 #include "infinity\code\modules\projectiles\ammunition\boxes.dm"
 #include "infinity\code\modules\projectiles\ammunition\bullets.dm"
