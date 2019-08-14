@@ -884,6 +884,7 @@
 	icon_state = "bar"
 	sound_env = LARGE_SOFTFLOOR
 	req_access = list(access_bar)
+	secure = 0
 
 /area/crew_quarters/cryolocker
 	name = "\improper Cryogenic Storage Wardrobe"
@@ -909,10 +910,12 @@
 	name = "\improper Galley"
 	icon_state = "kitchen"
 	req_access = list(access_kitchen)
+	secure = 0
 
 /area/crew_quarters/galley/backroom
 	name = "\improper Galley Cold Storage"
 	icon_state = "kitchen"
+	secure = 1
 
 /area/crew_quarters/lounge
 	name = "\improper Lounge"
