@@ -1,3 +1,55 @@
+//military gas mask xM15
+
+/obj/item/clothing/mask/gas/custom
+	name = "military gas mask"
+	desc = "An improved military gas mask M15, most often used by PMCs. It has built-in night vision device and improved breathing system."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "gas_mask"
+	item_state = "gas_mask_face"
+	item_icons = list(
+		slot_l_hand_str = CUSTOM_ITEM_MOB,
+		slot_r_hand_str = CUSTOM_ITEM_MOB,
+		slot_wear_mask_str = CUSTOM_ITEM_MOB
+	)
+	item_state_slots = list(
+		slot_l_hand_str = "gas_mask_lh",
+		slot_r_hand_str = "gas_mask_rh"
+	)
+
+//SCP helmet
+
+/obj/item/clothing/head/helmet/x_four
+	name = "\improper X-4 helmet"
+	desc = "The glass of the helmet is made of armored glass, from the side you can see the laser designator. SCP inscription on back of helmet."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "iconscphelmet"
+	//item_state = "scphelmetonmob"
+	item_icons = list(
+		slot_head_str = CUSTOM_ITEM_MOB,
+		slot_l_hand_str = CUSTOM_ITEM_MOB,
+		slot_r_hand_str = CUSTOM_ITEM_MOB
+	)
+	item_state_slots = list(
+		slot_head_str = "scphelmetonmob",
+		slot_l_hand_str = "scphelmrlefthand",
+		slot_r_hand_str = "scphelmrighthand"
+	)
+
+//visor
+
+/obj/item/clothing/glasses/sunglasses/sechud/toggle/stv
+	name = "tactical visor"
+	desc = "The special tactical visor, pink one."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "stv"
+	item_state = "stv"
+	off_state = "stv_off"
+	item_icons = list(slot_glasses_str = CUSTOM_ITEM_MOB)
+	electric = TRUE
+	action_button_name = "Toggle Visor"
+
+//biohazard kit
+
 /obj/item/clothing/suit/bio_suit/virology/jacking
 	name = "biohazard suit"
 	desc = "A well-prepared kit for epidemiological analysis, planning anti-epidemic measures, epidemiological surveys of foci of infectious diseases."
