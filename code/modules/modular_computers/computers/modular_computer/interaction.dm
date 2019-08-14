@@ -174,7 +174,13 @@
 			turn_on(user)
 
 /obj/item/modular_computer/attack_ai(var/mob/user)
-	return attack_self(user)
+	if(!enabled && screen_on)
+		return attack_self(user)
+	switch(alert("Open Terminal or interact with it?", "Open Terminal or interact with it?", "Interact", "Terminal"))
+		if("Interact")
+			return attack_self(user)
+		if("Terminal")
+			return open_terminal(user)
 
 /obj/item/modular_computer/attack_hand(var/mob/user)
 	if(anchored)
@@ -312,7 +318,7 @@
 		scanner.do_on_afterattack(user, target, proximity)
 
 obj/item/modular_computer/CtrlAltClick(mob/user)
-	if(!CanPhysicallyInteract(user))
+	if(!CanPhysicallyInteract(user) && !istype(user, /mob/living/silicon))//inf was: if(!CanPhysicallyInteract(user))
 		return
 	open_terminal(user)
 
