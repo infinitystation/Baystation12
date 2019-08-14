@@ -939,6 +939,7 @@ something, make sure it's not in one of the other lists.*/
 				/obj/random/suit = 20,
 				/obj/random/clothing = 30,
 				/obj/random/accessory = 20,
+				/obj/item/weapon/contraband/poster = 20, //inf,
 				/obj/random/cash = 10)
 
 /obj/random/loot /*Better loot for away missions and salvage */
