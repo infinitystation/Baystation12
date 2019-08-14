@@ -25,7 +25,7 @@
 			if(isghost(C.mob))
 				entry += " - <font color='gray'><b>Обсервер</b></font> as <b>[C.mob.real_name]</b>"
 			else if(isliving(C.mob))
-				entry += " - <font color='green'><b>Играю</b></font> as <b>[C.mob.real_name]</b>"
+				entry += " - <font color='green'><b>Играет</b></font> as <b>[C.mob.real_name]</b>"
 
 			switch(C.mob.stat)
 				if(UNCONSCIOUS)
@@ -115,22 +115,22 @@
 			continue
 		total_staff++
 		if(check_rights(R_ADMIN,0,C))
-			line += "\t[C] is \an <b>["\improper[C.holder.rank]"]</b>"
+			line += "\t[C], <b>["\improper[C.holder.rank]"]</b>"
 		else
-			line += "\t[C] is \an ["\improper[C.holder.rank]"]"
+			line += "\t[C], ["\improper[C.holder.rank]"]"
 		if(!C.is_afk())
 			active_staff++
 		if(can_investigate)
 			if(C.is_afk())
 				line += " (AFK - [C.inactivity2text()])"
 			if(isghost(C.mob))
-				line += " - Observing"
+				line += " - Обсервер"
 			else if(istype(C.mob,/mob/new_player))
-				line += " - Lobby"
+				line += " - Лоббист"
 			else
-				line += " - Playing"
+				line += " - Играет"
 			if(C.is_stealthed())
-				line += " (Stealthed)"
+				line += " (Стелс)"
 			if(C.get_preference_value(/datum/client_preference/show_ooc) == GLOB.PREF_HIDE)
 				line += " <font color='#002eb8'><b><s>(OOC)</s></b></font>"
 			if(C.get_preference_value(/datum/client_preference/show_looc) == GLOB.PREF_HIDE)
