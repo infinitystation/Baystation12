@@ -1,7 +1,7 @@
 /obj/item/weapon/reagent_containers/food/drinks
 	var/open_sound = 'sound/effects/canopen.ogg'
 
-//Механика питья залпом
+//ГЊГҐГµГ Г­ГЁГЄГ  ГЇГЁГІГјГї Г§Г Г«ГЇГ®Г¬
 /obj/item/weapon/reagent_containers/food/drinks/Initialize()
 	. = ..()
 	if(is_open_container())
@@ -56,12 +56,6 @@ obj/item/weapon/reagent_containers/food/drinks/sillycup
 		SPECIES_HUMAN ='infinity/icons/mob/onmob/onmob_ears.dmi',
 		SPECIES_IPC = 'infinity/icons/mob/onmob/onmob_ears.dmi'
 		)
-
-obj/item/weapon/reagent_containers/food/drinks/sillycup/mob_can_equip(M as mob)
-	if(reagents.total_volume)
-		to_chat(M, "<span class='warning'>You cannot put [src] on your ears, there is something in it.</span>")
-		return 0
-	..()
 
 obj/item/weapon/reagent_containers/food/drinks/sillycup/equipped(var/M, var/slot)
 	..()
