@@ -69,7 +69,8 @@
 		update_ide()
 
 
-
+/obj/machinery/computer/telecomms/traffic/attack_ai(mob/user as mob)
+	attack_hand(user)
 
 /obj/machinery/computer/telecomms/traffic/attack_hand(mob/user as mob)
 	if(stat & (BROKEN|NOPOWER))
