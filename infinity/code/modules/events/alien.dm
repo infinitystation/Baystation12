@@ -16,7 +16,7 @@
 		for(var/mob/observer/ghost/G in GLOB.player_list)
 //			if(MODE_XENOMORPH in G.client.prefs.be_special_role)
 			if(((G.client.inactivity/10)/60) <= 1 + i) // the most active players are more likely to become an alien
-				if(!(G.mind && G.mind.current))
+				if(G.mind)
 					if(alert(G, "Do you want to join as a Xenophage larva?", "Become Larva", "No", "Yes")== "Yes")
 						candidates += G.key
 		i++
@@ -39,6 +39,10 @@
 
 	spawn_locations = shuffle(spawn_locations)
 
+	if(!spawn_locations.len)
+		kill()
+		return
+
 // spawning
 
 	if(prob(40)) spawncount++ //sometimes, have two larvae spawn instead of one
@@ -49,7 +53,7 @@
 		var/mob/living/carbon/alien/larva/new_xeno = new(spot)
 		new_xeno.key = xeno
 		new_xeno.auto_progress = 1
-		GLOB.xenomorphs.add_antagonist_mind(new_xeno.mind, 1)
+		GLOB.xenomorphs.add_antagonist(new_xeno.mind, 1)
 
 //		for(var/mob/observer/ghost/O in GLOB.ghost_mob_list)
 //			to_chat(O, FONT_LARGE(SPAN_NOTICE(
