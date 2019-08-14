@@ -385,7 +385,6 @@
 
 /obj/item/stack/material/titanium
 	name = "titanium"
-	icon = 'infinity/icons/obj/items.dmi'
 	icon_state = "sheet-titanium"
 	item_state = "sheet-metal"
 	default_type = "titanium"

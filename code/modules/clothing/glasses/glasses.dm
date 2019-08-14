@@ -138,6 +138,7 @@
 	armor = list(melee = 20, bullet = 20, laser = 20, energy = 15, bomb = 20, bio = 0, rad = 0)
 	siemens_coefficient = 0.6
 	electric = TRUE
+	tint = 1 //INF, WAS NOTHING
 
 /obj/item/clothing/glasses/eyepatch
 	name = "eyepatch"
