@@ -1,5 +1,5 @@
 /obj/item/clothing/accessory/necklace/collar
-	name = "Silver tag collar"
+	name = "silver tag collar"
 	desc = "A collar for your little pets... or the big ones."
 	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
 	icon_state = "collar_bksilv"
@@ -10,27 +10,27 @@
 		)
 
 /obj/item/clothing/accessory/necklace/collar/gold
-	name = "Golden tag collar"
+	name = "golden tag collar"
 	desc = "A collar for your little pets... or the big ones."
 	icon_state = "collar_bkgold"
 
 /obj/item/clothing/accessory/necklace/collar/bell
-	name = "Bell collar"
+	name = "bell collar"
 	desc = "A collar with a tiny bell hanging from it, purrfect furr kitties."
 	icon_state = "collar_bkbell"
 
 /obj/item/clothing/accessory/necklace/collar/spike
-	name = "Spiked collar"
+	name = "spiked collar"
 	desc = "A collar with spikes that look as sharp as your teeth."
 	icon_state = "collar_bkspike"
 
 /obj/item/clothing/accessory/necklace/collar/pink
-	name = "Pink collar"
+	name = "pink collar"
 	desc = "This collar will make your pets look FA-BU-LOUS."
 	icon_state = "collar_pisilv"
 
 /obj/item/clothing/accessory/necklace/collar/holo
-	name = "Holo-collar"
+	name = "holo-collar"
 	desc = "An expensive holo-collar for the modern day pet."
 	icon_state = "collar_bkholo"
 
@@ -49,7 +49,7 @@
 		desc = initial(desc) + " The tag says \"[str]\"."
 
 /obj/item/clothing/accessory/necklace/collar/shock
-	name = "Shock collar"
+	name = "shock collar"
 	desc = "A collar used to ease hungry predators."
 	icon_state = "collar_bkshk0"
 	item_state = "collar_bkshk"
