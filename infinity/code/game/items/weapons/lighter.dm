@@ -1,10 +1,10 @@
 /obj/item/weapon/flame/lighter/zippo/infinity
-	name = "\improper engraved zippo"
+	name = "engraved zippo"
 	icon = 'infinity/icons/obj/lighters.dmi'
 	icon_state = "engraved"
 
 /obj/item/weapon/flame/lighter/zippo/infinity/gold
-	name = "\improper golden zippo"
+	name = "golden zippo"
 	icon_state = "gold"
 
 /obj/item/weapon/flame/lighter/zippo/infinity/station
@@ -12,37 +12,31 @@
 	icon_state = "13"
 
 /obj/item/weapon/flame/lighter/zippo/infinity/black
-	name = "\improper cross zippo"
+	name = "cross zippo"
 	icon_state = "black"
 
 /obj/item/weapon/flame/lighter/zippo/infinity/blue
-	name = "\improper blue zippo"
+	name = "blue zippo"
 	icon_state = "bluezippo"
 
 /obj/item/weapon/flame/lighter/zippo/infinity/red
-	name = "\improper red-white zippo"
+	name = "red-white zippo"
 	icon_state = "redzippo"
 
 /obj/item/weapon/flame/lighter/zippo/infinity/butterfly
-	name = "\improper butterfly zippo"
+	name = "butterfly zippo"
 	icon_state = "butterzippo"
 
 /obj/item/weapon/flame/lighter/zippo/infinity/fancy
-	name = "\improper flower zippo"
+	name = "flower zippo"
 	icon_state = "fancyzippo"
-
-/obj/item/weapon/flame/lighter/zippo/custom/messotha
-	name = "\improper messotha zippo"
-	icon_state = "messotha"
-	icon = 'infinity/icons/obj/lighters.dmi'
 
 /obj/item/weapon/flame/lighter/zippo/infinity/on_update_icon()
 	var/datum/extension/base_icon_state/bis = get_extension(src, /datum/extension/base_icon_state)
 
-	overlays.Cut()
 	if(lit)
-		icon_state = "[bis.base_icon_state]on"
-		item_state = "[bis.base_icon_state]on"
+		icon_state = "[bis.base_icon_state]_on"
+		item_state = "[bis.base_icon_state]_on"
 	else
 		icon_state = "[bis.base_icon_state]"
 		item_state = "[bis.base_icon_state]"
