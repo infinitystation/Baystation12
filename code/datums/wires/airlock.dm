@@ -191,6 +191,7 @@ var/const/AIRLOCK_WIRE_LIGHT = 2048
 
 /datum/wires/airlock/SolveWireFunction(var/function)
 	var/sf = ""
+	var/obj/machinery/door/airlock/AIRL = holder
 	switch(function)
 		if(AIRLOCK_WIRE_IDSCAN)
 			sf = "Port A"
@@ -207,7 +208,7 @@ var/const/AIRLOCK_WIRE_LIGHT = 2048
 		if(AIRLOCK_WIRE_OPEN_DOOR)
 			sf = "Port G"
 		if(AIRLOCK_WIRE_AI_CONTROL)
-			sf = "Port H"
+			sf = "Port H (NTNet ID = [AIRL.t_ntnet_id])"
 		if(AIRLOCK_WIRE_ELECTRIFY)
 			sf = "Port I"
 		if(AIRLOCK_WIRE_SAFETY)
