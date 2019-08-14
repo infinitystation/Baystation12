@@ -162,9 +162,13 @@
 	var/static/datum/announcement/priority/security/security_announcement_delta = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/effects/siren.ogg'))
 
 /decl/security_level/default/sierradept/code_delta/switching_up_to()
-	security_announcement_delta.Announce("Внимание всему персоналу! Код Дельта вступил в силу - система экстренного \
+/*	security_announcement_delta.Announce("Внимание всему персоналу! Код Дельта вступил в силу - система экстренного \
 	самоуничтожения судна запущена. Весь экипаж должен следовать инструкциям глав и охраны. \
-	Это не учебная тревога.", "Внимание! Достигнут уровень угрозы Дельта!")
+	Это не учебная тревога.", "Внимание! Достигнут уровень угрозы Дельта!")*/
+	security_announcement_delta.Announce("Внимание всему персоналу! Код Дельта вступил в силу - на судне обнаружено \
+	взрывное устройство большой мощности с активированным обратным отсчетом. Весь экипаж должен следовать инструкциям \
+	глав и охраны. Это не учебная тревога.", "Внимание! Достигнут уровень угрозы Дельта!")
+
 	notify_station()
 
 #undef PSI_IMPLANT_AUTOMATIC
