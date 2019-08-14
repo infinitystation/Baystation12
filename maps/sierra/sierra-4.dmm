@@ -20742,7 +20742,7 @@
 /area/shuttle/merchant/home)
 "aVC" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/paper/merchant,
+/obj/item/weapon/paper/sierrau/merchant,
 /turf/simulated/floor/carpet/blue2,
 /area/shuttle/merchant/home)
 "aVD" = (
@@ -26053,7 +26053,7 @@
 	layer = 2.4;
 	level = 2
 	},
-/obj/item/weapon/paper/merchant,
+/obj/item/weapon/paper/sierrau/merchant,
 /turf/simulated/floor/carpet,
 /area/merchant_station)
 "bhW" = (

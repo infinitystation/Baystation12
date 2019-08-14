@@ -52,7 +52,7 @@ Unique items
 	max_storage_space = 2
 	startswith = list(
 			/obj/item/weapon/reagent_containers/pill/cyanide,
-			/obj/item/weapon/paper/liason_note
+			/obj/item/weapon/paper/sierrau/liason_note
 	)
 
 /******
