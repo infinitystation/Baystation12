@@ -81,7 +81,7 @@
 /obj/structure/sign/poster
 	name = "poster"
 	desc = "A large piece of space-resistant printed paper."
-	icon = 'icons/obj/contraband.dmi'
+	icon = 'infinity/icons/obj/posters.dmi' //inf, was icons/obj/contraband.dmi
 	anchored = 1
 	var/poster_type
 	var/ruined = 0
