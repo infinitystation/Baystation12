@@ -2220,7 +2220,6 @@
 	icon_state = "bordercolorcorner2";
 	dir = 5
 	},
-/obj/structure/flora/pottedplant/stoutbush,
 /turf/simulated/floor/tiled,
 /area/outpost/mining/recreation)
 "dZ" = (
@@ -2446,6 +2445,7 @@
 /area/outpost/mining/recreation)
 "eu" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/flora/pottedplant/stoutbush,
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/recreation)
 "ev" = (
@@ -3530,7 +3530,7 @@
 /turf/simulated/floor/asteroid,
 /area/mine/explored)
 "gB" = (
-/obj/effect/landmark/random_gen/asteroid{
+/obj/effect/landmark/random_gen/asteroid_poor{
 	generation_height = 200;
 	generation_width = 200
 	},
@@ -20788,6 +20788,7 @@ ew
 dD
 dC
 ab
+ap
 ab
 ab
 ab
@@ -20795,8 +20796,7 @@ ab
 ab
 ab
 ab
-ab
-ab
+ap
 ap
 ap
 ap
@@ -20990,15 +20990,15 @@ dG
 fO
 dC
 ab
+ap
+ap
 ab
 ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
+ap
+ap
 ab
 ab
 ap
@@ -21193,13 +21193,13 @@ dE
 dC
 ab
 ab
+ap
 ab
 ab
 ab
 ab
 ab
-ab
-ab
+ap
 ab
 ab
 ab
@@ -21396,11 +21396,11 @@ dC
 ab
 ab
 ab
+ap
 ab
 ab
 ab
-ab
-ab
+ap
 ab
 ab
 ab
@@ -21598,11 +21598,11 @@ dC
 ab
 ab
 ab
+ap
 ab
 ab
 ab
-ab
-ab
+ap
 ab
 ab
 ab
@@ -21801,10 +21801,10 @@ ab
 ab
 ab
 ab
+ap
 ab
 ab
-ab
-ab
+ap
 ab
 ab
 ab
@@ -22004,9 +22004,9 @@ ab
 ab
 ab
 ab
+ap
 ab
-ab
-ab
+ap
 ab
 ab
 ab
@@ -22206,9 +22206,9 @@ ab
 ab
 ab
 ab
+ap
 ab
-ab
-ab
+ap
 ab
 ab
 ab
@@ -22409,8 +22409,8 @@ ab
 ab
 ab
 ab
-ab
-ab
+ap
+ap
 ab
 ab
 ab
@@ -22612,8 +22612,8 @@ ab
 ab
 ab
 ab
-ab
-ab
+ap
+ap
 ab
 ap
 ap
@@ -22815,7 +22815,7 @@ ab
 ab
 ab
 ab
-ab
+ap
 ab
 ap
 ab
