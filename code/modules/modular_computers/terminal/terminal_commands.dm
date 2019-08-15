@@ -487,8 +487,8 @@ Subtypes
 	var/file_name = copytext(text, 6)
 	if(!file_name) return "<font color='#ffa000'>echo: enter filename.</font>"
 	var/file = CT.hard_drive.find_file_by_name(file_name)
+	if(!file in CT.hard_drive.stored_files) return "<font color='#ffa000'>echo: file not found.</font>"
 	if(!istype(file, /datum/computer_file/data)) return "<font color='#ffa000'>echo: file is binary.</font>"
-	if(!file in CT.hard_drive.stored_files) return "<font color='#ffa000'>echo: file not fund</font>"
 	var/datum/computer_file/data/end_file = file
 	if(!end_file.stored_data) return "<font color='#ff0000'>echo: file empty.</font>"
 	var/echo_data = end_file.stored_data
