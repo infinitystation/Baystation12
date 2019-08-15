@@ -35,6 +35,7 @@
 	#include "items/documents.dm"
 	#include "items/explo_shotgun.dm"
 	#include "items/encryption_keys.dm"
+	#include "items/guns.dm"
 	#include "items/headsets.dm"
 	#include "items/items.dm"
 	#include "items/lighting.dm"

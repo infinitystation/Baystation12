@@ -55,7 +55,7 @@
 			return 0
 	return ..()
 
-/obj/item/weapon/gun/projectile/shotguntaj/on_update_icon()
+/obj/item/weapon/gun/projectile/shotgun/shotguntaj/on_update_icon()
 	if(ammo_magazine)
 		icon_state = "shotguntaj"
 	else
