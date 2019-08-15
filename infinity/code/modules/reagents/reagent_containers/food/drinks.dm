@@ -44,6 +44,12 @@
 	else
 		to_chat(usr, SPAN_NOTICE("You need to open \the [src] first!"))
 
+obj/item/weapon/reagent_containers/food/drinks/sillycup/mob_can_equip(M as mob)
+	if(reagents.total_volume > 0)
+		to_chat(M, "<span class='warning'>You cannot put [src] on your ears, there is something in it.</span>")
+		return 0
+	. = ..()
+
 obj/item/weapon/reagent_containers/food/drinks/sillycup
 	possible_transfer_amounts = null
 	layer = ABOVE_OBJ_LAYER
