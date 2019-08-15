@@ -2,16 +2,19 @@
 
 /obj/machinery/button/toggle/valve/nacelle/first
 	name = "Third Deck Starboard Nacelle Fuel Control"
+	id_tag = "RE1F"
 
 /obj/machinery/button/toggle/valve/nacelle/second
 	name = "Third Deck Port Nacelle Fuel Control"
+	id_tag = "RE2F"
 
 /obj/machinery/button/toggle/valve/nacelle/third
 	name = "First Deck Starboard Nacelle Fuel Control"
+	id_tag = "RE3F"
 
 /obj/machinery/button/toggle/valve/nacelle/fourth
 	name = "First Deck Port Nacelle Fuel Control"
-
+	id_tag = "RE4F"
 //sensors
 
 /obj/machinery/air_sensor/nacelle/first
