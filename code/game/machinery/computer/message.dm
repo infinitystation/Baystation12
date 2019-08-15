@@ -301,7 +301,7 @@
 
 /obj/item/weapon/paper/monitorkey
 	//..()
-	name = "Monitor Decryption Key"
+	name = "Monitor and airlocks Decryption Keys"//inf
 	var/obj/machinery/message_server/server = null
 
 /obj/item/weapon/paper/monitorkey/New()
@@ -315,3 +315,8 @@
 						info_links = info
 						icon_state = "paper_words"
 						break
+		//[inf]
+		if(ntnet_global)
+			if(!isnull(ntnet_global.airlock_override_key))
+				info += "<hr><center><h2>Daily Airlocks' access Override Key Reset</h2></center><br>The new NTNet airlocks override key is '[ntnet_global.airlock_override_key]'.<br>This key need to be maximaly hidden from not autorised personel.<br>The override of the access system to the airlocks' can be carried out only during the red and orange code."
+		//[/inf]

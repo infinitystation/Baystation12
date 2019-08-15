@@ -82,7 +82,7 @@
 	light_color_status_display = COLOR_ORANGE
 	overlay_alarm = "alarm_orange"
 	overlay_status_display = "status_display_orange"
-
+	airlock_override = 1
 	psionic_control_level = PSI_IMPLANT_LOG
 
 /decl/security_level/default/sierradept/code_orange/switching_up_to()
@@ -137,6 +137,7 @@
 	overlay_alarm = "alarm_red"
 	overlay_status_display = "status_display_red"
 
+	airlock_override = 1
 	psionic_control_level = PSI_IMPLANT_DISABLED
 	var/static/datum/announcement/priority/security/security_announcement_red = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/misc/redalert1.ogg'))
 
@@ -167,6 +168,7 @@
 	overlay_alarm = "alarm_delta"
 	overlay_status_display = "status_display_delta"
 
+	psionic_control_level = PSI_IMPLANT_DISABLED
 	var/static/datum/announcement/priority/security/security_announcement_delta = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/effects/siren.ogg'))
 
 /decl/security_level/default/sierradept/code_delta/switching_up_to()

@@ -575,78 +575,94 @@ Subtypes
 	man_entry = list("Format: connect \[door id].",
 					"Standard format show you data about door, it needn't access of door.",
 					"Open format: connect \[door id] -open. To close door, replace \'-open\' by \'-close\'. Need airlock accessible",
-					"Locking (bolting) format: connect \[door id] -lock. To unlock use -unlock. Need airlock access."
+					"Locking (bolting) format: connect \[door id] -lock. To unlock use -unlock. Need airlock access.",
+					"In red and orange code you can override airlock access by using override key. Like this: 'connect y421 -open -override Yota11'"
 					)
 	pattern = "^connect"
 
 /datum/terminal_command/connect/proper_input_entered(text, mob/user, datum/terminal/terminal)
-	var/obj/item/modular_computer/CT = terminal.computer
 	var/list/txt = splittext(text, " ")
+	if(length(txt) == 1)
+		return "connect: syntax error. Use 'man connect'"
+	var/override = 0
+	var/airlock_override_code = ""
+	var/decl/security_state/sec_code = decls_repository.get_decl(GLOB.using_map.security_state)
+	var/obj/item/modular_computer/CT = terminal.computer
+
 	var/obj/machinery/door/airlock/DOOR = terminal.get_airlock_by_ID(txt[2])
 	if(DOOR && CT.network_card.check_functionality())
 		if(!DOOR.aiControlDisabled)
-			switch(length(txt))
-				if(2)
-					. += "Outputting data about airlock([txt[2]]):<hr>"
-					. += "Energy: [DOOR.main_power_lost_until ? "<font color = '#ff0000'>OFFLINE</font>" : "<font color = '#00ff00'>ONLINE</font>"]"
-					. += "<pre>Network data:<br>"
-					. += "	NTNet connection: [DOOR.aiControlDisabled ? "<font color = '#ff0000'>ERROR</font>" : "<font color = '#00ff00'>STABLE</font>"].<br>"
-					. += "	AI cover: [DOOR.hackProof ? "<font color = '#00ff00'>ACTIVE</font>" : "<font color = '#ff0000'>OUT OF SERVICE</font>"].<hr></pre>"
-					var/electrified_state
-					switch(DOOR.electrified_until)
-						if(-1)
-							electrified_state = "<font color = '#fffa29'>PERMANENT</font>"
-						if(0)
-							electrified_state = "<font color ='#00ff00'>FALSE</font>"
-						else
-							electrified_state = "<font color = '#ff0000'>TRUE</font>"
-					. += "<pre>Local functional data:<br>"
-					. += "	Electrified: [electrified_state].<br>"
-					. += "	Bolts: [DOOR.locked ? "<font color = '#ff0000'>LOCKED DOWN</font>" : "<font color = '#00ff00'>OUT OF SERVICE</font>"].<br>"
-					. += "	Lights: [DOOR.lights ? "<font color = '#00ff00'>STABLE</font>" : "<font color = '#ff0000'>OUT OF SERVICE</font>"].<br><hr>"
-					. += "	<font color = '#ff0000' size = 2>SAFETY DATA</font>:<br>"
-					. += "		Airlock timing: [DOOR.normalspeed ? "<font color = '#00ff00'>STABLE</font>" : "<font color = '#ff0000'>OVERRIDEN</font>"].<br>"
-					. += "		Safety protocols: [DOOR.safe ? "<font color = '#00ff00'>STABLE</font>" : "<font color = '#ff0000'>OVERRIDEN</font>"].<br></pre>"
-					/*var/ac = ""
-					if(DOOR.req_access)
-						ac = "(
-						for(var/i in DOOR.req_access)
-							ac += i + ", "
-						ac += ")"*/
-					. += "Required Access: [DOOR.req_access ? "([jointext(DOOR.req_access, ", ") ])" : "ACCESS NOT REQUIRED"].<hr>"
-					return
-				if(3)
+			if(length(txt) == 2)
+				. += "Outputting data about airlock([txt[2]]):<hr>"
+				. += "Energy: [DOOR.main_power_lost_until ? "<font color = '#ff0000'>OFFLINE</font>" : "<font color = '#00ff00'>ONLINE</font>"]"
+				. += "<pre>Network data:<br>"
+				. += "	NTNet connection: [DOOR.aiControlDisabled ? "<font color = '#ff0000'>ERROR</font>" : "<font color = '#00ff00'>STABLE</font>"].<br>"
+				. += "	AI cover: [DOOR.hackProof ? "<font color = '#00ff00'>ACTIVE</font>" : "<font color = '#ff0000'>OUT OF SERVICE</font>"].<hr></pre>"
+				var/electrified_state
+				switch(DOOR.electrified_until)
+					if(-1)
+						electrified_state = "<font color = '#fffa29'>PERMANENT</font>"
+					if(0)
+						electrified_state = "<font color ='#00ff00'>FALSE</font>"
+					else
+						electrified_state = "<font color = '#ff0000'>TRUE</font>"
+				. += "<pre>Local functional data:<br>"
+				. += "	Electrified: [electrified_state].<br>"
+				. += "	Bolts: [DOOR.locked ? "<font color = '#ff0000'>LOCKED DOWN</font>" : "<font color = '#00ff00'>OUT OF SERVICE</font>"].<br>"
+				. += "	Lights: [DOOR.lights ? "<font color = '#00ff00'>STABLE</font>" : "<font color = '#ff0000'>OUT OF SERVICE</font>"].<br><hr>"
+				. += "	<font color = '#ff0000' size = 2>SAFETY DATA</font>:<br>"
+				. += "		Airlock timing: [DOOR.normalspeed ? "<font color = '#00ff00'>STABLE</font>" : "<font color = '#ff0000'>OVERRIDEN</font>"].<br>"
+				. += "		Safety protocols: [DOOR.safe ? "<font color = '#00ff00'>STABLE</font>" : "<font color = '#ff0000'>OVERRIDEN</font>"].<br></pre>"
+				/*var/ac = ""
+				if(DOOR.req_access)
+					ac = "(
+					for(var/i in DOOR.req_access)
+						ac += i + ", "
+					ac += ")"*/
+				. += "Required Access: [DOOR.req_access ? "([jointext(DOOR.req_access, ", ") ])" : "ACCESS NOT REQUIRED"].<hr>"
+				return
+			else
+				//OVERRIDE CHECK
+				if(length(txt) >= 5)
+					if(txt[length(txt) - 1] == "-override")
+						airlock_override_code = ntnet_global.airlock_override_key
+						if(txt[length(txt)] == airlock_override_code && sec_code.current_security_level.airlock_override)
+							override = 1
+							. += "<font color = '#ff0000'>ACCESS OVERRIDEN</font><br>"
+
+				//ACCESS CHECK
+				if(!has_access(DOOR.req_access, user.GetAccess()) && !override)
+					return "connect: <font color = '#ff0000'>ACCESS ERROR.</font>"
+				else
 					switch(txt[3])
 						//density
 						if("-open")
-							if(!has_access(DOOR.req_access, user.GetAccess()))
-								return "connect: <font color = '#ff0000'>ACCESS ERROR.</font>"
 							if(!DOOR.open())
-								return "connect: unable to open airlock, maybe it bolted or already opened or lack for energy."
-							return "connect: Airlock with id([txt[2]]) was opened."
-
+								. += "connect: unable to open airlock, maybe it bolted or already opened or lack for energy."
+								return
+							. += "connect: Airlock with id([txt[2]]) was opened."
+							return
 						if("-close")
-							if(!has_access(DOOR.req_access, user.GetAccess()))
-								return "connect: <font color = '#ff0000'>ACCESS ERROR.</font>"
-							if(!DOOR.close())
-								return "connect: unable to close airlock, maybe it bolted or already closed or lack for energy."
-							return "connect: Airlock with id([txt[2]]) was closed."
+							DOOR.close()
+							if(!DOOR.density)
+								. += "connect: unable to close airlock, maybe it bolted or already closed or lack for energy."
+								return
+							. += "connect: Airlock with id([txt[2]]) was closed."
+							return
 
 						//bolts
 						if("-lock")
-							if(!has_access(DOOR.req_access, user.GetAccess()))
-								return "connect: <font color = '#ff0000'>ACCESS ERROR.</font>"
 							if(!DOOR.lock())
-								return "connect: unable to close airlock, maybe it bolted or already locked or lack for energy."
-							return "connect: Airlock with id([txt[2]]) was locked."
-
+								. += "connect: unable to close airlock, maybe it bolted or already locked or lack for energy."
+								return
+							. += "connect: Airlock with id([txt[2]]) was locked."
+							return
 						if("-unlock")
-							if(!has_access(DOOR.req_access, user.GetAccess()))
-								return "connect: <font color = '#ff0000'>ACCESS ERROR.</font>"
 							if(!DOOR.unlock())
-								return "connect: unable to close airlock, maybe it bolted or already unlocked or lack for energy."
-							return "connect: Airlock with id([txt[2]]) was unlocked."
-
+								. += "connect: unable to close airlock, maybe it bolted or already unlocked or lack for energy."
+								return 
+							. += "connect: Airlock with id([txt[2]]) was unlocked."
+							return
 		else
 			return "connect: <font color = '#ff0000'>ERROR</font>: Unable to establish a stable NTNet connection with airlock."
 	else
