@@ -23,7 +23,7 @@
 				continue
 
 			if(isghost(C.mob))
-				entry += " - <font color='gray'><b>Обсервер</b></font> as <b>[C.mob.real_name]</b>"
+				entry += " - <font color='gray'><b>Наблюдает</b></font> as <b>[C.mob.real_name]</b>"
 			else if(isliving(C.mob))
 				entry += " - <font color='green'><b>Играет</b></font> as <b>[C.mob.real_name]</b>"
 
@@ -37,10 +37,10 @@
 						if(O.started_as_observer)
 							observers++
 						else
-							entry += " - <b>DEAD</b>"
+							entry += " - <b>МЕРТВ</b>"
 							dead++
 					else if(isnewplayer(C.mob))
-						entry += " - <font color='#006400'><b>Лоббист</b></font>"
+						entry += " - <font color='#006400'><b>В лобби</b></font>"
 						lobby++
 					else
 						entry += " - <b>МЕРТВ</b>"
@@ -78,11 +78,11 @@
 						if(isghost(C.mob))
 							var/mob/observer/ghost/O = C.mob
 							if(O.started_as_observer)
-								entry += " - <font color='gray'><b>Обсервер</b></font>"
+								entry += " - <font color='gray'><b>Наблюдает</b></font>"
 							else
 								entry += " - <font color='green'><b>Играет</b></font>"
 						else if(isnewplayer(C.mob))
-							entry += " - <font color='#006400'><b>Лоббист</b></font>"
+							entry += " - <font color='#006400'><b>В лобби</b></font>"
 					else
 						entry += " - <font color='green'><b>Играет</b></font>"
 
@@ -95,7 +95,7 @@
 		msg += "[line]\n"
 
 	if(check_rights(R_INVESTIGATE, 0))
-		msg += "<b><font color='green'>Живых: [living]</font> | Мертвых: [dead] | <font color='gray'>Обсерверов: [observers]</font> | <font color='#006400'>Лоббистов: [lobby]</font> | <font color='#8100aa'>Живых Антагов: [living_antags]</font> | <font color='#9b0000'>Мертвых Антагов: [dead_antags]</font></b>\n"
+		msg += "<b><font color='green'>Живых: [living]</font> | Мертвых: [dead] | <font color='gray'>Наблюдателей: [observers]</font> | <font color='#006400'>Лоббистов: [lobby]</font> | <font color='#8100aa'>Живых Антагов: [living_antags]</font> | <font color='#9b0000'>Мертвых Антагов: [dead_antags]</font></b>\n"
 
 	msg += "<b>Всего Игроков: [length(Lines)]</b>"
 	to_chat(src, msg)
@@ -122,11 +122,11 @@
 			active_staff++
 		if(can_investigate)
 			if(C.is_afk())
-				line += " (AFK - [C.inactivity2text()])"
+				line += " (АФК - [C.inactivity2text()])"
 			if(isghost(C.mob))
-				line += " - Обсервер"
+				line += " - Наблюдает"
 			else if(istype(C.mob,/mob/new_player))
-				line += " - Лоббист"
+				line += " - В лобби"
 			else
 				line += " - Играет"
 			if(C.is_stealthed())
