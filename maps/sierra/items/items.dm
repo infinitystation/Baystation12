@@ -55,24 +55,6 @@ Unique items
 			/obj/item/weapon/paper/sierrau/liason_note
 	)
 
-/******
-Weapons
-******/
-
-/obj/item/weapon/gun/projectile/revolver/medium/captain
-	desc = "A shiny al-Maliki & Mosley Autococker automatic revolver, with black accents. Marketed as the 'Revolver for the Modern Era'. Uses .357 magnum rounds. This one has 'To the Captain of NSV Sierra' engraved."
-
-/obj/item/weapon/gun/energy/stunrevolver/secure/nanotrasen
-	name = "corporate stun revolver"
-	desc = "This A&M X6 is fitted with an NT1019 chip which allows remote authorization of weapon functionality. It has a NanoTrasen emblem on the grip."
-	req_access = list(list(access_brig, access_heads, access_rd))
-
-/obj/item/weapon/gun/projectile/pistol/liaison
-	magazine_type = /obj/item/ammo_magazine/mc9mm/oneway
-
-/obj/item/ammo_magazine/mc9mm/oneway
-	initial_ammo = 1
-
 /obj/effect/paint/hull
 	color = COLOR_HULL
 

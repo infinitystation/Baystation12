@@ -309,7 +309,6 @@
 	icon_state = "shuttlered"
 	base_turf = /turf/simulated/floor/plating
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
-//	req_access = list(access_expedition_shuttle)
 
 /area/exploration_shuttle/cockpit
 	name = "\improper Charon - Cockpit"
