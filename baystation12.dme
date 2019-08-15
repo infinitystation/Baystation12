@@ -3185,6 +3185,7 @@
 #include "infinity\code\game\objects\noose.dm"
 #include "infinity\code\game\objects\auras\speed_aura.dm"
 #include "infinity\code\game\objects\effects\aliens.dm"
+#include "infinity\code\game\objects\effects\landmarks.dm"
 #include "infinity\code\game\objects\effects\decals\posters.dm"
 #include "infinity\code\game\objects\items\airbag.dm"
 #include "infinity\code\game\objects\items\music_player.dm"
