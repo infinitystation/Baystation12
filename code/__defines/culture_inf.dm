@@ -8,14 +8,17 @@
 
 // Tajaran cultures.
 
-#define CULTURE_TAJARAN          "CMA Citizen"
+#define CULTURE_TAJARAN				"CMA Citizen"
 
-#define FACTION_TAJARAN_HADII    "Hadii Family"
-#define FACTION_TAJARAN_KAYTAM   "Kaytam Family"
-#define FACTION_TAJARAN_NAZKIIN  "Nazkiin Family"
-#define FACTION_TAJARAN_OTHER    "Other Family"
+#define FACTION_TAJARAN_HADII		"Hadii Family"
+#define FACTION_TAJARAN_KAYTAM		"Kaytam Family"
+#define FACTION_TAJARAN_NAZKIIN		"Nazkiin Family"
+#define FACTION_TAJARAN_KAYTAM_KSD	"Khan-Shanu'Dar clan"
+#define FACTION_TAJARAN_SHISHI		"Shi-Shi Family"
+#define FACTION_TAJARAN_JAR			"Jar'Nash'Karr'Ree Family"
+#define FACTION_TAJARAN_OTHER		"Other Family"
 
-#define HOME_SYSTEM_AHDOMAI      "Ahdomai"
+#define HOME_SYSTEM_AHDOMAI			"Ahdomai"
 
 // Resomi cultures.
 
@@ -25,8 +28,8 @@
 //#define CULTURE_RESOMI_SAVEEL     		"Saveel, Sav"
 #define CULTURE_RESOMI_REFUGEE 			"Imperial refugee"
 #define CULTURE_RESOMI_NEWGENERATION	"New generation"
-//#define CULTURE_RESOMI_LOSTCOLONYRICH "A native of a thriving "lost" colony"
-//#define CULTURE_RESOMI_LOSTCOLONYPOOR  "A native of a impoverished "lost" colony"
+#define CULTURE_RESOMI_LOSTCOLONYRICH  "A native of a thriving lost colony"
+#define CULTURE_RESOMI_LOSTCOLONYPOOR  "A native of a impoverished lost colony"
 
 //#define FACTION_RESOMI     |There are no fractions, as well as the soil for their appearance.
 
@@ -61,3 +64,11 @@
 #define FACTION_ZPCI            "Zone Protection Control Inc."
 #define FACTION_SCP             "Security Corporate Personal"
 #define FACTION_SEPTENERGO      "SeptEnergo Public Joint-Stock Company"
+
+// Xenophage cultures
+#define CULTURE_XENOPHAGE_D    "Xenophage Drone"
+#define CULTURE_XENOPHAGE_H    "Xenophage Hunter"
+#define CULTURE_XENOPHAGE_S    "Xenophage Sentinel"
+#define CULTURE_XENOPHAGE_Q    "Xenophage Queen"
+#define FACTION_XENOPHAGE      "Xenophage Hive"
+

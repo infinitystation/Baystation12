@@ -118,33 +118,26 @@
 
 /obj/item/weapon/folder/envelope/blanks/Initialize()
 	. = ..()
-	new/obj/item/weapon/paper/blanks(src)
+	new/obj/item/weapon/paper/sierra/blanks(src)
 
-/obj/item/weapon/paper/blanks
+/obj/item/weapon/paper/sierra/blanks
 	name = "RE: Regarding testing supplies"
 	info = {"
-	<tt><center><b><font color='red'>CONFIDENTIAL: UPPER MANAGEMENT ONLY</font></b>
-	<h3>NANOTRASEN RESEARCH DIVISION</h3>
+	<tt><center><b><font color='red'>КОНФИДЕЦИАЛЬНО</font></b>
+	<h3>ИССЛЕДОВАТЕЛЬКИЙ ДЕПАРТАМЕНТ НАНОТРЕЙЗЕН</h3>
 	<img src = ntlogo.png>
 	</center>
-	<b>FROM:</b> Hieronimus Blackstone, Overseer of sierra Cooperation Project<br>
-	<b>TO:</b> Research Director of NES Sierra branch<br>
-	<b>CC:</b> Liason with SCG services aboard NES Sierra<br>
-	<b>SUBJECT:</b> RE: Testing Materials<br>
+	<b>ОТ:</b> Swadian Barwuds<br>
+	<b>КОМУ:</b> Исследовательскому Директору NSV Sierra<br>
+	<b>А ТАКЖЕ:</b> Агенту Внутренних Дел NSV Sierra<br>
+	<b>ТЕМА:</b> Дополнительные Материалы (пересмотр)<br>
 	<hr>
-	We have reviewed your request, and would like to make an addition to the list of needed materials.<br>
-	As we hold very high hopes for this branch, it would be only right to provide our scientists with the most accurate testing environment. And by that we mean the living human subjects. Our Ethics Review Board suggested a workaround for that pesky 'consent' requierment.<br>
-	In the Research Wing you should find a small section labeled 'Aux Custodial Supplies'. Inside we have provided several mind-blank vatgrown clones. Our Law Special Response Team so far had not found SCG legislation that explicitly forbids their use in research.<br>
-	They come in self-contained life support bags, with additional measures to make them easier to use for, let's say, more sensitive personnel. As our preliminary study showed, 75% more subjects were more willing to harm a (consenting) intern if their face was fully hidden.<br>
-	We are expecting great results from this program. Do not disappoint us.<br>
-	<i>H.B.</i></tt>
-	"}
-
-/obj/item/weapon/paper/liason_note
-	name = "note"
-	info = {"
-	<i>Eat pill. No surrender.<br>
-	H.B.</i>
+	Я пересмотрел ваш отчет о проведенных экспериментах и запрос о более совершенных тестовых материалов, РД.<br>
+	Мы склонны ожидать от вашего проекта только лучшего - особенно в свете того, что этому /"лучше/" следует наступить как можно скорее. Депарамент Аналитики подсчитал, что на данный момент, потениальная прибыль от проведенных на судне исследований недостаточна для покрытия всех расходов. <br>
+	В РНД вы можете найти подсобку с подписью 'Aux Custodial Supplies'. Там находятся ваши новые тестовые материалы - 4 человека из пробирок с рядом отсутствующих высших нервными функций. Наш департамент по вопросам законодательства не обнаружил ничего нелегальнго в том, чтобы использовать их в медицинских опытов для более точных результатов.<br>
+	Они помещены в специально мешки с продвинутой системой поддержания жизни - их не нужно кормить, поить или выгуливать. Если вам нужны образцы - берите их.<br>
+	Сейчас не время для того, чтобы проводить долгие научные изыскания, РД. Мы ждем от вас впечатляющих результатов в ближайшем будущем.<br>
+	<i>S.B.</i></tt>
 	"}
 
 /obj/item/weapon/folder/envelope/captain
@@ -160,7 +153,7 @@
 	</center>
 	<b>ОТ:</b> Swadian Barwuds<br>
 	<b>КОМУ:</b> Капитану NSV Sierra<br>
-	<b>ТЕМА:</b> Общий приказ<br>
+	<b>ТЕМА:</b> Общий Приказ<br>
 	<hr>
 	Капитан,<br>
 	Ваше судно в текущий вылет должно посетить следующие звёздные системы. Имейте ввиду, что ваши ресурсы ограничены; распор&#255;дитесь временем рационально.
@@ -186,16 +179,16 @@
 	"}
 	new/obj/item/weapon/paper/important(src, memo, "Standing Orders")
 
-	new/obj/item/weapon/paper/umbra(src)
+	new/obj/item/weapon/paper/sierra/umbra(src)
 
 /obj/item/weapon/folder/envelope/rep
 	desc = "A thick envelope. The NT logo is stamped in the corner, along with 'TOP SECRET - SIERRA UMBRA'."
 
 /obj/item/weapon/folder/envelope/rep/Initialize()
 	. = ..()
-	new/obj/item/weapon/paper/umbra(src)
+	new/obj/item/weapon/paper/sierra/umbra(src)
 
-/obj/item/weapon/paper/umbra
+/obj/item/weapon/paper/sierra/umbra
 	name = "UMBRA Protocol"
 	icon = 'maps/sierra/icons/obj/uniques.dmi'
 	icon_state = "paper_words"

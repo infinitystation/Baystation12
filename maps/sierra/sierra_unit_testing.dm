@@ -1,3 +1,6 @@
+/datum/unit_test/station_wires_shall_be_connected
+	exceptions = list(list(29, 99, 2, SOUTH),list(28, 98, 3, NORTH),list(33, 101, 3, WEST),list(33, 105, 3, WEST),list(28, 108, 3, SOUTH))
+
 /datum/map/sierra
 	// Unit test exemptions
 	apc_test_exempt_areas = list(
@@ -21,6 +24,8 @@
 		/area/maintenance/abandoned_compartment = NO_APC,
 		/area/maintenance/abandoned_hydroponics = 0,
 		/area/maintenance/firstdeck/centralport = 0,
+		/area/maintenance/firstdeck/fore = NO_SCRUBBER|NO_VENT,
+		/area/maintenance/abandoned_common = 0,
 		/area/mine/explored = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/mine/unexplored = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/ninja_dojo = NO_SCRUBBER |NO_VENT | NO_APC,
@@ -28,6 +33,12 @@
 		/area/rescue_base = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/shield = NO_SCRUBBER|NO_VENT,
 		/area/shuttle = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/shuttle/escape_pod8 = NO_SCRUBBER|NO_APC,
+		/area/shuttle/escape_pod9 = NO_SCRUBBER|NO_APC,
+		/area/shuttle/escape_pod6 = NO_SCRUBBER|NO_APC,
+		/area/shuttle/escape_pod7 = NO_SCRUBBER|NO_APC,
+		/area/shuttle/escape_pod10 = NO_SCRUBBER|NO_APC,
+		/area/bridge/nano = NO_SCRUBBER|NO_VENT,
 		/area/shuttle/merchant = 0,
 		/area/shuttle/petrov = 0,
 		/area/skipjack_station = NO_SCRUBBER|NO_VENT|NO_APC,
@@ -57,6 +68,7 @@
 		/area/vacant/monitoring = NO_SCRUBBER|NO_VENT,
 		//area/vacant/cabin = 0,
 		/area/rnd/xenobiology/atmos  = NO_SCRUBBER|NO_VENT,
+
 //EXOPLANETS AND SPACE RUINS START HERE,
 		/area/exoplanet          = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/exoplanet/desert   = NO_SCRUBBER|NO_VENT|NO_APC,

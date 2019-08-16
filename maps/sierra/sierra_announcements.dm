@@ -31,8 +31,6 @@
 	unidentified_lifesigns_message = "Обнаружена неопознанная форма жизни на борту %STATION_NAME%. Настоятельно рекомендуется заблокировать все внешние шлюзы и запретить стыковку гражданским судам."
 	unidentified_lifesigns_sound = sound('sound/AI/torch/aliens.ogg', volume = 45)
 
-	xenomorph_spawn_sound = sound('sound/AI/torch/aliens.ogg', volume = 45)
-
 	electrical_storm_moderate_sound = sound('sound/AI/torch/electricalstormmoderate.ogg', volume = 45)
 	electrical_storm_major_sound = sound('sound/AI/torch/electricalstormmajor.ogg', volume = 45)
 
@@ -47,10 +45,12 @@
 
 	var/msg
 	var/crew
+	var/sound = GLOB.using_map.command_report_sound
 	switch(bio_level)
 		if(9)
-			msg = "неопознанная форма жизни. Рекомендуется изолировать неизвестный организм. Это максимальный уровень потенциальной угрозы"
+			msg = "неопознанная форма жизни. Рекомендуется изолировать неизвестный организм и заварить вентиляционные шахты до постановки на содержание. Это максимальный уровень потенциальной угрозы"
 			crew = "Командующему"
+			sound = sound('sound/AI/aliens.ogg', volume = 100)
 		if(8)
 			msg = "враждебные коррозийные организмы. Зафиксировано нарушение структурной целостности переборок"
 			crew = "Инженерному и Охранному"
@@ -73,4 +73,4 @@
 			msg = "мелкие вредители"
 			crew = "Обслуживающему"
 
-	priority_announcement.Announce("Подтверждено наличие объекта [bio_level] уровня биологической угрозы на борту [station_name()] - [msg]. [crew] персоналу требуется предпринять меры по ликвидации угрозы.", "Биоугроза")
+	priority_announcement.Announce("Подтверждено наличие объекта [bio_level] уровня биологической угрозы - [msg]. [crew] персоналу требуется предпринять меры по ликвидации угрозы.", "Биоугроза", new_sound = sound)

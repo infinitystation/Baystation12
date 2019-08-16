@@ -149,7 +149,7 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Drone Malfunction",				/datum/event/rogue_maint_drones/,	10,		list(ASSIGNMENT_ENGINEER = 30)),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Disposals Explosion",			/datum/event/disposals_explosion/,	50,		list(ASSIGNMENT_ENGINEER = 40)),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Brain Expansion",				/datum/event/brain_expansion/,		20,		list(ASSIGNMENT_SCIENTIST = 20)),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Mail Delivery",					/datum/event/mail/,					1,		list(ASSIGNMENT_ANY = 1), 1)
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Mail Delivery",					/datum/event/mail/,					5,		list(ASSIGNMENT_ANY = 1), 1)
 	)
 
 /datum/event_container/moderate
@@ -189,7 +189,8 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Space Vines",						/datum/event/spacevine, 			0,	list(ASSIGNMENT_ENGINEER = 15), 1),
 		new /datum/event_meta/no_overmap(EVENT_LEVEL_MAJOR, "Electrical Storm",		/datum/event/electrical_storm, 		0,	list(ASSIGNMENT_ENGINEER = 10, ASSIGNMENT_JANITOR = 5)),
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Drone Revolution",				/datum/event/rogue_maint_drones/,	0,	list(ASSIGNMENT_ENGINEER = 10,ASSIGNMENT_MEDICAL = 10,ASSIGNMENT_SECURITY = 10)),
-		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Space Cancer Epidemic",			/datum/event/cancer, 				0,	list(ASSIGNMENT_ANY = 5))
+		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Space Cancer Epidemic",			/datum/event/cancer, 				0,	list(ASSIGNMENT_ANY = 5)), //inf,
+		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Alien Infestation",				/datum/event/aliens, 				0,	list(ASSIGNMENT_SECURITY = 10)), //inf,
 	)
 
 

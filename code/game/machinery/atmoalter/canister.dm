@@ -6,6 +6,7 @@
 	var/health = 100.0
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	w_class = ITEM_SIZE_GARGANTUAN
+	construct_state = null
 
 	var/valve_open = 0
 	var/release_pressure = ONE_ATMOSPHERE
@@ -275,11 +276,9 @@ update_flag
 
 	SSnano.update_uis(src) // Update all NanoUIs attached to src
 
-/obj/machinery/portable_atmospherics/canister/attack_ai(var/mob/user as mob)
+/obj/machinery/portable_atmospherics/canister/interface_interact(mob/user)
 	ui_interact(user)
-
-/obj/machinery/portable_atmospherics/canister/attack_hand(var/mob/user as mob)
-	ui_interact(user)
+	return TRUE
 
 /obj/machinery/portable_atmospherics/canister/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
 	// this is the data which will be sent to the ui

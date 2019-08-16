@@ -26,7 +26,7 @@ var/global/list/rad_collectors = list()
 	. = ..()
 	rad_collectors += src
 	component_parts = list(
-		new /obj/item/weapon/circuitboard/rad_collector,
+		new /obj/item/weapon/stock_parts/circuitboard/rad_collector,
 		new /obj/item/weapon/stock_parts/manipulator,
 		new /obj/item/weapon/stock_parts/manipulator,
 		new /obj/item/weapon/stock_parts/capacitor,
@@ -72,20 +72,24 @@ var/global/list/rad_collectors = list()
 		else
 			P.air_adjust_gas("phoron", -0.001*drainratio)
 
-/obj/machinery/power/rad_collector/attack_hand(mob/user as mob)
-	if(anchored)
-		if((stat & BROKEN) || melted)
-			to_chat(user, "<span class='warning'>The [src] is completely destroyed!</span>")
-		if(!src.locked)
-			toggle_power()
-			user.visible_message("[user.name] turns the [src.name] [active? "on":"off"].", \
-			"You turn the [src.name] [active? "on":"off"].")
-			investigate_log("turned [active?"<font color='green'>on</font>":"<font color='red'>off</font>"] by [user.key]. [P?"Fuel: [round(P.air_contents.gas["phoron"]/0.29)]%":"<font color='red'>It is empty</font>"].","singulo")
-			return
-		else
-			to_chat(user, "<span class='warning'>The controls are locked!</span>")
-			return
+/obj/machinery/power/rad_collector/CanUseTopic(mob/user)
+	if(!anchored)
+		return STATUS_CLOSE
+	return ..()
 
+/obj/machinery/power/rad_collector/interface_interact(mob/user)
+	if(!CanInteract(user, DefaultTopicState()))
+		return FALSE
+	. = TRUE
+	if((stat & BROKEN) || melted)
+		to_chat(user, "<span class='warning'>The [src] is completely destroyed!</span>")
+	if(!src.locked)
+		toggle_power()
+		user.visible_message("[user.name] turns the [src.name] [active? "on":"off"].", \
+		"You turn the [src.name] [active? "on":"off"].")
+		investigate_log("turned [active?"<font color='green'>on</font>":"<font color='red'>off</font>"] by [user.key]. [P?"Fuel: [round(P.air_contents.gas["phoron"]/0.29)]%":"<font color='red'>It is empty</font>"].","singulo")
+	else
+		to_chat(user, "<span class='warning'>The controls are locked!</span>")
 
 /obj/machinery/power/rad_collector/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/weapon/tank/phoron))
@@ -147,13 +151,7 @@ var/global/list/rad_collectors = list()
 	if(anchored)
 		to_chat(user, "<span class='warning'>The [src] needs to be unsecured from the floor first.</span>")
 		return
-	if(default_deconstruction_screwdriver(user, W))
-		return
-	if(default_deconstruction_crowbar(user, W))
-		return
-	if(default_part_replacement(user, W))
-		return
-	return
+	return ..()
 
 /obj/machinery/power/rad_collector/examine(mob/user)
 	if (..(user, 3) && !(stat & BROKEN))

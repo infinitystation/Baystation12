@@ -27,6 +27,7 @@ var/global/datum/ntnet/ntnet_global = new()
 
 	var/intrusion_detection_enabled = 1 		// Whether the IDS warning system is enabled
 	var/intrusion_detection_alarm = 0			// Set when there is an IDS warning due to malicious (antag) software.
+	var/airlock_override_key = "" //inf
 
 
 // If new NTNet datum is spawned, it replaces the old one.
@@ -40,14 +41,15 @@ var/global/datum/ntnet/ntnet_global = new()
 	build_news_list()
 	build_emails_list()
 	build_reports_list()
+	airlock_override_key = GenerateCode()//inf
 	add_log("NTNet logging system activated.")
 
-/datum/ntnet/proc/add_log_with_ids_check(var/log_string, var/obj/item/weapon/computer_hardware/network_card/source = null)
+/datum/ntnet/proc/add_log_with_ids_check(var/log_string, var/obj/item/weapon/stock_parts/computer/network_card/source = null)
 	if(intrusion_detection_enabled)
 		add_log(log_string, source)
 
 // Simplified logging: Adds a log. log_string is mandatory parameter, source is optional.
-/datum/ntnet/proc/add_log(var/log_string, var/obj/item/weapon/computer_hardware/network_card/source = null)
+/datum/ntnet/proc/add_log(var/log_string, var/obj/item/weapon/stock_parts/computer/network_card/source = null)
 	var/log_text = "[stationtime2text()] - "
 	if(source)
 		log_text += "[source.get_network_tag()] - "
@@ -266,3 +268,10 @@ var/global/datum/ntnet/ntnet_global = new()
 		ntnet_global.create_email(src, newname, domain)
 	else
 		ntnet_global.rename_email(src, old_email, newname, domain)
+
+//[inf]
+/datum/ntnet/proc/GenerateCode()
+	var/Key = pick(GLOB.greek_letters)
+	Key += "[rand(1,99)]"
+	return Key
+//[/inf]

@@ -385,7 +385,6 @@
 
 /obj/item/stack/material/titanium
 	name = "titanium"
-	icon = 'infinity/icons/obj/items.dmi'
 	icon_state = "sheet-titanium"
 	item_state = "sheet-metal"
 	default_type = "titanium"
@@ -458,6 +457,16 @@
 
 /obj/item/stack/material/wood/bamboo/fifty
 	amount = 50
+
+/obj/item/stack/material/wood/yew
+	name = "yew plank"
+	default_type = MATERIAL_YEW
+
+/obj/item/stack/material/wood/yew/ten
+	amount = 10
+
+/obj/item/stack/material/wood/yew/twentyfive
+	amount = 25
 
 /obj/item/stack/material/cloth
 	name = "cloth"

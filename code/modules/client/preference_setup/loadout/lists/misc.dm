@@ -118,7 +118,12 @@
 	plushes["spider plush"] = /obj/item/toy/plushie/spider
 	plushes["farwa plush"] = /obj/item/toy/plushie/farwa
 	gear_tweaks += new /datum/gear_tweak/path(plushes)
-
+/*
+/datum/gear/workvisa
+	display_name = "work visa"
+	description = "A work visa issued by the Sol Central Government for the purpose of work."
+	path = /obj/item/weapon/paper/workvisa
+*/
 /datum/gear/mirror
 	display_name = "handheld mirror"
 	sort_category = "Cosmetics"
@@ -127,15 +132,15 @@
 /datum/gear/lipstick
 	display_name = "lipstick selection"
 	path = /obj/item/weapon/lipstick
-	sort_category = "Cosmetics"
+	sort_category = "Cosmetics"//inf
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/comb
 	display_name = "plastic comb"
 	path = /obj/item/weapon/haircomb
-	sort_category = "Cosmetics"
+	sort_category = "Cosmetics"//inf
 	flags = GEAR_HAS_COLOR_SELECTION
-
+//[inf]
 /datum/gear/brush
 	display_name = "hairbrush"
 	path = /obj/item/weapon/haircomb/brush
@@ -145,7 +150,7 @@
 	display_name = "deodorant"
 	path = /obj/item/weapon/reagent_containers/spray/cleaner/deodorant
 	sort_category = "Cosmetics"
-
+//[/inf]
 /datum/gear/mask
 	display_name = "sterile mask"
 	path = /obj/item/clothing/mask/surgical
@@ -221,14 +226,26 @@
 	path = /obj/item/clothing/mask/smokable/ecig/deluxe
 
 /datum/gear/bible
-	display_name = "bible"
+	display_name = "holy book"
 	path = /obj/item/weapon/storage/bible
 	cost = 2
 
+/datum/gear/bible/New()
+	..()
+	var/books = list()
+	books["bible (adjustable)"] = /obj/item/weapon/storage/bible
+	books["Bible"] = /obj/item/weapon/storage/bible/bible
+	books["Tanakh"] = /obj/item/weapon/storage/bible/tanakh
+	books["Quran"] = /obj/item/weapon/storage/bible/quran
+	books["Kitab-i-Aqdas"] = /obj/item/weapon/storage/bible/aqdas
+	books["Kojiki"] = /obj/item/weapon/storage/bible/kojiki
+	gear_tweaks += new/datum/gear_tweak/path(books)
+
+//[INF]
 /datum/gear/mind_healer
 	display_name = "Methylphenidate, pill bottle"
 	path = /obj/item/weapon/storage/pill_bottle/methylphenidate
-
+//[/INF]
 /datum/gear/swiss
 	display_name = "multi-tool"
 	path = /obj/item/weapon/material/knife/folding/swiss

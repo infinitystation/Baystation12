@@ -213,14 +213,14 @@
 
 /obj/item/organ/internal/brain/take_internal_damage(var/damage, var/silent)
 	set waitfor = 0
-	..(damage * 3, silent) //inf-dev
-	if(damage >= 10) //This probably won't be triggered by oxyloss or mercury. Probably.
-		var/damage_secondary = damage * 0.20
+	..(damage * 2, silent) //inf-dev
+	if(damage / 2 >= 10) //This probably won't be triggered by oxyloss or mercury. Probably.
+		var/damage_secondary = damage / 2 * 0.20
 		owner.flash_eyes()
 		owner.eye_blurry += damage_secondary
 		owner.confused += damage_secondary * 2
 		owner.Paralyse(damage_secondary)
-		owner.Weaken(round(damage, 1))
+		owner.Weaken(round(damage / 2, 1))
 		if(prob(30))
 			addtimer(CALLBACK(src, .proc/brain_damage_callback, damage), rand(6, 20) SECONDS, TIMER_UNIQUE)
 

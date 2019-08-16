@@ -146,10 +146,11 @@ var/const/NO_EMAG_ACT = -50
 	set category = "Chameleon Items"
 	set src in usr
 
-	if(!ispath(card_choices[picked]))
-		return
+	if (!(usr.incapacitated()))
+		if(!ispath(card_choices[picked]))
+			return
 
-	disguise(card_choices[picked], usr)
+		disguise(card_choices[picked], usr)
 
 /obj/item/weapon/card/emag/examine(mob/user)
 	. = ..()
@@ -162,13 +163,13 @@ var/const/NO_EMAG_ACT = -50
 	icon_state = "base"
 	item_state = "card-id"
 	slot_flags = SLOT_ID
-
+	//[inf]
 	sprite_sheets = list(
 		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_id_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/id.dmi'
 		)
-
-	var/access = list()
+	//[/inf]
+	var/list/access = list()
 	var/registered_name = "Unknown" // The name registered_name on the card
 	var/associated_account_number = 0
 	var/list/associated_email_login = list("login" = "", "password" = "")
@@ -417,6 +418,14 @@ var/const/NO_EMAG_ACT = -50
 		access_cargo, access_mailsorting, access_RC_announce, access_keycard_auth,
 		access_external_airlocks, access_eva, access_cent_creed
 		)
+
+/obj/item/weapon/card/id/foundation_civilian
+	name = "operant registration card"
+	desc = "A registration card in a faux-leather case. It marks the named individual as a registered, law-abiding psionic."
+	icon_state = "warrantcard_civ"
+
+/obj/item/weapon/card/id/foundation_civilian/on_update_icon()
+	return
 
 /obj/item/weapon/card/id/foundation
 	name = "\improper Foundation warrant card"

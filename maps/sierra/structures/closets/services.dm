@@ -74,7 +74,7 @@
 		/obj/item/clothing/glasses/hud/janitor,
 		/obj/item/weapon/storage/belt/janitor,
 		/obj/item/clothing/mask/plunger,
-		/obj/item/weapon/soap/nanotrasen
+		/obj/item/weapon/soap
 	)
 
 /obj/structure/closet/secure_closet/bar_sierra
@@ -99,7 +99,7 @@
 		/obj/item/weapon/storage/pill_bottle/dylovene,
 		/obj/item/weapon/reagent_containers/spray/cleaner,
 		/obj/item/weapon/reagent_containers/glass/rag,
-		/obj/item/weapon/paper/bar_permit,
+		/obj/item/weapon/paper/sierra/bar_permit,
 		/obj/item/weapon/gun/projectile/shotgun/doublebarrel/empty
 	)
 

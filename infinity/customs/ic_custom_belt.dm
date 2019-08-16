@@ -28,6 +28,8 @@
 	for(var/obj/item/I in contents)
 		if(istype(I, /obj/item/device/integrated_electronics/wirer)) //better than 4 same icon for every icon_state
 			overlays += image('infinity/icons/customs/ic_belt_custom.dmi', "wirer")
+		else if(istype(I, /obj/item/device/integrated_circuit_printer/custom))	//bad, when obj and it overlay icons in one file
+			overlays += image('infinity/icons/customs/ic_belt_custom.dmi', "circuit_printer_custom_overlay")
 		else if(istype(I, /obj/item/device))
 			overlays += image('infinity/icons/customs/ic_belt_custom.dmi', "[I.icon_state]")
 

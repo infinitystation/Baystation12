@@ -152,6 +152,7 @@
 	var/up_description
 	var/down_description
 	var/psionic_control_level = PSI_IMPLANT_WARN
+	var/airlock_override = 0//inf
 
 // Called when we're switching from a lower security level to this one.
 /decl/security_level/proc/switching_up_to()
@@ -242,6 +243,7 @@
 	overlay_status_display = "status_display_red"
 
 	psionic_control_level = PSI_IMPLANT_DISABLED
+	airlock_override = 0//inf
 
 	up_description = "There is an immediate serious threat to the station. Security may have weapons unholstered at all times. Random searches are allowed and advised."
 	down_description = "The self-destruct mechanism has been deactivated, there is still however an immediate serious threat to the station. Security may have weapons unholstered at all times, random searches are allowed and advised."

@@ -27,7 +27,8 @@
 	var/global/list/wall_stripe_cache = list()
 	var/list/blend_turfs = list(/turf/simulated/wall/cult, /turf/simulated/wall/wood, /turf/simulated/wall/walnut, /turf/simulated/wall/maple, /turf/simulated/wall/mahogany, /turf/simulated/wall/ebony)
 	var/list/blend_objects = list(/obj/machinery/door, /obj/structure/wall_frame, /obj/structure/grille, /obj/structure/window/reinforced/full, /obj/structure/window/reinforced/polarized/full, /obj/structure/window/shuttle, ,/obj/structure/window/phoronbasic/full, /obj/structure/window/phoronreinforced/full) // Objects which to blend with
-	var/list/noblend_objects = list(/obj/machinery/door/window) //Objects to avoid blending with (such as children of listed blend objects.
+//	var/list/noblend_objects = list(/obj/machinery/door/window) //Objects to avoid blending with (such as children of listed blend objects.
+	var/list/noblend_objects = list(/obj/machinery/door/window, /obj/machinery/door/firedoor/border_only) //INF
 
 /turf/simulated/wall/New(var/newloc, var/materialtype, var/rmaterialtype)
 	..(newloc)
@@ -76,6 +77,9 @@
 		burn(500)
 
 	var/proj_damage = Proj.get_structure_damage()
+
+	if(Proj.ricochet_sounds && prob(15))
+		playsound(src, pick(Proj.ricochet_sounds), 100, 1)
 
 	if(reinf_material)
 		if(Proj.damage_type == BURN)
@@ -290,3 +294,6 @@
 
 /turf/simulated/wall/can_engrave()
 	return (material && material.hardness >= 10 && material.hardness <= 100)
+
+/turf/simulated/wall/is_wall()
+	return TRUE

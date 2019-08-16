@@ -223,19 +223,22 @@
 	desc = "A somewhat tacky voidsuit helmet, a fact mitigated by heavy armor plating."
 	icon_state = "rig0-secalt"
 	item_state = "secalt_helm"
-	armor = list(melee = 70, bullet = 20, laser = 30, energy = 5, bomb = 35, bio = 100, rad = 10)
-	sprite_sheets = list(
+	armor = list(melee = 40, bullet = 40, laser = 40, energy = 30, bomb = 35, bio = 100, rad = 10) //inf
+//inf, was     armor = list(melee = 70, bullet = 20, laser = 30, energy = 5, bomb = 35, bio = 100, rad = 10)
+
+/*inf	sprite_sheets = list(
 		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_head_skrell.dmi',
 		)
 	sprite_sheets_obj = list(
 		SPECIES_SKRELL = 'icons/obj/clothing/species/skrell/obj_head_skrell.dmi',
 		)
+*/inf
 
 /obj/item/clothing/suit/space/void/security/alt
 	icon_state = "rig-secalt"
 	name = "riot security voidsuit"
 	desc = "A heavily armored voidsuit, designed to intimidate people who find black intimidating. Surprisingly slimming."
-	armor = list(melee = 70, bullet = 20, laser = 30, energy = 5, bomb = 35, bio = 100, rad = 10)
+	armor = list(melee = 40, bullet = 40, laser = 40, energy = 30, bomb = 35, bio = 100, rad = 10)
 	allowed = list(/obj/item/weapon/gun,/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit,/obj/item/weapon/melee/baton)
 
 /obj/item/clothing/suit/space/void/security/alt/prepared
@@ -306,6 +309,7 @@
 	name = "pilot voidsuit"
 	armor = list(melee = 30, bullet = 5, laser = 15,energy = 5, bomb = 5, bio = 100, rad = 50)
 	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit,/obj/item/weapon/storage/toolbox,/obj/item/weapon/storage/briefcase/inflatable,/obj/item/device/t_scanner,/obj/item/weapon/rcd)
+	tint = 1 //INF, WAS NOTHING (0)
 
 /obj/item/clothing/suit/space/void/pilot/prepared
 	helmet = /obj/item/clothing/head/helmet/space/void/pilot

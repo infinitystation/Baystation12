@@ -124,7 +124,7 @@
 #define WATER_LATENT_HEAT 9500 // How much heat is removed when applied to a hot turf, in J/unit (9500 makes 120 u of water roughly equivalent to 2L
 /datum/reagent/water
 	name = "Water"
-	description = "A ubiquitous chemical substance that is composed of hydrogen and oxygen."
+	description = "A ubiquitous chemical substance composed of hydrogen and oxygen."
 	reagent_state = LIQUID
 	color = "#0064c877"
 	scannable = 1
@@ -147,6 +147,9 @@
 	if(!istype(M, /mob/living/carbon/slime) && alien != IS_SLIME)
 		return
 	M.adjustToxLoss(2 * removed)
+
+/datum/reagent/water/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+	M.adjust_hydration(removed * 10)
 
 /datum/reagent/water/touch_turf(var/turf/simulated/T)
 	if(!istype(T))
@@ -221,6 +224,7 @@
 	reagent_state = SOLID
 	color = "#619494"
 	adj_temp = -5
+	hydration = 10
 
 	glass_name = "ice"
 	glass_desc = "Generally, you're supposed to put something else in there too..."

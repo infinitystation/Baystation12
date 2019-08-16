@@ -17,6 +17,7 @@
 	sprite_sheets = list(
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi'
 		)
+	tint = 1 //INF, WAS NOTHING (0)
 
 /obj/item/clothing/suit/space/void/wizard
 	icon_state = "rig-wiz"

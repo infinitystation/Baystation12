@@ -13,14 +13,6 @@
 	icon_state = "talisman-4"
 
 
-//Resomi scarf
-/obj/item/clothing/accessory/scarf/resomi
-	name = "small mantle"
-	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
-	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
-	icon_state = "small_mantle"
-	species_restricted = list(SPECIES_RESOMI)
-
 /obj/item/clothing/accessory/scarf/red
 	name = "red striped scarf"
 	icon = 'infinity/icons/obj/clothing/TG_copy/neck.dmi'

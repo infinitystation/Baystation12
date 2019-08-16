@@ -65,6 +65,7 @@
 	item_state = "snorkel"
 	flags_inv = HIDEFACE
 	body_parts_covered = 0
+	tint = 1  //INF, WAS NOTHING(0)
 
 //scarves (fit in in mask slot)
 //None of these actually have on-mob sprites...
@@ -118,6 +119,7 @@
 	w_class = ITEM_SIZE_SMALL
 	siemens_coefficient = 0.9
 	body_parts_covered = HEAD|FACE|EYES
+	tint = 1  //INF, WAS NOTHING(0)
 
 /obj/item/clothing/mask/horsehead
 	name = "horse head mask"
@@ -128,6 +130,7 @@
 	body_parts_covered = HEAD|FACE|EYES
 	w_class = ITEM_SIZE_SMALL
 	siemens_coefficient = 0.9
+	tint = 1  //INF, WAS NOTHING(0)
 
 /obj/item/clothing/mask/horsehead/New()
 	..()
@@ -266,6 +269,7 @@
 	item_state = "spirit_mask"
 	flags_inv = HIDEFACE
 	body_parts_covered = FACE|EYES
+	tint = 1  //INF, WAS NOTHING(0)
 
 // Bandanas below
 /obj/item/clothing/mask/bandana

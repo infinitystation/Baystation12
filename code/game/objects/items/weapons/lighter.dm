@@ -29,7 +29,8 @@
 	lit = 1
 	update_icon()
 	light_effects(user)
-	set_light(0.6, 0.5, 2)
+//inf	set_light(0.6, 0.5, 2)
+	set_light(0.6, 0.5, 2,,LIGHT_COLOR_FIRE) //inf
 	START_PROCESSING(SSobj, src)
 
 /obj/item/weapon/flame/lighter/proc/light_effects(mob/living/carbon/user)

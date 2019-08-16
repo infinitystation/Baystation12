@@ -90,7 +90,9 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 	var/ip
 
 	if(ismob(banned_mob))
-		ckey = banned_mob.ckey
+		ckey = LAST_CKEY(banned_mob)
+		computerid = banned_mob.computer_id
+		ip = banned_mob.lastKnownIP
 		if(banned_mob.client)
 			computerid = banned_mob.client.computer_id
 			ip = banned_mob.client.address
@@ -113,9 +115,9 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 		else
 			adminwho += ", [C]"
 
+	var/reason_public = sanitize_a0(reason)
 	reason = sql_sanitize_text(reason)
 	reason = sanitize_a0(reason)
-	var/reason_public = sanitize_a0(reason)
 
 	if(!computerid)
 		computerid = "0"
@@ -134,17 +136,17 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 	message_admins("[setter] has added a [bantype_str] for [ckey] [(job)?"([job])":""] [(duration > 0)?"([duration] minutes)":""] with the reason: \"[reason]\" to the ban database.",1)
 	switch(bantype_str)
 		if("PERMABAN")
-			to_world(SPAN_NOTICE("<b>BAN: Администратор [setter] ЖЕСТКО и НАВСЕГДА заблокировал(а) игрока [ckey]. Причина: \"[reason_public]\"</b>"))
-			send2adminlogirc("BAN: Администратор [setter_key] ЖЕСТКО и НАВСЕГДА заблокировал(а) игрока [ckey]. Причина: \"```[reason_public]```\"")
+			to_world(SPAN_NOTICE("<b>BAN: Администратор [setter] ЖЕСТКО и НАВСЕГДА заблокировал игрока [ckey]. Причина: \"[reason_public]\"</b>"))
+			send2adminlogirc("BAN: Администратор [setter_key] ЖЕСТКО и НАВСЕГДА заблокировал игрока [ckey]. Причина: \"[reason]\"")
 		if("TEMPBAN")
-			to_world(SPAN_NOTICE("<b>BAN: Администратор [setter] ЖЕСТКО заблокировал(а) игрока [ckey]. Причина: \"[reason_public]\"; Срок - [duration] минут.</b>"))
-			send2adminlogirc("BAN: Администратор [setter_key] ЖЕСТКО заблокировал(а) игрока [ckey]. Причина: \"```[reason_public]```\"; Срок - [duration] минут.")
+			to_world(SPAN_NOTICE("<b>BAN: Администратор [setter] ЖЕСТКО заблокировал игрока [ckey]. Причина: \"[reason_public]\"; Срок - [duration] минут.</b>"))
+			send2adminlogirc("BAN: Администратор [setter_key] ЖЕСТКО заблокировал игрока [ckey]. Причина: \"[reason]\"; Срок - [duration] минут.")
 		if("SOFT_PERMBAN")
-			to_world(SPAN_NOTICE("<b>BAN: Администратор [setter] перманентно отправил(а) игрока [ckey] в бан-тюрьму. Причина: \"[reason_public]\"</b>"))
-			send2adminlogirc("BAN: Администратор [setter_key] перманентно отправил(а) игрока [ckey] в бан-тюрьму. Причина: \"```[reason_public]```\"")
+			to_world(SPAN_NOTICE("<b>BAN: Администратор [setter] перманентно отправил игрока [ckey] в бан-тюрьму. Причина: \"[reason_public]\"</b>"))
+			send2adminlogirc("BAN: Администратор [setter_key] перманентно отправил игрока [ckey] в бан-тюрьму. Причина: \"[reason]\"")
 		if("SOFT_TEMPBAN")
-			to_world(SPAN_NOTICE("<b>BAN: Администратор [setter] временно отправил(а) игрока [ckey] в бан-тюрьму. Причина: \"[reason_public]\"; Срок - [duration] минут.</b>"))
-			send2adminlogirc("BAN: Администратор [setter_key] временно отправил(а) игрока [ckey] в бан-тюрьму. Причина: \"```[reason_public]```\"; Срок - [duration] минут.")
+			to_world(SPAN_NOTICE("<b>BAN: Администратор [setter] временно отправил игрока [ckey] в бан-тюрьму. Причина: \"[reason_public]\"; Срок - [duration] минут.</b>"))
+			send2adminlogirc("BAN: Администратор [setter_key] временно отправил игрока [ckey] в бан-тюрьму. Причина: \"[reason]\"; Срок - [duration] минут.")
 	return 1
 
 

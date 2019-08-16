@@ -14,7 +14,8 @@
 		create_default(player.current)
 	else
 		create_antagonist(player, move_to_spawn, do_not_announce, preserve_appearance)
-		skill_setter.initialize_skills(player.current.skillset)
+		if(istype(skill_setter))
+			skill_setter.initialize_skills(player.current.skillset)
 		if(!do_not_equip)
 			equip(player.current)
 
@@ -43,9 +44,16 @@
 		player.current.client.verbs += /client/proc/aooc
 
 	spawn(1 SECOND) //Added a delay so that this should pop up at the bottom and not the top of the text flood the new antag gets.
-		to_chat(player.current, "<span class='notice'>Once you decide on a goal to pursue, you can optionally display it to \
+//inf		to_chat(player.current, "<span class='notice'>Once you decide on a goal to pursue, you can optionally display it to \
 			everyone at the end of the shift with the <b>Set Ambition</b> verb, located in the IC tab.  You can change this at any time, \
 			and it otherwise has no bearing on your round.</span>")
+		to_chat(player.current, SPAN_NOTICE("Вы можете самосто&#255;тельно назначить себе особые цели, которые будут видны \
+		всем игрокам после завершени&#255; раунда. Если ваши основные цели вызывают у вас отторжение и вы хотели бы \
+		выполнить что-то <u>более интересное</u>, то вы можете использовать <b>Set Ambition</b> дл&#255; выставлени&#255; \
+		себе желаемых целей (они могут отличатьс&#255; от стандартных - про&#255;вите фантазию).<br>\
+		Старайтесь действовать после получаса игры - до этого планируйте и делайте вид, что вы - обычный член персонала. \
+		Не заставл&#255;йте экипаж скучать 2 часа, чтобы вы в последние 10 минут попыталсь бесславно выполнить механо-задани&#255;."))
+
 	player.current.verbs += /mob/living/proc/set_ambition
 
 	// Handle only adding a mind and not bothering with gear etc.

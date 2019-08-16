@@ -66,7 +66,7 @@
 		D.forceMove(src)
 		disk = D
 
-/obj/machinery/media/music_writer/attack_hand(mob/user)
+/obj/machinery/media/music_writer/physical_attack_hand(mob/user)
 	if(locate(user, src.loc))
 		interact(user)
 

@@ -79,7 +79,7 @@
 	name = initial(d.name)
 	icon_state = initial(d.icon)
 	icon_state = initial(d.icon_state)
-
+/* //inf
 /datum/detective_gun_skin/colt
 	name = "\improper Colt M1911"
 	icon_state = "colt"
@@ -108,3 +108,24 @@
 	name = "\improper H&K VP"
 	icon_state = "VP78"
 	icon = 'icons/obj/guns/pistol.dmi'
+*/ //inf
+// inf ahead
+
+/datum/detective_gun_skin/mk_standard
+	name = "\improper NT MK 58"
+	icon_state = "secguncomp"
+
+/datum/detective_gun_skin/colt
+	name = "\improper Colt M1911"
+	icon_state = "pistol4"
+	icon = 'icons/obj/guns/pistol_throwback.dmi'
+
+/datum/detective_gun_skin/usp
+	name = "\improper USP"
+	icon_state = "pistol2"
+	icon = 'icons/obj/guns/pistol_throwback.dmi'
+
+/datum/detective_gun_skin/vp
+	name = "\improper H&K VP"
+	icon_state = "pistol3"
+	icon = 'icons/obj/guns/pistol_throwback.dmi'

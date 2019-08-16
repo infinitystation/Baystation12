@@ -140,6 +140,11 @@ ckey: arbuzpersikov
 character_name: Xuel-Qermzix Zixxrim
 item_path: /obj/item/music_player/csplayer/custom_tape
 }
+{
+ckey: evgen00751
+character_name: Andy Robberts
+item_path: /obj/item/music_player/custom_tape
+}
 
 #	SHORT ITEMS HERE (3-4)
 
@@ -340,18 +345,23 @@ item_path: /obj/item/clothing/glasses/sunglasses/blindfold/fake
 #ckey: mceisler
 #character_name: Vladimir Bloodenheart
 #item_path: /obj/item/custkit/sprite/white_card
-#req_access: 67
+#req_access: "ACCESS_HEADS"
 #}
 {
 ckey: arhod
 character_name: Amr'in Battrral
 item_path: /obj/item/custkit/messith
-req_access: 3
+req_access: "ACCESS_ARMORY"
 }
 {
 ckey: arhod
 character_name: Amr'in Battrral
-item_path: /obj/item/weapon/flame/lighter/zippo/custom/messotha/arhod
+item_path: /obj/item/weapon/flame/lighter/zippo/custom/messotha
+}
+{
+ckey: arhod
+character_name: Amr'in Battrral
+item_path: /obj/item/clothing/accessory/necklace/messa
 }
 {
 ckey: laxesh
@@ -372,9 +382,27 @@ item_path: /obj/item/clothing/mask/gas/custom
 req_access: "ACCESS_SECURITY"
 }
 {
+ckey: bob46
+character_name: Hans Becker
+item_path: /obj/item/clothing/mask/gas/custom
+req_access: "ACCESS_SECURITY"
+}
+{
 ckey: jacking
-character_name: James Oscar
-item_path: /obj/item/clothing/mask/gas/gm15m
+character_name: Jack Fisher
+item_path: /obj/item/clothing/glasses/sunglasses/sechud/toggle/stv
+req_access: "ACCESS_SECURITY"
+}
+{
+ckey: jacking
+character_name: Alexey Makarov
+item_path: /obj/item/clothing/mask/gas/custom
+req_access: "ACCESS_SECURITY"
+}
+{
+ckey: jacking
+character_name: Alexey Makarov
+item_path: /obj/item/clothing/head/helmet/x_four
 req_access: "ACCESS_SECURITY"
 }
 {
@@ -384,8 +412,8 @@ item_path: /obj/item/clothing/under/custom_flunif
 }
 {
 ckey: jacking
-character_name: James Oscar
-item_path: /obj/item/clothing/head/helmet/x_four
+character_name: Jon Obrayn
+item_path: /obj/item/weapon/storage/backpack/dufflebag/biohazard/jacking
 }
 {
 ckey: warfoxy
@@ -432,12 +460,6 @@ character_name: Shizukana Hikaro
 item_path: /obj/item/weapon/clothingbag/quiet_set
 }
 {
-ckey: jacking
-character_name: Jack Fisher
-item_path: /obj/item/clothing/glasses/sunglasses/sechud/toggle/stv
-req_access: "ACCESS_SECURITY"
-}
-{
 ckey: he11d1ver
 character_name: Aard Barnes
 item_path: /obj/item/clothing/head/helmet/ronin_helmet
@@ -447,11 +469,6 @@ req_access: "ACCESS_SECURITY"
 ckey: chowny
 character_name: Alice Goldstain
 item_path: /obj/item/weapon/clothingbag/chowny_clothing
-}
-{
-ckey: jacking
-character_name: Jon Obrayn
-item_path: /obj/item/weapon/storage/backpack/dufflebag/biohazard/jacking
 }
 {
 ckey: forrya
@@ -468,15 +485,15 @@ ckey: farwa87
 character_name: Alexandra Price
 item_path: /obj/item/toy/plushie/jones
 }
+
+#	MEDIUM ITEMS HERE (5-6)
+
 {
 ckey: evgen00751
 character_name: Andy Robberts
 item_path: /obj/item/device/synthesized_instrument/guitar/multi/eguitar
 item_desc: An electric guitar with text 'With love from Rey <З'.
 }
-
-#	MEDIUM ITEMS HERE (5-6)
-
 {
 ckey: parasoul
 character_name: Krieg Jaeger

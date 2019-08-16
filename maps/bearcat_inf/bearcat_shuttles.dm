@@ -3,15 +3,14 @@
 /datum/shuttle/autodock/multi/lift
 	name = "Cargo Lift"
 	warmup_time = 3
-	move_time = 0
 	destination_tags = list(
 		"nav_bearcat_lift_top",
 		"nav_bearcat_lift_middle",
 		"nav_bearcat_lift_bottom"
 		)
+	ceiling_type = null
 	shuttle_area = /area/ship/scrap/shuttle/lift
 	current_location = "nav_bearcat_lift_bottom"
-	landmark_transition = null
 	sound_takeoff = 'sound/effects/lift_heavy_start.ogg'
 	sound_landing = 'sound/effects/lift_heavy_stop.ogg'
 	knockdown = 0
@@ -19,47 +18,48 @@
 /obj/machinery/computer/shuttle_control/multi/lift
 	name = "cargo lift controls"
 	shuttle_tag = "Cargo Lift"
+	ui_template = "shuttle_control_console_multi_lift.tmpl"
 	icon_state = "tiny"
 	icon_keyboard = "tiny_keyboard"
 	icon_screen = "lift"
-	density = 0
+
 //Lift's personal landmarkers
 /obj/effect/shuttle_landmark/lift/top
 	name = "Top Deck"
 	landmark_tag = "nav_bearcat_lift_top"
 	base_turf = /turf/simulated/open
-	base_area = /area/ship/scrap/crew/hallway/port
-	flags = SLANDMARK_FLAG_AUTOSET
+	base_area = /area/ship/scrap/hallway/port/upper
 
 /obj/effect/shuttle_landmark/lift/middle
 	name = "Middle Deck"
 	landmark_tag = "nav_bearcat_lift_middle"
 	base_turf = /turf/simulated/open
-	base_area = /area/ship/scrap/cargo
-	flags = SLANDMARK_FLAG_AUTOSET
+	base_area = /area/ship/scrap/cargo/upper
 
 /obj/effect/shuttle_landmark/lift/bottom
 	name = "Lower Deck"
 	landmark_tag = "nav_bearcat_lift_bottom"
-	base_area = /area/ship/scrap/cargo/lower
 	base_turf = /turf/simulated/floor
+	base_area = /area/ship/scrap/cargo/lower
 
 //Bearcat's exploration
-/* До лучших времен ~Laxesh
 /datum/shuttle/autodock/overmap/exploration
 	name = "Exploration Shuttle"
-	shuttle_area = /area/ship/scrap/shuttle/outgoing
+	shuttle_area = list(/area/ship/scrap/shuttle/outgoing)
 	dock_target = "bearcat_shuttle"
 	current_location = "nav_bearcat_port_dock_shuttle"
+	landmark_transition = "exploration_transit"
+	logging_access = access_heads
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling/bearcat
+	range = 1
+	fuel_consumption = 3
 	move_time = 25
 	warmup_time = 5
-	fuel_consumption = 3
-	landmark_transition = "exploration_transit"
 
 /obj/machinery/computer/shuttle_control/explore/bearcat
-	name = "exploration shuttle console"
+	name = "shuttle console"
 	shuttle_tag = "Exploration Shuttle"
-*/
+
 //Raiders' shuttle
 /datum/shuttle/autodock/multi/antag/skipjack
 	name = "Skipjack"
@@ -74,7 +74,7 @@
 		"nav_lost_supply_base_antag",
 		"nav_smugglers_antag"
 		)
-	shuttle_area =  /area/skipjack_station/start
+	shuttle_area = /area/skipjack_station/start
 	dock_target = "skipjack_shuttle"
 	current_location = "nav_skipjack_start"
 	landmark_transition = "nav_skipjack_transition"
@@ -128,6 +128,10 @@
 /obj/effect/shuttle_landmark/below_deck_bow
 	name = "Near CSV Bearcat Bow"
 	landmark_tag = "nav_bearcat_below_bow"
+
+/obj/effect/shuttle_landmark/exploration
+	name = "Exploration Shuttle"
+	landmark_tag = "exploration_transit"
 
 /obj/effect/shuttle_landmark/exploration/transit
 	name = "In Transit"

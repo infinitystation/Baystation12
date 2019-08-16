@@ -18,7 +18,7 @@
 	return 1
 
 /datum/unit_test/jobs_shall_have_a_HUD_icon
-	name = "JOB: Shall have a HUD icon"
+	name = "JOBS: Shall have a HUD icon"
 
 /datum/unit_test/jobs_shall_have_a_HUD_icon/start_test()
 	var/failed_jobs = 0

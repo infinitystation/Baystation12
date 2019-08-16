@@ -1,4 +1,4 @@
-/obj/item/weapon/circuitboard/pile_ripper
+/obj/item/weapon/stock_parts/circuitboard/pile_ripper
 	name = "Circuit board (Pile Ripper)"
 	board_type = "machine"
 	build_path = /obj/machinery/pile_ripper
@@ -26,7 +26,7 @@
 	// On us
 	. = ..()
 	component_parts = list()
-	component_parts += new /obj/item/weapon/circuitboard/pile_ripper(null)
+	component_parts += new /obj/item/weapon/stock_parts/circuitboard/pile_ripper(null)
 	component_parts += new /obj/item/weapon/stock_parts/manipulator(null)
 	RefreshParts()
 	update_icon()
@@ -89,18 +89,7 @@
 	if (istype(I, /obj/item/weapon/card/emag))
 		emag_act(user)
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-
-	if(default_deconstruction_screwdriver(user, I))
-		return
-
-	if(default_part_replacement(user, I))
-		return
-
-	if(default_deconstruction_crowbar(user, I))
-		return
-
-	else
-		default_deconstruction_crowbar(user,I)
+	return ..()
 
 /obj/machinery/pile_ripper/emag_act(mob/user)
 	if(!emagged)

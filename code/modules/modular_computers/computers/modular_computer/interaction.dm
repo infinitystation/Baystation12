@@ -174,7 +174,13 @@
 			turn_on(user)
 
 /obj/item/modular_computer/attack_ai(var/mob/user)
-	return attack_self(user)
+	if(!enabled && screen_on)
+		return attack_self(user)
+	switch(alert("Open Terminal or interact with it?", "Open Terminal or interact with it?", "Interact", "Terminal"))
+		if("Interact")
+			return attack_self(user)
+		if("Terminal")
+			return open_terminal(user)
 
 /obj/item/modular_computer/attack_hand(var/mob/user)
 	if(anchored)
@@ -233,8 +239,8 @@
 	if(!modifiable)
 		return ..()
 
-	if(istype(W, /obj/item/weapon/computer_hardware))
-		var/obj/item/weapon/computer_hardware/C = W
+	if(istype(W, /obj/item/weapon/stock_parts/computer))
+		var/obj/item/weapon/stock_parts/computer/C = W
 		if(C.hardware_size <= max_hardware_size)
 			try_install_component(user, C)
 		else
@@ -270,7 +276,7 @@
 			to_chat(user, "This device doesn't have any components installed.")
 			return
 		var/list/component_names = list()
-		for(var/obj/item/weapon/computer_hardware/H in all_components)
+		for(var/obj/item/weapon/stock_parts/computer/H in all_components)
 			component_names.Add(H.name)
 
 		var/choice = input(usr, "Which component do you want to uninstall?", "Computer maintenance", null) as null|anything in component_names
@@ -281,7 +287,7 @@
 		if(!Adjacent(usr))
 			return
 
-		var/obj/item/weapon/computer_hardware/H = find_hardware_by_name(choice)
+		var/obj/item/weapon/stock_parts/computer/H = find_hardware_by_name(choice)
 
 		if(!H)
 			return
@@ -312,7 +318,7 @@
 		scanner.do_on_afterattack(user, target, proximity)
 
 obj/item/modular_computer/CtrlAltClick(mob/user)
-	if(!CanPhysicallyInteract(user))
+	if(!CanPhysicallyInteract(user) && !istype(user, /mob/living/silicon))//inf was: if(!CanPhysicallyInteract(user))
 		return
 	open_terminal(user)
 

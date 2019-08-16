@@ -37,6 +37,8 @@
 	base_auras = null //no fancy regeneration
 	inherent_verbs = null //no fancy regeneration
 
+	override_organ_types = list(BP_EYES = /obj/item/organ/internal/eyes/unathi/erosan)
+
 	//humanlike height and build
 	descriptors = list(
 		/datum/mob_descriptor/height = 1.4,

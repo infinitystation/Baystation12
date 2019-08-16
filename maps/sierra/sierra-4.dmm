@@ -408,8 +408,8 @@
 /obj/structure/bed/chair/office/dark{
 	dir = 8
 	},
-/obj/machinery/button/remote/airlock{
-	id = "adm_of";
+/obj/machinery/button/alternate/door{
+	id_tag = "adm_of";
 	name = "Open";
 	pixel_x = 26;
 	pixel_y = 24
@@ -661,7 +661,7 @@
 /obj/structure/hygiene/urinal{
 	pixel_y = 32
 	},
-/obj/item/weapon/soap/syndie,
+/obj/item/weapon/soap,
 /turf/unsimulated/floor{
 	icon_state = "freezerfloor";
 	dir = 2
@@ -1225,9 +1225,7 @@
 /area/shuttle/administration/centcom)
 "ado" = (
 /obj/machinery/mech_recharger,
-/obj/mecha/working/ripley/mining{
-	internals_req_access = list("ACCESS_SYNDICATE")
-	},
+/mob/living/exosuit/premade/light,
 /turf/simulated/floor/tiled/dark,
 /area/syndicate_mothership/raider_base)
 "adp" = (
@@ -1297,11 +1295,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/syndicate_mothership/raider_base)
 "adz" = (
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/ion,
+/obj/item/mech_equipment/mounted_system/taser/ion,
 /turf/simulated/floor/plating,
 /area/syndicate_mothership/raider_base)
 "adA" = (
-/obj/effect/decal/mecha_wreckage/gygax/dark,
 /obj/effect/decal/cleanable/blood/oil/streak,
 /turf/simulated/floor/plating,
 /area/syndicate_mothership/raider_base)
@@ -1477,9 +1474,9 @@
 /area/syndicate_mothership/raider_base)
 "adX" = (
 /obj/random/trash,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
-	id = "raidgar";
+	id_tag = "raidgar";
 	name = "Garage Shutters Control";
 	pixel_y = -21
 	},
@@ -1568,7 +1565,7 @@
 /area/syndicate_mothership/raider_base)
 "aek" = (
 /obj/machinery/door/blast/shutters{
-	id = "raidgar";
+	id_tag = "raidgar";
 	name = "Garage Shutters"
 	},
 /turf/simulated/floor/plating,
@@ -2062,7 +2059,7 @@
 /turf/simulated/floor/plating,
 /area/syndicate_mothership)
 "afs" = (
-/mob/living/simple_animal/parrot{
+/mob/living/simple_animal/hostile/retaliate/parrot{
 	available_channels = list();
 	ears = list();
 	name = "\proper Meatbag";
@@ -2449,7 +2446,7 @@
 /area/centcom/specops)
 "agn" = (
 /obj/machinery/door/blast/regular{
-	id = "ert_synth_equipment";
+	id_tag = "ert_synth_equipment";
 	name = "Synthetics Modification Equipment"
 	},
 /turf/unsimulated/floor{
@@ -2498,11 +2495,16 @@
 	},
 /area/centcom/creed)
 "agu" = (
-/turf/unsimulated/floor{
-	icon_state = "lino";
-	name = "linoleum"
+/obj/machinery/camera/network/ert{
+	c_tag = "Assault Armor North"
 	},
-/area/centcom/creed)
+/obj/machinery/mech_recharger,
+/mob/living/exosuit/premade/heavy,
+/turf/unsimulated/floor{
+	icon_state = "plating";
+	name = "plating"
+	},
+/area/centcom/specops)
 "agv" = (
 /obj/effect/wingrille_spawn/reinforced/crescent,
 /turf/unsimulated/floor{
@@ -2624,7 +2626,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "pdoor0";
-	id = "SkipjackShuttersNorth";
+	id_tag = "SkipjackShuttersNorth";
 	name = "Blast Doors";
 	opacity = 0
 	},
@@ -2644,7 +2646,7 @@
 "agN" = (
 /obj/machinery/door/blast/regular{
 	icon_state = "pdoor1";
-	id = "ASSAULT";
+	id_tag = "ASSAULT";
 	name = "Assault Weapon Storage";
 	p_open = 0
 	},
@@ -2655,8 +2657,8 @@
 /area/centcom/specops)
 "agO" = (
 /obj/structure/table/rack,
-/obj/item/weapon/circuitboard/borgupload,
-/obj/item/weapon/circuitboard/aiupload{
+/obj/item/weapon/stock_parts/circuitboard/borgupload,
+/obj/item/weapon/stock_parts/circuitboard/aiupload{
 	pixel_x = -3;
 	pixel_y = -3
 	},
@@ -2679,22 +2681,22 @@
 /area/centcom/creed)
 "agQ" = (
 /obj/structure/table/woodentable/walnut,
-/obj/machinery/button/remote/blast_door{
-	id = "CREED";
+/obj/machinery/button/blast_door{
+	id_tag = "CREED";
 	name = "Spec Ops Ready Room";
 	pixel_x = -5;
 	pixel_y = 4;
 	req_access = list("ACCESS_CENT_CREED")
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	icon_state = "blastctrl";
-	id = "ASSAULT";
+	id_tag = "ASSAULT";
 	name = "Mech Storage";
 	pixel_y = -4;
 	req_access = list("ACCESS_CENT_CREED")
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "ert_synth_equipment";
+/obj/machinery/button/blast_door{
+	id_tag = "ert_synth_equipment";
 	name = "Synth Equipment";
 	pixel_x = 5;
 	pixel_y = 4;
@@ -2799,11 +2801,8 @@
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "ahe" = (
-/obj/mecha/combat/gygax/dark,
-/obj/machinery/camera/network/ert{
-	c_tag = "Assault Armor North"
-	},
 /obj/machinery/mech_recharger,
+/mob/living/exosuit/premade/light,
 /turf/unsimulated/floor{
 	icon_state = "plating";
 	name = "plating"
@@ -2828,7 +2827,7 @@
 "ahh" = (
 /obj/machinery/door/blast/regular{
 	icon_state = "pdoor1";
-	id = "ASSAULT";
+	id_tag = "ASSAULT";
 	name = "Assault Armor Storage";
 	p_open = 0
 	},
@@ -2887,7 +2886,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "pdoor0";
-	id = "syndieshutters";
+	id_tag = "syndieshutters";
 	name = "Blast Doors";
 	opacity = 0
 	},
@@ -3010,21 +3009,21 @@
 /turf/simulated/floor/shuttle/red,
 /area/skipjack_station/start)
 "ahF" = (
-/obj/machinery/button/remote/blast_door{
-	id = "SkipjackShuttersNorth";
+/obj/machinery/button/blast_door{
+	id_tag = "SkipjackShuttersNorth";
 	name = "Skipjack North Shutters";
 	pixel_y = 39;
 	req_access = list("ACCESS_SYNDICATE")
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "SkipjackShuttersWest";
+/obj/machinery/button/blast_door{
+	id_tag = "SkipjackShuttersWest";
 	name = "Skipjack West Shutters";
 	pixel_x = -5;
 	pixel_y = 31;
 	req_access = list("ACCESS_SYNDICATE")
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "SkipjackShuttersEast";
+/obj/machinery/button/blast_door{
+	id_tag = "SkipjackShuttersEast";
 	name = "Skipjack East Shutters";
 	pixel_x = 5;
 	pixel_y = 31;
@@ -3039,7 +3038,7 @@
 /turf/simulated/floor/shuttle/red,
 /area/skipjack_station/start)
 "ahH" = (
-/obj/structure/computerframe{
+/obj/machinery/constructable_frame/computerframe/deconstruct{
 	dir = 8
 	},
 /obj/machinery/light/small{
@@ -3081,10 +3080,9 @@
 /area/centcom/specops)
 "ahL" = (
 /obj/structure/table/reinforced,
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/ion,
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/taser,
-/obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster,
-/obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster,
+/obj/item/mech_equipment/mounted_system/taser/ion,
+/obj/item/mech_equipment/mounted_system/taser,
+/obj/item/robot_parts/robot_component/armour/exosuit/combat,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -3152,11 +3150,6 @@
 	},
 /area/centcom/creed)
 "ahU" = (
-/obj/machinery/computer/pod{
-	dir = 8;
-	id = "NTrasen";
-	name = "Hull Door Control"
-	},
 /turf/unsimulated/floor{
 	icon_state = "lino";
 	name = "linoleum"
@@ -3249,7 +3242,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/syndicate_station/start)
 "aif" = (
-/obj/structure/computerframe,
+/obj/machinery/constructable_frame/computerframe/deconstruct,
 /obj/effect/floor_decal/techfloor{
 	icon_state = "techfloor_edges";
 	dir = 1
@@ -3257,8 +3250,8 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/syndicate_station/start)
 "aig" = (
-/obj/machinery/button/remote/blast_door{
-	id = "syndieshutters";
+/obj/machinery/button/blast_door{
+	id_tag = "syndieshutters";
 	name = "remote shutter control";
 	req_access = list("ACCESS_SYNDICATE")
 	},
@@ -3350,8 +3343,8 @@
 /area/centcom/specops)
 "ait" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/weapon/circuitboard/smes,
-/obj/item/weapon/circuitboard/smes,
+/obj/item/weapon/stock_parts/circuitboard/smes,
+/obj/item/weapon/stock_parts/circuitboard/smes,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 8
@@ -3438,7 +3431,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/syndicate_station/start)
 "aiE" = (
-/obj/structure/computerframe{
+/obj/machinery/constructable_frame/computerframe/deconstruct{
 	icon_state = "0";
 	dir = 8
 	},
@@ -3626,17 +3619,16 @@
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "aiX" = (
-/obj/mecha/medical/odysseus/loaded,
 /obj/machinery/mech_recharger,
+/mob/living/exosuit/premade/powerloader,
 /turf/unsimulated/floor{
 	icon_state = "plating";
 	name = "plating"
 	},
 /area/centcom/specops)
 "aiY" = (
-/obj/item/mecha_parts/mecha_equipment/tool/sleeper,
-/obj/item/mecha_parts/mecha_equipment/tool/sleeper,
-/obj/item/mecha_parts/mecha_equipment/tool/syringe_gun,
+/obj/item/mech_equipment/sleeper,
+/obj/item/mech_equipment/sleeper,
 /obj/structure/table/steel_reinforced,
 /turf/unsimulated/floor{
 	icon_state = "vault";
@@ -4057,11 +4049,7 @@
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "ajI" = (
-/obj/item/mecha_parts/mecha_equipment/teleporter,
-/obj/item/mecha_parts/mecha_tracking,
-/obj/item/mecha_parts/mecha_tracking,
-/obj/item/mecha_parts/mecha_tracking,
-/obj/item/mecha_parts/mecha_tracking,
+/obj/item/mech_equipment/catapult,
 /obj/structure/table/steel_reinforced,
 /turf/unsimulated/floor{
 	icon_state = "vault";
@@ -4188,7 +4176,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "shutter0";
-	id = "SkipjackShuttersWest";
+	id_tag = "SkipjackShuttersWest";
 	name = "Skipjack Shutters";
 	opacity = 0
 	},
@@ -4225,7 +4213,7 @@
 	density = 0;
 	dir = 8;
 	icon_state = "shutter0";
-	id = "SkipjackShuttersEast";
+	id_tag = "SkipjackShuttersEast";
 	name = "Skipjack Shutters";
 	opacity = 0
 	},
@@ -4233,16 +4221,16 @@
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "akb" = (
-/obj/mecha/working/ripley/firefighter,
 /obj/machinery/mech_recharger,
+/mob/living/exosuit/premade/heavy,
 /turf/unsimulated/floor{
-	icon_state = "plating";
-	name = "plating"
+	icon_state = "vault";
+	dir = 8
 	},
-/area/centcom/specops)
+/area/rescue_base/base)
 "akc" = (
-/obj/item/mecha_parts/mecha_equipment/tool/extinguisher,
-/obj/item/mecha_parts/mecha_equipment/tool/rcd,
+/obj/item/mech_equipment/mounted_system/extinguisher,
+/obj/item/mech_equipment/mounted_system/rcd,
 /obj/item/weapon/pickaxe/diamonddrill,
 /obj/structure/table/steel_reinforced,
 /turf/unsimulated/floor{
@@ -4278,7 +4266,7 @@
 /obj/structure/table/reinforced,
 /obj/item/weapon/aicard,
 /obj/item/weapon/pinpointer/advpinpointer,
-/obj/item/weapon/stamp/centcomm,
+/obj/item/weapon/stamp/boss,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -4425,7 +4413,7 @@
 	icon_state = "shower";
 	pixel_x = -5
 	},
-/obj/item/weapon/soap/syndie,
+/obj/item/weapon/soap,
 /obj/machinery/door/window/southright,
 /turf/unsimulated/floor{
 	icon_state = "freezerfloor";
@@ -4507,8 +4495,8 @@
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "akD" = (
-/obj/item/mecha_parts/mecha_equipment/tool/drill/diamonddrill,
-/obj/item/mecha_parts/mecha_equipment/tool/cable_layer,
+/obj/item/mech_equipment/drill,
+/obj/item/mech_equipment/clamp,
 /obj/structure/table/steel_reinforced,
 /turf/unsimulated/floor{
 	icon_state = "vault";
@@ -4714,12 +4702,9 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/syndicate_station/start)
 "akY" = (
-/obj/structure/flora/pottedplant/minitree,
-/obj/effect/floor_decal/corner/red{
-	dir = 9
-	},
-/turf/simulated/floor/tiled/dark,
-/area/syndicate_mothership)
+/obj/item/weapon/storage/pill_bottle/three_eye,
+/turf/space,
+/area/space)
 "akZ" = (
 /obj/effect/floor_decal/corner/red{
 	dir = 6
@@ -4753,12 +4738,11 @@
 	},
 /area/syndicate_mothership)
 "ald" = (
-/obj/machinery/button/remote/airlock{
-	id = "syndie_toilet";
+/obj/machinery/button/alternate/door/bolts{
+	id_tag = "syndie_toilet";
 	name = "lock";
 	pixel_y = -26;
-	req_access = list("ACCESS_SYNDICATE");
-	specialfunctions = 4
+	req_access = list("ACCESS_SYNDICATE")
 	},
 /turf/unsimulated/floor{
 	icon_state = "freezerfloor";
@@ -4831,7 +4815,6 @@
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "alm" = (
-/obj/mecha/working/hoverpod,
 /obj/machinery/mech_recharger,
 /turf/unsimulated/floor{
 	icon_state = "plating";
@@ -4839,14 +4822,10 @@
 	},
 /area/centcom/specops)
 "aln" = (
-/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay,
-/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay,
-/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay,
-/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay,
-/obj/item/mecha_parts/mecha_equipment/repair_droid,
-/obj/item/mecha_parts/mecha_equipment/repair_droid,
-/obj/item/mecha_parts/mecha_equipment/repair_droid,
-/obj/item/mecha_parts/mecha_equipment/repair_droid,
+/obj/item/mech_equipment/light,
+/obj/item/mech_equipment/light,
+/obj/item/mech_equipment/light,
+/obj/item/mech_equipment/light,
 /obj/structure/table/steel_reinforced,
 /turf/unsimulated/floor{
 	icon_state = "vault";
@@ -4879,13 +4858,21 @@
 	},
 /area/centcom/specops)
 "alp" = (
-/obj/machinery/door/airlock/centcom{
-	name = "Meeting room";
-	opacity = 1;
-	req_access = newlist()
+/obj/structure/closet/secure_closet{
+	name = "merchant's locker";
+	req_access = list("ACCESS_MERCHANT")
 	},
-/turf/simulated/floor/cult,
-/area/syndicate_mothership)
+/obj/effect/floor_decal/corner/brown/half,
+/obj/item/weapon/storage/pill_bottle/methylphenidate,
+/obj/item/weapon/storage/pill_bottle/three_eye,
+/obj/item/weapon/plastique,
+/obj/item/weapon/plastique,
+/obj/item/weapon/beartrap,
+/obj/item/weapon/beartrap,
+/obj/item/weapon/grenade/smokebomb,
+/obj/item/weapon/silencer,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/shuttle/merchant/home)
 "alq" = (
 /obj/machinery/chem_master,
 /turf/simulated/floor/tiled/white,
@@ -4893,7 +4880,7 @@
 "alr" = (
 /obj/machinery/door/blast/regular{
 	icon_state = "pdoor1";
-	id = "CREED";
+	id_tag = "CREED";
 	name = "Ready Room";
 	p_open = 0
 	},
@@ -4935,7 +4922,7 @@
 	},
 /obj/machinery/door/blast/regular/admin{
 	dir = 4;
-	id = "heavyrescue"
+	id_tag = "heavyrescue"
 	},
 /turf/unsimulated/floor{
 	icon_state = "vault";
@@ -5485,29 +5472,29 @@
 	},
 /area/centcom/control)
 "amG" = (
-/obj/machinery/button/remote/blast_door{
-	id = "crescent_checkpoint_access";
+/obj/machinery/button/blast_door{
+	id_tag = "crescent_checkpoint_access";
 	name = "Crescent Checkpoint Access";
 	pixel_x = -6;
 	pixel_y = -24;
 	req_access = list("ACCESS_CENT_GENERAL")
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "crescent_thunderdome";
+/obj/machinery/button/blast_door{
+	id_tag = "crescent_thunderdome";
 	name = "Thunderdome Access";
 	pixel_x = 6;
 	pixel_y = -24;
 	req_access = list("ACCESS_CENT_GENERAL")
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "crescent_vip_shuttle";
+/obj/machinery/button/blast_door{
+	id_tag = "crescent_vip_shuttle";
 	name = "VIP Shuttle Access";
 	pixel_x = 6;
 	pixel_y = -34;
 	req_access = list("ACCESS_CENT_GENERAL")
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "CREED";
+/obj/machinery/button/blast_door{
+	id_tag = "CREED";
 	name = "Spec Ops Ready Room";
 	pixel_x = -6;
 	pixel_y = -34;
@@ -5561,6 +5548,7 @@
 /obj/effect/floor_decal/corner/red{
 	dir = 5
 	},
+/obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/tiled/dark,
 /area/syndicate_mothership)
 "amM" = (
@@ -5628,10 +5616,8 @@
 /area/skipjack_station/start)
 "amU" = (
 /obj/structure/table/reinforced,
-/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp,
-/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp,
-/obj/item/mecha_parts/mecha_equipment/tool/passenger,
-/obj/item/mecha_parts/mecha_equipment/tool/passenger,
+/obj/item/mech_equipment/clamp,
+/obj/item/mech_equipment/clamp,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -5723,7 +5709,7 @@
 	dir = 4
 	},
 /obj/machinery/flasher{
-	id = "syndieflash";
+	id_tag = "syndieflash";
 	pixel_y = 28
 	},
 /turf/simulated/floor/shuttle/red{
@@ -5810,23 +5796,16 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/syndicate_station/start)
 "ann" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 4;
-	frequency = 1331;
-	id_tag = "merc_shuttle_pump"
+/obj/machinery/mech_recharger,
+/obj/effect/floor_decal/corner/black{
+	icon_state = "corner_white";
+	dir = 5
 	},
-/obj/structure/catwalk,
-/obj/machinery/computer/pod/old/syndicate{
-	density = 0;
-	icon = 'icons/obj/airlock_machines.dmi';
-	icon_screen = null;
-	icon_state = "airlock_control_standby";
-	id = "smindicate";
-	name = "Outer Shield Control";
-	pixel_y = 26
+/mob/living/exosuit/premade/combat,
+/turf/unsimulated/floor{
+	icon_state = "dark"
 	},
-/turf/simulated/floor/plating,
-/area/syndicate_station/start)
+/area/syndicate_mothership/elite_squad)
 "ano" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -5883,15 +5862,20 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/merchant/home)
 "ans" = (
-/obj/structure/table/rack,
-/obj/structure/window/reinforced{
-	dir = 4
+/obj/structure/closet/secure_closet{
+	name = "merchant's locker";
+	req_access = list("ACCESS_MERCHANT")
 	},
-/obj/random/loot,
-/obj/machinery/door/window/brigdoor/southright{
-	req_access = newlist()
-	},
-/turf/simulated/floor/tiled/steel_grid,
+/obj/effect/floor_decal/corner/brown/half,
+/obj/item/weapon/storage/belt/holster/security/tactical,
+/obj/item/clothing/accessory/armorplate/tactical,
+/obj/item/clothing/mask/balaclava,
+/obj/item/clothing/mask/balaclava,
+/obj/item/clothing/gloves/insulated/black,
+/obj/item/clothing/glasses/tacgoggles,
+/obj/item/clothing/accessory/legguards,
+/obj/item/clothing/under/syndicate,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/shuttle/merchant/home)
 "ant" = (
 /obj/effect/landmark{
@@ -6006,7 +5990,7 @@
 /area/centcom/specops)
 "anD" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/stamp/centcomm,
+/obj/item/weapon/stamp/boss,
 /obj/item/weapon/pen,
 /obj/item/weapon/paper_bin,
 /turf/unsimulated/floor{
@@ -6071,7 +6055,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "smindicate";
+	id_tag = "smindicate";
 	name = "Outer Airlock";
 	opacity = 0
 	},
@@ -6105,7 +6089,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "smindicate";
+	id_tag = "smindicate";
 	name = "Outer Airlock";
 	opacity = 0
 	},
@@ -6132,14 +6116,20 @@
 /turf/simulated/floor/tiled/dark,
 /area/syndicate_mothership)
 "anQ" = (
-/obj/effect/floor_decal/corner/red{
-	dir = 10
+/obj/machinery/mech_recharger,
+/obj/effect/floor_decal/corner/black{
+	icon_state = "corner_white";
+	dir = 5
 	},
-/obj/machinery/vending/fitness{
-	prices = list()
+/obj/item/device/radio/intercom/syndicate{
+	dir = 8;
+	pixel_x = 22
 	},
-/turf/simulated/floor/tiled/dark,
-/area/syndicate_mothership)
+/mob/living/exosuit/premade/combat,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/syndicate_mothership/elite_squad)
 "anR" = (
 /obj/machinery/suit_cycler/syndicate{
 	locked = 0
@@ -6263,14 +6253,24 @@
 /turf/simulated/floor/plating,
 /area/syndicate_station/start)
 "aof" = (
-/obj/structure/table/rack,
 /obj/structure/window/reinforced{
-	dir = 8;
-	health = null
+	dir = 4
+	},
+/obj/structure/closet/crate/secure/weapon{
+	req_access = list("ACCESS_MERCHANT")
 	},
 /obj/machinery/door/window/brigdoor/southright{
 	req_access = newlist()
 	},
+/obj/item/weapon/storage/secure/briefcase,
+/obj/item/weapon/contraband/poster,
+/obj/item/weapon/contraband/poster,
+/obj/item/weapon/contraband/poster,
+/obj/item/weapon/contraband/poster,
+/obj/item/weapon/contraband/poster,
+/obj/item/weapon/contraband/poster,
+/obj/item/weapon/material/knife/folding/combat/balisong,
+/obj/item/weapon/material/knife/folding/combat/balisong,
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/merchant/home)
 "aog" = (
@@ -6463,7 +6463,7 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/blast/regular{
 	icon_state = "pdoor1";
-	id = "CREED";
+	id_tag = "CREED";
 	name = "Ready Room";
 	p_open = 0
 	},
@@ -6479,12 +6479,16 @@
 /turf/unsimulated/wall,
 /area/centcom/test)
 "aoB" = (
-/obj/machinery/door/airlock/vault{
-	name = "Equipment";
-	req_access = newlist()
+/obj/machinery/mech_recharger,
+/obj/effect/floor_decal/corner/black{
+	icon_state = "corner_white";
+	dir = 10
 	},
-/turf/simulated/floor/tiled/dark,
-/area/syndicate_mothership)
+/mob/living/exosuit/premade/combat,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/syndicate_mothership/elite_squad)
 "aoC" = (
 /obj/structure/table/glass,
 /obj/effect/floor_decal/techfloor{
@@ -6497,7 +6501,7 @@
 /area/syndicate_station/start)
 "aoD" = (
 /obj/machinery/button/flasher{
-	id = "syndieflash";
+	id_tag = "syndieflash";
 	name = "Flasher";
 	pixel_x = 0;
 	pixel_y = 26
@@ -6556,7 +6560,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/syndicate_station/start)
 "aoH" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	dir = 4;
 	start_pressure = 740.5
 	},
@@ -7261,7 +7265,7 @@
 	req_access = newlist()
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/shuttle/merchant/home)
+/area/space)
 "apY" = (
 /obj/machinery/camera/network/crescent{
 	c_tag = "Crescent Arrivals - Holding Cell";
@@ -7290,7 +7294,7 @@
 	req_access = newlist()
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/shuttle/merchant/home)
+/area/space)
 "aqa" = (
 /obj/effect/wingrille_spawn/reinforced/crescent,
 /turf/unsimulated/floor{
@@ -7300,7 +7304,7 @@
 /area/centcom/holding)
 "aqb" = (
 /obj/machinery/door/blast/regular{
-	id = "CentComPort";
+	id_tag = "CentComPort";
 	name = "Security Doors"
 	},
 /turf/unsimulated/floor{
@@ -7541,7 +7545,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "syndieshutters_infirmary";
+	id_tag = "syndieshutters_infirmary";
 	name = "Blast Doors";
 	opacity = 0
 	},
@@ -7617,7 +7621,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "syndieshutters_workshop";
+	id_tag = "syndieshutters_workshop";
 	name = "Blast Doors";
 	opacity = 0
 	},
@@ -7671,9 +7675,9 @@
 /area/centcom/holding)
 "aqK" = (
 /obj/structure/bed/chair/office/dark,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	desc = "A remote control switch for port-side blast doors.";
-	id = "CentComPort";
+	id_tag = "CentComPort";
 	name = "Security Doors";
 	pixel_x = -12;
 	pixel_y = -25;
@@ -7806,7 +7810,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "CentComPort";
+	id_tag = "CentComPort";
 	name = "Security Doors";
 	opacity = 0
 	},
@@ -7874,13 +7878,12 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/syndicate_station/start)
 "arf" = (
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/alternate/door/bolts{
 	dir = 1;
-	id = "syndieshutters_nuke";
+	id_tag = "syndieshutters_nuke";
 	name = "Nuclear Storage Bolts";
 	pixel_y = -20;
-	req_access = list("ACCESS_SYNDICATE");
-	specialfunctions = 4
+	req_access = list("ACCESS_SYNDICATE")
 	},
 /obj/effect/floor_decal/techfloor,
 /obj/effect/floor_decal/corner_techfloor_grid{
@@ -7997,8 +8000,8 @@
 /area/centcom/holding)
 "arp" = (
 /obj/effect/floor_decal/corner/pink/diagonal,
-/obj/machinery/button/remote/blast_door{
-	id = "syndieshutters_infirmary";
+/obj/machinery/button/blast_door{
+	id_tag = "syndieshutters_infirmary";
 	name = "remote shutter control";
 	pixel_x = -25
 	},
@@ -8067,8 +8070,8 @@
 /obj/item/device/multitool,
 /obj/item/weapon/tape_roll,
 /obj/item/weapon/tape_roll,
-/obj/machinery/button/remote/blast_door{
-	id = "syndieshutters_telebay";
+/obj/machinery/button/blast_door{
+	id_tag = "syndieshutters_telebay";
 	name = "remote shutter control";
 	pixel_y = -25;
 	req_access = list("ACCESS_SYNDICATE")
@@ -8085,9 +8088,9 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/syndicate_station/start)
 "ary" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 8;
-	id = "syndieshutters_workshop";
+	id_tag = "syndieshutters_workshop";
 	name = "Space Shield";
 	pixel_x = 24;
 	pixel_y = 0
@@ -8106,6 +8109,10 @@
 /obj/effect/floor_decal/techfloor{
 	icon_state = "techfloor_edges";
 	dir = 4
+	},
+/obj/machinery/vending/wallmed1{
+	dir = 8;
+	pixel_x = 23
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/specops/centcom)
@@ -8131,7 +8138,7 @@
 	req_access = newlist()
 	},
 /obj/machinery/door/blast/regular{
-	id = "crescent_checkpoint_access";
+	id_tag = "crescent_checkpoint_access";
 	name = "Crescent Checkpoint"
 	},
 /turf/unsimulated/floor{
@@ -8254,14 +8261,14 @@
 	dir = 8
 	},
 /obj/machinery/door/blast/regular{
-	id = "syndieshutters_telebay";
+	id_tag = "syndieshutters_telebay";
 	name = "Teleport"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/syndicate_station/start)
 "arP" = (
 /obj/machinery/door/blast/regular{
-	id = "syndieshutters_telebay";
+	id_tag = "syndieshutters_telebay";
 	name = "Teleport"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -8272,7 +8279,7 @@
 	dir = 4
 	},
 /obj/machinery/door/blast/regular{
-	id = "syndieshutters_telebay";
+	id_tag = "syndieshutters_telebay";
 	name = "Teleport"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -8468,7 +8475,7 @@
 /turf/simulated/floor/tiled/white,
 /area/syndicate_station/start)
 "ask" = (
-/obj/structure/computerframe{
+/obj/machinery/constructable_frame/computerframe/deconstruct{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -8511,7 +8518,7 @@
 	},
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "CentComAsteroid";
+	id_tag = "CentComAsteroid";
 	name = "Security Doors"
 	},
 /turf/simulated/floor,
@@ -9143,7 +9150,7 @@
 	req_access = newlist()
 	},
 /obj/machinery/door/blast/regular{
-	id = "crescent_checkpoint_access";
+	id_tag = "crescent_checkpoint_access";
 	name = "Crescent Checkpoint"
 	},
 /turf/unsimulated/floor{
@@ -9360,21 +9367,15 @@
 	pixel_x = -30
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/light{
-	dir = 8
-	},
 /turf/simulated/floor/tiled,
 /area/shuttle/transport1/centcom)
 "aun" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
-/obj/machinery/vending/wallmed1{
-	pixel_x = 30
-	},
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube_map"
+/obj/machinery/vending/wallmed1{
+	dir = 8;
+	pixel_x = 23
 	},
 /turf/simulated/floor/tiled,
 /area/shuttle/transport1/centcom)
@@ -9568,11 +9569,15 @@
 	},
 /area/centcom/holding)
 "auK" = (
-/obj/structure/sign/warning/secure_area,
-/obj/effect/paint/nt_white,
-/obj/effect/paint_stripe/nt_red,
-/turf/simulated/wall/r_titanium,
-/area/shuttle/transport1/centcom)
+/obj/effect/floor_decal/corner/green{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
+	dir = 4;
+	icon_state = "intact"
+	},
+/turf/simulated/floor/tiled,
+/area/space)
 "auL" = (
 /obj/effect/floor_decal/industrial/warning/half{
 	icon_state = "warninghalf";
@@ -9654,10 +9659,6 @@
 	dir = 4;
 	icon_state = "sink";
 	pixel_x = 11
-	},
-/obj/machinery/vending/wallmed1{
-	name = "Emergency NanoMed";
-	pixel_x = 28
 	},
 /obj/effect/floor_decal/corner/paleblue{
 	icon_state = "corner_white";
@@ -11180,8 +11181,9 @@
 "ayK" = (
 /turf/unsimulated/wall{
 	desc = "A secure airlock. Doesn't look like you can get through easily.";
+	dir = 4;
 	icon = 'icons/obj/doors/centcomm/door.dmi';
-	icon_state = "door_locked";
+	icon_state = "closed";
 	name = "Outer Gate"
 	},
 /area/ninja_dojo/dojo)
@@ -11338,6 +11340,52 @@
 	icon_state = "dark"
 	},
 /area/tdome/tdome2)
+"azn" = (
+/obj/effect/floor_decal/corner/green{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/table/mag{
+	req_access = list("ACCESS_MERCHANT")
+	},
+/obj/item/weapon/gun/projectile/pistol/holdout,
+/obj/random/handgun,
+/obj/random/handgun,
+/obj/random/projectile,
+/obj/effect/floor_decal/corner/brown{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/shuttle/merchant/home)
+"azo" = (
+/obj/structure/window/reinforced{
+	dir = 8;
+	health = null
+	},
+/obj/structure/closet/crate/medical,
+/obj/random/medical,
+/obj/random/medical,
+/obj/random/medical,
+/obj/random/medical/lite,
+/obj/random/medical/lite,
+/obj/random/medical/lite,
+/obj/random/medical/lite,
+/obj/random/medical/lite,
+/obj/machinery/door/window/brigdoor/southright{
+	req_access = newlist()
+	},
+/obj/item/weapon/storage/firstaid/combat/special,
+/obj/item/weapon/storage/firstaid/surgery,
+/obj/item/stack/nanopaste,
+/obj/item/stack/nanopaste,
+/obj/item/auto_cpr,
+/obj/item/bodybag/rescue/loaded,
+/obj/item/bodybag/rescue/loaded,
+/obj/item/weapon/defibrillator/compact/combat/loaded,
+/turf/simulated/floor/tiled/steel_grid,
+/area/shuttle/merchant/home)
 "azp" = (
 /obj/effect/landmark{
 	name = "tdome1"
@@ -11346,6 +11394,22 @@
 	icon_state = "dark"
 	},
 /area/tdome/tdome2)
+"azq" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
+/obj/machinery/door/airlock/external{
+	autoset_access = 0;
+	frequency = 1380;
+	icon_state = "closed";
+	id_tag = "merchant_ship_interior";
+	locked = 1;
+	name = "Ship Exterior";
+	req_access = list("ACCESS_MERCHANT")
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/red,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/shuttle/merchant/home)
 "azr" = (
 /turf/unsimulated/wall{
 	density = 1;
@@ -11396,6 +11460,21 @@
 	opacity = 0
 	},
 /area/tdome)
+"azx" = (
+/obj/structure/table/mag{
+	req_access = list("ACCESS_MERCHANT")
+	},
+/obj/effect/floor_decal/corner/green{
+	dir = 10
+	},
+/obj/effect/floor_decal/corner/green{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/space)
 "azy" = (
 /obj/effect/landmark{
 	name = "tdome1"
@@ -11404,6 +11483,50 @@
 	icon_state = "dark"
 	},
 /area/tdome/tdome1)
+"azz" = (
+/obj/effect/floor_decal/corner/brown{
+	dir = 10
+	},
+/obj/structure/cable/blue{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled,
+/area/space)
+"azA" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/closet/crate/secure{
+	name = "basic resources crate";
+	req_access = list("ACCESS_MERCHANT")
+	},
+/obj/item/stack/material/glass/fifty,
+/obj/item/stack/material/glass/fifty,
+/obj/item/stack/material/rods/fifty,
+/obj/item/stack/material/rods/fifty,
+/obj/item/stack/material/plasteel{
+	amount = 40
+	},
+/obj/item/stack/material/steel/fifty,
+/obj/item/stack/material/steel/fifty,
+/obj/item/stack/material/steel/fifty,
+/obj/item/stack/material/steel/fifty,
+/obj/item/stack/material/plastic/fifty,
+/obj/item/stack/material/plastic/fifty,
+/obj/item/stack/material/glass/reinforced/fifty,
+/obj/item/stack/material/glass/reinforced/fifty,
+/obj/item/stack/material/wood/fifty,
+/obj/item/stack/material/wood/fifty,
+/obj/machinery/door/window/brigdoor/northleft{
+	req_access = newlist()
+	},
+/obj/item/stack/material/titanium/fifty,
+/obj/item/stack/material/plastic/fifty,
+/obj/item/stack/material/aluminium/fifty,
+/turf/simulated/floor/tiled/steel_grid,
+/area/shuttle/merchant/home)
 "azB" = (
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -11504,7 +11627,7 @@
 "azM" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "Thundernewblue";
+	id_tag = "Thundernewblue";
 	name = "Security Doors"
 	},
 /turf/unsimulated/floor{
@@ -11589,13 +11712,41 @@
 "azV" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "Thundernewred";
+	id_tag = "Thundernewred";
 	name = "Security Doors"
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
 /area/tdome)
+"azW" = (
+/obj/structure/window/reinforced{
+	dir = 8;
+	health = null
+	},
+/obj/structure/closet/crate/secure/phoron{
+	name = "resources crate";
+	req_access = list("ACCESS_MERCHANT")
+	},
+/obj/item/stack/material/diamond/ten,
+/obj/item/stack/material/gold/ten,
+/obj/item/stack/material/silver/ten,
+/obj/item/stack/material/phoron/ten,
+/obj/item/stack/material/uranium/ten,
+/obj/machinery/door/window/brigdoor/northleft{
+	req_access = newlist()
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/shuttle/merchant/home)
+"azX" = (
+/obj/structure/table/mag{
+	req_access = list("ACCESS_MERCHANT")
+	},
+/obj/effect/floor_decal/corner/green{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/shuttle/merchant/home)
 "azY" = (
 /obj/effect/landmark{
 	name = "tdome1"
@@ -11769,6 +11920,119 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/dark,
 /area/ninja_dojo/dojo)
+"aAv" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/closet/crate/secure{
+	name = "basic resources crate";
+	req_access = list("ACCESS_MERCHANT")
+	},
+/obj/item/stack/material/glass/fifty,
+/obj/item/stack/material/glass/fifty,
+/obj/item/stack/material/rods/fifty,
+/obj/item/stack/material/rods/fifty,
+/obj/item/stack/material/plasteel{
+	amount = 40
+	},
+/obj/item/stack/material/steel/fifty,
+/obj/item/stack/material/steel/fifty,
+/obj/item/stack/material/steel/fifty,
+/obj/item/stack/material/steel/fifty,
+/obj/item/stack/material/plastic/fifty,
+/obj/item/stack/material/plastic/fifty,
+/obj/item/stack/material/glass/reinforced/fifty,
+/obj/item/stack/material/glass/reinforced/fifty,
+/obj/item/stack/material/wood/fifty,
+/obj/item/stack/material/wood/fifty,
+/obj/machinery/door/window/brigdoor/northleft{
+	req_access = newlist()
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/space)
+"aAw" = (
+/obj/structure/window/reinforced{
+	dir = 8;
+	health = null
+	},
+/obj/structure/closet/crate/secure/phoron{
+	name = "resources crate";
+	req_access = list("ACCESS_MERCHANT")
+	},
+/obj/item/stack/material/diamond/ten,
+/obj/item/stack/material/gold/ten,
+/obj/item/stack/material/silver/ten,
+/obj/item/stack/material/phoron/ten,
+/obj/item/stack/material/uranium/ten,
+/obj/machinery/door/window/brigdoor/northleft{
+	req_access = newlist()
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/space)
+"aAx" = (
+/obj/structure/table/mag{
+	req_access = list("ACCESS_MERCHANT")
+	},
+/obj/effect/floor_decal/corner/green{
+	dir = 10
+	},
+/obj/effect/floor_decal/corner/green{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/shuttle/merchant/home)
+"aAy" = (
+/obj/structure/table/steel_reinforced,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable/blue{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
+	dir = 4;
+	icon_state = "intact"
+	},
+/obj/item/device/taperecorder,
+/turf/simulated/floor/tiled/dark,
+/area/shuttle/merchant/home)
+"aAz" = (
+/obj/structure/table/mag{
+	req_access = list("ACCESS_MERCHANT")
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/brown{
+	dir = 10
+	},
+/obj/effect/floor_decal/corner/green{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/shuttle/merchant/home)
+"aAA" = (
+/obj/structure/closet/emcloset/full,
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
+	},
+/obj/item/weapon/barrier,
+/obj/item/weapon/barrier,
+/obj/item/weapon/barrier,
+/turf/simulated/floor/carpet/blue2,
+/area/shuttle/merchant/home)
 "aAB" = (
 /obj/machinery/autolathe{
 	desc = "Your typical Autolathe. It appears to have much more options than your regular one, however...";
@@ -11922,6 +12186,22 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ninja_dojo/start)
+"aAU" = (
+/obj/structure/table/mag{
+	req_access = list("ACCESS_MERCHANT")
+	},
+/obj/effect/floor_decal/corner/green{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/brown{
+	dir = 10
+	},
+/obj/item/clothing/mask/gas/alt,
+/turf/simulated/floor/tiled/steel_grid,
+/area/shuttle/merchant/home)
 "aAV" = (
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/bed/chair/shuttle/black{
@@ -11976,6 +12256,24 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/syndicate_station/start)
+"aBc" = (
+/obj/structure/table/mag{
+	req_access = list("ACCESS_MERCHANT")
+	},
+/obj/item/weapon/wirecutters/power,
+/obj/item/weapon/wrench/power,
+/obj/item/device/flashlight/upgraded,
+/obj/item/weapon/marshalling_wand,
+/obj/effect/floor_decal/corner/brown{
+	dir = 10
+	},
+/obj/effect/floor_decal/corner/brown{
+	icon_state = "corner_white";
+	dir = 5
+	},
+/obj/item/device/binoculars,
+/turf/simulated/floor/tiled/steel_grid,
+/area/shuttle/merchant/home)
 "aBd" = (
 /obj/machinery/sleeper{
 	dir = 4
@@ -12033,8 +12331,8 @@
 	frequency = 1331;
 	id_tag = "ninja_shuttle_pump"
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "ninjadoor";
+/obj/machinery/button/blast_door{
+	id_tag = "ninjadoor";
 	name = "remote shutter control";
 	pixel_x = 25
 	},
@@ -12053,6 +12351,22 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ninja_dojo/start)
+"aBm" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/universal{
+	icon_state = "map_universal";
+	dir = 4
+	},
+/obj/structure/table/mag{
+	req_access = list("ACCESS_MERCHANT")
+	},
+/obj/effect/floor_decal/corner/brown{
+	dir = 10
+	},
+/obj/effect/floor_decal/corner/green{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/shuttle/merchant/home)
 "aBn" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/cell_charger,
@@ -12073,8 +12387,8 @@
 	pixel_x = 24;
 	pixel_y = -24
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "ninjawindow";
+/obj/machinery/button/blast_door{
+	id_tag = "ninjawindow";
 	name = "remote shutter control";
 	pixel_x = 36;
 	pixel_y = -24
@@ -12173,7 +12487,7 @@
 /obj/machinery/door/blast/regular{
 	density = 1;
 	icon_state = "pdoor1";
-	id = "ninjawindow";
+	id_tag = "ninjawindow";
 	name = "Blast Shutter";
 	opacity = 1
 	},
@@ -12218,6 +12532,20 @@
 	icon_state = "wood"
 	},
 /area/tdome/tdomeadmin)
+"aBH" = (
+/obj/structure/table/mag{
+	req_access = list("ACCESS_MERCHANT")
+	},
+/obj/effect/floor_decal/corner/brown{
+	dir = 10
+	},
+/obj/effect/floor_decal/corner/brown{
+	icon_state = "corner_white";
+	dir = 5
+	},
+/obj/item/instrument/guitar,
+/turf/simulated/floor/tiled/steel_grid,
+/area/shuttle/merchant/home)
 "aBI" = (
 /turf/simulated/mineral,
 /area/rescue_base/base)
@@ -12402,7 +12730,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "shutter0";
-	id = "merchantdesk";
+	id_tag = "merchantdesk";
 	name = "Merchant Desk Shutters";
 	opacity = 0
 	},
@@ -12417,16 +12745,6 @@
 	req_access = newlist()
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/shuttle/merchant/home)
-"aCf" = (
-/obj/machinery/door/window/brigdoor/northleft{
-	req_access = newlist()
-	},
-/obj/structure/table/rack,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/merchant/home)
 "aCg" = (
 /turf/unsimulated/floor{
@@ -12543,7 +12861,7 @@
 /area/rescue_base/base)
 "aCu" = (
 /obj/machinery/door/blast/regular/admin{
-	id = "heavyrescue";
+	id_tag = "heavyrescue";
 	name = "Restricted Equipment"
 	},
 /turf/unsimulated/floor{
@@ -12590,7 +12908,7 @@
 /turf/unsimulated/wall{
 	desc = "A secure airlock. Doesn't look like you can get through easily.";
 	icon = 'icons/obj/doors/centcomm/door.dmi';
-	icon_state = "door_locked";
+	icon_state = "closed";
 	name = "Facility Access"
 	},
 /area/rescue_base/base)
@@ -12932,7 +13250,7 @@
 "aDm" = (
 /obj/machinery/door/blast/regular/admin{
 	dir = 4;
-	id = "standardrescue";
+	id_tag = "standardrescue";
 	name = "Heavy Equipment"
 	},
 /turf/unsimulated/floor{
@@ -13050,7 +13368,7 @@
 /area/rescue_base/base)
 "aDz" = (
 /obj/machinery/door/blast/regular/admin{
-	id = "rescueteleport";
+	id_tag = "rescueteleport";
 	name = "Teleport"
 	},
 /turf/unsimulated/floor{
@@ -14030,7 +14348,7 @@
 /area/rescue_base/base)
 "aFw" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/stamp/centcomm,
+/obj/item/weapon/stamp/boss,
 /obj/item/weapon/pen,
 /turf/unsimulated/floor{
 	icon_state = "vault";
@@ -14293,18 +14611,6 @@
 /obj/machinery/vending/security,
 /turf/simulated/wall/r_wall/prepainted,
 /area/rescue_base/base)
-"aGa" = (
-/obj/structure/table/rack,
-/obj/structure/window/reinforced{
-	dir = 8;
-	health = null
-	},
-/obj/random/loot,
-/obj/machinery/door/window/brigdoor/northleft{
-	req_access = newlist()
-	},
-/turf/simulated/floor/tiled/steel_grid,
-/area/shuttle/merchant/home)
 "aGb" = (
 /obj/structure/table/rack,
 /obj/item/clothing/accessory/storage/white_vest,
@@ -14381,7 +14687,7 @@
 /turf/unsimulated/wall{
 	desc = "A secure airlock. Doesn't look like you can get through easily.";
 	icon = 'icons/obj/doors/centcomm/door.dmi';
-	icon_state = "door_locked";
+	icon_state = "closed";
 	name = "Foxtrot Barracks"
 	},
 /area/rescue_base/base)
@@ -14488,7 +14794,7 @@
 /area/rescue_base/base)
 "aGy" = (
 /obj/machinery/door/blast/regular/admin{
-	id = "standardrescue";
+	id_tag = "standardrescue";
 	name = "EVA"
 	},
 /turf/unsimulated/floor{
@@ -14570,41 +14876,12 @@
 	},
 /turf/simulated/floor/shuttle/darkred,
 /area/rescue_base/start)
-"aGN" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/closet/crate/secure{
-	name = "basic resources crate";
-	req_access = list("ACCESS_MERCHANT")
-	},
-/obj/item/stack/material/glass/fifty,
-/obj/item/stack/material/glass/fifty,
-/obj/item/stack/material/rods/fifty,
-/obj/item/stack/material/rods/fifty,
-/obj/item/stack/material/plasteel{
-	amount = 40
-	},
-/obj/item/stack/material/steel/fifty,
-/obj/item/stack/material/steel/fifty,
-/obj/item/stack/material/steel/fifty,
-/obj/item/stack/material/steel/fifty,
-/obj/item/stack/material/plastic/fifty,
-/obj/item/stack/material/plastic/fifty,
-/obj/item/stack/material/glass/reinforced/fifty,
-/obj/item/stack/material/glass/reinforced/fifty,
-/obj/item/stack/material/wood/fifty,
-/obj/item/stack/material/wood/fifty,
-/obj/machinery/door/window/brigdoor/northleft{
-	req_access = newlist()
-	},
-/turf/simulated/floor/tiled/steel_grid,
-/area/shuttle/merchant/home)
 "aGO" = (
 /turf/unsimulated/wall{
 	desc = "A secure airlock. Doesn't look like you can get through easily.";
+	dir = 4;
 	icon = 'icons/obj/doors/centcomm/door.dmi';
-	icon_state = "door_locked";
+	icon_state = "closed";
 	name = "Delta Barracks"
 	},
 /area/rescue_base/base)
@@ -14806,25 +15083,6 @@
 	dir = 8
 	},
 /area/rescue_base/base)
-"aHv" = (
-/obj/structure/window/reinforced{
-	dir = 8;
-	health = null
-	},
-/obj/structure/closet/crate/secure/phoron{
-	name = "resources crate";
-	req_access = list("ACCESS_MERCHANT")
-	},
-/obj/item/stack/material/diamond/ten,
-/obj/item/stack/material/gold/ten,
-/obj/item/stack/material/silver/ten,
-/obj/item/stack/material/phoron/ten,
-/obj/item/stack/material/uranium/ten,
-/obj/machinery/door/window/brigdoor/northleft{
-	req_access = newlist()
-	},
-/turf/simulated/floor/tiled/steel_grid,
-/area/shuttle/merchant/home)
 "aHw" = (
 /obj/machinery/vending/engineering,
 /turf/simulated/wall/r_wall/prepainted,
@@ -15031,7 +15289,7 @@
 "aIa" = (
 /obj/machinery/door/blast/regular/admin{
 	dir = 2;
-	id = "rescuegarage"
+	id_tag = "rescuegarage"
 	},
 /turf/unsimulated/floor{
 	icon_state = "vault";
@@ -15232,9 +15490,8 @@
 /area/rescue_base/base)
 "aIB" = (
 /obj/structure/table/reinforced,
-/obj/item/mecha_parts/mecha_equipment/tool/sleeper,
-/obj/item/mecha_parts/mecha_equipment/tool/sleeper,
-/obj/item/mecha_parts/mecha_equipment/tool/syringe_gun,
+/obj/item/mech_equipment/sleeper,
+/obj/item/mech_equipment/sleeper,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 8
@@ -15242,11 +15499,7 @@
 /area/rescue_base/base)
 "aIC" = (
 /obj/structure/table/reinforced,
-/obj/item/mecha_parts/mecha_equipment/teleporter,
-/obj/item/mecha_parts/mecha_tracking,
-/obj/item/mecha_parts/mecha_tracking,
-/obj/item/mecha_parts/mecha_tracking,
-/obj/item/mecha_parts/mecha_tracking,
+/obj/item/mech_equipment/catapult,
 /obj/item/device/radio/intercom/specops{
 	dir = 2;
 	pixel_y = 22
@@ -15563,8 +15816,8 @@
 /area/acting/backstage)
 "aJg" = (
 /obj/structure/table/woodentable/walnut,
-/obj/machinery/button/remote/blast_door{
-	id = "heavyrescue";
+/obj/machinery/button/blast_door{
+	id_tag = "heavyrescue";
 	name = "Heavy Gear";
 	pixel_x = -5;
 	pixel_y = 4
@@ -15575,8 +15828,8 @@
 /area/rescue_base/base)
 "aJh" = (
 /obj/structure/table/woodentable/walnut,
-/obj/machinery/button/remote/blast_door{
-	id = "standardrescue";
+/obj/machinery/button/blast_door{
+	id_tag = "standardrescue";
 	name = "Standard Gear";
 	pixel_x = 5;
 	pixel_y = 4
@@ -15666,7 +15919,7 @@
 "aJr" = (
 /obj/machinery/door/blast/regular/admin{
 	dir = 4;
-	id = "rescuegarage"
+	id_tag = "rescuegarage"
 	},
 /turf/unsimulated/floor{
 	icon_state = "vault";
@@ -15675,7 +15928,7 @@
 /area/rescue_base/base)
 "aJs" = (
 /obj/machinery/mech_recharger,
-/obj/mecha/medical/odysseus/loaded,
+/mob/living/exosuit/premade/light,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 8
@@ -15771,15 +16024,15 @@
 	},
 /area/rescue_base/base)
 "aJH" = (
-/obj/machinery/button/remote/blast_door{
-	id = "rescueteleport";
+/obj/machinery/button/blast_door{
+	id_tag = "rescueteleport";
 	name = "Teleporter";
 	pixel_x = -17;
 	pixel_y = 26;
 	req_access = list("ACCESS_CENT_SPECOPS")
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "rescuegarage";
+/obj/machinery/button/blast_door{
+	id_tag = "rescuegarage";
 	name = "Garage";
 	pixel_x = -17;
 	pixel_y = 36;
@@ -15809,7 +16062,7 @@
 /area/rescue_base/base)
 "aJK" = (
 /obj/machinery/mech_recharger,
-/obj/mecha/working/ripley/firefighter,
+/mob/living/exosuit/premade/powerloader,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 8
@@ -16126,14 +16379,14 @@
 /area/rescue_base/base)
 "aKg" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/circuitboard/smes,
-/obj/item/weapon/circuitboard/smes,
-/obj/item/weapon/smes_coil,
-/obj/item/weapon/smes_coil,
-/obj/item/weapon/smes_coil/super_capacity,
-/obj/item/weapon/smes_coil/super_capacity,
-/obj/item/weapon/smes_coil/super_io,
-/obj/item/weapon/smes_coil/super_io,
+/obj/item/weapon/stock_parts/circuitboard/smes,
+/obj/item/weapon/stock_parts/circuitboard/smes,
+/obj/item/weapon/stock_parts/smes_coil,
+/obj/item/weapon/stock_parts/smes_coil,
+/obj/item/weapon/stock_parts/smes_coil/super_capacity,
+/obj/item/weapon/stock_parts/smes_coil/super_capacity,
+/obj/item/weapon/stock_parts/smes_coil/super_io,
+/obj/item/weapon/stock_parts/smes_coil/super_io,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -16148,7 +16401,6 @@
 /area/rescue_base/base)
 "aKi" = (
 /obj/machinery/mech_recharger,
-/obj/mecha/working/hoverpod,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 8
@@ -16165,8 +16417,8 @@
 /area/rescue_base/base)
 "aKk" = (
 /obj/structure/table/reinforced,
-/obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster,
-/obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster,
+/obj/item/robot_parts/robot_component/armour/exosuit/combat,
+/obj/item/robot_parts/robot_component/armour/exosuit/combat,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -16223,14 +16475,6 @@
 /obj/structure/lattice,
 /turf/space,
 /area/space)
-"aKt" = (
-/obj/mecha/combat/gygax/dark,
-/obj/machinery/mech_recharger,
-/turf/unsimulated/floor{
-	icon_state = "vault";
-	dir = 8
-	},
-/area/rescue_base/base)
 "aKu" = (
 /obj/structure/bed/chair/comfy/black,
 /turf/simulated/floor/lino,
@@ -16329,8 +16573,8 @@
 /area/rescue_base/base)
 "aKJ" = (
 /obj/structure/table/reinforced,
-/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp,
-/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp,
+/obj/item/mech_equipment/clamp,
+/obj/item/mech_equipment/clamp,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -16338,14 +16582,8 @@
 /area/rescue_base/base)
 "aKK" = (
 /obj/structure/table/reinforced,
-/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay,
-/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay,
-/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay,
-/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay,
-/obj/item/mecha_parts/mecha_equipment/repair_droid,
-/obj/item/mecha_parts/mecha_equipment/repair_droid,
-/obj/item/mecha_parts/mecha_equipment/repair_droid,
-/obj/item/mecha_parts/mecha_equipment/repair_droid,
+/obj/item/mech_equipment/light,
+/obj/item/mech_equipment/light,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -16353,8 +16591,8 @@
 /area/rescue_base/base)
 "aKL" = (
 /obj/structure/table/reinforced,
-/obj/item/mecha_parts/mecha_equipment/tool/drill/diamonddrill,
-/obj/item/mecha_parts/mecha_equipment/tool/cable_layer,
+/obj/item/mech_equipment/drill,
+/obj/item/mech_equipment/light,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 8
@@ -16362,8 +16600,8 @@
 /area/rescue_base/base)
 "aKM" = (
 /obj/structure/table/reinforced,
-/obj/item/mecha_parts/mecha_equipment/tool/extinguisher,
-/obj/item/mecha_parts/mecha_equipment/tool/rcd,
+/obj/item/mech_equipment/mounted_system/extinguisher,
+/obj/item/mech_equipment/mounted_system/rcd,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -16371,8 +16609,6 @@
 /area/rescue_base/base)
 "aKN" = (
 /obj/structure/table/reinforced,
-/obj/item/mecha_parts/mecha_equipment/tool/passenger,
-/obj/item/mecha_parts/mecha_equipment/tool/passenger,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -16380,8 +16616,8 @@
 /area/rescue_base/base)
 "aKO" = (
 /obj/structure/table/reinforced,
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/ion,
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/taser,
+/obj/item/mech_equipment/mounted_system/taser/ion,
+/obj/item/mech_equipment/mounted_system/taser,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -16677,7 +16913,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "pdoor0";
-	id = "rescuebridge";
+	id_tag = "rescuebridge";
 	name = "Cockpit Blast Shutters";
 	opacity = 0
 	},
@@ -16699,7 +16935,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "rescuedock";
+	id_tag = "rescuedock";
 	name = "Blast Shutters";
 	opacity = 0
 	},
@@ -16738,9 +16974,9 @@
 /area/acting/backstage)
 "aLS" = (
 /obj/structure/table/steel_reinforced,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	icon_state = "blastctrl";
-	id = "rescuebridge";
+	id_tag = "rescuebridge";
 	name = "Window Shutters Control";
 	pixel_y = -4;
 	req_access = list("ACCESS_CENT_CREED")
@@ -16876,9 +17112,9 @@
 /turf/simulated/floor/shuttle/red,
 /area/rescue_base/start)
 "aMi" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	icon_state = "blastctrl";
-	id = "rescuedock";
+	id_tag = "rescuedock";
 	name = "Window Shutters Control";
 	pixel_x = 24;
 	pixel_y = -4;
@@ -17131,7 +17367,7 @@
 	locked = 1
 	},
 /obj/machinery/door/blast/regular{
-	id = "gg_blast";
+	id_tag = "gg_blast";
 	name = "Heavy Blastdors"
 	},
 /turf/simulated/floor,
@@ -17199,7 +17435,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "rescuebridge";
+	id_tag = "rescuebridge";
 	name = "Cockpit Blast Shutters";
 	opacity = 0
 	},
@@ -17231,7 +17467,7 @@
 /turf/simulated/floor/shuttle/black,
 /area/rescue_base/start)
 "aNf" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	dir = 4;
 	start_pressure = 740.5
 	},
@@ -17259,7 +17495,7 @@
 /turf/simulated/floor/shuttle/darkred,
 /area/rescue_base/start)
 "aNi" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/darkred,
@@ -17270,7 +17506,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "rescueeva";
+	id_tag = "rescueeva";
 	name = "Blast Shutters";
 	opacity = 0
 	},
@@ -17461,9 +17697,9 @@
 /obj/machinery/light,
 /obj/item/weapon/tank/jetpack/carbondioxide,
 /obj/item/weapon/tank/jetpack/carbondioxide,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	icon_state = "blastctrl";
-	id = "rescueeva";
+	id_tag = "rescueeva";
 	name = "Window Shutters Control";
 	pixel_x = 24;
 	pixel_y = -4;
@@ -17524,14 +17760,6 @@
 /obj/structure/bed/chair/shuttle/red{
 	icon_state = "shuttle_chair_preview";
 	dir = 1
-	},
-/turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"aNX" = (
-/obj/machinery/vending/wallmed1{
-	layer = 3.3;
-	name = "Emergency NanoMed";
-	pixel_x = 28
 	},
 /turf/simulated/floor/shuttle/darkred,
 /area/rescue_base/start)
@@ -17614,8 +17842,12 @@
 /turf/simulated/floor/shuttle/darkred,
 /area/rescue_base/start)
 "aOl" = (
-/obj/structure/sign/bluecross_2{
-	pixel_y = -24
+/obj/machinery/vending/wallmed1{
+	dir = 1;
+	layer = 3;
+	name = "Emergency NanoMed";
+	pixel_x = 0;
+	pixel_y = -29
 	},
 /turf/simulated/floor/shuttle/darkred,
 /area/rescue_base/start)
@@ -17650,7 +17882,7 @@
 /area/rescue_base/start)
 "aOs" = (
 /obj/machinery/flasher{
-	id = "rescueflash";
+	id_tag = "rescueflash";
 	pixel_y = 28
 	},
 /turf/simulated/floor/shuttle/red{
@@ -17786,6 +18018,8 @@
 /area/beach)
 "aOO" = (
 /obj/effect/wallframe_spawn/reinforced,
+/obj/effect/paint/nt_white,
+/obj/effect/paint_stripe/nt_red,
 /turf/simulated/floor/plating,
 /area/rescue_base/start)
 "aOP" = (
@@ -17845,9 +18079,9 @@
 /turf/simulated/floor/shuttle/white,
 /area/rescue_base/start)
 "aOV" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	icon_state = "blastctrl";
-	id = "rescueinfirm";
+	id_tag = "rescueinfirm";
 	name = "Window Shutters Control";
 	pixel_x = 24;
 	pixel_y = -4;
@@ -17919,7 +18153,7 @@
 /area/rescue_base/start)
 "aPf" = (
 /obj/machinery/button/flasher{
-	id = "rescueflash";
+	id_tag = "rescueflash";
 	name = "Flasher";
 	pixel_x = 27
 	},
@@ -17959,7 +18193,7 @@
 /turf/simulated/floor/shuttle/darkred,
 /area/rescue_base/start)
 "aPk" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	dir = 4;
 	start_pressure = 740.5
 	},
@@ -18061,7 +18295,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "rescueinfirm";
+	id_tag = "rescueinfirm";
 	name = "Blast Shutters";
 	opacity = 0
 	},
@@ -18685,11 +18919,11 @@
 "aRf" = (
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "supply_shuttle";
+	id_tag = "supply_shuttle";
 	name = "Supply Drone Shutters"
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "supply_shuttle";
+/obj/machinery/button/blast_door{
+	id_tag = "supply_shuttle";
 	name = "Supply Drone Shutter Control";
 	pixel_y = 26;
 	req_access = list("ACCESS_CARGO")
@@ -18712,10 +18946,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/syndicate_elite/mothership)
 "aRh" = (
-/obj/machinery/computer/pod{
-	id = "syndicate_elite";
-	name = "Hull Door Control"
-	},
 /obj/effect/floor_decal/corner/red{
 	dir = 5
 	},
@@ -18751,7 +18981,7 @@
 /area/syndicate_mothership/elite_squad)
 "aRk" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/stamp/centcomm,
+/obj/item/weapon/stamp/boss,
 /obj/item/weapon/pen,
 /obj/effect/floor_decal/corner/red{
 	dir = 5
@@ -18841,10 +19071,10 @@
 /area/merchant_station)
 "aRv" = (
 /obj/structure/table/rack,
-/obj/item/weapon/computer_hardware/tesla_link,
-/obj/item/weapon/computer_hardware/tesla_link,
-/obj/item/weapon/computer_hardware/tesla_link,
-/obj/item/weapon/computer_hardware/tesla_link,
+/obj/item/weapon/stock_parts/computer/tesla_link,
+/obj/item/weapon/stock_parts/computer/tesla_link,
+/obj/item/weapon/stock_parts/computer/tesla_link,
+/obj/item/weapon/stock_parts/computer/tesla_link,
 /turf/simulated/floor/tiled/techmaint,
 /area/merchant_station)
 "aRw" = (
@@ -18859,7 +19089,7 @@
 "aRx" = (
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "supply_shuttle";
+	id_tag = "supply_shuttle";
 	name = "Supply Drone Shutters"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -19013,13 +19243,13 @@
 "aRS" = (
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "supply_shuttle";
+	id_tag = "supply_shuttle";
 	name = "Supply Drone Shutters"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
-	id = "supply_shuttle";
+	id_tag = "supply_shuttle";
 	name = "Supply Drone Shutter Control";
 	pixel_y = -20;
 	req_access = list("ACCESS_CARGO")
@@ -19029,12 +19259,12 @@
 "aRT" = (
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "supply_shuttle";
+	id_tag = "supply_shuttle";
 	name = "Supply Drone Shutters"
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
-	id = "supply_shuttle";
+	id_tag = "supply_shuttle";
 	name = "Supply Drone Shutter Control";
 	pixel_y = -20;
 	req_access = list("ACCESS_CARGO")
@@ -19163,8 +19393,8 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/merchant_station)
 "aSk" = (
-/obj/machinery/button/remote/blast_door{
-	id = "merchantwarehouse";
+/obj/machinery/button/blast_door{
+	id_tag = "merchantwarehouse";
 	name = "Warehouse Shutters";
 	pixel_x = 9;
 	pixel_y = -27;
@@ -19268,7 +19498,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "merchantshuttle";
+	id_tag = "merchantshuttle";
 	name = "Merchant Window Shutters";
 	opacity = 0
 	},
@@ -19312,7 +19542,7 @@
 /area/merchant_station)
 "aSC" = (
 /obj/machinery/door/blast/shutters{
-	id = "merchantwarehouse";
+	id_tag = "merchantwarehouse";
 	name = "Warehouse Shutters"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -19323,7 +19553,7 @@
 /area/merchant_station)
 "aSD" = (
 /obj/machinery/door/blast/shutters{
-	id = "merchantwarehouse";
+	id_tag = "merchantwarehouse";
 	name = "Warehouse Shutters"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -19374,7 +19604,7 @@
 	},
 /obj/effect/floor_decal/industrial/warning,
 /obj/machinery/door/blast/regular{
-	id = "syndicate_elite_mech_room";
+	id_tag = "syndicate_elite_mech_room";
 	name = "Mech Room Door"
 	},
 /turf/unsimulated/floor{
@@ -19477,11 +19707,6 @@
 	},
 /area/wizard_station)
 "aST" = (
-/obj/machinery/vending/wallmed1{
-	layer = 3.3;
-	name = "Emergency NanoMed";
-	pixel_y = -32
-	},
 /obj/machinery/light/small/readylight,
 /obj/machinery/recharger/wallcharger{
 	dir = 8;
@@ -19521,14 +19746,6 @@
 	icon_state = "wood"
 	},
 /area/wizard_station)
-"aSX" = (
-/obj/structure/closet/secure_closet{
-	name = "merchant's locker";
-	req_access = list("ACCESS_MERCHANT")
-	},
-/obj/effect/floor_decal/corner/brown/half,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/shuttle/merchant/home)
 "aSY" = (
 /obj/structure/closet/secure_closet{
 	name = "merchant's locker";
@@ -19574,7 +19791,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/black,
 /obj/machinery/door/blast/regular{
-	id = "gg_blast";
+	id_tag = "gg_blast";
 	name = "Heavy Blastdors"
 	},
 /turf/simulated/floor,
@@ -19587,7 +19804,7 @@
 	d2 = 4
 	},
 /obj/machinery/door/blast/regular{
-	id = "ab_blast";
+	id_tag = "ab_blast";
 	name = "Observation Window"
 	},
 /turf/simulated/floor,
@@ -19605,7 +19822,7 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/door/blast/regular{
-	id = "ab_blast";
+	id_tag = "ab_blast";
 	name = "Observation Window"
 	},
 /turf/simulated/floor,
@@ -19617,7 +19834,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/blast/regular{
-	id = "ab_blast";
+	id_tag = "ab_blast";
 	name = "Observation Window"
 	},
 /turf/simulated/floor,
@@ -19672,8 +19889,8 @@
 /obj/structure/table/rack,
 /obj/random/loot,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/button/remote/blast_door{
-	id = "merchantwarehouse";
+/obj/machinery/button/blast_door{
+	id_tag = "merchantwarehouse";
 	name = "Warehouse Shutters";
 	pixel_x = 9;
 	pixel_y = 27;
@@ -19743,36 +19960,10 @@
 	icon_state = "diagonalWall3"
 	},
 /area/shuttle/syndicate_elite/mothership)
-"aTw" = (
-/obj/machinery/mech_recharger,
-/obj/mecha/combat/marauder/mauler,
-/obj/effect/floor_decal/corner/black{
-	icon_state = "corner_white";
-	dir = 5
-	},
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/syndicate_mothership/elite_squad)
 "aTx" = (
 /obj/effect/floor_decal/corner/black{
 	icon_state = "corner_white";
 	dir = 5
-	},
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/syndicate_mothership/elite_squad)
-"aTy" = (
-/obj/machinery/mech_recharger,
-/obj/mecha/combat/marauder/mauler,
-/obj/effect/floor_decal/corner/black{
-	icon_state = "corner_white";
-	dir = 5
-	},
-/obj/item/device/radio/intercom/syndicate{
-	dir = 8;
-	pixel_x = 22
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -19884,7 +20075,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "shutter0";
-	id = "merchantshuttle";
+	id_tag = "merchantshuttle";
 	name = "Merchant Window Shutters";
 	opacity = 0
 	},
@@ -20229,17 +20420,6 @@
 	dir = 8
 	},
 /area/centcom/specops)
-"aUq" = (
-/obj/machinery/mech_recharger,
-/obj/mecha/combat/marauder/mauler,
-/obj/effect/floor_decal/corner/black{
-	icon_state = "corner_white";
-	dir = 10
-	},
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/syndicate_mothership/elite_squad)
 "aUr" = (
 /obj/effect/floor_decal/corner/black{
 	icon_state = "corner_white";
@@ -20254,8 +20434,8 @@
 	dir = 1;
 	pixel_y = -28
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "syndicate_elite_mech_room";
+/obj/machinery/button/blast_door{
+	id_tag = "syndicate_elite_mech_room";
 	name = "Mech Access";
 	pixel_x = 32;
 	req_access = list("ACCESS_SYNDICATE")
@@ -20295,14 +20475,6 @@
 /turf/unsimulated/wall/fakeglass{
 	dir = 1;
 	icon_state = "fakewindows"
-	},
-/area/wizard_station)
-"aUx" = (
-/turf/unsimulated/floor{
-	dir = 2;
-	icon = 'icons/misc/beach.dmi';
-	icon_state = "seashallow";
-	name = "water"
 	},
 /area/wizard_station)
 "aUy" = (
@@ -20414,8 +20586,8 @@
 /turf/simulated/floor/carpet/blue2,
 /area/shuttle/merchant/home)
 "aUK" = (
-/obj/machinery/button/remote/blast_door{
-	id = "merchantshuttle";
+/obj/machinery/button/blast_door{
+	id_tag = "merchantshuttle";
 	name = "Merchant Window Shutters";
 	pixel_y = -28;
 	req_access = list("ACCESS_MERCHANT")
@@ -20493,34 +20665,13 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
 /area/shuttle/merchant/home)
-"aUQ" = (
-/obj/structure/table/steel_reinforced,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable/blue{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/cable/blue{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
-	dir = 4;
-	icon_state = "intact"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/shuttle/merchant/home)
 "aUR" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 4;
 	icon_state = "shutter0";
-	id = "merchantdesk";
+	id_tag = "merchantdesk";
 	name = "Merchant Desk Shutters";
 	opacity = 0
 	},
@@ -20563,52 +20714,6 @@
 	},
 /obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
-/area/shuttle/merchant/home)
-"aUU" = (
-/obj/effect/floor_decal/corner/green{
-	dir = 5
-	},
-/obj/effect/floor_decal/corner/green{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/table/mag{
-	req_access = list("ACCESS_MERCHANT")
-	},
-/turf/simulated/floor/tiled/steel_grid,
-/area/shuttle/merchant/home)
-"aUV" = (
-/obj/structure/table/mag{
-	req_access = list("ACCESS_MERCHANT")
-	},
-/obj/effect/floor_decal/corner/green{
-	dir = 10
-	},
-/obj/effect/floor_decal/corner/green{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/steel_grid,
-/area/shuttle/merchant/home)
-"aUW" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/universal{
-	icon_state = "map_universal";
-	dir = 4
-	},
-/obj/structure/table/mag{
-	req_access = list("ACCESS_MERCHANT")
-	},
-/obj/effect/floor_decal/corner/green{
-	dir = 10
-	},
-/obj/effect/floor_decal/corner/green{
-	dir = 5
-	},
-/turf/simulated/floor/tiled,
 /area/shuttle/merchant/home)
 "aUX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
@@ -20839,19 +20944,7 @@
 /area/shuttle/merchant/home)
 "aVC" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/paper/merchant,
-/turf/simulated/floor/carpet/blue2,
-/area/shuttle/merchant/home)
-"aVD" = (
-/obj/structure/closet/emcloset/full,
-/obj/structure/cable/blue{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
-	},
+/obj/item/weapon/paper/sierrau/merchant,
 /turf/simulated/floor/carpet/blue2,
 /area/shuttle/merchant/home)
 "aVE" = (
@@ -21069,8 +21162,8 @@
 /turf/simulated/floor/tiled,
 /area/merchant_station)
 "aVT" = (
-/obj/machinery/button/remote/blast_door{
-	id = "merchantbase";
+/obj/machinery/button/blast_door{
+	id_tag = "merchantbase";
 	name = "Merchant Loading Shutters";
 	pixel_x = 27;
 	pixel_y = -9;
@@ -21151,7 +21244,6 @@
 /turf/unsimulated/wall/fakeglass,
 /area/wizard_station)
 "aWg" = (
-/obj/item/weapon/soap/deluxe,
 /turf/unsimulated/floor{
 	dir = 2;
 	icon = 'icons/misc/beach.dmi';
@@ -21278,9 +21370,9 @@
 /obj/structure/table/steel_reinforced,
 /obj/item/weapon/paper_bin,
 /obj/item/weapon/pen,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
-	id = "merchantdesk";
+	id_tag = "merchantdesk";
 	name = "Merchant Desk Shutters";
 	pixel_x = 0;
 	pixel_y = -21;
@@ -21411,7 +21503,7 @@
 "aWB" = (
 /obj/machinery/door/blast/shutters{
 	dir = 8;
-	id = "merchantbase";
+	id_tag = "merchantbase";
 	name = "Merchant Loading Shutters"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -21431,8 +21523,8 @@
 	dir = 8;
 	id = "merchantbelt2"
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "merchantbase";
+/obj/machinery/button/blast_door{
+	id_tag = "merchantbase";
 	name = "Merchant Loading Shutters";
 	pixel_x = 27;
 	pixel_y = -9;
@@ -22629,7 +22721,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/merchant_station)
 "aZv" = (
-/obj/effect/decal/mecha_wreckage/hoverpod,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
@@ -23454,7 +23545,7 @@
 /turf/simulated/floor/plating,
 /area/merchant_station)
 "bbv" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	dir = 8
 	},
 /turf/simulated/floor/plating,
@@ -23482,7 +23573,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
+	layer = 3;
 	pixel_x = 26
 	},
 /obj/effect/catwalk_plated,
@@ -23947,7 +24038,7 @@
 /turf/simulated/floor/plating,
 /area/merchant_station)
 "bcx" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	icon_state = "air_map";
 	dir = 1;
 	start_pressure = 740.5
@@ -23956,7 +24047,7 @@
 /turf/simulated/floor/plating,
 /area/merchant_station)
 "bcy" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	icon_state = "air_map";
 	dir = 1;
 	start_pressure = 740.5
@@ -26152,7 +26243,7 @@
 	layer = 2.4;
 	level = 2
 	},
-/obj/item/weapon/paper/merchant,
+/obj/item/weapon/paper/sierrau/merchant,
 /turf/simulated/floor/carpet,
 /area/merchant_station)
 "bhW" = (
@@ -26355,7 +26446,7 @@
 	},
 /obj/machinery/door/blast/regular{
 	icon_state = "pdoor1";
-	id = "syndicate_elite";
+	id_tag = "syndicate_elite";
 	name = "Front Hull Door";
 	opacity = 1
 	},
@@ -26434,26 +26525,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/merchant_station)
-"biA" = (
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
-	},
-/obj/machinery/door/airlock/external{
-	autoset_access = 0;
-	frequency = 1380;
-	icon_state = "closed";
-	id_tag = "merchant_ship_interior";
-	locked = 1;
-	name = "Ship Exterior";
-	req_access = list("ACCESS_MERCHANT")
-	},
-/obj/machinery/metal_detector{
-	on = 1;
-	req_access = list("ACCESS_MERCHANT")
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/red,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/shuttle/merchant/home)
 "biB" = (
 /obj/machinery/door/airlock/external{
 	autoset_access = 0;
@@ -26494,7 +26565,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "ninjadoor";
+	id_tag = "ninjadoor";
 	name = "Blast Door";
 	opacity = 0
 	},
@@ -26550,14 +26621,14 @@
 /obj/machinery/atmospherics/pipe/simple/visible/black{
 	dir = 4
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "ab_blast";
+/obj/machinery/button/blast_door{
+	id_tag = "ab_blast";
 	name = "Observation Section";
 	pixel_x = -5;
 	pixel_y = 24
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "gg_blast";
+/obj/machinery/button/blast_door{
+	id_tag = "gg_blast";
 	name = "Heavy Blastdoors";
 	pixel_x = 5;
 	pixel_y = 24
@@ -26679,7 +26750,7 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
-	id = "syndicate_elite";
+	id_tag = "syndicate_elite";
 	name = "Side Hull Door";
 	opacity = 0
 	},
@@ -26759,7 +26830,7 @@
 	dir = 4
 	},
 /obj/machinery/door/blast/regular{
-	id = "gg_blast";
+	id_tag = "gg_blast";
 	name = "Heavy Blastdors"
 	},
 /turf/simulated/floor,
@@ -26791,7 +26862,7 @@
 	locked = 1
 	},
 /obj/machinery/door/blast/regular{
-	id = "gg_blast";
+	id_tag = "gg_blast";
 	name = "Heavy Blastdors"
 	},
 /turf/simulated/floor,
@@ -26916,13 +26987,12 @@
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/alternate/door/bolts{
 	dir = 8;
-	id = "blockdoor";
+	id_tag = "blockdoor";
 	name = "Airlock Bolt Control";
 	pixel_x = -24;
-	req_access = list("ACCESS_VAULT");
-	specialfunctions = 4
+	req_access = list("ACCESS_VAULT")
 	},
 /turf/simulated/floor,
 /area/smugglers/base)
@@ -27042,8 +27112,8 @@
 /turf/simulated/wall/r_wall,
 /area/smugglers/office)
 "bjC" = (
-/obj/machinery/button/remote/blast_door{
-	id = "CentComAsteroid";
+/obj/machinery/button/blast_door{
+	id_tag = "CentComAsteroid";
 	name = "CentCom Asteroid";
 	pixel_x = -6;
 	pixel_y = -34;
@@ -27140,7 +27210,7 @@
 "bjN" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular{
-	id = "ab_blast";
+	id_tag = "ab_blast";
 	name = "Observation Window"
 	},
 /turf/simulated/floor,
@@ -27155,7 +27225,7 @@
 	},
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "gg_blast";
+	id_tag = "gg_blast";
 	name = "Heavy Blastdors"
 	},
 /turf/simulated/floor,
@@ -27586,7 +27656,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "pdoor0";
-	id = "Thundernewred";
+	id_tag = "Thundernewred";
 	name = "Security Doors";
 	opacity = 0
 	},
@@ -27612,7 +27682,7 @@
 /area/admin_prison)
 "cZL" = (
 /obj/machinery/vending/medical{
-	req_access = list(0)
+	req_access = newlist()
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 6
@@ -27706,8 +27776,8 @@
 	health = 10000;
 	maxhealth = 10000
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "Thundernewred";
+/obj/machinery/button/blast_door{
+	id_tag = "Thundernewred";
 	pixel_x = -32;
 	pixel_y = 0
 	},
@@ -27722,6 +27792,14 @@
 	},
 /turf/simulated/floor/tiled,
 /area/admin_prison)
+"htQ" = (
+/obj/machinery/door/airlock/multi_tile/antagonist{
+	dir = 8;
+	icon_state = "closed";
+	name = "Equipment"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/syndicate_mothership)
 "hyE" = (
 /obj/structure/table/woodentable,
 /obj/item/weapon/reagent_containers/food/snacks/amanita_pie,
@@ -27837,8 +27915,8 @@
 /obj/effect/landmark{
 	name = "tdome1"
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "Thundernewblue";
+/obj/machinery/button/blast_door{
+	id_tag = "Thundernewblue";
 	pixel_x = 32;
 	pixel_y = 0
 	},
@@ -27908,11 +27986,6 @@
 	},
 /area/admin_prison)
 "ljb" = (
-/obj/machinery/computer/pod{
-	dir = 1;
-	id = "syndicate_elite";
-	name = "Hull Door Control"
-	},
 /obj/machinery/light/small,
 /obj/effect/floor_decal/corner/red/full,
 /turf/simulated/floor/tiled/dark,
@@ -27947,7 +28020,7 @@
 /area/admin_prison)
 "mfh" = (
 /obj/machinery/vending/boozeomat{
-	req_access = newlist(/obj/item/weapon/nullrod)
+	req_access = newlist()
 	},
 /turf/simulated/floor/wood/ebony,
 /area/admin_prison)
@@ -28108,6 +28181,10 @@
 	name = "plating"
 	},
 /area/syndicate_mothership/elite_squad)
+"tep" = (
+/obj/machinery/door/airlock/multi_tile/antagonist,
+/turf/simulated/floor/cult,
+/area/syndicate_mothership)
 "trR" = (
 /obj/structure/bed/chair/wood,
 /turf/simulated/floor/lino,
@@ -28160,6 +28237,22 @@
 	name = "plating"
 	},
 /area/centcom/suppy)
+"umC" = (
+/obj/structure/bed/chair/shuttle/blue{
+	icon_state = "shuttle_chair_preview";
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/light{
+	icon_state = "tube_map";
+	dir = 8
+	},
+/obj/machinery/light{
+	icon_state = "tube_map";
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
+/area/shuttle/transport1/centcom)
 "uWo" = (
 /obj/structure/table/woodentable,
 /obj/item/weapon/towel/random,
@@ -28188,8 +28281,8 @@
 /turf/simulated/floor/wood/ebony,
 /area/admin_prison)
 "vDk" = (
-/obj/machinery/button/remote/blast_door{
-	id = "Thundernewblue";
+/obj/machinery/button/blast_door{
+	id_tag = "Thundernewblue";
 	pixel_x = 32
 	},
 /obj/structure/barrier{
@@ -28221,8 +28314,8 @@
 /obj/effect/landmark{
 	name = "tdome1"
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "Thundernewred";
+/obj/machinery/button/blast_door{
+	id_tag = "Thundernewred";
 	pixel_x = -32;
 	pixel_y = 0
 	},
@@ -28261,7 +28354,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "pdoor0";
-	id = "Thundernewblue";
+	id_tag = "Thundernewblue";
 	name = "Security Doors";
 	opacity = 0
 	},
@@ -28282,6 +28375,18 @@
 	icon_state = "dark"
 	},
 /area/tdome)
+"yia" = (
+/obj/structure/bed/chair/shuttle/blue{
+	icon_state = "shuttle_chair_preview";
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube_map"
+	},
+/turf/simulated/floor/tiled,
+/area/shuttle/transport1/centcom)
 
 (1,1,1) = {"
 aaa
@@ -33104,8 +33209,8 @@ aQt
 aQt
 aQt
 aPP
-aTw
-aUq
+ann
+aoB
 aPP
 asI
 aWS
@@ -33912,8 +34017,8 @@ aRD
 aSa
 aQt
 aPP
-aTy
-aUq
+anQ
+aoB
 aPP
 asI
 aWU
@@ -38205,12 +38310,12 @@ aan
 aag
 aab
 agb
-ahe
+agu
 ahK
 agb
-aiX
+ahe
 ahK
-akb
+aiX
 ahK
 alm
 alU
@@ -43455,8 +43560,8 @@ afi
 abm
 afI
 agc
-agu
-agu
+ahU
+ahU
 ahk
 ahT
 agc
@@ -43657,7 +43762,7 @@ afi
 afl
 afI
 agc
-agu
+ahU
 agQ
 ahl
 ahU
@@ -43859,10 +43964,10 @@ afi
 afl
 afI
 agc
-agu
-agu
-agu
-agu
+ahU
+ahU
+ahU
+ahU
 agc
 aiu
 aiu
@@ -44061,10 +44166,10 @@ afG
 afl
 afI
 agc
-agu
+ahU
 afW
-agu
-agu
+ahU
+ahU
 agc
 aiu
 aiu
@@ -48053,8 +48158,8 @@ aPK
 aPK
 aPK
 aQC
-aUx
-aUx
+aWg
+aWg
 aWg
 aQC
 aPK
@@ -48256,8 +48361,8 @@ aPK
 aPK
 aQC
 aUy
-aUx
-aUx
+aWg
+aWg
 aQC
 aPK
 aPK
@@ -49151,7 +49256,7 @@ atJ
 atV
 atV
 aus
-auK
+atV
 aus
 aus
 avk
@@ -49353,7 +49458,7 @@ atK
 atV
 aum
 aut
-aut
+umC
 aut
 aut
 aut
@@ -49757,7 +49862,7 @@ atK
 atV
 aun
 auv
-auv
+yia
 auv
 auv
 auv
@@ -49959,7 +50064,7 @@ atM
 atV
 atV
 aus
-auK
+atV
 aus
 aus
 avl
@@ -58354,11 +58459,11 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
-aab
-aab
+apX
+auK
+azx
+azz
+aAv
 aab
 aab
 aab
@@ -58556,11 +58661,11 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
-aab
-aab
+apZ
+auK
+azx
+azz
+aAw
 aab
 abQ
 adK
@@ -60174,7 +60279,7 @@ aab
 aSx
 aTM
 aUL
-aVD
+aAA
 aSx
 aab
 aab
@@ -60777,7 +60882,7 @@ aab
 aab
 aab
 aSe
-aSX
+alp
 aTO
 aUO
 aVG
@@ -60979,7 +61084,7 @@ aab
 aab
 aSe
 aSe
-aSX
+ans
 aTP
 aUP
 aVH
@@ -61183,7 +61288,7 @@ aSf
 aSe
 aSY
 aTQ
-aUQ
+aAy
 aVI
 aWr
 aSe
@@ -61585,11 +61690,11 @@ aab
 aab
 aab
 aSx
-ans
+aof
 aTS
 aUS
 aVK
-aCf
+azA
 aSx
 aab
 aab
@@ -61787,11 +61892,11 @@ aab
 aab
 aab
 aSx
-aof
+azo
 aTT
 aUT
 aVL
-aGa
+azW
 aSx
 aab
 aYt
@@ -61991,7 +62096,7 @@ aab
 aSe
 aTb
 aTU
-aUU
+azn
 aVM
 aTb
 aSe
@@ -62191,11 +62296,11 @@ aab
 aab
 aab
 aSe
-apX
+azX
 aTV
-aUV
+aAU
 aVL
-aGN
+aBc
 aSe
 aab
 aah
@@ -62393,11 +62498,11 @@ aab
 aab
 aab
 aSe
-apZ
+aAx
 aTV
-aUV
+aAz
 aVL
-aHv
+aBH
 aSe
 aQK
 aWa
@@ -62597,7 +62702,7 @@ aab
 aSe
 aTb
 aTU
-aUW
+aBm
 aVM
 aTb
 aSe
@@ -62996,7 +63101,7 @@ aaa
 aQH
 aQH
 aQH
-aab
+akY
 aab
 aSe
 asb
@@ -63061,7 +63166,7 @@ aab
 aab
 ako
 aho
-ann
+anK
 anK
 aoe
 aaL
@@ -63203,7 +63308,7 @@ aab
 aSy
 aTg
 aTY
-biA
+azq
 aVP
 aWy
 aSe
@@ -64470,8 +64575,8 @@ ahv
 ahv
 ahv
 ahv
-adi
-akY
+tep
+alC
 alC
 alC
 amJ
@@ -64590,7 +64695,7 @@ aLH
 aLH
 aLJ
 aNL
-aNX
+aNp
 aNp
 aNN
 aLJ
@@ -64672,7 +64777,7 @@ ahv
 ahv
 ahv
 ahv
-alp
+ahv
 aeT
 aeT
 aeT
@@ -65082,7 +65187,7 @@ aeg
 aeg
 amL
 aeT
-anQ
+aeT
 adi
 aab
 aab
@@ -65283,8 +65388,8 @@ alb
 alD
 aeg
 aeg
-aoB
-adi
+aeT
+htQ
 adi
 adi
 aad
@@ -68210,7 +68315,7 @@ aHP
 aHP
 aBM
 aKk
-aKt
+akb
 aKO
 aBM
 aBL

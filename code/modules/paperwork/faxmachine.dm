@@ -8,7 +8,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "fax"
 	insert_anim = "faxsend"
-	req_access = list(list(access_lawyer, access_bridge, access_armory, access_qm))
+	var/send_access = list(list(access_lawyer, access_bridge, access_armory, access_qm))
 
 	idle_power_usage = 30
 	active_power_usage = 200
@@ -40,7 +40,11 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 	else
 		..()
 
-/obj/machinery/photocopier/faxmachine/attack_hand(mob/user as mob)
+/obj/machinery/photocopier/faxmachine/interface_interact(mob/user)
+	interact(user)
+	return TRUE
+
+/obj/machinery/photocopier/faxmachine/interact(mob/user)
 	user.set_machine(src)
 
 	var/dat = "Fax Machine<BR>"
@@ -67,7 +71,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 			dat += "<a href='byond://?src=\ref[src];remove=1'>Remove Item</a><br><br>"
 
 			if(sendcooldown)
-				dat += "<b>Transmitter arrays realigning. Please stand by.</b><br>"
+				dat += "<b>Transmitter arrays realigning. Please stand by. It takes 1 minute.</b><br>"
 
 			else
 
@@ -78,7 +82,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 		else
 			if(sendcooldown)
 				dat += "Please insert paper to send via secure connection.<br><br>"
-				dat += "<b>Transmitter arrays realigning. Please stand by.</b><br>"
+				dat += "<b>Transmitter arrays realigning. Please stand by. It takes 1 minute.</b><br>"
 			else
 				dat += "Please insert paper to send via secure connection.<br><br>"
 
@@ -131,8 +135,9 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 			destination = lastdestination
 
 	if(href_list["auth"])
-		if(!authenticated && scan && check_access(scan))
-			authenticated = 1
+		if ( (!( authenticated ) && (scan)) )
+			if (has_access(send_access, scan.GetAccess()))
+				authenticated = 1
 
 	if(href_list["logout"])
 		authenticated = 0
@@ -152,7 +157,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 	if (success)
 		visible_message("[src] beeps, \"Message transmitted successfully.\"")
 		log_fax("[key_name(usr)] sends fax to the [destination]")
-		//sendcooldown = 600
+		sendcooldown = 600
 	else
 		visible_message("[src] beeps, \"Error transmitting message.\"")
 

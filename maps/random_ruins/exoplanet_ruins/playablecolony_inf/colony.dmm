@@ -22,11 +22,11 @@
 /area/template_noop)
 "ag" = (
 /obj/structure/table/steel_reinforced,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "colsecarm";
 	name = "Armory Secure Access"
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "colarm";
 	name = "Armory Blast Door Control";
 	pixel_y = 8
@@ -218,17 +218,17 @@
 /area/map_template/colony/surgery)
 "aH" = (
 /obj/structure/closet/crate,
-/obj/item/weapon/circuitboard/fusion/core_control,
-/obj/item/weapon/circuitboard/fusion_core,
-/obj/item/weapon/circuitboard/fusion_fuel_compressor,
-/obj/item/weapon/circuitboard/fusion_fuel_control,
-/obj/item/weapon/circuitboard/fusion_injector,
-/obj/item/weapon/circuitboard/fusion_injector,
-/obj/item/weapon/circuitboard/fusion_injector,
-/obj/item/weapon/circuitboard/fusion_injector,
-/obj/item/weapon/circuitboard/fusion_injector,
-/obj/item/weapon/circuitboard/fusion_injector,
-/obj/item/weapon/circuitboard/gyrotron_control,
+/obj/item/weapon/stock_parts/circuitboard/fusion/core_control,
+/obj/item/weapon/stock_parts/circuitboard/fusion_core,
+/obj/item/weapon/stock_parts/circuitboard/fusion_fuel_compressor,
+/obj/item/weapon/stock_parts/circuitboard/fusion_fuel_control,
+/obj/item/weapon/stock_parts/circuitboard/fusion_injector,
+/obj/item/weapon/stock_parts/circuitboard/fusion_injector,
+/obj/item/weapon/stock_parts/circuitboard/fusion_injector,
+/obj/item/weapon/stock_parts/circuitboard/fusion_injector,
+/obj/item/weapon/stock_parts/circuitboard/fusion_injector,
+/obj/item/weapon/stock_parts/circuitboard/fusion_injector,
+/obj/item/weapon/stock_parts/circuitboard/gyrotron_control,
 /obj/item/weapon/stock_parts/manipulator/pico,
 /obj/item/weapon/stock_parts/manipulator/pico,
 /obj/item/weapon/stock_parts/manipulator/pico,
@@ -1792,15 +1792,15 @@
 	dir = 1
 	},
 /obj/structure/closet/crate,
-/obj/item/weapon/circuitboard/rdserver,
-/obj/item/weapon/circuitboard/rdservercontrol,
-/obj/item/weapon/circuitboard/recharger,
-/obj/item/weapon/circuitboard/recharger,
-/obj/item/weapon/circuitboard/telecomms/relay,
-/obj/item/weapon/circuitboard/circuit_imprinter,
-/obj/item/weapon/circuitboard/destructive_analyzer,
-/obj/item/weapon/circuitboard/protolathe,
-/obj/item/weapon/circuitboard/rdconsole,
+/obj/item/weapon/stock_parts/circuitboard/rdserver,
+/obj/item/weapon/stock_parts/circuitboard/rdservercontrol,
+/obj/item/weapon/stock_parts/circuitboard/recharger,
+/obj/item/weapon/stock_parts/circuitboard/recharger,
+/obj/item/weapon/stock_parts/circuitboard/telecomms/relay,
+/obj/item/weapon/stock_parts/circuitboard/circuit_imprinter,
+/obj/item/weapon/stock_parts/circuitboard/destructive_analyzer,
+/obj/item/weapon/stock_parts/circuitboard/protolathe,
+/obj/item/weapon/stock_parts/circuitboard/rdconsole,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/colony/engineering)
 "dH" = (
@@ -1921,7 +1921,7 @@
 	icon_state = "techfloor_edges";
 	dir = 1
 	},
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control/large_tank_control{
 	frequency = 7664;
 	input_tag = "cn2n";
 	name = "Nitrogen Supply Control";
@@ -2394,13 +2394,13 @@
 /obj/item/weapon/stock_parts/scanning_module,
 /obj/item/weapon/stock_parts/scanning_module,
 /obj/item/weapon/stock_parts/scanning_module/adv,
-/obj/item/weapon/smes_coil/weak,
-/obj/item/weapon/smes_coil/super_capacity,
-/obj/item/weapon/smes_coil/super_capacity,
-/obj/item/weapon/smes_coil/super_io,
-/obj/item/weapon/smes_coil/super_io,
-/obj/item/weapon/smes_coil/weak,
-/obj/item/weapon/smes_coil/weak,
+/obj/item/weapon/stock_parts/smes_coil/weak,
+/obj/item/weapon/stock_parts/smes_coil/super_capacity,
+/obj/item/weapon/stock_parts/smes_coil/super_capacity,
+/obj/item/weapon/stock_parts/smes_coil/super_io,
+/obj/item/weapon/stock_parts/smes_coil/super_io,
+/obj/item/weapon/stock_parts/smes_coil/weak,
+/obj/item/weapon/stock_parts/smes_coil/weak,
 /obj/item/stack/material/tritium/fifty,
 /obj/item/stack/material/tritium/fifty,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -2739,7 +2739,7 @@
 	icon_state = "techfloor_edges";
 	dir = 1
 	},
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control/large_tank_control{
 	frequency = 7663;
 	input_tag = "co2n";
 	name = "Oxygen Supply Control";
@@ -2827,7 +2827,7 @@
 	icon_state = "techfloor_edges";
 	dir = 1
 	},
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control/large_tank_control{
 	frequency = 7662;
 	input_tag = "cco2n";
 	name = "Carbon Dioxide Tank Control";
@@ -3689,7 +3689,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/drain,
+/obj/structure/hygiene/drain,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/colony)
 "gE" = (
@@ -3716,7 +3716,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/colony/atmospherics)
 "gG" = (
-/obj/machinery/atmospherics/pipe/tank/air,
+/obj/machinery/atmospherics/unary/tank/air,
 /obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/colony/atmospherics)
@@ -4484,7 +4484,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
 	},
-/obj/structure/drain,
+/obj/structure/hygiene/drain,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/colony)
 "hX" = (
@@ -5165,7 +5165,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/drain,
+/obj/structure/hygiene/drain,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/colony/jail)
 "iY" = (
@@ -6204,7 +6204,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/alternate/door{
 	id = "colj";
 	name = "Jail Bolt Control";
 	pixel_x = 28;
@@ -6403,12 +6403,12 @@
 "lb" = (
 /obj/machinery/door/window/eastright,
 /obj/structure/table/steel_reinforced,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "colmainexit";
 	name = "Exit Blast Doors";
 	pixel_y = 0
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "colmainblast";
 	name = "Entry Blast Doors";
 	pixel_y = 8
@@ -6554,7 +6554,7 @@
 /turf/simulated/floor/grass,
 /area/map_template/colony/hydroponics)
 "lp" = (
-/obj/structure/drain,
+/obj/structure/hygiene/drain,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/colony)
 "lq" = (
@@ -7312,7 +7312,7 @@
 /area/map_template/colony)
 "mC" = (
 /obj/structure/catwalk,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	id = "colsen";
 	name = "Hard Equipment Storage";
 	pixel_y = 28;

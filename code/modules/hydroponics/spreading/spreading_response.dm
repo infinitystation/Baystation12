@@ -47,7 +47,7 @@
 		buckled_mob = null
 	START_PROCESSING(SSvines, src)
 	return
-
+/* infinity override ahead
 /obj/effect/vine/proc/manual_unbuckle(mob/user as mob)
 	if(buckled_mob)
 		var/chance = 20
@@ -93,8 +93,8 @@
 	if(!victim.anchored && (Adjacent(victim) || victim.loc == src.loc))
 		var/can_grab = 1
 		if(istype(victim, /mob/living/carbon/human))
-			if(H.species.reagent_tag == IS_XENOS)
-				can_grab = FALSE
+			/*if(H.species.reagent_tag == IS_XENOS)
+				can_grab = FALSE*/
 			if(((istype(H.shoes, /obj/item/clothing/shoes/magboots) && (H.shoes.item_flags & ITEM_FLAG_NOSLIP)) || (H.species.check_no_slip(H))) && victim.loc != src.loc)
 				if(prob(90))
 					src.visible_message("<span class='danger'>Tendrils lash to drag \the [victim] but \the [src] can't pull them across the ground!</span>")
@@ -111,7 +111,82 @@
 				victim.set_dir(pick(GLOB.cardinal))
 				to_chat(victim, "<span class='danger'>The tendrils [pick("wind", "tangle", "tighten", "coil", "knot", "snag", "twist", "constrict", "squeeze", "clench", "tense")] around you!</span>")
 			Process(0)
-
+original override ended, infinity*/
 /obj/effect/vine/buckle_mob()
 	. = ..()
 	if(.) START_PROCESSING(SSvines, src)
+
+/*
+ * infinity override ahead. I know we have the folder, but here it looks more merge-friendly
+ * ===
+ */
+
+/obj/effect/vine/proc/manual_unbuckle(var/mob/living/carbon/human/user)
+	user.setClickCooldown(100)
+	if(buckled_mob)
+		var/breakouttime = rand(100, 200) //10 to 20 seconds.
+		if(buckled_mob != user)
+			if(isxenomorph(user))
+				breakouttime = 20
+			if(do_mob(user, buckled_mob, breakouttime, incapacitation_flags = INCAPACITATION_DEFAULT & ~INCAPACITATION_RESTRAINED))
+				if(!buckled_mob)
+					return
+				buckled_mob.visible_message(\
+					"<span class='notice'>\The [user] frees \the [buckled_mob] from \the [src].</span>",\
+					"<span class='notice'>\The [user] frees you from \the [src]!</span>",\
+					"<span class='warning'>You hear shredding and ripping.</span>")
+				unbuckle()
+		else
+			breakouttime = rand(200, 300) //20 to 30 seconds.
+			user.visible_message(
+				"<span class='danger'>\The [user] attempts to get free from [src]!</span>",
+				"<span class='warning'>You attempt to get free from [src].</span>")
+
+			if(do_mob(user, user, breakouttime, incapacitation_flags = INCAPACITATION_DEFAULT & ~INCAPACITATION_RESTRAINED))
+				if(!buckled_mob)
+					return
+				unbuckle_mob(user)
+				user.visible_message(
+					"<span class='danger'>\The [user] manages to escape [src]!</span>",
+					"<span class='warning'>You successfully escape [src]!</span>")
+
+	START_PROCESSING(SSvines, src)
+	return
+
+/obj/effect/vine/proc/entangle(var/mob/living/victim)
+	var/mob/living/carbon/human/H = victim
+	if(ishuman(H))
+		if(H.species.species_flags & SPECIES_FLAG_NO_TANGLE)
+			return
+
+	if(buckled_mob)
+		return
+
+	if(victim.buckled || victim.anchored)
+		return
+
+	if(isspecies(victim.pulledby, SPECIES_XENO)) //if pulled by xeno, you don't tangle
+		return
+
+	//grabbing people
+	if(!victim.anchored && victim.loc == src.loc) //(Adjacent(victim) (saved)
+		var/can_grab = 1
+		if(istype(victim, /mob/living/carbon/human))
+			if(((istype(H.shoes, /obj/item/clothing/shoes/magboots) && (H.shoes.item_flags & ITEM_FLAG_NOSLIP)) || (H.species.check_no_slip(H))) && victim.loc == src.loc)
+				if(prob(90))
+					src.visible_message("<span class='danger'>Tendrils lash to drag \the [victim] but \the [src] can't pull them across the ground!</span>")
+					can_grab = FALSE
+		if(isalien(victim) || issilicon(victim))
+			can_grab = FALSE
+		if(can_grab)
+			victim.visible_message("<span class='danger'>Tendrils lash out from \the [src] and drag \the [victim] in!</span>", "<span class='danger'>Tendrils lash out from \the [src] and drag you in!</span>")
+			victim.forceMove(src.loc)
+			sleep(1)
+			//entangling people
+			if(victim.loc == src.loc)
+				buckle_mob(victim)
+				victim.set_dir(pick(GLOB.cardinal))
+				to_chat(victim, "<span class='danger'>The tendrils [pick("wind", "tangle", "tighten", "coil", "knot", "snag", "twist", "constrict", "squeeze", "clench", "tense")] around you!</span>")
+			Process(0)
+
+//infinity override end

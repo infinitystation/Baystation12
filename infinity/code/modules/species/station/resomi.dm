@@ -31,6 +31,10 @@
 	husk_icon = 		'infinity/icons/mob/human_races/species/resomi/husk.dmi'
 
 	slowdown = -0.8 //speed fix?
+
+	darksight_range = 2
+	darksight_tint = DARKTINT_GOOD
+	flash_mod = 2
 	total_health = 150
 	brute_mod = 1.35
 	burn_mod =  1.35
@@ -100,7 +104,7 @@
 		)
 
 	inherent_verbs = list(
-		/mob/living/carbon/human/proc/sonar_ping,
+		/mob/living/carbon/human/proc/resomi_sonar_ping,
 		/mob/living/proc/toggle_pass_table
 		)
 
@@ -122,8 +126,8 @@
 			CULTURE_HUMAN_PLUTO,
 			CULTURE_HUMAN_BELTER,
 			CULTURE_HUMAN_CETI,
-			//CULTURE_RESOMI_LOSTCOLONYRICH,
-			//CULTURE_RESOMI_LOSTCOLONYPOOR,
+			CULTURE_RESOMI_LOSTCOLONYRICH,
+			CULTURE_RESOMI_LOSTCOLONYPOOR,
 			//CULTURE_RESOMI_SAVEEL,
 			CULTURE_OTHER
 		),

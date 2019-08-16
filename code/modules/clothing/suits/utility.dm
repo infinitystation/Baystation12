@@ -65,7 +65,7 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EYES
 	siemens_coefficient = 0
-
+	tint = 2
 
 /obj/item/clothing/suit/bomb_suit
 	name = "bomb suit"
@@ -97,16 +97,16 @@
  * Radiation protection
  */
 /obj/item/clothing/head/radiation
-	name = "Radiation Hood"
+	name = "radiation hood"
 	icon_state = "rad"
 	desc = "A hood with radiation protective properties. Label: Made with lead, do not eat insulation."
 	flags_inv = BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EYES
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 60, rad = 100)
-
+	tint = 1 //INF, WAS NOTHING (0) (spacesuits with 100% rad.armor have 2)
 
 /obj/item/clothing/suit/radiation
-	name = "Radiation suit"
+	name = "radiation suit"
 	desc = "A suit that protects against radiation. Label: Made with lead, do not eat insulation."
 	icon_state = "rad"
 	item_state_slots = list(

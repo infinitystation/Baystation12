@@ -18,7 +18,7 @@
 	update_icons()
 
 /mob/living/carbon/alien/proc/can_progress()
-	if(src.auto_progress == 1)
+	if(auto_progress == 1)
 		return 1
 	else
 		return 0
@@ -34,7 +34,7 @@
 
 	var/rads = radiation/25
 	radiation -= rads
-	nutrition += rads
+	adjust_nutrition(rads)
 	heal_overall_damage(rads,rads)
 	adjustOxyLoss(-(rads))
 	adjustToxLoss(-(rads))

@@ -104,7 +104,7 @@ The answer was five and a half years -ZeroBits
 			return 1
 
 		if(usr.key)
-			B.author += " (OOC ckey [usr.key])"
+			B.author += " ([usr.key])"
 
 		if(!B.title)
 			B.title = "Untitled"

@@ -177,3 +177,13 @@
 	if(href_list["logout"])
 		authenticated = 0
 	updateUsrDialog()
+
+//bridge space turrets
+
+/obj/machinery/turretid/sierra_bridge
+	lethal = 1
+	check_arrest = 1	//checks if the perp is set to arrest
+	check_records = 1	//checks if a security record exists at all
+	check_weapons = 1	//checks if it can shoot people that have a weapon they aren't authorized to have
+	check_access = 1	//if this is active, the turret shoots everything that does not meet the access requirements
+	req_access = list(access_bridge)

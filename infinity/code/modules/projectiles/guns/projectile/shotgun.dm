@@ -47,7 +47,7 @@
 	allowed_magazines = /obj/item/ammo_magazine/shotguntaj
 	ammo_type = /obj/item/ammo_casing/shotgun
 
-/obj/item/weapon/gun/projectile/shotguntaj/special_check(user)
+/obj/item/weapon/gun/projectile/shotgun/shotguntaj/special_check(user)
 	if(istype(user,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = user
 		if(H.species && H.species.get_bodytype(H) != SPECIES_TAJARA)
@@ -55,7 +55,7 @@
 			return 0
 	return ..()
 
-/obj/item/weapon/gun/projectile/shotguntaj/on_update_icon()
+/obj/item/weapon/gun/projectile/shotgun/shotguntaj/on_update_icon()
 	if(ammo_magazine)
 		icon_state = "shotguntaj"
 	else
