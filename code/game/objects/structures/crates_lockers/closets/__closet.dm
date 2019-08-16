@@ -442,7 +442,9 @@
 		return 1 // Closed and locked
 	return (!welded) //closed but not welded...
 
-/obj/structure/closet/proc/mob_breakout(var/mob/living/escapee)
+/obj/structure/closet/mob_breakout(var/mob/living/escapee)
+
+	. = ..()
 	var/breakout_time = 2 //2 minutes by default
 
 	if(breakout || !req_breakout())

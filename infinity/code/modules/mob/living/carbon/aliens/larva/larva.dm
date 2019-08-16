@@ -64,5 +64,5 @@
 	spawn(-1)
 		if(user) qdel(user) // Remove the keyless ghost if it exists.
 
-/mob/living/carbon/alien/larva/on_table_offset() //too small
+/mob/living/carbon/alien/larva/on_structure_offset() //too small
 	return

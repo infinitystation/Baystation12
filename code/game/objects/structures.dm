@@ -11,6 +11,7 @@
 	var/list/noblend_objects = newlist() //Objects to avoid blending with (such as children of listed blend objects.
 	var/material/material = null
 	var/footstep_type
+	var/mob_offset = 0 //used for on_structure_offset mob animation
 
 /obj/structure/attack_generic(var/mob/user, var/damage, var/attack_verb, var/wallbreaker)
 	if(wallbreaker && damage && breakable)
@@ -23,16 +24,30 @@
 	take_damage(damage)
 	return 1
 
+/obj/structure/proc/mob_breakout(var/mob/living/escapee)
+	set waitfor = FALSE
+	return FALSE
+
 /obj/structure/proc/take_damage(var/damage)
 	return
 
 /obj/structure/Destroy()
+	reset_mobs_offset()
 	var/turf/T = get_turf(src)
 	if(T && parts)
 		new parts(T)
 	. = ..()
 	if(istype(T))
 		T.fluid_update()
+
+/obj/structure/Crossed(mob/living/M)
+	if(istype(M))
+		M.on_structure_offset(mob_offset)
+	..()
+
+/obj/structure/proc/reset_mobs_offset()
+	for(var/mob/living/M in loc)
+		M.on_structure_offset(0)
 
 /obj/structure/Initialize()
 	. = ..()
@@ -56,9 +71,6 @@
 			if(H.species.can_shred(user))
 				attack_generic(user,1,"slices")
 	return ..()
-
-/obj/structure/attack_tk()
-	return
 
 /obj/structure/grab_attack(var/obj/item/grab/G)
 	if (!G.force_danger())
@@ -142,7 +154,6 @@
 					var/turf/simulated/wall/W = T
 					if(istype(W))
 						W.update_connections(1)
-						W.update_icon()
 				if(success)
 					break
 			if(success)
