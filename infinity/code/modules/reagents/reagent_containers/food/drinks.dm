@@ -1,7 +1,7 @@
 /obj/item/weapon/reagent_containers/food/drinks
 	var/open_sound = 'sound/effects/canopen.ogg'
 
-//Ìåõàíèêà ïèòüÿ çàëïîì
+//ÃŒÃ¥ÃµÃ Ã­Ã¨ÃªÃ  Ã¯Ã¨Ã²Ã¼Ã¿ Ã§Ã Ã«Ã¯Ã®Ã¬
 /obj/item/weapon/reagent_containers/food/drinks/Initialize()
 	. = ..()
 	if(is_open_container())
@@ -44,6 +44,12 @@
 	else
 		to_chat(usr, SPAN_NOTICE("You need to open \the [src] first!"))
 
+obj/item/weapon/reagent_containers/food/drinks/sillycup/mob_can_equip(M as mob)
+	if(reagents.total_volume > 0)
+		to_chat(M, "<span class='warning'>You cannot put [src] on your ears, there is something in it.</span>")
+		return 0
+	. = ..()
+
 obj/item/weapon/reagent_containers/food/drinks/sillycup
 	possible_transfer_amounts = null
 	layer = ABOVE_OBJ_LAYER
@@ -56,12 +62,6 @@ obj/item/weapon/reagent_containers/food/drinks/sillycup
 		SPECIES_HUMAN ='infinity/icons/mob/onmob/onmob_ears.dmi',
 		SPECIES_IPC = 'infinity/icons/mob/onmob/onmob_ears.dmi'
 		)
-
-obj/item/weapon/reagent_containers/food/drinks/sillycup/mob_can_equip(M as mob)
-	if(reagents.total_volume)
-		to_chat(M, "<span class='warning'>You cannot put [src] on your ears, there is something in it.</span>")
-		return 0
-	..()
 
 obj/item/weapon/reagent_containers/food/drinks/sillycup/equipped(var/M, var/slot)
 	..()
