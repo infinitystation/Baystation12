@@ -302,7 +302,7 @@ datum/unit_test/mob_damage/halloss
 
 datum/unit_test/mob_damage/tajaran
 	name = "MOB: Tajaran damage check template"
-	template = datum/unit_test/mob_damage/tajaran
+	template = /datum/unit_test/mob_damage/tajaran
 	mob_type = /mob/living/carbon/human/tajaran
 
 datum/unit_test/mob_damage/tajaran/brute
@@ -337,7 +337,7 @@ datum/unit_test/mob_damage/tajaran/halloss
 
 datum/unit_test/mob_damage/resomi
 	name = "MOB: Resomi damage check template"
-	template = datum/unit_test/mob_damage/resomi
+	template = /datum/unit_test/mob_damage/resomi
 	mob_type = /mob/living/carbon/human/resomi
 
 datum/unit_test/mob_damage/resomi/brute
