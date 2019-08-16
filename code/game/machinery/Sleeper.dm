@@ -3,7 +3,6 @@
 	desc = "A fancy bed with built-in injectors, a dialysis machine, and a limited health scanner."
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_0"
-	var/base_icon = "sleeper"
 	density = 1
 	anchored = 1
 	clicksound = 'sound/machines/buttonbeep.ogg'
@@ -34,6 +33,7 @@
 	. = ..()
 	if(populate_parts)
 		beaker = new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
+/*
 //[inf]
 		install_component(/obj/item/weapon/stock_parts/circuitboard/sleeper)
 		install_component(/obj/item/weapon/stock_parts/scanning_module)
@@ -43,7 +43,9 @@
 		install_component(/obj/item/weapon/reagent_containers/syringe)
 		install_component(/obj/item/weapon/reagent_containers/syringe)
 //[/inf]
+*/
 	update_icon()
+/*
 //[inf]
 /obj/machinery/sleeper/RefreshParts()
 	var/U = 0
@@ -63,6 +65,7 @@
 			available_chemicals = list("Inaprovaline" = /datum/reagent/inaprovaline, "Soporific" = /datum/reagent/soporific, "Tramadol" = /datum/reagent/tramadol, "Dylovene" = /datum/reagent/dylovene, "Arithrazine" = /datum/reagent/arithrazine, "Dexalin Plus" = /datum/reagent/dexalinp, "Dermaline" = /datum/reagent/dermaline, "Bicaridine" = /datum/reagent/bicaridine, "Alkysine" = /datum/reagent/alkysine)
 	..()
 //[/inf]
+*/
 /obj/machinery/sleeper/examine(mob/user)
 	. = ..()
 	if (. && user.Adjacent(src))
@@ -131,7 +134,7 @@
 		scan = replacetext(scan,"'scan_notice'","'white'")
 		scan = replacetext(scan,"'scan_warning'","'average'")
 		scan = replacetext(scan,"'scan_danger'","'bad'")
-		data["occupant"] = scan
+		data["occupant"] =scan
 	else
 		data["occupant"] = 0
 	if(beaker)
@@ -352,32 +355,3 @@
 	else
 		available_chemicals -= antag_chemicals
 	return 1
-
-//Survival/Stasis sleepers
-/obj/machinery/sleeper/survival_pod
-	name = "stasis pod"
-	desc = "A comfortable pod for stasing of wounded occupants. Similar pods were on first humanity's colonial ships. Now days, you can see them in EMT centers with stasis setting from 20x to 22x."
-	icon_state = "stasis_0"
-	base_icon = "stasis"
-	stasis = 20
-	active_power_usage = 55000
-
-/obj/machinery/sleeper/survival_pod/ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.outside_state)
-	var/data[0]
-
-	data["power"] = stat & (NOPOWER|BROKEN) ? 0 : 1
-
-	if(occupant)
-		var/scan = user.skill_check(SKILL_MEDICAL, SKILL_ADEPT) ? medical_scan_results(occupant) : "<span class='white'><b>Contains: \the [occupant]</b></span>"
-		scan = replacetext(scan,"'scan_notice'","'white'")
-		scan = replacetext(scan,"'scan_warning'","'average'")
-		scan = replacetext(scan,"'scan_danger'","'bad'")
-		data["occupant"] = scan
-	else
-		data["occupant"] = 0
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		ui = new(user, src, ui_key, "stasis.tmpl", "Stasis Pod UI", 400, 300, state = state)
-		ui.set_initial_data(data)
-		ui.open()

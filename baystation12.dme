@@ -3174,6 +3174,7 @@
 #include "infinity\code\game\machinery\jukebox.dm"
 #include "infinity\code\game\machinery\metal_detector.dm"
 #include "infinity\code\game\machinery\nuclear_bomb.dm"
+#include "infinity\code\game\machinery\sleeper.dm"
 #include "infinity\code\game\machinery\suit_storage_units.dm"
 #include "infinity\code\game\machinery\vending.dm"
 #include "infinity\code\game\machinery\doors\airlocks.dm"
