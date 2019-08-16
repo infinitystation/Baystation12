@@ -3309,6 +3309,7 @@
 #include "infinity\code\modules\hydroponics\seed_datums.dm"
 #include "infinity\code\modules\materials\reciepes.dm"
 #include "infinity\code\modules\materials\definitions\materials_other.dm"
+#include "infinity\code\modules\mechs\mech_interaction.dm"
 #include "infinity\code\modules\mob\animations.dm"
 #include "infinity\code\modules\mob\holder.dm"
 #include "infinity\code\modules\mob\logout.dm"
