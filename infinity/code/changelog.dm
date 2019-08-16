@@ -30,7 +30,7 @@ GLOBAL_VAR_INIT(changelog_hash_infinity, "")
 		'html/Space.png',
 		)
 
-	src << browse('html/changelog_infinity.html', "window=changes_infinity;size=675x650")
+	show_browser(src, 'html/changelog_infinity.html', "window=changes_infinity;size=675x650")
 	if(prefs.lastchangelog_infinity != GLOB.changelog_hash_infinity)
 		prefs.lastchangelog_infinity = GLOB.changelog_hash_infinity
 		SScharacter_setup.queue_preferences_save(prefs)

@@ -35,16 +35,16 @@
 	icon_state = "collar_bkholo"
 
 /obj/item/clothing/accessory/necklace/collar/holo/attack_self(mob/user as mob)
-	user << "<span class='notice'>[name]'s interface is projected onto your hand.</span>"
+	to_chat(user, SPAN_NOTICE("[name]'s interface is projected onto your hand."))
 
 	var/str = copytext(reject_bad_text(input(user,"Tag text?","Set tag","")),1,MAX_NAME_LEN)
 
 	if(!str || !length(str))
-		user << "<span class='notice'>[name]'s tag set to be blank.</span>"
+		to_chat(user, SPAN_NOTICE("[name]'s tag set to be blank."))
 		name = initial(name)
 		desc = initial(desc)
 	else
-		user << "<span class='notice'>You set the [name]'s tag to '[str]'.</span>"
+		to_chat(user, SPAN_NOTICE("You set the [name]'s tag to '[str]'.</span>"))
 		name = initial(name) + " ([str])"
 		desc = initial(desc) + " The tag says \"[str]\"."
 
@@ -105,7 +105,7 @@
 					if(M.client)
 						attack_self(M)
 	else
-		usr << browse(null, "window=radio")
+		show_browser(usr, null, "window=radio")
 		return
 	return
 
@@ -119,7 +119,7 @@
 			M = loc
 		if(ismob(loc.loc))
 			M = loc.loc // This is about as terse as I can make my solution to the whole 'collar won't work when attached as accessory' thing.
-		M << "<span class='danger'>You feel a sharp shock!</span>"
+		to_chat(M, SPAN_DANGER("You feel a sharp shock!"))
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 		s.set_up(3, 1, M)
 		s.start()
@@ -145,6 +145,6 @@
 			<A href='byond://?src=\ref[src];code=1'>+</A>
 			<A href='byond://?src=\ref[src];code=5'>+</A><BR>
 			</TT>"}
-	user << browse(dat, "window=radio")
+	show_browser(user, dat, "window=radio")
 	onclose(user, "radio")
 	return
