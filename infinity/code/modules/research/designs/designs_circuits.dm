@@ -81,3 +81,10 @@
 	req_tech = list(TECH_ENGINEERING = 3, TECH_DATA = 2)
 	build_path = /obj/item/weapon/stock_parts/circuitboard/recycler
 	sort_string = "KCASC"
+
+/datum/design/circuit/area_atmos
+	name = "area atmos"
+	id = "area_atmos"
+	req_tech = list(TECH_DATA = 2)
+	build_path = /obj/item/weapon/stock_parts/circuitboard/area_atmos
+	sort_string = "KCAAR"
