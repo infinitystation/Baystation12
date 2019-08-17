@@ -9,7 +9,6 @@
 	var/id = null
 	var/one_time_use = 0 //Used for one-time-use teleport cards (such as clown planet coordinates.)
 						 //Setting this to 1 will set src.locked to null after a player enters the portal and will not allow hand-teles to open portals to that location.
-	construct_state = /decl/machine_construction/default/panel_closed //inf
 
 /obj/machinery/computer/teleporter/Initialize()
 	. = ..()
@@ -234,19 +233,20 @@
 	active_power_usage = 2000
 	var/obj/machinery/computer/teleporter/com
 	var/obj/machinery/teleport/hub/hub
+	construct_state = /decl/machine_construction/default/panel_closed //inf
 
 /obj/machinery/teleport/station/Initialize()
 	. = ..()
 	overlays.Cut()
 	overlays += image('icons/obj/stationobjs.dmi', icon_state = "controller-wires")
-	component_parts = list(
+/*inf	component_parts = list(
 		new /obj/item/weapon/stock_parts/circuitboard/teleporter_station(src),
 		new /obj/item/weapon/stock_parts/manipulator/pico(src),
 		new /obj/item/weapon/stock_parts/scanning_module/phasic(src),
 		new /obj/item/weapon/stock_parts/scanning_module/phasic(src),
 		new /obj/item/weapon/stock_parts/subspace/filter(src),
 		new /obj/item/weapon/stock_parts/subspace/analyzer(src),
-		new /obj/item/weapon/stock_parts/subspace/transmitter(src))
+		new /obj/item/weapon/stock_parts/subspace/transmitter(src)) inf*/
 	connect_station()
 
 /obj/machinery/teleport/station/proc/connect_station()
