@@ -12,6 +12,7 @@
 
 	var/console_id = ""
 	var/connected_console = null
+	construct_state = /decl/machine_construction/default/panel_closed
 
 /obj/machinery/bssilk_hub/attackby(obj/item/I, mob/user)
 	if(isMultitool(I))

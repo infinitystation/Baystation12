@@ -9,6 +9,7 @@
 	var/id = null
 	var/one_time_use = 0 //Used for one-time-use teleport cards (such as clown planet coordinates.)
 						 //Setting this to 1 will set src.locked to null after a player enters the portal and will not allow hand-teles to open portals to that location.
+	construct_state = /decl/machine_construction/default/panel_closed //inf
 
 /obj/machinery/computer/teleporter/Initialize()
 	. = ..()
@@ -199,6 +200,7 @@
 	active_power_usage = 2000
 	var/obj/machinery/computer/teleporter/com
 	var/obj/machinery/teleport/station/station
+	construct_state = /decl/machine_construction/default/panel_closed //inf
 
 /obj/machinery/teleport/hub/Initialize()
 	. = ..()

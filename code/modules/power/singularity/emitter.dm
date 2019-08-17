@@ -35,6 +35,7 @@
 		/decl/public_access/public_method/toggle_emitter
 	)
 	stock_part_presets = list(/decl/stock_part_preset/radio/receiver/emitter = 1)
+	construct_state = /decl/machine_construction/default/panel_closed //inf
 
 /obj/machinery/power/emitter/anchored
 	anchored = 1

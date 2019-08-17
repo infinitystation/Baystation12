@@ -25,13 +25,14 @@ var/global/list/rad_collectors = list()
 /obj/machinery/power/rad_collector/Initialize()
 	. = ..()
 	rad_collectors += src
-	component_parts = list(
+/*	component_parts = list(
 		new /obj/item/weapon/stock_parts/circuitboard/rad_collector,
 		new /obj/item/weapon/stock_parts/manipulator,
 		new /obj/item/weapon/stock_parts/manipulator,
 		new /obj/item/weapon/stock_parts/capacitor,
-		new /obj/item/weapon/stock_parts/capacitor)
+		new /obj/item/weapon/stock_parts/capacitor)*/
 	RefreshParts()
+	construct_state = /decl/machine_construction/default/panel_closed //inf
 
 /obj/machinery/power/rad_collector/RefreshParts()
 	drainratio = initial(drainratio)

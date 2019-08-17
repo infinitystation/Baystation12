@@ -1,10 +1,3 @@
-/obj/item/weapon/stock_parts/circuitboard/pile_ripper
-	name = "Circuit board (Pile Ripper)"
-	board_type = "machine"
-	build_path = /obj/machinery/pile_ripper
-	origin_tech = "engineering = 3"
-	req_components = list(/obj/item/weapon/stock_parts/manipulator = 1)
-
 /obj/machinery/pile_ripper
 	name = "pile ripper"
 	desc = "This machine rips everything in front of it apart."
@@ -21,13 +14,10 @@
 	var/blood = 0
 	var/rating = 1
 	var/last_ripped = 0
+	construct_state = /decl/machine_construction/default/panel_closed
 
 /obj/machinery/pile_ripper/Initialize()
-	// On us
 	. = ..()
-	component_parts = list()
-	component_parts += new /obj/item/weapon/stock_parts/circuitboard/pile_ripper(null)
-	component_parts += new /obj/item/weapon/stock_parts/manipulator(null)
 	RefreshParts()
 	update_icon()
 
