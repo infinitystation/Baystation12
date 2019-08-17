@@ -27,6 +27,7 @@
 	additional_spawn_components = list(
 		/obj/item/weapon/stock_parts/power/apc/buildable = 1
 	)
+
 /obj/item/weapon/stock_parts/circuitboard/recycler
 	name = T_BOARD("recycler")
 	board_type = "machine"

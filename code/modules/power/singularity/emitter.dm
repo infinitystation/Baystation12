@@ -40,7 +40,6 @@
 /obj/machinery/power/emitter/anchored
 	anchored = 1
 	state = 2
-	base_type = 1 //1
 
 /obj/machinery/power/emitter/Initialize()
 	. = ..()

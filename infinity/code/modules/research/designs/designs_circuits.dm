@@ -33,11 +33,11 @@
 	build_path =/obj/item/weapon/stock_parts/circuitboard/teleporter_hub
 	sort_string = "KCAAJ"
 
-/datum/design/circuit/recharger
-	name = "recharger"
-	id = "recharger"
-	req_tech = list(TECH_ENGINEERING = 3, TECH_POWER = 3, TECH_DATA = 2)
-	build_path = /obj/item/weapon/stock_parts/circuitboard/recharger
+/datum/design/circuit/teleport_station
+	name = "teleporter station"
+	id = "teleport_station"
+	req_tech = list(TECH_ENGINEERING = 4, TECH_DATA = 4, TECH_BLUESPACE = 4)
+	build_path = /obj/item/weapon/stock_parts/circuitboard/teleporter_station
 	sort_string = "KCAAK"
 
 /datum/design/circuit/wallcharger
@@ -54,11 +54,30 @@
 	build_path = /obj/item/weapon/stock_parts/circuitboard/cell_charger
 	sort_string = "KCAAM"
 
-/datum/design/circuit/teleport_station
-	name = "teleporter station"
-	id = "teleport_station"
-	req_tech = list(TECH_ENGINEERING = 4, TECH_DATA = 4, TECH_BLUESPACE = 4)
-	build_path = /obj/item/weapon/stock_parts/circuitboard/teleporter_station
+/datum/design/circuit/recharger
+	name = "recharger"
+	id = "recharger"
+	req_tech = list(TECH_ENGINEERING = 3, TECH_POWER = 3, TECH_DATA = 2)
+	build_path = /obj/item/weapon/stock_parts/circuitboard/recharger
 	sort_string = "KCAAO"
 
+/datum/design/circuit/scrap_crusher
+	name = "crusher"
+	id = "crusher"
+	req_tech = list(TECH_ENGINEERING = 3, TECH_MATERIALS = 3, TECH_DATA = 3)
+	build_path = /obj/item/weapon/stock_parts/circuitboard/crusher
+	sort_string = "KCASA"
 
+/datum/design/circuit/scrap_ripper
+	name = "pile ripper"
+	id = "pile_ripper"
+	req_tech = list(TECH_ENGINEERING = 3, TECH_DATA = 2)
+	build_path = /obj/item/weapon/stock_parts/circuitboard/pile_ripper
+	sort_string = "KCASB"
+
+/datum/design/circuit/srcap_recycler
+	name = "recycler"
+	id = "recycler"
+	req_tech = list(TECH_ENGINEERING = 3, TECH_DATA = 2)
+	build_path = /obj/item/weapon/stock_parts/circuitboard/recycler
+	sort_string = "KCASC"

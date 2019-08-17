@@ -233,7 +233,7 @@
 	active_power_usage = 2000
 	var/obj/machinery/computer/teleporter/com
 	var/obj/machinery/teleport/hub/hub
-	construct_state = /decl/machine_construction/default/panel_closed //inf
+	maximum_component_parts = null //inf, was nothing
 
 /obj/machinery/teleport/station/Initialize()
 	. = ..()
