@@ -90,7 +90,7 @@
 	if(!(user.get_inventory_slot(src) in list(slot_l_ear, slot_r_ear)))
 		return
 	if(current_track)
-		if(current_track == loaded_track.title)
+		if(loaded_track && current_track == loaded_track.title)
 			sound_to(user, sound(null, channel = sound_channel))
 			sound_to(user, sound(loaded_track.track, repeat = 1, wait = 0, volume = music_volume, channel = sound_channel))
 		else
@@ -113,12 +113,12 @@
 	dat += "Tracks:"
 	if(loaded_track)
 		if(loaded_track.title == current_track)
-			dat += "<span class='linkOn'>[track_name]</span>"
+			dat += "Memory: <span class='linkOn'>[track_name]</span>"
 		else
 			dat += "Memory: <A href='?src=\ref[src];track=[loaded_track.title];'>[track_name]</a>"
 	for(var/track in GLOB.music_tracks)
 		if(track == current_track)
-			dat += "Memory: <span class='linkOn'>[track]</span>"
+			dat += "<span class='linkOn'>[track]</span>"
 		else
 			dat += "<A href='?src=\ref[src];track=[track];'>[track]</a>"
 
