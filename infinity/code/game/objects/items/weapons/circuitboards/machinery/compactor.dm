@@ -11,3 +11,6 @@
 							/obj/item/weapon/stock_parts/matter_bin = 4,
 							/obj/item/weapon/stock_parts/manipulator = 3,
 							/obj/item/weapon/reagent_containers/glass/beaker = 3)
+	additional_spawn_components = list(
+		/obj/item/weapon/stock_parts/power/apc/buildable = 1
+	)

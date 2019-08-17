@@ -44,7 +44,7 @@
 		name = initial(name)
 		desc = initial(desc)
 	else
-		to_chat(user, SPAN_NOTICE("You set the [name]'s tag to '[str]'.</span>"))
+		to_chat(user, SPAN_NOTICE("You set the [name]'s tag to '[str]'."))
 		name = initial(name) + " ([str])"
 		desc = initial(desc) + " The tag says \"[str]\"."
 

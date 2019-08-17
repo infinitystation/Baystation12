@@ -6,6 +6,10 @@
 	req_components = list(
 							/obj/item/weapon/stock_parts/micro_laser/ultra = 4,
 							/obj/item/bluespace_crystal/artificial = 4)
+	additional_spawn_components = list(
+		/obj/item/weapon/stock_parts/keyboard = 1,
+		/obj/item/weapon/stock_parts/power/apc/buildable = 1
+	)
 
 /obj/item/weapon/stock_parts/circuitboard/teleporter_station
 	name = T_BOARD("teleporter station")
@@ -18,3 +22,8 @@
 							/obj/item/weapon/stock_parts/subspace/filter = 1,
 							/obj/item/weapon/stock_parts/subspace/analyzer = 1,
 							/obj/item/weapon/stock_parts/subspace/transmitter = 1)
+	additional_spawn_components = list(
+		/obj/item/weapon/stock_parts/console_screen = 1,
+		/obj/item/weapon/stock_parts/keyboard = 1,
+		/obj/item/weapon/stock_parts/power/apc/buildable = 1
+	)

@@ -24,11 +24,11 @@
 				var/input_c_id = input("Enter new BS Snare ID", "Snare ID", console_id)
 				console_id = input_c_id
 				return console_id
-
+/*
 /obj/machinery/bssilk_hub/New()
 	..()
 	component_parts = list()
-	component_parts += new /obj/item/weapon/stock_parts/circuitboard/bssilk/hub(src)
+	component_parts += new /obj/item/weapon/stock_parts/circuitboard/bssilk_hub(src)
 	component_parts += new /obj/item/bluespace_crystal(src)
 	component_parts += new /obj/item/bluespace_crystal(src)
 	component_parts += new /obj/item/weapon/stock_parts/capacitor/super(src)
@@ -36,7 +36,7 @@
 	component_parts += new /obj/item/stack/cable_coil(src)
 	component_parts += new /obj/item/weapon/stock_parts/subspace/crystal(src)
 	RefreshParts()
-
+*/
 /obj/machinery/bssilk_hub/proc/sync_with_parts()
 	/*for(var/obj/item/clothing/accessory/bs_silk/I in SSobj)
 		if(I.silk_id == silk_id)
