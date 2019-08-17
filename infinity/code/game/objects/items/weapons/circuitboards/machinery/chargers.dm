@@ -13,8 +13,20 @@
 /obj/item/weapon/stock_parts/circuitboard/recharger
 	name = T_BOARD("recharger")
 	board_type = "machine"
-	origin_tech = list(TECH_POWER = 2, TECH_ENGINEERING = 2)
+	origin_tech = list(TECH_POWER = 3, TECH_ENGINEERING = 2)
 	build_path = /obj/machinery/recharger
+	req_components = list(
+		/obj/item/weapon/stock_parts/capacitor/ = 2
+	)
+	additional_spawn_components = list(
+		/obj/item/weapon/stock_parts/power/apc/buildable = 1
+	)
+
+/obj/item/weapon/stock_parts/circuitboard/wallcharger
+	name = T_BOARD("wall recharger")
+	board_type = "machine"
+	origin_tech = list(TECH_POWER = 4, TECH_ENGINEERING = 2)
+	build_path = /obj/machinery/recharger/wallcharger
 	req_components = list(
 		/obj/item/weapon/stock_parts/capacitor/ = 2
 	)

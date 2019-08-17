@@ -18,7 +18,7 @@
 	origin_tech = list(TECH_ENGINEERING = 4, TECH_DATA = 4, TECH_BLUESPACE = 4)
 	build_path = /obj/machinery/teleport/station
 	req_components = list(
-		/obj/item/weapon/stock_parts/manipulator/pico = 2,
+		/obj/item/weapon/stock_parts/manipulator/pico = 1,
 		/obj/item/weapon/stock_parts/scanning_module/phasic = 2,
 		/obj/item/weapon/stock_parts/subspace/filter = 1,
 		/obj/item/weapon/stock_parts/subspace/analyzer = 1,

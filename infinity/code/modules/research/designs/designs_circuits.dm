@@ -26,10 +26,39 @@
 	build_path = /obj/item/weapon/stock_parts/circuitboard/bssilk_hub
 	sort_string = "KCAAI"
 
-	/obj/machinery/teleport/hub
+/datum/design/circuit/teleport_hub
+	name = "teleporter hub"
+	id = "teleport_hub"
+	req_tech = list(TECH_ENGINEERING = 4, TECH_DATA = 4, TECH_BLUESPACE = 4)
+	build_path =/obj/item/weapon/stock_parts/circuitboard/teleporter_hub
+	sort_string = "KCAAJ"
 
-	/obj/machinery/recharger
+/datum/design/circuit/recharger
+	name = "recharger"
+	id = "recharger"
+	req_tech = list(TECH_ENGINEERING = 3, TECH_POWER = 3, TECH_DATA = 2)
+	build_path = /obj/item/weapon/stock_parts/circuitboard/recharger
+	sort_string = "KCAAK"
 
-	/obj/machinery/recharger/wallcharger
+/datum/design/circuit/wallcharger
+	name = "wall recharger"
+	id = "recharger_wall"
+	req_tech = list(TECH_ENGINEERING = 3, TECH_POWER = 4, TECH_DATA = 2)
+	build_path = /obj/item/weapon/stock_parts/circuitboard/wallcharger
+	sort_string = "KCAAL"
 
-	/obj/machinery/cell_charger
+/datum/design/circuit/cell_charger
+	name = "heavy-duty cell charger"
+	id = "cell_charger"
+	req_tech = list(TECH_ENGINEERING = 2, TECH_POWER = 2, TECH_DATA = 2)
+	build_path = /obj/item/weapon/stock_parts/circuitboard/cell_charger
+	sort_string = "KCAAM"
+
+/datum/design/circuit/teleport_station
+	name = "teleporter station"
+	id = "teleport_station"
+	req_tech = list(TECH_ENGINEERING = 4, TECH_DATA = 4, TECH_BLUESPACE = 4)
+	build_path = /obj/item/weapon/stock_parts/circuitboard/teleporter_station
+	sort_string = "KCAAO"
+
+

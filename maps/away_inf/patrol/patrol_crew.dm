@@ -23,7 +23,7 @@
 	name = "Corpsman"
 
 /obj/effect/submap_landmark/spawnpoint/away_patrol/engineer
-	name = "Field Engineer"
+	name = "Technician"
 
 /* JOBS
  * =======
@@ -80,7 +80,7 @@
 					 SKILL_EVA = SKILL_BASIC)
 
 /datum/job/submap/patrol/engineer
-	title = "Field Engineer"
+	title = "Technician"
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/patrol/engineer
 	info = "You remember waking up to alarms blaring in your face. Before you could react, a gush of hot air blew \
@@ -124,7 +124,7 @@
 	name = PATROL_OUTFIT_JOB_NAME("Shuttle Crewman")
 
 /decl/hierarchy/outfit/job/patrol/engineer
-	name = PATROL_OUTFIT_JOB_NAME("Field Engineer")
+	name = PATROL_OUTFIT_JOB_NAME("Technician")
 	belt = /obj/item/weapon/storage/belt/utility/full
 	gloves = /obj/item/clothing/gloves/insulated/black
 
