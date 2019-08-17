@@ -132,6 +132,7 @@
 	#include "../away_inf/blueriver/blueriver.dm"
 	#include "../away_inf/smugglers/smugglers.dm"
 	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
+	#include "../away_inf/patrol/patrol.dm"
 
 	#include "../away/bearcat/bearcat.dm"
 	#include "../away/derelict/derelict.dm"
