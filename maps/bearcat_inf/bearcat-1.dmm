@@ -62,7 +62,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "pdoor0";
-	id = "scraplock";
+	id_tag = "scraplock";
 	name = "External Blast Doors";
 	opacity = 0
 	},
@@ -118,7 +118,6 @@
 /area/ship/scrap/cargo/lower)
 "as" = (
 /obj/machinery/mech_recharger,
-/obj/effect/decal/mecha_wreckage/ripley,
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 23
@@ -617,7 +616,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "pdoor0";
-	id = "scraplock";
+	id_tag = "scraplock";
 	name = "External Blast Doors";
 	opacity = 0
 	},
@@ -731,7 +730,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "pdoor0";
-	id = "scraplock";
+	id_tag = "scraplock";
 	name = "External Blast Doors";
 	opacity = 0
 	},
@@ -2160,7 +2159,7 @@
 "eq" = (
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "melt_shut";
+	id_tag = "melt_shut";
 	name = "Cargo Shutters"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -2530,7 +2529,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "scraplock";
+	id_tag = "scraplock";
 	name = "External Blast Doors";
 	opacity = 0
 	},
@@ -2575,7 +2574,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "scraplock";
+	id_tag = "scraplock";
 	name = "External Blast Doors";
 	opacity = 0
 	},
@@ -2938,7 +2937,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "scraplock";
+	id_tag = "scraplock";
 	name = "External Blast Doors";
 	opacity = 0
 	},
@@ -2946,7 +2945,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/shutters/open{
 	dir = 4;
-	id = "dorms1";
+	id_tag = "dorms1";
 	name = "dormitory shutters"
 	},
 /turf/simulated/floor/plating,
@@ -2957,12 +2956,11 @@
 	layer = 2.4;
 	level = 2
 	},
-/obj/machinery/button/alternate/door{
+/obj/machinery/button/alternate/door/bolts{
 	dir = 4;
 	id_tag = "dorms1door";
 	name = "Bolts Control";
-	pixel_x = -24;
-	specialfunctions = 4
+	pixel_x = -24
 	},
 /obj/machinery/alarm{
 	dir = 1;
@@ -3086,7 +3084,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "scraplock";
+	id_tag = "scraplock";
 	name = "External Blast Doors";
 	opacity = 0
 	},
@@ -3094,7 +3092,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/shutters/open{
 	dir = 4;
-	id = "dorms2";
+	id_tag = "dorms2";
 	name = "dormitory shutters"
 	},
 /turf/simulated/floor/plating,
@@ -3127,7 +3125,7 @@
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id = "scraplock";
+	id_tag = "scraplock";
 	name = "External Blast Doors";
 	opacity = 0
 	},
@@ -3177,12 +3175,11 @@
 	layer = 2.4;
 	level = 2
 	},
-/obj/machinery/button/alternate/door{
+/obj/machinery/button/alternate/door/bolts{
 	dir = 4;
 	id_tag = "dorms2door";
 	name = "Bolts Control";
-	pixel_x = -24;
-	specialfunctions = 4
+	pixel_x = -24
 	},
 /obj/machinery/alarm{
 	dir = 1;
@@ -3416,7 +3413,7 @@
 "rr" = (
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	id = "melt_shut";
+	id_tag = "melt_shut";
 	name = "Cargo Shutters"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
