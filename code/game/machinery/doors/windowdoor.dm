@@ -153,10 +153,17 @@
 	if(istype(user,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = user
 		if(H.species.can_shred(H))
+			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 			playsound(src.loc, 'sound/effects/Glasshit.ogg', 75, 1)
 			visible_message("<span class='danger'>[user] smashes against the [src.name].</span>", 1)
 			take_damage(25)
 			return TRUE
+	attackby(null, user) //inf
+
+//inf ahead
+/obj/machinery/door/window/attack_ai(mob/user)
+	attackby(null, user)
+//inf end
 
 /obj/machinery/door/window/emag_act(var/remaining_charges, var/mob/user)
 	if (density && operable())
@@ -247,7 +254,7 @@
 
 /obj/machinery/door/window/create_electronics(var/electronics_type = /obj/item/weapon/airlock_electronics)
 	electronics = ..()
-	return electronics	
+	return electronics
 
 /obj/machinery/door/window/brigdoor
 	name = "secure door"
