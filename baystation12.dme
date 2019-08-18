@@ -3182,6 +3182,7 @@
 #include "infinity\code\game\objects\items\airbag.dm"
 #include "infinity\code\game\objects\items\music_player.dm"
 #include "infinity\code\game\objects\items\music_tape.dm"
+#include "infinity\code\game\objects\items\toys.dm"
 #include "infinity\code\game\objects\items\devices\blackout.dm"
 #include "infinity\code\game\objects\items\devices\multimeter.dm"
 #include "infinity\code\game\objects\items\devices\remote_device.dm"
