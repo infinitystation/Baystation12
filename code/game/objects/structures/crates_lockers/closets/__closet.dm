@@ -329,18 +329,15 @@
 		src.welded = !src.welded
 		src.update_icon()
 		user.visible_message("<span class='warning'>\The [src] has been [welded?"welded shut":"unwelded"] by \the [user].</span>", blind_message = "You hear welding.", range = 3)
-	else if(setup & CLOSET_HAS_LOCK)
-		if(isMultimeter(W))
-			var/obj/item/device/multitool/multimeter/O = W
-			if(O.mode != METER_CHECKING)
-				to_chat(user, "<span class='notice'>Переключите мультиметр.</span>")
-			else
-				if (user.skill_check(SKILL_ELECTRICAL, SKILL_ADEPT))
-					src.interact(usr)
-				else
-					to_chat(user, "<span class='notice'>Вы не умеете работать с этим замком.</span>")
+	else if(isMultimeter(W) && (setup & CLOSET_HAS_LOCK))
+		var/obj/item/device/multitool/multimeter/O = W
+		if(O.mode != METER_CHECKING)
+			to_chat(user, "<span class='notice'>Переключите мультиметр.</span>")
 		else
-			src.togglelock(user, W)
+			if (user.skill_check(SKILL_ELECTRICAL, SKILL_ADEPT))
+				src.interact(usr)
+			else
+				to_chat(user, "<span class='notice'>Вы не умеете работать с этим замком.</span>")
 	else
 		src.attack_hand(user)
 
