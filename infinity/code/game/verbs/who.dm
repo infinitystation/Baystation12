@@ -73,7 +73,7 @@
 		for(var/client/C in GLOB.clients)
 			if(!C.is_stealthed())
 				var/entry = "[C.key]"
-				switch(C.mob.stat)
+/*				switch(C.mob.stat)
 					if(DEAD)
 						if(isghost(C.mob))
 							var/mob/observer/ghost/O = C.mob
@@ -84,7 +84,7 @@
 						else if(isnewplayer(C.mob))
 							entry += " - <font color='#006400'><b>В лобби</b></font>"
 					else
-						entry += " - <font color='green'><b>Играет</b></font>"
+						entry += " - <font color='green'><b>Играет</b></font>"*/
 
 				if(C.is_afk())
 					entry += " - <b>AFK: [C.inactivity2text()]</b>"
@@ -123,12 +123,12 @@
 		if(can_investigate)
 			if(C.is_afk())
 				line += " (АФК - [C.inactivity2text()])"
-			if(isghost(C.mob))
+/*			if(isghost(C.mob))
 				line += " - Наблюдает"
 			else if(istype(C.mob,/mob/new_player))
 				line += " - В лобби"
 			else
-				line += " - Играет"
+				line += " - Играет"*/
 			if(C.is_stealthed())
 				line += " (Стелс)"
 			if(C.get_preference_value(/datum/client_preference/show_ooc) == GLOB.PREF_HIDE)
