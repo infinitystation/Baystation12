@@ -43,7 +43,7 @@
 	else
 		headphones_on = 1
 		to_chat(user, "<span class='notice'>You turn the music on.</span>")
-		volume_multiplier = 0.1
+		volume_multiplier = 0.2
 		play_music(user)
 
 	update_icon()
