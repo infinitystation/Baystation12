@@ -124,6 +124,8 @@
 /obj/item/weapon/card/id/sierra/crew/service/bartender
 	job_access_type = /datum/job/bartender
 
+/obj/item/weapon/card/id/sierra/crew/service/chaplain
+	job_access_type = /datum/job/chaplain
 
 //Explorers
 
