@@ -340,7 +340,7 @@
 				else
 					to_chat(user, "<span class='notice'>Вы не умеете работать с этим замком.</span>")
 		else
-			src.togglelock(user)
+			src.togglelock(user, W)
 	else
 		src.attack_hand(user)
 
@@ -400,7 +400,7 @@
 	set category = "Object"
 	set name = "Toggle Open"
 
-	if(!(CanUseTopicPhysical(usr) == STATUS_UPDATE)) //inf, was if(!CanPhysicallyInteract(usr))
+	if(!CanPhysicallyInteract(usr))
 		return
 
 	if(ishuman(usr))
@@ -501,8 +501,6 @@
 		return FALSE
 /*inf	if(!CanPhysicallyInteract(user))
 		return FALSE*/
-	if(!(CanUseTopicPhysical(user) == STATUS_UPDATE)) //inf, was if(!CanPhysicallyInteract(usr))
-		return FALSE
 	if(src.opened)
 		to_chat(user, "<span class='notice'>Close \the [src] first.</span>")
 		return FALSE
