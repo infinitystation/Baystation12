@@ -8,8 +8,9 @@
 	power_channel = ENVIRON
 	var/frequency = 0
 	var/id
-	layer = 8.1
+	layer = EXPOSED_PIPE_LAYER //inf, was 8.1
 	idle_power_usage = 15
+	plane = ABOVE_TURF_PLANE //inf
 
 /obj/machinery/meter/Initialize()
 	. = ..()
