@@ -2902,7 +2902,7 @@
 "bep" = (/obj/machinery/portable_atmospherics/powered/scrubber,/turf/simulated/floor/plating,/area/vacant/gambling)
 "beq" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/obj/structure/catwalk,/turf/simulated/floor/plating,/area/vacant/gambling)
 "ber" = (/obj/item/device/radio/intercom{dir = 1; pixel_x = 0; pixel_y = -28},/turf/simulated/floor/tiled/white,/area/vacant/gambling)
-"bes" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/obj/structure/closet/crate/plastic,/obj/random/chem_disp_cartridge/chem,/obj/random/chem_disp_cartridge/chem,/obj/random/chem_disp_cartridge/chem,/obj/random/chem_disp_cartridge/chem,/obj/item/weapon/paper/sierrau,/turf/simulated/floor/tiled/white,/area/vacant/gambling)
+"bes" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/obj/structure/closet/crate/plastic,/obj/item/weapon/paper/sierrau,/turf/simulated/floor/tiled/white,/area/vacant/gambling)
 "beN" = (/obj/effect/floor_decal/corner/blue/border{icon_state = "bordercolor"; dir = 5},/turf/simulated/floor/tiled/dark/monotile,/area/bridge/hall/level_one)
 "beP" = (/obj/effect/floor_decal/corner/blue/bordercorner,/turf/simulated/floor/tiled/dark,/area/bridge/nano)
 "beQ" = (/obj/effect/floor_decal/corner/blue/diagonal{dir = 4},/turf/simulated/floor/tiled/dark,/area/bridge/nano)
