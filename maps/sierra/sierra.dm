@@ -19,6 +19,9 @@
 	#include "sierra_unit_testing.dm"
 
 	#include "datums/uniforms.dm"
+	#include "datums/uniforms_civilian.dm"
+	#include "datums/uniforms_contractor.dm"
+	#include "datums/uniforms_employee.dm"
 
 	#include "datums/reports/command.dm"
 	#include "datums/reports/corporate.dm"

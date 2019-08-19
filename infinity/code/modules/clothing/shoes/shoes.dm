@@ -19,6 +19,7 @@
 	item_state = "black_shoes"
 
 /obj/item/clothing/shoes/workboots/alt
+	name = "low workboots"
 	icon_state = "workboots"
 	item_state = "workboots"
 	icon = 'infinity/icons/obj/clothing/obj_feet.dmi'
