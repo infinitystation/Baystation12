@@ -329,15 +329,18 @@
 		src.welded = !src.welded
 		src.update_icon()
 		user.visible_message("<span class='warning'>\The [src] has been [welded?"welded shut":"unwelded"] by \the [user].</span>", blind_message = "You hear welding.", range = 3)
-	else if(isMultimeter(W) && (setup & CLOSET_HAS_LOCK))
-		var/obj/item/device/multitool/multimeter/O = W
-		if(O.mode != METER_CHECKING)
-			to_chat(user, "<span class='notice'>Переключите мультиметр.</span>")
-		else
-			if (user.skill_check(SKILL_ELECTRICAL, SKILL_ADEPT))
-				src.interact(usr)
+	else if(setup & CLOSET_HAS_LOCK)
+		if(isMultimeter(W))
+			var/obj/item/device/multitool/multimeter/O = W
+			if(O.mode != METER_CHECKING)
+				to_chat(user, "<span class='notice'>Переключите мультиметр.</span>")
 			else
-				to_chat(user, "<span class='notice'>Вы не умеете работать с этим замком.</span>")
+				if (user.skill_check(SKILL_ELECTRICAL, SKILL_ADEPT))
+					src.interact(usr)
+				else
+					to_chat(user, "<span class='notice'>Вы не умеете работать с этим замком.</span>")
+		else
+			src.togglelock(user)
 	else
 		src.attack_hand(user)
 
@@ -386,12 +389,6 @@
 	src.add_fingerprint(user)
 	src.toggle(user)
 
-// tk grab then use on self
-/obj/structure/closet/attack_self_tk(mob/user as mob)
-	src.add_fingerprint(user)
-	if(!src.toggle())
-		to_chat(usr, "<span class='notice'>It won't budge!</span>")
-
 /obj/structure/closet/attack_ghost(mob/ghost)
 	if(ghost.client && ghost.client.inquisitive_ghost)
 		ghost.examinate(src)
@@ -403,7 +400,7 @@
 	set category = "Object"
 	set name = "Toggle Open"
 
-	if(!CanPhysicallyInteract(usr))
+	if(!(CanUseTopicPhysical(usr) == STATUS_UPDATE)) //inf, was if(!CanPhysicallyInteract(usr))
 		return
 
 	if(ishuman(usr))
@@ -502,7 +499,9 @@
 /obj/structure/closet/proc/togglelock(var/mob/user, var/obj/item/weapon/card/id/id_card)
 	if(!(setup & CLOSET_HAS_LOCK))
 		return FALSE
-	if(!CanPhysicallyInteract(user))
+/*inf	if(!CanPhysicallyInteract(user))
+		return FALSE*/
+	if(!(CanUseTopicPhysical(user) == STATUS_UPDATE)) //inf, was if(!CanPhysicallyInteract(usr))
 		return FALSE
 	if(src.opened)
 		to_chat(user, "<span class='notice'>Close \the [src] first.</span>")
