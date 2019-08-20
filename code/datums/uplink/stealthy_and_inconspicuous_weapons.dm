@@ -26,14 +26,14 @@
 	desc = "Contains one of an assortment of nasty toxins, with a single syringe included. Don't worry, its labeled. "
 	item_cost = 8
 	path = /obj/item/weapon/storage/box/syndie_kit/toxin
-
+/*
 /datum/uplink_item/item/stealthy_weapons/sleepy
 	name = "Sleepy Pen"
 	desc = "Looks and works like a pen, but prick someone with it, and 30 seconds later, they'll be out like a light."
 	item_cost = 20
 	antag_costs = list(MODE_MERCENARY = 10)
 	path = /obj/item/weapon/pen/reagent/sleepy
-
+*/
 /datum/uplink_item/item/stealthy_weapons/syringegun
 	name = "Disguised Syringe Gun"
 	desc = "A syringe gun disguised as an electronic cigarette with 4 darts included in the box. Chemicals not included!"
