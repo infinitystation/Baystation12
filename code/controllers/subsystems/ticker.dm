@@ -77,7 +77,7 @@ SUBSYSTEM_DEF(ticker)
 			Master.SetRunLevel(RUNLEVEL_LOBBY)
 			to_world("<B>Невозможно выбрать соответствующий настройкам игровой режим (недостаточно игроков со включенными рол&#255;ми).</B> Лобби перезапущено дл&#255; повторного голосовани&#255;.")
 			return
-		if(CHOOSE_GAMEMODE_RESTART)
+		if(CHOOSE_GAMEMODE_RESTART) //inf, unused
 			to_world("<B>Невозможно выбрать соответствующий настройкам игровой режим.</B> Мир будет перезапущен.")
 			world.Reboot("Ошибка при выборе игрового режима. Были попытки запустить [english_list(bad_modes)].")
 			return
@@ -228,8 +228,8 @@ Helpers
 */
 
 /datum/controller/subsystem/ticker/proc/choose_gamemode()
-	. = (revotes_allowed && !bypass_gamemode_vote) ? CHOOSE_GAMEMODE_REVOTE : CHOOSE_GAMEMODE_RESTART
-
+	. = (revotes_allowed && !bypass_gamemode_vote) ? CHOOSE_GAMEMODE_REVOTE : CHOOSE_GAMEMODE_RETRY
+// ^^^inf, was . = (revotes_allowed && !bypass_gamemode_vote) ? CHOOSE_GAMEMODE_REVOTE : CHOOSE_GAMEMODE_RESTART
 	var/mode_to_try = master_mode //This is the config tag
 	var/datum/game_mode/mode_datum
 
