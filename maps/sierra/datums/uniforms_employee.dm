@@ -20,8 +20,8 @@
 
 	hat = list(\
 		/obj/item/clothing/head/soft/yellow, /obj/item/clothing/head/hardhat/white)
-	under = \
-		/obj/item/clothing/under/rank/chief_engineer
+	under = list(\
+		/obj/item/clothing/under/rank/chief_engineer)
 
 /* SUPPLY
  * ======
@@ -103,8 +103,8 @@
 		/obj/item/clothing/under/rank/medical/scrubs/black, /obj/item/clothing/under/rank/medical/scrubs/navyblue, \
 		/obj/item/clothing/under/rank/medical/scrubs/lilac, /obj/item/clothing/under/rank/medical/scrubs/teal, \
 		/obj/item/clothing/under/rank/medical/scrubs/heliodor)
-	shoes = \
-		/obj/item/clothing/shoes/white
+	shoes = list(\
+		/obj/item/clothing/shoes/white)
 
 /decl/hierarchy/mil_uniform/nt/med/head
 	name = "Employee Medical Head"

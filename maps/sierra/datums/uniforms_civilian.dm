@@ -103,8 +103,8 @@
 		/obj/item/clothing/under/rank/medical/scrubs/black, /obj/item/clothing/under/rank/medical/scrubs/navyblue, \
 		/obj/item/clothing/under/rank/medical/scrubs/lilac, /obj/item/clothing/under/rank/medical/scrubs/teal, \
 		/obj/item/clothing/under/rank/medical/scrubs/heliodor)
-	shoes = \
-		/obj/item/clothing/shoes/white
+	shoes = list(\
+		/obj/item/clothing/shoes/white)
 
 /decl/hierarchy/mil_uniform/civilian/med/head
 	name = "Civilian Medical Head"
