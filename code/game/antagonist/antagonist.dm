@@ -73,12 +73,18 @@
 	var/default_access = list()
 	var/id_type = /obj/item/weapon/card/id
 
-	var/antag_text = "You are an antagonist! Within the rules, \
-		try to act as an opposing force to the crew. Further RP and try to make sure \
-		other players have <i>fun</i>! If you are confused or at a loss, always adminhelp, \
-		and before taking extreme actions, please try to also contact the administration! \
-		Think through your actions and make the roleplay immersive! <b>Please remember all \
-		rules aside from those without explicit exceptions apply to antagonists.</b>"
+	var/antag_text = "¬ы - антагонист! ƒержась в рамках правила сервера, действуйте \
+		как противник по отношению к экипажу. —тарайтесь следовать ролевой моделе, которую подразумевает \
+		¬аша роль и и доставить удовольствие от игры не только дл&#255; себ&#255;, но и дл&#255; других игроков! \
+		≈сли вы растер&#255;ны или не знаете, что делать - не бойтесь спрашивать администраторов (F1). —юда также \
+		входит совершение действие, которые, по вашему мнению, могут нарушать правила сервера. \
+		<b>ѕожалуйста, не забывайте, что правила действуют на антагонистов точно так же, как и на других игроков \
+		- не убивайте и не лишайте возможности нормально продолжать игру, если на это нет весомых \
+		причин. Ќе уходите в рабочую атмосферу раунда и не делайте вид, \
+		что вы - обычный член экипажа или \"добрый антагонист\" (на долгий период). ќт вас часто зависит то, \
+		будет ли угроза дл&#255; экипажа в смене или нет, что составл&#255;ет большую часть интереса. \
+		—тарайтесь начинать действовать после получаса (или часа) от начал раунда, не зат&#255;гивайте планированием \
+		или выжиданием удобного момента, которым может стать прыжок после двухчасовой скуки."
 
 /datum/antagonist/New()
 	GLOB.all_antag_types_[id] = src
