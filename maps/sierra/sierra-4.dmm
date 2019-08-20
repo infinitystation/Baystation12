@@ -12658,6 +12658,22 @@
 	dir = 1
 	},
 /area/rescue_base/base)
+"aBX" = (
+/obj/machinery/door/airlock/external{
+	autoset_access = 0;
+	frequency = 1380;
+	icon_state = "closed";
+	id_tag = "merchant_solar_inner";
+	locked = 1;
+	name = "Solar External Access";
+	req_access = list("ACCESS_MERCHANT")
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 4;
+	icon_state = "intact"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/merchant_station)
 "aBY" = (
 /obj/structure/mopbucket,
 /obj/item/weapon/mop,
@@ -12746,6 +12762,17 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/shuttle/merchant/home)
+"aCf" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/alarm/merchant{
+	dir = 8;
+	pixel_x = 25
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/merchant_station)
 "aCg" = (
 /turf/unsimulated/floor{
 	icon_state = "plating";
@@ -25978,18 +26005,6 @@
 /obj/structure/shuttle/engine/heater,
 /turf/simulated/floor/airless,
 /area/merchant_station)
-"bhp" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/alarm/merchant{
-	dir = 8;
-	pixel_x = 25
-	},
-/turf/simulated/floor/tiled/freezer,
-/area/merchant_station)
 "bhq" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/effect/floor_decal/spline/plain/grey{
@@ -26506,25 +26521,6 @@
 /obj/effect/shuttle_landmark/ferry/start,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/shuttle/transport1/centcom)
-"biz" = (
-/obj/machinery/door/airlock/external{
-	autoset_access = 0;
-	frequency = 1380;
-	icon_state = "closed";
-	id_tag = "merchant_solar_inner";
-	locked = 1;
-	name = "Solar External Access";
-	req_access = list("ACCESS_MERCHANT")
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/visible/cyan{
-	dir = 4;
-	icon_state = "intact"
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/merchant_station)
 "biB" = (
 /obj/machinery/door/airlock/external{
 	autoset_access = 0;
@@ -61906,7 +61902,7 @@ bao
 baO
 bbo
 aQJ
-biz
+aBX
 aQJ
 bdv
 bdY
@@ -66156,7 +66152,7 @@ aQJ
 bfx
 bgq
 bgR
-bhp
+aCf
 bhP
 bib
 acY

@@ -1,5 +1,5 @@
 /datum/unit_test/station_wires_shall_be_connected
-	exceptions = list(list(29, 99, 2, SOUTH),list(28, 98, 3, NORTH),list(33, 101, 3, WEST),list(33, 105, 3, WEST),list(28, 108, 3, SOUTH))
+	exceptions = list(list(33, 101, 3, WEST),list(33, 105, 3, WEST))
 
 /datum/map/sierra
 	// Unit test exemptions
@@ -23,8 +23,8 @@
 		/area/maintenance/bluespace = NO_SCRUBBER,
 		/area/maintenance/abandoned_compartment = NO_APC,
 		/area/maintenance/abandoned_hydroponics = 0,
-		/area/maintenance/firstdeck/centralport = 0,
 		/area/maintenance/firstdeck/fore = NO_SCRUBBER|NO_VENT,
+		/area/maintenance/firstdeck/aftport = 0,
 		/area/maintenance/abandoned_common = 0,
 		/area/mine/explored = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/mine/unexplored = NO_SCRUBBER|NO_VENT|NO_APC,
