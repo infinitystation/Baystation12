@@ -87,7 +87,6 @@
 
 /obj/structure/closet/secure_closet/prospector/WillContain()
 	return list(
-		/obj/item/clothing/under/rank/miner,
 		/obj/item/clothing/accessory/storage/webbing,
 		/obj/item/clothing/gloves/thick,
 		/obj/item/clothing/shoes/workboots,
