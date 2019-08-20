@@ -499,7 +499,7 @@
 	sound_env = MEDIUM_SOFTFLOOR
 
 /area/crew_quarters/heads/captain/beach
-	name = "\improper Command - Captain's Beach Room"
+	name = "\improper Command - Captain's Recreation Facility"
 	icon_state = "heads_cap"
 	sound_env = PLAIN
 	req_access = list()
