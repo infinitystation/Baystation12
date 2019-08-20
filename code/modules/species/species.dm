@@ -538,8 +538,6 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 		if(H.equipment_see_invis)
 			H.set_see_invisible(max(min(H.see_invisible, H.equipment_see_invis), vision[2]))
 
-	H.equipment_tint_total += vision_tint //inf
-
 	if(H.equipment_tint_total >= TINT_BLIND)
 		H.eye_blind = max(H.eye_blind, 1)
 

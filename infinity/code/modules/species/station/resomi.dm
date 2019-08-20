@@ -42,7 +42,6 @@
 	mob_size = MOB_SMALL
 	holder_type = /obj/item/weapon/holder/human
 	light_sensitive = 6
-	vision_tint = 1
 	gluttonous = GLUT_TINY
 	blood_volume = 280
 	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.5
