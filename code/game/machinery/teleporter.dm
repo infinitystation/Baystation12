@@ -250,14 +250,14 @@
 	connect_station()
 
 /obj/machinery/teleport/station/proc/connect_station()
-	for(var/dir in list(NORTH,EAST,SOUTH,WEST))
-		com = locate(/obj/machinery/computer/teleporter, get_step(src, dir))
+	for(var/dirs in list(NORTH,EAST,SOUTH,WEST))
+		com = locate() in view(1,src)
 		if(com)
 			if(!com.station)
 				com.station = src
 			if(!com.hub)
 				com.hub = hub
-		hub = locate(/obj/machinery/teleport/hub, get_step(src, dir))
+		hub = locate() in view(1,src)
 		if(hub)
 			if(!hub.com)
 				hub.com = com
