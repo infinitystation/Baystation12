@@ -128,7 +128,7 @@
 	var/global/list/status_overlays_equipment
 	var/global/list/status_overlays_lighting
 	var/global/list/status_overlays_environ
-
+	var/hp = 100 //infinity
 /obj/machinery/power/apc/updateDialog()
 	if (stat & (BROKEN|MAINT))
 		return
@@ -247,6 +247,8 @@
 				to_chat(user, "The cover is closed. Something wrong with it: it doesn't work.")
 			else if (hacker && !hacker.hacked_apcs_hidden)
 				to_chat(user, "The cover is locked.")
+				if(user.skill_check(SKILL_ELECTRICAL, SKILL_PROF)) //inf
+					to_chat(user, SPAN_NOTICE("Looks like you can use your skills to restore main settings of [src] with multitool...")) //inf
 			else
 				to_chat(user, "The cover is closed.")
 
@@ -565,6 +567,27 @@
 
 	// Deconstruction
 	if(isWelder(W))
+//inf ahead
+		if(hp < 100)
+			if(is_broken())
+				to_chat(user, SPAN_WARNING("The APC is too damaged, replace of the frame is only option."))
+				return TRUE
+			var/obj/item/weapon/weldingtool/WT = W
+			if(WT.get_fuel() < 3)
+				to_chat(user, SPAN_WARNING("You need more welding fuel to complete this task."))
+				return TRUE
+			user.visible_message(SPAN_NOTICE("\The [user] begins to mend dents at \the [src]."), \
+				"You start mend dents the APC frame...", \
+				"You hear welding.")
+			playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
+			if(do_after(user, 50, src) && opened && has_electronics == 0 && !terminal())
+				if(!WT.remove_fuel(3, user))
+					return TRUE
+			hp = 100 //inf
+			user.visible_message(SPAN_NOTICE("\The [user] has repaired \the [src]'s frame."), \
+				"You repair the APC frame.")
+			return TRUE
+//inf end
 		if(!opened)
 			to_chat(user, SPAN_WARNING("You must first open the cover."))
 			return TRUE
@@ -613,38 +636,59 @@
 				"<span class='warning'>[user.name] has replaced the damaged APC frontal panel with a new one.</span>",\
 				"<span class='notice'>You replace the damaged APC frontal panel with a new one.</span>")
 			qdel(W)
+			hp = 100 //inf
 			update_icon()
 			return TRUE
 
 		if((stat & BROKEN) || (hacker && !hacker.hacked_apcs_hidden))
-			if (has_electronics)
-				to_chat(user, "<span class='warning'>You cannot repair this APC until you remove the electronics still inside.</span>")
-				return TRUE
+//inf			if(has_electronics)
+//inf				to_chat(user, "<span class='warning'>You cannot repair this APC until you remove the electronics still inside.</span>")
+//inf				return TRUE
 
-				user.visible_message("<span class='warning'>[user.name] replaces the damaged APC frame with a new one.</span>",\
-									"You begin to replace the damaged APC frame...")
-				if(do_after(user, 50, src) && opened && !has_electronics && ((stat & BROKEN) || (hacker && !hacker.hacked_apcs_hidden)))
-					user.visible_message(\
-						"<span class='notice'>[user.name] has replaced the damaged APC frame with new one.</span>",\
-						"You replace the damaged APC frame with new one.")
-					qdel(W)
-					set_broken(FALSE)
-					// Malf AI, removes the APC from AI's hacked APCs list.
-					if(hacker && hacker.hacked_apcs && (src in hacker.hacked_apcs))
-						hacker.hacked_apcs -= src
-						hacker = null
-					if (opened==2)
-						opened = 1
-					queue_icon_update()
+			user.visible_message("<span class='warning'>[user.name] replaces the damaged APC frame with a new one.</span>",\
+				"You begin to replace the damaged APC frame...")
+			if(do_after(user, 50, src) && opened && !has_electronics && ((stat & BROKEN) || (hacker && !hacker.hacked_apcs_hidden)))
+				user.visible_message(\
+					"<span class='notice'>[user.name] has replaced the damaged APC frame with new one.</span>",\
+					"You replace the damaged APC frame with new one.")
+				qdel(W)
+				set_broken(FALSE)
+				hp = 100 //inf
+				// Malf AI, removes the APC from AI's hacked APCs list.
+				if(hacker && hacker.hacked_apcs && (src in hacker.hacked_apcs))
+					hacker.hacked_apcs -= src
+					hacker = null
+				if (opened==2)
+					opened = 1
+				queue_icon_update()
+
+//inf ahead
+	if(isMultitool(W) && !wiresexposed && has_electronics)
+		if((user.skill_check(SKILL_ELECTRICAL, SKILL_PROF) || user.skill_check(SKILL_COMPUTER, SKILL_PROF)) && \
+		(hacker && hacker.hacked_apcs && (src in hacker.hacked_apcs)))
+			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN) //don't spam
+			user.visible_message(SPAN_NOTICE("[user] moves [W] around the APC..."), \
+				SPAN_NOTICE("You begin to restore settings of circuits..."))
+			if(!(do_after(user, 60, src)) && (hacker && hacker.hacked_apcs && (src in hacker.hacked_apcs)))
+				return
+			hacker.hacked_apcs -= src
+			hacker = null
+			user.visible_message(user, SPAN_NOTICE("[src] beeps and the screen restores to default state."), \
+				SPAN_NOTICE("You restore main settings of the APC! Prise your skills!"))
+			playsound(src, 'sound/machines/twobeep.ogg', 75, 0)
+//			reboot() boring
+			queue_icon_update()
+		return
+//inf end
 
 	if((. = ..())) // Further interactions are low priority attack stuff.
 		return
 
-	if (((stat & BROKEN) || (hacker && !hacker.hacked_apcs_hidden)) \
-			&& !opened \
-			&& W.force >= 5 \
-			&& W.w_class >= 3.0 \
-			&& prob(20) )
+	if(opened != 2 && hp <= 5) //inf, was (((stat & BROKEN) || (hacker && !hacker.hacked_apcs_hidden)) \
+			//inf, was && !opened \
+			//inf, was && W.force >= 5 \
+			//inf, was && W.w_class >= 3.0 \
+			//inf, was && prob(20) )
 		opened = 2
 		user.visible_message("<span class='danger'>The APC cover was knocked down with the [W.name] by [user.name]!</span>", \
 			"<span class='danger'>You knock down the APC cover with your [W.name]!</span>", \
@@ -655,22 +699,28 @@
 			return attack_robot(user)
 		if (!opened && wiresexposed && (isMultitool(W) || isWirecutter(W) || istype(W, /obj/item/device/assembly/signaler)))
 			return wires.Interact(user)
+//inf ahead
+		if(hp <= 0)
+			to_chat(user, SPAN_NOTICE("[src] is already destroyed...")) //yeah, they may continue bash
+		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+//inf end
 
 		user.visible_message("<span class='danger'>The [src.name] has been hit with the [W.name] by [user.name]!</span>", \
 			"<span class='danger'>You hit the [src.name] with your [W.name]!</span>", \
 			"You hear a bang")
-		if(W.force >= 5 && W.w_class >= ITEM_SIZE_NORMAL && prob(W.force))
-			var/roulette = rand(1,100)
-			switch(roulette)
-				if(1 to 10)
-					locked = FALSE
-					to_chat(user, "<span class='notice'>You manage to disable the lock on \the [src]!</span>")
-				if(50 to 70)
-					to_chat(user, "<span class='notice'>You manage to bash the lid open!</span>")
-					opened = 1
-				if(90 to 100)
-					to_chat(user, "<span class='warning'>There's a nasty sound and \the [src] goes cold...</span>")
-					set_broken(TRUE)
+		if(W.force >= 5 && W.w_class >= ITEM_SIZE_NORMAL) //inf, was f(W.force >= 5 && W.w_class >= ITEM_SIZE_NORMAL && prob(W.force))
+			if(hp > 0) //inf
+				hp -= W.force //inf, was var/roulette = rand(1,100)
+//inf			switch(roulette)
+			if(locked && hp <= 75) //inf, was if(1 to 10)
+				locked = FALSE
+				to_chat(user, "<span class='notice'>You manage to disable the lock on \the [src]!</span>")
+			if(!opened && hp <= 50) //inf, was if(50 to 70)
+				to_chat(user, "<span class='notice'>You manage to bash the lid open!</span>")
+				opened = 1
+			if(opened != 2 && hp <= 15) //inf, was if(90 to 100)
+				to_chat(user, "<span class='warning'>There's a nasty sound and \the [src] goes cold...</span>")
+				set_broken(TRUE)
 			queue_icon_update()
 	playsound(get_turf(src), 'sound/weapons/smash.ogg', 75, 1)
 
@@ -1185,6 +1235,9 @@ obj/machinery/power/apc/proc/autoset(var/cur_state, var/on)
 	to_chat(user, "\The [src] has been upgraded. It is now protected against EM pulses.")
 	return 1
 
-
+//inf ahead
+/obj/machinery/CanUseTopicPhysical(var/mob/user)
+	return GLOB.physical_state.can_use_topic(nano_host(), user)
+//ind end
 
 #undef APC_UPDATE_ICON_COOLDOWN
