@@ -123,12 +123,12 @@
 		if(can_investigate)
 			if(C.is_afk())
 				line += " (АФК - [C.inactivity2text()])"
-/*			if(isghost(C.mob))
+			if(isghost(C.mob))
 				line += " - Наблюдает"
 			else if(istype(C.mob,/mob/new_player))
 				line += " - В лобби"
 			else
-				line += " - Играет"*/
+				line += " - Играет"
 			if(C.is_stealthed())
 				line += " (Стелс)"
 			if(C.get_preference_value(/datum/client_preference/show_ooc) == GLOB.PREF_HIDE)
