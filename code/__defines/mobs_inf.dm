@@ -10,8 +10,6 @@
 #define TINT_BLIND 7
 
 
-#define BP_CANCER "cancer"
-
 #define OBSERV_SPAWN_DELAY round(config.respawn_delay / 2)
 
 // Character's economic class
