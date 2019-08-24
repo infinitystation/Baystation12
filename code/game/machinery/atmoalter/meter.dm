@@ -8,7 +8,7 @@
 	power_channel = ENVIRON
 	var/frequency = 0
 	var/id
-	layer = EXPOSED_PIPE_LAYER //inf, was 8.1
+	layer = MOUSETRAP_LAYER //inf, was 8.1
 	idle_power_usage = 15
 	plane = ABOVE_TURF_PLANE //inf
 
