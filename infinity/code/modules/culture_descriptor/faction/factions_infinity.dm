@@ -112,7 +112,7 @@
 	Можно назвать везением для экипажа, если на судне окажутся активные охранники от КСЗП."
 	subversive_potential = 5
 	language = LANGUAGE_SPACER
-
+/*
 /decl/cultural_info/faction/scp
 	name = FACTION_SCP
 	description = "Полу-государственная компания, в обязательном порядке обеспечивающая безопасность корпоративных активов на территориях Терранской Колониальной Конфедерации - корпорациям нельзя действовать в пределах ТКК без её участия. \
@@ -122,7 +122,7 @@
 	economic_power = 0.9 //TCC
 	subversive_potential = 35
 	language = LANGUAGE_HUMAN_RUSSIAN
-
+*/
 /decl/cultural_info/faction/septenergo
 	name = FACTION_SEPTENERGO
 	description = "Крупнейшая государственная энергетическая корпорация. Известна многовековой историей и своим проектом космического мегасооружения - Энергетического конвергенторсора, \

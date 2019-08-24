@@ -62,7 +62,7 @@
 #define FACTION_BISHOP          "Bishop Cybernetics"
 #define FACTION_MORPHEUS        "Morpheus Cyberkinetics"
 #define FACTION_ZPCI            "Zone Protection Control Inc."
-#define FACTION_SCP             "Security Corporate Personal"
+//#define FACTION_SCP             "Security Corporate Personal"
 #define FACTION_SEPTENERGO      "SeptEnergo Public Joint-Stock Company"
 
 // Xenophage cultures

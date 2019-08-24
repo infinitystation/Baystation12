@@ -3463,7 +3463,6 @@
 #include "infinity\customs\os_uniform.dm"
 #include "infinity\customs\pink_guitar.dm"
 #include "infinity\customs\ronin_helmet.dm"
-#include "infinity\customs\scp_carrier.dm"
 #include "infinity\customs\shizukana_hikaro.dm"
 #include "infinity\customs\sprites_kits.dm"
 #include "infinity\customs\stange_pill.dm"

@@ -43,14 +43,14 @@
 	name = "\improper combat helmet"
 	desc = "A helmet with 'MARINE CORPS' printed on the back in red lettering."
 	icon_state = "helmet_nt"
-
+/*
 /obj/item/clothing/head/soft/scp_cap
 	name = "SCP guard cap"
 	desc = "A simple security dark grey cap.\nThis one has SCP tag, GGS's organization of NT asset protection."
 	icon = 'infinity/icons/obj/clothing/obj_head.dmi'
 	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
 	icon_state = "scp_cap"
-
+*/
 /obj/item/clothing/head/christhat
 	name = "christ's hat"
 	desc = "Ho ho ho. Merrry X-mas! (if use it, will show/hide hair)."
