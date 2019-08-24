@@ -21,6 +21,17 @@
 	display_name = "holster selection"
 	path = /obj/item/clothing/accessory/storage/holster
 	cost = 3
+//inf ahead
+/datum/gear/tactical/holster/New()
+	..()
+	var/holsters = list()
+	holsters += /obj/item/clothing/accessory/storage/holster
+	holsters += /obj/item/clothing/accessory/storage/holster/armpit
+	holsters += /obj/item/clothing/accessory/storage/holster/hip
+	holsters += /obj/item/clothing/accessory/storage/holster/thigh
+	holsters += /obj/item/clothing/accessory/storage/holster/waist
+	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(holsters)
+//inf end
 
 /datum/gear/tactical/sheath
 	display_name = "machete sheath"
