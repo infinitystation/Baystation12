@@ -1,5 +1,7 @@
 /obj/effect/overmap/ship/sierra
 	name = "NSV Sierra"
+	desc = "A space object with wide of 121.2 meters, length of 214.5 meters and high near 14.3 meters. A Self Indentification Signal classifices \
+	the target as NanoTrasen Science Vessel, a property of NanoTrasen Corporation."
 	fore_dir = WEST
 	vessel_mass = 28000
 	start_x = 4
@@ -12,6 +14,7 @@
 		"Charon" = list("nav_hangar_calypso"),
 		"Guppy" = list("nav_hangar_guppy"),
 		"Albatross" = list("nav_albatross_dock"), //away_inf/sentinel/sentinel.dmm shuttle,
+		"Sol Rescue Shuttle" = list("nav_deck3_patrol"), //away_inf/patrol/patrol.dmm shuttle,
 	)
 
 	initial_generic_waypoints = list(
@@ -50,6 +53,7 @@
 	shuttle = "Charon"
 	max_speed = 1/(4 SECONDS)
 	burn_delay = 2 SECONDS
+	vessel_mass = 1400
 	fore_dir = NORTH
 
 /obj/effect/overmap/ship/landable/guppy
@@ -57,7 +61,7 @@
 	shuttle = "Guppy"
 	max_speed = 1/(10 SECONDS)
 	burn_delay = 2 SECONDS
-	vessel_mass = 1700
+	vessel_mass = 600
 	fore_dir = SOUTH
 
 /obj/machinery/computer/shuttle_control/explore/exploration_shuttle

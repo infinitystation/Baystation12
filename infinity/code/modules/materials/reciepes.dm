@@ -20,7 +20,7 @@
 
 /datum/stack_recipe/mainkraft/pcarrier
 	title = "plate carrier"
-	result_type = /obj/item/clothing/accessory/armorplate/mainkraft/heavy
+	result_type = /obj/item/clothing/suit/armor/pcarrier/mainkraft/plastic
 	req_amount = 15
 	difficulty = 2
 	time = 120
@@ -33,7 +33,7 @@
 
 /datum/stack_recipe/mainkraft/beaker
 	title = "iron bowl"
-	result_type = /obj/item/clothing/accessory/armorplate/mainkraft/medium
+	result_type = /obj/item/weapon/reagent_containers/glass/beaker/large/mitoll
 	req_amount = 6
 	difficulty = 1
 	time = 60
@@ -47,7 +47,7 @@
 	. += new/datum/stack_recipe/mainkraft/harmor(src)
 	. += new/datum/stack_recipe/mainkraft/beaker(src)
 
-/material/plasteel/generate_recipes(var/reinforce_material)
+/material/plastic/generate_recipes(var/reinforce_material)
 	. = ..()
 	if(reinforce_material)	//recipies below don't support composite materials
 		return
@@ -57,4 +57,4 @@
 	. = ..()
 	if(reinforce_material)	//recipies below don't support composite materials
 		return
-	. += create_recipe_list(/datum/stack_recipe/box)
+	. += new/datum/stack_recipe/mainkraft/papercup(src)

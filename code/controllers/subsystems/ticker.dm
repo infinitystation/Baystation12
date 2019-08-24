@@ -6,7 +6,7 @@ SUBSYSTEM_DEF(ticker)
 	flags = SS_NO_TICK_CHECK | SS_KEEP_TIMING
 	runlevels = RUNLEVEL_LOBBY | RUNLEVELS_DEFAULT
 
-	var/pregame_timeleft = 3 MINUTES
+	var/pregame_timeleft = 2 MINUTES
 	var/start_ASAP = FALSE          //the game will start as soon as possible, bypassing all pre-game nonsense
 	var/list/gamemode_vote_results  //Will be a list, in order of preference, of form list(config_tag = number of votes).
 	var/bypass_gamemode_vote = 0    //Intended for use with admin tools. Will avoid voting and ignore any results.
@@ -77,7 +77,7 @@ SUBSYSTEM_DEF(ticker)
 			Master.SetRunLevel(RUNLEVEL_LOBBY)
 			to_world("<B>Невозможно выбрать соответствующий настройкам игровой режим (недостаточно игроков со включенными рол&#255;ми).</B> Лобби перезапущено дл&#255; повторного голосовани&#255;.")
 			return
-		if(CHOOSE_GAMEMODE_RESTART)
+		if(CHOOSE_GAMEMODE_RESTART) //inf, unused
 			to_world("<B>Невозможно выбрать соответствующий настройкам игровой режим.</B> Мир будет перезапущен.")
 			world.Reboot("Ошибка при выборе игрового режима. Были попытки запустить [english_list(bad_modes)].")
 			return
@@ -124,7 +124,7 @@ SUBSYSTEM_DEF(ticker)
 
 		INVOKE_ASYNC(src, .proc/declare_completion)
 		Master.SetRunLevel(RUNLEVEL_POSTGAME)
-		if(!update_server && config.allow_map_switching && config.auto_map_vote && GLOB.all_maps.len > 1)
+		if(!update_server && config.allow_map_switching && config.auto_map_vote && GLOB.playable_maps.len > 1)
 			end_game_state = END_GAME_AWAITING_MAP
 			spawn(2 SECONDS)
 				SSvote.initiate_vote(/datum/vote/map, automatic = 1)
@@ -228,8 +228,8 @@ Helpers
 */
 
 /datum/controller/subsystem/ticker/proc/choose_gamemode()
-	. = (revotes_allowed && !bypass_gamemode_vote) ? CHOOSE_GAMEMODE_REVOTE : CHOOSE_GAMEMODE_RESTART
-
+	. = (revotes_allowed && !bypass_gamemode_vote) ? CHOOSE_GAMEMODE_REVOTE : CHOOSE_GAMEMODE_RETRY
+// ^^^inf, was . = (revotes_allowed && !bypass_gamemode_vote) ? CHOOSE_GAMEMODE_REVOTE : CHOOSE_GAMEMODE_RESTART
 	var/mode_to_try = master_mode //This is the config tag
 	var/datum/game_mode/mode_datum
 

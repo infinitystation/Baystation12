@@ -76,10 +76,9 @@
 
 /obj/structure/closet/wardrobe/medic_sierra/WillContain()
 	return list(
-		RANDOM_SCRUBS = 3,
-		/obj/item/clothing/shoes/white = 3,
-		/obj/item/clothing/suit/storage/toggle/labcoat = 3,
-		/obj/item/clothing/under/sterile = 3,
+		/obj/item/clothing/shoes/white = 2,
+		/obj/item/clothing/suit/storage/toggle/labcoat = 2,
+		/obj/item/clothing/under/sterile = 2,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/medic, /obj/item/weapon/storage/backpack/satchel/med)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/med, /obj/item/weapon/storage/backpack/messenger/med))
 	)

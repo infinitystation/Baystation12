@@ -105,7 +105,6 @@ var/list/admin_verbs_fun = list(
 	/client/proc/object_talk,
 	/client/proc/cmd_admin_dress,
 	/client/proc/cmd_admin_gib_self,
-
 	/client/proc/drop_bomb,
 	/client/proc/everyone_random,
 	/client/proc/cinematic,
@@ -119,7 +118,6 @@ var/list/admin_verbs_fun = list(
 	/datum/admins/proc/call_drop_pod,
 	/client/proc/create_dungeon,
 	/datum/admins/proc/ai_hologram_set,
-
 	//[INF],
 	/datum/admins/proc/intercom,		//send a fake intercom message, like an arrivals announcement,
 	/datum/admins/proc/intercom_convo,	//send a fake intercom conversation, like an ATC exchange,
@@ -137,9 +135,9 @@ var/list/admin_verbs_spawn = list(
 	/datum/admins/proc/check_custom_items,
 	/datum/admins/proc/spawn_plant,
 	/datum/admins/proc/spawn_atom,		// allows us to spawn instances,
-	/client/proc/game_panel,//inf
+	/client/proc/game_panel,//inf,
 	/client/proc/respawn_character,
-	/client/proc/respawn_as_self,//inf
+	/client/proc/respawn_as_self,//inf,
 	/client/proc/virus2_editor,
 	/client/proc/spawn_chemdisp_cartridge,
 	/datum/admins/proc/mass_debug_closet_icons
@@ -165,9 +163,9 @@ var/list/admin_verbs_server = list(
 	/client/proc/toggle_random_events,
 	/client/proc/check_customitem_activity,
 	/client/proc/nanomapgen_DumpImage,
-	/client/proc/cmd_toggle_admin_help,//inf
-	/client/proc/observe_delay,//inf
-	/client/proc/update_server//inf
+	/client/proc/cmd_toggle_admin_help,//inf,
+	/client/proc/observe_delay,//inf,
+	/client/proc/update_server//inf,
 	)
 var/list/admin_verbs_debug = list(
 	/client/proc/getruntimelog, // allows us to access runtime logs to somebody,
@@ -207,18 +205,18 @@ var/list/admin_verbs_debug = list(
 	/turf/proc/update_chunk,
 	/datum/admins/proc/capture_map,
 	/datum/admins/proc/view_runtimes,
-	/client/proc/watched_variables,//inf
-	/client/proc/secrets,//inf
+	/client/proc/watched_variables,//inf,
+	/client/proc/secrets,//inf,
 	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify,
-	/client/proc/debug_global_variables,//inf
+	/client/proc/debug_global_variables,//inf,
 	/client/proc/cmd_analyse_health_context,
 	/client/proc/cmd_analyse_health_panel,
-	/client/proc/reestablish_db_connection,//inf
+	/client/proc/reestablish_db_connection,//inf,
 	/client/proc/visualpower,
 	/client/proc/visualpower_remove,
-	/client/proc/ping_webhook,//inf
-	/client/proc/reload_webhooks,//inf
-	/client/proc/debug_airlocks_id//inf
+	/client/proc/ping_webhook,//inf,
+	/client/proc/reload_webhooks,//inf,
+	/client/proc/debug_airlocks_id//inf,
 	)
 
 var/list/admin_verbs_paranoid_debug = list(

@@ -23,6 +23,7 @@
 
 	var/power_cost = 950                                       // Cost per fire, should consume almost an entire basic cell.
 	var/power_per_tick                                         // Capacitor charge per process(). Updated based on capacitor rating.
+	has_safety = FALSE //inf
 
 /obj/item/weapon/gun/magnetic/Initialize()
 	START_PROCESSING(SSobj, src)

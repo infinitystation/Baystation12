@@ -44,7 +44,7 @@
 	light_sensitive = 6
 	gluttonous = GLUT_TINY
 	blood_volume = 280
-	hunger_factor = DEFAULT_HUNGER_FACTOR * 3
+	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.5
 	taste_sensitivity = TASTE_SENSITIVE
 	pulse_rate_mod = 1.5
 	body_temperature = 314.15

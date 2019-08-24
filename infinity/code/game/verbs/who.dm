@@ -73,7 +73,7 @@
 		for(var/client/C in GLOB.clients)
 			if(!C.is_stealthed())
 				var/entry = "[C.key]"
-				switch(C.mob.stat)
+/*				switch(C.mob.stat)
 					if(DEAD)
 						if(isghost(C.mob))
 							var/mob/observer/ghost/O = C.mob
@@ -84,7 +84,7 @@
 						else if(isnewplayer(C.mob))
 							entry += " - <font color='#006400'><b>ֲ כמבבט</b></font>"
 					else
-						entry += " - <font color='green'><b>ָדנאוע</b></font>"
+						entry += " - <font color='green'><b>ָדנאוע</b></font>"*/
 
 				if(C.is_afk())
 					entry += " - <b>AFK: [C.inactivity2text()]</b>"

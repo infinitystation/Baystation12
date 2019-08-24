@@ -11,7 +11,6 @@
 	return list(
 		/obj/item/clothing/accessory/storage/brown_vest,
 		/obj/item/blueprints,
-		/obj/item/clothing/head/hardhat/white,
 		/obj/item/clothing/head/welding,
 		/obj/item/clothing/gloves/insulated,
 		/obj/item/device/radio/headset/heads/ce,
@@ -45,7 +44,6 @@
 
 /obj/structure/closet/secure_closet/engineering_senior/WillContain()
 	return list(
-		/obj/item/clothing/under/hazard,
 		/obj/item/clothing/accessory/storage/brown_vest,
 		/obj/item/device/radio/headset/headset_eng,
 		/obj/item/device/radio/headset/headset_eng/alt,
@@ -71,7 +69,6 @@
 
 /obj/structure/closet/secure_closet/engineering_sierra/WillContain()
 	return list(
-		/obj/item/clothing/under/hazard,
 		/obj/item/clothing/accessory/storage/brown_vest,
 		/obj/item/weapon/storage/belt/utility/full,
 		/obj/item/device/radio/headset/headset_eng,
@@ -94,7 +91,6 @@
 
 /obj/structure/closet/secure_closet/atmos_sierra/WillContain()
 	return list(
-		/obj/item/clothing/under/hazard,
 		/obj/item/clothing/suit/fire/firefighter,
 		/obj/item/clothing/head/hardhat/red,
 		/obj/item/device/flashlight/upgraded,

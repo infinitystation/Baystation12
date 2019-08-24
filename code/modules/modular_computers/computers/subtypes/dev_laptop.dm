@@ -40,8 +40,8 @@
 		return
 	anchored = !anchored
 	screen_on = anchored
-	dir = user.dir
-	src.set_dir(turn(src.dir, -180))
+
+	dir = get_dir(loc, user.loc)
 	update_icon()
 
 /obj/item/modular_computer/laptop/on_update_icon()

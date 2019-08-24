@@ -389,12 +389,6 @@
 	src.add_fingerprint(user)
 	src.toggle(user)
 
-// tk grab then use on self
-/obj/structure/closet/attack_self_tk(mob/user as mob)
-	src.add_fingerprint(user)
-	if(!src.toggle())
-		to_chat(usr, "<span class='notice'>It won't budge!</span>")
-
 /obj/structure/closet/attack_ghost(mob/ghost)
 	if(ghost.client && ghost.client.inquisitive_ghost)
 		ghost.examinate(src)
@@ -442,7 +436,9 @@
 		return 1 // Closed and locked
 	return (!welded) //closed but not welded...
 
-/obj/structure/closet/proc/mob_breakout(var/mob/living/escapee)
+/obj/structure/closet/mob_breakout(var/mob/living/escapee)
+
+	. = ..()
 	var/breakout_time = 2 //2 minutes by default
 
 	if(breakout || !req_breakout())
@@ -503,8 +499,8 @@
 /obj/structure/closet/proc/togglelock(var/mob/user, var/obj/item/weapon/card/id/id_card)
 	if(!(setup & CLOSET_HAS_LOCK))
 		return FALSE
-	if(!CanPhysicallyInteract(user))
-		return FALSE
+/*inf	if(!CanPhysicallyInteract(user))
+		return FALSE*/
 	if(src.opened)
 		to_chat(user, "<span class='notice'>Close \the [src] first.</span>")
 		return FALSE

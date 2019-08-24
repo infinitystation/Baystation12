@@ -19,6 +19,9 @@
 	#include "sierra_unit_testing.dm"
 
 	#include "datums/uniforms.dm"
+	#include "datums/uniforms_civilian.dm"
+	#include "datums/uniforms_contractor.dm"
+	#include "datums/uniforms_employee.dm"
 
 	#include "datums/reports/command.dm"
 	#include "datums/reports/corporate.dm"
@@ -80,7 +83,6 @@
 
 	#include "machinery/alarm.dm"
 	#include "machinery/doors.dm"
-	#include "machinery/keycard authentication.dm"
 	#include "machinery/machinery.dm"
 	#include "machinery/navbeacons.dm"
 	#include "machinery/power.dm"
@@ -132,7 +134,9 @@
 	#include "../away_inf/blueriver/blueriver.dm"
 	#include "../away_inf/smugglers/smugglers.dm"
 	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
+	#include "../away_inf/patrol/patrol.dm"
 
+	#include "../away/ascent/ascent.dm"
 	#include "../away/bearcat/bearcat.dm"
 	#include "../away/derelict/derelict.dm"
 	#include "../away/magshield/magshield.dm"

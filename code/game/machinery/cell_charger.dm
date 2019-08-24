@@ -9,12 +9,13 @@
 	power_channel = EQUIP
 	var/obj/item/weapon/cell/charging = null
 	var/chargelevel = -1
+	construct_state = /decl/machine_construction/default/panel_closed //inf
 
 /obj/machinery/cell_charger/Initialize()
 	. = ..()
-	component_parts = list(
+/*inf	component_parts = list(
 		new /obj/item/weapon/stock_parts/circuitboard/cell_charger(src),
-		new /obj/item/weapon/stock_parts/capacitor(src))
+		new /obj/item/weapon/stock_parts/capacitor(src)) inf*/
 	RefreshParts()
 
 /obj/machinery/cell_charger/RefreshParts()

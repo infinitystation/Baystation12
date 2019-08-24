@@ -16,11 +16,23 @@
 		slot_r_hand_str = "gas_mask_rh"
 	)
 
-//SCP helmet
+//ZPCI armor vest
+
+/obj/item/clothing/suit/storage/vest/pcrc/custom
+	name = "medium armor X4/2"
+	desc = " You can notice built-in pouches on the body armor belt. At the other side, you can see the inscription of Zone Protection Control Inc in red letters."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "medarm"
+	armor = list(melee = 40, bullet = 40, laser = 40, energy = 25, bomb = 30, bio = 0, rad = 0) //meduim plate carrier
+	item_icons = list(
+		slot_wear_suit_str = CUSTOM_ITEM_MOB
+	)
+
+//ZPCI helmet
 
 /obj/item/clothing/head/helmet/x_four
 	name = "\improper X-4 helmet"
-	desc = "The glass of the helmet is made of armored glass, from the side you can see the laser designator. SCP inscription on back of helmet."
+	desc = "The glass of the helmet is made of armored glass, from the side you can see the laser designator. ZPCI inscription on back of helmet."
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "iconscphelmet"
 	//item_state = "scphelmetonmob"

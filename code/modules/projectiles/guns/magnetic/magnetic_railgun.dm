@@ -21,6 +21,7 @@
 	gun_unreliable = 0
 	var/slowdown_held = 3
 	var/slowdown_worn = 2
+	has_safety = TRUE //inf
 
 /obj/item/weapon/gun/magnetic/railgun/Initialize()
 

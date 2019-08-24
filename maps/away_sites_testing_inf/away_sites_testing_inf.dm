@@ -11,15 +11,17 @@
 	#include "../away_inf/blueriver/blueriver.dm"
 //	#include "../away_inf/gunboat/gunboat.dm" - TORCH, doesn't maintenance (someone want to change it?)
 //	#include "../away_inf/marksman/marksman.dm" - TORCH, doesn't maintenance (someone want to change it?)
+//	#include "../away_inf/sentinel/sentinel.dm" - TORCH, doesn't maintenance (someone want to change it?)
 //	#include "../away_inf/merchant/merchant.dm" - WIP
-	#include "../away_inf/mining/mining.dm"
 //	#include "../away_inf/rubidu/rubidu.dm" - WIP
 //	#include "../away_inf/salvagers/salvagers.dm" - WIP
-//	#include "../away_inf/sentinel/sentinel.dm" - TORCH, doesn't maintenance (someone want to change it?)
-	#include "../away_inf/smugglers/smugglers.dm"
 //	#include "../away_inf/white_star/white_star.dm" - WIP
+	#include "../away_inf/mining/mining.dm"
+	#include "../away_inf/smugglers/smugglers.dm"
 	#include "../away_inf/yacht/yacht.dm"
 	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
+	#include "../away_inf/patrol/patrol.dm"
+	#include "../away_inf/blueriver/blueriver.dm"
 
 	#define using_map_DATUM /datum/map/away_sites_testing
 

@@ -671,3 +671,9 @@
 /obj/effect/shuttle_landmark/sierra/transit/blueriver_shuttle
 	name = "In transit"
 	landmark_tag = "nav_transit_blueriver"
+
+/obj/effect/shuttle_landmark/sierra/deck3/patrol
+	name = "Deck Three Starboard Dock"
+	landmark_tag = "nav_deck3_patrol"
+	docking_controller = "admin_shuttle_dock_airlock"
+

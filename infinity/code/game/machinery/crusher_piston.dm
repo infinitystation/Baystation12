@@ -14,6 +14,7 @@
 	idle_power_usage = 300
 
 	var/obj/machinery/crusher_piston/pstn //Piston
+	construct_state = /decl/machine_construction/default/panel_closed
 
 	var/action = "idle" //Action the piston should perform
 	// idle -> Do nothing

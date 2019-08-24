@@ -199,6 +199,7 @@
 	active_power_usage = 2000
 	var/obj/machinery/computer/teleporter/com
 	var/obj/machinery/teleport/station/station
+	construct_state = /decl/machine_construction/default/panel_closed //inf
 
 /obj/machinery/teleport/hub/Initialize()
 	. = ..()
@@ -232,30 +233,31 @@
 	active_power_usage = 2000
 	var/obj/machinery/computer/teleporter/com
 	var/obj/machinery/teleport/hub/hub
+	maximum_component_parts = null //inf, was nothing
 
 /obj/machinery/teleport/station/Initialize()
 	. = ..()
 	overlays.Cut()
 	overlays += image('icons/obj/stationobjs.dmi', icon_state = "controller-wires")
-	component_parts = list(
+/*inf	component_parts = list(
 		new /obj/item/weapon/stock_parts/circuitboard/teleporter_station(src),
 		new /obj/item/weapon/stock_parts/manipulator/pico(src),
 		new /obj/item/weapon/stock_parts/scanning_module/phasic(src),
 		new /obj/item/weapon/stock_parts/scanning_module/phasic(src),
 		new /obj/item/weapon/stock_parts/subspace/filter(src),
 		new /obj/item/weapon/stock_parts/subspace/analyzer(src),
-		new /obj/item/weapon/stock_parts/subspace/transmitter(src))
+		new /obj/item/weapon/stock_parts/subspace/transmitter(src)) inf*/
 	connect_station()
 
 /obj/machinery/teleport/station/proc/connect_station()
-	for(var/dir in list(NORTH,EAST,SOUTH,WEST))
-		com = locate(/obj/machinery/computer/teleporter, get_step(src, dir))
+	for(var/dirs in list(NORTH,EAST,SOUTH,WEST))
+		com = locate() in view(1,src)
 		if(com)
 			if(!com.station)
 				com.station = src
 			if(!com.hub)
 				com.hub = hub
-		hub = locate(/obj/machinery/teleport/hub, get_step(src, dir))
+		hub = locate() in view(1,src)
 		if(hub)
 			if(!hub.com)
 				hub.com = com

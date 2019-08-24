@@ -99,6 +99,8 @@ yourbro - giant armoured serpentid
 logfol - giant armoured serpentid
 forrya - giant armoured serpentid
 he11d1ver - giant armoured serpentid
+darkman24rus - giant armoured serpentid
+bob46 - giant armoured serpentid
 inubashirimomiji - diona
 bartstarter - diona
 wolforbykot - diona
@@ -164,6 +166,7 @@ forrya - tajaran
 arhod - tajaran
 kordvik - tajaran
 wolforbykot - tajaran
+moonmen - tajaran
 wheatley2013 - adherent
 sosiskoed - adherent
 gumboldty - adherent
@@ -174,4 +177,7 @@ wolfetd - adherent
 hardstuck - adherent
 jacking - adherent
 redknighthero - adherent
-redknighthero - bionic
+coldmantis13 - adherent
+coldmantis13 - Kharmaan Gyne
+s1334 - Kharmaan Gyne
+wheatley2013 - Kharmaan Gyne

@@ -23,7 +23,8 @@
 		/obj/item/clothing/gloves/latex,
 		/obj/item/weapon/reagent_containers/spray/cleaner,
 		/obj/item/clothing/head/chefhat,
-		/obj/item/clothing/suit/chef/classic
+		/obj/item/clothing/suit/chef/classic,
+		/obj/item/clothing/mask/surgical
 	)
 
 /obj/structure/closet/secure_closet/hydroponics_sierra //done so that it has no access reqs

@@ -1,13 +1,5 @@
 var/const/SAFETY_COOLDOWN = 100
 
-/obj/item/weapon/stock_parts/circuitboard/recycler
-	name = "Circuit board (Recycler)"
-	board_type = "machine"
-	build_path = /obj/machinery/recycler
-	origin_tech = "engineering = 3"
-	req_components = list(/obj/item/weapon/stock_parts/manipulator = 1)
-
-
 /obj/machinery/recycler
 	name = "recycler"
 	desc = "A large crushing machine which is used to grind lumps of trash down; there are lights on the side of it."
@@ -22,13 +14,10 @@ var/const/SAFETY_COOLDOWN = 100
 	var/blood = 0
 	var/eat_dir = WEST
 	var/chance_to_recycle = 1
+	construct_state = /decl/machine_construction/default/panel_closed
 
 /obj/machinery/recycler/Initialize()
-	// On us
 	. = ..()
-	component_parts = list()
-	component_parts += new /obj/item/weapon/stock_parts/circuitboard/recycler(null)
-	component_parts += new /obj/item/weapon/stock_parts/manipulator(null)
 	RefreshParts()
 	update_icon()
 

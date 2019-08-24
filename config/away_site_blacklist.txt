@@ -3,8 +3,3 @@
 #SPECIFYING AN INVALID MAP WILL RESULT IN RUNTIMES ON GAME START
 
 #maps/random_ruins/away_sites/example.dmm
-maps/away_inf/unishi/unishi-1.dmm
-maps/away_inf/unishi/unishi-2.dmm
-maps/away_inf/unishi/unishi-3.dmm
-maps/away_inf/skrellscoutship/skrellscoutship-1.dmm
-maps/away_inf/skrellscoutship/skrellscoutship-2.dmm

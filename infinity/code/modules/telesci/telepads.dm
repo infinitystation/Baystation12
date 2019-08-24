@@ -8,6 +8,10 @@
 	use_power = 1
 	idle_power_usage = 200
 	active_power_usage = 5000
+	construct_state = /decl/machine_construction/default/panel_closed
+	uncreated_component_parts = null
+	stat_immune = 0
+
 	var/efficiency
 
 /obj/machinery/telepad/New()
@@ -17,8 +21,8 @@
 	new /obj/item/bluespace_crystal/artificial,
 	new /obj/item/bluespace_crystal/artificial,
 	new /obj/item/weapon/stock_parts/capacitor,
-	new /obj/item/weapon/stock_parts/console_screen,
-	new /obj/item/stack/cable_coil(src, 1))
+	new /obj/item/weapon/stock_parts/console_screen
+	)
 	RefreshParts()
 
 /obj/machinery/telepad/RefreshParts()
@@ -26,6 +30,10 @@
 	for(var/obj/item/weapon/stock_parts/capacitor/C in component_parts)
 		E += C.rating
 	efficiency = E
+
+/obj/machinery/telepad/components_are_accessible(path)
+	return panel_open
+
 
 /obj/machinery/telepad/attackby(obj/item/I, mob/user, params)
 	if(component_attackby(I, user)) return TRUE

@@ -1,3 +1,24 @@
+/* we haven't an office for him now
+/datum/job/chaplain
+	title = "Chaplain"
+	department = "Service"
+	department_flag = SRV
+
+	total_positions = 1
+	spawn_positions = 1
+	ideal_character_age = 40
+	economic_power = 4
+	minimal_player_age = 0
+	supervisors = "the Head of Personnel"
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/service/chaplain
+	allowed_branches = list(/datum/mil_branch/civilian, /datum/mil_branch/contractor)
+	allowed_ranks = list(/datum/mil_rank/civ/contractor, /datum/mil_rank/civ/civ)
+	min_skill = list(SKILL_BUREAUCRACY = SKILL_BASIC)
+
+	access = list()
+	minimal_access = list()
+*/
+
 /datum/job/janitor
 	title = "Janitor"
 	department = "Service"

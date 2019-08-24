@@ -1,3 +1,8 @@
+/obj/random_multi/single_item/captains_spare_id
+	icon = 'icons/obj/card.dmi'
+	icon_state = "base"
+	color = COLOR_AMBER
+
 /obj/random/trap //let's start this file with some traps
 	name = "random trap"
 	desc = "This is a placeholder for a random trap."
@@ -14,6 +19,32 @@
 				/obj/effect/mine/phoron = 1,
 				/obj/effect/mine/n2o = 2,
 				/obj/effect/mine/stun = 4)
+
+/obj/random/chem_disp_cartridge/chem
+	name = "random chemical reagent containers"
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "cartridge"
+
+/obj/random/reagent_containers/chem/spawn_choices()
+	return list(/obj/item/weapon/reagent_containers/chem_disp_cartridge/hydrazine = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/lithium = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/carbon = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/ammonia = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/acetone = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/sodium = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/aluminium = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/silicon = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/phosphorus = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/sulfur = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/hclacid = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/potassium = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/iron = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/copper = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/mercury = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/radium = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/ethanol = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/sacid = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/tungsten = 1,)
 
 /obj/random/gloves/poor
 	name = "random poor gloves"

@@ -149,7 +149,7 @@ proc/damage_check(var/mob/living/M, var/damage_type)
 
 /datum/unit_test/mob_damage/start_test()
 	var/list/test = create_test_mob_with_mind(null, mob_type)
-	var/damage_amount = 4	// Do not raise, if damage >= 5 there is a % chance to reduce damage by half in /obj/item/organ/external/take_damage()
+	var/damage_amount = 4	// Do not raise, if damage >= 5 there is a % chance to reduce damage by half in /obj/item/organ/external/take_damage() //inf
 							// Which makes checks impossible.
 
 	if(isnull(test))
@@ -302,6 +302,7 @@ datum/unit_test/mob_damage/halloss
 
 datum/unit_test/mob_damage/tajaran
 	name = "MOB: Tajaran damage check template"
+	template = /datum/unit_test/mob_damage/tajaran
 	mob_type = /mob/living/carbon/human/tajaran
 
 datum/unit_test/mob_damage/tajaran/brute
@@ -336,6 +337,7 @@ datum/unit_test/mob_damage/tajaran/halloss
 
 datum/unit_test/mob_damage/resomi
 	name = "MOB: Resomi damage check template"
+	template = /datum/unit_test/mob_damage/resomi
 	mob_type = /mob/living/carbon/human/resomi
 
 datum/unit_test/mob_damage/resomi/brute

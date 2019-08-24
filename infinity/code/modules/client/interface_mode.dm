@@ -1,15 +1,15 @@
 #define COLOR_DARKDREAM_BACKGROUND "#202020"
 #define COLOR_DARKDREAM_DARKBACKGROUND "#171717"
 #define COLOR_DARKDREAM_TEXT "#a4bad6"
-#define COLOR_DARKDREAM_CHAT "#9e9e9e"
+#define COLOR_DARKDREAM_CHAT "#ececec"
 
 #define COLOR_LIGHTDREAM_BACKGROUND "#ffffff"
 #define COLOR_LIGHTDREAM_TEXT "#000000"
 
-#define COLOR_INFINITYDREAM_DARKBACK "#170033"
+/*#define COLOR_INFINITYDREAM_DARKBACK "#170033"
 #define COLOR_INFINITYDREAM_BACK "#220065"
 #define COLOR_INFINITYDREAM_FORE "#d6b5fd"
-#define COLOR_INFINITYDREAM_CHAT "#b690ff"
+#define COLOR_INFINITYDREAM_CHAT "#b690ff"*/
 
 
 /client/proc/change_theme(var/foreground_color, var/background_color, var/additional_background_color = background_color, var/chat_color = background_color, var/chat_fore_color = foreground_color)
@@ -45,7 +45,7 @@
 	set name = "Change interface Theme"
 	set category = "OOC"
 
-	switch(alert("Choose interface theme.", "Interface of your Dream", "Light Dream", "Dark Dream", "Infinity Dream"))
+	switch(alert("Choose interface theme.", "Interface of your Dream", "Light Dream", "Dark Dream"))//, "Infinity Dream"))
 		if("Light Dream")
 			change_theme(COLOR_LIGHTDREAM_TEXT, COLOR_LIGHTDREAM_BACKGROUND)
 			to_chat(src, SPAN_NOTICE("Your dream's interface successfully switched to Light Dream theme."))
@@ -54,8 +54,8 @@
 			change_theme(COLOR_DARKDREAM_TEXT, COLOR_DARKDREAM_BACKGROUND, COLOR_DARKDREAM_DARKBACKGROUND, COLOR_DARKDREAM_CHAT, COLOR_LIGHTDREAM_TEXT)
 			to_chat(src, SPAN_NOTICE("Your dream's interface successfully switched to Dark Dream theme."))
 			return 2
-		if("Infinity Dream")
+		/*if("Infinity Dream")
 			change_theme(COLOR_INFINITYDREAM_FORE, COLOR_INFINITYDREAM_BACK, COLOR_INFINITYDREAM_DARKBACK, COLOR_INFINITYDREAM_CHAT, COLOR_LIGHTDREAM_TEXT)
 			to_chat(src, SPAN_NOTICE("Your dream's interface successfully switched to Infinity Dream theme."))
-			return 3
+			return 3*/
 	return 0
