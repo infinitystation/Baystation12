@@ -69,35 +69,35 @@
 				qdel(W)
 				to_chat(user, "<span class='notice'>You have mounted the housing to install the lenses.</span>")
 				buildstate++
-	update_icon()
+				update_icon()
 			return
 		if(1)
 			if(istype(W,/obj/item/weapon/tape_roll))
 				user.visible_message("<span class='notice'>\The [user] secures the pipe with the izolenta.</span>")
 				add_fingerprint(user)
 				buildstate++
-	update_icon()
+				update_icon()
 			return
 		if(2)
 			if(istype(W,/obj/item/weapon/stock_parts/micro_laser))
 				qdel(W)
 				to_chat(user, "<span class='notice'>You've installed an emitter.</span>")
 				buildstate++
-	update_icon()
+				update_icon()
 			return
 		if(3)
 			if(istype(W,/obj/item/weapon/cell/high))
 				qdel(W)
 				to_chat(user, "<span class='notice'>You put a battery inside.</span>")
 				buildstate++
-	update_icon()
+				update_icon()
 			return
 		if(4)
 			if(istype(W,/obj/item/weapon/stock_parts/capacitor))
 				qdel(W)
 				to_chat(user, "<span class='notice'>You've installed a capacitor..</span>")
 				buildstate++
-	update_icon()
+				update_icon()
 			return
 		if(5)
 			if(istype(W,/obj/item/stack/material) && W.get_material_name() == MATERIAL_STEEL)
@@ -105,7 +105,7 @@
 				if(M.use(10))
 					to_chat(user, "<span class='notice'>You created and installed a trigger mechanism.</span>")
 					buildstate++
-	update_icon()
+					update_icon()
 				else
 					to_chat(user, "<span class='notice'>You need at least ten metal sheets to complete this task.</span>")
 			return
@@ -114,7 +114,7 @@
 				qdel(W)
 				to_chat(user, "<span class='notice'>You put an igniter inside trigger mechanism.</span>")
 				buildstate++
-	update_icon()
+				update_icon()
 			return
 		if(7)
 			if(istype(W,/obj/item/stack/material) && W.get_material_name() == MATERIAL_PLASTIC)
@@ -122,7 +122,7 @@
 				if(P.use(10))
 					to_chat(user, "<span class='notice'>You have prepared and installed a housing for electronic systems.</span>")
 					buildstate++
-	update_icon()
+					update_icon()
 				else
 					to_chat(user, "<span class='notice'>You need at least ten plastic sheets to complete this task.</span>")
 			return
@@ -131,28 +131,28 @@
 				qdel(W)
 				to_chat(user, "<span class='notice'>You've installed an internal reserve power cell.</span>")
 				buildstate++
-	update_icon()
+				update_icon()
 			return
 		if(9)
 			if(istype(W,/obj/item/weapon/stock_parts/computer/processor_unit/small))
 				qdel(W)
 				to_chat(user, "<span class='notice'>You've installed a processor.</span>")
 				buildstate++
-	update_icon()
+				update_icon()
 			return
 		if(10)
 			if(istype(W,/obj/item/weapon/module/power_control))
 				qdel(W)
 				to_chat(user, "<span class='notice'>You've installed a circuitbord.</span>")
 				buildstate++
-	update_icon()
+				update_icon()
 			return
 		if(11)
 			if(istype(W,/obj/item/weapon/stock_parts/smes_coil))
 				qdel(W)
 				to_chat(user, "<span class='notice'>You've installed an additional capacitor-retranslator</span>")
 				buildstate++
-	update_icon()
+				update_icon()
 			return
 		if(12)
 			if(isCoil(W))
@@ -160,7 +160,7 @@
 				if(C.use(30))
 					to_chat(user, "<span class='notice'>You installed the wiring inside, connecting the electronics inside.</span>")
 					buildstate++
-	update_icon()
+					update_icon()
 				else
 					to_chat(user, "<span class='notice'>You need at least 30 segments of cable coil to complete this task.</span>")
 			return
@@ -172,13 +172,13 @@
 					playsound(src.loc, 'sound/items/Welder2.ogg', 100, 1)
 					to_chat(user, "<span class='notice'>You weld the cables into places.</span>")
 					buildstate++
-	update_icon()
+					update_icon()
 			return
 		if(14)
 			if(isMultimeter(W))
 				to_chat(user, "<span class='notice'>You reprogrammed the resulting internal device with a multimeter.You fixed bugs, added new features and fixed crutches. Then you compile that shitcode and it works</span>")
 				buildstate++
-	update_icon()
+				update_icon()
 			return
 		if(15)
 			if(istype(W,/obj/item/stack/material) && W.get_material_name() == MATERIAL_GLASS)
@@ -186,7 +186,7 @@
 				if(M.use(40))
 					to_chat(user, "<span class='notice'>You install lenses and scope.</span>")
 					buildstate++
-	update_icon()
+					update_icon()
 				else
 					to_chat(user, "<span class='notice'>You need at least five glass sheets to complete this task.</span>")
 			return
@@ -194,7 +194,7 @@
 			if(istype(W,/obj/item/weapon/rcd))
 				to_chat(user, "<span class='notice'>You processed the lens with RCD, making it perfect.</span>")
 				buildstate++
-	update_icon()
+				update_icon()
 			return
 		if(17)
 			if(isScrewdriver(W))
