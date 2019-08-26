@@ -20,13 +20,13 @@
 	var/l_inner_range = 0 //inner range of light when on, can be negative
 	var/l_outer_range = 4.5 //outer range of light when on, can be negative
 
-/obj/machinery/floodlight/New()
-	cell = new/obj/item/weapon/cell/crap(src)
+/*/obj/machinery/floodlight/New()
+	battery = new/obj/item/weapon/cell/crap(src)
 	..()
 
 /obj/machinery/floodlight/cargo/New()
-	cell = new/obj/item/weapon/cell/standard(src)
-	..()
+	battery = new/obj/item/weapon/cell/standard(src)
+	..()*/
 /obj/machinery/floodlight/on_update_icon()
 	icon_state = "flood[panel_open ? "o" : ""][panel_open && get_cell() ? "b" : ""]0[on]"
 

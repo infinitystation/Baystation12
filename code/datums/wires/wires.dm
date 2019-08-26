@@ -9,7 +9,7 @@ var/list/same_wires = list()
 // 14 colours, if you're adding more than 14 wires then add more colours here
 var/list/wireColours = list("red", "blue", "green", "darkred", "orange", "brown", "gold", "gray", "cyan", "navy", "purple", "pink", "black", "yellow")
 
-var/global/all_solved_wires = list() //Solved wire associative list, eg; all_solved_wires[/obj/machinery/door/airlock] used form NTStation13
+var/global/all_solved_wires = list() //Solved wire associative list, eg; all_solved_wires[/obj/machinery/door/airlock] used form NTStation13 //inf
 
 /datum/wires
 
@@ -74,7 +74,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 
 		src.wires[colour] = index
 		//wires = shuffle(wires)
-	all_solved_wires[holder_type] = SolveWires()
+	all_solved_wires[holder_type] = SolveWires()//inf
 /datum/wires/proc/Interact(var/mob/living/user)
 
 	var/html = null
@@ -111,11 +111,11 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 		html += "<td[row_options1]><font color='[colour]'>&#9724;</font>[capitalize(colour)]</td>"
 		html += "<td[row_options2]>"
 		html += "<A href='?src=\ref[src];action=1;cut=[colour]'>[IsColourCut(colour) ? "Mend" :  "Cut"]</A>"
-		html += " <A href='?src=\ref[src];action=1;pulse=[colour]'>Pulse/Check</A>"
+		html += " <A href='?src=\ref[src];action=1;pulse=[colour]'>Pulse</A>"
 		html += " <A href='?src=\ref[src];action=1;attach=[colour]'>[IsAttached(colour) ? "Detach" : "Attach"] Signaller</A>"
 		html += " <A href='?src=\ref[src];action=1;examine=[colour]'>Examine</A></td></tr>"
 	html += "</table>"
-	html += "<br /><A href='?src=\ref[src];action=1;check=1'>Check Wiring</A>"
+	html += "<br /><A href='?src=\ref[src];action=1;check=1'>Check Wiring</A>"//inf
 	html += "</div>"
 
 	if (random)
@@ -125,9 +125,9 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 
 /datum/wires/Topic(href, href_list)
 	..()
-	var/list/unsolved_wires = src.wires.Copy()
-	var/colour_function
-	var/solved_colour_function
+	var/list/unsolved_wires = src.wires.Copy()//inf
+	var/colour_function//inf
+	var/solved_colour_function//inf
 
 	if(in_range(holder, usr) && isliving(usr))
 
@@ -155,8 +155,8 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 				else
 					to_chat(L, "<span class='error'>You need wirecutters!</span>")
 			else if(href_list["pulse"])
+				var/colour = href_list["pulse"]
 				if(isMultitool(I) || isMultitool(offhand_item))
-					var/colour = href_list["pulse"]
 					if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 30, SKILL_ADEPT)))
 						RandomPulse()
 						to_chat(L, "<span class='danger'>You accidentally pulse another wire!</span>")
@@ -167,6 +167,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 					if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 50, SKILL_BASIC)))
 						wires = shuffle(wires) //Leaves them in a different order for anyone else.
 						to_chat(L, "<span class='danger'>You get the wires all tangled up!</span>")
+			//[inf]
 				else if(isMultimeter(I))
 					var/obj/item/device/multitool/multimeter/O = L.get_active_hand()
 					if(O.mode == METER_MESURING)
@@ -194,6 +195,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 								to_chat(L, "the [colour] wire not connected")
 						else
 							to_chat(L, "<span class='notice'>Вы не умеете подключать мультиметр.</span>")
+			//[/inf]
 				else
 					to_chat(L, "<span class='error'>You need a multitool or a multimeter!</span>")
 
@@ -215,6 +217,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 							Attach(colour, I)
 					else
 						to_chat(L, "<span class='error'>You need a remote signaller!</span>")
+		//[inf]
 			//multimeter stuff
 			else if(href_list["check"])
 				if(isMultimeter(I))
@@ -246,7 +249,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 						to_chat(L, "<span class='notice'>Вы не знаете как с этим работать.</span>")
 				else
 					to_chat(L, "<span class='warning'>Вам нужен мультиметр.</span>")
-
+		//[/inf]
 			else if(href_list["examine"])
 				var/colour = href_list["examine"]
 				to_chat(usr, examine(GetIndex(colour), usr))
@@ -320,7 +323,7 @@ var/const/POWER = 8
 /datum/wires/proc/PulseIndex(var/index)
 	if(IsIndexCut(index))
 		return
-	playsound(holder.loc, 'infinity/sound/items/multitool_pulse.ogg', 20, 1)
+	playsound(holder.loc, 'infinity/sound/items/multitool_pulse.ogg', 20, 1)//inf
 	UpdatePulsed(index)
 
 /datum/wires/proc/GetIndex(var/colour)
@@ -400,7 +403,7 @@ var/const/POWER = 8
 	else
 		wires_status |= index
 		UpdateCut(index, 0)
-	playsound(holder.loc, 'sound/items/Wirecutter.ogg', 100, 1)
+	playsound(holder.loc, 'sound/items/Wirecutter.ogg', 100, 1)//inf
 
 /datum/wires/proc/RandomCut()
 	var/r = rand(1, wires.len)
@@ -433,6 +436,7 @@ var/const/POWER = 8
 	wires_status = 0
 	GenerateWires()
 
+//[inf]
 // Wire solve functions
 
 /datum/wires/proc/name_by_type()
@@ -443,7 +447,7 @@ var/const/POWER = 8
 		name_by_type = "APC"
 	if(istype(src, /datum/wires/robot))
 		name_by_type = "Cyborg"
-	if(istype(src, /datum/wires/autolathe))
+	if(istype(src, /datum/wires/fabricator))
 		name_by_type = "Autolathe"
 	if(istype(src, /datum/wires/alarm))
 		name_by_type = "Air Alarm"
@@ -482,3 +486,4 @@ var/const/POWER = 8
 	solved_txt += "<br>"
 
 	return solved_txt
+//[/inf]

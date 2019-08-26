@@ -243,53 +243,40 @@ var/global/list/all_objectives = list()
 	*/
 
 	var/global/possible_items[] = list(
-		"the captain's personal revolver" = /obj/item/weapon/gun/projectile/revolver/medium/captain,
-		"an RCD" = /obj/item/weapon/rcd,
-		"a jetpack" = /obj/item/weapon/tank/jetpack,
-		"a functional AI" = /obj/item/weapon/aicard,
-		"an Exploration Leader's deluxe machete"	 = /obj/item/weapon/material/hatchet/machete/deluxe,
-		"a pair of magboots" = /obj/item/clothing/shoes/magboots,
-		"the [station_name()] blueprints" = /obj/item/blueprints,
-		"28 moles of phoron (full tank)" = /obj/item/weapon/tank,
-		"a sample of slime extract" = /obj/item/slime_extract,
-		"a piece of corgi meat" = /obj/item/weapon/reagent_containers/food/snacks/meat/corgi,
-		"a captain's jumpsuit" = /obj/item/clothing/under/rank/captain,
-		"a research director's jumpsuit" = /obj/item/clothing/under/rank/research_director,
-		"a chief engineer's jumpsuit" = /obj/item/clothing/under/rank/chief_engineer,
-		"a chief medical officer's jumpsuit" = /obj/item/clothing/under/rank/chief_medical_officer,
-		"a head of security's jumpsuit" = /obj/item/clothing/under/rank/head_of_security,
-		"a head of personnel's jumpsuit" = /obj/item/clothing/under/rank/head_of_personnel,
-		"a Formal Outfit of NT Internal Affairis Agent" = /obj/item/clothing/under/rank/internalaffairs/,
-		"a Tactical Goggles" = /obj/item/clothing/glasses/tacgoggles,
-		"the hypospray" = /obj/item/weapon/reagent_containers/hypospray,
-		"the captain's pinpointer" = /obj/item/weapon/pinpointer,
-		"an ablative armor vest" = /obj/item/clothing/suit/armor/laserproof,
-		"a ballistic armor kit" =  /obj/item/clothing/suit/armor/bulletproof,
+		"the captain's personal revolver"					=		/obj/item/weapon/gun/projectile/revolver/medium/captain,
+		"an RCD"											=		/obj/item/weapon/rcd,
+		"a jetpack"											=		/obj/item/weapon/tank/jetpack,
+		"a functional AI"									=		/obj/item/weapon/aicard,
+		"an Exploration Leader's deluxe machete"			=		/obj/item/weapon/material/hatchet/machete/deluxe,
+		"a pair of magboots"								=		/obj/item/clothing/shoes/magboots,
+		"the [station_name()] blueprints"					=		/obj/item/blueprints,
+		"28 moles of phoron (full tank)"					=		/obj/item/weapon/tank,
+		"a sample of slime extract"							=		/obj/item/slime_extract,
+		"a piece of corgi meat"								=		/obj/item/weapon/reagent_containers/food/snacks/meat/corgi,
+		"a captain's jumpsuit"								=		/obj/item/clothing/under/rank/captain,
+		"a research director's jumpsuit"					=		/obj/item/clothing/under/rank/research_director,
+		"a chief engineer's jumpsuit"						=		/obj/item/clothing/under/rank/chief_engineer,
+		"a chief medical officer's jumpsuit"				=		/obj/item/clothing/under/rank/chief_medical_officer,
+		"a head of security's jumpsuit"						=		/obj/item/clothing/under/rank/head_of_security,
+		"a head of personnel's jumpsuit"					=		/obj/item/clothing/under/rank/head_of_personnel,
+		"a Formal Outfit of NT Internal Affairis Agent"		=		/obj/item/clothing/under/rank/internalaffairs/,
+		"a Tactical Goggles"								=		/obj/item/clothing/glasses/tacgoggles,
+		"the hypospray"										=		/obj/item/weapon/reagent_containers/hypospray,
+		"the captain's pinpointer"							=		/obj/item/weapon/pinpointer,
+		"an ablative armor vest"							=		/obj/item/clothing/suit/armor/laserproof,
+		"a ballistic armor kit"								=		/obj/item/clothing/suit/armor/bulletproof,
 	)
-
-	/* inf-dev: see below
+/
 	var/global/possible_items_special[] = list(
-		/*"nuclear authentication disk" = /obj/item/weapon/disk/nuclear,*///Broken with the change to nuke disk making it respawn on z level change.
-		"nuclear gun" = /obj/item/weapon/gun/energy/gun/nuclear,
-		"diamond drill" = /obj/item/weapon/pickaxe/diamonddrill,
-		"bag of holding" = /obj/item/weapon/storage/backpack/holding,
-		"hyper-capacity cell" = /obj/item/weapon/cell/hyper,
-		"10 diamonds" = /obj/item/stack/material/diamond,
-		"50 gold bars" = /obj/item/stack/material/gold,
-		"25 refined uranium bars" = /obj/item/stack/material/uranium,
-	)
-	*/
-
-	var/global/possible_items_special[] = list(
-		/*"nuclear authentication disk" = /obj/item/weapon/disk/nuclear,*///Broken with the change to nuke disk making it respawn on z level change.
-		"a bluespace rift generator" = /obj/item/integrated_circuit/manipulation/bluespace_rift,
-		"nuclear gun" = /obj/item/weapon/gun/energy/gun/nuclear,
-		"diamond drill" = /obj/item/weapon/pickaxe/diamonddrill,
-		"bag of holding" = /obj/item/weapon/storage/backpack/holding,
-		"hyper-capacity cell" = /obj/item/weapon/cell/hyper,
-		"10 diamonds" = /obj/item/stack/material/diamond,
-		"50 gold bars" = /obj/item/stack/material/gold,
-		"25 refined uranium bars" = /obj/item/stack/material/uranium,
+		//"nuclear authentication disk" 	= 	/obj/item/weapon/disk/nuclear, //Broken with the change to nuke disk making it respawn on z level change.
+		"a bluespace rift generator"		=	/obj/item/integrated_circuit/manipulation/bluespace_rift,//inf
+		"nuclear gun"						=	/obj/item/weapon/gun/energy/gun/nuclear,
+		"diamond drill"						= 	/obj/item/weapon/pickaxe/diamonddrill,
+		"bag of holding"					= 	/obj/item/weapon/storage/backpack/holding,
+		"hyper-capacity cell"				= 	/obj/item/weapon/cell/hyper,
+		"10 diamonds"						= 	/obj/item/stack/material/diamond,
+		"50 gold bars"						= 	/obj/item/stack/material/gold,
+		"25 refined uranium bars"			= 	/obj/item/stack/material/uranium,
 	)
 
 /datum/objective/steal/proc/set_target(item_name)
