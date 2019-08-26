@@ -42,6 +42,8 @@
 		"cafe"             = new/datum/holodeck_program(/area/holodeck/source_cafe),
 		"wildlifecarp"     = new/datum/holodeck_program(/area/holodeck/source_wildlife, list()),
 		"paradeground"     = new/datum/holodeck_program(/area/holodeck/source_military, list()),
+		"temple"           = new/datum/holodeck_program(/area/holodeck/source_temple),
+		"plaza"            = new/datum/holodeck_program(/area/holodeck/source_plaza),
 		"turnoff"          = new/datum/holodeck_program(/area/holodeck/source_plating, list())
 	)
 
@@ -62,7 +64,9 @@
 			"Space"             = "space",
 			"Theatre"           = "theatre",
 			"Thunderdome Court" = "thunderdomecourt",
-			"Voleyball Court"   = "voleyball"
+			"Voleyball Court"   = "voleyball",
+			"Bathhouse"         = "temple",
+			"Plaza"             = "plaza"
 		)
 
 	)
