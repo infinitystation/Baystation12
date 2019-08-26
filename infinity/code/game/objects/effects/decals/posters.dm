@@ -442,7 +442,7 @@
 	icon_state = "humposter_18"
 	name = "WetSkrell"
 	desc = "You can see a pretty skrell in red dress and with long headtails, which have decorative bands. \
-	Its advertising a site with \"adult recreation procedures\", the wetskrell.nt."
+	It is advertising a site with \"adult recreation procedures\", the wetskrell.nt."
 
 /decl/poster/humpost/hum_19
 	icon_state = "humposter_19"
@@ -454,9 +454,9 @@
 
 /decl/poster/humpost/hum_20
 	icon_state = "humposter_20"
-	name = "A hero"
-	desc = "You see a very pumped-up guy with a huge machete. He has good muscle and a face of real man. \
-	You can read a text at bottom: \"Join the ranks of the Expeditionary Corps - see the start, \
+	name = "Explorer"
+	desc = "You see a very pumped-up guy with a huge machete. He has good muscle and a face of a real man. \
+	You can also read a text at bottom: \"Join the ranks of the Expeditionary Corps - see the start, \
 	explore the university!\"... And die far away from home at god-forgotten planet for low payment, yeah."
 
 /decl/poster/humpost/hum_21

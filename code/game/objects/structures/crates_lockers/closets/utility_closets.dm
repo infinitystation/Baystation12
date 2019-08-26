@@ -20,48 +20,23 @@
 	closet_appearance = /decl/closet_appearance/oxygen
 
 /obj/structure/closet/emcloset/WillContain()
-	switch (pickweight(list("regular" = 50, "aid" = 25, "tank" = 10, "large" = 5, "both" = 10)))
-		if ("regular")
-			. += new/obj/item/weapon/tank/emergency/oxygen(src)
-			. += new/obj/item/clothing/mask/breath(src)
-			. += new/obj/item/clothing/suit/space/emergency(src)
-			. += new/obj/item/clothing/head/helmet/space/emergency(src)
-		if ("aid")
-			. += new/obj/item/weapon/tank/emergency/oxygen(src)
-			. += new/obj/item/clothing/mask/breath(src)
-			. += new/obj/item/clothing/suit/space/emergency(src)
-			. += new/obj/item/clothing/head/helmet/space/emergency(src)
-			. += new/obj/item/weapon/storage/firstaid/o2(src)
-			. += new/obj/item/weapon/storage/toolbox/emergency(src)
-		if ("tank")
-			. += new/obj/item/weapon/storage/toolbox/emergency(src)
-			. += new/obj/item/weapon/tank/emergency/oxygen/engi(src)
-			. += new/obj/item/clothing/mask/gas/half(src)
-			. += new/obj/item/clothing/suit/space/emergency(src)
-			. += new/obj/item/clothing/head/helmet/space/emergency(src)
-		if ("large")
-			. += new/obj/item/weapon/storage/toolbox/emergency(src)
-			. += new/obj/item/weapon/tank/emergency/oxygen/double(src)
-			. += new/obj/item/clothing/mask/gas(src)
-			. += new/obj/item/clothing/suit/space/emergency(src)
-			. += new/obj/item/clothing/head/helmet/space/emergency(src)
-			. += new/obj/item/weapon/storage/toolbox/emergency(src)
-			. += new/obj/item/device/oxycandle(src)
-		if ("both")
-			. += new/obj/item/weapon/tank/emergency/oxygen/double(src)
-			. += new/obj/item/clothing/mask/gas(src)
-			. += new/obj/item/clothing/suit/space/emergency(src)
-			. += new/obj/item/clothing/head/helmet/space/emergency(src)
-			. += new/obj/item/weapon/storage/firstaid/o2(src)
-			. += new/obj/item/weapon/storage/toolbox/emergency(src)
-			. += new/obj/item/device/oxycandle(src)
+	//Guaranteed kit
+	. = list(/obj/item/weapon/tank/emergency/oxygen,
+			/obj/item/clothing/mask/breath,
+			/obj/item/clothing/suit/space/emergency,
+			/obj/item/clothing/head/helmet/space/emergency)
+
+	. += new/datum/atom_creator/simple(list(/obj/item/weapon/storage/toolbox/emergency, /obj/item/inflatable/wall = 2), 75)
+	. += new/datum/atom_creator/simple(list(/obj/item/weapon/tank/emergency/oxygen/engi, /obj/item/clothing/mask/gas/half), 10)
+	. += new/datum/atom_creator/simple(/obj/item/device/oxycandle, 15)
+	. += new/datum/atom_creator/simple(/obj/item/weapon/storage/firstaid/o2, 25)
 
 /obj/structure/closet/emcloset/full/WillContain()
-	. += new/obj/item/weapon/storage/toolbox/emergency(src)
-	. += new/obj/item/weapon/tank/emergency/oxygen(src)
-	. += new/obj/item/clothing/mask/breath(src)
-	. += new/obj/item/clothing/suit/space/emergency(src)
-	. += new/obj/item/clothing/head/helmet/space/emergency(src)
+	. = list(/obj/item/weapon/tank/emergency/oxygen,
+			/obj/item/clothing/mask/breath,
+			/obj/item/clothing/suit/space/emergency,
+			/obj/item/clothing/head/helmet/space/emergency,
+			/obj/item/weapon/storage/toolbox/emergency)
 
 /*
  * Fire Closet
