@@ -1416,8 +1416,8 @@
 /turf/simulated/floor/tiled/skrell,
 /area/ship/skrellscoutship/crew/hallway/d2)
 "dg" = (
-/obj/machinery/autolathe{
-	hacked = 1
+/obj/machinery/fabricator{
+	fab_status_flags = 1
 	},
 /turf/simulated/floor/tiled/skrell,
 /area/ship/skrellscoutship/robotics)

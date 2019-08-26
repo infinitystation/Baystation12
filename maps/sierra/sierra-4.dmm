@@ -4693,10 +4693,10 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/syndicate_station/start)
 "akX" = (
-/obj/machinery/autolathe{
+/obj/machinery/fabricator{
 	desc = "Your typical Autolathe. It appears to have much more options than your regular one, however...";
-	hacked = 1;
-	name = "Unlocked Autolathe"
+	fab_status_flags = 1;
+	name = "unlocked autolathe"
 	},
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -5043,10 +5043,10 @@
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "alH" = (
-/obj/machinery/autolathe{
+/obj/machinery/fabricator{
 	desc = "Your typical Autolathe. It appears to have much more options than your regular one, however...";
-	hacked = 1;
-	name = "Unlocked Autolathe"
+	fab_status_flags = 1;
+	name = "unlocked autolathe"
 	},
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
@@ -5636,10 +5636,10 @@
 	},
 /area/centcom/specops)
 "amW" = (
-/obj/machinery/autolathe{
+/obj/machinery/fabricator{
 	desc = "Your typical Autolathe. It appears to have much more options than your regular one, however...";
-	hacked = 1;
-	name = "Unlocked Autolathe"
+	fab_status_flags = 1;
+	name = "unlocked autolathe"
 	},
 /turf/unsimulated/floor{
 	icon_state = "vault";
@@ -5889,10 +5889,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/syndicate_mothership)
 "anu" = (
-/obj/machinery/autolathe{
+/obj/machinery/fabricator{
 	desc = "Your typical Autolathe. It appears to have much more options than your regular one, however...";
-	hacked = 1;
-	name = "Unlocked Autolathe"
+	fab_status_flags = 1;
+	name = "unlocked autolathe"
 	},
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -11917,10 +11917,10 @@
 /turf/simulated/floor/carpet/blue2,
 /area/shuttle/merchant/home)
 "aAB" = (
-/obj/machinery/autolathe{
+/obj/machinery/fabricator{
 	desc = "Your typical Autolathe. It appears to have much more options than your regular one, however...";
-	hacked = 1;
-	name = "Unlocked Autolathe"
+	fab_status_flags = 1;
+	name = "unlocked autolathe"
 	},
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/dark,
@@ -14110,10 +14110,10 @@
 	},
 /area/rescue_base/base)
 "aFf" = (
-/obj/machinery/autolathe{
+/obj/machinery/fabricator{
 	desc = "Your typical Autolathe. It appears to have much more options than your regular one, however...";
-	hacked = 1;
-	name = "Unlocked Autolathe"
+	fab_status_flags = 1;
+	name = "unlocked autolathe"
 	},
 /turf/unsimulated/floor{
 	icon_state = "vault";
@@ -21204,10 +21204,10 @@
 	},
 /area/wizard_station)
 "aWp" = (
-/obj/machinery/autolathe{
+/obj/machinery/fabricator{
 	desc = "Your typical Autolathe. It appears to have much more options than your regular one, however...";
-	hacked = 1;
-	name = "Unlocked Autolathe"
+	fab_status_flags = 1;
+	name = "unlocked autolathe"
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	frequency = 1380;

@@ -1077,13 +1077,6 @@
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/mine/explored)
-"cD" = (
-/obj/effect/landmark/random_gen/asteroid{
-	generation_height = 50;
-	generation_width = 50
-	},
-/turf/space,
-/area/space)
 "cE" = (
 /obj/structure/bed,
 /obj/item/weapon/bedsheet/captain,
@@ -16825,7 +16818,7 @@ cQ
 cQ
 cQ
 cQ
-cD
+cQ
 cQ
 cQ
 cQ
