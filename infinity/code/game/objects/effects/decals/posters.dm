@@ -371,12 +371,12 @@
 /decl/poster/humpost/hum_5
 	icon_state = "humposter_5"
 	name = "Mars Terraforming"
-	desc = "What it was before and what it is now, our future is in our hands."
+	desc = "What it was before and what it is now. Our future is in our hands."
 
 /decl/poster/humpost/hum_6
 	icon_state = "humposter_6"
 	name = "Moon City"
-	desc = "Hundreds of years ago Selena, the first city of the Moon was like that."
+	desc = "A photo of the oldest city at the Moon, Sol System - Selena. Looks like it was taken from one of observation towers."
 
 /decl/poster/humpost/hum_7
 	icon_state = "humposter_7"
@@ -441,7 +441,8 @@
 /decl/poster/humpost/hum_18
 	icon_state = "humposter_18"
 	name = "WetSkrell"
-	desc = "You see a wet, very wet skrell on the poster. Its just advertising of site wetskrell.nt."
+	desc = "You can see a pretty skrell in red dress and with long headtails, which have decorative bands. \
+	Its advertising a site with \"adult recreation procedures\", the wetskrell.nt."
 
 /decl/poster/humpost/hum_19
 	icon_state = "humposter_19"
@@ -454,9 +455,9 @@
 /decl/poster/humpost/hum_20
 	icon_state = "humposter_20"
 	name = "A hero"
-	desc = "You see a very pumped-up guy with a huge machete. He is huge, he is muscular, \
-	he is beautiful and you want children from him. Join the ranks of the Expeditionary Corps\
-	- advises us the hero from the poster!.. And die far away from home at god-forgotten planet for low payment, yeah."
+	desc = "You see a very pumped-up guy with a huge machete. He has good muscle and a face of real man. \
+	You can read a text at bottom: \"Join the ranks of the Expeditionary Corps - see the start, \
+	explore the university!\"... And die far away from home at god-forgotten planet for low payment, yeah."
 
 /decl/poster/humpost/hum_21
 	icon_state = "humposter_21"
