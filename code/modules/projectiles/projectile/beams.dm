@@ -257,7 +257,7 @@
 			L.Stun(1)
 			L.drop_l_hand()
 			L.drop_r_hand()
-		
+
 	return 1
 
 /obj/item/projectile/beam/particle
@@ -275,3 +275,24 @@
 	damage = 20
 	armor_penetration = 20
 	penetration_modifier = 0.3
+
+/obj/item/projectile/beam/darkmatter
+	name = "dark matter bolt"
+	icon_state = "darkb"
+	damage = 40
+	armor_penetration = 35
+	damage_type = BRUTE
+	muzzle_type = /obj/effect/projectile/darkmatter/muzzle
+	tracer_type = /obj/effect/projectile/darkmatter/tracer
+	impact_type = /obj/effect/projectile/darkmatter/impact
+
+/obj/item/projectile/beam/stun/darkmatter
+	name = "dark matter wave"
+	icon_state = "darkt"
+	damage_flags = 0
+	sharp = 0 //not a laser
+	agony = 40
+	damage_type = STUN
+	muzzle_type = /obj/effect/projectile/stun/darkmatter/muzzle
+	tracer_type = /obj/effect/projectile/stun/darkmatter/tracer
+	impact_type = /obj/effect/projectile/stun/darkmatter/impact

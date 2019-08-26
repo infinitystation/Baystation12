@@ -2657,13 +2657,6 @@
 	},
 /turf/simulated/floor/carpet/blue,
 /area/outpost/abandoned)
-"xb" = (
-/obj/effect/landmark/random_gen/asteroid{
-	generation_height = 200;
-	generation_width = 200
-	},
-/turf/unsimulated/mask,
-/area/mine/unexplored)
 "yb" = (
 /obj/item/weapon/storage/mirror{
 	icon_state = "mirror_broke";
@@ -2897,7 +2890,7 @@ aa
 aa
 aa
 aa
-xb
+aa
 "}
 (2,1,1) = {"
 aa

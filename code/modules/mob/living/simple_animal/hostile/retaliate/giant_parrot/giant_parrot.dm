@@ -22,6 +22,11 @@
 	impatience = 10
 	parrot_isize = ITEM_SIZE_LARGE
 	simple_parrot = TRUE
+	ability_cooldown = 2 MINUTES
+
+	meat_amount = 10
+	bone_amount = 20
+	skin_amount = 20
 
 	var/list/subspecies = list(/decl/parrot_subspecies,
 								/decl/parrot_subspecies/purple,
@@ -32,15 +37,13 @@
 								/decl/parrot_subspecies/black)
 	var/get_subspecies_name = TRUE
 
-	var/last_ability
-	var/ability_cooldown = 2 MINUTES
-
 /mob/living/simple_animal/hostile/retaliate/parrot/space/Initialize()
 	. = ..()
 	var/subspecies_type = safepick(subspecies)
 	if(subspecies_type)
 		var/decl/parrot_subspecies/ps = decls_repository.get_decl(subspecies_type)
 		icon_set = ps.icon_set
+		skin_material = ps.feathers
 		if(get_subspecies_name)
 			SetName(ps.name)
 	var/matrix/M = new
@@ -50,24 +53,26 @@
 
 /mob/living/simple_animal/hostile/retaliate/parrot/space/AttackingTarget()
 	. = ..()
-	if(ishuman(.) && can_use_ability(.))
+	if(ishuman(.) && can_perform_ability(.))
 		var/mob/living/carbon/human/H = .
 		if(prob(70))
 			H.Weaken(rand(2,3))
-			last_ability = world.time + ability_cooldown
+			cooldown_ability(ability_cooldown / 1.5)
 			visible_message(SPAN_MFAUNA("\The [src] flaps its wings mightily and bowls over \the [H] with a gust!"))
 
 		else if(H.get_equipped_item(slot_head))
 			var/obj/item/clothing/head/HAT = H.get_equipped_item(slot_head)
 			if(H.canUnEquip(HAT))
 				visible_message(SPAN_MFAUNA("\The [src] rips \the [H]'s [HAT] off!"))
-				last_ability = world.time + ability_cooldown
+				cooldown_ability(ability_cooldown)
 				H.unEquip(HAT, get_turf(src))
 
-/mob/living/simple_animal/hostile/retaliate/parrot/space/proc/can_use_ability(mob/living/carbon/human/H)
-	if(!can_act() || last_ability > world.time || !Adjacent(H))
+/mob/living/simple_animal/hostile/retaliate/parrot/space/can_perform_ability(mob/living/carbon/human/H)
+	. = ..()
+	if(!.)
 		return FALSE
-	return TRUE
+	if(!Adjacent(H))
+		return FALSE
 
 //subtypes
 /mob/living/simple_animal/hostile/retaliate/parrot/space/lesser

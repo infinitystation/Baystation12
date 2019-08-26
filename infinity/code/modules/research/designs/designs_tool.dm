@@ -11,7 +11,7 @@
 	name = "powersink"
 	desc = "A nulling power sink which drains energy from electrical systems."
 	id="powersink"
-	req_tech = list(TECH_POWER = 4, TECH_ILLEGAL = 5)
+	req_tech = list(TECH_POWER = 4, TECH_ESOTERIC = 5)
 	materials = list(MATERIAL_STEEL = 5000, MATERIAL_GLASS = 5000, MATERIAL_DIAMOND = 500)
 	build_path = /obj/item/device/powersink
 	sort_string = "VAGAN"

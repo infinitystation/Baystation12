@@ -13,7 +13,7 @@
 	var/equipment_delay = 0
 	var/active_power_use = 1 KILOWATTS // How much does it consume to perform and accomplish usage
 	var/passive_power_use = 0          // For gear that for some reason takes up power even if it's supposedly doing nothing (mech will idly consume power)
-	var/mech_layer = MECH_COCKPIT_LAYER //For the part where it's rendered as mech gear
+	var/mech_layer = MECH_GEAR_LAYER //For the part where it's rendered as mech gear
 
 /obj/item/mech_equipment/attack() //Generally it's not desired to be able to attack with items
 	return 0
@@ -55,6 +55,15 @@
 
 /obj/item/mech_equipment/proc/get_effective_obj()
 	return src
+
+/obj/item/mech_equipment/proc/MouseDragInteraction()
+	return 0
+
+/obj/item/mech_equipment/mob_can_unequip(mob/M, slot, disable_warning)
+	. = ..()
+	if(. && owner)
+		//Installed equipment shall not be unequiped.
+		return FALSE
 
 /obj/item/mech_equipment/mounted_system
 	var/holding_type

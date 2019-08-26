@@ -536,6 +536,7 @@ BLIND     // can't see anything
 	var/down_flags_inv = 0
 	var/pull_mask = 0
 	var/hanging = 0
+	var/list/filtered_gases
 	blood_overlay_type = "maskblood"
 
 /obj/item/clothing/mask/proc/filters_water()
@@ -795,6 +796,8 @@ BLIND     // can't see anything
 	if(item_state_slots && item_state_slots[slot])
 		ret.icon_state = item_state_slots[slot]
 	else
+		ret.icon_state = item_state
+	if(!ret.icon_state)
 		ret.icon_state = icon_state
 	return ret
 

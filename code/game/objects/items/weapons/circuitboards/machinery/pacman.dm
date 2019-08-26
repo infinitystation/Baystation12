@@ -1,7 +1,3 @@
-#ifndef T_BOARD
-#error T_BOARD macro is not defined but we need it! 
-#endif
-
 /obj/item/weapon/stock_parts/circuitboard/pacman
 	name = T_BOARD("PACMAN-type generator")
 	build_path = /obj/machinery/power/port_gen/pacman
@@ -10,7 +6,7 @@
 	req_components = list(
 		/obj/item/weapon/stock_parts/matter_bin = 1,
 		/obj/item/weapon/stock_parts/micro_laser = 1,
-		/obj/item/stack/cable_coil = 2,
+		/obj/item/stack/cable_coil = 15,
 		/obj/item/weapon/stock_parts/capacitor = 1)
 	additional_spawn_components = list(
 		/obj/item/weapon/stock_parts/console_screen = 1,

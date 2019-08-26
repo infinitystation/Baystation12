@@ -133,10 +133,17 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 
 		var/mob/living/L = usr
 		if(CanUse(L) && href_list["action"])
+
 			var/obj/item/I = L.get_active_hand()
+
+			var/obj/item/offhand_item
+			if(ishuman(usr))
+				var/mob/living/carbon/human/H = usr
+				offhand_item = H.wearing_rig && H.wearing_rig.selected_module
+
 			holder.add_hiddenprint(L)
 			if(href_list["cut"]) // Toggles the cut/mend status
-				if(isWirecutter(I))
+				if(isWirecutter(I) || isWirecutter(offhand_item))
 					var/colour = href_list["cut"]
 					CutWireColour(colour)
 					if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 20, SKILL_ADEPT)))
@@ -148,8 +155,8 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 				else
 					to_chat(L, "<span class='error'>You need wirecutters!</span>")
 			else if(href_list["pulse"])
-				var/colour = href_list["pulse"]
-				if(isMultitool(I))
+				if(isMultitool(I) || isMultitool(offhand_item))
+					var/colour = href_list["pulse"]
 					if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 30, SKILL_ADEPT)))
 						RandomPulse()
 						to_chat(L, "<span class='danger'>You accidentally pulse another wire!</span>")

@@ -29,3 +29,6 @@
 
 /datum/gear/shoes/heels
 	allowed_roles = null //INF, WAS: SEMIFORMAL_ROLES
+
+/datum/gear/shoes/boots
+	allowed_branches = CIVILIAN_BRANCHES

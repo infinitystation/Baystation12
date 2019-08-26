@@ -119,10 +119,10 @@
 		return
 
 	if(!buckled) return
-
 	if(!restrained())
 		..()
 	else
+		setClickCooldown(100)
 		var/unbuckle_time = 2 MINUTES
 		setClickCooldown(100)
 		if(psi && psi.can_use())

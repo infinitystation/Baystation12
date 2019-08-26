@@ -43,11 +43,10 @@
 	desc = "A heavy, powerful rig used by construction crews and mining corporations."
 	icon_state = "engineering_rig"
 	armor = list(melee = 45, bullet = 25, laser = 35, energy = 25, bomb = 45, bio = 100, rad = 50)
-	online_slowdown = 1
-	offline_slowdown = 3
-//	vision_restriction = TINT_HEAVY
-	vision_restriction = 0
-//	offline_vision_restriction = TINT_HEAVY
+	online_slowdown = 3
+	offline_slowdown = 10
+	vision_restriction = TINT_HEAVY
+	offline_vision_restriction = TINT_BLIND
 	emp_protection = -20
 	max_pressure_protection = FIRESUIT_MAX_PRESSURE
 	min_pressure_protection = 0
@@ -97,6 +96,7 @@
 		/obj/item/rig_module/mounted/plasmacutter,
 		/obj/item/rig_module/device/drill,
 		/obj/item/rig_module/device/orescanner,
+		/obj/item/rig_module/device/rcd,
 		/obj/item/rig_module/vision/meson,
 		/obj/item/rig_module/cooling_unit
 		)
@@ -424,7 +424,7 @@
 	suit_type = "null hardsuit"
 	desc = "A very lightweight suit designed to allow use inside mechs and starfighters. It feels like you're wearing nothing at all."
 	icon_state = "null_rig"
-	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 100, rad = 20)
+	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 100, rad = 10)
 	online_slowdown = 0
 	offline_slowdown = 1
 	offline_vision_restriction = TINT_HEAVY //You're wearing a flash protective space suit without light compensation, think it makes sense

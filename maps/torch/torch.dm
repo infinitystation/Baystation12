@@ -7,6 +7,7 @@
 	#include "torch_holodecks.dm"
 	#include "torch_lobby.dm"
 	#include "torch_machinery.dm"
+	#include "torch_map_templates.dm"
 	#include "torch_npcs.dm"
 	#include "torch_overmap.dm"
 	#include "torch_presets.dm"
@@ -25,6 +26,7 @@
 	#include "datums/reports/command.dm"
 	#include "datums/reports/corporate.dm"
 	#include "datums/reports/exploration.dm"
+	#include "datums/reports/medical.dm"
 	#include "datums/reports/robotics.dm"
 	#include "datums/reports/science.dm"
 	#include "datums/reports/security.dm"
@@ -34,6 +36,13 @@
 	#include "datums/supplypacks/security.dm"
 	#include "datums/supplypacks/science.dm"
 	#include "datums/department_exploration.dm"
+
+	#include "game/antagonist/outsider/deathsquad.dm"
+	#include "game/antagonist/outsider/ert.dm"
+	#include "game/antagonist/outsider/foundation.dm"
+	#include "game/antagonist/outsider/mercenary.dm"
+	#include "game/antagonist/outsider/raider.dm"
+
 	#include "items/cards_ids.dm"
 	#include "items/encryption_keys.dm"
 	#include "items/headsets.dm"
@@ -88,6 +97,8 @@
 	#include "job/outfits/supply_outfits.dm"
 	#include "job/outfits/unused_outfits.dm"
 
+	#include "language/human/euro.dm"
+	#include "language/human/misc/spacer.dm"
 
 	#include "machinery/apc_shuttle.dm"
 	#include "machinery/keycard authentication.dm"
@@ -128,6 +139,7 @@
 	#include "torch6_bridge.dmm"
 	#include "z1_admin.dmm"
 	#include "z2_transit.dmm"
+
 	#include "../away/empty.dmm"
 	#include "../away/ascent/ascent.dm"
 	#include "../away/mining/mining.dm"

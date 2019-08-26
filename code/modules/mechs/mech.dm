@@ -12,6 +12,13 @@
 	status_flags = PASSEMOTES
 	a_intent =     I_HURT
 	mob_size =     MOB_LARGE
+	
+	meat_type = null
+	meat_amount = 0
+	skin_material = null
+	skin_amount = 0
+	bone_material = null
+	bone_amount = 0
 
 	var/emp_damage = 0
 
@@ -40,7 +47,7 @@
 	var/datum/effect/effect/system/spark_spread/sparks
 
 	// Equipment tracking vars.
-	var/obj/item/selected_system
+	var/obj/item/mech_equipment/selected_system
 	var/selected_hardpoint
 	var/list/hardpoints = list()
 	var/hardpoints_locked
