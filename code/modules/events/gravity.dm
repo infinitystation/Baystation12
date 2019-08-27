@@ -21,4 +21,4 @@
 			if((A.z in GLOB.using_map.station_levels) && initial(A.has_gravity))
 				A.gravitychange(gravity_is_on)
 
-		command_announcement.Announce("Генератор гравитации успешно перенастроек и запущен. Текущая сила притяжения - 9.8.", "Гравитация Восстановлена", zlevels = affecting_z)
+		command_announcement.Announce("Генератор гравитации успешно перекалиброван и запущен. Текущая сила притяжения - 9.8.", "Гравитация Восстановлена", zlevels = affecting_z)
