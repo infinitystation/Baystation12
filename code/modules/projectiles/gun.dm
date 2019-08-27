@@ -379,10 +379,11 @@
 		acc_mod += 2
 
 // inf ahead
-	var/mob/living/carbon/human/H = user
-	if(CE_SPEEDBOOST in H.chem_effects) //hyperzine
-		acc_mod -= 1
-		disp_mod += 0.5
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(CE_SPEEDBOOST in H.chem_effects) //hyperzine
+			acc_mod -= 1
+			disp_mod += 0.5
 // inf end
 
 	acc_mod += user.ranged_accuracy_mods()
