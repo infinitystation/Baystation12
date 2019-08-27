@@ -3481,6 +3481,7 @@
 #include "infinity\customs\hybrid_opt.dm"
 #include "infinity\customs\ic_custom_belt.dm"
 #include "infinity\customs\jacking.dm"
+#include "infinity\customs\kirill.dm"
 #include "infinity\customs\kosteg_kit.dm"
 #include "infinity\customs\lizard_w_bow.dm"
 #include "infinity\customs\moghes.dm"
