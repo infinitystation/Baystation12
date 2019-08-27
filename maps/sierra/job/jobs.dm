@@ -6,7 +6,8 @@
 		/datum/species/nabber = list(/datum/job/ai, /datum/job/cyborg, /datum/job/janitor, /datum/job/scientist_assistant,\
 									 /datum/job/chemist, /datum/job/roboticist, /datum/job/cargo_assistant, /datum/job/chef,\
 									 /datum/job/engineer_trainee, /datum/job/doctor_trainee, /datum/job/bartender),
-		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/merchant_trainee)
+		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/merchant_trainee),
+		/datum/species/human/mule	= list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/merchant_trainee)
 	)
 
 #define HUMAN_ONLY_JOBS /datum/job/captain, /datum/job/hos
@@ -97,4 +98,4 @@
 	required_language = LANGUAGE_HUMAN_EURO
 
 /datum/map/sierra
-	default_assistant_title = "Passenger"
+	default_assistant_title = "Crewman"
