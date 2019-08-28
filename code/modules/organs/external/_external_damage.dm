@@ -67,7 +67,9 @@ obj/item/organ/external/take_general_damage(var/amount, var/silent = FALSE)
 
 	// High brute damage or sharp objects may damage internal organs
 	if(internal_organs && internal_organs.len)
-		var/damage_amt = brute + 10
+		var/damage_amt = brute
+		if(!laser)
+			damage_amt += 10
 		var/cur_damage = brute_dam
 		if(laser || BP_IS_ROBOTIC(src))
 			damage_amt += burn
