@@ -188,7 +188,7 @@
 	setup_trajectory(starting_loc, new_target)
 
 //Called when the projectile intercepts a mob. Returns 1 if the projectile hit the mob, 0 if it missed and should keep flying.
-/obj/item/projectile/proc/attack_mob(var/mob/living/target_mob, var/distance, var/miss_modifier=0)
+/obj/item/projectile/proc/attack_mob(var/mob/living/target_mob, var/distance, var/special_miss_modifier=0)
 	if(!istype(target_mob))
 		return
 
@@ -203,7 +203,7 @@
 		else if(target_mob.last_move == get_dir(target_mob,firer))
 			movment_mod *= 0.5
 	miss_modifier -= movment_mod
-	
+
 	var/hit_zone = get_zone_with_miss_chance(def_zone, target_mob, miss_modifier, ranged_attack=(distance > 1 || original != target_mob)) //if the projectile hits a target we weren't originally aiming at then retain the chance to miss
 
 	var/result = PROJECTILE_FORCE_MISS
