@@ -192,23 +192,7 @@
 	if(!istype(target_mob))
 		return
 
-	var/distance_input = round(12.5 * (distance - 2))	// Бонус к попаданию до 4-х метров
-	var/accuracy_input = round(15 * 0)			// Это пока так и останется
-
-	// расчет модификатора попадания
-	miss_modifier = distance_input - accuracy_input + miss_modifier
-
-	if(distance <= 1)
-		miss_modifier -= 10	// Еще бонус от ближнего расстояния
-
-	if(target_mob == original)
-		miss_modifier -= 20	// По человеку попали!
-
-	if(firer == target_mob)
-		miss_modifier -= 30	// По себе уж точно промазать сложно
-
-/* INF-TODO:REMAKE SYSTEM
-	//roll to-hit
+//roll to-hit
 	var/miss_modifier = max(distance_falloff*(distance)*(distance) - hitchance_mod + special_miss_modifier, -30)
 	//makes moving targets harder to hit, and stationary easier to hit
 	var/movment_mod = min(5, (world.time - target_mob.l_move_time) - 20)
@@ -219,7 +203,7 @@
 		else if(target_mob.last_move == get_dir(target_mob,firer))
 			movment_mod *= 0.5
 	miss_modifier -= movment_mod
-*/
+	
 	var/hit_zone = get_zone_with_miss_chance(def_zone, target_mob, miss_modifier, ranged_attack=(distance > 1 || original != target_mob)) //if the projectile hits a target we weren't originally aiming at then retain the chance to miss
 
 	var/result = PROJECTILE_FORCE_MISS
