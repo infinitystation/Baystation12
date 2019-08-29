@@ -249,6 +249,7 @@
 		SPECIES_MANTID_ALATE = 'icons/mob/species/mantid/onmob_head_alate.dmi',
 		SPECIES_NABBER =       'icons/mob/species/nabber/onmob_head_gas.dmi'
 		)
+	tint = 1 //INF, WAS NOTHING. High tech
 
 /obj/item/clothing/suit/space/rig/mantid
 	desc = "It's closer to a mech than a suit."
