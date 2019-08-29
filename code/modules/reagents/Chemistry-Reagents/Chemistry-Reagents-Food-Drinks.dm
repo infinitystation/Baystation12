@@ -1132,6 +1132,7 @@
 
 	glass_name = "nothing"
 	glass_desc = "Absolutely nothing."
+	color = COLOR_WHITE //inf, was nothing
 
 /* Alcohol */
 
