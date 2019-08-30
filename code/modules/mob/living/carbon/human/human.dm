@@ -1681,7 +1681,8 @@
 
 /mob/living/carbon/human/ranged_accuracy_mods()
 	. = ..()
-	if(get_shock() > 10 && !skill_check(SKILL_WEAPONS, SKILL_ADEPT))
+	//if(get_shock() > 10 && !skill_check(SKILL_WEAPONS, SKILL_ADEPT))
+	if(get_shock() > 25) //inf
 		. -= 1
 	if(get_shock() > 50)
 		. -= 1
@@ -1704,7 +1705,7 @@
 	if(skill_check(SKILL_WEAPONS, SKILL_EXPERT))
 		. += 1
 	if(skill_check(SKILL_WEAPONS, SKILL_PROF))
-		. += 2
+		. += 1
 
 /mob/living/carbon/human/can_drown()
 	if(!internal && (!istype(wear_mask) || !wear_mask.filters_water()))
