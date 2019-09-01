@@ -21,7 +21,6 @@
 		/obj/item/device/flashlight/pen,
 		/obj/item/weapon/storage/belt/medical,
 		/obj/item/device/remote_device/chief_medical_officer,
-		/obj/item/weapon/melee/telebaton,
 		/obj/item/device/taperecorder,
 		/obj/item/device/tape/random = 3,
 		/obj/item/clothing/glasses/hud/health,
