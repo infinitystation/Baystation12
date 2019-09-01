@@ -87,4 +87,4 @@
 
 /obj/item/clothing/suit/armor/pcarrier/mainkraft/plastic/New()
 	..()
-	slowdown_per_slot[slot_wear_suit] = 0.75
+	slowdown_per_slot[slot_wear_suit] = 1
