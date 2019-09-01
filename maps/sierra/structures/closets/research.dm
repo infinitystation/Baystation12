@@ -45,8 +45,7 @@
 		/obj/item/device/camera,
 		/obj/item/taperoll/research,
 		/obj/item/clothing/glasses/welding/superior,
-		/obj/item/clothing/suit/armor/pcarrier/light,
-		/obj/item/clothing/head/helmet,
+		/obj/item/weapon/melee/telebaton,
 		/obj/item/weapon/storage/box/secret_project_disks/science,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/toxins, /obj/item/weapon/storage/backpack/satchel/tox)),
 		new /datum/atom_creator/simple(/obj/item/weapon/storage/backpack/messenger/tox, 50)
