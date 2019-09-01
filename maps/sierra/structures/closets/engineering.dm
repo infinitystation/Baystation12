@@ -20,7 +20,6 @@
 		/obj/item/clothing/mask/gas/alt,
 		/obj/item/device/multitool,
 		/obj/item/device/flash,
-		/obj/item/weapon/melee/telebaton,
 		/obj/item/taperoll/engineering,
 		/obj/item/device/megaphone,
 		/obj/item/weapon/crowbar/brace_jack,
