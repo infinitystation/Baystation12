@@ -31,14 +31,13 @@
 	name = "light metal plate"
 	desc = "Thin homemade metal plate. Unlikely to protect from something strong, but it's better than nothing."
 	icon_state = "armor_light"
-	armor = list(melee = 30, bullet = 35, laser = 35, energy = 10, bomb = 25, bio = 0, rad = 0)
-	slowdown = 0.1
+	armor = list(melee = 35, bullet = 35, laser = 35, energy = 10, bomb = 25, bio = 0, rad = 0)
 
 /obj/item/clothing/accessory/armorplate/mainkraft/medium
 	name = "medium metal plate"
 	desc = "Metal plate of medium thickness. Feels heavy. I hope it will be able to help."
 	icon_state = "armor_medium"
-	armor = list(melee = 40, bullet = 40, laser = 40, energy = 25, bomb = 30, bio = 0, rad = 0)
+	armor = list(melee = 45, bullet = 45, laser = 45, energy = 25, bomb = 30, bio = 0, rad = 0)
 	slowdown = 0.35
 
 /obj/item/clothing/accessory/armorplate/mainkraft/heavy
@@ -46,4 +45,4 @@
 	desc = "A thick sheet of armor that can stop a bullet, it is a pity that as the plate is thick, so heavy."
 	icon_state = "armor_merc"
 	armor = list(melee = 60, bullet = 60, laser = 60, energy = 40, bomb = 40, bio = 0, rad = 0)
-	slowdown = 0.75
+	slowdown = 0.5
