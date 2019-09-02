@@ -461,6 +461,11 @@ character_name: Karai Ka'Jun
 item_path: /obj/item/device/radio/headset/crypto
 }
 {
+ckey: quietproject
+character_name: Shizukana Hikaro
+item_path: /obj/item/weapon/clothingbag/quiet_set
+}
+{
 ckey: he11d1ver
 character_name: Aard Barnes
 item_path: /obj/item/clothing/head/helmet/ronin_helmet
