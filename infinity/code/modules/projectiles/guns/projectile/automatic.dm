@@ -192,3 +192,9 @@
 			to_chat(user, "<span class='warning'>\The [src] trigger because of the anatomical structure of your hand is not pressed!</span>")
 			return 0
 	return ..()
+
+/obj/item/weapon/gun/projectile/automatic/nt41/armory
+	starts_loaded = 0
+
+/obj/item/weapon/gun/projectile/shotgun/pump/combat/armory
+	starts_loaded = 0
