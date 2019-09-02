@@ -536,9 +536,9 @@ var/world_topic_spam_protect_time = world.timeofday
 	var/s = ""
 
 	if (config && config.server_name)
-		s += "<b>[config.server_name]</b>: "
+		s += "<b>[config.server_name]</b>"
 
-	s += "<b>[station_name()]</b>"
+//	s += "<b>[station_name()]</b>"
 	s += " ("
 //	s += "<a href=\"https://infinity-ss13.info\">" //Change this to wherever you want the hub to link to.
 //	s += "[game_version]"
@@ -548,18 +548,22 @@ var/world_topic_spam_protect_time = world.timeofday
 	s += "Discord"
 	s += "</a>"
 	s += ")"
-	s += " A russian medium/hard RP server with modified BayStation12 code."
+	s += " A medium/hard RP server with modified Bay12 code."
 //	s += "<br><b>Map:</b> [station_name()]"
-	if(SSticker.master_mode)
-		s += "<br><b>Mode:</b> [SSticker.master_mode]"
-	else
-		s += "<br><b>Mode:</b> STARTING"
 	var/n = 0
 	for (var/mob/M in GLOB.player_list)
 		if (M.client)
 			n++
-	s += "<br><b>Players:</b> [n]"
-	s += "<br><b>Round Duration:</b> [roundduration2text()]"
+	s += "<br><b>Players:</b> [n] | "
+	if(SSticker.runlevels == RUNLEVEL_POSTGAME)
+		s += "<b>Mode:</b> ENDING"
+	else if(config.event_status)
+		s += "<b>Mode:</b> <u>EVENT!</u>"
+	else if(SSticker.master_mode)
+		s +="<b>Mode:</b> [SSticker.master_mode]"
+	else
+		s += "<b>Mode:</b> STARTING"
+//	s += "<br><b>Round Duration:</b> [roundduration2text()]"
 	if(!config.enter_allowed)
 		s += "<br><b>Status:<b> closed"
 

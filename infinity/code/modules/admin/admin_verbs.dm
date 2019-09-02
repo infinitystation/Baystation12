@@ -179,3 +179,23 @@
 	popup.open()
 
 	SSstatistics.add_field("admin_verb","MPP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+/datum/admins/proc/toggleevent()
+	set category = "Server"
+	set desc = "Event status in hub."
+	set name = "Toggle Event Status"
+
+	config.event_status = !(config.event_status)
+
+	if(config.event_status)
+		to_world("<B>Server's event status activated.</B>")
+		send2maindiscord("На сервере активировано отображение статуса ивента!")
+		send2mainirc("На сервере активировано отображение статуса ивента.")
+	else
+		to_world("<B>Server's event status deactivated.</B>")
+		send2maindiscord("Ивент отменён :(")
+		send2mainirc("Ивент отменён.")
+
+	log_and_message_admins("[key_name_admin(usr)] toggled event status.")
+	world.update_status()
+//	SSstatistics.add_field_details("admin_verb","TES") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

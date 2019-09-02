@@ -165,6 +165,7 @@ var/list/admin_verbs_server = list(
 	/client/proc/nanomapgen_DumpImage,
 	/client/proc/cmd_toggle_admin_help,//inf,
 	/client/proc/observe_delay,//inf,
+	/datum/admins/proc/toggleevent, //inf,
 	/client/proc/update_server//inf,
 	)
 var/list/admin_verbs_debug = list(
