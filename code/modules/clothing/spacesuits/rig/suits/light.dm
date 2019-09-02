@@ -52,6 +52,7 @@
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi'
 
 	)
+	tint = 1 //INF, WAS NOTHING
 
 /obj/item/weapon/rig/light/hacker
 	name = "cybersuit control module"

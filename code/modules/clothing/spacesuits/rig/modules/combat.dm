@@ -323,14 +323,14 @@
 
 	if(holder && holder.wearer)
 		if(!(locate(/obj/item/weapon/melee/energy/blade) in holder.wearer))
-			deactivate()
+//inf			deactivate()
 			return 0
 
 	return ..()
 
 /obj/item/rig_module/mounted/energy_blade/activate()
 
-	if(!..() || !gun)
+	if(!gun) //inf, was if(!..() || !gun)
 		return 0
 
 	var/mob/living/M = holder.wearer

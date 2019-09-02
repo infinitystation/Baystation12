@@ -199,6 +199,7 @@
 	active_icon = "blade"	//It's all energy, so it should always be visible.
 	lighting_color = COLOR_SABER_GREEN
 	force = 40 //Normal attacks deal very high damage - about the same as wielded fire axe
+	active_force = 30 //inf
 	active = 1
 	armor_penetration = 100
 	sharp = 1
