@@ -188,13 +188,13 @@
 	config.event_status = !(config.event_status)
 
 	if(config.event_status)
-		to_world("<B>Server's event status activated.</B>")
-		send2maindiscord("На сервере активировано отображение статуса ивента!")
-		send2mainirc("На сервере активировано отображение статуса ивента.")
+		to_world("<B>Включено отображение статуса проведения ивента.</B>")
+		send2maindiscord("На сервере активировано отображение статуса ивента.")
+		send2mainirc("На сервере активировано отображение статуса ивента!")
 	else
-		to_world("<B>Server's event status deactivated.</B>")
-		send2maindiscord("Ивент отменён :(")
-		send2mainirc("Ивент отменён.")
+		to_world("<B>Отображение статуса проведения ивента отключено. Кина не будет :(</B>")
+		send2maindiscord("Ивент отменён.")
+		send2mainirc("Ивент отменён :(")
 
 	log_and_message_admins("[key_name_admin(usr)] toggled event status.")
 	world.update_status()
