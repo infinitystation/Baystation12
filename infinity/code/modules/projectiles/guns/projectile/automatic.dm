@@ -58,8 +58,8 @@
 		)
 
 /obj/item/weapon/gun/projectile/automatic/amrcarabine/on_update_icon()
-	icon_state = (ammo_magazine)? "amrcarabine" : "amrcarabine-e"
 	..()
+	icon_state = (ammo_magazine)? "amrcarabine" : "amrcarabine-e"
 
 
 /obj/item/weapon/gun/projectile/automatic/bp15
