@@ -74,11 +74,12 @@ obj/item/organ/external/take_general_damage(var/amount, var/silent = FALSE)
 		if(laser || BP_IS_ROBOTIC(src))
 			damage_amt += burn
 			cur_damage += burn_dam
-		var/organ_damage_threshold = laser ? 5 : 15
+		var/organ_damage_threshold = laser ? 6 : 16
 		if(sharp)
 			organ_damage_threshold *= 0.5
 		var/organ_damage_prob = 40 //more damage, higher chance to damage
 		if(encased && !(status & ORGAN_BROKEN)) //ribs protect
+			organ_damage_threshold += 4
 			if(laser)
 				organ_damage_prob *= 1.5
 		if ((cur_damage + damage_amt >= max_damage || damage_amt >= organ_damage_threshold) && prob(organ_damage_prob))
