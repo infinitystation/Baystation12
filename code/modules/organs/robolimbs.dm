@@ -18,9 +18,9 @@ var/datum/robolimb/basic_robolimb
 	var/unavailable_at_chargen                                // If set, not available at chargen.
 	var/unavailable_at_fab = 1                                // If set, cannot be fabricated.
 	var/can_eat = 0
-	var/brute_mod = 1
-	var/speed_mod = 0
-	var/burn_mod = 1
+	var/brute_mod = 1//inf
+	var/speed_mod = 0//inf
+	var/burn_mod = 1//inf
 	var/has_eyes = TRUE
 	var/can_feel_pain
 	var/skintone
@@ -54,6 +54,13 @@ var/datum/robolimb/basic_robolimb
 	company = "Hephaestus Alt."
 	icon = 'icons/mob/human_races/cyberlimbs/hephaestus/hephaestus_alt.dmi'
 	applies_to_part = list(BP_HEAD)
+
+/datum/robolimb/hephaestus/titan
+	company = "Hephaestus Titan"
+	desc = "This limb has a casing of an olive drab finish, providing a reinforced housing look."
+	icon = 'icons/mob/human_races/cyberlimbs/hephaestus/hephaestus_titan.dmi'
+	has_eyes = FALSE
+	unavailable_at_fab = 1
 
 /datum/robolimb/hephaestus/alt/monitor
 	company = "Hephaestus Monitor."
@@ -116,6 +123,33 @@ var/datum/robolimb/basic_robolimb
 	desc = "This limb is simple and functional; no effort has been made to make it look human."
 	icon = 'icons/mob/human_races/cyberlimbs/morpheus/morpheus_main.dmi'
 
+/datum/robolimb/morpheus/alt
+	company = "Morpheus Atlantis"
+	icon = 'icons/mob/human_races/cyberlimbs/morpheus/morpheus_atlantis.dmi'
+	applies_to_part = list(BP_HEAD)
+	unavailable_at_fab = 1
+
+/datum/robolimb/morpheus/alt/blitz
+	company = "Morpheus Blitz"
+	icon = 'icons/mob/human_races/cyberlimbs/morpheus/morpheus_blitz.dmi'
+	applies_to_part = list(BP_HEAD)
+	has_eyes = FALSE
+	unavailable_at_fab = 1
+
+/datum/robolimb/morpheus/alt/airborne
+	company = "Morpheus Airborne"
+	icon = 'icons/mob/human_races/cyberlimbs/morpheus/morpheus_airborne.dmi'
+	applies_to_part = list(BP_HEAD)
+	has_eyes = FALSE
+	unavailable_at_fab = 1
+
+/datum/robolimb/morpheus/alt/prime
+	company = "Morpheus Prime"
+	icon = 'icons/mob/human_races/cyberlimbs/morpheus/morpheus_prime.dmi'
+	applies_to_part = list(BP_HEAD)
+	has_eyes = FALSE
+	unavailable_at_fab = 1
+
 /datum/robolimb/mantis
 	company = "Morpheus Mantis"
 	desc = "This limb has a casing of sleek black metal and repulsive insectile design."
@@ -137,20 +171,19 @@ var/datum/robolimb/basic_robolimb
 	skintone = 1
 	species_cannot_use = list(SPECIES_IPC)
 
-/datum/robolimb/grayson
-	company = "Grayson"
+/datum/robolimb/shellguard
+	company = "Shellguard"
 	desc = "This limb has a sturdy and heavy build to it."
-	icon = 'icons/mob/human_races/cyberlimbs/grayson/grayson_main.dmi'
-	has_eyes = FALSE
+	icon = 'icons/mob/human_races/cyberlimbs/shellguard/shellguard_main.dmi'
 
-/datum/robolimb/grayson/alt
-	company = "Grayson Alt."
-	icon = 'icons/mob/human_races/cyberlimbs/grayson/grayson_alt.dmi'
+/datum/robolimb/shellguard/alt
+	company = "Shellguard Alt."
+	icon = 'icons/mob/human_races/cyberlimbs/shellguard/shellguard_alt.dmi'
 	applies_to_part = list(BP_HEAD)
 
-/datum/robolimb/grayson/alt/monitor
-	company = "Grayson Monitor."
-	icon = 'icons/mob/human_races/cyberlimbs/grayson/grayson_monitor.dmi'
+/datum/robolimb/shellguard/alt/monitor
+	company = "Shellguard Monitor."
+	icon = 'icons/mob/human_races/cyberlimbs/shellguard/shellguard_monitor.dmi'
 	applies_to_part = list(BP_HEAD)
 	allowed_bodytypes = list(SPECIES_IPC)
 

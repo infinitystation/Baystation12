@@ -25,6 +25,7 @@ var/bomb_set
 	var/previous_level = ""
 	wires = /datum/wires/nuclearbomb
 	var/decl/security_level/original_level
+	interact_offline = 1 //inf
 
 /obj/machinery/nuclearbomb/New()
 	..()
@@ -157,7 +158,7 @@ var/bomb_set
 		extended = 1
 		if(!src.lighthack)
 			flick("lock", src)
-			update_icon()	
+			update_icon()
 
 /obj/machinery/nuclearbomb/interface_interact(mob/user as mob)
 	if(extended && !panel_open)

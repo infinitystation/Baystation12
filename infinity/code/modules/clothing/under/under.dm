@@ -89,7 +89,7 @@
 	icon_state = "adjutant"
 	item_state = "adjutant"
 	worn_state = "adjutant"
-/*
+
 /obj/item/clothing/under/scp_uniform
 	name = "SCP guard uniform"
 	desc = "It's dark grey uniform made of a slightly sturdier material than standard jumpsuits, to allow for good protection.\nThis uniform has SCP tags on shoulders, terran organization of NT asset protection."
@@ -100,7 +100,7 @@
 	worn_state = "scp_uniform"
 	armor = list(melee = 10, bullet = 5, laser = 5,energy = 0, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.9
-*/
+
 /obj/item/clothing/under/gray_camo
 	name = "camo uniform"
 	desc = "It's camo unifrom made of a slightly sturdier material than standard jumpsuits, to allow for good protection and military style."

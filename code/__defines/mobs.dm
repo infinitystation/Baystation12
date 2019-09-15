@@ -245,6 +245,9 @@
 #define BP_IS_BRITTLE(org)  (org.status & ORGAN_BRITTLE)
 #define BP_IS_CRYSTAL(org)  (org.status & ORGAN_CRYSTAL)
 
+// Limb flag helpers
+#define BP_IS_DEFORMED(org) (org.limb_flags & ORGAN_FLAG_DEFORMED)
+
 #define SYNTH_BLOOD_COLOUR "#030303"
 #define SYNTH_FLESH_COLOUR "#575757"
 
@@ -283,27 +286,28 @@
 #define CORPSE_CAN_REENTER 1
 #define CORPSE_CAN_REENTER_AND_RESPAWN 2
 
-#define SPECIES_HUMAN       "Human"
-#define SPECIES_DIONA       "Diona"
-#define SPECIES_VOX         "Vox"
-#define SPECIES_VOX_ARMALIS "Vox Armalis"
-#define SPECIES_IPC         "Machine"
-#define SPECIES_UNATHI      "Unathi"
-#define SPECIES_SKRELL      "Skrell"
-#define SPECIES_PROMETHEAN  "Promethean"
-#define SPECIES_ALIEN       "Humanoid"
-#define SPECIES_ADHERENT    "Adherent"
-#define SPECIES_GOLEM       "Golem"
-#define SPECIES_YEOSA       "Yeosa'Unathi"
-#define SPECIES_VATGROWN    "Vat-Grown Human"
-#define SPECIES_SPACER      "Space-Adapted Human"
-#define SPECIES_TRITONIAN   "Tritonian"
-#define SPECIES_GRAVWORLDER "Grav-Adapted Human"
+#define SPECIES_HUMAN		"Human"
+#define SPECIES_DIONA		"Diona"
+#define SPECIES_VOX			"Vox"
+#define SPECIES_VOX_ARMALIS	"Vox Armalis"
+#define SPECIES_IPC			"Machine"
+#define SPECIES_UNATHI		"Unathi"
+#define SPECIES_SKRELL		"Skrell"
+#define SPECIES_PROMETHEAN	"Promethean"
+#define SPECIES_ALIEN		"Humanoid"
+#define SPECIES_ADHERENT	"Adherent"
+#define SPECIES_GOLEM		"Golem"
+#define SPECIES_YEOSA		"Yeosa'Unathi"
+#define SPECIES_VATGROWN	"Vat-Grown Human"
+#define SPECIES_SPACER		"Space-Adapted Human"
+#define SPECIES_TRITONIAN	"Tritonian"
+#define SPECIES_GRAVWORLDER	"Grav-Adapted Human"
+#define SPECIES_MULE		"Mule"
+#define SPECIES_BOOSTER		"Booster"
 
-#define STATION_SPECIES list(SPECIES_HUMAN, SPECIES_DIONA, SPECIES_IPC, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_TRITONIAN, SPECIES_SPACER, SPECIES_VATGROWN, SPECIES_GRAVWORLDER,\
+#define UNRESTRICTED_SPECIES	list(SPECIES_HUMAN, SPECIES_DIONA, SPECIES_IPC, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_TRITONIAN, SPECIES_SPACER, SPECIES_VATGROWN, SPECIES_GRAVWORLDER, SPECIES_BOOSTER, SPECIES_MULE,\
 							SPECIES_RESOMI, SPECIES_TAJARA)//inf
-
-#define RESTRICTED_SPECIES list(SPECIES_VOX, SPECIES_ALIEN, SPECIES_GOLEM, SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_MONARCH_WORKER, SPECIES_MONARCH_QUEEN, \
+#define RESTRICTED_SPECIES		list(SPECIES_VOX, SPECIES_ALIEN, SPECIES_GOLEM, SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_MONARCH_WORKER, SPECIES_MONARCH_QUEEN, \
 	SPECIES_XENO) //inf
 
 #define SPECIES_NABBER         "giant armoured serpentid"

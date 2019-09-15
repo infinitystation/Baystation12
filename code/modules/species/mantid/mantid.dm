@@ -18,6 +18,7 @@
 	flesh_color =             "#009999"
 	hud_type =                /datum/hud_data/mantid
 	move_trail =              /obj/effect/decal/cleanable/blood/tracks/snake
+	virus_immune =            TRUE
 
 	speech_chance = 100
 	speech_sounds = list(
@@ -43,9 +44,9 @@
 	siemens_coefficient =     0
 	body_temperature =        null
 
-	breath_type =             "methyl_bromide"
-	exhale_type =             "methane"
-	poison_types =            list("phoron")
+	breath_type =             GAS_METHYL_BROMIDE
+	exhale_type =             GAS_METHANE
+	poison_types =            list(GAS_PHORON)
 
 	reagent_tag =             IS_MANTID
 	genders =                 list(MALE)
@@ -163,6 +164,13 @@
 		TAG_RELIGION =  RELIGION_KHARMAANI
 	)
 
+/datum/species/mantid/gyne/attempt_grab(var/mob/living/carbon/human/grabber, var/mob/living/target)
+	grabber.unEquip(grabber.l_hand)
+	grabber.unEquip(grabber.r_hand)
+	to_chat(grabber, SPAN_WARNING("You drop everything as you seize \the [target]!"))
+	playsound(grabber.loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
+	. = ..(grabber, target, GRAB_NAB)
+
 /datum/species/mantid/gyne/New()
 	equip_adjust = list(
 		slot_l_hand_str = list(
@@ -196,6 +204,7 @@
 /datum/species/nabber/monarch
 	name = SPECIES_MONARCH_WORKER
 	name_plural = "Monarch Serpentid Workers"
+	virus_immune = TRUE
 	spawn_flags = SPECIES_IS_RESTRICTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_FBP_CHARGEN
 	has_organ = list(
 		BP_BRAIN =             /obj/item/organ/internal/brain/insectoid/nabber,

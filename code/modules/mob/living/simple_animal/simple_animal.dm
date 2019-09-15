@@ -9,6 +9,13 @@
 	mob_swap_flags = MONKEY|SLIME|SIMPLE_ANIMAL
 	mob_push_flags = MONKEY|SLIME|SIMPLE_ANIMAL
 
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat
+	meat_amount = 3
+	bone_material = MATERIAL_BONE_GENERIC
+	bone_amount = 5
+	skin_material = MATERIAL_SKIN_GENERIC 
+	skin_amount = 5
+
 	var/show_stat_health = 1	//does the percentage health show in the stat panel for the mob
 
 	var/icon_living = ""
@@ -22,8 +29,6 @@
 
 	var/turns_per_move = 1
 	var/turns_since_move = 0
-	var/meat_amount = 0
-	var/meat_type
 	var/stop_automated_movement = 0 //Use this to temporarely stop random movement or to if you write special movement code for animals.
 	var/wander = 1	// Does the mob wander around when idle?
 	var/stop_automated_movement_when_pulled = 1 //When set to 1 this stops the animal from moving when someone is pulling it.
@@ -43,8 +48,8 @@
 	var/fire_alert = 0
 
 	//Atmos effect - Yes, you can make creatures that require phoron or co2 to survive. N2O is a trace gas and handled separately, hence why it isn't here. It'd be hard to add it. Hard and me don't mix (Yes, yes make all the dick jokes you want with that.) - Errorage
-	var/list/min_gas = list("oxygen" = 5)
-	var/list/max_gas = list("phoron" = 1, "carbon_dioxide" = 5)
+	var/list/min_gas = list(GAS_OXYGEN = 5)
+	var/list/max_gas = list(GAS_PHORON = 1, GAS_CO2 = 5)
 
 	var/unsuitable_atmos_damage = 2	//This damage is taken when atmos doesn't fit all the requirements above
 	var/speed = 0 //LETS SEE IF I CAN SET SPEEDS FOR SIMPLE MOBS WITHOUT DESTROYING EVERYTHING. Higher speed is slower, negative speed is faster
@@ -73,6 +78,10 @@
 
 	// contained in a cage
 	var/in_stasis = 0
+
+	//for simple animals with abilities, mostly megafauna
+	var/ability_cooldown
+	var/time_last_used_ability
 
 /mob/living/simple_animal/Initialize()
 	. = ..()

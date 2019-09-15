@@ -17,6 +17,21 @@
 		body.MouseDrop_T(dropping, user)
 	else . = ..()
 
+/mob/living/exosuit/RelayMouseDrag(src_object, over_object, src_location, over_location, src_control, over_control, params, var/mob/user)
+	if(user && (user in pilots) && user.loc == src)
+		return OnMouseDrag(src_object, over_object, src_location, over_location, src_control, over_control, params, user)
+	return ..()
+
+/mob/living/exosuit/OnMouseDrag(src_object, over_object, src_location, over_location, src_control, over_control, params, var/mob/user)
+	if(!user || incapacitated() || user.incapacitated())
+		return FALSE
+
+	if(!(user in pilots) && user != src)
+		return FALSE
+
+	//This is handled at active module level really, it is the one who has to know if it's supposed to act
+	if(selected_system)
+		return selected_system.MouseDragInteraction(src_object, over_object, src_location, over_location, src_control, over_control, params, user)
 
 /mob/living/exosuit/ClickOn(var/atom/A, var/params, var/mob/user)
 
@@ -57,7 +72,10 @@
 	// User is not necessarily the exosuit, or the same person, so update intent.
 	if(user != src)
 		a_intent = user.a_intent
-		zone_sel.set_selected_zone(user.zone_sel.selecting)
+		if(user.zone_sel)
+			zone_sel.set_selected_zone(user.zone_sel.selecting)
+		else
+			zone_sel.set_selected_zone(BP_CHEST)
 	// You may attack the target with your exosuit FIST if you're malfunctioning.
 	var/atom/movable/AM = A
 	var/fail_prob = (user != src && istype(AM) && AM.loc != src) ? (user.skill_check(SKILL_MECH, HAS_PERK) ? 0: 15 ) : 0
@@ -112,7 +130,7 @@
 
 			var/resolved
 
-			if(adj) resolved = A.attackby(temp_system, src)
+			if(adj) resolved = temp_system.resolve_attackby(A, src, params)
 			if(!resolved && A && temp_system)
 				var/mob/ruser = src
 				if(!system_moved) //It's more useful to pass along clicker pilot when logic is fully mechside
@@ -293,6 +311,28 @@
 				visible_message(SPAN_NOTICE("\The [user] loosens and removes the securing bolts, dismantling \the [src]."))
 				dismantle()
 				return
+			else if(isWelder(thing))
+				if(!getBruteLoss())
+					return
+				var/list/damaged_parts = list()
+				for(var/obj/item/mech_component/MC in list(arms, legs, body, head))
+					if(MC && MC.brute_damage)
+						damaged_parts += MC
+				var/obj/item/mech_component/to_fix = input(user,"Which component would you like to fix") as null|anything in damaged_parts
+				if(CanPhysicallyInteract(user) && !QDELETED(to_fix) && (to_fix in src) && to_fix.brute_damage)
+					to_fix.repair_brute_generic(thing, user)
+				return
+			else if(isCoil(thing))
+				if(!getFireLoss())
+					return
+				var/list/damaged_parts = list()
+				for(var/obj/item/mech_component/MC in list(arms, legs, body, head))
+					if(MC && MC.burn_damage)
+						damaged_parts += MC
+				var/obj/item/mech_component/to_fix = input(user,"Which component would you like to fix") as null|anything in damaged_parts
+				if(CanPhysicallyInteract(user) && !QDELETED(to_fix) && (to_fix in src) && to_fix.burn_damage)
+					to_fix.repair_burn_generic(thing, user)
+				return
 	return ..()
 
 /mob/living/exosuit/attack_hand(var/mob/user)
@@ -329,3 +369,9 @@
 		return
 	SetName(new_name)
 	to_chat(user, SPAN_NOTICE("You have redesignated this exosuit as \the [name]."))
+
+/mob/living/exosuit/get_inventory_slot(obj/item/I)
+	for(var/h in hardpoints)
+		if(hardpoints[h] == I)
+			return h
+	return 0

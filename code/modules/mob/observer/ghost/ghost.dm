@@ -150,6 +150,8 @@ Works together with spawning an observer, noted above.
 			ghost.verbs -= /mob/observer/ghost/verb/toggle_antagHUD	// Poor guys, don't know what they are missing!
 		return ghost
 
+/mob/observer/ghostize() // Do not create ghosts of ghosts.
+
 /*
 This is the proc mobs get to turn into a ghost. Forked from ghostize due to compatibility issues.
 */
@@ -342,12 +344,14 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return
 	..()
 
-/mob/observer/ghost/memory()
+/mob/observer/ghost/StoreMemory()
 	set hidden = 1
 	to_chat(src, "<span class='warning'>You are dead! You have no mind to store memory!</span>")
-/mob/observer/ghost/add_memory()
+
+/mob/observer/ghost/AddMemory()
 	set hidden = 1
 	to_chat(src, "<span class='warning'>You are dead! You have no mind to store memory!</span>")
+
 /mob/observer/ghost/PostIncorporealMovement()
 	stop_following()
 
@@ -547,7 +551,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		set_see_invisible(SEE_INVISIBLE_NOLIGHTING)
 	else
 		set_see_invisible(ghostvision ? SEE_INVISIBLE_OBSERVER : SEE_INVISIBLE_LIVING)
-	updateghostimages()
+	SSghost_images.queue_image_update(src)
 
 /mob/observer/ghost/proc/updateghostimages()
 	if (!client)

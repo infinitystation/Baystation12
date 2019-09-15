@@ -128,6 +128,7 @@
 	var/global/list/status_overlays_equipment
 	var/global/list/status_overlays_lighting
 	var/global/list/status_overlays_environ
+
 	var/hp = 100 //infinity
 /obj/machinery/power/apc/updateDialog()
 	if (stat & (BROKEN|MAINT))
@@ -646,7 +647,7 @@
 //inf				return TRUE
 
 			user.visible_message("<span class='warning'>[user.name] replaces the damaged APC frame with a new one.</span>",\
-				"You begin to replace the damaged APC frame...")
+								"You begin to replace the damaged APC frame...")
 			if(do_after(user, 50, src) && opened && !has_electronics && ((stat & BROKEN) || (hacker && !hacker.hacked_apcs_hidden)))
 				user.visible_message(\
 					"<span class='notice'>[user.name] has replaced the damaged APC frame with new one.</span>",\
@@ -662,7 +663,7 @@
 					opened = 1
 				queue_icon_update()
 
-//inf ahead
+//[inf]
 	if(isMultitool(W) && !wiresexposed && has_electronics)
 		if((user.skill_check(SKILL_ELECTRICAL, SKILL_PROF) || user.skill_check(SKILL_COMPUTER, SKILL_PROF)) && \
 		(hacker && hacker.hacked_apcs && (src in hacker.hacked_apcs)))
@@ -676,10 +677,10 @@
 			user.visible_message(user, SPAN_NOTICE("[src] beeps and the screen restores to default state."), \
 				SPAN_NOTICE("You restore main settings of the APC! Prise your skills!"))
 			playsound(src, 'sound/machines/twobeep.ogg', 75, 0)
-//			reboot() boring
+//			reboot()
 			queue_icon_update()
 		return
-//inf end
+//[/inf]
 
 	if((. = ..())) // Further interactions are low priority attack stuff.
 		return

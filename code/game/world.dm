@@ -536,19 +536,38 @@ var/world_topic_spam_protect_time = world.timeofday
 	var/s = ""
 
 	if (config && config.server_name)
-		s += "<b>[config.server_name]</b>: "
+		s += "<b>[config.server_name]</b>"
 
-	s += "<b>[station_name()]</b>";
+//	s += "<b>[station_name()]</b>"
 	s += " ("
-	s += "<a href=\"https://infinity-ss13.info\">" //Change this to wherever you want the hub to link to.
+//	s += "<a href=\"https://infinity-ss13.info\">" //Change this to wherever you want the hub to link to.
 //	s += "[game_version]"
-	s += "Forum"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
-	s += "</a>|"
-	s += "<a href=\"https://discord.gg/N4atUkH\">" //Change this to wherever you want the hub to link to.
-	s += "Discord"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
+//	s += "Forum"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
+//	s += "</a>|"
+	s += "<a href=\"https://discord.gg/N4atUkH\">"
+	s += "Discord"
 	s += "</a>"
 	s += ")"
+	s += " A medium/hard RP server with modified Bay12 code."
+//	s += "<br><b>Map:</b> [station_name()]"
+	var/n = 0
+	for (var/mob/M in GLOB.player_list)
+		if (M.client)
+			n++
+	s += "<br><b>Players:</b> [n] | "
+	if(SSticker.runlevels == RUNLEVEL_POSTGAME)
+		s += "<b>Mode:</b> ENDING"
+	else if(config.event_status)
+		s += "<b>Mode:</b> <u>EVENT!</u>"
+	else if(SSticker.master_mode)
+		s +="<b>Mode:</b> [SSticker.master_mode]"
+	else
+		s += "<b>Mode:</b> STARTING"
+//	s += "<br><b>Round Duration:</b> [roundduration2text()]"
+	if(!config.enter_allowed)
+		s += "<br><b>Status:<b> closed"
 
+/*inf, original bs12 ahead
 	var/list/features = list()
 
 	if(SSticker.master_mode)
@@ -583,7 +602,7 @@ var/world_topic_spam_protect_time = world.timeofday
 
 	if (features)
 		s += ": [jointext(features, ", ")]"
-
+*/
 	/* does this help? I do not know */
 	if (src.status != s)
 		src.status = s

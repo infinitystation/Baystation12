@@ -18,6 +18,7 @@
 	var/health = 100
 	var/paint_color
 	var/stripe_color
+	rad_resistance_modifier = 0.5
 
 	blend_objects = list(/obj/machinery/door, /turf/simulated/wall) // Objects which to blend with
 	noblend_objects = list(/obj/machinery/door/window, /obj/machinery/door/blast/regular/evacshield, /obj/machinery/door/firedoor/border_only) //INF, WAS: /obj/machinery/door/window

@@ -240,40 +240,47 @@
 	build_path = /obj/item/weapon/stock_parts/circuitboard/autolathe
 	sort_string = "HABAD"
 
+/datum/design/circuit/microlathe
+	name = "microlathe board"
+	id = "microlathe"
+	req_tech = list(TECH_DATA = 1, TECH_ENGINEERING = 1)
+	build_path = /obj/item/weapon/stock_parts/circuitboard/autolathe/micro
+	sort_string = "HABAE"
+
 /datum/design/circuit/mining_console
 	name = "mining console board"
 	id = "mining_console"
 	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/weapon/stock_parts/circuitboard/mineral_processing
-	sort_string = "HABAE"
+	sort_string = "HABAF"
 
 /datum/design/circuit/mining_processor
 	name = "mining processor board"
 	id = "mining_processor"
 	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/weapon/stock_parts/circuitboard/mining_processor
-	sort_string = "HABAF"
+	sort_string = "HABAG"
 
 /datum/design/circuit/mining_unloader
 	name = "ore unloader board"
 	id = "mining_unloader"
 	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/weapon/stock_parts/circuitboard/mining_unloader
-	sort_string = "HABAG"
+	sort_string = "HABAH"
 
 /datum/design/circuit/mining_stacker
 	name = "sheet stacker board"
 	id = "mining_stacker"
 	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/weapon/stock_parts/circuitboard/mining_stacker
-	sort_string = "HABAH"
+	sort_string = "HABAI"
 
 /datum/design/circuit/suspension_gen
 	name = "suspension generator"
 	id = "suspension_gen"
 	req_tech = list(TECH_DATA = 4, TECH_ENGINEERING = 3, TECH_MAGNET = 4)
 	build_path = /obj/item/weapon/stock_parts/circuitboard/suspension_gen
-	sort_string = "HABAI"
+	sort_string = "HABAJ"
 
 /datum/design/circuit/rdservercontrol
 	name = "R&D server control console"
@@ -384,7 +391,7 @@
 /datum/design/circuit/pacmanpotato
 	name = "PTTO-3 nuclear generator"
 	id = "pacmanpotato"
-	req_tech = list(TECH_DATA = 3, TECH_POWER = 5, TECH_ENGINEERING = 4, TECH_ILLEGAL = 4)
+	req_tech = list(TECH_DATA = 3, TECH_POWER = 5, TECH_ENGINEERING = 4, TECH_ESOTERIC = 4)
 	build_path = /obj/item/weapon/stock_parts/circuitboard/pacman/super/potato
 	sort_string = "JBAAD"
 
@@ -564,33 +571,40 @@
 	build_path = /obj/item/weapon/stock_parts/circuitboard/miningdrillbrace
 	sort_string = "KCAAB"
 
+/datum/design/circuit/floodlight
+	name = "emergency floodlight"
+	id = "floodlight"
+	req_tech = list(TECH_POWER = 1, TECH_ENGINEERING = 1)
+	build_path = /obj/item/weapon/stock_parts/circuitboard/floodlight
+	sort_string = "KCAAC"
+
 /datum/design/circuit/bsafront
 	name = "bluespace particle beam generator mark VI."
 	id = "bsafront"
 	req_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2, TECH_BLUESPACE = 2)
 	build_path = /obj/item/weapon/stock_parts/circuitboard/bsafront
-	sort_string = "KCAAC"
+	sort_string = "KCAAD"
 
 /datum/design/circuit/bsamiddle
 	name = "bluespace fusor mark VI."
 	id = "bsamiddle"
 	req_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2, TECH_BLUESPACE = 2)
 	build_path = /obj/item/weapon/stock_parts/circuitboard/bsamiddle
-	sort_string = "KCAAD"
+	sort_string = "KCAAE"
 
 /datum/design/circuit/bsaback
 	name = "bluespace material deconstructor mark VI."
 	id = "bsaback"
 	req_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2, TECH_BLUESPACE = 2)
 	build_path = /obj/item/weapon/stock_parts/circuitboard/bsaback
-	sort_string = "KCAAE"
+	sort_string = "KCAAF"
 
 /datum/design/circuit/bsa_console
 	name = "bluespace artillery control console"
 	id = "bsa_console"
 	req_tech = list(TECH_DATA = 2, TECH_COMBAT = 5, TECH_BLUESPACE = 5)
 	build_path = /obj/item/weapon/stock_parts/circuitboard/bsa
-	sort_string = "KCAAF"
+	sort_string = "KCAAG"
 
 /datum/design/circuit/tcom
 	req_tech = list(TECH_DATA = 4, TECH_ENGINEERING = 4)
@@ -746,3 +760,10 @@
 	materials = list(MATERIAL_GOLD = 250, MATERIAL_DIAMOND = 250, MATERIAL_URANIUM = 250, MATERIAL_PLASTIC = 1000, MATERIAL_ALUMINIUM = 1000)
 	build_path = /obj/item/weapon/stock_parts/circuitboard/engine/ion
 	sort_string = "XAAAB"
+
+/datum/design/circuit/sublimator/sauna
+	name = "sauna heater system"
+	id = "sauna"
+	req_tech = list(TECH_POWER = 2, TECH_ENGINEERING = 1)
+	build_path = /obj/item/weapon/stock_parts/circuitboard/sublimator/sauna
+	sort_string = "XAAAC"

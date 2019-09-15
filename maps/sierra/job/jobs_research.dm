@@ -88,14 +88,20 @@
 	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
 	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor)
 	min_skill = list(   SKILL_COMPUTER		= SKILL_ADEPT,
-	                    SKILL_MECH          = SKILL_ADEPT,
-	                    SKILL_DEVICES		= SKILL_ADEPT)
+	                    SKILL_DEVICES		= SKILL_ADEPT,
+	                    SKILL_EVA           = SKILL_ADEPT,
+	                    SKILL_ANATOMY       = SKILL_ADEPT,
+	                    SKILL_MECH          = HAS_PERK)
 
 	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
-						SKILL_COMPUTER	   = SKILL_MAX,
-						SKILL_MECH		   = SKILL_MAX,
+	                    SKILL_ELECTRICAL   = SKILL_MAX,
+	                    SKILL_ATMOS        = SKILL_EXPERT,
+	                    SKILL_ENGINES      = SKILL_EXPERT,
 	                    SKILL_DEVICES      = SKILL_MAX,
-	                    SKILL_MEDICAL      = SKILL_MAX)
+	                    SKILL_MEDICAL      = SKILL_EXPERT,
+	                    SKILL_ANATOMY      = SKILL_EXPERT)
+
+	skill_points = 20
 
 	access = list(access_robotics, access_research, access_tech_storage)
 

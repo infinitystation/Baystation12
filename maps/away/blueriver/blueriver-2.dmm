@@ -420,7 +420,7 @@
 	},
 /area/bluespaceriver/ship)
 "bp" = (
-/obj/machinery/autolathe,
+/obj/machinery/fabricator,
 /turf/simulated/floor/tiled,
 /area/bluespaceriver/ship)
 "bq" = (
@@ -835,10 +835,6 @@
 "cD" = (
 /obj/effect/landmark/map_data{
 	height = 2
-	},
-/obj/effect/landmark/random_gen/asteroid{
-	generation_height = 100;
-	generation_width = 100
 	},
 /turf/unsimulated/mineral{
 	temperature = 233

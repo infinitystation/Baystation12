@@ -5,20 +5,19 @@
 	. = pick(subtypesof(/decl/poster/tjpost))
 */
 /obj/structure/sign/poster/tjpost
-	name = "poster"
-//	desc = "A large piece of space-resistant printed paper with emblem of CCA."
+//	desc = "A large piece of space-resistant printed paper with an emblem of CCA."
 	icon = 'infinity/icons/obj/posters.dmi'
-	icon_state= "tposter"
+	icon_state = "tposter"
 
 /obj/structure/sign/poster/tjpost/New()
 	if(!poster_type)
 		poster_type = pick(subtypesof(/decl/poster/tjpost))
 	..()
-
+/*
 /obj/structure/sign/poster/tjpost/tj_1
 	icon_state = "tposter_1"
 	poster_type = /decl/poster/tjpost/tj_1
-
+*/
 /obj/structure/sign/poster/tjpost/tj_2
 	icon_state = "tposter_2"
 	poster_type = /decl/poster/tjpost/tj_2
@@ -102,23 +101,17 @@
 /obj/structure/sign/poster/tjpost/tj_22
 	icon_state = "tposter_22"
 	poster_type = /decl/poster/tjpost/tj_22
-
-/obj/structure/sign/poster/guide_to_pee
-	icon_state = "guide_to_pee"
-	icon = 'infinity/icons/obj/posters.dmi'
-	poster_type = /decl/poster/guide_to_pee
-
 /decl/poster/tjpost
 	icon_state = "tposter"
-	name = "CCA emblem"
-	desc = "A poster with an emblem of CCA."
-
-/decl/poster/tjpost/tj_1
-	icon_state = "tposter_1"
 	name = "Liberation day"
 	desc = "A memorable photo, which depicted how the soldiers of the Kaytam clan raise their flag \
 	over the overseer citadel in Naliar. Looks like one of CCA posters..."
-
+/* let's try to not use posters of specific groups, like governments or corporations
+/decl/poster/tjpost/tj_1
+	icon_state = "tposter_1"
+	name = "CCA emblem"
+	desc = "A poster with an emblem of CCA."
+*/
 /decl/poster/tjpost/tj_2
 	icon_state = "tposter_2"
 	name = "Patriotic poster"
@@ -233,14 +226,6 @@
 	name = "Mryarov Mraporting"
 	desc = "There is a drone blimp-bomber of the Kaytam clan."
 
-/decl/poster/guide_to_pee
-	icon_state = "guide_to_pee"
-	name = "Guide to use toilet"
-	desc = "If you want to avoid obossaniy pol and unitaz, then follow a couple of simple rules \
-	that will help you in this: For starters, get a hold of your gun. Make sure you get your sights right. \
-	Didn't take it too high, or too low. Also, make sure your weapon is not placed in the holster. \
-	If you follow these simple rules and do not blunt, the floor in the toilet will stay clean."
-
 //spess humen posterz (humpost-kompost hddd)
 /*
 /decl/poster/humpost/New()
@@ -248,6 +233,7 @@
 	if(!poster_type)
 		poster_type = pick(subtypesof(/decl/poster/humpost))
 */
+
 /obj/structure/sign/poster/humpost
 	name = "poster"
 	icon = 'infinity/icons/obj/posters.dmi'
@@ -257,15 +243,16 @@
 	if(!poster_type)
 		poster_type = pick(subtypesof(/decl/poster/humpost))
 	..()
-
+/* animated paper?...
 /obj/structure/sign/poster/humpost/hum_1
 	icon_state = "humposter_1"
 	poster_type = /decl/poster/humpost/hum_1
-
+*/
+/*let's try to not use posters of specific groups, like governments or corporations
 /obj/structure/sign/poster/humpost/hum_2
 	icon_state = "humposter_2"
 	poster_type = /decl/poster/humpost/hum_2
-
+*/
 /obj/structure/sign/poster/humpost/hum_3
 	icon_state = "humposter_3"
 	poster_type = /decl/poster/humpost/hum_3
@@ -277,11 +264,11 @@
 /obj/structure/sign/poster/humpost/hum_5
 	icon_state = "humposter_5"
 	poster_type = /decl/poster/humpost/hum_5
-
+/*let's try to not use posters of specific groups, like governments or corporations
 /obj/structure/sign/poster/humpost/hum_6
 	icon_state = "humposter_6"
 	poster_type = /decl/poster/humpost/hum_6
-
+*/
 /obj/structure/sign/poster/humpost/hum_7
 	icon_state = "humposter_7"
 	poster_type = /decl/poster/humpost/hum_7
@@ -313,11 +300,11 @@
 /obj/structure/sign/poster/humpost/hum_14
 	icon_state = "humposter_14"
 	poster_type = /decl/poster/humpost/hum_14
-
+/* we need something like 'contraband = 1' for this sort of posters, cause too political
 /obj/structure/sign/poster/humpost/hum_15
 	icon_state = "humposter_15"
 	poster_type = /decl/poster/humpost/hum_15
-
+*/
 /obj/structure/sign/poster/humpost/hum_16
 	icon_state = "humposter_16"
 	poster_type = /decl/poster/humpost/hum_16
@@ -344,19 +331,21 @@
 
 /decl/poster/humpost
 	icon_state = "humposter"
-	name = "SCG emblem"
-	desc = "Patriotic poster with an emblem of SCG and some dull text for marine recruiters on it."
+	name = "Moon City"
+	desc = "A photo of the oldest city at the Moon, Sol System - Selena. Looks like it was taken from one of observation towers."
 
+/* animated paper?...
 /decl/poster/humpost/hum_1
 	icon_state = "humposter_1"
 	name = "SCG Peacemakers"
 	desc = "Poster calling to join the ranks of the peacemaking forces of the SCG... Wow, it's animated!"
-
+*/
+/* let's try to not use posters of specific groups, like governments or corporations
 /decl/poster/humpost/hum_2
 	icon_state = "humposter_2"
 	name = "NanoTrasen"
 	desc = "Boring poster of a boring corporation with boring text from a boring person. Smells like profit."
-
+*/
 /decl/poster/humpost/hum_3
 	icon_state = "humposter_3"
 	name = "Bodka"
@@ -371,13 +360,13 @@
 /decl/poster/humpost/hum_5
 	icon_state = "humposter_5"
 	name = "Mars Terraforming"
-	desc = "What it was before and what it is now, our future is in our hands."
-
+	desc = "What it was before and what it is now. Our future is in our hands."
+/* let's try to not use posters of specific groups, like governments or corporations
 /decl/poster/humpost/hum_6
 	icon_state = "humposter_6"
-	name = "Moon City"
-	desc = "Hundreds of years ago Selena, the first city of the Moon was like that."
-
+	name = "SCG emblem"
+	desc = "Patriotic poster with an emblem of SCG and some dull text for marine recruiters on it."
+*/
 /decl/poster/humpost/hum_7
 	icon_state = "humposter_7"
 	name = "Jeneva"
@@ -420,13 +409,13 @@
 	icon_state = "humposter_14"
 	name = "Olympus"
 	desc = "Spires of Olympus - the capital of Mars and Sol Central Government."
-
+/* we need something like 'contraband = 1' for this sort of posters, cause too political
 /decl/poster/humpost/hum_15
 	icon_state = "humposter_15"
 	name = "Gaya"
 	desc = "Join the SCG fleet! Liberate Gaia! Avenge your comrades! Kill Gilgamesh agressors!.. \
 	Some old poster from old days."
-
+*/
 /decl/poster/humpost/hum_16
 	icon_state = "humposter_16"
 	name = "Venus"
@@ -441,7 +430,8 @@
 /decl/poster/humpost/hum_18
 	icon_state = "humposter_18"
 	name = "WetSkrell"
-	desc = "You see a wet, very wet skrell on the poster. Its just advertising of site wetskrell.nt."
+	desc = "You can see a pretty skrell in red dress and with long headtails, which have decorative bands. \
+	It is advertising a site with \"adult recreation procedures\", the wetskrell.nt."
 
 /decl/poster/humpost/hum_19
 	icon_state = "humposter_19"
@@ -453,10 +443,10 @@
 
 /decl/poster/humpost/hum_20
 	icon_state = "humposter_20"
-	name = "A hero"
-	desc = "You see a very pumped-up guy with a huge machete. He is huge, he is muscular, \
-	he is beautiful and you want children from him. Join the ranks of the Expeditionary Corps\
-	- advises us the hero from the poster!.. And die far away from home at god-forgotten planet for low payment, yeah."
+	name = "Explorer"
+	desc = "You see a very pumped-up guy with a huge machete. He has good muscle and a face of a real man. \
+	You can also read a text at bottom: \"Join the ranks of the Expeditionary Corps - see the start, \
+	explore the university!\"... And die far away from home at god-forgotten planet for low payment, yeah."
 
 /decl/poster/humpost/hum_21
 	icon_state = "humposter_21"

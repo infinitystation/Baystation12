@@ -115,7 +115,7 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 		else
 			adminwho += ", [C]"
 
-	var/reason_public = sanitize_a0(reason)
+	var/reason_public = reason
 	reason = sql_sanitize_text(reason)
 	reason = sanitize_a0(reason)
 

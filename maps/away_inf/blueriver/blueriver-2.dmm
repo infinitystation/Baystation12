@@ -1375,7 +1375,7 @@
 /turf/simulated/wall/r_titanium,
 /area/bluespaceriver/ship/medical)
 "bX" = (
-/obj/machinery/autolathe,
+/obj/machinery/fabricator,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
@@ -1756,10 +1756,6 @@
 "cD" = (
 /obj/effect/landmark/map_data{
 	height = 2
-	},
-/obj/effect/landmark/random_gen/asteroid{
-	generation_height = 200;
-	generation_width = 200
 	},
 /turf/space,
 /area/space)

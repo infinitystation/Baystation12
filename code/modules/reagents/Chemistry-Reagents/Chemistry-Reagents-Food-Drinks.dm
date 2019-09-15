@@ -421,7 +421,7 @@
 	taste_description = "scorching agony"
 	taste_mult = 10
 	reagent_state = LIQUID
-	touch_met = 50 // Get rid of it quickly
+	touch_met = 5 // Get rid of it quickly
 	color = "#b31008"
 	agony_dose = 0.5
 	agony_amount = 4
@@ -1132,6 +1132,7 @@
 
 	glass_name = "nothing"
 	glass_desc = "Absolutely nothing."
+	color = COLOR_WHITE //inf, was nothing
 
 /* Alcohol */
 
