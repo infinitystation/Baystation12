@@ -40,6 +40,7 @@
 		/obj/item/weapon/storage/belt/general,
 		/obj/item/device/remote_device/research_director,
 		/obj/item/weapon/folder,
+		/obj/item/clothing/suit/armor/pcarrier/light,
 		/obj/item/device/taperecorder,
 		/obj/item/device/tape/random = 3,
 		/obj/item/device/camera,
