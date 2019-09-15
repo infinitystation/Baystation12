@@ -176,7 +176,7 @@
 			return
 		if(14)
 			if(isMultimeter(W))
-				to_chat(user, "<span class='notice'>You reprogrammed the resulting internal device with a multimeter.You fixed bugs, added new features and fixed crutches. Then you compile that shitcode and it works</span>")
+				to_chat(user, "<span class='notice'>You reprogrammed the resulting internal device with a multimeter.</span>")
 				buildstate++
 				update_icon()
 			return
