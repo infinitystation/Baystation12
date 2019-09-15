@@ -20,6 +20,7 @@
 		/obj/item/clothing/mask/gas/alt,
 		/obj/item/device/multitool,
 		/obj/item/device/flash,
+		/obj/item/clothing/suit/armor/pcarrier/light,
 		/obj/item/taperoll/engineering,
 		/obj/item/device/megaphone,
 		/obj/item/weapon/crowbar/brace_jack,
