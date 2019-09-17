@@ -38,6 +38,13 @@
 	difficulty = 1
 	time = 60
 
+/datum/stack_recipe/mainkraft/laserframe
+	title = "laser frame"
+	result_type = /obj/item/weapon/laserframe
+	req_amount = 15
+	time = 45
+	difficulty = 2
+
 /material/steel/generate_recipes(var/reinforce_material)
 	. = ..()
 	if(reinforce_material)	//recipies below don't support composite materials
@@ -52,6 +59,12 @@
 	if(reinforce_material)	//recipies below don't support composite materials
 		return
 	. += new/datum/stack_recipe/mainkraft/pcarrier(src)
+
+/material/plasteel/generate_recipes(var/reinforce_material)
+	. = ..()
+	if(reinforce_material)	//recipies below don't support composite materials
+		return
+	. += new/datum/stack_recipe/mainkraft/laserframe(src)
 
 /material/cardboard/generate_recipes(var/reinforce_material)
 	. = ..()
