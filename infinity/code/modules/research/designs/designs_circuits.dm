@@ -1,3 +1,4 @@
+/*
 /datum/design/circuit/telesci_console
 	name = "telepad control console"
 	id = "telesci_console"
@@ -11,7 +12,7 @@
 	req_tech = list(TECH_DATA = 4, TECH_ENGINEERING = 3, TECH_MATERIAL = 3, TECH_BLUESPACE = 4)
 	build_path = /obj/item/weapon/stock_parts/circuitboard/telesci_pad
 	sort_string = "HAAAF"
-
+*/
 /datum/design/circuit/bs_silk_control
 	name = "bluespace snare control"
 	id = "bsc"
