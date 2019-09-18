@@ -141,7 +141,7 @@
 /obj/item/weapon/card/id/sierra/crew/pilot
 	job_access_type = /datum/job/explorer_pilot
 	detail_color = COLOR_PURPLE
-
+/*
 /obj/item/weapon/card/id/sierra/crew/field_medic
 	job_access_type = /datum/job/explorer_medic
 	detail_color = COLOR_PURPLE
@@ -149,7 +149,7 @@
 /obj/item/weapon/card/id/sierra/crew/field_engineer
 	job_access_type = /datum/job/explorer_engineer
 	detail_color = COLOR_PURPLE
-
+*/
 //Research
 
 /obj/item/weapon/card/id/sierra/crew/research
@@ -198,6 +198,7 @@
 	job_access_type = /datum/job/merchant
 
 //Stowaway
+/*
 /obj/item/weapon/card/id/sierra/stowaway
 	desc = "An identification card issued to personnel aboard the NSV Sierra. Looks like the photo fell off this one."
 	job_access_type = /datum/job/stowaway
@@ -218,3 +219,4 @@
 	fingerprint_hash = md5(registered_name)
 	dna_hash = md5(fingerprint_hash)
 	blood_type = RANDOM_BLOOD_TYPE
+*/

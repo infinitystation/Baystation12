@@ -417,7 +417,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	name = OUTFIT_JOB_NAME("Expeditionary Pilot")
 	uniform = /obj/item/clothing/under/rank/field
 	id_type = /obj/item/weapon/card/id/sierra/crew/pilot
-
+/*
 /decl/hierarchy/outfit/job/sierra/crew/exploration/medic
 	name = OUTFIT_JOB_NAME("Field Medic")
 	uniform = /obj/item/clothing/under/rank/field
@@ -429,7 +429,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	uniform = /obj/item/clothing/under/rank/field
 	id_type = /obj/item/weapon/card/id/sierra/crew/field_engineer
 	l_ear = /obj/item/device/radio/headset/exploration/engineer
-
+*/
 	////////////
 	//RESEARCH//
 	////////////
@@ -519,7 +519,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	uniform = /obj/item/clothing/under/suit_jacket/charcoal
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/weapon/card/id/sierra/merchant/leader
-
+/*
 /decl/hierarchy/outfit/job/sierra/stowaway
 	name = OUTFIT_JOB_NAME("Stowaway - Sierra")
 	id_type = null
@@ -535,7 +535,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	ID.sex = H.gender
 	ID.gender = H.gender
 	H.put_in_hands(ID)
-
+*/
 /decl/hierarchy/outfit/job/sierra/ert
 	name = OUTFIT_JOB_NAME("ERT - Sierra")
 	uniform = /obj/item/clothing/under/ert_outfit

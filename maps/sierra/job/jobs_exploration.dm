@@ -16,7 +16,8 @@
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_EVA         = SKILL_ADEPT,
 	                    SKILL_SCIENCE     = SKILL_ADEPT,
-	                    SKILL_PILOT       = SKILL_BASIC)
+	                    SKILL_PILOT       = SKILL_BASIC,
+						SKILL_MEDICAL     = SKILL_BASIC)
 
 	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
 	                    SKILL_SCIENCE     = SKILL_MAX,
@@ -51,12 +52,14 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/explorer
 	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
 	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor)
-	min_skill = list(   SKILL_EVA 		= SKILL_BASIC,
-						SKILL_SCIENCE  	= SKILL_BASIC)
+	min_skill = list(   SKILL_EVA     = SKILL_BASIC,
+						SKILL_SCIENCE = SKILL_BASIC,
+						SKILL_MEDICAL = SKILL_BASIC)
 
-	max_skill = list(	SKILL_SCIENCE     = SKILL_MAX,
-	                    SKILL_COMBAT      = SKILL_EXPERT,
-	                    SKILL_WEAPONS     = SKILL_EXPERT)
+
+	max_skill = list(	SKILL_SCIENCE = SKILL_MAX,
+	                    SKILL_COMBAT  = SKILL_EXPERT,
+	                    SKILL_WEAPONS = SKILL_EXPERT)
 
 	access = list(access_explorer, access_maint_tunnels, access_eva, access_emergency_storage, access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar, access_cent_creed)
 
@@ -85,14 +88,15 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/pilot
 	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
 	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor)
-	min_skill = list(   SKILL_EVA			= SKILL_BASIC,
-						SKILL_SCIENCE		= SKILL_BASIC,
-						SKILL_PILOT			= SKILL_ADEPT)
+	min_skill = list(   SKILL_EVA     = SKILL_BASIC,
+						SKILL_SCIENCE = SKILL_BASIC,
+						SKILL_PILOT   = SKILL_ADEPT,
+						SKILL_MEDICAL = SKILL_BASIC)
 
-	max_skill = list(	SKILL_SCIENCE		= SKILL_MAX,
-						SKILL_PILOT			= SKILL_MAX,
-	                    SKILL_COMBAT		= SKILL_EXPERT,
-	                    SKILL_WEAPONS 		= SKILL_EXPERT)
+	max_skill = list(	SKILL_SCIENCE = SKILL_MAX,
+						SKILL_PILOT   = SKILL_MAX,
+	                    SKILL_COMBAT  = SKILL_EXPERT,
+	                    SKILL_WEAPONS = SKILL_EXPERT)
 
 
 	access = list(	access_explorer, access_maint_tunnels, access_eva, access_emergency_storage, access_guppy_helm,
@@ -109,7 +113,7 @@
 	неизвестные технологии. Вы будете иметь дело с опасной атмосферой, агрессивной флорой и фауной, сбойными дронами \
 	на заброшенных объектах, враждебно настроенными к вам роботами и аномалиями... Но не это ли то, за что Корпорация \
 	вам так хорошо платит?"
-
+/*
 /datum/job/explorer_medic
 	title = "Field Medic"
 	department = "Exploration"
@@ -203,3 +207,4 @@
 	неизвестные технологии. Вы будете иметь дело с опасной атмосферой, агрессивной флорой и фауной, сбойными дронами \
 	на заброшенных объектах, враждебно настроенными к вам роботами и аномалиями... Но не это ли то, за что Корпорация \
 	вам так хорошо платит?"
+*/
