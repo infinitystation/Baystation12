@@ -108,23 +108,28 @@
 		if(0)
 			if(istype(W, /obj/item/pipe))
 				to_chat(user, SPAN_NOTICE("You add [W] to install the lenses."))
+				buildstate++
 				qdel(W)
 		if(1)
 			if(istype(W,/obj/item/weapon/tape_roll))
 				user.visible_message(
 					SPAN_NOTICE("[user] secures the pipe with [W]."),
 					SPAN_NOTICE("You secure the pipe with [W]."))
+				buildstate++
 		if(2)
 			if(istype(W,/obj/item/weapon/stock_parts/micro_laser))
 				to_chat(user, SPAN_NOTICE("You install [W]."))
+				buildstate++
 				qdel(W)
 		if(3)
 			if(istype(W,/obj/item/weapon/cell/high))
 				to_chat(user, SPAN_NOTICE("You put [W] inside."))
+				buildstate++
 				qdel(W)
 		if(4)
 			if(istype(W,/obj/item/weapon/stock_parts/capacitor))
 				to_chat(user, SPAN_NOTICE("You install [W]."))
+				buildstate++
 				qdel(W)
 		if(5)
 			if(istype(W,/obj/item/stack/material) && W.get_material_name() == MATERIAL_STEEL)
@@ -134,10 +139,10 @@
 					buildstate++
 				else
 					to_chat(user, SPAN_NOTICE("You need at least 5 metal sheets to complete this task."))
-			return
 		if(6)
 			if(istype(W,/obj/item/device/assembly/igniter))
 				to_chat(user, SPAN_NOTICE("You put [W] inside the trigger mechanism."))
+				buildstate++
 				qdel(W)
 		if(7)
 			if(istype(W,/obj/item/stack/material) && W.get_material_name() == MATERIAL_PLASTIC)
@@ -147,22 +152,25 @@
 					buildstate++
 				else
 					to_chat(user, SPAN_NOTICE("You need at least ten plastic sheets to complete this task."))
-			return
 		if(8)
 			if(istype(W,/obj/item/weapon/cell/device))
 				to_chat(user, SPAN_NOTICE("You install [W]."))
+				buildstate++
 				qdel(W)
 		if(9)
 			if(istype(W,/obj/item/weapon/stock_parts/computer/processor_unit/small))
 				to_chat(user, SPAN_NOTICE("You install [W]."))
+				buildstate++
 				qdel(W)
 		if(10)
 			if(istype(W,/obj/item/weapon/module/power_control))
 				to_chat(user, SPAN_NOTICE("You install [W]."))
+				buildstate++
 				qdel(W)
 		if(11)
 			if(istype(W,/obj/item/weapon/stock_parts/smes_coil))
 				to_chat(user, SPAN_NOTICE("You install [W]."))
+				buildstate++
 				qdel(W)
 		if(12)
 			if(isCoil(W))
@@ -172,7 +180,6 @@
 					buildstate++
 				else
 					to_chat(user, SPAN_NOTICE("You need at least 30 segments of [W] to complete this task."))
-			return
 		if(13)
 			if(isWelder(W))
 				var/obj/item/weapon/weldingtool/T = W
@@ -181,10 +188,10 @@
 					playsound(src.loc, 'sound/items/Welder2.ogg', 100, 1)
 					to_chat(user, SPAN_NOTICE("You weld the cables into places."))
 					buildstate++
-			return
 		if(14)
 			if(isMultimeter(W))
 				to_chat(user, SPAN_NOTICE("You reprogrammed the resulting internal device with [W]."))
+				buildstate++
 		if(15)
 			if(istype(W,/obj/item/stack/material) && W.get_material_name() == MATERIAL_GLASS)
 				var/obj/item/stack/material/M = W
@@ -193,16 +200,15 @@
 					buildstate++
 				else
 					to_chat(user, SPAN_NOTICE("You need at least five glass sheets to complete this task."))
-			return
 		if(16)
 			if(istype(W,/obj/item/weapon/rcd))
 				to_chat(user, SPAN_NOTICE("You processed the lens with [W], making it perfect."))
+				buildstate++
 		if(17)
 			if(isScrewdriver(W))
 				to_chat(user, SPAN_NOTICE("You secure everything with [W]."))
 				new /obj/item/weapon/gun/energy/laser/craftable(get_turf(src))
 				qdel(src)
 			return
-	buildstate++
 	update_icon()
 	..()
