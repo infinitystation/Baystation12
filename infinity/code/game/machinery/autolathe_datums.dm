@@ -3,6 +3,11 @@
 	path = /obj/item/weapon/tape_roll
 	category = "General"
 
+/datum/fabricator_recipe/binoculars
+	name = "binoculars"
+	path = /obj/item/device/binoculars
+	category = "General"
+
 /datum/fabricator_recipe/medical/autopsy_scanner
 	name = "autopsy scanner"
 	path = /obj/item/weapon/autopsy_scanner
