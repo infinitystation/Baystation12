@@ -1,9 +1,3 @@
-/obj/item/weapon/gun/projectile/automatic/nt41/armory
-	starts_loaded = 0
-
-/obj/item/weapon/gun/projectile/shotgun/pump/combat/armory
-	starts_loaded = 0
-
 /obj/item/weapon/gun/projectile/revolver/medium/captain
 	desc = "A shiny al-Maliki & Mosley Autococker automatic revolver, with black accents. Marketed as the 'Revolver for the Modern Era'. Uses .357 magnum rounds. This one has 'To the Captain of NSV Sierra' engraved."
 

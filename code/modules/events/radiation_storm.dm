@@ -9,14 +9,14 @@
 	var/postStartTicks 		= 0
 
 /datum/event/radiation_storm/announce()
-	priority_announcement.Announce("«афиксировано повышение уровн€ радиации поблизости судна. ¬сему персоналу насто€тельно рекомендуетс€ пройти в экранированные отсеки до покидани€ зоны повышенной радиоактивности.", "—енсоры [location_name()]", new_sound = GLOB.using_map.radiation_detected_sound, zlevels = affecting_z)
+	command_announcement.Announce("«афиксировано повышение уровн€ радиации поблизости судна. ¬сему персоналу насто€тельно рекомендуетс€ пройти в экранированные отсеки до покидани€ зоны повышенной радиоактивности.", "—енсоры [location_name()]", new_sound = GLOB.using_map.radiation_detected_sound, zlevels = affecting_z)
 
 /datum/event/radiation_storm/start()
 	GLOB.using_map.make_maint_all_access(1)
 
 /datum/event/radiation_storm/tick()
 	if(activeFor == enterBelt)
-		priority_announcement.Announce("¬озрастание радиационного фона прекращено. Ќасто€тельно рекомендуетс€ оставатьс€ в экранированных помещени€х до снижени€ уровн€ фона.", "—енсоры [location_name()]", zlevels = affecting_z)
+		command_announcement.Announce("¬озрастание радиационного фона прекращено. Ќасто€тельно рекомендуетс€ оставатьс€ в экранированных помещени€х до снижени€ уровн€ фона.", "—енсоры [location_name()]", zlevels = affecting_z)
 		radiate()
 
 	if(activeFor >= enterBelt && activeFor <= leaveBelt)
@@ -27,7 +27,7 @@
 		radiate()
 
 	else if(activeFor == leaveBelt)
-		priority_announcement.Announce("«афиксировано снижение радиационного фона. Ќасто€тельно рекомендуетс€ подождать минуту до окончательного спада радиационного осадка. ќбратитесь в лазарет при обнаружении признаков радиационного заражени€. ƒоступ в технические помещени€ будет возвращен в ближайшее врем€.", "—енсоры [location_name()]", zlevels = affecting_z)
+		command_announcement.Announce("«афиксировано снижение радиационного фона. Ќасто€тельно рекомендуетс€ подождать минуту до окончательного спада радиационного осадка. ќбратитесь в лазарет при обнаружении признаков радиационного заражени€. ƒоступ в технические помещени€ будет возвращен в ближайшее врем€.", "—енсоры [location_name()]", zlevels = affecting_z)
 
 /datum/event/radiation_storm/proc/radiate()
 	var/radiation_level = rand(15, 35)

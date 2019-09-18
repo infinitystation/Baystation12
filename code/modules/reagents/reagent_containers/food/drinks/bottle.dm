@@ -30,7 +30,7 @@
 	var/mob/M = thrower
 	if(isGlass && istype(M) && M.a_intent != I_HELP)
 		var/throw_dist = get_dist(throw_source, loc)
-		if(speed > throw_speed || smash_check(throw_dist)) //not as reliable as smashing directly
+		if(speed > throw_speed || smash_check(throw_dist) || rag) //not as reliable as smashing directly //inf, was WITHOUT || rag
 			if(reagents)
 				hit_atom.visible_message("<span class='notice'>The contents of \the [src] splash all over [hit_atom]!</span>")
 				reagents.splash(hit_atom, reagents.total_volume)
@@ -59,11 +59,20 @@
 	B.icon = I
 	B.w_class = w_class
 
-	if(rag && rag.on_fire && isliving(against))
+	if(rag && rag.on_fire) //inf, was && isliving(against)
+		if(isliving(against)) //inf
+			var/mob/living/L = against
+			L.IgniteMob()
 		rag.forceMove(loc)
-		var/mob/living/L = against
-		L.IgniteMob()
-
+//inf ahead
+		var/obj/effect/decal/cleanable/liquid_fuel/F =  new(loc)
+		var/rag_fuel = rag.reagents.get_reagent_amount(/datum/reagent/fuel)
+		F.amount = rag_fuel*3
+		F.Spread()
+		var/turf/location = get_turf(src)
+		if(location)
+			location.hotspot_expose(700, 5)
+//inf end
 	playsound(src,'infinity/sound/effects/GLASS_Rattle_Many_Fragments_01_stereo.ogg',100,1)
 	src.transfer_fingerprints_to(B)
 

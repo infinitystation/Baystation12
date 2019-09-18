@@ -58,8 +58,8 @@
 		)
 
 /obj/item/weapon/gun/projectile/automatic/amrcarabine/on_update_icon()
-	icon_state = (ammo_magazine)? "amrcarabine" : "amrcarabine-e"
 	..()
+	icon_state = (ammo_magazine)? "amrcarabine" : "amrcarabine-e"
 
 
 /obj/item/weapon/gun/projectile/automatic/bp15
@@ -102,7 +102,7 @@
 	var/projetcile_type = 0
 	force = 10
 	caliber = CALIBER_PISTOL_FAST
-	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ILLEGAL = 8)
+	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ESOTERIC = 8)
 	slot_flags = SLOT_BELT|SLOT_BACK
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/uni46x30mm
@@ -192,3 +192,9 @@
 			to_chat(user, "<span class='warning'>\The [src] trigger because of the anatomical structure of your hand is not pressed!</span>")
 			return 0
 	return ..()
+
+/obj/item/weapon/gun/projectile/automatic/nt41/armory
+	starts_loaded = 0
+
+/obj/item/weapon/gun/projectile/shotgun/pump/combat/armory
+	starts_loaded = 0

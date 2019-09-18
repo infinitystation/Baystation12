@@ -23,7 +23,9 @@
 	cover = 25
 
 /obj/structure/girder/attack_generic(var/mob/user, var/damage, var/attack_message = "smashes apart", var/wallbreaker)
-	if(!damage || !wallbreaker)
+//inf	if(!damage || !wallbreaker)
+//inf		return 0
+	if(damage < 10)
 		return 0
 	health -= damage
 	attack_animation(user)

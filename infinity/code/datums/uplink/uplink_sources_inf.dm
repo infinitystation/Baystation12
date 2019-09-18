@@ -26,4 +26,4 @@
 	else
 		var/obj/item/weapon/storage/backpack = M.equip_to_storage(uplink)
 		to_chat(M, "<span class='notice'>A portable object teleportation relay has been installed in [uplink.name], in your [backpack.name]. Simply enter the code \"[pda_pass]\" in your new program to unlock its hidden features.</span>")
-	M.mind.store_memory("<B>Uplink passcode:</B> [pda_pass] ([uplink.name]).")
+	M.mind.StoreMemory("<B>Uplink passcode:</B> [pda_pass] ([uplink.name]).")

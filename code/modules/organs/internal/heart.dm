@@ -38,7 +38,7 @@
 	..()
 
 /obj/item/organ/internal/heart/proc/handle_pulse()
-	if(BP_IS_ROBOTIC(src))
+	if(BP_IS_ROBOTIC(src) || owner.stat == DEAD) //inf
 		pulse = PULSE_NONE	//that's it, you're dead (or your metal heart is), nothing can influence your pulse
 		return
 

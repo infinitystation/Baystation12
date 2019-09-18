@@ -7,6 +7,7 @@
 	w_class = ITEM_SIZE_SMALL
 	origin_tech = list(TECH_BLUESPACE = 6)
 
+	var/obj/machinery/bssilk_hub/silk_hub
 	var/locking_access = access_rd
 	var/silk_id = "" //using by snare controller to teleport user to controller's mark
 
@@ -17,6 +18,7 @@
 	if(isMultitool(I))
 		var/input_id = input("Enter new BS Snare ID", "Snare ID", silk_id)
 		silk_id = input_id
+		silk_hub = null
 		return
 
 	if(istype(I, /obj/item/weapon/card/id))
@@ -32,3 +34,9 @@
 	..()
 	var/s_id = silk_id != "" ? silk_id : "NOT SETTED"
 	to_chat(usr, "<br>On small display you can notice label that mean: \"DEVICE ID: [s_id]\".")
+	to_chat(usr, "<br>It[removable ? " can be removed" : "\'s locked by access: " + locking_access].")
+
+/obj/item/clothing/accessory/bs_silk/on_removed()
+	..()
+	silk_hub.linked_mob = null
+	silk_hub = null

@@ -42,7 +42,6 @@
 	mob_size = MOB_SMALL
 	holder_type = /obj/item/weapon/holder/human
 	light_sensitive = 6
-	vision_tint = 1
 	gluttonous = GLUT_TINY
 	blood_volume = 280
 	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.5
@@ -183,3 +182,10 @@
 
 /datum/species/resomi/get_surgery_overlay_icon(var/mob/living/carbon/human/H)
 	return 'infinity/icons/mob/human_races/species/resomi/surgery.dmi'
+
+/datum/species/resomi/skills_from_age(age)
+	switch(age)
+		if(0 to 17)		. = -4
+		if(18 to 25)	. = 0
+		if(26 to 35)	. = 4
+		else			. = 8

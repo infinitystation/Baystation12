@@ -60,8 +60,81 @@
 	electric = TRUE
 	action_button_name = "Toggle Visor"
 
-//biohazard kit
+/* SCG SOLDIER KIT
+ * ===============
+ */
 
+/obj/item/clothing/under/custom_army_uniform
+	name = "soldier's combat uniform"
+	desc = "The uniform is made in a standard forest military style. "
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(slot_w_uniform_str = CUSTOM_ITEM_MOB)
+	icon_state = "army_uniform"
+	item_state = "army_uniform"
+	rolled_sleeves = -1
+
+/obj/item/clothing/glasses/sunglasses/sechud/custom_ballistic
+	name = "ballistic glasses"
+	desc = "These ballistic glasses protect against small shells and splinters"
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "ballistic_glasses"
+	item_state = "ballistic_glasses"
+	item_icons = list(slot_glasses_str = CUSTOM_ITEM_MOB)
+
+/obj/item/clothing/accessory/armor/helmcover/custom_army
+	name = "military cover"
+//	desc = "A fabric cover for armored helmets. This one has SCP's colors." idk what he wants to be here
+	icon_override = 'infinity/icons/mob/onmob/onmob_accessories.dmi'
+	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
+	icon_state = "army_cover"
+	accessory_icons = list(slot_tie_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', slot_head_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi')
+
+/obj/item/clothing/suit/armor/pcarrier/custom_army
+	name = "soldier plate carrier system"
+	desc = "SPCS (Soldier Plate Carrier System) - Designed for the SCG army, this medium bulletproof vest provides protection at least as good as an improved external tactical vest. Has the ability to replace the protective plate, as well as the addition of knee pads. On the chest and elbow pieces you can see the SCGA patch, You can see a dent on the bulletproof vest."
+	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi')
+	icon_state = "army_armor"
+	sprite_sheets = list()
+//	starting_accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches)
+
+//a gun
+
+/obj/item/weapon/gun/projectile/automatic/nt41/jacking
+	name = "xr36"
+	desc = "XR36 - export version of the XR36K, characterized by installing a “high” picatinny rail instead of a carrying handle on top of the receiver. The guide is equipped with a 3x4 double sight, and then a thin longitudinal groove is used. In addition, on the XR36 modification, a “cheek” is installed on the standard frame stock."
+	icon_state = "xr36"
+	item_state = "xr36"
+	icon = 'infinity/icons/obj/guns/xr36.dmi'
+	wielded_item_state = "xr36-wielded"
+	item_icons = list(
+		slot_r_hand_str = 'infinity/icons/mob/onmob/righthand.dmi',
+		slot_l_hand_str = 'infinity/icons/mob/onmob/lefthand.dmi',
+		)
+
+/obj/item/weapon/gun/projectile/automatic/nt41/jacking/on_update_icon()
+	..()
+	if(ammo_magazine)
+		icon_state = "xr36"
+		wielded_item_state = "xr36-wielded"
+	else
+		icon_state = "xr36-empty"
+		wielded_item_state = "xr36-wielded-empty"
+
+/obj/item/custkit/custom_army
+	name = "NT41 customization kit"
+	input = /obj/item/weapon/gun/projectile/automatic/nt41/armory
+	output = /obj/item/weapon/gun/projectile/automatic/nt41/jacking
+
+/obj/item/weapon/clothingbag/custom_army/Initialize()
+	new /obj/item/clothing/under/custom_army_uniform(src)
+	new /obj/item/clothing/glasses/sunglasses/sechud/custom_ballistic(src)
+	new /obj/item/clothing/accessory/armor/helmcover/custom_army(src)
+	new /obj/item/clothing/suit/armor/pcarrier/custom_army(src)
+	new /obj/item/custkit/custom_army(src)
+
+//biohazard kit (was replaced by SCG soldier's kit)
+/*
 /obj/item/clothing/suit/bio_suit/virology/jacking
 	name = "biohazard suit"
 	desc = "A well-prepared kit for epidemiological analysis, planning anti-epidemic measures, epidemiological surveys of foci of infectious diseases."
@@ -121,3 +194,4 @@
 	new /obj/item/clothing/suit/bio_suit/virology/jacking(src)
 	new /obj/item/clothing/head/bio_hood/virology/jacking(src)
 	new /obj/item/clothing/accessory/badge/holo/jacking(src)
+*/

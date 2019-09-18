@@ -83,7 +83,6 @@
 
 	#include "machinery/alarm.dm"
 	#include "machinery/doors.dm"
-	#include "machinery/keycard authentication.dm"
 	#include "machinery/machinery.dm"
 	#include "machinery/navbeacons.dm"
 	#include "machinery/power.dm"
@@ -137,6 +136,7 @@
 	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
 	#include "../away_inf/patrol/patrol.dm"
 
+	#include "../away/ascent/ascent.dm"
 	#include "../away/bearcat/bearcat.dm"
 	#include "../away/derelict/derelict.dm"
 	#include "../away/magshield/magshield.dm"

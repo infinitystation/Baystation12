@@ -166,6 +166,11 @@
 	name = "distributed nervous system"
 	parent_organ = BP_CHEST
 
+//inf-def start
+/obj/item/organ/internal/brain/insectoid/nabber/take_internal_damage(var/damage, var/silent)
+	..(damage / 2, silent)
+//inf-def end
+
 /obj/item/organ/internal/brain/insectoid/nabber/Process()
 	if(!owner || !owner.should_have_organ(BP_HEART))
 		return

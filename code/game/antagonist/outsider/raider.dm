@@ -6,7 +6,15 @@ GLOBAL_DATUM_INIT(raiders, /datum/antagonist/raider, new)
 	role_text_plural = "Raiders"
 	antag_indicator = "hudraider"
 	landmark_id = "voxstart"
-	welcome_text = "Используйте префикс ':x' или ':h' чтобы общатьс&#255; на частоте вашей банды."
+	welcome_text = "<hr>Ну <i>чо</i>, здарова. Налётчик - это не сама&#255; проста&#255; роль, как может показатьс&#255;. \
+	Даже её можно запороть скучной или безынициативной игрой. В первую очередь, тебе со своими братанами \
+	нужно придумать, что делать с экипажем и их временным имуществом - присваивайте себе всё, чего не смогли \
+	бы приобрести даже за 50 лет работы на НаноТрейзен. Материалы, оружие, электроника и другой ценный лут - \
+	даже живой товар, всё на чёрном рынке имеет свою цену. Вы - бандиты, пираты, грабители, частные \
+	предприниматели, но никак не воры и убийцы - держитесь друг друга и не оставл&#255;йте своих, потому что других, \
+	скорее всего, вам найти не суждено. И в особенности не зат&#255;гивайте с налётом своим планированием \
+	или даже хуже - лутанием локаций помимо основного судна. <br>Используйте префикс ':x (или :h)' \
+	дл&#255; общени&#255; со своими через рацию."
 	flags = ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_CHOOSE_NAME | ANTAG_VOTABLE | ANTAG_SET_APPEARANCE | ANTAG_HAS_LEADER
 	antaghud_indicator = "hudraider"
 
@@ -20,7 +28,6 @@ GLOBAL_DATUM_INIT(raiders, /datum/antagonist/raider, new)
 
 	faction = "pirate"
 
-	// Heist overrides check_victory() and doesn't need victory or loss strings/tags.
 	var/list/raider_uniforms = list(
 		/obj/item/clothing/under/soviet,
 		/obj/item/clothing/under/pirate,
@@ -135,52 +142,6 @@ GLOBAL_DATUM_INIT(raiders, /datum/antagonist/raider, new)
 
 	global_objectives |= new /datum/objective/heist/preserve_crew
 	return 1
-
-/datum/antagonist/raider/check_victory()
-	// Totally overrides the base proc.
-	var/win_type = "Major"
-	var/win_group = "Crew"
-	var/win_msg = ""
-
-	//No objectives, go straight to the feedback.
-	if(config.objectives_disabled == CONFIG_OBJECTIVE_NONE || !global_objectives.len)
-		return
-
-	var/success = global_objectives.len
-	//Decrease success for failed objectives.
-	for(var/datum/objective/O in global_objectives)
-		if(!(O.check_completion())) success--
-	//Set result by objectives.
-	if(success == global_objectives.len)
-		win_type = "Major"
-		win_group = "Raider"
-	else if(success > 2)
-		win_type = "Minor"
-		win_group = "Raider"
-	else
-		win_type = "Minor"
-		win_group = "Crew"
-	//Now we modify that result by the state of the vox crew.
-	if(antags_are_dead())
-		win_type = "Major"
-		win_group = "Crew"
-		win_msg += "<B>The Raiders have been wiped out!</B>"
-	else if(is_raider_crew_safe())
-		if(win_group == "Crew" && win_type == "Minor")
-			win_type = "Major"
-		win_group = "Crew"
-		win_msg += "<B>The Raiders have left someone behind!</B>"
-	else
-		if(win_group == "Raider")
-			if(win_type == "Minor")
-				win_type = "Major"
-			win_msg += "<B>The Raiders escaped!</B>"
-		else
-			win_msg += "<B>The Raiders were repelled!</B>"
-
-	to_world("<span class='danger'><font size = 3>[win_type] [win_group] victory!</font></span>")
-	to_world("[win_msg]")
-	SSstatistics.set_field_details("round_end_result","heist - [win_type] [win_group]")
 
 /datum/antagonist/raider/proc/is_raider_crew_safe()
 

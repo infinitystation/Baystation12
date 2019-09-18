@@ -5,21 +5,21 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 	id = MODE_TRAITOR
 	antaghud_indicator = "hud_traitor"
 	blacklisted_jobs = list(/datum/job/submap)
-	welcome_text = "Ваша роль подразумевает скрытную или (полу-скрытную) игру. В первую очередь, \
-	вам требуетс&#255; определить, кто вы. Возможны, вы продавец наркотиков, шпион, наемный убийца \
+	welcome_text = "<hr><u>Ваша роль подразумевает скрытную или (полу-скрытную) игру.</u> В первую очередь, \
+	вам требуетс&#255; определить, кто вы. Возможны, Вы шпион, наемный убийца \
 	(не рекомендуетс&#255;), амбициозный вор, поставщик оружи&#255;, террорист или даже кто-то иной - главное, \
-	чтобы этот кто-то был противником дл&#255; безопасности корабл&#255; или экипажа. После определени&#255; со своим прошлым, \
-	вам следует придумать себе задани&#255;. Наркодиллеру, что логично, нужно проивзодить наркотики \
-	(или запрещенные, но полезные препараты), что будет покупать экипаж. Шпион работает на кого-то другого, \
+	чтобы этот кто-то был противником дл&#255; безопасности корабл&#255; или экипажа.<br>После определени&#255; со своим прошлым, \
+	вам следует придумать себе задани&#255;. Шпион работает на кого-то другого, \
 	и веро&#255;тно, его заинтересуют важные документы в центральном шкафчике в кабинете Агента Внутренних Дел, а \
-	так же чертежи корабл&#255; .Убийце нужно убить кого-то важного, или даже лучше - вызвать эвакуацию на корабле \
-	и вз&#255;ть в заложники, улетев на отдельной капсуле вместе с жертвой. Вор может решить \
+	также чертежи корабл&#255; .Убийце нужно убить кого-то важного, или даже лучше - вызвать эвакуацию на корабле \
+	и вз&#255;в цель в заложники, улетев на отдельной капсуле вместе с ней. Вор может решить \
 	украсть личный телепорт, карту капитана или другой важный предмет. Поставщик оружи&#255; через НТнет может, \
-	соответственно, продавать вещи из аплинка. Террорист занимаетс&#255; подрывом (не полным уничтожением) важных \
+	продавать вещи из аплинка. Террорист занимаетс&#255; подрывом (не полным уничтожением) важных \
 	частей корабл&#255; (лучше всего спросить администрацию, можно ли подрывать тот или иной отсек или объект - \
-	последстви&#255; дл&#255; экипажа могут быть слишком плачевными, что вызовет только негодование)... Но помните, \
-	что это - лишь примеры того, как Вы можете отыгрывать. \
-	<b>Придумайте что-нибудь интересно дл&#255; себ&#255; и других!</b>"
+	последстви&#255; дл&#255; экипажа могут быть слишком плачевными, что вызовет только негодование)...<br>Но помните, \
+	что это - лишь примеры того, как Вы можете отыгрывать. Не делайте того, что было бы скучно и даже неприт&#255;тно \
+	Вам самим по отношению к экипажу. \
+	<b>Придумайте что-нибудь интересно дл&#255; себ&#255; и других - про&#255;вите фантазию!</b>"
 	protected_jobs = list(/datum/job/officer, /datum/job/warden, /datum/job/detective, /datum/job/captain, /datum/job/lawyer, /datum/job/hos)
 	flags = ANTAG_SUSPICIOUS | ANTAG_RANDSPAWN | ANTAG_VOTABLE
 	skill_setter = /datum/antag_skill_setter/station
@@ -47,11 +47,6 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 		var/datum/objective/survive/survive_objective = new
 		survive_objective.owner = traitor
 		traitor.objectives += survive_objective
-
-		if(prob(10))
-			var/datum/objective/block/block_objective = new
-			block_objective.owner = traitor
-			traitor.objectives += block_objective
 	else
 		switch(rand(1,100))
 			if(1 to 33)
@@ -96,6 +91,7 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 			var/mob/living/silicon/robot/R = traitor_mob
 			R.SetLockdown(0)
 			R.emagged = 1 // Provides a traitor robot with its module's emag item
+			R.verbs |= /mob/living/silicon/robot/proc/ResetSecurityCodes
 		return 1
 
 	if(!..())
@@ -119,15 +115,15 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 	if(LAZYLEN(dudes))
 		var/mob/living/carbon/human/M = pick(dudes)
 		to_chat(traitor_mob, "We have received credible reports that [M.real_name] might be willing to help our cause. If you need assistance, consider contacting them.")
-		traitor_mob.mind.store_memory("<b>Potential Collaborator</b>: [M.real_name]")
+		traitor_mob.StoreMemory("<b>Potential Collaborator</b>: [M.real_name]", /decl/memory_options/system)
 		to_chat(M, "<span class='warning'>The subversive potential of your faction has been noticed, and you may be contacted for assistance soon...</span>")
 
 /datum/antagonist/traitor/proc/give_codewords(mob/living/traitor_mob)
 	to_chat(traitor_mob, "<u><b>Your employers provided you with the following information on how to identify possible allies:</b></u>")
 	to_chat(traitor_mob, "<b>Code Phrase</b>: <span class='danger'>[syndicate_code_phrase]</span>")
 	to_chat(traitor_mob, "<b>Code Response</b>: <span class='danger'>[syndicate_code_response]</span>")
-	traitor_mob.mind.store_memory("<b>Code Phrase</b>: [syndicate_code_phrase]")
-	traitor_mob.mind.store_memory("<b>Code Response</b>: [syndicate_code_response]")
+	traitor_mob.StoreMemory("<b>Code Phrase</b>: [syndicate_code_phrase]", /decl/memory_options/system)
+	traitor_mob.StoreMemory("<b>Code Response</b>: [syndicate_code_response]", /decl/memory_options/system)
 	to_chat(traitor_mob, "Use the code words, preferably in the order provided, during regular conversation, to identify other agents. Proceed with caution, however, as everyone is a potential foe.")
 	if(istype(traitor_mob, /mob/living/silicon))
 		sound_to(traitor_mob, 'sound/voice/AISyndiHack.ogg')

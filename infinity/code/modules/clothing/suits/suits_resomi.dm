@@ -8,7 +8,6 @@
 	 icon = 'infinity/icons/obj/clothing/species/resomi/obj_suit_resomi.dmi'
 	 desc = "A cloak that seems too small to fit a human."
 	 icon_state = "resomicoat"
-	 item_state = "resomicoat"
 	 icon_open = "resomicoat_open"
 	 icon_closed = "resomicoat"
 	 body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
@@ -16,7 +15,6 @@
 
 /obj/item/clothing/suit/storage/toggle/Resomicoat/white
  	icon_state = "white_resomicoat"
- 	item_state = "white_resomicoat"
  	icon_open = "white_resomicoat_open"
  	icon_closed = "white_resomicoat"
 
@@ -25,7 +23,6 @@
 	icon = 'infinity/icons/obj/clothing/species/resomi/obj_suit_resomi.dmi'
 	desc = "A labcoat that seems too small to fit a human."
 	icon_state = "resomi_labcoat"
-	item_state = "resomi_labcoat"
 	icon_open = "resomi_labcoat_open"
 	icon_closed = "resomi_labcoat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS

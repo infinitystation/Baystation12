@@ -7,7 +7,7 @@
 
 /obj/item/weapon/grenade/light/detonate()
 	..()
-	if(active)
+	if(!active)
 		return
 	var/lifetime = rand(2 MINUTES, 4 MINUTES)
 	var/light_colour = pick("#49f37c", "#fc0f29", "#599dff", "#fa7c0b", "#fef923")

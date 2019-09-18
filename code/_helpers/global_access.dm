@@ -65,12 +65,16 @@
 			return global.SSevac;
 		if("SSevent")
 			return global.SSevent;
+		if("SSfabrication")
+			return global.SSfabrication;
 		if("SSfastprocess")
 			return global.SSfastprocess;
 		if("SSfluids")
 			return global.SSfluids;
 		if("SSgarbage")
 			return global.SSgarbage;
+		if("SSghost_images")
+			return global.SSghost_images;
 		if("SSgoals")
 			return global.SSgoals;
 		if("SSicon_update")
@@ -279,10 +283,6 @@
 			return global.atmosphere_alarm;
 		if("attack_log_repository")
 			return global.attack_log_repository;
-		if("autolathe_categories")
-			return global.autolathe_categories;
-		if("autolathe_recipes")
-			return global.autolathe_recipes;
 		if("base_miss_chance")
 			return global.base_miss_chance;
 		if("basic_robolimb")
@@ -994,12 +994,16 @@
 			global.SSevac=newval;
 		if("SSevent")
 			global.SSevent=newval;
+		if("SSfabrication")
+			global.SSfabrication=newval;
 		if("SSfastprocess")
 			global.SSfastprocess=newval;
 		if("SSfluids")
 			global.SSfluids=newval;
 		if("SSgarbage")
 			global.SSgarbage=newval;
+		if("SSghost_images")
+			global.SSghost_images=newval;
 		if("SSgoals")
 			global.SSgoals=newval;
 		if("SSicon_update")
@@ -1208,10 +1212,6 @@
 			global.atmosphere_alarm=newval;
 		if("attack_log_repository")
 			global.attack_log_repository=newval;
-		if("autolathe_categories")
-			global.autolathe_categories=newval;
-		if("autolathe_recipes")
-			global.autolathe_recipes=newval;
 		if("base_miss_chance")
 			global.base_miss_chance=newval;
 		if("basic_robolimb")
@@ -1890,9 +1890,11 @@
 	"SSdisposals",
 	"SSevac",
 	"SSevent",
+	"SSfabrication",
 	"SSfastprocess",
 	"SSfluids",
 	"SSgarbage",
+	"SSghost_images",
 	"SSgoals",
 	"SSicon_update",
 	"SSinactivity",
@@ -1997,8 +1999,6 @@
 	"assigned_blocks",
 	"atmosphere_alarm",
 	"attack_log_repository",
-	"autolathe_categories",
-	"autolathe_recipes",
 	"base_miss_chance",
 	"basic_robolimb",
 	"blocked",

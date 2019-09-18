@@ -53,19 +53,10 @@
 		if (!(MUTATION_COLD_RESISTANCE in user.mutations))
 			user.mutations.Add(MUTATION_COLD_RESISTANCE)
 
-		if (!(MUTATION_TK in user.mutations))
-			user.mutations.Add(MUTATION_TK)
-
 		if(!(MUTATION_HEAL in user.mutations))
 			user.mutations.Add(MUTATION_HEAL)
 
 		user.update_mutations()
 		user.mind.special_role = "Avatar of the Wish Granter"
-
-		var/datum/objective/silence/silence = new
-		silence.owner = user.mind
-		user.mind.objectives += silence
-
-		show_objectives(user.mind)
 		to_chat(user, "You have a very bad feeling about this.")
 	return

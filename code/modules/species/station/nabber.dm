@@ -16,6 +16,8 @@
 	min_age = 8
 	max_age = 40
 
+	skin_material = MATERIAL_SKIN_CHITIN
+	bone_material = null
 	speech_sounds = list('sound/voice/bug.ogg')
 	speech_chance = 2
 
@@ -47,7 +49,7 @@
 	total_health = 200
 	brute_mod = 0.9
 	burn_mod =  1.35
-	natural_armour_values = list(melee = 30, bullet = 15, laser = 0, energy = 0, bomb = 30, bio = 100, rad = 10)
+	natural_armour_values = list(melee = 30, bullet = 15, laser = 0, energy = 0, bomb = 30, bio = 100, rad = 5)
 
 	gluttonous = GLUT_SMALLER
 	mob_size = MOB_LARGE

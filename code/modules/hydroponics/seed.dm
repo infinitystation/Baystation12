@@ -80,6 +80,9 @@
 	if(!isnull(lbound))  nval = max(nval,lbound)
 	traits["[trait]"] =  nval
 
+	if(trait == TRAIT_PLANT_ICON)
+		update_growth_stages()
+
 /datum/seed/proc/create_spores(var/turf/T)
 	if(!T)
 		return
@@ -176,9 +179,9 @@
 		return
 	if(!(light_supplied) || !(get_trait(TRAIT_REQUIRES_WATER)))
 		return
-	if(environment.get_gas("carbon_dioxide") >= REQ_CO2_MOLES)
-		environment.adjust_gas("carbon_dioxide", -REQ_CO2_MOLES, 1)
-		environment.adjust_gas("oxygen", REQ_CO2_MOLES, 1)
+	if(environment.get_gas(GAS_CO2) >= REQ_CO2_MOLES)
+		environment.adjust_gas(GAS_CO2, -REQ_CO2_MOLES, 1)
+		environment.adjust_gas(GAS_OXYGEN, REQ_CO2_MOLES, 1)
 
 //Splatter a turf.
 /datum/seed/proc/splatter(var/turf/T,var/obj/item/thrown)
@@ -329,6 +332,10 @@
 		if(abs(light_supplied - get_trait(TRAIT_IDEAL_LIGHT)) > get_trait(TRAIT_LIGHT_TOLERANCE))
 			health_change += rand(1,3) * HYDRO_SPEED_MULTIPLIER
 
+	for(var/obj/effect/effect/smoke/chem/smoke in range(1, current_turf))
+		if(smoke.reagents.has_reagent(/datum/reagent/toxin/plantbgone))
+			return 100
+
 	// Pressure and temperature are needed as much as water and light.
 	// If any of the previous environment checks has failed
 	// the photosynthesis cannot be triggered.
@@ -437,12 +444,12 @@
 
 	if(prob(5))
 		consume_gasses = list()
-		var/gas = pick("oxygen","nitrogen","phoron","carbon_dioxide")
+		var/gas = pick(GAS_OXYGEN,GAS_NITROGEN,GAS_PHORON,GAS_CO2)
 		consume_gasses[gas] = rand(3,9)
 
 	if(prob(5))
 		exude_gasses = list()
-		var/gas = pick("oxygen","nitrogen","phoron","carbon_dioxide")
+		var/gas = pick(GAS_OXYGEN,GAS_NITROGEN,GAS_PHORON,GAS_CO2)
 		exude_gasses[gas] = rand(3,9)
 
 	chems = list()

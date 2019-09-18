@@ -19,7 +19,7 @@
 
 //Sierra map alert levels. Refer to security_state.dm.
 /decl/security_state/default/sierradept
-	all_security_levels = list(/decl/security_level/default/sierradept/code_green, /decl/security_level/default/sierradept/code_violet, /decl/security_level/default/sierradept/code_orange, /decl/security_level/default/sierradept/code_blue, /decl/security_level/default/sierradept/code_red, /decl/security_level/default/sierradept/code_red)
+	all_security_levels = list(/decl/security_level/default/sierradept/code_green, /decl/security_level/default/sierradept/code_violet, /decl/security_level/default/sierradept/code_orange, /decl/security_level/default/sierradept/code_blue, /decl/security_level/default/sierradept/code_red, /decl/security_level/default/sierradept/code_delta)
 
 /decl/security_level/default/sierradept
 	icon = 'maps/sierra/icons/security_state.dmi'

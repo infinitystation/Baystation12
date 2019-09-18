@@ -6,7 +6,7 @@ SUBSYSTEM_DEF(ticker)
 	flags = SS_NO_TICK_CHECK | SS_KEEP_TIMING
 	runlevels = RUNLEVEL_LOBBY | RUNLEVELS_DEFAULT
 
-	var/pregame_timeleft = 3 MINUTES
+	var/pregame_timeleft = 2 MINUTES
 	var/start_ASAP = FALSE          //the game will start as soon as possible, bypassing all pre-game nonsense
 	var/list/gamemode_vote_results  //Will be a list, in order of preference, of form list(config_tag = number of votes).
 	var/bypass_gamemode_vote = 0    //Intended for use with admin tools. Will avoid voting and ignore any results.
@@ -124,7 +124,7 @@ SUBSYSTEM_DEF(ticker)
 
 		INVOKE_ASYNC(src, .proc/declare_completion)
 		Master.SetRunLevel(RUNLEVEL_POSTGAME)
-		if(!update_server && config.allow_map_switching && config.auto_map_vote && GLOB.all_maps.len > 1)
+		if(!update_server && config.allow_map_switching && config.auto_map_vote && GLOB.playable_maps.len > 1)
 			end_game_state = END_GAME_AWAITING_MAP
 			spawn(2 SECONDS)
 				SSvote.initiate_vote(/datum/vote/map, automatic = 1)

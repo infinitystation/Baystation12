@@ -39,7 +39,7 @@
 	density = TRUE
 	use_power = POWER_USE_IDLE
 
-	var/icon_set = "subliminator"
+	var/icon_set = "sublimator"
 	var/sublimated_units_per_tick = 20
 	var/obj/item/weapon/reagent_containers/container
 	var/list/reagent_whitelist //if this is set, the subliminator will only work with the listed reagents

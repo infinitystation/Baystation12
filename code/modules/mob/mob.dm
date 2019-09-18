@@ -369,37 +369,6 @@
 		else
 			attack_empty_hand(BP_R_HAND)
 
-/mob/verb/memory()
-	set name = "Notes"
-	set category = "IC"
-	if(mind)
-		mind.show_memory(src)
-	else
-		to_chat(src, "The game appears to have misplaced your mind datum, so we can't show you your notes.")
-/mob/verb/add_memory(msg as message)
-	set name = "Add Note"
-	set category = "IC"
-
-	msg = sanitize(msg)
-
-	if(mind)
-		mind.store_memory(msg)
-	else
-		to_chat(src, "The game appears to have misplaced your mind datum, so we can't show you your notes.")
-/mob/proc/store_memory(msg as message, popup, sane = 1)
-	msg = copytext(msg, 1, MAX_MESSAGE_LEN)
-
-	if (sane)
-		msg = sanitize(msg)
-
-	if (length(memory) == 0)
-		memory += msg
-	else
-		memory += "<BR>[msg]"
-
-	if (popup)
-		memory()
-
 /mob/proc/update_flavor_text()
 	set src in usr
 	if(usr != src)
@@ -615,7 +584,7 @@
 			stat("Local Time", stationtime2text())
 			stat("Local Date", stationdate2text())
 			stat("Round Duration", roundduration2text())
-			// infinity code start
+		//[inf]
 			if(game_id)
 				stat("Round ID:", game_id)
 			var/server_status_info
@@ -625,7 +594,7 @@
 				server_status_info = "Map Change"
 			if(server_status_info)
 				stat("Round End type:", server_status_info)
-			// infinity code end
+		//[/inf]
 			stat("Server Time", time2text(world.realtime, "YYYY-MM-DD hh:mm"))
 		if(client.holder || isghost(client.mob))
 			stat("Location:", "([x], [y], [z]) [loc]")
