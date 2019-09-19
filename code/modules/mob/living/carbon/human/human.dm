@@ -1701,11 +1701,11 @@
 		if(istype(R, /datum/reagent/ethanol) && chem_doses[T] >= 5)
 			. -= 2
 	if(skill_check(SKILL_WEAPONS, SKILL_ADEPT))
-		. += 1
+		. += 3 //inf, was 1.(+15% to hit)
 	if(skill_check(SKILL_WEAPONS, SKILL_EXPERT))
-		. += 1
+		. += 2 //inf, was 1.(+25% to hit)
 	if(skill_check(SKILL_WEAPONS, SKILL_PROF))
-		. += 1
+		. += 3 //inf, was 1.(+40% to hit)
 
 /mob/living/carbon/human/can_drown()
 	if(!internal && (!istype(wear_mask) || !wear_mask.filters_water()))

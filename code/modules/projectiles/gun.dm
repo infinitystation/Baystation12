@@ -349,6 +349,7 @@
 
 	var/acc_mod = burst_accuracy[min(burst, burst_accuracy.len)]
 	var/disp_mod = dispersion[min(burst, dispersion.len)]
+/*[INF]
 	var/stood_still = last_handled
 	//Not keeping gun active will throw off aim (for non-Masters)
 	if(user.skill_check(SKILL_WEAPONS, SKILL_PROF))
@@ -360,8 +361,9 @@
 	if(stood_still)
 		acc_mod += min(max(2, accuracy), stood_still)
 	else
-		acc_mod -= w_class - ITEM_SIZE_NORMAL
-		acc_mod -= bulk
+[/INF]*/
+	acc_mod -= w_class - ITEM_SIZE_NORMAL //inf, 1 tab was removed
+	acc_mod -= bulk //inf, 1 tab was removed
 
 	if(one_hand_penalty >= 4 && !held_twohanded)
 		acc_mod -= one_hand_penalty/2
@@ -589,7 +591,7 @@
 
 /obj/item/weapon/gun/proc/check_accidents(mob/living/user)
 	if(istype(user))
-		if(!safety() && user.skill_fail_prob(SKILL_WEAPONS, 20, SKILL_EXPERT, 2) && special_check(user))
+		if(!safety() && user.skill_fail_prob(SKILL_WEAPONS, 20, SKILL_ADEPT, 2) && special_check(user)) //INF, WAS: if(!safety() && user.skill_fail_prob(SKILL_WEAPONS, 20, SKILL_EXPERT, 2) && special_check(user))
 			to_chat(user, "<span class='warning'>[src] fires on its own!</span>")
 			var/list/targets = list(user)
 			targets += trange(2, src)
