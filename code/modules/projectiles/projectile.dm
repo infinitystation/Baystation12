@@ -191,14 +191,19 @@
 /obj/item/projectile/proc/attack_mob(var/mob/living/target_mob, var/distance, var/special_miss_modifier=0)
 	if(!istype(target_mob))
 		return
+	//inf-start
 	var/distance_mod
 
 //roll to-hit
-	var/miss_modifier = max(distance_falloff*((distance-5) **2) - hitchance_mod + special_miss_modifier, -30)
+	if (distance >= 5)
+		var/miss_modifier = max(distance_falloff * (distance - 5) * (distance - 5) - hitchance_mod + special_miss_modifier, -30)
+	else
+		var/miss_modifier = max(0 - hitchance_mod + special_miss_modifier, -30)
+	//inf-end
 	//makes moving targets harder to hit, and stationary easier to hit
 	var/movment_mod = min(5, (world.time - target_mob.l_move_time) - 20)
-	//inf-start
 	//Calc close distance bonus
+	//inf-start
 	if (distance < 5)
 		distance_mod = 30 / (distance * 2)
 	if (distance <= 2)
