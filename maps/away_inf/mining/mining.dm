@@ -25,22 +25,13 @@
 /datum/map_template/ruin/away_site/mining_asteroid
 	name = "Mining - Asteroid Base"
 	id = "awaysite_mining_asteroid_base"
-	description = "A medium-sized asteroid full of minerals. Old mining facility detected on one of sides, owner - NanoTrasen."
+	description = "A medium-sized asteroid full of minerals. Old mining facility detected at one of sides, owner - NanoTrasen."
 	prefix = "maps/away_inf/"
 	suffixes = list("mining/mining-asteroid.dmm")
 	cost = 1
 	accessibility_weight = 10
 	generate_mining_by_z = 1
 	template_flags = TEMPLATE_FLAG_SPAWN_GUARANTEED
-
-/datum/map_template/ruin/away_site/mining_asteroid
-	name = "Mining - Asteroid"
-	id = "awaysite_mining_asteroid"
-	description = "A medium-sized asteroid full of minerals."
-	suffixes = list("mining/mining-asteroid.dmm")
-	cost = 1
-	accessibility_weight = 10
-	generate_mining_by_z = 1
 	apc_test_exempt_areas = list(
 		/area/outpost/abandoned = NO_SCRUBBER,
 		/area/mine/explored = NO_SCRUBBER|NO_VENT|NO_APC,
@@ -98,7 +89,8 @@
 /obj/machinery/telecomms/relay/preset/mining_away
 	id = "Outpost Mining Relay"
 	autolinkers = list("m_relay_a")
-
+	usage_offise = 5 KILOWATTS
+	outage_probability = 100
 /*
 //MINING-2 // SIGNAL
 /obj/effect/overmap/sector/away
