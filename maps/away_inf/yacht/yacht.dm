@@ -8,7 +8,7 @@
 	max_speed = 1/(2 SECONDS)
 
 	initial_restricted_waypoints = list(
-		"Aquila" = list("nav_yacht_aquila")
+		"Charon" = list("nav_yacht_charon")
 	)
 
 	initial_generic_waypoints = list(
@@ -29,6 +29,7 @@
 	prefix = "maps/away_inf/"
 	suffixes = list("yacht/yacht.dmm")
 	cost = 1
+	area_usage_test_exempted_root_areas = list(/area/yacht)
 
 /obj/effect/shuttle_landmark/nav_yacht/nav1
 	name = "Small Yacht Navpoint #1"
@@ -43,8 +44,8 @@
 	landmark_tag = "nav_yacht_3"
 
 /obj/effect/shuttle_landmark/nav_yacht/aquila
-	name = "Small Yacht Navpoint Aquila Dock"
-	landmark_tag = "nav_yacht_aquila"
+	name = "Small Yacht Navpoint Charon Dock"
+	landmark_tag = "nav_yacht_charon"
 
 /obj/effect/shuttle_landmark/nav_yacht/nav4
 	name = "Small Yacht Navpoint #4"
