@@ -164,7 +164,7 @@
 	name = "tomato"
 	seed_name = "tomato"
 	display_name = "tomato plant"
-	mutants = list("bluetomato","bloodtomato")
+	mutants = list("bluetomato","bloodtomato", "mandragora")//inf //was: mutants = list("bluetomato","bloodtomato")
 	chems = list(/datum/reagent/nutriment = list(1,10), /datum/reagent/drink/juice/tomato = list(10,10))
 	kitchen_tag = "tomato"
 
@@ -240,7 +240,7 @@
 	name = "eggplant"
 	seed_name = "eggplant"
 	display_name = "eggplants"
-	mutants = list("realeggplant")
+	mutants = list("realeggplant", "mandragora")//inf //was: mutants = list("realeggplant")
 	chems = list(/datum/reagent/nutriment = list(1,10))
 	kitchen_tag = "eggplant"
 
