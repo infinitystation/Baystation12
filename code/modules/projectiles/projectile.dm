@@ -28,7 +28,7 @@
 
 	var/hitchance_mod = 0
 	var/dispersion = 0.0
-	var/distance_falloff = 4  //multiplier, higher value means accuracy drops faster with distance //INF, WAS 2
+	var/distance_falloff = 9  //multiplier, higher value means accuracy drops faster with distance //INF, WAS 2
 
 	var/damage = 10
 	var/damage_type = BRUTE //BRUTE, BURN, TOX, OXY, CLONE, PAIN are the only things that should be in here
@@ -196,8 +196,8 @@
 	var/miss_modifier
 
 //roll to-hit
-	if (distance >= 2)
-		miss_modifier = max(distance_falloff * (distance) * (distance) - hitchance_mod + special_miss_modifier, -30)
+	if(distance >= 2)
+		miss_modifier = max(distance_falloff * (distance+1)  - hitchance_mod + special_miss_modifier, -30)
 	else
 		miss_modifier = max(0 - hitchance_mod + special_miss_modifier, -30)
 //[/INF]

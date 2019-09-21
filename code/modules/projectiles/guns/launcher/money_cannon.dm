@@ -5,7 +5,6 @@
 	item_state = "money_launcher"
 	origin_tech = list(TECH_COMBAT = 1, TECH_MATERIAL = 1)
 	slot_flags = SLOT_BELT
-	w_class = ITEM_SIZE_SMALL
 	release_force = 80
 	fire_sound_text = "a whoosh and a crisp, papery rustle"
 	fire_delay = 1
@@ -14,6 +13,9 @@
 
 	var/receptacle_value = 0
 	var/dispensing = 20
+
+	bulk = GUN_BULK_PISTOL
+	w_class = ITEM_SIZE_SMALL
 
 /obj/item/weapon/gun/launcher/money/hacked
 	emagged = 1

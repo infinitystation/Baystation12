@@ -4,10 +4,8 @@
 	icon = 'icons/obj/guns/coilgun.dmi'
 	icon_state = "coilgun"
 	item_state = "coilgun"
-	one_hand_penalty = 5
 	fire_delay = 20
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 4, TECH_ESOTERIC = 2, TECH_MAGNET = 4)
-	w_class = ITEM_SIZE_LARGE
 	bulk = GUN_BULK_RIFLE
 	combustion = 1
 
@@ -24,6 +22,10 @@
 	var/power_cost = 950                                       // Cost per fire, should consume almost an entire basic cell.
 	var/power_per_tick                                         // Capacitor charge per process(). Updated based on capacitor rating.
 	has_safety = FALSE //inf
+
+	w_class = ITEM_SIZE_LARGE
+	bulk = GUN_BULK_RIFLE
+	one_hand_penalty = 5
 
 /obj/item/weapon/gun/magnetic/Initialize()
 	START_PROCESSING(SSobj, src)

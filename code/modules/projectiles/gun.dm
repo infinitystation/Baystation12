@@ -361,10 +361,51 @@
 	if(stood_still)
 		acc_mod += min(max(2, accuracy), stood_still)
 	else
+		acc_mod -= w_class - ITEM_SIZE_NORMAL
+		acc_mod -= bulk
 [/INF]*/
-	acc_mod -= w_class - ITEM_SIZE_NORMAL //inf, 1 tab was removed
-	acc_mod -= bulk //inf, 1 tab was removed
+//[INF]
+	acc_mod -= bulk
+	switch(bulk)
+		if(1) //pistols
+			if(user.skill_check(SKILL_HAULING, SKILL_BASIC))
+				acc_mod += bulk
+				acc_mod += accuracy
+		if(2) //revolvers
+			if(user.skill_check(SKILL_HAULING, SKILL_BASIC) && user.skill_check(SKILL_WEAPONS, SKILL_BASIC))
+				acc_mod += bulk
+				acc_mod += accuracy
+		if(3) //SMGs
+			if(user.skill_check(SKILL_HAULING, SKILL_ADEPT) && user.skill_check(SKILL_WEAPONS, SKILL_BASIC))
+				acc_mod += bulk
+				acc_mod += accuracy
+		if(4 to 5) //carabines and assault rifles
+			if(user.skill_check(SKILL_HAULING, SKILL_ADEPT) && user.skill_check(SKILL_WEAPONS, SKILL_BASIC))
+				if(user.skill_check(SKILL_HAULING, SKILL_ADEPT) && user.skill_check(SKILL_WEAPONS, SKILL_ADEPT))
+					acc_mod += bulk
+					acc_mod += accuracy
+				else
+					acc_mod += bulk-2
+					acc_mod += accuracy/2
+		if(6) //sniper rifles
+			if(user.skill_check(SKILL_HAULING, SKILL_ADEPT) && user.skill_check(SKILL_WEAPONS, SKILL_ADEPT))
+				if(user.skill_check(SKILL_HAULING, SKILL_ADEPT) && user.skill_check(SKILL_WEAPONS, SKILL_EXPERT))
+					acc_mod += bulk
+					acc_mod += accuracy
+				else
+					acc_mod += bulk-4 //-20%, not 30%
+					acc_mod += accuracy/2
+		if(7) //machine gun, RPG
+			if(user.skill_check(SKILL_HAULING, SKILL_ADEPT) && user.skill_check(SKILL_WEAPONS, SKILL_ADEPT))
+				if(user.skill_check(SKILL_HAULING, SKILL_EXPERT) && user.skill_check(SKILL_WEAPONS, SKILL_EXPERT))
+					acc_mod += bulk
+					acc_mod += accuracy
+				else
+					acc_mod += bulk-5 //-25%, not 35%
+					acc_mod += accuracy/2
 
+	acc_mod -= w_class - ITEM_SIZE_NORMAL
+//[/INF]
 	if(one_hand_penalty >= 4 && !held_twohanded)
 		acc_mod -= one_hand_penalty/2
 		disp_mod += one_hand_penalty*0.5 //dispersion per point of two-handedness
@@ -381,7 +422,6 @@
 		acc_mod += 2
 
 	acc_mod += user.ranged_accuracy_mods()
-	acc_mod += accuracy
 	P.hitchance_mod = accuracy_power*acc_mod
 	P.dispersion = disp_mod
 
@@ -517,6 +557,17 @@
 	if(has_safety)
 		to_chat(user, "The safety is [safety() ? "on" : "off"].")
 	last_safety_check = world.time
+//[INF]
+	switch(bulk)
+		if(1) to_chat(user, "It has the size of <b>pistol!</b> You just shouldn't be anorexic to shoot from it.")
+		if(2) to_chat(user, "It has the size of <b>revolver!</b> You have to be <b>minimally fit and have basic weapon handling</b> to hold and shoot propertly from it.")
+		if(3) to_chat(user, "It has the size of <b>sub-machinegun!</b> You have to be <b>fit and have basic weapon handling<b> to hold and shoot propertly from it.")
+		if(4) to_chat(user, "It has the size of <b>carabine!</b> You have to be <b>trained in both athletic and weapon handling</b> to hold and shoot propertly from it.")
+		if(5) to_chat(user, "It has the size of <b>assault rifle!</b> You have to be <b>trained in both athletic and weapon handling</b> to hold and shoot propertly from it.")
+		if(6) to_chat(user, "It has the size of <b>sniper rifle!</b> You have to be <b>trained in athletic and have expirienced weapon handling</b> to hold and shoot propertly from it, but if you trained, you at least can hold it.")
+		if(7) to_chat(user, "It has the size of <b>machinegun!</b> You have to be <b>expirienced in athletic and weapon handling</b> to hold and shoot propertly from it, but if you trained, you at least can hold it.")
+		else to_chat(user, "It has the size of <b>small pistol!</b> Even kid can shoot from it.")
+//[/INF]
 
 /obj/item/weapon/gun/proc/switch_firemodes()
 

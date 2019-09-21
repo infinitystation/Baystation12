@@ -21,6 +21,9 @@
 		list(mode_name="light laser", projectile_type=/obj/item/projectile/beam/confuseray/lkw),
 		)
 
+	bulk = GUN_BULK_SNIPER_RIFLE
+	w_class = ITEM_SIZE_HUGE
+
 /* PROJECTILES
  * ===========
  */

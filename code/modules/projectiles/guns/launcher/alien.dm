@@ -6,6 +6,8 @@
 	var/ammo_type
 	var/ammo_name
 
+	bulk = GUN_BULK_RIFLE //inf
+
 /obj/item/weapon/gun/launcher/alien/Initialize()
 	. = ..()
 	START_PROCESSING(SSobj, src)
@@ -50,6 +52,7 @@
 	item_state = "spikethrower"
 	fire_sound_text = "a strange noise"
 	fire_sound = 'sound/weapons/spike.ogg'
+	bulk = GUN_BULK_RIFLE //inf
 
 /obj/item/weapon/gun/launcher/alien/spikethrower/on_update_icon()
 	icon_state = "spikethrower[ammo]"

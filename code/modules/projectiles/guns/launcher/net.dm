@@ -6,6 +6,7 @@
 	fire_sound = 'sound/weapons/empty.ogg'
 	fire_sound_text = "a metallic thunk"
 	var/obj/item/weapon/net_shell/chambered
+	bulk = GUN_BULK_CARABINE //inf
 
 /obj/item/weapon/net_shell
 	name = "net gun shell"
@@ -33,7 +34,7 @@
 
 /obj/item/weapon/gun/launcher/net/proc/finish_loading(var/obj/item/weapon/net_shell/S, var/mob/user)
 	chambered = S
-	if(user) 
+	if(user)
 		user.visible_message("\The [user] inserts \a [S] into \the [src].", SPAN_NOTICE("You insert \a [S] into \the [src]."))
 
 /obj/item/weapon/gun/launcher/net/proc/load(obj/item/weapon/net_shell/S, mob/user)

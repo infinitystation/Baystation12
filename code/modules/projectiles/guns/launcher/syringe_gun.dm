@@ -65,7 +65,6 @@
 	icon = 'icons/obj/guns/syringegun.dmi'
 	icon_state = "syringegun"
 	item_state = "syringegun"
-	w_class = ITEM_SIZE_LARGE
 	force = 7
 	matter = list(MATERIAL_STEEL = 2000)
 	slot_flags = SLOT_BELT
@@ -79,6 +78,9 @@
 	var/list/darts = list()
 	var/max_darts = 1
 	var/obj/item/weapon/syringe_cartridge/next
+
+	bulk = GUN_BULK_CARABINE //inf
+	w_class = ITEM_SIZE_LARGE
 
 /obj/item/weapon/gun/launcher/syringe/consume_next_projectile()
 	if(next)

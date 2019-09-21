@@ -14,7 +14,6 @@
 		slot_l_hand_str = 'infinity/icons/mob/onmob/lefthand.dmi',
 		)
 
-	w_class = ITEM_SIZE_NORMAL
 	caliber = CALIBER_PISTOL_FAST
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 3)
 	slot_flags = SLOT_BELT
@@ -22,13 +21,16 @@
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/n10mm
 	allowed_magazines = /obj/item/ammo_magazine/n10mm
-	one_hand_penalty = 2
 
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=1, burst_accuracy=null, dispersion=null),
 		list(mode_name="2-round bursts", burst=2, fire_delay=null, move_delay=2,    one_hand_penalty=3, burst_accuracy=list(0,-1),       dispersion=list(0.0, 0.8)),
 		list(mode_name="short bursts",   burst=4, fire_delay=null, move_delay=4,    one_hand_penalty=4, burst_accuracy=list(0,-1,-1.5,-2), dispersion=list(0.6, 0.8, 1.0, 1.4)),
 		)
+
+	bulk = GUN_BULK_CARABINE
+	w_class = ITEM_SIZE_NORMAL
+	one_hand_penalty = 2
 
 /obj/item/weapon/gun/projectile/automatic/nt41/on_update_icon()
 	..()
@@ -40,7 +42,6 @@
 	icon = 'infinity/icons/obj/guns.dmi'
 	icon_state = "amrcarabine"
 	item_state = "z8carbine"
-	w_class = ITEM_SIZE_HUGE
 	force = 10
 	caliber = CALIBER_ANTIMATERIAL_SMALL
 	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 2)
@@ -49,13 +50,16 @@
 	magazine_type = /obj/item/ammo_magazine/c12755
 	allowed_magazines = /obj/item/ammo_magazine/c12755
 	ammo_type = /obj/item/ammo_casing/a12755
-	one_hand_penalty = 7
 	wielded_item_state = "z8carbine-wielded"
 	burst_delay = 2
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1,    fire_delay=4, move_delay=1, one_hand_penalty=7, burst_accuracy=null, dispersion=null),
 		list(mode_name="2-round bursts", burst=2,    fire_delay=6, move_delay=1, one_hand_penalty=15, burst_accuracy=list(0,-0.8), dispersion=list(0.0, 0.4)),
 		)
+
+	bulk = GUN_BULK_RIFLE //inf
+	w_class = ITEM_SIZE_HUGE
+	one_hand_penalty = 7
 
 /obj/item/weapon/gun/projectile/automatic/amrcarabine/on_update_icon()
 	..()
@@ -72,7 +76,6 @@
 		slot_r_hand_str = 'icons/mob/onmob/items/righthand_guns.dmi',
 		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_guns.dmi',
 		)
-	w_class = ITEM_SIZE_NORMAL
 	caliber = CALIBER_PISTOL_FAST
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT
@@ -88,6 +91,10 @@
 		list(mode_name="short bursts",   burst=5, fire_delay=null, move_delay=2,    one_hand_penalty=2, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(0.6, 0.6, 1.0, 1.0, 1.2)),
 		)
 
+	bulk = GUN_BULK_SMG
+	w_class = ITEM_SIZE_NORMAL
+	one_hand_penalty = 3
+
 /obj/item/weapon/gun/projectile/automatic/bp15/on_update_icon()
 	icon_state = (ammo_magazine)? "pdw" : "pdw-empty"
 	..()
@@ -98,7 +105,6 @@
 	icon = 'infinity/icons/event/guns.dmi'
 	icon_state = "pdw"
 	item_state = "c20r"
-	w_class = ITEM_SIZE_LARGE
 	var/projetcile_type = 0
 	force = 10
 	caliber = CALIBER_PISTOL_FAST
@@ -109,13 +115,16 @@
 	allowed_magazines = /obj/item/ammo_magazine/uni46x30mm
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-	one_hand_penalty = 0
 
-	//SMG
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=0, burst_accuracy=null, dispersion=null),
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=2,    one_hand_penalty=0, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.6, 1.0)),
 		)
+
+	bulk = GUN_BULK_CARABINE
+	w_class = ITEM_SIZE_LARGE
+	one_hand_penalty = 3
+
 
 /obj/item/weapon/gun/projectile/automatic/invider/modify_projectile(obj/item/projectile/p, var/list/params = list())
 	if (params["Charged"] == 1 && loaded.len)
@@ -153,7 +162,6 @@
 	icon = 'infinity/icons/obj/guns.dmi'
 	icon_state = "TV-3Sm"
 	item_state = null
-	w_class = ITEM_SIZE_HUGE
 	force = 10
 	caliber = CALIBER_TV
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
@@ -164,10 +172,6 @@
 	allowed_magazines = /obj/item/ammo_magazine/tv
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-	accuracy = 4
-	accuracy_power = 7
-	one_hand_penalty = 8
-	bulk = GUN_BULK_RIFLE
 	burst_delay = 3
 	wielded_item_state = "arifle-wielded"
 	mag_insert_sound = 'sound/weapons/guns/interaction/batrifle_magin.ogg'
@@ -177,6 +181,12 @@
 		list(mode_name="semi auto",       burst=1, fire_delay=null,    move_delay=null, one_hand_penalty=8, burst_accuracy=null, dispersion=null),
 		list(mode_name="2-round bursts", burst=2, fire_delay=null, move_delay=2,    one_hand_penalty=9, burst_accuracy=null, dispersion=null),
 		)
+
+	accuracy = 1
+	accuracy_power = 7
+	bulk = GUN_BULK_RIFLE
+	w_class = ITEM_SIZE_LARGE
+	one_hand_penalty = 5
 
 /obj/item/weapon/gun/projectile/automatic/tv3/on_update_icon()
 	..()
