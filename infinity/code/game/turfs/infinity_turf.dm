@@ -1,4 +1,5 @@
 /turf/simulated/floor/airless/asteroid
+	name = "dusted plate" //inf
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "asteroidplating"
 
@@ -12,6 +13,12 @@
 	temperature = TCMB
 
 /turf/simulated/floor/tiled/asteroid
+	name = "dusted floor" //inf
 	icon_state = "asteroidfloor"
 	icon = 'icons/turf/floors.dmi'
 	initial_flooring = /decl/flooring/tiling/asteroid
+//[INF]
+/turf/simulated/floor/tiled/asteroid/airless
+	initial_gas = null
+	temperature = TCMB
+//[/INF]

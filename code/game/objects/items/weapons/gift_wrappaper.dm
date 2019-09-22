@@ -80,7 +80,6 @@
 		/obj/item/weapon/storage/fancy/crackers,
 		/obj/item/weapon/toy/xmas_cracker,
 		/obj/item/stack/flag/solgov,
-		/obj/item/airbag,
 		/obj/item/clothing/mask/gas/clown_hat,
 		/obj/item/clothing/mask/gas/sexyclown,
 		/obj/item/clothing/mask/gas/sexymime,

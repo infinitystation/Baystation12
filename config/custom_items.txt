@@ -145,6 +145,16 @@ ckey: evgen00751
 character_name: Andy Robberts
 item_path: /obj/item/music_player/custom_tape
 }
+{
+ckey: doctorducky
+character_name: Marc Hughes
+item_path: /obj/item/music_player/custom_tape
+}
+{
+ckey: morikawacinatsu
+character_name: Henry Blackburn
+item_path: /obj/item/music_player/custom_tape
+}
 
 #	SHORT ITEMS HERE (3-4)
 

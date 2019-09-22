@@ -4,9 +4,11 @@
 	caliber = CALIBER_PISTOL
 	magazine_type = /obj/item/ammo_magazine/pistol
 	allowed_magazines = /obj/item/ammo_magazine/pistol
-	accuracy_power = 7
 	var/empty_icon = TRUE  //If it should change icon when empty
 	var/ammo_indicator = FALSE
+
+	accuracy_power = 7
+	bulk = GUN_BULK_PISTOL //inf
 
 /obj/item/weapon/gun/projectile/pistol/on_update_icon()
 	..()
@@ -36,6 +38,8 @@
 	fire_delay = 7
 	ammo_indicator = TRUE
 
+	bulk = GUN_BULK_REVOLVER
+
 /obj/item/weapon/gun/projectile/pistol/military/alt
 	desc = "The HelTek Optimus, best known as the standard-issue sidearm for the ICCG Navy."
 	icon = 'icons/obj/guns/military_pistol2.dmi'
@@ -51,9 +55,10 @@
 	icon_state = "secguncomp"
 	safety_icon = "safety"
 	magazine_type = /obj/item/ammo_magazine/pistol/rubber
-	accuracy = -1
 	fire_delay = 6
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
+
+	accuracy = 0
 
 /obj/item/weapon/gun/projectile/pistol/sec/lethal
 	magazine_type = /obj/item/ammo_magazine/pistol
@@ -73,10 +78,11 @@
 	allowed_magazines = /obj/item/ammo_magazine/magnum
 	mag_insert_sound = 'sound/weapons/guns/interaction/hpistol_magin.ogg'
 	mag_remove_sound = 'sound/weapons/guns/interaction/hpistol_magout.ogg'
-	accuracy = 2
-	one_hand_penalty = 2
-	bulk = 3
 	ammo_indicator = TRUE
+
+	accuracy = 2
+	bulk = GUN_BULK_SMG //inf
+	one_hand_penalty = 2
 
 /obj/item/weapon/gun/projectile/pistol/throwback
 	name = "pistol"
@@ -84,12 +90,14 @@
 	icon = 'icons/obj/guns/pistol_throwback.dmi'
 	icon_state = "pistol1"
 	magazine_type = /obj/item/ammo_magazine/pistol/throwback
-	accuracy_power = 5
-	one_hand_penalty = 2
 	fire_delay = 7
 	caliber = CALIBER_PISTOL_BIG
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	var/base_icon = "pistol1"
+
+	accuracy_power = 5
+	bulk = GUN_BULK_SMG //inf
+	one_hand_penalty = 2
 
 /obj/item/weapon/gun/projectile/pistol/throwback/Initialize()
 	. = ..()
@@ -121,6 +129,8 @@
 	mag_remove_sound = 'sound/weapons/guns/interaction/hpistol_magout.ogg'
 	empty_icon = FALSE
 
+	bulk = GUN_BULK_SMG //inf
+
 /obj/item/weapon/gun/projectile/pistol/gyropistol/on_update_icon()
 	..()
 	if(ammo_magazine)
@@ -134,13 +144,15 @@
 	icon = 'icons/obj/guns/holdout_pistol.dmi'
 	icon_state = "pistol"
 	item_state = null
-	w_class = ITEM_SIZE_SMALL
 	caliber = CALIBER_PISTOL_SMALL
 	silenced = 0
 	fire_delay = 4
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ESOTERIC = 2)
 	magazine_type = /obj/item/ammo_magazine/pistol/small
 	allowed_magazines = /obj/item/ammo_magazine/pistol/small
+
+	bulk = 0
+	w_class = ITEM_SIZE_SMALL
 
 /obj/item/weapon/gun/projectile/pistol/holdout/attack_hand(mob/user as mob)
 	if(user.get_inactive_hand() == src)

@@ -4,7 +4,6 @@
 	icon = 'icons/obj/guns/heavysniper.dmi'
 	icon_state = "heavysniper"
 	item_state = "heavysniper" //sort of placeholder
-	w_class = ITEM_SIZE_HUGE
 	force = 10
 	slot_flags = SLOT_BACK
 	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 2, TECH_ESOTERIC = 8)
@@ -14,15 +13,17 @@
 	load_method = SINGLE_CASING
 	max_shells = 1
 	ammo_type = /obj/item/ammo_casing/shell
-	one_hand_penalty = 6
-	accuracy = -2
-	bulk = 8
-	scoped_accuracy = 8 //increased accuracy over the LWAP because only one shot
 	scope_zoom = 2
 	var/bolt_open = 0
 	wielded_item_state = "heavysniper-wielded" //sort of placeholder
 	load_sound = 'sound/weapons/guns/interaction/rifle_load.ogg'
 	fire_delay = 12
+
+	accuracy = -2
+	scoped_accuracy = 8 //increased accuracy over the LWAP because only one shot
+	bulk = GUN_BULK_SNIPER_RIFLE //inf
+	w_class = ITEM_SIZE_HUGE
+	one_hand_penalty = 6
 
 /obj/item/weapon/gun/projectile/heavysniper/on_update_icon()
 	..()

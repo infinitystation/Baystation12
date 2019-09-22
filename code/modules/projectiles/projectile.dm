@@ -28,7 +28,7 @@
 
 	var/hitchance_mod = 0
 	var/dispersion = 0.0
-	var/distance_falloff = 2  //multiplier, higher value means accuracy drops faster with distance
+	var/distance_falloff = 9  //multiplier, higher value means accuracy drops faster with distance //INF, WAS 2
 
 	var/damage = 10
 	var/damage_type = BRUTE //BRUTE, BURN, TOX, OXY, CLONE, PAIN are the only things that should be in here
@@ -191,19 +191,37 @@
 /obj/item/projectile/proc/attack_mob(var/mob/living/target_mob, var/distance, var/special_miss_modifier=0)
 	if(!istype(target_mob))
 		return
+//[INF]
+//	var/distance_mod
+	var/miss_modifier
 
 //roll to-hit
-	var/miss_modifier = max(distance_falloff*(distance)*(distance) - hitchance_mod + special_miss_modifier, -30)
+	if(distance >= 2)
+		miss_modifier = max(distance_falloff * (distance+1)  - hitchance_mod + special_miss_modifier, -30)
+	else
+		miss_modifier = max(0 - hitchance_mod + special_miss_modifier, -30)
+//[/INF]
 	//makes moving targets harder to hit, and stationary easier to hit
-	var/movment_mod = min(5, (world.time - target_mob.l_move_time) - 20)
+//inf	var/movment_mod = min(5, (world.time - target_mob.l_move_time) - 20)
+	//Calc close distance bonus
+//[INF]
+/*
+//	if (distance < 5)
+//		distance_mod = 30 / (distance * 2)
+//	if (distance <= 2)
+//		if (movment_mod >= 0)
+//			distance_mod = 30 / distance
+//	miss_modifier -= distance_mod
+*/
+//[/INF]
 	//running in a straight line isnt as helpful tho
-	if(movment_mod < 0)
+/*[INF]	if(movment_mod < 0)
 		if(target_mob.last_move == get_dir(firer, target_mob))
 			movment_mod *= 0.25
 		else if(target_mob.last_move == get_dir(target_mob,firer))
 			movment_mod *= 0.5
 	miss_modifier -= movment_mod
-
+[/INF]*/
 	var/hit_zone = get_zone_with_miss_chance(def_zone, target_mob, miss_modifier, ranged_attack=(distance > 1 || original != target_mob)) //if the projectile hits a target we weren't originally aiming at then retain the chance to miss
 
 	var/result = PROJECTILE_FORCE_MISS

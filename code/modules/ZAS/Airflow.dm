@@ -130,13 +130,6 @@ mob/living/carbon/human/airflow_hit(atom/A)
 		bloody_body(src)
 	var/b_loss = min(airflow_speed, (airborne_acceleration*2)) * vsc.airflow_damage
 
-	for(var/i in contents)
-		if(istype(i, /obj/item/airbag))
-			var/obj/item/airbag/airbag = i
-			airbag.deploy(src)
-			b_loss = 0
-			break
-
 	apply_damage(b_loss/3, BRUTE, BP_HEAD, used_weapon = "Airflow")
 
 	apply_damage(b_loss/3, BRUTE, BP_CHEST, used_weapon =  "Airflow")

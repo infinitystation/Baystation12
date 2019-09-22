@@ -9,6 +9,12 @@
 	suffixes = list("skrellscoutship/skrellscoutship-1.dmm", "skrellscoutship/skrellscoutship-2.dmm")
 	cost = 1000 //inf, was 1, we aren't using it
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/skrellscoutship, /datum/shuttle/autodock/overmap/skrellscoutshuttle)
+	apc_test_exempt_areas = list(
+		/area/ship/skrellscoutshuttle =                NO_SCRUBBER,
+		/area/ship/skrellscoutship/crew/toilets =      NO_SCRUBBER|NO_VENT,
+		/area/ship/skrellscoutship/maintenance/power = NO_SCRUBBER,
+		/area/ship/skrellscoutship/solars =            NO_SCRUBBER|NO_VENT|NO_APC
+	)
 
 /obj/effect/overmap/sector/skrellscoutspace
 	name = "Empty Sector"

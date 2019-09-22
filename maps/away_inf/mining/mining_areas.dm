@@ -41,6 +41,9 @@
 /area/outpost/mining/medical
 	name = "Mining Outpost Medical Comparement"
 
+/area/outpost/mining/relay
+	name = "Mining Outpost Communication Relay"
+
 /area/outpost/mining/solar
 	name = "Mining Outpost Solar Array"
 	area_flags = AREA_FLAG_EXTERNAL

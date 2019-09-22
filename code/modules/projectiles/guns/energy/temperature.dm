@@ -10,13 +10,14 @@
 	charge_cost = 10
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 4, TECH_POWER = 3, TECH_MAGNET = 2)
 	slot_flags = SLOT_BELT|SLOT_BACK
-	one_hand_penalty = 2
 	wielded_item_state = "gun_wielded"
 
 	projectile_type = /obj/item/projectile/temp
 	cell_type = /obj/item/weapon/cell/high
 	combustion = 0
 
+	bulk = GUN_BULK_SMG
+	one_hand_penalty = 2
 
 /obj/item/weapon/gun/energy/temperature/Initialize()
 	. = ..()

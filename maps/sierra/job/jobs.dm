@@ -24,13 +24,13 @@
 									/datum/job/officer, /datum/job/warden, /datum/job/detective, /datum/job/iaa,\
 									/datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer,/datum/job/qm,\
 									/datum/job/senior_engineer, /datum/job/senior_doctor, /datum/job/psychiatrist,\
-									/datum/job/stowaway, /datum/job/senior_scientist),
+									/*/datum/job/stowaway,*/ /datum/job/senior_scientist),
 	)
 #undef HUMAN_ONLY_JOBS
 
 	allowed_jobs = list(/datum/job/captain, /datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos,
 						/datum/job/iaa, /datum/job/adjutant,
-						/datum/job/exploration_leader, /datum/job/explorer, /datum/job/explorer_pilot, /datum/job/explorer_medic, /datum/job/explorer_engineer,
+						/datum/job/exploration_leader, /datum/job/explorer, /datum/job/explorer_pilot,
 						/datum/job/senior_engineer, /datum/job/engineer, /datum/job/infsys, /datum/job/engineer_trainee,
 						/datum/job/warden, /datum/job/detective, /datum/job/officer,
 						/datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee, /datum/job/chemist, /datum/job/psychiatrist,
@@ -39,7 +39,7 @@
 						/datum/job/senior_scientist, /datum/job/scientist, /datum/job/roboticist, /datum/job/scientist_assistant,
 						/datum/job/ai, /datum/job/cyborg,
 						/datum/job/assistant,
-						/datum/job/merchant, /datum/job/merchant_trainee, /datum/job/stowaway
+						/datum/job/merchant, /datum/job/merchant_trainee, /*/datum/job/stowaway*/
 						)
 
 	access_modify_region = list(

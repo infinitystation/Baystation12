@@ -90,8 +90,7 @@
 	                    SKILL_WEAPONS = SKILL_MAX)
 
 	skill_points = 24
-
-
+/*
 /datum/job/stowaway
 	title = "Stowaway"
 	department = "Civilian"
@@ -113,3 +112,4 @@
 
 	access = list(access_maint_tunnels, access_emergency_storage)
 	minimal_access = list()
+*/

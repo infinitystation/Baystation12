@@ -9,7 +9,6 @@
 	load_method = SINGLE_CASING
 	max_shells = 1 //literally just a barrel
 	has_safety = FALSE
-	w_class = ITEM_SIZE_NORMAL
 
 	var/global/list/ammo_types = list(
 		/obj/item/ammo_casing/pistol,
@@ -24,6 +23,9 @@
 		/obj/item/ammo_casing/rifle/military,
 		/obj/item/ammo_casing/rifle
 		)
+
+	bulk = GUN_BULK_CARABINE //inf
+	w_class = ITEM_SIZE_NORMAL
 
 /obj/item/weapon/gun/projectile/pirate/toggle_safety(var/mob/user)
 	to_chat(user, "<span class='warning'>There's no safety on \the [src]!</span>")

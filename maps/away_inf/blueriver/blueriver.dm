@@ -28,9 +28,16 @@
 	id = "awaysite_blue"
 	description = "Two z-level map with an arctic planet and an alien underground surface"
 	cost = 1
+	generate_mining_by_z = 2
 	prefix = "maps/away_inf/"
 	suffixes = list("blueriver/blueriver-1.dmm", "blueriver/blueriver-2.dmm")
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/blueriver_shuttle)
+	area_usage_test_exempted_root_areas = list(/area/bluespaceriver)
+	apc_test_exempt_areas = list(
+		/area/bluespaceriver/underground = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/bluespaceriver/ground = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/bluespaceriver/ship/power = NO_SCRUBBER|NO_VENT
+	)
 
 /turf/simulated/floor/away/blueriver/alienfloor
 	name = "glowing floor"

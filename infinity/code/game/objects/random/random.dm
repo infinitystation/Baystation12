@@ -248,7 +248,7 @@
 	desc = "This is a random asteroid hostile mob."
 	icon = 'icons/mob/amorph.dmi'
 	icon_state = "standing"
-	spawn_nothing_percentage = 75
+	spawn_nothing_percentage = 60
 
 obj/random/hostile/asteroid/spawn_choices()
 	return list(/mob/living/simple_animal/hostile/carp,
