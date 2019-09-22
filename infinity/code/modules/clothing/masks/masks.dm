@@ -6,3 +6,13 @@
 	item_state = "gas_alt"
 	tint = 1
 	flags_inv = HIDEEARS
+	sprite_sheets = list(
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/mask.dmi')
+
+/obj/item/clothing/mask/gas/aquabreather
+	sprite_sheets = list(
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/mask.dmi',
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/mask.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_mask_resomi.dmi',
+		SPECIES_EROSAN = 'infinity/icons/mob/species/erosan/mask.dmi',
+		)//inf
