@@ -189,8 +189,6 @@ var/list/global/organ_rel_size = list(
 		miss_chance = base_miss_chance[zone]
 	miss_chance = max(min(miss_chance + miss_chance_mod, 94),0)
 	scatter_chance = min(95, miss_chance + 35)
-	world << "[miss_chance] miss_chance"
-	world << "[scatter_chance] scatter_chance"
 	if(prob(miss_chance))
 		if(ranged_attack)
 			if(prob(100 - scatter_chance))
@@ -200,7 +198,6 @@ var/list/global/organ_rel_size = list(
 //		else if(prob(70))
 //			return null
 //		return (ran_zone())
-	world << "DAMAGED"
 	return zone
 
 //Replaces some of the characters with *, used in whispers. pr = probability of no star.
