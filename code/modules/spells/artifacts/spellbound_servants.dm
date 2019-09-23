@@ -158,7 +158,7 @@
 					/obj/item/clothing/shoes/dress/infilshoes = slot_shoes)
 		spells += /spell/toggle_armor/infiltrator/fem
 	..()
-
+/*
 /datum/spellbound_type/servant/overseer
 	name = "Overseer"
 	desc = "A ghost, or an imaginary friend; the Overseer is immune to space and can turn invisible at a whim, but has little offensive capabilities."
@@ -175,7 +175,7 @@
 /datum/spellbound_type/servant/overseer/equip_servant(var/mob/living/carbon/human/H)
 	..()
 	H.add_aura(new /obj/aura/regenerating(H))
-
+*/
 /obj/effect/cleanable/spellbound
 	name = "strange rune"
 	desc = "some sort of runic symbol drawn in... crayon?"
