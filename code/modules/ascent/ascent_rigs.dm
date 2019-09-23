@@ -5,7 +5,7 @@
 	icon_state = "kexosuit"
 	item_state = null
 	suit_type = "support exosuit"
-	armor = list(melee = 65, bullet = 65, laser = 65, energy = 55, bomb = 75, bio = 100, rad = 100)
+	armor = list(melee = 40, bullet = 40, laser = 40, energy = 35, bomb = 75, bio = 100, rad = 100)
 	online_slowdown = 0
 	offline_slowdown = 1
 	equipment_overlay_icon = null
@@ -183,7 +183,7 @@
 // Rig definitions.
 /obj/item/weapon/rig/mantid/gyne
 	name = "gyne support exosuit"
-	armor = list(melee = 80, bullet = 80, laser = 70, energy = 45, bomb = 75, bio = 100, rad = 100)
+	armor = list(melee = 60, bullet = 60, laser = 65, energy = 45, bomb = 75, bio = 100, rad = 100)
 	icon_override = 'icons/mob/species/mantid/onmob_back_gyne.dmi'
 	mantid_caste = SPECIES_MANTID_GYNE
 	initial_modules = list(
@@ -192,7 +192,6 @@
 		/obj/item/rig_module/electrowarfare_suite,
 		/obj/item/rig_module/chem_dispenser/mantid,
 		/obj/item/rig_module/mounted/energy_blade/mantid,
-		/obj/item/rig_module/mounted/flechette_rifle,
 		/obj/item/rig_module/mounted/particle_rifle,
 		/obj/item/rig_module/device/multitool,
 		/obj/item/rig_module/device/cable_coil,
@@ -222,7 +221,6 @@
 		/obj/item/rig_module/electrowarfare_suite,
 		/obj/item/rig_module/chem_dispenser/mantid,
 		/obj/item/rig_module/mounted/energy_blade/mantid,
-		/obj/item/rig_module/mounted/flechette_rifle,
 		/obj/item/rig_module/mounted/particle_rifle,
 		/obj/item/rig_module/device/multitool,
 		/obj/item/rig_module/device/cable_coil,
