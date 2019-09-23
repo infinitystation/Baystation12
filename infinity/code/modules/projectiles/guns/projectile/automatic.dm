@@ -57,7 +57,7 @@
 		list(mode_name="2-round bursts", burst=2,    fire_delay=6, move_delay=1, one_hand_penalty=15, burst_accuracy=list(0,-0.8), dispersion=list(0.0, 0.4)),
 		)
 
-	bulk = GUN_BULK_RIFLE //inf
+	bulk = GUN_BULK_RIFLE
 	w_class = ITEM_SIZE_HUGE
 	one_hand_penalty = 7
 
