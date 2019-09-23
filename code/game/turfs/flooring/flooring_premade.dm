@@ -350,11 +350,13 @@
 	name = "snow"
 	icon = 'icons/turf/snow.dmi'
 	icon_state = "snow"
+	initial_flooring = /decl/flooring/snow //inf, was nothing
 
+/*[INF]
 /turf/simulated/floor/snow/New()
 	icon_state = pick("snow[rand(1,12)]","snow0")
 	..()
-
+[/INF]*/
 /turf/simulated/floor/light
 /turf/simulated/floor/airless/ceiling
 
