@@ -203,6 +203,7 @@
 	desc = "A compact CO2 scrubber and breathing apparatus that draws oxygen from water."
 	icon_state = "halfgas"
 	filter_water = TRUE
+	sprite_sheets = list(SPECIES_TAJARA = 'icons/mob/species/tajaran/mask.dmi')//inf
 	body_parts_covered = FACE
 	tint = 0 //INF, WAS NOTHING(0)
 	w_class = 2

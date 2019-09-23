@@ -8,7 +8,3 @@
 	flags_inv = HIDEEARS
 	sprite_sheets = list(
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/mask.dmi')
-
-/obj/item/clothing/mask/gas/aquabreather
-	sprite_sheets = list(
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/mask.dmi')//inf

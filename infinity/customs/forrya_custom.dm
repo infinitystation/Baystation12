@@ -47,7 +47,7 @@
 	max_heat_protection_temperature = T0C +55
 	valid_accessory_slots = list(ACCESSORY_SLOT_ARMOR_C,ACCESSORY_SLOT_ARMBAND,ACCESSORY_SLOT_UTILITY,ACCESSORY_SLOT_ARMBAND,ACCESSORY_SLOT_RANK,ACCESSORY_SLOT_DEPT,ACCESSORY_SLOT_DECOR,ACCESSORY_SLOT_MEDAL,ACCESSORY_SLOT_INSIGNIA,ACCESSORY_SLOT_OVER)
 	slots = 4
-	allowed = list (/obj/item/weapon/pen,/obj/item/weapon/paper,/obj/item/weapon/storage/fancy/cigarettes,/obj/item/weapon/storage/box/matches,/obj/item/weapon/reagent_containers/food/drinks/flask, /obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/weapon/gun,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/melee/energy/sword,/obj/item/weapon/handcuffs,/obj/item/weapon/storage/briefcase/inflatable,/obj/item/weapon/shovel/lopata,/obj/item/multishowel,/obj/item/weapon/pickaxe/silver/lopata,/obj/item/weapon/crowbar/lopata)
+	allowed = list (/obj/item/weapon/pen,/obj/item/weapon/paper,/obj/item/weapon/storage/fancy/cigarettes,/obj/item/weapon/storage/box/matches,/obj/item/weapon/reagent_containers/food/drinks/flask, /obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/weapon/gun,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/melee/energy/sword,/obj/item/weapon/handcuffs,/obj/item/weapon/storage/briefcase/inflatable,/obj/item/weapon/shovel/multishowel,/obj/item/multishowel,/obj/item/weapon/pickaxe/silver/multishowel,/obj/item/weapon/crowbar/multishowel)
 	siemens_coefficient = 0.6
 	gas_transfer_coefficient = 0.90
 	flags_inv = HIDEJUMPSUIT|HIDETAIL
@@ -208,7 +208,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS
 	min_cold_protection_temperature = T0C - 175
-	allowed = list (/obj/item/weapon/shovel/lopata,/obj/item/multishowel,/obj/item/weapon/pickaxe/silver/lopata,/obj/item/weapon/crowbar/lopata)
+	allowed = list (/obj/item/weapon/shovel/multishowel,/obj/item/multishowel,/obj/item/weapon/pickaxe/silver/multishowel,/obj/item/weapon/crowbar/multishowel)
 	flags_inv = HIDETAIL
 	accessory_icons = list(
 		slot_w_uniform_str = 'infinity/icons/customs/infinity_custom_items_mob.dmi', \
@@ -238,7 +238,8 @@
 	to the appearance of this ideal thing - a foldable \
 	multi - tool for various works, combining many modules,\
 	 but most importantly-a sharpened shovel, easily pushing\
-	  ice, icy soil or someone else."
+	  ice, icy soil or someone else.\
+	  This multi-tool has embossed stamp of CCA"
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "set"
 	w_class = ITEM_SIZE_SMALL
@@ -246,7 +247,7 @@
 
 /obj/item/multishowel/attack_self(mob/user)
 	playsound(get_turf(user),'infinity/sound/items/change_drill.ogg',50,1)
-	var/obj/item/multishowel/lopatos = new /obj/item/weapon/shovel/lopata
+	var/obj/item/multishowel/lopatos = new /obj/item/weapon/shovel/multishowel
 	to_chat(user, "<span class='notice'>You attach the sharp shovel to [src].</span>")
 	qdel(src)
 	user.put_in_active_hand(lopatos)
@@ -255,13 +256,14 @@
 	. = ..()
 	icon_state = "set"
 
-/obj/item/weapon/shovel/lopata
+/obj/item/weapon/shovel/multishowel
 	name = "trenching multitool"
 	desc = "Decades of evolution of trench tools have led \
 	to the appearance of this ideal thing - a foldable \
 	multi - tool for various works, combining many modules,\
 	 but most importantly-a sharpened shovel, easily pushing\
-	  ice, icy soil or someone else."
+	  ice, icy soil or someone else.\
+	  This multi-tool has embossed stamp of CCA"
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "set"
 	w_class = ITEM_SIZE_NORMAL
@@ -274,56 +276,58 @@
 
 /obj/item/weapon/shovel/lopata/attack_self(mob/user)
 	playsound(get_turf(user),'infinity/sound/items/change_drill.ogg',50,1)
-	var/obj/item/weapon/shovel/lopata/lppt = new /obj/item/weapon/crowbar/lopata
+	var/obj/item/weapon/shovel/multishowel/lppt = new /obj/item/weapon/crowbar/multishowel
 	to_chat(user, "<span class='notice'> You put forward crowbar to [src].</span>")
 	qdel(src)
 	user.put_in_active_hand(lppt)
 
-/obj/item/weapon/shovel/lopata/Initialize()
+/obj/item/weapon/shovel/multishowel/Initialize()
 	. = ..()
 	icon_state = "set-showel"
 
-/obj/item/weapon/pickaxe/silver/lopata
+/obj/item/weapon/pickaxe/silver/multishowel
 	name = "trenching multitool"
 	desc = "Decades of evolution of trench tools have led \
 	to the appearance of this ideal thing - a foldable \
 	multi - tool for various works, combining many modules,\
 	 but most importantly-a sharpened shovel, easily pushing\
-	  ice, icy soil or someone else."
+	  ice, icy soil or someone else.\
+	  This multi-tool has embossed stamp of CCA"
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "set"
 	w_class = ITEM_SIZE_NORMAL
 	digspeed = 120
 
-/obj/item/weapon/pickaxe/silver/lopata/attack_self(mob/user)
+/obj/item/weapon/pickaxe/silver/multishowel/attack_self(mob/user)
 	playsound(get_turf(user),'infinity/sound/items/change_drill.ogg',50,1)
-	var/obj/item/weapon/pickaxe/silver/lopata/kilrka = new /obj/item/multishowel
+	var/obj/item/weapon/pickaxe/silver/multishowel/kilrka = new /obj/item/multishowel
 	to_chat(user, "<span class='notice'>You collapsed your [src].</span>")
 	qdel(src)
 	user.put_in_active_hand(kilrka)
 
-/obj/item/weapon/pickaxe/silver/lopata/Initialize()
+/obj/item/weapon/pickaxe/silver/multishowel/Initialize()
 	. = ..()
 	icon_state = "set-pickaxe"
 
-/obj/item/weapon/crowbar/lopata
+/obj/item/weapon/crowbar/multishowel
 	name = "trenching multitool"
 	desc = "Decades of evolution of trench tools have led \
 	to the appearance of this ideal thing - a foldable \
 	multi - tool for various works, combining many modules,\
 	 but most importantly-a sharpened shovel, easily pushing\
-	  ice, icy soil or someone else."
+	  ice, icy soil or someone else.\
+	  This multi-tool has embossed stamp of CCA"
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "set"
 	w_class = ITEM_SIZE_NORMAL
 
-/obj/item/weapon/crowbar/lopata/attack_self(mob/user)
+/obj/item/weapon/crowbar/multishowel/attack_self(mob/user)
 	playsound(get_turf(user),'infinity/sound/items/change_drill.ogg',50,1)
-	var/obj/item/weapon/crowbar/lopata/lomos = new /obj/item/weapon/pickaxe/silver/lopata
+	var/obj/item/weapon/crowbar/multishowel/lomos = new /obj/item/weapon/pickaxe/silver/multishowel
 	to_chat(user, "<span class='notice'> You put forward pickaxe head to [src].</span>")
 	qdel(src)
 	user.put_in_active_hand(lomos)
 
-/obj/item/weapon/crowbar/lopata/Initialize()
+/obj/item/weapon/crowbar/multishowel/Initialize()
 	. = ..()
 	icon_state = "set-crowbar"
