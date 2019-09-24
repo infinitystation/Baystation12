@@ -3242,6 +3242,7 @@
 #include "infinity\code\game\objects\random\random.dm"
 #include "infinity\code\game\objects\structures\barrier.dm"
 #include "infinity\code\game\objects\structures\barsign.dm"
+#include "infinity\code\game\objects\structures\curtains.dm"
 #include "infinity\code\game\objects\structures\railing.dm"
 #include "infinity\code\game\objects\structures\wallframe_spawner.dm"
 #include "infinity\code\game\objects\structures\alien\alien.dm"
