@@ -274,7 +274,7 @@
 	base_parry_chance = 30
 	attack_verb = list("bashed", "sliced", "stabbed", "pierced", "jeneved")
 
-/obj/item/weapon/shovel/lopata/attack_self(mob/user)
+/obj/item/weapon/shovel/multishowel/attack_self(mob/user)
 	playsound(get_turf(user),'infinity/sound/items/change_drill.ogg',50,1)
 	var/obj/item/weapon/shovel/multishowel/lppt = new /obj/item/weapon/crowbar/multishowel
 	to_chat(user, "<span class='notice'> You put forward crowbar to [src].</span>")
