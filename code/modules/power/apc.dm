@@ -211,7 +211,8 @@
 	if(emp_hardened)
 		return
 	failure_timer = max(failure_timer, round(duration))
-	playsound(src, 'sound/machines/apc_nopower.ogg', 75, 0)
+	if(needs_powerdown_sound == TRUE)//inf
+		playsound(src, 'sound/machines/apc_nopower.ogg', 75, 0)
 
 /obj/machinery/power/apc/proc/init_round_start()
 	has_electronics = 2 //installed and secured
@@ -873,7 +874,8 @@
 		if(needs_powerdown_sound == TRUE)
 			playsound(src, 'sound/machines/apc_nopower.ogg', 75, 0)
 			needs_powerdown_sound = FALSE
-		else
+	else
+		if(cell.charge / cell.maxcharge >= 0.5) //inf
 			needs_powerdown_sound = TRUE
 
 /obj/machinery/power/apc/proc/isWireCut(var/wireIndex)
