@@ -26,12 +26,13 @@
 	if(istype(station))
 		station.hub = hub
 		station.com = src
-		station.set_dir(dir)
+//inf		station.set_dir(dir)
 
 	if(istype(hub))
 		hub.com = src
-		hub.set_dir(dir)
+//inf		hub.set_dir(dir)
 
+//[INF]
 /*
 /obj/machinery/computer/teleporter/Initialize()
 	. = ..()
@@ -49,6 +50,7 @@
 		hub.station = station
 		station.hub = hub
 */
+//[/INF]
 
 /obj/machinery/computer/teleporter/power_change()
 	. = ..()

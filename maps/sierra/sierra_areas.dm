@@ -426,7 +426,7 @@
 	name = "Mercenary Base"
 	icon_state = "syndie-ship"
 	requires_power = 0
-	dynamic_lighting = 0
+	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 	req_access = list(access_syndicate)
 
@@ -1445,6 +1445,7 @@
 	name = "Raider Base"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 	req_access = list(access_syndicate)
+	turf_initializer = /decl/turf_initializer/maintenance/heavy
 
 // ACTORS GUILD
 /area/acting

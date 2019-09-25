@@ -86,3 +86,11 @@
 		'infinity/sound/voice/pain_monkey_3.ogg'
 		)
 
+/decl/emote/audible/cat_purr
+	key = "purr"
+	emote_message_3p = "USER мурчит."
+	emote_sound = 'infinity/sound/voice/cat_purr.ogg'
+
+/decl/emote/audible/cat_purr/long
+	key = "purrl"
+	emote_sound = 'infinity/sound/voice/cat_purr_long.ogg'
