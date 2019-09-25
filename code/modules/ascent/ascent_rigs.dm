@@ -5,7 +5,7 @@
 	icon_state = "kexosuit"
 	item_state = null
 	suit_type = "support exosuit"
-	armor = list(melee = 40, bullet = 40, laser = 40, energy = 35, bomb = 75, bio = 100, rad = 100)
+	armor = list(melee = 55, bullet = 55, laser = 55, energy = 45, bomb = 75, bio = 100, rad = 100)
 	online_slowdown = 0
 	offline_slowdown = 1
 	equipment_overlay_icon = null
@@ -46,8 +46,8 @@
 	icon = 'icons/obj/ascent.dmi'
 	icon_state = "blade"
 	interface_name = "nanoblade"
-	usable = FALSE
-	gun = null
+	usable = 0
+	gun = /obj/item/weapon/gun/energy/crossbow/ninja/mounted
 
 /obj/item/rig_module/mounted/flechette_rifle
 	name = "flechette rifle"
@@ -183,7 +183,7 @@
 // Rig definitions.
 /obj/item/weapon/rig/mantid/gyne
 	name = "gyne support exosuit"
-	armor = list(melee = 60, bullet = 60, laser = 65, energy = 45, bomb = 75, bio = 100, rad = 100)
+	armor = list(melee = 65, bullet = 70, laser = 65, energy = 55, bomb = 75, bio = 100, rad = 100)
 	icon_override = 'icons/mob/species/mantid/onmob_back_gyne.dmi'
 	mantid_caste = SPECIES_MANTID_GYNE
 	initial_modules = list(
