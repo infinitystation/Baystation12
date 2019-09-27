@@ -69,6 +69,9 @@
 	req_access = list(access_explorer, access_expedition_shuttle_helm)
 	islocked = 1
 
+/obj/machinery/suit_storage_unit/standard_unit
+	req_access = null
+
 /obj/machinery/photocopier/faxmachine/centcomm
 	req_access = list(access_cent_general)
 	department = "Office of Civil Investigation and Enforcement"
