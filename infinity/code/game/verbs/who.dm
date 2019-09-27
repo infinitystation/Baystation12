@@ -29,7 +29,7 @@
 
 			switch(C.mob.stat)
 				if(UNCONSCIOUS)
-					entry += " - <font color='#404040'><b>Без сознания</b></font>"
+					entry += " - <font color='#404040'><b>В отключке</b></font>"
 					living++
 				if(DEAD)
 					if(isghost(C.mob))
