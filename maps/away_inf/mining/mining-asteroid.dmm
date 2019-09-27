@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/turf/simulated/mineral/random,
+/turf/simulated/mineral,
 /area/mine/unexplored)
 "ab" = (
 /turf/unsimulated/mask,
@@ -77,13 +77,16 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled,
+/obj/effect/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/outpost/mining)
 "ak" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/machinery/atmospherics/pipe/manifold/hidden/yellow{
+	icon_state = "map";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/brown{
+	dir = 6
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining)
@@ -245,63 +248,42 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/outpost/mining/hangar)
 "aG" = (
-/obj/effect/floor_decal/borderfloor{
-	dir = 9;
-	icon_state = "borderfloor_white"
+/obj/effect/floor_decal/corner/brown/three_quarters{
+	icon_state = "corner_white_three_quarters";
+	dir = 8
 	},
-/obj/effect/floor_decal/corner/brown/border{
-	icon_state = "bordercolor";
-	dir = 9
-	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/outpost/mining/hangar)
 "aH" = (
-/obj/effect/floor_decal/borderfloor{
-	icon_state = "borderfloor_white";
-	dir = 1
+/obj/effect/floor_decal/corner/brown{
+	icon_state = "corner_white";
+	dir = 5
 	},
-/obj/effect/floor_decal/corner/brown/border{
-	icon_state = "bordercolor";
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/outpost/mining/hangar)
 "aI" = (
-/obj/effect/floor_decal/borderfloor{
-	icon_state = "borderfloor_white";
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/brown/border{
-	icon_state = "bordercolor";
-	dir = 1
+/obj/effect/floor_decal/corner/brown{
+	icon_state = "corner_white";
+	dir = 5
 	},
 /obj/machinery/light/small{
 	dir = 1;
 	icon_state = "bulb_map"
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/outpost/mining/hangar)
 "aJ" = (
-/obj/effect/floor_decal/borderfloor{
-	dir = 5;
-	icon_state = "borderfloor_white"
+/obj/effect/floor_decal/corner/brown/three_quarters{
+	icon_state = "corner_white_three_quarters";
+	dir = 1
 	},
-/obj/effect/floor_decal/corner/brown/border{
-	icon_state = "bordercolor";
-	dir = 5
-	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/outpost/mining/hangar)
 "aK" = (
-/obj/effect/floor_decal/borderfloor{
-	dir = 8;
-	icon_state = "borderfloor_white"
+/obj/effect/floor_decal/corner/brown{
+	dir = 9
 	},
-/obj/effect/floor_decal/corner/brown/border{
-	icon_state = "bordercolor";
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/outpost/mining/hangar)
 "aL" = (
 /obj/effect/floor_decal/industrial/danger/corner,
@@ -319,15 +301,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/hangar)
 "aO" = (
-/obj/effect/floor_decal/borderfloor{
-	icon_state = "borderfloor_white";
-	dir = 4
+/obj/effect/floor_decal/corner/brown{
+	dir = 6
 	},
-/obj/effect/floor_decal/corner/brown/border{
-	icon_state = "bordercolor";
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/outpost/mining/hangar)
 "aP" = (
 /obj/structure/railing/mapped{
@@ -355,41 +332,23 @@
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/hangar)
 "aT" = (
-/obj/effect/floor_decal/borderfloor{
-	dir = 8;
-	icon_state = "borderfloor_white"
-	},
-/obj/effect/floor_decal/corner/brown/border{
-	icon_state = "bordercolor";
-	dir = 8
+/obj/effect/floor_decal/corner/brown{
+	dir = 9
 	},
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/effect/floor_decal/borderfloor/corner2{
-	icon_state = "borderfloorcorner2_white";
-	dir = 10
-	},
-/obj/effect/floor_decal/corner/brown/bordercorner2{
-	icon_state = "bordercolorcorner2";
-	dir = 10
-	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/outpost/mining/hangar)
 "aU" = (
-/obj/effect/floor_decal/borderfloor{
-	icon_state = "borderfloor_white";
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/brown/border{
-	icon_state = "bordercolor";
-	dir = 4
+/obj/effect/floor_decal/corner/brown{
+	dir = 6
 	},
 /obj/machinery/light/small{
 	dir = 4;
 	icon_state = "bulb_map"
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/outpost/mining/hangar)
 "aV" = (
 /obj/effect/catwalk_plated,
@@ -672,114 +631,46 @@
 /turf/simulated/floor/plating,
 /area/outpost/mining/cenral)
 "bB" = (
-/obj/effect/floor_decal/borderfloor{
-	dir = 9;
-	icon_state = "borderfloor_white"
-	},
-/obj/effect/floor_decal/corner/yellow/border{
-	icon_state = "bordercolor";
-	dir = 9
-	},
-/obj/item/weapon/bedsheet/mime,
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4
-	},
-/obj/structure/bed/padded,
-/turf/simulated/floor/tiled,
+/obj/structure/closet/cabinet,
+/turf/simulated/floor/wood/walnut,
 /area/outpost/mining/recreation)
 "bC" = (
-/obj/structure/bed/chair/padded/brown{
-	icon_state = "chair_preview";
-	dir = 4
-	},
-/obj/effect/floor_decal/borderfloor{
-	icon_state = "borderfloor_white";
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/yellow/border{
-	icon_state = "bordercolor";
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
-/turf/simulated/floor/tiled,
+/obj/structure/bed/chair/wood/walnut{
+	icon_state = "wooden_chair_preview";
+	dir = 4
+	},
+/obj/structure/sign/poster{
+	pixel_y = 32
+	},
+/turf/simulated/floor/wood/walnut,
 /area/outpost/mining/recreation)
 "bD" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/borderfloor{
-	dir = 5;
-	icon_state = "borderfloor_white"
-	},
-/obj/effect/floor_decal/corner/yellow/border{
-	icon_state = "bordercolor";
-	dir = 5
-	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
-/obj/item/weapon/towel/random,
 /obj/machinery/button/blast_door{
 	dir = 8;
 	id_tag = "mbase_room_shutters1";
 	name = "Space Shutters Control";
 	pixel_x = 24
 	},
-/turf/simulated/floor/tiled,
+/obj/structure/table/woodentable/walnut,
+/turf/simulated/floor/wood/walnut,
 /area/outpost/mining/recreation)
 "bE" = (
 /turf/simulated/wall/prepainted,
 /area/outpost/mining/recreation)
 "bF" = (
-/obj/effect/floor_decal/borderfloor{
-	dir = 9;
-	icon_state = "borderfloor_white"
-	},
-/obj/effect/floor_decal/corner/yellow/border{
-	icon_state = "bordercolor";
-	dir = 9
-	},
-/obj/item/weapon/bedsheet/yellow,
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4
-	},
-/obj/structure/bed/padded,
-/turf/simulated/floor/tiled,
-/area/outpost/mining/recreation)
-"bG" = (
-/obj/structure/bed/chair/padded/brown{
-	icon_state = "chair_preview";
-	dir = 4
-	},
-/obj/effect/floor_decal/borderfloor{
-	icon_state = "borderfloor_white";
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/yellow/border{
-	icon_state = "bordercolor";
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
-	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/carpet,
 /area/outpost/mining/recreation)
-"bH" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/borderfloor{
-	dir = 5;
-	icon_state = "borderfloor_white"
-	},
-/obj/effect/floor_decal/corner/yellow/border{
-	icon_state = "bordercolor";
-	dir = 5
-	},
+"bG" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
@@ -791,7 +682,18 @@
 	name = "Space Shutters Control";
 	pixel_x = 24
 	},
-/turf/simulated/floor/tiled,
+/obj/structure/table/woodentable/walnut,
+/turf/simulated/floor/wood/walnut,
+/area/outpost/mining/recreation)
+"bH" = (
+/obj/machinery/alarm{
+	dir = 4;
+	icon_state = "alarm0";
+	pixel_x = -23
+	},
+/obj/structure/bed/padded,
+/obj/item/weapon/bedsheet/mime,
+/turf/simulated/floor/carpet,
 /area/outpost/mining/recreation)
 "bI" = (
 /obj/structure/catwalk,
@@ -871,7 +773,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
-/obj/effect/catwalk_plated,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
@@ -882,7 +783,7 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/hangar)
 "bN" = (
 /obj/machinery/door/airlock/external/glass{
@@ -898,54 +799,43 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/outpost/mining/cenral)
 "bO" = (
-/obj/effect/floor_decal/borderfloor{
-	dir = 8;
-	icon_state = "borderfloor_white"
+/obj/item/device/flashlight/lamp{
+	on = 0
 	},
-/obj/effect/floor_decal/corner/yellow/border{
-	icon_state = "bordercolor";
+/obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
-/obj/effect/floor_decal/borderfloor/corner2{
-	icon_state = "borderfloorcorner2_white";
-	dir = 10
+/obj/structure/table/woodentable/walnut,
+/turf/simulated/floor/wood/walnut,
+/area/outpost/mining/recreation)
+"bP" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/door/airlock/civilian{
+	name = "Living Room"
 	},
-/obj/effect/floor_decal/corner/yellow/bordercorner2{
-	icon_state = "bordercolorcorner2";
-	dir = 10
-	},
+/obj/machinery/door/firedoor,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
+/area/outpost/mining/recreation)
+"bQ" = (
 /obj/machinery/alarm{
 	dir = 4;
 	icon_state = "alarm0";
 	pixel_x = -23
 	},
-/turf/simulated/floor/tiled,
-/area/outpost/mining/recreation)
-"bP" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/monotile,
-/area/outpost/mining/recreation)
-"bQ" = (
-/obj/structure/table/standard,
-/obj/item/device/flashlight/lamp{
-	on = 0
-	},
-/obj/effect/floor_decal/borderfloor{
-	icon_state = "borderfloor_white";
-	dir = 6
-	},
-/obj/effect/floor_decal/corner/yellow/border{
-	icon_state = "bordercolor";
-	dir = 6
-	},
-/obj/effect/floor_decal/borderfloor/corner2,
-/obj/effect/floor_decal/corner/yellow/bordercorner2,
-/turf/simulated/floor/tiled,
+/obj/structure/bed/padded,
+/obj/item/weapon/bedsheet/yellow,
+/turf/simulated/floor/carpet,
 /area/outpost/mining/recreation)
 "bR" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/airlock/civilian{
+	name = "Living Room"
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/recreation)
 "bS" = (
@@ -1020,23 +910,26 @@
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/cenral)
 "ca" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/door/airlock/civilian{
-	name = "Living Room"
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/light{
+	dir = 1
 	},
-/obj/machinery/door/firedoor,
+/obj/structure/table/standard,
+/obj/item/stack/material/wood/walnut/twentyfive,
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/recreation)
 "cb" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/door/airlock/civilian{
-	name = "Living Room"
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 8;
+	frequency = 1379;
+	id_tag = "mbase_airlock_pump"
 	},
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/monotile,
-/area/outpost/mining/recreation)
+/obj/structure/catwalk,
+/obj/structure/sign/poster/humpost/hum_21{
+	pixel_x = 32
+	},
+/turf/simulated/floor/plating,
+/area/outpost/mining)
 "cc" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/outpost/mining/medical)
@@ -1150,13 +1043,14 @@
 /turf/simulated/floor/plating,
 /area/outpost/mining/cenral)
 "cn" = (
+/obj/machinery/portable_atmospherics/canister/air/airlock,
+/obj/machinery/atmospherics/portables_connector,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/light{
-	dir = 1
+/obj/structure/sign/poster{
+	pixel_y = 32
 	},
-/obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
-/area/outpost/mining/recreation)
+/area/outpost/mining/cenral)
 "co" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -1169,22 +1063,6 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
-/obj/effect/floor_decal/borderfloor{
-	icon_state = "borderfloor_white";
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/yellow/border{
-	icon_state = "bordercolor";
-	dir = 1
-	},
-/obj/effect/floor_decal/borderfloor/corner2{
-	icon_state = "borderfloorcorner2_white";
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/yellow/bordercorner2{
-	icon_state = "bordercolorcorner2";
-	dir = 4
-	},
 /obj/structure/bed/chair/padded/yellow{
 	icon_state = "chair_preview";
 	dir = 4
@@ -1192,14 +1070,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/recreation)
 "cq" = (
-/obj/effect/floor_decal/borderfloor{
-	icon_state = "borderfloor_white";
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/yellow/border{
-	icon_state = "bordercolor";
-	dir = 1
-	},
 /obj/structure/table/standard,
 /obj/machinery/alarm{
 	pixel_y = 30
@@ -1212,22 +1082,6 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	icon_state = "map_scrubber_on";
 	dir = 4
-	},
-/obj/effect/floor_decal/borderfloor{
-	icon_state = "borderfloor_white";
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/yellow/border{
-	icon_state = "bordercolor";
-	dir = 1
-	},
-/obj/effect/floor_decal/borderfloor/corner2{
-	icon_state = "borderfloorcorner2_white";
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/yellow/bordercorner2{
-	icon_state = "bordercolorcorner2";
-	dir = 1
 	},
 /obj/structure/bed/chair/padded/yellow{
 	icon_state = "chair_preview";
@@ -1258,58 +1112,38 @@
 /area/outpost/mining/medical)
 "cw" = (
 /obj/structure/table/standard,
-/obj/random/medical/lite,
-/obj/effect/floor_decal/borderfloorwhite{
-	icon_state = "borderfloor_white";
-	dir = 9
-	},
-/obj/effect/floor_decal/corner/paleblue/border{
-	icon_state = "bordercolor";
-	dir = 9
-	},
-/obj/effect/floor_decal/borderfloorwhite/corner2{
-	icon_state = "borderfloorcorner2_white";
-	dir = 10
-	},
-/obj/effect/floor_decal/corner/paleblue/bordercorner2{
-	icon_state = "bordercolorcorner2";
-	dir = 10
-	},
 /obj/machinery/firealarm{
 	dir = 2;
 	pixel_y = 24
 	},
-/turf/simulated/floor/tiled/white/monotile,
+/obj/effect/floor_decal/corner/paleblue/three_quarters{
+	icon_state = "corner_white_three_quarters";
+	dir = 8
+	},
+/obj/item/weapon/storage/firstaid/trauma,
+/obj/item/weapon/storage/firstaid/fire,
+/turf/simulated/floor/tiled/white,
 /area/outpost/mining/medical)
 "cx" = (
 /obj/structure/table/standard,
-/obj/random/medical/lite,
-/obj/random/medical/lite,
-/obj/effect/floor_decal/borderfloorwhite{
-	icon_state = "borderfloor_white";
-	dir = 1
+/obj/effect/floor_decal/corner/paleblue{
+	icon_state = "corner_white";
+	dir = 5
 	},
-/obj/random/medical,
-/obj/effect/floor_decal/corner/paleblue/border{
-	icon_state = "bordercolor";
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/monotile,
+/obj/item/weapon/storage/firstaid/toxin,
+/obj/item/weapon/storage/firstaid/o2,
+/turf/simulated/floor/tiled/white,
 /area/outpost/mining/medical)
 "cy" = (
 /obj/structure/table/standard,
-/obj/effect/floor_decal/borderfloorwhite{
-	icon_state = "borderfloor_white";
-	dir = 5
-	},
-/obj/effect/floor_decal/corner/paleblue/border{
-	icon_state = "bordercolor";
-	dir = 5
-	},
 /obj/structure/closet/medical_wall/filled/regular{
 	pixel_y = 30
 	},
-/turf/simulated/floor/tiled/white/monotile,
+/obj/effect/floor_decal/corner/paleblue/three_quarters{
+	icon_state = "corner_white_three_quarters";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
 /area/outpost/mining/medical)
 "cz" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -1388,28 +1222,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/hangar)
 "cG" = (
-/obj/effect/floor_decal/borderfloor{
-	icon_state = "borderfloor_white";
-	dir = 4
+/obj/effect/floor_decal/corner/brown{
+	dir = 9
 	},
-/obj/effect/floor_decal/corner/brown/border{
-	icon_state = "bordercolor";
-	dir = 4
-	},
-/obj/machinery/light/small{
-	dir = 4;
-	icon_state = "bulb_map"
-	},
-/obj/effect/floor_decal/borderfloor/corner2{
-	icon_state = "borderfloorcorner2_white";
-	dir = 5
-	},
-/obj/effect/floor_decal/corner/brown/bordercorner2{
-	icon_state = "bordercolorcorner2";
-	dir = 5
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/outpost/mining/hangar)
+/turf/simulated/floor/tiled,
+/area/outpost/mining/recreation)
 "cH" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -1456,24 +1273,17 @@
 /turf/simulated/floor/plating,
 /area/outpost/mining/recreation)
 "cO" = (
-/obj/effect/floor_decal/borderfloor/corner2{
-	icon_state = "borderfloorcorner2_white";
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
 	},
-/obj/effect/floor_decal/borderfloor/corner2{
-	icon_state = "borderfloorcorner2_white";
-	dir = 10
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/effect/floor_decal/corner/yellow/bordercorner2{
-	icon_state = "bordercolorcorner2";
-	dir = 10
-	},
-/obj/effect/floor_decal/corner/yellow/bordercorner2{
-	icon_state = "bordercolorcorner2";
-	dir = 8
-	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/floor/tiled,
-/area/outpost/mining/recreation)
+/area/outpost/mining/cenral)
 "cP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -1490,6 +1300,7 @@
 /obj/structure/table/standard,
 /obj/item/trash/snack_bowl,
 /obj/item/weapon/material/kitchen/utensil/spoon,
+/obj/item/weapon/reagent_containers/food/drinks/glass2/shot,
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/recreation)
 "cS" = (
@@ -1518,6 +1329,9 @@
 /turf/simulated/floor/plating,
 /area/outpost/mining/medical)
 "cW" = (
+/obj/effect/floor_decal/corner/paleblue{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/mining/medical)
 "cX" = (
@@ -1526,15 +1340,11 @@
 /area/outpost/mining/medical)
 "cY" = (
 /obj/machinery/sleeper/survival_pod,
-/obj/effect/floor_decal/borderfloorwhite{
-	icon_state = "borderfloor_white";
-	dir = 4
+/obj/effect/floor_decal/corner/paleblue{
+	icon_state = "corner_white";
+	dir = 6
 	},
-/obj/effect/floor_decal/corner/paleblue/border{
-	icon_state = "bordercolor";
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/floor/tiled/white,
 /area/outpost/mining/medical)
 "cZ" = (
 /obj/machinery/door/firedoor,
@@ -1698,7 +1508,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/hangar)
 "dj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -1712,8 +1522,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/effect/catwalk_plated,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled,
 /area/outpost/mining/hangar)
 "dk" = (
 /obj/machinery/door/airlock/mining{
@@ -1735,7 +1544,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/hangar)
 "dl" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
 /obj/structure/cable{
@@ -1743,9 +1552,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/effect/catwalk_plated,
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/turf/simulated/floor/plating,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/turf/simulated/floor/tiled,
 /area/outpost/mining/cenral)
 "dm" = (
 /obj/structure/cable{
@@ -1812,17 +1620,12 @@
 /turf/simulated/floor/plating,
 /area/outpost/mining/cenral)
 "dq" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
+/obj/structure/table/standard,
+/obj/structure/bedsheetbin,
+/obj/effect/floor_decal/corner/brown{
+	dir = 10
 	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/catwalk_plated,
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled,
 /area/outpost/mining/cenral)
 "dr" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -1985,13 +1788,9 @@
 	icon_state = "chair_preview";
 	dir = 8
 	},
-/obj/effect/floor_decal/borderfloorwhite{
-	icon_state = "borderfloor_white";
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/paleblue/border{
-	icon_state = "bordercolor";
-	dir = 4
+/obj/effect/floor_decal/corner/paleblue{
+	icon_state = "corner_white";
+	dir = 6
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/mining/medical)
@@ -1999,6 +1798,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/structure/bed/chair,
 /turf/simulated/floor/airless/asteroid,
 /area/outpost/mining)
 "dD" = (
@@ -2087,35 +1887,17 @@
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/hangar)
 "dO" = (
-/obj/structure/table/standard,
-/obj/structure/bedsheetbin,
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/brown/border,
-/obj/effect/floor_decal/borderfloor/corner2,
-/obj/effect/floor_decal/corner/brown/bordercorner2,
-/turf/simulated/floor/tiled,
-/area/outpost/mining/cenral)
-"dP" = (
 /obj/machinery/light/small,
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/brown/border,
 /obj/machinery/disposal/unstandart,
 /obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
+/obj/effect/floor_decal/corner/brown{
+	dir = 10
+	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining/cenral)
-"dQ" = (
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/brown/border,
-/obj/effect/floor_decal/borderfloor/corner2{
-	icon_state = "borderfloorcorner2_white";
-	dir = 9
-	},
-/obj/effect/floor_decal/corner/brown/bordercorner2{
-	icon_state = "bordercolorcorner2";
-	dir = 9
-	},
+"dP" = (
 /obj/machinery/power/apc{
 	dir = 2;
 	name = "south bump";
@@ -2126,15 +1908,17 @@
 	icon_state = "0-4";
 	d2 = 4
 	},
+/obj/effect/floor_decal/corner/brown{
+	dir = 10
+	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining/cenral)
-"dR" = (
+"dQ" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/catwalk_plated,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable{
@@ -2142,52 +1926,37 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled,
 /area/outpost/mining/cenral)
-"dS" = (
+"dR" = (
 /obj/item/weapon/storage/toolbox/mechanical,
 /obj/structure/table/standard,
 /obj/machinery/light/small,
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/brown/border,
-/obj/effect/floor_decal/borderfloor/corner2,
-/obj/effect/floor_decal/corner/brown/bordercorner2,
 /obj/item/weapon/paper/mining_base/relay_base,
+/obj/effect/floor_decal/corner/brown{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
+/area/outpost/mining/cenral)
+"dS" = (
+/obj/structure/table/standard,
+/obj/machinery/recharger,
+/obj/effect/floor_decal/corner/brown{
+	dir = 10
+	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining/cenral)
 "dT" = (
-/obj/structure/table/standard,
-/obj/machinery/recharger,
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/brown/border,
-/obj/effect/floor_decal/borderfloor/corner2{
-	icon_state = "borderfloorcorner2_white";
+/obj/effect/floor_decal/corner/brown{
 	dir = 9
-	},
-/obj/effect/floor_decal/corner/brown/bordercorner2{
-	icon_state = "bordercolorcorner2";
-	dir = 9
-	},
-/turf/simulated/floor/tiled,
-/area/outpost/mining/cenral)
-"dU" = (
-/obj/effect/floor_decal/borderfloor/corner2{
-	icon_state = "borderfloorcorner2_white";
-	dir = 8
-	},
-/obj/effect/floor_decal/borderfloor/corner2{
-	icon_state = "borderfloorcorner2_white";
-	dir = 10
-	},
-/obj/effect/floor_decal/corner/yellow/bordercorner2{
-	icon_state = "bordercolorcorner2";
-	dir = 10
-	},
-/obj/effect/floor_decal/corner/yellow/bordercorner2{
-	icon_state = "bordercolorcorner2";
-	dir = 8
 	},
 /obj/structure/flora/pottedplant/dead,
+/turf/simulated/floor/tiled,
+/area/outpost/mining/recreation)
+"dU" = (
+/obj/effect/floor_decal/corner/brown{
+	dir = 6
+	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining/recreation)
 "dV" = (
@@ -2214,23 +1983,14 @@
 /turf/simulated/floor/tiled,
 /area/outpost/mining/recreation)
 "dY" = (
-/obj/effect/floor_decal/borderfloor/corner2{
-	icon_state = "borderfloorcorner2_white";
-	dir = 5
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 8
 	},
-/obj/effect/floor_decal/borderfloor/corner2{
-	icon_state = "borderfloorcorner2_white";
-	dir = 6
-	},
-/obj/effect/floor_decal/corner/yellow/bordercorner2{
-	icon_state = "bordercolorcorner2";
-	dir = 6
-	},
-/obj/effect/floor_decal/corner/yellow/bordercorner2{
-	icon_state = "bordercolorcorner2";
-	dir = 5
-	},
-/turf/simulated/floor/tiled,
+/obj/structure/table/standard,
+/obj/item/weapon/storage/box/checkers,
+/obj/item/weapon/board,
+/obj/effect/floor_decal/corner/brown/half,
+/turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/recreation)
 "dZ" = (
 /obj/structure/cable,
@@ -2241,35 +2001,34 @@
 	pixel_y = -24
 	},
 /obj/structure/closet/crate/freezer/blood/small,
-/obj/effect/floor_decal/borderfloorwhite,
-/obj/effect/floor_decal/corner/paleblue/border,
-/obj/effect/floor_decal/borderfloorwhite/corner2,
-/obj/effect/floor_decal/corner/paleblue/bordercorner2,
+/obj/effect/floor_decal/corner/paleblue{
+	icon_state = "corner_white";
+	dir = 10
+	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/mining/medical)
 "ea" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
-/obj/effect/floor_decal/borderfloorwhite,
-/obj/effect/floor_decal/corner/paleblue/border,
+/obj/effect/floor_decal/corner/paleblue{
+	icon_state = "corner_white";
+	dir = 10
+	},
+/obj/structure/bed/roller,
 /turf/simulated/floor/tiled/white,
 /area/outpost/mining/medical)
 "eb" = (
 /obj/structure/iv_drip,
-/obj/effect/floor_decal/borderfloorwhite{
-	icon_state = "borderfloor_white";
-	dir = 6
-	},
-/obj/effect/floor_decal/corner/paleblue/border{
-	icon_state = "bordercolor";
-	dir = 6
-	},
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -20
 	},
-/turf/simulated/floor/tiled/white/monotile,
+/obj/effect/floor_decal/corner/paleblue/three_quarters{
+	icon_state = "corner_white_three_quarters";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
 /area/outpost/mining/medical)
 "ec" = (
 /obj/structure/girder,
@@ -2381,21 +2140,6 @@
 /turf/simulated/floor/tiled,
 /area/outpost/mining/recreation)
 "ep" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8
-	},
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/yellow/border,
-/obj/effect/floor_decal/borderfloor/corner2,
-/obj/effect/floor_decal/corner/yellow/bordercorner2,
-/obj/structure/table/standard,
-/obj/item/weapon/storage/box/checkers,
-/obj/item/weapon/board,
-/turf/simulated/floor/tiled/monotile,
-/area/outpost/mining/recreation)
-"eq" = (
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/yellow/border,
 /obj/machinery/power/apc{
 	dir = 2;
 	name = "south bump";
@@ -2407,30 +2151,20 @@
 	dir = 1
 	},
 /obj/structure/cable,
+/obj/effect/floor_decal/corner/brown/half,
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/recreation)
-"er" = (
+"eq" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/yellow/border,
 /obj/structure/table/standard,
 /obj/item/weapon/paper_bin,
 /obj/machinery/light,
+/obj/effect/floor_decal/corner/brown/half,
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/recreation)
-"es" = (
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/yellow/border,
-/obj/effect/floor_decal/borderfloor/corner2{
-	icon_state = "borderfloorcorner2_white";
-	dir = 9
-	},
-/obj/effect/floor_decal/corner/yellow/bordercorner2{
-	icon_state = "bordercolorcorner2";
-	dir = 9
-	},
+"er" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -2438,8 +2172,21 @@
 	icon_state = "console";
 	dir = 1
 	},
+/obj/effect/floor_decal/corner/brown/half,
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/recreation)
+"es" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
+/area/outpost/mining)
 "et" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -2459,8 +2206,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/recreation)
 "ev" = (
-/obj/structure/closet,
-/obj/random/maintenance,
+/obj/structure/mopbucket,
+/obj/item/weapon/mop,
+/obj/item/weapon/reagent_containers/glass/bucket,
 /turf/simulated/floor/plating,
 /area/outpost/mining/maints)
 "ew" = (
@@ -2518,45 +2266,20 @@
 	pixel_y = 24
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/effect/floor_decal/borderfloor{
-	icon_state = "borderfloor_white";
-	dir = 9
-	},
-/obj/effect/floor_decal/corner/brown/border{
-	icon_state = "bordercolor";
-	dir = 9
-	},
-/obj/effect/floor_decal/borderfloor/corner2{
-	dir = 10;
-	icon_state = "borderfloorcorner2_white"
-	},
-/obj/effect/floor_decal/borderfloor/corner2{
-	icon_state = "borderfloorcorner2_white";
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/brown/bordercorner2{
-	icon_state = "bordercolorcorner2";
-	dir = 10
-	},
-/obj/effect/floor_decal/corner/brown/bordercorner2{
-	icon_state = "bordercolorcorner2";
-	dir = 1
+/obj/effect/floor_decal/corner/brown/three_quarters{
+	icon_state = "corner_white_three_quarters";
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining)
 "eD" = (
-/obj/effect/catwalk_plated,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 8
-	},
-/turf/simulated/floor/plating,
-/area/outpost/mining)
+/turf/simulated/floor/tiled,
+/area/outpost/mining/voidsuits)
 "eE" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/pipe/simple/hidden/universal{
@@ -2616,16 +2339,12 @@
 /turf/simulated/floor/tiled/freezer,
 /area/outpost/mining/toilet)
 "eL" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	icon_state = "intact";
-	dir = 6
-	},
-/obj/effect/catwalk_plated,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/outpost/mining)
 "eM" = (
@@ -2704,14 +2423,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/outpost/mining/voidsuits)
 "eT" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled,
-/area/outpost/mining/voidsuits)
-"eU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
@@ -2730,7 +2441,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining/voidsuits)
-"eV" = (
+"eU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -2744,6 +2455,14 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining/voidsuits)
+"eV" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	icon_state = "map-scrubbers";
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/outpost/mining)
 "eW" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -2764,13 +2483,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/voidsuits)
 "eX" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	icon_state = "map-scrubbers";
-	dir = 1
-	},
-/turf/simulated/floor/tiled,
-/area/outpost/mining)
+/obj/effect/overmap/sector/mining_asteroid,
+/turf/space,
+/area/space)
 "eY" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
@@ -2823,6 +2538,9 @@
 	dir = 2;
 	pixel_y = 24
 	},
+/obj/item/weapon/reagent_containers/food/drinks/glass2/shot,
+/obj/item/weapon/reagent_containers/food/drinks/glass2/shot,
+/obj/random/drinkbottle,
 /turf/simulated/floor/tiled/old_tile,
 /area/outpost/mining/kitchen)
 "fc" = (
@@ -2942,21 +2660,8 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
-/obj/effect/floor_decal/borderfloor{
-	icon_state = "borderfloor_white";
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/brown/border{
-	icon_state = "bordercolor";
-	dir = 8
-	},
-/obj/effect/floor_decal/borderfloor/corner2{
-	icon_state = "borderfloorcorner2_white";
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/brown/bordercorner2{
-	icon_state = "bordercolorcorner2";
-	dir = 8
+/obj/effect/floor_decal/corner/brown{
+	dir = 9
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining)
@@ -3052,9 +2757,6 @@
 	pixel_x = 0;
 	pixel_y = 28
 	},
-/obj/structure/bed/chair{
-	dir = 8
-	},
 /turf/simulated/floor/airless/asteroid,
 /area/mine/unexplored)
 "fB" = (
@@ -3074,14 +2776,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/voidsuits)
 "fD" = (
-/obj/effect/floor_decal/borderfloor{
-	icon_state = "borderfloor_white";
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/brown/border{
-	icon_state = "bordercolor";
-	dir = 8
-	},
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "west bump";
@@ -3090,6 +2784,9 @@
 /obj/structure/cable{
 	icon_state = "0-4";
 	d2 = 4
+	},
+/obj/effect/floor_decal/corner/brown{
+	dir = 9
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining)
@@ -3108,12 +2805,14 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/outpost/mining)
 "fF" = (
-/obj/effect/catwalk_plated,
 /obj/machinery/atmospherics/pipe/manifold/hidden/yellow{
 	icon_state = "map";
-	dir = 1
+	dir = 8
 	},
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/corner/brown{
+	dir = 6
+	},
+/turf/simulated/floor/tiled,
 /area/outpost/mining)
 "fG" = (
 /obj/machinery/atmospherics/portables_connector{
@@ -3136,12 +2835,6 @@
 /area/outpost/mining/kitchen)
 "fI" = (
 /obj/structure/hygiene/sink,
-/obj/item/weapon/storage/mirror{
-	dir = 8;
-	icon_state = "mirror";
-	pixel_x = -1;
-	pixel_y = -24
-	},
 /turf/simulated/floor/tiled/old_tile,
 /area/outpost/mining/kitchen)
 "fJ" = (
@@ -3250,23 +2943,10 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
-/obj/effect/floor_decal/borderfloor{
-	dir = 4;
-	icon_state = "borderfloor_white"
-	},
-/obj/effect/floor_decal/corner/brown/border{
-	icon_state = "bordercolor";
-	dir = 4
-	},
-/obj/effect/floor_decal/borderfloor/corner2{
-	dir = 6;
-	icon_state = "borderfloorcorner2_white"
-	},
-/obj/effect/floor_decal/corner/brown/bordercorner2{
-	icon_state = "bordercolorcorner2";
+/obj/machinery/suit_cycler/mining,
+/obj/effect/floor_decal/corner/brown{
 	dir = 6
 	},
-/obj/machinery/suit_cycler/mining,
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/voidsuits)
 "fU" = (
@@ -3276,23 +2956,10 @@
 /obj/item/stack/flag/yellow,
 /obj/item/stack/flag/yellow,
 /obj/structure/table/rack,
-/obj/effect/floor_decal/borderfloor{
-	icon_state = "borderfloor_white";
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/brown/border{
-	icon_state = "bordercolor";
-	dir = 8
-	},
-/obj/effect/floor_decal/borderfloor/corner2{
-	dir = 10;
-	icon_state = "borderfloorcorner2_white"
-	},
-/obj/effect/floor_decal/corner/brown/bordercorner2{
-	icon_state = "bordercolorcorner2";
-	dir = 10
-	},
 /obj/item/weapon/paper/mining_base/buttons,
+/obj/effect/floor_decal/corner/brown{
+	dir = 9
+	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining)
 "fV" = (
@@ -3305,12 +2972,16 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/outpost/mining)
 "fW" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/yellow{
-	icon_state = "map";
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	icon_state = "intact";
+	dir = 6
 	},
-/obj/effect/catwalk_plated,
-/turf/simulated/floor/plating,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled,
 /area/outpost/mining)
 "fX" = (
 /obj/machinery/portable_atmospherics/canister/air/airlock,
@@ -3333,15 +3004,12 @@
 "ga" = (
 /obj/structure/table/steel,
 /obj/item/weapon/storage/ore,
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/brown/border,
-/obj/effect/floor_decal/borderfloor/corner2,
-/obj/effect/floor_decal/corner/brown/bordercorner2,
 /obj/machinery/alarm{
 	dir = 4;
 	icon_state = "alarm0";
 	pixel_x = -23
 	},
+/obj/effect/floor_decal/corner/brown/three_quarters,
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/voidsuits)
 "gb" = (
@@ -3356,11 +3024,12 @@
 	},
 /obj/item/clothing/glasses/meson,
 /obj/machinery/light/small,
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/brown/border,
 /obj/item/device/radio/off,
 /obj/item/device/radio/off,
 /obj/item/weapon/paper/mining_base/eva,
+/obj/effect/floor_decal/corner/brown{
+	dir = 10
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/voidsuits)
 "gc" = (
@@ -3374,19 +3043,16 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/effect/floor_decal/borderfloor{
-	dir = 6;
-	icon_state = "borderfloor_white"
-	},
-/obj/effect/floor_decal/corner/brown/border{
-	icon_state = "bordercolor";
-	dir = 6
-	},
 /obj/item/weapon/pickaxe,
+/obj/effect/floor_decal/corner/brown/three_quarters{
+	icon_state = "corner_white_three_quarters";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/voidsuits)
 "gd" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/mech_recharger,
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining)
 "ge" = (
@@ -3401,14 +3067,16 @@
 /area/outpost/mining)
 "gf" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/yellow,
-/obj/effect/catwalk_plated,
 /obj/machinery/access_button/airlock_interior{
 	master_tag = "mbase_airlock";
 	pixel_x = 0;
 	pixel_y = -21;
 	tag = ""
 	},
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/corner/brown{
+	dir = 6
+	},
+/turf/simulated/floor/tiled,
 /area/outpost/mining)
 "gg" = (
 /obj/machinery/portable_atmospherics/canister/air/airlock,
@@ -3473,14 +3141,16 @@
 /turf/simulated/floor/plating,
 /area/outpost/mining)
 "gl" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 8;
-	frequency = 1379;
-	id_tag = "mbase_airlock_pump"
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/suit_storage_unit{
+	name = "Mining Voidsuit Storage Unit"
 	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/outpost/mining)
+/obj/structure/sign/poster{
+	pixel_x = -32;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/outpost/mining/voidsuits)
 "gm" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 4;
@@ -3516,7 +3186,10 @@
 	icon_state = "bulb_map";
 	dir = 1
 	},
-/obj/structure/bed/chair,
+/obj/structure/bed/chair{
+	icon_state = "chair_preview";
+	dir = 4
+	},
 /turf/simulated/floor/airless/asteroid,
 /area/outpost/mining/relay)
 "gp" = (
@@ -3571,9 +3244,9 @@
 /turf/space,
 /area/space)
 "gw" = (
-/obj/effect/overmap/sector/mining_asteroid,
+/obj/structure/ore_box,
 /turf/simulated/floor/asteroid,
-/area/mine/explored)
+/area/mine/unexplored)
 "gx" = (
 /obj/effect/shuttle_landmark/mining/nav3,
 /turf/space,
@@ -3851,6 +3524,7 @@
 /obj/item/weapon/pen,
 /obj/item/weapon/paper,
 /obj/machinery/light/small/red,
+/obj/item/weapon/reagent_containers/food/drinks/glass2/shot,
 /turf/simulated/floor/tiled/techfloor,
 /area/outpost/mining/relay)
 "he" = (
@@ -12913,7 +12587,7 @@ ab
 ab
 ab
 ab
-ab
+aa
 gB
 gB
 gB
@@ -13115,9 +12789,9 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
+aa
+aa
+aa
 ac
 ar
 ar
@@ -13317,10 +12991,10 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
+aa
+aa
+aa
+aa
 gB
 au
 gB
@@ -13519,17 +13193,17 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
+aa
+aa
+aa
+aa
 fZ
 gC
 gC
 gC
 fZ
-ab
-ab
+aa
+aa
 gB
 gB
 gB
@@ -13721,17 +13395,17 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
+aa
+aa
+aa
 fZ
 fZ
 gD
 gI
 hd
 fZ
-ab
-ab
+aa
+aa
 gB
 gB
 gB
@@ -13924,18 +13598,18 @@ ab
 ab
 ab
 ab
-ab
-ab
+aa
+aa
 fZ
 gr
 gF
 hg
 gR
 fZ
-ab
-ab
-ab
-ab
+aa
+aa
+aa
+aa
 ab
 ab
 gB
@@ -14126,18 +13800,18 @@ ab
 ab
 ab
 ab
-ab
-ab
+aa
+aa
 fZ
 gt
 hb
 gK
 gS
 fZ
-ab
-ab
-ab
-ab
+aa
+aa
+aa
+aa
 ab
 ab
 gB
@@ -14328,17 +14002,17 @@ ab
 ab
 ab
 ab
-ab
-ab
+aa
+aa
 fZ
 fZ
 gG
 gL
 gT
 fZ
-ab
-ab
-ab
+aa
+aa
+aa
 ab
 ab
 ab
@@ -14531,16 +14205,16 @@ ab
 ab
 ab
 ab
-ab
-ab
+aa
+aa
 fZ
 fZ
 gM
 fZ
 fZ
-ab
-ab
-ab
+aa
+aa
+aa
 ab
 ap
 gB
@@ -14733,15 +14407,15 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
+aa
+aa
+aa
 fZ
 gN
 gU
 fZ
-ab
-ab
+aa
+aa
 ab
 ab
 ap
@@ -14935,15 +14609,15 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
+aa
+aa
+aa
 fZ
 gO
 gV
 fZ
-ab
-ab
+aa
+aa
 ab
 ab
 ap
@@ -15137,15 +14811,15 @@ ab
 ab
 ab
 ab
-ab
-ab
+aa
+aa
 fZ
 fZ
 gP
 fZ
 fZ
-ab
-ab
+aa
+aa
 ab
 ab
 ab
@@ -15339,14 +15013,14 @@ ab
 ab
 ab
 ab
-ab
-ab
+aa
+aa
 fZ
 go
 gE
 gH
-ab
-ab
+aa
+aa
 ab
 ab
 ab
@@ -15541,14 +15215,14 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
+aa
+aa
+aa
 hc
 gE
 hc
-ab
-ab
+aa
+aa
 ab
 ab
 ab
@@ -15742,15 +15416,15 @@ ab
 ab
 ab
 ab
-ap
-ap
-ap
+ab
+aa
+gJ
 ap
 hc
 gE
 hc
-ab
-ab
+aa
+aa
 ab
 ab
 ab
@@ -15944,14 +15618,14 @@ ab
 ab
 ab
 ab
-ap
-ap
+ab
+gJ
 ap
 ap
 hc
 gE
 hc
-ab
+aa
 ab
 ab
 ab
@@ -16150,7 +15824,7 @@ ap
 ap
 ap
 ap
-hf
+hc
 gE
 hc
 ab
@@ -18481,10 +18155,10 @@ ab
 ab
 ab
 ab
-ab
+aa
 gB
 gB
-ab
+aa
 ab
 ab
 ab
@@ -18683,10 +18357,10 @@ ab
 ab
 ab
 ab
-ab
-ab
+aa
+aa
 au
-ab
+aa
 ab
 ab
 ab
@@ -18873,22 +18547,22 @@ ab
 ab
 ab
 ab
+aa
+aa
+aa
+ab
+ab
+aa
+aa
 ab
 ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
 gB
 gB
-ab
+aa
 ab
 ab
 ab
@@ -19075,24 +18749,24 @@ ab
 ab
 ab
 gB
-gB
+au
+aa
+aa
+aa
 ab
-ab
-ab
-ab
-ab
+aa
 au
 gB
 gB
 ab
-ab
-ab
-ab
+aa
+aa
+aa
 gB
 gB
-ab
-ab
-ab
+aa
+aa
+aa
 ab
 ab
 ab
@@ -19278,9 +18952,9 @@ ab
 gB
 gB
 at
-ab
-ab
-ab
+aa
+aa
+aa
 gB
 gB
 au
@@ -19293,8 +18967,8 @@ gB
 gB
 gB
 gZ
-ab
-ab
+aa
+aa
 ab
 ab
 ab
@@ -19496,7 +19170,7 @@ gB
 gB
 au
 ap
-ab
+aa
 ab
 ab
 ab
@@ -19698,8 +19372,8 @@ gB
 gB
 au
 gB
-ab
-ab
+aa
+aa
 ab
 ab
 ab
@@ -19901,8 +19575,8 @@ gB
 gB
 gB
 gZ
-ab
-ab
+aa
+aa
 ab
 ab
 ab
@@ -20103,15 +19777,15 @@ gB
 gB
 gB
 gB
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 ab
 ab
 ab
@@ -20306,20 +19980,20 @@ gB
 au
 gB
 gB
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 ab
 ab
 ab
@@ -20518,12 +20192,12 @@ ai
 ai
 ei
 ei
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -20723,9 +20397,9 @@ ei
 ei
 ei
 ei
-ab
-ab
-ab
+aa
+aa
+aa
 aa
 aa
 aa
@@ -22723,7 +22397,7 @@ au
 aw
 aA
 aF
-aH
+aI
 aM
 aR
 aR
@@ -22925,7 +22599,7 @@ ag
 gB
 aA
 aF
-aI
+aH
 aM
 aR
 aR
@@ -23342,12 +23016,12 @@ aO
 aO
 aO
 aO
-cG
+aU
 dj
 dN
 ek
-al
-eT
+gl
+eD
 al
 fB
 fR
@@ -23549,7 +23223,7 @@ dk
 bo
 ek
 am
-eU
+eT
 fn
 fn
 fS
@@ -23747,11 +23421,11 @@ bf
 bW
 ch
 cH
-dl
-dO
+cO
+dq
 ek
 an
-eV
+eU
 fo
 fC
 fT
@@ -23950,7 +23624,7 @@ bX
 ci
 cI
 dm
-dP
+dO
 ek
 ek
 eW
@@ -24152,10 +23826,10 @@ bY
 cj
 cJ
 dn
-dQ
+dP
 el
 eC
-eX
+eV
 fq
 fD
 fU
@@ -24354,14 +24028,14 @@ bf
 ck
 cK
 do
-dR
+dQ
 em
-eD
+es
 eY
 fr
 aj
-ak
 eL
+fW
 fE
 fV
 fV
@@ -24552,21 +24226,21 @@ au
 au
 au
 bh
-bZ
+cn
 cl
 cL
 dp
-dS
+dR
 el
 eE
 eZ
 fs
+ak
 fF
-fW
 gf
 el
 gj
-gl
+cb
 gn
 gp
 fY
@@ -24757,8 +24431,8 @@ bh
 bZ
 cm
 cM
-dq
-dT
+dl
+dS
 el
 eF
 fa
@@ -24777,7 +24451,7 @@ ap
 ap
 ap
 ap
-ap
+gw
 aa
 aa
 aa
@@ -24947,7 +24621,7 @@ gB
 gB
 gB
 gB
-gB
+eX
 gB
 au
 au
@@ -25157,12 +24831,12 @@ au
 gX
 bs
 bB
-bO
+bH
 bE
-cn
-cO
+ca
+cG
 ds
-dU
+dT
 en
 eG
 fb
@@ -25211,7 +24885,7 @@ gu
 gu
 gu
 gu
-gw
+gu
 gu
 gu
 gu
@@ -25359,8 +25033,8 @@ au
 gB
 bs
 bC
+bF
 bP
-ca
 co
 cP
 dt
@@ -25561,13 +25235,13 @@ au
 gB
 bt
 bD
-bQ
+bO
 bE
 cp
 cQ
 ds
 ct
-ep
+dY
 eI
 fd
 fv
@@ -25769,7 +25443,7 @@ cq
 cR
 du
 dW
-eq
+ep
 eG
 fe
 fw
@@ -25964,14 +25638,14 @@ gB
 au
 gB
 bs
-bF
-bO
+bB
+bQ
 bE
 cr
 cS
 ds
 ct
-er
+eq
 eJ
 eJ
 eJ
@@ -26166,14 +25840,14 @@ gB
 au
 gB
 bs
-bG
+bC
+bF
 bR
-cb
 cs
 cT
 dv
 dX
-es
+er
 eJ
 ff
 fx
@@ -26182,7 +25856,7 @@ eJ
 aa
 aa
 ap
-ab
+aa
 ap
 ap
 ap
@@ -26368,8 +26042,8 @@ gB
 au
 gB
 bu
-bH
-bQ
+bG
+bO
 bE
 hh
 ct
@@ -26384,8 +26058,8 @@ eJ
 aa
 aa
 ap
-ab
-ab
+aa
+aa
 ap
 ap
 ap
@@ -26576,7 +26250,7 @@ bs
 cu
 cU
 dx
-dY
+dU
 eu
 eJ
 fh
@@ -26586,9 +26260,9 @@ eJ
 aa
 aa
 ap
-ab
-ab
-ab
+aa
+aa
+aa
 ap
 ap
 ap
@@ -26789,7 +26463,7 @@ aa
 ap
 ap
 ap
-ab
+aa
 ap
 ap
 ap
@@ -26990,8 +26664,8 @@ aa
 aa
 ap
 ap
-ab
-ab
+aa
+aa
 ap
 ap
 ap
@@ -27193,7 +26867,7 @@ ab
 ab
 ap
 ap
-ab
+aa
 ap
 ap
 ap
@@ -27387,15 +27061,15 @@ dB
 eb
 cv
 aa
-ab
+aa
 ab
 ab
 ab
 ab
 ap
 ap
-ab
-ab
+aa
+aa
 ap
 ap
 ap
@@ -27588,7 +27262,7 @@ cc
 cc
 cc
 cc
-ab
+aa
 ab
 ab
 ab
@@ -27787,10 +27461,10 @@ au
 au
 au
 gZ
-ab
-ab
-ab
-ab
+aa
+aa
+aa
+aa
 ab
 ab
 ab
@@ -28594,7 +28268,7 @@ au
 gB
 gB
 gX
-ab
+aa
 ab
 ab
 ab
@@ -28796,7 +28470,7 @@ au
 au
 au
 au
-ab
+aa
 ab
 ab
 ab
@@ -28995,10 +28669,10 @@ au
 gB
 gB
 gB
-ab
-ab
-ab
-ab
+aa
+aa
+aa
+aa
 ab
 ab
 ab
@@ -29193,8 +28867,8 @@ gB
 gB
 gB
 gB
-ab
-ap
+aa
+aa
 ap
 gZ
 ab
@@ -29392,13 +29066,13 @@ gB
 gB
 gB
 au
-ab
-ab
-ab
-ab
+aa
+aa
+aa
+aa
+aa
 ap
-ap
-ap
+aa
 ab
 ab
 ab
@@ -29594,13 +29268,13 @@ gB
 gB
 gB
 gB
-ab
-ab
-ab
-ab
+aa
+aa
+aa
+aa
 ap
 ap
-ap
+aa
 ab
 ab
 ab
@@ -29799,10 +29473,10 @@ gB
 gB
 gB
 gB
-ab
+aa
 gZ
 ap
-ap
+aa
 ab
 ab
 ab

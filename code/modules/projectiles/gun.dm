@@ -560,7 +560,7 @@
 //[INF]
 	switch(bulk)
 		if(1) to_chat(user, "It has the size of <b>pistol!</b> You just shouldn't be anorexic to shoot from it.")
-		if(2) to_chat(user, "It has the size of <b>revolver!</b> You have to be <b>minimally fit and have basic weapon handling</b> to hold and shoot propertly from it.")
+		if(2) to_chat(user, "It has the size of <b>big pistol!</b> You have to be <b>minimally fit and have basic weapon handling</b> to hold and shoot propertly from it.")
 		if(3) to_chat(user, "It has the size of <b>sub-machinegun!</b> You have to be <b>fit and have basic weapon handling<b> to hold and shoot propertly from it.")
 		if(4) to_chat(user, "It has the size of <b>carabine!</b> You have to be <b>trained in both athletic and weapon handling</b> to hold and shoot propertly from it.")
 		if(5) to_chat(user, "It has the size of <b>assault rifle!</b> You have to be <b>trained in both athletic and weapon handling</b> to hold and shoot propertly from it.")

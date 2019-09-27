@@ -3,6 +3,11 @@
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "asteroidplating"
 
+/turf/simulated/floor/asteroidplate
+	name = "dusted plate"
+	icon = 'icons/turf/floors.dmi'
+	icon_state = "asteroidplating"
+
 /turf/simulated/floor/asteroid/aired
 	initial_gas = list(oxygen = MOLES_O2STANDARD, nitrogen = MOLES_N2STANDARD)
 	temperature = TCMB
