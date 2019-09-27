@@ -46,8 +46,8 @@
 	icon = 'icons/obj/ascent.dmi'
 	icon_state = "blade"
 	interface_name = "nanoblade"
-	usable = 0
-	gun = /obj/item/weapon/gun/energy/crossbow/ninja/mounted
+	usable = FALSE
+	gun = /obj/item/weapon/gun/energy/crossbow/ninja/mounted //inf, was null
 
 /obj/item/rig_module/mounted/flechette_rifle
 	name = "flechette rifle"
