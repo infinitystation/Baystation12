@@ -8,7 +8,7 @@
 //For all exploration crew
 #define EXPLORATION_ROLES list(\
 	/datum/job/exploration_leader, /datum/job/explorer, /datum/job/explorer_pilot, \
-	/*/datum/job/explorer_medic, /datum/job/explorer_engineer*/)
+	/datum/job/explorer_medic, /datum/job/explorer_engineer)
 
 //For jobs that allow for decorative or ceremonial clothing
 #define FORMAL_ROLES list(\
@@ -60,20 +60,20 @@
 //For members of the medical department
 #define MEDICAL_ROLES list(\
 	/datum/job/cmo, /datum/job/senior_doctor, /datum/job/doctor,\
-	/datum/job/doctor_trainee, /*/datum/job/explorer_medic,*/\
+	/datum/job/doctor_trainee, /datum/job/explorer_medic,\
 	/datum/job/psychiatrist, /datum/job/chemist, /datum/job/roboticist)
 
 //For members of the medical department, roboticists, and some Research
 #define STERILE_ROLES list(\
 	/datum/job/cmo, /datum/job/senior_doctor, /datum/job/doctor,\
 	/datum/job/doctor_trainee, /datum/job/chemist, /datum/job/psychiatrist,\
-	/datum/job/chemist, /*/datum/job/explorer_medic,*/ /datum/job/roboticist,\
+	/datum/job/chemist, /datum/job/explorer_medic, /datum/job/roboticist,\
 	/datum/job/rd, /datum/job/senior_scientist, /datum/job/scientist, /datum/job/scientist_assistant)
 
 //For members of the engineering department
 #define ENGINEERING_ROLES list(\
 	/datum/job/chief_engineer, /datum/job/senior_engineer, /datum/job/engineer, /datum/job/infsys,\
-	 /datum/job/roboticist, /datum/job/engineer_trainee, /*/datum/job/explorer_engineer*/)
+	 /datum/job/roboticist, /datum/job/engineer_trainee, /datum/job/explorer_engineer)
 
 //For members of Engineering, Cargo, and Research
 #define TECHNICAL_ROLES list(\
@@ -81,7 +81,7 @@
 	/datum/job/cargo_tech, /datum/job/cargo_assistant,/datum/job/mining,\
 	/datum/job/scientist_assistant, /datum/job/merchant, /datum/job/merchant_trainee, /datum/job/rd,\
 	/datum/job/senior_scientist, /datum/job/scientist, /datum/job/chief_engineer, /datum/job/infsys,\
-	/datum/job/engineer_trainee, /*/datum/job/explorer_engineer*/)
+	/datum/job/engineer_trainee, /datum/job/explorer_engineer)
 
 //For members of the security department
 #define SECURITY_ROLES list(\
@@ -114,7 +114,7 @@
 	/datum/job/merchant, /datum/job/merchant_trainee)
 
 #define CONTRACT_ROLES list(\
-	/datum/job/explorer, /datum/job/explorer_pilot, /*/datum/job/explorer_medic, /datum/job/explorer_engineer,*/ \
+	/datum/job/explorer, /datum/job/explorer_pilot, /datum/job/explorer_medic, /datum/job/explorer_engineer, \
 	/datum/job/engineer, /datum/job/engineer_trainee, \
 	/datum/job/officer, /datum/job/detective, \
 	/datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee,/datum/job/chemist, /datum/job/psychiatrist, \

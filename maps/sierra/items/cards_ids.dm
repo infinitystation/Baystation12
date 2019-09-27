@@ -141,7 +141,7 @@
 /obj/item/weapon/card/id/sierra/crew/pilot
 	job_access_type = /datum/job/explorer_pilot
 	detail_color = COLOR_PURPLE
-/*
+
 /obj/item/weapon/card/id/sierra/crew/field_medic
 	job_access_type = /datum/job/explorer_medic
 	detail_color = COLOR_PURPLE
@@ -149,7 +149,7 @@
 /obj/item/weapon/card/id/sierra/crew/field_engineer
 	job_access_type = /datum/job/explorer_engineer
 	detail_color = COLOR_PURPLE
-*/
+
 //Research
 
 /obj/item/weapon/card/id/sierra/crew/research
