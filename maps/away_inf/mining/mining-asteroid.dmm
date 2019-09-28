@@ -3553,6 +3553,21 @@
 /obj/structure/mech_wreckage/powerloader,
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
+"hj" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/mob/living/simple_animal/crab/groffee,
+/turf/simulated/floor/tiled,
+/area/outpost/mining/recreation)
 
 (1,1,1) = {"
 gB
@@ -25239,7 +25254,7 @@ bO
 bE
 cp
 cQ
-ds
+hj
 ct
 dY
 eI
