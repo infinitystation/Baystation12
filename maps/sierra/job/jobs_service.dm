@@ -1,4 +1,3 @@
-/* we haven't an office for him now
 /datum/job/chaplain
 	title = "Chaplain"
 	department = "Service"
@@ -15,9 +14,8 @@
 	allowed_ranks = list(/datum/mil_rank/civ/contractor, /datum/mil_rank/civ/civ)
 	min_skill = list(SKILL_BUREAUCRACY = SKILL_BASIC)
 
-	access = list()
+	access = list(access_chapel_office)
 	minimal_access = list()
-*/
 
 /datum/job/janitor
 	title = "Janitor"
