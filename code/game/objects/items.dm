@@ -86,6 +86,7 @@
 	var/list/sprite_sheets_obj = list()
 
 	var/safely = 0 //Cant harm with != Hurt intent
+	var/undress_do_affter_needed = 0 //if 0: bypass doafter on unequiping //inf
 
 /obj/item/New()
 	..()

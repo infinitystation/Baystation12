@@ -50,10 +50,16 @@
 
 	if (usr.incapacitated())
 		return
-
-	if (!usr.unEquip(src))
-		return
-
+	if(!undress_do_affter_needed)//inf
+		if (!usr.unEquip(src))
+			return
+//[INF]
+	else
+		usr.visible_message(SPAN_NOTICE("[usr.name] started to undress the [src.name]."), SPAN_NOTICE("You started to undress the [src.name]."))
+		if(do_after(usr, 4 SECONDS))
+			if(!usr.unEquip(src))
+				return
+//[/INF]
 	switch(over_object.name)
 		if("r_hand")
 			usr.put_in_r_hand(src)
