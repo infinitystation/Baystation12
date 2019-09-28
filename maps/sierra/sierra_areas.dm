@@ -1089,6 +1089,13 @@
 	icon_state = "surgery"
 	req_access = list(access_surgery)
 
+/area/medical/crematorium
+	name = "Crematorium"
+	icon_state = "chapel"
+	sound_env = SMALL_ENCLOSED
+	req_access = list(access_crematorium)
+
+
 /* not found on Sierra
 /area/medical/exam_room
 	name = "Exam Room"
@@ -1107,11 +1114,11 @@
 	ambience = list('sound/ambience/ambicha1.ogg','sound/ambience/ambicha2.ogg','sound/ambience/ambicha3.ogg','sound/ambience/ambicha4.ogg','sound/music/traitor.ogg')
 	sound_env = LARGE_ENCLOSED
 
-/area/chapel/crematorium
-	name = "Crematorium"
-	icon_state = "chapel"
-	sound_env = SMALL_ENCLOSED
-	req_access = list(access_crematorium)
+/area/chapel/office
+	name = "Chaplain's Office"
+	req_access = list(access_chapel_office)
+	color = COLOR_GRAY80
+	sound_env = SMALL_SOFTFLOOR
 
 // Shield Rooms
 /area/shield
