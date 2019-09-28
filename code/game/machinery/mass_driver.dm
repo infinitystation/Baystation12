@@ -8,6 +8,7 @@
 	anchored = 1.0
 	idle_power_usage = 2
 	active_power_usage = 50
+	layer = 1.9 //inf. Below coffins
 
 	var/power = 1.0
 	var/code = 1.0
