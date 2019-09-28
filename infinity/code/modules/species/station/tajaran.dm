@@ -24,12 +24,15 @@
 	min_age = 19
 	max_age = 140 //good medicine?
 
-	description = "The Tajaran are a species of furred mammalian bipeds hailing from the chilly planet of Ahdomai \
-	in the Zamsiin-lr system. They are a naturally superstitious species, with the new generations growing up with tales \
-	of the heroic struggles of their forebears against the Overseers. This spirit has led them forward to the \
-	reconstruction and advancement of their society to what they are today. Their pride for the struggles they \
-	went through is heavily tied to their spiritual beliefs. Recent discoveries have jumpstarted the progression \
-	of highly advanced cybernetic technology, causing a culture shock within Tajaran society."
+	description = "Таяра - гуманоидная раса, имеющая кошачьи черты. Происходят с холодной планеты Адомай \
+	 в системе Замсиин-Ир, они обладают теплым мехом и кошачьей грацией, позволяющей выживать в суровой  \
+	среде родного мира этой расы. Родной их мир расположен к востоку от человеческих территорий. Взаимоотношения  \
+	в обществе крайне сложны и запутаны, а политический строй являет собой парламентарную авторитарную демократию, \
+	 что все объясняет ничего не объясняя. Почти все таяра живут на Адомае, а вне него бывают крайне редко. \
+	 В последнее время происходит налаживание политических связей между Конфедеративным Содружеством Адомая \
+	 и остальной галактикой, а Ледяной Занавес Адомая постепенно оттаивает, пропуская сквозь себя чужаков. \ 
+	 Программы культурного обмена с другими расами позволяют как подготавливать опытных специалистов, \
+	 так и понимать лучше тех, кто вокруг."
 
 	cold_level_1 = 200 //Default 260
 	cold_level_2 = 140 //Default 200
