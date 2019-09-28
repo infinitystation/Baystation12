@@ -1092,7 +1092,7 @@ FIRE ALARM
 	var/d2
 
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
-	if (istype(user, /mob/living/carbon/human) || istype(user, /mob/living/silicon))
+	if (istype(user, /mob/living/carbon/human) || istype(user, /mob/living/silicon) || istype(user, /mob/observer)) //inf, was if (istype(user, /mob/living/carbon/human) || istype(user, /mob/living/silicon))
 		A = A.loc
 
 		if (A.fire)
