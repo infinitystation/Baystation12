@@ -22,7 +22,10 @@
 		/area/shuttle/specops/centcom,
 	)
 
-//Third Deck (Z-1)
+/* THIRD DECK (Z-1)
+ * ================
+ */
+
 /area/hallway/primary/thirddeck/fore
 	name = "Third Deck Fore Hallway"
 	icon_state = "hallF"
@@ -80,7 +83,10 @@
 	icon_state = "crew_quarters"
 	req_access = list(access_commissary)
 
-//Second Deck (Z-2)
+/* SECOND DECK (Z-2)
+ * =================
+ */
+
 /area/hallway/primary/seconddeck/fore
 	name = "Second Deck Fore Hallway"
 	icon_state = "hallF"
@@ -170,7 +176,10 @@
 	icon = 'infinity/icons/turf/areas.dmi'
 	icon_state = "music_room"
 
-//First Deck (Z-3)
+/* FIRST DECK (Z-3)
+ * ================
+ */
+
 /area/maintenance/firstdeck
 	name = "First Deck Maintenance"
 	icon_state = "maintcentral"
@@ -230,23 +239,19 @@
 /area/maintenance/substation/firstdeck
 	name = "First Deck Substation"
 
-/* not found on Sierra
-/area/teleporter/firstdeck
-	name = "First Deck Teleporter"
-	icon_state = "teleporter"
+/* SHUTTLES
+ * ========
+ */
 
-/area/hallway/primary/firstdeck/foreport
-	name = "First Deck Fore Hallway"
-	icon_state = "hallF"
-*/
-
-// Shuttles
 /area/shuttle/transport1/centcom
 	name = "Transport Shuttle Centcom"
 	icon_state = "shuttle"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 
-//sierra large pods
+/* LARGE PODS
+ * ==========
+ */
+
 /area/shuttle/escape_pod6/station
 	name = "Escape Pod One"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
@@ -272,7 +277,10 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 	icon_state = "exit"
 
-//sierra small pods
+/* SMALL PODS
+ * ==========
+ */
+
 /area/shuttle/escape_pod12/station
 	name = "Escape Pod Seven"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
@@ -303,7 +311,10 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 	icon_state = "exit"
 
-//Charon
+/* VESSEL'S SHUTTLES
+ * =================
+ */
+
 /area/exploration_shuttle
 	name = "Charon"
 	icon_state = "shuttlered"
@@ -324,7 +335,6 @@
 /area/exploration_shuttle/airlock
 	name = "Charon - Airlock Compartment"
 
-//Guppy
 /area/guppy_hangar/start
 	name = "Guppy"
 	icon_state = "shuttlered"
@@ -333,7 +343,6 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 	req_access = list(access_guppy)
 
-//Petrov
 /area/shuttle/petrov
 	name = "NSV Petrov"
 	requires_power = 1
@@ -353,7 +362,10 @@
 	name = "NSV Petrov - Isolation Cell 3"
 	icon_state = "shuttle"
 
-//Turbolift
+/* TURBOLIFT
+ * =========
+ */
+
 /area/turbolift
 	icon_state = "shuttle"
 	dynamic_lighting = 1
@@ -394,7 +406,11 @@
 	name = "third deck"
 	base_turf = /turf/simulated/open
 
-// Ninja areas
+/* ADMIN LEVEL (Z-4)
+ * =================
+ */
+
+//NINJA AREAS
 /area/ninja_dojo
 	name = "Ninja Base"
 	icon_state = "green"
@@ -412,7 +428,7 @@
 	icon_state = "shuttlered"
 	base_turf = /turf/simulated/floor/plating
 
-//Merchant
+//MERCHANT AREAS
 /area/shuttle/merchant/home
 	name = "Merchant Vessel"
 	icon_state = "shuttlegrn"
@@ -421,7 +437,7 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 	req_access = list(access_merchant)
 
-//Merc
+//NUCLEAR TEAM AREAS
 /area/syndicate_mothership
 	name = "Mercenary Base"
 	icon_state = "syndie-ship"
@@ -437,7 +453,7 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 	req_access = list(access_syndicate)
 
-//Skipjack
+//RAIDERS AREAS
 /area/skipjack_station
 	name = "Raider Outpost"
 	icon_state = "yellow"
@@ -445,7 +461,7 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 	req_access = list(access_syndicate)
 
-//NT rescue shuttle
+//ERT AREAS
 /area/rescue_base
 	name = "Response Team Base"
 	icon_state = "yellow"
@@ -464,7 +480,10 @@
 	icon_state = "shuttlered"
 	base_turf = /turf/unsimulated/floor/rescue_base
 
-// Command
+/* COMMAND AREAS
+ * =============
+ */
+
 /area/command/exploration_leader
 	name = "Exploration Leader's Office"
 	icon_state = "heads_sea"
@@ -551,7 +570,6 @@
 /area/bridge/nano
 	icon = 'infinity/icons/turf/areas.dmi'
 	icon_state = "bridge_nano"  // Yes, this is exactly what no one has ever done, probably.
-	dynamic_lighting = 1
 
 /area/bridge/meeting_room
 	name = "Meeting Room"
@@ -573,14 +591,10 @@
 	icon = 'infinity/icons/turf/areas.dmi'
 	icon_state = "bridge_gun"
 
-/* not found on Sierra
-/area/bridge/canteen
-	name = "Command Canteen"
-	icon_state = "bar"
-	req_access = list(list(access_bridge, access_kitchen))
-*/
+/* ENGINEERING AREAS
+ * =================
+ */
 
-// Engineering
 /area/engineering
 	req_access = list(access_engine)
 	icon_state = "engineering"
@@ -641,6 +655,22 @@
  	sound_env = LARGE_ENCLOSED
  	req_access = list(access_atmospherics)
 
+// Shield Rooms
+/area/shield
+	name = "Shield Generator"
+	icon_state = "engineering"
+	sound_env = SMALL_ENCLOSED
+	req_access = list(access_engine, access_atmospherics)
+
+/area/shield/firstdeck
+	name = "First Deck Shield Generator"
+
+/area/shield/seconddeck
+	name = "Second Deck Shield Generator"
+
+/area/shield/thirddeck
+	name = "Third Deck Shield Generator"
+
 /* not found on Sierra
 /area/engineering/fuelbay
 	name = "Fuel Bay"
@@ -657,12 +687,14 @@
 	sound_env = SMALL_ENCLOSED
 */
 
-//Vacant Areas
+/* VACANT AREAS
+ * ============
+ */
+
 /area/vacant
 	name = "Vacant Area"
 	icon_state = "construction"
 	area_flags = AREA_FLAG_RAD_SHIELDED
-//	req_access = list(access_construction)
 	req_access = list(access_maint_tunnels)
 
 /area/vacant/infirmary
@@ -717,7 +749,10 @@
 	icon_state = "conference"
 */
 
-// Supply
+/* SUPPLY AREAS
+ * ============
+ */
+
 /area/quartermaster
 	req_access = list(access_cargo)
 
@@ -770,25 +805,10 @@
 	name = "Ready Room"
 	icon_state = "auxstorage"
 
-// Robotics
-/area/assembly
-	req_access = list(access_robotics)
+/* RND AREAS
+ * =========
+ */
 
-/area/assembly/chargebay
-	name = "Mech Bay"
-	icon_state = "mechbay"
-
-/area/assembly/robotics
-	name = "Robotics Lab"
-	icon_state = "robotics"
-
-/* not found on Sierra
-/area/assembly/robotics_surgery
-	name = "Robotics Operating Theatre"
-	icon_state = "robotics"
-*/
-
-//Research
 /area/rnd/misc_lab
 	name = "Miscellaneous Research"
 	icon_state = "misclab"
@@ -858,14 +878,27 @@
 	sound_env = SMALL_ENCLOSED
 	req_access = list(access_rd)
 
+/area/assembly
+	req_access = list(access_robotics)
+
+/area/assembly/chargebay
+	name = "Mech Bay"
+	icon_state = "mechbay"
+
+/area/assembly/robotics
+	name = "Robotics Lab"
+	icon_state = "robotics"
+
 /* not found on Sierra
-/area/rnd/checkpoint
-	name = "Research Security Checkpoint"
-	icon_state = "checkpoint1"
-	req_access = list(access_security)
+/area/assembly/robotics_surgery
+	name = "Robotics Operating Theatre"
+	icon_state = "robotics"
 */
 
-// Crew areas
+/* CREW AREAS
+ * ==========
+ */
+
 /area/hydroponics
 	name = "Hydroponics"
 	icon_state = "hydro"
@@ -924,12 +957,6 @@
 /area/crew_quarters/lounge/upper
 	name = "Library"
 
-/area/crew_quarters/safe_room
-	name = "Safe Room"
-	icon_state = "crew_quarters"
-	sound_env = SMALL_ENCLOSED
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
-
 /area/crew_quarters/sleep/bunk
 	name = "Dormitory"
 	icon_state = "Sleep"
@@ -943,7 +970,10 @@
 /area/crew_quarters/sleep/cryo/upper
 	name = "Cryogenic Storage Upper Tier"
 
-// Security
+/* SECURITY AREAS
+ *
+ */
+
 /area/security/sierra/hallway
 	name = "Security - Fore Hallway"
 	icon_state = "security"
@@ -1024,7 +1054,10 @@
 	icon_state = "checkpoint1"
 	req_access = list(list(access_security, access_forensics_lockers))
 
-// Medbay
+/* MEDBAY AREAS
+ * ============
+ */
+
 /area/medical/equipstorage
 	name = "Infirmary Storage"
 	icon_state = "medbay4"
@@ -1107,7 +1140,10 @@
 	req_access = list(list(access_morgue, access_forensics_lockers))
 */
 
-// Chapel
+/* CHAPEL AREAS
+ * ============
+ */
+
 /area/chapel/main
 	name = "Chapel"
 	icon_state = "chapel"
@@ -1119,22 +1155,6 @@
 	req_access = list(access_chapel_office)
 	color = COLOR_GRAY80
 	sound_env = SMALL_SOFTFLOOR
-
-// Shield Rooms
-/area/shield
-	name = "Shield Generator"
-	icon_state = "engineering"
-	sound_env = SMALL_ENCLOSED
-	req_access = list(access_engine, access_atmospherics)
-
-/area/shield/firstdeck
-	name = "First Deck Shield Generator"
-
-/area/shield/seconddeck
-	name = "Second Deck Shield Generator"
-
-/area/shield/thirddeck
-	name = "Third Deck Shield Generator"
 
 // Misc
 /area/deity_spawn
