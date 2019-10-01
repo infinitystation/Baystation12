@@ -565,7 +565,7 @@ var/world_topic_spam_protect_time = world.timeofday
 		s += "<b>Mode:</b> STARTING"
 //	s += "<br><b>Round Duration:</b> [roundduration2text()]"
 	if(!config.enter_allowed)
-		s += "<br><b>Status:<b> closed"
+		s += "<br><b>Status:</b> closed"
 
 /*inf, original bs12 ahead
 	var/list/features = list()
