@@ -818,10 +818,24 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/expedition/storage)
+"bJ" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/vending/parts/public,
+/turf/simulated/floor/tiled,
+/area/storage/primary)
 "bK" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/vacant/monitoring)
+"bL" = (
+/obj/effect/fluid_mapped,
+/obj/item/clothing/under/swimsuit/blue,
+/obj/item/weapon/beach_ball,
+/obj/item/weapon/bananapeel,
+/obj/random/junk,
+/obj/random/maintenance,
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/aft)
 "bM" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
@@ -4661,6 +4675,10 @@
 "ic" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/maintenance/waterstore)
+"id" = (
+/obj/machinery/seed_storage/random,
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/aft)
 "ie" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -6206,22 +6224,33 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/thirddeck/aft)
 "kH" = (
-/obj/structure/noticeboard{
+/obj/machinery/button/alternate/door{
+	desc = "A remote control-switch for the office door.";
 	dir = 4;
-	pixel_x = -32
+	id_tag = "qmdoor-hallway";
+	name = "hallway door control";
+	pixel_x = -6;
+	pixel_y = 0;
+	req_access = list("ACCESS_QUARTERMASTER")
 	},
 /obj/effect/floor_decal/borderfloor{
-	dir = 10;
+	dir = 8;
 	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/lightgrey/border{
 	icon_state = "bordercolor";
-	dir = 10
+	dir = 8
 	},
-/obj/structure/table/standard,
-/obj/machinery/photocopier/faxmachine{
-	department = "Quartermaster"
+/obj/machinery/button/alternate/door{
+	desc = "A remote control-switch for the office door.";
+	dir = 4;
+	id_tag = "qmdoor-supply";
+	name = "supply door control";
+	pixel_x = 6;
+	pixel_y = 0;
+	req_access = list("ACCESS_QUARTERMASTER")
 	},
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/deckofficer)
 "kI" = (
@@ -8996,10 +9025,20 @@
 /turf/simulated/floor/plating,
 /area/shuttle/petrov/ship)
 "oP" = (
-/obj/machinery/vending/parts/research,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled,
-/area/storage/primary)
+/obj/effect/floor_decal/borderfloor{
+	dir = 8;
+	icon_state = "borderfloor_white"
+	},
+/obj/effect/floor_decal/corner/lightgrey/border{
+	icon_state = "bordercolor";
+	dir = 8
+	},
+/obj/item/device/eftpos{
+	eftpos_name = "Quartermaster EFTPOS scanner"
+	},
+/obj/structure/table/reinforced,
+/turf/simulated/floor/tiled/monotile,
+/area/quartermaster/deckofficer)
 "oQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -9499,14 +9538,6 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/exploration)
 "pG" = (
-/obj/structure/table/standard{
-	name = "plastic table frame"
-	},
-/obj/item/weapon/folder/yellow,
-/obj/item/weapon/stamp/denied{
-	pixel_x = 4;
-	pixel_y = -2
-	},
 /obj/structure/noticeboard{
 	pixel_y = 32
 	},
@@ -9518,14 +9549,22 @@
 	icon_state = "bordercolor";
 	dir = 1
 	},
+/obj/structure/filingcabinet/filingcabinet,
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/office)
 "pH" = (
-/obj/structure/filingcabinet/filingcabinet,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/structure/table/standard{
+	name = "plastic table frame"
+	},
+/obj/item/weapon/folder/yellow,
+/obj/item/weapon/stamp/denied{
+	pixel_x = 4;
+	pixel_y = -2
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/office)
@@ -9821,6 +9860,25 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/red,
 /turf/simulated/floor/reinforced,
 /area/shuttle/petrov/cell2)
+"qf" = (
+/obj/structure/noticeboard{
+	dir = 4;
+	pixel_x = -32
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 10;
+	icon_state = "borderfloor_white"
+	},
+/obj/effect/floor_decal/corner/lightgrey/border{
+	icon_state = "bordercolor";
+	dir = 10
+	},
+/obj/machinery/photocopier/faxmachine{
+	department = "Quartermaster"
+	},
+/obj/structure/table/reinforced,
+/turf/simulated/floor/tiled/monotile,
+/area/quartermaster/deckofficer)
 "qg" = (
 /obj/machinery/airlock_sensor{
 	frequency = 1331;
@@ -15818,38 +15876,6 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/center)
-"yN" = (
-/obj/structure/table/standard{
-	name = "plastic table frame"
-	},
-/obj/machinery/button/alternate/door{
-	desc = "A remote control-switch for the office door.";
-	dir = 4;
-	id_tag = "qmdoor-hallway";
-	name = "hallway door control";
-	pixel_x = -6;
-	pixel_y = 0;
-	req_access = list("ACCESS_QUARTERMASTER")
-	},
-/obj/effect/floor_decal/borderfloor{
-	dir = 8;
-	icon_state = "borderfloor_white"
-	},
-/obj/effect/floor_decal/corner/lightgrey/border{
-	icon_state = "bordercolor";
-	dir = 8
-	},
-/obj/machinery/button/alternate/door{
-	desc = "A remote control-switch for the office door.";
-	dir = 4;
-	id_tag = "qmdoor-supply";
-	name = "supply door control";
-	pixel_x = 6;
-	pixel_y = 0;
-	req_access = list("ACCESS_QUARTERMASTER")
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/quartermaster/deckofficer)
 "yO" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -16443,21 +16469,6 @@
 /obj/machinery/air_sensor/nacelle/second/oxygen,
 /turf/simulated/floor/reinforced/oxygen,
 /area/thruster/d3port)
-"zR" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/borderfloor{
-	dir = 8;
-	icon_state = "borderfloor_white"
-	},
-/obj/effect/floor_decal/corner/lightgrey/border{
-	icon_state = "bordercolor";
-	dir = 8
-	},
-/obj/item/device/eftpos{
-	eftpos_name = "Quartermaster EFTPOS scanner"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/quartermaster/deckofficer)
 "zS" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5
@@ -27321,16 +27332,6 @@
 /obj/random/trash,
 /obj/random/soap,
 /mob/living/simple_animal/aquatic/fish,
-/turf/simulated/floor/plating,
-/area/maintenance/thirddeck/aft)
-"RS" = (
-/obj/effect/fluid_mapped,
-/obj/item/clothing/under/swimsuit/blue,
-/obj/item/weapon/beach_ball,
-/obj/item/weapon/bananapeel,
-/obj/random/junk,
-/obj/random/maintenance,
-/obj/machinery/seed_storage/random,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aft)
 "RT" = (
@@ -41013,7 +41014,7 @@ Kf
 Wy
 Wy
 Wy
-oP
+bJ
 tk
 rC
 nQ
@@ -44653,9 +44654,9 @@ AM
 tz
 vb
 tn
-yN
-zR
 kH
+oP
+qf
 Ev
 zY
 FU
@@ -54324,7 +54325,7 @@ gh
 LM
 LM
 LM
-cH
+id
 cH
 TT
 ev
@@ -55329,7 +55330,7 @@ Is
 Is
 ah
 ah
-RS
+bL
 Sb
 TT
 TT

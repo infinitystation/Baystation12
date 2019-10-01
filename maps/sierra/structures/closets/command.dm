@@ -93,6 +93,7 @@
 		/obj/item/weapon/material/clipboard,
 		/obj/item/weapon/storage/box/PDAs,
 		/obj/item/weapon/storage/box/ids,
+		/obj/item/weapon/storage/belt/holster/general,
 	)
 
 /obj/structure/closet/secure_closet/adjutant

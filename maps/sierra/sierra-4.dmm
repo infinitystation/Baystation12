@@ -18786,6 +18786,10 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/white,
 /area/merchant_station)
+"aQf" = (
+/obj/effect/floor_decal/spline/fancy/wood,
+/turf/simulated/floor/holofloor/wood,
+/area/holodeck/source_meetinghall)
 "aQg" = (
 /turf/simulated/shuttle/wall{
 	icon_state = "wall3"
@@ -19615,6 +19619,11 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/wall/r_wall/prepainted,
 /area/merchant_station)
+"aSi" = (
+/obj/structure/table/holo_woodentable,
+/obj/effect/floor_decal/spline/fancy/wood,
+/turf/simulated/floor/holofloor/wood,
+/area/holodeck/source_meetinghall)
 "aSj" = (
 /obj/machinery/firealarm{
 	dir = 1;
@@ -19791,6 +19800,13 @@
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/techmaint,
 /area/merchant_station)
+"aSE" = (
+/obj/effect/floor_decal/spline/fancy/wood{
+	icon_state = "spline_fancy";
+	dir = 1
+	},
+/turf/simulated/floor/holofloor/lino,
+/area/holodeck/source_meetinghall)
 "aSF" = (
 /obj/structure/window/reinforced{
 	dir = 1;
@@ -19803,10 +19819,28 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/supply/dock)
+"aSG" = (
+/obj/effect/floor_decal/spline/fancy/wood{
+	icon_state = "spline_fancy";
+	dir = 1
+	},
+/turf/simulated/floor/holofloor/tiled/dark,
+/area/holodeck/source_meetinghall)
 "aSH" = (
-/obj/effect/floor_decal/spline/fancy/wood,
-/turf/simulated/floor/holofloor/wood,
-/area/space)
+/obj/effect/floor_decal/carpet{
+	dir = 5
+	},
+/obj/effect/floor_decal/carpet{
+	dir = 6
+	},
+/obj/effect/floor_decal/carpet{
+	dir = 9
+	},
+/obj/effect/floor_decal/carpet{
+	dir = 10
+	},
+/turf/simulated/floor/holofloor/carpet,
+/area/holodeck/source_meetinghall)
 "aSI" = (
 /obj/machinery/door/airlock/centcom{
 	autoset_access = 0;
@@ -19968,10 +20002,18 @@
 	},
 /area/wizard_station)
 "aSX" = (
-/obj/structure/table/holo_woodentable,
-/obj/effect/floor_decal/spline/fancy/wood,
-/turf/simulated/floor/holofloor/wood,
-/area/space)
+/obj/structure/holostool,
+/obj/effect/floor_decal/carpet{
+	dir = 8
+	},
+/obj/effect/floor_decal/carpet{
+	dir = 1
+	},
+/obj/effect/floor_decal/carpet{
+	dir = 9
+	},
+/turf/simulated/floor/holofloor/carpet,
+/area/holodeck/source_meetinghall)
 "aSY" = (
 /obj/structure/closet/secure_closet{
 	name = "merchant's locker";
@@ -19990,6 +20032,26 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/shuttle/merchant/home)
+"aSZ" = (
+/obj/structure/holostool,
+/obj/effect/floor_decal/carpet{
+	dir = 1
+	},
+/turf/simulated/floor/holofloor/carpet,
+/area/holodeck/source_meetinghall)
+"aTa" = (
+/obj/structure/holostool,
+/obj/effect/floor_decal/carpet{
+	dir = 4
+	},
+/obj/effect/floor_decal/carpet{
+	dir = 1
+	},
+/obj/effect/floor_decal/carpet{
+	dir = 5
+	},
+/turf/simulated/floor/holofloor/carpet,
+/area/holodeck/source_meetinghall)
 "aTb" = (
 /obj/effect/paint/silver,
 /obj/effect/paint_stripe/yellow,
@@ -20116,13 +20178,6 @@
 	icon_state = "diagonalWall3"
 	},
 /area/shuttle/syndicate_elite/mothership)
-"aTw" = (
-/obj/effect/floor_decal/spline/fancy/wood{
-	icon_state = "spline_fancy";
-	dir = 1
-	},
-/turf/simulated/floor/holofloor/lino,
-/area/space)
 "aTx" = (
 /obj/effect/floor_decal/corner/black{
 	icon_state = "corner_white";
@@ -20132,13 +20187,6 @@
 	icon_state = "dark"
 	},
 /area/syndicate_mothership/elite_squad)
-"aTy" = (
-/obj/effect/floor_decal/spline/fancy/wood{
-	icon_state = "spline_fancy";
-	dir = 1
-	},
-/turf/simulated/floor/holofloor/tiled/dark,
-/area/space)
 "aTz" = (
 /obj/structure/decoy{
 	icon_state = "ai-malf";
@@ -25373,54 +25421,6 @@
 /obj/structure/flora/grass/green,
 /turf/simulated/floor/holofloor/snow,
 /area/holodeck/source_snowfield)
-"bfH" = (
-/obj/effect/floor_decal/carpet{
-	dir = 5
-	},
-/obj/effect/floor_decal/carpet{
-	dir = 6
-	},
-/obj/effect/floor_decal/carpet{
-	dir = 9
-	},
-/obj/effect/floor_decal/carpet{
-	dir = 10
-	},
-/turf/simulated/floor/holofloor/carpet,
-/area/holodeck/source_meetinghall)
-"bfI" = (
-/obj/structure/holostool,
-/obj/effect/floor_decal/carpet{
-	dir = 8
-	},
-/obj/effect/floor_decal/carpet{
-	dir = 1
-	},
-/obj/effect/floor_decal/carpet{
-	dir = 9
-	},
-/turf/simulated/floor/holofloor/carpet,
-/area/holodeck/source_meetinghall)
-"bfJ" = (
-/obj/structure/holostool,
-/obj/effect/floor_decal/carpet{
-	dir = 1
-	},
-/turf/simulated/floor/holofloor/carpet,
-/area/holodeck/source_meetinghall)
-"bfK" = (
-/obj/structure/holostool,
-/obj/effect/floor_decal/carpet{
-	dir = 4
-	},
-/obj/effect/floor_decal/carpet{
-	dir = 1
-	},
-/obj/effect/floor_decal/carpet{
-	dir = 5
-	},
-/turf/simulated/floor/holofloor/carpet,
-/area/holodeck/source_meetinghall)
 "bfL" = (
 /obj/effect/floor_decal/corner/red/three_quarters,
 /turf/simulated/floor/holofloor/tiled,
@@ -34590,10 +34590,10 @@ bcd
 aWd
 bda
 bda
+aQf
+aSE
 aSH
-aTw
-bfH
-bfH
+aSH
 beW
 beW
 beW
@@ -34792,9 +34792,9 @@ aZx
 aWd
 bda
 bda
-aSH
-aTw
-bfI
+aQf
+aSE
+aSX
 bgu
 bgu
 bgu
@@ -34994,9 +34994,9 @@ aZx
 aWd
 bda
 bdJ
-aSX
-aTw
-bfJ
+aSi
+aSE
+aSZ
 bgv
 bgv
 bgv
@@ -35196,9 +35196,9 @@ aZx
 aWd
 bda
 bdK
-aSX
-aTw
-bfJ
+aSi
+aSE
+aSZ
 bgv
 bgv
 bgv
@@ -35398,9 +35398,9 @@ aZx
 aWd
 bda
 bdK
-aSX
-aTw
-bfJ
+aSi
+aSE
+aSZ
 bgv
 bgv
 bgv
@@ -35600,9 +35600,9 @@ aZx
 aWd
 bda
 bdK
-aSX
-aTw
-bfJ
+aSi
+aSE
+aSZ
 bgv
 bgv
 bgv
@@ -35802,9 +35802,9 @@ aZx
 aWd
 bda
 bdL
-aSX
-aTw
-bfJ
+aSi
+aSE
+aSZ
 bgv
 bgv
 bgv
@@ -36004,9 +36004,9 @@ aZx
 aWd
 bda
 bda
-aSH
-aTw
-bfK
+aQf
+aSE
+aTa
 bgw
 bgw
 bhu
@@ -36206,8 +36206,8 @@ aZx
 aWd
 bda
 bda
-aSH
-aTw
+aQf
+aSE
 beW
 beW
 beW
@@ -36408,8 +36408,8 @@ bce
 aWd
 bdb
 bda
-aSH
-aTy
+aQf
+aSG
 beX
 beX
 beX
@@ -67512,7 +67512,7 @@ aah
 aah
 aah
 aah
-aQH
+acY
 aah
 aab
 aab
@@ -67711,11 +67711,11 @@ aah
 aah
 aah
 aah
-aQH
-aQH
-aQH
-aQH
-aQH
+acY
+acY
+acY
+acY
+acY
 aab
 aab
 aQH

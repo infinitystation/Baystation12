@@ -70,7 +70,7 @@
 	islocked = 1
 
 /obj/machinery/suit_storage_unit/standard_unit
-	req_access = null
+	islocked = 0
 
 /obj/machinery/photocopier/faxmachine/centcomm
 	req_access = list(access_cent_general)
