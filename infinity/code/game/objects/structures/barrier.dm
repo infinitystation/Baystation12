@@ -282,11 +282,15 @@
 	icon_state = "fcbarrier"
 	var/health = 800
 	var/maxhealth = 800
-	var/basic_chance = 80
+	var/basic_chance = 75
 	density = 1
 	throwpass = 1
 	anchored = 1
 	atom_flags = ATOM_FLAG_CLIMBABLE | ATOM_FLAG_CHECKS_BORDER
+
+/obj/structure/barrierfc/set_dir()
+	..()
+	update_layers()
 
 /obj/structure/barrierfc/proc/update_layers()
 	if(dir == NORTH)
@@ -295,10 +299,6 @@
 	else
 		plane = ABOVE_HUMAN_PLANE
 		layer = ABOVE_HUMAN_LAYER
-
-/obj/structure/barrierfc/set_dir()
-	..()
-	update_layers()
 
 /obj/structure/barrierfc/Destroy()
 	if(health <= 0)

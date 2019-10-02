@@ -80,14 +80,21 @@
 	time = 60
 
 /datum/stack_recipe/tile/fcfloor
-	title = "Concrete pavement."
+	title = "concrete pavement"
 	result_type = /obj/item/stack/tile/fconcrete
+
+/datum/stack_recipe/furniture/wall_frame/fc
+	title = "concrete wall frame"
+	result_type = /obj/structure/wall_frame/fconcrete
+	req_amount = 2
+	time = 20
 
 /material/fconcrete/generate_recipes(var/reinforce_material)
 	. = ..()
 	if(reinforce_material)	//recipies below don't support composite materials
 		return
 	. += new/datum/stack_recipe/mainkraft/barrier(src)
+	. += new/datum/stack_recipe/furniture/wall_frame/fc(src)
 	. += new/datum/stack_recipe/tile/fcfloor(src)
 	. += new/datum/stack_recipe/baseball_bat(src)
 	. += new/datum/stack_recipe/ashtray(src)
