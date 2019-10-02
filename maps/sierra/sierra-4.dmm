@@ -20057,6 +20057,23 @@
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/titanium,
 /area/shuttle/merchant/home)
+"aTc" = (
+/obj/effect/floor_decal/borderfloor{
+	icon_state = "borderfloor_white";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	icon_state = "bordercolor";
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/photocopier/faxmachine{
+	department = "Merchant Outpost";
+	req_access = list("ACCESS_MERCHANT");
+	send_access = list("ACCESS_MERCHANT")
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/merchant_station)
 "aTg" = (
 /obj/effect/paint/silver,
 /obj/effect/paint_stripe/yellow,
@@ -24518,22 +24535,6 @@
 /obj/structure/table/reinforced,
 /obj/item/weapon/folder,
 /obj/item/weapon/folder,
-/turf/simulated/floor/tiled/monotile,
-/area/merchant_station)
-"bdC" = (
-/obj/effect/floor_decal/borderfloor{
-	icon_state = "borderfloor_white";
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/blue/border{
-	icon_state = "bordercolor";
-	dir = 1
-	},
-/obj/structure/table/reinforced,
-/obj/machinery/photocopier/faxmachine{
-	department = "Merchant Outpost";
-	req_access = list("ACCESS_MERCHANT")
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/merchant_station)
 "bdD" = (
@@ -66100,7 +66101,7 @@ aTr
 aab
 aab
 aWa
-bdC
+aTc
 bem
 aTn
 bfA
