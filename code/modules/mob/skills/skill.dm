@@ -146,7 +146,20 @@ GLOBAL_LIST_EMPTY(skills)
 						"Experienced"		= "You have experience with heavy work in trying physical conditions, and are in excellent shape. You visit the gym frequently.",
 						"Master"		= "In addition to your excellent strength and endurance, you have a lot of experience with the specific physical demands of your job. You may have competitive experience with some form of athletics.")
 	difficulty = SKILL_AVERAGE
-
+//[INF]
+/decl/hierarchy/skill/general/hauling/get_cost(var/level)
+	switch(level)
+		if(SKILL_BASIC)
+			return 1
+		if(SKILL_ADEPT)
+			return 2
+		if(SKILL_EXPERT)
+			return 3
+		if(SKILL_PROF)
+			return 4
+		else
+			return 0
+//[/INF]
 /decl/hierarchy/skill/general/computer
 	ID = "computer"
 	name = "Information Technology"
