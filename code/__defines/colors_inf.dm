@@ -24,4 +24,4 @@
 #define LIGHT_COLOR_HALOGEN    "#f0fafa" //Barely visible cyan-ish hue, as the doctor prescribed. rgb(240, 250, 250)
 #define LIGHT_COLOR_EMERGENCY  "#ff3232" //Red color used by emergency lighting. rgb(255, 50, 50)
 
-#define COLOR_FCONCRETE         "#696969" // 69 owo uwu 69
+#define COLOR_FCONCRETE         "#d3d3d3"

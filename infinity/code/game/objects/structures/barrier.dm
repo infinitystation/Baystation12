@@ -280,8 +280,8 @@
 	desc = "A concrete block you can take cover behind."
 	icon = 'infinity/icons/obj/barrier.dmi'
 	icon_state = "fcbarrier"
-	var/health = 400
-	var/maxhealth = 400
+	var/health = 800
+	var/maxhealth = 800
 	var/basic_chance = 80
 	density = 1
 	throwpass = 1
@@ -289,15 +289,12 @@
 	atom_flags = ATOM_FLAG_CLIMBABLE | ATOM_FLAG_CHECKS_BORDER
 
 /obj/structure/barrierfc/proc/update_layers()
-	if(dir != SOUTH)
+	if(dir == NORTH)
 		layer = initial(layer) + 0.1
 		plane = initial(plane)
-	else if(dir == SOUTH && density)
-		layer = ABOVE_OBJ_LAYER + 0.1
-		plane = ABOVE_HUMAN_PLANE
 	else
-		layer = initial(layer) + 0.1
-		plane = initial(plane)
+		plane = ABOVE_HUMAN_PLANE
+		layer = ABOVE_HUMAN_LAYER
 
 /obj/structure/barrierfc/set_dir()
 	..()
