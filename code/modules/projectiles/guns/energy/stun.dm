@@ -13,7 +13,7 @@
 		list(mode_name="shock", projectile_type=/obj/item/projectile/beam/stun/shock),
 		)
 
-	bulk = GUN_BULK_REVOLVER
+	bulk = GUN_BULK_PISTOL
 
 /obj/item/weapon/gun/energy/taser/carbine
 	name = "electrolaser carbine"

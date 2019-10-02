@@ -56,7 +56,7 @@
 	max_shells = 7 //match the ammo box capacity, also it can hold a round in the chamber anyways, for a total of 8.
 	ammo_type = /obj/item/ammo_casing/shotgun
 
-	bulk = GUN_BULK_SNIPER_RIFLE
+	bulk = GUN_BULK_RIFLE
 
 /obj/item/weapon/gun/projectile/shotgun/doublebarrel
 	name = "double-barreled shotgun"

@@ -91,7 +91,7 @@
 		)
 
 	accuracy = 1
-	bulk = GUN_BULK_CARABINE
+	bulk = GUN_BULK_SMG
 	w_class = ITEM_SIZE_LARGE
 	one_hand_penalty = 4
 

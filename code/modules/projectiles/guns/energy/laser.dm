@@ -96,7 +96,7 @@ obj/item/weapon/gun/energy/retro
 
 //	accuracy = 2
 	one_hand_penalty = 6 //large and heavy
-	bulk = GUN_BULK_SNIPER_RIFLE
+	bulk = GUN_BULK_MACHINEGUN
 	w_class = ITEM_SIZE_HUGE
 
 /obj/item/weapon/gun/energy/lasercannon/mounted

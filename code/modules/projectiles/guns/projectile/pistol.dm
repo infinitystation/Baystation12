@@ -38,8 +38,6 @@
 	fire_delay = 7
 	ammo_indicator = TRUE
 
-	bulk = GUN_BULK_REVOLVER
-
 /obj/item/weapon/gun/projectile/pistol/military/alt
 	desc = "The HelTek Optimus, best known as the standard-issue sidearm for the ICCG Navy."
 	icon = 'icons/obj/guns/military_pistol2.dmi'
@@ -81,7 +79,7 @@
 	ammo_indicator = TRUE
 
 	accuracy = 2
-	bulk = GUN_BULK_SMG //inf
+	bulk = GUN_BULK_REVOLVER//inf
 	one_hand_penalty = 2
 
 /obj/item/weapon/gun/projectile/pistol/throwback
@@ -96,7 +94,7 @@
 	var/base_icon = "pistol1"
 
 	accuracy_power = 5
-	bulk = GUN_BULK_SMG //inf
+	bulk = GUN_BULK_REVOLVER //inf
 	one_hand_penalty = 2
 
 /obj/item/weapon/gun/projectile/pistol/throwback/Initialize()
@@ -129,7 +127,7 @@
 	mag_remove_sound = 'sound/weapons/guns/interaction/hpistol_magout.ogg'
 	empty_icon = FALSE
 
-	bulk = GUN_BULK_SMG //inf
+	bulk = GUN_BULK_REVOLVER //inf
 
 /obj/item/weapon/gun/projectile/pistol/gyropistol/on_update_icon()
 	..()
