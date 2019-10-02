@@ -280,25 +280,34 @@
 	desc = "A concrete block you can take cover behind."
 	icon = 'infinity/icons/obj/barrier.dmi'
 	icon_state = "fcbarrier"
-	var/health = 800
-	var/maxhealth = 800
+	var/health = 900
+	var/maxhealth = 900
 	var/basic_chance = 75
 	density = 1
 	throwpass = 1
 	anchored = 1
 	atom_flags = ATOM_FLAG_CLIMBABLE | ATOM_FLAG_CHECKS_BORDER
+	layer = 10
+	plane = -5
+
+/obj/structure/barrierfc/on_update_icon()
+	icon_state = "fcbarrier"
 
 /obj/structure/barrierfc/set_dir()
 	..()
 	update_layers()
 
+/obj/structure/barrierfc/Initialize()
+	. = ..()
+	update_layers()
+
 /obj/structure/barrierfc/proc/update_layers()
-	if(dir == NORTH)
+	if(dir != NORTH)
+		layer = 10
+		plane = -5
+	else
 		layer = initial(layer) + 0.1
 		plane = initial(plane)
-	else
-		plane = ABOVE_HUMAN_PLANE
-		layer = ABOVE_HUMAN_LAYER
 
 /obj/structure/barrierfc/Destroy()
 	if(health <= 0)
@@ -434,9 +443,11 @@ obj/structure/barrierfc/bullet_act(var/obj/item/projectile/P)
 	desc = "A steel block you can take cover behind."
 	icon = 'infinity/icons/obj/barrier.dmi'
 	icon_state = "stlbarrier"
-	var/health = 600
-	var/maxhealth = 600
+	health = 700
+	maxhealth = 700
 
+/obj/structure/barrierfc/stl/on_update_icon()
+	icon_state = "stlbarrier"
 
 /obj/structure/barrierfc/stl/Destroy()
 	if(health <= 0)
@@ -447,3 +458,22 @@ obj/structure/barrierfc/bullet_act(var/obj/item/projectile/P)
 		new /obj/item/stack/material/steel(src.loc)
 		new /obj/item/stack/material/steel(src.loc)
 	return ..()
+
+/obj/structure/barricade/spike/Crossed(mob/living/victim)
+	. = ..()
+	if(!isliving(victim))
+		return
+	if(world.time - victim.last_bumped <= 15) //spam guard
+		return FALSE
+	victim.last_bumped = world.time
+	var/damage_holder = damage
+	var/target_zone = pick(BP_CHEST, BP_GROIN, BP_L_LEG, BP_R_LEG)
+
+	if(MOVING_DELIBERATELY(victim)) //walking into this is less hurty than running
+		damage_holder = (damage / 4)
+
+	if(isanimal(victim)) //simple animals have simple health, reduce our damage
+		damage_holder = (damage / 4)
+
+	victim.apply_damage(damage_holder, BRUTE, target_zone, damage_flags = DAM_SHARP, used_weapon = src)
+	visible_message(SPAN_DANGER("\The [victim] is [pick(poke_description)] by \the [src]!"))
