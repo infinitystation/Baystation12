@@ -3509,7 +3509,7 @@
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
 "ha" = (
-/obj/random/hostile,
+/obj/random/hostile/asteroid,
 /turf/simulated/floor/asteroid,
 /area/mine/explored)
 "hb" = (
@@ -3527,10 +3527,6 @@
 /obj/item/weapon/reagent_containers/food/drinks/glass2/shot,
 /turf/simulated/floor/tiled/techfloor,
 /area/outpost/mining/relay)
-"he" = (
-/obj/random/hostile,
-/turf/simulated/floor/asteroid,
-/area/mine/unexplored)
 "hf" = (
 /obj/random/junk,
 /turf/simulated/floor/airless/asteroid,
@@ -19889,7 +19885,7 @@ ab
 ab
 ab
 ap
-he
+aq
 ab
 ab
 ab
