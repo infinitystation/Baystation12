@@ -274,3 +274,160 @@
 			to_chat(user, "<span class='notice'>You need more welding fuel to complete this task.</span>")
 			return
 	return
+
+/obj/structure/barrierfc
+	name = "concrete block"
+	desc = "A concrete block you can take cover behind."
+	icon = 'infinity/icons/obj/barrier.dmi'
+	icon_state = "fcbarrier"
+	var/health = 400
+	var/maxhealth = 400
+	var/basic_chance = 80
+	density = 1
+	throwpass = 1
+	anchored = 1
+	atom_flags = ATOM_FLAG_CLIMBABLE | ATOM_FLAG_CHECKS_BORDER
+
+/obj/structure/barrierfc/proc/update_layers()
+	if(dir != SOUTH)
+		layer = initial(layer) + 0.1
+		plane = initial(plane)
+	else if(dir == SOUTH && density)
+		layer = ABOVE_OBJ_LAYER + 0.1
+		plane = ABOVE_HUMAN_PLANE
+	else
+		layer = initial(layer) + 0.1
+		plane = initial(plane)
+
+/obj/structure/barrierfc/set_dir()
+	..()
+	update_layers()
+
+/obj/structure/barrierfc/Destroy()
+	if(health <= 0)
+		visible_message("<span class='danger'>[src] was destroyed!</span>")
+		playsound(src, 'sound/effects/clang.ogg', 100, 1)
+		new /obj/item/stack/material/fconcrete(src.loc)
+		new /obj/item/stack/material/fconcrete(src.loc)
+		new /obj/item/stack/material/fconcrete(src.loc)
+		new /obj/item/stack/material/fconcrete(src.loc)
+	return ..()
+
+/obj/structure/barrierfc/attackby(obj/item/W as obj, mob/user as mob)
+	if(isWelder(W))
+		var/obj/item/weapon/weldingtool/WT = W
+		if(health == maxhealth)
+			to_chat(user, "<span class='notice'>[src] is fully repaired.</span>")
+			return
+		if(!WT.isOn())
+			to_chat(user, "<span class='notice'>[W] should be turned on firstly.</span>")
+			return
+		if(WT.remove_fuel(0,user))
+			visible_message("<span class='warning'>\The [user] is repairing [src]...</span>")
+			playsound(src, 'sound/items/Welder.ogg', 100, 1)
+			if(do_after(user, max(5, health / 5), src) && WT && WT.isOn())
+				to_chat(user, "<span class='notice'>You finish repairing the damage to [src].</span>")
+				playsound(src, 'sound/items/Welder2.ogg', 100, 1)
+				health = maxhealth
+		else
+			to_chat(user, "<span class='notice'>You need more welding fuel to complete this task.</span>")
+		update_icon()
+		return
+
+/obj/structure/barrierfc/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
+	if(!density)
+		return 1
+
+	if(istype(mover, /obj/item/projectile))
+		var/obj/item/projectile/proj = mover
+
+		if(proj.firer && Adjacent(proj.firer))
+			return 1
+
+		if(mover.dir != reverse_direction(dir))
+			return 1
+
+		if(get_dist(proj.starting, loc) <= 1)//allows to fire from 1 tile away of barrier
+			return 1
+
+		return check_cover(mover, target)
+
+	if(get_dir(get_turf(src), target) == dir && density)//turned in front of barrier
+		return 0
+	return 1
+
+/obj/structure/barrierfc/CheckExit(atom/movable/O as mob|obj, target as turf)
+	if(istype(O) && O.checkpass(PASS_FLAG_TABLE))
+		return 1
+	if (get_dir(loc, target) == dir)
+		return !density
+	else
+		return 1
+	return 1
+
+obj/structure/barrierfc/bullet_act(var/obj/item/projectile/P)
+	..()
+	take_damage(P.get_structure_damage())
+
+/obj/structure/barrierfc/attack_generic(var/mob/user, var/damage, var/attack_verb)
+	take_damage(damage)
+	attack_animation(user)
+	if(damage >=1)
+		user.visible_message("<span class='danger'>[user] [attack_verb] \the [src]!</span>")
+	else
+		user.visible_message("<span class='danger'>[user] [attack_verb] \the [src] harmlessly!</span>")
+	return 1
+
+/obj/structure/barrierfc/take_damage(damage)
+	health -= damage * 0.5
+	if(health <= 0)
+		Destroy()
+	else
+		playsound(src.loc, 'sound/effects/bang.ogg', 75, 1)
+
+/obj/structure/barrierfc/proc/check_cover(obj/item/projectile/P, turf/from)
+	var/turf/cover = get_turf(src)
+	var/chance = basic_chance
+
+	if(!cover)
+		return 1
+
+	var/mob/living/carbon/human/M = locate(src.loc)
+	if(M)
+		chance += 30
+
+		if(M.lying)
+			chance += 20
+
+	if(get_dir(loc, from) == dir)
+		chance += 10
+
+	if(prob(chance))
+		visible_message("<span class='warning'>[P] hits \the [src]!</span>")
+		bullet_act(P)
+		return 0
+
+	return 1
+
+/obj/structure/barrierfc/MouseDrop_T(mob/user as mob)
+	if(src.loc != user.loc)
+		to_chat(user, "You start climbing onto [src]...")
+		step(src, get_dir(src, src.dir))
+
+/obj/structure/barrierfc/ex_act(severity)
+	switch(severity)
+		if(1.0)
+			new /obj/item/stack/material/steel(src.loc)
+			new /obj/item/stack/material/steel(src.loc)
+			if(prob(50))
+				new /obj/item/stack/material/steel(src.loc)
+			qdel(src)
+			return
+		if(2.0)
+			new /obj/item/stack/material/steel(src.loc)
+			if(prob(50))
+				new /obj/item/stack/material/steel(src.loc)
+			qdel(src)
+			return
+		else
+	return

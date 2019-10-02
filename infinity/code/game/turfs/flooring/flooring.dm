@@ -13,3 +13,10 @@
 	build_type = null
 	can_engrave = FALSE
 	footstep_type = FOOTSTEP_GRASS
+
+/decl/flooring/tiling/fc
+	name = "concrete"
+	desc = "Concrete pavement. Nothing extra."
+	icon = 'icons/turf/flooring/misc.dmi'
+	icon_base = "concrete"
+	build_type = /obj/item/stack/tile/fconcrete

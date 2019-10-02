@@ -43,3 +43,24 @@
 	if(istype(M) && locate(/obj/item/organ/internal/xeno/hivenode) in M.internal_organs)
 		return 1
 	return 0
+
+/material/fconcrete
+	name = MATERIAL_FCONCRETE
+	lore_text = "One of the strongest materials of all time, combining the good old classics and new technologies."
+	wall_name = "bulkhead"
+	stack_type = /obj/item/stack/material/fconcrete
+	integrity = 400
+	melting_point = 6000
+	icon_base = "solid"
+	icon_reinf = "reinf_over"
+	icon_colour = "#696969"
+	explosion_resistance = 25
+	brute_armor = 6
+	burn_armor = 10
+	hardness = 80
+	weight = 23
+	stack_origin_tech = list(TECH_MATERIAL = 2)
+	hitsound = 'sound/weapons/smash.ogg'
+	construction_difficulty = 2
+	sale_price = 2
+	value = 12

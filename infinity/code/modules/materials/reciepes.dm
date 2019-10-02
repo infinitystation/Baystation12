@@ -71,3 +71,47 @@
 	if(reinforce_material)	//recipies below don't support composite materials
 		return
 	. += new/datum/stack_recipe/mainkraft/papercup(src)
+
+/datum/stack_recipe/mainkraft/barrier
+	title = "concrete block"
+	result_type = /obj/structure/barrierfc
+	req_amount = 10
+	difficulty = 1
+	time = 60
+
+/datum/stack_recipe/tile/fcfloor
+	title = "Concrete pavement."
+	result_type = /obj/item/stack/tile/fconcrete
+
+/material/fconcrete/generate_recipes(var/reinforce_material)
+	. = ..()
+	if(reinforce_material)	//recipies below don't support composite materials
+		return
+	. += new/datum/stack_recipe/mainkraft/barrier(src)
+	. += new/datum/stack_recipe/tile/fcfloor(src)
+	. += new/datum/stack_recipe/baseball_bat(src)
+	. += new/datum/stack_recipe/ashtray(src)
+	. += new/datum/stack_recipe/coin(src)
+	. += new/datum/stack_recipe/spoon(src)
+	. += new/datum/stack_recipe/ring(src)
+	. += new/datum/stack_recipe/clipboard(src)
+	. += new/datum/stack_recipe/urn(src)
+	. += new/datum/stack_recipe/furniture/chair(src)
+	. += new/datum/stack_recipe/furniture/door(src)
+	. += new/datum/stack_recipe/furniture/barricade(src)
+	. += new/datum/stack_recipe/furniture/stool(src)
+	. += new/datum/stack_recipe/furniture/bar_stool(src)
+	. += new/datum/stack_recipe/furniture/bed(src)
+	. += new/datum/stack_recipe/furniture/pew(src)
+	. += new/datum/stack_recipe/furniture/pew_left(src)
+	. += new/datum/stack_recipe/lock(src)
+	. += new/datum/stack_recipe/railing(src)
+	. += new/datum/stack_recipe/rod(src)
+	. += new/datum/stack_recipe/grip(src)
+	. += new/datum/stack_recipe/furniture/wall_frame(src)
+	. += new/datum/stack_recipe/fork(src)
+	. += new/datum/stack_recipe/knife(src)
+	. += new/datum/stack_recipe/blade(src)
+	. += new/datum/stack_recipe/furniture/rack(src)
+	. += new/datum/stack_recipe/key(src)
+
