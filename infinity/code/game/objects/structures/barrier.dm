@@ -287,6 +287,8 @@
 	throwpass = 1
 	anchored = 1
 	atom_flags = ATOM_FLAG_CLIMBABLE | ATOM_FLAG_CHECKS_BORDER
+	layer = 10
+	plane = -5
 
 /obj/structure/barrierfc/on_update_icon()
 	icon_state = "fcbarrier"
@@ -295,17 +297,23 @@
 	..()
 	update_layers()
 
+/obj/structure/barrierfc/New()
+	. = ..()
+	update_layers()
+	update_icon()
+
 /obj/structure/barrierfc/Initialize()
 	. = ..()
 	update_layers()
+	update_icon()
 
 /obj/structure/barrierfc/proc/update_layers()
-	if(dir == SOUTH)
-		layer = 10
-		plane = -5
+	if(dir != SOUTH)
+		layer = 2.5
+		plane = -15
 	else
-		layer = initial(layer) + 0.1
-		plane = initial(plane)
+		return
+	return
 
 /obj/structure/barrierfc/Destroy()
 	if(health <= 0)
