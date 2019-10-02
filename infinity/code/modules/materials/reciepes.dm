@@ -53,6 +53,7 @@
 	. += new/datum/stack_recipe/mainkraft/marmor(src)
 	. += new/datum/stack_recipe/mainkraft/harmor(src)
 	. += new/datum/stack_recipe/mainkraft/beaker(src)
+	. += new/datum/stack_recipe/mainkraft/barrierstl(src)
 
 /material/plastic/generate_recipes(var/reinforce_material)
 	. = ..()
@@ -75,6 +76,13 @@
 /datum/stack_recipe/mainkraft/barrier
 	title = "concrete block"
 	result_type = /obj/structure/barrierfc
+	req_amount = 10
+	difficulty = 1
+	time = 60
+
+/datum/stack_recipe/mainkraft/barrierstl
+	title = "steel block"
+	result_type = /obj/structure/barrierfc/stl
 	req_amount = 10
 	difficulty = 1
 	time = 60

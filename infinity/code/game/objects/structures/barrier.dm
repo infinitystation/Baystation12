@@ -428,3 +428,22 @@ obj/structure/barrierfc/bullet_act(var/obj/item/projectile/P)
 			return
 		else
 	return
+
+/obj/structure/barrierfc/stl
+	name = "steel block"
+	desc = "A steel block you can take cover behind."
+	icon = 'infinity/icons/obj/barrier.dmi'
+	icon_state = "stlbarrier"
+	var/health = 600
+	var/maxhealth = 600
+
+
+/obj/structure/barrierfc/stl/Destroy()
+	if(health <= 0)
+		visible_message("<span class='danger'>[src] was destroyed!</span>")
+		playsound(src, 'sound/effects/clang.ogg', 100, 1)
+		new /obj/item/stack/material/steel(src.loc)
+		new /obj/item/stack/material/steel(src.loc)
+		new /obj/item/stack/material/steel(src.loc)
+		new /obj/item/stack/material/steel(src.loc)
+	return ..()
