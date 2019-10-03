@@ -61,6 +61,6 @@
 	weight = 23
 	stack_origin_tech = list(TECH_MATERIAL = 2)
 	hitsound = 'sound/weapons/smash.ogg'
-	construction_difficulty = 2
-	sale_price = 2
+	construction_difficulty = 1
+	sale_price = 1
 	value = 12
