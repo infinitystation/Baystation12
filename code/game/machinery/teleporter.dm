@@ -223,6 +223,9 @@
 	idle_power_usage = 10
 	active_power_usage = 2000
 	var/obj/machinery/computer/teleporter/com
+	construct_state = /decl/machine_construction/default/panel_closed //inf
+	base_type = /obj/machinery/teleport/hub //inf
+	uncreated_component_parts = null //inf
 
 /obj/machinery/teleport/hub/New()
 	..()
@@ -256,6 +259,9 @@
 	active_power_usage = 2000
 	var/obj/machinery/computer/teleporter/com
 	var/obj/machinery/teleport/hub/hub
+	construct_state = /decl/machine_construction/default/panel_closed //inf
+	base_type = /obj/machinery/teleport/station //inf
+	uncreated_component_parts = null //inf
 
 /obj/machinery/teleport/station/New()
 	..()

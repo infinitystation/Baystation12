@@ -88,3 +88,17 @@
 	req_tech = list(TECH_DATA = 2)
 	build_path = /obj/item/weapon/stock_parts/circuitboard/area_atmos
 	sort_string = "KCAAR"
+
+/datum/design/circuit/emitter
+	name = "emitter"
+	id = "emitter"
+	req_tech = list(TECH_POWER = 4, TECH_ENGINEERING = 3)
+	build_path = /obj/item/weapon/stock_parts/circuitboard/emitter
+	sort_string = "KCASE"
+
+/datum/design/circuit/sublimator
+	name = "reagent sublimator"
+	id = "reagent_sublimator"
+	req_tech = list(TECH_POWER = 2, TECH_ENGINEERING = 1)
+	build_path = /obj/item/weapon/stock_parts/circuitboard/sublimator
+	sort_string = "KCASS"
