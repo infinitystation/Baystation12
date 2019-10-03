@@ -302,11 +302,6 @@
 	update_layers()
 	update_icon()
 
-/obj/structure/barrierfc/Initialize()
-	. = ..()
-	update_layers()
-	update_icon()
-
 /obj/structure/barrierfc/proc/update_layers()
 	if(dir != SOUTH)
 		layer = 2.5
