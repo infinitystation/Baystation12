@@ -132,4 +132,4 @@
 	partial_understanding = list(/datum/language/skrellprim = 20)
 
 /datum/language/vox
-	partial_understanding = list(/datum/language/voxprim = 25)
+	partial_understanding = list(/datum/language/voxprim = 30)
