@@ -15876,6 +15876,11 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/center)
+"yN" = (
+/obj/effect/fluid_mapped,
+/obj/effect/fluid_mapped,
+/turf/simulated/floor/aquarium,
+/area/rnd/xenobiology/level2)
 "yO" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -16469,6 +16474,12 @@
 /obj/machinery/air_sensor/nacelle/second/oxygen,
 /turf/simulated/floor/reinforced/oxygen,
 /area/thruster/d3port)
+"zR" = (
+/obj/effect/fluid_mapped,
+/obj/effect/fluid_mapped,
+/mob/living/simple_animal/aquatic/fish,
+/turf/simulated/floor/aquarium,
+/area/rnd/xenobiology/level2)
 "zS" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5
@@ -20269,6 +20280,10 @@
 /obj/effect/floor_decal/corner/grey/border,
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod9/station)
+"Gl" = (
+/obj/structure/flora/seaweed,
+/turf/simulated/floor/aquarium,
+/area/rnd/xenobiology/level2)
 "Gm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -21262,6 +21277,12 @@
 /obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/airlock)
+"HE" = (
+/obj/effect/fluid_mapped,
+/obj/effect/fluid_mapped,
+/mob/living/simple_animal/aquatic/fish/grump,
+/turf/simulated/floor/aquarium,
+/area/rnd/xenobiology/level2)
 "HF" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -22179,6 +22200,13 @@
 	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/cargo)
+"Jb" = (
+/obj/effect/fluid_mapped,
+/obj/effect/fluid_mapped,
+/obj/structure/flora/seaweed/glow,
+/mob/living/simple_animal/aquatic/fish,
+/turf/simulated/floor/aquarium,
+/area/rnd/xenobiology/level2)
 "Jc" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -23891,7 +23919,11 @@
 /area/maintenance/thirddeck/port)
 "Ma" = (
 /obj/effect/fluid_mapped,
-/turf/simulated/floor/reinforced,
+/obj/machinery/camera/network/research{
+	c_tag = "Xenobio - level two - aqua chamber"
+	},
+/obj/effect/fluid_mapped,
+/turf/simulated/floor/aquarium,
 /area/rnd/xenobiology/level2)
 "Mb" = (
 /obj/effect/floor_decal/techfloor{
@@ -24013,6 +24045,12 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod8/station)
+"Mj" = (
+/obj/effect/fluid_mapped,
+/obj/effect/fluid_mapped,
+/mob/living/simple_animal/aquatic/fish/judge,
+/turf/simulated/floor/aquarium,
+/area/rnd/xenobiology/level2)
 "Mk" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 5;
@@ -24073,7 +24111,9 @@
 	dir = 8;
 	icon_state = "tube_map"
 	},
-/turf/simulated/floor/reinforced,
+/obj/effect/fluid_mapped,
+/obj/structure/flora/seaweed,
+/turf/simulated/floor/aquarium,
 /area/rnd/xenobiology/level2)
 "Mp" = (
 /obj/effect/floor_decal/techfloor,
@@ -24146,13 +24186,15 @@
 /area/rnd/xenobiology/level2)
 "Mu" = (
 /obj/effect/fluid_mapped,
-/mob/living/simple_animal/aquatic/fish,
-/turf/simulated/floor/reinforced,
+/obj/effect/fluid_mapped,
+/obj/structure/flora/seaweed/large,
+/turf/simulated/floor/aquarium,
 /area/rnd/xenobiology/level2)
 "Mv" = (
 /obj/effect/fluid_mapped,
-/mob/living/simple_animal/aquatic/fish/grump,
-/turf/simulated/floor/reinforced,
+/obj/effect/fluid_mapped,
+/obj/structure/flora/seaweed/glow,
+/turf/simulated/floor/aquarium,
 /area/rnd/xenobiology/level2)
 "Mw" = (
 /obj/machinery/door/airlock/multi_tile/research{
@@ -24519,25 +24561,24 @@
 /area/rnd/xenobiology/level2)
 "MZ" = (
 /obj/effect/fluid_mapped,
-/obj/effect/floor_decal/corner_steel_grid,
-/mob/living/simple_animal/aquatic/fish/judge,
-/turf/simulated/floor/reinforced,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/fluid_mapped,
+/turf/simulated/floor/aquarium,
 /area/rnd/xenobiology/level2)
 "Na" = (
 /obj/effect/fluid_mapped,
-/obj/effect/floor_decal/corner_steel_grid{
-	icon_state = "steel_grid";
-	dir = 10
-	},
-/turf/simulated/floor/reinforced,
+/obj/effect/fluid_mapped,
+/obj/structure/flora/seaweed/mid,
+/turf/simulated/floor/aquarium,
 /area/rnd/xenobiology/level2)
 "Nb" = (
 /obj/effect/fluid_mapped,
-/obj/effect/floor_decal/corner_steel_grid{
-	icon_state = "steel_grid";
-	dir = 8
-	},
-/turf/simulated/floor/reinforced,
+/obj/effect/fluid_mapped,
+/obj/structure/flora/seaweed,
+/mob/living/simple_animal/aquatic/fish/grump,
+/turf/simulated/floor/aquarium,
 /area/rnd/xenobiology/level2)
 "Nc" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -25322,13 +25363,6 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/xenobiology/entry2)
-"Ot" = (
-/obj/effect/fluid_mapped,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/reinforced,
-/area/rnd/xenobiology/level2)
 "Ou" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -26844,13 +26878,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/thirddeck/aft)
-"QU" = (
-/obj/effect/fluid_mapped,
-/obj/machinery/camera/network/research{
-	c_tag = "Xenobio - level two - aqua chamber"
-	},
-/turf/simulated/floor/reinforced,
-/area/rnd/xenobiology/level2)
 "QV" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/reagent_dispensers/fueltank,
@@ -53760,9 +53787,9 @@ EY
 Ip
 Nv
 Nv
-Ma
+yN
 Mo
-Mu
+Jb
 MH
 NA
 NO
@@ -53961,10 +53988,10 @@ LM
 bX
 IA
 Nv
-Ma
-Mu
-Ma
-Ma
+Gl
+Jb
+yN
+Na
 MH
 NB
 NP
@@ -54163,10 +54190,10 @@ LM
 ym
 Fz
 Nv
-Ma
-Ma
-Ma
-MZ
+yN
+yN
+Mu
+Mj
 MH
 NC
 NQ
@@ -54366,9 +54393,9 @@ xQ
 DB
 Nv
 Nv
-QU
-Mu
-Na
+Ma
+zR
+yN
 OF
 SI
 SJ
@@ -54568,9 +54595,9 @@ BA
 Hf
 Hj
 Nv
+HE
 Mv
-Ma
-Nb
+Mu
 Nv
 Nv
 Nv
@@ -54770,9 +54797,9 @@ YS
 YS
 Hk
 Nv
-Ma
-Ot
-Mv
+Na
+MZ
+Nb
 Nv
 Hm
 Hm
