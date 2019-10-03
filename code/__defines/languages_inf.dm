@@ -34,17 +34,17 @@
 //A vot bistruyu ustnuyu rech - vryad li
 //No zato kashdiy mog bi pochuchut ponimat ksenotu, ne s pervogo raza, no vse she
 
-#define LANGUAGE_PRIMITIVE_TAJ				"Primitive siik'maas"
-#define LANGUAGE_PRIMITIVE_RESOMI			"Primitive schechi"
-#define LANGUAGE_PRIMITIVE_UNATI			"Primitive sinta'unathi"
-#define LANGUAGE_PRIMITIVE_SKRELLIAN		"Primitive skrellian"
-#define LANGUAGE_PRIMITIVE_VOX				"Primitive vox"
+#define LANGUAGE_PTAJ				"Primitive siik'maas"
+#define LANGUAGE_PRESOMI			"Primitive schechi"
+#define LANGUAGE_PUNATI			"Primitive sinta'unathi"
+#define LANGUAGE_PSKRELLIAN		"Primitive skrellian"
+#define LANGUAGE_PVOX				"Primitive vox"
 
 /decl/cultural_info/location
-	secondary_langs = list(LANGUAGE_PRIMITIVE_TAJ, LANGUAGE_PRIMITIVE_RESOMI, LANGUAGE_PRIMITIVE_UNATI, LANGUAGE_PRIMITIVE_SKRELLIAN, LANGUAGE_PRIMITIVE_VOX)
+	secondary_langs = list(LANGUAGE_PTAJ, LANGUAGE_PRESOMI, LANGUAGE_PUNATI, LANGUAGESKRELLIAN, LANGUAGE_PVOX)
 
 /datum/language/tajprim
-	name = LANGUAGE_PRIMITIVE_TAJ
+	name = LANGUAGE_PTAJ
 	desc = "Упрощенный Сиик'маас - именно так можно назвать то, что вы выучили. Конечно, с письменностью гораздо легче, но и того что вы сможете выговорить уже достаточно для выживания на Адомае."
 	speech_verb = "подмурчивает"
 	ask_verb = "мявкает"
@@ -58,7 +58,7 @@
 	partial_understanding = list(LANGUAGE_SIIK_MAAS = 30)
 
 /datum/language/rezprim
-	name = LANGUAGE_PRIMITIVE_RESOMI
+	name = LANGUAGE_PRESOMI
 	desc = "Упрощенный Счечи - именно так можно назвать то, что вы выучили. Конечно, с письменностью гораздо легче, но и того что вы сможете выговорить уже достаточно для выживания в резомьей среде."
 	speech_verb = "щебечет"
 	ask_verb = "чирикает"
@@ -73,7 +73,7 @@
 	partial_understanding = list(LANGUAGE_RESOMI = 30)
 
 /datum/language/unprim
-	name = LANGUAGE_PRIMITIVE_UNATI
+	name = LANGUAGE_PUNATI
 	desc = "Упрощенный язык унати - именно так можно назвать то, что вы выучили. Конечно, с письменностью гораздо легче, но и того что вы сможете выговорить уже достаточно для выживания на Могесе."
 	speech_verb = "шипит"
 	ask_verb = "вопросительно шипит"
@@ -92,7 +92,7 @@
 	partial_understanding = list(LANGUAGE_UNATHI_SINTA = 25, LANGUAGE_UNATHI_YEOSA = 25)
 
 /datum/language/skrellprim
-	name = LANGUAGE_PRIMITIVE_SKRELLIAN
+	name = LANGUAGE_PSKRELLIAN
 	desc = "Упрощенный Скрельский - именно так можно назвать то, что вы выучили. Конечно, с письменностью гораздо легче ведь ее вы не учили, но и того что вы сможете выговорить уже достаточно для выживания среди Скреллов. Выучить хоть часть этого языка было дорого, особенно из-за цены импланта, который помог в этом."
 	speech_verb = "квакает"
 	ask_verb = "варбл-варблает"
@@ -103,7 +103,7 @@
 	partial_understanding = list(LANGUAGE_SKRELLIAN = 20)
 
 /datum/language/voxprim
-	name = LANGUAGE_PRIMITIVE_VOX
+	name = LANGUAGE_PVOX
 	desc = "Упрощенный воксиный - именно так можно назвать то, что вы выучили. Конечно, с письменностью гораздо легче, ведь ее нет."
 	speech_verb = "гогочет"
 	ask_verb = "кудахчет"
