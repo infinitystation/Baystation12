@@ -41,7 +41,7 @@
 #define LANGUAGE_PVOX				"Primitive vox"
 
 /decl/cultural_info/location
-	secondary_langs = list(LANGUAGE_PTAJ, LANGUAGE_PRESOMI, LANGUAGE_PUNATI, LANGUAGESKRELLIAN, LANGUAGE_PVOX)
+	secondary_langs = list(LANGUAGE_PTAJ, LANGUAGE_PRESOMI, LANGUAGE_PUNATI, LANGUAGE_PSKRELLIAN, LANGUAGE_PVOX)
 
 /datum/language/tajprim
 	name = LANGUAGE_PTAJ
