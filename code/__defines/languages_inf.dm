@@ -46,8 +46,8 @@
 /datum/language/tajprim
 	name = LANGUAGE_PTAJ
 	desc = "Упрощенный Сиик'маас - именно так можно назвать то, что вы выучили. Конечно, с письменностью гораздо легче, но и того что вы сможете выговорить уже достаточно для выживания на Адомае."
-	speech_verb = "подмурчивает"
-	ask_verb = "мявкает"
+	speech_verb = "мурчит"
+	ask_verb = "вопросительно мурчит"
 	exclaim_verb = "подвывает"
 	colour = "tajaran"
 	syllables = list("mrr","rr","tajr","kir","raj","kii","mir","kra","ahk","nal","vah","khaz","jri","ran","darr",
@@ -95,7 +95,7 @@
 	name = LANGUAGE_PSKRELLIAN
 	desc = "Упрощенный Скрельский - именно так можно назвать то, что вы выучили. Конечно, с письменностью гораздо легче ведь ее вы не учили, но и того что вы сможете выговорить уже достаточно для выживания среди Скреллов. Выучить хоть часть этого языка было дорого, особенно из-за цены импланта, который помог в этом."
 	speech_verb = "квакает"
-	ask_verb = "варбл-варблает"
+	ask_verb = "поет"
 	exclaim_verb = "воет"
 	colour = "skrell"
 	syllables = list("qr","qrr","xuq","qil","quum","xuqm","vol","xrim","zaoo","qu-uu","qix","qoo","zix","*","!")
@@ -105,14 +105,14 @@
 /datum/language/voxprim
 	name = LANGUAGE_PVOX
 	desc = "Упрощенный воксиный - именно так можно назвать то, что вы выучили. Конечно, с письменностью гораздо легче, ведь ее нет."
-	speech_verb = "гогочет"
-	ask_verb = "кудахчет"
-	exclaim_verb = "арет"
+	speech_verb = "рокочет"
+	ask_verb = "кричит"
+	exclaim_verb = "орет"
 	colour = "vox"
 	syllables = list("ti","ti","ti","hi","hi","ki","ki","ki","ki","ya","ta","ha","ka","ya","chi","cha","kah", \
 	"SKRE","AHK","EHK","RAWK","KRA","AAA","EEE","KI","II","KRI","KA")
 	shorthand = "PVox"
-	partial_understanding = list(LANGUAGE_VOX = 25)
+	partial_understanding = list(LANGUAGE_VOX = 30)
 
 //tut idut tipa chtobi ksenosi ponimali primitivnie yaziki
 
