@@ -15,6 +15,9 @@
 
 	bulk = GUN_BULK_PISTOL
 
+	is_serial = 1
+	s_gun = "NT-MK30-NL"
+
 /obj/item/weapon/gun/energy/taser/carbine
 	name = "electrolaser carbine"
 	desc = "The NT Mk44 NL is a high capacity gun used for non-lethal takedowns. It can switch between high and low intensity stun shots."
@@ -36,6 +39,7 @@
 	bulk = GUN_BULK_CARABINE
 	w_class = ITEM_SIZE_LARGE
 	one_hand_penalty = 3
+	s_gun = "NT-MK44-NL"
 
 /obj/item/weapon/gun/energy/taser/mounted
 	name = "mounted electrolaser"
@@ -62,6 +66,9 @@
 
 	bulk = GUN_BULK_REVOLVER
 
+	is_serial = 1
+	s_gun = "X6"
+
 /obj/item/weapon/gun/energy/stunrevolver/rifle
 	name = "X10 stun rifle"
 	desc = "An A&M X10 Thor. A vastly oversized variant of the A&M X6 Zeus. Fires overcharged electrodes to take down hostile armored targets without harming them too much."
@@ -79,6 +86,8 @@
 	bulk = GUN_BULK_RIFLE
 	w_class = ITEM_SIZE_HUGE
 	one_hand_penalty = 6
+
+	s_gun = "X10"
 
 /obj/item/weapon/gun/energy/crossbow
 	name = "mini energy-crossbow"

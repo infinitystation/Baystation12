@@ -93,6 +93,20 @@
 	var/has_safety = TRUE
 	var/safety_icon 	   //overlay to apply to gun based on safety state, if any
 
+	///////////////////////////////////////////////////////
+	///////////////////////INFINITY////////////////////////
+	////             serial numbers things!!!          ////
+	///////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////
+
+	var/is_serial = 0 //the entrie variable that defines should the gun have serial
+	var/serial // < most important thing, this is the SERIAL itself
+	var/s_type //energy or kinetic
+	var/s_gun //gun type, e.g. LP - laep
+	//see below
+
+var/global/serials = list()
+
 /obj/item/weapon/gun/Initialize()
 	. = ..()
 	for(var/i in 1 to firemodes.len)
@@ -103,6 +117,14 @@
 
 	if(scope_zoom)
 		verbs += /obj/item/weapon/gun/proc/scope
+//INF
+	if(is_serial) //serial
+		var/snum = rand(1,10000)
+		while(snum in serials) //system against similar numbers
+			snum = rand(1,10000)
+		serial = "[s_type]-[s_gun]-[snum]" //e.g K-P20-9999
+		serials += serial //list of serials
+//INF END
 
 /obj/item/weapon/gun/update_twohanding()
 	if(one_hand_penalty)

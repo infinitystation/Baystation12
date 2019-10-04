@@ -21,6 +21,9 @@
 	w_class = ITEM_SIZE_HUGE
 	one_hand_penalty = 8
 
+	is_serial = 1
+	s_gun = "WT-29"
+
 /obj/item/weapon/gun/projectile/shotgun/pump/consume_next_projectile()
 	if(chambered)
 		return chambered.BB
@@ -57,6 +60,8 @@
 	ammo_type = /obj/item/ammo_casing/shotgun
 
 	bulk = GUN_BULK_RIFLE
+
+	s_gun = "KS-40"
 
 /obj/item/weapon/gun/projectile/shotgun/doublebarrel
 	name = "double-barreled shotgun"

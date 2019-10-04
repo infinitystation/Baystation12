@@ -14,6 +14,8 @@
 	bulk = GUN_BULK_CARABINE
 	w_class = ITEM_SIZE_LARGE
 	one_hand_penalty = 2
+	s_gun = "G40E"
+	is_serial = 1
 
 /obj/item/weapon/gun/energy/laser/mounted
 	self_recharge = 1
@@ -27,6 +29,7 @@
 	icon_state = "laserp"
 	projectile_type = /obj/item/projectile/beam/practice
 	charge_cost = 10 //How much energy is needed to fire.
+	is_serial = 0
 
 /obj/item/weapon/gun/energy/laser/practice/proc/hacked()
 	return projectile_type != /obj/item/projectile/beam/practice
@@ -62,6 +65,8 @@ obj/item/weapon/gun/energy/retro
 
 	bulk = GUN_BULK_REVOLVER
 	w_class = ITEM_SIZE_NORMAL
+	s_gun = "G21E"
+	is_serial = 1
 
 /obj/item/weapon/gun/energy/captain
 	name = "antique laser gun"
@@ -98,6 +103,8 @@ obj/item/weapon/gun/energy/retro
 	one_hand_penalty = 6 //large and heavy
 	bulk = GUN_BULK_MACHINEGUN
 	w_class = ITEM_SIZE_HUGE
+	is_serial = 1
+	s_gun = "LC"
 
 /obj/item/weapon/gun/energy/lasercannon/mounted
 	name = "mounted laser cannon"
@@ -125,6 +132,8 @@ obj/item/weapon/gun/energy/retro
 	bulk = GUN_BULK_CARABINE //inf
 	w_class = ITEM_SIZE_LARGE
 	one_hand_penalty = 2
+	s_gun = "G56E"
+	is_serial = 1
 
 /obj/item/weapon/gun/energy/xray/pistol
 	name = "G56E-s x-ray pistol"
@@ -139,6 +148,7 @@ obj/item/weapon/gun/energy/retro
 	bulk = GUN_BULK_REVOLVER
 	w_class = ITEM_SIZE_NORMAL
 	one_hand_penalty = 1
+	s_gun = "G56E-S"
 
 /obj/item/weapon/gun/energy/sniperrifle
 	name = "9E marksman energy rifle"
@@ -161,6 +171,8 @@ obj/item/weapon/gun/energy/retro
 	bulk = GUN_BULK_SNIPER_RIFLE
 	w_class = ITEM_SIZE_HUGE
 	one_hand_penalty = 5 // The weapon itself is heavy, and the long barrel makes it hard to hold steady with just one hand.
+	s_gun = "9E"
+	is_serial = 1
 
 /obj/item/weapon/gun/energy/sniperrifle/on_update_icon()
 	..()

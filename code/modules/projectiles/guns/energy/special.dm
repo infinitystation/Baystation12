@@ -17,6 +17,8 @@
 	bulk = GUN_BULK_RIFLE
 	w_class = ITEM_SIZE_HUGE
 	one_hand_penalty = 4
+	is_serial = 1
+	s_gun = "I-60"
 
 /obj/item/weapon/gun/energy/ionrifle/emp_act(severity)
 	..(max(severity, 2)) //so it doesn't EMP itself, I guess
@@ -37,6 +39,7 @@
 	bulk = GUN_BULK_REVOLVER
 	w_class = ITEM_SIZE_NORMAL
 	one_hand_penalty = 0
+	s_gun = "I-72"
 
 /obj/item/weapon/gun/energy/decloner
 	name = "biological demolecularisor"

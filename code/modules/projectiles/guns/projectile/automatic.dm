@@ -24,6 +24,9 @@
 	bulk = GUN_BULK_SMG
 	w_class = ITEM_SIZE_NORMAL
 
+	is_serial = 1
+	s_gun = "P-SMG"
+
 /obj/item/weapon/gun/projectile/automatic/on_update_icon()
 	..()
 	if(ammo_magazine)
@@ -51,6 +54,7 @@
 		)
 
 	one_hand_penalty = 2
+	s_gun = "HI-MP6"
 
 /obj/item/weapon/gun/projectile/automatic/machine_pistol/on_update_icon()
 	..()
@@ -95,6 +99,8 @@
 	w_class = ITEM_SIZE_LARGE
 	one_hand_penalty = 4
 
+	s_gun = "C-20R"
+
 /obj/item/weapon/gun/projectile/automatic/merc_smg/on_update_icon()
 	..()
 	if(ammo_magazine)
@@ -132,6 +138,8 @@
 	w_class = ITEM_SIZE_HUGE
 	one_hand_penalty = 8
 
+	s_gun = "STS-35"
+
 /obj/item/weapon/gun/projectile/automatic/assault_rifle/on_update_icon()
 	..()
 	if(ammo_magazine)
@@ -166,6 +174,8 @@
 	accuracy_power = 7
 	w_class = ITEM_SIZE_NORMAL
 	one_hand_penalty = 3
+
+	s_gun = "WT-550"
 
 
 /obj/item/weapon/gun/projectile/automatic/sec_smg/on_update_icon()
@@ -209,6 +219,8 @@
 	bulk = GUN_BULK_RIFLE
 	w_class = ITEM_SIZE_HUGE
 	one_hand_penalty = 8
+
+	s_gun = "HI-Z8"
 
 /obj/item/weapon/gun/projectile/automatic/bullpup_rifle/Initialize()
 	. = ..()
@@ -283,6 +295,8 @@
 	bulk = GUN_BULK_MACHINEGUN //inf, was 10
 	w_class = ITEM_SIZE_HUGE
 	one_hand_penalty = 10
+
+	s_gun = "L6"
 
 /obj/item/weapon/gun/projectile/automatic/l6_saw/mag
 	magazine_type = /obj/item/ammo_magazine/rifle

@@ -5,6 +5,7 @@
 	icon_state = "riotgun"
 	obj_flags =  OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BACK
+	s_type = "K" //inf thing, serials
 
 	var/release_force = 0
 	var/throw_distance = 10
