@@ -4,12 +4,6 @@
 //A vot bistruyu ustnuyu rech - vryad li
 //No zato kashdiy mog bi pochuchut ponimat ksenotu, ne s pervogo raza, no vse she
 
-#define LANGUAGE_PTAJ				"Primitive siik'maas"
-#define LANGUAGE_PRESOMI			"Primitive schechi"
-#define LANGUAGE_PUNATI			"Primitive sinta'unathi"
-#define LANGUAGE_PSKRELLIAN		"Primitive skrellian"
-#define LANGUAGE_PVOX				"Primitive vox"
-
 /decl/cultural_info/location
 	secondary_langs = list(LANGUAGE_PTAJ, LANGUAGE_PRESOMI, LANGUAGE_PUNATI, LANGUAGE_PSKRELLIAN, LANGUAGE_PVOX)
 
