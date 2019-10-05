@@ -624,8 +624,6 @@ BLIND     // can't see anything
 	var/hidden_item_max_w_class = ITEM_SIZE_SMALL
 	var/obj/item/hidden_item = null
 
-	undress_do_affter_needed = 1
-
 /obj/item/clothing/shoes/Destroy()
 	. = ..()
 	if (hidden_item)
@@ -854,9 +852,7 @@ BLIND     // can't see anything
 	var/gender_icons = 0
 	valid_accessory_slots = list(ACCESSORY_SLOT_UTILITY,ACCESSORY_SLOT_HOLSTER,ACCESSORY_SLOT_ARMBAND,ACCESSORY_SLOT_RANK,ACCESSORY_SLOT_DEPT,ACCESSORY_SLOT_DECOR,ACCESSORY_SLOT_MEDAL,ACCESSORY_SLOT_INSIGNIA)
 	restricted_accessory_slots = list(ACCESSORY_SLOT_UTILITY,ACCESSORY_SLOT_HOLSTER,ACCESSORY_SLOT_ARMBAND,ACCESSORY_SLOT_RANK,ACCESSORY_SLOT_DEPT, \
-										ACCESSORY_SLOT_OVER) // inf
-	
-	undress_do_affter_needed = 1 // inf
+										ACCESSORY_SLOT_OVER) // INF@CODE
 
 /obj/item/clothing/under/New()
 	..()
