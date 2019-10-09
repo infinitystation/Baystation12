@@ -9,7 +9,7 @@
 
 	if(GAME_STATE > RUNLEVEL_LOBBY)
 		for(var/mob/new_player/player in GLOB.player_list)
-			if(player.client && !player.client.banprisoned)
+			if(!player?.client.banprisoned)
 				player.new_player_panel()
 
 	to_world("<B>Игроки [config.observers_allowed ? "отныне могут" : "больше не могут"] заходить за призраков из лобби.</b>")

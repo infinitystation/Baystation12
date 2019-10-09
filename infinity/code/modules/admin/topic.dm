@@ -63,7 +63,7 @@
 		if(alert("Wipe data written by [(tape.uploader_ckey) ? tape.uploader_ckey : "<b>*NULL*</b>"]?",,"Yes", "No") == "Yes")
 			if(istype(tape.loc, /obj/machinery/media/jukebox))
 				var/obj/machinery/media/jukebox/J = tape.loc
-				if(J.current_track && J.current_track == tape.track)
+				if(J.current_track == tape.track)
 					J.StopPlaying()
 					J.current_track = null
 

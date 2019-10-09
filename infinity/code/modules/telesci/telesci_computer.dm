@@ -361,7 +361,7 @@
 
 /obj/machinery/computer/telescience/proc/recalibrate(mob/user)
 	var/mult = 1
-	if(user && user.skill_check(SKILL_SCIENCE, SKILL_PROF))
+	if(user?.skill_check(SKILL_SCIENCE, SKILL_PROF))
 		mult = 2
 	teles_left = rand(30, 40) * mult
 	power_off = rand(-4, 0) / mult

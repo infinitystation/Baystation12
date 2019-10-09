@@ -37,7 +37,7 @@
 /obj/machinery/bssilk_hub/proc/sync_with_parts()
 	for(var/mob/living/carbon/human/L in GLOB.player_list)
 		var/obj/item/clothing/U = L.w_uniform
-		if(U && length(U.accessories))
+		if(length(U?.accessories))
 			for(var/obj/item/clothing/accessory/bs_silk/silk in U.accessories)
 				if(L && silk.silk_id && silk.silk_id == silk_id)
 					linked_mob = L

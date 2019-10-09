@@ -50,7 +50,7 @@ GLOBAL_LIST_EMPTY(gps_by_type)
 	else
 		t += "<BR><A href='?src=\ref[src];tag=1'>Set Tag</A> "
 		t += "<BR>Tag: [gpstag]"
-		if(locked_location && locked_location.loc)
+		if(locked_location?.loc)
 			t += "<BR>Bluespace coordinates saved: [locked_location.loc]"
 			gps_window_height += 20
 

@@ -53,7 +53,7 @@
 		ruin()
 
 /obj/item/music_tape/attackby(obj/item/I, mob/user, params)
-	if(ruined && isScrewdriver(I))
+	if(ruined && (isScrewdriver(I) || istype(I, /obj/item/weapon/pen)))
 		to_chat(user, SPAN_NOTICE("You start winding \the [src] back in..."))
 		if(do_after(user, 120, target = src))
 			to_chat(user, SPAN_NOTICE("You wound \the [src] back in."))

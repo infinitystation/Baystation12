@@ -28,7 +28,7 @@
 //searching for spawning locations
 
 	for(var/obj/effect/landmark/L in landmarks_list)
-		if(L.name == "xeno_spawn" && (L.z in affecting_z))
+		if(L.name == "xeno_spawn" && L.z in affecting_z)
 			spawn_locations.Add(L.loc)
 
 	if(!spawn_locations.len)
@@ -46,7 +46,7 @@
 // spawning
 
 	if(prob(40)) spawncount++ //sometimes, have two larvae spawn instead of one
-	while((spawncount >= 1) && spawn_locations.len && candidates.len)
+	while(spawncount >= 1 && spawn_locations.len && candidates.len)
 		var/obj/spot = pick(spawn_locations)
 		var/xeno = pick(candidates)
 

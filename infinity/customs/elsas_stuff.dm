@@ -101,7 +101,7 @@
 	default_outfit = /decl/hierarchy/outfit/job/elsa_detective
 
 /obj/structure/cryo_spawner/thunderdome/elsa/attack_ghost(mob/user)
-	if (user.ckey && (user.ckey == "auesti" || user.ckey == "skonoplich"))
+	if(user.ckey == "auesti" || user.ckey == "skonoplich")
 		..()
 
 /obj/structure/cryo_spawner/thunderdome/elsa/post_spawn_procedure(mob/living/carbon/human/H)
