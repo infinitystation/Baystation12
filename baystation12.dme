@@ -3183,6 +3183,7 @@
 #include "infinity\code\game\gamemodes\objective.dm"
 #include "infinity\code\game\gamemodes\malfunction\newmalf_ability_trees\infinity.dm"
 #include "infinity\code\game\jobs\acccess_datum.dm"
+#include "infinity\code\game\jobs\job\job.dm"
 #include "infinity\code\game\machinery\autolathe_datums.dm"
 #include "infinity\code\game\machinery\bs_silk_control.dm"
 #include "infinity\code\game\machinery\cargopad.dm"
