@@ -6,3 +6,4 @@
 	back to life, or to become strong enough that they don't have to."
 	ruling_body = "Clan Hegemony"
 	distance = "20 light years"
+	language = LANGUAGE_UNATHI_SINTA //inf
