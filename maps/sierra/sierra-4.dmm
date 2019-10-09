@@ -262,7 +262,6 @@
 /area/syndicate_mothership/raider_base)
 "aaQ" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/green,
 /obj/effect/landmark/start{
 	name = "Raider"
 	},
@@ -349,16 +348,12 @@
 /area/syndicate_mothership)
 "abc" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/orange,
 /obj/structure/curtain/bed,
 /obj/effect/landmark/start{
 	name = "Raider"
 	},
 /obj/effect/landmark{
 	name = "voxstart"
-	},
-/obj/structure/sign/poster/humpost/hum_21{
-	pixel_y = 32
 	},
 /turf/simulated/floor/carpet,
 /area/syndicate_mothership/raider_base)
@@ -373,15 +368,10 @@
 /turf/simulated/floor/tiled/white,
 /area/syndicate_mothership/raider_base)
 "abf" = (
-/obj/structure/hygiene/urinal{
-	pixel_y = 32
-	},
-/obj/item/weapon/soap,
 /obj/machinery/light/small{
-	dir = 8;
-	icon_state = "bulb_map"
+	dir = 1
 	},
-/turf/simulated/floor/tiled/freezer,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/syndicate_mothership/raider_base)
 "abg" = (
 /obj/structure/table/marble,
@@ -694,7 +684,6 @@
 /area/syndicate_mothership/raider_base)
 "abV" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/hos,
 /obj/structure/curtain/bed,
 /obj/effect/landmark/start{
 	name = "Raider"
@@ -702,41 +691,8 @@
 /obj/effect/landmark{
 	name = "voxstart"
 	},
-/turf/simulated/floor/carpet,
-/area/syndicate_mothership/raider_base)
-"abW" = (
-/obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/clown,
-/obj/structure/curtain/bed,
-/obj/effect/landmark/start{
-	name = "Raider"
-	},
-/obj/effect/landmark{
-	name = "voxstart"
-	},
-/turf/simulated/floor/carpet,
-/area/syndicate_mothership/raider_base)
-"abX" = (
-/obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/rd,
-/obj/structure/curtain/bed,
-/obj/effect/landmark/start{
-	name = "Raider"
-	},
-/obj/effect/landmark{
-	name = "voxstart"
-	},
-/turf/simulated/floor/carpet,
-/area/syndicate_mothership/raider_base)
-"abY" = (
-/obj/item/weapon/bedsheet/rainbow,
-/obj/structure/bed/padded,
-/obj/structure/curtain/bed,
-/obj/effect/landmark/start{
-	name = "Raider"
-	},
-/obj/effect/landmark{
-	name = "voxstart"
+/obj/structure/sign/poster/humpost/hum_21{
+	pixel_y = 32
 	},
 /turf/simulated/floor/carpet,
 /area/syndicate_mothership/raider_base)
@@ -878,20 +834,11 @@
 /turf/simulated/floor/airless,
 /area/syndicate_mothership/raider_base)
 "act" = (
-/obj/vehicle/bike/thermal{
-	icon_state = "bike_off";
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
+/obj/effect/catwalk_plated/dark,
 /obj/machinery/light/small{
-	dir = 1;
-	icon_state = "bulb_map"
+	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/plating,
 /area/syndicate_mothership/raider_base)
 "acu" = (
 /obj/machinery/door/airlock/external/glass,
@@ -1195,10 +1142,12 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/syndicate_mothership)
 "adl" = (
-/obj/machinery/light{
+/obj/random/junk,
+/obj/effect/catwalk_plated/dark,
+/obj/machinery/light/small{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark/monotile,
+/turf/simulated/floor/plating,
 /area/syndicate_mothership/raider_base)
 "adm" = (
 /obj/machinery/status_display,
@@ -1259,13 +1208,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/syndicate_mothership/raider_base)
 "adw" = (
-/obj/structure/hygiene/shower{
-	dir = 1
+/obj/structure/hygiene/urinal{
+	pixel_y = 32
 	},
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 8
-	},
+/obj/item/weapon/soap,
 /turf/simulated/floor/tiled/freezer,
 /area/syndicate_mothership/raider_base)
 "adx" = (
@@ -1841,17 +1787,12 @@
 /turf/simulated/floor/plating,
 /area/syndicate_mothership)
 "aeV" = (
-/obj/vehicle/bike/thermal{
-	icon_state = "bike_off";
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/railing/mapped{
+/obj/effect/catwalk_plated/dark,
+/obj/machinery/light/small{
 	dir = 4;
-	icon_state = "railing0-1"
+	pixel_y = 0
 	},
-/obj/machinery/light/small,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/plating,
 /area/syndicate_mothership/raider_base)
 "aeW" = (
 /obj/structure/table/rack,
@@ -4001,8 +3942,9 @@
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "ajD" = (
-/obj/machinery/light{
-	dir = 1
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/dark,
 /area/syndicate_mothership/raider_base)
@@ -5212,16 +5154,17 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/syndicate_station/start)
 "ami" = (
-/obj/effect/floor_decal/industrial/outline/grey,
-/obj/structure/closet,
-/obj/random/mre,
-/obj/random/mre,
-/obj/random/mre,
-/obj/random/mre,
-/obj/random/mre,
-/obj/random/mre,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/syndicate_station/start)
+/obj/vehicle/bike/thermal{
+	icon_state = "bike_off";
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/syndicate_mothership/raider_base)
 "amj" = (
 /obj/item/device/radio/intercom/syndicate{
 	dir = 8;
@@ -10517,6 +10460,12 @@
 	},
 /turf/simulated/floor/shuttle/red,
 /area/skipjack_station/start)
+"axd" = (
+/obj/structure/hygiene/shower{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/syndicate_mothership/raider_base)
 "axe" = (
 /obj/machinery/chem_master,
 /obj/effect/floor_decal/corner/beige{
@@ -11512,6 +11461,12 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/supply/dock)
+"azE" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark,
+/area/syndicate_mothership/raider_base)
 "azF" = (
 /obj/effect/landmark{
 	name = "tdome1"
@@ -11716,6 +11671,21 @@
 	icon_state = "dark"
 	},
 /area/tdome/tdome1)
+"azZ" = (
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/closet,
+/obj/random/mre,
+/obj/random/mre,
+/obj/random/mre,
+/obj/random/mre,
+/obj/random/mre,
+/obj/random/mre,
+/obj/machinery/light/halogen{
+	icon_state = "tube_map";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/syndicate_station/start)
 "aAa" = (
 /obj/effect/floor_decal/snow,
 /turf/simulated/floor/plating{
@@ -13890,12 +13860,6 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/freezer,
 /area/syndicate_mothership)
-"aEM" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark,
-/area/syndicate_mothership/raider_base)
 "aEN" = (
 /obj/structure/table/rack,
 /obj/item/stack/material/wood{
@@ -15002,17 +14966,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/syndicate_mothership/raider_base)
-"aHB" = (
-/obj/machinery/light,
-/turf/simulated/floor/tiled/dark,
-/area/syndicate_mothership/raider_base)
-"aHC" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/floor/plating,
-/area/syndicate_mothership/raider_base)
 "aHJ" = (
 /obj/effect/decal/cleanable/blood,
 /obj/machinery/light/small{
@@ -15124,13 +15077,6 @@
 	pixel_y = 8
 	},
 /turf/simulated/floor/tiled/white,
-/area/syndicate_mothership/raider_base)
-"aId" = (
-/obj/effect/catwalk_plated/dark,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
 /area/syndicate_mothership/raider_base)
 "aIn" = (
 /obj/effect/wallframe_spawn/no_grille,
@@ -15733,12 +15679,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/syndicate_mothership/raider_base)
-"aKC" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/syndicate_mothership/raider_base)
 "aKE" = (
 /obj/structure/table/woodentable/walnut,
 /obj/item/weapon/storage/fancy/cigar,
@@ -15841,13 +15781,6 @@
 	dir = 1
 	},
 /area/rescue_base/base)
-"aKP" = (
-/obj/machinery/light{
-	icon_state = "tube_map";
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/syndicate_mothership/raider_base)
 "aKQ" = (
 /obj/random/junk,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -27580,7 +27513,7 @@ aaf
 aaf
 afO
 aaf
-abf
+adw
 abS
 acI
 ade
@@ -27779,7 +27712,7 @@ aae
 aaf
 aaf
 aaf
-adl
+abf
 aei
 aaf
 abt
@@ -27987,7 +27920,7 @@ aaf
 abR
 abS
 abS
-adw
+axd
 aaf
 aae
 aae
@@ -28383,16 +28316,16 @@ aaa
 aaa
 aae
 aaf
-abV
+abc
 aaf
 adu
 aaw
-aHC
+aeB
 aeB
 aei
 aei
 aeB
-aKC
+aei
 aaf
 aae
 aae
@@ -28587,12 +28520,12 @@ aae
 aaf
 aaf
 aaf
-afN
+act
 aaw
 aaw
 aaw
+ajD
 aKB
-aaw
 aei
 aei
 aaf
@@ -28787,7 +28720,7 @@ aaa
 aaa
 aae
 aaf
-abW
+abc
 aaf
 aeB
 aaw
@@ -29000,7 +28933,7 @@ aGg
 aaw
 aKs
 aaf
-ajD
+azE
 aeB
 aeB
 afd
@@ -29191,7 +29124,7 @@ aaa
 aaa
 aae
 aaf
-abX
+abc
 aaf
 aeB
 aaw
@@ -29395,8 +29328,8 @@ aae
 aaf
 aaf
 aaf
-aeB
-aHB
+act
+aaw
 aaf
 afw
 aeB
@@ -29595,7 +29528,7 @@ aaa
 aaa
 aae
 aaf
-abY
+abc
 aaf
 aeB
 aaw
@@ -29808,7 +29741,7 @@ aeB
 aeB
 aaw
 aaf
-aeB
+act
 aaw
 afu
 aab
@@ -29999,7 +29932,7 @@ aaa
 aaa
 aae
 aaf
-abc
+abV
 aaf
 aeB
 aaw
@@ -30010,7 +29943,7 @@ aGh
 agJ
 aKt
 aaf
-ajD
+aaw
 aaw
 afu
 aab
@@ -30203,8 +30136,8 @@ aae
 aaf
 aaf
 aaf
-adu
-aHB
+adl
+aaw
 aaf
 aaf
 aaf
@@ -30409,7 +30342,7 @@ aei
 aaw
 aaw
 aaw
-aEM
+aaw
 aaw
 abd
 acK
@@ -30607,10 +30540,10 @@ aae
 aae
 aaf
 aap
-aKP
+aei
 aeB
 aeB
-aeB
+aeV
 aeB
 aaw
 aaf
@@ -31015,7 +30948,7 @@ aal
 aar
 aHJ
 aaf
-aeB
+afN
 aaw
 akY
 acK
@@ -31621,12 +31554,12 @@ aaq
 aay
 aIc
 aaf
-aId
+act
 aaw
 adv
 aaw
 aaw
-aEM
+aaw
 aaw
 afu
 aab
@@ -31827,7 +31760,7 @@ aeB
 aeB
 aeB
 aei
-aeB
+aeV
 aeB
 aai
 afu
@@ -32636,8 +32569,8 @@ adr
 aGa
 aao
 aek
-aKP
-aeB
+aei
+aeV
 aeB
 aik
 aeB
@@ -32833,10 +32766,10 @@ aae
 aae
 aaf
 aaf
-act
+ami
 aao
 ady
-aeV
+ady
 aaf
 aaf
 aaf
@@ -59316,7 +59249,7 @@ ajR
 ako
 akX
 alB
-ami
+azZ
 amI
 anm
 ako

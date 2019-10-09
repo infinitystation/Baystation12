@@ -10,7 +10,7 @@
 
 /turf/simulated/floor/asteroid/aired
 	initial_gas = list(oxygen = MOLES_O2STANDARD, nitrogen = MOLES_N2STANDARD)
-	temperature = TCMB
+	temperature = T20C
 
 /turf/simulated/floor/tiled/asteroid
 	name = "dusted floor"
