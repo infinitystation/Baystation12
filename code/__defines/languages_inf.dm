@@ -7,7 +7,6 @@
 #define LANGUAGE_PRESOMI			"Primitive schechi"
 #define LANGUAGE_PUNATI			"Primitive sinta'unathi"
 #define LANGUAGE_PSKRELLIAN		"Primitive skrellian"
-#define LANGUAGE_PVOX				"Primitive vox"
 
 //WOLF_SWARM-INF
 /*

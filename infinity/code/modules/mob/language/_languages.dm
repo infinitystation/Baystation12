@@ -5,7 +5,7 @@
 //No zato kashdiy mog bi pochuchut ponimat ksenotu, ne s pervogo raza, no vse she
 
 /decl/cultural_info/location
-	secondary_langs = list(LANGUAGE_PTAJ, LANGUAGE_PRESOMI, LANGUAGE_PUNATI, LANGUAGE_PSKRELLIAN, LANGUAGE_PVOX)
+	secondary_langs = list(LANGUAGE_PTAJ, LANGUAGE_PRESOMI, LANGUAGE_PUNATI, LANGUAGE_PSKRELLIAN)
 
 /datum/language/tajprim
 	name = LANGUAGE_PTAJ
@@ -24,9 +24,9 @@
 /datum/language/rezprim
 	name = LANGUAGE_PRESOMI
 	desc = "Упрощенный Счечи - именно так можно назвать то, что вы выучили. Конечно, с письменностью гораздо легче, но и того что вы сможете выговорить уже достаточно для выживания в резомьей среде."
-	speech_verb = "щебечет"
-	ask_verb = "чирикает"
-	exclaim_verb = "верещит"
+	speech_verb = "�������"
+	ask_verb = "������������"
+	exclaim_verb = "������� � �������"
 	colour = "alien"
 	syllables = list(
 			"ca", "ra", "ma", "sa", "na", "ta", "la", "sha", "scha", "a", "a",
@@ -39,9 +39,9 @@
 /datum/language/unprim
 	name = LANGUAGE_PUNATI
 	desc = "Упрощенный язык унати - именно так можно назвать то, что вы выучили. Конечно, с письменностью гораздо легче, но и того что вы сможете выговорить уже достаточно для выживания на Могесе."
-	speech_verb = "шипит"
-	ask_verb = "вопросительно шипит"
-	exclaim_verb = "грозно шипит"
+	speech_verb = "������ ������� �����"
+	ask_verb = "����� �������������"
+	exclaim_verb = "������ �����"
 	colour = "soghun"
 	syllables = list(
 		"za", "az", "ze", "ez", "zi", "iz", "zo", "oz", "zu", "uz", "zs", "sz",
@@ -58,7 +58,7 @@
 /datum/language/skrellprim
 	name = LANGUAGE_PSKRELLIAN
 	desc = "Упрощенный Скрельский - именно так можно назвать то, что вы выучили. Конечно, с письменностью гораздо легче ведь ее вы не учили, но и того что вы сможете выговорить уже достаточно для выживания среди Скреллов. Выучить хоть часть этого языка было дорого, особенно из-за цены импланта, который помог в этом."
-	speech_verb = "квакает"
+	speech_verb = "������ ��������� �����"
 	ask_verb = "поет"
 	exclaim_verb = "воет"
 	colour = "skrell"
@@ -66,34 +66,19 @@
 	shorthand = "PSK"
 	partial_understanding = list(LANGUAGE_SKRELLIAN = 20)
 
-/datum/language/voxprim
-	name = LANGUAGE_PVOX
-	desc = "Упрощенный воксиный - именно так можно назвать то, что вы выучили. Конечно, с письменностью гораздо легче, ведь ее нет."
-	speech_verb = "рокочет"
-	ask_verb = "кричит"
-	exclaim_verb = "орет"
-	colour = "vox"
-	syllables = list("ti","ti","ti","hi","hi","ki","ki","ki","ki","ya","ta","ha","ka","ya","chi","cha","kah", \
-	"SKRE","AHK","EHK","RAWK","KRA","AAA","EEE","KI","II","KRI","KA")
-	shorthand = "PVox"
-	partial_understanding = list(LANGUAGE_VOX = 30)
+//tut idut tipa chtobi ksenosi ponimali primitivnie yaziki i tipa tebya, primitiva poimyt a ti ih ne och no i tebya tozhe
 
-//tut idut tipa chtobi ksenosi ponimali primitivnie yaziki
+/datum/language/tajaran/New()
+	partial_understanding = list(/datum/language/tajprim = 45)
 
-/datum/language/tajaran
-	partial_understanding = list(/datum/language/tajprim = 30)
+/datum/language/resomi/New()
+	partial_understanding = list(/datum/language/rezprim = 45)
 
-/datum/language/resomi
-	partial_understanding = list(/datum/language/rezprim = 30)
+/datum/language/unathi/New()
+	partial_understanding = list(/datum/language/unprim = 40)
 
-/datum/language/unathi
-	partial_understanding = list(/datum/language/unprim = 25)
+/datum/language/yeosa/New()
+	partial_understanding = list(/datum/language/unprim = 40)
 
-/datum/language/yeosa
-	partial_understanding = list(/datum/language/unprim = 25)
-
-/datum/language/skrell
-	partial_understanding = list(/datum/language/skrellprim = 20)
-
-/datum/language/vox
-	partial_understanding = list(/datum/language/voxprim = 30)
+/datum/language/skrell/New()
+	partial_understanding = list(/datum/language/skrellprim = 35)
