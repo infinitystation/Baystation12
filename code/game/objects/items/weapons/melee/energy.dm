@@ -137,7 +137,7 @@
 	throw_range = 5
 	w_class = ITEM_SIZE_SMALL
 	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_NO_BLOOD
-	origin_tech = list(TECH_MAGNET = 3, TECH_ILLEGAL = 4)
+	origin_tech = list(TECH_MAGNET = 3, TECH_ESOTERIC = 4)
 	sharp = 1
 	edge = 1
 	base_parry_chance = 50
@@ -199,6 +199,7 @@
 	active_icon = "blade"	//It's all energy, so it should always be visible.
 	lighting_color = COLOR_SABER_GREEN
 	force = 40 //Normal attacks deal very high damage - about the same as wielded fire axe
+	active_force = 30 //inf
 	active = 1
 	armor_penetration = 100
 	sharp = 1

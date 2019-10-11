@@ -15,6 +15,7 @@
 
 	var/obj/machinery/crusher_piston/pstn //Piston
 	construct_state = /decl/machine_construction/default/panel_closed
+	uncreated_component_parts = null
 
 	var/action = "idle" //Action the piston should perform
 	// idle -> Do nothing

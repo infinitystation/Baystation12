@@ -13,6 +13,19 @@
 "ac" = (
 /turf/space,
 /area/space)
+"ad" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
+/area/ship/scrap/engineering/storage)
 "ae" = (
 /obj/machinery/door/blast/regular{
 	dir = 2
@@ -2383,20 +2396,6 @@
 /obj/item/weapon/tape_roll,
 /obj/item/weapon/tape_roll,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/monotile,
-/area/ship/scrap/engineering/storage)
-"eO" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/monotile,
 /area/ship/scrap/engineering/storage)
 "eP" = (
@@ -6805,7 +6804,7 @@ cn
 cP
 dk
 ep
-eO
+ad
 gE
 fm
 fv

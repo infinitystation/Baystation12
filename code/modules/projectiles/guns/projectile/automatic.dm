@@ -3,8 +3,6 @@
 	desc = "A protoype lightweight, fast firing submachine gun."
 	icon = 'icons/obj/guns/prototype_smg.dmi'
 	icon_state = "prototype"
-	w_class = ITEM_SIZE_NORMAL
-	bulk = -1
 	load_method = MAGAZINE
 	caliber = CALIBER_PISTOL_FLECHETTE
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 3)
@@ -17,12 +15,17 @@
 	mag_insert_sound = 'sound/weapons/guns/interaction/smg_magin.ogg'
 	mag_remove_sound = 'sound/weapons/guns/interaction/smg_magout.ogg'
 
-	//machine pistol, easier to one-hand with
 	firemodes = list(
 		list(mode_name="semi auto",       burst=1, fire_delay=null,    move_delay=null, one_hand_penalty=0, burst_accuracy=null, dispersion=null),
 		list(mode_name="4-round bursts", burst=4, fire_delay=null, move_delay=4,    one_hand_penalty=1, burst_accuracy=list(0,0,-1,-1),       dispersion=list(0.0, 0.0, 0.5, 0.6)),
 		list(mode_name="long bursts",   burst=8, fire_delay=null, move_delay=4,    one_hand_penalty=2, burst_accuracy=list(0,0,-1,-1,-1,-1,-2,-2), dispersion=list(0.0, 0.0, 0.5, 0.6, 0.8, 1.0, 1.0, 1.2)),
 		)
+
+	bulk = GUN_BULK_SMG
+	w_class = ITEM_SIZE_NORMAL
+
+	is_serial = 1
+	s_gun = "P-SMG"
 
 /obj/item/weapon/gun/projectile/automatic/on_update_icon()
 	..()
@@ -39,17 +42,19 @@
 	safety_icon = "safety"
 	item_state = "wt550"
 	caliber = CALIBER_PISTOL
-	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ILLEGAL = 3)
+	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ESOTERIC = 3)
 	ammo_type = /obj/item/ammo_casing/pistol
 	magazine_type = /obj/item/ammo_magazine/machine_pistol
 	allowed_magazines = /obj/item/ammo_magazine/machine_pistol //more damage compared to the wt550, smaller mag size
-	one_hand_penalty = 2
 
 	firemodes = list(
 		list(mode_name="semi auto",       burst=1, fire_delay=null,    move_delay=null, one_hand_penalty=0, burst_accuracy=null, dispersion=null),
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=1, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.6, 1.0)),
 		list(mode_name="short bursts",   burst=5, fire_delay=null, move_delay=4,    one_hand_penalty=2, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(0.6, 0.6, 1.0, 1.0, 1.2)),
 		)
+
+	one_hand_penalty = 2
+	s_gun = "HI-MP6"
 
 /obj/item/weapon/gun/projectile/automatic/machine_pistol/on_update_icon()
 	..()
@@ -73,26 +78,28 @@
 	icon_state = "c20r"
 	item_state = "c20r"
 	safety_icon = "safety"
-	w_class = ITEM_SIZE_LARGE
 	force = 10
 	caliber = CALIBER_PISTOL
-	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ILLEGAL = 8)
+	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ESOTERIC = 8)
 	slot_flags = SLOT_BELT|SLOT_BACK
 	magazine_type = /obj/item/ammo_magazine/smg
 	allowed_magazines = /obj/item/ammo_magazine/smg
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-	bulk = -1
-	accuracy = 1
-	one_hand_penalty = 4
 
-	//SMG
 	firemodes = list(
 		list(mode_name="semi auto",       burst=1, fire_delay=null,    move_delay=null, one_hand_penalty=4, burst_accuracy=null, dispersion=null),
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=5, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.6, 1.0)),
 		list(mode_name="short bursts",   burst=5, fire_delay=null, move_delay=4,    one_hand_penalty=6, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(0.6, 0.6, 1.0, 1.0, 1.2)),
 		)
+
+	accuracy = 1
+	bulk = GUN_BULK_SMG
+	w_class = ITEM_SIZE_LARGE
+	one_hand_penalty = 4
+
+	s_gun = "C-20R"
 
 /obj/item/weapon/gun/projectile/automatic/merc_smg/on_update_icon()
 	..()
@@ -107,18 +114,13 @@
 	icon = 'icons/obj/guns/assault_rifle.dmi'
 	icon_state = "arifle"
 	item_state = null
-	w_class = ITEM_SIZE_HUGE
 	force = 10
 	caliber = CALIBER_RIFLE
-	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 5)
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/rifle
 	allowed_magazines = /obj/item/ammo_magazine/rifle
-	one_hand_penalty = 8
-	accuracy_power = 7
-	accuracy = 2
-	bulk = GUN_BULK_RIFLE + 1
 	wielded_item_state = "arifle-wielded"
 	mag_insert_sound = 'sound/weapons/guns/interaction/ltrifle_magin.ogg'
 	mag_remove_sound = 'sound/weapons/guns/interaction/ltrifle_magout.ogg'
@@ -129,6 +131,14 @@
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=6,    one_hand_penalty=9, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.6, 1.0)),
 		list(mode_name="short bursts",   burst=5, fire_delay=null, move_delay=6,    one_hand_penalty=11, burst_accuracy=list(0,-1,-2,-3,-3), dispersion=list(0.6, 1.0, 1.2, 1.2, 1.5)),
 		)
+
+	accuracy = 2
+	accuracy_power = 7
+	bulk = GUN_BULK_RIFLE
+	w_class = ITEM_SIZE_HUGE
+	one_hand_penalty = 8
+
+	s_gun = "STS-35"
 
 /obj/item/weapon/gun/projectile/automatic/assault_rifle/on_update_icon()
 	..()
@@ -146,7 +156,6 @@
 	icon_state = "wt550"
 	item_state = "wt550"
 	safety_icon = "safety"
-	w_class = ITEM_SIZE_NORMAL
 	caliber = CALIBER_PISTOL_SMALL
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT
@@ -154,8 +163,6 @@
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/smg_top/rubber
 	allowed_magazines = /obj/item/ammo_magazine/smg_top
-	accuracy_power = 7
-	one_hand_penalty = 3
 
 	//machine pistol, like SMG but easier to one-hand with
 	firemodes = list(
@@ -163,6 +170,13 @@
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=4, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.6, 1.0)),
 		list(mode_name="short bursts",   burst=5, fire_delay=null, move_delay=4,    one_hand_penalty=5, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(0.6, 0.6, 1.0, 1.0, 1.2)),
 		)
+
+	accuracy_power = 7
+	w_class = ITEM_SIZE_NORMAL
+	one_hand_penalty = 3
+
+	s_gun = "WT-550"
+
 
 /obj/item/weapon/gun/projectile/automatic/sec_smg/on_update_icon()
 	..()
@@ -177,7 +191,6 @@
 	icon = 'icons/obj/guns/bullpup_rifle.dmi'
 	icon_state = "carbine"
 	item_state = "z8carbine"
-	w_class = ITEM_SIZE_HUGE
 	force = 10
 	caliber = CALIBER_RIFLE_MILITARY
 	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 3)
@@ -188,10 +201,6 @@
 	allowed_magazines = /obj/item/ammo_magazine/mil_rifle
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-	accuracy = 2
-	accuracy_power = 7
-	one_hand_penalty = 8
-	bulk = GUN_BULK_RIFLE
 	burst_delay = 4
 	wielded_item_state = "z8carbine-wielded"
 	mag_insert_sound = 'sound/weapons/guns/interaction/batrifle_magin.ogg'
@@ -204,6 +213,14 @@
 
 	var/use_launcher = 0
 	var/obj/item/weapon/gun/launcher/grenade/underslung/launcher
+
+	accuracy = 2
+	accuracy_power = 7
+	bulk = GUN_BULK_RIFLE
+	w_class = ITEM_SIZE_HUGE
+	one_hand_penalty = 8
+
+	s_gun = "HI-Z8"
 
 /obj/item/weapon/gun/projectile/automatic/bullpup_rifle/Initialize()
 	. = ..()
@@ -252,19 +269,15 @@
 	icon = 'icons/obj/guns/saw.dmi'
 	icon_state = "l6closed50"
 	item_state = "l6closedmag"
-	w_class = ITEM_SIZE_HUGE
-	bulk = 10
 	force = 10
-	slot_flags = 0
 	max_shells = 50
 	caliber = CALIBER_RIFLE
-	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 2)
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 2)
 	slot_flags = 0 //need sprites for SLOT_BACK
 	ammo_type = /obj/item/ammo_casing/rifle
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/box/machinegun
 	allowed_magazines = list(/obj/item/ammo_magazine/box/machinegun, /obj/item/ammo_magazine/rifle)
-	one_hand_penalty = 10
 	wielded_item_state = "gun_wielded"
 	mag_insert_sound = 'sound/weapons/guns/interaction/lmg_magin.ogg'
 	mag_remove_sound = 'sound/weapons/guns/interaction/lmg_magout.ogg'
@@ -278,6 +291,12 @@
 		)
 
 	var/cover_open = 0
+
+	bulk = GUN_BULK_MACHINEGUN //inf, was 10
+	w_class = ITEM_SIZE_HUGE
+	one_hand_penalty = 10
+
+	s_gun = "L6"
 
 /obj/item/weapon/gun/projectile/automatic/l6_saw/mag
 	magazine_type = /obj/item/ammo_magazine/rifle

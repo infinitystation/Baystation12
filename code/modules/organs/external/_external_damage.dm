@@ -68,19 +68,20 @@ obj/item/organ/external/take_general_damage(var/amount, var/silent = FALSE)
 	// High brute damage or sharp objects may damage internal organs
 	if(internal_organs && internal_organs.len)
 		var/damage_amt = brute
+		if(!laser)
+			damage_amt += 10
 		var/cur_damage = brute_dam
 		if(laser || BP_IS_ROBOTIC(src))
 			damage_amt += burn
 			cur_damage += burn_dam
-		var/organ_damage_threshold = 5
+		var/organ_damage_threshold = laser ? 6 : 16
 		if(sharp)
 			organ_damage_threshold *= 0.5
-		var/organ_damage_prob = 10 * damage_amt/organ_damage_threshold //more damage, higher chance to damage
+		var/organ_damage_prob = 40 //more damage, higher chance to damage
 		if(encased && !(status & ORGAN_BROKEN)) //ribs protect
-			if(!laser)
-				organ_damage_prob *= 0.2
-			else
-				organ_damage_prob *= 0.5
+			organ_damage_threshold += 4
+			if(laser)
+				organ_damage_prob *= 1.5
 		if ((cur_damage + damage_amt >= max_damage || damage_amt >= organ_damage_threshold) && prob(organ_damage_prob))
 			// Damage an internal organ
 			var/list/victims = list()
@@ -222,8 +223,9 @@ obj/item/organ/external/take_general_damage(var/amount, var/silent = FALSE)
 	if(owner) owner.update_body()
 
 /obj/item/organ/external/proc/unmutate()
-	src.status &= ~ORGAN_MUTATED
-	if(owner) owner.update_body()
+	if(!BP_IS_DEFORMED(src) && !BP_IS_ROBOTIC(src))
+		src.status &= ~ORGAN_MUTATED
+		if(owner) owner.update_body()
 
 // Pain/halloss
 /obj/item/organ/external/proc/get_pain()

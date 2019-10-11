@@ -36,7 +36,7 @@ MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 
 /obj/machinery/atmospherics/unary/vent_scrubber/on/ascent/Initialize()
 	. = ..()
-	scrubbing_gas -= "methyl_bromide"
+	scrubbing_gas -= GAS_METHYL_BROMIDE
 
 /obj/machinery/recharge_station/ascent
 	name = "mantid recharging dock"
@@ -68,12 +68,17 @@ MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 	base_type = /obj/machinery/sleeper
 	construct_state = /decl/machine_construction/default/no_deconstruct
 
-/obj/machinery/autolathe/ascent
+/obj/machinery/sleeper/ascent/Initialize(mapload, d, populate_parts)
+	. = ..()
+	base_chemicals["Crystalizing Agent"] = /datum/reagent/crystal
+	base_chemicals["Bromide"] = /datum/reagent/toxin/bromide
+
+/obj/machinery/fabricator/ascent
 	name = "\improper Ascent nanofabricator"
 	desc = "A squat, complicated fabrication system clad in purple polymer."
 	icon = 'icons/obj/nanofabricator.dmi'
 	req_access = list(access_ascent)
-	base_type = /obj/machinery/autolathe
+	base_type = /obj/machinery/fabricator
 	construct_state = /decl/machine_construction/default/no_deconstruct
 
 /obj/machinery/power/apc/hyper/ascent

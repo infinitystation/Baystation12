@@ -9,7 +9,7 @@
 
 	if(GAME_STATE > RUNLEVEL_LOBBY)
 		for(var/mob/new_player/player in GLOB.player_list)
-			if(player.client && !player.client.banprisoned)
+			if(!player?.client.banprisoned)
 				player.new_player_panel()
 
 	to_world("<B>Игроки [config.observers_allowed ? "отныне могут" : "больше не могут"] заходить за призраков из лобби.</b>")
@@ -179,3 +179,23 @@
 	popup.open()
 
 	SSstatistics.add_field("admin_verb","MPP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+/datum/admins/proc/toggleevent()
+	set category = "Server"
+	set desc = "Event status in hub."
+	set name = "Toggle Event Status"
+
+	config.event_status = !(config.event_status)
+
+	if(config.event_status)
+		to_world("<B>Включено отображение статуса проведени&#255; ивента.</B>")
+		send2maindiscord("На сервере активировано отображение статуса ивента.")
+		send2mainirc("@Eventwaiter На сервере активировано отображение статуса ивента!")
+	else
+		to_world("<B>Отображение статуса проведени&#255; ивента отключено. Кина не будет :(</B>")
+		send2maindiscord("Ивент отменён.")
+		send2mainirc("Ивент отменён :(")
+
+	log_and_message_admins("[key_name_admin(usr)] toggled event status.")
+	world.update_status()
+//	SSstatistics.add_field_details("admin_verb","TES") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

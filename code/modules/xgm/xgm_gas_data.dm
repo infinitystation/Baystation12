@@ -43,7 +43,7 @@
 	var/overlay_limit = null
 
 	var/flags = 0
-	var/burn_product = "carbon_dioxide"
+	var/burn_product = GAS_CO2
 	var/breathed_product
 	var/condensation_point = INFINITY
 	var/condensation_product
@@ -100,5 +100,5 @@
 
 /obj/effect/gas_overlay/Initialize()
 	. = ..()
-	animate(src, alpha = 175, time = 10, easing = SINE_EASING | EASE_OUT, loop = -1)
-	animate(alpha = 255, time = 10, easing = SINE_EASING | EASE_IN, loop = -1)
+	animate(src, alpha = 165, time = 10, easing = SINE_EASING | EASE_OUT, loop = -1)
+	animate(alpha = 185, time = 10, easing = SINE_EASING | EASE_IN, loop = -1)

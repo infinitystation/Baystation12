@@ -9,13 +9,11 @@
 	projectile_type = /obj/item/projectile/beam/particle
 	max_shots = 18
 	self_recharge = 1
-	w_class = ITEM_SIZE_HUGE
-	one_hand_penalty = 6
 	multi_aim = 1
 	burst_delay = 3
 	burst = 3
 	move_delay = 4
-	accuracy = -1
+//inf	accuracy = -1
 	wielded_item_state = "particle_rifle-wielded"
 	charge_meter = 0
 	has_safety = FALSE
@@ -26,6 +24,10 @@
 		)
 	var/charge_state = "pr"
 
+	bulk = GUN_BULK_RIFLE //inf
+	w_class = ITEM_SIZE_HUGE
+	one_hand_penalty = 6
+
 /obj/item/weapon/gun/energy/particle/small
 	name = "particle projector"
 	desc = "A smaller variant on the Ascent particle lance, usually carried by drones and alates."
@@ -34,9 +36,7 @@
 	max_shots = 9
 	burst = 1
 	move_delay = 2
-	one_hand_penalty = 0
 	charge_state = "prsmall"
-	w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_DENYPOCKET | SLOT_HOLSTER
 	projectile_type = /obj/item/projectile/beam/particle/small
 	firemodes = list(
@@ -45,6 +45,9 @@
 		list(mode_name="lethal", projectile_type = /obj/item/projectile/beam/particle/small)
 		)
 
+	bulk = GUN_BULK_SMG //inf
+	w_class = ITEM_SIZE_NORMAL
+	one_hand_penalty = 0
 
 /obj/item/weapon/gun/energy/particle/on_update_icon()
 	. = ..()

@@ -80,7 +80,6 @@
 		/obj/item/weapon/storage/fancy/crackers,
 		/obj/item/weapon/toy/xmas_cracker,
 		/obj/item/stack/flag/solgov,
-		/obj/item/airbag,
 		/obj/item/clothing/mask/gas/clown_hat,
 		/obj/item/clothing/mask/gas/sexyclown,
 		/obj/item/clothing/mask/gas/sexymime,
@@ -176,7 +175,7 @@
 	desc = "You can use this to wrap items in."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "wrap_paper"
-	var/amount = 2.5*base_storage_cost(ITEM_SIZE_HUGE)
+	var/amount = 2.5*BASE_STORAGE_COST(ITEM_SIZE_HUGE)
 
 /obj/item/weapon/wrapping_paper/attackby(obj/item/W as obj, mob/user as mob)
 	..()

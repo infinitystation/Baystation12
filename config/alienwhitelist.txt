@@ -29,6 +29,7 @@ redknighthero - machine
 kotovsyndrome - machine
 termservice - machine
 semorerith - machine
+darkman24rus - machine
 bob46 - machine
 inubashirimomiji - skrell
 tenedegurechaff - skrell
@@ -76,6 +77,7 @@ hodovoy - resomi
 vovghik65 - resomi
 elar - resomi
 casly - resomi
+seclog - resomi
 redknighthero - giant armoured serpentid
 coldmantis13 - giant armoured serpentid
 kirill1243 - giant armoured serpentid
@@ -133,6 +135,7 @@ vanya0 - vox
 logfol - vox
 hellpony - vox
 reptiloid2 - vox
+mrkayde - vox
 darkscarletblood - unathi
 kribleykrabley - unathi
 alchemisthero - unathi
@@ -181,3 +184,5 @@ coldmantis13 - adherent
 coldmantis13 - Kharmaan Gyne
 s1334 - Kharmaan Gyne
 wheatley2013 - Kharmaan Gyne
+dagger17 - Kharmaan Gyne
+cre77 - Kharmaan Gyne

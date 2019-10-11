@@ -12,7 +12,14 @@
 
 	var/console_id = ""
 	var/connected_console = null
+
+	//animations
+	var/animation_icon = 'infinity/icons/effects/bs_silk.dmi'
+	var/back_animation = "silc_teleport_back"
+	var/onhub_animation = "silc_get_hub"
+
 	construct_state = /decl/machine_construction/default/panel_closed
+	uncreated_component_parts = null
 
 /obj/machinery/bssilk_hub/attackby(obj/item/I, mob/user)
 	if(isMultitool(I))
@@ -20,36 +27,22 @@
 			if("Snare")
 				var/input_id = input("Enter new BS Snare ID", "Snare ID", silk_id)
 				silk_id = input_id
+				linked_mob = null
 				return silk_id
 			if("Console")
 				var/input_c_id = input("Enter new BS Snare ID", "Snare ID", console_id)
 				console_id = input_c_id
+				connected_console = null
 				return console_id
-/*
-/obj/machinery/bssilk_hub/New()
-	..()
-	component_parts = list()
-	component_parts += new /obj/item/weapon/stock_parts/circuitboard/bssilk_hub(src)
-	component_parts += new /obj/item/bluespace_crystal(src)
-	component_parts += new /obj/item/bluespace_crystal(src)
-	component_parts += new /obj/item/weapon/stock_parts/capacitor/super(src)
-	component_parts += new /obj/item/weapon/stock_parts/capacitor/super(src)
-	component_parts += new /obj/item/stack/cable_coil(src)
-	component_parts += new /obj/item/weapon/stock_parts/subspace/crystal(src)
-	RefreshParts()
-*/
+
 /obj/machinery/bssilk_hub/proc/sync_with_parts()
-	/*for(var/obj/item/clothing/accessory/bs_silk/I in SSobj)
-		if(I.silk_id == silk_id)
-			linked_mob = I.wearing_mob
-		else
-			linked_mob = null*/
 	for(var/mob/living/carbon/human/L in GLOB.player_list)
 		var/obj/item/clothing/U = L.w_uniform
-		if(U && length(U.accessories))
+		if(length(U?.accessories))
 			for(var/obj/item/clothing/accessory/bs_silk/silk in U.accessories)
 				if(L && silk.silk_id && silk.silk_id == silk_id)
 					linked_mob = L
+					silk.silk_hub = src
 					break
 				else linked_mob = null
 			if(linked_mob)
@@ -77,13 +70,13 @@
 		var/mob_turf = get_turf(M)
 		//M.forceMove(src)
 		//Creat animation and move  mob into it and mob will not walking. Camera will follow animation.
-		var/obj/effect/temporary/A = new(mob_turf, 24.5, 'infinity/icons/effects/bs_silk.dmi', "silc_teleport_back")
+		var/obj/effect/temporary/A = new(mob_turf, 24.5, animation_icon, back_animation)
 		M.forceMove(A)
 		sleep(23)
 		M.forceMove(src)
 		M.dir = 2
 
-		new /obj/effect/temporary(get_turf(src), 26.5, 'infinity/icons/effects/bs_silk.dmi', "silc_get_hub")
+		new /obj/effect/temporary(get_turf(src), 26.5, animation_icon, onhub_animation)
 		sleep(24)
 		M.dropInto(loc)
 

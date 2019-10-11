@@ -12,7 +12,7 @@
 	invisibility = 101	//beam projectiles are invisible as they are rendered by the effect engine
 	penetration_modifier = 0.3
 	armor_penetration = 10
-	distance_falloff = 2.5
+	//distance_falloff = 2.5
 
 	muzzle_type = /obj/effect/projectile/laser/muzzle
 	tracer_type = /obj/effect/projectile/laser/tracer
@@ -37,7 +37,7 @@
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 	damage = 60
 	armor_penetration = 30
-	distance_falloff = 0.5
+	//distance_falloff = 0.5
 
 	muzzle_type = /obj/effect/projectile/laser/heavy/muzzle
 	tracer_type = /obj/effect/projectile/laser/heavy/tracer
@@ -216,7 +216,7 @@
 	damage_type = BURN
 	life_span = 5
 	pass_flags = PASS_FLAG_TABLE
-	distance_falloff = 4
+	//distance_falloff = 4
 
 	muzzle_type = /obj/effect/projectile/trilaser/muzzle
 	tracer_type = /obj/effect/projectile/trilaser/tracer
@@ -235,7 +235,7 @@
 	damage = 2
 	agony = 7
 	sharp = FALSE
-	distance_falloff = 5
+	//distance_falloff = 5
 	damage_flags = 0
 	damage_type = STUN
 	life_span = 3
@@ -257,14 +257,14 @@
 			L.Stun(1)
 			L.drop_l_hand()
 			L.drop_r_hand()
-		
+
 	return 1
 
 /obj/item/projectile/beam/particle
 	name = "particle lance"
 	icon_state = "particle"
-	damage = 35
-	armor_penetration = 50
+	damage = 25
+	armor_penetration = 40
 	muzzle_type = /obj/effect/projectile/laser_particle/muzzle
 	tracer_type = /obj/effect/projectile/laser_particle/tracer
 	impact_type = /obj/effect/projectile/laser_particle/impact
@@ -275,3 +275,24 @@
 	damage = 20
 	armor_penetration = 20
 	penetration_modifier = 0.3
+
+/obj/item/projectile/beam/darkmatter
+	name = "dark matter bolt"
+	icon_state = "darkb"
+	damage = 40
+	armor_penetration = 35
+	damage_type = BRUTE
+	muzzle_type = /obj/effect/projectile/darkmatter/muzzle
+	tracer_type = /obj/effect/projectile/darkmatter/tracer
+	impact_type = /obj/effect/projectile/darkmatter/impact
+
+/obj/item/projectile/beam/stun/darkmatter
+	name = "dark matter wave"
+	icon_state = "darkt"
+	damage_flags = 0
+	sharp = 0 //not a laser
+	agony = 40
+	damage_type = STUN
+	muzzle_type = /obj/effect/projectile/stun/darkmatter/muzzle
+	tracer_type = /obj/effect/projectile/stun/darkmatter/tracer
+	impact_type = /obj/effect/projectile/stun/darkmatter/impact

@@ -10,22 +10,47 @@
 	var/one_time_use = 0 //Used for one-time-use teleport cards (such as clown planet coordinates.)
 						 //Setting this to 1 will set src.locked to null after a player enters the portal and will not allow hand-teles to open portals to that location.
 
+/obj/machinery/computer/teleporter/New()
+	src.id = "[random_id(/obj/machinery/computer/teleporter, 1000, 9999)]"
+	..()
+	underlays.Cut()
+	underlays += image('icons/obj/stationobjs.dmi', icon_state = "telecomp-wires")
+	return
+
+/obj/machinery/computer/teleporter/Initialize()
+	. = ..()
+	station = locate(/obj/machinery/teleport/station, get_step(src, turn(dir, 90)))
+	if(station)
+		hub = locate(/obj/machinery/teleport/hub, get_step(station, turn(dir, 90)))
+
+	if(istype(station))
+		station.hub = hub
+		station.com = src
+//inf		station.set_dir(dir)
+
+	if(istype(hub))
+		hub.com = src
+//inf		hub.set_dir(dir)
+
+//[INF]
+/*
 /obj/machinery/computer/teleporter/Initialize()
 	. = ..()
 	src.id = "[random_id(/obj/machinery/computer/teleporter, 1000, 9999)]"
 	underlays.Cut()
 	underlays += image('icons/obj/stationobjs.dmi', icon_state = "telecomp-wires")
-	connect_console()
-
-/obj/machinery/computer/teleporter/proc/connect_console()
-	for(var/dir in list(NORTH,EAST,SOUTH,WEST))
-		station = locate(/obj/machinery/teleport/station, get_step(src, dir))
-		if(station)
-			station.com = src
-			hub = station.hub
-			if(hub && !hub.com)
-				hub.com = src
-				break
+	station = locate() in view(2, src)
+	if(station)
+		station.com = src
+	hub = locate() in view(2, station)
+	if(!hub)
+		hub = locate() in view(2, src)
+	if(hub)
+		hub.com = src
+		hub.station = station
+		station.hub = hub
+*/
+//[/INF]
 
 /obj/machinery/computer/teleporter/power_change()
 	. = ..()
@@ -198,11 +223,12 @@
 	idle_power_usage = 10
 	active_power_usage = 2000
 	var/obj/machinery/computer/teleporter/com
-	var/obj/machinery/teleport/station/station
 	construct_state = /decl/machine_construction/default/panel_closed //inf
+	base_type = /obj/machinery/teleport/hub //inf
+	uncreated_component_parts = null //inf
 
-/obj/machinery/teleport/hub/Initialize()
-	. = ..()
+/obj/machinery/teleport/hub/New()
+	..()
 	underlays.Cut()
 	underlays += image('icons/obj/stationobjs.dmi', icon_state = "tele-wires")
 
@@ -227,40 +253,20 @@
 	name = "projector"
 	desc = "This machine is capable of projecting a miniature wormhole leading directly to its provided target."
 	icon_state = "controller"
-	dir = 2
+	dir = 4
 	var/engaged = 0
 	idle_power_usage = 10
 	active_power_usage = 2000
 	var/obj/machinery/computer/teleporter/com
 	var/obj/machinery/teleport/hub/hub
-	maximum_component_parts = null //inf, was nothing
+	construct_state = /decl/machine_construction/default/panel_closed //inf
+	base_type = /obj/machinery/teleport/station //inf
+	uncreated_component_parts = null //inf
 
-/obj/machinery/teleport/station/Initialize()
-	. = ..()
+/obj/machinery/teleport/station/New()
+	..()
 	overlays.Cut()
 	overlays += image('icons/obj/stationobjs.dmi', icon_state = "controller-wires")
-/*inf	component_parts = list(
-		new /obj/item/weapon/stock_parts/circuitboard/teleporter_station(src),
-		new /obj/item/weapon/stock_parts/manipulator/pico(src),
-		new /obj/item/weapon/stock_parts/scanning_module/phasic(src),
-		new /obj/item/weapon/stock_parts/scanning_module/phasic(src),
-		new /obj/item/weapon/stock_parts/subspace/filter(src),
-		new /obj/item/weapon/stock_parts/subspace/analyzer(src),
-		new /obj/item/weapon/stock_parts/subspace/transmitter(src)) inf*/
-	connect_station()
-
-/obj/machinery/teleport/station/proc/connect_station()
-	for(var/dirs in list(NORTH,EAST,SOUTH,WEST))
-		com = locate() in view(1,src)
-		if(com)
-			if(!com.station)
-				com.station = src
-			if(!com.hub)
-				com.hub = hub
-		hub = locate() in view(1,src)
-		if(hub)
-			if(!hub.com)
-				hub.com = com
 
 /obj/machinery/teleport/station/attackby(var/obj/item/weapon/W, var/mob/user)
 	attack_hand(user)

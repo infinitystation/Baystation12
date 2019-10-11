@@ -9,6 +9,8 @@
 	organ_tag = "limb"
 	appearance_flags = PIXEL_SCALE
 
+	var/slowdown = 0
+
 	// Strings
 	var/broken_description             // fracture string if any.
 	var/damage_state = "00"            // Modifier used for generating the on-mob damage overlay for this limb.
@@ -49,7 +51,7 @@
 	var/list/internal_organs = list()  // Internal organs of this body part
 	var/list/implants = list()         // Currently implanted objects.
 	var/base_miss_chance = 20          // Chance of missing.
-	var/genetic_degradation = 0
+	var/genetic_degradation = 0        // Amount of current genetic damage.
 
 	//Forensics stuff
 	var/list/autopsy_data = list()    // Trauma data for forensics.
@@ -99,6 +101,8 @@
 		replaced(owner)
 		sync_colour_to_human(owner)
 	get_icon()
+
+	slowdown = species.slowdown
 
 /obj/item/organ/external/Destroy()
 
@@ -1124,6 +1128,8 @@ obj/item/organ/external/proc/remove_clamps()
 	update_icon(1)
 	unmutate()
 
+	slowdown = 0
+
 	for(var/obj/item/organ/external/T in children)
 		T.robotize(company, 1)
 
@@ -1454,11 +1460,13 @@ obj/item/organ/external/proc/remove_clamps()
 		var/unknown_body = 0
 		for(var/I in implants)
 			var/obj/item/weapon/implant/imp = I
-			if(istype(I,/obj/item/weapon/implant) && !imp.hidden)
+			if(istype(I,/obj/item/weapon/implant))
+				if(imp.hidden)
+					continue
 				if (imp.known)
 					. += "[capitalize(imp.name)] implanted"
-				else
-					unknown_body++
+					continue
+			unknown_body++
 		if(unknown_body)
 			. += "Unknown body present"
 	for(var/obj/item/organ/internal/augment/aug in internal_organs)

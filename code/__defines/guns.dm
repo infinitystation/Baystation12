@@ -30,4 +30,4 @@
 #define MAGAZINE 		4	//The magazine item itself goes inside the gun
 
 
-#define GUN_BULK_RIFLE  5
+//inf #define GUN_BULK_RIFLE  5

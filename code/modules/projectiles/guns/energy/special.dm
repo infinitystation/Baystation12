@@ -5,16 +5,20 @@
 	icon_state = "ionrifle"
 	item_state = "ionrifle"
 	origin_tech = list(TECH_COMBAT = 2, TECH_MAGNET = 4)
-	w_class = ITEM_SIZE_HUGE
 	force = 10
 	obj_flags =  OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BACK
-	one_hand_penalty = 4
 	charge_cost = 30
 	max_shots = 10
 	projectile_type = /obj/item/projectile/ion
 	wielded_item_state = "ionrifle-wielded"
 	combustion = 0
+
+	bulk = GUN_BULK_RIFLE
+	w_class = ITEM_SIZE_HUGE
+	one_hand_penalty = 4
+	is_serial = 1
+	s_gun = "I-60"
 
 /obj/item/weapon/gun/energy/ionrifle/emp_act(severity)
 	..(max(severity, 2)) //so it doesn't EMP itself, I guess
@@ -26,13 +30,16 @@
 	icon_state = "ionpistol"
 	item_state = "ionpistol"
 	origin_tech = list(TECH_COMBAT = 2, TECH_MAGNET = 4)
-	w_class = ITEM_SIZE_NORMAL
 	force = 5
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
-	one_hand_penalty = 0
 	charge_cost = 20
 	max_shots = 6
 	projectile_type = /obj/item/projectile/ion/small
+
+	bulk = GUN_BULK_REVOLVER
+	w_class = ITEM_SIZE_NORMAL
+	one_hand_penalty = 0
+	s_gun = "I-72"
 
 /obj/item/weapon/gun/energy/decloner
 	name = "biological demolecularisor"
@@ -44,6 +51,8 @@
 	max_shots = 10
 	projectile_type = /obj/item/projectile/energy/declone
 	combustion = 0
+
+	bulk = GUN_BULK_REVOLVER //inf
 
 /obj/item/weapon/gun/energy/floragun
 	name = "floral somatoray"
@@ -65,6 +74,8 @@
 		list(mode_name="increase yield", projectile_type=/obj/item/projectile/energy/florayield, modifystate="florayield"),
 		list(mode_name="induce specific mutations", projectile_type=/obj/item/projectile/energy/floramut/gene, modifystate="floramut"),
 		)
+
+	bulk = GUN_BULK_REVOLVER
 
 /obj/item/weapon/gun/energy/floragun/resolve_attackby(atom/A)
 	if(istype(A,/obj/machinery/portable_atmospherics/hydroponics))
@@ -126,7 +137,6 @@
 	w_class = ITEM_SIZE_TINY
 	slot_flags = SLOT_BELT
 
-
 /obj/item/weapon/gun/energy/mindflayer
 	name = "mind flayer"
 	desc = "A custom-built weapon of some kind."
@@ -134,6 +144,8 @@
 	icon_state = "xray"
 	origin_tech = list(TECH_COMBAT = 5, TECH_MAGNET = 4)
 	projectile_type = /obj/item/projectile/beam/mindflayer
+
+	bulk = GUN_BULK_RIFLE //inf
 
 /obj/item/weapon/gun/energy/toxgun
 	name = "phoron pistol"
@@ -143,6 +155,8 @@
 	w_class = ITEM_SIZE_NORMAL
 	origin_tech = list(TECH_COMBAT = 5, TECH_PHORON = 4)
 	projectile_type = /obj/item/projectile/energy/phoron
+
+	bulk = GUN_BULK_REVOLVER //inf
 
 /* Staves */
 

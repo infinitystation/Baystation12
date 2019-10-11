@@ -26,6 +26,14 @@
 	var/force_layer
 	var/const/REQ_CO2_MOLES    = 1.0// Moles of CO2 required for photosynthesis.
 
+//[INF]
+	var/force_product_replacing //Harvesting will be replce by type here if not null
+
+	var/growing_icon	=	'icons/obj/hydroponics_growing.dmi'
+	var/vines_icon		=	'icons/obj/hydroponics_vines.dmi'
+	var/large_icon		=	'icons/obj/hydroponics_large.dmi'
+//[/INF]
+
 /datum/seed/New()
 
 	set_trait(TRAIT_IMMUTABLE,            0)            // If set, plant will never mutate. If -1, plant is highly mutable.
@@ -63,6 +71,7 @@
 	set_trait(TRAIT_IDEAL_HEAT,           293)          // Preferred temperature in Kelvin.
 	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.25)         // Plant eats this much per tick.
 	set_trait(TRAIT_PLANT_COLOUR,         "#46b543")    // Colour of the plant icon.
+	set_trait(TRAIT_ON_HARVEST,			null) //inf //check infinity/code/modules/hydroponics/on_harvest_effects/_effects
 
 	update_growth_stages()
 
@@ -79,6 +88,9 @@
 	if(!isnull(ubound))  nval = min(nval,ubound)
 	if(!isnull(lbound))  nval = max(nval,lbound)
 	traits["[trait]"] =  nval
+
+	if(trait == TRAIT_PLANT_ICON)
+		update_growth_stages()
 
 /datum/seed/proc/create_spores(var/turf/T)
 	if(!T)
@@ -176,9 +188,9 @@
 		return
 	if(!(light_supplied) || !(get_trait(TRAIT_REQUIRES_WATER)))
 		return
-	if(environment.get_gas("carbon_dioxide") >= REQ_CO2_MOLES)
-		environment.adjust_gas("carbon_dioxide", -REQ_CO2_MOLES, 1)
-		environment.adjust_gas("oxygen", REQ_CO2_MOLES, 1)
+	if(environment.get_gas(GAS_CO2) >= REQ_CO2_MOLES)
+		environment.adjust_gas(GAS_CO2, -REQ_CO2_MOLES, 1)
+		environment.adjust_gas(GAS_OXYGEN, REQ_CO2_MOLES, 1)
 
 //Splatter a turf.
 /datum/seed/proc/splatter(var/turf/T,var/obj/item/thrown)
@@ -329,6 +341,10 @@
 		if(abs(light_supplied - get_trait(TRAIT_IDEAL_LIGHT)) > get_trait(TRAIT_LIGHT_TOLERANCE))
 			health_change += rand(1,3) * HYDRO_SPEED_MULTIPLIER
 
+	for(var/obj/effect/effect/smoke/chem/smoke in range(1, current_turf))
+		if(smoke.reagents.has_reagent(/datum/reagent/toxin/plantbgone))
+			return 100
+
 	// Pressure and temperature are needed as much as water and light.
 	// If any of the previous environment checks has failed
 	// the photosynthesis cannot be triggered.
@@ -437,12 +453,12 @@
 
 	if(prob(5))
 		consume_gasses = list()
-		var/gas = pick("oxygen","nitrogen","phoron","carbon_dioxide")
+		var/gas = pick(GAS_OXYGEN,GAS_NITROGEN,GAS_PHORON,GAS_CO2)
 		consume_gasses[gas] = rand(3,9)
 
 	if(prob(5))
 		exude_gasses = list()
-		var/gas = pick("oxygen","nitrogen","phoron","carbon_dioxide")
+		var/gas = pick(GAS_OXYGEN,GAS_NITROGEN,GAS_PHORON,GAS_CO2)
 		exude_gasses[gas] = rand(3,9)
 
 	chems = list()
@@ -739,38 +755,48 @@
 				total_yield = max(1,total_yield)
 
 		. = list()
+//product = new force_product_replacing//inf
 		for(var/i = 0;i<total_yield;i++)
 			var/obj/item/product
-			if(has_mob_product)
-				product = new has_mob_product(get_turf(user),name)
+			if(!force_product_replacing)
+				if(has_mob_product)
+					product = new has_mob_product(get_turf(user),name)
+				else
+					product = new /obj/item/weapon/reagent_containers/food/snacks/grown(get_turf(user),name)
+				. += product
+
+				if(get_trait(TRAIT_PRODUCT_COLOUR))
+					if(!istype(product, /mob))
+						product.color = get_trait(TRAIT_PRODUCT_COLOUR)
+						if(istype(product,/obj/item/weapon/reagent_containers/food))
+							var/obj/item/weapon/reagent_containers/food/food = product
+							food.filling_color = get_trait(TRAIT_PRODUCT_COLOUR)
+
+				if(mysterious)
+					product.name += "?"
+					product.desc += " On second thought, something about this one looks strange."
+
+				if(get_trait(TRAIT_BIOLUM))
+					var/clr
+					if(get_trait(TRAIT_BIOLUM_COLOUR))
+						clr = get_trait(TRAIT_BIOLUM_COLOUR)
+					product.set_light(0.5, 0.1, 3, l_color = clr)
+
+				//Handle spawning in living, mobile products (like dionaea).
+				if(istype(product,/mob/living))
+					product.visible_message("<span class='notice'>The pod disgorges [product]!</span>")
+					handle_living_product(product)
+					if(istype(product,/mob/living/simple_animal/mushroom)) // Gross.
+						var/mob/living/simple_animal/mushroom/mush = product
+						mush.seed = src
 			else
-				product = new /obj/item/weapon/reagent_containers/food/snacks/grown(get_turf(user),name)
-			. += product
-
-			if(get_trait(TRAIT_PRODUCT_COLOUR))
-				if(!istype(product, /mob))
-					product.color = get_trait(TRAIT_PRODUCT_COLOUR)
-					if(istype(product,/obj/item/weapon/reagent_containers/food))
-						var/obj/item/weapon/reagent_containers/food/food = product
-						food.filling_color = get_trait(TRAIT_PRODUCT_COLOUR)
-
-			if(mysterious)
-				product.name += "?"
-				product.desc += " On second thought, something about this one looks strange."
-
-			if(get_trait(TRAIT_BIOLUM))
-				var/clr
-				if(get_trait(TRAIT_BIOLUM_COLOUR))
-					clr = get_trait(TRAIT_BIOLUM_COLOUR)
-				product.set_light(0.5, 0.1, 3, l_color = clr)
-
-			//Handle spawning in living, mobile products (like dionaea).
-			if(istype(product,/mob/living))
-				product.visible_message("<span class='notice'>The pod disgorges [product]!</span>")
-				handle_living_product(product)
-				if(istype(product,/mob/living/simple_animal/mushroom)) // Gross.
-					var/mob/living/simple_animal/mushroom/mush = product
-					mush.seed = src
+				product = new force_product_replacing(get_turf(user),name)//inf
+		//[INF]
+		if(get_trait(TRAIT_ON_HARVEST))
+			var/typeofonharvest = get_trait(TRAIT_ON_HARVEST)
+			var/datum/hydroponics_effect/on_harvest = new typeofonharvest()
+			on_harvest.triggeredby(user)
+		//[/INF]
 
 // When the seed in this machine mutates/is modified, the tray seed value
 // is set to a new datum copied from the original. This datum won't actually
@@ -822,19 +848,19 @@
 
 /datum/seed/proc/get_icon(growth_stage)
 	var/plant_icon = get_trait(TRAIT_PLANT_ICON)
-	var/image/res = image('icons/obj/hydroponics_growing.dmi', "[plant_icon]-[growth_stage]")
+	var/image/res = image(growing_icon, "[plant_icon]-[growth_stage]") //inf //was `var/image/res = image('icons/obj/hydroponics_growing.dmi', "[plant_icon]-[growth_stage]")`
 	if(get_growth_type())
 		res.icon_state = "[get_growth_type()]-[growth_stage]"
 	else
 		res.icon_state = "[plant_icon]-[growth_stage]"
 
 	if(get_growth_type())
-		res.icon = 'icons/obj/hydroponics_vines.dmi'
+		res.icon = vines_icon //inf //was `res.icon = 'icons/obj/hydroponics_vines.dmi'`
 
 	res.color = get_trait(TRAIT_PLANT_COLOUR)
 
 	if(get_trait(TRAIT_LARGE))
-		res.icon = 'icons/obj/hydroponics_large.dmi'
+		res.icon = large_icon //inf //was `res.icon = 'icons/obj/hydroponics_large.dmi'
 		res.pixel_x = -8
 		res.pixel_y = -16
 

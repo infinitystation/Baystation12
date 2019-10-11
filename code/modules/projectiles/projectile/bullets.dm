@@ -124,19 +124,19 @@
 /obj/item/projectile/bullet/pistol
 	fire_sound = 'sound/weapons/gunshot/gunshot_pistol.ogg'
 	damage = 30
-	distance_falloff = 3
+	//distance_falloff = 3
 
 /obj/item/projectile/bullet/pistol/holdout
 	damage = 25
 	penetration_modifier = 1.2
-	distance_falloff = 4
+	//distance_falloff = 4
 
 /obj/item/projectile/bullet/pistol/strong
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
 	damage = 50
 	armor_penetration = 20
 	penetration_modifier = 0.8
-	distance_falloff = 2.5
+	//distance_falloff = 2.5
 
 /obj/item/projectile/bullet/pistol/rubber //"rubber" bullets
 	name = "rubber bullet"
@@ -152,7 +152,7 @@
 	penetrating = 1
 	armor_penetration = 70
 	embed = 0
-	distance_falloff = 2
+	//distance_falloff = 2
 
 /* shotgun projectiles */
 
@@ -169,7 +169,7 @@
 	agony = 60
 	embed = 0
 	armor_penetration = 0
-	distance_falloff = 3
+	//distance_falloff = 3
 
 //Should do about 80 damage at 1 tile distance (adjacent), and 50 damage at 3 tiles distance.
 //Overall less damage than slugs in exchange for more damage at very close range and more embedding
@@ -189,7 +189,7 @@
 	armor_penetration = 25
 	penetration_modifier = 1.5
 	penetrating = 1
-	distance_falloff = 1.5
+	//distance_falloff = 1.5
 
 /obj/item/projectile/bullet/rifle/military
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
@@ -206,7 +206,7 @@
 	armor_penetration = 80
 	hitscan = 1 //so the PTR isn't useless as a sniper weapon
 	penetration_modifier = 1.25
-	distance_falloff = 0.5
+	//distance_falloff = 0.5
 
 /obj/item/projectile/bullet/rifle/shell/apds
 	damage = 75
@@ -265,7 +265,7 @@
 	damage = 40
 	armor_penetration = 25
 	life_span = 255
-	distance_falloff = 0
+	//distance_falloff = 0
 
 /obj/item/projectile/bullet/rock/New()
 	icon_state = "rock[rand(1,3)]"

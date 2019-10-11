@@ -13,10 +13,14 @@
 	var/chamber_offset = 0 //how many empty chambers in the cylinder until you hit a round
 	mag_insert_sound = 'sound/weapons/guns/interaction/rev_magin.ogg'
 	mag_remove_sound = 'sound/weapons/guns/interaction/rev_magout.ogg'
-	accuracy = 2
+
+	accuracy = -1 //inf, was 2
 	accuracy_power = 8
+	bulk = GUN_BULK_SMG
 	one_hand_penalty = 2
-	bulk = 3
+
+	is_serial = 1
+	s_gun = "M&M-DA"
 
 /obj/item/weapon/gun/projectile/revolver/AltClick()
 	if(CanPhysicallyInteract(usr))
@@ -52,9 +56,13 @@
 	caliber = CALIBER_PISTOL
 	ammo_type = /obj/item/ammo_casing/pistol
 	desc = "The Lumoco Arms' Solid is a rugged revolver for people who don't keep their guns well-maintained."
-	accuracy = 1
-	bulk = 0
 	fire_delay = 9
+
+	accuracy = 1
+	bulk = GUN_BULK_REVOLVER //inf
+
+	is_serial = 1
+	s_gun = "LA-S"
 
 /obj/item/weapon/gun/projectile/revolver/holdout
 	name = "holdout revolver"
@@ -63,11 +71,15 @@
 	item_state = "pen"
 	caliber = CALIBER_PISTOL_SMALL
 	ammo_type = /obj/item/ammo_casing/pistol/small
-	w_class = ITEM_SIZE_SMALL
-	accuracy = 1
-	one_hand_penalty = 0
-	bulk = 0
 	fire_delay = 7
+
+	accuracy = 1
+	bulk = GUN_BULK_PISTOL
+	w_class = ITEM_SIZE_SMALL
+	one_hand_penalty = 0
+
+	is_serial = 1
+	s_gun = "AM-P"
 
 /obj/item/weapon/gun/projectile/revolver/capgun
 	name = "cap gun"
@@ -76,6 +88,11 @@
 	caliber = CALIBER_CAPS
 	origin_tech = list(TECH_COMBAT = 1, TECH_MATERIAL = 1)
 	ammo_type = /obj/item/ammo_casing/cap
+
+	bulk = 0
+
+	is_serial = 1
+	s_gun = "FUN"
 
 /obj/item/weapon/gun/projectile/revolver/capgun/attackby(obj/item/weapon/wirecutters/W, mob/user)
 	if(!istype(W) || icon_state == "revolver")

@@ -145,6 +145,26 @@ ckey: evgen00751
 character_name: Andy Robberts
 item_path: /obj/item/music_player/custom_tape
 }
+{
+ckey: doctorducky
+character_name: Marc Hughes
+item_path: /obj/item/music_player/custom_tape
+}
+{
+ckey: morikawacinatsu
+character_name: Henry Blackburn
+item_path: /obj/item/music_player/custom_tape
+}
+{
+ckey: mrkayde
+character_name: kiyaka
+item_path: /obj/item/music_player/custom_tape
+}
+{
+ckey: diesiege
+character_name: Eva Laine
+item_path: /obj/item/music_player/csplayer/custom_tape
+}
 
 #	SHORT ITEMS HERE (3-4)
 
@@ -417,11 +437,6 @@ character_name: Juan Stern
 item_path: /obj/item/clothing/under/custom_flunif
 }
 {
-ckey: jacking
-character_name: Jon Obrayn
-item_path: /obj/item/weapon/storage/backpack/dufflebag/biohazard/jacking
-}
-{
 ckey: warfoxy
 character_name: Luxuria Cavalet
 item_path: /obj/item/clothing/under/dress/dress_red
@@ -490,6 +505,18 @@ item_path: /obj/item/weapon/reagent_containers/food/snacks/monkeycube/lizard/cus
 ckey: farwa87
 character_name: Alexandra Price
 item_path: /obj/item/toy/plushie/jones
+}
+{
+ckey: jacking
+character_name: Carter Williams
+item_path: /obj/item/weapon/clothingbag/custom_army
+req_access: "ACCESS_SECURITY"
+}
+{
+ckey: sarov
+character_name: CP.NTC.Sectarian-145
+item_path: /obj/item/weapon/clothingbag/custom_pcrc
+req_access: "ACCESS_SECURITY"
 }
 
 #	MEDIUM ITEMS HERE (5-6)

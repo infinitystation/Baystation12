@@ -5,11 +5,11 @@
 	icon_state = "kexosuit"
 	item_state = null
 	suit_type = "support exosuit"
-	armor = list(melee = 65, bullet = 65, laser = 65, energy = 55, bomb = 75, bio = 100, rad = 100)
+	armor = list(melee = 55, bullet = 55, laser = 55, energy = 45, bomb = 75, bio = 100, rad = 100)
 	online_slowdown = 0
 	offline_slowdown = 1
 	equipment_overlay_icon = null
-	air_type =   /obj/item/weapon/tank/mantid
+	air_type =   /obj/item/weapon/tank/mantid/reactor
 	cell_type =  /obj/item/weapon/cell/mantid
 	chest_type = /obj/item/clothing/suit/space/rig/mantid
 	helm_type =  /obj/item/clothing/head/helmet/space/rig/mantid
@@ -47,7 +47,7 @@
 	icon_state = "blade"
 	interface_name = "nanoblade"
 	usable = FALSE
-	gun = null
+	gun = /obj/item/weapon/gun/energy/crossbow/ninja/mounted //inf, was null
 
 /obj/item/rig_module/mounted/flechette_rifle
 	name = "flechette rifle"
@@ -77,6 +77,9 @@
 	icon_state = "multitool"
 	usable = FALSE
 	selectable = TRUE
+
+/obj/item/rig_module/device/multitool/ismultitool()
+	return device && device.ismultitool()
 
 /obj/item/rig_module/device/cable_coil
 	name = "mantid cable extruder"
@@ -113,29 +116,50 @@
 	usable = TRUE
 	selectable = TRUE
 
+/obj/item/rig_module/device/clustertool/iswrench()
+	return device && device.iswrench()
+
+/obj/item/rig_module/device/clustertool/iswirecutter()
+	return device && device.iswirecutter()
+
+/obj/item/rig_module/device/clustertool/isscrewdriver()
+	return device && device.isscrewdriver()
+
+/obj/item/rig_module/device/clustertool/iscrowbar()
+	return device && device.iscrowbar()
+
 // Atmosphere/jetpack filler.
 /obj/item/weapon/tank/mantid
-	name = "mantid gas reactor"
-	desc = "A mantid gas processing plant that continuously synthesises 'breathable' atmosphere."
+	name = "mantid gas tank"
 	icon_state = "bromomethane"
 	distribute_pressure = ONE_ATMOSPHERE*O2STANDARD
 	volume = 180
 
+/obj/item/weapon/tank/mantid/methyl_bromide
+	starting_pressure = list(GAS_METHYL_BROMIDE = 6 * ONE_ATMOSPHERE)
+
+/obj/item/weapon/tank/mantid/oxygen
+	name = "mantid oxygen tank"
+	starting_pressure = list(OXYGEN = 6 * ONE_ATMOSPHERE)
+
+/obj/item/weapon/tank/mantid/reactor
+	name = "mantid gas reactor"
+	desc = "A mantid gas processing plant that continuously synthesises 'breathable' atmosphere."
 	var/charge_cost = 12
-	var/refill_gas_type = "methyl_bromide"
+	var/refill_gas_type = GAS_METHYL_BROMIDE
 	var/gas_regen_amount = 0.05
 	var/gas_regen_cap = 50
 
-/obj/item/weapon/tank/mantid/Initialize()
+/obj/item/weapon/tank/mantid/reactor/Initialize()
 	starting_pressure = list("[refill_gas_type]" = 6 * ONE_ATMOSPHERE)
 	. = ..()
 
-/obj/item/weapon/tank/mantid/oxygen
+/obj/item/weapon/tank/mantid/reactor/oxygen
 	name = "serpentid gas reactor"
-	refill_gas_type = "oxygen"
+	refill_gas_type = GAS_OXYGEN
 	distribute_pressure = 31
 
-/obj/item/weapon/tank/mantid/Process()
+/obj/item/weapon/tank/mantid/reactor/Process()
 	..()
 	var/obj/item/weapon/rig/holder = loc
 	if(air_contents.total_moles < gas_regen_cap && istype(holder) && holder.cell && holder.cell.use(charge_cost))
@@ -159,7 +183,7 @@
 // Rig definitions.
 /obj/item/weapon/rig/mantid/gyne
 	name = "gyne support exosuit"
-	armor = list(melee = 80, bullet = 80, laser = 70, energy = 45, bomb = 75, bio = 100, rad = 100)
+	armor = list(melee = 65, bullet = 70, laser = 65, energy = 55, bomb = 75, bio = 100, rad = 100)
 	icon_override = 'icons/mob/species/mantid/onmob_back_gyne.dmi'
 	mantid_caste = SPECIES_MANTID_GYNE
 	initial_modules = list(
@@ -168,7 +192,6 @@
 		/obj/item/rig_module/electrowarfare_suite,
 		/obj/item/rig_module/chem_dispenser/mantid,
 		/obj/item/rig_module/mounted/energy_blade/mantid,
-		/obj/item/rig_module/mounted/flechette_rifle,
 		/obj/item/rig_module/mounted/particle_rifle,
 		/obj/item/rig_module/device/multitool,
 		/obj/item/rig_module/device/cable_coil,
@@ -182,7 +205,7 @@
 	name = "serpentid support exosuit"
 	icon_override = 'icons/mob/species/nabber/onmob_back_gas.dmi'
 	mantid_caste = SPECIES_NABBER
-	air_type =   /obj/item/weapon/tank/mantid/oxygen
+	air_type =   /obj/item/weapon/tank/mantid/reactor/oxygen
 	chest_type = /obj/item/clothing/suit/space/rig/mantid/serpentid
 	boot_type =  null
 
@@ -198,7 +221,6 @@
 		/obj/item/rig_module/electrowarfare_suite,
 		/obj/item/rig_module/chem_dispenser/mantid,
 		/obj/item/rig_module/mounted/energy_blade/mantid,
-		/obj/item/rig_module/mounted/flechette_rifle,
 		/obj/item/rig_module/mounted/particle_rifle,
 		/obj/item/rig_module/device/multitool,
 		/obj/item/rig_module/device/cable_coil,
@@ -225,6 +247,7 @@
 		SPECIES_MANTID_ALATE = 'icons/mob/species/mantid/onmob_head_alate.dmi',
 		SPECIES_NABBER =       'icons/mob/species/nabber/onmob_head_gas.dmi'
 		)
+	tint = 1 //INF, WAS NOTHING. High tech
 
 /obj/item/clothing/suit/space/rig/mantid
 	desc = "It's closer to a mech than a suit."

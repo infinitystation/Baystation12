@@ -6,7 +6,7 @@
 
 /decl/hierarchy/supply_pack/machinery/floodlight
 	name = "Machinery - Floodlight crate"
-	contains = list(/obj/machinery/floodlight/cargo = 1)
+	contains = list(/obj/machinery/floodlight = 2)
 	cost = 10
 	containername = "floodlight crate"
 

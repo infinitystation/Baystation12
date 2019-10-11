@@ -52,6 +52,7 @@
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi'
 
 	)
+	tint = 1 //INF, WAS NOTHING
 
 /obj/item/weapon/rig/light/hacker
 	name = "cybersuit control module"
@@ -105,7 +106,7 @@
 	desc = "A unique, vaccum-proof suit of nano-enhanced armor designed specifically for assassins."
 	suit_type = "ominous"
 	icon_state = "ninja_rig"
-	armor = list(melee = 50, bullet = 15, laser = 30, energy = 10, bomb = 25, bio = 100, rad = 30)
+	armor = list(melee = 50, bullet = 15, laser = 30, energy = 10, bomb = 25, bio = 100, rad = 15)
 	siemens_coefficient = 0.2 //heavy hardsuit level shock protection
 	emp_protection = 40 //change this to 30 if too high.
 	online_slowdown = 0

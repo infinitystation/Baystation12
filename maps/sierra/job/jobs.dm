@@ -6,7 +6,8 @@
 		/datum/species/nabber = list(/datum/job/ai, /datum/job/cyborg, /datum/job/janitor, /datum/job/scientist_assistant,\
 									 /datum/job/chemist, /datum/job/roboticist, /datum/job/cargo_assistant, /datum/job/chef,\
 									 /datum/job/engineer_trainee, /datum/job/doctor_trainee, /datum/job/bartender),
-		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/merchant_trainee)
+		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/merchant_trainee),
+		/datum/species/human/mule	= list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/merchant_trainee)
 	)
 
 #define HUMAN_ONLY_JOBS /datum/job/captain, /datum/job/hos
@@ -23,7 +24,7 @@
 									/datum/job/officer, /datum/job/warden, /datum/job/detective, /datum/job/iaa,\
 									/datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer,/datum/job/qm,\
 									/datum/job/senior_engineer, /datum/job/senior_doctor, /datum/job/psychiatrist,\
-									/datum/job/stowaway, /datum/job/senior_scientist),
+									/*/datum/job/stowaway,*/ /datum/job/senior_scientist),
 	)
 #undef HUMAN_ONLY_JOBS
 
@@ -34,11 +35,11 @@
 						/datum/job/warden, /datum/job/detective, /datum/job/officer,
 						/datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee, /datum/job/chemist, /datum/job/psychiatrist,
 						/datum/job/qm, /datum/job/cargo_tech,  /datum/job/cargo_assistant, /datum/job/mining,
-						/datum/job/janitor, /datum/job/chef, /datum/job/bartender,
+						/datum/job/janitor, /datum/job/chef, /datum/job/bartender, /datum/job/chaplain,
 						/datum/job/senior_scientist, /datum/job/scientist, /datum/job/roboticist, /datum/job/scientist_assistant,
 						/datum/job/ai, /datum/job/cyborg,
 						/datum/job/assistant,
-						/datum/job/merchant, /datum/job/merchant_trainee, /datum/job/stowaway
+						/datum/job/merchant, /datum/job/merchant_trainee, /*/datum/job/stowaway*/
 						)
 
 	access_modify_region = list(
@@ -66,8 +67,8 @@
 					species_to_job_blacklist[S.type] = species_blacklist
 				species_blacklist |= job.type
 */
+
 // Some jobs for nabber grades defined here due to map-specific job datums.
-/*
 /decl/cultural_info/culture/nabber/New()
 	LAZYADD(valid_jobs, list(/datum/job/scientist_assistant, /datum/job/cargo_assistant))
 	..()
@@ -83,7 +84,7 @@
 /decl/cultural_info/culture/nabber/a/plus/New()
 	LAZYADD(valid_jobs, /datum/job/doctor)
 	..()
-*/
+
 /datum/species/nabber/check_background(var/datum/job/job, var/datum/preferences/prefs) //overrides
 	. = TRUE
 
@@ -97,4 +98,4 @@
 	required_language = LANGUAGE_HUMAN_EURO
 
 /datum/map/sierra
-	default_assistant_title = "Passenger"
+	default_assistant_title = "Crewman"

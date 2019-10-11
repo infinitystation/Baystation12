@@ -94,10 +94,16 @@
 	var/vision_flags = SEE_SELF               // Same flags as glasses.
 
 	// Death vars.
-	var/meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/human
-	var/remains_type = /obj/item/remains/xeno
-	var/gibbed_anim = "gibbed-h"
-	var/dusted_anim = "dust-h"
+	var/meat_type =     /obj/item/weapon/reagent_containers/food/snacks/meat/human
+	var/meat_amount =   3
+	var/skin_material = MATERIAL_SKIN_GENERIC
+	var/skin_amount =   3
+	var/bone_material = MATERIAL_BONE_GENERIC
+	var/bone_amount =   3
+	var/remains_type =  /obj/item/remains/xeno
+	var/gibbed_anim =   "gibbed-h"
+	var/dusted_anim =   "dust-h"
+
 	var/death_sound
 	var/death_message = "seizes up and falls limp, their eyes dead and lifeless..."
 	var/knockout_message = "collapses, having been knocked unconscious."
@@ -109,9 +115,9 @@
 	// Environment tolerance/life processes vars.
 	var/reagent_tag                                             // Used for metabolizing reagents.
 	var/breath_pressure = 16                                    // Minimum partial pressure safe for breathing, kPa
-	var/breath_type = "oxygen"                                  // Non-oxygen gas breathed, if any.
-	var/poison_types = list("phoron" = TRUE, "chlorine" = TRUE) // Noticeably poisonous air - ie. updates the toxins indicator on the HUD.
-	var/exhale_type = "carbon_dioxide"                          // Exhaled gas type.
+	var/breath_type = GAS_OXYGEN                                  // Non-oxygen gas breathed, if any.
+	var/poison_types = list(GAS_PHORON = TRUE, GAS_CHLORINE = TRUE) // Noticeably poisonous air - ie. updates the toxins indicator on the HUD.
+	var/exhale_type = GAS_CO2                          // Exhaled gas type.
 	var/max_pressure_diff = 60                                  // Maximum pressure difference that is safe for lungs
 	var/cold_level_1 = 243                                      // Cold damage level 1 below this point. -30 Celsium degrees
 	var/cold_level_2 = 200                                      // Cold damage level 2 below this point.
@@ -528,13 +534,13 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 	var/list/vision = H.get_accumulated_vision_handlers()
 	H.update_sight()
 	H.set_sight(H.sight|get_vision_flags(H)|H.equipment_vision_flags|vision[1])
-	H.change_light_colour(darksight_tint)
+	H.change_light_colour(H.getDarkvisionTint())
 
 	if(H.stat == DEAD)
 		return 1
 
 	if(!H.druggy)
-		H.set_see_in_dark((H.sight == (SEE_TURFS|SEE_MOBS|SEE_OBJS)) ? 8 : min(darksight_range + H.equipment_darkness_modifier, 8))
+		H.set_see_in_dark((H.sight == (SEE_TURFS|SEE_MOBS|SEE_OBJS)) ? 8 : min(H.getDarkvisionRange() + H.equipment_darkness_modifier, 8))
 		if(H.equipment_see_invis)
 			H.set_see_invisible(max(min(H.see_invisible, H.equipment_see_invis), vision[2]))
 

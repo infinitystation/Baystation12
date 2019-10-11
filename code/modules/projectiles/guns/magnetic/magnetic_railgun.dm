@@ -7,14 +7,11 @@
 	load_type = /obj/item/weapon/rcd_ammo
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 4, TECH_MAGNET = 4)
 	projectile_type = /obj/item/projectile/bullet/magnetic/slug
-	one_hand_penalty = 6
 	power_cost = 300
 	fire_delay = 35
-	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
 	loaded = /obj/item/weapon/rcd_ammo/large // ~30 shots
 	combustion = 1
-	bulk = GUN_BULK_RIFLE + 3
 
 	var/initial_cell_type = /obj/item/weapon/cell/hyper
 	var/initial_capacitor_type = /obj/item/weapon/stock_parts/capacitor/adv // 6-8 shots
@@ -22,6 +19,10 @@
 	var/slowdown_held = 3
 	var/slowdown_worn = 2
 	has_safety = TRUE //inf
+
+	bulk = GUN_BULK_SNIPER_RIFLE
+	w_class = ITEM_SIZE_HUGE
+	one_hand_penalty = 6
 
 /obj/item/weapon/gun/magnetic/railgun/Initialize()
 
@@ -126,13 +127,15 @@
 	slowdown_worn = 3
 
 	slot_flags = SLOT_BACK
-	w_class = ITEM_SIZE_NO_CONTAINER
 
 	firemodes = list(
 		list(mode_name="semiauto",    burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=1, burst_accuracy=null, dispersion=null),
 		list(mode_name="short bursts", burst=3, fire_delay=null, move_delay=5,    one_hand_penalty=2, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.6, 1.0)),
 		list(mode_name="long bursts",  burst=6, fire_delay=null, move_delay=10,    one_hand_penalty=2, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(0.6, 0.6, 1.0, 1.0, 1.2)),
 		)
+
+	bulk = GUN_BULK_MACHINEGUN
+	w_class = ITEM_SIZE_NO_CONTAINER
 
 /obj/item/weapon/gun/magnetic/railgun/automatic/examine(var/mob/user)
 	. = ..(user,1)
@@ -151,7 +154,6 @@
 	icon = 'icons/obj/guns/flechette.dmi'
 	icon_state = "flechette_gun"
 	item_state = "z8carbine"
-	one_hand_penalty = 2
 	fire_delay = 8
 	removable_components = FALSE
 	initial_cell_type = /obj/item/weapon/cell/hyper
@@ -168,9 +170,13 @@
 		list(mode_name="short bursts", burst=3, fire_delay=null, move_delay=5,    one_hand_penalty=2, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.6, 1.0)),
 		)
 
+	bulk = GUN_BULK_RIFLE //inf
+	one_hand_penalty = 2
+
+
 /obj/item/weapon/gun/magnetic/railgun/flechette/out_of_ammo()
 	visible_message("<span class='warning'>\The [src] beeps to indicate the magazine is empty.</span>")
-	
+
 
 /obj/item/weapon/gun/magnetic/railgun/flechette/skrell
 	name = "skrellian rifle"
@@ -178,7 +184,6 @@
 	icon = 'icons/obj/guns/skrell_rifle.dmi'
 	icon_state = "skrell_rifle"
 	item_state = "skrell_rifle"
-	one_hand_penalty = 3
 	fire_delay = 10
 	slowdown_held = 1
 	slowdown_worn = 1
@@ -192,3 +197,5 @@
 	power_cost = 100
 	wielded_item_state = "skrell_rifle-wielded"
 	firemodes = list()
+
+	one_hand_penalty = 3

@@ -30,10 +30,10 @@ matrix:
 #     env: TEST=MAP MAP_PATH=bearcat
     - name: "Map - Bearcat Infinity"
       env: TEST=MAP MAP_PATH=bearcat_inf
-#   - name: "Map - Away Sites"
-#     env: TEST=MAP MAP_PATH=away_sites_testing
-    - name: "Map - Away Sites Infinity"
-      env: TEST=MAP MAP_PATH=away_sites_testing_inf
+    - name: "Map - Away Sites"
+      env: TEST=MAP MAP_PATH=away_sites_testing
+#    - name: "Map - Away Sites Infinity"
+#      env: TEST=MAP MAP_PATH=away_sites_testing_inf
 
 cache:
   directories:

@@ -66,6 +66,8 @@
 	var/current_user                        // Used to check if the crossbow has changed hands since being drawn.
 	var/draw_time = 20						// Time needed to draw the bow back by one "tension"
 
+	bulk = GUN_BULK_RIFLE //inf
+
 /obj/item/weapon/gun/launcher/crossbow/toggle_safety(var/mob/user)
 	to_chat(user, "<span class='warning'>There's no safety on \the [src]!</span>")
 

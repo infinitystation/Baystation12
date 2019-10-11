@@ -278,6 +278,22 @@
 	materials = list(MATERIAL_STEEL = 20000)
 	build_path = /obj/item/mech_component/propulsion/heavy
 
+/datum/design/item/mechfab/exosuit/spider
+	name = "quadruped motivators"
+	id = "quad_legs"
+	time = 20
+	materials = list(MATERIAL_STEEL = 12000)
+	build_path = /obj/item/mech_component/propulsion/spider
+	req_tech = list(TECH_ENGINEERING = 2)
+
+/datum/design/item/mechfab/exosuit/track
+	name = "armored treads"
+	id = "treads"
+	time = 35
+	materials = list(MATERIAL_STEEL = 25000)
+	build_path = /obj/item/mech_component/propulsion/tracks
+	req_tech = list(TECH_MATERIAL = 4)
+
 /datum/design/item/robot_upgrade
 	build_type = MECHFAB
 	time = 12
@@ -341,7 +357,7 @@
 	name = "Illegal upgrade"
 	desc = "Allows for the construction of lethal upgrades for cyborgs."
 	id = "borg_syndicate_module"
-	req_tech = list(TECH_COMBAT = 4, TECH_ILLEGAL = 3)
+	req_tech = list(TECH_COMBAT = 4, TECH_ESOTERIC = 3)
 	materials = list(MATERIAL_STEEL = 10000, MATERIAL_GLASS = 15000, MATERIAL_DIAMOND = 10000)
 	build_path = /obj/item/borg/upgrade/syndicate
 
@@ -371,7 +387,7 @@
 	build_path = /obj/item/mech_equipment/drill
 
 /datum/design/item/exosuit/taser
-	name = "mounted taser"
+	name = "mounted electrolaser"
 	id = "mech_taser"
 	req_tech = list(TECH_COMBAT = 1)
 	build_path = /obj/item/mech_equipment/mounted_system/taser

@@ -98,7 +98,7 @@
 	access = list(access_tox, access_tox_storage, access_emergency_storage, access_teleporter, access_bridge, access_rd, access_ai_upload,
 						access_research, access_robotics, access_mining, access_mining_office, access_mining_station, access_xenobiology,
 						access_RC_announce, access_keycard_auth, access_xenoarch, access_heads,
-						access_sec_doors, access_medical, access_network, access_maint_tunnels,
+						access_sec_doors, access_medical, access_network, access_maint_tunnels, access_eva,
 						access_expedition_shuttle, access_guppy, access_hangar, access_petrov, access_petrov_helm, access_guppy_helm)
 
 	minimal_access = list()
@@ -197,6 +197,12 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/shields_monitor,
 							 /datum/computer_file/program/reports)
+
+/datum/job/chief_engineer/get_description_blurb()
+	return "√лавный инженер - руководитель и администратор инженерного отдела, \
+	он командует инженерами, а также требует от них отчеты о проведенных работах. \
+	ќтвечает за то, что реактор благополучно запустили, что щиты корабл€ правильно настроили, \
+	и что любые механические неисправности устран€ютс€ быстро и эффективно."
 
 /datum/job/hos
 	title = "Head of Security"

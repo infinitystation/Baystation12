@@ -1,4 +1,3 @@
-//Infinity Station sign. ~Quardbreak
 /obj/effect/floor_decal/ss13/infinity
 	icon = 'icons/turf/flooring/infinity_decals.dmi'
 

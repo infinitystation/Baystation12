@@ -28,7 +28,7 @@
 	for(var/access in region_access)
 		ID.access += get_region_accesses(access)
 
-	if(user_id && user_id.access && !safety)
+	if(user_id?.access && !safety)
 		ID.access |= user_id.access
 
 /obj/item/device/remote_device/Destroy()

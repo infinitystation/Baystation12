@@ -79,7 +79,7 @@
 /obj/item/modular_computer/pda/wrist/AltClick(var/mob/user)
 	if(!CanPhysicallyInteract(user))
 		return
-	if(card_slot && istype(card_slot.stored_card))
+	if(card_slot?.stored_card)
 		eject_id()
 	else
 		..()

@@ -11,6 +11,7 @@ sierra specific items
 	name = "explorer satchel"
 	desc = "A rugged satchel for field work."
 	icon_state = "satchel-exp"
+	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/messenger/explorer
 	name = "explorer messenger bag"

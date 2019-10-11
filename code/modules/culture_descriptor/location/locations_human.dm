@@ -12,6 +12,7 @@
 	distance = "1.5AU"
 	capital = "Olympus"
 	economic_power = 1.1
+//	secondary_langs = HUMAN_LANGUAGES_FULL //inf
 
 /decl/cultural_info/location/human/earth
 	name = HOME_SYSTEM_EARTH
@@ -205,6 +206,7 @@
 	and often see themselves as better. Most Lordanians are seen as untrustworthy, or selfish. As such, they are rarely seen within Sol's Defence Forces."
 	capital = "New Ares"
 	economic_power = 1.2
+	language = LANGUAGE_SPACER //inf
 
 /decl/cultural_info/location/human/kingston
 	name = HOME_SYSTEM_KINGSTON

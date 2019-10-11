@@ -25,12 +25,25 @@
 /datum/map_template/ruin/away_site/mining_asteroid
 	name = "Mining - Asteroid Base"
 	id = "awaysite_mining_asteroid_base"
-	description = "A medium-sized asteroid full of minerals. Old mining facility detected on one of sides, owner - NanoTrasen."
+	description = "A medium-sized asteroid full of minerals. Old mining facility detected at one of sides, owner - NanoTrasen."
 	prefix = "maps/away_inf/"
 	suffixes = list("mining/mining-asteroid.dmm")
 	cost = 1
 	accessibility_weight = 10
-//	template_flags = TEMPLATE_FLAG_SPAWN_GUARANTEED
+	generate_mining_by_z = 1
+	template_flags = TEMPLATE_FLAG_SPAWN_GUARANTEED
+	apc_test_exempt_areas = list(
+		/area/outpost/abandoned = NO_SCRUBBER,
+		/area/mine/explored = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/mine/unexplored = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/outpost/mining/solar = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/outpost/mining/maints = NO_SCRUBBER|NO_VENT,
+		/area/outpost/mining/atmos = NO_SCRUBBER|NO_VENT,
+		/area/outpost/mining/relay = NO_SCRUBBER,
+	)
+	area_usage_test_exempted_root_areas = list(/area/mine)
+	area_usage_test_exempted_areas = list(/area/djstation)
+	area_coherency_test_exempt_areas =  list(/area/mine/explored, /area/mine/unexplored)
 
 /obj/effect/shuttle_landmark/mining/nav1
 	name = "Asteroid Navpoint #1"
@@ -74,6 +87,11 @@
 	name = "Mining Asteroid Center"
 	landmark_tag = "nav_mining_antag"
 
+/obj/machinery/telecomms/relay/preset/mining_away
+	id = "Outpost Mining Relay"
+	autolinkers = list("m_relay_a")
+	usage_offise = 5 KILOWATTS
+	outage_probability = 100
 /*
 //MINING-2 // SIGNAL
 /obj/effect/overmap/sector/away
@@ -158,3 +176,18 @@
 	разрушения внешних иллюминаторов - без вмешательства космических тел и тому подобного.<br> \
 	Обновляйте противметоритную защиту чаще - это просто пыль.<br> \
 	Обновлено - в секторе обнаружены малые стаи космических карпов, будьте осторожны.</i>"
+
+/obj/item/weapon/paper/mining_base/relay_base
+	info = "<tt><center><b><large>NT Automated Mining Outpost Psy-721</large></b></center><center>Центр Связи</center><hr>Инженерной командой одного из судов была возведена установка для удалённой связи с ближайшими судами.<br>В случае поломки коммуникационного реле, должен быть использован факс для удалённой связи с судном и вызовом инженера.<hr><i><small>NT Support Division</small></i></tt><i><br><br>Я не эксперт, но блять - ДЕЙСТВИТЕЛЬНО ЛИ нужно было размещать постройку на другом конце астероида? Чтобы я в случае пропажи связи наложил в 3-4 раза больше кирпичей, пока в полной тишине шёл туда?<br>+++</i>"
+
+/obj/item/weapon/paper/mining_base/relay_remote
+	info = "<i>Молодец - ты прошел до другого конца астероида, чтобы найти это место. Congratulations!<br> \
+	Если твою пятую точку сюда принесло чувство страха, что тебя здесь забудут - читай дальше :^)<br> \
+	Итак, у тебя есть 2 стула.<br> \
+	Первый - если реле работает, то у тебя всё путём и ты слышишь парней со своего корыта. \
+	Если оно от НТ или у вашего техника по компам хватает наглости подключаться к чужим сетям, конечно же.<br>\
+	Если что-то пошло не так и реле не работает - у тебя всё ещё должен быть факс. Его доступ должен распознавать \
+	шахтёров.<br>\
+	Если что сломалось - зовите техника, он поводит мультитулом и всё пройдет. \
+	А может и пора съебывать, если ваше реле не работает.<br><br>\
+	...Ну ахуеть теперь.<br></i>"

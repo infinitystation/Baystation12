@@ -5,7 +5,6 @@
 	icon_state = "shotgun"
 	item_state = "shotgun"
 	max_shells = 4
-	w_class = ITEM_SIZE_HUGE
 	force = 10
 	obj_flags =  OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BACK
@@ -14,11 +13,16 @@
 	load_method = SINGLE_CASING
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 	handle_casings = HOLD_CASINGS
-	one_hand_penalty = 8
-	bulk = 6
 	var/recentpump = 0 // to prevent spammage
 	wielded_item_state = "gun_wielded"
 	load_sound = 'sound/weapons/guns/interaction/shotgun_instert.ogg'
+
+	bulk = GUN_BULK_RIFLE
+	w_class = ITEM_SIZE_HUGE
+	one_hand_penalty = 8
+
+	is_serial = 1
+	s_gun = "WT-29"
 
 /obj/item/weapon/gun/projectile/shotgun/pump/consume_next_projectile()
 	if(chambered)
@@ -54,7 +58,10 @@
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	max_shells = 7 //match the ammo box capacity, also it can hold a round in the chamber anyways, for a total of 8.
 	ammo_type = /obj/item/ammo_casing/shotgun
-	one_hand_penalty = 8
+
+	bulk = GUN_BULK_RIFLE
+
+	s_gun = "KS-40"
 
 /obj/item/weapon/gun/projectile/shotgun/doublebarrel
 	name = "double-barreled shotgun"
@@ -67,14 +74,12 @@
 	load_method = SINGLE_CASING|SPEEDLOADER
 	handle_casings = CYCLE_CASINGS
 	max_shells = 2
-	w_class = ITEM_SIZE_HUGE
 	force = 10
 	obj_flags =  OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BACK
 	caliber = CALIBER_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 1)
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
-	one_hand_penalty = 2
 	wielded_item_state = "gun_wielded"
 
 	burst_delay = 0
@@ -82,6 +87,10 @@
 		list(mode_name="fire one barrel at a time", burst=1),
 		list(mode_name="fire both barrels at once", burst=2),
 		)
+
+	bulk = GUN_BULK_CARABINE //inf
+	w_class = ITEM_SIZE_HUGE
+	one_hand_penalty = 2
 
 /obj/item/weapon/gun/projectile/shotgun/doublebarrel/pellet
 	ammo_type = /obj/item/ammo_casing/shotgun/pellet
@@ -129,7 +138,8 @@
 	item_state = "sawnshotgun"
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	ammo_type = /obj/item/ammo_casing/shotgun/pellet
-	w_class = ITEM_SIZE_NORMAL
 	force = 5
+
+	bulk = GUN_BULK_SMG //inf, WAS 2
+	w_class = ITEM_SIZE_NORMAL
 	one_hand_penalty = 4
-	bulk = 2

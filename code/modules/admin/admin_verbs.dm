@@ -103,7 +103,7 @@ var/list/admin_verbs_sounds = list(
 
 var/list/admin_verbs_fun = list(
 	/client/proc/object_talk,
-	/client/proc/cmd_admin_dress,
+	/client/proc/cmd_admin_dress, //inf was /datum/admins/proc/cmd_admin_dress,
 	/client/proc/cmd_admin_gib_self,
 	/client/proc/drop_bomb,
 	/client/proc/everyone_random,
@@ -165,6 +165,7 @@ var/list/admin_verbs_server = list(
 	/client/proc/nanomapgen_DumpImage,
 	/client/proc/cmd_toggle_admin_help,//inf,
 	/client/proc/observe_delay,//inf,
+	/datum/admins/proc/toggleevent, //inf,
 	/client/proc/update_server//inf,
 	)
 var/list/admin_verbs_debug = list(

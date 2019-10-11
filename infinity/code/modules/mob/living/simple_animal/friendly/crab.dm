@@ -1,0 +1,10 @@
+/mob/living/simple_animal/crab/groffee
+	name = "Groffee"
+	real_name = "Groffee"
+	desc = "It's Groffee, the lava-crab!"
+	icon_state = "evilcrab"
+	icon_living = "evilcrab"
+	icon_dead = "evilcrab_dead"
+	response_help  = "pets"
+	response_disarm = "gently pushes aside"
+	response_harm   = "stomps"

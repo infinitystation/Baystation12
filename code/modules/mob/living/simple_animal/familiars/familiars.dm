@@ -10,7 +10,7 @@
 	universal_speak = FALSE
 	universal_understand = TRUE
 
-	min_gas = list("oxygen" = 1)
+	min_gas = list(GAS_OXYGEN = 1)
 	max_gas = null
 	unsuitable_atmos_damage = 1
 
@@ -177,6 +177,6 @@
 	maxHealth = 25
 	melee_damage_lower = 3
 	melee_damage_upper = 4
-	attacktext = "claws"
+	attacktext = "scratched"
 
 	wizardy_spells = list(/spell/targeted/subjugation)

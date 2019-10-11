@@ -15,6 +15,7 @@
 	var/rating = 1
 	var/last_ripped = 0
 	construct_state = /decl/machine_construction/default/panel_closed
+	uncreated_component_parts = null
 
 /obj/machinery/pile_ripper/Initialize()
 	. = ..()

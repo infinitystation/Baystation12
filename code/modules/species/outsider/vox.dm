@@ -44,8 +44,8 @@
 	gluttonous = GLUT_SMALLER|GLUT_ITEM_NORMAL
 	stomach_capacity = 12
 
-	breath_type = "nitrogen"
-	poison_types = list("oxygen" = TRUE)
+	breath_type = GAS_NITROGEN
+	poison_types = list(GAS_OXYGEN = TRUE)
 	siemens_coefficient = 0.2
 
 	species_flags = SPECIES_FLAG_NO_SCAN
@@ -135,6 +135,7 @@
 	spawn_flags = SPECIES_IS_WHITELISTED | SPECIES_NO_FBP_CONSTRUCTION
 	brute_mod = 0.8
 	burn_mod = 0.8
+	strength = STR_HIGH
 
 	override_organ_types = list(BP_EYES = /obj/item/organ/internal/eyes/vox/armalis)
 

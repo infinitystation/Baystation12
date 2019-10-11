@@ -111,14 +111,14 @@
 	desc = "This is a random flora."
 	icon = 'icons/obj/flora/snowflora.dmi'
 	icon_state = "snowgrass1bb"
-//	spawn_nothing_percentage = 20
+	spawn_nothing_percentage = 20
 
 /obj/random/snowland/spawn_choices()
 	return list(/obj/structure/flora/bush = 5,
 				/obj/structure/flora/grass/brown = 3,
 				/obj/structure/flora/grass/both = 4,
 				/obj/structure/flora/grass/green = 3,
-				/obj/structure/flora/tree/dead = 3,
+				/obj/structure/flora/tree/dead = 1,
 				/obj/structure/flora/tree/pine = 2)
 
 //
@@ -248,7 +248,7 @@
 	desc = "This is a random asteroid hostile mob."
 	icon = 'icons/mob/amorph.dmi'
 	icon_state = "standing"
-	spawn_nothing_percentage = 75
+	spawn_nothing_percentage = 60
 
 obj/random/hostile/asteroid/spawn_choices()
 	return list(/mob/living/simple_animal/hostile/carp,

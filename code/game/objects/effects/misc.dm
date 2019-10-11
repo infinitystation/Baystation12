@@ -46,9 +46,6 @@
 /obj/effect/paint/silver
 	color = COLOR_SILVER
 
-/obj/effect/paint/nt_white
-	color = COLOR_OFF_WHITE
-
 /obj/effect/paint/black
 	color = COLOR_DARK_GRAY
 
@@ -87,9 +84,6 @@
 
 /obj/effect/paint_stripe/red
 	color = COLOR_RED_GRAY
-
-/obj/effect/paint_stripe/nt_red
-	color = COLOR_NT_RED
 
 /obj/effect/paint_stripe/paleblue
 	color = COLOR_PALE_BLUE_GRAY

@@ -37,7 +37,7 @@
 	recommended_players = 20
 //	minimum_players = 0 its already 0
 
-	away_site_budget = 1
+	away_site_budget = 3 //1 always wastes on mining asteroid
 	id_hud_icons = 'maps/sierra/icons/assignment_hud.dmi'
 
 	available_cultural_info = list(
@@ -81,7 +81,6 @@
 			FACTION_ZPCI,
 			FACTION_PCRC,
 			FACTION_SAARE,
-			FACTION_SCP,
 			FACTION_XYNERGY,
 			FACTION_FREETRADE,
 			FACTION_OTHER

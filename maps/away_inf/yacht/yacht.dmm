@@ -994,8 +994,10 @@
 /turf/simulated/floor/airless,
 /area/yacht/engine)
 "ct" = (
-/turf/simulated/floor/airless,
-/area/space)
+/turf/simulated/floor/airless{
+	icon_state = "dmg2"
+	},
+/area/yacht/engine)
 "cu" = (
 /obj/structure/cable,
 /obj/effect/floor_decal/solarpanel,
@@ -1144,11 +1146,8 @@
 /turf/simulated/floor/plating,
 /area/yacht/living)
 "cI" = (
-/obj/effect/landmark/explosion/medium,
-/turf/simulated/floor/airless{
-	icon_state = "dmg2"
-	},
-/area/space)
+/turf/simulated/floor/airless,
+/area/yacht/engine)
 "cJ" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -1625,13 +1624,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/yacht/engine)
-"dE" = (
-/turf/space,
-/area/yacht/engine)
-"dF" = (
-/obj/structure/lattice,
-/turf/space,
 /area/yacht/engine)
 "dG" = (
 /obj/machinery/meter,
@@ -4992,8 +4984,8 @@ aa
 aa
 cw
 aa
-cI
-dF
+ct
+cw
 cw
 aa
 aa
@@ -5097,8 +5089,8 @@ dt
 cJ
 dt
 ek
-dE
-dE
+aa
+aa
 aa
 aa
 aa
@@ -5196,12 +5188,12 @@ cw
 cr
 dH
 cu
-dF
+cw
 cr
 dH
 cu
-dF
-dE
+cw
+aa
 aa
 aa
 aa
@@ -5298,12 +5290,12 @@ aa
 cr
 dH
 cu
-dE
+aa
 cs
 dH
 cu
-dE
-dE
+aa
+aa
 aa
 aa
 aa
@@ -5400,12 +5392,12 @@ aa
 cr
 dH
 cv
-dF
+cw
 cs
 dH
 cu
-dF
-dE
+cw
+aa
 aa
 aa
 aa
@@ -5502,12 +5494,12 @@ aa
 cr
 dH
 cv
-dE
+aa
 cs
 dH
 cu
-dE
-dE
+aa
+aa
 aa
 aa
 aa
@@ -5604,12 +5596,12 @@ cw
 cs
 cM
 cv
-dF
+cw
 cs
 dH
 cv
-dF
-dE
+cw
+aa
 aa
 aa
 aa
@@ -5706,12 +5698,12 @@ aa
 cr
 dH
 cv
-dE
+aa
 cs
 cM
 cv
-dE
-dE
+aa
+aa
 aa
 aa
 aa
@@ -5808,12 +5800,12 @@ cw
 cr
 dH
 cv
-dF
+cw
 cs
 dH
 cv
-dF
-dE
+cw
+aa
 aa
 aa
 aa
@@ -5910,12 +5902,12 @@ cw
 cs
 dH
 cv
-dE
+aa
 cs
 dH
 cv
-dE
-dE
+aa
+aa
 aa
 aa
 aa
@@ -6012,12 +6004,12 @@ cw
 cr
 cM
 cv
-dE
+aa
 cs
 dH
 cu
-dF
-dE
+cw
+aa
 aa
 aa
 aa
@@ -6114,12 +6106,12 @@ aa
 cr
 dH
 cv
-dF
+cw
 cs
 dH
 cv
-dE
-dE
+aa
+aa
 aa
 aa
 aa
@@ -6219,8 +6211,8 @@ dt
 dt
 dt
 el
-dF
-dE
+cw
+aa
 aa
 aa
 aa
@@ -6319,10 +6311,10 @@ cd
 cO
 dj
 aa
-ct
-ct
+cI
+cI
 aa
-dE
+aa
 aa
 aa
 aa

@@ -16,13 +16,13 @@
 	/datum/job/scientist, /datum/job/scientist_assistant, \
 	/datum/job/psychiatrist, \
 	/datum/job/assistant, /datum/job/bartender, /datum/job/merchant, /datum/job/merchant_trainee, \
-	/datum/job/stowaway, /datum/job/detective)
+	/*/datum/job/stowaway,*/ /datum/job/detective)
 
 //For civilian jobs that may have a uniform, but not a strict one
 #define SEMIFORMAL_ROLES list(\
 	/datum/job/assistant,/datum/job/mining, /datum/job/scientist_assistant, \
 	/datum/job/psychiatrist, /datum/job/bartender, /datum/job/merchant, /datum/job/merchant_trainee, \
-	/datum/job/stowaway, /datum/job/scientist, \
+	/*/datum/job/stowaway,*/ /datum/job/scientist, \
 	/datum/job/senior_scientist, /datum/job/detective)
 
 //For civilian jobs that may have a strict uniform.
@@ -31,7 +31,7 @@
 	/datum/job/psychiatrist, /datum/job/bartender, /datum/job/merchant, /datum/job/merchant_trainee, \
 	/datum/job/iaa, /datum/job/rd, \
 	/datum/job/senior_scientist, /datum/job/scientist, \
-	 ,/datum/job/stowaway, /datum/job/detective)
+	/*/datum/job/stowaway,*/ /datum/job/detective)
 
 //For NanoTrasen employees
 #define NANOTRASEN_ROLES list(\
@@ -49,7 +49,7 @@
 //For roles with no uniform or formal clothing requirements
 #define RESTRICTED_ROLES list(\
 	/datum/job/assistant, /datum/job/bartender,\
-	/datum/job/merchant, /datum/job/merchant_trainee, /datum/job/stowaway)
+	/datum/job/merchant, /datum/job/merchant_trainee, /*/datum/job/stowaway*/)
 
 //For members of the command department
 #define COMMAND_ROLES list(\

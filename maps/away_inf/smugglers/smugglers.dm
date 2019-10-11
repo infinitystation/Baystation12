@@ -21,6 +21,13 @@
 	prefix = "maps/away_inf/"
 	suffixes = list("smugglers/smugglers.dmm")
 	cost = 1
+	generate_mining_by_z = 1
+	area_usage_test_exempted_root_areas = list(/area/smugglers)
+	apc_test_exempt_areas = list(
+		/area/smugglers/base = NO_SCRUBBER,
+		/area/smugglers/dorms = NO_SCRUBBER|NO_VENT,
+		/area/smugglers/office = NO_SCRUBBER|NO_VENT
+	)
 
 /obj/effect/shuttle_landmark/nav_asteroid_base
 	name = "Abandoned Asteroid Base North"

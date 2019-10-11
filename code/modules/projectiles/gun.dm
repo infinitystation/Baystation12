@@ -93,6 +93,20 @@
 	var/has_safety = TRUE
 	var/safety_icon 	   //overlay to apply to gun based on safety state, if any
 
+	///////////////////////////////////////////////////////
+	///////////////////////INFINITY////////////////////////
+	////             serial numbers things!!!          ////
+	///////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////
+
+	var/is_serial = 0 //the entrie variable that defines should the gun have serial
+	var/serial // < most important thing, this is the SERIAL itself
+	var/s_type //energy or kinetic
+	var/s_gun //gun type, e.g. LP - laep
+	//see below
+
+var/global/serials = list()
+
 /obj/item/weapon/gun/Initialize()
 	. = ..()
 	for(var/i in 1 to firemodes.len)
@@ -103,6 +117,14 @@
 
 	if(scope_zoom)
 		verbs += /obj/item/weapon/gun/proc/scope
+//INF
+	if(is_serial) //serial
+		var/snum = rand(1,10000)
+		while(snum in serials) //system against similar numbers
+			snum = rand(1,10000)
+		serial = "[s_type]-[s_gun]-[snum]" //e.g K-P20-9999
+		serials += serial //list of serials
+//INF END
 
 /obj/item/weapon/gun/update_twohanding()
 	if(one_hand_penalty)
@@ -177,6 +199,11 @@
 /obj/item/weapon/gun/attack(atom/A, mob/living/user, def_zone)
 	if (A == user && user.zone_sel.selecting == BP_MOUTH && !mouthshoot)
 		handle_suicide(user)
+	else if(user.a_intent != I_HURT && user.aiming && user.aiming.active) //if aim mode, don't pistol whip
+		if (user.aiming.aiming_at != A)
+			PreFire(A, user)
+		else
+			Fire(A, user, pointblank=1)
 	else if(user.a_intent == I_HURT) //point blank shooting
 		Fire(A, user, pointblank=1)
 	else
@@ -344,6 +371,7 @@
 
 	var/acc_mod = burst_accuracy[min(burst, burst_accuracy.len)]
 	var/disp_mod = dispersion[min(burst, dispersion.len)]
+/*[INF]
 	var/stood_still = last_handled
 	//Not keeping gun active will throw off aim (for non-Masters)
 	if(user.skill_check(SKILL_WEAPONS, SKILL_PROF))
@@ -357,12 +385,63 @@
 	else
 		acc_mod -= w_class - ITEM_SIZE_NORMAL
 		acc_mod -= bulk
-
+[/INF]*/
+//[INF]
+	acc_mod -= bulk
+	switch(bulk)
+		if(1) //pistols
+			if(user.skill_check(SKILL_WEAPONS, SKILL_BASIC))
+				acc_mod += bulk
+				acc_mod += accuracy
+		if(2) //revolvers
+			if(user.skill_check(SKILL_WEAPONS, SKILL_ADEPT) && user.skill_check(SKILL_WEAPONS, SKILL_BASIC))
+				acc_mod += bulk
+				acc_mod += accuracy
+		if(3) //SMGs
+			if(user.skill_check(SKILL_HAULING, SKILL_BASIC) && user.skill_check(SKILL_WEAPONS, SKILL_ADEPT))
+				if(user.skill_check(SKILL_HAULING, SKILL_BASIC) && user.skill_check(SKILL_WEAPONS, SKILL_ADEPT))
+					acc_mod += bulk
+					acc_mod += accuracy
+				else
+					acc_mod += bulk / 2
+					acc_mod += accuracy * 0.75
+		if(4 to 5) //carabines and assault rifles
+			if(user.skill_check(SKILL_HAULING, SKILL_BASIC) && user.skill_check(SKILL_WEAPONS, SKILL_ADEPT))
+				if(user.skill_check(SKILL_HAULING, SKILL_ADEPT) && user.skill_check(SKILL_WEAPONS, SKILL_ADEPT))
+					acc_mod += bulk
+					acc_mod += accuracy
+				else
+					acc_mod += bulk / 2
+					acc_mod += accuracy * 0.75
+		if(6) //sniper rifles
+			if (user.skill_check(SKILL_HAULING, SKILL_BASIC) && user.skill_check(SKILL_WEAPONS, SKILL_BASIC))
+				if(user.skill_check(SKILL_HAULING, SKILL_ADEPT) && user.skill_check(SKILL_WEAPONS, SKILL_ADEPT))
+					if(user.skill_check(SKILL_HAULING, SKILL_ADEPT) && user.skill_check(SKILL_WEAPONS, SKILL_EXPERT))
+						acc_mod += bulk
+						acc_mod += accuracy
+					else
+						acc_mod += bulk / 2
+						acc_mod += accuracy * 0.75
+				else
+					acc_mod += bulk / 5
+					acc_mod += accuracy * 0.25
+		if(7) //machine gun, RPG
+			if (user.skill_check(SKILL_HAULING, SKILL_ADEPT) && user.skill_check(SKILL_WEAPONS, SKILL_BASIC))
+				if(user.skill_check(SKILL_HAULING, SKILL_ADEPT) && user.skill_check(SKILL_WEAPONS, SKILL_ADEPT))
+					if(user.skill_check(SKILL_HAULING, SKILL_EXPERT) && user.skill_check(SKILL_WEAPONS, SKILL_EXPERT))
+						acc_mod += bulk
+						acc_mod += accuracy
+					else
+						acc_mod += bulk / 2 //-25%, not 35%
+						acc_mod += accuracy / 2
+				else
+					acc_mod += bulk / 5
+//[/INF]
 	if(one_hand_penalty >= 4 && !held_twohanded)
 		acc_mod -= one_hand_penalty/2
 		disp_mod += one_hand_penalty*0.5 //dispersion per point of two-handedness
 
-	if(burst > 1 && !user.skill_check(SKILL_WEAPONS, SKILL_ADEPT))
+	if(burst > 1 && (!user.skill_check(SKILL_WEAPONS, SKILL_ADEPT) || !user.skill_check(SKILL_HAULING, SKILL_EXPERT)))
 		acc_mod -= 1
 		disp_mod += 0.5
 
@@ -373,15 +452,7 @@
 		//As opposed to no-delay pew pew
 		acc_mod += 2
 
-// inf ahead
-	var/mob/living/carbon/human/H = user
-	if(CE_SPEEDBOOST in H.chem_effects) //hyperzine
-		acc_mod -= 1
-		disp_mod += 0.5
-// inf end
-
 	acc_mod += user.ranged_accuracy_mods()
-	acc_mod += accuracy
 	P.hitchance_mod = accuracy_power*acc_mod
 	P.dispersion = disp_mod
 
@@ -514,8 +585,20 @@
 		if(firemodes.len > 1)
 			var/datum/firemode/current_mode = firemodes[sel_mode]
 			to_chat(user, "The fire selector is set to [current_mode.name].")
-	to_chat(user, "The safety is [safety() ? "on" : "off"].")
+	if(has_safety)
+		to_chat(user, "The safety is [safety() ? "on" : "off"].")
 	last_safety_check = world.time
+//[INF]
+	switch(bulk)
+		if(1) to_chat(user, "This weapon bulky like a <b>pistol!</b> You just need finish the <b>basic</b> training with weapons.")
+		if(2) to_chat(user, "This weapon bulky like a <b>heavy pistol!</b> You have to be <b>trained in athletic and finish the basic weapon handling</b> to hold and shoot propertly from it.")
+		if(3) to_chat(user, "This weapon bulky like a <b>sub-machinegun!</b> You have to be <b>minimally fit and be trained in weapon handling</b> to hold and shoot propertly from it.")
+		if(4) to_chat(user, "This weapon bulky like a <b>carabine!</b> You have to be <b>trained in both athletic and weapon handling</b> to hold and shoot propertly from it.")
+		if(5) to_chat(user, "This weapon bulky like an <b>assault rifle!</b> You have to be <b>trained in both athletic and weapon handling</b> skills to hold and shoot propertly from it.")
+		if(6) to_chat(user, "This weapon bulky like a <b>sniper rifle!</b> You have to be <b>trained in athletic and have expirienced weapon handling</b> skills to hold and shoot propertly from it, but if you trained, you at least can hold it.")
+		if(7) to_chat(user, "This weapon bulky like a <b>machinegun!</b> You have to be <b>expirienced in athletic and weapon handling</b> to hold and shoot propertly from it, but if you trained, you at least can hold it.")
+		else to_chat(user, "This weapon bulky like a <b>holdout pistol!</b> Even kid can shoot from it.")
+//[/INF]
 
 /obj/item/weapon/gun/proc/switch_firemodes()
 
@@ -588,19 +671,9 @@
 /obj/item/weapon/gun/proc/can_autofire()
 	return (can_autofire && world.time >= next_fire_time)
 
-/client/MouseDrag(src_object, over_object, src_location, over_location, src_control, over_control, params)
-	. = ..()
-	if(over_object)
-		var/mob/living/M = mob
-		if(istype(M) && !M.incapacitated())
-			var/obj/item/weapon/gun/gun = mob.get_active_hand()
-			if(istype(gun) && gun.can_autofire())
-				M.set_dir(get_dir(M, over_object))
-				gun.Fire(get_turf(over_object), mob, params, (get_dist(over_object, mob) <= 1), FALSE)
-
 /obj/item/weapon/gun/proc/check_accidents(mob/living/user)
 	if(istype(user))
-		if(!safety() && user.skill_fail_prob(SKILL_WEAPONS, 20, SKILL_EXPERT, 2) && special_check(user))
+		if(!safety() && user.skill_fail_prob(SKILL_WEAPONS, 20, SKILL_ADEPT, 2) && special_check(user)) //INF, WAS: if(!safety() && user.skill_fail_prob(SKILL_WEAPONS, 20, SKILL_EXPERT, 2) && special_check(user))
 			to_chat(user, "<span class='warning'>[src] fires on its own!</span>")
 			var/list/targets = list(user)
 			targets += trange(2, src)

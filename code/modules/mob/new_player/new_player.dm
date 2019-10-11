@@ -58,7 +58,7 @@
 	output += "[client.prefs.job_high ? ",<br>[client.prefs.job_high]" : null]<br>"
 	output += "</div>"
 
-	panel = new(src, "Welcome","Welcome,<br>[client.prefs.real_name]", 210, 280, src)
+	panel = new(src, "Welcome","Welcome,<br>[client]", 210, 280, src) //inf, was 	panel = new(src, "Welcome","Welcome,<br>[client.prefs.real_name]", 210, 280, src)
 	panel.set_window_options("can_close=0")
 	panel.set_content(JOINTEXT(output))
 	panel.open()
@@ -525,7 +525,7 @@
 		mind.active = 0 //we wish to transfer the key manually
 		mind.original = new_character
 		if(client.prefs.memory)
-			mind.store_memory(client.prefs.memory)
+			mind.StoreMemory(client.prefs.memory)
 		if(client.prefs.relations.len)
 			for(var/T in client.prefs.relations)
 				var/TT = matchmaker.relation_types[T]

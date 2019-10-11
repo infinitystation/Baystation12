@@ -40,6 +40,6 @@
 
 /material/resin/can_open_material_door(var/mob/living/user)
 	var/mob/living/carbon/M = user
-	if(istype(M) && locate(/obj/item/organ/internal/xeno/hivenode) in M.internal_organs)
+	if(locate(/obj/item/organ/internal/xeno/hivenode) in M?.internal_organs)
 		return 1
 	return 0

@@ -66,7 +66,7 @@
 				S.amount_grown = -1
 
 /datum/event/infestation/announce()
-//	command_announcement.Announce("Bioscans indicate that [vermstring] have been breeding in \the [location]. Clear them out, before this starts to affect productivity.", "Major Bill's Shipping Critter Sensor", zlevels = affecting_z)
+//	command_announcement.Announce("Bioscans indicate that [vermstring] have been breeding in \the [location]. Further infestation is likely if left unchecked.", "[location_name()] Biologic Sensor Network", zlevels = affecting_z)
 	if(vermin == VERM_SPIDERS)
 		GLOB.using_map.level_x_biohazard_announcement(6)
 	else

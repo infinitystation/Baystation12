@@ -4,7 +4,7 @@
 		if(istype(src, /turf/simulated))
 			var/turf/simulated/my_tile = loc
 			if(!istype(my_tile) || !my_tile.zone || my_tile.submerged())
-				if(my_tile && my_tile.fire == src)
+				if(my_tile?.fire == src)
 					my_tile.fire = null
 				qdel(src)
 				return

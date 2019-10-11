@@ -68,7 +68,7 @@
 	if(istype(mover, /obj/item/projectile))
 		var/obj/item/projectile/proj = mover
 
-		if(proj.firer && Adjacent(proj.firer))
+		if(Adjacent(proj?.firer))
 			return 1
 
 		if(mover.dir != reverse_direction(dir))
@@ -84,7 +84,7 @@
 	return 1
 
 /obj/structure/barrier/CheckExit(atom/movable/O as mob|obj, target as turf)
-	if(istype(O) && O.checkpass(PASS_FLAG_TABLE))
+	if(O?.checkpass(PASS_FLAG_TABLE))
 		return 1
 	if (get_dir(loc, target) == dir)
 		return !density
@@ -119,7 +119,7 @@
 		if(WT.remove_fuel(0,user))
 			visible_message("<span class='warning'>\The [user] is repairing [src]...</span>")
 			playsound(src, 'sound/items/Welder.ogg', 100, 1)
-			if(do_after(user, max(5, health / 5), src) && WT && WT.isOn())
+			if(do_after(user, max(5, health / 5), src) && WT?.isOn())
 				to_chat(user, "<span class='notice'>You finish repairing the damage to [src].</span>")
 				playsound(src, 'sound/items/Welder2.ogg', 100, 1)
 				health = maxhealth
@@ -266,7 +266,7 @@
 		if(WT.remove_fuel(0,user))
 			to_chat(user, "<span class='notice'>You start repairing the damage to [src].</span>")
 			playsound(src, 'sound/items/Welder.ogg', 100, 1)
-			if(do_after(user, max(5, health / 5), src) && WT && WT.isOn())
+			if(do_after(user, max(5, health / 5), src) && WT?.isOn())
 				to_chat(user, "<span class='notice'>You finish repairing the damage to [src].</span>")
 				playsound(src, 'sound/items/Welder2.ogg', 100, 1)
 				health = 200

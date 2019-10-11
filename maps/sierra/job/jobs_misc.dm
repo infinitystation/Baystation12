@@ -88,10 +88,10 @@
 
 	max_skill = list(   SKILL_COMBAT  = SKILL_MAX,
 	                    SKILL_WEAPONS = SKILL_MAX)
+	required_role = "Merchant"
 
 	skill_points = 24
-
-
+/*
 /datum/job/stowaway
 	title = "Stowaway"
 	department = "Civilian"
@@ -113,3 +113,4 @@
 
 	access = list(access_maint_tunnels, access_emergency_storage)
 	minimal_access = list()
+*/

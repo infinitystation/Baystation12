@@ -434,7 +434,7 @@ var/list/airlock_overlays = list()
 
 /obj/machinery/door/airlock/phoron/proc/PhoronBurn(temperature)
 	for(var/turf/simulated/floor/target_tile in range(2,loc))
-		target_tile.assume_gas("phoron", 35, 400+T0C)
+		target_tile.assume_gas(GAS_PHORON, 35, 400+T0C)
 		spawn (0) target_tile.hotspot_expose(temperature, 400)
 	for(var/turf/simulated/wall/W in range(3,src))
 		W.burn((temperature/4))//Added so that you can't set off a massive chain reaction with a small flame
@@ -807,6 +807,9 @@ About the new airlock wires panel:
 			update_icon()
 	return
 
+/obj/machinery/door/airlock/attack_robot(mob/user)
+	ui_interact(user)
+
 /obj/machinery/door/airlock/attack_ai(mob/user)
 	ui_interact(user)
 
@@ -1152,14 +1155,18 @@ About the new airlock wires panel:
 			else
 				spawn(0)	close(1)
 
-			//if door is unbroken, but at half health or less, hit with fire axe using harm intent
-	else if (istype(C, /obj/item/weapon/material/twohanded/fireaxe) && !(stat & BROKEN) && (src.health <= src.maxhealth / 2) && user.a_intent == I_HURT)
+			//if door is unbroken, hit with fire axe using harm intent
+	else if (istype(C, /obj/item/weapon/material/twohanded/fireaxe) && !(stat & BROKEN) && user.a_intent == I_HURT)
 		var/obj/item/weapon/material/twohanded/fireaxe/F = C
 		if (F.wielded)
 			playsound(src, 'sound/weapons/smash.ogg', 100, 1)
-			user.visible_message("<span class='danger'>[user] smashes \the [C] into the airlock's control panel! It explodes in a shower of sparks!</span>", "<span class='danger'>You smash \the [C] into the airlock's control panel! It explodes in a shower of sparks!</span>")
-			health = 0
-			set_broken(TRUE)
+			health -= F.force_wielded * 2
+			if(health <= 0)
+				user.visible_message(SPAN_DANGER("[user] smashes \the [C] into the airlock's control panel! It explodes in a shower of sparks!"), SPAN_DANGER("You smash \the [C] into the airlock's control panel! It explodes in a shower of sparks!"))
+				health = 0
+				set_broken(TRUE)
+			else
+				user.visible_message(SPAN_DANGER("[user] smashes \the [C] into the airlock's control panel!"))
 		else
 			..()
 			return

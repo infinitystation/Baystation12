@@ -56,7 +56,7 @@
 
 /obj/item/ammo_magazine/c12755
 	name = "magazine (12.7x55mm)"
-	icon_state = "5.56"
+	icon_state = "assault_rifle"
 	mag_type = MAGAZINE
 	caliber = CALIBER_ANTIMATERIAL_SMALL
 	matter = list(MATERIAL_STEEL = 2300)

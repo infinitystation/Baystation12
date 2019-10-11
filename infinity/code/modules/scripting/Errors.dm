@@ -21,9 +21,9 @@
 
 /scriptError/BadToken/New(token/t)
 	token = t
-	if(t&&t.line)
+	if(t?.line)
 		message = "[t.line]: [message]"
-	if(istype(t))
+	if(t)
 		message += "[t.value]"
 	else
 		message += "[t]"
@@ -54,7 +54,7 @@
 	message = "Expected: '"
 
 /scriptError/ExpectedToken/New(id, token/T)
-	if(T && T.line)
+	if(T?.line)
 		message = "[T.line]: [message]"
 
 	message+="[id]'. "

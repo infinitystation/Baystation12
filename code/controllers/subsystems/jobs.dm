@@ -155,6 +155,11 @@ SUBSYSTEM_DEF(jobs)
 	if(SSticker.mode && SSticker.mode.explosion_in_progress)
 		to_chat(joining, "<span class='warning'>The [station_name()] is currently exploding. Joining would go poorly.</span>")
 		return FALSE
+//[INF]
+	if(!job.is_required_roles_filled())
+		to_chat(joining, SPAN_WARNING("For joining as <b>\a [job.title]</b> there should be <b>\a [job.required_role]</b> in crew."))
+		return FALSE
+//[/INF]
 	return TRUE
 
 /datum/controller/subsystem/jobs/proc/check_latejoin_blockers(var/mob/new_player/joining, var/datum/job/job)
@@ -376,7 +381,8 @@ SUBSYSTEM_DEF(jobs)
 	if(!jobban_isbanned(player, job.title) && \
 	 job.player_old_enough(player.client) && \
 	 player.client.prefs.CorrectLevel(job, level) && \
-	 job.is_position_available())
+	 job.is_position_available() && \
+	 job.is_required_roles_filled()) //inf
 		assign_role(player, job.title)
 		return TRUE
 	return FALSE
@@ -507,7 +513,7 @@ SUBSYSTEM_DEF(jobs)
 			remembered_info += "<b>Your department's account pin is:</b> [department_account.remote_access_pin]<br>"
 			remembered_info += "<b>Your department's account funds are:</b> T[department_account.money]<br>"
 
-		H.mind.store_memory(remembered_info)
+		H.StoreMemory(remembered_info, /decl/memory_options/system)
 
 	var/alt_title = null
 	if(H.mind)
@@ -555,7 +561,7 @@ SUBSYSTEM_DEF(jobs)
 	BITSET(H.hud_updateflag, ID_HUD)
 	BITSET(H.hud_updateflag, IMPLOYAL_HUD)
 	BITSET(H.hud_updateflag, SPECIALROLE_HUD)
-	
+
 	job.post_equip_rank(H, alt_title || rank)
 
 	return H

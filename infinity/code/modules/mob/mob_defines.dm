@@ -1,2 +1,2 @@
 /mob
-	var/obj/screen/fixeye = null //inf
+	var/obj/screen/fixeye = null
