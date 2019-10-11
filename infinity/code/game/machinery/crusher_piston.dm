@@ -114,7 +114,7 @@
 		if(prot == 0)
 			M.apply_damage(45, BRUTE, user.get_active_hand())
 			M.apply_damage(45, PAIN)
-			M.visible_message(SPAN_DANGER("[user]'s hand catches in the [src]!</span>"), SPAN_DANGER("Your hand gets caught in the [src]!"))
+			M.visible_message(SPAN_DANGER("[user]'s hand catches in the [src]!"), SPAN_DANGER("Your hand gets caught in the [src]!"))
 			if(M.can_feel_pain())
 				M.agony_scream()
 		return
