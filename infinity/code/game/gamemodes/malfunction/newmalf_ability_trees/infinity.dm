@@ -14,7 +14,7 @@
 	for(var/obj/item/device/remote_device/dr in world)
 		if(dr.disabled == 1)
 			dr.disabled = FALSE
-			to_chat(src, "<span class='notice'>DR was turned on again.</span>")
+			to_chat(src, SPAN_NOTICE("DR was turned on again."))
 		else
 			dr.disabled = TRUE
-			to_chat(src, "<span class='notice'>DR-disabling pulse emitted.</span>")
+			to_chat(src, SPAN_NOTICE("DR-disabling pulse emitted."))

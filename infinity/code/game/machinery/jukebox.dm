@@ -15,7 +15,7 @@
 		for(var/datum/track/T in tracks)
 			if(T == tape.track)
 				tracks -= T
-		visible_message("<span class='notice'>[usr] eject \the [tape] from \the [src].</span>")
+		visible_message(SPAN_NOTICE("[usr] eject \the [tape] from \the [src]."))
 		usr.put_in_hands(tape)
 		tape = null
 		verbs -= /obj/machinery/media/jukebox/verb/eject
