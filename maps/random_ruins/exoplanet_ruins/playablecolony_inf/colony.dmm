@@ -1986,7 +1986,6 @@
 /obj/effect/floor_decal/corner/paleblue{
 	dir = 5
 	},
-/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/white,
 /area/map_template/colony/medbay)
 "eb" = (
@@ -3380,6 +3379,7 @@
 /obj/item/weapon/reagent_containers/food/drinks/pitcher,
 /obj/item/weapon/reagent_containers/glass/beaker/bowl,
 /obj/item/weapon/reagent_containers/food/condiment/salt,
+/obj/item/weapon/reagent_containers/food/condiment/enzyme,
 /turf/simulated/floor/tiled/freezer,
 /area/map_template/colony/messhall)
 "gf" = (
@@ -5905,8 +5905,8 @@
 	dir = 8
 	},
 /obj/structure/table/steel_reinforced,
-/obj/machinery/reagentgrinder,
 /obj/item/weapon/reagent_containers/glass/beaker/large,
+/obj/machinery/reagentgrinder/juicer,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/colony/hydroponics)
 "kf" = (
@@ -7826,9 +7826,6 @@
 	},
 /obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
 /obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},

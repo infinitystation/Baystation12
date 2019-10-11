@@ -29,6 +29,7 @@ var/global/list/rad_collectors = list()
 	var/pulse_coeff = 20
 	var/end_time = 0
 	var/alert_delay = 10 SECONDS
+	construct_state = /decl/machine_construction/default/panel_closed //inf
 
 /obj/machinery/power/rad_collector/Initialize()
 	. = ..()
@@ -40,7 +41,6 @@ var/global/list/rad_collectors = list()
 		new /obj/item/weapon/stock_parts/capacitor,
 		new /obj/item/weapon/stock_parts/capacitor)*/
 	RefreshParts()
-	construct_state = /decl/machine_construction/default/panel_closed //inf
 
 /obj/machinery/power/rad_collector/RefreshParts()
 	drainratio = initial(drainratio)

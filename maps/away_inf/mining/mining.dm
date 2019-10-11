@@ -39,6 +39,7 @@
 		/area/outpost/mining/solar = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/outpost/mining/maints = NO_SCRUBBER|NO_VENT,
 		/area/outpost/mining/atmos = NO_SCRUBBER|NO_VENT,
+		/area/outpost/mining/relay = NO_SCRUBBER,
 	)
 	area_usage_test_exempted_root_areas = list(/area/mine)
 	area_usage_test_exempted_areas = list(/area/djstation)

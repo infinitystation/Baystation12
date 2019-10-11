@@ -994,7 +994,6 @@
 /turf/simulated/floor/airless,
 /area/yacht/engine)
 "ct" = (
-/obj/effect/landmark/explosion/medium,
 /turf/simulated/floor/airless{
 	icon_state = "dmg2"
 	},
