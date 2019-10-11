@@ -110,7 +110,7 @@
 	build_path = /obj/item/weapon/stock_parts/circuitboard/rad_collector
 	sort_string = "KCASR"
 
-/datum/design/circuit/rad_collector
+/datum/design/circuit/traffic_console
 	name = "telecommunications traffic control console"
 	id = "teletraffic"
 	req_tech = list(TECH_DATA = 3)
