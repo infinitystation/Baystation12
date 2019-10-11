@@ -16,19 +16,19 @@
 		playsound(src, 'sound/items/Ratchet.ogg', 50, 1)
 		if(do_after(user, 20, src))
 			anchored = !anchored
-			to_chat(user, "<span class='notice'>The [src] is now [anchored == 1 ? "" : "un"]secured.</span>")
+			to_chat(user, SPAN_NOTICE("The [src] is now [anchored == 1 ? "" : "un"]secured."))
 		return
 
 	if(istype(W, /obj/item/weapon/screwdriver))
 		playsound(src, 'sound/items/Screwdriver.ogg', 50, 1)
 		stage = !stage
-		to_chat(user, "<span class = 'notice'>You [stage == 1 ? "un" : ""]screw the telepad's tracking beacon.</span>")
+		to_chat(user, SPAN_NOTICE("You [stage == 1 ? "un" : ""]screw the telepad's tracking beacon."))
 		return
 
 	if(istype(W, /obj/item/weapon/weldingtool) && stage == 1)
 		playsound(src, 'sound/items/Welder.ogg', 50, 1)
 		if(do_after(user, 50, src))
-			to_chat(user, "<span class = 'notice'> You disassemble the telepad.</span>")
+			to_chat(user, SPAN_NOTICE("You disassemble the telepad."))
 			new /obj/item/stack/material/steel(get_turf(src))
 			new /obj/item/stack/material/glass(get_turf(src))
 			qdel(src)
@@ -39,9 +39,9 @@
 		if(isnull(rcs.pad) || rcs.emagged)
 			rcs.pad = src
 			playsound(W.loc, 'sound/machines/twobeep.ogg', 30, 1)
-			to_chat(user, "<span class='notice'>You connect \the [rcs] to [src]</span>.")
+			to_chat(user, SPAN_NOTICE("You connect \the [rcs] to [src]."))
 		else
-			to_chat(user, "<span class='warning'>Your device is already was linked to [rcs.pad == src ? "this" : "another"] cardo telepad.</span>")
+			to_chat(user, SPAN_WARNING("Your device is already was linked to [rcs.pad == src ? "this" : "another"] cardo telepad."))
 		return
 	..()
 
@@ -56,7 +56,7 @@
 
 /obj/item/device/telepad_beacon/attack_self(mob/user as mob)
 	if(user)
-		to_chat(user, "<span class = 'notice'>Locked In</span>")
+		to_chat(user, SPAN_NOTICE("Locked In"))
 		new /obj/machinery/cargopad(user.loc)
 		playsound(src, 'sound/effects/pop.ogg', 100, 1, 1)
 		user.drop_item()
@@ -90,7 +90,7 @@
 
 /obj/item/weapon/rcs/examine()
 	..()
-	to_chat(usr, "<span class='notice'>There are [charge]% charges left.</span>")
+	to_chat(usr, SPAN_NOTICE("There are [charge]% charges left."))
 
 /obj/item/weapon/rcs/Destroy()
 	START_PROCESSING(SSobj, src)
@@ -164,11 +164,11 @@
 		if(mode == 0)
 			mode = 1
 			playsound(src.loc, 'sound/effects/pop.ogg', 50, 0)
-			to_chat(user, "<span class = 'danger'>The telepad locator has become uncalibrated.</span>")
+			to_chat(user, SPAN_DANGER("The telepad locator has become uncalibrated."))
 		else
 			mode = 0
 			playsound(src.loc, 'sound/effects/pop.ogg', 50, 0)
-			to_chat(user, "<span class = 'notice'>You calibrate the telepad locator.</span>")
+			to_chat(user, SPAN_NOTICE("You calibrate the telepad locator."))
 
 /obj/item/weapon/rcs/attackby(obj/item/W, mob/user)
 	if(istype(W,  /obj/item/weapon/card/emag) && emagged == 0)
@@ -176,5 +176,5 @@
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 		s.set_up(5, 1, src)
 		s.start()
-		to_chat(user, "<span class = 'notice'>You emag the RCS. Click on it to toggle between modes.</span>")
+		to_chat(user, SPAN_NOTICE("You emag the RCS. Click on it to toggle between modes."))
 		return

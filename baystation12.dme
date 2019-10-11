@@ -3176,6 +3176,7 @@
 #include "infinity\code\_onclick\hud\global_hud.dm"
 #include "infinity\code\controllers\configuration.dm"
 #include "infinity\code\controllers\subsystems\ticker.dm"
+#include "infinity\code\datums\mutable_appearance.dm"
 #include "infinity\code\datums\outfits\infinity.dm"
 #include "infinity\code\datums\vote\vote.dm"
 #include "infinity\code\game\sound.dm"

@@ -29,29 +29,29 @@
 
 /obj/machinery/metal_detector/attackby(obj/item/weapon/W, mob/user)
 	if(emagged)
-		to_chat(user, "<span class='warning'>ERROR</span>")
+		to_chat(user, SPAN_WARNING("ERROR"))
 		return
 	if(on)
-		to_chat(user, "<span class='warning'>It must be turned off first!</span>")
+		to_chat(user, SPAN_WARNING("It must be turned off first!"))
 		return
 
 	if(istype(W, /obj/item/weapon/card/id))
 		if(allowed(usr))
 			locked = !locked
-			to_chat(user, "<span class='notice'>You [locked ? "lock" : "unlock"] the metal detector interface.</span>")
+			to_chat(user, SPAN_NOTICE("You [locked ? "lock" : "unlock"] the metal detector interface."))
 		else
-			to_chat(user, "<span class='warning'>Access denied.</span>")
+			to_chat(user, SPAN_WARNING("Access denied."))
 			return
 
 	if(istype(W, /obj/item/weapon/wrench))
 		visible_message(
-			"<span class='notice'>You begin [anchored ? "un" : ""]securing [name]...</span>",
-			"<span class='notice'>[user] begin [anchored ? "un" : ""]securing [name]...</span>")
+			SPAN_NOTICE("You begin [anchored ? "un" : ""]securing [name]..."),
+			SPAN_NOTICE("[user] begin [anchored ? "un" : ""]securing [name]..."))
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
 		if(do_after(user, 20))
 			visible_message(
-				"<span class='notice'>You [anchored ? "un" : ""]secure [name].</span>",
-				"<span class='notice'>[user] [anchored ? "un" : ""]secure [name].</span>")
+				SPAN_NOTICE("You [anchored ? "un" : ""]secure [name]."),
+				SPAN_NOTICE("[user] [anchored ? "un" : ""]secure [name]."))
 			anchored = !anchored
 			playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
 		return
@@ -62,13 +62,13 @@
 
 /obj/machinery/metal_detector/physical_attack_hand(mob/user as mob)
 	if(stat & NOPOWER)
-		to_chat(user, "<span class='warning'>The [src] seems unpowered.</span>")
+		to_chat(user, SPAN_WARNING("The [src] seems unpowered."))
 		return
 	if(!anchored)
-		to_chat(user, "<span class='warning'>It must be secured first!</span>")
+		to_chat(user, SPAN_WARNING("It must be secured first!"))
 		return
 	if(emagged)
-		to_chat(user, "<span class='warning'>ERROR</span>")
+		to_chat(user, SPAN_WARNING("ERROR"))
 		return
 
 	interact(user)
@@ -124,7 +124,7 @@
 
 	if(triggered)
 		icon_state = "metal-detector-warning"
-		visible_message("<span class='warning'>[src] triggers!</span>")
+		visible_message(SPAN_WARNING("[src] triggers!"))
 		playsound(loc, 'sound/effects/alert.ogg', 50, 1)
 		cooldown = 1
 		spawn(15)
@@ -167,7 +167,7 @@
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 		s.set_up(5, 1, src)
 		s.start()
-		desc += "<br><span class='warning'>It seems malfunctioning.</span>"
+		desc += SPAN_WARNING("<br>It seems malfunctioning.")
 		return
 
 /obj/machinery/metal_detector/emp_act(severity)

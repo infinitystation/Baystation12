@@ -54,14 +54,14 @@
 	if(istype(O, /obj/item/music_tape))
 		var/obj/item/music_tape/D = O
 		if(disk)
-			to_chat(user, "<span class='notice'>There is already a disk inside.</span>")
+			to_chat(user, SPAN_NOTICE("There is already a disk inside."))
 			return
 
 		if(D.ruined)
-			to_chat(user, "<span class='warning'>\The [D] is ruined, you can't use it.</span>")
+			to_chat(user, SPAN_NOTICE("\The [D] is ruined, you can't use it."))
 			return
 
-		visible_message("<span class='notice'>[user] insert the disk in to \the [src].</span>")
+		visible_message(SPAN_NOTICE("[user] insert the disk in to \the [src]."))
 		user.drop_item()
 		D.forceMove(src)
 		disk = D
@@ -107,21 +107,21 @@
 					set_off()
 			else
 				playsound(src, 'infinity/sound/machines/console/console_error.ogg', 40, 1)
-				to_chat(usr, "<span class='danger'>You can't rewrite this disk.</span>")
+				to_chat(usr, SPAN_DANGER("You can't rewrite this disk."))
 
 	if(href_list["eject"])
 		if(usr.incapacitated())
 			return
 
 		if(!disk)
-			to_chat(usr, "<span class='notice'>There's no disk in \the [src].</span>")
+			to_chat(usr, SPAN_NOTICE("There's no disk in \the [src]"))
 			return
 
 		if(writing)
-			to_chat(usr, "<span class='danger'>You can't eject the disk while \the [src] is working.</span>")
+			to_chat(usr, SPAN_DANGER("You can't eject the disk while \the [src] is working."))
 			return
 
-		visible_message("<span class='notice'>[usr] eject the disk from \the [src].</span>")
+		visible_message(SPAN_NOTICE("[usr] eject the disk from \the [src]."))
 		eject(usr)
 
 	return TOPIC_REFRESH
