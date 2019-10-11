@@ -420,7 +420,7 @@ var/global/serials = list()
 						acc_mod += bulk
 						acc_mod += accuracy
 					else
-						acc_mod += bulk / 2 
+						acc_mod += bulk / 2
 						acc_mod += accuracy * 0.75
 				else
 					acc_mod += bulk / 5
@@ -595,7 +595,7 @@ var/global/serials = list()
 		if(3) to_chat(user, "This weapon bulky like a <b>sub-machinegun!</b> You have to be <b>minimally fit and be trained in weapon handling</b> to hold and shoot propertly from it.")
 		if(4) to_chat(user, "This weapon bulky like a <b>carabine!</b> You have to be <b>trained in both athletic and weapon handling</b> to hold and shoot propertly from it.")
 		if(5) to_chat(user, "This weapon bulky like an <b>assault rifle!</b> You have to be <b>trained in both athletic and weapon handling</b> skills to hold and shoot propertly from it.")
-		if(6) to_chat(user, "This weapon bulky like a <b>sniper rifle!</b> You have to be <b>trained in athletic and have <b>expirienced weapon handling</b> skills to hold and shoot propertly from it, but if you trained, you at least can hold it.")
+		if(6) to_chat(user, "This weapon bulky like a <b>sniper rifle!</b> You have to be <b>trained in athletic and have expirienced weapon handling</b> skills to hold and shoot propertly from it, but if you trained, you at least can hold it.")
 		if(7) to_chat(user, "This weapon bulky like a <b>machinegun!</b> You have to be <b>expirienced in athletic and weapon handling</b> to hold and shoot propertly from it, but if you trained, you at least can hold it.")
 		else to_chat(user, "This weapon bulky like a <b>holdout pistol!</b> Even kid can shoot from it.")
 //[/INF]

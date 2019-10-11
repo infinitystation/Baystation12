@@ -19,6 +19,7 @@
 	var/onhub_animation = "silc_get_hub"
 
 	construct_state = /decl/machine_construction/default/panel_closed
+	uncreated_component_parts = null
 
 /obj/machinery/bssilk_hub/attackby(obj/item/I, mob/user)
 	if(isMultitool(I))

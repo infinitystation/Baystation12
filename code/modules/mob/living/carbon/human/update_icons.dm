@@ -352,6 +352,7 @@ var/global/list/damage_icon_parts = list()
 	else
 		//BEGIN CACHED ICON GENERATION.
 		var/obj/item/organ/external/chest = get_organ(BP_CHEST)
+		if(!chest) return //inf
 		base_icon = chest.get_icon()
 
 		for(var/obj/item/organ/external/part in (organs-chest))

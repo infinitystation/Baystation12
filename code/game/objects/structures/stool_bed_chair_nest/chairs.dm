@@ -123,10 +123,10 @@
 
 /obj/structure/bed/chair/padded/yellow/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
 	..(newloc, newmaterial, "yellow")
-
+//[INF]
 /obj/structure/bed/chair/padded/light/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
 	..(newloc, newmaterial, MATERIAL_CLOTH)
-
+//[/INF]
 // Leaving this in for the sake of compilation.
 /obj/structure/bed/chair/comfy
 	name = "comfy chair"
@@ -264,25 +264,25 @@
 /obj/structure/bed/chair/office/light/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
 	..(newloc, newmaterial, MATERIAL_CLOTH)
 
-//[inf]
+//[INF]
 /obj/structure/bed/chair/office/yellow/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc,"steel","yellow")
+	..(newloc, newmaterial, "yellow")
 
 /obj/structure/bed/chair/office/brown/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc,"steel","leather")
+	..(newloc, newmaterial, "leather")
 
 /obj/structure/bed/chair/office/teal/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc,"steel","teal")
+	..(newloc, newmaterial, "teal")
 
 /obj/structure/bed/chair/office/red/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc,"steel","carpet")
+	..(newloc, newmaterial, "carpet")
 
 /obj/structure/bed/chair/office/blue/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc,"steel","blue")
+	..(newloc, newmaterial, "blue")
 
 /obj/structure/bed/chair/office/purple/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc,"steel","purple")
-//[/inf]
+	..(newloc, newmaterial, "purple")
+//[/INF]
 /obj/structure/bed/chair/office/dark/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
 	..(newloc, newmaterial, "black")
 
@@ -322,18 +322,6 @@
 /obj/structure/bed/chair/office/comfy/yellow/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
 	..(newloc, newmaterial, "yellow")
 
-// Chair types
-/obj/structure/bed/chair/wood
-	name = "classic chair"
-	desc = "Old is never too old to not be in fashion."
-	base_icon = "wooden_chair"
-	icon_state = "wooden_chair_preview"
-
-/obj/structure/bed/chair/wood/wings
-	name = "winged chair"
-	base_icon = "wooden_chair_wings"
-	icon_state = "wooden_chair_wings_preview"
-
 /obj/structure/bed/chair/shuttle
 	name = "shuttle seat"
 	desc = "A comfortable, secure seat. It has a sturdy-looking buckling system for smoother flights."
@@ -366,12 +354,13 @@
 
 /obj/structure/bed/chair/shuttle/white/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
 	..(newloc,MATERIAL_STEEL,MATERIAL_CLOTH)
-
+//[INF]
 /obj/structure/bed/chair/shuttle/red/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc,"steel","carpet")
+	..(newloc, MATERIAL_STEEL, MATERIAL_CARPET)
 
 /obj/structure/bed/chair/shuttle/green/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc,"steel","green")
+	..(newloc, MATERIAL_STEEL, "green")
+//[/INF]
 /obj/structure/bed/chair/wood
 	name = "classic chair"
 	desc = "Old is never too old to not be in fashion."

@@ -46,7 +46,7 @@
 		overlays.Add(I)
 
 	var/mob/living/carbon/human/H = loc
-	if(H?.wear_id == src)
+	if(istype(H) && H.wear_id == src)
 		H.update_inv_wear_id()
 
 	if(bsod || updating)
@@ -79,7 +79,7 @@
 /obj/item/modular_computer/pda/wrist/AltClick(var/mob/user)
 	if(!CanPhysicallyInteract(user))
 		return
-	if(card_slot.stored_card)
+	if(card_slot?.stored_card)
 		eject_id()
 	else
 		..()

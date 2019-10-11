@@ -15,6 +15,7 @@ var/const/SAFETY_COOLDOWN = 100
 	var/eat_dir = WEST
 	var/chance_to_recycle = 1
 	construct_state = /decl/machine_construction/default/panel_closed
+	uncreated_component_parts = null
 
 /obj/machinery/recycler/Initialize()
 	. = ..()

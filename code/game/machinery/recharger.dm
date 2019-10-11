@@ -16,6 +16,7 @@
 	var/icon_state_idle = "recharger0" //also when unpowered
 	var/portable = 1
 	construct_state = /decl/machine_construction/default/panel_closed //inf
+	uncreated_component_parts = null //inf
 
 /obj/machinery/recharger/attackby(obj/item/weapon/G as obj, mob/user as mob)
 	if(istype(user,/mob/living/silicon))
