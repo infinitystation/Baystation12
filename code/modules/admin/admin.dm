@@ -91,7 +91,7 @@ var/global/floorIsLava = 0
 	body += "<br>\[<b>IP:</b> [M.client ?  M.client.address : M.lastKnownIP]\]"
 	body += "<br>\[<b>IP Related Accounts:</b> [M.client ? M.client.related_accounts_ip : "Logged out"]\]"
 	var/full_version = "Unknown"
-	if(M.client && M.client.byond_version)
+	if(M.client?.byond_version)
 		full_version = "[M.client.byond_version].[M.client.byond_build ? M.client.byond_build : "xxx"]"
 	body += "<br>\[<b>Byond version:</b> [full_version]\]"
 	body += "<br><br>"

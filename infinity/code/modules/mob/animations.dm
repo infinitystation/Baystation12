@@ -15,11 +15,10 @@
 //Turns a mob black, flashes a skeleton overlay
 //Just like a cartoon!
 /mob/living/carbon/human/proc/electrocution_animation(anim_duration)
-	if(species && (species.name in SPECIES_LIST_HUMAN || species.name in SPECIES_LIST_HUMANOID)) // TODO@inf
-		var/atom/movable/overlay/animation = new(src)
-		animation.plane = src.plane
-		animation.layer = src.layer + 1
-		animation.icon_state = "blank"
-		animation.icon = 'infinity/icons/mob/mob.dmi'
-		flick("electrocuted_base", animation)
-		QDEL_IN(animation, anim_duration)
+	var/atom/movable/overlay/animation = new(src)
+	animation.plane = src.plane
+	animation.layer = src.layer + 1
+	animation.icon_state = "blank"
+	animation.icon = 'infinity/icons/mob/mob.dmi'
+	flick("electrocuted_base", animation)
+	QDEL_IN(animation, anim_duration)
