@@ -3,6 +3,10 @@
 #define LANGUAGE_RESOMI			"Schechi"
 #define LANGUAGE_XENOPHAGE      "Xenophage"
 #define LANGUAGE_XENOPHAGE_HIVE "Hivemind"
+#define LANGUAGE_PTAJ				"Primitive siik'maas"
+#define LANGUAGE_PRESOMI			"Primitive schechi"
+#define LANGUAGE_PUNATI			"Primitive sinta'unathi"
+#define LANGUAGE_PSKRELLIAN		"Primitive skrellian"
 
 //WOLF_SWARM-INF
 /*
