@@ -102,7 +102,7 @@
 					message_admins("[key_name(H)] got their cookie, spawned by [key_name(usr)]")
 					SSstatistics.add_field("admin_cookies_spawned",1)
 					to_chat(H, SPAN_NOTICE("Your prayers have been answered! You received <b>the best cookie</b>!"))
-					H.playsound_local(null, 'infinity/sound/effects/server-ready.ogg', 50)
+					H.playsound_local(null, 'infinity/sound/effects/pray.ogg', 50)
 
 			if("Give Cup of Coffee")
 				var/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/coffee = new(H)
@@ -112,7 +112,7 @@
 					message_admins("[key_name(H)] got their cup of coffee, spawned by [key_name(usr)]")
 					SSstatistics.add_field("admin_coffe_spawned",1)
 					to_chat(H, SPAN_NOTICE("our prayers have been answered! You received <b>a cup of coffee</b>!"))
-					H.playsound_local(null, 'infinity/sound/effects/server-ready.ogg', 50)
+					H.playsound_local(null, 'infinity/sound/effects/pray.ogg', 50)
 
 			if("Give Cup of Tea")
 				if(H.equip_to_slot_or_store_or_drop(new /obj/item/weapon/reagent_containers/food/drinks/tea/green(H), slot_l_hand))
@@ -120,7 +120,7 @@
 					message_admins("[key_name(H)] got their cup of green tea, spawned by [key_name(usr)]")
 					SSstatistics.add_field("admin_tea_spawned",1)
 					to_chat(H, SPAN_NOTICE("Your prayers have been answered! You received <b>a cup of tea</b>!"))
-					H.playsound_local(null, 'infinity/sound/effects/server-ready.ogg', 50)
+					H.playsound_local(null, 'infinity/sound/effects/pray.ogg', 50)
 
 			if("Punish")
 				var/list/punishment_list = list("Lightning bolt", "Brain damage", /*"Gib"*/)
