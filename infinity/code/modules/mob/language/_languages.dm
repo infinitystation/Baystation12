@@ -69,16 +69,21 @@
 //tut idut tipa chtobi ksenosi ponimali primitivnie yaziki i tipa tebya, primitiva poimyt a ti ih ne och no i tebya tozhe
 
 /datum/language/tajaran/New()
-	partial_understanding = list(/datum/language/tajprim = 45)
+	..()
+	partial_understanding += list(/datum/language/tajprim = 45)
 
 /datum/language/resomi/New()
-	partial_understanding = list(/datum/language/rezprim = 45)
+	..()
+	partial_understanding += list(/datum/language/rezprim = 45)
 
 /datum/language/unathi/New()
-	partial_understanding = list(/datum/language/unprim = 40)
+	..()
+	partial_understanding += list(/datum/language/unprim = 40)
 
 /datum/language/yeosa/New()
-	partial_understanding = list(/datum/language/unprim = 40)
+	..()
+	partial_understanding += list(/datum/language/unprim = 40)
 
 /datum/language/skrell/New()
-	partial_understanding = list(/datum/language/skrellprim = 35)
+	..()
+	partial_understanding += list(/datum/language/skrellprim = 35)
