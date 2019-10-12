@@ -3178,6 +3178,7 @@
 #include "infinity\code\controllers\subsystems\ticker.dm"
 #include "infinity\code\datums\mutable_appearance.dm"
 #include "infinity\code\datums\outfits\infinity.dm"
+#include "infinity\code\datums\underwear\undershirt.dm"
 #include "infinity\code\datums\vote\vote.dm"
 #include "infinity\code\game\sound.dm"
 #include "infinity\code\game\antagonists\xenomorph.dm"
