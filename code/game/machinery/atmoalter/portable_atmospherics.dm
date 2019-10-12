@@ -26,6 +26,10 @@
 /obj/machinery/portable_atmospherics/Destroy()
 	QDEL_NULL(air_contents)
 	QDEL_NULL(holding)
+//[INF]
+	if(connected_port)
+		disconnect()
+//[/INF]
 	. = ..()
 
 /obj/machinery/portable_atmospherics/Initialize()
