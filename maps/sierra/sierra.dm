@@ -34,6 +34,8 @@
 	#include "datums/supplypacks/security.dm"
 	#include "datums/supplypacks/science.dm"
 
+	#include "game/antagonist/languages.dm"
+
 	#include "items/cards_ids.dm"
 	#include "items/documents.dm"
 	#include "items/explo_shotgun.dm"
