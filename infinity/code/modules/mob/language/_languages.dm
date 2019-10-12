@@ -24,9 +24,9 @@
 /datum/language/rezprim
 	name = LANGUAGE_PRESOMI
 	desc = "Упрощенный Счечи - именно так можно назвать то, что вы выучили. Конечно, с письменностью гораздо легче, но и того что вы сможете выговорить уже достаточно для выживания в резомьей среде."
-	speech_verb = "�������"
-	ask_verb = "������������"
-	exclaim_verb = "������� � �������"
+	speech_verb = "свистит"
+	ask_verb = "насвистывает"
+	exclaim_verb = "шипит"
 	colour = "alien"
 	syllables = list(
 			"ca", "ra", "ma", "sa", "na", "ta", "la", "sha", "scha", "a", "a",
@@ -39,9 +39,9 @@
 /datum/language/unprim
 	name = LANGUAGE_PUNATI
 	desc = "Упрощенный язык унати - именно так можно назвать то, что вы выучили. Конечно, с письменностью гораздо легче, но и того что вы сможете выговорить уже достаточно для выживания на Могесе."
-	speech_verb = "������ ������� �����"
-	ask_verb = "����� �������������"
-	exclaim_verb = "������ �����"
+	speech_verb = "издает шипящие звуки"
+	ask_verb = "вопросительно шипит"
+	exclaim_verb = "агрессивно шипит"
 	colour = "soghun"
 	syllables = list(
 		"za", "az", "ze", "ez", "zi", "iz", "zo", "oz", "zu", "uz", "zs", "sz",
@@ -58,9 +58,9 @@
 /datum/language/skrellprim
 	name = LANGUAGE_PSKRELLIAN
 	desc = "Упрощенный Скрельский - именно так можно назвать то, что вы выучили. Конечно, с письменностью гораздо легче ведь ее вы не учили, но и того что вы сможете выговорить уже достаточно для выживания среди Скреллов. Выучить хоть часть этого языка было дорого, особенно из-за цены импланта, который помог в этом."
-	speech_verb = "������ ��������� �����"
-	ask_verb = "поет"
-	exclaim_verb = "воет"
+	speech_verb = "подвывает"
+	ask_verb = "воет"
+	exclaim_verb = "навывает"
 	colour = "skrell"
 	syllables = list("qr","qrr","xuq","qil","quum","xuqm","vol","xrim","zaoo","qu-uu","qix","qoo","zix","*","!")
 	shorthand = "PSK"
