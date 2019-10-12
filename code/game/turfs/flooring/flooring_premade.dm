@@ -197,12 +197,6 @@
 	icon_state = "white"
 	initial_flooring = /decl/flooring/tiling/white
 
-/turf/simulated/floor/tiled/white/monotile
-	name = "floor"
-	icon = 'icons/turf/flooring/infinity_decals.dmi'
-	icon_state = "monotile_light"
-	initial_flooring = /decl/flooring/tiling/mono/white
-
 /turf/simulated/floor/tiled/monofloor
 	name = "floor"
 	icon_state = "steel_monofloor"

@@ -13,3 +13,9 @@
 	build_type = null
 	can_engrave = FALSE
 	footstep_type = FOOTSTEP_GRASS
+
+/decl/flooring/tiling/mono/white
+	icon = 'infinity/icons/turf/flooring/decals.dmi'
+	icon_base = "monotile_light"
+	color = COLOR_OFF_WHITE
+	build_type = /obj/item/stack/tile/mono/white
