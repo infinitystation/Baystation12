@@ -19,6 +19,9 @@
 	bulk = GUN_BULK_SMG
 	one_hand_penalty = 2
 
+	is_serial = 1
+	s_gun = "M&M-DA"
+
 /obj/item/weapon/gun/projectile/revolver/AltClick()
 	if(CanPhysicallyInteract(usr))
 		spin_cylinder()
@@ -58,6 +61,9 @@
 	accuracy = 1
 	bulk = GUN_BULK_REVOLVER //inf
 
+	is_serial = 1
+	s_gun = "LA-S"
+
 /obj/item/weapon/gun/projectile/revolver/holdout
 	name = "holdout revolver"
 	desc = "The al-Maliki & Mosley Partner is a concealed-carry revolver made for people who do not trust automatic pistols any more than the people they're dealing with."
@@ -72,6 +78,9 @@
 	w_class = ITEM_SIZE_SMALL
 	one_hand_penalty = 0
 
+	is_serial = 1
+	s_gun = "AM-P"
+
 /obj/item/weapon/gun/projectile/revolver/capgun
 	name = "cap gun"
 	desc = "Looks almost like the real thing! Ages 8 and up."
@@ -81,6 +90,9 @@
 	ammo_type = /obj/item/ammo_casing/cap
 
 	bulk = 0
+
+	is_serial = 1
+	s_gun = "FUN"
 
 /obj/item/weapon/gun/projectile/revolver/capgun/attackby(obj/item/weapon/wirecutters/W, mob/user)
 	if(!istype(W) || icon_state == "revolver")

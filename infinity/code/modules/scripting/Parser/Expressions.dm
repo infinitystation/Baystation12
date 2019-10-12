@@ -226,7 +226,7 @@
 						continue
 					opr.Push(curOperator)
 					src.expecting=VALUE
-				else if(ntok && ntok.value=="(" && istype(ntok, /token/symbol)\
+				else if(ntok?.value=="(" && istype(ntok, /token/symbol)\
 											&& istype(curToken, /token/word))								//Parse function call
 					var/token/preToken=curToken
 					var/old_expect=src.expecting

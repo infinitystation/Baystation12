@@ -258,6 +258,18 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/scrap/command/bridge)
+"aB" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced,
+/obj/effect/floor_decal/corner/yellow/full,
+/obj/machinery/fabricator/hacked,
+/turf/simulated/floor/tiled,
+/area/ship/scrap/other/requisition)
 "aC" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/ship/scrap/command/captain)
@@ -469,6 +481,17 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/ship/scrap/command/captain)
+"aT" = (
+/obj/structure/disposaloutlet{
+	dir = 8
+	},
+/obj/structure/disposalpipe/trunk{
+	icon_state = "pipe-t";
+	dir = 1
+	},
+/obj/machinery/shield_diffuser,
+/turf/simulated/floor/airless,
+/area/ship/scrap/other/requisition)
 "aU" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -829,6 +852,12 @@
 	},
 /turf/simulated/floor,
 /area/ship/scrap/hallway/starboard)
+"bA" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
+/area/ship/scrap/medbay)
 "bB" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4;
@@ -2051,26 +2080,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/ship/scrap/medbay)
-"dL" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_y = 0
-	},
-/obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/door/airlock/autoname/medical,
-/turf/simulated/floor/tiled/white/monotile,
-/area/ship/scrap/medbay)
 "dM" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -2288,15 +2297,6 @@
 /obj/structure/table/standard,
 /obj/item/device/flashlight/lamp,
 /obj/item/clothing/accessory/stethoscope,
-/turf/simulated/floor/tiled/white,
-/area/ship/scrap/medbay)
-"ee" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
-	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
-	},
 /turf/simulated/floor/tiled/white,
 /area/ship/scrap/medbay)
 "ef" = (
@@ -4453,17 +4453,6 @@
 /obj/item/weapon/spacecash/bundle/c1000,
 /turf/simulated/floor/plating,
 /area/ship/scrap/maintenance/hidden)
-"hR" = (
-/obj/structure/disposaloutlet{
-	dir = 8
-	},
-/obj/structure/disposalpipe/trunk{
-	icon_state = "pipe-t";
-	dir = 1
-	},
-/obj/machinery/shield_diffuser,
-/turf/simulated/floor/airless,
-/area/space)
 "hS" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -6544,20 +6533,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
-/turf/simulated/floor/tiled,
-/area/ship/scrap/other/requisition)
-"lp" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced,
-/obj/machinery/autolathe{
-	hacked = 1
-	},
-/obj/effect/floor_decal/corner/yellow/full,
 /turf/simulated/floor/tiled,
 /area/ship/scrap/other/requisition)
 "lq" = (
@@ -9780,7 +9755,7 @@ Ic
 Ic
 dt
 po
-hR
+aT
 HJ
 HJ
 HJ
@@ -10187,7 +10162,7 @@ jc
 lb
 lg
 lh
-lp
+aB
 lJ
 lP
 mo
@@ -11241,7 +11216,7 @@ kv
 TB
 tk
 eD
-dL
+fF
 eD
 eD
 eD
@@ -11406,7 +11381,7 @@ bw
 cU
 fm
 eb
-ee
+bA
 eE
 XQ
 fm

@@ -37,8 +37,8 @@
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 2)
 	fire_delay = 7
 	ammo_indicator = TRUE
-
-	bulk = GUN_BULK_REVOLVER
+	is_serial = 1
+	s_gun = "P20"
 
 /obj/item/weapon/gun/projectile/pistol/military/alt
 	desc = "The HelTek Optimus, best known as the standard-issue sidearm for the ICCG Navy."
@@ -47,6 +47,7 @@
 	safety_icon = "safety"
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2, TECH_ESOTERIC = 8)
 	fire_delay = 8
+	s_gun = "P20-ICCG"
 
 /obj/item/weapon/gun/projectile/pistol/sec
 	name = "pistol"
@@ -59,6 +60,9 @@
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 
 	accuracy = 0
+
+	is_serial = 1
+	s_gun = "NT-58"
 
 /obj/item/weapon/gun/projectile/pistol/sec/lethal
 	magazine_type = /obj/item/ammo_magazine/pistol
@@ -81,8 +85,10 @@
 	ammo_indicator = TRUE
 
 	accuracy = 2
-	bulk = GUN_BULK_SMG //inf
+	bulk = GUN_BULK_REVOLVER//inf
 	one_hand_penalty = 2
+	is_serial = 1
+	s_gun = "HK-M"
 
 /obj/item/weapon/gun/projectile/pistol/throwback
 	name = "pistol"
@@ -96,7 +102,7 @@
 	var/base_icon = "pistol1"
 
 	accuracy_power = 5
-	bulk = GUN_BULK_SMG //inf
+	bulk = GUN_BULK_REVOLVER //inf
 	one_hand_penalty = 2
 
 /obj/item/weapon/gun/projectile/pistol/throwback/Initialize()
@@ -129,7 +135,7 @@
 	mag_remove_sound = 'sound/weapons/guns/interaction/hpistol_magout.ogg'
 	empty_icon = FALSE
 
-	bulk = GUN_BULK_SMG //inf
+	bulk = GUN_BULK_REVOLVER //inf
 
 /obj/item/weapon/gun/projectile/pistol/gyropistol/on_update_icon()
 	..()
@@ -153,6 +159,9 @@
 
 	bulk = 0
 	w_class = ITEM_SIZE_SMALL
+
+	is_serial = 1
+	s_gun = "LA-P3"
 
 /obj/item/weapon/gun/projectile/pistol/holdout/attack_hand(mob/user as mob)
 	if(user.get_inactive_hand() == src)

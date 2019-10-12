@@ -6,7 +6,7 @@
 	sort_string = "HAAAD"
 
 /datum/design/circuit/telepad
-	name = "telepad board"
+	name = "telepad"
 	id = "telepad"
 	req_tech = list(TECH_DATA = 4, TECH_ENGINEERING = 3, TECH_MATERIAL = 3, TECH_BLUESPACE = 4)
 	build_path = /obj/item/weapon/stock_parts/circuitboard/telesci_pad
@@ -88,3 +88,31 @@
 	req_tech = list(TECH_DATA = 2)
 	build_path = /obj/item/weapon/stock_parts/circuitboard/area_atmos
 	sort_string = "KCAAR"
+
+/datum/design/circuit/emitter
+	name = "emitter"
+	id = "emitter"
+	req_tech = list(TECH_POWER = 4, TECH_ENGINEERING = 3)
+	build_path = /obj/item/weapon/stock_parts/circuitboard/emitter
+	sort_string = "KCASE"
+
+/datum/design/circuit/sublimator
+	name = "reagent sublimator"
+	id = "reagent_sublimator"
+	req_tech = list(TECH_POWER = 2, TECH_ENGINEERING = 1)
+	build_path = /obj/item/weapon/stock_parts/circuitboard/sublimator
+	sort_string = "KCASS"
+
+/datum/design/circuit/rad_collector
+	name = "radiation collector"
+	id = "radiation_collector"
+	req_tech = list(TECH_POWER = 4, TECH_ENGINEERING = 4, TECH_PHORON = 3)
+	build_path = /obj/item/weapon/stock_parts/circuitboard/rad_collector
+	sort_string = "KCASR"
+
+/datum/design/circuit/traffic_console
+	name = "telecommunications traffic control console"
+	id = "teletraffic"
+	req_tech = list(TECH_DATA = 3)
+	build_path = /obj/item/weapon/stock_parts/circuitboard/comm_traffic
+	sort_string = "KCAST"

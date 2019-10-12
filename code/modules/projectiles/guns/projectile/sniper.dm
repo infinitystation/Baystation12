@@ -25,6 +25,9 @@
 	w_class = ITEM_SIZE_HUGE
 	one_hand_penalty = 6
 
+	is_serial = 1
+	s_gun = "PTR-7"
+
 /obj/item/weapon/gun/projectile/heavysniper/on_update_icon()
 	..()
 	if(bolt_open)

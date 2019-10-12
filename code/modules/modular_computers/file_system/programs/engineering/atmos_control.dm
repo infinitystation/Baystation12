@@ -29,12 +29,13 @@
 	else if(req_access)
 		log_debug("\The [src] was given an unepxected req_access: [req_access]")
 
-	if(monitored_alarm_ids)
-		for(var/obj/machinery/alarm/alarm in SSmachines.machinery)
-			if(alarm.alarm_id && alarm.alarm_id in monitored_alarm_ids)
-				monitored_alarms += alarm
-		// machines may not yet be ordered at this point
-		monitored_alarms = dd_sortedObjectList(monitored_alarms)
+//inf	if(monitored_alarm_ids)
+	for(var/obj/machinery/alarm/alarm in SSmachines.machinery)
+//inf		if(alarm.alarm_id && alarm.alarm_id in monitored_alarm_ids)
+		if(alarm.z in GLOB.using_map.station_levels) //inf
+			monitored_alarms += alarm
+	// machines may not yet be ordered at this point
+	monitored_alarms = dd_sortedObjectList(monitored_alarms)
 
 /datum/nano_module/atmos_control/Topic(href, href_list)
 	if(..())

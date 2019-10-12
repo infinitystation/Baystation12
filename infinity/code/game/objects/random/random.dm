@@ -12,7 +12,7 @@
 
 /obj/random/trap/spawn_choices()
 	return list(/obj/item/weapon/beartrap/deployed = 3,
-				/obj/random/mine = 1) // Try randome
+				/*/obj/random/mine = 1 cannot be defused + old as shit*/)
 
 /obj/random/mine/spawn_choices()
 	return list(/obj/effect/mine/dnascramble = 1,

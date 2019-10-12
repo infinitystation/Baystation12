@@ -198,6 +198,12 @@
 							 /datum/computer_file/program/shields_monitor,
 							 /datum/computer_file/program/reports)
 
+/datum/job/chief_engineer/get_description_blurb()
+	return "√лавный инженер - руководитель и администратор инженерного отдела, \
+	он командует инженерами, а также требует от них отчеты о проведенных работах. \
+	ќтвечает за то, что реактор благополучно запустили, что щиты корабл€ правильно настроили, \
+	и что любые механические неисправности устран€ютс€ быстро и эффективно."
+
 /datum/job/hos
 	title = "Head of Security"
 	supervisors = "the Captain and the Head of Personnel"

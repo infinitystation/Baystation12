@@ -25,7 +25,7 @@
 
 /obj/effect/floor_decal/industrial/warning/half
 	name = "floor decal"
-	icon = 'icons/turf/flooring/infinity_decals.dmi'
+	icon = 'infinity/icons/turf/flooring/decals.dmi'
 	icon_state = "warninghalf"
 
 /obj/effect/floor_decal/industrial/hatch/grey
@@ -34,3 +34,13 @@
 /obj/effect/floor_decal/industrial/outline/green
 	name = "orange outline"
 	color = COLOR_GREEN
+
+/obj/effect/floor_decal/chapel/mono
+	icon = 'infinity/icons/turf/flooring/decals.dmi'
+	icon_state = "chapel_mono"
+
+/turf/simulated/floor/tiled/white/monotile
+	name = "floor"
+	icon = 'infinity/icons/turf/flooring/decals.dmi'
+	icon_state = "monotile_light"
+	initial_flooring = /decl/flooring/tiling/mono/white

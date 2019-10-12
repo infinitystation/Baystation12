@@ -33,6 +33,16 @@
 		else if(BP_IS_ROBOTIC(affected))
 			to_chat(user, "<span class='danger'>You cannot inject a robotic limb.</span>")
 			return
+//[INF]
+		else if(M.a_intent == I_HURT && M != user && !M.incapacitated(INCAPACITATION_KNOCKDOWN))
+			user.visible_message(SPAN_WARNING("\The [user] struggles with [M] to inject him with [src]!"), SPAN_DANGER("\The [user] tries to to inject you with [src]!"))
+			if(M.can_inject(user, check_zone(user.zone_sel.selecting)) == INJECTION_PORT)
+				if(!do_mob(user, M, 45))
+					return
+			else
+				if(!do_mob(user, M, 20))
+					return
+//[/INF]
 		else if(M.can_inject(user, check_zone(user.zone_sel.selecting)) == INJECTION_PORT)
 			user.visible_message("<span class='warning'>\The [user] begins hunting for an injection port on [M]'s suit!</span>")
 			if((M != user) && (!do_mob(user, M, 22)))

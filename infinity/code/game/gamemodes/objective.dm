@@ -24,7 +24,7 @@
 	else if(possible_targets.len > 0)
 		target = pick(possible_targets)
 
-	if(target && target.current)
+	if(target?.current)
 		explanation_text = "Наниматель хочет, чтобы мы захватили '[target.current.real_name], [target.assigned_role]' и доставили на базу. Цель должна быть живой."
 	else
 		explanation_text = "Захвать по крайней мере одного высокопоставленного или обладающего ценными данными члена экипажа живым. Приоритет - ученые, главы, инженеры, пассажиры."

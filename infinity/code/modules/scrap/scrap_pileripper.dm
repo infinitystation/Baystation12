@@ -15,6 +15,7 @@
 	var/rating = 1
 	var/last_ripped = 0
 	construct_state = /decl/machine_construction/default/panel_closed
+	uncreated_component_parts = null
 
 /obj/machinery/pile_ripper/Initialize()
 	. = ..()
@@ -107,9 +108,10 @@
 	var/gib = 1
 	// By default, the emagged pile_ripper will gib all non-carbons. (human simple animal mobs don't count)
 	if(iscarbon(L))
+		var/mob/living/carbon/C = L
 		gib = 0
-		if(L.stat == CONSCIOUS)
-			L.emote("scream",,, 1)
+		if(C.can_feel_pain())
+			C.agony_scream()
 		add_blood(L)
 	if(!blood && !issilicon(L))
 		blood = 1

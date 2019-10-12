@@ -75,6 +75,9 @@
 	release_force = 10
 	throw_distance = 10
 
+	is_serial = 1
+	s_gun = "SG-4"
+
 	var/list/darts = list()
 	var/max_darts = 1
 	var/obj/item/weapon/syringe_cartridge/next
@@ -137,6 +140,7 @@
 	icon_state = "rapidsyringegun"
 	item_state = "rapidsyringegun"
 	max_darts = 5
+	is_serial = 0
 
 /obj/item/weapon/gun/launcher/syringe/rapid/
 	name = "Harlus MK4 Dart Rifle"
@@ -144,6 +148,7 @@
 	icon = 'infinity/icons/obj/guns.dmi'
 	icon_state = "stunrifle"
 	item_state = "gun"
+	is_serial = 0
 
 /obj/item/weapon/gun/launcher/syringe/disguised
 	name = "deluxe electronic cigarette"
@@ -155,6 +160,7 @@
 	force = 3
 	throw_distance = 7
 	release_force = 10
+	is_serial = 0
 
 /obj/item/weapon/gun/launcher/syringe/disguised/examine(mob/user)
 	if(( . = ..(user, 0)))

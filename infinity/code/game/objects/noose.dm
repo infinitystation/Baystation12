@@ -75,7 +75,7 @@
 		M.pixel_y = initial(M.pixel_y)
 
 /obj/structure/noose/user_unbuckle_mob(mob/living/user)
-	if(buckled_mob && buckled_mob.buckled == src)
+	if(buckled_mob?.buckled == src)
 		var/mob/living/M = buckled_mob
 		if(M != user)
 			user.visible_message("<span class='notice'>[user] begins to untie the noose over [M]'s neck...</span>",\
@@ -90,7 +90,7 @@
 				"<span class='warning'>[M] struggles to untie the noose over their neck!</span>",\
 				"<span class='notice'>You struggle to untie the noose over your neck.</span>")
 			if(!do_after(M, 150))
-				if(M && M.buckled)
+				if(M?.buckled)
 					to_chat(M, "<span class='warning'>You fail to untie yourself!</span>")
 				return
 			if(!M.buckled)

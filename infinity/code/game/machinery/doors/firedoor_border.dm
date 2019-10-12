@@ -26,7 +26,7 @@
 	overlays += weld_overlay
 
 /obj/machinery/door/firedoor/border_only/CanPass(atom/movable/mover, turf/target, height = FALSE, air_group = FALSE)
-	if(istype(mover) && mover.checkpass(PASS_FLAG_GLASS))
+	if(mover?.checkpass(PASS_FLAG_GLASS))
 		return TRUE
 	if(get_dir(loc, target) == dir) //Make sure looking at appropriate border
 		if(air_group) return FALSE
@@ -35,7 +35,7 @@
 		return TRUE
 
 /obj/machinery/door/firedoor/border_only/CheckExit(atom/movable/mover as mob|obj, turf/target as turf)
-	if(istype(mover) && mover.checkpass(PASS_FLAG_GLASS))
+	if(mover?.checkpass(PASS_FLAG_GLASS))
 		return TRUE
 	if(get_dir(loc, target) == dir)
 		return !density

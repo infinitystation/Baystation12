@@ -30,7 +30,7 @@
 					"<span class='warning'>You struggle to break free from the gelatinous resin...</span>",\
 					"<span class='notice'>You hear squelching...</span>")
 				spawn(NEST_RESIST_TIME)
-					if(user && buckled_mob && user.buckled == src)
+					if(user?.buckled == src)
 						buckled_mob.last_special = world.time
 						unbuckle_mob()
 			src.add_fingerprint(user)
@@ -45,10 +45,10 @@
 	var/mob/living/carbon/xenos = user
 	var/mob/living/carbon/victim = M
 
-	if(istype(victim) && locate(/obj/item/organ/internal/xeno/hivenode) in victim.internal_organs)
+	if(locate(/obj/item/organ/internal/xeno/hivenode) in victim?.internal_organs)
 		return
 
-	if(istype(xenos) && !(locate(/obj/item/organ/internal/xeno/hivenode) in xenos.internal_organs))
+	if(!locate(/obj/item/organ/internal/xeno/hivenode) in xenos?.internal_organs)
 		return
 
 	if(M == usr)

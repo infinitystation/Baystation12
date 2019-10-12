@@ -23,11 +23,11 @@
 "ag" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/button/blast_door{
-	id = "colsecarm";
+	id_tag = "colsecarm";
 	name = "Armory Secure Access"
 	},
 /obj/machinery/button/blast_door{
-	id = "colarm";
+	id_tag = "colarm";
 	name = "Armory Blast Door Control";
 	pixel_y = 8
 	},
@@ -1926,7 +1926,8 @@
 	input_tag = "cn2n";
 	name = "Nitrogen Supply Control";
 	output_tag = "cn2o";
-	sensors = list("c1" = "Tank")
+	sensor_name = "Tank";
+	sensor_tag = "c1"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
@@ -1985,7 +1986,6 @@
 /obj/effect/floor_decal/corner/paleblue{
 	dir = 5
 	},
-/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/white,
 /area/map_template/colony/medbay)
 "eb" = (
@@ -2369,9 +2369,8 @@
 /area/map_template/colony/surgery)
 "eG" = (
 /obj/machinery/door/blast/shutters{
-	id = "colsen";
-	name = "Hard Storage Shutter";
-	tag = ""
+	id_tag = "colsen";
+	name = "Hard Storage Shutter"
 	},
 /turf/simulated/floor/plating,
 /area/map_template/colony/command)
@@ -2744,7 +2743,8 @@
 	input_tag = "co2n";
 	name = "Oxygen Supply Control";
 	output_tag = "co2o";
-	sensors = list("c2" = "Tank")
+	sensor_tag = "c2";
+	sensor_name = "Tank"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
@@ -2832,7 +2832,8 @@
 	input_tag = "cco2n";
 	name = "Carbon Dioxide Tank Control";
 	output_tag = "cco2o";
-	sensors = list("c3" = "Tank")
+	sensor_name = "Tank";
+	sensor_tag = "c3"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
@@ -3378,6 +3379,7 @@
 /obj/item/weapon/reagent_containers/food/drinks/pitcher,
 /obj/item/weapon/reagent_containers/glass/beaker/bowl,
 /obj/item/weapon/reagent_containers/food/condiment/salt,
+/obj/item/weapon/reagent_containers/food/condiment/enzyme,
 /turf/simulated/floor/tiled/freezer,
 /area/map_template/colony/messhall)
 "gf" = (
@@ -4475,7 +4477,7 @@
 	},
 /obj/machinery/door/airlock/highsecurity,
 /obj/machinery/door/blast/regular{
-	id = "colarm"
+	id_tag = "colarm"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/map_template/colony/armory)
@@ -4737,7 +4739,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/highsecurity,
 /obj/machinery/door/blast/regular{
-	id = "colsecarm"
+	id_tag = "colsecarm"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/map_template/colony/armory)
@@ -5211,7 +5213,7 @@
 /area/map_template/colony/commons)
 "jb" = (
 /obj/machinery/button/crematorium{
-	id = 8;
+	id_tag = 8;
 	pixel_y = 25;
 	req_access = list()
 	},
@@ -5903,8 +5905,8 @@
 	dir = 8
 	},
 /obj/structure/table/steel_reinforced,
-/obj/machinery/reagentgrinder,
 /obj/item/weapon/reagent_containers/glass/beaker/large,
+/obj/machinery/reagentgrinder/juicer,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/colony/hydroponics)
 "kf" = (
@@ -5984,13 +5986,6 @@
 	tag_west = 2
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 8;
-	frequency = 2222;
-	id_tag = "playablecolonymain_pump_out_internal";
-	power_rating = 25000;
-	tag = "playablecolonymain_pump"
-	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/colony/airlock)
 "ko" = (
@@ -6204,11 +6199,10 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/button/alternate/door{
-	id = "colj";
+/obj/machinery/button/alternate/door/bolts{
+	id_tag = "colj";
 	name = "Jail Bolt Control";
-	pixel_x = 28;
-	specialfunctions = 4
+	pixel_x = 28
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/colony/jail)
@@ -6404,12 +6398,12 @@
 /obj/machinery/door/window/eastright,
 /obj/structure/table/steel_reinforced,
 /obj/machinery/button/blast_door{
-	id = "colmainexit";
+	id_tag = "colmainexit";
 	name = "Exit Blast Doors";
 	pixel_y = 0
 	},
 /obj/machinery/button/blast_door{
-	id = "colmainblast";
+	id_tag = "colmainblast";
 	name = "Entry Blast Doors";
 	pixel_y = 8
 	},
@@ -7071,10 +7065,8 @@
 /turf/simulated/floor/exoplanet/concrete,
 /area/template_noop)
 "me" = (
-/obj/machinery/autolathe{
-	desc = "Your typical Autolathe. It appears to have much more options than your regular one, however...";
-	hacked = 1;
-	name = "Unlocked Autolathe"
+/obj/machinery/fabricator/hacked{
+	name = "unlocked autolathe"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/colony/engineering)
@@ -7132,7 +7124,7 @@
 /obj/machinery/door/blast/regular/open{
 	dir = 1;
 	icon_state = "pdoor0";
-	id = "colmainblast";
+	id_tag = "colmainblast";
 	name = "Entry Blast Door"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -7195,7 +7187,7 @@
 /obj/machinery/door/blast/regular/open{
 	dir = 1;
 	icon_state = "pdoor0";
-	id = "colmainexit"
+	id_tag = "colmainexit"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/colony)
@@ -7305,7 +7297,7 @@
 /obj/machinery/door/blast/regular/open{
 	dir = 1;
 	icon_state = "pdoor0";
-	id = "colmainblast";
+	id_tag = "colmainblast";
 	name = "Entry Blast Door"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -7313,10 +7305,9 @@
 "mC" = (
 /obj/structure/catwalk,
 /obj/machinery/button/blast_door{
-	id = "colsen";
+	id_tag = "colsen";
 	name = "Hard Equipment Storage";
-	pixel_y = 28;
-	tag = ""
+	pixel_y = 28
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -7838,9 +7829,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/colony/airlock)
 "nu" = (
@@ -8144,7 +8132,7 @@
 /obj/machinery/door/blast/regular/open{
 	dir = 1;
 	icon_state = "pdoor0";
-	id = "colmainexit"
+	id_tag = "colmainexit"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/colony)

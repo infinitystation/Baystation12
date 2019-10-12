@@ -6,6 +6,8 @@
 	item_state = null	//so the human update icon uses the icon_state instead.
 	max_shots = 10
 	fire_delay = 10 // To balance for the fact that it is a pistol and can be used one-handed without penalty
+	s_gun = "LP90"
+	is_serial = 1
 
 	projectile_type = /obj/item/projectile/beam/stun
 	origin_tech = list(TECH_COMBAT = 3, TECH_MAGNET = 2)
@@ -34,6 +36,7 @@
 	projectile_type = /obj/item/projectile/beam/stun
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 5, TECH_POWER = 3)
 	modifystate = "skrell_pistol_stun"
+	is_serial = 0
 
 	firemodes = list(
 		list(mode_name="stun", projectile_type=/obj/item/projectile/beam/stun, modifystate="skrell_pistol_stun"),
@@ -43,6 +46,7 @@
 
 	one_hand_penalty = 1
 	bulk = GUN_BULK_PISTOL
+	is_serial = 0
 
 /obj/item/weapon/gun/energy/gun/small
 	name = "LAEP90-C 'Perun' small energy gun"
@@ -52,6 +56,7 @@
 	max_shots = 5
 	force = 2 //it's the size of a car key, what did you expect?
 	modifystate = "smallgunstun"
+	s_gun = "LP90-C"
 
 	firemodes = list(
 		list(mode_name="stun", projectile_type=/obj/item/projectile/beam/stun, modifystate="smallgunstun"),
@@ -89,7 +94,7 @@
 	bulk = GUN_BULK_RIFLE //inf
 	w_class = ITEM_SIZE_LARGE
 	one_hand_penalty = 1 //bulkier than an e-gun, but not quite the size of a carbine
-
+	is_serial = 0
 
 //override for failcheck behaviour
 /obj/item/weapon/gun/energy/gun/nuclear/Process()

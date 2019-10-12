@@ -76,8 +76,7 @@
 		/obj/item/device/megaphone,
 		/obj/item/clothing/suit/armor/pcarrier/light,
 		/obj/item/device/binoculars,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack = 75, /obj/item/weapon/storage/backpack/satchel/grey = 25)),
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/messenger = 75, /obj/item/weapon/storage/backpack/dufflebag = 25))
+		/obj/item/device/scanner/price,
 	)
 
 /obj/structure/closet/secure_closet/prospector

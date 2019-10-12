@@ -162,6 +162,16 @@
 					/obj/item/weapon/stock_parts/manipulator = 8,/obj/item/weapon/stock_parts/console_screen = 8)
 	contraband = list(/obj/item/device/flash = 2,/obj/item/weapon/airlock_brace = 2,/obj/item/weapon/crowbar/brace_jack = 1)
 
+/obj/machinery/vending/parts/public
+	name = "Wolfor-Spares Vendor"
+	req_access = list()
+	products = list(/obj/item/weapon/cell = 4,
+					/obj/item/weapon/stock_parts/capacitor = 4,/obj/item/weapon/stock_parts/scanning_module = 4,
+					/obj/item/weapon/stock_parts/micro_laser = 4,/obj/item/weapon/stock_parts/matter_bin = 4,
+					/obj/item/weapon/stock_parts/manipulator = 4,/obj/item/weapon/stock_parts/console_screen = 4)
+	contraband = list(/obj/item/device/flash = 2, /obj/item/weapon/crowbar/brace_jack = 1)
+
+
 /obj/machinery/vending/armoryvend
 	density = 0
 	vend_delay = 10

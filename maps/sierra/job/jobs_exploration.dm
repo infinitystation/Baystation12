@@ -60,6 +60,7 @@
 	max_skill = list(	SKILL_SCIENCE = SKILL_MAX,
 						SKILL_COMBAT  = SKILL_EXPERT,
 						SKILL_WEAPONS = SKILL_EXPERT)
+	required_role = "Exploration Leader"
 
 	access = list(access_explorer, access_maint_tunnels, access_eva, access_emergency_storage, access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar, access_cent_creed)
 
@@ -97,7 +98,7 @@
 						SKILL_PILOT   = SKILL_MAX,
 						SKILL_COMBAT  = SKILL_EXPERT,
 						SKILL_WEAPONS = SKILL_EXPERT)
-
+	required_role = "Exploration Leader"
 
 	access = list(	access_explorer, access_maint_tunnels, access_eva, access_emergency_storage, access_guppy_helm,
 					access_expedition_shuttle, access_guppy, access_hangar, access_expedition_shuttle_helm)
@@ -141,8 +142,7 @@
 						SKILL_SCIENCE = SKILL_MAX,
 						SKILL_COMBAT  = SKILL_EXPERT,
 						SKILL_WEAPONS = SKILL_EXPERT)
-
-
+	required_role = "Exploration Leader"
 
 	access = list(	access_explorer, access_maint_tunnels, access_eva, access_emergency_storage,
 					access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar,
@@ -176,7 +176,6 @@
 
 	skill_points = 20
 
-
 	min_skill = list(	SKILL_EVA          = SKILL_BASIC,
 						SKILL_CONSTRUCTION = SKILL_BASIC,
 						SKILL_ELECTRICAL   = SKILL_BASIC,
@@ -192,6 +191,7 @@
 						SKILL_SCIENCE      = SKILL_MAX,
 						SKILL_COMBAT       = SKILL_EXPERT,
 						SKILL_WEAPONS      = SKILL_EXPERT)
+	required_role = "Exploration Leader"
 
 	access = list(	access_explorer, access_maint_tunnels, access_eva, access_emergency_storage,
 	 				access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar, access_engine)

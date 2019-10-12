@@ -10,6 +10,7 @@
 	var/obj/item/weapon/cell/charging = null
 	var/chargelevel = -1
 	construct_state = /decl/machine_construction/default/panel_closed //inf
+	uncreated_component_parts = null  //inf
 
 /obj/machinery/cell_charger/Initialize()
 	. = ..()

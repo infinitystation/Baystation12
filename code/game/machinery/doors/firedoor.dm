@@ -269,7 +269,8 @@
 						"You force \the [ blocked ? "welded" : "" ] [src] [density ? "open" : "closed"] with \the [C]!",\
 						"You hear metal strain and groan, and a door [density ? "opening" : "closing"].")
 			if(density)
-				OPEN_IN(src, 0, TRUE)
+//inf				OPEN_IN(src, 0, TRUE)
+				open(user, 1) //because OPEN_IN doesn't logs user
 			else
 				CLOSE_IN(src, 0, FALSE)
 			return
@@ -352,7 +353,7 @@
 	latetoggle()
 	return ..()
 
-/obj/machinery/door/firedoor/open(var/forced = 0)
+/obj/machinery/door/firedoor/open(mob/user, var/forced = 0) //inf, was /obj/machinery/door/firedoor/open(var/forced = 0)
 	if(hatch_open)
 		hatch_open = 0
 		visible_message("The maintenance hatch of \the [src] closes.")

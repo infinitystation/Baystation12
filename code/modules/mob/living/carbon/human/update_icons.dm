@@ -352,6 +352,7 @@ var/global/list/damage_icon_parts = list()
 	else
 		//BEGIN CACHED ICON GENERATION.
 		var/obj/item/organ/external/chest = get_organ(BP_CHEST)
+		if(!chest) return //inf
 		base_icon = chest.get_icon()
 
 		for(var/obj/item/organ/external/part in (organs-chest))
@@ -411,12 +412,12 @@ var/global/list/damage_icon_parts = list()
 	overlays_standing[HO_UNDERWEAR_LAYER] = list()
 	for(var/entry in worn_underwear)
 		var/obj/item/underwear/UW = entry
+		if(UW) //inf
+			var/image/I = image(icon = UW.icon, icon_state = UW.icon_state)
+			I.appearance_flags = RESET_COLOR
+			I.color = UW.color
 
-		var/image/I = image(icon = UW.icon, icon_state = UW.icon_state)
-		I.appearance_flags = RESET_COLOR
-		I.color = UW.color
-
-		overlays_standing[HO_UNDERWEAR_LAYER] += I
+			overlays_standing[HO_UNDERWEAR_LAYER] += I
 
 	if(update_icons)
 		queue_icon_update()

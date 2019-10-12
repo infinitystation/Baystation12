@@ -273,6 +273,7 @@
 		if(occupant)
 			to_chat(user, "<span class='warning'>\The [src] is already occupied.</span>")
 			return
+		if(M.loc.type == type) return //anti-double-sleepering //inf
 		set_occupant(M)
 
 /obj/machinery/sleeper/proc/go_out()

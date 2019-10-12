@@ -15,6 +15,7 @@ var/const/SAFETY_COOLDOWN = 100
 	var/eat_dir = WEST
 	var/chance_to_recycle = 1
 	construct_state = /decl/machine_construction/default/panel_closed
+	uncreated_component_parts = null
 
 /obj/machinery/recycler/Initialize()
 	. = ..()
@@ -123,15 +124,14 @@ var/const/SAFETY_COOLDOWN = 100
 
 	if(issilicon(L))
 		playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
-	else
-		L.emote("scream",,, 1)
 
 	var/gib = 1
 	// By default, the emagged recycler will gib all non-carbons. (human simple animal mobs don't count)
 	if(iscarbon(L))
+		var/mob/living/carbon/C = L
 		gib = 0
-		if(L.stat == CONSCIOUS)
-			L.emote("scream",,, 1)
+		if(C.can_feel_pain())
+			C.agony_scream()
 		add_blood(L)
 
 	if(!blood && !issilicon(L))
