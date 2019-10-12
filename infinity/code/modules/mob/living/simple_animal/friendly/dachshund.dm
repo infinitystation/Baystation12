@@ -1,4 +1,4 @@
-/mob/living/simple_animal/dachshund
+/mob/living/simple_animal/corgi/dachshund
 	name = "dachshund"
 	desc = "A little small dogge with small legs, oww, cute."
 	icon = 'infinity/icons/mob/mobs.dmi'
@@ -11,9 +11,7 @@
 	speak_emote = list("barks", "woofs")
 	emote_hear = list("barks", "woofs", "yaps","pants")
 	emote_see = list("shakes its head", "shivers")
-	speak_chance = 1
 	turns_per_move = 3
-	see_in_dark = 6
 	response_help = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm = "kicks"

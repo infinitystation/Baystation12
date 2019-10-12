@@ -13,4 +13,4 @@
 	name = "floor"
 	icon = 'icons/turf/flooring/misc.dmi'
 	icon_state = "concrete"
-	initial_flooring = /decl/flooring/tiling/new_tile/techmaint
+	initial_flooring = /decl/flooring/tiling/fconcrete
