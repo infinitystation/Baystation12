@@ -36,7 +36,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 
 /mob/proc/absorbDNA(var/datum/absorbed_dna/newDNA)
 	var/datum/changeling/changeling = null
-	if(src.mind && src.mind.changeling)
+	if(src.mind?.changeling)
 		changeling = src.mind.changeling
 	if(!changeling)
 		return
@@ -194,7 +194,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 
 	var/obj/item/organ/external/affecting = T.get_organ(src.zone_sel.selecting)
 	if(!affecting)
-		to_chat(src, "<span class='warning'>They are missing that body part!</span>")
+		to_chat(src, SPAN_WARNING("They are missing that body part!"))
 
 	changeling.isabsorbing = 1
 	for(var/stage = 1, stage<=3, stage++)
@@ -240,8 +240,8 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 				changeling.isabsorbing = 0
 
 		SSstatistics.add_field_details("changeling_powers","A[stage]")
-	visible_message("<span class='warning'>[src] removes it's proboscis from \the [T]!</span>", SPAN_LING("We have absorbed the all fluids from [T]!"))
-	to_chat(T, "<span class='warning'>You have been absorbed by the changeling!</span>")
+	visible_message(SPAN_WARNING("[src] removes it's proboscis from \the [T]!"), SPAN_LING("We have absorbed the all fluids from [T]!"))
+	to_chat(T, SPAN_WARNING("You have been absorbed by the changeling!"))
 	playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 70, 1)
 
 	changeling.chem_charges += 10
@@ -256,10 +256,10 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 
 	var/datum/absorbed_dna/newDNA = new(T.real_name, T.dna, T.species.name, T.languages, T.flavor_texts)
 	absorbDNA(newDNA)
-	if(mind && T.mind)
-		mind.StoreMemory("[T.real_name]'s memories:<hr>" + T.mind.memories + "<hr>")
+	if(T?.mind)
+		T.mind.CopyMemories(mind)
 
-	if(T.mind && T.mind.changeling)
+	if(T.mind?.changeling)
 		if(T.mind.changeling.absorbed_dna)
 			for(var/datum/absorbed_dna/dna_data in T.mind.changeling.absorbed_dna)	//steal all their loot
 				if(changeling.GetDNA(dna_data.name))
@@ -323,10 +323,10 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 	var/datum/species/S_dat = all_species[S_name]
 	var/changeTime = 2 SECONDS
 	if(mob_size != S_dat.mob_size)
-		src.visible_message("<span class='warning'>[src]'s body begins to twist, their mass changing rapidly!</span>")
+		src.visible_message(SPAN_WARNING("[src]'s body begins to twist, their mass changing rapidly!"))
 		changeTime = 8 SECONDS
 	else
-		src.visible_message("<span class='warning'>[src]'s body begins to twist, changing rapidly!</span>")
+		src.visible_message(SPAN_WARNING("[src]'s body begins to twist, changing rapidly!"))
 
 	if(!do_after(src, changeTime))
 		to_chat(src, SPAN_LING("We fail to change shape."))
@@ -343,7 +343,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 	return 1
 
 /mob/proc/handle_changeling_transform(var/datum/absorbed_dna/chosen_dna)
-	src.visible_message("<span class='warning'>[src] transforms!</span>")
+	src.visible_message(SPAN_WARNING("[src] transforms!"))
 
 	src.dna = chosen_dna.dna
 	src.real_name = chosen_dna.name
@@ -395,7 +395,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 		return
 
 	changeling.chem_charges--
-	H.visible_message("<span class='warning'>[H] transforms!</span>")
+	H.visible_message(SPAN_WARNING("[H] transforms!"))
 	changeling.geneticdamage = 30
 	to_chat(H, SPAN_LING("Our genes cry out!"))
 	H = H.monkeyize()
@@ -428,7 +428,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 
 	changeling.chem_charges--
 	C.remove_changeling_powers()
-	C.visible_message("<span class='warning'>[C] transforms!</span>")
+	C.visible_message(SPAN_WARNING("[C] transforms!"))
 	C.dna = chosen_dna.Clone()
 
 	var/list/implants = list()
@@ -603,7 +603,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 	C.digitalcamo = !C.digitalcamo
 
 	spawn(0)
-		while(C && C.digitalcamo && C.mind && C.mind.changeling)
+		while(C.digitalcamo && C.mind?.changeling)
 			C.mind.changeling.chem_charges = max(C.mind.changeling.chem_charges - 1, 0)
 			sleep(40)
 
@@ -639,7 +639,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 		to_chat(C, SPAN_LING("Our eyes were... Modificated."))
 
 	spawn(0)
-		while(C && C.stop_sight_update && C.mind && C.mind.changeling)
+		while(C.stop_sight_update && C.mind?.changeling)
 			C.mind.changeling.chem_charges = max(C.mind.changeling.chem_charges - 0.8, 0)
 			sleep(40)
 
@@ -708,7 +708,7 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 
 	var/datum/species/spec = all_species[chosen_dna.speciesName]
 
-	if(spec && spec.species_flags & SPECIES_FLAG_NEED_DIRECT_ABSORB)
+	if(spec?.species_flags & SPECIES_FLAG_NEED_DIRECT_ABSORB)
 		to_chat(src, SPAN_LING("That species must be absorbed directly."))
 		return
 
@@ -770,15 +770,15 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 	changeling.mimicing = mimic_voice
 
 	to_chat(src, SPAN_LING("We shape our glands to take the voice of <b>[mimic_voice]</b>, this will stop us from regenerating chemicals while active."))
-	to_chat(src, "<span class='notice'>Use this power again to return to our original voice and reproduce chemicals again.</span>")
+	to_chat(src, SPAN_NOTICE("Use this power again to return to our original voice and reproduce chemicals again."))
 
 	SSstatistics.add_field_details("changeling_powers","MV")
 
 	spawn(0)
-		while(src && src.mind && src.mind.changeling && src.mind.changeling.mimicing)
+		while(src.mind?.changeling?.mimicing)
 			src.mind.changeling.chem_charges = max(src.mind.changeling.chem_charges - 1, 0)
 			sleep(40)
-		if(src && src.mind && src.mind.changeling)
+		if(src.mind.changeling)
 			src.mind.changeling.mimicing = ""
 	//////////
 	//STINGS//	//They get a pretty header because there's just so fucking many of them ;_;
@@ -812,7 +812,7 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 	if(!changeling_power(required_chems)) return
 	var/obj/item/organ/external/target_limb = T.get_organ(src.zone_sel.selecting)
 	if (!target_limb)
-		to_chat(src, "<span class='warning'>[T] is missing that limb.</span>")
+		to_chat(src, SPAN_WARNING("[T] is missing that limb."))
 		return
 	if(T.isSynthetic())
 		to_chat(src, SPAN_LING("[T] is not compatible with our biology."))
@@ -825,22 +825,22 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 	if(!loud)
 		to_chat(src, SPAN_LING("We stealthily sting [T]."))
 	else
-		src.visible_message(pick("<span class='danger'>[src]'s eyes balloon and burst out in a welter of blood, burrowing into [T]!</span>",
-								"<span class='danger'>[src]'s arm rapidly shifts into a giant scorpion-stinger and stabs into [T]!</span>",
-								"<span class='danger'>[src]'s throat lengthens and twists before vomitting a chunky red spew all over [T]!</span>",
-								"<span class='danger'>[src]'s tongue stretches an impossible length and stabs into [T]!</span>",
-								"<span class='danger'>[src] sneezes a cloud of shrieking spiders at [T]!</span>",
-								"<span class='danger'>[src] erupts a grotesque tail and impales [T]!</span>",
-								"<span class='danger'>[src]'s chin skin bulges and tears, launching a bone-dart at [T]!</span>"))
+		src.visible_message(pick(SPAN_DANGER("[src]'s eyes balloon and burst out in a welter of blood, burrowing into [T]!"),
+								SPAN_DANGER("[src]'s arm rapidly shifts into a giant scorpion-stinger and stabs into [T]!"),
+								SPAN_DANGER("[src]'s throat lengthens and twists before vomitting a chunky red spew all over [T]!"),
+								SPAN_DANGER("[src]'s tongue stretches an impossible length and stabs into [T]!"),
+								SPAN_DANGER("[src] sneezes a cloud of shrieking spiders at [T]!"),
+								SPAN_DANGER("[src] erupts a grotesque tail and impales [T]!"),
+								SPAN_DANGER("[src]'s chin skin bulges and tears, launching a bone-dart at [T]!")))
 
 	for(var/obj/item/clothing/clothes in list(T.head, T.wear_mask, T.wear_suit, T.w_uniform, T.gloves, T.shoes))
 		if(istype(clothes) && (clothes.body_parts_covered & target_limb.body_part) && (clothes.item_flags & ITEM_FLAG_THICKMATERIAL))
-			to_chat(src, "<span class='warning'>[T]'s armor has protected them!</span>")
+			to_chat(src, SPAN_DANGER("[T]'s armor has protected them!"))
 			return //thick clothes will protect from the sting
 
 	if(T.isSynthetic() || BP_IS_ROBOTIC(target_limb)) return
 	if(!T.mind || !T.mind.changeling) return T	//T will be affected by the sting
-	to_chat(T, "<span class='warning'>You feel a tiny prick.</span>")
+	to_chat(T, SPAN_WARNING("You feel a tiny prick."))
 	return
 
 
@@ -874,7 +874,7 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 
 	var/mob/living/carbon/human/T = changeling_sting(20,/mob/proc/changeling_blind_sting, loud = 1)
 	if(!T)	return 0
-	to_chat(T, "<span class='danger'>Your eyes burn horrificly!</span>")
+	to_chat(T, SPAN_DANGER("Your eyes burn horrificly!"))
 	T.disabilities |= NEARSIGHTED
 	spawn(300)	T.disabilities &= ~NEARSIGHTED
 	T.eye_blind = 10
@@ -889,7 +889,7 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 
 	var/mob/living/carbon/human/T = changeling_sting(5,/mob/proc/changeling_deaf_sting, loud = 1)
 	if(!T)	return 0
-	to_chat(T, "<span class='danger'>Your ears pop and begin ringing loudly!</span>")
+	to_chat(T, SPAN_DANGER("Your ears pop and begin ringing loudly!"))
 	T.sdisabilities |= DEAF
 	spawn(300)	T.sdisabilities &= ~DEAF
 	SSstatistics.add_field_details("changeling_powers","DS")
@@ -905,7 +905,7 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 	var/target_limb
 	T.stun_effect_act(0, 150, target_limb, "large organic needle") //in stinged organ
 	T.stun_effect_act(0, 150, null, "large organic needle") //in random organ
-	to_chat(T, "<span class='danger'>Your muscles begin to painfully tighten!</span>")
+	to_chat(T, SPAN_DANGER("Your muscles begin to painfully tighten!"))
 	T.scream()
 //	T.Weaken(20)
 	SSstatistics.add_field_details("changeling_powers","PS")
@@ -956,7 +956,7 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 
 	var/mob/living/carbon/human/T = changeling_sting(5,/mob/proc/changeling_unfat_sting)
 	if(!T)	return 0
-	to_chat(T, "<span class='danger'>You feel a small prick as stomach churns violently and you become to feel skinnier.</span>")
+	to_chat(T, SPAN_DANGER("You feel a small prick as stomach churns violently and you become to feel skinnier."))
 	T.nutrition -= 100
 	SSstatistics.add_field_details("changeling_powers","US")
 	return 1
@@ -968,7 +968,7 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 
 	var/mob/living/carbon/human/T = changeling_sting(40,/mob/proc/changeling_DEATHsting, loud = 1)
 	if(!T)	return 0
-	to_chat(T, "<span class='danger'>You feel a small prick and your chest becomes tight!</span>")
+	to_chat(T, SPAN_DANGER("You feel a small prick and your chest becomes tight!"))
 //	T.silent = 10
 //	T.Paralyse(10)
 //	T.make_jittery(40)
@@ -986,7 +986,7 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 	set desc="Sting a target to extract their DNA."
 
 	var/datum/changeling/changeling = null
-	if(src.mind && src.mind.changeling)
+	if(src.mind?.changeling)
 		changeling = src.mind.changeling
 	if(!changeling)
 		return 0
@@ -1028,9 +1028,9 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 		M.drop_from_inventory(blade)
 		return
 
-	M.visible_message("<span class='danger'>[M]\'s arm begins to twist and rip!</span>",
-							"<span class='danger'>Our arm twists and mutates, transforming it into a deadly blade.</span>",
-							"<span class='danger'>You hear organic matter ripping and tearing!</span>")
+	M.visible_message(SPAN_DANGER("[M]\'s arm begins to twist and rip!"),
+							SPAN_DANGER("Our arm twists and mutates, transforming it into a deadly blade."),
+							SPAN_DANGER("You hear organic matter ripping and tearing!"))
 	playsound(get_turf(src), 'infinity/sound/effects/lingextends.ogg', 50, 1)
 	sleep(6)
 	blade = new(M)
@@ -1058,9 +1058,9 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 		to_chat(M, SPAN_LING("Our hands are full."))
 		return
 
-	M.visible_message("<span class='danger'>[M]\'s arm begins to twist and rip!</span>",
+	M.visible_message(SPAN_DANGER("[M]\'s arm begins to twist and rip!"),
 							SPAN_LING("Our arm twists and mutates, transforming it into a deadly blade."),
-							"<span class='danger'>You hear organic matter ripping and tearing!</span>")
+							SPAN_DANGER("You hear organic matter ripping and tearing!"))
 	playsound(get_turf(src), 'infinity/sound/effects/lingextends.ogg', 50, 1)
 	sleep(6)
 	shield = new(M)
@@ -1079,14 +1079,14 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 
 	var/mob/living/M = src
 
-	M.visible_message("<span class='danger'>[M] writhes and contorts, their body expanding to inhuman proportions!</span>", \
+	M.visible_message(SPAN_DANGER("[M] writhes and contorts, their body expanding to inhuman proportions!"), \
 						SPAN_LING("We begin our transformation to our true form!"))
 	if(!do_after(src,60))
-		M.visible_message("<span class='danger'>[M]'s transformation abruptly reverts itself!</span>", \
+		M.visible_message(SPAN_DANGER("[M]'s transformation abruptly reverts itself!"), \
 							SPAN_LING("Our transformation has been interrupted!"))
 		return 0
 
-	M.visible_message("<span class='danger'>[M] grows into an abomination and lets out an awful scream!</span>")
+	M.visible_message(SPAN_DANGER("[M] grows into an abomination and lets out an awful scream!"))
 	playsound(loc, 'infinity/sound/effects/greaterling.ogg', 100, 1)
 
 	var/mob/living/simple_animal/hostile/true_changeling/ling = new (get_turf(M))
