@@ -35,3 +35,9 @@
 
 /mob/living/simple_animal/aquatic/handle_atmos(var/atmos_suitable = 1)
 	. = ..(atmos_suitable = (loc && loc.is_flooded(1)))
+//[INF]
+/mob/living/simple_animal/aquatic/death()
+	pixel_x = initial(default_pixel_x)
+	pixel_y = initial(default_pixel_y)
+	. = ..()
+//[/INF]
