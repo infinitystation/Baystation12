@@ -221,6 +221,7 @@ var/global/serials = list()
 //[INF]
 	if(istype(target, /obj/structure/catwalk))
 		target = target.loc
+//[/INF]
 
 	add_fingerprint(user)
 
