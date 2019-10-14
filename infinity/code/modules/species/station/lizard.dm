@@ -10,7 +10,7 @@
 	tail_blend = ICON_MULTIPLY
 
 //we need to change almost all things below
-
+/*
 	darksight_range = 3
 	darksight_tint = DARKTINT_MODERATE
 	gluttonous = GLUT_TINY
@@ -36,7 +36,7 @@
 
 	base_auras = null //no fancy regeneration
 	inherent_verbs = null //no fancy regeneration
-
+*/
 	override_organ_types = list(BP_EYES = /obj/item/organ/internal/eyes/unathi/erosan)
 
 	//humanlike height and build
