@@ -211,6 +211,9 @@
 	return attempt_to_stock(I, user)
 
 /obj/machinery/vending/proc/attempt_to_stock(var/obj/item/I as obj, var/mob/user as mob)
+//[INF]
+	if(!restockable) return 0
+//[/INF]
 	for(var/datum/stored_items/vending_products/R in product_records)
 		if(I.type == R.item_path)
 			stock(I, R, user)
@@ -686,6 +689,7 @@
 				  /obj/item/weapon/reagent_containers/pill/pod/orange = 5,
 				  /obj/item/weapon/reagent_containers/pill/pod/mint = 5,
 				  /obj/item/weapon/reagent_containers/food/drinks/ice = 1)
+	restockable = 0 //inf
 
 /obj/machinery/vending/coffee/on_update_icon()
 	..()
@@ -718,8 +722,7 @@
 					/obj/item/weapon/reagent_containers/food/snacks/candy = 1,/obj/item/weapon/reagent_containers/food/drinks/dry_ramen = 5,/obj/item/weapon/reagent_containers/food/snacks/chips = 1,
 					/obj/item/weapon/reagent_containers/food/snacks/sosjerky = 2,/obj/item/weapon/reagent_containers/food/snacks/no_raisin = 1,/obj/item/weapon/reagent_containers/food/snacks/spacetwinkie = 1,
 					/obj/item/weapon/reagent_containers/food/snacks/cheesiehonkers = 1, /obj/item/weapon/reagent_containers/food/snacks/tastybread = 2)
-
-
+	restockable = 0 //inf
 
 /obj/machinery/vending/cola
 	name = "Robust Softdrinks"
@@ -741,6 +744,7 @@
 					/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 2,/obj/item/weapon/reagent_containers/food/drinks/cans/space_up = 1,
 					/obj/item/weapon/reagent_containers/food/drinks/cans/iced_tea = 1,/obj/item/weapon/reagent_containers/food/drinks/cans/grape_juice = 1)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
+	restockable = 0 //inf
 
 /obj/machinery/vending/fitness
 	name = "SweatMAX"
@@ -775,6 +779,7 @@
 					/obj/item/weapon/towel/random = 40)
 
 	contraband = list(/obj/item/weapon/reagent_containers/syringe/steroid = 4)
+	restockable = 0 //inf
 
 /obj/machinery/vending/fitness/on_update_icon()
 	..()
@@ -876,6 +881,7 @@
 					/obj/item/weapon/reagent_containers/ecig_cartridge/lemonlime = 15,
 					/obj/item/weapon/reagent_containers/ecig_cartridge/coffee = 15,
 					/obj/item/weapon/reagent_containers/ecig_cartridge/blanknico = 15)
+	restockable = 0 //inf
 
 
 /obj/machinery/vending/medical
@@ -1107,6 +1113,7 @@
 
 
 	contraband = list(/obj/item/weapon/material/knife/kitchen/cleaver/bronze = 1)
+	restockable = 0 //inf
 
 /obj/machinery/vending/sovietsoda
 	name = "BODA"
@@ -1266,6 +1273,7 @@
 					/obj/item/weapon/lipstick/jade = 100,
 					/obj/item/weapon/storage/wallet/poly = 600
 					)
+	restockable = 0 //inf
 // eliza's attempt at a new vending machine
 /obj/machinery/vending/games
 	name = "Good Clean Fun"
@@ -1283,6 +1291,7 @@
 				/obj/item/toy/plushie/nymph = 10,/obj/item/toy/plushie/mouse = 10,/obj/item/toy/plushie/kitten = 10,/obj/item/toy/plushie/lizard = 10,/obj/item/toy/plushie/spider = 10,/obj/item/toy/plushie/farwa = 10)//inf
 	premium = list(/obj/item/weapon/gun/projectile/revolver/capgun = 1, /obj/item/ammo_magazine/caps = 4)
 	contraband = list(/obj/item/weapon/reagent_containers/spray/waterflower = 2, /obj/item/weapon/storage/box/snappops = 3)
+	restockable = 0 //inf
 
 //Cajoes/Kyos/BloodyMan's Lavatory Articles Dispensiary
 
@@ -1311,6 +1320,7 @@
 				  /obj/item/weapon/towel/random = 50,
 				  /obj/item/weapon/reagent_containers/spray/cleaner/deodorant = 30
 					)
+	restockable = 0 //inf
 
 //a food variant of the boda machine - It carries slavic themed foods.. Mostly beer snacks
 /obj/machinery/vending/snix
@@ -1333,6 +1343,7 @@
 					)
 
 	contraband = list(/obj/item/weapon/reagent_containers/food/snacks/canned/caviar/true = 1)
+	restockable = 0 //inf
 
 /obj/machinery/vending/snix/on_update_icon()
 	..()
@@ -1370,6 +1381,7 @@
 					/obj/item/weapon/reagent_containers/food/snacks/venus = 12,
 					/obj/item/weapon/reagent_containers/food/snacks/oort = 12
 	)
+	restockable = 0 //inf
 
 /obj/machinery/vending/weeb
 	name = "Nippon-tan!"
@@ -1392,6 +1404,7 @@
 					/obj/item/weapon/reagent_containers/food/snacks/pokey = 80,
 					/obj/item/weapon/reagent_containers/food/snacks/chocobanana = 80
 	)
+	restockable = 0 //inf
 
 /obj/machinery/vending/weeb/on_update_icon()
 	..()
@@ -1414,6 +1427,7 @@
 					/obj/item/weapon/reagent_containers/food/snacks/old/hotdog = 1,
 					/obj/item/weapon/reagent_containers/food/snacks/old/taco = 1
 					)
+	restockable = 0 //inf
 
 /obj/machinery/vending/hotfood/on_update_icon()
 	..()

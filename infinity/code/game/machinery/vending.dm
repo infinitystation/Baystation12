@@ -1,3 +1,6 @@
+/obj/machinery/vending
+	var/restockable = 1
+
 /obj/machinery/vending/clothing
 	name = "ClothesMate" //renamed to make the slogan rhyme
 	icon = 'infinity/icons/obj/vending.dmi'
