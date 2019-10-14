@@ -1,6 +1,6 @@
 /obj/structure/table/rack/dark
 	material = MATERIAL_STEEL
-    color = COLOR_GRAY40
+	color = COLOR_GRAY40
 
 /obj/structure/table/rack/wooden
 	name = "wooden altar"
