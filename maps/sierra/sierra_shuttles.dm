@@ -4,6 +4,7 @@
 	sound_takeoff = 'sound/effects/rocket.ogg'
 	sound_landing = 'sound/effects/rocket_backwards.ogg'
 	var/number
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling/sierra
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/New()
 	name = "Escape Pod [number]"
@@ -173,13 +174,13 @@
 
 /datum/shuttle/autodock/ferry/petrov
 	name = "Petrov"
-	warmup_time = 10
 	dock_target = "petrov_shuttle_airlock"
 	waypoint_station = "nav_petrov_start"
 	waypoint_offsite = "nav_petrov_out"
 	logging_home_tag = "nav_petrov_start"
 	logging_access = access_petrov_helm
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling/sierra
+	warmup_time = 10
 
 /datum/shuttle/autodock/ferry/petrov/New(_name, var/obj/effect/shuttle_landmark/initial_location)
 	shuttle_area = subtypesof(/area/shuttle/petrov)
@@ -197,7 +198,6 @@
 //Ninja Shuttle.
 /datum/shuttle/autodock/multi/antag/ninja
 	name = "Ninja"
-	warmup_time = 0
 	destination_tags = list(
 		"nav_ninja_deck1",
 		"nav_ninja_deck2",
@@ -224,6 +224,8 @@
 	announcer = "NSV sierra Sensor Array"
 	arrival_message = "Attention, anomalous sensor reading detected entering vessel proximity."
 	departure_message = "Attention, anomalous sensor reading detected leaving vessel proximity."
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling
+	warmup_time = 10
 
 /obj/effect/shuttle_landmark/ninja/start
 	name = "Clan Dojo"
@@ -258,11 +260,12 @@
 
 /datum/shuttle/autodock/ferry/merchant
 	name = "Merchant"
-	warmup_time = 10
 	shuttle_area = /area/shuttle/merchant/home
 	waypoint_station = "nav_merchant_start"
 	waypoint_offsite = "nav_merchant_out"
 	dock_target = "merchant_ship_dock"
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling
+	warmup_time = 10
 
 /obj/effect/shuttle_landmark/merchant/start
 	name = "Merchant Base"
@@ -278,11 +281,12 @@
 
 /datum/shuttle/autodock/ferry/administration
 	name = "Administration"
-	warmup_time = 10	//want some warmup time so people can cancel.
 	shuttle_area = /area/shuttle/administration/centcom
 	dock_target = "admin_shuttle"
 	waypoint_station = "nav_admin_start"
 	waypoint_offsite = "nav_admin_out"
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling
+	warmup_time = 10
 
 /obj/effect/shuttle_landmark/admin/start
 	name = "Centcom"
@@ -301,11 +305,12 @@
 /datum/shuttle/autodock/ferry/centcom
 	name = "Centcom"
 	location = 1
-	warmup_time = 10
 	shuttle_area = /area/shuttle/transport1/centcom
 	dock_target = "centcom_shuttle"
 	waypoint_offsite = "nav_ferry_start"
 	waypoint_station = "nav_ferry_out"
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling
+	warmup_time = 10
 
 /obj/effect/shuttle_landmark/ferry/start
 	name = "Centcom"
@@ -350,6 +355,8 @@
 	home_waypoint = "nav_merc_start"
 	arrival_message = "Attention, vessel detected entering vessel proximity."
 	departure_message = "Attention, vessel detected leaving vessel proximity."
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling
+	warmup_time = 10
 
 /obj/effect/shuttle_landmark/merc/start
 	name = "Mercenary Base"
@@ -389,7 +396,6 @@
 
 /datum/shuttle/autodock/multi/antag/skipjack
 	name = "Skipjack"
-	warmup_time = 0
 	destination_tags = list(
 		"nav_skipjack_deck1",
 		"nav_skipjack_deck2",
@@ -418,6 +424,8 @@
 	home_waypoint = "nav_skipjack_start"
 	arrival_message = "Attention, vessel detected entering vessel proximity."
 	departure_message = "Attention, vessel detected leaving vessel proximity."
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling
+	warmup_time = 10
 
 /obj/effect/shuttle_landmark/skipjack/start
 	name = "Raider Outpost"
@@ -486,6 +494,8 @@
 	announcer = "NSV sierra Sensor Array"
 	arrival_message = "Attention, vessel detected entering vessel proximity."
 	departure_message = "Attention, vessel detected leaving vessel proximity."
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling
+	warmup_time = 10
 
 /obj/effect/shuttle_landmark/ert/start
 	name = "Response Team Base"
@@ -535,13 +545,14 @@
 
 /datum/shuttle/autodock/ferry/specops/scg
 	name = "Special Operations"
-	warmup_time = 10
 	location = 1
 	shuttle_area = /area/shuttle/specops/centcom
 	dock_target = "specops_shuttle_fore"
 	waypoint_station = "nav_specops_out"
 	waypoint_offsite = "nav_specops_start"
 	current_location = "nav_specops_start"
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling
+	warmup_time = 10
 
 /obj/effect/shuttle_landmark/specops/start
 	name = "Centcom"
@@ -558,10 +569,11 @@
 /datum/shuttle/autodock/ferry/supply/drone
 	name = "Supply Drone"
 	location = 1
-	warmup_time = 10
 	shuttle_area = /area/supply/dock
 	waypoint_offsite = "nav_cargo_start"
 	waypoint_station = "nav_cargo_station"
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling
+	warmup_time = 10
 
 /obj/effect/shuttle_landmark/supply/centcom
 	name = "Offsite"
@@ -585,6 +597,7 @@
 	logging_home_tag = "nav_hangar_calypso"
 	logging_access = access_expedition_shuttle_helm
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling/sierra
+	warmup_time = 10
 
 /obj/effect/shuttle_landmark/sierra/hangar/exploration_shuttle
 	name = "Charon Hangar"
@@ -618,7 +631,6 @@
 
 /datum/shuttle/autodock/overmap/guppy
 	name = "Guppy"
-	warmup_time = 5
 	move_time = 30
 	shuttle_area = /area/guppy_hangar/start
 	dock_target ="guppy_shuttle"
@@ -631,6 +643,7 @@
 	logging_access = access_guppy_helm
 	skill_needed = SKILL_NONE
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling/sierra
+	warmup_time = 5
 
 /obj/effect/shuttle_landmark/sierra/hangar/guppy
 	name = "Guppy Hangar"
