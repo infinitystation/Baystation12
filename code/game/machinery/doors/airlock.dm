@@ -1,3 +1,5 @@
+GLOBAL_LIST_INIT(airlocks, list()) //inf
+
 #define BOLTS_FINE 0
 #define BOLTS_EXPOSED 1
 #define BOLTS_CUT 2
@@ -98,7 +100,7 @@ var/list/airlock_overlays = list()
 	)
 	stock_part_presets = list(/decl/stock_part_preset/radio/receiver/airlock = 1)
 
-	var/t_ntnet_id
+	var/t_ntnet_id //inf
 
 /obj/machinery/door/airlock/attack_generic(var/mob/user, var/damage)
 	if(stat & (BROKEN|NOPOWER))
@@ -1397,7 +1399,8 @@ About the new airlock wires panel:
 		wires = new/datum/wires/airlock(src)
 
 /obj/machinery/door/airlock/Initialize()
-	get_new_ntnet_id()
+	GLOB.airlocks += src //inf
+	get_new_ntnet_id() //inf
 	if(src.closeOtherId != null)
 		for (var/obj/machinery/door/airlock/A in world)
 			if(A.closeOtherId == src.closeOtherId && A != src)
@@ -1416,6 +1419,7 @@ About the new airlock wires panel:
 	. = ..()
 
 /obj/machinery/door/airlock/Destroy()
+	GLOB.airlocks -= src
 	if(brace)
 		qdel(brace)
 	return ..()
