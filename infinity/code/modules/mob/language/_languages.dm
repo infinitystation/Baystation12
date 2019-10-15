@@ -4,29 +4,32 @@
 //A vot bistruyu ustnuyu rech - vryad li
 //No zato kashdiy mog bi pochuchut ponimat ksenotu, ne s pervogo raza, no vse she
 
-/decl/cultural_info/location
-	secondary_langs = list(LANGUAGE_PTAJ, LANGUAGE_PRESOMI, LANGUAGE_PUNATI, LANGUAGE_PSKRELLIAN)
+/decl/cultural_info/location/New()
+	secondary_langs += list(LANGUAGE_PTAJ, LANGUAGE_PRESOMI, LANGUAGE_PUNATI, LANGUAGE_PSKRELLIAN)
+	..()
 
 /datum/language/tajprim
 	name = LANGUAGE_PTAJ
-	desc = "РЈРїСЂРѕС‰РµРЅРЅС‹Р№ РЎРёРёРє'РјР°Р°СЃ - РёРјРµРЅРЅРѕ С‚Р°Рє РјРѕР¶РЅРѕ РЅР°Р·РІР°С‚СЊ С‚Рѕ, С‡С‚Рѕ РІС‹ РІС‹СѓС‡РёР»Рё. РљРѕРЅРµС‡РЅРѕ, СЃ РїРёСЃСЊРјРµРЅРЅРѕСЃС‚СЊСЋ РіРѕСЂР°Р·РґРѕ Р»РµРіС‡Рµ, РЅРѕ Рё С‚РѕРіРѕ С‡С‚Рѕ РІС‹ СЃРјРѕР¶РµС‚Рµ РІС‹РіРѕРІРѕСЂРёС‚СЊ СѓР¶Рµ РґРѕСЃС‚Р°С‚РѕС‡РЅРѕ РґР»СЏ РІС‹Р¶РёРІР°РЅРёСЏ РЅР° РђРґРѕРјР°Рµ."
-	speech_verb = "РјСѓСЂС‡РёС‚"
-	ask_verb = "РІРѕРїСЂРѕСЃРёС‚РµР»СЊРЅРѕ РјСѓСЂС‡РёС‚"
-	exclaim_verb = "РїРѕРґРІС‹РІР°РµС‚"
+	desc = "Упрощенный Сиик'маас - именно так можно назвать то, что вы выучили. Конечно, \
+	с письменностью гораздо легче, но и того что вы сможете выговорить уже достаточно для выживания на Адомае."
+	speech_verb = "мурчит"
+	ask_verb = "вопросительно мурчит"
+	exclaim_verb = "подвывает"
 	colour = "tajaran"
 	syllables = list("mrr","rr","tajr","kir","raj","kii","mir","kra","ahk","nal","vah","khaz","jri","ran","darr",
 	"mi","jri","dynh","manq","rhe","zar","rrhaz","kal","chur","eech","thaa","dra","jurl","mah","sanu","dra","ii'r",
 	"ka","aasi","far","wa","baq","ara","qara","zir","sam","mak","hrar","nja","rir","khan","jun","dar","rik","kah",
 	"hal","ket","jurl","mah","tul","cresh","azu","ragh","mro","mra","mrro","mrra")
 	shorthand = "PTJ"
-	partial_understanding = list(LANGUAGE_SIIK_MAAS = 30)
+	partial_understanding = list(LANGUAGE_SIIK_MAAS = 55)
 
 /datum/language/rezprim
 	name = LANGUAGE_PRESOMI
-	desc = "РЈРїСЂРѕС‰РµРЅРЅС‹Р№ РЎС‡РµС‡Рё - РёРјРµРЅРЅРѕ С‚Р°Рє РјРѕР¶РЅРѕ РЅР°Р·РІР°С‚СЊ С‚Рѕ, С‡С‚Рѕ РІС‹ РІС‹СѓС‡РёР»Рё. РљРѕРЅРµС‡РЅРѕ, СЃ РїРёСЃСЊРјРµРЅРЅРѕСЃС‚СЊСЋ РіРѕСЂР°Р·РґРѕ Р»РµРіС‡Рµ, РЅРѕ Рё С‚РѕРіРѕ С‡С‚Рѕ РІС‹ СЃРјРѕР¶РµС‚Рµ РІС‹РіРѕРІРѕСЂРёС‚СЊ СѓР¶Рµ РґРѕСЃС‚Р°С‚РѕС‡РЅРѕ РґР»СЏ РІС‹Р¶РёРІР°РЅРёСЏ РІ СЂРµР·РѕРјСЊРµР№ СЃСЂРµРґРµ."
-	speech_verb = "СЃРІРёСЃС‚РёС‚"
-	ask_verb = "РЅР°СЃРІРёСЃС‚С‹РІР°РµС‚"
-	exclaim_verb = "С€РёРїРёС‚"
+	desc = "Упрощенный Счечи - именно так можно назвать то, что вы выучили. Конечно, с письменностью \
+	гораздо легче, но и того что вы сможете выговорить уже достаточно для выживания в резомьей среде."
+	speech_verb = "свистит"
+	ask_verb = "насвистывает"
+	exclaim_verb = "просвистывает"
 	colour = "alien"
 	syllables = list(
 			"ca", "ra", "ma", "sa", "na", "ta", "la", "sha", "scha", "a", "a",
@@ -34,14 +37,15 @@
 			"ci", "ri", "mi", "si", "ni", "ti", "li", "shi", "schi", "i", "i"
 		)
 	shorthand = "PSCH"
-	partial_understanding = list(LANGUAGE_RESOMI = 30)
+	partial_understanding = list(LANGUAGE_RESOMI = 55)
 
 /datum/language/unprim
 	name = LANGUAGE_PUNATI
-	desc = "РЈРїСЂРѕС‰РµРЅРЅС‹Р№ СЏР·С‹Рє СѓРЅР°С‚Рё - РёРјРµРЅРЅРѕ С‚Р°Рє РјРѕР¶РЅРѕ РЅР°Р·РІР°С‚СЊ С‚Рѕ, С‡С‚Рѕ РІС‹ РІС‹СѓС‡РёР»Рё. РљРѕРЅРµС‡РЅРѕ, СЃ РїРёСЃСЊРјРµРЅРЅРѕСЃС‚СЊСЋ РіРѕСЂР°Р·РґРѕ Р»РµРіС‡Рµ, РЅРѕ Рё С‚РѕРіРѕ С‡С‚Рѕ РІС‹ СЃРјРѕР¶РµС‚Рµ РІС‹РіРѕРІРѕСЂРёС‚СЊ СѓР¶Рµ РґРѕСЃС‚Р°С‚РѕС‡РЅРѕ РґР»СЏ РІС‹Р¶РёРІР°РЅРёСЏ РЅР° РњРѕРіРµСЃРµ."
-	speech_verb = "РёР·РґР°РµС‚ С€РёРїСЏС‰РёРµ Р·РІСѓРєРё"
-	ask_verb = "РІРѕРїСЂРѕСЃРёС‚РµР»СЊРЅРѕ С€РёРїРёС‚"
-	exclaim_verb = "Р°РіСЂРµСЃСЃРёРІРЅРѕ С€РёРїРёС‚"
+	desc = "Упрощенный язык унати - именно так можно назвать то, что вы выучили. Конечно, с письменностью \
+	гораздо легче, но и того что вы сможете выговорить уже достаточно для выживания на Могесе."
+	speech_verb = "шипит"
+	ask_verb = "вопросительно шипит"
+	exclaim_verb = "прерывисто шипит"
 	colour = "soghun"
 	syllables = list(
 		"za", "az", "ze", "ez", "zi", "iz", "zo", "oz", "zu", "uz", "zs", "sz",
@@ -53,18 +57,20 @@
 		"a",  "a",  "e",  "e",  "i",  "i",  "o",  "o",  "u",  "u",  "s",  "s"
 	)
 	shorthand = "PUT"
-	partial_understanding = list(LANGUAGE_UNATHI_SINTA = 25, LANGUAGE_UNATHI_YEOSA = 25)
+	partial_understanding = list(LANGUAGE_UNATHI_SINTA = 50, LANGUAGE_UNATHI_YEOSA = 50)
 
 /datum/language/skrellprim
 	name = LANGUAGE_PSKRELLIAN
-	desc = "РЈРїСЂРѕС‰РµРЅРЅС‹Р№ РЎРєСЂРµР»СЊСЃРєРёР№ - РёРјРµРЅРЅРѕ С‚Р°Рє РјРѕР¶РЅРѕ РЅР°Р·РІР°С‚СЊ С‚Рѕ, С‡С‚Рѕ РІС‹ РІС‹СѓС‡РёР»Рё. РљРѕРЅРµС‡РЅРѕ, СЃ РїРёСЃСЊРјРµРЅРЅРѕСЃС‚СЊСЋ РіРѕСЂР°Р·РґРѕ Р»РµРіС‡Рµ РІРµРґСЊ РµРµ РІС‹ РЅРµ СѓС‡РёР»Рё, РЅРѕ Рё С‚РѕРіРѕ С‡С‚Рѕ РІС‹ СЃРјРѕР¶РµС‚Рµ РІС‹РіРѕРІРѕСЂРёС‚СЊ СѓР¶Рµ РґРѕСЃС‚Р°С‚РѕС‡РЅРѕ РґР»СЏ РІС‹Р¶РёРІР°РЅРёСЏ СЃСЂРµРґРё РЎРєСЂРµР»Р»РѕРІ. Р’С‹СѓС‡РёС‚СЊ С…РѕС‚СЊ С‡Р°СЃС‚СЊ СЌС‚РѕРіРѕ СЏР·С‹РєР° Р±С‹Р»Рѕ РґРѕСЂРѕРіРѕ, РѕСЃРѕР±РµРЅРЅРѕ РёР·-Р·Р° С†РµРЅС‹ РёРјРїР»Р°РЅС‚Р°, РєРѕС‚РѕСЂС‹Р№ РїРѕРјРѕРі РІ СЌС‚РѕРј."
-	speech_verb = "РїРѕРґРІС‹РІР°РµС‚"
-	ask_verb = "РІРѕРµС‚"
-	exclaim_verb = "РЅР°РІС‹РІР°РµС‚"
+	desc = "Упрощенный Скрельский - именно так можно назвать то, что вы выучили. Конечно, с письменностью \
+	гораздо легче ведь ее вы не учили, но и того что вы сможете выговорить уже достаточно для выживания среди \
+	Скреллов. Выучить хоть часть этого языка было дорого, особенно из-за цены импланта, который помог в этом."
+	speech_verb = "подвывает"
+	ask_verb = "воет"
+	exclaim_verb = "навывает"
 	colour = "skrell"
 	syllables = list("qr","qrr","xuq","qil","quum","xuqm","vol","xrim","zaoo","qu-uu","qix","qoo","zix","*","!")
 	shorthand = "PSK"
-	partial_understanding = list(LANGUAGE_SKRELLIAN = 20)
+	partial_understanding = list(LANGUAGE_SKRELLIAN = 45)
 
 //tut idut tipa chtobi ksenosi ponimali primitivnie yaziki i tipa tebya, primitiva poimyt a ti ih ne och no i tebya tozhe
 
