@@ -174,12 +174,14 @@
 
 // Language handling.
 /mob/proc/add_language(var/language)
-
 	var/datum/language/new_language = all_languages[language]
 
 	if(!istype(new_language) || (new_language in languages))
 		return 0
-
+	if(ishuman(src)) //inf
+		var/mob/living/carbon/human/H = src
+		if(new_language.primitive_version && !(H.species.name in new_language.native_speaker))
+			new_language = all_languages[new_language.primitive_version]
 	languages.Add(new_language)
 	return 1
 
