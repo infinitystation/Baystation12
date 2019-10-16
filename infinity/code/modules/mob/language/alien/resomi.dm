@@ -1,6 +1,6 @@
 /datum/language/resomi
 	primitive_version = LANGUAGE_PRESOMI //inf
-	native_speaker = list(SPECIES_RESOMI)
+	native_speaker = list(SPECIES_RESOMI, SPECIES_IPC)
 	name = LANGUAGE_RESOMI
 	desc = "A trilling language spoken by the diminutive Resomi."
 	speech_verb = "щебечет"

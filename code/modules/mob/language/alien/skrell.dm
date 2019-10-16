@@ -1,6 +1,6 @@
 /datum/language/skrell
 	primitive_version = LANGUAGE_PSKRELLIAN //inf
-	native_speaker = list(SPECIES_SKRELL)
+	native_speaker = list(SPECIES_SKRELL, SPECIES_IPC)
 	name = LANGUAGE_SKRELLIAN
 	desc = "A melodic and complex language spoken by the Skrell of Qerrbalak. Some of the notes are inaudible to humans."
 	speech_verb = "поет"
