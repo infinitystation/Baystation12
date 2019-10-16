@@ -19,6 +19,11 @@
 	partial_understanding = list(LANGUAGE_SIIK_MAAS = 55)
 
 /datum/language/tajaran/primitive/can_be_spoken_properly_by(var/mob/speaker)
+	var/mob/living/S = speaker
+	if(!istype(S))
+		return FALSE
+	if(S.isSynthetic())
+		return TRUE
 	return FALSE
 
 /datum/language/tajaran/primitive/muddle(var/message)
@@ -39,6 +44,11 @@
 	partial_understanding = list(LANGUAGE_RESOMI = 55)
 
 /datum/language/resomi/primitive/can_be_spoken_properly_by(var/mob/speaker)
+	var/mob/living/S = speaker
+	if(!istype(S))
+		return FALSE
+	if(S.isSynthetic())
+		return TRUE
 	return FALSE
 
 /datum/language/resomi/primitive/muddle(var/message)
