@@ -16,7 +16,7 @@
 	ask_verb = "вопросительно мурчит"
 	exclaim_verb = "подвывает"
 	shorthand = "PTJ"
-	partial_understanding = list(LANGUAGE_SIIK_MAAS = 55)
+	partial_understanding = list(LANGUAGE_SIIK_MAAS = 30)
 
 /datum/language/tajaran/primitive/can_be_spoken_properly_by(var/mob/speaker)
 	var/mob/living/S = speaker
@@ -41,7 +41,7 @@
 	ask_verb = "насвистывает"
 	exclaim_verb = "просвистывает"
 	shorthand = "PSCH"
-	partial_understanding = list(LANGUAGE_RESOMI = 55)
+	partial_understanding = list(LANGUAGE_RESOMI = 30)
 
 /datum/language/resomi/primitive/can_be_spoken_properly_by(var/mob/speaker)
 	var/mob/living/S = speaker
@@ -63,7 +63,7 @@
 	ask_verb = "вопросительно шипит"
 	exclaim_verb = "прерывисто шипит"
 	shorthand = "PUT"
-	partial_understanding = list(LANGUAGE_UNATHI_SINTA = 50, LANGUAGE_UNATHI_YEOSA = 50)
+	partial_understanding = list(LANGUAGE_UNATHI_SINTA = 25, LANGUAGE_UNATHI_YEOSA = 25)
 
 /datum/language/skrell/primitive
 	name = LANGUAGE_PSKRELLIAN
@@ -74,26 +74,26 @@
 	ask_verb = "воет"
 	exclaim_verb = "навывает"
 	shorthand = "PSK"
-	partial_understanding = list(LANGUAGE_SKRELLIAN = 45)
+	partial_understanding = list(LANGUAGE_SKRELLIAN = 20)
 
 //tut idut tipa chtobi ksenosi ponimali primitivnie yaziki i tipa tebya, primitiva poimyt a ti ih ne och no i tebya tozhe
 
 /datum/language/tajaran/New()
 	..()
-	partial_understanding += list(LANGUAGE_PTAJ = 45)
+	partial_understanding += list(LANGUAGE_PTAJ = 25)
 
 /datum/language/resomi/New()
 	..()
-	partial_understanding += list(LANGUAGE_PRESOMI = 45)
+	partial_understanding += list(LANGUAGE_PRESOMI = 25)
 
 /datum/language/unathi/New()
 	..()
-	partial_understanding += list(LANGUAGE_PUNATI = 40)
+	partial_understanding += list(LANGUAGE_PUNATI = 20)
 
 /datum/language/yeosa/New()
 	..()
-	partial_understanding += list(LANGUAGE_PUNATI = 40)
+	partial_understanding += list(LANGUAGE_PUNATI = 20)
 
 /datum/language/skrell/New()
 	..()
-	partial_understanding += list(LANGUAGE_PSKRELLIAN = 35)
+	partial_understanding += list(LANGUAGE_PSKRELLIAN = 15)
