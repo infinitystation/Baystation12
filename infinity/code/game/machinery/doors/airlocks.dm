@@ -114,8 +114,8 @@
 									<th class='id_airlocksbugged'>NAME
 									<th class='id_airlocksbugged'>LOCATION
 									<th class='id_airlocksbugged'>ID PAIR
-									<th class='id_airlocksbugged'>PAIR LOCATION
-									<th class='id_airlocksbugged'>PAIR NAME"}
+									<th class='id_airlocksbugged'>PAIR NAME
+									<th class='id_airlocksbugged'>PAIR LOCATION"}
 	var/data = ""
 	for(var/obj/machinery/door/airlock/TEST in GLOB.airlocks)
 /*
