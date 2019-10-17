@@ -68,9 +68,6 @@
 		get_new_ntnet_id()
 		return
 
-/proc/get_loc_href4(var/atom/M)
-	return "<a href='?_src_=holder;adminplayerobservecoodjump=1;X=[M.x];Y=[M.y];Z=[M.z]'>JMP</a>"
-
 /client/proc/debug_airlocks_id()
 	set name = "Debug Airlocks ID"
 	set category = "Debug"
@@ -126,7 +123,7 @@
 */
 		IDS += {"	<td>[TEST.t_ntnet_id]
 					<td>[TEST.name]
-					<td>([get_loc_href4(TEST)] ([TEST.loc]))"}
+					<td>([GET_ATOMLOC_HREF_FOR(TEST)] ([TEST.loc]))"}
 	for(var/obj/machinery/door/airlock/i in GLOB.airlocks)
 		for(var/obj/machinery/door/airlock/n in GLOB.airlocks)
 			if(n == i) 
@@ -134,11 +131,11 @@
 			if(n.t_ntnet_id == i.t_ntnet_id)
 				bugged_airlocks += {"	<td class='id_airlocksbugged'>[n.t_ntnet_id]
 										<td class='id_airlocksbugged'>[n.name]
-										<td class='id_airlocksbugged'>[n.loc] ([get_loc_href4(n)])
+										<td class='id_airlocksbugged'>[n.loc] ([GET_ATOMLOC_HREF_FOR(n)])
 
 										<td class='id_airlocksbugged'>[i.t_ntnet_id]
 										<td class='id_airlocksbugged'>[i.name]
-										<td class='id_airlocksbugged'>[i.loc] ([get_loc_href4(i)])"}
+										<td class='id_airlocksbugged'>[i.loc] ([GET_ATOMLOC_HREF_FOR(i)])"}
 
 	if(bugged_airlocks.len)
 		data += {"<div class = 'id_airlocksbugged'>
