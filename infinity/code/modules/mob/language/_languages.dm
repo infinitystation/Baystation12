@@ -80,20 +80,20 @@
 
 /datum/language/tajaran/New()
 	..()
-	partial_understanding += list(LANGUAGE_PTAJ = 25)
+	partial_understanding += list(LANGUAGE_PTAJ = 45)
 
 /datum/language/resomi/New()
 	..()
-	partial_understanding += list(LANGUAGE_PRESOMI = 25)
+	partial_understanding += list(LANGUAGE_PRESOMI = 45)
 
 /datum/language/unathi/New()
 	..()
-	partial_understanding += list(LANGUAGE_PUNATI = 20)
+	partial_understanding += list(LANGUAGE_PUNATI = 40)
 
 /datum/language/yeosa/New()
 	..()
-	partial_understanding += list(LANGUAGE_PUNATI = 20)
+	partial_understanding += list(LANGUAGE_PUNATI = 40)
 
 /datum/language/skrell/New()
 	..()
-	partial_understanding += list(LANGUAGE_PSKRELLIAN = 15)
+	partial_understanding += list(LANGUAGE_PSKRELLIAN = 35)
