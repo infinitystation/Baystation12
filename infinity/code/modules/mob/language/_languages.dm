@@ -16,7 +16,8 @@
 	ask_verb = "вопросительно мурчит"
 	exclaim_verb = "подвывает"
 	shorthand = "PTJ"
-	partial_understanding = list(LANGUAGE_SIIK_MAAS = 30)
+	flags = BAD_SPEAKER
+	partial_understanding = list(LANGUAGE_SIIK_MAAS = 30, LANGUAGE_PTAJ = 15)
 
 /datum/language/tajaran/primitive/can_be_spoken_properly_by(var/mob/speaker)
 	var/mob/living/S = speaker
@@ -41,7 +42,8 @@
 	ask_verb = "насвистывает"
 	exclaim_verb = "просвистывает"
 	shorthand = "PSCH"
-	partial_understanding = list(LANGUAGE_RESOMI = 30)
+	flags = BAD_SPEAKER
+	partial_understanding = list(LANGUAGE_RESOMI = 30,LANGUAGE_PRESOMI = 15)
 
 /datum/language/resomi/primitive/can_be_spoken_properly_by(var/mob/speaker)
 	var/mob/living/S = speaker
@@ -63,7 +65,8 @@
 	ask_verb = "вопросительно шипит"
 	exclaim_verb = "прерывисто шипит"
 	shorthand = "PUT"
-	partial_understanding = list(LANGUAGE_UNATHI_SINTA = 25, LANGUAGE_UNATHI_YEOSA = 25)
+	flags = BAD_SPEAKER
+	partial_understanding = list(LANGUAGE_UNATHI_SINTA = 25, LANGUAGE_UNATHI_YEOSA = 25, LANGUAGE_PUNATI = 15)
 
 /datum/language/skrell/primitive
 	name = LANGUAGE_PSKRELLIAN
@@ -74,7 +77,8 @@
 	ask_verb = "воет"
 	exclaim_verb = "навывает"
 	shorthand = "PSK"
-	partial_understanding = list(LANGUAGE_SKRELLIAN = 20)
+	flags = BAD_SPEAKER
+	partial_understanding = list(LANGUAGE_SKRELLIAN = 20, LANGUAGE_PSKRELLIAN = 10)
 
 //tut idut tipa chtobi ksenosi ponimali primitivnie yaziki i tipa tebya, primitiva poimyt a ti ih ne och no i tebya tozhe
 

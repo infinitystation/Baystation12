@@ -56,7 +56,7 @@
 
 	//Language check.
 	for(var/datum/language/L in src.languages)
-		if(speaking.name == L.name)
+		if(speaking.name == L.name && !(L.flags & BAD_SPEAKER)) //INF
 			return 1
 
 	return 0
