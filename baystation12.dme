@@ -3508,6 +3508,7 @@
 #include "infinity\customs\moghes.dm"
 #include "infinity\customs\os_uniform.dm"
 #include "infinity\customs\pink_guitar.dm"
+#include "infinity\customs\rockcoats.dm"
 #include "infinity\customs\ronin_helmet.dm"
 #include "infinity\customs\sarov.dm"
 #include "infinity\customs\shizukana_hikaro.dm"
