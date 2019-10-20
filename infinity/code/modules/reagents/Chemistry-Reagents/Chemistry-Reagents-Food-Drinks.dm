@@ -79,3 +79,6 @@
 
 	glass_name = "Discord cocktail"
 	glass_desc = "You did it, Verhniy! Where's the Discord Nitro cocktail, though?"
+
+/datum/reagent/ethanol/vodka/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+	M.radiation = max(M.radiation - 30 * removed, 0)
