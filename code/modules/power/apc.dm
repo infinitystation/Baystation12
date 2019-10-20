@@ -569,7 +569,7 @@
 
 	// Deconstruction
 	if(isWelder(W))
-//inf ahead
+//[INF]
 		if(hp < 100)
 			if(is_broken())
 				to_chat(user, SPAN_WARNING("The APC is too damaged, replace of the frame is only option."))
@@ -585,11 +585,11 @@
 			if(do_after(user, 50, src) && opened && has_electronics == 0 && !terminal())
 				if(!WT.remove_fuel(3, user))
 					return TRUE
-			hp = 100 //inf
+			hp = 100
 			user.visible_message(SPAN_NOTICE("\The [user] has repaired \the [src]'s frame."), \
 				"You repair the APC frame.")
 			return TRUE
-//inf end
+//[/INF]
 		if(!opened)
 			to_chat(user, SPAN_WARNING("You must first open the cover."))
 			return TRUE
@@ -627,9 +627,19 @@
 
 	// Panel and frame repair.
 	if (istype(W, /obj/item/frame/apc))
+//[INF]
+		if(!user.skill_check(SKILL_ELECTRICAL, SKILL_ADEPT))
+			to_chat(user, SPAN_NOTICE("You have no idea what to do..."))
+			return TRUE
+//[/INF]
 		if(!opened)
 			to_chat(user, SPAN_WARNING("You must first open the cover."))
 			return TRUE
+//[INF]
+		if(get_cell())
+			to_chat(user, SPAN_NOTICE("You must first remove the cell."))
+			return TRUE
+//[/INF]
 		if(emagged)
 			emagged = 0
 			if(opened==2)
@@ -646,16 +656,18 @@
 //inf			if(has_electronics)
 //inf				to_chat(user, "<span class='warning'>You cannot repair this APC until you remove the electronics still inside.</span>")
 //inf				return TRUE
-
+//[INF]
 			user.visible_message("<span class='warning'>[user.name] replaces the damaged APC frame with a new one.</span>",\
 								"You begin to replace the damaged APC frame...")
-			if(do_after(user, 50, src) && opened && !has_electronics && ((stat & BROKEN) || (hacker && !hacker.hacked_apcs_hidden)))
+//[/INF]
+			if(do_after(user, 50, src) && opened && !get_cell() && ((stat & BROKEN) || (hacker && !hacker.hacked_apcs_hidden)))
 				user.visible_message(\
 					"<span class='notice'>[user.name] has replaced the damaged APC frame with new one.</span>",\
 					"You replace the damaged APC frame with new one.")
 				qdel(W)
 				set_broken(FALSE)
 				hp = 100 //inf
+				operating = 1 //inf, less pain
 				// Malf AI, removes the APC from AI's hacked APCs list.
 				if(hacker && hacker.hacked_apcs && (src in hacker.hacked_apcs))
 					hacker.hacked_apcs -= src
@@ -664,7 +676,7 @@
 					opened = 1
 				queue_icon_update()
 
-//[inf]
+//[INF]
 	if(isMultitool(W) && !wiresexposed && has_electronics)
 		if((user.skill_check(SKILL_ELECTRICAL, SKILL_PROF) || user.skill_check(SKILL_COMPUTER, SKILL_PROF)) && \
 		(hacker && hacker.hacked_apcs && (src in hacker.hacked_apcs)))
@@ -681,7 +693,7 @@
 //			reboot()
 			queue_icon_update()
 		return
-//[/inf]
+//[/INF]
 
 	if((. = ..())) // Further interactions are low priority attack stuff.
 		return
@@ -707,16 +719,13 @@
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 //inf end
 
-		user.visible_message("<span class='danger'>The [src.name] has been hit with the [W.name] by [user.name]!</span>", \
+//inf		user.visible_message("<span class='danger'>The [src.name] has been hit with the [W.name] by [user.name]!</span>", \
 			"<span class='danger'>You hit the [src.name] with your [W.name]!</span>", \
 			"You hear a bang")
 		if(W.force >= 5 && W.w_class >= ITEM_SIZE_NORMAL) //inf, was f(W.force >= 5 && W.w_class >= ITEM_SIZE_NORMAL && prob(W.force))
 			if(hp > 0) //inf
 				hp -= W.force //inf, was var/roulette = rand(1,100)
 //inf			switch(roulette)
-			if(locked && hp <= 75) //inf, was if(1 to 10)
-				locked = FALSE
-				to_chat(user, "<span class='notice'>You manage to disable the lock on \the [src]!</span>")
 			if(!opened && hp <= 50) //inf, was if(50 to 70)
 				to_chat(user, "<span class='notice'>You manage to bash the lid open!</span>")
 				opened = 1
