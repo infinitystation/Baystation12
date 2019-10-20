@@ -15,6 +15,7 @@
 	speech_verb = "мурчит"
 	ask_verb = "вопросительно мурчит"
 	exclaim_verb = "подвывает"
+	key = ""
 	shorthand = "PTJ"
 	flags = BAD_SPEAKER
 	partial_understanding = list(LANGUAGE_SIIK_MAAS = 30, LANGUAGE_PTAJ = 15)
@@ -41,6 +42,7 @@
 	speech_verb = "свистит"
 	ask_verb = "насвистывает"
 	exclaim_verb = "просвистывает"
+	key = ""
 	shorthand = "PSCH"
 	flags = BAD_SPEAKER
 	partial_understanding = list(LANGUAGE_RESOMI = 30,LANGUAGE_PRESOMI = 15)
@@ -64,6 +66,7 @@
 	speech_verb = "шипит"
 	ask_verb = "вопросительно шипит"
 	exclaim_verb = "прерывисто шипит"
+	key = ""
 	shorthand = "PUT"
 	flags = BAD_SPEAKER
 	partial_understanding = list(LANGUAGE_UNATHI_SINTA = 25, LANGUAGE_UNATHI_YEOSA = 25, LANGUAGE_PUNATI = 15)
@@ -76,6 +79,7 @@
 	speech_verb = "подвывает"
 	ask_verb = "воет"
 	exclaim_verb = "навывает"
+	key = ""
 	shorthand = "PSK"
 	flags = BAD_SPEAKER
 	partial_understanding = list(LANGUAGE_SKRELLIAN = 20, LANGUAGE_PSKRELLIAN = 10)
