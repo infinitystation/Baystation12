@@ -77,10 +77,15 @@
 	name = "Door Hacking Tool"
 	item_cost = 24
 	path = /obj/item/device/multitool/hacktool
-	desc = "Appears and functions as a standard multitool until a screwdriver is used to toggle it. \
+//INF	desc = "Appears and functions as a standard multitool until a screwdriver is used to toggle it. \
 			While in hacking mode, this device will grant full access to any airlock in 20 to 40 seconds. \
 			This device will be able to continuously reaccess the last 6 to 8  airlocks it was used on."
-
+//[INF]
+	desc = "Appears and functions as a standard multitool until >a screwdriver is used to toggle it<. \
+			While in hacking mode, this device will grant full access to any airlock in 8 to 12 seconds. \
+			This device will be able to continuously reaccess the last 6 to 8  airlocks it was used on. \
+			Only people like you may activate it with screwdriver."
+//[/INF]
 /datum/uplink_item/item/tools/space_suit
 	name = "Voidsuit and Tactical Mask"
 	desc = "A satchel containing a non-regulation voidsuit, voidsuit helmet, tactical mask, and oxygen tank. \
