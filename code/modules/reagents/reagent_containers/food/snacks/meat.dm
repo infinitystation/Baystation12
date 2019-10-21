@@ -12,6 +12,19 @@
 		..()
 		reagents.add_reagent(/datum/reagent/nutriment/protein, 9)
 		src.bitesize = 3
+	//feeding slimes with meat on NSV Sierra
+	attack(mob/living/carbon/slime/M as mob, mob/user as mob)
+		if(!istype(M, /mob/living/carbon/slime))//If target is not a slime.
+			return ..()
+		if (reagents.has_reagent(/datum/reagent/blood, 10))
+			to_chat(user, "<span class='warning'> Slime would like this!</span>")
+			M.adjust_nutrition(150)
+			qdel(src)
+		else
+			to_chat(user, "<span class='warning'> Slime does not show any interest...</span>")
+			return ..()
+
+	//---------------------------------------
 
 /obj/item/weapon/reagent_containers/food/snacks/meat/syntiflesh
 	name = "synthetic meat"
