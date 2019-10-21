@@ -18,8 +18,8 @@
 
 /obj/item/clothing/mask/muzzle/Initialize()
 	. = ..()
-	say_messages = list("Mmfph!", "Mmmf mrrfff!", "Mmmf mnnf!")
-	say_verbs = list("mumbles", "says")
+	say_messages = list("ћмнф!", "ћм! ћмф!", "ћннф!")
+	say_verbs = list("мычит", "говорит") //INF, WAS say_verbs = list("mumbles", "says")
 
 // Clumsy folks can't take the mask off themselves.
 /obj/item/clothing/mask/muzzle/attack_hand(mob/user as mob)

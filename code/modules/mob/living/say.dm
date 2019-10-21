@@ -141,20 +141,20 @@ proc/get_radio_key_from_channel(var/channel)
 
 	if((MUTATION_HULK in mutations) && health >= 25 && length(message))
 		message = "[uppertext(message)]!!!"
-		verb = pick("yells","roars","hollers")
+		verb = pick("кричит","вопит") //INF, WAS verb = pick("yells","roars","hollers")
 		message_data[3] = 0
 		. = 1
 	else if(slurring)
 		message = slur(message)
-		verb = pick("slobbers","slurs")
+		verb = "заплетаетс&#255;" //INF, WAS verb = pick("slobbers","slurs")
 		. = 1
 	else if(stuttering)
 		message = NewStutter(message)
-		verb = pick("stammers","stutters")
+		verb = pick("бормочет","заикаетс&#255;") //INF, WAS verb = pick("stammers","stutters")
 		. = 1
 	else if(has_chem_effect(CE_SQUEAKY, 1))
 		message = "<font face = 'Comic Sans MS'>[message]</font>"
-		verb = "squeaks"
+		verb = "скрипит"  //INF, WAS verb = "squeaks"
 		. = 1
 
 	message_data[1] = message
@@ -175,9 +175,9 @@ proc/get_radio_key_from_channel(var/channel)
 
 /mob/living/proc/get_speech_ending(verb, var/ending)
 	if(ending=="!")
-		return pick("exclaims","shouts","yells")
+		return pick("восклицает","выкрикивает") //INF, WAS return pick("exclaims","shouts","yells")
 	if(ending=="?")
-		return "asks"
+		return "спрашивает" //INF, WAS return "asks"
 	return verb
 
 /mob/living/proc/format_say_message(var/message = null)
