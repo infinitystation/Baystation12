@@ -15,8 +15,18 @@
 /obj/machinery/atmospherics/ex_act(severity)
 	for(var/atom/movable/A in src) //ventcrawling is serious business
 		A.ex_act(severity)
-	. = ..()
-
+//INF	. = ..()
+//[INF]
+	switch(severity)
+		if(1)
+			qdel(src)
+		if(2)
+			if(prob(25))
+				qdel(src)
+//		if(3.0)
+//			if (prob(25))
+//				qdel(src)
+//[/INF]
 /obj/machinery/atmospherics/relaymove(mob/living/user, direction)
 	if(user.loc != src || !(direction & initialize_directions)) //can't go in a way we aren't connecting to
 		return
