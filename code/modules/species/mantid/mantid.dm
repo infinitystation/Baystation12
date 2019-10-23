@@ -38,7 +38,7 @@
 
 	min_age =                 1
 	max_age =                20
-	slowdown =               -1
+//INF	slowdown =               -1
 	rarity_value =            3
 	gluttonous =              2
 	siemens_coefficient =     0
