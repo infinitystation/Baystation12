@@ -19,3 +19,10 @@
 	icon_base = "monotile_light"
 	color = COLOR_OFF_WHITE
 	build_type = /obj/item/stack/tile/mono/white
+
+/decl/flooring/tiling/concrete
+	name = "concrete"
+	desc = "Concrete pavement. Nothing extra."
+	icon = 'icons/turf/flooring/misc.dmi'
+	icon_base = "concrete"
+	build_type = /obj/item/stack/tile/concrete

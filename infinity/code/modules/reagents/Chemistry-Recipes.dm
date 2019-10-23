@@ -24,7 +24,7 @@
 /datum/chemical_reaction/goldalchemy/on_reaction(var/datum/reagents/holder, var/created_volume, var/reaction_flags)
 	..()
 	new /obj/item/stack/material/gold(get_turf(holder.my_atom), created_volume)
-	
+
 /datum/chemical_reaction/silveralchemy
 	name = "Silver"
 	result = null
@@ -34,4 +34,15 @@
 
 /datum/chemical_reaction/silveralchemy/on_reaction(var/datum/reagents/holder, var/created_volume, var/reaction_flags)
 	..()
-	new /obj/item/stack/material/silver(get_turf(holder.my_atom), created_volume)	
+	new /obj/item/stack/material/silver(get_turf(holder.my_atom), created_volume)
+
+/datum/chemical_reaction/concrete
+	name = "concrete"
+	result = null
+	required_reagents = list(/datum/reagent/silicon = 20, /datum/reagent/iron = 5, /datum/reagent/aluminium = 5, /datum/reagent/water = 20)
+	result_amount = 5
+	mix_message = "The solution solidifies into a grey mass."
+
+/datum/chemical_reaction/concrete/on_reaction(var/datum/reagents/holder, var/created_volume, var/reaction_flags)
+	..()
+	new /obj/item/stack/material/concrete(get_turf(holder.my_atom), created_volume)
