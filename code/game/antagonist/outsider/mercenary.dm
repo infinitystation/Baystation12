@@ -26,6 +26,7 @@ GLOBAL_DATUM_INIT(mercs, /datum/antagonist/mercenary, new)
 	min_player_age = 14
 
 	faction = "mercenary"
+	ambitious = 0 //INF
 
 /datum/antagonist/mercenary/create_global_objectives()
 	if(!..())

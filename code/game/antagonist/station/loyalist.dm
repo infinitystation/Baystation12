@@ -28,6 +28,7 @@ GLOBAL_DATUM_INIT(loyalists, /datum/antagonist/loyalists, new)
 	skill_setter = /datum/antag_skill_setter/station
 
 	faction = "loyalist"
+	ambitious = 0 //INF
 
 /datum/antagonist/loyalists/Initialize()
 	..()

@@ -18,6 +18,7 @@ GLOBAL_DATUM_INIT(deathsquad, /datum/antagonist/deathsquad, new)
 	faction = "deathsquad"
 
 	var/deployed = 0
+	ambitious = 0 //INF
 
 /datum/antagonist/deathsquad/attempt_spawn()
 	if(..())
