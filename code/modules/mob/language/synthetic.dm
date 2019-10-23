@@ -4,7 +4,7 @@
 	colour = "say_quote"
 	speech_verb = "сообщает"
 	ask_verb = "запрашивает"
-	exclaim_verb = "объ€вл€ет"
+	exclaim_verb = "объ&#255;вл&#255;ет"
 	key = "b"
 	flags = RESTRICTED | HIVEMIND
 	shorthand = "N/A"

@@ -233,7 +233,7 @@
 	sprite_sheets_obj = list(
 		SPECIES_SKRELL = 'icons/obj/clothing/species/skrell/obj_head_skrell.dmi',
 		)
-*/inf
+inf*/
 
 /obj/item/clothing/suit/space/void/security/alt
 	icon_state = "rig-secalt"

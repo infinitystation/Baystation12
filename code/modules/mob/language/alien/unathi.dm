@@ -26,7 +26,7 @@
 	desc = "A language of Moghes consisting of a combination of spoken word and gesticulation. While it is uncommonly spoken in the drier regions, it enjoys popular usage as the official tongue of the Yeosa clans."
 	speech_verb = "шипит"
 	ask_verb = "трещит"
-	exclaim_verb = "рявкает"
+	exclaim_verb = "р&#255;вкает"
 	colour = "yeosa"
 	key = "h"
 	flags = WHITELISTED
