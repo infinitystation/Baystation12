@@ -22,6 +22,7 @@
 	mob_size = MOB_SMALL
 	possession_candidate = 1
 	pass_flags = PASS_FLAG_TABLE
+	mob_push_flags = 0 //INF, WAS mob_push_flags = MONKEY|SLIME|SIMPLE_ANIMAL (stop push chairs, runtime)
 
 	skin_material = MATERIAL_SKIN_FUR_ORANGE
 
