@@ -31,7 +31,7 @@
 
 	default_law_type = /datum/ai_laws/nanotrasen
 	use_overmap = 1
-	num_exoplanets = 1
+	num_exoplanets = 0
 	planet_size = list(129,129)
 
 	playable = 1
