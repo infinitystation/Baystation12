@@ -7,12 +7,12 @@
 /datum/language
 	var/name = "base language"  // Fluff name of language if any.
 	var/desc = "You should not have this language." // Short description for 'Check Languages'.
-	var/speech_verb = "говорит"          // 'says', 'hisses', 'farts'.
-	var/ask_verb = "спрашивает"             // Used when sentence ends in a ?
-	var/exclaim_verb = "восклицает"     // Used when sentence ends in a !
-	var/screem_verb = "кричит"
+	var/speech_verb = "РіРѕРІРѕСЂРёС‚"          // 'says', 'hisses', 'farts'.
+	var/ask_verb = "СЃРїСЂР°С€РёРІР°РµС‚"             // Used when sentence ends in a ?
+	var/exclaim_verb = "РІРѕСЃРєР»РёС†Р°РµС‚"     // Used when sentence ends in a !
+	var/screem_verb = "РєСЂРёС‡РёС‚"
 	var/whisper_verb                  // Optional. When not specified speech_verb + quietly/softly is used instead.
-	var/signlang_verb = list("жестикулирует") // list of emotes that might be displayed if this language has NONVERBAL or SIGNLANG flags
+	var/signlang_verb = list("Р¶РµСЃС‚РёРєСѓР»РёСЂСѓРµС‚") // list of emotes that might be displayed if this language has NONVERBAL or SIGNLANG flags
 	var/colour = "body"               // CSS style to use for strings in this language.
 	var/key = ""                     // Character used to speak in language eg. :o for Unathi.
 	var/flags = 0                     // Various language flags.

@@ -133,7 +133,7 @@
 
 				message_admins("[key_name_admin(usr)] removed [adm_ckey] from the admins list")
 				log_admin("[key_name(usr)] removed [adm_ckey] from the admins list")
-				send2adminirc("[get_key(usr)] удалил ранг у игрока: \"[adm_ckey]\"")
+				send2adminirc("[get_key(usr)] СѓРґР°Р»РёР» СЂР°РЅРі Сѓ РёРіСЂРѕРєР°: \"[adm_ckey]\"")
 				log_admin_rank_modification(adm_ckey, "Removed")
 
 		else if(task == "rank")
@@ -180,7 +180,7 @@
 			message_admins("[key_name_admin(usr)] edited the admin rank of [adm_ckey] to [new_rank]")
 			log_admin("[key_name(usr)] edited the admin rank of [adm_ckey] to [new_rank]")
 			log_permissions("[key_name(usr)] edited the admin rank of [adm_ckey] to [new_rank]")
-			send2adminirc("[get_key(usr)] изменил ранг игрока: \"[adm_ckey]\" на \"[new_rank]\"")
+			send2adminirc("[get_key(usr)] РёР·РјРµРЅРёР» СЂР°РЅРі РёРіСЂРѕРєР°: \"[adm_ckey]\" РЅР° \"[new_rank]\"")
 			log_admin_rank_modification(adm_ckey, new_rank)
 
 		else if(task == "permissions")
@@ -198,7 +198,7 @@
 			log_admin("[key_name(usr)] toggled the [new_permission] permission of [adm_ckey]")
 			log_permissions("[key_name(usr)] toggled the [new_permission] permission of [adm_ckey]")
 			log_admin_permission_modification(adm_ckey, permissionlist[new_permission])
-			send2adminirc("[get_key(usr)] переключил флаг: \"[new_permission]\" игроку: \"[adm_ckey]\"")
+			send2adminirc("[get_key(usr)] РїРµСЂРµРєР»СЋС‡РёР» С„Р»Р°Рі: \"[new_permission]\" РёРіСЂРѕРєСѓ: \"[adm_ckey]\"")
 
 		edit_admin_permissions()
 
@@ -797,8 +797,8 @@
 							msg += ", [job]"
 					add_note(M.ckey, "Banned  from [msg] - [reason]", null, usr.ckey, 0)
 					message_admins("[key_name_admin(usr)] banned [key_name_admin(M)] from [msg] for [mins] minutes", 1)
-					to_world(SPAN_NOTICE("<b>JOB-BAN: Администратор [get_key(usr)] временно заблокировал(а) роли ([msg]) игроку [get_key(M)]. Причина: \"[reason]\"; Срок - [mins] минут.</b>"))
-					send2adminlogirc("Администратор [get_key(usr)] временно заблокировал(а) роли ([msg]) игроку [get_key(M)]. Причина: \"[reason]\"; Срок - [mins] минут.")
+					to_world(SPAN_NOTICE("<b>JOB-BAN: РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ [get_key(usr)] РІСЂРµРјРµРЅРЅРѕ Р·Р°Р±Р»РѕРєРёСЂРѕРІР°Р»(Р°) СЂРѕР»Рё ([msg]) РёРіСЂРѕРєСѓ [get_key(M)]. РџСЂРёС‡РёРЅР°: \"[reason]\"; РЎСЂРѕРє - [mins] РјРёРЅСѓС‚.</b>"))
+					send2adminlogirc("РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ [get_key(usr)] РІСЂРµРјРµРЅРЅРѕ Р·Р°Р±Р»РѕРєРёСЂРѕРІР°Р»(Р°) СЂРѕР»Рё ([msg]) РёРіСЂРѕРєСѓ [get_key(M)]. РџСЂРёС‡РёРЅР°: \"[reason]\"; РЎСЂРѕРє - [mins] РјРёРЅСѓС‚.")
 					to_chat(M, "<span class='danger'>You have been jobbanned by [usr.client.ckey] from: [msg].</span>")
 					to_chat(M, "<span class='warning'>The reason is: [reason]</span>")
 					to_chat(M, "<span class='warning'>This jobban will be lifted in [mins] minutes.</span>")
@@ -821,8 +821,8 @@
 							else		msg += ", [job]"
 						add_note(M.ckey, "Banned  from [msg] - [reason]", null, usr.ckey, 0)
 						message_admins("[key_name_admin(usr)] banned [key_name_admin(M)] from [msg]", 1)
-						to_world(SPAN_NOTICE("<b>JOB-BAN: Администратор [get_key(usr)] перманентно заблокировал(а) роли ([msg]) игроку [get_key(M)]. Причина: \"[reason]\"</b>"))
-						send2adminlogirc("Администратор [get_key(usr)] перманентно заблокировал(а) роли ([msg]) игроку [get_key(M)]. Причина: \"[reason]\"")
+						to_world(SPAN_NOTICE("<b>JOB-BAN: РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ [get_key(usr)] РїРµСЂРјР°РЅРµРЅС‚РЅРѕ Р·Р°Р±Р»РѕРєРёСЂРѕРІР°Р»(Р°) СЂРѕР»Рё ([msg]) РёРіСЂРѕРєСѓ [get_key(M)]. РџСЂРёС‡РёРЅР°: \"[reason]\"</b>"))
+						send2adminlogirc("РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ [get_key(usr)] РїРµСЂРјР°РЅРµРЅС‚РЅРѕ Р·Р°Р±Р»РѕРєРёСЂРѕРІР°Р»(Р°) СЂРѕР»Рё ([msg]) РёРіСЂРѕРєСѓ [get_key(M)]. РџСЂРёС‡РёРЅР°: \"[reason]\"")
 						to_chat(M, "<span class='danger'>You have been jobbanned by [usr.client.ckey] from: [msg].</span>")
 						to_chat(M, "<span class='warning'>The reason is: [reason]</span>")
 						to_chat(M, "<span class='warning'>Jobban can be lifted only upon request.</span>")
@@ -902,9 +902,9 @@
 		var/mob/M = locate(href_list["newban"])
 		if(!ismob(M)) return
 
-		if(alert("ВНИМАНИЕ!\n \
-		Данный тип блокировки подразумевает полное отлучение игрока от сервера и он применим в случае экстренной ситуации (нарушение УК России, обход блокировок или эксплойты).\n \
-		Если случай не подходит под критерий \"серьёзно\" то используйте softban.",,"Continue", "Cancel") == "Cancel")
+		if(alert("Р’РќРРњРђРќРР•!\n \
+		Р”Р°РЅРЅС‹Р№ С‚РёРї Р±Р»РѕРєРёСЂРѕРІРєРё РїРѕРґСЂР°Р·СѓРјРµРІР°РµС‚ РїРѕР»РЅРѕРµ РѕС‚Р»СѓС‡РµРЅРёРµ РёРіСЂРѕРєР° РѕС‚ СЃРµСЂРІРµСЂР° Рё РѕРЅ РїСЂРёРјРµРЅРёРј РІ СЃР»СѓС‡Р°Рµ СЌРєСЃС‚СЂРµРЅРЅРѕР№ СЃРёС‚СѓР°С†РёРё (РЅР°СЂСѓС€РµРЅРёРµ РЈРљ Р РѕСЃСЃРёРё, РѕР±С…РѕРґ Р±Р»РѕРєРёСЂРѕРІРѕРє РёР»Рё СЌРєСЃРїР»РѕР№С‚С‹).\n \
+		Р•СЃР»Рё СЃР»СѓС‡Р°Р№ РЅРµ РїРѕРґС…РѕРґРёС‚ РїРѕРґ РєСЂРёС‚РµСЂРёР№ \"СЃРµСЂСЊС‘Р·РЅРѕ\" С‚Рѕ РёСЃРїРѕР»СЊР·СѓР№С‚Рµ softban.",,"Continue", "Cancel") == "Cancel")
 			return
 
 		if(M.client && M.client.holder)	return	//admins cannot be banned. Even if they could, the ban doesn't affect them anyway
@@ -930,13 +930,13 @@
 				AddBan(M.ckey, M.computer_id, reason, usr.ckey, 1, mins)
 				ban_unban_log_save("[usr.client.ckey] has HARD banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.")
 				add_note(M.ckey,"[usr.client.ckey] has hard banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.", null, usr.ckey, 0)
-				to_chat(M, "<span class='danger'><BIG>Вы были ЖЕСТКО забанены администратором [key_name(usr)].\nПричина: [reason]</BIG></span>")
-				to_chat(M, "<span class='warning'>Это временный бан, он истечет через [mins] минут.</span>")
+				to_chat(M, "<span class='danger'><BIG>Р’С‹ Р±С‹Р»Рё Р–Р•РЎРўРљРћ Р·Р°Р±Р°РЅРµРЅС‹ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂРѕРј [key_name(usr)].\nРџСЂРёС‡РёРЅР°: [reason]</BIG></span>")
+				to_chat(M, "<span class='warning'>Р­С‚Рѕ РІСЂРµРјРµРЅРЅС‹Р№ Р±Р°РЅ, РѕРЅ РёСЃС‚РµС‡РµС‚ С‡РµСЂРµР· [mins] РјРёРЅСѓС‚.</span>")
 				SSstatistics.add_field("ban_tmp",1)
 				DB_ban_record(BANTYPE_TEMP, M, mins, reason)
 				SSstatistics.add_field("ban_tmp_mins",mins)
 				if(config.banappeals)
-					to_chat(M, "<span class='warning'>Чтобы оспорить решение администратора, перейдите сюда: [config.banappeals]</span>")
+					to_chat(M, "<span class='warning'>Р§С‚РѕР±С‹ РѕСЃРїРѕСЂРёС‚СЊ СЂРµС€РµРЅРёРµ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР°, РїРµСЂРµР№РґРёС‚Рµ СЃСЋРґР°: [config.banappeals]</span>")
 				else
 					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
 				log_and_message_admins("has hard banned [M.ckey].\nReason: [reason]\nThis will be removed in [mins] minutes.")
@@ -960,10 +960,10 @@
 						AddBan(mob_key, M.computer_id, reason, usr.ckey, 0, 0, M.lastKnownIP)
 					if("No")
 						AddBan(M.ckey, M.computer_id, reason, usr.ckey, 0, 0)
-				to_chat(M, "<span class='danger'><BIG>Вы были ЖЕСТКО забанены администратором [usr.client.ckey].\nПричина: [reason]</BIG></span>")
-				to_chat(M, "<span class='warning'>Это перманентный бан.</span>")
+				to_chat(M, "<span class='danger'><BIG>Р’С‹ Р±С‹Р»Рё Р–Р•РЎРўРљРћ Р·Р°Р±Р°РЅРµРЅС‹ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂРѕРј [usr.client.ckey].\nРџСЂРёС‡РёРЅР°: [reason]</BIG></span>")
+				to_chat(M, "<span class='warning'>Р­С‚Рѕ РїРµСЂРјР°РЅРµРЅС‚РЅС‹Р№ Р±Р°РЅ.</span>")
 				if(config.banappeals)
-					to_chat(M, "<span class='warning'>Чтобы оспорить решение администратора, перейдите сюда: [config.banappeals]</span>")
+					to_chat(M, "<span class='warning'>Р§С‚РѕР±С‹ РѕСЃРїРѕСЂРёС‚СЊ СЂРµС€РµРЅРёРµ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР°, РїРµСЂРµР№РґРёС‚Рµ СЃСЋРґР°: [config.banappeals]</span>")
 				else
 					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
 				ban_unban_log_save("[usr.client.ckey] has hard permabanned [M.ckey]. - Reason: [reason] - This is a permanent ban.")
@@ -1012,13 +1012,13 @@
 						DB_ban_record(BANTYPE_SOFTBAN, M, mins, reason, bancid = M.computer_id)
 				ban_unban_log_save("[usr.client.ckey] has soft banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.")
 				add_note(M.ckey,"[usr.client.ckey] has soft banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.", null, usr.ckey, 0)
-				to_chat(M, "<span class='warning'><BIG>Администратор [usr.client.ckey] заблокировал вашу игру на сервере.\nПричина: [reason]</BIG></span>")
-				to_chat(M, "<span class='warning'>Это временна&#255; блокировка, она истечет через [mins] минут.</span>")
-				to_chat(M, "<span class='notice'>У вас есть доступ к игре на сервере в качестве заключенного.</span>")
+				to_chat(M, "<span class='warning'><BIG>РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ [usr.client.ckey] Р·Р°Р±Р»РѕРєРёСЂРѕРІР°Р» РІР°С€Сѓ РёРіСЂСѓ РЅР° СЃРµСЂРІРµСЂРµ.\nРџСЂРёС‡РёРЅР°: [reason]</BIG></span>")
+				to_chat(M, "<span class='warning'>Р­С‚Рѕ РІСЂРµРјРµРЅРЅР°&#255; Р±Р»РѕРєРёСЂРѕРІРєР°, РѕРЅР° РёСЃС‚РµС‡РµС‚ С‡РµСЂРµР· [mins] РјРёРЅСѓС‚.</span>")
+				to_chat(M, "<span class='notice'>РЈ РІР°СЃ РµСЃС‚СЊ РґРѕСЃС‚СѓРї Рє РёРіСЂРµ РЅР° СЃРµСЂРІРµСЂРµ РІ РєР°С‡РµСЃС‚РІРµ Р·Р°РєР»СЋС‡РµРЅРЅРѕРіРѕ.</span>")
 				SSstatistics.add_field("ban_tmp",1)
 				SSstatistics.add_field("ban_tmp_mins",mins)
 				if(config.banappeals)
-					to_chat(M, "<span class='warning'>Чтобы оспорить решение администратора, перейдите сюда: [config.banappeals]</span>")
+					to_chat(M, "<span class='warning'>Р§С‚РѕР±С‹ РѕСЃРїРѕСЂРёС‚СЊ СЂРµС€РµРЅРёРµ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР°, РїРµСЂРµР№РґРёС‚Рµ СЃСЋРґР°: [config.banappeals]</span>")
 				else
 					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
 				log_admin("[usr.client.ckey] has soft banned [M.ckey].\nReason: [reason]\nThis will be removed in [mins] minutes.")
@@ -1039,11 +1039,11 @@
 						DB_ban_record(BANTYPE_SOFTPERMA, M, -1, reason, bancid = M.computer_id, banip = M.lastKnownIP)
 					if("No")
 						DB_ban_record(BANTYPE_SOFTPERMA, M, -1, reason, bancid = M.computer_id)
-				to_chat(M, "<span class='warning'><BIG>Администратор [usr.client.ckey] заблокировал вашу игру на сервере.\nПричина: [reason]</BIG></span>")
-				to_chat(M, "<span class='warning'>Это перманентна&#255; блокировка.</span>")
-				to_chat(M, "<span class='notice'>У вас есть доступ к игре на сервере в качестве заключенного.</span>")
+				to_chat(M, "<span class='warning'><BIG>РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ [usr.client.ckey] Р·Р°Р±Р»РѕРєРёСЂРѕРІР°Р» РІР°С€Сѓ РёРіСЂСѓ РЅР° СЃРµСЂРІРµСЂРµ.\nРџСЂРёС‡РёРЅР°: [reason]</BIG></span>")
+				to_chat(M, "<span class='warning'>Р­С‚Рѕ РїРµСЂРјР°РЅРµРЅС‚РЅР°&#255; Р±Р»РѕРєРёСЂРѕРІРєР°.</span>")
+				to_chat(M, "<span class='notice'>РЈ РІР°СЃ РµСЃС‚СЊ РґРѕСЃС‚СѓРї Рє РёРіСЂРµ РЅР° СЃРµСЂРІРµСЂРµ РІ РєР°С‡РµСЃС‚РІРµ Р·Р°РєР»СЋС‡РµРЅРЅРѕРіРѕ.</span>")
 				if(config.banappeals)
-					to_chat(M, "<span class='warning'>Чтобы оспорить решение администратора, перейдите сюда: [config.banappeals]</span>")
+					to_chat(M, "<span class='warning'>Р§С‚РѕР±С‹ РѕСЃРїРѕСЂРёС‚СЊ СЂРµС€РµРЅРёРµ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР°, РїРµСЂРµР№РґРёС‚Рµ СЃСЋРґР°: [config.banappeals]</span>")
 				else
 					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
 				ban_unban_log_save("[usr.client.ckey] has soft permabanned [M.ckey]. - Reason: [reason] - This is a soft permanent ban.")

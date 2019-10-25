@@ -20,9 +20,9 @@
 	var/list/speech_synthesizer_langs = list()	//which languages can be vocalized by the speech synthesizer
 
 	//Used in say.dm.
-	var/speak_statement = "утверждает"
-	var/speak_exclamation = "объ&#255;вл&#255;ет"
-	var/speak_query = "запрашивает"
+	var/speak_statement = "СѓС‚РІРµСЂР¶РґР°РµС‚"
+	var/speak_exclamation = "РѕР±СЉ&#255;РІР»&#255;РµС‚"
+	var/speak_query = "Р·Р°РїСЂР°С€РёРІР°РµС‚"
 	var/pose //Yes, now AIs can pose too.
 	var/obj/item/device/camera/siliconcam/silicon_camera = null //photography
 	var/local_transmit //If set, can only speak to others of the same type within a short range.

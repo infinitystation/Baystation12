@@ -345,11 +345,11 @@
 		if( findtext(pose,".",lentext(pose)) == 0 && findtext(pose,"!",lentext(pose)) == 0 && findtext(pose,"?",lentext(pose)) == 0 )
 			pose = addtext(pose,".") //Makes sure all emotes end with a period.
 		if(gender == MALE) //yes-yes. #INFINITY
-			msg += "Он [pose]\n"
+			msg += "РћРЅ [pose]\n"
 		else if(gender == FEMALE)
-			msg += "Она [pose]\n"
+			msg += "РћРЅР° [pose]\n"
 		else
-			msg += "Оно [pose]\n"
+			msg += "РћРЅРѕ [pose]\n"
 	var/show_descs = show_descriptors_to(user, T)
 	if(show_descs)
 		msg += "<span class='notice'>[jointext(show_descs, "<br>")]</span>"

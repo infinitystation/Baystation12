@@ -186,7 +186,7 @@
 
 /*//This All cool, but bay create verb that give you control under DEAD host
 		if(host.getBrainLoss() >= 100 && !src.now_escaping == 1)
-			to_chat(src, sanitize_a0("<span class='notice'>Мозг жертвы теряет былую функциональность. Нужно найти другого...</span>"))
+			to_chat(src, sanitize_a0("<span class='notice'>РњРѕР·Рі Р¶РµСЂС‚РІС‹ С‚РµСЂСЏРµС‚ Р±С‹Р»СѓСЋ С„СѓРЅРєС†РёРѕРЅР°Р»СЊРЅРѕСЃС‚СЊ. РќСѓР¶РЅРѕ РЅР°Р№С‚Рё РґСЂСѓРіРѕРіРѕ...</span>"))
 			src.release_host()*/
 
 /mob/living/simple_animal/borer/Stat()

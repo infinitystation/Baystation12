@@ -128,12 +128,12 @@
 
 		if(!check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
 			if(!config.observers_allowed)
-				to_chat(src, SPAN_WARNING("Вы не можете зайти в раунд за призрака, поскольку это было запрещено настройками сервера."))
+				to_chat(src, SPAN_WARNING("Р’С‹ РЅРµ РјРѕР¶РµС‚Рµ Р·Р°Р№С‚Рё РІ СЂР°СѓРЅРґ Р·Р° РїСЂРёР·СЂР°РєР°, РїРѕСЃРєРѕР»СЊРєСѓ СЌС‚Рѕ Р±С‹Р»Рѕ Р·Р°РїСЂРµС‰РµРЅРѕ РЅР°СЃС‚СЂРѕР№РєР°РјРё СЃРµСЂРІРµСЂР°."))
 				return
 
 			if((world.time - round_start_time < (config.observe_delay MINUTES)))
-				to_chat(src, SPAN_WARNING("Извините, вам следует подождать [config.observe_delay] минут со старта раунда чтобы перейти в режим наблюдател&#255;."))
-				to_chat(src, SPAN_NOTICE("Проверьте таймер \"Round Duration\" во вкладке Status чтобы узнать сколько времени прошло."))
+				to_chat(src, SPAN_WARNING("РР·РІРёРЅРёС‚Рµ, РІР°Рј СЃР»РµРґСѓРµС‚ РїРѕРґРѕР¶РґР°С‚СЊ [config.observe_delay] РјРёРЅСѓС‚ СЃРѕ СЃС‚Р°СЂС‚Р° СЂР°СѓРЅРґР° С‡С‚РѕР±С‹ РїРµСЂРµР№С‚Рё РІ СЂРµР¶РёРј РЅР°Р±Р»СЋРґР°С‚РµР»&#255;."))
+				to_chat(src, SPAN_NOTICE("РџСЂРѕРІРµСЂСЊС‚Рµ С‚Р°Р№РјРµСЂ \"Round Duration\" РІРѕ РІРєР»Р°РґРєРµ Status С‡С‚РѕР±С‹ СѓР·РЅР°С‚СЊ СЃРєРѕР»СЊРєРѕ РІСЂРµРјРµРЅРё РїСЂРѕС€Р»Рѕ."))
 				return
 
 		if(!config.respawn_delay || client.holder || alert(src,"Are you sure you wish to observe? You will have to wait [OBSERV_SPAWN_DELAY] minute\s before being able to respawn!","Player Setup","Yes","No") == "Yes")
@@ -142,12 +142,12 @@
 			// eckff-inf@dev: Safety checks
 			if(!check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
 				if(!config.observers_allowed)
-					to_chat(src, SPAN_WARNING("Вы не можете зайти в раунд за призрака, поскольку это было запрещено настройками сервера."))
+					to_chat(src, SPAN_WARNING("Р’С‹ РЅРµ РјРѕР¶РµС‚Рµ Р·Р°Р№С‚Рё РІ СЂР°СѓРЅРґ Р·Р° РїСЂРёР·СЂР°РєР°, РїРѕСЃРєРѕР»СЊРєСѓ СЌС‚Рѕ Р±С‹Р»Рѕ Р·Р°РїСЂРµС‰РµРЅРѕ РЅР°СЃС‚СЂРѕР№РєР°РјРё СЃРµСЂРІРµСЂР°."))
 					return 1
 
 				if((world.time - round_start_time < (config.observe_delay MINUTES)))
-					to_chat(src, SPAN_WARNING("Извините, вам следует подождать [config.observe_delay] минут со старта раунда чтобы перейти в режим наблюдател&#255;."))
-					to_chat(src, SPAN_NOTICE("Проверьте таймер \"Round Duration\" во вкладке Status чтобы узнать сколько времени прошло."))
+					to_chat(src, SPAN_WARNING("РР·РІРёРЅРёС‚Рµ, РІР°Рј СЃР»РµРґСѓРµС‚ РїРѕРґРѕР¶РґР°С‚СЊ [config.observe_delay] РјРёРЅСѓС‚ СЃРѕ СЃС‚Р°СЂС‚Р° СЂР°СѓРЅРґР° С‡С‚РѕР±С‹ РїРµСЂРµР№С‚Рё РІ СЂРµР¶РёРј РЅР°Р±Р»СЋРґР°С‚РµР»&#255;."))
+					to_chat(src, SPAN_NOTICE("РџСЂРѕРІРµСЂСЊС‚Рµ С‚Р°Р№РјРµСЂ \"Round Duration\" РІРѕ РІРєР»Р°РґРєРµ Status С‡С‚РѕР±С‹ СѓР·РЅР°С‚СЊ СЃРєРѕР»СЊРєРѕ РІСЂРµРјРµРЅРё РїСЂРѕС€Р»Рѕ."))
 					return 1
 
 			var/mob/observer/ghost/observer = new()

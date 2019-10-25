@@ -41,9 +41,9 @@
 				var/expires
 
 				if(text2num(duration) > 0)
-					expires = "Это бан на [duration] минут, и он сниметс&#255; в [expiration] по серверному времени."
+					expires = "Р­С‚Рѕ Р±Р°РЅ РЅР° [duration] РјРёРЅСѓС‚, Рё РѕРЅ СЃРЅРёРјРµС‚СЃ&#255; РІ [expiration] РїРѕ СЃРµСЂРІРµСЂРЅРѕРјСѓ РІСЂРµРјРµРЅРё."
 
-				src.banprisoned_reason = "Вы, или кто-то другой, кто использовал(а) ваш компьютер или соединение ([pckey]) были забанены бан-тюрьмой по причине: [reason]. Этот бан выдал(а) администратор [ackey], в [bantime]. [expires]\n"
+				src.banprisoned_reason = "Р’С‹, РёР»Рё РєС‚Рѕ-С‚Рѕ РґСЂСѓРіРѕР№, РєС‚Рѕ РёСЃРїРѕР»СЊР·РѕРІР°Р»(Р°) РІР°С€ РєРѕРјРїСЊСЋС‚РµСЂ РёР»Рё СЃРѕРµРґРёРЅРµРЅРёРµ ([pckey]) Р±С‹Р»Рё Р·Р°Р±Р°РЅРµРЅС‹ Р±Р°РЅ-С‚СЋСЂСЊРјРѕР№ РїРѕ РїСЂРёС‡РёРЅРµ: [reason]. Р­С‚РѕС‚ Р±Р°РЅ РІС‹РґР°Р»(Р°) Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ [ackey], РІ [bantime]. [expires]\n"
 				return 1
 			return 0
 	else
@@ -54,8 +54,8 @@
 	output +="<hr>"
 	output += "<p><a href='byond://?src=\ref[src];show_preferences=1'>Setup Character</A></p>"
 
-	output += "<p>ДОБРО ПОЖАЛОВАТЬ</p>"
-	output += "<p>ЗЭК В ЗАКОНЕ</p>"
+	output += "<p>Р”РћР‘Р Рћ РџРћР–РђР›РћР’РђРўР¬</p>"
+	output += "<p>Р—Р­Рљ Р’ Р—РђРљРћРќР•</p>"
 
 	if(SSticker && (GAME_STATE > RUNLEVEL_SETUP) && GLOB.prisonwarp)
 		output += "<p><a href='byond://?src=\ref[src];spawn_prisoner=1'>Join as Prisoner</A></p>"
@@ -74,8 +74,8 @@
 /mob/new_player/proc/setup_and_greet_prisoner(mob/living/carbon/human/character)
 
 	character << character.client.banprisoned_reason
-	text = {"Здравствуйте, вы являетесь заключенным в тюрьме строгого режима.
-Вы попали сюда по причине, которая была описана выше при входе в игру.
+	text = {"Р—РґСЂР°РІСЃС‚РІСѓР№С‚Рµ, РІС‹ СЏРІР»СЏРµС‚РµСЃСЊ Р·Р°РєР»СЋС‡РµРЅРЅС‹Рј РІ С‚СЋСЂСЊРјРµ СЃС‚СЂРѕРіРѕРіРѕ СЂРµР¶РёРјР°.
+Р’С‹ РїРѕРїР°Р»Рё СЃСЋРґР° РїРѕ РїСЂРёС‡РёРЅРµ, РєРѕС‚РѕСЂР°СЏ Р±С‹Р»Р° РѕРїРёСЃР°РЅР° РІС‹С€Рµ РїСЂРё РІС…РѕРґРµ РІ РёРіСЂСѓ.
 	"}
 	to_chat(character, sanitize_a0(text))
-	message_admins("<span class='notice'>[key_name_admin(character)](<A HREF='?_src_=holder;adminmoreinfo=\ref[character]'>?</A>)(<A HREF='?_src_=holder;adminplayerobservefollow=\ref[character]'>FLW</A>) в игре как заключенный.</span>")
+	message_admins("<span class='notice'>[key_name_admin(character)](<A HREF='?_src_=holder;adminmoreinfo=\ref[character]'>?</A>)(<A HREF='?_src_=holder;adminplayerobservefollow=\ref[character]'>FLW</A>) РІ РёРіСЂРµ РєР°Рє Р·Р°РєР»СЋС‡РµРЅРЅС‹Р№.</span>")

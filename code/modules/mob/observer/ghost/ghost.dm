@@ -167,8 +167,8 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	else
 		if(!check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
 			if((world.time - round_start_time < (config.observe_delay MINUTES)))
-				to_chat(src, SPAN_WARNING("Èçâèíèòå, âàì ñëåäóåò ïîäîæäàòü [config.observe_delay] ìèíóò ñî ñòàðòà ðàóíäà ÷òîáû ïåðåéòè â ðåæèì íàáëþäàòåë&#255;."))
-				to_chat(src, SPAN_NOTICE("Ïðîâåðüòå òàéìåð \"Round Duration\" âî âêëàäêå Status ÷òîáû óçíàòü ñêîëüêî âðåìåíè ïðîøëî."))
+				to_chat(src, SPAN_WARNING("Ð˜Ð·Ð²Ð¸Ð½Ð¸Ñ‚Ðµ, Ð²Ð°Ð¼ ÑÐ»ÐµÐ´ÑƒÐµÑ‚ Ð¿Ð¾Ð´Ð¾Ð¶Ð´Ð°Ñ‚ÑŒ [config.observe_delay] Ð¼Ð¸Ð½ÑƒÑ‚ ÑÐ¾ ÑÑ‚Ð°Ñ€Ñ‚Ð° Ñ€Ð°ÑƒÐ½Ð´Ð° Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð¿ÐµÑ€ÐµÐ¹Ñ‚Ð¸ Ð² Ñ€ÐµÐ¶Ð¸Ð¼ Ð½Ð°Ð±Ð»ÑŽÐ´Ð°Ñ‚ÐµÐ»&#255;."))
+				to_chat(src, SPAN_NOTICE("ÐŸÑ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ñ‚Ð°Ð¹Ð¼ÐµÑ€ \"Round Duration\" Ð²Ð¾ Ð²ÐºÐ»Ð°Ð´ÐºÐµ Status Ñ‡Ñ‚Ð¾Ð±Ñ‹ ÑƒÐ·Ð½Ð°Ñ‚ÑŒ ÑÐºÐ¾Ð»ÑŒÐºÐ¾ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸ Ð¿Ñ€Ð¾ÑˆÐ»Ð¾."))
 				return
 
 		var/response

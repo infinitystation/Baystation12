@@ -67,13 +67,13 @@
 		return speaking.get_spoken_verb(ending)
 
 	var/verb = pick(speak_emote)
-	if(verb == "говорит") //a little bit of a hack, but we can't let speak_emote default to an empty list without breaking other things
+	if(verb == "РіРѕРІРѕСЂРёС‚") //a little bit of a hack, but we can't let speak_emote default to an empty list without breaking other things
 		if(ending == "!!")
-			verb = "кричит"
+			verb = "РєСЂРёС‡РёС‚"
 		else if(copytext(ending, length(ending)) == "!")
-			verb = pick("восклицает")
+			verb = pick("РІРѕСЃРєР»РёС†Р°РµС‚")
 		else if(copytext(ending, length(ending)) == "?")
-			verb = "спрашивает"
+			verb = "СЃРїСЂР°С€РёРІР°РµС‚"
 	return verb
 
 /mob/proc/get_ear()

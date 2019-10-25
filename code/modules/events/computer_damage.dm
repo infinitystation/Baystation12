@@ -18,7 +18,7 @@
 			victim.bsod = 1
 			victim.update_icon()
 		else
-			victim.visible_message("<span class='warning'>[victim] издает странные пощелкивани&#255;...</span>")
+			victim.visible_message("<span class='warning'>[victim] РёР·РґР°РµС‚ СЃС‚СЂР°РЅРЅС‹Рµ РїРѕС‰РµР»РєРёРІР°РЅРё&#255;...</span>")
 			if(prob(60))
 				victim.hard_drive.take_damage(victim.hard_drive.damage_failure)
 			else

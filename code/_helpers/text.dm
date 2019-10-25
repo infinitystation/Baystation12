@@ -36,7 +36,7 @@
 			return
 		input = copytext(input,1,max_length)
 
-	input = replace_characters(input, list("ˇ"="___255_"))
+	input = replace_characters(input, list("—è"="___255_"))
 
 	if(extra)
 		input = replace_characters(input, list("\n"=" ","\t"=" "))
@@ -173,7 +173,7 @@
 
 
 //Old variant. Haven't dared to replace in some places.
-/proc/sanitize_old(var/t,var/list/repl_chars = list("ˇ"="___255_"))
+/proc/sanitize_old(var/t,var/list/repl_chars = list("—è"="___255_"))
 	return replacetext(html_encode(replace_characters(t,repl_chars)), "___255_", "&#255;")
 
 // Truncates text to limit if necessary.
@@ -273,7 +273,7 @@
 			. += ascii2text(168)
 		else
 			. += ascii2text(a)
-	. = replacetext(.,"&#255;","ﬂ")
+	. = replacetext(.,"&#255;","–Ø")
 
 //Returns a string with the first element of the string capitalized.
 /proc/capitalize(var/t as text)
@@ -356,8 +356,8 @@ proc/TextPreview(var/string,var/len=40)
 
 //alternative copytext() for encoded text, doesn't break html entities (&#34; and other)
 /proc/copytext_preserve_html(var/text, var/first, var/last)
-	var/temp = replacetextEx(text, "&#255;", "ﬂ")
-	temp = replacetextEx(temp, "&#1103;", "ﬂ")
+	var/temp = replacetextEx(text, "&#255;", "–Ø")
+	temp = replacetextEx(temp, "&#1103;", "–Ø")
 	var/delta = length(text) - length(temp)
 	if(delta < 0)
 		delta = 0
@@ -409,18 +409,18 @@ proc/TextPreview(var/string,var/len=40)
 
 //clean sanitize cp1251
 /proc/sanitize_a0(t)
-	t = replacetext(t, "ˇ", "&#255;")
+	t = replacetext(t, "—è", "&#255;")
 	return t
 
 //clean sanitize unicode
 /proc/sanitize_u0(t)
-	t = replacetext(t, "ˇ", "&#1103;")
+	t = replacetext(t, "—è", "&#1103;")
 	return t
 
-GLOBAL_LIST_INIT(cyrillic_symbols, list("‡", "·", "‚", "„", "‰", "Â", "∏", "Ê", "Á", "Ë", "È", "Í", "Î", "Ï", \
-	"Ì", "Ó", "Ô", "", "Ò", "Ú", "Û", "Ù", "ı", "ˆ", "˜", "¯", "˘", "¸", "˚", "˙", "˝", "˛", "ˇ", \
-	"¿", "¡", "¬", "√", "ƒ", "≈", "®", "∆", "«", "»", "…", " ", "À", "Ã", "Õ", "Œ", "œ", \
-	"–", "—", "“", "”", "‘", "’", "÷", "◊", "ÿ", "Ÿ", "‹", "€", "⁄", "›", "ﬁ", "ﬂ"))
+GLOBAL_LIST_INIT(cyrillic_symbols, list("–∞", "–±", "–≤", "–≥", "–¥", "–µ", "—ë", "–∂", "–∑", "–∏", "–π", "–∫", "–ª", "–º", \
+	"–Ω", "–æ", "–ø", "—Ä", "—Å", "—Ç", "—É", "—Ñ", "—Ö", "—Ü", "—á", "—à", "—â", "—å", "—ã", "—ä", "—ç", "—é", "—è", \
+	"–ê", "–ë", "–í", "–ì", "–î", "–ï", "–Å", "–ñ", "–ó", "–ò", "–ô", "–ö", "–õ", "–ú", "–ù", "–û", "–ü", \
+	"–†", "–°", "–¢", "–£", "–§", "–•", "–¶", "–ß", "–®", "–©", "–¨", "–´", "–™", "–≠", "–Æ", "–Ø"))
 
 /proc/remore_cyrillic(t)
 	for(var/i in GLOB.cyrillic_symbols)
@@ -482,7 +482,7 @@ var/list/alphabet = list("a","b","c","d","e","f","g","h","i","j","k","l","m","n"
 	t = replacetext(t, "\[cell\]", "<td>")
 	t = replacetext(t, "\[exologo\]", "<img src = exologo.png>")
 	t = replacetext(t, "\[logo\]", "<img src = ntlogo.png>")
-	t = replacetext(t, "ˇ", "&#1103;")
+	t = replacetext(t, "—è", "&#1103;")
 	t = replacetext(t, "&#255;", "&#1103;")
 	t = replacetext(t, "\[bluelogo\]", "<img src = bluentlogo.png>")
 	t = replacetext(t, "\[solcrest\]", "<img src = sollogo.png>")

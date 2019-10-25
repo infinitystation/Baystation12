@@ -233,7 +233,7 @@
 		z = zlevel
 	var/mob/living/silicon/ai/A = new /mob/living/silicon/ai(src, null, null, 1)
 	A.fully_replace_character_name(from)
-	talk_into(A, message, channel,"ξαϊ&#255;βλ&#255;ες")
+	talk_into(A, message, channel,"ΠΎΠ±Ρ&#255;Π²Π»&#255;ΠµΡ‚")
 	qdel(A)
 
 // Interprets the message mode when talking into a radio, possibly returning a connection datum
