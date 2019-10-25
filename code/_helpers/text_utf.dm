@@ -1,4 +1,4 @@
-/proc/extA2U(t)
+/*/proc/extA2U(t)
 	if(!t)
 		return
 
@@ -9,6 +9,7 @@
 	t = call("pagefile_conv", "json2utf")(t)
 
 	return t
+*/
 
 ///proc/convert1251_to_utf(t)
 //	if(!t)
@@ -108,7 +109,7 @@ GLOBAL_LIST_INIT(j1251_to_utf_table, list(
 	"b4" = "0491", "ba" = "0454", "b9" = "2116", "bf" = "0457"
 ))
 
-/proc/extA2U_alt(t)
+/*/proc/extA2U_alt(t)
 	if(!t)
 		return
 
@@ -122,6 +123,7 @@ GLOBAL_LIST_INIT(j1251_to_utf_table, list(
 		for(var/s in GLOB.j1251_to_utf_table)
 			t = replacetext(t, "\\u00[s]", "\\u[GLOB.j1251_to_utf_table[s]]")
 	return t
+*/
 
 ///proc/convert1251_to_utf_alt(t)
 //	if(!t)
