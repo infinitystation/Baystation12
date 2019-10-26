@@ -20,9 +20,9 @@
 /turf/simulated/wall/concrete/New(var/newloc)
 	..(newloc,MATERIAL_CONCRETE)
 
-/turf/simulated/wall/r_concrete
+/turf/simulated/wall/concrete/r_concrete
 	icon_state = "r_titanium"
 	noblend_objects = list(/obj/machinery/door/window, /obj/machinery/door/blast/regular/evacshield)
 
-/turf/simulated/wall/r_concrete/New(var/newloc)
+/turf/simulated/wall/concrete/r_concrete/New(var/newloc)
 	..(newloc, MATERIAL_CONCRETE,MATERIAL_CONCRETE)
