@@ -39,7 +39,7 @@
 
 		if(istype(H.gloves, /obj/item/clothing/gloves/boxing/hologlove))
 			H.do_attack_animation(src)
-			var/damage = rand(0, 9)
+			var/damage = 5 //INF, WAS var/damage = rand(0,9)
 			if(!damage)
 				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
 				visible_message("<span class='danger'>\The [H] has attempted to punch \the [src]!</span>")
@@ -57,11 +57,19 @@
 			visible_message("<span class='danger'>[H] has punched \the [src]!</span>")
 
 			apply_damage(damage, PAIN, affecting)
+//[INF]
+			var/weak_chance = rand(1, 15)
+			if(weak_chance >= 15)
+				visible_message("<span class='danger'>[H] has luckly weakend \the [src]!</span>")
+				var/armor_block = 100 * get_blocked_ratio(affecting, BRUTE)
+				apply_effect(1.5, WEAKEN, armor_block)
+//[/INF]
+/*INF
 			if(damage >= 9)
 				visible_message("<span class='danger'>[H] has weakened \the [src]!</span>")
 				var/armor_block = 100 * get_blocked_ratio(affecting, BRUTE)
 				apply_effect(4, WEAKEN, armor_block)
-
+/INF*/
 			return
 
 	if(istype(M,/mob/living/carbon))
@@ -146,7 +154,10 @@
 				attack_generic(H,rand(1,3),"punched")
 				return
 
-			var/rand_damage = rand(1, 5)
+//INF			var/rand_damage = rand(1, 5)
+//[INF]
+			var/rand_damage = H.get_skill_value(SKILL_COMBAT) * 0.6 + H.get_skill_value(SKILL_HAULING) * 0.3
+//[/INF]
 			var/block = 0
 			var/accurate = 0
 			var/hit_zone = H.zone_sel.selecting
@@ -169,7 +180,7 @@
 			switch(src.a_intent)
 				if(I_HELP)
 					// We didn't see this coming, so we get the full blow
-					rand_damage = 5
+//INF					rand_damage = 5
 					accurate = 1
 				if(I_HURT, I_GRAB)
 					// We're in a fighting stance, there's a chance we block
@@ -182,7 +193,7 @@
 
 			if(src.grabbed_by.len || !src.MayMove() || src==H || H.species.species_flags & SPECIES_FLAG_NO_BLOCK)
 				accurate = 1 // certain circumstances make it impossible for us to evade punches
-				rand_damage = 5
+//INF				rand_damage = 5
 
 			// Process evasion and blocking
 			var/miss_type = 0
