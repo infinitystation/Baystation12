@@ -18,6 +18,7 @@
 		name = target.name
 		desc = target.desc
 		icon = target.icon
+		color = target.color
 		icon_state = target.icon_state
 		active = TRUE
 		to_chat(user, "\The [src] is now active.")
@@ -26,38 +27,40 @@
 	else
 		to_chat(user, "\The [target] is too big for \the [src] hologramm")
 
-/obj/item/device/mimic_bomb/attack_self()
-	trigger()
+/obj/item/device/mimic_bomb/attack_self(mob/user)
+	trigger(user)
 
 /obj/item/device/mimic_bomb/emp_act()
 	trigger()
 
-/obj/item/device/mimic_bomb/attack_hand()
-	..()
+/obj/item/device/mimic_bomb/attack_hand(mob/user)
+	. = ..()
 	if(!mode)
-		trigger()
+		trigger(user)
 
-/obj/item/device/mimic_bomb/proc/switch_mode()
+/obj/item/device/mimic_bomb/proc/switch_mode(var/mob/user)
 	mode = !mode
 	if(mode)
-		to_chat(usr, "Now \the [src] will explode upon activation.")
+		to_chat(user, "Now \the [src] will explode upon activation.")
 	else
-		to_chat(usr, "Now \the [src] will explode as soon as they pick it up or upon activation")
+		to_chat(user, "Now \the [src] will explode as soon as they pick it up or upon activation")
 
-/obj/item/device/mimic_bomb/proc/trigger()
+/obj/item/device/mimic_bomb/proc/trigger(var/mob/user)
 	if(!active)
-		switch_mode()
+		switch_mode(user)
 		return
-	var/mob/living/carbon/human/user = usr
+	if(!ishuman(user))
+		return
+	var/mob/living/carbon/human/H = user
 	if(!user)
 		return
-	var/obj/item/organ/external/O = user.get_organ(pick(BP_L_HAND, BP_R_HAND))
+	var/obj/item/organ/external/O = H.get_organ(pick(BP_L_HAND, BP_R_HAND))
 	if(!O)
 		return
 
 	var/dam = rand(25, 30)
-	user.visible_message("<span class='danger'>\The [src] in \the [user]'s hand explodes with a loud bang!</span>")
-	user.apply_damage(dam, BRUTE, O, damage_flags = DAM_SHARP, used_weapon = "explode")
+	H.visible_message("<span class='danger'>\The [src] in \the [H]'s hand explodes with a loud bang!</span>")
+	H.apply_damage(dam, BRUTE, O, damage_flags = DAM_SHARP, used_weapon = "explode")
 	explosion(src.loc, 0,0,1,1)
-	user.Stun(5)
+	H.Stun(5)
 	qdel(src)
