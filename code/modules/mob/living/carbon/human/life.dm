@@ -921,10 +921,10 @@
 			eye_blurry = max(2, eye_blurry)
 			stuttering = max(stuttering, 5)
 
-	if(shock_stage == 40)
-		custom_pain("[pick("The pain is excruciating", "Please, just end the pain", "Your whole body is going numb")]!", 40, nohalloss = TRUE)
-	//	emote("moan")
-		src.agony_moan() // inf-dev
+	if(shock_stage >= 40) //INF, WAS if(shock_stage == 40)
+		if(prob(5)) //INF
+			custom_pain("[pick("The pain is excruciating", "Please, just end the pain", "Your whole body is going numb")]!", 40, nohalloss = TRUE)
+			src.agony_moan() //INF, WAS emote("moan")
 
 	if (shock_stage >= 60)
 		if(shock_stage == 60) visible_message("<b>[src]</b>'s body becomes limp.")
