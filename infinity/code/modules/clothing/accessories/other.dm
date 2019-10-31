@@ -32,7 +32,6 @@
 /obj/item/clothing/accessory/scarf/tajmask/Initialize()
 	. = ..()
 	icon_state = "tajmask"
-	update_icon()
 
 /obj/item/clothing/accessory/scarf/tajmask/attack_self(mob/user)
 	var/obj/item/clothing/accessory/scarf/tajmask/tjmsk = new /obj/item/clothing/accessory/scarf/tajneck
@@ -51,7 +50,6 @@
 /obj/item/clothing/accessory/scarf/tajneck/Initialize()
 	. = ..()
 	icon_state = "tajneck"
-	update_icon()
 
 /obj/item/clothing/accessory/scarf/tajneck/attack_self(mob/user)
 	var/obj/item/clothing/accessory/scarf/tajneck/tjnk = new /obj/item/clothing/accessory/scarf/tajmask
