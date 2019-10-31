@@ -205,6 +205,7 @@
 	path = /obj/item/clothing/accessory/scarf/tajmask
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
+	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/accessory/capes
 	display_name = "(Tajara) shoulder capes"
