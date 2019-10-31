@@ -200,6 +200,12 @@
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
 
+/datum/gear/head/zhan_scarf/neck
+	display_name = "(Tajara) Tua-Tari scarf"
+	path = /obj/item/clothing/accessory/scarf/tajmask
+	whitelisted = list(SPECIES_TAJARA)
+	sort_category = "Xenowear"
+
 /datum/gear/accessory/capes
 	display_name = "(Tajara) shoulder capes"
 	path = /obj/item/clothing/accessory/shouldercape
