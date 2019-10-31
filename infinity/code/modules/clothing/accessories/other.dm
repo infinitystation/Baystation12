@@ -22,7 +22,7 @@
 	name = "tua-tari scarf"
 	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
 	icon_state = "tajmask"
-	desc = "A hunter's talisman, some say the old gods smile on those who wear it."
+	desc = "Light and soft scarf, very long and wide."
 	accessory_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', slot_wear_mask_str  = 'infinity/icons/mob/onmob/onmob_accessories.dmi')
 	body_parts_covered = FACE
 	item_flags = ITEM_FLAG_FLEXIBLEMATERIAL
@@ -44,6 +44,7 @@
 	name = "tua-tari scarf"
 	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
 	icon_state = "tajneck"
+	desc = "Light and soft scarf, very long and wide."
 	accessory_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', slot_wear_mask_str  = 'infinity/icons/mob/onmob/onmob_accessories.dmi')
 	slot_flags = SLOT_MASK | SLOT_TIE
 
