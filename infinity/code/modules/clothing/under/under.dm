@@ -141,7 +141,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	min_cold_protection_temperature = T0C - 75
-	max_heat_protection_temperature = T0C + 75
+	max_heat_protection_temperature = T0C + 50
 	var/max_cooling = 1.5					// in degrees per second - probably don't need to mess with heat capacity here
 	var/thermostat = T0C + 10
 
@@ -179,7 +179,7 @@
 	item_state = "gray_camo"
 	worn_state = "gray_camo"
 	min_cold_protection_temperature = T0C - 25
-	max_heat_protection_temperature = T0C + 125
+	max_heat_protection_temperature = T0C + 100
 	var/max_cooling = 1					// in degrees per second - probably don't need to mess with heat capacity here
 	var/thermostat = T0C + 40
 
