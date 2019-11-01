@@ -50,6 +50,7 @@
 
 /datum/gear/tactical/camo_inf/
 	display_name = "camo uniform - colorable"
+	allowed_roles = SECURITY_ROLES
 	path = /obj/item/clothing/under/gray_camo
 	slot = slot_w_uniform
 	flags = GEAR_HAS_COLOR_SELECTION
