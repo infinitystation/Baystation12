@@ -133,6 +133,50 @@
 	new /obj/item/clothing/suit/armor/pcarrier/custom_army(src)
 	new /obj/item/custkit/custom_army(src)
 
+/* ZPCI KNIGHT KIT
+ * ================
+ */
+
+/obj/item/clothing/head/helmet/custom_zpci_knight
+	name = "\improper ST-16/2"
+	desc = "The helmet, which is part of the ST-16/1 armor, has a durable glass to protect against splinters."
+	icon = 'infinity/icons/obj/clothing/obj_head.dmi'
+	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
+	icon_state = "zpci_knight_h"
+
+/obj/item/clothing/suit/armor/pcarrier/custom_zpci_knight
+	name = "\improper ST-16/1"
+	desc = "It is a mobile combat armor of the 16th generation of ZPCI knights, it is made of light and durable alloys, but does not have high protection in exchange for mobility."
+	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi')
+	icon_state = "zpci_knight_s"
+	sprite_sheets = list()
+//	starting_accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches)
+
+//a gun
+
+/obj/item/weapon/gun/energy/laser/secure/jacking
+	name = "\improper RG-104"
+	desc = "RG-104 is one of the favorite weapons in its generation, a modified and improved weapon battery eliminates the facts of a quick discharge of a weapon, and a laser sight will point directly at the target and it remains to make a shot..."
+	icon_state = "custom_lasgun"
+	item_state = "custom_lasgun"
+	icon = 'infinity/icons/obj/guns/custom_lasgun.dmi'
+	wielded_item_state = "custom_lasgun-wielded"
+	item_icons = list(
+		slot_r_hand_str = 'infinity/icons/mob/onmob/righthand.dmi',
+		slot_l_hand_str = 'infinity/icons/mob/onmob/lefthand.dmi',
+		)
+
+/obj/item/custkit/custom_zpci_knight
+	name = "laser carabine customization kit"
+	input = /obj/item/weapon/gun/energy/laser/secure
+	output = /obj/item/weapon/gun/energy/laser/secure/jacking
+
+/obj/item/weapon/clothingbag/custom_zpci_knight/Initialize()
+	new /obj/item/clothing/head/helmet/custom_zpci_knight(src)
+	new /obj/item/clothing/suit/armor/pcarrier/custom_zpci_knight(src)
+	new /obj/item/custkit/custom_zpci_knight(src)
+
 //biohazard kit (was replaced by SCG soldier's kit)
 /*
 /obj/item/clothing/suit/bio_suit/virology/jacking
