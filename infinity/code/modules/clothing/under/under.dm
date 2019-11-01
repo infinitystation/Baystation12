@@ -127,3 +127,101 @@
 	item_state = "zpci_uniform"
 	armor = list(melee = 10, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0) //it's security uniform's stats
 	siemens_coefficient = 0.9
+
+/obj/item/clothing/under/thermos
+	name = "thermosuit"
+	desc = "bruh breh bruh"
+	icon = 'infinity/icons/obj/clothing/obj_under.dmi'
+	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
+	icon_state = "gray_camo"
+	item_state = "gray_camo"
+	worn_state = "gray_camo"
+	armor = list(melee = 10, bullet = 5, laser = 5,energy = 0, bomb = 0, bio = 0, rad = 0)
+	siemens_coefficient = 0.9
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	min_cold_protection_temperature = T0C - 75
+	max_heat_protection_temperature = T0C + 75
+	var/max_cooling = 1.5					// in degrees per second - probably don't need to mess with heat capacity here
+	var/thermostat = T0C + 10
+
+/obj/item/clothing/under/thermos/Process()
+	var/mob/living/carbon/human/H = loc
+	var/temp_adj = min(H.bodytemperature - thermostat, max_cooling)
+
+	if (temp_adj < 0.5)    //only cools, doesn't heat, also we don't need extreme precision esli     if (temp_adj > 0.5) to greet
+		return
+
+	H.bodytemperature -= temp_adj
+
+/obj/item/clothing/under/thermos/Initialize()
+	. = ..()
+	START_PROCESSING(SSobj, src)
+
+/obj/item/clothing/under/thermos/Destroy()
+	. = ..()
+	STOP_PROCESSING(SSobj, src)
+
+/obj/item/clothing/under/thermos/proc/is_in_slot()
+	var/mob/living/carbon/human/H = loc
+	if(!istype(H))
+		return 0
+	if(!is_in_slot())
+		return
+	return (H.w_uniform == src)
+
+/obj/item/clothing/under/heatterm
+	name = "thermosuit"
+	desc = "bruh breh bruh"
+	icon = 'infinity/icons/obj/clothing/obj_under.dmi'
+	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
+	icon_state = "gray_camo"
+	item_state = "gray_camo"
+	worn_state = "gray_camo"
+	min_cold_protection_temperature = T0C - 25
+	max_heat_protection_temperature = T0C + 125
+	var/max_cooling = 1					// in degrees per second - probably don't need to mess with heat capacity here
+	var/thermostat = T0C + 40
+
+/obj/item/clothing/under/heatterm/Process()
+	var/mob/living/carbon/human/H = loc
+	var/temp_adj = min(H.bodytemperature - thermostat, max_cooling)
+
+	if (temp_adj > 0.5)    //only cools, doesn't heat, also we don't need extreme precision esli     if (temp_adj > 0.5) to greet
+		return
+
+	H.bodytemperature -= temp_adj
+
+/obj/item/clothing/under/heatterm/Initialize()
+	. = ..()
+	START_PROCESSING(SSobj, src)
+
+/obj/item/clothing/under/heatterm/Destroy()
+	. = ..()
+	STOP_PROCESSING(SSobj, src)
+
+/obj/item/clothing/under/heatterm/proc/is_in_slot()
+	var/mob/living/carbon/human/H = loc
+	if(!istype(H))
+		return 0
+	if(!is_in_slot())
+		return
+	return (H.w_uniform == src)
+
+/obj/item/clothing/under/heatterm/unati
+	name = "thermosuit"
+	desc = "bruh breh bruh"
+	icon = 'infinity/icons/obj/clothing/obj_under.dmi'
+	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
+	icon_state = "gray_camo"
+	item_state = "gray_camo"
+	worn_state = "gray_camo"
+
+/obj/item/clothing/under/thermos/nuggets
+	name = "thermosuit"
+	desc = "Looks like very small suit. For children or resomi?"
+	icon = 'infinity/icons/obj/clothing/obj_under.dmi'
+	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
+	icon_state = "gray_camo"
+	item_state = "gray_camo"
+	worn_state = "gray_camo"
