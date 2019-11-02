@@ -139,7 +139,6 @@
 	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
 	icon_state = "thermotaj_1"
 	item_state = "thermotaj_1"
-	worn_state = "gray_camo"
 	armor = list(melee = 10, bullet = 5, laser = 5,energy = 0, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.9
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -148,6 +147,24 @@
 	max_heat_protection_temperature = T0C + 50
 	var/max_cooling = 1.3					// in degrees per second - probably don't need to mess with heat capacity here
 	var/thermostat = T0C + 10
+
+/obj/item/clothing/under/thermos/tajaranblack
+	name = "thermosuit"
+	desc = "bruh breh bruh"
+	icon_state = "thermotaj_2"
+	item_state = "thermotaj_2"
+
+/obj/item/clothing/under/thermos/tajarangray
+	name = "thermosuit"
+	desc = "bruh breh bruh"
+	icon_state = "thermotaj_3"
+	item_state = "thermotaj_3"
+
+/obj/item/clothing/under/thermos/tajaranblaktwo
+	name = "thermosuit"
+	desc = "bruh breh bruh"
+	icon_state = "thermotaj_4"
+	item_state = "thermotaj_4"
 
 /obj/item/clothing/under/thermos/Process()
 	var/mob/living/carbon/human/H = loc
@@ -175,17 +192,22 @@
 	return (H.w_uniform == src)
 
 /obj/item/clothing/under/heatterm
-	name = "thermosuit"
+	name = "skrell suit"
 	desc = "bruh breh bruh"
 	icon = 'infinity/icons/obj/clothing/obj_under.dmi'
 	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
-	icon_state = "gray_camo"
-	item_state = "gray_camo"
-	worn_state = "gray_camo"
+	icon_state = "thermoskr_1"
+	item_state = "thermoskr_1"
 	min_cold_protection_temperature = T0C - 25
 	max_heat_protection_temperature = T0C + 100
 	var/max_cooling = 1					// in degrees per second - probably don't need to mess with heat capacity here
 	var/thermostat = T0C + 40
+
+/obj/item/clothing/under/heatterm
+	name = "skrell suit"
+	desc = "bruh breh bruh"
+	icon_state = "thermoskr_2"
+	item_state = "thermoskr_2"
 
 /obj/item/clothing/under/heatterm/Process()
 	var/mob/living/carbon/human/H = loc
@@ -213,19 +235,25 @@
 	return (H.w_uniform == src)
 
 /obj/item/clothing/under/heatterm/unati
-	name = "thermosuit"
+	name = "black suit"
 	desc = "bruh breh bruh"
-	icon = 'infinity/icons/obj/clothing/obj_under.dmi'
-	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
-	icon_state = "gray_camo"
-	item_state = "gray_camo"
-	worn_state = "gray_camo"
+	icon_state = "thermouna_1"
+	item_state = "thermouna_1"
 
-/obj/item/clothing/under/thermos/nuggets
-	name = "thermosuit"
-	desc = "Looks like very small suit. For children or resomi?"
-	icon = 'infinity/icons/obj/clothing/obj_under.dmi'
-	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
-	icon_state = "gray_camo"
-	item_state = "gray_camo"
-	worn_state = "gray_camo"
+/obj/item/clothing/under/heatterm/unati/white
+	name = "white suit"
+	desc = "bruh breh bruh"
+	icon_state = "thermouna_2"
+	item_state = "thermouna_2"
+
+/obj/item/clothing/under/thermos/resomi
+	name = "small suit"
+	desc = "Looks like very small suit. For children or resomi? This suit is white."
+	icon_state = "thermores_1"
+	item_state = "thermores_1"
+
+/obj/item/clothing/under/thermos/resomi/white
+	name = "small suit"
+	desc = "Looks like very small suit. For children or resomi? This suit is white."
+	icon_state = "thermores_2"
+	item_state = "thermores_2"
