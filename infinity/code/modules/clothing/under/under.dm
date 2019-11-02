@@ -191,9 +191,9 @@
 		return
 	return (H.w_uniform == src)
 
-/obj/item/clothing/under/heatterm
+/obj/item/clothing/under/thermos/heat
 	name = "skrell suit"
-	desc = "bruh breh bruh"
+	desc = "Stylish skrellian thermal suit. This one is black."
 	icon = 'infinity/icons/obj/clothing/obj_under.dmi'
 	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
 	icon_state = "thermoskr_1"
@@ -203,13 +203,13 @@
 	var/max_cooling = 1					// in degrees per second - probably don't need to mess with heat capacity here
 	var/thermostat = T0C + 40
 
-/obj/item/clothing/under/heatterm
+/obj/item/clothing/under/thermos/heat/white
 	name = "skrell suit"
-	desc = "bruh breh bruh"
+	desc = "Stylish skrellian thermal suit. This one is white."
 	icon_state = "thermoskr_2"
 	item_state = "thermoskr_2"
 
-/obj/item/clothing/under/heatterm/Process()
+/obj/item/clothing/under/thermos/heat/Process()
 	var/mob/living/carbon/human/H = loc
 	var/temp_adj = min(H.bodytemperature - thermostat, max_cooling)
 
@@ -218,31 +218,15 @@
 
 	H.bodytemperature -= temp_adj
 
-/obj/item/clothing/under/heatterm/Initialize()
-	. = ..()
-	START_PROCESSING(SSobj, src)
-
-/obj/item/clothing/under/heatterm/Destroy()
-	. = ..()
-	STOP_PROCESSING(SSobj, src)
-
-/obj/item/clothing/under/heatterm/proc/is_in_slot()
-	var/mob/living/carbon/human/H = loc
-	if(!istype(H))
-		return 0
-	if(!is_in_slot())
-		return
-	return (H.w_uniform == src)
-
-/obj/item/clothing/under/heatterm/unati
+/obj/item/clothing/under/thermos/heat/unati
 	name = "black suit"
-	desc = "bruh breh bruh"
+	desc = "Unati thermal suit. This one is black."
 	icon_state = "thermouna_1"
 	item_state = "thermouna_1"
 
-/obj/item/clothing/under/heatterm/unati/white
+/obj/item/clothing/under/thermos/heat/unati/white
 	name = "white suit"
-	desc = "bruh breh bruh"
+	desc = "Unati thermal suit. This one is white."
 	icon_state = "thermouna_2"
 	item_state = "thermouna_2"
 
@@ -251,6 +235,7 @@
 	desc = "Looks like very small suit. For children or resomi? This suit is white."
 	icon_state = "thermores_1"
 	item_state = "thermores_1"
+	thermostat = T0C
 
 /obj/item/clothing/under/thermos/resomi/white
 	name = "small suit"
