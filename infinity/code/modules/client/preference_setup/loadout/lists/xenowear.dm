@@ -6,16 +6,16 @@
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/uniform/thermos
-	display_name = "thermal suit selection"
+	display_name = "thermal suit selection, non-skrell thermal clothing won't fit on other races."
 	path = /obj/item/clothing/under
 
 /datum/gear/uniform/thermos/New()
 	..()
 	var/thermos = list()
-	thermos["Tajara, White thermalsuit"]= /obj/item/clothing/under/thermos
-	thermos["Tajara, Tacticool thermalsuit"]= /obj/item/clothing/under/thermos/tajaranblack
-	thermos["Tajara, Gray thermalsuit"]= /obj/item/clothing/under/thermos/tajarangray
-	thermos["Tajara, Black thermalsuit"]= /obj/item/clothing/under/thermos/tajaranblaktwo
+	thermos["Tajara, White thermalsuit"]= /obj/item/clothing/under/thermos/tajara
+	thermos["Tajara, Tacticool thermalsuit"]= /obj/item/clothing/under/thermos/tajara/tactic
+	thermos["Tajara, Gray thermalsuit"]= /obj/item/clothing/under/thermos/tajara/gray
+	thermos["Tajara, Black thermalsuit"]= /obj/item/clothing/under/thermos/tajara/black
 	thermos["Resomi, Black thermalsuit"]= /obj/item/clothing/under/thermos/resomi
 	thermos["Resomi, White thermalsuit"]= /obj/item/clothing/under/thermos/resomi/white
 	thermos["Skrell, Black thermalsuit"]= /obj/item/clothing/under/thermos/heat
