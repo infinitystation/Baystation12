@@ -133,8 +133,8 @@
 /////////////////////////////////////////////////////////////////////////////////////
 
 /obj/item/clothing/under/thermos
-	name = "thermosuit"
-	desc = "bruh breh bruh"
+	name = "winter-camo suit"
+	desc = "Winter camouflage suit, with thermal lining inside."
 	icon = 'infinity/icons/obj/clothing/obj_under.dmi'
 	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
 	icon_state = "thermotaj_1"
@@ -149,20 +149,20 @@
 	var/thermostat = T0C + 10
 
 /obj/item/clothing/under/thermos/tajaranblack
-	name = "thermosuit"
-	desc = "bruh breh bruh"
+	name = "tacticool thermalsuit"
+	desc = "A thermal suit that looks pretty tacticool!"
 	icon_state = "thermotaj_2"
 	item_state = "thermotaj_2"
 
 /obj/item/clothing/under/thermos/tajarangray
-	name = "thermosuit"
-	desc = "bruh breh bruh"
+	name = "grey thermalsuit"
+	desc = "Gray work suit, with thermal lining inside."
 	icon_state = "thermotaj_3"
 	item_state = "thermotaj_3"
 
 /obj/item/clothing/under/thermos/tajaranblaktwo
-	name = "thermosuit"
-	desc = "bruh breh bruh"
+	name = "black thermalsuit"
+	desc = "A strict-looking thermal suit, with nothing extra on it."
 	icon_state = "thermotaj_4"
 	item_state = "thermotaj_4"
 
