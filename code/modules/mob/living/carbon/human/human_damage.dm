@@ -169,7 +169,7 @@
 	BITSET(hud_updateflag, HEALTH_HUD)
 
 /mob/living/carbon/human/getToxLoss()
-	if((species.species_flags & SPECIES_FLAG_NO_POISON) || isSynthetic())
+	if(species.species_flags & SPECIES_FLAG_NO_POISON) //INF, WAS if((species.species_flags & SPECIES_FLAG_NO_POISON) || isSynthetic())
 		return 0
 	var/amount = 0
 	for(var/obj/item/organ/internal/I in internal_organs)
@@ -177,15 +177,18 @@
 	return amount
 
 /mob/living/carbon/human/setToxLoss(var/amount)
-	if(!(species.species_flags & SPECIES_FLAG_NO_POISON) && !isSynthetic())
+	if(!(species.species_flags & SPECIES_FLAG_NO_POISON)) //INF, WAS if(!(species.species_flags & SPECIES_FLAG_NO_POISON) && !isSynthetic())
 		adjustToxLoss(getToxLoss()-amount)
 
 // TODO: better internal organ damage procs.
-/mob/living/carbon/human/adjustToxLoss(var/amount)
+/mob/living/carbon/human/adjustToxLoss(var/amount, var/admin_healing = 0) //INF, WAS /mob/living/carbon/human/adjustToxLoss(var/amount)
 
-	if((species.species_flags & SPECIES_FLAG_NO_POISON) || isSynthetic())
+	if(species.species_flags & SPECIES_FLAG_NO_POISON) //INF, WAS if((species.species_flags & SPECIES_FLAG_NO_POISON) || isSynthetic())
 		return
-
+//[INF]
+	if(isSynthetic() && !admin_healing)
+		return 0
+//[/INF]
 	var/heal = amount < 0
 	amount = abs(amount)
 
@@ -303,8 +306,13 @@ In most cases it makes more sense to use apply_damage() instead! And make sure t
 
 		var/brute_was = picked.brute_dam
 		var/burn_was = picked.burn_dam
+//[INF] to heal damaged robotic organs
+		var/organ_type = 0
+		if(picked.status & ORGAN_ROBOTIC)
+			organ_type = 1
+//[/INF]
 
-		picked.heal_damage(brute,burn)
+		picked.heal_damage(brute,burn,0, organ_type) //INF, WAS picked.heal_damage(brute,burn)
 
 		brute -= (brute_was-picked.brute_dam)
 		burn -= (burn_was-picked.burn_dam)

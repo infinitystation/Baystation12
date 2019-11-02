@@ -9,8 +9,6 @@
 		slot_tie_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', \
 		slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi')
 	item_icons = list(
-		slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', \
-		slot_tie_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', \
 		slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi')
 
 	var/fire_resist = T0C+100
