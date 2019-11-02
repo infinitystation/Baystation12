@@ -206,7 +206,7 @@
 	min_cold_protection_temperature = T0C - 25
 	max_heat_protection_temperature = T0C + 100
 	max_cooling = 1					// in degrees per second - probably don't need to mess with heat capacity here
-	thermostat = T0C + 45
+	thermostat = T0C + 40
 
 /obj/item/clothing/under/thermos/heat/white
 	name = "fitting suit"
@@ -237,7 +237,7 @@
 	item_state = "thermouna_2"
 
 /obj/item/clothing/under/thermos/resomi
-	name = "small suit"
+	name = "small thermal suit"
 	desc = "Looks like very small suit. For children or resomi? This thermal suit is black."
 	icon_state = "thermores_1"
 	item_state = "thermores_1"
@@ -245,7 +245,7 @@
 	species_restricted = list(SPECIES_RESOMI)
 
 /obj/item/clothing/under/thermos/resomi/white
-	name = "small suit"
+	name = "small thermal suit"
 	desc = "Looks like very small suit. For children or resomi? This thermal suit is white. "
 	icon_state = "thermores_2"
 	item_state = "thermores_2"
