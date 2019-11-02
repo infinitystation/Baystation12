@@ -128,6 +128,10 @@
 	armor = list(melee = 10, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0) //it's security uniform's stats
 	siemens_coefficient = 0.9
 
+/////////////////////////////////////////////////////////////////////////////////////
+//vsem mojno a mne net, da? shmotki dlya ksenoti chtobi ne merzla i vse takoe da...//
+/////////////////////////////////////////////////////////////////////////////////////
+
 /obj/item/clothing/under/thermos
 	name = "thermosuit"
 	desc = "bruh breh bruh"
