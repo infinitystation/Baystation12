@@ -194,14 +194,12 @@
 /obj/item/clothing/under/thermos/heat
 	name = "skrell suit"
 	desc = "Stylish skrellian thermal suit. This one is black."
-	icon = 'infinity/icons/obj/clothing/obj_under.dmi'
-	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
 	icon_state = "thermoskr_1"
 	item_state = "thermoskr_1"
 	min_cold_protection_temperature = T0C - 25
 	max_heat_protection_temperature = T0C + 100
-	var/max_cooling = 1					// in degrees per second - probably don't need to mess with heat capacity here
-	var/thermostat = T0C + 40
+	max_cooling = 1					// in degrees per second - probably don't need to mess with heat capacity here
+	thermostat = T0C + 40
 
 /obj/item/clothing/under/thermos/heat/white
 	name = "skrell suit"
