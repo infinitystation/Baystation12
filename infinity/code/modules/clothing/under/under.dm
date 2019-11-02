@@ -133,8 +133,8 @@
 /////////////////////////////////////////////////////////////////////////////////////
 
 /obj/item/clothing/under/thermos
-	name = "camo uniform"
-	desc = "It's camo unifrom made of a slightly sturdier material than standard jumpsuits, to allow for good protection and military style."
+	name = "gray suit"
+	desc = "Gray thermal suit. Nothing interesting."
 	icon = 'infinity/icons/obj/clothing/obj_under.dmi'
 	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
 	icon_state = "gray_camo"
@@ -199,8 +199,8 @@
 	return (H.w_uniform == src)
 
 /obj/item/clothing/under/thermos/heat
-	name = "skrell suit"
-	desc = "Stylish skrellian thermal suit. This one is black."
+	name = "fitting suit"
+	desc = "Stylish fitting skrellian thermal suit. This one is black."
 	icon_state = "thermoskr_1"
 	item_state = "thermoskr_1"
 	min_cold_protection_temperature = T0C - 25
@@ -209,8 +209,8 @@
 	thermostat = T0C + 40
 
 /obj/item/clothing/under/thermos/heat/white
-	name = "skrell suit"
-	desc = "Stylish skrellian thermal suit. This one is white."
+	name = "fitting suit"
+	desc = "Stylish fitting skrellian thermal suit. This one is white."
 	icon_state = "thermoskr_2"
 	item_state = "thermoskr_2"
 
@@ -238,7 +238,7 @@
 
 /obj/item/clothing/under/thermos/resomi
 	name = "small suit"
-	desc = "Looks like very small suit. For children or resomi? This suit is white."
+	desc = "Looks like very small suit. For children or resomi? This thermal suit is black."
 	icon_state = "thermores_1"
 	item_state = "thermores_1"
 	thermostat = T0C
@@ -246,6 +246,6 @@
 
 /obj/item/clothing/under/thermos/resomi/white
 	name = "small suit"
-	desc = "Looks like very small suit. For children or resomi? This suit is white."
+	desc = "Looks like very small suit. For children or resomi? This thermal suit is white. "
 	icon_state = "thermores_2"
 	item_state = "thermores_2"
