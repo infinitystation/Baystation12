@@ -98,3 +98,15 @@
 
 /turf/simulated/floor/is_floor()
 	return TRUE
+
+/mob/var/list/known_areas = list()
+
+/turf/simulated/floor/Crossed(atom/movable/O)
+	. = ..()
+	if(isliving(O))
+		var/area/A = get_area(O)
+		var/mob/living/crosser = O
+		if(!(A in crosser.known_areas))
+			to_chat(O, "<center><b><font size=4>New area:<br>[A]</font></b></center>")
+			sound_to(O, 'infinity/sound/effects/ds-new-area.ogg')
+			crosser.known_areas += A
