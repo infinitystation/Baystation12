@@ -5,7 +5,10 @@
 		"Science" = TRUE,
 		"Service" = TRUE
 	)
-	sprites = list("Drone" = "drone-hydro")
+	sprites = list(
+		"Drone" = "drone-hydro",
+		"Ver 06" = "wer6-Research" //INF
+	)
 
 	equipment = list(
 		/obj/item/weapon/storage/plants,

@@ -26,7 +26,9 @@
 		/obj/item/weapon/fuel_assembly,
 		/obj/item/stack/material/deuterium,
 		/obj/item/stack/material/tritium,
-		/obj/item/stack/tile
+		/obj/item/stack/tile,
+		/obj/item/stack/cable_coil, //INF
+		/obj/item/clamp //INF
 		)
 
 	var/obj/item/wrapped = null // Item currently being held.

@@ -18,7 +18,10 @@
 		LANGUAGE_GUTTER         = TRUE,
 		LANGUAGE_SPACER         = TRUE
 		)
-	sprites = list("Drone" = "drone-service")
+	sprites = list(
+		"Drone" = "drone-service",
+		"Ver 06" = "wer6-Service" //INF
+	)
 	equipment = list(
 		/obj/item/device/flash,
 		/obj/item/weapon/pen/robopen,

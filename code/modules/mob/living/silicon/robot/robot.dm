@@ -359,7 +359,7 @@
 /mob/living/silicon/robot/verb/toggle_panel_lock()
 	set name = "Toggle Panel Lock"
 	set category = "Silicon Commands"
-	if(!opened && has_power && do_after(usr, 60) && !opened && has_power)
+	if(!opened && has_power && do_after(usr, 5) && !opened && has_power) //removed this shitty delay in 60, inf
 		to_chat(src, "You [locked ? "un" : ""]lock your panel.")
 		locked = !locked
 
@@ -1056,7 +1056,7 @@
 				locked = 0
 			else
 				to_chat(user, "You fail to emag the cover lock.")
-				to_chat(src, "Hack attempt detected.")
+				to_chat(src, SPAN_WARNING("Warning: Hack attempt detected."))
 			return 1
 		else
 			to_chat(user, "The cover is already unlocked.")
@@ -1106,7 +1106,7 @@
 					update_icon()
 			else
 				to_chat(user, "You fail to hack [src]'s interface.")
-				to_chat(src, "Hack attempt detected.")
+				to_chat(src, SPAN_WARNING("Hack attempt detected."))
 			return 1
 
 /mob/living/silicon/robot/incapacitated(var/incapacitation_flags = INCAPACITATION_DEFAULT)

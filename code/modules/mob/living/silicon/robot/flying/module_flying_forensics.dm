@@ -5,11 +5,13 @@
 	networks = list(NETWORK_SECURITY)
 	subsystems = list(
 		/datum/nano_module/crew_monitor,
-		/datum/nano_module/digitalwarrant
+		/datum/nano_module/digitalwarrant,
+		/datum/nano_module/records //INF
 	)
 	sprites = list(
 		"Drone" = "drone-sec",
-		"Eyebot" = "eyebot-security"
+		"Eyebot" = "eyebot-security",
+		"Ver 06" = "wer6-Security" //INF
 	)
 	equipment = list(
 		/obj/item/swabber,
@@ -19,7 +21,7 @@
 		/obj/item/device/flash,
 		/obj/item/borg/sight/hud/sec,
 		/obj/item/taperoll/police,
-		/obj/item/weapon/scalpel/laser1,
+		/obj/item/weapon/scalpel/laser1, //added medical skills for autopsy below
 		/obj/item/weapon/autopsy_scanner,
 		/obj/item/weapon/reagent_containers/spray/luminol,
 		/obj/item/device/uv_light,
@@ -31,7 +33,9 @@
 		SKILL_COMPUTER            = SKILL_EXPERT,
 		SKILL_FORENSICS           = SKILL_PROF,
 		SKILL_WEAPONS             = SKILL_EXPERT,
-		SKILL_CONSTRUCTION        = SKILL_ADEPT
+		SKILL_CONSTRUCTION        = SKILL_ADEPT,
+		SKILL_ANATOMY     = SKILL_EXPERT, //INF, cuz autopsy
+		SKILL_MEDICAL     = SKILL_EXPERT //INF
 	)
 
 /obj/item/weapon/robot_module/flying/forensics/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)

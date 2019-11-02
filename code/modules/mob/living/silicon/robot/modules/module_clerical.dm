@@ -20,7 +20,8 @@
 		SKILL_FINANCE             = SKILL_PROF,
 		SKILL_COMPUTER            = SKILL_EXPERT,
 		SKILL_SCIENCE             = SKILL_EXPERT,
-		SKILL_DEVICES             = SKILL_EXPERT
+		SKILL_DEVICES             = SKILL_EXPERT,
+		SKILL_PILOT        = SKILL_ADEPT //INF
 	)
 
 /obj/item/weapon/robot_module/clerical/butler
