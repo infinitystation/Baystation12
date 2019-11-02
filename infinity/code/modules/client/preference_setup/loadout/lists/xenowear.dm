@@ -6,8 +6,9 @@
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/uniform/thermos
-	display_name = "thermal suit selection, non-skrell thermal clothing won't fit on other races."
+	display_name = "thermal suit selection"
 	path = /obj/item/clothing/under
+	whitelisted = list(SPECIES_UNATHI, SPECIES_YEOSA, SPECIES_SKRELL, SPECIES_TAJARA, SPECIES_RESOMI)
 
 /datum/gear/uniform/thermos/New()
 	..()
