@@ -136,7 +136,7 @@
 	name = "camo uniform"
 	desc = "It's camo unifrom made of a slightly sturdier material than standard jumpsuits, to allow for good protection and military style."
 	icon = 'infinity/icons/obj/clothing/obj_under.dmi'
-	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
+	item_icons = 'infinity/icons/mob/onmob/onmob_under.dmi'
 	icon_state = "gray_camo"
 	item_state = "gray_camo"
 	armor = list(melee = 10, bullet = 5, laser = 5,energy = 0, bomb = 0, bio = 0, rad = 0)
@@ -151,8 +151,6 @@
 /obj/item/clothing/under/thermos/tajara
 	name = "winter-camo suit"
 	desc = "Winter camouflage suit, with thermal lining inside."
-	icon = 'infinity/icons/obj/clothing/obj_under.dmi'
-	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
 	icon_state = "thermotaj_1"
 	item_state = "thermotaj_1"
 	species_restricted = list(SPECIES_TAJARA)
