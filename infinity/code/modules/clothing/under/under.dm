@@ -206,7 +206,7 @@
 	min_cold_protection_temperature = T0C - 25
 	max_heat_protection_temperature = T0C + 100
 	max_cooling = 1					// in degrees per second - probably don't need to mess with heat capacity here
-	thermostat = T0C + 40
+	thermostat = T0C + 45
 
 /obj/item/clothing/under/thermos/heat/white
 	name = "skrell suit"
