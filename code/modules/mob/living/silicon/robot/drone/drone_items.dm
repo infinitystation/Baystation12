@@ -27,7 +27,7 @@
 		/obj/item/stack/material/deuterium,
 		/obj/item/stack/material/tritium,
 		/obj/item/stack/tile,
-		//[INF]
+		//[INF],
 		/obj/item/stack/cable_coil,
 		/obj/item/clamp
 		//[/INF]
