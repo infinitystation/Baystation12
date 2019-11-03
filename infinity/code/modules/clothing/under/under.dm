@@ -204,7 +204,6 @@
 	thermostat = T0C + 45
 
 /obj/item/clothing/under/thermal/heat/white
-	name = "fitting thermal suit"
 	desc = "Stylish fitting skrellian thermal suit. This one is white."
 	icon_state = "thermoskr_2"
 	item_state = "thermoskr_2"
@@ -240,7 +239,6 @@
 	species_restricted = list(SPECIES_RESOMI)
 
 /obj/item/clothing/under/thermal/resomi/white
-	name = "small thermal suit"
 	desc = "Looks like very small suit. For children or resomi? This thermal suit is white. "
 	icon_state = "thermores_2"
 	item_state = "thermores_2"
