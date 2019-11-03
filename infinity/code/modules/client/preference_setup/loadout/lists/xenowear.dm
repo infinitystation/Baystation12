@@ -12,7 +12,7 @@
 
 /datum/gear/uniform/thermal/New()
 	..()
-	var/thermos = list()
+	var/thermal = list()
 	thermos["Tajara, White thermal suit"]= /obj/item/clothing/under/thermal/tajara
 	thermos["Tajara, Tacticool thermal suit"]= /obj/item/clothing/under/thermal/tajara/tactic
 	thermos["Tajara, Gray thermal suit"]= /obj/item/clothing/under/thermal/tajara/gray
