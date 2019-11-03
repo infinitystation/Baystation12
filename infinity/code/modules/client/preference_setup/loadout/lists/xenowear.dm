@@ -13,14 +13,14 @@
 /datum/gear/uniform/thermal/New()
 	..()
 	var/thermal = list()
-	thermos["Tajara, White thermal suit"]= /obj/item/clothing/under/thermal/tajara
-	thermos["Tajara, Tacticool thermal suit"]= /obj/item/clothing/under/thermal/tajara/tactic
-	thermos["Tajara, Gray thermal suit"]= /obj/item/clothing/under/thermal/tajara/gray
-	thermos["Tajara, Black thermal suit"]= /obj/item/clothing/under/thermal/tajara/black
-	thermos["Resomi, Black thermal suit"]= /obj/item/clothing/under/thermal/resomi
-	thermos["Resomi, White thermal suit"]= /obj/item/clothing/under/thermal/resomi/white
-	thermos["Skrell, Black thermal suit"]= /obj/item/clothing/under/thermal/heat
-	thermos["Skrell, White thermal suit"]= /obj/item/clothing/under/thermal/heat/white
-	thermos["Unati, Black thermal suit"]= /obj/item/clothing/under/thermal/heat/unati
-	thermos["Unati, White thermal suit"]= /obj/item/clothing/under/thermal/heat/unati/white
+	thermal["Tajara, White thermal suit"]= /obj/item/clothing/under/thermal/tajara
+	thermal["Tajara, Tacticool thermal suit"]= /obj/item/clothing/under/thermal/tajara/tactic
+	thermal["Tajara, Gray thermal suit"]= /obj/item/clothing/under/thermal/tajara/gray
+	thermal["Tajara, Black thermal suit"]= /obj/item/clothing/under/thermal/tajara/black
+	thermal["Resomi, Black thermal suit"]= /obj/item/clothing/under/thermal/resomi
+	thermal["Resomi, White thermal suit"]= /obj/item/clothing/under/thermal/resomi/white
+	thermal["Skrell, Black thermal suit"]= /obj/item/clothing/under/thermal/heat
+	thermal["Skrell, White thermal suit"]= /obj/item/clothing/under/thermal/heat/white
+	thermal["Unati, Black thermal suit"]= /obj/item/clothing/under/thermal/heat/unati
+	thermal["Unati, White thermal suit"]= /obj/item/clothing/under/thermal/heat/unati/white
 	gear_tweaks += new/datum/gear_tweak/path(thermal)

@@ -176,6 +176,7 @@
 		return
 
 	H.bodytemperature -= temp_adj
+	world << "PROCESSDELAU"
 
 /obj/item/clothing/under/thermal/Initialize()
 	. = ..()
