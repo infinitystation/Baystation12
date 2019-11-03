@@ -1,4 +1,6 @@
-/mob/living/var/list/known_things = list()
+/mob/living
+	var/list/known_things = list()
+	var/teleporing_in_progress = 0
 
 /obj/item/lordwessel
 	name 								=	"lordvessel"
@@ -18,7 +20,6 @@
 	var/list/known_areas				=	list("(CANCEL)")
 
 	var/is_silent_teleporting			=	0
-	var/teleporing_in_progress			=	0
 
 /obj/item/lordwessel/examine(mob/user)
 	if(isliving(user))
@@ -37,7 +38,7 @@
 		var/CH				=	"Say my path"
 		to_chat(U, SPAN_OCCULT("<font size=3>You hear whispers: \"Your path is...\"</font>"))
 
-		if(!teleporing_in_progress)
+		if(!U.teleporing_in_progress)
 			if(U.psi)
 				CH = alert(U, "You can touch light on bottom of [src]", "[src]", "Say my path", "Touch Light")
 			switch(CH)
@@ -61,40 +62,49 @@
 								if(!(type in U.known_things)) U.known_things += type
 								return 1
 							else
-								to_chat(U, SPAN_OCCULT("You hear whispers: \"You won't to say as your path...\""))
+								to_chat(U, SPAN_OCCULT("You hear whispers: \"You won't to say us your path...\""))
 								return 1.4
 		else to_chat(U, SPAN_OCCULT("<font size=2>\"But you already in travel.\"</font>"))
 
-/obj/item/lordwessel/proc/teleport2(area/A, mob/target)
-	teleporing_in_progress			=	1
-	if(!is_silent_teleporting)
-		for(var/mob/M in GLOB.player_list)
-			sound_to(M, teleportsound)
-			to_world(SPAN_NOTICE("You hear ominous belling, far-far away from you."))
-	var/mob/living/M				=	target
-	var/turf/start					=	get_turf(M)
-	var/turf/end					=	M.try_teleport(A)
-	var/obj/effect/temporary/AN		=	new(get_step(start, SOUTHWEST), 10 SECONDS, teleportation_effect_icon, teleportation_effect_icon_state)
-	var/obj/effect/temporary/E		=	new(get_step(end, SOUTHWEST), 20 SECONDS, teleportation_effect_icon, teleportation_effect_icon_state)
-	var/obj/AN_tmp_target_holder	=	new(start)
-	var/obj/E_tmp_target_holder		=	new(end)
-	AN.color						=	teleportation_effect_color
-	E.color							=	teleportation_effect_color
-	for(var/obj/EF in list(AN, E))
-		switch(length(teleportation_effect_possition))
-			if(1)
-				EF.pixel_x			=	teleportation_effect_possition[1]
-				EF.pixel_y			=	teleportation_effect_possition[1]
-			if(2)
-				EF.pixel_x			=	teleportation_effect_possition[1]
-				EF.pixel_y			=	teleportation_effect_possition[2]
-	M.forceMove(AN_tmp_target_holder)
-	sleep(6 SECONDS)
-	M.dir = 2
-	log_admin("[M] moved to [A] ([GET_ATOMLOC_HREF_FOR(M)]) from [start] ([GET_ATOMLOC_HREF_FOR(start)])")
-	M.forceMove(E_tmp_target_holder)
-	sleep(4 SECONDS)
-	M.forceMove(end)
-	teleporing_in_progress = 0
-	qdel(AN_tmp_target_holder)
-	qdel(E_tmp_target_holder)
+/obj/item/lordwessel/proc/omious_belling()
+	for(var/mob/M in GLOB.player_list)
+		sound_to(M, teleportsound)
+		to_world(SPAN_OCCULT("You hear ominous belling, far-far away from you."))
+
+/obj/item/lordwessel/proc/teleport2(area/A, mob/T)
+	if(isliving(T))
+		var/mob/living/target = T
+		target.teleporing_in_progress = 1
+		if(!is_silent_teleporting)
+			omious_belling()
+		sleep(2 SECONDS)
+		add_ash_screen_to(target)
+		var/turf/start					=	get_turf(target)
+		var/turf/end					=	target.try_teleport(A)
+		var/obj/effect/temporary/AN		=	new(get_step(start, SOUTHWEST), 10 SECONDS, teleportation_effect_icon, teleportation_effect_icon_state)
+		var/obj/effect/temporary/E		=	new(get_step(end, SOUTHWEST), 20 SECONDS, teleportation_effect_icon, teleportation_effect_icon_state)
+		var/obj/AN_tmp_target_holder	=	new(start)
+		var/obj/E_tmp_target_holder		=	new(end)
+		AN.color						=	teleportation_effect_color
+		E.color							=	teleportation_effect_color
+		for(var/obj/EF in list(AN, E))
+			switch(length(teleportation_effect_possition))
+				if(1)
+					EF.pixel_x			=	teleportation_effect_possition[1]
+					EF.pixel_y			=	teleportation_effect_possition[1]
+				if(2)
+					EF.pixel_x			=	teleportation_effect_possition[1]
+					EF.pixel_y			=	teleportation_effect_possition[2]
+		target.forceMove(AN_tmp_target_holder)
+		sleep(4 SECONDS)
+		target.dir = 2
+		log_admin("[target] moved to [A] ([GET_ATOMLOC_HREF_FOR(target)]) from [start] ([GET_ATOMLOC_HREF_FOR(start)])")
+		target.forceMove(E_tmp_target_holder)
+		sleep(4 SECONDS)
+		target.forceMove(end)
+		target.teleporing_in_progress = 0
+		remove_ash_of(target)
+		qdel(AN_tmp_target_holder)
+		qdel(E_tmp_target_holder)
+	else
+		to_chat(T, SPAN_OCCULT("You are not living to use this thing"))
