@@ -58,7 +58,7 @@
 								U.say("My path is [targetarea.name]")
 								sleep(2 SECONDS)
 								teleport2(targetarea, U)
-								U.known_things += type
+								if(!(type in U.known_things)) U.known_things += type
 								return 1
 							else
 								to_chat(U, SPAN_OCCULT("You hear whispers: \"You won't to say as your path...\""))
