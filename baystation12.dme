@@ -3352,6 +3352,8 @@
 #include "infinity\code\modules\hydroponics\seed_packets.dm"
 #include "infinity\code\modules\hydroponics\seed_product_force_replace.dm"
 #include "infinity\code\modules\hydroponics\on_harvest_effects\_effects.dm"
+#include "infinity\code\modules\lordvessel\_lordvessel.dm"
+#include "infinity\code\modules\lordvessel\area_moving.dm"
 #include "infinity\code\modules\materials\material_sheets.dm"
 #include "infinity\code\modules\materials\reciepes.dm"
 #include "infinity\code\modules\materials\definitions\materials_other.dm"
