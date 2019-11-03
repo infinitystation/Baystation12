@@ -5,22 +5,22 @@
 	sort_category = "Xenowear"
 	flags = GEAR_HAS_COLOR_SELECTION
 
-/datum/gear/uniform/thermos
+/datum/gear/uniform/thermal
 	display_name = "thermal suit selection"
 	path = /obj/item/clothing/under
 	whitelisted = list(SPECIES_UNATHI, SPECIES_YEOSA, SPECIES_SKRELL, SPECIES_TAJARA, SPECIES_RESOMI)
 
-/datum/gear/uniform/thermos/New()
+/datum/gear/uniform/thermal/New()
 	..()
 	var/thermos = list()
-	thermos["Tajara, White thermalsuit"]= /obj/item/clothing/under/thermos/tajara
-	thermos["Tajara, Tacticool thermalsuit"]= /obj/item/clothing/under/thermos/tajara/tactic
-	thermos["Tajara, Gray thermalsuit"]= /obj/item/clothing/under/thermos/tajara/gray
-	thermos["Tajara, Black thermalsuit"]= /obj/item/clothing/under/thermos/tajara/black
-	thermos["Resomi, Black thermalsuit"]= /obj/item/clothing/under/thermos/resomi
-	thermos["Resomi, White thermalsuit"]= /obj/item/clothing/under/thermos/resomi/white
-	thermos["Skrell, Black thermalsuit"]= /obj/item/clothing/under/thermos/heat
-	thermos["Skrell, White thermalsuit"]= /obj/item/clothing/under/thermos/heat/white
-	thermos["Unati, Black thermalsuit"]= /obj/item/clothing/under/thermos/heat/unati
-	thermos["Unati, White thermalsuit"]= /obj/item/clothing/under/thermos/heat/unati/white
-	gear_tweaks += new/datum/gear_tweak/path(thermos)
+	thermos["Tajara, White thermal suit"]= /obj/item/clothing/under/thermal/tajara
+	thermos["Tajara, Tacticool thermal suit"]= /obj/item/clothing/under/thermal/tajara/tactic
+	thermos["Tajara, Gray thermal suit"]= /obj/item/clothing/under/thermal/tajara/gray
+	thermos["Tajara, Black thermal suit"]= /obj/item/clothing/under/thermal/tajara/black
+	thermos["Resomi, Black thermal suit"]= /obj/item/clothing/under/thermal/resomi
+	thermos["Resomi, White thermal suit"]= /obj/item/clothing/under/thermal/resomi/white
+	thermos["Skrell, Black thermal suit"]= /obj/item/clothing/under/thermal/heat
+	thermos["Skrell, White thermal suit"]= /obj/item/clothing/under/thermal/heat/white
+	thermos["Unati, Black thermal suit"]= /obj/item/clothing/under/thermal/heat/unati
+	thermos["Unati, White thermal suit"]= /obj/item/clothing/under/thermal/heat/unati/white
+	gear_tweaks += new/datum/gear_tweak/path(thermal)
