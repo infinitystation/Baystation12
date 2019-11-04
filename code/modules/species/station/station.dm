@@ -121,9 +121,9 @@
 	max_age = 120
 
 	burn_mod = 0.9
-	oxy_mod = 1.3
+	oxy_mod = 0.6
 	flash_mod = 1.2
-	toxins_mod = 0.8
+	toxins_mod = 0.6
 	siemens_coefficient = 1.3
 	warning_low_pressure = WARNING_LOW_PRESSURE * 1.4
 	hazard_low_pressure = HAZARD_LOW_PRESSURE * 2
