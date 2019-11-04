@@ -87,7 +87,7 @@
 	preview_icon= 'icons/mob/human_races/species/human/subspecies/tritonian_preview.dmi'
 	slowdown = 1
 
-	oxy_mod =             0.5
+	oxy_mod =             0.9
 	brute_mod =           0.8
 	toxins_mod =          1.15
 	radiation_mod =       1.15
