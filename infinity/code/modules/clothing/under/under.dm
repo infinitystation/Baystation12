@@ -223,6 +223,9 @@
 	icon_state = "thermouna_1"
 	item_state = "thermouna_1"
 	species_restricted = list(SPECIES_UNATHI)
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'infinity/icons/mob/onmob/onmob_under.dmi',
+		)
 
 /obj/item/clothing/under/thermal/heat/unati/white
 	name = "white thermal suit"
@@ -237,6 +240,9 @@
 	item_state = "thermores_1"
 	thermostat = T0C
 	species_restricted = list(SPECIES_RESOMI)
+	sprite_sheets = list(
+		SPECIES_RESOMI = 'infinity/icons/mob/onmob/onmob_under.dmi',
+		)
 
 /obj/item/clothing/under/thermal/resomi/white
 	desc = "Looks like very small suit. For children or resomi? This thermal suit is white. "
