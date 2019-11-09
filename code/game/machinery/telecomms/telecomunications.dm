@@ -338,11 +338,9 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 			//If the signal is compressed, send it to the bus.
 			relay_information(signal, /obj/machinery/telecomms/bus, 1) // ideally relay the copied information to bus units
 		else
-			// Get a list of relays that we're linked to, then send the signal to their levels.
-			relay_information(signal, /obj/machinery/telecomms/relay, 1)
 			relay_information(signal, /obj/machinery/telecomms/broadcaster, 1) // Send it to a broadcaster.
 
-
+//[INF]
 /*
 	The relay idles until it receives information. It then passes on that information
 	depending on where it came from.
@@ -400,7 +398,7 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	if(!can(signal))
 		return 0
 	return receiving
-
+//[/INF]
 /*
 	The bus mainframe idles and waits for hubs to relay them signals. They act
 	as junctions for the network.

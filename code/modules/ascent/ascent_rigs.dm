@@ -5,7 +5,15 @@
 	icon_state = "kexosuit"
 	item_state = null
 	suit_type = "support exosuit"
-	armor = list(melee = 55, bullet = 55, laser = 55, energy = 45, bomb = 75, bio = 100, rad = 100)
+	armor = list(
+		melee = ARMOR_MELEE_VERY_HIGH, 
+		bullet = ARMOR_BALLISTIC_RIFLE, 
+		laser = ARMOR_LASER_RIFLES, 
+		energy = ARMOR_ENERGY_RESISTANT, 
+		bomb = ARMOR_BOMB_RESISTANT, 
+		bio = ARMOR_BIO_SHIELDED, 
+		rad = ARMOR_RAD_SHIELDED
+	)
 	online_slowdown = 0
 	offline_slowdown = 1
 	equipment_overlay_icon = null
@@ -142,6 +150,29 @@
 	name = "mantid oxygen tank"
 	starting_pressure = list(OXYGEN = 6 * ONE_ATMOSPHERE)
 
+// Boilerplate due to hard typechecks in jetpack code. Todo: make it an extension.
+/obj/item/weapon/tank/jetpack/ascent
+	name = "catalytic maneuvering pack"
+	desc = "An integrated Ascent gas processing plant and maneuvering pack that continuously synthesises 'breathable' atmosphere and propellant."
+	sprite_sheets = list(
+		SPECIES_MANTID_GYNE =  'icons/mob/species/mantid/onmob_back_gyne.dmi',
+		SPECIES_MANTID_ALATE = 'icons/mob/species/mantid/onmob_back_alate.dmi',
+		SPECIES_NABBER =       'icons/mob/species/nabber/onmob_back_gas.dmi'
+	)
+	icon_state = "maneuvering_pack"
+	var/refill_gas_type = GAS_METHYL_BROMIDE
+	var/gas_regen_amount = 0.03
+	var/gas_regen_cap = 30
+
+/obj/item/weapon/tank/jetpack/ascent/Initialize()
+	starting_pressure = list("[refill_gas_type]" = 6 * ONE_ATMOSPHERE)
+	. = ..()
+
+/obj/item/weapon/tank/jetpack/ascent/Process()
+	..()
+	if(air_contents.total_moles < gas_regen_cap)
+		air_contents.adjust_gas(refill_gas_type, gas_regen_amount)
+
 /obj/item/weapon/tank/mantid/reactor
 	name = "mantid gas reactor"
 	desc = "A mantid gas processing plant that continuously synthesises 'breathable' atmosphere."
@@ -183,7 +214,15 @@
 // Rig definitions.
 /obj/item/weapon/rig/mantid/gyne
 	name = "gyne support exosuit"
-	armor = list(melee = 65, bullet = 70, laser = 65, energy = 55, bomb = 75, bio = 100, rad = 100)
+	armor = list(
+		melee = ARMOR_MELEE_VERY_HIGH, 
+		bullet = ARMOR_BALLISTIC_AP, 
+		laser = ARMOR_LASER_RIFLES, 
+		energy = ARMOR_ENERGY_RESISTANT, 
+		bomb = ARMOR_BOMB_RESISTANT, 
+		bio = ARMOR_BIO_SHIELDED, 
+		rad = ARMOR_RAD_SHIELDED
+	)
 	icon_override = 'icons/mob/species/mantid/onmob_back_gyne.dmi'
 	mantid_caste = SPECIES_MANTID_GYNE
 	initial_modules = list(
@@ -192,6 +231,7 @@
 		/obj/item/rig_module/electrowarfare_suite,
 		/obj/item/rig_module/chem_dispenser/mantid,
 		/obj/item/rig_module/mounted/energy_blade/mantid,
+		// /obj/item/rig_module/mounted/flechette_rifle,//inf
 		/obj/item/rig_module/mounted/particle_rifle,
 		/obj/item/rig_module/device/multitool,
 		/obj/item/rig_module/device/cable_coil,
@@ -221,6 +261,7 @@
 		/obj/item/rig_module/electrowarfare_suite,
 		/obj/item/rig_module/chem_dispenser/mantid,
 		/obj/item/rig_module/mounted/energy_blade/mantid,
+		// /obj/item/rig_module/mounted/flechette_rifle,//inf
 		/obj/item/rig_module/mounted/particle_rifle,
 		/obj/item/rig_module/device/multitool,
 		/obj/item/rig_module/device/cable_coil,

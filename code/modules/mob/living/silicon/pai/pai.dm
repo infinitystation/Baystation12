@@ -34,12 +34,12 @@
 		"Crow" = "crow"
 		)
 //[INF]
-//[_Elar_]
+	//[_Elar_]
 	var/global/list/premium_chassis = list(
 		"Human Female" = "h_female",
 		"Human Female Red" = "h_female_dead"
 		)
-//[/_Elar_]
+	//[/_Elar_]
 //[/INF]
 	var/global/list/possible_say_verbs = list(
 		"Robotic" = list("states","declares","queries"),
@@ -189,7 +189,7 @@
 
 // Procs/code after this point is used to convert the stationary pai item into a
 // mobile pai mob. This also includes handling some of the general shit that can occur
-// to it. Really this deserves its own file, but for the moment it can sit here. ~ Z
+// to it. Really this deserves its own file.
 
 /mob/living/silicon/pai/verb/fold_out()
 	set category = "pAI Commands"
@@ -312,62 +312,56 @@
 		to_chat(src, "<span class='notice'>You are now [resting ? "resting" : "getting up"]</span>")
 
 //Overriding this will stop a number of headaches down the track.
-/mob/living/silicon/pai/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/mob/living/silicon/pai/attackby(obj/item/weapon/W, mob/user)
 	//[INF]
 	if(istype(W, /obj/item/weapon/paimod))
 		var/obj/item/weapon/paimod/PMOD = W
 		if(PMOD.is_broken)
 			visible_message(SPAN_NOTICE("[user.name] tried to install [PMOD.name] in [src.name], but nothing happened."))
-			return
-		if(istype(PMOD, /obj/item/weapon/paimod/memory))
-			var/obj/item/weapon/paimod/memory/MMOD = PMOD
-			visible_message(SPAN_NOTICE("[user.name] installed [MMOD.name] in [src.name]."))
-			src.ram += MMOD.mmemory
-			to_chat(src, SPAN_NOTICE("Your ram is increased by [MMOD.mmemory]. Now your ram = [src.ram]."))
-			qdel(MMOD)
-			return
-		if(istype(PMOD, /obj/item/weapon/paimod/hack_speed))
-			var/obj/item/weapon/paimod/hack_speed/HMOD = PMOD
-			src.hack_speed += HMOD.additional_speed
-			visible_message(SPAN_NOTICE("[user.name] installed [HMOD.name] in [src.name]."))
-			to_chat(src, SPAN_NOTICE("Your hack speed is increased by [HMOD.additional_speed] times."))
-			qdel(HMOD)
-			return
-		if(istype(PMOD, /obj/item/weapon/paimod/hack_camo))
-			var/obj/item/weapon/paimod/hack_camo/CHMOD = PMOD
-			visible_message(SPAN_NOTICE("[user.name] installed [CHMOD.name] in [src.name]."))
-			src.is_hack_covered = 1
-			to_chat(src, SPAN_NOTICE("Now your hack covered."))
-			qdel(CHMOD)
-			return
-		if(istype(PMOD, /obj/item/weapon/paimod/advanced_holo))
-			var/obj/item/weapon/paimod/advanced_holo/HoloMOD = PMOD
-			visible_message(SPAN_NOTICE("[user.name] installed [HoloMOD.name] in [src.name]."))
-			src.is_advanced_holo = 1
-			if(!/mob/living/silicon/pai/proc/choose_chassis in src.verbs)
-				src.verbs += /mob/living/silicon/pai/proc/choose_chassis
-			to_chat(src, SPAN_NOTICE("Now you can choose premium chassis and change it anytime."))
-			qdel(HoloMOD)
-			return
+		else
+			if(istype(PMOD, /obj/item/weapon/paimod/memory))
+				var/obj/item/weapon/paimod/memory/MMOD = PMOD
+				visible_message(SPAN_NOTICE("[user.name] installed [MMOD.name] in [src.name]."))
+				src.ram += MMOD.mmemory
+				to_chat(src, SPAN_NOTICE("Your ram is increased by [MMOD.mmemory]. Now your ram = [src.ram]."))
+			if(istype(PMOD, /obj/item/weapon/paimod/hack_speed))
+				var/obj/item/weapon/paimod/hack_speed/HMOD = PMOD
+				src.hack_speed += HMOD.additional_speed
+				visible_message(SPAN_NOTICE("[user.name] installed [HMOD.name] in [src.name]."))
+				to_chat(src, SPAN_NOTICE("Your hack speed is increased by [HMOD.additional_speed] times."))
+			if(istype(PMOD, /obj/item/weapon/paimod/hack_camo))
+				var/obj/item/weapon/paimod/hack_camo/CHMOD = PMOD
+				visible_message(SPAN_NOTICE("[user.name] installed [CHMOD.name] in [src.name]."))
+				src.is_hack_covered = 1
+				to_chat(src, SPAN_NOTICE("Now your hack covered."))
+			if(istype(PMOD, /obj/item/weapon/paimod/advanced_holo))
+				var/obj/item/weapon/paimod/advanced_holo/HoloMOD = PMOD
+				visible_message(SPAN_NOTICE("[user.name] installed [HoloMOD.name] in [src.name]."))
+				src.is_advanced_holo = 1
+				if(!/mob/living/silicon/pai/proc/choose_chassis in src.verbs)
+					src.verbs += /mob/living/silicon/pai/proc/choose_chassis
+				to_chat(src, SPAN_NOTICE("Now you can choose premium chassis and change it anytime."))
+			qdel(PMOD)
 	//[/INF]
 	var/obj/item/weapon/card/id/card = W.GetIdCard()
-	if(card)
+	if(card && user.a_intent == I_HELP)
 		var/list/new_access = card.GetAccess()
 		src.idcard.access = new_access
-		visible_message("<span class='notice'>[user.name] slides [W] across [src].</span>")
+		visible_message("<span class='notice'>[user] slides [W] across [src].</span>")
 		to_chat(src, SPAN_NOTICE("Your access has been updated!"))
+		return FALSE // don't continue processing click callstack.
 	if(W.force)
-		visible_message("<span class='danger'>[user.name] attacks [src] with [W]!</span>")
+		visible_message("<span class='danger'>[user] attacks [src] with [W]!</span>")
 		src.adjustBruteLoss(W.force)
 		src.updatehealth()
 	else
-		visible_message("<span class='warning'>[user.name] bonks [src] harmlessly with [W].</span>")
+		visible_message("<span class='warning'>[user] bonks [src] harmlessly with [W].</span>")
 	spawn(1)
 		if(stat != 2) close_up()
 	return
 
 /mob/living/silicon/pai/attack_hand(mob/user as mob)
-	visible_message("<span class='danger'>[user.name] boops [src] on the head.</span>")
+	visible_message("<span class='danger'>[user] boops [src] on the head.</span>")
 	close_up()
 
 //I'm not sure how much of this is necessary, but I would rather avoid issues.

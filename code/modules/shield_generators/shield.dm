@@ -5,7 +5,6 @@
 	icon_state = "shield_normal"
 	alpha = 100
 	anchored = 1
-	plane = ABOVE_HUMAN_PLANE
 	layer = ABOVE_HUMAN_LAYER
 	density = 1
 	invisibility = 0

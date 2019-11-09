@@ -13,7 +13,7 @@
 	allowed_roles = null //INF, WAS: RESTRICTED_ROLES
 
 /datum/gear/uniform/roboticist_skirt
-	allowed_roles = list(/datum/job/roboticist, /datum/job/biomech)
+	allowed_roles = list(/datum/job/roboticist)
 
 /datum/gear/uniform/suit
 	allowed_roles = null //INF, WAS: FORMAL_ROLES
@@ -75,6 +75,7 @@
 
 /datum/gear/uniform/corp_flight
 	allowed_roles = list(/datum/job/nt_pilot)
+	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/uniform/corp_exec
 	allowed_roles = list(/datum/job/liaison)

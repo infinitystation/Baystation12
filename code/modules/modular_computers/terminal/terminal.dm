@@ -4,12 +4,11 @@
 	var/datum/browser/panel
 	var/list/history = list()
 	var/list/history_max_length = 20
-	var/obj/item/modular_computer/computer
-	//[inf]
-	var/datum/computer_file/data/setted_file
-	//[/inf]
+	var/datum/extension/interactive/ntos/computer
 
-/datum/terminal/New(mob/user, obj/item/modular_computer/computer)
+	var/datum/computer_file/data/setted_file//inf
+
+/datum/terminal/New(mob/user, datum/extension/interactive/ntos/computer)
 	..()
 	src.computer = computer
 	if(user && can_use(user))
@@ -31,7 +30,7 @@
 		return FALSE
 	if(!CanInteractWith(user, computer, GLOB.default_state))
 		return FALSE
-	if(!computer || !computer.enabled)
+	if(!computer || !computer.on)
 		return FALSE
 	return TRUE
 

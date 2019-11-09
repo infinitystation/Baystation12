@@ -1,10 +1,13 @@
 /obj/effect/overmap/sector/exoplanet/garbage
-	name = "settled exoplanet"
+	name = "ruined exoplanet"
 	desc = "An arid exoplanet with unnatural formations covering the surface. Hotspots of radiation detected."
 	color = "#a5a18b"
 	planetary_area = /area/exoplanet/garbage
 	map_generators = list(/datum/random_map/noise/exoplanet/garbage, /datum/random_map/noise/ore/poor)
 	ruin_tags_whitelist = RUIN_ALIEN|RUIN_NATURAL|RUIN_WRECK
+	plant_colors = list("#efdd6f","#7b4a12","#e49135","#ba6222","#5c755e","#120309")
+	surface_color = "#a5a18b"
+	water_color = null
 
 /obj/effect/overmap/sector/exoplanet/garbage/generate_map()
 	if(prob(50))
@@ -32,12 +35,16 @@
 	..()
 	A.faction = "Guardian" //stops bots form hitting each other
 
+/obj/effect/overmap/sector/exoplanet/garbage/get_base_image()
+	var/image/I = ..()
+	I.overlays += image('icons/skybox/planet.dmi', "ruins")
+	return I
+
 /datum/random_map/noise/exoplanet/garbage
 	descriptor = "garbage exoplanet"
 	smoothing_iterations = 4
 	land_type = /turf/simulated/floor/exoplanet/desert
-	plantcolors = list("#efdd6f","#7b4a12","#e49135","#ba6222","#5c755e","#120309")
-	flora_prob = 1
+	flora_prob = 0.5
 	large_flora_prob = 0
 	flora_diversity = 2
 	fauna_types = list(/mob/living/simple_animal/hostile/hivebot, /mob/living/simple_animal/hostile/hivebot/range, /mob/living/simple_animal/hostile/viscerator/hive)
@@ -63,6 +70,7 @@
 			var/datum/radiation_source/S = new(T, 2*fallout, FALSE)
 			S.range = 4
 			SSradiation.add_source(S)
+			T.set_light(0.4, 1, 2, l_color = PIPE_COLOR_GREEN)
 		if(prob(0.02))
 			var/datum/artifact_find/A = new()
 			new A.artifact_find_type(T)

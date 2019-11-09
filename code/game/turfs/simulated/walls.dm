@@ -48,7 +48,6 @@
 
 /turf/simulated/wall/Destroy()
 	STOP_PROCESSING(SSturf, src)
-	dismantle_wall(null,null,1)
 	. = ..()
 
 // Walls always hide the stuff below them.
@@ -121,10 +120,7 @@
 
 //Appearance
 /turf/simulated/wall/examine(mob/user)
-	. = ..(user)
-
-	if(!.)
-		return
+	. = ..()
 
 	if(!damage)
 		to_chat(user, "<span class='notice'>It looks fully intact.</span>")

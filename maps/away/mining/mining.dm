@@ -16,6 +16,14 @@
 	)
 	known = 0
 
+/obj/effect/overmap/sector/cluster/generate_skybox()
+	return overlay_image('icons/skybox/rockbox.dmi', "rockbox", COLOR_ASTEROID_ROCK, RESET_COLOR)
+
+/obj/effect/overmap/sector/cluster/get_skybox_representation()
+	var/image/res = overlay_image('icons/skybox/rockbox.dmi', "rockbox", COLOR_ASTEROID_ROCK, RESET_COLOR)
+	res.transform *= 0.5
+	return res
+
 /datum/map_template/ruin/away_site/mining_asteroid
 	name = "Mining - Asteroid"
 	id = "awaysite_mining_asteroid"
@@ -79,6 +87,14 @@
 	)
 	known = 0
 
+/obj/effect/overmap/sector/away/generate_skybox()
+	return overlay_image('icons/skybox/rockbox.dmi', "rockbox", COLOR_ASTEROID_ROCK, RESET_COLOR)
+
+/obj/effect/overmap/sector/away/get_skybox_representation()
+	var/image/res = overlay_image('icons/skybox/rockbox.dmi', "rockbox", COLOR_ASTEROID_ROCK, RESET_COLOR)
+	res.transform *= 0.3
+	return res
+
 /datum/map_template/ruin/away_site/mining_signal
 	name = "Mining - Planetoid"
 	id = "awaysite_mining_signal"
@@ -141,6 +157,12 @@
 	)
 	known = 0
 
+/obj/effect/overmap/sector/orb/get_skybox_representation()
+	var/image/res = overlay_image('icons/skybox/skybox_rock_128.dmi', "bigrock", COLOR_ASTEROID_ROCK, RESET_COLOR)
+	res.pixel_x = rand(256,512)
+	res.pixel_y = rand(256,512)
+	return res
+
 /datum/map_template/ruin/away_site/orb
 	name = "Mining - Orb"
 	id = "awaysite_mining_orb"
@@ -201,9 +223,9 @@
 	. = ..()
 	number = rand(10,99)
 
-/obj/structure/totem/examine()
-	..()
-	to_chat(usr, "It's been engraved with the symbols '<font face='Shage'>RWH QaG [number]</font>'.") //i am not a linguist
+/obj/structure/totem/examine(mob/user)
+	. = ..()
+	to_chat(user, "It's been engraved with the symbols '<font face='Shage'>RWH QaG [number]</font>'.") //i am not a linguist
 
 
 /obj/item/weapon/stool/stone/New(var/newloc)

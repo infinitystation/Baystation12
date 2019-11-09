@@ -38,6 +38,10 @@
 		has_gravity = 0
 	power_change()		// all machines set to current power level, also updates lighting icon
 
+/area/Destroy()
+	..()
+	return QDEL_HINT_HARDDEL
+
 // Changes the area of T to A. Do not do this manually.
 // Area is expected to be a non-null instance.
 /proc/ChangeArea(var/turf/T, var/area/A)

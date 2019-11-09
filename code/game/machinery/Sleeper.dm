@@ -33,46 +33,15 @@
 	. = ..()
 	if(populate_parts)
 		beaker = new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
-/*
-//[inf]
-		install_component(/obj/item/weapon/stock_parts/circuitboard/sleeper)
-		install_component(/obj/item/weapon/stock_parts/scanning_module)
-		install_component(/obj/item/weapon/stock_parts/manipulator)
-		install_component(/obj/item/weapon/stock_parts/manipulator)
-		install_component(/obj/item/weapon/stock_parts/console_screen)
-		install_component(/obj/item/weapon/reagent_containers/syringe)
-		install_component(/obj/item/weapon/reagent_containers/syringe)
-//[/inf]
-*/
 	update_icon()
-/*
-//[inf]
-/obj/machinery/sleeper/RefreshParts()
-	var/U = 0
 
-	for(var/obj/item/weapon/stock_parts/P in component_parts)
-		if(istype(P, /obj/item/weapon/stock_parts/manipulator))
-			U += P.rating
-		if(istype(P, /obj/item/weapon/stock_parts/scanning_module))
-			U += P.rating
-
-	switch(U)
-		if(0 to 5)
-			available_chemicals = list("Inaprovaline" = /datum/reagent/inaprovaline, "Soporific" = /datum/reagent/soporific, "Paracetamol" = /datum/reagent/paracetamol, "Dylovene" = /datum/reagent/dylovene, "Dexalin" = /datum/reagent/dexalin)
-		if(6 to 8)
-			available_chemicals = list("Inaprovaline" = /datum/reagent/inaprovaline, "Soporific" = /datum/reagent/soporific, "Tramadol" = /datum/reagent/tramadol, "Dylovene" = /datum/reagent/dylovene, "Hyronalin" = /datum/reagent/hyronalin, "Dexalin" = /datum/reagent/dexalin, "Kelotane" = /datum/reagent/kelotane)
-		else
-			available_chemicals = list("Inaprovaline" = /datum/reagent/inaprovaline, "Soporific" = /datum/reagent/soporific, "Tramadol" = /datum/reagent/tramadol, "Dylovene" = /datum/reagent/dylovene, "Arithrazine" = /datum/reagent/arithrazine, "Dexalin Plus" = /datum/reagent/dexalinp, "Dermaline" = /datum/reagent/dermaline, "Bicaridine" = /datum/reagent/bicaridine, "Alkysine" = /datum/reagent/alkysine)
-	..()
-//[/inf]
-*/
-/obj/machinery/sleeper/examine(mob/user)
+/obj/machinery/sleeper/examine(mob/user, distance)
 	. = ..()
-	if (. && user.Adjacent(src))
+	if (distance <= 1)
 		if (beaker)
 			to_chat(user, "It is loaded with a beaker.")
 		if(occupant)
-			occupant.examine(user)
+			occupant.examine(arglist(args))
 		if (emagged && user.skill_check(SKILL_MEDICAL, SKILL_EXPERT))
 			to_chat(user, "The sleeper chemical synthesis controls look tampered with.")
 

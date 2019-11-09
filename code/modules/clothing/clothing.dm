@@ -632,8 +632,7 @@ BLIND     // can't see anything
 		QDEL_NULL(attached_cuffs)
 
 /obj/item/clothing/shoes/examine(mob/user)
-	if (!(. = ..()))
-		return
+	. = ..()
 	if (attached_cuffs)
 		to_chat(user, SPAN_WARNING("They are connected by \the [attached_cuffs]."))
 	if (hidden_item)
@@ -767,7 +766,6 @@ BLIND     // can't see anything
 	var/fire_resist = T0C+100
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	allowed = list(/obj/item/weapon/tank/emergency)
-	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
 	slot_flags = SLOT_OCLOTHING
 	blood_overlay_type = "suit"
 	siemens_coefficient = 0.9
@@ -822,7 +820,6 @@ BLIND     // can't see anything
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	permeability_coefficient = 0.90
 	slot_flags = SLOT_ICLOTHING
-	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
 	w_class = ITEM_SIZE_NORMAL
 	force = 0
 	var/has_sensor = SUIT_HAS_SENSORS //For the crew computer 2 = unable to change mode
@@ -862,6 +859,11 @@ BLIND     // can't see anything
 		verbs -= /obj/item/clothing/under/verb/rollsuit
 	if(rolled_sleeves == -1)
 		verbs -= /obj/item/clothing/under/verb/rollsleeves
+
+/obj/item/clothing/under/inherit_custom_item_data(var/datum/custom_item/citem)
+	. = ..()
+	worn_state = icon_state
+	update_rolldown_status()
 
 /obj/item/clothing/under/proc/get_gender_suffix(var/suffix = "_s")
 	. = suffix
@@ -960,7 +962,7 @@ BLIND     // can't see anything
 
 
 /obj/item/clothing/under/examine(mob/user)
-	. = ..(user)
+	. = ..()
 	switch(src.sensor_mode)
 		if(0)
 			to_chat(user, "Its sensors appear to be disabled.")

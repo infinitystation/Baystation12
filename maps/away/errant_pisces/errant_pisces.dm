@@ -87,7 +87,6 @@
 	icon = 'maps/away/errant_pisces/errant_pisces_sprites.dmi'
 	icon_state = "net_f"
 	anchored = 1
-	plane = ABOVE_TURF_PLANE//on the floor
 	layer = CATWALK_LAYER//probably? Should cover cables, pipes and the rest of objects that are secured on the floor
 	var/health = 100
 
@@ -102,14 +101,14 @@ obj/structure/net/Initialize(var/mapload)
 					continue
 				N.update_connections()
 
-/obj/structure/net/examine()
-	..()
+/obj/structure/net/examine(mob/user)
+	. = ..()
 	if (health < 20)
-		to_chat(usr, "\The [src] is barely hanging on a few last threads.")
+		to_chat(user, "\The [src] is barely hanging on a few last threads.")
 	else if (health < 50)
-		to_chat(usr, "Many ribbons of \the [src] are cut away.")
+		to_chat(user, "Many ribbons of \the [src] are cut away.")
 	else if (health < 90)
-		to_chat(usr, "Few ribbons of \the [src] are cut away.")
+		to_chat(user, "Few ribbons of \the [src] are cut away.")
 
 /obj/structure/net/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/weapon/material)) //sharp objects can cut thorugh
@@ -148,7 +147,6 @@ obj/structure/net/Initialize(var/mapload)
 /obj/structure/net/net_wall
 	icon_state = "net_w"
 	density = 1
-	plane = ABOVE_HUMAN_PLANE
 	layer = ABOVE_HUMAN_LAYER
 
 /obj/structure/net/net_wall/Initialize(var/mapload)

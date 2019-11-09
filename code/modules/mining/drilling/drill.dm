@@ -3,7 +3,6 @@
 	anchored = 0
 	use_power = POWER_USE_OFF //The drill takes power directly from a cell.
 	density = 1
-	plane = ABOVE_HUMAN_PLANE
 	layer = ABOVE_HUMAN_LAYER //So it draws over mobs in the tile north of it.
 	construct_state = /decl/machine_construction/default/panel_closed
 	uncreated_component_parts = null
@@ -264,6 +263,7 @@
 	desc = "A machinery brace for an industrial drill. It looks easily two feet thick."
 	icon_state = "mining_brace"
 	obj_flags = OBJ_FLAG_ROTATABLE
+	interact_offline = 1
 
 	var/obj/machinery/mining/drill/connected
 

@@ -310,7 +310,17 @@
 						continue
 					to_chat(M, "<span class='subtle'><b>\The [src]</b> looks at \the [A].</span>")
 
-	A.examine(src)
+	var/distance = INFINITY
+	if(isghost(src) || stat == DEAD)
+		distance = 0
+	else
+		var/turf/source_turf = get_turf(src)
+		var/turf/target_turf = get_turf(A)
+		if(source_turf && source_turf.z == target_turf?.z)
+			distance = get_dist(source_turf, target_turf)
+
+	if(!A.examine(src, distance))
+		crash_with("Improper /examine() override: [log_info_line(A)]")
 
 /mob/verb/pointed(atom/A as mob|obj|turf in view())
 	set name = "Point To"
@@ -610,6 +620,8 @@
 				stat("Master Controller:", "ERROR")
 			if(Failsafe)
 				Failsafe.stat_entry()
+			else if (Master.initializing)
+				stat("Failsafe Controller:", "Waiting for MC")
 			else
 				stat("Failsafe Controller:", "ERROR")
 			if(Master)
@@ -680,7 +692,7 @@
 
 /mob/proc/reset_layer()
 	if(lying)
-		plane = LYING_MOB_PLANE
+		plane = DEFAULT_PLANE
 		layer = LYING_MOB_LAYER
 	else
 		reset_plane_and_layer()

@@ -82,7 +82,8 @@
 
 
 /turf/simulated/open/examine(mob/user, distance, infix, suffix)
-	if(..(user, 2))
+	. = ..()
+	if(distance <= 2)
 		var/depth = 1
 		for(var/T = GetBelow(src); isopenspace(T); T = GetBelow(T))
 			depth += 1
@@ -95,6 +96,9 @@
 * Update icon and overlays of open space to be that of the turf below, plus any visible objects on that turf.
 */
 /turf/simulated/open/on_update_icon()
+	
+	update_flood_overlay()
+	
 	overlays.Cut()
 	underlays.Cut()
 	var/turf/below = GetBelow(src)

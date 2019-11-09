@@ -91,8 +91,7 @@ GLOBAL_LIST_INIT(surgery_tool_exception_cache, new)
 					open_threshold = SURGERY_RETRACTED
 				else if(surgery_candidate_flags & SURGERY_NEEDS_ENCASEMENT)
 					open_threshold = (affected.encased ? SURGERY_ENCASED : SURGERY_RETRACTED)
-				if(open_threshold                                                      && \
-				 ((strict_access_requirement && affected.how_open() != open_threshold) || \
+				if(open_threshold && ((strict_access_requirement && affected.how_open() != open_threshold) || \
 				 affected.how_open() < open_threshold))
 					return FALSE
 			return affected
@@ -128,7 +127,7 @@ GLOBAL_LIST_INIT(surgery_tool_exception_cache, new)
 	. = tool_quality(tool)
 	if(user == target)
 		. -= 10
-	
+
 	var/skill_reqs = get_skill_reqs(user, target, tool)
 	for(var/skill in skill_reqs)
 		var/penalty = delicate ? 40 : 20

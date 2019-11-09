@@ -671,6 +671,7 @@
 	products = list(/obj/item/weapon/reagent_containers/food/drinks/coffee = 15,
 					/obj/item/weapon/reagent_containers/food/drinks/tea/black = 15,
 					/obj/item/weapon/reagent_containers/food/drinks/tea/green = 15,
+					/obj/item/weapon/reagent_containers/food/drinks/tea/chai = 15,
 					/obj/item/weapon/reagent_containers/food/drinks/h_chocolate = 10,
 					/obj/item/weapon/reagent_containers/food/condiment/small/packet/sugar = 25,
 					/obj/item/weapon/reagent_containers/pill/pod/cream = 25,
@@ -682,6 +683,7 @@
 	prices = list(/obj/item/weapon/reagent_containers/food/drinks/coffee = 10,
 				  /obj/item/weapon/reagent_containers/food/drinks/tea/black = 10,
 				  /obj/item/weapon/reagent_containers/food/drinks/tea/green = 10,
+				  /obj/item/weapon/reagent_containers/food/drinks/tea/chai = 10,
 				  /obj/item/weapon/reagent_containers/food/drinks/h_chocolate = 15,
 				  /obj/item/weapon/reagent_containers/food/condiment/small/packet/sugar = 1,
 				  /obj/item/weapon/reagent_containers/pill/pod/cream = 5,
@@ -758,6 +760,7 @@
 	base_type = /obj/machinery/vending/fitness
 	products = list(/obj/item/weapon/reagent_containers/food/drinks/milk/smallcarton = 8,
 					/obj/item/weapon/reagent_containers/food/drinks/milk/smallcarton/chocolate = 8,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 8,
 					/obj/item/weapon/reagent_containers/food/drinks/glass2/fitnessflask/proteinshake = 8,
 					/obj/item/weapon/reagent_containers/food/drinks/glass2/fitnessflask = 8,
 					/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 8,
@@ -769,6 +772,7 @@
 
 	prices = list(/obj/item/weapon/reagent_containers/food/drinks/milk/smallcarton = 3,
 					/obj/item/weapon/reagent_containers/food/drinks/milk/smallcarton/chocolate = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 2,
 					/obj/item/weapon/reagent_containers/food/drinks/glass2/fitnessflask/proteinshake = 20,
 					/obj/item/weapon/reagent_containers/food/drinks/glass2/fitnessflask = 5,
 					/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 5,
@@ -1285,11 +1289,11 @@
 	icon_deny = "games-deny"
 	icon_vend = "games-vend"
 	base_type = /obj/machinery/vending/games
-	products = list(/obj/item/toy/blink = 5, /obj/item/toy/eightball = 8,/obj/item/weapon/deck/cards = 5,/obj/item/weapon/deck/tarot = 5,/obj/item/weapon/pack/cardemon = 6,/obj/item/weapon/pack/spaceball = 6,/obj/item/weapon/storage/pill_bottle/dice_nerd = 5,/obj/item/weapon/storage/pill_bottle/dice = 5,/obj/item/weapon/storage/box/checkers = 2,/obj/item/weapon/storage/box/checkers/chess/red = 2,/obj/item/weapon/storage/box/checkers/chess = 2, /obj/item/weapon/board = 2,\
-					/obj/item/toy/plushie/nymph = 5,/obj/item/toy/plushie/mouse = 5,/obj/item/toy/plushie/kitten = 5,/obj/item/toy/plushie/lizard = 5,/obj/item/toy/plushie/spider = 5,/obj/item/toy/plushie/farwa = 5)//inf
-	prices = list(/obj/item/toy/blink = 3,/obj/item/toy/eightball = 10,/obj/item/weapon/deck/tarot = 3,/obj/item/weapon/deck/cards = 3,/obj/item/weapon/pack/cardemon = 5,/obj/item/weapon/pack/spaceball = 5,/obj/item/weapon/storage/pill_bottle/dice_nerd = 6,/obj/item/weapon/storage/pill_bottle/dice = 6,/obj/item/weapon/storage/box/checkers = 10,/obj/item/weapon/storage/box/checkers/chess/red = 10,/obj/item/weapon/storage/box/checkers/chess = 10, /obj/item/weapon/board = 2, /obj/item/weapon/board = 2,\
-				/obj/item/toy/plushie/nymph = 10,/obj/item/toy/plushie/mouse = 10,/obj/item/toy/plushie/kitten = 10,/obj/item/toy/plushie/lizard = 10,/obj/item/toy/plushie/spider = 10,/obj/item/toy/plushie/farwa = 10)//inf
-	premium = list(/obj/item/weapon/gun/projectile/revolver/capgun = 1, /obj/item/ammo_magazine/caps = 4)
+	products = list(/obj/item/toy/blink = 5, /obj/item/toy/eightball = 8, /obj/item/weapon/deck/cards = 5, /obj/item/weapon/deck/tarot = 5, /obj/item/weapon/pack/cardemon = 6, /obj/item/weapon/pack/spaceball = 6, /obj/item/weapon/storage/pill_bottle/dice_nerd = 5, /obj/item/weapon/storage/pill_bottle/dice = 5, /obj/item/weapon/storage/box/checkers = 2, /obj/item/weapon/storage/box/checkers/chess/red = 2, /obj/item/weapon/storage/box/checkers/chess = 2, /obj/item/weapon/board = 2,\
+																																																																																																																									/obj/item/toy/plushie/nymph = 5,/obj/item/toy/plushie/mouse = 5,/obj/item/toy/plushie/kitten = 5,/obj/item/toy/plushie/lizard = 5,/obj/item/toy/plushie/spider = 5,/obj/item/toy/plushie/farwa = 5)//inf
+	prices = list(/obj/item/toy/blink = 3, /obj/item/toy/eightball = 10, /obj/item/weapon/deck/tarot = 3, /obj/item/weapon/deck/cards = 3, /obj/item/weapon/pack/cardemon = 5, /obj/item/weapon/pack/spaceball = 5, /obj/item/weapon/storage/pill_bottle/dice_nerd = 6, /obj/item/weapon/storage/pill_bottle/dice = 6, /obj/item/weapon/storage/box/checkers = 10, /obj/item/weapon/storage/box/checkers/chess/red = 10, /obj/item/weapon/storage/box/checkers/chess = 10, /obj/item/weapon/board = 2,\
+																																																																																																																										/obj/item/toy/plushie/nymph = 10,/obj/item/toy/plushie/mouse = 10,/obj/item/toy/plushie/kitten = 10,/obj/item/toy/plushie/lizard = 10,/obj/item/toy/plushie/spider = 10,/obj/item/toy/plushie/farwa = 10)//inf
+	premium = list(/obj/item/weapon/spirit_board = 1, /obj/item/weapon/gun/projectile/revolver/capgun = 1, /obj/item/ammo_magazine/caps = 4)
 	contraband = list(/obj/item/weapon/reagent_containers/spray/waterflower = 2, /obj/item/weapon/storage/box/snappops = 3)
 	restockable = 0 //inf
 

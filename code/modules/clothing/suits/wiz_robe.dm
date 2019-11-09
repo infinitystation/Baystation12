@@ -59,9 +59,17 @@
 	item_state = "wizard"
 	gas_transfer_coefficient = 0.01 // IT'S MAGICAL OKAY JEEZ +1 TO NOT DIE
 	permeability_coefficient = 0.01
-	armor = list(melee = 30, bullet = 20, laser = 20,energy = 20, bomb = 20, bio = 20, rad = 10)
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	flags_inv = HIDEJUMPSUIT
+	armor = list(
+		melee = ARMOR_MELEE_RESISTANT, 
+		bullet = ARMOR_BALLISTIC_MINOR, 
+		laser = ARMOR_LASER_SMALL,
+		energy = ARMOR_ENERGY_SMALL, 
+		bomb = ARMOR_BOMB_PADDED, 
+		bio = ARMOR_BIO_MINOR, 
+		rad = ARMOR_RAD_MINOR
+		)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS//inf
+	flags_inv = HIDEJUMPSUIT//inf
 	allowed = list(/obj/item/weapon/teleportation_scroll)
 	siemens_coefficient = 0.8
 	wizard_garb = 1

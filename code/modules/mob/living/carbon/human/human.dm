@@ -4,9 +4,10 @@
 	voice_name = "unknown"
 	icon = 'icons/mob/human.dmi'
 	icon_state = "body_m_s"
-	throw_range = 3 //NO TILSON
+//[INF]
+	throw_range = 3 //NO TILSON //:KREYGASM:
 	throw_speed = 0.5
-
+//[/INF]
 	var/list/hud_list[10]
 	var/embedded_flag	  //To check if we've need to roll for damage on movement while an item is imbedded in us.
 	var/obj/item/weapon/rig/wearing_rig // This is very not good, but it's much much better than calling get_rig() every update_canmove() call.
@@ -366,10 +367,11 @@
 	var/total_damage = 0
 
 	for(var/obj/item/organ/external/E in to_shock)
-		if (BP_IS_ROBOTIC(E))
-			total_damage += ..(shock_damage, E.organ_tag, base_siemens_coeff * get_siemens_coefficient_organ(E) * 4)
-		else
-			total_damage += ..(shock_damage, E.organ_tag, base_siemens_coeff * get_siemens_coefficient_organ(E))
+		total_damage += ..(shock_damage, E.organ_tag, base_siemens_coeff * get_siemens_coefficient_organ(E))
+
+	if(total_damage > 10)
+		local_emp(initial_organ, 3)
+
 	return total_damage
 
 /mob/living/carbon/human/proc/trace_shock(var/obj/item/organ/external/init, var/obj/item/organ/external/floor)
@@ -392,6 +394,18 @@
 				return traced_organs
 
 	return traced_organs
+
+/mob/living/carbon/human/proc/local_emp(var/list/limbs, var/severity = 2)
+	if(!islist(limbs))
+		limbs = list(limbs)
+
+	var/list/EMP = list()
+	for(var/obj/item/organ/external/limb in limbs)
+		EMP += limb
+		EMP += limb.internal_organs
+		EMP += limb.implants
+	for(var/atom/E in EMP)
+		E.emp_act(severity)
 
 /mob/living/carbon/human/Topic(href, href_list)
 
@@ -952,6 +966,16 @@
 
 /mob/living/carbon/human/clean_blood(var/clean_feet)
 	.=..()
+	if(gloves)
+		if(gloves.clean_blood())
+			update_inv_gloves(1)
+		gloves.germ_level = 0
+	else
+		if(!isnull(bloody_hands))
+			bloody_hands = null
+			update_inv_gloves(1)
+		germ_level = 0
+
 	for(var/obj/item/organ/external/organ in organs)
 		if(clean_feet || (organ.organ_tag in list(BP_L_HAND,BP_R_HAND)))
 			organ.gunshot_residue = null
@@ -1775,3 +1799,30 @@
 	. = ..()
 	for(var/obj/item/clothing/ears/C in list(l_ear, r_ear))
 		. = min(., C.volume_multiplier)
+
+/mob/living/carbon/human/handle_pull_damage(mob/living/puller)
+	. = ..()
+	if(.)
+		drip(1)
+
+/mob/living/carbon/human/get_bullet_impact_effect_type(var/def_zone)
+	var/obj/item/organ/external/E = get_organ(def_zone)
+	if(!E || E.is_stump())
+		return BULLET_IMPACT_NONE
+	if(BP_IS_ROBOTIC(E))
+		return BULLET_IMPACT_METAL
+	return BULLET_IMPACT_MEAT
+
+/mob/living/carbon/human/bullet_impact_visuals(var/obj/item/projectile/P, var/def_zone, var/damage)
+	..()
+	switch(get_bullet_impact_effect_type(def_zone))
+		if(BULLET_IMPACT_MEAT)
+			if(damage && P.damtype == BRUTE)
+				var/hit_dir = get_dir(P.starting, src)
+				var/obj/effect/decal/cleanable/blood/B = blood_splatter(get_step(src, hit_dir), src, 1, hit_dir)
+				B.icon_state = pick("dir_splatter_1","dir_splatter_2")
+				var/scale = min(1, round(P.damage / 50, 0.2))
+				var/matrix/M = new()
+				B.transform = M.Scale(scale)
+
+				new /obj/effect/temp_visual/bloodsplatter(loc, hit_dir, species.blood_color)

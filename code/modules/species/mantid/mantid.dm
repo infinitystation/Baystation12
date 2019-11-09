@@ -107,6 +107,12 @@
 		/datum/mob_descriptor/body_length = -2
 		)
 
+	pain_emotes_with_pain_level = list(
+			list(/decl/emote/visible/ascent_shine, /decl/emote/visible/ascent_dazzle) = 80,
+			list(/decl/emote/visible/ascent_glimmer, /decl/emote/visible/ascent_pulse) = 50,
+			list(/decl/emote/visible/ascent_flicker, /decl/emote/visible/ascent_glint) = 20,
+		)
+
 /datum/species/mantid/handle_sleeping(var/mob/living/carbon/human/H)
 	return
 
@@ -165,10 +171,11 @@
 	)
 
 /datum/species/mantid/gyne/attempt_grab(var/mob/living/carbon/human/grabber, var/mob/living/target)
-	grabber.unEquip(grabber.l_hand)
-	grabber.unEquip(grabber.r_hand)
-	to_chat(grabber, SPAN_WARNING("You drop everything as you seize \the [target]!"))
-	playsound(grabber.loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
+	if(grabber != target)
+		grabber.unEquip(grabber.l_hand)
+		grabber.unEquip(grabber.r_hand)
+		to_chat(grabber, SPAN_WARNING("You drop everything as you seize \the [target]!"))
+		playsound(grabber.loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
 	. = ..(grabber, target, GRAB_NAB)
 
 /datum/species/mantid/gyne/New()

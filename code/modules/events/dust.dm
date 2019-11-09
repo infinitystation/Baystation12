@@ -23,7 +23,7 @@ The "dust" will damage the hull of the station causin minor hull breaches.
 //	command_announcement.Announce("The [location_name()] has now passed through the belt of space dust.", "Сенсоры [location_name()]", zlevels = affecting_z)
 	priority_announcement.Announce("Объект [location_name()] покинул зону скопления космической пыли.", "Сенсоры [location_name()]", zlevels = affecting_z)
 
-/proc/dust_swarm(var/strength = EVENT_LEVEL_MUNDANE, var/list/zlevels = GLOB.using_map.station_levels)
+/proc/dust_swarm(var/strength = EVENT_LEVEL_MUNDANE, var/list/zlevels)
 	var/numbers = rand(strength * 10, strength * 15)
 
 	var/start_dir = pick(GLOB.cardinal)

@@ -6,11 +6,6 @@
 	var/tmp/ao_neighbors
 	var/ao_queued = AO_UPDATE_NONE
 
-/turf/Initialize(mapload)
-	. = ..()
-	if (mapload && permit_ao)
-		queue_ao()
-
 /turf/set_density(var/new_density)
 	var/last_density = density
 	..()
@@ -41,7 +36,7 @@
 	I.blend_mode = BLEND_OVERLAY
 	I.appearance_flags = RESET_ALPHA|RESET_COLOR|TILE_BOUND
 	I.layer = AO_LAYER
-	I.plane = ABOVE_TURF_PLANE
+	I.plane = DEFAULT_PLANE
 	// If there's an offset, counteract it.
 	if (px || py || pz || pw)
 		I.pixel_x = -px

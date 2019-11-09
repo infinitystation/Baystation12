@@ -215,10 +215,8 @@
 
 /mob/living/carbon/human/reset_layer()
 	if(hiding)
-		plane = HIDING_MOB_PLANE
 		layer = HIDING_MOB_LAYER
 	else if(lying)
-		plane = LYING_HUMAN_PLANE
 		layer = LYING_HUMAN_LAYER
 	else
 		..()
@@ -237,8 +235,14 @@
 			E.damage += rand(1, 2)
 			if(E.damage > 12)
 				eye_blurry += rand(3,6)
+		if(FLASH_PROTECTION_MINOR)
+			to_chat(src, "<span class='warning'>Your eyes stings!</span>")
+			E.damage += rand(1, 4)
+			if(E.damage > 10)
+				eye_blurry += rand(3,6)
+				E.damage += rand(1, 4)
 		if(FLASH_PROTECTION_NONE)
-			to_chat(src, "<span class='warning'>Your eyes burn.</span>")
+			to_chat(src, "<span class='warning'>Your eyes burn!</span>")
 			E.damage += rand(2, 4)
 			if(E.damage > 10)
 				E.damage += rand(4,10)

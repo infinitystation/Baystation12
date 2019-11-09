@@ -67,7 +67,8 @@ var/list/admin_verbs_admin = list(
 //INF	/client/proc/cmd_admin_rejuvenate,
 	/client/proc/toggleghostwriters,
 	/client/proc/toggledrones,
-	/client/proc/check_customitem_activity,
+	/datum/admins/proc/show_skills,
+	/client/proc/check_customitem_activity, //inf
 	/client/proc/man_up,
 	/client/proc/global_man_up,
 	/client/proc/response_team, // Response Teams admin verb,
@@ -161,9 +162,9 @@ var/list/admin_verbs_server = list(
 	/datum/admins/proc/adjump,
 	/datum/admins/proc/toggle_space_ninja,
 	/client/proc/toggle_random_events,
-	/client/proc/check_customitem_activity,
 	/client/proc/nanomapgen_DumpImage,
 //[INF],
+	/client/proc/check_customitem_activity,
 	/client/proc/cmd_toggle_admin_help,
 	/client/proc/observe_delay,
 	/datum/admins/proc/toggleevent,
@@ -190,6 +191,7 @@ var/list/admin_verbs_debug = list(
 	/client/proc/apply_random_map,
 	/client/proc/overlay_random_map,
 	/client/proc/delete_random_map,
+	/datum/admins/proc/submerge_map,
 	/datum/admins/proc/map_template_load,
 	/datum/admins/proc/map_template_load_new_z,
 	/datum/admins/proc/map_template_upload,
@@ -662,10 +664,7 @@ var/list/admin_verbs_mentor = list(
 	if(!check_rights(R_BUILDMODE))
 		return
 
-	var/datum/click_handler/handler = mob.GetClickHandler()
-	if(handler.type == /datum/click_handler/build_mode)
-		usr.PopClickHandler()
-	else
+	if(!usr.RemoveClickHandler(/datum/click_handler/build_mode))
 		usr.PushClickHandler(/datum/click_handler/build_mode)
 	SSstatistics.add_field_details("admin_verb","TBMS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	log_and_message_admins("switched build mode for himself.")
