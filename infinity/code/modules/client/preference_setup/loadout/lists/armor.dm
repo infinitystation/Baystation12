@@ -81,3 +81,27 @@
 	armor["green plate carrier"] 	= /obj/item/clothing/suit/armor/pcarrier/green
 	armor["tan plate carrier"] 		= /obj/item/clothing/suit/armor/pcarrier/tan
 	gear_tweaks += new/datum/gear_tweak/path(armor)
+
+/datum/gear/tactical/gunciv
+	display_name = "TH22 pistol selection"
+	path = /obj/item/weapon/gun/projectile/spistol/civ
+	cost = 2
+
+/datum/gear/tactical/gunciv/New()
+	..()
+	var/gunciv = list()
+	gunciv["Standard TH22"] = /obj/item/weapon/gun/projectile/spistol/civ
+	gunciv["Black TH22"] = /obj/item/weapon/gun/projectile/spistol/civ/black
+	gunciv["White TH22"] = /obj/item/weapon/gun/projectile/spistol/civ/white
+	gunciv["Silver TH22"] = /obj/item/weapon/gun/projectile/spistol/civ/silver
+	gear_tweaks += new/datum/gear/tactical/gunciv(gunciv)
+
+/datum/gear/tactical/ammo
+	display_name = "TH22 ammo box"
+	path = /obj/item/ammo_magazine/box/pistol/civgun
+	cost = 1
+
+/datum/gear/tactical/gunciv/gold
+	display_name = "TH22, luxury"
+	path = /obj/item/weapon/gun/projectile/spistol/civ/gold
+	cost = 19
