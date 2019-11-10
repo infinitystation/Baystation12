@@ -44,6 +44,8 @@
 				ear_safety += 1
 			if(istype(M:head, /obj/item/clothing/head/helmet))
 				ear_safety += 1
+			if(istype(M:head, /obj/item/clothing/head/helmet/space) && istype(M:wear_suit, /obj/item/clothing/suit/space))
+				ear_safety += 1
 	for(var/mob/living/exosuit/mecha in M.loc)
 		if(M in mecha.contents)
 			ear_safety += 1
@@ -59,9 +61,11 @@
 		sound_to(M, 'infinity/sound/weapons/flash_ring.ogg')
 
 	if((get_dist(M, T) <= 2 || src.loc == M.loc || src.loc == M))
-		if(ear_safety > 0)
+		if(ear_safety > 1)
+		else if(ear_safety > 0)
 			M.Stun(2)
-			M.Weaken(1)
+			M.ear_damage += rand(0, 1)
+			M.ear_deaf = max(M.ear_deaf,5)
 		else
 			M.Stun(10)
 			M.Weaken(3)
