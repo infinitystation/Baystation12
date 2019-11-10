@@ -4,7 +4,7 @@
 	caliber = CALIBER_PISTOL_TINY
 	screen_shake = 0
 	ammo_type = /obj/item/ammo_casing/a22lr
-	scope_zoom = 1.2
+	scope_zoom = 1
 	fire_delay = 5
 	starts_loaded = 0
 
