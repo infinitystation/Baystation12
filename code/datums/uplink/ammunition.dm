@@ -110,3 +110,9 @@
 	desc = "A box of EMP ammo for small pistols and revolvers. Contains 8 rounds."
 	item_cost = 4
 	path = /obj/item/ammo_magazine/box/emp/smallpistol
+
+/datum/uplink_item/item/ammo/civgun
+	name = "Small .22 Ammo Box"
+	desc = "A box of .22 bullets for small pistols and revolvers. Contains 20 rounds."
+	item_cost = 5
+	path = /obj/item/ammo_magazine/box/pistol/civgun/steel
