@@ -1,22 +1,23 @@
 /obj/item/ammo_casing/a22lr
+	name = "small bullet casing"
 	desc = "A .22LR bullet casing."
 	icon = 'infinity/icons/obj/ammo.dmi'
-	icon_state = "s-casing"
-	spent_icon = "s-casing-spent"
+	icon_state = "s-casing-live"
+	spent_icon = "s-casing"
 	caliber = CALIBER_PISTOL_TINY
 	projectile_type = /obj/item/projectile/bullet/pistol/tiny
 
 /obj/item/ammo_casing/a22lr/rubber
 	desc = "A .22LR rubber bullet casing."
-	icon_state = "r-casing"
+	icon_state = "s-r-casing-live"
 	spent_icon = "s-casing-spent"
 	projectile_type = /obj/item/projectile/bullet/pistol/tiny/rubber
 
-/obj/item/ammo_casing/a22lr/chem
-	desc = "A .22LR chemical bullet casing."
-	icon_state = "c-casing"
-	spent_icon = "s-casing-spent"
-	projectile_type = /obj/item/projectile/bullet/pistol/tiny/chem
+/obj/item/ammo_casing/a22lr/blank
+	desc = "A .22LR blank bullet casing."
+	icon_state = "s-casing-live"
+	spent_icon = "s-casing"
+	projectile_type = /obj/item/projectile/bullet/pistol/tiny/blank
 
 /obj/item/ammo_casing/a357
 	desc = "A .357 bullet casing."

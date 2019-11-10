@@ -3412,7 +3412,6 @@
 #include "infinity\code\modules\projectiles\guns\energy\laser_handmade.dm"
 #include "infinity\code\modules\projectiles\guns\energy\secure.dm"
 #include "infinity\code\modules\projectiles\guns\projectile\automatic.dm"
-#include "infinity\code\modules\projectiles\guns\projectile\civilian.dm"
 #include "infinity\code\modules\projectiles\guns\projectile\pistol.dm"
 #include "infinity\code\modules\projectiles\guns\projectile\revolver.dm"
 #include "infinity\code\modules\projectiles\guns\projectile\shotgun.dm"

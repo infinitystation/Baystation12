@@ -25,3 +25,29 @@
 		icon_state = "pistol0"
 	else
 		icon_state = "pistol_empty"
+
+/obj/item/weapon/gun/projectile/spistol/civ
+	desc = "The TH22. A small sidearm, with futuristic design. Uses .22LR rounds. Inside installed a smart chip that allows track the weapons and to whom it is registered."
+	magazine_type = /obj/item/ammo_magazine/c22m/civ
+	allowed_magazines = /obj/item/ammo_magazine/c22m/civ
+	req_access = list()
+	authorized_modes = list(ALWAYS_AUTHORIZED, UNAUTHORIZED)
+	auto_eject = 0
+
+/obj/item/weapon/gun/projectile/spistol/civ/black
+	icon_state = "ppistol0"
+
+/obj/item/weapon/gun/projectile/spistol/civ/black/on_update_icon()
+	if(ammo_magazine)
+		icon_state = "ppistol0"
+	else
+		icon_state = "ppistol_empty"
+
+/obj/item/weapon/gun/projectile/spistol/civ/white
+	icon_state = "wpistol0"
+
+/obj/item/weapon/gun/projectile/spistol/civ/black/on_update_icon()
+	if(ammo_magazine)
+		icon_state = "wpistol0"
+	else
+		icon_state = "wpistol_empty"

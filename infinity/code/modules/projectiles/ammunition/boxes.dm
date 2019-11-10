@@ -189,7 +189,7 @@
 /obj/item/ammo_magazine/box/pistol/civgun
 	name = ".22 bullets"
 	caliber = CALIBER_PISTOL_TINY
-	ammo_type = /obj/item/ammo_casing/a22lr
+	ammo_type = /obj/item/ammo_casing/a22lr/blank
 	max_ammo = 20
 
 /obj/item/ammo_magazine/box/pistol/civgun/rubber
@@ -197,15 +197,16 @@
 	caliber = CALIBER_PISTOL_TINY
 	ammo_type = /obj/item/ammo_casing/a22lr/rubber
 	max_ammo = 20
+	max_ammo = 20
 
-/obj/item/ammo_magazine/box/pistol/civgun/chem
-	name = ".22 chemical bullets"
+/obj/item/ammo_magazine/box/pistol/civgun/steel
+	name = ".22 steel bullets"
 	caliber = CALIBER_PISTOL_TINY
-	ammo_type = /obj/item/ammo_casing/a22lr/chem
+	ammo_type = /obj/item/ammo_casing/a22lr
 	max_ammo = 20
 
 /obj/item/ammo_magazine/c22m/civ
 	icon = 'infinity/icons/obj/ammo.dmi'
-	icon_state = "smallammo"
+	icon_state = "22civammo"
 	max_ammo = 10
 	initial_ammo = 0

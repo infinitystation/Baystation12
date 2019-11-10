@@ -260,9 +260,8 @@
 					/obj/item/weapon/reagent_containers/spray/pepper = 5,
 					/obj/item/clothing/suit/armor/pcarrier/light = 10,
 					/obj/item/ammo_magazine/c22m/civ = 20,
-					/obj/item/ammo_magazine/box/pistol/civgun/rubber = 40,
-					/obj/item/ammo_magazine/box/pistol/civgun/chem = 40
+					/obj/item/ammo_magazine/box/pistol/civgun = 40,
+					/obj/item/ammo_magazine/box/pistol/civgun/rubber = 30
 					)
-	contraband = list(/obj/item/ammo_magazine/box/pistol/civgun = 20,
-					/obj/item/ammo_magazine/c22m = 10,
+	contraband = list(/obj/item/ammo_magazine/box/pistol/civgun/steel = 10,
 					/obj/item/weapon/gun/energy/gun/small/secure = 5)
