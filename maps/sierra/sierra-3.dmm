@@ -2510,7 +2510,7 @@
 "aWn" = (/obj/machinery/air_sensor/nacelle/fourth/plasma,/turf/simulated/floor/reinforced/hydrogen/fuel,/area/thruster/d1port)
 "aWo" = (/obj/effect/floor_decal/industrial/warning{dir = 5},/obj/machinery/atmospherics/unary/outlet_injector{dir = 1; icon_state = "map_injector"; id = "fuel4p_in"; use_power = 1},/turf/simulated/floor/reinforced/hydrogen/fuel,/area/thruster/d1port)
 "aWp" = (/obj/machinery/atmospherics/pipe/simple/visible/red,/turf/simulated/floor/reinforced,/area/thruster/d1port)
-"aWq" = (/obj/effect/floor_decal/techfloor{dir = 1},/obj/machinery/vending/security/civgunequip{step_y = 31},/turf/simulated/floor/tiled/techfloor/grid,/area/security/sierra/armory)
+"aWq" = (/obj/effect/floor_decal/techfloor{dir = 1},/obj/machinery/vending/armoryvend/civgunequip{step_y = 31},/turf/simulated/floor/tiled/techfloor/grid,/area/security/sierra/armory)
 "aWr" = (/obj/structure/table/standard,/obj/item/clothing/mask/gas/alt,/obj/item/clothing/mask/gas/alt,/obj/item/clothing/mask/gas/alt,/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/alarm{dir = 1; pixel_y = -20},/turf/simulated/floor/tiled/white/monotile,/area/rnd/misc_lab)
 "aWs" = (/obj/effect/floor_decal/borderfloorwhite{dir = 4},/obj/effect/floor_decal/corner/purple/border{dir = 4},/obj/machinery/atmospherics/unary/vent_pump/on{dir = 8},/obj/machinery/camera/network/research{c_tag = "Research - Equipment"; dir = 8},/obj/machinery/papershredder,/turf/simulated/floor/tiled/white/monotile,/area/rnd/research)
 "aWt" = (/obj/machinery/atmospherics/pipe/simple/hidden{dir = 6},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/camera/network/engineering{c_tag = "Solar Control - Port"},/turf/simulated/floor/plating,/area/maintenance/solar)

@@ -253,7 +253,7 @@
 
 			src.product_records.Add(product)
 
-/obj/machinery/vending/security/civgunequip
+/obj/machinery/vending/armoryvend/civgunequip
 	name = "AmmoNation"
 	desc = "Vending machine for the distribution of equipment for self-defense: weapons, ammunition, protection items. Everything you need for self-defense!"
 	products = list(/obj/item/device/flash = 5,
