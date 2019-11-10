@@ -11,6 +11,12 @@
 	sharp = 0
 	armor_penetration = 1
 
+/obj/item/projectile/bullet/pistol/tiny/chem
+	agony = 5
+	weaken = 5
+	damage = 3
+	life_span = 4
+
 /obj/item/projectile/bullet/pistol/medium/fast
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
 	damage = 18 //4.6x30 mm, 5.7x28 mm

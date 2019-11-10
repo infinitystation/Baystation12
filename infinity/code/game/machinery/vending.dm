@@ -252,3 +252,17 @@
 			//inf end
 
 			src.product_records.Add(product)
+
+/obj/machinery/vending/security/civgunequip
+	name = "AmmoNation"
+	desc = "Vending machine for the distribution of equipment for self-defense: weapons, ammunition, protection items. Everything you need for self-defense!"
+	products = list(/obj/item/device/flash = 5,
+					/obj/item/weapon/reagent_containers/spray/pepper = 5,
+					/obj/item/clothing/suit/armor/pcarrier/light = 10,
+					/obj/item/ammo_magazine/c22m/civ = 20,
+					/obj/item/ammo_magazine/box/pistol/civgun/rubber = 40,
+					/obj/item/ammo_magazine/box/pistol/civgun/chem = 40
+					)
+	contraband = list(/obj/item/ammo_magazine/box/pistol/civgun = 20,
+					/obj/item/ammo_magazine/c22m = 10,
+					/obj/item/weapon/gun/energy/gun/small/secure = 5)
