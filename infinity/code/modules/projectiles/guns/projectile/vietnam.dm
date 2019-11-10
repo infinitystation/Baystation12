@@ -182,7 +182,7 @@
 	..()
 
 /obj/item/weapon/gun/projectile/automatic/m14/attackby(var/obj/item/A as obj, mob/user as mob)
-	if (istype(A, /obj/item/weapon/scope) && user.unEquip(A))
+	if (istype(A, /obj/item/weapon/attachment) && user.unEquip(A))
 		A.loc = src
 		scoped = A
 		update_icon()
