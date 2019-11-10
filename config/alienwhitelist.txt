@@ -75,10 +75,8 @@ coldmantis13 - resomi
 wheatley2013 - resomi
 twinindifferent - resomi
 hodovoy - resomi
-vovghik65 - resomi
 elar - resomi
 casly - resomi
-seclog - resomi
 reptiloid2 - resomi
 mrnicolas - resomi
 redknighthero - giant armoured serpentid
@@ -139,6 +137,7 @@ hellpony - vox
 reptiloid2 - vox
 mrkayde - vox
 darkman24rus - vox
+connor22 - vox
 darkscarletblood - unathi
 kribleykrabley - unathi
 alchemisthero - unathi

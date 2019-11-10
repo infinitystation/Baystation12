@@ -3491,6 +3491,7 @@
 #include "infinity\customs\chainsword.dm"
 #include "infinity\customs\chowny_sindyexpress.dm"
 #include "infinity\customs\clown.dm"
+#include "infinity\customs\coolered.dm"
 #include "infinity\customs\csplayer.dm"
 #include "infinity\customs\cust_zippo.dm"
 #include "infinity\customs\dakimakura.dm"
