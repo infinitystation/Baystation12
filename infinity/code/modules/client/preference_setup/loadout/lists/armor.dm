@@ -89,19 +89,19 @@
 
 /datum/gear/tactical/gunciv/New()
 	..()
-	var/gunciv = list()
-	gunciv["Standard TH22"] = /obj/item/weapon/gun/projectile/spistol/civ
-	gunciv["Black TH22"] = /obj/item/weapon/gun/projectile/spistol/civ/black
-	gunciv["White TH22"] = /obj/item/weapon/gun/projectile/spistol/civ/white
-	gunciv["Silver TH22"] = /obj/item/weapon/gun/projectile/spistol/civ/silver
-	gear_tweaks += new/datum/gear/tactical/gunciv(gunciv)
+	var/civgun = list()
+	civgun["Standard TH22"] = /obj/item/weapon/gun/projectile/spistol/civ
+	civgun["Black TH22"] = /obj/item/weapon/gun/projectile/spistol/civ/black
+	civgun["White TH22"] = /obj/item/weapon/gun/projectile/spistol/civ/white
+	civgun["Silver TH22"] = /obj/item/weapon/gun/projectile/spistol/civ/silver
+	gear_tweaks += new/datum/gear/tactical/gunciv(civgun)
 
 /datum/gear/tactical/ammo
 	display_name = "TH22 ammo box"
 	path = /obj/item/ammo_magazine/box/pistol/civgun
 	cost = 1
 
-/datum/gear/tactical/gunciv/gold
+/datum/gear/tactical/luxurygun
 	display_name = "TH22, luxury"
 	path = /obj/item/weapon/gun/projectile/spistol/civ/gold
 	cost = 19
