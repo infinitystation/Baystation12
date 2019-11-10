@@ -1,6 +1,6 @@
-/obj/item/device/mimic_bomb
-	name = "mini bomb"
-	desc = "A small explosive charge with a holoprojector designed to disable the curious guards. It has two modes, an explosion when activated and an explosion when picked up. Be careful."
+/obj/item/device/holobomb
+	name = "holobomb"
+	desc = "A small explosive charge with a holoprojector designed to disable the curious guards."
 	icon = 'infinity/icons/obj/weapons.dmi'
 	icon_state = "minibomb"
 	item_state = "nothing"
@@ -9,7 +9,7 @@
 	var/active = FALSE
 	var/mode = 0
 
-/obj/item/device/mimic_bomb/afterattack(obj/item/target, mob/user , proximity)
+/obj/item/device/holobomb/afterattack(obj/item/target, mob/user , proximity)
 	if(!proximity)
 		return
 	if(!target)
@@ -27,25 +27,25 @@
 	else
 		to_chat(user, "\The [target] is too big for \the [src] hologramm")
 
-/obj/item/device/mimic_bomb/attack_self(mob/user)
+/obj/item/device/holobomb/attack_self(mob/user)
 	trigger(user)
 
-/obj/item/device/mimic_bomb/emp_act()
+/obj/item/device/holobomb/emp_act()
 	trigger()
 
-/obj/item/device/mimic_bomb/attack_hand(mob/user)
+/obj/item/device/holobomb/attack_hand(mob/user)
 	. = ..()
 	if(!mode)
 		trigger(user)
 
-/obj/item/device/mimic_bomb/proc/switch_mode(var/mob/user)
+/obj/item/device/holobomb/proc/switch_mode(var/mob/user)
 	mode = !mode
 	if(mode)
-		to_chat(user, "Now \the [src] will explode upon activation.")
+		to_chat(user, "Mode 1.Now \the [src] will explode upon activation.")
 	else
-		to_chat(user, "Now \the [src] will explode as soon as they pick it up or upon activation")
+		to_chat(user, "Mode 2. Now \the [src] will explode as soon as they pick it up or upon activation.")
 
-/obj/item/device/mimic_bomb/proc/trigger(var/mob/user)
+/obj/item/device/holobomb/proc/trigger(var/mob/user)
 	if(!active)
 		switch_mode(user)
 		return
@@ -58,7 +58,7 @@
 	if(!O)
 		return
 
-	var/dam = rand(25, 30)
+	var/dam = rand(35, 45)
 	H.visible_message("<span class='danger'>\The [src] in \the [H]'s hand explodes with a loud bang!</span>")
 	H.apply_damage(dam, BRUTE, O, damage_flags = DAM_SHARP, used_weapon = "explode")
 	explosion(src.loc, 0,0,1,1)

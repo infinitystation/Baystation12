@@ -3215,7 +3215,7 @@
 #include "infinity\code\game\objects\items\toys.dm"
 #include "infinity\code\game\objects\items\devices\blackout.dm"
 #include "infinity\code\game\objects\items\devices\hacktool.dm"
-#include "infinity\code\game\objects\items\devices\mimic_bomb.dm"
+#include "infinity\code\game\objects\items\devices\holobomb.dm"
 #include "infinity\code\game\objects\items\devices\multimeter.dm"
 #include "infinity\code\game\objects\items\devices\remote_device.dm"
 #include "infinity\code\game\objects\items\devices\serial.dm"
