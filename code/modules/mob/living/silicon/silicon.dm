@@ -21,7 +21,7 @@
 
 	//Used in say.dm.
 	var/speak_statement = "утверждает"
-	var/speak_exclamation = "объявляет"
+	var/speak_exclamation = "объ&#255;вл&#255;ет"
 	var/speak_query = "запрашивает"
 	var/pose //Yes, now AIs can pose too.
 	var/obj/item/device/camera/siliconcam/silicon_camera = null //photography

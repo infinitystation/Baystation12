@@ -175,6 +175,11 @@ ckey: 3v4ng4m1ng
 character_name: Finn Straud
 item_path: /obj/item/music_player/custom_tape
 }
+{
+ckey: thehero13
+character_name: Jake Pater
+item_path: /obj/item/music_player/custom_tape
+}
 
 #	SHORT ITEMS HERE (3-4)
 
@@ -227,7 +232,7 @@ item_path: /obj/item/weapon/storage/backpack/wd_sack
 }
 {
 ckey: moonmen
-character_name: Ketdra Nazkin
+character_name: Ketdra Kaytam
 item_path: /obj/item/clothing/ears/earmuffs/headphones/darkred
 }
 {
@@ -543,6 +548,28 @@ ckey: yourbro
 character_name: Stan Karelin
 item_path: /obj/item/clothing/suit/storage/rockcloak
 }
+{
+ckey: ilya2180
+character_name: Malik Myan
+item_path: /obj/item/clothing/accessory/armband/custom_bs
+}
+{
+ckey: jacking
+character_name: Jack McMillan
+item_path: /obj/item/weapon/clothingbag/custom_zpci_knight
+req_access: "ACCESS_SECURITY"
+}
+{
+ckey: jacking
+character_name: Mammoth Nestor
+item_path: /obj/item/weapon/clothingbag/custom_saare
+req_access: "ACCESS_SECURITY"
+}
+{
+ckey: coolered
+character_name: Martha Muller
+item_path: /obj/item/clothing/under/thermal/custom
+}
 
 #	MEDIUM ITEMS HERE (5-6)
 
@@ -567,7 +594,7 @@ item_path: /obj/item/modular_computer/pda/wrist/grayson
 {
 ckey: courierr
 character_name: Mia Lee
-item_path: /obj/item/weapon/material/kitchen/utensil/knife/boot
+item_path: /obj/item/weapon/material/knife/combat
 item_name: karambit
 item_desc: A small knife with a curved blade.
 item_icon: karambit

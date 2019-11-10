@@ -64,7 +64,7 @@ var/list/admin_verbs_admin = list(
 	/client/proc/free_slot_submap,
 	/client/proc/free_slot_crew,			//frees slot for chosen job,
 	/client/proc/cmd_admin_change_custom_event,
-	/client/proc/cmd_admin_rejuvenate,
+//INF	/client/proc/cmd_admin_rejuvenate,
 	/client/proc/toggleghostwriters,
 	/client/proc/toggledrones,
 	/client/proc/check_customitem_activity,
@@ -103,7 +103,7 @@ var/list/admin_verbs_sounds = list(
 
 var/list/admin_verbs_fun = list(
 	/client/proc/object_talk,
-	/client/proc/cmd_admin_dress, //inf was /datum/admins/proc/cmd_admin_dress,
+	/client/proc/cmd_admin_dress, //INF WAS /datum/admins/proc/cmd_admin_dress,
 	/client/proc/cmd_admin_gib_self,
 	/client/proc/drop_bomb,
 	/client/proc/everyone_random,
@@ -118,14 +118,14 @@ var/list/admin_verbs_fun = list(
 	/datum/admins/proc/call_drop_pod,
 	/client/proc/create_dungeon,
 	/datum/admins/proc/ai_hologram_set,
-	//[INF],
+//[INF],
 	/datum/admins/proc/intercom,		//send a fake intercom message, like an arrivals announcement,
 	/datum/admins/proc/intercom_convo,	//send a fake intercom conversation, like an ATC exchange,
 	/datum/admins/proc/mp_panel,
 	/proc/possess,
 	/proc/release,
 	/client/proc/colorooc
-	//[/INF],
+//[/INF],
 	)
 
 var/list/admin_verbs_spawn = list(
@@ -135,9 +135,9 @@ var/list/admin_verbs_spawn = list(
 	/datum/admins/proc/check_custom_items,
 	/datum/admins/proc/spawn_plant,
 	/datum/admins/proc/spawn_atom,		// allows us to spawn instances,
-	/client/proc/game_panel,//inf,
+	/client/proc/game_panel, //INF,
 	/client/proc/respawn_character,
-	/client/proc/respawn_as_self,//inf,
+	/client/proc/respawn_as_self, //INF,
 	/client/proc/virus2_editor,
 	/client/proc/spawn_chemdisp_cartridge,
 	/datum/admins/proc/mass_debug_closet_icons
@@ -163,13 +163,14 @@ var/list/admin_verbs_server = list(
 	/client/proc/toggle_random_events,
 	/client/proc/check_customitem_activity,
 	/client/proc/nanomapgen_DumpImage,
-	/client/proc/cmd_toggle_admin_help,//inf,
-	/client/proc/observe_delay,//inf,
-	/datum/admins/proc/toggleevent, //inf,
-	/client/proc/update_server//inf,
+//[INF],
+	/client/proc/cmd_toggle_admin_help,
+	/client/proc/observe_delay,
+	/datum/admins/proc/toggleevent,
+	/client/proc/update_server,
+//[/INF],
 	)
 var/list/admin_verbs_debug = list(
-	/client/proc/getruntimelog, // allows us to access runtime logs to somebody,
 	/datum/admins/proc/jump_to_fluid_source,
 	/datum/admins/proc/jump_to_fluid_active,
 	/client/proc/cmd_admin_list_open_jobs,
@@ -206,18 +207,21 @@ var/list/admin_verbs_debug = list(
 	/turf/proc/update_chunk,
 	/datum/admins/proc/capture_map,
 	/datum/admins/proc/view_runtimes,
-	/client/proc/watched_variables,//inf,
-	/client/proc/secrets,//inf,
 	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify,
-	/client/proc/debug_global_variables,//inf,
 	/client/proc/cmd_analyse_health_context,
 	/client/proc/cmd_analyse_health_panel,
-	/client/proc/reestablish_db_connection,//inf,
 	/client/proc/visualpower,
 	/client/proc/visualpower_remove,
-	/client/proc/ping_webhook,//inf,
-	/client/proc/reload_webhooks,//inf,
-	/client/proc/debug_airlocks_id//inf,
+//[INF],
+	/client/proc/getruntimelog,
+	/client/proc/watched_variables,
+	/client/proc/secrets,
+	/client/proc/debug_global_variables,
+	/client/proc/reestablish_db_connection,
+	/client/proc/ping_webhook,
+	/client/proc/reload_webhooks,
+	/client/proc/debug_airlocks_id,
+//[/INF],
 	)
 
 var/list/admin_verbs_paranoid_debug = list(
@@ -230,16 +234,20 @@ var/list/admin_verbs_possess = list(
 	/proc/possess,
 	/proc/release
 	)
+
 var/list/admin_verbs_permissions = list(
 	/client/proc/edit_admin_permissions
 	)
 var/list/admin_verbs_rejuv = list(
-	/client/proc/respawn_character
+	/client/proc/respawn_character,
+	/client/proc/cmd_admin_rejuvenate, //INF,
 	)
+//[INF]
 var/list/admin_verbs_judge = list(
-	/datum/admins/proc/PlayerNotes
+	/datum/admins/proc/PlayerNotes,
+	/client/proc/cmd_admin_pm_context,
 	)
-
+//[/INF]
 //verbs which can be hidden - needs work
 var/list/admin_verbs_hideable = list(
 	/client/proc/deadmin_self,
@@ -362,6 +370,7 @@ var/list/admin_verbs_mentor = list(
 		admin_verbs_server,
 		admin_verbs_debug,
 		admin_verbs_possess,
+ 		admin_verbs_judge, //INF,
 		admin_verbs_permissions,
 		/client/proc/stealth,
 		admin_verbs_rejuv,

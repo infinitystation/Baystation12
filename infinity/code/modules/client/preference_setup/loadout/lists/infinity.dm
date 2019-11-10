@@ -97,4 +97,5 @@
 	var/glovtype = list()
 	glovtype["yellow insulated"] = /obj/item/clothing/gloves/insulated
 	glovtype["black insulated"] = /obj/item/clothing/gloves/insulated/black
+	glovtype["white insulated"] = /obj/item/clothing/gloves/insulated/white
 	gear_tweaks += new/datum/gear_tweak/path(glovtype)

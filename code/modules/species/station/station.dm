@@ -53,7 +53,7 @@
 		return
 
 	if(H.get_shock() && H.shock_stage < 40 && prob(3))
-		H.emote(pick("moan","groan"))
+		H.agony_moan() //INF, WAS H.emote(pick("moan","groan"))
 
 	if(H.shock_stage > 10 && prob(3))
 		H.emote(pick("cry","whimper"))

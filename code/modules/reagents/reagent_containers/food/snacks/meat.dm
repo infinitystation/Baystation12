@@ -12,6 +12,19 @@
 		..()
 		reagents.add_reagent(/datum/reagent/nutriment/protein, 9)
 		src.bitesize = 3
+//[INF]
+/obj/item/weapon/reagent_containers/food/snacks/meat/attack(mob/living/carbon/slime/M as mob, mob/user as mob)
+	var/slimenutrition = 100
+	if(!istype(M, /mob/living/carbon/slime)) //If the target is not a slime.
+		return ..()
+	if (reagents.has_reagent(/datum/reagent/blood, 10) && M.nutrition < (M.get_max_nutrition()-slimenutrition))
+		to_chat(user, SPAN_WARNING("[M] would like this!"))
+		M.adjust_nutrition(slimenutrition)
+		qdel(src)
+	else
+		to_chat(user, SPAN_WARNING("[M] does not show any interest..."))
+		return ..()
+//[/INF]
 
 /obj/item/weapon/reagent_containers/food/snacks/meat/syntiflesh
 	name = "synthetic meat"

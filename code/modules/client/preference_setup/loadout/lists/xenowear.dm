@@ -172,6 +172,13 @@
 	sort_category = "Xenowear"
 	cost = 1
 
+/datum/gear/eyes/meson/tajvisor/hybr
+	display_name = "(Tajara) visor, engineering"
+	path = /obj/item/clothing/glasses/meson/prescription/tajvisor/hybrid
+	whitelisted = list(SPECIES_TAJARA)
+	sort_category = "Xenowear"
+	cost = 3
+
 /datum/gear/shoes/caligae
 	display_name = "(Tajara) caligae"
 	path = /obj/item/clothing/shoes/sandal/tajaran/caligae

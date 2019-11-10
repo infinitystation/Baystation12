@@ -531,7 +531,7 @@
 		switch(Text)
 			if("brute")	L.adjustBruteLoss(amount)
 			if("fire")	L.adjustFireLoss(amount)
-			if("toxin")	L.adjustToxLoss(amount)
+			if("toxin")	L.adjustToxLoss(amount, admin_healing = 1) //INF, WAS if("toxin")	L.adjustToxLoss(amount)
 			if("oxygen")L.adjustOxyLoss(amount)
 			if("brain")	L.adjustBrainLoss(amount)
 			if("clone")	L.adjustCloneLoss(amount)

@@ -7,7 +7,8 @@
 		"Default" = "robot",
 		"Drone" = "drone-standard",
 		"Doot" = "eyebot-standard",
-		"Ver 06" = "wer6-Standard"
+		"Ver 06" = "wer6-Standard",
+		"Motile" = "motile"
 	)
 	equipment = list(
 		/obj/item/device/flash,
@@ -17,10 +18,11 @@
 		/obj/item/weapon/crowbar,
 		/obj/item/device/scanner/health
 	)
-	emag = /obj/item/weapon/melee/energy/sword
+//	emag = /obj/item/weapon/melee/energy/sword //rly? this borgie already has stunbaton & flash, i think it's enough
 	skills = list(
 		SKILL_COMBAT       = SKILL_ADEPT,
 		SKILL_MEDICAL      = SKILL_ADEPT,
 		SKILL_CONSTRUCTION = SKILL_ADEPT,
-		SKILL_BUREAUCRACY  = SKILL_ADEPT
+		SKILL_BUREAUCRACY  = SKILL_ADEPT,
+		SKILL_PILOT        = SKILL_ADEPT //INF
 	)

@@ -213,16 +213,16 @@
 
 /obj/item/organ/internal/brain/take_internal_damage(var/damage, var/silent)
 	set waitfor = 0
-	..(damage * 2, silent) //inf-dev
-	if(damage / 2 >= 10) //This probably won't be triggered by oxyloss or mercury. Probably.
-		var/damage_secondary = damage / 2 * 0.20
+	..(damage * 2, silent) //INF Was ..()
+	if(damage / 2 >= 10) //This probably won't be triggered by oxyloss or mercury. Probably. //INF. Was (damage >= 10)
+		var/damage_secondary = damage / 2 * 0.20 // INF. Was (damage * 0.20)
 		owner.flash_eyes()
 		owner.eye_blurry += damage_secondary
-		owner.confused += damage_secondary * 2
-		owner.Paralyse(damage_secondary)
-		owner.Weaken(round(damage / 2, 1))
-		if(prob(30))
-			addtimer(CALLBACK(src, .proc/brain_damage_callback, damage), rand(6, 20) SECONDS, TIMER_UNIQUE)
+//INF		owner.confused += damage_secondary * 2
+//INF		owner.Paralyse(damage_secondary)
+//INF		owner.Weaken(round(damage / 2, 1))
+//INF		if(prob(30))
+//INF			addtimer(CALLBACK(src, .proc/brain_damage_callback, damage), rand(6, 20) SECONDS, TIMER_UNIQUE)
 
 /obj/item/organ/internal/brain/proc/brain_damage_callback(var/damage) //Confuse them as a somewhat uncommon aftershock. Side note: Only here so a spawn isn't used. Also, for the sake of a unique timer.
 	to_chat(owner, "<span class = 'notice' font size='10'><B>I can't remember which way is forward...</B></span>")

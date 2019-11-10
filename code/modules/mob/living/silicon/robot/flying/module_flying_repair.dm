@@ -4,12 +4,13 @@
 	channels = list ("Engineering" = TRUE)
 	networks = list(NETWORK_ENGINEERING)
 	subsystems = list(
-		/datum/nano_module/power_monitor, 
+		/datum/nano_module/power_monitor,
 		/datum/nano_module/supermatter_monitor
 	)
 	sprites = list(
 		"Drone" = "drone-engineer",
-		"Eyebot" = "eyebot-engineering"
+		"Eyebot" = "eyebot-engineering",
+		"Ver 06" = "wer6-Engineering"
 	)
 	equipment = list(
 		/obj/item/borg/sight/meson,
@@ -40,7 +41,8 @@
 		/obj/item/stack/material/cyborg/glass/reinforced,
 		/obj/item/stack/cable_coil/cyborg,
 		/obj/item/stack/material/cyborg/plasteel,
-		/obj/item/device/plunger/robot
+		/obj/item/device/plunger/robot,
+		/obj/item/weapon/rpd //INF
 	)
 	synths = list(
 		/datum/matter_synth/metal = 	30000,
@@ -53,7 +55,8 @@
 		SKILL_ATMOS        = SKILL_PROF,
 		SKILL_ENGINES      = SKILL_PROF,
 		SKILL_CONSTRUCTION = SKILL_PROF,
-		SKILL_ELECTRICAL   = SKILL_PROF
+		SKILL_ELECTRICAL   = SKILL_PROF,
+		SKILL_PILOT        = SKILL_ADEPT //INF
 	)
 
 /obj/item/weapon/robot_module/flying/repair/finalize_synths()

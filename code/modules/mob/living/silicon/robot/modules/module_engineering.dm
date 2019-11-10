@@ -21,7 +21,8 @@
 		"Landmate - Treaded" = "engiborg+tread",
 		"Doot" = "eyebot-engineering",
 		"Drone" = "drone-engineer",
-		"Ver 06" = "wer6-Engineering"
+		"Ver 06" = "wer6-Engineering",
+		"Motile" = "motile-eng"
 	)
 	no_slip = 1
 	equipment = list(
@@ -55,7 +56,8 @@
 		/obj/item/stack/material/cyborg/glass,
 		/obj/item/stack/material/cyborg/glass/reinforced,
 		/obj/item/stack/cable_coil/cyborg,
-		/obj/item/stack/material/cyborg/plasteel
+		/obj/item/stack/material/cyborg/plasteel,
+		/obj/item/weapon/rpd //INF
 	)
 	synths = list(
 		/datum/matter_synth/metal =    60000,
@@ -69,7 +71,8 @@
 		SKILL_ENGINES      = SKILL_PROF,
 		SKILL_CONSTRUCTION = SKILL_PROF,
 		SKILL_ELECTRICAL   = SKILL_PROF,
-		SKILL_COMPUTER     = SKILL_EXPERT
+		SKILL_COMPUTER     = SKILL_EXPERT,
+		SKILL_PILOT        = SKILL_ADEPT //INF
 	)
 
 /obj/item/weapon/robot_module/engineering/finalize_synths()
