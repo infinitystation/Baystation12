@@ -83,6 +83,7 @@
 	gear_tweaks += new/datum/gear_tweak/path(armor)
 
 /datum/gear/tactical/weapon
+	sort_category = "Tactical Equipment"
 	display_name = "weapon selection"
 	path = /obj/item/weapon/gun/projectile/spistol/civ
 	cost = 2
@@ -97,11 +98,13 @@
 	gear_tweaks += new/datum/gear/tactical/weapon(civgun)
 
 /datum/gear/tactical/ammo
+	sort_category = "Tactical Equipment"
 	display_name = "TH22 ammo box"
 	path = /obj/item/ammo_magazine/box/pistol/civgun
 	cost = 1
 
 /datum/gear/tactical/luxuryweapon
+	sort_category = "Tactical Equipment"
 	display_name = "TH22, luxury"
 	path = /obj/item/weapon/gun/projectile/spistol/civ/gold
 	cost = 19
