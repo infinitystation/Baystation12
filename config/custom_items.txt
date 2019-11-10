@@ -559,6 +559,17 @@ character_name: Jack McMillan
 item_path: /obj/item/weapon/clothingbag/custom_zpci_knight
 req_access: "ACCESS_SECURITY"
 }
+{
+ckey: jacking
+character_name: Mammoth Nestor
+item_path: /obj/item/weapon/clothingbag/custom_saare
+req_access: "ACCESS_SECURITY"
+}
+{
+ckey: coolered
+character_name: Martha Muller
+item_path: /obj/item/clothing/under/thermal/custom
+}
 
 #	MEDIUM ITEMS HERE (5-6)
 
