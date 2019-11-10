@@ -51,3 +51,23 @@
 		icon_state = "wpistol0"
 	else
 		icon_state = "wpistol_empty"
+
+/obj/item/weapon/gun/projectile/spistol/civ/gold
+	name = "golden TH22 pistol"
+	desc = "Luxury TH22. A small sidearm, with futuristic design. Looks like a terran Zolotoy Digol and instant noodles like breakfast, lunch and dinner for a dozen years. Inside installed a smart chip that allows track the weapons and to whom it is registered."
+	icon_state = "gpistol0"
+
+/obj/item/weapon/gun/projectile/spistol/civ/gold/on_update_icon()
+	if(ammo_magazine)
+		icon_state = "gpistol0"
+	else
+		icon_state = "gpistol_empty"
+
+/obj/item/weapon/gun/projectile/spistol/civ/silver
+	icon_state = "spistol0"
+
+/obj/item/weapon/gun/projectile/spistol/civ/silver/on_update_icon()
+	if(ammo_magazine)
+		icon_state = "spistol0"
+	else
+		icon_state = "spistol_empty"
