@@ -6,6 +6,7 @@
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/uniform/thermal
+	sort_category = "Xenowear"
 	display_name = "thermal suit selection"
 	path = /obj/item/clothing/under
 	whitelisted = list(SPECIES_UNATHI, SPECIES_YEOSA, SPECIES_SKRELL, SPECIES_TAJARA, SPECIES_RESOMI)
