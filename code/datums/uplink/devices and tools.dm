@@ -163,9 +163,11 @@
 	desc = "A remote-activated phoron-oxygen bomb assembly with built-in signaler. \
 			A flashing disclaimer begins with the warning 'SOME DISASSEMBLY/REASSEMBLY REQUIRED.'"
 
+//[INF]
 /datum/uplink_item/item/tools/holobomb
 	name = "Box of holobombs"
 	item_cost = 32
 	path = /obj/item/weapon/storage/box/holobombs
 	desc = "Contains 5 holobomb and instruction. \
-			A bomb that changes appearance, ànd can destroy some hands."
+			A bomb that changes appearance, Ã nd can destroy some hands."
+//[/INF]
