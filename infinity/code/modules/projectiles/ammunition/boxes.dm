@@ -197,7 +197,6 @@
 	caliber = CALIBER_PISTOL_TINY
 	ammo_type = /obj/item/ammo_casing/a22lr/rubber
 	max_ammo = 20
-	max_ammo = 20
 
 /obj/item/ammo_magazine/box/pistol/civgun/steel
 	name = ".22 steel bullets"
