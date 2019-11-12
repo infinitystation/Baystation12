@@ -46,8 +46,10 @@
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/launcher/WillContain()
 	return list(/obj/item/weapon/gun/launcher/grenade = 1,
-				/obj/item/weapon/storage/box/teargas = 1,
-				/obj/item/weapon/storage/box/flashbangs = 1)
+				/obj/item/weapon/storage/box/smokeshells = 1,
+				/obj/item/weapon/storage/box/flashshells = 2,
+				/obj/item/weapon/storage/box/empshells = 1,
+				/obj/item/weapon/storage/box/teargas = 1)
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/militia
 	name = "militia guncabinet"

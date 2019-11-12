@@ -15,6 +15,16 @@
 	item_cost = 8
 	path = /obj/item/weapon/storage/box/anti_photons
 
+/datum/uplink_item/item/grenades/anti_photons
+	name = "1x Photon Disruption Grenades"
+	item_cost = 2
+	path = /obj/item/weapon/grenade/anti_photon/shell
+
+/datum/uplink_item/item/grenades/anti_photons
+	name = "6x Photon Disruption Grenades"
+	item_cost = 10
+	path = /obj/item/weapon/storage/box/aphotshells
+	
 /datum/uplink_item/item/grenades/smoke
 	name = "1x Smoke Grenade"
 	desc = "A grenade that will erupt into a vision obscuring cloud of smoke. Makes for great getaways!"
@@ -24,8 +34,18 @@
 /datum/uplink_item/item/grenades/smokes
 	name = "5x Smoke Grenades"
 	item_cost = 8
-	path = /obj/item/weapon/storage/box/smokes
+	path = /obj/item/weapon/grenade/smokebomb/shell
 
+/datum/uplink_item/item/grenades/smokeshell
+	name = "1x Smoke Grenades"
+	item_cost = 2
+	path = /obj/item/weapon/storage/box/smokeshells
+
+/datum/uplink_item/item/grenades/smokeshells
+	name = "6x Smoke Grenades"
+	item_cost = 10
+	path = /obj/item/weapon/storage/box/smokeshells
+	
 /datum/uplink_item/item/grenades/emp
 	name = "1x EMP Grenade"
 	desc = "A grenade that will send electronics into a frenzy, or possibly fry them altogether. The timer is adjustable with a screwdriver."
@@ -36,6 +56,17 @@
 	name = "5x EMP Grenades"
 	item_cost = 15
 	path = /obj/item/weapon/storage/box/emps
+
+/datum/uplink_item/item/grenades/empshell
+	name = "1x EMP Shells"
+	item_cost = 5
+	/obj/item/weapon/grenade/empgrenade/shell
+
+/datum/uplink_item/item/grenades/empshells
+	name = "6x EMP Shells"
+	item_cost = 20
+	path = /obj/item/weapon/storage/box/empshells
+	
 
 /datum/uplink_item/item/grenades/frag_high_yield
 	name = "Fragmentation Bomb"

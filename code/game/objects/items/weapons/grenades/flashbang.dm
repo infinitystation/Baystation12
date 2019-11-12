@@ -117,6 +117,14 @@
 	item_state = null
 	detonate()
 
+/obj/item/weapon/grenade/flashbang/shell
+	name = "flashbang shell"
+	icon_state = "fragshell"
+	item_state = "flashbang"
+
+/obj/item/weapon/grenade/flashbang/shell/attack_self(mob/user as mob)
+	return
+
 /obj/item/weapon/grenade/flashbang/clusterbang//Created by Polymorph, fixed by Sieve
 	desc = "Use of this weapon may constiute a war crime in your area, consult your local captain."
 	name = "clusterbang"
