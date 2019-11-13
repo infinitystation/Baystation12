@@ -248,3 +248,11 @@
 	desc = "Looks like very small suit. For children or resomi? This thermal suit is white. "
 	icon_state = "thermores_2"
 	item_state = "thermores_2"
+
+/obj/item/clothing/under/rank/security/saarecombat
+	name = "\improper SAARE combat uniform"
+	desc = "Tight-fitting dark uniform with a bright-green SAARE patch on the shoulder. The perfect outfit in which to kick doors out and teeth in."
+	icon = 'infinity/icons/obj/clothing/obj_under.dmi'
+	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
+	icon_state = "saarecombat"
+	item_state = "saarecombat"
