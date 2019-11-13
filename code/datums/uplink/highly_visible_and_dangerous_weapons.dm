@@ -103,7 +103,7 @@
 /datum/uplink_item/item/visible_weapons/psi_amp
 	name = "Cerebroenergetic Psionic Amplifier"
 	item_cost = 60   //inf, was 50
-	path = /obj/item/clothing/head/helmet/space/psi_amp/lesser
+	path = /obj/item/clothing/head/helmet/space/psi_amp
 	desc = "A powerful, illegal psi-amp. Boosts latent psi-faculties to extremely high levels."
 
 /datum/uplink_item/item/visible_weapons/machine_pistol
