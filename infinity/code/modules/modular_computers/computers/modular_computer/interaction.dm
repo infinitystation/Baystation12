@@ -23,7 +23,7 @@
 			to_chat(usr, "<span class='notice'>You send signal to device and call NTOS terminal.</span>")
 		else
 			to_chat(usr, "<span class='notice'>You press special button and call NTOS terminal.</span>")
-		src.open_terminal(usr)
+		os.open_terminal(usr)
 		return
 	else
 		if(sil_check)

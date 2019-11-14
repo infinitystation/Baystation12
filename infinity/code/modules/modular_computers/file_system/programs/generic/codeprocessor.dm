@@ -201,10 +201,10 @@
 		data["error"] = PRG.error
 	if(PRG.browsing)
 		data["browsing"] = PRG.browsing
-		if(!PRG.computer || !PRG.computer.hard_drive)
+		if(!PRG.computer || !PRG.computer.has_component(PART_HDD))
 			data["error"] = "I/O ERROR: Unable to access hard drive."
 		else
-			HDD = PRG.computer.hard_drive
+			HDD = PRG.computer.get_component(PART_HDD)
 			var/list/files[0]
 			for(var/datum/computer_file/data/F in HDD.stored_files)
 				if(F.filetype in PRG.allowed_filetypes)
@@ -215,7 +215,7 @@
 
 			data["files"] = files
 
-			RHDD = PRG.computer.portable_drive
+			RHDD = PRG.computer.get_component(PART_DRIVE)
 			if(RHDD)
 				data["usbconnected"] = 1
 				var/list/usbfiles[0]

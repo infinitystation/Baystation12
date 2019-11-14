@@ -92,6 +92,10 @@
 	allowed = list(/obj/item/weapon/tank/emergency,/obj/item/device/flashlight,/obj/item/weapon/gun/energy,/obj/item/weapon/gun/projectile,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/handcuffs,/obj/item/weapon/storage/fancy/cigarettes,/obj/item/weapon/flame/lighter,/obj/item/device/taperecorder)
 	armor = list(
 		melee = ARMOR_MELEE_KNIVES, 
+		bullet = ARMOR_BALLISTIC_MINOR, 
+		laser = ARMOR_LASER_SMALL, 
+		energy = ARMOR_ENERGY_MINOR
+		)
 
 /obj/item/clothing/suit/storage/det_trench/grey
 	name = "grey trenchcoat"

@@ -97,7 +97,7 @@
 			return attack_self(user)
 //[INF]
 		if("Terminal")
-			return open_terminal(user)
+			return os.open_terminal(user)
 //[/INF]
 
 /obj/item/modular_computer/attack_hand(var/mob/user)

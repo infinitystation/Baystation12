@@ -23,6 +23,9 @@
 
 	var/list/terminals
 
+//[INF]
+	var/is_remote_ui = 0
+//[/INF]
 /datum/extension/interactive/ntos/Destroy()
 	system_shutdown()
 	. = ..()

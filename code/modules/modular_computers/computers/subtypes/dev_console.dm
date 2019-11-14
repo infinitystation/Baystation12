@@ -110,3 +110,4 @@
 		return
 	var/datum/extension/interactive/ntos/os = get_extension(src, /datum/extension/interactive/ntos)
 	if(os)
+		os.open_terminal(user)
