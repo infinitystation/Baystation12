@@ -60,7 +60,7 @@
 /datum/uplink_item/item/grenades/empshell
 	name = "1x EMP Shells"
 	item_cost = 5
-	/obj/item/weapon/grenade/empgrenade/shell
+	path = /obj/item/weapon/grenade/empgrenade/shell
 
 /datum/uplink_item/item/grenades/empshells
 	name = "6x EMP Shells"
@@ -77,13 +77,13 @@
 /datum/uplink_item/item/grenades/fragshell
 	name = "1x Fragmentation Shell"
 	desc = "Weaker than standard fragmentation grenades, these devices can be fired from a grenade launcher."
-	item_cost = 8
+	item_cost = 7
 	path = /obj/item/weapon/grenade/frag/shell
 
 /datum/uplink_item/item/grenades/fragshells
 	name = "5x Fragmentation Shells"
 	desc = "Weaker than standard fragmentation grenades, these devices can be fired from a grenade launcher."
-	item_cost = 32
+	item_cost = 28
 	path = /obj/item/weapon/storage/box/fragshells
 
 /datum/uplink_item/item/grenades/frag

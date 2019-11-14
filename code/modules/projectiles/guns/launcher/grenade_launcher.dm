@@ -87,7 +87,7 @@
 /obj/item/weapon/gun/launcher/grenade/attack_self(mob/user)
 	playsound(src.loc, 'sound/weapons/revolver_spin.ogg', 100, 1)
 	init_spring(user)
-	to_chat(user,"<span class='notice'>You cocked the spring in \the magazine")
+	to_chat(user,"<span class='notice'>You cocked the spring in \the magazine</span>")
 
 /obj/item/weapon/gun/launcher/grenade/attackby(obj/item/I, mob/user)
 	if((istype(I, /obj/item/weapon/grenade)))
@@ -120,7 +120,7 @@
 		spring -= 1
 		..()
 	else
-		to_chat(user,"<span class='notice'>Nothing happens. Magazine does not work. Rotate spring.")
+		to_chat(user,"<span class='notice'>Nothing happens. Magazine does not work. Rotate spring.</span>")
 
 /obj/item/weapon/gun/launcher/grenade/proc/can_load_grenade_type(obj/item/weapon/grenade/G, mob/user)
 	if(is_type_in_list(G, blacklisted_grenades) && ! is_type_in_list(G, whitelisted_grenades))
