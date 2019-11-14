@@ -27,7 +27,7 @@
 		if(type in U.known_things || U.psi)
 			desc = desc_know_what_it_is
 			if(!is_silent_teleporting)
-				desc += "<br>From [src]'s light you can hear silent belling.</span>"
+				desc += "<br>From [src]'s light you can hear silent belling."
 	. = ..()
 	desc = initial(desc)
 
