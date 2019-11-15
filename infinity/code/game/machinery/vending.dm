@@ -252,3 +252,29 @@
 			//inf end
 
 			src.product_records.Add(product)
+
+/obj/machinery/vending/armoryvend/civgunequip
+	name = "AmmoNation"
+	desc = "Vending machine for the distribution of equipment for self-defense: weapons, ammunition, protection items. Everything you need for self-defense!"
+	products = list(/obj/item/device/flash = 5,
+					/obj/item/weapon/reagent_containers/spray/pepper = 5,
+					/obj/item/clothing/suit/armor/pcarrier/light = 10,
+					/obj/item/ammo_magazine/c22m/civ = 20,
+					/obj/item/ammo_magazine/box/pistol/civgun = 40,
+					/obj/item/ammo_magazine/box/pistol/civgun/rubber = 30
+					)
+	contraband = list(/obj/item/ammo_magazine/box/pistol/civgun/steel = 10,
+					/obj/item/weapon/gun/energy/gun/small/secure = 5)
+
+/obj/machinery/vending/armoryvend/shootingrange
+	name = "AmmoNation"
+	desc = "Vending machine containing shooting equipment"
+	req_access = list()
+	products = list(/obj/item/ammo_casing/a22lr/blank = 100,
+					/obj/item/ammo_magazine/box/pistol/civgun = 20,
+					/obj/item/weapon/gun/projectile/heavysniper/tir = 3,
+					/obj/item/weapon/gun/projectile/pistol/magnum_pistol/tir = 5)
+	prices = list(/obj/item/ammo_casing/a22lr/blank = 10,
+					/obj/item/ammo_magazine/box/pistol/civgun = 100,
+					/obj/item/weapon/gun/projectile/heavysniper/tir = 750,
+					/obj/item/weapon/gun/projectile/pistol/magnum_pistol/tir = 500)
