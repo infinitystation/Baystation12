@@ -25,7 +25,7 @@
 		if(enabled)
 			var/image/I = image(icon = ret.icon, icon_state = "wc_screen")
 			I.appearance_flags |= RESET_COLOR
-			I.color = (bsod || updating) ? "#0000ff" : "#00ff00"
+			I.color = (bsod || os.updating) ? "#0000ff" : "#00ff00"
 			ret.overlays.Add(I)
 		else
 			ret.overlays.Add(image(icon = ret.icon, icon_state = "wc_screen_off"))
@@ -35,8 +35,9 @@
 			I.color = stripe_color
 			overlays.Add(I)
 	return ret
-
+/*
 /obj/item/modular_computer/pda/wrist/on_update_icon()
+	var/datum/extension/interactive/ntos/os = get_extension(src, /datum/extension/interactive/ntos)
 	icon_state = icon_state_unpowered
 	overlays.Cut()
 
@@ -50,7 +51,7 @@
 	if(istype(H) && H.wear_id == src)
 		H.update_inv_wear_id()
 
-	if(bsod || updating)
+	if(bsod || os.updating)
 		var/image/I = image(icon = icon, icon_state ="bsod")
 		I.appearance_flags |= RESET_COLOR
 		overlays.Add(I)
@@ -75,7 +76,7 @@
 		overlays.Add(icon_state_menu)
 		var/image/I = image(icon = icon, icon_state = icon_state_menu)
 		I.appearance_flags |= RESET_COLOR
-		overlays.Add(I)
+		overlays.Add(I)*/
 
 /obj/item/modular_computer/pda/wrist/AltClick(var/mob/user)
 	if(!CanPhysicallyInteract(user))
