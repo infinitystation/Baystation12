@@ -1,6 +1,18 @@
+  
 /obj/item/projectile/bullet/pistol/tiny
-	damage = 8 //.22, etc
-	armor_penetration = 8
+	damage = 10 //.22, etc
+
+/obj/item/projectile/bullet/pistol/tiny/rubber
+	damage_flags = 0
+	damage = 1
+	agony = 10
+	weaken = 1
+	embed = 0
+	sharp = 0
+
+/obj/item/projectile/bullet/pistol/tiny/blank
+	damage = 0
+	agony = 1
 
 /obj/item/projectile/bullet/pistol/tiny/rubber
 	name = "rubber bullet tiny"
