@@ -69,7 +69,7 @@
 /obj/item/lordwessel/proc/omious_belling()
 	for(var/mob/M in GLOB.player_list)
 		sound_to(M, teleportsound)
-		to_world(SPAN_OCCULT("You hear ominous belling, far-far away from you."))
+		to_chat(M, SPAN_OCCULT("You hear ominous belling, far-far away from you."))
 
 /obj/item/lordwessel/proc/teleport2(area/A, mob/T)
 	if(isliving(T))
