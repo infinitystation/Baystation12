@@ -95,7 +95,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/merchant_station)
 "aav" = (
-/obj/machinery/computer/modular/preset/mercenary{
+/obj/machinery/computer/modular/preset/full/merc{
 	icon_state = "console";
 	dir = 4
 	},
@@ -3115,14 +3115,14 @@
 	},
 /area/centcom/specops)
 "ahP" = (
-/obj/machinery/pipedispenser/orderable,
+/obj/machinery/pipedispenser,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
 /area/centcom/specops)
 "ahQ" = (
-/obj/machinery/pipedispenser/disposal/orderable,
+/obj/machinery/pipedispenser/disposal,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -3233,7 +3233,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/syndicate_station/start)
 "aid" = (
-/obj/machinery/computer/modular/preset/mercenary,
+/obj/machinery/computer/modular/preset/full/merc,
 /obj/effect/floor_decal/techfloor{
 	icon_state = "techfloor_edges";
 	dir = 1
@@ -3955,7 +3955,7 @@
 	icon_state = "tube_map";
 	dir = 4
 	},
-/obj/machinery/computer/modular/preset/mercenary{
+/obj/machinery/computer/modular/preset/full/merc{
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor{

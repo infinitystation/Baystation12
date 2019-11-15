@@ -13236,7 +13236,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
 	},
-/obj/machinery/pipedispenser/orderable,
+/obj/machinery/pipedispenser,
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/atmos)
 "Ae" = (

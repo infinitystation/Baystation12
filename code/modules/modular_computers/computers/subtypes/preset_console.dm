@@ -156,3 +156,136 @@
 		/datum/computer_file/program/email_client,
 		/datum/computer_file/program/wordprocessor
 	)
+
+//[INF]
+/obj/machinery/computer/modular/preset/medical
+	default_software = list(
+		/datum/computer_file/program/suit_sensors,
+		/datum/computer_file/program/camera_monitor,
+		/datum/computer_file/program/records,
+		/datum/computer_file/program/wordprocessor,
+		/datum/computer_file/program/reports
+	)
+	autorun_program = "sensormonitor"
+
+// Research
+/obj/machinery/computer/modular/preset/research
+	uncreated_component_parts = list(
+		/obj/item/weapon/stock_parts/power/apc,
+		/obj/item/weapon/stock_parts/computer/ai_slot
+	)
+	default_software = list(
+		/datum/computer_file/program/ntnetmonitor,
+		/datum/computer_file/program/nttransfer,
+		/datum/computer_file/program/camera_monitor,
+		/datum/computer_file/program/aidiag,
+		/datum/computer_file/program/email_client,
+		/datum/computer_file/program/wordprocessor,
+		/datum/computer_file/program/reports
+	)
+
+// Administrator
+/obj/machinery/computer/modular/preset/sysadmin
+	uncreated_component_parts = list(
+		/obj/item/weapon/stock_parts/power/apc,
+		/obj/item/weapon/stock_parts/computer/ai_slot
+	)
+	default_software = list(
+		/datum/computer_file/program/ntnetmonitor,
+		/datum/computer_file/program/nttransfer,
+		/datum/computer_file/program/camera_monitor,
+		/datum/computer_file/program/aidiag,
+		/datum/computer_file/program/email_client,
+		/datum/computer_file/program/email_administration,
+		/datum/computer_file/program/records,
+		/datum/computer_file/program/wordprocessor
+	)
+// Command
+/obj/machinery/computer/modular/preset/command
+	uncreated_component_parts = list(
+		/obj/item/weapon/stock_parts/power/apc,
+		/obj/item/weapon/stock_parts/computer/nano_printer,
+		/obj/item/weapon/stock_parts/computer/card_slot
+	)
+	default_software = list(
+		/datum/computer_file/program/comm,
+		/datum/computer_file/program/camera_monitor,
+		/datum/computer_file/program/email_client,
+		/datum/computer_file/program/records,
+		/datum/computer_file/program/wordprocessor,
+		/datum/computer_file/program/docking,
+		/datum/computer_file/program/reports,
+		/datum/computer_file/program/deck_management
+	)
+
+// Security
+/obj/machinery/computer/modular/preset/security
+	uncreated_component_parts = list(
+		/obj/item/weapon/stock_parts/computer/nano_printer,
+		/obj/item/weapon/stock_parts/power/apc
+	)
+
+// Civilian
+/obj/machinery/computer/modular/preset/civilian
+	default_software = list(
+		/datum/computer_file/program/nttransfer,
+		/datum/computer_file/program/newsbrowser,
+		/datum/computer_file/program/camera_monitor,
+		/datum/computer_file/program/email_client,
+		/datum/computer_file/program/supply,
+		/datum/computer_file/program/records,
+		/datum/computer_file/program/wordprocessor
+	)
+
+// Offices
+/obj/machinery/computer/modular/preset/civilian/professional
+	uncreated_component_parts = list(
+		/obj/item/weapon/stock_parts/computer/nano_printer,
+		/obj/item/weapon/stock_parts/power/apc
+	)
+
+//Dock control
+/obj/machinery/computer/modular/preset/dock
+	uncreated_component_parts = list(
+		/obj/item/weapon/stock_parts/computer/nano_printer,
+		/obj/item/weapon/stock_parts/power/apc
+	)
+	default_software = list(
+		/datum/computer_file/program/nttransfer,
+		/datum/computer_file/program/email_client,
+		/datum/computer_file/program/supply,
+		/datum/computer_file/program/wordprocessor,
+		/datum/computer_file/program/docking,
+		/datum/computer_file/program/reports
+	)
+
+// ERT
+/obj/machinery/computer/modular/preset/ert
+	uncreated_component_parts = list(
+		/obj/item/weapon/stock_parts/power/apc,
+		/obj/item/weapon/stock_parts/computer/ai_slot,
+		/obj/item/weapon/stock_parts/computer/nano_printer,
+		/obj/item/weapon/stock_parts/computer/card_slot
+	)
+	default_software = list(
+		/datum/computer_file/program/nttransfer,
+		/datum/computer_file/program/camera_monitor/ert,
+		/datum/computer_file/program/alarm_monitor,
+		/datum/computer_file/program/comm,
+		/datum/computer_file/program/aidiag,
+		/datum/computer_file/program/records,
+		/datum/computer_file/program/wordprocessor
+	)
+
+// Merchant
+/obj/machinery/computer/modular/preset/merchant
+	default_software = list(
+		/datum/computer_file/program/merchant,
+		/datum/computer_file/program/wordprocessor,
+		/datum/computer_file/program/nttransfer,
+		/datum/computer_file/program/newsbrowser,
+		/datum/computer_file/program/email_client,
+		/datum/computer_file/program/wordprocessor,
+		/datum/computer_file/program/library
+	)
+//[/INF]

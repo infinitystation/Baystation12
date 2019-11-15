@@ -806,7 +806,7 @@
 /obj/machinery/door/blast/regular{
 	dir = 4;
 	id_tag = "bsa_space";
-	name = "BSA Hatch"
+	name = "Unknown Compartament Hatch"
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/command/bsa)
@@ -1327,7 +1327,7 @@
 	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "bsa_space";
-	name = "BSA Shell Loader";
+	name = "Unknown Compartament Shell Loader";
 	opacity = 0
 	},
 /turf/simulated/floor/reinforced,
@@ -2532,10 +2532,6 @@
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "eJ" = (
-/obj/machinery/bsa/back{
-	icon_state = "back";
-	dir = 8
-	},
 /obj/machinery/conveyor{
 	dir = 8;
 	id = "bsa";
@@ -2933,7 +2929,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/highsecurity{
-	name = "BSA Airlock";
+	name = "Unknown Compartament Airlock";
 	req_access = newlist()
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -4849,8 +4845,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
 "iv" = (
-/obj/machinery/computer/modular/preset/command{
-	icon_state = "console";
+/obj/machinery/computer/modular/preset/cardslot/command{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/mauve/mono,
@@ -5602,7 +5597,7 @@
 /obj/machinery/button/blast_door{
 	dir = 4;
 	id_tag = "bsa_space";
-	name = "BSA Space";
+	name = "Unknown Compartament Space";
 	pixel_x = -24;
 	req_access = list("ACCESS_GUN")
 	},
@@ -5613,7 +5608,7 @@
 	},
 /obj/machinery/conveyor_switch{
 	id = "bsa";
-	name = "BSA shell loader"
+	name = "Unknown Compartament shell loader"
 	},
 /turf/simulated/floor/tiled,
 /area/command/bsa)
@@ -15721,7 +15716,7 @@
 /area/hallway/primary/thirddeck/fore)
 "yE" = (
 /obj/machinery/door/airlock/highsecurity{
-	name = "BSA Airlock";
+	name = "Unknown Compartament Airlock";
 	req_access = newlist()
 	},
 /obj/machinery/door/firedoor,
@@ -19826,7 +19821,7 @@
 /obj/machinery/door/blast/regular{
 	dir = 4;
 	id_tag = "bsa_door2";
-	name = "BSA Blast Door"
+	name = "Unknown Compartament Blast Door"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/command/bsa)
@@ -25569,17 +25564,9 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/thirddeck/aft)
 "OK" = (
-/obj/machinery/bsa/front{
-	icon_state = "front";
-	dir = 8
-	},
 /turf/simulated/floor/reinforced/airless,
 /area/command/bsa)
 "OL" = (
-/obj/machinery/bsa/middle{
-	icon_state = "middle";
-	dir = 8
-	},
 /turf/simulated/floor/reinforced/airless,
 /area/command/bsa)
 "OM" = (
@@ -25615,12 +25602,10 @@
 	icon_state = "railing0-1";
 	tag = "icon-railing0 (EAST)"
 	},
-/obj/structure/ship_munition/bsa_charge/mining,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/reinforced,
 /area/command/bsa)
 "OQ" = (
-/obj/structure/ship_munition/bsa_charge/emp,
 /obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/reinforced,
 /area/command/bsa)
@@ -25669,7 +25654,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cargo)
 "OW" = (
-/obj/structure/ship_munition/bsa_charge/explosive,
 /obj/effect/floor_decal/industrial/outline/red,
 /turf/simulated/floor/reinforced,
 /area/command/bsa)
@@ -25695,7 +25679,7 @@
 	desc = "A remote control switch for the medical chamber.";
 	dir = 2;
 	id_tag = "bsa_door1";
-	name = "BSA Blast Door";
+	name = "Unknown Compartament Blast Door";
 	pixel_y = 24;
 	req_access = list("ACCESS_GUN")
 	},
@@ -25713,7 +25697,6 @@
 /turf/simulated/wall/r_wall/hull,
 /area/maintenance/thirddeck/port)
 "Pb" = (
-/obj/machinery/computer/ship/bsa,
 /obj/item/modular_computer/telescreen/preset{
 	pixel_y = 28
 	},
@@ -25806,7 +25789,7 @@
 	icon_state = "warning";
 	dir = 5
 	},
-/obj/machinery/computer/modular/preset/command,
+/obj/machinery/computer/modular/preset/cardslot/command,
 /turf/simulated/floor/tiled,
 /area/command/bsa)
 "Pl" = (
@@ -25929,7 +25912,6 @@
 	icon_state = "railing0-1";
 	tag = "icon-railing0 (EAST)"
 	},
-/obj/structure/ship_munition/bsa_charge/mining,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/firealarm{
 	dir = 1;
@@ -25977,7 +25959,7 @@
 "Px" = (
 /obj/machinery/door/blast/regular{
 	id_tag = "bsa_door1";
-	name = "BSA Blast Door"
+	name = "Unknown Compartament Blast Door"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -26029,7 +26011,6 @@
 /turf/simulated/floor/tiled,
 /area/command/bsa)
 "PB" = (
-/obj/structure/ship_munition/bsa_charge/emp,
 /obj/effect/floor_decal/industrial/outline/blue,
 /obj/machinery/light/spot{
 	dir = 1
@@ -26072,12 +26053,11 @@
 /turf/simulated/wall/prepainted,
 /area/vacant/cargo)
 "PF" = (
-/obj/structure/ship_munition/bsa_charge/fire,
 /obj/effect/floor_decal/industrial/outline/orange,
 /obj/machinery/button/blast_door{
 	dir = 8;
 	id_tag = "bsa_door2";
-	name = "BSA Blast Door";
+	name = "Unknown Compartament Blast Door";
 	pixel_x = 24;
 	req_access = list("ACCESS_GUN")
 	},
@@ -26099,7 +26079,7 @@
 /obj/machinery/button/blast_door{
 	dir = 4;
 	id_tag = "bsa_door2";
-	name = "BSA Blast Door";
+	name = "Unknown Compartament Blast Door";
 	pixel_x = -24;
 	req_access = list("ACCESS_GUN")
 	},
@@ -26388,7 +26368,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/shuttlefuel)
 "Qi" = (
-/obj/structure/ship_munition/bsa_charge/fire,
 /obj/effect/floor_decal/industrial/outline/orange,
 /obj/machinery/light/spot,
 /turf/simulated/floor/reinforced,

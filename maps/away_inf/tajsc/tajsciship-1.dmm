@@ -3546,7 +3546,7 @@
 /area/ship/tajsciship/dormitory)
 "hX" = (
 /obj/machinery/atmospherics/pipe/manifold/visible,
-/obj/machinery/pipedispenser/orderable,
+/obj/machinery/pipedispenser,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/old_cargo,
 /area/ship/tajsciship/storage)

@@ -407,6 +407,16 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	if(!can(signal))
 		return 0
 	return receiving
+
+/obj/machinery/telecomms/relay/preset
+	network = "tcommsat"
+/obj/machinery/telecomms/relay/preset/centcom
+	id = "Centcom Relay"
+	hide = 1
+	toggled = 1
+	produces_heat = 0
+	autolinkers = list("c_relay")
+
 //[/INF]
 /*
 	The bus mainframe idles and waits for hubs to relay them signals. They act

@@ -81,7 +81,7 @@
 "abC" = (/obj/effect/floor_decal/borderfloor/corner{dir = 1; icon_state = "borderfloorcorner_white"},/obj/effect/floor_decal/corner/green/bordercorner{icon_state = "bordercolorcorner"; dir = 1},/obj/structure/closet/shipping_wall/filled{pixel_x = -32; pixel_y = 32},/turf/simulated/floor/tiled/monotile,/area/hydroponics)
 "abD" = (/obj/structure/catwalk,/obj/random/tool,/obj/structure/disposalpipe/segment{dir = 4; icon_state = "pipe-c"},/obj/machinery/camera/network/engineering{c_tag = "Bluespace Drive - Observation"; dir = 4},/turf/simulated/floor/plating,/area/maintenance/bluespace)
 "abE" = (/obj/machinery/door/firedoor,/turf/simulated/floor/tiled/techfloor/grid,/area/maintenance/seconddeck/forestarboard)
-"abF" = (/obj/item/weapon/bucket_sensor,/turf/simulated/floor/plating,/area/maintenance/seconddeck/forestarboard)
+"abF" = (/turf/simulated/floor/plating,/area/maintenance/seconddeck/forestarboard)
 "abG" = (/turf/simulated/floor/plating,/area/maintenance/seconddeck/forestarboard)
 "abH" = (/obj/machinery/disposal,/obj/machinery/camera/network/command{c_tag = "Captain - Office Main Anteroom"; dir = 2},/obj/structure/disposalpipe/trunk,/turf/simulated/floor/carpet,/area/crew_quarters/heads/captain/office_anteroom)
 "abI" = (/turf/simulated/wall/r_wall/hull,/area/crew_quarters/heads/cobed)
