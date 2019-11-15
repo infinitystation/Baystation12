@@ -1053,7 +1053,7 @@
 /obj/random/junk,
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "acO" = (
 /obj/structure/table/standard,
 /obj/item/weapon/reagent_containers/glass/beaker/vial/random/toxin,
@@ -1063,19 +1063,19 @@
 /obj/item/weapon/reagent_containers/glass/bottle/stoxin,
 /obj/item/weapon/reagent_containers/syringe,
 /turf/simulated/floor/shuttle/white,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "acP" = (
 /obj/structure/table/standard,
 /obj/item/weapon/storage/firstaid/surgery,
 /turf/simulated/floor/shuttle/white,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "acQ" = (
 /obj/structure/table/standard,
 /obj/item/weapon/reagent_containers/syringe/antiviral,
 /obj/item/weapon/reagent_containers/syringe/antiviral,
 /obj/item/weapon/reagent_containers/syringe/antiviral,
 /turf/simulated/floor/shuttle/white,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "acR" = (
 /obj/machinery/light{
 	dir = 8
@@ -2601,7 +2601,7 @@
 "agI" = (
 /obj/effect/paint/dark_gunmetal,
 /turf/simulated/wall/r_titanium,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "agJ" = (
 /obj/machinery/door/airlock/hatch{
 	req_access = newlist()
@@ -2617,7 +2617,7 @@
 	},
 /obj/effect/paint/dark_gunmetal,
 /turf/simulated/wall/r_titanium,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "agL" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular{
@@ -2630,7 +2630,7 @@
 	},
 /obj/effect/paint/dark_gunmetal,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "agM" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Barracks";
@@ -2754,30 +2754,30 @@
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "agX" = (
 /obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "agY" = (
 /obj/machinery/computer/shuttle_control/multi/vox,
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "agZ" = (
 /obj/structure/table/steel,
 /obj/random/plushie,
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aha" = (
 /obj/item/modular_computer/console/preset/civilian{
 	computer_emagged = 1
 	},
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ahb" = (
 /obj/structure/flora/pottedplant/unusual,
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ahc" = (
 /obj/random/trash,
 /obj/machinery/airlock_sensor{
@@ -2788,7 +2788,7 @@
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ahd" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 2;
@@ -2797,7 +2797,7 @@
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ahe" = (
 /obj/mecha/combat/gygax/dark,
 /obj/machinery/camera/network/ert{
@@ -2975,7 +2975,7 @@
 /obj/machinery/meter,
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ahC" = (
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
 	tag_airpump = "vox_west_vent";
@@ -2995,7 +2995,7 @@
 /obj/machinery/light/small,
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ahD" = (
 /obj/machinery/computer/station_alert/all{
 	dir = 4
@@ -3004,11 +3004,11 @@
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ahE" = (
 /obj/structure/bed/chair/comfy/captain,
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ahF" = (
 /obj/machinery/button/blast_door{
 	id = "SkipjackShuttersNorth";
@@ -3031,13 +3031,13 @@
 	req_access = list("ACCESS_SYNDICATE")
 	},
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ahG" = (
 /obj/structure/bed/chair{
 	dir = 1
 	},
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ahH" = (
 /obj/machinery/constructable_frame/computerframe/deconstruct{
 	dir = 8
@@ -3047,7 +3047,7 @@
 	icon_state = "bulb_map"
 	},
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ahI" = (
 /obj/machinery/light/small,
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
@@ -3064,7 +3064,7 @@
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ahJ" = (
 /obj/machinery/atmospherics/pipe/manifold/visible{
 	dir = 4
@@ -3072,7 +3072,7 @@
 /obj/machinery/meter,
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ahK" = (
 /turf/unsimulated/floor{
 	icon_state = "plating";
@@ -3305,31 +3305,31 @@
 "ail" = (
 /obj/effect/paint/dark_gunmetal,
 /turf/simulated/wall/titanium,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aim" = (
 /obj/structure/table/rack,
 /obj/random/hardsuit,
 /obj/item/clothing/glasses/thermal/plain/monocle,
 /obj/random/glasses,
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ain" = (
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aio" = (
 /obj/random/maintenance,
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aip" = (
 /obj/random/junk,
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aiq" = (
 /obj/structure/table/rack,
 /obj/random/hardsuit,
 /obj/item/clothing/head/pirate,
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "air" = (
 /obj/machinery/door/airlock/hatch{
 	frequency = 1331;
@@ -3340,7 +3340,7 @@
 	},
 /obj/machinery/shield_diffuser,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ais" = (
 /obj/machinery/vending/tool,
 /turf/unsimulated/floor{
@@ -3491,7 +3491,7 @@
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aiL" = (
 /obj/structure/table/rack,
 /obj/random/maintenance,
@@ -3504,7 +3504,7 @@
 /obj/random/hat,
 /obj/item/device/flash,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aiM" = (
 /obj/machinery/microwave{
 	pixel_x = -1;
@@ -3512,7 +3512,7 @@
 	},
 /obj/structure/table/steel,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aiN" = (
 /obj/item/seeds/potatoseed,
 /obj/item/seeds/potatoseed,
@@ -3521,11 +3521,11 @@
 /obj/item/weapon/beartrap,
 /obj/structure/table/steel,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aiO" = (
 /obj/machinery/vending/hydroseeds,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aiP" = (
 /obj/structure/table/rack,
 /obj/item/weapon/melee/energy/sword/pirate,
@@ -3541,7 +3541,7 @@
 	},
 /obj/random/gloves,
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aiQ" = (
 /obj/structure/table/rack,
 /obj/item/weapon/melee/energy/sword/pirate,
@@ -3557,12 +3557,12 @@
 	icon_state = "bulb_map"
 	},
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aiR" = (
 /obj/effect/paint/brown,
 /obj/effect/paint_stripe/brown,
 /turf/simulated/wall/titanium,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aiS" = (
 /obj/structure/table/rack,
 /obj/item/weapon/storage/belt/utility/full,
@@ -3578,11 +3578,11 @@
 /obj/random/hat,
 /obj/item/weapon/storage/belt/utility,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aiT" = (
 /obj/machinery/washing_machine,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aiU" = (
 /obj/structure/table/standard,
 /obj/item/weapon/storage/fancy/cigarettes,
@@ -3597,7 +3597,7 @@
 /obj/item/weapon/card/emag,
 /obj/item/device/flash,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aiV" = (
 /obj/structure/table/rack,
 /obj/random/maintenance,
@@ -3610,7 +3610,7 @@
 /obj/item/weapon/barrier,
 /obj/item/weapon/barrier,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aiW" = (
 /obj/machinery/atmospherics/pipe/simple/visible,
 /obj/machinery/access_button{
@@ -3624,7 +3624,7 @@
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aiX" = (
 /obj/mecha/medical/odysseus/loaded,
 /obj/machinery/mech_recharger,
@@ -4006,23 +4006,23 @@
 /obj/machinery/atmospherics/pipe/simple/visible,
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ajB" = (
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ajC" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/machinery/light/small{
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ajD" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/effect/paint/brown,
 /obj/effect/paint_stripe/brown,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ajE" = (
 /obj/machinery/door/airlock/external{
 	density = 1;
@@ -4033,7 +4033,7 @@
 	},
 /obj/machinery/shield_diffuser,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ajF" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -4047,15 +4047,15 @@
 /obj/random/projectile,
 /obj/item/weapon/tape_roll,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ajG" = (
 /obj/random/loot,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ajH" = (
 /obj/item/robot_parts/head,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ajI" = (
 /obj/item/mecha_parts/mecha_equipment/teleporter,
 /obj/item/mecha_parts/mecha_tracking,
@@ -4194,31 +4194,31 @@
 	},
 /obj/effect/paint/dark_gunmetal,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ajV" = (
 /obj/random/trash,
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ajW" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ajX" = (
 /obj/random/maintenance,
 /obj/random/loot,
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ajY" = (
 /obj/random/trash,
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ajZ" = (
 /obj/item/robot_parts/l_leg,
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aka" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
@@ -4231,7 +4231,7 @@
 	},
 /obj/effect/paint/dark_gunmetal,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "akb" = (
 /obj/mecha/working/ripley/firefighter,
 /obj/machinery/mech_recharger,
@@ -4447,11 +4447,11 @@
 "aku" = (
 /obj/machinery/floodlight,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "akv" = (
 /obj/random/trash,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "akw" = (
 /obj/structure/table/rack,
 /obj/item/weapon/gun/launcher/crossbow,
@@ -4468,7 +4468,7 @@
 /obj/item/weapon/beartrap,
 /obj/item/weapon/beartrap,
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "akx" = (
 /obj/structure/table/rack,
 /obj/item/weapon/grenade/empgrenade,
@@ -4476,13 +4476,13 @@
 /obj/item/weapon/grenade/spawnergrenade/manhacks,
 /obj/random/energy,
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aky" = (
 /obj/machinery/suit_cycler/syndicate{
 	locked = 0
 	},
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "akz" = (
 /obj/structure/table/steel,
 /obj/machinery/recharger,
@@ -4490,22 +4490,22 @@
 	dir = 4
 	},
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "akA" = (
 /obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "akB" = (
 /obj/item/robot_parts/robot_suit,
 /obj/item/robot_parts/r_leg,
 /obj/item/robot_parts/r_arm,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "akC" = (
 /obj/machinery/atmospherics/pipe/simple/visible,
 /obj/random/maintenance,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "akD" = (
 /obj/item/mecha_parts/mecha_equipment/tool/drill/diamonddrill,
 /obj/item/mecha_parts/mecha_equipment/tool/cable_layer,
@@ -4775,7 +4775,7 @@
 /obj/item/weapon/reagent_containers/food/snacks/tastybread,
 /obj/item/weapon/reagent_containers/food/snacks/tastybread,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "alf" = (
 /obj/machinery/door/airlock/hatch{
 	frequency = 1331;
@@ -4786,7 +4786,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/visible,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "alg" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -4795,13 +4795,13 @@
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "alh" = (
 /obj/structure/table/steel,
 /obj/random/maintenance,
 /obj/effect/shuttle_landmark/skipjack/start,
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "ali" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -4810,7 +4810,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "alj" = (
 /obj/structure/hygiene/sink{
 	dir = 8;
@@ -4819,17 +4819,17 @@
 	pixel_y = 0
 	},
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "alk" = (
 /obj/item/weapon/wrench,
 /obj/item/weapon/mop,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "all" = (
 /obj/machinery/atmospherics/pipe/simple/visible,
 /obj/item/weapon/crowbar,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "alm" = (
 /obj/mecha/working/hoverpod,
 /obj/machinery/mech_recharger,
@@ -5044,7 +5044,7 @@
 	},
 /obj/machinery/portable_atmospherics/canister/air/airlock,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "alG" = (
 /obj/structure/closet/crate,
 /obj/item/stack/material/steel/fifty,
@@ -5054,7 +5054,7 @@
 /obj/item/stack/material/aluminium/fifty,
 /obj/item/stack/material/plastic/fifty,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "alH" = (
 /obj/machinery/autolathe{
 	desc = "Your typical Autolathe. It appears to have much more options than your regular one, however...";
@@ -5062,44 +5062,44 @@
 	name = "Unlocked Autolathe"
 	},
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "alI" = (
 /turf/simulated/floor/shuttle/black,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "alJ" = (
 /obj/machinery/light/small{
 	dir = 1
 	},
 /turf/simulated/floor/shuttle/black,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "alK" = (
 /obj/random/trash,
 /turf/simulated/floor/shuttle/black,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "alL" = (
 /obj/structure/bed/chair{
 	dir = 4
 	},
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "alM" = (
 /obj/item/weapon/deck/cards,
 /obj/structure/table/steel,
 /obj/random/projectile,
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "alN" = (
 /obj/structure/bed/chair{
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "alO" = (
 /obj/machinery/bodyscanner{
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/white,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "alP" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -5108,24 +5108,24 @@
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/white,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "alQ" = (
 /obj/structure/closet/medical_wall/filled{
 	pixel_x = 28
 	},
 /turf/simulated/floor/shuttle/white,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "alR" = (
 /obj/structure/hygiene/toilet{
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "alS" = (
 /obj/machinery/portable_atmospherics/canister/nitrogen,
 /obj/item/weapon/tank/nitrogen,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "alT" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -5135,7 +5135,7 @@
 	},
 /obj/machinery/portable_atmospherics/canister/air/airlock,
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "alU" = (
 /obj/machinery/camera/network/ert{
 	c_tag = "Assault Armor South";
@@ -5394,20 +5394,20 @@
 "ams" = (
 /obj/random/junk,
 /turf/simulated/floor/shuttle/black,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "amt" = (
 /obj/structure/table/steel,
 /obj/random/loot,
 /obj/item/weapon/gun/energy/ionrifle/small,
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "amu" = (
 /obj/random/junk,
 /turf/simulated/floor/shuttle/white,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "amv" = (
 /turf/simulated/floor/shuttle/white,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "amw" = (
 /obj/structure/hygiene/sink{
 	dir = 4;
@@ -5415,7 +5415,7 @@
 	pixel_x = 22
 	},
 /turf/simulated/floor/shuttle/white,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "amx" = (
 /obj/structure/sign/redcross{
 	pixel_y = -32
@@ -5607,25 +5607,25 @@
 	pixel_y = 32
 	},
 /turf/simulated/floor/airless,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "amQ" = (
 /obj/structure/table/standard,
 /obj/random/maintenance,
 /turf/simulated/floor/shuttle/black,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "amR" = (
 /obj/structure/table/standard,
 /obj/item/weapon/deck/cards,
 /turf/simulated/floor/shuttle/black,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "amS" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "amT" = (
 /obj/random/trash,
 /turf/simulated/floor/shuttle/white,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "amU" = (
 /obj/structure/table/reinforced,
 /obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp,
@@ -5917,11 +5917,11 @@
 	req_access = newlist()
 	},
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "anw" = (
 /obj/machinery/optable,
 /turf/simulated/floor/shuttle/white,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "anx" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/storage/belt/medical,
@@ -6155,25 +6155,25 @@
 /turf/simulated/floor/shuttle/red{
 	icon_state = "floor7"
 	},
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "anT" = (
 /turf/simulated/floor/shuttle/red{
 	icon_state = "floor7"
 	},
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "anU" = (
 /obj/structure/bed/padded,
 /obj/item/weapon/bedsheet/rainbow,
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "anV" = (
 /obj/structure/bed/padded,
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "anW" = (
 /obj/random/maintenance,
 /turf/simulated/floor/shuttle/white,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "anX" = (
 /obj/structure/closet/crate,
 /turf/unsimulated/floor{
@@ -6389,18 +6389,18 @@
 /turf/simulated/floor/shuttle/red{
 	icon_state = "floor7"
 	},
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aos" = (
 /obj/random/trash,
 /turf/simulated/floor/shuttle/red{
 	icon_state = "floor7"
 	},
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aot" = (
 /obj/structure/closet/crate,
 /obj/item/clothing/suit/space/pirate,
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aou" = (
 /obj/structure/bed/padded,
 /obj/item/weapon/bedsheet/green,
@@ -6408,7 +6408,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aov" = (
 /obj/structure/table/standard,
 /obj/item/weapon/storage/firstaid/fire{
@@ -6421,7 +6421,7 @@
 /obj/item/weapon/storage/belt/medical/emt,
 /obj/item/device/scanner/health,
 /turf/simulated/floor/shuttle/white,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aow" = (
 /obj/structure/table/standard,
 /obj/item/weapon/storage/firstaid/adv{
@@ -6437,7 +6437,7 @@
 /obj/item/weapon/melee/baton/cattleprod,
 /obj/item/weapon/defibrillator/compact/combat/loaded,
 /turf/simulated/floor/shuttle/white,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aox" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/mask/gas/alt,
@@ -6595,15 +6595,15 @@
 /obj/structure/bed/padded,
 /obj/item/weapon/bedsheet/rd,
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aoM" = (
 /obj/item/pizzabox/meat,
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aoN" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "aoO" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/storage/box/bodybags,
@@ -10560,7 +10560,7 @@
 	req_access = newlist()
 	},
 /turf/simulated/floor/shuttle/red,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "axd" = (
 /obj/machinery/door/airlock/centcom,
 /turf/unsimulated/floor{
@@ -26319,7 +26319,7 @@
 	req_access = newlist()
 	},
 /turf/simulated/floor/plating,
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "biq" = (
 /obj/machinery/door/airlock/hatch{
 	req_access = newlist()
@@ -26327,7 +26327,7 @@
 /turf/simulated/floor/shuttle/red{
 	icon_state = "floor7"
 	},
-/area/skipjack_station/start)
+/area/map_template/skipjack_station/start)
 "bir" = (
 /obj/machinery/door/airlock/external{
 	autoset_access = 0;

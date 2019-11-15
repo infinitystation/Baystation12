@@ -64,7 +64,5 @@
 		return 0
 	if(!proximity)
 		return 0
-	if(!holder2.enabled)
-		return 0
 	return 1
 

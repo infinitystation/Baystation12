@@ -167,8 +167,8 @@
 
 /obj/random/glasses/spawn_choices()
 	return list(/obj/item/clothing/glasses/eyepatch = 2,
-				/obj/item/clothing/glasses/gglasses = 4,
-				/obj/item/clothing/glasses/regular = 3,
+//				/obj/item/clothing/glasses/gglasses = 4,
+//				/obj/item/clothing/glasses/regular = 3,
 				/obj/item/clothing/glasses/sunglasses = 5,
 				/obj/item/clothing/glasses/sunglasses/big = 2,
 				/obj/item/clothing/glasses/sunglasses/blindfold = 1,

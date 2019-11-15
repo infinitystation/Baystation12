@@ -20,7 +20,6 @@
 	desc = "O Christmas tree, O Christmas tree..."
 	icon = 'icons/obj/flora/pinetrees.dmi'
 	icon_state = "pine_c"
-	plane = OBJ_PLANE
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/tree/pine/xmas/New()

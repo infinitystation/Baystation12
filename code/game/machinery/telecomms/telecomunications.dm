@@ -340,15 +340,16 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 		else
 			relay_information(signal, /obj/machinery/telecomms/broadcaster, 1) // Send it to a broadcaster.
 
+
 //[INF]
-/*
-	The relay idles until it receives information. It then passes on that information
-	depending on where it came from.
+	/*
+		The relay idles until it receives information. It then passes on that information
+		depending on where it came from.
 
-	The relay is needed in order to send information pass Z levels. It must be linked
-	with a HUB, the only other machine that can send/receive pass Z levels.
-*/
-
+		The relay is needed in order to send information pass Z levels. It must be linked
+		with a HUB, the only other machine that can send/receive pass Z levels.
+	*/
+		
 /obj/machinery/telecomms/relay
 	name = "Telecommunication Relay"
 	icon = 'icons/obj/stationobjs.dmi'
@@ -364,8 +365,16 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	long_range_link = 1
 	var/broadcasting = 1
 	var/receiving = 1
-	var/usage_offise = 10 KILOWATTS //inf
+	var/usage_offise = 10 KILOWATTS
 
+/obj/item/weapon/stock_parts/circuitboard/telecomms/relay
+	name = T_BOARD("relay mainframe")
+	build_path = /obj/machinery/telecomms/relay
+	origin_tech = list(TECH_DATA = 3, TECH_ENGINEERING = 4, TECH_BLUESPACE = 3)
+	req_components =	list(
+								/obj/item/weapon/stock_parts/manipulator = 2,
+								/obj/item/weapon/stock_parts/subspace/filter = 2
+							)
 // Relays on ship's Z levels use less power as they don't have to transmit over such large distances.
 /obj/machinery/telecomms/relay/update_power()
 	..()

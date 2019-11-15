@@ -400,7 +400,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 	icon = 'icons/effects/96x96.dmi'
 	icon_state = "holoray"
 	layer = FLY_LAYER
-	plane = LYING_MOB_PLANE
+	plane = DEFAULT_PLANE
 	anchored = 1
 	mouse_opacity = 0
 	pixel_x = -32

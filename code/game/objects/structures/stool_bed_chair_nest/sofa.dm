@@ -1,3 +1,4 @@
+//INF FILE
 /obj/structure/bed/sofa
 	name = "leather sofa"
 	desc = "A wide and comfy sofa - no one assistant was ate by it due production! It's made of steel and covered with synthetic leather."
@@ -20,12 +21,12 @@
 /obj/structure/bed/sofa/on_update_icon()
 	overlays.Cut()
 	var/image/I = image(src, "[base_icon]_over")
-	I.plane = ABOVE_HUMAN_PLANE
+//	I.plane = ABOVE_HUMAN_PLANE
 	I.layer = ABOVE_HUMAN_LAYER
 	overlays |= I
 	if(buckled_mob)
 		var/image/D = image(src, "[base_icon]_armrest")
-		D.plane = ABOVE_HUMAN_PLANE
+//		D.plane = ABOVE_HUMAN_PLANE
 		D.layer = ABOVE_HUMAN_LAYER
 		overlays |= D
 

@@ -20,6 +20,7 @@
 
 /obj/item/modular_computer/pda/wrist/get_mob_overlay(var/mob/user_mob, var/slot)
 	var/image/ret = ..()
+	var/datum/extension/interactive/ntos/os = get_extension(src, /datum/extension/interactive/ntos)
 	if(slot == slot_wear_id_str)
 		if(enabled)
 			var/image/I = image(icon = ret.icon, icon_state = "wc_screen")
@@ -80,7 +81,7 @@
 	if(!CanPhysicallyInteract(user))
 		return
 	if(card_slot?.stored_card)
-		eject_id()
+		card_slot.eject_id(user)
 	else
 		..()
 

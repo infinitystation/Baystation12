@@ -411,7 +411,7 @@
 		"nav_slavers_base_antag",
 		"nav_mining_antag"
 		)
-	shuttle_area =  /area/skipjack_station/start
+	shuttle_area =  /area/map_template/skipjack_station/start
 	dock_target = "skipjack_shuttle"
 	current_location = "nav_skipjack_start"
 	landmark_transition = "nav_skipjack_transition"

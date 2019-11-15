@@ -297,12 +297,13 @@ Subtypes
 
 /datum/terminal_command/shutdown/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/datum/extension/interactive/ntos/CT = terminal.computer
-	var/obj/item/modular_computer/H = CT.holder
+	var/obj/item/modular_computer/H = CT.get_physical_host()
 	if(CT.holder && istype(H))
 		if(length(text) < 8)
 			return "shutdown: Improper syntax. shutdown."
 		CT.system_shutdown()
-		CT.H.bsod = 0
+		if(istype(H))
+			H.bsod = 0
 		CT.update_host_icon()
 		return "Shutdown successful."
 	else
@@ -333,17 +334,17 @@ Subtypes
 		return "session: interface restored."
 
 	if(copytext(text,8) == " -kill")
-		if(CT.idle_threads)
-			for(PRG in CT.idle_threads)
+		if(CT.running_programs)
+			for(PRG in CT.running_programs)
 				CT.kill_program(PRG)
-			CT.kill_program(active_program)
-			CT.update_icon()
+			CT.kill_program(CT.active_program)
+			CT.update_host_icon()
 			return "session: Active background and current programs killed."
 
 		else
 			ermsg = "background" + ermsg
 		if(CT.active_program)
-			CT.kill_program(active_program)
+			CT.kill_program(CT.active_program)
 		else
 			if(copytext(ermsg, 1, 10) == "background")
 				ermsg = "Curent and " + ermsg
@@ -351,20 +352,16 @@ Subtypes
 				ermsg = "Curent" + ermsg
 			ermsg = "session: " + ermsg
 			return ermsg
-	//var/list/massive_of_active_progs = list()
-	for(PRG in CT.idle_threads)
+	for(PRG in CT.running_programs)
+		. = list()
 		if(PRG.is_illegal)
-			var/act_prog = "\[ENCRYPTED\]"
-			//massive_of_active_progs.Add(act_prog)
-			. += act_prog + "<br>"
+			. += "\[ENCRYPTED\]"
 		else
-			var/act_prog = PRG.filename
-			//massive_of_active_progs.Add(act_prog)
-			. += act_prog
+			. += PRG.filename
 	if(CT.active_program)
-		//massive_of_active_progs.Add(CT.active_program.filename)
 		. += CT.active_program.filename
 	if(.)
+		. = jointext(., "<br>")
 		return
 	return "session: Wrong input. Enter man session for syntax help."
 
@@ -511,7 +508,7 @@ Subtypes
 	var/end_msg = ""
 	var/total = 0
 	for(var/datum/extension/interactive/ntos/comp in SSobj.processing)
-		if(comp.get_ntnet_status() && comp.enabled)
+		if(comp.get_ntnet_status() && comp.host_status())
 			end_msg += " " + num2text(comp.get_component(PART_NETWORK).identification_id) + " |"
 			total += 1
 	. += "<font color='#00ff00'>probenet: online NIDs:</font> |[end_msg]<br>"

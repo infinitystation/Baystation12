@@ -41,8 +41,9 @@
 
 /datum/computer_file/program/email_client/proc/new_mail_notify()
 	//computer.visible_notification("You got mail!")//inf
-	computer.visible_message("\The [computer] beeps softly, indicating a new email has been received.", 1)
-	playsound(computer, 'sound/machines/twobeep.ogg', 50, 1)
+	
+	computer.get_physical_host().visible_message("\The [computer] beeps softly, indicating a new email has been received.", 1)
+	playsound(computer.get_physical_host(), 'sound/machines/twobeep.ogg', 50, 1)
 
 /datum/computer_file/program/email_client/process_tick()
 	..()

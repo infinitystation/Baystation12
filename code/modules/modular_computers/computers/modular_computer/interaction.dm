@@ -87,6 +87,7 @@
 			turn_on(user)
 
 /obj/item/modular_computer/attack_ai(var/mob/user)
+	var/datum/extension/interactive/ntos/os = get_extension(src, /datum/extension/interactive/ntos)
 //[INF]
 	. = ..()
 	if(!enabled && screen_on)

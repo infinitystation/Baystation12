@@ -3,6 +3,7 @@
 	set category = "Object"
 	set src in view(1)
 
+	var/datum/extension/interactive/ntos/os = get_extension(src, /datum/extension/interactive/ntos)
 	var/sil_check = istype(usr, /mob/living/silicon)
 	if(usr.incapacitated() || !istype(usr, /mob/living))
 		to_chat(usr, "<span class='warning'>You can't do that.</span>")
@@ -16,7 +17,7 @@
 		set src in view(10)
 
 	if(enabled)
-		if(has_terminal(usr))
+		if(os.has_terminal(usr))
 			to_chat(usr, "<span class='warning'>You already use terminal of this device.</span>")
 			return
 		if(sil_check)

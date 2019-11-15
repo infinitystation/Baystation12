@@ -72,7 +72,7 @@
 	has_base_range = 3
 	damage_temperature = T0C+80
 	can_engrave = FALSE
-	footstep_type = FOOTSTEP_GRASS //inf
+	footstep_type = /decl/footsteps/grass
 
 /decl/flooring/asteroid
 	name = "coarse sand"
@@ -82,7 +82,7 @@
 	flags = TURF_HAS_EDGES | TURF_REMOVE_SHOVEL
 	build_type = null
 	can_engrave = FALSE
-	footstep_type = FOOTSTEP_ASTEROID //inf
+	footstep_type = /decl/footsteps/asteroid
 
 /decl/flooring/carpet
 	name = "brown carpet"

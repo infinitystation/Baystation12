@@ -33,17 +33,11 @@
 //[INF]
 		switch(newtype)
 			if("TXT")
-				var/datum/computer_file/data/text/F = new/datum/computer_file/data/text()
-				F.filename = newname
-				HDD.store_file(F)
+				computer.create_file(newname, file_type = /datum/computer_file/data/text)
 			if("BATCH")
-				var/datum/computer_file/data/coding/batch/F = new/datum/computer_file/data/coding/batch()
-				F.filename = newname
-				HDD.store_file(F)
+				computer.create_file(newname, file_type = /datum/computer_file/data/coding/batch)
 			if("CFG")
-				var/datum/computer_file/data/config/F = new/datum/computer_file/data/config()
-				F.filename = newname
-				HDD.store_file(F)
+				computer.create_file(newname, file_type = /datum/computer_file/data/config)
 //[/INF]
 	if(href_list["PRG_deletefile"])
 		return computer.delete_file(href_list["PRG_deletefile"])
