@@ -25,3 +25,49 @@
 		icon_state = "pistol0"
 	else
 		icon_state = "pistol_empty"
+
+/obj/item/weapon/gun/projectile/spistol/civ
+	desc = "The TH22. A small sidearm, with futuristic design. Uses .22LR rounds. Inside installed a smart chip that allows track the weapons and to whom it is registered."
+	magazine_type = /obj/item/ammo_magazine/c22m/civ
+	allowed_magazines = /obj/item/ammo_magazine/c22m/civ
+	req_access = list()
+	authorized_modes = list(ALWAYS_AUTHORIZED, UNAUTHORIZED)
+	auto_eject = 0
+
+/obj/item/weapon/gun/projectile/spistol/civ/black
+	icon_state = "ppistol0"
+
+/obj/item/weapon/gun/projectile/spistol/civ/black/on_update_icon()
+	if(ammo_magazine)
+		icon_state = "ppistol0"
+	else
+		icon_state = "ppistol_empty"
+
+/obj/item/weapon/gun/projectile/spistol/civ/white
+	icon_state = "wpistol0"
+
+/obj/item/weapon/gun/projectile/spistol/civ/black/on_update_icon()
+	if(ammo_magazine)
+		icon_state = "wpistol0"
+	else
+		icon_state = "wpistol_empty"
+
+/obj/item/weapon/gun/projectile/spistol/civ/gold
+	name = "golden TH22 pistol"
+	desc = "Luxury TH22. A small sidearm, with futuristic design. Looks like a terran Zolotoy Digol and instant noodles like breakfast, lunch and dinner for a dozen years. Inside installed a smart chip that allows track the weapons and to whom it is registered."
+	icon_state = "gpistol0"
+
+/obj/item/weapon/gun/projectile/spistol/civ/gold/on_update_icon()
+	if(ammo_magazine)
+		icon_state = "gpistol0"
+	else
+		icon_state = "gpistol_empty"
+
+/obj/item/weapon/gun/projectile/spistol/civ/silver
+	icon_state = "spistol0"
+
+/obj/item/weapon/gun/projectile/spistol/civ/silver/on_update_icon()
+	if(ammo_magazine)
+		icon_state = "spistol0"
+	else
+		icon_state = "spistol_empty"
