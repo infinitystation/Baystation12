@@ -24,8 +24,6 @@
 /datum/gear/tactical/bloodpatch
 	allowed_roles = ARMED_ROLES
 
-/datum/gear/tactical/holster
-	allowed_roles = ARMED_ROLES
 /*
 /datum/gear/tactical/pcarrier_press
 	display_name = "journalist's plate carrier"
