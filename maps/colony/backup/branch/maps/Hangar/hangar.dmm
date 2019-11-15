@@ -906,7 +906,7 @@
 	icon_state = "borderfloorcorner2_white";
 	dir = 5
 	},
-/obj/item/modular_computer/console/preset/civilian/professional,
+/obj/machinery/computer/modular/preset/civilian/professional,
 /obj/effect/floor_decal/corner/brown/bordercorner2{
 	icon_state = "bordercolorcorner2";
 	dir = 5
@@ -926,7 +926,7 @@
 	dir = 10;
 	icon_state = "borderfloorcorner2_white"
 	},
-/obj/item/modular_computer/console/preset/supply,
+/obj/machinery/computer/modular/preset/supply_public,
 /obj/effect/floor_decal/corner/brown/bordercorner2{
 	icon_state = "bordercolorcorner2";
 	dir = 10

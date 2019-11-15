@@ -285,10 +285,10 @@
 	required_access = access_salvage
 	requires_ntnet = 0
 
-/obj/item/modular_computer/console/preset/merchant/salvage/install_default_programs()
+/obj/machinery/computer/modular/preset/merchant/salvage/install_default_programs()
 	hard_drive.store_file(new/datum/computer_file/program/merchant/salvage())
 	hard_drive.store_file(new/datum/computer_file/program/wordprocessor())
 
 /obj/item/weapon/paper/salvage_pacman
 	name = "note"
-	info = "П.А.К.М.А.Н. включать на второю мощность. Хватает для питания корабля, и не выделяет радиацию."
+	info = "пїЅ.пїЅ.пїЅ.пїЅ.пїЅ.пїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ."

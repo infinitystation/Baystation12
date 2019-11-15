@@ -3308,7 +3308,7 @@
 	icon_state = "1-2";
 	pixel_y = 0
 	},
-/obj/item/modular_computer/console/preset/command{
+/obj/machinery/computer/modular/preset/command{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,

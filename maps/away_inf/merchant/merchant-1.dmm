@@ -188,7 +188,7 @@
 /turf/simulated/floor/usedup,
 /area/space)
 "aC" = (
-/obj/item/modular_computer/console/preset/civilian/professional,
+/obj/machinery/computer/modular/preset/civilian/professional,
 /turf/simulated/floor/tiled/steel_grid,
 /area/space)
 "aD" = (
@@ -281,7 +281,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/space)
 "aL" = (
-/obj/item/modular_computer/console/preset/civilian/professional{
+/obj/machinery/computer/modular/preset/civilian/professional{
 	icon_state = "console";
 	dir = 1
 	},
@@ -385,7 +385,7 @@
 /turf/simulated/floor/reinforced/airless,
 /area/space)
 "aZ" = (
-/obj/item/modular_computer/console/preset/merchant{
+/obj/machinery/computer/modular/preset/merchant{
 	icon_state = "console";
 	dir = 1
 	},
@@ -837,7 +837,7 @@
 /turf/simulated/wall/r_wall,
 /area/space)
 "bT" = (
-/obj/item/modular_computer/console/preset,
+/obj/machinery/computer/modular/preset,
 /turf/simulated/floor/tiled,
 /area/space)
 "bU" = (

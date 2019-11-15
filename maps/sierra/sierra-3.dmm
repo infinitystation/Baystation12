@@ -3474,7 +3474,7 @@
 /obj/item/device/radio/intercom{
 	pixel_y = 26
 	},
-/obj/item/modular_computer/console/preset/research,
+/obj/machinery/computer/modular/preset/research,
 /turf/simulated/floor/ai_grid,
 /area/turret_protected/ai)
 "ago" = (
@@ -3627,7 +3627,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/medical/morgue)
 "agA" = (
-/obj/item/modular_computer/console/preset/medical{
+/obj/machinery/computer/modular/preset/medical{
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -5058,7 +5058,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/fore_stairwell)
 "aiR" = (
-/obj/item/modular_computer/console/preset/civilian{
+/obj/machinery/computer/modular/preset/civilian{
 	dir = 4
 	},
 /obj/machinery/light{
@@ -7002,7 +7002,7 @@
 	dir = 4;
 	tag = "icon-railing0 (EAST)"
 	},
-/obj/item/modular_computer/console/preset/library,
+/obj/machinery/computer/modular/preset/library,
 /turf/simulated/floor/carpet,
 /area/crew_quarters/lounge/upper)
 "alZ" = (
@@ -10215,7 +10215,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/sierra/armory)
 "aqQ" = (
-/obj/item/modular_computer/console/preset/medical,
+/obj/machinery/computer/modular/preset/medical,
 /obj/machinery/button/alternate/door{
 	desc = "A remote control switch for the medbay foyer.";
 	id_tag = "MedbayFoyer";
@@ -10310,7 +10310,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "aqX" = (
-/obj/item/modular_computer/console/preset/library{
+/obj/machinery/computer/modular/preset/library{
 	dir = 8
 	},
 /obj/machinery/alarm{
@@ -11596,7 +11596,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/sierra/suits)
 "atg" = (
-/obj/item/modular_computer/console/preset/security,
+/obj/machinery/computer/modular/preset/security,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 5
 	},
@@ -11974,7 +11974,7 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/office/cmo)
 "atM" = (
-/obj/item/modular_computer/console/preset/security{
+/obj/machinery/computer/modular/preset/security{
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -12962,7 +12962,7 @@
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
 "avi" = (
-/obj/item/modular_computer/console/preset/security{
+/obj/machinery/computer/modular/preset/security{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/red/half{
@@ -13933,7 +13933,7 @@
 /turf/simulated/floor/blackgrid,
 /area/security/nuke_storage)
 "awD" = (
-/obj/item/modular_computer/console/preset/security{
+/obj/machinery/computer/modular/preset/security{
 	dir = 8
 	},
 /obj/machinery/button/blast_door{
@@ -15114,7 +15114,7 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/office/cmo)
 "ayd" = (
-/obj/item/modular_computer/console/preset/command{
+/obj/machinery/computer/modular/preset/command{
 	dir = 1
 	},
 /obj/machinery/button/alternate/door{
@@ -16378,7 +16378,7 @@
 	pixel_x = 6;
 	pixel_y = 29
 	},
-/obj/item/modular_computer/console/preset/command,
+/obj/machinery/computer/modular/preset/command,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 5
 	},
@@ -16761,7 +16761,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "aAm" = (
-/obj/item/modular_computer/console/preset/medical{
+/obj/machinery/computer/modular/preset/medical{
 	dir = 1
 	},
 /obj/machinery/button/alternate/door{
@@ -20991,7 +20991,7 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/crew_quarters/heads/office/rd)
 "aGB" = (
-/obj/item/modular_computer/console/preset/command{
+/obj/machinery/computer/modular/preset/command{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloorwhite,
@@ -21168,7 +21168,7 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/security/sierra/hosbed)
 "aGR" = (
-/obj/item/modular_computer/console/preset/security{
+/obj/machinery/computer/modular/preset/security{
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -21467,7 +21467,7 @@
 	dir = 4;
 	icon_state = "pipe-c"
 	},
-/obj/item/modular_computer/console/preset/security,
+/obj/machinery/computer/modular/preset/security,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
@@ -21536,7 +21536,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/security/prison)
 "aHr" = (
-/obj/item/modular_computer/console/preset/security{
+/obj/machinery/computer/modular/preset/security{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloorblack,
@@ -21818,7 +21818,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/sierra/equipment)
 "aHQ" = (
-/obj/item/modular_computer/console/preset/sysadmin,
+/obj/machinery/computer/modular/preset/sysadmin,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -22508,7 +22508,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/prison)
 "aIQ" = (
-/obj/item/modular_computer/console/preset/civilian{
+/obj/machinery/computer/modular/preset/civilian{
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -22840,7 +22840,7 @@
 /obj/effect/floor_decal/corner/purple/bordercorner2{
 	dir = 9
 	},
-/obj/item/modular_computer/console/preset/research{
+/obj/machinery/computer/modular/preset/research{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
@@ -24784,7 +24784,7 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/equipstorage)
 "aMa" = (
-/obj/item/modular_computer/console/preset/civilian,
+/obj/machinery/computer/modular/preset/civilian,
 /obj/machinery/camera/network/research{
 	c_tag = "Research - Miscellaneous Laboratory"
 	},
@@ -25141,7 +25141,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/brig)
 "aMy" = (
-/obj/item/modular_computer/console/preset/command,
+/obj/machinery/computer/modular/preset/command,
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod10/station)
 "aMz" = (
@@ -34796,7 +34796,7 @@
 /turf/simulated/floor/plating,
 /area/crew_quarters/heads/office/hop)
 "bfi" = (
-/obj/item/modular_computer/console/preset/command{
+/obj/machinery/computer/modular/preset/command{
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -34951,7 +34951,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/shuttle/escape_pod10/station)
 "bfB" = (
-/obj/item/modular_computer/console/preset/command{
+/obj/machinery/computer/modular/preset/command{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -35088,7 +35088,7 @@
 "bgr" = (
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/blue/border,
-/obj/item/modular_computer/console/preset/command{
+/obj/machinery/computer/modular/preset/command{
 	dir = 1
 	},
 /obj/machinery/keycard_auth{
@@ -35493,7 +35493,7 @@
 /turf/simulated/wall/r_wall/hull,
 /area/storage/bridge)
 "bkk" = (
-/obj/item/modular_computer/console/preset/supply,
+/obj/machinery/computer/modular/preset/supply_public,
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
@@ -35966,7 +35966,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
-/obj/item/modular_computer/console/preset/command{
+/obj/machinery/computer/modular/preset/command{
 	dir = 1
 	},
 /obj/machinery/firealarm{

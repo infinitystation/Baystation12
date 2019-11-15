@@ -649,7 +649,7 @@
 /turf/simulated/floor/wood,
 /area/space)
 "bN" = (
-/obj/item/modular_computer/console/preset/library{
+/obj/machinery/computer/modular/preset/library{
 	dir = 4
 	},
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -2569,7 +2569,7 @@
 /turf/simulated/floor/lino,
 /area/space)
 "hE" = (
-/obj/item/modular_computer/console/preset/civilian,
+/obj/machinery/computer/modular/preset/civilian,
 /turf/simulated/floor/tiled/techfloor,
 /area/space)
 "hF" = (
@@ -2610,7 +2610,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/space)
 "ih" = (
-/obj/item/modular_computer/console/preset/security,
+/obj/machinery/computer/modular/preset/security,
 /turf/simulated/floor/tiled/techfloor,
 /area/space)
 "ii" = (
@@ -2656,7 +2656,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/space)
 "iI" = (
-/obj/item/modular_computer/console/preset/medical{
+/obj/machinery/computer/modular/preset/medical{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
@@ -2779,7 +2779,7 @@
 /turf/simulated/floor/tiled/white,
 /area/space)
 "jB" = (
-/obj/item/modular_computer/console/preset/security{
+/obj/machinery/computer/modular/preset/security{
 	dir = 4
 	},
 /obj/machinery/alarm{
@@ -4543,7 +4543,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/space)
 "te" = (
-/obj/item/modular_computer/console/preset/civilian{
+/obj/machinery/computer/modular/preset/civilian{
 	dir = 4
 	},
 /obj/machinery/light_switch{
@@ -5213,7 +5213,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/space)
 "vE" = (
-/obj/item/modular_computer/console/preset/civilian{
+/obj/machinery/computer/modular/preset/civilian{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,

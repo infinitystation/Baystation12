@@ -105,11 +105,11 @@
 	tag_exterior_door = "salvage_ext";
 	tag_interior_door = "salvage_int"
 	},
-/obj/item/modular_computer/console/preset/civilian/professional,
+/obj/machinery/computer/modular/preset/civilian/professional,
 /turf/simulated/floor/tiled,
 /area/salvage/bridge)
 "ao" = (
-/obj/item/modular_computer/console/preset/civilian/professional,
+/obj/machinery/computer/modular/preset/civilian/professional,
 /turf/simulated/floor/tiled,
 /area/salvage/bridge)
 "ap" = (
@@ -151,7 +151,7 @@
 /turf/simulated/floor/wood/walnut,
 /area/salvage/captain)
 "at" = (
-/obj/item/modular_computer/console/preset/civilian/professional,
+/obj/machinery/computer/modular/preset/civilian/professional,
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/wood/walnut,
 /area/salvage/captain)
@@ -1333,7 +1333,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/salvage/shuttle)
 "cr" = (
-/obj/item/modular_computer/console/preset/civilian/professional,
+/obj/machinery/computer/modular/preset/civilian/professional,
 /turf/simulated/floor/tiled/techmaint,
 /area/salvage/shuttle)
 "cs" = (
@@ -2315,7 +2315,7 @@
 /turf/simulated/floor/tiled/usedup,
 /area/salvage/storage)
 "dL" = (
-/obj/item/modular_computer/console/preset/merchant/salvage{
+/obj/machinery/computer/modular/preset/merchant/salvage{
 	icon_state = "console";
 	dir = 8
 	},

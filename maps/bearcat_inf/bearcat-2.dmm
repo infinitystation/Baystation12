@@ -87,7 +87,7 @@
 /turf/simulated/floor/bluegrid,
 /area/ship/scrap/command/bridge)
 "ai" = (
-/obj/item/modular_computer/console/preset/command,
+/obj/machinery/computer/modular/preset/command,
 /turf/simulated/floor/bluegrid,
 /area/ship/scrap/command/bridge)
 "aj" = (
@@ -225,7 +225,7 @@
 	pixel_y = -22
 	},
 /obj/machinery/light,
-/obj/item/modular_computer/console/preset/engineering{
+/obj/machinery/computer/modular/preset/engineering{
 	dir = 1
 	},
 /obj/item/device/radio/intercom{
@@ -250,7 +250,7 @@
 	dir = 8;
 	pixel_x = 23
 	},
-/obj/item/modular_computer/console/preset/engineering{
+/obj/machinery/computer/modular/preset/engineering{
 	dir = 1
 	},
 /obj/machinery/newscaster/security_unit{
@@ -2644,7 +2644,7 @@
 /area/ship/scrap/cargo/upper)
 "eP" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/modular_computer/console/preset/merchant,
+/obj/machinery/computer/modular/preset/merchant,
 /turf/simulated/floor/tiled,
 /area/ship/scrap/cargo/upper)
 "eQ" = (
@@ -3941,7 +3941,7 @@
 	layer = 2.4;
 	level = 2
 	},
-/obj/item/modular_computer/console/preset/library,
+/obj/machinery/computer/modular/preset/library,
 /turf/simulated/floor,
 /area/ship/scrap/other/lounge)
 "gR" = (
@@ -4302,7 +4302,7 @@
 	icon_state = "corner_white";
 	dir = 10
 	},
-/obj/item/modular_computer/console/preset/engineering{
+/obj/machinery/computer/modular/preset/engineering{
 	dir = 1
 	},
 /obj/machinery/button/blast_door{
@@ -6820,7 +6820,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/yellow/full,
-/obj/item/modular_computer/console/preset/civilian{
+/obj/machinery/computer/modular/preset/civilian{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,

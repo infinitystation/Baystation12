@@ -4325,7 +4325,7 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/galley)
 "aha" = (
-/obj/item/modular_computer/console/preset/sysadmin{
+/obj/machinery/computer/modular/preset/sysadmin{
 	icon_state = "console";
 	dir = 4
 	},
@@ -8633,7 +8633,7 @@
 	icon_state = "intact";
 	dir = 4
 	},
-/obj/item/modular_computer/console/preset/engineering{
+/obj/machinery/computer/modular/preset/engineering{
 	icon_state = "console";
 	dir = 4
 	},
@@ -15989,7 +15989,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/locker_room)
 "azj" = (
-/obj/item/modular_computer/console/preset/engineering{
+/obj/machinery/computer/modular/preset/engineering{
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -18846,7 +18846,7 @@
 	pixel_x = -26;
 	pixel_y = 2
 	},
-/obj/item/modular_computer/console/preset/civilian{
+/obj/machinery/computer/modular/preset/civilian{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -19875,7 +19875,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/safe_room/seconddeck)
 "aFJ" = (
-/obj/item/modular_computer/console/preset/command{
+/obj/machinery/computer/modular/preset/command{
 	icon_state = "console";
 	dir = 1
 	},
@@ -23693,7 +23693,7 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
 	},
-/obj/item/modular_computer/console/preset/library{
+/obj/machinery/computer/modular/preset/library{
 	dir = 4
 	},
 /turf/simulated/floor/wood/walnut,
@@ -26243,7 +26243,7 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/laundry)
 "aQF" = (
-/obj/item/modular_computer/console/preset/engineering{
+/obj/machinery/computer/modular/preset/engineering{
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -26377,7 +26377,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/engineering/engineering_monitoring)
 "aQV" = (
-/obj/item/modular_computer/console/preset/engineering{
+/obj/machinery/computer/modular/preset/engineering{
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -28206,7 +28206,7 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/engineering/engine_room)
 "aUe" = (
-/obj/item/modular_computer/console/preset/research{
+/obj/machinery/computer/modular/preset/research{
 	icon_state = "console";
 	dir = 4
 	},
