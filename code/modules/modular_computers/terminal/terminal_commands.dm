@@ -298,7 +298,7 @@ Subtypes
 /datum/terminal_command/shutdown/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/datum/extension/interactive/ntos/CT = terminal.computer
 	var/obj/item/modular_computer/H = CT.get_physical_host()
-	if(CT.holder && istype(H))
+	if(H)
 		if(length(text) < 8)
 			return "shutdown: Improper syntax. shutdown."
 		CT.system_shutdown()
