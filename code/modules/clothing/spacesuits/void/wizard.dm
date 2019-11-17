@@ -51,6 +51,8 @@
 	gender = PLURAL
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.02
+	min_pressure_protection = 0 //inf
+	max_pressure_protection = VOIDSUIT_MAX_PRESSURE //inf
 	unacidable = 1
 	armor = list(melee = 40, bullet = 20, laser = 20,energy = 20, bomb = 35, bio = 100, rad = 30)
 	siemens_coefficient = 0.7

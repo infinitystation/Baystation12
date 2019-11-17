@@ -55,6 +55,7 @@
 	..()
 	var/pmc = list()
 	pmc["SAARE utility uniform"]= /obj/item/clothing/under/saare
+	pmc["SAARE combat uniform"]= /obj/item/clothing/under/rank/security/saarecombat
 	pmc["PCRC utility uniform"]	= /obj/item/clothing/under/pcrc
 	pmc["PCRC formal uniform"]	= /obj/item/clothing/under/pcrcsuit
 //	pmc["SCP utility uniform"]	= /obj/item/clothing/under/scp_uniform
@@ -97,4 +98,5 @@
 	var/glovtype = list()
 	glovtype["yellow insulated"] = /obj/item/clothing/gloves/insulated
 	glovtype["black insulated"] = /obj/item/clothing/gloves/insulated/black
+	glovtype["white insulated"] = /obj/item/clothing/gloves/insulated/white
 	gear_tweaks += new/datum/gear_tweak/path(glovtype)

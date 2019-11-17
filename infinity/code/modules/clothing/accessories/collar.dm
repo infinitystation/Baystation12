@@ -6,12 +6,9 @@
 
 	accessory_icons = list(
 		slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', \
-		slot_wear_mask_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', \
 		slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi')
 	item_icons = list(
-		slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', \
-		slot_wear_mask_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', \
-		slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi')
+		slot_wear_mask_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi')
 
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/misc.dmi',

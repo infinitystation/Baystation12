@@ -13,6 +13,13 @@
 	icon_state = "black"
 	item_state = "bgloves"
 
+/obj/item/clothing/gloves/insulated/white
+	name = "white insulated gloves"
+	desc = "These gloves will protect the wearer from electric shocks. A great choice for ladies and gentlemen."
+	color = null
+	icon_state = "latex"
+	item_state = "lgloves"
+
 /obj/item/clothing/gloves/thick/combat/marine
 	desc = "These combat gloves are somewhat fire and impact resistant."
 	name = "combat gloves"

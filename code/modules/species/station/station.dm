@@ -53,7 +53,7 @@
 		return
 
 	if(H.get_shock() && H.shock_stage < 40 && prob(3))
-		H.emote(pick("moan","groan"))
+		H.agony_moan() //INF, WAS H.emote(pick("moan","groan"))
 
 	if(H.shock_stage > 10 && prob(3))
 		H.emote(pick("cry","whimper"))
@@ -121,7 +121,7 @@
 	max_age = 120
 
 	burn_mod = 0.9
-	oxy_mod = 1.3
+	oxy_mod = 0.8
 	flash_mod = 1.2
 	toxins_mod = 0.8
 	siemens_coefficient = 1.3

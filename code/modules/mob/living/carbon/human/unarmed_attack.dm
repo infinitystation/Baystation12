@@ -56,8 +56,8 @@ var/global/list/sparring_attack_cache = list()
 
 	var/stun_chance = rand(0, 100)
 	var/armour = target.get_blocked_ratio(zone, BRUTE)
-
-	if(attack_damage >= 5 && armour < 1 && !(target == user) && stun_chance <= attack_damage * 5) // 25% standard chance
+//INF	if(attack_damage >= 5 && armour < 1 && !(target == user) && stun_chance <= attack_damage * 5) // 25% standard chance
+	if(attack_damage >= 3 && armour < 1 && target != user && stun_chance <= attack_damage * 6) //INF, WAS ^^
 		switch(zone) // strong punches can have effects depending on where they hit
 			if(BP_HEAD, BP_EYES, BP_MOUTH)
 				// Induce blurriness
@@ -82,7 +82,7 @@ var/global/list/sparring_attack_cache = list()
 						target.visible_message("<span class='danger'>[pick("[target] was sent flying backward!", "[target] staggers back from the impact!")]</span>")
 					if(prob(50))
 						target.set_dir(GLOB.reverse_dir[target.dir])
-					target.apply_effect(attack_damage * 0.4, WEAKEN, armour)
+					target.apply_effect(0.8, WEAKEN, armour) //INF, WAS target.apply_effect(attack_damage * 0.4, WEAKEN, armour)
 			if(BP_GROIN)
 				target.visible_message("<span class='warning'>[target] looks like \he is in pain!</span>", "<span class='warning'>[(target.gender=="female") ? "Oh god that hurt!" : "Oh no, not your[pick("testicles", "crown jewels", "clockweights", "family jewels", "marbles", "bean bags", "teabags", "sweetmeats", "goolies")]!"]</span>")
 				target.apply_effects(stutter = attack_damage * 2, agony = attack_damage* 3, blocked = armour)
@@ -90,13 +90,14 @@ var/global/list/sparring_attack_cache = list()
 				if(!target.lying)
 					target.visible_message("<span class='warning'>[target] gives way slightly.</span>")
 					target.apply_effect(attack_damage*3, PAIN, armour)
+/*INF
 	else if(attack_damage >= 5 && !(target == user) && (stun_chance + attack_damage * 5 >= 100) && armour < 1) // Chance to get the usual throwdown as well (25% standard chance)
 		if(!target.lying)
 			target.visible_message("<span class='danger'>[target] [pick("slumps", "falls", "drops")] down to the ground!</span>")
 		else
 			target.visible_message("<span class='danger'>[target] has been weakened!</span>")
 		target.apply_effect(3, WEAKEN, armour * 100)
-
+/INF*/
 	var/obj/item/clothing/C = target.get_covering_equipped_item_by_zone(zone)
 	if(istype(C) && prob(10))
 		C.leave_evidence(user)

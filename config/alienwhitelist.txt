@@ -29,7 +29,6 @@ redknighthero - machine
 kotovsyndrome - machine
 termservice - machine
 semorerith - machine
-darkman24rus - machine
 bob46 - machine
 inubashirimomiji - skrell
 tenedegurechaff - skrell
@@ -75,11 +74,10 @@ coldmantis13 - resomi
 wheatley2013 - resomi
 twinindifferent - resomi
 hodovoy - resomi
-vovghik65 - resomi
 elar - resomi
 casly - resomi
-seclog - resomi
 reptiloid2 - resomi
+mrnicolas - resomi
 redknighthero - giant armoured serpentid
 coldmantis13 - giant armoured serpentid
 kirill1243 - giant armoured serpentid
@@ -103,8 +101,8 @@ yourbro - giant armoured serpentid
 logfol - giant armoured serpentid
 forrya - giant armoured serpentid
 he11d1ver - giant armoured serpentid
-darkman24rus - giant armoured serpentid
 bob46 - giant armoured serpentid
+wheatley2013 - giant armoured serpentid
 inubashirimomiji - diona
 bartstarter - diona
 wolforbykot - diona
@@ -138,6 +136,8 @@ logfol - vox
 hellpony - vox
 reptiloid2 - vox
 mrkayde - vox
+darkman24rus - vox
+connor22 - vox
 darkscarletblood - unathi
 kribleykrabley - unathi
 alchemisthero - unathi
@@ -171,7 +171,6 @@ forrya - tajaran
 arhod - tajaran
 kordvik - tajaran
 wolforbykot - tajaran
-moonmen - tajaran
 diesiege - tajaran
 wheatley2013 - adherent
 sosiskoed - adherent
@@ -184,6 +183,7 @@ hardstuck - adherent
 jacking - adherent
 redknighthero - adherent
 coldmantis13 - adherent
+forrya - adherent
 coldmantis13 - Kharmaan Gyne
 s1334 - Kharmaan Gyne
 wheatley2013 - Kharmaan Gyne

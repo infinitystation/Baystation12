@@ -6,7 +6,8 @@
 	subsystems = list(/datum/nano_module/crew_monitor)
 	sprites = list(
 		"Drone" = "drone-medical",
-		"Eyebot" = "eyebot-medical"
+		"Eyebot" = "eyebot-medical",
+		"Ver 06" = "wer6-Surgeon" //INF
 	)
 	equipment = list(
 		/obj/item/device/flash,
@@ -35,7 +36,8 @@
 		SKILL_EVA          = SKILL_EXPERT,
 		SKILL_MECH         = HAS_PERK,
 		SKILL_CONSTRUCTION = SKILL_EXPERT,
-		SKILL_ELECTRICAL   = SKILL_EXPERT
+		SKILL_ELECTRICAL   = SKILL_EXPERT,
+		SKILL_PILOT        = SKILL_EXPERT //INF
 	)
 
 /obj/item/weapon/robot_module/flying/emergency/finalize_emag()

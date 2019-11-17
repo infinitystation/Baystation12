@@ -14,16 +14,16 @@
 
 /decl/emote/audible/gasp
 	key ="gasp"
-	emote_message_3p = "USER Р·Р°РґС‹С…Р°РµС‚СЃ&#255;!"
+	emote_message_3p = "USER задыхается!"
 	conscious = 0
 
 /decl/emote/audible/scretch
 	key ="scretch"
-	emote_message_3p = "USER С‡РµС€РµС‚СЃ&#255;."
+	emote_message_3p = "USER чешется."
 
 /decl/emote/audible/choke
 	key ="choke"
-	emote_message_3p = "USER РґР°РІРёС‚СЃ&#255;!"
+	emote_message_3p = "USER давится!"
 	conscious = 0
 
 /decl/emote/audible/gnarl
@@ -32,7 +32,7 @@
 
 /decl/emote/audible/chirp
 	key ="chirp"
-	emote_message_3p = "USER С‰РµР±РµС‡РµС‚!"
+	emote_message_3p = "USER щебечет!"
 	emote_sound = 'sound/misc/nymphchirp.ogg'
 
 /decl/emote/audible/alarm
@@ -52,8 +52,8 @@
 
 /decl/emote/audible/whistle
 	key = "whistle"
-	emote_message_1p = "Р’С‹ СЃРІРёСЃС‚РёС‚Рµ!"
-	emote_message_3p = "USER СЃРІРёСЃС‚РёС‚!"
+	emote_message_1p = "Вы свистите!"
+	emote_message_3p = "USER свистит!"
 
 /decl/emote/audible/boop
 	key = "boop"
@@ -62,80 +62,80 @@
 
 /decl/emote/audible/sneeze
 	key = "sneeze"
-	emote_message_3p = "USER С‡РёС…Р°РµС‚!"
+	emote_message_3p = "USER чихает!"
 
 /decl/emote/audible/sniff
 	key = "sniff"
-	emote_message_3p = "USER РЅСЋС…Р°РµС‚."
+	emote_message_3p = "USER нюхает."
 
 /decl/emote/audible/snore
 	key = "snore"
-	emote_message_3p = "USER С…СЂР°РїРёС‚."
+	emote_message_3p = "USER храпит."
 	conscious = 0
 
 /decl/emote/audible/whimper
 	key = "whimper"
-	emote_message_3p = "USER С…РЅС‹С‡РµС‚."
+	emote_message_3p = "USER хнычет."
 
 /decl/emote/audible/yawn
 	key = "yawn"
-	emote_message_3p = "USER Р·РµРІР°РµС‚."
+	emote_message_3p = "USER зевает."
 
 /decl/emote/audible/clap
 	key = "clap"
-	emote_message_3p = "USER С…Р»РѕРїР°РµС‚."
+	emote_message_3p = "USER хлопает."
 
 /decl/emote/audible/chuckle
 	key = "chuckle"
-	emote_message_3p = "USER СѓСЃРјРµС…Р°РµС‚СЃ&#255;."
+	emote_message_3p = "USER усмехается."
 
 /decl/emote/audible/cough
 	key = "cough"
-	emote_message_3p = "USER РєР°С€Р»&#255;РµС‚!"
+	emote_message_3p = "USER кашляет!"
 	conscious = 0
 
 /decl/emote/audible/cry
 	key = "cry"
-	emote_message_3p = "USER РїР»Р°С‡РµС‚..."
+	emote_message_3p = "USER плачет..."
 
 /decl/emote/audible/sigh
 	key = "sigh"
-	emote_message_3p = "USER РІР·РґС‹С…Р°РµС‚."
+	emote_message_3p = "USER вздыхает."
 
 /decl/emote/audible/laugh
 	key = "laugh"
-	emote_message_3p = "USER СЃРјРµРµС‚СЃ&#255;!"
-	emote_message_3p_target = "USER СЃРјРµРµС‚СЃ&#255; РЅР°Рґ TARGET!"
+	emote_message_3p = "USER смеется!"
+	emote_message_3p_target = "USER смеется над TARGET!"
 
 /decl/emote/audible/mumble
 	key = "mumble"
-	emote_message_3p = "USER Р±РѕСЂРјРѕС‡РµС‚."
+	emote_message_3p = "USER бормочет."
 
 /decl/emote/audible/grumble
 	key = "grumble"
-	emote_message_3p = "USER Р±СѓСЂС‡РёС‚."
+	emote_message_3p = "USER бурчит."
 
 /decl/emote/audible/groan
 	key = "groan"
-	emote_message_3p = "USER РґРѕСЃР°РґРЅРѕ РІР·РґС‹С…Р°РµС‚..."
+	emote_message_3p = "USER болезненно стонет!"
 	conscious = 0
 
 /decl/emote/audible/moan
 	key = "moan"
-	emote_message_3p = "USER СЃС‚РѕРЅРµС‚!"
+	emote_message_3p = "USER стонет!"
 	conscious = 0
 
 /decl/emote/audible/giggle
 	key = "giggle"
-	emote_message_3p = "USER С…РёС…РёРєР°РµС‚."
+	emote_message_3p = "USER хихикает."
 
 /decl/emote/audible/scream
 	key = "scream"
-	emote_message_3p = "USER РєСЂРёС‡РёС‚!"
+	emote_message_3p = "USER кричит!"
 
 /decl/emote/audible/grunt
 	key = "grunt"
-	emote_message_3p = "USER РІРѕСЂС‡РёС‚."
+	emote_message_3p = "USER ворчит."
 
 /decl/emote/audible/slap
 	key = "slap"
@@ -147,18 +147,18 @@
 
 /decl/emote/audible/bug_hiss
 	key ="hiss"
-	emote_message_3p_target = "USER С€РёРїРёС‚ РЅР° TARGET!"
-	emote_message_3p = "USER С€РёРїРёС‚!"
+	emote_message_3p_target = "USER шипит на TARGET!"
+	emote_message_3p = "USER шипит!"
 	emote_sound = 'sound/voice/BugHiss.ogg'
 
 /decl/emote/audible/bug_buzz
 	key ="buzz"
-	emote_message_3p = "USER Р¶СѓР¶Р¶РёС‚."
+	emote_message_3p = "USER жужжит."
 	emote_sound = 'sound/voice/BugBuzz.ogg'
 
 /decl/emote/audible/bug_chitter
 	key ="chitter"
-	emote_message_3p = "USER РІРµСЂРµС‰РёС‚!"
+	emote_message_3p = "USER верещит!"
 	emote_sound = 'sound/voice/Bug.ogg'
 
 /decl/emote/audible/vox_shriek

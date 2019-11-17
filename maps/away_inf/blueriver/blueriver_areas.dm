@@ -10,10 +10,12 @@
 
 /area/bluespaceriver/ground
 	name = "\improper Arctic Planet Surface"
+	icon_state = "ground"
 	ambience = list('sound/ambience/ambimine.ogg', 'sound/ambience/song_game.ogg')
 
 /area/bluespaceriver/ship
 	name = "Cometa"
+	icon_state = "ship"
 	base_turf = /turf/simulated/floor/plating
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 

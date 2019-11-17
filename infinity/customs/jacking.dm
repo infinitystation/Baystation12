@@ -133,6 +133,48 @@
 	new /obj/item/clothing/suit/armor/pcarrier/custom_army(src)
 	new /obj/item/custkit/custom_army(src)
 
+/* ZPCI KNIGHT KIT
+ * ================
+ */
+
+/obj/item/clothing/head/helmet/custom_zpci_knight
+	name = "\improper ST-16/2"
+	desc = "The helmet, which is part of the ST-16/1 armor, has a durable glass to protect against splinters."
+	icon = 'infinity/icons/obj/clothing/obj_head.dmi'
+	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
+	icon_state = "zpci_knight_h"
+
+/obj/item/clothing/suit/armor/pcarrier/custom_zpci_knight
+	name = "\improper ST-16/1"
+	desc = "It is a mobile combat armor of the 16th generation of ZPCI knights, it is made of light and durable alloys, but does not have high protection in exchange for mobility."
+	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi')
+	icon_state = "zpci_knight_s"
+	sprite_sheets = list()
+//	starting_accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches)
+
+/obj/item/weapon/gun/energy/laser/secure/jacking
+	name = "\improper RG-104"
+	desc = "RG-104 is one of the favorite weapons in its generation, a modified and improved weapon battery eliminates the facts of a quick discharge of a weapon, and a laser sight will point directly at the target and it remains to make a shot..."
+	icon_state = "custom_lasgun"
+	item_state = "custom_lasgun"
+	icon = 'infinity/icons/obj/guns/custom_lasgun.dmi'
+	wielded_item_state = "custom_lasgun-wielded"
+	item_icons = list(
+		slot_r_hand_str = 'infinity/icons/mob/onmob/righthand.dmi',
+		slot_l_hand_str = 'infinity/icons/mob/onmob/lefthand.dmi',
+		)
+
+/obj/item/custkit/custom_zpci_knight
+	name = "laser carabine customization kit"
+	input = /obj/item/weapon/gun/energy/laser/secure
+	output = /obj/item/weapon/gun/energy/laser/secure/jacking
+
+/obj/item/weapon/clothingbag/custom_zpci_knight/Initialize()
+	new /obj/item/clothing/head/helmet/custom_zpci_knight(src)
+	new /obj/item/clothing/suit/armor/pcarrier/custom_zpci_knight(src)
+	new /obj/item/custkit/custom_zpci_knight(src)
+
 //biohazard kit (was replaced by SCG soldier's kit)
 /*
 /obj/item/clothing/suit/bio_suit/virology/jacking
@@ -195,3 +237,45 @@
 	new /obj/item/clothing/head/bio_hood/virology/jacking(src)
 	new /obj/item/clothing/accessory/badge/holo/jacking(src)
 */
+
+/* SAARE CUSTOM KIT
+ * ===============
+ */
+
+/obj/item/clothing/under/custom_saare_uniform
+	name = "tactical SAARE uniform"
+	desc = "An old SAARE tactical uniform, how old is it at all?"
+	icon = 'infinity/icons/obj/clothing/obj_under.dmi'
+	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
+	icon_state = "saare_tactical"
+	item_state = "saare_tactical"
+	rolled_sleeves = -1
+
+/obj/item/clothing/glasses/sunglasses/sechud/custom_ballistic/orange
+	desc = "A ballistic glasses with medium shatter protection."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "ballistic_glasses_orange"
+	item_state = "ballistic_glasses_orange"
+	item_icons = list(slot_glasses_str = CUSTOM_ITEM_MOB)
+
+/obj/item/clothing/accessory/armor/helmcover/custom_saare
+	name = "spec ops cover"
+	desc = "A coloring of spec ops, as well as the set includes the NVD and the camera."
+	icon_override = 'infinity/icons/mob/onmob/onmob_accessories.dmi'
+	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
+	icon_state = "spec_ops_cover"
+	accessory_icons = list(slot_tie_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', slot_head_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi')
+
+/obj/item/clothing/suit/armor/pcarrier/custom_saare
+	name = "\improper DSH-116"
+	desc = "An old plate carrier of the special operations forces of the GCC. Apparently worn, how they still wear..."
+	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi')
+	icon_state = "gcc_spec_opc_carrier"
+	sprite_sheets = list()
+
+/obj/item/weapon/clothingbag/custom_saare/Initialize()
+	new /obj/item/clothing/under/custom_saare_uniform(src)
+	new /obj/item/clothing/glasses/sunglasses/sechud/custom_ballistic/orange(src)
+	new /obj/item/clothing/accessory/armor/helmcover/custom_saare(src)
+	new /obj/item/clothing/suit/armor/pcarrier/custom_saare(src)
