@@ -1294,13 +1294,13 @@ window "rpane"
 		command = "Bug-Report"
 	elem "rulesb"
 		type = BUTTON
-		pos = 125,0
+		pos = 120,0
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
 		saved-params = "is-checked"
 		text = "Rules"
-		command = "servinfo"
+		command = "rules"
 		group = "rpanemode"
 	elem "changelog"
 		type = BUTTON

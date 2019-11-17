@@ -1,6 +1,6 @@
 /obj/item/organ/internal/swarm/sensor
 	name = "Swarm sensors"
-	desc = "Сенсоры, похожи на сенсоры боргов, но их больше и они меньше"
+	desc = "РЎРµРЅСЃРѕСЂС‹, РїРѕС…РѕР¶Рё РЅР° СЃРµРЅСЃРѕСЂС‹ Р±РѕСЂРіРѕРІ, РЅРѕ РёС… Р±РѕР»СЊС€Рµ Рё РѕРЅРё РјРµРЅСЊС€Рµ"
 	icon = 'infinity/icons/swarm/obj/organ/internal.dmi'
 	icon_state = "have_not"
 	organ_tag = BP_SENSOR

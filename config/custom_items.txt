@@ -165,6 +165,16 @@ ckey: diesiege
 character_name: Eva Laine
 item_path: /obj/item/music_player/csplayer/custom_tape
 }
+{
+ckey: elloncake
+character_name: Selachii Cirrina
+item_path: /obj/item/music_player/custom_tape
+}
+{
+ckey: 3v4ng4m1ng
+character_name: Finn Straud
+item_path: /obj/item/music_player/custom_tape
+}
 
 #	SHORT ITEMS HERE (3-4)
 
@@ -217,7 +227,7 @@ item_path: /obj/item/weapon/storage/backpack/wd_sack
 }
 {
 ckey: moonmen
-character_name: Ketdra Nazkin
+character_name: Ketdra Kaytam
 item_path: /obj/item/clothing/ears/earmuffs/headphones/darkred
 }
 {
@@ -517,6 +527,26 @@ ckey: sarov
 character_name: CP.NTC.Sectarian-145
 item_path: /obj/item/weapon/clothingbag/custom_pcrc
 req_access: "ACCESS_SECURITY"
+}
+{
+ckey: kirill1243
+character_name: Tei Sar
+item_path: /obj/item/clothing/suit/storage/peacoat
+}
+{
+ckey: vsrneji
+character_name: Pl. Lim-01
+item_path: /obj/item/clothing/suit/storage/rockcloak/alt
+}
+{
+ckey: yourbro
+character_name: Stan Karelin
+item_path: /obj/item/clothing/suit/storage/rockcloak
+}
+{
+ckey: ilya2180
+character_name: Malik Myan
+item_path: /obj/item/clothing/accessory/armband/custom_bs
 }
 
 #	MEDIUM ITEMS HERE (5-6)

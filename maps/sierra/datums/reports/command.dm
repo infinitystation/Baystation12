@@ -1,72 +1,72 @@
 /datum/computer_file/report/recipient/crew_transfer
 	form_name = "CTA-NTF-01"
-	title = "За&#255;вление на перевод"
+	title = "Р—Р°&#255;РІР»РµРЅРёРµ РЅР° РїРµСЂРµРІРѕРґ"
 	logo = "\[logo\]"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/crew_transfer/generate_fields()
 	..()
 	var/list/hop_fields = list()
-	add_field(/datum/report_field/text_label/header, "ИСН Сьерра - Офис Главы Персонала")
-	add_field(/datum/report_field/people/from_manifest, "Им&#255; (ГП)")
-	add_field(/datum/report_field/people/from_manifest, "Им&#255; (за&#255;витель)", required = 1)
-	add_field(/datum/report_field/date, "Дата заполнени&#255;")
-	add_field(/datum/report_field/time, "Врем&#255; заполнени&#255;")
-	add_field(/datum/report_field/simple_text, "Текуща&#255; должность")
-	add_field(/datum/report_field/simple_text, "Запрашиваема&#255; должность")
-	add_field(/datum/report_field/pencode_text, "Причина перевода")
-	add_field(/datum/report_field/text_label/instruction, "Докупент &#255;вл&#255;етс&#255; недействительным в случае некорректного заполнени&#255; следующих полей.")
-	add_field(/datum/report_field/signature, "Подпись за&#255;вител&#255;")
-	hop_fields += add_field(/datum/report_field/signature, "Подпись Главы Персонала")
-	hop_fields += add_field(/datum/report_field/number, "Количество персонала на текущей должности")
-	hop_fields += add_field(/datum/report_field/number, "Количество персонала на запрашиваемой должности")
-	hop_fields += add_field(/datum/report_field/options/yes_no, "Одобрено")
+	add_field(/datum/report_field/text_label/header, "РРЎРќ РЎСЊРµСЂСЂР° - РћС„РёСЃ Р“Р»Р°РІС‹ РџРµСЂСЃРѕРЅР°Р»Р°")
+	add_field(/datum/report_field/people/from_manifest, "РРј&#255; (Р“Рџ)")
+	add_field(/datum/report_field/people/from_manifest, "РРј&#255; (Р·Р°&#255;РІРёС‚РµР»СЊ)", required = 1)
+	add_field(/datum/report_field/date, "Р”Р°С‚Р° Р·Р°РїРѕР»РЅРµРЅРё&#255;")
+	add_field(/datum/report_field/time, "Р’СЂРµРј&#255; Р·Р°РїРѕР»РЅРµРЅРё&#255;")
+	add_field(/datum/report_field/simple_text, "РўРµРєСѓС‰Р°&#255; РґРѕР»Р¶РЅРѕСЃС‚СЊ")
+	add_field(/datum/report_field/simple_text, "Р—Р°РїСЂР°С€РёРІР°РµРјР°&#255; РґРѕР»Р¶РЅРѕСЃС‚СЊ")
+	add_field(/datum/report_field/pencode_text, "РџСЂРёС‡РёРЅР° РїРµСЂРµРІРѕРґР°")
+	add_field(/datum/report_field/text_label/instruction, "Р”РѕРєСѓРїРµРЅС‚ &#255;РІР»&#255;РµС‚СЃ&#255; РЅРµРґРµР№СЃС‚РІРёС‚РµР»СЊРЅС‹Рј РІ СЃР»СѓС‡Р°Рµ РЅРµРєРѕСЂСЂРµРєС‚РЅРѕРіРѕ Р·Р°РїРѕР»РЅРµРЅРё&#255; СЃР»РµРґСѓСЋС‰РёС… РїРѕР»РµР№.")
+	add_field(/datum/report_field/signature, "РџРѕРґРїРёСЃСЊ Р·Р°&#255;РІРёС‚РµР»&#255;")
+	hop_fields += add_field(/datum/report_field/signature, "РџРѕРґРїРёСЃСЊ Р“Р»Р°РІС‹ РџРµСЂСЃРѕРЅР°Р»Р°")
+	hop_fields += add_field(/datum/report_field/number, "РљРѕР»РёС‡РµСЃС‚РІРѕ РїРµСЂСЃРѕРЅР°Р»Р° РЅР° С‚РµРєСѓС‰РµР№ РґРѕР»Р¶РЅРѕСЃС‚Рё")
+	hop_fields += add_field(/datum/report_field/number, "РљРѕР»РёС‡РµСЃС‚РІРѕ РїРµСЂСЃРѕРЅР°Р»Р° РЅР° Р·Р°РїСЂР°С€РёРІР°РµРјРѕР№ РґРѕР»Р¶РЅРѕСЃС‚Рё")
+	hop_fields += add_field(/datum/report_field/options/yes_no, "РћРґРѕР±СЂРµРЅРѕ")
 	for(var/datum/report_field/field in hop_fields)
 		field.set_access(access_edit = access_hop)
 
 /datum/computer_file/report/recipient/access_modification
 	form_name = "AMA-NTF-02"
-	title = "За&#255;вление на изменение доступа"
+	title = "Р—Р°&#255;РІР»РµРЅРёРµ РЅР° РёР·РјРµРЅРµРЅРёРµ РґРѕСЃС‚СѓРїР°"
 	logo = "\[logo\]"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/access_modification/generate_fields()
 	..()
 	var/list/hop_fields = list()
-	add_field(/datum/report_field/text_label/header, "ИСН Сьерра - Офис Главы Персонала")
-	add_field(/datum/report_field/people/from_manifest, "Им&#255; (ГП)")
-	add_field(/datum/report_field/people/from_manifest, "Им&#255; (за&#255;витель)", required = 1)
-	add_field(/datum/report_field/date, "Дата заполнени&#255;")
-	add_field(/datum/report_field/time, "Врем&#255; заполнени&#255;")
-	add_field(/datum/report_field/simple_text, "Текуща&#255; должность")
-	add_field(/datum/report_field/simple_text, "Запрашиваемый доступ")
-	add_field(/datum/report_field/pencode_text, "Причина расширени&#255; доступа")
-	add_field(/datum/report_field/simple_text, "Срок расширени&#255; доступа")
-	add_field(/datum/report_field/text_label/instruction, "Докупент признаетс&#255; недействительным в случае некорректного заполнени&#255; следующих полей.")
-	add_field(/datum/report_field/signature, "Подпись за&#255;вител&#255;")
-	hop_fields += add_field(/datum/report_field/signature, "Подпись Главы Персонала")
-	hop_fields += add_field(/datum/report_field/number, "Количество персонала с соответствующим доступом")
-	hop_fields += add_field(/datum/report_field/options/yes_no, "Одобрено")
+	add_field(/datum/report_field/text_label/header, "РРЎРќ РЎСЊРµСЂСЂР° - РћС„РёСЃ Р“Р»Р°РІС‹ РџРµСЂСЃРѕРЅР°Р»Р°")
+	add_field(/datum/report_field/people/from_manifest, "РРј&#255; (Р“Рџ)")
+	add_field(/datum/report_field/people/from_manifest, "РРј&#255; (Р·Р°&#255;РІРёС‚РµР»СЊ)", required = 1)
+	add_field(/datum/report_field/date, "Р”Р°С‚Р° Р·Р°РїРѕР»РЅРµРЅРё&#255;")
+	add_field(/datum/report_field/time, "Р’СЂРµРј&#255; Р·Р°РїРѕР»РЅРµРЅРё&#255;")
+	add_field(/datum/report_field/simple_text, "РўРµРєСѓС‰Р°&#255; РґРѕР»Р¶РЅРѕСЃС‚СЊ")
+	add_field(/datum/report_field/simple_text, "Р—Р°РїСЂР°С€РёРІР°РµРјС‹Р№ РґРѕСЃС‚СѓРї")
+	add_field(/datum/report_field/pencode_text, "РџСЂРёС‡РёРЅР° СЂР°СЃС€РёСЂРµРЅРё&#255; РґРѕСЃС‚СѓРїР°")
+	add_field(/datum/report_field/simple_text, "РЎСЂРѕРє СЂР°СЃС€РёСЂРµРЅРё&#255; РґРѕСЃС‚СѓРїР°")
+	add_field(/datum/report_field/text_label/instruction, "Р”РѕРєСѓРїРµРЅС‚ РїСЂРёР·РЅР°РµС‚СЃ&#255; РЅРµРґРµР№СЃС‚РІРёС‚РµР»СЊРЅС‹Рј РІ СЃР»СѓС‡Р°Рµ РЅРµРєРѕСЂСЂРµРєС‚РЅРѕРіРѕ Р·Р°РїРѕР»РЅРµРЅРё&#255; СЃР»РµРґСѓСЋС‰РёС… РїРѕР»РµР№.")
+	add_field(/datum/report_field/signature, "РџРѕРґРїРёСЃСЊ Р·Р°&#255;РІРёС‚РµР»&#255;")
+	hop_fields += add_field(/datum/report_field/signature, "РџРѕРґРїРёСЃСЊ Р“Р»Р°РІС‹ РџРµСЂСЃРѕРЅР°Р»Р°")
+	hop_fields += add_field(/datum/report_field/number, "РљРѕР»РёС‡РµСЃС‚РІРѕ РїРµСЂСЃРѕРЅР°Р»Р° СЃ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РёРј РґРѕСЃС‚СѓРїРѕРј")
+	hop_fields += add_field(/datum/report_field/options/yes_no, "РћРґРѕР±СЂРµРЅРѕ")
 	for(var/datum/report_field/field in hop_fields)
 		field.set_access(access_edit = access_hop)
 
 /datum/computer_file/report/recipient/borging
 	form_name = "CC-NTF-09"
-	title = "Контракт на киборгинизацию"
+	title = "РљРѕРЅС‚СЂР°РєС‚ РЅР° РєРёР±РѕСЂРіРёРЅРёР·Р°С†РёСЋ"
 	logo = "\[logo\]"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/borging/generate_fields()
 	..()
 	var/list/hop_fields = list()
-	add_field(/datum/report_field/text_label/header, "ИСН Сьерра - Офис Главы Персонала")
-	add_field(/datum/report_field/people/from_manifest, "Им&#255; (ГП)")
-	add_field(/datum/report_field/people/from_manifest, "Им&#255; (субъект)", required = 1)
-	add_field(/datum/report_field/date, "Дата заполнени&#255;")
-	add_field(/datum/report_field/time, "Врем&#255; заполнени&#255;")
-	add_field(/datum/report_field/text_label/instruction, "Я, нижеподписавшийс&#255;, насто&#255;щим соглашаюсь на прохождение Полной Лоботомии с целью киборгинизации или ассимил&#255;ции с ИИ. Я осведомлен обо всех рисках такого действи&#255;. Я также понимаю, что эта операци&#255; может быть необратимой, а мой трудовой контракт с NanoTrasen будет аннулирован.")
-	add_field(/datum/report_field/signature, "Подпись субъекта")
-	hop_fields += add_field(/datum/report_field/signature, "Подпись Главы Персонала")
-	hop_fields += add_field(/datum/report_field/options/yes_no, "Одобрено")
+	add_field(/datum/report_field/text_label/header, "РРЎРќ РЎСЊРµСЂСЂР° - РћС„РёСЃ Р“Р»Р°РІС‹ РџРµСЂСЃРѕРЅР°Р»Р°")
+	add_field(/datum/report_field/people/from_manifest, "РРј&#255; (Р“Рџ)")
+	add_field(/datum/report_field/people/from_manifest, "РРј&#255; (СЃСѓР±СЉРµРєС‚)", required = 1)
+	add_field(/datum/report_field/date, "Р”Р°С‚Р° Р·Р°РїРѕР»РЅРµРЅРё&#255;")
+	add_field(/datum/report_field/time, "Р’СЂРµРј&#255; Р·Р°РїРѕР»РЅРµРЅРё&#255;")
+	add_field(/datum/report_field/text_label/instruction, "РЇ, РЅРёР¶РµРїРѕРґРїРёСЃР°РІС€РёР№СЃ&#255;, РЅР°СЃС‚Рѕ&#255;С‰РёРј СЃРѕРіР»Р°С€Р°СЋСЃСЊ РЅР° РїСЂРѕС…РѕР¶РґРµРЅРёРµ РџРѕР»РЅРѕР№ Р›РѕР±РѕС‚РѕРјРёРё СЃ С†РµР»СЊСЋ РєРёР±РѕСЂРіРёРЅРёР·Р°С†РёРё РёР»Рё Р°СЃСЃРёРјРёР»&#255;С†РёРё СЃ РР. РЇ РѕСЃРІРµРґРѕРјР»РµРЅ РѕР±Рѕ РІСЃРµС… СЂРёСЃРєР°С… С‚Р°РєРѕРіРѕ РґРµР№СЃС‚РІРё&#255;. РЇ С‚Р°РєР¶Рµ РїРѕРЅРёРјР°СЋ, С‡С‚Рѕ СЌС‚Р° РѕРїРµСЂР°С†Рё&#255; РјРѕР¶РµС‚ Р±С‹С‚СЊ РЅРµРѕР±СЂР°С‚РёРјРѕР№, Р° РјРѕР№ С‚СЂСѓРґРѕРІРѕР№ РєРѕРЅС‚СЂР°РєС‚ СЃ NanoTrasen Р±СѓРґРµС‚ Р°РЅРЅСѓР»РёСЂРѕРІР°РЅ.")
+	add_field(/datum/report_field/signature, "РџРѕРґРїРёСЃСЊ СЃСѓР±СЉРµРєС‚Р°")
+	hop_fields += add_field(/datum/report_field/signature, "РџРѕРґРїРёСЃСЊ Р“Р»Р°РІС‹ РџРµСЂСЃРѕРЅР°Р»Р°")
+	hop_fields += add_field(/datum/report_field/options/yes_no, "РћРґРѕР±СЂРµРЅРѕ")
 	for(var/datum/report_field/field in hop_fields)
 		field.set_access(access_edit = access_hop)

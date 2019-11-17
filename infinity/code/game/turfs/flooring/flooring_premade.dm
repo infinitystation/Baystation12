@@ -8,3 +8,9 @@
 	initial_flooring = /decl/flooring/reinforced/circuit
 	light_outer_range = 2
 	light_max_bright = 1
+
+/turf/simulated/floor/tiled/concrete
+	name = "floor"
+	icon = 'icons/turf/flooring/misc.dmi'
+	icon_state = "concrete"
+	initial_flooring = /decl/flooring/tiling/concrete

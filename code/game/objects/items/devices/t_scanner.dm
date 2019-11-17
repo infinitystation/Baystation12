@@ -98,6 +98,12 @@
 			I.overlays += P.overlays
 			I.underlays += P.underlays
 
+//[INF]
+		//Chameleon projector's malfuctioning
+		if(istype(scanned, /obj/effect/dummy/chameleon))
+			var/obj/effect/dummy/chameleon/C = scanned
+			C.master.disrupt()
+//[/INF]
 		if(ismob(scanned))
 			if(ishuman(scanned))
 				var/mob/living/carbon/human/H = scanned
@@ -135,6 +141,10 @@
 				. += M
 			else if(round_is_spooky() && isobserver(M))
 				. += M
+//[INF]
+		for(var/obj/effect/dummy/chameleon/C in T.contents)
+			. += C
+//[/INF]
 
 		if(!!T.is_plating())
 			continue

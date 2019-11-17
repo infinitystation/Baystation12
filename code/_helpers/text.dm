@@ -36,7 +36,6 @@
 			return
 		input = copytext(input,1,max_length)
 
-	input = replace_characters(input, list("ˇ"="___255_"))
 
 	if(extra)
 		input = replace_characters(input, list("\n"=" ","\t"=" "))
@@ -55,8 +54,6 @@
 	if(trim)
 		//Maybe, we need trim text twice? Here and before copytext?
 		input = trim(input)
-
-	input = replace_characters(input, list("___255_"="&#255;"))
 
 	return input
 
@@ -171,11 +168,6 @@
 			else			non_whitespace = 1
 	if(non_whitespace)		return text		//only accepts the text if it has some non-spaces
 
-
-//Old variant. Haven't dared to replace in some places.
-/proc/sanitize_old(var/t,var/list/repl_chars = list("ˇ"="___255_"))
-	return replacetext(html_encode(replace_characters(t,repl_chars)), "___255_", "&#255;")
-
 // Truncates text to limit if necessary.
 /proc/dd_limittext(message, length)
 	var/size = length(message)
@@ -273,7 +265,6 @@
 			. += ascii2text(168)
 		else
 			. += ascii2text(a)
-	. = replacetext(.,"&#255;","ﬂ")
 
 //Returns a string with the first element of the string capitalized.
 /proc/capitalize(var/t as text)
@@ -352,19 +343,7 @@ proc/TextPreview(var/string,var/len=40)
 		else
 			return string
 	else
-		return "[copytext_preserve_html(string, 1, 37)]..."
-
-//alternative copytext() for encoded text, doesn't break html entities (&#34; and other)
-/proc/copytext_preserve_html(var/text, var/first, var/last)
-	var/temp = replacetextEx(text, "&#255;", "ﬂ")
-	temp = replacetextEx(temp, "&#1103;", "ﬂ")
-	var/delta = length(text) - length(temp)
-	if(delta < 0)
-		delta = 0
-	var/msg = html_encode(copytext(html_decode(text), first, last + delta))
-	msg = replacetextEx(msg, "&amp;#255;", "&#255;")
-	msg = replacetextEx(msg, "&amp;#1103;", "&#1103;")
-	return msg
+		return "[string]..."
 
 //For generating neat chat tag-images
 //The icon var could be local in the proc, but it's a waste of resources
@@ -392,7 +371,7 @@ proc/TextPreview(var/string,var/len=40)
 	return 0
 
 //unicode sanitization
-/proc/sanitize_u(t)
+/*/proc/sanitize_u(t)
 	t = html_encode(sanitize(t))
 	t = replacetext(t, "____255_", "&#1103;")
 	return t
@@ -409,23 +388,19 @@ proc/TextPreview(var/string,var/len=40)
 
 //clean sanitize cp1251
 /proc/sanitize_a0(t)
-	t = replacetext(t, "ˇ", "&#255;")
+	t = replacetext(t, "—è", "&#255;")
 	return t
 
 //clean sanitize unicode
 /proc/sanitize_u0(t)
-	t = replacetext(t, "ˇ", "&#1103;")
+	t = replacetext(t, "—è", "&#1103;")
 	return t
-
-GLOBAL_LIST_INIT(cyrillic_symbols, list("‡", "·", "‚", "„", "‰", "Â", "∏", "Ê", "Á", "Ë", "È", "Í", "Î", "Ï", \
-	"Ì", "Ó", "Ô", "", "Ò", "Ú", "Û", "Ù", "ı", "ˆ", "˜", "¯", "˘", "¸", "˚", "˙", "˝", "˛", "ˇ", \
-	"¿", "¡", "¬", "√", "ƒ", "≈", "®", "∆", "«", "»", "…", " ", "À", "Ã", "Õ", "Œ", "œ", \
-	"–", "—", "“", "”", "‘", "’", "÷", "◊", "ÿ", "Ÿ", "‹", "€", "⁄", "›", "ﬁ", "ﬂ"))
 
 /proc/remore_cyrillic(t)
 	for(var/i in GLOB.cyrillic_symbols)
 		t = replacetext(t, i, "")
 	return t
+*/
 
 var/list/alphabet = list("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z")
 
@@ -482,7 +457,7 @@ var/list/alphabet = list("a","b","c","d","e","f","g","h","i","j","k","l","m","n"
 	t = replacetext(t, "\[cell\]", "<td>")
 	t = replacetext(t, "\[exologo\]", "<img src = exologo.png>")
 	t = replacetext(t, "\[logo\]", "<img src = ntlogo.png>")
-	t = replacetext(t, "ˇ", "&#1103;")
+	t = replacetext(t, "—è", "&#1103;")
 	t = replacetext(t, "&#255;", "&#1103;")
 	t = replacetext(t, "\[bluelogo\]", "<img src = bluentlogo.png>")
 	t = replacetext(t, "\[solcrest\]", "<img src = sollogo.png>")

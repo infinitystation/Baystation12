@@ -274,11 +274,16 @@
 	if(!ghost)
 		to_chat(user, SPAN_WARNING("The rune fizzles uselessly."))
 		return
+//[INF]
+	var/new_name = sanitize(input(user, "Р’Р°С€РµРіРѕ РіРѕР»РµРјР° Р±СѓРґСѓС‚ Р·РІР°С‚СЊ...", "Time to Choose") as text)
+	if(!new_name) return
+//[/INF]
 	visible_message(SPAN_WARNING("A craggy humanoid figure coalesces into being!"))
 
 	var/mob/living/carbon/human/G = new(src.loc)
 	G.set_species("Golem")
 	G.key = ghost.key
+	G.real_name = "golem [new_name]" //INF
 
 	var/obj/item/weapon/implant/translator/natural/I = new()
 	I.implant_in_mob(G, BP_HEAD)
@@ -288,7 +293,7 @@
 		G.set_default_language(lang)
 		I.languages[lang.name] = 1
 
-	to_chat(G, FONT_LARGE(SPAN_BOLD("Вы не помните о своей прошлой жизни. Вы были созданы буквально только что. Ваши знания ограничены языком. У вас есть создатель и больше ничего. Служите [user] или погибните пытаясь."))) //inf
+	to_chat(G, FONT_LARGE(SPAN_BOLD("Р’С‹ РЅРµ РїРѕРјРЅРёС‚Рµ Рѕ СЃРІРѕРµР№ РїСЂРѕС€Р»РѕР№ Р¶РёР·РЅРё. Р’С‹ Р±С‹Р»Рё СЃРѕР·РґР°РЅС‹ Р±СѓРєРІР°Р»СЊРЅРѕ С‚РѕР»СЊРєРѕ С‡С‚Рѕ. Р’Р°С€Рё Р·РЅР°РЅРё&#255; РѕРіСЂР°РЅРёС‡РµРЅС‹ &#255;Р·С‹РєРѕРј. РЈ РІР°СЃ РµСЃС‚СЊ СЃРѕР·РґР°С‚РµР»СЊ Рё Р±РѕР»СЊС€Рµ РЅРёС‡РµРіРѕ. РЎР»СѓР¶РёС‚Рµ [user] РёР»Рё РїРѕРіРёР±РЅРёС‚Рµ РїС‹С‚Р°&#255;СЃСЊ."))) //inf
 	to_chat(G, SPAN_ITALIC("You move slowly and are vulnerable to trauma, but are resistant to heat and cold."))
 	qdel(src)
 

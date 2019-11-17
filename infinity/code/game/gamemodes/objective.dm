@@ -1,5 +1,5 @@
 /datum/objective/nuclear
-	explanation_text = "Уничтожьте объект с помощью &#255;дерного зар&#255;да."
+	explanation_text = "РЈРЅРёС‡С‚РѕР¶СЊС‚Рµ РѕР±СЉРµРєС‚ СЃ РїРѕРјРѕС‰СЊСЋ &#255;РґРµСЂРЅРѕРіРѕ Р·Р°СЂ&#255;РґР°."
 
 /datum/objective/nuclear/kidnap
 	var/list/roles = list(/datum/job/captain, /datum/job/lawyer, /datum/job/chief_engineer, /datum/job/rd, /datum/job/engineer)
@@ -25,9 +25,9 @@
 		target = pick(possible_targets)
 
 	if(target?.current)
-		explanation_text = "Наниматель хочет, чтобы мы захватили '[target.current.real_name], [target.assigned_role]' и доставили на базу. Цель должна быть живой."
+		explanation_text = "РќР°РЅРёРјР°С‚РµР»СЊ С…РѕС‡РµС‚, С‡С‚РѕР±С‹ РјС‹ Р·Р°С…РІР°С‚РёР»Рё '[target.current.real_name], [target.assigned_role]' Рё РґРѕСЃС‚Р°РІРёР»Рё РЅР° Р±Р°Р·Сѓ. Р¦РµР»СЊ РґРѕР»Р¶РЅР° Р±С‹С‚СЊ Р¶РёРІРѕР№."
 	else
-		explanation_text = "Захвать по крайней мере одного высокопоставленного или обладающего ценными данными члена экипажа живым. Приоритет - ученые, главы, инженеры, пассажиры."
+		explanation_text = "Р—Р°С…РІР°С‚СЊ РїРѕ РєСЂР°Р№РЅРµР№ РјРµСЂРµ РѕРґРЅРѕРіРѕ РІС‹СЃРѕРєРѕРїРѕСЃС‚Р°РІР»РµРЅРЅРѕРіРѕ РёР»Рё РѕР±Р»Р°РґР°СЋС‰РµРіРѕ С†РµРЅРЅС‹РјРё РґР°РЅРЅС‹РјРё С‡Р»РµРЅР° СЌРєРёРїР°Р¶Р° Р¶РёРІС‹Рј. РџСЂРёРѕСЂРёС‚РµС‚ - СѓС‡РµРЅС‹Рµ, РіР»Р°РІС‹, РёРЅР¶РµРЅРµСЂС‹, РїР°СЃСЃР°Р¶РёСЂС‹."
 	return target
 
 /datum/objective/heist/loot/choose_target()

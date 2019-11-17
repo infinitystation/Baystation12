@@ -93,7 +93,8 @@
 	var/amount = input(usr, "How many Thalers do you want to take? (0 to [src.worth])", "Take Money", 20) as num
 	amount = round(Clamp(amount, 0, src.worth))
 	if(amount==0) return 0
-
+	if(!(usr.get_active_hand() == src))
+		return
 	src.worth -= amount
 	src.update_icon()
 	if(amount in list(1000,500,200,100,50,20,1))

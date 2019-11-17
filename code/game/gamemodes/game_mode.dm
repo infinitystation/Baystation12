@@ -134,7 +134,7 @@ var/global/list/additional_antag_types = list()
 				return
 
 /datum/game_mode/proc/announce() //to be called when round starts
-	to_world("<B>Текущий игровой режим [capitalize(name)]!</B>")
+	to_world("<B>РўРµРєСѓС‰РёР№ РёРіСЂРѕРІРѕР№ СЂРµР¶РёРј [capitalize(name)]!</B>")
 	if(round_description) to_world("[round_description]")
 	if(round_autoantag) to_world("Antagonists will be added to the round automagically as needed.")
 	if(antag_templates && antag_templates.len)
@@ -381,8 +381,8 @@ var/global/list/additional_antag_types = list()
 	if(escaped_total > 0)
 		SSstatistics.set_field("escaped_total",escaped_total)
 
-	send2mainirc("Раунд с режимом [src.name] завершен. Выживших: [surviving_total]; призраков: [ghosts]; игроков: [clients]; продолжительность: [roundduration2text()].")
-	send2maindiscord("Раунд с режимом [src.name] завершен. Выживших: [surviving_total]; призраков:  [ghosts]; игроков: [clients]; продолжительность: [roundduration2text()].")
+	send2mainirc("Р Р°СѓРЅРґ СЃ СЂРµР¶РёРјРѕРј [src.name] Р·Р°РІРµСЂС€РµРЅ. Р’С‹Р¶РёРІС€РёС…: [surviving_total]; РїСЂРёР·СЂР°РєРѕРІ: [ghosts]; РёРіСЂРѕРєРѕРІ: [clients]; РїСЂРѕРґРѕР»Р¶РёС‚РµР»СЊРЅРѕСЃС‚СЊ: [roundduration2text()].")
+	send2maindiscord("Р Р°СѓРЅРґ СЃ СЂРµР¶РёРјРѕРј [src.name] Р·Р°РІРµСЂС€РµРЅ. Р’С‹Р¶РёРІС€РёС…: [surviving_total]; РїСЂРёР·СЂР°РєРѕРІ:  [ghosts]; РёРіСЂРѕРєРѕРІ: [clients]; РїСЂРѕРґРѕР»Р¶РёС‚РµР»СЊРЅРѕСЃС‚СЊ: [roundduration2text()].")
 
 	return 0
 

@@ -219,28 +219,28 @@ mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in ovi
 	set category = "Abilities"
 
 	if(!M.Adjacent(src))
-		to_chat(src, SPAN_ALIEN("Оно слишком далеко."))
+		to_chat(src, SPAN_ALIEN("РћРЅРѕ СЃР»РёС€РєРѕРј РґР°Р»РµРєРѕ."))
 		return
 
 	if(!M.mind)
-		to_chat(src, SPAN_ALIEN("Плоть без разума принесёт пользу Улью лишь в качестве пищи."))
+		to_chat(src, SPAN_ALIEN("РџР»РѕС‚СЊ Р±РµР· СЂР°Р·СѓРјР° РїСЂРёРЅРµСЃС‘С‚ РїРѕР»СЊР·Сѓ РЈР»СЊСЋ Р»РёС€СЊ РІ РєР°С‡РµСЃС‚РІРµ РїРёС‰Рё."))
 		return
 
 	if(M.species.get_bodytype(M) == "Xenophage" || !isnull(M.internal_organs_by_name["hive node"]))
-		to_chat(src, SPAN_ALIEN("Оно уже часть нашего Улья."))
+		to_chat(src, SPAN_ALIEN("РћРЅРѕ СѓР¶Рµ С‡Р°СЃС‚СЊ РЅР°С€РµРіРѕ РЈР»СЊСЏ."))
 		return
 
 	var/obj/item/organ/affecting = M.get_organ(BP_CHEST)
 	if(!affecting || BP_IS_ROBOTIC(affecting))
-		to_chat(src, SPAN_ALIEN("Это тело несовметимо с нашей физиологией..."))
+		to_chat(src, SPAN_ALIEN("Р­С‚Рѕ С‚РµР»Рѕ РЅРµСЃРѕРІРјРµС‚РёРјРѕ СЃ РЅР°С€РµР№ С„РёР·РёРѕР»РѕРіРёРµР№..."))
 		return
 
-	var/confirm = alert(M, "Королева хочет сделать вас часть ульЯ. Вы согласны?", "Become Larva", "No", "Yes")
+	var/confirm = alert(M, "РљРѕСЂРѕР»РµРІР° С…РѕС‡РµС‚ СЃРґРµР»Р°С‚СЊ РІР°СЃ С‡Р°СЃС‚СЊ СѓР»СЊРЇ. Р’С‹ СЃРѕРіР»Р°СЃРЅС‹?", "Become Larva", "No", "Yes")
 	if(!M || confirm != "Yes")
-		to_chat(src, SPAN_ALIEN("Несовместим с Ульем и не может стать его часть (требуется согласие жертвы)."))
+		to_chat(src, SPAN_ALIEN("РќРµСЃРѕРІРјРµСЃС‚РёРј СЃ РЈР»СЊРµРј Рё РЅРµ РјРѕР¶РµС‚ СЃС‚Р°С‚СЊ РµРіРѕ С‡Р°СЃС‚СЊ (С‚СЂРµР±СѓРµС‚СЃСЏ СЃРѕРіР»Р°СЃРёРµ Р¶РµСЂС‚РІС‹)."))
 		return
 
-	src.visible_message(SPAN_DANGER("[src] встает перед [M], а затем, из её головы появляется полое, прозрачное жало!"))
+	src.visible_message(SPAN_DANGER("[src] РІСЃС‚Р°РµС‚ РїРµСЂРµРґ [M], Р° Р·Р°С‚РµРј, РёР· РµС‘ РіРѕР»РѕРІС‹ РїРѕСЏРІР»СЏРµС‚СЃСЏ РїРѕР»РѕРµ, РїСЂРѕР·СЂР°С‡РЅРѕРµ Р¶Р°Р»Рѕ!"))
 
 	if(!do_mob(src, M, 150))
 		return
@@ -255,8 +255,8 @@ mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in ovi
 	if(!check_alien_ability(500,1,"egg sac") && !is_ventcrawling)
 		return
 
-	src.visible_message(SPAN_DANGER("[src] протыкает грудь [M] с помощью полой трубки и вводит что-то внутрь!"))
-	to_chat(M, SPAN_DANGER("Уродливая и бесформенная масса вводится под ваши ребра через трубку!"))
+	src.visible_message(SPAN_DANGER("[src] РїСЂРѕС‚С‹РєР°РµС‚ РіСЂСѓРґСЊ [M] СЃ РїРѕРјРѕС‰СЊСЋ РїРѕР»РѕР№ С‚СЂСѓР±РєРё Рё РІРІРѕРґРёС‚ С‡С‚Рѕ-С‚Рѕ РІРЅСѓС‚СЂСЊ!"))
+	to_chat(M, SPAN_DANGER("РЈСЂРѕРґР»РёРІР°СЏ Рё Р±РµСЃС„РѕСЂРјРµРЅРЅР°СЏ РјР°СЃСЃР° РІРІРѕРґРёС‚СЃСЏ РїРѕРґ РІР°С€Рё СЂРµР±СЂР° С‡РµСЂРµР· С‚СЂСѓР±РєСѓ!"))
 	var/obj/item/organ/internal/xeno/hivenode/node = new(affecting)
 	node.replaced(M,affecting)
 

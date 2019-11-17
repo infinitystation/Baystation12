@@ -1,7 +1,7 @@
 /obj/item/organ/internal/swarm/thruster
 	name = "thruster"
-	desc = "Маневровые двежки разного размера"
-	action_button_name = "Переключить маневровые двежки"
+	desc = "РњР°РЅРµРІСЂРѕРІС‹Рµ РґРІРµР¶РєРё СЂР°Р·РЅРѕРіРѕ СЂР°Р·РјРµСЂР°"
+	action_button_name = "РџРµСЂРµРєР»СЋС‡РёС‚СЊ РјР°РЅРµРІСЂРѕРІС‹Рµ РґРІРµР¶РєРё"
 	icon = 'infinity/icons/swarm/obj/organ/internal.dmi'
 	icon_state = "have_not"
 	organ_tag = BP_THRUSTER

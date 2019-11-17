@@ -4,67 +4,85 @@
 //A vot bistruyu ustnuyu rech - vryad li
 //No zato kashdiy mog bi pochuchut ponimat ksenotu, ne s pervogo raza, no vse she
 
-/decl/cultural_info/location
-	secondary_langs = list(LANGUAGE_PTAJ, LANGUAGE_PRESOMI, LANGUAGE_PUNATI, LANGUAGE_PSKRELLIAN)
+/decl/cultural_info/location/New()
+	secondary_langs += list(LANGUAGE_SIIK_MAAS, LANGUAGE_RESOMI, LANGUAGE_UNATHI_SINTA, LANGUAGE_SKRELLIAN)
+	..()
 
-/datum/language/tajprim
+/datum/language/tajaran/primitive
 	name = LANGUAGE_PTAJ
-	desc = "Упрощенный Сиик'маас - именно так можно назвать то, что вы выучили. Конечно, с письменностью гораздо легче, но и того что вы сможете выговорить уже достаточно для выживания на Адомае."
+	desc = "Упрощенный Сиик'маас - именно так можно назвать то, что вы выучили. Конечно, \
+	с письменностью гораздо легче, но и того что вы сможете выговорить уже достаточно чтобы выжить на Адомае."
 	speech_verb = "мурчит"
 	ask_verb = "вопросительно мурчит"
 	exclaim_verb = "подвывает"
-	colour = "tajaran"
-	syllables = list("mrr","rr","tajr","kir","raj","kii","mir","kra","ahk","nal","vah","khaz","jri","ran","darr",
-	"mi","jri","dynh","manq","rhe","zar","rrhaz","kal","chur","eech","thaa","dra","jurl","mah","sanu","dra","ii'r",
-	"ka","aasi","far","wa","baq","ara","qara","zir","sam","mak","hrar","nja","rir","khan","jun","dar","rik","kah",
-	"hal","ket","jurl","mah","tul","cresh","azu","ragh","mro","mra","mrro","mrra")
+	key = ""
 	shorthand = "PTJ"
-	partial_understanding = list(LANGUAGE_SIIK_MAAS = 30)
+	flags = BAD_SPEAKER
+	partial_understanding = list(LANGUAGE_SIIK_MAAS = 30, LANGUAGE_PTAJ = 15)
 
-/datum/language/rezprim
+/datum/language/tajaran/primitive/can_be_spoken_properly_by(var/mob/speaker)
+	var/mob/living/S = speaker
+	if(!istype(S))
+		return FALSE
+	if(S.isSynthetic())
+		return TRUE
+	return FALSE
+
+/datum/language/tajaran/primitive/muddle(var/message)
+	message = replacetext(message, "s", "sh")
+	message = replacetext(message, "S", "SH")
+	message = replacetext(message, "с", "ш")
+	message = replacetext(message, "С", "Ш")
+	return message
+
+/datum/language/resomi/primitive
 	name = LANGUAGE_PRESOMI
-	desc = "Упрощенный Счечи - именно так можно назвать то, что вы выучили. Конечно, с письменностью гораздо легче, но и того что вы сможете выговорить уже достаточно для выживания в резомьей среде."
+	desc = "Упрощенный Счечи - именно так можно назвать то, что вы выучили. Конечно, с письменностью \
+	гораздо легче, но и того что вы сможете выговорить уже достаточно чтобы выжить в резомьей среде."
 	speech_verb = "свистит"
 	ask_verb = "насвистывает"
-	exclaim_verb = "шипит"
-	colour = "alien"
-	syllables = list(
-			"ca", "ra", "ma", "sa", "na", "ta", "la", "sha", "scha", "a", "a",
-			"ce", "re", "me", "se", "ne", "te", "le", "she", "sche", "e", "e",
-			"ci", "ri", "mi", "si", "ni", "ti", "li", "shi", "schi", "i", "i"
-		)
+	exclaim_verb = "просвистывает"
+	key = ""
 	shorthand = "PSCH"
-	partial_understanding = list(LANGUAGE_RESOMI = 30)
+	flags = BAD_SPEAKER
+	partial_understanding = list(LANGUAGE_RESOMI = 30,LANGUAGE_PRESOMI = 15)
 
-/datum/language/unprim
+/datum/language/resomi/primitive/can_be_spoken_properly_by(var/mob/speaker)
+	var/mob/living/S = speaker
+	if(!istype(S))
+		return FALSE
+	if(S.isSynthetic())
+		return TRUE
+	return FALSE
+
+/datum/language/resomi/primitive/muddle(var/message)
+	message = replacetext(message, ",",    "")
+	return message
+
+/datum/language/unathi/primitive
 	name = LANGUAGE_PUNATI
-	desc = "Упрощенный язык унати - именно так можно назвать то, что вы выучили. Конечно, с письменностью гораздо легче, но и того что вы сможете выговорить уже достаточно для выживания на Могесе."
-	speech_verb = "издает шипящие звуки"
+	desc = "Упрощенный Синта'унати! - именно так можно назвать то, что вы выучили. Конечно, с письменностью \
+	гораздо легче, но и того что вы сможете выговорить уже достаточно чтобы выжить на Могесе."
+	speech_verb = "шипит"
 	ask_verb = "вопросительно шипит"
-	exclaim_verb = "агрессивно шипит"
-	colour = "soghun"
-	syllables = list(
-		"za", "az", "ze", "ez", "zi", "iz", "zo", "oz", "zu", "uz", "zs", "sz",
-		"ha", "ah", "he", "eh", "hi", "ih", "ho", "oh", "hu", "uh", "hs", "sh",
-		"la", "al", "le", "el", "li", "il", "lo", "ol", "lu", "ul", "ls", "sl",
-		"ka", "ak", "ke", "ek", "ki", "ik", "ko", "ok", "ku", "uk", "ks", "sk",
-		"sa", "as", "se", "es", "si", "is", "so", "os", "su", "us", "ss", "ss",
-		"ra", "ar", "re", "er", "ri", "ir", "ro", "or", "ru", "ur", "rs", "sr",
-		"a",  "a",  "e",  "e",  "i",  "i",  "o",  "o",  "u",  "u",  "s",  "s"
-	)
+	exclaim_verb = "прерывисто шипит"
+	key = ""
 	shorthand = "PUT"
-	partial_understanding = list(LANGUAGE_UNATHI_SINTA = 25, LANGUAGE_UNATHI_YEOSA = 25)
+	flags = BAD_SPEAKER
+	partial_understanding = list(LANGUAGE_UNATHI_SINTA = 25, LANGUAGE_UNATHI_YEOSA = 25, LANGUAGE_PUNATI = 15)
 
-/datum/language/skrellprim
+/datum/language/skrell/primitive
 	name = LANGUAGE_PSKRELLIAN
-	desc = "Упрощенный Скрельский - именно так можно назвать то, что вы выучили. Конечно, с письменностью гораздо легче ведь ее вы не учили, но и того что вы сможете выговорить уже достаточно для выживания среди Скреллов. Выучить хоть часть этого языка было дорого, особенно из-за цены импланта, который помог в этом."
+	desc = "Упрощенный Скрельский - именно так можно назвать то, что вы выучили. Конечно, с письменностью \
+	гораздо легче ведь ее вы не учили, но и того что вы сможете выговорить уже достаточно чтобы выжить среди \
+	Скреллов. Выучить хоть часть Скрелльского, особенно из-за цены импланта, который помог в этом."
 	speech_verb = "подвывает"
 	ask_verb = "воет"
 	exclaim_verb = "навывает"
-	colour = "skrell"
-	syllables = list("qr","qrr","xuq","qil","quum","xuqm","vol","xrim","zaoo","qu-uu","qix","qoo","zix","*","!")
+	key = ""
 	shorthand = "PSK"
-	partial_understanding = list(LANGUAGE_SKRELLIAN = 20)
+	flags = BAD_SPEAKER
+	partial_understanding = list(LANGUAGE_SKRELLIAN = 20, LANGUAGE_PSKRELLIAN = 10)
 
 //tut idut tipa chtobi ksenosi ponimali primitivnie yaziki i tipa tebya, primitiva poimyt a ti ih ne och no i tebya tozhe
 

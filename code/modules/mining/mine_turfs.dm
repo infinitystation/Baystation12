@@ -528,7 +528,7 @@ var/list/mining_floors = list()
 			overlays += aster_edge
 
 		if(istype(get_step(src, step_overlays[direction]), /turf/simulated/mineral))
-			var/image/rock_wall = image('icons/turf/walls.dmi', "rock_side", dir = step_overlays[direction])
+			var/image/rock_wall = image('icons/turf/walls.dmi', "rock_side_u", dir = step_overlays[direction]) //INF, WAS rock_side
 			rock_wall.turf_decal_layerise()
 			overlays += rock_wall
 

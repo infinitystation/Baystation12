@@ -59,41 +59,109 @@
 
 /obj/machinery/door/airlock/proc/get_new_ntnet_id()
 	t_ntnet_id = pick(alphabet) + num2text(rand(100,999))
-	//var/obj/machinery/door/airlock/TEST
-	//if(TEST in world)
-	for(var/obj/machinery/door/airlock/A in SSmachines.machinery)
-		if(t_ntnet_id == A.t_ntnet_id)
-			get_new_ntnet_id()
+	var/list/IDS = list()
+	for(var/obj/machinery/door/airlock/i in GLOB.airlocks)
+		if(i == src)
+			continue
+		IDS += i.t_ntnet_id
+	if(t_ntnet_id in IDS)
+		get_new_ntnet_id()
+		return
 
 /client/proc/debug_airlocks_id()
 	set name = "Debug Airlocks ID"
 	set category = "Debug"
-
-	var/IDS = ""
-	//var/list/bugged_airlocks = list()
+//html{background: linear-gradient(180deg, #373737, #171717);color: #a4bad6;}hr{background-color: #40628a;height: 1px;}
+	var/stylesheet = {"<style>
+							div.id_airlocksbugged{
+								background: #844;
+								border-radius: 5px;
+								border-color: #a00;
+								padding: 20px;
+							}
+							table, td, th {
+								border: 1px solid #6a6;
+							}
+							td, th {
+								width: 100px;
+							}
+							table.id_airlocksbugged{
+							border: 1px solid #a66;
+							}
+							table.id_airlocksbugged td, table.id_airlocksbugged th{
+							border: 1px solid #a66;
+							}
+							.airlocksid_stable{
+								background: #4c4;
+								border-radius: 5px;
+								border: #0a0 solid 3px;
+								padding: 30px;
+								font-size: 30px;
+							}
+						</style>"}
+	var/IDS_table = {"<table>
+					<tr>
+						<th>ID
+						<th>NAME
+						<th>LOCATION"}
+	var/list/IDS = list()
+	var/list/bugged_airlocks = list()
+	var/bugged_airlocks_table = {"<tr>
+									<th class='id_airlocksbugged'>ID
+									<th class='id_airlocksbugged'>NAME
+									<th class='id_airlocksbugged'>LOCATION
+									<th class='id_airlocksbugged'>ID PAIR
+									<th class='id_airlocksbugged'>PAIR NAME
+									<th class='id_airlocksbugged'>PAIR LOCATION"}
 	var/data = ""
-	for(var/obj/machinery/door/airlock/TEST in SSmachines.machinery)
+	for(var/obj/machinery/door/airlock/TEST in GLOB.airlocks)
 /*
 		for(var/obj/machinery/door/airlock/I in SSmachines.machinery)
 			if(TEST.t_ntnet_id == I.t_ntnet_id && I != TEST)
 				bugged_airlocks += "[I.name] | ID: [I.t_ntnet_id] | Location: [I.loc]"
 				continue
 */
-		IDS += "[TEST.name] | ID: [TEST.t_ntnet_id] | Location: [TEST.loc]<br>"
-
-	//data = "<center><h1>Airlocks with same ID's:</h1></center><br>"
-/*
-	for(var/obj/machinery/door/airlock/i in bugged_airlocks)
-		for(var/obj/machinery/door/airlock/b in bugged_airlocks)
-			if(b == i)
+		IDS += {"	<td>[TEST.t_ntnet_id]
+					<td>[TEST.name]
+					<td>([GET_ATOMLOC_HREF_FOR(TEST)] ([TEST.loc]))"}
+	for(var/obj/machinery/door/airlock/i in GLOB.airlocks)
+		for(var/obj/machinery/door/airlock/n in GLOB.airlocks)
+			if(n == i) 
 				continue
-			if(b.t_ntnet_id == i.t_ntnet_id)
-				data += "[b.name] ID: [b.t_ntnet_id] [b.loc] | [i.name]  ID: [i.t_ntnet_id] [i.loc] : <font color = '#fffa29'>Have same IDs (Maybe players set them up the same).</font><br>"
-*/
-	data += "<center><h1>All airlocks:</h1></center><br>"
-	data += IDS
+			if(n.t_ntnet_id == i.t_ntnet_id)
+				bugged_airlocks += {"	<td class='id_airlocksbugged'>[n.t_ntnet_id]
+										<td class='id_airlocksbugged'>[n.name]
+										<td class='id_airlocksbugged'>[n.loc] ([GET_ATOMLOC_HREF_FOR(n)])
+
+										<td class='id_airlocksbugged'>[i.t_ntnet_id]
+										<td class='id_airlocksbugged'>[i.name]
+										<td class='id_airlocksbugged'>[i.loc] ([GET_ATOMLOC_HREF_FOR(i)])"}
+
+	if(bugged_airlocks.len)
+		data += {"<div class = 'id_airlocksbugged'>
+					<center>
+						<h2>
+							Airlocks with same ID's:
+						</h2>
+						<br>
+						<div align='center'>
+							<table class="id_airlocksbugged">
+								[bugged_airlocks_table]<tr>
+								[bugged_airlocks.Join("<tr>")]
+							</table>
+						</div>
+					</center>
+				</div><hr>"}
+	else
+		data += "<div class = 'airlocksid_stable'>Airlocks ID system stable</div>"
+	data += "<center><h1>All airlocks IDs:</h1></center><hr>"
+	if(IDS.len)
+		data += "<div align='center'>[IDS_table]<tr>[IDS.Join("<tr>")]</div>"
+	else
+		data += "<div class = 'id_airlocksbugged'>ERROR CODE 523 (Origin Is Unreachable): Airlocks isn't initialized or not found.</div>"
+	data += stylesheet
 	//show_browser(src, data, "airlocks_ntnet_id_debug")
-	var/datum/browser/popup = new(src, "autolathenew", "Airlock ID Debug", 450, 600)
+	var/datum/browser/popup = new(src.virtual_eye, "ailocksdebug", "Airlock ID Debug", 700, 800)
 	popup.set_content(data)
 	popup.open()
 	return 1

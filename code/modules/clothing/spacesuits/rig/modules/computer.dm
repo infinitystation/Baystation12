@@ -185,7 +185,7 @@
 	integrated_ai = null
 	update_verb_holder()
 
-/obj/item/rig_module/ai_container/proc/integrate_ai(var/obj/item/ai,var/mob/user) //вырублено, пока не пофиксим/понерфим это говно
+/obj/item/rig_module/ai_container/proc/integrate_ai(var/obj/item/ai,var/mob/user) //РІС‹СЂСѓР±Р»РµРЅРѕ, РїРѕРєР° РЅРµ РїРѕС„РёРєСЃРёРј/РїРѕРЅРµСЂС„РёРј СЌС‚Рѕ РіРѕРІРЅРѕ
 	to_chat(user, "<span class='warning'>This feature is currently disabled.</span>")
 /*	if(!ai) return
 

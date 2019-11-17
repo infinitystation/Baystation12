@@ -13,6 +13,7 @@ GLOBAL_DATUM_INIT(commandos, /datum/antagonist/deathsquad/mercenary, new)
 	hard_cap_round = 8
 	initial_spawn_req = 4
 	initial_spawn_target = 6
+	ambitious = 0 //INF
 
 /datum/antagonist/deathsquad/mercenary/equip(var/mob/living/carbon/human/player)
 

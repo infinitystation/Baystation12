@@ -211,7 +211,7 @@ GLOBAL_LIST_EMPTY(skills)
 		if(SKILL_ADEPT, SKILL_EXPERT)
 			return 2*difficulty
 		if(SKILL_PROF)
-			return 6*difficulty
+			return 3*difficulty
 		else
 			return 0
 

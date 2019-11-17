@@ -233,7 +233,7 @@
 	sprite_sheets_obj = list(
 		SPECIES_SKRELL = 'icons/obj/clothing/species/skrell/obj_head_skrell.dmi',
 		)
-*/inf
+inf*/
 
 /obj/item/clothing/suit/space/void/security/alt
 	icon_state = "rig-secalt"
@@ -302,6 +302,7 @@
 	item_state = "pilot_helm"
 	armor = list(melee = 30, bullet = 5, laser = 15,energy = 5, bomb = 5, bio = 100, rad = 25)
 	light_overlay = "helmet_light_dual"
+	tint = TINT_NONE //inf
 
 /obj/item/clothing/suit/space/void/pilot
 	desc = "An atmos resistant voidsuit for space and planet exploration."

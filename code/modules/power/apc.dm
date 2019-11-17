@@ -129,7 +129,7 @@
 	var/global/list/status_overlays_lighting
 	var/global/list/status_overlays_environ
 
-	var/hp = 100 //infinity
+	var/hp = 100 //INFINITY
 /obj/machinery/power/apc/updateDialog()
 	if (stat & (BROKEN|MAINT))
 		return
@@ -211,7 +211,7 @@
 	if(emp_hardened)
 		return
 	failure_timer = max(failure_timer, round(duration))
-	if(needs_powerdown_sound == TRUE)//inf
+	if(needs_powerdown_sound == TRUE) //INF
 		playsound(src, 'sound/machines/apc_nopower.ogg', 75, 0)
 
 /obj/machinery/power/apc/proc/init_round_start()
@@ -249,8 +249,10 @@
 				to_chat(user, "The cover is closed. Something wrong with it: it doesn't work.")
 			else if (hacker && !hacker.hacked_apcs_hidden)
 				to_chat(user, "The cover is locked.")
-				if(user.skill_check(SKILL_ELECTRICAL, SKILL_PROF)) //inf
-					to_chat(user, SPAN_NOTICE("Looks like you can use your skills to restore main settings of [src] with multitool...")) //inf
+//[INF]
+				if(user.skill_check(SKILL_ELECTRICAL, SKILL_PROF))
+					to_chat(user, SPAN_NOTICE("Looks like you can use your skills to restore main settings of the APC with multitool..."))
+//[/INF]
 			else
 				to_chat(user, "The cover is closed.")
 
@@ -272,7 +274,7 @@
 		status_overlays_lighting.len = 5
 		status_overlays_environ.len = 5
 
-		// INF@CODE - START
+//[INF]
 		var/list/overlay_settings = list(plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
 
 		status_overlays_lock[1] = overlay_image(icon, "apcox-0", plane = overlay_settings[1], layer = overlay_settings[2])    // 0=blue 1=red
@@ -281,36 +283,36 @@
 		status_overlays_charging[1] = overlay_image(icon, "apco3-0", plane = overlay_settings[1], layer = overlay_settings[2])
 		status_overlays_charging[2] = overlay_image(icon, "apco3-1", plane = overlay_settings[1], layer = overlay_settings[2])
 		status_overlays_charging[3] = overlay_image(icon, "apco3-2", plane = overlay_settings[1], layer = overlay_settings[2])
-		// INF@CODE - END
+//[/INF]
 
-		/* INF@CODE - BAY START
+/* INF - ORIGINAL CODE
 		status_overlays_lock[1] = image(icon, "apcox-0")    // 0=blue 1=red
 		status_overlays_lock[2] = image(icon, "apcox-1")
 
 		status_overlays_charging[1] = image(icon, "apco3-0")
 		status_overlays_charging[2] = image(icon, "apco3-1")
 		status_overlays_charging[3] = image(icon, "apco3-2")
-		INF@CODE - BAY END */
+INF */
 
 		var/list/channel_overlays = list(status_overlays_equipment, status_overlays_lighting, status_overlays_environ)
 		var/channel = 0
 		for(var/list/channel_leds in channel_overlays)
 
-			// INF@CODE - START
+//[INF]
 			channel_leds[POWERCHAN_OFF + 1] = overlay_image(icon,"apco[channel]",COLOR_RED, plane = overlay_settings[1], layer = overlay_settings[2])
 			channel_leds[POWERCHAN_OFF_TEMP + 1] = overlay_image(icon,"apco[channel]",COLOR_ORANGE, plane = overlay_settings[1], layer = overlay_settings[2])
 			channel_leds[POWERCHAN_OFF_AUTO + 1] = overlay_image(icon,"apco[channel]",COLOR_ORANGE, plane = overlay_settings[1], layer = overlay_settings[2])
 			channel_leds[POWERCHAN_ON + 1] = overlay_image(icon,"apco[channel]",COLOR_LIME, plane = overlay_settings[1], layer = overlay_settings[2])
 			channel_leds[POWERCHAN_ON_AUTO + 1] = overlay_image(icon,"apco[channel]",COLOR_BLUE, plane = overlay_settings[1], layer = overlay_settings[2])
-			// INF@CODE - END
+//[/INF]
 
-			/* INF@CODE - BAY START
+/* INF - ORIGINAL CODE
 			channel_leds[POWERCHAN_OFF + 1] = overlay_image(icon,"apco[channel]",COLOR_RED)
 			channel_leds[POWERCHAN_OFF_TEMP + 1] = overlay_image(icon,"apco[channel]",COLOR_ORANGE)
 			channel_leds[POWERCHAN_OFF_AUTO + 1] = overlay_image(icon,"apco[channel]",COLOR_ORANGE)
 			channel_leds[POWERCHAN_ON + 1] = overlay_image(icon,"apco[channel]",COLOR_LIME)
 			channel_leds[POWERCHAN_ON_AUTO + 1] = overlay_image(icon,"apco[channel]",COLOR_BLUE)
-			   INF@CODE - BAY END */
+INF */
 			channel++
 
 	if(update_state < 0)
@@ -566,10 +568,11 @@
 			reboot() //completely new electronics
 			to_chat(user, SPAN_NOTICE("You place the power control board inside the frame."))
 			qdel(W)
+		return TRUE //INF
 
 	// Deconstruction
 	if(isWelder(W))
-//inf ahead
+//[INF]
 		if(hp < 100)
 			if(is_broken())
 				to_chat(user, SPAN_WARNING("The APC is too damaged, replace of the frame is only option."))
@@ -585,11 +588,11 @@
 			if(do_after(user, 50, src) && opened && has_electronics == 0 && !terminal())
 				if(!WT.remove_fuel(3, user))
 					return TRUE
-			hp = 100 //inf
+			hp = 100
 			user.visible_message(SPAN_NOTICE("\The [user] has repaired \the [src]'s frame."), \
 				"You repair the APC frame.")
 			return TRUE
-//inf end
+//[/INF]
 		if(!opened)
 			to_chat(user, SPAN_WARNING("You must first open the cover."))
 			return TRUE
@@ -627,9 +630,19 @@
 
 	// Panel and frame repair.
 	if (istype(W, /obj/item/frame/apc))
+//[INF]
+		if(!user.skill_check(SKILL_ELECTRICAL, SKILL_ADEPT))
+			to_chat(user, SPAN_NOTICE("You have no idea what to do..."))
+			return TRUE
+//[/INF]
 		if(!opened)
 			to_chat(user, SPAN_WARNING("You must first open the cover."))
 			return TRUE
+//[INF]
+		if(get_cell())
+			to_chat(user, SPAN_NOTICE("You must first remove the cell."))
+			return TRUE
+//[/INF]
 		if(emagged)
 			emagged = 0
 			if(opened==2)
@@ -638,24 +651,26 @@
 				"<span class='warning'>[user.name] has replaced the damaged APC frontal panel with a new one.</span>",\
 				"<span class='notice'>You replace the damaged APC frontal panel with a new one.</span>")
 			qdel(W)
-			hp = 100 //inf
+			hp = 100 //INF
 			update_icon()
 			return TRUE
 
 		if((stat & BROKEN) || (hacker && !hacker.hacked_apcs_hidden))
-//inf			if(has_electronics)
-//inf				to_chat(user, "<span class='warning'>You cannot repair this APC until you remove the electronics still inside.</span>")
-//inf				return TRUE
-
+//INF			if(has_electronics)
+//INF				to_chat(user, "<span class='warning'>You cannot repair this APC until you remove the electronics still inside.</span>")
+//INF				return TRUE
+//[INF]
 			user.visible_message("<span class='warning'>[user.name] replaces the damaged APC frame with a new one.</span>",\
 								"You begin to replace the damaged APC frame...")
-			if(do_after(user, 50, src) && opened && !has_electronics && ((stat & BROKEN) || (hacker && !hacker.hacked_apcs_hidden)))
+//[/INF]
+			if(do_after(user, 50, src) && opened && !get_cell() && ((stat & BROKEN) || (hacker && !hacker.hacked_apcs_hidden)))
 				user.visible_message(\
 					"<span class='notice'>[user.name] has replaced the damaged APC frame with new one.</span>",\
 					"You replace the damaged APC frame with new one.")
 				qdel(W)
 				set_broken(FALSE)
-				hp = 100 //inf
+				hp = 100 //INF
+				operating = 1 //INF, less pain
 				// Malf AI, removes the APC from AI's hacked APCs list.
 				if(hacker && hacker.hacked_apcs && (src in hacker.hacked_apcs))
 					hacker.hacked_apcs -= src
@@ -663,16 +678,17 @@
 				if (opened==2)
 					opened = 1
 				queue_icon_update()
+		return TRUE
 
-//[inf]
+//[INF]
 	if(isMultitool(W) && !wiresexposed && has_electronics)
 		if((user.skill_check(SKILL_ELECTRICAL, SKILL_PROF) || user.skill_check(SKILL_COMPUTER, SKILL_PROF)) && \
-		(hacker && hacker.hacked_apcs && (src in hacker.hacked_apcs)))
+		src in hacker?.hacked_apcs)
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN) //don't spam
 			user.visible_message(SPAN_NOTICE("[user] moves [W] around the APC..."), \
 				SPAN_NOTICE("You begin to restore settings of circuits..."))
-			if(!(do_after(user, 60, src)) && (hacker && hacker.hacked_apcs && (src in hacker.hacked_apcs)))
-				return
+			if(!do_after(user, 60, src) && src in hacker?.hacked_apcs)
+				return TRUE
 			hacker.hacked_apcs -= src
 			hacker = null
 			user.visible_message(user, SPAN_NOTICE("[src] beeps and the screen restores to default state."), \
@@ -680,17 +696,17 @@
 			playsound(src, 'sound/machines/twobeep.ogg', 75, 0)
 //			reboot()
 			queue_icon_update()
-		return
-//[/inf]
+		return TRUE
+//[/INF]
 
 	if((. = ..())) // Further interactions are low priority attack stuff.
 		return
 
-	if(opened != 2 && hp <= 5) //inf, was (((stat & BROKEN) || (hacker && !hacker.hacked_apcs_hidden)) \
-			//inf, was && !opened \
-			//inf, was && W.force >= 5 \
-			//inf, was && W.w_class >= 3.0 \
-			//inf, was && prob(20) )
+	if(opened != 2 && hp <= 5) //INF, was (((stat & BROKEN) || (hacker && !hacker.hacked_apcs_hidden)) \
+			//INF, was && !opened \
+			//INF, was && W.force >= 5 \
+			//INF, was && W.w_class >= 3.0 \
+			//INF, was && prob(20) )
 		opened = 2
 		user.visible_message("<span class='danger'>The APC cover was knocked down with the [W.name] by [user.name]!</span>", \
 			"<span class='danger'>You knock down the APC cover with your [W.name]!</span>", \
@@ -701,26 +717,23 @@
 			return attack_robot(user)
 		if (!opened && wiresexposed && (isMultitool(W) || isWirecutter(W) || istype(W, /obj/item/device/assembly/signaler)))
 			return wires.Interact(user)
-//inf ahead
+//[INF]
 		if(hp <= 0)
 			to_chat(user, SPAN_NOTICE("[src] is already destroyed...")) //yeah, they may continue bash
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-//inf end
+//[/INF]
 
-		user.visible_message("<span class='danger'>The [src.name] has been hit with the [W.name] by [user.name]!</span>", \
+//INF		user.visible_message("<span class='danger'>The [src.name] has been hit with the [W.name] by [user.name]!</span>", \
 			"<span class='danger'>You hit the [src.name] with your [W.name]!</span>", \
 			"You hear a bang")
-		if(W.force >= 5 && W.w_class >= ITEM_SIZE_NORMAL) //inf, was f(W.force >= 5 && W.w_class >= ITEM_SIZE_NORMAL && prob(W.force))
-			if(hp > 0) //inf
-				hp -= W.force //inf, was var/roulette = rand(1,100)
-//inf			switch(roulette)
-			if(locked && hp <= 75) //inf, was if(1 to 10)
-				locked = FALSE
-				to_chat(user, "<span class='notice'>You manage to disable the lock on \the [src]!</span>")
-			if(!opened && hp <= 50) //inf, was if(50 to 70)
+		if(W.force >= 5 && W.w_class >= ITEM_SIZE_NORMAL) //INF, was f(W.force >= 5 && W.w_class >= ITEM_SIZE_NORMAL && prob(W.force))
+			if(hp > 0) //INF
+				hp -= W.force //INF, was var/roulette = rand(1,100)
+//INF			switch(roulette)
+			if(!opened && hp <= 50) //INF, was if(50 to 70)
 				to_chat(user, "<span class='notice'>You manage to bash the lid open!</span>")
 				opened = 1
-			if(opened != 2 && hp <= 15) //inf, was if(90 to 100)
+			if(opened != 2 && hp <= 15) //INF, was if(90 to 100)
 				to_chat(user, "<span class='warning'>There's a nasty sound and \the [src] goes cold...</span>")
 				set_broken(TRUE)
 			queue_icon_update()
@@ -755,7 +768,7 @@
 		var/mob/living/carbon/human/H = user
 
 		if(H.species.can_shred(H))
-			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN) //inf
+			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN) //INF
 			user.visible_message("<span class='warning'>\The [user] slashes at \the [src]!</span>", "<span class='notice'>You slash at \the [src]!</span>")
 			playsound(src.loc, 'sound/weapons/slash.ogg', 100, 1)
 
@@ -875,7 +888,7 @@
 			playsound(src, 'sound/machines/apc_nopower.ogg', 75, 0)
 			needs_powerdown_sound = FALSE
 	else
-		if(cell.charge / cell.maxcharge >= 0.5) //inf
+		if(cell.charge / cell.maxcharge >= 0.5) //INF
 			needs_powerdown_sound = TRUE
 
 /obj/machinery/power/apc/proc/isWireCut(var/wireIndex)
@@ -1238,9 +1251,9 @@ obj/machinery/power/apc/proc/autoset(var/cur_state, var/on)
 	to_chat(user, "\The [src] has been upgraded. It is now protected against EM pulses.")
 	return 1
 
-//inf ahead
+//[INF]
 /obj/machinery/CanUseTopicPhysical(var/mob/user)
 	return GLOB.physical_state.can_use_topic(nano_host(), user)
-//ind end
+//[/INF]
 
 #undef APC_UPDATE_ICON_COOLDOWN

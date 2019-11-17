@@ -381,7 +381,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 		else
 			newangle = 270
 	else
-		newangle = arctan(distx/disty)
+		newangle = arctan_our(distx/disty)
 		if(disty < 0)
 			newangle += 180
 		else if(distx < 0)

@@ -36,7 +36,7 @@
 	icon_state = "heph_boots"
 	item_state = "heph_boots"
 	var/footstep = 1
-	species_restricted = list(SPECIES_IPC)  //ИС - по флавору иное строение ступней; ООС - предотвращение кражи обуви некоторыми личностями ради спама звуком. Вы знете кто вы.
+	species_restricted = list(SPECIES_IPC)  //РРЎ - РїРѕ С„Р»Р°РІРѕСЂСѓ РёРЅРѕРµ СЃС‚СЂРѕРµРЅРёРµ СЃС‚СѓРїРЅРµР№; РћРћРЎ - РїСЂРµРґРѕС‚РІСЂР°С‰РµРЅРёРµ РєСЂР°Р¶Рё РѕР±СѓРІРё РЅРµРєРѕС‚РѕСЂС‹РјРё Р»РёС‡РЅРѕСЃС‚СЏРјРё СЂР°РґРё СЃРїР°РјР° Р·РІСѓРєРѕРј. Р’С‹ Р·РЅРµС‚Рµ РєС‚Рѕ РІС‹.
 
 /obj/item/clothing/shoes/jackboots/heph_boots/handle_movement(var/turf/walking, var/running)
 	if(running)

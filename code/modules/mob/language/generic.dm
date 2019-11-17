@@ -22,7 +22,7 @@
 /datum/language/sign
 	name = LANGUAGE_SIGN
 	desc = "A sign language commonly used for those who are deaf or mute."
-	signlang_verb = list("жестикулирует")
+	signlang_verb = list("Р¶РµСЃС‚РёРєСѓР»РёСЂСѓРµС‚")
 	colour = "say_quote"
 	key = "s"
 	flags = SIGNLANG | NO_STUTTER | NONVERBAL

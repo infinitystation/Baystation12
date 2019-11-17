@@ -57,7 +57,7 @@
 	if (href_list["focus"])
 		change_size()
 	if(href_list["channel"])
-		var/nc = sanitize_a0(input(usr, "Channel name", "Select new channel name", channel) as text|null)
+		var/nc = input(usr, "Channel name", "Select new channel name", channel) as text|null
 		if(nc)
 			channel = nc
 			camera.c_tag = channel

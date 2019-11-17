@@ -1,17 +1,20 @@
 /obj/item/device/multitool/hacktool
 	var/is_hacking = 0
-	var/max_known_targets
+	var/max_known_targets = 5 //INF, WAS nothing
 
 	var/in_hack_mode = 0
 	var/list/known_targets
-	var/list/supported_types
 	var/datum/topic_state/default/must_hack/hack_state
+	var/list/supported_types = list(/obj/machinery/door/airlock) //INF, WAS nothing
+
+	var/min_hack_time = 8 SECONDS //INF
+	var/rand_hack_time = 4 SECONDS //INF
 
 /obj/item/device/multitool/hacktool/New()
 	..()
 	known_targets = list()
-	max_known_targets = 5 + rand(1,3)
-	supported_types = list(/obj/machinery/door/airlock)
+	max_known_targets = max_known_targets + rand(1,3) //INF, WAS max_known_targets = 5 + rand(1,3)
+//INF	supported_types = list(/obj/machinery/door/airlock)
 	hack_state = new(src)
 
 /obj/item/device/multitool/hacktool/Destroy()
@@ -25,8 +28,15 @@
 
 /obj/item/device/multitool/hacktool/attackby(var/obj/W, var/mob/user)
 	if(isScrewdriver(W))
-		in_hack_mode = !in_hack_mode
-		playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
+//[INF]
+		var/list/all_antag_types = GLOB.all_antag_types_
+		for(var/antag_type in all_antag_types)
+			var/datum/antagonist/antag = all_antag_types[antag_type]
+			if(antag.is_antagonist(user.mind))
+				to_chat(user, SPAN_NOTICE("You switch \a [src] to [in_hack_mode ? "normal" : "hacking"] mode."))
+//[/INF]
+				in_hack_mode = !in_hack_mode
+				playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
 	else
 		..()
 
