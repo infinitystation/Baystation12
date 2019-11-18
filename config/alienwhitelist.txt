@@ -29,7 +29,6 @@ redknighthero - machine
 kotovsyndrome - machine
 termservice - machine
 semorerith - machine
-darkman24rus - machine
 bob46 - machine
 inubashirimomiji - skrell
 tenedegurechaff - skrell
@@ -184,6 +183,8 @@ hardstuck - adherent
 jacking - adherent
 redknighthero - adherent
 coldmantis13 - adherent
+forrya - adherent
+5au5age - adherent
 coldmantis13 - Kharmaan Gyne
 s1334 - Kharmaan Gyne
 wheatley2013 - Kharmaan Gyne
