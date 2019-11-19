@@ -103,7 +103,7 @@
 		list(mode_name="light", projectile_type=/obj/item/projectile/beam/pulse/skrell, charge_cost=40, burst=3, burst_delay=2)
 		)
 
-/obj/item/weapon/gun/energy/pulse_rifle/skrell/special_check(user)
+/obj/item/weapon/gun/energy/pulse_rifle/skrell/special_check(user) //INF
 	if(istype(user,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = user
 		if(H.species?.get_bodytype(H) != SPECIES_SKRELL)
