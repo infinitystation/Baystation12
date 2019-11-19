@@ -48,7 +48,7 @@
 	bulk = GUN_BULK_PISTOL
 	is_serial = 0
 
-/obj/item/weapon/gun/energy/gun/skrell/special_check(user)
+/obj/item/weapon/gun/energy/gun/skrell/special_check(user) //INF
 	if(istype(user,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = user
 		if(H.species?.get_bodytype(H) != SPECIES_SKRELL)
