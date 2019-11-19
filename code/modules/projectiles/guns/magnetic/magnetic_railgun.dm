@@ -196,7 +196,7 @@
 	bulk = GUN_BULK_RIFLE //inf
 	one_hand_penalty = 3
 
-/obj/item/weapon/gun/magnetic/railgun/flechette/skrell/special_check(user)
+/obj/item/weapon/gun/magnetic/railgun/flechette/skrell/special_check(user) //INF
 	if(istype(user,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = user
 		if(H.species?.get_bodytype(H) != SPECIES_SKRELL)
