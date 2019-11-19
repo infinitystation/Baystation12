@@ -103,9 +103,9 @@
 		atom_flags &= ~ATOM_FLAG_OPEN_CONTAINER
 		update_icon()
 
-		// INF@CODE - START
+		//[INF]
 		verbs -= /obj/item/weapon/reagent_containers/food/drinks/proc/gulp_whole
-		// INF@CODE - END
+		//[/INF]
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/proc/remove_rag(mob/user)
 	if(!rag) return
@@ -113,13 +113,12 @@
 	rag = null
 	update_icon()
 
-	// INF@CODE - START
+	//[INF]
 	var/is_open_container = initial(atom_flags) & ATOM_FLAG_OPEN_CONTAINER
 	if(is_open_container)
 		atom_flags |= ATOM_FLAG_OPEN_CONTAINER
 		verbs += /obj/item/weapon/reagent_containers/food/drinks/proc/gulp_whole
-	// INF@CODE - END
-
+	//[/INF]
 /obj/item/weapon/reagent_containers/food/drinks/bottle/open(mob/user)
 	if(rag) return
 	..()
@@ -146,7 +145,7 @@
 		var/obj/item/organ/affecting = H.get_organ(hit_zone) //headcheck should ensure that affecting is not null
 		user.visible_message("<span class='danger'>[user] smashes [src] into [H]'s [affecting.name]!</span>")
 		// You are going to knock someone out for longer if they are not wearing a helmet.
-		var/blocked = target.get_blocked_ratio(hit_zone, BRUTE) * 100
+		var/blocked = target.get_blocked_ratio(hit_zone, BRUTE, damage = 10) * 100
 		var/weaken_duration = smash_duration + min(0, force - blocked + 10)
 		if(weaken_duration)
 			target.apply_effect(min(weaken_duration, 5), WEAKEN, blocked) // Never weaken more than a flash!
@@ -162,6 +161,7 @@
 	var/obj/item/weapon/broken_bottle/B = smash(target.loc, target)
 	user.put_in_active_hand(B)
 
+//[INF]
 	return blocked
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/bullet_act(var/obj/item/projectile/P, var/chance)
@@ -179,6 +179,7 @@
 			chance = 90
 		bullet_act(proj, chance)
 	return ..()
+//[/INF]
 
 //Keeping this here for now, I'll ask if I should keep it here.
 /obj/item/weapon/broken_bottle

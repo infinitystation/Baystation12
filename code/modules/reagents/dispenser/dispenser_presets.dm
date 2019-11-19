@@ -26,35 +26,34 @@
 /obj/machinery/chemical_dispenser/ert
 	name = "medicine dispenser"
 	spawn_cartridges = list(
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/arithrazine,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/inaprov,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/alkysine,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/iron,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/ryetalyn,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/imidazoline,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/rezadone,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/peridaxon,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/tramadol,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/paracetamol,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/tricord,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/dermaline,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/synaptizine,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/dexalin,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/sleeptox,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/dexalin_p,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/sterilizine,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/dylovene,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/spaceacillin,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/hyperzine,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/chloral,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/hyronalin,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/clonexadone,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/ethylredox,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/cryoxadone,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/kelotane,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/leporazine,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/tramadol,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/oxycodone,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/bicaridine
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/sterilizine,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/leporazine,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/kelotane,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/dermaline,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/dexalin,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/dexalin_p,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/tricord,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/dylovene,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/synaptizine,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/hyronalin,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/arithrazine,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/alkysine,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/imidazoline,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/peridaxon,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/bicaridine,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/hyperzine,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/rezadone,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/spaceacillin,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/ethylredox,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/sleeptox,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/chloral,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/cryoxadone,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/clonexadone
 		)
 
 /obj/machinery/chemical_dispenser/bar_soft
@@ -75,6 +74,8 @@
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/cream,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/tea,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/green_tea,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/chai_tea,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/red_tea,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/cola,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/smw,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/dr_gibb,
@@ -138,9 +139,16 @@
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/cream,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/tea,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/green_tea,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/ice
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/chai_tea,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/red_tea,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/ice,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/syrup_chocolate,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/syrup_caramel,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/syrup_vanilla,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/syrup_pumpkin
 		)
 
+//[INF]
 /obj/machinery/chemical_dispenser/merc
 	name = "combat drugs dispenser"
 	spawn_cartridges = list(
@@ -175,3 +183,4 @@
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/glucose,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/bicaridine
 		)
+//[/INF]

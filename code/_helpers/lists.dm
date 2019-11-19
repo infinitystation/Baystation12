@@ -750,6 +750,13 @@ proc/dd_sortedTextList(list/incoming)
 		if(ispath(T, key))
 			return key
 
+// Gets the first instance that is of the given type (strictly)
+/proc/get_instance_of_strict_type(var/list/L, var/T)
+	for(var/key in L)
+		var/atom/A = key
+		if(A.type == T)
+			return A
+//[INF]
 //Like typesof() or subtypesof(), but returns a typecache instead of a list
 /proc/typecacheof(path, ignore_root_path, only_root_path = FALSE)
 	if(ispath(path))
@@ -784,3 +791,4 @@ proc/dd_sortedTextList(list/incoming)
 
 		return 0
 	return L[A.type]
+//[/INF]

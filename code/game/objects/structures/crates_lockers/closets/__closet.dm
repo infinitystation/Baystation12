@@ -5,7 +5,6 @@
 	icon_state = "base"
 	density = 1
 	w_class = ITEM_SIZE_NO_CONTAINER
-	layer = 2
 
 	var/welded = 0
 	var/large = 1
@@ -64,9 +63,9 @@
 /obj/structure/closet/proc/WillContain()
 	return null
 
-/obj/structure/closet/examine(mob/user)
-	. = ..(user, 1)
-	if(. && !opened)
+/obj/structure/closet/examine(mob/user, distance)
+	. = ..()
+	if(distance <= 1 && !opened)
 		var/content_size = 0
 		for(var/atom/movable/AM in src.contents)
 			if(!AM.anchored)
@@ -144,7 +143,8 @@
 	src.opened = 0
 
 	playsound(src.loc, close_sound, 50, 0, -3)
-	density = 1
+	if(!wall_mounted)
+		density = 1
 
 	update_icon()
 
@@ -577,6 +577,10 @@
 	desc += " It appears to be broken."
 	return TRUE
 
+/obj/structure/closet/CanUseTopicPhysical(mob/user)
+	return CanUseTopic(user, GLOB.physical_no_access_state)
+
+//[INF]
 /obj/structure/closet/interact(mob/user)
 	src.add_fingerprint(user)
 	var/dat = ""
@@ -646,3 +650,4 @@
 		if(code2[inc] < 0)
 			code2[inc] = 9
 		interact(user)
+//[/INF]

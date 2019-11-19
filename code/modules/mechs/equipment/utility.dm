@@ -12,6 +12,14 @@
 		return 0
 	return ..()
 
+/obj/item/mech_equipment/clamp/attack_hand(mob/user)
+	if(owner && LAZYISIN(owner.pilots, user))
+		if(!owner.hatch_closed && carrying)
+			if(user.put_in_active_hand(carrying))
+				owner.visible_message(SPAN_NOTICE("\The [user] carefully grabs \the [carrying] from \the [src]."))
+				carrying = null
+	. = ..()
+
 /obj/item/mech_equipment/clamp/afterattack(var/atom/target, var/mob/living/user, var/inrange, var/params)
 	. = ..()
 
@@ -108,6 +116,11 @@
 		icon_state = "[initial(icon_state)]"
 		set_light(0, 0)
 
+/obj/item/mech_equipment/light/uninstalled()
+	on = FALSE
+	update_icon()
+	. = ..()
+	
 #define CATAPULT_SINGLE 1
 #define CATAPULT_AREA   2
 
@@ -121,6 +134,7 @@
 	var/atom/movable/locked
 	equipment_delay = 30 //Stunlocks are not ideal
 	origin_tech = list(TECH_MATERIAL = 4, TECH_ENGINEERING = 4, TECH_MAGNET = 4)
+	require_adjacent = FALSE
 
 /obj/item/mech_equipment/catapult/get_hardpoint_maptext()
 	var/string

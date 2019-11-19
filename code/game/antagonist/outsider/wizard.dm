@@ -16,6 +16,7 @@ GLOBAL_DATUM_INIT(wizards, /datum/antagonist/wizard, new)
 	min_player_age = 18
 
 	faction = "wizard"
+	base_to_load = /datum/map_template/ruin/antag_spawn/wizard
 
 /datum/antagonist/wizard/create_objectives(var/datum/mind/wizard)
 
@@ -105,7 +106,7 @@ obj/item/clothing
 
 // Does this clothing slot count as wizard garb? (Combines a few checks)
 /proc/is_wiz_garb(var/obj/item/clothing/C)
-	return C && C.wizard_garb
+	return istype(C) && C.wizard_garb
 
 /*Checks if the wizard is wearing the proper attire.
 Made a proc so this is not repeated 14 (or more) times.*/

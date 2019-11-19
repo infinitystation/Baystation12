@@ -8,9 +8,7 @@
 	power_channel = ENVIRON
 	var/frequency = 0
 	var/id
-	layer = MOUSETRAP_LAYER //inf, was 8.1
 	idle_power_usage = 15
-	plane = ABOVE_TURF_PLANE //inf
 
 /obj/machinery/meter/Initialize()
 	. = ..()
@@ -77,10 +75,10 @@
 		)
 		radio_connection.post_signal(src, signal)
 
-/obj/machinery/meter/examine(mob/user)
+/obj/machinery/meter/examine(mob/user, distance)
 	. = ..()
 
-	if(get_dist(user, src) > 3 && !(istype(user, /mob/living/silicon/ai) || isghost(user)))
+	if(distance > 3 && !(istype(user, /mob/living/silicon/ai) || isghost(user)))
 		to_chat(user, "<span class='warning'>You are too far away to read it.</span>")
 
 	else if(stat & (NOPOWER|BROKEN))

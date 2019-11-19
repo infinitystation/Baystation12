@@ -7,9 +7,16 @@
 	var/new_icon_file
 	var/uses = 1        // Uses before the kit deletes itself.
 
-/obj/item/device/kit/examine()
+/obj/item/device/kit/examine(mob/user)
 	. = ..()
-	to_chat(usr, "It has [uses] use\s left.")
+	to_chat(user, "It has [uses] use\s left.")
+
+/obj/item/device/kit/inherit_custom_item_data(var/datum/custom_item/citem)
+	new_name = citem.item_name
+	new_desc = citem.item_desc
+	new_icon = citem.item_icon_state
+	new_icon_file = CUSTOM_ITEM_OBJ
+	. = src
 
 /obj/item/device/kit/proc/use(var/amt, var/mob/user)
 	uses -= amt
@@ -25,6 +32,12 @@
 	uses = 2
 	var/new_light_overlay
 	var/new_mob_icon_file
+
+/obj/item/device/kit/suit/inherit_custom_item_data(var/datum/custom_item/citem)
+	. = ..()
+	if(citem.additional_data["light_overlay"])
+		new_light_overlay = citem.additional_data["light_overlay"]
+	new_mob_icon_file = CUSTOM_ITEM_MOB
 
 /obj/item/clothing/head/helmet/space/void/attackby(var/obj/item/O, var/mob/user)
 	if(istype(O,/obj/item/device/kit/suit))
@@ -72,9 +85,9 @@
 	desc = "A kit containing all the needed tools and parts to repaint a exosuit."
 	var/removable = null
 
-/obj/item/device/kit/paint/examine()
+/obj/item/device/kit/paint/examine(mob/user)
 	. = ..()
-	to_chat(usr, "This kit will add a '[new_name]' decal to a exosuit'.")
+	to_chat(user, "This kit will add a '[new_name]' decal to a exosuit'.")
 
 // exosuit kits.
 /obj/item/device/kit/paint/powerloader/flames_red

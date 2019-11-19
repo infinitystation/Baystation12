@@ -5013,7 +5013,7 @@
 	icon_state = "bordercolor";
 	dir = 1
 	},
-/obj/item/modular_computer/console/preset/command,
+/obj/machinery/computer/modular/preset/command,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/office/rd)
 "kO" = (

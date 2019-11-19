@@ -1162,7 +1162,7 @@
 /turf/simulated/floor/tiled/white,
 /area/syndicate_mothership)
 "cX" = (
-/obj/item/modular_computer/console/preset/mercenary{
+/obj/machinery/computer/modular/preset/mercenary{
 	icon_state = "console";
 	dir = 4
 	},
@@ -1433,7 +1433,7 @@
 	},
 /area/syndicate_mothership)
 "dE" = (
-/obj/item/modular_computer/console/preset/mercenary{
+/obj/machinery/computer/modular/preset/mercenary{
 	icon_state = "console";
 	dir = 4
 	},

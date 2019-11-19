@@ -253,6 +253,8 @@
 /mob/living/silicon/robot/proc/reset_module(var/suppress_alert = null)
 	// Clear hands and module icon.
 	uneq_all()
+	if(shown_robot_modules)
+		hud_used.toggle_show_robot_modules()
 	modtype = initial(modtype)
 	if(hands)
 		hands.icon_state = initial(hands.icon_state)
@@ -624,7 +626,7 @@
 			C.installed = 1
 			C.wrapped = W
 			C.install()
-			//This will mean that removing and replacing a power cell will repair the mount, but I don't care at this point. ~Z
+			// This means that removing and replacing a power cell will repair the mount.
 			C.brute_damage = 0
 			C.electronics_damage = 0
 

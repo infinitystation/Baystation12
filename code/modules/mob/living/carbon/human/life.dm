@@ -151,7 +151,12 @@
 		if(zone_exposure >= 1)
 			return 1
 		pressure_adjustment_coefficient = max(pressure_adjustment_coefficient, zone_exposure)
-
+		for(var/obj/item/clothing/C in covers)
+			if(C.accessories.len)
+				for(var/obj/item/clothing/accessory/A in C.accessories)
+					if(A & zone)
+						if(pressure_adjustment_coefficient)
+							. += pressure_adjustment_coefficient
 	pressure_adjustment_coefficient = Clamp(pressure_adjustment_coefficient, 0, 1) // So it isn't less than 0 or larger than 1.
 
 	return pressure_adjustment_coefficient
@@ -283,7 +288,7 @@
 			damage = 8
 			radiation -= 4 * RADIATION_SPEED_COEFFICIENT
 
-		damage = Floor(damage * (isSynthetic() ? 0.5 : species.radiation_mod))
+		damage = Floor(damage * species.get_radiation_mod(src))
 		if(damage)
 			adjustToxLoss(damage * RADIATION_SPEED_COEFFICIENT)
 			updatehealth()
@@ -491,6 +496,10 @@
 		if(C)
 			if(C.max_heat_protection_temperature && C.max_heat_protection_temperature >= temperature)
 				. |= C.heat_protection
+			if(C.accessories.len)
+				for(var/obj/item/clothing/accessory/A in C.accessories)
+					if(A.max_heat_protection_temperature && A.max_heat_protection_temperature >= temperature)
+						. |= A.heat_protection
 
 //See proc/get_heat_protection_flags(temperature) for the description of this proc.
 /mob/living/carbon/human/proc/get_cold_protection_flags(temperature)
@@ -500,6 +509,11 @@
 		if(C)
 			if(C.min_cold_protection_temperature && C.min_cold_protection_temperature <= temperature)
 				. |= C.cold_protection
+			if(C.accessories.len)
+				for(var/obj/item/clothing/accessory/A in C.accessories)
+					if(A.min_cold_protection_temperature && A.min_cold_protection_temperature <= temperature)
+						. |= A.cold_protection
+
 
 /mob/living/carbon/human/get_heat_protection(temperature) //Temperature is the temperature you're being exposed to.
 	var/thermal_protection_flags = get_heat_protection_flags(temperature)
@@ -1120,6 +1134,7 @@
 	full_prosthetic = null
 	shock_stage = 0
 	..()
+	adjust_stamina(100)
 
 /mob/living/carbon/human/reset_view(atom/A)
 	..()

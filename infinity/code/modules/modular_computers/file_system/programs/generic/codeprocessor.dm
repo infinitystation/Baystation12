@@ -34,7 +34,7 @@
 		F = create_file(filename, loaded_data, /datum/computer_file/data/text)
 		return !isnull(F)
 	var/datum/computer_file/data/backup = F.clone()
-	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = computer.hard_drive
+	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = computer.get_component(PART_HDD)
 	if(!HDD)
 		return
 	HDD.remove_file(F)
@@ -180,10 +180,10 @@
 
 	if(href_list["PRG_printfile"])
 		. = 1
-		if(!computer.nano_printer)
+		if(!computer.get_component(PART_PRINTER))
 			error = "Missing Hardware: Your computer does not have the required hardware to complete this operation."
 			return 1
-		if(!computer.nano_printer.print_text(pencode2html(loaded_data)))
+		if(!computer.get_component(PART_PRINTER).print_text(pencode2html(loaded_data)))
 			error = "Hardware error: Printer was unable to print the file. It may be out of paper."
 			return 1
 
@@ -201,10 +201,10 @@
 		data["error"] = PRG.error
 	if(PRG.browsing)
 		data["browsing"] = PRG.browsing
-		if(!PRG.computer || !PRG.computer.hard_drive)
+		if(!PRG.computer || !PRG.computer.has_component(PART_HDD))
 			data["error"] = "I/O ERROR: Unable to access hard drive."
 		else
-			HDD = PRG.computer.hard_drive
+			HDD = PRG.computer.get_component(PART_HDD)
 			var/list/files[0]
 			for(var/datum/computer_file/data/F in HDD.stored_files)
 				if(F.filetype in PRG.allowed_filetypes)
@@ -215,7 +215,7 @@
 
 			data["files"] = files
 
-			RHDD = PRG.computer.portable_drive
+			RHDD = PRG.computer.get_component(PART_DRIVE)
 			if(RHDD)
 				data["usbconnected"] = 1
 				var/list/usbfiles[0]

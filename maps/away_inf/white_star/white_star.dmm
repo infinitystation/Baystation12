@@ -278,7 +278,7 @@
 /turf/simulated/floor/tiled/white,
 /area/white_star/section2)
 "aA" = (
-/obj/item/modular_computer/console/preset/command{
+/obj/machinery/computer/modular/preset/command{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,

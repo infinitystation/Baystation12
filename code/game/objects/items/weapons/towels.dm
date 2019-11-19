@@ -16,7 +16,7 @@
 	sprite_sheets = list(SPECIES_RESOMI = (slot == slot_head ? 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi' : 'infinity/icons/mob/species/resomi/onmob_suit_resomi.dmi'))
 
 /obj/item/weapon/towel/attack_self(mob/living/user as mob)
-	user.visible_message(text("<span class='notice'>[] uses [] to towel themselves off.</span>", user, src))
+	user.visible_message("<span class='notice'>[user] uses [src] to towel themselves off.</span>")
 	playsound(user, 'sound/weapons/towelwipe.ogg', 25, 1)
 
 /obj/item/weapon/towel/random/New()

@@ -33,7 +33,6 @@ By design, d1 is the smallest direction and d2 is the highest
 	var/d1 = 0
 	var/d2 = 1
 
-	plane = ABOVE_TURF_PLANE
 	layer = EXPOSED_WIRE_LAYER
 
 	color = COLOR_MAROON
@@ -593,9 +592,9 @@ obj/structure/cable/proc/cableColor(var/colorC)
 	else
 		w_class = ITEM_SIZE_SMALL
 
-/obj/item/stack/cable_coil/examine(mob/user)
+/obj/item/stack/cable_coil/examine(mob/user, distance)
 	. = ..()
-	if(get_dist(src, user) > 1)
+	if(distance > 1)
 		return
 
 	if(get_amount() == 1)

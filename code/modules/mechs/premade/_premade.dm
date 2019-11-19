@@ -21,6 +21,10 @@
 	if(!material)
 		material = SSmaterials.get_material_by_name(MATERIAL_STEEL)
 	. = ..()
+
+	spawn_mech_equipment()
+
+/mob/living/exosuit/premade/proc/spawn_mech_equipment()
 	install_system(new /obj/item/mech_equipment/light(src), HARDPOINT_HEAD)
 
 /mob/living/exosuit/premade/random
@@ -145,8 +149,8 @@
 // Used for spawning/debugging.
 /mob/living/exosuit/premade/random/normal
 
-/mob/living/exosuit/premade/random/boring/New(var/newloc, var/obj/structure/heavy_vehicle_frame/source_frame)
-	..(newloc, source_frame, using_boring_colours = TRUE)
+/mob/living/exosuit/premade/random/boring/Initialize(mapload, var/obj/structure/heavy_vehicle_frame/source_frame)
+	..(mapload, source_frame, using_boring_colours = TRUE)
 
-/mob/living/exosuit/premade/random/extra/New(var/newloc, var/obj/structure/heavy_vehicle_frame/source_frame)
-	..(newloc, source_frame, super_random = TRUE)
+/mob/living/exosuit/premade/random/extra/Initialize(mapload, var/obj/structure/heavy_vehicle_frame/source_frame)
+	..(mapload, source_frame, super_random = TRUE)

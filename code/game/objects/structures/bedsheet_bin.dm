@@ -12,7 +12,6 @@ LINEN BINS
 	item_state = "bedsheet"
 	randpixel = 0
 	slot_flags = SLOT_BACK
-	plane = ABOVE_OBJ_PLANE
 	layer = BASE_ABOVE_OBJ_LAYER
 	throwforce = 1
 	throw_speed = 1
@@ -107,7 +106,7 @@ LINEN BINS
 
 
 /obj/structure/bedsheetbin/examine(mob/user)
-	. = ..(user)
+	. = ..()
 
 	if(amount < 1)
 		to_chat(user, "There are no bed sheets in the bin.")

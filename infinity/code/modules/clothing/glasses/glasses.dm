@@ -49,7 +49,7 @@
 	flash_protection = FLASH_PROTECTION_NONE
 	tint = TINT_NONE
 
-/obj/item/clothing/glasses/sunglasses/blindfold/fake/toggle()
+/obj/item/clothing/glasses/sunglasses/blindfold/fake/attack_self()
 	. = ..()
 	flash_protection = FLASH_PROTECTION_NONE
 	tint = TINT_NONE

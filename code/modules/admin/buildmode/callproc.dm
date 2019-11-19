@@ -2,7 +2,7 @@
 			AHTUNG!
 		146% copypaste
 ******************************/
-
+//inf //SolatK
 /datum/build_mode/callproc
 	name = "Call proc"
 	icon_state = "buildmode10"

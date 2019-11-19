@@ -2,6 +2,7 @@
 	name = "laser"
 	icon_state = "laser"
 	fire_sound='sound/weapons/Laser.ogg'
+	impact_sounds = list(BULLET_IMPACT_MEAT = SOUNDS_LASER_MEAT, BULLET_IMPACT_METAL = SOUNDS_LASER_METAL)
 	pass_flags = PASS_FLAG_TABLE | PASS_FLAG_GLASS | PASS_FLAG_GRILLE
 	damage = 30
 	damage_type = BURN
@@ -186,8 +187,10 @@
 	fire_sound = 'sound/weapons/Taser.ogg'
 	damage_flags = 0
 	sharp = 0 //not a laser
+	damage = 1//flavor burn! still not a laser, dmg will be reduce by energy resistance not laser resistances
+	damage_type = BURN
+	eyeblur = 1//Some feedback that you've been hit
 	agony = 40
-	damage_type = STUN
 
 	muzzle_type = /obj/effect/projectile/stun/muzzle
 	tracer_type = /obj/effect/projectile/stun/tracer
@@ -195,19 +198,19 @@
 
 /obj/item/projectile/beam/stun/heavy
 	name = "heavy stun beam"
+	damage = 2
 	agony = 60
 
 /obj/item/projectile/beam/stun/shock
 	name = "shock beam"
+	agony = 0
+	damage = 15
 	damage_type = ELECTROCUTE
-	damage = 10
-	agony  = 5
 	fire_sound='sound/weapons/pulse.ogg'
 
 /obj/item/projectile/beam/stun/shock/heavy
 	name = "heavy shock beam"
-	damage = 20
-	agony  = 10
+	damage = 30
 
 /obj/item/projectile/beam/plasmacutter
 	name = "plasma arc"
@@ -299,3 +302,13 @@
 	muzzle_type = /obj/effect/projectile/stun/darkmatter/muzzle
 	tracer_type = /obj/effect/projectile/stun/darkmatter/tracer
 	impact_type = /obj/effect/projectile/stun/darkmatter/impact
+
+/obj/item/projectile/beam/pointdefense
+	name = "point defense salvo"
+	icon_state = "laser"
+	damage = 15
+	damage_type = ELECTROCUTE //You should be safe inside a voidsuit
+	sharp = FALSE //"Wide" spectrum beam
+	muzzle_type = /obj/effect/projectile/pointdefense/muzzle
+	tracer_type = /obj/effect/projectile/pointdefense/tracer
+	impact_type = /obj/effect/projectile/pointdefense/impact

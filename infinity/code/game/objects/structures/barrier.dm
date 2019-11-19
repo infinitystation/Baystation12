@@ -44,7 +44,7 @@
 		plane = initial(plane)
 	else if(dir == SOUTH && density)
 		layer = ABOVE_OBJ_LAYER + 0.1
-		plane = ABOVE_HUMAN_PLANE
+//		plane = ABOVE_HUMAN_PLANE
 	else
 		layer = initial(layer) + 0.1
 		plane = initial(plane)

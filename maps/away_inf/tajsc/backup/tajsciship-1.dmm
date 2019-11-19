@@ -3649,7 +3649,7 @@
 /area/ship/tajsciship/dorms)
 "hX" = (
 /obj/machinery/atmospherics/pipe/manifold/visible,
-/obj/machinery/pipedispenser/orderable,
+/obj/machinery/pipedispenser,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/old_cargo,
 /area/ship/tajsciship/sklad1)
@@ -6592,7 +6592,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/ship/tajsciship/engines)
 "of" = (
-/obj/item/modular_computer/console/preset/civilian{
+/obj/machinery/computer/modular/preset/civilian{
 	icon_state = "console";
 	dir = 8;
 	computer_emagged = 1

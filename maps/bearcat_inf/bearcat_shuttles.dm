@@ -74,14 +74,14 @@
 		"nav_lost_supply_base_antag",
 		"nav_smugglers_antag"
 		)
-	shuttle_area = /area/skipjack_station/start
+	shuttle_area = /area/map_template/skipjack_station/start
 	dock_target = "skipjack_shuttle"
 	current_location = "nav_skipjack_start"
 	landmark_transition = "nav_skipjack_transition"
 	announcer = "Vessel Short-Ranged Sensor Array"
 	home_waypoint = "nav_skipjack_start"
-	arrival_message = "Внимание, неизвестный шаттл приблизился на близкое расстояние"
-	departure_message = "Внимание, неизвестный шаттл отдаляется от судна."
+	arrival_message = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ"
+	departure_message = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ."
 
 /obj/effect/shuttle_landmark/skipjack/start
 	name = "Pirat Station"

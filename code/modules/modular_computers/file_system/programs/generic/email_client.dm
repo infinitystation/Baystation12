@@ -16,7 +16,7 @@
 	nanomodule_path = /datum/nano_module/email_client
 
 // Persistency. Unless you log out, or unless your password changes, this will pre-fill the login data when restarting the program
-/datum/computer_file/program/email_client/kill_program()
+/datum/computer_file/program/email_client/on_shutdown()
 	if(NM)
 		var/datum/nano_module/email_client/NME = NM
 		if(NME.current_account)
@@ -28,7 +28,7 @@
 			stored_password = ""
 	. = ..()
 
-/datum/computer_file/program/email_client/run_program()
+/datum/computer_file/program/email_client/on_startup()
 	. = ..()
 
 	if(NM)
@@ -40,8 +40,10 @@
 		NME.check_for_new_messages(1)
 
 /datum/computer_file/program/email_client/proc/new_mail_notify()
-	computer.visible_message("\The [computer] beeps softly, indicating a new email has been received.", 1)
-	playsound(computer, 'sound/machines/twobeep.ogg', 50, 1)
+	//computer.visible_notification("You got mail!")//inf
+	
+	computer.get_physical_host().visible_message("\The [computer] beeps softly, indicating a new email has been received.", 1)
+	playsound(computer.get_physical_host(), 'sound/machines/twobeep.ogg', 50, 1)
 
 /datum/computer_file/program/email_client/process_tick()
 	..()
@@ -101,18 +103,13 @@
 
 /datum/nano_module/email_client/proc/log_in()
 	var/list/id_login
-
-	if(istype(host, /obj/item/modular_computer))
-		var/obj/item/modular_computer/computer = host
-		var/obj/item/weapon/card/id/id = computer.GetIdCard()
-		// GetIdCard doesn't check, if id is inside card modification hardware
-		if(!id && computer.card_slot && istype(computer.card_slot.stored_card) && computer.card_slot.check_functionality())
-			id = computer.card_slot.stored_card
-		if(!id && ismob(computer.loc))
-			var/mob/M = computer.loc
-			id = M.GetIdCard()
-		if(id)
-			id_login = id.associated_email_login.Copy()
+	var/atom/movable/A = nano_host()
+	var/obj/item/weapon/card/id/id = A.GetIdCard()
+	if(!id && ismob(A.loc))
+		var/mob/M = A.loc
+		id = M.GetIdCard()
+	if(id)
+		id_login = id.associated_email_login.Copy()
 
 	var/datum/computer_file/data/email_account/target
 	for(var/datum/computer_file/data/email_account/account in ntnet_global.email_accounts)
@@ -216,7 +213,7 @@
 		else if(new_message)
 			data["new_message"] = 1
 			data["msg_title"] = msg_title
-			data["msg_body"] = pencode2html(msg_body)
+			data["msg_body"] = digitalPencode2html(msg_body)
 			data["msg_recipient"] = msg_recipient
 			if(msg_attachment)
 				data["msg_hasattachment"] = 1
@@ -224,7 +221,7 @@
 				data["msg_attachment_size"] = msg_attachment.size
 		else if (current_message)
 			data["cur_title"] = current_message.title
-			data["cur_body"] = pencode2html(current_message.stored_data)
+			data["cur_body"] = digitalPencode2html(current_message.stored_data)
 			data["cur_timestamp"] = current_message.timestamp
 			data["cur_source"] = current_message.source
 			data["cur_uid"] = current_message.uid
@@ -253,7 +250,7 @@
 				for(var/datum/computer_file/data/email_message/message in message_source)
 					all_messages.Add(list(list(
 						"title" = message.title,
-						"body" = pencode2html(message.stored_data),
+						"body" = digitalPencode2html(message.stored_data),
 						"source" = message.source,
 						"timestamp" = message.timestamp,
 						"uid" = message.uid

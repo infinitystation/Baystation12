@@ -12,7 +12,7 @@
 	flags = TURF_REMOVE_SHOVEL
 	build_type = null
 	can_engrave = FALSE
-	footstep_type = FOOTSTEP_GRASS
+	footstep_type = /decl/footsteps/grass
 
 /decl/flooring/tiling/mono/white
 	icon = 'infinity/icons/turf/flooring/decals.dmi'

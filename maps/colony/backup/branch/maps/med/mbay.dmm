@@ -1505,7 +1505,7 @@
 /turf/simulated/floor/tiled/white,
 /area/mbay/enter)
 "ea" = (
-/obj/item/modular_computer/console/preset/medical,
+/obj/machinery/computer/modular/preset/medical,
 /obj/structure/window/reinforced{
 	dir = 8;
 	health = null
@@ -2032,7 +2032,7 @@
 /turf/simulated/floor/tiled/white,
 /area/mbay/enter)
 "fo" = (
-/obj/item/modular_computer/console/preset/medical{
+/obj/machinery/computer/modular/preset/medical{
 	icon_state = "console";
 	dir = 1
 	},
@@ -6316,7 +6316,7 @@
 	health = null
 	},
 /obj/structure/window/reinforced,
-/obj/item/modular_computer/console/preset/medical{
+/obj/machinery/computer/modular/preset/medical{
 	icon_state = "console";
 	dir = 4
 	},

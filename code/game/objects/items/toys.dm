@@ -152,10 +152,6 @@
 	attack_verb = list("attacked", "struck", "hit")
 	var/bullets = 5
 
-	examine(mob/user)
-		if(..(user, 2) && bullets)
-			to_chat(user, "<span class='notice'>It is loaded with [bullets] foam darts!</span>")
-
 	attackby(obj/item/I as obj, mob/user as mob)
 		if(istype(I, /obj/item/toy/ammo/crossbow))
 			if(bullets <= 4)
@@ -236,6 +232,11 @@
 				if (O.client)	O.show_message(text("<span class='danger'>\The [] casually lines up a shot with []'s head, pulls the trigger, then realizes they are out of ammo and drops to the floor in search of some!</span>", user, M), 1, "<span class='warning'>You hear someone fall</span>", 2)
 			user.Weaken(5)
 		return
+		
+/obj/item/toy/crossbow/examine(mob/user, distance)
+	. = ..()
+	if(distance <= 2 && bullets)
+		to_chat(user, "<span class='notice'>It is loaded with [bullets] foam darts!</span>")
 
 /obj/item/toy/ammo/crossbow
 	name = "foam dart"
@@ -361,6 +362,7 @@
 	icon_state = "ripleytoy"
 	w_class = ITEM_SIZE_SMALL
 	var/cooldown = 0
+	w_class = ITEM_SIZE_TINY
 
 //all credit to skasi for toy mech fun ideas
 /obj/item/toy/prize/attack_self(mob/user as mob)
@@ -442,6 +444,7 @@
 	icon_state = "assistant"
 	w_class = ITEM_SIZE_SMALL
 	icon = 'icons/obj/toy.dmi'
+	w_class = ITEM_SIZE_TINY
 
 /obj/item/toy/figure/cmo
 	name = "Chief Medical Officer action figure"
@@ -499,8 +502,8 @@
 	icon_state = "chef"
 
 /obj/item/toy/figure/chemist
-	name = "Chemist action figure"
-	desc = "A \"Space Life\" brand Chemist action figure."
+	name = "Pharmacist action figure"
+	desc = "A \"Space Life\" brand Pharmacist action figure."
 	icon_state = "chemist"
 
 /obj/item/toy/figure/clown

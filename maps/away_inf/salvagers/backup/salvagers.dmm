@@ -91,12 +91,12 @@
 	tag_exterior_door = "salvage_ext";
 	tag_interior_door = "salvage_int"
 	},
-/obj/item/modular_computer/console/preset/civilian/professional,
+/obj/machinery/computer/modular/preset/civilian/professional,
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled,
 /area/salvage/bridge)
 "ak" = (
-/obj/item/modular_computer/console/preset/civilian/professional,
+/obj/machinery/computer/modular/preset/civilian/professional,
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled,
 /area/salvage/bridge)
@@ -130,7 +130,7 @@
 /turf/simulated/floor/wood,
 /area/salvage/captain)
 "ao" = (
-/obj/item/modular_computer/console/preset/civilian/professional,
+/obj/machinery/computer/modular/preset/civilian/professional,
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/wood,
 /area/salvage/captain)
@@ -1609,7 +1609,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/salvage/canteen)
 "cO" = (
-/obj/item/modular_computer/console/preset/merchant/salvage{
+/obj/machinery/computer/modular/preset/merchant/salvage{
 	icon_state = "console";
 	dir = 8
 	},
@@ -2995,7 +2995,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/salvage/shuttle)
 "fs" = (
-/obj/item/modular_computer/console/preset/civilian/professional,
+/obj/machinery/computer/modular/preset/civilian/professional,
 /turf/simulated/floor/tiled/techmaint,
 /area/salvage/shuttle)
 "ft" = (

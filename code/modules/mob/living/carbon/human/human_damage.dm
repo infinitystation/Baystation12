@@ -159,13 +159,12 @@
 	if(!need_breathe())
 		return
 	var/heal = amount < 0
-	amount = abs(amount*species.oxy_mod)
 	var/obj/item/organ/internal/lungs/breathe_organ = internal_organs_by_name[species.breathing_organ]
 	if(breathe_organ)
 		if(heal)
-			breathe_organ.remove_oxygen_deprivation(amount)
+			breathe_organ.remove_oxygen_deprivation(abs(amount))
 		else
-			breathe_organ.add_oxygen_deprivation(amount)
+			breathe_organ.add_oxygen_deprivation(abs(amount*species.oxy_mod))
 	BITSET(hud_updateflag, HEALTH_HUD)
 
 /mob/living/carbon/human/getToxLoss()
@@ -193,7 +192,7 @@
 	amount = abs(amount)
 
 	if (!heal)
-		amount = amount * species.toxins_mod
+		amount = amount * species.get_toxins_mod(src)
 		if (CE_ANTITOX in chem_effects)
 			amount *= 1 - (chem_effects[CE_ANTITOX] * 0.25)
 
@@ -364,6 +363,7 @@ This function restores all organs.
 		var/obj/item/organ/external/current_organ = organs_by_name[bodypart]
 		if(istype(current_organ))
 			current_organ.rejuvenate(ignore_prosthetic_prefs)
+	verbs -= /mob/living/carbon/human/proc/undislocate
 
 /mob/living/carbon/human/proc/HealDamage(zone, brute, burn)
 	var/obj/item/organ/external/E = get_organ(zone)
@@ -415,7 +415,7 @@ This function restores all organs.
 	if(!damage)
 		return 0
 
-	if(damage > 15 && prob(damage*4))
+	if(damage > 15 && prob(damage*4) && organ.can_feel_pain())
 		make_reagent(round(damage/10), /datum/reagent/adrenaline)
 	var/datum/wound/created_wound
 	damageoverlaytemp = 20

@@ -102,7 +102,7 @@
 		sync_colour_to_human(owner)
 	get_icon()
 
-	slowdown = species.slowdown
+	slowdown = species.get_slowdown(owner)
 
 /obj/item/organ/external/Destroy()
 
@@ -165,7 +165,7 @@
 			burn_damage = 7.5
 /*
 	var/mult = 1 + !!(BP_IS_ASSISTED(src)) // This macro returns (large) bitflags.
-	burn_damage *= mult/species.burn_mod //ignore burn mod for EMP damage
+	burn_damage *= mult/species.get_burn_mod(owner) //ignore burn mod for EMP damage
 */
 	var/power = 4 - severity //stupid reverse severity
 	for(var/obj/item/I in implants)
@@ -175,6 +175,12 @@
 	if(owner && burn_damage)
 		owner.custom_pain("Something inside your [src] burns a [severity < 2 ? "bit" : "lot"]!", power * 15) //robotic organs won't feel it anyway
 		take_external_damage(0, burn_damage, 0, used_weapon = "Hot metal")
+
+	if(owner && limb_flags & ORGAN_FLAG_CAN_GRASP)
+		owner.grasp_damage_disarm(src)
+
+	if(owner && limb_flags & ORGAN_FLAG_CAN_STAND)
+		owner.stance_damage_prone(src)
 
 /obj/item/organ/external/attack_self(var/mob/user)
 	if((owner && loc == owner) || !contents.len)
@@ -197,16 +203,16 @@
 		return //no eating the limb until everything's been removed
 	return ..()
 
-/obj/item/organ/external/examine()
+/obj/item/organ/external/examine(mob/user, distance)
 	. = ..()
-	if(in_range(usr, src) || isghost(usr))
+	if(distance <= 1 || isghost(user))
 		for(var/obj/item/I in contents)
 			if(istype(I, /obj/item/organ))
 				continue
-			to_chat(usr, "<span class='danger'>There is \a [I] sticking out of it.</span>")
+			to_chat(user, "<span class='danger'>There is \a [I] sticking out of it.</span>")
 		var/ouchies = get_wounds_desc()
 		if(ouchies != "nothing")
-			to_chat(usr, "<span class='notice'>There is [ouchies] visible on it.</span>")
+			to_chat(user, "<span class='notice'>There is [ouchies] visible on it.</span>")
 
 	return
 
@@ -1005,7 +1011,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 		W.germ_level = 0
 	return rval
 
-/obj/item/organ/external/proc/clamp()
+/obj/item/organ/external/proc/clamp_organ()
 	var/rval = 0
 	src.status &= ~ORGAN_BLEEDING
 	for(var/datum/wound/W in wounds)
@@ -1543,8 +1549,8 @@ obj/item/organ/external/proc/remove_clamps()
 	if(!can_feel_pain())
 		return
 
-	var/armor = 100 * owner.get_blocked_ratio(owner, BRUTE)
-	if(armor < 100)
+	var/armor = 100 * owner.get_blocked_ratio(owner, BRUTE, damage = 30)
+	if(armor < 70)
 		to_chat(owner, "<span class='danger'>You feel extreme pain!</span>")
 
 		var/max_halloss = round(owner.species.total_health * 0.8 * ((100 - armor) / 100)) //up to 80% of passing out, further reduced by armour

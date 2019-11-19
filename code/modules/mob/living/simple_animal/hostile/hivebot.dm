@@ -17,10 +17,10 @@
 	min_gas = null
 	max_gas = null
 	minbodytemp = 0
-	speed = 2
-	break_stuff_probability = 15
-	attack_delay = 4
-	natural_armor = list(melee = 20)
+	speed = 4
+	natural_armor = list(
+		melee = ARMOR_MELEE_KNIVES
+		)
 	bleed_colour = SYNTH_BLOOD_COLOUR
 
 	meat_type =     null
@@ -69,7 +69,9 @@
 	melee_damage_upper = 25
 	ranged = 1
 	can_escape = 1
-	natural_armor = list(melee = 30)
+	natural_armor = list(
+		melee = ARMOR_MELEE_RESISTANT
+		)
 
 	break_stuff_probability = 30
 	attack_delay = 7
@@ -204,7 +206,10 @@ The megabot
 	melee_damage_flags = DAM_SHARP|DAM_EDGE
 	attacktext = "sawed"
 	speed = 0
-	natural_armor = list(melee = 50, bullet = 20)
+	natural_armor = list(
+		melee = ARMOR_MELEE_RESISTANT, 
+		bullet = ARMOR_BALLISTIC_PISTOL
+		)
 	can_escape = TRUE
 	armor_type = /datum/extension/armor/toggle
 	ability_cooldown = 3 MINUTES
