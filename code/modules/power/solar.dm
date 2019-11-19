@@ -24,7 +24,7 @@ var/list/solars_list = list()
 
 /obj/machinery/power/solar/improved
 	name = "improved solar panel"
-	efficiency = 4 //Completly useless on 2. Unable to fully use ship even with max output.
+	efficiency = 4 // INF, Completly useless on 2. Unable to fully use ship even with max output.
 
 /obj/machinery/power/solar/drain_power()
 	return -1
