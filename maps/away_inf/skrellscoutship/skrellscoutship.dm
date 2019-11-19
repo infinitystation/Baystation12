@@ -67,6 +67,11 @@
 	allowed_branches = list(/datum/mil_branch/skrell_fleet)
 	allowed_ranks = list(/datum/mil_rank/skrell_fleet)
 	skill_points = 30
+	min_skill = list(SKILL_EVA = SKILL_ADEPT,
+					SKILL_HAULING = SKILL_ADEPT,
+					SKILL_COMBAT = SKILL_ADEPT,
+					SKILL_WEAPONS = SKILL_ADEPT,
+					SKILL_MEDICAL = SKILL_BASIC)
 
 /datum/job/submap/skrellscoutship_crew/leader
 	title = "Qrri-Vuxix"
@@ -74,6 +79,12 @@
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/skrellscoutship
 	info = "Your vessel is scouting through unknown space, working to map out any potential dangers, as well as potential allies."
+	min_skill = list(SKILL_EVA = SKILL_ADEPT,
+					SKILL_PILOT = SKILL_ADEPT,
+					SKILL_HAULING = SKILL_ADEPT,
+					SKILL_COMBAT = SKILL_ADEPT,
+					SKILL_WEAPONS = SKILL_ADEPT,
+					SKILL_MEDICAL = SKILL_BASIC)
 
 /datum/job/submap/skrellscoutship_crew/equip(var/mob/living/carbon/human/H, var/alt_title, var/datum/mil_branch/branch, var/datum/mil_rank/grade)
 	. = ..(H, alt_title, branch, grade)	//passing through arguments
