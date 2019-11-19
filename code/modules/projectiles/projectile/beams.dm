@@ -91,15 +91,18 @@
 /obj/item/projectile/beam/pulse/skrell
 	icon_state = "pu_laser"
 	damage = 20
+	armor_penetration = 20 //inf
 	muzzle_type = /obj/effect/projectile/laser/pulse/skrell/muzzle
 	tracer_type = /obj/effect/projectile/laser/pulse/skrell/tracer
 	impact_type = /obj/effect/projectile/laser/pulse/skrell/impact
 
 /obj/item/projectile/beam/pulse/skrell/heavy
 	damage = 30
+	armor_penetration = 30 //inf
 
 /obj/item/projectile/beam/pulse/skrell/single
 	damage = 50
+	armor_penetration = 40 //inf
 
 /obj/item/projectile/beam/emitter
 	name = "emitter beam"
