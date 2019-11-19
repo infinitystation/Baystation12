@@ -94,8 +94,19 @@
 	burst_delay=null
 	wielded_item_state = "skrell_carbine-wielded"
 
+	bulk = GUN_BULK_RIFLE //inf
+	w_class = ITEM_SIZE_HUGE
+
 	firemodes = list(
 		list(mode_name="single", projectile_type=/obj/item/projectile/beam/pulse/skrell/single, charge_cost=120, burst=1, burst_delay=null),
 		list(mode_name="heavy", projectile_type=/obj/item/projectile/beam/pulse/skrell/heavy, charge_cost=55, burst=2, burst_delay=3),
 		list(mode_name="light", projectile_type=/obj/item/projectile/beam/pulse/skrell, charge_cost=40, burst=3, burst_delay=2)
 		)
+
+/obj/item/weapon/gun/energy/pulse_rifle/skrell/special_check(user)
+	if(istype(user,/mob/living/carbon/human))
+		var/mob/living/carbon/human/H = user
+		if(H.species?.get_bodytype(H) != SPECIES_SKRELL)
+			to_chat(user, "<span class='warning'>\The strange mark blinking on [src]!</span>")
+			return 0
+	return ..()

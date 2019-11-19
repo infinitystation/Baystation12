@@ -55,6 +55,7 @@
 	..()
 	var/pmc = list()
 	pmc["SAARE utility uniform"]= /obj/item/clothing/under/saare
+	pmc["SAARE combat uniform"]= /obj/item/clothing/under/rank/security/saarecombat
 	pmc["PCRC utility uniform"]	= /obj/item/clothing/under/pcrc
 	pmc["PCRC formal uniform"]	= /obj/item/clothing/under/pcrcsuit
 //	pmc["SCP utility uniform"]	= /obj/item/clothing/under/scp_uniform

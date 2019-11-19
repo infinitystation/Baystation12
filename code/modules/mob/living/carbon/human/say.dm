@@ -7,7 +7,7 @@
 	if(!speaking)
 		speaking = parse_language(message)
 		if (speaking)
-			message = copytext(message,max(2+length(speaking.key),3)) //inf, was message = copytext(message, 2+length(speaking.key))
+			message = copytext(message, 2+length(speaking.key))
 		else
 			speaking = get_any_good_language(set_default=TRUE)
 			if (!speaking)

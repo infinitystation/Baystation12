@@ -44,6 +44,8 @@
 				ear_safety += 1
 			if(istype(M:head, /obj/item/clothing/head/helmet))
 				ear_safety += 1
+			if(istype(M:head, /obj/item/clothing/head/helmet/space) && istype(M:wear_suit, /obj/item/clothing/suit/space)) //INF
+				ear_safety += 1 //INF
 	for(var/mob/living/exosuit/mecha in M.loc)
 		if(M in mecha.contents)
 			ear_safety += 1
@@ -59,9 +61,11 @@
 		sound_to(M, 'infinity/sound/weapons/flash_ring.ogg')
 
 	if((get_dist(M, T) <= 2 || src.loc == M.loc || src.loc == M))
-		if(ear_safety > 0)
+		if(ear_safety > 1) //INF
+		else if(ear_safety > 0) //INF. was if(....
 			M.Stun(2)
-			M.Weaken(1)
+			M.ear_damage += rand(0, 1) //INF was M.Weaken(1)
+			M.ear_deaf = max(M.ear_deaf,5) //INF. Look 1 string up
 		else
 			M.Stun(10)
 			M.Weaken(3)
@@ -112,6 +116,14 @@
 	icon_state = null
 	item_state = null
 	detonate()
+
+/obj/item/weapon/grenade/flashbang/shell
+	name = "flashbang shell"
+	icon_state = "fragshell"
+	item_state = "flashbang"
+
+/obj/item/weapon/grenade/flashbang/shell/attack_self(mob/user as mob)
+	return
 
 /obj/item/weapon/grenade/flashbang/clusterbang//Created by Polymorph, fixed by Sieve
 	desc = "Use of this weapon may constiute a war crime in your area, consult your local captain."

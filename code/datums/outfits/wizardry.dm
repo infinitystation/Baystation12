@@ -1,7 +1,7 @@
 /decl/hierarchy/outfit/wizard
 	uniform = /obj/item/clothing/under/color/lightpurple
 	shoes = /obj/item/clothing/shoes/sandal
-	l_ear = /obj/item/device/radio/headset
+	l_ear = /obj/item/device/radio/headset/magic //infinity change, ranshe bilo /obj/item/device/radio/headset
 	r_pocket = /obj/item/weapon/teleportation_scroll
 	l_hand = /obj/item/weapon/staff
 	r_hand = /obj/item/weapon/spellbook

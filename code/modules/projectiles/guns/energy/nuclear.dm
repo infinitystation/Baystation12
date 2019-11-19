@@ -48,6 +48,14 @@
 	bulk = GUN_BULK_PISTOL
 	is_serial = 0
 
+/obj/item/weapon/gun/energy/gun/skrell/special_check(user)
+	if(istype(user,/mob/living/carbon/human))
+		var/mob/living/carbon/human/H = user
+		if(H.species?.get_bodytype(H) != SPECIES_SKRELL)
+			to_chat(user, "<span class='warning'>\The some strange mark blinking on [src]!</span>")
+			return 0
+	return ..()
+
 /obj/item/weapon/gun/energy/gun/small
 	name = "LAEP90-C 'Perun' small energy gun"
 	desc = "A smaller model of the versatile LAEP90 Perun, the LAEP90-C packs considerable utility in a smaller package. Best used in situations where full-sized sidearms are inappropriate."
