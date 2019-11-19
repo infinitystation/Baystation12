@@ -198,4 +198,13 @@
 	wielded_item_state = "skrell_rifle-wielded"
 	firemodes = list()
 
+	bulk = GUN_BULK_RIFLE //inf
 	one_hand_penalty = 3
+
+/obj/item/weapon/gun/magnetic/railgun/flechette/skrell/special_check(user)
+	if(istype(user,/mob/living/carbon/human))
+		var/mob/living/carbon/human/H = user
+		if(H.species?.get_bodytype(H) != SPECIES_SKRELL)
+			to_chat(user, "<span class='warning'>\The some strange mark blinking on [src]!</span>")
+			return 0
+	return ..()
