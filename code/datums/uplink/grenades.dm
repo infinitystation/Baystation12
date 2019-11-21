@@ -60,7 +60,7 @@
 /datum/uplink_item/item/grenades/empshell
 	name = "1x EMP Shells"
 	item_cost = 5
-	/obj/item/weapon/grenade/empgrenade/shell
+	path = /obj/item/weapon/grenade/empgrenade/shell
 
 /datum/uplink_item/item/grenades/empshells
 	name = "6x EMP Shells"
