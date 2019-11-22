@@ -5,11 +5,11 @@
 	icon_state = "clustertool"
 	w_class = ITEM_SIZE_SMALL
 
-	force = 7;	//INF							
-	hitsound = "swing_hit"	//INF
-
 	var/tool_mode
 	var/list/tool_modes = list("wrench", "wirecutters", "crowbar", "screwdriver")
+
+	force = 7	//INF							
+	hitsound = "swing_hit"	//INF
 
 /obj/item/clustertool/attack_self(var/mob/user)
 	var/new_index = tool_modes.Find(tool_mode) + 1
