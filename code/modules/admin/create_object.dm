@@ -12,7 +12,7 @@ GLOBAL_VAR_INIT(create_object_forms, list(
 		create_object_html = file2text('html/create_object.html')
 		create_object_html = replacetext(create_object_html, "null /* object types */", "\"[objectjs]\"")
 
-	user << browse(replacetext(create_object_html, "/* ref src */", "\ref[src]"), "window=create_object;size=425x475")
+	user << browse(replacetext(create_object_html, "/* ref src */", "\ref[src]"), "window=create_object;size=425x580") //INF
 
 
 /datum/admins/proc/quick_create_object(var/mob/user)
@@ -28,4 +28,4 @@ GLOBAL_VAR_INIT(create_object_forms, list(
 		quick_create_object_html = file2text('html/create_object.html')
 		quick_create_object_html = replacetext(quick_create_object_html, "null /* object types */", "\"[objectjs]\"")
 
-	user << browse(replacetext(quick_create_object_html, "/* ref src */", "\ref[src]"), "window=quick_create_object;size=425x475")
+	user << browse(replacetext(quick_create_object_html, "/* ref src */", "\ref[src]"), "window=quick_create_object;size=425x570") //INF

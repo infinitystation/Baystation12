@@ -392,7 +392,7 @@ datum/unit_test/mob_damage/resomi/halloss
 /datum/unit_test/mob_damage/skrell/oxy
 	name = "MOB: Skrell Oxygen Damage Check"
 	damagetype = OXY
-	expected_vulnerability = EXTRA_VULNERABLE
+	expected_vulnerability = ARMORED //INF, WAS EXTRA_VULNERABLE
 
 /datum/unit_test/mob_damage/skrell/clone
 	name = "MOB: Skrell Clone Damage Check"

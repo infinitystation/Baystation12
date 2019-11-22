@@ -232,7 +232,7 @@
 	if(.)
 		if(isobj(target))
 			var/obj/target_obj = target
-			if(target_obj.unacidable)
+			if(target_obj.unacidable || !owner.Adjacent(target)) //INF Быстрофикс. Когда бей поправит - удалите.
 				return
 		if(istype(target,/obj/item/weapon/material/drill_head))
 			var/obj/item/weapon/material/drill_head/DH = target
