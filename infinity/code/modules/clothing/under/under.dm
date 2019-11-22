@@ -256,3 +256,4 @@
 	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
 	icon_state = "saarecombat"
 	item_state = "saarecombat"
+	worn_state = "saarecombat"
