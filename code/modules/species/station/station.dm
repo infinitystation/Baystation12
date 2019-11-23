@@ -121,7 +121,7 @@
 	max_age = 120
 
 	burn_mod = 0.9
-	oxy_mod = 1.3
+	oxy_mod = 0.8 //INF, WAS 1.3
 	flash_mod = 1.2
 	toxins_mod = 0.8
 	siemens_coefficient = 1.3
@@ -414,7 +414,7 @@
 		if(101 to 200)	. = 12 // age bracket before this is 46 to 100 . = 8 making this +4
 		if(201 to 300)	. = 16 // + 8
 		else			. = ..()
-		
+
 // Dionaea spawned by hand or by joining will not have any
 // nymphs passed to them. This should take care of that.
 /datum/species/diona/handle_post_spawn(var/mob/living/carbon/human/H)

@@ -38,6 +38,45 @@
 	//var/list/icon_keys = list()		//keys
 	//var/list/ammo_states = list()	//values
 
+	//[INF]
+	//Attachments for ballistic weapon
+	/*
+	var/attachments
+
+/obj/item/weapon/gun/projectile/attackby(var/obj/item/A as obj, mob/user as mob)
+	if (istype(A, /obj/item/weapon/attachment) && user.unEquip(A))
+		A.loc = src
+		attachments[A.type] = A
+		verbs |= /obj/item/weapon/gun/projectile/proc/removetie_verb
+		update_icon()
+	..()
+/obj/item/weapon/gun/projectile/proc/remove_attachments(/obj/item/weapon/attachment/A as obj)
+	if (ismob(loc.loc))
+		var/mob/M = loc.loc
+		M.put_in_hands(attachments[A.type])
+	else
+		attachments[A.type].loc = get_turf(src)
+	attachments[A.type] = null
+	update_icon()
+
+/obj/item/weapon/gun/projectile/proc/removetie_verb()
+	set name = "Remove attachment"
+	set category = "Object"
+	set src in usr
+	if(!istype(usr, /mob/living)) return
+	if(usr.stat) return
+	if(!attachments.len) return
+	var/obj/item/weapon/attachment/A
+	var/list/removables = list()
+	for(var/obj/item/weapon/attachment/ass in attachments)
+		removables |= ass
+	A = input("Select an attachment to remove from [src]") as null|anything in removables
+	remove_attachments(A)
+	removables -= A
+	if(!removables.len)
+		src.verbs -= /obj/item/weapon/gun/projectile/proc/removetie_verb
+*/
+	//[/INF]
 /obj/item/weapon/gun/projectile/Initialize()
 	. = ..()
 	if (starts_loaded)

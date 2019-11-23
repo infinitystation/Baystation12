@@ -246,7 +246,7 @@
 	if(.)
 		if(isobj(target))
 			var/obj/target_obj = target
-			if(target_obj.unacidable)
+			if(target_obj.unacidable || !owner.Adjacent(target)) //INF, WAS if(target_obj.unacidable) (delete when the bay will fix it theyself)
 				return
 		if(istype(target,/obj/item/weapon/material/drill_head))
 			var/obj/item/weapon/material/drill_head/DH = target

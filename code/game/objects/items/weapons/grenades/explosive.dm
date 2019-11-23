@@ -76,7 +76,10 @@
 	icon_state = "fragshell"
 
 	num_fragments = 50 //less powerful than a regular frag grenade
-
+//[INF]
+/obj/item/weapon/grenade/frag/shell/attack_self(mob/user as mob)
+	return
+//[/INF]
 /obj/item/weapon/grenade/frag/high_yield
 	name = "fragmentation bomb"
 	desc = "Larger and heavier than a standard fragmentation grenade, this device is extremely dangerous. It cannot be thrown as far because of its weight."
