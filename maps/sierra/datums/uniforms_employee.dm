@@ -56,7 +56,8 @@
 	hat = list(\
 		/obj/item/clothing/head/beret/sec/corporate/officer, \
 		/obj/item/clothing/head/beret/sec, /obj/item/clothing/head/soft/sec, \
-		/obj/item/clothing/head/soft/sec/corp, /obj/item/clothing/head/soft/sec/corp/guard)
+		/obj/item/clothing/head/soft/sec/corp, /obj/item/clothing/head/soft/sec/corp/guard,\
+		/obj/item/clothing/head/beret/guard)
 	under = list(\
 		/obj/item/clothing/under/rank/security, /obj/item/clothing/under/rank/security/alt, \
 		/obj/item/clothing/under/rank/security/corp, /obj/item/clothing/under/rank/security/corp/alt, \

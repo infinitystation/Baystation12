@@ -1374,9 +1374,7 @@
 /area/white_star/section1)
 "ch" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 4;
-	level = 1
+	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/light{
@@ -1545,9 +1543,7 @@
 	pixel_y = 0
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 4;
-	level = 1
+	dir = 1
 	},
 /turf/simulated/floor/reinforced,
 /area/white_star/section1)
@@ -1755,9 +1751,7 @@
 /area/white_star/section2)
 "cP" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 4;
-	level = 1
+	dir = 1
 	},
 /obj/structure/closet/walllocker{
 	pixel_y = -28

@@ -660,9 +660,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 2;
-	layer = 2.4;
-	level = 2
+	dir = 2
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/anomaly/cell/cell_3)
@@ -1139,9 +1137,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 2;
-	layer = 2.4;
-	level = 2
+	dir = 2
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/anomaly/cell/cell_2)
@@ -1780,9 +1776,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 2;
-	layer = 2.4;
-	level = 2
+	dir = 2
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/anomaly/cell/cell_1)
@@ -2026,10 +2020,7 @@
 	icon_state = "bordercolorhalf";
 	dir = 1
 	},
-/obj/structure/table/rack{
-	dir = 8;
-	layer = 2.9
-	},
+/obj/structure/table/rack,
 /turf/simulated/floor/tiled/white/monotile,
 /area/assembly/robotics)
 "fl" = (
@@ -2040,10 +2031,7 @@
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology)
 "fn" = (
-/obj/structure/table/rack{
-	dir = 8;
-	layer = 2.9
-	},
+/obj/structure/table/rack,
 /obj/item/weapon/storage/toolbox/mechanical,
 /obj/item/clothing/head/welding{
 	pixel_x = -3;
@@ -2490,7 +2478,6 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /obj/machinery/light{
@@ -5170,9 +5157,7 @@
 /obj/item/weapon/pen,
 /obj/effect/floor_decal/corner/purple/diagonal,
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 2.4;
-	level = 2
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/office/rd)

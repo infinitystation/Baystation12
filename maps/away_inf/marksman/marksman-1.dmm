@@ -1061,7 +1061,6 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /turf/simulated/floor,
@@ -2998,9 +2997,7 @@
 	dir = 6
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8;
-	layer = 4;
-	level = 1
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/ship/marksman/maintenance/lower/starboard)
@@ -3095,7 +3092,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /turf/simulated/floor/tiled,
@@ -3338,7 +3334,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /turf/simulated/floor/tiled/dark,
@@ -3387,9 +3382,7 @@
 /area/ship/marksman/command/hangar)
 "gw" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8;
-	layer = 4;
-	level = 1
+	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning/full,
 /turf/simulated/floor,
@@ -3654,7 +3647,6 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /turf/simulated/floor,
@@ -5862,9 +5854,7 @@
 	pixel_y = 0
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8;
-	layer = 4;
-	level = 1
+	dir = 8
 	},
 /obj/effect/floor_decal/corner/pink{
 	dir = 6

@@ -758,9 +758,7 @@
 /obj/item/weapon/pickaxe,
 /obj/item/weapon/pickaxe,
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4;
-	layer = 4;
-	level = 1
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/ship/tajsciship/shuttle)
@@ -1093,7 +1091,6 @@
 "cO" = (
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /obj/machinery/portable_atmospherics/canister/nitrogen,
@@ -1314,7 +1311,6 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -1737,7 +1733,6 @@
 "dZ" = (
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -2119,8 +2114,7 @@
 /area/ship/tajsciship/medbay)
 "eP" = (
 /obj/structure/table/rack{
-	dir = 8;
-	layer = 2.9
+	dir = 8
 	},
 /obj/item/weapon/storage/firstaid/brute,
 /obj/item/weapon/storage/firstaid/fire/special,
@@ -2149,8 +2143,7 @@
 	},
 /obj/item/weapon/storage/box/syringes,
 /obj/structure/table/rack{
-	dir = 8;
-	layer = 2.9
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/tajsciship/medbay)
@@ -2730,7 +2723,6 @@
 /obj/item/bodybag/cryobag,
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /turf/simulated/floor/tiled/white,
@@ -2821,8 +2813,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	level = 1
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/ship/tajsciship/shuttle)
@@ -2844,9 +2835,7 @@
 /area/ship/tajsciship/storage)
 "gv" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4;
-	layer = 4;
-	level = 1
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/tajsciship/hangar)
@@ -2945,7 +2934,6 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /obj/item/weapon/storage/box/freezer,
@@ -3643,9 +3631,7 @@
 	dir = 6
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4;
-	layer = 4;
-	level = 1
+	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full,
 /area/ship/tajsciship/kitchen)
@@ -3683,9 +3669,7 @@
 /area/ship/tajsciship/kitchen)
 "io" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 2;
-	layer = 4;
-	level = 1
+	dir = 2
 	},
 /turf/simulated/floor/tiled/old_cargo,
 /area/ship/tajsciship/solars)
@@ -4306,9 +4290,7 @@
 /obj/effect/floor_decal/snow,
 /obj/effect/floor_decal/floordetail/tiled,
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4;
-	layer = 4;
-	level = 1
+	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full,
 /area/ship/tajsciship/kitchen)
@@ -4509,7 +4491,6 @@
 "kk" = (
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /turf/simulated/floor/wood/walnut,
@@ -4651,9 +4632,7 @@
 "kz" = (
 /obj/structure/hygiene/sink,
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4;
-	layer = 4;
-	level = 1
+	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full,
 /area/ship/tajsciship/kitchen)
@@ -4693,9 +4672,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 4;
-	level = 1
+	dir = 1
 	},
 /turf/simulated/floor/tiled/old_cargo,
 /area/ship/tajsciship/botany)
@@ -4745,9 +4722,7 @@
 /obj/effect/floor_decal/snow,
 /obj/effect/floor_decal/floordetail/tiled,
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 2;
-	layer = 4;
-	level = 1
+	dir = 2
 	},
 /turf/simulated/floor/tiled/kafel_full,
 /area/ship/tajsciship/kitchen)
@@ -4878,7 +4853,6 @@
 "kW" = (
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /obj/structure/cable{
@@ -4910,8 +4884,7 @@
 "la" = (
 /obj/structure/table/woodentable/mahogany,
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	level = 1
+	dir = 1
 	},
 /turf/simulated/floor/lino,
 /area/ship/tajsciship/kitchen)
@@ -5056,7 +5029,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /turf/simulated/floor/lino,
@@ -5132,7 +5104,6 @@
 "lD" = (
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /obj/structure/closet/crate/freezer/rations,
@@ -5562,7 +5533,6 @@
 "mn" = (
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /obj/structure/flora/pottedplant{
@@ -6687,7 +6657,6 @@
 /obj/item/weapon/material/minihoe,
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /obj/item/device/scanner/plant,
@@ -6789,8 +6758,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	level = 1
+	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -6877,8 +6845,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	level = 1
+	dir = 1
 	},
 /turf/simulated/floor/tiled/kafel_full,
 /area/ship/tajsciship/kitchen)
@@ -7686,7 +7653,6 @@
 "rn" = (
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /turf/simulated/floor/tiled/dark/monotile,

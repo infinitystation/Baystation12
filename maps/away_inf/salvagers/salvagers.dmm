@@ -205,9 +205,7 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
 	},
-/obj/machinery/recharger{
-	layer = 2
-	},
+/obj/machinery/recharger,
 /turf/simulated/floor/wood/walnut,
 /area/salvage/captain)
 "aB" = (
@@ -1476,12 +1474,10 @@
 	},
 /obj/item/weapon/storage/firstaid/toxin,
 /obj/item/weapon/storage/firstaid/fire{
-	layer = 2.9;
 	pixel_x = 2;
 	pixel_y = 3
 	},
 /obj/item/weapon/storage/firstaid/o2{
-	layer = 2.8;
 	pixel_x = 4;
 	pixel_y = 6
 	},
@@ -2235,9 +2231,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
-/obj/machinery/recharger{
-	layer = 2
-	},
+/obj/machinery/recharger,
 /turf/simulated/floor/carpet/orange,
 /area/salvage/storage)
 "dD" = (
@@ -2571,9 +2565,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
-/obj/machinery/recharger{
-	layer = 2
-	},
+/obj/machinery/recharger,
 /turf/simulated/floor/carpet/red,
 /area/salvage/storage)
 "ej" = (
@@ -2891,7 +2883,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /obj/structure/cable{

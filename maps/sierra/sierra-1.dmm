@@ -2534,8 +2534,7 @@
 "eJ" = (
 /obj/machinery/conveyor{
 	dir = 8;
-	id = "bsa";
-	layer = 0.2
+	id = "bsa"
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/command/bsa)
@@ -8816,7 +8815,6 @@
 /obj/effect/floor_decal/corner/lime/bordercorner,
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3;
 	pixel_x = 26
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -9859,7 +9857,6 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3;
 	pixel_x = 26
 	},
 /turf/simulated/floor/tiled,
@@ -25392,9 +25389,7 @@
 "Ov" = (
 /obj/machinery/light,
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4;
-	layer = 2.4;
-	level = 2
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/level2)
@@ -25424,9 +25419,7 @@
 	pixel_y = -23
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 2.4;
-	level = 2
+	dir = 1
 	},
 /obj/machinery/camera/network/research{
 	c_tag = "Xenobiology - Lower - Airlock";
@@ -26125,9 +26118,7 @@
 /area/command/bsa)
 "PL" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4;
-	layer = 2.4;
-	level = 2
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4

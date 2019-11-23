@@ -208,7 +208,7 @@
 "ez" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
 "eA" = (/obj/structure/flora/ausbushes/algae/glowing,/obj/structure/flora/ausbushes/algae/random,/turf/simulated/floor/asteroid/sea/algae,/area/adherent_base/underwater)
 "eB" = (/obj/structure/flora/ausbushes/algae/random,/mob/living/simple_animal/aquatic/fish/judge,/turf/simulated/floor/asteroid/sea/algae,/area/adherent_base/underwater)
-"eC" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 2;layer = 2.4;level = 2},/obj/structure/hygiene/drain,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi';icon_state = "snowplating"},/area/adherent_base/base)
+"eC" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 2},/obj/structure/hygiene/drain,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi';icon_state = "snowplating"},/area/adherent_base/base)
 "eD" = (/obj/structure/cable/blue{d1 = 1;d2 = 2;icon_state = "1-2"},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi';icon_state = "snowplating"},/area/adherent_base/base)
 "eE" = (/obj/machinery/power/emitter,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi';icon_state = "snowplating"},/area/adherent_base/base)
 "eF" = (/obj/structure/closet/crate/uranium,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi';icon_state = "snowplating"},/area/adherent_base/base)

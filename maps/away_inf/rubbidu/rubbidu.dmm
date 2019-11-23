@@ -1065,7 +1065,6 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /turf/simulated/floor/carpet,
@@ -2341,9 +2340,7 @@
 /area/rubbidu/command/bridge)
 "eH" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 4;
-	level = 1
+	dir = 1
 	},
 /obj/structure/bed/chair/office/light{
 	dir = 4
@@ -2361,9 +2358,7 @@
 /area/rubbidu/command/quarters)
 "eJ" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 4;
-	level = 1
+	dir = 1
 	},
 /obj/structure/bed/chair/office/light{
 	dir = 8
@@ -2626,9 +2621,7 @@
 	},
 /obj/machinery/light,
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8;
-	layer = 4;
-	level = 1
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
 /area/rubbidu/nt)
@@ -2667,9 +2660,7 @@
 /obj/item/weapon/stock_parts/subspace/filter,
 /obj/item/weapon/stock_parts/circuitboard/helm,
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8;
-	layer = 4;
-	level = 1
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/rubbidu/engineering)
@@ -2694,17 +2685,13 @@
 /obj/structure/table/steel_reinforced,
 /obj/machinery/cell_charger,
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8;
-	layer = 4;
-	level = 1
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/rubbidu/engineering)
 "fl" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8;
-	layer = 4;
-	level = 1
+	dir = 8
 	},
 /obj/structure/cable/cyan{
 	d1 = 2;
@@ -2715,9 +2702,7 @@
 /area/aquila/passenger)
 "fm" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4;
-	layer = 4;
-	level = 1
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/rubbidu/civil)
@@ -2740,9 +2725,7 @@
 "fo" = (
 /obj/machinery/washing_machine,
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8;
-	layer = 4;
-	level = 1
+	dir = 8
 	},
 /obj/machinery/light{
 	dir = 1
@@ -2752,9 +2735,7 @@
 "fp" = (
 /obj/machinery/autolathe,
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 4;
-	level = 1
+	dir = 1
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/rubbidu/engineering)
@@ -2778,9 +2759,7 @@
 	pixel_y = 2
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 4;
-	level = 1
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/rubbidu/civil)
@@ -2842,9 +2821,7 @@
 	},
 /obj/random/smokes,
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8;
-	layer = 4;
-	level = 1
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/rubbidu/engineering)
@@ -2884,9 +2861,7 @@
 /area/rubbidu/civil/botany)
 "fz" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 4;
-	level = 1
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/rubbidu/hangar)
@@ -3505,9 +3480,7 @@
 /area/rubbidu/civil)
 "gz" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 4;
-	level = 1
+	dir = 1
 	},
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8;
@@ -4870,9 +4843,7 @@
 /obj/item/device/radio/off,
 /obj/item/device/radio/off,
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 4;
-	level = 1
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/rubbidu/civil)
@@ -4908,9 +4879,7 @@
 /obj/structure/closet/secure_closet/engineering_torch,
 /obj/machinery/light,
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 4;
-	level = 1
+	dir = 1
 	},
 /obj/item/device/radio/off,
 /obj/item/device/multitool{
@@ -5528,7 +5497,6 @@
 "jN" = (
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /obj/structure/cable/yellow{
@@ -6053,9 +6021,7 @@
 /area/aquila/cockpit)
 "kD" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 4;
-	level = 1
+	dir = 1
 	},
 /obj/structure/closet/secure_closet/security_torch,
 /obj/item/device/radio/off,
@@ -6449,9 +6415,7 @@
 	},
 /obj/item/weapon/reagent_containers/glass/beaker/large,
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 4;
-	level = 1
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/rubbidu/civil)
@@ -6643,9 +6607,7 @@
 /area/rubbidu/solar)
 "lt" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 4;
-	level = 1
+	dir = 1
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -7287,9 +7249,7 @@
 /area/rubbidu/dock)
 "mv" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8;
-	layer = 4;
-	level = 1
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/rubbidu/dock)
@@ -9394,9 +9354,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4;
-	layer = 4;
-	level = 1
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/rubbidu/civil/canteen)
@@ -9612,8 +9570,7 @@
 	dir = 6
 	},
 /obj/machinery/firealarm{
-	dir = 4;
-	layer = 3.3;
+	dir = 4
 	pixel_x = 26
 	},
 /obj/structure/bed/chair/shuttle{
@@ -10550,9 +10507,7 @@
 /area/aquila/passenger)
 "rI" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 4;
-	level = 1
+	dir = 1
 	},
 /obj/machinery/light,
 /obj/machinery/light/small{
@@ -11831,9 +11786,7 @@
 	pixel_x = -3
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 4;
-	level = 1
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/rubbidu/civil)
@@ -11882,7 +11835,6 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals9,
@@ -14823,7 +14775,6 @@
 "VR" = (
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /obj/effect/floor_decal/corner/purple{

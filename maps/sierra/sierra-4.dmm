@@ -10149,7 +10149,6 @@
 /obj/item/weapon/storage/firstaid/o2,
 /obj/item/weapon/storage/firstaid/toxin,
 /obj/item/weapon/storage/firstaid/fire{
-	layer = 2.9;
 	pixel_x = 2;
 	pixel_y = 3
 	},
@@ -10914,7 +10913,6 @@
 /obj/effect/forcefield{
 	desc = "You can't get in. Heh.";
 	invisibility = 101;
-	layer = 1;
 	name = "Blocker"
 	},
 /turf/unsimulated/wall{
@@ -10929,7 +10927,6 @@
 /obj/effect/forcefield{
 	desc = "You can't get in. Heh.";
 	invisibility = 101;
-	layer = 1;
 	name = "Blocker"
 	},
 /turf/unsimulated/wall{
@@ -10944,7 +10941,6 @@
 /obj/effect/forcefield{
 	desc = "You can't get in. Heh.";
 	invisibility = 101;
-	layer = 1;
 	name = "Blocker"
 	},
 /turf/unsimulated/wall{
@@ -16383,7 +16379,6 @@
 "aOl" = (
 /obj/machinery/vending/wallmed1{
 	dir = 1;
-	layer = 3;
 	name = "Emergency NanoMed";
 	pixel_x = 0;
 	pixel_y = -29
@@ -16926,7 +16921,6 @@
 /obj/item/weapon/storage/firstaid/toxin,
 /obj/item/weapon/storage/firstaid/o2,
 /obj/item/weapon/storage/firstaid/fire{
-	layer = 2.9;
 	pixel_x = 2;
 	pixel_y = 3
 	},
@@ -16942,9 +16936,7 @@
 	},
 /obj/effect/floor_decal/industrial/outline/blue,
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 2.4;
-	level = 2
+	dir = 1
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/white,
@@ -19042,9 +19034,7 @@
 "aVS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 2;
-	layer = 2.4;
-	level = 2
+	dir = 2
 	},
 /obj/effect/floor_decal/borderfloor{
 	icon_state = "borderfloor_white";
@@ -20478,9 +20468,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 2.4;
-	level = 2
+	dir = 1
 	},
 /obj/structure/closet/crate/secure/biohazard{
 	req_access = list("ACCESS_MERCHANT")
@@ -21329,7 +21317,6 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3;
 	pixel_x = 26
 	},
 /obj/effect/catwalk_plated,
@@ -22302,9 +22289,7 @@
 /obj/structure/table/woodentable/walnut,
 /obj/item/device/flashlight/lamp/green,
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4;
-	layer = 2.4;
-	level = 2
+	dir = 4
 	},
 /turf/simulated/floor/carpet,
 /area/merchant_station)
@@ -22991,9 +22976,7 @@
 	dir = 6
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 2.4;
-	level = 2
+	dir = 1
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
@@ -23712,9 +23695,7 @@
 /obj/structure/table/woodentable/walnut,
 /obj/item/device/flashlight/lamp/green,
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 2.4;
-	level = 2
+	dir = 1
 	},
 /obj/item/device/radio/intercom{
 	dir = 8;
@@ -23752,9 +23733,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/reagentgrinder,
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4;
-	layer = 2.4;
-	level = 2
+	dir = 4
 	},
 /obj/machinery/alarm/merchant{
 	dir = 4;
@@ -23840,9 +23819,7 @@
 /obj/structure/table/woodentable/walnut,
 /obj/random/action_figure,
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4;
-	layer = 2.4;
-	level = 2
+	dir = 4
 	},
 /obj/item/weapon/paper/sierrau/merchant,
 /turf/simulated/floor/carpet,

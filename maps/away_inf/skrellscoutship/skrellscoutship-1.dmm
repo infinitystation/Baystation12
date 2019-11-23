@@ -844,8 +844,7 @@
 /area/ship/skrellscoutshuttle)
 "bU" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	level = 1
+	dir = 1
 	},
 /turf/simulated/floor/tiled/skrell,
 /area/ship/skrellscoutship/hangar)
@@ -1028,9 +1027,7 @@
 /area/ship/skrellscoutship/crew/hallway/d2)
 "cl" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8;
-	layer = 4;
-	level = 1
+	dir = 8
 	},
 /turf/simulated/floor/tiled/skrell,
 /area/ship/skrellscoutship/crew/hallway/d2)
@@ -1284,9 +1281,7 @@
 /area/ship/skrellscoutship/crew/rec)
 "cN" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8;
-	layer = 4;
-	level = 1
+	dir = 8
 	},
 /turf/simulated/floor/tiled/skrell/blue,
 /area/ship/skrellscoutship/crew/rec)
@@ -1792,9 +1787,7 @@
 /area/ship/skrellscoutshuttle)
 "dS" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4;
-	layer = 4;
-	level = 1
+	dir = 4
 	},
 /obj/structure/table/glass,
 /obj/machinery/recharger,
@@ -1934,8 +1927,7 @@
 /area/ship/skrellscoutship/maintenance/atmos)
 "ef" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	level = 1
+	dir = 1
 	},
 /obj/structure/table/rack/dark,
 /obj/item/weapon/storage/belt/utility/full_buy,
@@ -2041,9 +2033,7 @@
 /area/ship/skrellscoutship/crew/hallway/d2)
 "eq" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8;
-	layer = 4;
-	level = 1
+	dir = 8
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/ship/skrellscoutship/maintenance/atmos)
@@ -2569,9 +2559,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8;
-	layer = 4;
-	level = 1
+	dir = 8
 	},
 /turf/simulated/floor/tiled/skrell,
 /area/ship/skrellscoutship/crew/hallway/d2)
@@ -2615,8 +2603,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	level = 1
+	dir = 1
 	},
 /obj/machinery/power/port_gen/pacman,
 /turf/simulated/floor/tiled/skrell/green,
@@ -2729,9 +2716,7 @@
 /area/ship/skrellscoutship/maintenance/atmos)
 "fH" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4;
-	layer = 4;
-	level = 1
+	dir = 4
 	},
 /turf/simulated/floor/tiled/skrell/blue,
 /area/ship/skrellscoutship/command/armory)
@@ -2853,9 +2838,7 @@
 /area/ship/skrellscoutship/crew/hallway/d2)
 "fT" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 4;
-	level = 1
+	dir = 1
 	},
 /turf/simulated/floor/tiled/skrell/blue,
 /area/ship/skrellscoutship/command/armory)

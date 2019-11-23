@@ -696,7 +696,6 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3;
 	pixel_x = 26
 	},
 /obj/effect/floor_decal/borderfloorwhite{
@@ -875,7 +874,6 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3;
 	pixel_x = 26
 	},
 /obj/structure/disposalpipe/segment,
@@ -2240,10 +2238,7 @@
 /obj/machinery/light/spot{
 	dir = 8
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	layer = 2.4;
-	level = 2
-	},
+/obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/structure/table/glass,
 /obj/item/weapon/folder/nt,
 /turf/simulated/floor/tiled/dark,
@@ -2769,10 +2764,7 @@
 /obj/machinery/light/spot{
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	layer = 2.4;
-	level = 2
-	},
+/obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/structure/table/glass,
 /obj/item/weapon/folder/nt,
 /turf/simulated/floor/tiled/dark,
@@ -3024,7 +3016,6 @@
 "afy" = (
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3;
 	pixel_x = 26
 	},
 /obj/effect/floor_decal/borderfloorwhite{
@@ -4527,10 +4518,7 @@
 	c_tag = "IAA Office";
 	network = list("Command")
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	layer = 2.4;
-	level = 2
-	},
+/obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
 	department = "IAA Office"
@@ -4897,7 +4885,6 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3;
 	pixel_x = 26
 	},
 /obj/structure/cable{
@@ -5027,7 +5014,6 @@
 "aiP" = (
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3;
 	pixel_x = 26
 	},
 /obj/structure/cable/green{
@@ -12521,7 +12507,6 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3;
 	pixel_x = 26
 	},
 /obj/machinery/light_switch{
@@ -20140,7 +20125,6 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3;
 	pixel_x = 26
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -20279,7 +20263,6 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/vending/wallmed1{
 	dir = 1;
-	layer = 3;
 	name = "Emergency NanoMed";
 	pixel_y = -29
 	},
@@ -24451,7 +24434,6 @@
 "aLC" = (
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3;
 	pixel_x = 26
 	},
 /obj/effect/floor_decal/borderfloorwhite{
@@ -28980,7 +28962,6 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3;
 	pixel_x = 26
 	},
 /turf/simulated/floor/carpet,
@@ -32361,7 +32342,6 @@
 "aZp" = (
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3;
 	pixel_x = 26
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -32615,7 +32595,6 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3;
 	pixel_x = 26
 	},
 /obj/structure/disposalpipe/segment,
@@ -33238,7 +33217,6 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3;
 	pixel_x = 26
 	},
 /obj/effect/floor_decal/industrial/outline/grey,
@@ -34102,9 +34080,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4;
-	layer = 2.4;
-	level = 2
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/firstdeck/aftport)
@@ -35273,9 +35249,7 @@
 /area/crew_quarters/sleep/cryo/upper)
 "bhl" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4;
-	layer = 2.4;
-	level = 2
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tcommsat/storage)
@@ -35717,9 +35691,7 @@
 "bmn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 2.4;
-	level = 2
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/bridge/gun/energy)
@@ -35779,9 +35751,7 @@
 	pixel_y = -20
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 2.4;
-	level = 2
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/storage/bridge)

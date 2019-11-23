@@ -421,7 +421,6 @@
 "bj" = (
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /turf/simulated/floor/tiled/freezer,
@@ -880,7 +879,6 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /turf/simulated/floor/carpet/green,
@@ -3165,8 +3163,7 @@
 /obj/item/weapon/storage/box/gloves,
 /obj/item/weapon/storage/box/masks,
 /obj/structure/table/rack{
-	dir = 8;
-	layer = 2.9
+	dir = 8
 	},
 /obj/item/weapon/storage/box/syringes{
 	pixel_x = 4;
@@ -4392,7 +4389,6 @@
 /obj/structure/closet/jcloset/sierra,
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -5229,9 +5225,7 @@
 	pixel_y = -22
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 2.4;
-	level = 2
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/space)
@@ -5576,7 +5570,6 @@
 "wl" = (
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -6448,7 +6441,6 @@
 /obj/machinery/portable_atmospherics/hydroponics,
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -6552,9 +6544,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 2.4;
-	level = 2
+	dir = 1
 	},
 /turf/simulated/floor/carpet,
 /area/space)
@@ -6675,9 +6665,7 @@
 	pixel_y = -24
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 2.4;
-	level = 2
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/space)
@@ -7782,7 +7770,6 @@
 /obj/structure/bed/roller,
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -7995,9 +7982,7 @@
 /area/space)
 "Ah" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 2.4;
-	level = 2
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/space)
