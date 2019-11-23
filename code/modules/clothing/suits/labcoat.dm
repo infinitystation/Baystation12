@@ -68,12 +68,20 @@
 
 /obj/item/clothing/suit/storage/toggle/labcoat/xyn_machine
 	name = "\improper Xynergy labcoat"
-	desc = "A stiffened, stylised labcoat designed to fit IPCs. It has blue and purple trim, denoting it as a Xynergy labcoat."
+//INF	desc = "A stiffened, stylised labcoat designed to fit IPCs. It has blue and purple trim, denoting it as a Xynergy labcoat."
+	desc = "A grey suit that protects against minor chemical spills. It covered in blue and purple stripes and trims, denoting it as Xynergy labcoat" //INF, WAS (upper line)
+	icon = 'infinity/icons/obj/clothing/obj_suit.dmi' //INF
+	item_icons = list(slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi') //INF
 	icon_state = "labcoat_xy"
 	icon_open = "labcoat_xy_open"
 	icon_closed = "labcoat_xy"
 	armor = list(melee = 10, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 20, rad = 0)
-	species_restricted = list(SPECIES_IPC)
+//INF	species_restricted = list(SPECIES_IPC)
+//[INF]
+	sprite_sheets = list(
+		SPECIES_IPC = 'icons/mob/onmob/onmob_suit.dmi',
+		)
+//[/INF]
 
 /obj/item/clothing/suit/storage/toggle/labcoat/foundation
 	name = "\improper Foundation labcoat"

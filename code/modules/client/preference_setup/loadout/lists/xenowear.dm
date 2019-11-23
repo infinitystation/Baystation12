@@ -89,10 +89,10 @@
 	whitelisted = list(SPECIES_IPC)
 
 /datum/gear/suit/lab_xyn_machine
-	display_name = "(IPC) Xynergy labcoat"
+	display_name = "Xynergy labcoat" //INF, WAS "(IPC) Xynergy labcoat"
 	path = /obj/item/clothing/suit/storage/toggle/labcoat/xyn_machine
-	sort_category = "Xenowear"
-	whitelisted = list(SPECIES_IPC)
+//INF	sort_category = "Xenowear"
+//INF	whitelisted = list(SPECIES_IPC)
 
 // Misc clothing
 /datum/gear/uniform/harness
