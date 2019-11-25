@@ -416,6 +416,7 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	toggled = 1
 	produces_heat = 0
 	autolinkers = list("c_relay")
+	construct_state = /decl/machine_construction/tcomms/panel_closed/cannot_print //INF
 
 //[/INF]
 /*
