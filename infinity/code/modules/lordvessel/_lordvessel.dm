@@ -2,7 +2,7 @@
 	var/list/known_things = list()
 	var/teleporing_in_progress = 0
 
-/obj/item/lordwessel
+/obj/item/lordvessel
 	name 								=	"lordvessel"
 	desc 								=	"A bowl. You can see strange ligth at it's bottom."
 	icon 								=	'infinity/obj/item/ds/lordvessel.dmi'
@@ -21,7 +21,10 @@
 
 	var/is_silent_teleporting			=	0
 
-/obj/item/lordwessel/examine(mob/user)
+	var/teleport_cooldown				=	10 SECONDS
+	var/last_teleporting_time
+
+/obj/item/lordvessel/examine(mob/user)
 	if(isliving(user))
 		var/mob/living/U = user
 		if(type in U.known_things || U.psi)
@@ -31,7 +34,7 @@
 	. = ..()
 	desc = initial(desc)
 
-/obj/item/lordwessel/attack_self(mob/user)
+/obj/item/lordvessel/attack_self(mob/user)
 	. = ..()
 	if(isliving(user))
 		var/mob/living/U	=	user
@@ -49,29 +52,33 @@
 						else						to_chat(U, SPAN_OCCULT("<font size=2>You make the ominous bell in \icon[src] [src]'s light swing again. And it start belling again. Now \icon[src] [src] will remember new places and belling around the world after translocations.</font>"))
 						return 2
 				if("Say my path")
-					if(length(known_areas))
-						visible_message("\icon[src] \the [src] start glowing")
-						var/area/targetarea
-						if(length(known_areas) > 1) targetarea = input(U, "You hear whispers: \"Your path is...\"") in known_areas
-						else targetarea = known_areas[1]
-						if(targetarea)
-							if(istype(targetarea))
-								U.say("My path is [targetarea.name]")
-								sleep(2 SECONDS)
-								teleport2(targetarea, U)
-								if(!(type in U.known_things)) U.known_things += type
-								return 1
-							else
-								to_chat(U, SPAN_OCCULT("You hear whispers: \"You won't to say us your path...\""))
-								return 1.4
+					if(!last_teleporting_time || last_teleporting_time < world.time)
+						if(length(known_areas))
+							visible_message("\icon[src] \the [src] start glowing")
+							var/area/targetarea
+							if(length(known_areas) > 1) targetarea = input(U, "You hear whispers: \"Your path is...\"") in known_areas
+							else targetarea = known_areas[1]
+							if(targetarea)
+								if(istype(targetarea))
+									U.say("My path is [targetarea.name]")
+									U.teleporing_in_progress = 1
+									sleep(2 SECONDS)
+									teleport2(targetarea, U)
+									if(!(type in U.known_things)) U.known_things += type
+									return 1
+								else
+									to_chat(U, SPAN_OCCULT("You hear whispers: \"You won't to say us your path...\""))
+									return 1.4
+					else
+						to_chat(U, SPAN_OCCULT("\icon[src] [src]'s bell is stuck. Maybe you need to wait?"))
 		else to_chat(U, SPAN_OCCULT("<font size=2>\"But you already in travel.\"</font>"))
 
-/obj/item/lordwessel/proc/omious_belling()
+/obj/item/lordvessel/proc/omious_belling()
 	for(var/mob/M in GLOB.player_list)
 		sound_to(M, teleportsound)
 		to_chat(M, SPAN_OCCULT("You hear ominous belling, far-far away from you."))
 
-/obj/item/lordwessel/proc/teleport2(area/A, mob/T)
+/obj/item/lordvessel/proc/teleport2(area/A, mob/T)
 	if(isliving(T))
 		var/mob/living/target = T
 		target.teleporing_in_progress = 1
@@ -85,9 +92,8 @@
 		var/obj/effect/temporary/E		=	new(get_step(end, SOUTHWEST), 20 SECONDS, teleportation_effect_icon, teleportation_effect_icon_state)
 		var/obj/AN_tmp_target_holder	=	new(start)
 		var/obj/E_tmp_target_holder		=	new(end)
-		AN.color						=	teleportation_effect_color
-		E.color							=	teleportation_effect_color
 		for(var/obj/EF in list(AN, E))
+			EF.color					=	teleportation_effect_color
 			switch(length(teleportation_effect_possition))
 				if(1)
 					EF.pixel_x			=	teleportation_effect_possition[1]
@@ -106,5 +112,4 @@
 		remove_ash_of(target)
 		qdel(AN_tmp_target_holder)
 		qdel(E_tmp_target_holder)
-	else
-		to_chat(T, SPAN_OCCULT("You are not living to use this thing"))
+		last_teleporting_time = world.time + teleport_cooldown

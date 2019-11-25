@@ -5,7 +5,7 @@
 		var/area/A = get_area(O)
 		var/mob/living/crosser = O
 		var/soundplayed
-		for(var/obj/item/lordwessel/BOWL in crosser.contents)
+		for(var/obj/item/lordvessel/BOWL in crosser.contents)
 			if(!(A in BOWL.known_areas) && !BOWL.is_silent_teleporting)
 				if(!soundplayed)
 					to_chat(O, "<center><b><font size=4>New area:<br>[A]</font></b></center>")
@@ -14,21 +14,21 @@
 				BOWL.known_areas += A
 */
 
-/obj/item/lordwessel/Initialize()
+/obj/item/lordvessel/Initialize()
 	. = ..()
 	GLOB.item_equipped_event.register(src, src, .proc/equiped)
 
-/obj/item/lordwessel/proc/equiped(var/me, var/who)
+/obj/item/lordvessel/proc/equiped(var/me, var/who)
 	GLOB.item_equipped_event.unregister(me, me)
 	GLOB.item_unequipped_event.register(me, me, .proc/unequiped)
 	GLOB.moved_event.register(who, me, .proc/listening_mobs_moves)
 
-/obj/item/lordwessel/proc/unequiped(var/me, var/who)
+/obj/item/lordvessel/proc/unequiped(var/me, var/who)
 	GLOB.item_unequipped_event.unregister(me, me)
 	GLOB.item_equipped_event.register(me, me, .proc/equiped)
 	GLOB.moved_event.unregister(who, me)
 
-/obj/item/lordwessel/proc/listening_mobs_moves(var/mob/who, var/old_loc, var/new_loc)
+/obj/item/lordvessel/proc/listening_mobs_moves(var/mob/who, var/old_loc, var/new_loc)
 	if((who.get_active_hand() != src) && (who.get_inactive_hand() != src)) //lordvessel must be in hands to keep bell remember zones
 		return
 	var/area/A = get_area(who)
