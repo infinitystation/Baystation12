@@ -417,6 +417,8 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	produces_heat = 0
 	autolinkers = list("c_relay")
 
+	cannot_print = TRUE //INF
+
 //[/INF]
 /*
 	The bus mainframe idles and waits for hubs to relay them signals. They act
