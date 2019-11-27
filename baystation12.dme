@@ -3571,6 +3571,7 @@
 #include "infinity\customs\quiet.dm"
 #include "infinity\customs\rockcoats.dm"
 #include "infinity\customs\ronin_helmet.dm"
+#include "infinity\customs\sallyvadordomold.dm"
 #include "infinity\customs\sarov.dm"
 #include "infinity\customs\sprites_kits.dm"
 #include "infinity\customs\stange_pill.dm"
