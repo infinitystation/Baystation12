@@ -51,7 +51,7 @@ datum/preferences
 	real_name = random_name(gender,species)
 	b_type = RANDOM_BLOOD_TYPE
 
-	if(client && !IsGuestKey(client.key))
+	if(client /*INF&& !IsGuestKey(client.key)*/)
 		load_path(client.ckey)
 		load_preferences()
 		load_and_update_character()
