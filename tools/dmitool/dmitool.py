@@ -54,8 +54,6 @@ def info(filepath):
         # don't need to parse states, it's redundant
         parse_prop(result, "images", lambda: int(header[0].split()[0].strip()))
         parse_prop(result, "size", lambda: header[2].split()[1].strip())
-        if parse_prop(result, "size", lambda: header[2].split()[1].strip()) != False:
-			print("Could not parse file in path '%s'" % (filepath))
 
     # parse state information
     states = []

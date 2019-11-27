@@ -166,7 +166,6 @@
 "aC" = (
 /obj/machinery/computer/cryopod{
 	density = 0;
-	layer = 3.3;
 	pixel_y = 28
 	},
 /obj/machinery/cryopod,

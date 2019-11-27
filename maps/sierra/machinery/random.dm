@@ -59,7 +59,7 @@ obj/random/hostile/xenobio/spawn_choices()
 	name = "random steel"
 	desc = "This is a random metal ammout for RND's storage."
 	icon = 'icons/obj/materials.dmi'
-	icon_state = "sheet-shiny-mult"
+	icon_state = "sheet-plastic-mult"
 	spawn_nothing_percentage = 50
 
 /obj/random/material_rnd_steel/spawn_choices()
