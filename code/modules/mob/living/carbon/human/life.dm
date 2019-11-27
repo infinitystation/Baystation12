@@ -144,6 +144,7 @@
 	var/pressure_adjustment_coefficient = 0
 	var/list/zones = list(HEAD, UPPER_TORSO, LOWER_TORSO, LEGS, FEET, ARMS, HANDS)
 	for(var/zone in zones)
+		if(zone >= 8) break //INF. Accessories on under in sealed suit cause runtimes
 		var/list/covers = get_covering_equipped_items(zone)
 		var/zone_exposure = 1
 		for(var/obj/item/clothing/C in covers)

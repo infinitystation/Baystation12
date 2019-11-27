@@ -121,7 +121,8 @@
 	usage_flags = PROGRAM_PDA
 
 /obj/item/weapon/stock_parts/computer/card_slot/Destroy()
-	loc.verbs -= /obj/item/weapon/stock_parts/computer/card_slot/verb/verb_eject_id
+	if(loc) //INF
+		loc.verbs -= /obj/item/weapon/stock_parts/computer/card_slot/verb/verb_eject_id
 	if(stored_card)
 		QDEL_NULL(stored_card)
 	return ..()
