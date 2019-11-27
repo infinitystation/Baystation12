@@ -27,6 +27,7 @@
 		"Trichoptera" = list("nav_hangar_ascent_one"),
 		"Lepidoptera" = list("nav_hangar_ascent_two")
 	)
+	known = 0 //INF
 
 /obj/effect/submap_landmark/joinable_submap/ascent_seedship
 	name = ASCENT_COLONY_SHIP_NAME
