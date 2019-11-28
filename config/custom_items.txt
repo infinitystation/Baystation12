@@ -404,6 +404,12 @@ character_name: Amr'in Battrral
 item_path: /obj/item/clothing/accessory/necklace/messa
 }
 {
+ckey: arhod
+character_name: Jason Marhod
+item_path: /obj/item/clothing/accessory/medal/solgov/silver/sword
+item_desc: A silver medal awarded to members of the SCG for honorable service while under enemy fire. Belongs to Jason Marhod.
+}
+{
 ckey: laxesh
 character_name: Thomas Koster
 item_path: /obj/item/weapon/storage/belt/holster/ic/full
@@ -581,7 +587,23 @@ ckey: coolered
 character_name: Martha Muller
 item_path: /obj/item/clothing/under/thermal/custom
 }
-
+{
+ckey: sallyvadordomold
+character_name: Denis Serbin
+item_path: /obj/item/clothing/suit/lux_tunic/custom
+}
+{
+ckey: sallyvadordomold
+character_name: Denis Serbin
+item_desc: A bronze heart awarded to members of the SCG for injury or death in the line of duty. Belongs to Denis Serbin.
+item_path: /obj/item/clothing/accessory/medal/solgov/bronze/heart
+}
+{
+ckey: sallyvadordomold
+character_name: Denis Serbin
+item_desc: A gold medal awarded to members of the Defense Forces by the Secretary General for personal acts of valor and heroism above and beyond the call of duty. Belongs to Denis Serbin.
+item_path: /obj/item/clothing/accessory/medal/solgov/gold/crest
+}
 #	MEDIUM ITEMS HERE (5-6)
 
 {
@@ -605,7 +627,7 @@ item_path: /obj/item/modular_computer/pda/wrist/grayson
 {
 ckey: courierr
 character_name: Mia Lee
-item_path: /obj/item/weapon/material/knife/combat
+item_path: /obj/item/weapon/material/knife
 item_name: karambit
 item_desc: A small knife with a curved blade.
 item_icon: karambit
@@ -676,7 +698,7 @@ item_icon: talisman-5
 {
 ckey: furrydog
 character_name: Mathor Ajurth Enai-Kaytam
-item_path: /obj/item/clothing/ring/seal/mason
+item_path: /obj/item/clothing/ring
 item_name: rainbow bracelet
 item_desc: It's a rainbow bracelet. Looks pretty good and stylish, special for gays.
 item_icon: rainbow_bracelet
@@ -684,7 +706,7 @@ item_icon: rainbow_bracelet
 {
 ckey: thehero13
 character_name: Jonn Corsac
-item_path: /obj/item/weapon/material/kitchen/utensil/knife/boot
+item_path: /obj/item/weapon/material/knife
 item_name: karambit
 item_desc: A small curved knife.
 item_icon: karambit2
@@ -726,17 +748,18 @@ item_icon: calypso_boots
 item_name: calypso group boots
 item_desc: A pair of white plastic boots with shining neon-yellow parts,stylised with small angelic wings. This one belongs  to a Vat-Grown named "IC-Rachel".
 }
+{
+ckey: he11d1ver
+character_name: Aard Barnes
+item_path: /obj/item/clothing/accessory/armor/helmcover/custom_he11d1ver
+}
+{
+ckey: he11d1ver
+character_name: Aard Barnes
+item_path: /obj/item/clothing/suit/armor/pcarrier
+item_name: green tactical vest
+item_desc: Green-colored plate carrier replete with pouches to help you carry mags, trophies, awful teammates and crippling PTSD.
+item_icon: helldiver_pcarrier
+}
 
 #	LONG ITEMS HERE (+7)
-
-{
-ckey: arhod
-character_name: Jason Marhod
-item_path: /obj/item/clothing/accessory/medal/solgov/silver/sword
-item_desc: A silver medal awarded to members of the SCG for honorable service while under enemy fire. No: 48181
-req_titles: Warden
-req_access: "ACCESS_BRIG"
-paper_info: [center]Öåíòðàëüíîå Ïðàâèòåëüñòâî Ñîëíå÷íîé Ñèñòåìû[/center][solcrest][br]Äàííûì ñåðòèôèêàòîì ïîäòâåðæäàåòñÿ íàãðàæäåíèå Äæåéñîíà Ìàðõîäà ìåäàëüþ "Ó÷àñòíèê Áîåâûõ Äåéñòâèè" çà íåéòðàëèçàöèþ ïðîòèâíèêà â îïàñíûõ óñëîâèÿõ.[br]Ïîäïèñü: [sign]Oliver Stocker[/sign]
-paper_title: award certificate
-paper_stamp_type: /obj/item/weapon/stamp/solgov
-}

@@ -78,3 +78,14 @@
 /obj/item/clothing/suit/armor/pcarrier/mainkraft/plastic/New()
 	..()
 	slowdown_per_slot[slot_wear_suit] = 0.75
+
+/obj/item/clothing/suit/lux_tunic
+	name = "luxury tunic"
+	desc = "A luxury suit for some high-ranked officer."
+	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi')
+	icon_state = "admiral_tunic"
+	item_state = "admiral_tunic"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	valid_accessory_slots = list(ACCESSORY_SLOT_MEDAL)
+	allowed = list(/obj/item/weapon/gun/energy, /obj/item/weapon/gun/projectile, /obj/item/weapon/melee/baton)
