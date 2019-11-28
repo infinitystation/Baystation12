@@ -8,7 +8,7 @@
 		return ..()
 	return FALSE
 //[INF] we have overrided original code, so place is here
-/decl/emote/audible/do_extra(var/atom/user)
+/decl/emote/audible/synth/do_extra(var/atom/user)
 	if(emote_sound)
 		playsound(user.loc, emote_sound, 50, 0)
 //[/INF]

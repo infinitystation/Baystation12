@@ -1703,9 +1703,9 @@
 //	if(skill_check(SKILL_WEAPONS, SKILL_ADEPT))
 //		. += 2 //inf, was 1.(+10% to hit)
 	if(skill_check(SKILL_WEAPONS, SKILL_EXPERT))
-		. += 2 //inf, was 1.(+10% to hit)
+		. += 4 //inf, was 1.(+20% to hit)
 	if(skill_check(SKILL_WEAPONS, SKILL_PROF))
-		. += 2 //inf, was 1.(+20% to hit)
+		. += 4 //inf, was 1.(+40% to hit)
 
 /mob/living/carbon/human/can_drown()
 	if(!internal && (!istype(wear_mask) || !wear_mask.filters_water()))
