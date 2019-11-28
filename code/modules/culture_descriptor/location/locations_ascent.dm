@@ -7,3 +7,4 @@
 	and defense platforms, each belonging to a different node in the ever-shifting political web of Ascent \
 	social culture, the surface itself is a pristine monument to the Kharmaan evolutionary past."
 	hidden = TRUE
+	secondary_langs = null //INF. We have overrided this var

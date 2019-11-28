@@ -89,6 +89,7 @@
 	is_semi_antagonist = TRUE
 	var/requires_supervisor = FALSE
 	var/set_species_on_join = SPECIES_MANTID_GYNE
+	required_language = null //INF
 
 /datum/job/submap/ascent/is_position_available()
 	. = ..()
