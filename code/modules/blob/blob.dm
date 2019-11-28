@@ -6,7 +6,7 @@
 	light_outer_range = 2
 	light_color = BLOB_COLOR_PULS
 	density = 1
-	opacity = 1
+//INF	opacity = 1
 	anchored = 1
 	mouse_opacity = 2
 
@@ -112,7 +112,7 @@
 		return
 	var/obj/machinery/camera/CA = locate() in T
 	if(CA)
-		CA.take_damage(30)
+		CA.ex_act(2) //INF, WAS CA.take_damage(30)
 		return
 
 	// Above things, we destroy completely and thus can use locate. Mobs are different.
