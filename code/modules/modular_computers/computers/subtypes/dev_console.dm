@@ -33,7 +33,7 @@
 /obj/machinery/computer/modular/interface_interact(mob/user)
 	var/datum/extension/interactive/ntos/os = get_extension(src, /datum/extension/interactive/ntos)
 	if(os)
-		if(!os.on)
+		if(!os.on && !istype(user, /mob/observer/ghost)) //INF //WAS: if(!os.on)
 			os.system_boot()
 
 		os.ui_interact(user)

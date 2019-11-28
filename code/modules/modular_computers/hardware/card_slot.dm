@@ -50,14 +50,16 @@
 	
 	to_chat(user, JOINTEXT(to_send))
 		
-/obj/item/weapon/stock_parts/computer/card_slot/verb/verb_eject_id(mob/user)
+/obj/item/weapon/stock_parts/computer/card_slot/verb/verb_eject_id()
 	set name = "Remove ID"
 	set category = "Object"
 	set src in view(1)
 
+	var/mob/user = usr //inf 
+	/*was:
 	if(!user)
 		user = usr
-
+	*/
 	if(!CanPhysicallyInteract(user))
 		to_chat(usr, "<span class='warning'>You can't reach it.</span>")
 		return
