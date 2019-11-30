@@ -369,10 +369,6 @@
 /turf/simulated/wall/r_wall/hull,
 /area/hallway/primary/thirddeck/center)
 "aX" = (
-/obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 9
-	},
 /obj/machinery/airlock_sensor{
 	frequency = 1380;
 	id_tag = "admin_shuttle_dock_sensor";
@@ -380,23 +376,26 @@
 	pixel_y = -8
 	},
 /obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/hallway/primary/thirddeck/center)
-"aY" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 5
-	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 2;
+	dir = 4;
 	frequency = 1380;
 	id_tag = "admin_shuttle_dock_pump"
 	},
+/obj/effect/floor_decal/industrial/warning/cee{
+	icon_state = "stripecee";
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/hallway/primary/thirddeck/center)
+"aY" = (
 /obj/item/device/radio/intercom{
 	dir = 8;
 	pixel_x = 20
 	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/hallway/primary/thirddeck/center)
 "aZ" = (
 /obj/machinery/door/airlock/external{
@@ -603,10 +602,8 @@
 	frequency = 1380;
 	id_tag = "admin_shuttle_dock_pump"
 	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 10
-	},
 /obj/structure/catwalk,
+/obj/effect/floor_decal/industrial/warning/cee,
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/center)
 "bw" = (
@@ -675,11 +672,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 6
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/hallway/primary/thirddeck/center)
 "bB" = (
 /obj/machinery/shield_diffuser,
@@ -3461,7 +3454,10 @@
 	dir = 8;
 	icon_state = "tube_map"
 	},
-/obj/machinery/power/emitter/anchored,
+/obj/machinery/power/emitter/anchored{
+	name = "petrov emitter";
+	req_access = list("ACCESS_PETROV")
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/shuttle/petrov/ship)
 "gh" = (
@@ -15240,14 +15236,15 @@
 /turf/simulated/wall/r_titanium,
 /area/exploration_shuttle/cargo)
 "xZ" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 9
-	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 4;
 	id_tag = "rescue_shuttle_dock_pump"
 	},
 /obj/structure/catwalk,
+/obj/effect/floor_decal/industrial/warning/cee{
+	icon_state = "stripecee";
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/center)
 "ya" = (
@@ -15795,17 +15792,17 @@
 /turf/simulated/floor/reinforced,
 /area/thruster/d3port)
 "yM" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden{
-	dir = 4;
-	icon_state = "map"
-	},
-/obj/machinery/light/small{
-	dir = 4
+/obj/machinery/airlock_sensor{
+	id_tag = "rescue_shuttle_dock_sensor";
+	pixel_x = -24;
+	pixel_y = 6
 	},
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 4;
+	id_tag = "rescue_shuttle_dock_pump"
+	},
+/obj/effect/floor_decal/industrial/warning/cee,
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/center)
 "yN" = (
@@ -15858,21 +15855,6 @@
 /obj/effect/floor_decal/industrial/warning/half,
 /turf/simulated/floor/plating,
 /area/shuttle/petrov/ship)
-"yS" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 6
-	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 1;
-	id_tag = "rescue_shuttle_dock_pump"
-	},
-/obj/item/device/radio/intercom{
-	dir = 8;
-	pixel_x = 20
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/hallway/primary/thirddeck/center)
 "yT" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 4
@@ -26638,6 +26620,17 @@
 /obj/effect/floor_decal/industrial/warning/half,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/thirddeck/aft)
+"QD" = (
+/obj/item/device/radio/intercom{
+	dir = 8;
+	pixel_x = 20
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 9;
+	icon_state = "intact"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/hallway/primary/thirddeck/center)
 "QE" = (
 /obj/machinery/door/airlock/research{
 	id_tag = null;
@@ -28039,18 +28032,6 @@
 /obj/machinery/space_heater,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/exploration_shuttle/cargo)
-"SY" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 10
-	},
-/obj/machinery/airlock_sensor{
-	id_tag = "rescue_shuttle_dock_sensor";
-	pixel_x = -24;
-	pixel_y = 6
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/hallway/primary/thirddeck/center)
 "SZ" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8;
@@ -43302,10 +43283,10 @@ Is
 Is
 Is
 Is
+Is
+Is
+Is
 Iu
-Is
-Is
-Is
 Is
 Is
 Is
@@ -44300,7 +44281,7 @@ SP
 AY
 aB
 xZ
-SY
+yM
 aB
 Is
 Is
@@ -44501,8 +44482,8 @@ cX
 SS
 FU
 Ed
-yM
-yS
+bA
+QD
 Ml
 Is
 Is
