@@ -2,10 +2,9 @@
 	name = "Mining Outpost Equipment"
 	icon_state = "outpost_mine_main"
 	area_flags = AREA_FLAG_IS_NOT_PERSISTENT
-//	ambience = list('sound/ambience/maintambience.ogg','sound/ambience/ambigen3.ogg','sound/ambience/ambigen4.ogg','sound/ambience/ambigen5.ogg','sound/ambience/ambigen9.ogg','sound/ambience/ambigen10.ogg')
 	sound_env = STANDARD_STATION
 	turf_initializer = /decl/turf_initializer/maintenance
-	ambience = list('infinity/sound/ambience/maintambience2.ogg', 'sound/ambience/ambigen3.ogg', 'sound/ambience/ambigen4.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/spookyspace1.ogg', 'sound/ambience/spookyspace2.ogg') // you don't want to be here
+	ambience = list('infinity/sound/ambience/horror_3.ogg', 'infinity/sound/ambience/maintambience2.ogg', 'sound/ambience/ambigen3.ogg', 'sound/ambience/ambigen4.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/spookyspace1.ogg', 'sound/ambience/spookyspace2.ogg') // you don't want to be here
 	base_turf = /turf/simulated/floor/asteroid
 	req_access = list(list(access_mining, access_xenoarch))
 
@@ -52,3 +51,18 @@
 	has_gravity = FALSE
 	base_turf = /turf/space
 	turf_initializer = null
+
+/area/mine
+	icon_state = "mining"
+	ambience = list('infinity/sound/ambience/horror_2.ogg', 'infinity/sound/ambience/horror_3.ogg', 'sound/ambience/spookyspace1.ogg', 'sound/ambience/spookyspace2.ogg')
+	sound_env = ASTEROID
+	has_gravity = TRUE
+	base_turf = /turf/simulated/floor/asteroid
+
+/area/mine/explored
+	name = "Mine"
+	icon_state = "explored"
+
+/area/mine/unexplored
+	name = "Mine"
+	icon_state = "unexplored"
