@@ -498,7 +498,7 @@
 	name = "glowshroom"
 	seed_name = "glowshroom"
 	display_name = "glowshrooms"
-	mutants = null
+	mutants = "red glowshroom" //inf
 	chems = list(/datum/reagent/radium = list(1,20))
 
 /datum/seed/mushroom/glowshroom/New()
