@@ -25,3 +25,24 @@
 	thermal["Unati, black thermal suit"]= /obj/item/clothing/under/thermal/heat/unati
 	thermal["Unati, white thermal suit"]= /obj/item/clothing/under/thermal/heat/unati/white
 	gear_tweaks += new/datum/gear_tweak/path(thermal)
+
+/datum/gear/utility/implanth/tajcoll
+	whitelisted = list(SPECIES_TAJARA)
+	sort_category = "Xenowear"
+	display_name = "(Tajara) neural lace synapse analyzer"
+	path = /obj/item/weapon/implant/collector
+	slot = "implanth"
+
+/datum/gear/utility/implantc/tajhold
+	whitelisted = list(SPECIES_TAJARA)
+	sort_category = "Xenowear"
+	display_name = "(Tajara) neural lace SHAP module"
+	path = /obj/item/weapon/implant/holder
+	slot = "implantc"
+
+/datum/gear/utility/implantc/tajhold/New()
+	..()
+	var/imphold = list()
+	imphold["TransHolding SHAP module"]= /obj/item/weapon/implant/holder/transholder
+	imphold["Holding SHAP module"]= /obj/item/weapon/implant/holder
+	gear_tweaks += new/datum/gear_tweak/path(imphold)

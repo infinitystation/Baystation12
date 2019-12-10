@@ -83,3 +83,10 @@
 /datum/robolimb/morpheus/special
 	company = "Morpheus Special"
 	icon = 'icons/mob/human_races/cyberlimbs/morpheus/morpheus_special.dmi'
+
+/datum/robolimb/taj/Dyson_Rhynyai
+	company = "Dyson-Rhyn’yai Cybernetics"
+	icon = 'icons/mob/human_races/cyberlimbs/taj/Dyson_Rhynyai.dmi'
+	allowed_bodytypes = list(SPECIES_TAJARA)
+	restricted_to = list(SPECIES_TAJARA)
+	applies_to_part = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT, BP_L_HAND, BP_R_HAND)

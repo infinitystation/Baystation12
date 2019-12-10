@@ -26,7 +26,7 @@
 
 /obj/item/weapon/implant/holder
 	name = "S'D-S'rri implant"
-	desc = "A small the easy, but heavy device incomprehensible purpose. It has embossed CÐ¡A emblems on the sides of the device."
+	desc = "A small the easy, but heavy device incomprehensible purpose. It has embossed CÑA emblems on the sides of the device."
 	icon = 'infinity/icons/obj/items.dmi'
 	icon_state = "holder"
 	w_class = ITEM_SIZE_TINY

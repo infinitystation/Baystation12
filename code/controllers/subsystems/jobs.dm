@@ -427,6 +427,14 @@ SUBSYSTEM_DEF(jobs)
 					to_chat(H, "<span class='warning'>Your current species, job, branch, skills or whitelist status does not permit you to spawn with [thing]!</span>")
 					continue
 
+				if(G.slot == "implanth") //inf
+					H.implant_head(G)
+					continue
+
+				if(G.slot == "implantc") //inf
+					H.implant_chest(G)
+					continue
+
 				if(!G.slot || G.slot == slot_tie || (G.slot in loadout_taken_slots) || !G.spawn_on_mob(H, H.client.prefs.Gear()[G.display_name]))
 					spawn_in_storage.Add(G)
 				else

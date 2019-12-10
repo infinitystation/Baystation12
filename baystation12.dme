@@ -3224,6 +3224,7 @@
 #include "infinity\code\game\objects\items\stacks\tiles\tile_types.dm"
 #include "infinity\code\game\objects\items\weapons\cards_Id.dm"
 #include "infinity\code\game\objects\items\weapons\extunguisher.dm"
+#include "infinity\code\game\objects\items\weapons\implants.dm"
 #include "infinity\code\game\objects\items\weapons\lighter.dm"
 #include "infinity\code\game\objects\items\weapons\rpd.dm"
 #include "infinity\code\game\objects\items\weapons\surgery_tools.dm"
