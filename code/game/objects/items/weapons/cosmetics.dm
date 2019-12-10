@@ -47,6 +47,8 @@
 		if(!istype(head))
 			return
 
+
+
 		if(user.a_intent == I_HELP && target_zone == BP_HEAD)
 			head.write_on(user, src.name)
 		else if(head.has_lips)
@@ -105,6 +107,17 @@
 			if(SPECIES_SKRELL)       cover = "skin"
 			if(SPECIES_IPC)          cover = "body"
 			if(SPECIES_DIONA)        cover = "foliage"
+
+		if(user.a_intent == I_GRAB && H.species == SPECIES_TAJARA && do_after(user, 300, H))
+			user.visible_message("<span class='warning'>The [user] starts trying hardly brushes [H]'s fur by [src] combing whole tufts of fur!</span>")
+			if(do_after(user, 300, H))
+				user.visible_message("<span class='warning'>The [user] successfully brushes [H]'s fur by [src] combing whole tufts of fur!</span>")
+				new /obj/item/stack/material/leatherl/fur(get_turf(src))
+				H.apply_effect(10, PAIN, 0)
+			else
+				user.visible_message("<span class='warning'>The [user] failed brushes [H]'s fur by [src]...</span>")
+				brushing = 0
+				return
 
 		if(do_after(user, 10, H))
 			if(user.a_intent == I_HURT && cover != "skin" && cover != "body")

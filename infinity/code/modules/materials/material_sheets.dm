@@ -10,3 +10,9 @@
 
 /obj/item/stack/material/concrete/fifty
 	amount = 50
+
+/obj/item/stack/material/leatherl/fur
+	name = "fur"
+	desc = "The dense clump consists of soft, long hair... Or fur... Eww..."
+	icon = 'icons/obj/toy.dmi'
+	icon_state = "rag"
