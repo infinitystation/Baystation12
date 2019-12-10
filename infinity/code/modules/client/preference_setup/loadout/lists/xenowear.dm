@@ -32,6 +32,7 @@
 	display_name = "(Tajara) neural lace synapse analyzer"
 	path = /obj/item/weapon/implant/collector
 	slot = "implanth"
+	cost = 0
 
 /datum/gear/utility/tajhold
 	whitelisted = list(SPECIES_TAJARA)
@@ -39,6 +40,7 @@
 	display_name = "(Tajara) neural lace SHAP module"
 	path = /obj/item/weapon/implant/holder
 	slot = "implantc"
+	cost = 0
 
 /datum/gear/utility/implantc/tajhold/New()
 	..()
