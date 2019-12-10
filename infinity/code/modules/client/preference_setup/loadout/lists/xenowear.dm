@@ -42,7 +42,7 @@
 	slot = "implantc"
 	cost = 0
 
-/datum/gear/utility/implantc/tajhold/New()
+/datum/gear/utility/tajhold/New()
 	..()
 	var/imphold = list()
 	imphold["TransHolding SHAP module"]= /obj/item/weapon/implant/holder/transholder
