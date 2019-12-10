@@ -80,3 +80,15 @@
 													)*/
 
 	update_growth_stages()
+
+/datum/seed/mushroom/glowshroom/hydro
+	name = "red glowshroom"
+	seed_name = "red glowshroom"
+	display_name = "red glowshrooms"
+	mutants = null
+	chems = list(/datum/reagent/water = list(1,40))
+	exude_gasses = list(GAS_HYDROGEN = 5)
+
+/datum/seed/mushroom/glowshroom/hydro/New()
+	..()
+	set_trait(TRAIT_BIOLUM_COLOUR,"#ff4500")
