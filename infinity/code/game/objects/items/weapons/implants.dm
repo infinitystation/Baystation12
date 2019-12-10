@@ -1,4 +1,4 @@
-/mob/living/carbon/human/proc/implant_head(var/datum/gear/G = new/datum/gear/utility/implanth)
+/mob/living/carbon/human/proc/implant_head(var/datum/gear/G = new/datum/gear/utility/tajcoll)
 	var/obj/item/weapon/implant/I = new G.path(src)
 	I.imp_in = src
 	I.implanted = 1
@@ -7,7 +7,7 @@
 	I.part = affected
 	I.implanted(src)
 
-/mob/living/carbon/human/proc/implant_chest(var/datum/gear/G = new/datum/gear/utility/implantc)
+/mob/living/carbon/human/proc/implant_chest(var/datum/gear/G = new/datum/gear/utility/tajhold)
 	var/obj/item/weapon/implant/I = new G.path(src)
 	I.imp_in = src
 	I.implanted = 1
