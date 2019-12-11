@@ -100,7 +100,7 @@
 	emote("glare")
 
 /mob/living/verb/groan()
-	set name = "Вздохнуть с досадой"
+	set name = "Болезненный стон"
 	set category = "Emote"
 	emote("groan")
 

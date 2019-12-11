@@ -15,6 +15,7 @@
 	a_intent = I_HURT
 	stop_automated_movement = 1
 	status_flags = CANPUSH
+	density = 0 //INF
 	attacktext = "nipped"
 	friendly = "prods"
 	wander = 0

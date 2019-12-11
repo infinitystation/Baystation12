@@ -15,7 +15,7 @@
 
 	gluttonous = GLUT_TINY
 
-	speech_chance = 40 // infinity
+	speech_chance = 40 //INF
 	ambiguous_genders = 0
 	bandages_icon = 'icons/mob/bandage.dmi'
 
