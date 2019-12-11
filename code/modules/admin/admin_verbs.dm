@@ -4,13 +4,13 @@ var/list/admin_verbs_default = list(
 	/client/proc/hide_verbs,			//hides all our adminverbs,
 	/client/proc/getserverlog,			//allows us to fetch server logs (diary) for other days,
 	/client/proc/hide_most_verbs,		//hides all our hideable adminverbs,
-	/client/proc/cmd_check_new_players,
+//INF unused	/client/proc/cmd_check_new_players,
 	/client/proc/cmd_staff_say,
 	)
 
 var/list/admin_verbs_admin = list(
-	/datum/admins/proc/show_player_panel,	//shows an interface for individual players, with various links (links require additional flags,
-	/client/proc/player_panel,
+//INF unused	/datum/admins/proc/show_player_panel,	//shows an interface for individual players, with various links (links require additional flags,
+//INF unused	/client/proc/player_panel,
 	/client/proc/player_panel_new,		//shows an interface for all players, with links to various panels,
 	/client/proc/invisimin,				//allows our mob to go invisible/visible,
 	/datum/admins/proc/show_game_mode,  //Configuration window for the current game mode.,
@@ -23,7 +23,7 @@ var/list/admin_verbs_admin = list(
 	/client/proc/admin_ghost,			//allows us to ghost/reenter body at will,
 	/client/proc/toggle_view_range,		//changes how far we can see,
 	/datum/admins/proc/view_txt_log,	//shows the server log (diary) for today,
-	/datum/admins/proc/view_atk_log,	//shows the server combat-log, doesn't do anything presently,
+//INF	/datum/admins/proc/view_atk_log,	//shows the server combat-log, doesn't do anything presently,
 	/client/proc/cmd_admin_pm_context,	//right-click adminPM interface,
 	/client/proc/cmd_admin_pm_panel,	//admin-pm list,
 	/client/proc/cmd_admin_delete,		//delete an instance/object/mob/etc,
@@ -60,14 +60,14 @@ var/list/admin_verbs_admin = list(
 	/client/proc/cmd_admin_say,			//admin-only ooc chat,
 	/datum/admins/proc/togglehubvisibility, //toggles visibility on the BYOND Hub,
 	/datum/admins/proc/PlayerNotes,
-	/datum/admins/proc/show_player_info,
+//INF	/datum/admins/proc/show_player_info,
 	/client/proc/free_slot_submap,
 	/client/proc/free_slot_crew,			//frees slot for chosen job,
 	/client/proc/cmd_admin_change_custom_event,
 //INF	/client/proc/cmd_admin_rejuvenate,
 	/client/proc/toggleghostwriters,
 	/client/proc/toggledrones,
-	/client/proc/check_customitem_activity,
+//INF unused	/client/proc/check_customitem_activity,
 	/client/proc/man_up,
 	/client/proc/global_man_up,
 	/client/proc/response_team, // Response Teams admin verb,
@@ -82,7 +82,7 @@ var/list/admin_verbs_admin = list(
 	/client/proc/change_human_appearance_self,	// Allows the human-based mob itself change its basic appearance ,
 	/client/proc/change_security_level,
 	/client/proc/view_chemical_reaction_logs,
-	/client/proc/makePAI,
+//INF unused	/client/proc/makePAI,
 	/client/proc/fixatmos,
 	/client/proc/list_traders,
 	/client/proc/add_trader,
@@ -106,17 +106,17 @@ var/list/admin_verbs_fun = list(
 	/client/proc/cmd_admin_dress, //INF WAS /datum/admins/proc/cmd_admin_dress,
 	/client/proc/cmd_admin_gib_self,
 	/client/proc/drop_bomb,
-	/client/proc/everyone_random,
+//INF unused	/client/proc/everyone_random,
 	/client/proc/cinematic,
 	/datum/admins/proc/toggle_space_ninja,
 	/client/proc/cmd_admin_add_freeform_ai_law,
 	/client/proc/cmd_admin_add_random_ai_law,
 	/client/proc/toggle_random_events,
-	/client/proc/editappear,
+//INF unused	/client/proc/editappear,
 	/client/proc/roll_dices,
 	/datum/admins/proc/call_supply_drop,
 	/datum/admins/proc/call_drop_pod,
-	/client/proc/create_dungeon,
+//INF unused	/client/proc/create_dungeon,
 	/datum/admins/proc/ai_hologram_set,
 //[INF],
 	/datum/admins/proc/intercom,		//send a fake intercom message, like an arrivals announcement,
@@ -161,7 +161,7 @@ var/list/admin_verbs_server = list(
 	/datum/admins/proc/adjump,
 	/datum/admins/proc/toggle_space_ninja,
 	/client/proc/toggle_random_events,
-	/client/proc/check_customitem_activity,
+//INF unused	/client/proc/check_customitem_activity,
 	/client/proc/nanomapgen_DumpImage,
 //[INF],
 	/client/proc/cmd_toggle_admin_help,
@@ -260,7 +260,7 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/admin_ghost,
 	/client/proc/toggle_view_range,
 	/datum/admins/proc/view_txt_log,
-	/datum/admins/proc/view_atk_log,
+//INF	/datum/admins/proc/view_atk_log,
 	/client/proc/cmd_admin_check_contents,
 	/datum/admins/proc/access_news_network,
 	/client/proc/admin_call_shuttle,
@@ -309,7 +309,7 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/roll_dices,
 	/proc/possess,
 	/proc/release,
-	/datum/admins/proc/show_skills,
+//INF unused	/datum/admins/proc/show_skills,
 	/datum/admins/proc/paralyze_mob
 	)
 var/list/admin_verbs_mod = list(
@@ -319,11 +319,11 @@ var/list/admin_verbs_mod = list(
 	/client/proc/debug_global_variables,
 	/datum/admins/proc/PlayerNotes,
 	/client/proc/admin_ghost,
-	/datum/admins/proc/show_player_info,
+//INF unused	/datum/admins/proc/show_player_info,
 	/client/proc/player_panel_new,
 	/client/proc/dsay,
-	/datum/admins/proc/show_skills,
-	/datum/admins/proc/show_player_panel,
+//INF unused	/datum/admins/proc/show_skills,
+//INF unused	/datum/admins/proc/show_player_panel,
 	/client/proc/check_antagonists,
 	/client/proc/cmd_admin_direct_narrate,
 	/client/proc/aooc,
@@ -336,7 +336,7 @@ var/list/admin_verbs_mentor = list(
 	/client/proc/cmd_admin_pm_panel,
 	/datum/admins/proc/PlayerNotes,
 	/client/proc/admin_ghost,
-	/datum/admins/proc/show_player_info
+//INF	/datum/admins/proc/show_player_info
 )
 
 /client/proc/add_admin_verbs()
@@ -725,7 +725,7 @@ var/list/admin_verbs_mentor = list(
 
 /client/proc/rename_silicon()
 	set name = "Rename Silicon"
-	set category = "Admin"
+	set category = "Fun" //INF, WAS "Admin"
 
 	if(!check_rights(R_ADMIN)) return
 
@@ -740,7 +740,7 @@ var/list/admin_verbs_mentor = list(
 
 /client/proc/manage_silicon_laws()
 	set name = "Manage Silicon Laws"
-	set category = "Admin"
+	set category = "Fun" //INF, WAS "Admin"
 
 	if(!check_rights(R_ADMIN)) return
 
@@ -755,7 +755,7 @@ var/list/admin_verbs_mentor = list(
 /client/proc/change_human_appearance_admin()
 	set name = "Change Mob Appearance - Admin"
 	set desc = "Allows you to change the mob appearance"
-	set category = "Admin"
+	set category = "Fun" //INF, WAS "Admin"
 
 	if(!check_rights(R_FUN)) return
 
@@ -769,7 +769,7 @@ var/list/admin_verbs_mentor = list(
 /client/proc/change_human_appearance_self()
 	set name = "Change Mob Appearance - Self"
 	set desc = "Allows the mob to change its appearance"
-	set category = "Admin"
+	set category = "Fun" //INF, WAS "Admin"
 
 	if(!check_rights(R_FUN)) return
 
@@ -792,7 +792,7 @@ var/list/admin_verbs_mentor = list(
 /client/proc/change_security_level()
 	set name = "Set security level"
 	set desc = "Sets the security level"
-	set category = "Admin"
+	set category = "Fun" //INF, WAS "Admin"
 
 	if(!check_rights(R_ADMIN))	return
 
