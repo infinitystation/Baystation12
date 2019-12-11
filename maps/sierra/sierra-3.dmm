@@ -527,21 +527,20 @@
 /turf/simulated/open,
 /area/maintenance/firstdeck/forestarboard)
 "aaX" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
+/obj/structure/closet/secure_closet/guncabinet,
+/obj/item/weapon/barrier,
+/obj/item/weapon/storage/toolbox/mechanical,
+/obj/item/weapon/gun/energy/ionrifle/small,
+/obj/item/weapon/gun/energy/gun,
+/obj/item/clothing/suit/armor/captain,
+/obj/item/clothing/gloves/captain,
+/obj/item/clothing/head/caphat,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/turf/simulated/open,
-/area/maintenance/firstdeck/aftstarboard)
+/turf/simulated/floor/tiled,
+/area/crew_quarters/heads/captain/secret_room/level_two)
 "aaY" = (
 /obj/structure/mattress,
 /turf/simulated/floor/plating,
@@ -5193,15 +5192,21 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "ajc" = (
-/obj/structure/catwalk,
-/obj/structure/disposalpipe/sortjunction{
-	dir = 4;
-	name = "Drone Station";
-	sort_type = "Drone Station"
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /turf/simulated/open,
-/area/maintenance/firstdeck/centralstarboard)
+/area/maintenance/firstdeck/aftstarboard)
 "ajd" = (
 /obj/machinery/bodyscanner{
 	dir = 4
@@ -10974,21 +10979,15 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo/upper)
 "asb" = (
-/obj/structure/closet/secure_closet/guncabinet,
-/obj/item/weapon/barrier,
-/obj/item/weapon/storage/toolbox/mechanical,
-/obj/item/weapon/gun/energy/ionrifle/small,
-/obj/item/weapon/gun/energy/gun,
-/obj/item/clothing/suit/armor/captain,
-/obj/item/clothing/gloves/captain,
-/obj/item/clothing/head/caphat,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 8
+/obj/structure/catwalk,
+/obj/structure/disposalpipe/sortjunction{
+	dir = 4;
+	name = "Drone Station";
+	sort_type = "Drone Station"
 	},
-/obj/random_multi/single_item/captains_spare_id,
-/turf/simulated/floor/tiled,
-/area/crew_quarters/heads/captain/secret_room/level_two)
+/turf/simulated/floor/plating,
+/turf/simulated/open,
+/area/maintenance/firstdeck/centralstarboard)
 "asc" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/effect/paint/nt_white,
@@ -25966,16 +25965,6 @@
 "aNW" = (
 /obj/structure/bed/padded,
 /obj/item/weapon/bedsheet/rd,
-/obj/item/weapon/card/id/sierra/crew/adjutant{
-	age = "17";
-	blood_type = "A+";
-	dna_hash = "f4eb79df";
-	fingerprint_hash = "eb79df";
-	military_branch = "Employee";
-	military_rank = "NanoTrasen";
-	registered_name = "Liffu Selbs";
-	sex = "female"
-	},
 /obj/item/weapon/reagent_containers/syringe,
 /obj/item/weapon/reagent_containers/syringe,
 /obj/random/drinkbottle,
@@ -30886,6 +30875,13 @@
 /obj/machinery/atmospherics/pipe/simple/visible/red,
 /turf/simulated/floor/reinforced,
 /area/thruster/d1port)
+"aWq" = (
+/obj/item/weapon/storage/toolbox/mechanical,
+/obj/structure/closet/crate/freezer/rations,
+/obj/random/cash,
+/obj/random/cash,
+/turf/simulated/floor/wood/walnut,
+/area/maintenance/firstdeck/foreport)
 "aWr" = (
 /obj/structure/table/standard,
 /obj/item/clothing/mask/gas/alt,
@@ -31098,6 +31094,14 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/airless,
 /area/solar/port)
+"aWP" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/item/clothing/under/rank/adjutant,
+/obj/item/modular_computer/tablet/lease/preset/command,
+/turf/simulated/floor/wood/walnut,
+/area/maintenance/firstdeck/foreport)
 "aWR" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/item/device/radio/intercom{
@@ -31415,18 +31419,6 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/reinforced,
 /area/thruster/d1port)
-"aXv" = (
-/obj/item/weapon/storage/toolbox/mechanical,
-/obj/structure/closet/crate/freezer/rations,
-/obj/item/weapon/spacecash/bundle/c1000,
-/obj/item/weapon/spacecash/bundle/c1000,
-/obj/random/cash,
-/obj/random/cash,
-/obj/random/cash,
-/obj/random/cash,
-/obj/random/cash,
-/turf/simulated/floor/wood/walnut,
-/area/maintenance/firstdeck/foreport)
 "aXw" = (
 /obj/machinery/door/airlock/research{
 	autoset_access = 0;
@@ -32346,18 +32338,6 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod10/station)
-"aZo" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/structure/closet/secure_closet/adjutant,
-/obj/item/clothing/under/rank/adjutant,
-/obj/item/modular_computer/tablet/lease/preset/command,
-/obj/item/weapon/spacecash/bundle/c1000,
-/obj/item/weapon/spacecash/bundle/c1000,
-/obj/item/weapon/spacecash/bundle/c500,
-/turf/simulated/floor/wood/walnut,
-/area/maintenance/firstdeck/foreport)
 "aZp" = (
 /obj/machinery/firealarm{
 	dir = 4;
@@ -44303,7 +44283,7 @@ aEn
 aGJ
 aPm
 aJl
-aXv
+aWq
 uYf
 abt
 aYw
@@ -44707,7 +44687,7 @@ aGQ
 aKT
 aKi
 aJl
-aZo
+aWP
 uYf
 abt
 aYw
@@ -46489,7 +46469,7 @@ aYw
 aYw
 amM
 amM
-asb
+aaX
 bns
 amM
 amM
@@ -52153,13 +52133,13 @@ aca
 aca
 axb
 aSt
-ajc
+asb
 axO
 aCj
-aCi
+aCj
 atK
-aCi
-aCi
+aCj
+aCj
 aqc
 arg
 arg
@@ -52794,7 +52774,7 @@ aUf
 aZF
 aUf
 aUf
-aRU
+aUf
 aRU
 aRU
 aYw
@@ -53162,7 +53142,7 @@ aca
 aca
 aca
 aca
-aca
+acS
 afM
 akh
 apP
@@ -55586,7 +55566,7 @@ aca
 aca
 aca
 aca
-aca
+acS
 aeF
 aiM
 ahz
@@ -60834,7 +60814,7 @@ abF
 abF
 aay
 aaB
-aaX
+ajc
 aeH
 aeH
 agM
@@ -63686,7 +63666,7 @@ azv
 aAD
 aBL
 avg
-xXS
+avg
 aGL
 aLO
 aVu
@@ -63888,7 +63868,7 @@ axf
 ayi
 avh
 avg
-xXS
+avg
 aJi
 aLO
 aVu
