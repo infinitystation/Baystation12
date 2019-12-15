@@ -6,20 +6,20 @@
 	#include "blank.dmm"
 
 	#include "../away/empty.dmm"
-//inf	#include "../away/mining/mining.dm"
+//INF	#include "../away/mining/mining.dm"
 	#include "../away/derelict/derelict.dm"
 	#include "../away/bearcat/bearcat.dm"
 	#include "../away/lost_supply_base/lost_supply_base.dm"
-//inf	#include "../away/smugglers/smugglers.dm"
+//INF	#include "../away/smugglers/smugglers.dm"
 	#include "../away/casino/casino.dm"
 	#include "../away/magshield/magshield.dm"
 	#include "../away/slavers/slavers_base.dm"
-//inf	#include "../away/blueriver/blueriver.dm"
+//INF	#include "../away/blueriver/blueriver.dm"
 	#include "../away/mobius_rift/mobius_rift.dm"
 //	#include "../away/icarus/icarus.dm" temporarily removed while we investigate Travis failures
 	#include "../away/errant_pisces/errant_pisces.dm"
 	#include "../away/lar_maria/lar_maria.dm"
-//inf	#include "../away/skrellscoutship/skrellscoutship.dm"
+//INF	#include "../away/skrellscoutship/skrellscoutship.dm"
 	#include "../away/unishi/unishi.dm"
 	#include "../away/ascent/ascent.dm"
 
@@ -31,8 +31,8 @@
 //	#include "../away_inf/gunboat/gunboat.dm" - TORCH, doesn't maintenance (someone want to change it?)
 //	#include "../away_inf/marksman/marksman.dm" - TORCH, doesn't maintenance (someone want to change it?)
 //	#include "../away_inf/sentinel/sentinel.dm" - TORCH, doesn't maintenance (someone want to change it?)
-//	#include "../away_inf/merchant/merchant.dm" - WIP
-//	#include "../away_inf/rubidu/rubidu.dm" - WIP
+//	#include "../away_inf/merchant/merchant.dm" - WIP, doesn't maintenance (someone want to change it?)
+//	#include "../away_inf/rubidu/rubidu.dm" - WIP, doesn't maintenance (someone want to change it?)
 //	#include "../away_inf/salvagers/salvagers.dm" - WIP
 //	#include "../away_inf/white_star/white_star.dm" - WIP
 	#include "../away_inf/mining/mining.dm"
@@ -40,7 +40,7 @@
 	#include "../away_inf/yacht/yacht.dm"
 	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
 //	#include "../away_inf/patrol/patrol.dm"
-//[INF]
+//[/INF]
 
 	#define using_map_DATUM /datum/map/away_sites_testing
 
