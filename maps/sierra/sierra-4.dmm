@@ -112,9 +112,6 @@
 /obj/machinery/mech_recharger,
 /turf/simulated/floor/tiled/dark,
 /area/syndicate_mothership/raider_base)
-"aay" = (
-/turf/simulated/floor/tiled/white,
-/area/syndicate_mothership/raider_base)
 "aaz" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave{
@@ -255,9 +252,6 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/syndicate_mothership/raider_base)
 "aaP" = (
-/obj/structure/sign/poster/humpost/hum_4{
-	pixel_y = 32
-	},
 /turf/simulated/floor/tiled/white,
 /area/syndicate_mothership/raider_base)
 "aaQ" = (
@@ -31138,9 +31132,9 @@ aae
 aae
 aaf
 aaz
-aay
+aaP
 abe
-aay
+aaP
 abq
 aKQ
 aaw
@@ -31340,7 +31334,7 @@ aae
 aae
 aaf
 aak
-aay
+aaP
 aaq
 abs
 aaf
@@ -31543,7 +31537,7 @@ aae
 aaf
 aaP
 aaq
-aay
+aaP
 aIc
 aaf
 act
