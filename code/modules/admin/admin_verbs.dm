@@ -9,7 +9,7 @@ var/list/admin_verbs_default = list(
 	)
 
 var/list/admin_verbs_admin = list(
-//INF unused	/datum/admins/proc/show_player_panel,	//shows an interface for individual players, with various links (links require additional flags,
+	/datum/admins/proc/show_player_panel,	//shows an interface for individual players, with various links (links require additional flags,
 //INF unused	/client/proc/player_panel,
 	/client/proc/player_panel_new,		//shows an interface for all players, with links to various panels,
 	/client/proc/invisimin,				//allows our mob to go invisible/visible,
@@ -309,7 +309,7 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/roll_dices,
 	/proc/possess,
 	/proc/release,
-//INF unused	/datum/admins/proc/show_skills,
+	/datum/admins/proc/show_skills,
 	/datum/admins/proc/paralyze_mob
 	)
 var/list/admin_verbs_mod = list(
@@ -322,8 +322,8 @@ var/list/admin_verbs_mod = list(
 //INF unused	/datum/admins/proc/show_player_info,
 	/client/proc/player_panel_new,
 	/client/proc/dsay,
-//INF unused	/datum/admins/proc/show_skills,
-//INF unused	/datum/admins/proc/show_player_panel,
+	/datum/admins/proc/show_skills,
+	/datum/admins/proc/show_player_panel,
 	/client/proc/check_antagonists,
 	/client/proc/cmd_admin_direct_narrate,
 	/client/proc/aooc,
