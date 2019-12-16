@@ -212,22 +212,24 @@
 	icon = 'infinity/icons/obj/vending.dmi'
 	density = 1
 	icon_state = "pai"
-	products = list(/obj/item/weapon/paimod/advanced_holo = 3,
-					/obj/item/weapon/paimod/memory/standart = 5,
-					/obj/item/weapon/paimod/memory/advanced = 3,
-					/obj/item/weapon/paimod/memory/lambda = 1
+	products = list(/obj/item/weapon/paimod/special/advanced_holo	=	3,
+					/obj/item/weapon/paimod/holoskins/paiwoman		=	3,
+					/obj/item/weapon/paimod/memory/standart			=	5,
+					/obj/item/weapon/paimod/memory/advanced			=	3,
+					/obj/item/weapon/paimod/memory/lambda			=	1
 					)
-	prices = list(/obj/item/weapon/paimod/advanced_holo = 150,
-					/obj/item/weapon/paimod/memory/standart = 20,
-					/obj/item/weapon/paimod/memory/advanced = 60,
-					/obj/item/weapon/paimod/memory/lambda = 120,
-					/obj/item/weapon/paimod/hack_camo = 150,
-					/obj/item/weapon/paimod/hack_speed/standart = 120,
-					/obj/item/weapon/paimod/hack_speed/advanced = 200
+	prices = list(/obj/item/weapon/paimod/special/advanced_holo		=	150,
+					/obj/item/weapon/paimod/holoskins/paiwoman		=	50,
+					/obj/item/weapon/paimod/memory/standart			=	20,
+					/obj/item/weapon/paimod/memory/advanced			=	60,
+					/obj/item/weapon/paimod/memory/lambda			=	120,
+					/obj/item/weapon/paimod/special/hack_camo		=	150,
+					/obj/item/weapon/paimod/hack_speed/standart		=	120,
+					/obj/item/weapon/paimod/hack_speed/advanced		=	200
 					)
-	contraband = list(/obj/item/weapon/paimod/hack_camo = 2,
-					/obj/item/weapon/paimod/hack_speed/standart = 2,
-					/obj/item/weapon/paimod/hack_speed/advanced = 1)
+	contraband = list(/obj/item/weapon/paimod/special/hack_camo		=	2,
+					/obj/item/weapon/paimod/hack_speed/standart		=	2,
+					/obj/item/weapon/paimod/hack_speed/advanced		=	1)
 
 // overrides ahead
 
