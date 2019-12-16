@@ -6,14 +6,16 @@
 	item_state = null
 	suit_type = "support exosuit"
 	armor = list(
-		melee = ARMOR_MELEE_VERY_HIGH, 
-		bullet = ARMOR_BALLISTIC_RIFLE, 
-		laser = ARMOR_LASER_RIFLES, 
-		energy = ARMOR_ENERGY_RESISTANT, 
-		bomb = ARMOR_BOMB_RESISTANT, 
-		bio = ARMOR_BIO_SHIELDED, 
+		melee = ARMOR_MELEE_MAJOR,
+		bullet = 1.1 * ARMOR_BALLISTIC_RESISTANT,
+		laser = 1.1 * ARMOR_LASER_RIFLES,
+		energy = ARMOR_ENERGY_RESISTANT,
+		bomb = ARMOR_BOMB_RESISTANT,
+		bio = ARMOR_BIO_SHIELDED,
 		rad = ARMOR_RAD_SHIELDED
 	)
+	armor_type = /datum/extension/armor/ablative
+	armor_degradation_speed = 0.05
 	online_slowdown = 0
 	offline_slowdown = 1
 	equipment_overlay_icon = null
@@ -215,12 +217,12 @@
 /obj/item/weapon/rig/mantid/gyne
 	name = "gyne support exosuit"
 	armor = list(
-		melee = ARMOR_MELEE_VERY_HIGH, 
-		bullet = ARMOR_BALLISTIC_AP, 
-		laser = ARMOR_LASER_RIFLES, 
-		energy = ARMOR_ENERGY_RESISTANT, 
-		bomb = ARMOR_BOMB_RESISTANT, 
-		bio = ARMOR_BIO_SHIELDED, 
+		melee = ARMOR_MELEE_VERY_HIGH,
+		bullet = ARMOR_BALLISTIC_RIFLE,
+		laser = ARMOR_LASER_RIFLES,
+		energy = ARMOR_ENERGY_RESISTANT,
+		bomb = ARMOR_BOMB_RESISTANT,
+		bio = ARMOR_BIO_SHIELDED,
 		rad = ARMOR_RAD_SHIELDED
 	)
 	icon_override = 'icons/mob/species/mantid/onmob_back_gyne.dmi'

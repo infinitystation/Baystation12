@@ -91,13 +91,11 @@
 				totalPlayers++
 				if(player.ready)totalPlayersReady++
 
-		if(GAME_STATE >= RUNLEVEL_GAME)
-			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
-			var/decl/security_level/SL = security_state.current_security_level
-			stat("Security level:", SL.name)
-
-/mob/new_player/Topic(href, href_list[])
-	if(!client)	return 0
+/mob/new_player/Topic(href, href_list) // This is a full override; does not call parent.
+	if(usr != src)
+		return TOPIC_NOACTION
+	if(!client)
+		return TOPIC_NOACTION
 
 	if(href_list["show_preferences"])
 		client.prefs.ShowChoices(src)

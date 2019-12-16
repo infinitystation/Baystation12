@@ -62,22 +62,6 @@ What is the naming convention for planes or layers?
 
 #define CLICKCATCHER_PLANE -100
 
-//Reserve planes for openspace
-#define OPENSPACE_PLANE_START -462
-#define OPENSPACE_PLANE_END -22
-#define OPENSPACE_PLANE -463
-#define OVER_OPENSPACE_PLANE -22
-
-
-#define BELOW_TURF_PLANE             -22 // objects that are below turfs. Useful for asteroid smoothing or other such magic.
-	// TURF_LAYER 2
-
-#define PLATING_PLANE                -21
-
-#define ABOVE_PLATING_PLANE          -20
-
-	#define HOLOMAP_LAYER        1 // NOTE: ENSURE this is equal to the one at ABOVE_TURF_PLANE!
-
 #define SPACE_PLANE               -99
 	#define SPACE_LAYER                  1
 #define SKYBOX_PLANE              -98
@@ -87,10 +71,9 @@ What is the naming convention for planes or layers?
 	#define DEBRIS_LAYER                 1
 	#define DUST_LAYER                   2
 
-//Reserve planes for openspace
-#define OPENSPACE_PLANE            -96
-#define OVER_OPENSPACE_PLANE        -3
+// Openspace uses planes -80 through -70.
 
+#define OVER_OPENSPACE_PLANE        -3
 
 #define DEFAULT_PLANE                   0
 	#define PLATING_LAYER               1
@@ -169,6 +152,7 @@ What is the naming convention for planes or layers?
 	#define ABOVE_PROJECTILE_LAYER      4.18
 	#define SINGULARITY_LAYER           4.19
 	#define POINTER_LAYER               4.20
+	#define MIMICED_LIGHTING_LAYER      4.21	// Z-Mimic-managed lighting
 
 	//FLY_LAYER                          5
 	//OBSERVER

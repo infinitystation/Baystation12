@@ -6,13 +6,13 @@
 	w_class = ITEM_SIZE_NO_CONTAINER
 	color = "#666666"
 	var/state = 0
-	var/health = 200
+	var/health = 100
 	var/cover = 50 //how much cover the girder provides against projectiles.
 	var/material/reinf_material
 	var/reinforcing = 0
 
 /obj/structure/girder/Initialize()
-	set_extension(src, /datum/extension/penetration, /datum/extension/penetration/simple, 100)
+	set_extension(src, /datum/extension/penetration/simple, 100)
 	. = ..()
 
 /obj/structure/girder/displaced
@@ -47,12 +47,14 @@
 	if(!istype(Proj, /obj/item/projectile/beam))
 		damage *= 0.4 //non beams do reduced damage
 
+	..()
+	take_damage(damage)
+
+/obj/structure/girder/take_damage(damage)
 	health -= damage
 	..()
 	if(health <= 0)
 		dismantle()
-
-	return
 
 /obj/structure/girder/CanFluidPass(var/coming_from)
 	return TRUE
@@ -147,6 +149,7 @@
 				return ..()
 
 	else
+		take_damage(W.force)
 		return ..()
 
 /obj/structure/girder/proc/construct_wall(obj/item/stack/material/S, mob/user)

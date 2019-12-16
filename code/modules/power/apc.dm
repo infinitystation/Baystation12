@@ -42,6 +42,13 @@
 #define APC_UPOVERLAY_OPERATING 16
 
 // Various APC types
+/obj/machinery/power/apc/inactive
+	lighting = 0
+	equipment = 0
+	environ = 0
+	locked = 0
+	coverlocked = 0
+
 /obj/machinery/power/apc/critical
 	is_critical = 1
 

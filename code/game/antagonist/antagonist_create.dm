@@ -106,9 +106,11 @@
 	if (config.objectives_disabled == CONFIG_OBJECTIVE_NONE || !player.objectives.len) //inf, was moved from lines below
 		to_chat(player.current, "<span class='notice'>[antag_text]</span>")
 	if(leader_welcome_text && player == leader)
-		to_chat(player.current, "<span class='notice'>[leader_welcome_text]</span>")
+		to_chat(player.current, "<span class='antagdesc'>[leader_welcome_text]</span>")
 	else
-		to_chat(player.current, "<span class='notice'>[welcome_text]</span>")
+		to_chat(player.current, "<span class='antagdesc'>[welcome_text]</span>")
+	if (config.objectives_disabled == CONFIG_OBJECTIVE_NONE || !player.objectives.len)
+		to_chat(player.current, "[antag_text]")
 
 	if((flags & ANTAG_HAS_NUKE) && !spawned_nuke)
 		create_nuke()

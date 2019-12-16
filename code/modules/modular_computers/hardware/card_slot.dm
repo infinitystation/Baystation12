@@ -13,27 +13,26 @@
 
 	var/obj/item/weapon/card/id/stored_card = null
 
-/obj/item/weapon/stock_parts/computer/card_slot/diagnostics(var/mob/user)
-	..()
-	var/to_send = list()
-	to_send += "[name] status: [stored_card ? "Card Inserted" : "Card Not Present"]\n"
+/obj/item/weapon/stock_parts/computer/card_slot/diagnostics()
+	. = ..()
+	. += "[name] status: [stored_card ? "Card Inserted" : "Card Not Present"]\n"
 	if(stored_card)
-		to_send += "Testing card read...\n"
+		. += "Testing card read...\n"
 		if( damage >= damage_failure )
-			to_send += "...FAILURE!\n"
+			. += "...FAILURE!\n"
 		else
 			var/read_string_stability
 			if(check_functionality())
 				read_string_stability = 100
 			else
 				read_string_stability = 100 - malfunction_probability
-			to_send += "Registered Name: [stars(stored_card.registered_name, read_string_stability)]\n"
-			to_send += "Registered Assignment: [stars(stored_card.assignment, read_string_stability)]\n"
-			to_send += "Registered Rank: [stars(stored_card.rank, read_string_stability)]\n"
-			to_send += "Access Addresses Enabled: \n"
+			. += "Registered Name: [stars(stored_card.registered_name, read_string_stability)]\n"
+			. += "Registered Assignment: [stars(stored_card.assignment, read_string_stability)]\n"
+			. += "Registered Rank: [stars(stored_card.rank, read_string_stability)]\n"
+			. += "Access Addresses Enabled: \n"
 			var/list/access_list = stored_card.GetAccess()
 			if(!access_list) // "NONE" for empty list
-				to_send += "NONE"
+				. += "NONE"
 			else
 				var/list_of_accesses = list()
 				for(var/access_id in access_list)
@@ -46,21 +45,14 @@
 							list_of_accesses += uppertext(access_information.desc)
 					else
 						list_of_accesses += "RD_ERR"
-				to_send += jointext(list_of_accesses, ", ") + "\n" // Should append a proper, comma separated list.
-	
-	to_chat(user, JOINTEXT(to_send))
-		
-/obj/item/weapon/stock_parts/computer/card_slot/verb/verb_eject_id()
+				. += jointext(list_of_accesses, ", ") + "\n" // Should append a proper, comma separated list.
+
+/obj/item/weapon/stock_parts/computer/card_slot/proc/verb_eject_id()
 	set name = "Remove ID"
 	set category = "Object"
 	set src in view(1)
 
-	var/mob/user = usr //inf 
-	/*was:
-	if(!user)
-		user = usr
-	*/
-	if(!CanPhysicallyInteract(user))
+	if(!CanPhysicallyInteract(usr))
 		to_chat(usr, "<span class='warning'>You can't reach it.</span>")
 		return
 
@@ -69,10 +61,11 @@
 		device = locate() in src
 
 	if(!device.stored_card)
-		to_chat(user, "There is no card in \the [src]")
+		if(usr)
+			to_chat(usr, "There is no card in \the [src]")
 		return
 
-	device.eject_id(user)
+	device.eject_id(usr)
 
 /obj/item/weapon/stock_parts/computer/card_slot/proc/eject_id(mob/user)
 	if(!stored_card)
@@ -84,11 +77,11 @@
 	else
 		dropInto(loc)
 	stored_card = null
-	
+
 	var/datum/extension/interactive/ntos/os = get_extension(loc, /datum/extension/interactive/ntos)
 	if(os)
 		os.event_idremoved()
-	loc.verbs -= /obj/item/weapon/stock_parts/computer/card_slot/verb/verb_eject_id
+	loc.verbs -= /obj/item/weapon/stock_parts/computer/card_slot/proc/verb_eject_id
 	return TRUE
 
 /obj/item/weapon/stock_parts/computer/card_slot/proc/insert_id(var/obj/item/weapon/card/id/I, mob/user)
@@ -105,7 +98,7 @@
 	stored_card = I
 	to_chat(user, "You insert [I] into [src].")
 	if(isobj(loc))
-		loc.verbs |= /obj/item/weapon/stock_parts/computer/card_slot/verb/verb_eject_id
+		loc.verbs |= /obj/item/weapon/stock_parts/computer/card_slot/proc/verb_eject_id
 	return TRUE
 
 /obj/item/weapon/stock_parts/computer/card_slot/attackby(obj/item/weapon/card/id/I, mob/living/user)
@@ -113,7 +106,7 @@
 		return
 	insert_id(I, user)
 	return TRUE
-	
+
 /obj/item/weapon/stock_parts/computer/card_slot/broadcaster // read only
 	name = "RFID card broadcaster"
 	desc = "Reads and broadcasts the RFID signal of an inserted card."
@@ -124,7 +117,7 @@
 
 /obj/item/weapon/stock_parts/computer/card_slot/Destroy()
 	if(loc) //INF
-		loc.verbs -= /obj/item/weapon/stock_parts/computer/card_slot/verb/verb_eject_id
+		loc.verbs -= /obj/item/weapon/stock_parts/computer/card_slot/proc/verb_eject_id
 	if(stored_card)
 		QDEL_NULL(stored_card)
 	return ..()

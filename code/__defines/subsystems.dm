@@ -46,6 +46,7 @@
 #define SS_INIT_SHUTTLE         -5
 #define SS_INIT_GOALS           -5
 #define SS_INIT_LIGHTING        -6
+#define SS_INIT_ZCOPY           -7
 
 #define SS_INIT_STICKY_BAN      -9//inf
 

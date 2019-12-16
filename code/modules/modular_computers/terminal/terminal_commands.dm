@@ -111,8 +111,9 @@ Subtypes
 	var/obj/item/weapon/stock_parts/computer/ch = terminal.computer.find_hardware_by_name(text)
 	if(!ch)
 		return "hwinfo: No such hardware found."
-	ch.diagnostics(user)
-	return "Running diagnostic protocols..."
+	. = list("Running diagnostic protocols...")
+	. += ch.diagnostics()
+	return
 
 // Sysadmin
 /datum/terminal_command/relays
@@ -187,7 +188,7 @@ Subtypes
 		. += "failed. Target device not responding."
 		return
 	. += "ping successful."
-
+/*INF COMMENT, telnet replacing it, cuz IT workers love to troll users though it //It can 'cause some balance.
 /datum/terminal_command/ssh
 	name = "ssh"
 	man_entry = list("Format: ssh nid", "Opens a remote terminal at the location of nid, if a valid device nid is specified.")
@@ -214,7 +215,7 @@ Subtypes
 	LAZYADD(comp.terminals, new_term)
 	LAZYADD(origin.terminals, new_term)
 	return "ssh: Connection established."
-
+*/
 /datum/terminal_command/proxy
 	name = "proxy"
 	man_entry = list(

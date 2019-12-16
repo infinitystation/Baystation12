@@ -1,4 +1,5 @@
 /datum/extension/local_network_member
+	base_type = /datum/extension/local_network_member
 	var/id_tag
 
 /datum/extension/local_network_member/Destroy()
@@ -42,6 +43,11 @@
 		id_tag = null
 		lan = null
 	return lan
+
+/datum/extension/local_network_member/nano_host()
+	if(holder)
+		return holder.nano_host()
+	. = ..()
 
 /datum/extension/local_network_member/proc/get_new_tag(var/mob/user)
 	var/new_ident = input(user, "Enter a new ident tag.", "[holder]", id_tag) as null|text

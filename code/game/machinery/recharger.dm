@@ -19,9 +19,6 @@
 	uncreated_component_parts = null //inf
 
 /obj/machinery/recharger/attackby(obj/item/weapon/G as obj, mob/user as mob)
-	if(istype(user,/mob/living/silicon))
-		return
-
 	var/allowed = 0
 	for (var/allowed_type in allowed_devices)
 		if (istype(G, allowed_type)) allowed = 1

@@ -13,6 +13,7 @@
 #define INVISIBILITY_OBSERVER    60
 #define INVISIBILITY_EYE         61
 #define INVISIBILITY_SYSTEM      99
+#define INVISIBILITY_ABSTRACT   101	// special: this can never be seen, regardless of see_invisible
 
 #define SEE_INVISIBLE_LIVING     25
 #define SEE_INVISIBLE_NOLIGHTING 15
@@ -206,9 +207,9 @@
 #define ERROR_USEFUL_LEN 2
 
 #define RAD_LEVEL_LOW 1 // Around the level at which radiation starts to become harmful
-#define RAD_LEVEL_MODERATE 5
-#define RAD_LEVEL_HIGH 20
-#define RAD_LEVEL_VERY_HIGH 40
+#define RAD_LEVEL_MODERATE 25
+#define RAD_LEVEL_HIGH 40
+#define RAD_LEVEL_VERY_HIGH 100
 
 #define RADIATION_THRESHOLD_CUTOFF 0.1	// Radiation will not affect a tile when below this value.
 

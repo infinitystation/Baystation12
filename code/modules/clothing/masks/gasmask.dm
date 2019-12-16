@@ -68,9 +68,9 @@
 	body_parts_covered = FACE
 	w_class = ITEM_SIZE_SMALL
 	armor = list(
-		melee = ARMOR_MELEE_SMALL, 
-		bullet = ARMOR_BALLISTIC_MINOR, 
-		laser = ARMOR_LASER_MINOR, 
+		melee = ARMOR_MELEE_SMALL,
+		bullet = ARMOR_BALLISTIC_MINOR,
+		laser = ARMOR_LASER_MINOR,
 		bio = ARMOR_BIO_RESISTANT
 		)
 
@@ -107,9 +107,9 @@
 	siemens_coefficient = 0.7
 	body_parts_covered = FACE|EYES
 	armor = list(
-		melee = ARMOR_MELEE_SMALL, 
-		bullet = ARMOR_BALLISTIC_MINOR, 
-		laser = ARMOR_LASER_MINOR, 
+		melee = ARMOR_MELEE_SMALL,
+		bullet = ARMOR_BALLISTIC_MINOR,
+		laser = ARMOR_LASER_MINOR,
 		bio = ARMOR_BIO_STRONG
 		)
 
@@ -121,9 +121,9 @@
 	item_state = "swat"
 	siemens_coefficient = 0.7
 	armor = list(
-		melee = ARMOR_MELEE_SMALL, 
-		bullet = ARMOR_BALLISTIC_MINOR, 
-		laser = ARMOR_LASER_MINOR, 
+		melee = ARMOR_MELEE_SMALL,
+		bullet = ARMOR_BALLISTIC_SMALL,
+		laser = ARMOR_LASER_MINOR,
 		bio = ARMOR_BIO_STRONG
 		)
 

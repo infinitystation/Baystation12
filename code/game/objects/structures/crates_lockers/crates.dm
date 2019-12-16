@@ -194,6 +194,12 @@
 	desc = "A secure phoron crate."
 	closet_appearance = /decl/closet_appearance/crate/secure/hazard
 
+/obj/structure/closet/crate/secure/shuttle
+	name = "storage compartment"
+	desc = "A secure storage compartment bolted to the floor, to secure loose objects on Zero-G flights."
+	anchored = 1
+	closet_appearance = /decl/closet_appearance/crate/secure/shuttle
+
 /obj/structure/closet/crate/secure/gear
 	name = "gear crate"
 	desc = "A secure gear crate."
@@ -266,7 +272,7 @@
 /obj/structure/closet/crate/secure/biohazard/alt
 	name = "biowaste disposal cart"
 	desc = "A heavy cart used for organ disposal with markings indicating the things inside are probably gross."
-	req_access = list(access_medical, access_medical_equip, access_morgue, access_surgery, access_virology)
+	req_access = list(access_surgery)
 	closet_appearance = /decl/closet_appearance/cart/biohazard/alt
 
 /obj/structure/closet/crate/paper_refill

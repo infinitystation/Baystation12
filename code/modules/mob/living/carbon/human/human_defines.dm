@@ -111,5 +111,4 @@
 
 	var/list/descriptors
 
-		//Surgery info
-	//var/datum/surgery_status/op_stage = new/datum/surgery_status
+	var/last_smelt = 0

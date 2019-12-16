@@ -110,7 +110,7 @@
 /turf/space,
 /area/space)
 "aq" = (
-/obj/effect/overmap/ship/bearcat,
+/obj/effect/overmap/visitable/ship/bearcat,
 /turf/space,
 /area/space)
 "ar" = (
@@ -4481,7 +4481,6 @@
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/maintenance/engineering)
 "hE" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -5732,12 +5731,6 @@
 /obj/structure/lattice,
 /turf/space,
 /area/ship/scrap/maintenance/power)
-"mB" = (
-/obj/effect/landmark{
-	name = "carpspawn"
-	},
-/turf/space,
-/area/space)
 "nS" = (
 /obj/effect/paint/brown,
 /turf/simulated/wall/r_wall,
@@ -9219,7 +9212,7 @@ aa
 aa
 aa
 aa
-mB
+aa
 aa
 aa
 aa
@@ -10107,7 +10100,7 @@ aa
 aa
 aa
 aa
-mB
+aa
 aa
 aa
 aa
@@ -12929,7 +12922,7 @@ aa
 aa
 aa
 aa
-mB
+aa
 aa
 aa
 aa
@@ -13103,7 +13096,7 @@ aa
 aa
 aa
 aa
-mB
+aa
 aa
 aa
 aa
@@ -15598,7 +15591,7 @@ aa
 aa
 aa
 aa
-mB
+aa
 aa
 aa
 aa
@@ -16903,7 +16896,7 @@ aa
 aa
 aa
 aa
-mB
+aa
 aa
 aa
 aa

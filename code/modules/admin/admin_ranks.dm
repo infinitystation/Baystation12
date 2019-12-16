@@ -66,6 +66,10 @@ var/list/admin_ranks = list()								//list of all ranks with associated rights
 	load_admin_ranks()
 	GLOB.admins.Cut()
 
+	// Flush profiler access.
+	for (var/admin in world.GetConfig("admin"))
+		world.SetConfig("APP/admin", admin, null)
+
 	if(config.admin_legacy_system)
 		//load text from file
 		var/list/Lines = file2list("config/admins.txt")

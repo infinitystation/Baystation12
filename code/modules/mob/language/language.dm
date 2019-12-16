@@ -244,7 +244,7 @@
 
 	src << browse(dat, "window=checklanguage")
 
-/mob/living/Topic(href, href_list)
+/mob/living/OnSelfTopic(href_list)
 	if(href_list["default_lang"])
 		if(href_list["default_lang"] == "reset")
 
@@ -258,8 +258,8 @@
 			if(L && (L in languages))
 				set_default_language(L)
 		check_languages()
-		return 1
-	..()
+		return TOPIC_HANDLED
+	return ..()
 
 /proc/transfer_languages(var/mob/source, var/mob/target, var/except_flags)
 	for(var/datum/language/L in source.languages)

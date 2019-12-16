@@ -81,7 +81,7 @@
 			bound_height = width * world.icon_size
 
 	if (turf_hand_priority)
-		set_extension(src, /datum/extension/turf_hand, /datum/extension/turf_hand, turf_hand_priority)
+		set_extension(src, /datum/extension/turf_hand, turf_hand_priority)
 
 	health = maxhealth
 	update_connections(1)
@@ -90,7 +90,7 @@
 	update_nearby_tiles(need_rebuild=1)
 
 /obj/machinery/door/Initialize()
-	set_extension(src, /datum/extension/penetration, /datum/extension/penetration/proc_call, .proc/CheckPenetration)
+	set_extension(src, /datum/extension/penetration/proc_call, .proc/CheckPenetration)
 	. = ..()
 	if(autoset_access)
 #ifdef UNIT_TEST
@@ -198,15 +198,15 @@
 
 
 
-/obj/machinery/door/hitby(AM as mob|obj, var/speed=5)
+/obj/machinery/door/hitby(AM as mob|obj, var/datum/thrownthing/TT)
 
 	..()
 	visible_message("<span class='danger'>[src.name] was hit by [AM].</span>")
 	var/tforce = 0
 	if(ismob(AM))
-		tforce = 15 * (speed/5)
+		tforce = 3 * TT.speed
 	else
-		tforce = AM:throwforce * (speed/5)
+		tforce = AM:throwforce * (TT.speed/THROWFORCE_SPEED_DIVISOR)
 	playsound(src.loc, hitsound, 100, 1)
 	take_damage(tforce)
 	return

@@ -9,7 +9,7 @@
 
 /obj/structure/curtain/Initialize()
 	.=..()
-	set_extension(src, /datum/extension/turf_hand, /datum/extension/turf_hand)
+	set_extension(src, /datum/extension/turf_hand)
 
 /obj/structure/curtain/open
 	icon_state = "open"

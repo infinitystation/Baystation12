@@ -3,6 +3,7 @@
 	desc = "A thing to keep your butts in."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "ashtray"
+	max_force = 10
 	force_divisor = 0.1
 	thrown_force_divisor = 0.1
 	w_class = ITEM_SIZE_SMALL
@@ -44,6 +45,7 @@
 
 		if(user.unEquip(W, src))
 			visible_message("[user] places [W] in [src].")
+			set_extension(src, /datum/extension/scent/ashtray)
 			update_icon()
 	else
 		..()
@@ -58,6 +60,7 @@
 			visible_message("<span class='danger'>\The [src] slams into [hit_atom], spilling its contents!</span>")
 			for (var/obj/O in contents)
 				O.dropInto(loc)
+			remove_extension(src, /datum/extension/scent)
 		if (health < 1)
 			shatter()
 			return

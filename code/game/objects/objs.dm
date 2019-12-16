@@ -172,8 +172,8 @@
 
 /obj/examine(mob/user)
 	. = ..()
-	if(. && (obj_flags & OBJ_FLAG_ROTATABLE))
-		to_chat(user, "<span class='subtle'>Can be rotated with alt-click.</span>")
+	if((obj_flags & OBJ_FLAG_ROTATABLE))
+		to_chat(user, SPAN_SUBTLE("Can be rotated with alt-click."))
 
 /obj/proc/rotate(mob/user)
 	if(!CanPhysicallyInteract(user))

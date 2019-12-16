@@ -72,9 +72,6 @@
 /INF*/
 			return
 
-	if(istype(M,/mob/living/carbon))
-		M.spread_disease_to(src, "Contact")
-
 	if(istype(H))
 		for (var/obj/item/grab/G in H)
 			if (G.assailant == H && G.affecting == src)
