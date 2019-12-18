@@ -3288,7 +3288,6 @@
 #include "infinity\code\game\objects\items\weapons\cards_Id.dm"
 #include "infinity\code\game\objects\items\weapons\extunguisher.dm"
 #include "infinity\code\game\objects\items\weapons\lighter.dm"
-#include "infinity\code\game\objects\items\weapons\rpd.dm"
 #include "infinity\code\game\objects\items\weapons\surgery_tools.dm"
 #include "infinity\code\game\objects\items\weapons\towels.dm"
 #include "infinity\code\game\objects\items\weapons\toys.dm"

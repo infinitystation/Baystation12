@@ -5,7 +5,7 @@
 	//OVERMAP//
 	///////////
 
-/obj/effect/overmap/ship/marksman
+/obj/effect/overmap/visitable/ship/marksman
 	name = "Cobra-Class Craft"
 	desc = "A drifting SCG military ship. Visible external damage on blue hull."
 	color = "#990000"
@@ -28,7 +28,7 @@
 	"Albatross" = list("nav_marksman_albatross")
 		)
 
-/obj/effect/overmap/ship/patrol/New()
+/obj/effect/overmap/visitable/ship/patrol/New()
 	name = "SPC [pick("Marksman","Hammerfish","Grey Hawk","Kalatan","Box","Searcher","Legio")], \a [name]"
 	for(var/area/ship/patrol/A)
 		A.name = "\improper [name] - [A.name]"

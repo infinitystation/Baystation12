@@ -1,7 +1,7 @@
 #include "mining_areas.dm"
 
 //MINING-1 // CLUSTER
-/obj/effect/overmap/sector/mining_asteroid
+/obj/effect/overmap/visitable/sector/mining_asteroid
 	name = "large asteroid"
 	desc = "A medium-sized asteroid with a big belt of small one. Old mining facility detected on one of sides, owner - NanoTrasen."
 	icon_state = "sector"
@@ -94,7 +94,7 @@
 	outage_probability = 100
 /*
 //MINING-2 // SIGNAL
-/obj/effect/overmap/sector/away
+/obj/effect/overmap/visitable/sector/away
 	name = "faint signal from an asteroid"
 	desc = "Faint signal detected, originating from the human-made structures on the site's surface."
 	icon_state = "sector"

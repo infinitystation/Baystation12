@@ -1,4 +1,4 @@
-/obj/effect/overmap/ship/landable/patrol
+/obj/effect/overmap/visitable/ship/landable/patrol
 	name = "Sol Rescue Shuttle"
 	desc = "A space object with wide of 19.5 meters, length of 34.2 meters and high near 4.3 meters. \
 	A Self Indentification Signal classifices the target as Sol Rescue Shuttle, a property of third fleet of \

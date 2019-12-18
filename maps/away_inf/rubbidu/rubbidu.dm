@@ -1,6 +1,6 @@
 #include "rubbidu_areas.dm"
 
-/obj/effect/overmap/ship/rubbidu
+/obj/effect/overmap/visitable/ship/rubbidu
 	name = "Ark"
 	desc = "A small unknown ship, judging by the structure is made of construction debris."
 	color = "#ffc466"

@@ -30,7 +30,7 @@
 	name = "Captain's room"
 	icon_state = "cpt"
 
-/obj/effect/overmap/ship/salvage
+/obj/effect/overmap/visitable/ship/salvage
 	name = "PSV Pancake"
 	fore_dir = WEST
 	vessel_mass = 10
@@ -103,7 +103,7 @@
 	range = 3
 	ceiling_type = /turf/space
 
-/obj/effect/overmap/ship/landable/salvage
+/obj/effect/overmap/visitable/ship/landable/salvage
 	name = "Salvage shuttle"
 	shuttle = "Salvage shuttle"
 	fore_dir = SOUTH

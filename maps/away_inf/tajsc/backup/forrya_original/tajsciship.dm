@@ -12,7 +12,7 @@
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/tajscishuttle)
 	prefix = "map/away_inf/"
 
-/obj/effect/overmap/sector/tajscispace
+/obj/effect/overmap/visitable/sector/tajscispace
 	name = "Abnormal sector"
 	desc = "Slight traces of a bluespace are present. Dangerous place."
 	in_space = 1

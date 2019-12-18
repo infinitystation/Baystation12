@@ -25,7 +25,7 @@
 		var/obj/effect/overmap/O = map_sectors[zlevel]
 		if(O.name == colony.name)
 			continue
-		if(istype(O, /obj/effect/overmap/ship/landable))
+		if(istype(O, /obj/effect/overmap/visitable/ship/landable))
 			continue
 		space_things |= O
 

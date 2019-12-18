@@ -24,12 +24,12 @@
 		var/obj/effect/overmap/O = map_sectors[zlevel]
 		if(O.name == sierra.name)
 			continue
-		if(istype(O, /obj/effect/overmap/ship/landable))
+		if(istype(O, /obj/effect/overmap/visitable/ship/landable))
 			continue
 		space_things |= O
 
 	var/list/distress_calls
-	for(var/obj/effect/overmap/O in space_things)
+	for(var/obj/effect/overmap/visitable/O in space_things)
 		var/location_desc = " на текущем квадрате."
 		if(O.loc != sierra.loc)
 			var/bearing = round(90 - Atan2(O.x - sierra.x, O.y - sierra.y),5) //fucking triangles how do they work

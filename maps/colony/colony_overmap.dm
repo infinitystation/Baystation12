@@ -1,4 +1,4 @@
-/obj/effect/overmap/ship/colony
+/obj/effect/overmap/visitable/ship/colony
 	name = "NSV Colony"
 	fore_dir = WEST
 	vessel_mass = 28000
@@ -45,14 +45,14 @@
 
 	)
 
-/obj/effect/overmap/ship/landable/exploration_shuttle
+/obj/effect/overmap/visitable/ship/landable/exploration_shuttle
 	name = "Charon"
 	shuttle = "Charon"
 	max_speed = 1/(4 SECONDS)
 	burn_delay = 2 SECONDS
 	fore_dir = NORTH
 
-/obj/effect/overmap/ship/landable/guppy
+/obj/effect/overmap/visitable/ship/landable/guppy
 	name = "Guppy"
 	shuttle = "Guppy"
 	max_speed = 1/(10 SECONDS)

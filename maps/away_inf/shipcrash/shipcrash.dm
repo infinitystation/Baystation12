@@ -3,7 +3,7 @@
 
 //Entrie map
 
-/obj/effect/overmap/ship/shipcrash
+/obj/effect/overmap/visitable/ship/shipcrash
 	name = "GMV Void"
 	desc = "Sensors detect Grayson Mining Vessel - \"Void\""
 	color = COLOR_BLUE

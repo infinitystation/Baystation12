@@ -2,7 +2,7 @@
 #include "gunboat_crew.dm"
 #include "gunboat_define.dm"
 
-/obj/effect/overmap/ship/gunboat
+/obj/effect/overmap/visitable/ship/gunboat
 	name = "gunboat"
 	desc = "Sensor array is detecting a small vessel with heavy armor."
 	color = "#ffc966"
@@ -19,7 +19,7 @@
 		"nav_gunboat_antag"
 		)
 
-/obj/effect/overmap/ship/gunboat/New()
+/obj/effect/overmap/visitable/ship/gunboat/New()
 	name = "SGC [pick("Bearcat", "Firebug", "Defiant", "Unsinkable","Horizon","Vagrant")]"
 	..()
 
