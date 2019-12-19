@@ -92,6 +92,8 @@
 	autolinkers = list("m_relay_a")
 	usage_offise = 5 KILOWATTS
 	outage_probability = 100
+
+	construct_state = /decl/machine_construction/tcomms/panel_closed/cannot_print
 /*
 //MINING-2 // SIGNAL
 /obj/effect/overmap/visitable/sector/away
