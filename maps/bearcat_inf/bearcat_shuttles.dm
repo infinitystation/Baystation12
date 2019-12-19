@@ -62,40 +62,24 @@
 
 //Raiders' shuttle
 /datum/shuttle/autodock/multi/antag/skipjack
-	name = "Skipjack"
-	warmup_time = 7
-	cloaked = 0
 	destination_tags = list(
 		"nav_skipjack_deck1",
 		"nav_skipjack_deck2",
 		"nav_skipjack_deck3",
+		"nav_away_7",
+		"nav_derelict_7",
+		"nav_cluster_7",
 		"nav_skipjack_dock",
 		"nav_skipjack_start",
 		"nav_lost_supply_base_antag",
-		"nav_smugglers_antag"
+		"nav_marooned_antag",
+		"nav_smugglers_antag",
+		"nav_magshield_antag",
+		"nav_casino_antag",
+		"nav_yacht_antag",
+		"nav_slavers_base_antag",
+		"nav_mining_antag"
 		)
-	shuttle_area = /area/map_template/skipjack_station/start
-	dock_target = "skipjack_shuttle"
-	current_location = "nav_skipjack_start"
-	landmark_transition = "nav_skipjack_transition"
-	announcer = "Vessel Short-Ranged Sensor Array"
-	home_waypoint = "nav_skipjack_start"
-	arrival_message = "��������, ����������� ����� ����������� �� ������� ����������"
-	departure_message = "��������, ����������� ����� ���������� �� �����."
-
-/obj/effect/shuttle_landmark/skipjack/start
-	name = "Pirat Station"
-	landmark_tag = "nav_skipjack_start"
-	docking_controller = "skipjack_base"
-
-/obj/effect/shuttle_landmark/skipjack/internim
-	name = "In transit"
-	landmark_tag = "nav_skipjack_transition"
-
-/obj/effect/shuttle_landmark/skipjack/dock
-	name = "Docking Port"
-	landmark_tag = "nav_skipjack_dock"
-	docking_controller = "eva"
 
 /obj/effect/shuttle_landmark/skipjack/deck1
 	name = "Northeast of the Lower"
