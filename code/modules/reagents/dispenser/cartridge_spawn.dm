@@ -1,6 +1,6 @@
 /client/proc/spawn_chemdisp_cartridge(size in list("small", "medium", "large"), reagent in subtypesof(/datum/reagent))
 	set name = "Spawn Chemical Dispenser Cartridge"
-	set category = "Admin"
+	set category = "Debug" //INF, WAS "Admin"
 
 	var/obj/item/weapon/reagent_containers/chem_disp_cartridge/C
 	switch(size)

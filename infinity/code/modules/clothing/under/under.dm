@@ -109,8 +109,8 @@
 	icon_state = "gray_camo"
 	item_state = "gray_camo"
 	worn_state = "gray_camo"
-	armor = list(melee = 10, bullet = 5, laser = 5,energy = 0, bomb = 0, bio = 0, rad = 0)
-	siemens_coefficient = 0.9
+//	armor = list(melee = 10, bullet = 5, laser = 5,energy = 0, bomb = 0, bio = 0, rad = 0)
+//	siemens_coefficient = 0.9
 
 /obj/item/clothing/under/bluetunic_regular
 	name = "blue tunic"

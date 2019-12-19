@@ -376,13 +376,13 @@
 	name = "Elevator - First Deck"
 	lift_floor_label = "Deck 1"
 	lift_floor_name = "Main Deck"
-	lift_announce_str = "Arriving at Main Deck: Bridge. Captain's Mess. Meeting Room. Security Wing. Research Wing. Infirmary. AI Core."
+	lift_announce_str = "Arriving at Main Deck: Bridge. Security Wing. Research Wing. Infirmary. AI Core. Telecommunications. EVA."
 
 /area/turbolift/sierra_middle
 	name = "Elevator - Second Deck"
 	lift_floor_label = "Deck 2"
 	lift_floor_name = "Living Deck"
-	lift_announce_str = "Arriving at Living Deck: Cryogenic Storage. Dormitory. Holodeck. Lounge. Bar. Hydroponics. Gym. Laundry. Engineering. Atmospherics. Telecommunications. EVA."
+	lift_announce_str = "Arriving at Living Deck: Meeting Room. Cryogenic Storage. Dormitory. Holodeck. Lounge. Bar. Hydroponics. Gym. Laundry. Engineering. Atmospherics."
 
 /area/turbolift/sierra_ground
 	name = "Elevator - Third Deck"

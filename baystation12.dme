@@ -3573,6 +3573,7 @@
 #include "infinity\customs\farwa_plushie.dm"
 #include "infinity\customs\forrya_custom.dm"
 #include "infinity\customs\fsb_set.dm"
+#include "infinity\customs\he11d1ver.dm"
 #include "infinity\customs\headphones-crypto.dm"
 #include "infinity\customs\heph_set.dm"
 #include "infinity\customs\hybrid_opt.dm"

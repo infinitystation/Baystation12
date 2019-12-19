@@ -31,7 +31,7 @@ var/global/floorIsLava = 0
 ///////////////////////////////////////////////////////////////////////////////////////////////Panels
 
 /datum/admins/proc/show_player_panel(var/mob/M in SSmobs.mob_list)
-	set category = "Admin"
+	set category = null //INF, WAS "Admin"
 	set name = "Show Player Panel"
 	set desc="Edit player (respawn, ban, heal, etc)"
 
@@ -1325,7 +1325,7 @@ var/global/floorIsLava = 0
 		to_chat(usr, "<b>No AIs located</b>")//Just so you know the thing is actually working and not just ignoring you.
 
 /datum/admins/proc/show_skills(mob/living/carbon/human/M as mob in SSmobs.mob_list)
-	set category = "Admin"
+	set category = null //INF, WAS "Admin"
 	set name = "Skill Panel"
 
 	if (!istype(src,/datum/admins))

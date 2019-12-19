@@ -256,11 +256,11 @@
 /obj/structure/sign/poster/humpost/hum_3
 	icon_state = "humposter_3"
 	poster_type = /decl/poster/humpost/hum_3
-
+/* unused due someone's report
 /obj/structure/sign/poster/humpost/hum_4
 	icon_state = "humposter_4"
 	poster_type = /decl/poster/humpost/hum_4
-
+*/
 /obj/structure/sign/poster/humpost/hum_5
 	icon_state = "humposter_5"
 	poster_type = /decl/poster/humpost/hum_5
@@ -350,13 +350,13 @@
 	icon_state = "humposter_3"
 	name = "Bodka"
 	desc = "Advertising poster of vodka, drink from real men for real men. Feel like a space bear."
-
+/* unused due someone's report
 /decl/poster/humpost/hum_4
 	icon_state = "humposter_4"
 	name = "S.A.L.O."
 	desc = "This poster has a beautiful view of a golden field under azure skies. \
 	In the corner - a package of fat, which looks at you seductive boar. Salo - zakuson for real men!"
-
+*/
 /decl/poster/humpost/hum_5
 	icon_state = "humposter_5"
 	name = "Mars Terraforming"

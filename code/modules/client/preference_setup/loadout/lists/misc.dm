@@ -242,11 +242,6 @@
 	books["Kojiki"] = /obj/item/weapon/storage/bible/kojiki
 	gear_tweaks += new/datum/gear_tweak/path(books)
 
-//[INF]
-/datum/gear/mind_healer
-	display_name = "Methylphenidate, pill bottle"
-	path = /obj/item/weapon/storage/pill_bottle/methylphenidate
-//[/INF]
 /datum/gear/swiss
 	display_name = "multi-tool"
 	path = /obj/item/weapon/material/knife/folding/swiss

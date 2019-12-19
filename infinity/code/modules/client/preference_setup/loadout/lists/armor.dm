@@ -70,7 +70,7 @@
 	path = /obj/item/clothing/suit/armor/pcarrier
 	cost = 1
 	slot = slot_wear_suit
-	allowed_roles = list(/datum/job/detective, /datum/job/officer, /datum/job/hos)
+	allowed_roles = list(/datum/job/detective, /datum/job/officer, /datum/job/warden, /datum/job/hos)
 
 /datum/gear/tactical/pcarrier/New()
 	..()

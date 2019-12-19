@@ -143,6 +143,7 @@ alchemisthero - unathi
 kotovsyndrome - unathi
 wheatley2013 - unathi
 thesarkazmus - unathi
+arbuzpersikov - unathi
 wolforbykot - unathi
 colossus333 - unathi
 kirill1243 - unathi
@@ -157,6 +158,9 @@ cre77 - unathi
 s1334 - unathi
 he11d1ver - unathi
 blacksoul231 - unathi
+arhod - unathi
+moonmen - unathi 
+moonmen - tajaran
 cuddleandtea - tajaran
 mrnicolas - tajaran
 romeo517 - tajaran
@@ -171,6 +175,7 @@ arhod - tajaran
 kordvik - tajaran
 wolforbykot - tajaran
 diesiege - tajaran
+seclog - tajaran
 wheatley2013 - adherent
 sosiskoed - adherent
 gumboldty - adherent
@@ -184,8 +189,3 @@ redknighthero - adherent
 coldmantis13 - adherent
 forrya - adherent
 5au5age - adherent
-coldmantis13 - Kharmaan Gyne
-s1334 - Kharmaan Gyne
-wheatley2013 - Kharmaan Gyne
-dagger17 - Kharmaan Gyne
-cre77 - Kharmaan Gyne

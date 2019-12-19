@@ -6,7 +6,7 @@
 	light_outer_range = 2
 	light_color = BLOB_COLOR_PULS
 	density = 1
-//inf	opacity = 1
+//INF	opacity = 1
 	anchored = 1
 	mouse_opacity = 2
 

@@ -141,7 +141,8 @@
 	item_state = "rapidsyringegun"
 	max_darts = 5
 	is_serial = 0
-
+//[INF]
+/*
 /obj/item/weapon/gun/launcher/syringe/rapid/
 	name = "Harlus MK4 Dart Rifle"
 	desc = "Special police rifle for shooting darts and syringes."
@@ -149,7 +150,8 @@
 	icon_state = "stunrifle"
 	item_state = "gun"
 	is_serial = 0
-
+*/
+//[/INF]
 /obj/item/weapon/gun/launcher/syringe/disguised
 	name = "deluxe electronic cigarette"
 	desc = "A premium model eGavana MK3 electronic cigarette, shaped like a cigar."

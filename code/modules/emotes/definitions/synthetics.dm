@@ -7,7 +7,11 @@
 	if(istype(user) && user.isSynthetic())
 		return ..()
 	return FALSE
-
+//[INF] we have overrided original code, so place is here
+/decl/emote/audible/synth/do_extra(var/atom/user)
+	if(emote_sound)
+		playsound(user.loc, emote_sound, 50, 0)
+//[/INF]
 /decl/emote/audible/synth/ping
 	key = "ping"
 	emote_message_3p = "USER pings."

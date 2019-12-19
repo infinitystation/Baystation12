@@ -100,3 +100,7 @@
 	glovtype["black insulated"] = /obj/item/clothing/gloves/insulated/black
 	glovtype["white insulated"] = /obj/item/clothing/gloves/insulated/white
 	gear_tweaks += new/datum/gear_tweak/path(glovtype)
+
+/datum/gear/utility/general_belt
+	display_name = "equipment belt"
+	path = /obj/item/weapon/storage/belt/general

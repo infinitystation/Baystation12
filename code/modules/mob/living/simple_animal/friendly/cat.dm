@@ -22,7 +22,8 @@
 	mob_size = MOB_SMALL
 	possession_candidate = 1
 	pass_flags = PASS_FLAG_TABLE
-	mob_push_flags = 0 //INF, WAS mob_push_flags = MONKEY|SLIME|SIMPLE_ANIMAL (stop push chairs, runtime)
+	mob_push_flags = MONKEY|SLIME|SIMPLE_ANIMAL
+	density = 0 //INF
 
 	skin_material = MATERIAL_SKIN_FUR_ORANGE
 
@@ -172,7 +173,7 @@
 /mob/living/simple_animal/cat/fluff/Life()
 	. = ..()
 	if(!.)
-		return FALSE 
+		return FALSE
 	if (stat || !friend)
 		return
 	if (get_dist(src, friend) <= 1)
