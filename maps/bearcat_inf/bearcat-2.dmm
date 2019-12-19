@@ -105,7 +105,7 @@
 	name = "Captain"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/effect/overmap/ship/bearcat,
+/obj/effect/overmap/visitable/ship/bearcat,
 /obj/structure/bed/chair/comfy/teal{
 	icon_state = "comfychair_preview";
 	dir = 1

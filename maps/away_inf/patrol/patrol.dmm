@@ -675,7 +675,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/effect/overmap/ship/landable/patrol,
+/obj/effect/overmap/visitable/ship/landable/patrol,
 /obj/structure/cable/cyan{
 	d1 = 4;
 	d2 = 8;
@@ -735,7 +735,7 @@
 /turf/simulated/floor,
 /area/ship/patrol/cargo)
 "bv" = (
-/obj/effect/overmap/sector/scgpatrol,
+/obj/effect/overmap/visitable/sector/scgpatrol,
 /turf/space,
 /area/space)
 "bw" = (

@@ -471,7 +471,7 @@
 	icon_state = "computer";
 	req_access = list("ACCESS_SKRELLSCOUT")
 	},
-/obj/effect/overmap/ship/landable/skrellscoutshuttle,
+/obj/effect/overmap/visitable/ship/landable/skrellscoutshuttle,
 /turf/simulated/floor/tiled/skrell/red,
 /area/ship/skrellscoutshuttle)
 "bj" = (

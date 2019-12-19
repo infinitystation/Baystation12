@@ -624,7 +624,7 @@
 /turf/simulated/floor/tiled/skrell/red,
 /area/ship/skrellscoutship/command/bridge)
 "bu" = (
-/obj/effect/overmap/ship/landable/skrellscoutship,
+/obj/effect/overmap/visitable/ship/landable/skrellscoutship,
 /obj/structure/bed/chair/comfy/black{
 	dir = 1
 	},
@@ -1715,7 +1715,7 @@
 /obj/effect/landmark/map_data{
 	height = 2
 	},
-/obj/effect/overmap/sector/skrellscoutspace,
+/obj/effect/overmap/visitable/sector/skrellscoutspace,
 /turf/space,
 /area/space)
 "dj" = (

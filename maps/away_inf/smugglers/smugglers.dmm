@@ -1087,7 +1087,7 @@
 /turf/simulated/floor/tiled,
 /area/smugglers/dorms)
 "cH" = (
-/obj/effect/overmap/sector/smugglers,
+/obj/effect/overmap/visitable/sector/smugglers,
 /obj/machinery/access_button/airlock_exterior{
 	frequency = 1502;
 	master_tag = "asteroid_base_dock_airlock";

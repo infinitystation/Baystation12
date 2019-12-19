@@ -2483,7 +2483,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/voidsuits)
 "eX" = (
-/obj/effect/overmap/sector/mining_asteroid,
+/obj/effect/overmap/visitable/sector/mining_asteroid,
 /turf/space,
 /area/space)
 "eY" = (
