@@ -188,12 +188,11 @@
 	docking_controller = "petrov_shuttle_dock_airlock"
 
 /obj/effect/shuttle_landmark/petrov/out
-	name = "Space near the ship"
+	name = "Space near the vessel"
 	landmark_tag = "nav_petrov_out"
 
 //Ninja Shuttle.
 /datum/shuttle/autodock/multi/antag/ninja
-	name = "Ninja"
 	destination_tags = list(
 		"nav_ninja_deck1",
 		"nav_ninja_deck2",
@@ -214,23 +213,6 @@
 		"nav_slavers_base_antag",
 		"nav_mining_antag"
 		)
-	shuttle_area = /area/ninja_dojo/start
-	current_location = "nav_ninja_start"
-	landmark_transition = "nav_ninja_transition"
-	announcer = "NSV sierra Sensor Array"
-	arrival_message = "Attention, anomalous sensor reading detected entering vessel proximity."
-	departure_message = "Attention, anomalous sensor reading detected leaving vessel proximity."
-	ceiling_type = /turf/simulated/floor/shuttle_ceiling
-	warmup_time = 7
-
-/obj/effect/shuttle_landmark/ninja/start
-	name = "Clan Dojo"
-	landmark_tag = "nav_ninja_start"
-	base_turf = /turf/simulated/floor/plating
-
-/obj/effect/shuttle_landmark/ninja/internim
-	name = "In transit"
-	landmark_tag = "nav_ninja_transition"
 
 /obj/effect/shuttle_landmark/ninja/deck1
 	name = "West of Fourth Deck"
@@ -321,7 +303,6 @@
 //Merc
 
 /datum/shuttle/autodock/multi/antag/mercenary
-	name = "Mercenary"
 	destination_tags = list(
 		"nav_merc_deck1",
 		"nav_merc_deck2",
@@ -342,30 +323,6 @@
 		"nav_slavers_base_antag",
 		"nav_mining_antag"
 		)
-	shuttle_area = /area/syndicate_station/start
-	dock_target = "merc_shuttle"
-	current_location = "nav_merc_start"
-	landmark_transition = "nav_merc_transition"
-	announcer = "NSV sierra Sensor Array"
-	home_waypoint = "nav_merc_start"
-	arrival_message = "Attention, vessel detected entering vessel proximity."
-	departure_message = "Attention, vessel detected leaving vessel proximity."
-	ceiling_type = /turf/simulated/floor/shuttle_ceiling
-	warmup_time = 7
-
-/obj/effect/shuttle_landmark/merc/start
-	name = "Mercenary Base"
-	landmark_tag = "nav_merc_start"
-	docking_controller = "merc_base"
-
-/obj/effect/shuttle_landmark/merc/internim
-	name = "In transit"
-	landmark_tag = "nav_merc_transition"
-
-/obj/effect/shuttle_landmark/merc/dock
-	name = "Docking Port"
-	landmark_tag = "nav_merc_dock"
-	docking_controller = "nuke_shuttle_dock_airlock"
 
 /obj/effect/shuttle_landmark/merc/deck1
 	name = "Northwest of Fourth Deck"
@@ -390,7 +347,6 @@
 //Skipjack
 
 /datum/shuttle/autodock/multi/antag/skipjack
-	name = "Skipjack"
 	destination_tags = list(
 		"nav_skipjack_deck1",
 		"nav_skipjack_deck2",
@@ -411,30 +367,6 @@
 		"nav_slavers_base_antag",
 		"nav_mining_antag"
 		)
-	shuttle_area =  /area/map_template/skipjack_station/start
-	dock_target = "skipjack_shuttle"
-	current_location = "nav_skipjack_start"
-	landmark_transition = "nav_skipjack_transition"
-	announcer = "NSV sierra Sensor Array"
-	home_waypoint = "nav_skipjack_start"
-	arrival_message = "Attention, vessel detected entering vessel proximity."
-	departure_message = "Attention, vessel detected leaving vessel proximity."
-	ceiling_type = /turf/simulated/floor/shuttle_ceiling
-	warmup_time = 7
-
-/obj/effect/shuttle_landmark/skipjack/start
-	name = "Raider Outpost"
-	landmark_tag = "nav_skipjack_start"
-	docking_controller = "skipjack_base"
-
-/obj/effect/shuttle_landmark/skipjack/internim
-	name = "In transit"
-	landmark_tag = "nav_skipjack_transition"
-
-/obj/effect/shuttle_landmark/skipjack/dock
-	name = "Docking Port"
-	landmark_tag = "nav_skipjack_dock"
-	docking_controller = "skipjack_shuttle_dock_airlock"
 
 /obj/effect/shuttle_landmark/skipjack/deck1
 	name = "Northeast of Fourth Deck"
@@ -459,7 +391,6 @@
 //NT Rescue Shuttle
 
 /datum/shuttle/autodock/multi/antag/rescue
-	name = "Rescue"
 	destination_tags = list(
 		"nav_ert_deck1",
 		"nav_ert_deck2",
@@ -480,31 +411,7 @@
 		"nav_slavers_base_antag",
 		"nav_mining_antag"
 		)
-	shuttle_area = /area/rescue_base/start
-	dock_target = "rescue_shuttle"
-	current_location = "nav_ert_start"
-	landmark_transition = "nav_ert_transition"
-	home_waypoint = "nav_ert_start"
-	announcer = "NSV sierra Sensor Array"
-	arrival_message = "Attention, vessel detected entering vessel proximity."
-	departure_message = "Attention, vessel detected leaving vessel proximity."
-	ceiling_type = /turf/simulated/floor/shuttle_ceiling
-	warmup_time = 7
 
-/obj/effect/shuttle_landmark/ert/start
-	name = "Response Team Base"
-	landmark_tag = "nav_ert_start"
-	base_turf = /turf/unsimulated/floor/rescue_base
-	docking_controller = "rescue_base"
-
-/obj/effect/shuttle_landmark/ert/internim
-	name = "In transit"
-	landmark_tag = "nav_ert_transition"
-
-/obj/effect/shuttle_landmark/ert/dock
-	name = "Docking Port"
-	landmark_tag = "nav_ert_dock"
-	docking_controller = "rescue_shuttle_dock_airlock"
 
 /obj/effect/shuttle_landmark/ert/merchant
 	name = "Local Merchant Station"
@@ -513,11 +420,6 @@
 /obj/effect/shuttle_landmark/ert/deck1
 	name =  "Southwest of Fourth deck"
 	landmark_tag = "nav_ert_deck1"
-
-/obj/effect/shuttle_landmark/sierra/deck1/salvage
-	name = "Sierra - Docking Port"
-	landmark_tag = "nav_deck1_salvage"
-	docking_controller = "nuke_shuttle_dock_airlock"
 
 /obj/effect/shuttle_landmark/ert/deck2
 	name = "Northwest of Third deck"
@@ -680,7 +582,7 @@
 	landmark_tag = "nav_transit_blueriver"
 
 /obj/effect/shuttle_landmark/sierra/deck3/patrol
-	name = "Deck Three Starboard Dock"
+	name = "Third Deck Starboard Dock"
 	landmark_tag = "nav_deck3_patrol"
 	docking_controller = "admin_shuttle_dock_airlock"
 

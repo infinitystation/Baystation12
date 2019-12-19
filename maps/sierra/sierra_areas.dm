@@ -410,24 +410,6 @@
  * =================
  */
 
-//NINJA AREAS
-/area/ninja_dojo
-	name = "Ninja Base"
-	icon_state = "green"
-	requires_power = 0
-	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
-	req_access = list(access_syndicate)
-
-/area/ninja_dojo/dojo
-	name = "Clan Dojo"
-	dynamic_lighting = 0
-
-/area/ninja_dojo/start
-	name = "Clan Dojo"
-	icon_state = "shuttlered"
-	base_turf = /turf/simulated/floor/plating
-
 //MERCHANT AREAS
 /area/shuttle/merchant/home
 	name = "Merchant Vessel"
@@ -436,49 +418,6 @@
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 	req_access = list(access_merchant)
-
-//NUCLEAR TEAM AREAS
-/area/syndicate_mothership
-	name = "Mercenary Base"
-	icon_state = "syndie-ship"
-	requires_power = 0
-	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
-	req_access = list(access_syndicate)
-
-/area/syndicate_station/start
-	name = "Mercenary Forward Operating Base"
-	icon_state = "yellow"
-	requires_power = 0
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
-	req_access = list(access_syndicate)
-
-//RAIDERS AREAS
-/area/skipjack_station
-	name = "Raider Outpost"
-	icon_state = "yellow"
-	requires_power = 0
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
-	req_access = list(access_syndicate)
-
-//ERT AREAS
-/area/rescue_base
-	name = "Response Team Base"
-	icon_state = "yellow"
-	requires_power = 0
-	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
-	req_access = list(access_cent_specops)
-
-/area/rescue_base/base
-	name = "Barracks"
-	icon_state = "yellow"
-	dynamic_lighting = 0
-
-/area/rescue_base/start
-	name = "Response Team Base"
-	icon_state = "shuttlered"
-	base_turf = /turf/unsimulated/floor/rescue_base
 
 /* COMMAND AREAS
  * =============

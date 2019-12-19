@@ -53,16 +53,18 @@
 	shuttle = "Charon"
 	max_speed = 1/(4 SECONDS)
 	burn_delay = 2 SECONDS
-	vessel_mass = 1400
+	vessel_mass = 4700
 	fore_dir = NORTH
+	vessel_size = SHIP_SIZE_SMALL
 
 /obj/effect/overmap/visitable/ship/landable/guppy
 	name = "Guppy"
 	shuttle = "Guppy"
 	max_speed = 1/(10 SECONDS)
 	burn_delay = 2 SECONDS
-	vessel_mass = 600
+	vessel_mass = 2200
 	fore_dir = SOUTH
+	vessel_size = SHIP_SIZE_TINY
 
 /obj/machinery/computer/shuttle_control/explore/exploration_shuttle
 	name = "charon control console"
