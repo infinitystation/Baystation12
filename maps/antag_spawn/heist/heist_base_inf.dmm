@@ -92,12 +92,6 @@
 /obj/machinery/chemical_dispenser/bar_soft/full,
 /turf/simulated/floor/tiled/white,
 /area/map_template/syndicate_mothership/raider_base)
-"an" = (
-/obj/structure/sign/poster/humpost/hum_4{
-	pixel_y = 32
-	},
-/turf/simulated/floor/tiled/white,
-/area/map_template/syndicate_mothership/raider_base)
 "ao" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/machinery/light/small{
@@ -1849,10 +1843,6 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/shuttle/black,
 /area/map_template/skipjack_station/start)
-"fd" = (
-/obj/random/trash,
-/turf/space,
-/area/space)
 
 (1,1,1) = {"
 aa
@@ -4140,7 +4130,7 @@ dO
 dO
 aa
 aa
-fd
+aa
 aa
 aa
 aa
@@ -4826,7 +4816,7 @@ ab
 ab
 ab
 ac
-an
+az
 aA
 az
 aL

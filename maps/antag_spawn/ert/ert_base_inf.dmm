@@ -1,13 +1,16 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/turf/unsimulated/mineral,
+/area/map_template/rescue_base/base)
 "ab" = (
 /turf/simulated/mineral,
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "ac" = (
 /turf/simulated/wall/r_wall/prepainted,
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "ad" = (
 /turf/unsimulated/wall,
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "ae" = (
 /obj/structure/hygiene/toilet{
 	pixel_y = 16
@@ -16,7 +19,7 @@
 	icon_state = "freezerfloor";
 	dir = 2
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "af" = (
 /obj/structure/hygiene/shower{
 	icon_state = "shower";
@@ -26,7 +29,7 @@
 	icon_state = "freezerfloor";
 	dir = 2
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "ag" = (
 /obj/item/weapon/soap,
 /obj/structure/hygiene/shower{
@@ -36,14 +39,14 @@
 	icon_state = "freezerfloor";
 	dir = 2
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "ah" = (
 /obj/machinery/porta_turret/crescent,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "ai" = (
 /obj/structure/table/rack,
 /obj/item/weapon/gun/energy/sniperrifle,
@@ -56,7 +59,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aj" = (
 /obj/structure/table/rack,
 /obj/item/weapon/gun/projectile/automatic/l6_saw,
@@ -65,13 +68,13 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "ak" = (
 /turf/unsimulated/floor{
 	icon_state = "freezerfloor";
 	dir = 2
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "al" = (
 /obj/structure/table/rack,
 /obj/item/weapon/rig/ert/assetprotection,
@@ -81,13 +84,13 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "am" = (
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "an" = (
 /obj/structure/table/rack,
 /obj/item/weapon/gun/projectile/automatic/bullpup_rifle,
@@ -96,7 +99,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "ao" = (
 /obj/structure/mopbucket,
 /obj/item/weapon/mop,
@@ -107,7 +110,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "ap" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/floor_decal/corner/blue/diagonal,
@@ -118,7 +121,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aq" = (
 /obj/structure/table/reinforced,
 /obj/machinery/chemical_dispenser/bar_soft/full,
@@ -130,7 +133,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "ar" = (
 /obj/structure/table/reinforced,
 /obj/machinery/chemical_dispenser/bar_alc/full,
@@ -141,21 +144,21 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "as" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/effect/floor_decal/corner/blue/diagonal,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "at" = (
 /obj/effect/floor_decal/corner/blue/diagonal,
 /obj/structure/closet/secure_closet/freezer/meat,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "au" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Stall";
@@ -166,7 +169,7 @@
 	icon_state = "freezerfloor";
 	dir = 2
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "av" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Showers";
@@ -177,24 +180,24 @@
 	icon_state = "freezerfloor";
 	dir = 2
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aw" = (
 /turf/unsimulated/floor/plating,
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "ax" = (
 /obj/item/trash/pistachios,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "ay" = (
 /obj/random/junk,
 /turf/unsimulated/floor/plating,
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "az" = (
 /obj/item/weapon/stool,
 /turf/unsimulated/floor/plating,
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aA" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/mil_rifle,
@@ -208,13 +211,13 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aB" = (
 /obj/effect/floor_decal/corner/blue/diagonal,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aC" = (
 /obj/effect/floor_decal/corner/blue/diagonal,
 /obj/machinery/door/airlock/centcom{
@@ -225,7 +228,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aD" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Head";
@@ -236,7 +239,7 @@
 	icon_state = "freezerfloor";
 	dir = 2
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aE" = (
 /obj/item/weapon/storage/mirror{
 	dir = 4;
@@ -252,27 +255,27 @@
 	icon_state = "freezerfloor";
 	dir = 2
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aF" = (
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aG" = (
 /obj/item/trash/semki,
 /turf/unsimulated/floor/plating,
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aH" = (
 /obj/effect/decal/cleanable/blood/oil/streak,
 /turf/unsimulated/floor/plating,
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aI" = (
 /obj/structure/table/steel,
 /obj/item/weapon/deck/cards,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aJ" = (
 /obj/machinery/door/blast/regular/admin{
 	id_tag = "heavyrescue";
@@ -282,7 +285,7 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aK" = (
 /obj/machinery/vending/dinnerware{
 	dir = 2
@@ -291,11 +294,11 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aL" = (
 /obj/item/trash/syndi_cakes,
 /turf/unsimulated/floor/plating,
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aM" = (
 /obj/machinery/door/airlock/centcom{
 	locked = 1;
@@ -306,7 +309,7 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aN" = (
 /obj/structure/table/rack,
 /obj/item/weapon/plastique,
@@ -322,7 +325,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aO" = (
 /obj/structure/table/rack,
 /obj/item/clothing/glasses/thermal,
@@ -334,7 +337,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aP" = (
 /obj/machinery/recharger/wallcharger{
 	pixel_x = 0;
@@ -343,7 +346,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aQ" = (
 /obj/structure/window/reinforced/crescent{
 	dir = 4
@@ -360,7 +363,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aR" = (
 /obj/structure/table/rack,
 /obj/item/device/lightreplacer,
@@ -369,7 +372,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aS" = (
 /obj/structure/table/rack,
 /obj/item/clothing/shoes/galoshes,
@@ -391,7 +394,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aT" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/blue/diagonal,
@@ -399,7 +402,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aU" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/blue/diagonal,
@@ -412,7 +415,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aV" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/blue/diagonal,
@@ -423,7 +426,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aW" = (
 /obj/effect/floor_decal/corner/blue/diagonal,
 /obj/item/weapon/storage/box/sinpockets,
@@ -432,29 +435,29 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aX" = (
 /turf/unsimulated/floor{
 	icon_state = "asteroid"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aY" = (
 /turf/unsimulated/floor{
 	icon_state = "asteroidplating"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "aZ" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/unsimulated/floor{
 	icon_state = "asteroidplating"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "ba" = (
 /obj/random/junk,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bb" = (
 /obj/structure/table/rack,
 /obj/item/weapon/aiModule/solgov,
@@ -464,7 +467,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bc" = (
 /obj/structure/window/reinforced/crescent{
 	dir = 4
@@ -485,7 +488,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bd" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Galley";
@@ -495,41 +498,41 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "be" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/unsimulated/floor{
 	icon_state = "asteroid"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bf" = (
 /obj/machinery/computer/teleporter,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bg" = (
 /obj/machinery/teleport/station,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bh" = (
 /obj/machinery/teleport/hub,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bi" = (
 /obj/item/weapon/reagent_containers/syringe/steroid,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bj" = (
 /obj/machinery/door/blast/regular/admin{
 	dir = 4;
@@ -540,7 +543,7 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bk" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Heavy Equipment";
@@ -551,7 +554,7 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bl" = (
 /obj/item/weapon/gun/energy/xray,
 /obj/item/weapon/gun/energy/xray,
@@ -566,7 +569,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bm" = (
 /obj/machinery/cryopod{
 	icon_state = "body_scanner_0";
@@ -576,7 +579,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bn" = (
 /obj/machinery/cryopod{
 	icon_state = "body_scanner_0";
@@ -590,14 +593,14 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bo" = (
 /obj/machinery/acting/changer,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bp" = (
 /obj/machinery/recharge_station,
 /obj/structure/sign/nanotrasen{
@@ -609,11 +612,11 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bq" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/unsimulated/floor/plating,
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "br" = (
 /obj/machinery/door/blast/regular/admin{
 	id_tag = "rescueteleport";
@@ -623,7 +626,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bs" = (
 /obj/structure/table/rack,
 /obj/item/weapon/gun/energy/gun/nuclear,
@@ -636,14 +639,14 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bt" = (
 /obj/structure/undies_wardrobe,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bu" = (
 /obj/effect/landmark{
 	name = "Response Team"
@@ -652,7 +655,7 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bv" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Squad Bay";
@@ -663,7 +666,7 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bw" = (
 /obj/item/device/radio/intercom/specops{
 	dir = 2;
@@ -673,7 +676,7 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bx" = (
 /obj/structure/table/rack,
 /obj/item/weapon/gun/launcher/grenade,
@@ -686,7 +689,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "by" = (
 /obj/structure/table/rack,
 /obj/item/weapon/storage/box/emps,
@@ -706,7 +709,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bz" = (
 /obj/structure/table/rack,
 /obj/item/weapon/storage/box/flashbangs,
@@ -727,7 +730,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bA" = (
 /obj/item/weapon/gun/projectile/automatic/wt550,
 /obj/item/weapon/gun/projectile/automatic/wt550,
@@ -741,7 +744,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bB" = (
 /obj/item/ammo_magazine/smg_top,
 /obj/item/ammo_magazine/smg_top,
@@ -761,7 +764,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bC" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger{
@@ -771,14 +774,14 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bD" = (
 /obj/structure/closet/gimmick/ert,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bE" = (
 /obj/structure/table/rack,
 /obj/item/clothing/accessory/storage/black_vest,
@@ -791,7 +794,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bF" = (
 /obj/structure/table/rack,
 /obj/item/clothing/accessory/storage/brown_vest,
@@ -804,7 +807,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bG" = (
 /obj/structure/table/rack,
 /obj/item/clothing/accessory/storage/holster/thigh,
@@ -817,7 +820,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bH" = (
 /obj/machinery/vending/fitness{
 	prices = list()
@@ -826,7 +829,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bI" = (
 /obj/structure/table/rack,
 /obj/item/weapon/rig/ert/engineer,
@@ -840,7 +843,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bJ" = (
 /obj/structure/table/rack,
 /obj/item/weapon/rig/ert/engineer,
@@ -854,7 +857,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bK" = (
 /obj/structure/table/rack,
 /obj/item/rig_module/mounted/taser,
@@ -880,7 +883,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bL" = (
 /obj/structure/table/rack,
 /obj/item/weapon/rig/ert/medical,
@@ -894,7 +897,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bM" = (
 /obj/structure/table/rack,
 /obj/item/weapon/rig/ert/medical,
@@ -908,7 +911,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bN" = (
 /obj/structure/table/rack,
 /obj/item/rig_module/mounted/taser,
@@ -934,13 +937,13 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bO" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/unsimulated/floor{
 	icon_state = "asteroid"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bP" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Ready Room";
@@ -951,7 +954,7 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bQ" = (
 /obj/machinery/recharger/wallcharger{
 	pixel_x = 0;
@@ -970,7 +973,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bR" = (
 /obj/structure/table/rack,
 /obj/item/weapon/storage/box/handcuffs,
@@ -983,7 +986,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bS" = (
 /obj/structure/table/rack,
 /obj/item/clothing/mask/gas,
@@ -994,7 +997,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bT" = (
 /obj/structure/table/rack,
 /obj/item/weapon/storage/backpack/ert/security,
@@ -1005,7 +1008,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bU" = (
 /obj/structure/table/rack,
 /obj/item/clothing/suit/armor/pcarrier/tactical,
@@ -1020,7 +1023,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bV" = (
 /obj/structure/table/rack,
 /obj/item/clothing/suit/armor/pcarrier/tactical,
@@ -1031,7 +1034,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bW" = (
 /obj/structure/table/rack,
 /obj/item/weapon/gun/energy/stunrevolver,
@@ -1040,7 +1043,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bX" = (
 /obj/structure/table/rack,
 /obj/item/weapon/storage/backpack/ert/medical,
@@ -1055,7 +1058,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bY" = (
 /obj/structure/table/rack,
 /obj/item/clothing/glasses/hud/health,
@@ -1069,7 +1072,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "bZ" = (
 /obj/structure/table/rack,
 /obj/item/device/flash,
@@ -1096,7 +1099,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "ca" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/reagent_containers/hypospray,
@@ -1113,7 +1116,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cb" = (
 /obj/effect/floor_decal/corner/yellow{
 	icon_state = "corner_white";
@@ -1122,7 +1125,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cc" = (
 /obj/effect/floor_decal/corner/white{
 	icon_state = "corner_white";
@@ -1131,7 +1134,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cd" = (
 /obj/effect/floor_decal/corner/red,
 /obj/effect/floor_decal/corner/pink{
@@ -1145,7 +1148,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "ce" = (
 /obj/structure/table/rack,
 /obj/item/weapon/rig/ert/security,
@@ -1160,7 +1163,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cf" = (
 /obj/machinery/vending/snack{
 	name = "hacked Getmore Chocolate Corp";
@@ -1170,7 +1173,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cg" = (
 /obj/machinery/vending/cola{
 	name = "Robust Softdrinks";
@@ -1180,7 +1183,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "ch" = (
 /obj/machinery/vending/cigarette{
 	prices = list()
@@ -1189,14 +1192,14 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "ci" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cj" = (
 /obj/structure/table/reinforced,
 /obj/item/device/radio/intercom/specops{
@@ -1208,7 +1211,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "ck" = (
 /obj/structure/table/rack,
 /obj/item/stack/material/glass{
@@ -1230,7 +1233,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cl" = (
 /obj/structure/table/rack,
 /obj/item/weapon/gun/energy/laser,
@@ -1239,7 +1242,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cm" = (
 /obj/machinery/chemical_dispenser/ert,
 /obj/item/weapon/reagent_containers/glass/beaker/large,
@@ -1247,7 +1250,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cn" = (
 /obj/effect/floor_decal/corner/red{
 	dir = 6
@@ -1255,7 +1258,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "co" = (
 /obj/structure/table/rack,
 /obj/item/weapon/rig/ert/security,
@@ -1268,13 +1271,13 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cp" = (
 /obj/structure/flora/ausbushes/palebush,
 /turf/unsimulated/floor{
 	icon_state = "asteroid"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cq" = (
 /obj/machinery/fabricator{
 	desc = "Your typical Autolathe. It appears to have much more options than your regular one, however...";
@@ -1285,7 +1288,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cr" = (
 /obj/structure/table/rack,
 /obj/item/weapon/gun/energy/ionrifle,
@@ -1294,7 +1297,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cs" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
@@ -1317,7 +1320,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "ct" = (
 /obj/structure/table/reinforced,
 /obj/item/roller,
@@ -1334,14 +1337,14 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cu" = (
 /obj/machinery/chem_master,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cv" = (
 /obj/effect/floor_decal/corner/blue{
 	dir = 10
@@ -1349,7 +1352,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cw" = (
 /obj/effect/floor_decal/corner/blue{
 	dir = 8
@@ -1362,7 +1365,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cx" = (
 /obj/structure/table/rack,
 /obj/item/rig_module/mounted/taser,
@@ -1390,7 +1393,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cy" = (
 /obj/structure/bed/chair/office/light{
 	dir = 4
@@ -1399,7 +1402,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cz" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/stamp/boss,
@@ -1408,7 +1411,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cA" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/board,
@@ -1416,7 +1419,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cB" = (
 /obj/structure/bed/chair/office/light{
 	dir = 8
@@ -1425,7 +1428,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cC" = (
 /obj/structure/table/reinforced,
 /obj/item/modular_computer/pda/ert,
@@ -1438,7 +1441,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cD" = (
 /obj/structure/table/rack,
 /obj/item/weapon/gun/energy/taser/carbine,
@@ -1449,7 +1452,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cE" = (
 /obj/structure/table/rack,
 /obj/item/weapon/gun/projectile/automatic/nt41,
@@ -1466,7 +1469,7 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cF" = (
 /obj/machinery/chemical_dispenser/full,
 /obj/item/weapon/reagent_containers/glass/beaker/large,
@@ -1474,14 +1477,14 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cG" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cH" = (
 /obj/structure/table/rack,
 /obj/item/weapon/crowbar,
@@ -1505,7 +1508,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cI" = (
 /obj/structure/table/rack,
 /obj/structure/window/reinforced/crescent{
@@ -1524,7 +1527,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cJ" = (
 /obj/structure/window/reinforced/crescent,
 /obj/structure/table/rack,
@@ -1545,7 +1548,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cK" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/storage/fancy/cigar,
@@ -1553,7 +1556,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cL" = (
 /obj/structure/table/reinforced,
 /obj/item/device/megaphone,
@@ -1570,11 +1573,11 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cM" = (
 /obj/machinery/vending/security,
 /turf/simulated/wall/r_wall/prepainted,
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cN" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Security";
@@ -1585,7 +1588,7 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cO" = (
 /obj/structure/table/rack,
 /obj/item/clothing/accessory/storage/white_vest,
@@ -1598,7 +1601,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cP" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/reagent_containers/spray/cleaner,
@@ -1614,7 +1617,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cQ" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/storage/firstaid/fire,
@@ -1630,7 +1633,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cR" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/storage/firstaid/regular,
@@ -1646,7 +1649,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cS" = (
 /obj/machinery/door/airlock/centcom{
 	name = "EVA";
@@ -1657,7 +1660,7 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cT" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/material/ashtray/plastic,
@@ -1665,7 +1668,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cU" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/storage/box/donut,
@@ -1673,7 +1676,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cV" = (
 /obj/structure/table/reinforced,
 /obj/item/device/paicard,
@@ -1686,7 +1689,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cW" = (
 /obj/structure/table/rack,
 /obj/item/weapon/gun/energy/gun,
@@ -1696,7 +1699,7 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cX" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Medical";
@@ -1707,11 +1710,11 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cY" = (
 /obj/machinery/vending/medical,
 /turf/simulated/wall/r_wall/prepainted,
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "cZ" = (
 /obj/machinery/door/blast/regular/admin{
 	id_tag = "standardrescue";
@@ -1721,7 +1724,7 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "da" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Unit Area";
@@ -1732,7 +1735,7 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "db" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Echo Barracks";
@@ -1743,13 +1746,13 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "dc" = (
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/unsimulated/floor{
 	icon_state = "asteroid"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "dd" = (
 /obj/item/device/radio/intercom/specops{
 	dir = 1;
@@ -1759,7 +1762,7 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "de" = (
 /obj/machinery/recharger/wallcharger{
 	dir = 1;
@@ -1770,7 +1773,7 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "df" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
 	frequency = 1331;
@@ -1782,7 +1785,7 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "dg" = (
 /obj/machinery/computer/modular/preset/ert{
 	dir = 1
@@ -1791,7 +1794,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "dh" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Command";
@@ -1802,7 +1805,7 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "di" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Engineering";
@@ -1813,11 +1816,11 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "dj" = (
 /obj/machinery/vending/engineering,
 /turf/simulated/wall/r_wall/prepainted,
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "dk" = (
 /obj/machinery/door/airlock/external{
 	frequency = 1331;
@@ -1829,14 +1832,14 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "dl" = (
 /obj/machinery/porta_turret/crescent,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "dm" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/storage/box/trackimp,
@@ -1845,7 +1848,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "dn" = (
 /obj/structure/table/reinforced,
 /obj/prefab/hand_teleporter,
@@ -1854,7 +1857,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "do" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/aicard,
@@ -1867,7 +1870,7 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "dp" = (
 /obj/structure/table/reinforced,
 /obj/machinery/cell_charger,
@@ -1876,28 +1879,28 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "dq" = (
 /obj/machinery/vending/engivend,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "dr" = (
 /obj/machinery/vending/tool,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "ds" = (
 /obj/machinery/vending/assist,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "dt" = (
 /obj/item/device/radio/intercom/specops{
 	dir = 2;
@@ -1907,19 +1910,19 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "du" = (
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "dv" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/unsimulated/floor{
 	icon_state = "asteroidfloor"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "dw" = (
 /obj/machinery/door/blast/regular/admin{
 	dir = 2;
@@ -1929,11 +1932,8 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "dx" = (
-/turf/unsimulated/mineral,
-/area/rescue_base/base)
-"dy" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/door/airlock/external{
 	frequency = 1331;
@@ -1943,8 +1943,8 @@
 /turf/unsimulated/floor{
 	icon_state = "asteroidfloor"
 	},
-/area/rescue_base/base)
-"dz" = (
+/area/map_template/rescue_base/base)
+"dy" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Garage";
 	opacity = 1;
@@ -1954,22 +1954,22 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
-"dA" = (
+/area/map_template/rescue_base/base)
+"dz" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
-"dB" = (
+/area/map_template/rescue_base/base)
+"dA" = (
 /obj/machinery/portable_atmospherics/powered/pump/filled,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
-"dC" = (
+/area/map_template/rescue_base/base)
+"dB" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	icon_state = "warning_dust";
 	dir = 9
@@ -1977,8 +1977,8 @@
 /turf/unsimulated/floor{
 	icon_state = "asteroidfloor"
 	},
-/area/rescue_base/base)
-"dD" = (
+/area/map_template/rescue_base/base)
+"dC" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	icon_state = "warning_dust";
 	dir = 5
@@ -1986,8 +1986,8 @@
 /turf/unsimulated/floor{
 	icon_state = "asteroidfloor"
 	},
-/area/rescue_base/base)
-"dE" = (
+/area/map_template/rescue_base/base)
+"dD" = (
 /obj/structure/table/reinforced,
 /obj/item/mech_equipment/sleeper,
 /obj/item/mech_equipment/sleeper,
@@ -1995,8 +1995,8 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
-"dF" = (
+/area/map_template/rescue_base/base)
+"dE" = (
 /obj/structure/table/reinforced,
 /obj/item/mech_equipment/catapult,
 /obj/item/device/radio/intercom/specops{
@@ -2007,16 +2007,16 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
-"dG" = (
+/area/map_template/rescue_base/base)
+"dF" = (
 /obj/structure/table/reinforced,
 /obj/machinery/cell_charger,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
-"dH" = (
+/area/map_template/rescue_base/base)
+"dG" = (
 /obj/structure/table/woodentable/walnut,
 /obj/machinery/button/blast_door{
 	id_tag = "heavyrescue";
@@ -2027,8 +2027,8 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
-"dI" = (
+/area/map_template/rescue_base/base)
+"dH" = (
 /obj/structure/table/woodentable/walnut,
 /obj/machinery/button/blast_door{
 	id_tag = "standardrescue";
@@ -2039,8 +2039,8 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
-"dJ" = (
+/area/map_template/rescue_base/base)
+"dI" = (
 /obj/structure/table/rack,
 /obj/item/weapon/gun/energy/stunrevolver,
 /obj/item/weapon/melee/baton/loaded,
@@ -2048,8 +2048,8 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
-"dK" = (
+/area/map_template/rescue_base/base)
+"dJ" = (
 /obj/structure/table/rack,
 /obj/item/weapon/storage/box/flashbangs,
 /obj/item/weapon/storage/box/teargas,
@@ -2058,8 +2058,8 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
-"dL" = (
+/area/map_template/rescue_base/base)
+"dK" = (
 /obj/structure/table/rack,
 /obj/item/weapon/storage/backpack/ert/commander,
 /obj/item/weapon/storage/belt/holster/security/tactical,
@@ -2067,8 +2067,8 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
-"dM" = (
+/area/map_template/rescue_base/base)
+"dL" = (
 /obj/structure/table/rack,
 /obj/item/clothing/mask/gas,
 /obj/item/clothing/glasses/tacgoggles,
@@ -2076,8 +2076,8 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
-"dN" = (
+/area/map_template/rescue_base/base)
+"dM" = (
 /obj/structure/table/rack,
 /obj/item/clothing/suit/armor/pcarrier/tactical,
 /obj/item/clothing/head/helmet/tactical,
@@ -2085,22 +2085,22 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
-"dO" = (
+/area/map_template/rescue_base/base)
+"dN" = (
 /obj/structure/reagent_dispensers/fueltank,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
-"dP" = (
+/area/map_template/rescue_base/base)
+"dO" = (
 /obj/machinery/portable_atmospherics/powered/scrubber,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
-"dQ" = (
+/area/map_template/rescue_base/base)
+"dP" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	icon_state = "warning_dust";
 	dir = 8
@@ -2108,8 +2108,8 @@
 /turf/unsimulated/floor{
 	icon_state = "asteroidfloor"
 	},
-/area/rescue_base/base)
-"dR" = (
+/area/map_template/rescue_base/base)
+"dQ" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	icon_state = "warning_dust";
 	dir = 4
@@ -2117,8 +2117,8 @@
 /turf/unsimulated/floor{
 	icon_state = "asteroidfloor"
 	},
-/area/rescue_base/base)
-"dS" = (
+/area/map_template/rescue_base/base)
+"dR" = (
 /obj/machinery/door/blast/regular/admin{
 	dir = 4;
 	id_tag = "rescuegarage"
@@ -2127,24 +2127,24 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
-"dT" = (
+/area/map_template/rescue_base/base)
+"dS" = (
 /obj/machinery/mech_recharger,
 /mob/living/exosuit/premade/light,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
-"dU" = (
+/area/map_template/rescue_base/base)
+"dT" = (
 /obj/machinery/computer/modular/preset/sysadmin{
 	dir = 4
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
-"dV" = (
+/area/map_template/rescue_base/base)
+"dU" = (
 /obj/machinery/button/blast_door{
 	id_tag = "rescueteleport";
 	name = "Teleporter";
@@ -2162,47 +2162,47 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
-"dW" = (
+/area/map_template/rescue_base/base)
+"dV" = (
 /obj/machinery/computer/modular/preset/medical{
 	dir = 8
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
-"dX" = (
+/area/map_template/rescue_base/base)
+"dW" = (
 /obj/machinery/power/emitter,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
-"dY" = (
+/area/map_template/rescue_base/base)
+"dX" = (
 /obj/machinery/mech_recharger,
 /mob/living/exosuit/premade/powerloader,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
-"ea" = (
+/area/map_template/rescue_base/base)
+"dY" = (
 /obj/machinery/computer/modular/preset/ert{
 	dir = 4
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
-"eb" = (
+/area/map_template/rescue_base/base)
+"dZ" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 8
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
-"ec" = (
+/area/map_template/rescue_base/base)
+"ea" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 4;
 	icon_state = "officechair_preview"
@@ -2210,243 +2210,243 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
-"ed" = (
+/area/map_template/rescue_base/base)
+"eb" = (
 /obj/machinery/computer/modular/preset/ert{
 	dir = 8
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
+"ec" = (
+/obj/structure/table/rack,
+/obj/item/weapon/storage/backpack/ert/engineer,
+/obj/item/weapon/storage/backpack/ert/engineer,
+/obj/item/weapon/storage/belt/utility/full,
+/obj/item/weapon/storage/belt/utility/full,
+/obj/item/clothing/accessory/armband/engine,
+/obj/item/clothing/accessory/armband/engine,
+/obj/item/clothing/gloves/insulated/combat,
+/obj/item/clothing/gloves/insulated/combat,
+/turf/unsimulated/floor{
+	icon_state = "vault";
+	dir = 1
+	},
+/area/map_template/rescue_base/base)
+"ed" = (
+/obj/structure/table/rack,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/glasses/welding/superior,
+/obj/item/clothing/glasses/welding/superior,
+/obj/item/clothing/glasses/meson,
+/obj/item/clothing/glasses/meson,
+/turf/unsimulated/floor{
+	icon_state = "vault";
+	dir = 1
+	},
+/area/map_template/rescue_base/base)
 "ee" = (
 /obj/structure/table/rack,
-/obj/item/weapon/storage/backpack/ert/engineer,
-/obj/item/weapon/storage/backpack/ert/engineer,
-/obj/item/weapon/storage/belt/utility/full,
-/obj/item/weapon/storage/belt/utility/full,
-/obj/item/clothing/accessory/armband/engine,
-/obj/item/clothing/accessory/armband/engine,
-/obj/item/clothing/gloves/insulated/combat,
-/obj/item/clothing/gloves/insulated/combat,
+/obj/item/device/flash,
+/obj/item/device/flash,
+/obj/item/weapon/melee/baton/loaded,
+/obj/item/weapon/melee/baton/loaded,
+/obj/item/weapon/grenade/chem_grenade/metalfoam,
+/obj/item/weapon/grenade/chem_grenade/metalfoam,
+/obj/item/weapon/grenade/chem_grenade/metalfoam,
+/obj/item/weapon/grenade/chem_grenade/metalfoam,
+/obj/item/weapon/grenade/chem_grenade/metalfoam,
+/obj/item/weapon/grenade/chem_grenade/metalfoam,
+/obj/item/weapon/grenade/chem_grenade/metalfoam,
+/obj/item/weapon/grenade/chem_grenade/metalfoam,
+/obj/item/weapon/inflatable_dispenser,
+/obj/item/weapon/inflatable_dispenser,
+/obj/item/weapon/pickaxe/diamonddrill,
+/obj/item/weapon/pickaxe/diamonddrill,
+/obj/item/weapon/storage/briefcase/inflatable{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/weapon/storage/briefcase/inflatable{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/weapon/storage/briefcase/inflatable{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/weapon/storage/briefcase/inflatable{
+	pixel_x = 3;
+	pixel_y = 3
+	},
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "ef" = (
-/obj/structure/table/rack,
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/glasses/welding/superior,
-/obj/item/clothing/glasses/welding/superior,
-/obj/item/clothing/glasses/meson,
-/obj/item/clothing/glasses/meson,
+/obj/structure/table/reinforced,
+/obj/item/taperoll/engineering,
+/obj/item/taperoll/engineering,
+/obj/item/taperoll/atmos,
+/obj/item/taperoll/atmos,
+/obj/item/device/multitool,
+/obj/item/device/multitool,
+/obj/item/weapon/tape_roll,
+/obj/item/weapon/tape_roll,
+/obj/item/weapon/tape_roll,
+/obj/item/weapon/tape_roll,
+/obj/item/weapon/cell/high,
+/obj/item/weapon/cell/high,
+/obj/item/weapon/cell/high,
+/obj/item/weapon/cell/high,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "eg" = (
-/obj/structure/table/rack,
-/obj/item/device/flash,
-/obj/item/device/flash,
-/obj/item/weapon/melee/baton/loaded,
-/obj/item/weapon/melee/baton/loaded,
-/obj/item/weapon/grenade/chem_grenade/metalfoam,
-/obj/item/weapon/grenade/chem_grenade/metalfoam,
-/obj/item/weapon/grenade/chem_grenade/metalfoam,
-/obj/item/weapon/grenade/chem_grenade/metalfoam,
-/obj/item/weapon/grenade/chem_grenade/metalfoam,
-/obj/item/weapon/grenade/chem_grenade/metalfoam,
-/obj/item/weapon/grenade/chem_grenade/metalfoam,
-/obj/item/weapon/grenade/chem_grenade/metalfoam,
-/obj/item/weapon/inflatable_dispenser,
-/obj/item/weapon/inflatable_dispenser,
-/obj/item/weapon/pickaxe/diamonddrill,
-/obj/item/weapon/pickaxe/diamonddrill,
-/obj/item/weapon/storage/briefcase/inflatable{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/weapon/storage/briefcase/inflatable{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/weapon/storage/briefcase/inflatable{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/weapon/storage/briefcase/inflatable{
-	pixel_x = 3;
-	pixel_y = 3
-	},
+/obj/structure/table/reinforced,
+/obj/item/weapon/rcd_ammo,
+/obj/item/weapon/rcd_ammo,
+/obj/item/weapon/rcd_ammo,
+/obj/item/weapon/rcd_ammo,
+/obj/item/weapon/rcd_ammo,
+/obj/item/weapon/rcd_ammo,
+/obj/item/weapon/rcd_ammo,
+/obj/item/weapon/rcd_ammo,
+/obj/item/weapon/rcd_ammo,
+/obj/item/weapon/rcd_ammo,
+/obj/item/weapon/rcd_ammo,
+/obj/item/weapon/rcd_ammo,
+/obj/item/weapon/rcd,
+/obj/item/weapon/rcd,
+/obj/item/weapon/rcd,
+/obj/item/weapon/rcd,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "eh" = (
 /obj/structure/table/reinforced,
-/obj/item/taperoll/engineering,
-/obj/item/taperoll/engineering,
-/obj/item/taperoll/atmos,
-/obj/item/taperoll/atmos,
-/obj/item/device/multitool,
-/obj/item/device/multitool,
-/obj/item/weapon/tape_roll,
-/obj/item/weapon/tape_roll,
-/obj/item/weapon/tape_roll,
-/obj/item/weapon/tape_roll,
-/obj/item/weapon/cell/high,
-/obj/item/weapon/cell/high,
-/obj/item/weapon/cell/high,
-/obj/item/weapon/cell/high,
+/obj/item/stack/material/glass{
+	amount = 50
+	},
+/obj/item/stack/material/glass{
+	amount = 50
+	},
+/obj/item/stack/material/glass{
+	amount = 50
+	},
+/obj/item/stack/material/glass{
+	amount = 50
+	},
+/obj/item/stack/material/steel{
+	amount = 50;
+	pixel_x = 2;
+	pixel_y = 2
+	},
+/obj/item/stack/material/steel{
+	amount = 50;
+	pixel_x = 2;
+	pixel_y = 2
+	},
+/obj/item/stack/material/steel{
+	amount = 50;
+	pixel_x = 2;
+	pixel_y = 2
+	},
+/obj/item/stack/material/steel{
+	amount = 50;
+	pixel_x = 2;
+	pixel_y = 2
+	},
+/obj/item/stack/material/plasteel{
+	amount = 50
+	},
+/obj/item/stack/material/plasteel{
+	amount = 50
+	},
+/obj/item/stack/material/plasteel{
+	amount = 50
+	},
+/obj/item/stack/material/plasteel{
+	amount = 50
+	},
+/obj/item/stack/material/glass/reinforced{
+	amount = 50
+	},
+/obj/item/stack/material/glass/reinforced{
+	amount = 50
+	},
+/obj/item/stack/material/glass/reinforced{
+	amount = 50
+	},
+/obj/item/stack/material/glass/reinforced{
+	amount = 50
+	},
+/obj/item/stack/material/plastic{
+	amount = 50
+	},
+/obj/item/stack/material/plastic{
+	amount = 50
+	},
+/obj/item/stack/material/plastic{
+	amount = 50
+	},
+/obj/item/stack/material/plastic{
+	amount = 50
+	},
+/obj/item/stack/material/glass/phoronrglass{
+	amount = 20
+	},
+/obj/item/stack/material/glass/phoronrglass{
+	amount = 20
+	},
+/obj/item/stack/material/glass/phoronrglass{
+	amount = 20
+	},
+/obj/item/stack/material/glass/phoronrglass{
+	amount = 20
+	},
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "ei" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/rcd_ammo,
-/obj/item/weapon/rcd_ammo,
-/obj/item/weapon/rcd_ammo,
-/obj/item/weapon/rcd_ammo,
-/obj/item/weapon/rcd_ammo,
-/obj/item/weapon/rcd_ammo,
-/obj/item/weapon/rcd_ammo,
-/obj/item/weapon/rcd_ammo,
-/obj/item/weapon/rcd_ammo,
-/obj/item/weapon/rcd_ammo,
-/obj/item/weapon/rcd_ammo,
-/obj/item/weapon/rcd_ammo,
-/obj/item/weapon/rcd,
-/obj/item/weapon/rcd,
-/obj/item/weapon/rcd,
-/obj/item/weapon/rcd,
+/obj/item/weapon/stock_parts/circuitboard/smes,
+/obj/item/weapon/stock_parts/circuitboard/smes,
+/obj/item/weapon/stock_parts/smes_coil,
+/obj/item/weapon/stock_parts/smes_coil,
+/obj/item/weapon/stock_parts/smes_coil/super_capacity,
+/obj/item/weapon/stock_parts/smes_coil/super_capacity,
+/obj/item/weapon/stock_parts/smes_coil/super_io,
+/obj/item/weapon/stock_parts/smes_coil/super_io,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 "ej" = (
-/obj/structure/table/reinforced,
-/obj/item/stack/material/glass{
-	amount = 50
-	},
-/obj/item/stack/material/glass{
-	amount = 50
-	},
-/obj/item/stack/material/glass{
-	amount = 50
-	},
-/obj/item/stack/material/glass{
-	amount = 50
-	},
-/obj/item/stack/material/steel{
-	amount = 50;
-	pixel_x = 2;
-	pixel_y = 2
-	},
-/obj/item/stack/material/steel{
-	amount = 50;
-	pixel_x = 2;
-	pixel_y = 2
-	},
-/obj/item/stack/material/steel{
-	amount = 50;
-	pixel_x = 2;
-	pixel_y = 2
-	},
-/obj/item/stack/material/steel{
-	amount = 50;
-	pixel_x = 2;
-	pixel_y = 2
-	},
-/obj/item/stack/material/plasteel{
-	amount = 50
-	},
-/obj/item/stack/material/plasteel{
-	amount = 50
-	},
-/obj/item/stack/material/plasteel{
-	amount = 50
-	},
-/obj/item/stack/material/plasteel{
-	amount = 50
-	},
-/obj/item/stack/material/glass/reinforced{
-	amount = 50
-	},
-/obj/item/stack/material/glass/reinforced{
-	amount = 50
-	},
-/obj/item/stack/material/glass/reinforced{
-	amount = 50
-	},
-/obj/item/stack/material/glass/reinforced{
-	amount = 50
-	},
-/obj/item/stack/material/plastic{
-	amount = 50
-	},
-/obj/item/stack/material/plastic{
-	amount = 50
-	},
-/obj/item/stack/material/plastic{
-	amount = 50
-	},
-/obj/item/stack/material/plastic{
-	amount = 50
-	},
-/obj/item/stack/material/glass/phoronrglass{
-	amount = 20
-	},
-/obj/item/stack/material/glass/phoronrglass{
-	amount = 20
-	},
-/obj/item/stack/material/glass/phoronrglass{
-	amount = 20
-	},
-/obj/item/stack/material/glass/phoronrglass{
-	amount = 20
-	},
-/turf/unsimulated/floor{
-	icon_state = "vault";
-	dir = 1
-	},
-/area/rescue_base/base)
-"ek" = (
-/obj/structure/table/reinforced,
-/obj/item/weapon/stock_parts/circuitboard/smes,
-/obj/item/weapon/stock_parts/circuitboard/smes,
-/obj/item/weapon/stock_parts/smes_coil,
-/obj/item/weapon/stock_parts/smes_coil,
-/obj/item/weapon/stock_parts/smes_coil/super_capacity,
-/obj/item/weapon/stock_parts/smes_coil/super_capacity,
-/obj/item/weapon/stock_parts/smes_coil/super_io,
-/obj/item/weapon/stock_parts/smes_coil/super_io,
-/turf/unsimulated/floor{
-	icon_state = "vault";
-	dir = 1
-	},
-/area/rescue_base/base)
-"el" = (
 /obj/machinery/portable_atmospherics/canister/air,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
-"em" = (
+/area/map_template/rescue_base/base)
+"ek" = (
 /obj/machinery/mech_recharger,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
-"en" = (
+/area/map_template/rescue_base/base)
+"el" = (
 /obj/item/device/radio/intercom/specops{
 	dir = 2;
 	pixel_y = 22
@@ -2454,8 +2454,8 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
-"eo" = (
+/area/map_template/rescue_base/base)
+"em" = (
 /obj/structure/table/reinforced,
 /obj/item/robot_parts/robot_component/armour/exosuit/combat,
 /obj/item/robot_parts/robot_component/armour/exosuit/combat,
@@ -2463,24 +2463,24 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
-"ep" = (
+/area/map_template/rescue_base/base)
+"en" = (
 /obj/machinery/computer/modular/preset/medical{
 	dir = 4
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
-"eq" = (
+/area/map_template/rescue_base/base)
+"eo" = (
 /obj/machinery/computer/modular/preset/sysadmin{
 	dir = 8
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
-"er" = (
+/area/map_template/rescue_base/base)
+"ep" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Combat Exosuit";
 	opacity = 1;
@@ -2494,24 +2494,24 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
-"es" = (
+/area/map_template/rescue_base/base)
+"eq" = (
 /obj/machinery/mech_recharger,
 /mob/living/exosuit/premade/heavy,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
-"et" = (
+/area/map_template/rescue_base/base)
+"er" = (
 /obj/structure/table/woodentable/walnut,
 /obj/item/weapon/storage/fancy/cigar,
 /obj/item/weapon/flame/lighter/zippo,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
-"eu" = (
+/area/map_template/rescue_base/base)
+"es" = (
 /obj/structure/table/woodentable/walnut,
 /obj/item/device/radio/phone{
 	desc = "Should anything ever go wrong...";
@@ -2522,8 +2522,8 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/rescue_base/base)
-"ev" = (
+/area/map_template/rescue_base/base)
+"et" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	icon_state = "warning_dust";
 	dir = 1
@@ -2531,8 +2531,8 @@
 /turf/unsimulated/floor{
 	icon_state = "asteroidfloor"
 	},
-/area/rescue_base/base)
-"ew" = (
+/area/map_template/rescue_base/base)
+"eu" = (
 /obj/structure/sign/nanotrasen{
 	pixel_y = 32
 	},
@@ -2543,8 +2543,8 @@
 /turf/unsimulated/floor{
 	icon_state = "asteroidfloor"
 	},
-/area/rescue_base/base)
-"ex" = (
+/area/map_template/rescue_base/base)
+"ev" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	icon_state = "warningcorner_dust";
 	dir = 1
@@ -2552,26 +2552,26 @@
 /turf/unsimulated/floor{
 	icon_state = "asteroidfloor"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
+"ew" = (
+/obj/structure/table/reinforced,
+/obj/item/mech_equipment/clamp,
+/obj/item/mech_equipment/clamp,
+/turf/unsimulated/floor{
+	icon_state = "vault";
+	dir = 1
+	},
+/area/map_template/rescue_base/base)
+"ex" = (
+/obj/structure/table/reinforced,
+/obj/item/mech_equipment/light,
+/obj/item/mech_equipment/light,
+/turf/unsimulated/floor{
+	icon_state = "vault";
+	dir = 1
+	},
+/area/map_template/rescue_base/base)
 "ey" = (
-/obj/structure/table/reinforced,
-/obj/item/mech_equipment/clamp,
-/obj/item/mech_equipment/clamp,
-/turf/unsimulated/floor{
-	icon_state = "vault";
-	dir = 1
-	},
-/area/rescue_base/base)
-"ez" = (
-/obj/structure/table/reinforced,
-/obj/item/mech_equipment/light,
-/obj/item/mech_equipment/light,
-/turf/unsimulated/floor{
-	icon_state = "vault";
-	dir = 1
-	},
-/area/rescue_base/base)
-"eA" = (
 /obj/structure/table/reinforced,
 /obj/item/mech_equipment/drill,
 /obj/item/mech_equipment/light,
@@ -2579,8 +2579,8 @@
 	icon_state = "vault";
 	dir = 8
 	},
-/area/rescue_base/base)
-"eB" = (
+/area/map_template/rescue_base/base)
+"ez" = (
 /obj/structure/table/reinforced,
 /obj/item/mech_equipment/mounted_system/extinguisher,
 /obj/item/mech_equipment/mounted_system/rcd,
@@ -2588,15 +2588,15 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
-"eC" = (
+/area/map_template/rescue_base/base)
+"eA" = (
 /obj/structure/table/reinforced,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
-"eD" = (
+/area/map_template/rescue_base/base)
+"eB" = (
 /obj/structure/table/reinforced,
 /obj/item/mech_equipment/mounted_system/taser/ion,
 /obj/item/mech_equipment/mounted_system/taser,
@@ -2604,20 +2604,20 @@
 	icon_state = "vault";
 	dir = 1
 	},
-/area/rescue_base/base)
-"eE" = (
+/area/map_template/rescue_base/base)
+"eC" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner,
 /turf/unsimulated/floor{
 	icon_state = "asteroidfloor"
 	},
-/area/rescue_base/base)
-"eF" = (
+/area/map_template/rescue_base/base)
+"eD" = (
 /obj/effect/floor_decal/industrial/warning/dust,
 /turf/unsimulated/floor{
 	icon_state = "asteroidfloor"
 	},
-/area/rescue_base/base)
-"eG" = (
+/area/map_template/rescue_base/base)
+"eE" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	icon_state = "warningcorner_dust";
 	dir = 8
@@ -2625,8 +2625,8 @@
 /turf/unsimulated/floor{
 	icon_state = "asteroidfloor"
 	},
-/area/rescue_base/base)
-"eH" = (
+/area/map_template/rescue_base/base)
+"eF" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	icon_state = "warningcorner_dust";
 	dir = 4
@@ -2634,18 +2634,18 @@
 /turf/unsimulated/floor{
 	icon_state = "asteroidfloor"
 	},
-/area/rescue_base/base)
-"eI" = (
+/area/map_template/rescue_base/base)
+"eG" = (
 /turf/unsimulated/floor{
 	icon_state = "asteroidfloor"
 	},
-/area/rescue_base/base)
-"eJ" = (
+/area/map_template/rescue_base/base)
+"eH" = (
 /obj/effect/paint/nt_white,
 /obj/effect/paint_stripe/nt_red,
 /turf/simulated/wall/r_titanium,
-/area/rescue_base/start)
-"eK" = (
+/area/map_template/rescue_base/start)
+"eI" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -2658,8 +2658,8 @@
 /obj/effect/paint/nt_white,
 /obj/effect/paint_stripe/nt_red,
 /turf/simulated/floor/plating,
-/area/rescue_base/start)
-"eL" = (
+/area/map_template/rescue_base/start)
+"eJ" = (
 /obj/effect/paint/nt_white,
 /obj/structure/sign/nanotrasen{
 	icon_state = "NT";
@@ -2667,8 +2667,8 @@
 	},
 /obj/effect/paint_stripe/nt_red,
 /turf/simulated/wall/r_titanium,
-/area/rescue_base/start)
-"eM" = (
+/area/map_template/rescue_base/start)
+"eK" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -2680,8 +2680,8 @@
 /obj/effect/paint/nt_white,
 /obj/effect/paint_stripe/nt_red,
 /turf/simulated/floor/plating,
-/area/rescue_base/start)
-"eN" = (
+/area/map_template/rescue_base/start)
+"eL" = (
 /obj/machinery/door/airlock/external{
 	autoset_access = 0;
 	density = 1;
@@ -2692,8 +2692,8 @@
 	},
 /obj/machinery/shield_diffuser,
 /turf/simulated/floor/shuttle/red,
-/area/rescue_base/start)
-"eO" = (
+/area/map_template/rescue_base/start)
+"eM" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/button/blast_door{
 	icon_state = "blastctrl";
@@ -2703,16 +2703,16 @@
 	req_access = list("ACCESS_CENT_CREED")
 	},
 /turf/simulated/floor/shuttle/black,
-/area/rescue_base/start)
-"eP" = (
+/area/map_template/rescue_base/start)
+"eN" = (
 /obj/machinery/computer/modular/preset/command,
 /turf/simulated/floor/shuttle/black,
-/area/rescue_base/start)
-"eQ" = (
+/area/map_template/rescue_base/start)
+"eO" = (
 /obj/machinery/computer/shuttle_control/multi/rescue,
 /turf/simulated/floor/shuttle/black,
-/area/rescue_base/start)
-"eR" = (
+/area/map_template/rescue_base/start)
+"eP" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/recharger{
 	pixel_y = 4
@@ -2721,8 +2721,8 @@
 	dir = 4
 	},
 /turf/simulated/floor/shuttle/black,
-/area/rescue_base/start)
-"eS" = (
+/area/map_template/rescue_base/start)
+"eQ" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 4;
 	frequency = 1331;
@@ -2742,14 +2742,14 @@
 	dir = 4
 	},
 /turf/simulated/floor/shuttle/red,
-/area/rescue_base/start)
-"eT" = (
+/area/map_template/rescue_base/start)
+"eR" = (
 /obj/machinery/atmospherics/pipe/manifold/visible{
 	dir = 1
 	},
 /turf/simulated/floor/shuttle/red,
-/area/rescue_base/start)
-"eU" = (
+/area/map_template/rescue_base/start)
+"eS" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 8;
 	frequency = 1331;
@@ -2770,27 +2770,27 @@
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/red,
-/area/rescue_base/start)
-"eV" = (
+/area/map_template/rescue_base/start)
+"eT" = (
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/shuttle/black,
-/area/rescue_base/start)
-"eW" = (
+/area/map_template/rescue_base/start)
+"eU" = (
 /obj/structure/bed/chair/shuttle/red{
 	icon_state = "shuttle_chair_preview";
 	dir = 1
 	},
 /turf/simulated/floor/shuttle/black,
-/area/rescue_base/start)
-"eX" = (
+/area/map_template/rescue_base/start)
+"eV" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/device/radio/intercom/specops{
 	dir = 8;
 	pixel_x = 22
 	},
 /turf/simulated/floor/shuttle/black,
-/area/rescue_base/start)
-"eY" = (
+/area/map_template/rescue_base/start)
+"eW" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 4;
 	frequency = 1331;
@@ -2801,20 +2801,20 @@
 	dir = 4
 	},
 /turf/simulated/floor/shuttle/red,
-/area/rescue_base/start)
-"eZ" = (
+/area/map_template/rescue_base/start)
+"eX" = (
 /obj/machinery/atmospherics/pipe/manifold/visible{
 	dir = 4
 	},
 /turf/simulated/floor/shuttle/red,
-/area/rescue_base/start)
-"fa" = (
+/area/map_template/rescue_base/start)
+"eY" = (
 /obj/machinery/atmospherics/pipe/manifold/visible{
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/red,
-/area/rescue_base/start)
-"fb" = (
+/area/map_template/rescue_base/start)
+"eZ" = (
 /obj/machinery/button/blast_door{
 	icon_state = "blastctrl";
 	id_tag = "rescuedock";
@@ -2833,23 +2833,23 @@
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/red,
-/area/rescue_base/start)
-"fc" = (
+/area/map_template/rescue_base/start)
+"fa" = (
 /obj/machinery/computer/modular/preset/medical{
 	dir = 4
 	},
 /turf/simulated/floor/shuttle/black,
-/area/rescue_base/start)
-"fd" = (
+/area/map_template/rescue_base/start)
+"fb" = (
 /turf/simulated/floor/shuttle/black,
-/area/rescue_base/start)
-"fe" = (
+/area/map_template/rescue_base/start)
+"fc" = (
 /obj/machinery/computer/modular/preset/engineering{
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/black,
-/area/rescue_base/start)
-"ff" = (
+/area/map_template/rescue_base/start)
+"fd" = (
 /obj/item/device/radio/intercom/specops{
 	dir = 8;
 	pixel_x = 22
@@ -2864,8 +2864,8 @@
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/red,
-/area/rescue_base/start)
-"fg" = (
+/area/map_template/rescue_base/start)
+"fe" = (
 /obj/machinery/computer/prisoner{
 	dir = 4;
 	name = "Implant Management"
@@ -2874,14 +2874,14 @@
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/black,
-/area/rescue_base/start)
-"fh" = (
+/area/map_template/rescue_base/start)
+"ff" = (
 /obj/machinery/computer/modular/preset/security{
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/black,
-/area/rescue_base/start)
-"fi" = (
+/area/map_template/rescue_base/start)
+"fg" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 4;
 	frequency = 1331;
@@ -2895,17 +2895,17 @@
 	dir = 4
 	},
 /turf/simulated/floor/shuttle/red,
-/area/rescue_base/start)
-"fj" = (
+/area/map_template/rescue_base/start)
+"fh" = (
 /obj/machinery/atmospherics/pipe/manifold4w/visible,
 /turf/simulated/floor/shuttle/red,
-/area/rescue_base/start)
-"fk" = (
+/area/map_template/rescue_base/start)
+"fi" = (
 /obj/machinery/atmospherics/pipe/manifold4w/visible,
 /obj/machinery/meter,
 /turf/simulated/floor/shuttle/red,
-/area/rescue_base/start)
-"fl" = (
+/area/map_template/rescue_base/start)
+"fj" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 8;
 	frequency = 1331;
@@ -2919,29 +2919,29 @@
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/red,
-/area/rescue_base/start)
-"fm" = (
+/area/map_template/rescue_base/start)
+"fk" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/effect/paint/nt_white,
 /obj/effect/paint_stripe/nt_red,
 /turf/simulated/floor/plating,
-/area/rescue_base/start)
-"fn" = (
+/area/map_template/rescue_base/start)
+"fl" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Flight Deck";
 	opacity = 1;
 	req_access = newlist()
 	},
 /turf/simulated/floor/shuttle/black,
-/area/rescue_base/start)
-"fo" = (
+/area/map_template/rescue_base/start)
+"fm" = (
 /obj/machinery/atmospherics/pipe/simple/visible,
 /obj/effect/paint/nt_white,
 /obj/effect/paint_stripe/nt_red,
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
-/area/rescue_base/start)
-"fp" = (
+/area/map_template/rescue_base/start)
+"fn" = (
 /obj/machinery/atmospherics/pipe/simple/visible,
 /obj/machinery/door/airlock/external{
 	autoset_access = 0;
@@ -2951,14 +2951,14 @@
 	req_access = list("ACCESS_CENT_SPECOPS")
 	},
 /turf/simulated/floor/shuttle/red,
-/area/rescue_base/start)
-"fq" = (
+/area/map_template/rescue_base/start)
+"fo" = (
 /obj/structure/flora/ausbushes/palebush,
 /turf/unsimulated/floor{
 	icon_state = "asteroidplating"
 	},
-/area/rescue_base/base)
-"fr" = (
+/area/map_template/rescue_base/base)
+"fp" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -2971,8 +2971,8 @@
 /obj/effect/paint/nt_white,
 /obj/effect/paint_stripe/nt_red,
 /turf/simulated/floor/plating,
-/area/rescue_base/start)
-"fs" = (
+/area/map_template/rescue_base/start)
+"fq" = (
 /obj/structure/closet,
 /obj/item/weapon/reagent_containers/food/snacks/liquidfood,
 /obj/item/weapon/reagent_containers/food/snacks/liquidfood,
@@ -2981,8 +2981,8 @@
 /obj/item/weapon/reagent_containers/food/snacks/liquidfood,
 /obj/item/weapon/reagent_containers/food/snacks/liquidfood,
 /turf/simulated/floor/shuttle/black,
-/area/rescue_base/start)
-"ft" = (
+/area/map_template/rescue_base/start)
+"fr" = (
 /obj/structure/table/rack,
 /obj/item/device/radio,
 /obj/item/device/radio,
@@ -2994,8 +2994,8 @@
 	dir = 4
 	},
 /turf/simulated/floor/shuttle/black,
-/area/rescue_base/start)
-"fu" = (
+/area/map_template/rescue_base/start)
+"fs" = (
 /obj/machinery/atmospherics/unary/tank/air{
 	dir = 4;
 	start_pressure = 740.5
@@ -3004,13 +3004,13 @@
 	dir = 1
 	},
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"fv" = (
+/area/map_template/rescue_base/start)
+"ft" = (
 /obj/machinery/atmospherics/pipe/manifold/visible,
 /obj/machinery/meter,
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"fw" = (
+/area/map_template/rescue_base/start)
+"fu" = (
 /obj/machinery/atmospherics/pipe/manifold/visible,
 /obj/machinery/access_button{
 	command = "cycle_interior";
@@ -3022,14 +3022,14 @@
 	req_access = list("ACCESS_CENT_SPECOPS")
 	},
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"fx" = (
+/area/map_template/rescue_base/start)
+"fv" = (
 /obj/machinery/atmospherics/unary/tank/air{
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"fy" = (
+/area/map_template/rescue_base/start)
+"fw" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -3042,29 +3042,29 @@
 /obj/effect/paint/nt_white,
 /obj/effect/paint_stripe/nt_red,
 /turf/simulated/floor/plating,
-/area/rescue_base/start)
-"fz" = (
+/area/map_template/rescue_base/start)
+"fx" = (
 /obj/structure/closet,
 /obj/item/weapon/storage/box/sinpockets,
 /obj/item/weapon/storage/box/sinpockets,
 /turf/simulated/floor/shuttle/black,
-/area/rescue_base/start)
-"fA" = (
+/area/map_template/rescue_base/start)
+"fy" = (
 /obj/structure/closet/bombclosetsecurity,
 /turf/simulated/floor/shuttle/black,
-/area/rescue_base/start)
-"fB" = (
+/area/map_template/rescue_base/start)
+"fz" = (
 /obj/machinery/suit_cycler/security,
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"fC" = (
+/area/map_template/rescue_base/start)
+"fA" = (
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"fD" = (
+/area/map_template/rescue_base/start)
+"fB" = (
 /obj/machinery/suit_storage_unit/security/alt,
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"fE" = (
+/area/map_template/rescue_base/start)
+"fC" = (
 /obj/structure/closet,
 /obj/item/device/flashlight/flare,
 /obj/item/device/flashlight/flare,
@@ -3079,31 +3079,31 @@
 /obj/item/device/flashlight,
 /obj/item/device/flashlight,
 /turf/simulated/floor/shuttle/black,
-/area/rescue_base/start)
-"fF" = (
+/area/map_template/rescue_base/start)
+"fD" = (
 /obj/item/device/radio/intercom/specops{
 	dir = 8;
 	pixel_x = 22
 	},
 /obj/structure/closet/l3closet,
 /turf/simulated/floor/shuttle/black,
-/area/rescue_base/start)
-"fG" = (
+/area/map_template/rescue_base/start)
+"fE" = (
 /obj/structure/table/rack,
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"fH" = (
+/area/map_template/rescue_base/start)
+"fF" = (
 /obj/structure/closet,
 /turf/simulated/floor/shuttle/black,
-/area/rescue_base/start)
-"fI" = (
+/area/map_template/rescue_base/start)
+"fG" = (
 /obj/structure/closet/l3closet,
 /obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/shuttle/black,
-/area/rescue_base/start)
-"fJ" = (
+/area/map_template/rescue_base/start)
+"fH" = (
 /obj/machinery/light{
 	dir = 1
 	},
@@ -3112,17 +3112,17 @@
 	dir = 4
 	},
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"fK" = (
+/area/map_template/rescue_base/start)
+"fI" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/weapon/storage/fancy/cigarettes/dromedaryco,
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"fL" = (
+/area/map_template/rescue_base/start)
+"fJ" = (
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"fM" = (
+/area/map_template/rescue_base/start)
+"fK" = (
 /obj/machinery/light{
 	dir = 1
 	},
@@ -3131,19 +3131,19 @@
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"fN" = (
+/area/map_template/rescue_base/start)
+"fL" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"fO" = (
+/area/map_template/rescue_base/start)
+"fM" = (
 /obj/item/device/radio/intercom/specops{
 	dir = 1;
 	pixel_y = -28
 	},
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"fP" = (
+/area/map_template/rescue_base/start)
+"fN" = (
 /obj/structure/table/rack,
 /obj/machinery/light,
 /obj/item/weapon/tank/jetpack/carbondioxide,
@@ -3157,53 +3157,53 @@
 	req_access = list("ACCESS_CENT_CREED")
 	},
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"fQ" = (
+/area/map_template/rescue_base/start)
+"fO" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Crew Area";
 	opacity = 1;
 	req_access = newlist()
 	},
 /turf/simulated/floor/shuttle/black,
-/area/rescue_base/start)
-"fR" = (
+/area/map_template/rescue_base/start)
+"fP" = (
 /obj/structure/bed/chair/shuttle/red{
 	icon_state = "shuttle_chair_preview";
 	dir = 1
 	},
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"fS" = (
+/area/map_template/rescue_base/start)
+"fQ" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Passageway";
 	opacity = 1;
 	req_access = newlist()
 	},
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"fT" = (
+/area/map_template/rescue_base/start)
+"fR" = (
 /obj/structure/sign/warning/airlock{
 	dir = 8;
 	icon_state = "doors";
 	pixel_x = 32
 	},
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"fU" = (
+/area/map_template/rescue_base/start)
+"fS" = (
 /obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"fV" = (
+/area/map_template/rescue_base/start)
+"fT" = (
 /obj/machinery/recharger/wallcharger{
 	dir = 1;
 	icon_state = "wrecharger0";
 	pixel_y = -22
 	},
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"fW" = (
+/area/map_template/rescue_base/start)
+"fU" = (
 /obj/machinery/vending/wallmed1{
 	dir = 1;
 	name = "Emergency NanoMed";
@@ -3211,21 +3211,21 @@
 	pixel_y = -29
 	},
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"fX" = (
+/area/map_template/rescue_base/start)
+"fV" = (
 /obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"fY" = (
+/area/map_template/rescue_base/start)
+"fW" = (
 /obj/structure/bed/padded,
 /obj/item/weapon/bedsheet/orange,
 /turf/simulated/floor/shuttle/red{
 	icon_state = "floor7"
 	},
-/area/rescue_base/start)
-"fZ" = (
+/area/map_template/rescue_base/start)
+"fX" = (
 /obj/machinery/flasher{
 	id_tag = "rescueflash";
 	pixel_y = 28
@@ -3233,16 +3233,16 @@
 /turf/simulated/floor/shuttle/red{
 	icon_state = "floor7"
 	},
-/area/rescue_base/start)
-"ga" = (
+/area/map_template/rescue_base/start)
+"fY" = (
 /obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/shuttle/red{
 	icon_state = "floor7"
 	},
-/area/rescue_base/start)
-"gb" = (
+/area/map_template/rescue_base/start)
+"fZ" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Storage";
 	opacity = 1;
@@ -3250,112 +3250,112 @@
 	},
 /obj/effect/shuttle_landmark/ert/start,
 /turf/simulated/floor/plating,
-/area/rescue_base/start)
-"gc" = (
+/area/map_template/rescue_base/start)
+"ga" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Storage";
 	opacity = 1;
 	req_access = newlist()
 	},
 /turf/simulated/floor/plating,
-/area/rescue_base/start)
-"gd" = (
+/area/map_template/rescue_base/start)
+"gb" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Infirmary";
 	opacity = 1;
 	req_access = newlist()
 	},
 /turf/simulated/floor/shuttle/white,
-/area/rescue_base/start)
-"ge" = (
+/area/map_template/rescue_base/start)
+"gc" = (
 /obj/machinery/atmospherics/unary/cryo_cell,
 /obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/white,
-/area/rescue_base/start)
-"gf" = (
+/area/map_template/rescue_base/start)
+"gd" = (
 /obj/machinery/atmospherics/portables_connector,
 /obj/machinery/portable_atmospherics/canister/oxygen/prechilled,
 /turf/simulated/floor/shuttle/white,
-/area/rescue_base/start)
-"gg" = (
+/area/map_template/rescue_base/start)
+"ge" = (
 /obj/structure/table/glass,
 /obj/item/weapon/reagent_containers/glass/beaker/large/cryolife,
 /turf/simulated/floor/shuttle/white,
-/area/rescue_base/start)
-"gh" = (
+/area/map_template/rescue_base/start)
+"gf" = (
 /obj/item/weapon/stool,
 /turf/simulated/floor/shuttle/red{
 	icon_state = "floor7"
 	},
-/area/rescue_base/start)
-"gi" = (
+/area/map_template/rescue_base/start)
+"gg" = (
 /turf/simulated/floor/shuttle/red{
 	icon_state = "floor7"
 	},
-/area/rescue_base/start)
-"gj" = (
+/area/map_template/rescue_base/start)
+"gh" = (
 /obj/structure/hygiene/toilet{
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/red{
 	icon_state = "floor7"
 	},
-/area/rescue_base/start)
-"gk" = (
+/area/map_template/rescue_base/start)
+"gi" = (
 /obj/structure/bed/chair/shuttle/red{
 	icon_state = "shuttle_chair_preview";
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"gl" = (
+/area/map_template/rescue_base/start)
+"gj" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/shieldgen,
 /turf/simulated/floor/plating,
-/area/rescue_base/start)
-"gm" = (
+/area/map_template/rescue_base/start)
+"gk" = (
 /turf/simulated/floor/plating,
-/area/rescue_base/start)
-"gn" = (
+/area/map_template/rescue_base/start)
+"gl" = (
 /obj/machinery/shieldwallgen,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/plating,
-/area/rescue_base/start)
-"go" = (
+/area/map_template/rescue_base/start)
+"gm" = (
 /obj/structure/table/glass,
 /obj/item/weapon/defibrillator/loaded,
 /turf/simulated/floor/shuttle/white,
-/area/rescue_base/start)
-"gp" = (
+/area/map_template/rescue_base/start)
+"gn" = (
 /turf/simulated/floor/shuttle/white,
-/area/rescue_base/start)
-"gq" = (
+/area/map_template/rescue_base/start)
+"go" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 5;
 	icon_state = "intact"
 	},
 /turf/simulated/floor/shuttle/white,
-/area/rescue_base/start)
-"gr" = (
+/area/map_template/rescue_base/start)
+"gp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 9;
 	icon_state = "intact"
 	},
 /turf/simulated/floor/shuttle/white,
-/area/rescue_base/start)
-"gs" = (
+/area/map_template/rescue_base/start)
+"gq" = (
 /obj/machinery/body_scanconsole,
 /turf/simulated/floor/shuttle/white,
-/area/rescue_base/start)
-"gt" = (
+/area/map_template/rescue_base/start)
+"gr" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/effect/paint/nt_white,
 /obj/effect/paint_stripe/nt_red,
 /turf/simulated/floor/plating,
-/area/rescue_base/start)
-"gu" = (
+/area/map_template/rescue_base/start)
+"gs" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Cell";
 	opacity = 1;
@@ -3364,24 +3364,24 @@
 /turf/simulated/floor/shuttle/red{
 	icon_state = "floor7"
 	},
-/area/rescue_base/start)
-"gv" = (
+/area/map_template/rescue_base/start)
+"gt" = (
 /obj/machinery/telecomms/relay/preset/centcom,
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"gw" = (
+/area/map_template/rescue_base/start)
+"gu" = (
 /obj/machinery/light{
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/shieldgen,
 /turf/simulated/floor/plating,
-/area/rescue_base/start)
-"gx" = (
+/area/map_template/rescue_base/start)
+"gv" = (
 /obj/structure/closet/secure_closet/medical1,
 /turf/simulated/floor/shuttle/white,
-/area/rescue_base/start)
-"gy" = (
+/area/map_template/rescue_base/start)
+"gw" = (
 /obj/structure/closet/medical_wall{
 	pixel_y = 32
 	},
@@ -3399,22 +3399,22 @@
 /obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
 /obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
 /turf/simulated/floor/shuttle/white,
-/area/rescue_base/start)
-"gz" = (
+/area/map_template/rescue_base/start)
+"gx" = (
 /obj/item/device/radio/intercom/specops{
 	dir = 2;
 	pixel_y = 22
 	},
 /turf/simulated/floor/shuttle/white,
-/area/rescue_base/start)
-"gA" = (
+/area/map_template/rescue_base/start)
+"gy" = (
 /obj/structure/hygiene/sink{
 	dir = 1;
 	pixel_y = 27
 	},
 /turf/simulated/floor/shuttle/white,
-/area/rescue_base/start)
-"gB" = (
+/area/map_template/rescue_base/start)
+"gz" = (
 /obj/machinery/button/blast_door{
 	icon_state = "blastctrl";
 	id_tag = "rescueinfirm";
@@ -3425,36 +3425,36 @@
 	},
 /obj/machinery/bodyscanner,
 /turf/simulated/floor/shuttle/white,
-/area/rescue_base/start)
-"gC" = (
+/area/map_template/rescue_base/start)
+"gA" = (
 /turf/simulated/floor/shuttle/red,
-/area/rescue_base/start)
-"gD" = (
+/area/map_template/rescue_base/start)
+"gB" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Brig";
 	opacity = 1;
 	req_access = newlist()
 	},
 /turf/simulated/floor/shuttle/red,
-/area/rescue_base/start)
-"gE" = (
+/area/map_template/rescue_base/start)
+"gC" = (
 /obj/structure/bed/padded,
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"gF" = (
+/area/map_template/rescue_base/start)
+"gD" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/power/emitter,
 /turf/simulated/floor/plating,
-/area/rescue_base/start)
-"gG" = (
+/area/map_template/rescue_base/start)
+"gE" = (
 /obj/machinery/light{
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/portable_atmospherics/powered/pump/filled,
 /turf/simulated/floor/plating,
-/area/rescue_base/start)
-"gH" = (
+/area/map_template/rescue_base/start)
+"gF" = (
 /obj/item/device/radio/intercom/specops{
 	dir = 8;
 	pixel_x = 22
@@ -3463,8 +3463,8 @@
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/white,
-/area/rescue_base/start)
-"gI" = (
+/area/map_template/rescue_base/start)
+"gG" = (
 /obj/machinery/button/flasher{
 	id_tag = "rescueflash";
 	name = "Flasher";
@@ -3477,20 +3477,20 @@
 	dir = 4
 	},
 /turf/simulated/floor/shuttle/red,
-/area/rescue_base/start)
-"gJ" = (
+/area/map_template/rescue_base/start)
+"gH" = (
 /obj/machinery/recharge_station,
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"gK" = (
+/area/map_template/rescue_base/start)
+"gI" = (
 /obj/machinery/light,
 /obj/structure/table/rack,
 /obj/item/weapon/barrier,
 /obj/item/weapon/barrier,
 /obj/item/weapon/barrier,
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"gL" = (
+/area/map_template/rescue_base/start)
+"gJ" = (
 /obj/item/device/radio/intercom/specops{
 	dir = 1;
 	pixel_y = -28
@@ -3500,52 +3500,52 @@
 /obj/item/weapon/barrier,
 /obj/item/weapon/barrier,
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"gM" = (
+/area/map_template/rescue_base/start)
+"gK" = (
 /obj/structure/closet/crate/freezer/rations,
 /turf/simulated/floor/shuttle/darkred,
-/area/rescue_base/start)
-"gN" = (
+/area/map_template/rescue_base/start)
+"gL" = (
 /obj/machinery/atmospherics/unary/tank/air{
 	dir = 4;
 	start_pressure = 740.5
 	},
 /turf/simulated/floor/plating,
-/area/rescue_base/start)
-"gO" = (
+/area/map_template/rescue_base/start)
+"gM" = (
 /obj/machinery/atmospherics/binary/pump/high_power{
 	icon_state = "map_off";
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/rescue_base/start)
-"gP" = (
+/area/map_template/rescue_base/start)
+"gN" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 8
 	},
 /turf/simulated/floor/plating,
-/area/rescue_base/start)
-"gQ" = (
+/area/map_template/rescue_base/start)
+"gO" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/portable_atmospherics/powered/scrubber,
 /turf/simulated/floor/plating,
-/area/rescue_base/start)
-"gR" = (
+/area/map_template/rescue_base/start)
+"gP" = (
 /obj/structure/morgue{
 	dir = 1;
 	icon_state = "morgue1"
 	},
 /turf/simulated/floor/shuttle/white,
-/area/rescue_base/start)
-"gS" = (
+/area/map_template/rescue_base/start)
+"gQ" = (
 /obj/structure/morgue{
 	dir = 1;
 	icon_state = "morgue1"
 	},
 /obj/machinery/light,
 /turf/simulated/floor/shuttle/white,
-/area/rescue_base/start)
-"gT" = (
+/area/map_template/rescue_base/start)
+"gR" = (
 /obj/structure/window/reinforced{
 	dir = 1
 	},
@@ -3558,27 +3558,27 @@
 /obj/item/weapon/tank/anesthetic,
 /obj/item/clothing/mask/breath/medical,
 /turf/simulated/floor/shuttle/white,
-/area/rescue_base/start)
-"gU" = (
+/area/map_template/rescue_base/start)
+"gS" = (
 /obj/structure/window/reinforced{
 	dir = 1
 	},
 /obj/structure/iv_drip,
 /turf/simulated/floor/shuttle/white,
-/area/rescue_base/start)
-"gV" = (
+/area/map_template/rescue_base/start)
+"gT" = (
 /obj/item/device/flashlight/lantern,
 /turf/unsimulated/floor{
 	icon_state = "asteroid"
 	},
-/area/rescue_base/base)
-"gW" = (
+/area/map_template/rescue_base/base)
+"gU" = (
 /obj/structure/bed/chair{
 	dir = 4
 	},
 /turf/simulated/floor/shuttle/red,
-/area/rescue_base/start)
-"gX" = (
+/area/map_template/rescue_base/start)
+"gV" = (
 /obj/structure/closet{
 	name = "Prisoner's Locker"
 	},
@@ -3589,20 +3589,20 @@
 	pixel_x = 22
 	},
 /turf/simulated/floor/shuttle/red,
-/area/rescue_base/start)
-"gY" = (
+/area/map_template/rescue_base/start)
+"gW" = (
 /obj/structure/table/glass,
 /obj/item/weapon/reagent_containers/spray/sterilizine,
 /obj/item/weapon/reagent_containers/spray/cleaner{
 	pixel_x = -6
 	},
 /turf/simulated/floor/shuttle/white,
-/area/rescue_base/start)
-"gZ" = (
+/area/map_template/rescue_base/start)
+"gX" = (
 /obj/machinery/optable,
 /turf/simulated/floor/shuttle/white,
-/area/rescue_base/start)
-"ha" = (
+/area/map_template/rescue_base/start)
+"gY" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -3615,14 +3615,14 @@
 /obj/effect/paint/nt_white,
 /obj/effect/paint_stripe/nt_red,
 /turf/simulated/floor/plating,
-/area/rescue_base/start)
-"hb" = (
+/area/map_template/rescue_base/start)
+"gZ" = (
 /obj/item/weapon/pickaxe/diamonddrill,
 /turf/unsimulated/floor{
 	icon_state = "asteroid"
 	},
-/area/rescue_base/base)
-"hc" = (
+/area/map_template/rescue_base/base)
+"ha" = (
 /obj/structure/bed/chair{
 	dir = 4
 	},
@@ -3630,40 +3630,40 @@
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/red,
-/area/rescue_base/start)
-"hd" = (
+/area/map_template/rescue_base/start)
+"hb" = (
 /obj/structure/closet{
 	name = "Prisoner's Locker"
 	},
 /obj/item/clothing/shoes/orange,
 /obj/item/clothing/under/color/orange,
 /turf/simulated/floor/shuttle/red,
-/area/rescue_base/start)
-"he" = (
+/area/map_template/rescue_base/start)
+"hc" = (
 /obj/effect/paint/red,
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/r_titanium,
-/area/rescue_base/start)
-"hf" = (
+/area/map_template/rescue_base/start)
+"hd" = (
 /obj/structure/shuttle/engine/heater{
 	pixel_y = 32
 	},
 /obj/structure/shuttle/engine/propulsion,
 /turf/simulated/floor/plating,
-/area/rescue_base/start)
-"hg" = (
+/area/map_template/rescue_base/start)
+"he" = (
 /obj/structure/table/glass,
 /obj/item/weapon/reagent_containers/syringe/antiviral,
 /obj/item/weapon/reagent_containers/syringe/antiviral,
 /obj/item/stack/medical/advanced/bruise_pack,
 /turf/simulated/floor/shuttle/white,
-/area/rescue_base/start)
-"hh" = (
+/area/map_template/rescue_base/start)
+"hf" = (
 /obj/structure/table/glass,
 /obj/item/weapon/storage/firstaid/surgery,
 /turf/simulated/floor/shuttle/white,
-/area/rescue_base/start)
-"hi" = (
+/area/map_template/rescue_base/start)
+"hg" = (
 /obj/structure/table/glass,
 /obj/item/clothing/mask/surgical,
 /obj/item/clothing/gloves/latex,
@@ -3671,8 +3671,8 @@
 	dir = 4
 	},
 /turf/simulated/floor/shuttle/white,
-/area/rescue_base/start)
-"hj" = (
+/area/map_template/rescue_base/start)
+"hh" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	icon_state = "warning_dust";
 	dir = 10
@@ -3680,8 +3680,8 @@
 /turf/unsimulated/floor{
 	icon_state = "asteroidfloor"
 	},
-/area/rescue_base/base)
-"hk" = (
+/area/map_template/rescue_base/base)
+"hi" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	icon_state = "warning_dust";
 	dir = 6
@@ -3689,76 +3689,76 @@
 /turf/unsimulated/floor{
 	icon_state = "asteroidfloor"
 	},
-/area/rescue_base/base)
+/area/map_template/rescue_base/base)
 
 (1,1,1) = {"
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 "}
 (2,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -3821,10 +3821,10 @@ ab
 ab
 ab
 ab
-dx
+aa
 "}
 (3,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -3887,10 +3887,10 @@ ab
 ab
 ab
 ab
-dx
+aa
 "}
 (4,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -3944,7 +3944,7 @@ ab
 ab
 ab
 ab
-hb
+gZ
 ab
 ab
 ab
@@ -3953,10 +3953,10 @@ ab
 ab
 ab
 ab
-dx
+aa
 "}
 (5,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -3983,9 +3983,9 @@ ab
 ab
 ad
 ad
-dU
-ea
-ep
+dT
+dY
+en
 ad
 ad
 ab
@@ -4019,10 +4019,10 @@ ab
 ab
 ab
 ab
-dx
+aa
 "}
 (6,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -4048,11 +4048,11 @@ aX
 aX
 ab
 ad
-dH
+dG
 aF
-eb
+dZ
 aF
-et
+er
 ad
 ab
 ab
@@ -4075,7 +4075,7 @@ ab
 ab
 ab
 ab
-gV
+gT
 aX
 aY
 ab
@@ -4085,10 +4085,10 @@ ab
 ab
 ab
 ab
-dx
+aa
 "}
 (7,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -4114,11 +4114,11 @@ ab
 ab
 ab
 ad
-dI
-dV
-ec
+dH
+dU
+ea
 aF
-eu
+es
 ad
 ab
 ab
@@ -4151,10 +4151,10 @@ ab
 ab
 ab
 ab
-dx
+aa
 "}
 (8,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -4181,9 +4181,9 @@ ab
 ab
 ad
 ad
-dW
-ed
-eq
+dV
+eb
+eo
 ad
 ad
 ab
@@ -4217,10 +4217,10 @@ ab
 ab
 ab
 ab
-dx
+aa
 "}
 (9,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -4275,7 +4275,7 @@ aY
 aY
 aY
 aY
-fq
+fo
 aY
 aY
 ab
@@ -4283,10 +4283,10 @@ ab
 ab
 ab
 ab
-dx
+aa
 "}
 (10,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -4327,7 +4327,7 @@ aY
 aY
 aX
 aX
-fq
+fo
 aY
 aY
 ab
@@ -4349,10 +4349,10 @@ ab
 ab
 ab
 ab
-dx
+aa
 "}
 (11,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -4415,10 +4415,10 @@ aY
 ab
 ab
 ab
-dx
+aa
 "}
 (12,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -4451,40 +4451,40 @@ ab
 ab
 ab
 aY
-dC
-dQ
-dQ
-dQ
-dQ
-dQ
-dQ
-dQ
-dQ
-dQ
-dQ
-dQ
-dQ
-dQ
-dQ
-dQ
-dQ
-dQ
-dQ
-dQ
-dQ
-dQ
-dQ
-dQ
-dQ
-hj
+dB
+dP
+dP
+dP
+dP
+dP
+dP
+dP
+dP
+dP
+dP
+dP
+dP
+dP
+dP
+dP
+dP
+dP
+dP
+dP
+dP
+dP
+dP
+dP
+dP
+hh
 aY
 ab
 ab
 ab
-dx
+aa
 "}
 (13,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -4517,40 +4517,40 @@ ab
 ab
 aY
 aY
-ev
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eF
+et
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eD
 aY
 aY
 ab
 ab
-dx
+aa
 "}
 (14,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -4583,40 +4583,40 @@ ab
 ab
 aY
 aX
-ev
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eJ
-eJ
-eJ
-eJ
-eJ
-eJ
-fr
-eJ
-eJ
-he
-eI
-eF
+et
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eH
+eH
+eH
+eH
+eH
+eH
+fp
+eH
+eH
+hc
+eG
+eD
 aY
 aY
 ab
 ab
-dx
+aa
 "}
 (15,1,1) = {"
-dx
+aa
 ab
 ac
 ac
@@ -4649,40 +4649,40 @@ ab
 ab
 ab
 aY
-ev
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eJ
-fY
-gh
-gt
-gC
-gC
-gW
-hc
-eJ
-hf
-eI
-eF
+et
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eH
+fW
+gf
+gr
+gA
+gA
+gU
+ha
+eH
+hd
+eG
+eD
 aY
 aY
 ab
 ab
-dx
+aa
 "}
 (16,1,1) = {"
-dx
+aa
 ab
 ac
 ae
@@ -4715,40 +4715,40 @@ ab
 ab
 ab
 aY
-ev
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eJ
-fZ
-gi
-gu
-gC
-gC
-gC
-gC
-eJ
-hf
-eI
-eF
+et
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eH
+fX
+gg
+gs
+gA
+gA
+gA
+gA
+eH
+hd
+eG
+eD
 aY
 aZ
 aY
 ab
-dx
+aa
 "}
 (17,1,1) = {"
-dx
+aa
 ab
 ac
 ac
@@ -4774,47 +4774,47 @@ bq
 dm
 aF
 aF
-dJ
+dI
 ac
 ab
 ab
 ab
 aY
 aY
-ev
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eJ
-ga
-gj
-gt
-gC
-gI
-gX
+et
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eH
+fY
+gh
+gr
+gA
+gG
+gV
+hb
+eH
 hd
-eJ
-hf
-eI
-eF
+eG
+eD
 aY
 aY
 aY
 ab
-dx
+aa
 "}
 (18,1,1) = {"
-dx
+aa
 ab
 ac
 af
@@ -4840,47 +4840,47 @@ bq
 dn
 aF
 aF
-dK
+dJ
 bq
 aY
 aY
 aY
 aY
 aX
-ev
-eI
-eJ
-eJ
-eJ
-eJ
-eJ
-eJ
-fr
-fr
-fr
-eJ
-eJ
-eI
-eJ
-eJ
-eJ
-eJ
-gD
-eJ
-eJ
-eJ
-eJ
-he
-eI
-eF
+et
+eG
+eH
+eH
+eH
+eH
+eH
+eH
+fp
+fp
+fp
+eH
+eH
+eG
+eH
+eH
+eH
+eH
+gB
+eH
+eH
+eH
+eH
+hc
+eG
+eD
 aY
 aY
 ab
 ab
-dx
+aa
 "}
 (19,1,1) = {"
-dx
+aa
 ab
 ac
 ag
@@ -4906,47 +4906,47 @@ ac
 do
 aF
 aF
-dL
+dK
 bq
 aY
 aX
 aY
 aX
 aY
-ev
+et
+eG
 eI
-eK
-eO
-eV
-fc
-fg
-fm
-fs
-fz
-fE
-fH
-eJ
-eI
-eI
-eI
-eJ
-gv
+eM
+eT
+fa
+fe
+fk
+fq
+fx
 fC
-gJ
-eJ
-eI
-eI
-eI
-eI
-eF
+fF
+eH
+eG
+eG
+eG
+eH
+gt
+fA
+gH
+eH
+eG
+eG
+eG
+eG
+eD
 aY
 aX
 ab
 ab
-dx
+aa
 "}
 (20,1,1) = {"
-dx
+aa
 ab
 ac
 ac
@@ -4972,47 +4972,47 @@ dh
 am
 am
 am
-dM
+dL
 bq
 aY
 aZ
 aY
 aY
 aY
-ev
+et
+eG
 eI
-eK
-eP
-eW
-fd
-fd
-fn
-fd
-fd
-fd
-fd
-eJ
-eJ
-eJ
-eJ
-eJ
-fC
-fC
-gK
-eJ
-eI
-eI
-eI
-eI
-eF
+eN
+eU
+fb
+fb
+fl
+fb
+fb
+fb
+fb
+eH
+eH
+eH
+eH
+eH
+fA
+fA
+gI
+eH
+eG
+eG
+eG
+eG
+eD
 aY
 aY
 ab
 ab
-dx
+aa
 "}
 (21,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -5038,47 +5038,47 @@ dh
 am
 am
 am
-dN
+dM
 ac
 aY
 aY
 aY
 aX
 aY
-ev
+et
+eG
 eI
-eK
-eQ
-eW
-fd
-fd
-fm
-fd
-fd
-fd
-fd
-fQ
-fC
-fU
+eO
+eU
+fb
+fb
+fk
+fb
+fb
+fb
+fb
+fO
+fA
 fS
-fC
-fC
-fC
-gL
-eJ
-eI
-eI
-eI
-eI
-eF
+fQ
+fA
+fA
+fA
+gJ
+eH
+eG
+eG
+eG
+eG
+eD
 aX
 aY
 ab
 ab
-dx
+aa
 "}
 (22,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -5111,40 +5111,40 @@ ac
 aY
 aY
 aY
-ev
+et
+eG
 eI
-eK
-eR
-eX
-fe
-fh
-fm
-ft
+eP
+eV
+fc
+ff
+fk
+fr
+fy
+fD
+fG
+fk
 fA
-fF
-fI
-fm
-fC
-fC
-fm
-gk
-gk
-gE
-gM
-eJ
-eI
-eI
-eI
-eI
-eF
+fA
+fk
+gi
+gi
+gC
+gK
+eH
+eG
+eG
+eG
+eG
+eD
 aY
 aY
 ab
 ab
-dx
+aa
 "}
 (23,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -5177,40 +5177,40 @@ ac
 aY
 aY
 cp
-ev
-eI
-eJ
-eJ
-eJ
-eJ
-eJ
-eJ
-eJ
-eJ
-eJ
-eJ
-eJ
-fC
-fV
-eJ
-eJ
-eJ
-eJ
-eJ
-eJ
-he
-eI
-eI
-eI
-eF
+et
+eG
+eH
+eH
+eH
+eH
+eH
+eH
+eH
+eH
+eH
+eH
+eH
+fA
+fT
+eH
+eH
+eH
+eH
+eH
+eH
+hc
+eG
+eG
+eG
+eD
 aY
 aY
 ab
 ab
-dx
+aa
 "}
 (24,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -5243,40 +5243,40 @@ bq
 aY
 aX
 aY
-ev
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eJ
-fJ
-fC
-fC
-fV
-eJ
-gl
-gw
-gF
-gN
-eJ
-hf
-eI
-eI
-eI
-eF
+et
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eH
+fH
+fA
+fA
+fT
+eH
+gj
+gu
+gD
+gL
+eH
+hd
+eG
+eG
+eG
+eD
 aY
 ab
 ab
 ab
-dx
+aa
 "}
 (25,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -5301,48 +5301,48 @@ am
 dj
 aF
 aF
-dA
-dO
+dz
+dN
 aF
-ee
+ec
 bq
 aY
 aY
 aX
-ev
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eJ
-fK
-fR
-fC
-fC
-gb
-gm
-gm
-gm
-gO
-eJ
-hf
-eI
-eI
-eI
-eF
+et
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eH
+fI
+fP
+fA
+fA
+fZ
+gk
+gk
+gk
+gM
+eH
+hd
+eG
+eG
+eG
+eD
 aZ
 ab
 ab
 ab
-dx
+aa
 "}
 (26,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -5367,48 +5367,48 @@ am
 bq
 dp
 aF
-dB
-dP
+dA
+dO
 aF
-ef
+ed
 bq
 aY
 aY
 aY
-ev
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eJ
-fL
-fR
-fC
-fC
-gc
-gm
-gm
-gm
-gP
-eJ
-hf
-eI
-eI
-eI
-eF
+et
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eH
+fJ
+fP
+fA
+fA
+ga
+gk
+gk
+gk
+gN
+eH
+hd
+eG
+eG
+eG
+eD
 aY
 aY
 ab
 ab
-dx
+aa
 "}
 (27,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -5433,48 +5433,48 @@ am
 bq
 dq
 aF
-dB
-dP
+dA
+dO
 aF
-eg
+ee
 ac
 aX
 aZ
 aY
-ev
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eJ
+et
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eH
+fK
+fA
+fA
 fM
-fC
-fC
-fO
-eJ
-gn
-gn
-gG
-gQ
-eJ
-hf
-eI
-eI
-eI
-eF
+eH
+gl
+gl
+gE
+gO
+eH
+hd
+eG
+eG
+eG
+eD
 aY
 aY
 ab
 ab
-dx
+aa
 "}
 (28,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -5499,48 +5499,48 @@ am
 bq
 dr
 aF
-dB
-dP
+dA
+dO
 aF
-eh
+ef
 ac
 aY
 aY
 aY
-ev
-eI
-eL
+et
+eG
 eJ
-eJ
-eJ
-eJ
-eJ
-eJ
-eJ
-eJ
-eJ
-eJ
-fC
-fW
-eJ
-eJ
-eJ
-eJ
-eJ
-eJ
-he
-eI
-eI
-eI
-eF
+eH
+eH
+eH
+eH
+eH
+eH
+eH
+eH
+eH
+eH
+fA
+fU
+eH
+eH
+eH
+eH
+eH
+eH
+hc
+eG
+eG
+eG
+eD
 aY
 aY
 ab
 ab
-dx
+aa
 "}
 (29,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -5565,48 +5565,48 @@ am
 ac
 ds
 aF
-dB
-dP
+dA
+dO
 aF
-ei
+eg
 bq
 aY
 aY
 aY
-ev
-eI
-eJ
-eS
-eY
-eY
-fi
-eJ
-fu
-fB
-fG
-fN
-fm
-fC
-fC
-fm
-go
-gx
-gp
-gR
-eJ
-eI
-eI
-eI
-eI
-eF
+et
+eG
+eH
+eQ
+eW
+eW
+fg
+eH
+fs
+fz
+fE
+fL
+fk
+fA
+fA
+fk
+gm
+gv
+gn
+gP
+eH
+eG
+eG
+eG
+eG
+eD
 aY
 ab
 ab
 ab
-dx
+aa
 "}
 (30,1,1) = {"
-dx
+aa
 ab
 ab
 ac
@@ -5634,45 +5634,45 @@ aF
 aF
 aF
 aF
-ej
+eh
 bq
-dC
-dQ
-dQ
-ex
-eI
-eM
-eT
-eZ
-eZ
-fj
-fo
-fv
-fC
-fC
-fC
-fS
-fT
-fX
-gd
-gp
-gp
-gp
-gR
-eJ
-eI
-eI
-eI
-eI
-eF
+dB
+dP
+dP
+ev
+eG
+eK
+eR
+eX
+eX
+fh
+fm
+ft
+fA
+fA
+fA
+fQ
+fR
+fV
+gb
+gn
+gn
+gn
+gP
+eH
+eG
+eG
+eG
+eG
+eD
 aY
 ab
 ab
 ab
-dx
+aa
 "}
 (31,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -5700,45 +5700,45 @@ aF
 aF
 aF
 aF
-ek
+ei
 bq
-ev
-eE
-dR
-eH
-eI
-eN
-eT
-fa
-fa
-fk
-fp
-fw
-fC
-fC
-fO
-eJ
-eJ
-eJ
-eJ
-eJ
-gy
-gp
-gS
-eJ
-eI
-eI
-eI
-eI
+et
+eC
+dQ
 eF
+eG
+eL
+eR
+eY
+eY
+fi
+fn
+fu
+fA
+fA
+fM
+eH
+eH
+eH
+eH
+eH
+gw
+gn
+gQ
+eH
+eG
+eG
+eG
+eG
+eD
 aY
 ab
 ab
 ab
-dx
+aa
 "}
 (32,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -5765,46 +5765,46 @@ du
 du
 du
 du
-dX
-el
+dW
+ej
 ac
-ev
-eF
+et
+eD
 aY
-ev
-eI
-eJ
-eU
-fb
-ff
-fl
-eJ
-fx
-fD
-fD
-fP
-eJ
-eI
-eI
-eI
-eJ
-gz
-gp
-gR
-eJ
-eI
-eI
-eI
-eI
-eF
+et
+eG
+eH
+eS
+eZ
+fd
+fj
+eH
+fv
+fB
+fB
+fN
+eH
+eG
+eG
+eG
+eH
+gx
+gn
+gP
+eH
+eG
+eG
+eG
+eG
+eD
 aY
 aY
 ab
 ab
-dx
+aa
 "}
 (33,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -5834,43 +5834,43 @@ bq
 bq
 ac
 ac
-ew
-eF
+eu
+eD
 aY
-ev
-eI
-eL
+et
+eG
 eJ
-eJ
-eJ
-eJ
-eJ
-fy
-fy
-fy
-eJ
-eJ
-eI
-eJ
-eJ
-eJ
-gA
-gp
-eJ
-eJ
-eJ
-eJ
-he
-eI
-eF
+eH
+eH
+eH
+eH
+eH
+fw
+fw
+fw
+eH
+eH
+eG
+eH
+eH
+eH
+gy
+gn
+eH
+eH
+eH
+eH
+hc
+eG
+eD
 aY
 aY
 ab
 ab
-dx
+aa
 "}
 (34,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -5894,49 +5894,49 @@ am
 am
 dk
 dv
-dy
-dC
-dQ
-dQ
-dQ
-dQ
-ex
-eG
-dQ
-ex
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eJ
-ge
-gq
-gp
-gp
-gT
-gY
-hg
-eJ
-hf
-eI
-eF
-aY
-aY
-ab
-ab
 dx
+dB
+dP
+dP
+dP
+dP
+ev
+eE
+dP
+ev
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eH
+gc
+go
+gn
+gn
+gR
+gW
+he
+eH
+hd
+eG
+eD
+aY
+aY
+ab
+ab
+aa
 "}
 (35,1,1) = {"
-dx
+aa
 ab
 ad
 ad
@@ -5960,49 +5960,49 @@ am
 am
 dk
 dv
-dy
-dD
-dR
-dR
-dR
-dR
-dR
-dR
-dR
-eH
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eJ
-gf
-gr
-gp
-gp
-gp
-gp
-hh
-eJ
-hf
-eI
-eF
-aY
-aY
-ab
-ab
 dx
+dC
+dQ
+dQ
+dQ
+dQ
+dQ
+dQ
+dQ
+eF
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eH
+gd
+gp
+gn
+gn
+gn
+gn
+hf
+eH
+hd
+eG
+eD
+aY
+aY
+ab
+ab
+aa
 "}
 (36,1,1) = {"
-dx
+aa
 ab
 ad
 ah
@@ -6028,47 +6028,47 @@ ac
 ac
 ac
 ac
-dS
-dS
-dS
-dS
+dR
+dR
+dR
+dR
 ac
 ac
 ac
-ev
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eJ
-gg
-gs
-gB
-gH
-gU
-gZ
-hi
-eJ
-hf
-eI
-eF
+et
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eH
+ge
+gq
+gz
+gF
+gS
+gX
+hg
+eH
+hd
+eG
+eD
 aY
 aY
 ab
 ab
-dx
+aa
 "}
 (37,1,1) = {"
-dx
+aa
 ab
 ad
 ai
@@ -6101,40 +6101,40 @@ am
 ad
 ad
 ac
-ev
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eJ
-eJ
-eJ
-eJ
-eJ
-eJ
-ha
-eJ
-eJ
-he
-eI
-eF
+et
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eH
+eH
+eH
+eH
+eH
+eH
+gY
+eH
+eH
+hc
+eG
+eD
 aY
 ab
 ab
 ab
-dx
+aa
 "}
 (38,1,1) = {"
-dx
+aa
 ab
 ad
 aj
@@ -6158,49 +6158,49 @@ bw
 am
 am
 dw
-dz
+dy
 am
 am
 am
 am
 am
-ey
+ew
 ad
 ac
-ev
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eI
-eF
+et
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eG
+eD
 aY
 ab
 ab
 ab
-dx
+aa
 "}
 (39,1,1) = {"
-dx
+aa
 ab
 ad
 ah
@@ -6224,49 +6224,49 @@ am
 am
 am
 dw
-dz
+dy
 am
 am
 am
 am
 am
-ez
+ex
 ad
 ac
-dD
-dR
-dR
-dR
-dR
-dR
-dR
-dR
-dR
-dR
-dR
-dR
-dR
-dR
-dR
-dR
-dR
-dR
-dR
-dR
-dR
-dR
-dR
-dR
-dR
-hk
+dC
+dQ
+dQ
+dQ
+dQ
+dQ
+dQ
+dQ
+dQ
+dQ
+dQ
+dQ
+dQ
+dQ
+dQ
+dQ
+dQ
+dQ
+dQ
+dQ
+dQ
+dQ
+dQ
+dQ
+dQ
+hi
 aY
 aY
 ab
 ab
-dx
+aa
 "}
 (40,1,1) = {"
-dx
+aa
 ab
 ad
 ad
@@ -6291,12 +6291,12 @@ am
 ac
 ac
 ad
-dE
+dD
 am
 am
 am
 am
-eA
+ey
 ad
 ac
 aY
@@ -6329,10 +6329,10 @@ aY
 ab
 ab
 ab
-dx
+aa
 "}
 (41,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -6355,14 +6355,14 @@ ac
 db
 db
 ac
-dx
+aa
 ad
-dF
+dE
 am
 am
 am
 am
-eB
+ez
 ad
 ac
 aZ
@@ -6383,7 +6383,7 @@ aY
 aY
 aY
 aY
-fq
+fo
 aY
 aX
 aY
@@ -6395,10 +6395,10 @@ ab
 ab
 ab
 ab
-dx
+aa
 "}
 (42,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -6421,14 +6421,14 @@ ac
 am
 am
 ac
-dx
+aa
 ad
-dG
-dT
-dY
-em
+dF
+dS
+dX
+ek
 am
-eC
+eA
 ad
 ac
 aX
@@ -6461,10 +6461,10 @@ ab
 ab
 ab
 ab
-dx
+aa
 "}
 (43,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -6487,13 +6487,13 @@ am
 am
 am
 ac
-dx
+aa
 ad
 ad
 ad
 ad
 ad
-er
+ep
 ad
 ad
 ac
@@ -6527,10 +6527,10 @@ ab
 ab
 ab
 ab
-dx
+aa
 "}
 (44,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -6553,12 +6553,12 @@ am
 am
 am
 ac
-dx
-dx
-dx
-dx
+aa
+aa
+aa
+aa
 ad
-en
+el
 am
 aF
 ad
@@ -6593,10 +6593,10 @@ ab
 ab
 ab
 ab
-dx
+aa
 "}
 (45,1,1) = {"
-dx
+aa
 ab
 ab
 ab
@@ -6619,14 +6619,14 @@ ac
 aM
 aM
 ac
-dx
-dx
-dx
-dx
+aa
+aa
+aa
+aa
 ad
-eo
-es
-eD
+em
+eq
+eB
 ad
 ab
 ab
@@ -6659,71 +6659,71 @@ ab
 ab
 ab
 ab
-dx
+aa
 "}
 (46,1,1) = {"
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 ad
 ad
 ad
 ad
 ad
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
-dx
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 "}
