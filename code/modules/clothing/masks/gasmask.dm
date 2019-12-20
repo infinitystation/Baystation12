@@ -73,6 +73,7 @@
 		laser = ARMOR_LASER_MINOR,
 		bio = ARMOR_BIO_RESISTANT
 		)
+	tint = 0 //INF
 
 //In scaling order of utility and seriousness
 
@@ -112,8 +113,8 @@
 		laser = ARMOR_LASER_MINOR,
 		bio = ARMOR_BIO_STRONG
 		)
+	tint = 0 //INF
 
-	tint = 0 //inf
 /obj/item/clothing/mask/gas/syndicate
 	name = "tactical mask"
 	desc = "A close-fitting tactical mask that can be connected to an air supply."
@@ -126,8 +127,8 @@
 		laser = ARMOR_LASER_MINOR,
 		bio = ARMOR_BIO_STRONG
 		)
+	tint = 0 //INF
 
-	tint = 0 //inf
 /obj/item/clothing/mask/gas/death_commando
 	name = "\improper Death Commando Mask"
 	desc = "A grim tactical mask worn by the fictional Death Commandos, elites of the also fictional Space Syndicate. Saturdays at 10!"
@@ -157,18 +158,21 @@
 	desc = "A true prankster's facial attire. A clown is incomplete without their wig and mask."
 	icon_state = "clown"
 	item_state = "clown"
+	tint = 1 //INF
 
 /obj/item/clothing/mask/gas/sexyclown
 	name = "sexy-clown wig and mask"
 	desc = "A feminine clown mask for the dabbling crossdressers or female entertainers."
 	icon_state = "sexyclown"
 	item_state = "sexyclown"
+	tint = 1 //INF
 
 /obj/item/clothing/mask/gas/mime
 	name = "mime mask"
 	desc = "The traditional mime's mask. It has an eerie facial posture."
 	icon_state = "mime"
 	item_state = "mime"
+	tint = 1 //INF
 
 /obj/item/clothing/mask/gas/monkeymask
 	name = "monkey mask"
@@ -182,6 +186,7 @@
 	desc = "A traditional female mime's mask."
 	icon_state = "sexymime"
 	item_state = "sexymime"
+	tint = 1 //INF
 
 /obj/item/clothing/mask/gas/owl_mask
 	name = "owl mask"
@@ -204,8 +209,7 @@
 	filtered_gases = list(GAS_PHORON, GAS_N2O, GAS_OXYGEN,\
 															GAS_CHLORINE, GAS_AMMONIA, GAS_METHYL_BROMIDE, GAS_CO, GAS_CO2)//inf
 
-
-	tint = 0 //inf
+	tint = 0 //INF
 
 /obj/item/clothing/mask/gas/swat/vox
 	name = "alien mask"
@@ -224,6 +228,7 @@
 		GAS_METHYL_BROMIDE,
 		GAS_METHANE
 		)
+	tint = 0 //INF
 
 /obj/item/clothing/mask/gas/aquabreather
 	name = "aquabreather"
