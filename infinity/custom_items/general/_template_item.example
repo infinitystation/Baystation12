@@ -7,4 +7,4 @@
   "item_path" :       "/obj/item/real_path/to_an_item"
   "req_titles" :      [ "Janitor" ],
   "req_access" :      [ "ACCESS_CAVEMAN" ]
-}
+  }

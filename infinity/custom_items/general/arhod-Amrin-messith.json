@@ -3,4 +3,4 @@
   "character_name" :  "Amr'in Battrral",
   "item_path" :       "/obj/item/custkit/messith",
   "req_access" :      [ "ACCESS_ARMORY" ]
-}
+  }
