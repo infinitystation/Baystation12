@@ -22,6 +22,14 @@
 	start_x = 4
 	start_y = 5
 
+/obj/effect/overmap/visitable/sector/mining_asteroid/generate_skybox()
+	return overlay_image('icons/skybox/rockbox.dmi', "rockbox", COLOR_ASTEROID_ROCK, RESET_COLOR)
+
+/obj/effect/overmap/visitable/sector/mining_asteroid/get_skybox_representation()
+	var/image/res = overlay_image('icons/skybox/rockbox.dmi', "rockbox", COLOR_ASTEROID_ROCK, RESET_COLOR)
+	res.transform *= 0.5
+	return res
+
 /datum/map_template/ruin/away_site/mining_asteroid
 	name = "Mining - Asteroid Base"
 	id = "awaysite_mining_asteroid_base"
