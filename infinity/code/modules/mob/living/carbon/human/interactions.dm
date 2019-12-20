@@ -19,10 +19,6 @@
 		partner = M
 		make_interaction(machine)
 
-
-/mob/living/carbon/human/proc/is_nude()
-	return (!wear_suit && !w_uniform) ? 1 : 0 //TODO: Nudity check for underwear
-
 /mob/living/carbon/human/make_interaction()
 	set_machine(src)
 
@@ -54,17 +50,17 @@
 			dat +=  {"Х <A href='?src=\ref[src];interaction=hug'>ќбнимашки!</A><BR>"}
 			dat +=  {"Х <A href='?src=\ref[src];interaction=cheer'>ѕохлопать по плечу</A><BR>"}
 			dat +=  {"Х <A href='?src=\ref[src];interaction=five'>ƒать п[ya]ть.</A><BR>"}
+			if ((P.species.name == SPECIES_TAJARA)  || (P.species.name == SPECIES_VOX)|| (P.species.name == SPECIES_RESOMI) || (P.species.name == SPECIES_YEOSA) || (P.species.name == SPECIES_EROSAN) || (P.species.name == SPECIES_UNATHI))
+				dat +=  {"Х <A href='?src=\ref[src];interaction=pull'><font color=red>ƒЄрнуть за хвост!</font></A><BR>"}
+				dat +=  {"Х <A href='?src=\ref[src];interaction=pet'>ѕогладить.</A><BR>"}
+				dat +=  {"Х <A href='?src=\ref[src];interaction=scratch'>ѕочесать.</A><BR>"}
 			if (hashands_p)
 				dat +=  {"Х <A href='?src=\ref[src];interaction=give'>ѕередать предмет.</A><BR>"}
 			dat +=  {"Х <A href='?src=\ref[src];interaction=slap'><font color=red>ƒать пощечину!</font></A><BR>"}
-			if ((P.species.name == SPECIES_TAJARA)  || (P.species.name == SPECIES_VOX)|| (P.species.name == SPECIES_RESOMI) || (P.species.name == SPECIES_YEOSA) || (P.species.name == SPECIES_EROSAN) || (P.species.name == SPECIES_UNATHI))
-				dat +=  {"Х <A href='?src=\ref[src];interaction=pull'><font color=red>ƒЄрнуть за хвост!</font></A><BR>"}
-				if(P.can_inject(H))
-					dat +=  {"Х <A href='?src=\ref[src];interaction=pet'>ѕогладить.</A><BR>"}
-					dat +=  {"Х <A href='?src=\ref[src];interaction=scratch'>ѕочесать.</A><BR>"}
 			dat +=  {"Х <A href='?src=\ref[src];interaction=knock'><font color=red>ƒать подзатыльник.</font></A><BR>"}
 		dat +=  {"Х <A href='?src=\ref[src];interaction=fuckyou'><font color=red>ѕоказать средний палец.</font></A><BR>"}
 		dat +=  {"Х <A href='?src=\ref[src];interaction=threaten'><font color=red>ѕогрозить кулаком.</font></A><BR>"}
+		dat +=  {"Х <A href='?src=\ref[src];interaction=slapass'><font color=red>ўлепнуть по заднице.</font></A><BR>"}
 
 	if (mouthfree && H.species.name != "Diona")
 		dat += {"<font size=3><B>Ћицо:</B></font><BR>"}
