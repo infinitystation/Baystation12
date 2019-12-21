@@ -165,6 +165,7 @@
 	light_color_alarm = COLOR_RED
 	light_color_status_display = COLOR_NAVY_BLUE
 
+	icon = 'icons/misc/security_state.dmi'
 	overlay_alarm = "alarm_delta"
 	overlay_status_display = "status_display_delta"
 
