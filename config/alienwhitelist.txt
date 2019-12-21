@@ -30,6 +30,7 @@ kotovsyndrome - machine
 termservice - machine
 semorerith - machine
 bob46 - machine
+empire2four - machine
 inubashirimomiji - skrell
 tenedegurechaff - skrell
 twinindifferent - skrell
