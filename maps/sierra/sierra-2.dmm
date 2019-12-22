@@ -9860,6 +9860,7 @@
 	icon_state = "comfychair_preview";
 	dir = 1
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/carpet/purple,
 /area/crew_quarters/mess)
 "apu" = (
