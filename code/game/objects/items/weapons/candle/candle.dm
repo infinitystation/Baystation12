@@ -17,7 +17,8 @@
 	var/candle_falloff = 2
 
 /obj/item/weapon/flame/candle/Initialize()
-	wax = rand(27 MINUTES, 33 MINUTES) / SSobj.wait // Enough for 27-33 minutes. 30 minutes on average, adjusted for subsystem tickrate.
+//INF	wax = rand(27 MINUTES, 33 MINUTES) / SSobj.wait // Enough for 27-33 minutes. 30 minutes on average, adjusted for subsystem tickrate.
+	wax = 60 MINUTES / SSobj.wait //INF. For new year
 	if(available_colours)
 		color = pick(available_colours)
 	. = ..()
