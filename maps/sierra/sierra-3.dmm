@@ -7550,13 +7550,14 @@
 /area/hallway/primary/firstdeck/fore_stairwell)
 "amO" = (
 /obj/structure/catwalk,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+/obj/structure/disposalpipe/sortjunction{
+	dir = 4;
+	name = "Drone Station";
+	sort_type = "Drone Station"
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/firstdeck/forestarboard)
+/turf/simulated/open,
+/area/maintenance/firstdeck/centralstarboard)
 "amP" = (
 /obj/machinery/camera/all/command{
 	c_tag = "Vault - Interior"
@@ -17123,11 +17124,19 @@
 /turf/simulated/floor/airless,
 /area/space)
 "aAD" = (
-/obj/machinery/pointdefense{
-	initial_id_tag = "sierra_main_pd"
+/obj/structure/catwalk,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
-/turf/simulated/floor/reinforced/airless,
-/area/space)
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
 "aAE" = (
 /obj/machinery/alarm{
 	pixel_y = 30
@@ -27775,15 +27784,15 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/firstdeck/centralstarboard)
 "aQv" = (
-/obj/structure/catwalk,
-/obj/structure/disposalpipe/sortjunction{
-	dir = 4;
-	name = "Drone Station";
-	sort_type = "Drone Station"
+/obj/machinery/pointdefense{
+	initial_id_tag = "sierra_main_pd"
 	},
-/turf/simulated/floor/plating,
-/turf/simulated/open,
-/area/maintenance/firstdeck/centralstarboard)
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
 "aQw" = (
 /obj/effect/floor_decal/industrial/hatch/grey,
 /obj/machinery/door/blast/regular{
@@ -47510,7 +47519,7 @@ bam
 aqW
 aYd
 aqW
-amO
+aAD
 ajA
 anJ
 atj
@@ -52962,7 +52971,7 @@ aca
 aca
 axb
 aSt
-aQv
+amO
 axO
 aCj
 aCj
@@ -65898,7 +65907,7 @@ aYw
 aYw
 aYw
 aYw
-aAD
+aQv
 aYw
 aYw
 aYw
@@ -65912,7 +65921,7 @@ aYw
 aYw
 aYw
 aYw
-aAD
+aQv
 aYw
 aYw
 aYw

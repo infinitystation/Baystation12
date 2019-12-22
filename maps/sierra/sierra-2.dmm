@@ -34302,15 +34302,18 @@
 /turf/simulated/floor/tiled/dark,
 /area/chapel/office)
 "beb" = (
-/obj/machinery/computer/modular/preset/civilian{
-	icon_state = "console";
+/obj/effect/floor_decal/spline/fancy/wood,
+/obj/effect/floor_decal/spline/fancy/wood{
+	icon_state = "spline_fancy";
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
+/obj/structure/bed/chair/comfy/lime{
+	icon_state = "comfychair_preview";
+	dir = 1
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/carpet/purple,
-/area/chapel/office)
+/area/crew_quarters/mess)
 "bec" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass/medical/mortus{
@@ -35545,6 +35548,21 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
+"bgm" = (
+/obj/machinery/computer/modular/preset/civilian{
+	icon_state = "console";
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/carpet/purple,
+/area/chapel/office)
 "bgn" = (
 /obj/structure/table/steel,
 /obj/random/tool,
@@ -54965,7 +54983,7 @@ ahg
 agK
 aky
 amN
-apl
+beb
 arF
 aqW
 avC
@@ -57018,7 +57036,7 @@ bdS
 bhC
 beY
 bfa
-beb
+bgm
 bff
 bfj
 bfj
