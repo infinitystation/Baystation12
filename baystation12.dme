@@ -3253,6 +3253,7 @@
 #include "infinity\code\game\machinery\autolathe_datums.dm"
 #include "infinity\code\game\machinery\bs_silk_control.dm"
 #include "infinity\code\game\machinery\cargopad.dm"
+#include "infinity\code\game\machinery\christmas.dm"
 #include "infinity\code\game\machinery\crusher_piston.dm"
 #include "infinity\code\game\machinery\disk_writer.dm"
 #include "infinity\code\game\machinery\jukebox.dm"

@@ -137,7 +137,7 @@
 	paint_color = COLOR_WALL_GUNMETAL
 
 /obj/structure/wall_frame/wood
-	paint_color = "#824b28"
+	paint_color = "#78523b"
 
 /obj/structure/wall_frame/crystal
 	paint_color = COLOR_PALE_BLUE_GRAY

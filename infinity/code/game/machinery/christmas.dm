@@ -1,10 +1,9 @@
 /obj/machinery/xmaslights
 	name = "xmas lights"
-	desc = "You can see a small button on it's plastic branch and a label near it - ON/OFF."
+	desc = "A small button on this plastic branch and a label near it - ON/OFF."
 	icon = 'infinity/icons/obj/christmas.dmi'
 	icon_state = "xmaslights_off"
 	anchored = 1
-	plane = BLOB_PLANE
 	layer = BLOB_SHIELD_LAYER
 	use_power = 1
 	idle_power_usage = 1
@@ -55,13 +54,12 @@
 
 /obj/machinery/xmas_plant //yeah, it consumes power.
 	name = "small christmas tree"
-	desc = "This is a tiny well lit decorative christmas tree. You can see a small button on it's pot and a label near it - ON/OFF"
+	desc = "A tiny well lit decorative christmas tree. A small button on its pot and a label near it - ON/OFF"
 	icon = 'infinity/icons/obj/christmas.dmi'
 	icon_state = "plant-xmas"
 	use_power = 1
 	idle_power_usage = 1
 	active_power_usage = 4
-	plane = ABOVE_HUMAN_PLANE
 	layer = ABOVE_HUMAN_LAYER
 	power_channel = LIGHT
 	var/on = 1
@@ -109,18 +107,16 @@
 	icon = 'infinity/icons/obj/christmas.dmi'
 	icon_state = "doorwreath"
 	mouse_opacity = 0
-	plane = BLOB_PLANE
 	layer = BLOB_SHIELD_LAYER
 
 /obj/structure/sign/tinsel
 	name = "tinsel"
-	desc = "A decorative flourish, the socity often calls them tinsels."
+	desc = "A decorative flourish. The socity often calls them tinsels."
 	icon = 'infinity/icons/obj/christmas.dmi'
 	icon_state = "tinsel1"
 	mouse_opacity = 0
-	plane = BLOB_PLANE
 	layer = BLOB_SHIELD_LAYER
-	color = "#5662ff"
+	color = "#5662ff" //blue
 
 /obj/structure/sign/tinsel/red
 	color = COLOR_RED_LIGHT

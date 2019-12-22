@@ -429,7 +429,7 @@
 	req_access = list(access_el)
 
 /area/command/bsa
-	name = "Third Deck - Artillery - Bluespace"
+	name = "Third Deck - Artillery - Obstruction Field Disperser"
 	icon_state = "firingrange"
 	req_access = list(access_gun)
 
@@ -526,7 +526,7 @@
 	req_access = list()
 
 /area/bridge/gun/energy
-	name = "First Deck - Artillary - Lasers"
+	name = "First Deck - Artillery - Lasers"
 	icon = 'infinity/icons/turf/areas.dmi'
 	icon_state = "bridge_gun"
 

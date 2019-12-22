@@ -5,6 +5,43 @@
 "aab" = (
 /turf/space,
 /area/space)
+"aac" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/effect/floor_decal/spline/plain/brown,
+/turf/simulated/floor/wood/ebony,
+/area/merchant_station)
+"aad" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/effect/floor_decal/spline/plain/brown,
+/turf/simulated/floor/wood/ebony,
+/area/merchant_station)
+"aae" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	icon_state = "map-scrubbers";
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 1
+	},
+/obj/effect/floor_decal/spline/plain/brown,
+/turf/simulated/floor/wood/ebony,
+/area/merchant_station)
+"aaf" = (
+/obj/item/weapon/stool/padded/red,
+/obj/effect/floor_decal/spline/plain/brown{
+	icon_state = "spline_plain";
+	dir = 10
+	},
+/turf/simulated/floor/wood/ebony,
+/area/merchant_station)
 "aag" = (
 /turf/unsimulated/wall,
 /area/centcom)
@@ -12,6 +49,33 @@
 /obj/structure/lattice,
 /turf/space,
 /area/space)
+"aai" = (
+/obj/item/weapon/stool/padded/red,
+/obj/effect/floor_decal/spline/plain/brown,
+/turf/simulated/floor/wood/ebony,
+/area/merchant_station)
+"aaj" = (
+/obj/item/weapon/stool/padded/red,
+/obj/structure/disposalpipe/segment,
+/obj/effect/floor_decal/spline/plain/brown,
+/turf/simulated/floor/wood/ebony,
+/area/merchant_station)
+"aak" = (
+/obj/machinery/computer/modular/preset/civilian/professional{
+	icon_state = "console";
+	dir = 4
+	},
+/obj/effect/floor_decal/spline/plain/brown,
+/turf/simulated/floor/wood/ebony,
+/area/merchant_station)
+"aal" = (
+/obj/structure/bed/chair/office/dark{
+	dir = 8;
+	icon_state = "officechair_preview"
+	},
+/obj/effect/floor_decal/spline/plain/brown,
+/turf/simulated/floor/wood/ebony,
+/area/merchant_station)
 "aam" = (
 /turf/unsimulated/wall{
 	desc = "That looks like it doesn't open easily.";
@@ -23,10 +87,50 @@
 "aan" = (
 /turf/unsimulated/floor/plating,
 /area/centcom)
+"aao" = (
+/obj/effect/floor_decal/spline/plain/brown,
+/turf/simulated/floor/wood/ebony,
+/area/merchant_station)
+"aap" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube_map"
+	},
+/obj/effect/floor_decal/spline/plain/brown,
+/turf/simulated/floor/wood/ebony,
+/area/merchant_station)
+"aaq" = (
+/obj/structure/bookcase/manuals/medical,
+/turf/simulated/wall/prepainted,
+/area/merchant_station)
+"aar" = (
+/obj/machinery/door/airlock{
+	autoset_access = 0;
+	name = "Merchant Leader";
+	req_access = list("ACCESS_MERCHANT_LEADER")
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/floor_decal/spline/plain/brown{
+	icon_state = "spline_plain";
+	dir = 4
+	},
+/turf/simulated/floor/wood/ebony,
+/area/merchant_station)
 "aas" = (
 /obj/effect/paint/hull,
 /turf/simulated/wall/r_titanium,
 /area/shuttle/administration/centcom)
+"aat" = (
+/obj/structure/bookcase/manuals/engineering,
+/turf/simulated/wall/prepainted,
+/area/merchant_station)
 "aau" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/merchant_station)
@@ -12406,14 +12510,6 @@
 /obj/structure/holostool,
 /turf/simulated/floor/holofloor/tiled/dark,
 /area/holodeck/source_boxingcourt)
-"bdu" = (
-/obj/structure/bookcase/manuals/medical,
-/turf/simulated/floor/wood/walnut,
-/area/merchant_station)
-"bdv" = (
-/obj/structure/bookcase/manuals/engineering,
-/turf/simulated/wall/prepainted,
-/area/merchant_station)
 "bdx" = (
 /obj/machinery/door/unpowered/shuttle,
 /turf/simulated/floor/shuttle/darkred,
@@ -13064,32 +13160,6 @@
 	},
 /turf/simulated/floor/carpet,
 /area/merchant_station)
-"bfj" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 6
-	},
-/turf/simulated/floor/wood/ebony,
-/area/merchant_station)
-"bfk" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/wood/ebony,
-/area/merchant_station)
-"bfl" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	icon_state = "map-scrubbers";
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 1
-	},
-/turf/simulated/floor/wood/ebony,
-/area/merchant_station)
 "bfm" = (
 /obj/structure/table/woodentable/walnut,
 /obj/structure/window/reinforced{
@@ -13437,21 +13507,6 @@
 	},
 /turf/simulated/floor/wood/ebony,
 /area/merchant_station)
-"bgb" = (
-/obj/machinery/door/airlock{
-	autoset_access = 0;
-	name = "Merchant Leader";
-	req_access = list("ACCESS_MERCHANT_LEADER")
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/wood/ebony,
-/area/merchant_station)
 "bgc" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -13492,15 +13547,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/wood/walnut,
-/area/merchant_station)
-"bgh" = (
-/obj/item/weapon/stool/padded/red,
-/turf/simulated/floor/wood/ebony,
-/area/merchant_station)
-"bgi" = (
-/obj/item/weapon/stool/padded/red,
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/wood/ebony,
 /area/merchant_station)
 "bgj" = (
 /obj/machinery/door/airlock/glass{
@@ -13655,28 +13701,6 @@
 	},
 /turf/simulated/floor/holofloor/tiled,
 /area/holodeck/source_boxingcourt)
-"bgI" = (
-/obj/machinery/computer/modular/preset/civilian/professional{
-	icon_state = "console";
-	dir = 4
-	},
-/turf/simulated/floor/wood/ebony,
-/area/merchant_station)
-"bgJ" = (
-/obj/structure/bed/chair/office/dark{
-	dir = 8;
-	icon_state = "officechair_preview"
-	},
-/turf/simulated/floor/wood/ebony,
-/area/merchant_station)
-"bgK" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube_map"
-	},
-/turf/simulated/floor/wood/ebony,
-/area/merchant_station)
 "bgL" = (
 /obj/machinery/door/airlock{
 	name = "Merchant Assistants";
@@ -47261,7 +47285,7 @@ aab
 aab
 aWa
 bfX
-bgI
+aak
 bhd
 bhE
 aQJ
@@ -47463,7 +47487,7 @@ aab
 aab
 aWa
 bfY
-bgJ
+aal
 bhe
 bhF
 aQJ
@@ -47665,7 +47689,7 @@ aah
 aah
 aWa
 bfZ
-iPb
+aao
 bhe
 bhG
 aQJ
@@ -47867,7 +47891,7 @@ aah
 aab
 aQJ
 bga
-bgK
+aap
 bhf
 bhH
 aQJ
@@ -48068,7 +48092,7 @@ aQJ
 aWa
 aWa
 aQJ
-bgb
+aar
 aQJ
 aQJ
 aQJ
@@ -48266,7 +48290,7 @@ aWa
 aQJ
 bcq
 aQJ
-bdu
+aaq
 bdX
 beF
 bfg
@@ -48468,7 +48492,7 @@ bbo
 aQJ
 aBX
 aQJ
-bdv
+aat
 bdY
 beG
 bfh
@@ -48875,7 +48899,7 @@ bcL
 aQJ
 bea
 iPb
-bfj
+aac
 bgf
 bba
 aQJ
@@ -49077,7 +49101,7 @@ bcM
 aQJ
 beb
 beJ
-bfk
+aad
 beI
 bgM
 bhi
@@ -49279,7 +49303,7 @@ bcN
 aQJ
 bec
 iPb
-bfl
+aae
 bgg
 bgg
 bhj
@@ -49482,7 +49506,7 @@ aQJ
 bed
 beK
 bfm
-bgh
+aaf
 beI
 bhk
 bhN
@@ -49684,7 +49708,7 @@ aQJ
 bee
 iPb
 bfn
-bgh
+aai
 beI
 aQJ
 aQJ
@@ -49886,7 +49910,7 @@ aQH
 bef
 beM
 bfo
-bgi
+aaj
 bgN
 bhl
 aQJ
@@ -51274,8 +51298,8 @@ aab
 aab
 aab
 aaa
-aQH
-aQH
+aQJ
+aQJ
 aQJ
 aQJ
 aQK
@@ -51476,7 +51500,7 @@ aab
 aab
 aab
 aaa
-aQH
+aQJ
 aQZ
 aRs
 aRN
@@ -51678,7 +51702,7 @@ aab
 aab
 aab
 aaa
-aQH
+aQJ
 aau
 aRb
 aau
