@@ -714,10 +714,11 @@
 	dir = 2
 	},
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
+	dir = 4;
 	frequency = 1381;
 	id_tag = "eng1_access";
 	name = "Third Deck Starboard Nacelle Access";
-	pixel_x = -23;
+	pixel_x = -20;
 	req_access = list("ACCESS_ENGINEERING");
 	tag_exterior_door = "eng1_outer";
 	tag_interior_door = "eng1_inner"
@@ -2406,7 +2407,7 @@
 	id_tag = "eng1_access";
 	name = "Third Deck Starboard Nacelle Access";
 	pixel_x = 0;
-	pixel_y = 28;
+	pixel_y = 21;
 	req_access = list("ACCESS_ENGINEERING");
 	tag_exterior_door = "eng1_outer";
 	tag_interior_door = "eng1_inner"
@@ -2806,7 +2807,7 @@
 	frequency = 1381;
 	id_tag = "eng1_access";
 	name = "First Reactive Engine Access";
-	pixel_y = 28;
+	pixel_y = 21;
 	req_access = list("ACCESS_ENGINEERING");
 	tag_exterior_door = "eng1_outer";
 	tag_interior_door = "eng1_inner"
@@ -17479,10 +17480,11 @@
 /area/storage/auxillary/port)
 "BA" = (
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
+	dir = 8;
 	frequency = 1381;
 	id_tag = "eng2_access";
 	name = "Third Deck Port Nacelle Access";
-	pixel_x = 23;
+	pixel_x = 20;
 	req_access = list("ACCESS_ENGINEERING");
 	tag_exterior_door = "eng2_outer";
 	tag_interior_door = "eng2_inner"
@@ -21145,7 +21147,7 @@
 	frequency = 1381;
 	id_tag = "eng2_access";
 	name = "Third Deck Port Nacelle Access";
-	pixel_y = 28;
+	pixel_y = 21;
 	req_access = list("ACCESS_ENGINEERING");
 	tag_exterior_door = "eng2_outer";
 	tag_interior_door = "eng2_inner"
@@ -21303,10 +21305,11 @@
 /area/quartermaster/hangar)
 "Hz" = (
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
+	dir = 4;
 	frequency = 1381;
 	id_tag = "eng2_access";
 	name = "Third Deck Port Nacelle Access";
-	pixel_x = -23;
+	pixel_x = -21;
 	req_access = list("ACCESS_ENGINEERING");
 	tag_exterior_door = "eng2_outer";
 	tag_interior_door = "eng2_inner"

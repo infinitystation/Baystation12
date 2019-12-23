@@ -1107,10 +1107,11 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
+	dir = 4;
 	frequency = 1381;
 	id_tag = "eng3_access";
 	name = "First Deck Starboard Access";
-	pixel_x = -23;
+	pixel_x = -21;
 	tag_exterior_door = "eng3_outer";
 	tag_interior_door = "eng3_inner"
 	},
@@ -2037,7 +2038,7 @@
 	frequency = 1381;
 	id_tag = "eng3_access";
 	name = "First Deck Starboard Access";
-	pixel_y = 28;
+	pixel_y = 21;
 	tag_exterior_door = "eng3_outer";
 	tag_interior_door = "eng3_inner"
 	},
@@ -2076,7 +2077,7 @@
 	frequency = 1381;
 	id_tag = "eng3_access";
 	name = "First Deck Starboard Access";
-	pixel_y = 28;
+	pixel_y = 21;
 	tag_exterior_door = "eng3_outer";
 	tag_interior_door = "eng3_inner"
 	},
@@ -27852,10 +27853,11 @@
 /area/tcommsat/storage)
 "aQz" = (
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
+	dir = 1;
 	frequency = 1381;
 	id_tag = "eng4_access";
 	name = "First Deck Port Nacelle Access";
-	pixel_y = -21;
+	pixel_y = -20;
 	req_access = list("ACCESS_ENGINEERING");
 	tag_exterior_door = "eng4_outer";
 	tag_interior_door = "eng4_inner"
@@ -30698,7 +30700,7 @@
 	frequency = 1381;
 	id_tag = "eng4_access";
 	name = "First Deck Port Nacelle Access";
-	pixel_y = 28;
+	pixel_y = 21;
 	req_access = list("ACCESS_ENGINEERING");
 	tag_exterior_door = "eng4_outer";
 	tag_interior_door = "eng4_inner"
@@ -33312,10 +33314,11 @@
 /area/hallway/primary/firstdeck/fore)
 "bab" = (
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
+	dir = 4;
 	frequency = 1381;
 	id_tag = "eng4_access";
 	name = "First Deck Port Nacelle Access";
-	pixel_x = -23;
+	pixel_x = -20;
 	req_access = list("ACCESS_ENGINEERING");
 	tag_exterior_door = "eng4_outer";
 	tag_interior_door = "eng4_inner"
