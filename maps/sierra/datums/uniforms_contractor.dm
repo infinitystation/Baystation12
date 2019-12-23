@@ -57,7 +57,7 @@
 	departments = SEC
 
 	hat = list(\
-		/obj/item/clothing/head/beret/sec/corporate/officer, \
+		/obj/item/clothing/head/beret/sec/corporate/officer, /obj/item/clothing/head/beret/sec/navy/officer, \
 		/obj/item/clothing/head/beret/sec, /obj/item/clothing/head/soft/sec, \
 		/obj/item/clothing/head/soft/sec/corp, /obj/item/clothing/head/soft/sec/corp/guard, \
 		/obj/item/clothing/head/beret/guard)
@@ -75,7 +75,7 @@
 
 	hat = list(\
 		/obj/item/clothing/head/beret/sec/corporate/hos, /obj/item/clothing/head/HoS, \
-		/obj/item/clothing/head/beret/infinity/hos)
+		/obj/item/clothing/head/beret/infinity/hos, /obj/item/clothing/head/beret/sec/navy/hos)
 	under = list(\
 		/obj/item/clothing/under/rank/head_of_security, /obj/item/clothing/under/rank/head_of_security/jensen, \
 		/obj/item/clothing/under/rank/head_of_security/navyblue, /obj/item/clothing/under/rank/head_of_security/navyblue/alt, \

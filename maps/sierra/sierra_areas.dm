@@ -862,6 +862,10 @@
 /area/crew_quarters/sleep/cryo/upper
 	name = "Second Deck - Living - Cryogenic Storage Upper"
 
+/area/crew_quarters/adherent
+	name = "Second Deck - Living - Adherent Maintenence"
+	icon_state = "robotics"
+
 /* SECURITY AREAS
  *
  */
@@ -1019,6 +1023,14 @@
 	icon_state = "chapel"
 	sound_env = SMALL_ENCLOSED
 	req_access = list(access_crematorium)
+
+/area/medical/virology
+	name = "Second Deck - Abandoned - Virology"
+	req_access = list()
+
+/area/medical/virologyaccess
+	name = "Second Deck - Abandoned - Virology Access"
+	req_access = list()
 
 /* CHAPEL AREAS
  * ============

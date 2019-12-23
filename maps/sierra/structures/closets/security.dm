@@ -80,6 +80,7 @@
 		/obj/item/clothing/suit/armor/pcarrier/medium/nt,
 		/obj/item/clothing/head/helmet/nt,
 		/obj/item/clothing/head/beret/sec/corporate/warden,
+		/obj/item/clothing/head/beret/sec/navy/warden,
 		/obj/item/clothing/under/rank/warden/corp/alt,
 		/obj/item/clothing/under/rank/warden/navyblue,
 		/obj/item/clothing/under/rank/warden/navyblue/alt,
