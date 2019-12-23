@@ -32,8 +32,8 @@
 	color = "#808080"
 
 /obj/effect/floor_decal/industrial/outline/green
-	name = "orange outline"
-	color = COLOR_GREEN
+	name = "green outline" //INF, WAS orange outline
+	color = COLOR_GREEN_GRAY //INF, WAS COLOR_GREEN
 
 /obj/effect/floor_decal/chapel/mono
 	icon = 'infinity/icons/turf/flooring/decals.dmi'
@@ -78,3 +78,6 @@
 
 /obj/effect/floor_decal/corner/darkblue/bordercee
 	icon_state = "bordercolorcee"
+
+/obj/effect/floor_decal/industrial/hatch/green
+	color = COLOR_GREEN_GRAY
