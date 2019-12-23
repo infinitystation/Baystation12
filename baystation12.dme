@@ -3355,6 +3355,7 @@
 #include "infinity\code\modules\animations\animations_library.dm"
 #include "infinity\code\modules\atmospherics\components\unary\vent_pump.dm"
 #include "infinity\code\modules\client\interface_mode.dm"
+#include "infinity\code\modules\client\saves_fix.dm"
 #include "infinity\code\modules\client\preference_setup\loadout\lists\armor.dm"
 #include "infinity\code\modules\client\preference_setup\loadout\lists\cloaks.dm"
 #include "infinity\code\modules\client\preference_setup\loadout\lists\infinity.dm"
