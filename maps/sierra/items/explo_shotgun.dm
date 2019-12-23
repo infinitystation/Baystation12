@@ -11,6 +11,7 @@
 		)
 	var/explosion_chance = 50
 	var/obj/item/pipe/reinforced
+	bulk = GUN_BULK_SMG
 
 /obj/item/weapon/gun/projectile/shotgun/pump/get_mechanics_info()
 	. = ..()
