@@ -5,7 +5,7 @@
 	desc = "The common language of Moghes, composed of sibilant hisses and rattles. Spoken natively by Unathi."
 	speech_verb = "шипит"
 	ask_verb = "шипит"
-	exclaim_verb = "грозно рычит"
+	exclaim_verb = "громко шипит"
 	colour = "soghun"
 	key = "o"
 	flags = WHITELISTED
