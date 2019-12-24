@@ -2873,13 +2873,10 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
 "aeT" = (
-/obj/effect/floor_decal/spline/fancy/wood{
-	icon_state = "spline_fancy";
-	dir = 9
-	},
 /obj/structure/table/woodentable_reinforced/walnut,
 /obj/machinery/chemical_dispenser/bar_coffee/full{
-	pixel_y = 6
+	pixel_x = 2;
+	pixel_y = 7
 	},
 /obj/structure/shotgun_rack{
 	pixel_y = 31
@@ -2888,7 +2885,8 @@
 	icon_state = "tinsel1";
 	dir = 8
 	},
-/turf/simulated/floor/wood/walnut,
+/obj/effect/floor_decal/spline/plain/brown,
+/turf/simulated/floor/wood/ebony,
 /area/crew_quarters/bar)
 "aeU" = (
 /obj/structure/cable{
@@ -3545,7 +3543,8 @@
 	},
 /obj/structure/table/woodentable_reinforced/walnut,
 /obj/machinery/chemical_dispenser/bar_soft/full{
-	pixel_y = 6
+	pixel_x = -1;
+	pixel_y = 7
 	},
 /obj/machinery/xmaslights{
 	icon_state = "xmaslights_off";
@@ -3555,7 +3554,8 @@
 	dir = 4;
 	icon_state = "pipe-c"
 	},
-/turf/simulated/floor/wood/walnut,
+/obj/effect/floor_decal/spline/plain/brown,
+/turf/simulated/floor/wood/ebony,
 /area/crew_quarters/bar)
 "afR" = (
 /turf/simulated/wall/r_wall/hull,
@@ -3598,14 +3598,11 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
 "afW" = (
-/obj/effect/floor_decal/spline/fancy/wood{
-	icon_state = "spline_fancy";
-	dir = 1
-	},
 /obj/structure/table/woodentable_reinforced/walnut,
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/machinery/chemical_dispenser/bar_alc/full{
-	pixel_y = 6
+	pixel_x = -3;
+	pixel_y = 7
 	},
 /obj/structure/sign/tinsel/green{
 	icon_state = "tinsel1";
@@ -3614,7 +3611,8 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor/wood/walnut,
+/obj/effect/floor_decal/spline/plain/brown,
+/turf/simulated/floor/wood/ebony,
 /area/crew_quarters/bar)
 "afX" = (
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -3629,7 +3627,8 @@
 	dir = 2;
 	icon_state = "pipe-c"
 	},
-/turf/simulated/floor/wood/walnut,
+/obj/effect/floor_decal/spline/plain/brown,
+/turf/simulated/floor/wood/ebony,
 /area/crew_quarters/bar)
 "afY" = (
 /obj/structure/railing/mapped,
@@ -4061,10 +4060,6 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 23
 	},
-/obj/effect/floor_decal/spline/fancy/wood{
-	icon_state = "spline_fancy";
-	dir = 5
-	},
 /obj/machinery/alarm{
 	pixel_y = 30
 	},
@@ -4076,7 +4071,8 @@
 /obj/item/weapon/storage/candle_box,
 /obj/item/weapon/storage/candle_box,
 /obj/item/weapon/flame/lighter/zippo/brass,
-/turf/simulated/floor/wood/walnut,
+/obj/effect/floor_decal/spline/plain/brown,
+/turf/simulated/floor/wood/ebony,
 /area/crew_quarters/bar)
 "agB" = (
 /obj/structure/disposalpipe/segment{
@@ -4243,9 +4239,6 @@
 	c_tag = "Bar - Starboard";
 	dir = 4
 	},
-/obj/effect/floor_decal/spline/fancy/wood{
-	dir = 8
-	},
 /obj/structure/table/woodentable_reinforced/walnut,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/wood/walnut,
@@ -4324,7 +4317,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/effect/floor_decal/spline/fancy/wood/corner,
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 2;
 	name = "Hydroponics";
@@ -4362,7 +4354,7 @@
 /obj/item/weapon/reagent_containers/food/condiment/enzyme,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/galley)
-"agX" = (
+"agW" = (
 /obj/machinery/power/apc/high{
 	name = "south bump";
 	pixel_y = -24
@@ -4370,11 +4362,6 @@
 /obj/structure/cable/green{
 	d2 = 8;
 	icon_state = "0-8"
-	},
-/obj/effect/floor_decal/spline/fancy/wood,
-/obj/effect/floor_decal/spline/fancy/wood/corner{
-	icon_state = "spline_fancy_corner";
-	dir = 1
 	},
 /obj/machinery/light_switch{
 	dir = 1;
@@ -4386,6 +4373,35 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/bar)
+"agX" = (
+/obj/effect/floor_decal/corner/grey/diagonal{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/extinguisher_cabinet{
+	dir = 8;
+	pixel_y = -22
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/white,
+/area/crew_quarters/galley)
 "agY" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -4503,14 +4519,6 @@
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
-	},
-/obj/effect/floor_decal/spline/fancy/wood/corner{
-	icon_state = "spline_fancy_corner";
-	dir = 4
-	},
-/obj/effect/floor_decal/spline/fancy/wood/corner{
-	icon_state = "spline_fancy_corner";
-	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/floor/wood/walnut,
@@ -6528,9 +6536,6 @@
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
 	dir = 4
-	},
-/obj/effect/floor_decal/spline/fancy/wood{
-	dir = 8
 	},
 /obj/machinery/button/windowtint{
 	dir = 4;
@@ -36209,30 +36214,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
-"bhJ" = (
-/obj/effect/floor_decal/corner/grey/diagonal{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/extinguisher_cabinet{
-	dir = 8;
-	pixel_y = -22
-	},
-/turf/simulated/floor/tiled/white,
-/area/crew_quarters/galley)
 "bhK" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/chapel/office)
@@ -53175,7 +53156,7 @@ aeO
 aku
 aku
 bhH
-bhJ
+agX
 abl
 abl
 abl
@@ -55395,7 +55376,7 @@ adL
 aeM
 acl
 agA
-agX
+agW
 acl
 alj
 anH
