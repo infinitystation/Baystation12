@@ -490,8 +490,9 @@
 	},
 /obj/structure/closet/l3closet/janitor,
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/machinery/camera/network/first_deck{
-	c_tag = "First Deck - Janitorial Closet"
+/obj/machinery/camera/network/third_deck{
+	c_tag = "Third Deck - Janitorial Closet";
+	dir = 2
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/janitor)

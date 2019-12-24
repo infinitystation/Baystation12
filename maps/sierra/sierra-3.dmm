@@ -12121,6 +12121,10 @@
 "atU" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/floodlight,
+/obj/structure/sign/tinsel/gold{
+	icon_state = "tinsel1";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/firstdeck/foreport)
 "atV" = (
@@ -15846,13 +15850,11 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/sierra/hallway)
 "ayU" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/effect/floor_decal/industrial/warning,
+/obj/structure/sign/tinsel/gold{
+	icon_state = "tinsel1";
+	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/techmaint,
 /area/bridge/hall/level_two)
 "ayV" = (
@@ -16354,7 +16356,17 @@
 /turf/simulated/floor/tiled/monotile,
 /area/security/sierra/hallway/port)
 "azD" = (
-/obj/effect/floor_decal/industrial/warning,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/sign/tinsel/gold{
+	icon_state = "tinsel1";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/bridge/hall/level_two)
 "azE" = (
@@ -19803,6 +19815,10 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/universal,
+/obj/structure/sign/tinsel/gold{
+	icon_state = "tinsel1";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/firstdeck/foreport)
 "aEF" = (
@@ -33632,6 +33648,10 @@
 	dir = 8;
 	icon_state = "pipe-c"
 	},
+/obj/structure/sign/tinsel/gold{
+	icon_state = "tinsel1";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/hall/level_two)
 "baN" = (
@@ -33694,6 +33714,10 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/sign/tinsel/gold{
+	icon_state = "tinsel1";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/hall/level_two)
 "baT" = (
@@ -44650,7 +44674,7 @@ bif
 bif
 ayy
 aEH
-ayU
+azD
 aDl
 aSW
 aTA
@@ -45052,7 +45076,7 @@ atx
 auj
 aPE
 ayu
-azD
+ayU
 bhM
 bhM
 bit
