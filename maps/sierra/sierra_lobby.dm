@@ -1,5 +1,5 @@
 /datum/map/sierra
-	lobby_screens = list('maps/sierra/lobby/sierra.gif')
+	lobby_screens = list('maps/sierra/lobby/sierra.png', 'maps/sierra/lobby/station.png')
 	lobby_tracks = list(
 		/music_track/chasing_time,
 		/music_track/human,
