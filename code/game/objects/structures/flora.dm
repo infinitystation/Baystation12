@@ -25,6 +25,9 @@
 /obj/structure/flora/tree/pine/xmas/New()
 	..()
 	icon_state = "pine_c"
+//[INF]
+	set_light(0.5, 1, 3, 5, "#ff6633")
+//[/INF]
 
 /obj/structure/flora/tree/dead
 	icon = 'icons/obj/flora/deadtrees.dmi'

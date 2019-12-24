@@ -232,8 +232,8 @@
 	w_class = ITEM_SIZE_LARGE
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	flashlight_max_bright = 0.3
-	flashlight_inner_range = 2
-	flashlight_outer_range = 5
+	flashlight_inner_range = 1.5 //INF, WAS 2
+	flashlight_outer_range = 3.5 //INF, WAS 5
 
 	on = 1
 
