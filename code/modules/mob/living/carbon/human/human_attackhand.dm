@@ -39,7 +39,7 @@
 
 		if(istype(H.gloves, /obj/item/clothing/gloves/boxing/hologlove))
 			H.do_attack_animation(src)
-			var/damage = 5 //INF, WAS var/damage = rand(0,9)
+			var/damage = 8 //INF, WAS var/damage = rand(0,9)
 			if(!damage)
 				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
 				visible_message("<span class='danger'>\The [H] has attempted to punch \the [src]!</span>")
