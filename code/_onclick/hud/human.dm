@@ -255,6 +255,13 @@
 	mymob.fixeye.name = "fixeye"
 	mymob.fixeye.screen_loc = ui_fixeye
 	hud_elements |= mymob.fixeye
+
+	mymob.holster = new /obj/screen()
+	mymob.holster.icon = 'icons/mob/screen/infinity.dmi'
+	mymob.holster.icon_state = "holster"
+	mymob.holster.name = "holster"
+	mymob.holster.screen_loc = ui_holster
+	hud_elements |= mymob.holster
 //[/inf]
 
 	mymob.pain = new /obj/screen/fullscreen/pain( null )
