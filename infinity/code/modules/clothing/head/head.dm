@@ -58,7 +58,7 @@
 	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
 	icon_state = "christ_hat"
 	item_state = "christ_hat"
-	flags_inv = BLOCKHAIR
+	flags_inv = BLOCKHEADHAIR
 	body_parts_covered = HEAD
 
 	sprite_sheets = list(
