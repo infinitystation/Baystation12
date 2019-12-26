@@ -178,6 +178,13 @@
 	followed_type = /mob/living/carbon/brain
 	suffix = "Brain"
 
+//[INF]
+/datum/follow_holder/nymph
+	sort_order = 4
+	followed_type = /mob/living/carbon/alien/diona
+	suffix = "Nymph"
+//[/INF]
+
 /datum/follow_holder/alien
 	sort_order = 4
 	followed_type = /mob/living/carbon/alien
