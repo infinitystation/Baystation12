@@ -586,7 +586,7 @@ var/list/admin_verbs_mentor = list(
 		SSstatistics.add_field("ban_warn",1)
 	else
 		if(C)
-			to_chat(C, "<font color='red'><BIG><B>пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ [key_name_admin(src, 0)].</B></BIG><br>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ&#255; пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.</font>")
+			to_chat(C, "<font color='red'><BIG><B>Вы были формально предупреждены администратором [key_name_admin(src, 0)].</B></BIG><br>Дальнейшие предупреждени&#255; приведут к автобану.</font>")
 			log_and_message_admins("has warned [key_name_admin(C)]. They have [MAX_WARNS-D.warns] strikes remaining.")
 		else
 			log_and_message_admins("has warned [warned_ckey] (DC). They have [MAX_WARNS-D.warns] strikes remaining.")
@@ -924,8 +924,8 @@ var/list/admin_verbs_mentor = list(
 	set name = "Man Up"
 	set desc = "Tells mob to man up and deal with it."
 
-	to_chat(T, SPAN_NOTICE("<b><font size=3>пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ&#255; пїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.</font></b>"))
-	to_chat(T, SPAN_NOTICE("пїЅпїЅ&#255;пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ."))
+	to_chat(T, SPAN_NOTICE("<b><font size=3>Возьми себ&#255; в руки и начни решать проблемы.</font></b>"))
+	to_chat(T, SPAN_NOTICE("Пр&#255;мо сейчас."))
 	sound_to(T, 'sound/voice/ManUp1.ogg')
 	log_and_message_admins("told [key_name(T)] to man up and deal with it.")
 
@@ -935,7 +935,7 @@ var/list/admin_verbs_mentor = list(
 	set desc = "Tells everyone to man up and deal with it."
 
 	for (var/mob/T as mob in SSmobs.mob_list)
-		to_chat(T, SPAN_NOTICE("<br><center><b><font size=4>пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ&#255; пїЅ пїЅпїЅпїЅпїЅ.<br>пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.</font></b><br>пїЅпїЅ&#255;пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ.</center><br>"))
+		to_chat(T, SPAN_NOTICE("<br><center><b><font size=4>Возьми себ&#255; в руки.<br>Начни решать проблемы.</font></b><br>Пр&#255;мо сейчас.</center><br>"))
 		sound_to(T, 'sound/voice/ManUp1.ogg')
 
 	log_and_message_admins("told everyone to man up and deal with it.")

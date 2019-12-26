@@ -229,7 +229,7 @@
 
 /obj/item/weapon/barrier
 	name = "portable barrier"
-	desc = "A portable barrier � usually, you can see it on defensive positions or in storages at important areas. \
+	desc = "A portable barrier. Usually, you can see it on defensive positions or in storages at important areas. \
 	You can deploy it with a screwdriver for maximum protection, or keep it in mobile position. \
 	Also, demontage can be done with a crowbar.In case of structural damage, can be repaired with welding tool."
 	icon = 'infinity/icons/obj/items.dmi'
