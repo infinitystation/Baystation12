@@ -406,8 +406,8 @@
 	icon_state = "helm_explorer"
 	sprite_sheets = list(
 		SPECIES_SKRELL = 'maps/torch/icons/mob/skrell/onmob_head_solgov_skrell.dmi',
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi',//INF BLYAT, SOLARK, SUKA,
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi'//INF BLYAT, SOLARK, SUKA,
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi',//INF
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi'//INF
 		)
 	sprite_sheets_obj = list(
 		SPECIES_TAJARA = 'icons/obj/clothing/species/tajaran/hats.dmi',
@@ -425,6 +425,7 @@
 		)
 	light_overlay = "yellow_light"
 	tinted = FALSE
+	tint = 1 //INF. At standart, should be 2
 
 /obj/item/clothing/suit/space/void/exploration
 	name = "exploration voidsuit"
@@ -434,12 +435,12 @@
 	icon_state = "void_explorer"
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'maps/torch/icons/mob/unathi/onmob_suit_solgov_unathi.dmi',
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi',//INF BLYAT, SOLARK, SUKA
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_suit_resomi.dmi'//INF BLYAT, SOLARK, SUKA
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi',//INF
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_suit_resomi.dmi'//INF
 		)
 	sprite_sheets_obj = list(
-		SPECIES_TAJARA = 'icons/obj/clothing/species/tajaran/suits.dmi',//INF BLYAT, SOLARK, SUKA
-		SPECIES_RESOMI = 'infinity/icons/obj/clothing/species/resomi/obj_suit_resomi.dmi'//INF BLYAT, SOLARK, SUKA
+		SPECIES_TAJARA = 'icons/obj/clothing/species/tajaran/suits.dmi',//INF
+		SPECIES_RESOMI = 'infinity/icons/obj/clothing/species/resomi/obj_suit_resomi.dmi'//INF
 		)
 	sprite_sheets_obj = list()
 	armor = list(
