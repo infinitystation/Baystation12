@@ -7923,7 +7923,7 @@
 	req_access = newlist()
 	},
 /obj/item/clothing/mask/gas/half,
-/obj/item/weapon/rig/command/el/equipped,
+/obj/item/weapon/rig/exploration/equipped,
 /obj/effect/floor_decal/corner/mauve/mono,
 /turf/simulated/floor/tiled,
 /area/command/exploration_leader)
