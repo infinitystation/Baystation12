@@ -1,1 +1,0 @@
-#define TRAIT_ON_HARVEST		42
