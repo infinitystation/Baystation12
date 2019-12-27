@@ -79,3 +79,18 @@
 
 	glass_name = "Discord cocktail"
 	glass_desc = "You did it, Verhniy! Where's the Discord Nitro cocktail, though?"
+
+/datum/reagent/nutriment/instantjuice/mandarin
+	name = "Mandarin Juice Powder"
+	description = "Dehydrated, powdered mandarin juice."
+	taste_description = "dry sweet holiday"
+	color = "#ffbc1f"
+
+/datum/reagent/drink/juice/mandarin
+	name = "Mandarin Juice"
+	description = "Delicious sweet juice made from mandarins."
+	taste_description = "sweet holiday"
+	color = "#ffbc1f"
+
+	glass_name = "mandarin juice"
+	glass_desc = "Delicious juice made from mandarins."

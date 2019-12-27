@@ -46,3 +46,10 @@
 /datum/chemical_reaction/concrete/on_reaction(var/datum/reagents/holder, var/created_volume, var/reaction_flags)
 	..()
 	new /obj/item/stack/material/concrete(get_turf(holder.my_atom), created_volume)
+
+/datum/chemical_reaction/mandarinjuice
+	name = "Mandarin Juice"
+	result = /datum/reagent/drink/juice/mandarin
+	required_reagents = list(/datum/reagent/water = 3, /datum/reagent/nutriment/instantjuice/mandarin = 1)
+	result_amount = 3
+	mix_message = "The solution settles into a clear orange beverage."

@@ -21,3 +21,16 @@
 	set_trait(TRAIT_LIGHT_TOLERANCE, 6)
 	set_trait(TRAIT_REQUIRES_NUTRIENTS,0)
 	set_trait(TRAIT_REQUIRES_WATER,0)
+
+/datum/seed/citrus/mandarin
+	name = "mandarin"
+	seed_name = "mandarin"
+	display_name = "mandarin trees"
+//	mutants = list("berries","poisonberries","glowberries") unused
+	chems = list(/datum/reagent/nutriment = list(1,10), /datum/reagent/drink/juice/mandarin = list(10,10))
+	kitchen_tag = "mandarin"
+
+/datum/seed/citrus/mandarin/New()
+	..()
+	set_trait(TRAIT_PRODUCT_COLOUR,"#ffbc1f")
+	set_trait(TRAIT_FLESH_COLOUR,"#ffbc1f")
