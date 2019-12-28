@@ -574,12 +574,26 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/hardstorage)
 "abh" = (
-/obj/structure/table/rack{
-	dir = 8
-	},
+/obj/structure/closet/crate/present,
+/obj/item/stack/tile/carpet/fifty,
+/obj/item/stack/tile/carpetblue/fifty,
+/obj/item/stack/tile/carpetblue2/fifty,
+/obj/item/stack/tile/carpetblue3/fifty,
+/obj/item/stack/tile/carpetgreen/fifty,
+/obj/item/stack/tile/carpetmagenta/fifty,
+/obj/item/stack/tile/carpetorange/fifty,
+/obj/item/stack/tile/carpetpurple/fifty,
+/obj/item/stack/tile/carpetred/fifty,
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/item/stack/material/wood/yew/twentyfive,
+/obj/item/stack/material/wood/walnut/twentyfive,
+/obj/item/stack/material/wood/maple/twentyfive,
+/obj/item/stack/material/wood/mahogany/twentyfive,
+/obj/item/stack/material/wood/fifty,
+/obj/item/stack/material/wood/ebony/twentyfive,
+/obj/item/stack/material/wood/bamboo/fifty,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/hardstorage)
 "abi" = (
@@ -1070,7 +1084,6 @@
 /obj/structure/table/rack{
 	dir = 8
 	},
-/obj/item/stack/material/wood/fifty,
 /obj/item/stack/material/plastic/fifty,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/item/stack/material/aluminium/fifty,
@@ -34259,19 +34272,6 @@
 /obj/effect/floor_decal/chapel/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/chapel/main)
-"bea" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/reinforced/airless,
-/area/space)
 "beb" = (
 /obj/effect/floor_decal/spline/fancy/wood,
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -55771,7 +55771,7 @@ aam
 aam
 aam
 aam
-bea
+aoT
 bfr
 bfs
 bft
@@ -55973,7 +55973,7 @@ aam
 aam
 aam
 aam
-bfp
+aaK
 aba
 abq
 abU
@@ -56174,8 +56174,8 @@ aam
 aam
 aam
 aam
-aMh
-aQT
+aaK
+aaK
 aba
 aba
 aba
@@ -56376,7 +56376,7 @@ aam
 aam
 aam
 aam
-aQT
+aaK
 aaT
 aaT
 aaT

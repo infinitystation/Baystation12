@@ -19097,6 +19097,16 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/structure/closet/crate/present,
+/obj/item/stack/tile/carpet/fifty,
+/obj/item/stack/tile/carpetblue/fifty,
+/obj/item/stack/tile/carpetblue2/fifty,
+/obj/item/stack/tile/carpetblue3/fifty,
+/obj/item/stack/tile/carpetgreen/fifty,
+/obj/item/stack/tile/carpetmagenta/fifty,
+/obj/item/stack/tile/carpetorange/fifty,
+/obj/item/stack/tile/carpetpurple/fifty,
+/obj/item/stack/tile/carpetred/fifty,
 /turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/storage)
 "Ej" = (
