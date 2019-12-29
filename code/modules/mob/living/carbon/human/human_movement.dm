@@ -7,7 +7,10 @@
 	var/obj/item/organ/external/H = get_organ(BP_GROIN) // gets species slowdown, which can be reset by robotize()
 	if(istype(H))
 		tally += H.slowdown
-
+//[INF]
+	for(var/obj/item/organ/external/O in organs)
+		tally += O.slowdown
+//[/INF]
 	tally += species.handle_movement_delay_special(src)
 
 	var/area/a = get_area(src)
