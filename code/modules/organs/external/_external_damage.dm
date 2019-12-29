@@ -364,6 +364,7 @@ obj/item/organ/external/take_general_damage(var/amount, var/silent = FALSE)
 		B *= 1.5
 	if(BP_IS_CRYSTAL(src))
 		B *= 0.8
+	B *= brute_mod //INF
 	return B + (0.2 * burn_dam/max_damage) //burns make you take more brute damage
 
 /obj/item/organ/external/proc/get_burn_mod(var/damage_flags)
@@ -375,6 +376,7 @@ obj/item/organ/external/take_general_damage(var/amount, var/silent = FALSE)
 		B *= species.get_burn_mod(owner)
 	if(BP_IS_CRYSTAL(src))
 		B *= 0.1
+	B *= burn_mod //INF
 	return B
 
 //organs can come off in three cases
