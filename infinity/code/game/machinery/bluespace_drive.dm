@@ -14,7 +14,7 @@
 	anchored = 1
 	density = 1
 	idle_power_usage = 15000
-	construct_state = /decl/machine_construction/default/panel_closed
+	construct_state = /decl/machine_construction/tcomms/panel_closed/cannot_print
 	var/setup_state = 0
 	var/busy = 0
 	var/radiation_power_minimal = 3
