@@ -139,11 +139,6 @@
 	name = "Second Deck - Teleporter"
 	icon_state = "teleporter"
 
-/area/maintenance/bluespace
-	name = "Second Deck - Engineering - Bluespace Drive"
-	icon_state = "engineering"
-	req_access = list(list(access_engine_equip, access_heads), access_engine, access_maint_tunnels)
-
 /area/crew_quarters/safe_room/seconddeck
 	name = "Second Deck - Safe Room"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
@@ -593,6 +588,17 @@
  	icon_state = "atmos"
  	sound_env = LARGE_ENCLOSED
  	req_access = list(access_atmospherics)
+
+/area/engineering/bluespace
+	name = "Second Deck - Engineering - Bluespace Drive"
+	icon_state = "engine_monitoring"
+	req_access = list(list(access_engine_equip, access_heads), access_engine, access_maint_tunnels)
+	sound_env = SMALL_ENCLOSED
+
+/area/engineering/bluespace/chamber
+	name = "Second Deck - Engineering - Bluespace Drive - Chamber"
+	icon_state = "engine"
+	sound_env = LARGE_ENCLOSED
 
 // Shield Rooms
 /area/shield

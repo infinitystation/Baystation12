@@ -104,28 +104,14 @@
 /turf/space,
 /area/space)
 "aan" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
+/obj/machinery/door/airlock/engineering{
+	name = "Bluespace Drive";
+	req_access = newlist();
+	secured_wires = 1
 	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -23
-	},
-/obj/machinery/hologram/holopad,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/monotile,
-/area/hallway/primary/seconddeck/fore)
+/obj/machinery/door/firedoor,
+/turf/simulated/wall/r_wall/prepainted,
+/area/engineering/bluespace)
 "aao" = (
 /turf/simulated/wall/prepainted,
 /area/maintenance/substation/seconddeck)
@@ -830,18 +816,16 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hydroponics)
 "abD" = (
-/obj/structure/catwalk,
-/obj/random/tool,
-/obj/structure/disposalpipe/segment{
-	dir = 4;
-	icon_state = "pipe-c"
+/obj/effect/floor_decal/borderfloor{
+	dir = 1;
+	icon_state = "borderfloor_white"
 	},
-/obj/machinery/camera/network/engineering{
-	c_tag = "Bluespace Drive - Observation";
-	dir = 4
+/obj/effect/floor_decal/corner/lightgrey/border{
+	icon_state = "bordercolor";
+	dir = 1
 	},
-/turf/simulated/floor/plating,
-/area/maintenance/bluespace)
+/turf/simulated/floor/tiled,
+/area/hallway/primary/seconddeck/fore)
 "abE" = (
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -1943,11 +1927,9 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/teleporter/seconddeck)
 "adx" = (
-/obj/structure/closet/emcloset,
-/obj/effect/floor_decal/corner/lightgrey/mono,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/monotile,
-/area/hallway/primary/seconddeck/fore)
+/obj/random/obstruction,
+/turf/simulated/floor/plating,
+/area/maintenance/seconddeck/forestarboard)
 "ady" = (
 /obj/structure/closet/secure_closet/freezer/meat,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -3409,17 +3391,14 @@
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
 "afG" = (
-/obj/structure/catwalk,
-/obj/structure/sign/warning/nosmoking_1{
-	desc = "A warning sign which reads 'NO SMOKING'. Someone has scratched a variety of crude words in gutter across the entire sign.";
-	pixel_y = 32
+/obj/machinery/light/small{
+	dir = 8;
+	icon_state = "bulb_map"
 	},
-/obj/structure/disposalpipe/trunk{
-	dir = 8
-	},
-/obj/machinery/disposal,
-/turf/simulated/floor/plating,
-/area/maintenance/bluespace)
+/obj/structure/table/steel,
+/obj/item/weapon/folder/yellow,
+/turf/simulated/floor/tiled/techfloor,
+/area/engineering/bluespace)
 "afH" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/structure/cable/green{
@@ -3496,16 +3475,11 @@
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/heads/captain/beach)
 "afK" = (
-/obj/structure/catwalk,
-/obj/machinery/alarm{
-	dir = 4;
-	icon_state = "alarm0";
-	pixel_x = -22;
-	pixel_y = 0
+/obj/machinery/space_heater/stationary/on{
+	pixel_y = 30
 	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/plating,
-/area/maintenance/bluespace)
+/turf/simulated/floor/bluegrid,
+/area/engineering/bluespace/chamber)
 "afL" = (
 /obj/machinery/cooker/fryer,
 /obj/effect/floor_decal/corner/grey/diagonal{
@@ -3702,28 +3676,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/holocontrol)
 "agd" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 1;
-	icon_state = "pipe-c"
-	},
-/obj/effect/floor_decal/steeldecal/steel_decals4{
-	icon_state = "steel_decals4";
-	dir = 4
-	},
-/obj/effect/floor_decal/steeldecal/steel_decals4{
-	icon_state = "steel_decals4";
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
-	},
-/turf/simulated/floor/tiled,
-/area/hallway/primary/seconddeck/fore)
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
+/turf/simulated/floor/tiled/techfloor,
+/area/engineering/bluespace)
 "age" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -3997,44 +3952,53 @@
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
 "agv" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/catwalk,
-/obj/structure/disposalpipe/segment,
+/obj/structure/table/rack,
+/obj/random/maintenance,
 /turf/simulated/floor/plating,
-/area/maintenance/bluespace)
+/area/maintenance/seconddeck/forestarboard)
 "agw" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/catwalk,
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/plating,
-/area/maintenance/bluespace)
+/turf/simulated/wall/r_wall/prepainted,
+/area/engineering/bluespace/chamber)
 "agx" = (
 /obj/structure/cable/green{
-	d1 = 1;
 	d2 = 2;
-	icon_state = "1-2"
+	icon_state = "0-2"
 	},
-/obj/machinery/door/blast/regular/open,
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/reinforced,
-/area/maintenance/bluespace)
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_x = 0;
+	pixel_y = 24;
+	req_access = list("ACCESS_ENGINEERING")
+	},
+/obj/structure/table/steel,
+/obj/item/weapon/paper/sierra/bsd,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/bluespace)
 "agy" = (
-/obj/machinery/door/airlock/engineering{
-	name = "Bluespace Drive";
-	req_access = newlist();
-	secured_wires = 1
+/obj/machinery/computer/modular/preset/engineering{
+	icon_state = "computer";
+	dir = 4
 	},
-/obj/item/taperoll/engineering/applied,
+/obj/machinery/button/blast_door{
+	desc = "A remote control-switch for engine core.";
+	dir = 4;
+	id_tag = "BSD_windows";
+	name = "Bluespace Driver Chamber Windows Control";
+	pixel_x = -23;
+	pixel_y = 8
+	},
+/obj/machinery/button/alternate/door/bolts{
+	desc = "A remote control-switch for the engine core airlock hatch bolts.";
+	dir = 4;
+	id_tag = "BSD_airlock";
+	name = "Containment Hatch Bolt Control";
+	pixel_x = -23;
+	pixel_y = -8;
+	req_access = list("ACCESS_ENGINE_EQUIP")
+	},
 /turf/simulated/floor/tiled/techfloor,
-/area/maintenance/bluespace)
+/area/engineering/bluespace)
 "agz" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -4133,9 +4097,16 @@
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "agD" = (
-/obj/machinery/constructable_frame/machine_frame,
-/turf/simulated/floor/reinforced,
-/area/maintenance/bluespace)
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/bluegrid,
+/area/engineering/bluespace/chamber)
 "agE" = (
 /obj/effect/floor_decal/techfloor/corner{
 	icon_state = "techfloor_corners";
@@ -5080,7 +5051,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/ai_grid,
 /area/turret_protected/ai_upload)
 "aig" = (
 /obj/structure/railing/mapped,
@@ -5647,11 +5618,18 @@
 /turf/simulated/floor/carpet/blue,
 /area/crew_quarters/heads/cobed)
 "ajd" = (
+/obj/structure/largecrate,
+/obj/random/maintenance,
+/obj/random/maintenance,
 /obj/structure/railing/mapped{
 	dir = 1;
 	icon_state = "railing0-1"
 	},
-/obj/machinery/portable_atmospherics/powered/scrubber,
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1";
+	tag = "icon-railing0 (EAST)"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/forestarboard)
 "aje" = (
@@ -6195,6 +6173,11 @@
 /obj/structure/table/rack,
 /obj/random/maintenance,
 /obj/random/maintenance,
+/obj/machinery/alarm{
+	dir = 4;
+	icon_state = "alarm0";
+	pixel_x = -23
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/forestarboard)
 "ajZ" = (
@@ -6218,8 +6201,13 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/forestarboard)
 "akb" = (
-/obj/structure/railing/mapped,
-/obj/machinery/portable_atmospherics/powered/pump/filled,
+/obj/structure/sign/warning/secure_area{
+	dir = 1;
+	icon_state = "securearea";
+	pixel_y = -32
+	},
+/obj/structure/table/rack,
+/obj/random/maintenance,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/forestarboard)
 "akc" = (
@@ -6596,6 +6584,11 @@
 	icon_state = "bordercolor";
 	dir = 1
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/fore)
 "akI" = (
@@ -6747,9 +6740,21 @@
 /turf/simulated/floor/carpet,
 /area/crew_quarters/gym)
 "akS" = (
-/obj/machinery/door/blast/regular,
-/turf/simulated/floor/reinforced,
-/area/maintenance/bluespace)
+/obj/machinery/alarm{
+	dir = 4;
+	icon_state = "alarm0";
+	pixel_x = -22;
+	pixel_y = 0
+	},
+/obj/machinery/power/smes/buildable/preset/sierra/substation{
+	RCon_tag = "Substation - Bluespace Engine"
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/engineering/bluespace)
 "akT" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -6767,7 +6772,7 @@
 /area/medical/virology)
 "akV" = (
 /turf/simulated/wall/r_wall/prepainted,
-/area/maintenance/bluespace)
+/area/engineering/bluespace)
 "akW" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -6911,27 +6916,8 @@
 /turf/simulated/floor/tiled,
 /area/crew_quarters/heads/office/ce)
 "alh" = (
-/obj/effect/floor_decal/borderfloor{
-	icon_state = "borderfloor_white";
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/blue/border{
-	icon_state = "bordercolor";
-	dir = 1
-	},
-/obj/effect/floor_decal/borderfloor/corner2{
-	icon_state = "borderfloorcorner2_white";
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/blue/bordercorner2{
-	icon_state = "bordercolorcorner2";
-	dir = 4
-	},
-/obj/machinery/newscaster{
-	pixel_y = 30
-	},
-/turf/simulated/floor/tiled,
-/area/hallway/primary/seconddeck/fore)
+/turf/simulated/floor/tiled/techfloor,
+/area/engineering/bluespace)
 "ali" = (
 /obj/structure/fitness/weightlifter,
 /obj/effect/floor_decal/corner/green/half{
@@ -7164,15 +7150,16 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/galley)
 "alx" = (
-/obj/structure/closet/emcloset,
-/obj/effect/floor_decal/corner/lightgrey/mono,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/sign/tinsel/gold{
-	icon_state = "tinsel1";
-	dir = 1
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/hallway/primary/seconddeck/fore)
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/bluespace/chamber)
 "aly" = (
 /obj/random/obstruction,
 /turf/simulated/floor/plating,
@@ -7277,14 +7264,12 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/atmos)
 "alJ" = (
-/obj/structure/cable/green,
-/obj/machinery/power/apc/high{
-	name = "south bump";
-	pixel_y = -24
+/obj/machinery/firealarm{
+	dir = 2;
+	pixel_y = 24
 	},
-/obj/random/tool,
-/turf/simulated/floor/reinforced,
-/area/maintenance/bluespace)
+/turf/simulated/floor/bluegrid,
+/area/engineering/bluespace/chamber)
 "alK" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass/civilian,
@@ -7314,12 +7299,13 @@
 /turf/simulated/floor/plating,
 /area/crew_quarters/heads/cobed)
 "alM" = (
-/obj/machinery/constructable_frame/computerframe/deconstruct{
-	icon_state = "0";
-	dir = 8
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/floor/reinforced,
-/area/maintenance/bluespace)
+/turf/simulated/floor/bluegrid,
+/area/engineering/bluespace/chamber)
 "alN" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/portable_atmospherics/powered/pump/filled,
@@ -7333,22 +7319,17 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
 "alP" = (
-/obj/machinery/atmospherics/portables_connector,
-/obj/machinery/portable_atmospherics/canister/empty,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/sign/warning/nosmoking_1{
-	dir = 8;
-	icon_state = "nosmoking";
-	pixel_x = 32
+/obj/machinery/power/apc/high/critical{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
 	},
-/obj/machinery/light/small{
-	dir = 1
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
 	},
-/obj/machinery/firealarm{
-	pixel_y = 21
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/bluespace)
+/turf/simulated/floor/bluegrid,
+/area/engineering/bluespace/chamber)
 "alQ" = (
 /obj/structure/lattice,
 /obj/machinery/light/navigation/delay2,
@@ -7387,11 +7368,8 @@
 /turf/simulated/floor/carpet/blue,
 /area/crew_quarters/heads/cobed)
 "alT" = (
-/obj/structure/closet/firecloset,
-/obj/effect/floor_decal/corner/lightgrey/mono,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/monotile,
-/area/hallway/primary/seconddeck/fore)
+/turf/simulated/floor/bluegrid,
+/area/engineering/bluespace/chamber)
 "alU" = (
 /obj/effect/floor_decal/spline/fancy/wood/corner{
 	icon_state = "spline_fancy_corner";
@@ -7493,30 +7471,18 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/galley)
 "amd" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 8
+/obj/machinery/light/small{
+	dir = 1;
+	icon_state = "bulb_map"
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 4;
-	icon_state = "pipe-c"
+/obj/structure/sign/warning/radioactive{
+	dir = 8;
+	icon_state = "radiation";
+	pixel_x = 32
 	},
-/obj/effect/catwalk_plated,
-/obj/machinery/navbeacon/sierra/SD_fore4,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 6
-	},
-/turf/simulated/floor/plating,
-/area/hallway/primary/seconddeck/fore)
+/obj/machinery/space_heater,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/bluespace)
 "ame" = (
 /obj/structure/cable/cyan{
 	d1 = 2;
@@ -7921,8 +7887,11 @@
 /turf/simulated/floor/plating,
 /area/hallway/primary/seconddeck/center)
 "amH" = (
-/turf/simulated/floor/reinforced,
-/area/maintenance/bluespace)
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/engineering/bluespace)
 "amI" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	icon_state = "spline_fancy";
@@ -7984,15 +7953,24 @@
 /turf/simulated/floor/wood/walnut,
 /area/maintenance/abandoned_common)
 "amL" = (
-/obj/machinery/atmospherics/pipe/manifold/visible{
+/obj/machinery/camera/network/engineering{
+	c_tag = "Bluespace Drive - Chamber";
 	dir = 8
 	},
-/obj/random/technology_scanner,
-/turf/simulated/floor/reinforced,
-/area/maintenance/bluespace)
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/bluespace/chamber)
 "amM" = (
-/turf/simulated/wall/ocp_wall,
-/area/maintenance/bluespace)
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/engineering/bluespace)
 "amN" = (
 /obj/machinery/door/blast/shutters{
 	dir = 2;
@@ -8074,11 +8052,20 @@
 /turf/simulated/floor/tiled,
 /area/crew_quarters/gym)
 "amS" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
+/obj/effect/floor_decal/industrial/hatch/grey,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/reinforced,
-/area/maintenance/bluespace)
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/bluespace/chamber)
 "amT" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
@@ -8388,23 +8375,19 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/atmos)
 "anu" = (
-/obj/machinery/atmospherics/unary/vent_pump{
-	dir = 8;
-	external_pressure_bound = 0;
-	external_pressure_bound_default = 0;
-	frequency = 1441;
-	icon_state = "map_vent_in";
-	id_tag = "co2_out";
-	initialize_directions = 1;
-	internal_pressure_bound = 4000;
-	internal_pressure_bound_default = 4000;
-	pressure_checks = 2;
-	pressure_checks_default = 2;
-	pump_direction = 0;
-	use_power = 1
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
-/turf/simulated/floor/reinforced,
-/area/maintenance/bluespace)
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/bluespace)
 "anv" = (
 /obj/random/closet,
 /turf/simulated/floor/plating,
@@ -9498,31 +9481,21 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/locker_room)
 "aoZ" = (
-/obj/structure/disposalpipe/segment{
-	dir = 2;
-	icon_state = "pipe-c"
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/structure/sign/warning/secure_area{
-	pixel_y = 32
+/obj/machinery/door/airlock/engineering{
+	name = "Bluespace Drive";
+	req_access = newlist();
+	secured_wires = 1
 	},
-/obj/effect/floor_decal/borderfloor{
-	dir = 1;
-	icon_state = "borderfloor_white"
-	},
-/obj/effect/floor_decal/corner/blue/border{
-	icon_state = "bordercolor";
-	dir = 1
-	},
-/obj/effect/floor_decal/borderfloor/corner2{
-	dir = 4;
-	icon_state = "borderfloorcorner2_white"
-	},
-/obj/effect/floor_decal/corner/blue/bordercorner2{
-	icon_state = "bordercolorcorner2";
-	dir = 4
-	},
-/turf/simulated/floor/tiled,
-/area/hallway/primary/seconddeck/fore)
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/plating,
+/area/engineering/bluespace)
 "apa" = (
 /obj/structure/stairs/east,
 /turf/simulated/floor/tiled/monotile,
@@ -10185,22 +10158,24 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/starboard)
 "apX" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/structure/disposalpipe/junction{
-	dir = 8
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	icon_state = "steel_decals4";
+	dir = 4
 	},
-/obj/effect/catwalk_plated,
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	icon_state = "steel_decals4";
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/fore)
 "apY" = (
 /obj/machinery/portable_atmospherics/powered/pump/filled,
@@ -10749,7 +10724,7 @@
 	icon_state = "tinsel1";
 	dir = 8
 	},
-/turf/simulated/wall/r_wall/prepainted,
+/turf/simulated/floor/wood/walnut,
 /area/crew_quarters/heads/cobed)
 "aqZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -11195,7 +11170,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/turret_protected/ai_upload)
 "arK" = (
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/ai_grid,
 /area/turret_protected/ai_upload)
 "arL" = (
 /obj/structure/table/rack,
@@ -11745,7 +11720,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/ai_grid,
 /area/turret_protected/ai_upload)
 "asG" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
@@ -12586,7 +12561,7 @@
 	dir = 4;
 	pixel_x = -23
 	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/ai_grid,
 /area/turret_protected/ai_upload)
 "atT" = (
 /obj/structure/cable/green{
@@ -12616,7 +12591,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/ai_grid,
 /area/turret_protected/ai_upload)
 "atW" = (
 /obj/effect/floor_decal/steeldecal/steel_decals4{
@@ -13514,19 +13489,24 @@
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/heads/captain/beach)
 "auY" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/highsecurity/bolted{
+	id_tag = "BSD_airlock";
+	name = "Containment Chamber"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/engineering{
-	name = "Bluespace Drive";
-	req_access = newlist();
-	secured_wires = 1
-	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/techfloor,
-/area/maintenance/bluespace)
+/turf/simulated/floor/reinforced,
+/area/engineering/bluespace)
 "auZ" = (
 /obj/structure/bed/sofa/brown/right,
 /obj/machinery/button/alternate/door/bolts{
@@ -14518,7 +14498,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/ai_grid,
 /area/turret_protected/ai_upload)
 "awE" = (
 /obj/structure/table/rack,
@@ -15986,9 +15966,13 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/fore)
 "ayL" = (
-/obj/structure/bookcase/manuals/medical,
-/turf/simulated/wall/r_wall/prepainted,
-/area/crew_quarters/heads/captain/office_anteroom)
+/obj/structure/bookcase/manuals/engineering,
+/obj/structure/sign/tinsel/gold{
+	icon_state = "tinsel1";
+	dir = 8
+	},
+/turf/simulated/floor/wood/walnut,
+/area/crew_quarters/heads/cobed)
 "ayM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -16168,13 +16152,9 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/sleep/cryo)
 "aza" = (
-/obj/structure/bookcase/manuals/engineering,
-/obj/structure/sign/tinsel/gold{
-	icon_state = "tinsel1";
-	dir = 8
-	},
-/turf/simulated/wall/r_wall/prepainted,
-/area/crew_quarters/heads/cobed)
+/obj/structure/bookcase/manuals/medical,
+/turf/simulated/floor/wood/walnut,
+/area/crew_quarters/heads/captain/office_anteroom)
 "azb" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass/civilian{
@@ -16592,7 +16572,7 @@
 /area/crew_quarters/heads/captain/office_anteroom)
 "azH" = (
 /obj/structure/bookcase/manuals/security,
-/turf/simulated/wall/r_wall/prepainted,
+/turf/simulated/floor/wood/walnut,
 /area/crew_quarters/heads/captain/office_anteroom)
 "azI" = (
 /obj/machinery/door/firedoor,
@@ -18597,22 +18577,20 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftport)
 "aCQ" = (
+/obj/effect/floor_decal/industrial/hatch/grey,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
 /obj/structure/cable/green{
-	d1 = 4;
+	d1 = 1;
 	d2 = 8;
-	icon_state = "4-8"
+	icon_state = "1-8"
 	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/bed/chair/office/comfy/yellow{
-	icon_state = "comfyofficechair_preview";
-	dir = 4
-	},
-/turf/simulated/floor/reinforced,
-/area/maintenance/bluespace)
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/bluespace/chamber)
 "aCR" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
@@ -22109,11 +22087,9 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/locker_room)
 "aIT" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 8
-	},
-/turf/simulated/wall/ocp_wall,
-/area/maintenance/bluespace)
+/obj/machinery/bluespacedrive,
+/turf/simulated/floor/bluegrid,
+/area/engineering/bluespace/chamber)
 "aIU" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
 	icon_state = "intact";
@@ -23956,14 +23932,23 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/atmos)
 "aMe" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/machinery/camera/network/engineering{
+	c_tag = "Bluespace Drive";
+	dir = 4
 	},
-/obj/effect/wallframe_spawn/reinforced_phoron/osmium,
-/turf/simulated/floor/reinforced,
-/area/maintenance/bluespace)
+/obj/machinery/computer/modular/preset/engineering{
+	icon_state = "computer";
+	dir = 4
+	},
+/obj/machinery/status_light{
+	alert_temperature = 340;
+	id_tag = "ReacEng4";
+	name = "Bluespace Drive status indicator";
+	pixel_x = -24;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/engineering/bluespace)
 "aMf" = (
 /obj/effect/floor_decal/steeldecal/steel_decals6{
 	icon_state = "steel_decals6";
@@ -24079,11 +24064,8 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/starboard)
 "aMo" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 4
-	},
-/turf/simulated/wall/ocp_wall,
-/area/maintenance/bluespace)
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/bluespace/chamber)
 "aMp" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/simple/visible/black{
@@ -24150,14 +24132,11 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/seconddeck/aftstarboard)
 "aMw" = (
-/obj/machinery/portable_atmospherics/canister/phoron,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/atmospherics/portables_connector{
-	dir = 1
+/obj/machinery/space_heater/stationary/on{
+	pixel_y = 30
 	},
-/obj/machinery/light/small,
-/turf/simulated/floor/plating,
-/area/maintenance/bluespace)
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/bluespace/chamber)
 "aMx" = (
 /obj/machinery/portable_atmospherics/powered/pump/filled,
 /obj/structure/railing/mapped{
@@ -27379,6 +27358,7 @@
 	dir = 1;
 	icon_state = "railing0-1"
 	},
+/obj/item/weapon/stock_parts/circuitboard/bluespacedrive,
 /turf/simulated/floor/tiled/techmaint,
 /area/storage/tech)
 "aSb" = (
@@ -30784,7 +30764,7 @@
 	dir = 1;
 	pixel_y = -29
 	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/ai_grid,
 /area/turret_protected/ai_upload)
 "aXB" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -32818,22 +32798,11 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/maintenance/abandoned_hydroponics)
 "bbo" = (
-/obj/structure/showcase{
-	desc = "A bewilderingly complex prototype designed to split the fabric of spacetime and allow access to Bluespace.";
-	icon = 'icons/obj/power.dmi';
-	icon_state = "tracker";
-	name = "Bluespace Drive"
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
 	},
-/obj/machinery/shield{
-	desc = "An energy shield used to contain the exotic particles emitted by the Bluespace Drive.";
-	name = "Containment Shield"
-	},
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/simulated/wall/r_wall/prepainted,
-/area/maintenance/bluespace)
+/turf/simulated/floor/bluegrid,
+/area/engineering/bluespace/chamber)
 "bbp" = (
 /obj/structure/table/woodentable/walnut,
 /obj/item/weapon/storage/secure/briefcase/nukedisk,
@@ -34272,6 +34241,12 @@
 /obj/effect/floor_decal/chapel/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/chapel/main)
+"bea" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/bluespace/chamber)
 "beb" = (
 /obj/effect/floor_decal/spline/fancy/wood,
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -35239,25 +35214,34 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
 "bfO" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/structure/sign/warning/secure_area{
+	pixel_y = 32
 	},
-/obj/machinery/computer/modular/preset/engineering{
-	dir = 8
+/obj/effect/floor_decal/borderfloor{
+	dir = 1;
+	icon_state = "borderfloor_white"
 	},
-/turf/simulated/floor/reinforced,
-/area/maintenance/bluespace)
+/obj/effect/floor_decal/corner/blue/border{
+	icon_state = "bordercolor";
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 4;
+	icon_state = "borderfloorcorner2_white"
+	},
+/obj/effect/floor_decal/corner/blue/bordercorner2{
+	icon_state = "bordercolorcorner2";
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/seconddeck/fore)
 "bfP" = (
-/obj/machinery/atmospherics/valve,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/machinery/alarm/bsd{
+	dir = 8;
+	pixel_x = 25
 	},
-/turf/simulated/floor/reinforced,
-/area/maintenance/bluespace)
+/turf/simulated/floor/bluegrid,
+/area/engineering/bluespace/chamber)
 "bfQ" = (
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -35271,13 +35255,22 @@
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bfR" = (
+/obj/effect/wallframe_spawn/reinforced_phoron,
+/obj/machinery/door/firedoor,
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	d2 = 4;
+	icon_state = "0-4"
 	},
-/turf/simulated/floor/reinforced,
-/area/maintenance/bluespace)
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 2;
+	icon_state = "pdoor0";
+	id_tag = "BSD_windows";
+	name = "Bluespace Chamber Lockdown";
+	opacity = 0
+	},
+/turf/simulated/floor/plating,
+/area/engineering/bluespace/chamber)
 "bfS" = (
 /obj/effect/floor_decal/corner/blue/diagonal,
 /obj/structure/cable/green{
@@ -35790,12 +35783,12 @@
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology/level1)
 "bgN" = (
-/obj/structure/catwalk,
-/obj/structure/sign/warning/secure_area{
-	dir = 1;
-	icon_state = "securearea";
-	pixel_y = -32
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1";
+	tag = "icon-railing0 (EAST)"
 	},
+/obj/random/obstruction,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/forestarboard)
 "bgO" = (
@@ -35831,9 +35824,30 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/fore)
 "bgQ" = (
-/obj/machinery/constructable_frame/machine_frame,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
+	},
+/obj/effect/catwalk_plated,
+/obj/machinery/navbeacon/sierra/SD_fore4,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 8
+	},
 /turf/simulated/floor/plating,
-/area/maintenance/bluespace)
+/area/hallway/primary/seconddeck/fore)
 "bgR" = (
 /obj/machinery/optable{
 	name = "Xenobiology Operating Table"
@@ -35866,17 +35880,16 @@
 /turf/simulated/floor/reinforced/airless,
 /area/space)
 "bgU" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+/obj/structure/sign/warning/secure_area{
+	dir = 8;
+	icon_state = "securearea";
+	pixel_x = 32
 	},
-/obj/machinery/constructable_frame/computerframe/deconstruct{
-	icon_state = "0";
-	dir = 1
-	},
-/turf/simulated/floor/reinforced,
-/area/maintenance/bluespace)
+/obj/structure/closet/radiation,
+/obj/item/clothing/glasses/meson,
+/obj/item/clothing/glasses/meson,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/bluespace)
 "bgV" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
@@ -35895,13 +35908,15 @@
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
 "bgW" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/reinforced,
-/area/maintenance/bluespace)
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/bluespace)
 "bgX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -35945,11 +35960,51 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
 "bha" = (
-/obj/machinery/atmospherics/pipe/manifold/visible{
-	dir = 8
+/obj/structure/catwalk,
+/obj/machinery/power/terminal{
+	icon_state = "term";
+	dir = 1
 	},
-/turf/simulated/floor/reinforced,
-/area/maintenance/bluespace)
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	icon_state = "bulb_map"
+	},
+/turf/simulated/floor/plating,
+/area/engineering/bluespace)
+"bhb" = (
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -23
+	},
+/obj/machinery/portable_atmospherics/powered/scrubber,
+/turf/simulated/floor/plating,
+/area/maintenance/seconddeck/forestarboard)
+"bhc" = (
+/obj/effect/floor_decal/borderfloor{
+	icon_state = "borderfloor_white";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	icon_state = "bordercolor";
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	icon_state = "borderfloorcorner2_white";
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/blue/bordercorner2{
+	icon_state = "bordercolorcorner2";
+	dir = 4
+	},
+/obj/structure/sign/warning/secure_area{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/seconddeck/fore)
 "bhd" = (
 /obj/structure/table/glass,
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -35957,6 +36012,44 @@
 	},
 /turf/simulated/floor/lino,
 /area/bridge/meeting_room)
+"bhe" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -23
+	},
+/obj/machinery/hologram/holopad,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/hallway/primary/seconddeck/fore)
+"bhf" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/bluespace)
 "bhg" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -35993,16 +36086,13 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/forestarboard)
 "bhj" = (
-/obj/machinery/atmospherics/unary/outlet_injector{
-	dir = 8;
-	frequency = 1441;
-	icon_state = "map_injector";
-	id = "co2_in";
-	pixel_y = 1;
-	use_power = 1
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
 	},
-/turf/simulated/floor/reinforced,
-/area/maintenance/bluespace)
+/obj/structure/flora/pottedplant/dead,
+/turf/simulated/floor/tiled/techfloor,
+/area/engineering/bluespace)
 "bhk" = (
 /obj/machinery/shieldwallgen,
 /turf/simulated/floor/plating,
@@ -36035,13 +36125,17 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/forestarboard)
 "bhp" = (
-/obj/structure/catwalk,
-/obj/structure/sign/warning/nosmoking_1{
-	dir = 1;
-	pixel_y = -32
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/simulated/floor/plating,
-/area/maintenance/bluespace)
+/obj/structure/bed/chair/padded/yellow{
+	icon_state = "chair_preview";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/bluespace)
 "bhq" = (
 /obj/random/trash,
 /obj/random/junk,
@@ -36051,6 +36145,25 @@
 /obj/machinery/portable_atmospherics/powered/scrubber,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/forestarboard)
+"bhs" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/bluespace)
 "bht" = (
 /obj/machinery/light{
 	dir = 8
@@ -36163,9 +36276,52 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
+"bhB" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/catwalk_plated,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/hallway/primary/seconddeck/fore)
 "bhC" = (
 /turf/simulated/floor/tiled/dark,
 /area/chapel/office)
+"bhD" = (
+/obj/effect/wallframe_spawn/reinforced_phoron,
+/obj/machinery/door/firedoor,
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 2;
+	icon_state = "pdoor0";
+	id_tag = "BSD_windows";
+	name = "Bluespace Chamber Lockdown";
+	opacity = 0
+	},
+/turf/simulated/floor/plating,
+/area/engineering/bluespace/chamber)
 "bhE" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -36180,6 +36336,32 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
+"bhF" = (
+/obj/effect/wallframe_spawn/reinforced_phoron,
+/obj/machinery/door/firedoor,
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 2;
+	icon_state = "pdoor0";
+	id_tag = "BSD_windows";
+	name = "Bluespace Chamber Lockdown";
+	opacity = 0
+	},
+/turf/simulated/floor/plating,
+/area/engineering/bluespace/chamber)
+"bhG" = (
+/obj/structure/railing/mapped{
+	dir = 8;
+	icon_state = "railing0-1"
+	},
+/obj/structure/table/rack,
+/obj/random/maintenance,
+/turf/simulated/floor/plating,
+/area/maintenance/seconddeck/forestarboard)
 "bhH" = (
 /obj/structure/table/marble,
 /obj/item/weapon/reagent_containers/food/condiment/small/saltshaker{
@@ -36214,6 +36396,16 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
+"bhJ" = (
+/obj/machinery/status_light{
+	alert_temperature = 340;
+	id_tag = "ReacEng4";
+	name = "Bluespace Drive status indicator";
+	pixel_x = 24;
+	pixel_y = 0
+	},
+/turf/simulated/floor/bluegrid,
+/area/engineering/bluespace/chamber)
 "bhK" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/chapel/office)
@@ -36318,14 +36510,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/chapel/main)
-"bhV" = (
-/obj/structure/catwalk,
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -23
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/seconddeck/forestarboard)
 "bhW" = (
 /obj/effect/floor_decal/borderfloor{
 	icon_state = "borderfloor_white";
@@ -45078,7 +45262,7 @@ adt
 alL
 aiY
 aqY
-aza
+ayL
 aJr
 aoo
 awR
@@ -47100,7 +47284,7 @@ aej
 ads
 auP
 auP
-ayL
+aza
 azH
 auP
 auP
@@ -47294,8 +47478,8 @@ bgx
 bgx
 bgx
 bgx
-bhV
-akV
+bgx
+aMG
 ads
 ads
 ads
@@ -47493,18 +47677,18 @@ aaR
 abG
 ahU
 bgx
-ajd
-arO
+adx
+abG
+adx
+bgx
+agv
 akb
-bgN
 akV
-akV
-akV
-akV
-akV
-bgQ
-akV
-akV
+afG
+agy
+aMe
+akS
+bha
 akV
 aji
 aqa
@@ -47699,17 +47883,17 @@ bgx
 bgx
 bgx
 bgx
-agy
-akS
-abD
-afK
-agv
-agw
-agw
+bgx
+bgx
+akV
 agx
-auY
-agd
-amd
+bhp
+bhs
+bhf
+bgW
+aoZ
+apX
+bgQ
 afE
 agF
 aQA
@@ -47900,18 +48084,18 @@ ahQ
 avf
 ahQ
 ahQ
-abE
-akV
-akV
-afG
+bgx
+ajd
+bgN
+aan
+alh
+agd
+amM
 amH
-aCQ
-bgU
-bhp
+bhj
 akV
-akV
-aoZ
-apX
+bfO
+bhB
 aqR
 aqS
 aqS
@@ -48103,13 +48287,13 @@ alU
 anf
 ahQ
 bgx
+abG
+arO
 akV
 akV
-agD
-alM
-bfO
-bgW
-alJ
+amd
+anu
+bgU
 akV
 akV
 amp
@@ -48305,15 +48489,15 @@ amo
 anz
 awL
 bgx
+abG
+bhb
 akV
 akV
-alP
-amL
-bfP
-bha
-aMw
 akV
-aLD
+auY
+akV
+akV
+akV
 aqd
 aqT
 aqS
@@ -48506,16 +48690,16 @@ atd
 amE
 anB
 awL
-bhV
-akV
-akV
-amM
-aIT
-aMe
-aMo
-amM
-aLD
-aLD
+bgx
+abG
+apY
+agw
+agw
+alJ
+amS
+alT
+agw
+agw
 alb
 alF
 aqS
@@ -48709,16 +48893,16 @@ amI
 anN
 awL
 bgx
-akV
-akV
-amM
-amS
-bfR
-amS
-amM
-aLD
+abG
+bhG
+agw
+afK
+agD
+aCQ
+bbo
 alT
-akH
+bfR
+abD
 anM
 aqS
 arL
@@ -48912,16 +49096,16 @@ anY
 ahQ
 bgx
 abG
-akV
-amM
-anu
-bbo
-bhj
-amM
-aLD
+agv
+agw
+aMw
 alx
+aIT
+bea
+aMo
+bhD
 akH
-aan
+bhe
 aqS
 arM
 asG
@@ -49114,15 +49298,15 @@ ahQ
 ahQ
 abE
 adz
-akV
-amM
-amH
-amH
-amH
-amM
-aLD
-adx
-akH
+adz
+agw
+afK
+alM
+aMo
+alT
+bhJ
+bhF
+abD
 aqj
 aqS
 aqS
@@ -49316,15 +49500,15 @@ axk
 adz
 bgx
 ajX
-akV
-amM
-amM
-amM
-amM
-amM
-aLD
-aLD
-alh
+abG
+agw
+agw
+alP
+amL
+bfP
+agw
+agw
+bhc
 apR
 atR
 aqS
@@ -49518,14 +49702,14 @@ bih
 abE
 bgx
 bgx
-akV
-akV
-akV
-akV
-akV
-akV
-aMG
-aLD
+abG
+agw
+agw
+agw
+agw
+agw
+agw
+agw
 aak
 arH
 anW
