@@ -159,6 +159,7 @@
 	icon_state = "clown"
 	item_state = "clown"
 	tint = 1 //INF
+	body_parts_covered = EYES //INF
 
 /obj/item/clothing/mask/gas/sexyclown
 	name = "sexy-clown wig and mask"
@@ -166,6 +167,7 @@
 	icon_state = "sexyclown"
 	item_state = "sexyclown"
 	tint = 1 //INF
+	body_parts_covered = EYES //INF
 
 /obj/item/clothing/mask/gas/mime
 	name = "mime mask"
@@ -173,6 +175,7 @@
 	icon_state = "mime"
 	item_state = "mime"
 	tint = 1 //INF
+	body_parts_covered = EYES //INF
 
 /obj/item/clothing/mask/gas/monkeymask
 	name = "monkey mask"
@@ -187,6 +190,7 @@
 	icon_state = "sexymime"
 	item_state = "sexymime"
 	tint = 1 //INF
+	body_parts_covered = EYES //INF
 
 /obj/item/clothing/mask/gas/owl_mask
 	name = "owl mask"
