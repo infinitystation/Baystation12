@@ -143,6 +143,7 @@
 	desc = "Because you really needed another excuse to punch your crewmates."
 	icon_state = "boxing"
 	item_state = "boxing"
+	species_restricted = null //INF, hologram
 
 /obj/structure/window/holowindow/full
 	dir = 5
