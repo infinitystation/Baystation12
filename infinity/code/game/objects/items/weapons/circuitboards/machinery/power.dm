@@ -23,3 +23,15 @@
 	additional_spawn_components = list(
 		/obj/item/weapon/stock_parts/power/apc/buildable = 1
 	)
+
+/obj/item/weapon/stock_parts/circuitboard/bluespacedrive
+	name = T_BOARD("bluespacedrive")
+	build_path = /obj/machinery/bluespacedrive
+	board_type = "machine"
+	origin_tech = list(TECH_BLUESPACE = 8, TECH_DATA = 5)
+	req_components = list(
+							/obj/item/stack/cable_coil = 30,
+							/obj/item/weapon/stock_parts/manipulator = 1,
+							/obj/item/weapon/stock_parts/subspace/filter = 2,
+							/obj/item/weapon/stock_parts/subspace/crystal = 4
+						  )

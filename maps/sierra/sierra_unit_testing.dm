@@ -19,7 +19,6 @@
 		/area/turret_protected/ai_cyborg_station = NO_SCRUBBER|NO_VENT,
 		/area/maintenance/thirddeck/aft = 0,
 		/area/maintenance/waterstore = 0,
-		/area/maintenance/bluespace = NO_SCRUBBER,
 		/area/maintenance/abandoned_compartment = NO_APC,
 		/area/maintenance/abandoned_hydroponics = 0,
 		/area/maintenance/firstdeck/fore = NO_SCRUBBER|NO_VENT,
