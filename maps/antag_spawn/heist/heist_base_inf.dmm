@@ -92,6 +92,10 @@
 /obj/machinery/chemical_dispenser/bar_soft/full,
 /turf/simulated/floor/tiled/white,
 /area/map_template/syndicate_mothership/raider_base)
+"an" = (
+/obj/machinery/recharge_station,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
 "ao" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/machinery/light/small{
@@ -1289,10 +1293,6 @@
 /obj/structure/table/steel,
 /obj/item/weapon/beartrap,
 /obj/item/weapon/beartrap,
-/turf/simulated/floor/plating,
-/area/map_template/skipjack_station/start)
-"dD" = (
-/obj/machinery/vending/hydroseeds,
 /turf/simulated/floor/plating,
 /area/map_template/skipjack_station/start)
 "dE" = (
@@ -4189,7 +4189,7 @@ aa
 aa
 aa
 cU
-dD
+an
 dN
 dX
 dM
