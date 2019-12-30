@@ -134,6 +134,17 @@
 "aau" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/merchant_station)
+"aav" = (
+/obj/machinery/telecomms/allinone{
+	intercept = 1
+	},
+/obj/effect/floor_decal/corner/red{
+	dir = 5
+	},
+/turf/unsimulated/floor{
+	icon_state = "steel"
+	},
+/area/centcom/control)
 "aaA" = (
 /obj/machinery/vending/boozeomat{
 	density = 0;
@@ -32770,7 +32781,7 @@ abD
 abD
 abD
 agd
-agB
+aav
 agF
 agF
 aia

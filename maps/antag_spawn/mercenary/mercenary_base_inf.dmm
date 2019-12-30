@@ -2563,13 +2563,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/merc_shuttle)
 "fb" = (
-/obj/machinery/telecomms/allinone{
-	intercept = 1
-	},
-/obj/machinery/door/window/northright{
-	name = "Telecoms Mainframe";
-	req_access = newlist()
-	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/merc_shuttle)
 "fc" = (
