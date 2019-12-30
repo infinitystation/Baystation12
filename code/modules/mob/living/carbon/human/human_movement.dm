@@ -9,7 +9,8 @@
 		tally += H.slowdown
 //[INF]
 	for(var/obj/item/organ/external/O in organs)
-		tally += O.slowdown
+		if(BP_IS_ROBOTIC(O))
+			tally += O.slowdown
 //[/INF]
 	tally += species.handle_movement_delay_special(src)
 
