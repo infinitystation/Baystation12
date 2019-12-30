@@ -331,3 +331,34 @@
 /obj/item/weapon/crowbar/multishowel/Initialize()
 	. = ..()
 	icon_state = "set-crowbar"
+
+/obj/item/clothing/accessory/storage/drop_pouches/forba
+	w_class = ITEM_SIZE_NORMAL
+	max_w_class = ITEM_SIZE_NORMAL
+	name = "Kahal'ket belt kit"
+	desc = "Small, strong, rough to the touch belt kit for storage of various things made from natural materials."
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = CUSTOM_ITEM_MOB
+	accessory_icons = CUSTOM_ITEM_MOB
+	accessory_icons = list(slot_tie_str = 'infinity/icons/customs/infinity_custom_items_mob.dmi', slot_w_uniform_str = 'infinity/icons/customs/infinity_custom_items_mob.dmi')
+	icon_state = "podsumka"
+	item_state = "podsumka"
+	slots = 2
+
+/obj/item/clothing/accessory/storage/drop_pouches/forba/New()
+	. = ..()
+	hold.max_w_class = ITEM_SIZE_NORMAL
+
+/obj/item/clothing/mask/gas/alt/forba
+	name = "gas mask"
+	desc = "A face-covering mask that can be connected to the air supply system. Filters harmful gases from the air, works with breathable gases. It has a special shape for wearing by tajaran and a special lining."
+	icon_state = "forba_mask"
+	item_state = "forba_mask"
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(
+		slot_wear_mask_str = CUSTOM_ITEM_MOB
+		)
+	sprite_sheets = list()
+	body_parts_covered = FACE|EYES
+	flash_protection = FLASH_PROTECTION_MODERATE
+	tint = 2
