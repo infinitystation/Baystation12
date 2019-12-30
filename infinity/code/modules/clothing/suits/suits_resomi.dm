@@ -37,7 +37,7 @@
 	desc = "It drapes over a Resomes's shoulders and closes at the neck with pockets convienently placed inside."
 	icon = 'infinity/icons/obj/clothing/species/resomi/obj_suit_resomi.dmi'
 	icon_state = "tesh_cloak_bo"
-	slots = 4
+	slots = 2
 	species_restricted = list(SPECIES_RESOMI)
 	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO
 
