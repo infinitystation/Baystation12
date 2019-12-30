@@ -40,14 +40,15 @@
 
 	#include "items/cards_ids.dm"
 	#include "items/documents.dm"
-	#include "items/explo_shotgun.dm"
 	#include "items/encryption_keys.dm"
+	#include "items/explo_shotgun.dm"
 	#include "items/guns.dm"
 	#include "items/headsets.dm"
 	#include "items/items.dm"
 	#include "items/lighting.dm"
-	#include "items/papers.dm"
 	#include "items/manuals.dm"
+	#include "items/mech.dm"
+	#include "items/papers.dm"
 	#include "items/rigs.dm"
 	#include "items/stamps.dm"
 

@@ -699,8 +699,8 @@
 	sound_env = LARGE_ENCLOSED
 	req_access = list(access_hangar)
 
-/area/quartermaster/unused
-	name = "Third Deck - Abandoned - Ready Room"
+/area/quartermaster/hangar_atmos
+	name = "Third Deck - Hangar - Atmospherics Storage"
 	icon_state = "auxstorage"
 
 /* RND AREAS
