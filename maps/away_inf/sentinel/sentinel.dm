@@ -17,7 +17,6 @@
 	fore_dir = WEST
 	vessel_mass = 100
 	default_delay = 30 SECONDS
-	speed_mod = 4 SECONDS
 	start_x = 2
 	start_y = 2
 

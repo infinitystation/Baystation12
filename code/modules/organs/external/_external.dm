@@ -65,6 +65,7 @@
 	var/arterial_bleed_severity = 1    // Multiplier for bleeding in a limb.
 	var/tendon_name = "tendon"         // Flavour text for Achilles tendon, etc.
 	var/cavity_name = "cavity"
+	var/speed_mod = 0//inf
 
 	// Surgery vars.
 	var/cavity_max_w_class = ITEM_SIZE_TINY //this is increased if bigger organs spawn by default inside
@@ -1116,17 +1117,13 @@ obj/item/organ/external/proc/remove_clamps()
 		 (species && !(species.get_bodytype(owner) in R.allowed_bodytypes)) || \
 		 (R.applies_to_part.len && !(organ_tag in R.applies_to_part)))
 			R = basic_robolimb
-//[INF]
-			brute_mod = R.brute_mod
-			burn_mod = R.burn_mod
-			slowdown = R.speed_mod
-//[/INF]
+			species.brute_mod = R.brute_mod
+			species.burn_mod = R.burn_mod
+			speed_mod = R.speed_mod//I N F
 		else
-//[INF]
-			slowdown = R.speed_mod
-			brute_mod = R.brute_mod
-			burn_mod = R.burn_mod
-//[/INF]
+			speed_mod = R.speed_mod//I N F
+			species.brute_mod = R.brute_mod
+			species.burn_mod = R.burn_mod
 			model = company
 			force_icon = R.icon
 			name = "robotic [initial(name)]"

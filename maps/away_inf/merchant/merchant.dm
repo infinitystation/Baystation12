@@ -6,7 +6,6 @@
 	color = "#ffc966"
 	vessel_mass = 50
 	default_delay = 35 SECONDS
-	speed_mod = 8 SECONDS
 /*
 	initial_restricted_waypoints = list(
 		"Aquila" = list("nav_merchant_aquila")
