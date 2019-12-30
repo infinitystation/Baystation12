@@ -22,7 +22,7 @@
 	icon_state = "satchel-winta"
 	item_state = "satchel-winta"
 	startswith = list(/obj/item/weapon/storage/box/wintershmotree,
-	/obj/item/multishowel)
+	/obj/item/multishowel, /obj/item/clothing/accessory/storage/drop_pouches/forba, /obj/item/clothing/mask/gas/alt/forba)
 
 /obj/item/clothing/suit/storage/hooded/wintercoat/wintercam
 	name = "Winter cape-tent"
