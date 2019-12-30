@@ -244,6 +244,7 @@
 	dock_target = "merchant_ship_dock"
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling
 	warmup_time = 7
+	knockdown = 0
 
 /obj/effect/shuttle_landmark/merchant/start
 	name = "Merchant Base"
