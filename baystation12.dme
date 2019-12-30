@@ -3584,6 +3584,7 @@
 #include "infinity\customs\ic_custom_belt.dm"
 #include "infinity\customs\ilya2180.dm"
 #include "infinity\customs\jacking.dm"
+#include "infinity\customs\kilka.dm"
 #include "infinity\customs\kirill.dm"
 #include "infinity\customs\kosteg_kit.dm"
 #include "infinity\customs\lizard_w_bow.dm"
