@@ -980,7 +980,7 @@ var/list/floor_decals = list()
 
 /obj/effect/floor_decal/industrial/outline/blue
 	name = "blue outline"
-	color = "#00b8b2"
+	color = COLOR_BLUE_GRAY //INF, WAS"#00b8b2"
 
 /obj/effect/floor_decal/industrial/outline/yellow
 	name = "yellow outline"
