@@ -13,7 +13,7 @@
 	icon_state = "bsd"
 	anchored = 1
 	density = 1
-	idle_power_usage = 15000
+	idle_power_usage = 2500
 	construct_state = /decl/machine_construction/tcomms/panel_closed/cannot_print
 	var/setup_state = 0
 	var/busy = 0
@@ -173,7 +173,7 @@
 	radiation_power_minimal = 30
 	hallucination_power_minimal = 40
 	produces_heat = 1
-	idle_power_usage = 45000
+	idle_power_usage = 50000
 	on_update_icon()
 
 /obj/machinery/bluespacedrive/proc/discharge()
