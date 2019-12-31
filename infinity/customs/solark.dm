@@ -50,6 +50,7 @@
 	name = "hood"
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "solar_cloak_hood"
+	species_restricted = list(SPECIES_RESOMI)
 	desc = "It's hood that covers the head."
 	flags_inv = BLOCKHAIR | HIDEEARS
 	body_parts_covered = HEAD
