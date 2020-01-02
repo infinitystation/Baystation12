@@ -1,5 +1,5 @@
 /obj/item/clothing/under/kilkauni
-	name = "combat skrellian tactical uniform."
+	name = "combat skrellian tactical uniform"
 	desc = "A set of green fatigues worn over a black jumpsuit. Surprisingly comfy."
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "kilkauni"
