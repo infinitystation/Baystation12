@@ -3570,6 +3570,7 @@
 #include "infinity\customs\cust_zippo.dm"
 #include "infinity\customs\dakimakura.dm"
 #include "infinity\customs\darkred_headphones.dm"
+#include "infinity\customs\diesiege.dm"
 #include "infinity\customs\eguitar.dm"
 #include "infinity\customs\elsas_stuff.dm"
 #include "infinity\customs\explorer.dm"
