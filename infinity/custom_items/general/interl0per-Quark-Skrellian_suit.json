@@ -4,5 +4,5 @@
   "item_name" :       "skrellian tactical jumpsuit",
   "item_desc" :       "Navy tactical suit, with a pretty good looking backside. Has an inner layer with heating. The label on the scruff of the neck has the inscription: \"Quark Rishel, Qrri-Querria battlecruiser, second boarding team\".",
   "item_icon_state" : "sneaking_suit",
-  "item_path" :       "/obj/item/clothing/under/thermal/heat"
+  "item_path" :       "/obj/item/clothing/under"
   }
