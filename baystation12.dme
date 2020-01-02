@@ -3392,6 +3392,7 @@
 #include "infinity\code\modules\clothing\suits\suits_resomi.dm"
 #include "infinity\code\modules\clothing\suits\suits_xeno.dm"
 #include "infinity\code\modules\clothing\under\miscellaneous.dm"
+#include "infinity\code\modules\clothing\under\thermal.dm"
 #include "infinity\code\modules\clothing\under\under.dm"
 #include "infinity\code\modules\clothing\under\under_bluebrig.dm"
 #include "infinity\code\modules\clothing\under\under_resomi.dm"
