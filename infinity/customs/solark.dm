@@ -36,7 +36,7 @@
 	update_icon()
 
 
-/obj/item/clothing/suit/storage/hooded/solar_cloak/update_icon()
+/obj/item/clothing/suit/storage/hooded/solar_cloak/on_update_icon()
 	..()
 	var/mob/living/carbon/human/H = src.loc
 	if(H)

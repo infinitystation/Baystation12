@@ -21,6 +21,9 @@
 	var/hallucination_power_minimal = 2
 	var/produces_heat = 0
 
+	maximum_component_parts = list(/obj/item/weapon/stock_parts = 15)
+
+
 /obj/machinery/bluespacedrive/Initialize()
 	. = ..()
 	on_update_icon()
