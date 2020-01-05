@@ -12,7 +12,6 @@
 /obj/item/music_tape/custom
 	name = "dusty tape"
 	desc = "A dusty tape, which can hold anything. Only what you need is blow the dust away and you will be able to play it again."
-	can_be_rewrited = TRUE
 
 // Music tape code :3
 /obj/item/music_tape
@@ -29,7 +28,7 @@
 
 	var/random_color = TRUE
 	var/ruined = 0
-	var/can_be_rewrited = FALSE
+	var/can_be_rewrited = TRUE
 
 	var/list/datum/track/track
 	var/uploader_ckey
