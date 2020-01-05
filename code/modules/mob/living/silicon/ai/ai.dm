@@ -213,6 +213,11 @@ var/list/ai_verbs_default = list(
 	setup_icon()
 	eyeobj.possess(src)
 
+	var/obj/inactive_core
+	istype(loc, /turf) ? (inactive_core = locate(/obj/structure/AIcore) in loc) : null
+	if(inactive_core)
+		del(inactive_core)
+
 	if(alert(src, "Announce your presence?", "AI Presense","Yes", "No") == "Yes")
 		switch(input(src, "Announce your presence?", "Presence.") in list("Torch Voice Announcement", "TG Voice Announcement"))
 			if("Torch Voice Announcement")	announcement.Announce("Новый ИИ загружен в ядро.", new_sound = 'sound/AI/newAI.ogg')
