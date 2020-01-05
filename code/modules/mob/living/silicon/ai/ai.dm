@@ -214,9 +214,8 @@ var/list/ai_verbs_default = list(
 	eyeobj.possess(src)
 
 	var/obj/inactive_core
-	istype(loc, /turf) ? (inactive_core = locate(/obj/structure/AIcore) in loc) : null
-	if(inactive_core)
-		del(inactive_core)
+	isturf(loc) ? (inactive_core = locate(/obj/structure/AIcore) in loc) : null
+	inactive_core ? qdel(inactive_core) : null
 
 	if(alert(src, "Announce your presence?", "AI Presense","Yes", "No") == "Yes")
 		switch(input(src, "Announce your presence?", "Presence.") in list("Torch Voice Announcement", "TG Voice Announcement"))
