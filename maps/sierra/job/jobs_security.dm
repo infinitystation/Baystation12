@@ -66,7 +66,7 @@
 	skill_points = 22
 
 	access = list(access_seceva, access_security, access_brig, access_forensics_lockers,
-			            access_maint_tunnels, access_emergency_storage,
+			            access_maint_tunnels, access_emergency_storage, access_eva,
 			            access_sec_doors, access_morgue, access_hangar)
 
 	minimal_access = list()
