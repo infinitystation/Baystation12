@@ -274,6 +274,7 @@
 
 /obj/machinery/door/blast/regular/open
 	begins_closed = FALSE
+	icon_state = "pdoor0" //INF
 
 // SUBTYPE: Shutters
 // Nicer looking, and also weaker, shutters. Found in kitchen and similar areas.
