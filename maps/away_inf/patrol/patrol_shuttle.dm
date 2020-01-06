@@ -32,3 +32,6 @@
 /obj/effect/shuttle_landmark/scgpatrol
 	name = "Uncharted Space"
 	landmark_tag = "nav_scgpatrol_start"
+
+/turf/simulated/floor/shuttle_ceiling/hull
+	color = COLOR_HULL
