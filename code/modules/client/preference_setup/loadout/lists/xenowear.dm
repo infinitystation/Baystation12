@@ -181,22 +181,22 @@
 
 /datum/gear/shoes/caligae
 	display_name = "(Tajara) caligae"
-	path = /obj/item/clothing/shoes/sandal/tajaran/caligae
+	path = /obj/item/clothing/shoes/sandal/xeno/caligae
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
 
 /datum/gear/shoes/caligae/New()
 	..()
 	var/caligae = list()
-	caligae["no sock"] = /obj/item/clothing/shoes/sandal/tajaran/caligae
-	caligae["black sock"] = /obj/item/clothing/shoes/sandal/tajaran/caligae/black
-	caligae["grey sock"] = /obj/item/clothing/shoes/sandal/tajaran/caligae/grey
-	caligae["white sock"] = /obj/item/clothing/shoes/sandal/tajaran/caligae/white
+	caligae["no sock"] = /obj/item/clothing/shoes/sandal/xeno/caligae
+	caligae["black sock"] = /obj/item/clothing/shoes/sandal/xeno/caligae/black
+	caligae["grey sock"] = /obj/item/clothing/shoes/sandal/xeno/caligae/grey
+	caligae["white sock"] = /obj/item/clothing/shoes/sandal/xeno/caligae/white
 	gear_tweaks += new/datum/gear_tweak/path(caligae)
 
 /datum/gear/head/zhan_scarf
 	display_name = "(Tajara) Zhan headscarf"
-	path = /obj/item/clothing/head/tajaran/scarf
+	path = /obj/item/clothing/head/xeno/scarf
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
 

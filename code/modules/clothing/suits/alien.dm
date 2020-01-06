@@ -14,19 +14,19 @@
 
 //Taj clothing.
 
-/obj/item/clothing/suit/tajaran/furs
+/obj/item/clothing/suit/xeno/furs
 	name = "heavy furs"
 	desc = "A traditional Zhan-Khazan garment."
 	icon_state = "zhan_furs"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS
 
-/obj/item/clothing/head/tajaran/scarf
+/obj/item/clothing/head/xeno/scarf
 	name = "headscarf"
 	desc = "A scarf of coarse fabric. Seems to have ear-holes."
 	icon_state = "zhan_scarf"
 	body_parts_covered = HEAD|FACE
 
-/obj/item/clothing/shoes/sandal/tajaran/caligae
+/obj/item/clothing/shoes/sandal/xeno/caligae
 	name = "caligae"
 	desc = "The standard Tajaran footwear loosly resembles the Roman Caligae. Made of leather and rubber, their unique design allows for improved traction and protection. They don't look like they would fit on anyone but a Tajara."
 	icon_state = "caligae"
@@ -34,17 +34,17 @@
 	body_parts_covered = FEET|LEGS
 	species_restricted = list(SPECIES_TAJARA)
 
-/obj/item/clothing/shoes/sandal/tajaran/caligae/white
+/obj/item/clothing/shoes/sandal/xeno/caligae/white
 	desc = "The standard Tajaran footwear loosly resembles the Roman Caligae. Made of leather and rubber, their unique design allows for improved traction and protection. They don't look like they would fit on anyone but a Tajara. /This one has a white covering."
 	icon_state = "whitecaligae"
 	item_state = "whitecaligae"
 
-/obj/item/clothing/shoes/sandal/tajaran/caligae/grey
+/obj/item/clothing/shoes/sandal/xeno/caligae/grey
 	desc = "The standard Tajaran footwear loosly resembles the Roman Caligae. Made of leather and rubber, their unique design allows for improved traction and protection. They don't look like they would fit on anyone but a Tajara. /This one has a grey covering."
 	icon_state = "greycaligae"
 	item_state = "greycaligae"
 
-/obj/item/clothing/shoes/sandal/tajaran/caligae/black
+/obj/item/clothing/shoes/sandal/xeno/caligae/black
 	desc = "The standard Tajaran footwear loosly resembles the Roman Caligae. Made of leather and rubber, their unique design allows for improved traction and protection. They don't look like they would fit on anyone but a Tajara. /This one has a black covering."
 	icon_state = "blackcaligae"
 	item_state = "blackcaligae"
@@ -82,8 +82,8 @@
 	desc = "A hodgepodge of various pieces of metal scrapped together into a rudimentary vox-shaped piece of armor."
 	allowed = list(/obj/item/weapon/gun, /obj/item/weapon/tank)
 	armor = list(
-		melee = ARMOR_MELEE_VERY_HIGH, 
-		bullet = ARMOR_BALLISTIC_PISTOL, 
+		melee = ARMOR_MELEE_VERY_HIGH,
+		bullet = ARMOR_BALLISTIC_PISTOL,
 		laser = ARMOR_LASER_MINOR,
 		bomb = ARMOR_BOMB_PADDED) //Higher melee armor versus lower everything else.
 	icon_state = "vox-scrap"

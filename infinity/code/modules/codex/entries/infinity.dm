@@ -1,5 +1,5 @@
 /datum/codex_entry/caligae
-	associated_paths = list(/obj/item/clothing/shoes/sandal/tajaran/caligae)
+	associated_paths = list(/obj/item/clothing/shoes/sandal/xeno/caligae)
 	lore_text = "These traditional Tajaran footwear, also called Haskri, have remained reletivly unchanged in principal, with improved materials and construction being the only notable improvment. Originally used for harsher environment, they became widespread for their comfort and hygiene. Some of them come with covering for additional protection for more sterile environments. Made for the Tajarans digitigrade anatomy, they won't fit on any other species."
 
 /datum/codex_entry/lockets
