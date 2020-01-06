@@ -8,7 +8,7 @@
 	mask = /obj/item/clothing/mask/gas/half
 	l_ear = /obj/item/device/radio/headset/specops
 	suit = /obj/item/clothing/suit/armor/pcarrier/troops/heavy
-	suit_store = /obj/item/weapon/gun/projectile/automatic/wt550/lethal
+	suit_store = /obj/item/weapon/gun/projectile/automatic/sec_smg/lethal
 	gloves = /obj/item/clothing/gloves/thick/combat/marine
 	belt = /obj/item/weapon/storage/belt/holster/security/tactical/troops
 	uniform = /obj/item/clothing/under/solgov/utility/army/urban

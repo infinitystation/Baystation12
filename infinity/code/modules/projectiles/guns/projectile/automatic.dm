@@ -1,5 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/wt550/lethal
-	ammo_type = /obj/item/ammo_casing/c9mm
+/obj/item/weapon/gun/projectile/automatic/sec_smg/lethal
 	magazine_type = /obj/item/ammo_magazine/smg_top
 
 /obj/item/weapon/gun/projectile/automatic/nt41

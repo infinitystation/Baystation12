@@ -732,9 +732,9 @@
 	},
 /area/map_template/rescue_base/base)
 "bA" = (
-/obj/item/weapon/gun/projectile/automatic/wt550,
-/obj/item/weapon/gun/projectile/automatic/wt550,
-/obj/item/weapon/gun/projectile/automatic/wt550,
+/obj/item/weapon/gun/projectile/automatic/sec_smg/lethal,
+/obj/item/weapon/gun/projectile/automatic/sec_smg/lethal,
+/obj/item/weapon/gun/projectile/automatic/sec_smg/lethal,
 /obj/structure/table/rack,
 /obj/structure/window/reinforced/crescent{
 	dir = 8
