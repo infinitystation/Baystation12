@@ -231,6 +231,7 @@
 	req_access = newlist()
 	},
 /obj/machinery/shield_diffuser,
+/obj/effect/shuttle_landmark/sierra/deck3/skrell,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/hallway/primary/thirddeck/center)
 "aD" = (
