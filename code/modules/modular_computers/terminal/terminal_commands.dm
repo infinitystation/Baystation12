@@ -312,8 +312,9 @@ Subtypes
 					"Utilite for manipulations with active programs",
 					"As session return list of active PRG programs.",
 					"Option -kill kill all active PRG programs",
-					"Option -restore open interface of devise.",
-					"-restore manual: if you use -restore to open programs in remote console, duplicate input of command with -restore option after open of program interface.")
+					//"Option -restore open interface of devise.",
+					//"-restore manual: if you use -restore to open programs in remote console, duplicate input of command with -restore option after open of program interface."
+					)
 	pattern = "^session"
 	skill_needed = SKILL_ADEPT
 
@@ -325,10 +326,10 @@ Subtypes
 	if(!CT.get_component(PART_CPU).check_functionality())
 		return "session: Access attempt to RAM failed. Check integrity of your CPU."
 	var/ermsg = " programs is absent"
-	if(copytext(text, 8) == " -restore")
+	/*if(copytext(text, 8) == " -restore")
 		CT.is_remote_ui = 1
 		CT.ui_interact(user)
-		return "session: interface restored."
+		return "session: interface restored."*/
 
 	if(copytext(text,8) == " -kill")
 		if(CT.running_programs)
