@@ -35,11 +35,11 @@
 	..()
 	var/obj/machinery/M = holder
 	M.update_use_power(POWER_USE_IDLE)
-
+/*UNF
 /datum/extension/interactive/ntos/console/host_status()
 	var/obj/machinery/M = holder
 	return !(M.stat & NOPOWER)
-
+INF*/
 /datum/extension/interactive/ntos/console/extension_act(href, href_list, user)
 	. = ..()
 	var/obj/machinery/M = holder

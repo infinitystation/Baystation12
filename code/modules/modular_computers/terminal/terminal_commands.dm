@@ -188,7 +188,7 @@ Subtypes
 		. += "failed. Target device not responding."
 		return
 	. += "ping successful."
-/*INF COMMENT, telnet replacing it, cuz IT workers love to troll users though it //It can 'cause some balance.
+/*INF COMMENT, telnet replacing it, cuz IT-workers love to troll users though it //It can 'cause some balance.
 /datum/terminal_command/ssh
 	name = "ssh"
 	man_entry = list("Format: ssh nid", "Opens a remote terminal at the location of nid, if a valid device nid is specified.")
@@ -278,16 +278,12 @@ Subtypes
 		return "listdir: Improper syntax. Use listdir."
 	if(!CT.get_component(PART_HDD).check_functionality())
 		return "listdir: Access attempt to local storage failed. Check integrity of your hard drive"
-	//var/list/massive_of_program_names = list()
 	for(var/datum/computer_file/F in CT.get_component(PART_HDD).stored_files)
 		if(F.is_illegal == 0)
 			var/prog_size = num2text(F.size)
 			. += F.filename + "." + F.filetype + "	|	" + prog_size + " GQ<br>"
-			//massive_of_program_names.Add(prg_data)
 		else
-			//var/prg_data = "\[ENCRYPTED\]" + "." + "\[ENCRYPTED\]" + "	|	" + "\[ENCRYPTED\]" + " GQ"
-			. += "\[ENCRYPTED\]" + "." + "\[ENCRYPTED\]" + "	|	" + "\[ENCRYPTED\]" + " GQ<br>"
-			//massive_of_program_names.Add(prg_data)
+			. += "\[ENCRYPTED]" + "." + "\[ENCRYPTED]" + "	|	" + "\[ENCRYPTED]" + " GQ<br>"
 	return
 
 /datum/terminal_command/shutdown
@@ -356,7 +352,7 @@ Subtypes
 	for(PRG in CT.running_programs)
 		. = list()
 		if(PRG.is_illegal)
-			. += "\[ENCRYPTED\]"
+			. += "\[ENCRYPTED]"
 		else
 			. += PRG.filename
 	if(CT.active_program)
@@ -368,9 +364,9 @@ Subtypes
 
 /datum/terminal_command/telnet
 	name = "telnet"
-	man_entry = list("Format: telnet \[NID\] \[LOGIN\] \[PASSWORD\].",
+	man_entry = list("Format: telnet \[NID] \[LOGIN] \[PASSWORD].",
 					"Access remote terminal with login and password",
-					"If NID \< 100 write NID like 001.",
+					"If NID < 100 write NID like 001.",
 					"Use `telnet` to README and config security of your devise.")
 	pattern = "^telnet"
 
@@ -391,8 +387,8 @@ Subtypes
 					file_README = new()
 					file_README.filename = "TNet_CONFIG_README"
 					CT.get_component(PART_HDD).store_file(file_README) // May fail, which is fine with us.
-					file_README.stored_data += "\[large\]\[b\]DO NOT DELETE FILE TNet_CONFIG IF YOU DO NOT WANT TO PUT YOUR DEVICE AT RISK \[/b\]\[/large\]\[br\]" //LOGIN : PASSWORD
-					file_README.stored_data += "Format login and password in TNet_CONFIG: \[LOGIN\] : \[PASSWORD\].\[br\]"
+					file_README.stored_data += "\[large]\[b]DO NOT DELETE FILE TNet_CONFIG IF YOU DO NOT WANT TO PUT YOUR DEVICE AT RISK \[/b]\[/large]\[br]" //LOGIN : PASSWORD
+					file_README.stored_data += "Format login and password in TNet_CONFIG: \[LOGIN] : \[PASSWORD].\[br]"
 					file_README.stored_data += "Login must contain only 4 characters, password may be anything."
 				return "Config file created. Check config README to study how to change the login and password."
 			else
@@ -426,7 +422,7 @@ Subtypes
 				LAZYADD(comp.terminals, new_term)
 				LAZYADD(CT.terminals, new_term)
 				ntnet_global.add_log("[CT.get_component(PART_NETWORK).get_network_tag()] open telnet tunnel to [comp.get_component(PART_NETWORK).get_network_tag()]")
-				return "<font color='#00ff00'>telnet: Connection established with login: [login], and password: [password].</font>"
+				return "telnet: <font color='#00ff00'>Connection established with login: [login], and password: [password].</font>"
 			else
 				return "<font color='#ff0000'>telnet: INCORRECT PASSWORD.</font>"
 		else
@@ -439,7 +435,7 @@ Subtypes
 
 /datum/terminal_command/remove
 	name = "remove"
-	man_entry = list("Format: remove \[FILENAME\].", "Delete file from local storage.")
+	man_entry = list("Format: remove \[FILENAME].", "Delete file from local storage.")
 	pattern = "^remove"
 	skill_needed = SKILL_ADEPT
 
@@ -458,9 +454,9 @@ Subtypes
 
 /datum/terminal_command/echo
 	name = "echo"
-	man_entry = list("Format: echo \[FILENAME\].",
+	man_entry = list("Format: echo \[FILENAME].",
 					"Read stored data of file and return it in terminal.",
-					"Use 'echo -a \[Your data\]' to write in file. Before it you must set editing file, use 'echo -s \[filename\]'"
+					"Use 'echo -a \[Your data]' to write in file. Before it you must set editing file, use 'echo -s \[filename]'"
 					)
 	pattern = "^echo"
 	skill_needed = SKILL_ADEPT
@@ -506,22 +502,21 @@ Subtypes
 	if(!CT.get_component(PART_NETWORK).check_functionality()) return "<font color='#ff0000'>probenet: check network card interity.</font>"
 	if(!CT.get_ntnet_status()) return "probenet: network card can't connect to network."
 
-	var/end_msg = ""
+	var/list/NIDS = list()
 	var/total = 0
-	for(var/datum/extension/interactive/ntos/comp in SSobj.processing)
+	for(var/datum/extension/interactive/ntos/comp in GLOB.CreatedOSes)
 		if(comp.get_ntnet_status() && comp.host_status())
-			end_msg += " " + num2text(comp.get_component(PART_NETWORK).identification_id) + " |"
+			NIDS += "[comp.get_component(PART_NETWORK).identification_id]"
 			total += 1
-	. += "<font color='#00ff00'>probenet: online NIDs:</font> |[end_msg]<br>"
-	. += "<font color='00ff00'>Total online:</font> [total]."
+	. += "<font color='#00ff00'>probenet: online NIDs:</font> | [NIDS.Join(" | ")] |<br><font color='00ff00'>Total online:</font> [total]."
 
 //BATCH Compilator
 /datum/terminal_command/alias
 	name = "alias"
-	man_entry = list("Format: alias -ex \[filename\]",
+	man_entry = list("Format: alias -ex \[filename]",
 					"Read and compile batch code from local files.",
-					"Use \'alias -cr -bat \[filename\]\' to create bat file. To write code from terminal use \'man echo\'.",
-					"Use \'alias -mn -bat\' to get help about batch."
+					"Use 'alias -cr -bat \[filename]' to create bat file. To write code from terminal use 'man echo'.",
+					"Use 'alias -mn -bat' to get help about batch."
 					)
 	pattern = "^alias"
 
@@ -536,7 +531,7 @@ Subtypes
 				var/datum/computer_file/data/coding/batch/B = new()
 				B.filename = ent_filename
 				CT.get_component(PART_HDD).store_file(B)
-				return "<font color='00ff00'>alias: file \'[B.filename]\' was created.</font>"
+				return "<font color='00ff00'>alias: file '[B.filename]' was created.</font>"
 			else
 				return "<font color='#ffa000'>alias: error, expected file name.</font>"
 		return "<font color='#ffa000'>alias: language marking option not found.</font>"
@@ -555,9 +550,9 @@ Subtypes
 			var/datum/computer_file/data/coding/batch/F = CT.get_component(PART_HDD).find_file_by_name(inp_file_name)
 			if(F.filetype != "BAT") return "<font color='#ffa000'>alias: incorrect file. Expected batch file.</font>"
 			var/code = F.stored_data
-			if(!";" in code) return "<font color='ff0000'>alias: compile error, lack this \';\'.</font>"
-			code = replacetext(code, " \[br\]","")
-			code = replacetext(code, "\[br\]","")
+			if(!";" in code) return "<font color='ff0000'>alias: compile error, lack this ';'.</font>"
+			code = replacetext(code, " \[br]","")
+			code = replacetext(code, "\[br]","")
 
 			var/list/code_list = splittext(code, ";")
 
@@ -575,7 +570,7 @@ Subtypes
 	name = "connect"
 	man_entry = list("Format: connect \[door id].",
 					"Standard format show you data about door, it needn't access of door.",
-					"Open format: connect \[door id] -open. To close door, replace \'-open\' by \'-close\'. Need airlock accessible",
+					"Open format: connect \[door id] -open. To close door, replace '-open' by '-close'. Need airlock accessible",
 					"Locking (bolting) format: connect \[door id] -lock. To unlock use -unlock. Need airlock access.",
 					"In red and orange code you can override airlock access by using override key. Like this: 'connect y421 -open -override Yota11'"
 					)
@@ -661,7 +656,7 @@ Subtypes
 						if("-unlock")
 							if(!DOOR.unlock())
 								. += "connect: unable to close airlock, maybe it bolted or already unlocked or lack for energy."
-								return 
+								return
 							. += "connect: Airlock with id([txt[2]]) was unlocked."
 							return
 		else
