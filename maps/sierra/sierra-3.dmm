@@ -13299,7 +13299,7 @@
 /area/security/sierra/forensic)
 "avG" = (
 /obj/structure/table/standard,
-/obj/item/weapon/book/manual/nt_regs,
+/obj/item/weapon/material/ashtray/glass,
 /turf/simulated/floor/tiled,
 /area/security/sierra/forensic)
 "avH" = (
