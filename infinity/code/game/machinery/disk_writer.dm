@@ -1,5 +1,6 @@
 /obj/machinery/media/music_writer
-	name = "Memories writer"
+	name = "music disks rewriter"
+	desc = "A machine which rewrites musical disks."
 	icon = 'infinity/icons/obj/machinery/disk_writer.dmi'
 	icon_state = "writer_off"
 	density = 0
@@ -8,18 +9,12 @@
 	idle_power_usage = 10
 	active_power_usage = 100
 
-	var/mob/retard //current user
-	var/coin = 0
-	var/cooldown = 0 // Every 5 minute after successful re-write.
+	var/mob/customer //current user
+	var/cooldown = 0 // Every 3 minute after successful re-write.
 
 	var/writing = FALSE
 
 	var/obj/item/music_tape/disk
-
-/obj/machinery/media/music_writer/Initialize(mapload)
-	pixel_x = (dir & 3)? 0 : (dir == 4 ? -28 : 28)
-	pixel_y = (dir & 3)? (dir ==1 ? -25 : 25) : 0
-	. = ..(mapload)
 
 /obj/machinery/media/music_writer/Process()
 	if(writing)
@@ -28,29 +23,30 @@
 	if(cooldown)
 		cooldown -= 1 SECOND
 
+/obj/machinery/media/music_writer/on_update_icon()
+	if(writing)
+		icon_state = "writer_on"
+	else
+		icon_state = "writer_off"
+
 /obj/machinery/media/music_writer/proc/check_victim()
-	if(locate(retard, src.loc))
+	if(locate(customer, src.loc))
 		return 1
 	return 0
 
 /obj/machinery/media/music_writer/proc/set_off()
-	if(retard)
-		retard = null
+	if(customer)
+		customer = null
 	writing = FALSE
 	update_icon()
 
 /obj/machinery/media/music_writer/proc/set_on(var/mob/M)
 	if(M)
-		retard = M
+		customer = M
 		writing = TRUE
 		update_icon()
 
 /obj/machinery/media/music_writer/attackby(obj/O, mob/user)
-	if(istype(O, /obj/item/weapon/material/coin/silver))
-		user.drop_item()
-		qdel(O)
-		coin++
-
 	if(istype(O, /obj/item/music_tape))
 		var/obj/item/music_tape/D = O
 		if(disk)
@@ -61,7 +57,7 @@
 			to_chat(user, SPAN_NOTICE("\The [D] is ruined, you can't use it."))
 			return
 
-		visible_message(SPAN_NOTICE("[user] insert the disk in to \the [src]."))
+		visible_message(SPAN_NOTICE("[user] inserts the disk in \the [src]'s card slot."))
 		user.drop_item()
 		D.forceMove(src)
 		disk = D
@@ -71,15 +67,19 @@
 		interact(user)
 
 /obj/machinery/media/music_writer/interact(mob/user)
-	var/dat = "Please insert a coin[disk ? "" : " and disk"]<br>"
-	if(writing)
-		dat = "Memory scan completed. <br>Writing from scan of [retard.name] mind... Please Stand By."
+	var/dat = "Please insert a cassette.<br>"
 
-	if(coin && disk && !writing)
-		dat = "<A href='?src=\ref[src];write=1'>Write</A>"
+	if(writing)
+		dat = "Memory scan completed. <br>Writing the tune from scan of [customer.name] mind... Please, stand still."
+
+	if(disk && !writing)
+		dat = "<A href='?src=\ref[src];write=1'>Write ([disk.rewrites_left] times left)</A>"
 
 	if(disk && !writing)
 		dat += "<br><a href='?src=\ref[src];eject=1'>Eject Disk</a>"
+
+	if(cooldown)
+		dat = "[src] is recalibrating its systems for a new rewrite. Please, wait [cooldown/10] seconds."
 
 	playsound(src, 'infinity/sound/machines/console/console2.ogg', 40, 1)
 
@@ -92,22 +92,21 @@
 
 /obj/machinery/media/music_writer/OnTopic(var/user, var/list/href_list)
 	if(href_list["write"])
-		if(!writing && !retard && coin && disk && cooldown == 0)
-			if(disk.can_be_rewrited)
+		if(!writing && !customer && disk && cooldown == 0)
+			if(disk.rewrites_left > 0)
 				if(write_disk(usr))
-					message_admins("[retard.real_name]([retard.ckey]) uploaded new sound <A HREF='?_src_=holder;listensound=\ref[disk.track.track]'>(preview)</A> in <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>the cassette</a> named as \"[disk.track.title]\". <A HREF='?_src_=holder;wipedata=\ref[disk]'>Wipe</A> data.")
-					coin -= 1
-					cooldown += 5 MINUTES
-					sleep(40)
+					message_admins("[customer.real_name]([customer.ckey]) uploaded new sound <A HREF='?_src_=holder;listensound=\ref[disk.track.track]'>(preview)</A> in <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>the cassette</a> named as \"[disk.track.title]\". <A HREF='?_src_=holder;wipedata=\ref[disk]'>Wipe</A> data.")
+					cooldown += 3 MINUTES
+					sleep(4 SECONDS)
 
 					playsound(src, 'infinity/sound/machines/console/console_success.ogg', 40, 1)
-					sleep(20)
+					sleep(2 SECONDS)
 
 					eject(usr)
 					set_off()
 			else
 				playsound(src, 'infinity/sound/machines/console/console_error.ogg', 40, 1)
-				to_chat(usr, SPAN_DANGER("You can't rewrite this disk."))
+				to_chat(usr, SPAN_DANGER("You can't rewrite this disk - the tape was rewriten too many times."))
 
 	if(href_list["eject"])
 		if(usr.incapacitated())
@@ -134,6 +133,7 @@
 	var/new_sound_file = input(user, "Pick file:","File") as null|sound
 	if(!new_sound_file)
 		playsound(src, 'infinity/sound/machines/console/console_error.ogg', 40, 1)
+		set_off()
 		return
 
 	playsound(src, pick(GLOB.console_interact_sound), 40, 1)
@@ -141,6 +141,7 @@
 	var/new_name = input(user, "Name the cassette:") as null|text
 	if(!new_name)
 		playsound(src, 'infinity/sound/machines/console/console_error.ogg', 40, 1)
+		set_off()
 		return
 
 	playsound(src, pick(GLOB.console_interact_sound), 40, 1)
@@ -159,7 +160,8 @@
 
 		if(T)
 			disk.track = T
-			disk.uploader_ckey = retard.ckey
+			disk.uploader_ckey = customer.ckey
+			disk.rewrites_left--
 			return 1
 	return 0
 
@@ -167,9 +169,3 @@
 	playsound(src, 'infinity/sound/machines/console/console3.ogg', 40, 1)
 	user.put_in_hands(disk)
 	disk = null
-
-/obj/machinery/media/music_writer/on_update_icon()
-	if(writing)
-		icon_state = "writer_on"
-	else
-		icon_state = "writer_off"

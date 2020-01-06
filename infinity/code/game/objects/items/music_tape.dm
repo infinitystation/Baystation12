@@ -2,12 +2,12 @@
 /obj/item/music_tape/title2
 	name = "Title 2"
 	track = new /datum/track("Title 2", 'sound/music/title2.ogg')
-	can_be_rewrited = FALSE
+	rewrites_left = 0
 
 /obj/item/music_tape/clouds
 	name = "Clouds"
 	track = new /datum/track("Clouds of Fire", /music_track/clouds_of_fire)
-	can_be_rewrited = FALSE
+	rewrites_left = 0
 
 /obj/item/music_tape/custom
 	name = "dusty tape"
@@ -28,7 +28,7 @@
 
 	var/random_color = TRUE
 	var/ruined = 0
-	var/can_be_rewrited = TRUE
+	var/rewrites_left = 3
 
 	var/list/datum/track/track
 	var/uploader_ckey
@@ -45,7 +45,7 @@
 
 /obj/item/music_tape/examine(mob/user)
 	. = ..(user)
-	if(.) if(track) to_chat(user, SPAN_NOTICE("It's labeled as \"[track.title]\"."))
+	if(track) to_chat(user, SPAN_NOTICE("It's labeled as \"[track.title]\"."))
 
 /obj/item/music_tape/attack_self(mob/user)
 	if(!ruined)
