@@ -6465,7 +6465,6 @@
 	dir = 5
 	},
 /obj/item/clothing/under/suit_jacket,
-/obj/item/clothing/shoes/sandal/xeno/caligae/black,
 /obj/item/clothing/head/that{
 	pixel_x = 4;
 	pixel_y = 6
@@ -11846,21 +11845,11 @@
 /obj/effect/floor_decal/spline/plain{
 	dir = 1
 	},
-<<<<<<< HEAD
 /obj/item/clothing/under/suit_jacket,
 /obj/item/clothing/shoes/sandal/tajaran/caligae/black,
 /obj/item/clothing/head/that{
 	pixel_x = 4;
 	pixel_y = 6
-=======
-/turf/simulated/floor/holofloor/beach/sand,
-/area/holodeck/source_volleyball)
-"jhl" = (
-/obj/structure/table/holo_woodentable,
-/obj/effect/floor_decal/spline/fancy/wood{
-	icon_state = "spline_fancy";
-	dir = 1
->>>>>>> dev
 	},
 /obj/item/weapon/flame/candle{
 	holographic = 1
@@ -36373,7 +36362,7 @@ ntZ
 ntZ
 kjW
 vbR
-jhl
+aaa
 ajo
 aab
 aab
@@ -36575,7 +36564,7 @@ mlL
 mlL
 reF
 vbR
-jhl
+aaa
 ajo
 aab
 aab
