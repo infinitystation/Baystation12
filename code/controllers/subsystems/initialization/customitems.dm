@@ -47,9 +47,9 @@ SUBSYSTEM_DEF(customitems)
 // Places the item on the target mob.
 /datum/controller/subsystem/customitems/proc/place_custom_item(mob/living/carbon/human/M, var/datum/custom_item/citem)
 	. = M && citem && citem.spawn_item(get_turf(M))
-/*[INF]	if(. && !M.equip_to_appropriate_slot(.) && !M.equip_to_storage(.))
-		to_chat(M, SPAN_WARNING("Your custom item, \the [.], could not be placed on your character."))
-		QDEL_NULL(.)[/INF]*/
+	if(. && !M.equip_to_appropriate_slot(.) && !M.equip_to_storage(.))
+		to_chat(M, SPAN_WARNING("Your custom item, \the [.], could not be placed on your character. It was placed on the floor."))
+//INF		QDEL_NULL(.)
 
 //gets the relevant list for the key from the listlist if it exists, check to make sure they are meant to have it and then calls the giving function
 /datum/controller/subsystem/customitems/proc/equip_custom_items(mob/living/carbon/human/M)
