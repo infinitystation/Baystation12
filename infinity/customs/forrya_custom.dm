@@ -9,7 +9,7 @@
 	cold_protection = FEET
 	item_flags = ITEM_FLAG_THICKMATERIAL
 	min_cold_protection_temperature = T0C - 175
-	max_heat_protection_temperature = T0C +55
+	max_heat_protection_temperature = T0C + 55
 	species_restricted = list(SPECIES_TAJARA)
 
 /obj/item/weapon/storage/backpack/satchel/custom_forrya
@@ -18,7 +18,11 @@
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "satchel-winta"
 	item_state = "satchel-winta"
-	startswith = list(/obj/item/weapon/storage/box/custom_forrya_whitebox, /obj/item/weapon/shovel/custom_multishowel, /obj/item/clothing/accessory/storage/drop_pouches/custom_forrya, /obj/item/clothing/mask/gas/alt/custom_forrya)
+	startswith = list(
+		/obj/item/weapon/storage/box/custom_forrya_whitebox,
+		/obj/item/weapon/crowbar/custom_multishowel,
+		/obj/item/clothing/accessory/storage/drop_pouches/custom_forrya,
+		/obj/item/clothing/mask/gas/alt/custom_forrya)
 
 /obj/item/clothing/suit/storage/hooded/wintercoat/custom_forrya
 	name = "winter cape-tent"
@@ -40,9 +44,19 @@
 	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 	item_flags = ITEM_FLAG_THICKMATERIAL
 	min_cold_protection_temperature = T0C - 175
-	max_heat_protection_temperature = T0C +55
-	allowed = list (/obj/item/weapon/pen,/obj/item/weapon/paper, /obj/item/weapon/storage/fancy/cigarettes,/obj/item/weapon/storage/box/matches,/obj/item/weapon/reagent_containers/food/drinks/flask, /obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/weapon/shovel/custom_multishowel,/obj/item/weapon/pickaxe/silver/custom_multishowel,/obj/item/weapon/crowbar/custom_multishowel)
+	max_heat_protection_temperature = T0C + 55
+	allowed = list (
+		/obj/item/weapon/pen,/obj/item/weapon/paper,
+		/obj/item/weapon/storage/fancy/cigarettes,
+		/obj/item/weapon/storage/box/matches,
+		/obj/item/weapon/reagent_containers/food/drinks/flask,
+		/obj/item/device/flashlight,
+		/obj/item/weapon/tank,
+		/obj/item/weapon/shovel/custom_multishowel,
+		/obj/item/weapon/pickaxe/silver/custom_multishowel,
+		/obj/item/weapon/crowbar/custom_multishowel)
 	flags_inv = HIDEJUMPSUIT|HIDETAIL
+	valid_accessory_slots = list(ACCESSORY_SLOT_UTILITY,ACCESSORY_SLOT_HOLSTER,ACCESSORY_SLOT_ARMBAND,ACCESSORY_SLOT_RANK,ACCESSORY_SLOT_DEPT,ACCESSORY_SLOT_DECOR,ACCESSORY_SLOT_MEDAL,ACCESSORY_SLOT_INSIGNIA)
 
 /obj/item/clothing/suit/storage/hooded/wintercoat/custom_forrya_winter/on_update_icon()
 	if(suittoggled)
@@ -73,7 +87,7 @@
 	cold_protection = HEAD
 	item_flags = ITEM_FLAG_THICKMATERIAL
 	min_cold_protection_temperature = T0C - 175
-	max_heat_protection_temperature = T0C +55
+	max_heat_protection_temperature = T0C + 55
 	flags_inv = HIDEEARS | BLOCKHAIR
 	action_button_name = "Camouflaging"
 	var/can_use = 1
@@ -199,15 +213,18 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS
 	min_cold_protection_temperature = T0C - 175
-	allowed = list (/obj/item/weapon/shovel/custom_multishowel,/obj/item/weapon/pickaxe/silver/custom_multishowel,/obj/item/weapon/crowbar/custom_multishowel)
 	flags_inv = HIDETAIL
+	allowed = list (
+		/obj/item/weapon/shovel/custom_multishowel,
+		/obj/item/weapon/pickaxe/silver/custom_multishowel,
+		/obj/item/weapon/crowbar/custom_multishowel)
 	accessory_icons = list(
-		slot_w_uniform_str = CUSTOM_ITEM_MOB, \
-		slot_tie_str = CUSTOM_ITEM_MOB, \
+		slot_w_uniform_str = CUSTOM_ITEM_MOB,
+		slot_tie_str = CUSTOM_ITEM_MOB,
 		slot_wear_suit_str = CUSTOM_ITEM_MOB)
 	item_icons = list(
-		slot_w_uniform_str = CUSTOM_ITEM_MOB, \
-		slot_tie_str = CUSTOM_ITEM_MOB, \
+		slot_w_uniform_str = CUSTOM_ITEM_MOB,
+		slot_tie_str = CUSTOM_ITEM_MOB,
 		slot_wear_suit_str = CUSTOM_ITEM_MOB)
 
 /obj/item/weapon/storage/box/custom_forrya_whitebox
@@ -215,14 +232,21 @@
 	icon = CUSTOM_ITEM_OBJ
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE
-	w_class = ITEM_SIZE_LARGE
+	w_class = ITEM_SIZE_NORMAL
 	icon_state = "clwbox"
 	desc = "White box, similar to zinc with ammunition, but with something more light inside. Or not..."
-	startswith = list(/obj/item/clothing/accessory/cloak/custom_forrya_cam = 1,
-				/obj/item/clothing/suit/storage/hooded/wintercoat/custom_forrya = 1,
-				/obj/item/clothing/shoes/workboots/custom_forrya_winter = 1,
-				/obj/item/clothing/accessory/badge/tajamc = 1,
-				/obj/item/clothing/accessory/inf_pin/ccapin = 1)
+	startswith = list(
+		/obj/item/clothing/accessory/cloak/custom_forrya_cam,
+		/obj/item/clothing/suit/storage/hooded/wintercoat/custom_forrya,
+		/obj/item/clothing/shoes/workboots/custom_forrya_winter,
+		/obj/item/clothing/accessory/badge/tajamc,
+		/obj/item/clothing/accessory/inf_pin/ccapin)
+	can_hold = list(
+		/obj/item/clothing/accessory/cloak/custom_forrya_cam,
+		/obj/item/clothing/suit/storage/hooded/wintercoat/custom_forrya,
+		/obj/item/clothing/shoes/workboots/custom_forrya_winter,
+		/obj/item/clothing/accessory/badge/tajamc,
+		/obj/item/clothing/accessory/inf_pin/ccapin)
 
 /obj/item/weapon/shovel/custom_multishowel
 	name = "trenching multitool"
