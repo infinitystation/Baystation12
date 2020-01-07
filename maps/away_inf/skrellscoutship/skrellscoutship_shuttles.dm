@@ -16,7 +16,7 @@
 	moving_state = "ship_moving"
 	fore_dir = WEST
 	color = "#ff00ff"
-	vessel_mass = 1000
+	vessel_mass = 12000
 	vessel_size = SHIP_SIZE_SMALL
 	initial_restricted_waypoints = list(
 		"Skrellian Shuttle" = list("nav_skrellscoutsh_dock")

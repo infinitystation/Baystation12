@@ -76,6 +76,7 @@
 /area/ship/skrellscoutshuttle
 	name = "Scout - Skrellian Shuttle"
 	icon_state = "shuttle"
+	requires_power = 0
 	base_turf = /turf/simulated/floor/plating
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 	req_access = list(access_skrellscoutship)
