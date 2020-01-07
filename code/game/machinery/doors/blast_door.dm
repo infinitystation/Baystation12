@@ -115,6 +115,7 @@
 	playsound(src.loc, close_sound, 100, 1)
 	layer = closed_layer
 	flick(icon_state_closing, src)
+	crush() // infinity-dev
 	set_density(1)
 	update_nearby_tiles()
 	update_icon()
