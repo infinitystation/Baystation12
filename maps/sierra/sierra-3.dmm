@@ -3,7 +3,7 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/crew_quarters/safe_room/firstdeck)
 "aab" = (
-/obj/effect/shuttle_landmark/sierra/deck4/exploration_shuttle,
+/obj/effect/shuttle_landmark/sierra/deck1/skrellscout,
 /turf/space,
 /area/space)
 "aac" = (
@@ -141,21 +141,28 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/rnd/blanks)
 "aap" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/structure/catwalk,
+/obj/effect/floor_decal/industrial/warning/cee,
+/obj/machinery/embedded_controller/radio/airlock/docking_port{
+	dir = 4;
+	display_name = "First Deck Auxillary Dock";
+	frequency = 1331;
+	id_tag = "fd_starboard_airlock";
+	name = "First Deck Starboard Airlock Controller";
+	pixel_x = -20;
+	req_access = list("ACCESS_EXTERNAL");
+	tag_airpump = "fd_starboard_pump";
+	tag_chamber_sensor = "fd_starboard_sensor";
+	tag_exterior_door = "fd_starboard_outer";
+	tag_interior_door = "fd_starboard_inner"
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 4;
+	frequency = 1331;
+	id_tag = "fd_starboard_pump"
+	},
 /turf/simulated/floor/plating,
-/turf/simulated/open,
-/area/maintenance/firstdeck/aftstarboard)
+/area/maintenance/firstdeck/centralstarboard)
 "aaq" = (
 /obj/effect/shuttle_landmark/skipjack/deck4,
 /turf/space,
@@ -2154,27 +2161,21 @@
 /turf/simulated/wall/prepainted,
 /area/crew_quarters/heads/office/iaa)
 "aec" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /obj/structure/catwalk,
-/obj/effect/floor_decal/industrial/warning/cee,
-/obj/machinery/embedded_controller/radio/airlock/airlock_controller{
-	dir = 4;
-	frequency = 1331;
-	id_tag = "fd_starboard_airlock";
-	name = "First Deck Port Airlock Controller";
-	pixel_x = -20;
-	req_access = list("ACCESS_EXTERNAL");
-	tag_airpump = "fd_starboard_pump";
-	tag_chamber_sensor = "fd_starboard_sensor";
-	tag_exterior_door = "fd_starboard_outer";
-	tag_interior_door = "fd_starboard_inner"
-	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 4;
-	frequency = 1331;
-	id_tag = "fd_starboard_pump"
-	},
 /turf/simulated/floor/plating,
-/area/maintenance/firstdeck/centralstarboard)
+/turf/simulated/open,
+/area/maintenance/firstdeck/aftstarboard)
 "aed" = (
 /obj/machinery/ai_status_display,
 /turf/simulated/wall/r_wall/prepainted,
@@ -3748,14 +3749,10 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "agJ" = (
+/obj/structure/table/rack,
+/obj/random/maintenance,
 /obj/structure/catwalk,
-/obj/structure/disposalpipe/sortjunction{
-	dir = 4;
-	name = "Drone Station";
-	sort_type = "Drone Station"
-	},
 /turf/simulated/floor/plating,
-/turf/simulated/open,
 /area/maintenance/firstdeck/centralstarboard)
 "agK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -11708,13 +11705,8 @@
 /turf/simulated/floor/plating,
 /area/security/sierra/forensic/lab)
 "atn" = (
+/obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/structure/catwalk,
-/obj/structure/sign/warning/airlock{
-	pixel_y = 32
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden{
-	dir = 1
-	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralstarboard)
 "ato" = (
@@ -33414,13 +33406,12 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/locker)
 "bas" = (
-/obj/structure/sign/nanotrasen{
-	dir = 1;
-	pixel_y = -32
+/obj/structure/sign/warning/airlock{
+	pixel_y = 32
 	},
-/obj/structure/lattice,
-/turf/space,
-/area/space)
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/centralstarboard)
 "bat" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -33952,6 +33943,10 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/tcommsat/chamber)
+"bbj" = (
+/obj/machinery/portable_atmospherics/powered/pump/filled,
+/turf/simulated/floor/tiled/techfloor,
+/area/maintenance/firstdeck/centralstarboard)
 "bbk" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
@@ -35447,6 +35442,13 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/tcommsat/computer)
+"bdM" = (
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/manifold/hidden{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/centralstarboard)
 "bdN" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
@@ -35490,6 +35492,16 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
+"bdQ" = (
+/obj/structure/catwalk,
+/obj/structure/disposalpipe/sortjunction{
+	dir = 4;
+	name = "Drone Station";
+	sort_type = "Drone Station"
+	},
+/turf/simulated/floor/plating,
+/turf/simulated/open,
+/area/maintenance/firstdeck/centralstarboard)
 "bdZ" = (
 /obj/structure/bookcase/manuals/xenoarchaeology,
 /turf/simulated/floor/lino,
@@ -51115,7 +51127,7 @@ aYw
 aYw
 aYw
 aYw
-aab
+aYw
 aYw
 aYw
 aYw
@@ -52953,15 +52965,15 @@ aYw
 aYw
 aYw
 aYw
-aYw
-aYw
+aca
+aca
 aca
 aca
 aca
 aca
 axb
 aSt
-agJ
+bdQ
 axO
 aCj
 aCj
@@ -53155,12 +53167,12 @@ aYw
 aYw
 aYw
 aYw
-aYw
-bas
 aca
 aaG
-aec
+aaG
+aap
 aca
+agJ
 aKh
 aSs
 alw
@@ -53328,6 +53340,7 @@ aYw
 aYw
 aYw
 aYw
+aab
 aYw
 aYw
 aYw
@@ -53356,13 +53369,12 @@ aYw
 aYw
 aYw
 aYw
-aYw
-aYw
-abt
 aax
 aer
 aiD
+aiD
 afK
+atn
 alr
 aSs
 alz
@@ -53559,13 +53571,13 @@ aYw
 aYw
 aYw
 aYw
-aYw
-abt
 aca
+aZk
 aZk
 bac
 aca
-atn
+bas
+bdM
 aZm
 alr
 akr
@@ -53766,7 +53778,7 @@ aca
 aca
 aca
 aca
-aca
+bbj
 afi
 bay
 afb
@@ -61642,7 +61654,7 @@ abF
 abF
 aay
 aaB
-aap
+aec
 aeH
 aeH
 agM

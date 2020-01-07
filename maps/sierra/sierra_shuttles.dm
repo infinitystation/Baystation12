@@ -587,7 +587,12 @@
 	landmark_tag = "nav_deck3_patrol"
 	docking_controller = "admin_shuttle_dock_airlock"
 
-/obj/effect/shuttle_landmark/sierra/deck3/skrell
+/obj/effect/shuttle_landmark/sierra/deck3/skrellshuttle
 	name = "Third Deck Starboard Dock"
-	landmark_tag = "nav_deck3_skrell"
+	landmark_tag = "nav_deck3_skrellshuttle"
 	docking_controller = "admin_shuttle_dock_airlock"
+
+/obj/effect/shuttle_landmark/sierra/deck1/skrellscout
+	name = "First Deck Auxillary Dock"
+	landmark_tag = "nav_deck1_skrellscout"
+	docking_controller = "fd_starboard_airlock"
