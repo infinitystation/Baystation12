@@ -7,7 +7,7 @@
 			if(H.can_feel_pain())
 				H.emote("scream")
 		else if(istype(L, /mob/living/exosuit))
-			L.apply_damage(DOOR_CRUSH_DAMAGE, BRUTE)
+			L.apply_damage((DOOR_CRUSH_DAMAGE / 2), BRUTE)
 		else //for simple_animals & borgs
 			L.adjustBruteLoss(DOOR_CRUSH_DAMAGE)
 
