@@ -54,3 +54,8 @@
 	name = "head of security's beret"
 	desc = "A dark red beret of a head of corporative asset protection. Yeap, a head - not the head. They don't live too long."
 	icon_state = "hos_beret"
+
+/obj/item/clothing/head/HoS/dermal/beret
+	name = "commander's beret"
+	desc = "A stylish beret of forces commander. Has some armor layers, so, forget about stylish over armor - charge!"
+	icon_state = "beret_corporate_hos"
