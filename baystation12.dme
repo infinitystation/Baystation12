@@ -3595,7 +3595,6 @@
 #include "infinity\customs\pink_guitar.dm"
 #include "infinity\customs\quiet.dm"
 #include "infinity\customs\rockcoats.dm"
-#include "infinity\customs\ronin_helmet.dm"
 #include "infinity\customs\sallyvadordomold.dm"
 #include "infinity\customs\sarov.dm"
 #include "infinity\customs\solark.dm"
