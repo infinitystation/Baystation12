@@ -55,6 +55,7 @@ GLOBAL_LIST_EMPTY(mp_list)
 
 	sound_id = "[type]_[sequential_id(type)]"
 	serial_number = "[rand(1,999)]"
+	desc += "\nSerial number \"#[serial_number]\" is generated on the cover."
 	GLOB.mp_list += src
 
 	message_admins("MUSIC PLAYER: <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> has been created.")
@@ -77,17 +78,18 @@ GLOBAL_LIST_EMPTY(mp_list)
 /obj/item/music_player/examine(mob/user)
 	. = ..(user)
 	if(.)
-		if(serial_number)
-			to_chat(user, "A serial number \"#[serial_number]\" is generated on the cover.")
-		if(tape?.track)
-			to_chat(user, SPAN_NOTICE("You can see \a [tape] inside it. It's labeled as \"[tape.track.title]\"."))
-		else if(tape)
-			to_chat(user, SPAN_NOTICE("You can see \a [tape] inside it."))
+		if(tape)
+			if(tape.track)
+				to_chat(user, SPAN_NOTICE("You can see \a [tape] inside it. It's labeled as \"[tape.track.title]\"."))
+			else
+				to_chat(user, SPAN_NOTICE("You can see \a [tape] inside it."))
+
 		switch(panel)
 			if(PANEL_OPENED)
 				to_chat(user, "The front panel is unhinged.")
 			if(PANEL_UNSCREWED)
 				to_chat(user, "The front panel is unscrewed.")
+
 		if(broken)
 			to_chat(user, SPAN_WARNING("It's broken."))
 
