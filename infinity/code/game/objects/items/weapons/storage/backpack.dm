@@ -30,7 +30,7 @@
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/back.dmi'
 		)
 
-	var/worn_access = FALSE
+	var/worn_access = TRUE // temporary buff due to player reviews
 
 /obj/item/weapon/storage/backpack/holding
 	item_icons = list(
