@@ -413,7 +413,6 @@
 		SPECIES_TAJARA = 'icons/obj/clothing/species/tajaran/hats.dmi',
 		SPECIES_RESOMI = 'infinity/icons/obj/clothing/species/resomi/obj_head_resomi.dmi'
 		)
-	sprite_sheets_obj = list()
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT, 
 		bullet = ARMOR_BALLISTIC_MINOR, 
@@ -442,7 +441,6 @@
 		SPECIES_TAJARA = 'icons/obj/clothing/species/tajaran/suits.dmi',//INF
 		SPECIES_RESOMI = 'infinity/icons/obj/clothing/species/resomi/obj_suit_resomi.dmi'//INF
 		)
-	sprite_sheets_obj = list()
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT, 
 		bullet = ARMOR_BALLISTIC_MINOR, 
