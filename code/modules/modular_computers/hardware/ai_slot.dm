@@ -69,6 +69,7 @@
 	update_power_usage()
 
 /obj/item/weapon/stock_parts/computer/ai_slot/proc/do_insert_ai(mob/user, obj/item/weapon/aicard/card)
+	card.dropInto(src)
 	stored_card = card
 
 	if(isobj(loc))
@@ -79,5 +80,5 @@
 /obj/item/weapon/stock_parts/computer/ai_slot/attackby(obj/item/weapon/aicard/card, mob/living/user)
 	if(!istype(card))
 		return
-	do_insert_ai(card, user)
+	do_insert_ai(user, card)
 	return TRUE
