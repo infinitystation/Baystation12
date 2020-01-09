@@ -281,7 +281,7 @@
 		status_overlays_environ.len = 5
 
 //[INF]
-		var/list/overlay_settings = list(plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
+		var/list/overlay_settings = list(EFFECTS_ABOVE_LIGHTING_PLANE, ABOVE_LIGHTING_LAYER)
 
 		status_overlays_lock[1] = overlay_image(icon, "apcox-0", plane = overlay_settings[1], layer = overlay_settings[2])    // 0=blue 1=red
 		status_overlays_lock[2] = overlay_image(icon, "apcox-1", plane = overlay_settings[1], layer = overlay_settings[2])
