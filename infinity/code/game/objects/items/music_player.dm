@@ -4,6 +4,10 @@ GLOBAL_LIST_EMPTY(mp_list)
 #define PANEL_UNSCREWED 1
 #define PANEL_OPENED 2
 
+#define PLAYER_STATE_OFF 0
+#define PLAYER_STATE_PLAY 1
+#define PLAYER_STATE_PAUSE 2
+
 /obj/item/music_player/custom_tape
 	tape = /obj/item/music_tape/custom
 
@@ -22,9 +26,6 @@ GLOBAL_LIST_EMPTY(mp_list)
 
 	matter = list(MATERIAL_STEEL = 75, MATERIAL_GLASS = 30)
 	origin_tech = list(TECH_MAGNET = 2)
-
-	var/const/OFF = 0
-	var/const/PLAY = 1
 
 	var/mode = 0
 	var/volume = 20
@@ -54,6 +55,7 @@ GLOBAL_LIST_EMPTY(mp_list)
 
 	sound_id = "[type]_[sequential_id(type)]"
 	serial_number = "[rand(1,999)]"
+	desc += "\nSerial number \"#[serial_number]\" is generated on the cover."
 	GLOB.mp_list += src
 
 	message_admins("MUSIC PLAYER: <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> has been created.")
@@ -61,7 +63,7 @@ GLOBAL_LIST_EMPTY(mp_list)
 	update_icon()
 
 /obj/item/music_player/Destroy()
-	set_mode(OFF)
+	set_mode(PLAYER_STATE_OFF)
 
 	if(cell)
 		QDEL_NULL(cell)
@@ -76,17 +78,18 @@ GLOBAL_LIST_EMPTY(mp_list)
 /obj/item/music_player/examine(mob/user)
 	. = ..(user)
 	if(.)
-		if(serial_number)
-			to_chat(user, "A serial number \"#[serial_number]\" is generated on the cover.")
-		if(tape?.track)
-			to_chat(user, SPAN_NOTICE("You can see \a [tape] inside it. It's labeled as \"[tape.track.title]\"."))
-		else if(tape)
-			to_chat(user, SPAN_NOTICE("You can see \a [tape] inside it."))
+		if(tape)
+			if(tape.track)
+				to_chat(user, SPAN_NOTICE("You can see \a [tape] inside it. It's labeled as \"[tape.track.title]\"."))
+			else
+				to_chat(user, SPAN_NOTICE("You can see \a [tape] inside it."))
+
 		switch(panel)
 			if(PANEL_OPENED)
 				to_chat(user, "The front panel is unhinged.")
 			if(PANEL_UNSCREWED)
 				to_chat(user, "The front panel is unscrewed.")
+
 		if(broken)
 			to_chat(user, SPAN_WARNING("It's broken."))
 
@@ -104,7 +107,6 @@ GLOBAL_LIST_EMPTY(mp_list)
 		StopPlaying()
 		visible_message(SPAN_WARNING("\The [src]'s power meter flashes a battery warning and refuses to operate."))
 		return PROCESS_KILL
-//	to_world(cell.charge)
 
 /obj/item/music_player/proc/set_mode(value)
 	if(value == mode) return
@@ -114,20 +116,24 @@ GLOBAL_LIST_EMPTY(mp_list)
 	playsound(src.loc, "switch", 20)
 
 	switch(value)
-		if(OFF)
+		if(PLAYER_STATE_OFF)
 			StopPlaying()
-		if(PLAY)
+		if(PLAYER_STATE_PLAY)
 			if(!get_cell() || !cell.check_charge(power_usage * CELLRATE))
 				visible_message(SPAN_NOTICE("\The [src]'s power meter flashes a battery warning and refuses to operate."))
 				return
 			StartPlaying()
+		if(PLAYER_STATE_PAUSE)
+			StopPlaying(pause = TRUE)
 
 /obj/item/music_player/attack_self(mob/user)
 	switch(mode)
-		if(OFF)
-			set_mode(PLAY)
-		if(PLAY)
-			set_mode(OFF)
+		if(PLAYER_STATE_OFF)
+			set_mode(PLAYER_STATE_PLAY)
+		if(PLAYER_STATE_PLAY)
+			set_mode(PLAYER_STATE_OFF)
+		if(PLAYER_STATE_PAUSE)
+			set_mode(PLAYER_STATE_PLAY)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 
 /obj/item/music_player/attackby(obj/item/I, mob/user, params)
@@ -402,10 +408,13 @@ GLOBAL_LIST_EMPTY(mp_list)
 		src.visible_message(SPAN_WARNING("The [tape] is unusable to play."), 1)
 		return
 
-	mode = PLAY
+	if(mode == PLAYER_STATE_PAUSE && sound_token)
+		sound_token.Unpause()
+	else
+		QDEL_NULL(sound_token)
+		sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, tape.track.GetTrack(), volume = volume, frequency = frequency, range = 7, falloff = 4, prefer_mute = TRUE, preference = /datum/client_preference/play_pmps)
 
-	QDEL_NULL(sound_token)
-	sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, tape.track.GetTrack(), volume = volume, frequency = frequency, range = 7, falloff = 4, prefer_mute = TRUE, preference = /datum/client_preference/play_pmps)
+	mode = PLAYER_STATE_PLAY
 	START_PROCESSING(SSobj, src)
 	log_and_message_admins("launched [src] <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> with the song \"[tape.track.title]\".")
 
@@ -414,18 +423,41 @@ GLOBAL_LIST_EMPTY(mp_list)
 
 	update_icon()
 
-/obj/item/music_player/proc/StopPlaying()
-	mode = OFF
-	QDEL_NULL(sound_token)
-	STOP_PROCESSING(SSobj, src)
+/obj/item/music_player/proc/StopPlaying(var/pause = 0)
+	if(pause && sound_token)
+		mode = PLAYER_STATE_PAUSE
+		sound_token.Pause()
+	else
+		mode = PLAYER_STATE_OFF
+		QDEL_NULL(sound_token)
 
+	STOP_PROCESSING(SSobj, src)
 	update_icon()
+
+//Alternative way to activate it, but instead stop, we will pause it.
+/obj/item/music_player/AltClick(var/mob/user)
+	if(!CanPhysicallyInteract(user))
+		return
+
+	if(broken) return
+
+	playsound(src.loc, "switch", 20)
+
+	switch(mode)
+		if(PLAYER_STATE_PLAY)
+			StopPlaying(pause = TRUE)
+		if(PLAYER_STATE_PAUSE)
+			StartPlaying()
 
 /obj/item/music_player/fire_act()
 	break_act()
 	if(tape)
 		tape.ruin()
 	return ..()
+
+#undef PLAYER_STATE_OFF
+#undef PLAYER_STATE_PLAY
+#undef PLAYER_STATE_PAUSE
 
 #undef PANEL_CLOSED
 #undef PANEL_UNSCREWED
