@@ -38,5 +38,5 @@
 
 /obj/item/clothing/accessory/bs_silk/on_removed()
 	..()
-	silk_hub.linked_mob = null
-	silk_hub = null
+	if(silk_hub)
+		silk_hub = null
