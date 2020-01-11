@@ -29,6 +29,8 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define OBJ_FLAG_ROTATABLE               0x0004 // Can be rotated with alt-click
 #define OBJ_FLAG_NOFALL		             0x0008 // Will prevent mobs from falling
 
+#define OBJ_FLAG_TRIPPABLE               0x0010 //inf: Objects like piping on the ground that can cause a trip (the binar number must be always hight!)
+
 //Flags for items (equipment)
 #define ITEM_FLAG_NO_BLUDGEON            0x0001 // When an item has this it produces no "X has been hit by Y with Z" message with the default handler.
 #define ITEM_FLAG_PHORONGUARD            0x0002 // Does not get contaminated by phoron.

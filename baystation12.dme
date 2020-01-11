@@ -3272,6 +3272,7 @@
 #include "infinity\code\game\machinery\doors\simple.dm"
 #include "infinity\code\game\objects\cryo_spawner.dm"
 #include "infinity\code\game\objects\noose.dm"
+#include "infinity\code\game\objects\tripable.dm"
 #include "infinity\code\game\objects\auras\speed_aura.dm"
 #include "infinity\code\game\objects\effects\aliens.dm"
 #include "infinity\code\game\objects\effects\landmarks.dm"
