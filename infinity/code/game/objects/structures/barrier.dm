@@ -248,11 +248,13 @@
 	if(turf_check(user))
 		return
 
-	var/obj/structure/barrier/B = new(user.loc)
-	B.set_dir(user.dir)
-	B.health = health
-	user.drop_item()
-	qdel(src)
+	if(do_after(user, 1 SECOND, src))
+		playsound(src, 'sound/effects/extout.ogg', 100, 1)
+		var/obj/structure/barrier/B = new(user.loc)
+		B.set_dir(user.dir)
+		B.health = health
+		user.drop_item()
+		qdel(src)
 
 /obj/item/weapon/barrier/attackby(obj/item/W as obj, mob/user as mob)
 	if(health != 200 && isWelder(W))
