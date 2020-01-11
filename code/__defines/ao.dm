@@ -1,5 +1,10 @@
 // -- SSao --
-#define WALL_AO_ALPHA 80
+//inf #define WALL_AO_ALPHA 80
+
+//[INF]
+GLOBAL_VAR_INIT(AO_ALPHA, 80) //inf
+#define WALL_AO_ALPHA GLOB.AO_ALPHA //inf
+//[/INF]
 
 #define AO_UPDATE_NONE 0
 #define AO_UPDATE_OVERLAY 1
