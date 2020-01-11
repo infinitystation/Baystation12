@@ -14,8 +14,8 @@
 	var/deployed = 0
 	var/basic_chance = 50
 
-/obj/structure/barrier/New()
-	..()
+/obj/structure/barrier/Initialize()
+	. = ..()
 	update_layers()
 	update_icon()
 
@@ -41,13 +41,10 @@
 /obj/structure/barrier/proc/update_layers()
 	if(dir != SOUTH)
 		layer = initial(layer) + 0.1
-		plane = initial(plane)
 	else if(dir == SOUTH && density)
-		layer = ABOVE_OBJ_LAYER + 0.1
-//		plane = ABOVE_HUMAN_PLANE
+		layer = ABOVE_HUMAN_LAYER
 	else
 		layer = initial(layer) + 0.1
-		plane = initial(plane)
 
 /obj/structure/barrier/on_update_icon()
 	if(density && !deployed)
