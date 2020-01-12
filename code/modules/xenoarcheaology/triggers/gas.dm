@@ -4,9 +4,11 @@
 	var/list/gas_needed	//list of gas=percentage needed in air to activate
 
 /datum/artifact_trigger/gas/New()
+	spawn(5 SECONDS) if(!gas_needed) gas_needed = list(pick(gas_data.gases) = rand(1,10)) //inf
+/*inf	
 	if(!gas_needed)
 		gas_needed = list(pick(gas_data.gases) = rand(1,10))
-
+inf*/
 /datum/artifact_trigger/gas/on_gas_exposure(datum/gas_mixture/gas)
 	. = TRUE
 	for(var/g in gas_needed)
