@@ -15,9 +15,11 @@
 /obj/item/mech_equipment/clamp/attack_hand(mob/user)
 	if(owner && LAZYISIN(owner.pilots, user))
 		if(!owner.hatch_closed && carrying)
+			if(!do_after(user, 2 SECONDS, owner)) return //inf
 			if(user.put_in_active_hand(carrying))
 				owner.visible_message(SPAN_NOTICE("\The [user] carefully grabs \the [carrying] from \the [src]."))
 				carrying = null
+				playsound(src, 'sound/mecha/hydraulic.ogg', 50, 1) //inf
 	. = ..()
 
 /obj/item/mech_equipment/clamp/afterattack(var/atom/target, var/mob/living/user, var/inrange, var/params)
@@ -44,6 +46,7 @@
 				O.forceMove(src)
 				carrying = O
 				owner.visible_message(SPAN_NOTICE("\The [owner] loads \the [O] into its cargo compartment."))
+				playsound(src, 'sound/mecha/hydraulic.ogg', 50, 1) //inf
 
 
 		//attacking - Cannot be carrying something, cause then your clamp would be full
@@ -70,6 +73,8 @@
 		if(!carrying)
 			to_chat(user, SPAN_WARNING("You are not carrying anything in \the [src]."))
 		else
+			if(!do_after(user, 2 SECONDS, owner)) return //inf
+			playsound(src, 'sound/mecha/hydraulic.ogg', 50, 1) //inf
 			owner.visible_message(SPAN_NOTICE("\The [owner] unloads \the [carrying]."))
 			carrying.forceMove(get_turf(src))
 			carrying = null
@@ -238,7 +243,8 @@
 	if(.)
 		if(drill_head)
 			owner.visible_message(SPAN_WARNING("[owner] revs the [drill_head], menancingly."))
-			playsound(src, 'sound/weapons/circsawhit.ogg', 50, 1)
+//			playsound(src, 'sound/weapons/circsawhit.ogg', 50, 1)
+			playsound(src, 'sound/mecha/mechdrill.ogg', 50, 1) //inf
 
 
 /obj/item/mech_equipment/drill/afterattack(var/atom/target, var/mob/living/user, var/inrange, var/params)
@@ -314,7 +320,8 @@
 								if(get_dir(owner,ore)&owner.dir)
 									ore.Move(ore_box)
 
-				playsound(src, 'sound/weapons/circsawhit.ogg', 50, 1)
+//				playsound(src, 'sound/weapons/circsawhit.ogg', 50, 1)
+				playsound(src, 'sound/mecha/mechdrill.ogg', 50, 1) //inf
 		
 		else
 			to_chat(user, "You must stay still while the drill is engaged!")		
