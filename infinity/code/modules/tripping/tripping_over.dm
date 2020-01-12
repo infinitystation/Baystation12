@@ -3,7 +3,7 @@
 
 /obj/Crossed(mob/living/carbon/human/H as mob)
 	. = ..()
-	if(prob(trip_chance) && trip_check(H))
+	if(trip_chance && prob(trip_chance) && trip_check(H))
 		H.trip_act(src)
 
 /obj/proc/trip_check(mob/user as mob)
