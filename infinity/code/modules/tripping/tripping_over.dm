@@ -1,28 +1,26 @@
+/obj
+	var/trip_chance = 5
+
+/obj/Crossed(mob/living/carbon/human/H as mob)
+	. = ..()
+	if(prob(trip_chance) && trip_check(H))
+		H.trip_act(src)
+
 /obj/proc/trip_check(mob/user as mob)
-	for(var/obj/structure/catwalk/C in get_turf(src))
-		return (C.hatch_open) // means if hatch open - TRUE, otherwise FALSE
 	if(!ishuman(user) || !has_gravity(src) || user.resting || user.can_overcome_gravity() || !MOVING_QUICKLY(user))
 		return FALSE
+	for(var/obj/structure/catwalk/C in get_turf(src))
+		return (C.hatch_open) // means if hatch open - TRUE, otherwise FALSE
 	return TRUE
 
-/obj/proc/trip_act(mob/living/carbon/M as mob)
-	if(!M || !ishuman(M)) return
-	M.apply_damage(5, BRUTE)
-	M.slip(src, 6)
-	M.visible_message(\
-		"<span class='warning'>[M] trips over \the [src]!</span>",\
-		"<span class='notice'>You trip over \the [src]!</span>")
-
-/obj/Crossed(mob/living/carbon/M as mob)
-	..()
-	if(obj_flags & OBJ_FLAG_TRIPPABLE)
-		if(prob(5) && trip_check(M))
-			trip_act(M)
+/mob/living/carbon/human/proc/trip_act(var/obj/O)
+	apply_damage(5, BRUTE)
+	slip(src, 6)
+	visible_message(\
+		SPAN_WARNING("[src] trips over \the [O]!"),\
+		SPAN_NOTICE("You trip over \the [O]!"))
 
 // Pipes
-/obj/machinery/atmospherics/pipe
-	obj_flags = OBJ_FLAG_TRIPPABLE
-
 /obj/machinery/atmospherics/pipe/trip_check(mob/user as mob)
 	var/turf/T = src.loc
 	if(!T.is_plating())
@@ -32,9 +30,6 @@
 	. = ..()
 
 // Cables
-/obj/structure/cable
-	obj_flags = OBJ_FLAG_TRIPPABLE
-
 /obj/structure/cable/trip_check(mob/user as mob)
 	var/turf/T = src.loc
 	if(!T.is_plating())
@@ -44,9 +39,6 @@
 	. = ..()
 
 // Disposals
-/obj/structure/disposalpipe
-	obj_flags = OBJ_FLAG_TRIPPABLE
-
 /obj/structure/disposalpipe/trip_check(mob/user as mob)
 	var/turf/T = src.loc
 	if(!T.is_plating())
