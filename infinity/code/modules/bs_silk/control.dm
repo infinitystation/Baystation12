@@ -21,18 +21,19 @@
 
 /obj/machinery/bssilk_hub/attackby(obj/item/I, mob/user)
 	. = ..()
-	sync_with_parts()
-	if(isMultitool(I))
-		switch(alert("What you want to configure console ID or snare ID?", "BS Snare Hub ID system", "Snare", "Console"))
-			if("Snare")
-				var/input_id = input("Enter new BS Snare ID", "Snare ID", silk_id)
-				silk_id = input_id
-				return silk_id
+	if(!(stat & (NOPOWER|BROKEN)))
+		sync_with_parts()
+		if(isMultitool(I))
+			switch(alert("What you want to configure console ID or snare ID?", "BS Snare Hub ID system", "Snare", "Console"))
+				if("Snare")
+					var/input_id = input("Enter new BS Snare ID", "Snare ID", silk_id)
+					silk_id = input_id
+					return silk_id
 
-			if("Console")
-				var/input_c_id = input("Enter new BS Snare ID", "Snare ID", console_id)
-				console_id = input_c_id
-				return console_id
+				if("Console")
+					var/input_c_id = input("Enter new BS Snare ID", "Snare ID", console_id)
+					console_id = input_c_id
+					return console_id
 	sync_with_parts()
 
 /obj/machinery/bssilk_hub/proc/sync_with_parts()
@@ -46,22 +47,23 @@
 
 /obj/machinery/bssilk_hub/proc/get_linked_mob()
 	sync_with_parts()
-	var/list/mobs = list()
-	for(var/mob/living/carbon/human/M in world)
-		var/obj/item/clothing/U = M.w_uniform
-		if(U && length(U.accessories))
-			for(var/obj/item/clothing/accessory/bs_silk/silk in U.accessories)
-				if(M && silk.silk_id && silk.silk_id == silk_id)
-					spawn(0)
-						teleport_back(M)
-					mobs += M
-	if(length(mobs) == 0)
-		playsound(src.loc, 'sound/machines/buzz-sigh.ogg')
-		audible_message(SPAN_WARNING("The [src.name] buzzes and state \'SNARE EITHER DISABLED OR NOT AVAILABLE, TRY TO PROBE IT AGAIN, IF YOU ARE SURE THAT THE SNARE IN A GOOD CONDITION OR CONNECTED TO USER.\'"),
-						SPAN_WARNING("The [src.name] buzzes and state something."),
-						hearing_distance = 5
-						)
-	return mobs
+	if(!(stat & (NOPOWER|BROKEN)))
+		var/list/mobs = list()
+		for(var/mob/living/carbon/human/M in world)
+			var/obj/item/clothing/U = M.w_uniform
+			if(U && length(U.accessories))
+				for(var/obj/item/clothing/accessory/bs_silk/silk in U.accessories)
+					if(M && silk.silk_id && silk.silk_id == silk_id)
+						spawn(0)
+							teleport_back(M)
+						mobs += M
+		if(length(mobs) == 0)
+			playsound(src.loc, 'sound/machines/buzz-sigh.ogg')
+			audible_message(SPAN_WARNING("The [src.name] buzzes and state \'SNARE EITHER DISABLED OR NOT AVAILABLE, TRY TO PROBE IT AGAIN, IF YOU ARE SURE THAT THE SNARE IN A GOOD CONDITION OR CONNECTED TO USER.\'"),
+							SPAN_WARNING("The [src.name] buzzes and state something."),
+							hearing_distance = 5
+							)
+		return mobs
 
 /obj/machinery/bssilk_hub/Destroy()
 	. = ..()
