@@ -106,7 +106,7 @@
 	path = /obj/item/weapon/storage/belt/general
 
 /datum/gear/storage/color_drop_pouches
-    display_name = "drop pouches, color selection"
-    path = /obj/item/clothing/accessory/storage/drop_pouches/white
-    cost = 3
-    flags = GEAR_HAS_COLOR_SELECTION
+	display_name = "drop pouches, color selection"
+	path = /obj/item/clothing/accessory/storage/drop_pouches/white
+	cost = 3
+	flags = GEAR_HAS_COLOR_SELECTION
