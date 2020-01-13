@@ -3502,6 +3502,7 @@
 #include "infinity\code\modules\reagents\reagent_containers\food\drinks\bottle.dm"
 #include "infinity\code\modules\reagents\reagent_containers\food\drinks\champagne.dm"
 #include "infinity\code\modules\reagents\reagents_containers\food\drinks\bottle.dm"
+#include "infinity\code\modules\research\stock_parts.dm"
 #include "infinity\code\modules\research\designs\designs_bluespace.dm"
 #include "infinity\code\modules\research\designs\designs_circuits.dm"
 #include "infinity\code\modules\research\designs\designs_disk.dm"
