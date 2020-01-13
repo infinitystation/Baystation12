@@ -3600,6 +3600,7 @@
 #include "infinity\customs\solark.dm"
 #include "infinity\customs\sprites_kits.dm"
 #include "infinity\customs\stange_pill.dm"
+#include "infinity\customs\thehero13.dm"
 #include "infinity\customs\tools.dm"
 #include "infinity\customs\true_gentleman.dm"
 #include "infinity\customs\vape.dm"

@@ -1,9 +1,6 @@
 {
   "ckey" :            "thehero13",
   "character_name" :  "Axel Fray",
-  "item_name" :       "PCRC marksman helmet",
-  "item_desc" :       "An imposing helmet designed for work in special operations. Property of Proxima Centauri Risk Control.",
-  "item_icon_state" : "thehero13_helmet",
-  "item_path" :       "/obj/item/clothing/head/helmet",
+  "item_path" :       "/obj/item/clothing/head/helmet/marksman_helmet",
   "req_access" :      [ "ACCESS_SECURITY" ]
   }
