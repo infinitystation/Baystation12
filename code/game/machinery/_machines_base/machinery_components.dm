@@ -230,7 +230,6 @@ Standard helpers for users interacting with machinery parts.
 */
 
 /obj/machinery/proc/part_replacement(mob/user, obj/item/weapon/storage/part_replacer/R)
-	var/play_replace_sound //inf
 	for(var/obj/item/weapon/stock_parts/A in component_parts)
 		if(!A.base_type)
 			continue
@@ -239,7 +238,7 @@ Standard helpers for users interacting with machinery parts.
 		for(var/obj/item/weapon/stock_parts/B in R.contents)
 			if(istype(B, A.base_type) && B.rating > A.rating)
 				replace_part(user, R, A, B)
-				play_replace_sound = 1 //inf
+				R.part_replacement_sound() //inf
 				return TRUE
 	for(var/path in uncreated_component_parts)
 		var/obj/item/weapon/stock_parts/A = path
@@ -250,12 +249,11 @@ Standard helpers for users interacting with machinery parts.
 			for(var/obj/item/weapon/stock_parts/B in R.contents)
 				if(istype(B, base_type) && B.rating > initial(A.rating))
 					replace_part(user, R, A, B)
-					play_replace_sound = 1 //inf
+					R.part_replacement_sound() //inf
 					return TRUE
 
-	// inf
-	if(play_replace_sound || R.remote_interaction)
-		R.part_replacement_sound() //inf
+	if(R.remote_interaction)//inf
+		R.part_replacement_sound()
 
 /obj/machinery/proc/part_insertion(mob/user, obj/item/weapon/stock_parts/part) // Second argument may actually be an arbitrary item.
 	if(!user.canUnEquip(part) && !isstack(part))
