@@ -634,7 +634,7 @@ BLIND     // can't see anything
 	var/can_add_cuffs = TRUE
 	var/obj/item/weapon/handcuffs/attached_cuffs = null
 	var/can_add_hidden_item = TRUE
-	var/hidden_item_max_w_class = ITEM_SIZE_SMALL
+	var/hidden_item_max_w_class = ITEM_SIZE_NORMAL //INF, WAS ITEM_SIZE_SMALL
 	var/obj/item/hidden_item = null
 
 /obj/item/clothing/shoes/Destroy()
@@ -723,7 +723,7 @@ BLIND     // can't see anything
 	if (I.w_class > hidden_item_max_w_class)
 		to_chat(user, SPAN_WARNING("\The [I] is too large to fit in the [src]."))
 		return
-	if (do_after(user, 2 SECONDS))
+	if (do_after(user, 2 SECONDS, src)) //INF, WAS	if (do_after(user, 2 SECONDS))
 		if(!user.unEquip(I, src))
 			return
 		user.visible_message(SPAN_ITALIC("\The [user] shoves \the [I] into \the [src]."), range = 1)
@@ -745,7 +745,7 @@ BLIND     // can't see anything
 		return FALSE
 	if (loc != user)
 		return FALSE
-	if (do_after(user, 1 SECONDS)) //INF, WAS 2 SECONDS
+	if (do_after(user, 1 SECONDS, src)) //INF, WAS if (do_after(user, 2 SECONDS))
 		if (!user.put_in_hands(hidden_item))
 			to_chat(usr, SPAN_WARNING("You need an empty, unbroken hand to pull the [hidden_item] from the [src]."))
 			return TRUE
