@@ -37,6 +37,7 @@
 	#include "datums/supplypacks/science.dm"
 
 	#include "game/antagonist/languages.dm"
+	#include "game/antagonist/objective.dm"
 
 	#include "items/cards_ids.dm"
 	#include "items/documents.dm"
