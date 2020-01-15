@@ -3,7 +3,8 @@
 		if(istype(over, /mob/living/exosuit))
 			var/mob/living/exosuit/exosuit = over
 			if(exosuit.body)
-				if(usr.mob_size >= exosuit.body.min_pilot_size && usr.mob_size <= exosuit.body.max_pilot_size)
+				if(usr.mob_size >= exosuit.body.min_pilot_size && usr.mob_size <= exosuit.body.max_pilot_size \
+				&& !issilicon(usr)) //INF
 					if(exosuit.enter(src))
 						return
 				else
