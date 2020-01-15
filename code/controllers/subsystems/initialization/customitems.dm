@@ -62,8 +62,15 @@ SUBSYSTEM_DEF(customitems)
 			continue
 		// Check for required access.
 		var/obj/item/weapon/card/id/current_id = M.wear_id
-		if(length(citem.req_access) && (!istype(current_id) || !has_access(citem.req_access, current_id.access)))
-			continue
+//INF		if(length(citem.req_access) && (!istype(current_id) || !has_access(citem.req_access, current_id.access)))
+//[INF]
+		if(length(citem.req_access))
+			if(!current_id)
+				continue
+			if(!has_access(current_id.access, citem.req_access))
+				if(!has_access(citem.req_access, current_id.access))
+					continue
+//[/INF]
 		// Check for required job title.
 		if(length(citem.req_titles))
 			var/check_title = M.mind.role_alt_title || M.mind.assigned_role
