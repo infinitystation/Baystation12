@@ -67,6 +67,9 @@ SUBSYSTEM_DEF(customitems)
 		if(length(citem.req_access))
 			if(!current_id)
 				continue
+			if(istype(current_id, /obj/item/modular_computer))
+				var/obj/item/modular_computer/PDA = current_pda
+				current_id = current_pda.card_slot.stored_card
 			if(!has_access(current_id.access, citem.req_access))
 				if(!has_access(citem.req_access, current_id.access))
 					continue
