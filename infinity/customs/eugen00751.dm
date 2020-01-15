@@ -8,11 +8,11 @@
 	desc = "This is an old, shabby beret, which is distinguished by special hardness from the others."
 
 /obj/item/clothing/accessory/aquila
-	name = "silver eagle patch"
+	name = "silver aquila patch"
 	desc = "The patch is a huge figure of a two-headed eagle, looking in different directions. The size of this patch and a special, metallic material to the touch stand out especially."
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "evgen00751_aquilatag"
-	slot = ACCESSORY_SLOT_OVER
+	slot = ACCESSORY_SLOT_OVER, ACCESSORY_SLOT_ARMOR_M
 	accessory_icons = list(
 		slot_w_uniform_str = CUSTOM_ITEM_MOB,
 		slot_tie_str = CUSTOM_ITEM_MOB,
