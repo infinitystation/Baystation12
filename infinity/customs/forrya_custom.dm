@@ -23,6 +23,8 @@
 		/obj/item/weapon/crowbar/custom_multishowel,
 		/obj/item/clothing/accessory/storage/drop_pouches/custom_forrya,
 		/obj/item/clothing/mask/gas/alt/custom_forrya)
+	item_icons = list(
+		slot_back_str = CUSTOM_ITEM_MOB)
 
 /obj/item/clothing/suit/storage/hooded/wintercoat/custom_forrya
 	name = "winter cape-tent"
@@ -286,7 +288,7 @@
 	qdel(src)
 	user.put_in_active_hand(kilrka)
 
-/obj/item/weapon/pickaxe/silver/multishowel/Initialize()
+/obj/item/weapon/pickaxe/silver/custom_multishowel/Initialize()
 	. = ..()
 	icon_state = "set-pickaxe"
 
@@ -299,7 +301,7 @@
 	  ice, icy soil or someone else.\
 	  This multi-tool has embossed stamp of CCA"
 	icon = CUSTOM_ITEM_OBJ
-	icon_state = "set"
+	icon_state = "set-crowbar"
 	w_class = ITEM_SIZE_NORMAL
 
 /obj/item/weapon/crowbar/custom_multishowel/attack_self(mob/user)
@@ -308,10 +310,6 @@
 	to_chat(user, "<span class='notice'> You put forward pickaxe head to [src].</span>")
 	qdel(src)
 	user.put_in_active_hand(lomos)
-
-/obj/item/weapon/crowbar/multishowel/Initialize()
-	. = ..()
-	icon_state = "set-crowbar"
 
 /*
  * A SMALL POUCH WITH GASMASK
