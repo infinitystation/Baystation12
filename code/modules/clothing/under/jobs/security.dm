@@ -186,6 +186,7 @@
 		)
 	flags_inv = HIDEJUMPSUIT
 	siemens_coefficient = 0.6
+	valid_accessory_slots = list(ACCESSORY_SLOT_ARMBAND, ACCESSORY_SLOT_OVER, ACCESSORY_SLOT_INSIGNIA) //INF
 
 //Jensen cosplay gear
 /obj/item/clothing/under/rank/head_of_security/jensen

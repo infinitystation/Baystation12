@@ -12,7 +12,7 @@
 	desc = "The patch is a huge figure of a two-headed eagle, looking in different directions. The size of this patch and a special, metallic material to the touch stand out especially."
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "evgen00751_aquilatag"
-	slot = ACCESSORY_SLOT_OVER, ACCESSORY_SLOT_ARMOR_M
+	slot = ACCESSORY_SLOT_ARMOR_M
 	accessory_icons = list(
 		slot_w_uniform_str = CUSTOM_ITEM_MOB,
 		slot_tie_str = CUSTOM_ITEM_MOB,
