@@ -68,7 +68,7 @@ SUBSYSTEM_DEF(customitems)
 			if(!current_id)
 				continue
 			if(istype(current_id, /obj/item/modular_computer))
-				var/obj/item/modular_computer/PDA = current_pda
+				var/obj/item/modular_computer/current_pda = M.wear_id
 				current_id = current_pda.card_slot.stored_card
 			if(!has_access(current_id.access, citem.req_access))
 				if(!has_access(citem.req_access, current_id.access))
