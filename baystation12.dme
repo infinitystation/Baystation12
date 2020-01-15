@@ -3663,6 +3663,7 @@
 #include "maps\torch\items\clothing\terran-under.dm"
 #include "maps\torch\language\human\euro.dm"
 #include "maps\torch\language\human\misc\spacer.dm"
+#include "maps\torch\structures\signs.dm"
 #include "maps\~mapsystem\map_in_use.dm"
 #include "maps\~mapsystem\map_preferences.dm"
 #include "maps\~mapsystem\map_ranks.dm"

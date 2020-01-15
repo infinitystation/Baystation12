@@ -1,8 +1,8 @@
 /obj/item/clothing/under/rank/field
 	name = "grey exploration uniform"
 	desc = "An utility uniform for NanoTrasen's field specialists. This one made for vessel's dull colors."
-	icon = 'maps/sierra/icons/obj/obj_under_solgov.dmi'
-	item_icons = list(slot_w_uniform_str = 'maps/sierra/icons/mob/onmob_under_solgov.dmi')
+	icon = 'maps/sierra/icons/obj/obj_under_exploration.dmi'
+	item_icons = list(slot_w_uniform_str = 'maps/sierra/icons/mob/onmob_under_exploration.dmi')
 	icon_state = "greyutility"
 	item_state = "greyutility"
 	worn_state = "greyutility"
@@ -17,7 +17,7 @@
 
 /obj/item/clothing/under/rank/field/navy
 	name = "navy exploration uniform"
-	desc = "An utility uniform for NanoTrasen's field specialists. This one made for blue-look exoplanets. Suspiciously, that SCGDF Fleet uses the same color."
+	desc = "An utility uniform for NanoTrasen's field specialists. This one made for blue-look exoplanets. Suspiciously, that SCG Fleet uses the same color."
 	icon_state = "navycombat"
 	item_state = "navycombat"
 	worn_state = "navycombat"
