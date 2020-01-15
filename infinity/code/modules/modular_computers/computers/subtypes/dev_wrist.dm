@@ -35,8 +35,9 @@
 			I.color = stripe_color
 			overlays.Add(I)
 	return ret
-/*
+
 /obj/item/modular_computer/pda/wrist/on_update_icon()
+	. = ..()
 	var/datum/extension/interactive/ntos/os = get_extension(src, /datum/extension/interactive/ntos)
 	icon_state = icon_state_unpowered
 	overlays.Cut()
@@ -56,6 +57,7 @@
 		I.appearance_flags |= RESET_COLOR
 		overlays.Add(I)
 		return
+/*
 	if(!enabled)
 		if(icon_state_screensaver)
 			var/image/I = image(icon = icon, icon_state = icon_state_screensaver)
@@ -63,18 +65,19 @@
 			overlays.Add(I)
 		set_light(0)
 		return
+*/
 	set_light(0.2, 0.1, light_strength)
-	if(active_program)
-		var/image/I = image(icon = icon, icon_state = active_program.program_icon_state ? active_program.program_icon_state : icon_state_menu)
+	if(os.active_program)
+		var/image/I = image(icon = icon, icon_state = os.active_program.program_icon_state ? os.active_program.program_icon_state : icon_state_unpowered)
 		I.appearance_flags |= RESET_COLOR
 		overlays.Add(I)
-		if(active_program.program_key_state)
-			I = image(icon = icon, icon_state = active_program.program_key_state)
+		if(os.active_program.program_key_state)
+			I = image(icon = icon, icon_state = os.active_program.program_key_state)
 			I.appearance_flags |= RESET_COLOR
 			overlays.Add(I)
-	else
-		overlays.Add(icon_state_menu)
-		var/image/I = image(icon = icon, icon_state = icon_state_menu)
+/*	else
+		overlays.Add(icon_state_unpowered)
+		var/image/I = image(icon = icon, icon_state = icon_state_unpowered)
 		I.appearance_flags |= RESET_COLOR
 		overlays.Add(I)*/
 
