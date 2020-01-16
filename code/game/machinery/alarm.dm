@@ -826,9 +826,13 @@
 //				to_chat(user, "You pop the Air Alarm's maintence panel open.")
 				wiresexposed = !wiresexposed
 
-				to_chat(user, "The wires have been [wiresexposed ? "exposed" : "unexposed"].")
+				//[INF]
+				user.visible_message(
+					"[user] [wiresexposed ? "opened" : "closed"] the maintenance hatch of [src].",
+					SPAN_NOTICE("You [wiresexposed ? "open" : "close"] the maintenance hatch of [src]."))
 				var/interact_sound = wiresexposed ? GLOB.machinery_exposed_sound[1] : GLOB.machinery_exposed_sound[2]
 				playsound(src, pick(interact_sound), 50, 1)
+				//[/INF]
 
 				update_icon()
 				return
@@ -1005,9 +1009,13 @@ FIRE ALARM
 	if(isScrewdriver(W) && buildstage == 2)
 		wiresexposed = !wiresexposed
 
-		to_chat(user, "The wires have been [wiresexposed ? "exposed" : "unexposed"].")
+		//[INF]
+		user.visible_message(
+			"[user] [wiresexposed ? "opened" : "closed"] the maintenance hatch of [src].",
+			SPAN_NOTICE("You [wiresexposed ? "open" : "close"] the maintenance hatch of [src]."))
 		var/interact_sound = wiresexposed ? GLOB.machinery_exposed_sound[1] : GLOB.machinery_exposed_sound[2]
 		playsound(src, pick(interact_sound), 50, 1)
+		//[/INF]
 
 		update_icon()
 		return

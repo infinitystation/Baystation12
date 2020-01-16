@@ -1098,9 +1098,13 @@ About the new airlock wires panel:
 		else
 			src.p_open = 1
 
-		user.visible_message("[user] [p_open ? "exposed" : "unexposed"] the airlock wire panel.", "You [p_open ? "exposed" : "unexposed"] the airlock wire panel.")
+		//[INF]
+		user.visible_message(
+			"[user] [p_open ? "opened" : "closed"] the maintenance hatch of [src].",
+			SPAN_NOTICE("You [p_open ? "open" : "close"] the maintenance hatch of [src]."))
 		var/interact_sound = p_open ? GLOB.machinery_exposed_sound[1] : GLOB.machinery_exposed_sound[2]
 		playsound(src, pick(interact_sound), 50, 1)
+		//[/INF]
 
 		src.update_icon()
 	else if(isWirecutter(C))
