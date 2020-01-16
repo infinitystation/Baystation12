@@ -570,7 +570,9 @@ default behaviour is:
 		return
 	
 	if (!isliving(pulling))
-		step(pulling, get_dir(pulling.loc, old_loc))
+		if(pulling.loc != loc && pulling.loc != old_loc) //inf
+			step(pulling, get_dir(pulling.loc, old_loc))
+			handle_dir_after_pull() //inf
 	else
 		var/mob/living/M = pulling
 		if(M.grabbed_by.len)
@@ -584,10 +586,29 @@ default behaviour is:
 
 			var/atom/movable/t = M.pulling
 			M.stop_pulling()
-			step(M, get_dir(pulling.loc, old_loc))
+			if(pulling.loc != loc && pulling.loc != old_loc) //inf
+				step(M, get_dir(pulling.loc, old_loc))
+				handle_dir_after_pull() //inf
 			if(t)
 				M.start_pulling(t)
 
+//[INF]
+/mob/living/proc/handle_dir_after_pull()
+	if(pulling)
+		if(isobj(pulling))
+			var/obj/O = pulling
+			// hacky check to know if you can pass through the closet
+			if(istype(O, /obj/structure/closet) && !O.density)
+				return set_dir(get_dir(src, pulling))
+			if(O.w_class >= ITEM_SIZE_HUGE || O.density)
+				return set_dir(get_dir(src, pulling))
+		if(isliving(pulling))
+			var/mob/living/L = pulling
+			// if pulling mob is bigger than us we morelike will pull it hard
+			// I made additional check in case if someone want hand walk
+			if(L.mob_size > mob_size || L.lying || a_intent != I_HELP)
+				return set_dir(get_dir(src, pulling))
+//[/INF]
 
 /mob/living/proc/handle_pull_damage(mob/living/puller)
 	var/area/A = get_area(src)
