@@ -24,7 +24,8 @@ SUBSYSTEM_DEF(ticker)
 	var/restart_timeout = 1 MINUTE
 
 	var/scheduled_map_change = 0
-	var/update_server = 0
+	var/update_server //inf
+	var/client/updater
 	var/force_ending = 0            //Overriding this variable will force game end. Can be used for build update or adminbuse.
 
 	var/list/minds = list()         //Minds of everyone in the game.

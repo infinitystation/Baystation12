@@ -167,7 +167,6 @@ var/list/admin_verbs_server = list(
 	/client/proc/cmd_toggle_admin_help,
 	/client/proc/observe_delay,
 	/datum/admins/proc/toggleevent,
-	/client/proc/update_server,
 //[/INF],
 	)
 var/list/admin_verbs_debug = list(
@@ -237,7 +236,8 @@ var/list/admin_verbs_possess = list(
 	)
 
 var/list/admin_verbs_permissions = list(
-	/client/proc/edit_admin_permissions
+	/client/proc/edit_admin_permissions,
+	/client/proc/update_server, //INF
 	)
 var/list/admin_verbs_rejuv = list(
 	/client/proc/respawn_character,
