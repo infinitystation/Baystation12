@@ -59,24 +59,9 @@
 	var/armor = max(0, get_value(key) - armor_pen)
 	if(!armor)
 		return 0
-
-	var/effective_armor = (armor - armor_pen)/100
-	var/fullblock = effective_armor //inf-dev
-	//this makes it so that X armour blocks X% damage, when including the chance of hard block.
-	//I double checked and this formula will also ensure that a higher effective_armor
-	//will always result in higher (non-fullblock) damage absorption too, which is also a nice property
-	//In particular, blocked will increase from 0 to 50 as effective_armor increases from 0 to 0.999 (if it is 1 then we never get here because ofc)
-	//and the average damage absorption = (blocked/100)*(1-fullblock) + 1.0*(fullblock) = effective_armor
-	var/blocked
-#ifndef UNIT_TEST // Removes the probablity of full blocks for the purposes of testing innate armor.
-	if(fullblock >= 1  || prob(fullblock*100))
-#else
-	if(fullblock >= 1)
-#endif
-		blocked = 1
-	else
-		blocked = (effective_armor - (fullblock * fullblock))/(1 - (fullblock * fullblock))
-	return blocked
+	var/efficiency = min(damage / (armor_range_mult * armor), 1)
+	var/coef = damage <= armor ? under_armor_mult : over_armor_mult
+	return max(1 - coef * efficiency, 0)
 
 /datum/extension/armor/proc/get_value(key)
 	if(isnull(armor_values[key]))
