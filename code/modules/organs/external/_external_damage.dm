@@ -57,45 +57,10 @@ obj/item/organ/external/take_general_damage(var/amount, var/silent = FALSE)
 		fracture()
 
 	// High brute damage or sharp objects may damage internal organs
-//{BAY}
-	/*
 	if(LAZYLEN(internal_organs))
 		if(damage_internal_organs(brute, burn, damage_flags))
 			brute /= 2
 			burn /= 2
-	*/
-//{/BAY}
-	if(internal_organs && LAZYLEN(internal_organs))
-		var/damage_amt = brute
-		if(!laser)
-			damage_amt += 10
-		var/cur_damage = brute_dam
-		if(laser || BP_IS_ROBOTIC(src))
-			damage_amt += burn
-			cur_damage += burn_dam
-		var/organ_damage_threshold = laser ? 6 : 16
-		if(sharp)
-			organ_damage_threshold *= 0.5
-		var/organ_damage_prob = 40 //more damage, higher chance to damage
-		if(encased && !(status & ORGAN_BROKEN)) //ribs protect
-			organ_damage_threshold += 4
-			if(laser)
-				organ_damage_prob *= 1.5
-		if ((cur_damage + damage_amt >= max_damage || damage_amt >= organ_damage_threshold) && prob(organ_damage_prob))
-			// Damage an internal organ
-			var/list/victims = list()
-			for(var/obj/item/organ/internal/I in internal_organs)
-				if(I.damage < I.max_damage && prob(I.relative_size))
-					victims += I
-			if(!victims.len)
-				victims += pick(internal_organs)
-			for(var/v in victims)
-				var/obj/item/organ/internal/victim = v
-				brute /= 2
-				if(laser)
-					burn /= 2
-				damage_amt -= max(damage_amt*victim.damage_reduction, 0)
-				victim.take_internal_damage(damage_amt)
 
 	if(status & ORGAN_BROKEN && brute)
 		jostle_bone(brute)
@@ -315,17 +280,22 @@ obj/item/organ/external/take_general_damage(var/amount, var/silent = FALSE)
 	return pain-last_pain
 
 /obj/item/organ/external/proc/stun_act(var/stun_amount, var/agony_amount)
-	if(agony_amount > 5 && owner && can_feel_pain())
+	if(agony_amount && owner && can_feel_pain())
+		agony_amount -= (owner.chem_effects[CE_PAINKILLER]/2)//painkillers does wonders!
+		agony_amount += get_pain()
+		if(agony_amount < 5) return
 
-		if((limb_flags & ORGAN_FLAG_CAN_GRASP) && prob(25))
-			owner.grasp_damage_disarm(src)
+		if(limb_flags & ORGAN_FLAG_CAN_GRASP)
+			if(prob((agony_amount/max_damage)*100))
+				owner.grasp_damage_disarm(src)
+				return 1
 
-		// to_world("Chance to stun: [min(agony_amount * ((body_part == FOOT_LEFT || body_part == FOOT_RIGHT)? 1.1 : 2),70)]")
-		// inf, bay original: body_part == LEG and 2 : 4; Should we lower * modifer to 1.5 and 2 ?
-		if((limb_flags & ORGAN_FLAG_CAN_STAND) && prob(min(agony_amount * ((body_part == FOOT_LEFT || body_part == FOOT_RIGHT)? 2 : 4),70)))
-			owner.stance_damage_prone(src)
+		else if((limb_flags & ORGAN_FLAG_CAN_STAND))
+			if(prob((agony_amount/max_damage)*100))
+				owner.stance_damage_prone(src)
+				return 1
 
-		if(vital && get_pain() > 0.5 * max_damage)
+		else if(agony_amount > 0.5 * max_damage)
 			owner.visible_message("<span class='warning'>[owner] reels in pain!</span>")
 			if(has_genitals() || agony_amount > max_damage)
 				owner.Weaken(4)
