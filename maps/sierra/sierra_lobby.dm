@@ -16,5 +16,6 @@
 		/music_track/torn,
 		/music_track/nebula,
 		/music_track/epicintro2015,
-		/music_track/epicintro2017
+		/music_track/epicintro2017,
+		/music_track/fluvialbeatdeposits
 	)
