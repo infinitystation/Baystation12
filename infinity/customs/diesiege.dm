@@ -6,7 +6,9 @@
 	item_state = "siegemask"
 	item_icons = list(slot_wear_mask_str = CUSTOM_ITEM_MOB)
 
-/obj/item/clothing/mask/gas/siegemask/New()
+	trade_blacklisted = TRUE
+
+/obj/item/clothing/mask/gas/siegemask/Initialize()
 	. = ..()
 	tint = 0
 
@@ -19,3 +21,5 @@
 	item_state = "siegeuni"
 	worn_state = "siegeuni"
 	thermostat = T0C + 36
+
+	trade_blacklisted = TRUE

@@ -11,3 +11,5 @@
 	item_state_slots = list(
 		slot_head_str = "thehero13_helmet"
 	)
+
+	trade_blacklisted = TRUE

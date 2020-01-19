@@ -6,3 +6,5 @@
 	item_state = "kilkauni"
 	worn_state = "kilkauni"
 	item_icons = list(slot_w_uniform_str = CUSTOM_ITEM_MOB)
+
+	trade_blacklisted = TRUE

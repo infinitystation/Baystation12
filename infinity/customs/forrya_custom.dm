@@ -1,8 +1,10 @@
 /obj/item/weapon/clothingbag/forryaniyar
 	name = "custom bag"
 	desc = "Large clothing bag wuth something inside"
-	New()
-		new /obj/item/weapon/storage/backpack/satchel/custom_forrya(src)
+
+/obj/item/weapon/clothingbag/forryaniyar/Initialize()
+	. = ..()
+	new /obj/item/weapon/storage/backpack/satchel/custom_forrya(src)
 
 /obj/item/clothing/shoes/workboots/custom_forrya_winter
 	name = "small winter boots"
@@ -18,6 +20,8 @@
 	max_heat_protection_temperature = T0C + 55
 	species_restricted = list(SPECIES_TAJARA)
 
+	trade_blacklisted = TRUE
+
 /obj/item/weapon/storage/backpack/satchel/custom_forrya
 	name = "winter satchel"
 	desc = "White satchel with winter camouflage."
@@ -31,6 +35,8 @@
 		/obj/item/clothing/mask/gas/alt/custom_forrya)
 	item_icons = list(
 		slot_back_str = CUSTOM_ITEM_MOB)
+
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/suit/storage/hooded/wintercoat/custom_forrya
 	name = "winter cape-tent"
@@ -53,7 +59,7 @@
 	item_flags = ITEM_FLAG_THICKMATERIAL
 	min_cold_protection_temperature = T0C - 175
 	max_heat_protection_temperature = T0C + 55
-	allowed = list (
+	allowed = list(
 		/obj/item/weapon/pen,/obj/item/weapon/paper,
 		/obj/item/weapon/storage/fancy/cigarettes,
 		/obj/item/weapon/storage/box/matches,
@@ -64,7 +70,13 @@
 		/obj/item/weapon/pickaxe/silver/custom_multishowel,
 		/obj/item/weapon/crowbar/custom_multishowel)
 	flags_inv = HIDEJUMPSUIT|HIDETAIL
-	valid_accessory_slots = list(ACCESSORY_SLOT_UTILITY,ACCESSORY_SLOT_HOLSTER,ACCESSORY_SLOT_ARMBAND,ACCESSORY_SLOT_RANK,ACCESSORY_SLOT_DEPT,ACCESSORY_SLOT_DECOR,ACCESSORY_SLOT_MEDAL,ACCESSORY_SLOT_INSIGNIA,ACCESSORY_SLOT_OVER)
+	valid_accessory_slots = list(
+		ACCESSORY_SLOT_UTILITY, ACCESSORY_SLOT_HOLSTER,
+		ACCESSORY_SLOT_ARMBAND, ACCESSORY_SLOT_RANK,
+		ACCESSORY_SLOT_DEPT, ACCESSORY_SLOT_DECOR,
+		ACCESSORY_SLOT_MEDAL, ACCESSORY_SLOT_INSIGNIA, ACCESSORY_SLOT_OVER)
+
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/suit/storage/hooded/wintercoat/custom_forrya_winter/on_update_icon()
 	if(suittoggled)
@@ -104,6 +116,8 @@
 	var/saved_icon = CUSTOM_ITEM_MOB
 	var/saved_icon_state = "sneg"
 	var/saved_overlays
+
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/head/winterhood/custom_forrya_winter/ui_action_click()
 	toggle()
@@ -154,6 +168,8 @@
 	anchored = 1
 	var/can_move = 1
 	var/obj/item/device/chameleon/master = null
+
+	trade_blacklisted = TRUE
 
 /obj/effect/dummy/custom_forrya_cam/proc/activate(var/obj/O, var/mob/M, new_icon, new_iconstate, new_overlays, var/obj/item/device/chameleon/C)
 	name = "Snow"
@@ -210,7 +226,7 @@
 
 /obj/effect/dummy/custom_forrya_cam/Destroy()
 	master.disrupt(0)
-	..()
+	. = ..()
 
 /obj/item/clothing/accessory/cloak/custom_forrya_cam
 	name = "winter camouflage cloak"
@@ -235,6 +251,8 @@
 		slot_tie_str = CUSTOM_ITEM_MOB,
 		slot_wear_suit_str = CUSTOM_ITEM_MOB)
 
+	trade_blacklisted = TRUE
+
 /obj/item/weapon/storage/box/custom_forrya_whitebox
 	name = "white box"
 	icon = CUSTOM_ITEM_OBJ
@@ -257,6 +275,8 @@
 		/obj/item/clothing/accessory/inf_pin/ccapin,
 		/obj/item/music_player/csplayer)
 
+	trade_blacklisted = TRUE
+
 /obj/item/weapon/shovel/custom_multishowel
 	name = "trenching multitool"
 	desc = "Decades of evolution of trench tools have led \
@@ -268,6 +288,8 @@
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "set-showel"
 	attack_verb = list("bashed", "sliced", "stabbed", "pierced", "jeneved")
+
+	trade_blacklisted = TRUE
 
 /obj/item/weapon/shovel/custom_multishowel/attack_self(mob/user)
 	playsound(get_turf(user),'infinity/sound/items/change_drill.ogg',50,1)
@@ -287,6 +309,8 @@
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "set-pickaxe"
 	w_class = ITEM_SIZE_NORMAL
+
+	trade_blacklisted = TRUE
 
 /obj/item/weapon/pickaxe/silver/custom_multishowel/attack_self(mob/user)
 	playsound(get_turf(user),'infinity/sound/items/change_drill.ogg',50,1)
@@ -311,6 +335,8 @@
 	icon_state = "set-crowbar"
 	w_class = ITEM_SIZE_NORMAL
 
+	trade_blacklisted = TRUE
+
 /obj/item/weapon/crowbar/custom_multishowel/attack_self(mob/user)
 	playsound(get_turf(user),'infinity/sound/items/change_drill.ogg',50,1)
 	var/obj/item/weapon/crowbar/custom_multishowel/lomos = new /obj/item/weapon/pickaxe/silver/custom_multishowel
@@ -334,6 +360,8 @@
 	w_class = ITEM_SIZE_NORMAL
 	slots = 0
 
+	trade_blacklisted = TRUE
+
 /obj/item/clothing/accessory/storage/drop_pouches/custom_forrya/Initialize()
 	. = ..()
 	hold.max_storage_space = 4
@@ -349,3 +377,5 @@
 		slot_wear_mask_str = CUSTOM_ITEM_MOB
 		)
 	sprite_sheets = list()
+
+	trade_blacklisted = TRUE

@@ -7,6 +7,8 @@
 	var/input
 	var/output
 
+	trade_blacklisted = TRUE
+
 /obj/item/custkit/attackby(obj/item/I, mob/user, params)
 	if(istype(I, input))
 		qdel(I)

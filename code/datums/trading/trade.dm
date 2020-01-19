@@ -99,6 +99,8 @@
 		var/atom/A = picked
 		if(initial(A.name) in list("object", "item","weapon", "structure", "machinery", "exosuit", "organ", "snack")) //weed out a few of the common bad types. Reason we don't check types specifically is that (hopefully) further bad subtypes don't set their name up and are similar.
 			return
+		if(initial(A.trade_blacklisted) == TRUE) //[INF] Pervent custom coded items be traded by merchants
+			return
 		return picked
 
 /datum/trader/proc/get_response(var/key, var/default)
