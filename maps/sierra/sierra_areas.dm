@@ -1303,6 +1303,10 @@
 	icon_state = "tcomsatstore"
 
 // AI
+/area/maintenance/battle_data_servers
+	name = "Battle Data Servers"
+	req_access = list(access_maint_tunnels)
+
 /area/ai_monitored
 	name = "AI Monitored Area"
 
@@ -1315,7 +1319,7 @@
 	req_access = list(access_ai_upload)
 
 /area/turret_protected/ai
-	name = "First Deck - AI Chamber"
+	name = "AI Chamber"
 	icon_state = "ai_chamber"
 	ambience = list('sound/ambience/ambimalf.ogg')
 
