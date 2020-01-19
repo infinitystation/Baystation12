@@ -8,4 +8,4 @@
 	color = COLOR_NT_RED
 
 /obj/effect/paint_stripe/turquoise
-	color = "#03FFC6"
+	color = "#03ffc6"
