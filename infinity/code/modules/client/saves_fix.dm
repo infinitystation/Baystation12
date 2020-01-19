@@ -1,7 +1,7 @@
 GLOBAL_LIST_EMPTY(prefs_fixed)
 
 /client/verb/fix_preferences()
-	set name = "Fix characters load"
+	set name = "Fix Characters Load"
 	set category = "OOC"
 
 	if(ckey in GLOB.prefs_fixed)

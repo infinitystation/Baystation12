@@ -47,7 +47,7 @@
 	//	_keyboard_overlay.appearance_flags |= RESET_COLOR
 
 		overlays += _screen_overlay
-	//	overlays += os.get_keyboard_overlay()
+	//	overlays += _keyboard_overlay
 
 	if(enabled)
 		set_light(0.2, 0.1, light_strength, l_color = (bsod || os.updating) ? "#0000ff" : light_color)
