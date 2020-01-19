@@ -1,3 +1,9 @@
+/obj/item/weapon/clothingbag/forryaniyar
+	name = "custom bag"
+	desc = "Large clothing bag wuth something inside"
+	New()
+		new /obj/item/weapon/storage/backpack/satchel/custom_forrya(src)
+
 /obj/item/clothing/shoes/workboots/custom_forrya_winter
 	name = "small winter boots"
 	desc = "A pair of steel-toed winter boots designed for use in extremely settings. But their size and shape is unusual."
@@ -58,7 +64,7 @@
 		/obj/item/weapon/pickaxe/silver/custom_multishowel,
 		/obj/item/weapon/crowbar/custom_multishowel)
 	flags_inv = HIDEJUMPSUIT|HIDETAIL
-	valid_accessory_slots = list(ACCESSORY_SLOT_UTILITY,ACCESSORY_SLOT_HOLSTER,ACCESSORY_SLOT_ARMBAND,ACCESSORY_SLOT_RANK,ACCESSORY_SLOT_DEPT,ACCESSORY_SLOT_DECOR,ACCESSORY_SLOT_MEDAL,ACCESSORY_SLOT_INSIGNIA)
+	valid_accessory_slots = list(ACCESSORY_SLOT_UTILITY,ACCESSORY_SLOT_HOLSTER,ACCESSORY_SLOT_ARMBAND,ACCESSORY_SLOT_RANK,ACCESSORY_SLOT_DEPT,ACCESSORY_SLOT_DECOR,ACCESSORY_SLOT_MEDAL,ACCESSORY_SLOT_INSIGNIA,ACCESSORY_SLOT_OVER)
 
 /obj/item/clothing/suit/storage/hooded/wintercoat/custom_forrya_winter/on_update_icon()
 	if(suittoggled)
@@ -248,7 +254,8 @@
 		/obj/item/clothing/suit/storage/hooded/wintercoat/custom_forrya,
 		/obj/item/clothing/shoes/workboots/custom_forrya_winter,
 		/obj/item/clothing/accessory/badge/tajamc,
-		/obj/item/clothing/accessory/inf_pin/ccapin)
+		/obj/item/clothing/accessory/inf_pin/ccapin,
+		/obj/item/music_player/csplayer)
 
 /obj/item/weapon/shovel/custom_multishowel
 	name = "trenching multitool"
