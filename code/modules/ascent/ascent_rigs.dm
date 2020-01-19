@@ -34,7 +34,7 @@
 		)
 	initial_modules = list(
 		/obj/item/rig_module/vision/thermal,
-		/obj/item/rig_module/ai_container,
+//INF		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/electrowarfare_suite,
 		/obj/item/rig_module/chem_dispenser/mantid,
 		/obj/item/rig_module/device/multitool,
@@ -229,7 +229,7 @@
 	mantid_caste = SPECIES_MANTID_GYNE
 	initial_modules = list(
 		/obj/item/rig_module/vision/thermal,
-		/obj/item/rig_module/ai_container,
+//INF		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/electrowarfare_suite,
 		/obj/item/rig_module/chem_dispenser/mantid,
 		/obj/item/rig_module/mounted/energy_blade/mantid,
@@ -259,7 +259,7 @@
 	mantid_caste = SPECIES_MONARCH_QUEEN
 	initial_modules = list(
 		/obj/item/rig_module/vision/thermal,
-		/obj/item/rig_module/ai_container,
+//INF		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/electrowarfare_suite,
 		/obj/item/rig_module/chem_dispenser/mantid,
 		/obj/item/rig_module/mounted/energy_blade/mantid,
