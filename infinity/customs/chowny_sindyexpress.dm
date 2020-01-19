@@ -49,12 +49,11 @@
 	name = "black braslet"
 	icon_state = "chowny_black_bracelet"
 
-/obj/item/weapon/clothingbag/chowny_clothing
-	New()
-		new /obj/item/clothing/shoes/jackboots/chowny(src)
-		new /obj/item/clothing/ears/earmuffs/headphones/chowny(src)
-		new /obj/item/clothing/accessory/wcoat/chowny(src)
-		new /obj/item/clothing/under/shorts/chowny(src)
-		new /obj/item/clothing/accessory/braslet(src)
-		new /obj/item/clothing/accessory/braslet/pink(src)
-		new /obj/item/clothing/accessory/braslet/black(src)
+/obj/item/weapon/clothingbag/chowny_clothing/New()
+	new /obj/item/clothing/shoes/jackboots/chowny(src)
+	new /obj/item/clothing/ears/earmuffs/headphones/chowny(src)
+	new /obj/item/clothing/accessory/wcoat/chowny(src)
+	new /obj/item/clothing/under/shorts/chowny(src)
+	new /obj/item/clothing/accessory/braslet(src)
+	new /obj/item/clothing/accessory/braslet/pink(src)
+	new /obj/item/clothing/accessory/braslet/black(src)
