@@ -73,6 +73,6 @@
 
 /obj/item/weapon/rig/merc/heavy/empty
 	initial_modules = list(
-//INF		/obj/item/rig_module/ai_container,
+		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/electrowarfare_suite,
 		)
