@@ -20,3 +20,9 @@
 		src.Destroy()
 		return
 	..()
+
+/obj/item/weapon/holder/equipped(mob/user)
+	..()
+	for(var/mob/victim in src.contents)
+		if(victim.mob_size >= user.mob_size)
+			user.drop_from_inventory(src)
