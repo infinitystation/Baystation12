@@ -3,6 +3,8 @@
 // These abilities are dependent on hardware, they may not be researched. They are not tiered.
 // Destroy Core - Allows the AI to initiate a 15 second countdown that will destroy it's core. Use again to stop countdown.
 // Toggle APU Generator - Allows the AI to toggle it's integrated APU generator.
+// Boost Research - Allows the AI to boost all research trees at 1 lvl.
+// Toggle Antigravity - Allows the AI to regulate it's wheigt.
 // Destroy Station - Allows the AI to initiate station self destruct. Takes 2 minutes, gives warnings to crew. Use again to stop countdown.
 
 
@@ -93,6 +95,36 @@
 	user.research.advance_all()
 	to_chat(user, "You activate your hardware piece. You have advanced research in all ability trees by one.")
 
+/datum/game_mode/malfunction/verb/toggle_anti_grav()
+	set category = "Hardware"
+	set name = "Toggle Antigravity"
+	set desc = "Uses your special hardware piece to make you lighter."
+	var/mob/living/silicon/ai/user = usr
+
+	if(!ability_prechecks(user, 0, 1))
+		return
+
+	if(!user.hardware || !istype(user.hardware, /datum/malf_hardware/anti_grav))
+		return
+
+	var/datum/malf_hardware/anti_grav/HW = user.hardware
+	var/temp = mob_size
+	mob_size = HW.size_buffer
+	HW.size_buffer = temp
+	to_chat(user, "You toggle your hardware piece. Now your core is lighter... or not.")
+
+/mob/living/silicon/ai/can_fall(var/anchor_bypass = FALSE, var/turf/location_override = loc)
+	if(can_overcome_gravity())
+		return FALSE
+	return ..()
+
+/mob/living/silicon/ai/can_overcome_gravity()
+	if(!user.hardware || !istype(user.hardware, /datum/malf_hardware/anti_grav))
+		return ..()
+	var/datum/malf_hardware/anti_grav/HW = user.hardware
+	if(HW.size_buffer == MOB_MINISCULE)
+		return ..()
+	return TRUE
 
 /datum/game_mode/malfunction/verb/ai_destroy_station()
 	set category = "Hardware"

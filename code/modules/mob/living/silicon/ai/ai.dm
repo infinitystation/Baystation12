@@ -631,6 +631,7 @@ var/list/ai_verbs_default = list(
 				return
 			user.visible_message("<span class='notice'>\The [user] finishes unfastening \the [src]!</span>")
 			anchored = 0
+			fall() //INF Okey. You unwrench me and if there is hole here, i will drop in right now!
 			return
 		else
 			user.visible_message("<span class='notice'>\The [user] starts to bolt \the [src] to the plating...</span>")

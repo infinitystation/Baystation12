@@ -59,3 +59,18 @@
 
 /datum/malf_hardware/instant_research/get_examine_desc()
 	return "It seems to have an unidentified circuit board connected to it's core.[spent ? "It is not powered and seems to be burned out." : "It is emitting a faint pulsating light."]"
+
+/datum/malf_hardware/anti_grav
+	name = "Local Antigravitation Generator"
+	desc = "An powerfull mass manipulation device that can make you weight nothing. Can be used many times."
+	driver = /datum/game_mode/malfunction/verb/toggle_anti_grav
+	var/size_buffer = MOB_MINISCULE
+
+/datum/malf_hardware/anti_grav/get_examine_desc()
+	var/msg = "It seems to have kind of science stuff attached to it's core. "
+	if(size_buffer != MOB_MINISCULE)
+		msg += "It is not powered and looks lifeless."
+	else
+		msg += "It is emitting a faint pulsating light."
+	return msg
+
