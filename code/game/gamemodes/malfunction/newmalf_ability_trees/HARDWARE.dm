@@ -108,8 +108,8 @@
 		return
 
 	var/datum/malf_hardware/anti_grav/HW = user.hardware
-	var/temp = mob_size
-	mob_size = HW.size_buffer
+	var/temp = user.mob_size
+	user.mob_size = HW.size_buffer
 	HW.size_buffer = temp
 	to_chat(user, "You toggle your hardware piece. Now your core is lighter... or not.")
 
@@ -119,9 +119,9 @@
 	return ..()
 
 /mob/living/silicon/ai/can_overcome_gravity()
-	if(!user.hardware || !istype(user.hardware, /datum/malf_hardware/anti_grav))
+	if(!hardware || !istype(hardware, /datum/malf_hardware/anti_grav))
 		return ..()
-	var/datum/malf_hardware/anti_grav/HW = user.hardware
+	var/datum/malf_hardware/anti_grav/HW = hardware
 	if(HW.size_buffer == MOB_MINISCULE)
 		return ..()
 	return TRUE
