@@ -54,10 +54,10 @@
 	var/break_prob = 50
 
 /obj/item/clothing/accessory/amulet/disrupts_psionics()
-	src.visible_message("<span class='rose'>[src] protect his owner but explodes.</span>")
+	src.visible_message("<span class='rose'>The [src] protect his owner but explodes.</span>")
 	playsound(src.loc, 'sound/effects/glass_step.ogg', 100, 1, -4)
 	spawn(0)
-		qdel(src)
+		QDEL_IN(src, 0)
 	return src
 
 /obj/item/clothing/accessory/amulet/medium
@@ -67,10 +67,10 @@
 
 /obj/item/clothing/accessory/amulet/medium/disrupts_psionics()
 	if(prob(20))
-		src.visible_message("<span class='rose'>[src] protect his owner but explodes.</span>")
+		src.visible_message("<span class='rose'>The [src] protect his owner but explodes.</span>")
 		playsound(src.loc, 'sound/effects/glass_step.ogg', 100, 1, -4)
 		spawn(0)
-			qdel(src)
+			QDEL_IN(src, 0)
 	return src
 
 /obj/item/clothing/accessory/amulet/stronk
@@ -79,10 +79,10 @@
 	icon_state = "amulet3"
 
 /obj/item/clothing/accessory/amulet/stronk/disrupts_psionics()
-	src.visible_message("<span class='rose'>[src] radiated faint waves of heat and light, protecting the wearer from psionic influence...</span>")
+	src.visible_message("<span class='rose'>The [src] radiated faint waves of heat and light, protecting the wearer from psionic influence...</span>")
 	if(prob(0.01))
-		src.visible_message("<span class='rose'>[src] protect his owner but explodes.</span>")
+		src.visible_message("<span class='rose'>The [src] protect his owner but explodes.</span>")
 		playsound(src.loc, 'sound/effects/glass_step.ogg', 100, 1, -4)
 		spawn(0)
-			qdel(src)
+			QDEL_IN(src, 0)
 	return src
