@@ -51,6 +51,7 @@
 	icon = CUSTOM_ITEM_OBJ
 	w_class = ITEM_SIZE_SMALL
 	slot_flags = SLOT_MASK | SLOT_TIE
+	var/break_prob = 50
 
 /obj/item/clothing/accessory/amulet/disrupts_psionics()
 	src.visible_message("<span class='rose'>[src] protect his owner but explodes.</span>")
