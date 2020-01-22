@@ -56,7 +56,7 @@
 /obj/item/clothing/accessory/amulet/disrupts_psionics()
 	visible_message("<span class='rose'>The [src] protect his owner but explodes.</span>")
 	playsound(src.loc, 'sound/effects/glass_step.ogg', 100, 1, -4)
-		QDEL_IN(src, 0)
+	QDEL_IN(src, 0)
 	return src
 
 /obj/item/clothing/accessory/amulet/medium
@@ -68,7 +68,7 @@
 	if(prob(20))
 		visible_message("<span class='rose'>The [src] protect his owner but explodes.</span>")
 		playsound(src.loc, 'sound/effects/glass_step.ogg', 100, 1, -4)
-			QDEL_IN(src, 0)
+		QDEL_IN(src, 0)
 	return src
 
 /obj/item/clothing/accessory/amulet/stronk
@@ -81,5 +81,5 @@
 	if(prob(0.01))
 		visible_message("<span class='rose'>The [src] protect his owner but explodes.</span>")
 		playsound(src.loc, 'sound/effects/glass_step.ogg', 100, 1, -4)
-			QDEL_IN(src, 0)
+		QDEL_IN(src, 0)
 	return src
