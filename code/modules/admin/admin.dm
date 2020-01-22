@@ -1585,11 +1585,15 @@ datum/admins/var/obj/item/weapon/paper/admin/faxreply // var to hold fax replies
 			for(var/client/C in GLOB.admins)
 				if((R_INVESTIGATE) & C.holder.rights)
 					to_chat(C, "<span class='log_message'><span class='prefix'>AFAX LOG:</span> [key_name_admin(owner)] replied to a fax message from [key_name_admin(P.sender)] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)</span>")
+				//INF
+					GLOB.fax_cache += "*[time_stamp()]*: <span class='log_message'><span class='prefix'>AFAX LOG:</span> [key_name_admin(owner)] replied to a fax message from [key_name_admin(P.sender)] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)</span><br>" //INF
 		else
 			log_fax("[key_name(owner)] has sent an admin fax message to [destination.department]")
 			for(var/client/C in GLOB.admins)
 				if((R_INVESTIGATE) & C.holder.rights)
 					to_chat(C, "<span class='log_message'><span class='prefix'>AFAX LOG:</span> [key_name_admin(owner)] has sent a fax message to [destination.department] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)</span>")
+				//INF
+					GLOB.fax_cache += "*[time_stamp()]*: <span class='log_message'><span class='prefix'>AFAX LOG:</span> [key_name_admin(owner)] has sent a fax message to [destination.department] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)</span><br>"
 	else
 		to_chat(src.owner, "<span class='warning'>Message reply failed.</span>")
 
