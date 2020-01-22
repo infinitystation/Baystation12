@@ -43,3 +43,40 @@
 		body_parts_covered |= FACE
 		icon_state = rised_icon_state
 		to_chat(user, SPAN_NOTICE("You rised your scarf. Let's rrrobe someone!"))
+
+/obj/item/clothing/accessory/amulet
+	name = "talisman"
+	desc = "A simple metal amulet with runes, according to the primitive beliefs of Tajara, able to protect them from evil spirits."
+	icon_state = "amulet"
+	icon = CUSTOM_ITEM_OBJ
+	w_class = ITEM_SIZE_SMALL
+	slot_flags = SLOT_MASK | SLOT_TIE
+
+/obj/item/clothing/accessory/amulet/disrupts_psionics()
+	src.visible_message("<span class='rose'>[src] protect his owner but explodes.</span>")
+	playsound(src.loc, 'sound/effects/glass_step.ogg', 100, 1, -4)
+	spawn(0)
+		qdel(src)
+	return src
+
+/obj/item/clothing/accessory/amulet/medium
+	name = "amulet"
+	desc = "An expensive-looking amulet, interspersed with unknown crystals and runes, according to the primitive beliefs of Tajara, able to protect them from evil spirits."
+	icon_state = "amulet2"
+
+/obj/item/clothing/accessory/amulet/medium/disrupts_psionics()
+	if(prob(20))
+		src.visible_message("<span class='rose'>[src] protect his owner but explodes.</span>")
+		playsound(src.loc, 'sound/effects/glass_step.ogg', 100, 1, -4)
+		spawn(0)
+			qdel(src)
+	return src
+
+/obj/item/clothing/accessory/amulet/stronk
+	name = "averter"
+	desc = "Amulet of Tajara, created from the primordial stone according to their belief, able to protect according to their primitive religion from evil spirits and their servants. The runes on the amulet are etched with acid."
+	icon_state = "amulet3"
+
+/obj/item/clothing/accessory/amulet/stronk/disrupts_psionics()
+	src.visible_message("<span class='rose'>[src] radiated faint waves of heat and light, protecting the wearer from psionic influence...</span>")
+	return src
