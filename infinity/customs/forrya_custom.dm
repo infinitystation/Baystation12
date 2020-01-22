@@ -32,7 +32,8 @@
 		/obj/item/weapon/storage/box/custom_forrya_whitebox,
 		/obj/item/weapon/crowbar/custom_multishowel,
 		/obj/item/clothing/accessory/storage/drop_pouches/custom_forrya,
-		/obj/item/clothing/mask/gas/alt/custom_forrya)
+		/obj/item/clothing/mask/gas/alt/custom_forrya,
+		/obj/item/clothing/glasses/meson/prescription/tajvisor/hybrid/custom)
 	item_icons = list(
 		slot_back_str = CUSTOM_ITEM_MOB)
 
@@ -379,3 +380,13 @@
 	sprite_sheets = list()
 
 	trade_blacklisted = TRUE
+
+/obj/item/clothing/glasses/meson/prescription/tajvisor/hybrid/custom
+	name = "post-industrial visor"
+	desc = "A modern Ahdominian made visor that allows the user to see while obscuring their eyes.  \
+	It looks like a standard model, but has an unusual lens coating that seems to slightly absorb  \
+	light. This one has installed as the mesons, and the add-on advanced shielding module."
+	flash_protection = FLASH_PROTECTION_MODERATE
+
+/obj/item/clothing/glasses/meson/prescription/tajvisor/hybrid/custom/disrupts_psionics()
+	return src
