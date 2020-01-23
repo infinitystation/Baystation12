@@ -23,7 +23,7 @@ var/list/event_last_fired = list()
 	// Code/WorkInProgress/Cael_Aislinn/Economy/Economy_Events.dm
 	// Code/WorkInProgress/Cael_Aislinn/Economy/Economy_Events_Mundane.dm
 
-	possibleEvents[/datum/event/psi_add] = active_with_role["Security"] * 50
+	possibleEvents[/datum/event/psi/psi_wave] = active_with_role["Security"] * 50
 
 	possibleEvents[/datum/event/economic_event] = 300
 	possibleEvents[/datum/event/trivial_news] = 400
