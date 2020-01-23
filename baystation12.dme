@@ -3424,7 +3424,7 @@
 #include "infinity\code\modules\emotes\definitions\audible.dm"
 #include "infinity\code\modules\emotes\definitions\visible.dm"
 #include "infinity\code\modules\events\alien.dm"
-#include "infinity\code\modules\events\psi.dm"
+#include "infinity\code\modules\events\psi_wave.dm"
 #include "infinity\code\modules\food\recipes_microwave.dm"
 #include "infinity\code\modules\hydroponics\grown_inedible.dm"
 #include "infinity\code\modules\hydroponics\seed_datums.dm"
