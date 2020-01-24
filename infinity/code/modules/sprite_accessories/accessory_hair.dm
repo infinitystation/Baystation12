@@ -37,11 +37,6 @@
 	icon_state = "hair_harley"
 	gender = FEMALE
 
-/datum/sprite_accessory/hair/infinity/hair_dave
-	name = "Style Brother"
-	icon_state = "hair_dave"
-	gender = MALE
-
 /datum/sprite_accessory/hair/infinity/undercut
 	name = "Undercut Female"
 	icon_state = "hair_undercut"
@@ -164,6 +159,7 @@
 /datum/sprite_accessory/hair/infinity/slightlymessy
 	name = "Slightly Messy"
 	icon_state = "hair_slightlymessy"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/infinity/geisha
 	name = "Geisha"
