@@ -1,6 +1,7 @@
 /datum/game_mode/siege
 	name = "Mercenary & Revolution"
 	config_tag = "siege"
+	votable = FALSE //INF
 	round_description = "Getting stuck between a rock and a hard place, maybe the nice visitors can help with your internal security problem?"
 	extended_round_description = "GENERAL QUARTERS! OH GOD WE GAVE THE REVOLUTIONARIES GUNS!"
 	required_players = 20
