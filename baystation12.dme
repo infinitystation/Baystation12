@@ -3385,6 +3385,7 @@
 #include "infinity\code\modules\clothing\gloves\gloves.dm"
 #include "infinity\code\modules\clothing\head\berets.dm"
 #include "infinity\code\modules\clothing\head\head.dm"
+#include "infinity\code\modules\clothing\head\helmet.dm"
 #include "infinity\code\modules\clothing\masks\masks.dm"
 #include "infinity\code\modules\clothing\masks\masks_xeno.dm"
 #include "infinity\code\modules\clothing\shoes\shoes.dm"
