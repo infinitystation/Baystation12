@@ -1133,7 +1133,7 @@
 
 /area/admin_prison
 	name = "Admin Prison"
-	dynamic_lighting = 0
+	dynamic_lighting = 1
 	requires_power = 0
 	icon_state = "blue-red-d"
 

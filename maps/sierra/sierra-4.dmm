@@ -3395,19 +3395,6 @@
 	dir = 1
 	},
 /area/centcom/specops)
-"aoW" = (
-/obj/structure/bed/chair/padded/light{
-	icon_state = "chair_preview";
-	dir = 8
-	},
-/obj/structure/bed/chair/padded/light{
-	icon_state = "chair_preview";
-	dir = 8
-	},
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/admin_prison)
 "aoX" = (
 /turf/unsimulated/floor{
 	name = "plating";
@@ -7253,34 +7240,11 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/shuttle/specops/centcom)
-"aCw" = (
-/obj/effect/landmark{
-	name = "prisonwarp"
-	},
-/turf/unsimulated/floor{
-	icon_state = "lino";
-	name = "linoleum"
-	},
-/area/admin_prison)
-"aCx" = (
-/obj/item/weapon/bedsheet/mime,
-/obj/structure/bed/padded,
-/turf/unsimulated/floor{
-	icon_state = "lino";
-	name = "linoleum"
-	},
-/area/admin_prison)
 "aCF" = (
 /obj/structure/closet/cabinet{
 	anchored = 1;
 	name = "anchored cabinet"
 	},
-/turf/unsimulated/floor{
-	icon_state = "lino";
-	name = "linoleum"
-	},
-/area/admin_prison)
-"aCG" = (
 /turf/unsimulated/floor{
 	icon_state = "lino";
 	name = "linoleum"
@@ -7300,26 +7264,8 @@
 	icon_state = "dark"
 	},
 /area/admin_prison)
-"aCL" = (
-/obj/structure/bed/chair/padded/light{
-	icon_state = "chair_preview";
-	dir = 4
-	},
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/admin_prison)
 "aCM" = (
 /obj/structure/table/standard,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/admin_prison)
-"aDb" = (
-/obj/structure/bed/chair/padded/light{
-	icon_state = "chair_preview";
-	dir = 8
-	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -14673,6 +14619,14 @@
 	icon_state = "dark"
 	},
 /area/tdome/tdome2)
+"bWo" = (
+/obj/effect/fluid_mapped,
+/obj/machinery/light/small{
+	dir = 8;
+	icon_state = "bulb_map"
+	},
+/turf/simulated/floor/aquarium,
+/area/admin_prison)
 "czc" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -14686,6 +14640,18 @@
 	icon_state = "dark"
 	},
 /area/tdome/tdome1)
+"dzt" = (
+/obj/effect/landmark{
+	name = "prisonwarp"
+	},
+/obj/machinery/light/small,
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/turf/flooring/carpet.dmi';
+	icon_state = "brown";
+	name = "carpet"
+	},
+/area/admin_prison)
 "fri" = (
 /obj/effect/landmark{
 	name = "tdome1"
@@ -14724,6 +14690,9 @@
 	icon_state = "dark"
 	},
 /area/tdome)
+"hdv" = (
+/turf/unsimulated/wall,
+/area/admin_prison)
 "hTb" = (
 /obj/machinery/camera/network/thunder{
 	c_tag = "Thunderdome Arena Right";
@@ -14745,6 +14714,10 @@
 "iPb" = (
 /turf/simulated/floor/wood/ebony,
 /area/merchant_station)
+"jdL" = (
+/obj/effect/fluid_mapped,
+/turf/simulated/floor/aquarium,
+/area/admin_prison)
 "jQI" = (
 /obj/structure/barrier{
 	icon_state = "barrier_rised";
@@ -14792,6 +14765,12 @@
 	icon_state = "dark"
 	},
 /area/tdome/tdome2)
+"mXW" = (
+/obj/item/drain,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/admin_prison)
 "nmH" = (
 /obj/effect/landmark{
 	name = "tdome1"
@@ -14805,6 +14784,12 @@
 	icon_state = "dark"
 	},
 /area/tdome/tdome1)
+"omq" = (
+/obj/structure/flora/seaweed,
+/obj/structure/flora/seaweed/glow,
+/obj/effect/fluid_mapped,
+/turf/simulated/floor/aquarium,
+/area/admin_prison)
 "owc" = (
 /obj/structure/bed/sofa/black/left,
 /obj/effect/landmark{
@@ -14815,6 +14800,20 @@
 	icon_state = "wood"
 	},
 /area/tdome/tdomeadmin)
+"owh" = (
+/obj/machinery/light/small{
+	dir = 1;
+	icon_state = "bulb_map"
+	},
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/admin_prison)
+"psi" = (
+/obj/structure/flora/seaweed/mid,
+/obj/effect/fluid_mapped,
+/turf/simulated/floor/aquarium,
+/area/admin_prison)
 "pzo" = (
 /obj/structure/bed/sofa/black/left{
 	dir = 1
@@ -14854,6 +14853,32 @@
 	icon_state = "wood"
 	},
 /area/tdome/tdomeadmin)
+"qEz" = (
+/obj/effect/landmark{
+	name = "prisonwarp"
+	},
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/turf/flooring/carpet.dmi';
+	icon_state = "brown";
+	name = "carpet"
+	},
+/area/admin_prison)
+"rAu" = (
+/obj/effect/landmark{
+	name = "prisonwarp"
+	},
+/obj/machinery/light/small{
+	dir = 1;
+	icon_state = "bulb_map"
+	},
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/turf/flooring/carpet.dmi';
+	icon_state = "brown";
+	name = "carpet"
+	},
+/area/admin_prison)
 "skV" = (
 /obj/structure/bed/sofa/black{
 	dir = 1
@@ -14957,6 +14982,17 @@
 	icon_state = "dark"
 	},
 /area/tdome/tdome2)
+"wXc" = (
+/obj/machinery/light/small,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/admin_prison)
+"xai" = (
+/obj/structure/flora/seaweed,
+/obj/effect/fluid_mapped,
+/turf/simulated/floor/aquarium,
+/area/admin_prison)
 "yco" = (
 /obj/effect/floor_decal/corner/blue{
 	icon_state = "corner_white";
@@ -22417,22 +22453,22 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
+asI
+asI
+asI
+asI
+asI
+asI
+asI
+asI
+asI
+asI
+asI
+asI
+asI
+asI
+asI
+asI
 asI
 aWW
 aXC
@@ -22619,22 +22655,22 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
+asI
+xai
+jdL
+jdL
+jdL
+psi
+jdL
+jdL
+jdL
+jdL
+xai
+jdL
+jdL
+jdL
+jdL
+xai
 asI
 aWW
 aXC
@@ -22821,22 +22857,22 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
+asI
+jdL
+jdL
+psi
+jdL
+jdL
+jdL
+jdL
+xai
+jdL
+jdL
+psi
+jdL
+jdL
+xai
+jdL
 asI
 aWW
 aXC
@@ -23023,22 +23059,22 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
+asI
+jdL
+jdL
+jdL
+jdL
+xai
+jdL
+jdL
+jdL
+jdL
+jdL
+jdL
+jdL
+jdL
+jdL
+jdL
 asI
 aWW
 aXC
@@ -23225,22 +23261,22 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
+asI
+jdL
+jdL
+jdL
+jdL
+jdL
+jdL
+jdL
+jdL
+jdL
+jdL
+jdL
+jdL
+jdL
+jdL
+jdL
 asI
 aWW
 aXC
@@ -23427,22 +23463,22 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
+asI
+jdL
+jdL
+jdL
+psi
+jdL
+jdL
+jdL
+jdL
+jdL
+jdL
+jdL
+xai
+jdL
+jdL
+psi
 asI
 aWW
 aXC
@@ -23629,22 +23665,22 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
+asI
+jdL
+xai
+jdL
+jdL
+jdL
+jdL
+aDD
+omq
+aDD
+jdL
+jdL
+jdL
+psi
+jdL
+jdL
 asI
 aWW
 aXC
@@ -23831,22 +23867,22 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
+asI
+jdL
+jdL
+jdL
+jdL
+xai
+hdv
+aDq
+aDq
+aDq
+hdv
+xai
+jdL
+jdL
+jdL
+jdL
 asI
 aWW
 aXC
@@ -24033,22 +24069,22 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
+asI
+jdL
+jdL
+hdv
+aDq
+aDq
+hdv
+aCK
+aCM
+aDc
+hdv
+aDq
+aDq
+hdv
+jdL
+jdL
 asI
 aWP
 aWP
@@ -24235,22 +24271,22 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
+asI
+psi
+jdL
+aDq
+aCF
+aCF
+hdv
+aCK
+aCM
+aDc
+hdv
+aCF
+aCF
+aDq
+jdL
+psi
 asI
 aWX
 aWX
@@ -24437,22 +24473,22 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
+asI
+jdL
+jdL
+aDq
+aCJ
+aCJ
+aCJ
+aDD
+aDD
+aDD
+aCJ
+aCJ
+aCJ
+aDq
+jdL
+jdL
 asI
 aWY
 aXD
@@ -24639,22 +24675,22 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
+asI
+jdL
+jdL
 aDq
+qEz
+dzt
+hdv
+owh
+mXW
+wXc
+hdv
+rAu
+qEz
 aDq
-aDq
-aDq
-aDq
-aab
-aab
-aab
-aab
+jdL
+jdL
 asI
 aWZ
 aXE
@@ -24841,22 +24877,22 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
+asI
+jdL
+jdL
 aDq
+aDr
+aDr
+hdv
+aDD
+aDD
+aDD
+hdv
+aDr
+aDr
 aDq
-aDq
-aDq
-aDq
-aCM
-aCM
-aCM
-aDq
-aDq
-aDq
-aDq
-aDq
+jdL
+jdL
 asI
 aWZ
 aXE
@@ -25043,22 +25079,22 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
-aDq
-aCF
-aCG
-aDq
+asI
+jdL
+jdL
+hdv
+hdv
+hdv
+hdv
 aDD
-aDb
-aDb
-aoW
 aDD
-aDq
-aCG
-aDr
-aDq
+aDD
+hdv
+hdv
+hdv
+hdv
+jdL
+jdL
 asI
 aWZ
 aXE
@@ -25245,22 +25281,22 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
+asI
+jdL
+jdL
 aDq
-aCw
-aCJ
-aCG
+aCF
+aCF
+hdv
 aDD
 aDD
 aDD
-aDD
-aDD
-aCG
-aCJ
-aCw
+hdv
+aCF
+aCF
 aDq
+xai
+jdL
 asI
 aWZ
 aXE
@@ -25447,22 +25483,22 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
+asI
+jdL
+xai
 aDq
-aCx
-aCG
-aDq
-aCL
+aCJ
+aCJ
+aCJ
 aDD
 aDD
 aDD
-aCL
+aCJ
+aCJ
+aCJ
 aDq
-aCG
-aCF
-aDq
+jdL
+jdL
 asI
 aWZ
 aXE
@@ -25649,22 +25685,22 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
+asI
+jdL
+jdL
 aDq
+qEz
+dzt
+hdv
+owh
+mXW
+wXc
+hdv
+rAu
+qEz
 aDq
-aDq
-aDq
-aCM
-aDc
-aDD
-aCK
-aCM
-aDq
-aDq
-aDq
-aDq
+jdL
+jdL
 asI
 aWZ
 aXE
@@ -25851,22 +25887,22 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
+asI
+xai
+jdL
 aDq
-aCF
-aCG
-aDq
-aDb
+aDr
+aDr
+hdv
 aDD
 aDD
 aDD
-aDb
+hdv
+aDr
+aDr
 aDq
-aCG
-aCx
-aDq
+psi
+xai
 asI
 aWZ
 aXE
@@ -26053,22 +26089,22 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
+asI
+jdL
+jdL
+hdv
 aDq
-aCw
-aCJ
-aCG
-aDD
-aDD
-aDD
-aDD
-aDD
-aCG
-aCJ
-aCw
 aDq
+hdv
+aDq
+aDq
+aDq
+hdv
+aDq
+aDq
+hdv
+jdL
+jdL
 asI
 aWZ
 aXE
@@ -26255,22 +26291,22 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
-aDq
-aCx
-aCG
-aDq
+asI
+jdL
+jdL
+jdL
+xai
+jdL
+hdv
 aDD
+jdL
 aDD
-aDD
-aDD
-aDD
-aDq
-aCG
-aCF
-aDq
+hdv
+jdL
+jdL
+jdL
+jdL
+jdL
 asI
 aWP
 aWP
@@ -26457,22 +26493,22 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
-aDq
-aDq
-aDq
-aDq
-aDD
-aDD
-aDD
-aDD
-aDD
-aDq
-aDq
-aDq
-aDq
+asI
+jdL
+jdL
+jdL
+jdL
+psi
+bWo
+jdL
+jdL
+jdL
+bWo
+jdL
+xai
+jdL
+jdL
+xai
 asI
 aXa
 aXa
@@ -26659,22 +26695,22 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
-aDq
-aCF
-aCG
-aDq
-aDD
-aDD
-aDD
-aDD
-aDD
-aDq
-aCG
-aCx
-aDq
+asI
+psi
+jdL
+jdL
+jdL
+jdL
+jdL
+jdL
+jdL
+xai
+jdL
+jdL
+jdL
+jdL
+jdL
+jdL
 asI
 aXa
 aXF
@@ -26861,22 +26897,22 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
-aDq
-aCw
-aCJ
-aCG
-aDD
-aDD
-aDD
-aDD
-aDD
-aCG
-aCJ
-aCw
-aDq
+asI
+jdL
+jdL
+xai
+psi
+jdL
+jdL
+xai
+jdL
+jdL
+jdL
+jdL
+psi
+jdL
+xai
+jdL
 asI
 aXa
 aXa
@@ -27063,22 +27099,22 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
-aDq
-aCx
-aCG
-aDq
-aDD
-aDD
-aDD
-aDD
-aDD
-aDq
-aCG
-aCF
-aDq
+asI
+jdL
+jdL
+jdL
+jdL
+jdL
+jdL
+jdL
+jdL
+jdL
+xai
+jdL
+jdL
+jdL
+jdL
+jdL
 asI
 aXa
 aXa
@@ -27265,22 +27301,22 @@ aab
 aab
 aab
 aab
-aab
-aab
-aab
-aDq
-aDq
-aDq
-aDq
-aDq
-aDq
-aDq
-aDq
-aDq
-aDq
-aDq
-aDq
-aDq
+asI
+xai
+jdL
+jdL
+jdL
+xai
+jdL
+jdL
+jdL
+psi
+jdL
+jdL
+jdL
+xai
+jdL
+psi
 asI
 aXa
 aXa
