@@ -53,10 +53,8 @@
 	. = ..()
 	set_frequency(frequency)
 
-
 /obj/machinery/keycard_lock/New()
 	..()
-
 	if(radio_controller)
 		set_frequency(frequency)
 
