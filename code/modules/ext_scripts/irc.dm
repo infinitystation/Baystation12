@@ -14,7 +14,8 @@
 		send2irc(config.main_irc, msg)
 	return
 
-/proc/send2adminirc(var/msg)
+/proc/send2adminirc(var/msg, var/log = 0)//inf //was: /proc/send2adminirc(var/msg)
+	if(log) msg = "\[ADMIN_LOG] `[msg]`"//inf
 	if(config.admin_irc)
 		send2irc(config.admin_irc, sanitize_irc(msg))
 	return

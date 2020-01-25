@@ -6,7 +6,7 @@
 
 	if(end_game_state == END_GAME_AWAITING_UPDATE)
 		send2mainirc("Производится обновление сервера.")
-		send2admindiscord("Происходит обновление. Инициировано [updater.ckey].")
+		updater && istype(updater) ? send2admindiscord("Происходит обновление. Инициировано [updater.ckey].") : null
 		game_log("SERVER", "Запущено обновление сервера. ")
 		shell("update.bat")
 

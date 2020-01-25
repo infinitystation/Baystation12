@@ -17,10 +17,10 @@
 
 				to_world(SPAN_NOTICE("<font size='3'><b>\n=== Принудительное обновление сервера было запущено игроком [src]! ===\n=== Сервер будет обновлен и доступен через несколько минут. ===\n</b></font>"))
 				game_log("SERVER", "[key_name(src)] запустил принудительное обновление сервера. ")
-				sleep(5 SECONDS)
-				send2mainirc("Производится обновление сервера.")
-				send2admindiscord("Происходит обновление. Инициировано [ckey].")
-				shell("update.bat")
+				spawn(5 SECONDS)
+					send2mainirc("Производится обновление сервера.")
+					send2admindiscord("Происходит обновление. Инициировано [ckey].")
+					shell("update.bat")
 	else
 		if(alert("Отменить обновление сервера в конце раунда?", "Cancel Update", "Да", "Нет") == "Да")
 			to_world(SPAN_NOTICE("<font size='3'><b>\n=== Обновление сервера в конце раунда было отменено игроком [src]. ===\n</b></font>"))
