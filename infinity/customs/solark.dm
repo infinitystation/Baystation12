@@ -38,9 +38,7 @@
 
 /obj/item/clothing/suit/storage/hooded/solar_cloak/on_update_icon()
 	..()
-	var/mob/living/carbon/human/H = src.loc
-	if(H)
-		H.update_icon()
+	update_clothing_icon()
 
 /obj/item/clothing/suit/storage/hooded/solar_cloak/emp_act()
 	color = null
