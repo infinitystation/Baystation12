@@ -60,7 +60,10 @@
 	if(SSticker && (GAME_STATE > RUNLEVEL_SETUP) && GLOB.prisonwarp)
 		output += "<p><a href='byond://?src=\ref[src];spawn_prisoner=1'>Join as Prisoner</A></p>"
 
-	src << browse(output,"window=playersetup;size=210x280;can_close=0")
+	panel = new(src, "Welcome","Welcome to [GLOB.using_map.full_name]", 245, 280, src)
+	panel.set_window_options("can_close=0")
+	panel.set_content(JOINTEXT(output))
+	panel.open()
 	return
 
 /mob/new_player/proc/Spawn_Prisoner()
