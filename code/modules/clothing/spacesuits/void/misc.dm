@@ -39,13 +39,13 @@
 	tint = 1 //INF, WAS NOTHING (0) //skrellian tek
 
 /obj/item/clothing/head/helmet/space/void/skrell/white
-	icon = 'infinity/icons/obj/clothing/obj_head.dmi'//inf
-	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')//inf
+	icon = 'infinity/icons/obj/clothing/species/skrell/obj_head_skrell.dmi'//inf
+	item_icons = list(slot_head_str = 'infinity/icons/mob/species/skrell/onmob_head_skrell.dmi')//inf
 	icon_state = "skrell_helmet_white"
 
 /obj/item/clothing/head/helmet/space/void/skrell/black
-	icon = 'infinity/icons/obj/clothing/obj_head.dmi'//inf
-	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')//inf
+	icon = 'infinity/icons/obj/clothing/species/skrell/obj_head_skrell.dmi'//inf
+	item_icons = list(slot_head_str = 'infinity/icons/mob/species/skrell/onmob_head_skrell.dmi')//inf
 	icon_state = "skrell_helmet_black"
 
 /obj/item/clothing/suit/space/void/skrell
@@ -66,11 +66,21 @@
 	species_restricted = list(SPECIES_SKRELL,SPECIES_HUMAN)
 
 /obj/item/clothing/suit/space/void/skrell/white
-	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'//inf
-	item_icons = list(slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi')//inf
+	icon = 'infinity/icons/obj/clothing/species/skrell/obj_suit_skrell.dmi'//inf
+	//inf
+	item_icons = list(
+		slot_suit_str = 'infinity/icons/mob/species/skrell/onmob_suit_skrell.dmi',
+		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_spacesuits.dmi',
+		slot_r_hand_str = 'icons/mob/onmob/items/righthand_spacesuits.dmi'
+		)
 	icon_state = "skrell_suit_white"
 
 /obj/item/clothing/suit/space/void/skrell/black
-	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'//inf
-	item_icons = list(slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi')//inf
+	icon = 'infinity/icons/obj/clothing/species/skrell/obj_suit_skrell.dmi'//inf
+	//inf
+	item_icons = list(
+		slot_suit_str = 'infinity/icons/mob/species/skrell/onmob_suit_skrell.dmi',
+		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_spacesuits.dmi',
+		slot_r_hand_str = 'icons/mob/onmob/items/righthand_spacesuits.dmi'
+		)
 	icon_state = "skrell_suit_black"
