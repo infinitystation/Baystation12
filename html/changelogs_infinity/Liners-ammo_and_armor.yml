@@ -1,0 +1,50 @@
+################################
+# Example Changelog File
+#
+# Note: This file, and files beginning with ".", and files that don't end in ".yml" will not be read. If you change this file, you will look really dumb.
+#
+# Your changelog will be merged with a master changelog. (New stuff added only, and only on the date entry for the day it was merged.)
+# When it is, any changes listed below will disappear.
+#
+# Valid Prefixes: 
+#   bugfix
+#   balance
+#   wip (For works in progress)
+#   tweak
+#   soundadd
+#   sounddel
+#   rscadd (general adding of nice things)
+#   rscdel (general deleting of nice things)
+#   imageadd
+#   imagedel
+#   maptweak
+#   spellcheck (typo fixes)
+#   experiment
+#   admin
+#################################
+
+# Your name.  
+author: Liners
+
+# Optional: Remove this file after generating master changelog.  Useful for PR changelogs that won't get used again.
+delete-after: True
+
+# Any changes you've made.  See valid prefix list above.
+# INDENT WITH TWO SPACES.  NOT TABS.  SPACES.
+# SCREW THIS UP AND IT WON'T WORK.
+# Also, all entries are changed into a single [] after a master changelog generation. Just remove the brackets when you add new entries.
+# Please surround your changes in  double quotes ("), as certain characters otherwise screws up compiling. The quotes will not show up in the changelog.
+changes: 
+  - bugfix: "Теперь урон в тело по персонажам без брони идёт такой какой прописан в проджектайлах и предметах, а не в 2 раза меньше. Броня стала актуальнее."
+  - balance: "Изменена защита стандартной каски СБ от пуль: 65->50. Теперь каска СБ эквивалентна бронежилету СБ по защите."
+  - balance: "Изменена защита средней бронеплиты (СБшной) от оружия ближнего боя: 15->30. Теперь она адекватно защищает от ружия ближнего боя."
+  - balance: "Изменена защита тяжёлой бронеплиты (плита нюки) от оружия ближнего боя: 30->50. Большая часть лёгкого оружия ближнего боя наносит 0-2 урона."
+  - balance: "Изменён урон пулевого патрона для дробовика: 65->59."
+  - balance: "Изменено бронепробитие пулевого патрона для дробовика: 10->0."
+  - balance: "Изменён урон патрона .50АЕ (Магнус, большой револьвер): 50->53."
+  - balance: "Изменено бронепробитие патрона .50АЕ: 15->0."
+  - bugfix: "Урон патрона 5.7х28mm переделан под новый механ брони: 18->45."
+  - bugfix: "Бронепробитие патрона 5.7х28mm переделано под новый механ брони: 25->7.5."
+  - bugfix: "Это же касается остальных патрона 4.6х30mm который в игре не используется."
+  - bugfix: "Все рукодельные бронежилеты получили обновление характиристик под новый механ. Теперь лёгкий эквивалентен лёгкому, средний среднему, а тяжёлый тактическому. Так же все рукодельные броники теперь замедляют на сколько-нибудь."
+  - balance: "Итог: Тактическая плита теперь защищает от любого пистолетного калибра и всех патронов дробовика. СБшный броник ложится от патронов дробовика, Магнуса, НТ41 и тяжёлого револьвера."
