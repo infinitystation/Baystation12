@@ -371,7 +371,7 @@ nanoui is used to open and update nano browser uis
 		template_data_json = strip_improper(json_encode(templates))
 
 	var/list/send_data = get_send_data(initial_data)
-	var/initial_data_json = replacetext(replacetext(extA2U(json_encode(send_data)), "&#34;", "&amp;#34;"), "'", "&#39;")
+	var/initial_data_json = replacetext(replacetext(extA2U_alt(json_encode(send_data)), "&#34;", "&amp;#34;"), "'", "&#39;")
 	initial_data_json = strip_improper(initial_data_json);
 
 	var/url_parameters_json = json_encode(list("src" = "\ref[src]"))
@@ -496,7 +496,7 @@ nanoui is used to open and update nano browser uis
 
 //	to_chat(user, list2json_usecache(send_data))// used for debugging //NANO DEBUG HOOK
 
-	user << output(list2params(list(extA2U(json_encode(send_data)))),"[window_id].browser:receiveUpdateData")
+	user << output(list2params(list(extA2U_alt(json_encode(send_data)))),"[window_id].browser:receiveUpdateData")
 
  /**
   * This Topic() proc is called whenever a user clicks on a link within a Nano UI
