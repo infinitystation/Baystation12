@@ -134,10 +134,10 @@
 
 /obj/item/projectile/bullet/pistol/strong
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
-	damage = 50
+	damage = 53
 	penetration_modifier = 0.8
 	distance_falloff = 2.5
-	armor_penetration = 15
+	armor_penetration = 0
 
 /obj/item/projectile/bullet/pistol/rubber //"rubber" bullets
 	name = "rubber bullet"
@@ -163,8 +163,8 @@
 /obj/item/projectile/bullet/shotgun
 	name = "slug"
 	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
-	damage = 65
-	armor_penetration = 5 //INF before = 10
+	damage = 59
+	armor_penetration = 0 //INF before = 10
 
 /obj/item/projectile/bullet/shotgun/beanbag		//because beanbags are not bullets
 	name = "beanbag"
