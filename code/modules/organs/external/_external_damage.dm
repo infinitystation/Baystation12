@@ -58,9 +58,9 @@ obj/item/organ/external/take_general_damage(var/amount, var/silent = FALSE)
 
 	// High brute damage or sharp objects may damage internal organs
 	if(LAZYLEN(internal_organs))
-		if(damage_internal_organs(brute, burn, damage_flags))
-			brute /= 2
-			burn /= 2
+		damage_internal_organs(brute, burn, damage_flags) //INF, was if(damage_internal_organs...)
+			//brute /= 2 //INF. Delete comment for return
+			//burn /= 2 //INF. Delete comment for return
 
 	if(status & ORGAN_BROKEN && brute)
 		jostle_bone(brute)
