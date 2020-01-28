@@ -75,10 +75,12 @@
 	qdel(src)
 
 /mob/new_player/proc/setup_and_greet_prisoner(mob/living/carbon/human/character)
+	to_chat(character, character.client.banprisoned_reason)
 
-	character << character.client.banprisoned_reason
-	text = {"Здравствуйте, вы являетесь заключенным в тюрьме строгого режима.
-Вы попали сюда по причине, которая была описана выше при входе в игру.
-	"}
+	text = "<br>"
+	text += "Здравствуйте, вы являетесь заключенным в тюрьме строгого режима."
+	text += "<br>"
+	text += "Вы попали сюда по причине, которая была описана выше при входе в игру."
 	to_chat(character, sanitize_a0(text))
+
 	message_admins("<span class='notice'>[key_name_admin(character)](<A HREF='?_src_=holder;adminmoreinfo=\ref[character]'>?</A>)(<A HREF='?_src_=holder;adminplayerobservefollow=\ref[character]'>FLW</A>) в игре как заключенный.</span>")
