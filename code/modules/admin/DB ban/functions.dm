@@ -58,6 +58,7 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 	if(!dbcon.IsConnected())
 		return 0
 
+//	var/serverip = "[world.internet_address]:[world.port]" //inf was used for sql by bay, we don't use this var
 	var/bantype_pass = 0
 	var/bantype_str
 	switch(bantype)
@@ -124,22 +125,22 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 	reason = sql_sanitize_text(reason)
 	reason = sanitize_a0(reason)
 
+//[INF]
 	if(!computerid)
 		computerid = "0"
 	if(!ip)
 		ip = "0.0.0.0"
+//[/INF]
 
 	var/sql = "INSERT INTO erro_ban (`bantime`,`server_ip`,`server_port`,`round_id`,`bantype`,`reason`,`job`,`duration`,`expiration_time`,`ckey`,`computerid`,`ip`,`a_ckey`,`a_computerid`,`a_ip`,`who`,`adminwho`) VALUES (Now(), INET_ATON('[world.internet_address]'), '[world.port]', [world.port],'[bantype_str]', '[reason]', '[job]', [(duration)?"[duration]":"0"], Now() + INTERVAL [(duration>0) ? duration : 0] MINUTE, '[ckey]', '[computerid]', INET_ATON('[ip]'), '[a_ckey]', '[a_computerid]', INET_ATON('[a_ip]'), '[who]', '[adminwho]')"
 	var/DBQuery/query_insert = dbcon.NewQuery(sql)
 	query_insert.Execute()
 	var/setter = a_ckey
-	var/setter_key = a_ckey
 	if(usr)
 		to_chat(usr, "<span class='notice'>Ban saved to database.</span>")
 		setter = key_name_admin(usr, 0)
-		setter_key = get_key(usr)
+		to_world_ban(bantype, usr.key, ckey, reason_public, duration) //inf
 	message_admins("[setter] has added a [bantype_str] for [ckey] [(job)?"([job])":""] [(duration > 0)?"([duration] minutes)":""] with the reason: \"[reason]\" to the ban database.",1)
-	to_world_ban(bantype, setter_key, ckey, reason_public, duration)
 	return 1
 
 
