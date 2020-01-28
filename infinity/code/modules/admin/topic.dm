@@ -1,5 +1,5 @@
 /datum/admins/Topic(href, href_list)
-	..()
+	. = ..()
 
 	if(href_list["softban"])
 		if(!check_rights(R_MOD,0) && !check_rights(R_BAN, 0))

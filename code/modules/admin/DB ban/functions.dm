@@ -75,12 +75,17 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 		if(BANTYPE_JOB_TEMP)
 			bantype_str = "JOB_TEMPBAN"
 			bantype_pass = 1
+
+	//[INF]
 		if(BANTYPE_SOFTPERMA)
 			bantype_str = "SOFT_PERMABAN"
+			duration = -1
 			bantype_pass = 1
 		if(BANTYPE_SOFTBAN)
 			bantype_str = "SOFT_TEMPBAN"
 			bantype_pass = 1
+	//[/INF]
+
 	if( !bantype_pass ) return 0
 	if( !istext(reason) ) return 0
 	if( !isnum(duration) ) return 0
@@ -134,19 +139,7 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 		setter = key_name_admin(usr, 0)
 		setter_key = get_key(usr)
 	message_admins("[setter] has added a [bantype_str] for [ckey] [(job)?"([job])":""] [(duration > 0)?"([duration] minutes)":""] with the reason: \"[reason]\" to the ban database.",1)
-	switch(bantype_str)
-		if("PERMABAN")
-			to_world(SPAN_NOTICE("<b>BAN: Администратор [setter] ЖЕСТКО и НАВСЕГДА заблокировал игрока [ckey]. Причина: \"[reason_public]\"</b>"))
-			send2adminlogirc("BAN: Администратор [setter_key] ЖЕСТКО и НАВСЕГДА заблокировал игрока [ckey]. Причина: \"[reason]\"")
-		if("TEMPBAN")
-			to_world(SPAN_NOTICE("<b>BAN: Администратор [setter] ЖЕСТКО заблокировал игрока [ckey]. Причина: \"[reason_public]\"; Срок - [duration] минут.</b>"))
-			send2adminlogirc("BAN: Администратор [setter_key] ЖЕСТКО заблокировал игрока [ckey]. Причина: \"[reason]\"; Срок - [duration] минут.")
-		if("SOFT_PERMBAN")
-			to_world(SPAN_NOTICE("<b>BAN: Администратор [setter] перманентно отправил игрока [ckey] в бан-тюрьму. Причина: \"[reason_public]\"</b>"))
-			send2adminlogirc("BAN: Администратор [setter_key] перманентно отправил игрока [ckey] в бан-тюрьму. Причина: \"[reason]\"")
-		if("SOFT_TEMPBAN")
-			to_world(SPAN_NOTICE("<b>BAN: Администратор [setter] временно отправил игрока [ckey] в бан-тюрьму. Причина: \"[reason_public]\"; Срок - [duration] минут.</b>"))
-			send2adminlogirc("BAN: Администратор [setter_key] временно отправил игрока [ckey] в бан-тюрьму. Причина: \"[reason]\"; Срок - [duration] минут.")
+	to_world_ban(bantype, setter_key, ckey, reason_public, duration)
 	return 1
 
 
@@ -174,12 +167,16 @@ datum/admins/proc/DB_ban_unban(var/ckey, var/bantype, var/job = "")
 			if(BANTYPE_ANY_FULLBAN)
 				bantype_str = "ANY"
 				bantype_pass = 1
+
+		//[INF]
 			if(BANTYPE_SOFTPERMA)
 				bantype_str = "SOFT_PERMABAN"
 				bantype_pass = 1
 			if(BANTYPE_SOFTBAN)
 				bantype_str = "SOFT_TEMPBAN"
 				bantype_pass = 1
+		//[/INF]
+
 		if( !bantype_pass ) return
 
 	var/bantype_sql
