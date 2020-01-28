@@ -3351,7 +3351,7 @@
 #include "infinity\code\game\verbs\who.dm"
 #include "infinity\code\modules\admin\admin_verbs.dm"
 #include "infinity\code\modules\admin\ban_messages.dm"
-#include "infinity\code\modules\admin\IsBanrisoned.dm"
+#include "infinity\code\modules\admin\IsBanprisoned.dm"
 #include "infinity\code\modules\admin\sql_notes.dm"
 #include "infinity\code\modules\admin\topic.dm"
 #include "infinity\code\modules\admin\secrets\admin_secrets\list_fax.dm"
