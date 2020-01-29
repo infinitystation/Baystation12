@@ -3308,6 +3308,7 @@
 #include "infinity\code\game\objects\items\weapons\grenades\emgrenade.dm"
 #include "infinity\code\game\objects\items\weapons\grenades\flashbang.dm"
 #include "infinity\code\game\objects\items\weapons\grenades\smokebomb.dm"
+#include "infinity\code\game\objects\items\weapons\grenades\svu.dm"
 #include "infinity\code\game\objects\items\weapons\material\coins.dm"
 #include "infinity\code\game\objects\items\weapons\storage\backpack.dm"
 #include "infinity\code\game\objects\items\weapons\storage\belt.dm"
