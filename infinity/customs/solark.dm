@@ -39,9 +39,11 @@
 /obj/item/clothing/suit/storage/hooded/solar_cloak/on_update_icon()
 	..()
 	update_clothing_icon()
+	hood.update_clothing_icon()
 
 /obj/item/clothing/suit/storage/hooded/solar_cloak/emp_act()
 	color = null
+	hood.color = null
 	update_icon()
 
 /obj/item/clothing/head/winterhood/solar_cloak_hood
