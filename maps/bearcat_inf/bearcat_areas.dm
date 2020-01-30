@@ -215,13 +215,6 @@
 	icon_state = "tcomsatcham"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/skipjack_station
-	name = "\improper Pirats Bay"
-	requires_power = 0
-
-/area/skipjack_station/start
-	name = "\improper Pirats Shuttle"
-
 /area/admin/prison
 	name = "\improper Ban Prison"
 	icon_state = "green"

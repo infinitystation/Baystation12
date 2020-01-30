@@ -29,6 +29,20 @@
 		/obj/item/weapon/storage/pill_bottle/nanoblood
 		)
 
+/obj/item/weapon/storage/firstaid/surgery/advanced
+	startswith = list(
+		/obj/item/weapon/bonesetter/bone_mender,
+		/obj/item/weapon/cautery,
+		/obj/item/weapon/circular_saw/plasmasaw,
+		/obj/item/weapon/hemostat/pico,
+		/obj/item/weapon/retractor,
+		/obj/item/weapon/scalpel/manager,
+		/obj/item/weapon/surgicaldrill,
+		/obj/item/weapon/bonegel,
+		/obj/item/weapon/FixOVein/clot,
+		/obj/item/stack/medical/advanced/bruise_pack,
+		)
+
 /*
  * PILL BOTTLES
  * ============
@@ -45,3 +59,4 @@
 	desc = "Contains pills used to treat radiation effects."
 	startswith = list(/obj/item/weapon/reagent_containers/pill/hyronalin = 14)
 	wrapper_color = COLOR_YELLOW
+

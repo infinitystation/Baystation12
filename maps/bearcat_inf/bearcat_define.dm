@@ -18,7 +18,6 @@
 
 	evac_controller_type = /datum/evacuation_controller/lifepods //don't remove
 	evac_controller_type = /datum/evacuation_controller/starship //don't remove
-	lobby_icon = 'maps/bearcat_inf/bearcat_lobby.dmi'
 	lobby_screens = list("spess","aesthetic")
 
 	allowed_spawns = list("Cryogenic Storage")

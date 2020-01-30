@@ -86,6 +86,9 @@
 		или выжиданием удобного момента, которым может стать прыжок после двухчасовой скуки. \
 		Если Вы растер&#255;ны или не знаете, что делать - не бойтесь спрашивать администраторов (F1). Сюда также \
 		входит совершение действие, которые, по вашему мнению, могут нарушать правила сервера."
+	// Map template that antag needs to load before spawning. Nulled after it's loaded.
+	var/datum/map_template/base_to_load
+
 	var/ambitious = 1 //INF (0 for roles with restriced objectives - actors, ERT, death squad and so)
 
 /datum/antagonist/New()

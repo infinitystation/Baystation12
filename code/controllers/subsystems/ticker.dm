@@ -24,7 +24,8 @@ SUBSYSTEM_DEF(ticker)
 	var/restart_timeout = 1 MINUTE
 
 	var/scheduled_map_change = 0
-	var/update_server = 0
+	var/update_server //inf
+	var/client/updater
 	var/force_ending = 0            //Overriding this variable will force game end. Can be used for build update or adminbuse.
 
 	var/list/minds = list()         //Minds of everyone in the game.
@@ -320,7 +321,7 @@ Helpers
 				captainless=0
 			if(!player_is_antag(player.mind, only_offstation_roles = 1))
 				SSjobs.equip_rank(player, player.mind.assigned_role, 0)
-				equip_custom_items(player)
+				SScustomitems.equip_custom_items(player)
 	if(captainless)
 		for(var/mob/M in GLOB.player_list)
 			if(!istype(M,/mob/new_player))

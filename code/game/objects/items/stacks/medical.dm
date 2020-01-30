@@ -277,6 +277,7 @@
 			var/obj/item/stack/medical/splint/S = split(1, TRUE)
 			if(S)
 				if(affecting.apply_splint(S))
+					M.verbs += /mob/living/carbon/human/proc/remove_splints
 					S.forceMove(affecting)
 					if (M != user)
 						user.visible_message("<span class='danger'>\The [user] finishes applying [src] to [M]'s [limb].</span>", "<span class='danger'>You finish applying \the [src] to [M]'s [limb].</span>", "<span class='danger'>You hear something being wrapped.</span>")

@@ -888,7 +888,7 @@
 	icon_state = "corner_white_three_quarters";
 	dir = 4
 	},
-/obj/item/modular_computer/console/preset/security{
+/obj/machinery/computer/modular/preset/security{
 	icon_state = "console";
 	dir = 8
 	},
@@ -1242,7 +1242,6 @@
 /area/outpost/abandoned)
 "ed" = (
 /obj/effect/decal/cleanable/liquid_fuel,
-/obj/item/weapon/secbot_assembly,
 /obj/effect/decal/cleanable/blood/oil,
 /turf/simulated/floor/tiled/airless,
 /area/outpost/abandoned)
@@ -2217,7 +2216,6 @@
 /obj/machinery/firealarm{
 	dir = 4;
 	icon_state = "firex";
-	layer = 3.3;
 	pixel_x = 26
 	},
 /turf/simulated/floor/tiled/airless,
@@ -2548,7 +2546,7 @@
 /area/outpost/abandoned)
 "hL" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/overmap/sector/away,
+/obj/effect/overmap/visitable/sector/away,
 /turf/simulated/floor/tiled/white,
 /area/outpost/abandoned)
 "ib" = (
@@ -2651,7 +2649,7 @@
 /turf/simulated/floor/diona,
 /area/outpost/abandoned)
 "wb" = (
-/obj/item/modular_computer/console/preset/command{
+/obj/machinery/computer/modular/preset/cardslot/command{
 	icon_state = "console";
 	dir = 4
 	},

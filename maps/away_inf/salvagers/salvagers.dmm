@@ -105,11 +105,11 @@
 	tag_exterior_door = "salvage_ext";
 	tag_interior_door = "salvage_int"
 	},
-/obj/item/modular_computer/console/preset/civilian/professional,
+/obj/machinery/computer/modular/preset/civilian/professional,
 /turf/simulated/floor/tiled,
 /area/salvage/bridge)
 "ao" = (
-/obj/item/modular_computer/console/preset/civilian/professional,
+/obj/machinery/computer/modular/preset/civilian/professional,
 /turf/simulated/floor/tiled,
 /area/salvage/bridge)
 "ap" = (
@@ -151,7 +151,7 @@
 /turf/simulated/floor/wood/walnut,
 /area/salvage/captain)
 "at" = (
-/obj/item/modular_computer/console/preset/civilian/professional,
+/obj/machinery/computer/modular/preset/civilian/professional,
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/wood/walnut,
 /area/salvage/captain)
@@ -205,9 +205,7 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
 	},
-/obj/machinery/recharger{
-	layer = 2
-	},
+/obj/machinery/recharger,
 /turf/simulated/floor/wood/walnut,
 /area/salvage/captain)
 "aB" = (
@@ -1333,7 +1331,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/salvage/shuttle)
 "cr" = (
-/obj/item/modular_computer/console/preset/civilian/professional,
+/obj/machinery/computer/modular/preset/civilian/professional,
 /turf/simulated/floor/tiled/techmaint,
 /area/salvage/shuttle)
 "cs" = (
@@ -1476,12 +1474,10 @@
 	},
 /obj/item/weapon/storage/firstaid/toxin,
 /obj/item/weapon/storage/firstaid/fire{
-	layer = 2.9;
 	pixel_x = 2;
 	pixel_y = 3
 	},
 /obj/item/weapon/storage/firstaid/o2{
-	layer = 2.8;
 	pixel_x = 4;
 	pixel_y = 6
 	},
@@ -2235,9 +2231,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
-/obj/machinery/recharger{
-	layer = 2
-	},
+/obj/machinery/recharger,
 /turf/simulated/floor/carpet/orange,
 /area/salvage/storage)
 "dD" = (
@@ -2315,7 +2309,7 @@
 /turf/simulated/floor/tiled/usedup,
 /area/salvage/storage)
 "dL" = (
-/obj/item/modular_computer/console/preset/merchant/salvage{
+/obj/machinery/computer/modular/preset/merchant/salvage{
 	icon_state = "console";
 	dir = 8
 	},
@@ -2571,9 +2565,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
-/obj/machinery/recharger{
-	layer = 2
-	},
+/obj/machinery/recharger,
 /turf/simulated/floor/carpet/red,
 /area/salvage/storage)
 "ej" = (
@@ -2891,7 +2883,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /obj/structure/cable{

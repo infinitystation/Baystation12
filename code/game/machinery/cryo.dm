@@ -6,7 +6,6 @@
 	icon_state = "pod_preview"
 	density = 1
 	anchored = 1.0
-	plane = ABOVE_HUMAN_PLANE // this needs to be fairly high so it displays over most things, but it needs to be under lighting
 	interact_offline = 1
 	layer = ABOVE_HUMAN_LAYER
 	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE
@@ -51,11 +50,11 @@
 
 /obj/machinery/atmospherics/unary/cryo_cell/examine(mob/user)
 	. = ..()
-	if (. && user.Adjacent(src))
+	if (user.Adjacent(src))
 		if (beaker)
 			to_chat(user, "It is loaded with a beaker.")
 		if (occupant)
-			occupant.examine(user)
+			occupant.examine(arglist(args))
 
 /obj/machinery/atmospherics/unary/cryo_cell/Process()
 	..()
@@ -270,12 +269,9 @@
 	if (occupant.client)
 		occupant.client.eye = occupant.client.mob
 		occupant.client.perspective = MOB_PERSPECTIVE
-	if(not_turf_contains_dense_objects(get_turf(get_step(loc, dir))))
-		occupant.forceMove(get_step(loc, dir))
-	else
-		occupant.forceMove(loc)
-	if (occupant.bodytemperature < 261 && occupant.bodytemperature >= 70) //Patch by Aranclanos to stop people from taking burn damage after being ejected
-		occupant.bodytemperature = 261									  // Changed to 70 from 140 by Zuhayr due to reoccurance of bug.
+	occupant.forceMove(get_step(loc, SOUTH))
+	if (occupant.bodytemperature < 261 && occupant.bodytemperature >= 70) 
+		occupant.bodytemperature = 261									  
 	occupant = null
 	current_heat_capacity = initial(current_heat_capacity)
 	update_use_power(POWER_USE_IDLE)

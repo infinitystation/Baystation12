@@ -5,7 +5,7 @@
 	icon_state = "railing0-1"
 	density = 1
 	throwpass = 1
-	layer = 5.2
+	layer = OBJ_LAYER
 	climb_speed_mult = 0.25
 	anchored = FALSE
 	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CHECKS_BORDER | ATOM_FLAG_CLIMBABLE
@@ -199,7 +199,7 @@
 				if(user.a_intent == I_HURT)
 					visible_message("<span class='danger'>[G.assailant] slams [G.affecting]'s face against \the [src]!</span>")
 					playsound(loc, 'sound/effects/grillehit.ogg', 50, 1)
-					var/blocked = G.affecting.get_blocked_ratio(BP_HEAD, BRUTE)
+					var/blocked = G.affecting.get_blocked_ratio(BP_HEAD, BRUTE, damage = 8)
 					if (prob(30 * (1 - blocked)))
 						G.affecting.Weaken(5)
 					G.affecting.apply_damage(8, BRUTE, BP_HEAD)

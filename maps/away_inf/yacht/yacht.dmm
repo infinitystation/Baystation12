@@ -3,7 +3,7 @@
 /turf/space,
 /area/space)
 "ab" = (
-/obj/effect/overmap/ship/yacht,
+/obj/effect/overmap/visitable/ship/yacht,
 /turf/space,
 /area/space)
 "ac" = (
@@ -816,7 +816,6 @@
 /obj/machinery/floodlight,
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 25
 	},
 /turf/simulated/floor/wood/walnut,
@@ -1568,9 +1567,7 @@
 /area/yacht/living)
 "dw" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 2.4;
-	level = 2
+	dir = 1
 	},
 /obj/item/weapon/shovel/spade,
 /obj/item/weapon/reagent_containers/glass/bucket,
@@ -1649,9 +1646,7 @@
 /area/yacht/engine)
 "dI" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 2.4;
-	level = 2
+	dir = 1
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
@@ -1899,9 +1894,7 @@
 /area/yacht/engine)
 "eo" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 2.4;
-	level = 2
+	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/catwalk,

@@ -54,6 +54,11 @@
 	display_name = "Multicolored Pen"
 	path = /obj/item/weapon/pen/multi
 
+/datum/gear/utility/fancy
+	display_name = "Fancy Pen"
+	path = /obj/item/weapon/pen/fancy
+	cost = 2
+
 /datum/gear/utility/hand_labeler
 	display_name = "hand labeler"
 	path = /obj/item/weapon/hand_labeler

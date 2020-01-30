@@ -2,6 +2,18 @@
 
 // Skrell clothing
 
+/datum/gear/head/skrell_helmet
+	allowed_roles = ARMORED_ROLES
+
+/datum/gear/head/skrell_helmet/New()
+	..()
+	var/list/helmets = list()
+	helmets["black skrellian helmet"] = /obj/item/clothing/head/helmet/skrell
+	helmets["navy skrellian helmet"] = /obj/item/clothing/head/helmet/skrell/navy
+	helmets["green skrellian helmet"] = /obj/item/clothing/head/helmet/skrell/green
+	helmets["tan skrellian helmet"] = /obj/item/clothing/head/helmet/skrell/tan
+	gear_tweaks += new/datum/gear_tweak/path(helmets)
+
 // Resomi clothing
 
 /datum/gear/uniform/resomi/eng

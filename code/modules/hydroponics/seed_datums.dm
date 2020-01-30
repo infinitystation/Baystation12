@@ -164,7 +164,7 @@
 	name = "tomato"
 	seed_name = "tomato"
 	display_name = "tomato plant"
-	mutants = list("bluetomato","bloodtomato", "mandragora")//inf //was: mutants = list("bluetomato","bloodtomato")
+	mutants = list("bluetomato","bloodtomato")
 	chems = list(/datum/reagent/nutriment = list(1,10), /datum/reagent/drink/juice/tomato = list(10,10))
 	kitchen_tag = "tomato"
 
@@ -240,7 +240,7 @@
 	name = "eggplant"
 	seed_name = "eggplant"
 	display_name = "eggplants"
-	mutants = list("realeggplant", "mandragora")//inf //was: mutants = list("realeggplant")
+	mutants = list("realeggplant")
 	chems = list(/datum/reagent/nutriment = list(1,10))
 	kitchen_tag = "eggplant"
 
@@ -278,6 +278,7 @@
 	set_trait(TRAIT_PLANT_ICON,"tree2")
 	set_trait(TRAIT_FLESH_COLOUR,"#e8e39b")
 	set_trait(TRAIT_IDEAL_LIGHT, 4)
+	set_trait(TRAIT_PHOTOSYNTHESIS, 1)
 
 /datum/seed/apple/poison
 	name = "poisonapple"
@@ -717,6 +718,7 @@
 	set_trait(TRAIT_IDEAL_HEAT, 298)
 	set_trait(TRAIT_IDEAL_LIGHT, 7)
 	set_trait(TRAIT_WATER_CONSUMPTION, 6)
+	set_trait(TRAIT_PHOTOSYNTHESIS, 1)
 
 /datum/seed/corn
 	name = "corn"
@@ -988,6 +990,7 @@
 	set_trait(TRAIT_PRODUCT_COLOUR,"#3af026")
 	set_trait(TRAIT_PLANT_ICON,"tree")
 	set_trait(TRAIT_FLESH_COLOUR,"#3af026")
+	set_trait(TRAIT_PHOTOSYNTHESIS, 1)
 
 /datum/seed/citrus/lemon
 	name = "lemon"
@@ -1002,6 +1005,7 @@
 	set_trait(TRAIT_PRODUCT_COLOUR,"#f0e226")
 	set_trait(TRAIT_FLESH_COLOUR,"#f0e226")
 	set_trait(TRAIT_IDEAL_LIGHT, 6)
+	set_trait(TRAIT_PHOTOSYNTHESIS, 1)
 
 /datum/seed/citrus/orange
 	name = "orange"
@@ -1014,6 +1018,7 @@
 	..()
 	set_trait(TRAIT_PRODUCT_COLOUR,"#ffc20a")
 	set_trait(TRAIT_FLESH_COLOUR,"#ffc20a")
+	set_trait(TRAIT_PHOTOSYNTHESIS, 1)
 
 /datum/seed/grass
 	name = "grass"
@@ -1034,6 +1039,7 @@
 	set_trait(TRAIT_PLANT_ICON,"grass")
 	set_trait(TRAIT_WATER_CONSUMPTION, 0.5)
 	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
+	set_trait(TRAIT_PHOTOSYNTHESIS, 1)
 
 /datum/seed/cocoa
 	name = "cocoa"
@@ -1053,6 +1059,7 @@
 	set_trait(TRAIT_PLANT_ICON,"tree2")
 	set_trait(TRAIT_IDEAL_HEAT, 298)
 	set_trait(TRAIT_WATER_CONSUMPTION, 6)
+	set_trait(TRAIT_PHOTOSYNTHESIS, 1)
 
 /datum/seed/cherries
 	name = "cherry"
@@ -1074,6 +1081,7 @@
 	set_trait(TRAIT_PRODUCT_COLOUR,"#a80000")
 	set_trait(TRAIT_PLANT_ICON,"tree2")
 	set_trait(TRAIT_PLANT_COLOUR,"#2f7d2d")
+	set_trait(TRAIT_PHOTOSYNTHESIS, 1)
 
 /datum/seed/kudzu
 	name = "kudzu"

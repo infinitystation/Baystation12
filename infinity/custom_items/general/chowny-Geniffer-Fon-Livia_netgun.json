@@ -1,0 +1,6 @@
+{
+	"ckey"				:	"chowny",
+	"character_name"	:	"Geniffer Fon Livia",
+	"item_path"			:	"/obj/item/weapon/gun/launcher/net/geniffer",
+	"req_access"		:	["ACCESS_EXPEDITION_SHUTTLE"]
+}

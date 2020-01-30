@@ -68,6 +68,7 @@ var/list/admin_verbs_admin = list(
 	/client/proc/toggleghostwriters,
 	/client/proc/toggledrones,
 //INF unused	/client/proc/check_customitem_activity,
+	/datum/admins/proc/show_skills,
 	/client/proc/man_up,
 	/client/proc/global_man_up,
 	/client/proc/response_team, // Response Teams admin verb,
@@ -138,7 +139,6 @@ var/list/admin_verbs_spawn = list(
 	/client/proc/game_panel, //INF,
 	/client/proc/respawn_character,
 	/client/proc/respawn_as_self, //INF,
-	/client/proc/virus2_editor,
 	/client/proc/spawn_chemdisp_cartridge,
 	/datum/admins/proc/mass_debug_closet_icons
 	)
@@ -161,13 +161,12 @@ var/list/admin_verbs_server = list(
 	/datum/admins/proc/adjump,
 	/datum/admins/proc/toggle_space_ninja,
 	/client/proc/toggle_random_events,
-//INF unused	/client/proc/check_customitem_activity,
 	/client/proc/nanomapgen_DumpImage,
 //[INF],
+	// /client/proc/check_customitem_activity,
 	/client/proc/cmd_toggle_admin_help,
 	/client/proc/observe_delay,
 	/datum/admins/proc/toggleevent,
-	/client/proc/update_server,
 //[/INF],
 	)
 var/list/admin_verbs_debug = list(
@@ -190,6 +189,7 @@ var/list/admin_verbs_debug = list(
 	/client/proc/apply_random_map,
 	/client/proc/overlay_random_map,
 	/client/proc/delete_random_map,
+	/datum/admins/proc/submerge_map,
 	/datum/admins/proc/map_template_load,
 	/datum/admins/proc/map_template_load_new_z,
 	/datum/admins/proc/map_template_upload,
@@ -236,7 +236,8 @@ var/list/admin_verbs_possess = list(
 	)
 
 var/list/admin_verbs_permissions = list(
-	/client/proc/edit_admin_permissions
+	/client/proc/edit_admin_permissions,
+	/client/proc/update_server, //INF
 	)
 var/list/admin_verbs_rejuv = list(
 	/client/proc/respawn_character,
@@ -623,38 +624,6 @@ var/list/admin_verbs_mentor = list(
 	log_and_message_admins("created an admin explosion at [epicenter.loc].")
 	SSstatistics.add_field_details("admin_verb","DB") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/client/proc/give_disease2(mob/T as mob in SSmobs.mob_list) // -- Giacom
-	set category = "Fun"
-	set name = "Give Disease"
-	set desc = "Gives a Disease to a mob."
-	if(!check_rights(R_FUN))
-		return
-
-	var/datum/disease2/disease/D = new /datum/disease2/disease()
-
-	var/severity = 1
-	var/greater = input("Is this a lesser, greater, or badmin disease?", "Give Disease") in list("Lesser", "Greater", "Badmin")
-	switch(greater)
-		if ("Lesser") severity = 1
-		if ("Greater") severity = 2
-		if ("Badmin") severity = 99
-
-	D.makerandom(severity)
-	D.infectionchance = input("How virulent is this disease? (1-100)", "Give Disease", D.infectionchance) as num
-
-	if(istype(T,/mob/living/carbon/human))
-		var/mob/living/carbon/human/H = T
-		if (H.species)
-			D.affected_species = list(H.species.get_bodytype(H))
-			if(H.species.primitive_form)
-				D.affected_species |= H.species.primitive_form
-			if(H.species.greater_form)
-				D.affected_species |= H.species.greater_form
-	infect_virus2(T,D,1)
-
-	SSstatistics.add_field_details("admin_verb","GD2") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-	log_and_message_admins("gave [key_name(T)] a [greater] disease2 with infection chance [D.infectionchance].")
-
 /client/proc/togglebuildmodeself()
 	set name = "Toggle Build Mode Self"
 	set category = "Special Verbs"
@@ -662,10 +631,7 @@ var/list/admin_verbs_mentor = list(
 	if(!check_rights(R_BUILDMODE))
 		return
 
-	var/datum/click_handler/handler = mob.GetClickHandler()
-	if(handler.type == /datum/click_handler/build_mode)
-		usr.PopClickHandler()
-	else
+	if(!usr.RemoveClickHandler(/datum/click_handler/build_mode))
 		usr.PushClickHandler(/datum/click_handler/build_mode)
 	SSstatistics.add_field_details("admin_verb","TBMS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	log_and_message_admins("switched build mode for himself.")

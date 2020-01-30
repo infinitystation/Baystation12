@@ -403,7 +403,6 @@
 			/obj/machinery,
 			/obj/structure,
 			/obj/item/modular_computer/telescreen,
-			/obj/item/modular_computer/console
 		)) - /obj/machinery/crusher_piston
 
 /obj/machinery/crusher_piston/Destroy()

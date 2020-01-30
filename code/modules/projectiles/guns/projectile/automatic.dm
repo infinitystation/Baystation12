@@ -3,6 +3,9 @@
 	desc = "A protoype lightweight, fast firing submachine gun."
 	icon = 'icons/obj/guns/prototype_smg.dmi'
 	icon_state = "prototype"
+	item_state = "saber"
+	w_class = ITEM_SIZE_NORMAL
+	bulk = -1
 	load_method = MAGAZINE
 	caliber = CALIBER_PISTOL_FLECHETTE
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 3)
@@ -21,12 +24,13 @@
 		list(mode_name="long bursts",   burst=8, fire_delay=null, move_delay=4,    one_hand_penalty=2, burst_accuracy=list(0,0,-1,-1,-1,-1,-2,-2), dispersion=list(0.0, 0.0, 0.5, 0.6, 0.8, 1.0, 1.0, 1.2)),
 		)
 
+//[INF]
 	bulk = GUN_BULK_SMG
 	w_class = ITEM_SIZE_NORMAL
 
 	is_serial = 1
 	s_gun = "P-SMG"
-
+//[/INF]
 /obj/item/weapon/gun/projectile/automatic/on_update_icon()
 	..()
 	if(ammo_magazine)
@@ -40,7 +44,7 @@
 	icon = 'icons/obj/guns/machine_pistol.dmi'
 	icon_state = "mpistolen"
 	safety_icon = "safety"
-	item_state = "wt550"
+	item_state = "mpistolen"
 	caliber = CALIBER_PISTOL
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ESOTERIC = 3)
 	ammo_type = /obj/item/ammo_casing/pistol
@@ -52,9 +56,10 @@
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=1, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.6, 1.0)),
 		list(mode_name="short bursts",   burst=5, fire_delay=null, move_delay=4,    one_hand_penalty=2, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(0.6, 0.6, 1.0, 1.0, 1.2)),
 		)
-
+//[INF]
 	one_hand_penalty = 2
 	s_gun = "HI-MP6"
+//[/INF]
 
 /obj/item/weapon/gun/projectile/automatic/machine_pistol/on_update_icon()
 	..()
@@ -94,13 +99,14 @@
 		list(mode_name="short bursts",   burst=5, fire_delay=null, move_delay=4,    one_hand_penalty=6, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(0.6, 0.6, 1.0, 1.0, 1.2)),
 		)
 
+//[INF]
 	accuracy = 1
 	bulk = GUN_BULK_SMG
 	w_class = ITEM_SIZE_LARGE
 	one_hand_penalty = 4
 
 	s_gun = "C-20R"
-
+//[/INF]
 /obj/item/weapon/gun/projectile/automatic/merc_smg/on_update_icon()
 	..()
 	if(ammo_magazine)
@@ -132,6 +138,7 @@
 		list(mode_name="short bursts",   burst=5, fire_delay=null, move_delay=6,    one_hand_penalty=11, burst_accuracy=list(0,-1,-2,-3,-3), dispersion=list(0.6, 1.0, 1.2, 1.2, 1.5)),
 		)
 
+//[INF]
 	accuracy = 2
 	accuracy_power = 7
 	bulk = GUN_BULK_RIFLE
@@ -139,7 +146,7 @@
 	one_hand_penalty = 8
 
 	s_gun = "STS-35"
-
+//[/INF]
 /obj/item/weapon/gun/projectile/automatic/assault_rifle/on_update_icon()
 	..()
 	if(ammo_magazine)
@@ -153,7 +160,7 @@
 	name = "WT-550 submachine gun"
 	desc = "The WT-550 Saber is a cheap self-defense weapon, mass-produced by Ward-Takahashi for paramilitary and private use."
 	icon = 'icons/obj/guns/sec_smg.dmi'
-	icon_state = "wt550"
+	icon_state = "smg"
 	item_state = "wt550"
 	safety_icon = "safety"
 	caliber = CALIBER_PISTOL_SMALL
@@ -171,19 +178,21 @@
 		list(mode_name="short bursts",   burst=5, fire_delay=null, move_delay=4,    one_hand_penalty=5, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(0.6, 0.6, 1.0, 1.0, 1.2)),
 		)
 
+//[INF]
 	accuracy_power = 7
 	w_class = ITEM_SIZE_NORMAL
 	one_hand_penalty = 3
 
 	s_gun = "WT-550"
-
-
+//[/INF]
 /obj/item/weapon/gun/projectile/automatic/sec_smg/on_update_icon()
 	..()
 	if(ammo_magazine)
-		icon_state = "wt550-[round(ammo_magazine.stored_ammo.len,4)]"
+		overlays += image(icon, "mag-[round(ammo_magazine.stored_ammo.len,5)]")
+	if(ammo_magazine && LAZYLEN(ammo_magazine.stored_ammo))
+		overlays += image(icon, "ammo-ok")
 	else
-		icon_state = "wt550"
+		overlays += image(icon, "ammo-bad")
 
 /obj/item/weapon/gun/projectile/automatic/bullpup_rifle
 	name = "Z8 carabine"
@@ -201,6 +210,10 @@
 	allowed_magazines = /obj/item/ammo_magazine/mil_rifle
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
+	accuracy = 2
+	accuracy_power = 7
+	one_hand_penalty = 8
+	bulk = GUN_BULK_RIFLE
 	burst_delay = 4
 	wielded_item_state = "z8carbine-wielded"
 	mag_insert_sound = 'sound/weapons/guns/interaction/batrifle_magin.ogg'
@@ -214,14 +227,10 @@
 	var/use_launcher = 0
 	var/obj/item/weapon/gun/launcher/grenade/underslung/launcher
 
-	accuracy = 2
-	accuracy_power = 7
-	bulk = GUN_BULK_RIFLE
+//[INF]
 	w_class = ITEM_SIZE_HUGE
-	one_hand_penalty = 8
-
 	s_gun = "HI-Z8"
-
+//[/INF]
 /obj/item/weapon/gun/projectile/automatic/bullpup_rifle/Initialize()
 	. = ..()
 	launcher = new(src)
@@ -267,8 +276,10 @@
 	name = "L6 machine gun"
 	desc = "A rather traditionally made L6 SAW with a pleasantly lacquered wooden pistol grip. Has 'Aussec Armoury- 2281' engraved on the reciever." //probably should refluff this
 	icon = 'icons/obj/guns/saw.dmi'
-	icon_state = "l6closed50"
+	icon_state = "l6closed50" //INF, WAS l6closed100
 	item_state = "l6closedmag"
+	w_class = ITEM_SIZE_HUGE
+	bulk = GUN_BULK_MACHINEGUN//inf, was 10
 	force = 10
 	max_shells = 50
 	caliber = CALIBER_RIFLE
@@ -278,6 +289,7 @@
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/box/machinegun
 	allowed_magazines = list(/obj/item/ammo_magazine/box/machinegun, /obj/item/ammo_magazine/rifle)
+	one_hand_penalty = 10
 	wielded_item_state = "gun_wielded"
 	mag_insert_sound = 'sound/weapons/guns/interaction/lmg_magin.ogg'
 	mag_remove_sound = 'sound/weapons/guns/interaction/lmg_magout.ogg'
@@ -292,12 +304,9 @@
 
 	var/cover_open = 0
 
-	bulk = GUN_BULK_MACHINEGUN //inf, was 10
-	w_class = ITEM_SIZE_HUGE
-	one_hand_penalty = 10
-
+//[INF]
 	s_gun = "L6"
-
+//[/INF]
 /obj/item/weapon/gun/projectile/automatic/l6_saw/mag
 	magazine_type = /obj/item/ammo_magazine/rifle
 

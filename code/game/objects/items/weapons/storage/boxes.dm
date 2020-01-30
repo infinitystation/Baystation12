@@ -95,6 +95,7 @@
 	icon_state = "survivalvox"
 	startswith = list(/obj/item/clothing/mask/breath = 1,
 					/obj/item/weapon/tank/emergency/nitrogen = 1,
+					/obj/item/weapon/reagent_containers/hypospray/autoinjector = 1,
 					/obj/item/stack/medical/bruise_pack = 1,
 					/obj/item/device/flashlight/flare/glowstick = 1,
 					/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 1)
@@ -103,7 +104,7 @@
 	name = "engineer survival kit"
 	desc = "A box decorated in warning colors that contains a limited supply of survival tools. The panel and orange stripe indicate this one as the engineering variant."
 	icon_state = "survivaleng"
-	startswith = list(/obj/item/clothing/mask/breath = 1,
+	startswith = list(/obj/item/clothing/mask/breath/scba = 1,
 					/obj/item/weapon/tank/emergency/oxygen/engi = 1,
 					/obj/item/weapon/reagent_containers/hypospray/autoinjector = 1,
 					/obj/item/weapon/reagent_containers/hypospray/autoinjector/antirad = 1,
@@ -216,34 +217,10 @@
 	startswith = list(/obj/item/weapon/grenade/frag = 5)
 
 /obj/item/weapon/storage/box/fragshells
-	name = "box of frag grenades"
-	desc = "A box containing 5 military grade fragmentation shells.<br> WARNING: Live explosives. Misuse may result in serious injury or death."
+	name = "box of frag shells"
+	desc = "A box containing 5 military grade fragmentation shells.<br> WARNING: Live explosive munitions. Misuse may result in serious injury or death."
 	icon_state = "flashbang"
-	startswith = list(/obj/item/weapon/grenade/frag/shell = 6)
-
-/obj/item/weapon/storage/box/smokeshells
-	name = "box of smoke shells"
-	desc = "A box containing 5 military grade smoke shells."
-	icon_state = "flashbang"
-	startswith = list(/obj/item/weapon/grenade/smokebomb/shell = 6)
-
-/obj/item/weapon/storage/box/flashshells
-	name = "box of flashbang shells"
-	desc = "A box containing 5 military grade flashbang shells."
-	icon_state = "flashbang"
-	startswith = list(/obj/item/weapon/grenade/flashbang/shell = 6)
-
-/obj/item/weapon/storage/box/empshells
-	name = "box of emp grenade shells"
-	desc = "A box containing 5 military grade emp grenade shells.<br> WARNING: Live explosives. Misuse may result in serious injury or death."
-	icon_state = "flashbang"
-	startswith = list(/obj/item/weapon/grenade/empgrenade/shell = 6)
-
-/obj/item/weapon/storage/box/aphotshells
-	name = "box of photon disruption shells"
-	desc = "A box containing 5 photon disruption shells."
-	icon_state = "flashbang"
-	startswith = list(/obj/item/weapon/grenade/anti_photon/shell = 6)
+	startswith = list(/obj/item/weapon/grenade/frag/shell = 5)
 
 /obj/item/weapon/storage/box/smokes
 	name = "box of smoke bombs"
@@ -284,7 +261,7 @@
 	name = "box of prescription glasses"
 	desc = "This box contains nerd glasses."
 	icon_state = "glasses"
-	startswith = list(/obj/item/clothing/glasses/regular = 7)
+	startswith = list(/obj/item/clothing/glasses/prescription = 7)
 
 /obj/item/weapon/storage/box/cdeathalarm_kit
 	name = "death alarm kit"

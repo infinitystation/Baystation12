@@ -55,7 +55,7 @@
 
 	visible_message(
 		"<span class='danger'>\The [src] attempts to remove \the [HC]!</span>",
-		"<span class='warning'>You attempt to remove \the [HC] (This will take around [breakouttime / (1 SECOND)] second\s and you need to stand still).</span>", range = 3
+		"<span class='warning'>You attempt to remove \the [HC] (This will take around [breakouttime / (1 SECOND)] second\s and you need to stand still).</span>", range = 2
 		)
 
 	var/stages = 4
@@ -82,7 +82,7 @@
 		if (handcuffed.health < 1)
 			visible_message(
 				SPAN_DANGER("\The [src] manages to remove \the [handcuffed], breaking them!"),
-				SPAN_NOTICE("You successfully remove \the [handcuffed], breaking them!")
+				SPAN_NOTICE("You successfully remove \the [handcuffed], breaking them!"), range = 2
 				)
 			QDEL_NULL(handcuffed)
 			if(buckled && buckled.buckle_require_restraints)
@@ -147,7 +147,7 @@
 
 		visible_message(
 			"<span class='danger'>[src] attempts to unbuckle themself!</span>",
-			"<span class='warning'>You attempt to unbuckle yourself. (This will take around [unbuckle_time / (1 SECOND)] second\s and you need to stand still)</span>", range = 3
+			"<span class='warning'>You attempt to unbuckle yourself. (This will take around [unbuckle_time / (1 SECOND)] second\s and you need to stand still)</span>", range = 2
 			)
 
 	if(unbuckle_time && buckled)

@@ -6,15 +6,15 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal
 	name = "floor decal"
 	icon = 'icons/turf/flooring/decals.dmi'
-	plane = ABOVE_TURF_PLANE
 	layer = DECAL_LAYER
 	appearance_flags = RESET_COLOR
 	var/supplied_dir
 	var/detail_overlay
 	var/detail_color
 
-/obj/effect/floor_decal/New(var/newloc, var/newdir, var/newcolour)
+/obj/effect/floor_decal/New(var/newloc, var/newdir, var/newcolour, var/newappearance)
 	supplied_dir = newdir
+	if(newappearance) appearance = newappearance
 	if(newcolour) color = newcolour
 	..(newloc)
 
@@ -22,11 +22,10 @@ var/list/floor_decals = list()
 	if(supplied_dir) set_dir(supplied_dir)
 	var/turf/T = get_turf(src)
 	if(istype(T, /turf/simulated/floor) || istype(T, /turf/unsimulated/floor))
-		plane = T.is_plating() ? ABOVE_PLATING_PLANE : ABOVE_TURF_PLANE
+		layer = T.is_plating() ? DECAL_PLATING_LAYER : DECAL_LAYER
 		var/cache_key = "[alpha]-[color]-[dir]-[icon_state]-[plane]-[layer]-[detail_overlay]-[detail_color]"
 		if(!floor_decals[cache_key])
 			var/image/I = image(icon = src.icon, icon_state = src.icon_state, dir = src.dir)
-			I.plane = plane
 			I.layer = layer
 			I.appearance_flags = appearance_flags
 			I.color = src.color
@@ -980,7 +979,7 @@ var/list/floor_decals = list()
 
 /obj/effect/floor_decal/industrial/outline/blue
 	name = "blue outline"
-	color = "#00b8b2"
+	color = COLOR_BLUE_GRAY //INF, WAS"#00b8b2"
 
 /obj/effect/floor_decal/industrial/outline/yellow
 	name = "yellow outline"
@@ -1133,7 +1132,6 @@ var/list/floor_decals = list()
 	icon_state = "snowfloor"
 
 /obj/effect/floor_decal/floordetail
-	plane = TURF_PLANE
 	layer = TURF_DETAIL_LAYER
 	color = COLOR_GUNMETAL
 	icon_state = "manydot"

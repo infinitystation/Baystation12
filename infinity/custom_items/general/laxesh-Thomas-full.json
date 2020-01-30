@@ -1,0 +1,6 @@
+{
+  "ckey" :            "laxesh",
+  "character_name" :  "Thomas Koster",
+  "item_path" :       "/obj/item/weapon/storage/belt/holster/ic/full",
+  "req_access" :      [ "ACCESS_RESEARCH" ]
+  }

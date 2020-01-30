@@ -1,0 +1,8 @@
+{
+  "ckey" :            "furrydog",
+  "character_name" :  "Mathor Ajurth Enai-Kaytam",
+  "item_name" :       "rainbow bracelet",
+  "item_desc" :       "It's a rainbow bracelet. Looks pretty good and stylish, special for gays.",
+  "item_icon_state" : "rainbow_bracelet",
+  "item_path" :       "/obj/item/clothing/ring"
+  }

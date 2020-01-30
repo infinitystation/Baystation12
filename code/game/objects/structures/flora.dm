@@ -4,7 +4,6 @@
 	anchored = 1
 	density = 1
 	pixel_x = -16
-	plane = ABOVE_HUMAN_PLANE
 	layer = ABOVE_HUMAN_LAYER
 
 /obj/structure/flora/tree/pine
@@ -21,12 +20,14 @@
 	desc = "O Christmas tree, O Christmas tree..."
 	icon = 'icons/obj/flora/pinetrees.dmi'
 	icon_state = "pine_c"
-	plane = OBJ_PLANE
-	layer = BELOW_OBJ_LAYER
+//INF	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/tree/pine/xmas/New()
 	..()
 	icon_state = "pine_c"
+//[INF]
+	set_light(0.5, 1, 3, 5, "#ff6633")
+//[/INF]
 
 /obj/structure/flora/tree/dead
 	icon = 'icons/obj/flora/deadtrees.dmi'
@@ -80,7 +81,6 @@
 	name = "potted plant"
 	icon = 'icons/obj/plants.dmi'
 	icon_state = "plant-26"
-	plane = ABOVE_HUMAN_PLANE
 	layer = ABOVE_HUMAN_LAYER
 
 //newbushes
@@ -227,7 +227,6 @@
 	desc = "Really brings the room together."
 	icon = 'icons/obj/plants.dmi'
 	icon_state = "plant-01"
-	plane = ABOVE_HUMAN_PLANE
 	layer = ABOVE_HUMAN_LAYER
 
 /obj/structure/flora/pottedplant/fern

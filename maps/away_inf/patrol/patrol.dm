@@ -21,7 +21,7 @@
 		/area/ship/patrol/power = NO_SCRUBBER|NO_VENT,
 	)
 
-/obj/effect/overmap/sector/scgpatrol
+/obj/effect/overmap/visitable/sector/scgpatrol
 	name = "Bluespace Traces"
 	desc = "Slight traces of a cloaking device are present. Unable to determine exact location."
 	in_space = 1

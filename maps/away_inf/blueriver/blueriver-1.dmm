@@ -11,9 +11,7 @@
 /turf/unsimulated/wall/away/blueriver/livingwall,
 /area/bluespaceriver/underground)
 "d" = (
-/turf/unsimulated/wall/supermatter/no_spread{
-	plane = -19
-	},
+/turf/unsimulated/wall/supermatter/no_spread,
 /area/bluespaceriver/underground)
 "e" = (
 /obj/machinery/crystal_static{

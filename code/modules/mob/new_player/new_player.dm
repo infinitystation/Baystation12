@@ -58,7 +58,7 @@
 	output += "[client.prefs.job_high ? ",<br>[client.prefs.job_high]" : null]<br>"
 	output += "</div>"
 
-	panel = new(src, "Welcome","Welcome,<br>[client]", 210, 280, src) //inf, was 	panel = new(src, "Welcome","Welcome,<br>[client.prefs.real_name]", 210, 280, src)
+	panel = new(src, "Welcome","Welcome to [GLOB.using_map.full_name]", 210, 280, src)
 	panel.set_window_options("can_close=0")
 	panel.set_content(JOINTEXT(output))
 	panel.open()
@@ -91,13 +91,11 @@
 				totalPlayers++
 				if(player.ready)totalPlayersReady++
 
-		if(GAME_STATE >= RUNLEVEL_GAME)
-			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
-			var/decl/security_level/SL = security_state.current_security_level
-			stat("Security level:", SL.name)
-
-/mob/new_player/Topic(href, href_list[])
-	if(!client)	return 0
+/mob/new_player/Topic(href, href_list) // This is a full override; does not call parent.
+	if(usr != src)
+		return TOPIC_NOACTION
+	if(!client)
+		return TOPIC_NOACTION
 
 	if(href_list["show_preferences"])
 		client.prefs.ShowChoices(src)
@@ -365,7 +363,7 @@
 		return 0
 
 	character = SSjobs.equip_rank(character, job.title, 1)					//equips the human
-	equip_custom_items(character)
+	SScustomitems.equip_custom_items(character)
 
 	// AIs don't need a spawnpoint, they must spawn at an empty core
 	if(character.mind.assigned_role == "AI")

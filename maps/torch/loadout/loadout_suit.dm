@@ -18,7 +18,7 @@
 	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/suit/medical_poncho
-	allowed_roles = list(/datum/job/senior_doctor, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/biomech, /datum/job/merchant, /datum/job/chemist)
+	allowed_roles = list(/datum/job/senior_doctor, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/merchant, /datum/job/chemist)
 	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/suit/engineering_poncho
@@ -52,21 +52,24 @@
 	allowed_roles = null //INF, WAS: RESTRICTED_ROLES
 
 /datum/gear/suit/labcoat
-	allowed_roles = STERILE_ROLES
+	allowed_roles = DOCTOR_ROLES
 
 /datum/gear/suit/labcoat_corp
-	allowed_roles = STERILE_ROLES
+	allowed_roles = DOCTOR_ROLES
 	allowed_branches = CIVILIAN_BRANCHES
+
+/datum/gear/suit/labcoat_blue
+	allowed_roles = DOCTOR_ROLES
 
 /datum/gear/suit/labcoat_ec
 	display_name = "labcoat, Expeditionary Corps"
 	path = /obj/item/clothing/suit/storage/toggle/labcoat/science/ec
-	allowed_roles = STERILE_ROLES
+	allowed_roles = DOCTOR_ROLES
 	allowed_branches = list(/datum/mil_branch/expeditionary_corps)
 
 /datum/gear/suit/labcoat_ec_cso
 	display_name = "labcoat, chief science officer, Expeditionary Corps"
-	path = /obj/item/clothing/suit/storage/toggle/labcoat/science/cso
+	path = /obj/item/clothing/suit/storage/toggle/labcoat/rd/ec
 	allowed_roles = list(/datum/job/rd)
 
 /datum/gear/suit/wintercoat_dais
@@ -110,7 +113,7 @@
 	armors["tan plate carrier"] = /obj/item/clothing/suit/armor/pcarrier/tan
 	gear_tweaks += new/datum/gear_tweak/path(armors)
 
-/datum/gear/suit/ocie
+/datum/gear/suit/sfp
 	display_name = "Agent's jacket"
 	path = /obj/item/clothing/suit/storage/toggle/agent_jacket
 	allowed_roles = list(/datum/job/detective)

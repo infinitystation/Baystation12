@@ -92,9 +92,9 @@ var/list/solars_list = list()
 	..()
 	overlays.Cut()
 	if(stat & BROKEN)
-		overlays += image(src, icon_state = "solar_panel-b", layer = FLY_LAYER)
+		overlays += image('icons/obj/power.dmi', icon_state = "solar_panel-b", layer = ABOVE_HUMAN_LAYER)
 	else
-		overlays += image(src, icon_state = "solar_panel", layer = FLY_LAYER)
+		overlays += image('icons/obj/power.dmi', icon_state = "solar_panel", layer = ABOVE_HUMAN_LAYER)
 		src.set_dir(angle2dir(adir))
 	return
 
@@ -174,12 +174,20 @@ var/list/solars_list = list()
 //trace towards sun to see if we're in shadow
 /obj/machinery/power/solar/proc/occlusion()
 
+	var/steps = 20	// 20 steps is enough
 	var/ax = x		// start at the solar panel
 	var/ay = y
 	var/turf/T = null
 
-	for(var/i = 1 to 20)		// 20 steps is enough
-		ax += GLOB.sun.dx	// do step
+	// On planets, we take fewer steps because the light is mostly up
+	// Also, many planets barely have any spots with enough clear space around
+	if(GLOB.using_map.use_overmap)
+		var/obj/effect/overmap/visitable/sector/exoplanet/E = map_sectors["[z]"]
+		if(istype(E))
+			steps = 5
+
+	for(var/i = 1 to steps)
+		ax += GLOB.sun.dx
 		ay += GLOB.sun.dy
 
 		T = locate( round(ax,0.5),round(ay,0.5),z)
@@ -191,7 +199,7 @@ var/list/solars_list = list()
 			obscured = 1
 			return
 
-	obscured = 0		// if hit the edge or stepped 20 times, not obscured
+	obscured = 0		// if hit the edge or stepped max times, not obscured
 	update_solar_exposure()
 
 
@@ -348,7 +356,6 @@ var/list/solars_list = list()
 	set_panels(cdir)
 	updateDialog()
 
-
 /obj/machinery/power/solar_control/Initialize()
 	. = ..()
 	if(!connect_to_network()) return
@@ -365,8 +372,8 @@ var/list/solars_list = list()
 		return
 	icon_state = "solar"
 	overlays.Cut()
-//	if(cdir > -1)
-//		overlays += image('icons/obj/computer.dmi', "solcon-o", FLY_LAYER, angle2dir(cdir))
+	if(cdir > -1)
+		overlays += image('icons/obj/computer.dmi', "solcon-o", ABOVE_OBJ_LAYER, angle2dir(cdir))
 	return
 
 /obj/machinery/power/solar_control/interface_interact(mob/user)

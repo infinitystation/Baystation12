@@ -19,14 +19,12 @@
 		/area/turret_protected/ai_cyborg_station = NO_SCRUBBER|NO_VENT,
 		/area/maintenance/thirddeck/aft = 0,
 		/area/maintenance/waterstore = 0,
-		/area/maintenance/bluespace = NO_SCRUBBER,
 		/area/maintenance/abandoned_compartment = NO_APC,
 		/area/maintenance/abandoned_hydroponics = 0,
 		/area/maintenance/firstdeck/fore = NO_SCRUBBER|NO_VENT,
 		/area/maintenance/firstdeck/aftport = 0,
 		/area/maintenance/abandoned_common = 0,
-		/area/ninja_dojo = NO_SCRUBBER |NO_VENT | NO_APC,
-		/area/rescue_base = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/maintenance/battle_data_servers = NO_SCRUBBER|NO_VENT,
 		/area/shield = NO_SCRUBBER|NO_VENT,
 		/area/shuttle = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/shuttle/escape_pod8 = NO_SCRUBBER|NO_APC,
@@ -37,7 +35,6 @@
 		/area/bridge/nano = NO_SCRUBBER|NO_VENT,
 		/area/shuttle/merchant = 0,
 		/area/shuttle/petrov = 0,
-		/area/skipjack_station = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/solar = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/space = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/storage = NO_SCRUBBER|NO_VENT,
@@ -47,10 +44,8 @@
 		/area/storage/tech = 0,
 		/area/storage/bridge = 0,
 		/area/supply = NO_SCRUBBER|NO_VENT|NO_APC,
-		/area/syndicate_station = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/thruster = NO_SCRUBBER,
 		/area/turbolift = NO_SCRUBBER|NO_VENT|NO_APC,
-		/area/turret_protected/ai = NO_SCRUBBER|NO_VENT,
 		/area/vacant = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/vacant/gambling = 0,
 		/area/vacant/cargo = NO_SCRUBBER|NO_VENT,
@@ -93,9 +88,11 @@
 	name = "ZAS: Supply Shuttle (CentComm)"
 	area_path = /area/supply/dock
 
+/*
 /datum/unit_test/zas_area_test/virology
 	name = "ZAS: Virology"
 	area_path = /area/medical/virology
+*/
 
 /datum/unit_test/zas_area_test/xenobio
 	name = "ZAS: Xenobiology"

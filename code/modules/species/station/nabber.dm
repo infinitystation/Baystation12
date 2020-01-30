@@ -49,7 +49,13 @@
 	total_health = 200
 	brute_mod = 0.9
 	burn_mod =  1.35
-	natural_armour_values = list(melee = 30, bullet = 15, laser = 0, energy = 0, bomb = 30, bio = 100, rad = 5)
+	natural_armour_values = list(
+		melee = ARMOR_MELEE_KNIVES,
+		bullet = ARMOR_BALLISTIC_MINOR,
+		bomb = ARMOR_BOMB_PADDED,
+		bio = ARMOR_BIO_SHIELDED,
+		rad = 0.5*ARMOR_RAD_MINOR
+		)
 
 	gluttonous = GLUT_SMALLER
 	mob_size = MOB_LARGE
@@ -133,6 +139,9 @@
 		TAG_RELIGION =  list(
 			RELIGION_OTHER
 		)
+	)
+	pain_emotes_with_pain_level = list(
+			list(/decl/emote/audible/bug_hiss) = 40
 	)
 
 /datum/species/nabber/New()
@@ -309,6 +318,9 @@
 
 	if(grabber.pulling_punches)
 		return ..()
+	if(grabber == target)
+		return ..()
+
 	grabber.unEquip(grabber.l_hand)
 	grabber.unEquip(grabber.r_hand)
 	to_chat(grabber, "<span class='warning'>You drop everything as you spring out to nab \the [target]!.</span>")

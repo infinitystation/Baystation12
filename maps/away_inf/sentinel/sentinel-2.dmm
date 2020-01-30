@@ -483,9 +483,7 @@
 "bi" = (
 /obj/structure/table/woodentable,
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8;
-	layer = 4;
-	level = 1
+	dir = 8
 	},
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
@@ -1713,7 +1711,6 @@
 "dw" = (
 /obj/machinery/firealarm{
 	dir = 4;
-	layer = 3.3;
 	pixel_x = 26
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -2200,7 +2197,7 @@
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
 "es" = (
-/obj/item/modular_computer/console/preset/civilian{
+/obj/machinery/computer/modular/preset/civilian{
 	dir = 8
 	},
 /turf/simulated/floor/carpet/blue2,
@@ -2326,9 +2323,7 @@
 /area/ship/patrol/crew/brig/emergency_armory)
 "eB" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8;
-	layer = 4;
-	level = 1
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/crew/brig/emergency_armory)
@@ -3542,7 +3537,7 @@
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
-/obj/item/modular_computer/console/preset/civilian,
+/obj/machinery/computer/modular/preset/civilian,
 /obj/item/device/radio/intercom/entertainment{
 	dir = 4;
 	pixel_x = -22
@@ -3618,9 +3613,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8;
-	layer = 4;
-	level = 1
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)

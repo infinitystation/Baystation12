@@ -124,7 +124,7 @@
 		if(damtype == BURN)
 			. |= DAM_LASER
 
-/obj/attackby(obj/item/O as obj, mob/user as mob)
+/obj/attackby(obj/item/O, mob/user)
 	if(obj_flags & OBJ_FLAG_ANCHORABLE)
 		if(isWrench(O))
 			wrench_floor_bolts(user)
@@ -150,15 +150,17 @@
 	..()
 
 /obj/is_fluid_pushable(var/amt)
-	return ..() && w_class <= round(amt/20)// Called when turf is hit by a thrown object
+	return ..() && w_class <= round(amt/20)
 
-/obj/hitby(atom/movable/AM as mob|obj, var/speed)
+//[INF]
+/obj/hitby(atom/movable/AM as mob|obj, var/datum/thrownthing/TT)
 	if(src.density)
 		spawn(2)
 			step(AM, turn(AM.last_move, 180))
 		if(isliving(AM))
 			var/mob/living/M = AM
-			M.object_collision(src, speed)
+			M.object_collision(src, TT.speed)
+//[/INF]
 
 /obj/proc/can_embed()
 	return is_sharp(src)
@@ -167,11 +169,11 @@
 	if(obj_flags & OBJ_FLAG_ROTATABLE)
 		rotate(user)
 	..()
-	
+
 /obj/examine(mob/user)
 	. = ..()
-	if(. && (obj_flags & OBJ_FLAG_ROTATABLE))
-		to_chat(user, "<span class='subtle'>Can be rotated with alt-click.</span>")
+	if((obj_flags & OBJ_FLAG_ROTATABLE))
+		to_chat(user, SPAN_SUBTLE("Can be rotated with alt-click."))
 
 /obj/proc/rotate(mob/user)
 	if(!CanPhysicallyInteract(user))
@@ -180,6 +182,10 @@
 
 	if(anchored)
 		to_chat(user, SPAN_NOTICE("\The [src] is secured to the floor!"))
-		return 
+		return
 
 	set_dir(turn(dir, 90))
+	update_icon()
+
+//For things to apply special effects after damaging an organ, called by organ's take_damage
+/obj/proc/after_wounding(obj/item/organ/external/organ, datum/wound)

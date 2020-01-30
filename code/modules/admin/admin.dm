@@ -875,12 +875,12 @@ var/global/floorIsLava = 0
 	set desc="Start the round RIGHT NOW"
 	set name="Start Now"
 	if(GAME_STATE < RUNLEVEL_LOBBY)
-		to_chat(usr, "<span class='danger'>Unable to start the game as it is not yet set up.</span>")
+		to_chat(usr, "<span class='bigdanger'>Unable to start the game as it is not yet set up.</span>")
 		SSticker.start_ASAP = !SSticker.start_ASAP
 		if(SSticker.start_ASAP)
-			to_chat(usr, "<span class='warning'>The game will begin as soon as possible.</span>")
+			to_chat(usr, "<span class='bigwarning'>The game will begin as soon as possible.</span>")
 		else
-			to_chat(usr, "<span class='warning'>The game will begin as normal.</span>")
+			to_chat(usr, "<span class='bigwarning'>The game will begin as normal.</span>")
 		return 0
 	if(SSticker.start_now())
 		log_admin("[usr.key] has started the game.")
@@ -888,7 +888,7 @@ var/global/floorIsLava = 0
 		SSstatistics.add_field_details("admin_verb","SN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 		return 1
 	else
-		to_chat(usr, "<span class='warning'>Error: Start Now: Game has already started.</span>")
+		to_chat(usr, "<span class='bigwarning'>Error: Start Now: Game has already started.</span>")
 		return 0
 
 /datum/admins/proc/endnow()
@@ -1108,16 +1108,17 @@ var/global/floorIsLava = 0
 
 	if(!check_rights(R_SPAWN))	return
 
-	var/owner = input("Select a ckey.", "Spawn Custom Item") as null|anything in custom_items
-	if(!owner|| !custom_items[owner])
+	var/owner = input("Select a ckey.", "Spawn Custom Item") as null|anything in SScustomitems.custom_items_by_ckey
+	if(!owner|| !SScustomitems.custom_items_by_ckey[owner])
 		return
 
-	var/list/possible_items = custom_items[owner]
-	var/datum/custom_item/item_to_spawn = input("Select an item to spawn.", "Spawn Custom Item") as null|anything in possible_items
-	if(!item_to_spawn || !item_to_spawn.is_valid(usr))
-		return
-
-	item_to_spawn.spawn_item(get_turf(usr))
+	var/list/possible_items = list()
+	for(var/datum/custom_item/item in SScustomitems.custom_items_by_ckey[owner])
+		possible_items[item.item_name] = item
+	var/item_to_spawn = input("Select an item to spawn.", "Spawn Custom Item") as null|anything in possible_items
+	if(item_to_spawn && possible_items[item_to_spawn])
+		var/datum/custom_item/item_datum = possible_items[item_to_spawn]
+		item_datum.spawn_item(get_turf(usr))
 
 /datum/admins/proc/check_custom_items()
 
@@ -1127,19 +1128,19 @@ var/global/floorIsLava = 0
 
 	if(!check_rights(R_SPAWN))	return
 
-	if(!custom_items)
+	if(!SScustomitems.custom_items_by_ckey)
 		to_chat(usr, "Custom item list is null.")
 		return
 
-	if(!custom_items.len)
+	if(!SScustomitems.custom_items_by_ckey.len)
 		to_chat(usr, "Custom item list not populated.")
 		return
 
-	for(var/assoc_key in custom_items)
+	for(var/assoc_key in SScustomitems.custom_items_by_ckey)
 		to_chat(usr, "[assoc_key] has:")
-		var/list/current_items = custom_items[assoc_key]
+		var/list/current_items = SScustomitems.custom_items_by_ckey[assoc_key]
 		for(var/datum/custom_item/item in current_items)
-			to_chat(usr, "- name: [item.name] icon: [item.item_icon] path: [item.item_path] desc: [item.item_desc]")
+			to_chat(usr, "- name: [item.item_name] icon: [item.item_icon_state] path: [item.item_path] desc: [item.item_desc]")
 
 /datum/admins/proc/spawn_plant(seedtype in SSplants.seeds)
 	set category = "Debug"
@@ -1584,11 +1585,15 @@ datum/admins/var/obj/item/weapon/paper/admin/faxreply // var to hold fax replies
 			for(var/client/C in GLOB.admins)
 				if((R_INVESTIGATE) & C.holder.rights)
 					to_chat(C, "<span class='log_message'><span class='prefix'>AFAX LOG:</span> [key_name_admin(owner)] replied to a fax message from [key_name_admin(P.sender)] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)</span>")
+				//INF
+					GLOB.fax_cache += "*[time_stamp()]*: <span class='log_message'><span class='prefix'>AFAX LOG:</span> [key_name_admin(owner)] replied to a fax message from [key_name_admin(P.sender)] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)</span><br>" //INF
 		else
 			log_fax("[key_name(owner)] has sent an admin fax message to [destination.department]")
 			for(var/client/C in GLOB.admins)
 				if((R_INVESTIGATE) & C.holder.rights)
 					to_chat(C, "<span class='log_message'><span class='prefix'>AFAX LOG:</span> [key_name_admin(owner)] has sent a fax message to [destination.department] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)</span>")
+				//INF
+					GLOB.fax_cache += "*[time_stamp()]*: <span class='log_message'><span class='prefix'>AFAX LOG:</span> [key_name_admin(owner)] has sent a fax message to [destination.department] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)</span><br>"
 	else
 		to_chat(src.owner, "<span class='warning'>Message reply failed.</span>")
 

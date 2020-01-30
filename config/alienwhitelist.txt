@@ -30,6 +30,7 @@ kotovsyndrome - machine
 termservice - machine
 semorerith - machine
 bob46 - machine
+empire2four - machine
 inubashirimomiji - skrell
 tenedegurechaff - skrell
 twinindifferent - skrell
@@ -39,7 +40,7 @@ interl0per - skrell
 kirill1243 - skrell	
 diesiege - skrell
 themaybat - skrell
-salyvador - skrell
+sallyvadordomold - skrell
 mrnicolas - skrell
 dagger17 - skrell
 romeo517 - skrell
@@ -58,6 +59,9 @@ laxesh - skrell
 arbuzpersikov - skrell
 forrya - skrell
 vladpavilen - skrell
+elloncake - skrell
+thehero13 - skrell
+wolforbykot - skrell
 cre77 - resomi
 s1334 - resomi
 shokumar - resomi
@@ -71,6 +75,7 @@ coltrane97 - resomi
 diesiege - resomi
 kirill1243 - resomi
 coldmantis13 - resomi
+darkman24rus - resomi
 wheatley2013 - resomi
 twinindifferent - resomi
 hodovoy - resomi
@@ -137,6 +142,7 @@ reptiloid2 - vox
 mrkayde - vox
 darkman24rus - vox
 connor22 - vox
+bob46 - vox
 darkscarletblood - unathi
 kribleykrabley - unathi
 alchemisthero - unathi
@@ -144,7 +150,6 @@ kotovsyndrome - unathi
 wheatley2013 - unathi
 thesarkazmus - unathi
 arbuzpersikov - unathi
-moonmen - unathi
 wolforbykot - unathi
 colossus333 - unathi
 kirill1243 - unathi
@@ -152,6 +157,7 @@ lunkydunk - unathi
 demolizer - unathi
 aragog94 - unathi
 furrydog - unathi
+daviii22 - unathi
 hodovoy - unathi
 vermout - unathi
 taushai - unathi
@@ -190,3 +196,9 @@ redknighthero - adherent
 coldmantis13 - adherent
 forrya - adherent
 5au5age - adherent
+coldmantis13 - Kharmaan Gyne
+forrya - Kharmaan Gyne
+s1334 - Kharmaan Gyne
+wheatley2013 - Kharmaan Gyne
+dagger17 - Kharmaan Gyne
+cre77 - Kharmaan Gyne

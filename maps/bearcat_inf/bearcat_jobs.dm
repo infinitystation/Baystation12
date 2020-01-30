@@ -10,7 +10,7 @@
 		return
 	GLOB.using_map.station_short = ship
 	GLOB.using_map.station_name = "FTV [ship]"
-	var/obj/effect/overmap/ship/bearcat/B = locate() in world
+	var/obj/effect/overmap/visitable/ship/bearcat/B = locate() in world
 	if(B)
 		B.name = GLOB.using_map.station_name
 	command_announcement.Announce("Attention all hands on [GLOB.using_map.station_name]! Thank you for your attention.", "Ship re-christened")

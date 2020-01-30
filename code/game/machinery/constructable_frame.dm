@@ -39,32 +39,3 @@
 /obj/machinery/constructable_frame/machine_frame/deconstruct
 	anchored = TRUE
 	construct_state = /decl/machine_construction/frame/awaiting_circuit
-
-
-/*INF@Waiting for QuardBreak
-							if(istype(P, /obj/item/weapon/storage/part_replacer) && P.contents.len && get_req_components_amt())
-							var/obj/item/weapon/storage/part_replacer/replacer = P
-							var/list/added_components = list()
-							var/list/part_list = list()
-
-							//Assemble a list of current parts, then sort them by their rating!
-							for(var/obj/item/weapon/stock_parts/co in replacer)
-								part_list += co
-							//Sort the parts. This ensures that higher tier items are applied first.
-							part_list = sortTim(part_list)
-
-							for(var/path in req_components)
-								while(req_components[path] > 0 && (locate(path) in part_list))
-									var/obj/item/part = (locate(path) in part_list)
-									added_components[part] = path
-									replacer.remove_from_storage(part, src)
-									req_components[path]--
-									part_list -= part
-
-							for(var/obj/item/weapon/stock_parts/part in added_components)
-								components += part
-								user << "<span class='notice'>[part.name] applied.</span>"
-							replacer.play_rped_sound()
-
-							update_desc()
-*/

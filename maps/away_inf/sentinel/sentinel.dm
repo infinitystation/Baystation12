@@ -11,13 +11,12 @@
 	//OVERMAP//
 	///////////
 
-/obj/effect/overmap/ship/patrol
+/obj/effect/overmap/visitable/ship/patrol
 	name = "Cobra-Class Craft"
 	color = "#990000"
 	fore_dir = WEST
 	vessel_mass = 100
 	default_delay = 30 SECONDS
-	speed_mod = 4 SECONDS
 	start_x = 2
 	start_y = 2
 
@@ -33,7 +32,7 @@
 	"Albatross" = list("nav_hangar_albatross")
 		)
 
-/obj/effect/overmap/ship/patrol/New()
+/obj/effect/overmap/visitable/ship/patrol/New()
 	name = "SPC [pick("Sentinel","Swordfish","Rescuer","Cavalry","Anchor","Scarabaeus","Purposeful","Helios")], \a [name]"
 	for(var/area/ship/patrol/A)
 		A.name = "\improper [name] - [A.name]"

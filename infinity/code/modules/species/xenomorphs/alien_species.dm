@@ -36,7 +36,7 @@
 	stun_mod =      0.25  // Halved stun times.
 	paralysis_mod = 0.25 // Quartered paralysis times.
 	weaken_mod =    0    // Cannot be weakened.
-	virus_immune = 1
+//	virus_immune = 1
 	blood_oxy = 0
 
 	warning_low_pressure = 50

@@ -3,7 +3,7 @@
 #include "blueriver_shuttle.dm"
 #include "blueriver_papers.dm"
 
-/obj/effect/overmap/sector/arcticplanet
+/obj/effect/overmap/visitable/sector/arcticplanet
 	name = "arctic planetoid"
 	desc = "Sensor array detects an arctic planet with a small vessle on the planet's surface. Scans further indicate strange energy levels below the planet's surface."
 	in_space = 0
@@ -19,7 +19,7 @@
 		"Cometa" = list("nav_blueriver_shuttle"),
 	)
 
-/obj/effect/overmap/sector/arcticplanet/New(nloc, max_x, max_y)
+/obj/effect/overmap/visitable/sector/arcticplanet/New(nloc, max_x, max_y)
 	name = "[generate_planet_name()], \a [name]"
 	..()
 

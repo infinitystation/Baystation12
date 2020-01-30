@@ -252,15 +252,6 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	name = OUTFIT_JOB_NAME("Mortician")
 	uniform = /obj/item/clothing/under/rank/medical/scrubs/black
 
-/decl/hierarchy/outfit/job/sierra/crew/medical/doctor/virologist
-	name = OUTFIT_JOB_NAME("Virologist - Sierra")
-	uniform = /obj/item/clothing/under/rank/virologist
-	suit = /obj/item/clothing/suit/storage/toggle/labcoat/virologist
-
-/decl/hierarchy/outfit/job/sierra/crew/medical/doctor/virologist/New()
-	..()
-	BACKPACK_OVERRIDE_VIROLOGY
-
 /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/paramedic
 	name = OUTFIT_JOB_NAME("Paramedic - Sierra")
 	uniform = /obj/item/clothing/under/rank/medical/paramedic

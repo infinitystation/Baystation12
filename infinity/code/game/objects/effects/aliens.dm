@@ -14,7 +14,7 @@
 	density = 0
 	opacity = 0
 	anchored = 1
-	plane = BLOB_PLANE
+//	plane = BLOB_PLANE
 	layer = BLOB_SHIELD_LAYER
 
 	var/atom/target

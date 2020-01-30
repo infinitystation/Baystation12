@@ -1,7 +1,7 @@
 #include "smugglers_areas.dm"
 #include "../../away/mining/mining_areas.dm"
 
-/obj/effect/overmap/sector/smugglers
+/obj/effect/overmap/visitable/sector/smugglers
 	name = "asteroid station"
 	desc = "A small station built into an asteroid. No radio traffic detected."
 	icon_state = "object"
@@ -107,7 +107,7 @@
 	name = "Random Ammo Magazine"
 	desc = "This is smuggler's random ammo magazine."
 	icon = 'icons/obj/ammo.dmi'
-	icon_state = "45-10"
+	icon_state = "magnum"
 
 /obj/random/ammo_magazine_smug/spawn_choices()
 	return list(

@@ -1,5 +1,5 @@
 
-/obj/effect/overmap/ship/tajsciship
+/obj/effect/overmap/visitable/ship/tajsciship
 	name = "light tajaran station"
 	fore_dir = WEST
 	vessel_mass = 64000
@@ -12,7 +12,7 @@
 	"CCA EC Shuttle" = list("nav_tajscishuttle_dock")
 	)
 
-/obj/effect/overmap/ship/landable/tajscishuttle
+/obj/effect/overmap/visitable/ship/landable/tajscishuttle
 	name = "CCA EC Shuttle"
 	shuttle = "CCA EC Shuttle"
 	fore_dir = WEST

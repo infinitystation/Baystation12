@@ -147,7 +147,8 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		pref.bgstate = "000"
 
 /datum/category_item/player_setup_item/physical/body/content(var/mob/user)
-	. = list()
+	. = "" //inf
+//inf	. = list()
 	if(!pref.preview_icon)
 		pref.update_preview_icon()
 	user << browse_rsc(pref.preview_icon, "previewicon.png")
@@ -207,6 +208,8 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 				organ_name = BP_LIVER
 			if(BP_KIDNEYS)
 				organ_name = BP_KIDNEYS
+			if(BP_STOMACH)
+				organ_name = BP_STOMACH
 			if(BP_CHEST)
 				organ_name = "upper body"
 			if(BP_GROIN)
@@ -274,12 +277,12 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	. += "<b>Hair</b><br>"
 	if(has_flag(mob_species, HAS_HAIR_COLOR))
 		. += "<a href='?src=\ref[src];hair_color=1'>Change Color</a> <font face='fixedsys' size='3' color='#[num2hex(pref.r_hair, 2)][num2hex(pref.g_hair, 2)][num2hex(pref.b_hair, 2)]'><table style='display:inline;' bgcolor='#[num2hex(pref.r_hair, 2)][num2hex(pref.g_hair, 2)][num2hex(pref.b_hair)]'><tr><td>__</td></tr></table></font> "
-	. += " Style: <a href='?src=\ref[src];hair_style=1'>[pref.h_style]</a><br>"
+	. += " Style: <!-- INF --><a href='?src=\ref[src];hair_style_back=1'>&lt;</a><!-- /INF --><a href='?src=\ref[src];hair_style=1'>[pref.h_style]</a><!-- INF --><a href='?src=\ref[src];hair_style_next=1'>&gt;</a><!-- /INF --><br>"
 
 	. += "<br><b>Facial</b><br>"
 	if(has_flag(mob_species, HAS_HAIR_COLOR))
 		. += "<a href='?src=\ref[src];facial_color=1'>Change Color</a> <font face='fixedsys' size='3' color='#[num2hex(pref.r_facial, 2)][num2hex(pref.g_facial, 2)][num2hex(pref.b_facial, 2)]'><table  style='display:inline;' bgcolor='#[num2hex(pref.r_facial, 2)][num2hex(pref.g_facial, 2)][num2hex(pref.b_facial)]'><tr><td>__</td></tr></table></font> "
-	. += " Style: <a href='?src=\ref[src];facial_style=1'>[pref.f_style]</a><br>"
+	. += " Style: <!-- INF --><a href='?src=\ref[src];facial_style_back=1'>&lt;</a><!-- /INF --><a href='?src=\ref[src];facial_style=1'>[pref.f_style]</a><!-- INF --><a href='?src=\ref[src];facial_style_next=1'>&gt;</a><!-- /INF --><br>"
 
 	if(has_flag(mob_species, HAS_EYE_COLOR))
 		. += "<br><b>Eyes</b><br>"
@@ -299,7 +302,14 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 
 /datum/category_item/player_setup_item/physical/body/proc/has_flag(var/datum/species/mob_species, var/flag)
 	return mob_species && (mob_species.appearance_flags & flag)
+//[INF]
+/datum/category_item/player_setup_item/physical/body/proc/GetNumOfHairStyle(var/style, var/list/valid_hairstyles)
+	. = 1
+	for(var/i = 1; i <= length(valid_hairstyles); i++)
+		if(valid_hairstyles[i] == style)
+			. = i
 
+//[/INF]
 /datum/category_item/player_setup_item/physical/body/OnTopic(var/href,var/list/href_list, var/mob/user)
 
 	var/datum/species/mob_species = all_species[pref.species]
@@ -399,6 +409,51 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		if(new_h_style && CanUseTopic(user) && (new_h_style in mob_species.get_hair_styles()))
 			pref.h_style = new_h_style
 			return TOPIC_REFRESH_UPDATE_PREVIEW
+	//[INF]
+	else if(href_list["hair_style_back"])
+		var/c_style = pref.h_style
+		var/list/valid_hairstyles = mob_species.get_hair_styles()
+		var/nextStyleNum = GetNumOfHairStyle(c_style, valid_hairstyles) - 1
+		if(CanUseTopic(user))
+			if(!c_style || !c_style in valid_hairstyles)
+				pref.h_style = valid_hairstyles[1]
+			else if(nextStyleNum <= valid_hairstyles.len && valid_hairstyles[nextStyleNum])
+				pref.h_style = valid_hairstyles[nextStyleNum]
+		return TOPIC_REFRESH_UPDATE_PREVIEW
+
+	else if(href_list["hair_style_next"])
+		var/c_style = pref.h_style
+		var/list/valid_hairstyles = mob_species.get_hair_styles()
+		var/nextStyleNum = GetNumOfHairStyle(c_style, valid_hairstyles) + 1
+		if(CanUseTopic(user))
+			if(!c_style || !(c_style in valid_hairstyles))
+				pref.h_style = valid_hairstyles[1]
+			else if(nextStyleNum <= valid_hairstyles.len && valid_hairstyles[nextStyleNum])
+				pref.h_style = valid_hairstyles[nextStyleNum]
+		return TOPIC_REFRESH_UPDATE_PREVIEW
+
+	else if(href_list["facial_style_back"])
+		var/c_style = pref.f_style
+		var/list/valid_hairstyles = mob_species.get_facial_hair_styles()
+		var/nextStyleNum = GetNumOfHairStyle(c_style, valid_hairstyles) - 1
+		if(CanUseTopic(user))
+			if(!c_style || !c_style in valid_hairstyles)
+				pref.f_style = valid_hairstyles[1]
+			else if(nextStyleNum <= valid_hairstyles.len && valid_hairstyles[nextStyleNum])
+				pref.f_style = valid_hairstyles[nextStyleNum]
+		return TOPIC_REFRESH_UPDATE_PREVIEW
+
+	else if(href_list["facial_style_next"])
+		var/c_style = pref.f_style
+		var/list/valid_hairstyles = mob_species.get_facial_hair_styles()
+		var/nextStyleNum = GetNumOfHairStyle(c_style, valid_hairstyles) + 1
+		if(CanUseTopic(user))
+			if(!c_style || !(c_style in valid_hairstyles))
+				pref.f_style = valid_hairstyles[1]
+			else if(nextStyleNum <= valid_hairstyles.len && valid_hairstyles[nextStyleNum])
+				pref.f_style = valid_hairstyles[nextStyleNum]
+		return TOPIC_REFRESH_UPDATE_PREVIEW
+	//[/INF]
 
 	else if(href_list["facial_color"])
 		if(!has_flag(mob_species, HAS_HAIR_COLOR))
@@ -458,12 +513,14 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["marking_style"])
+		var/list/disallowed_markings = list()
+		for (var/M in pref.body_markings)
+			var/datum/sprite_accessory/marking/mark_style = GLOB.body_marking_styles_list[M]
+			disallowed_markings |= mark_style.disallows
 		var/list/usable_markings = pref.body_markings.Copy() ^ GLOB.body_marking_styles_list.Copy()
 		for(var/M in usable_markings)
 			var/datum/sprite_accessory/S = usable_markings[M]
-			if(!S.species_allowed.len)
-				continue
-			else if(!(pref.species in S.species_allowed))
+			if(is_type_in_list(S, disallowed_markings) || (S.species_allowed && !(mob_species.get_bodytype() in S.species_allowed)) || (S.subspecies_allowed && !(mob_species.name in S.subspecies_allowed)))
 				usable_markings -= M
 
 		var/new_marking = input(user, "Choose a body marking:", CHARACTER_PREFERENCE_INPUT_TITLE)  as null|anything in usable_markings
@@ -555,7 +612,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 					for(var/other_limb in (BP_ALL_LIMBS - BP_CHEST))
 						pref.organ_data[other_limb] = null
 						pref.rlimb_data[other_limb] = null
-						for(var/internal_organ in list(BP_HEART,BP_EYES,BP_LUNGS,BP_LIVER,BP_KIDNEYS,BP_BRAIN))
+						for(var/internal_organ in list(BP_HEART,BP_EYES,BP_LUNGS,BP_LIVER,BP_KIDNEYS,BP_STOMACH,BP_BRAIN))
 							pref.organ_data[internal_organ] = null
 				pref.organ_data[limb] = null
 				pref.rlimb_data[limb] = null
@@ -613,7 +670,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["organs"])
-		var/organ_name = input(user, "Which internal function do you want to change?") as null|anything in list("Heart", "Eyes", "Lungs", "Liver", "Kidneys")
+		var/organ_name = input(user, "Which internal function do you want to change?") as null|anything in list("Heart", "Eyes", "Lungs", "Liver", "Kidneys", "Stomach")
 		if(!organ_name) return
 
 		var/organ = null
@@ -628,6 +685,8 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 				organ = BP_LIVER
 			if("Kidneys")
 				organ = BP_KIDNEYS
+			if("Stomach")
+				organ = BP_STOMACH
 
 		var/list/organ_choices = list("Normal","Assisted","Synthetic")
 

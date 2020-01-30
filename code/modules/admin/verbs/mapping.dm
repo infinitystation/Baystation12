@@ -149,6 +149,7 @@ var/list/debug_verbs = list (
 		,/client/proc/atmos_toggle_debug
 		,/client/proc/spawn_tanktransferbomb
 		,/client/proc/find_leaky_pipes
+		,/client/proc/analyze_openturf
 	)
 
 
@@ -328,7 +329,7 @@ var/list/debug_verbs = list (
 	SSstatistics.add_field_details("admin_verb","mOBJ") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /proc/get_zas_image(var/turf/T, var/icon_state)
-	return image_repository.atom_image(T, 'icons/misc/debug_group.dmi', icon_state, plane = ABOVE_TURF_PLANE, layer = ABOVE_TILE_LAYER)
+	return image_repository.atom_image(T, 'icons/misc/debug_group.dmi', icon_state, plane = DEFAULT_PLANE, layer = ABOVE_TILE_LAYER)
 
 //Special for Cakey
 /client/proc/find_leaky_pipes()

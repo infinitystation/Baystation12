@@ -139,11 +139,6 @@
 	name = "Second Deck - Teleporter"
 	icon_state = "teleporter"
 
-/area/maintenance/bluespace
-	name = "Second Deck - Engineering - Bluespace Drive"
-	icon_state = "engineering"
-	req_access = list(list(access_engine_equip, access_heads), access_engine, access_maint_tunnels)
-
 /area/crew_quarters/safe_room/seconddeck
 	name = "Second Deck - Safe Room"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
@@ -410,24 +405,6 @@
  * =================
  */
 
-//NINJA AREAS
-/area/ninja_dojo
-	name = "Ninja Base"
-	icon_state = "green"
-	requires_power = 0
-	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
-	req_access = list(access_syndicate)
-
-/area/ninja_dojo/dojo
-	name = "Clan Dojo"
-	dynamic_lighting = 0
-
-/area/ninja_dojo/start
-	name = "Clan Dojo"
-	icon_state = "shuttlered"
-	base_turf = /turf/simulated/floor/plating
-
 //MERCHANT AREAS
 /area/shuttle/merchant/home
 	name = "Merchant Vessel"
@@ -436,49 +413,6 @@
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 	req_access = list(access_merchant)
-
-//NUCLEAR TEAM AREAS
-/area/syndicate_mothership
-	name = "Mercenary Base"
-	icon_state = "syndie-ship"
-	requires_power = 0
-	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
-	req_access = list(access_syndicate)
-
-/area/syndicate_station/start
-	name = "Mercenary Forward Operating Base"
-	icon_state = "yellow"
-	requires_power = 0
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
-	req_access = list(access_syndicate)
-
-//RAIDERS AREAS
-/area/skipjack_station
-	name = "Raider Outpost"
-	icon_state = "yellow"
-	requires_power = 0
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
-	req_access = list(access_syndicate)
-
-//ERT AREAS
-/area/rescue_base
-	name = "Response Team Base"
-	icon_state = "yellow"
-	requires_power = 0
-	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
-	req_access = list(access_cent_specops)
-
-/area/rescue_base/base
-	name = "Barracks"
-	icon_state = "yellow"
-	dynamic_lighting = 0
-
-/area/rescue_base/start
-	name = "Response Team Base"
-	icon_state = "shuttlered"
-	base_turf = /turf/unsimulated/floor/rescue_base
 
 /* COMMAND AREAS
  * =============
@@ -490,7 +424,7 @@
 	req_access = list(access_el)
 
 /area/command/bsa
-	name = "Third Deck - Artillery - Bluespace"
+	name = "Third Deck - Artillery - Obstruction Field Disperser"
 	icon_state = "firingrange"
 	req_access = list(access_gun)
 
@@ -587,7 +521,7 @@
 	req_access = list()
 
 /area/bridge/gun/energy
-	name = "First Deck - Artillary - Lasers"
+	name = "First Deck - Artillery - Lasers"
 	icon = 'infinity/icons/turf/areas.dmi'
 	icon_state = "bridge_gun"
 
@@ -654,6 +588,17 @@
  	icon_state = "atmos"
  	sound_env = LARGE_ENCLOSED
  	req_access = list(access_atmospherics)
+
+/area/engineering/bluespace
+	name = "Second Deck - Engineering - Bluespace Drive"
+	icon_state = "engine_monitoring"
+	req_access = list(list(access_engine_equip, access_heads), access_engine, access_maint_tunnels)
+	sound_env = SMALL_ENCLOSED
+
+/area/engineering/bluespace/chamber
+	name = "Second Deck - Engineering - Bluespace Drive - Chamber"
+	icon_state = "engine"
+	sound_env = LARGE_ENCLOSED
 
 // Shield Rooms
 /area/shield
@@ -754,8 +699,8 @@
 	sound_env = LARGE_ENCLOSED
 	req_access = list(access_hangar)
 
-/area/quartermaster/unused
-	name = "Third Deck - Abandoned - Ready Room"
+/area/quartermaster/hangar_atmos
+	name = "Third Deck - Hangar - Atmospherics Storage"
 	icon_state = "auxstorage"
 
 /* RND AREAS
@@ -923,6 +868,10 @@
 /area/crew_quarters/sleep/cryo/upper
 	name = "Second Deck - Living - Cryogenic Storage Upper"
 
+/area/crew_quarters/adherent
+	name = "Second Deck - Living - Adherent Maintenence"
+	icon_state = "robotics"
+
 /* SECURITY AREAS
  *
  */
@@ -1081,6 +1030,14 @@
 	sound_env = SMALL_ENCLOSED
 	req_access = list(access_crematorium)
 
+/area/medical/virology
+	name = "Second Deck - Abandoned - Virology"
+	req_access = list()
+
+/area/medical/virologyaccess
+	name = "Second Deck - Abandoned - Virology Access"
+	req_access = list()
+
 /* CHAPEL AREAS
  * ============
  */
@@ -1176,7 +1133,7 @@
 
 /area/admin_prison
 	name = "Admin Prison"
-	dynamic_lighting = 0
+	dynamic_lighting = 1
 	requires_power = 0
 	icon_state = "blue-red-d"
 
@@ -1346,6 +1303,10 @@
 	icon_state = "tcomsatstore"
 
 // AI
+/area/maintenance/battle_data_servers
+	name = "Battle Data Servers"
+	req_access = list(access_maint_tunnels)
+
 /area/ai_monitored
 	name = "AI Monitored Area"
 
@@ -1358,9 +1319,9 @@
 	req_access = list(access_ai_upload)
 
 /area/turret_protected/ai
-	name = "First Deck - AI Chamber"
+	name = "AI Chamber"
 	icon_state = "ai_chamber"
-	ambience = list('sound/ambience/ambimalf.ogg')
+	forced_ambience = list('infinity/sound/SS2/ambience/XXMIX_S.wav')
 
 /area/turret_protected/ai_cyborg_station
 	name = "Second Deck - Cyborg Station"

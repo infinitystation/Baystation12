@@ -19,7 +19,8 @@
 	departments = ENG|COM
 
 	hat = list(\
-		/obj/item/clothing/head/soft/yellow, /obj/item/clothing/head/hardhat/white)
+		/obj/item/clothing/head/soft/yellow, /obj/item/clothing/head/hardhat/white, \
+		/obj/item/clothing/head/beret/infinity/engineer_ce)
 	under = list(\
 		/obj/item/clothing/under/rank/chief_engineer)
 
@@ -42,6 +43,8 @@
 	name = "Employee Supply Head"
 	departments = SUP|COM
 
+	hat = list(\
+		/obj/item/clothing/head/soft/yellow, /obj/item/clothing/head/beret/infinity/cargo_qm)
 	under = list(\
 		/obj/item/clothing/under/rank/cargo)
 
@@ -54,9 +57,10 @@
 	departments = SEC
 
 	hat = list(\
-		/obj/item/clothing/head/beret/sec/corporate/officer, \
+		/obj/item/clothing/head/beret/sec/corporate/officer, /obj/item/clothing/head/beret/sec/navy/officer, \
 		/obj/item/clothing/head/beret/sec, /obj/item/clothing/head/soft/sec, \
-		/obj/item/clothing/head/soft/sec/corp, /obj/item/clothing/head/soft/sec/corp/guard)
+		/obj/item/clothing/head/soft/sec/corp, /obj/item/clothing/head/soft/sec/corp/guard, \
+		/obj/item/clothing/head/beret/guard)
 	under = list(\
 		/obj/item/clothing/under/rank/security, /obj/item/clothing/under/rank/security/alt, \
 		/obj/item/clothing/under/rank/security/corp, /obj/item/clothing/under/rank/security/corp/alt, \
@@ -70,7 +74,8 @@
 	departments = SEC|COM
 
 	hat = list(\
-		/obj/item/clothing/head/beret/sec/corporate/hos, /obj/item/clothing/head/HoS)
+		/obj/item/clothing/head/beret/sec/corporate/hos, /obj/item/clothing/head/HoS, \
+		/obj/item/clothing/head/beret/infinity/hos, /obj/item/clothing/head/beret/sec/navy/hos)
 	under = list(\
 		/obj/item/clothing/under/rank/head_of_security, /obj/item/clothing/under/rank/head_of_security/jensen, \
 		/obj/item/clothing/under/rank/head_of_security/navyblue, /obj/item/clothing/under/rank/head_of_security/navyblue/alt, \
@@ -91,7 +96,8 @@
 		/obj/item/clothing/head/surgery/blue, /obj/item/clothing/head/surgery/green, \
 		/obj/item/clothing/head/surgery/black, /obj/item/clothing/head/surgery/navyblue, \
 		/obj/item/clothing/head/surgery/lilac, /obj/item/clothing/head/surgery/teal, \
-		/obj/item/clothing/head/surgery/heliodor, /obj/item/clothing/head/hardhat/EMS)
+		/obj/item/clothing/head/surgery/heliodor, /obj/item/clothing/head/hardhat/EMS, \
+		/obj/item/clothing/head/beret/infinity/medical)
 	under = list(\
 		/obj/item/clothing/under/rank/chemist, /obj/item/clothing/under/rank/chemist_new, \
 		/obj/item/clothing/under/rank/medical, /obj/item/clothing/under/rank/medical/paramedic, \
@@ -115,7 +121,8 @@
 		/obj/item/clothing/head/surgery/blue, /obj/item/clothing/head/surgery/green, \
 		/obj/item/clothing/head/surgery/black, /obj/item/clothing/head/surgery/navyblue, \
 		/obj/item/clothing/head/surgery/lilac, /obj/item/clothing/head/surgery/teal, \
-		/obj/item/clothing/head/surgery/heliodor)
+		/obj/item/clothing/head/surgery/heliodor, /obj/item/clothing/head/beret/infinity/medical, \
+		/obj/item/clothing/head/beret/infinity/medical_cmo)
 	under = list(\
 		/obj/item/clothing/under/rank/chief_medical_officer, /obj/item/clothing/under/sterile, \
 		/obj/item/clothing/under/rank/medical/scrubs, /obj/item/clothing/under/rank/medical/scrubs/blue, \
@@ -132,6 +139,8 @@
 	name = "Employee Research"
 	departments = SCI
 
+	hat = list(\
+		/obj/item/clothing/head/beret/infinity/science)
 	under = list(\
 		/obj/item/clothing/under/sterile, /obj/item/clothing/under/rank/scientist, \
 		/obj/item/clothing/under/rank/scientist_new)
@@ -142,6 +151,8 @@
 	name = "Employee Research Head"
 	departments = SCI|COM
 
+	hat = list(\
+		/obj/item/clothing/head/beret/infinity/science, /obj/item/clothing/head/beret/infinity/science_rd)
 	under = list(\
 		/obj/item/clothing/under/rank/research_director, /obj/item/clothing/under/rank/research_director/dress_rd, \
 		/obj/item/clothing/under/rank/research_director/rdalt)

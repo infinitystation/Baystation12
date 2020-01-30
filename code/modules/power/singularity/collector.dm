@@ -4,7 +4,7 @@ var/global/list/rad_collectors = list()
 /obj/machinery/power/rad_collector
 	name = "radiation collector array"
 	desc = "A device which uses radiation and phoron to produce power."
-	icon = 'infinity/icons/obj/singularity.dmi'
+	icon = 'icons/obj/machines/rad_collector.dmi'
 	icon_state = "ca"
 	anchored = 0
 	density = 1
@@ -168,8 +168,9 @@ var/global/list/rad_collectors = list()
 		return
 	return ..()
 
-/obj/machinery/power/rad_collector/examine(mob/user)
-	if (..(user, 3) && !(stat & BROKEN))
+/obj/machinery/power/rad_collector/examine(mob/user, distance)
+	. = ..()
+	if (distance <= 3 && !(stat & BROKEN))
 		to_chat(user, "The meter indicates that \the [src] is collecting [last_power] W.")
 		return 1
 

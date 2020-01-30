@@ -12,7 +12,7 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 	universal_speak = TRUE
 
 	mob_flags = MOB_FLAG_HOLY_BAD
-	movement_handlers = list(/datum/movement_handler/mob/incorporeal)
+	movement_handlers = list(/datum/movement_handler/mob/multiz_connected, /datum/movement_handler/mob/incorporeal)
 
 	var/is_manifest = FALSE
 	var/next_visibility_toggle = 0
@@ -86,7 +86,7 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 		hud_images = null
 	return ..()
 
-/mob/observer/ghost/Topic(href, href_list)
+/mob/observer/ghost/OnSelfTopic(href_list)
 	if (href_list["track"])
 		if(istype(href_list["track"],/mob))
 			var/mob/target = locate(href_list["track"]) in SSmobs.mob_list
@@ -96,6 +96,8 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 			var/atom/target = locate(href_list["track"])
 			if(istype(target))
 				ManualFollow(target)
+		return TOPIC_HANDLED
+	return ..()
 
 /*
 Transfer_mind is there to check if mob is being deleted/not going to have a body.
@@ -372,7 +374,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	var/turf/t = get_turf(src)
 	if(t)
 		var/rads = SSradiation.get_rads_at_turf(t)
-		to_chat(src, "<span class='notice'>Radiation level: [rads ? rads : "0"] Bq.</span>")
+		to_chat(src, "<span class='notice'>Radiation level: [rads ? rads : "0"] Roentgen.</span>")
 
 /mob/observer/ghost/proc/scan_target()
 	set name = "Scan Target"

@@ -36,10 +36,7 @@
 	update_icon()
 
 /obj/structure/wall_frame/examine(mob/user)
-	. = ..(user)
-
-	if(!.)
-		return
+	. = ..()
 
 	if(health == material.integrity)
 		to_chat(user, "<span class='notice'>It seems to be in fine condition.</span>")
@@ -140,7 +137,7 @@
 	paint_color = COLOR_WALL_GUNMETAL
 
 /obj/structure/wall_frame/wood
-	paint_color = "#824b28"
+	paint_color = "#78523b"
 
 /obj/structure/wall_frame/crystal
 	paint_color = COLOR_PALE_BLUE_GRAY
@@ -166,12 +163,15 @@
 	take_damage(damage)
 	return
 
-/obj/structure/wall_frame/hitby(AM as mob|obj, var/speed=THROWFORCE_SPEED_DIVISOR)
+/obj/structure/wall_frame/hitby(AM as mob|obj, var/datum/thrownthing/TT)
 	..()
-	if(ismob(AM))
-		return
-	var/obj/O = AM
-	var/tforce = O.throwforce * (speed/THROWFORCE_SPEED_DIVISOR)
+	var/tforce = 0
+	if(ismob(AM)) // All mobs have a multiplier and a size according to mob_defines.dm
+		var/mob/I = AM
+		tforce = I.mob_size * (TT.speed/THROWFORCE_SPEED_DIVISOR)
+	else
+		var/obj/O = AM
+		tforce = O.throwforce * (TT.speed/THROWFORCE_SPEED_DIVISOR)
 	if (tforce < 15)
 		return
 	take_damage(tforce)

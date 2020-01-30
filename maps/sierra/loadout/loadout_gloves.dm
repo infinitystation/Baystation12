@@ -13,3 +13,8 @@
 
 /datum/gear/gloves/insulated
 	allowed_roles = ENGINEERING_ROLES
+
+/datum/gear/gloves/duty
+	display_name = "gloves, duty"
+	path = /obj/item/clothing/gloves/thick/duty
+	cost = 3

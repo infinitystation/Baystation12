@@ -1,5 +1,4 @@
 /mob/living/carbon/human
-	plane = HUMAN_PLANE
 
 	//Hair colour and style
 	var/r_hair = 0
@@ -112,5 +111,4 @@
 
 	var/list/descriptors
 
-		//Surgery info
-	//var/datum/surgery_status/op_stage = new/datum/surgery_status
+	var/last_smelt = 0

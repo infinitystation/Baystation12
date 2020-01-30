@@ -18,14 +18,14 @@
 		for(var/client/C in GLOB.clients)
 			var/entry = "\t[C.key]"
 			if(!C.mob) //If mob is null, print error and skip rest of info for client.
-				entry += " - <font color='red'><i>HAS NO MOB</i></font>"
+				entry += " - <font color='red'><i>НЕ ИМЕЕТ ТЕЛА</i></font>"
 				Lines += entry
 				continue
 
 			if(isghost(C.mob))
-				entry += " - <font color='gray'><b>Наблюдает</b></font> as <b>[C.mob.real_name]</b>"
+				entry += " - <font color='gray'><b>Наблюдает</b></font> как <b>[C.mob.real_name]</b>"
 			else if(isliving(C.mob))
-				entry += " - <font color='green'><b>Играет</b></font> as <b>[C.mob.real_name]</b>"
+				entry += " - <font color='green'><b>Играет</b></font> как <b>[C.mob.real_name]</b>"
 
 			switch(C.mob.stat)
 				if(UNCONSCIOUS)
@@ -72,7 +72,7 @@
 	else
 		for(var/client/C in GLOB.clients)
 			if(!C.is_stealthed())
-				var/entry = "[C.key]"
+				var/entry = "\t[C.key]"
 /*				switch(C.mob.stat)
 					if(DEAD)
 						if(isghost(C.mob))
@@ -91,6 +91,9 @@
 
 				Lines += entry
 
+	if(get_preference_value(/datum/client_preference/window_who) == GLOB.PREF_YES)
+		msg = "<h2><b>Список Игроков:</b></h2>\n"
+
 	for(var/line in sortList(Lines))
 		msg += "[line]\n"
 
@@ -98,7 +101,16 @@
 		msg += "<b><font color='green'>Живых: [living]</font> | Мертвых: [dead] | <font color='gray'>Наблюдателей: [observers]</font> | <font color='#006400'>Лоббистов: [lobby]</font> | <font color='#8100aa'>Живых Антагов: [living_antags]</font> | <font color='#9b0000'>Мертвых Антагов: [dead_antags]</font></b>\n"
 
 	msg += "<b>Всего Игроков: [length(Lines)]</b>"
-	to_chat(src, msg)
+	if(get_preference_value(/datum/client_preference/window_who) == GLOB.PREF_YES)
+		msg = replacetext(msg, "\n", "<br>")
+		show_browser(usr, msg, "window=who;size=780x420;can_close=1")
+	else
+		to_chat(src, msg)
+
+/datum/client_preference/window_who
+	description ="Display content in a separate window"
+	key = "WINDOW_WHO"
+	default_value = GLOB.PREF_NO
 
 /client/verb/staffwho()
 	set category = "Admin"
@@ -145,7 +157,7 @@
 		else
 			msg += line
 
-	if(config.admin_irc)
-		to_chat(src, "<span class='info'>Ваш запрос на помощь могут увидеть админы в дискорде. Если администрации нет на сервере, всё равно попробуйте написать, возможно вам ответ&#255;т оттуда.</span>")
 	to_chat(src, "<b>Сотрудники [active_staff]/[total_staff]:</b>")
 	to_chat(src, jointext(msg,"\n"))
+	if(config.admin_irc)
+		to_chat(src, "<span class='info'>Ваш запрос на помощь могут увидеть админы в дискорде. Если администрации нет на сервере, всё равно попробуйте написать, возможно вам ответ&#255;т оттуда.</span>")

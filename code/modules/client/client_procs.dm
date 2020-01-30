@@ -23,6 +23,8 @@
 /client/Topic(href, href_list, hsrc)
 	if(!usr || usr != mob)	//stops us calling Topic for somebody else's client. Also helps prevent usr=null
 		return
+	if(!user_acted(src))
+		return
 
 	#if defined(TOPIC_DEBUGGING)
 	log_debug("[src]'s Topic: [href] destined for [hsrc].")
@@ -76,8 +78,6 @@
 
 		ticket.close(client_repository.get_lite_client(usr.client))
 
-
-
 	//Logs all hrefs
 	if(config && config.log_hrefs && href_logfile)
 		to_chat(href_logfile, "<small>[time2text(world.timeofday,"hh:mm")] [src] (usr:[usr])</small> || [hsrc ? "[hsrc] " : ""][href]<br>")
@@ -88,10 +88,19 @@
 		if("prefs")		return prefs.process_link(usr,href_list)
 		if("vars")		return view_var_Topic(href,href_list,hsrc)
 
+	if(codex_topic(href, href_list))
+		return
+
+	if(href_list["SDQL_select"])
+		debug_variables(locate(href_list["SDQL_select"]))
+		return
+
 	..()	//redirect to hsrc.Topic()
 
 //This stops files larger than UPLOAD_LIMIT being sent from client to server via input(), client.Import() etc.
 /client/AllowUpload(filename, filelength)
+	if(!user_acted(src))
+		return 0
 	if(filelength > UPLOAD_LIMIT)
 		to_chat(src, "<font color='red'>Error: AllowUpload(): File Upload too large. Upload Limit: [UPLOAD_LIMIT/1024]KiB.</font>")
 		return 0
@@ -111,8 +120,9 @@
 /client/New(TopicData)
 	TopicData = null							//Prevent calls to client.Topic from connect
 
-	if(!(connection in list("seeker", "web")))					//Invalid connection type.
-		return null
+	switch (connection)
+		if ("seeker", "web") // check for invalid connection type. do nothing if valid
+		else return null
 	#if DM_VERSION >= 512
 	var/bad_version = config.minimum_byond_version && byond_version < config.minimum_byond_version
 	var/bad_build = config.minimum_byond_build && byond_build < config.minimum_byond_build
@@ -367,7 +377,6 @@
 	. = ..()
 	sleep(1)
 */
-
 //send resources to the client. It's here in its own proc so we can move it around easiliy if need be
 /client/proc/send_resources()
 
@@ -386,8 +395,8 @@
 		'html/images/daislogo.png',
 		'html/images/eclogo.png',
 		'html/images/fleetlogo.png',
-		'html/images/ocielogo.png',
-		'html/images/ccalogo.png'
+		'html/images/sfplogo.png',
+		'html/images/ccalogo.png'//inf
 		)
 
 	var/decl/asset_cache/asset_cache = decls_repository.get_decl(/decl/asset_cache)

@@ -22,7 +22,7 @@
 /datum/submap/ascent
 	var/gyne_name
 
-/datum/submap/ascent/sync_cell(obj/effect/overmap/cell)
+/datum/submap/ascent/sync_cell(obj/effect/overmap/visitable/cell)
 	return
 
 /datum/submap/ascent/check_general_join_blockers(var/mob/new_player/joining, var/datum/job/submap/job)
@@ -49,7 +49,7 @@
 			var/new_number = input("What is your position in your lineage?", "Name Nest-Lineage") as num|null
 			if(!new_number)
 				return
-			new_number = Clamp(new_number, 1, 99)
+			new_number = Clamp(new_number, 1, 999)
 			var/new_name = sanitize(input("What is the true name of your nest-lineage?", "Name Nest-Lineage") as text|null, MAX_NAME_LEN)
 			if(!new_name)
 				return
@@ -89,6 +89,13 @@
 	is_semi_antagonist = TRUE
 	var/requires_supervisor = FALSE
 	var/set_species_on_join = SPECIES_MANTID_GYNE
+	min_skill = list(SKILL_EVA = SKILL_ADEPT,
+					SKILL_PILOT = SKILL_ADEPT,
+					SKILL_HAULING = SKILL_ADEPT,
+					SKILL_COMBAT = SKILL_ADEPT,
+					SKILL_WEAPONS = SKILL_ADEPT,
+					SKILL_SCIENCE = SKILL_ADEPT,
+					SKILL_MEDICAL = SKILL_BASIC)
 
 /datum/job/submap/ascent/is_position_available()
 	. = ..()
@@ -147,6 +154,11 @@
 	set_species_on_join = SPECIES_MANTID_ALATE
 	outfit_type = /decl/hierarchy/outfit/job/ascent/tech
 	requires_supervisor = "Ascent Gyne"
+	min_skill = list(SKILL_EVA = SKILL_ADEPT,
+					SKILL_HAULING = SKILL_ADEPT,
+					SKILL_COMBAT = SKILL_ADEPT,
+					SKILL_WEAPONS = SKILL_ADEPT,
+					SKILL_MEDICAL = SKILL_BASIC)	
 
 /datum/job/submap/ascent/drone
 	title = "Ascent Drone"
@@ -164,6 +176,12 @@
 	info = "You are a Monarch Serpentid Worker serving as an attendant to your Queen on this vessel. Serve her however she requires."
 	set_species_on_join = SPECIES_MONARCH_WORKER
 	outfit_type = /decl/hierarchy/outfit/job/ascent/soldier
+	min_skill = list(SKILL_EVA = SKILL_ADEPT,
+					SKILL_HAULING = SKILL_ADEPT,
+					SKILL_COMBAT = SKILL_ADEPT,
+					SKILL_WEAPONS = SKILL_ADEPT,
+					SKILL_SCIENCE = SKILL_ADEPT,
+					SKILL_MEDICAL = SKILL_BASIC)
 
 /datum/job/submap/ascent/msq
 	title = "Serpentid Queen"
@@ -171,6 +189,11 @@
 	total_positions = 2
 	info = "You are a Monarch Serpentid Queen living on an independant Ascent vessel. Assist the Gyne in her duties and tend to your Workers."
 	set_species_on_join = SPECIES_MONARCH_QUEEN
+	min_skill = list(SKILL_EVA = SKILL_ADEPT,
+					SKILL_HAULING = SKILL_ADEPT,
+					SKILL_COMBAT = SKILL_ADEPT,
+					SKILL_WEAPONS = SKILL_ADEPT,
+					SKILL_MEDICAL = SKILL_BASIC)
 */
 
 // Spawn points.

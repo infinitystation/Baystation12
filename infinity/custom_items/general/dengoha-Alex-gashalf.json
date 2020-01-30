@@ -1,0 +1,8 @@
+{
+  "ckey" :            "dengoha",
+  "character_name" :  "Alex Klark",
+  "item_name" :       "reaper mask",
+  "item_desc" :       "A modified military halfmask, with a singular red eye-plate grafted to the top. When blinded by rage, one has neither sight nor care for any obstacle.",
+  "item_icon_state" : "dengoha_gashalf",
+  "item_path" :       "/obj/item/clothing/mask/gas/half"
+  }

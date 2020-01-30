@@ -28,12 +28,14 @@ GLOBAL_DATUM_INIT(mercs, /datum/antagonist/mercenary, new)
 	faction = "mercenary"
 	ambitious = 0 //INF
 
-/datum/antagonist/mercenary/create_global_objectives()
+	base_to_load = /datum/map_template/ruin/antag_spawn/mercenary
+
+/datum/antagonist/mercenary/create_global_objectives(override = TRUE)
 	if(!..())
 		return 0
 	global_objectives = list()
 	global_objectives |= new /datum/objective/nuclear
-	var/datum/objective/heist/K //raider's C_G_O copypaste
+	var/datum/objective/nuclear/kidnap/K
 	K = new /datum/objective/nuclear/kidnap()
 	K.choose_target()
 	global_objectives |= K

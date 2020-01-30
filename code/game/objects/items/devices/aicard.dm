@@ -82,10 +82,11 @@
 		icon_state = "aicard"
 
 /obj/item/weapon/aicard/proc/grab_ai(var/mob/living/silicon/ai/ai, var/mob/living/user)
+/*[INF]
 	if(!ai.client)
 		to_chat(user, "<span class='danger'>ERROR:</span> AI [ai.name] is offline. Unable to download.")
 		return 0
-
+[/INF]*/
 	if(carded_ai)
 		to_chat(user, "<span class='danger'>Transfer failed:</span> Existing AI found on remote terminal. Remove existing AI to install a new one.")
 		return 0

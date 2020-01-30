@@ -24,7 +24,8 @@
 		/obj/item/weapon/reagent_containers/spray/cleaner,
 		/obj/item/clothing/head/chefhat,
 		/obj/item/clothing/suit/chef/classic,
-		/obj/item/clothing/mask/surgical
+		/obj/item/clothing/mask/surgical,
+		/obj/item/clothing/head/beret/infinity
 	)
 
 /obj/structure/closet/secure_closet/hydroponics_sierra //done so that it has no access reqs
@@ -75,7 +76,8 @@
 		/obj/item/clothing/glasses/hud/janitor,
 		/obj/item/weapon/storage/belt/janitor,
 		/obj/item/clothing/mask/plunger,
-		/obj/item/weapon/soap
+		/obj/item/weapon/soap,
+		/obj/item/clothing/head/beret/infinity
 	)
 
 /obj/structure/closet/secure_closet/bar_sierra
@@ -101,7 +103,8 @@
 		/obj/item/weapon/reagent_containers/spray/cleaner,
 		/obj/item/weapon/reagent_containers/glass/rag,
 		/obj/item/weapon/paper/sierra/bar_permit,
-		/obj/item/weapon/gun/projectile/shotgun/doublebarrel/empty
+		/obj/item/weapon/gun/projectile/shotgun/doublebarrel/empty,
+		/obj/item/clothing/head/beret/infinity
 	)
 
 /obj/structure/closet/secure_closet/chaplain_sierra

@@ -1,17 +1,20 @@
-/obj/effect/overmap/sector/exoplanet/desert
+/obj/effect/overmap/visitable/sector/exoplanet/desert
 	name = "desert exoplanet"
 	desc = "An arid exoplanet with sparse biological resources but rich mineral deposits underground."
 	color = "#d6cca4"
 	planetary_area = /area/exoplanet/desert
 	rock_colors = list(COLOR_BEIGE, COLOR_PALE_YELLOW, COLOR_GRAY80, COLOR_BROWN)
+	plant_colors = list("#efdd6f","#7b4a12","#e49135","#ba6222","#5c755e","#420d22")
 	map_generators = list(/datum/random_map/noise/exoplanet/desert, /datum/random_map/noise/ore/rich)
+	surface_color = "#d6cca4"
+	water_color = null
 
-/obj/effect/overmap/sector/exoplanet/desert/generate_map()
+/obj/effect/overmap/visitable/sector/exoplanet/desert/generate_map()
 	if(prob(70))
 		lightlevel = rand(5,10)/10	//deserts are usually :lit:
 	..()
 
-/obj/effect/overmap/sector/exoplanet/desert/generate_atmosphere()
+/obj/effect/overmap/visitable/sector/exoplanet/desert/generate_atmosphere()
 	..()
 	if(atmosphere)
 		var/limit = 1000
@@ -21,7 +24,7 @@
 		atmosphere.temperature = min(T20C + rand(20, 100), limit)
 		atmosphere.update_values()
 
-/obj/effect/overmap/sector/exoplanet/desert/adapt_seed(var/datum/seed/S)
+/obj/effect/overmap/visitable/sector/exoplanet/desert/adapt_seed(var/datum/seed/S)
 	..()
 	if(prob(90))
 		S.set_trait(TRAIT_REQUIRES_WATER,0)
@@ -38,9 +41,8 @@
 	descriptor = "desert exoplanet"
 	smoothing_iterations = 4
 	land_type = /turf/simulated/floor/exoplanet/desert
-	plantcolors = list("#efdd6f","#7b4a12","#e49135","#ba6222","#5c755e","#420d22")
 
-	flora_prob = 10
+	flora_prob = 5
 	large_flora_prob = 0
 	flora_diversity = 4
 	fauna_types = list(/mob/living/simple_animal/thinbug, /mob/living/simple_animal/tindalos, /mob/living/simple_animal/hostile/voxslug, /mob/living/simple_animal/hostile/antlion)
@@ -59,19 +61,6 @@
 /area/exoplanet/desert
 	ambience = list('sound/effects/wind/desert0.ogg','sound/effects/wind/desert1.ogg','sound/effects/wind/desert2.ogg','sound/effects/wind/desert3.ogg','sound/effects/wind/desert4.ogg','sound/effects/wind/desert5.ogg')
 	base_turf = /turf/simulated/floor/exoplanet/desert
-
-/turf/simulated/floor/exoplanet/desert
-	name = "sand"
-
-/turf/simulated/floor/exoplanet/desert/New()
-	icon_state = "desert[rand(0,5)]"
-	..()
-
-/turf/simulated/floor/exoplanet/desert/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
-	if((temperature > T0C + 1700 && prob(5)) || temperature > T0C + 3000)
-		SetName("molten silica")
-		icon_state = "sandglass"
-		diggable = 0
 
 /obj/structure/quicksand
 	name = "sand"
@@ -139,7 +128,6 @@
 	if(buckled_mob)
 		overlays += buckled_mob
 		var/image/I = image(icon,icon_state="overlay")
-		I.plane = ABOVE_HUMAN_PLANE
 		I.layer = ABOVE_HUMAN_LAYER
 		overlays += I
 

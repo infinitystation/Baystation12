@@ -24,11 +24,9 @@
 	var/splat_type = /obj/effect/decal/cleanable/fruit_smudge // Graffiti decal.
 	var/has_mob_product
 	var/force_layer
-	var/const/REQ_CO2_MOLES    = 1.0// Moles of CO2 required for photosynthesis.
+	var/req_CO2_moles    = 1.0// Moles of CO2 required for photosynthesis.
 
 //[INF]
-	var/force_product_replacing //Harvesting will be replce by type here if not null
-
 	var/growing_icon	=	'icons/obj/hydroponics_growing.dmi'
 	var/vines_icon		=	'icons/obj/hydroponics_vines.dmi'
 	var/large_icon		=	'icons/obj/hydroponics_large.dmi'
@@ -71,7 +69,7 @@
 	set_trait(TRAIT_IDEAL_HEAT,           293)          // Preferred temperature in Kelvin.
 	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.25)         // Plant eats this much per tick.
 	set_trait(TRAIT_PLANT_COLOUR,         "#46b543")    // Colour of the plant icon.
-	set_trait(TRAIT_ON_HARVEST,			null) //inf //check infinity/code/modules/hydroponics/on_harvest_effects/_effects
+	set_trait(TRAIT_PHOTOSYNTHESIS,       1)            // If it turns CO2 into oxygen
 
 	update_growth_stages()
 
@@ -182,15 +180,17 @@
 	// Photosynthesis - *very* simplified process.
 	// For now, only light-dependent reactions are available (no Calvin cycle).
 	// It's active only for those plants which doesn't consume nor exude gasses.
+	if(!get_trait(TRAIT_PHOTOSYNTHESIS))
+		return
 	if(!(environment) || !(environment.gas))
 		return
 	if(LAZYLEN(exude_gasses) || LAZYLEN(consume_gasses ))
 		return
 	if(!(light_supplied) || !(get_trait(TRAIT_REQUIRES_WATER)))
 		return
-	if(environment.get_gas(GAS_CO2) >= REQ_CO2_MOLES)
-		environment.adjust_gas(GAS_CO2, -REQ_CO2_MOLES, 1)
-		environment.adjust_gas(GAS_OXYGEN, REQ_CO2_MOLES, 1)
+	if(environment.get_gas(GAS_CO2) >= req_CO2_moles)
+		environment.adjust_gas(GAS_CO2, -req_CO2_moles, 1)
+		environment.adjust_gas(GAS_OXYGEN, req_CO2_moles, 1)
 
 //Splatter a turf.
 /datum/seed/proc/splatter(var/turf/T,var/obj/item/thrown)
@@ -755,48 +755,38 @@
 				total_yield = max(1,total_yield)
 
 		. = list()
-//product = new force_product_replacing//inf
 		for(var/i = 0;i<total_yield;i++)
 			var/obj/item/product
-			if(!force_product_replacing)
-				if(has_mob_product)
-					product = new has_mob_product(get_turf(user),name)
-				else
-					product = new /obj/item/weapon/reagent_containers/food/snacks/grown(get_turf(user),name)
-				. += product
-
-				if(get_trait(TRAIT_PRODUCT_COLOUR))
-					if(!istype(product, /mob))
-						product.color = get_trait(TRAIT_PRODUCT_COLOUR)
-						if(istype(product,/obj/item/weapon/reagent_containers/food))
-							var/obj/item/weapon/reagent_containers/food/food = product
-							food.filling_color = get_trait(TRAIT_PRODUCT_COLOUR)
-
-				if(mysterious)
-					product.name += "?"
-					product.desc += " On second thought, something about this one looks strange."
-
-				if(get_trait(TRAIT_BIOLUM))
-					var/clr
-					if(get_trait(TRAIT_BIOLUM_COLOUR))
-						clr = get_trait(TRAIT_BIOLUM_COLOUR)
-					product.set_light(0.5, 0.1, 3, l_color = clr)
-
-				//Handle spawning in living, mobile products (like dionaea).
-				if(istype(product,/mob/living))
-					product.visible_message("<span class='notice'>The pod disgorges [product]!</span>")
-					handle_living_product(product)
-					if(istype(product,/mob/living/simple_animal/mushroom)) // Gross.
-						var/mob/living/simple_animal/mushroom/mush = product
-						mush.seed = src
+			if(has_mob_product)
+				product = new has_mob_product(get_turf(user),name)
 			else
-				product = new force_product_replacing(get_turf(user),name)//inf
-		//[INF]
-		if(get_trait(TRAIT_ON_HARVEST))
-			var/typeofonharvest = get_trait(TRAIT_ON_HARVEST)
-			var/datum/hydroponics_effect/on_harvest = new typeofonharvest()
-			on_harvest.triggeredby(user)
-		//[/INF]
+				product = new /obj/item/weapon/reagent_containers/food/snacks/grown(get_turf(user),name)
+			. += product
+
+			if(get_trait(TRAIT_PRODUCT_COLOUR))
+				if(!istype(product, /mob))
+					product.color = get_trait(TRAIT_PRODUCT_COLOUR)
+					if(istype(product,/obj/item/weapon/reagent_containers/food))
+						var/obj/item/weapon/reagent_containers/food/food = product
+						food.filling_color = get_trait(TRAIT_PRODUCT_COLOUR)
+
+			if(mysterious)
+				product.name += "?"
+				product.desc += " On second thought, something about this one looks strange."
+
+			if(get_trait(TRAIT_BIOLUM))
+				var/clr
+				if(get_trait(TRAIT_BIOLUM_COLOUR))
+					clr = get_trait(TRAIT_BIOLUM_COLOUR)
+				product.set_light(0.5, 0.1, 3, l_color = clr)
+
+			//Handle spawning in living, mobile products (like dionaea).
+			if(istype(product,/mob/living))
+				product.visible_message("<span class='notice'>The pod disgorges [product]!</span>")
+				handle_living_product(product)
+				if(istype(product,/mob/living/simple_animal/mushroom)) // Gross.
+					var/mob/living/simple_animal/mushroom/mush = product
+					mush.seed = src
 
 // When the seed in this machine mutates/is modified, the tray seed value
 // is set to a new datum copied from the original. This datum won't actually

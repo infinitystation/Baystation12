@@ -174,8 +174,7 @@
 	dir = 4
 	},
 /obj/structure/table/rack{
-	dir = 8;
-	layer = 2.9
+	dir = 8
 	},
 /obj/item/stack/cable_coil,
 /obj/item/stack/cable_coil,
@@ -354,8 +353,7 @@
 	dir = 4
 	},
 /obj/structure/table/rack{
-	dir = 8;
-	layer = 2.9
+	dir = 8
 	},
 /obj/item/weapon/barrier,
 /obj/item/weapon/barrier,
@@ -407,8 +405,7 @@
 /area/smugglers/dorms)
 "aO" = (
 /obj/structure/table/rack{
-	dir = 8;
-	layer = 2.9
+	dir = 8
 	},
 /obj/item/clothing/mask/breath,
 /turf/simulated/floor,
@@ -464,8 +461,7 @@
 /area/smugglers/base)
 "aX" = (
 /obj/structure/table/rack{
-	dir = 8;
-	layer = 2.9
+	dir = 8
 	},
 /obj/item/weapon/tank/air{
 	pixel_x = 5
@@ -509,8 +505,7 @@
 /area/smugglers/base)
 "bd" = (
 /obj/structure/table/rack{
-	dir = 8;
-	layer = 2.9
+	dir = 8
 	},
 /obj/random/voidsuit,
 /obj/random/voidhelmet,
@@ -1092,7 +1087,7 @@
 /turf/simulated/floor/tiled,
 /area/smugglers/dorms)
 "cH" = (
-/obj/effect/overmap/sector/smugglers,
+/obj/effect/overmap/visitable/sector/smugglers,
 /obj/machinery/access_button/airlock_exterior{
 	frequency = 1502;
 	master_tag = "asteroid_base_dock_airlock";

@@ -172,7 +172,7 @@
 								/obj/item/clothing/head/helmet            = TRADER_BLACKLIST_ALL,
 								/obj/item/clothing/head/lightrig          = TRADER_BLACKLIST_ALL,
 								/obj/item/clothing/head/radiation         = TRADER_BLACKLIST,
-								/obj/item/clothing/head/tajaran           = TRADER_BLACKLIST,
+								/obj/item/clothing/head/xeno           = TRADER_BLACKLIST,
 								/obj/item/clothing/head/warden            = TRADER_BLACKLIST,
 								/obj/item/clothing/head/welding           = TRADER_BLACKLIST)
 
@@ -222,7 +222,6 @@ Sells devices, odds and ends, and medical stuff
 								/obj/item/device/core_sampler              = TRADER_THIS_TYPE,
 								/obj/item/device/depth_scanner             = TRADER_THIS_TYPE,
 								/obj/item/weapon/pinpointer/radio            = TRADER_THIS_TYPE,
-								/obj/item/device/antibody_scanner          = TRADER_THIS_TYPE,
 								/obj/item/stack/medical/advanced           = TRADER_BLACKLIST)
 	speech = list("hail_generic"    = "Hello, hello! Bits and bobs and everything in between, I hope you find what you're looking for!",
 				"hail_silicon"      = "Ah! Hello, robot. We only sell things that, ah.... people can hold in their hands, unfortunately. You are still allowed to buy, though!",
@@ -247,13 +246,7 @@ Sells devices, odds and ends, and medical stuff
 	name_language = TRADER_DEFAULT_NAME
 	origin = "Robot Store"
 	possible_origins = list("AI for the Straight Guy", "Mechanical Buddies", "Bot Chop Shop", "Omni Consumer Projects")
-	possible_trading_items = list(/obj/item/weapon/secbot_assembly/ed209_assembly = TRADER_THIS_TYPE,
-								/obj/item/weapon/toolbox_tiles                    = TRADER_THIS_TYPE,
-								/obj/item/weapon/toolbox_tiles_sensor             = TRADER_THIS_TYPE,
-								/obj/item/weapon/secbot_assembly                  = TRADER_ALL,
-								/obj/item/weapon/farmbot_arm_assembly             = TRADER_THIS_TYPE,
-								/obj/item/weapon/firstaid_arm_assembly            = TRADER_THIS_TYPE,
-								/obj/item/weapon/bucket_sensor                    = TRADER_THIS_TYPE,
+	possible_trading_items = list(
 								/obj/item/device/bot_kit                          = TRADER_THIS_TYPE,
 								/obj/item/device/paicard                          = TRADER_THIS_TYPE,
 								/obj/item/weapon/aicard                           = TRADER_THIS_TYPE,

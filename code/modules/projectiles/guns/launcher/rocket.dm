@@ -3,6 +3,7 @@
 	desc = "MAGGOT."
 	icon_state = "rocket"
 	item_state = "rocket"
+	w_class = ITEM_SIZE_HUGE
 	throw_speed = 2
 	throw_range = 10
 	force = 5
@@ -17,13 +18,10 @@
 	var/max_rockets = 1
 	var/list/rockets = new/list()
 
-	bulk = GUN_BULK_MACHINEGUN //inf
-	w_class = ITEM_SIZE_HUGE
-
-/obj/item/weapon/gun/launcher/rocket/examine(mob/user)
-	if(!..(user, 2))
-		return
-	to_chat(user, "<span class='notice'>[rockets.len] / [max_rockets] rockets.</span>")
+/obj/item/weapon/gun/launcher/rocket/examine(mob/user, distance)
+	. = ..()
+	if(distance <= 2)
+		to_chat(user, "<span class='notice'>[rockets.len] / [max_rockets] rockets.</span>")
 
 /obj/item/weapon/gun/launcher/rocket/attackby(obj/item/I as obj, mob/user as mob)
 	if(istype(I, /obj/item/ammo_casing/rocket))

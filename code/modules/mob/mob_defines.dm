@@ -1,6 +1,7 @@
 /mob
 	density = 1
-	plane = MOB_PLANE
+	plane = DEFAULT_PLANE
+	layer = MOB_LAYER
 
 	appearance_flags = PIXEL_SCALE
 	animate_movement = 2
@@ -20,6 +21,7 @@
 		/datum/movement_handler/mob/physically_capable,
 		/datum/movement_handler/mob/physically_restrained,
 		/datum/movement_handler/mob/space,
+		/datum/movement_handler/mob/multiz,
 		/datum/movement_handler/mob/movement
 	)
 
@@ -34,7 +36,7 @@
 	var/computer_id = null
 	var/last_ckey
 
-	var/stat = 0 //Whether a mob is alive or dead. TODO: Move this to living - Nodrak
+	var/stat = CONSCIOUS //Whether a mob is alive or dead. TODO: Move this to living - Nodrak
 
 	var/obj/screen/hands = null
 	var/obj/screen/pullin = null
@@ -180,7 +182,6 @@
 	var/list/shouldnt_see = list()	//list of objects that this mob shouldn't see in the stat panel. this silliness is needed because of AI alt+click and cult blood runes
 
 	var/mob_size = MOB_MEDIUM
-	var/throw_multiplier = 1
 
 	var/paralysis = 0
 	var/stunned = 0

@@ -15,7 +15,6 @@
 	var/material/reinf_material
 	var/perunit = SHEET_MATERIAL_AMOUNT
 	var/material_flags = USE_MATERIAL_COLOR|USE_MATERIAL_SINGULAR_NAME|USE_MATERIAL_PLURAL_NAME
-	var/plural_name
 	var/matter_multiplier = 1
 
 /obj/item/stack/material/Initialize(mapload, var/amount, var/_material, var/_reinf_material)
@@ -562,3 +561,8 @@
 	icon_state = "bone"
 	plural_icon_state = "bone-mult"
 	max_icon_state = "bone-max"
+
+/obj/item/stack/material/generic/brick
+	icon_state = "brick"
+	plural_icon_state = "brick-mult"
+	max_icon_state = "brick-max"

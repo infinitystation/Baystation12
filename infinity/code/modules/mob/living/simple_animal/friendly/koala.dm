@@ -21,7 +21,7 @@
 	response_harm = "kicks"
 	stop_automated_movement_when_pulled = 1
 
-//Haradrim, the koala :D
+//Haradrim as a koala :D
 /mob/living/simple_animal/koala/samorey
 	name = "Haradrim" //F
 	desc = "A lovable koala, named by man who love eucalyptus."

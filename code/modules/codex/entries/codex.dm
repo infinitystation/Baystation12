@@ -23,10 +23,8 @@
 	mechanics_text = "The place to start with <span codexlink='codex'>The Codex</span><br>" 
 
 /datum/codex_entry/nexus/get_text(var/mob/presenting_to)
-	var/list/dat = list("<h3>CODEX NEXUS</h3>")
+	var/list/dat = list(get_header(presenting_to))
 	dat += "[mechanics_text]"
-	dat += "You can use <a href='?src=\ref[presenting_to.client];codex_search=1'><b>Search-Codex <i>topic</i></b></a> to look something up, or you can click the links provided when examining some objects.<br>"
-	dat += "You can also use <a href='?src=\ref[presenting_to.client];codex_index=1'><b>List-Codex-Entries</b></a> to get a comprehensive index of all entries.<br><br>"
 	dat += "<h3>Categories</h3>"
 	var/list/categories = list()
 	for(var/type in subtypesof(/datum/codex_category))
@@ -34,20 +32,15 @@
 		var/key = "[initial(C.name)] (category)"
 		var/datum/codex_entry/entry = SScodex.get_codex_entry(key)
 		if(entry)
-			categories += "<span codexlink='[key]'>[initial(C.name)]</span>"
+			categories += "<li><span codexlink='[key]'>[initial(C.name)]</span> - [initial(C.desc)]"
 	dat += jointext(categories, " ")
 	return "<font color = '[CODEX_COLOR_MECHANICS]'>[jointext(dat, null)]</font>"
 
-/client/Topic(href, href_list, hsrc)
-	if(!usr || usr != mob)	//stops us calling Topic for somebody else's client. Also helps prevent usr=null
-		return
-
+/client/proc/codex_topic(href, href_list)
 	if(href_list["codex_search"]) //nano throwing errors
 		search_codex()
-		return
+		return TRUE
 
 	if(href_list["codex_index"]) //nano throwing errors
 		list_codex_entries()
-		return
-	
-	..()
+		return TRUE

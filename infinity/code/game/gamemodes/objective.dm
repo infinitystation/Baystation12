@@ -2,17 +2,14 @@
 	explanation_text = "Уничтожьте объект с помощью &#255;дерного зар&#255;да."
 
 /datum/objective/nuclear/kidnap
-	var/list/roles = list(/datum/job/captain, /datum/job/lawyer, /datum/job/chief_engineer, /datum/job/rd, /datum/job/engineer)
+	var/list/roles = list(/datum/job/captain, /datum/job/rd, /datum/job/scientist, /datum/job/engineer)
 
 /datum/objective/nuclear/kidnap/proc/choose_target()
-	return
-
-/datum/objective/nuclear/kidnap/choose_target()
 	var/list/possible_targets = list()
 	var/list/priority_targets = list()
 
 	for(var/datum/mind/possible_target in SSticker.minds)
-		if(possible_target != owner && ishuman(possible_target.current) && (possible_target.current.stat != 2) && (!possible_target.special_role))
+		if(possible_target != owner && ishuman(possible_target.current) && (possible_target.current.stat != DEAD) && (!possible_target.special_role))
 			possible_targets += possible_target
 			for(var/datum/job/role in SSjobs.get_by_path(roles))
 				if(possible_target.assigned_role == role.title)
@@ -25,9 +22,9 @@
 		target = pick(possible_targets)
 
 	if(target?.current)
-		explanation_text = "Наниматель хочет, чтобы мы захватили '[target.current.real_name], [target.assigned_role]' и доставили на базу. Цель должна быть живой."
+		explanation_text = "Наниматель хочет, чтобы мы об&#255;зательно похители [target.current.real_name] [target.assigned_role]. Цель нужна живой."
 	else
-		explanation_text = "Захвать по крайней мере одного высокопоставленного или обладающего ценными данными члена экипажа живым. Приоритет - ученые, главы, инженеры, пассажиры."
+		explanation_text = "Захвать по крайней мере одного высокопоставленного или обладающего ценными данными члена экипажа живым. Приоритет - ученые, главы, инженеры."
 	return target
 
 /datum/objective/heist/loot/choose_target()

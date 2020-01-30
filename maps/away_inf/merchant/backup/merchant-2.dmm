@@ -105,7 +105,7 @@
 /turf/simulated/floor/tiled,
 /area/space)
 "ax" = (
-/obj/item/modular_computer/console/preset/merchant,
+/obj/machinery/computer/modular/preset/merchant,
 /turf/simulated/floor/tiled/steel_grid,
 /area/space)
 "ay" = (

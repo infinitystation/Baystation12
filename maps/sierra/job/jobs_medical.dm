@@ -46,8 +46,7 @@
 	economic_power = 7
 	ideal_character_age = 40
 	alt_titles = list(
-		"Paramedic" = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/paramedic,
-		"Virologist" = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/virologist)
+		"Paramedic" = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/paramedic)
 
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor
 	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)

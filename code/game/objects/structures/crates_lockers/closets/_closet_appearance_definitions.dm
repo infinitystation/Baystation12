@@ -40,6 +40,11 @@
 	open_icon.Blend(icon(base_icon, "open"), ICON_OVERLAY)
 	open_icon.Blend(color, BLEND_ADD)
 	open_icon.Blend(icon(base_icon, "interior"), ICON_OVERLAY)
+	if(decal_icon)
+		for(var/thing in decals)
+			var/icon/this_decal_icon = icon(decal_icon, "[thing]_open")
+			this_decal_icon.Blend(decals[thing], BLEND_ADD)
+			open_icon.Blend(this_decal_icon, ICON_OVERLAY)
 
 	// Generate basic closed icons.
 	closed_emagged_icon = icon(base_icon, "base")
@@ -596,6 +601,12 @@
 		"crate_stripe_right" = COLOR_GREEN_GRAY
 	)
 
+/decl/closet_appearance/crate/secure/shuttle
+	extra_decals = list(
+		"crate_stripe_left" = COLOR_YELLOW_GRAY,
+		"crate_stripe_right" = COLOR_YELLOW_GRAY
+	)
+
 // Large crates.
 /decl/closet_appearance/large_crate
 	base_icon =  'icons/obj/closets/bases/large_crate.dmi'
@@ -696,4 +707,10 @@
 	can_lock = TRUE
 	decals = list(
 		"biohazard" = COLOR_GRAY80
+	)
+
+/decl/closet_appearance/cart/biohazard/alt
+	color = COLOR_SURGERY_BLUE
+	decals = list(
+		"biohazard" = COLOR_RED_GRAY
 	)

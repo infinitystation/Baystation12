@@ -1,8 +1,10 @@
 //~KareTa
 /obj/screen/ai_button
 	var/mob/living/silicon/ai/ai_verb
-	var/input_procs = list()
+	var/list/input_procs = list()
 	icon = 'infinity/icons/mob/screen_ai.dmi'
+	var/list/template_icon = list(null, "template")
+	var/image/template_undelay
 
 /obj/screen/ai_button/Click()
 	if(!isAI(usr)) return 1
@@ -28,3 +30,16 @@
 
 	call(A, ai_verb)(arglist(input_args))
 	return 1
+
+//~_Elar_
+/obj/screen/ai_button/New(var/nscreen_loc, var/nname, var/nicon_state, var/nai_verb, var/list/ninput_procs = null)
+	. = ..()
+	if(!template_icon[1]) template_icon[1] = icon
+	name = nname
+	icon_state = nicon_state
+	screen_loc = nscreen_loc
+	ai_verb = nai_verb
+	if(ninput_procs) input_procs.Add(ninput_procs)
+
+	template_undelay = image(template_icon[1], template_icon[2])
+	underlays += template_undelay

@@ -1,7 +1,7 @@
 #include "mining_areas.dm"
 
 //MINING-1 // CLUSTER
-/obj/effect/overmap/sector/cluster
+/obj/effect/overmap/visitable/sector/cluster
 	name = "asteroid cluster"
 	desc = "Large group of asteroids. Mineral content detected."
 	icon_state = "sector"
@@ -15,6 +15,14 @@
 		"nav_cluster_7"
 	)
 	known = 0
+
+/obj/effect/overmap/visitable/sector/cluster/generate_skybox()
+	return overlay_image('icons/skybox/rockbox.dmi', "rockbox", COLOR_ASTEROID_ROCK, RESET_COLOR)
+
+/obj/effect/overmap/visitable/sector/cluster/get_skybox_representation()
+	var/image/res = overlay_image('icons/skybox/rockbox.dmi', "rockbox", COLOR_ASTEROID_ROCK, RESET_COLOR)
+	res.transform *= 0.5
+	return res
 
 /datum/map_template/ruin/away_site/mining_asteroid
 	name = "Mining - Asteroid"
@@ -64,7 +72,7 @@
 	base_area = /area/mine/explored
 
 //MINING-2 // SIGNAL
-/obj/effect/overmap/sector/away
+/obj/effect/overmap/visitable/sector/away
 	name = "faint signal from an asteroid"
 	desc = "Faint signal detected, originating from the human-made structures on the site's surface."
 	icon_state = "sector"
@@ -78,6 +86,14 @@
 		"nav_away_7"
 	)
 	known = 0
+
+/obj/effect/overmap/visitable/sector/away/generate_skybox()
+	return overlay_image('icons/skybox/rockbox.dmi', "rockbox", COLOR_ASTEROID_ROCK, RESET_COLOR)
+
+/obj/effect/overmap/visitable/sector/away/get_skybox_representation()
+	var/image/res = overlay_image('icons/skybox/rockbox.dmi', "rockbox", COLOR_ASTEROID_ROCK, RESET_COLOR)
+	res.transform *= 0.3
+	return res
 
 /datum/map_template/ruin/away_site/mining_signal
 	name = "Mining - Planetoid"
@@ -126,7 +142,7 @@
 	landmark_tag = "nav_away_7"
 
 //MINING-3 // THE ORB
-/obj/effect/overmap/sector/orb
+/obj/effect/overmap/visitable/sector/orb
 	name = "monolithic asteroid"
 	desc = "Substantial mineral resources detected."
 	icon_state = "sector"
@@ -140,6 +156,12 @@
 		"nav_orb_7"
 	)
 	known = 0
+
+/obj/effect/overmap/visitable/sector/orb/get_skybox_representation()
+	var/image/res = overlay_image('icons/skybox/skybox_rock_128.dmi', "bigrock", COLOR_ASTEROID_ROCK, RESET_COLOR)
+	res.pixel_x = rand(256,512)
+	res.pixel_y = rand(256,512)
+	return res
 
 /datum/map_template/ruin/away_site/orb
 	name = "Mining - Orb"
@@ -201,9 +223,9 @@
 	. = ..()
 	number = rand(10,99)
 
-/obj/structure/totem/examine()
-	..()
-	to_chat(usr, "It's been engraved with the symbols '<font face='Shage'>RWH QaG [number]</font>'.") //i am not a linguist
+/obj/structure/totem/examine(mob/user)
+	. = ..()
+	to_chat(user, "It's been engraved with the symbols '<font face='Shage'>RWH QaG [number]</font>'.") //i am not a linguist
 
 
 /obj/item/weapon/stool/stone/New(var/newloc)

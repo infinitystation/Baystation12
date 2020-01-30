@@ -85,6 +85,7 @@
 	else
 		answer = sanitize_a0(answer) //inf
 		to_chat(user, SPAN_NOTICE("<b>You skim thoughts from the surface of \the [target]'s mind: <i>[answer]</i></b>"))
+	msg_admin_attack("[key_name(user)] read mind of [key_name(target)] with question \"[question]\" and [answer?"got answer \"[answer]\".":"got no answer."]")
 	return TRUE
 
 /decl/psionic_power/coercion/agony

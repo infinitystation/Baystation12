@@ -47,6 +47,8 @@
 	var/list/tile_info[4]
 	var/list/dir_alerts[4] // 4 dirs, bitflags
 
+	turf_hand_priority = 2 //Lower priority than normal doors to prevent interference
+
 	// MUST be in same order as FIREDOOR_ALERT_*
 	var/list/ALERT_STATES=list(
 		"hot",
@@ -98,9 +100,9 @@
 /obj/machinery/door/firedoor/get_material()
 	return SSmaterials.get_material_by_name(MATERIAL_STEEL)
 
-/obj/machinery/door/firedoor/examine(mob/user)
-	. = ..(user, 1)
-	if(!. || !density)
+/obj/machinery/door/firedoor/examine(mob/user, distance)
+	. = ..()
+	if(distance > 1 || !density)
 		return
 
 	if(pdiff >= FIREDOOR_MAX_PRESSURE_DIFF)
@@ -134,6 +136,7 @@
 			for(var/i = 2 to users_to_open.len)
 				users_to_open_string += ", [users_to_open[i]]"
 		to_chat(user, "These people have opened \the [src] during an alert: [users_to_open_string].")
+
 /obj/machinery/door/firedoor/Bumped(atom/AM)
 	if(p_open || operating)
 		return
@@ -201,18 +204,25 @@
 	if(isWelder(C) && !repairing)
 		var/obj/item/weapon/weldingtool/W = C
 		if(W.remove_fuel(0, user))
-			blocked = !blocked
-			user.visible_message("<span class='danger'>\The [user] [blocked ? "welds" : "unwelds"] \the [src] with \a [W].</span>",\
-			"You [blocked ? "weld" : "unweld"] \the [src] with \the [W].",\
-			"You hear something being welded.")
 			playsound(src, 'sound/items/Welder.ogg', 100, 1)
-			update_icon()
-			return
+			if(do_after(user, 2 SECONDS, src))
+				if(!W.isOn()) return
+				blocked = !blocked
+				user.visible_message("<span class='danger'>\The [user] [blocked ? "welds" : "unwelds"] \the [src] with \a [W].</span>",\
+				"You [blocked ? "weld" : "unweld"] \the [src] with \the [W].",\
+				"You hear something being welded.")
+				playsound(src, 'sound/items/Welder.ogg', 100, 1)
+				update_icon()
+				return
+			else
+				to_chat(user, SPAN_WARNING("You must remain still to complete this task."))
+				return
 
 	if(density && isScrewdriver(C))
 		hatch_open = !hatch_open
 		user.visible_message("<span class='danger'>[user] has [hatch_open ? "opened" : "closed"] \the [src] maintenance hatch.</span>",
 									"You have [hatch_open ? "opened" : "closed"] the [src] maintenance hatch.")
+		playsound(loc, 'sound/items/Screwdriver.ogg', 50, 1)
 		update_icon()
 		return
 

@@ -43,11 +43,11 @@
 	name = "Hack Camouflage PAIMod"
 	id = "pai_hc_mod"
 	req_tech = list(TECH_DATA = 5, TECH_ENGINEERING = 4)
-	build_path = /obj/item/weapon/paimod/hack_camo
+	build_path = /obj/item/weapon/paimod/special/hack_camo
 	sort_string = "VBAGF"
 /datum/design/item/paimod/advanced_holo
 	name = "Advanced Holo Mod"
 	id = "pai_ah_mod"
 	req_tech = list(TECH_DATA = 3, TECH_MAGNET = 2)
-	build_path = /obj/item/weapon/paimod/advanced_holo
+	build_path = /obj/item/weapon/paimod/special/advanced_holo
 	sort_string = "VBAGG"

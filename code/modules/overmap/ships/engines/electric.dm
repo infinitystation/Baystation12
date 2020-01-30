@@ -49,8 +49,8 @@
 	var/datum/ship_engine/electric/controller
 	var/thrust_limit = 0.3   // Value between 1 and 0 to limit the resulting thrust
 
-	var/use_power_per_thrust = 10000
-	var/max_draw_per_tick = 50000
+	var/use_power_per_thrust = 250000 //INF, WAS 10000
+	var/max_draw_per_tick = 100000
 
 	// Todo: upgrades, use cells and capacitors
 	var/stored_power

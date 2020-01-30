@@ -79,7 +79,7 @@
 		/obj/item/device/flashlight/slime,
 		/obj/item/weapon/storage/fancy/crackers,
 		/obj/item/weapon/toy/xmas_cracker,
-		/obj/item/stack/flag/solgov,
+//		/obj/item/stack/flag/solgov,
 		/obj/item/clothing/mask/gas/clown_hat,
 		/obj/item/clothing/mask/gas/sexyclown,
 		/obj/item/clothing/mask/gas/sexymime,
@@ -212,8 +212,9 @@
 	return
 
 
-/obj/item/weapon/wrapping_paper/examine(mob/user)
-	if(..(user, 1))
+/obj/item/weapon/wrapping_paper/examine(mob/user, distance)
+	. = ..()
+	if(distance <= 1)
 		to_chat(user, text("There is about [] square units of paper left!", src.amount))
 
 /obj/item/weapon/wrapping_paper/attack(mob/target as mob, mob/user as mob)

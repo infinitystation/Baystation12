@@ -1,5 +1,5 @@
 /datum/codex_entry/caligae
-	associated_paths = list(/obj/item/clothing/shoes/sandal/tajaran/caligae)
+	associated_paths = list(/obj/item/clothing/shoes/sandal/xeno/caligae)
 	lore_text = "These traditional Tajaran footwear, also called Haskri, have remained reletivly unchanged in principal, with improved materials and construction being the only notable improvment. Originally used for harsher environment, they became widespread for their comfort and hygiene. Some of them come with covering for additional protection for more sterile environments. Made for the Tajarans digitigrade anatomy, they won't fit on any other species."
 
 /datum/codex_entry/lockets
@@ -33,6 +33,20 @@
 	С помощью установленного на силке доступа, можно его заблокировать так, \
 	что его нельзя будет снять с униформы. \
 	ВНИМАНИЕ. После надевания блокированного силка, силок будет невозможно снять, даже имея нужный доступ."
+
+/datum/codex_entry/music_player
+	associated_paths = list(/obj/item/music_player)
+	mechanics_text = "С помощью этого плеера можно воспроизводить музыку на ходу.<br> \
+	Может воспроизводить компакт-кассеты, некоторые из которых можно купить у торговца или одолжить у бармена.<br> \
+	Для воспроизведения требует наличие источника питания (аккумулятор).<br> \
+	Можно использовать сочетание клавиш <b>Alt и Click</b> на плеере для паузы."
+
+/datum/codex_entry/music_tape
+	associated_paths = list(/obj/item/music_tape)
+	mechanics_text = "Компакт-кассета на базе магнитной ленты.<br> \
+	Обычно на таких хранят аудиоданные, например музыку, \
+	которую можно проиграть на станционарном и переносном проигрывателе.<br> \
+	Существуют специальные ленты которые поддаются перезаписи с помощью спецального оборудования."
 
 
 /datum/codex_entry/apc/New()

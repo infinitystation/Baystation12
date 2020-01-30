@@ -11,7 +11,7 @@
 	unarmed_types = list(
 		/datum/unarmed_attack/stomp,
 		/datum/unarmed_attack/kick,
-		/datum/unarmed_attack/claws/strong,
+		/datum/unarmed_attack/claws/strong/gloves,
 		/datum/unarmed_attack/punch,
 		/datum/unarmed_attack/bite/strong
 	)
@@ -40,8 +40,11 @@
 	cold_level_1 = 80
 	cold_level_2 = 50
 	cold_level_3 = 0
-
-	gluttonous = GLUT_SMALLER|GLUT_ITEM_NORMAL
+	
+	min_age = 1
+	max_age = 100
+	
+	gluttonous = GLUT_SMALLER|GLUT_ITEM_NORMAL //inf//was:gluttonous = GLUT_TINY|GLUT_ITEM_NORMAL
 	stomach_capacity = 12
 
 	breath_type = GAS_NITROGEN
@@ -118,6 +121,9 @@
 /datum/species/vox/disfigure_msg(var/mob/living/carbon/human/H)
 	var/datum/gender/T = gender_datums[H.get_gender()]
 	return "<span class='danger'>[T.His] beak-segments are cracked and chipped! [T.He] [T.is] not even recognizable.</span>\n"
+	
+/datum/species/vox/skills_from_age(age)
+	. = 8
 
 /datum/species/vox/armalis
 	name = SPECIES_VOX_ARMALIS
@@ -132,7 +138,7 @@
 
 	slowdown = 1
 	hidden_from_codex = TRUE
-	spawn_flags = SPECIES_IS_WHITELISTED | SPECIES_NO_FBP_CONSTRUCTION
+	spawn_flags = SPECIES_IS_WHITELISTED /*[INF]*/| SPECIES_IS_RESTRICTED  /*[/INF]*/| SPECIES_NO_FBP_CONSTRUCTION
 	brute_mod = 0.8
 	burn_mod = 0.8
 	strength = STR_HIGH

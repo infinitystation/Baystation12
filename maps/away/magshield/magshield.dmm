@@ -736,7 +736,7 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/item/modular_computer/console{
+/obj/machinery/computer/modular{
 	dir = 4
 	},
 /turf/simulated/floor/airless,
@@ -768,7 +768,7 @@
 /turf/simulated/floor/airless,
 /area/magshield/engine)
 "cb" = (
-/obj/item/modular_computer/console{
+/obj/machinery/computer/modular{
 	dir = 8
 	},
 /turf/simulated/floor/airless,
@@ -837,7 +837,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/item/modular_computer/console{
+/obj/machinery/computer/modular{
 	dir = 8
 	},
 /turf/simulated/floor/airless,
@@ -960,10 +960,9 @@
 "cu" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8;
-	layer = 2.4;
 	level = 2
 	},
-/obj/item/modular_computer/console{
+/obj/machinery/computer/modular{
 	dir = 8
 	},
 /turf/simulated/floor/airless,
@@ -1292,7 +1291,6 @@
 "da" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8;
-	layer = 2.4;
 	level = 2
 	},
 /obj/machinery/power/apc{
@@ -1514,7 +1512,7 @@
 /turf/simulated/floor/airless,
 /area/magshield/north)
 "dO" = (
-/obj/item/modular_computer/console{
+/obj/machinery/computer/modular{
 	dir = 4
 	},
 /turf/simulated/floor/airless,
@@ -2191,7 +2189,6 @@
 "fs" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/airless,
@@ -2282,7 +2279,7 @@
 /turf/simulated/floor/tiled,
 /area/magshield/west)
 "fH" = (
-/obj/effect/overmap/sector/magshield,
+/obj/effect/overmap/visitable/sector/magshield,
 /turf/simulated/floor/airless,
 /area/magshield/north)
 "fI" = (
@@ -2318,7 +2315,7 @@
 	icon_state = "4-8";
 	pixel_y = 0
 	},
-/obj/item/modular_computer/console{
+/obj/machinery/computer/modular{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
@@ -2425,7 +2422,7 @@
 /turf/simulated/floor/tiled,
 /area/magshield/west)
 "ga" = (
-/obj/item/modular_computer/console{
+/obj/machinery/computer/modular{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
@@ -2768,7 +2765,7 @@
 /turf/simulated/floor/tiled/white,
 /area/magshield/west)
 "ha" = (
-/obj/item/modular_computer/console{
+/obj/machinery/computer/modular{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
@@ -2878,7 +2875,7 @@
 /area/magshield/west)
 "hq" = (
 /obj/item/weapon/paper/magshield/log,
-/obj/item/modular_computer/console{
+/obj/machinery/computer/modular{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
@@ -3540,7 +3537,6 @@
 "jk" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled/white,

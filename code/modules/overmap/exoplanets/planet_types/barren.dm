@@ -1,4 +1,4 @@
-/obj/effect/overmap/sector/exoplanet/barren
+/obj/effect/overmap/visitable/sector/exoplanet/barren
 	name = "barren exoplanet"
 	desc = "An exoplanet that couldn't hold its atmosphere."
 	color = "#847c6f"
@@ -8,11 +8,13 @@
 	map_generators = list(/datum/random_map/noise/exoplanet/barren, /datum/random_map/noise/ore/rich)
 	ruin_tags_blacklist = RUIN_HABITAT|RUIN_WATER
 	features_budget = 6
+	surface_color = "#847c6f"
+	water_color = null
 
-/obj/effect/overmap/sector/exoplanet/barren/generate_habitability()
+/obj/effect/overmap/visitable/sector/exoplanet/barren/generate_habitability()
 	return HABITABILITY_BAD
 
-/obj/effect/overmap/sector/exoplanet/barren/generate_atmosphere()
+/obj/effect/overmap/visitable/sector/exoplanet/barren/generate_atmosphere()
 	..()
 	atmosphere.remove_ratio(0.9)
 

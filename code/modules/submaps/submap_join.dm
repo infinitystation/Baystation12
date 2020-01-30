@@ -83,7 +83,7 @@
 			if(spawn_in_storage)
 				for(var/datum/gear/G in spawn_in_storage)
 					G.spawn_in_storage_or_drop(user_human, user_human.client.prefs.Gear()[G.display_name])
-			equip_custom_items(user_human)
+			SScustomitems.equip_custom_items(user_human)
 
 		character.job = job.title
 		if(character.mind)
@@ -99,7 +99,7 @@
 			to_chat(character, ojob.info)
 
 		if(user_human && user_human.disabilities & NEARSIGHTED)
-			var/equipped = user_human.equip_to_slot_or_del(new /obj/item/clothing/glasses/regular(user_human), slot_glasses)
+			var/equipped = user_human.equip_to_slot_or_del(new /obj/item/clothing/glasses/prescription(user_human), slot_glasses)
 			if(equipped)
 				var/obj/item/clothing/glasses/G = user_human.glasses
 				G.prescription = 7

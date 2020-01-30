@@ -93,7 +93,7 @@
 		/area/shuttle/syndicate_elite/mothership,
 		/area/shuttle/syndicate_elite/station,
 		/area/skipjack_station,
-		/area/skipjack_station/start,
+		/area/map_template/skipjack_station/start,
 		/area/supply,
 		/area/syndicate_mothership,
 		/area/syndicate_mothership/elite_squad,

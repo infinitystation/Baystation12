@@ -1,0 +1,9 @@
+{
+  "ckey" :            "m1am1",
+  "character_name" :  "Edward Paige",
+  "item_name" :       "foundation jacket",
+  "item_desc" :       "A thin black jacket with a stencilled Cuchulain Foundation logos.",
+  "item_icon_state" : "foundation_jacket",
+  "item_path" :       "/obj/item/clothing/suit/storage/leather_jacket",
+  "req_access" :      [ "ACCESS_PSYCHIATRIST" ]
+  }

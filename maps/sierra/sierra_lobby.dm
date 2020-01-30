@@ -1,6 +1,5 @@
 /datum/map/sierra
-	lobby_icon = 'maps/sierra/icons/lobby.dmi'
-	lobby_screens = list("title")
+	lobby_screens = list('maps/sierra/lobby/sierra.png', 'maps/sierra/lobby/station.png')
 	lobby_tracks = list(
 		/music_track/chasing_time,
 		/music_track/human,
@@ -17,4 +16,6 @@
 		/music_track/torn,
 		/music_track/nebula,
 		/music_track/epicintro2015,
-		/music_track/epicintro2017)
+		/music_track/epicintro2017,
+		/music_track/fluvialbeatdeposits
+	)

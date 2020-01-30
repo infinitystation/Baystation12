@@ -25,7 +25,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 	. = ..()
 
 	if(!admin_departments)
-		admin_departments = list("[GLOB.using_map.boss_name]", "Office of Civil Investigation and Enforcement", "[GLOB.using_map.boss_short] Supply") + GLOB.using_map.map_admin_faxes
+		admin_departments = list("[GLOB.using_map.boss_name]", "Sol Federal Police", "[GLOB.using_map.boss_short] Supply") + GLOB.using_map.map_admin_faxes
 	GLOB.allfaxes += src
 	if(!destination) destination = "[GLOB.using_map.boss_name]"
 	if(!(("[department]" in GLOB.alldepartments) || ("[department]" in admin_departments)))
@@ -158,6 +158,12 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 		visible_message("[src] beeps, \"Message transmitted successfully.\"")
 		log_fax("[key_name(usr)] sends fax to the [destination]")
 		sendcooldown = 600
+//[INF]
+		var/obj/item/rcvdcopy = copyitem
+		GLOB.adminfaxes += rcvdcopy
+		var/mob/intercepted = check_for_interception()
+		message_admins(usr, "[uppertext(destination)] FAX[intercepted ? "(Intercepted by [intercepted])" : null]", rcvdcopy, destination, "#006100", disturb = FALSE) //INF
+//[/INF]
 	else
 		visible_message("[src] beeps, \"Error transmitting message.\"")
 
@@ -217,7 +223,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 	//message badmins that a fax has arrived
 	if (destination == GLOB.using_map.boss_name)
 		message_admins(sender, "[uppertext(destination)] FAX[intercepted ? "(Intercepted by [intercepted])" : null]", rcvdcopy, destination, "#006100")
-	else if (destination == "Office of Civil Investigation and Enforcement")
+	else if (destination == "Sol Federal Police")
 		message_admins(sender, "[uppertext(destination)] FAX[intercepted ? "(Intercepted by [intercepted])" : null]", rcvdcopy, destination, "#1f66a0")
 	else if (destination == "[GLOB.using_map.boss_short] Supply")
 		message_admins(sender, "[uppertext(destination)] FAX[intercepted ? "(Intercepted by [intercepted])" : null]", rcvdcopy, destination, "#5f4519")
@@ -235,10 +241,15 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 	visible_message("[src] beeps, \"Message transmitted successfully.\"")
 
 
-/obj/machinery/photocopier/faxmachine/proc/message_admins(var/mob/sender, var/faxname, var/obj/item/sent, var/reply_type, font_colour="#006100")
+/obj/machinery/photocopier/faxmachine/proc/message_admins(var/mob/sender, var/faxname, var/obj/item/sent, var/reply_type, font_colour="#006100", var/disturb = TRUE)
 	var/msg = "<span class='notice'><b><font color='[font_colour]'>[faxname]: </font>[get_options_bar(sender, 2,1,1)]"
 	msg += "(<A HREF='?_src_=holder;take_ic=\ref[sender]'>TAKE</a>) (<a href='?_src_=holder;FaxReply=\ref[sender];originfax=\ref[src];replyorigin=[reply_type]'>REPLY</a>)</b>: "
 	msg += "Receiving '[sent.name]' via secure connection ... <a href='?_src_=holder;AdminFaxView=\ref[sent]'>view message</a></span>"
+
+//[INF]
+	GLOB.fax_cache += "*[time_stamp()]*: DESTINATION - [msg]<br>" //INF
+	if(!disturb) return
+//[/INF]
 
 	for(var/client/C in GLOB.admins)
 		if(check_rights((R_ADMIN|R_MOD),0,C))

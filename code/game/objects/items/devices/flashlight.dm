@@ -232,8 +232,8 @@
 	w_class = ITEM_SIZE_LARGE
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	flashlight_max_bright = 0.3
-	flashlight_inner_range = 2
-	flashlight_outer_range = 5
+	flashlight_inner_range = 1.5 //INF, WAS 2
+	flashlight_outer_range = 3.5 //INF, WAS 5
 
 	on = 1
 
@@ -315,7 +315,7 @@
 	..()
 
 /obj/item/device/flashlight/flare/proc/activate(var/mob/user)
-	if(user)
+	if(istype(user))
 		user.visible_message("<span class='notice'>[user] pulls the cord on \the [src], activating it.</span>", "<span class='notice'>You pull the cord on \the [src], activating it!</span>")
 
 /obj/item/device/flashlight/flare/proc/update_damage()
@@ -341,7 +341,7 @@
 	item_state = "glowstick"
 	randpixel = 12
 	produce_heat = 0
-	activation_sound = null
+	activation_sound = 'sound/effects/glowstick.ogg'
 
 	flashlight_max_bright = 0.6
 	flashlight_inner_range = 0.1
@@ -373,7 +373,7 @@
 			M.update_inv_r_hand()
 
 /obj/item/device/flashlight/flare/glowstick/activate(var/mob/user)
-	if(user)
+	if(istype(user))
 		user.visible_message("<span class='notice'>[user] cracks and shakes \the [src].</span>", "<span class='notice'>You crack and shake \the [src], turning it on!</span>")
 
 /obj/item/device/flashlight/flare/glowstick/red

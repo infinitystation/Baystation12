@@ -3,7 +3,6 @@
  * Stealing a lot of concepts/code from sleepers due to massive laziness.
  * The despawn tick will only fire if it's been more than time_till_despawned ticks
  * since time_entered, which is world.time when the occupant moves in.
- * ~ Zuhayr
  */
 
 
@@ -93,7 +92,7 @@
 			to_chat(user, "<span class='notice'>\The [I] is no longer in storage.</span>")
 			return TOPIC_HANDLED
 
-		visible_message("<span class='notice'>The console beeps happily as it disgorges \the [I].</span>", 3)
+		visible_message("<span class='notice'>The console beeps happily as it disgorges \the [I].</span>", range = 3)
 
 		I.dropInto(loc)
 		frozen_items -= I
@@ -106,7 +105,7 @@
 			to_chat(user, "<span class='notice'>There is nothing to recover from storage.</span>")
 			return TOPIC_HANDLED
 
-		visible_message("<span class='notice'>The console beeps happily as it disgorges the desired objects.</span>", 3)
+		visible_message("<span class='notice'>The console beeps happily as it disgorges the desired objects.</span>", range = 3)
 
 		for(var/obj/item/I in frozen_items)
 			I.dropInto(loc)
@@ -230,9 +229,9 @@
 
 	var/list/possible_locations = list()
 	if(GLOB.using_map.use_overmap)
-		var/obj/effect/overmap/O = map_sectors["[z]"]
-		for(var/obj/effect/overmap/OO in range(O,2))
-			if(OO.in_space || istype(OO,/obj/effect/overmap/sector/exoplanet))
+		var/obj/effect/overmap/visitable/O = map_sectors["[z]"]
+		for(var/obj/effect/overmap/visitable/OO in range(O,2))
+			if(OO.in_space || istype(OO,/obj/effect/overmap/visitable/sector/exoplanet))
 				possible_locations |= text2num(level)
 
 	var/newz = GLOB.using_map.get_empty_zlevel()
@@ -296,10 +295,10 @@
 
 /obj/machinery/cryopod/examine(mob/user)
 	. = ..()
-	if (. && occupant && user.Adjacent(src))
-		occupant.examine(user)
+	if (occupant && user.Adjacent(src))
+		occupant.examine(arglist(args))
 
-//Lifted from Unity stasis.dm and refactored. ~Zuhayr
+//Lifted from Unity stasis.dm and refactored.
 /obj/machinery/cryopod/Process()
 	if(occupant)
 		if(applies_stasis && iscarbon(occupant) && (world.time > time_entered + 20 SECONDS))
@@ -399,6 +398,9 @@
 	// Delete them from datacore.
 	var/sanitized_name = occupant.real_name
 	sanitized_name = sanitize(sanitized_name)
+	var/datum/computer_file/report/crew_record/R = get_crewmember_record(sanitized_name)
+	if(R)
+		qdel(R)
 
 	icon_state = base_icon_state
 
@@ -416,12 +418,9 @@
 		control_computer._admin_logs += "[key_name(occupant)] ([role_alt_title]) at [stationtime2text()]"
 	log_and_message_admins("[key_name(occupant)] ([role_alt_title]) entered cryostorage.")
 
-	var/datum/computer_file/report/crew_record/R = get_crewmember_record(sanitized_name)
-	if(R)
+	if(loc.z in GLOB.using_map.station_levels) //INF
 		announce.autosay("[occupant.real_name], [role_alt_title], [on_store_message]", "[on_store_name]")
-		qdel(R)
-
-	visible_message("<span class='notice'>\The [initial(name)] hums and hisses as it moves [occupant.real_name] into storage.</span>", 3)
+	visible_message("<span class='notice'>\The [initial(name)] hums and hisses as it moves [occupant.real_name] into storage.</span>", range = 3)
 
 	//This should guarantee that ghosts don't spawn.
 	occupant.ckey = null
@@ -436,7 +435,7 @@
 			if(alert(target,"Would you like to enter long-term storage?",,"Yes","No") != "Yes")
 				return
 	if(!user.incapacitated() && !user.anchored && user.Adjacent(src) && user.Adjacent(target))
-		visible_message("[user] starts putting [target] into \the [src].", 3)
+		visible_message("[user] starts putting [target] into \the [src].", range = 3)
 		if(!do_after(user, 20, src)|| QDELETED(target))
 			return
 		set_occupant(target)
@@ -522,7 +521,7 @@
 			to_chat(usr, "You're too busy getting your life sucked out of you.")
 			return
 
-	visible_message("[usr] starts climbing into \the [src].", 3)
+	visible_message("\The [usr] starts climbing into \the [src].", range = 3)
 
 	if(do_after(usr, 20, src))
 

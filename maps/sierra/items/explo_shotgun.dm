@@ -1,7 +1,7 @@
 /obj/item/weapon/gun/projectile/shotgun/pump/exploration
 	name = "ballistic launcher"
 	desc = "As the user's handbook will tell you, the Xynergy XP-3 is /not/ a shotgun, it just launches payloads of same caliber at high speed towards targets. Nicknamed 'Boomstick' for the way it behaves when full-power ammunition is loaded."
-	icon = 'maps/sierra/icons/obj/explshotgun.dmi'
+	icon = 'maps/torch/icons/obj/explshotgun.dmi'
 	icon_state = "expshotgun0"
 	starts_loaded = 0
 	req_access = list(list(access_hop, access_hos))
@@ -11,6 +11,7 @@
 		)
 	var/explosion_chance = 50
 	var/obj/item/pipe/reinforced
+	bulk = GUN_BULK_SMG
 
 /obj/item/weapon/gun/projectile/shotgun/pump/get_mechanics_info()
 	. = ..()
@@ -22,11 +23,11 @@
 	. += "<br>You can reinforce the barrel with a simple pipe, lowering chance of explosion to 1 in 10.<br>"
 
 /obj/item/weapon/gun/projectile/shotgun/pump/exploration/on_update_icon()
+	..()
 	if(!reinforced)
 		icon_state = "expshotgun[!!chambered]"
 	else
 		icon_state = "ghettexpshotgun[!!chambered]"
-	..()
 
 /obj/item/weapon/gun/projectile/shotgun/pump/exploration/Destroy()
 	QDEL_NULL(reinforced)

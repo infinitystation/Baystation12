@@ -327,7 +327,7 @@
 /turf/simulated/floor/carpet/blue,
 /area/space)
 "aX" = (
-/obj/item/modular_computer/console/preset/civilian/professional{
+/obj/machinery/computer/modular/preset/civilian/professional{
 	icon_state = "console";
 	dir = 8
 	},
@@ -362,7 +362,7 @@
 /turf/simulated/floor/carpet/green,
 /area/space)
 "bc" = (
-/obj/item/modular_computer/console/preset/civilian/professional{
+/obj/machinery/computer/modular/preset/civilian/professional{
 	icon_state = "console";
 	dir = 8
 	},
@@ -381,7 +381,7 @@
 /turf/simulated/floor/carpet/purple,
 /area/space)
 "bf" = (
-/obj/item/modular_computer/console/preset/civilian/professional{
+/obj/machinery/computer/modular/preset/civilian/professional{
 	icon_state = "console";
 	dir = 8
 	},
@@ -2104,21 +2104,21 @@
 /turf/simulated/floor/tiled/white,
 /area/space)
 "fA" = (
-/obj/item/modular_computer/console/preset/civilian/professional{
+/obj/machinery/computer/modular/preset/civilian/professional{
 	icon_state = "console";
 	dir = 8
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/space)
 "fB" = (
-/obj/item/modular_computer/console/preset/civilian/professional{
+/obj/machinery/computer/modular/preset/civilian/professional{
 	icon_state = "console";
 	dir = 8
 	},
 /turf/simulated/floor/carpet/orange,
 /area/space)
 "fC" = (
-/obj/item/modular_computer/console/preset/civilian/professional{
+/obj/machinery/computer/modular/preset/civilian/professional{
 	icon_state = "console";
 	dir = 8
 	},

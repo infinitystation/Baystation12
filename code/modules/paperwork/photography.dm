@@ -15,6 +15,7 @@
 	desc = "A camera film cartridge. Insert it into a camera to reload it."
 	icon_state = "film"
 	item_state = "electropack"
+	matter = list(MATERIAL_PLASTIC = 250) //INF
 	w_class = ITEM_SIZE_TINY
 
 
@@ -64,10 +65,11 @@ var/global/photo_count = 0
 			scribble = txt
 	..()
 
-/obj/item/weapon/photo/examine(mob/user)
+/obj/item/weapon/photo/examine(mob/user, distance)
+	. = TRUE
 	if(!img)
 		return
-	if(in_range(user, src))
+	if(distance <= 1)
 		show(user)
 		to_chat(user, desc)
 	else
@@ -159,7 +161,7 @@ var/global/photo_count = 0
 	else
 		icon_state = "[bis.base_icon_state]_off"
 /obj/item/device/camera/Initialize()
-	set_extension(src, /datum/extension/base_icon_state, /datum/extension/base_icon_state, icon_state)
+	set_extension(src, /datum/extension/base_icon_state, icon_state)
 	update_icon()
 	. = ..()
 
@@ -224,9 +226,7 @@ var/global/photo_count = 0
 	update_icon()
 
 /obj/item/device/camera/examine(mob/user)
-	if(!..(user))
-		return
-
+	. = ..()
 	to_chat(user, "It has [pictures_left] photo\s left.")
 
 //Proc for capturing check

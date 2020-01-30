@@ -1,0 +1,8 @@
+{
+  "ckey" :            "twinindifferent",
+  "character_name" :  "Shattara",
+  "item_name" :       "pioneer bloody jacket",
+  "item_desc" :       "That small jacket looks like someone want to make it cooler in \"hot\" days.",
+  "item_icon_state" : "small_jacket_pioneer",
+  "item_path" :       "/obj/item/clothing/suit/storage/leather_jacket"
+  }

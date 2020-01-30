@@ -186,7 +186,6 @@
 "aL" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled,
@@ -840,7 +839,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled,
@@ -918,7 +916,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled,
@@ -1289,7 +1286,6 @@
 "db" = (
 /obj/structure/table/rack{
 	dir = 8;
-	layer = 2.9
 	},
 /obj/item/stack/material/glass/ten{
 	amount = 20
@@ -1586,7 +1582,6 @@
 "dA" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled,
@@ -1599,7 +1594,6 @@
 /obj/random/tech_supply,
 /obj/structure/table/rack{
 	dir = 8;
-	layer = 2.9
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -1668,7 +1662,6 @@
 "dJ" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -1680,7 +1673,6 @@
 "dM" = (
 /obj/structure/table/rack{
 	dir = 8;
-	layer = 2.9
 	},
 /obj/item/weapon/handcuffs/cable/yellow,
 /obj/item/device/flash/synthetic,
@@ -2352,7 +2344,6 @@
 "Dk" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled,

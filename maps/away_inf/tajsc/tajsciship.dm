@@ -8,11 +8,11 @@
 	description = "A CCA EC scouting station."
 	suffixes = list("tajsc/tajsciship-1.dmm")
 	cost = 0
-	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/tajscishuttle, /obj/effect/overmap/ship/tajsciship)
+	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/tajscishuttle, /obj/effect/overmap/visitable/ship/tajsciship)
 	prefix = "map/away_inf/"
 	template_flags = TEMPLATE_FLAG_SPAWN_GUARANTEED
 
-/obj/effect/overmap/sector/tajscispace
+/obj/effect/overmap/visitable/sector/tajscispace
 	name = "Abnormal sector"
 	desc = "Slight traces of a bluespace are present. Dangerous place."
 	in_space = 1

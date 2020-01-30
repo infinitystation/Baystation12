@@ -92,7 +92,7 @@ GLOBAL_LIST_INIT(machine_path_to_circuit_type, cache_circuits_by_build_path())
 		LAZYREMOVE(uncreated_component_parts, path)
 	return install_component(path, TRUE)
 
-// Can be given a path or an instance. False will guarantee part creation. 
+// Can be given a path or an instance. False will guarantee part creation.
 // If an instance is given or created, it is returned, otherwise null is returned.
 /obj/machinery/proc/install_component(var/obj/item/weapon/stock_parts/part, force = FALSE, refresh_parts = TRUE)
 	if(ispath(part))
@@ -238,6 +238,7 @@ Standard helpers for users interacting with machinery parts.
 		for(var/obj/item/weapon/stock_parts/B in R.contents)
 			if(istype(B, A.base_type) && B.rating > A.rating)
 				replace_part(user, R, A, B)
+				R.part_replacement_sound() //inf
 				return TRUE
 	for(var/path in uncreated_component_parts)
 		var/obj/item/weapon/stock_parts/A = path
@@ -248,17 +249,21 @@ Standard helpers for users interacting with machinery parts.
 			for(var/obj/item/weapon/stock_parts/B in R.contents)
 				if(istype(B, base_type) && B.rating > initial(A.rating))
 					replace_part(user, R, A, B)
+					R.part_replacement_sound() //inf
 					return TRUE
 
+	if(R.remote_interaction)//inf
+		R.part_replacement_sound()
+
 /obj/machinery/proc/part_insertion(mob/user, obj/item/weapon/stock_parts/part) // Second argument may actually be an arbitrary item.
-	if(!user.canUnEquip(part))
+	if(!user.canUnEquip(part) && !isstack(part))
 		return FALSE
 	var/number = can_add_component(part, user)
 	if(!number)
 		return istype(part) // If it's not a stock part, we don't block further interactions; presumably the user meant to do something else.
 	if(isstack(part))
 		var/obj/item/stack/stack = part
-		install_component(stack.split(number))
+		install_component(stack.split(number, TRUE))
 	else
 		user.unEquip(part, src)
 		install_component(part)
@@ -280,11 +285,14 @@ Standard helpers for users interacting with machinery parts.
 		var/path = removable_parts[input]
 		if(!path || !components_are_accessible(path))
 			return TRUE
-		var/obj/item/weapon/stock_parts/part = uninstall_component(get_component_of_type(path, TRUE))
-		if(part)
-			user.put_in_hands(part) // Already dropped at loc, so that's the fallback.
-			user.visible_message(SPAN_NOTICE("\The [user] removes \the [part] from \the [src]."), SPAN_NOTICE("You remove \the [part] from \the [src]."))
+		remove_part_and_give_to_user(path, user)
 		return TRUE
+
+/obj/machinery/proc/remove_part_and_give_to_user(var/path, mob/user)
+	var/obj/item/weapon/stock_parts/part = uninstall_component(get_component_of_type(path, TRUE))
+	if(part)
+		user.put_in_hands(part) // Already dropped at loc, so that's the fallback.
+		user.visible_message(SPAN_NOTICE("\The [user] removes \the [part] from \the [src]."), SPAN_NOTICE("You remove \the [part] from \the [src]."))
 
 /obj/machinery/proc/missing_parts()
 	if(!construct_state)

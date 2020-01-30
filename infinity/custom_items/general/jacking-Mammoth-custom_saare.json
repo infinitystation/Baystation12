@@ -1,0 +1,6 @@
+{
+  "ckey" :            "jacking",
+  "character_name" :  "Mammoth Nestor",
+  "item_path" :       "/obj/item/weapon/clothingbag/custom_saare",
+  "req_access" :      [ "ACCESS_SECURITY" ]
+  }

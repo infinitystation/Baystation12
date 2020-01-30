@@ -80,6 +80,7 @@
 		/obj/item/clothing/suit/armor/pcarrier/medium/nt,
 		/obj/item/clothing/head/helmet/nt,
 		/obj/item/clothing/head/beret/sec/corporate/warden,
+		/obj/item/clothing/head/beret/sec/navy/warden,
 		/obj/item/clothing/under/rank/warden/corp/alt,
 		/obj/item/clothing/under/rank/warden/navyblue,
 		/obj/item/clothing/under/rank/warden/navyblue/alt,
@@ -170,3 +171,17 @@
 		/obj/item/clothing/mask/gas/half,
 		/obj/item/weapon/storage/firstaid/individual/military
 	)
+
+/obj/structure/closet/secure_closet/brig/WillContain()
+	return list(
+		/obj/item/clothing/under/color/orange,
+		/obj/item/clothing/shoes/orange,
+		/obj/item/modular_computer/pda,
+		/obj/item/device/radio/headset
+	)
+
+/obj/structure/closet/wardrobe/orange/New()
+	..()
+	new /obj/item/modular_computer/pda(src)
+	new /obj/item/modular_computer/pda(src)
+	new /obj/item/modular_computer/pda(src)

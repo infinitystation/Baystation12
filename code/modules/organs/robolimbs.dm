@@ -18,9 +18,9 @@ var/datum/robolimb/basic_robolimb
 	var/unavailable_at_chargen                                // If set, not available at chargen.
 	var/unavailable_at_fab = 1                                // If set, cannot be fabricated.
 	var/can_eat = 0
-	var/brute_mod = 1//inf
-	var/speed_mod = 0//inf
-	var/burn_mod = 1//inf
+	var/brute_mod = 1 //INF
+	var/speed_mod = 0 //INF
+	var/burn_mod = 1 //INF
 	var/has_eyes = TRUE
 	var/can_feel_pain
 	var/skintone
@@ -34,6 +34,13 @@ var/datum/robolimb/basic_robolimb
 	company = "Bishop"
 	desc = "This limb has a white polymer casing with blue holo-displays."
 	icon = 'icons/mob/human_races/cyberlimbs/bishop/bishop_main.dmi'
+
+/datum/robolimb/bishop/rook
+	company = "Bishop Rook"
+	desc = "This limb has a polished metallic casing and a holographic face emitter."
+	icon = 'icons/mob/human_races/cyberlimbs/bishop/bishop_rook.dmi'
+	has_eyes = FALSE
+	unavailable_at_fab = 1
 
 /datum/robolimb/bishop/alt
 	company = "Bishop Alt."
@@ -61,6 +68,12 @@ var/datum/robolimb/basic_robolimb
 	icon = 'icons/mob/human_races/cyberlimbs/hephaestus/hephaestus_titan.dmi'
 	has_eyes = FALSE
 	unavailable_at_fab = 1
+//[INF]
+	applies_to_part = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT, BP_L_HAND, BP_R_HAND)
+	brute_mod = 0.7
+	burn_mod = 0.7
+	speed_mod = 0.18
+//[/INF]
 
 /datum/robolimb/hephaestus/alt/monitor
 	company = "Hephaestus Monitor."
@@ -74,11 +87,23 @@ var/datum/robolimb/basic_robolimb
 	can_eat = 1
 	allowed_bodytypes = list(SPECIES_HUMAN,SPECIES_IPC)
 
+/datum/robolimb/zenghu/spirit
+	company = "Zeng-Hu Spirit"
+	desc = "This limb has a sleek black and white polymer finish."
+	icon = 'icons/mob/human_races/cyberlimbs/zenghu/zenghu_spirit.dmi'
+	unavailable_at_fab = 1
+
 /datum/robolimb/xion
 	company = "Xion"
 	desc = "This limb has a minimalist black and red casing."
 	icon = 'icons/mob/human_races/cyberlimbs/xion/xion_main.dmi'
 	has_eyes = 0
+
+/datum/robolimb/xion/econo
+	company = "Xion Econ"
+	desc = "This skeletal mechanical limb has a minimalist black and red casing."
+	icon = 'icons/mob/human_races/cyberlimbs/xion/xion_econo.dmi'
+	unavailable_at_fab = 1
 
 /datum/robolimb/xion/alt
 	company = "Xion Alt."

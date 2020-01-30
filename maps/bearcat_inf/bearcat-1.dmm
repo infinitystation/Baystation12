@@ -63,6 +63,21 @@
 /obj/effect/floor_decal/industrial/warning/corner,
 /turf/simulated/floor/tiled,
 /area/ship/scrap/cargo/lower)
+"ai" = (
+/obj/machinery/door/airlock/external/bolted/cycling{
+	id_tag = "eva_in"
+	},
+/obj/machinery/access_button/airlock_interior{
+	master_tag = "skipjack_shuttle_dock_airlock";
+	pixel_x = -1;
+	pixel_y = 24
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	icon_state = "intact";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/ship/scrap/other/eva)
 "aj" = (
 /obj/machinery/door/airlock/external/bolted/cycling{
 	id_tag = "cargo_out"
@@ -480,7 +495,6 @@
 /obj/effect/floor_decal/industrial/warning,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled,
@@ -513,6 +527,30 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/scrap/escape/starboard)
+"aX" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 8;
+	frequency = 1379;
+	id_tag = "eva_pump"
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 5
+	},
+/obj/machinery/airlock_sensor{
+	id_tag = "eva_sensor";
+	pixel_y = 40
+	},
+/obj/machinery/embedded_controller/radio/airlock/docking_port{
+	id_tag = "skipjack_shuttle_dock_airlock";
+	pixel_y = 25;
+	tag_airpump = "eva_pump";
+	tag_chamber_sensor = "eva_sensor";
+	tag_exterior_door = "eva_out";
+	tag_interior_door = "eva_in"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/ship/scrap/other/eva)
 "aY" = (
 /obj/structure/plasticflaps,
 /obj/machinery/conveyor{
@@ -1085,7 +1123,6 @@
 "ca" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -1742,7 +1779,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled,
@@ -2343,7 +2379,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4;
-	layer = 2.4;
 	level = 2
 	},
 /obj/structure/cable{
@@ -2952,7 +2987,6 @@
 "fV" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
-	layer = 2.4;
 	level = 2
 	},
 /obj/machinery/button/alternate/door/bolts{
@@ -2974,7 +3008,6 @@
 /obj/item/weapon/bedsheet/rd,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
-	layer = 2.4;
 	level = 2
 	},
 /obj/item/device/radio/intercom{
@@ -2986,7 +3019,6 @@
 "fZ" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4;
-	layer = 2.4;
 	level = 2
 	},
 /obj/structure/closet/crate/freezer,
@@ -3104,21 +3136,6 @@
 /obj/structure/rubble,
 /turf/simulated/floor/tiled,
 /area/ship/scrap/maintenance/unused)
-"gp" = (
-/obj/machinery/door/airlock/external/bolted/cycling{
-	id_tag = "eva_in"
-	},
-/obj/machinery/access_button/airlock_interior{
-	master_tag = "eva";
-	pixel_x = -1;
-	pixel_y = 24
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	icon_state = "intact";
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/ship/scrap/other/eva)
 "gq" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -3132,30 +3149,6 @@
 /obj/effect/wallframe_spawn/reinforced/hull,
 /turf/simulated/floor/plating,
 /area/ship/scrap/crew/wash)
-"gr" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 8;
-	frequency = 1379;
-	id_tag = "eva_pump"
-	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 5
-	},
-/obj/machinery/airlock_sensor{
-	id_tag = "eva_sensor";
-	pixel_y = 40
-	},
-/obj/machinery/embedded_controller/radio/airlock/docking_port{
-	id_tag = "eva";
-	pixel_y = 25;
-	tag_airpump = "eva_pump";
-	tag_chamber_sensor = "eva_sensor";
-	tag_exterior_door = "eva_out";
-	tag_interior_door = "eva_in"
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/ship/scrap/other/eva)
 "gs" = (
 /obj/machinery/door/airlock/external/bolted/cycling{
 	id_tag = "eva_out"
@@ -3171,7 +3164,6 @@
 "gv" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
-	layer = 2.4;
 	level = 2
 	},
 /obj/machinery/button/alternate/door/bolts{
@@ -3193,7 +3185,6 @@
 /obj/item/weapon/bedsheet/red,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
-	layer = 2.4;
 	level = 2
 	},
 /obj/item/device/radio/intercom{
@@ -3257,7 +3248,6 @@
 /obj/machinery/light/small,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled/freezer,
@@ -7296,7 +7286,7 @@ ZW
 ZW
 bu
 ex
-gp
+ai
 gt
 ex
 ex
@@ -7460,7 +7450,7 @@ gQ
 ZW
 ex
 ex
-gr
+aX
 fh
 ex
 ex

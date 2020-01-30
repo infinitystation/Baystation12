@@ -14,8 +14,8 @@
 	var/deployed = 0
 	var/basic_chance = 50
 
-/obj/structure/barrier/New()
-	..()
+/obj/structure/barrier/Initialize()
+	. = ..()
 	update_layers()
 	update_icon()
 
@@ -41,13 +41,10 @@
 /obj/structure/barrier/proc/update_layers()
 	if(dir != SOUTH)
 		layer = initial(layer) + 0.1
-		plane = initial(plane)
 	else if(dir == SOUTH && density)
-		layer = ABOVE_OBJ_LAYER + 0.1
-		plane = ABOVE_HUMAN_PLANE
+		layer = ABOVE_HUMAN_LAYER
 	else
 		layer = initial(layer) + 0.1
-		plane = initial(plane)
 
 /obj/structure/barrier/on_update_icon()
 	if(density && !deployed)
@@ -100,8 +97,8 @@
 	if(deployed)
 		to_chat(user, "<span class='notice'>[src] is already deployed. You can't move it.</span>")
 	else
-		playsound(src, 'sound/effects/extout.ogg', 100, 1)
 		if(do_after(user, 5, src))
+			playsound(src, 'sound/effects/extout.ogg', 100, 1)
 			density = !density
 			to_chat(user, "<span class='notice'>You're getting [density ? "up" : "down"] [src].</span>")
 			update_layers()
@@ -111,13 +108,13 @@
 	if(isWelder(W))
 		var/obj/item/weapon/weldingtool/WT = W
 		if(health == maxhealth)
-			to_chat(user, "<span class='notice'>[src] is fully repaired.</span>")
+			to_chat(user, "<span class='notice'>\The [src] is fully repaired.</span>")
 			return
 		if(!WT.isOn())
 			to_chat(user, "<span class='notice'>[W] should be turned on firstly.</span>")
 			return
 		if(WT.remove_fuel(0,user))
-			visible_message("<span class='warning'>\The [user] is repairing [src]...</span>")
+			visible_message("<span class='warning'>[user] is repairing \the [src]...</span>")
 			playsound(src, 'sound/items/Welder.ogg', 100, 1)
 			if(do_after(user, max(5, health / 5), src) && WT?.isOn())
 				to_chat(user, "<span class='notice'>You finish repairing the damage to [src].</span>")
@@ -129,10 +126,10 @@
 		return
 	if(isScrewdriver(W))
 		if(density)
-			visible_message("<span class='danger'>The [user] begins to [deployed ? "un" : ""]deploy [src]...</span>")
+			visible_message("<span class='danger'>[user] begins to [deployed ? "un" : ""]deploy \the [src]...</span>")
 			playsound(src, 'sound/items/Screwdriver.ogg', 100, 1)
 			if(do_after(user, 30, src))
-				visible_message("<span class='notice'>[src] was [deployed ? "un" : ""]deployed by [user].</span>")
+				visible_message("<span class='notice'>[user] has [deployed ? "un" : ""]deployed \the [src].</span>")
 				deployed = !deployed
 				if(deployed)
 					basic_chance = 70
@@ -142,17 +139,17 @@
 		return
 	if(isCrowbar(W))
 		if(!deployed && !density)
-			visible_message("<span class='danger'>\The [user] is begins disassembling [src]...</span>")
+			visible_message("<span class='danger'>[user] is begins disassembling \the [src]...</span>")
 			playsound(src, 'sound/items/Crowbar.ogg', 100, 1)
 			if(do_after(user, 60, src))
 				var/obj/item/weapon/barrier/B = new /obj/item/weapon/barrier(get_turf(user))
-				visible_message("<span class='notice'>[usr] dismantled \the [src].</span>")
+				visible_message("<span class='notice'>[user] dismantled \the [src].</span>")
 				playsound(src, 'sound/items/Deconstruct.ogg', 100, 1)
 				B.health = health
 				B.add_fingerprint(user)
 				qdel(src)
 		else
-			to_chat(user, "<span class='notice'>You should unsecure [src] firstly. Use a screwdriver.</span>")
+			to_chat(user, "<span class='notice'>You should unsecure \the [src] firstly. Use a screwdriver.</span>")
 		update_icon()
 		return
 	else
@@ -229,7 +226,7 @@
 
 /obj/item/weapon/barrier
 	name = "portable barrier"
-	desc = "A portable barrier � usually, you can see it on defensive positions or in storages at important areas. \
+	desc = "A portable barrier. Usually, you can see it on defensive positions or in storages at important areas. \
 	You can deploy it with a screwdriver for maximum protection, or keep it in mobile position. \
 	Also, demontage can be done with a crowbar.In case of structural damage, can be repaired with welding tool."
 	icon = 'infinity/icons/obj/items.dmi'
@@ -251,11 +248,13 @@
 	if(turf_check(user))
 		return
 
-	var/obj/structure/barrier/B = new(user.loc)
-	B.set_dir(user.dir)
-	B.health = health
-	user.drop_item()
-	qdel(src)
+	if(do_after(user, 1 SECOND, src))
+		playsound(src, 'sound/effects/extout.ogg', 100, 1)
+		var/obj/structure/barrier/B = new(user.loc)
+		B.set_dir(user.dir)
+		B.health = health
+		user.drop_item()
+		qdel(src)
 
 /obj/item/weapon/barrier/attackby(obj/item/W as obj, mob/user as mob)
 	if(health != 200 && isWelder(W))

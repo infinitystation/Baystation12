@@ -53,7 +53,11 @@ var/can_call_ert
 	if(GLOB.ert.current_antagonists.len >= GLOB.ert.hard_cap)
 		to_chat(usr, "The emergency response team is already full!")
 		return
-
+//[INF]
+	if(!GLOB.ert.starting_locations.len)
+		to_chat(usr, "Что-то пошло не так. Попросите администраторов заспавнить базу ЕРТ (а лучше - подождите немного).")
+		return
+//[/INF]
 	GLOB.ert.create_default(usr)
 
 // returns a number of dead players in %
@@ -109,9 +113,16 @@ proc/trigger_armed_response_team(var/force = 0)
 		can_call_ert = 0 // Only one call per round, ladies.
 		return
 
-	command_announcement.Announce("Отряд Быстрого Реагирования мобилизуруется для оказания помощи [station_name()]. Ожидайте прибытия оперативников в ближайшее время.", "[GLOB.using_map.boss_name]")
+	command_announcement.Announce("Отряд Быстрого Реагирования мобилизуется для оказания помощи [station_name()]. Ожидайте прибытия оперативников в ближайшее время.", "[GLOB.using_map.boss_name]")
 	evacuation_controller.add_can_call_predicate(new/datum/evacuation_predicate/ert())
-
+//[INF] a part of add_antagonist() code
+	if(GLOB.ert.base_to_load)
+		var/datum/map_template/base = new GLOB.ert.base_to_load()
+		report_progress("Loading map template '[base]' for [GLOB.ert.role_text]...")
+		GLOB.ert.base_to_load = null
+		base.load_new_z()
+		GLOB.ert.get_starting_locations()
+//[/INF]
 	can_call_ert = 0 // Only one call per round, gentleman.
 	send_emergency_team = 1
 
@@ -123,7 +134,7 @@ proc/trigger_armed_response_team(var/force = 0)
 
 /datum/evacuation_predicate/ert/New()
 	..()
-	prevent_until = world.time + 30 MINUTES
+	prevent_until = world.time + 20 MINUTES //INF, WAS 30
 
 /datum/evacuation_predicate/ert/is_valid()
 	return world.time < prevent_until

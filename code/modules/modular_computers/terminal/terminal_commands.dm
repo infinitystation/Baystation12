@@ -87,11 +87,12 @@ Subtypes
 	pattern = "^ifconfig$"
 
 /datum/terminal_command/ifconfig/proper_input_entered(text, mob/user, datum/terminal/terminal)
-	if(!terminal.computer.network_card)
+	var/obj/item/weapon/stock_parts/computer/network_card/network_card = terminal.computer.get_component(PART_NETWORK)
+	if(!istype(network_card))
 		return "No network adaptor found."
-	if(!terminal.computer.network_card.check_functionality())
+	if(!network_card.check_functionality())
 		return "Network adaptor not activated."
-	return "Visible tag: [terminal.computer.network_card.get_network_tag()]. Real nid: [terminal.computer.network_card.identification_id]."
+	return "Visible tag: [network_card.get_network_tag()]. Real nid: [network_card.identification_id]."
 
 /datum/terminal_command/hwinfo
 	name = "hwinfo"
@@ -110,8 +111,9 @@ Subtypes
 	var/obj/item/weapon/stock_parts/computer/ch = terminal.computer.find_hardware_by_name(text)
 	if(!ch)
 		return "hwinfo: No such hardware found."
-	ch.diagnostics(user)
-	return "Running diagnostic protocols..."
+	. = list("Running diagnostic protocols...")
+	. += ch.diagnostics()
+	return
 
 // Sysadmin
 /datum/terminal_command/relays
@@ -156,14 +158,14 @@ Subtypes
 	. = "Failed to find device with given nid. Try ping for diagnostics."
 	if(length(text) < 8)
 		return
-	var/obj/item/modular_computer/origin = terminal.computer
+	var/datum/extension/interactive/ntos/origin = terminal.computer
 	if(!origin || !origin.get_ntnet_status())
 		return
 	var/nid = text2num(copytext(text, 8))
-	var/obj/item/modular_computer/comp = ntnet_global.get_computer_by_nid(nid)
-	if(!comp || !comp.enabled || !comp.get_ntnet_status())
+	var/datum/extension/interactive/ntos/comp = ntnet_global.get_os_by_nid(nid)
+	if(!comp || !comp.host_status() || !comp.get_ntnet_status())
 		return
-	return "... Estimating location: [get_area(comp)]"
+	return "... Estimating location: [get_area(comp.get_physical_host())]"
 
 /datum/terminal_command/ping
 	name = "ping"
@@ -176,17 +178,17 @@ Subtypes
 	if(length(text) < 6)
 		. += "ping: Improper syntax. Use ping nid."
 		return
-	var/obj/item/modular_computer/origin = terminal.computer
+	var/datum/extension/interactive/ntos/origin = terminal.computer
 	if(!origin || !origin.get_ntnet_status())
 		. += "failed. Check network status."
 		return
 	var/nid = text2num(copytext(text, 6))
-	var/obj/item/modular_computer/comp = ntnet_global.get_computer_by_nid(nid)
-	if(!comp || !comp.enabled || !comp.get_ntnet_status())
+	var/datum/extension/interactive/ntos/comp = ntnet_global.get_os_by_nid(nid)
+	if(!comp || !comp.host_status() || !comp.get_ntnet_status())
 		. += "failed. Target device not responding."
 		return
 	. += "ping successful."
-
+/*INF COMMENT, telnet replacing it, cuz IT-workers love to troll users though it //It can 'cause some balance.
 /datum/terminal_command/ssh
 	name = "ssh"
 	man_entry = list("Format: ssh nid", "Opens a remote terminal at the location of nid, if a valid device nid is specified.")
@@ -198,14 +200,14 @@ Subtypes
 		return "ssh is not supported on remote terminals."
 	if(length(text) < 5)
 		return "ssh: Improper syntax. Use ssh nid."
-	var/obj/item/modular_computer/origin = terminal.computer
+	var/datum/extension/interactive/ntos/origin = terminal.computer
 	if(!origin || !origin.get_ntnet_status())
 		return "ssh: Check network connectivity."
 	var/nid = text2num(copytext(text, 5))
-	var/obj/item/modular_computer/comp = ntnet_global.get_computer_by_nid(nid)
+	var/datum/extension/interactive/ntos/comp = ntnet_global.get_os_by_nid(nid)
 	if(comp == origin)
 		return "ssh: Error; can not open remote terminal to self."
-	if(!comp || !comp.enabled || !comp.get_ntnet_status())
+	if(!comp || !comp.host_status() || !comp.get_ntnet_status())
 		return "ssh: No active device with this nid found."
 	if(comp.has_terminal(user))
 		return "ssh: A remote terminal to this device is already active."
@@ -213,7 +215,7 @@ Subtypes
 	LAZYADD(comp.terminals, new_term)
 	LAZYADD(origin.terminals, new_term)
 	return "ssh: Connection established."
-
+*/
 /datum/terminal_command/proxy
 	name = "proxy"
 	man_entry = list(
@@ -227,19 +229,20 @@ Subtypes
 	pattern = "^proxy"
 
 /datum/terminal_command/proxy/proper_input_entered(text, mob/user, datum/terminal/terminal)
-	var/obj/item/modular_computer/comp = terminal.computer
-	if(!comp || !comp.network_card || !comp.network_card.check_functionality())
+	var/datum/extension/interactive/ntos/comp = terminal.computer
+	var/obj/item/weapon/stock_parts/computer/network_card/network_card = comp && comp.get_component(PART_NETWORK)
+	if(!comp || !network_card || !network_card.check_functionality())
 		return "proxy: Error; check networking hardware."
 	if(text == "proxy")
-		if(!comp.network_card.proxy_id)
+		if(!network_card.proxy_id)
 			return "proxy: This device is not using a proxy."
-		return "proxy: This device is set to connect via proxy with nid [comp.network_card.proxy_id]."
+		return "proxy: This device is set to connect via proxy with nid [network_card.proxy_id]."
 	if(text == "proxy -s")
-		if(!comp.network_card.proxy_id)
+		if(!network_card.proxy_id)
 			return "proxy: Error; this device is not using a proxy."
-		comp.network_card.proxy_id = null
+		network_card.proxy_id = null
 		return "proxy: Device proxy cleared."
-	if(!comp.network_card || !comp.network_card.check_functionality() || !comp.get_ntnet_status())
+	if(!network_card || !network_card.check_functionality() || !comp.get_ntnet_status())
 		return "proxy: Error; check networking hardware."
 	var/syntax_error = "proxy: Invalid input. Enter man proxy for syntax help."
 	if(length(text) < 10)
@@ -249,18 +252,16 @@ Subtypes
 	var/id = text2num(copytext(text, 10))
 	if(!id)
 		return syntax_error
-	var/obj/item/modular_computer/target = ntnet_global.get_computer_by_nid(id)
-	if(target == comp) return "<font color = '#ff0000'>proxy: Cannot setup a device to be its own proxy.</font>"
-	if(!target || !target.enabled || !target.get_ntnet_status())
+	var/datum/extension/interactive/ntos/target = ntnet_global.get_os_by_nid(id)
+	if(target == comp) return "proxy: Cannot setup a device to be its own proxy"
+	if(!target || !target.host_status() || !target.get_ntnet_status())
 		return "proxy: Error; cannot locate target device."
-	if(target.hard_drive)
-		var/datum/computer_file/data/logfile/file = target.hard_drive.find_file_by_name("proxy")
-		if(!istype(file))
-			file = new()
-			file.filename = "proxy"
-			target.hard_drive.store_file(file) // May fail, which is fine with us.
-		file.stored_data += "([time_stamp()]) Proxy routing request accepted from: [comp.network_card.get_network_tag()].\[br\]"
-	comp.network_card.proxy_id = id
+	var/datum/computer_file/data/logfile/file = target.get_file("proxy")
+	if(!istype(file))
+		file = target.create_file("proxy")
+	if(file)
+		file.stored_data += "([time_stamp()]) Proxy routing request accepted from: [comp.get_network_tag()].\[br\]"
+	network_card.proxy_id = id
 	return "proxy: Device proxy set to [id]."
 
 //[INFINITY]____________________________________________________________________________________________________________________
@@ -272,20 +273,17 @@ Subtypes
 	skill_needed = SKILL_ADEPT
 
 /datum/terminal_command/listdir/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	var/datum/extension/interactive/ntos/CT = terminal.computer
 	if(length(text) < 6)
 		return "listdir: Improper syntax. Use listdir."
-	if(!terminal.computer.hard_drive.check_functionality())
+	if(!CT.get_component(PART_HDD).check_functionality())
 		return "listdir: Access attempt to local storage failed. Check integrity of your hard drive"
-	//var/list/massive_of_program_names = list()
-	for(var/datum/computer_file/F in terminal.computer.hard_drive.stored_files)
+	for(var/datum/computer_file/F in CT.get_component(PART_HDD).stored_files)
 		if(F.is_illegal == 0)
 			var/prog_size = num2text(F.size)
 			. += F.filename + "." + F.filetype + "	|	" + prog_size + " GQ<br>"
-			//massive_of_program_names.Add(prg_data)
 		else
-			//var/prg_data = "\[ENCRYPTED\]" + "." + "\[ENCRYPTED\]" + "	|	" + "\[ENCRYPTED\]" + " GQ"
-			. += "\[ENCRYPTED\]" + "." + "\[ENCRYPTED\]" + "	|	" + "\[ENCRYPTED\]" + " GQ<br>"
-			//massive_of_program_names.Add(prg_data)
+			. += "\[ENCRYPTED]" + "." + "\[ENCRYPTED]" + "	|	" + "\[ENCRYPTED]" + " GQ<br>"
 	return
 
 /datum/terminal_command/shutdown
@@ -295,13 +293,18 @@ Subtypes
 	skill_needed = SKILL_ADEPT
 
 /datum/terminal_command/shutdown/proper_input_entered(text, mob/user, datum/terminal/terminal)
-	var/obj/item/modular_computer/CT = terminal.computer
-	if(length(text) < 8)
-		return "shutdown: Improper syntax. shutdown."
-	CT.shutdown_computer()
-	CT.bsod = 0
-	CT.update_icon()
-	return "Shutdown successful."
+	var/datum/extension/interactive/ntos/CT = terminal.computer
+	var/obj/item/modular_computer/H = CT.get_physical_host()
+	if(H)
+		if(length(text) < 8)
+			return "shutdown: Improper syntax. shutdown."
+		CT.system_shutdown()
+		if(istype(H))
+			H.bsod = 0
+		CT.update_host_icon()
+		return "Shutdown successful."
+	else
+		return "<font color='#f00'>UNDEFINED ERROR</font>"
 
 /datum/terminal_command/session
 	name = "session"
@@ -309,37 +312,37 @@ Subtypes
 					"Utilite for manipulations with active programs",
 					"As session return list of active PRG programs.",
 					"Option -kill kill all active PRG programs",
-					"Option -restore open interface of devise.",
-					"-restore manual: if you use -restore to open programs in remote console, duplicate input of command with -restore option after open of program interface.")
+					//"Option -restore open interface of devise.",
+					//"-restore manual: if you use -restore to open programs in remote console, duplicate input of command with -restore option after open of program interface."
+					)
 	pattern = "^session"
 	skill_needed = SKILL_ADEPT
 
 /datum/terminal_command/session/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/datum/computer_file/program/PRG = /datum/computer_file/program
-	var/obj/item/modular_computer/CT = terminal.computer
+	var/datum/extension/interactive/ntos/CT = terminal.computer
 	if(length(text) > 18 || length(text) < 6)
 		return "session: Invalid input. Enter man session for syntax help."
-	if(!CT.processor_unit.check_functionality())
+	if(!CT.get_component(PART_CPU).check_functionality())
 		return "session: Access attempt to RAM failed. Check integrity of your CPU."
 	var/ermsg = " programs is absent"
-	if(copytext(text, 8) == " -restore")
-		//var/TS = new /datum/topic_state/remote(src, CT)
+	/*if(copytext(text, 8) == " -restore")
 		CT.is_remote_ui = 1
-		CT.ui_interact(user)//, topic_state = TS)
-		return "session: interface restored."
+		CT.ui_interact(user)
+		return "session: interface restored."*/
 
 	if(copytext(text,8) == " -kill")
-		if(CT.idle_threads)
-			for(PRG in CT.idle_threads)
-				PRG.kill_program(1)
-			CT.active_program.kill_program(1)
-			CT.update_icon()
+		if(CT.running_programs)
+			for(PRG in CT.running_programs)
+				CT.kill_program(PRG)
+			CT.kill_program(CT.active_program)
+			CT.update_host_icon()
 			return "session: Active background and current programs killed."
 
 		else
 			ermsg = "background" + ermsg
 		if(CT.active_program)
-			CT.active_program.kill_program(1)
+			CT.kill_program(CT.active_program)
 		else
 			if(copytext(ermsg, 1, 10) == "background")
 				ermsg = "Curent and " + ermsg
@@ -347,50 +350,46 @@ Subtypes
 				ermsg = "Curent" + ermsg
 			ermsg = "session: " + ermsg
 			return ermsg
-	//var/list/massive_of_active_progs = list()
-	for(PRG in CT.idle_threads)
+	for(PRG in CT.running_programs)
+		. = list()
 		if(PRG.is_illegal)
-			var/act_prog = "\[ENCRYPTED\]"
-			//massive_of_active_progs.Add(act_prog)
-			. += act_prog + "<br>"
+			. += "\[ENCRYPTED]"
 		else
-			var/act_prog = PRG.filename
-			//massive_of_active_progs.Add(act_prog)
-			. += act_prog
+			. += PRG.filename
 	if(CT.active_program)
-		//massive_of_active_progs.Add(CT.active_program.filename)
 		. += CT.active_program.filename
 	if(.)
+		. = jointext(., "<br>")
 		return
 	return "session: Wrong input. Enter man session for syntax help."
 
 /datum/terminal_command/telnet
 	name = "telnet"
-	man_entry = list("Format: telnet \[NID\] \[LOGIN\] \[PASSWORD\].",
+	man_entry = list("Format: telnet \[NID] \[LOGIN] \[PASSWORD].",
 					"Access remote terminal with login and password",
-					"If NID \< 100 write NID like 001.",
+					"If NID < 100 write NID like 001.",
 					"Use `telnet` to README and config security of your devise.")
 	pattern = "^telnet"
 
 /datum/terminal_command/telnet/proper_input_entered(text, mob/user, datum/terminal/terminal)
-	var/obj/item/modular_computer/CT = terminal.computer
+	var/datum/extension/interactive/ntos/CT = terminal.computer
 
 	if(!copytext(text,7))
-		if(CT.hard_drive)
-			if(!CT.hard_drive.find_file_by_name("TNet_CONFIG") && !CT.hard_drive.find_file_by_name("TNet_CONFIG_README"))
-				var/datum/computer_file/data/config/file = CT.hard_drive.find_file_by_name("TNet_CONFIG")
+		if(CT.get_component(PART_HDD))
+			if(!CT.get_component(PART_HDD).find_file_by_name("TNet_CONFIG") && !CT.get_component(PART_HDD).find_file_by_name("TNet_CONFIG_README"))
+				var/datum/computer_file/data/config/file = CT.get_component(PART_HDD).find_file_by_name("TNet_CONFIG")
 				if(!istype(file))
 					file = new()
 					file.filename = "TNet_CONFIG"
-					CT.hard_drive.store_file(file) // May fail, which is fine with us.
+					CT.get_component(PART_HDD).store_file(file) // May fail, which is fine with us.
 					file.stored_data += "ROOT : [round(rand(1000, 9999))]" //LOGIN : PASSWORD
-				var/datum/computer_file/data/text/file_README = CT.hard_drive.find_file_by_name("TNet_CONFIG_README")
+				var/datum/computer_file/data/text/file_README = CT.get_component(PART_HDD).find_file_by_name("TNet_CONFIG_README")
 				if(!istype(file_README))
 					file_README = new()
 					file_README.filename = "TNet_CONFIG_README"
-					CT.hard_drive.store_file(file_README) // May fail, which is fine with us.
-					file_README.stored_data += "\[large\]\[b\]DO NOT DELETE FILE TNet_CONFIG IF YOU DO NOT WANT TO PUT YOUR DEVICE AT RISK \[/b\]\[/large\]\[br\]" //LOGIN : PASSWORD
-					file_README.stored_data += "Format login and password in TNet_CONFIG: \[LOGIN\] : \[PASSWORD\].\[br\]"
+					CT.get_component(PART_HDD).store_file(file_README) // May fail, which is fine with us.
+					file_README.stored_data += "\[large]\[b]DO NOT DELETE FILE TNet_CONFIG IF YOU DO NOT WANT TO PUT YOUR DEVICE AT RISK \[/b]\[/large]\[br]" //LOGIN : PASSWORD
+					file_README.stored_data += "Format login and password in TNet_CONFIG: \[LOGIN] : \[PASSWORD].\[br]"
 					file_README.stored_data += "Login must contain only 4 characters, password may be anything."
 				return "Config file created. Check config README to study how to change the login and password."
 			else
@@ -406,17 +405,16 @@ Subtypes
 		nid = copytext(nid, 3,4)
 	else if(copytext(nid, 1,2) == "0")
 		nid = copytext(nid, 2,3)
-	var/obj/item/modular_computer/comp = ntnet_global.get_computer_by_nid(nid)
-
+	var/datum/extension/interactive/ntos/comp = ntnet_global.get_os_by_nid(nid)
 	if(comp == CT)
 		return "telnet: Error; can not open remote terminal to self."
-	if(!comp || !comp.enabled || !comp.get_ntnet_status())
+	if(!comp || !comp.host_status() || !comp.get_ntnet_status())
 		return "telnet: No active device with this nid found."
 	if(comp.has_terminal(user))
 		return "telnet: A remote terminal to this device is already active."
 
-	var/datum/computer_file/data/config/cfg_file = comp.hard_drive.find_file_by_name("TNet_CONFIG")
-	if(comp.hard_drive.find_file_by_name("TNet_CONFIG"))
+	var/datum/computer_file/data/config/cfg_file = comp.get_component(PART_HDD).find_file_by_name("TNet_CONFIG")
+	if(comp.get_component(PART_HDD).find_file_by_name("TNet_CONFIG"))
 		var/login = copytext(cfg_file.stored_data, 1, 5)
 		var/password = copytext(cfg_file.stored_data, 8)
 		if(copytext(text, 12,16) == login)
@@ -424,8 +422,8 @@ Subtypes
 				var/datum/terminal/remote/new_term = new (user, comp, CT)
 				LAZYADD(comp.terminals, new_term)
 				LAZYADD(CT.terminals, new_term)
-				ntnet_global.add_log("[CT.network_card.get_network_tag()] open telnet tunnel to [comp.network_card.get_network_tag()]")
-				return "<font color='#00ff00'>telnet: Connection established with login: [login], and password: [password].</font>"
+				ntnet_global.add_log("[CT.get_component(PART_NETWORK).get_network_tag()] open telnet tunnel to [comp.get_component(PART_NETWORK).get_network_tag()]")
+				return "telnet: <font color='#00ff00'>Connection established with login: [login], and password: [password].</font>"
 			else
 				return "<font color='#ff0000'>telnet: INCORRECT PASSWORD.</font>"
 		else
@@ -433,21 +431,21 @@ Subtypes
 	var/datum/terminal/remote/new_term = new (user, comp, CT)
 	LAZYADD(comp.terminals, new_term)
 	LAZYADD(CT.terminals, new_term)
-	ntnet_global.add_log("[CT.network_card.get_network_tag()] open telnet tunnel to [comp.network_card.get_network_tag()]")
+	ntnet_global.add_log("[CT.get_component(PART_NETWORK).get_network_tag()] open telnet tunnel to [comp.get_component(PART_NETWORK).get_network_tag()]")
 	return "telnet: Connection established."
 
 /datum/terminal_command/remove
 	name = "remove"
-	man_entry = list("Format: remove \[FILENAME\].", "Delete file from local storage.")
+	man_entry = list("Format: remove \[FILENAME].", "Delete file from local storage.")
 	pattern = "^remove"
 	skill_needed = SKILL_ADEPT
 
 /datum/terminal_command/remove/proper_input_entered(text, mob/user, datum/terminal/terminal)
-	var/obj/item/modular_computer/CT = terminal.computer
+	var/datum/extension/interactive/ntos/CT = terminal.computer
 	var/file_name = copytext(text, 8)
-	var/file_obj = CT.hard_drive.find_file_by_name(file_name)
-	if(file_obj in CT.hard_drive.stored_files)
-		CT.hard_drive.remove_file(file_obj)
+	var/file_obj = CT.get_component(PART_HDD).find_file_by_name(file_name)
+	if(file_obj in CT.get_component(PART_HDD).stored_files)
+		CT.get_component(PART_HDD).remove_file(file_obj)
 		return "<font color='#00ff00'>remove: [file_name] removed.</font>"
 	else if(!copytext(text, 7))
 		return "<font color='#ffa000'>remove: input filename.</font>"
@@ -457,20 +455,20 @@ Subtypes
 
 /datum/terminal_command/echo
 	name = "echo"
-	man_entry = list("Format: echo \[FILENAME\].",
+	man_entry = list("Format: echo \[FILENAME].",
 					"Read stored data of file and return it in terminal.",
-					"Use 'echo -a \[Your data\]' to write in file. Before it you must set editing file, use 'echo -s \[filename\]'"
+					"Use 'echo -a \[Your data]' to write in file. Before it you must set editing file, use 'echo -s \[filename]'"
 					)
 	pattern = "^echo"
 	skill_needed = SKILL_ADEPT
 
 /datum/terminal_command/echo/proper_input_entered(text, mob/user, datum/terminal/terminal)
-	var/obj/item/modular_computer/CT = terminal.computer
+	var/datum/extension/interactive/ntos/CT = terminal.computer
 	var/option = copytext(text, 6, 8)
-	if(!terminal.computer.hard_drive.check_functionality()) return "<font color='#ff0000'>echo: check integrity of your hard drive.</font>"
+	if(!terminal.computer.get_component(PART_HDD).check_functionality()) return "<font color='#ff0000'>echo: check integrity of your hard drive.</font>"
 
 	if(option == "-s")
-		var/datum/computer_file/setted_file_by_command = CT.hard_drive.find_file_by_name(copytext(text, 9))
+		var/datum/computer_file/setted_file_by_command = CT.get_component(PART_HDD).find_file_by_name(copytext(text, 9))
 		if(!istype(setted_file_by_command, /datum/computer_file/data)) return "<font color='#ffa000'>Can't set on binary files.</font>"
 		if(length(setted_file_by_command.filename) != 0)
 			terminal.setted_file = setted_file_by_command
@@ -486,8 +484,8 @@ Subtypes
 
 	var/file_name = copytext(text, 6)
 	if(!file_name) return "<font color='#ffa000'>echo: enter filename.</font>"
-	var/file = CT.hard_drive.find_file_by_name(file_name)
-	if(!file in CT.hard_drive.stored_files) return "<font color='#ffa000'>echo: file not found.</font>"
+	var/file = CT.get_component(PART_HDD).find_file_by_name(file_name)
+	if(!file in CT.get_component(PART_HDD).stored_files) return "<font color='#ffa000'>echo: file not found.</font>"
 	if(!istype(file, /datum/computer_file/data)) return "<font color='#ffa000'>echo: file is binary.</font>"
 	var/datum/computer_file/data/end_file = file
 	if(!end_file.stored_data) return "<font color='#ff0000'>echo: file empty.</font>"
@@ -500,32 +498,31 @@ Subtypes
 	pattern = "^probenet$"
 
 /datum/terminal_command/probenet/proper_input_entered(text, mob/user, datum/terminal/terminal)
-	var/obj/item/modular_computer/CT = terminal.computer
-	if(!CT.network_card) return "<font color='#ffa000'>probenet: network card not found.</font>"
-	if(!CT.network_card.check_functionality()) return "<font color='#ff0000'>probenet: check network card interity.</font>"
+	var/datum/extension/interactive/ntos/CT = terminal.computer
+	if(!CT.get_component(PART_NETWORK)) return "<font color='#ffa000'>probenet: network card not found.</font>"
+	if(!CT.get_component(PART_NETWORK).check_functionality()) return "<font color='#ff0000'>probenet: check network card interity.</font>"
 	if(!CT.get_ntnet_status()) return "probenet: network card can't connect to network."
 
-	var/end_msg = ""
+	var/list/NIDS = list()
 	var/total = 0
-	for(var/obj/item/modular_computer/comp in SSobj.processing)
-		if(comp.get_ntnet_status() && comp.enabled)
-			end_msg += " " + num2text(comp.network_card.identification_id) + " |"
+	for(var/datum/extension/interactive/ntos/comp in GLOB.CreatedOSes)
+		if(comp.get_ntnet_status() && comp.host_status())
+			NIDS += "[comp.get_component(PART_NETWORK).identification_id]"
 			total += 1
-	. += "<font color='#00ff00'>probenet: online NIDs:</font> |[end_msg]<br>"
-	. += "<font color='00ff00'>Total online:</font> [total]."
+	. += "<font color='#00ff00'>probenet: online NIDs:</font> | [NIDS.Join(" | ")] |<br><font color='00ff00'>Total online:</font> [total]."
 
 //BATCH Compilator
 /datum/terminal_command/alias
 	name = "alias"
-	man_entry = list("Format: alias -ex \[filename\]",
+	man_entry = list("Format: alias -ex \[filename]",
 					"Read and compile batch code from local files.",
-					"Use \'alias -cr -bat \[filename\]\' to create bat file. To write code from terminal use \'man echo\'.",
-					"Use \'alias -mn -bat\' to get help about batch."
+					"Use 'alias -cr -bat \[filename]' to create bat file. To write code from terminal use 'man echo'.",
+					"Use 'alias -mn -bat' to get help about batch."
 					)
 	pattern = "^alias"
 
 /datum/terminal_command/alias/proper_input_entered(text, mob/user, datum/terminal/terminal)
-	var/obj/item/modular_computer/CT = terminal.computer
+	var/datum/extension/interactive/ntos/CT = terminal.computer
 	var/option = copytext(text, 7, 10)
 
 	if(option == "-cr")
@@ -534,8 +531,8 @@ Subtypes
 			if(length(ent_filename) != 0)
 				var/datum/computer_file/data/coding/batch/B = new()
 				B.filename = ent_filename
-				CT.hard_drive.store_file(B)
-				return "<font color='00ff00'>alias: file \'[B.filename]\' was created.</font>"
+				CT.get_component(PART_HDD).store_file(B)
+				return "<font color='00ff00'>alias: file '[B.filename]' was created.</font>"
 			else
 				return "<font color='#ffa000'>alias: error, expected file name.</font>"
 		return "<font color='#ffa000'>alias: language marking option not found.</font>"
@@ -544,19 +541,19 @@ Subtypes
 	if(option == "-mn")
 		if(copytext(text, 11, 15) == "-bat")
 			var/datum/computer_file/data/text/README/coding/batch/BRM = new()
-			CT.hard_drive.store_file(BRM)
+			CT.get_component(PART_HDD).store_file(BRM)
 			return "alias: batch manual created."
 
 
 	if(option == "-ex")
 		var/inp_file_name = copytext(text, 11)
 		if(length(inp_file_name) != 0)
-			var/datum/computer_file/data/coding/batch/F = CT.hard_drive.find_file_by_name(inp_file_name)
+			var/datum/computer_file/data/coding/batch/F = CT.get_component(PART_HDD).find_file_by_name(inp_file_name)
 			if(F.filetype != "BAT") return "<font color='#ffa000'>alias: incorrect file. Expected batch file.</font>"
 			var/code = F.stored_data
-			if(!";" in code) return "<font color='ff0000'>alias: compile error, lack this \';\'.</font>"
-			code = replacetext(code, " \[br\]","")
-			code = replacetext(code, "\[br\]","")
+			if(!";" in code) return "<font color='ff0000'>alias: compile error, lack this ';'.</font>"
+			code = replacetext(code, " \[br]","")
+			code = replacetext(code, "\[br]","")
 
 			var/list/code_list = splittext(code, ";")
 
@@ -574,7 +571,7 @@ Subtypes
 	name = "connect"
 	man_entry = list("Format: connect \[door id].",
 					"Standard format show you data about door, it needn't access of door.",
-					"Open format: connect \[door id] -open. To close door, replace \'-open\' by \'-close\'. Need airlock accessible",
+					"Open format: connect \[door id] -open. To close door, replace '-open' by '-close'. Need airlock accessible",
 					"Locking (bolting) format: connect \[door id] -lock. To unlock use -unlock. Need airlock access.",
 					"In red and orange code you can override airlock access by using override key. Like this: 'connect y421 -open -override Yota11'"
 					)
@@ -587,10 +584,10 @@ Subtypes
 	var/override = 0
 	var/airlock_override_code = ""
 	var/decl/security_state/sec_code = decls_repository.get_decl(GLOB.using_map.security_state)
-	var/obj/item/modular_computer/CT = terminal.computer
+	var/datum/extension/interactive/ntos/CT = terminal.computer
 
 	var/obj/machinery/door/airlock/DOOR = terminal.get_airlock_by_ID(txt[2])
-	if(DOOR && CT.network_card.check_functionality())
+	if(DOOR && CT.get_component(PART_NETWORK).check_functionality())
 		if(!DOOR.aiControlDisabled)
 			if(length(txt) == 2)
 				. += "Outputting data about airlock([txt[2]]):<hr>"
@@ -660,12 +657,11 @@ Subtypes
 						if("-unlock")
 							if(!DOOR.unlock())
 								. += "connect: unable to close airlock, maybe it bolted or already unlocked or lack for energy."
-								return 
+								return
 							. += "connect: Airlock with id([txt[2]]) was unlocked."
 							return
 		else
 			return "connect: <font color = '#ff0000'>ERROR</font>: Unable to establish a stable NTNet connection with airlock."
 	else
 		return "connect: <font color = '#ff0000'>ERROR 404:</font>: Unable to found airlock."
-	//SSmachines.machinery
 //[/INFINITY]_______________________________________________________________________________________________________________

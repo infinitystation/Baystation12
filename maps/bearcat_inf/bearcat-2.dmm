@@ -87,7 +87,7 @@
 /turf/simulated/floor/bluegrid,
 /area/ship/scrap/command/bridge)
 "ai" = (
-/obj/item/modular_computer/console/preset/command,
+/obj/machinery/computer/modular/preset/command,
 /turf/simulated/floor/bluegrid,
 /area/ship/scrap/command/bridge)
 "aj" = (
@@ -105,7 +105,7 @@
 	name = "Captain"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/effect/overmap/ship/bearcat,
+/obj/effect/overmap/visitable/ship/bearcat,
 /obj/structure/bed/chair/comfy/teal{
 	icon_state = "comfychair_preview";
 	dir = 1
@@ -130,7 +130,6 @@
 "an" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4;
-	layer = 2.4;
 	level = 2
 	},
 /obj/machinery/computer/ship/engines,
@@ -225,7 +224,7 @@
 	pixel_y = -22
 	},
 /obj/machinery/light,
-/obj/item/modular_computer/console/preset/engineering{
+/obj/machinery/computer/modular/preset/engineering{
 	dir = 1
 	},
 /obj/item/device/radio/intercom{
@@ -250,7 +249,7 @@
 	dir = 8;
 	pixel_x = 23
 	},
-/obj/item/modular_computer/console/preset/engineering{
+/obj/machinery/computer/modular/preset/engineering{
 	dir = 1
 	},
 /obj/machinery/newscaster/security_unit{
@@ -628,7 +627,6 @@
 "bi" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/wood/walnut,
@@ -662,7 +660,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
-	layer = 2.4;
 	level = 2
 	},
 /obj/machinery/alarm{
@@ -734,7 +731,6 @@
 "bq" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 2;
-	layer = 2.4;
 	level = 2
 	},
 /obj/effect/floor_decal/corner/beige{
@@ -820,7 +816,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 2;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -861,7 +856,6 @@
 "bB" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4;
-	layer = 2.4;
 	level = 2
 	},
 /obj/structure/extinguisher_cabinet{
@@ -1076,7 +1070,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 2;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -1805,7 +1798,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled/white,
@@ -1997,7 +1989,6 @@
 "dA" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 2;
-	layer = 2.4;
 	level = 2
 	},
 /obj/structure/hygiene/sink{
@@ -2644,7 +2635,7 @@
 /area/ship/scrap/cargo/upper)
 "eP" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/modular_computer/console/preset/merchant,
+/obj/machinery/computer/modular/preset/merchant,
 /turf/simulated/floor/tiled,
 /area/ship/scrap/cargo/upper)
 "eQ" = (
@@ -2906,7 +2897,6 @@
 "fm" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 2;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled/white,
@@ -2915,7 +2905,6 @@
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled,
@@ -2936,7 +2925,6 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled,
@@ -3390,7 +3378,6 @@
 "fY" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8;
-	layer = 2.4;
 	level = 2
 	},
 /obj/structure/bed/chair{
@@ -3938,10 +3925,9 @@
 /obj/effect/decal/cleanable/cobweb2,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8;
-	layer = 2.4;
 	level = 2
 	},
-/obj/item/modular_computer/console/preset/library,
+/obj/machinery/computer/modular/preset/library,
 /turf/simulated/floor,
 /area/ship/scrap/other/lounge)
 "gR" = (
@@ -4066,7 +4052,6 @@
 /obj/structure/closet/emcloset/full,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -4302,7 +4287,7 @@
 	icon_state = "corner_white";
 	dir = 10
 	},
-/obj/item/modular_computer/console/preset/engineering{
+/obj/machinery/computer/modular/preset/engineering{
 	dir = 1
 	},
 /obj/machinery/button/blast_door{
@@ -4476,7 +4461,6 @@
 "hV" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
-	layer = 2.4;
 	level = 2
 	},
 /obj/structure/closet/emcloset,
@@ -5364,7 +5348,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled,
@@ -5475,7 +5458,6 @@
 /obj/structure/closet/secure_closet/engineering_welding,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled,
@@ -5521,7 +5503,6 @@
 "jw" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
-	layer = 2.4;
 	level = 2
 	},
 /obj/item/weapon/barrier,
@@ -6024,7 +6005,6 @@
 "kr" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/plating,
@@ -6063,7 +6043,6 @@
 	dir = 2;
 	icon_state = "pdoor0";
 	id_tag = "radaway";
-	layer = 5;
 	opacity = 0
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -6212,7 +6191,6 @@
 	dir = 2;
 	icon_state = "pdoor0";
 	id_tag = "radaway";
-	layer = 5;
 	opacity = 0
 	},
 /obj/machinery/meter/turf,
@@ -6401,7 +6379,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4;
-	layer = 2.4;
 	level = 2
 	},
 /obj/machinery/biogenerator,
@@ -6820,7 +6797,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/yellow/full,
-/obj/item/modular_computer/console/preset/civilian{
+/obj/machinery/computer/modular/preset/civilian{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
@@ -6924,7 +6901,6 @@
 /obj/item/ammo_magazine/pistol/rubber,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled,
@@ -7090,7 +7066,6 @@
 "sI" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled,
@@ -7333,7 +7308,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 2;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -7364,7 +7338,6 @@
 "Ss" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled,
@@ -7445,7 +7418,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 2;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled/monotile,

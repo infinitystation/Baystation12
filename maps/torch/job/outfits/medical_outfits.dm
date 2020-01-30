@@ -46,13 +46,6 @@
 	name = OUTFIT_JOB_NAME("Mortician")
 	uniform = /obj/item/clothing/under/rank/medical/scrubs/black
 
-/decl/hierarchy/outfit/job/torch/crew/medical/biomech
-	name = OUTFIT_JOB_NAME("Biomechanical Engineer")
-	uniform = /obj/item/clothing/under/rank/medical/scrubs/black
-	shoes = /obj/item/clothing/shoes/black
-	id_type = /obj/item/weapon/card/id/torch/contractor/biomech
-	pda_type = /obj/item/modular_computer/pda/roboticist
-
 /decl/hierarchy/outfit/job/torch/crew/medical/contractor/paramedic
 	name = OUTFIT_JOB_NAME("Paramedic - Torch")
 	uniform = /obj/item/clothing/under/rank/medical/paramedic
@@ -63,14 +56,10 @@
 
 /decl/hierarchy/outfit/job/torch/crew/medical/contractor/chemist
 	name = OUTFIT_JOB_NAME("Chemist - Torch")
-	uniform = /obj/item/clothing/under/rank/chemist
+	uniform = /obj/item/clothing/under/rank/medical
 	shoes = /obj/item/clothing/shoes/white
-	pda_type = /obj/item/modular_computer/pda/chemistry
+	pda_type = /obj/item/modular_computer/pda/medical
 	id_type = /obj/item/weapon/card/id/torch/contractor/chemist
-
-/decl/hierarchy/outfit/job/torch/crew/medical/contractor/chemist/New()
-	..()
-	BACKPACK_OVERRIDE_CHEMISTRY
 
 /decl/hierarchy/outfit/job/torch/crew/medical/counselor
 	name = OUTFIT_JOB_NAME("Counselor")

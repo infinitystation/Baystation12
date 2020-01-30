@@ -42,7 +42,6 @@
 "ai" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 2;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled/dark,
@@ -311,7 +310,6 @@
 "aV" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 2;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -668,7 +666,6 @@
 "bJ" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 2;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled/white,
@@ -3024,12 +3021,17 @@
 	pixel_y = 24;
 	req_access = newlist()
 	},
+/obj/effect/landmark/clear,
 /turf/template_noop,
 /area/template_noop)
 "NL" = (
 /mob/living/simple_animal/hostile/retaliate/goat/hydro,
 /turf/simulated/floor/tiled/dark,
 /area/map_template/hydrobase/station/goatzone)
+"RI" = (
+/obj/effect/landmark/clear,
+/turf/template_noop,
+/area/template_noop)
 
 (1,1,1) = {"
 aa
@@ -3930,8 +3932,8 @@ gu
 gA
 gF
 gp
-aa
-aa
+RI
+RI
 "}
 (23,1,1) = {"
 aa
@@ -3972,7 +3974,7 @@ gB
 gG
 gK
 gL
-aa
+RI
 "}
 (24,1,1) = {"
 aa
@@ -4012,8 +4014,8 @@ gw
 gC
 gH
 gn
-aa
-aa
+RI
+RI
 "}
 (25,1,1) = {"
 aa

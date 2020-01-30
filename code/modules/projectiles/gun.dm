@@ -50,7 +50,7 @@
 	zoomdevicename = "scope"
 	waterproof = FALSE
 
-	//drawsound = 'sound/items/unholster.ogg' Maybe one day, cowboy
+	//drawsound = 'sound/items/unholster.ogg' //Maybe one day, cowboy //FUCK U COWBOY, IF SOMEBODY UNCOMMENT IT, UR COMMENT WILL THE REASONS OF ERRORS, IF U FUCKING COMMENTING COMMENTED CODE USE FUCKING // - THAT MEAN C O M M E N T AND IT WON'T BROKE UR BUILD, FUCKING COWBOY
 
 	var/burst = 1
 	var/can_autofire = FALSE
@@ -93,12 +93,7 @@
 	var/has_safety = TRUE
 	var/safety_icon 	   //overlay to apply to gun based on safety state, if any
 
-	///////////////////////////////////////////////////////
-	///////////////////////INFINITY////////////////////////
-	////             serial numbers things!!!          ////
-	///////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////
-
+//[INF]
 	var/is_serial = 0 //the entrie variable that defines should the gun have serial
 	var/serial // < most important thing, this is the SERIAL itself
 	var/s_type //energy or kinetic
@@ -106,7 +101,7 @@
 	//see below
 
 var/global/serials = list()
-
+//[/INF]
 /obj/item/weapon/gun/Initialize()
 	. = ..()
 	for(var/i in 1 to firemodes.len)
@@ -117,14 +112,14 @@ var/global/serials = list()
 
 	if(scope_zoom)
 		verbs += /obj/item/weapon/gun/proc/scope
-//INF
+//[INF]
 	if(is_serial) //serial
 		var/snum = rand(1,10000)
 		while(snum in serials) //system against similar numbers
 			snum = rand(1,10000)
 		serial = "[s_type]-[s_gun]-[snum]" //e.g K-P20-9999
 		serials += serial //list of serials
-//INF END
+//[/INF]
 
 /obj/item/weapon/gun/update_twohanding()
 	if(one_hand_penalty)
@@ -349,6 +344,13 @@ var/global/serials = list()
 		if(curloc)
 			curloc.hotspot_expose(700, 5)
 
+	if(istype(user,/mob/living/carbon/human) && user.is_cloaked()) //shooting will disable a rig cloaking device
+		var/mob/living/carbon/human/H = user
+		if(istype(H.back,/obj/item/weapon/rig))
+			var/obj/item/weapon/rig/R = H.back
+			for(var/obj/item/rig_module/stealth_field/S in R.installed_modules)
+				S.deactivate()
+
 	update_icon()
 
 
@@ -386,7 +388,7 @@ var/global/serials = list()
 
 	stood_still = max(0,round((world.time - stood_still)/10) - 1)
 	if(stood_still)
-		acc_mod += min(max(2, accuracy), stood_still)
+		acc_mod += min(max(3, accuracy), stood_still)
 	else
 		acc_mod -= w_class - ITEM_SIZE_NORMAL
 		acc_mod -= bulk
@@ -676,10 +678,12 @@ var/global/serials = list()
 /obj/item/weapon/gun/proc/can_autofire()
 	return (can_autofire && world.time >= next_fire_time)
 
-/obj/item/weapon/gun/proc/check_accidents(mob/living/user)
+/obj/item/weapon/gun/proc/check_accidents(mob/living/user, message = "[user] fumbles with the [src] and it goes off!",skill_path = SKILL_WEAPONS, fail_chance = 20, no_more_fail = SKILL_ADEPT, factor = 2) //INF: was no_more_fail = SKILL_EXPERT
 	if(istype(user))
-		if(!safety() && user.skill_fail_prob(SKILL_WEAPONS, 20, SKILL_ADEPT, 2) && special_check(user)) //INF, WAS: if(!safety() && user.skill_fail_prob(SKILL_WEAPONS, 20, SKILL_EXPERT, 2) && special_check(user))
-			to_chat(user, "<span class='warning'>[src] fires on its own!</span>")
+		if(!safety() && user.skill_fail_prob(skill_path, fail_chance, no_more_fail, factor) && special_check(user))
+			user.visible_message(SPAN_WARNING(message))
 			var/list/targets = list(user)
-			targets += trange(2, src)
-			afterattack(pick(targets), user)
+			targets += trange(2, get_turf(src))
+			var/picked = pick(targets)
+			afterattack(picked, user)
+			return 1

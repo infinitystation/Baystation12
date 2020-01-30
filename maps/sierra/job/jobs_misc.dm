@@ -64,6 +64,14 @@
 						SKILL_PILOT	  = SKILL_BASIC)
 	skill_points = 24
 
+/datum/job/merchant/equip(var/mob/living/carbon/human/H)
+	to_chat(H, "¬аши связи помогли вам узнать о словах, что помогут опознать местных... ќсобо заинтересованных покупателей:")
+	to_chat(H, "<b> одовые фразы</b>: <span class='danger'>[syndicate_code_phrase]</span>")
+	to_chat(H, "<b>ќтветы на фразы</b>: <span class='danger'>[syndicate_code_response]</span>")
+	H.StoreMemory("<b>Code Phrase</b>: [syndicate_code_phrase]", /decl/memory_options/system)
+	H.StoreMemory("<b>Code Response</b>: [syndicate_code_response]", /decl/memory_options/system)
+	return ..()
+
 /datum/job/merchant_trainee
 	title = "Merchant Assistant"
 	department = "Civilian"

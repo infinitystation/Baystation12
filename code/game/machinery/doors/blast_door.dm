@@ -63,7 +63,7 @@
 
 /obj/machinery/door/blast/examine(mob/user)
 	. = ..()
-	if(. && (stat & BROKEN))
+	if((stat & BROKEN))
 		to_chat(user, "It's broken.")
 
 // Proc: Bumped()
@@ -115,6 +115,7 @@
 	playsound(src.loc, close_sound, 100, 1)
 	layer = closed_layer
 	flick(icon_state_closing, src)
+	crush() //inf
 	set_density(1)
 	update_nearby_tiles()
 	update_icon()
@@ -274,6 +275,7 @@
 
 /obj/machinery/door/blast/regular/open
 	begins_closed = FALSE
+	icon_state = "pdoor0" //INF
 
 // SUBTYPE: Shutters
 // Nicer looking, and also weaker, shutters. Found in kitchen and similar areas.

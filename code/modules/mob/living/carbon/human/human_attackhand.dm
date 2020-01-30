@@ -39,7 +39,7 @@
 
 		if(istype(H.gloves, /obj/item/clothing/gloves/boxing/hologlove))
 			H.do_attack_animation(src)
-			var/damage = 5 //INF, WAS var/damage = rand(0,9)
+			var/damage = 8 //INF, WAS var/damage = rand(0,9)
 			if(!damage)
 				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
 				visible_message("<span class='danger'>\The [H] has attempted to punch \the [src]!</span>")
@@ -67,13 +67,10 @@
 /*INF
 			if(damage >= 9)
 				visible_message("<span class='danger'>[H] has weakened \the [src]!</span>")
-				var/armor_block = 100 * get_blocked_ratio(affecting, BRUTE)
+				var/armor_block = 100 * get_blocked_ratio(affecting, BRUTE, damage = damage)
 				apply_effect(4, WEAKEN, armor_block)
 /INF*/
 			return
-
-	if(istype(M,/mob/living/carbon))
-		M.spread_disease_to(src, "Contact")
 
 	if(istype(H))
 		for (var/obj/item/grab/G in H)

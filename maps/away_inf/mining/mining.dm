@@ -1,7 +1,7 @@
 #include "mining_areas.dm"
 
 //MINING-1 // CLUSTER
-/obj/effect/overmap/sector/mining_asteroid
+/obj/effect/overmap/visitable/sector/mining_asteroid
 	name = "large asteroid"
 	desc = "A medium-sized asteroid with a big belt of small one. Old mining facility detected on one of sides, owner - NanoTrasen."
 	icon_state = "sector"
@@ -21,6 +21,14 @@
 	known = 1
 	start_x = 4
 	start_y = 5
+
+/obj/effect/overmap/visitable/sector/mining_asteroid/generate_skybox()
+	return overlay_image('icons/skybox/rockbox.dmi', "rockbox", COLOR_ASTEROID_ROCK, RESET_COLOR)
+
+/obj/effect/overmap/visitable/sector/mining_asteroid/get_skybox_representation()
+	var/image/res = overlay_image('icons/skybox/rockbox.dmi', "rockbox", COLOR_ASTEROID_ROCK, RESET_COLOR)
+	res.transform *= 0.5
+	return res
 
 /datum/map_template/ruin/away_site/mining_asteroid
 	name = "Mining - Asteroid Base"
@@ -92,9 +100,11 @@
 	autolinkers = list("m_relay_a")
 	usage_offise = 5 KILOWATTS
 	outage_probability = 100
+
+	construct_state = /decl/machine_construction/tcomms/panel_closed/cannot_print
 /*
 //MINING-2 // SIGNAL
-/obj/effect/overmap/sector/away
+/obj/effect/overmap/visitable/sector/away
 	name = "faint signal from an asteroid"
 	desc = "Faint signal detected, originating from the human-made structures on the site's surface."
 	icon_state = "sector"

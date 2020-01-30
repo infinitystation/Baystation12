@@ -121,7 +121,7 @@
 	max_age = 120
 
 	burn_mod = 0.9
-	oxy_mod = 0.8
+	oxy_mod = 1.3
 	flash_mod = 1.2
 	toxins_mod = 0.8
 	siemens_coefficient = 1.3
@@ -236,7 +236,7 @@
 			FACTION_SKRELL_QERRVOAL,
 			FACTION_SKRELL_QALAOA,
 			FACTION_SKRELL_YIITALANA,
-			FACTION_SKRELL_KRIGLI,
+			FACTION_SKRELL_KRRIGLI,
 			FACTION_SKRELL_QONPRRI,
 			FACTION_OTHER
 		),
@@ -266,7 +266,7 @@
 		)
 
 /datum/species/skrell/get_sex(var/mob/living/carbon/human/H)
-	return H.descriptors["headtail length"] == 1 ? MALE : FEMALE
+	return istype(H) && (H.descriptors["headtail length"] == 1 ? MALE : FEMALE)
 
 /datum/species/skrell/check_background()
 	return TRUE
@@ -354,7 +354,7 @@
 
 	blood_color = "#004400"
 	flesh_color = "#907e4a"
-	virus_immune = 1
+//	virus_immune = 1
 
 	reagent_tag = IS_DIONA
 	genders = list(PLURAL)
@@ -408,6 +408,12 @@
 		H.equip_to_slot_or_del(new /obj/item/device/flashlight/flare(H.back), slot_in_backpack)
 	else
 		H.equip_to_slot_or_del(new /obj/item/device/flashlight/flare(H), slot_r_hand)
+
+/datum/species/diona/skills_from_age(age)
+	switch(age)
+		if(101 to 200)	. = 12 // age bracket before this is 46 to 100 . = 8 making this +4
+		if(201 to 300)	. = 16 // + 8
+		else			. = ..()
 
 // Dionaea spawned by hand or by joining will not have any
 // nymphs passed to them. This should take care of that.

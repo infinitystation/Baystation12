@@ -37,8 +37,15 @@
 	desc = "It drapes over a Resomes's shoulders and closes at the neck with pockets convienently placed inside."
 	icon = 'infinity/icons/obj/clothing/species/resomi/obj_suit_resomi.dmi'
 	icon_state = "tesh_cloak_bo"
+	slots = 2
 	species_restricted = list(SPECIES_RESOMI)
 	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO
+
+/obj/item/clothing/suit/storage/resomicloak/Initialize()
+	. = ..()
+	if(pockets)
+		qdel(pockets)
+	pockets = new/obj/item/weapon/storage/internal/pouch(src, slots*BASE_STORAGE_COST(ITEM_SIZE_SMALL))
 
 /obj/item/clothing/suit/storage/resomicloak/standard/black_grey
 	name = "black and grey cloak"

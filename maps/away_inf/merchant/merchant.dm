@@ -1,12 +1,11 @@
 #include "merchant_areas.dm"
 
-/obj/effect/overmap/ship/merchant
+/obj/effect/overmap/visitable/ship/merchant
 	name = "Merchant vessel"
 	desc = "Sensor array is detecting a small vessel with merchant identifier."
 	color = "#ffc966"
 	vessel_mass = 50
 	default_delay = 35 SECONDS
-	speed_mod = 8 SECONDS
 /*
 	initial_restricted_waypoints = list(
 		"Aquila" = list("nav_merchant_aquila")
