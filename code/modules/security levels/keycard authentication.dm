@@ -18,6 +18,8 @@
 	idle_power_usage = 2
 	active_power_usage = 6
 	power_channel = ENVIRON
+	var/list/isounds = list("card_swipe" = 'infinity/sound/SS2/effects/machines/keycard.wav', "access_deny" = 'infinity/sound/SS2/effects/machines/access_needed.wav') //inf
+	var/last_activation = 0 //inf
 
 /obj/machinery/keycard_auth/attack_ai(mob/user as mob)
 	to_chat(user, "<span class='warning'>A firewall prevents you from interfacing with this device!</span>")
@@ -27,9 +29,11 @@
 	if(stat & (NOPOWER|BROKEN))
 		to_chat(user, "This device is not powered.")
 		return
-	if(istype(W,/obj/item/weapon/card/id))
+	if(istype(W,/obj/item/weapon/card/id) && last_activation + 2 SECONDS < world.time) //inf //was: if(istype(W,/obj/item/weapon/card/id))
+		last_activation = world.time//inf
 		var/obj/item/weapon/card/id/ID = W
 		if(access_keycard_auth in ID.access)
+			playsound(src, sound(isounds["card_swipe"]))//inf
 			if(active == 1)
 				//This is not the device that made the initial request. It is the device confirming the request.
 				if(event_source && event_source.event_triggered_by != usr)
@@ -40,6 +44,7 @@
 			else if(screen == 2)
 				event_triggered_by = usr
 				broadcast_request() //This is the device making the initial event request. It needs to broadcast to other devices
+		else playsound(src, sound(isounds["access_deny"])) //inf
 
 //icon_state gets set everwhere besides here, that needs to be fixed sometime
 /obj/machinery/keycard_auth/on_update_icon()
