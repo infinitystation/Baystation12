@@ -1,3 +1,4 @@
+//maybe change the type
 /obj/machinery/keycard_authentication
 	name = "keycard authentication device"
 	icon = 'icons/obj/monitors.dmi'
@@ -21,13 +22,20 @@
 	else
 		icon_state = "keycard_off"*/
 
+/obj/machinery/keycard_authentication/check_access(obj/item/I as obj)
+	return (I && has_access(req_access, I.GetAccess()))
+
 /obj/machinery/keycard_authentication/attackby(obj/item/I as obj, mob/user as mob)
 	//Swiping ID on the keycard button
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN) //don't spam
 	if(istype(I, /obj/item/weapon/card/id)))
-		if(has_access(req_access, I.GetAccess())))
-			activate()
 		// todo - make red/green/blue light states when swiping, and also some kind of cooldown/waiting
 		flick("auth_on", src)
+		playsound(src, 'infinity/sound/SS2/effects/machines/keycard.wav', 50)
+		if(addtimer(CALLBACK(src, .proc/check_access, I), 1 SECOND))
+			activate()
+		else
+			playsound(src, 'infinity/sound/SS2/effects/machines/access_needed.wav', 50)
 		return
 	..()
 
