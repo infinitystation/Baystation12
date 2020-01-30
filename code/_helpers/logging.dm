@@ -44,7 +44,7 @@
 	GLOB.admin_log.Add(text)
 	if (config.log_admin)
 		game_log("ADMIN", text)
-		send2adminirc(text, 1)//inf
+//		send2adminirc(text, 1)//inf
 
 /proc/log_debug(text)
 	if (config.log_debug)

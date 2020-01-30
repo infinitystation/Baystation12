@@ -185,12 +185,12 @@
 						to_chat(owner, "<span class='warning'>[pick("У вас кружитс&#255; голова","Вам т&#255;жело удержать равновесие","Вы чувствуете слабость")]...</span>")
 					damprob = owner.chem_effects[CE_STABLE] ? 30 : 60
 					if(!past_damage_threshold(2) && prob(damprob))
-						take_internal_damage(1)
+						take_internal_damage(0.5) //INF, 0.5 was 1
 				if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
 					owner.eye_blurry = max(owner.eye_blurry,6)
 					damprob = owner.chem_effects[CE_STABLE] ? 40 : 80
 					if(!past_damage_threshold(4) && prob(damprob))
-						take_internal_damage(1)
+						take_internal_damage(0.5) //INF, 0.5 was 1
 					if(!owner.paralysis && prob(10))
 						owner.Paralyse(rand(1,3))
 						to_chat(owner, "<span class='warning'>[pick("Вы падаете от головоружени&#255;","Вы тер&#255;ете равновесие и падаете от слабости","Вы обессиленно упали")]...</span>")
@@ -198,7 +198,7 @@
 					owner.eye_blurry = max(owner.eye_blurry,6)
 					damprob = owner.chem_effects[CE_STABLE] ? 60 : 100
 					if(!past_damage_threshold(6) && prob(damprob))
-						take_internal_damage(1)
+						take_internal_damage(0.5) //INF, 0.5 was 1
 					if(!owner.paralysis && prob(15))
 						owner.Paralyse(3,5)
 						to_chat(owner, "<span class='warning'>[pick("Вы падаете от головоружени&#255;","Вы тер&#255;ете равновесие и падаете от слабости","Вы обессиленно упали")]...</span>")
@@ -206,9 +206,9 @@
 					owner.eye_blurry = max(owner.eye_blurry,6)
 					damprob = owner.chem_effects[CE_STABLE] ? 80 : 100
 					if(prob(damprob))
-						take_internal_damage(1)
+						take_internal_damage(0.5) //INF, 0.5 was 1
 					if(prob(damprob))
-						take_internal_damage(1)
+						take_internal_damage(0.5) //INF, 0.5 was 1
 	..()
 
 /obj/item/organ/internal/brain/take_internal_damage(var/damage, var/silent)

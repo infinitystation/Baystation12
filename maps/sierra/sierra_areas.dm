@@ -1321,7 +1321,7 @@
 /area/turret_protected/ai
 	name = "AI Chamber"
 	icon_state = "ai_chamber"
-	forced_ambience = list('infinity/sound/SS2/amb/XXMIX_S.wav')
+	forced_ambience = list('infinity/sound/SS2/ambience/XXMIX_S.wav')
 
 /area/turret_protected/ai_cyborg_station
 	name = "Second Deck - Cyborg Station"
