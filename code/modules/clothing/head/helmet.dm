@@ -103,7 +103,7 @@
 		melee = ARMOR_MELEE_SMALL,
 		bullet = ARMOR_BALLISTIC_MINOR,
 		laser = ARMOR_LASER_RIFLES,
-		energy = ARMOR_ENERGY_RESISTANT
+		energy = ARMOR_ENERGY_STRONG
 		)
 	siemens_coefficient = 0
 

@@ -381,7 +381,7 @@
 		melee = ARMOR_MELEE_KNIVES,
 		bullet = ARMOR_BALLISTIC_PISTOL,
 		laser = ARMOR_LASER_RIFLES,
-		energy = ARMOR_ENERGY_RESISTANT
+		energy = ARMOR_ENERGY_STRONG
 		)
 	siemens_coefficient = 0
 	starting_accessories = list(/obj/item/clothing/accessory/armguards/ablative, /obj/item/clothing/accessory/legguards/ablative)
