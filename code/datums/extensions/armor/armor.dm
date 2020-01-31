@@ -96,6 +96,8 @@
 			key = "rad"
 		if(PSIONIC)
 			key = PSIONIC
+		if(PAIN)
+			key = "energy"
 	return key
 
 /datum/extension/armor/toggle
