@@ -1,10 +1,10 @@
 /obj/item/weapon/grenade/frag/ied
-	icon = 'infinity/icons/obj/grenades.dmi'
 	name = "pipe bomb"
 	desc = "An improvised explosive device, probably. It looks like in movies about Gilgamesh terrorists."
+	icon = 'infinity/icons/obj/grenades.dmi'
 	icon_state = "sied4"
 
-	fragment_types = list(/obj/item/projectile/bullet/pellet/fragment=1,/obj/item/projectile/bullet/pellet/fragment/strong=3)
+	fragment_types = list(/obj/item/projectile/bullet/pellet/fragment=1, /obj/item/projectile/bullet/pellet/fragment/strong=3)
 	num_fragments = 60
 	explosion_size = 1
 
@@ -12,7 +12,9 @@
 	var/buildstate = 0
 
 /obj/item/weapon/reagent_containers/food/drinks/cans/on_update_icon()
-	icon_state = "sied[buildstate]"
+	. = ..()
+	if(buildstate)
+		icon_state = "sied[buildstate]"
 
 /obj/item/weapon/reagent_containers/food/drinks/cans/attackby(obj/item/W as obj, mob/user as mob)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -23,7 +25,7 @@
 	if(reagents.has_reagent(/datum/reagent/fuel, 40))
 		switch(buildstate)
 			if(0)
-				if(istype(W,/obj/item/stack/material) && W.get_material_name() == MATERIAL_STEEL)
+				if(istype(W, /obj/item/stack/material) && W.get_material_name() == MATERIAL_STEEL)
 					var/obj/item/stack/material/M = W
 					if(M.use(5))
 						to_chat(user, SPAN_NOTICE("You created and installed a shrapnel hull."))
@@ -39,15 +41,15 @@
 					else
 						to_chat(user, SPAN_NOTICE("You need at least 5 segments of [W] to complete this task."))
 			if(2)
-				if(istype(W,/obj/item/device/assembly/igniter))
+				if(istype(W, /obj/item/device/assembly/igniter))
 					to_chat(user, SPAN_NOTICE("You install [W]."))
 					buildstate++
 					qdel(W)
 			if(3)
-				if(istype(W,/obj/item/weapon/tape_roll))
+				if(istype(W, /obj/item/weapon/tape_roll))
 					to_chat(user, SPAN_NOTICE("You secure everything with [W]."))
 					new /obj/item/weapon/grenade/frag/ied(get_turf(src))
 					qdel(src)
 				return
 		update_icon()
-		..()
+	..()
