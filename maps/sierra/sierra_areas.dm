@@ -816,9 +816,9 @@
 	req_access = list(access_bar)
 	secure = 0
 
-/area/crew_quarters/cryolocker
-	name = "Second Deck - Living - Cryogenic Storage"
-	icon_state = "locker"
+/area/crew_quarters/sauna
+	name = "Second Deck - Living - Sauna"
+	icon_state = "sauna"
 
 /area/crew_quarters/head
 	name = "Second Deck - Living - Restroom"
