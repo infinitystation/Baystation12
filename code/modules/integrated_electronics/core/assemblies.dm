@@ -460,6 +460,28 @@
 		var/obj/item/device/integrated_electronics/detailer/D = I
 		detail_color = D.detail_color
 		update_icon()
+//[INF]
+	else if(is_type_in_list(I, list(/obj/item/weapon/gun/energy/, /obj/item/weapon/aicard, /obj/item/device/paicard, /obj/item/device/mmi)) && opened)
+		var/list/icomponents = list()
+		var/list/ircomponents = list()
+		if(istype(I, /obj/item/weapon/gun/energy/))
+			for (var/obj/item/integrated_circuit/manipulation/weapon_firing/P in assembly_components)
+				if(!P.installed_gun)
+					icomponents+=P.displayed_name
+					ircomponents+=P
+		else
+			var/obj/item/card = I
+			var/mob/living/L = locate(/mob/living) in card.contents
+			if(L && L.key)
+				for (var/obj/item/integrated_circuit/manipulation/ai/P in assembly_components)
+					if(!P.controlling)
+						icomponents+=P.displayed_name
+						ircomponents+=P
+		var/component_choice = input("Please choose a component to insert the [I].","[src]") as null|anything in icomponents
+		var/obj/item/integrated_circuit/circuit = ircomponents[icomponents.Find(component_choice)]
+		if(in_range(user, circuit) && get_dist(I, user) < 1)
+			circuit.attackby(I, user)
+//[/INF]
 	else if(istype(I, /obj/item/weapon/screwdriver))
 		var/hatch_locked = FALSE
 		for(var/obj/item/integrated_circuit/manipulation/hatchlock/H in assembly_components)
