@@ -25,8 +25,11 @@
 	if(reagents.has_reagent(/datum/reagent/fuel, 40))
 		switch(buildstate)
 			if(0)
-				if(istype(W, /obj/item/stack/material) && W.get_material_name() == MATERIAL_STEEL)
+				if(istype(W, /obj/item/stack/material) && W.get_material_name())
 					var/obj/item/stack/material/M = W
+					if(!(M.material.integrity >= 50 && M.material.hardness >= MATERIAL_FLEXIBLE + 10))
+						to_chat(user, SPAN_NOTICE("It's soft as plasticine. Do you need a grenade or a candle?"))
+						return
 					if(M.use(5))
 						to_chat(user, SPAN_NOTICE("You created and installed a shrapnel hull."))
 						buildstate++
