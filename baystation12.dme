@@ -3605,7 +3605,6 @@
 #include "infinity\customs\rockcoats.dm"
 #include "infinity\customs\sallyvadordomold.dm"
 #include "infinity\customs\sarov.dm"
-#include "infinity\customs\solark.dm"
 #include "infinity\customs\sprites_kits.dm"
 #include "infinity\customs\stange_pill.dm"
 #include "infinity\customs\thehero13.dm"
