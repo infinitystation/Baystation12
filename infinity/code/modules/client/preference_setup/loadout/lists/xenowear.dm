@@ -37,3 +37,19 @@
 	display_name = "(Tajara) averter"
 	path = /obj/item/clothing/accessory/amulet/stronk
 	cost = 6
+
+/datum/gear/utility/light
+	sort_category = "Xenowear"
+	display_name = "(Dionae) light source selection"
+	path = /obj/item/device/flashlight
+	whitelisted = list(SPECIES_DIONA)
+	cost = 5
+
+/datum/gear/utility/light/New()
+	..()
+	var/light = list()
+	light["maglight"]= /obj/item/device/flashlight/maglight
+	light["lantern"]= /obj/item/device/flashlight/lantern
+	light["glowing slime extract"]= /obj/item/device/flashlight/slime
+	light["duty flashlight"]= /obj/item/device/flashlight/upgraded
+	gear_tweaks += new/datum/gear_tweak/path(light)
