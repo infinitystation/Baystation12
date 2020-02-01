@@ -22,6 +22,8 @@
 	var/material_alteration = MATERIAL_ALTERATION_ALL
 	var/buckling_sound = 'sound/effects/buckle.ogg'
 
+	var/base_icon_file = 'icons/obj/furniture.dmi' //INF
+
 /obj/structure/bed/New(newloc, new_material = DEFAULT_FURNITURE_MATERIAL, new_padding_material)
 	..(newloc)
 	color = null
@@ -44,7 +46,8 @@
 	// Base icon.
 	var/cache_key = "[base_icon]-[material.name]"
 	if(isnull(stool_cache[cache_key]))
-		var/image/I = image('icons/obj/furniture.dmi', base_icon)
+//INF		var/image/I = image('icons/obj/furniture.dmi', base_icon)
+		var/image/I = image(base_icon_file, base_icon) //INF
 		if(material_alteration & MATERIAL_ALTERATION_COLOR)
 			I.color = material.icon_colour
 		stool_cache[cache_key] = I

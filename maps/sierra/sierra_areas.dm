@@ -819,14 +819,17 @@
 /area/crew_quarters/sauna
 	name = "Second Deck - Living - Sauna"
 	icon_state = "sauna"
+	sound_env = SMALL_ENCLOSED
 
 /area/crew_quarters/head
 	name = "Second Deck - Living - Restroom"
 	icon_state = "toilet"
+	sound_env = SMALL_ENCLOSED
 
 /area/crew_quarters/showers
 	name = "Second Deck - Living - Private Showers"
 	icon_state = "toilet"
+	sound_env = SMALL_ENCLOSED
 
 /area/crew_quarters/gym
 	name = "Second Deck - Living - Gym"
@@ -835,6 +838,7 @@
 /area/crew_quarters/mess
 	name = "Second Deck - Living - Canteen"
 	icon_state = "cafeteria"
+	sound_env = LARGE_SOFTFLOOR
 
 /area/crew_quarters/galley
 	name = "Second Deck - Service - Galley"
