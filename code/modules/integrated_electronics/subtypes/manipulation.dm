@@ -599,8 +599,8 @@
 	power_draw_per_use = 20
 	var/obj/item/aicard
 	inputs = list()
-	outputs = list("AI's signature" = IC_PINTYPE_STRING, "Clicked Ref" = IC_PINTYPE_REF)
-	activators = list("Upwards" = IC_PINTYPE_PULSE_OUT, "Downwards" = IC_PINTYPE_PULSE_OUT, "Left" = IC_PINTYPE_PULSE_OUT, "Right" = IC_PINTYPE_PULSE_OUT, "Push AI Name" = IC_PINTYPE_PULSE_IN,  "On click" = IC_PINTYPE_PULSE_OUT, "On middle click" = IC_PINTYPE_PULSE_OUT, "On double click" = IC_PINTYPE_PULSE_OUT, "On shift click" = IC_PINTYPE_PULSE_OUT, "On ctrl click" = IC_PINTYPE_PULSE_OUT, "On alt click" = IC_PINTYPE_PULSE_OUT)
+	outputs = list("AI's signature" = IC_PINTYPE_STRING, "Clicked Ref" = IC_PINTYPE_REF) //INF
+	activators = list("Upwards" = IC_PINTYPE_PULSE_OUT, "Downwards" = IC_PINTYPE_PULSE_OUT, "Left" = IC_PINTYPE_PULSE_OUT, "Right" = IC_PINTYPE_PULSE_OUT, "Push AI Name" = IC_PINTYPE_PULSE_IN,  "On click" = IC_PINTYPE_PULSE_OUT, "On middle click" = IC_PINTYPE_PULSE_OUT, "On double click" = IC_PINTYPE_PULSE_OUT, "On shift click" = IC_PINTYPE_PULSE_OUT, "On ctrl click" = IC_PINTYPE_PULSE_OUT, "On alt click" = IC_PINTYPE_PULSE_OUT) //INF
 	origin_tech = list(TECH_DATA = 4)
 	spawn_flags = IC_SPAWN_RESEARCH
 
@@ -636,7 +636,7 @@
 	if(L && L.key && user.unEquip(card))
 		L.forceMove(src)
 		controlling = L
-		controlling.PushClickHandler(/datum/click_handler/default/aimodule)
+		controlling.PushClickHandler(/datum/click_handler/default/aimodule) //INF
 		card.forceMove(src)
 		aicard = card
 		user.visible_message("\The [user] loads \the [card] into \the [src]'s device slot")
@@ -646,7 +646,7 @@
 /obj/item/integrated_circuit/manipulation/ai/proc/unload_ai()
 	if(!controlling)
 		return
-	controlling.RemoveClickHandler(/datum/click_handler/default/aimodule)
+	controlling.RemoveClickHandler(/datum/click_handler/default/aimodule) //INF
 	controlling.forceMove(aicard)
 	to_chat(controlling, "<span class='notice'>### IICC FIRMWARE DELETED. HAVE A NICE DAY ###</span>")
 	src.visible_message("\The [aicard] pops out of \the [src]!")
