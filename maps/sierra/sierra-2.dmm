@@ -23869,7 +23869,6 @@
 /area/crew_quarters/sleep/bunk)
 "aMg" = (
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/universal,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
