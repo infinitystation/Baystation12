@@ -77,16 +77,6 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 			bantype_str = "JOB_TEMPBAN"
 			bantype_pass = 1
 
-	//[INF] (remove later)
-		if(BANTYPE_SOFTPERMA)
-			bantype_str = "SOFT_PERMABAN"
-			duration = -1
-			bantype_pass = 1
-		if(BANTYPE_SOFTBAN)
-			bantype_str = "SOFT_TEMPBAN"
-			bantype_pass = 1
-	//[/INF]
-
 	if( !bantype_pass ) return 0
 	if( !istext(reason) ) return 0
 	if( !isnum(duration) ) return 0
@@ -168,15 +158,6 @@ datum/admins/proc/DB_ban_unban(var/ckey, var/bantype, var/job = "")
 			if(BANTYPE_ANY_FULLBAN)
 				bantype_str = "ANY"
 				bantype_pass = 1
-
-		//[INF] (remove later)
-			if(BANTYPE_SOFTPERMA)
-				bantype_str = "SOFT_PERMABAN"
-				bantype_pass = 1
-			if(BANTYPE_SOFTBAN)
-				bantype_str = "SOFT_TEMPBAN"
-				bantype_pass = 1
-		//[/INF]
 
 		if( !bantype_pass ) return
 
@@ -395,8 +376,6 @@ datum/admins/proc/DB_ban_unban_by_id(var/id)
 	output += "<td width='50%' align='right'><b>CID:</b> <input type='text' name='dbsearchcid' value='[playercid]'></td></tr>"
 	output += "<tr><td width='50%' align='right' colspan='2'><b>Ban type:</b><select name='dbsearchbantype'>"
 	output += "<option value=''>--</option>"
-	output += "<option value='[BANTYPE_SOFTPERMA]'>SOFT PERMABAN</option>" //INF (remove later)
-	output += "<option value='[BANTYPE_SOFTBAN]'>SOFT TEMPBAN</option>" //INF (remove later)
 	output += "<option value='[BANTYPE_PERMA]'>PERMABAN</option>"
 	output += "<option value='[BANTYPE_TEMP]'>TEMPBAN</option>"
 	output += "<option value='[BANTYPE_JOB_PERMA]'>JOB PERMABAN</option>"
@@ -468,10 +447,6 @@ datum/admins/proc/DB_ban_unban_by_id(var/id)
 						bantypesearch += "'JOB_PERMABAN' "
 					if(BANTYPE_JOB_TEMP)
 						bantypesearch += "'JOB_TEMPBAN' "
-					if(BANTYPE_SOFTPERMA) //INF (remove later)
-						bantypesearch += "'SOFT_PERMABAN' "
-					if(BANTYPE_SOFTBAN) //INF (remove later)
-						bantypesearch += "'SOFT_TEMPBAN' "
 					else
 						bantypesearch += "'PERMABAN' "
 
@@ -519,10 +494,6 @@ datum/admins/proc/DB_ban_unban_by_id(var/id)
 						typedesc = "<b>JOBBAN</b><br><font size='2'>([job])</font>"
 					if("JOB_TEMPBAN")
 						typedesc = "<b>TEMP JOBBAN</b><br><font size='2'>([job])<br>([duration] minutes<br>Expires [expiration]</font>"
-					if("SOFT_PERMABAN") //INF (remove later)
-						typedesc = "<font color='red'><b>SOFT PERMABAN</b></font>"
-					if("SOFT_TEMPBAN") //INF (remove later)
-						typedesc = "<b>SOFT TEMPBAN</b><br><font size='2'>([duration] minutes) [(unbanned || auto) ? "" : "(<a href=\"byond://?src=\ref[src];dbbanedit=duration;dbbanid=[banid]\">Edit</a>)"]<br>Expires [expiration]</font>"
 
 				output += "<tr bgcolor='[dcolor]'>"
 				output += "<td align='center'>[typedesc]</td>"

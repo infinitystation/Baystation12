@@ -27,10 +27,7 @@
 	if(!SScharacter_setup.initialized && !force)
 		return // Not ready yet.
 	if(client)
-		if(client.banprisoned)
-			new_player_panel_prisoner()
-		else
-			new_player_panel_proc()
+		new_player_panel_proc()
 
 /mob/new_player/proc/new_player_panel_proc()
 	var/output = list()
@@ -102,8 +99,6 @@
 		return 1
 
 	if(href_list["ready"])
-		if(client && client.banprisoned) return
-
 		if(GAME_STATE <= RUNLEVEL_LOBBY) // Make sure we don't ready up after the round has started
 			ready = text2num(href_list["ready"])
 		else
@@ -112,14 +107,9 @@
 	if(href_list["refresh"])
 		panel.close()
 		if(client)
-			if(client.banprisoned)
-				new_player_panel_prisoner()
-			else
-				new_player_panel()
+			new_player_panel()
 
 	if(href_list["observe"])
-		if(client && client.banprisoned) return
-
 		if(GAME_STATE < RUNLEVEL_LOBBY)
 			to_chat(src, "<span class='warning'>Please wait for server initialization to complete...</span>")
 			return
@@ -183,25 +173,16 @@
 
 			return 1
 
-	if(href_list["spawn_prisoner"])
-		Spawn_Prisoner()
-
 	if(href_list["late_join"])
-		if(client && client.banprisoned) return
-
 		if(GAME_STATE != RUNLEVEL_GAME)
 			to_chat(usr, "<span class='warning'>The round is either not ready, or has already finished...</span>")
 			return
 		LateChoices() //show the latejoin job selection menu
 
 	if(href_list["manifest"])
-		if(client && client.banprisoned) return
-
 		ViewManifest()
 
 	if(href_list["SelectedJob"])
-		if(client && client.banprisoned) return
-
 		var/datum/job/job = SSjobs.get_by_title(href_list["SelectedJob"])
 
 		if(!SSjobs.check_general_join_blockers(src, job))
@@ -215,8 +196,6 @@
 		return
 
 	if(href_list["privacy_poll"])
-		if(client && client.banprisoned) return
-
 		establish_db_connection()
 		if(!dbcon.IsConnected())
 			return
@@ -259,10 +238,7 @@
 			client.prefs.process_link(src, href_list)
 	else if(!href_list["late_join"])
 		if(client)
-			if(client.banprisoned)
-				new_player_panel_prisoner()
-			else
-				new_player_panel()
+			new_player_panel()
 
 	if(href_list["showpoll"])
 
@@ -333,8 +309,6 @@
 	if(!config.enter_allowed)
 		to_chat(usr, "<span class='notice'>There is an administrative lock on entering the game!</span>")
 		return 0
-
-	if(client && client.banprisoned) return 0
 
 	if(!job || !job.is_available(client))
 		alert("[job.title] is not available. Please try another.")

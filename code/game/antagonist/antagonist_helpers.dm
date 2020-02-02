@@ -6,12 +6,6 @@
 		if(player.current.faction != MOB_FACTION_NEUTRAL)
 			return 0
 
-	//[INF]
-	if(player.current && player.current.client)
-		var/client/C = player.current.client
-		if(C && C.banprisoned) return 0
-	//[/INF]
-
 	if(is_type_in_list(player.assigned_job, blacklisted_jobs))
 		return 0
 
