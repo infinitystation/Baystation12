@@ -102,7 +102,7 @@ var/global/floorIsLava = 0
 		<b>Inactivity time:</b> [M.client ? "[M.client.inactivity/600] minutes" : "Logged out"]<br/><br/>
 		<A href='?src=\ref[src];boot2=\ref[M]'>Kick</A> |
 		<A href='?_src_=holder;warn=[M.ckey]'>Warn</A> |
-		<A href='?src=\ref[src];newban=\ref[M]'>Ban</A> |
+		<A href='?src=\ref[src];newban=\ref[M];last_key=[last_ckey]'>Ban</A> |
 		<A href='?src=\ref[src];softban=\ref[M]'>Soft Ban</A> |
 		<A href='?src=\ref[src];jobban2=\ref[M]'>Jobban</A> |
 		<A href='?src=\ref[src];notes=show;mob=\ref[M]'>Notes</A> |
