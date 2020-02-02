@@ -142,9 +142,11 @@
 	if(assailant.get_active_hand())
 		to_chat(assailant, "<span class='notice'>You can't grab someone if your hand is full.</span>")
 		return 0
+/*INF
 	if(assailant.grabbed_by.len)
 		to_chat(assailant, "<span class='notice'>You can't grab someone if you're being grabbed.</span>")
 		return 0
+INF*/
 	var/obj/item/organ/organ = get_targeted_organ()
 	if(!istype(organ))
 		to_chat(assailant, "<span class='notice'>\The [affecting] is missing that body part!</span>")
