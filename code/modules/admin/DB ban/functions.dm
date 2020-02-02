@@ -129,7 +129,17 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 	if(usr)
 		to_chat(usr, "<span class='notice'>Ban saved to database.</span>")
 		setter = key_name_admin(usr, 0)
-		to_world_ban(bantype, usr.key, ckey, reason_public, duration) //inf
+
+	//[INF]
+		if(bantype != (BANTYPE_JOB_TEMP || BANTYPE_JOB_PERMA))
+			var/banned_key = ckey
+			if(ismob(banned_mob))
+				banned_key = LAST_CKEY(banned_mob)
+				if(banned_mob.client)
+					banned_key = get_key(banned_mob)
+			to_world_ban(bantype, get_key(usr), banned_key, reason_public, duration)
+	//[/INF]
+
 	message_admins("[setter] has added a [bantype_str] for [ckey] [(job)?"([job])":""] [(duration > 0)?"([duration] minutes)":""] with the reason: \"[reason]\" to the ban database.",1)
 	return 1
 

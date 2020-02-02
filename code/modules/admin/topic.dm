@@ -790,9 +790,8 @@
 							msg += ", [job]"
 				//	notes_add(LAST_CKEY(M), "Banned  from [msg] - [reason]", usr)
 				//[INF]
-					add_note(LAST_CKEY(M), "Banned  from [msg] - [reason]", null, usr, 0) //inf
-					to_world(SPAN_NOTICE("<b>JOB-BAN: Администратор [get_key(usr)] временно заблокировал(а) роли ([msg]) игроку [get_key(M)]. Причина: \"[reason]\"; Срок - [mins] минут.</b>"))
-					send2adminlogirc("Администратор [get_key(usr)] временно заблокировал(а) роли ([msg]) игроку [get_key(M)]. Причина: \"[reason]\"; Срок - [mins] минут.")
+					add_note(LAST_CKEY(M), "Banned  from [msg] - [reason]", null, usr, 0)
+					to_world_ban(BANTYPE_JOB_TEMP, get_key(usr), get_key(M), reason, mins, banned_jobs = msg)
 				//[/INF]
 					message_admins("[key_name_admin(usr)] banned [key_name_admin(M)] from [msg] for [mins] minutes", 1)
 					to_chat(M, "<span class='danger'>You have been jobbanned by [usr.client.ckey] from: [msg].</span>")
@@ -817,8 +816,7 @@
 					//	notes_add(LAST_CKEY(M), "Banned  from [msg] - [reason]", usr)
 					//[INF]
 						add_note(LAST_CKEY(M), "Banned  from [msg] - [reason]", null, usr.ckey, 0)
-						to_world(SPAN_NOTICE("<b>JOB-BAN: Администратор [get_key(usr)] перманентно заблокировал(а) роли ([msg]) игроку [get_key(M)]. Причина: \"[reason]\"</b>"))
-						send2adminlogirc("Администратор [get_key(usr)] перманентно заблокировал(а) роли ([msg]) игроку [get_key(M)]. Причина: \"[reason]\"")
+						to_world_ban(BANTYPE_JOB_PERMA, get_key(usr), get_key(M), reason, banned_jobs = msg)
 					//[/INF]
 						message_admins("[key_name_admin(usr)] banned [key_name_admin(M)] from [msg]", 1)
 						to_chat(M, "<span class='danger'>You have been jobbanned by [usr.client.ckey] from: [msg].</span>")
