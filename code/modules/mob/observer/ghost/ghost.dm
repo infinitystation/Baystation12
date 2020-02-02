@@ -162,8 +162,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set name = "Ghost"
 	set desc = "Relinquish your life and enter the land of the dead."
 
-	if(client && client.banprisoned) return
-
 	if(stat == DEAD)
 		announce_ghost_joinleave(ghostize(1))
 	else
@@ -207,8 +205,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set category = "Ghost"
 	set name = "Re-enter Corpse"
 	if(!client)	return
-	if(client && client.banprisoned)
-		return
 	if(!(mind && mind.current && can_reenter_corpse))
 		to_chat(src, "<span class='warning'>You have no body.</span>")
 		return
@@ -229,8 +225,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set desc = "Toggles Medical HUD allowing you to see how everyone is doing"
 	if(!client)
 		return
-	if(client && client.banprisoned)
-		return
 	if(medHUD)
 		medHUD = 0
 		to_chat(src, "<span class='notice'>Medical HUD Disabled</span>")
@@ -244,8 +238,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set desc = "Toggles AntagHUD allowing you to see who is the antagonist"
 
 	if(!client)
-		return
-	if(client && client.banprisoned)
 		return
 	var/mentor = is_mentor(usr.client)
 	if(!config.antag_hud_allowed && (!client.holder || mentor))
@@ -273,9 +265,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set name = "Teleport"
 	set desc= "Teleport to a location"
 
-	if(client && client.banprisoned)
-		return
-
 	var/area/thearea = area_repository.get_areas_by_z_level()[A]
 	if(!thearea)
 		to_chat(src, "No area available.")
@@ -302,8 +291,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set category = "Ghost"
 	set name = "Follow"
 	set desc = "Follow and haunt a mob."
-	if(client && client.banprisoned)
-		return
 
 	if(!fh.show_entry()) return
 	ManualFollow(fh.followed_instance)
@@ -360,8 +347,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/observer/ghost/verb/analyze_air()
 	set name = "Analyze Air"
 	set category = "Ghost"
-	if(client && client.banprisoned)
-		return
 
 	var/turf/t = get_turf(src)
 	if(t)
@@ -415,8 +400,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/observer/ghost/verb/become_mouse()
 	set name = "Become mouse"
 	set category = "Ghost"
-	if(client && client.banprisoned)
-		return
 
 	if(config.disable_player_mice)
 		to_chat(src, "<span class='warning'>Spawning as a mouse is currently disabled.</span>")
@@ -456,8 +439,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/observer/ghost/verb/view_manfiest()
 	set name = "Show Crew Manifest"
 	set category = "Ghost"
-	if(client && client.banprisoned)
-		return
 
 	var/dat
 	dat += "<h4>Crew Manifest</h4>"
@@ -510,8 +491,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set category = "Ghost"
 	set name = "Toggle Anonymous Chat"
 	set desc = "Toggles showing your key in dead chat."
-	if(client && client.banprisoned)
-		return
 
 	if(client.get_preference_value(/datum/client_preference/anon_say) == GLOB.PREF_NO)
 		client.set_preference(/datum/client_preference/anon_say, GLOB.PREF_YES)
@@ -533,8 +512,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set name = "Toggle Ghost Vision"
 	set desc = "Toggles your ability to see things only ghosts can see, like other ghosts"
 	set category = "Ghost"
-	if(client && client.banprisoned)
-		return
 	ghostvision = !(ghostvision)
 	updateghostsight()
 	to_chat(src, "You [(ghostvision?"now":"no longer")] have ghost vision.")
@@ -542,8 +519,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/observer/ghost/verb/toggle_darkness()
 	set name = "Toggle Darkness"
 	set category = "Ghost"
-	if(client && client.banprisoned)
-		return
 	seedarkness = !(seedarkness)
 	updateghostsight()
 	to_chat(src, "You [(seedarkness?"now":"no longer")] see darkness.")
