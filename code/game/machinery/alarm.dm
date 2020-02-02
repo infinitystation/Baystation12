@@ -112,7 +112,10 @@
 /obj/machinery/alarm/warm
 	target_temperature = T0C+75
 	environment_type = /decl/environment_data/finnish
-
+//[INF]
+/obj/machinery/alarm/warm/New()
+	TLV["temperature"] = list(T0C-26, T0C, T0C+76, T0C+85)
+//[/INF]
 /obj/machinery/alarm/nobreach
 	breach_detection = 0
 

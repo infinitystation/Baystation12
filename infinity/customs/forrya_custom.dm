@@ -359,13 +359,12 @@
 	accessory_icons = CUSTOM_ITEM_MOB
 	accessory_icons = list(slot_tie_str = CUSTOM_ITEM_MOB, slot_w_uniform_str = CUSTOM_ITEM_MOB)
 	w_class = ITEM_SIZE_NORMAL
-	slots = 0
+	slots = 3
 
 	trade_blacklisted = TRUE
 
 /obj/item/clothing/accessory/storage/drop_pouches/custom_forrya/Initialize()
 	. = ..()
-	hold.max_storage_space = 4
 	hold.max_w_class = ITEM_SIZE_NORMAL
 
 /obj/item/clothing/mask/gas/alt/custom_forrya

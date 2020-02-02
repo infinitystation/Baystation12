@@ -9,6 +9,12 @@
 	display_name = "(Resomi) standard/job undercoat"
 	path = /obj/item/clothing/under/resomi/undercoat
 	flags = GEAR_HAS_SUBTYPE_SELECTION
+
+/datum/gear/suit/resomicloak/polychromic
+	display_name = "(Resomi) polychromic cloak"
+	path = /obj/item/clothing/suit/storage/hooded/polychromic
+	flags = null
+	cost = 2
 /*
 /datum/gear/suit/resomicloak/New()
 	..()

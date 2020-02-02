@@ -816,17 +816,20 @@
 	req_access = list(access_bar)
 	secure = 0
 
-/area/crew_quarters/cryolocker
-	name = "Second Deck - Living - Cryogenic Storage"
-	icon_state = "locker"
+/area/crew_quarters/sauna
+	name = "Second Deck - Living - Sauna"
+	icon_state = "sauna"
+	sound_env = SMALL_ENCLOSED
 
 /area/crew_quarters/head
 	name = "Second Deck - Living - Restroom"
 	icon_state = "toilet"
+	sound_env = SMALL_ENCLOSED
 
 /area/crew_quarters/showers
 	name = "Second Deck - Living - Private Showers"
 	icon_state = "toilet"
+	sound_env = SMALL_ENCLOSED
 
 /area/crew_quarters/gym
 	name = "Second Deck - Living - Gym"
@@ -835,6 +838,7 @@
 /area/crew_quarters/mess
 	name = "Second Deck - Living - Canteen"
 	icon_state = "cafeteria"
+	sound_env = LARGE_SOFTFLOOR
 
 /area/crew_quarters/galley
 	name = "Second Deck - Service - Galley"
@@ -1321,7 +1325,7 @@
 /area/turret_protected/ai
 	name = "AI Chamber"
 	icon_state = "ai_chamber"
-	forced_ambience = list('infinity/sound/SS2/amb/XXMIX_S.wav')
+	forced_ambience = list('infinity/sound/SS2/ambience/XXMIX_S.wav')
 
 /area/turret_protected/ai_cyborg_station
 	name = "Second Deck - Cyborg Station"
