@@ -68,20 +68,6 @@
 					to_chat(usr, "Not enough parameters (Requires ckey, reason and job)")
 					return
 
-		//[INF]
-			if(BANTYPE_SOFTPERMA)
-				if(!banckey || !banreason)
-					to_chat(usr, "Not enough parameters (Requires ckey and reason)")
-					return
-				banduration = null
-				banjob = null
-			if(BANTYPE_SOFTBAN)
-				if(!banckey || !banreason || !banduration)
-					to_chat(usr, "Not enough parameters (Requires ckey, reason and duration)")
-					return
-				banjob = null
-		//[/INF]
-
 		var/mob/playermob
 
 		for(var/mob/M in GLOB.player_list)
@@ -914,13 +900,6 @@
 		var/mob/M = locate(href_list["newban"])
 		if(!ismob(M)) return
 
-	//[INF]
-		if(alert("ВНИМАНИЕ!\n \
-		Данный тип блокировки подразумевает полное отлучение игрока от сервера и он применим в случае экстренной ситуации (нарушение УК России, обход блокировок или эксплойты).\n \
-		Если случай не подходит под критерий \"серьёзно\" то используйте softban.",,"Continue", "Cancel") == "Cancel")
-			return
-	//[/INF]
-
 		if(M.client && M.client.holder)	return	//admins cannot be banned. Even if they could, the ban doesn't affect them anyway
 
 		var/given_key = href_list["last_key"]
@@ -951,7 +930,7 @@
 				add_note(mob_key,"[usr.client.ckey] has hard banned [mob_key]. - Reason: [reason] - This will be removed in [mins] minutes.", null, usr.ckey, 0)
 				//to_chat(M, "<span class='danger'>You have been banned by [usr.client.ckey].\nReason: [reason].</span>")
 				//to_chat(M, "<span class='warning'>This is a temporary ban, it will be removed in [mins] minutes.</span>")
-				to_chat(M, "<span class='danger'><BIG>Вы были ЖЕСТКО забанены администратором [key_name(usr)].\nПричина: [reason]</BIG></span>") //inf
+				to_chat(M, "<span class='danger'><BIG>Вы были забанены администратором [usr.client.key].\nПричина: [reason]</BIG></span>") //inf
 				to_chat(M, "<span class='warning'>Это временный бан, он истечет через [mins] минут.</span>") //inf
 				SSstatistics.add_field("ban_tmp",1)
 				DB_ban_record(BANTYPE_TEMP, M, mins, reason)
@@ -983,7 +962,7 @@
 						AddBan(mob_key, M.computer_id, reason, usr.ckey, 0, 0)
 			//	to_chat(M, "<span class='danger'>You have been banned by [usr.client.ckey].\nReason: [reason].</span>")
 			//	to_chat(M, "<span class='warning'>This is a ban until appeal.</span>")
-				to_chat(M, "<span class='danger'><BIG>Вы были ЖЕСТКО забанены администратором [usr.client.ckey].\nПричина: [reason]</BIG></span>") //inf
+				to_chat(M, "<span class='danger'><BIG>Вы были ЖЕСТКО забанены администратором [usr.client.key].\nПричина: [reason]</BIG></span>") //inf
 				to_chat(M, "<span class='warning'>Это перманентный бан.</span>") //inf
 				if(config.banappeals)
 				//	to_chat(M, "<span class='warning'>To try to resolve this matter head to [config.banappeals]</span>")
@@ -1253,7 +1232,7 @@
 
 		if(config.allow_admin_rev)
 			L.revive()
-			log_and_message_admins("healed / Rrvived [key_name(L)]")
+			log_and_message_admins("healed / Revived [key_name(L)]")
 		else
 			to_chat(usr, "Admin Rejuvinates have been disabled")
 
