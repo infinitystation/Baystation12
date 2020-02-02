@@ -31,6 +31,7 @@ termservice - machine
 semorerith - machine
 bob46 - machine
 empire2four - machine
+exapster - machine
 inubashirimomiji - skrell
 tenedegurechaff - skrell
 twinindifferent - skrell
@@ -183,6 +184,7 @@ kordvik - tajaran
 wolforbykot - tajaran
 diesiege - tajaran
 seclog - tajaran
+arbuzpersikov - tajaran
 wheatley2013 - adherent
 sosiskoed - adherent
 gumboldty - adherent
