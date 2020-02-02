@@ -770,9 +770,9 @@ var/global/floorIsLava = 0
 
 	config.ooc_allowed = !(config.ooc_allowed)
 	if (config.ooc_allowed)
-		to_world("<B>OOC пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!</B>")
+		to_world("<B>OOC чат включен!</B>")
 	else
-		to_world("<B>OOC пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!</B>")
+		to_world("<B>OOC чат отключён!</B>")
 	log_and_message_admins("toggled OOC.")
 	SSstatistics.add_field_details("admin_verb","TOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -786,9 +786,9 @@ var/global/floorIsLava = 0
 
 	config.aooc_allowed = !(config.aooc_allowed)
 	if (config.aooc_allowed)
-		to_world("<B>AOOC пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!</B>")
+		to_world("<B>AOOC чат включён!</B>")
 	else
-		to_world("<B>AOOC пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!</B>")
+		to_world("<B>AOOC чат отключён!</B>")
 	log_and_message_admins("toggled AOOC.")
 	SSstatistics.add_field_details("admin_verb","TAOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -802,9 +802,9 @@ var/global/floorIsLava = 0
 
 	config.looc_allowed = !(config.looc_allowed)
 	if (config.looc_allowed)
-		to_world("<B>LOOC пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!</B>")
+		to_world("<B>LOOC чат включён!</B>")
 	else
-		to_world("<B>LOOC пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!</B>")
+		to_world("<B>LOOC чат отключён!</B>")
 	log_and_message_admins("toggled LOOC.")
 	SSstatistics.add_field_details("admin_verb","TLOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -819,9 +819,9 @@ var/global/floorIsLava = 0
 
 	config.dsay_allowed = !(config.dsay_allowed)
 	if (config.dsay_allowed)
-		to_world("<B>пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!</B>")
+		to_world("<B>Чат мертвых включён!</B>")
 	else
-		to_world("<B>пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!</B>")
+		to_world("<B>Чат мертвых отключён!</B>")
 	log_and_message_admins("toggled deadchat.")
 	SSstatistics.add_field_details("admin_verb","TDSAY") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc
 
@@ -835,9 +835,9 @@ var/global/floorIsLava = 0
 
 	config.dooc_allowed = !( config.dooc_allowed )
 	if(config.dooc_allowed)
-		to_world("<B>пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ OOC пїЅпїЅпїЅ!</B>")
+		to_world("<B>Мертвые снова могут писать в OOC чат!</B>")
 	else
-		to_world("<B>пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ OOC пїЅпїЅпїЅ!</B>")
+		to_world("<B>Мертвые больше не могут писать в OOC чат!</B>")
 	log_admin("[key_name(usr)] toggled Dead OOC.")
 	message_admins("[key_name_admin(usr)] toggled Dead OOC.", 1)
 	SSstatistics.add_field_details("admin_verb","TDOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -899,8 +899,8 @@ var/global/floorIsLava = 0
 
 	var/confirm = alert("End the game round?", "Game Ending", "Yes", "Cancel")
 	if(confirm == "Yes")
-		log_admin("[key_name(usr)] пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ.")
-		to_world("<span class='danger'>пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!</span> <span class='notice'>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ [usr.key].</span>")
+		log_admin("[key_name(usr)] инициировал завершение раунда.")
+		to_world("<span class='danger'>Раунд завершен!</span> <span class='notice'>Инициировано [usr.key].</span>")
 		SSstatistics.add_field("admin_verb","ER") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 		SSticker.force_ending = 1
 
