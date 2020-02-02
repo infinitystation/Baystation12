@@ -19695,7 +19695,7 @@
 "Ft" = (
 /obj/structure/noticeboard{
 	dir = 4;
-	pixel_x = -25
+	pixel_x = -32
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 10;

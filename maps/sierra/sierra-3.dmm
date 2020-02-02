@@ -8615,7 +8615,7 @@
 "aps" = (
 /obj/machinery/shield_diffuser,
 /turf/simulated/floor/reinforced/airless,
-/area/bridge/gun/energy)
+/area/space)
 "apt" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
@@ -10965,13 +10965,12 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
 	},
-/obj/item/weapon/storage/secure/safe{
-	pixel_x = 8;
-	pixel_y = 24
-	},
 /obj/structure/table/glass,
 /obj/item/weapon/folder/envelope/blanks,
 /obj/item/sticky_pad/random,
+/obj/structure/noticeboard{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/heads/office/iaa)
 "asZ" = (
@@ -10983,13 +10982,14 @@
 	},
 /obj/structure/closet/secure_closet/iaa,
 /obj/item/modular_computer/tablet/lease/preset/command,
-/obj/structure/noticeboard{
-	pixel_y = 32
-	},
 /obj/item/weapon/stamp/internalaffairs,
 /obj/structure/window/reinforced/polarized{
 	dir = 4;
 	id = "iaaleft"
+	},
+/obj/item/weapon/storage/secure/safe{
+	pixel_x = 8;
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/heads/office/iaa)
@@ -11052,13 +11052,14 @@
 	},
 /obj/structure/closet/secure_closet/iaa,
 /obj/item/modular_computer/tablet/lease/preset/command,
-/obj/structure/noticeboard{
-	pixel_y = 27
-	},
 /obj/item/weapon/stamp/internalaffairs,
 /obj/structure/window/reinforced/polarized{
 	dir = 8;
 	id = "iaaright"
+	},
+/obj/item/weapon/storage/secure/safe{
+	pixel_x = 8;
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/heads/office/iaa)
@@ -22430,7 +22431,7 @@
 	},
 /obj/structure/noticeboard{
 	dir = 4;
-	pixel_x = -26
+	pixel_x = -32
 	},
 /obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/tiled,
@@ -23428,7 +23429,7 @@
 	},
 /obj/structure/noticeboard{
 	dir = 4;
-	pixel_x = -26
+	pixel_x = -32
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "hop_road_shutters";
@@ -26633,8 +26634,9 @@
 /obj/item/weapon/paper_bin,
 /obj/item/weapon/pen,
 /obj/structure/noticeboard{
-	pixel_y = 27
+	pixel_y = 32
 	},
+/obj/item/weapon/paper/sierra/engineering_comms,
 /turf/simulated/floor/lino,
 /area/tcommsat/computer)
 "aPF" = (
@@ -31655,7 +31657,6 @@
 	pixel_y = -23
 	},
 /obj/item/weapon/storage/toolbox/mechanical,
-/obj/item/weapon/paper/sierra/engineering_comms,
 /obj/structure/table/steel,
 /obj/item/device/radio/announcer/subspace,
 /turf/simulated/floor/tiled/techfloor,
@@ -32648,7 +32649,7 @@
 /obj/structure/table/standard,
 /obj/structure/noticeboard{
 	dir = 8;
-	pixel_x = 26
+	pixel_x = 32
 	},
 /obj/item/weapon/reagent_containers/glass/beaker/large,
 /obj/item/weapon/reagent_containers/dropper,
@@ -33842,6 +33843,14 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/carpet,
 /area/crew_quarters/lounge/upper)
+"bbD" = (
+/obj/structure/disposaloutlet,
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
+/obj/machinery/shield_diffuser,
+/turf/simulated/floor/reinforced/airless,
+/area/space)
 "bbE" = (
 /obj/structure/curtain/black,
 /turf/simulated/floor/tiled/techfloor,
@@ -35847,14 +35856,6 @@
 /obj/structure/closet/emcloset,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/monotile,
-/area/maintenance/firstdeck/centralport)
-"bfE" = (
-/obj/structure/disposaloutlet,
-/obj/structure/disposalpipe/trunk{
-	dir = 1
-	},
-/obj/machinery/shield_diffuser,
-/turf/simulated/floor/reinforced/airless,
 /area/maintenance/firstdeck/centralport)
 "bfF" = (
 /turf/simulated/wall/r_wall/hull,
@@ -50676,7 +50677,7 @@ bbo
 bcG
 baa
 beD
-bfE
+bbD
 aaa
 aaa
 aaa
