@@ -4,17 +4,18 @@
 	icon = 'infinity/icons/obj/grenades.dmi'
 	icon_state = "sied4"
 
-	fragment_types = list(/obj/item/projectile/bullet/pellet/fragment=1, /obj/item/projectile/bullet/pellet/fragment/strong=3)
-	num_fragments = 60
+	fragment_types = list(/obj/item/projectile/bullet/pellet/fragment=1, /obj/item/projectile/bullet/pellet/fragment/strong=4)
+	num_fragments = 70
 	explosion_size = 1
 
 /obj/item/weapon/reagent_containers/food/drinks/cans
 	var/buildstate = 0
 
 /obj/item/weapon/reagent_containers/food/drinks/cans/on_update_icon()
+	overlays.Cut()
 	. = ..()
 	if(buildstate)
-		icon_state = "sied[buildstate]"
+		overlays += image(icon = 'infinity/icons/obj/grenades.dmi', icon_state = "sied[buildstate]")
 
 /obj/item/weapon/reagent_containers/food/drinks/cans/attackby(obj/item/W as obj, mob/user as mob)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
