@@ -447,7 +447,7 @@ obj/random/closet //A couple of random closets to spice up maint
 				/obj/structure/closet/cabinet,
 				/obj/structure/closet/crate,
 				/obj/structure/closet/crate/freezer,
-				/obj/structure/closet/crate/freezer/rations,
+//INF			/obj/structure/closet/crate/freezer/rations,
 				/obj/structure/closet/crate/internals,
 				/obj/structure/closet/crate/trashcart,
 				/obj/structure/closet/crate/medical,
@@ -684,10 +684,10 @@ obj/random/obstruction/spawn_choices()
 				/obj/item/weapon/reagent_containers/food/snacks/donut,
 				/obj/item/weapon/reagent_containers/food/snacks/donut/cherryjelly,
 				/obj/item/weapon/reagent_containers/food/snacks/donut/jelly,
-				/obj/item/pizzabox/meat,
-				/obj/item/pizzabox/vegetable,
-				/obj/item/pizzabox/margherita,
-				/obj/item/pizzabox/mushroom,
+//INF				/obj/item/pizzabox/meat,
+//INF				/obj/item/pizzabox/vegetable,
+//INF				/obj/item/pizzabox/margherita,
+//INF				/obj/item/pizzabox/mushroom,
 				/obj/item/weapon/reagent_containers/food/snacks/plumphelmetbiscuit,
 				/obj/item/weapon/reagent_containers/food/snacks/skrellsnacks)
 
