@@ -476,9 +476,6 @@
 /obj/random/tool,
 /obj/random/tool,
 /obj/random/tech_supply,
-/obj/random/ore_smug,
-/obj/random/ore_smug,
-/obj/random/ore_smug,
 /obj/random/maintenance,
 /obj/random/maintenance,
 /obj/random/maintenance,
@@ -498,7 +495,6 @@
 /area/maintenance/firstdeck/aftstarboard)
 "abb" = (
 /obj/structure/table/standard,
-/obj/random/cash,
 /obj/item/weapon/deck/cards,
 /obj/machinery/light/small{
 	dir = 1
@@ -1179,14 +1175,6 @@
 /area/maintenance/firstdeck/aftstarboard)
 "acC" = (
 /obj/structure/closet/crate/freezer,
-/obj/random/mre,
-/obj/random/drinkbottle,
-/obj/random/drinkbottle,
-/obj/item/weapon/reagent_containers/food/drinks/dry_ramen,
-/obj/item/weapon/reagent_containers/food/drinks/dry_ramen,
-/obj/item/weapon/reagent_containers/food/drinks/dry_ramen,
-/obj/random/snack,
-/obj/random/snack,
 /turf/simulated/floor/tiled,
 /area/maintenance/firstdeck/aftstarboard)
 "acD" = (
@@ -1914,21 +1902,18 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/aftstarboard)
 "adU" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 4;
+	frequency = 1331;
+	id_tag = "fd_starboard_pump"
+	},
+/obj/effect/floor_decal/industrial/warning/half{
+	icon_state = "warninghalf";
+	dir = 8
+	},
 /turf/simulated/floor/plating,
-/turf/simulated/open,
-/area/maintenance/firstdeck/aftstarboard)
+/area/maintenance/firstdeck/centralstarboard)
 "adV" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -6732,13 +6717,16 @@
 /area/medical/subacute)
 "amp" = (
 /obj/structure/catwalk,
-/obj/structure/disposalpipe/sortjunction{
-	dir = 4;
-	name = "Drone Station";
-	sort_type = "Drone Station"
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 8;
+	frequency = 1331;
+	id_tag = "fd_starboard_pump"
+	},
+/obj/effect/floor_decal/industrial/warning/half{
+	icon_state = "warninghalf";
+	dir = 8
 	},
 /turf/simulated/floor/plating,
-/turf/simulated/open,
 /area/maintenance/firstdeck/centralstarboard)
 "amq" = (
 /obj/structure/cable/green{
@@ -9206,33 +9194,35 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/storage/eva)
 "aqt" = (
-/obj/structure/table/rack,
-/obj/item/weapon/storage/toolbox/mechanical{
-	pixel_x = -2;
-	pixel_y = -1
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
 	},
-/obj/item/clothing/head/welding,
-/obj/item/weapon/storage/belt/utility,
-/obj/effect/floor_decal/industrial/outline/grey,
-/turf/simulated/floor/tiled/techfloor,
-/area/storage/eva)
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/turf/simulated/open,
+/area/maintenance/firstdeck/aftstarboard)
 "aqu" = (
 /obj/effect/floor_decal/industrial/hatch/grey,
 /turf/simulated/floor/tiled/techfloor,
 /area/storage/eva)
 "aqv" = (
-/obj/structure/table/rack,
-/obj/item/weapon/tank/jetpack/carbondioxide,
-/obj/item/weapon/tank/jetpack/carbondioxide,
-/obj/effect/floor_decal/industrial/outline/grey,
-/obj/structure/sign/poster/tjpost/tj_12{
-	pixel_x = 32
+/obj/structure/catwalk,
+/obj/structure/disposalpipe/sortjunction{
+	dir = 4;
+	name = "Drone Station";
+	sort_type = "Drone Station"
 	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/storage/eva)
+/turf/simulated/floor/plating,
+/turf/simulated/open,
+/area/maintenance/firstdeck/centralstarboard)
 "aqw" = (
 /obj/structure/bed/padded,
 /obj/item/weapon/bedsheet/medical,
@@ -34430,6 +34420,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod10/station)
+"bcC" = (
+/obj/item/stack/material/plasteel,
+/obj/item/stack/material/plasteel,
+/obj/item/stack/material/rods,
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/aftstarboard)
 "bcD" = (
 /obj/structure/bed/chair/padded/green{
 	dir = 4
@@ -34595,6 +34591,21 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
+"bcU" = (
+/obj/structure/table/rack,
+/obj/item/weapon/storage/toolbox/mechanical{
+	pixel_x = -2;
+	pixel_y = -1
+	},
+/obj/item/clothing/head/welding,
+/obj/item/weapon/storage/belt/utility,
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/sign/poster/tjpost/tj_12{
+	pixel_x = 0;
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/storage/eva)
 "bcV" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -35103,12 +35114,15 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
 "bea" = (
-/obj/structure/largecrate,
-/obj/random/maintenance,
-/obj/random/maintenance,
-/obj/random/maintenance,
-/turf/simulated/floor/plating,
-/area/maintenance/firstdeck/aftport)
+/obj/structure/table/rack,
+/obj/item/weapon/tank/jetpack/carbondioxide,
+/obj/item/weapon/tank/jetpack/carbondioxide,
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/storage/eva)
 "beb" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -35425,6 +35439,18 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/firstdeck/centralport)
+"beK" = (
+/obj/structure/railing/mapped{
+	dir = 8;
+	tag = "icon-railing0 (EAST)"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/aftport)
+"beL" = (
+/obj/structure/table/rack,
+/obj/random/maintenance,
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/aftport)
 "beM" = (
 /obj/structure/bookcase/manuals/engineering,
 /turf/simulated/floor/plating,
@@ -35434,10 +35460,19 @@
 /obj/item/device/flashlight/lamp/green,
 /turf/simulated/floor/carpet,
 /area/crew_quarters/lounge/upper)
+"beO" = (
+/obj/structure/table/standard,
+/obj/item/weapon/book/manual/nuclear,
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/aftport)
 "beP" = (
 /obj/structure/bookcase/manuals/xenoarchaeology,
 /turf/simulated/floor/lino,
 /area/crew_quarters/lounge/upper)
+"beQ" = (
+/obj/item/weapon/stool,
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/aftport)
 "beR" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -35619,12 +35654,14 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
 "bfc" = (
-/obj/structure/table/rack,
-/obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
-	},
+/obj/structure/largecrate,
 /obj/random/maintenance,
+/obj/random/maintenance,
+/obj/random/maintenance,
+/obj/structure/railing/mapped{
+	dir = 1;
+	icon_state = "railing0-1"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
 "bfd" = (
@@ -35857,6 +35894,15 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/monotile,
 /area/maintenance/firstdeck/centralport)
+"bfE" = (
+/obj/structure/table/standard,
+/obj/machinery/light/small{
+	dir = 1;
+	icon_state = "bulb_map"
+	},
+/obj/item/stack/cable_coil/random,
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/aftport)
 "bfF" = (
 /turf/simulated/wall/r_wall/hull,
 /area/crew_quarters/lounge/upper)
@@ -35987,19 +36033,16 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
 "bfU" = (
-/obj/machinery/portable_atmospherics/canister/air,
+/obj/structure/table/rack,
+/obj/item/stack/material/steel/ten,
+/obj/random/maintenance,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
 "bfV" = (
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -20
-	},
 /obj/structure/table/rack,
-/obj/structure/railing/mapped{
-	dir = 1
-	},
 /obj/random/maintenance,
+/obj/item/device/assembly/igniter,
+/obj/item/device/assembly/igniter,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
 "bfW" = (
@@ -36209,10 +36252,8 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod10/station)
 "bgo" = (
-/turf/simulated/wall/r_wall/hull{
-	can_open = 1
-	},
-/area/maintenance/firstdeck/centralport)
+/turf/simulated/wall/prepainted,
+/area/thruster/d1port)
 "bgp" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -36348,26 +36389,23 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
 "bgH" = (
-/obj/structure/lattice,
-/obj/structure/catwalk,
-/obj/structure/closet/crate,
-/obj/item/weapon/reagent_containers/food/drinks/dry_ramen,
-/obj/item/weapon/reagent_containers/food/drinks/dry_ramen,
-/obj/item/weapon/reagent_containers/food/drinks/dry_ramen,
-/obj/item/weapon/reagent_containers/food/drinks/dry_ramen,
-/obj/item/weapon/reagent_containers/food/drinks/dry_ramen,
-/turf/simulated/open,
+/obj/structure/table/rack,
+/obj/random/maintenance,
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 23
+	},
+/turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
 "bgI" = (
-/obj/structure/lattice,
-/obj/structure/catwalk,
-/obj/structure/reagent_dispensers/watertank,
-/turf/simulated/open,
+/obj/structure/girder,
+/turf/simulated/wall/prepainted,
 /area/maintenance/firstdeck/aftport)
 "bgJ" = (
-/obj/structure/lattice,
-/obj/structure/closet,
-/turf/simulated/open,
+/obj/item/stack/material/steel,
+/obj/item/stack/material/steel,
+/obj/item/stack/material/rods,
+/turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
 "bgK" = (
 /obj/machinery/meter,
@@ -36530,26 +36568,22 @@
 /turf/simulated/floor/plating,
 /area/maintenance/solar)
 "bha" = (
-/turf/simulated/wall/r_wall/hull{
-	can_open = 1
-	},
+/obj/structure/inflatable,
+/turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
 "bhb" = (
-/obj/structure/catwalk,
-/obj/item/device/flashlight/flare/glowstick/random,
+/obj/effect/floor_decal/industrial/warning/half,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
 "bhc" = (
+/obj/effect/floor_decal/industrial/warning/half,
 /obj/structure/catwalk,
-/obj/structure/bed/roller,
-/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/rainbow,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
 "bhd" = (
-/obj/structure/catwalk,
-/obj/item/weapon/storage/toolbox/mechanical,
-/obj/random/smokes,
-/obj/item/weapon/flame/lighter/random,
+/obj/structure/table/rack,
+/obj/random/maintenance,
+/obj/item/weapon/book/manual/engineering_singularity_safety,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
 "bhe" = (
@@ -36670,11 +36704,6 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/maintenance/solar)
-"bhq" = (
-/obj/structure/closet/emcloset,
-/obj/item/weapon/ladder_mobile,
-/turf/simulated/floor/plating,
-/area/maintenance/firstdeck/aftport)
 "bhr" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
@@ -49668,7 +49697,7 @@ aWF
 baa
 beB
 bfD
-bgo
+ban
 bgP
 bcI
 aaa
@@ -52257,7 +52286,7 @@ aaB
 aaB
 agq
 ahy
-amp
+aqv
 ajR
 akV
 akV
@@ -52453,7 +52482,7 @@ aaa
 aaa
 aaB
 acd
-acd
+adU
 adF
 aaB
 afj
@@ -52857,7 +52886,7 @@ aaa
 aaa
 aaB
 acf
-acf
+amp
 adG
 aaB
 afl
@@ -56303,7 +56332,7 @@ ahy
 ami
 anB
 aoR
-aqt
+bcU
 arG
 atk
 aoR
@@ -56707,7 +56736,7 @@ aeF
 amk
 aeB
 aoR
-aqv
+bea
 arI
 atm
 aoR
@@ -60938,7 +60967,7 @@ aaM
 aaM
 acu
 adk
-adU
+aqt
 aeL
 aeL
 agS
@@ -61945,7 +61974,7 @@ aaq
 aam
 aaM
 aaU
-aaM
+acy
 acy
 acy
 adX
@@ -61989,10 +62018,10 @@ aUK
 aUK
 aUK
 beU
-bfU
-aYT
+bgJ
+aRY
+aRY
 aUV
-aLW
 aLW
 aam
 bhO
@@ -62149,7 +62178,7 @@ aaM
 aaV
 abG
 acz
-acy
+bcC
 adY
 aeN
 afR
@@ -62191,10 +62220,10 @@ bca
 bdh
 bdZ
 bfb
-bfV
-aYT
-aRY
-aLW
+aOF
+aOF
+bgI
+aOF
 aLW
 aam
 bhO
@@ -62391,12 +62420,12 @@ aZN
 aUK
 bcb
 bdi
-bea
-bfc
-aYT
-aYT
-aUV
-aLW
+beK
+beK
+aOF
+aRY
+bhc
+bhd
 aLW
 aam
 bhS
@@ -62593,12 +62622,12 @@ aZO
 baV
 bcc
 bdj
-aYT
-aYT
-aYT
-aLW
-bha
-aLW
+bfc
+bgH
+aOF
+bfU
+bhb
+beL
 aLW
 aam
 bhO
@@ -62755,7 +62784,7 @@ aaM
 aaY
 abJ
 acC
-aaM
+acy
 acy
 acy
 afS
@@ -62795,12 +62824,12 @@ aZP
 aUK
 bcd
 bdk
-aYT
-aYT
-aLW
-aLW
+aOF
+aOF
+aOF
+aUV
 bhb
-bhq
+aNm
 aLW
 aam
 bhO
@@ -62957,7 +62986,7 @@ aaM
 aaZ
 abK
 acD
-aay
+abf
 aea
 aeQ
 afT
@@ -62999,10 +63028,10 @@ bce
 bdl
 beb
 bfd
-aZW
-bgH
-aNm
-aLW
+bgo
+aOF
+aOF
+bha
 aLW
 aam
 bhO
@@ -63159,7 +63188,7 @@ aaM
 aba
 abL
 acE
-aay
+abf
 aeb
 abf
 abf
@@ -63201,10 +63230,10 @@ bcd
 aZS
 aZS
 bfe
-aZW
-bgI
-bhc
-aLW
+aZS
+beO
+beQ
+aRY
 aLW
 aam
 bhU
@@ -63361,7 +63390,7 @@ aaM
 abb
 abM
 acF
-aay
+abf
 aec
 abf
 abf
@@ -63403,10 +63432,10 @@ bcf
 aZS
 aZS
 bff
-aZW
-bgJ
-bhd
-aLW
+aZS
+bfE
+bfV
+aRY
 aLW
 aam
 aam
@@ -63562,8 +63591,8 @@ aam
 aay
 aay
 aay
-aay
-aay
+abf
+abf
 aed
 abf
 abf
@@ -63605,8 +63634,8 @@ aYT
 aZS
 aZS
 bfg
-aZW
-aZW
+aZS
+aZS
 aZW
 aZW
 aZW
@@ -63764,7 +63793,7 @@ aay
 aay
 aay
 aay
-aay
+abf
 ado
 aee
 aeR
@@ -63808,7 +63837,7 @@ aZS
 bec
 bfh
 bfW
-aZW
+aZS
 aZW
 aZW
 aZW
