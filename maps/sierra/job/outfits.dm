@@ -378,6 +378,12 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	uniform = /obj/item/clothing/under/rank/chaplain
 	id_type = /obj/item/weapon/card/id/sierra/crew/service/chaplain
 
+/decl/hierarchy/outfit/job/sierra/crew/service/actor
+	name = OUTFIT_JOB_NAME("Actor - Sierra")
+	uniform = /obj/item/clothing/under/redcoat
+	id_type = /obj/item/weapon/card/id/sierra/crew/service/actor
+	shoes = /obj/item/clothing/shoes/laceup
+
 	///////////////
 	//EXPLORATION//
 	///////////////

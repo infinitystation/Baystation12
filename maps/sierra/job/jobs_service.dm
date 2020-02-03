@@ -75,3 +75,19 @@
 	min_skill = list(	SKILL_COOKING   = SKILL_BASIC,
 						SKILL_BOTANY    = SKILL_BASIC,
 						SKILL_CHEMISTRY = SKILL_BASIC)
+
+/datum/job/actor
+	title = "Actor"
+	total_positions = 2
+	spawn_positions = 2
+	department = "Service"
+	department_flag = SRV
+	supervisors = "the Head of Personnel"
+	ideal_character_age = 24
+	selection_color = "#515151"
+	minimal_player_age = 15
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/service/actor
+	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/civilian, /datum/mil_branch/contractor)
+	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor, /datum/mil_rank/civ/civ)
+
+	access = list(access_actor)

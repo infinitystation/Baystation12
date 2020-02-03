@@ -14,7 +14,6 @@
 		"Botanist",
 		"Naturalist",
 		"Ecologist",
-		"Entertainer",
 		"Sociologist",
 		"Off-Duty",
 		"Trainer"

@@ -127,6 +127,9 @@
 /obj/item/weapon/card/id/sierra/crew/service/chaplain
 	job_access_type = /datum/job/chaplain
 
+/obj/item/weapon/card/id/sierra/crew/service/actor
+	job_access_type = /datum/job/actor
+
 //Explorers
 
 /obj/item/weapon/card/id/sierra/crew/exploration_leader

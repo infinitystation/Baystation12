@@ -58,7 +58,7 @@
 			            access_medical_equip, access_gun, access_expedition_shuttle, access_guppy,
 			            access_seneng, access_senmed, access_hangar, access_guppy_helm, access_expedition_shuttle_helm, access_explorer, access_el,
 						access_tox, access_tox_storage, access_research, access_mining, access_mining_office, access_mining_station, access_xenobiology, access_xenoarch,
-						access_petrov, access_petrov_helm)
+						access_petrov, access_petrov_helm, access_actor)
 
 	minimal_access = list()
 
@@ -290,7 +290,7 @@
 
 
 	access = list(	access_security, access_medical, access_engine, access_maint_tunnels, access_emergency_storage,
-					access_heads, access_bridge, access_janitor, access_kitchen, access_cargo, access_RC_announce, access_keycard_auth,
+					access_heads, access_bridge, access_janitor, access_kitchen, access_actor, access_cargo, access_RC_announce, access_keycard_auth,
 					access_guppy, access_guppy_helm, access_external_airlocks, access_expedition_shuttle,
 					access_eva, access_hangar, access_explorer, access_expedition_shuttle_helm, access_gun)
 

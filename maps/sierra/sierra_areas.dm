@@ -851,6 +851,12 @@
 	icon_state = "kitchen"
 	secure = 1
 
+/area/crew_quarters/actor
+	name = "Second Deck - Service - Actor"
+	icon_state = "Theatre"
+	sound_env = SMALL_SOFTFLOOR
+	req_access = list(access_actor)
+
 /area/crew_quarters/lounge
 	name = "Second Deck - Living - Lounge"
 	icon_state = "crew_quarters"
