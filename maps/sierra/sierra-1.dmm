@@ -3898,23 +3898,13 @@
 /turf/simulated/floor/plating,
 /area/quartermaster/exploration)
 "gR" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/closet/emcloset,
+/obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
+	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/quartermaster/hangar)
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/aft)
 "gS" = (
 /obj/effect/floor_decal/corner/mauve{
 	icon_state = "corner_white";
@@ -5065,6 +5055,7 @@
 	id_tag = "hangar_atmos_storage";
 	name = "Storage Shutters"
 	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/hangar_atmos)
 "iM" = (
@@ -7302,6 +7293,7 @@
 	id_tag = "hangar_atmos_storage";
 	name = "Storage Shutters"
 	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/hangar_atmos)
 "mg" = (
@@ -9650,11 +9642,13 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/shuttle/petrov/ship)
 "pM" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
+/obj/structure/railing/mapped,
+/obj/machinery/atmospherics/valve/shutoff{
+	dir = 4
 	},
-/obj/structure/closet/emcloset,
-/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/alarm{
+	pixel_y = 30
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aft)
 "pN" = (
@@ -9789,11 +9783,15 @@
 /turf/simulated/floor/reinforced,
 /area/shuttle/petrov/cell2)
 "qb" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/meter,
+/obj/machinery/camera/network/hangar,
 /obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aft)
 "qc" = (
@@ -12611,10 +12609,6 @@
 /area/hallway/primary/thirddeck/fore)
 "ua" = (
 /obj/structure/closet/emcloset,
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -20
-	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aft)
@@ -18206,18 +18200,15 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/disposalpipe/segment{
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 9
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/maintenance/thirddeck/aft)
+/turf/simulated/floor/tiled/monotile,
+/area/quartermaster/hangar)
 "Da" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -18227,15 +18218,14 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9;
+	pixel_y = 0
 	},
-/obj/machinery/atmospherics/valve/shutoff{
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aft)
 "Db" = (
@@ -18972,16 +18962,6 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/structure/closet/crate/present,
-/obj/item/stack/tile/carpet/fifty,
-/obj/item/stack/tile/carpetblue/fifty,
-/obj/item/stack/tile/carpetblue2/fifty,
-/obj/item/stack/tile/carpetblue3/fifty,
-/obj/item/stack/tile/carpetgreen/fifty,
-/obj/item/stack/tile/carpetmagenta/fifty,
-/obj/item/stack/tile/carpetorange/fifty,
-/obj/item/stack/tile/carpetpurple/fifty,
-/obj/item/stack/tile/carpetred/fifty,
 /turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/storage)
 "Ej" = (
@@ -20061,8 +20041,18 @@
 /turf/simulated/floor/plating,
 /area/quartermaster/exploration)
 "Gc" = (
-/turf/simulated/floor/plating,
-/area/vacant/monitoring)
+/obj/machinery/light/spot{
+	dir = 8;
+	icon_state = "tube_map"
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/table/steel_reinforced,
+/obj/item/weapon/wrench,
+/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/metal,
+/turf/simulated/floor/tiled,
+/area/command/bsa)
 "Gd" = (
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 8;
@@ -21067,6 +21057,26 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/central_stairwell)
+"Hw" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/aft)
 "Hx" = (
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced/titanium,
@@ -25503,14 +25513,20 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/thirddeck/aft)
 "ON" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/machinery/camera/network/hangar,
-/obj/structure/railing/mapped,
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+/obj/structure/catwalk,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aft)
@@ -25730,19 +25746,9 @@
 /turf/simulated/floor/reinforced/hydrogen/fuel,
 /area/thruster/d3port)
 "Pl" = (
-/obj/machinery/light/spot{
-	dir = 8;
-	icon_state = "tube_map"
-	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8
-	},
-/obj/structure/table/steel_reinforced,
-/obj/item/weapon/wrench,
-/obj/item/weapon/storage/mre/random,
-/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/metal,
-/turf/simulated/floor/tiled,
-/area/command/bsa)
+/obj/structure/table/rack,
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/aft)
 "Pm" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -26988,11 +26994,6 @@
 /obj/random/coin,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aft)
-"Rs" = (
-/obj/structure/table/rack,
-/obj/item/weapon/storage/mre/random,
-/turf/simulated/floor/plating,
-/area/maintenance/thirddeck/aft)
 "Rt" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/red,
 /turf/simulated/wall/r_wall/prepainted,
@@ -28159,6 +28160,14 @@
 /obj/item/stack/material/phoron/ten,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/storage)
+"Tz" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/mining/brace{
+	icon_state = "mining_brace";
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/quartermaster/hangar)
 "TA" = (
 /obj/structure/closet/crate/internals/fuel,
 /obj/effect/floor_decal/industrial/outline/grey,
@@ -28236,24 +28245,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/maintenance/thirddeck/aft)
-"TH" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
-	},
-/obj/structure/catwalk,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aft)
 "TI" = (
@@ -28740,13 +28731,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/central_stairwell)
-"ZF" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/mining/brace{
-	dir = 4
-	},
-/turf/simulated/floor/tiled,
-/area/quartermaster/hangar)
 "ZG" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/mining/brace{
@@ -46052,7 +46036,7 @@ Is
 EC
 EC
 Ly
-Gc
+bK
 Ff
 FG
 Ts
@@ -46254,7 +46238,7 @@ Is
 EC
 EC
 Th
-Gc
+bK
 bK
 dh
 di
@@ -50087,7 +50071,7 @@ co
 fs
 OS
 ew
-Pl
+Gc
 Px
 OS
 OS
@@ -51531,7 +51515,7 @@ Yr
 aM
 oC
 XC
-ZF
+Tz
 Fs
 zg
 Ji
@@ -52939,7 +52923,7 @@ ic
 Ln
 ic
 qS
-gR
+CZ
 qS
 av
 PH
@@ -53342,8 +53326,8 @@ kq
 Ld
 La
 ic
-pM
-CZ
+gR
+Da
 ua
 av
 wx
@@ -53544,8 +53528,8 @@ ic
 La
 La
 ic
-qb
-Da
+pM
+Hw
 ov
 av
 wy
@@ -53746,8 +53730,8 @@ ic
 ic
 ic
 ic
+qb
 ON
-TH
 ox
 av
 av
@@ -54939,7 +54923,7 @@ LM
 bh
 Rn
 Rr
-Rs
+Pl
 TT
 fe
 DB
