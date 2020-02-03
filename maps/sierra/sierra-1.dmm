@@ -15746,11 +15746,11 @@
 /area/exploration_shuttle/atmos)
 "yP" = (
 /obj/machinery/door/airlock/external{
+	frequency = 1380;
 	icon_state = "closed";
 	id_tag = "escape_pod_9_hatch";
 	locked = 1;
-	name = "Escape Pod Four Hatch";
-	req_access = newlist()
+	name = "Escape Pod Four Hatch"
 	},
 /obj/machinery/shield_diffuser,
 /obj/effect/floor_decal/industrial/warning/fulltile,
