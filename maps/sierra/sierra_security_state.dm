@@ -44,6 +44,8 @@
 	Персоналу следует вернуться к выполнению рабочих обязанностей в штатном режиме.", \
 	"Внимание! Зелёный код")
 	notify_station()
+	GLOB.using_map.unlock_secure_areas()
+	GLOB.using_map.unlock_high_secure_areas()
 
 /decl/security_level/default/sierradept/code_violet
 	name = "code violet"
@@ -64,13 +66,16 @@
 	Всему медицинскому персоналу требуется обратиться к вышестоящим сотрудникам для получения инструкций. \
 	Не-медицинскому персоналу следует выполнять инструкции от медицинского персонала.", "Внимание! Фиолетовый код")
 	notify_station()
+	GLOB.using_map.toggle_crew_sensors(2)
 
 /decl/security_level/default/sierradept/code_violet/switching_down_to()
 	security_announcement_down.Announce("На судне находятся нелокализованные вредоносные патогены. \
 	Всему медицинскому персоналу требуется обратиться к вышестоящим сотрудникам для получения инструкций. \
 	Не-медицинскому персоналу следует выполнять инструкции от медицинского персонала.", "Внимание! Код угрозы понижен до Фиолетового")
 	notify_station()
-
+	GLOB.using_map.unlock_high_secure_areas()
+	GLOB.using_map.unlock_secure_areas()
+	GLOB.using_map.toggle_crew_sensors(2)
 
 /decl/security_level/default/sierradept/code_orange
 	name = "code orange"
@@ -91,6 +96,8 @@
 	Весь не-инженерный персонал должен покинуть затронутые повреждениями отсеки. Рекомендуется ношение скафандров и \
 	следование указаниям инженерного персонала.", "Внимание! Оранжевый код")
 	notify_station()
+	GLOB.using_map.lock_high_secure_areas()
+	GLOB.using_map.toggle_crew_sensors(1)
 
 /decl/security_level/default/sierradept/code_orange/switching_down_to()
 	security_announcement_down.Announce("Тяжелые нарушения в работе оборудования и повреждение переборок. \
@@ -98,6 +105,9 @@
 	Весь не-инженерный персонал должен покинуть затронутые повреждениями отсеки. Рекомендуется ношение скафандров и \
 	следование указаниям инженерного персонала.", "Внимание! Код угрозы понижен до Оражевого")
 	notify_station()
+	GLOB.using_map.lock_high_secure_areas()
+	GLOB.using_map.unlock_secure_areas()
+	GLOB.using_map.toggle_crew_sensors(1)
 
 /decl/security_level/default/sierradept/code_blue
 	name = "code blue"
@@ -110,7 +120,6 @@
 	light_color_status_display = COLOR_BLUE
 	overlay_alarm = "alarm_blue"
 	overlay_status_display = "status_display_blue"
-
 	psionic_control_level = PSI_IMPLANT_LOG
 
 /decl/security_level/default/sierradept/code_blue/switching_up_to()
@@ -118,12 +127,14 @@
 	Всей охране требуется обратиться к вышестоящим сотрудникам для получения указаний; \
 	разрешено обыскивать сотрудников и отсеки, а так же держать оружие на виду.", "Внимание! Синий код")
 	notify_station()
+	GLOB.using_map.lock_high_secure_areas()
 
 /decl/security_level/default/sierradept/code_blue/switching_down_to()
 	security_announcement_down.Announce("Потенциальная угроза для экипажа. \
 	Всей охране требуется обратиться к вышестоящим сотрудникам для получения указаний; \
 	разрешено обыскивать сотрудников и отсеки, а так же держать оружие на виду.", "Внимание! Код угрозы понижен до Синего")
 	notify_station()
+	GLOB.using_map.unlock_secure_areas()
 
 /decl/security_level/default/sierradept/code_red
 	name = "code red"
@@ -148,6 +159,9 @@
 	"Внимание! Красный код")
 	notify_station()
 	GLOB.using_map.unbolt_saferooms()
+	GLOB.using_map.lock_secure_areas()
+	GLOB.using_map.lock_high_secure_areas()
+	GLOB.using_map.toggle_crew_sensors(3)
 
 /decl/security_level/default/sierradept/code_red/switching_down_to()
 	security_announcement_red.Announce("Взрывное устройство было обезврежено. \
@@ -155,6 +169,8 @@
 	Охране разрешено обыскивать сотрудников и отсеки, а так же держать оружие на виду.", \
 	"Внимание! Код угрозы понижен до Красного")
 	notify_station()
+	GLOB.using_map.lock_secure_areas()
+	GLOB.using_map.lock_high_secure_areas()
 
 /decl/security_level/default/sierradept/code_delta
 	name = "code delta"
@@ -177,6 +193,9 @@
 	большой мощности с активированным обратным отсчетом. Весь экипаж должен следовать инструкциям глав и охраны. \
 	Это не учебная тревога.", "Внимание! Код Дельта")
 	notify_station()
+	GLOB.using_map.unlock_secure_areas()
+	GLOB.using_map.unlock_high_secure_areas()
+	GLOB.using_map.toggle_crew_sensors(3)
 
 #undef PSI_IMPLANT_AUTOMATIC
 #undef PSI_IMPLANT_SHOCK
