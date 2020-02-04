@@ -50,14 +50,12 @@
 /datum/map/proc/area_lockdown(var/a)
 	var/area/area = get_area_name(a)
 	for(var/obj/machinery/door/airlock/airlock in area)
-		spawn()
-			airlock.command("secure_close")
+		airlock.command("secure_close")
 
 /datum/map/proc/area_unlock(var/a)
 	var/area/area = get_area_name(a)
 	for(var/obj/machinery/door/airlock/airlock in area)
-		spawn()
-			airlock.command("unlock")
+		airlock.command("unlock")
 
 /datum/map/proc/lock_secure_areas()
 	if(secure_areas)
