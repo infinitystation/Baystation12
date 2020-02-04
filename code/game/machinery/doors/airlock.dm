@@ -1103,7 +1103,7 @@ About the new airlock wires panel:
 			"[user] [p_open ? "opened" : "closed"] the maintenance hatch of [src].",
 			SPAN_NOTICE("You [p_open ? "open" : "close"] the maintenance hatch of [src]."))
 		var/interact_sound = p_open ? GLOB.machinery_exposed_sound[1] : GLOB.machinery_exposed_sound[2]
-		playsound(src, pick(interact_sound), 50, 1)
+		playsound(src, pick(interact_sound), 50, 1, -6.5)
 		//[/INF]
 
 		src.update_icon()

@@ -323,7 +323,7 @@ var/const/POWER = 8
 /datum/wires/proc/PulseIndex(var/index)
 	if(IsIndexCut(index))
 		return
-	playsound(holder.loc, 'infinity/sound/items/multitool_pulse.ogg', 20, 1)//inf
+	playsound(holder.loc, 'infinity/sound/items/multitool_pulse.ogg', 20, 1, -6.5)//inf
 	UpdatePulsed(index)
 
 /datum/wires/proc/GetIndex(var/colour)
@@ -403,7 +403,7 @@ var/const/POWER = 8
 	else
 		wires_status |= index
 		UpdateCut(index, 0)
-	playsound(holder.loc, 'sound/items/Wirecutter.ogg', 100, 1)//inf
+	playsound(holder.loc, 'sound/items/Wirecutter.ogg', 100, 1, -6.5)//inf
 
 /datum/wires/proc/RandomCut()
 	var/r = rand(1, wires.len)
