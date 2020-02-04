@@ -13,6 +13,8 @@ meteor_act
 	if(!has_organ(def_zone))
 		return PROJECTILE_FORCE_MISS //if they don't have the organ in question then the projectile just passes by.
 
+		//IFN
+
 	var/damage_mult = list(
 		BP_HEAD = 1, 
 		BP_CHEST = 1, 
@@ -25,9 +27,9 @@ meteor_act
 		BP_R_HAND = 0.3,
 		BP_L_FOOT = 0.3,
 		BP_R_FOOT = 0.3)
-	
+
 	P.damage *= damage_mult[def_zone]
-	
+	//INF END
 	//Shields
 	var/shield_check = check_shields(P.damage, P, null, def_zone, "the [P.name]")
 	if(shield_check)
