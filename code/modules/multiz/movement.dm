@@ -231,9 +231,12 @@
 		return
 
 	..()
+
+//[INF]
 	playsound(loc, pick(GLOB.smash_sound), 50, 1, -1)
-	if(client)
-		shake_camera(src, 7, 0.5)
+	if(client) shake_camera(src, 7, 0.5)
+//[/INF]
+
 	var/damage = 10
 	apply_damage(rand(0, damage), BRUTE, BP_HEAD)
 	apply_damage(rand(0, damage), BRUTE, BP_CHEST)
