@@ -3,3 +3,8 @@
 #define WEBHOOK_ROUNDSTART        "webhook_roundstart"
 #define WEBHOOK_SUBMAP_LOADED     "webhook_submap_loaded"
 #define WEBHOOK_CUSTOM_EVENT      "webhook_custom_event"
+
+//[INF]
+#define WEBHOOK_SERVER_UPDATE      "webhook_server_update"
+#define WEBHOOK_SERVER_START       "webhook_server_start"
+//[/INF]

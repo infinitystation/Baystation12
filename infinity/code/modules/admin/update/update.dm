@@ -20,6 +20,7 @@
 				spawn(5 SECONDS)
 					send2mainirc("Производится обновление сервера.")
 					send2admindiscord("Происходит обновление. Инициировано [ckey].")
+					SSwebhooks.send(WEBHOOK_SERVER_UPDATE)
 					shell("update.bat")
 	else
 		if(alert("Отменить обновление сервера в конце раунда?", "Cancel Update", "Да", "Нет") == "Да")

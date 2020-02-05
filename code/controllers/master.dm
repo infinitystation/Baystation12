@@ -229,6 +229,9 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	if(delay)
 		sleep(delay)
 	report_progress("Master starting processing")
+
+	SSwebhooks.send(WEBHOOK_SERVER_START, list("url" = get_world_url(), "map" = station_name())) //INF
+
 	var/rtn = Loop()
 	if (rtn > 0 || processing < 0)
 		return //this was suppose to happen.

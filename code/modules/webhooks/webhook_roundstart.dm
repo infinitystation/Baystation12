@@ -4,6 +4,7 @@
 // Data expects a "url" field pointing to the current hosted server and port to connect on.
 /decl/webhook/roundstart/get_message(var/list/data)
 	. = ..()
+/* //[ORIGINAL]
 	var/desc = "A new round is starting"
 	if(data && data["url"])
 		desc += " on [data["url"]]"
@@ -14,3 +15,19 @@
 		"description" = desc,
 		"color" = COLOR_WEBHOOK_DEFAULT
 	))
+*/ //[/ORIGINAL]
+
+//[INF]
+	var/desc = "Начало новой смены"
+	if(data && data["gamemode"])
+		desc += " c режимом [data["gamemode"]]"
+	if(data && data["players"])
+		desc += "; Количество игроков: [data["players"]]"
+//	desc += "."
+
+	.["embeds"] = list(list(
+		"title" = "Смена началась",
+		"description" = desc,
+		"color" = COLOR_WEBHOOK_DEFAULT
+	))
+//[/INF]
