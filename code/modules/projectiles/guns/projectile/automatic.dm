@@ -187,6 +187,7 @@
 //[/INF]
 /obj/item/weapon/gun/projectile/automatic/sec_smg/on_update_icon()
 	..()
+	icon_state = "smg" //INF
 	if(ammo_magazine)
 		overlays += image(icon, "mag-[round(ammo_magazine.stored_ammo.len,5)]")
 	if(ammo_magazine && LAZYLEN(ammo_magazine.stored_ammo))
