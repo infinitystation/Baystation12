@@ -2,25 +2,17 @@
 	. = ..()
 	var/desc = "Смена с режимом **[SSticker.mode ? SSticker.mode.name : "Unknown"]** только что закончилась\n\n"
 	if(data)
-
+		var/s_escaped =  "Эвакуированных"
+		if(!evacuation_controller.emergency_evacuation)
+			s_escaped = "Транспортированных"
 		if(data["survivors"] > 0)
-
-			var/s_was =      "Остался"
-			var/s_survivor = "выживший"
-			var/s_escaped =  "Эвакуировалось"
-
-			if(data["survivors"] != 1)
-				s_was = "Осталось"
-				s_survivor = "выживших"
-
-			if(!evacuation_controller.emergency_evacuation)
-				s_escaped = "Транспортировано"
-
-			desc += "[s_was] [data["survivors"]]: **[s_survivor]**\n"
+			desc += "Выживших: **[data["survivors"]]**\n"
 			desc += "[s_escaped]: **[data["escaped"]]**\n"
 		else
 			desc += "**Никто не пережил эту смену**\n"
-		desc += "Призраков: [data["ghosts"]]"
+		desc += "Призраков: **[data["ghosts"]]**\n"
+		desc += "Игроков: **[LAZYLEN(GLOB.clients)]**\n"
+		desc += "Продолжительность: **[roundduration2text()]**"
 
 	.["embeds"] = list(list(
 		"title" = "Смена под номером [game_id] окончена",
