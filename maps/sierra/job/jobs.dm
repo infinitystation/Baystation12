@@ -97,6 +97,7 @@
 		/datum/mil_rank/civ/civ
 	)
 	required_language = LANGUAGE_HUMAN_EURO
+	psi_latency_chance = 8
 
 /datum/map/sierra
 	default_assistant_title = "Crewman"
