@@ -84,7 +84,5 @@ SUBSYSTEM_DEF(webhooks)
 
 /hook/roundstart/proc/run_webhook()
 //	SSwebhooks.send(WEBHOOK_ROUNDSTART, list("url" = get_world_url()))
-	var/gamemode = SSticker.master_mode
-	var/players = GLOB.player_list.len
-	SSwebhooks.send(WEBHOOK_ROUNDSTART, list("gamemode" = gamemode, "players" = players)) //INF
+	SSwebhooks.send(WEBHOOK_ROUNDSTART, list("gamemode" = SSticker.master_mode, "players" = LAZYLEN(GLOB.player_list))) //INF
 	return 1
