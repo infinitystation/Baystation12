@@ -65,15 +65,15 @@
 	log_and_message_admins("has set their ambitions to now be: [new_goal].")
 [ORIGINAL]*/
 //[INF]
-	var/new_goal = sanitize(input(src, "Напишите, чего вы хотите достичь в этом раунде как антагонист - \
-	свои цели. Они будут видны всем игрокам после конца раунда. Помните, что вы не можете \
-	Переписать их - только дополнить новыми строками.", "Antagonist Goal") as null|message)
+	var/new_goal = sanitize(input(src, "Напишите, чего Вы хотите достичь в этом раунде как антагонист - \
+	свои цели. Они будут видны всем игрокам после конца раунда. Помните, что Вы не можете \
+	переписать их - только дополнить новыми строками.", "Antagonist Goal") as null|message)
 	if(!isnull(new_goal))
 		if(!goal)
 			goal = new /datum/goal/ambition(mind)
-		goal.description += "|[new_goal]"
-		to_chat(src, SPAN_NOTICE("Теперь, Ваша амбици&#255; выгл&#255;дит как <b>'[goal.description]'</b>. \
-		Вы можете просмотреть её через кнопку <b>Notes</b>. Если вы хотите изменить всю амбицию, \
+		goal.description += "<br>[roundduration2text()]: [new_goal]"
+		to_chat(src, SPAN_NOTICE("Теперь, Ваша амбици&#255; выгл&#255;дит так: <b>[goal.description]</b><br>. \
+		Вы можете просмотреть её через кнопку <b>Notes</b>. Если Вы хотите изменить всю амбицию, \
 		то обратитесь к администратору."))
 		log_and_message_admins("обновил свою амбицию: [new_goal].")
 //[/INF]

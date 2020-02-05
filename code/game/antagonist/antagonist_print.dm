@@ -11,7 +11,7 @@
 		var/datum/goal/ambition = SSgoals.ambitions[P]
 		if(ambition)
 			text += "<br>Цель как антагониста:" //INF, WAS text += "<br>Their goals for today were..."
-			text += "<br><span class='notice'>[ambition.summarize()]</span>"
+			text += "<span class='notice'>[ambition.summarize()]</span>" //ING, WAS text += "<span class='notice'><br>[ambition.summarize()]</span>"
 		if(!global_objectives.len && P.objectives && P.objectives.len)
 			var/num = 1
 			for(var/datum/objective/O in P.objectives)
