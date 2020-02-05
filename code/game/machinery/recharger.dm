@@ -51,6 +51,7 @@
 		anchored = !anchored
 		to_chat(user, "You [anchored ? "attached" : "detached"] the recharger.")
 		playsound(loc, 'sound/items/Ratchet.ogg', 75, 1)
+	..()
 
 /obj/machinery/recharger/physical_attack_hand(mob/user)
 	if(charging)
