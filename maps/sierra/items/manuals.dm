@@ -125,7 +125,7 @@
 	info = {"
 	<tt><center><b><font color='red'>КОНФИДЕЦИАЛЬНО</font></b>
 	<h3>ИССЛЕДОВАТЕЛЬКИЙ ДЕПАРТАМЕНТ НАНОТРЕЙЗЕН</h3>
-	<img src = ntlogo.png>
+	<img src = bluentlogo.png>
 	</center>
 	<b>ОТ:</b> Swadian Barwuds<br>
 	<b>КОМУ:</b> Исследовательскому Директору NSV Sierra<br>
@@ -137,7 +137,7 @@
 	В РНД вы можете найти подсобку с подписью 'Aux Custodial Supplies'. Там находятся ваши новые тестовые материалы - 4 человека из пробирок с рядом отсутствующих высших нервными функций. Наш департамент по вопросам законодательства не обнаружил ничего нелегальнго в том, чтобы использовать их в медицинских опытов для более точных результатов.<br>
 	Они помещены в специально мешки с продвинутой системой поддержания жизни - их не нужно кормить, поить или выгуливать. Если вам нужны образцы - берите их.<br>
 	Сейчас не время для того, чтобы проводить долгие научные изыскания, РД. Мы ждем от вас впечатляющих результатов в ближайшем будущем.<br>
-	<i>S.B.</i></tt>
+	<font face="Verdana" color=black><font face="Times New Roman"><i>Swadian Barwuds</i></font></font></tt>
 	"}
 
 /obj/item/weapon/folder/envelope/captain
@@ -146,7 +146,7 @@
 /obj/item/weapon/folder/envelope/captain/Initialize()
 	. = ..()
 	var/memo = {"
-	<tt><center><b><font color='red'>СЕКРЕТНО - КОДОВОЕ СЛОВО: СЬЕРРА</font></b>
+	<tt><center><b><font color='red'>СЕКРЕТНО<br>КОДОВОЕ СЛОВО: СЬЕРРА</font></b>
 	<h3>ЦЕНТРАЛЬНОЕ КОМАНДОВАНИЕ</h3>
 	<img src = ntlogo.png>
 	</center>
@@ -172,7 +172,7 @@
 	Ни одно из государств не действует на этих территори&#255;х на официальном уровне. В случае обнаружени&#255; сигнала бедстви&#255; без наличи&#255; суден ТКК или ПСС в секторе, не игнорируйте их. Спасенный персонал представл&#255;ет исключительную дипломатическую ценность.<br>
 	Сообщайте о всех незарегистрированных или исключительных находках при перемещении в системах.<br>
 
-	<i>Swadian Barwuds</i></tt><br>
+	<font face="Verdana" color=black><font face="Times New Roman"><i>Swadian Barwuds</i></font></font></tt><br>
 	<i>This paper has been stamped with the stamp of Central Command.</i>
 	"}
 	new/obj/item/weapon/paper/important(src, memo, "Standing Orders")
@@ -191,7 +191,7 @@
 	icon = 'maps/sierra/icons/obj/uniques.dmi'
 	icon_state = "paper_words"
 	info = {"
-	<tt><center><b><font color='red'>СОВЕРШЕННО СЕКРЕТНО - КОДОВОЕ СЛОВО: ТЕНЬ СЬЕРРЫ</font></b>
+	<tt><center><b><font color='red'>СОВЕРШЕННО СЕКРЕТНО<br>КОДОВОЕ СЛОВО: ТЕНЬ</font></b>
 	<h3>ЦЕНТРАЛЬНОЕ КОМАНДОВАНИЕ</h3>
 	<img src = ntlogo.png>
 	</center>

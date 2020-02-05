@@ -423,6 +423,7 @@ var/bomb_set
 /obj/item/weapon/folder/envelope/nuke_instructions/Initialize()
 	. = ..()
 	var/obj/item/weapon/paper/R = new(src)
+/*[INF]. BS12 original
 	R.set_content("<center><img src=sollogo.png><br><br>\
 	<b>Warning: Classified<br>[GLOB.using_map.station_name] Self-Destruct System - Instructions</b></center><br><br>\
 	In the event of a Delta-level emergency, this document will guide you through the activation of the vessel's \
@@ -444,10 +445,34 @@ var/bomb_set
 	13) When ready, disable the safety switch.<br>\
 	14) Start the countdown.<br><br>\
 	This concludes the instructions.", "vessel self-destruct instructions")
-
+*/
+	R.set_content("\
+	<tt><center><b><font color='red'>КОНФИДЕЦИАЛЬНО</font></b><br>\
+	<h3>ДЕПАРТАМЕНТ ЗАЩИТЫ АКТИВОВ</h3>\
+	<img src = ntlogo.png>\
+	<br><b>[GLOB.using_map.station_name], Система Самоуничтожени&#255;</b></center><hr>\
+	В случае событий, повлекших повышение уровн&#255; угрозы до уровн&#255; Дельта, этот руководство поможет Вам активировать \
+	систему самоуничтожени&#255; судна с помощью стационарной боеголовки. Пожалуйста, читайте внимательно.<hr>\
+	1) (Опционально) Объ&#255;вите экипажу об активации процедуры самоуничтожени&#255; и начните эвакуацию.<br>\
+	2) Вызовите доверенного разумного с доступом к Keycard Authentication Device.<br>\
+	3) Пройдите к бункеру с боеголовкой. Он расположен в технических помещени&#255;х отсека Службы Безопасности.<br>\
+	4) Поднимите болты на шлюзе и пройдите в хранилище.<br>\
+	5) Требуетс</center>, чтобы двое (2) находились напротив Keycard Authentication Devices. На интерфейсе KAD выберите \
+	Grant Nuclear Authentication Code. Оба (2) должны провести картой по KAD в течении нескольких секунд.<br>\
+	6) KAD отобразит код активации на дисплее. Запомните его.<br>\
+	7) Вставьте диск &#255;дерной идентификации в терминал устройства самоуничтожени&#255;.<br>\
+	8) Введите код доступ в терминал.<br>\
+	9) Процесс аворизации завершен. Откройте два стелажа с &#255;дерными цилиндрами. Они вмонтированы в одну из стен помещени&#255;.<br>\
+	10) Вставьте шесть (6) цилиндров в гнёзда .<br>\
+	11) Активируйте гнёзда. Цилинды будут опущены к &#255;дру системы самоуничтожени&#255;.<br>\
+	12) Вернитесь к терминалу. Введите врем&#255;, по окончанию которого произойдет детонаци&#255;.<br>\
+	13) Когда вы закончите, переключите предохранитель&#255; (кнопка safety).<br>\
+	14) Начните обратный отсчет.<br><br>\
+	Конец руководства.</tt>", "vessel self-destruct instructions")
+//[/INF]
 	//stamp the paper
 	var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
-	stampoverlay.icon_state = "paper_stamp-hos"
+	stampoverlay.icon_state = "paper_stamp-cos"
 	R.stamped += /obj/item/weapon/stamp
 	R.overlays += stampoverlay
 	R.stamps += "<HR><i>This paper has been stamped as 'Top Secret'.</i>"
