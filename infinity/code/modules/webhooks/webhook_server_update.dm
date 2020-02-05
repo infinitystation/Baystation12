@@ -4,8 +4,11 @@
 // Data expects a "name" field containing the name of the updaters ckey being announced.
 /decl/webhook/server_update/get_message(var/list/data)
 	. = ..()
+	var/desc = "ѕроизводитс€ обновление сервера\n"
+	desc += "—ервер может быть недоступен дольше чем обычно"
+
 	.["embeds"] = list(list(
 		"title" = "ќбновление сервера",
-		"description" = "ѕроизводитс€ обновление сервера. —ервер может быть недоступен дольше чем обычно",
-		"color" = COLOR_WEBHOOK_DEFAULT
+		"description" = desc,
+		"color" = COLOR_WEBHOOK_DEV
 	))
