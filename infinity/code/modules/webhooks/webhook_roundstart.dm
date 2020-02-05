@@ -1,10 +1,7 @@
 /decl/webhook/roundstart/get_message(var/list/data)
 	. = ..()
-	var/desc = "Начало новой смены"
-	if(data && data["gamemode"])
-		desc += " c режимом [data["gamemode"]]"
-	if(data && data["players"])
-		desc += "; Количество игроков: [data["players"]]"
+	var/desc = "Режим: [SSticker.master_mode]\n"
+	desc += "Количество игроков: [LAZYLEN(GLOB.player_list)]"
 //	desc += "."
 
 	.["embeds"] = list(list(
