@@ -86,17 +86,25 @@
 			H.set_psi_rank(psi, psi_faculties[psi], take_larger = TRUE, defer_update = TRUE)
 	if(H.psi)
 		H.psi.update()
-		if(give_psionic_implant_on_join)
-			var/obj/item/weapon/implant/psi_control/imp = new
-			imp.implanted(H)
-			imp.forceMove(H)
-			imp.imp_in = H
-			imp.implanted = TRUE
-			var/obj/item/organ/external/affected = H.get_organ(BP_HEAD)
-			if(affected)
-				affected.implants += imp
-				imp.part = affected
-			to_chat(H, SPAN_DANGER("As a registered psionic, you are fitted with a psi-dampening control implant. Using psi-power while the implant is active will result in neural shocks and your violation being reported."))
+//[INF]
+		var/latency = 1
+		for(var/n in H.psi.ranks)
+			if(H.psi.ranks[n] > 1)
+				latency = 0
+				break
+		if(!latency)
+//[/INF]
+			if(give_psionic_implant_on_join)
+				var/obj/item/weapon/implant/psi_control/imp = new
+				imp.implanted(H)
+				imp.forceMove(H)
+				imp.imp_in = H
+				imp.implanted = TRUE
+				var/obj/item/organ/external/affected = H.get_organ(BP_HEAD)
+				if(affected)
+					affected.implants += imp
+					imp.part = affected
+				to_chat(H, SPAN_DANGER("As a registered psionic, you are fitted with a psi-dampening control implant. Using psi-power while the implant is active will result in neural shocks and your violation being reported."))
 
 	var/decl/hierarchy/outfit/outfit = get_outfit(H, alt_title, branch, grade)
 	if(outfit) . = outfit.equip(H, title, alt_title)
