@@ -1,13 +1,13 @@
 /datum/map/make_maint_all_access(var/radstorm = 0)
 	maint_all_access = 1
 	if(radstorm)
-		priority_announcement.Announce("Требования к доступу у шлюзов в технические тоннели временнно отключены. Экранированные отсеки - технические тоннели, челноки, камеры заключения, дормиторий.", "Внимание!")
+		priority_announcement.Announce("Е‡Д‘ДєГЎГ®ГўЕ•Г­ДЌЛ™ Д™ Г¤Г®Е„Е€ГіДЏГі Гі Е™Г«ЕЈГ§Г®Гў Гў Е€ДєЕ‘Г­ДЌГ·ДєЕ„Д™ДЌДє Е€Г®Г­Г­ДєГ«ДЌ ГўД‘ДєД›ДєГ­Г­Г­Г® Г®Е€Д™Г«ЕЈГ·ДєГ­Е±. ГќД™Д‘Е•Г­ДЌД‘Г®ГўЕ•Г­Г­Е±Дє Г®Е€Е„ДєД™ДЌ - Е€ДєЕ‘Г­ДЌГ·ДєЕ„Д™ДЌДє Е€Г®Г­Г­ДєГ«ДЌ, Г·ДєГ«Г­Г®Д™ДЌ, Д™Е•Д›ДєД‘Е± Г§Е•Д™Г«ЕЈГ·ДєГ­ДЌЛ™, Г¤Г®Д‘Д›ДЌЕ€Г®Д‘ДЌГ©.", "Г‚Г­ДЌД›Е•Г­ДЌДє!")
 	else
-		priority_announcement.Announce("Требования к доступу у шлюзов в технические тоннели временнно отключены.", "Внимание!")
+		priority_announcement.Announce("Е‡Д‘ДєГЎГ®ГўЕ•Г­ДЌЛ™ Д™ Г¤Г®Е„Е€ГіДЏГі Гі Е™Г«ЕЈГ§Г®Гў Гў Е€ДєЕ‘Г­ДЌГ·ДєЕ„Д™ДЌДє Е€Г®Г­Г­ДєГ«ДЌ ГўД‘ДєД›ДєГ­Г­Г­Г® Г®Е€Д™Г«ЕЈГ·ДєГ­Е±.", "Г‚Г­ДЌД›Е•Г­ДЌДє!")
 
 /datum/map/revoke_maint_all_access(var/radstorm = 0)
 	maint_all_access = 0
-	priority_announcement.Announce("Требования к доступу у шлюзов в технические тоннели восстановлены.", "Внимание!")
+	priority_announcement.Announce("Е‡Д‘ДєГЎГ®ГўЕ•Г­ДЌЛ™ Д™ Г¤Г®Е„Е€ГіДЏГі Гі Е™Г«ЕЈГ§Г®Гў Гў Е€ДєЕ‘Г­ДЌГ·ДєЕ„Д™ДЌДє Е€Г®Г­Г­ДєГ«ДЌ ГўГ®Е„Е„Е€Е•Г­Г®ГўГ«ДєГ­Е±.", "Г‚Г­ДЌД›Е•Г­ДЌДє!")
 
 /datum/map/proc/toggle_crew_sensors(var/new_mode = 0, var/force = FALSE)
 	if(ntnet_global && ntnet_global.check_function(NTNET_SYSTEMCONTROL))	// No network - no remote control
@@ -25,8 +25,8 @@
 
 /datum/map/sierra
 	high_secure_areas = list(
-		"First Deck - Security - Armory",
-		"First Deck - Security - Armory Lobby",
+	//	"First Deck - Security - Armory",			WikiPedia's
+	//	"First Deck - Security - Armory Lobby",		Lie
 	//	"First Deck - Vault",
 	//	"AI Chamber",
 		"Second Deck - AI Upload",
