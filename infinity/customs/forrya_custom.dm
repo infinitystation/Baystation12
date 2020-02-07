@@ -389,3 +389,12 @@
 
 /obj/item/clothing/glasses/meson/prescription/tajvisor/hybrid/custom/disrupts_psionics()
 	return src
+
+/obj/item/clothing/accessory/amulet/stronk/frost
+	name = "frosty averter"
+	desc = "The amulet of Tajara, which looks old enough, as if it has passed through the ages. The runes on the amulet are etched with acid, it is also covered with silvery metal and seems even covered with frost. It looks very cold, and it seems that touching it can burn with frost."
+	icon_state = "amuletf"
+
+/obj/item/clothing/accessory/amulet/stronk/frost/disrupts_psionics()
+	playsound(src.loc, 'sound/items/geiger.ogg', 2, 1, -4)
+	return src
