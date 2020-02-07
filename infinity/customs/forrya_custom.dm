@@ -33,7 +33,8 @@
 		/obj/item/weapon/crowbar/custom_multishowel,
 		/obj/item/clothing/accessory/storage/drop_pouches/custom_forrya,
 		/obj/item/clothing/mask/gas/alt/custom_forrya,
-		/obj/item/clothing/glasses/meson/prescription/tajvisor/hybrid/custom)
+		/obj/item/clothing/glasses/meson/prescription/tajvisor/hybrid/custom,
+		/obj/item/clothing/accessory/amulet/stronk/frost)
 	item_icons = list(
 		slot_back_str = CUSTOM_ITEM_MOB)
 
