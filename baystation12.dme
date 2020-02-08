@@ -3246,6 +3246,8 @@
 #include "infinity\code\game\sound.dm"
 #include "infinity\code\game\antagonists\xenomorph.dm"
 #include "infinity\code\game\gamemodes\objective.dm"
+#include "infinity\code\game\gamemodes\cult\cult_items.dm"
+#include "infinity\code\game\gamemodes\cult\runes.dm"
 #include "infinity\code\game\gamemodes\malfunction\newmalf_ability_trees\infinity.dm"
 #include "infinity\code\game\jobs\acccess_datum.dm"
 #include "infinity\code\game\jobs\job\job.dm"
