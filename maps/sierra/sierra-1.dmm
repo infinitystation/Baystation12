@@ -6187,6 +6187,10 @@
 	dir = 6
 	},
 /obj/effect/floor_decal/corner/orange/bordercorner2,
+/obj/effect/floor_decal/corner/orange/bordercorner2{
+	icon_state = "bordercolorcorner2";
+	dir = 6
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
 "kz" = (
@@ -15077,6 +15081,7 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 4;
+	frequency = 1380;
 	id_tag = "rescue_shuttle_dock_pump"
 	},
 /obj/structure/catwalk,
@@ -15716,6 +15721,7 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
+	frequency = 1380;
 	id_tag = "rescue_shuttle_dock_pump"
 	},
 /obj/item/device/radio/intercom{

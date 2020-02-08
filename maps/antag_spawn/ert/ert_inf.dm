@@ -46,6 +46,7 @@
 	icon_state = "yellow"
 	requires_power = 0
 	dynamic_lighting = 1
+	req_access = list(access_cent_general)
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 
 /area/map_template/rescue_base/base
