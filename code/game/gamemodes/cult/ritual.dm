@@ -149,7 +149,8 @@ var/list/Tier1Runes = list(
 	/mob/proc/emp_imbue,
 	/mob/proc/cult_communicate,
 	/mob/proc/obscure,
-	/mob/proc/reveal
+	/mob/proc/reveal,
+	/mob/proc/burn_imbue //inf
 	)
 
 var/list/Tier2Runes = list(
@@ -157,7 +158,11 @@ var/list/Tier2Runes = list(
 	/mob/proc/offering_rune,
 	/mob/proc/drain_rune,
 	/mob/proc/emp_rune,
-	/mob/proc/massdefile_rune
+	/mob/proc/massdefile_rune,
+	/mob/proc/wrath_imbue, //inf
+	/mob/proc/hellbucket_rune, //inf
+	/mob/proc/hellhunter_rune, //inf
+	/mob/proc/hellstone_rune //inf
 	)
 
 var/list/Tier3Runes = list(
