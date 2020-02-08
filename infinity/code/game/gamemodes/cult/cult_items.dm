@@ -61,7 +61,8 @@
 /obj/item/clothing/glasses/hellgoggles
 	name = "hell googles"
 	desc = "Glasses that look equally funny and frightening."
-	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(slot_glasses_str = 'infinity/icons/mob/onmob/onmob_eyes.dmi')
+	icon = 'infinity/icons/obj/clothing/obj_eyes.dmi'
 	icon_state = "hg"
 	item_state = "hg"
 	off_state = "hg_off"
