@@ -66,7 +66,6 @@
 	icon_state = "hg"
 	item_state = "hg"
 	off_state = "hg_off"
-	item_icons = list(slot_glasses_str = CUSTOM_ITEM_MOB)
 	darkness_view = 5
 	action_button_name = "Toggle Goggles"
 	toggleable = TRUE
