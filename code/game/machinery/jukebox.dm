@@ -197,7 +197,7 @@ datum/track/proc/GetTrack()
 			return
 
 		if(user.drop_item())
-			visible_message("<span class='notice'>[usr] insert \the [tape] in to \the [src].</span>")
+			visible_message("<span class='notice'>[usr] insert \a [tape] into \the [src].</span>")
 			D.forceMove(src)
 			tape = D
 			tracks += tape.track

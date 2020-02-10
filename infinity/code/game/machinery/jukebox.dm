@@ -20,5 +20,5 @@
 			tape.dropInto(loc)
 
 		tape = null
-		visible_message(SPAN_NOTICE("[usr] eject \the [tape] from \the [src]."))
+		visible_message(SPAN_NOTICE("[usr] eject \a [tape] from \the [src]."))
 		verbs -= /obj/machinery/media/jukebox/verb/eject
