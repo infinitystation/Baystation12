@@ -13300,6 +13300,7 @@
 	name = "Hangar Deck Hallway Shutters";
 	opacity = 0
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/storage/primary)
 "vj" = (
