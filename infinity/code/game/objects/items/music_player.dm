@@ -1,4 +1,4 @@
-GLOBAL_LIST_EMPTY(mp_list)
+GLOBAL_LIST_EMPTY(music_players)
 
 #define PANEL_CLOSED 0
 #define PANEL_UNSCREWED 1
@@ -55,8 +55,8 @@ GLOBAL_LIST_EMPTY(mp_list)
 
 	sound_id = "[type]_[sequential_id(type)]"
 	serial_number = "[rand(1,999)]"
-	desc += "\nSerial number \"#[serial_number]\" is generated on the cover."
-	GLOB.mp_list += src
+	desc += "\nYou see \"#[serial_number]\" on the cover."
+	GLOB.music_players += src
 
 	message_admins("MUSIC PLAYER: <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> has been created.")
 
@@ -72,17 +72,14 @@ GLOBAL_LIST_EMPTY(mp_list)
 		QDEL_NULL(tape)
 
 	message_admins("MUSIC PLAYER: #[serial_number] is deleted.")
-	GLOB.mp_list -= src
+	GLOB.music_players -= src
 	. = ..()
 
 /obj/item/music_player/examine(mob/user)
 	. = ..(user)
 	if(.)
 		if(tape)
-			if(tape.track)
-				to_chat(user, SPAN_NOTICE("You can see \a [tape] inside it. It's labeled as \"[tape.track.title]\"."))
-			else
-				to_chat(user, SPAN_NOTICE("You can see \a [tape] inside it."))
+			to_chat(user, SPAN_NOTICE("You can see \a [tape] inside it."))
 
 		switch(panel)
 			if(PANEL_OPENED)
@@ -349,8 +346,8 @@ GLOBAL_LIST_EMPTY(mp_list)
 	playsound(src, GLOB.machinery_exposed_sound[1], 20, 1)
 	if(user)
 		visible_message(
-			SPAN_NOTICE("[user] eject \the [tape]."),
-			SPAN_NOTICE("You eject \the [tape]."))
+			SPAN_NOTICE("[user] eject \a [tape] from \the [src]."),
+			SPAN_NOTICE("You eject \a [tape] from \the [src]."))
 	if(user)
 		user.put_in_hands(tape)
 	else
@@ -405,7 +402,7 @@ GLOBAL_LIST_EMPTY(mp_list)
 		return
 
 	if(!tape.CanPlay())
-		src.visible_message(SPAN_WARNING("The [tape] is unusable to play."), 1)
+		src.visible_message(SPAN_WARNING("\The [tape] is unusable to play."), 1)
 		return
 
 	if(mode == PLAYER_STATE_PAUSE && sound_token)

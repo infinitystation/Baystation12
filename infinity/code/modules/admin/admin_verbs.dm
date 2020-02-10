@@ -157,13 +157,13 @@
 
 	var/list/dat = list("<div align='center'><h1>Music Player Control Panel</h1><br>")
 
-	dat += "<b>Current musuc players in world ([GLOB.mp_list.len]):</b></div><br>"
+	dat += "<b>Current musuc players in world ([GLOB.music_players.len]):</b></div><br>"
 	dat += "<hr>"
 
-	if(GLOB.mp_list.len == 0)
+	if(GLOB.music_players.len == 0)
 		dat += "<div class='statusDisplay'><center>At the moment there are no devices in this world session.</center></div>"
 	else
-		for(var/a in GLOB.mp_list)
+		for(var/a in GLOB.music_players)
 			var/obj/item/music_player/p = a
 			dat += "<div class='statusDisplay'>"
 			dat += "Music Player #[p.serial_number] : <a href='?_src_=holder;mp_play=\ref[p]'>[p.mode ? "<font color=cc5555>Stop</font>" : "<font color=55cc55>Play</font>"]</a> | "

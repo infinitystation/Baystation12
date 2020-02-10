@@ -196,12 +196,12 @@ datum/track/proc/GetTrack()
 			to_chat(user, "<span class='warning'>\The [D] is ruined, you can't use it.</span>")
 			return
 
-		visible_message("<span class='notice'>[usr] insert \the [tape] in to \the [src].</span>")
-		user.drop_item()
-		D.forceMove(src)
-		tape = D
-		tracks += tape.track
-		verbs += /obj/machinery/media/jukebox/verb/eject
+		if(user.drop_item())
+			visible_message("<span class='notice'>[usr] insert \the [tape] in to \the [src].</span>")
+			D.forceMove(src)
+			tape = D
+			tracks += tape.track
+			verbs += /obj/machinery/media/jukebox/verb/eject
 		return
 	// INF@CODE - END
 
