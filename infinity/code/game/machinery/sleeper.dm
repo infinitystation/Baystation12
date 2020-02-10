@@ -1,14 +1,14 @@
-/obj/machinery/sleeper
-	var/base_icon = "sleeper"
-
 //Survival/Stasis sleepers
 /obj/machinery/sleeper/survival_pod
 	name = "stasis pod"
 	desc = "A comfortable pod for stasing of wounded occupants. Similar pods were on first humanity's colonial ships. Now days, you can see them in EMT centers with stasis setting from 20x to 22x."
+	icon = 'infinity/icons/obj/Cryogenic2.dmi'
 	icon_state = "stasis_0"
-	base_icon = "stasis"
 	stasis = 20
 	active_power_usage = 55000
+
+/obj/machinery/sleeper/survival_pod/on_update_icon()
+	icon_state = "stasis_[occupant ? "1" : "0"]"
 
 /obj/machinery/sleeper/survival_pod/ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.outside_state)
 	var/data[0]

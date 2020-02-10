@@ -75,7 +75,7 @@
 		occupant.SetStasis(stasis)
 
 /obj/machinery/sleeper/on_update_icon()
-	icon_state = "[base_icon]_[occupant ? "1" : "0"]"
+	icon_state = "sleeper_[occupant ? "1" : "0"]"
 
 /obj/machinery/sleeper/DefaultTopicState()
 	return GLOB.outside_state
