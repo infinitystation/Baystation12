@@ -6,7 +6,7 @@
 /obj/item/weapon/paper/talisman/wrath/afterattack(var/mob/living/M, var/mob/living/user)
 	if(!iscultist(user))
 		return
-	user.say("Cracks in the wrath of my God!!")
+	user.say("Ощути гнев моего Бога!")
 	var/obj/item/weapon/nullrod/nrod = locate() in M
 	if(nrod)
 		user.visible_message("<span class='danger'>\The [user] invokes \the [src] at [M], but they are unaffected.</span>", "<span class='danger'>You invoke \the [src] at [M], but they are unaffected.</span>")
@@ -59,7 +59,7 @@
 	item_state = "electronic"
 
 /obj/item/clothing/glasses/hellgoggles
-	name = "hell googles"
+	name = "hell goggles"
 	desc = "Glasses that look equally funny and frightening."
 	item_icons = list(slot_glasses_str = 'infinity/icons/mob/onmob/onmob_eyes.dmi')
 	icon = 'infinity/icons/obj/clothing/obj_eyes.dmi'
@@ -83,9 +83,9 @@
 	desc = "A strange dagger, the blade of which is always covered with a thick dark haze."
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "render"
-	force = 10
+	force = 6
 	armor_penetration = 100
-	throwforce = 20
+	throwforce = 13
 	throw_speed = 1
 	throw_range = 5
 	w_class = ITEM_SIZE_NORMAL
