@@ -78,18 +78,18 @@ var/list/department_radio_keys = list(
 	  /*
 	  //kinda localization -- rastaf0
 	  //same keys as above, but on russian keyboard layout. This file uses cp1251 as encoding.
-	  ":Р“Р„" = "right ear",	".Р“Р„" = "right ear",
-	  ":Р“В¤" = "left ear",	".Р“В¤" = "left ear",
-	  ":Р“С‘" = "intercom",	".Р“С‘" = "intercom",
-	  ":Р“В°" = "department",	".Р“В°" = "department",
-	  ":Р“В±" = "Command",		".Р“В±" = "Command",
-	  ":Р“Р†" = "Science",		".Р“Р†" = "Science",
-	  ":Р“С" = "Medical",		".Р“С" = "Medical",
-	  ":Р“С–" = "Engineering",	".Р“С–" = "Engineering",
-	  ":Р“В»" = "Security",	".Р“В»" = "Security",
-	  ":Р“В¶" = "whisper",		".Р“В¶" = "whisper",
-	  ":Р“Тђ" = "Mercenary",	".Р“Тђ" = "Mercenary",
-	  ":Р“В©" = "Supply",		".Р“В©" = "Supply",
+	  ":К" = "right ear",	".К" = "right ear",
+	  ":Д" = "left ear",	".Д" = "left ear",
+	  ":Ш" = "intercom",	".Ш" = "intercom",
+	  ":Р" = "department",	".Р" = "department",
+	  ":С" = "Command",		".С" = "Command",
+	  ":Т" = "Science",		".Т" = "Science",
+	  ":Ь" = "Medical",		".Ь" = "Medical",
+	  ":У" = "Engineering",	".У" = "Engineering",
+	  ":Ы" = "Security",	".Ы" = "Security",
+	  ":Ц" = "whisper",		".Ц" = "whisper",
+	  ":Е" = "Mercenary",	".Е" = "Mercenary",
+	  ":Г" = "Supply",		".Г" = "Supply",
 	  */
 )
 
@@ -184,7 +184,6 @@ proc/get_radio_key_from_channel(var/channel)
 	if(!message)
 		return
 
-	message = replacetext(message, "&#255;", "__:Я:_") // Никому же в голову не придет такое написать? ~bear1ake@inf-dev
 	message = html_decode(message)
 
 	var/end_char = copytext(message, lentext(message), lentext(message) + 1)
@@ -192,7 +191,6 @@ proc/get_radio_key_from_channel(var/channel)
 		message += "."
 
 	message = html_encode(message)
-	message = replacetext(message, "__:Я:_", "&#255;")
 	return message
 
 /mob/living/say(var/message, var/datum/language/speaking = null, var/verb="says", var/alt_name="", whispering)
@@ -206,7 +204,6 @@ proc/get_radio_key_from_channel(var/channel)
 			return say_dead(message)
 		return
 
-	message = sanitize_a0(message)
 
 	var/prefix = copytext(message,1,2)
 	if(prefix == get_prefix_key(/decl/prefix/custom_emote))

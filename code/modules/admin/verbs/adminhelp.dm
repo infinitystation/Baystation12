@@ -84,7 +84,6 @@ var/list/adminhelp_ignored_words = list("unknown","the","a","an","of","monkey","
 	if(!msg)
 		return
 	msg = sanitize(msg)
-	msg = sanitize_a0(msg)
 	if(!msg)
 		return
 	var/original_msg = msg

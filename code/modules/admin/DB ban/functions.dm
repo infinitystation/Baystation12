@@ -113,7 +113,6 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 
 	var/reason_public = reason
 	reason = sql_sanitize_text(reason)
-	reason = sanitize_a0(reason)
 
 //[INF]
 	if(!computerid)
@@ -241,7 +240,6 @@ datum/admins/proc/DB_ban_edit(var/banid = null, var/param = null)
 		if("reason")
 			if(!value)
 				value = sanitize(input("Insert the new reason for [pckey]'s ban", "New Reason", "[reason]", null) as null|text)
-				value = sanitize_a0(value)
 				value = sql_sanitize_text(value)
 				if(!value)
 					to_chat(usr, "Cancelled")

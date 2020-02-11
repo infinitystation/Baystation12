@@ -2,32 +2,32 @@
 	autohiss_basic_map = list(
 			"s" = list("ss", "sss", "ssss"),
 
-			"ñ" = list("ñ", "ññ", "ñññ"),
+			"Ñ" = list("Ñ", "ÑÑ", "ÑÑÑ"),
 
-			"Ñ" = list("Ñ", "Ññ", "Ñññ")
+			"Ğ¡" = list("Ğ¡", "Ğ¡Ñ", "Ğ¡ÑÑ")
 		)
 	autohiss_extra_map = list(
 			"x" = list("ks", "kss", "ksss"),
 
-			"ê" = list("õ"),
+			"Ğº" = list("Ñ…"),
 
-			"ã" = list("õ"),
+			"Ğ³" = list("Ñ…"),
 
-			"ç" = list("ñ", "ññ", "ñññ"),
+			"Ğ·" = list("Ñ", "ÑÑ", "ÑÑÑ"),
 
-			"÷" = list("ù", "ùù", "ùùù"),
+			"Ñ‡" = list("Ñ‰", "Ñ‰Ñ‰", "Ñ‰Ñ‰Ñ‰"),
 
-			"æ" = list("ø", "øø", "øøø"),
+			"Ğ¶" = list("Ñˆ", "ÑˆÑˆ", "ÑˆÑˆÑˆ"),
 
-			"Ê" = list("Õ"),
+			"Ğš" = list("Ğ¥"),
 
-			"Ã" = list("Õ"),
+			"Ğ“" = list("Ğ¥"),
 
-			"Ç" = list("Ñ", "Ññ", "Ñññ"),
+			"Ğ—" = list("Ğ¡", "Ğ¡Ñ", "Ğ¡ÑÑ"),
 
-			"×" = list("Ù", "Ùù", "Ùùù"),
+			"Ğ§" = list("Ğ©", "Ğ©Ñ‰", "Ğ©Ñ‰Ñ‰"),
 
-			"Æ" = list("Ø", "Øø", "Øøø")
+			"Ğ–" = list("Ğ¨", "Ğ¨Ñˆ", "Ğ¨ÑˆÑˆ")
 
 		)
 	autohiss_exempt = list(
@@ -39,25 +39,25 @@
 	autohiss_basic_map = list(
 			"r" = list("rr", "rrr", "rrrr"),
 
-			"ğ" = list("ğğ", "ğğğ", "ğğğğ"),
+			"Ñ€" = list("Ñ€Ñ€", "Ñ€Ñ€Ñ€", "Ñ€Ñ€Ñ€Ñ€"),
 
-			"Ğ" = list("Ğğ", "Ğğğ", "Ğğğğ")
+			"Ğ " = list("Ğ Ñ€", "Ğ Ñ€Ñ€", "Ğ Ñ€Ñ€Ñ€")
 		)
 	autohiss_exempt = list(LANGUAGE_SIIK_MAAS)
 
 /datum/species/resomi
 	autohiss_basic_map = list(
-			"ç" = list("ñ"),
+			"Ğ·" = list("Ñ"),
 
-			"Ç" = list("Ñ")
+			"Ğ—" = list("Ğ¡")
 		)
 	autohiss_extra_map = list(
-			"÷" = list("ù"),
+			"Ñ‡" = list("Ñ‰"),
 
-			"æ" = list("ø"),
+			"Ğ¶" = list("Ñˆ"),
 
-			"×" = list("Ù"),
+			"Ğ§" = list("Ğ©"),
 
-			"Æ" = list("Ø")
+			"Ğ–" = list("Ğ¨")
 		)
 	autohiss_exempt = list(LANGUAGE_RESOMI)

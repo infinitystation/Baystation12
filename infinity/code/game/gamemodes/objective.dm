@@ -2,7 +2,7 @@
 	explanation_text = "Уничтожьте объект с помощью &#255;дерного зар&#255;да."
 
 /datum/objective/nuclear/kidnap
-	var/list/roles = list(/datum/job/captain, /datum/job/rd, /datum/job/scientist, /datum/job/engineer)
+	var/list/roles = list(/datum/job/captain, /datum/job/rd, /datum/job/scientist, /datum/job/chief_engineer, /datum/job/lawyer)
 
 /datum/objective/nuclear/kidnap/proc/choose_target()
 	var/list/possible_targets = list()
@@ -22,7 +22,7 @@
 		target = pick(possible_targets)
 
 	if(target?.current)
-		explanation_text = "Наниматель хочет, чтобы мы об&#255;зательно похители [target.current.real_name] [target.assigned_role]. Цель нужна живой."
+		explanation_text = "Наниматель хочет, чтобы мы похитили [target.current.real_name] [target.assigned_role]. Цель должна быть живой."
 	else
 		explanation_text = "Захвать по крайней мере одного высокопоставленного или обладающего ценными данными члена экипажа живым. Приоритет - ученые, главы, инженеры."
 	return target

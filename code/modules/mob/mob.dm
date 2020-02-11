@@ -395,9 +395,9 @@
 	if (flavor_text && flavor_text != "")
 		var/msg = replacetext(flavor_text, "\n", " ")
 		if(lentext(msg) <= 40)
-			return "<span class='notice'>[sanitize_u2a(msg)]</span>"
+			return "<span class='notice'>[msg]</span>"
 		else
-			return "<span class='notice'>[sanitize_u2a(copytext_preserve_html(msg, 1, 37))]... <a href='byond://?src=\ref[src];flavor_more=1'>More...</a></span>"
+			return "<span class='notice'>[msg]... <a href='byond://?src=\ref[src];flavor_more=1'>More...</a></span>"
 
 /client/verb/changes()
 	set name = "Baystation12 Changelog"

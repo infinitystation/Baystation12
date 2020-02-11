@@ -43,7 +43,7 @@
 	ask_verb = "насвистывает"
 	exclaim_verb = "просвистывает"
 	shorthand = "PSCH"
-	key = list("")//so shit but list it is necessary that key.length() = 1
+	key = list("")//inf
 	flags = BAD_SPEAKER
 	partial_understanding = list(LANGUAGE_RESOMI = 30,LANGUAGE_PRESOMI = 15)
 
@@ -67,7 +67,7 @@
 	ask_verb = "вопросительно шипит"
 	exclaim_verb = "прерывисто шипит"
 	shorthand = "PUT"
-	key = list("")
+	key = list("")//inf
 	flags = BAD_SPEAKER
 	partial_understanding = list(LANGUAGE_UNATHI_SINTA = 25, LANGUAGE_UNATHI_YEOSA = 25, LANGUAGE_PUNATI = 15)
 
@@ -80,7 +80,7 @@
 	ask_verb = "воет"
 	exclaim_verb = "навывает"
 	shorthand = "PSK"
-	key = list("")
+	key = list("")//inf
 	flags = BAD_SPEAKER
 	partial_understanding = list(LANGUAGE_SKRELLIAN = 20, LANGUAGE_PSKRELLIAN = 10)
 

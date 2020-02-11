@@ -7,7 +7,7 @@ proc/corrupt_text(t)
 			if(prob(10))
 				letter = ""
 			for(var/j = 1, j <= rand(0, 2), j++)
-				letter += pick("#","@","*","&","%","$", "!","¹","?","*","*","*","*","*","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z")
+				letter += pick("#","@","*","&","%","$", "!","â„–","?","*","*","*","*","*","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z")
 
 		returntext += letter
 
@@ -73,7 +73,7 @@ proc/corrupt_name(n, s)
 	return returnname
 
 proc/fix_html(var/t)
-	return replacetext(t, "ÿ", "&#1103;")
+	return replacetext(t, "Ñ", "&#1103;")
 
 proc/sanitize_irc(t)
 	return replacetext(t, "@", "")

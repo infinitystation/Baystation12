@@ -253,11 +253,11 @@ proc/slur(phrase)
 			if(lowertext(newletter)=="a")	newletter="ah"
 			if(lowertext(newletter)=="c")	newletter="k"
 
-			if(lowertext(newletter)=="о")	newletter="у"
-			if(lowertext(newletter)=="с")	newletter="з"
-			if(lowertext(newletter)=="а")	newletter="ах"
-			if(lowertext(newletter)=="с")	newletter="к"
-			if(lowertext(newletter)=="ч")	newletter="з"
+			if(lowertext(newletter)=="Рѕ")	newletter="Сѓ"
+			if(lowertext(newletter)=="СЃ")	newletter="Р·"
+			if(lowertext(newletter)=="Р°")	newletter="Р°С…"
+			if(lowertext(newletter)=="СЃ")	newletter="Рє"
+			if(lowertext(newletter)=="С‡")	newletter="Р·"
 		switch(rand(1,15))
 			if(1,3,5,8)	newletter="[lowertext(newletter)]"
 			if(2,4,6,15)	newletter="[uppertext(newletter)]"
@@ -266,7 +266,7 @@ proc/slur(phrase)
 			//if(11,12)	newletter="<big>[newletter]</big>"
 			//if(13)	newletter="<small>[newletter]</small>"
 		newphrase+="[newletter]";counter-=1
-	return sanitize_a0(newphrase)
+	return newphrase
 
 /proc/stutter(n)
 	var/te = html_decode(n)
@@ -278,7 +278,7 @@ proc/slur(phrase)
 		var/n_letter = copytext(te, p, p + 1)//copies text from a certain distance. In this case, only one letter at a time.
 		var/list/letters_list = list(
 			"b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z",
-			"б","с","д","ф","г","ч","ж","к","л","т","н","р","т","в","х","у","з")
+			"Р±","СЃ","Рґ","С„","Рі","С‡","Р¶","Рє","Р»","С‚","РЅ","СЂ","С‚","РІ","С…","Сѓ","Р·")
 		if (prob(80) && (ckey(n_letter) in letters_list))
 			if (prob(10))
 				n_letter = text("[n_letter]-[n_letter]-[n_letter]-[n_letter]")//replaces the current letter with this instead.
@@ -292,7 +292,7 @@ proc/slur(phrase)
 						n_letter = text("[n_letter]-[n_letter]")
 		t = text("[t][n_letter]")//since the above is ran through for each letter, the text just adds up back to the original word.
 		p++//for each letter p is increased to find where the next letter will be.
-	return sanitize_a0(t)
+	return t
 
 
 proc/Gibberish(t, p)//t is the inputted message, and any value higher than 70 for p will cause letters to be replaced instead of added

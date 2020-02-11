@@ -5,7 +5,7 @@
 	icon = 'icons/mob/human.dmi'
 	icon_state = "body_m_s"
 //[INF]
-	throw_range = 3 //NO TILSON //:KREYGASM:
+	throw_range = 3 //NO, TILSON
 	throw_speed = 0.5
 //[/INF]
 	var/list/hud_list[10]

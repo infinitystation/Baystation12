@@ -346,6 +346,16 @@
 			if(MALE)  msg += "Он [pose]\n"
 			if(FEMALE)msg += "Она [pose]\n"
 			else      msg += "Оно [pose]\n"
+	//[BAY]:
+		/*
+		if(gender == MALE) //yes-yes. #INFINITY
+			msg += "Он [pose]\n"
+		else if(gender == FEMALE)
+			msg += "Она [pose]\n"
+		else
+			msg += "Оно [pose]\n"
+		*/
+	//[/BAY]
 //[/INF]
 	var/show_descs = show_descriptors_to(user, T)
 	if(show_descs)

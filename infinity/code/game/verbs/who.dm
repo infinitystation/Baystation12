@@ -25,7 +25,7 @@
 			if(isghost(C.mob))
 				entry += " - <font color='gray'><b>Наблюдает</b></font> как <b>[C.mob.real_name]</b>"
 			else if(isliving(C.mob))
-				entry += " - <font color='green'><b>Играет</b></font> как <b>[C.mob.real_name]</b>"
+				entry += " - <font color='green'><b>Играет</b></font> за <b>[C.mob.real_name]</b>"
 
 			switch(C.mob.stat)
 				if(UNCONSCIOUS)
@@ -66,7 +66,7 @@
 					living_antags++
 
 			if(C.is_afk())
-				entry += " - <b>АФК: [C.inactivity2text()]</b>"
+				entry += " - <b>AFK: [C.inactivity2text()]</b>"
 			entry += " (<A HREF='?_src_=holder;adminmoreinfo=\ref[C.mob]'>?</A>)"
 			Lines += entry
 	else

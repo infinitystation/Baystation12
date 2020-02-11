@@ -308,7 +308,6 @@
 			heardword = copytext(heardword,2)
 		if(copytext(heardword,-1) in punctuation)
 			heardword = copytext(heardword,1,lentext(heardword))
-		sanitize_a0(heardword) //inf
 		heard = "<span class = 'game_say'>...You hear something about...[heardword]</span>"
 
 	else

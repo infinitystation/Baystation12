@@ -41,10 +41,10 @@
 	var/dat = "<B><HR><FONT size=3>INTERACTIONS - [H.partner]</FONT></B><BR><HR>"
 	var/ya = "&#1103;"
 
-	dat +=  {"• <A href='?src=\ref[src];interaction=bow'>Отвесить поклон.</A><BR>"}
+	dat +=  {"вЂў <A href='?src=\ref[src];interaction=bow'>РћС‚РІРµСЃРёС‚СЊ РїРѕРєР»РѕРЅ.</A><BR>"}
 	if (hashands)
-		dat +=  {"<font size=3><B>Руки:</B></font><BR>"}
-		dat +=  {"• <A href='?src=\ref[src];interaction=bow_affably'>Приветливо кивнуть.</A><BR>"}
+		dat +=  {"<font size=3><B>Р СѓРєРё:</B></font><BR>"}
+		dat +=  {"вЂў <A href='?src=\ref[src];interaction=bow_affably'>РџСЂРёРІРµС‚Р»РёРІРѕ РєРёРІРЅСѓС‚СЊ.</A><BR>"}
 		if (Adjacent(P))
 			dat +=  {"• <A href='?src=\ref[src];interaction=handshake'>Пожать руку.</A><BR>"}
 			dat +=  {"• <A href='?src=\ref[src];interaction=hug'>Обнимашки!</A><BR>"}

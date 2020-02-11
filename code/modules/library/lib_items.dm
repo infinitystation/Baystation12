@@ -173,8 +173,8 @@
 	if(src.dat)
 		user << browse(dat, "window=book;size=1000x550")
 		user.visible_message("[user] opens a book titled \"[src.title]\" and begins reading intently.")
-		message_admins("[key_name_admin(user)]<A HREF='?_src_=holder;adminmoreinfo=\ref[user]'>?</A> (<A HREF='?_src_=holder;adminplayerobservefollow=\ref[user]'>FLW</A>) прочитал(а) книгу [name]/[title].")
-		log_game("[user.ckey]/[user.real_name] прочитал(а) книгу [name]/[title].")
+		message_admins("[key_name_admin(user)]<A HREF='?_src_=holder;adminmoreinfo=\ref[user]'>?</A> (<A HREF='?_src_=holder;adminplayerobservefollow=\ref[user]'>FLW</A>) РїСЂРѕС‡РёС‚Р°Р»(Р°) РєРЅРёРіСѓ [name]/[title].")
+		log_game("[user.ckey]/[user.real_name] РїСЂРѕС‡РёС‚Р°Р»(Р°) РєРЅРёРіСѓ [name]/[title].")
 		onclose(user, "book")
 		playsound(src.loc, pick('infinity/sound/items/BOOK_Turn_Page_1.ogg',\
 			'infinity/sound/items/BOOK_Turn_Page_2.ogg',\

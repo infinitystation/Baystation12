@@ -308,13 +308,11 @@
 				minutes = CMinutes + mins
 				duration = GetExp(minutes)
 				reason = sanitize(input(usr,"Reason?","reason",reason2) as text|null)
-				reason = sanitize_a0(reason) //inf
 				if(!reason)	return
 			if("No")
 				temp = 0
 				duration = "Perma"
 				reason = sanitize(input(usr,"Reason?","reason",reason2) as text|null)
-				reason = sanitize_a0(reason) //inf
 				if(!reason)	return
 
 		ban_unban_log_save("[key_name(usr)] edited [banned_key]'s ban. Reason: [reason] Duration: [duration]")
@@ -772,7 +770,6 @@
 						to_chat(usr, "<span class='warning'> Moderators can only job tempban up to [config.mod_job_tempban_max] minutes!</span>")
 						return
 					var/reason = sanitize(input(usr,"Reason?","Please State Reason","") as text|null)
-					reason = sanitize_a0(reason) //inf
 					if(!reason)
 						return
 
@@ -863,7 +860,6 @@
 			if(!check_if_greater_rights_than(M.client))
 				return
 			var/reason = sanitize(input("Please enter reason"))
-			reason = sanitize_a0(reason) //inf
 			if(!reason)
 				to_chat(M, "<span class='warning'>You have been kicked from the server</span>")
 			else
@@ -898,6 +894,11 @@
 		var/mob/M = locate(href_list["newban"])
 		if(!ismob(M)) return
 
+		if(alert("ВНИМАНИЕ!\n \
+		Данный тип блокировки подразумевает полное отлучение игрока от сервера и он применим в случае экстренной ситуации (нарушение УК России, обход блокировок или эксплойты).\n \
+		Если случай не подходит под критерий \"серьёзно\" то используйте softban.",,"Continue", "Cancel") == "Cancel")
+			return
+
 		if(M.client && M.client.holder)	return	//admins cannot be banned. Even if they could, the ban doesn't affect them anyway
 
 		var/given_key = href_list["last_key"]
@@ -914,8 +915,7 @@
 					to_chat(usr, "<span class='warning'>Moderators can only job tempban up to [config.mod_tempban_max] minutes!</span>")
 					return
 				if(mins >= 525600) mins = 525599
-				var/reason = sanitize(input(usr,"Reason?","reason","Griefer") as text|null)
-				reason = sanitize_a0(reason) //inf
+				var/reason = sanitize(input(usr,"Reason?","reason","Ultra-Griefer") as text|null)
 				if(!reason)
 					return
 				var/mob_key = LAST_CKEY(M)
@@ -934,7 +934,7 @@
 				DB_ban_record(BANTYPE_TEMP, M, mins, reason)
 				SSstatistics.add_field("ban_tmp_mins",mins)
 				if(config.banappeals)
-					to_chat(M, "<span class='warning'>Чтобы оспорить решение администратора, перейдите сюда: [config.banappeals]</span>")
+					to_chat(M, "<span class='warning'>Р§С‚РѕР±С‹ РѕСЃРїРѕСЂРёС‚СЊ СЂРµС€РµРЅРёРµ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР°, РїРµСЂРµР№РґРёС‚Рµ СЃСЋРґР°: [config.banappeals]</span>")
 				else
 					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
 				log_and_message_admins("has banned [mob_key].\nReason: [reason]\nThis will be removed in [mins] minutes.")
@@ -944,7 +944,6 @@
 			if("No")
 				if(!check_rights(R_BAN))   return
 				var/reason = sanitize(input(usr,"Reason?","reason","Griefer") as text|null)
-				reason = sanitize_a0(reason) //inf
 				if(!reason)
 					return
 				var/mob_key = LAST_CKEY(M)

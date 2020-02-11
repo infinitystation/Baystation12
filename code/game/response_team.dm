@@ -113,7 +113,7 @@ proc/trigger_armed_response_team(var/force = 0)
 		can_call_ert = 0 // Only one call per round, ladies.
 		return
 
-	command_announcement.Announce("Отряд Быстрого Реагирования мобилизуется для оказания помощи [station_name()]. Ожидайте прибытия оперативников в ближайшее время.", "[GLOB.using_map.boss_name]")
+	command_announcement.Announce("Отряд Быстрого Реагирования мобилизуруется для оказания помощи [station_name()]. Ожидайте прибытия оперативников в ближайшее время.", "[GLOB.using_map.boss_name]")
 	evacuation_controller.add_can_call_predicate(new/datum/evacuation_predicate/ert())
 //[INF] a part of add_antagonist() code
 	if(GLOB.ert.base_to_load)

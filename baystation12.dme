@@ -130,7 +130,6 @@
 #include "code\_helpers\storage.dm"
 #include "code\_helpers\text.dm"
 #include "code\_helpers\text_inf.dm"
-#include "code\_helpers\text_utf.dm"
 #include "code\_helpers\time.dm"
 #include "code\_helpers\tools.dm"
 #include "code\_helpers\tools_inf.dm"

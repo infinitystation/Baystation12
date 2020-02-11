@@ -146,7 +146,7 @@
 /obj/item/weapon/folder/envelope/captain/Initialize()
 	. = ..()
 	var/memo = {"
-	<tt><center><b><font color='red'>яейпермн<br>йнднбне якнбн: яэеппю</font></b>
+	<tt><center><b><font color='red'>яейпермн<br>йнднбне якнбн: яхеппю</font></b>
 	<h3>жемрпюкэмне йнлюмднбюмхе</h3>
 	<img src = ntlogo.png>
 	</center>

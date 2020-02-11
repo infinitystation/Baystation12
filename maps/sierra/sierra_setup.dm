@@ -13,16 +13,15 @@
 
 /datum/map/sierra/send_welcome()
 	var/welcome_text = "<center><img src = ntlogo.png /><br /><font size = 3><b>NSV Sierra</b> Показани&#255; Сенсоров:</font><hr />"
-
-	var/list/space_things = list()
-	var/obj/effect/overmap/visitable/sierra = map_sectors["1"]
-
 	welcome_text += "Отчет сгенерирован [stationdate2text()] в [stationtime2text()]</center><br /><br />"
 	welcome_text += "Текуща&#255; система: <b>[system_name()]</b><br />"
 	welcome_text += "Следующа&#255; система дл&#255; прыжка: <b>[generate_system_name()]</b><br />"
 	welcome_text += "Дней до Солнечной Системы: <b>[rand(15,45)]</b><br />"
 	welcome_text += "Дней с последнего визита в порт: <b>[rand(60,180)]</b><br />"
 	welcome_text += "Результаты сканировани&#255; показали следующие потенциальные объекты дл&#255; исследовани&#255;:<br />"
+
+	var/list/space_things = list()
+	var/obj/effect/overmap/sierra = map_sectors["1"]
 	for(var/zlevel in map_sectors)
 		var/obj/effect/overmap/O = map_sectors[zlevel]
 		if(O.name == sierra.name)
