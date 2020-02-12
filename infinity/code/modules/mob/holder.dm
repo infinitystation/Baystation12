@@ -1,3 +1,6 @@
+/mob/living/simple_animal/lizard
+	holder_type = /obj/item/weapon/holder/lizard
+
 /obj/item/weapon/holder/lizard
 	slot_flags = SLOT_HOLSTER // | SLOT_HEAD Currently we don't have on head icons for lizards :(
 	w_class = ITEM_SIZE_TINY
