@@ -3,7 +3,7 @@
 
 	var/reason_public = reason
 	reason = sql_sanitize_text(reason)
-	reason = sanitize_a0(reason)
+//	reason = sanitize_a0(reason)
 
 	switch(bantype)
 		if(BANTYPE_PERMA)

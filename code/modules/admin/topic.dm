@@ -1530,7 +1530,7 @@
 
 			for (var/page = 1, page <= B.pages.len, page++)
 				var/obj/pageobj = B.pages[page]
-				data += "<A href='?src=\ref[src];AdminFaxViewPage=[page];paper_bundle=\ref[B]'>Page [page] - [pageobj.name]</A><BR>"
+				data += "<meta charset=\"UTF-8\"><A href='?src=\ref[src];AdminFaxViewPage=[page];paper_bundle=\ref[B]'>Page [page] - [pageobj.name]</A><BR>"
 
 			usr << browse(data, "window=[B.name]")
 		else
@@ -2020,7 +2020,7 @@
 			if("Yes")
 				var/last_ckey = LAST_CKEY(M)
 				var/reason = sanitize(input(usr,"Staff warn message","Staff Warn","Problem Player") as text|null)
-				reason = sanitize_a0(reason) //inf
+//				reason = sanitize_a0(reason) //inf
 				if (!reason || reason == "")
 					return
 			//	notes_add(last_ckey,"\[AUTO\] Staff warn enabled: [reason]",usr)
