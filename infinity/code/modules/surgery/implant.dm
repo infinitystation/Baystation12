@@ -3,13 +3,14 @@
 	allowed_tools = list(
 		/obj/item/weapon/hemostat = 100,
 		/obj/item/weapon/wirecutters = 75,
+		/obj/item/weapon/material/knife = 50,
 		/obj/item/weapon/material/kitchen/utensil/fork = 20
 	)
 	can_infect = 1
 	blood_level = 1
 	min_duration = 160
 	max_duration = 200
-	shock_level = 20
+	shock_level = 40
 	surgery_candidate_flags = SURGERY_NO_CRYSTAL | SURGERY_NO_STUMP
 	strict_access_requirement = FALSE
 
@@ -67,5 +68,5 @@
 	user.visible_message("<span class='warning'>[user]'s hand slips, scraping around inside [target]'s [affected.name] with \the [tool]!</span>", \
 	"<span class='warning'>Your hand slips, scraping around inside [target]'s [affected.name] with \the [tool]!</span>")
 	affected.take_external_damage(20, 0, (DAM_SHARP|DAM_EDGE), used_weapon = tool)
-	if(prob(25))
+	if(prob(50))
 		affected.sever_artery()
