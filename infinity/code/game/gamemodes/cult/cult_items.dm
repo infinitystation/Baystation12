@@ -58,20 +58,15 @@
 	icon_state = "hellstone"
 	item_state = "electronic"
 
-/obj/item/clothing/glasses/hellgoggles
+/obj/item/clothing/glasses/tacgoggles/hellgoggles
 	name = "hell goggles"
-	desc = "Glasses that look equally funny and frightening."
+	desc = "Its look equally funny and frightening."
 	item_icons = list(slot_glasses_str = 'infinity/icons/mob/onmob/onmob_eyes.dmi')
 	icon = 'infinity/icons/obj/clothing/obj_eyes.dmi'
 	icon_state = "hg"
 	item_state = "hg"
 	off_state = "hg_off"
 	darkness_view = 5
-	action_button_name = "Toggle Goggles"
-	toggleable = TRUE
-	see_invisible = SEE_INVISIBLE_NOLIGHTING
-	siemens_coefficient = 0.6
-	electric = TRUE
 
 /obj/item/clothing/glasses/hellgoggles/Initialize()
 	. = ..()
