@@ -240,7 +240,7 @@
 	icon_state = "hair_pigtails_twintail_ombre"
 
 /datum/sprite_accessory/hair/infinity/pigtails_twintail_ombre/alt
-	name = "Pigtails Twintail_Ombre"
+	name = "Pigtails Twintail_Ombre Alt"
 	icon_state = "hair_pigtails_twintail_ombre_alt"
 
 /datum/sprite_accessory/hair/infinity/twincurls2
