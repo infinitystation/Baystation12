@@ -9237,7 +9237,9 @@
 	name = "Docking Port Airlock";
 	req_access = newlist()
 	},
-/obj/machinery/security_scanner,
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/hallway/primary/thirddeck/fore)
 "pb" = (

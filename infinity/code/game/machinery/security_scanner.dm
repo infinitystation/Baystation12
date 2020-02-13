@@ -106,7 +106,7 @@
 	if(!locked)
 		dat += text({"
 			Status: <a href='?src=\ref[src];on=1'>[on ? "On" : "Off"]</a><br>
-			Use <b>security bypass filter</b>: <a href='?src=\ref[src];bypass_filter=1'>[bypass_filter ? "Yes" : "No"]</a><br>
+			Use <b>security bypass</b> filter: <a href='?src=\ref[src];bypass_filter=1'>[bypass_filter ? "Yes" : "No"]</a><br>
 			Use <b>banned items</b> filter: <a href='?src=\ref[src];check_items=1'>[check_items ? "Yes" : "No"]</a><br>
 			<br>
 			Check for <b>records</b>: <a href='?src=\ref[src];check_records=1'>[check_records ? "Yes" : "No"]</a><br>
