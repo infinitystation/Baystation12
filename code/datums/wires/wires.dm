@@ -156,29 +156,18 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 					to_chat(L, "<span class='error'>You need wirecutters!</span>")
 			else if(href_list["pulse"])
 				var/colour = href_list["pulse"]
-				if(isMultitool(I) || isMultitool(offhand_item))
-					if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 30, SKILL_ADEPT)))
-						RandomPulse()
-						to_chat(L, "<span class='danger'>You accidentally pulse another wire!</span>")
-						if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 60, SKILL_BASIC)))
-							RandomPulse() //or two
-					else
-						PulseColour(colour)
-					if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 50, SKILL_BASIC)))
-						wires = shuffle(wires) //Leaves them in a different order for anyone else.
-						to_chat(L, "<span class='danger'>You get the wires all tangled up!</span>")
 			//[inf]
-				else if(isMultimeter(I))
+				if(isMultimeter(I))
 					var/obj/item/device/multitool/multimeter/O = L.get_active_hand()
 					if(O.mode == METER_MESURING)
 						if (L.skill_check(SKILL_ELECTRICAL, SKILL_BASIC))
-							to_chat(L, "<span class='notice'>Подаем напряжение...</span>")
+							to_chat(L, "<span class='notice'>Подаем напр#&255;жение...</span>")
 							if(!do_after(L, 50, holder))
 								return
 							PulseColour(colour)
 							to_chat(L, "<span class='notice'>Провод пропульсован.</span>")
 						else
-							to_chat(L, "<span class='notice'>Вы не знаете с каким напряжением работает этот провод.</span>")
+							to_chat(L, "<span class='notice'>Вы не знаете с каким напр#&255;жением работает этот провод.</span>")
 					else
 						if (L.skill_check(SKILL_ELECTRICAL, SKILL_BASIC))
 							if(!do_after(L, 10, holder))
@@ -196,6 +185,17 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 						else
 							to_chat(L, "<span class='notice'>Вы не умеете подключать мультиметр.</span>")
 			//[/inf]
+				else if(isMultitool(I) || isMultitool(offhand_item))
+					if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 30, SKILL_ADEPT)))
+						RandomPulse()
+						to_chat(L, "<span class='danger'>You accidentally pulse another wire!</span>")
+						if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 60, SKILL_BASIC)))
+							RandomPulse() //or two
+					else
+						PulseColour(colour)
+					if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 50, SKILL_BASIC)))
+						wires = shuffle(wires) //Leaves them in a different order for anyone else.
+						to_chat(L, "<span class='danger'>You get the wires all tangled up!</span>")
 				else
 					to_chat(L, "<span class='error'>You need a multitool or a multimeter!</span>")
 
