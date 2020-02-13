@@ -125,7 +125,7 @@
 				log_admin("[key_name(usr)] removed [adm_ckey] from the admins list")
 				log_admin_rank_modification(adm_ckey, "Removed")
 
-				send2adminirc("[get_key(usr)] удалил ранг у игрока: \"[adm_ckey]\"") //inf
+				send2adminirc("[get_key(usr)] СѓРґР°Р»РёР» СЂР°РЅРі Сѓ РёРіСЂРѕРєР°: \"[adm_ckey]\"") //inf
 
 		else if(task == "rank")
 			var/new_rank
@@ -173,7 +173,7 @@
 			log_admin_rank_modification(adm_ckey, new_rank)
 
 			log_permissions("[key_name(usr)] edited the admin rank of [adm_ckey] to [new_rank]") //inf
-			send2adminirc("[get_key(usr)] изменил ранг игрока: \"[adm_ckey]\" на \"[new_rank]\"") //inf
+			send2adminirc("[get_key(usr)] РёР·РјРµРЅРёР» СЂР°РЅРі РёРіСЂРѕРєР°: \"[adm_ckey]\" РЅР° \"[new_rank]\"") //inf
 
 		else if(task == "permissions")
 			if(!D)	return
@@ -191,7 +191,7 @@
 			log_admin_permission_modification(adm_ckey, permissionlist[new_permission])
 
 			log_permissions("[key_name(usr)] toggled the [new_permission] permission of [adm_ckey]") //inf
-			send2adminirc("[get_key(usr)] переключил флаг: \"[new_permission]\" игроку: \"[adm_ckey]\"") //inf
+			send2adminirc("[get_key(usr)] РїРµСЂРµРєР»СЋС‡РёР» С„Р»Р°Рі: \"[new_permission]\" РёРіСЂРѕРєСѓ: \"[adm_ckey]\"") //inf
 
 		edit_admin_permissions()
 
@@ -894,9 +894,9 @@
 		var/mob/M = locate(href_list["newban"])
 		if(!ismob(M)) return
 
-		if(alert("ВНИМАНИЕ!\n \
-		Данный тип блокировки подразумевает полное отлучение игрока от сервера и он применим в случае экстренной ситуации (нарушение УК России, обход блокировок или эксплойты).\n \
-		Если случай не подходит под критерий \"серьёзно\" то используйте softban.",,"Continue", "Cancel") == "Cancel")
+		if(alert("Р’РќРРњРђРќРР•!\n \
+		Р”Р°РЅРЅС‹Р№ С‚РёРї Р±Р»РѕРєРёСЂРѕРІРєРё РїРѕРґСЂР°Р·СѓРјРµРІР°РµС‚ РїРѕР»РЅРѕРµ РѕС‚Р»СѓС‡РµРЅРёРµ РёРіСЂРѕРєР° РѕС‚ СЃРµСЂРІРµСЂР° Рё РѕРЅ РїСЂРёРјРµРЅРёРј РІ СЃР»СѓС‡Р°Рµ СЌРєСЃС‚СЂРµРЅРЅРѕР№ СЃРёС‚СѓР°С†РёРё (РЅР°СЂСѓС€РµРЅРёРµ РЈРљ Р РѕСЃСЃРёРё, РѕР±С…РѕРґ Р±Р»РѕРєРёСЂРѕРІРѕРє РёР»Рё СЌРєСЃРїР»РѕР№С‚С‹).\n \
+		Р•СЃР»Рё СЃР»СѓС‡Р°Р№ РЅРµ РїРѕРґС…РѕРґРёС‚ РїРѕРґ РєСЂРёС‚РµСЂРёР№ \"СЃРµСЂСЊС‘Р·РЅРѕ\" С‚Рѕ РёСЃРїРѕР»СЊР·СѓР№С‚Рµ softban.",,"Continue", "Cancel") == "Cancel")
 			return
 
 		if(M.client && M.client.holder)	return	//admins cannot be banned. Even if they could, the ban doesn't affect them anyway
@@ -928,13 +928,13 @@
 				add_note(mob_key,"[usr.client.ckey] has hard banned [mob_key]. - Reason: [reason] - This will be removed in [mins] minutes.", null, usr.ckey, 0)
 				//to_chat(M, "<span class='danger'>You have been banned by [usr.client.ckey].\nReason: [reason].</span>")
 				//to_chat(M, "<span class='warning'>This is a temporary ban, it will be removed in [mins] minutes.</span>")
-				to_chat(M, "<span class='danger'><BIG>Вы были забанены администратором [usr.client.key].\nПричина: [reason]</BIG></span>") //inf
-				to_chat(M, "<span class='warning'>Это временный бан, он истечет через [mins] минут.</span>") //inf
+				to_chat(M, "<span class='danger'><BIG>Р’С‹ Р±С‹Р»Рё Р·Р°Р±Р°РЅРµРЅС‹ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂРѕРј [usr.client.key].\nРџСЂРёС‡РёРЅР°: [reason]</BIG></span>") //inf
+				to_chat(M, "<span class='warning'>Р­С‚Рѕ РІСЂРµРјРµРЅРЅС‹Р№ Р±Р°РЅ, РѕРЅ РёСЃС‚РµС‡РµС‚ С‡РµСЂРµР· [mins] РјРёРЅСѓС‚.</span>") //inf
 				SSstatistics.add_field("ban_tmp",1)
 				DB_ban_record(BANTYPE_TEMP, M, mins, reason)
 				SSstatistics.add_field("ban_tmp_mins",mins)
 				if(config.banappeals)
-					to_chat(M, "<span class='warning'>Р§С‚РѕР±С‹ РѕСЃРїРѕСЂРёС‚СЊ СЂРµС€РµРЅРёРµ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР°, РїРµСЂРµР№РґРёС‚Рµ СЃСЋРґР°: [config.banappeals]</span>")
+					to_chat(M, "<span class='warning'>Р В§РЎвЂљР С•Р В±РЎвЂ№ Р С•РЎРѓР С—Р С•РЎР‚Р С‘РЎвЂљРЎРЉ РЎР‚Р ВµРЎв‚¬Р ВµР Р…Р С‘Р Вµ Р В°Р Т‘Р СР С‘Р Р…Р С‘РЎРѓРЎвЂљРЎР‚Р В°РЎвЂљР С•РЎР‚Р В°, Р С—Р ВµРЎР‚Р ВµР в„–Р Т‘Р С‘РЎвЂљР Вµ РЎРѓРЎР‹Р Т‘Р В°: [config.banappeals]</span>")
 				else
 					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
 				log_and_message_admins("has banned [mob_key].\nReason: [reason]\nThis will be removed in [mins] minutes.")
@@ -959,11 +959,11 @@
 						AddBan(mob_key, M.computer_id, reason, usr.ckey, 0, 0)
 			//	to_chat(M, "<span class='danger'>You have been banned by [usr.client.ckey].\nReason: [reason].</span>")
 			//	to_chat(M, "<span class='warning'>This is a ban until appeal.</span>")
-				to_chat(M, "<span class='danger'><BIG>Вы были ЖЕСТКО забанены администратором [usr.client.key].\nПричина: [reason]</BIG></span>") //inf
-				to_chat(M, "<span class='warning'>Это перманентный бан.</span>") //inf
+				to_chat(M, "<span class='danger'><BIG>Р’С‹ Р±С‹Р»Рё Р–Р•РЎРўРљРћ Р·Р°Р±Р°РЅРµРЅС‹ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂРѕРј [usr.client.key].\nРџСЂРёС‡РёРЅР°: [reason]</BIG></span>") //inf
+				to_chat(M, "<span class='warning'>Р­С‚Рѕ РїРµСЂРјР°РЅРµРЅС‚РЅС‹Р№ Р±Р°РЅ.</span>") //inf
 				if(config.banappeals)
 				//	to_chat(M, "<span class='warning'>To try to resolve this matter head to [config.banappeals]</span>")
-					to_chat(M, "<span class='warning'>Чтобы оспорить решение администратора, перейдите сюда: [config.banappeals]</span>") //inf
+					to_chat(M, "<span class='warning'>Р§С‚РѕР±С‹ РѕСЃРїРѕСЂРёС‚СЊ СЂРµС€РµРЅРёРµ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР°, РїРµСЂРµР№РґРёС‚Рµ СЃСЋРґР°: [config.banappeals]</span>") //inf
 				else
 					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
 				ban_unban_log_save("[usr.client.ckey] has permabanned [mob_key]. - Reason: [reason] - This is a ban until appeal.")

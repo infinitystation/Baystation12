@@ -343,17 +343,17 @@
 			pose = addtext(pose,".") //Makes sure all emotes end with a period.
 //[INF]
 		switch(gender)
-			if(MALE)  msg += "Он [pose]\n"
-			if(FEMALE)msg += "Она [pose]\n"
-			else      msg += "Оно [pose]\n"
+			if(MALE)  msg += "РћРЅ [pose]\n"
+			if(FEMALE)msg += "РћРЅР° [pose]\n"
+			else      msg += "РћРЅРѕ [pose]\n"
 	//[BAY]:
 		/*
 		if(gender == MALE) //yes-yes. #INFINITY
-			msg += "Он [pose]\n"
+			msg += "РћРЅ [pose]\n"
 		else if(gender == FEMALE)
-			msg += "Она [pose]\n"
+			msg += "РћРЅР° [pose]\n"
 		else
-			msg += "Оно [pose]\n"
+			msg += "РћРЅРѕ [pose]\n"
 		*/
 	//[/BAY]
 //[/INF]

@@ -175,5 +175,5 @@
 	item_cost = 32
 	path = /obj/item/weapon/storage/box/holobombs
 	desc = "Contains 5 holobomb and instruction. \
-			A bomb that changes appearance, ànd can destroy some hands."
+			A bomb that changes appearance, and can destroy some hands."
 //[/INF]

@@ -209,7 +209,7 @@ var/global/list/all_objectives = list()
 // Nuclear Explosion //
 
 /datum/objective/nuclear
-	explanation_text = "Уничтожить объект с помощью системы самоуничтожения."
+	explanation_text = "РЈРЅРёС‡С‚РѕР¶РёС‚СЊ РѕР±СЉРµРєС‚ СЃ РїРѕРјРѕС‰СЊСЋ СЃРёСЃС‚РµРјС‹ СЃР°РјРѕСѓРЅРёС‡С‚РѕР¶РµРЅРёСЏ."
 
 
 // Steal //

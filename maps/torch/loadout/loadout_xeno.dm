@@ -28,5 +28,5 @@
 	path = /obj/item/clothing/accessory/solgov/cultex_patch
 	description = "A shoulder patch representing the Expeditionary Corps."
 	allowed_branches = list(/datum/mil_branch/expeditionary_corps)
-	whitelisted = list(SPECIES_SKRELL, SPECIES_UNATHI, SPECIES_IPC, SPECIES_TAJARA) // INF@INFO добавлен флаг таяр, по умолчанию отсутствует
+	whitelisted = list(SPECIES_SKRELL, SPECIES_UNATHI, SPECIES_IPC, SPECIES_TAJARA) // INF@INFO РґРѕР±Р°РІР»РµРЅ С„Р»Р°Рі С‚Р°СЏСЂ, РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ РѕС‚СЃСѓС‚СЃС‚РІСѓРµС‚
 	sort_category = "Xenowear"
