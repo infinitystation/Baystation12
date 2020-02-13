@@ -882,7 +882,7 @@
 	req_access = newlist()
 	},
 /obj/structure/disposalpipe/segment,
-/obj/machinery/security_scanner,
+/obj/machinery/metal_detector,
 /turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/commissary)
 "bT" = (
@@ -6083,7 +6083,7 @@
 	locked = 0;
 	name = "Comissary"
 	},
-/obj/machinery/security_scanner,
+/obj/machinery/metal_detector,
 /turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/commissary)
 "kp" = (
@@ -8038,7 +8038,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/security_scanner,
+/obj/machinery/metal_detector,
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/fore)
 "ng" = (
@@ -8056,7 +8056,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/security_scanner,
+/obj/machinery/metal_detector,
 /turf/simulated/floor/tiled/monotile,
 /area/storage/auxillary/port)
 "nh" = (
@@ -9237,7 +9237,7 @@
 	name = "Docking Port Airlock";
 	req_access = newlist()
 	},
-/obj/machinery/security_scanner,
+/obj/machinery/metal_detector,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/hallway/primary/thirddeck/fore)
 "pb" = (
@@ -20339,7 +20339,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/security_scanner,
+/obj/machinery/metal_detector,
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/fore)
 "Gy" = (
