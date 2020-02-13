@@ -58,7 +58,7 @@
 	icon_state = "hellstone"
 	item_state = "electronic"
 
-/obj/item/clothing/glasses/tacgoggles/hellgoggles
+/obj/item/clothing/glasses/tacgoggles/cult
 	name = "hell goggles"
 	desc = "Its look equally funny and frightening."
 	item_icons = list(slot_glasses_str = 'infinity/icons/mob/onmob/onmob_eyes.dmi')
@@ -68,7 +68,7 @@
 	off_state = "hg_off"
 	darkness_view = 5
 
-/obj/item/clothing/glasses/hellgoggles/Initialize()
+/obj/item/clothing/glasses/tacgoggles/cult/Initialize()
 	. = ..()
 	overlay = GLOB.global_hud.thermal
 

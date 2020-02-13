@@ -44,7 +44,7 @@
 
 /obj/effect/rune/hellhunter/cast(var/mob/living/user)
 	new /obj/item/device/flashlight/flashdark/stone(get_turf(src))
-	new /obj/item/clothing/glasses/hellgoggles(get_turf(src))
+	new /obj/item/clothing/glasses/tacgoggles/cult(get_turf(src))
 	new /obj/item/weapon/melee/cultblade/dagger(get_turf(src))
 	speak_incantation(user, "N[pick("'","`")]ath chip'ayiayan auyana!")
 	visible_message("<span class='notice'>\The [src] disappears with a flash of red light.</span>", "You hear a pop.")
