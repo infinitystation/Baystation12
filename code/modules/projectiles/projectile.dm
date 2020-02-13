@@ -28,7 +28,7 @@
 
 	var/hitchance_mod = 0
 	var/dispersion = 0.0
-	var/distance_falloff = 9  //multiplier, higher value means accuracy drops faster with distance //INF, WAS 2
+	var/distance_falloff = 2  //multiplier, higher value means accuracy drops faster with distance
 
 	var/damage = 10
 	var/damage_type = BRUTE //BRUTE, BURN, TOX, OXY, CLONE, ELECTROCUTE are the only things that should be in here, Try not to use PAIN as it doesn't go through stun_effect_act

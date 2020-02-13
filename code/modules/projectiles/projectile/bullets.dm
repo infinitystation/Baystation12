@@ -7,8 +7,6 @@
 	damage_flags = DAM_BULLET | DAM_SHARP
 	nodamage = 0
 	embed = 1
-	sharp = 1
-	step_delay = 0.4
 	penetration_modifier = 1.0
 	var/mob_passthrough_check = 0
 
@@ -130,14 +128,14 @@
 /obj/item/projectile/bullet/pistol/holdout
 	damage = 40
 	penetration_modifier = 1.2
-	//distance_falloff = 4
+	distance_falloff = 4
 
 /obj/item/projectile/bullet/pistol/strong
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
-	damage = 53 //INF, was 50
+	damage = 50
 	penetration_modifier = 0.8
 	distance_falloff = 2.5
-	armor_penetration = 0 //INF, was 15
+	armor_penetration = 15
 
 /obj/item/projectile/bullet/pistol/rubber //"rubber" bullets
 	name = "rubber bullet"
@@ -156,15 +154,15 @@
 	penetrating = 1
 	armor_penetration = 70
 	embed = 0
-	//distance_falloff = 2
+	distance_falloff = 2
 
 /* shotgun projectiles */
 
 /obj/item/projectile/bullet/shotgun
 	name = "slug"
 	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
-	damage = 59 //INF, was 65
-	armor_penetration = 0 //INF before = 10
+	damage = 65
+	armor_penetration = 10
 
 /obj/item/projectile/bullet/shotgun/beanbag		//because beanbags are not bullets
 	name = "beanbag"
@@ -173,7 +171,7 @@
 	agony = 60
 	embed = 0
 	armor_penetration = 0
-	//distance_falloff = 3
+	distance_falloff = 3
 
 //Should do about 80 damage at 1 tile distance (adjacent), and 50 damage at 3 tiles distance.
 //Overall less damage than slugs in exchange for more damage at very close range and more embedding
@@ -193,7 +191,7 @@
 	armor_penetration = 25
 	penetration_modifier = 1.5
 	penetrating = 1
-	//distance_falloff = 1.5
+	distance_falloff = 1.5
 
 /obj/item/projectile/bullet/rifle/military
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
@@ -203,19 +201,18 @@
 
 /obj/item/projectile/bullet/rifle/shell
 	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
-	damage = 95
+	damage = 80
 	stun = 3
 	weaken = 3
-	penetrating = 5
-	armor_penetration = 80
-	hitscan = 1 //so the PTR isn't useless as a sniper weapon
-	penetration_modifier = 1.25
-	//distance_falloff = 0.5
+	penetrating = 3
+	armor_penetration = 70
+	penetration_modifier = 1.2
+	distance_falloff = 0.5
 
 /obj/item/projectile/bullet/rifle/shell/apds
-	damage = 90
-	penetrating = 6
-	armor_penetration = 95
+	damage = 70
+	penetrating = 5
+	armor_penetration = 80
 	penetration_modifier = 1.5
 
 /* Miscellaneous */
@@ -257,7 +254,6 @@
 	damage = 0
 	nodamage = 1
 	embed = 0
-	sharp = 0
 
 /obj/item/projectile/bullet/pistol/cap/Process()
 	qdel(src)
@@ -269,7 +265,7 @@
 	damage = 40
 	armor_penetration = 25
 	life_span = 255
-	//distance_falloff = 0
+	distance_falloff = 0
 
 /obj/item/projectile/bullet/rock/New()
 	icon_state = "rock[rand(1,3)]"
