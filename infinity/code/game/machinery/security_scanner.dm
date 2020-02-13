@@ -31,8 +31,8 @@
 	var/check_arrests = FALSE // check if we checking for arrests in record
 
 	// Banned items
-	var/banned_items = list(/obj/item/weapon/gun, /obj/item/weapon/melee)
-	var/storage_types = list(/obj/item/weapon/storage, /obj/item/clothing/suit/storage)
+	var/list/banned_items = list(/obj/item/weapon/gun, /obj/item/weapon/melee, /obj/item/weapon/grenade)
+	var/list/storage_types = list(/obj/item/weapon/storage, /obj/item/clothing/suit/storage)
 
 //	var/report_scans = FALSE
 
