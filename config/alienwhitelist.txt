@@ -32,6 +32,7 @@ semorerith - machine
 bob46 - machine
 empire2four - machine
 exapster - machine
+hellpony - machine
 inubashirimomiji - skrell
 tenedegurechaff - skrell
 twinindifferent - skrell
