@@ -2,9 +2,7 @@
 	autohiss_basic_map = list(
 			"s" = list("ss", "sss", "ssss"),
 
-			"с" = list("с", "сс", "ссс"),
-
-			"С" = list("С", "Сс", "Ссс")
+			"с" = list("с", "сс", "ссс")
 		)
 	autohiss_extra_map = list(
 			"x" = list("ks", "kss", "ksss"),
@@ -17,17 +15,7 @@
 
 			"ч" = list("щ", "щщ", "щщщ"),
 
-			"ж" = list("ш", "шш", "шшш"),
-
-			"К" = list("Х"),
-
-			"Г" = list("Х"),
-
-			"З" = list("С", "Сс", "Ссс"),
-
-			"Ч" = list("Щ", "Щщ", "Щщщ"),
-
-			"Ж" = list("Ш", "Шш", "Шшш")
+			"ж" = list("ш", "шш", "шшш")
 
 		)
 	autohiss_exempt = list(
@@ -39,25 +27,17 @@
 	autohiss_basic_map = list(
 			"r" = list("rr", "rrr", "rrrr"),
 
-			"р" = list("рр", "ррр", "рррр"),
-
-			"Р" = list("Рр", "Ррр", "Рррр")
+			"р" = list("рр", "ррр", "рррр")
 		)
 	autohiss_exempt = list(LANGUAGE_SIIK_MAAS)
 
 /datum/species/resomi
 	autohiss_basic_map = list(
-			"з" = list("с"),
-
-			"З" = list("С")
+			"з" = list("с")
 		)
 	autohiss_extra_map = list(
 			"ч" = list("щ"),
 
-			"ж" = list("ш"),
-
-			"Ч" = list("Щ"),
-
-			"Ж" = list("Ш")
+			"ж" = list("ш")
 		)
 	autohiss_exempt = list(LANGUAGE_RESOMI)

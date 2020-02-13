@@ -41,7 +41,7 @@
 		if(!min_char) // we didn't find any of the mapping characters
 			. += message
 			break
-		. += copytext(message, 1, min_index)
+		. += copytext_char(message, 1, min_index)
 		if(copytext(message, min_index, min_index+1) == uppertext(min_char))
 			switch(text2ascii(message, min_index+1))
 				if(65 to 90) // A-Z, uppercase; uppercase R/S followed by another uppercase letter, uppercase the entire replacement string
@@ -50,6 +50,6 @@
 					. += capitalize(pick(map[min_char]))
 		else
 			. += pick(map[min_char])
-		message = copytext(message, min_index + 1)
+		message = copytext_char(message, min_index + 1)
 
 	return jointext(., null)
