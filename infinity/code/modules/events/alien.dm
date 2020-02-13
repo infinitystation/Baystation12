@@ -57,7 +57,7 @@
 
 //		for(var/mob/observer/ghost/O in GLOB.ghost_mob_list)
 //			to_chat(O, FONT_LARGE(SPAN_NOTICE(
-//			"По&#255;вилась личинка пришельцев! [new_xeno.key ? "" : "Нажмите на неё, чтобы зан&#255;ть тело."] ([ghost_follow_link(new_xeno, O)])")))
+//			"Появилась личинка пришельцев! [new_xeno.key ? "" : "Нажмите на неё, чтобы занять тело."] ([ghost_follow_link(new_xeno, O)])")))
 		spawn_locations -= spot
 		spawncount--
 		xeno -= candidates

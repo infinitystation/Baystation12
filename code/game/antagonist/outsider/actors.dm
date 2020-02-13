@@ -4,7 +4,7 @@ GLOBAL_DATUM_INIT(actor, /datum/antagonist/actor, new)
 	id = MODE_ACTOR
 	role_text = "Actor"
 	role_text_plural = "Actors"
-	welcome_text = "Вы были нан&#255;ты чтобы развлекать людей с помощью телевидени&#255;!"
+	welcome_text = "Вы были наняты чтобы развлекать людей с помощью телевидения!"
 	landmark_id = "ActorSpawn"
 	id_type = /obj/item/weapon/card/id/syndicate
 

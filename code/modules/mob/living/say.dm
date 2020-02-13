@@ -146,11 +146,11 @@ proc/get_radio_key_from_channel(var/channel)
 		. = 1
 	else if(slurring)
 		message = slur(message)
-		verb = "заплетаетс&#255;" //INF, WAS verb = pick("slobbers","slurs")
+		verb = "заплетается" //INF, WAS verb = pick("slobbers","slurs")
 		. = 1
 	else if(stuttering)
 		message = NewStutter(message)
-		verb = pick("бормочет","заикаетс&#255;") //INF, WAS verb = pick("stammers","stutters")
+		verb = pick("бормочет","заикается") //INF, WAS verb = pick("stammers","stutters")
 		. = 1
 	else if(has_chem_effect(CE_SQUEAKY, 1))
 		message = "<font face = 'Comic Sans MS'>[message]</font>"

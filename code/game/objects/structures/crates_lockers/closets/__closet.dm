@@ -618,7 +618,7 @@
 			to_chat(usr, "<span class='notice'>Переключите мультиметр.</span>")
 			return
 
-		to_chat(usr, "<span class='notice'>Провер&#255;ем замок...</span>")
+		to_chat(usr, "<span class='notice'>Проверяем замок...</span>")
 		for(var/i = 1 to codelen)
 			if(do_after(user, 10, src))
 				if(code2[i] == code1[i])

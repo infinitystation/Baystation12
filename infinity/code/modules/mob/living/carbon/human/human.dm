@@ -21,7 +21,7 @@
 			hashands = (temp?.is_usable())
 		var/mouthfree = !((H.head && (H.check_mouth_coverage())) || (H.wear_mask && (H.check_mouth_coverage())))
 		var/mouthfree_p = !((P.head && (P.check_mouth_coverage())) || (P.wear_mask && (P.check_mouth_coverage())))
-		var/ya = "&#255;"
+		var/ya = "я"
 
 		if(world.time <= H.last_attack + 1 SECONDS)
 			return

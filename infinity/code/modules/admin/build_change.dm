@@ -120,9 +120,9 @@ var/datum/server_build/currentbuild
 	var/datum/server_build/B = buildchoices[chosenbuild]
 	nextbuild = B
 
-	message_admins("[key_name_admin(usr)] помен&#255;л билд на [nextbuild.name]([nextbuild.friendlyname])")
-	log_admin("[key_name(usr)] помен&#255;л билд на [nextbuild.name]([nextbuild.friendlyname])")
-	to_chat(world, "<span class='boldannounce'>Билд изменен на [nextbuild.friendlyname] дл&#255; следующего раунда!</span>")
+	message_admins("[key_name_admin(usr)] поменял билд на [nextbuild.name]([nextbuild.friendlyname])")
+	log_admin("[key_name(usr)] поменял билд на [nextbuild.name]([nextbuild.friendlyname])")
+	to_chat(world, "<span class='boldannounce'>Билд изменен на [nextbuild.friendlyname] для следующего раунда!</span>")
 
 /proc/forcechangebuild(datum/server_build/B)
 	if(!istype(B))

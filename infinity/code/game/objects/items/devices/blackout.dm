@@ -46,7 +46,7 @@
 /obj/item/device/blackout/proc/hacktheenergy(var/obj/machinery/power/terminal/terminal_in, mob/user)
 	if(!istype(terminal_in) || !user) return // security
 
-	src.audible_message("<font color=Maroon><b>HackTheEnergy.exe Assistant</b></font> says, \"-- Начало. Подключаемс&#255; к терминалу. --\"")
+	src.audible_message("<font color=Maroon><b>HackTheEnergy.exe Assistant</b></font> says, \"-- Начало. Подключаемся к терминалу. --\"")
 	if(!do_after(user, 30, terminal_in)) return
 
 	src.audible_message("<font color=Maroon><b>HackTheEnergy.exe Assistant</b></font> says, \"-- Подключение к терминалу успешно. Получаем информацию о электросети... --\"")
@@ -57,7 +57,7 @@
 	playsound(src, 'sound/items/goggles_charge.ogg', 50, 1)
 
 	if(do_after(user, 40, terminal_in))
-		src.audible_message("<font color=Maroon><b>HackTheEnergy.exe Assistant</b></font> says, \"-- Готово. Пульсаци&#255; завершена. \
+		src.audible_message("<font color=Maroon><b>HackTheEnergy.exe Assistant</b></font> says, \"-- Готово. Пульсация завершена. \
 			Спасибо за пользование нашими услугами, желаем Вам удачной и продуктивной миссии. --\"")
 
 		shots--

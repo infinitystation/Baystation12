@@ -101,24 +101,24 @@
 				species_blacklist |= job.type
 
 /datum/map/torch/map_info(victim)
-	to_chat(victim, "<h2>Информаци&#255; о карте</h2>")
-	to_chat(victim, "Вы находитесь на борту [station_name] - корабле Экспедиционного Корпуса ЦПСС. Основной задачей корабл&#255; &#255;вл&#255;етс&#255; поиск неизвестных разумных форм жизни и исследование космоса.")
+	to_chat(victim, "<h2>Информация о карте</h2>")
+	to_chat(victim, "Вы находитесь на борту [station_name] - корабле Экспедиционного Корпуса ЦПСС. Основной задачей корабля является поиск неизвестных разумных форм жизни и исследование космоса.")
 	to_chat(victim, "Корабль укомплектован персоналом из ЦПСС, сотрудниками Организации Экспедиционного Корпуса и наемными контрактниками.")
-	to_chat(victim, "Это неисследованна&#255; область космического пространства вдали от территории ЦПСС, поэтому Вы можете встретить лишь небольшие аванпосты и дрейфующие суда. Ни одно известное правительство не претендует на этот сектор.")
+	to_chat(victim, "Это неисследованная область космического пространства вдали от территории ЦПСС, поэтому Вы можете встретить лишь небольшие аванпосты и дрейфующие суда. Ни одно известное правительство не претендует на этот сектор.")
 	to_chat(victim, "<b>Полезные статьи:</b>")
 	to_chat(victim, "Устав (руководство по военке): https://wiki.infinity-ss13.info/index.php?title=Руководство_военного")
 	to_chat(victim, "Закон ЦПСС (действует на борту): https://wiki.infinity-ss13.info/index.php?title=Закон_ЦПСС")
-	to_chat(victim, "Доп.закон дл&#255; военных: https://wiki.infinity-ss13.info/index.php?title=Военно-юридический_кодекс_ПСС")
+	to_chat(victim, "Доп.закон для военных: https://wiki.infinity-ss13.info/index.php?title=Военно-юридический_кодекс_ПСС")
 	to_chat(victim, "Униформа экипажа: https://wiki.infinity-ss13.info/index.php?title=Униформа_экипажа")
 
 /datum/map/torch/send_welcome()
-	var/welcome_text = "<center><img src = sollogo.png /><br /><font size = 3><b>SEV Torch</b> Показани&#255; Сенсоров:</font><hr />"
+	var/welcome_text = "<center><img src = sollogo.png /><br /><font size = 3><b>SEV Torch</b> Показания Сенсоров:</font><hr />"
 	welcome_text += "Отчет сгенерирован [stationdate2text()] в [stationtime2text()]</center><br /><br />"
-	welcome_text += "Текуща&#255; система: <b>[system_name()]</b><br />"
-	welcome_text += "Следующа&#255; система дл&#255; прыжка: <b>[generate_system_name()]</b><br />"
+	welcome_text += "Текущая система: <b>[system_name()]</b><br />"
+	welcome_text += "Следующая система для прыжка: <b>[generate_system_name()]</b><br />"
 	welcome_text += "Дней до Солнечной Системы: <b>[rand(15,45)]</b><br />"
 	welcome_text += "Дней с последнего визита в порт: <b>[rand(60,180)]</b><br />"
-	welcome_text += "Результаты сканировани&#255; показали следующие потенциальные объекты дл&#255; исследовани&#255;:<br />"
+	welcome_text += "Результаты сканирования показали следующие потенциальные объекты для исследования:<br />"
 	var/list/space_things = list()
 	var/obj/effect/overmap/torch = map_sectors["1"]
 	for(var/zlevel in map_sectors)
@@ -138,9 +138,9 @@
 		welcome_text += "<li>\A <b>[O.name]</b>[location_desc]</li>"
 
 	if(LAZYLEN(distress_calls))
-		welcome_text += "<br><b>Обнаружены сигналы бедстви&#255;:</b><br>[jointext(distress_calls, "<br>")]<br>"
+		welcome_text += "<br><b>Обнаружены сигналы бедствия:</b><br>[jointext(distress_calls, "<br>")]<br>"
 	else
-		welcome_text += "<br>Сигналов бедстви&#255; не обнаружено.<br />"
+		welcome_text += "<br>Сигналов бедствия не обнаружено.<br />"
 	welcome_text += "<hr>"
 
 	post_comm_message("SEV Torch Sensor Readings", welcome_text)

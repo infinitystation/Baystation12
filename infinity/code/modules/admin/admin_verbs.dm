@@ -36,7 +36,7 @@
 	var/newtime = input("Set a new time. Its must be in MINUTES (not in seconds/byond tick). Set 0 to remove delay.", "Set Delay", oldtime) as num|null
 	if(!newtime || newtime == oldtime) return
 
-	var/message = newtime <= 0 ? "отключил(а) задержку дл&#255; наблюдателей" : "изменил(а) задержку дл&#255; наблюдателей с [oldtime] на [newtime] минут(ы)"
+	var/message = newtime <= 0 ? "отключил(а) задержку для наблюдателей" : "изменил(а) задержку для наблюдателей с [oldtime] на [newtime] минут(ы)"
 	log_and_message_admins("Администратор [key_name_admin(usr)] [message].")
 
 	config.observe_delay = newtime
@@ -187,11 +187,11 @@
 	config.event_status = !(config.event_status)
 
 	if(config.event_status)
-		to_world("<B>Включено отображение статуса проведени&#255; ивента.</B>")
+		to_world("<B>Включено отображение статуса проведения ивента.</B>")
 		send2maindiscord("На сервере активировано отображение статуса ивента.")
 		send2mainirc("<@&631358488660017162> На сервере активировано отображение статуса ивента!")
 	else
-		to_world("<B>Отображение статуса проведени&#255; ивента отключено. Кина не будет :(</B>")
+		to_world("<B>Отображение статуса проведения ивента отключено. Кина не будет :(</B>")
 		send2maindiscord("Ивент отменён.")
 		send2mainirc("Ивент отменён :(")
 

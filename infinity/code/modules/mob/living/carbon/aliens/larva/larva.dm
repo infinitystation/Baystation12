@@ -52,7 +52,7 @@
 	if(src.mind)
 		return
 	if(jobban_isbanned(user, MODE_XENOMORPH))
-		to_chat(user, SPAN_DANGER("У вас имеетс&#255; бан на роль ксенофага. Вы не можете играть за них."))
+		to_chat(user, SPAN_DANGER("У вас имеется бан на роль ксенофага. Вы не можете играть за них."))
 		return
 	var/confirm = alert(user, "Are you sure you want to join as a Xenophage larva?", "Become Larva", "No", "Yes")
 	if(!src || confirm != "Yes")

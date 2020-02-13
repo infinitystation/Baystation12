@@ -1,12 +1,12 @@
 /decl/emote/visible
 	key ="tail"
-	emote_message_3p = "USER вил&#255;ет своим хвостом."
+	emote_message_3p = "USER виляет своим хвостом."
 	message_type = VISIBLE_MESSAGE
 
 /decl/emote/visible/scratch
 	key = "scratch"
 	check_restraints = TRUE
-	emote_message_3p = "USER чешетс&#255;."
+	emote_message_3p = "USER чешется."
 
 /decl/emote/visible/drool
 	key ="drool"
@@ -19,11 +19,11 @@
 
 /decl/emote/visible/sway
 	key ="sway"
-	emote_message_3p = "USER шатаетс&#255;."
+	emote_message_3p = "USER шатается."
 
 /decl/emote/visible/sulk
 	key ="sulk"
-	emote_message_3p = "USER грустно садитс&#255;..."
+	emote_message_3p = "USER грустно садится..."
 
 /decl/emote/visible/dance
 	key ="dance"
@@ -33,11 +33,11 @@
 /decl/emote/visible/roll
 	key ="roll"
 	check_restraints = TRUE
-	emote_message_3p = "USER катаетс&#255;."
+	emote_message_3p = "USER катается."
 
 /decl/emote/visible/shake
 	key ="shake"
-	emote_message_3p = "USER тр&#255;сет головой."
+	emote_message_3p = "USER трясет головой."
 
 /decl/emote/visible/jump
 	key ="jump"
@@ -45,8 +45,8 @@
 
 /decl/emote/visible/hiss
 	key ="hiss_"
-	emote_message_3p = "USER м&#255;гко шипит..."
-	emote_message_3p_target = "USER м&#255;гко шипит на TARGET..."
+	emote_message_3p = "USER мягко шипит..."
+	emote_message_3p_target = "USER мягко шипит на TARGET..."
 
 /decl/emote/visible/shiver
 	key ="shiver"
@@ -85,18 +85,18 @@
 
 /decl/emote/visible/salute
 	key = "salute"
-	emote_message_3p_target = "USER выполн&#255;ет воинское приветствие TARGET."
-	emote_message_3p = "USER выполн&#255;ет воинское приветствие."
+	emote_message_3p_target = "USER выполняет воинское приветствие TARGET."
+	emote_message_3p = "USER выполняет воинское приветствие."
 
 /decl/emote/visible/flap
 	key = "flap"
 	check_restraints = TRUE
-	emote_message_3p = "USER машет крыль&#255;ми."
+	emote_message_3p = "USER машет крыльями."
 
 /decl/emote/visible/aflap
 	key = "aflap"
 	check_restraints = TRUE
-	emote_message_3p = "USER агрессивно машет крыль&#255;ми!"
+	emote_message_3p = "USER агрессивно машет крыльями!"
 
 /decl/emote/visible/eyebrow
 	key = "eyebrow"
@@ -104,12 +104,12 @@
 
 /decl/emote/visible/twitch
 	key = "twitch"
-	emote_message_3p = "USER дергаетс&#255;."
+	emote_message_3p = "USER дергается."
 	conscious = 0
 
 /decl/emote/visible/twitch_v
 	key = "twitch_v"
-	emote_message_3p = "USER сильно дергаетс&#255;!"
+	emote_message_3p = "USER сильно дергается!"
 	conscious = 0
 
 /decl/emote/visible/faint
@@ -122,7 +122,7 @@
 
 /decl/emote/visible/frown
 	key = "frown"
-	emote_message_3p = "USER хмуритс&#255;."
+	emote_message_3p = "USER хмурится."
 
 /decl/emote/visible/blush
 	key = "blush"
@@ -140,8 +140,8 @@
 
 /decl/emote/visible/stare
 	key = "stare"
-	emote_message_3p = "USER п&#255;литс&#255; на TARGET."
-	emote_message_3p = "USER п&#255;литс&#255;."
+	emote_message_3p = "USER пялится на TARGET."
+	emote_message_3p = "USER пялится."
 
 /decl/emote/visible/look
 	key = "look"
@@ -161,7 +161,7 @@
 
 /decl/emote/visible/grin
 	key = "grin"
-	emote_message_3p = "USER скалитс&#255; в улыбке."
+	emote_message_3p = "USER скалится в улыбке."
 
 /decl/emote/visible/shrug
 	key = "shrug"
@@ -169,8 +169,8 @@
 
 /decl/emote/visible/smile
 	key = "smile"
-	emote_message_3p = "USER улыбаетс&#255;."
-	emote_message_3p_target = "USER улыбаетс&#255; TARGET."
+	emote_message_3p = "USER улыбается."
+	emote_message_3p_target = "USER улыбается TARGET."
 
 /decl/emote/visible/pale
 	key = "pale"
@@ -211,7 +211,7 @@
 
 /decl/emote/visible/jiggle
 	key = "jiggle"
-	emote_message_3p = "USER покачиваетс&#255;..."
+	emote_message_3p = "USER покачивается..."
 
 /decl/emote/visible/lightup
 	key = "light"

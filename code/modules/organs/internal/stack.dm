@@ -1,7 +1,7 @@
 /mob/living/carbon/human/proc/create_stack()
 	spawn(0)
 		internal_organs_by_name[BP_STACK] = new /obj/item/organ/internal/stack(src, 1)
-		to_chat(src, "<span class='notice'>Вы чувствуете небольшое головокружение от ощущени&#255; того, как нейронные узлы облегают ваш мозг.</span>")
+		to_chat(src, "<span class='notice'>Вы чувствуете небольшое головокружение от ощущения того, как нейронные узлы облегают ваш мозг.</span>")
 
 /obj/item/organ/internal/stack
 	name = "neural lace"

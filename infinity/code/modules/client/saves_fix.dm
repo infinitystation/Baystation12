@@ -5,7 +5,7 @@ GLOBAL_LIST_EMPTY(prefs_fixed)
 	set category = "OOC"
 
 	if(ckey in GLOB.prefs_fixed)
-		to_chat(usr, SPAN_NOTICE("Ваши персонажи уже должны были загрузитьс&#255;. Если этого не произошло - пожалуйста, сообщите разработчикам."))
+		to_chat(usr, SPAN_NOTICE("Ваши персонажи уже должны были загрузиться. Если этого не произошло - пожалуйста, сообщите разработчикам."))
 		return
 
 	GLOB.prefs_fixed += ckey

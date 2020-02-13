@@ -4,7 +4,7 @@
 /datum/computer_file/report/recipient/sci/proc/add_header()
 	add_field(/datum/report_field/simple_text, "Судно", "ИСН Сьерра")
 	add_field(/datum/report_field/date, "Дата")
-	add_field(/datum/report_field/time, "Врем&#255;")
+	add_field(/datum/report_field/time, "Время")
 	add_field(/datum/report_field/simple_text, "Номер")
 
 /datum/computer_file/report/recipient/sci/anomaly
@@ -20,9 +20,9 @@
 	..()
 	add_header()
 	add_field(/datum/report_field/simple_text, "Кодовое название объекта")
-	add_field(/datum/report_field/people/from_manifest, "Отчитывающийс&#255; ученый")
-	add_field(/datum/report_field/people/from_manifest, "Провер&#255;ющий Директор Исследований")
-	add_field(/datum/report_field/pencode_text, "Процедуры содержани&#255;")
+	add_field(/datum/report_field/people/from_manifest, "Отчитывающийся ученый")
+	add_field(/datum/report_field/people/from_manifest, "Проверяющий Директор Исследований")
+	add_field(/datum/report_field/pencode_text, "Процедуры содержания")
 	add_field(/datum/report_field/pencode_text, "Общее описание")
 	add_field(/datum/report_field/simple_text, "Примерный возраст объекта")
 	add_field(/datum/report_field/simple_text, "Уровень опасности объекта")

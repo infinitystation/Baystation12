@@ -84,8 +84,8 @@
 		if(prob(2))
 			if(active_breathing)
 				owner.visible_message(
-					"<B>[owner]</B> кашл&#255;ет кровью!",
-					"<span class='warning'>Вы кашл&#255;ете кровью!</span>",
+					"<B>[owner]</B> кашляет кровью!",
+					"<span class='warning'>Вы кашляете кровью!</span>",
 					"Вы слышите кашель!",
 				)
 			else
@@ -98,9 +98,9 @@
 		if(prob(4))
 			if(active_breathing)
 				owner.visible_message(
-					"<B>[owner]</B> задыхаетс&#255;!",
+					"<B>[owner]</B> задыхается!",
 					"<span class='danger'>Вы задыхаетесь!</span>",
-					"Вы слышите как кто-то задыхаетс&#255;!",
+					"Вы слышите как кто-то задыхается!",
 				)
 			else
 				to_chat(owner, "<span class='danger'>You're having trouble getting enough [breath_type]!</span>")

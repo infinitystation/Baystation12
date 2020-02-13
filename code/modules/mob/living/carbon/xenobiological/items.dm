@@ -292,7 +292,7 @@
 		G.set_default_language(lang)
 		I.languages[lang.name] = 1
 
-	to_chat(G, FONT_LARGE(SPAN_BOLD("Вы не помните о своей прошлой жизни. Вы были созданы буквально только что. Ваши знани&#255; ограничены &#255;зыком. У вас есть создатель и больше ничего. Служите [user] или погибните пыта&#255;сь."))) //inf
+	to_chat(G, FONT_LARGE(SPAN_BOLD("Вы не помните о своей прошлой жизни. Вы были созданы буквально только что. Ваши знания ограничены языком. У вас есть создатель и больше ничего. Служите [user] или погибните пытаясь."))) //inf
 	to_chat(G, SPAN_ITALIC("You move slowly and are vulnerable to trauma, but are resistant to heat and cold."))
 	qdel(src)
 

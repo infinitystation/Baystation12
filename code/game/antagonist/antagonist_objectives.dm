@@ -72,7 +72,7 @@
 		if(!goal)
 			goal = new /datum/goal/ambition(mind)
 		goal.description += "<br>[roundduration2text()]: [new_goal]"
-		to_chat(src, SPAN_NOTICE("Теперь, Ваша амбици&#255; выгл&#255;дит так: <b>[goal.description]</b><br>. \
+		to_chat(src, SPAN_NOTICE("Теперь, Ваша амбиция выглядит так: <b>[goal.description]</b><br>. \
 		Вы можете просмотреть её через кнопку <b>Notes</b>. Если Вы хотите изменить всю амбицию, \
 		то обратитесь к администратору."))
 		log_and_message_admins("обновил свою амбицию: [new_goal].")

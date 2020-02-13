@@ -34,7 +34,7 @@ SUBSYSTEM_DEF(ticker)
 
 /datum/controller/subsystem/ticker/Initialize()
 	to_world("<B><FONT color='blue'>Добро пожаловать в лобби!</FONT></B>")
-	to_world("Настройте своего персонажа и нажмите \"Ready\" дл&#255; вступлению в игру с начала раунда через [round(pregame_timeleft/10)] секунд.")
+	to_world("Настройте своего персонажа и нажмите \"Ready\" для вступлению в игру с начала раунда через [round(pregame_timeleft/10)] секунд.")
 	return ..()
 
 /datum/controller/subsystem/ticker/fire(resumed = 0)
@@ -69,14 +69,14 @@ SUBSYSTEM_DEF(ticker)
 		if(CHOOSE_GAMEMODE_RETRY)
 			pregame_timeleft = 60 SECONDS
 			Master.SetRunLevel(RUNLEVEL_LOBBY)
-			to_world("<B>Невозможно выбрать соответствующий настройкам игровой режим (недостаточно игроков со включенными рол&#255;ми).</B> Лобби перезапущено дл&#255; повторной попытки.")
+			to_world("<B>Невозможно выбрать соответствующий настройкам игровой режим (недостаточно игроков со включенными ролями).</B> Лобби перезапущено для повторной попытки.")
 			return
 		if(CHOOSE_GAMEMODE_REVOTE)
 			revotes_allowed--
 			pregame_timeleft = initial(pregame_timeleft)
 			gamemode_vote_results = null
 			Master.SetRunLevel(RUNLEVEL_LOBBY)
-			to_world("<B>Невозможно выбрать соответствующий настройкам игровой режим (недостаточно игроков со включенными рол&#255;ми).</B> Лобби перезапущено дл&#255; повторного голосовани&#255;.")
+			to_world("<B>Невозможно выбрать соответствующий настройкам игровой режим (недостаточно игроков со включенными ролями).</B> Лобби перезапущено для повторного голосования.")
 			return
 		if(CHOOSE_GAMEMODE_RESTART) //inf, unused
 			to_world("<B>Невозможно выбрать соответствующий настройкам игровой режим.</B> Мир будет перезапущен.")
@@ -99,7 +99,7 @@ SUBSYSTEM_DEF(ticker)
 
 	spawn(0)//Forking here so we dont have to wait for this to finish
 		mode.post_setup() // Drafts antags who don't override jobs.
-		to_world("<FONT color='blue'><B>При&#255;тной игры!</B></FONT>")
+		to_world("<FONT color='blue'><B>Приятной игры!</B></FONT>")
 		send2maindiscord("Раунд с режимом [SSticker.master_mode] начался. Игроков: [GLOB.player_list.len].")
 		send2mainirc("Раунд с режимом [SSticker.master_mode] начался;. Игроков: [GLOB.player_list.len].")
 		sound_to(world, sound(GLOB.using_map.welcome_sound))
@@ -108,7 +108,7 @@ SUBSYSTEM_DEF(ticker)
 		Holiday_Game_Start()
 
 	if(!length(GLOB.admins))
-		send2adminirc("Раунд началс&#255; без администраторов в игре!")
+		send2adminirc("Раунд начался без администраторов в игре!")
 
 	if(config.ooc_allowed && !config.ooc_during_round)
 		config.ooc_allowed = 0
@@ -153,7 +153,7 @@ SUBSYSTEM_DEF(ticker)
 				else
 					SSstatistics.set_field_details("end_proper","universe destroyed")
 				if(!delay_end)
-					to_world("<span class='notice'><b>Перезапуск в следствии уничтожени&#255; [station_name()] через [restart_timeout/10] секунд.</b></span>")
+					to_world("<span class='notice'><b>Перезапуск в следствии уничтожения [station_name()] через [restart_timeout/10] секунд.</b></span>")
 
 			else
 				SSstatistics.set_field_details("end_proper","proper completion")
@@ -388,7 +388,7 @@ Helpers
 
 /datum/controller/subsystem/ticker/proc/notify_delay()
 	if(!delay_notified)
-		to_world("<span class='notice'><b>Администраци&#255; приостановила конец раунда.</b></span>")
+		to_world("<span class='notice'><b>Администрация приостановила конец раунда.</b></span>")
 	delay_notified = 1
 
 /datum/controller/subsystem/ticker/proc/handle_tickets()
@@ -399,7 +399,7 @@ Helpers
 			notify_delay()
 			end_game_state = END_GAME_AWAITING_TICKETS
 			return
-	message_staff("<span class='warning'><b>Активных тикетов не осталось, рестарт через [restart_timeout/10] секунд если администраторы не приостанов&#255;т его.</b></span>")
+	message_staff("<span class='warning'><b>Активных тикетов не осталось, рестарт через [restart_timeout/10] секунд если администраторы не приостановят его.</b></span>")
 	end_game_state = END_GAME_ENDING
 
 /datum/controller/subsystem/ticker/proc/declare_completion()
@@ -415,7 +415,7 @@ Helpers
 					if(isNotAdminLevel(playerTurf.z))
 						to_chat(Player, "<font color='blue'><b>Вам удалось выжить, но вы были брошены на [station_name()], [Player.real_name]...</b></font>")
 					else
-						to_chat(Player, "<font color='green'><b>Вам удалось пережить событи&#255; на [station_name()], [Player.real_name]!</b></font>")
+						to_chat(Player, "<font color='green'><b>Вам удалось пережить события на [station_name()], [Player.real_name]!</b></font>")
 				else if(isAdminLevel(playerTurf.z))
 					to_chat(Player, "<font color='green'><b>Вы успешно избежали событий на [station_name()], [Player.real_name].</b></font>")
 				else if(issilicon(Player))
@@ -426,9 +426,9 @@ Helpers
 				if(isghost(Player))
 					var/mob/observer/ghost/O = Player
 					if(!O.started_as_observer)
-						to_chat(Player, "<font color='red'><b>Вы не пережили событи&#255; на [station_name()]...</b></font>")
+						to_chat(Player, "<font color='red'><b>Вы не пережили события на [station_name()]...</b></font>")
 				else
-					to_chat(Player, "<font color='red'><b>Вы не пережили событи&#255; на [station_name()]...</b></font>")
+					to_chat(Player, "<font color='red'><b>Вы не пережили события на [station_name()]...</b></font>")
 	to_world("<br>")
 
 	for (var/mob/living/silicon/ai/aiPlayer in SSmobs.mob_list)
@@ -441,7 +441,7 @@ Helpers
 		aiPlayer.show_laws(1)
 
 		if (aiPlayer.connected_robots.len)
-			var/robolist = "<b>Ло&#255;льными роботами ИИ были:</b> "
+			var/robolist = "<b>Лояльными роботами ИИ были:</b> "
 			for(var/mob/living/silicon/robot/robo in aiPlayer.connected_robots)
 				robolist += "[robo.name][robo.stat?" (Deactivated) (Played by: [robo.key]), ":" (Played by: [robo.key]), "]"
 			to_world("[robolist]")
@@ -456,10 +456,10 @@ Helpers
 
 		if (!robo.connected_ai)
 			if (robo.stat != 2)
-				to_world("<b>[robo.name] (Игрок: [robo.key]) пережил событи&#255; без ИИ-хоз&#255;ина! Его законы:</b>")
+				to_world("<b>[robo.name] (Игрок: [robo.key]) пережил события без ИИ-хозяина! Его законы:</b>")
 
 			else
-				to_world("<b>[robo.name] (Игрок: [robo.key]) не смог пережить т&#255;готы быти&#255; синтетика без ИИ-хоз&#255;ина. Его законы:</b>")
+				to_world("<b>[robo.name] (Игрок: [robo.key]) не смог пережить тяготы бытия синтетика без ИИ-хозяина. Его законы:</b>")
 
 
 			if(robo) //How the hell do we lose robo between here and the world messages directly above this?

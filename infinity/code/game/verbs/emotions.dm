@@ -6,7 +6,7 @@
 		emoteLastUse = world.time
 		return 1
 	else
-		to_chat(src, "<span class='warning'>Между эмоци&#255;ми должно пройти не менее [emoteCooldown / 10] секунд.</span>")
+		to_chat(src, "<span class='warning'>Между эмоциями должно пройти не менее [emoteCooldown / 10] секунд.</span>")
 		return 0
 
 /mob/living/verb/laugh()

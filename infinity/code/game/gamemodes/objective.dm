@@ -1,5 +1,5 @@
 /datum/objective/nuclear
-	explanation_text = "Уничтожьте объект с помощью &#255;дерного зар&#255;да."
+	explanation_text = "Уничтожьте объект с помощью ядерного заряда."
 
 /datum/objective/nuclear/kidnap
 	var/list/roles = list(/datum/job/captain, /datum/job/rd, /datum/job/scientist, /datum/job/chief_engineer, /datum/job/lawyer)
