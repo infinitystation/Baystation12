@@ -128,7 +128,7 @@
 /obj/item/projectile/bullet/pistol/holdout
 	damage = 40
 	penetration_modifier = 1.2
-	distance_falloff = 4
+	//distance_falloff //inf = 4
 
 /obj/item/projectile/bullet/pistol/strong
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
@@ -154,7 +154,7 @@
 	penetrating = 1
 	armor_penetration = 70
 	embed = 0
-	distance_falloff = 2
+	//distance_falloff //inf = 2
 
 /* shotgun projectiles */
 
@@ -171,7 +171,7 @@
 	agony = 60
 	embed = 0
 	armor_penetration = 0
-	distance_falloff = 3
+	//distance_falloff //inf = 3
 
 //Should do about 80 damage at 1 tile distance (adjacent), and 50 damage at 3 tiles distance.
 //Overall less damage than slugs in exchange for more damage at very close range and more embedding
@@ -191,7 +191,7 @@
 	armor_penetration = 25
 	penetration_modifier = 1.5
 	penetrating = 1
-	distance_falloff = 1.5
+	//distance_falloff //inf = 1.5
 
 /obj/item/projectile/bullet/rifle/military
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
@@ -204,10 +204,10 @@
 	damage = 80
 	stun = 3
 	weaken = 3
+	//distance_falloff //inf = 0.5
 	penetrating = 3
 	armor_penetration = 70
 	penetration_modifier = 1.2
-	distance_falloff = 0.5
 
 /obj/item/projectile/bullet/rifle/shell/apds
 	damage = 70
@@ -265,7 +265,7 @@
 	damage = 40
 	armor_penetration = 25
 	life_span = 255
-	distance_falloff = 0
+	//distance_falloff //inf = 0
 
 /obj/item/projectile/bullet/rock/New()
 	icon_state = "rock[rand(1,3)]"
