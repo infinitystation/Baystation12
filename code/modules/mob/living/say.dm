@@ -147,11 +147,11 @@ proc/get_radio_key_from_channel(var/channel)
 		. = 1
 	else if(slurring)
 		message = slur(message)
-		verb = "заплетаетс&#255;" //INF, WAS verb = pick("slobbers","slurs")
+		verb = "заплетается" //INF, WAS verb = pick("slobbers","slurs")
 		. = 1
 	else if(stuttering)
 		message = NewStutter(message)
-		verb = pick("бормочет","заикаетс&#255;") //INF, WAS verb = pick("stammers","stutters")
+		verb = pick("бормочет","заикается") //INF, WAS verb = pick("stammers","stutters")
 		. = 1
 	else if(has_chem_effect(CE_SQUEAKY, 1))
 		message = "<font face = 'Comic Sans MS'>[message]</font>"
@@ -205,19 +205,19 @@ proc/get_radio_key_from_channel(var/channel)
 			return say_dead(message)
 		return
 
-	var/prefix = copytext(message,1,2)
+	var/prefix = copytext_char(message,1,2)
 	if(prefix == get_prefix_key(/decl/prefix/custom_emote))
-		return emote(copytext(message,2))
+		return emote(copytext_char(message,2))
 	if(prefix == get_prefix_key(/decl/prefix/visible_emote))
-		return custom_emote(1, copytext(message,2))
+		return custom_emote(1, copytext_char(message,2))
 
 	//parse the radio code and consume it
 	var/message_mode = parse_message_mode(message, "headset")
 	if (message_mode)
 		if (message_mode == "headset")
-			message = copytext(message,2)	//it would be really nice if the parse procs could do this for us.
+			message = copytext_char(message,2)	//it would be really nice if the parse procs could do this for us.
 		else
-			message = copytext(message,3)
+			message = copytext_char(message,3)
 
 	message = trim_left(message)
 
@@ -225,7 +225,7 @@ proc/get_radio_key_from_channel(var/channel)
 	if(!speaking)
 		speaking = parse_language(message)
 		if(speaking)
-			message = copytext(message,2+length(speaking.key))
+			message = copytext_char(message,2+length_char(speaking.key))
 		else
 			speaking = get_default_language()
 
@@ -245,7 +245,7 @@ proc/get_radio_key_from_channel(var/channel)
 		else
 			verb = say_quote(message, speaking)
 			if(verb == "кричит")
-				message = copytext(message, 1, length(message))
+				message = copytext_char(message, 1, length_char(message))
 
 	message = trim_left(message)
 	message = handle_autohiss(message, speaking)
