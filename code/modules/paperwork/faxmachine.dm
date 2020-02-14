@@ -21,8 +21,11 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 
 	var/static/list/admin_departments
 
+	var/list/send_or_reseive_sounds = list('infinity/sound/SS2/effects/machines/fax1.wav', 'infinity/sound/SS2/effects/machines/fax2.wav')//inf
+
 /obj/machinery/photocopier/faxmachine/Initialize()
 	. = ..()
+	for(var/i = 1; i <= length(send_or_reseive_sounds); i++) send_or_reseive_sounds[i] = sound(send_or_reseive_sounds[i])//inf
 
 	if(!admin_departments)
 		admin_departments = list("[GLOB.using_map.boss_name]", "Sol Federal Police", "[GLOB.using_map.boss_short] Supply") + GLOB.using_map.map_admin_faxes
@@ -99,14 +102,16 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 /obj/machinery/photocopier/faxmachine/Topic(href, href_list)
 	var/mob/user = usr
 	if(href_list["send"])
-		if(copyitem)
-			if (destination in admin_departments)
-				send_admin_fax(user, destination)
-			else
-				sendfax(destination)
-			if (sendcooldown)
-				spawn(sendcooldown) // cooldown time
-					sendcooldown = 0
+		if(!sendcooldown)//inf
+			if(copyitem)
+				if (destination in admin_departments)
+					send_admin_fax(user, destination)
+				else
+					sendfax(destination)
+				if (sendcooldown)
+					spawn(sendcooldown) // cooldown time
+						sendcooldown = 0
+		else to_chat(user, "You can't do that.")//inf
 
 	else if(href_list["remove"])
 		if(copyitem)
@@ -175,7 +180,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 		return 0	//You can't send faxes to "Unknown"
 
 	flick("faxreceive", src)
-	playsound(loc, "sound/machines/dotprinter.ogg", 50, 1)
+	playsound(loc, pick(send_or_reseive_sounds), 50, 1)//inf //was:'	playsound(loc, "sound/machines/dotprinter.ogg", 50, 1)'
 	visible_message("[src] beeps, \"Incomming message.\"")
 
 	// give the sprite some time to flick
@@ -253,5 +258,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 
 	for(var/client/C in GLOB.admins)
 		if(check_rights((R_ADMIN|R_MOD),0,C))
+			var/sound/S = pick(send_or_reseive_sounds)
+			S.volume = 50 //inf
 			to_chat(C, msg)
-			sound_to(C, 'sound/machines/dotprinter.ogg')
+			sound_to(C, S)
