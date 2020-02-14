@@ -11,7 +11,7 @@
 		else
 			desc += "**Никто не пережил эту смену**\n"
 		desc += "Призраков: **[data["ghosts"]]**\n"
-		desc += "Игроков: **[LAZYLEN(GLOB.clients)]**\n"
+		desc += "Игроков: **[GLOB.clients.len]**\n"
 		desc += "Продолжительность: **[roundduration2text()]**"
 
 	.["embeds"] = list(list(
