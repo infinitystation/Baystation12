@@ -105,7 +105,15 @@
 	else
 		var/obj/item/organ/organ_to_remove = attached_organs[1]
 		if(attached_organs.len > 1)
-			organ_to_remove = input(user, "Which organ do you want to separate?") as null|anything in attached_organs
+	//		organ_to_remove = input(user, "Which organ do you want to separate?") as null|anything in attached_organs
+	//[INF]
+			var/list/options = list()
+			for(var/i in attached_organs)
+				var/obj/item/organ/I = target.internal_organs_by_name[i]
+				options[i] = image(icon = I.icon, icon_state = I.icon_state)
+			organ_to_remove = show_radial_menu(user, target, options, radius = 32, require_near = TRUE)
+	//[/INF]
+
 		if(organ_to_remove)
 			return organ_to_remove
 	return FALSE
@@ -156,7 +164,14 @@
 		else
 			var/obj/item/organ/organ_to_remove = removable_organs[1]
 			if(removable_organs.len > 1)
-				organ_to_remove = input(user, "Which organ do you want to remove?") as null|anything in removable_organs
+	//			organ_to_remove = input(user, "Which organ do you want to remove?") as null|anything in removable_organs
+	//[INF]
+				var/list/options = list()
+				for(var/i in removable_organs)
+					var/obj/item/organ/I = target.internal_organs_by_name[i]
+					options[i] = image(icon = I.icon, icon_state = I.icon_state)
+				organ_to_remove = show_radial_menu(user, target, options, radius = 32, require_near = TRUE)
+	//[/INF]
 			if(organ_to_remove)
 				return organ_to_remove
 	return FALSE
