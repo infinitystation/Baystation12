@@ -38,58 +38,59 @@ var/list/department_radio_keys = list(
 	  ":Y" = "Exploration",		".Y" = "Exploration",
 	  ":K" = "Recon",		".K" = "Recon",	//Skrell Recon ship
 
+		//INF  cp1251 compitability test. If you CAN read THIS "Инфинити" via GITHUB web - so UTF-8 here and shit is broken ~Laxesh
 	  //localized radio keys by ~KareTa
-	  ":Рє" = "right ear",	".Рє" = "right ear",
-	  ":Рґ" = "left ear",	".Рґ" = "left ear",
-	  ":С€" = "intercom",	".С€" = "intercom",
-	  ":СЂ" = "department",	".СЂ" = "department",
-	  ":СЃ" = "Command",		".СЃ" = "Command",
-	  ":С‚" = "Science",		".С‚" = "Science",
-	  ":СЊ" = "Medical",		".СЊ" = "Medical",
-	  ":Сѓ" = "Engineering",	".Сѓ" = "Engineering",
-	  ":С‹" = "Security",	".С‹" = "Security",
-	  ":С†" = "whisper",		".С†" = "whisper",
-	  ":Рµ" = "Mercenary",	".Рµ" = "Mercenary",
-	  ":Рі" = "Supply",		".Рі" = "Supply",
-	  ":Рј" = "Service",		".Рј" = "Service",
-	  ":Р·" = "AI Private",	".Р·" = "AI Private",
-	  ":СЏ" = "Entertainment",".СЏ" = "Entertainment",
-	  ":РЅ" = "Exploration",		".РЅ" = "Exploration",
-	  ":Р»" = "Recon",		".Р»" = "Recon",	//Skrell Recon ship
+	  ":к" = "right ear",	".к" = "right ear",
+	  ":д" = "left ear",	".д" = "left ear",
+	  ":ш" = "intercom",	".ш" = "intercom",
+	  ":р" = "department",	".р" = "department",
+	  ":с" = "Command",		".с" = "Command",
+	  ":т" = "Science",		".т" = "Science",
+	  ":ь" = "Medical",		".ь" = "Medical",
+	  ":у" = "Engineering",	".у" = "Engineering",
+	  ":ы" = "Security",	".ы" = "Security",
+	  ":ц" = "whisper",		".ц" = "whisper",
+	  ":е" = "Mercenary",	".е" = "Mercenary",
+	  ":г" = "Supply",		".г" = "Supply",
+	  ":м" = "Service",		".м" = "Service",
+	  ":з" = "AI Private",	".з" = "AI Private",
+	  ":я" = "Entertainment",".я" = "Entertainment",
+	  ":н" = "Exploration",		".н" = "Exploration",
+	  ":л" = "Recon",		".л" = "Recon",	//Skrell Recon ship
 
-	  ":Рљ" = "right ear",	".Рљ" = "right ear",
-	  ":Р”" = "left ear",	".Р”" = "left ear",
-	  ":РЁ" = "intercom",	".РЁ" = "intercom",
-	  ":Р " = "department",	".Р " = "department",
-	  ":РЎ" = "Command",		".РЎ" = "Command",
-	  ":Рў" = "Science",		".Рў" = "Science",
-	  ":Р¬" = "Medical",		".Р¬" = "Medical",
-	  ":РЈ" = "Engineering",	".РЈ" = "Engineering",
-	  ":Р«" = "Security",	".Р«" = "Security",
-	  ":Р¦" = "whisper",		".Р¦" = "whisper",
-	  ":Р•" = "Mercenary",	".Р•" = "Mercenary",
-	  ":Р“" = "Supply",		".Р“" = "Supply",
-	  ":Рњ" = "Service",		".Рњ" = "Service",
-	  ":Р—" = "AI Private",	".Р—" = "AI Private",
-	  ":РЇ" = "Entertainment",".РЇ" = "Entertainment",
-	  ":Рќ" = "Exploration",		".Рќ" = "Exploration",
-	  ":Р›" = "Recon",		".Р›" = "Recon",	//Skrell Recon ship
+	  ":К" = "right ear",	".К" = "right ear",
+	  ":Д" = "left ear",	".Д" = "left ear",
+	  ":Ш" = "intercom",	".Ш" = "intercom",
+	  ":Р" = "department",	".Р" = "department",
+	  ":С" = "Command",		".С" = "Command",
+	  ":Т" = "Science",		".Т" = "Science",
+	  ":Ь" = "Medical",		".Ь" = "Medical",
+	  ":У" = "Engineering",	".У" = "Engineering",
+	  ":Ы" = "Security",	".Ы" = "Security",
+	  ":Ц" = "whisper",		".Ц" = "whisper",
+	  ":Е" = "Mercenary",	".Е" = "Mercenary",
+	  ":Г" = "Supply",		".Г" = "Supply",
+	  ":М" = "Service",		".М" = "Service",
+	  ":З" = "AI Private",	".З" = "AI Private",
+	  ":Я" = "Entertainment",".Я" = "Entertainment",
+	  ":Н" = "Exploration",		".Н" = "Exploration",
+	  ":Л" = "Recon",		".Л" = "Recon",	//Skrell Recon ship
 
 	  /*
 	  //kinda localization -- rastaf0
 	  //same keys as above, but on russian keyboard layout. This file uses cp1251 as encoding.
-	  ":Рљ" = "right ear",	".Рљ" = "right ear",
-	  ":Р”" = "left ear",	".Р”" = "left ear",
-	  ":РЁ" = "intercom",	".РЁ" = "intercom",
-	  ":Р " = "department",	".Р " = "department",
-	  ":РЎ" = "Command",		".РЎ" = "Command",
-	  ":Рў" = "Science",		".Рў" = "Science",
-	  ":Р¬" = "Medical",		".Р¬" = "Medical",
-	  ":РЈ" = "Engineering",	".РЈ" = "Engineering",
-	  ":Р«" = "Security",	".Р«" = "Security",
-	  ":Р¦" = "whisper",		".Р¦" = "whisper",
-	  ":Р•" = "Mercenary",	".Р•" = "Mercenary",
-	  ":Р“" = "Supply",		".Р“" = "Supply",
+	  ":Р“Р„" = "right ear",	".Р“Р„" = "right ear",
+	  ":Р“В¤" = "left ear",	".Р“В¤" = "left ear",
+	  ":Р“С‘" = "intercom",	".Р“С‘" = "intercom",
+	  ":Р“В°" = "department",	".Р“В°" = "department",
+	  ":Р“В±" = "Command",		".Р“В±" = "Command",
+	  ":Р“Р†" = "Science",		".Р“Р†" = "Science",
+	  ":Р“С" = "Medical",		".Р“С" = "Medical",
+	  ":Р“С–" = "Engineering",	".Р“С–" = "Engineering",
+	  ":Р“В»" = "Security",	".Р“В»" = "Security",
+	  ":Р“В¶" = "whisper",		".Р“В¶" = "whisper",
+	  ":Р“Тђ" = "Mercenary",	".Р“Тђ" = "Mercenary",
+	  ":Р“В©" = "Supply",		".Р“В©" = "Supply",
 	  */
 )
 
@@ -141,20 +142,20 @@ proc/get_radio_key_from_channel(var/channel)
 
 	if((MUTATION_HULK in mutations) && health >= 25 && length(message))
 		message = "[uppertext(message)]!!!"
-		verb = pick("РєСЂРёС‡РёС‚","РІРѕРїРёС‚") //INF, WAS verb = pick("yells","roars","hollers")
+		verb = pick("кричит","вопит") //INF, WAS verb = pick("yells","roars","hollers")
 		message_data[3] = 0
 		. = 1
 	else if(slurring)
 		message = slur(message)
-		verb = "Р·Р°РїР»РµС‚Р°РµС‚СЃСЏ" //INF, WAS verb = pick("slobbers","slurs")
+		verb = "заплетаетс&#255;" //INF, WAS verb = pick("slobbers","slurs")
 		. = 1
 	else if(stuttering)
 		message = NewStutter(message)
-		verb = pick("Р±РѕСЂРјРѕС‡РµС‚","Р·Р°РёРєР°РµС‚СЃСЏ") //INF, WAS verb = pick("stammers","stutters")
+		verb = pick("бормочет","заикаетс&#255;") //INF, WAS verb = pick("stammers","stutters")
 		. = 1
 	else if(has_chem_effect(CE_SQUEAKY, 1))
 		message = "<font face = 'Comic Sans MS'>[message]</font>"
-		verb = "СЃРєСЂРёРїРёС‚"  //INF, WAS verb = "squeaks"
+		verb = "скрипит"  //INF, WAS verb = "squeaks"
 		. = 1
 
 	message_data[1] = message
@@ -175,22 +176,24 @@ proc/get_radio_key_from_channel(var/channel)
 
 /mob/living/proc/get_speech_ending(verb, var/ending)
 	if(ending=="!")
-		return pick("РІРѕСЃРєР»РёС†Р°РµС‚","РІС‹РєСЂРёРєРёРІР°РµС‚") //INF, WAS return pick("exclaims","shouts","yells")
+		return pick("восклицает","выкрикивает") //INF, WAS return pick("exclaims","shouts","yells")
 	if(ending=="?")
-		return "СЃРїСЂР°С€РёРІР°РµС‚" //INF, WAS return "asks"
+		return "спрашивает" //INF, WAS return "asks"
 	return verb
 
 /mob/living/proc/format_say_message(var/message = null)
 	if(!message)
 		return
 
+	message = replacetext(message, "&#255;", "__:Я:_") // Никому же в голову не придет такое написать? ~bear1ake@inf-dev
 	message = html_decode(message)
 
-	var/end_char = copytext(message, length(message), length(message) + 1)
+	var/end_char = copytext(message, lentext(message), lentext(message) + 1)
 	if(!(end_char in list(".", "?", "!", "-", "~")))
 		message += "."
 
 	message = html_encode(message)
+	message = replacetext(message, "__:Я:_", "&#255;")
 	return message
 
 /mob/living/say(var/message, var/datum/language/speaking = null, var/verb="says", var/alt_name="", whispering)
@@ -204,6 +207,7 @@ proc/get_radio_key_from_channel(var/channel)
 			return say_dead(message)
 		return
 
+	message = sanitize_a0(message)
 
 	var/prefix = copytext(message,1,2)
 	if(prefix == get_prefix_key(/decl/prefix/custom_emote))
@@ -244,7 +248,7 @@ proc/get_radio_key_from_channel(var/channel)
 			verb = speaking.whisper_verb ? speaking.whisper_verb : speaking.speech_verb
 		else
 			verb = say_quote(message, speaking)
-			if(verb == "РєСЂРёС‡РёС‚")
+			if(verb == "кричит")
 				message = copytext(message, 1, length(message))
 
 	message = trim_left(message)
