@@ -73,7 +73,7 @@
 
 /obj/item/device/assembly/infra/Topic(href, href_list, state = GLOB.physical_state)
 	if(..())
-		show_browser(usr, null, "window=infra")
+		close_browser(usr, "window=infra")
 		onclose(usr, "infra")
 		return 1
 
@@ -85,7 +85,7 @@
 		update_icon()
 
 	if(href_list["close"])
-		show_browser(usr, null, "window=infra")
+		close_browser(usr, "window=infra")
 		return
 
 	if(usr)

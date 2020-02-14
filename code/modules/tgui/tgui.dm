@@ -139,7 +139,7 @@
   * Close the UI, and all its children.
  **/
 /datum/tgui/proc/close()
-	show_browser(user, null, "window=[window_id]") // Close the window.
+	close_browser(user, "window=[window_id]") // Close the window.
 	SStgui.on_close(src)
 	for(var/datum/tgui/child in children) // Loop through and close all children.
 		child.close()

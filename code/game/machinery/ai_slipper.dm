@@ -41,7 +41,7 @@
 			if (locked)
 				if (user.machine==src)
 					user.unset_machine()
-					show_browser(user, null, "window=ai_slipper")
+					close_browser(user, "window=ai_slipper")
 			else
 				if (user.machine==src)
 					interact(user)

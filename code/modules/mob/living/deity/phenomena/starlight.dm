@@ -79,7 +79,7 @@
 		to_chat(L, "<span class='notice'>You have been chosen by your master to lead your fellow followers into the next age of rebirth.<br>You have been granted powerful armor and a powerful spell. Don't lose them, as they are your key to your divinity and leadership.<br>You also have particular sway over your deity's structures.</span>")
 		to_chat(linked, "<span class='notice'>\The [L] is now your herald!</span>")
 		linked.remove_phenomena(name)
-		show_browser(linked, null, "window=herald")
+		close_browser(linked, "window=herald")
 
 /datum/phenomena/herald/activate(var/mob/living/carbon/human/H)
 	var/list/html = list()

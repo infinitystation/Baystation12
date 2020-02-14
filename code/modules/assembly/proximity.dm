@@ -132,7 +132,7 @@
 
 /obj/item/device/assembly/prox_sensor/Topic(href, href_list, state = GLOB.physical_state)
 	if((. = ..()))
-		show_browser(usr, null, "window=prox")
+		close_browser(usr, "window=prox")
 		onclose(usr, "prox")
 		return
 
@@ -154,7 +154,7 @@
 		range = min(max(range, 1), 5)
 
 	if(href_list["close"])
-		show_browser(usr, null, "window=prox")
+		close_browser(usr, "window=prox")
 		return
 
 	if(usr)

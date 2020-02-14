@@ -67,7 +67,7 @@
 
 /obj/item/device/assembly/signaler/Topic(href, href_list, state = GLOB.physical_state)
 	if((. = ..()))
-		show_browser(usr, null, "window=radio")
+		close_browser(usr, "window=radio")
 		onclose(usr, "radio")
 		return
 

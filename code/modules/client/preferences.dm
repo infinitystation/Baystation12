@@ -338,4 +338,4 @@ datum/preferences
 	if(panel)
 		panel.close()
 		panel = null
-	show_browser(user, null, "window=saves")
+	close_browser(user, "window=saves")

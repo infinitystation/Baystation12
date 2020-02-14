@@ -85,7 +85,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 	else
 		user.unset_machine()
 		// No content means no window.
-		show_browser(user, null, "window=wires")
+		close_browser(user, "window=wires")
 		return
 
 	var/datum/browser/popup = new(user, "wires", holder.name, window_x, window_y)
@@ -258,7 +258,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 			Interact(usr)
 
 	if(href_list["close"])
-		show_browser(usr, null, "window=wires")
+		close_browser(usr, "window=wires")
 		usr.unset_machine(holder)
 
 //

@@ -218,7 +218,7 @@
 			if("nostats")
 				option = "NOSTATS"
 			if("later")
-				show_browser(usr, null,"window=privacypoll")
+				close_browser(usr,"window=privacypoll")
 				return
 			if("abstain")
 				option = "ABSTAIN"
@@ -231,7 +231,7 @@
 			var/DBQuery/query_insert = dbcon.NewQuery(sql)
 			query_insert.Execute()
 			to_chat(usr, "<b>Thank you for your vote!</b>")
-			show_browser(usr, null,"window=privacypoll")
+			close_browser(usr,"window=privacypoll")
 
 	if(!ready && href_list["preference"])
 		if(client)
@@ -535,7 +535,7 @@
 	return 0
 
 /mob/new_player/proc/close_spawn_windows()
-	show_browser(src, null, "window=latechoices") //closes late choices window
+	close_browser(src, "window=latechoices") //closes late choices window
 	panel.close()
 
 /mob/new_player/proc/check_species_allowed(datum/species/S, var/show_alert=1)

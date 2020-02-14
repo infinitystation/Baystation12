@@ -108,7 +108,7 @@
 			dat += "Scan card to reset access code <a href='?src=\ref[src];choice=reset'>\[------\]</a>"
 		show_browser(user, dat,"window=eftpos")
 	else
-		show_browser(user, null,"window=eftpos")
+		close_browser(user,"window=eftpos")
 
 /obj/item/device/eftpos/attackby(obj/item/O as obj, user as mob)
 

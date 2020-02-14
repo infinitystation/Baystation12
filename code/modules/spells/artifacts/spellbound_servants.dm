@@ -273,7 +273,7 @@
 			if(turfs.len)
 				src.visible_message("<span class='notice'>\The [src] vanishes!</span>")
 				src.forceMove(pick(turfs))
-	show_browser(user, null, "window=summoning")
+	close_browser(user, "window=summoning")
 	qdel(src)
 
 /obj/item/weapon/summoning_stone/OnTopic(user, href_list, state)

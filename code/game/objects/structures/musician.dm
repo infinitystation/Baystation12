@@ -315,7 +315,7 @@
 
 /obj/structure/device/piano/Topic(href, href_list, state = GLOB.physical_state)
 	if((. = ..()))
-		show_browser(usr, null, "window=piano;size=700x300")
+		close_browser(usr, "window=piano;size=700x300")
 		onclose(usr, "piano")
 		return
 
