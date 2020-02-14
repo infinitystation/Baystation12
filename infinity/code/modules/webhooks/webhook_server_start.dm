@@ -5,8 +5,8 @@
 /decl/webhook/server_start/get_message(var/list/data)
 	. = ..()
 	var/desc = "Новая смена скоро начнётся\n"
-	desc = "Объект: **[station_name()]**\n"
-	desc = "Адрес: [get_world_url()]"
+	desc += "Объект: **[station_name()]**\n"
+	desc += "Адрес: [get_world_url()]"
 //	desc += "."
 
 	.["embeds"] = list(list(
