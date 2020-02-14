@@ -338,4 +338,4 @@ datum/preferences
 	if(panel)
 		panel.close()
 		panel = null
-	user << browse(null, "window=saves")
+	show_browser(user, null, "window=saves")

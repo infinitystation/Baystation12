@@ -91,7 +91,7 @@
 					stat |= MAINT
 					update_use_power(POWER_USE_OFF)
 					if(user.machine==src)
-						user << browse(null, "window=pipedispenser")
+						show_browser(user, null, "window=pipedispenser")
 			else
 				playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
 				to_chat(user, "<span class='notice'>You begin to fasten \the [src] to the floor...</span>")
