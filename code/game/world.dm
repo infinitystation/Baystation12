@@ -666,6 +666,12 @@ proc/setup_database_connection()
 		failed_db_connections++		//If it failed, increase the failed connections counter.
 		world.log << dbcon.ErrorMsg()
 
+	var/DBQuery/unicode_query = dbcon.NewQuery("SET NAMES utf8 COLLATE utf8_general_ci")
+
+	if(!unicode_query.Execute())
+		world.log << unicode_query.ErrorMsg()
+		return
+
 	return .
 
 //This proc ensures that the connection to the feedback database (global variable dbcon) is established
@@ -708,6 +714,13 @@ proc/setup_old_database_connection()
 	else
 		failed_old_db_connections++		//If it failed, increase the failed connections counter.
 		world.log << dbcon.ErrorMsg()
+
+	var/DBQuery/unicode_query = dbcon.NewQuery("SET NAMES utf8 COLLATE utf8_general_ci")
+
+	if(!unicode_query.Execute())
+		world.log << unicode_query.ErrorMsg()
+		return
+
 
 	return .
 
