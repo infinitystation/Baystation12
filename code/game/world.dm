@@ -669,7 +669,7 @@ proc/setup_database_connection()
 	var/DBQuery/unicode_query = dbcon.NewQuery("SET NAMES utf8 COLLATE utf8_general_ci")
 
 	if(!unicode_query.Execute())
-		world.log << unicode_query.ErrorMsg()
+		to_world_log(unicode_query.ErrorMsg())
 		return
 
 	return .
@@ -718,7 +718,7 @@ proc/setup_old_database_connection()
 	var/DBQuery/unicode_query = dbcon.NewQuery("SET NAMES utf8 COLLATE utf8_general_ci")
 
 	if(!unicode_query.Execute())
-		world.log << unicode_query.ErrorMsg()
+		to_world_log(unicode_query.ErrorMsg())
 		return
 
 
