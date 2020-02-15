@@ -501,6 +501,11 @@
 		if(client.prefs.relations.len)
 			for(var/T in client.prefs.relations)
 				var/TT = matchmaker.relation_types[T]
+				//[INF]	Nonexistent relation. Delete it.
+				if(!TT)
+					client.prefs.relations -= T
+					continue
+				//[/INF]
 				var/datum/relation/R = new TT
 				R.holder = mind
 				R.info = client.prefs.relations_info[T]
