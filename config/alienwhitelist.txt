@@ -155,7 +155,6 @@ alchemisthero - unathi
 kotovsyndrome - unathi
 wheatley2013 - unathi
 thesarkazmus - unathi
-arbuzpersikov - unathi
 wolforbykot - unathi
 colossus333 - unathi
 kirill1243 - unathi
@@ -188,7 +187,7 @@ arhod - tajaran
 kordvik - tajaran
 wolforbykot - tajaran
 diesiege - tajaran
-seclog - tajaran
+solartwin - tajaran
 arbuzpersikov - tajaran
 wheatley2013 - adherent
 sosiskoed - adherent
