@@ -35,27 +35,27 @@
 	//output += "<i>[GLOB.using_map.get_map_info()]</i>"
 	//output += "<hr>Current character: <br><b>[client.prefs.real_name]</b>[client.prefs.job_high ? ",<br>[client.prefs.job_high]" : null]<br>"
 	output +="<hr>"
-	output += "<p><a href='byond://?src=\ref[src];show_preferences=1'>Setup Character</A></p>"
+	output += "<p><a href='byond://?src=\ref[src];show_preferences=1'>Настроить Персонажа</A></p>"
 
 	if(GAME_STATE <= RUNLEVEL_LOBBY)
 		if(ready)
-			output += "<p>\[ <span class='linkOn'><b>Ready</b></span> | <a href='byond://?src=\ref[src];ready=0'>Not Ready</a> \]</p>"
+			output += "<p>\[ <span class='linkOn'><b>Готов</b></span> | <a href='byond://?src=\ref[src];ready=0'>Не готов</a> \]</p>"
 		else
-			output += "<p>\[ <a href='byond://?src=\ref[src];ready=1'>Ready</a> | <span class='linkOn'><b>Not Ready</b></span> \]</p>"
+			output += "<p>\[ <a href='byond://?src=\ref[src];ready=1'>Готов</a> | <span class='linkOn'><b>Не готов</b></span> \]</p>"
 		if(check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
-			output += "<p><a href='byond://?src=\ref[src];observe=1'>Observe</A></p>"
+			output += "<p><a href='byond://?src=\ref[src];observe=1'>Наблюдать</A></p>"
 	else
-		output += "<a href='byond://?src=\ref[src];manifest=1'>View the Crew Manifest</A><br><br>"
-		output += "<a href='byond://?src=\ref[src];late_join=1'>Join Game!</A>"
+		output += "<a href='byond://?src=\ref[src];manifest=1'>Показывать Список Экипажа</A><br><br>"
+		output += "<a href='byond://?src=\ref[src];late_join=1'>Зайти в раунд!</A>"
 		if(config.observers_allowed || check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
-			output += "<p><a href='byond://?src=\ref[src];observe=1'>Observe</A></p>"
+			output += "<p><a href='byond://?src=\ref[src];observe=1'>Наблюдать</A></p>"
 
-	output += "<hr>Current character:<br>"
+	output += "<hr>Текущий персонаж:<br>"
 	output += "<b>[client.prefs.real_name]</b>"
 	output += "[client.prefs.job_high ? ",<br>[client.prefs.job_high]" : null]<br>"
 	output += "</div>"
 
-	panel = new(src, "Welcome","Welcome to [GLOB.using_map.full_name]", 210, 280, src)
+	panel = new(src, "Welcome","Добро пожаловать на [GLOB.using_map.full_name]", 210, 280, src)
 	panel.set_window_options("can_close=0")
 	panel.set_content(JOINTEXT(output))
 	panel.open()
