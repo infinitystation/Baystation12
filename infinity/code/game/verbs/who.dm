@@ -2,7 +2,7 @@
 	set name = "Who"
 	set category = "OOC"
 
-	var/msg = "<b>Список Игроков:</b>\n"
+	var/msg = "<meta charset='UTF-8'><b>Список Игроков:</b>\n"
 
 	var/list/Lines = list()
 
