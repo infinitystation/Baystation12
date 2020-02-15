@@ -21,12 +21,10 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 
 	var/static/list/admin_departments
 
-	var/list/send_or_reseive_sounds = list('infinity/sound/SS2/effects/machines/fax1.wav', 'infinity/sound/SS2/effects/machines/fax2.wav')//inf
+	var/list/send_or_reseive_sounds = list(sound('infinity/sound/SS2/effects/machines/fax1.wav'), sound('infinity/sound/SS2/effects/machines/fax2.wav'))//inf
 
 /obj/machinery/photocopier/faxmachine/Initialize()
 	. = ..()
-	for(var/i = 1; i <= length(send_or_reseive_sounds); i++) send_or_reseive_sounds[i] = sound(send_or_reseive_sounds[i])//inf
-
 	if(!admin_departments)
 		admin_departments = list("[GLOB.using_map.boss_name]", "Sol Federal Police", "[GLOB.using_map.boss_short] Supply") + GLOB.using_map.map_admin_faxes
 	GLOB.allfaxes += src
@@ -252,13 +250,15 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 	msg += "Receiving '[sent.name]' via secure connection ... <a href='?_src_=holder;AdminFaxView=\ref[sent]'>view message</a></span>"
 
 //[INF]
-	GLOB.fax_cache += "*[time_stamp()]*: DESTINATION - [msg]<br>" //INF
+	GLOB.fax_cache += "*[time_stamp()]*: DESTINATION - [msg]<br>" //inf
 	if(!disturb) return
 //[/INF]
 
 	for(var/client/C in GLOB.admins)
 		if(check_rights((R_ADMIN|R_MOD),0,C))
+			//[INF]
 			var/sound/S = pick(send_or_reseive_sounds)
-			S.volume = 50 //inf
+			S.volume = 50
+			//[/INF]
 			to_chat(C, msg)
 			sound_to(C, S)
