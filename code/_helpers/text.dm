@@ -36,7 +36,6 @@
 			return
 		input = copytext(input,1,max_length)
 
-
 	if(extra)
 		input = replace_characters(input, list("\n"=" ","\t"=" "))
 
@@ -163,7 +162,7 @@
 	for(var/i=1, i<=length(text), i++)
 		switch(text2ascii(text,i))
 			if(62,60,92,47)	return			//rejects the text if it contains these bad characters: <, >, \ or /
-			//if(127 to 255)	return			//rejects non-ASCII letters
+			if(127 to 255)	return			//rejects non-ASCII letters
 			if(0 to 31)		return			//more weird stuff
 			if(32)			continue		//whitespace
 			else			non_whitespace = 1
@@ -176,6 +175,10 @@
 		return message
 	else
 		return copytext(message, 1, length + 1)
+
+//Old variant. Haven't dared to replace in some places.
+/proc/sanitize_old(var/t,var/list/repl_chars = list("\n"="#","\t"="#"))
+	return html_encode(replace_characters(t,repl_chars))
 
 /*
  * Text searches
@@ -255,18 +258,6 @@
 /proc/trim(text)
 	return trim_left(trim_right(text))
 
-/proc/ruppertext(t as text)
-	t = uppertext(t)
-	. = ""
-	for(var/i in 1 to length(t))
-		var/a = text2ascii(t, i)
-		if (a > 223)
-			. += ascii2text(a - 32)
-		else if (a == 184)
-			. += ascii2text(168)
-		else
-			. += ascii2text(a)
-
 //Returns a string with the first element of the string capitalized.
 /proc/capitalize(var/t as text)
 	return uppertext(copytext_char(t, 1, 2)) + copytext_char(t, 2)
@@ -344,7 +335,11 @@ proc/TextPreview(var/string,var/len=40)
 		else
 			return string
 	else
-		return "[string]..."
+		return "[copytext_preserve_html(string, 1, 37)]..."
+
+//alternative copytext() for encoded text, doesn't break html entities (&#34; and other)
+/proc/copytext_preserve_html(var/text, var/first, var/last)
+	return html_encode(copytext(html_decode(text), first, last))
 
 //For generating neat chat tag-images
 //The icon var could be local in the proc, but it's a waste of resources
