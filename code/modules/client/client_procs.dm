@@ -366,7 +366,7 @@
 // Calling things each tick can get expensive real quick.
 // So we slow this down a little.
 // See: http://www.byond.com/docs/ref/info.html#/client/proc/Stat
-/* INF
+
 /client/Stat()
 	if(!usr)
 		return
@@ -374,7 +374,7 @@
 	statpanel("Status")
 
 	. = ..()
-INF */
+
 //send resources to the client. It's here in its own proc so we can move it around easiliy if need be
 /client/proc/send_resources()
 
