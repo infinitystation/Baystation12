@@ -369,21 +369,21 @@
 
 /area/turbolift/sierra_top
 	name = "Elevator - First Deck"
-	lift_floor_label = "Deck 1"
-	lift_floor_name = "Main Deck"
-	lift_announce_str = "Arriving at Main Deck: Bridge. Security Wing. Research Wing. Infirmary. AI Core. Telecommunications. EVA."
+	lift_floor_label = "1 Палуба"
+	lift_floor_name = "Главная палуба"
+	lift_announce_str = "Главная палуба: мостик, крыло охраны, исследовательское крыло, медицинский отсек, центр телекоммуникацй, отсек ВКД."
 
 /area/turbolift/sierra_middle
 	name = "Elevator - Second Deck"
-	lift_floor_label = "Deck 2"
-	lift_floor_name = "Living Deck"
-	lift_announce_str = "Arriving at Living Deck: Meeting Room. Cryogenic Storage. Dormitory. Holodeck. Lounge. Bar. Hydroponics. Gym. Laundry. Engineering. Atmospherics."
+	lift_floor_label = "2 Палуба"
+	lift_floor_name = "Жилая палуба"
+	lift_announce_str = "Жилая палуба: комната совещаний, отсек криосна, спальное крыло, голодек, лаундж, бар, гидропоника спортзал, прачечная, инженерный отсек."
 
 /area/turbolift/sierra_ground
 	name = "Elevator - Third Deck"
-	lift_floor_label = "Deck 3"
-	lift_floor_name = "Hangar Deck"
-	lift_announce_str = "Arriving at Hangar Deck: Shuttle Docks. Supply Office. Cargo Storage. Main Hangar. Expedition Preparation. Exploration Leader's Office. Mineral Processing. Sanitation."
+	lift_floor_label = "3 Палуба"
+	lift_floor_name = "Ангарная палуба"
+	lift_announce_str = "Ангарная палуба: главный ангар, экспедиционное крыло, крыло снабжения, стыковочные доки, склады, переработка руды, коморка уборщика."
 	base_turf = /turf/simulated/floor
 
 /area/turbolift/start
