@@ -82,7 +82,7 @@
 	HTML += "<tt><center>"
 	HTML += "<b>Установить текст описания</b> <hr />"
 	HTML += "<br></center>"
-	HTML += "<a href='?src=\ref[src];flavor_text=general'>Общее:</a> "
+	HTML += "<a href='?src=\ref[src];flavor_text=general'>Главное:</a> "
 	HTML += TextPreview(pref.flavor_texts["general"])
 	HTML += "<br>"
 	HTML += "<a href='?src=\ref[src];flavor_text=head'>Голова:</a> "

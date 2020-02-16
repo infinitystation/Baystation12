@@ -35,7 +35,7 @@
 	//output += "<i>[GLOB.using_map.get_map_info()]</i>"
 	//output += "<hr>Current character: <br><b>[client.prefs.real_name]</b>[client.prefs.job_high ? ",<br>[client.prefs.job_high]" : null]<br>"
 	output +="<hr>"
-	output += "<p><a href='byond://?src=\ref[src];show_preferences=1'>Настроить Персонажа</A></p>"
+	output += "<p><a href='byond://?src=\ref[src];show_preferences=1'>Настройки</A></p>"
 
 	if(GAME_STATE <= RUNLEVEL_LOBBY)
 		if(ready)
@@ -45,7 +45,7 @@
 		if(check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
 			output += "<p><a href='byond://?src=\ref[src];observe=1'>Наблюдать</A></p>"
 	else
-		output += "<a href='byond://?src=\ref[src];manifest=1'>Показывать Список Экипажа</A><br><br>"
+		output += "<a href='byond://?src=\ref[src];manifest=1'>Список экипажа</A><br><br>"
 		output += "<a href='byond://?src=\ref[src];late_join=1'>Зайти в раунд!</A>"
 		if(config.observers_allowed || check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
 			output += "<p><a href='byond://?src=\ref[src];observe=1'>Наблюдать</A></p>"
