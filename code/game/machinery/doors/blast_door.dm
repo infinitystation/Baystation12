@@ -22,8 +22,9 @@
 	var/icon_state_open_broken = null
 	var/icon_state_closed_broken = null
 
-	var/open_sound = 'sound/machines/blastdoor_open.ogg'
-	var/close_sound = 'sound/machines/blastdoor_close.ogg'
+	var/open_sound = 'infinity/sound/SS2/effects/machines/blast_open_close.ogg'//inf //was: 'sound/machines/blastdoor_open.ogg'
+	var/close_sound = 'infinity/sound/SS2/effects/machines/blast_open_close.ogg'//inf //was: 'sound/machines/blastdoor_close.ogg'
+	var/need_change_freq = 1 //inf
 
 	closed_layer = ABOVE_WINDOW_LAYER
 	dir = 1
@@ -97,7 +98,7 @@
 // Description: Opens the door. No checks are done inside this proc.
 /obj/machinery/door/blast/proc/force_open()
 	operating = 1
-	playsound(src.loc, open_sound, 100, 1)
+	playsound(src.loc, open_sound, 100, need_change_freq) //inf //was: playsound(src.loc, open_sound, 100, 1)
 	flick(icon_state_opening, src)
 	set_density(0)
 	update_nearby_tiles()
@@ -112,7 +113,8 @@
 // Description: Closes the door. No checks are done inside this proc.
 /obj/machinery/door/blast/proc/force_close()
 	operating = 1
-	playsound(src.loc, close_sound, 100, 1)
+	playsound(src.loc, close_sound, 100, need_change_freq) //inf //was: playsound(src.loc, close_sound, 100, 1)
+
 	layer = closed_layer
 	flick(icon_state_closing, src)
 	crush() //inf
@@ -264,6 +266,7 @@
 	min_force = 30
 	maxhealth = 1000
 	block_air_zones = 1
+	need_change_freq = 0 //inf
 
 /obj/machinery/door/blast/regular/escape_pod
 	name = "Escape Pod release Door"
