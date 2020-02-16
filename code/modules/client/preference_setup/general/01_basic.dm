@@ -47,7 +47,7 @@ datum/preferences
 	. += "<b>Имя:</b> "
 	. += "<a href='?src=\ref[src];rename=1'><b>[pref.real_name]</b></a><br>"
 	. += "<a href='?src=\ref[src];random_name=1'>Случайное Имя</A><br>"
-	. += "<a href='?src=\ref[src];always_random_name=1'>Всегда Случайное Имя: [pref.be_random_name ? "Yes" : "No"]</a>"
+	. += "<a href='?src=\ref[src];always_random_name=1'>Всегда Случайное Имя: [pref.be_random_name ? "Да" : "Нет"]</a>"
 	. += "<hr>"
 	. += "<b>Пол:</b> <a href='?src=\ref[src];gender=1'><b>[gender2text(pref.gender)]</b></a><br>"
 	. += "<b>Возраст:</b> <a href='?src=\ref[src];age=1'>[pref.age]</a><br>"
@@ -106,7 +106,7 @@ datum/preferences
 		return TOPIC_REFRESH
 
 	else if(href_list["metadata"])
-		var/new_metadata = sanitize(input(user, "Введите ООС информацию, которую могут увидеть другие:", "Игровые предпочтения" , pref.metadata) as message|null)
+		var/new_metadata = sanitize(input(user, "Введите информация о себе, которую смогут увидеть другие игроки в описании персонажа. Например, Вы можете написать пожелания относительно того, хотите ли оказаться жертвой антагониста или ролевые предпочтения.", "Игровые предпочтения" , pref.metadata) as message|null)
 		if(new_metadata && CanUseTopic(user))
 			pref.metadata = new_metadata
 			return TOPIC_REFRESH

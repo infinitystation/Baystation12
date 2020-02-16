@@ -4,7 +4,7 @@
 var/const/CHARACTER_PREFERENCE_INPUT_TITLE = "Character Preference"
 
 /datum/category_group/player_setup_category/physical_preferences
-	name = "Физиология"
+	name = "Внешность"
 	sort_order = 1
 	category_item_type = /datum/category_item/player_setup_item/physical
 

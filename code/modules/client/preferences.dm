@@ -81,10 +81,10 @@ datum/preferences
 
 	if(path)
 		dat += "Слот - "
-		dat += "<a href='?src=\ref[src];load=1'>Загрузить слот</a> - "
-		dat += "<a href='?src=\ref[src];save=1'>Сохранить слот</a> - "
-		dat += "<a href='?src=\ref[src];resetslot=1'>Сбросить слот</a> - "
-		dat += "<a href='?src=\ref[src];reload=1'>Перезагрузить слот</a>"
+		dat += "<a href='?src=\ref[src];load=1'>Загрузить</a> - "
+		dat += "<a href='?src=\ref[src];save=1'>Сохранить</a> - "
+		dat += "<a href='?src=\ref[src];resetslot=1'>Сбросить </a> - "
+		dat += "<a href='?src=\ref[src];reload=1'>Перезагрузить</a>"
 
 	else
 		dat += "Если вы видите этот текст, то закройте это окно и нажмите кнопку Fix characters load во вкладке ООС."
