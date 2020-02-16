@@ -233,7 +233,7 @@
 	else
 		for(var/device_id in alarm_area.air_scrub_names)
 			send_signal(device_id, list("n2_scrub" = 0))
-//[/INF]*/
+[/INF]*/
 	return
 
 /obj/machinery/alarm/proc/handle_heating_cooling(var/datum/gas_mixture/environment)
