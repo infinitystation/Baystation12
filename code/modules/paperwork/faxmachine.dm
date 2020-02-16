@@ -21,7 +21,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 
 	var/static/list/admin_departments
 
-	var/list/send_or_reseive_sounds = list(sound('infinity/sound/SS2/effects/machines/fax1.wav'), sound('infinity/sound/SS2/effects/machines/fax2.wav'))//inf
+	var/list/send_or_reseive_sounds = list('infinity/sound/SS2/effects/machines/fax1.wav', 'infinity/sound/SS2/effects/machines/fax2.wav')//inf
 
 /obj/machinery/photocopier/faxmachine/Initialize()
 	. = ..()
@@ -256,9 +256,5 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 
 	for(var/client/C in GLOB.admins)
 		if(check_rights((R_ADMIN|R_MOD),0,C))
-			//[INF]
-			var/sound/S = pick(send_or_reseive_sounds)
-			S.volume = 50
-			//[/INF]
 			to_chat(C, msg)
-			sound_to(C, S)
+			sound_to(C, sound(pick(send_or_reseive_sounds), volume = 50))

@@ -51,11 +51,12 @@ var/list/airlock_overlays = list()
 	var/hasShocked = 0 //Prevents multiple shocks from happening
 	var/secured_wires = 0
 
-	var/sound/open_sound_powered = sound('infinity/sound/SS2/effects/machines/airlock_open.wav')//inf//was:var/open_sound_powered =  'sound/machines/airlock_open.ogg'
+	need_change_sound_freq = 0//inf
+	var/open_sound_powered = 'infinity/sound/SS2/effects/machines/airlock_open.wav'//inf//was:var/open_sound_powered =  'sound/machines/airlock_open.ogg'
 	var/open_sound_unpowered = 'sound/machines/airlock_open_force.ogg'
 	var/open_failure_access_denied = 'sound/machines/buzz-two.ogg'
 
-	var/sound/close_sound_powered = sound('infinity/sound/SS2/effects/machines/airlock_close.wav')//inf//was:var/close_sound_powered = 'sound/machines/airlock_close.ogg'
+	var/close_sound_powered = 'infinity/sound/SS2/effects/machines/airlock_close.wav'//inf//was:var/close_sound_powered = 'sound/machines/airlock_close.ogg'
 	var/close_sound_unpowered = 'sound/machines/airlock_close_force.ogg'
 	var/close_failure_blocked = 'sound/machines/triple_beep.ogg'
 
@@ -1237,7 +1238,7 @@ About the new airlock wires panel:
 
 	//if the door is unpowered then it doesn't make sense to hear the woosh of a pneumatic actuator
 	if(arePowerSystemsOn())
-		playsound(src.loc, open_sound_powered, 100, 1)
+		playsound(src.loc, open_sound_powered, 100, need_change_sound_freq/*inf 1*/)
 	else
 		playsound(src.loc, open_sound_unpowered, 100, 1)
 
@@ -1290,7 +1291,7 @@ About the new airlock wires panel:
 
 	use_power_oneoff(360)	//360 W seems much more appropriate for an actuator moving an industrial door capable of crushing people
 	if(arePowerSystemsOn())
-		playsound(src.loc, close_sound_powered, 100, 1)
+		playsound(src.loc, close_sound_powered, 100, need_change_sound_freq /*1*/)
 	else
 		playsound(src.loc, close_sound_unpowered, 100, 1)
 
