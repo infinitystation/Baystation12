@@ -128,10 +128,10 @@
 /proc/_REGEX_QUOTE_REPLACEMENT(text)
 	return REGEX_QUOTE_REPLACEMENT(text)
 
-/proc/_replacetext(Haystack, Needle, Replacement, Start = 1,End = 0)
-	return replacetext(Haystack, Needle, Replacement, Start, End)
+/proc/_replacetext_char(Haystack, Needle, Replacement, Start = 1,End = 0)
+	return replacetext_char(Haystack, Needle, Replacement, Start, End)
 
-/proc/_replacetextEx(Haystack, Needle, Replacement, Start = 1,End = 0)
+/proc/_replacetext_charEx(Haystack, Needle, Replacement, Start = 1,End = 0)
 	return replacetextEx(Haystack, Needle, Replacement, Start, End)
 
 /proc/_rgb(R, G, B)

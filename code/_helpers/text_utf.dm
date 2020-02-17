@@ -2,9 +2,9 @@
 	if(!t)
 		return
 
-	t = replacetext(t, "я", "\\u044f")
-	t = replacetext(t, "&#255;", "\\u044f")
-	t = replacetext(t, "&#1103;", "\\u044f")
+	t = replacetext_char(t, "я", "\\u044f")
+	t = replacetext_char(t, "&#255;", "\\u044f")
+	t = replacetext_char(t, "&#1103;", "\\u044f")
 
 	t = call("pagefile_conv", "json2utf")(t)
 
@@ -15,9 +15,9 @@
 //	if(!t)
 //		return
 
-//	t = replacetext(t, "я", "&#x044f")
-//	t = replacetext(t, "&#255;", "&#x044f")
-//	t = replacetext(t, "&#1103;", "&#x044f")
+//	t = replacetext_char(t, "я", "&#x044f")
+//	t = replacetext_char(t, "&#255;", "&#x044f")
+//	t = replacetext_char(t, "&#1103;", "&#x044f")
 
 //	t = call("pagefile_conv", "chat2utf")(t)
 
@@ -113,15 +113,15 @@ GLOBAL_LIST_INIT(j1251_to_utf_table, list(
 	if(!t)
 		return
 
-	t = replacetext(t, "&#255;", "\\u044f")
-	t = replacetext(t, "&#1103;", "\\u044f")
+	t = replacetext_char(t, "&#255;", "\\u044f")
+	t = replacetext_char(t, "&#1103;", "\\u044f")
 
 	if(DM_VERSION < 511)
 		for(var/s in GLOB.j1251_to_utf_table)
-			t = replacetext(t, "\\x[s]", "\\u[GLOB.j1251_to_utf_table[s]]")
+			t = replacetext_char(t, "\\x[s]", "\\u[GLOB.j1251_to_utf_table[s]]")
 	else
 		for(var/s in GLOB.j1251_to_utf_table)
-			t = replacetext(t, "\\u00[s]", "\\u[GLOB.j1251_to_utf_table[s]]")
+			t = replacetext_char(t, "\\u00[s]", "\\u[GLOB.j1251_to_utf_table[s]]")
 	return t
 
 
@@ -129,9 +129,9 @@ GLOBAL_LIST_INIT(j1251_to_utf_table, list(
 //	if(!t)
 //		return
 
-//	t = replacetext(t, "&#255;", "&#x044f")
-//	t = replacetext(t, "&#1103;", "&#x044f")
+//	t = replacetext_char(t, "&#255;", "&#x044f")
+//	t = replacetext_char(t, "&#1103;", "&#x044f")
 
 //	for(var/s in GLOB.c1251_to_utf_table)
-//		t = replacetext(t, s, "&#x[GLOB.c1251_to_utf_table[s]];")
+//		t = replacetext_char(t, s, "&#x[GLOB.c1251_to_utf_table[s]];")
 //	return t

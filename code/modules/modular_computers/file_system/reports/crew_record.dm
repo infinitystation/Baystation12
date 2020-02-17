@@ -173,7 +173,7 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 
 /proc/RecordByName(var/name)
 	if(findtext(name, "'"))
-		name = replacetext(name, "'", "&#39;")
+		name = replacetext_char(name, "'", "&#39;")
 	for(var/datum/computer_file/report/crew_record/R in GLOB.all_crew_records)
 		var/datum/report_field/field = R.field_from_name("Name")
 		if(lowertext(field.get_value()) == lowertext(name))

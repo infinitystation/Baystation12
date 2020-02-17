@@ -552,8 +552,8 @@ Subtypes
 			if(F.filetype != "BAT") return "<font color='#ffa000'>alias: incorrect file. Expected batch file.</font>"
 			var/code = F.stored_data
 			if(!";" in code) return "<font color='ff0000'>alias: compile error, lack this ';'.</font>"
-			code = replacetext(code, " \[br]","")
-			code = replacetext(code, "\[br]","")
+			code = replacetext_char(code, " \[br]","")
+			code = replacetext_char(code, "\[br]","")
 
 			var/list/code_list = splittext(code, ";")
 

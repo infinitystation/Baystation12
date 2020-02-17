@@ -8,7 +8,7 @@ obj/structure/battle_data_server
 
 /obj/structure/battle_data_server/Initialize()
 	. = ..()
-	desc = replacetext(desc, "(MAPNAME)", GLOB.using_map.full_name)
+	desc = replacetext_char(desc, "(MAPNAME)", GLOB.using_map.full_name)
 	drive = new(src)
 	drive.origin_tech = list(TECH_COMBAT = rand(2,5))
 	var/newdata

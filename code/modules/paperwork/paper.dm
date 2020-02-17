@@ -214,23 +214,23 @@
 		return ""
 
 	if(findtext(t, "\[sign\]"))
-		t = replacetext(t, "\[sign\]", "<font face=\"[signfont]\"><i>[get_signature(P, user)]</i></font>")
+		t = replacetext_char(t, "\[sign\]", "<font face=\"[signfont]\"><i>[get_signature(P, user)]</i></font>")
 
 	if(iscrayon) // If it is a crayon, and he still tries to use these, make them empty!
-		t = replacetext(t, "\[*\]", "")
-		t = replacetext(t, "\[hr\]", "")
-		t = replacetext(t, "\[small\]", "")
-		t = replacetext(t, "\[/small\]", "")
-		t = replacetext(t, "\[list\]", "")
-		t = replacetext(t, "\[/list\]", "")
-		t = replacetext(t, "\[table\]", "")
-		t = replacetext(t, "\[/table\]", "")
-		t = replacetext(t, "\[row\]", "")
-		t = replacetext(t, "\[cell\]", "")
-		t = replacetext(t, "\[logo\]", "")
+		t = replacetext_char(t, "\[*\]", "")
+		t = replacetext_char(t, "\[hr\]", "")
+		t = replacetext_char(t, "\[small\]", "")
+		t = replacetext_char(t, "\[/small\]", "")
+		t = replacetext_char(t, "\[list\]", "")
+		t = replacetext_char(t, "\[/list\]", "")
+		t = replacetext_char(t, "\[table\]", "")
+		t = replacetext_char(t, "\[/table\]", "")
+		t = replacetext_char(t, "\[row\]", "")
+		t = replacetext_char(t, "\[cell\]", "")
+		t = replacetext_char(t, "\[logo\]", "")
 
 	if(!istype(src, /obj/item/weapon/paper/nano))
-		t = replacetext(t, "\[img\]", "")
+		t = replacetext_char(t, "\[img\]", "")
 
 	if(iscrayon)
 		t = "<font face=\"[crayonfont]\" color=[P ? P.colour : "black"]><b>[t]</b></font>"
@@ -306,7 +306,7 @@
 					return
 			else
 				return
-		
+
 		var/obj/item/weapon/pen/P = I
 		if(!P.pen_usable(usr))
 			return
@@ -488,8 +488,8 @@
 	qdel(P)
 
 /obj/item/weapon/paper/proc/preSign(t)
-	t = replacetext(t, "\[sign\]", "<font face=\"[signfont]\"><i>")
-	t = replacetext(t, "\[/sign\]", "</i></font>")
+	t = replacetext_char(t, "\[sign\]", "<font face=\"[signfont]\"><i>")
+	t = replacetext_char(t, "\[/sign\]", "</i></font>")
 	return t
 
 /obj/item/weapon/paper/nano

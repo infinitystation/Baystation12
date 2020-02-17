@@ -51,7 +51,7 @@ GLOBAL_DATUM_INIT(xenomorphs, /datum/antagonist/xenos, new)
 	spawn_announcement_delay = 5000
 
 /datum/antagonist/xenos/Initialize()
-//	spawn_announcement = replacetext(GLOB.using_map.unidentified_lifesigns_message, "%STATION_NAME%", station_name())
+//	spawn_announcement = replacetext_char(GLOB.using_map.unidentified_lifesigns_message, "%STATION_NAME%", station_name())
 	spawn_announcement = GLOB.using_map.level_x_biohazard_announcement(9)
 	..()
 

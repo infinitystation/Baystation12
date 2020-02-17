@@ -111,9 +111,9 @@
 
 	if(user && user.client && user.client.get_preference_value(/datum/client_preference/browser_style) == GLOB.PREF_FANCY)
 		// replacing colors because previous one looks pretty bad on dark colors
-		data = replacetext(data, "green", "55cc55")
-		data = replacetext(data, "blue", "44cce5")
-		data = replacetext(data, "red", "cc5555")
+		data = replacetext_char(data, "green", "55cc55")
+		data = replacetext_char(data, "blue", "44cce5")
+		data = replacetext_char(data, "red", "cc5555")
 
 	var/datum/browser/popup = new(user, "holodeck-control", "Holodeck Controls", 400, 500)
 	popup.set_content(data)

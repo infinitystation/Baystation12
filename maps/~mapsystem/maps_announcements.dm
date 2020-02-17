@@ -32,13 +32,13 @@
 	var/use_radio_announcement = TRUE
 
 /datum/map/proc/emergency_shuttle_called_announcement()
-	evacuation_controller.evac_called.Announce(replacetext(emergency_shuttle_called_message, "%ETA%", "[round(evacuation_controller.get_eta()/60)] minute\s."), new_sound = emergency_shuttle_called_sound)
+	evacuation_controller.evac_called.Announce(replacetext_char(emergency_shuttle_called_message, "%ETA%", "[round(evacuation_controller.get_eta()/60)] minute\s."), new_sound = emergency_shuttle_called_sound)
 
 /datum/map/proc/grid_check_announcement()
-	command_announcement.Announce(replacetext(grid_check_message, "%STATION_NAME%", station_name()), "Система Энергосети", new_sound = grid_check_sound)
+	command_announcement.Announce(replacetext_char(grid_check_message, "%STATION_NAME%", station_name()), "Система Энергосети", new_sound = grid_check_sound)
 
 /datum/map/proc/grid_restored_announcement()
-	command_announcement.Announce(replacetext(grid_restored_message, "%STATION_NAME%", station_name()), "Система Энергосети", new_sound = grid_restored_sound)
+	command_announcement.Announce(replacetext_char(grid_restored_message, "%STATION_NAME%", station_name()), "Система Энергосети", new_sound = grid_restored_sound)
 
 /datum/map/proc/level_x_biohazard_announcement(var/bio_level)
 	if(!isnum(bio_level))
@@ -52,13 +52,13 @@
 	return
 
 /datum/map/proc/radiation_detected_announcement()
-	command_announcement.Announce(replacetext(radiation_detected_message, "%STATION_NAME%", station_name()), "Неизвестная Аномалия", new_sound = radiation_detected_sound)
+	command_announcement.Announce(replacetext_char(radiation_detected_message, "%STATION_NAME%", station_name()), "Неизвестная Аномалия", new_sound = radiation_detected_sound)
 
 /datum/map/proc/space_time_anomaly_detected_annoncement()
 	command_announcement.Announce("Пространственно-временная аномалия обнаружена в пределах [station_name()].", "Неизвестная Аномалия", new_sound = space_time_anomaly_sound)
 
 /datum/map/proc/unidentified_lifesigns_announcement()
-	command_announcement.Announce(replacetext(unidentified_lifesigns_message, "%STATION_NAME%", station_name()), "Неизвестная Форма Жизни", new_sound = unidentified_lifesigns_sound)
+	command_announcement.Announce(replacetext_char(unidentified_lifesigns_message, "%STATION_NAME%", station_name()), "Неизвестная Форма Жизни", new_sound = unidentified_lifesigns_sound)
 
 /datum/map/proc/unknown_biological_entities_announcement()
-	command_announcement.Announce(replacetext(unknown_biological_entities_message, "%STATION_NAME%", station_name()), "Неизвестная Форма Жизни", new_sound = command_report_sound)
+	command_announcement.Announce(replacetext_char(unknown_biological_entities_message, "%STATION_NAME%", station_name()), "Неизвестная Форма Жизни", new_sound = command_report_sound)

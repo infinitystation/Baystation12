@@ -73,7 +73,7 @@ proc/corrupt_name(n, s)
 	return returnname
 
 proc/fix_html(var/t)
-	return replacetext(t, "я", "&#1103;")
+	return replacetext_char(t, "я", "&#1103;")
 
 proc/sanitize_irc(t)
-	return replacetext(t, "@", "")
+	return replacetext_char(t, "@", "")
