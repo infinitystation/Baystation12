@@ -52,6 +52,8 @@
 
 	atmos_canpass = CANPASS_PROC
 
+	var/need_change_sound_freq = 1 //inf
+
 /obj/machinery/door/attack_generic(var/mob/user, var/damage, var/attack_verb, var/environment_smash)
 	if(environment_smash >= 1)
 		damage = max(damage, 10)
