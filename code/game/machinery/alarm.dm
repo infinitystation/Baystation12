@@ -157,7 +157,7 @@
 	if (name == "alarm")
 		SetName("[alarm_area.name] Air Alarm")
 
-	name = replacetextEx(name, "\improper", "")
+	name = replacetextEx_char(name, "\improper", "")
 
 	if(!wires)
 		wires = new(src)
