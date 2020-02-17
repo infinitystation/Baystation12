@@ -166,8 +166,8 @@
 				var/obj/machinery/telecomms/server/Server = Machine.SelectedServer
 
 				// Replace quotation marks with quotation macros for proper winset() compatibility
-				var/showcode = replacetext_char(Server.rawcode, "\\\"", "\\\\\"")
-				showcode = replacetext_char(showcode, "\"", "\\\"")
+				var/showcode = replacetext(Server.rawcode, "\\\"", "\\\\\"")
+				showcode = replacetext(showcode, "\"", "\\\"")
 
 				winset(mob, "tcscode", "text=\"[showcode]\"")
 

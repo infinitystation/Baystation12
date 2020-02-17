@@ -29,10 +29,10 @@
 	return FALSE
 
 /datum/language/tajaran/primitive/muddle(var/message)
-	message = replacetext_char(message, "s", "sh")
-	message = replacetext_char(message, "S", "SH")
-	message = replacetext_char(message, "с", "ш")
-	message = replacetext_char(message, "С", "Ш")
+	message = replacetext(message, "s", "sh")
+	message = replacetext(message, "S", "SH")
+	message = replacetext(message, "с", "ш")
+	message = replacetext(message, "С", "Ш")
 	return message
 
 /datum/language/resomi/primitive
@@ -56,7 +56,7 @@
 	return FALSE
 
 /datum/language/resomi/primitive/muddle(var/message)
-	message = replacetext_char(message, ",",    "")
+	message = replacetext(message, ",",    "")
 	return message
 
 /datum/language/unathi/primitive

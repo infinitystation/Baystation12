@@ -109,8 +109,8 @@
 		text = speech[key]
 	else
 		text = default
-	text = replacetext_char(text, "MERCHANT", name)
-	return replacetext_char(text, "ORIGIN", origin)
+	text = replacetext(text, "MERCHANT", name)
+	return replacetext(text, "ORIGIN", origin)
 
 /datum/trader/proc/print_trading_items(var/num)
 	num = Clamp(num,1,trading_items.len)
@@ -199,7 +199,7 @@
 	if(!speech["hail_[specific]"])
 		specific = "generic"
 	. = get_response("hail_[specific]", "Greetings, MOB!")
-	. = replacetext_char(., "MOB", user.name)
+	. = replacetext(., "MOB", user.name)
 
 /datum/trader/proc/can_hail()
 	if(!refuse_comms && prob(-disposition))
@@ -227,7 +227,7 @@
 		for(var/offer in offers)
 			if(istype(offer,/mob))
 				var/text = mob_transfer_message
-				to_chat(offer, replacetext_char(text, "ORIGIN", origin))
+				to_chat(offer, replacetext(text, "ORIGIN", origin))
 			qdel(offer)
 
 	var/type = trading_items[num]
@@ -242,8 +242,8 @@
 /datum/trader/proc/how_much_do_you_want(var/num, skill = SKILL_MAX)
 	var/atom/movable/M = trading_items[num]
 	. = get_response("how_much", "Hmm.... how about VALUE thalers?")
-	. = replacetext_char(.,"VALUE",get_item_value(num, skill))
-	. = replacetext_char(.,"ITEM", initial(M.name))
+	. = replacetext(.,"VALUE",get_item_value(num, skill))
+	. = replacetext(.,"ITEM", initial(M.name))
 
 /datum/trader/proc/what_do_you_want()
 	if(!(trade_flags & TRADER_GOODS))

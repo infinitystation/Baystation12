@@ -10,9 +10,9 @@ GLOBAL_VAR_INIT(create_object_forms, list(
 		var/objectjs = GLOB.create_object_forms //inf@WAS: var/objectjs = null
 		objectjs = jointext(typesof(/obj), ";")
 		create_object_html = file2text('html/create_object.html')
-		create_object_html = replacetext_char(create_object_html, "null /* object types */", "\"[objectjs]\"")
+		create_object_html = replacetext(create_object_html, "null /* object types */", "\"[objectjs]\"")
 
-	show_browser(user, replacetext_char(create_object_html, "/* ref src */", "\ref[src]"), "window=create_object;size=425x580") //INF
+	show_browser(user, replacetext(create_object_html, "/* ref src */", "\ref[src]"), "window=create_object;size=425x580") //INF
 
 
 /datum/admins/proc/quick_create_object(var/mob/user)
@@ -26,6 +26,6 @@ GLOBAL_VAR_INIT(create_object_forms, list(
 		var/objectjs = null
 		objectjs = jointext(typesof(path), ";")
 		quick_create_object_html = file2text('html/create_object.html')
-		quick_create_object_html = replacetext_char(quick_create_object_html, "null /* object types */", "\"[objectjs]\"")
+		quick_create_object_html = replacetext(quick_create_object_html, "null /* object types */", "\"[objectjs]\"")
 
-	show_browser(user, replacetext_char(quick_create_object_html, "/* ref src */", "\ref[src]"), "window=quick_create_object;size=425x570") //INF
+	show_browser(user, replacetext(quick_create_object_html, "/* ref src */", "\ref[src]"), "window=quick_create_object;size=425x570") //INF

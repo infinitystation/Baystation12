@@ -22,7 +22,7 @@
 	else
 		luminosity = 1
 
-	//name = replacetext_charEx(name, "\improper", "")
+	//name = replacetextEx(name, "\improper", "")
 
 	..()
 

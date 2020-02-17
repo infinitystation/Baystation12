@@ -102,7 +102,7 @@
 
 	msg += "<b>Всего Игроков: [length(Lines)]</b>"
 	if(get_preference_value(/datum/client_preference/window_who) == GLOB.PREF_YES)
-		msg = replacetext_char(msg, "\n", "<br>")
+		msg = replacetext(msg, "\n", "<br>")
 		show_browser(usr, msg, "window=who;size=780x420;can_close=1")
 	else
 		to_chat(src, msg)

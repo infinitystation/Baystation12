@@ -63,8 +63,8 @@
 	set_interface(interface)
 
 	if(title)
-		src.title = replacetext_char(title, "\improper", "")
-		src.title = replacetext_char(src.title, "\proper", "")
+		src.title = replacetext(title, "\improper", "")
+		src.title = replacetext(src.title, "\proper", "")
 		src.title = sanitize(src.title)
 	if(width)
 		src.width = width
@@ -212,11 +212,11 @@
 	var/html
 	// Poplate HTML with JSON if we're supposed to inline.
 	if(inline)
-		html = replacetext_charEx(SStgui.basehtml, "{}", get_json(initial_data))
+		html = replacetextEx(SStgui.basehtml, "{}", get_json(initial_data))
 	else
 		html = SStgui.basehtml
-	html = replacetext_charEx(html, "\[ref]", "\ref[src]")
-	html = replacetext_charEx(html, "\[style]", style)
+	html = replacetextEx(html, "\[ref]", "\ref[src]")
+	html = replacetextEx(html, "\[style]", style)
 	return html
 
  /**
@@ -267,8 +267,8 @@
 	// Generate the JSON.
 	var/json = json_encode(json_data)
 	// Strip #255/improper.
-	json = replacetext_char(json, "\proper", "")
-	json = replacetext_char(json, "\improper", "")
+	json = replacetext(json, "\proper", "")
+	json = replacetext(json, "\improper", "")
 
 
 	return json
