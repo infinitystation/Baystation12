@@ -843,7 +843,7 @@
 	name = "Storage Door Control";
 	pixel_x = 24;
 	pixel_y = 0;
-	req_access = list(list("ACCESS_MINING","ACCESS_XENOARCH","ACCESS_EL","ACCESS_ENGINE_EQUIP"))
+	req_access = list(list("ACCESS_MINING","ACCESS_XENOARCH","ACCESS_EXPLORER","ACCESS_ENGINE_EQUIP"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
