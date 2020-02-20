@@ -245,7 +245,7 @@
 /datum/job/iaa
 	title = "Internal Affairs Agent"
 	department = "Support"
-	department_flag = SPT
+	department_flag = COM
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "NanoTrasen and Corporate Regulations"
@@ -270,7 +270,7 @@
 /datum/job/adjutant
 	title = "Adjutant"
 	department = "Support"
-	department_flag = SPT
+	department_flag = COM
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the Captain and heads of staff"
