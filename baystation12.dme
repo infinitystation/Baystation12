@@ -3249,6 +3249,7 @@
 #include "infinity\code\game\gamemodes\cult\cult_items.dm"
 #include "infinity\code\game\gamemodes\cult\runes.dm"
 #include "infinity\code\game\gamemodes\malfunction\newmalf_ability_trees\infinity.dm"
+#include "infinity\code\game\gamemodes\mixed\other.dm"
 #include "infinity\code\game\jobs\acccess_datum.dm"
 #include "infinity\code\game\jobs\job\job.dm"
 #include "infinity\code\game\machinery\alarm.dm"
