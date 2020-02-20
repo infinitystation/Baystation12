@@ -715,7 +715,7 @@ proc/setup_old_database_connection()
 		failed_old_db_connections++		//If it failed, increase the failed connections counter.
 		world.log << dbcon.ErrorMsg()
 
-	var/DBQuery/unicode_query = dbcon.NewQuery("SET NAMES utf8mb4 COLLATE utf8mb4_general_ci")
+	var/DBQuery/unicode_query = dbcon_old.NewQuery("SET NAMES utf8mb4 COLLATE utf8mb4_general_ci")
 
 	if(!unicode_query.Execute())
 		to_world_log(unicode_query.ErrorMsg())
