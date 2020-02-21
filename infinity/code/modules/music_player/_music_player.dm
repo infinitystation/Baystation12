@@ -8,18 +8,20 @@ GLOBAL_LIST_EMPTY(music_players)
 #define PLAYER_STATE_PLAY 1
 #define PLAYER_STATE_PAUSE 2
 
-/obj/item/music_player/custom_tape
-	tape = /obj/item/music_tape/custom
+// First at all, /obj/item/music_player is just a player core which should do basic functions and interactions
+// If this type will be spawned, it'll get instantly deleted by Initialization
+// Because we can create subtypes, we should use only them for regular playthrought
 
 /obj/item/music_player
 	name = "music player"
-	desc = "A little device which looks like a old radio. Can be used to play soft tunes."
-	icon = 'infinity/icons/obj/music_player.dmi'
-	icon_state = "radio"
-	item_state = "radio"
+	desc = "A little device which can be used to play soft tunes. If you see this you're probably should be banned for abuse. Report this situation to dev team."
+	icon = 'sprites/object.dmi'
+	icon_state = null
+	item_state = null
+
 	w_class = ITEM_SIZE_NORMAL
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
-	slot_flags = SLOT_BELT
+
 	throwforce = 2
 	throw_speed = 4
 	throw_range = 10
@@ -43,10 +45,18 @@ GLOBAL_LIST_EMPTY(music_players)
 	var/power_usage = 250
 	var/obj/item/music_tape/tape = null
 
+	// Used for identification
 	var/serial_number
 
 /obj/item/music_player/Initialize()
 	. = ..()
+	if(type == /obj/item/music_player)
+		log_and_message_admins("Something, or someone has tried create \"[src.type]\", which was prohibited since the specific path is not for the gameplay. It will be deleted.")
+		send2adminirc("Something, or someone has tried create \"[src.type]\", which was prohibited since the specific path is not for the gameplay. It will be deleted.") //INF
+		cell = null
+		tape = null
+		return INITIALIZE_HINT_QDEL
+
 	if(ispath(cell))
 		cell = new cell(src)
 
@@ -55,10 +65,10 @@ GLOBAL_LIST_EMPTY(music_players)
 
 	sound_id = "[type]_[sequential_id(type)]"
 	serial_number = "[rand(1,999)]"
-	desc += "\nYou see \"#[serial_number]\" on the cover."
-	GLOB.music_players += src
+	desc = desc + "<br> You see \"#[serial_number]\" on the cover."
 
-	message_admins("MUSIC PLAYER: <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> has been created.")
+	GLOB.music_players += src
+	log_and_message_admins("MUSIC PLAYER: <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> has been created.")
 
 	update_icon()
 
@@ -71,8 +81,9 @@ GLOBAL_LIST_EMPTY(music_players)
 	if(tape)
 		QDEL_NULL(tape)
 
-	message_admins("MUSIC PLAYER: #[serial_number] is deleted.")
+	log_and_message_admins("MUSIC PLAYER: #[serial_number] is deleted.")
 	GLOB.music_players -= src
+
 	. = ..()
 
 /obj/item/music_player/examine(mob/user)
@@ -92,10 +103,13 @@ GLOBAL_LIST_EMPTY(music_players)
 
 /obj/item/music_player/on_update_icon()
 	overlays.Cut()
-	if(mode)
+
+	if(mode == PLAYER_STATE_PLAY)
 		overlays += image(icon, "[icon_state]_play")
+
 	if(panel == PANEL_OPENED)
 		overlays += image(icon, "[icon_state]_open")
+
 		if(cell)
 			overlays += image(icon, "[icon_state]_open-cell")
 
@@ -110,15 +124,12 @@ GLOBAL_LIST_EMPTY(music_players)
 
 	if(broken) return
 
-	playsound(src.loc, "switch", 20)
+	playsound(src, mode == (PLAYER_STATE_OFF || PLAYER_STATE_PAUSE) ? GLOB.switch_small_sound[1] : GLOB.switch_small_sound[2], 35)
 
 	switch(value)
 		if(PLAYER_STATE_OFF)
 			StopPlaying()
 		if(PLAYER_STATE_PLAY)
-			if(!get_cell() || !cell.check_charge(power_usage * CELLRATE))
-				visible_message(SPAN_NOTICE("\The [src]'s power meter flashes a battery warning and refuses to operate."))
-				return
 			StartPlaying()
 		if(PLAYER_STATE_PAUSE)
 			StopPlaying(pause = TRUE)
@@ -149,10 +160,10 @@ GLOBAL_LIST_EMPTY(music_players)
 
 		I.forceMove(src)
 		tape = C
-		visible_message(
+		user.visible_message(
 			SPAN_NOTICE("[user] insert \a [tape] into \the [src]."),
 			SPAN_NOTICE("You insert \a [tape] into \the [src]."))
-		playsound(src.loc, 'sound/weapons/TargetOn.ogg', 35, 1)
+		playsound(src, 'sound/weapons/TargetOn.ogg', 35, 1)
 		update_icon()
 		return
 
@@ -176,13 +187,13 @@ GLOBAL_LIST_EMPTY(music_players)
 		switch(panel)
 			if(PANEL_UNSCREWED)
 				user.visible_message(SPAN_NOTICE("\The [user] screw \the [src]'s front panel with \the [I]."), SPAN_NOTICE("You screw \the [src]'s front panel."))
-				playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
+				playsound(src, 'sound/items/Screwdriver.ogg', 50, 1)
 				panel = PANEL_CLOSED
 				return TRUE
 
 			if(PANEL_CLOSED)
 				user.visible_message(SPAN_NOTICE("\The [user] unscrew \the [src]'s front panel with \the [I]."), SPAN_NOTICE("You unscrew \the [src]'s front panel."))
-				playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
+				playsound(src, 'sound/items/Screwdriver.ogg', 50, 1)
 				panel = PANEL_UNSCREWED
 				return TRUE
 
@@ -203,7 +214,7 @@ GLOBAL_LIST_EMPTY(music_players)
 						if(cell)
 							if(!MayAdjust(user))
 								return FALSE
-							playsound(src.loc, 'sound/items/Screwdriver.ogg', 45, 1)
+							playsound(src, 'sound/items/Screwdriver.ogg', 45, 1)
 							to_chat(user, SPAN_NOTICE("You pulled out [cell] out of [src] with [I]."))
 							user.put_in_hands(cell)
 							cell = null
@@ -220,14 +231,14 @@ GLOBAL_LIST_EMPTY(music_players)
 		switch(panel)
 			if(PANEL_OPENED)
 				user.visible_message(SPAN_NOTICE("\The [user] re-attaches \the [src]'s front panel with \the [I]."), SPAN_NOTICE("You re-attach \the [src]'s front panel."))
-				playsound(src.loc, 'sound/items/Crowbar.ogg', 100, 1)
+				playsound(src, 'sound/items/Crowbar.ogg', 100, 1)
 				panel = PANEL_UNSCREWED
 				update_icon()
 				return TRUE
 
 			if(PANEL_UNSCREWED)
 				user.visible_message(SPAN_NOTICE("\The [user] unhinges \the [src]'s front panel with \the [I]."), SPAN_NOTICE("You unhinge \the [src]'s front panel."))
-				playsound(src.loc, 'sound/items/Crowbar.ogg', 100, 1)
+				playsound(src, 'sound/items/Crowbar.ogg', 100, 1)
 				panel = PANEL_OPENED
 				update_icon()
 				return TRUE
@@ -242,6 +253,7 @@ GLOBAL_LIST_EMPTY(music_players)
 			else
 				to_chat(user, SPAN_NOTICE("\The [S] is empty."))
 		return
+
 	if(isCoil(I))
 		var/obj/item/stack/S = I
 		if(broken && panel == PANEL_OPENED)
@@ -263,7 +275,7 @@ GLOBAL_LIST_EMPTY(music_players)
 /obj/item/music_player/get_cell()
 	return cell
 
-/obj/item/music_player/proc/AdjustFrequency(var/obj/item/W, var/mob/user)
+/obj/item/music_player/proc/AdjustFrequency(obj/item/W, mob/user)
 	var/const/MIN_FREQUENCY = 0.5
 	var/const/MAX_FREQUENCY = 1.5
 
@@ -297,7 +309,7 @@ GLOBAL_LIST_EMPTY(music_players)
 	frequency = Clamp(frequency, MIN_FREQUENCY, MAX_FREQUENCY)
 
 	user.visible_message(SPAN_NOTICE("\The [user] adjusts \the [src]'s player head."), SPAN_NOTICE("You adjust \the [src]'s player head."))
-	playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
+	playsound(src, 'sound/items/Screwdriver.ogg', 50, 1)
 
 	if(frequency > 1.0)
 		to_chat(user, SPAN_NOTICE("\The [src] should be playing faster than usual."))
@@ -308,7 +320,7 @@ GLOBAL_LIST_EMPTY(music_players)
 
 	return TRUE
 
-/obj/item/music_player/proc/MayAdjust(var/mob/user)
+/obj/item/music_player/proc/MayAdjust(mob/user)
 	if(mode)
 		to_chat(user, SPAN_WARNING("You can only adjust \the [src] when it's not playing."))
 		return FALSE
@@ -317,7 +329,7 @@ GLOBAL_LIST_EMPTY(music_players)
 /obj/item/music_player/attack_ai(mob/user)
 	return
 
-/obj/item/music_player/MouseDrop(var/obj/over_object)
+/obj/item/music_player/MouseDrop(obj/over_object)
 	if(!over_object)
 		return
 
@@ -367,14 +379,14 @@ GLOBAL_LIST_EMPTY(music_players)
 		AdjustVolume(vol)
 	return
 
-/obj/item/music_player/proc/AdjustVolume(var/new_volume)
+/obj/item/music_player/proc/AdjustVolume(new_volume)
 	volume = Clamp(new_volume, 0, max_volume)
 	if(sound_token)
 		sound_token.SetVolume(volume)
 
 /obj/item/music_player/proc/explode()
 	walk_to(src, 0)
-	src.visible_message("<span class='danger'>\The [src] blows apart!</span>", 1)
+	src.visible_message(SPAN_DANGER("\The [src] blows apart!"), 1)
 
 	explosion(src.loc, 0, 0, 1, rand(1, 2), 1)
 
@@ -386,13 +398,13 @@ GLOBAL_LIST_EMPTY(music_players)
 	qdel(src)
 
 /obj/item/music_player/proc/break_act()
-	audible_message("<span class='warning'>\The [src]'s speakers pop with a sharp crack!</span>")
-	playsound(src.loc, 'sound/effects/snap.ogg', 100, 1)
+	audible_message(SPAN_WARNING("\The [src]'s speakers pop with a sharp crack!"))
+	playsound(src, 'sound/effects/snap.ogg', 100, 1)
 	broken = TRUE
 	StopPlaying()
 
 /obj/item/music_player/proc/StartPlaying()
-	if(!get_cell())
+	if(!get_cell() || !cell.check_charge(power_usage * CELLRATE))
 		return
 
 	if(broken)
@@ -402,7 +414,6 @@ GLOBAL_LIST_EMPTY(music_players)
 		return
 
 	if(!tape.CanPlay())
-		src.visible_message(SPAN_WARNING("\The [tape] is unusable to play."), 1)
 		return
 
 	if(mode == PLAYER_STATE_PAUSE && sound_token)
@@ -420,7 +431,7 @@ GLOBAL_LIST_EMPTY(music_players)
 
 	update_icon()
 
-/obj/item/music_player/proc/StopPlaying(var/pause = 0)
+/obj/item/music_player/proc/StopPlaying(pause = 0)
 	if(pause && sound_token)
 		mode = PLAYER_STATE_PAUSE
 		sound_token.Pause()
@@ -432,19 +443,19 @@ GLOBAL_LIST_EMPTY(music_players)
 	update_icon()
 
 //Alternative way to activate it, but instead stop, we will pause it.
-/obj/item/music_player/AltClick(var/mob/user)
+/obj/item/music_player/AltClick(mob/user)
 	if(!CanPhysicallyInteract(user))
 		return
 
 	if(broken) return
 
-	playsound(src.loc, "switch", 20)
+	playsound(src, mode == (PLAYER_STATE_OFF || PLAYER_STATE_PAUSE) ? GLOB.switch_small_sound[1] : GLOB.switch_small_sound[2], 35)
 
 	switch(mode)
 		if(PLAYER_STATE_PLAY)
-			StopPlaying(pause = TRUE)
+			set_mode(PLAYER_STATE_PAUSE)
 		if(PLAYER_STATE_PAUSE)
-			StartPlaying()
+			set_mode(PLAYER_STATE_PLAY)
 
 /obj/item/music_player/fire_act()
 	break_act()
