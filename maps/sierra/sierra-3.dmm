@@ -16493,14 +16493,14 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 1
 	},
-/obj/structure/sign/dedicationplaque{
-	pixel_y = 29
-	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	dir = 1
+	},
+/obj/structure/sign/dedicationplaque/sierra{
+	pixel_y = 29
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/center)
