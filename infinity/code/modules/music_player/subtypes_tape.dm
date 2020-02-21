@@ -21,8 +21,10 @@
 	..()
 
 /obj/item/music_tape/custom/proc/setup_tape(mob/user)
-	var/sound_file = input(user, "Pick sound:", "Song Reminiscence: File") as null|sound
-	if(isnull(sound_file)) return FALSE
+	var/sound/new_sound = sound(input(user, "Select sound to upload. You should use only those audio formats which byond can accept. Ogg and module files is good choice.", "Song Reminiscence: File") as null|sound)
+	if(isnull(new_sound)) return FALSE
+
+	new_sound.status = SOUND_STREAM
 
 	var/new_name = input(user, "Name \the [src]:", "Song Reminiscence: Name", "Untitled") as null|text
 	if(isnull(new_name)) return FALSE
@@ -31,7 +33,7 @@
 
 	SetName("music tape")
 
-	if(sound_file && new_name)
-		track = new /datum/track(new_name, sound_file)
+	if(new_sound && new_name)
+		track = new /datum/track(new_name, new_sound)
 		return TRUE
 	return FALSE

@@ -107,6 +107,8 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 	src.sound_id    = sound_id
 	src.preference	= preference
 
+	if(sound.status) status |= sound.status //INF
+
 	if(sound.repeat) // Non-looping sounds may not reserve a sound channel due to the risk of not hearing when someone forgets to stop the token
 		var/channel = GLOB.sound_player.PrivGetChannel(src) //Attempt to find a channel
 		if(!isnum(channel))
