@@ -182,11 +182,6 @@ var/list/gamemode_cache = list()
 	var/admin_log_irc = ""
 	var/announce_shuttle_dock_to_irc = FALSE
 
-
-	// Discord crap.
-	var/discord_url
-	var/discord_password
-
 	// Event settings
 	var/expected_round_length = 3 * 60 * 60 * 10 // 3 hours
 	// If the first delay has a custom start time
@@ -772,10 +767,15 @@ var/list/gamemode_cache = list()
 				if("error_msg_delay")
 					error_msg_delay = text2num(value)
 
+			//[/INF]
 				if("discord_url")
 					discord_url = value
 				if("discord_password")
 					discord_password = value
+
+				if("lighting_style")
+					lighting_style = value
+			//[/INF]
 
 				if("max_gear_cost")
 					max_gear_cost = text2num(value)
