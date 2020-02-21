@@ -460,6 +460,10 @@
 		var/obj/item/device/integrated_electronics/detailer/D = I
 		detail_color = D.detail_color
 		update_icon()
+//[INF]
+	else if(is_type_in_list(I, list(/obj/item/weapon/gun/energy/, /obj/item/weapon/aicard, /obj/item/device/paicard, /obj/item/device/mmi)) && opened)
+		loading(I,user)
+//[/INF]
 	else if(istype(I, /obj/item/weapon/screwdriver))
 		var/hatch_locked = FALSE
 		for(var/obj/item/integrated_circuit/manipulation/hatchlock/H in assembly_components)
