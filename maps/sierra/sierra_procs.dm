@@ -7,7 +7,7 @@
 
 /datum/map/revoke_maint_all_access(var/radstorm = 0)
 	maint_all_access = 0
-	priority_announcement.Announce("Требовани¤ к доступу у шлюзов в технические тоннели восстановлены.", "Внимание!")
+	priority_announcement.Announce("Требования к доступу у шлюзов в технические тоннели восстановлены.", "Внимание!")
 
 /datum/map/proc/toggle_crew_sensors(var/new_mode = 0, var/force = FALSE)
 	if(ntnet_global && ntnet_global.check_function(NTNET_SYSTEMCONTROL))	// No network - no remote control
