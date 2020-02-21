@@ -1,8 +1,8 @@
 // Generates a simple HTML crew manifest for use in various places
 /proc/html_crew_manifest(var/monochrome, var/OOC)
 	var/list/dept_data = list(
-		list("names" = list(), "header" = "Главы", "flag" = COM),
-		list("names" = list(), "header" = "Командование", "flag" = SPT),
+		list("names" = list(), "header" = "Командование", "flag" = COM),
+		list("names" = list(), "header" = "Младшее командование", "flag" = SPT),
 		list("names" = list(), "header" = "Учёные", "flag" = SCI),
 		list("names" = list(), "header" = "Охрана", "flag" = SEC),
 		list("names" = list(), "header" = "Медики", "flag" = MED),
