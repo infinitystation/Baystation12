@@ -15,7 +15,7 @@ GLOBAL_LIST_EMPTY(music_players)
 /obj/item/music_player
 	name = "music player"
 	desc = "A little device which can be used to play soft tunes. If you see this you're probably should be banned for abuse. Report this situation to dev team."
-	icon = 'music_player.dmi'
+	icon = 'sprites/object.dmi'
 	icon_state = null
 	item_state = null
 

@@ -21,9 +21,10 @@
 	..()
 
 /obj/item/music_tape/custom/proc/setup_tape(mob/user)
-	var/sound/new_sound = sound(input(user, "Select sound to upload. You should use only those audio formats which byond can accept. Ogg and module files is good choice.", "Song Reminiscence: File") as null|sound)
+	var/sound/new_sound = input(user, "Select sound to upload. You should use only those audio formats which byond can accept. Ogg and module files is good choice.", "Song Reminiscence: File") as null|sound
 	if(isnull(new_sound)) return FALSE
 
+	new_sound = sound(new_sound)
 	new_sound.status = SOUND_STREAM
 
 	var/new_name = input(user, "Name \the [src]:", "Song Reminiscence: Name", "Untitled") as null|text
