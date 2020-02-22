@@ -1746,6 +1746,9 @@
 									M.real_name = obj_name
 
 		log_and_message_admins("created [number] [english_list(paths)]")
+
+		send2adminirc("[get_key(usr)] создал [number] [english_list(paths)] по координатам \[X:[target.x], Y: [target.y], Z: [target.x]\]") //inf
+
 		return
 
 	else if(href_list["admin_secrets_panel"])

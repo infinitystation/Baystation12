@@ -1186,7 +1186,8 @@ var/global/floorIsLava = 0
 
 	log_and_message_admins("spawned [chosen] at ([usr.x],[usr.y],[usr.z])")
 	SSstatistics.add_field_details("admin_verb","SA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-	send2adminirc("[key_name(src)] spawned [chosen] at ([usr.x],[usr.y],[usr.z])") //INF
+
+	send2adminirc("[key_name(src)] создал [chosen] ([usr.x],[usr.y],[usr.z])") //INF
 
 /datum/admins/proc/show_traitor_panel(var/mob/M in SSmobs.mob_list)
 	set category = "Admin"
