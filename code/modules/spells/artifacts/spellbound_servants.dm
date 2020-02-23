@@ -4,7 +4,7 @@
 	var/equipment = list()
 	var/spells = list()
 
-/datum/spellbound_type/proc/spawn_servant(var/atom/a, var/mob/master, var/mob/user)
+/datum/spellbound_type/proc/spawn_servant(var/atom/a, var/mob/living/master, var/mob/user)
 	set waitfor = 0
 	var/mob/living/carbon/human/H = new(a)
 	H.ckey = user.ckey
@@ -13,7 +13,7 @@
 	var/obj/item/weapon/implant/translator/natural/I = new()
 	I.implant_in_mob(H, BP_HEAD)
 	if (master.languages.len)
-		var/datum/language/lang = master.languages[1]
+		var/datum/language/lang = master.default_language //INF, WAS: master.languages[1]
 		H.add_language(lang.name)
 		H.set_default_language(lang)
 		I.languages[lang.name] = 1
