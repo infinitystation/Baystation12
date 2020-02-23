@@ -1,4 +1,4 @@
-/mob/living/carbon/human/examine(mob/user, distance)
+/mob/living/carbon/human/examine(mob/user, distance/* INF ahead */, mirror = 0)
 	. = TRUE
 	var/skipgloves = 0
 	var/skipsuitstorage = 0
@@ -203,7 +203,8 @@
 
 	var/obj/item/organ/external/head/H = organs_by_name[BP_HEAD]
 	if(istype(H) && H.forehead_graffiti && H.graffiti_style)
-		msg += "<span class='notice'>[T.He] [T.has] \"[H.forehead_graffiti]\" written on [T.his] [H.name] in [H.graffiti_style]!</span>\n"
+		if(user != src || mirror) //INF
+			msg += "<span class='notice'>[T.He] [T.has] \"[H.forehead_graffiti]\" written on [T.his] [H.name] in [H.graffiti_style]!</span>\n"
 
 	if(became_younger)
 		msg += "[T.He] looks a lot younger than you remember.\n"
