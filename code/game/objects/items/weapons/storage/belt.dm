@@ -445,10 +445,11 @@
 
 /obj/item/weapon/storage/belt/holster/security/tactical
 	name = "combat belt"
-	desc = "A special combat belt with varios strapes and pouches for ammo and grenades."
+	desc = "A special combat belt with varios strapes and pouches for ammo and grenades." //INF WAS "Can hold security gear like handcuffs and flashes, with more pouches for more storage."
 	icon_state = "swatbelt"
 	item_state = "swatbelt"
-	storage_slots = 11
+	storage_slots = 11 //INF WAS 10
+//[INF]
 	can_hold = list(
 		/obj/item/weapon/grenade,
 		/obj/item/weapon/handcuffs,
@@ -456,7 +457,7 @@
 		/obj/item/ammo_magazine,
 		/obj/item/weapon/magnetic_ammo,
 		)
-
+//[/INF]
 /obj/item/weapon/storage/belt/waistpack
 	name = "waist pack"
 	desc = "A small bag designed to be worn on the waist. May make your butt look big."
