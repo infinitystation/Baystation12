@@ -3690,6 +3690,10 @@
 	icon_state = "asteroidfloor"
 	},
 /area/map_template/rescue_base/base)
+"hj" = (
+/obj/machinery/telecomms/allinone/ert,
+/turf/simulated/floor/shuttle/darkred,
+/area/map_template/rescue_base/start)
 
 (1,1,1) = {"
 aa
@@ -4996,7 +5000,7 @@ eH
 eH
 eH
 eH
-fA
+hj
 fA
 gI
 eH
