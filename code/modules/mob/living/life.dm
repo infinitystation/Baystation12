@@ -191,6 +191,7 @@
 		reset_view(null)
 
 /mob/living/proc/update_sight()
+	if(stop_sight_update) return //INF
 	set_sight(0)
 	set_see_in_dark(0)
 	if(stat == DEAD || eyeobj)
