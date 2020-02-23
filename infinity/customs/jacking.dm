@@ -268,7 +268,7 @@
 
 /obj/item/clothing/suit/armor/pcarrier/custom_saare
 	name = "\improper DSH-116"
-	desc = "An old plate carrier of the special operations forces of the GCC. Apparently worn, how they still wear..."
+	desc = "An old plate carrier of the special operations forces of the TCC. Apparently worn, how they still wear..."
 	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
 	item_icons = list(slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi')
 	icon_state = "gcc_spec_opc_carrier"

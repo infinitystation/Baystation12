@@ -16,6 +16,6 @@
 	icon_state = "shirt_solg"
 
 /datum/category_item/underwear/undershirt/shirt_gcc
-	name = "Tanktop, GCC"
+	name = "Tanktop, TCC"
 	icon = 'infinity/icons/mob/human.dmi'
 	icon_state = "tanktop_gcc"

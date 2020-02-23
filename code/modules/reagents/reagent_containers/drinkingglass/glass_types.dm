@@ -188,7 +188,7 @@
 
 /obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/STC
 	name = "\improper ICCG coffee cup"
-	desc = "A coffee cup adorned with the flag of the Gilgamesh Colonial Confederation, for when you need some espionage charges to go with your morning coffee."
+	desc = "A coffee cup adorned with the flag of the Terran Colonial Confederation, for when you need some espionage charges to go with your morning coffee."
 	icon_state = "coffeecup_STC"
 	base_name = "\improper ICCG cup"
 

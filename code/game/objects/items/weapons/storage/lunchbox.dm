@@ -97,10 +97,10 @@
 	filled = TRUE
 
 /obj/item/weapon/storage/lunchbox/TCC
-	name = "\improper GCC lunchbox"
+	name = "\improper TCC lunchbox"
 	icon_state = "lunchbox_tcc"
 	item_state = "toolbox_syndi"
-	desc = "A little lunchbox. This one is branded with the flag of the Gilgamesh Colonial Confederation!"
+	desc = "A little lunchbox. This one is branded with the flag of the Terran Colonial Confederation!"
 
 /obj/item/weapon/storage/lunchbox/syndicate/filled
 	filled = TRUE

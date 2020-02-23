@@ -1444,7 +1444,7 @@
 
 /datum/reagent/ethanol/vodka/premium
 	name = "Premium Vodka"
-	description = "Premium distilled vodka imported directly from the Gilgamesh Colonial Confederation."
+	description = "Premium distilled vodka imported directly from the Terran Colonial Confederation."
 	taste_description = "clear kvass"
 	color = "#aaddff" // rgb: 170, 221, 255 - very light blue.
 	strength = 10
