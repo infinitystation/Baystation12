@@ -346,9 +346,9 @@ decl/surgery_step/robotics/get_skill_reqs(mob/living/user, mob/living/carbon/hum
 
 /decl/surgery_step/robotics/fix_organ_robotic/get_skill_reqs(mob/living/user, mob/living/carbon/human/target, obj/item/tool)
 	if(target.isSynthetic())
-		return SURGERY_SKILLS_ROBOTIC 
+		return SURGERY_SKILLS_ROBOTIC
 	else
-		return SURGERY_SKILLS_ROBOTIC_ON_MEAT 
+		return SURGERY_SKILLS_ROBOTIC_ON_MEAT
 
 /decl/surgery_step/robotics/fix_organ_robotic/assess_bodypart(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = ..()
@@ -414,8 +414,8 @@ decl/surgery_step/robotics/get_skill_reqs(mob/living/user, mob/living/carbon/hum
 //[INF]
 	var/list/options = list()
 	for(var/i in attached_organs)
-		var/obj/item/organ/I = target.internal_organs_by_name[i]
-		options[i] = image(icon = I.icon, icon_state = I.icon_state)
+		var/obj/item/organ/I = LAZYACCESS(target.internal_organs_by_name, i)
+		LAZYADD(options, image(icon = I.icon, icon_state = I.icon_state))
 	var/organ_to_remove
 	organ_to_remove = show_radial_menu(user, target, options, radius = 32, require_near = TRUE)
 //[/INF]
