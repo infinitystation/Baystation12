@@ -21,12 +21,12 @@
 	require_all_templates = TRUE
 
 /datum/game_mode/jackpot
-	name = "Traitor & Changeling & Ninja & Wizard"
+	name = "Traitor & Ninja & Wizard"
 	round_description = "The ship is full of antagonists. Crew, the new objective - survive."
-	extended_round_description = "Jackpot! You got all your friends today - traitors, changelings, and both ninja and wisard."
+	extended_round_description = "Jackpot! You got all your friends today - traitors, and both ninja and wisard."
 	config_tag = "jackpot"
-	required_players = 15
-	required_enemies = 6
+	required_players = 14
+	required_enemies = 5
 	end_on_antag_death = FALSE
-	antag_tags = list(MODE_CHANGELING, MODE_TRAITOR, MODE_NINJA, MODE_WIZARD)
+	antag_tags = list(MODE_TRAITOR, MODE_NINJA, MODE_WIZARD)
 	require_all_templates = TRUE
