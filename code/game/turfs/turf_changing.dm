@@ -48,6 +48,7 @@
 		//the zone will only really do heavy lifting once.
 		var/turf/simulated/S = src
 		if(S.zone) S.zone.rebuild()
+	if(isopenspace(src)) keep_air = TRUE //INF
 
 	// Run the Destroy() chain.
 	qdel(src)
