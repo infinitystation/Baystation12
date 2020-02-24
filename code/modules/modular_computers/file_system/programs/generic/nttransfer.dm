@@ -39,7 +39,7 @@ var/global/nttransfer_uid = 0
 			// Transfer speed is limited by device which uses slower connectivity.
 			// We can have multiple clients downloading at same time, but let's assume we use some sort of multicast transfer
 			// so they can all run on same speed.
-			C.actual_netspeed = min(C.ntnet_speed, ntnet_speed)
+			C.actual_netspeed = min(C.get_signal(NTNET_PEERTOPEER), get_signal(NTNET_PEERTOPEER)) //inf//was: C.actual_netspeed = min(C.ntnet_speed, ntnet_speed)
 			C.download_completion += C.actual_netspeed
 			if(C.download_completion >= provided_file.size)
 				C.finish_download()

@@ -243,9 +243,6 @@ var/list/gamemode_cache = list()
 	var/max_acts_per_interval = 140 //Number of actions per interval permitted for spam protection.
 	var/act_interval = 0.1 SECONDS //Interval for spam prevention.
 
-
-	var/sql_enabled = 1 // for sql switching //inf
-
 /datum/configuration/New()
 	var/list/L = typesof(/datum/game_mode) - /datum/game_mode
 	for (var/T in L)
@@ -775,6 +772,9 @@ var/list/gamemode_cache = list()
 
 				if("lighting_style")
 					lighting_style = value
+
+				if("ntnet_radius_multiplyer")
+					ntnet_radius_multiplyer = value
 			//[/INF]
 
 				if("max_gear_cost")
