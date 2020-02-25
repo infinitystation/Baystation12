@@ -39,8 +39,13 @@
 		target = cagie.contained
 	if(istype(target, /mob/living/carbon/human))
 		var/mob/living/carbon/human/H = target
+//[INF]
+		var/t_species = H.species
+		if(H.mind?.special_role == "Changeling")
+			t_species = "Unknown"
+//[/INF]
 		. += "Data for [H]:"
-		. += "Species:\t[H.species]"
+		. += "Species:\t[t_species]" //INF WAS H.species
 		. += "Breathes:\t[gas_data.name[H.species.breath_type]]"
 		. += "Exhales:\t[gas_data.name[H.species.exhale_type]]"
 		. += "Known toxins:\t[english_list(H.species.poison_types)]"
