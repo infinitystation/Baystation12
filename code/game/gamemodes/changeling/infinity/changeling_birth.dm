@@ -5,92 +5,121 @@
 	set name = "Absorb DNA"
 
 	var/datum/changeling/changeling = changeling_power(0,0,100)
+	var/forced_absorbing = 0
 	if(!changeling)	return
 
 	var/obj/item/grab/G = src.get_active_hand()
 	if(!istype(G))
-		to_chat(src, SPAN_LING("We must be grabbing a creature in our active hand to absorb them."))
+		to_chat(src, SPAN_LING("Мы должны удерживать добычу, чтобы поглотить её."))
 		return
 
 	var/mob/living/carbon/human/T = G.affecting
 	if(!istype(T))
-		to_chat(src, SPAN_LING("[T] is not compatible with our biology."))
+		to_chat(src, SPAN_LING("ДНК [T] не совместима с нашим геномом."))
 		return
 
 	if(T.isSynthetic())
-		to_chat(src, SPAN_LING("We cannot extract DNA from a synthetic life form!"))
+		to_chat(src, SPAN_LING("Мы не можемь извлекать ДНК из синтетиков!"))
 		return
 
 	if(T.species.species_flags & SPECIES_FLAG_NO_SCAN)
-		to_chat(src, SPAN_LING("We do not know how to parse this creature's DNA!"))
+		to_chat(src, SPAN_LING("Мы не знаем, как усвоить ДНК этого существа!"))
 		return
 
 	if(islesserform(T))
-		to_chat(src, SPAN_LING("This creature DNA is not compatible with our form!"))
+		to_chat(src, SPAN_LING("ДНК этого существа не совместимо с нашей формой!"))
 		return
 
 	if(MUTATION_HUSK in T.mutations)
-		to_chat(src, SPAN_LING("This creature's DNA is ruined beyond useability!"))
+		to_chat(src, SPAN_LING("ДНК этого существа слишком повреждено!"))
 		return
 
 	if(!G.can_absorb())
-		to_chat(src, SPAN_LING("We must have a tighter grip to absorb this creature."))
+		to_chat(src, SPAN_LING("Мы должны крепче держать добычу."))
 		return
 
 	if(changeling.isabsorbing)
-		to_chat(src, SPAN_LING("We are already absorbing!"))
+		to_chat(src, SPAN_LING("Мы уже поглощаем!"))
 		return
 
 	var/obj/item/organ/external/affecting = T.get_organ(src.zone_sel.selecting)
 	if(!affecting)
-		to_chat(src, SPAN_WARNING("They are missing that body part!"))
+		to_chat(src, SPAN_WARNING("У [T] нет этой части тела!"))
 
-	changeling.isabsorbing = 1
+	if(T.paralysis)
+		if(alert(src, "Жертва в сознании. Предложить ей не сопротивляться и провести поглощение бескровно?", "Выбор", "Да", "Нет") == "Нет")
+			forced_absorbing = 1
+		if(!forced_absorbing)
+			if(alert(T, "Существо дало вам выбор. Вы хотите обратиться бескровно?", "Выбор", "Да", "Нет") == "Нет")
+				to_chat(src, SPAN_WARNING("[T] отказывается от нашего щедрого предложения!"))
+				return
+	else
+		if(alert(src, "Жертва БЕЗ сознания. Подождать, пока не проснется? Если нет - мы поглотим её так.", "Выбор", "Да", "Нет") == "Нет")
+			forced_absorbing = 1
+		else
+			return
+	var/obj/item/organ/external/target_organ= pick(T.organs)
 	for(var/stage = 1, stage<=3, stage++)
 		switch(stage)
 			if(1)
-				src.visible_message(SPAN_WARNING("[src]'s skin begins to shift and squirm!"), SPAN_LING("This creature is compatible. We must hold still... Our skin begins to shift and squirm for a proboscis."))
+				playsound(get_turf(src), 'infinity/sound/effects/lingextends.ogg', 50, 1)
+				if(forced_absorbing)
+					src.visible_message(SPAN_WARNING("[src]'s skin begins to shift and squirm! Sharp claws have appeared at hands!"))
+				else
+					src.visible_message(SPAN_WARNING("[src]'s skin begins to shift and squirm! The tongue goes out and turns into gross proboscis!"))
 				T.stuttering += 40 // horror effect
-				if(!do_mob(src, T, 80))
+				if(!do_mob(src, T, 8 SECONDS))
 					to_chat(src, SPAN_LING("Our absorption has been interrupted!"))
 					changeling.isabsorbing = 0
 					return
 			if(2)
-				src.visible_message(SPAN_WARNING("[src] extends a proboscis!"), SPAN_LING("We extend a proboscis, let's find a good point for extraction..."))
+				if(forced_absorbing)
+					src.visible_message(SPAN_DANGER("[src] begins ripping apart [T]!</span>"))
+					spawn(2.5 SECONDS)
+						playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 40, 1)
+						T.visible_message(SPAN_NOTICE("\the [T] quickly turns pale..."), SPAN_NOTICE("\the [src] sucks the life from me..."))
+					while(T.getBruteLoss() <= 300 ) //mega damage
+						if(!do_mob(src, T, 3.7 SECONDS))
+							to_chat(src, SPAN_LING("Our absorption of [T] has been interrupted!"))
+							changeling.isabsorbing = 0
+							return
+						T.stun_effect_act(0, 10, affecting, "sharp claws")
+						target_organ= pick(T.organs)
+						src.visible_message(SPAN_DANGER("[src] tears [T]'s [target_organ]!</span>"))
+						target_organ.take_external_damage(30, 0, DAM_SHARP, "claws")
+						playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 25, 1)
+				else
+					src.visible_message(SPAN_DANGER("[src] stabs \the [T] with the proboscis!"), SPAN_NOTICE("We stab \the [T] with the proboscis."))
+					playsound(get_turf(src), 'infinity/sound/effects/lingstabs.ogg', 50, 1)
+					spawn(2.5 SECONDS)
+						playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 40, 1)
+						to_chat(src, SPAN_LING("We start to absorb the sweetness DNA from [T]..."))
+						T.visible_message(SPAN_NOTICE("\the [T] quickly turns pale..."), SPAN_NOTICE("\the [src] sucks the life from me..."))
+						T.eye_blurry += 20
+					while(T.vessel.total_volume >= 50) //will su... absorb 93% of victim's fluids
+						if(!do_mob(src, T, 3.7 SECONDS))
+							to_chat(src, SPAN_LING("Our absorption of [T] has been interrupted!"))
+							changeling.isabsorbing = 0
+							return
+						T.vessel.remove_any(rand(40, 60))
+						T.stun_effect_act(0, 15, affecting, "large organic needle")
+						to_chat(src, SPAN_LING("[T] still has [round(T.vessel.total_volume)] fluids."))
+						if(prob(20))
+							to_chat(T, pick(SPAN_NOTICE("Someone must help me... Please..."), SPAN_NOTICE("It's so merciless..."), SPAN_NOTICE("I already just wanna die!...")))
+							to_chat(src, pick(SPAN_LING("We would do this all day..."), SPAN_LING("[T]'s DNA tastes sweat..."), SPAN_LING("We feel ourselve much more better...")))
+							playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 25, 1)
+							src.visible_message(SPAN_WARNING("\the [src]'s proboscis loudly sucks something from \the [T]'s [affecting.name]!"))
+			if(3)
+				src.visible_message(SPAN_WARNING("[src] begins to form some sort of cocoon around [T]!"))
 				playsound(get_turf(src), 'infinity/sound/effects/lingextends.ogg', 50, 1)
-				if(!do_mob(src, T, 80))
-					to_chat(src, SPAN_LING("Our absorption has been interrupted!"))
+				if(!do_mob(src, T, 12 SECONDS))
+					to_chat(src, SPAN_LING("Our cocoon formation has been interrupted!"))
 					changeling.isabsorbing = 0
 					return
-			if(3)
-				src.visible_message(SPAN_DANGER("[src] stabs \the [T] with the proboscis!"), SPAN_NOTICE("We stab \the [T] with the proboscis."))
-				to_chat(T, SPAN_DANGER("You feel a sharp stabbing pain in your [affecting.name]!"))
-				playsound(get_turf(src), 'infinity/sound/effects/lingstabs.ogg', 50, 1)
-				affecting.take_external_damage(30, 0, DAM_SHARP, "large organic needle")
-				T.stun_effect_act(0, 60, affecting, "large organic needle")
-				spawn(25)
-					playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 40, 1)
-					to_chat(src, SPAN_LING("We start to absorb the sweetness DNA from [T]..."))
-					T.visible_message(SPAN_NOTICE("\the [T] quickly turns pale..."), SPAN_NOTICE("\the [src] sucks the life from me..."))
-					T.eye_blurry += 20
-				while(T.vessel.total_volume >= 50) //will su... absorb 93% of victim's fluids
-					if(!do_mob(src, T, 37))
-						to_chat(src, SPAN_LING("Our absorption of [T] has been interrupted!"))
-						changeling.isabsorbing = 0
-						return
-					T.vessel.remove_any(rand(40, 60))
-					T.stun_effect_act(0, 15, affecting, "large organic needle")
-					to_chat(src, SPAN_LING("[T] still has [round(T.vessel.total_volume)] fluids."))
-					if(prob(20))
-						to_chat(T, pick(SPAN_NOTICE("Someone must help me... Please..."), SPAN_NOTICE("It's so merciless..."), SPAN_NOTICE("I already just wanna die!...")))
-						to_chat(src, pick(SPAN_LING("We would do this all day..."), SPAN_LING("[T]'s DNA tastes sweat..."), SPAN_LING("We feel ourselve much more better...")))
-						playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 25, 1)
-						src.visible_message(SPAN_WARNING("\the [src]'s proboscis loudly sucks something from \the [T]'s [affecting.name]!"))
 				changeling.isabsorbing = 0
 
 		SSstatistics.add_field_details("changeling_powers","A[stage]")
-	visible_message(SPAN_WARNING("[src] removes it's proboscis from \the [T]!"), SPAN_LING("We have absorbed the all fluids from [T]!"))
-	to_chat(T, SPAN_WARNING("You have been absorbed by the changeling!"))
+//	visible_message(SPAN_WARNING("[src] removes it's proboscis from \the [T]!"), SPAN_LING("We have absorbed the all fluids from [T]!"))
 	playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 70, 1)
 
 	changeling.chem_charges += 10
@@ -141,7 +170,11 @@
 	var/obj/item/organ/internal/heart/heart = T.internal_organs_by_name[BP_HEART]
 	for(heart in T.organs)
 		heart.pulse = 0
-//	T.Drain()
+	if(T.mind.changeling)
+		T.Drain() //effective execution.
+		T.death(0)
+		to_chat(T.client, SPAN_DANGER("Вы были поглощены другим генокрадом. Это конец."))
+		return
 	T.death(0)
 
 	var/obj/structure/changeling_cocoon/coc = new /obj/structure/changeling_cocoon(T.loc)
@@ -149,9 +182,8 @@
 		qdel(G)
 	T.forceMove(coc)
 	coc.victim = T
-	var/choice = alert(T.mind, "Вы хотите продолжить игру в качестве генокрада? Если Вы откажетесь, то другой призрак может занять Ваше тело.", "Эволюция?", "Да", "Нет")
-	if(choice == "Да")
-		to_chat(T.client, SPAN_DANGER("Не покидайте тело и игру, чтобы процесс превращения продолжался и другие игроки не вселились."))
+	to_chat(T.client, SPAN_DANGER("Вы были поглощены генокрадом, однако, он оставил кокон, \
+	в котором Ваш персонаж станет одним из Них. Не покидайте игру и не выходте из тела, чтобы призраки не забрали его."))
 	spawn(6 SECONDS)
 		for(var/mob/observer/ghost/O in GLOB.ghost_mob_list)
 			to_chat(O, FONT_LARGE(SPAN_LING(
@@ -198,6 +230,9 @@
 /obj/structure/changeling_cocoon/Destroy()
 	if(victim)
 		victim.forceMove(loc)
+	else
+		for(var/atom/movable/A in contents)
+			A.forceMove(loc)
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
@@ -215,7 +250,7 @@
 	take_damage(damage)
 	user.visible_message(SPAN_WARNING("[user] [pick(I.attack_verb)]s [src]!"), SPAN_WARNING("You [pick(I.attack_verb)] [src]!"))
 
-/obj/structure/attack_generic(var/mob/user, var/damage, var/attack_verb)
+/obj/structure/changeling_cocoon/attack_generic(var/mob/user, var/damage, var/attack_verb)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	user.visible_message(SPAN_DANGER("\The [user] [attack_verb] \the [src]!"))
 	attack_animation(user)
