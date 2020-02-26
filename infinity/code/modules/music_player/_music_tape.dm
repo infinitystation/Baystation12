@@ -1,7 +1,7 @@
 // Music tape code :3
 /obj/item/music_tape
 	name = "music tape"
-	desc = "Magnetic tape adapted to outdated but proven music formats such as midi, wav and module files."
+	desc = "Magnetic tape adapted to outdated but proven music formats such as ogg, midi and module files."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "tape_white"
 	item_state = "analyzer"
@@ -13,7 +13,7 @@
 
 	var/random_color = TRUE
 	var/ruined = 0
-	var/rewrites_left = 3
+	var/rewrites_left = 2
 
 	var/list/datum/track/track
 	var/uploader_ckey
@@ -30,7 +30,8 @@
 
 /obj/item/music_tape/examine(mob/user)
 	. = ..(user)
-	if(track?.title) to_chat(user, SPAN_NOTICE("It's labeled as \"[track.title]\"."))
+	if(track?.title)
+		to_chat(user, SPAN_NOTICE("It's labeled as \"[track.title]\"."))
 
 /obj/item/music_tape/attack_self(mob/user)
 	if(!ruined)

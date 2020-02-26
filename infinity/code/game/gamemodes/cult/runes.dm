@@ -12,7 +12,7 @@
 	set category = "Cult Magic"
 	set name = "Imbue: Burning"
 
-	make_rune(/obj/effect/rune/imbue/wrath)
+	make_rune(/obj/effect/rune/imbue/burn)
 
 /obj/effect/rune/imbue/burn
 	cultname = "burning imbue"
