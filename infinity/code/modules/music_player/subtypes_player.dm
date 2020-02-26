@@ -37,7 +37,7 @@
 	slot_flags = SLOT_BELT
 
 /obj/item/music_player/csplayer/on_update_icon()
-	if(tape && (mode == 1))
+	if(tape && (mode == (1 || 2)))
 		icon_state = "csplayer_on"
 	else if(tape)
 		icon_state = "csplayer_loaded"
@@ -57,4 +57,6 @@
 // This one for debug pruporses
 // I'll yell on you if you will use it in game without good reason >:(
 /obj/item/music_player/debug
+	name = "typ3n4m3-cl4ss: CRUSH/ZER0"
+	icon_state = "console"
 	tape = /obj/item/music_tape/custom
