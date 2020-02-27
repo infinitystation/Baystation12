@@ -24,7 +24,8 @@ var/global/list/all_objectives = list()
 /datum/objective/proc/find_target()
 	var/list/possible_targets = list()
 	for(var/datum/mind/possible_target in SSticker.minds)
-		if(possible_target != owner && ishuman(possible_target.current) && (possible_target.current.stat != DEAD))
+		if(possible_target != owner && ishuman(possible_target.current) && (possible_target.current.stat != DEAD) \
+		&& possible_target.current.client.wishes_to_be_role(owner.special_role) >= 1) //INF
 			possible_targets += possible_target
 	if(possible_targets.len > 0)
 		target = pick(possible_targets)
@@ -474,7 +475,8 @@ var/global/list/all_objectives = list()
 	var/list/possible_targets = list()
 	if(!possible_targets.len)
 		for(var/mob/living/carbon/human/player in GLOB.player_list)
-			if(player.mind && !(player.mind in GLOB.cult.current_antagonists))
+			if(player.mind && !(player.mind in GLOB.cult.current_antagonists) \
+			&& player.client.wishes_to_be_role(GLOB.cult.id) >= 1) //INF
 				possible_targets += player.mind
 	if(possible_targets.len > 0)
 		target = pick(possible_targets)
