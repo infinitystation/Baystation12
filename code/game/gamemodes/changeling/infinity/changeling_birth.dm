@@ -72,7 +72,7 @@
 	for(var/stage = 1, stage<=3, stage++)
 		switch(stage)
 			if(1)
-				playsound(get_turf(src), 'infinity/sound/effects/lingextends.ogg', 50, 1)
+				playsound(get_turf(src), 'infinity/sound/effects/lingextends.ogg', 50, 1, -3.5)
 				if(forced_absorbing)
 					src.visible_message(SPAN_WARNING("[src]'s skin begins to shift and squirm! Sharp claws have appeared at hands, while the tongue goes out and turns into gross proboscis!"))
 				else
@@ -92,7 +92,7 @@
 						target_organ= pick(T.organs)
 						src.visible_message(SPAN_DANGER("[src] tears [T]'s [target_organ]!"))
 						target_organ.take_external_damage(25, 0, DAM_SHARP, "claws")
-						playsound(get_turf(src), 'sound/magic/demon_attack1.ogg', 15, 1)
+						playsound(get_turf(src), 'sound/magic/demon_attack1.ogg', 25, 1, -3.5)
 						if(T.getBruteLoss() >= 200 && !forced_gibbed)
 							gibs(T.loc, T.dna, /obj/effect/gibspawner/changeling, T.species.flesh_color, T.species.blood_color)
 							forced_gibbed = 1
@@ -101,9 +101,9 @@
 				else
 					src.visible_message(SPAN_WARNING("[src] gently stabs \the [T] with its proboscis!"))
 				T.stun_effect_act(0, 15, affecting, "large organic needle")
-				playsound(get_turf(src), 'infinity/sound/effects/lingstabs.ogg', 50, 1)
+				playsound(get_turf(src), 'infinity/sound/effects/lingstabs.ogg', 50, 1, -3.5)
 				spawn(2.5 SECONDS)
-					playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 40, 1)
+					playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 40, 1, -3.5)
 					to_chat(src, SPAN_LING("We start to absorb the sweetness DNA from [T]..."))
 					T.visible_message(SPAN_NOTICE("\the [T] quickly turns pale..."), SPAN_NOTICE("\the [src] sucks the life from me..."))
 					T.eye_blurry += 20
@@ -121,7 +121,7 @@
 					if(prob(20) || forced_absorbing)
 						to_chat(T, pick(SPAN_NOTICE("Someone must help me... Please..."), SPAN_NOTICE("It's so merciless..."), SPAN_NOTICE("I already just wanna die!...")))
 						to_chat(src, pick(SPAN_LING("We would do this all day..."), SPAN_LING("[T]'s DNA tastes sweat..."), SPAN_LING("We feel ourselve much more better...")))
-						playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 10, 1)
+						playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 10, 1, -3.5)
 						src.visible_message(SPAN_WARNING("\the [src]'s proboscis loudly sucks something from \the [T]'s [affecting.name]!"))
 			if(3)
 				var/message = "[src] begins to form some sort of cocoon around [T]!"
@@ -137,7 +137,7 @@
 						if(2)
 						if(3)*/
 				visible_message(SPAN_WARNING(message))
-				playsound(get_turf(src), 'infinity/sound/magic/demon_consume.ogg', 40, 1)
+				playsound(get_turf(src), 'infinity/sound/magic/demon_consume.ogg', 40, 1, -3.5)
 				if(!do_mob(src, T, 12 SECONDS))
 					to_chat(src, SPAN_LING("Создание кокона было прервано!"))
 					changeling.isabsorbing = 0
@@ -157,7 +157,7 @@
 	else
 		visible_message(SPAN_NOTICE("[src] softly removes its proboscis from \the [T]."))
 		to_chat(src, SPAN_LING("Мы поглотили весь геном, что был у [T] благодаря отсутствию сопротивления! Хорошая работа."))
-		playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 70, 1)
+		playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 70, 1, -3.5)
 
 	if(forced_absorbing)
 		changeling.chem_storage += 10
@@ -266,7 +266,7 @@
 		time()
 	if(world.time >= last_sound_time + 20 SECONDS)
 		last_sound_time = world.time
-		playsound(get_turf(src), 'infinity/sound/effects/lingextends.ogg', 15, 1)
+		playsound(get_turf(src), 'infinity/sound/effects/lingextends.ogg', 15, 1, -4.5)
 		src.visible_message(pick(
 			SPAN_WARNING("\icon[src] [src] pulses and faintly moves..."),
 			SPAN_WARNING("\icon[src] [src]... breaths?"),
