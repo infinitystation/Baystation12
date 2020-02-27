@@ -1,6 +1,6 @@
 // Music tape code :3
 /obj/item/music_tape
-	name = "music tape"
+	name = "tape"
 	desc = "Magnetic tape adapted to outdated but proven music formats such as ogg, midi and module files."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "tape_white"
@@ -55,10 +55,12 @@
 
 			if(new_name)
 				to_chat(user, SPAN_NOTICE("You label \the [src] '[new_name]'."))
-				track.title = "[new_name]"
+				track.title = "tape - \"[new_name]\""
+				SetName("tape - \"[new_name]\"")
 			else
 				to_chat(user, SPAN_NOTICE("You scratch off the label."))
 				track.title = "__________"
+				SetName("tape")
 		return
 	..()
 
