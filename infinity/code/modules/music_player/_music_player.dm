@@ -35,6 +35,7 @@ GLOBAL_LIST_EMPTY(music_players)
 	var/frequency = 1
 
 	var/datum/sound_token/sound_token
+	var/datum/client_preference/preference
 	var/sound_id
 
 	var/break_chance = 3
@@ -51,39 +52,31 @@ GLOBAL_LIST_EMPTY(music_players)
 /obj/item/music_player/Initialize()
 	. = ..()
 	if(type == /obj/item/music_player)
-		log_and_message_admins("Something, or someone has tried create \"[src.type]\", which was prohibited since the specific path is not for the gameplay. It will be deleted.")
-		send2adminirc("Something, or someone has tried create \"[src.type]\", which was prohibited since the specific path is not for the gameplay. It will be deleted.") //INF
+		log_and_message_admins("Something, or someone has tried to create \"[src.type]\", which was prohibited since the specific path is not for the gameplay. It will be deleted.")
+		send2adminirc("Something, or someone has tried create \"[src.type]\", which was prohibited since the specific path is not for the gameplay. It will be deleted.")
 		cell = null
 		tape = null
 		return INITIALIZE_HINT_QDEL
+	else
+		if(ispath(cell))
+			cell = new cell(src)
 
-	if(ispath(cell))
-		cell = new cell(src)
+		if(ispath(tape))
+			tape = new tape(src)
 
-	if(ispath(tape))
-		tape = new tape(src)
-
-	sound_id = "[type]_[sequential_id(type)]"
-	serial_number = "[rand(1,999)]"
-	desc = desc + "<br> You see \"#[serial_number]\" on the cover."
-
-	GLOB.music_players += src
-	log_and_message_admins("MUSIC PLAYER: <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> has been created.")
-
-	update_icon()
+		sound_id = "[/obj/item/music_player]_[sequential_id(/obj/item/music_player)]"
+		serial_number = "[rand(1,999)]"
+		desc = desc + "<br> You see \"#[serial_number]\" on the cover."
+		GLOB.music_players += src
+		log_and_message_admins("MUSIC PLAYER: <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> has been created.")
+		update_icon()
 
 /obj/item/music_player/Destroy()
 	set_mode(PLAYER_STATE_OFF)
-
-	if(cell)
-		QDEL_NULL(cell)
-
-	if(tape)
-		QDEL_NULL(tape)
-
+	QDEL_NULL(cell)
+	QDEL_NULL(tape)
 	log_and_message_admins("MUSIC PLAYER: #[serial_number] is deleted.")
 	GLOB.music_players -= src
-
 	. = ..()
 
 /obj/item/music_player/examine(mob/user)
@@ -108,10 +101,10 @@ GLOBAL_LIST_EMPTY(music_players)
 		overlays += image(icon, "[icon_state]_play")
 
 	if(panel == PANEL_OPENED)
-		overlays += image(icon, "[icon_state]_open")
+		overlays += image(icon, "[icon_state]_panel-open")
 
 		if(cell)
-			overlays += image(icon, "[icon_state]_open-cell")
+			overlays += image(icon, "[icon_state]_panel-cell")
 
 /obj/item/music_player/Process()
 	if(!get_cell() || !cell.checked_use(power_usage * CELLRATE))
@@ -120,11 +113,13 @@ GLOBAL_LIST_EMPTY(music_players)
 		return PROCESS_KILL
 
 /obj/item/music_player/proc/set_mode(value)
-	if(value == mode) return
-
-	if(broken) return
+	if(value == mode)
+		return
 
 	playsound(src, mode == (PLAYER_STATE_OFF || PLAYER_STATE_PAUSE) ? GLOB.switch_small_sound[1] : GLOB.switch_small_sound[2], 35)
+
+	if(broken)
+		return
 
 	switch(value)
 		if(PLAYER_STATE_OFF)
@@ -135,6 +130,7 @@ GLOBAL_LIST_EMPTY(music_players)
 			StopPlaying(pause = TRUE)
 
 /obj/item/music_player/attack_self(mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	switch(mode)
 		if(PLAYER_STATE_OFF)
 			set_mode(PLAYER_STATE_PLAY)
@@ -142,7 +138,6 @@ GLOBAL_LIST_EMPTY(music_players)
 			set_mode(PLAYER_STATE_OFF)
 		if(PLAYER_STATE_PAUSE)
 			set_mode(PLAYER_STATE_PLAY)
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 
 /obj/item/music_player/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/music_tape))
@@ -269,6 +264,7 @@ GLOBAL_LIST_EMPTY(music_players)
 
 			else
 				to_chat(user, SPAN_NOTICE("You don't know how to fix \the [src]."))
+		return
 	else
 		. = ..()
 
@@ -388,7 +384,7 @@ GLOBAL_LIST_EMPTY(music_players)
 	walk_to(src, 0)
 	src.visible_message(SPAN_DANGER("\The [src] blows apart!"), 1)
 
-	explosion(src.loc, 0, 0, 1, rand(1, 2), 1)
+	explosion(src.loc, 1, 1, 1, rand(3, 4), 1)
 
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 	s.set_up(3, 1, src)
@@ -400,8 +396,8 @@ GLOBAL_LIST_EMPTY(music_players)
 /obj/item/music_player/proc/break_act()
 	audible_message(SPAN_WARNING("\The [src]'s speakers pop with a sharp crack!"))
 	playsound(src, 'sound/effects/snap.ogg', 100, 1)
-	broken = TRUE
 	StopPlaying()
+	broken = TRUE
 
 /obj/item/music_player/proc/StartPlaying()
 	if(!get_cell() || !cell.check_charge(power_usage * CELLRATE))
@@ -420,7 +416,7 @@ GLOBAL_LIST_EMPTY(music_players)
 		sound_token.Unpause()
 	else
 		QDEL_NULL(sound_token)
-		sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, tape.track.GetTrack(), volume = volume, frequency = frequency, range = 7, falloff = 4, prefer_mute = TRUE, preference = /datum/client_preference/play_pmps)
+		sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, tape.track.GetTrack(), volume = volume, frequency = frequency, range = 7, falloff = 4, prefer_mute = TRUE, preference = src.preference, streaming = TRUE)
 
 	mode = PLAYER_STATE_PLAY
 	START_PROCESSING(SSobj, src)
@@ -447,10 +443,7 @@ GLOBAL_LIST_EMPTY(music_players)
 	if(!CanPhysicallyInteract(user))
 		return
 
-	if(broken) return
-
-	playsound(src, mode == (PLAYER_STATE_OFF || PLAYER_STATE_PAUSE) ? GLOB.switch_small_sound[1] : GLOB.switch_small_sound[2], 35)
-
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	switch(mode)
 		if(PLAYER_STATE_PLAY)
 			set_mode(PLAYER_STATE_PAUSE)

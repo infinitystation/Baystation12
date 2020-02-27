@@ -1,12 +1,12 @@
 // Pre-made cassetes
 /obj/item/music_tape/title2
-	name = "Title 2"
+	name = "tape - \"Title 2\""
 	track = new /datum/track("Title 2", 'sound/music/title2.ogg')
 	rewrites_left = 0
 
 /obj/item/music_tape/clouds
-	name = "Clouds"
-	track = new /datum/track("Clouds of Fire", /music_track/clouds_of_fire)
+	name = "tape - \"Clouds\""
+	track = new /datum/track("Clouds of Fire", 'sound/music/clouds.s3m')
 	rewrites_left = 0
 
 /obj/item/music_tape/custom
@@ -16,25 +16,24 @@
 /obj/item/music_tape/custom/attack_self(mob/user)
 	if(!ruined && !track)
 		if(setup_tape(user))
-			log_and_message_admins("uploaded new sound <a href='?_src_=holder;listen_tape_sound=\ref[track.track]'>(preview)</a> in <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>\the [src]</a> with track name \"[track.title]\". <A HREF='?_src_=holder;wipe_tape_data=\ref[src]'>Wipe</A> data.")
+			log_and_message_admins("uploaded new sound <a href='?_src_=holder;listen_tape_sound=\ref[track.GetTrack()]'>(preview)</a> in <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>\the [src]</a> with track name \"[track.title]\". <A HREF='?_src_=holder;wipe_tape_data=\ref[src]'>Wipe</A> data.")
 		return
 	..()
 
 /obj/item/music_tape/custom/proc/setup_tape(mob/user)
-	var/sound/new_sound = input(user, "Select sound to upload. You should use only those audio formats which byond can accept. Ogg and module files is good choice.", "Song Reminiscence: File") as null|sound
-	if(isnull(new_sound)) return FALSE
-
-	new_sound = sound(new_sound)
-	new_sound.status = SOUND_STREAM
+	var/new_sound = input(user, "Select sound to upload. You should use only those audio formats which byond can accept. Ogg and module files is a good choice.", "Song Reminiscence: File") as null|sound
+	if(isnull(new_sound))
+		return FALSE
 
 	var/new_name = input(user, "Name \the [src]:", "Song Reminiscence: Name", "Untitled") as null|text
-	if(isnull(new_name)) return FALSE
+	if(isnull(new_name))
+		return FALSE
 
 	new_name = sanitizeSafe(new_name)
 
-	SetName("music tape")
+	SetName("tape - \"[new_name]\"")
 
-	if(new_sound && new_name)
+	if(new_sound && new_name && !track)
 		track = new /datum/track(new_name, new_sound)
 		return TRUE
 	return FALSE

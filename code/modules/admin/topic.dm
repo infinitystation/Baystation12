@@ -1747,7 +1747,7 @@
 
 		log_and_message_admins("created [number] [english_list(paths)]")
 
-		send2adminirc("[get_key(usr)] создал [number] [english_list(paths)] по координатам \[X:[target.x], Y: [target.y], Z: [target.x]\]") //inf
+		send2adminirc("[get_key(usr)] создал [number] [english_list(paths)] по координатам \[X: [target.x], Y: [target.y], Z: [target.z]\]") //inf
 
 		return
 
