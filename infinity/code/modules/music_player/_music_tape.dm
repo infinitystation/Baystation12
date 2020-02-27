@@ -59,7 +59,7 @@
 				SetName("tape - \"[new_name]\"")
 			else
 				to_chat(user, SPAN_NOTICE("You scratch off the label."))
-				track.title = "__________"
+				track.title = "unknown"
 				SetName("tape")
 		return
 	..()
