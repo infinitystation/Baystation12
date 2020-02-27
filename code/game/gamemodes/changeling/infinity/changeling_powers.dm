@@ -87,7 +87,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 
 	var/mob/living/carbon/human/H = src
 	if(istype(H))
-		var/datum/absorbed_dna/newDNA = new(H.real_name, H.dna, H.species.name, H.languages, H.flavor_texts)
+		var/datum/absorbed_dna/newDNA = new(H.real_name, H.dna, H.species.name, H.languages)
 		absorbDNA(newDNA)
 
 	return 1
@@ -207,7 +207,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 		H.set_species(newSpecies,1)
 		H.b_type = chosen_dna.dna.b_type
 		H.sync_organ_dna()
-		H.flavor_texts = chosen_dna.flavour_texts ? chosen_dna.flavour_texts.Copy() : null
+//		H.flavor_texts = chosen_dna.flavour_texts ? chosen_dna.flavour_texts.Copy() : null
 
 	domutcheck(src, null)
 	src.UpdateAppearance()
@@ -853,8 +853,16 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 		to_chat(src, SPAN_LING("That species must be absorbed directly."))
 		return
 
+	if(islesserform(T))
+		to_chat(src, SPAN_LING("Our sting appears ineffective against this creature."))
+		return 0
 
-	var/datum/absorbed_dna/newDNA = new(T.real_name, T.dna, T.species.name, T.languages, T.flavor_texts)
+	if(T.stat != DEAD)
+		to_chat(src, SPAN_LING("Our sting can only be used against dead targets."))
+		return 0
+
+
+	var/datum/absorbed_dna/newDNA = new(T.real_name, T.dna, T.species.name, T.languages)
 	absorbDNA(newDNA)
 
 	SSstatistics.add_field_details("changeling_powers","ED")
