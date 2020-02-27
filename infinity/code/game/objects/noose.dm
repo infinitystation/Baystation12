@@ -54,7 +54,7 @@ GLOBAL_LIST_INIT(standing_objects, list(/obj/item/weapon/stool, /obj/structure/h
 	name = "noose"
 	desc = "A morbid apparatus."
 	icon_state = "noose"
-	icon = 'icons/obj/noose.dmi'
+	icon = 'infinity/icons/obj/noose.dmi'
 	anchored = TRUE
 	can_buckle = TRUE
 	buckle_lying = FALSE
