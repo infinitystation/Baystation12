@@ -10,68 +10,71 @@
 
 	var/obj/item/grab/G = src.get_active_hand()
 	if(!istype(G))
-		to_chat(src, SPAN_LING("Мы должны удерживать добычу, чтобы поглотить её."))
+		to_chat(src, SPAN_LING("РњС‹ РґРѕР»Р¶РЅС‹ СѓРґРµСЂР¶РёРІР°С‚СЊ РґРѕР±С‹С‡Сѓ, С‡С‚РѕР±С‹ РїРѕРіР»РѕС‚РёС‚СЊ РµС‘."))
 		return
 
 	var/mob/living/carbon/human/T = G.affecting
 	if(!istype(T))
-		to_chat(src, SPAN_LING("ДНК [T] не совместима с нашим геномом."))
+		to_chat(src, SPAN_LING("Р”РќРљ [T] РЅРµ СЃРѕРІРјРµСЃС‚РёРјР° СЃ РЅР°С€РёРј РіРµРЅРѕРјРѕРј."))
 		return
 
 	if(T.isSynthetic())
-		to_chat(src, SPAN_LING("Мы не можемь извлекать ДНК из синтетиков!"))
+		to_chat(src, SPAN_LING("РњС‹ РЅРµ РјРѕР¶РµРјСЊ РёР·РІР»РµРєР°С‚СЊ Р”РќРљ РёР· СЃРёРЅС‚РµС‚РёРєРѕРІ!"))
 		return
 
 	if(T.species.species_flags & SPECIES_FLAG_NO_SCAN)
-		to_chat(src, SPAN_LING("Мы не знаем, как усвоить ДНК этого существа!"))
+		to_chat(src, SPAN_LING("РњС‹ РЅРµ Р·РЅР°РµРј, РєР°Рє СѓСЃРІРѕРёС‚СЊ Р”РќРљ СЌС‚РѕРіРѕ СЃСѓС‰РµСЃС‚РІР°!"))
 		return
 
 	if(islesserform(T))
-		to_chat(src, SPAN_LING("ДНК этого существа не совместимо с нашей формой!"))
+		to_chat(src, SPAN_LING("Р”РќРљ СЌС‚РѕРіРѕ СЃСѓС‰РµСЃС‚РІР° РЅРµ СЃРѕРІРјРµСЃС‚РёРјРѕ СЃ РЅР°С€РµР№ С„РѕСЂРјРѕР№!"))
 		return
 
 	if(MUTATION_HUSK in T.mutations)
-		to_chat(src, SPAN_LING("ДНК этого существа слишком повреждено!"))
+		to_chat(src, SPAN_LING("Р”РќРљ СЌС‚РѕРіРѕ СЃСѓС‰РµСЃС‚РІР° СЃР»РёС€РєРѕРј РїРѕРІСЂРµР¶РґРµРЅРѕ!"))
 		return
 
 	if(!G.can_absorb())
-		to_chat(src, SPAN_LING("Мы должны крепче держать добычу."))
+		to_chat(src, SPAN_LING("РњС‹ РґРѕР»Р¶РЅС‹ РєСЂРµРїС‡Рµ РґРµСЂР¶Р°С‚СЊ РґРѕР±С‹С‡Сѓ."))
 		return
 
 	if(T.stat == DEAD)
-		to_chat(src, SPAN_LING("Этот труп бесполезен. Лучше поохотиться на другую жертву."))
+		to_chat(src, SPAN_LING("Р­С‚РѕС‚ С‚СЂСѓРї Р±РµСЃРїРѕР»РµР·РµРЅ. Р›СѓС‡С€Рµ РїРѕРѕС…РѕС‚РёС‚СЊСЃСЏ РЅР° РґСЂСѓРіСѓСЋ Р¶РµСЂС‚РІСѓ."))
 		return
 
 	if(changeling.isabsorbing)
-		to_chat(src, SPAN_LING("Мы уже поглощаем!"))
+		to_chat(src, SPAN_LING("РњС‹ СѓР¶Рµ РїРѕРіР»РѕС‰Р°РµРј!"))
 		return
 
 	var/obj/item/organ/external/affecting = T.get_organ(src.zone_sel.selecting)
 	if(!affecting)
-		to_chat(src, SPAN_WARNING("У [T] нет этой части тела!"))
+		to_chat(src, SPAN_WARNING("РЈ [T] РЅРµС‚ СЌС‚РѕР№ С‡Р°СЃС‚Рё С‚РµР»Р°!"))
 
 	changeling.isabsorbing = 1
 	if(T.paralysis)
-		if(alert(src, "Жертва в сознании. Предложить ей не сопротивляться и провести поглощение бескровно?", "Выбор", "Да", "Нет") == "Нет")
+		if(alert(src, "Р–РµСЂС‚РІР° РІ СЃРѕР·РЅР°РЅРёРё. РџСЂРµРґР»РѕР¶РёС‚СЊ РµР№ РЅРµ СЃРѕРїСЂРѕС‚РёРІР»СЏС‚СЊСЃСЏ Рё РїСЂРѕРІРµСЃС‚Рё РїРѕРіР»РѕС‰РµРЅРёРµ Р±РµСЃРєСЂРѕРІРЅРѕ?", "Р’С‹Р±РѕСЂ", "Р”Р°", "РќРµС‚") == "РќРµС‚")
 			forced_absorbing = 1
 		if(!forced_absorbing)
-			if(alert(T, "Существо дало вам выбор. Вы хотите обратиться бескровно?", "Выбор", "Да", "Нет") == "Нет")
-				to_chat(src, SPAN_WARNING("[T] отказывается от нашего щедрого предложения!"))
+			if(alert(T, "РЎСѓС‰РµСЃС‚РІРѕ РґР°Р»Рѕ РІР°Рј РІС‹Р±РѕСЂ. Р’С‹ С…РѕС‚РёС‚Рµ РѕР±СЂР°С‚РёС‚СЊСЃСЏ Р±РµСЃРєСЂРѕРІРЅРѕ?", "Р’С‹Р±РѕСЂ", "Р”Р°", "РќРµС‚") == "РќРµС‚")
+				to_chat(src, SPAN_WARNING("[T] РѕС‚РєР°Р·С‹РІР°РµС‚СЃСЏ РѕС‚ РЅР°С€РµРіРѕ С‰РµРґСЂРѕРіРѕ РїСЂРµРґР»РѕР¶РµРЅРёСЏ!"))
 				changeling.isabsorbing = 0
 				return
 	else
-		if(alert(src, "Жертва БЕЗ сознания. Подождать, пока не проснется? Если нет - мы поглотим её так.", "Выбор", "Да", "Нет") == "Да")
+		if(alert(src, "Р–РµСЂС‚РІР° Р‘Р•Р— СЃРѕР·РЅР°РЅРёСЏ. РџРѕРґРѕР¶РґР°С‚СЊ, РїРѕРєР° РЅРµ РїСЂРѕСЃРЅРµС‚СЃСЏ? Р•СЃР»Рё РЅРµС‚ - РјС‹ РїРѕРіР»РѕС‚РёРј РµС‘ С‚Р°Рє.", "Р’С‹Р±РѕСЂ", "Р”Р°", "РќРµС‚") == "Р”Р°")
 			changeling.isabsorbing = 0
 			return
 		else
 			forced_absorbing = 1
 	var/obj/item/organ/external/target_organ= pick(T.organs)
+	var/forced_gibbed = 0
+//fluff
+//todo	var/cocoon_type = rand(1,3)
 	for(var/stage = 1, stage<=3, stage++)
 		switch(stage)
 			if(1)
 				playsound(get_turf(src), 'infinity/sound/effects/lingextends.ogg', 50, 1)
 				if(forced_absorbing)
-					src.visible_message(SPAN_WARNING("[src]'s skin begins to shift and squirm! Sharp claws have appeared at hands!"))
+					src.visible_message(SPAN_WARNING("[src]'s skin begins to shift and squirm! Sharp claws have appeared at hands, while the tongue goes out and turns into gross proboscis!"))
 				else
 					src.visible_message(SPAN_WARNING("[src]'s skin begins to shift and squirm! The tongue goes out and turns into gross proboscis!"))
 				T.stuttering += 40 // horror effect
@@ -82,56 +85,83 @@
 			if(2)
 				if(forced_absorbing)
 					while(T.getBruteLoss() <= 300 ) //mega damage
-						if(!do_mob(src, T, 3.7 SECONDS))
-							to_chat(src, SPAN_LING("Our absorption of [T] has been interrupted!"))
+						if(!do_mob(src, T, 3.7 SECONDS)) //46 seconds, usually
+							to_chat(src, SPAN_LING("РџРѕРіР»РѕС‰РµРЅРёРµ Р±С‹Р»Рѕ РїСЂРµСЂРІР°РЅРѕ!"))
 							changeling.isabsorbing = 0
 							return
 						target_organ= pick(T.organs)
 						src.visible_message(SPAN_DANGER("[src] tears [T]'s [target_organ]!"))
 						target_organ.take_external_damage(25, 0, DAM_SHARP, "claws")
 						playsound(get_turf(src), 'sound/magic/demon_attack1.ogg', 15, 1)
-//						for(var/datum/reagent/R in T.vessel)
-//							if(R.name != "Blood")
-//								T.vessel.trans_to_mob(src)
+						if(T.getBruteLoss() >= 200 && !forced_gibbed)
+							gibs(T.loc, T.dna, /obj/effect/gibspawner/changeling, T.species.flesh_color, T.species.blood_color)
+							forced_gibbed = 1
+				if(forced_absorbing)
+					src.visible_message(SPAN_DANGER("[src] violently stabs \the [T] with its proboscis!"))
 				else
-					src.visible_message(SPAN_DANGER("[src] stabs \the [T] with the proboscis!"), SPAN_NOTICE("We stab \the [T] with the proboscis."))
-					playsound(get_turf(src), 'infinity/sound/effects/lingstabs.ogg', 50, 1)
-					spawn(2.5 SECONDS)
-						playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 40, 1)
-						to_chat(src, SPAN_LING("We start to absorb the sweetness DNA from [T]..."))
-						T.visible_message(SPAN_NOTICE("\the [T] quickly turns pale..."), SPAN_NOTICE("\the [src] sucks the life from me..."))
-						T.eye_blurry += 20
-					while(T.vessel.total_volume >= 50) //will su... absorb 93% of victim's fluids
-						if(!do_mob(src, T, 3.7 SECONDS))
-							to_chat(src, SPAN_LING("Our absorption of [T] has been interrupted!"))
-							changeling.isabsorbing = 0
-							return
-						T.vessel.remove_any(rand(40, 60))
-						T.stun_effect_act(0, 15, affecting, "large organic needle")
-						to_chat(src, SPAN_LING("[T] still has [round(T.vessel.total_volume)] fluids."))
-						if(prob(20))
-							to_chat(T, pick(SPAN_NOTICE("Someone must help me... Please..."), SPAN_NOTICE("It's so merciless..."), SPAN_NOTICE("I already just wanna die!...")))
-							to_chat(src, pick(SPAN_LING("We would do this all day..."), SPAN_LING("[T]'s DNA tastes sweat..."), SPAN_LING("We feel ourselve much more better...")))
-							playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 25, 1)
-							src.visible_message(SPAN_WARNING("\the [src]'s proboscis loudly sucks something from \the [T]'s [affecting.name]!"))
+					src.visible_message(SPAN_WARNING("[src] gently stabs \the [T] with its proboscis!"))
+				T.stun_effect_act(0, 15, affecting, "large organic needle")
+				playsound(get_turf(src), 'infinity/sound/effects/lingstabs.ogg', 50, 1)
+				spawn(2.5 SECONDS)
+					playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 40, 1)
+					to_chat(src, SPAN_LING("We start to absorb the sweetness DNA from [T]..."))
+					T.visible_message(SPAN_NOTICE("\the [T] quickly turns pale..."), SPAN_NOTICE("\the [src] sucks the life from me..."))
+					T.eye_blurry += 20
+				while(T.vessel.total_volume >= 50) //will su... absorb 93% of victim's fluids
+					if(!do_mob(src, T, 3.7 SECONDS))
+						to_chat(src, SPAN_LING("РџРѕРіР»РѕС‰РµРЅРёРµ Р±С‹Р»Рѕ РїСЂРµСЂРІР°РЅРѕ!"))
+						changeling.isabsorbing = 0
+						return
+					if(forced_absorbing)
+						T.vessel.remove_any(rand(90, 150)) //10~ seconds, because forced absorbing already takes 47 seconds at first step
+					else
+						T.vessel.remove_any(rand(40, 60)) //27 seconds with human
+					T.stun_effect_act(0, 15, affecting, "large organic needle")
+					to_chat(src, SPAN_LING("[T] still has [round(T.vessel.total_volume)] fluids."))
+					if(prob(20) || forced_absorbing)
+						to_chat(T, pick(SPAN_NOTICE("Someone must help me... Please..."), SPAN_NOTICE("It's so merciless..."), SPAN_NOTICE("I already just wanna die!...")))
+						to_chat(src, pick(SPAN_LING("We would do this all day..."), SPAN_LING("[T]'s DNA tastes sweat..."), SPAN_LING("We feel ourselve much more better...")))
+						playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 10, 1)
+						src.visible_message(SPAN_WARNING("\the [src]'s proboscis loudly sucks something from \the [T]'s [affecting.name]!"))
 			if(3)
-				src.visible_message(SPAN_WARNING("[src] begins to form some sort of cocoon around [T]!"))
+				var/message = "[src] begins to form some sort of cocoon around [T]!"
+/*todo
+				if(forced_absorbing)
+					switch(cocoon_type)
+						if(3 to INFINITY) message = "[src] begins to form some sort of cocoon around [T]!"
+						if(2) message = "[src] rises above [T] and transforms its arm into a giant tube! The substance from the end of tube leaks on [T]!"
+						else
+				else
+					switch(cocoon_type)
+						if(1) message = "[src] begins to form some sort of cocoon around [T]!"
+						if(2)
+						if(3)*/
+				visible_message(SPAN_WARNING(message))
 				playsound(get_turf(src), 'infinity/sound/magic/demon_consume.ogg', 40, 1)
 				if(!do_mob(src, T, 12 SECONDS))
-					to_chat(src, SPAN_LING("Our cocoon formation has been interrupted!"))
+					to_chat(src, SPAN_LING("РЎРѕР·РґР°РЅРёРµ РєРѕРєРѕРЅР° Р±С‹Р»Рѕ РїСЂРµСЂРІР°РЅРѕ!"))
 					changeling.isabsorbing = 0
 					return
 
 		SSstatistics.add_field_details("changeling_powers","A[stage]")
 	if(forced_absorbing)
-		visible_message(SPAN_WARNING("[src] retracts claws from \the [T]!"), SPAN_LING("We have absorbed the all useful genome from [T]!"))
+		visible_message(SPAN_WARNING("[src] retracts claws and violently removes proboscis from \the [T]!"))
+		to_chat(src, SPAN_LING("РњС‹ РїРѕРіР»РѕС‚РёР»Рё Р»РёС€СЊ С‡Р°СЃС‚СЊ РіРµРЅРѕРјР°, С‡С‚Рѕ Р±С‹Р» Сѓ [T] РёР·-Р·Р° С‚РѕРіРѕ, С‡С‚Рѕ РїРѕРІСЂРµРґРёР»Рё СЃРѕСЃСѓРґ."))
+/*todo
+		var/message
+		switch(cocoon_type)
+			if(3 to INFINITY) message = "[src] begins to form some sort of cocoon around [T]!"
+			if(2) message = "РЎСѓР±СЃС‚Р°РЅС†РёСЏ РёР· СЂСѓРєРё [src] РїРѕРєСЂС‹РІР°РµС‚ РІР°С€Рµ С‚РµР»Рѕ, С€РµСЋ, РіРѕР»РѕРІСѓ! Р’С‹ РЅРёС‡РµРіРѕ РЅРµ РІРёРґРёС‚Рµ... РћРЅРѕ СЃР¶РёРјР°РµС‚ РІР°СЃ, РЅРµ РїРѕР·РІРѕР»СЏСЏ РґРІРёРіР°С‚СЊСЃСЏ."
+			else
+		to_chat(src, SPAN_DANGER(message))*/
 	else
-		visible_message(SPAN_WARNING("[src] removes its proboscis from \the [T]!"), SPAN_LING("We have absorbed the all fluids with DNA from [T]!"))
-//	playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 70, 1)
+		visible_message(SPAN_NOTICE("[src] softly removes its proboscis from \the [T]."))
+		to_chat(src, SPAN_LING("РњС‹ РїРѕРіР»РѕС‚РёР»Рё РІРµСЃСЊ РіРµРЅРѕРј, С‡С‚Рѕ Р±С‹Р» Сѓ [T] Р±Р»Р°РіРѕРґР°СЂСЏ РѕС‚СЃСѓС‚СЃС‚РІРёСЋ СЃРѕРїСЂРѕС‚РёРІР»РµРЅРёСЏ! РҐРѕСЂРѕС€Р°СЏ СЂР°Р±РѕС‚Р°."))
+		playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 70, 1)
 
 	if(forced_absorbing)
 		changeling.chem_storage += 10
-		changeling.geneticpoints += 4
+		changeling.geneticpoints += 3
 	else
 		changeling.chem_storage += 20
 		changeling.geneticpoints += 7
@@ -144,7 +174,7 @@
 
 	changeling_update_languages(changeling.absorbed_languages)
 
-	var/datum/absorbed_dna/newDNA = new(T.real_name, T.dna, T.species.name, T.languages, T.flavor_texts)
+	var/datum/absorbed_dna/newDNA = new(T.real_name, T.dna, T.species.name, T.languages)
 	absorbDNA(newDNA)
 	if(T?.mind)
 		T.mind.CopyMemories(mind)
@@ -185,21 +215,23 @@
 	if(T.mind?.changeling)
 		T.Drain() //effective execution.
 		T.death(0)
-		to_chat(T.client, SPAN_DANGER("Вы были поглощены сородичем. Это конец..."))
+		to_chat(T.client, SPAN_DANGER("РњС‹ Р±С‹Р»Рё РїРѕРіР»РѕС‰РµРЅС‹ СЃРѕСЂРѕРґРёС‡РµРј. Р­С‚Рѕ РєРѕРЅРµС†..."))
 		return
-	T.death(0)
+//	T.death(0)
 
 	var/obj/structure/changeling_cocoon/coc = new /obj/structure/changeling_cocoon(T.loc)
 	for(G in contents) //G - it's grab. Mentioned before
 		qdel(G)
 	T.forceMove(coc)
 	coc.victim = T
-	to_chat(T.client, SPAN_DANGER("Вы были поглощены генокрадом, однако, он оставил кокон, \
-	в котором Ваш персонаж станет одним из Них. Не покидайте игру и не выходте из тела, чтобы призраки не забрали его."))
+	coc.background()
+	to_chat(T.client, SPAN_DANGER("Р’С‹ Р±С‹Р»Рё РїРѕРіР»РѕС‰РµРЅС‹ РіРµРЅРѕРєСЂР°РґРѕРј, РѕРґРЅР°РєРѕ, РѕРЅ РѕСЃС‚Р°РІРёР» РєРѕРєРѕРЅ, \
+	РІ РєРѕС‚РѕСЂРѕРј Р’Р°С€ РїРµСЂСЃРѕРЅР°Р¶ СЃС‚Р°РЅРµС‚ РѕРґРЅРёРј РёР· РќРёС…. РќРµ РїРѕРєРёРґР°Р№С‚Рµ РёРіСЂСѓ Рё РЅРµ РІС‹С…РѕРґС‚Рµ РёР· С‚РµР»Р°, С‡С‚РѕР±С‹\
+	РґСЂСѓРіРёРµ РїСЂРёР·СЂР°РєРё РЅРµ Р·Р°Р±СЂР°Р»Рё РµРіРѕ."))
 	spawn(6 SECONDS)
 		for(var/mob/observer/ghost/O in GLOB.ghost_mob_list)
 			to_chat(O, FONT_LARGE(SPAN_LING(
-			"Появился кокон генокрада! Нажмите на него, чтобы стать одним из них. ([ghost_follow_link(coc, O)])")))
+			"РџРѕСЏРІРёР»СЃСЏ РєРѕРєРѕРЅ РіРµРЅРѕРєСЂР°РґР°! РќР°Р¶РјРёС‚Рµ РЅР° РЅРµРіРѕ, С‡С‚РѕР±С‹ СЃС‚Р°С‚СЊ РѕРґРЅРёРј РёР· РЅРёС…. ([ghost_follow_link(coc, O)])")))
 	return 1
 
 /obj/structure/changeling_cocoon
@@ -231,7 +263,7 @@
 	if(progress >= birth_time)
 		birth()
 	if(progress % 10 == 0) //every 10 seconds
-		announce()
+		time()
 	if(world.time >= last_sound_time + 20 SECONDS)
 		last_sound_time = world.time
 		playsound(get_turf(src), 'infinity/sound/effects/lingextends.ogg', 15, 1)
@@ -243,9 +275,9 @@
 
 /obj/structure/changeling_cocoon/Destroy()
 	if(victim)
+		visible_message(SPAN_DANGER("[victim] dropped from [src]!"))
 		victim.dropInto(loc)
 		victim = null
-		visible_message(SPAN_DANGER("[victim] dropped from [src]!"))
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
@@ -333,15 +365,29 @@
 		spawn(1 SECOND)
 			if(user) qdel(user) // Remove the keyless ghost if it exists.
 
-/obj/structure/changeling_cocoon/proc/announce()
+/obj/structure/changeling_cocoon/proc/time()
 	if(!victim?.client)
 		return
 	var/time = birth_time - progress
 	if(time > 0)
-		to_chat(victim, SPAN_LING("До вылупления осталось [time] секунд."))
+		to_chat(victim, SPAN_LING("Р”Рѕ РІС‹Р»СѓРїР»РµРЅРёСЏ РѕСЃС‚Р°Р»РѕСЃСЊ [time] СЃРµРєСѓРЅРґ."))
+
+/obj/structure/changeling_cocoon/proc/background()
+	if(!victim?.client)
+		return
+	to_chat(victim, SPAN_LING("РљРѕРєРѕРЅ РёР·РјРµРЅСЏРµС‚ С‚РµР»Рѕ Рё СЃРѕР·РЅР°РЅРёРµ.<br>\
+	РЎРєРѕСЂРµРµ РІСЃРµРіРѕ, С‚РµР»Рѕ СѓРјСЂРµС‚ РґРѕ РІС‹Р»СѓРїР»РµРЅРёСЏ. РќРѕ Р·Р°С‚РµРј, <i>РјС‹</i> РІРѕР·СЂР°РґРёРјСЃСЏ.<br>\
+	РњС‹ Р±СѓРґРµРј С‡Р°СЃС‚СЊСЋ РѕР±С‰РЅРѕСЃС‚Рё - РѕРґРЅРёРј РёР· СЃРѕСЂРѕРґРёС‡РµР№, С‡С‚Рѕ Р±СѓРґРµРј СЂР°Р±РѕС‚Р°С‚СЊ РЅР° РµС‘ Р±Р»Р°РіРѕ Рё СЃС‚Р°РІРёС‚СЊ РµС‘ РёРЅС‚РµСЂРµСЃС‹ \
+	РІС‹С€Рµ СЃРѕР±СЃС‚РІРµРЅРЅС‹С…, РІ С‚РѕРј С‡РёСЃР»Рµ Рё Р¶РёР·РЅРё. РњС‹ РґРѕР»Р¶РЅС‹ РІР·СЏС‚СЊ РїРѕРґ РєРѕРЅС‚СЂРѕР»СЊ РєРѕСЂР°Р±Р»СЊ, РїРѕРіР»РѕС‚РёРІ РµРіРѕ СЌРєРёРїР°Р¶ Рё РїСЂРµРІСЂР°С‚РёРІ \
+	СЌС‚РёРј РІ СЃРµР±Рµ РїРѕРґРѕР±РЅС‹С…. РџРѕРєР° СЌРєРёРїР°Р¶ РЅРµ СЃС‚Р°РЅРµС‚ СЃР»РёС€РєРѕРј РјР°Р»РѕС‡РёСЃР»РµРЅРµРЅ Рё СЃР»Р°Р±, С‡С‚РѕР±С‹ РјРѕР¶РЅРѕ Р±С‹Р»Рѕ РѕС…РѕС‚РёС‚СЊСЃСЏ Р±РµР· РѕРїР°СЃРєРё \
+	- РЅР°Рј СЃР»РµРґСѓРµС‚ РѕСЃС‚РѕСЂРѕР¶РЅРѕСЃС‚СЊ.<br>\
+	Р•СЃР»Рё РЅР°С€ РєРѕРєРѕРЅ РЅРёРєС‚Рѕ РЅРµ РїРѕС‚СЂРµРІРѕР¶РёС‚, С‚Рѕ РІСЃРєРѕСЂРѕ <i>РјС‹</i> РїСЂРѕСЃРЅРµРјСЃСЏ Рё РїСЂРѕРіСЂС‹Р·РµС‚Рµ СЃРµР±Рµ РїСѓС‚СЊ РЅР° СЃРІРѕР±РѕРґСѓ, РІРєР»СЋС‡РёРІС€РёСЃСЊ РІ РѕС…РѕС‚Сѓ. \
+	РќР°С€Рµ С‚РµР»Рѕ С‚СЂРµР±СѓРµС‚ РЅРѕРІС‹Рµ РіРµРЅРѕРјС‹, С‡С‚РѕР±С‹ Р¶РёС‚СЊ Рё СЂР°Р·РІРёРІР°С‚СЊСЃСЏ. РќРµ СЃС‚РѕРёС‚ РїРѕРіР»РѕС‰Р°С‚СЊ РёР»Рё СѓР±РёРІР°С‚СЊ СЃРѕСЂРѕРґРёС‡РµР№ \
+	- РјС‹ РІСЃРµ РїСЂР°РєС‚РёС‡РµСЃРєРё СЂРѕРґСЃС‚РІРµРЅРЅРёРєРё.<br>\
+	РЎРµРіРѕРґРЅСЏ СЌРєРёРїР°Р¶ СЃС‚Р°РЅРµС‚ РЅР°С€РёРј СѓР¶РёРЅРѕРј. РЈРґР°С‡РЅРѕР№ РѕС…РѕС‚С‹."))
 
 /*
-Revive in next proc causes runtimes like
+Revive in the next proc causes runtimes like
 Runtime in unsorted.dm, line 1116: GC: -- [0x20006bc] | /obj/item/organ/external/foot was unable to be GC'd --
 x7
 I don't know how to fix it, tried two days, sorry.
@@ -353,22 +399,27 @@ I don't know how to fix it, tried two days, sorry.
 	victim.revive()
 	spawn(7 SECONDS)
 	GLOB.changelings.add_antagonist(victim.mind, 1)
-	to_chat(victim, SPAN_LING(FONT_LARGE("Отныне, <b><i>Мы едины!</b></i> Нужно разорвать наш кокон, чтобы выбраться!")))
+	if(victim.mind.changeling) //just to don't fuck up with runtimes further
+		victim.mind.changeling.chem_storage = 30
+		victim.mind.changeling.chem_charges = 30
+		victim.mind.changeling.geneticpoints = 4
+	to_chat(victim, SPAN_LING(FONT_LARGE("РћС‚РЅС‹РЅРµ, <b><i>РјС‹ РµРґРёРЅС‹!</b></i> РќСѓР¶РЅРѕ СЂР°Р·РѕСЂРІР°С‚СЊ РЅР°С€ РєРѕРєРѕРЅ, С‡С‚РѕР±С‹ РІС‹Р±СЂР°С‚СЊСЃСЏ!")))
 	STOP_PROCESSING(SSobj, src)
 
 /obj/structure/changeling_cocoon/proc/convert(mob/user)
 	if(!victim)
-		to_chat(user, SPAN_WARNING("Превращение уже завершилось."))
+		to_chat(user, SPAN_WARNING("РџСЂРµРІСЂР°С‰РµРЅРёРµ СѓР¶Рµ Р·Р°РІРµСЂС€РёР»РѕСЃСЊ."))
 		return
 	if(jobban_isbanned(user, MODE_CHANGELING))
-		to_chat(user, SPAN_WARNING("У вас имеется бан на роль генокрадов. Вы не можете играть за них."))
+		to_chat(user, SPAN_WARNING("РЈ РІР°СЃ РёРјРµРµС‚СЃСЏ Р±Р°РЅ РЅР° СЂРѕР»СЊ РіРµРЅРѕРєСЂР°РґРѕРІ. Р’С‹ РЅРµ РјРѕР¶РµС‚Рµ РёРіСЂР°С‚СЊ Р·Р° РЅРёС…."))
 		return
 	if(src.victim.client)
-		to_chat(user, SPAN_WARNING("Кто-то уже занял это тело до Вас."))
+		to_chat(user, SPAN_WARNING("РљС‚Рѕ-С‚Рѕ СѓР¶Рµ Р·Р°РЅСЏР» СЌС‚Рѕ С‚РµР»Рѕ РґРѕ Р’Р°СЃ."))
 		return
-	var/confirm = alert(user, "Вы хотите стать новым генокрадом?", "Новый генокрад", "Нет", "Да")
-	if(!user || !src || confirm != "Да")
+	var/confirm = alert(user, "Р’С‹ С…РѕС‚РёС‚Рµ СЃС‚Р°С‚СЊ РЅРѕРІС‹Рј РіРµРЅРѕРєСЂР°РґРѕРј?", "РќРѕРІС‹Р№ РіРµРЅРѕРєСЂР°Рґ", "РќРµС‚", "Р”Р°")
+	if(!user || !src || confirm != "Р”Р°")
 		return
 	victim.ckey = user.ckey
-	to_chat(victim, SPAN_DANGER("Не покидайте тело и игру, чтобы процесс превращения продолжался и другие игроки не заняли его."))
+	background()
+	to_chat(victim, SPAN_DANGER("РќРµ РїРѕРєРёРґР°Р№С‚Рµ С‚РµР»Рѕ Рё РёРіСЂСѓ, С‡С‚РѕР±С‹ РїСЂРѕС†РµСЃСЃ РїСЂРµРІСЂР°С‰РµРЅРёСЏ РїСЂРѕРґРѕР»Р¶Р°Р»СЃСЏ Рё РґСЂСѓРіРёРµ РёРіСЂРѕРєРё РЅРµ Р·Р°РЅСЏР»Рё РµРіРѕ."))
 	return 1
