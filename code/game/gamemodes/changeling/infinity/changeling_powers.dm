@@ -857,8 +857,8 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 		to_chat(src, SPAN_LING("Our sting appears ineffective against this creature."))
 		return 0
 
-	if(T.stat != DEAD)
-		to_chat(src, SPAN_LING("Our sting can only be used against dead targets."))
+	if(T.stat == DEAD)
+		to_chat(src, SPAN_LING("Our sting can only be used against alive targets."))
 		return 0
 
 

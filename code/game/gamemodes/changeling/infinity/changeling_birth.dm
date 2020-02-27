@@ -226,8 +226,8 @@
 	coc.victim = T
 	coc.background()
 	to_chat(T.client, SPAN_DANGER("Вы были поглощены генокрадом, однако, он оставил кокон, \
-	в котором Ваш персонаж станет одним из Них. Не покидайте игру и не выходте из тела, чтобы\
-	другие призраки не забрали его."))
+	в котором Ваш персонаж станет одним из Них. Если вы выйдите или станете призраком, то \
+	другие призраки смогут вселиться в ваше старое тело."))
 	spawn(6 SECONDS)
 		for(var/mob/observer/ghost/O in GLOB.ghost_mob_list)
 			to_chat(O, FONT_LARGE(SPAN_LING(
@@ -342,7 +342,7 @@
 		if(3)
 			health -= 40
 
-/* someone - work on it later, please
+/* todo
 /obj/structure/changeling_cocoon/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	return
 */
