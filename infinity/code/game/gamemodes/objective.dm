@@ -64,3 +64,6 @@
 			loot = "an ion gun"
 
 	explanation_text = "It's a buyer's market out here. Steal [loot] for resale."
+
+/datum/objective/changeling_infestation
+	explanation_text = "Захватить объект, поглотив его экипаж и сделав частью общности."

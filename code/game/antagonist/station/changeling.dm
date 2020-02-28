@@ -28,6 +28,7 @@ GLOBAL_DATUM_INIT(changelings, /datum/antagonist/changeling, new)
 		player.current.verbs -= /datum/changeling/proc/EvolutionMenu
 		QDEL_NULL(player.changeling)
 
+/* original
 /datum/antagonist/changeling/create_objectives(var/datum/mind/changeling)
 	if(!..())
 		return
@@ -64,7 +65,7 @@ GLOBAL_DATUM_INIT(changelings, /datum/antagonist/changeling, new)
 				survive_objective.owner = changeling
 				changeling.objectives += survive_objective
 	return
-
+/original*/
 /datum/antagonist/changeling/can_become_antag(var/datum/mind/player, var/ignore_role)
 	if(..())
 		if(player.current)

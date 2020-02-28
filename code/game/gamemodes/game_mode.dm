@@ -546,9 +546,9 @@ proc/display_roundstart_logout_report()
 		return
 
 	var/obj_count = 1
-	to_chat(player.current, "<span class='notice'>Your current objectives:</span>")
+	to_chat(player.current, "<span class='notice'>Текущие цели:</span>")
 	for(var/datum/objective/objective in player.objectives)
-		to_chat(player.current, "<B>Objective #[obj_count]</B>: [objective.explanation_text]")
+		to_chat(player.current, "<B>Цель #[obj_count]</B>: [objective.explanation_text]")
 		obj_count++
 
 /mob/verb/check_round_info()

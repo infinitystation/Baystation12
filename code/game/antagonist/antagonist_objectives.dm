@@ -33,7 +33,9 @@
 		if(antagonist && antagonist.is_antagonist(src.mind))
 			antagonist.create_objectives(src.mind,1)
 
-	to_chat(src, "<b><font size=3>These objectives are completely voluntary. You are not required to complete them.</font></b>")
+	to_chat(src, FONT_LARGE(
+	"<b>Эти задачи носят рекомендательный характер. Если они не устраивают Вас - не выполняйте их, \
+	но придумайте что-то своё.</b>"))
 	show_objectives(src.mind)
 
 /mob/living/proc/set_ambition()

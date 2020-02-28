@@ -3245,6 +3245,8 @@
 #include "infinity\code\datums\uplink\hardsuit_modules.dm"
 #include "infinity\code\datums\vote\vote.dm"
 #include "infinity\code\game\sound.dm"
+#include "infinity\code\game\antagonist\station\changeling.dm"
+#include "infinity\code\game\antagonist\station\traitor.dm"
 #include "infinity\code\game\antagonists\xenomorph.dm"
 #include "infinity\code\game\gamemodes\objective.dm"
 #include "infinity\code\game\gamemodes\cult\cult_items.dm"
