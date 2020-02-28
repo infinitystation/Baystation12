@@ -127,7 +127,8 @@
 	var/bad_version = config.minimum_byond_version && byond_version < config.minimum_byond_version
 	var/bad_build = config.minimum_byond_build && byond_build < config.minimum_byond_build
 	if (bad_build || bad_version)
-		to_chat(src, "You are attempting to connect with a out of date version of BYOND. Please update to the latest version at http://www.byond.com/ before trying again.")
+		to_chat(src, "RU: Вы пытаетесь подключиться со старой версией BYOND. Пожалуйста, обновитесь до бета-версии для игры на сервере.\
+		<br>ENG: You are attempting to connect with a out of date version of BYOND. Please update to the latest beta version.")
 		qdel(src)
 		return
 
