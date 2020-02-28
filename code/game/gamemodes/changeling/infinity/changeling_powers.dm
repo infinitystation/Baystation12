@@ -87,7 +87,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 
 	var/mob/living/carbon/human/H = src
 	if(istype(H))
-		var/datum/absorbed_dna/newDNA = new(H.real_name, H.dna, H.species.name, H.languages, H.flavor_texts)
+		var/datum/absorbed_dna/newDNA = new(H.real_name, H.dna, H.species.name, H.languages)
 		absorbDNA(newDNA)
 
 	return 1
@@ -149,154 +149,6 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 
 	return
 
-//Absorbs the victim's DNA making them uncloneable. Requires a strong grip on the victim.
-//Doesn't cost anything as it's the most basic ability.
-/mob/proc/changeling_absorb_dna()
-	set category = "Changeling"
-	set name = "Absorb DNA"
-
-	var/datum/changeling/changeling = changeling_power(0,0,100)
-	if(!changeling)	return
-
-	var/obj/item/grab/G = src.get_active_hand()
-	if(!istype(G))
-		to_chat(src, SPAN_LING("We must be grabbing a creature in our active hand to absorb them."))
-		return
-
-	var/mob/living/carbon/human/T = G.affecting
-	if(!istype(T))
-		to_chat(src, SPAN_LING("[T] is not compatible with our biology."))
-		return
-
-	if(T.isSynthetic())
-		to_chat(src, SPAN_LING("We cannot extract DNA from a synthetic life form!"))
-		return
-
-	if(T.species.species_flags & SPECIES_FLAG_NO_SCAN)
-		to_chat(src, SPAN_LING("We do not know how to parse this creature's DNA!"))
-		return
-
-	if(islesserform(T))
-		to_chat(src, SPAN_LING("This creature DNA is not compatible with our form!"))
-		return
-
-	if(MUTATION_HUSK in T.mutations)
-		to_chat(src, SPAN_LING("This creature's DNA is ruined beyond useability!"))
-		return
-
-	if(!G.can_absorb())
-		to_chat(src, SPAN_LING("We must have a tighter grip to absorb this creature."))
-		return
-
-	if(changeling.isabsorbing)
-		to_chat(src, SPAN_LING("We are already absorbing!"))
-		return
-
-	var/obj/item/organ/external/affecting = T.get_organ(src.zone_sel.selecting)
-	if(!affecting)
-		to_chat(src, SPAN_WARNING("They are missing that body part!"))
-
-	changeling.isabsorbing = 1
-	for(var/stage = 1, stage<=3, stage++)
-		switch(stage)
-			if(1)
-				src.visible_message(SPAN_WARNING("[src]'s skin begins to shift and squirm!"), SPAN_LING("This creature is compatible. We must hold still... Our skin begins to shift and squirm for a proboscis."))
-				T.stuttering += 40 // horror effect
-				if(!do_mob(src, T, 80))
-					to_chat(src, SPAN_LING("Our absorption has been interrupted!"))
-					changeling.isabsorbing = 0
-					return
-			if(2)
-				src.visible_message(SPAN_WARNING("[src] extends a proboscis!"), SPAN_LING("We extend a proboscis, let's find a good point for extraction..."))
-				playsound(get_turf(src), 'infinity/sound/effects/lingextends.ogg', 50, 1)
-				if(!do_mob(src, T, 80))
-					to_chat(src, SPAN_LING("Our absorption has been interrupted!"))
-					changeling.isabsorbing = 0
-					return
-			if(3)
-				src.visible_message(SPAN_DANGER("[src] stabs \the [T] with the proboscis!"), SPAN_NOTICE("We stab \the [T] with the proboscis."))
-				to_chat(T, SPAN_DANGER("You feel a sharp stabbing pain in your [affecting.name]!"))
-				playsound(get_turf(src), 'infinity/sound/effects/lingstabs.ogg', 50, 1)
-				affecting.take_external_damage(30, 0, DAM_SHARP, "large organic needle")
-				T.stun_effect_act(0, 60, affecting, "large organic needle")
-				spawn(25)
-					playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 40, 1)
-					to_chat(src, SPAN_LING("We start to absorb the sweetness DNA from [T]..."))
-					T.visible_message(SPAN_NOTICE("\the [T] quickly turns pale..."), SPAN_NOTICE("\the [src] sucks the life from me..."))
-					T.eye_blurry += 20
-				while(T.vessel.total_volume >= 50) //will su... absorb 93% of victim's fluids
-					if(!do_mob(src, T, 37))
-						to_chat(src, SPAN_LING("Our absorption of [T] has been interrupted!"))
-						changeling.isabsorbing = 0
-						return
-					T.vessel.remove_any(rand(40, 60))
-					T.stun_effect_act(0, 15, affecting, "large organic needle")
-					to_chat(src, SPAN_LING("[T] still has [round(T.vessel.total_volume)] fluids."))
-					if(prob(20))
-						to_chat(T, pick(SPAN_NOTICE("Someone must help me... Please..."), SPAN_NOTICE("It's so merciless..."), SPAN_NOTICE("I already just wanna die!...")))
-						to_chat(src, pick(SPAN_LING("We would do this all day..."), SPAN_LING("[T]'s DNA tastes sweat..."), SPAN_LING("We feel ourselve much more better...")))
-						playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 25, 1)
-						src.visible_message(SPAN_WARNING("\the [src]'s proboscis loudly sucks something from \the [T]'s [affecting.name]!"))
-				changeling.isabsorbing = 0
-
-		SSstatistics.add_field_details("changeling_powers","A[stage]")
-	visible_message(SPAN_WARNING("[src] removes it's proboscis from \the [T]!"), SPAN_LING("We have absorbed the all fluids from [T]!"))
-	to_chat(T, SPAN_WARNING("You have been absorbed by the changeling!"))
-	playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 70, 1)
-
-	changeling.chem_charges += 10
-	changeling.geneticpoints += 5
-
-	//Steal all of their languages!
-	for(var/language in T.languages)
-		if(!(language in changeling.absorbed_languages))
-			changeling.absorbed_languages += language
-
-	changeling_update_languages(changeling.absorbed_languages)
-
-	var/datum/absorbed_dna/newDNA = new(T.real_name, T.dna, T.species.name, T.languages, T.flavor_texts)
-	absorbDNA(newDNA)
-	if(T?.mind)
-		T.mind.CopyMemories(mind)
-
-	if(T.mind?.changeling)
-		if(T.mind.changeling.absorbed_dna)
-			for(var/datum/absorbed_dna/dna_data in T.mind.changeling.absorbed_dna)	//steal all their loot
-				if(changeling.GetDNA(dna_data.name))
-					continue
-				absorbDNA(dna_data)
-				changeling.absorbedcount++
-			T.mind.changeling.absorbed_dna.len = 1
-
-		if(T.mind.changeling.purchasedpowers)
-			for(var/datum/power/changeling/Tp in T.mind.changeling.purchasedpowers)
-				if(Tp in changeling.purchasedpowers)
-					continue
-				else
-					changeling.purchasedpowers += Tp
-
-					if(!Tp.isVerb)
-						call(Tp.verbpath)()
-					else
-						src.make_changeling()
-
-		changeling.chem_charges += T.mind.changeling.chem_charges
-		changeling.geneticpoints += T.mind.changeling.geneticpoints
-		T.mind.changeling.chem_charges = 0
-		T.mind.changeling.geneticpoints = 0
-		T.mind.changeling.absorbedcount = 0
-
-	changeling.absorbedcount++
-	changeling.isabsorbing = 0
-
-	var/obj/item/organ/internal/heart/heart = T.internal_organs_by_name[BP_HEART]
-	for(heart in T.organs)
-		heart.pulse = 0
-	T.Drain()
-	T.death(0)
-	return 1
-
-
 //Change our DNA to that of somebody we've absorbed.
 /mob/proc/changeling_transform()
 	set category = "Changeling"
@@ -355,7 +207,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 		H.set_species(newSpecies,1)
 		H.b_type = chosen_dna.dna.b_type
 		H.sync_organ_dna()
-		H.flavor_texts = chosen_dna.flavour_texts ? chosen_dna.flavour_texts.Copy() : null
+//		H.flavor_texts = chosen_dna.flavour_texts ? chosen_dna.flavour_texts.Copy() : null
 
 	domutcheck(src, null)
 	src.UpdateAppearance()
@@ -640,7 +492,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 
 	spawn(0)
 		while(C.stop_sight_update && C.mind?.changeling)
-			C.mind.changeling.chem_charges = max(C.mind.changeling.chem_charges - 0.8, 0)
+			C.mind.changeling.chem_charges = max(C.mind.changeling.chem_charges - 1.6, 0)
 			sleep(40)
 
 	src.verbs -= /mob/proc/changeling_thermvision
@@ -1001,8 +853,16 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 		to_chat(src, SPAN_LING("That species must be absorbed directly."))
 		return
 
+	if(islesserform(T))
+		to_chat(src, SPAN_LING("Our sting appears ineffective against this creature."))
+		return 0
 
-	var/datum/absorbed_dna/newDNA = new(T.real_name, T.dna, T.species.name, T.languages, T.flavor_texts)
+	if(T.stat == DEAD)
+		to_chat(src, SPAN_LING("Our sting can only be used against alive targets."))
+		return 0
+
+
+	var/datum/absorbed_dna/newDNA = new(T.real_name, T.dna, T.species.name, T.languages)
 	absorbDNA(newDNA)
 
 	SSstatistics.add_field_details("changeling_powers","ED")
@@ -1142,6 +1002,8 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 					L.on = 1
 					L.broken()
 			empulse(get_turf(usr), 2, 4, 1)
+			playsound(loc, 'sound/effects/screech.ogg', 40, 1)
+			visible_message("<b>[src]</b> кричит!")
 		else
 			to_chat(src, SPAN_LING("We cannot do this in vents..."))
 	return 1

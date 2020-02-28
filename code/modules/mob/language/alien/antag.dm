@@ -1,7 +1,7 @@
 /datum/language/ling
 	name = LANGUAGE_CHANGELING_GLOBAL
 	desc = "Although they are normally wary and suspicious of each other, changelings can commune over a distance."
-	speech_verb = "говорит"
+	speech_verb = "передает"
 	colour = "changeling"
 	key = "g"
 	flags = RESTRICTED | HIVEMIND
@@ -9,12 +9,18 @@
 	hidden_from_codex = TRUE
 
 /datum/language/ling/broadcast(var/mob/living/speaker,var/message,var/speaker_mask)
-
+//[INF]
+	if(speaker.mind && speaker.mind.changeling)
+		..(speaker, message, "[speaker.mind.changeling.changelingID] ([speaker.mind])")
+	else
+		..(speaker, message)
+//[INF]
+/*original
 	if(speaker.mind && speaker.mind.changeling)
 		..(speaker,message,speaker.mind.changeling.changelingID)
 	else
 		..(speaker,message)
-
+*/
 /datum/language/corticalborer
 	name = LANGUAGE_BORER_GLOBAL
 	desc = "Cortical borers possess a strange link between their tiny minds."

@@ -217,14 +217,14 @@ var/list/datum/power/changeling/powerinstances = list()
 	helptext = "Щит не исчезнет до тех пор, пока способность не будет использована повторно."
 	genomecost = 5
 	verbpath = /mob/proc/changeling_shield
-
+/*
 /datum/power/changeling/horror_form
 	name = "Horror Form"
 	desc = "Мы разрываем оболочку, являя свету нашу Истинную форму."
 	helptext = "Дает способность разрушать неукрепленные стены. При многократной атаке шлюза, оный вскрывается. Быстрое восстановление от брут-урона. Урон от ожогов убирается через поедание существ. Мы больше не человекоподобны."
 	genomecost = 16
 	verbpath = /mob/proc/horror_form
-
+*/
 // Modularchangling, totally stolen from the new player panel.  YAYY
 /datum/changeling/proc/EvolutionMenu()//The new one
 	set category = "Changeling"
@@ -237,7 +237,7 @@ var/list/datum/power/changeling/powerinstances = list()
 		for(var/P in powers)
 			powerinstances += new P()
 
-	var/dat = "<html><head><title>Changling Evolution Menu</title></head>"
+	var/dat = "<html><head><title>Меню Эволюции</title></head>"
 
 	//javascript, the part that does most of the work~
 	dat += {"
@@ -425,10 +425,10 @@ var/list/datum/power/changeling/powerinstances = list()
 		<table width='560' align='center' cellspacing='0' cellpadding='5' id='maintable'>
 			<tr id='title_tr'>
 				<td align='center'>
-					<font size='5'><b>Changling Evolution Menu</b></font><br>
-					Hover over a power to see more information<br>
-					Current evolution points left to evolve with: [geneticpoints]<br>
-					Absorb genomes to acquire more evolution points
+					<font size='5'><b>Меню эволюции</b></font><br>
+					Наведите на способность, чтобы узнать подробности<br>
+					Текущие геномы: [geneticpoints]<br>
+					Поглощайте разумных, чтобы получить больше геномов
 					<p>
 				</td>
 			</tr>
@@ -467,7 +467,7 @@ var/list/datum/power/changeling/powerinstances = list()
 					<a id='link[i]'
 					onmouseover='expand("item[i]","[P.name]","[P.desc]","[P.helptext]","[P]",[ownsthis])'
 					>
-					<span id='search[i]'><b>Evolve [P] - Cost: [ownsthis ? "Purchased" : P.genomecost]</b></span>
+					<span id='search[i]'><b>Приобрести [P] - Цена: [ownsthis ? "Purchased" : P.genomecost]</b></span>
 					</a>
 					<br><span id='item[i]'></span>
 				</td>
