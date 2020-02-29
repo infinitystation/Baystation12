@@ -5051,6 +5051,10 @@
 	pixel_x = 36;
 	pixel_y = 25
 	},
+/obj/effect/floor_decal/techfloor/hole{
+	icon_state = "techfloor_hole_left";
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/guppy_hangar/start)
 "iI" = (
@@ -20514,6 +20518,7 @@
 	frequency = 1431;
 	id_tag = "guppy_shuttle_pump_out_external"
 	},
+/obj/effect/floor_decal/techfloor/hole/right,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/guppy_hangar/start)
 "GI" = (
@@ -29585,9 +29590,6 @@
 "Zj" = (
 /obj/machinery/shipsensors/weak,
 /obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/machinery/light/small{
@@ -29729,6 +29731,11 @@
 /area/exploration_shuttle/cargo)
 "ZX" = (
 /obj/machinery/atmospherics/unary/engine,
+/obj/structure/sign/warning/hot_exhaust{
+	dir = 1;
+	icon_state = "fire";
+	pixel_y = -32
+	},
 /turf/simulated/floor/plating,
 /area/guppy_hangar/start)
 
