@@ -53,3 +53,10 @@
 	required_reagents = list(/datum/reagent/water = 3, /datum/reagent/nutriment/instantjuice/mandarin = 1)
 	result_amount = 3
 	mix_message = "The solution settles into a clear orange beverage."
+
+/datum/chemical_reaction/nanopsi
+	name = "NanoPsi"
+	result = /datum/reagent/nanopsi
+	required_reagents = list(/datum/reagent/nanites = 5, /datum/reagent/three_eye = 3, /datum/reagent/mindbreaker = 1, /datum/reagent/alkysine = 1)
+	result_amount = 5
+	mix_message = "The liquid quickly hissed and shrank in volume..."
