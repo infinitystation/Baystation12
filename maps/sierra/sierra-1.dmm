@@ -6579,7 +6579,6 @@
 "kZ" = (
 /obj/machinery/door/airlock/external{
 	autoset_access = 0;
-	density = 1;
 	frequency = 1431;
 	id_tag = "guppy_shuttle_outer";
 	name = "Guppy External Access";
@@ -6592,7 +6591,6 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden{
-	icon_state = "map";
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -14970,10 +14968,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden{
-	dir = 4;
-	icon_state = "map"
-	},
 /obj/machinery/access_button{
 	command = "cycle_interior";
 	master_tag = "guppy_shuttle";
@@ -14981,6 +14975,14 @@
 	pixel_x = -22;
 	pixel_y = 32;
 	req_access = list("ACCESS_GUPPY")
+	},
+/obj/machinery/atmospherics/pipe/manifold/visible/fuel{
+	icon_state = "map";
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 5;
+	icon_state = "intact"
 	},
 /turf/simulated/floor/tiled,
 /area/guppy_hangar/start)
@@ -17481,7 +17483,6 @@
 	icon_state = "2-8"
 	},
 /obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
@@ -17490,9 +17491,11 @@
 /obj/machinery/airlock_sensor{
 	frequency = 1431;
 	id_tag = "guppy_shuttle_sensor";
-	pixel_x = 0;
 	pixel_y = 26
 	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/guppy_hangar/start)
 "BY" = (
@@ -17501,7 +17504,6 @@
 	},
 /obj/structure/shuttle/engine/heater{
 	dir = 1;
-	icon_state = "heater";
 	pixel_y = -32
 	},
 /turf/simulated/floor/plating,
@@ -18624,8 +18626,13 @@
 	id_tag = "guppy_shuttle_pump_out_internal"
 	},
 /obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
 	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/noticeboard{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/guppy_hangar/start)
@@ -19061,7 +19068,6 @@
 /area/shuttle/petrov/ship)
 "Er" = (
 /obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
 	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
@@ -19070,6 +19076,14 @@
 	frequency = 1431;
 	id_tag = "guppy_shuttle_pump"
 	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/random/tool,
+/obj/structure/closet/crate,
+/obj/random/tool,
+/obj/item/weapon/deck/cards,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/guppy_hangar/start)
 "Es" = (
@@ -20345,12 +20359,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/fore)
 "Gy" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4
-	},
-/obj/structure/bed/chair/shuttle/blue{
-	icon_state = "shuttle_chair_preview";
-	dir = 4
+/obj/machinery/hologram/holopad/longrange,
+/obj/effect/floor_decal/industrial/outline,
+/obj/machinery/atmospherics/pipe/manifold/hidden{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/guppy_hangar/start)
@@ -20634,6 +20646,9 @@
 	frequency = 1431;
 	id_tag = "guppy_shuttle_pump_out_internal"
 	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/guppy_hangar/start)
 "GU" = (
@@ -20719,15 +20734,17 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/center)
 "GY" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
 /obj/effect/floor_decal/techfloor,
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	controlled = 0;
 	dir = 8;
 	frequency = 1431;
 	id_tag = "guppy_shuttle_pump"
+	},
+/obj/machinery/camera/network/pod{
+	c_tag = "General Utility Pod - Airlock";
+	dir = 1;
+	icon_state = "camera"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/guppy_hangar/start)
@@ -21153,17 +21170,13 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/storage)
 "HB" = (
-/obj/structure/bed/chair/shuttle/blue{
-	icon_state = "shuttle_chair_preview";
-	dir = 4
-	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 8
-	},
 /obj/structure/cable/yellow{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/guppy_hangar/start)
@@ -21175,14 +21188,15 @@
 	pixel_y = -32;
 	req_access = list("ACCESS_GUPPY")
 	},
-/obj/machinery/hologram/holopad/longrange,
-/obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/cable/cyan{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/overmap/visitable/ship/landable/guppy,
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/guppy_hangar/start)
 "HD" = (
@@ -21882,20 +21896,12 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod9/station)
 "IF" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/table/steel_reinforced,
-/obj/machinery/recharger{
-	pixel_y = 0
-	},
-/obj/item/device/radio/intercom{
-	dir = 4;
-	pixel_x = -20
-	},
+/obj/structure/bed/chair/shuttle/blue,
 /turf/simulated/floor/tiled/monotile,
 /area/guppy_hangar/start)
 "IG" = (
@@ -22525,12 +22531,12 @@
 /turf/simulated/wall/r_titanium,
 /area/shuttle/escape_pod8/station)
 "JF" = (
-/obj/structure/bed/chair/shuttle/blue,
 /obj/structure/cable/cyan{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/bed/chair/shuttle/blue,
 /turf/simulated/floor/tiled/monotile,
 /area/guppy_hangar/start)
 "JG" = (
@@ -22564,6 +22570,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/monotile,
 /area/guppy_hangar/start)
 "JJ" = (
@@ -22636,17 +22643,14 @@
 /turf/simulated/floor/plating,
 /area/quartermaster/office)
 "JO" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/red{
-	dir = 5;
-	icon_state = "intact"
-	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/cable/yellow{
 	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/machinery/power/port_gen/pacman{
-	sheets = 5
+	anchored = 1;
+	sheets = 10
 	},
 /turf/simulated/floor/plating,
 /area/guppy_hangar/start)
@@ -22945,14 +22949,12 @@
 /turf/simulated/floor/tiled/dark,
 /area/hallway/primary/thirddeck/center)
 "Kl" = (
-/obj/machinery/light{
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/cable/cyan,
 /obj/machinery/power/smes/buildable/preset/sierra/shuttle{
 	RCon_tag = "Shuttle - Guppy"
 	},
+/obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/guppy_hangar/start)
 "Km" = (
@@ -22968,8 +22970,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
+/obj/machinery/atmospherics/pipe/simple/hidden,
 /turf/simulated/floor/plating,
 /area/guppy_hangar/start)
 "Kn" = (
@@ -23514,7 +23517,6 @@
 "Lr" = (
 /obj/machinery/door/airlock/external{
 	autoset_access = 0;
-	density = 1;
 	frequency = 1431;
 	id_tag = "guppy_shuttle_outer";
 	name = "Guppy External Access";
@@ -23534,11 +23536,16 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/shuttle_landmark/sierra/hangar/guppy,
+/obj/structure/bed/chair/shuttle/blue{
+	icon_state = "shuttle_chair_preview";
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/universal,
 /obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 9;
+	dir = 4;
 	icon_state = "intact"
 	},
-/obj/effect/shuttle_landmark/sierra/hangar/guppy,
 /turf/simulated/floor/tiled,
 /area/guppy_hangar/start)
 "Lt" = (
@@ -23660,15 +23667,15 @@
 /turf/simulated/floor/plating,
 /area/quartermaster/hangar)
 "LE" = (
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/portables_connector{
-	icon_state = "map_connector";
 	dir = 4
 	},
-/obj/machinery/portable_atmospherics/canister/air/airlock,
+/obj/machinery/portable_atmospherics/canister/carbon_dioxide,
+/obj/machinery/light{
+	dir = 1;
+	icon_state = "tube_map"
+	},
 /turf/simulated/floor/plating,
 /area/guppy_hangar/start)
 "LF" = (
@@ -23679,13 +23686,11 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/expedition)
 "LG" = (
-/obj/machinery/camera/network/pod{
-	c_tag = "General Utility Pod - Crew Compartment";
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/atmospherics/portables_connector{
 	dir = 4
 	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/atmospherics/portables_connector,
-/obj/machinery/portable_atmospherics/canister/empty,
+/obj/machinery/portable_atmospherics/canister/air,
 /turf/simulated/floor/plating,
 /area/guppy_hangar/start)
 "LH" = (
@@ -23895,29 +23900,33 @@
 /turf/simulated/wall/r_wall/hull,
 /area/rnd/xenobiology/storage)
 "Md" = (
-/obj/structure/table/steel_reinforced,
-/obj/machinery/cell_charger,
-/obj/item/device/radio,
-/obj/item/device/radio,
-/obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/item/device/spaceflare,
 /obj/machinery/button/blast_door{
+	airflow_od = -6;
 	dir = 1;
 	id_tag = "guppy_shield";
 	name = "Window Shield Control";
-	pixel_x = 0;
+	pixel_x = 6;
 	pixel_y = -20;
 	req_access = list("ACCESS_GUPPY")
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/machinery/computer/shuttle_control/explore/guppy{
+	dir = 1
+	},
+/obj/machinery/button/blast_door{
+	active = "guppy_shield_left";
+	dir = 1;
+	id_tag = "guppy_shield_left";
+	name = "Left Window Shield Control";
+	pixel_x = -6;
+	pixel_y = -20;
+	req_access = list("ACCESS_GUPPY")
+	},
+/turf/simulated/floor/tiled/dark/monotile,
 /area/guppy_hangar/start)
 "Me" = (
 /obj/structure/table/standard,
@@ -23936,10 +23945,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/janitor)
 "Mf" = (
-/obj/machinery/computer/shuttle_control/explore/guppy{
-	icon_state = "computer";
-	dir = 1
-	},
 /obj/structure/cable/cyan,
 /obj/structure/cable/yellow{
 	d2 = 8;
@@ -23948,7 +23953,10 @@
 /obj/machinery/power/terminal{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/machinery/computer/ship/helm{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
 /area/guppy_hangar/start)
 "Mg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
@@ -24497,10 +24505,16 @@
 /turf/simulated/floor/plating,
 /area/quartermaster/hangar)
 "MW" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 23
+	},
+/obj/machinery/computer/ship/sensors{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 9;
+	icon_state = "intact"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/guppy_hangar/start)
@@ -26299,19 +26313,14 @@
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aft)
 "Qk" = (
-/obj/structure/bed/chair/shuttle/blue{
-	icon_state = "shuttle_chair_preview";
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4;
-	icon_state = "intact"
-	},
 /obj/machinery/firealarm{
 	pixel_y = 24
+	},
+/obj/machinery/atmospherics/binary/pump{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/guppy_hangar/start)
@@ -26805,17 +26814,22 @@
 	dir = 4
 	},
 /obj/machinery/sleeper/survival_pod{
-	icon_state = "stasis_0";
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
 	},
 /obj/structure/closet/medical_wall/filled/small_shuttle{
-	pixel_x = 0;
 	pixel_y = 32
 	},
-/turf/simulated/floor/tiled,
+/obj/machinery/camera/network/pod{
+	c_tag = "General Utility Pod - Main compartment"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 10;
+	icon_state = "intact"
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/guppy_hangar/start)
 "QY" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -26845,7 +26859,6 @@
 /obj/effect/paint/nt_white,
 /obj/effect/paint_stripe/nt_red,
 /obj/structure/sign/nanotrasen{
-	icon_state = "NT";
 	dir = 1
 	},
 /turf/simulated/wall/r_titanium,
@@ -26973,9 +26986,9 @@
 	tag_exterior_sensor = "guppy_shuttle_sensor_external"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden{
-	dir = 8;
-	icon_state = "map"
+	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/guppy_hangar/start)
 "Rq" = (
@@ -27840,9 +27853,11 @@
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology/level2)
 "SK" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 23
+	},
+/obj/machinery/computer/ship/engines{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/guppy_hangar/start)
@@ -28628,6 +28643,29 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
+"Vk" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/device/radio/intercom{
+	dir = 4;
+	pixel_x = -20
+	},
+/obj/machinery/recharger,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/monotile,
+/area/guppy_hangar/start)
+"Vl" = (
+/obj/machinery/door/firedoor,
+/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/paint/nt_white,
+/obj/effect/paint_stripe/nt_red,
+/obj/machinery/door/blast/regular{
+	active_timers = 1;
+	dir = 4;
+	id_tag = "guppy_shield_left";
+	name = "Window Shield"
+	},
+/turf/simulated/floor/plating,
+/area/guppy_hangar/start)
 "Vn" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
@@ -29480,6 +29518,18 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
+"YY" = (
+/obj/structure/table/steel_reinforced,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/item/device/radio,
+/obj/item/device/radio,
+/obj/item/device/spaceflare,
+/obj/machinery/cell_charger,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/monotile,
+/area/guppy_hangar/start)
 "Zc" = (
 /obj/machinery/mining/brace{
 	dir = 4
@@ -29531,6 +29581,16 @@
 "Zi" = (
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/port)
+"Zj" = (
+/obj/machinery/shipsensors/weak,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced,
+/area/guppy_hangar/start)
 "Zn" = (
 /turf/simulated/wall/prepainted,
 /area/maintenance/substation/thirddeck)
@@ -29571,6 +29631,12 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/storage)
+"Zw" = (
+/obj/effect/paint/nt_white,
+/obj/effect/paint_stripe/nt_red,
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
+/turf/simulated/wall/r_titanium,
+/area/guppy_hangar/start)
 "Zy" = (
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	icon_state = "steel_decals4";
@@ -29656,6 +29722,10 @@
 /obj/structure/anomaly_container,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/exploration_shuttle/cargo)
+"ZX" = (
+/obj/machinery/atmospherics/unary/engine,
+/turf/simulated/floor/plating,
+/area/guppy_hangar/start)
 
 (1,1,1) = {"
 Is
@@ -52186,16 +52256,16 @@ yZ
 iu
 EG
 aO
-aO
+Zj
 iH
 GH
 Rc
+Vl
+Vl
+Vl
 Ji
 Ji
 Ji
-Ji
-aO
-aO
 sp
 Im
 Nv
@@ -52395,8 +52465,8 @@ Ji
 LE
 LG
 JO
-Ji
-Ji
+Vk
+YY
 Ji
 sp
 LD
@@ -52791,8 +52861,8 @@ GQ
 ZG
 GQ
 Fs
-BY
-Ji
+ZX
+Zw
 BX
 Rp
 Km
@@ -53197,8 +53267,8 @@ oC
 Fs
 AT
 Ji
-DE
 Ji
+DE
 Ji
 Ji
 Ji
