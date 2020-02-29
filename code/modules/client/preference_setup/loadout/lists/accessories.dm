@@ -131,7 +131,3 @@
 	cost = 1
 	flags = GEAR_HAS_COLOR_SELECTION
 
-/datum/gear/accessory/scarf_inf
-	display_name = "special scarfs selection"
-	path = /obj/item/clothing/accessory/scarf/inf
-	flags = GEAR_HAS_TYPE_SELECTION
