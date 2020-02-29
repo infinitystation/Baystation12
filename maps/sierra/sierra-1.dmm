@@ -22564,7 +22564,8 @@
 /obj/machinery/power/apc/hyper{
 	dir = 4;
 	name = "east bump";
-	pixel_x = 24
+	pixel_x = 24;
+	req_access = list(list("ACCESS_ENGINE_EQUIP","ACCESS_GUPPY"))
 	},
 /obj/structure/cable/cyan{
 	d2 = 2;
@@ -23671,7 +23672,6 @@
 /obj/machinery/atmospherics/portables_connector{
 	dir = 4
 	},
-/obj/machinery/portable_atmospherics/canister/carbon_dioxide,
 /obj/machinery/light{
 	dir = 1;
 	icon_state = "tube_map"
@@ -24507,7 +24507,8 @@
 "MW" = (
 /obj/machinery/alarm{
 	dir = 8;
-	pixel_x = 23
+	pixel_x = 23;
+	req_access = list(list("ACCESS_ATMOS","ACCESS_ENGINE_EQUIP","ACCESS_GUPPY"))
 	},
 /obj/machinery/computer/ship/sensors{
 	dir = 8
@@ -29588,6 +29589,10 @@
 	},
 /obj/structure/railing/mapped{
 	dir = 8
+	},
+/obj/machinery/light/small{
+	dir = 1;
+	icon_state = "bulb_map"
 	},
 /turf/simulated/floor/reinforced,
 /area/guppy_hangar/start)
@@ -52255,7 +52260,7 @@ iu
 yZ
 iu
 EG
-aO
+zg
 Zj
 iH
 GH
