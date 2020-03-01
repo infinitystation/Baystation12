@@ -176,4 +176,10 @@
 	path = /obj/item/weapon/storage/box/holobombs
 	desc = "Contains 5 holobomb and instruction. \
 			A bomb that changes appearance, and can destroy some hands."
+
+/datum/uplink_item/item/tools/bombbelt
+	name = "Bobm-belt"
+	item_cost = 20
+	path = /obj/item/weapon/storage/box/large/bbelt
+	desc = "Contains belt full of explosive and detonators..."
 //[/INF]
