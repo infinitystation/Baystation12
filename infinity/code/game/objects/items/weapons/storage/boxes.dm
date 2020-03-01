@@ -36,3 +36,9 @@
 	desc = "A box containing 5 photon disruption shells."
 	icon_state = "flashbang"
 	startswith = list(/obj/item/weapon/grenade/anti_photon/shell = 6)
+
+/obj/item/weapon/storage/box/large/bbelt
+	name = "box of bomb belt"
+	desc = "A box containing bomb-belt, detonators and half of toolbox... Wgy? Because."
+	icon_state = "box_of_doom"
+	startswith = list(/obj/item/device/assembly/signaler = 3, /obj/item/device/assembly/voice = 1, /obj/item/weapon/wrench = 1, /obj/item/weapon/screwdriver = 1, /obj/item/weapon/grenade/frag/high_yield/belt = 1)

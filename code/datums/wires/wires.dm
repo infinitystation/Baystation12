@@ -463,6 +463,12 @@ var/const/POWER = 8
 		name_by_type = "Radio"
 	if(istype(src, /datum/wires/vending))
 		name_by_type = "Vending Machine"
+	if(istype(src, /datum/wires/explosive/frag)) //inf
+		name_by_type = "Frag Bomb"
+	if(istype(src, /datum/wires/explosive/belt)) //inf
+		name_by_type = "Belt Bomb"
+	if(istype(src, /datum/wires/explosive/lfrag)) //inf
+		name_by_type = "Double Frag Bomb"
 	return name_by_type
 
 /datum/wires/proc/SolveWireFunction(var/WireFunction)
