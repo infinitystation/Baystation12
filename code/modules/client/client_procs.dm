@@ -166,15 +166,17 @@
 
 	//Admin Authorisation
 	holder = admin_datums[ckey]
+
+	// inf Подсчет онлайна сотрудника ~bear1ake
 	if(holder)
 		GLOB.admins += src
 		holder.owner = src
 		handle_staff_login()
-		if(dbcon.IsConnected())
+		if(establish_db_connection())
 			var/sql_ckey = sanitizeSQL(src.ckey)
 			spawn for()
 				var/sum = 0
-				var/temp
+				var/temp = 0
 				var/DBQuery/query_onilne = dbcon.NewQuery("SELECT sum FROM online_score WHERE ckey='[sql_ckey]' AND year=YEAR(NOW()) AND month=MONTH(NOW()) AND day=DAYOFMONTH(NOW());")
 				query_onilne.Execute()
 				if(query_onilne.NextRow())
@@ -187,6 +189,9 @@
 					var/DBQuery/query_o_s_ins = dbcon.NewQuery("INSERT INTO online_score(ckey,year,month,day,sum) VALUES ('[sql_ckey]', YEAR(NOW()), MONTH(NOW()), DAYOFMONTH(NOW()), 1);")
 					query_o_s_ins.Execute()
 				sleep(600)
+		else
+			log_admin("Онлайн сотрудника [ckey] не будет считаться, проверьте соединение с базой данных")
+	// /inf
 
 	//preferences datum - also holds some persistant data for the client (because we may as well keep these datums to a minimum)
 	prefs = SScharacter_setup.preferences_datums[ckey]

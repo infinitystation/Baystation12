@@ -661,16 +661,15 @@ proc/setup_database_connection()
 	dbcon.Connect("dbi:mysql:[db]:[address]:[port]","[user]","[pass]")
 	. = dbcon.IsConnected()
 	if ( . )
+		var/DBQuery/unicode_query = dbcon.NewQuery("SET NAMES utf8mb4 COLLATE utf8mb4_general_ci")	// Установка кодировки и сравнения (4-байтный UTF-8) для сервера БД ~bear1ake
+		if(!unicode_query.Execute())					// Не понимаю, каким образом это может произойти, но...
+			failed_db_connections++						// ... постараемся запомнить этот факт ...
+			to_world_log(unicode_query.ErrorMsg())		// ... оповестим сервер об этом ...
+			return										// ... и прекратим подключение ~bear1ake
 		failed_db_connections = 0	//If this connection succeeded, reset the failed connections counter.
 	else
 		failed_db_connections++		//If it failed, increase the failed connections counter.
 		world.log << dbcon.ErrorMsg()
-
-	var/DBQuery/unicode_query = dbcon.NewQuery("SET NAMES utf8mb4 COLLATE utf8mb4_general_ci")
-
-	if(!unicode_query.Execute())
-		to_world_log(unicode_query.ErrorMsg())
-		return
 
 	return .
 
@@ -684,14 +683,14 @@ proc/establish_db_connection()
 	else
 		return 1
 
-
+/* [original] Два подключения к одному серверу и одной базе? Пожалуй нет. ~bear1ake
 /hook/startup/proc/connectOldDB()
 	if(!setup_old_database_connection())
 		world.log << "Your server failed to establish a connection with the SQL database."
 	else
 		world.log << "SQL database connection established."
 	return 1
-
+[/original] */
 //These two procs are for the old database, while it's being phased out. See the tgstation.sql file in the SQL folder for more information.
 proc/setup_old_database_connection()
 
@@ -710,17 +709,15 @@ proc/setup_old_database_connection()
 	dbcon_old.Connect("dbi:mysql:[db]:[address]:[port]","[user]","[pass]")
 	. = dbcon_old.IsConnected()
 	if ( . )
+		var/DBQuery/unicode_query = dbcon_old.NewQuery("SET NAMES utf8mb4 COLLATE utf8mb4_general_ci")	// Установка кодировки и сравнения (4-байтный UTF-8) для сервера БД ~bear1ake
+		if(!unicode_query.Execute())					// Не понимаю, каким образом это может произойти, но...
+			failed_db_connections++						// ... постараемся запомнить этот факт ...
+			to_world_log(unicode_query.ErrorMsg())		// ... оповестим сервер об этом ...
+			return										// ... и прекратим подключение ~bear1ake
 		failed_old_db_connections = 0	//If this connection succeeded, reset the failed connections counter.
 	else
 		failed_old_db_connections++		//If it failed, increase the failed connections counter.
 		world.log << dbcon.ErrorMsg()
-
-	var/DBQuery/unicode_query = dbcon_old.NewQuery("SET NAMES utf8mb4 COLLATE utf8mb4_general_ci")
-
-	if(!unicode_query.Execute())
-		to_world_log(unicode_query.ErrorMsg())
-		return
-
 
 	return .
 
