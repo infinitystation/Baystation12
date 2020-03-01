@@ -6,6 +6,42 @@
 	icon_state = "radio"
 	item_state = "radio"
 
+/obj/item/music_player/radio/custom_tape
+	tape = /obj/item/music_tape/custom
+
+// Cassett player
+/obj/item/music_player/csplayer
+	name = "cassett player"
+	desc = "An ordinary cassette player model FN-16, he looks old and worn in some places."
+	icon_state = "csplayer_empty"
+	item_state = "device"
+
+	slot_flags = SLOT_BELT
+
+/obj/item/music_player/csplayer/on_update_icon()
+	if(tape && (mode == (1 || 2)))
+		icon_state = "csplayer_on"
+	else if(tape)
+		icon_state = "csplayer_loaded"
+	else
+		icon_state = "csplayer_empty"
+
+/obj/item/music_player/csplayer/custom_tape
+	tape = /obj/item/music_tape/custom
+
+// Dusty player
+/obj/item/music_player/dusty
+	name = "dusty cassette player"
+	desc = "Old and dusty cassette player, it seems that it is broken."
+	icon_state = "dustyplayer_empty"
+	item_state = "device"
+
+/obj/item/music_player/dusty/on_update_icon()
+	icon_state = "dustyplayer_[tape ? "loaded" : "empty"]"
+
+/obj/item/music_player/dusty/custom_tape
+	tape = /obj/item/music_tape/custom
+
 // Boombox
 /obj/item/music_player/boombox
 	name = "black boombox"
@@ -26,33 +62,6 @@
 	throw_speed = 2
 	throw_range = 10
 	force = 10
-
-// Cassett player
-/obj/item/music_player/csplayer
-	name = "cassett player"
-	desc = "An ordinary cassette player model FN-16, he looks old and worn in some places."
-	icon_state = "csplayer_empty"
-	item_state = "device"
-
-	slot_flags = SLOT_BELT
-
-/obj/item/music_player/csplayer/on_update_icon()
-	if(tape && (mode == (1 || 2)))
-		icon_state = "csplayer_on"
-	else if(tape)
-		icon_state = "csplayer_loaded"
-	else
-		icon_state = "csplayer_empty"
-
-// Dusty player
-/obj/item/music_player/dusty
-	name = "dusty cassette player"
-	desc = "Old and dusty cassette player, it seems that it is broken."
-	icon_state = "dustyplayer_empty"
-	item_state = "device"
-
-/obj/item/music_player/dusty/on_update_icon()
-	icon_state = "dustyplayer_[tape ? "loaded" : "empty"]"
 
 // This one for debug pruporses
 // I'll yell on you if you will use it in game without good reason >:(
