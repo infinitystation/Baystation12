@@ -10,13 +10,12 @@
 	num_fragments = 70
 	explosion_size = 1
 
-/obj/item/weapon/grenade/frag/ied/New()
+/obj/item/weapon/grenade/frag/ied/Initialize()
 	wires = new(src)
 	..()
 
 /obj/item/weapon/grenade/frag/ied/Destroy()
-	qdel(wires)
-	wires = null
+	QDEL_NULL(wires)
 	return ..()
 
 /obj/item/weapon/grenade/frag/ied/attackby(var/obj/item/I, var/mob/user)
@@ -100,13 +99,12 @@
 	num_fragments = 300
 	explosion_size = 6
 
-/obj/item/weapon/grenade/frag/high_yield/belt/New()
+/obj/item/weapon/grenade/frag/high_yield/belt/Initialize()
 	wires = new(src)
 	..()
 
 /obj/item/weapon/grenade/frag/high_yield/belt/Destroy()
-	qdel(wires)
-	wires = null
+	QDEL_NULL(wires)
 	return ..()
 
 /obj/item/weapon/grenade/frag/high_yield/belt/attackby(var/obj/item/I, var/mob/user)
@@ -129,13 +127,12 @@
 	fragment_types = list(/obj/item/projectile/bullet/pellet/fragment/sharp=1, /obj/item/projectile/bullet/pellet/fragment/large=4)
 	num_fragments = 120
 
-/obj/item/weapon/grenade/frag/high_yield/ied/New()
+/obj/item/weapon/grenade/frag/high_yield/ied/Initialize()
 	wires = new(src)
 	..()
 
 /obj/item/weapon/grenade/frag/high_yield/ied/Destroy()
-	qdel(wires)
-	wires = null
+	QDEL_NULL(wires)
 	return ..()
 
 /obj/item/weapon/grenade/frag/high_yield/ied/attackby(var/obj/item/I, var/mob/user)
