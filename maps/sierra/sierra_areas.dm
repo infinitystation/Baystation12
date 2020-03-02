@@ -1314,7 +1314,7 @@
 
 // AI
 /area/maintenance/battle_data_servers
-	name = "Battle Data Servers"
+	name = "First Deck - Battle Data Servers"
 	req_access = list(access_maint_tunnels)
 
 /area/ai_monitored
