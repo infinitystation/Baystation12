@@ -21,7 +21,7 @@
 					send2mainirc("Производится обновление сервера.")
 					send2admindiscord("Происходит обновление. Инициировано [ckey].")
 					SSwebhooks.send(WEBHOOK_SERVER_UPDATE)
-					shell("update.bat")
+					shell("sh update_start.sh")
 	else
 		if(alert("Отменить обновление сервера в конце раунда?", "Cancel Update", "Да", "Нет") == "Да")
 			to_world(SPAN_NOTICE("<font size='3'><b>\n=== Обновление сервера в конце раунда было отменено игроком [src]. ===\n</b></font>"))
