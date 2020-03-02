@@ -591,7 +591,7 @@
 	var/total_protection = flash_protection
 	if(species.has_organ[species.vision_organ])
 		var/obj/item/organ/internal/eyes/I = internal_organs_by_name[species.vision_organ]
-		if(!I.is_usable())
+		if(!I?.is_usable()) //INF WAS if(!I.is_usable()) -- other way, changelings without head would do this check
 			return FLASH_PROTECTION_MAJOR
 		else
 			total_protection = I.get_total_protection(flash_protection)
@@ -706,7 +706,7 @@
 		nothing_to_puke = TRUE
 
 	if(nothing_to_puke)
-		custom_emote(1,"dry heaves.")
+		custom_emote(1,"морщится.")
 		return
 
 	if(should_have_organ(BP_STOMACH))
@@ -721,7 +721,7 @@
 			if(species.gluttonous & GLUT_PROJECTILE_VOMIT)
 				M.throw_at(get_edge_target_turf(src,dir),7,7,src)
 
-	visible_message(SPAN_DANGER("\The [src] throws up!"),SPAN_DANGER("You throw up!"))
+	visible_message(SPAN_DANGER("\The [src] стошнило!"),SPAN_DANGER("Вас стошнило!"))
 	playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 	var/turf/location = loc
 	if(istype(location, /turf/simulated))
@@ -1216,7 +1216,7 @@
 
 	// Rebuild the HUD and visual elements.
 	if(client)
-		Login()
+		remake_Hud() //INF WAS Login()
 
 	full_prosthetic = null
 

@@ -89,4 +89,5 @@
 	if(SSticker.mode)
 		SSticker.mode.check_win()
 	to_chat(src,"<span class='deadsay'>[show_dead_message]</span>")
+	remake_Hud() //INF
 	return 1
