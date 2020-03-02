@@ -63,38 +63,46 @@
 /obj/item/clothing/accessory/amulet
 	name = "talisman"
 	desc = "A simple metal amulet with runes, according to the primitive beliefs of Tajara, able to protect them from evil spirits."
-	icon_state = "amulet"
-	icon = CUSTOM_ITEM_OBJ
+	icon_state = "taj_amulet"
+	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
 	w_class = ITEM_SIZE_SMALL
 	slot_flags = SLOT_MASK | SLOT_TIE
 
+/* todo
+Сделать, чтобы блокировало мелкое воздействие - чтение мыслей, слабое лечение. Сейчас оно высасывае псионику \
+со своего тайла - можно контрить псиоников, удерживая.
 /obj/item/clothing/accessory/amulet/disrupts_psionics()
 	visible_message("<span class='rose'>The [src] protect his owner but explodes.</span>")
 	playsound(src.loc, 'sound/effects/glass_step.ogg', 100, 1, -4)
 	QDEL_IN(src, 0)
 	return src
+*/
 
 /obj/item/clothing/accessory/amulet/medium
 	name = "amulet"
 	desc = "An expensive-looking amulet, interspersed with unknown crystals and runes, according to the primitive beliefs of Tajara, able to protect them from evil spirits."
-	icon_state = "amulet2"
+	icon_state = "taj_amuletamulet2"
 
+/* todo
 /obj/item/clothing/accessory/amulet/medium/disrupts_psionics()
 	if(prob(20))
 		visible_message("<span class='rose'>The [src] protect his owner but explodes.</span>")
 		playsound(src.loc, 'sound/effects/glass_step.ogg', 100, 1, -4)
 		QDEL_IN(src, 0)
 	return src
+*/
 
-/obj/item/clothing/accessory/amulet/stronk
+/obj/item/clothing/accessory/amulet/strong
 	name = "averter"
 	desc = "Amulet of Tajara, created from the primordial stone according to their belief, able to protect according to their primitive religion from evil spirits and their servants. The runes on the amulet are etched with acid."
-	icon_state = "amulet3"
+	icon_state = "taj_amuletamulet3"
 
-/obj/item/clothing/accessory/amulet/stronk/disrupts_psionics()
+/* todo
+/obj/item/clothing/accessory/amulet/strong/disrupts_psionics()
 	visible_message("<span class='rose'>The [src] radiated faint waves of heat and light, protecting the wearer from psionic influence...</span>")
 	if(prob(0.01))
 		visible_message("<span class='rose'>The [src] protect his owner but explodes.</span>")
 		playsound(src.loc, 'sound/effects/glass_step.ogg', 100, 1, -4)
 		QDEL_IN(src, 0)
 	return src
+*/
