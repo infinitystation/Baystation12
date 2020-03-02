@@ -412,7 +412,7 @@ decl/surgery_step/robotics/get_skill_reqs(mob/living/user, mob/living/carbon/hum
 		return FALSE
 //	var/organ_to_remove = input(user, "Which organ do you want to prepare for removal?") as null|anything in attached_organs
 //[INF]
-	var/list/options = list()
+	var/list/options
 	for(var/i in attached_organs)
 		var/obj/item/organ/I = LAZYACCESS(target.internal_organs_by_name, i)
 		LAZYADD(options, image(icon = I.icon, icon_state = I.icon_state))

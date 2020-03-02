@@ -107,7 +107,7 @@
 		if(attached_organs.len > 1)
 	//		organ_to_remove = input(user, "Which organ do you want to separate?") as null|anything in attached_organs
 	//[INF]
-			var/list/options = list()
+			var/list/options
 			for(var/i in attached_organs)
 				var/obj/item/organ/I = LAZYACCESS(target.internal_organs_by_name, i)
 				LAZYADD(options, image(icon = I.icon, icon_state = I.icon_state))
@@ -166,7 +166,7 @@
 			if(removable_organs.len > 1)
 	//			organ_to_remove = input(user, "Which organ do you want to remove?") as null|anything in removable_organs
 	//[INF]
-				var/list/options = list()
+				var/list/options
 				for(var/i in removable_organs)
 					var/obj/item/organ/I = LAZYACCESS(target.internal_organs_by_name, i)
 					LAZYADD(options, image(icon = I.icon, icon_state = I.icon_state))
