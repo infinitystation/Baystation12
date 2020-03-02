@@ -312,7 +312,7 @@ var/list/datum/power/changeling/powerinstances = list()
 
 					if(!ownsthis)
 					{
-						body += "<a href='?src=\ref[src];P="+power+"'>Evolve</a>"
+						body += "<a href='?src=\ref[src];P="+power+"'>Приобрести</a>"
 					}
 
 					body += "</td><td align='center'>";
@@ -467,7 +467,7 @@ var/list/datum/power/changeling/powerinstances = list()
 					<a id='link[i]'
 					onmouseover='expand("item[i]","[P.name]","[P.desc]","[P.helptext]","[P]",[ownsthis])'
 					>
-					<span id='search[i]'><b>Приобрести [P] - Цена: [ownsthis ? "Purchased" : P.genomecost]</b></span>
+					<span id='search[i]'><b>[P] - [ownsthis ? "" : "Цена:"] [ownsthis ? "Приобретено" : P.genomecost]</b></span>
 					</a>
 					<br><span id='item[i]'></span>
 				</td>

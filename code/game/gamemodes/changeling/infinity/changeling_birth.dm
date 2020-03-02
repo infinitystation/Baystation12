@@ -79,13 +79,15 @@
 					src.visible_message(SPAN_WARNING("[src]'s skin begins to shift and squirm! The tongue goes out and turns into gross proboscis!"))
 				T.stuttering += 40 // horror effect
 				if(!do_mob(src, T, 8 SECONDS))
-					to_chat(src, SPAN_LING("Our absorption has been interrupted!"))
+					src.visible_message(SPAN_WARNING("[src]'s proboscis flashed back in mouth, as claws turned into fingers!"))
+					to_chat(src, SPAN_LING("Поглощение было прервано!"))
 					changeling.isabsorbing = 0
 					return
 			if(2)
 				if(forced_absorbing)
 					while(T.getBruteLoss() <= 300 ) //mega damage
 						if(!do_mob(src, T, 3.7 SECONDS)) //46 seconds, usually
+							src.visible_message(SPAN_WARNING("[src]'s proboscis flashed back in mouth, as claws turned into fingers!"))
 							to_chat(src, SPAN_LING("Поглощение было прервано!"))
 							changeling.isabsorbing = 0
 							return
@@ -109,6 +111,7 @@
 					T.eye_blurry += 20
 				while(T.vessel.total_volume >= 50) //will su... absorb 93% of victim's fluids
 					if(!do_mob(src, T, 3.7 SECONDS))
+						src.visible_message(SPAN_WARNING("[src]'s proboscis flashed back in mouth!"))
 						to_chat(src, SPAN_LING("Поглощение было прервано!"))
 						changeling.isabsorbing = 0
 						return
@@ -139,6 +142,7 @@
 				visible_message(SPAN_WARNING(message))
 				playsound(get_turf(src), 'infinity/sound/magic/demon_consume.ogg', 40, 1, -3.5)
 				if(!do_mob(src, T, 12 SECONDS))
+					src.visible_message(SPAN_WARNING("[src]'s stops formin the cocoon!"))
 					to_chat(src, SPAN_LING("Создание кокона было прервано!"))
 					changeling.isabsorbing = 0
 					return
@@ -235,10 +239,10 @@
 	return 1
 
 /obj/structure/changeling_cocoon
-	name = "cocoon"
-	desc = "Something wrapped in silky spider web."
-	icon = 'icons/effects/effects.dmi'
-	icon_state = "cocoon_large1"
+	name = "meaty cocoon"
+	desc = "A gross looking cocoon, made of some sort of bilogical mass..."
+	icon = 'infinity/icons/obj/changeling.dmi'
+	icon_state = "cocoon_progress"
 	var/mob/living/victim = null
 	var/birth_time = 60*2 //seconds
 	var/progress = 0 //in seconds
@@ -257,13 +261,16 @@
 		return
 	if(health < max_health)
 		if(prob(4))
-			src.visible_message(SPAN_WARNING("\icon[src] [src] slowly restores damaged sections with new weeb..."))
+			src.visible_message(SPAN_WARNING("\icon[src] [src] slowly restores damaged sections with biomass..."))
 		health++
 	progress++
 	if(progress >= birth_time)
 		birth()
+	on_update_icon()
 	if(progress % 10 == 0) //every 10 seconds
-		time()
+		var/time = birth_time - progress
+		if(time > 0)
+			to_chat(victim, SPAN_LING("До вылупления осталось [time] секунд."))
 	if(world.time >= last_sound_time + 20 SECONDS)
 		last_sound_time = world.time
 		playsound(get_turf(src), 'infinity/sound/effects/lingextends.ogg', 15, 1, -4.5)
@@ -271,15 +278,18 @@
 			SPAN_WARNING("\icon[src] [src] pulses and faintly moves..."),
 			SPAN_WARNING("\icon[src] [src]... breaths?"),
 			SPAN_WARNING("\icon[src] [src] exchanges faint breath."),
-			SPAN_WARNING("\icon[src] [src] has something under weeb - it moves around the victim...")))
+			SPAN_WARNING("\icon[src] [src] has something under biomass - it moves around the victim...")))
 
 /obj/structure/changeling_cocoon/Destroy()
-	if(victim)
-		visible_message(SPAN_DANGER("[victim] dropped from [src]!"))
-		victim.dropInto(loc)
-		victim = null
+	drop_victim()
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
+
+/obj/structure/changeling_cocoon/on_update_icon()
+	if(progress <= birth_time)
+		icon_state = "cocoon_progress"
+
+//	switch(health) //todo
 
 /obj/structure/changeling_cocoon/attackby(obj/item/I, mob/user)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -322,7 +332,7 @@
 		if(M in contents)
 			to_chat(M, "You touch [src]. It feels slimy and warm - you can see everything around it.")
 		else
-			M.visible_message(SPAN_WARNING("[M] touches [src]..."), "You touch [src]. It feels slimy and warm - you can barely see a body under thick layer of weeb.")
+			M.visible_message(SPAN_WARNING("[M] touches [src]..."), "You touch [src]. It feels slimy and warm.")
 
 /obj/structure/changeling_cocoon/bullet_act(var/obj/item/projectile/Proj)
 	if(!(Proj.damage_type == BRUTE || Proj.damage_type == BURN))
@@ -338,9 +348,9 @@
 		if(1)
 			qdel(src)
 		if(2)
-			health -= 90
+			take_damage(90)
 		if(3)
-			health -= 40
+			take_damage(40)
 
 /* todo
 /obj/structure/changeling_cocoon/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
@@ -349,9 +359,13 @@
 
 /obj/structure/changeling_cocoon/take_damage(var/amount)
 	health -= amount
-	if(health < 0)
+	if(health < max_health / 4 && victim)
 		visible_message(SPAN_WARNING("\icon[src] [src] breaks appart and a goo flows from it!"))
 		new /obj/effect/decal/cleanable/filth(src)
+		drop_victim()
+		icon_state = "cocoon_opened"
+	if(health < 0)
+		visible_message(SPAN_WARNING("\icon[src] [src] breaks appart!"))
 		qdel(src)
 
 /obj/structure/changeling_cocoon/examine(mob/user)
@@ -365,12 +379,11 @@
 		spawn(1 SECOND)
 			if(user) qdel(user) // Remove the keyless ghost if it exists.
 
-/obj/structure/changeling_cocoon/proc/time()
-	if(!victim?.client)
-		return
-	var/time = birth_time - progress
-	if(time > 0)
-		to_chat(victim, SPAN_LING("До вылупления осталось [time] секунд."))
+/obj/structure/changeling_cocoon/proc/drop_victim()
+	if(victim)
+		visible_message(SPAN_DANGER("[victim] dropped from [src]!"))
+		victim.dropInto(loc)
+		victim = null
 
 /obj/structure/changeling_cocoon/proc/background()
 	if(!victim?.client)

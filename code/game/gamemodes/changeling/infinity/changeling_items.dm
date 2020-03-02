@@ -1,12 +1,12 @@
 /obj/item/weapon/melee/arm_blade
 	name = "armblade"
 	desc = "A grotesque blade made out of bone and flesh that cleaves through people as a hot knife through butter."
-	icon = 'icons/obj/changeling.dmi'
+	icon = 'infinity/icons/obj/changeling.dmi'
 	icon_state = "arm_blade"
 	item_state = "arm_blade"
 	item_icons = list(
-		slot_l_hand_str = 'icons/obj/changeling.dmi',
-		slot_r_hand_str = 'icons/obj/changeling.dmi')
+		slot_l_hand_str = 'infinity/icons/obj/changeling.dmi',
+		slot_r_hand_str = 'infinity/icons/obj/changeling.dmi')
 	item_state_slots = list(
 		slot_l_hand_str = "arm_blade_rh",
 		slot_r_hand_str = "arm_blade_lh")
@@ -67,12 +67,12 @@
 /obj/item/weapon/shield/riot/changeling
 	name = "shield-like mass"
 	desc = "A mass of tough, boney tissue. You can still see the fingers as a twisted pattern in the shield."
-	icon = 'icons/obj/changeling.dmi'
+	icon = 'infinity/icons/obj/changeling.dmi'
 	icon_state = "ling_shield"
 	item_state = "ling_shield"
 	item_icons = list(
-		slot_l_hand_str = 'icons/obj/changeling.dmi',
-		slot_r_hand_str = 'icons/obj/changeling.dmi')
+		slot_l_hand_str = 'infinity/icons/obj/changeling.dmi',
+		slot_r_hand_str = 'infinity/icons/obj/changeling.dmi')
 	item_state_slots = list(
 		slot_l_hand_str = "ling_shield_rh",
 		slot_r_hand_str = "ling_shield_lh")
@@ -111,7 +111,7 @@
 /obj/item/weapon/bone_dart
 	name = "bone dart"
 	desc = "A sharp piece of bone shapped as small dart."
-	icon = 'icons/obj/changeling.dmi'
+	icon = 'infinity/icons/obj/changeling.dmi'
 	icon_state = "bone_dart"
 	item_state = "bolt"
 	sharp = 1

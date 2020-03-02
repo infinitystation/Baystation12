@@ -60,9 +60,24 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 
 	if(iscarbon(src))
 		var/mob/living/carbon/C = src
-		var/obj/item/organ/internal/brain/brain = C.internal_organs_by_name[BP_BRAIN]
-		if(brain)
-			brain.fake_brain = 1
+		var/obj/item/organ/internal/fake_brain/fake = C.internal_organs_by_name[BP_FAKE]
+		var/brained = 0
+		for(fake in C.internal_organs)
+			if(fake)
+				brained = 1
+				break
+		if(!brained)
+			var/obj/item/organ/internal/brain/brain = C.internal_organs_by_name[BP_BRAIN]
+
+			var/obj/item/organ/external/E = C.organs_by_name[brain.parent_organ]
+			if(istype(E)) E.internal_organs -= brain
+			brain.parent_organ = BP_CHEST
+			var/obj/item/organ/external/new_E = C.organs_by_name[BP_CHEST]
+			if(istype(new_E)) new_E.internal_organs |= brain
+
+			var/obj/item/organ/internal/fake_brain/new_fake = new /obj/item/organ/internal/fake_brain(C)
+			var/obj/item/organ/external/new_fake_E = C.organs_by_name[BP_HEAD]
+			if(istype(new_fake_E)) new_fake_E.internal_organs |= new_fake
 
 	var/lesser_form = !ishuman(src)
 
