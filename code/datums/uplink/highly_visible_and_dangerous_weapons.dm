@@ -32,8 +32,8 @@
 /datum/uplink_item/item/visible_weapons/crossbow
 	name = "Energy Crossbow"
 	desc = "A self-recharging, almost silent weapon employed by stealth operatives."
-	item_cost = 48 //INF was 24
-	antag_costs = list(MODE_MERCENARY = 32) //INF was 16
+	item_cost = 34 //INF was 24
+	antag_costs = list(MODE_MERCENARY = 16)
 	path = /obj/item/weapon/gun/energy/crossbow
 
 /datum/uplink_item/item/visible_weapons/ion_pistol
@@ -77,8 +77,8 @@
 /datum/uplink_item/item/visible_weapons/revolver
 	name = "Magnum Revolver"
 	desc = "A high-caliber revolver. Includes an extra speedloader of ammo."
-	item_cost = 85 //INF was 40
-	antag_costs = list(MODE_MERCENARY = 56) //INF was 32
+	item_cost = 55 //INF was 40
+	antag_costs = list(MODE_MERCENARY = 32)
 	path = /obj/item/weapon/storage/backpack/satchel/syndie_kit/revolver
 
 /datum/uplink_item/item/visible_weapons/grenade_launcher
@@ -172,7 +172,7 @@
 /datum/uplink_item/item/visible_weapons/pulserifle
 	name = "Pulse Rifle"
 	desc = "A triple burst, heavy laser rifle, with a large battery compacity."
-	item_cost = 85
+	item_cost = 125//INF was 85
 	antag_costs = list(MODE_MERCENARY = 68)
 	path = /obj/item/weapon/gun/energy/pulse_rifle
 
