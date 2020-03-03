@@ -7,53 +7,53 @@
 /datum/uplink_item/item/visible_weapons/zipgun
 	name = "Zip Gun"
 	desc = "A pipe attached to crude wooden stock with firing mechanism, holds one round."
-	item_cost = 8
+	item_cost = 32 //INF was 8
 	path = /obj/item/weapon/gun/projectile/pirate
 
 /datum/uplink_item/item/visible_weapons/smallenergy_gun
 	name = "Small Energy Gun"
 	desc = "A pocket-sized energy based sidearm with three different lethality settings."
-	item_cost = 16
+	item_cost = 46 //INF was 16
 	path = /obj/item/weapon/gun/energy/gun/small
 
 /datum/uplink_item/item/visible_weapons/ancient
 	name = "Replica Pistol"
 	desc = "A cheap replica of an earth handgun. To reload, buy another."
-	item_cost = 16
+	item_cost = 38 //INF was 16
 	path = /obj/item/weapon/gun/projectile/pistol/throwback
-	
+
 /datum/uplink_item/item/visible_weapons/dartgun
 	name = "Dart Gun"
 	desc = "A gas-powered dart gun capable of delivering chemical payloads across short distances. \
 			Uses a unique cartridge loaded with hollow darts."
-	item_cost = 20
+	item_cost = 42 //INF was 20
 	path = /obj/item/weapon/gun/projectile/dartgun
 
 /datum/uplink_item/item/visible_weapons/crossbow
 	name = "Energy Crossbow"
 	desc = "A self-recharging, almost silent weapon employed by stealth operatives."
-	item_cost = 24
-	antag_costs = list(MODE_MERCENARY = 16)
+	item_cost = 48 //INF was 24
+	antag_costs = list(MODE_MERCENARY = 32) //INF was 16
 	path = /obj/item/weapon/gun/energy/crossbow
 
 /datum/uplink_item/item/visible_weapons/ion_pistol
 	name = "Ion Pistol"
-	item_cost = 40
-	antag_costs = list(MODE_MERCENARY = 20)
+	item_cost = 50 //INF was 40
+	antag_costs = list(MODE_MERCENARY = 28) //INF was 20
 	path = /obj/item/weapon/gun/energy/ionrifle/small
 
 /datum/uplink_item/item/visible_weapons/energy_sword
 	name = "Energy Sword"
 	desc = "A hilt, that when activated, creates a solid beam of pure energy in the form of a sword. \
 			Able to slice through people like butter!"
-	item_cost = 32
+	item_cost = 42 //INF was 32
 	path = /obj/item/weapon/melee/energy/sword
 
 /datum/uplink_item/item/visible_weapons/silenced
 	name = "Small Silenced Pistol"
 	desc = "A kit with a pocket-sized holdout pistol, silencer, and an extra magazine. \
 			Attaching the silencer will make it too big to conceal in your pocket."
-	item_cost = 32
+	item_cost = 54 //INF was 32
 	path = /obj/item/weapon/storage/box/syndie_kit/silenced
 
 /datum/uplink_item/item/badassery/money_cannon
@@ -65,20 +65,20 @@
 /datum/uplink_item/item/visible_weapons/energy_gun
 	name = "Energy Gun"
 	desc = "A energy based sidearm with three different lethality settings."
-	item_cost = 32
+	item_cost = 58 //INF was 32
 	path = /obj/item/weapon/gun/energy/gun
 
-/datum/uplink_item/item/visible_weapons/ionpistol
+/*/datum/uplink_item/item/visible_weapons/ionpistol
 	name = "Ion Pistol"
-	desc = "Ion rifle in compact form."
+	desc = "Ion rifle in compact form."					//ALREADY HAVE THIS
 	item_cost = 40
-	path = /obj/item/weapon/gun/energy/ionrifle/small
+	path = /obj/item/weapon/gun/energy/ionrifle/small*/
 
 /datum/uplink_item/item/visible_weapons/revolver
 	name = "Magnum Revolver"
 	desc = "A high-caliber revolver. Includes an extra speedloader of ammo."
-	item_cost = 40
-	antag_costs = list(MODE_MERCENARY = 32)
+	item_cost = 85 //INF was 40
+	antag_costs = list(MODE_MERCENARY = 56) //INF was 32
 	path = /obj/item/weapon/storage/backpack/satchel/syndie_kit/revolver
 
 /datum/uplink_item/item/visible_weapons/grenade_launcher
@@ -101,7 +101,7 @@
 	desc = "A common rifle with three togglable fire modes."
 	item_cost = 80
 	path = /obj/item/weapon/gun/projectile/automatic/assault_rifle
-	antag_roles = list(MODE_MERCENARY) //inf, was nothing
+	antag_roles = list(MODE_MERCENARY)  //Inf, was nothing
 
 /datum/uplink_item/item/visible_weapons/advanced_energy_gun
 	name = "Advanced Energy Gun"
@@ -109,7 +109,7 @@
 	item_cost = 80
 	antag_costs = list(MODE_MERCENARY = 60)
 	path = /obj/item/weapon/gun/energy/gun/nuclear
-	antag_roles = list(MODE_MERCENARY) //inf, was nothing
+	antag_roles = list(MODE_MERCENARY)  //Inf, was nothing
 
 /datum/uplink_item/item/visible_weapons/sniper
 	name = "Sniper Carabine"
@@ -126,7 +126,7 @@
 
 /datum/uplink_item/item/visible_weapons/psi_amp
 	name = "Cerebroenergetic Psionic Amplifier"
-	item_cost = 60   //inf, was 50
+	item_cost = 60    //Inf, was 50
 	path = /obj/item/clothing/head/helmet/space/psi_amp/lesser
 	desc = "A powerful, illegal psi-amp. Boosts latent psi-faculties to extremely high levels."
 
@@ -146,8 +146,10 @@
 /datum/uplink_item/item/visible_weapons/sawnoff
 	name = "Sawnoff Shotgun"
 	desc = "A shortened double-barrel shotgun, able to fire either one, or both, barrels at once."
-	item_cost = 25
+	item_cost = 65 //INF was 25
+	antag_costs = list(MODE_MERCENARY = 35)
 	path = /obj/item/weapon/gun/projectile/shotgun/doublebarrel/sawn
+
 /*inf. Too powerful
 /datum/uplink_item/item/visible_weapons/deagle
 	name = "Magnum Pistol"
@@ -158,13 +160,13 @@
 /datum/uplink_item/item/visible_weapons/sigsauer
 	name = "Standard Military Pistol"
 	desc = "A regularly used and reliable weapon that is standard issue in the Navy."
-	item_cost = 40
+	item_cost = 55 //INF was 40
 	path = /obj/item/weapon/gun/projectile/pistol/military/alt
 
 /datum/uplink_item/item/visible_weapons/detective_revolver
 	name = "Small Revolver"
 	desc = "A pocket-sized holdout revolver. Easily concealable.."
-	item_cost = 24
+	item_cost = 35 //INF was 24
 	path = /obj/item/weapon/gun/projectile/revolver/holdout
 
 /datum/uplink_item/item/visible_weapons/pulserifle
@@ -200,7 +202,7 @@
 
 /datum/uplink_item/item/visible_weapons/harpoonbomb
 	name = "Explosive Harpoon"
-	item_cost = 12
+	item_cost = 18 //INF was 12
 	path = /obj/item/weapon/material/harpoon/bomb
 
 /datum/uplink_item/item/visible_weapons/incendiary_laser
