@@ -163,14 +163,14 @@
 	item_cost = 48
 	path = /obj/item/weapon/storage/box/syndie_kit/poisons
 
-//[/INF]
-
 /datum/uplink_item/item/tools/eshield
 	name = "Energy Shield"
 	desc = "An energy shield, capable of reflecting energy projectiles and deflecting other attacks.."
 	item_cost = 52
 	antag_roles = list(MODE_MERCENARY)
 	path = /obj/item/weapon/shield/energy
+
+//[/INF]
 
 /datum/uplink_item/item/tools/ai_module
 	name = "Hacked AI Upload Module"
