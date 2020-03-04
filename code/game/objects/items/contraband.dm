@@ -45,3 +45,16 @@
 
 	desc = "Contains [english_list(names)]."
 	update_icon()
+
+/obj/item/weapon/reagent_containers/glass/beaker/vial/random/toxin/bioterror
+	random_reagent_list = list(
+		list(/datum/reagent/mindbreaker = 10, /datum/reagent/space_drugs = 20) = 3,
+		list(/datum/reagent/toxin/carpotoxin = 15)                             = 2,
+		list(/datum/reagent/toxin/methyl_bromide = 15)                         = 2,
+		list(/datum/reagent/toxin/amatoxin = 15)                               = 2,
+		list(/datum/reagent/toxin/phoron = 15)                                 = 2,
+		list(/datum/reagent/toxin/cyanide = 15)                                = 2,
+		list(/datum/reagent/toxin/potassium_chlorophoride = 15)                = 2,
+		list(/datum/reagent/acid/polyacid = 15)                                = 2,
+		list(/datum/reagent/radium = 15)                                       = 2,
+		list(/datum/reagent/toxin/zombiepowder = 10)                           = 1)

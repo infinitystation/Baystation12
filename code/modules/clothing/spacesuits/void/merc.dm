@@ -48,3 +48,17 @@
 /obj/item/clothing/suit/space/void/merc/prepared
 	helmet = /obj/item/clothing/head/helmet/space/void/merc
 	boots = /obj/item/clothing/shoes/magboots
+
+/obj/item/clothing/suit/space/void/merc/pyro
+	name = "blood-red pyro voidsuit helmet"
+	desc = "An advanced helmet designed for work in special operations. Property of Gorlex Marauders. This one has a fire symbol on it."
+	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE + 540
+
+/obj/item/clothing/head/helmet/space/void/merc/pyro
+	name = "blood-red pyro voidsuit"
+	desc = "An advanced suit that protects against injuries during special operations. Property of Gorlex Marauders. This one has a fire symbol on it."
+	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE + 540
+
+/obj/item/clothing/suit/space/void/merc/pyro/prepared
+	helmet = /obj/item/clothing/head/helmet/space/void/merc/pyro
+	boots = /obj/item/clothing/shoes/magboots

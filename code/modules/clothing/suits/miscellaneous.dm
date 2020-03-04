@@ -333,6 +333,15 @@
 	icon_state = "leather_jacket"
 	body_parts_covered = UPPER_TORSO|ARMS
 
+/obj/item/clothing/suit/storage/leather_jacket/fake
+	armor = list(
+		melee = ARMOR_MELEE_MAJOR,
+		bullet = ARMOR_BALLISTIC_RESISTANT,
+		laser = ARMOR_LASER_HANDGUNS,
+		energy = ARMOR_ENERGY_SMALL,
+		bomb = ARMOR_BOMB_PADDED,
+	)
+
 /obj/item/clothing/suit/storage/leather_jacket/nanotrasen
 	name = "\improper NanoTrasen black leather jacket"
 	desc = "A black leather coat. The NanoTrasen logo is proudly displayed on the back."

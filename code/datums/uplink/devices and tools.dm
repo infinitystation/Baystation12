@@ -32,8 +32,14 @@
 /datum/uplink_item/item/tools/plastique
 	name = "C-4"
 	desc = "Set this on a wall to put a hole exactly where you need it."
-	item_cost = 16
+	item_cost = 6 //INF was 16
 	path = /obj/item/weapon/plastique
+
+/datum/uplink_item/item/tools/superplastique
+	name = "X-4"
+	desc = "Upgraded version of C-4 explosives. Can destroy even a reinforced wall."
+	item_cost = 14
+	path = /obj/item/weapon/plastique/super
 
 /*/datum/uplink_item/item/tools/heavy_armor
 	name = "Heavy Armor Vest and Helmet"
@@ -132,6 +138,24 @@
 /datum/uplink_item/item/tools/teleporter/New()
 	..()
 	antag_roles = list(MODE_MERCENARY)
+
+/datum/uplink_item/item/tools/pcombo
+	name = "Bag of C-4"
+	desc = "Bag, full of C-4 explosives. Contains 6 powerful bombs. 6 TC discount."
+	item_cost = 30
+	path = /obj/item/weapon/storage/backpack/dufflebag/syndie_kit/plastique
+
+/datum/uplink_item/item/tools/spcombo
+	name = "Bag of X-4"
+	desc = "Bag, containing 3 military X-4 explosives. Be careful with it. 8 TC discount."
+	item_cost = 34
+	path = /obj/item/weapon/storage/backpack/dufflebag/syndie_kit/plastique/super
+
+/datum/uplink_item/item/tools/poisons
+	name = "Poisons kit"
+	desc = "A box, containing 7 vials of random and very deadly poisons."
+	item_cost = 48
+	path = /obj/item/weapon/storage/box/syndie_kit/poisons
 
 /datum/uplink_item/item/tools/ai_module
 	name = "Hacked AI Upload Module"
