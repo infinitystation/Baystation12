@@ -3243,7 +3243,6 @@
 #include "infinity\code\datums\supplypacks\medical.dm"
 #include "infinity\code\datums\underwear\undershirt.dm"
 #include "infinity\code\datums\uplink\hardsuit_modules.dm"
-#include "infinity\code\datums\uplink\smartkars_shit.dm"
 #include "infinity\code\datums\vote\vote.dm"
 #include "infinity\code\game\sound.dm"
 #include "infinity\code\game\antagonists\xenomorph.dm"

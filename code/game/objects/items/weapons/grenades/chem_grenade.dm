@@ -242,7 +242,7 @@
 	path = 1
 	stage = 2
 
-	Initialize()
+/obj/item/weapon/grenade/chem_grenade/bioterror/Initialize()
 		..()
 		var/obj/item/weapon/reagent_containers/glass/beaker/large/B1 = new(src)
 		var/obj/item/weapon/reagent_containers/glass/beaker/large/B2 = new(src)
