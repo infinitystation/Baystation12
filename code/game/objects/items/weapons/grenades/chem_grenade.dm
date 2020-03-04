@@ -245,7 +245,7 @@
 	stage = 2
 
 /obj/item/weapon/grenade/chem_grenade/bioterror/Initialize()
-		..()
+		. = ..()
 		var/obj/item/weapon/reagent_containers/glass/beaker/large/B1 = new(src)
 		var/obj/item/weapon/reagent_containers/glass/beaker/large/B2 = new(src)
 
@@ -276,7 +276,7 @@
 	stage = 2
 
 /obj/item/weapon/grenade/chem_grenade/fuelspray/Initialize()
-		..()
+		. = ..()
 		var/obj/item/weapon/reagent_containers/glass/beaker/large/B1 = new(src)
 		var/obj/item/weapon/reagent_containers/glass/beaker/large/B2 = new(src)
 

@@ -79,7 +79,7 @@
 		list(/datum/reagent/toxin/zombiepowder = 60)                           = 1)
 
 /obj/item/weapon/reagent_containers/glass/beaker/random/Initialize()
-	..()
+	. = ..()
 	if(is_open_container())
 		atom_flags ^= ATOM_FLAG_OPEN_CONTAINER
 
