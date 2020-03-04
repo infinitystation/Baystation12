@@ -61,6 +61,8 @@
 	slot_flags = null	//they have no straps!
 	starting_pressure = list(GAS_PHORON = 3 * ONE_ATMOSPHERE)
 
+//[INF]
+
 /obj/item/weapon/tank/phoron/full
 	name = "phoron tank"
 	desc = "Contains dangerous phoron. Do not inhale. Warning: extremely flammable."
@@ -70,7 +72,6 @@
 	slot_flags = null	//they have no straps!
 	starting_pressure = list(GAS_PHORON = 10 * ONE_ATMOSPHERE)
 
-//[INF]
 
 /obj/item/weapon/tank/flammable
 	name = "flammable mix tank"

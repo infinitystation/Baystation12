@@ -68,11 +68,11 @@
 	item_cost = 32
 	path = /obj/item/weapon/gun/energy/gun
 
-/*/datum/uplink_item/item/visible_weapons/ionpistol
+/*[INF]/datum/uplink_item/item/visible_weapons/ionpistol
 	name = "Ion Pistol"
-	desc = "Ion rifle in compact form."   //Already have one of this
+	desc = "Ion rifle in compact form."
 	item_cost = 40
-	path = /obj/item/weapon/gun/energy/ionrifle/small*/
+	path = /obj/item/weapon/gun/energy/ionrifle/small[/INF]*/
 
 /datum/uplink_item/item/visible_weapons/revolver
 	name = "Magnum Revolver"

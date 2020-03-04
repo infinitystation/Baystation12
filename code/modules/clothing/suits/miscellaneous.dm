@@ -333,6 +333,8 @@
 	icon_state = "leather_jacket"
 	body_parts_covered = UPPER_TORSO|ARMS
 
+//[INF]
+
 /obj/item/clothing/suit/storage/leather_jacket/fake
 	armor = list(
 		melee = ARMOR_MELEE_MAJOR,
@@ -341,6 +343,8 @@
 		energy = ARMOR_ENERGY_SMALL,
 		bomb = ARMOR_BOMB_PADDED,
 	)
+
+//[/INF]
 
 /obj/item/clothing/suit/storage/leather_jacket/nanotrasen
 	name = "\improper NanoTrasen black leather jacket"
