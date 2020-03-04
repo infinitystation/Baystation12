@@ -69,6 +69,7 @@
 		handle_organs()
 		if(species.death_sound)
 			playsound(loc, species.death_sound, 80, 1, 1)
+	if(mind) remake_Hud() //INF. Removes white screen
 	handle_hud_list()
 
 /mob/living/carbon/human/proc/ChangeToHusk()

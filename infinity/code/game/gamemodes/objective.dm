@@ -1,5 +1,14 @@
 /datum/objective/nuclear
-	explanation_text = "Уничтожьте объект с помощью ядерного заряда."
+	explanation_text = "Активировать систему самоуничтожения объекта."
+
+/datum/objective/nuclear/steal
+	explanation_text = "Похитить важные документы с судна - чертежи, отчеты, корпоративные шифры."
+
+/datum/objective/nuclear/steal_AI
+	explanation_text = "Перезаписать ИИ на интеллекарту (если он есть)."
+
+/datum/objective/nuclear/researches
+	explanation_text = "Перезаписать все исследования на съемный носитель."
 
 /datum/objective/nuclear/kidnap
 	var/list/roles = list(/datum/job/captain, /datum/job/rd, /datum/job/scientist, /datum/job/chief_engineer, /datum/job/lawyer)
@@ -22,7 +31,7 @@
 		target = pick(possible_targets)
 
 	if(target?.current)
-		explanation_text = "Наниматель хочет, чтобы мы похитили [target.current.real_name] [target.assigned_role]. Цель должна быть живой."
+		explanation_text = "Похитить [target.current.real_name] ([target.assigned_role]). Цель должна быть живой."
 	else
 		explanation_text = "Захвать по крайней мере одного высокопоставленного или обладающего ценными данными члена экипажа живым. Приоритет - ученые, главы, инженеры."
 	return target

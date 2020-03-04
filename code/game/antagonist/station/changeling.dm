@@ -7,7 +7,14 @@ GLOBAL_DATUM_INIT(changelings, /datum/antagonist/changeling, new)
 	feedback_tag = "changeling_objective"
 	blacklisted_jobs = list(/datum/job/ai, /datum/job/cyborg, /datum/job/submap)
 	protected_jobs = list(/datum/job/officer, /datum/job/warden, /datum/job/detective, /datum/job/captain, /datum/job/hos)
-	welcome_text = "Используйте say \",g message\" чтобы связаться с другими генокрадами. Помните: вы получите все поглащенные ими ДНКа, если поглотите их самих.."
+	welcome_text = "Используйте say \",g (сообщение)\", чтобы связаться с другими генокрадами.<br>\
+	Мы являемся частью общности - одним из сородичей, что трудится на её благо и ставить её интересы \
+	выше собственных, в том числе и жизни. Вместе, члены обнщости должны взять под контроль корабль, поглотив его экипаж \
+	и превратив этим в себе подобных. Пока жертвы не станеут слишком малочислененны и слабы, чтобы можно было \
+	охотиться без опаски - следует проявлять осторожность. Мы не так сильны в открытом бою.<br>\
+	Наше тело требует новые геномы, чтобы жить и развиваться. Не стоит поглощать или убивать сородичей \
+	- мы все практически родственники.<br>\
+	Сегодня экипаж станет частью общности. Удачной охоты."
 	flags = ANTAG_SUSPICIOUS | ANTAG_RANDSPAWN | ANTAG_VOTABLE
 	antaghud_indicator = "hudchangeling"
 	skill_setter = /datum/antag_skill_setter/station
@@ -15,7 +22,7 @@ GLOBAL_DATUM_INIT(changelings, /datum/antagonist/changeling, new)
 	faction = "changeling"
 
 /datum/antagonist/changeling/get_special_objective_text(var/datum/mind/player)
-	return "<br><b>Changeling ID:</b> [player.changeling.changelingID].<br><b>Genomes Absorbed:</b> [player.changeling.absorbedcount]"
+	return "<br><b>Позывной:</b> [player.changeling.changelingID].<br><b>Поглощено Геномов:</b> [player.changeling.absorbedcount]"
 
 /datum/antagonist/changeling/update_antag_mob(var/datum/mind/player)
 	..()
@@ -28,11 +35,11 @@ GLOBAL_DATUM_INIT(changelings, /datum/antagonist/changeling, new)
 		player.current.verbs -= /datum/changeling/proc/EvolutionMenu
 		QDEL_NULL(player.changeling)
 
-/* original
-/datum/antagonist/changeling/create_objectives(var/datum/mind/changeling)
+
+/datum/antagonist/changeling/create_objectives(var/datum/mind/changeling, override = 1)
 	if(!..())
 		return
-
+/*
 	//OBJECTIVES - Always absorb 5 genomes, plus random traitor objectives.
 	//If they have two objectives as well as absorb, they must survive rather than escape
 	//No escape alone because changelings aren't suited for it and it'd probably just lead to rampant robusting
@@ -65,7 +72,7 @@ GLOBAL_DATUM_INIT(changelings, /datum/antagonist/changeling, new)
 				survive_objective.owner = changeling
 				changeling.objectives += survive_objective
 	return
-/original*/
+*/
 /datum/antagonist/changeling/can_become_antag(var/datum/mind/player, var/ignore_role)
 	if(..())
 		if(player.current)

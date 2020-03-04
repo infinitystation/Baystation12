@@ -178,7 +178,7 @@
 
 	if (src.stat)
 		msg += "<span class='warning'>[T.He] [T.is]n't responding to anything around [T.him] and seems to be unconscious.</span>\n"
-		if((stat == DEAD || is_asystole() || src.losebreath) && distance <= 3)
+		if((stat == DEAD || /*INF*/status_flags & FAKEDEATH ||/*/INF*/ is_asystole() || src.losebreath) && distance <= 3)
 			msg += "<span class='warning'>[T.He] [T.does] not appear to be breathing.</span>\n"
 		if(ishuman(user) && !user.incapacitated() && Adjacent(user))
 			spawn(0)
@@ -195,7 +195,8 @@
 		msg += "<span class='warning'>[T.He] [T.is] on fire!.</span>\n"
 
 	var/ssd_msg = species.get_ssd(src)
-	if(ssd_msg && (!should_have_organ(BP_BRAIN) || has_brain()) && stat != DEAD)
+	if(ssd_msg && (!should_have_organ(BP_BRAIN) || has_brain()) && stat != DEAD \
+	&& !(status_flags & FAKEDEATH)) //INF
 		if(!key)
 			msg += "<span class='deadsay'>[T.He] [T.is] [ssd_msg]. It doesn't look like [T.he] [T.is] waking up anytime soon.</span>\n"
 		else if(!client)
