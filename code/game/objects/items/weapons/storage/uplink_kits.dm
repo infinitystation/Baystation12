@@ -198,12 +198,17 @@
 		/obj/item/weapon/reagent_containers/glass/beaker/vial/random/toxin/bioterror = 7
 	)
 
+/obj/item/weapon/storage/box/syndie_kit/poisons/big
+	startswith = list(
+		/obj/item/weapon/reagent_containers/glass/beaker/random/toxin/bioterror = 7
+	)
+
 /obj/item/weapon/storage/backpack/dufflebag/syndie_kit/bioterror
 	startswith = list(
 		/obj/item/clothing/suit/space/void/merc/prepared,
 		/obj/item/clothing/mask/gas/syndicate,
 		/obj/item/weapon/tank/emergency/oxygen/double,
-		/obj/item/weapon/storage/box/syndie_kit/poisons,
+		/obj/item/weapon/storage/box/syndie_kit/poisons/big,
 		/obj/item/weapon/reagent_containers/spray/chemsprayer,
 		/obj/item/weapon/grenade/chem_grenade/bioterror,
 		/obj/item/weapon/gun/projectile/pistol/military/alt
