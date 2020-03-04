@@ -50,7 +50,7 @@
 
 /obj/item/weapon/reagent_containers/glass/beaker/vial/random/toxin/bioterror
 	random_reagent_list = list(
-		list(/datum/reagent/mindbreaker = 10, /datum/reagent/space_drugs = 20) = 3,
+		list(/datum/reagent/mindbreaker = 10, /datum/reagent/space_drugs = 20) = 2,
 		list(/datum/reagent/toxin/carpotoxin = 15)                             = 2,
 		list(/datum/reagent/toxin/methyl_bromide = 15)                         = 2,
 		list(/datum/reagent/toxin/amatoxin = 15)                               = 2,
