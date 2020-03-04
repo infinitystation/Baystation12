@@ -49,6 +49,8 @@
 	helmet = /obj/item/clothing/head/helmet/space/void/merc
 	boots = /obj/item/clothing/shoes/magboots
 
+//[INF]
+
 /obj/item/clothing/suit/space/void/merc/pyro
 	name = "blood-red pyro voidsuit helmet"
 	desc = "An advanced helmet designed for work in special operations. Property of Gorlex Marauders. This one has a fire symbol on it."
@@ -62,3 +64,5 @@
 /obj/item/clothing/suit/space/void/merc/pyro/prepared
 	helmet = /obj/item/clothing/head/helmet/space/void/merc/pyro
 	boots = /obj/item/clothing/shoes/magboots
+
+//[/INF]

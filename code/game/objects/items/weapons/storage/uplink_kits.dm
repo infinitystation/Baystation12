@@ -173,6 +173,8 @@
 		/obj/item/clothing/head/helmet/merc
 	)
 
+//[INF]
+
 /obj/item/weapon/storage/backpack/dufflebag/syndie_kit/space_cheap
 	startswith = list(
 		/obj/item/clothing/head/helmet/space/syndicate,
@@ -213,8 +215,9 @@
 		/obj/item/clothing/mask/gas/syndicate,
 		/obj/item/weapon/tank/emergency/oxygen/double,
 		/obj/item/weapon/flamethrower/full,
-		/obj/item/weapon/tank/phoron = 2,
-		/obj/item/weapon/grenade/chem_grenade/incendiary = 2,
+		/obj/item/weapon/tank/phoron/full,
+		/obj/item/weapon/grenade/chem_grenade/fuelspray,
+		/obj/item/weapon/tank/flammable,
 		/obj/item/weapon/gun/projectile/pistol/military/alt
 		)
 
@@ -276,3 +279,5 @@
 		/obj/item/weapon/defibrillator/compact/combat/loaded,
 		/obj/item/weapon/gun/projectile/pistol/military/alt,
 		)
+
+//[/INF]

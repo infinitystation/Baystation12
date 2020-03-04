@@ -46,6 +46,8 @@
 	desc = "Contains [english_list(names)]."
 	update_icon()
 
+//[INF]
+
 /obj/item/weapon/reagent_containers/glass/beaker/vial/random/toxin/bioterror
 	random_reagent_list = list(
 		list(/datum/reagent/mindbreaker = 10, /datum/reagent/space_drugs = 20) = 3,
@@ -58,3 +60,5 @@
 		list(/datum/reagent/acid/polyacid = 15)                                = 2,
 		list(/datum/reagent/radium = 15)                                       = 2,
 		list(/datum/reagent/toxin/zombiepowder = 10)                           = 1)
+
+//[/INF]

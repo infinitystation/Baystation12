@@ -102,6 +102,7 @@
 
 	return "\icon[icon]"
 
+//[INF]
 
 /datum/uplink_item/item/badassery/bioterror
 	name = "Bioterror Kit"
@@ -158,3 +159,5 @@
 	item_cost = DEFAULT_TELECRYSTAL_AMOUNT
 	antag_roles = list(MODE_MERCENARY)
 	path = /obj/item/weapon/storage/backpack/dufflebag/syndie_kit/medic
+
+//[/INF]

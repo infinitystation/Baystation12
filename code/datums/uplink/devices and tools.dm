@@ -29,6 +29,8 @@
 	item_cost = 16
 	path = /obj/item/weapon/storage/backpack/satchel/syndie_kit/clerical
 
+//[INF]
+
 /datum/uplink_item/item/tools/plastique
 	name = "C-4"
 	desc = "Set this on a wall to put a hole exactly where you need it."
@@ -40,6 +42,8 @@
 	desc = "Upgraded version of C-4 explosives. Can destroy even a reinforced wall."
 	item_cost = 14
 	path = /obj/item/weapon/plastique/super
+
+//[/INF]
 
 /*/datum/uplink_item/item/tools/heavy_armor
 	name = "Heavy Armor Vest and Helmet"
@@ -139,6 +143,8 @@
 	..()
 	antag_roles = list(MODE_MERCENARY)
 
+//[INF]
+
 /datum/uplink_item/item/tools/pcombo
 	name = "Bag of C-4"
 	desc = "Bag, full of C-4 explosives. Contains 6 powerful bombs. 6 TC discount."
@@ -156,6 +162,15 @@
 	desc = "A box, containing 7 vials of random and very deadly poisons."
 	item_cost = 48
 	path = /obj/item/weapon/storage/box/syndie_kit/poisons
+
+//[/INF]
+
+/datum/uplink_item/item/tools/eshield
+	name = "Energy Shield"
+	desc = "An energy shield, capable of reflecting energy projectiles and deflecting other attacks.."
+	item_cost = 52
+	antag_roles = list(MODE_MERCENARY)
+	path = /obj/item/weapon/shield/energy
 
 /datum/uplink_item/item/tools/ai_module
 	name = "Hacked AI Upload Module"
