@@ -24,7 +24,7 @@
 	var/available_on_syndinet = 0					// Whether the program can be downloaded from SyndiNet (accessible via emagging the computer). Set to 1 to enable.
 	var/computer_emagged = 0						// Set to 1 if computer that's running us was emagged. Computer updates this every Process() tick
 	var/ui_header = null							// Example: "something.gif" - a header image that will be rendered in computer's UI when this program is running at background. Images are taken from /nano/images/status_icons. Be careful not to use too large images!
-	var/ntnet_speed = 0								// GQ/s - current network connectivity transfer rate
+//inf	var/ntnet_speed = 0								// GQ/s - current network connectivity transfer rate
 	var/operator_skill = SKILL_MIN                  // Holder for skill value of current/recent operator for programs that tick.
 
 /datum/computer_file/program/Destroy()
@@ -80,9 +80,10 @@
 
 // Called by Process() on device that runs us, once every tick.
 /datum/computer_file/program/proc/process_tick()
-	update_netspeed()
+//inf	update_netspeed()
 	return 1
 
+/*inf
 /datum/computer_file/program/proc/update_netspeed()
 	ntnet_speed = 0
 	switch(ntnet_status)
@@ -92,7 +93,7 @@
 			ntnet_speed = NTNETSPEED_HIGHSIGNAL
 		if(3)
 			ntnet_speed = NTNETSPEED_ETHERNET
-
+inf*/
 // Check if the user can run program. Only humans can operate computer. Automatically called in run_program()
 // User has to wear their ID or have it inhand for ID Scan to work.
 // Can also be called manually, with optional parameter being access_to_check to scan the user's ID
