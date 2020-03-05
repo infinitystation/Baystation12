@@ -1563,6 +1563,7 @@
 
 /mob/living/carbon/human/proc/pulse()
 	var/obj/item/organ/internal/heart/H = internal_organs_by_name[BP_HEART]
+	if(status_flags & FAKEDEATH) return PULSE_NONE //INF
 	return H ? H.pulse : PULSE_NONE
 
 /mob/living/carbon/human/can_devour(atom/movable/victim, var/silent = FALSE)

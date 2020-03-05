@@ -1,6 +1,7 @@
 /mob/proc/remake_Hud()
 	client.images = null				//remove the images such as AIs being unable to see runes
 	client.screen = list()				//remove hud items just in case
+	screens = list()				//remove hud items just in case
 	InitializeHud()
 
 	set_sight(sight|SEE_SELF)

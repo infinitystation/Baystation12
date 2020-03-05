@@ -68,7 +68,9 @@
 	if(stat != DEAD && !InStasis())
 		//Updates the number of stored chemicals for powers
 		handle_changeling()
-
+//[INF]
+		if(status_flags & FAKEDEATH) return //act like a dead mob - even if its broken by itself...
+//[/INF]
 		//Organs and blood
 		handle_organs()
 		stabilize_body_temperature() //Body temperature adjusts itself (self-regulation)
@@ -885,8 +887,21 @@
 		to_chat(src,"<span class='notice'>You feel like you're [pick("moving","flying","floating","falling","hovering")].</span>")
 
 /mob/living/carbon/human/proc/handle_changeling()
+/*original
 	if(mind && mind.changeling)
 		mind.changeling.regenerate()
+/original*/
+//[INF]
+	if(!client) return
+	if(mind?.changeling)
+		mind.changeling.regenerate()
+		if(hud_used?.changeling_chems)
+			var/datum/changeling/changeling = mind.changeling
+			hud_used.changeling_chems.invisibility = 0
+			hud_used.changeling_chems.maptext = "<div align='center' valign='middle' style='position:relative; top:0px; left:6px'><font color='#dd66dd'>[round(changeling.chem_charges)]</font></div>"
+	else
+		hud_used.changeling_chems.invisibility = INVISIBILITY_ABSTRACT
+//[/INF]
 
 /mob/living/carbon/human/proc/handle_shock()
 	..()

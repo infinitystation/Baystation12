@@ -124,6 +124,7 @@ var/list/flooring_cache = list()
 
 /decl/flooring/proc/test_link(var/turf/origin, var/turf/T)
 	var/is_linked = FALSE
+	if(!T) return 0 //INF
 	//is_wall is true for wall turfs and for floors containing a low wall
 	if(T.is_wall())
 		if(wall_smooth == SMOOTH_ALL)

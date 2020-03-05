@@ -30,15 +30,25 @@ GLOBAL_DATUM_INIT(mercs, /datum/antagonist/mercenary, new)
 
 	base_to_load = /datum/map_template/ruin/antag_spawn/mercenary
 
+//[INF]
+/datum/antagonist/cultist/create_objectives(var/datum/mind/mercenary, override = 1)
+	if(!..())
+		return
+//[/INF]
+
 /datum/antagonist/mercenary/create_global_objectives(override = TRUE)
 	if(!..())
 		return 0
 	global_objectives = list()
-	global_objectives |= new /datum/objective/nuclear
+//INF	global_objectives |= new /datum/objective/nuclear
 	var/datum/objective/nuclear/kidnap/K
 	K = new /datum/objective/nuclear/kidnap()
 	K.choose_target()
 	global_objectives |= K
+	global_objectives |= new /datum/objective/nuclear/steal //INF
+	global_objectives |= new /datum/objective/nuclear/steal_AI //INF
+	global_objectives |= new /datum/objective/nuclear/researches //INF
+	global_objectives |= new /datum/objective/nuclear //INF
 	return 1
 
 /datum/antagonist/mercenary/equip(var/mob/living/carbon/human/player)
