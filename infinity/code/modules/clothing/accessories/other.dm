@@ -81,7 +81,7 @@
 /obj/item/clothing/accessory/amulet/medium
 	name = "amulet"
 	desc = "An expensive-looking amulet, interspersed with unknown crystals and runes, according to the primitive beliefs of Tajara, able to protect them from evil spirits."
-	icon_state = "taj_amuletamulet2"
+	icon_state = "taj_amulet_2"
 
 /* todo
 /obj/item/clothing/accessory/amulet/medium/disrupts_psionics()
@@ -95,7 +95,7 @@
 /obj/item/clothing/accessory/amulet/strong
 	name = "averter"
 	desc = "Amulet of Tajara, created from the primordial stone according to their belief, able to protect according to their primitive religion from evil spirits and their servants. The runes on the amulet are etched with acid."
-	icon_state = "taj_amuletamulet3"
+	icon_state = "taj_amulet_3"
 
 /* todo
 /obj/item/clothing/accessory/amulet/strong/disrupts_psionics()

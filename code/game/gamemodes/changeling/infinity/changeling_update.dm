@@ -22,8 +22,11 @@ var/list/datum/power/changeling/powerinstances = list()
 
 /datum/power/changeling/absorb_dna
 	name = "Absorb DNA"
-	desc = "Позволяет нам высасывать ДНК из тела существа. Они становятся едины с нами, тем самым делая нас сильнее."
-	helptext = "OOC: для вашей жертвы - это смерть. Не будьте мудаком и сделайте последние мгновения хоть сколько-нибудь интересными."
+	desc = "Позволяет нам высасывать ДНК из тела существа. Мы станем сильнее за счет полученных генов. \
+	Мы сформируем кокон, поместив в него тело жертвы. Через несколько минут, из него вылупится новый собрат."
+	helptext = "Есть 2 поглощения - добровольное и не очень. Первое дает 7 пунктов геномов и 20 дополнительной \
+	емкости химикатов. Нужно согласие жертвы. Второе - 3 и 10, а так ж, мы начнем разрывать жертву, что будет слышно всем неподалеку. \
+	Крик жертвы будет слышен в два раза дальше. Кокон появится в любом случае."
 	genomecost = 0
 	allowduringlesserform = 1
 	verbpath = /mob/proc/changeling_absorb_dna
@@ -48,20 +51,20 @@ var/list/datum/power/changeling/powerinstances = list()
 /datum/power/changeling/hive_upload
 	name = "Hive Channel"
 	desc = "Мы способны выпускать ДНК в каналы, позволяя нашим собратьям поглощать их, словно они их поглотили сами."
-	helptext = "Позволяет другим генокрадам поглощать ДНК,которым вы поделились. Не поможет в задании на поглощение."
+	helptext = "Позволяет другим генокрадам поглощать ДНК,которым вы поделились."
 	genomecost = 0
 	verbpath = /mob/proc/changeling_hiveupload
 
 /datum/power/changeling/hive_download
 	name = "Hive Absorb"
 	desc = "Мы способны поглотить ДНК из канала, что в дальнейшем позволит нам использовать больше маскировок."
-	helptext = "Позволяет поглощать ДНК и в дальнейшем использовать его. С помощью невозможно выполнить задание."
+	helptext = "Позволяет поглощать ДНК и в дальнейшем использовать его."
 	genomecost = 0
 	verbpath = /mob/proc/changeling_hivedownload
 
 /datum/power/changeling/lesser_form
 	name = "Lesser Form"
-	desc = "Мы принимаем низшую форму - примата. Это унизительно для нас."
+	desc = "Мы принимаем низшую форму - примата. Унизительно, но может помочь сбежать по вентиляции.."
 	helptext = "При превращении слетают наручники."
 	genomecost = 4
 	verbpath = /mob/proc/changeling_lesser_form
@@ -72,44 +75,54 @@ var/list/datum/power/changeling/powerinstances = list()
 
 /datum/power/changeling/extractdna
 	name = "Extract DNA sting"
-	desc = "Мы скрытно жалим жертву и извлекаем из неё образец ДНК. Безвкусно, пресно, но жертва останется в живых."
-	helptext = "Дает ДНК жертвы, на которой был использован данный навык. Не учитывается в качестве задания на поглощение. Может использоваться в низшей форме."
+	desc = "Мы скрытно жалим жертву и извлекаем из неё образец ДНК."
+	helptext = "Жертва почувствует лёгкий укол. Можно использовать в низшей форме. \
+	Не засчитывается как поглощенное тело."
 	genomecost = 2
 	allowduringlesserform = 1
 	state = STATE_STING
 	icon_state = "sting_extract"
 	verbpath = /datum/stings/extract_dna
 
-/datum/power/changeling/unfat_sting
+/datum/power/changeling/starvation_sting
 	name = "Unfat Sting"
-	desc = "Мы скрытно жалим жертву, заставляя её активно потеть и терять питательные вещества."
+	desc = "Мы скрытно жалим жертву - настолько, что она даже не заметит укола. \
+	Через 10-20 секунд, она потеряет до четверти от своего максимума питательных веществ и воды."
+	helptext = "Жертва абсолютно не замечает укола. Можно использовать в низшей форме. \
+	Можно раздражать охрану, мучить пленников и реализовывать потенциал повара!"
 	genomecost = 2
 	allowduringlesserform = 1
 	state = STATE_STING
-	icon_state = "sting_unfat"
-	verbpath = /datum/stings/unfat
+	icon_state = "sting_starvation"
+	verbpath = /datum/stings/starvation
 
 /datum/power/changeling/transformation_sting
 	name = "Transformation Sting"
 	desc = "Мы скрытно жалим жертву, вводя ретровирус, который изменяет её телу по нашему желанию."
-	helptext = "Жертва трансформируется так, как трансформировался бы другой генокрад. Можно превратить труп в себя, если нужно отвлечь охрану."
-	genomecost = 2
+	helptext = "Жертва почувствует лёгкий укол. \
+	Трансформируется так, как трансформировался бы сородич. Можно превратить труп в себя, если нужно отвлечь охрану."
+	genomecost = 3
 	state = STATE_STING
 	icon_state = "sting_transform"
 	verbpath = /datum/stings/transformation
 
 /datum/power/changeling/deaf_sting
 	name = "Deaf Sting"
-	desc = "Мы жалим жертву, тем самым временно создавая у неё слуховой шок. Она ничего не услышит."
+	desc = "Мы жалим жертву, тем самым временно создавая у неё слуховой шок. Она оглохнет."
+	helptext = "Жертва почувствует сильную боль в ушах. Можно использовать в низшей форме.\
+	Эффект длится от 40 до 60 секунд."
 	genomecost = 3
+	allowduringlesserform = 1
 	state = STATE_STING
 	icon_state = "sting_deaf"
 	verbpath = /datum/stings/deaf
 
-/datum/power/changeling/LSDSting
+/datum/power/changeling/hallucination_sting
 	name = "Hallucination Sting"
-	desc = "Мы развиваем способность жалить цель мощными галлюцинационными химикатами."
-	helptext = "Цель не замечает укола. Эффект начнет проявляться в промежутке от 30 до 60 секунд."
+	desc = "Мы развиваем способность жалить мощными галлюциногенными химикатами."
+	helptext = "Жертва абсолютно не замечает укола. Можно использовать в низшей форме. \
+	Эффект начнет начнет проявляться через 10-20 секунд и продлится 7 минут. Как минимум, \
+	ей будет тяжело определить направление звука."
 	genomecost = 3
 	allowduringlesserform = 1
 	state = STATE_STING
@@ -119,6 +132,8 @@ var/list/datum/power/changeling/powerinstances = list()
 /datum/power/changeling/blind_sting
 	name = "Blind Sting"
 	desc = "Мы жалим жертву, тем самым польностью ослепляя её на короткое время"
+	helptext = "Жертва почувствует лёгкий укол. Можно использовать в низшей форме. \
+	Полное ослепление на 10 секунд. Рябь в глазах на 10 секунд после ослепления вместе с близорукостью на 20."
 	genomecost = 4
 	allowduringlesserform = 1
 	state = STATE_STING
@@ -127,8 +142,8 @@ var/list/datum/power/changeling/powerinstances = list()
 
 /datum/power/changeling/silence_sting
 	name = "Silence Sting"
-	desc = "Мы скрытно жалим жертву, тем самым заставив её замолчать на 30 секунд."
-	helptext = "Жертва не узнает о проблеме до тех пор, пока не попытается что-то сказать."
+	desc = "Мы жалим жертву, тем самым заставив её замолчать на 30 секунд."
+	helptext = "Жертва почувствует лёгкий укол. Можно использовать в низшей форме."
 	genomecost = 5
 	allowduringlesserform = 1
 	state = STATE_STING
@@ -137,17 +152,21 @@ var/list/datum/power/changeling/powerinstances = list()
 
 /datum/power/changeling/pain_sting
 	name = "Pain Sting"
-	desc = "Мы жалим жертву, вводя сокращающий мышцы токсин, что вызовет сильную боль. Скорее всего, она станет беззащитной на короткое время."
-	helptext = "Жертва будет кричать, если ей не заткнуть рот или не уколоть перед этим жалом тишины."
-	genomecost = 6
+	desc = "Мы жалим жертву, вводя сокращающий мышцы токсин, что вызовет сильную боль. \
+	Скорее всего, она станет беззащитной на короткое время."
+	helptext = "Укол будет виден всем окружающим. \
+	Жертва будет кричать, если ей не заткнуть рот или не уколоть перед этим жалом тишины.\
+	Лучше колоть в ногу."
+	genomecost = 5
 	state = STATE_STING
 	icon_state = "sting_pain"
 	verbpath = /datum/stings/pain
 
-/datum/power/changeling/DeathSting
+/datum/power/changeling/death_sting
 	name = "Death Sting"
-	desc = "Мы жалим жертву, оставляя в её теле опасные химикаты, приводящие к остановке сердца. Из-за них за минуту жертвы откажет сердце, а через 4 - она умрет окончательно."
-	helptext = "При применении данный навык будет показан для всех окружающих. Не действует на резоми."
+	desc = "Мы жалим жертву, оставляя в её теле опасные химикаты, приводящие к остановке сердца. \
+	Из-за них за минуту у жертвы сильно ослабнет сердце, а через 4 - она умрет окончательно."
+	helptext = "Укол будет виден всем окружающим. Не действует на резоми."
 	genomecost = 10
 	state = STATE_STING
 	icon_state = "sting_death"
@@ -165,7 +184,7 @@ var/list/datum/power/changeling/powerinstances = list()
 	allowduringlesserform = 1
 	verbpath = /mob/proc/changeling_boost_range
 
-/datum/power/changeling/Epinephrine
+/datum/power/changeling/epinephrine
 	name = "Epinephrine sacs"
 	desc = "Мы активируем энергоклетки, которые вырабатывают адреналин."
 	helptext = "Позволяет мгновенно выйти из оглушения. Для активации необходимо много химикатов."
@@ -173,14 +192,14 @@ var/list/datum/power/changeling/powerinstances = list()
 	allowduringlesserform = 1
 	verbpath = /mob/proc/changeling_unstun
 
-/datum/power/changeling/mimicvoice
+/datum/power/changeling/mimic_voice
 	name = "Mimic Voice"
 	desc = "Мы подстраиваем голосовые связки так, чтобы они смогли имитировать голос любого существа."
 	helptext = "Изменит голос на заданное имя. Постоянно тратит химикаты на поддержание."
 	genomecost = 2
 	verbpath = /mob/proc/changeling_mimicvoice
 
-/datum/power/changeling/DigitalCamoflague
+/datum/power/changeling/digital_camoflague
 	name = "Digital Camoflauge"
 	desc = "Мы развиваем способность искажать нашу форму и пропорции, дабы скрыть своё существование для камер."
 	helptext = "Мы не видны для камер во время использования данного навыка. Однако заметившие нас люди, при взгляде будут испытывать ужас от не логичности нашей формы. Для поддержания навыка мы обязаны постоянно тратить химикаты."
@@ -188,7 +207,7 @@ var/list/datum/power/changeling/powerinstances = list()
 	allowduringlesserform = 1
 	verbpath = /mob/proc/changeling_digitalcamo
 
-/datum/power/changeling/ThermalVision
+/datum/power/changeling/thermal_vision
 	name = "Thermal Vision"
 	desc = "Мы направляем небольшое количество химиката в наши глаза, что позволяет нам чувствовтать жертв через препятствия и видеть в темноте."
 	helptext = "Сильная восприимчивость к ослеплению во время использования. Тратит химикаты пока активно."
@@ -196,7 +215,7 @@ var/list/datum/power/changeling/powerinstances = list()
 	allowduringlesserform = 1
 	verbpath = /mob/proc/changeling_thermvision
 
-/datum/power/changeling/rapidregeneration
+/datum/power/changeling/rapid_regeneration
 	name = "Rapid Regeneration"
 	desc = "Мы развиваем способность быстро регенерироваться, не прибегая к стазису."
 	helptext = "Лечит внешний урон каждый тик."

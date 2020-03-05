@@ -215,6 +215,10 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	mind.current.key = key
 	mind.current.teleop = null
 	mind.current.reload_fullscreen()
+//[INF]
+	spawn(1 SECOND)
+		mind.current.ability_master.open_ability_master() //fix for hud icons
+//[/INF]
 	if(!admin_ghosted)
 		announce_ghost_joinleave(mind, 0, "They now occupy their body again.")
 	return 1

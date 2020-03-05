@@ -4,7 +4,7 @@
 	icon_state = "sting_transform"
 	chemical_cost = 30
 	no_lesser = 1
-	visible = 0
+	visible = 1
 
 /datum/stings/transformation/can_sting(user, mob/living/carbon/human/T)
 	. = ..()
@@ -16,9 +16,6 @@
 		return
 	if(islesserform(T))
 		to_chat(user, SPAN_LING("Это жало будет неэффективно против подобного генома."))
-		return 0
-	if(T.stat != DEAD)
-		to_chat(user, SPAN_LING("Это жало подействует лишь на труп."))
 		return 0
 
 /datum/stings/transformation/sting_action(mob/user, mob/living/T)

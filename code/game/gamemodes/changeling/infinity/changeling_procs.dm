@@ -154,4 +154,4 @@
 
 	domutcheck(src, null)
 	src.UpdateAppearance()
-
+	ability_master.open_ability_master() //fix for hud icons

@@ -3,10 +3,13 @@
 	desc = "Sting target"
 	icon_state = "sting_lsd"
 	chemical_cost = 15
-	no_lesser = 0
+	visible = 0
 
 /datum/stings/hallucination/sting_action(user, mob/living/carbon/T)
 	. = ..()
-	spawn(rand(30 SECONDS, 60 SECONDS))
-		if(T) T.hallucination(400, 80)
+	addtimer(CALLBACK(src, .proc/hallucination_time, T), rand(10 SECONDS, 20 SECONDS))
 	SSstatistics.add_field_details("changeling_powers","HS")
+
+/datum/stings/hallucination/proc/hallucination_time(mob/living/carbon/T)
+	if(T)
+		T.hallucination(400, 120)

@@ -22,8 +22,8 @@
 							SPAN_LING("Our arm twists and mutates, transforming it into a deadly blade."),
 							SPAN_DANGER("You hear organic matter ripping and tearing!"))
 	playsound(get_turf(src), 'infinity/sound/effects/lingextends.ogg', 50, 1)
-	sleep(6)
-	shield = new(M)
-	shield.creator = M
-	M.put_in_hands(shield)
-	playsound(loc, 'sound/effects/blobattack.ogg', 30, 1)
+	spawn(6)
+		shield = new(M)
+		shield.creator = M
+		M.put_in_hands(shield)
+		playsound(loc, 'sound/effects/blobattack.ogg', 30, 1)

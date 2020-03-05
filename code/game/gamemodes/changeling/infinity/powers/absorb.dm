@@ -38,8 +38,8 @@
 		to_chat(src, SPAN_LING("Мы должны крепче держать добычу."))
 		return
 
-	if(T.stat == DEAD)
-		to_chat(src, SPAN_LING("Этот труп бесполезен. Лучше поохотиться на другую жертву."))
+	if(T.stat == DEAD && world.time - timeofdeath > 5 MINUTES)
+		to_chat(src, SPAN_LING("Этот труп мертв больше 5 минут и не содержит усваиваемого генома. Лучше поохотиться на другую жертву."))
 		return
 
 	if(changeling.isabsorbing)

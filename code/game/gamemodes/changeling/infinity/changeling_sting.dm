@@ -6,8 +6,8 @@
 	var/req_dna = 0 //unused
 	var/req_absorbs = 0 //unused
 	var/req_stat = CONSCIOUS
-	var/no_lesser = 1
-	var/visible = 0
+	var/no_lesser = 0
+	var/visible = 1 //2 - very, 1 - only target, 0 - completly invisible
 
 /datum/stings/proc/can_sting(mob/living/user, mob/living/carbon/human/T)
 	var/datum/changeling/C = user.mind.changeling
@@ -60,23 +60,28 @@
 	var/datum/changeling/C = user.mind.changeling
 	if(sting_action(user, T))
 //		SSblackbox.record_feedback("nested tally", "changeling_powers", 1, list("[name]"))
+		admin_attack_log(user, T, "Stinged with [src]", "Was stinged with [src]", "used [src] to sting")
 		sting_feedback(user, T)
 		C.chem_charges -= chemical_cost
 
 /datum/stings/proc/sting_feedback(mob/user, mob/T)
 	if(!T)
 		return
-	if(!visible)
-		to_chat(user, SPAN_LING("Мы незаметно жалим [T]."))
-	else
-		user.visible_message(pick(SPAN_DANGER("[src]'s eyes balloon and burst out in a welter of blood, burrowing into [T]!"),
-								SPAN_DANGER("[src]'s arm rapidly shifts into a giant scorpion-stinger and stabs into [T]!"),
-								SPAN_DANGER("[src]'s throat lengthens and twists before vomitting a chunky red spew all over [T]!"),
-								SPAN_DANGER("[src]'s tongue stretches an impossible length and stabs into [T]!"),
-								SPAN_DANGER("[src] sneezes a cloud of shrieking spiders at [T]!"),
-								SPAN_DANGER("[src] erupts a grotesque tail and impales [T]!"),
-								SPAN_DANGER("[src]'s chin skin bulges and tears, launching a bone-dart at [T]!")))
-	to_chat(T, SPAN_NOTICE("You feel a tiny prick."))
+	switch(visible)
+		if(2)
+			user.visible_message(pick(SPAN_DANGER("[src]'s eyes balloon and burst out in a welter of blood, burrowing into [T]!"),
+									SPAN_DANGER("[src]'s arm rapidly shifts into a giant scorpion-stinger and stabs into [T]!"),
+									SPAN_DANGER("[src]'s throat lengthens and twists before vomitting a chunky red spew all over [T]!"),
+									SPAN_DANGER("[src]'s tongue stretches an impossible length and stabs into [T]!"),
+									SPAN_DANGER("[src] sneezes a cloud of shrieking spiders at [T]!"),
+									SPAN_DANGER("[src] erupts a grotesque tail and impales [T]!"),
+									SPAN_DANGER("[src]'s chin skin bulges and tears, launching a bone-dart at [T]!")))
+			to_chat(T, SPAN_WARNING("You was stinged!"))
+		if(1)
+			to_chat(user, SPAN_LING("Мы жалим [T] незаметно для окружающих. Она чувствует лёгкий укол."))
+			to_chat(T, SPAN_NOTICE("You feel a tiny prick."))
+		if(0)
+			to_chat(user, SPAN_LING("Мы незаметно жалим [T]. Она ничего не заметит."))
 
 /datum/stings/proc/sting_action(mob/user, mob/living/carbon/human/T)
 	var/obj/item/organ/external/target_limb = T.get_organ(user.zone_sel.selecting)
@@ -111,65 +116,3 @@
 		var/datum/changeling/C = user.mind.changeling
 		if(C?.chosen_sting)
 			C.chosen_sting.unset_sting(user)
-
-
-// BACKUP
-/*
-/mob/proc/sting_can_reach(mob/M as mob, sting_range = 1)
-	if(M.loc == src.loc)
-		return 1 //target and source are in the same thing
-	if(!isturf(src.loc) || !isturf(M.loc))
-		to_chat(src, SPAN_LING("We cannot reach \the [M] with a sting!"))
-		return 0 //One is inside, the other is outside something.
-	// Maximum queued turfs set to 25; I don't *think* anything raises sting_range above 2, but if it does the 25 may need raising
-	if(!AStar(src.loc, M.loc, /turf/proc/AdjacentTurfs, /turf/proc/Distance, max_nodes=25, max_node_depth=sting_range)) //If we can't find a path, fail
-		to_chat(src, SPAN_LING("We cannot find a path to sting \the [M] by!"))
-		return 0
-	return 1
-
-/mob/proc/changeling_sting(var/required_chems=0, var/verb_path, var/loud, id)
-	var/datum/changeling/changeling = changeling_power(required_chems)
-	if(!changeling) return
-	var/list/victims = list()
-	for(var/mob/living/carbon/C in oview(changeling.sting_range))
-		victims += C
-	var/mob/living/carbon/human/T = input(src, "Who will we sting?") as null|anything in victims
-
-	if(!T) return
-	if(!(T in view(changeling.sting_range))) return
-	if(!sting_can_reach(T, changeling.sting_range)) return
-	if(!changeling_power(required_chems)) return
-	var/obj/item/organ/external/target_limb = T.get_organ(src.zone_sel.selecting)
-	if (!target_limb)
-		to_chat(src, SPAN_WARNING("[T] is missing that limb."))
-		return
-	if(T.isSynthetic())
-		to_chat(src, SPAN_LING("[T] is not compatible with our biology."))
-		return
-	changeling.chem_charges -= required_chems
-	changeling.sting_range = 1
-	src.verbs -= verb_path
-	spawn(10)	src.verbs += verb_path
-
-	if(!loud)
-		to_chat(src, SPAN_LING("We stealthily sting [T]."))
-	else
-		src.visible_message(pick(SPAN_DANGER("[src]'s eyes balloon and burst out in a welter of blood, burrowing into [T]!"),
-								SPAN_DANGER("[src]'s arm rapidly shifts into a giant scorpion-stinger and stabs into [T]!"),
-								SPAN_DANGER("[src]'s throat lengthens and twists before vomitting a chunky red spew all over [T]!"),
-								SPAN_DANGER("[src]'s tongue stretches an impossible length and stabs into [T]!"),
-								SPAN_DANGER("[src] sneezes a cloud of shrieking spiders at [T]!"),
-								SPAN_DANGER("[src] erupts a grotesque tail and impales [T]!"),
-								SPAN_DANGER("[src]'s chin skin bulges and tears, launching a bone-dart at [T]!")))
-
-	for(var/obj/item/clothing/clothes in list(T.head, T.wear_mask, T.wear_suit, T.w_uniform, T.gloves, T.shoes))
-		if(istype(clothes) && (clothes.body_parts_covered & target_limb.body_part) && (clothes.item_flags & ITEM_FLAG_THICKMATERIAL))
-			to_chat(src, SPAN_DANGER("[T]'s armor has protected them!"))
-			return //thick clothes will protect from the sting
-
-	if(T.isSynthetic() || BP_IS_ROBOTIC(target_limb)) return
-	if(!T.mind || !T.mind.changeling) return T	//T will be affected by the sting
-	to_chat(T, SPAN_WARNING("You feel a tiny prick."))
-	return
-
-*/

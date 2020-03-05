@@ -22,8 +22,8 @@
 							SPAN_LING("Our arm twists and mutates, transforming it into a deadly blade."),
 							SPAN_DANGER("You hear organic matter ripping and tearing!"))
 	playsound(get_turf(src), 'infinity/sound/effects/lingextends.ogg', 50, 1)
-	sleep(6)
-	blade = new(M)
-	blade.creator = M
-	M.put_in_hands(blade)
-	playsound(loc, 'infinity/sound/weapons/bloodyslice.ogg', 30, 1)
+	spawn(1 SECOND)
+		blade = new(M)
+		blade.creator = M
+		M.put_in_hands(blade)
+		playsound(loc, 'infinity/sound/weapons/bloodyslice.ogg', 30, 1)

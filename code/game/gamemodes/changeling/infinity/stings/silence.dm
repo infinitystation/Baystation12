@@ -3,7 +3,6 @@
 	desc = "Sting target"
 	icon_state = "sting_mute"
 	chemical_cost = 10
-	no_lesser = 0
 
 /datum/stings/silence/sting_action(mob/user, mob/living/T)
 	. = ..()
