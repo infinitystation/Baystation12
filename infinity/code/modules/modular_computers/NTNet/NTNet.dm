@@ -13,11 +13,11 @@
 
 		var/adapter_quality = A.long_range
 		if(adapter_quality <= 1) adapter_quality = 1
-		else adapter_quality /= 1.5
+		else adapter_quality /= 1.25
 
 		var/m = Clamp(R.total_component_rating_of_type(/obj/item/weapon/stock_parts/scanning_module), 1, 10)
 		if(m <= 1) m = 1
 
 		else m /= 2
 		. = 4 - log(distance / m / adapter_quality / NTNET_RADIUS_MULTIPLIER)
-		if(. <= 0) . = 0
+		if(. < 0) . = 0
