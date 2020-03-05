@@ -78,10 +78,10 @@
 									SPAN_DANGER("[src]'s chin skin bulges and tears, launching a bone-dart at [T]!")))
 			to_chat(T, SPAN_WARNING("You was stinged!"))
 		if(1)
-			to_chat(user, SPAN_LING("Мы жалим [T] незаметно для окружающих. Она чувствует лёгкий укол."))
+			to_chat(user, SPAN_LING("Мы жалим [T] незаметно для окружающих и жертвы. Она чувствует лёгкий укол."))
 			to_chat(T, SPAN_NOTICE("You feel a tiny prick."))
 		if(0)
-			to_chat(user, SPAN_LING("Мы незаметно жалим [T]. Она ничего не заметит."))
+			to_chat(user, SPAN_LING("Мы незаметно жалим [T]. Жертва ничего не заметит."))
 
 /datum/stings/proc/sting_action(mob/user, mob/living/carbon/human/T)
 	var/obj/item/organ/external/target_limb = T.get_organ(user.zone_sel.selecting)

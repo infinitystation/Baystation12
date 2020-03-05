@@ -218,7 +218,7 @@ var/list/datum/power/changeling/powerinstances = list()
 /datum/power/changeling/rapid_regeneration
 	name = "Rapid Regeneration"
 	desc = "Мы развиваем способность быстро регенерироваться, не прибегая к стазису."
-	helptext = "Лечит внешний урон каждый тик."
+	helptext = "Лечит урон каждый тик - в том числе внутренние органы."
 	genomecost = 5
 	verbpath = /mob/proc/changeling_rapidregen
 

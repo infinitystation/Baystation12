@@ -2,7 +2,7 @@
 	name = "Starvation Sting (10)"
 	desc = "Sting target"
 	icon_state = "sting_starvation"
-	chemical_cost = 5
+	chemical_cost = 10
 	visible = 0
 
 /datum/stings/starvation/sting_action(user, mob/living/carbon/T)
