@@ -25,5 +25,3 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 		changelingID = "[honorific] [changelingID]"
 	else
 		changelingID = "[honorific] [rand(1,999)]"
-
-//Used to dump the languages from the changeling datum into the actual mob.

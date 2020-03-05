@@ -45,7 +45,7 @@
 	target.visible_message("<span class='warning'>With a sickening crunch, \
 	[target] reforms [target.p_their()] [blade.name] into an arm!</span>",
 	"<span class='warning'>[blade] reforms back to normal.</span>",
-	"<span class='italic>You hear organic matter ripping and tearing!</span>")
+	"<span class='italic'>You hear organic matter ripping and tearing!</span>")
 
 	qdel(blade)
 	target.update_inv_hands()
