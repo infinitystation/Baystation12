@@ -10,13 +10,3 @@
 	spawner_type = /mob/living/simple_animal/hostile/carp/holodeck
 	deliveryamt = 4
 	newvars = list("faction" = null, "melee_damage_lower" = 0, "melee_damage_upper" = 0, "environment_smash" = 0, "destroy_surroundings" = 0)
-
-//[INF]
-
-/obj/item/weapon/grenade/spawnergrenade/banana
-	name = "banana delivery grenade"
-	spawner_type = /obj/item/weapon/bananapeel
-	deliveryamt = 4
-	origin_tech = list(TECH_MATERIAL = 3, TECH_MAGNET = 2, TECH_ESOTERIC = 8) //
-
-//[/INF]

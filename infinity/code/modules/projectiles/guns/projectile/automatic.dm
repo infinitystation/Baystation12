@@ -216,7 +216,7 @@
 	icon = 'infinity/icons/obj/guns/assault_rifle.dmi'
 	force = 5
 	caliber = CALIBER_RIFLE
-	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 3, TECH_ESOTERIC = 8)
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 3, TECH_ESOTERIC = 4)
 	magazine_type = /obj/item/ammo_magazine/rifle/rubber
 	allowed_magazines = /obj/item/ammo_magazine/rifle/rubber
 	w_class = ITEM_SIZE_NORMAL

@@ -158,7 +158,7 @@
 	desc = "A true prankster's facial attire. A clown is incomplete without their wig and mask."
 	icon_state = "clown"
 	item_state = "clown"
-	tint = 0 //INF was 1
+	tint = 1 //INF
 	body_parts_covered = EYES //INF
 
 /obj/item/clothing/mask/gas/sexyclown
