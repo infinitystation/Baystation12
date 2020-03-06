@@ -154,6 +154,7 @@
 	desc = "This rifle looks like STS-35, but it is modified to... Honk?"
 	icon_state = "ariflehonk"
 	orig_state = "ariflehonk"
+	icon = 'infinity/icons/obj/guns/assault_rifle.dmi'
 	force = 5
 	caliber = CALIBER_RIFLE
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 3, TECH_ESOTERIC = 8)
