@@ -10,57 +10,57 @@
 
 	var/obj/item/grab/G = src.get_active_hand()
 	if(!istype(G))
-		to_chat(src, SPAN_LING("Мы должны удерживать добычу, чтобы поглотить её."))
+		to_chat(src, SPAN_LING("РњС‹ РґРѕР»Р¶РЅС‹ СѓРґРµСЂР¶РёРІР°С‚СЊ РґРѕР±С‹С‡Сѓ, С‡С‚РѕР±С‹ РїРѕРіР»РѕС‚РёС‚СЊ РµС‘."))
 		return
 
 	var/mob/living/carbon/human/T = G.affecting
 	if(!istype(T))
-		to_chat(src, SPAN_LING("ДНК [T] не совместима с нашим геномом."))
+		to_chat(src, SPAN_LING("Р”РќРљ [T] РЅРµ СЃРѕРІРјРµСЃС‚РёРјР° СЃ РЅР°С€РёРј РіРµРЅРѕРјРѕРј."))
 		return
 
 	if(T.isSynthetic())
-		to_chat(src, SPAN_LING("Мы не можемь извлекать ДНК из синтетиков!"))
+		to_chat(src, SPAN_LING("РњС‹ РЅРµ РјРѕР¶РµРјСЊ РёР·РІР»РµРєР°С‚СЊ Р”РќРљ РёР· СЃРёРЅС‚РµС‚РёРєРѕРІ!"))
 		return
 
 	if(T.species.species_flags & SPECIES_FLAG_NO_SCAN)
-		to_chat(src, SPAN_LING("Мы не знаем, как усвоить ДНК этого существа!"))
+		to_chat(src, SPAN_LING("РњС‹ РЅРµ Р·РЅР°РµРј, РєР°Рє СѓСЃРІРѕРёС‚СЊ Р”РќРљ СЌС‚РѕРіРѕ СЃСѓС‰РµСЃС‚РІР°!"))
 		return
 
 	if(islesserform(T))
-		to_chat(src, SPAN_LING("ДНК этого существа не совместимо с нашей формой!"))
+		to_chat(src, SPAN_LING("Р”РќРљ СЌС‚РѕРіРѕ СЃСѓС‰РµСЃС‚РІР° РЅРµ СЃРѕРІРјРµСЃС‚РёРјРѕ СЃ РЅР°С€РµР№ С„РѕСЂРјРѕР№!"))
 		return
 
 	if(MUTATION_HUSK in T.mutations)
-		to_chat(src, SPAN_LING("ДНК этого существа слишком повреждено!"))
+		to_chat(src, SPAN_LING("Р”РќРљ СЌС‚РѕРіРѕ СЃСѓС‰РµСЃС‚РІР° СЃР»РёС€РєРѕРј РїРѕРІСЂРµР¶РґРµРЅРѕ!"))
 		return
 
 	if(!G.can_absorb())
-		to_chat(src, SPAN_LING("Мы должны крепче держать добычу."))
+		to_chat(src, SPAN_LING("РњС‹ РґРѕР»Р¶РЅС‹ РєСЂРµРїС‡Рµ РґРµСЂР¶Р°С‚СЊ РґРѕР±С‹С‡Сѓ."))
 		return
 
 	if(T.stat == DEAD && world.time - timeofdeath > 5 MINUTES)
-		to_chat(src, SPAN_LING("Этот труп мертв больше 5 минут и не содержит усваиваемого генома. Лучше поохотиться на другую жертву."))
+		to_chat(src, SPAN_LING("Р­С‚РѕС‚ С‚СЂСѓРї РјРµСЂС‚РІ Р±РѕР»СЊС€Рµ 5 РјРёРЅСѓС‚ Рё РЅРµ СЃРѕРґРµСЂР¶РёС‚ СѓСЃРІР°РёРІР°РµРјРѕРіРѕ РіРµРЅРѕРјР°. Р›СѓС‡С€Рµ РїРѕРѕС…РѕС‚РёС‚СЊСЃСЏ РЅР° РґСЂСѓРіСѓСЋ Р¶РµСЂС‚РІСѓ."))
 		return
 
 	if(changeling.isabsorbing)
-		to_chat(src, SPAN_LING("Мы уже поглощаем!"))
+		to_chat(src, SPAN_LING("РњС‹ СѓР¶Рµ РїРѕРіР»РѕС‰Р°РµРј!"))
 		return
 
 	var/obj/item/organ/external/affecting = T.get_organ(src.zone_sel.selecting)
 	if(!affecting)
-		to_chat(src, SPAN_WARNING("У [T] нет этой части тела!"))
+		to_chat(src, SPAN_WARNING("РЈ [T] РЅРµС‚ СЌС‚РѕР№ С‡Р°СЃС‚Рё С‚РµР»Р°!"))
 
 	changeling.isabsorbing = 1
 	if(T.paralysis)
-		if(alert(src, "Жертва в сознании. Предложить ей не сопротивляться и провести поглощение бескровно?", "Выбор", "Да", "Нет") == "Нет")
+		if(alert(src, "Р–РµСЂС‚РІР° РІ СЃРѕР·РЅР°РЅРёРё. РџСЂРµРґР»РѕР¶РёС‚СЊ РµР№ РЅРµ СЃРѕРїСЂРѕС‚РёРІР»СЏС‚СЊСЃСЏ Рё РїСЂРѕРІРµСЃС‚Рё РїРѕРіР»РѕС‰РµРЅРёРµ Р±РµСЃРєСЂРѕРІРЅРѕ?", "Р’С‹Р±РѕСЂ", "Р”Р°", "РќРµС‚") == "РќРµС‚")
 			forced_absorbing = 1
 		if(!forced_absorbing)
-			if(alert(T, "Существо дало вам выбор. Вы хотите обратиться бескровно?", "Выбор", "Да", "Нет") == "Нет")
-				to_chat(src, SPAN_WARNING("[T] отказывается от нашего щедрого предложения!"))
+			if(alert(T, "РЎСѓС‰РµСЃС‚РІРѕ РґР°Р»Рѕ РІР°Рј РІС‹Р±РѕСЂ. Р’С‹ С…РѕС‚РёС‚Рµ РѕР±СЂР°С‚РёС‚СЊСЃСЏ Р±РµСЃРєСЂРѕРІРЅРѕ?", "Р’С‹Р±РѕСЂ", "Р”Р°", "РќРµС‚") == "РќРµС‚")
+				to_chat(src, SPAN_WARNING("[T] РѕС‚РєР°Р·С‹РІР°РµС‚СЃСЏ РѕС‚ РЅР°С€РµРіРѕ С‰РµРґСЂРѕРіРѕ РїСЂРµРґР»РѕР¶РµРЅРёСЏ!"))
 				changeling.isabsorbing = 0
 				return
 	else
-		if(alert(src, "Жертва БЕЗ сознания. Подождать, пока не проснется? Если нет - мы поглотим её так.", "Выбор", "Да", "Нет") == "Да")
+		if(alert(src, "Р–РµСЂС‚РІР° Р‘Р•Р— СЃРѕР·РЅР°РЅРёСЏ. РџРѕРґРѕР¶РґР°С‚СЊ, РїРѕРєР° РЅРµ РїСЂРѕСЃРЅРµС‚СЃСЏ? Р•СЃР»Рё РЅРµС‚ - РјС‹ РїРѕРіР»РѕС‚РёРј РµС‘ С‚Р°Рє.", "Р’С‹Р±РѕСЂ", "Р”Р°", "РќРµС‚") == "Р”Р°")
 			changeling.isabsorbing = 0
 			return
 		else
@@ -80,7 +80,7 @@
 				T.stuttering += 40 // horror effect
 				if(!do_mob(src, T, 8 SECONDS))
 					src.visible_message(SPAN_WARNING("[src]'s proboscis flashed back in mouth, as claws turned into fingers!"))
-					to_chat(src, SPAN_LING("Поглощение было прервано!"))
+					to_chat(src, SPAN_LING("РџРѕРіР»РѕС‰РµРЅРёРµ Р±С‹Р»Рѕ РїСЂРµСЂРІР°РЅРѕ!"))
 					changeling.isabsorbing = 0
 					return
 			if(2)
@@ -88,7 +88,7 @@
 					while(T.getBruteLoss() <= 300 ) //mega damage
 						if(!do_mob(src, T, 3.7 SECONDS)) //46 seconds, usually
 							src.visible_message(SPAN_WARNING("[src]'s proboscis flashed back in mouth, as claws turned into fingers!"))
-							to_chat(src, SPAN_LING("Поглощение было прервано!"))
+							to_chat(src, SPAN_LING("РџРѕРіР»РѕС‰РµРЅРёРµ Р±С‹Р»Рѕ РїСЂРµСЂРІР°РЅРѕ!"))
 							changeling.isabsorbing = 0
 							return
 						target_organ= pick(T.organs)
@@ -112,7 +112,7 @@
 				while(T.vessel.total_volume >= 50) //will su... absorb 93% of victim's fluids
 					if(!do_mob(src, T, 3.7 SECONDS))
 						src.visible_message(SPAN_WARNING("[src]'s proboscis flashed back in mouth!"))
-						to_chat(src, SPAN_LING("Поглощение было прервано!"))
+						to_chat(src, SPAN_LING("РџРѕРіР»РѕС‰РµРЅРёРµ Р±С‹Р»Рѕ РїСЂРµСЂРІР°РЅРѕ!"))
 						changeling.isabsorbing = 0
 						return
 					if(forced_absorbing)
@@ -143,24 +143,24 @@
 				playsound(get_turf(src), 'infinity/sound/magic/demon_consume.ogg', 40, 1, -3.5)
 				if(!do_mob(src, T, 12 SECONDS))
 					src.visible_message(SPAN_WARNING("[src]'s stops formin the cocoon!"))
-					to_chat(src, SPAN_LING("Создание кокона было прервано!"))
+					to_chat(src, SPAN_LING("РЎРѕР·РґР°РЅРёРµ РєРѕРєРѕРЅР° Р±С‹Р»Рѕ РїСЂРµСЂРІР°РЅРѕ!"))
 					changeling.isabsorbing = 0
 					return
 
 		SSstatistics.add_field_details("changeling_powers","A[stage]")
 	if(forced_absorbing)
 		visible_message(SPAN_WARNING("[src] retracts claws and violently removes proboscis from \the [T]!"))
-		to_chat(src, SPAN_LING("Мы поглотили лишь часть генома, что был у [T] из-за того, что повредили сосуд."))
+		to_chat(src, SPAN_LING("РњС‹ РїРѕРіР»РѕС‚РёР»Рё Р»РёС€СЊ С‡Р°СЃС‚СЊ РіРµРЅРѕРјР°, С‡С‚Рѕ Р±С‹Р» Сѓ [T] РёР·-Р·Р° С‚РѕРіРѕ, С‡С‚Рѕ РїРѕРІСЂРµРґРёР»Рё СЃРѕСЃСѓРґ."))
 /*todo
 		var/message
 		switch(cocoon_type)
 			if(3 to INFINITY) message = "[src] begins to form some sort of cocoon around [T]!"
-			if(2) message = "Субстанция из руки [src] покрывает ваше тело, шею, голову! Вы ничего не видите... Оно сжимает вас, не позволяя двигаться."
+			if(2) message = "РЎСѓР±СЃС‚Р°РЅС†РёСЏ РёР· СЂСѓРєРё [src] РїРѕРєСЂС‹РІР°РµС‚ РІР°С€Рµ С‚РµР»Рѕ, С€РµСЋ, РіРѕР»РѕРІСѓ! Р’С‹ РЅРёС‡РµРіРѕ РЅРµ РІРёРґРёС‚Рµ... РћРЅРѕ СЃР¶РёРјР°РµС‚ РІР°СЃ, РЅРµ РїРѕР·РІРѕР»СЏСЏ РґРІРёРіР°С‚СЊСЃСЏ."
 			else
 		to_chat(src, SPAN_DANGER(message))*/
 	else
 		visible_message(SPAN_NOTICE("[src] softly removes its proboscis from \the [T]."))
-		to_chat(src, SPAN_LING("Мы поглотили весь геном, что был у [T] благодаря отсутствию сопротивления! Хорошая работа."))
+		to_chat(src, SPAN_LING("РњС‹ РїРѕРіР»РѕС‚РёР»Рё РІРµСЃСЊ РіРµРЅРѕРј, С‡С‚Рѕ Р±С‹Р» Сѓ [T] Р±Р»Р°РіРѕРґР°СЂСЏ РѕС‚СЃСѓС‚СЃС‚РІРёСЋ СЃРѕРїСЂРѕС‚РёРІР»РµРЅРёСЏ! РҐРѕСЂРѕС€Р°СЏ СЂР°Р±РѕС‚Р°."))
 		playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 70, 1, -3.5)
 
 	if(forced_absorbing)
@@ -220,7 +220,7 @@
 	if(T.mind?.changeling)
 		T.Drain() //effective execution.
 		T.death(0)
-		to_chat(T.client, SPAN_DANGER("Мы были поглощены сородичем. Это конец..."))
+		to_chat(T.client, SPAN_DANGER("РњС‹ Р±С‹Р»Рё РїРѕРіР»РѕС‰РµРЅС‹ СЃРѕСЂРѕРґРёС‡РµРј. Р­С‚Рѕ РєРѕРЅРµС†..."))
 		return
 //	T.death(0)
 
@@ -231,17 +231,17 @@
 	coc.victim = T
 	coc.background()
 	if(jobban_isbanned(T, MODE_CHANGELING))
-		to_chat(T.client, SPAN_WARNING("Вы были поглощены генокрадом, однако, он оставил кокон, \
-		в котором Ваш персонаж станет одним из Них. Однако, у вас бан на роль генокрада - \
-		к сожалению, вы покидаете тело."))
+		to_chat(T.client, SPAN_WARNING("Р’С‹ Р±С‹Р»Рё РїРѕРіР»РѕС‰РµРЅС‹ РіРµРЅРѕРєСЂР°РґРѕРј, РѕРґРЅР°РєРѕ, РѕРЅ РѕСЃС‚Р°РІРёР» РєРѕРєРѕРЅ, \
+		РІ РєРѕС‚РѕСЂРѕРј Р’Р°С€ РїРµСЂСЃРѕРЅР°Р¶ СЃС‚Р°РЅРµС‚ РѕРґРЅРёРј РёР· РќРёС…. РћРґРЅР°РєРѕ, Сѓ РІР°СЃ Р±Р°РЅ РЅР° СЂРѕР»СЊ РіРµРЅРѕРєСЂР°РґР° - \
+		Рє СЃРѕР¶Р°Р»РµРЅРёСЋ, РІС‹ РїРѕРєРёРґР°РµС‚Рµ С‚РµР»Рѕ."))
 		T.ghostize(0) //cannot reenter in corpse
 	else
-		to_chat(T.client, SPAN_DANGER("Вы были поглощены генокрадом, однако, он оставил кокон, \
-		в котором Ваш персонаж станет одним из Них. Если вы выйдите или станете призраком, то \
-		другие призраки смогут вселиться в ваше старое тело."))
+		to_chat(T.client, SPAN_DANGER("Р’С‹ Р±С‹Р»Рё РїРѕРіР»РѕС‰РµРЅС‹ РіРµРЅРѕРєСЂР°РґРѕРј, РѕРґРЅР°РєРѕ, РѕРЅ РѕСЃС‚Р°РІРёР» РєРѕРєРѕРЅ, \
+		РІ РєРѕС‚РѕСЂРѕРј Р’Р°С€ РїРµСЂСЃРѕРЅР°Р¶ СЃС‚Р°РЅРµС‚ РѕРґРЅРёРј РёР· РќРёС…. Р•СЃР»Рё РІС‹ РІС‹Р№РґРёС‚Рµ РёР»Рё СЃС‚Р°РЅРµС‚Рµ РїСЂРёР·СЂР°РєРѕРј, С‚Рѕ \
+		РґСЂСѓРіРёРµ РїСЂРёР·СЂР°РєРё СЃРјРѕРіСѓС‚ РІСЃРµР»РёС‚СЊСЃСЏ РІ РІР°С€Рµ СЃС‚Р°СЂРѕРµ С‚РµР»Рѕ."))
 	spawn(6 SECONDS)
 		for(var/mob/observer/ghost/O in GLOB.ghost_mob_list)
 			to_chat(O, FONT_LARGE(SPAN_LING(
-			"Появился кокон генокрада! Нажмите на него, чтобы стать одним из них. ([ghost_follow_link(coc, O)])")))
+			"РџРѕСЏРІРёР»СЃСЏ РєРѕРєРѕРЅ РіРµРЅРѕРєСЂР°РґР°! РќР°Р¶РјРёС‚Рµ РЅР° РЅРµРіРѕ, С‡С‚РѕР±С‹ СЃС‚Р°С‚СЊ РѕРґРЅРёРј РёР· РЅРёС…. ([ghost_follow_link(coc, O)])")))
 	return 1
 
