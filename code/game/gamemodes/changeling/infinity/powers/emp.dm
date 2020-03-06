@@ -17,7 +17,7 @@
 					L.broken()
 			empulse(get_turf(usr), 2, 4, 1)
 			playsound(loc, 'sound/effects/screech.ogg', 40, 1)
-			visible_message("<b>[src]</b> РєСЂРёС‡РёС‚!")
+			visible_message("<b>[src]</b> кричит!")
 		else
 			to_chat(src, SPAN_LING("We cannot do this in vents..."))
 	return 1

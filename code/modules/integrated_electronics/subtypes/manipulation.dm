@@ -561,7 +561,7 @@
 /obj/item/integrated_circuit/manipulation/bluespace_rift/do_work()
 	var/obj/machinery/computer/teleporter/tporter = get_pin_data_as_type(IC_INPUT, 1, /obj/machinery/computer/teleporter)
 	var/step_dir = get_pin_data(IC_INPUT, 2)
-/*[INF] disabled	if(!(get(z) in GetConnectedZlevels(get_z(tporter))))
+/*[INF] disabled	if(!AreConnectedZLevels(get_z(src), get_z(tporter)))
 		tporter = null
 		*/
 

@@ -8,10 +8,10 @@
 /datum/stings/deaf/sting_action(mob/user, mob/living/T)
 	. = ..()
 	to_chat(T, SPAN_DANGER("Your ears pop and begin ringing loudly!"))
-	T.sdisabilities |= DEAF
+	T.sdisabilities |= DEAFENED
 	addtimer(CALLBACK(src, .proc/undeaf, T), rand(40 SECONDS, 60 SECONDS))
 	SSstatistics.add_field_details("changeling_powers","DS")
 
 /datum/stings/deaf/proc/undeaf(mob/living/T)
 	if(T)
-		T.sdisabilities &= ~DEAF
+		T.sdisabilities &= ~DEAFENED

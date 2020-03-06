@@ -67,6 +67,15 @@
 	старше может подписать двухлетний контракт. Кандидаты в офицеры должны иметь как минимум степень бакалавра в \
 	соответствующей области (астрология, инженерия, ксеноархеология и т.д.)."
 
+/decl/cultural_info/faction/police
+	name = FACTION_SPACECOPS
+	description = "The Sol Federal (SFP) is a government law enforcement agency tasked with enforcing Sol Central Government law, \
+	investigating breaches of law, fugitive recovery and transport, and securing ports of entry. \
+	Some Agents embedded with other organizations (e.g. an <l>Expeditionary Corps</l> ship) and are expected to answer to their superiours from those organizations. \
+	Notable units are Organized Crime & Vice (self-explanatory), Territory Support (ports of entry and helping local law enforcement), \
+	Special Investigations (sensitive and urgent cases) and Fugitive Recovery Division (for when local authorities are unable or unwilling to arrest someone). \
+	The contractor SFP Trackers are also used find and arrest low-profile fugitives from justice."
+
 /decl/cultural_info/faction/remote/nanotrasen
 	name = FACTION_NANOTRASEN
 	description = "Корпорация NanoTrasen является одной из величайших транс-звездных корпораций современности. \

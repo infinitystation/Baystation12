@@ -1,4 +1,3 @@
-
 /mob/new_player/proc/handle_privacy_poll()
 	establish_db_connection()
 	if(!dbcon.IsConnected())

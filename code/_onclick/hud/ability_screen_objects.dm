@@ -353,7 +353,7 @@
 		toggle_open(2) //forces the icons to refresh on screen
 
 /mob/Life()
-	..()
+	UNLINT(..())
 	if(ability_master)
 		ability_master.update_spells(0)
 
