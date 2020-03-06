@@ -285,4 +285,28 @@
 		/obj/item/weapon/gun/projectile/pistol/military/alt,
 		)
 
+/obj/item/weapon/storage/backpack/dufflebag/syndie_kit/heavy
+	startswith = list(
+		/obj/item/clothing/suit/armor/pcarrier/merc,
+		/obj/item/clothing/head/helmet/merc,
+		/obj/item/weapon/gun/projectile/automatic/l6_saw,
+		/obj/item/ammo_magazine/box/machinegun = 3,
+		/obj/item/weapon/grenade/frag/high_yield,
+		/obj/item/weapon/shield/energy
+		)
+
+/obj/item/weapon/storage/backpack/clown/syndie_kit
+	name = "Syndies von Honkerton"
+	desc = "It's a backpack made by Honk! Co. At least it wants to look like it does..."
+	startswith = list(
+		/obj/item/clothing/shoes/clown_shoes,
+		/obj/item/clothing/mask/gas/clown_hat,
+		/obj/item/clothing/under/rank/clown,
+		/obj/item/weapon/bikehorn,
+		/obj/item/weapon/gun/projectile/automatic/assault_rifle/clown,
+		/obj/item/ammo_magazine/rifle/rubber = 3,
+		/obj/item/weapon/melee/energy/sword/clown,
+		/obj/item/weapon/grenade/spawnergrenade/banana
+		)
+
 //[/INF]

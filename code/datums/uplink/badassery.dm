@@ -160,4 +160,18 @@
 	antag_roles = list(MODE_MERCENARY)
 	path = /obj/item/weapon/storage/backpack/dufflebag/syndie_kit/medic
 
+/datum/uplink_item/item/badassery/heavy
+	name = "Heavy Kit"
+	desc = "This kit is for heavy gunners. It contains: Heavy armor, energy shield and L6 Saw."
+	item_cost = DEFAULT_TELECRYSTAL_AMOUNT * 2
+	antag_roles = list(MODE_MERCENARY)
+	path = /obj/item/weapon/storage/backpack/dufflebag/syndie_kit/heavy
+
+/datum/uplink_item/item/badassery/clown
+	name = "Clown Kit"
+	desc = "This kit is developed special to HONK your enemies to death. It contains: Clown Suit, mask and shoes, 3 banana grenades, beautiful clown rifle and honkenegry sword."
+	item_cost = DEFAULT_TELECRYSTAL_AMOUNT
+	antag_roles = list(MODE_MERCENARY)
+	path = /obj/item/weapon/storage/backpack/clown/syndie_kit
+
 //[/INF]
