@@ -131,15 +131,6 @@
 	icon_state = "riflecasing"
 	spent_icon = "riflecasing-spent"
 
-//[INF]
-
-/obj/item/ammo_casing/rifle/rubber
-	desc = "A rubber rifle bullet casing."
-	caliber = CALIBER_RIFLE
-	projectile_type = /obj/item/projectile/bullet/rifle/rubber
-
-//[/INF]
-
 /obj/item/ammo_casing/shell
 	name = "shell casing"
 	desc = "An antimaterial shell casing."

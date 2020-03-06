@@ -193,22 +193,6 @@
 	penetrating = 1
 	//distance_falloff //inf = 1.5
 
-//[INF]
-
-/obj/item/projectile/bullet/rifle/rubber
-	fire_sound = 'sound/items/bikehorn.ogg'
-	damage = 5
-	armor_penetration = 0
-	penetrating = 0
-
-/obj/item/projectile/bullet/rifle/rubber/on_hit(var/atom/target, var/blocked = 0, var/def_zone = null)
-	if(blocked == 0)
-		if (istype(target, /mob/living))
-			var/mob/living/M = target
-			M.slip("the [src.name]",2)
-
-//[/INF]
-
 /obj/item/projectile/bullet/rifle/military
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
 	damage = 40

@@ -103,3 +103,8 @@
 
 /obj/item/ammo_casing/energy/instakill/red
 	projectile_type = /obj/item/projectile/beam/instakill/red
+
+/obj/item/ammo_casing/rifle/rubber
+	desc = "A rubber rifle bullet casing."
+	caliber = CALIBER_RIFLE
+	projectile_type = /obj/item/projectile/bullet/rifle/rubber

@@ -119,7 +119,7 @@
 	desc = "The rugged STS-35 is a durable automatic weapon of a make popular on the frontier worlds. Originally produced by Hephaestus. The serial number has been scratched off."
 	icon = 'icons/obj/guns/assault_rifle.dmi'
 	icon_state = "arifle"
-	var/orig_state = "arifle"
+	var/orig_state = "arifle" //INF
 	item_state = null
 	force = 10
 	caliber = CALIBER_RIFLE
@@ -147,29 +147,6 @@
 	one_hand_penalty = 8
 
 	s_gun = "STS-35"
-
-
-/obj/item/weapon/gun/projectile/automatic/assault_rifle/clown
-	name = "HONK-35 clown rifle"
-	desc = "This rifle looks like STS-35, but it is modified to... Honk?"
-	icon_state = "ariflehonk"
-	orig_state = "ariflehonk"
-	icon = 'infinity/icons/obj/guns/assault_rifle.dmi'
-	force = 5
-	caliber = CALIBER_RIFLE
-	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 3, TECH_ESOTERIC = 8)
-	magazine_type = /obj/item/ammo_magazine/rifle/rubber
-	allowed_magazines = /obj/item/ammo_magazine/rifle/rubber
-	w_class = ITEM_SIZE_NORMAL
-	mag_insert_sound = 'sound/items/bikehorn.ogg'
-	mag_remove_sound = 'sound/items/bikehorn.ogg'
-
-	s_gun = "HONK-35"
-
-/obj/item/weapon/gun/projectile/automatic/assault_rifle/clown/Crossed(AM as mob|obj)
-	if (istype(AM, /mob/living))
-		var/mob/living/M = AM
-		M.slip("the [src.name]",4)
 
 /obj/item/weapon/gun/projectile/automatic/assault_rifle/on_update_icon()
 	..()
