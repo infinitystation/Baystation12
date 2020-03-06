@@ -338,7 +338,7 @@
 			return 1
 		var/datum/shuttle_log/my_log = SSshuttle.shuttle_logs[selected_shuttle]
 		if(world.time - my_log.last_spam >= 1 MINUTE) //Slow down with that spam button
-			GLOB.global_announcer.autosay("[selected_shuttle.name] планирует отбывать на миссию в [time]. Следующим членам экипажа проследовать в [place] незамедлительно: [crew].", "Hangar Announcement System")
+			GLOB.global_announcer.autosay("[selected_shuttle.name] РїР»Р°РЅРёСЂСѓРµС‚ РѕС‚Р±С‹РІР°С‚СЊ РЅР° РјРёСЃСЃРёСЋ РІ [time]. РЎР»РµРґСѓСЋС‰РёРј С‡Р»РµРЅР°Рј СЌРєРёРїР°Р¶Р° РїСЂРѕСЃР»РµРґРѕРІР°С‚СЊ РІ [place] РЅРµР·Р°РјРµРґР»РёС‚РµР»СЊРЅРѕ: [crew].", "Hangar Announcement System")
 			my_log.last_spam = world.time
 		else
 			to_chat(user, "<span class='warning'>It's too soon after the previous announcement!</span>")

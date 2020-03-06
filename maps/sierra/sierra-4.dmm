@@ -145,6 +145,26 @@
 	icon_state = "steel"
 	},
 /area/centcom/control)
+"aaw" = (
+/obj/structure/curtain{
+	color = "#68ccab"
+	},
+/turf/simulated/floor/holofloor/wood,
+/area/holodeck/source_temple)
+"aax" = (
+/obj/structure/curtain,
+/turf/simulated/floor/holofloor/wood,
+/area/holodeck/source_temple)
+"aay" = (
+/obj/structure/curtain{
+	color = "#cd6889"
+	},
+/turf/simulated/floor/holofloor/wood,
+/area/holodeck/source_temple)
+"aaz" = (
+/obj/structure/table/rack/holorack,
+/turf/simulated/floor/holofloor/wood,
+/area/holodeck/source_temple)
 "aaA" = (
 /obj/machinery/vending/boozeomat{
 	density = 0;
@@ -217,6 +237,10 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/administration/centcom)
+"aaI" = (
+/obj/structure/holostool,
+/turf/simulated/floor/holofloor/wood,
+/area/holodeck/source_temple)
 "aaN" = (
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine/centcomm{
@@ -3823,18 +3847,6 @@
 "aqV" = (
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/specops/centcom)
-"aqW" = (
-/obj/structure/cryo_spawner/thunderdome/elsa{
-	icon_state = "body_scanner_1";
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/red{
-	dir = 9
-	},
-/turf/unsimulated/floor{
-	icon_state = "steel"
-	},
-/area/centcom/holding)
 "aqX" = (
 /obj/structure/table/reinforced,
 /turf/unsimulated/floor{
@@ -14440,64 +14452,6 @@
 /area/holodeck/source_temple)
 "bli" = (
 /turf/simulated/wall/sandstone,
-/area/holodeck/source_temple)
-"blj" = (
-/obj/structure/table/rack/holorack,
-/turf/simulated/floor/holofloor/wood{
-	icon_state = "wood_broken3"
-	},
-/area/holodeck/source_temple)
-"blk" = (
-/obj/structure/holostool,
-/turf/simulated/floor/holofloor/wood{
-	icon_state = "wood_broken3"
-	},
-/area/holodeck/source_temple)
-"bll" = (
-/obj/structure/table/rack/holorack,
-/turf/simulated/floor/holofloor/wood{
-	icon_state = "wood_broken2"
-	},
-/area/holodeck/source_temple)
-"blm" = (
-/obj/structure/holostool,
-/turf/simulated/floor/holofloor/wood{
-	icon_state = "wood_broken4"
-	},
-/area/holodeck/source_temple)
-"bln" = (
-/obj/structure/table/rack/holorack,
-/turf/simulated/floor/holofloor/wood{
-	icon_state = "wood_broken1"
-	},
-/area/holodeck/source_temple)
-"blo" = (
-/obj/structure/holostool,
-/turf/simulated/floor/holofloor/wood{
-	icon_state = "wood_broken6"
-	},
-/area/holodeck/source_temple)
-"blq" = (
-/obj/structure/curtain{
-	color = "#68ccab"
-	},
-/turf/simulated/floor/holofloor/wood{
-	icon_state = "wood_broken6"
-	},
-/area/holodeck/source_temple)
-"blr" = (
-/obj/structure/curtain,
-/turf/simulated/floor/holofloor/wood{
-	icon_state = "wood_broken4"
-	},
-/area/holodeck/source_temple)
-"bls" = (
-/obj/structure/curtain{
-	color = "#cd6889"
-	},
-/turf/simulated/floor/holofloor/wood{
-	icon_state = "wood_broken3"
-	},
 /area/holodeck/source_temple)
 "blu" = (
 /turf/simulated/floor/holofloor/tiled/stone,
@@ -32087,7 +32041,7 @@ apt
 apt
 apt
 apt
-aqW
+aqX
 agb
 aab
 aab
@@ -33454,7 +33408,7 @@ aHd
 aHv
 aHz
 bli
-blj
+aaz
 aWe
 "}
 (93,1,1) = {"
@@ -33655,8 +33609,8 @@ blu
 blu
 blu
 blu
-blq
-blk
+aaw
+aaI
 aWe
 "}
 (94,1,1) = {"
@@ -34060,7 +34014,7 @@ blB
 blK
 blu
 bli
-bll
+aaz
 aWe
 "}
 (96,1,1) = {"
@@ -34261,8 +34215,8 @@ blC
 blC
 blL
 blu
-blr
-blm
+aax
+aaI
 aWe
 "}
 (97,1,1) = {"
@@ -34666,7 +34620,7 @@ blC
 blL
 blu
 bli
-bln
+aaz
 aWe
 "}
 (99,1,1) = {"
@@ -34867,8 +34821,8 @@ blC
 blC
 blL
 blu
-bls
-blo
+aay
+aaI
 aWe
 "}
 (100,1,1) = {"

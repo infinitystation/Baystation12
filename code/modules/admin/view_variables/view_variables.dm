@@ -26,6 +26,7 @@
 
 	var/html = {"
 		<html>
+		<meta charset=\"UTF-8\">
 		<head>
 			<script src='view_variables.js'></script>
 			<title>[D] (\ref[D] - [D.type])</title>
@@ -98,7 +99,7 @@
 		</html>
 		"}
 
-	usr << browse(html, "window=variables\ref[D];size=475x650")
+	show_browser(usr, html, "window=variables\ref[D];size=475x650")
 
 /client
 	var/list/watched_variables = list()

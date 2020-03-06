@@ -1,6 +1,6 @@
 /obj/item/clothing/suit/armor/pcarrier/custom_pcrc
 	name = "civil protection platecarrier"
-	desc = "Плитоноска сотрудника Гражданской Обороны, производено PCRC."
+	desc = "РџР»РёС‚РѕРЅРѕСЃРєР° СЃРѕС‚СЂСѓРґРЅРёРєР° Р“СЂР°Р¶РґР°РЅСЃРєРѕР№ РћР±РѕСЂРѕРЅС‹, РїСЂРѕРёР·РІРѕРґРµРЅРѕ PCRC."
 	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
 	item_icons = list(slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi')
 	icon_state = "scp_carrier"
@@ -8,7 +8,7 @@
 
 /obj/item/clothing/under/custom_pcrc
 	name = "civil protection uniform"
-	desc = "Униформа сотрудника Гражданской Обороны, производено PCRC."
+	desc = "РЈРЅРёС„РѕСЂРјР° СЃРѕС‚СЂСѓРґРЅРёРєР° Р“СЂР°Р¶РґР°РЅСЃРєРѕР№ РћР±РѕСЂРѕРЅС‹, РїСЂРѕРёР·РІРѕРґРµРЅРѕ PCRC."
 	icon = 'infinity/icons/obj/clothing/obj_under.dmi'
 	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
 	icon_state = "fleet"
@@ -17,7 +17,7 @@
 
 /obj/item/clothing/glasses/hud/health/custom_pcrc
 	name = "CP medical HUD"
-	desc = "Медицинский сканер сотрудников Гражданской Обороны."
+	desc = "РњРµРґРёС†РёРЅСЃРєРёР№ СЃРєР°РЅРµСЂ СЃРѕС‚СЂСѓРґРЅРёРєРѕРІ Р“СЂР°Р¶РґР°РЅСЃРєРѕР№ РћР±РѕСЂРѕРЅС‹."
 	icon = 'infinity/icons/obj/clothing/obj_eyes.dmi'
 	item_icons = list(slot_glasses_str = 'infinity/icons/mob/onmob/onmob_eyes.dmi')
 	icon_state = "hybrids_mat"

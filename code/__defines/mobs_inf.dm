@@ -11,7 +11,9 @@
 
 #define OBSERV_SPAWN_DELAY round(config.respawn_delay / 2)
 
-// Character's economic class
+//Organs
+#define BP_FAKE    "fake_brain"
+
 
 //Swarm Limbs
 #define BP_L_F_LEG 		"left front leg"

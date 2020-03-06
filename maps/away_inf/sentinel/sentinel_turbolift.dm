@@ -25,7 +25,7 @@
 	name = "lift (upper deck)"
 	lift_floor_label = "Deck 1"
 	lift_floor_name = "Crew Deck"
-	lift_announce_str = "Arriving at Habitation Deck: Секция гаупвахты. Секция экипажа. Столовая. Капсулы криосна. Спасательые капсулы. Туалет."
+	lift_announce_str = "Arriving at Habitation Deck: РЎРµРєС†РёСЏ РіР°СѓРїРІР°С…С‚С‹. РЎРµРєС†РёСЏ СЌРєРёРїР°Р¶Р°. РЎС‚РѕР»РѕРІР°СЏ. РљР°РїСЃСѓР»С‹ РєСЂРёРѕСЃРЅР°. РЎРїР°СЃР°С‚РµР»СЊС‹Рµ РєР°РїСЃСѓР»С‹. РўСѓР°Р»РµС‚."
 	base_turf = /turf/simulated/floor
 
 /area/turbolift/sentinel_first

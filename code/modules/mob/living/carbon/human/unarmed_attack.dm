@@ -287,4 +287,4 @@ var/global/list/sparring_attack_cache = list()
 	sharp = 0
 	edge = 0
 	attack_name = "light hit"
-	attack_sound = "light_strike" // INF@INFO в оригинале "punch"
+	attack_sound = "light_strike" // INF@INFO РІ РѕСЂРёРіРёРЅР°Р»Рµ "punch"

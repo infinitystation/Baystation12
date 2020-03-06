@@ -108,6 +108,7 @@
 		slot_r_ear_str = CUSTOM_ITEM_MOB
 	)
 
+/*
 /obj/item/clothing/ears/earmuffs/headphones/mental/verb/remotesay()
 	set name = "Project mind"
 	set category = "Superpower"
@@ -136,6 +137,7 @@
 	log_say("[key_name(usr)] sent a telepathic message using [src.name] to [key_name(target)]: [say]")
 	for(var/mob/observer/ghost/G in world)
 		G.show_message("<i>Telepathic message using [src.name] from <b>[src]</b> to <b>[target]</b>: [say]</i>")
+*/
 
 /obj/item/clothing/mask/surgical/quiet
 	desc = "Sterile mask. It has shades of winter camouflage."
