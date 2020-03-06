@@ -36,6 +36,7 @@
 	path = /obj/item/weapon/plastique
 
 //[INF]
+
 /datum/uplink_item/item/tools/superplastique
 	name = "X-4"
 	desc = "Upgraded version of C-4 explosives. Can destroy even a reinforced wall."
@@ -44,12 +45,16 @@
 
 //[/INF]
 
-/*[INF] /datum/uplink_item/item/tools/heavy_armor
+/*[INF]
+
+/datum/uplink_item/item/tools/heavy_armor
 	name = "Heavy Armor Vest and Helmet"
 	desc = "This satchel holds a combat helmet and fully equipped plate carrier. \
 	Suit up, and strap in, things are about to get hectic."
 	item_cost = 16
-	path = /obj/item/weapon/storage/backpack/dufflebag/syndie_kit/armor [/INF]*/
+	path = /obj/item/weapon/storage/backpack/dufflebag/syndie_kit/armor
+
+[/INF]*/
 
 /datum/uplink_item/item/tools/encryptionkey_radio
 	name = "Encrypted Radio Channel Key"
@@ -101,12 +106,17 @@
 			This device will be able to continuously reaccess the last 6 to 8  airlocks it was used on. \
 			Only people like you may activate it with screwdriver."
 //[/INF]
-/*[INF]/datum/uplink_item/item/tools/space_suit
+
+/*[INF]
+
+/datum/uplink_item/item/tools/space_suit
 	name = "Voidsuit and Tactical Mask"
 	desc = "A satchel containing a non-regulation voidsuit, voidsuit helmet, tactical mask, and oxygen tank. \
 	Conceal your identity, while also not dying in space."
 	item_cost = 28
-	path = /obj/item/weapon/storage/backpack/dufflebag/syndie_kit/space[/INF]*/
+	path = /obj/item/weapon/storage/backpack/dufflebag/syndie_kit/space
+
+[/INF]*/
 
 /datum/uplink_item/item/tools/thermal
 	name = "Thermal Imaging Glasses"
