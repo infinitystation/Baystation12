@@ -2,21 +2,39 @@
 //These are exclusive, so once it goes over one of these numbers, it reverts the ban
 #define STICKYBAN_MAX_MATCHES 20
 #define STICKYBAN_MAX_EXISTING_USER_MATCHES 5 //ie, users who were connected before the ban triggered
-
+// Смешанный IsBanned с проверкой массовых стик-банов (/tg/) и защитой от DOS (Nebula) ~bear1ake
 //Blocks an attempt to connect before even creating our client datum thing.
-world/IsBanned(key,address,computer_id)
+/world/IsBanned(key, address, computer_id, type)
+	var/static/key_cache = list()
+	if(type == "world")
+		return ..()
+
+	if(key_cache[key] >= REALTIMEOFDAY)
+		return list("reason"="concurrent connection attempts", "desc"="You are attempting to connect too fast. Try again.")
+	key_cache[key] = REALTIMEOFDAY + 10 //This proc shouldn't be runtiming. But if it does, then the expiry time will cover it to ensure genuine connection attempts don't get trapped in limbo.
+
 	if(ckey(key) in admin_datums)
+		key_cache[key] = 0
 		return ..()
 
 	if (text2num(computer_id) == 2147483647) //this cid causes stickybans to go haywire
 		log_access("Failed Login (invalid cid): [key] [address]-[computer_id]")
+		key_cache[key] = 0
 		return list("reason"="invalid login data", "desc"="Error: Could not check ban status, Please try again. Error message: Your computer provided an invalid Computer ID.)")
 
 	//Guest Checking
 	if(!config.guests_allowed && IsGuestKey(key))
 		log_access("Failed Login: [key] - Guests not allowed")
 		message_admins("<span class='notice'>Failed Login: [key] - Guests not allowed</span>")
+		key_cache[key] = 0
 		return list("reason"="guest", "desc"="\nReason: Guests not allowed. Please sign in with a byond account.")
+
+	var/ckeytext = ckey(key)
+	var/client/C = GLOB.ckey_directory[ckeytext]
+	//If this isn't here, then topic call spam will result in all clients getting kicked with a connecting too fast error.
+	if (C && ckeytext == C.ckey && address == C.address && computer_id == C.computer_id)
+		key_cache[key] = 0
+		return
 
 	if(config.ban_legacy_system)
 
@@ -25,17 +43,18 @@ world/IsBanned(key,address,computer_id)
 		if(.)
 			log_access("Failed Login: [key] [computer_id] [address] - Banned [.["reason"]]")
 			message_admins("<span class='notice'>Failed Login: [key] id:[computer_id] ip:[address] - Banned [.["reason"]]</span>")
+			key_cache[key] = 0
 			return .
 
+		key_cache[key] = 0
 		return ..()	//default pager ban stuff
 
 	else
 
-		var/ckeytext = ckey(key)
-
 		if(!establish_db_connection())
 			error("Ban database connection failure. Key [ckeytext] not checked")
 			log_misc("Ban database connection failure. Key [ckeytext] not checked")
+			key_cache[key] = 0
 			return
 
 		var/failedcid = 1
@@ -70,6 +89,7 @@ world/IsBanned(key,address,computer_id)
 
 			var/desc = "\nReason: You, or another user of this computer or connection ([pckey]) is banned from playing here. The ban reason is:\n[reason]\nThis ban was applied by [ackey] on [bantime], [expires]"
 
+			key_cache[key] = 0
 			. = list("reason"="[bantype]", "desc"="[desc]")
 
 		if (failedcid)
@@ -77,6 +97,7 @@ world/IsBanned(key,address,computer_id)
 		if (failedip)
 			message_admins("[key] has logged in with a blank ip in the ban check.")
 
+	key_cache[key] = 0
 	var/list/ban = ..()	//default pager ban stuff
 	var/ckey = ckey(key)
 	if (ban)
@@ -85,7 +106,6 @@ world/IsBanned(key,address,computer_id)
 			bannedckey = ban["ckey"]
 
 		var/newmatch = FALSE
-		var/client/C = GLOB.ckey_directory[ckey]
 		var/cachedban = SSstickyban.cache[bannedckey]
 
 		//rogue ban in the process of being reverted.
