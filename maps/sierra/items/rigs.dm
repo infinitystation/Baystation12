@@ -188,15 +188,17 @@
 	suit_type = "security command hardsuit"
 	desc = "A specialized hardsuit rig control module issued to ranking security command staff of the NanoTrasen and their peers."
 	icon_state = "command_sec_rig"
+//[inf]
 	armor = list(
-		melee = ARMOR_MELEE_RESISTANT,
-		bullet = ARMOR_BALLISTIC_PISTOL,
-		laser = ARMOR_LASER_SMALL,
+		melee = ARMOR_MELEE_MAJOR,
+		bullet = ARMOR_BALLISTIC_RESISTANT,
+		laser = ARMOR_LASER_MAJOR,
 		energy = ARMOR_ENERGY_SMALL,
 		bomb = ARMOR_BOMB_PADDED,
 		bio = ARMOR_BIO_SHIELDED,
-		rad = ARMOR_RAD_SMALL
-		)
+		rad = ARMOR_RAD_SMALL)
+	online_slowdown = 0.25
+//[/inf]
 
 	chest_type = /obj/item/clothing/suit/space/rig/command/hos
 	helm_type = /obj/item/clothing/head/helmet/space/rig/command/hos
