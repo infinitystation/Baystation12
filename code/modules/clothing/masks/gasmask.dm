@@ -74,7 +74,14 @@
 		bio = ARMOR_BIO_RESISTANT
 		)
 	tint = 0 //INF
-
+	sprite_sheets = list(
+		SPECIES_VOX = 'icons/mob/species/vox/onmob_mask_vox.dmi',
+		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_mask_vox_armalis.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_mask_resomi.dmi',
+		SPECIES_UNATHI = 'infinity/icons/mob/species/unathi/onmob_mask_unathi.dmi',
+		SPECIES_EROSAN = 'infinity/icons/mob/species/erosan/mask.dmi',
+		)
+//INF
 //In scaling order of utility and seriousness
 
 /obj/item/clothing/mask/gas/radical
