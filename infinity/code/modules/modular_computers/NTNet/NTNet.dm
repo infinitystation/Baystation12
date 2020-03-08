@@ -19,5 +19,5 @@
 		if(m <= 1) m = 1
 
 		else m /= 2
-		. = 4 - log(distance / m / adapter_quality / NTNET_RADIUS_MULTIPLIER)
+		. = NTNET_SPEED_LIMITER - log(distance / m / adapter_quality / NTNET_RADIUS_MULTIPLIER)
 		if(. < 0) . = 0

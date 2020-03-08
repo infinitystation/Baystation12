@@ -169,11 +169,13 @@ Subtypes
 
 /datum/terminal_command/ping
 	name = "ping"
-	man_entry = list("Format: ping nid", "Checks connection to the given nid.")
+//inf	man_entry = list("Format: ping nid", "Checks connection to the given nid.")
+	man_entry = list("Format: ping \[nid1] \[nid2] ... \[nid_n]", "Send packets through nearest NTNet relay and the given nids.", "Returns time lapse of packet retrieval.") //inf
 	pattern = "^ping"
 	skill_needed = SKILL_BASIC
 
 /datum/terminal_command/ping/proper_input_entered(text, mob/user, datum/terminal/terminal)
+/*inf
 	. = list("pinging ...")
 	if(length(text) < 6)
 		. += "ping: Improper syntax. Use ping nid."
@@ -188,6 +190,30 @@ Subtypes
 		. += "failed. Target device not responding."
 		return
 	. += "ping successful."
+inf*/
+//[INF]
+	. = list("pinging please wait...")
+	var/list/T = splittext(text, " ")
+	if(T && T.len > 1)
+		var/time2back = 0
+		var/packet_lost = 0
+		var/list/nids = T.Copy(2)
+		var/obj/item/weapon/stock_parts/computer/network_card/mynetwork_card = terminal.computer.get_component(PART_NETWORK)
+		nids.Insert(1, mynetwork_card.identification_id)
+		for(var/nid in nids)
+			var/datum/extension/interactive/ntos/osbynid = ntnet_global.get_os_by_nid(text2num(nid))
+			var/minus = osbynid.get_ntnet_status()
+			time2back += NTNET_SPEED_LIMITER - ( (minus > NTNET_SPEED_LIMITER) ? NTNET_SPEED_LIMITER : minus )
+			if(minus <= 0)
+				packet_lost = 1
+				break
+		time2back *= 2
+		if(!packet_lost) . += "ping: time lapse of packet retrieval: [time2back] miliseconds."
+		else . += "ping: request timed-out."
+	else . += "ping: not enough arguments."
+
+//[/INF]
+
 /*INF COMMENT, telnet replacing it, cuz IT-workers love to troll users though it //It can 'cause some balance.
 /datum/terminal_command/ssh
 	name = "ssh"

@@ -764,7 +764,7 @@ var/list/gamemode_cache = list()
 				if("error_msg_delay")
 					error_msg_delay = text2num(value)
 
-			//[/INF]
+			//[INF]
 				if("discord_url")
 					discord_url = value
 				if("discord_password")
@@ -775,6 +775,8 @@ var/list/gamemode_cache = list()
 
 				if("ntnet_radius_multiplyer")
 					ntnet_radius_multiplyer = value
+				if("ntnet_speed_limiter")
+					ntnet_speed_limiter = value
 			//[/INF]
 
 				if("max_gear_cost")

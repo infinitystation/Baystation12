@@ -28,3 +28,4 @@
 #define USE_FAIL_IS_SILICON 7
 
 #define NTNET_RADIUS_MULTIPLIER config.ntnet_radius_multiplyer
+#define NTNET_SPEED_LIMITER config.ntnet_speed_limiter
