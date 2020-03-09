@@ -27,11 +27,19 @@
 		names += "[DNA.name]"
 
 	var/S = input(user, "Select the target DNA", "Target DNA", "") as null|anything in names
-	if(!S) return 0
-
-	var/datum/absorbed_dna/chosen_dna = changeling.GetDNA(S)
-	if(!chosen_dna)
+	if(!S) //canceled
+		return 0
+	if(!user.loc.Adjacent(user, T) //too far
 		return 0
 
+	var/datum/absorbed_dna/chosen_dna = changeling.GetDNA(S)
+	var/datum/absorbed_dna/old_dna = changeling.GetDNA(T)
+	if(!chosen_dna)
+		return 0
+//	addtimer(CALLBACK(T, /mob/proc/handle_changeling_transform, old_dna), 15 SECONDS)
+	world << "FUCK"
 	T.handle_changeling_transform(chosen_dna)
-	SSstatistics.add_field_details("changeling_powers","TS")
+	spawn(0)
+		spawn(20 SECONDS)
+			T.handle_changeling_transform(old_dna)
+	SSstatistics.add_field_details("changeling_powers","BS")

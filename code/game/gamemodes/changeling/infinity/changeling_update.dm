@@ -95,7 +95,7 @@ var/list/datum/power/changeling/powerinstances = list()
 	state = STATE_STING
 	icon_state = "sting_starvation"
 	verbpath = /datum/stings/starvation
-
+/*
 /datum/power/changeling/transformation_sting
 	name = "Transformation Sting"
 	desc = "Мы скрытно жалим жертву, вводя ретровирус, который изменяет её телу по нашему желанию."
@@ -105,7 +105,7 @@ var/list/datum/power/changeling/powerinstances = list()
 	state = STATE_STING
 	icon_state = "sting_transform"
 	verbpath = /datum/stings/transformation
-
+*/
 /datum/power/changeling/deaf_sting
 	name = "Deaf Sting"
 	desc = "Мы жалим жертву, тем самым временно создавая у неё слуховой шок. Она оглохнет."
