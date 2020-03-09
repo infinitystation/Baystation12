@@ -74,6 +74,7 @@
 		bio = ARMOR_BIO_RESISTANT
 		)
 	tint = 0 //INF
+//INF
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/species/vox/onmob_mask_vox.dmi',
 		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_mask_vox_armalis.dmi',
