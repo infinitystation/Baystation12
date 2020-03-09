@@ -169,11 +169,13 @@ Subtypes
 
 /datum/terminal_command/ping
 	name = "ping"
-	man_entry = list("Format: ping nid", "Checks connection to the given nid.")
+//inf	man_entry = list("Format: ping nid", "Checks connection to the given nid.")
+	man_entry = list("Format: ping \[nid1] \[nid2] ... \[nid_n]", "Send packets through nearest NTNet relay and the given nids.", "Returns time lapse of packet retrieval.") //inf
 	pattern = "^ping"
 	skill_needed = SKILL_BASIC
 
 /datum/terminal_command/ping/proper_input_entered(text, mob/user, datum/terminal/terminal)
+/*inf
 	. = list("pinging ...")
 	if(length(text) < 6)
 		. += "ping: Improper syntax. Use ping nid."
@@ -188,6 +190,30 @@ Subtypes
 		. += "failed. Target device not responding."
 		return
 	. += "ping successful."
+inf*/
+//[INF]
+	. = list("pinging please wait...")
+	var/list/T = splittext(text, " ")
+	if(T && T.len > 1)
+		var/time2back = 0
+		var/packet_lost = 0
+		var/list/nids = T.Copy(2)
+		var/obj/item/weapon/stock_parts/computer/network_card/mynetwork_card = terminal.computer.get_component(PART_NETWORK)
+		nids.Insert(1, mynetwork_card.identification_id)
+		for(var/nid in nids)
+			var/datum/extension/interactive/ntos/osbynid = ntnet_global.get_os_by_nid(text2num(nid))
+			var/minus = osbynid.get_ntnet_status()
+			time2back += NTNET_SPEED_LIMITER - ( (minus > NTNET_SPEED_LIMITER) ? NTNET_SPEED_LIMITER : minus )
+			if(minus <= 0)
+				packet_lost = 1
+				break
+		time2back *= 2
+		if(!packet_lost) . += "ping: time lapse of packet retrieval: [time2back] miliseconds."
+		else . += "ping: request timed-out."
+	else . += "ping: not enough arguments."
+
+//[/INF]
+
 /*INF COMMENT, telnet replacing it, cuz IT-workers love to troll users though it //It can 'cause some balance.
 /datum/terminal_command/ssh
 	name = "ssh"
@@ -266,25 +292,18 @@ Subtypes
 
 //[INFINITY]____________________________________________________________________________________________________________________
 
-/datum/terminal_command/listdir
-	name = "listdir"
-	man_entry = list("Format: listdir", "State list of files in local memory.")
-	pattern = "^listdir$"
+/datum/terminal_command/ls
+	name = "ls"
+	man_entry = list("Format: ls", "State list of files in local memory.")
+	pattern = "^ls$"
 	skill_needed = SKILL_ADEPT
 
-/datum/terminal_command/listdir/proper_input_entered(text, mob/user, datum/terminal/terminal)
+/datum/terminal_command/ls/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/datum/extension/interactive/ntos/CT = terminal.computer
-	if(length(text) < 6)
-		return "listdir: Improper syntax. Use listdir."
-	if(!CT.get_component(PART_HDD).check_functionality())
-		return "listdir: Access attempt to local storage failed. Check integrity of your hard drive"
+	if(!CT.get_component(PART_HDD).check_functionality()) return "[name]: Access attempt to local storage failed. Check integrity of your hard drive"
 	for(var/datum/computer_file/F in CT.get_component(PART_HDD).stored_files)
-		if(F.is_illegal == 0)
-			var/prog_size = num2text(F.size)
-			. += F.filename + "." + F.filetype + "	|	" + prog_size + " GQ<br>"
-		else
-			. += "\[ENCRYPTED]" + "." + "\[ENCRYPTED]" + "	|	" + "\[ENCRYPTED]" + " GQ<br>"
-	return
+		if(F.is_illegal == 0)	. += F.filename + "." + F.filetype + "	|	" + num2text(F.size) + " GQ<br>"
+		else	 				. += "\[ENCRYPTED]" + "." + "\[ENCRYPTED]" + "	|	" + "\[ENCRYPTED]" + " GQ<br>"
 
 /datum/terminal_command/shutdown
 	name = "shutdown"
@@ -366,73 +385,45 @@ Subtypes
 /datum/terminal_command/telnet
 	name = "telnet"
 	man_entry = list("Format: telnet \[NID] \[LOGIN] \[PASSWORD].",
-					"Access remote terminal with login and password",
-					"If NID < 100 write NID like 001.",
-					"Use `telnet` to README and config security of your devise.")
+					"Access remote terminal by login and password")
 	pattern = "^telnet"
 
 /datum/terminal_command/telnet/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/datum/extension/interactive/ntos/CT = terminal.computer
+	var/list/T = splittext(text, " ").Copy(2)
 
-	if(!copytext(text,7))
-		if(CT.get_component(PART_HDD))
-			if(!CT.get_component(PART_HDD).find_file_by_name("TNet_CONFIG") && !CT.get_component(PART_HDD).find_file_by_name("TNet_CONFIG_README"))
-				var/datum/computer_file/data/config/file = CT.get_component(PART_HDD).find_file_by_name("TNet_CONFIG")
-				if(!istype(file))
-					file = new()
-					file.filename = "TNet_CONFIG"
-					CT.get_component(PART_HDD).store_file(file) // May fail, which is fine with us.
-					file.stored_data += "ROOT : [round(rand(1000, 9999))]" //LOGIN : PASSWORD
-				var/datum/computer_file/data/text/file_README = CT.get_component(PART_HDD).find_file_by_name("TNet_CONFIG_README")
-				if(!istype(file_README))
-					file_README = new()
-					file_README.filename = "TNet_CONFIG_README"
-					CT.get_component(PART_HDD).store_file(file_README) // May fail, which is fine with us.
-					file_README.stored_data += "\[large]\[b]DO NOT DELETE FILE TNet_CONFIG IF YOU DO NOT WANT TO PUT YOUR DEVICE AT RISK \[/b]\[/large]\[br]" //LOGIN : PASSWORD
-					file_README.stored_data += "Format login and password in TNet_CONFIG: \[LOGIN] : \[PASSWORD].\[br]"
-					file_README.stored_data += "Login must contain only 4 characters, password may be anything."
-				return "Config file created. Check config README to study how to change the login and password."
-			else
-				return "Config and config README already created."
+	if(!T?.len) return "telnet: error, not enough arguments."
+	if(istype(terminal, /datum/terminal/remote)) return "telnet is not supported on remote terminals."
 
-	if(istype(terminal, /datum/terminal/remote))
-		return "telnet is not supported on remote terminals."
-	if(!CT || !CT.get_ntnet_status())
-		return "telnet: Check network connectivity."
-
-	var/nid = text2num(copytext(text, 8, 11))
-	if(copytext(nid, 1,3) == "00")
-		nid = copytext(nid, 3,4)
-	else if(copytext(nid, 1,2) == "0")
-		nid = copytext(nid, 2,3)
+	var/nid = T[1]
+	nid = text2num(nid)
 	var/datum/extension/interactive/ntos/comp = ntnet_global.get_os_by_nid(nid)
-	if(comp == CT)
-		return "telnet: Error; can not open remote terminal to self."
-	if(!comp || !comp.host_status() || !comp.get_ntnet_status())
-		return "telnet: No active device with this nid found."
-	if(comp.has_terminal(user))
-		return "telnet: A remote terminal to this device is already active."
 
-	var/datum/computer_file/data/config/cfg_file = comp.get_component(PART_HDD).find_file_by_name("TNet_CONFIG")
-	if(comp.get_component(PART_HDD).find_file_by_name("TNet_CONFIG"))
-		var/login = copytext(cfg_file.stored_data, 1, 5)
-		var/password = copytext(cfg_file.stored_data, 8)
-		if(copytext(text, 12,16) == login)
-			if(copytext(text, 17) == password)
-				var/datum/terminal/remote/new_term = new (user, comp, CT)
-				LAZYADD(comp.terminals, new_term)
-				LAZYADD(CT.terminals, new_term)
-				ntnet_global.add_log("[CT.get_component(PART_NETWORK).get_network_tag()] open telnet tunnel to [comp.get_component(PART_NETWORK).get_network_tag()]")
-				return "telnet: <font color='#00ff00'>Connection established with login: [login], and password: [password].</font>"
-			else
-				return "<font color='#ff0000'>telnet: INCORRECT PASSWORD.</font>"
-		else
-			return "<font color='#ff0000'>telnet: INCORRECT LOGIN.</font>"
-	var/datum/terminal/remote/new_term = new (user, comp, CT)
-	LAZYADD(comp.terminals, new_term)
-	LAZYADD(CT.terminals, new_term)
-	ntnet_global.add_log("[CT.get_component(PART_NETWORK).get_network_tag()] open telnet tunnel to [comp.get_component(PART_NETWORK).get_network_tag()]")
-	return "telnet: Connection established."
+	if(!CT?.get_ntnet_status() && comp?.get_ntnet_status())	return "telnet: 0x12932910 (Network Error) Unable to establishe connection."
+	if(CT == comp)											return "telnet: unable to open remote terminal to self."
+
+	var/datum/computer_file/data/config/cfg_file = comp.get_component(PART_HDD).find_file_by_name("config")
+	if(cfg_file)
+		var/list/loginpassword = splittext(cfg_file.get_setting(TELNETPASS_SETTING),"@")
+		if(loginpassword && loginpassword.len >= 2)
+			var/login = loginpassword[1]
+			var/password = loginpassword[2]
+			if(T[2] == login)
+				if(T[3] == password)
+					var/datum/terminal/remote/new_term = new (user, comp, CT)
+					LAZYADD(comp.terminals, new_term)
+					LAZYADD(CT.terminals, new_term)
+					ntnet_global.add_log("[CT.get_component(PART_NETWORK).get_network_tag()] open telnet tunnel to [comp.get_component(PART_NETWORK).get_network_tag()]")
+					return "telnet: <font color='#00ff00'>Connection established with login: [login], and password: [password].</font>"
+				else return "<font color='#ff0000'>telnet: INCORRECT PASSWORD.</font>"
+			else return "<font color='#ff0000'>telnet: INCORRECT LOGIN.</font>"
+		else return "telnet: login and password needed."
+	else
+		var/datum/terminal/remote/new_term = new(user, comp, CT)
+		LAZYADD(comp.terminals, new_term)
+		LAZYADD(CT.terminals, new_term)
+		ntnet_global.add_log("[CT.get_component(PART_NETWORK).get_network_tag()] open telnet tunnel to [comp.get_component(PART_NETWORK).get_network_tag()]")
+		return "telnet: Connection established."
 
 /datum/terminal_command/remove
 	name = "remove"
@@ -540,7 +531,7 @@ Subtypes
 
 	if(option == "-mn")
 		if(copytext(text, 11, 15) == "-bat")
-			var/datum/computer_file/data/text/README/coding/batch/BRM = new()
+			var/datum/computer_file/data/text/batch_manual/BRM = new()
 			CT.get_component(PART_HDD).store_file(BRM)
 			return "alias: batch manual created."
 

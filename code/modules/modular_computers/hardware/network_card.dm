@@ -78,25 +78,32 @@ var/global/ntnet_card_uid = 1
 
 	if(!ntnet_global.check_function(specific_action)) // NTNet is down and we are not connected via wired connection. No signal.
 		if(!ethernet || specific_action) // Wired connection ensures a basic connection to NTNet, however no usage of disabled network services.
-			return
-
-	var/strength = 1
+			return 0 //inf//was:		return
+//inf var/strength = 1
+/*INF[Decentralized NTNet
 	if(ethernet)
 		strength = 3
 	else if(long_range)
 		strength = 2
-
+*/
 	var/turf/T = get_turf(src)
 	if(!istype(T)) //no reception in nullspace
 		return
+/*INF[Decentralized NTNet]
 	if(T.z in GLOB.using_map.station_levels)
 		// Computer is on station. Low/High signal depending on what type of network card you have
 		. = strength
 	else if(T.z in GLOB.using_map.contact_levels) //not on station, but close enough for radio signal to travel
 		. = strength - 1
+//[INF]
 	else if(T.z in GLOB.using_map.admin_levels)
 		. = strength
-
+//[/INF]
+*/
+//[INF]
+	. = ntnet_global.get_connection_quality_for(src)
+	if(ethernet) . = 4
+//[/INF]
 	if(proxy_id)
 		var/datum/extension/interactive/ntos/comp = ntnet_global.get_os_by_nid(proxy_id)
 		if(!comp || !comp.on)
