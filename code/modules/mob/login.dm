@@ -93,7 +93,10 @@
 //INF	reload_fullscreen() // Reload any fullscreen overlays this mob has.
 	add_click_catcher()
 //INF	update_action_buttons()
-	remake_Hud() //INF
+//[INF]
+	remake_Hud()
+	ability_master.open_ability_master()
+//[/INF]
 	//set macro to normal incase it was overriden (like cyborg currently does)
 //INF	winset(src, null, "mainwindow.macro=macro hotkey_toggle.is-checked=false input.focus=true input.background-color=#d3b5b5")
 
