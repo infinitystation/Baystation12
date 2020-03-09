@@ -347,7 +347,7 @@
 									shake_animation()
 
 
-			if(M.stat >= DEAD)
+//INF				if(M.stat >= DEAD)
 				if(round_is_spooky())
 					if(prob(50))
 						playsound(src, 'sound/effects/ghost.ogg', 10, 5)
