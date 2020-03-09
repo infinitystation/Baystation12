@@ -99,6 +99,7 @@
 	C.mind.transfer_to(O)
 	O.make_changeling()
 	O.changeling_update_languages(changeling.absorbed_languages)
+	O.ability_master.open_ability_master()
 
 	SSstatistics.add_field_details("changeling_powers","LFT")
 	qdel(C)

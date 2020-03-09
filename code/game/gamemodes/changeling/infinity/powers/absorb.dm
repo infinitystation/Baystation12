@@ -38,7 +38,7 @@
 		to_chat(src, SPAN_LING("Мы должны крепче держать добычу."))
 		return
 
-	if(T.stat == DEAD && world.time - timeofdeath > 5 MINUTES)
+	if(T.stat == DEAD && world.time - T.timeofdeath > 5 MINUTES)
 		to_chat(src, SPAN_LING("Этот труп мертв больше 5 минут и не содержит усваиваемого генома. Лучше поохотиться на другую жертву."))
 		return
 
@@ -51,7 +51,7 @@
 		to_chat(src, SPAN_WARNING("У [T] нет этой части тела!"))
 
 	changeling.isabsorbing = 1
-	if(T.paralysis)
+	if(T.mind && T.client)
 		if(alert(src, "Жертва в сознании. Предложить ей не сопротивляться и провести поглощение бескровно?", "Выбор", "Да", "Нет") == "Нет")
 			forced_absorbing = 1
 		if(!forced_absorbing)

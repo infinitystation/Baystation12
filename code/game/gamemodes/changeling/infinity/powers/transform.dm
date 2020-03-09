@@ -1,9 +1,9 @@
 //Change our DNA to that of somebody we've absorbed.
 /mob/proc/changeling_transform()
 	set category = "Changeling"
-	set name = "Transform (5)"
+	set name = "Transform (30)"
 
-	var/datum/changeling/changeling = changeling_power(5,1,0)
+	var/datum/changeling/changeling = changeling_power(30,1,0)
 	if(!changeling)	return
 
 	var/list/names = list()
@@ -17,7 +17,7 @@
 	if(!chosen_dna)
 		return
 
-	changeling.chem_charges -= 5
+	changeling.chem_charges -= 30
 	changeling.geneticdamage = 30
 
 	var/S_name = chosen_dna.speciesName

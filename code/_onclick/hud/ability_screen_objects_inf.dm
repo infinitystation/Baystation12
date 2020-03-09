@@ -6,7 +6,7 @@
 	var/sting_datum
 
 /obj/screen/ability/changeling/activate()
-	to_chat(ability_master.my_mob, SPAN_LING("Мы подготовили жало. <i>Используйте alt+клик или СКМ на цели для укола.</i>"))
+	to_chat(ability_master.my_mob, SPAN_LING("РњС‹ РїРѕРґРіРѕС‚РѕРІРёР»Рё Р¶Р°Р»Рѕ. <i>РСЃРїРѕР»СЊР·СѓР№С‚Рµ alt+РєР»РёРє РёР»Рё РЎРљРњ РЅР° С†РµР»Рё РґР»СЏ СѓРєРѕР»Р°.</i>"))
 	var/datum/changeling/C = ability_master.my_mob.mind.changeling
 	C.chosen_sting = new sting_datum
 

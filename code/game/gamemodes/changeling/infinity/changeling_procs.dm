@@ -32,8 +32,6 @@
 			var/obj/item/organ/external/new_fake_E = C.organs_by_name[BP_HEAD]
 			if(istype(new_fake_E)) new_fake_E.internal_organs |= new_fake
 
-	var/lesser_form = !ishuman(src)
-
 	if(!powerinstances.len)
 		for(var/P in powers)
 			powerinstances += new P()
@@ -47,7 +45,7 @@
 	for(var/datum/power/changeling/P in mind.changeling.purchasedpowers)
 		switch(P.state)
 			if(2) //verbs
-				if(lesser_form && !P.allowduringlesserform) continue
+				if(!ishuman(src) && !P.allowduringlesserform) continue
 				if(!(P in src.verbs))
 					src.verbs += P.verbpath
 			if(1) //stings
@@ -56,7 +54,8 @@
 					if(P.name == button.name)
 						exists = 1
 				if(!exists)
-					ability_master.add_ling_ability(P.name, P.verbpath, P.icon_state)
+					if(!ishuman(src) && !P.allowduringlesserform) continue
+						ability_master.add_ling_ability(P.name, P.verbpath, P.icon_state)
 
 	for(var/language in languages)
 		mind.changeling.absorbed_languages |= language
@@ -85,13 +84,10 @@
 	for(var/datum/power/changeling/P in mind.changeling.purchasedpowers)
 		switch(P.state)
 			if(2) //verbs
-				if(islesserform(src) && !P.allowduringlesserform)	continue
-				if(!(P in src.verbs))
-					src.verbs += P.verbpath
+				verbs -= P.verbpath
 			if(1) //stings
-				if(!(P in src.ability_master.ability_objects))
-					ability_master.remove_all_abilities()
-					ability_master.ability_objects.Cut()
+				ability_master.remove_all_abilities()
+				ability_master.ability_objects.Cut()
 
 	if(hud_used)
 		ling_sting.icon_state = null
