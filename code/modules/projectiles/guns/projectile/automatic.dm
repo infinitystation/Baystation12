@@ -151,11 +151,11 @@
 /obj/item/weapon/gun/projectile/automatic/assault_rifle/on_update_icon()
 	..()
 	if(ammo_magazine)
-		icon_state = orig_state
-		wielded_item_state = "[orig_state]-wielded"
+		icon_state = orig_state //INF was arifle
+		wielded_item_state = "[orig_state]-wielded" //INF was arifle-wielded
 	else
-		icon_state = "[orig_state]-empty"
-		wielded_item_state = "[orig_state] -wielded-empty"
+		icon_state = "[orig_state]-empty" //INF was arifle-empty
+		wielded_item_state = "[orig_state]-wielded-empty" //INF was arifle-wielded-empty
 
 //[/INF]
 

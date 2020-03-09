@@ -59,7 +59,7 @@
 	gauge_icon = null
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = null	//they have no straps!
-	starting_pressure = list(GAS_PHORON = 3 *ONE_ATMOSPHERE)
+	starting_pressure = list(GAS_PHORON = 3*ONE_ATMOSPHERE)
 
 /*
  * Hydrogen

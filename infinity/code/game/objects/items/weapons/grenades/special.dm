@@ -40,8 +40,10 @@
 		var/obj/item/weapon/reagent_containers/glass/beaker/large/B1 = new(src)
 		var/obj/item/weapon/reagent_containers/glass/beaker/large/B2 = new(src)
 
-		B1.reagents.add_reagent(/datum/reagent/surfactant, 20)
-		B2.reagents.add_reagent(/datum/reagent/water, 20)
+		B1.reagents.add_reagent(/datum/reagent/potassium, 13)
+		B1.reagents.add_reagent(/datum/reagent/sugar, 7)
+		B2.reagents.add_reagent(/datum/reagent/sugar, 7)
+		B2.reagents.add_reagent(/datum/reagent/phosphorus, 13)
 		B1.reagents.add_reagent(/datum/reagent/napalm, 20)
 		B2.reagents.add_reagent(/datum/reagent/napalm, 20)
 		B1.reagents.add_reagent(/datum/reagent/toxin/phoron, 20)

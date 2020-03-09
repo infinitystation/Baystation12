@@ -14,6 +14,7 @@
 	starting_accessories = list(/obj/item/clothing/accessory/armorplate/tactical, /obj/item/clothing/accessory/armguards/tactical, /obj/item/clothing/accessory/legguards/tactical)
 
 /obj/item/clothing/suit/storage/leather_jacket/armored
+	desc = "A black leather coat. It is reinforced with some armor plates..."
 	armor = list(
 		melee = ARMOR_MELEE_MAJOR,
 		bullet = ARMOR_BALLISTIC_RESISTANT,
