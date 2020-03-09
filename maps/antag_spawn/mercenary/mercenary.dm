@@ -80,3 +80,8 @@
 /area/map_template/merc_shuttle/rear
 	name = "\improper Desperado Rear Compartment"
 	icon_state = "green"
+
+//[INF]
+/obj/machinery/vending/medical/torch
+	req_access = list(access_medical)
+//[/INF]

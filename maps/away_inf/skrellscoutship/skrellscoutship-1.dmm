@@ -650,9 +650,8 @@
 /turf/simulated/floor/tiled/skrell,
 /area/ship/skrellscoutship/crew/hallway/d2)
 "bD" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1292;
 	id_tag = "xil_shuttle_pump_out_external"
 	},
 /obj/machinery/airlock_sensor{
@@ -816,9 +815,8 @@
 /turf/simulated/floor/tiled/skrell/red,
 /area/ship/skrellscoutshuttle)
 "bU" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1292;
 	id_tag = "xil_shuttle_pump_out_external"
 	},
 /turf/simulated/floor/reinforced/airless,
@@ -870,9 +868,8 @@
 	id_tag = "xil_shuttle_sensor";
 	pixel_y = 22
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1292;
 	id_tag = "xil_shuttle_pump"
 	},
 /obj/structure/catwalk,
@@ -973,9 +970,8 @@
 /turf/simulated/floor/tiled/skrell,
 /area/ship/skrellscoutship/crew/rec)
 "cl" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1292;
 	id_tag = "xil_shuttle_dock_pump_out_external"
 	},
 /turf/simulated/floor/reinforced/airless,
@@ -1037,9 +1033,8 @@
 	id_tag = "xil_shuttle_dock_sensor_external";
 	pixel_x = -20
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1292;
 	id_tag = "xil_shuttle_dock_pump_out_external"
 	},
 /turf/simulated/floor/reinforced/airless,
@@ -1180,9 +1175,8 @@
 /turf/simulated/floor/tiled/skrell/orange,
 /area/ship/skrellscoutship/maintenance)
 "cD" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1292;
 	id_tag = "xil_shuttle_pump"
 	},
 /obj/structure/catwalk,
@@ -1594,9 +1588,8 @@
 /turf/simulated/floor/bluegrid,
 /area/ship/skrellscoutship/crew/rec)
 "dr" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1292;
 	id_tag = "xil_shuttle_pump"
 	},
 /obj/machinery/light{
@@ -1758,9 +1751,8 @@
 	req_access = list("ACCESS_SKRELLSCOUT");
 	tag_exterior_sensor = "xil_shuttle_sensor_external"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 2;
-	frequency = 1292;
 	id_tag = "xil_shuttle_pump_out_internal"
 	},
 /obj/structure/catwalk,
@@ -1863,9 +1855,8 @@
 /turf/simulated/floor/tiled/skrell/green,
 /area/ship/skrellscoutship/maintenance/atmos)
 "dR" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 2;
-	frequency = 1292;
 	id_tag = "xil_shuttle_pump_out_internal"
 	},
 /obj/structure/catwalk,
@@ -2114,9 +2105,8 @@
 	id_tag = "xil_shuttle_dock_sensor";
 	pixel_y = 22
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1292;
 	id_tag = "xil_shuttle_dock_pump"
 	},
 /obj/structure/catwalk,
@@ -2197,9 +2187,8 @@
 /turf/simulated/floor/tiled/skrell/green,
 /area/ship/skrellscoutship/maintenance/atmos)
 "ez" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1292;
 	id_tag = "xil_shuttle_dock_pump_out_internal"
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
@@ -2438,9 +2427,8 @@
 /area/ship/skrellscoutship/maintenance/atmos)
 "fa" = (
 /obj/machinery/light,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1292;
 	id_tag = "xil_shuttle_dock_pump"
 	},
 /obj/structure/catwalk,
@@ -2639,9 +2627,8 @@
 /turf/simulated/floor/tiled/skrell/white,
 /area/ship/skrellscoutship/crew/medbay)
 "fx" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1292;
 	id_tag = "xil_shuttle_dock_pump_out_internal"
 	},
 /obj/structure/catwalk,
