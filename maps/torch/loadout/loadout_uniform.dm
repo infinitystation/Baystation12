@@ -1,4 +1,3 @@
-﻿
 /datum/gear/uniform
 	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 

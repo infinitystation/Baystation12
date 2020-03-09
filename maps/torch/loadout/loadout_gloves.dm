@@ -1,4 +1,4 @@
-﻿/datum/gear/gloves/colored
+/datum/gear/gloves/colored
 	allowed_roles = null //INF, WAS: FORMAL_ROLES
 	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 

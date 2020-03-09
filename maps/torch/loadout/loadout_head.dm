@@ -1,4 +1,4 @@
-﻿/datum/gear/head/solberet
+/datum/gear/head/solberet
 	display_name = "SolGov beret selection"
 	description = "A beret denoting service in an organization within SolGov."
 	path = /obj/item/clothing/head/beret/solgov

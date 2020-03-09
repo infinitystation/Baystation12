@@ -1,4 +1,4 @@
-﻿/datum/gear/suit/blueapron
+/datum/gear/suit/blueapron
 	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/suit/overalls
