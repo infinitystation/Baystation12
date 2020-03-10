@@ -37,7 +37,6 @@
 	if(!chosen_dna)
 		return 0
 //	addtimer(CALLBACK(T, /mob/proc/handle_changeling_transform, old_dna), 15 SECONDS)
-	world << "FUCK"
 	T.handle_changeling_transform(chosen_dna)
 	spawn(0)
 		spawn(20 SECONDS)
