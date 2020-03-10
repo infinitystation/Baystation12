@@ -5,6 +5,7 @@
 	icon_state = "sied4"
 	var/datum/wires/explosive/frag/wires = null
 	var/open_panel = 0
+	var/buildstate = 0
 
 	fragment_types = list(/obj/item/projectile/bullet/pellet/fragment=1, /obj/item/projectile/bullet/pellet/fragment/strong=4)
 	num_fragments = 70
@@ -143,9 +144,6 @@
 		wires.Interact(user)
 	else
 		..()
-
-/obj/item/weapon/grenade/frag/ied
-	var/buildstate = 0
 
 /obj/item/weapon/grenade/frag/ied/on_update_icon()
 	overlays.Cut()
