@@ -58,6 +58,7 @@ addons:
       - uchardet
 
 script:
+  - chmod +x test/run-test.sh
   - test/run-test.sh
 
 after_failure:
