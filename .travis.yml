@@ -58,6 +58,7 @@ addons:
       - uchardet
 
 script:
+  - cd $HOME/infinitystation/Baystation12
   - test/run-test.sh
 
 after_failure:
