@@ -526,7 +526,7 @@ var/global/floorIsLava = 0
 						i++
 						dat+="-[MESSAGE.body] <BR>"
 						if(MESSAGE.img)
-							usr << browse_rsc(MESSAGE.img, "tmp_photo[i].png")
+							send_rsc(usr, MESSAGE.img, "tmp_photo[i].png")
 							dat+="<img src='tmp_photo[i].png' width = '180'><BR><BR>"
 						dat+="<FONT SIZE=1>\[Story by <FONT COLOR='maroon'>[MESSAGE.author]</FONT>\]</FONT><BR>"
 			dat+={"
@@ -639,7 +639,7 @@ var/global/floorIsLava = 0
 				<B>Photo:</B>:
 			"}
 			if(news_network.wanted_issue.img)
-				usr << browse_rsc(news_network.wanted_issue.img, "tmp_photow.png")
+				send_rsc(usr, news_network.wanted_issue.img, "tmp_photow.png")
 				dat+="<BR><img src='tmp_photow.png' width = '180'>"
 			else
 				dat+="None"
@@ -1393,11 +1393,11 @@ var/global/floorIsLava = 0
 
 		if(2)	//Admins
 			var/ref_mob = "\ref[M]"
-			return "<b>[key_name(C, link, name, highlight_special, ticket)](<A HREF='?_src_=holder;adminmoreinfo=[ref_mob]'>?</A>) (<A HREF='?_src_=holder;adminplayeropts=[ref_mob]'>PP</A>) (<A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A>) (<A HREF='?_src_=holder;narrateto=[ref_mob]'>DN</A>) ([admin_jump_link(M, src)]) (<A HREF='?_src_=holder;check_antagonist=1'>CA</A>)</b>"
+			return "<b>[key_name(C, link, name, highlight_special, ticket)](<A HREF='?_src_=holder;adminmoreinfo=[ref_mob]'>?</A>) (<A HREF='?_src_=holder;adminplayeropts=[ref_mob]'>PP</A>) (<A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A>) (<A HREF='?_src_=holder;narrateto=[ref_mob]'>DN</A>) ([admin_jump_link(M)]) (<A HREF='?_src_=holder;check_antagonist=1'>CA</A>)</b>"
 
 		if(3)	//Devs
 			var/ref_mob = "\ref[M]"
-			return "<b>[key_name(C, link, name, highlight_special, ticket)](<A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A>)([admin_jump_link(M, src)])</b>"
+			return "<b>[key_name(C, link, name, highlight_special, ticket)](<A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A>)([admin_jump_link(M)])</b>"
 
 		if(4)	//Mentors
 			var/ref_mob = "\ref[M]"

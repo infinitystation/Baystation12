@@ -479,8 +479,8 @@ Helpers
 				max_profit = D
 			if(saldo <= max_loss.get_balance())
 				max_loss = D
-		to_world("<b>Счёт [max_profit.owner_name]</b> достиг наибольшей <font color='green'><B>ВЫГОДЫ</B></font>, закончив смену с прибылью в размере <b>[max_profit.get_balance()] таллеров</b>.")
-		to_world("Но с другой стороны, счёт <b>[max_loss.owner_name]</b> понёс наибольшие <font color='red'><B>УБЫТКИ</B></font>, что составили <b>[max_loss.get_balance()] таллеров</b>.")
+		to_world("<b>Счёт [max_profit.owner_name]</b> достиг наибольшей <font color='green'><B>ВЫГОДЫ</B></font>, закончив смену с прибылью в размере <b>[GLOB.using_map.local_currency_name_short][max_profit.get_balance()]</b>.")
+		to_world("Но с другой стороны, счёт <b>[max_loss.owner_name]</b> понёс наибольшие <font color='red'><B>УБЫТКИ</B></font>, что составили <b>[GLOB.using_map.local_currency_name_short][max_loss.get_balance()]</b>.")
 
 	mode.declare_completion()//To declare normal completion.
 

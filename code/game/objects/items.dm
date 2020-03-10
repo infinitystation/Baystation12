@@ -111,8 +111,12 @@
 		m.drop_from_inventory(src)
 	var/obj/item/weapon/storage/storage = loc
 	if(istype(storage))
-		storage.on_item_deletion()
-	return ..()
+		// some ui cleanup needs to be done
+		storage.on_item_pre_deletion(src) // must be done before deletion
+		. = ..()
+		storage.on_item_post_deletion(src) // must be done after deletion
+	else
+		return ..()
 
 /obj/item/crush_act()
 	playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)

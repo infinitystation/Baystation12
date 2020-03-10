@@ -611,9 +611,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/ship/patrol/cockpit)
 "bl" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1331;
 	id_tag = "patrol_shuttle_pump_out_external"
 	},
 /obj/effect/floor_decal/industrial/warning/full,
@@ -1226,9 +1225,8 @@
 /turf/simulated/floor/tiled,
 /area/ship/patrol/airlock)
 "eU" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1331;
 	id_tag = "patrol_shuttle_pump";
 	power_rating = 25000
 	},
@@ -1236,9 +1234,8 @@
 /turf/simulated/floor,
 /area/ship/patrol/airlock)
 "eV" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1331;
 	id_tag = "patrol_shuttle_pump";
 	power_rating = 25000
 	},
@@ -1321,9 +1318,8 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/patrol/airlock)
 "fi" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1331;
 	id_tag = "patrol_shuttle_pump_out_internal";
 	power_rating = 25000
 	},
@@ -1332,9 +1328,8 @@
 /turf/simulated/floor,
 /area/ship/patrol/airlock)
 "fj" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1331;
 	id_tag = "patrol_shuttle_pump_out_internal";
 	power_rating = 25000
 	},

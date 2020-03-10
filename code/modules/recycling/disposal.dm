@@ -31,6 +31,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	idle_power_usage = 100
 	atom_flags = ATOM_FLAG_CLIMBABLE
 	var/turn = DISPOSAL_FLIP_NONE
+	throwpass = TRUE
 
 /obj/machinery/disposal/small
 	icon = 'icons/obj/pipes/disposal_small.dmi'

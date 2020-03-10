@@ -288,8 +288,7 @@
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 8
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1379;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	id_tag = "solar_starboard_pump"
 	},
 /obj/machinery/light/small{
@@ -332,8 +331,7 @@
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1379;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	id_tag = "solar_starboard_pump"
 	},
 /obj/machinery/light/small{
@@ -1001,9 +999,8 @@
 	dir = 1;
 	icon_state = "warningcee"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1331;
 	id_tag = "fd_starboard_pump"
 	},
 /turf/simulated/floor/plating,
@@ -1020,9 +1017,8 @@
 	dir = 1;
 	icon_state = "warningcee"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1331;
 	id_tag = "fd_starboard_pump"
 	},
 /turf/simulated/floor/plating,
@@ -1680,9 +1676,8 @@
 	tag_exterior_door = "fd_starboard_outer";
 	tag_interior_door = "fd_starboard_inner"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1331;
 	id_tag = "fd_starboard_pump"
 	},
 /turf/simulated/floor/plating,
@@ -1695,9 +1690,8 @@
 	id_tag = "fd_starboard_sensor";
 	pixel_x = 24
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1331;
 	id_tag = "fd_starboard_pump"
 	},
 /turf/simulated/floor/plating,
@@ -1903,9 +1897,8 @@
 /area/maintenance/firstdeck/aftstarboard)
 "adU" = (
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1331;
 	id_tag = "fd_starboard_pump"
 	},
 /obj/effect/floor_decal/industrial/warning/half{
@@ -6729,9 +6722,8 @@
 /area/medical/subacute)
 "amp" = (
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1331;
 	id_tag = "fd_starboard_pump"
 	},
 /obj/effect/floor_decal/industrial/warning/half{
@@ -33532,11 +33524,10 @@
 /turf/simulated/floor/reinforced,
 /area/rnd/misc_lab)
 "baU" = (
-/obj/machinery/atmospherics/unary/vent_pump{
+/obj/machinery/atmospherics/unary/vent_pump/tank{
 	dir = 1;
 	external_pressure_bound = 0;
 	external_pressure_bound_default = 0;
-	frequency = 1441;
 	id_tag = "test_out";
 	initialize_directions = 1;
 	internal_pressure_bound = 4000;
@@ -34861,8 +34852,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod10/station)
 "bdw" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1380;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	id_tag = "escape_pod_10_pump"
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -34878,8 +34868,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod10/station)
 "bdy" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1380;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	id_tag = "escape_pod_10_pump"
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -35334,8 +35323,7 @@
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1380;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	id_tag = "escape_pod_10_pump"
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -35790,9 +35778,8 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod10/station)
 "bfu" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1380;
 	id_tag = "escape_pod_10_pump"
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -35811,9 +35798,8 @@
 /obj/structure/bed/chair/shuttle{
 	dir = 8
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1380;
 	id_tag = "escape_pod_10_pump"
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -36824,9 +36810,8 @@
 	dir = 8
 	},
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1379;
 	id_tag = "solar_port_pump"
 	},
 /obj/machinery/light/small,
@@ -36867,9 +36852,8 @@
 	dir = 4
 	},
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1379;
 	id_tag = "solar_port_pump"
 	},
 /obj/machinery/light/small,
