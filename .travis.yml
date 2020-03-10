@@ -58,10 +58,7 @@ addons:
       - uchardet
 
 script:
-  - pwd
-  - ls
-  - cd $HOME/infinitystation/Baystation12
-  - test/run-test.sh
+  - sh test/run-test.sh
 
 after_failure:
   - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
