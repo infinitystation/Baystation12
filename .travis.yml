@@ -58,6 +58,8 @@ addons:
       - uchardet
 
 script:
+  - pwd
+  - ls
   - cd $HOME/infinitystation/Baystation12
   - test/run-test.sh
 
