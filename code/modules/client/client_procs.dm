@@ -174,7 +174,7 @@
 		handle_staff_login()
 		if(establish_db_connection())
 			var/sql_ckey = sanitizeSQL(src.ckey)
-			spawn for()
+			spawn while(1)
 				var/sum = 0
 				var/temp = 0
 				var/DBQuery/query_onilne = dbcon.NewQuery("SELECT sum FROM online_score WHERE ckey='[sql_ckey]' AND year=YEAR(NOW()) AND month=MONTH(NOW()) AND day=DAYOFMONTH(NOW());")

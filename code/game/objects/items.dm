@@ -120,7 +120,7 @@
 
 /obj/item/crush_act()
 	playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
-	for(var/i in 1, i < w_class, i++)
+	for(var/i in 1 to w_class)
 		new /obj/item/weapon/scrap_lump(loc)
 	for(var/obj/item/I in contents)
 		I.forceMove(loc)
