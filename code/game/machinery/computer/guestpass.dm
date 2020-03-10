@@ -128,8 +128,8 @@
 	else if (href_list["duration"])
 		var/dur = input(user, "Duration (in minutes) during which pass is valid (up to 60 minutes).", "Duration") as num|null
 		if (dur && CanUseTopic(user, state))
-			if (dur > 0 && dur <= 30)
-				duration = dur
+			if (dur > 0 && dur <= 60)
+				duration = round(dur,1)
 				. = TOPIC_REFRESH
 			else
 				to_chat(user, SPAN_WARNING("Invalid duration."))
