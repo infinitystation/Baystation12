@@ -108,7 +108,7 @@
 
 /n_Scanner/nS_Scanner/Scan() //Creates a list of tokens from source code
 	var/list/tokens = new
-	for(, src.codepos<=lentext(code), src.codepos++)
+	for(, src.codepos<=length(code), src.codepos++)
 
 		var/char=copytext(code, codepos, codepos+1)
 		if(char=="\n")
@@ -145,7 +145,7 @@
 */
 /n_Scanner/nS_Scanner/proc/ReadString(start)
 	var/buf
-	for(, codepos <= lentext(code), codepos++)//codepos to lentext(code))
+	for(, codepos <= length(code), codepos++)//codepos to length(code))
 		var/char = copytext(code, codepos, codepos+1)
 		switch(char)
 			if("\\")					//Backslash (\) encountered in string
@@ -181,7 +181,7 @@
 /n_Scanner/nS_Scanner/proc/ReadWord()
 	var/char = copytext(code, codepos, codepos+1)
 	var/buf
-	while(!delim.Find(char) && codepos <= lentext(code))
+	while(!delim.Find(char) && codepos <= length(code))
 		buf += char
 		char=copytext(code, ++codepos, codepos+1)
 	codepos-- //allow main Scan() proc to read the delimiter
@@ -200,7 +200,7 @@
 
 	while(options.symbols.Find(buf+char))
 		buf += char
-		if(++codepos>lentext(code)) break
+		if(++codepos>length(code)) break
 		char = copytext(code, codepos, codepos+1)
 
 	codepos-- //allow main Scan() proc to read the next character
@@ -246,7 +246,7 @@
 			comm = 2 // starts a multi-line comment
 
 		while(comm)
-			if(++codepos > lentext(code)) break
+			if(++codepos > length(code)) break
 
 			if(expectedend) // ending statement expected...
 				char = copytext(code, codepos, codepos+1)

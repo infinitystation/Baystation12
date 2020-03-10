@@ -1,18 +1,18 @@
 // Generates a simple HTML crew manifest for use in various places
 /proc/html_crew_manifest(var/monochrome, var/OOC)
 	var/list/dept_data = list(
-		list("names" = list(), "header" = "Heads of Staff", "flag" = COM),
-		list("names" = list(), "header" = "Command Support", "flag" = SPT),
-		list("names" = list(), "header" = "Research", "flag" = SCI),
-		list("names" = list(), "header" = "Security", "flag" = SEC),
-		list("names" = list(), "header" = "Medical", "flag" = MED),
-		list("names" = list(), "header" = "Engineering", "flag" = ENG),
-		list("names" = list(), "header" = "Supply", "flag" = SUP),
-		list("names" = list(), "header" = "Exploration", "flag" = EXP),
-		list("names" = list(), "header" = "Service", "flag" = SRV),
-		list("names" = list(), "header" = "Civilian", "flag" = CIV),
-		list("names" = list(), "header" = "Miscellaneous", "flag" = MSC),
-		list("names" = list(), "header" = "Silicon")
+		list("names" = list(), "header" = "Командование", "flag" = COM),
+		list("names" = list(), "header" = "Младшее командование", "flag" = SPT),
+		list("names" = list(), "header" = "Учёные", "flag" = SCI),
+		list("names" = list(), "header" = "Охрана", "flag" = SEC),
+		list("names" = list(), "header" = "Медики", "flag" = MED),
+		list("names" = list(), "header" = "Инженеры", "flag" = ENG),
+		list("names" = list(), "header" = "Снабжение", "flag" = SUP),
+		list("names" = list(), "header" = "Исследователи", "flag" = EXP),
+		list("names" = list(), "header" = "Сервис", "flag" = SRV),
+		list("names" = list(), "header" = "Гражданские", "flag" = CIV),
+		list("names" = list(), "header" = "Прочие", "flag" = MSC),
+		list("names" = list(), "header" = "Синтетики")
 	)
 	var/list/misc //Special departments for easier access
 	var/list/bot
@@ -34,7 +34,7 @@
 		.manifest tr.alt td {[monochrome?"border-top-width: 2px":"background-color: [OOC?"#373737; color:white":"#DEF"]"]}
 	</style></head>
 	<table class="manifest" width='350px'>
-	<tr class='head'><th>Name</th><th>Position</th><th>Activity</th></tr>
+	<tr class='head'><th>Имя</th><th>Должность</th><th>Статус</th></tr>
 	"}
 	// sort mobs
 	for(var/datum/computer_file/report/crew_record/CR in GLOB.all_crew_records)

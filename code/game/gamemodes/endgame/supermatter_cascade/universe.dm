@@ -37,14 +37,14 @@ var/global/universe_has_ended = 0
 // Apply changes when entering state
 /datum/universal_state/supermatter_cascade/OnEnter()
 	set background = 1
-	to_world("<span class='sinister' style='font-size:22pt'>Вы ослеплены блестящей вспышкой энергии.</span>")
+	to_world("<span class='sinister' style='font-size:22pt'>Р’С‹ РѕСЃР»РµРїР»РµРЅС‹ Р±Р»РµСЃС‚СЏС‰РµР№ РІСЃРїС‹С€РєРѕР№ СЌРЅРµСЂРіРёРё.</span>")
 	sound_to(world, sound('sound/effects/cascade.ogg'))
 
 	for(var/mob/M in GLOB.player_list)
 		M.flash_eyes()
 
 	if(evacuation_controller.cancel_evacuation())
-		priority_announcement.Announce("Аварийный шаттл был отозван из-за Blue-Space искажения.")
+		priority_announcement.Announce("РђРІР°СЂРёР№РЅС‹Р№ С€Р°С‚С‚Р» Р±С‹Р» РѕС‚РѕР·РІР°РЅ РёР·-Р·Р° Blue-Space РёСЃРєР°Р¶РµРЅРёСЏ.")
 
 	AreaSet()
 	MiscSet()

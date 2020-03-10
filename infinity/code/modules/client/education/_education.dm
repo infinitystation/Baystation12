@@ -15,7 +15,7 @@
 
 /datum/edu
 	name = "high school"
-	var/desc = "полное среднее образование"
+	var/desc = "РїРѕР»РЅРѕРµ СЃСЂРµРґРЅРµРµ РѕР±СЂР°Р·РѕРІР°РЅРёРµ"
 	var/full_desc = ""
 	var/duration = 144
 	var/edu_points = 6
@@ -48,7 +48,7 @@
 
 /datum/edu/school
 	name = "elementary school"
-	var/desc = "4 класса начальной школы"
+	var/desc = "4 РєР»Р°СЃСЃР° РЅР°С‡Р°Р»СЊРЅРѕР№ С€РєРѕР»С‹"
 	var/full_desc = ""
 	var/duration = 48
 	var/list/compatible_profs = list()
@@ -56,7 +56,7 @@
 
 /datum/edu/school/medium
 	name = "medium school"
-	var/desc = "9 классов средней школы"
+	var/desc = "9 РєР»Р°СЃСЃРѕРІ СЃСЂРµРґРЅРµР№ С€РєРѕР»С‹"
 	var/full_desc = ""
 	var/duration = 108
 	var/list/compatible_profs = list()
@@ -64,7 +64,7 @@
 
 /datum/edu/school/high
 	name = "medium school"
-	var/desc = "9 классов средней школы"
+	var/desc = "9 РєР»Р°СЃСЃРѕРІ СЃСЂРµРґРЅРµР№ С€РєРѕР»С‹"
 	var/full_desc = ""
 	var/duration = 108
 	var/list/compatible_profs = list()

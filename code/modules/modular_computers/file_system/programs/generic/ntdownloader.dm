@@ -104,8 +104,10 @@
 			downloads_queue.Remove(downloads_queue[1])
 
 	// Download speed according to connectivity state. NTNet server is assumed to be on unlimited speed so we're limited by our local connectivity
+/*inf
 	download_netspeed = 0
 	// Speed defines are found in misc.dm
+
 	switch(computer.get_ntnet_status(NTNET_SOFTWAREDOWNLOAD))
 		if(1)
 			download_netspeed = NTNETSPEED_LOWSIGNAL
@@ -113,7 +115,8 @@
 			download_netspeed = NTNETSPEED_HIGHSIGNAL
 		if(3)
 			download_netspeed = NTNETSPEED_ETHERNET
-	download_completion += download_netspeed
+inf*/
+	download_completion += get_signal(NTNET_SOFTWAREDOWNLOAD) //inf//was download_completion += download_netspeed
 
 /datum/computer_file/program/ntnetdownload/Topic(href, href_list)
 	if(..())

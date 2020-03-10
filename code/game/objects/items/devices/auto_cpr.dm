@@ -9,11 +9,14 @@
 	var/last_pump
 	var/skilled_setup
 
+	sprite_sheets = list(SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_suit_resomi.dmi')//inf
+
 /obj/item/auto_cpr/mob_can_equip(mob/living/carbon/human/H, slot, disable_warning = 0, force = 0)
 	. = ..()
 	if(force || !istype(H) || slot != slot_wear_suit)
 		return
-	if(H.species.get_bodytype() in list(SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_UNATHI, SPECIES_ALIEN)) //non-humanoids btfo
+	if(H.species.get_bodytype() in list(SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_UNATHI, SPECIES_ALIEN //non-humanoids btfo
+	,SPECIES_RESOMI, SPECIES_TAJARA)) //inf
 		return
 	else
 		return FALSE

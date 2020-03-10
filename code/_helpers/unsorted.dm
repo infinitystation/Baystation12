@@ -523,6 +523,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 	return y
 #endif
 
+
 //returns random gauss number
 proc/GaussRand(var/sigma)
 	var/x,y,rsq

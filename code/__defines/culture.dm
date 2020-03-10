@@ -4,10 +4,10 @@
 #define TAG_RELIGION  "religion"
 
 #define ALL_CULTURAL_TAGS list( \
-	TAG_CULTURE =   "Culture", \
-	TAG_HOMEWORLD = "Residence", \
-	TAG_FACTION =   "Faction", \
-	TAG_RELIGION =  "Beliefs" \
+	TAG_CULTURE =   "Культура", \
+	TAG_HOMEWORLD = "Место проживания", \
+	TAG_FACTION =   "Фракция", \
+	TAG_RELIGION =  "Верования" \
 	)
 
 // Cultural IDs.

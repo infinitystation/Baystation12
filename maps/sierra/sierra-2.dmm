@@ -24957,6 +24957,7 @@
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/light/small,
+/obj/item/weapon/stock_parts/circuitboard/ntnet_relay,
 /turf/simulated/floor/tiled/techmaint,
 /area/storage/tech)
 "aOq" = (

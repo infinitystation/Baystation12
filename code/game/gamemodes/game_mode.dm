@@ -130,7 +130,7 @@ var/global/list/additional_antag_types = list()
 		usr.client.holder.show_game_mode(usr)
 
 /datum/game_mode/proc/announce() //to be called when round starts
-	to_world("<B>Текущий игровой режим [capitalize(name)]!</B>")
+	to_world("<B>РўРµРєСѓС‰РёР№ РёРіСЂРѕРІРѕР№ СЂРµР¶РёРј [capitalize(name)]!</B>")
 	if(round_description) to_world("[round_description]")
 	if(round_autoantag) to_world("Antagonists will be added to the round automagically as needed.")
 	if(antag_templates && antag_templates.len)
@@ -378,7 +378,7 @@ var/global/list/additional_antag_types = list()
 		SSstatistics.set_field("escaped_total",escaped_total)
 
 //INF	send2mainirc("A round of [src.name] has ended - [surviving_total] survivor\s, [ghosts] ghost\s.")
-	send2mainirc("Раунд с режимом [src.name] завершен. Выживших: [surviving_total]; призраков: [ghosts]; игроков: [clients]; продолжительность: [roundduration2text()].") //INF
+	send2mainirc("Р Р°СѓРЅРґ СЃ СЂРµР¶РёРјРѕРј [src.name] Р·Р°РІРµСЂС€РµРЅ. Р’С‹Р¶РёРІС€РёС…: [surviving_total]; РїСЂРёР·СЂР°РєРѕРІ: [ghosts]; РёРіСЂРѕРєРѕРІ: [clients]; РїСЂРѕРґРѕР»Р¶РёС‚РµР»СЊРЅРѕСЃС‚СЊ: [roundduration2text()].") //INF
 	SSwebhooks.send(WEBHOOK_ROUNDEND, list("survivors" = surviving_total, "escaped" = escaped_total, "ghosts" = ghosts))
 
 	return 0
@@ -546,9 +546,9 @@ proc/display_roundstart_logout_report()
 		return
 
 	var/obj_count = 1
-	to_chat(player.current, "<span class='notice'>Your current objectives:</span>")
+	to_chat(player.current, "<span class='notice'>РўРµРєСѓС‰РёРµ С†РµР»Рё:</span>")
 	for(var/datum/objective/objective in player.objectives)
-		to_chat(player.current, "<B>Objective #[obj_count]</B>: [objective.explanation_text]")
+		to_chat(player.current, "<B>Р¦РµР»СЊ #[obj_count]</B>: [objective.explanation_text]")
 		obj_count++
 
 /mob/verb/check_round_info()

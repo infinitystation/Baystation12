@@ -108,7 +108,8 @@
 					if(heart)
 						heart.external_pump = list(world.time, 0.4 + 0.1*pumping_skill + rand(-0.1,0.1))
 
-					if(stat != DEAD && prob(10 + 5 * pumping_skill))
+					if(stat != DEAD && prob(10 + 5 * pumping_skill) \
+					&& !(status_flags & FAKEDEATH)) //INF
 						resuscitate()
 
 				if(!H.check_has_mouth())

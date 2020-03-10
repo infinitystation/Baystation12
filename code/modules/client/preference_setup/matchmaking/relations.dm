@@ -22,23 +22,23 @@
 
 /datum/category_item/player_setup_item/relations/content(mob/user)
 	.=list()
-	. += "Characters with enabled relations are paired up randomly after spawn. You can terminate relations when you first open relations info window, but after that it's final."
+	. += "Персонажи с активированными механическими отношениями распределяются в случайном порядке после появления. Вы можете прекратить их, когда впервые открываете информационное окно, но после этого они становятся окончательными."
 	. += "<hr>"
-	. += "<br><b>What do they know about you?</b> This is the general info that all kinds of your connections would know. <a href='?src=\ref[src];relation_info=["general"]'>Edit</a>"
+	. += "<br><b>Что они знают о вас? Это общая информация, которую будут знать все ваши персонажи, состоящие в механических отношениях с вами. </b><a href='?src=\ref[src];relation_info=["general"]'>Изменить</a>"
 	. += "<br><i>[pref.relations_info["general"] ? pref.relations_info["general"] : "Nothing specific."]</i>"
 	. += "<hr>"
 	for(var/T in subtypesof(/datum/relation))
 		var/datum/relation/R = T
 		. += "<b>[initial(R.name)]</b>\t"
 		if(initial(R.name) in pref.relations)
-			. += "<span class='linkOn'>On</span>"
-			. += "<a href='?src=\ref[src];relation=[initial(R.name)]'>Off</a>"
+			. += "<span class='linkOn'>Включено</span>"
+			. += "<a href='?src=\ref[src];relation=[initial(R.name)]'>Выключено</a>"
 		else
-			. += "<a href='?src=\ref[src];relation=[initial(R.name)]'>On</a>"
-			. += "<span class='linkOn'>Off</span>"
+			. += "<a href='?src=\ref[src];relation=[initial(R.name)]'>Включено</a>"
+			. += "<span class='linkOn'>Выключено</span>"
 		. += "<br><i>[initial(R.desc)]</i>"
-		. += "<br><b>What do they know about you?</b><a href='?src=\ref[src];relation_info=[initial(R.name)]'>Edit</a>"
-		. += "<br><i>[pref.relations_info[initial(R.name)] ? pref.relations_info[initial(R.name)] : "Nothing specific."]</i>"
+		. += "<br><b>Что они знают о вас?</b><a href='?src=\ref[src];relation_info=[initial(R.name)]'>Редактировать</a>"
+		. += "<br><i>[pref.relations_info[initial(R.name)] ? pref.relations_info[initial(R.name)] : "Ничего особенного."]</i>"
 		. += "<hr>"
 	. = jointext(.,null)
 

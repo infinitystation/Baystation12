@@ -22,6 +22,10 @@
 
 	stamina_bar = new
 	adding += stamina_bar
+//[INF]
+	changeling_chems = new
+	adding += changeling_chems
+//[INF]
 
 	// Draw the various inventory equipment slots.
 	var/has_hidden_gear
@@ -248,7 +252,8 @@
 		mymob.hydration_icon.SetName("hydration")
 		mymob.hydration_icon.screen_loc = ui_nutrition_small
 		hud_elements |= mymob.hydration_icon
-//[inf]
+
+//[INF]
 	mymob.fixeye = new /obj/screen()
 	mymob.fixeye.icon = 'icons/mob/screen/infinity.dmi'
 	mymob.fixeye.icon_state = "fixeye"
@@ -262,7 +267,14 @@
 	mymob.holster.name = "holster"
 	mymob.holster.screen_loc = ui_holster
 	hud_elements |= mymob.holster
-//[/inf]
+
+	mymob.ling_sting = new /obj/screen/sting()
+	mymob.ling_sting.icon = 'infinity/icons/obj/action_buttons/changeling_new.dmi'
+	mymob.ling_sting.name = "selected sting"
+	mymob.ling_sting.screen_loc = ui_ling_sting
+	mymob.ling_sting.invisibility = 101
+	hud_elements |= mymob.ling_sting
+//[/INF]
 
 	mymob.pain = new /obj/screen/fullscreen/pain( null )
 	hud_elements |= mymob.pain
