@@ -221,8 +221,6 @@
 			return 1
 	return 0
 
-	. = ..()
-
 /obj/structure/hygiene/urinal
 	name = "urinal"
 	desc = "The HU-452, an experimental urinal."

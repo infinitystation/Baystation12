@@ -411,7 +411,7 @@ inf*/
 	if(!CT?.get_ntnet_status() && comp?.get_ntnet_status())	return "telnet: 0x12932910 (Network Error) Unable to establishe connection."
 	if(CT == comp)											return "telnet: unable to open remote terminal to self."
 
-	var/var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = comp.get_component(PART_HDD)
+	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = comp.get_component(PART_HDD)
 	if(!HDD)
 		return "telnet: no local storage found"
 	if(!HDD.check_functionality())
@@ -446,7 +446,7 @@ inf*/
 	skill_needed = SKILL_ADEPT
 
 /datum/terminal_command/remove/proper_input_entered(text, mob/user, datum/terminal/terminal)
-	var/var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = terminal.computer.get_component(PART_HDD)
+	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = terminal.computer.get_component(PART_HDD)
 	if(!HDD)
 		return "<font color='#ffa000'>remove: hard drive is missed.</font>"
 	if(!HDD.check_functionality())
@@ -497,7 +497,7 @@ inf*/
 	var/file_name = copytext(text, 6)
 	if(!file_name) return "<font color='#ffa000'>echo: enter filename.</font>"
 	var/file = HDD.find_file_by_name(file_name)
-	if(!file in HDD.stored_files) return "<font color='#ffa000'>echo: file not found.</font>"
+	if(!(file in HDD.stored_files)) return "<font color='#ffa000'>echo: file not found.</font>"
 	if(!istype(file, /datum/computer_file/data)) return "<font color='#ffa000'>echo: file is binary.</font>"
 	var/datum/computer_file/data/end_file = file
 	if(!end_file.stored_data) return "<font color='#ff0000'>echo: file empty.</font>"
@@ -519,7 +519,7 @@ inf*/
 	var/total = 0
 	for(var/datum/extension/interactive/ntos/comp in GLOB.CreatedOSes)
 		if(comp.get_ntnet_status() && comp.host_status())
-			var/tmp/obj/item/weapon/stock_parts/computer/network_card/comp_NC = comp.get_component(PART_NETWORK)
+			var/obj/item/weapon/stock_parts/computer/network_card/comp_NC = comp.get_component(PART_NETWORK)
 			if(!comp_NC)
 				continue
 			NIDS += "[comp_NC.identification_id]"
@@ -571,7 +571,7 @@ inf*/
 			var/datum/computer_file/data/coding/batch/F = HDD.find_file_by_name(inp_file_name)
 			if(F.filetype != "BAT") return "<font color='#ffa000'>alias: incorrect file. Expected batch file.</font>"
 			var/code = F.stored_data
-			if(!";" in code) return "<font color='ff0000'>alias: compile error, lack this ';'.</font>"
+			if(!(";" in code)) return "<font color='ff0000'>alias: compile error, lack this ';'.</font>"
 			code = replacetext(code, " \[br]","")
 			code = replacetext(code, "\[br]","")
 

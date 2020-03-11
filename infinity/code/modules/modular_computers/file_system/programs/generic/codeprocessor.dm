@@ -126,7 +126,7 @@
 		switch(newfiletype)
 			if("BAT")
 				F = create_file(newname, "", /datum/computer_file/data/coding/batch)
-				var/tmp/datum/computer_file/data/coding/batch/FT = F
+				var/datum/computer_file/data/coding/batch/FT = F
 				code_lang = FT.code_lang
 				code_lang_desc = FT.code_lang_desc
 			if("TXT")
