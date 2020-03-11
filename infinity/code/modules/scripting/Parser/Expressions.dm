@@ -183,7 +183,7 @@
 			var/stack/opr=new/stack()
 			var/stack/val=new/stack()
 			src.expecting=VALUE
-			for()
+			while(1)
 				if(EndOfExpression(end))
 					break
 				if(istype(curToken, /token/symbol) && ErrChars.Find(curToken.value))
