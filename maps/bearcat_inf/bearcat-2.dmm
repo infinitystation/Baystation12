@@ -3462,7 +3462,6 @@
 /area/ship/scrap/command/captain)
 "gg" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
-	frequency = 1379;
 	id_tag = "bearcat_shuttle_pump"
 	},
 /obj/structure/window/reinforced{
