@@ -51,7 +51,6 @@
 	if(T.mind?.changeling)
 		to_chat(user, SPAN_LING("Жало будет бесполезно против собрата"))
 		return
-	. = ..()
 	return 1
 
 /datum/stings/proc/try_to_sting(mob/user, mob/T)
@@ -90,7 +89,6 @@
 		if(istype(clothes) && (clothes.body_parts_covered & target_limb.body_part) && (clothes.item_flags & ITEM_FLAG_THICKMATERIAL))
 			to_chat(user, SPAN_DANGER("Жало не пробило защиту в выбранной части тела!"))
 			return //thick clothes will protect from the sting
-	. = ..()
 	return 1
 /*
 /datum/stings/proc/set_sting(mob/user)

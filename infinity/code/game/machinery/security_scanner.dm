@@ -220,7 +220,7 @@
 		return
 
 	.["guns"] = list()
-	if(check_items && ((!pass_access in target.GetAccess()) && bypass_filter) || !bypass_filter)
+	if(check_items && ((!pass_access) in target.GetAccess()) && bypass_filter || !bypass_filter)
 		for(var/obj/item/I in target.contents)
 			if(subtype_check(I, banned_items))
 				.["level"] += 4

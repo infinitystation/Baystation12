@@ -689,11 +689,11 @@ INF */
 //[INF]
 	if(isMultitool(W) && !wiresexposed && has_electronics)
 		if((user.skill_check(SKILL_ELECTRICAL, SKILL_PROF) || user.skill_check(SKILL_COMPUTER, SKILL_PROF)) && \
-		src in hacker?.hacked_apcs)
+		(src in hacker?.hacked_apcs))
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN) //don't spam
 			user.visible_message(SPAN_NOTICE("[user] moves [W] around the APC..."), \
 				SPAN_NOTICE("You begin to restore settings of circuits..."))
-			if(!do_after(user, 60, src) && src in hacker?.hacked_apcs)
+			if(!do_after(user, 60, src) && (src in hacker?.hacked_apcs))
 				return TRUE
 			hacker.hacked_apcs -= src
 			hacker = null

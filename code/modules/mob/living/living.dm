@@ -256,7 +256,7 @@ default behaviour is:
 /mob/living/proc/getToxLoss()
 	return 0
 
-/mob/living/proc/adjustToxLoss(var/amount, var/admin_healing = 0) //INF, WAS /mob/living/proc/adjustToxLoss(var/amount)
+/mob/living/proc/adjustToxLoss(var/amount)
 	adjustBruteLoss(amount * 0.5)
 
 /mob/living/proc/setToxLoss(var/amount)

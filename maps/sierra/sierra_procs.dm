@@ -14,7 +14,7 @@
 		var/tracked = crew_repository.scan()
 		for(var/obj/item/clothing/under/suit in tracked)
 			var/turf/pos = get_turf(suit)
-			if(pos && pos.z in GLOB.using_map.map_levels)
+			if(pos && (pos.z in GLOB.using_map.map_levels))
 				if(force || (suit.sensor_mode < new_mode))
 					suit.sensor_mode = new_mode
 

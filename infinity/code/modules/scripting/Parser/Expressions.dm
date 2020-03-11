@@ -181,8 +181,8 @@
 */
 		ParseExpression(list/end=list(/token/end), list/ErrChars=list("{", "}"))
 			var/stack
-				opr=new	// Что мы тут создаем? ~bear1ake
-				val=new
+				opr=new/stack
+				val=new/stack
 			src.expecting=VALUE
 			for()
 				if(EndOfExpression(end))
