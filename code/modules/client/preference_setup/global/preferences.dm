@@ -99,6 +99,10 @@ var/list/_client_preferences_by_type
 	else
 		sound_to(preference_mob, sound(null, repeat = 0, wait = 0, volume = 85, channel = GLOB.lobby_sound_channel))
 
+/datum/client_preference/play_instruments
+	description ="Play instruments"
+	key = "SOUND_INSTRUMENTS"
+
 /datum/client_preference/play_ambiance
 	description ="Play ambience"
 	key = "SOUND_AMBIENCE"
@@ -192,6 +196,14 @@ var/list/_client_preferences_by_type
 	description = "Fake NanoUI Browser Style"
 	key = "BROWSER_STYLED"
 	options = list(GLOB.PREF_FANCY, GLOB.PREF_PLAIN)
+
+/datum/client_preference/fullscreen_mode
+	description = "Fullscreen Mode"
+	key = "FULLSCREEN"
+	default_value = GLOB.PREF_NO
+
+/datum/client_preference/fullscreen_mode/changed(mob/preference_mob, new_value)
+	toggle_fullscreen(preference_mob.client, new_value == GLOB.PREF_YES)
 
 /datum/client_preference/autohiss
 	description = "Autohiss"
