@@ -11,9 +11,9 @@
 #define isbot(A)	is_type_in_list(A, list(/mob/living/bot/remotebot, /mob/living/bot/cleanbot, /mob/living/bot/farmbot, /mob/living/bot/secbot/ed209, /mob/living/bot/secbot, /mob/living/bot/medbot, /mob/living/bot/floorbot))
 
 /proc/parse_html_inf(var/browser_content)
-    if(isfile(browser_content))
-        return browser_content
-    else if(findtext(browser_content, "<html>"))
-        return replacetext(browser_content, "<html>", "<html><meta charset='UTF-8'>")
+	if(isfile(browser_content))
+		return browser_content
+	else if(findtext(browser_content, "<html>"))
+		return replacetext(browser_content, "<html>", "<html><meta charset='UTF-8'>")
     else
-        return "<HTML><meta charset='UTF-8'><BODY>[browser_content]</BODY></HTML>"
+		return "<HTML><meta charset='UTF-8'><BODY>[browser_content]</BODY></HTML>"
