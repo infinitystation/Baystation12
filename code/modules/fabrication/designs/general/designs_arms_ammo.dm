@@ -84,7 +84,7 @@
 	name = "ammunition (military rifle)"
 	path = /obj/item/ammo_magazine/mil_rifle
 
-/datum/fabricator_recipe/arms_ammo/hidden/shotgun
+/datum/fabricator_recipe/arms_ammo/hidden/shotgun_slug //inf
 	name = "ammunition (slug, shotgun)"
 	path = /obj/item/ammo_casing/shotgun
 
