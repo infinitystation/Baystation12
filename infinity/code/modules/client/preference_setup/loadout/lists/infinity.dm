@@ -118,16 +118,16 @@
 
 /datum/gear/eyes/modglasses
 	display_name = "cheap modular glasses"
-	path = /obj/item/clothing/glasses/prescription
+	path = /obj/item/clothing/glasses/modular
 
 /datum/gear/eyes/normmodglasses
 	display_name = "modular glasses"
-	path = /obj/item/clothing/glasses/prescription
+	path = /obj/item/clothing/glasses/modular/normal
 	cost = 3
 
 /datum/gear/eyes/advmodglasses
 	display_name = "advanced modular glasses"
-	path = /obj/item/clothing/glasses/prescription
+	path = /obj/item/clothing/glasses/modular/advanced
 	cost = 5
 
 /datum/gear/utility/gcartridge_mes
