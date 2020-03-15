@@ -67,7 +67,7 @@ SUBSYSTEM_DEF(shuttle)
 	sectors_to_initialize = null
 
 /datum/controller/subsystem/shuttle/proc/register_landmark(shuttle_landmark_tag, obj/effect/shuttle_landmark/shuttle_landmark)
-	if (registered_shuttle_landmarks[shuttle_landmark_tag] && shuttle_landmark.type != /obj/effect/shuttle_landmark/ship) //TODO-INF: Костыль.
+	if (registered_shuttle_landmarks[shuttle_landmark_tag] && shuttle_landmark.type != /obj/effect/shuttle_landmark/ship) //TODO-INF: РљРѕСЃС‚С‹Р»СЊ.
 		CRASH("Attempted to register shuttle landmark with tag [shuttle_landmark_tag], but it is already registered!")
 	if (istype(shuttle_landmark))
 		registered_shuttle_landmarks[shuttle_landmark_tag] = shuttle_landmark

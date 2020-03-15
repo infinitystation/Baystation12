@@ -24,7 +24,6 @@
 		notetext = input(usr,"Write your Note","Add Note") as message
 		if(!notetext)
 			return
-	notetext = sanitize_u0(notetext)
 	notetext = sanitizeSQL(notetext)
 	if(!timestamp)
 		timestamp = SQLtime()
@@ -43,10 +42,9 @@
 		log_game("SQL ERROR adding new note to table. Error : \[[err]\]\n")
 		return
 	if(logged)
-		notetext = sanitize_u2a(notetext)
 		log_admin("[key_name(usr)] has added a note to [target_ckey]: [notetext]")
 		message_admins("[key_name_admin(usr)] has added a note to [target_ckey]:<br>[notetext]")
-		send2adminirc("[get_key(usr)] добавил нотес игроку [target_ckey]: \"[notetext]\"")
+		send2adminirc("[get_key(usr)] РґРѕР±Р°РІРёР» РЅРѕС‚РµСЃ РёРіСЂРѕРєСѓ [target_ckey]: \"[notetext]\"")
 		show_note(target_ckey)
 
 /proc/remove_note(note_id)
@@ -76,10 +74,9 @@
 		var/err = query_del_note.ErrorMsg()
 		log_game("SQL ERROR removing note from table. Error : \[[err]\]\n")
 		return
-	notetext = sanitize_u2a(notetext)
 	log_admin("[key_name(usr)] has removed a note made by [adminckey] from [ckey]: [notetext]")
 	message_admins("[key_name_admin(usr)] has removed a note made by [adminckey] from [ckey]:<br>[notetext]")
-	send2adminirc("[get_key(usr)] убрал нотес от [adminckey] у игрока [ckey]: \"[notetext]\"")
+	send2adminirc("[get_key(usr)] СѓР±СЂР°Р» РЅРѕС‚РµСЃ РѕС‚ [adminckey] Сѓ РёРіСЂРѕРєР° [ckey]: \"[notetext]\"")
 	show_note(ckey)
 
 /proc/edit_note(note_id)
@@ -103,10 +100,8 @@
 		var/old_note = query_find_note_edit.item[2]
 		var/adminckey = query_find_note_edit.item[3]
 		var/new_note = input("Input new note", "New Note", "[old_note]") as message
-		new_note = sanitize_a0(new_note)
 		if(!new_note)
 			return
-		new_note = sanitize_u0(new_note)
 		new_note = sanitizeSQL(new_note)
 		var/edit_text = "Edited by [sql_ckey] on [SQLtime()] from<br>[old_note]<br>to<br>[new_note]<hr>"
 		edit_text = sanitizeSQL(edit_text)
@@ -118,7 +113,7 @@
 			return
 		log_admin("[key_name(usr)] has edited [target_ckey]'s note made by [adminckey] from [old_note] to [new_note]")
 		message_admins("[key_name_admin(usr)] has edited [target_ckey]'s note made by [adminckey] from<br>[old_note]<br>to<br>[new_note]")
-		send2adminirc("[get_key(usr)] изменил нотес [adminckey] у игрока [target_ckey] с - \"[old_note]\" на - \"[new_note]\"")
+		send2adminirc("[get_key(usr)] РёР·РјРµРЅРёР» РЅРѕС‚РµСЃ [adminckey] Сѓ РёРіСЂРѕРєР° [target_ckey] СЃ - \"[old_note]\" РЅР° - \"[new_note]\"")
 		show_note(target_ckey)
 
 /proc/show_note(target_ckey, index, linkless = 0)

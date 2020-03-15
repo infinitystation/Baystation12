@@ -55,7 +55,7 @@ var/can_call_ert
 		return
 //[INF]
 	if(!GLOB.ert.starting_locations.len)
-		to_chat(usr, "Что-то пошло не так. Попросите администраторов заспавнить базу ЕРТ (а лучше - подождите немного).")
+		to_chat(usr, "Р§С‚Рѕ-С‚Рѕ РїРѕС€Р»Рѕ РЅРµ С‚Р°Рє. РџРѕРїСЂРѕСЃРёС‚Рµ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂРѕРІ Р·Р°СЃРїР°РІРЅРёС‚СЊ Р±Р°Р·Сѓ Р•Р Рў (Р° Р»СѓС‡С€Рµ - РїРѕРґРѕР¶РґРёС‚Рµ РЅРµРјРЅРѕРіРѕ).")
 		return
 //[/INF]
 	GLOB.ert.create_default(usr)
@@ -109,11 +109,11 @@ proc/trigger_armed_response_team(var/force = 0)
 
 	// there's only a certain chance a team will be sent
 	if(!prob(send_team_chance))
-		command_announcement.Announce("Отряд Быстрого Реагирования не может быть мобилизован по причине отсутствия свободных ОБР. [station_name()], ликвидируйте проблему своими силами.", "[GLOB.using_map.boss_name]")
+		command_announcement.Announce("РћС‚СЂСЏРґ Р‘С‹СЃС‚СЂРѕРіРѕ Р РµР°РіРёСЂРѕРІР°РЅРёСЏ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РјРѕР±РёР»РёР·РѕРІР°РЅ РїРѕ РїСЂРёС‡РёРЅРµ РѕС‚СЃСѓС‚СЃС‚РІРёСЏ СЃРІРѕР±РѕРґРЅС‹С… РћР‘Р . [station_name()], Р»РёРєРІРёРґРёСЂСѓР№С‚Рµ РїСЂРѕР±Р»РµРјСѓ СЃРІРѕРёРјРё СЃРёР»Р°РјРё.", "[GLOB.using_map.boss_name]")
 		can_call_ert = 0 // Only one call per round, ladies.
 		return
 
-	command_announcement.Announce("Отряд Быстрого Реагирования мобилизуется для оказания помощи [station_name()]. Ожидайте прибытия оперативников в ближайшее время.", "[GLOB.using_map.boss_name]")
+	command_announcement.Announce("РћС‚СЂСЏРґ Р‘С‹СЃС‚СЂРѕРіРѕ Р РµР°РіРёСЂРѕРІР°РЅРёСЏ РјРѕР±РёР»РёР·СѓСЂСѓРµС‚СЃСЏ РґР»СЏ РѕРєР°Р·Р°РЅРёСЏ РїРѕРјРѕС‰Рё [station_name()]. РћР¶РёРґР°Р№С‚Рµ РїСЂРёР±С‹С‚РёСЏ РѕРїРµСЂР°С‚РёРІРЅРёРєРѕРІ РІ Р±Р»РёР¶Р°Р№С€РµРµ РІСЂРµРјСЏ.", "[GLOB.using_map.boss_name]")
 	evacuation_controller.add_can_call_predicate(new/datum/evacuation_predicate/ert())
 //[INF] a part of add_antagonist() code
 	if(GLOB.ert.base_to_load)

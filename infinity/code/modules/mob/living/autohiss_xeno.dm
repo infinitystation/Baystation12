@@ -2,16 +2,16 @@
 	autohiss_basic_map = list(
 			"s" = list("ss", "sss", "sss"),
 
-			"ñ" = list("ññ", "ññ", "ñññ"),
+			"Ñ" = list("ÑÑ", "ÑÑ", "ÑÑÑ"),
 
 			"x" = list("s", "ss", "sss"),
 		)
 	autohiss_extra_map = list(
-			"ö" = list("ññ", "ñññ"),
+			"Ñ†" = list("ÑÑ", "ÑÑÑ"),
 
-			"÷" = list("øø", "øøø"),
+			"Ñ‡" = list("ÑˆÑˆ", "ÑˆÑˆÑˆ"),
 
-			"æ" = list("øø", "øøø"),
+			"Ğ¶" = list("ÑˆÑˆ", "ÑˆÑˆÑˆ"),
 		)
 	autohiss_exempt = list("Xenophage")
 
@@ -19,16 +19,16 @@
 	autohiss_basic_map = list(
 			"s" = list("ss", "sss", "sss"),
 
-			"ñ" = list("ññ", "ññ", "ñññ"),
+			"Ñ" = list("ÑÑ", "ÑÑ", "ÑÑÑ"),
 
 			"x" = list("s", "ss", "sss"),
 		)
 	autohiss_extra_map = list(
-			"ö" = list("ññ", "ñññ"),
+			"Ñ†" = list("ÑÑ", "ÑÑÑ"),
 
-			"÷" = list("øø", "øøø"),
+			"Ñ‡" = list("ÑˆÑˆ", "ÑˆÑˆÑˆ"),
 
-			"æ" = list("øø", "øøø"),
+			"Ğ¶" = list("ÑˆÑˆ", "ÑˆÑˆÑˆ"),
 		)
 	autohiss_exempt = list("Xenophage")
 
@@ -36,16 +36,16 @@
 	autohiss_basic_map = list(
 			"s" = list("ss", "sss", "sss"),
 
-			"ñ" = list("ññ", "ññ", "ñññ"),
+			"Ñ" = list("ÑÑ", "ÑÑ", "ÑÑÑ"),
 
 			"x" = list("s", "ss", "sss"),
 		)
 	autohiss_extra_map = list(
-			"ö" = list("ññ", "ñññ"),
+			"Ñ†" = list("ÑÑ", "ÑÑÑ"),
 
-			"÷" = list("øø", "øøø"),
+			"Ñ‡" = list("ÑˆÑˆ", "ÑˆÑˆÑˆ"),
 
-			"æ" = list("øø", "øøø"),
+			"Ğ¶" = list("ÑˆÑˆ", "ÑˆÑˆÑˆ"),
 		)
 	autohiss_exempt = list("Xenophage")
 
@@ -53,16 +53,16 @@
 	autohiss_basic_map = list(
 			"s" = list("ss", "sss", "sss"),
 
-			"ñ" = list("ññ", "ññ", "ñññ"),
+			"Ñ" = list("ÑÑ", "ÑÑ", "ÑÑÑ"),
 
 			"x" = list("s", "ss", "sss"),
 		)
 	autohiss_extra_map = list(
-			"ö" = list("ññ", "ñññ"),
+			"Ñ†" = list("ÑÑ", "ÑÑÑ"),
 
-			"÷" = list("øø", "øøø"),
+			"Ñ‡" = list("ÑˆÑˆ", "ÑˆÑˆÑˆ"),
 
-			"æ" = list("øø", "øøø"),
+			"Ğ¶" = list("ÑˆÑˆ", "ÑˆÑˆÑˆ"),
 		)
 	autohiss_exempt = list("Xenophage")
 
@@ -70,15 +70,15 @@
 	autohiss_basic_map = list(
 			"s" = list("ss", "sss", "sss"),
 
-			"ñ" = list("ññ", "ññ", "ñññ"),
+			"Ñ" = list("ÑÑ", "ÑÑ", "ÑÑÑ"),
 
 			"x" = list("s", "ss", "sss"),
 		)
 	autohiss_extra_map = list(
-			"ö" = list("ññ", "ñññ"),
+			"Ñ†" = list("ÑÑ", "ÑÑÑ"),
 
-			"÷" = list("øø", "øøø"),
+			"Ñ‡" = list("ÑˆÑˆ", "ÑˆÑˆÑˆ"),
 
-			"æ" = list("øø", "øøø"),
+			"Ğ¶" = list("ÑˆÑˆ", "ÑˆÑˆÑˆ"),
 		)
 	autohiss_exempt = list("Xenophage")

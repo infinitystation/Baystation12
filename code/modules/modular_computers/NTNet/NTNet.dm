@@ -1,3 +1,4 @@
+//inf//It would be nice to translate it into a list, but it is too large then it would be better to send it to Bey
 var/global/datum/ntnet/ntnet_global = new()
 
 
@@ -97,6 +98,7 @@ var/global/datum/ntnet/ntnet_global = new()
 	return FALSE
 
 // Checks whether NTNet operates. If parameter is passed checks whether specific function is enabled.
+//inf//todo: relocate settings in relay
 /datum/ntnet/proc/check_function(var/specific_action = 0)
 	if(!relays || !relays.len) // No relays found. NTNet is down
 		return 0

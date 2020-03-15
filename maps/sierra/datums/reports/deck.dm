@@ -4,7 +4,7 @@
 /datum/computer_file/report/recipient/docked
 	logo = "\[logo\]"
 	form_name = "NT-SUP-12"
-	title = "Доклад о стыковке"
+	title = "Р”РѕРєР»Р°Рґ Рѕ СЃС‚С‹РєРѕРІРєРµ"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/docked/New()
@@ -14,21 +14,21 @@
 
 /datum/computer_file/report/recipient/docked/generate_fields()
 	..()
-	add_field(/datum/report_field/text_label/header, "Департамент снабжени&#255; и мененджемента ангара ИСН Сьерра")
-	add_field(/datum/report_field/text_label/header, "Обща&#255; информаци&#255;")
-	add_field(/datum/report_field/date, "Дата")
-	add_field(/datum/report_field/simple_text, "Название судна")
-	add_field(/datum/report_field/simple_text, "Пилот/владелец судна")
-	add_field(/datum/report_field/simple_text, "Род де&#255;тельности судна")
-	add_field(/datum/report_field/people/from_manifest, "Стыковка авторизована")
-	add_field(/datum/report_field/text_label/header, "Обща&#255; информаци&#255; о грузе")
-	add_field(/datum/report_field/pencode_text, "Список типов груза на борту")
-	add_field(/datum/report_field/text_label/header, "Информаци&#255; об опасном грузе")
-	add_field(/datum/report_field/options/yes_no, "Оружие")
-	add_field(/datum/report_field/options/yes_no, "Живой груз")
-	add_field(/datum/report_field/options/yes_no, "Биологически опасные материалы")
-	add_field(/datum/report_field/options/yes_no, "Химическа&#255; или радиоактивна&#255; опасность")
-	add_field(/datum/report_field/signature, "Авторизаци&#255; входа на судно")
-	add_field(/datum/report_field/text_label/header, "Отстыковка и отправление")
-	add_field(/datum/report_field/time, "Врем&#255; отстыковки")
-	add_field(/datum/report_field/pencode_text, "Дополнительные комментарии по отстыковке")
+	add_field(/datum/report_field/text_label/header, "Р”РµРїР°СЂС‚Р°РјРµРЅС‚ СЃРЅР°Р±Р¶РµРЅРёСЏ Рё РјРµРЅРµРЅРґР¶РµРјРµРЅС‚Р° Р°РЅРіР°СЂР° РРЎРќ РЎСЊРµСЂСЂР°")
+	add_field(/datum/report_field/text_label/header, "РћР±С‰Р°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ")
+	add_field(/datum/report_field/date, "Р”Р°С‚Р°")
+	add_field(/datum/report_field/simple_text, "РќР°Р·РІР°РЅРёРµ СЃСѓРґРЅР°")
+	add_field(/datum/report_field/simple_text, "РџРёР»РѕС‚/РІР»Р°РґРµР»РµС† СЃСѓРґРЅР°")
+	add_field(/datum/report_field/simple_text, "Р РѕРґ РґРµСЏС‚РµР»СЊРЅРѕСЃС‚Рё СЃСѓРґРЅР°")
+	add_field(/datum/report_field/people/from_manifest, "РЎС‚С‹РєРѕРІРєР° Р°РІС‚РѕСЂРёР·РѕРІР°РЅР°")
+	add_field(/datum/report_field/text_label/header, "РћР±С‰Р°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ РіСЂСѓР·Рµ")
+	add_field(/datum/report_field/pencode_text, "РЎРїРёСЃРѕРє С‚РёРїРѕРІ РіСЂСѓР·Р° РЅР° Р±РѕСЂС‚Сѓ")
+	add_field(/datum/report_field/text_label/header, "РРЅС„РѕСЂРјР°С†РёСЏ РѕР± РѕРїР°СЃРЅРѕРј РіСЂСѓР·Рµ")
+	add_field(/datum/report_field/options/yes_no, "РћСЂСѓР¶РёРµ")
+	add_field(/datum/report_field/options/yes_no, "Р–РёРІРѕР№ РіСЂСѓР·")
+	add_field(/datum/report_field/options/yes_no, "Р‘РёРѕР»РѕРіРёС‡РµСЃРєРё РѕРїР°СЃРЅС‹Рµ РјР°С‚РµСЂРёР°Р»С‹")
+	add_field(/datum/report_field/options/yes_no, "РҐРёРјРёС‡РµСЃРєР°СЏ РёР»Рё СЂР°РґРёРѕР°РєС‚РёРІРЅР°СЏ РѕРїР°СЃРЅРѕСЃС‚СЊ")
+	add_field(/datum/report_field/signature, "РђРІС‚РѕСЂРёР·Р°С†РёСЏ РІС…РѕРґР° РЅР° СЃСѓРґРЅРѕ")
+	add_field(/datum/report_field/text_label/header, "РћС‚СЃС‚С‹РєРѕРІРєР° Рё РѕС‚РїСЂР°РІР»РµРЅРёРµ")
+	add_field(/datum/report_field/time, "Р’СЂРµРјСЏ РѕС‚СЃС‚С‹РєРѕРІРєРё")
+	add_field(/datum/report_field/pencode_text, "Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ РєРѕРјРјРµРЅС‚Р°СЂРёРё РїРѕ РѕС‚СЃС‚С‹РєРѕРІРєРµ")

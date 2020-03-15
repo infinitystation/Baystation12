@@ -50,7 +50,7 @@
 	var/datum/nano_module/email_client/NME = NM
 	if(!istype(NME))
 		return
-	NME.relayed_process(ntnet_speed)
+	NME.relayed_process(get_signal())//inf//was: NME.relayed_process(ntnet_speed)
 
 	var/check_count = NME.check_for_new_messages()
 	if(check_count)
@@ -98,9 +98,9 @@
 		var/list/msg = list()
 		msg += "*--*\n"
 		msg += "<span class='notice'>New mail received from [received_message.source]:</span>\n"
-		msg += "<b>Subject:</b> [sanitize_u2a(received_message.title)]\n<b>Message:</b>\n[sanitize_u2a(pencode2html(received_message.stored_data))]\n"
+		msg += "<b>Subject:</b> [received_message.title]\n<b>Message:</b>\n[pencode2html(received_message.stored_data)]\n"
 		if(received_message.attachment)
-			msg += "<b>Attachment:</b> [sanitize_u2a(received_message.attachment.filename)].[received_message.attachment.filetype] ([received_message.attachment.size]GQ)\n"
+			msg += "<b>Attachment:</b> [received_message.attachment.filename].[received_message.attachment.filetype] ([received_message.attachment.size]GQ)\n"
 		msg += "<a href='?src=\ref[src];open;reply=[received_message.uid]'>Reply</a>\n"
 		msg += "*--*"
 		to_chat(L, jointext(msg, null))

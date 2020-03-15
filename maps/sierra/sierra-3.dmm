@@ -1653,7 +1653,7 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/security/nuke_storage)
 "adD" = (
-/obj/structure/mattress,
+/obj/structure/bed,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "adE" = (
@@ -3906,10 +3906,21 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/security/nuke_storage)
 "ahn" = (
-/obj/structure/closet/secure_closet/freezer/meat/bearcat,
-/obj/item/weapon/material/knife/table/unathi,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/maintenance/firstdeck/forestarboard)
+/turf/simulated/open,
+/area/maintenance/firstdeck/aftstarboard)
 "aho" = (
 /obj/structure/battle_data_server,
 /obj/effect/floor_decal/techfloor{
@@ -3947,13 +3958,9 @@
 /turf/simulated/floor/bluegrid,
 /area/maintenance/battle_data_servers)
 "ahs" = (
-/obj/effect/floor_decal/techfloor,
-/obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
-	dir = 1
-	},
-/turf/simulated/floor/bluegrid,
-/area/maintenance/battle_data_servers)
+/obj/structure/closet/secure_closet/freezer/meat/bearcat,
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
 "aht" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/shield/firstdeck)
@@ -6418,16 +6425,21 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/security/sierra/evidence)
 "alP" = (
-/obj/machinery/computer/drone_control,
-/obj/machinery/computer/cryopod/robot{
-	pixel_x = -30
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/engineering/drone_fabrication)
+/obj/structure/girder,
+/obj/item/stack/material/rods,
+/obj/item/stack/material/steel,
+/turf/simulated/floor/plating,
+/area/maintenance/battle_data_servers)
 "alQ" = (
-/obj/machinery/drone_fabricator/sierra,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/engineering/drone_fabrication)
+/obj/structure/catwalk,
+/obj/structure/disposalpipe/sortjunction{
+	dir = 4;
+	name = "Drone Station";
+	sort_type = "Drone Station"
+	},
+/turf/simulated/floor/plating,
+/turf/simulated/open,
+/area/maintenance/firstdeck/centralstarboard)
 "alR" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -9194,35 +9206,17 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/storage/eva)
 "aqt" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/turf/simulated/open,
-/area/maintenance/firstdeck/aftstarboard)
+/obj/effect/floor_decal/techfloor,
+/turf/simulated/floor/bluegrid,
+/area/maintenance/battle_data_servers)
 "aqu" = (
 /obj/effect/floor_decal/industrial/hatch/grey,
 /turf/simulated/floor/tiled/techfloor,
 /area/storage/eva)
 "aqv" = (
-/obj/structure/catwalk,
-/obj/structure/disposalpipe/sortjunction{
-	dir = 4;
-	name = "Drone Station";
-	sort_type = "Drone Station"
-	},
+/obj/structure/inflatable/door,
 /turf/simulated/floor/plating,
-/turf/simulated/open,
-/area/maintenance/firstdeck/centralstarboard)
+/area/maintenance/battle_data_servers)
 "aqw" = (
 /obj/structure/bed/padded,
 /obj/item/weapon/bedsheet/medical,
@@ -10815,24 +10809,17 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/fore_stairwell)
 "asP" = (
-/obj/structure/sign/warning/secure_area{
-	pixel_y = 32
-	},
-/obj/effect/floor_decal/borderfloor/corner{
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
 	dir = 4
 	},
-/obj/effect/floor_decal/corner_techfloor_grid{
-	dir = 1
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 8
 	},
-/obj/effect/floor_decal/steeldecal/steel_decals10{
-	dir = 9
-	},
-/obj/effect/floor_decal/industrial/danger/corner{
-	dir = 4
-	},
-/obj/structure/bed/chair/padded/light,
-/turf/simulated/floor/tiled/monotile,
-/area/hallway/primary/firstdeck/fore_stairwell)
+/obj/item/stack/material/steel,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/maintenance/battle_data_servers)
 "asQ" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -10848,26 +10835,19 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/fore_stairwell)
 "asR" = (
-/obj/structure/sign/warning/lethal_turrets{
-	pixel_y = 32
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/effect/floor_decal/corner_techfloor_grid{
+/obj/effect/floor_decal/borderfloor/corner{
 	dir = 4
 	},
-/obj/effect/floor_decal/steeldecal/steel_decals10{
-	dir = 10
-	},
-/obj/effect/floor_decal/borderfloor/corner{
+/obj/effect/floor_decal/corner_techfloor_grid{
 	dir = 1
 	},
-/obj/effect/floor_decal/industrial/danger/corner{
-	dir = 8
+/obj/effect/floor_decal/steeldecal/steel_decals10{
+	dir = 9
 	},
+/obj/effect/floor_decal/industrial/danger/corner{
+	dir = 4
+	},
+/obj/structure/bed/chair/padded/light,
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/fore_stairwell)
 "asS" = (
@@ -16493,14 +16473,14 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 1
 	},
-/obj/structure/sign/dedicationplaque{
-	pixel_y = 29
-	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	dir = 1
+	},
+/obj/structure/sign/dedicationplaque/sierra{
+	pixel_y = 29
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/center)
@@ -32156,6 +32136,7 @@
 	dir = 1;
 	pixel_y = -24
 	},
+/obj/item/weapon/stock_parts/circuitboard/ntnet_relay,
 /turf/simulated/floor/tiled/techmaint,
 /area/tcommsat/storage)
 "aYf" = (
@@ -36399,7 +36380,7 @@
 /area/maintenance/firstdeck/aftport)
 "bgI" = (
 /obj/structure/girder,
-/turf/simulated/wall/prepainted,
+/turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
 "bgJ" = (
 /obj/item/stack/material/steel,
@@ -36576,10 +36557,17 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
 "bhc" = (
-/obj/effect/floor_decal/industrial/warning/half,
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/maintenance/firstdeck/aftport)
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 8
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/obj/item/stack/material/steel,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/maintenance/battle_data_servers)
 "bhd" = (
 /obj/structure/table/rack,
 /obj/random/maintenance,
@@ -36704,6 +36692,29 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/maintenance/solar)
+"bhq" = (
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/effect/floor_decal/corner_techfloor_grid{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals10{
+	dir = 10
+	},
+/obj/effect/floor_decal/borderfloor/corner{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/danger/corner{
+	dir = 8
+	},
+/obj/structure/sign/warning/secure_area{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/hallway/primary/firstdeck/fore_stairwell)
 "bhr" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
@@ -37254,6 +37265,26 @@
 /obj/structure/largecrate,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralport)
+"bio" = (
+/obj/machinery/computer/drone_control,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/drone_fabrication)
+"bip" = (
+/obj/machinery/drone_fabricator/sierra,
+/obj/machinery/computer/cryopod/robot{
+	pixel_x = 0;
+	pixel_y = 28
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/drone_fabrication)
+"biq" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/obj/item/weapon/storage/toolbox/mechanical,
+/turf/simulated/floor/bluegrid,
+/area/maintenance/battle_data_servers)
 
 (1,1,1) = {"
 aaa
@@ -49457,7 +49488,7 @@ adD
 aev
 afi
 agj
-ahn
+abu
 abs
 ajL
 akS
@@ -49658,8 +49689,8 @@ abs
 adE
 aew
 abs
-abs
-abs
+ahs
+abu
 abs
 abs
 akS
@@ -49861,7 +49892,7 @@ abs
 abs
 agk
 agk
-agk
+aqv
 agk
 agk
 agk
@@ -50063,7 +50094,7 @@ aaA
 aaA
 agl
 agm
-ahq
+bhc
 aiE
 ahq
 ahq
@@ -50268,13 +50299,13 @@ agn
 ahr
 aiF
 aiF
-aiF
+biq
 aoz
 aoB
 bih
 agk
 agk
-asP
+asR
 aui
 avJ
 axe
@@ -50467,7 +50498,7 @@ aaA
 aaA
 agl
 agn
-ahs
+aqt
 aiJ
 anh
 ank
@@ -50678,7 +50709,7 @@ aoD
 bij
 agk
 agk
-asR
+bhq
 auk
 avK
 axf
@@ -50871,7 +50902,7 @@ aaB
 aaB
 agl
 ahp
-aiD
+asP
 aiD
 anj
 anj
@@ -51073,7 +51104,7 @@ aaB
 aaB
 agl
 agl
-agk
+alP
 agk
 agk
 agk
@@ -51481,7 +51512,7 @@ ahu
 aiG
 ajN
 akV
-alP
+bio
 ann
 aoE
 aqa
@@ -51683,7 +51714,7 @@ ahv
 aiH
 ajO
 akV
-alQ
+bip
 ano
 aoF
 aqb
@@ -52286,7 +52317,7 @@ aaB
 aaB
 agq
 ahy
-aqv
+alQ
 ajR
 akV
 akV
@@ -60967,7 +60998,7 @@ aaM
 aaM
 acu
 adk
-aqt
+ahn
 aeL
 aeL
 agS
@@ -62424,7 +62455,7 @@ beK
 beK
 aOF
 aRY
-bhc
+bhb
 bhd
 aLW
 aam

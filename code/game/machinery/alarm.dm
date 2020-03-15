@@ -157,7 +157,7 @@
 	if (name == "alarm")
 		SetName("[alarm_area.name] Air Alarm")
 
-	name = replacetextEx(name, "\improper", "")
+	name = replacetextEx_char(name, "\improper", "")
 
 	if(!wires)
 		wires = new(src)
@@ -226,6 +226,14 @@
 		if(RCON_YES)
 			remote_control = 1
 
+/*[INF]
+	if((environment.gas[GAS_NITROGEN]*R_IDEAL_GAS_EQUATION*environment.temperature/environment.volume) > 80)
+		for(var/device_id in alarm_area.air_scrub_names)
+			send_signal(device_id, list("n2_scrub" = 1))
+	else
+		for(var/device_id in alarm_area.air_scrub_names)
+			send_signal(device_id, list("n2_scrub" = 0))
+[/INF]*/
 	return
 
 /obj/machinery/alarm/proc/handle_heating_cooling(var/datum/gas_mixture/environment)
@@ -1118,7 +1126,7 @@ FIRE ALARM
 		var/second = round(src.time) % 60
 		var/minute = (round(src.time) - second) / 60
 		var/dat = "<HTML><HEAD></HEAD><BODY><TT><B>Fire alarm</B> [d1]\n<HR>The current alert level is <b>[security_state.current_security_level.name]</b><br><br>\nTimer System: [d2]<BR>\nTime Left: [(minute ? "[minute]:" : null)][second] <A href='?src=\ref[src];tp=-30'>-</A> <A href='?src=\ref[src];tp=-1'>-</A> <A href='?src=\ref[src];tp=1'>+</A> <A href='?src=\ref[src];tp=30'>+</A>\n</TT></BODY></HTML>"
-		user << browse(dat, "window=firealarm")
+		show_browser(user, dat, "window=firealarm")
 		onclose(user, "firealarm")
 	else
 		A = A.loc
@@ -1133,7 +1141,7 @@ FIRE ALARM
 		var/second = round(src.time) % 60
 		var/minute = (round(src.time) - second) / 60
 		var/dat = "<HTML><HEAD></HEAD><BODY><TT><B>[stars("Fire alarm")]</B> [d1]\n<HR>The current security level is <b>[security_state.current_security_level.name]</b><br><br>\nTimer System: [d2]<BR>\nTime Left: [(minute ? text("[]:", minute) : null)][second] <A href='?src=\ref[src];tp=-30'>-</A> <A href='?src=\ref[src];tp=-1'>-</A> <A href='?src=\ref[src];tp=1'>+</A> <A href='?src=\ref[src];tp=30'>+</A>\n</TT></BODY></HTML>"
-		user << browse(dat, "window=firealarm")
+		show_browser(user, dat, "window=firealarm")
 		onclose(user, "firealarm")
 	return
 
@@ -1252,7 +1260,7 @@ Just a object used in constructing fire alarms
 		var/second = time % 60
 		var/minute = (time - second) / 60
 		var/dat = text("<HTML><HEAD></HEAD><BODY><TT><B>Party Button</B> []\n<HR>\nTimer System: []<BR>\nTime Left: [][] <A href='?src=\ref[];tp=-30'>-</A> <A href='?src=\ref[];tp=-1'>-</A> <A href='?src=\ref[];tp=1'>+</A> <A href='?src=\ref[];tp=30'>+</A>\n</TT></BODY></HTML>", d1, d2, (minute ? text("[]:", minute) : null), second, src, src, src, src)
-		user << browse(dat, "window=partyalarm")
+		show_browser(user, dat, "window=partyalarm")
 		onclose(user, "partyalarm")
 	else
 		if (A.fire)
@@ -1266,7 +1274,7 @@ Just a object used in constructing fire alarms
 		var/second = time % 60
 		var/minute = (time - second) / 60
 		var/dat = text("<HTML><HEAD></HEAD><BODY><TT><B>[]</B> []\n<HR>\nTimer System: []<BR>\nTime Left: [][] <A href='?src=\ref[];tp=-30'>-</A> <A href='?src=\ref[];tp=-1'>-</A> <A href='?src=\ref[];tp=1'>+</A> <A href='?src=\ref[];tp=30'>+</A>\n</TT></BODY></HTML>", stars("Party Button"), d1, d2, (minute ? text("[]:", minute) : null), second, src, src, src, src)
-		user << browse(dat, "window=partyalarm")
+		show_browser(user, dat, "window=partyalarm")
 		onclose(user, "partyalarm")
 	return
 

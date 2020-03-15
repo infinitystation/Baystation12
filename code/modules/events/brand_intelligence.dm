@@ -8,7 +8,7 @@
 
 /datum/event/brand_intelligence/announce()
 //	command_announcement.Announce("Rampant brand intelligence has been detected aboard the [location_name()]. The origin is believed to be \a \"[initial(originMachine.name)]\" type. Fix it, before it spreads to other vending machines.", "Machine Learning Alert", zlevels = affecting_z)
-	command_announcement.Announce("Аномальное развитие искусственного интеллекта автоматов [initial(originMachine.name)] было обнаружено на [location_name()]. Требуется устранить угрозу от сбойных машин до распространения ошибки на другие аппараты.", "Машинная Аномалия", zlevels = affecting_z)
+	command_announcement.Announce("РђРЅРѕРјР°Р»СЊРЅРѕРµ СЂР°Р·РІРёС‚РёРµ РёСЃРєСѓСЃСЃС‚РІРµРЅРЅРѕРіРѕ РёРЅС‚РµР»Р»РµРєС‚Р° Р°РІС‚РѕРјР°С‚РѕРІ [initial(originMachine.name)] Р±С‹Р»Рѕ РѕР±РЅР°СЂСѓР¶РµРЅРѕ РЅР° [location_name()]. РўСЂРµР±СѓРµС‚СЃСЏ СѓСЃС‚СЂР°РЅРёС‚СЊ СѓРіСЂРѕР·Сѓ РѕС‚ СЃР±РѕР№РЅС‹С… РјР°С€РёРЅ РґРѕ СЂР°СЃРїСЂРѕСЃС‚СЂР°РЅРµРЅРёСЏ РѕС€РёР±РєРё РЅР° РґСЂСѓРіРёРµ Р°РїРїР°СЂР°С‚С‹.", "РњР°С€РёРЅРЅР°СЏ РђРЅРѕРјР°Р»РёСЏ", zlevels = affecting_z)
 
 /datum/event/brand_intelligence/start()
 	for(var/obj/machinery/vending/V in SSmachines.machinery)
@@ -57,7 +57,7 @@
 		infectedMachine.shut_up = 1
 		infectedMachine.shoot_inventory = 0
 //	priority_announcement.Announce("All traces of the rampant brand intelligence have disappeared from the systems.", "[location_name()] Firewall Subroutines")
-	command_announcement.Announce("Все следы аномального развития искусственного интеллекта раздатчиков исчезли из систем судна.", "[location_name()] Firewall Subroutines")
+	command_announcement.Announce("Р’СЃРµ СЃР»РµРґС‹ Р°РЅРѕРјР°Р»СЊРЅРѕРіРѕ СЂР°Р·РІРёС‚РёСЏ РёСЃРєСѓСЃСЃС‚РІРµРЅРЅРѕРіРѕ РёРЅС‚РµР»Р»РµРєС‚Р° СЂР°Р·РґР°С‚С‡РёРєРѕРІ РёСЃС‡РµР·Р»Рё РёР· СЃРёСЃС‚РµРј СЃСѓРґРЅР°.", "[location_name()] Firewall Subroutines")
 	originMachine = null
 	infectedVendingMachines.Cut()
 	vendingMachines.Cut()

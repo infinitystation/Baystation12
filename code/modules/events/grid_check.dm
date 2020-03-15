@@ -5,4 +5,4 @@
 	power_failure(0, severity, affecting_z)
 
 /datum/event/grid_check/announce()
-	priority_announcement.Announce(replacetext(GLOB.using_map.grid_check_message, "%STATION_NAME%", station_name()), "Автоматическая Проверка Энергосети", new_sound = GLOB.using_map.grid_check_sound, zlevels = affecting_z)
+	priority_announcement.Announce(replacetext(GLOB.using_map.grid_check_message, "%STATION_NAME%", station_name()), "РђРІС‚РѕРјР°С‚РёС‡РµСЃРєР°СЏ РџСЂРѕРІРµСЂРєР° Р­РЅРµСЂРіРѕСЃРµС‚Рё", new_sound = GLOB.using_map.grid_check_sound, zlevels = affecting_z)

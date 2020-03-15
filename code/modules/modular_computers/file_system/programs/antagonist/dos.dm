@@ -17,6 +17,7 @@
 	is_illegal = 1
 
 /datum/computer_file/program/ntnet_dos/process_tick()
+/*inf
 	dos_speed = 0
 	switch(ntnet_status)
 		if(1)
@@ -25,7 +26,8 @@
 			dos_speed = NTNETSPEED_HIGHSIGNAL
 		if(3)
 			dos_speed = NTNETSPEED_ETHERNET
-	dos_speed *= NTNETSPEED_DOS_AMPLIFICATION + operator_skill - SKILL_BASIC
+inf*/
+	dos_speed = get_signal(NTNET_PEERTOPEER) * NTNETSPEED_DOS_AMPLIFICATION + operator_skill - SKILL_BASIC //inf//was: dos_speed *= NTNETSPEED_DOS_AMPLIFICATION + operator_skill - SKILL_BASIC
 	if(target && executed)
 		target.dos_overload += dos_speed
 		if(!target.operable())

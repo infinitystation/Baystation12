@@ -31,7 +31,7 @@
 /obj/machinery/bluespacedrive/Destroy()
 	if(evacuation_controller.state != 0)
 		evacuation_controller.cancel_evacuation()
-		minor_announcement.Announce(message = "Внимание! Обнаружен сбой в работе БСД. Аварийное прекращение работы БСД.")
+		minor_announcement.Announce(message = "Р’РЅРёРјР°РЅРёРµ! РћР±РЅР°СЂСѓР¶РµРЅ СЃР±РѕР№ РІ СЂР°Р±РѕС‚Рµ Р‘РЎР”. РђРІР°СЂРёР№РЅРѕРµ РїСЂРµРєСЂР°С‰РµРЅРёРµ СЂР°Р±РѕС‚С‹ Р‘РЎР”.")
 	. = ..()
 
 /obj/machinery/bluespacedrive/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
@@ -206,8 +206,8 @@
 			if(env.temperature > 350)
 				evacuation_controller.cancel_evacuation()
 				discharge()
-				minor_announcement.Announce(message = "Внимание! Обнаружен сбой в работе БСД. Аварийное прекращение работы БСД.")
+				minor_announcement.Announce(message = "Р’РЅРёРјР°РЅРёРµ! РћР±РЅР°СЂСѓР¶РµРЅ СЃР±РѕР№ РІ СЂР°Р±РѕС‚Рµ Р‘РЎР”. РђРІР°СЂРёР№РЅРѕРµ РїСЂРµРєСЂР°С‰РµРЅРёРµ СЂР°Р±РѕС‚С‹ Р‘РЎР”.")
 	else
 		evacuation_controller.cancel_evacuation()
 		discharge()
-		minor_announcement.Announce(message = "Внимание! Обнаружен сбой в работе БСД. Аварийное прекращение работы БСД.")
+		minor_announcement.Announce(message = "Р’РЅРёРјР°РЅРёРµ! РћР±РЅР°СЂСѓР¶РµРЅ СЃР±РѕР№ РІ СЂР°Р±РѕС‚Рµ Р‘РЎР”. РђРІР°СЂРёР№РЅРѕРµ РїСЂРµРєСЂР°С‰РµРЅРёРµ СЂР°Р±РѕС‚С‹ Р‘РЎР”.")

@@ -15,7 +15,7 @@
 		number_of_victims--
 		var/obj/machinery/computer/modular/victim = pick_n_take(victims)
 		if(prob(50))
-			victim.visible_message("<span class='warning'>[victim] emits some ominous clicks.</span>")
+			victim.visible_message("<span class='warning'>[victim] издает странные пощелкивания...</span>") //inf //was: '			victim.visible_message("<span class='warning'>[victim] emits some ominous clicks.</span>")'
 			var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = victim.get_component_of_type(/obj/item/weapon/stock_parts/computer/hard_drive)
 			if(prob(60))
 				HDD.take_damage(HDD.damage_failure)

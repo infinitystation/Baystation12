@@ -187,7 +187,7 @@
 		set_frequency(new_frequency)
 		if(hidden_uplink)
 			if(hidden_uplink.check_trigger(usr, frequency, traitor_frequency))
-				usr << browse(null, "window=radio")
+				close_browser(usr, "window=radio")
 		. = 1
 	else if (href_list["talk"])
 		ToggleBroadcast()
@@ -236,7 +236,7 @@
 		z = zlevel
 	var/mob/living/silicon/ai/A = new /mob/living/silicon/ai(src, null, null, 1)
 	A.fully_replace_character_name(from)
-	talk_into(A, message, channel,"ξαϊ&#255;βλ&#255;ες")
+	talk_into(A, message, channel,"ΠΎΠ±ΡΡΠ²Π»ΡΠµΡ‚")
 	qdel(A)
 
 // Interprets the message mode when talking into a radio, possibly returning a connection datum

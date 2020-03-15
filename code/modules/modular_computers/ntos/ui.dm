@@ -196,11 +196,11 @@
 		switch(get_ntnet_status())
 			if(0)
 				data["PC_ntneticon"] = "sig_none.gif"
-			if(1)
+			if(0 to 2)
 				data["PC_ntneticon"] = "sig_low.gif"
-			if(2)
+			if(2 to 4)
 				data["PC_ntneticon"] = "sig_high.gif"
-			if(3)
+			if(4)
 				data["PC_ntneticon"] = "sig_lan.gif"
 
 	var/list/program_headers = list()
