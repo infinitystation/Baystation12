@@ -75,7 +75,7 @@
 	id = "mgcartrige_mh"
 	req_tech = list(TECH_BIO = 3, TECH_MAGNET = 3)
 	materials = list(MATERIAL_ALUMINIUM = 50, MATERIAL_GLASS = 50)
-	build_path = /obj/item/clothing/glasses/hud/health
+	build_path = /obj/item/glass_cartridge/medhud
 	sort_string = "GBAAW"
 
 /datum/design/item/optical/msechud
