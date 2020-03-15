@@ -131,3 +131,11 @@
 		/obj/item/weapon/melee/energy/sword/clown,
 		/obj/item/weapon/grenade/spawnergrenade/banana
 		)
+
+/obj/item/weapon/storage/backpack/dufflebag/syndie_kit/mag_shotgun
+	startswith = list(
+		/obj/item/weapon/gun/projectile/shotgun/magazine,
+		/obj/item/ammo_magazine/c12m/shock,
+		/obj/item/ammo_magazine/c12m = 2,
+		/obj/item/ammo_magazine/c12m/buckshot = 2
+		)

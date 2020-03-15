@@ -13,9 +13,9 @@
 	force = 10
 	obj_flags =  OBJ_FLAG_CONDUCTIBLE
 	caliber = CALIBER_SHOTGUN
-	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
+	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ESOTERIC = 5)
 	load_method = MAGAZINE
-	magazine_type = /obj/item/ammo_magazine/c12m
+	magazine_type = /obj/item/ammo_magazine/c12m/shock
 	allowed_magazines = /obj/item/ammo_magazine/c12m
 	ammo_type = /obj/item/ammo_casing/shotgun
 

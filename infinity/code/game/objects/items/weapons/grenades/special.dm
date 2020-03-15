@@ -19,9 +19,9 @@
 		B2.reagents.add_reagent(/datum/reagent/toxin/amatoxin, 20)
 		B2.reagents.add_reagent(/datum/reagent/acid/polyacid, 20)
 		B1.reagents.add_reagent(/datum/reagent/toxin/phoron, 20)
-		B1.reagents.add_reagent(/datum/reagent/toxin/cyanide, 20)
+		B1.reagents.add_reagent(/datum/reagent/mutagen, 20)
 		B2.reagents.add_reagent(/datum/reagent/acid/polyacid, 20)
-		B2.reagents.add_reagent(/datum/reagent/capsaicin/condensed, 20)
+		B2.reagents.add_reagent(/datum/reagent/impedrezene, 20)
 
 		detonator = new/obj/item/device/assembly_holder/timer_igniter(src)
 
@@ -40,14 +40,14 @@
 		var/obj/item/weapon/reagent_containers/glass/beaker/large/B1 = new(src)
 		var/obj/item/weapon/reagent_containers/glass/beaker/large/B2 = new(src)
 
-		B1.reagents.add_reagent(/datum/reagent/potassium, 13)
-		B1.reagents.add_reagent(/datum/reagent/sugar, 7)
-		B2.reagents.add_reagent(/datum/reagent/sugar, 7)
-		B2.reagents.add_reagent(/datum/reagent/phosphorus, 13)
-		B1.reagents.add_reagent(/datum/reagent/napalm, 20)
-		B2.reagents.add_reagent(/datum/reagent/napalm, 20)
-		B1.reagents.add_reagent(/datum/reagent/toxin/phoron, 20)
-		B2.reagents.add_reagent(/datum/reagent/fuel, 20)
+		B1.reagents.add_reagent(/datum/reagent/potassium, 26)
+		B1.reagents.add_reagent(/datum/reagent/sugar, 14)
+		B2.reagents.add_reagent(/datum/reagent/sugar, 14)
+		B2.reagents.add_reagent(/datum/reagent/phosphorus, 26)
+		B1.reagents.add_reagent(/datum/reagent/napalm, 40)
+		B2.reagents.add_reagent(/datum/reagent/napalm, 40)
+		B1.reagents.add_reagent(/datum/reagent/toxin/phoron, 40)
+		B2.reagents.add_reagent(/datum/reagent/fuel, 40)
 
 		detonator = new/obj/item/device/assembly_holder/timer_igniter(src)
 

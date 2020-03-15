@@ -50,6 +50,16 @@
 	icon_state = "TVb"
 	spent_icon = "TVs"
 
+/obj/item/ammo_casing/shotgun/breaching
+	name = "shotgun slug"
+	desc = "A breaching slug."
+	projectile_type = /obj/item/projectile/bullet/shotgun/breaching
+
+/obj/item/ammo_casing/shotgun/fire
+	name = "shotgun slug"
+	desc = "A dragon breath slug."
+	projectile_type = /obj/item/projectile/bullet/shotgun/fire
+
 /obj/item/ammo_casing/uni46x30mm
 	desc = "A 46x30mm bullet casing."
 	caliber = CALIBER_PISTOL_FAST

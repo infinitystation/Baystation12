@@ -44,6 +44,30 @@
 		explosion(target, -1, 1, 1)
 	..()
 
+/obj/item/projectile/bullet/shotgun/fire
+	name = "dragon breath slug"
+	damage = 20
+	armor_penetration = 5
+
+/obj/item/projectile/bullet/shotgun/fire/on_hit(var/mob/living/carbon/target, var/blocked = 0)
+	if(istype(target))
+		target.adjust_fire_stacks(rand(1,3))
+		target.IgniteMob()
+	. = ..()
+
+/obj/item/projectile/bullet/shotgun/breaching
+	name = "breaching slug"
+	damage = 5
+	armor_penetration = 15
+
+/obj/item/projectile/bullet/shotgun/breaching/on_hit(var/atom/movable/target, var/blocked = 0)
+	if(istype(target))
+		var/throwdir = get_dir(firer,target)
+		target.throw_at(get_edge_target_turf(target, throwdir),4,3)
+		return 1
+	. = ..()
+
+
 /* "Rifle" rounds */
 
 /obj/item/projectile/bullet/rifle/a763r
