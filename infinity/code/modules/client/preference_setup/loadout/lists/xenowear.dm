@@ -28,3 +28,31 @@
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
 	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/eyes/modvisor
+	sort_category = "Xenowear"
+	display_name = "(Tajara) modular visor selection"
+	path = /obj/item/clothing/glasses/modular/normal/taj
+	whitelisted = list(SPECIES_TAJARA)
+
+/datum/gear/eyes/modvisor/New()
+	..()
+	var/mvis = list()
+	mvis["green modular visor"]= /obj/item/clothing/glasses/modular/normal/taj
+	mvis["blue modular visor"]= /obj/item/clothing/glasses/modular/normal/taj/b
+	mvis["red modular visor"]= /obj/item/clothing/glasses/modular/normal/taj/r
+	gear_tweaks += new/datum/gear_tweak/path(mvis)
+
+/datum/gear/eyes/admodvisor
+	sort_category = "Xenowear"
+	display_name = "(Tajara) advancer modular visor selection"
+	path = /obj/item/clothing/glasses/modular/advanced/taj
+	whitelisted = list(SPECIES_TAJARA)
+
+/datum/gear/eyes/admodvisor/New()
+	..()
+	var/admvis = list()
+	admvis["green modular visor"]= /obj/item/clothing/glasses/modular/advanced/taj
+	admvis["blue modular visor"]= /obj/item/clothing/glasses/modular/advanced/taj/b
+	admvis["red modular visor"]= /obj/item/clothing/glasses/modular/advanced/taj/r
+	gear_tweaks += new/datum/gear_tweak/path(admvis)

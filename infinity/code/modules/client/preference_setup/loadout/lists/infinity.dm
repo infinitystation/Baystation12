@@ -115,3 +115,52 @@
 	display_name = "special scarfs selection"
 	path = /obj/item/clothing/accessory/scarf/inf
 	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/eyes/modglasses
+	display_name = "cheap modular glasses"
+	path = /obj/item/clothing/glasses/prescription
+
+/datum/gear/eyes/normmodglasses
+	display_name = "modular glasses"
+	path = /obj/item/clothing/glasses/prescription
+	cost = 3
+
+/datum/gear/eyes/advmodglasses
+	display_name = "advanced modular glasses"
+	path = /obj/item/clothing/glasses/prescription
+	cost = 5
+
+/datum/gear/utility/gcartridge_mes
+	display_name = "meson cartridge"
+	path = /obj/item/glass_cartridge/meson
+	allowed_roles = list(/datum/job/chief_engineer, /datum/job/engineer, /datum/job/mining, /datum/job/scientist, /datum/job/rd)
+	cost = 2
+
+/datum/gear/utility/gcartridge_mat
+	display_name = "material cartridge"
+	path = /obj/item/glass_cartridge/material
+	cost = 4
+
+/datum/gear/utility/gcartridge_wel
+	display_name = "welding cartridge"
+	path = /obj/item/glass_cartridge/welding
+	cost = 3
+
+/datum/gear/utility/gcartridge_pre
+	display_name = "prescription cartridge"
+	path = /obj/item/glass_cartridge/prescription
+	cost = 0
+
+/datum/gear/utility/gcartridge_med
+	display_name = "MedHUD cartridge"
+	path = /obj/item/glass_cartridge/medhud
+
+/datum/gear/utility/gcartridge_sec
+	display_name = "SecHUD cartridge"
+	path = /obj/item/glass_cartridge/sechud
+	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer)
+
+/datum/gear/utility/gcartridge_jan
+	display_name = "janiHUD cartridge"
+	path = /obj/item/glass_cartridge/janihud
+	allowed_roles = list(/datum/job/janitor)

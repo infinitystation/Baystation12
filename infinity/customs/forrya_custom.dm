@@ -33,7 +33,7 @@
 		/obj/item/weapon/crowbar/custom_multishowel,
 		/obj/item/clothing/accessory/storage/drop_pouches/custom_forrya,
 		/obj/item/clothing/mask/gas/alt/custom_forrya,
-		/obj/item/clothing/glasses/meson/prescription/tajvisor/hybrid/custom,
+		/obj/item/clothing/glasses/modular/advanced/taj/custom_forrya,
 		/obj/item/clothing/accessory/amulet/strong/frost)
 	item_icons = list(
 		slot_back_str = CUSTOM_ITEM_MOB)
@@ -381,12 +381,18 @@
 
 	trade_blacklisted = TRUE
 
-/obj/item/clothing/glasses/meson/prescription/tajvisor/hybrid/custom
+/obj/item/clothing/glasses/modular/advanced/taj/custom_forrya
 	name = "post-industrial visor"
 	desc = "A modern Ahdominian made visor that allows the user to see while obscuring their eyes.  \
 	It looks like a standard model, but has an unusual lens coating that seems to slightly absorb  \
 	light. This one has installed as the mesons, and the add-on advanced shielding module."
 	flash_protection = FLASH_PROTECTION_MODERATE
+
+/obj/item/clothing/glasses/modular/advanced/taj/custom_forrya/Initialize()
+	. = ..()
+	cartridges += new /obj/item/glass_cartridge/welding(src)
+	cartridges += new /obj/item/glass_cartridge/meson(src)
+	updatecartridges()
 
 /obj/item/clothing/accessory/amulet/strong/frost
 	name = "frosty averter"

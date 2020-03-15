@@ -3430,6 +3430,7 @@
 #include "infinity\code\modules\clothing\glasses\glasses.dm"
 #include "infinity\code\modules\clothing\glasses\glasses_resomi.dm"
 #include "infinity\code\modules\clothing\glasses\glasses_xeno_veil.dm"
+#include "infinity\code\modules\clothing\glasses\modular.dm"
 #include "infinity\code\modules\clothing\gloves\gloves.dm"
 #include "infinity\code\modules\clothing\head\berets.dm"
 #include "infinity\code\modules\clothing\head\head.dm"
