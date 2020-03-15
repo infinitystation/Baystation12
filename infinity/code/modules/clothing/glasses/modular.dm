@@ -324,4 +324,4 @@
 				qdel(src)
 			return
 	update_icon()
-..()
+	..()
