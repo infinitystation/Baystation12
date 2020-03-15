@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-
-=======
 /obj/item/clothing/glasses/modular
 	name = "modular glasses"
 	desc = "It's using different cartridges to grant user additional vision modifiers. This is a cheap mass-factory version."
@@ -328,4 +325,3 @@
 			return
 	update_icon()
 ..()
->>>>>>> Stashed changes
