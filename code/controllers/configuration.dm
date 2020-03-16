@@ -774,9 +774,9 @@ var/list/gamemode_cache = list()
 					lighting_style = value
 
 				if("ntnet_radius_multiplyer")
-					ntnet_radius_multiplyer = value
+					ntnet_radius_multiplyer = text2num(value)
 				if("ntnet_speed_limiter")
-					ntnet_speed_limiter = value
+					ntnet_speed_limiter = text2num(value)
 			//[/INF]
 
 				if("max_gear_cost")
