@@ -34,6 +34,7 @@
 	display_name = "(Tajara) modular visor selection"
 	path = /obj/item/clothing/glasses/modular/normal/taj
 	whitelisted = list(SPECIES_TAJARA)
+	cost = 2
 
 /datum/gear/eyes/modvisor/New()
 	..()
@@ -48,6 +49,7 @@
 	display_name = "(Tajara) advancer modular visor selection"
 	path = /obj/item/clothing/glasses/modular/advanced/taj
 	whitelisted = list(SPECIES_TAJARA)
+	cost = 4
 
 /datum/gear/eyes/admodvisor/New()
 	..()
