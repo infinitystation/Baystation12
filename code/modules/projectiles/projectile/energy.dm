@@ -75,6 +75,20 @@
 	agony = 80
 	damage = 3
 
+/obj/item/projectile/energy/electrode/taser	//has more pain than a beam because it's harder to hit
+	name = "electrode"
+	icon_state = "spark"
+	fire_sound = 'sound/weapons/Taser.ogg'
+	agony = 30
+	damage = 1
+	damage_type = STUN
+	eyeblur = 1//Some feedback that you've been hit
+	step_delay = 0.7
+
+/obj/item/projectile/energy/electrode/taser/stunshot
+	agony = 45
+	damage = 2
+
 /obj/item/projectile/energy/declone
 	name = "decloner beam"
 	icon_state = "declone"
@@ -205,3 +219,8 @@
 	damage = 10
 	armor_penetration = 35
 	damage_type = BRUTE
+
+/obj/item/projectile/energy/plasmastun/sonic/weaked
+	agony = 70
+	damage_type = STUN
+	damage = 3

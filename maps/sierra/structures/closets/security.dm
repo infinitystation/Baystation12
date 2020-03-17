@@ -116,16 +116,11 @@
 /obj/structure/closet/secure_closet/forensics/WillContain()
 	return list(
 		/obj/item/clothing/gloves/forensic,
-		/obj/item/clothing/head/helmet/nt,
 		/obj/item/clothing/glasses/sunglasses/sechud/toggle,
 		/obj/item/weapon/storage/belt/holster/forensic,
-		/obj/item/weapon/storage/belt/security,
 		/obj/item/device/radio/headset/headset_sec,
 		/obj/item/device/radio/headset/headset_sec/alt,
-		/obj/item/clothing/suit/armor/pcarrier/medium/nt,
-		/obj/item/weapon/gun/energy/gun/small/secure,
 		/obj/item/device/flash,
-		/obj/item/weapon/melee/baton/loaded,
 		/obj/item/weapon/reagent_containers/spray/pepper,
 		/obj/item/taperoll/police,
 		/obj/item/weapon/storage/box/evidence,
@@ -138,7 +133,38 @@
 		/obj/item/weapon/crowbar/prybar,
 		/obj/item/device/radio/off,
 		/obj/item/clothing/mask/gas/half,
-		/obj/item/weapon/storage/firstaid/individual/military
+		/obj/item/weapon/storage/firstaid/individual/military,
+		/obj/item/weapon/storage/briefcase/crimekit
+	)
+
+/obj/structure/closet/secure_closet/detective/sierra
+	name = "detective's locker"
+	req_access = list(access_forensics_lockers)
+	closet_appearance = /decl/closet_appearance/secure_closet/sierra/security/forensics
+
+/obj/structure/closet/secure_closet/forensics/WillContain()
+	return list(
+		/obj/item/clothing/gloves/forensic,
+		/obj/item/clothing/glasses/sunglasses/sechud/toggle,
+		/obj/item/clothing/suit/storage/det_trench,
+		/obj/item/weapon/storage/belt/holster/forensic,
+		/obj/item/clothing/head/det,
+		/obj/item/device/radio/headset/headset_sec,
+		/obj/item/device/radio/headset/headset_sec/alt,
+		/obj/item/clothing/shoes/laceup,
+		/obj/item/weapon/melee/baton/loaded,
+		/obj/item/device/flash,
+		/obj/item/taperoll/police,
+		/obj/item/weapon/storage/box/gloves,
+		/obj/item/weapon/storage/firstaid/individual/military,
+		/obj/item/weapon/storage/briefcase/crimekit,
+		/obj/item/device/taperecorder,
+		/obj/item/device/tape/random = 3,
+		/obj/item/device/holowarrant,
+		/obj/item/device/flashlight/maglight,
+		/obj/item/weapon/crowbar/prybar,
+		/obj/item/device/radio/off,
+		/obj/item/clothing/mask/gas/half
 	)
 
 /obj/structure/closet/secure_closet/security/sierra
@@ -148,20 +174,16 @@
 
 /obj/structure/closet/secure_closet/security/sierra/WillContain()
 	return list(
-		/obj/item/clothing/suit/armor/pcarrier/medium/nt,
-		/obj/item/clothing/head/helmet/nt,
 		/obj/item/device/radio/headset/headset_sec,
 		/obj/item/device/radio/headset/headset_sec/alt,
 		/obj/item/weapon/storage/belt/holster/security,
 		/obj/item/device/flash,
 		/obj/item/weapon/reagent_containers/spray/pepper,
-		/obj/item/weapon/grenade/chem_grenade/teargas,
 		/obj/item/weapon/melee/baton/loaded,
 		/obj/item/clothing/glasses/sunglasses/sechud/toggle,
 		/obj/item/taperoll/police,
 		/obj/item/device/hailer,
 		/obj/item/clothing/accessory/storage/black_vest,
-		/obj/item/weapon/gun/energy/gun/secure,
 		/obj/item/device/megaphone,
 		/obj/item/clothing/gloves/thick,
 		/obj/item/device/holowarrant,

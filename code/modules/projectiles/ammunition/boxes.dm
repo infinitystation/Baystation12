@@ -173,6 +173,10 @@
 	ammo_type = /obj/item/ammo_casing/pistol/small
 	max_ammo = 8
 
+/obj/item/ammo_magazine/pistol/small/secure
+	labels = list("rubber")
+	ammo_type = /obj/item/ammo_casing/pistol/small/rubber
+
 /obj/item/ammo_magazine/pistol/small/empty
 	initial_ammo = 0
 

@@ -39,17 +39,12 @@
 	title = "Detective"
 	department = "Security"
 	department_flag = SEC
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "the Head of Security"
 	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 35
-	skill_points = 14
-	alt_titles = list(
-		"Criminal Investigator",
-		"Forensic Technician"
-		)
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/security/detective
 	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/civilian, /datum/mil_branch/contractor)
 	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor, /datum/mil_rank/civ/civ)
@@ -63,6 +58,36 @@
 	max_skill = list(   SKILL_COMBAT      = SKILL_MAX,
 	                    SKILL_WEAPONS     = SKILL_MAX,
 	                    SKILL_FORENSICS   = SKILL_MAX)
+	skill_points = 22
+
+	access = list(access_seceva, access_security, access_brig, access_forensics_lockers,
+			            access_maint_tunnels, access_emergency_storage, access_eva,
+			            access_sec_doors, access_hangar)
+
+	minimal_access = list()
+
+	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
+							 /datum/computer_file/program/camera_monitor)
+
+/datum/job/forenics_technican
+	title = "Forenics Technican"
+	department = "Security"
+	department_flag = SEC
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the Head of Security"
+	economic_power = 5
+	minimal_player_age = 7
+	ideal_character_age = 35
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/security/detective
+	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/civilian, /datum/mil_branch/contractor)
+	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor, /datum/mil_rank/civ/civ)
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_COMPUTER    = SKILL_BASIC,
+	                    SKILL_EVA         = SKILL_BASIC,
+	                    SKILL_FORENSICS   = SKILL_ADEPT)
+
+	max_skill = list(   SKILL_FORENSICS   = SKILL_MAX)
 	skill_points = 22
 
 	access = list(access_seceva, access_security, access_brig, access_forensics_lockers,

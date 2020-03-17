@@ -207,3 +207,6 @@
 
 /obj/item/weapon/gun/projectile/shotgun/pump/combat/armory
 	starts_loaded = 0
+
+/obj/item/weapon/gun/projectile/shotgun/pump/combat/beanbag/armory
+	starts_loaded = 0

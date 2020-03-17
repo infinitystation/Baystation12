@@ -182,6 +182,22 @@
 	icon_state = "thundervendor"
 	req_access = list(access_security)
 
+/obj/machinery/vending/security/personal
+	name = "SecTech Personal"
+	desc = "A wall-mounted SecTech vendor. This one stores self-defence weapons."
+	density = 0
+	vend_delay = 10
+	icon = 'infinity/icons/obj/vending.dmi'
+	icon_state = "thundervendor"
+	req_access = list(access_security)
+	products = list(/obj/item/weapon/gun/energy/confuseray/secure = 5,
+					/obj/item/device/flash = 5,
+					/obj/item/weapon/reagent_containers/spray/pepper = 5,
+					/obj/item/weapon/gun/energy/taser/secure = 3,
+					/obj/item/weapon/gun/projectile/pistol/holdout/secure = 3,
+					/obj/item/ammo_magazine/pistol/small/secure = 12
+					)
+
 /obj/machinery/vending/armoryvend/kinetic
 	name = "WardenTech Kinetic"
 	desc = "A weapon vendor. It stores kinetic weapons."

@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/energy/temperature
-	name = "expermental temperature gun"
+	name = "temperature gun"
 	icon = 'icons/obj/guns/freezegun.dmi'
 	icon_state = "freezegun"
 	item_state = "freezegun"

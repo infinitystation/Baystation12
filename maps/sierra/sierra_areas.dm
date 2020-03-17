@@ -899,6 +899,10 @@
 	name = "First Deck - Security - Hallway - Port"
 	icon_state = "security"
 
+/area/security/sierra/hallway/port/fore
+	name = "First Deck - Security - Hallway - Fore Port"
+	icon_state = "security"
+
 /area/security/sierra/sergeant
 	name = "First Deck - Security - Warden"
 	icon_state = "brig"
@@ -907,10 +911,19 @@
 /area/security/sierra/armory
 	name = "First Deck - Security - Armory"
 	icon_state = "armory"
+	req_access = list(access_security)
+
+/area/security/sierra/armory/heavy
+	name = "First Deck - Security - Heavy Armory"
+	icon_state = "armory"
 	req_access = list(access_armory)
 
+/area/security/sierra/armory/heavy/lobby
+	name = "First Deck - Security - Heavy Armory Lobby"
+	icon_state = "armory"
+
 /area/security/sierra/armory/lobby
-	name = "First Deck - Security - Armory Lobby"
+	name = "First Deck - Security - Heavy Armory Lobby"
 	icon_state = "armory"
 
 /area/security/sierra/suits
@@ -920,6 +933,10 @@
 
 /area/security/sierra/breakroom
 	name = "First Deck - Security - Break Room"
+	icon_state = "security"
+
+/area/security/sierra/procedural
+	name = "First Deck - Security - Procedural Room"
 	icon_state = "security"
 
 /area/security/sierra/hosbed
@@ -1244,6 +1261,14 @@
 
 /area/holodeck/source_meetinghall
 	name = "Holodeck - Meeting Hall"
+	sound_env = AUDITORIUM
+
+/area/holodeck/source_medsim
+	name = "Holodeck - Medical Simulation"
+	sound_env = AUDITORIUM
+
+/area/holodeck/source_emvault
+	name = "Holodeck - Emergency Vault"
 	sound_env = AUDITORIUM
 
 /area/holodeck/source_theatre

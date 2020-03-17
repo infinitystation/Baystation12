@@ -27,3 +27,15 @@
 	autolinkers = list("hub", "relay", "c_relay", "s_relay", "m_relay", "r_relay", "b_relay", "1_relay", "2_relay", "3_relay", "4_relay", "5_relay", "s_relay", "science", "medical",
 	"supply", "service", "common", "command", "engineering", "security", "unused", "m_relay_a",
 	"receiverA", "broadcasterA")
+
+/obj/item/device/radio/intercom/interrogation/sierra
+	name = "intercom (Interrogation)"
+	frequency  = 1449
+	broadcasting = 0
+	listening = 1
+
+/obj/item/device/radio/intercom/interrogation/sierra/listening
+	name = "intercom (Interrogation)"
+	frequency  = 1449
+	broadcasting = 1
+	listening = 0

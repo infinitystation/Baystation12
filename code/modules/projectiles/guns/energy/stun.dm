@@ -155,3 +155,43 @@
 	combustion = 0
 
 	bulk = GUN_BULK_PISTOL //inf
+
+/obj/item/weapon/gun/energy/confuseray/secure
+	name = "SDG-12 disorientator"
+	desc = "The SDG-12 is small self-defence handgun with low capacity and short-distance projector."
+	icon = 'icons/obj/guns/confuseray.dmi'
+	icon_state = "confuseray"
+	safety_icon = "safety"
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_POWER = 2)
+	w_class = ITEM_SIZE_SMALL
+	max_shots = 4
+	combustion = 0
+	firemodes = list(list(mode_name="confuse", projectile_type=/obj/item/projectile/beam/confuseray, modifystate="confuseray"))
+	req_access = list(list())
+	authorized_modes = list(AUTHORIZED)
+	is_serial = 1
+	s_gun = "D-SDG-12"
+	bulk = GUN_BULK_PISTOL //inf
+
+/obj/item/weapon/gun/energy/taser/secure
+	name = "SD-9 taser"
+	desc = "A small taser, which is using for self-defence. This one has a GPS beacon attached to it."
+	icon = 'icons/obj/guns/taser.dmi'
+	icon_state = "taser"
+	item_state = null
+	fire_delay = 4
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_POWER = 2)
+
+	bulk = 0
+	w_class = ITEM_SIZE_SMALL
+
+	max_shots = 4
+
+	firemodes = list(
+		list(mode_name="shock", projectile_type=/obj/item/projectile/energy/electrode/taser, modifystate="taserblue"),
+		list(mode_name="stun", projectile_type=/obj/item/projectile/energy/electrode/taser/stunshot, modifystate="taser"),
+		)
+	req_access = list(list())
+	authorized_modes = list(AUTHORIZED, AUTHORIZED)
+	is_serial = 1
+	s_gun = "SD-9T"

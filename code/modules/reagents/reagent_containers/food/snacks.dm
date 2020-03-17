@@ -395,6 +395,35 @@
 	.=..()
 	reagents.add_reagent(/datum/reagent/nutriment/softtofu, 6)
 
+/obj/item/weapon/reagent_containers/food/snacks/rottentofu
+	name = "rotten tofu"
+	icon_state = "tofu"
+	desc = "This tofu looks disguisting. Wait, is this a hair?"
+	filling_color = "#dfedc5"
+	center_of_mass = "x=17;y=10"
+	nutriment_amt = 4
+	nutriment_desc = list("old tofu" = 3, "goeyness" = 3)
+	bitesize = 3
+
+/obj/item/weapon/reagent_containers/food/snacks/rottentofu/Initialize()
+	.=..()
+	reagents.add_reagent(/datum/reagent/toxin, rand(1,3))
+
+/obj/item/weapon/reagent_containers/food/snacks/ponkdocket
+	name = "\improper Ponk-docket"
+	desc = "The cheap version of dock-pocket, produced by BestFood Inc. It isn't a very good choice. You dont even need to heat them!"
+	icon_state = "donkpocket"
+	filling_color = "#dedeab"
+	center_of_mass = "x=16;y=10"
+	nutriment_desc = list("rotten soy" = 1, "old dough" = 2)
+	nutriment_amt = 2
+
+/obj/item/weapon/reagent_containers/food/snacks/ponkdocket/Initialize()
+	.=..()
+	reagents.add_reagent(/datum/reagent/nutriment/protein, 2)
+	if(prob(5)) //Hehehe
+		reagents.add_reagent(/datum/reagent/toxin/hair_remover, 2)
+
 /obj/item/weapon/reagent_containers/food/snacks/tofurkey
 	name = "\improper Tofurkey"
 	desc = "A fake turkey made from tofu."

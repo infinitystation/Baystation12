@@ -164,6 +164,26 @@
 	is_serial = 1
 	s_gun = "LA-P3"
 
+/obj/item/weapon/gun/projectile/pistol/holdout/secure
+	name = "NT-43 rubber pistol"
+	desc = "The NT-43 Pistol. This one can shoot only special rubber bullets."
+	icon = 'icons/obj/guns/holdout_pistol.dmi'
+	icon_state = "pistol"
+	item_state = null
+	caliber = CALIBER_PISTOL_SMALL
+	silenced = 0
+	fire_delay = 4
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
+	magazine_type = /obj/item/ammo_magazine/pistol/small/secure
+	allowed_magazines = /obj/item/ammo_magazine/pistol/small/secure
+
+	bulk = 0
+	w_class = ITEM_SIZE_SMALL
+
+	req_access = list(list())
+	is_serial = 1
+	s_gun = "NT-43"
+
 /obj/item/weapon/gun/projectile/pistol/holdout/attack_hand(mob/user as mob)
 	if(user.get_inactive_hand() == src)
 		if(silenced)

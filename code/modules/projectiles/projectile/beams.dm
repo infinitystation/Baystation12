@@ -235,16 +235,16 @@
 	name = "disorientator ray"
 	icon_state = "beam_grass"
 	fire_sound='sound/weapons/confuseray.ogg'
-	damage = 2
-	agony = 7
+	damage = 1
+	agony = 12
 	sharp = FALSE
 	//distance_falloff //inf = 5
 	damage_flags = 0
 	damage_type = STUN
 	life_span = 3
 	penetration_modifier = 0
-	var/potency_min = 4
-	var/potency_max = 6
+	var/potency_min = 8
+	var/potency_max = 12
 
 	muzzle_type = /obj/effect/projectile/confuseray/muzzle
 	tracer_type = /obj/effect/projectile/confuseray/tracer
