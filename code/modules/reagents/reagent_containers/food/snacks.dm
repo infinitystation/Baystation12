@@ -1142,6 +1142,10 @@
 	reagents.add_reagent(/datum/reagent/sodiumchloride, 1)
 	reagents.add_reagent(/datum/reagent/blackpepper, 1)
 
+/obj/item/weapon/reagent_containers/food/snacks/meatsteak/synthetic
+	name = "meaty steak"
+	desc = "A piece of hot spicy pseudo-meat."
+
 /obj/item/weapon/reagent_containers/food/snacks/loadedsteak
 	name = "loaded steak"
 	desc = "A steak slathered in sauce with sauteed onions and mushrooms."
@@ -1378,7 +1382,7 @@
 	icon_state = "coldchili"
 	filling_color = "#2b00ff"
 	center_of_mass = "x=15;y=9"
-	nutriment_desc = list("ice peppers" = 3)
+	nutriment_desc = list("chilly peppers" = 3)
 	nutriment_amt = 3
 	trash = /obj/item/trash/snack_bowl
 	bitesize = 5

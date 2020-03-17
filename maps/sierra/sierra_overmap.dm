@@ -61,11 +61,12 @@
 /obj/effect/overmap/visitable/ship/landable/guppy
 	name = "Guppy"
 	shuttle = "Guppy"
-	max_speed = 1/(10 SECONDS)
-	burn_delay = 2 SECONDS
-	vessel_mass = 2200
+	max_speed = 1/(4 SECONDS) //was 1/(10 SECONDS)
+	burn_delay = 0.5 SECONDS //was 2 SECONDS, just try to not burn all the fuel
+	vessel_mass = 500 //was 2200, yes, it's 500 tonnes
 	fore_dir = SOUTH
 	vessel_size = SHIP_SIZE_TINY
+	skill_needed = SKILL_BASIC //was trained
 
 /obj/machinery/computer/shuttle_control/explore/exploration_shuttle
 	name = "charon control console"

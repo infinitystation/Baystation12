@@ -21,9 +21,9 @@
 		return !!cagie.contained
 	return FALSE
 
-/obj/item/device/scanner/xenobio/scan(mob/O, mob/user)
+/obj/item/device/scanner/xenobio/scan(mob/O, mob/user) //INF WAS (mob/O)
 	scan_title = O.name
-	scan_data = xenobio_scan_results(O)
+	scan_data = xenobio_scan_results(O, user) //INF WAS (O)
 	user.show_message(SPAN_NOTICE(scan_data))
 
 /proc/list_gases(var/gases)
@@ -32,15 +32,21 @@
 		. += "[gas_data.name[g]] ([gases[g]]%)"
 	return english_list(.)
 
-/proc/xenobio_scan_results(mob/target)
+/proc/xenobio_scan_results(mob/target, mob/user) //INF WAS (mob/target)
 	. = list()
 	if(istype(target, /obj/structure/stasis_cage))
 		var/obj/structure/stasis_cage/cagie = target
 		target = cagie.contained
 	if(istype(target, /mob/living/carbon/human))
 		var/mob/living/carbon/human/H = target
+//[INF]
+		var/t_species = H.species
+		if(H.mind?.special_role == "Changeling")
+			if(user.skill_check(SKILL_SCIENCE, SKILL_ADEPT))
+				t_species = "Unknown"
+//[/INF]
 		. += "Data for [H]:"
-		. += "Species:\t[H.species]"
+		. += "Species:\t[t_species]" //INF WAS H.species
 		. += "Breathes:\t[gas_data.name[H.species.breath_type]]"
 		. += "Exhales:\t[gas_data.name[H.species.exhale_type]]"
 		. += "Known toxins:\t[english_list(H.species.poison_types)]"

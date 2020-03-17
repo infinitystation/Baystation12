@@ -1,5 +1,5 @@
 /mob/living/simple_animal/hostile/true_changeling
-	name = "shambling horror"
+	name = "abomination"
 	desc = "A monstrous creature, made of twisted flesh and bone."
 	speak_emote = list("gibbers")
 	icon = 'icons/mob/infinity_mob.dmi'

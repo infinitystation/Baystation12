@@ -19,18 +19,18 @@
 		display_choices[M] = capitalize(M.full_name)
 		additional_text[M] ="<td align = 'center'>~[M.recommended_players]</td>"
 	choices += "extend"
-	display_choices["extend"] = "Продлить эту карту"
+	display_choices["extend"] = "РџСЂРѕРґР»РёС‚СЊ СЌС‚Сѓ РєР°СЂС‚Сѓ"
 
 /datum/vote/map/report_result()
 	if(..())
 		if(!(result[result[1]] > 0))
-			log_game("Никто не проголосовал за смену карты, будет продлена текущая карта.")
+			log_game("РќРёРєС‚Рѕ РЅРµ РїСЂРѕРіРѕР»РѕСЃРѕРІР°Р» Р·Р° СЃРјРµРЅСѓ РєР°СЂС‚С‹, Р±СѓРґРµС‚ РїСЂРѕРґР»РµРЅР° С‚РµРєСѓС‰Р°СЏ РєР°СЂС‚Р°.")
 		else
-			log_game("Не найдены результаты голосования. Продление текущей карты.")
+			log_game("РќРµ РЅР°Р№РґРµРЅС‹ СЂРµР·СѓР»СЊС‚Р°С‚С‹ РіРѕР»РѕСЃРѕРІР°РЅРёСЏ. РџСЂРѕРґР»РµРЅРёРµ С‚РµРєСѓС‰РµР№ РєР°СЂС‚С‹.")
 		SSticker.end_game_state = END_GAME_READY_TO_END
 		return 1
 	if(result[1] == "extend")
-		log_game("Игроки выбрали продление текущей карты.")
+		log_game("РРіСЂРѕРєРё РІС‹Р±СЂР°Р»Рё РїСЂРѕРґР»РµРЅРёРµ С‚РµРєСѓС‰РµР№ РєР°СЂС‚С‹.")
 		SSticker.end_game_state = END_GAME_READY_TO_END
 		return
 
@@ -47,9 +47,9 @@
 			SSvote.reset()
 			SSticker.update_map(M.full_name)
 		else
-			send2mainirc("Следующей картой будет - [M.full_name]!")
+			send2mainirc("РЎР»РµРґСѓСЋС‰РµР№ РєР°СЂС‚РѕР№ Р±СѓРґРµС‚ - [M.full_name]!")
 			SSticker.end_game_state = END_GAME_READY_TO_END
 	else
-		log_game("Неизвестная ошибка. Продление текущей карты.")
+		log_game("РќРµРёР·РІРµСЃС‚РЅР°СЏ РѕС€РёР±РєР°. РџСЂРѕРґР»РµРЅРёРµ С‚РµРєСѓС‰РµР№ РєР°СЂС‚С‹.")
 		SSticker.end_game_state = END_GAME_READY_TO_END
 		return

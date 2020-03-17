@@ -35,27 +35,27 @@
 	//output += "<i>[GLOB.using_map.get_map_info()]</i>"
 	//output += "<hr>Current character: <br><b>[client.prefs.real_name]</b>[client.prefs.job_high ? ",<br>[client.prefs.job_high]" : null]<br>"
 	output +="<hr>"
-	output += "<p><a href='byond://?src=\ref[src];show_preferences=1'>Setup Character</A></p>"
+	output += "<p><a href='byond://?src=\ref[src];show_preferences=1'>РќР°СЃС‚СЂРѕР№РєРё</A></p>"
 
 	if(GAME_STATE <= RUNLEVEL_LOBBY)
 		if(ready)
-			output += "<p>\[ <span class='linkOn'><b>Ready</b></span> | <a href='byond://?src=\ref[src];ready=0'>Not Ready</a> \]</p>"
+			output += "<p>\[ <span class='linkOn'><b>Р“РѕС‚РѕРІ</b></span> | <a href='byond://?src=\ref[src];ready=0'>РќРµ РіРѕС‚РѕРІ</a> \]</p>"
 		else
-			output += "<p>\[ <a href='byond://?src=\ref[src];ready=1'>Ready</a> | <span class='linkOn'><b>Not Ready</b></span> \]</p>"
+			output += "<p>\[ <a href='byond://?src=\ref[src];ready=1'>Р“РѕС‚РѕРІ</a> | <span class='linkOn'><b>РќРµ РіРѕС‚РѕРІ</b></span> \]</p>"
 		if(check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
-			output += "<p><a href='byond://?src=\ref[src];observe=1'>Observe</A></p>"
+			output += "<p><a href='byond://?src=\ref[src];observe=1'>РќР°Р±Р»СЋРґР°С‚СЊ</A></p>"
 	else
-		output += "<a href='byond://?src=\ref[src];manifest=1'>View the Crew Manifest</A><br><br>"
-		output += "<a href='byond://?src=\ref[src];late_join=1'>Join Game!</A>"
+		output += "<a href='byond://?src=\ref[src];manifest=1'>РЎРїРёСЃРѕРє СЌРєРёРїР°Р¶Р°</A><br><br>"
+		output += "<a href='byond://?src=\ref[src];late_join=1'>Р—Р°Р№С‚Рё РІ СЂР°СѓРЅРґ!</A>"
 		if(config.observers_allowed || check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
-			output += "<p><a href='byond://?src=\ref[src];observe=1'>Observe</A></p>"
+			output += "<p><a href='byond://?src=\ref[src];observe=1'>РќР°Р±Р»СЋРґР°С‚СЊ</A></p>"
 
-	output += "<hr>Current character:<br>"
+	output += "<hr>РўРµРєСѓС‰РёР№ РїРµСЂСЃРѕРЅР°Р¶:<br>"
 	output += "<b>[client.prefs.real_name]</b>"
 	output += "[client.prefs.job_high ? ",<br>[client.prefs.job_high]" : null]<br>"
 	output += "</div>"
 
-	panel = new(src, "Welcome","Welcome to [GLOB.using_map.full_name]", 210, 280, src)
+	panel = new(src, "Welcome","Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РЅР° [GLOB.using_map.full_name]", 210, 280, src)
 	panel.set_window_options("can_close=0")
 	panel.set_content(JOINTEXT(output))
 	panel.open()
@@ -116,12 +116,12 @@
 
 		if(!check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
 			if(!config.observers_allowed)
-				to_chat(src, SPAN_WARNING("Вы не можете зайти в раунд за призрака, поскольку это было запрещено настройками сервера."))
+				to_chat(src, SPAN_WARNING("Р’С‹ РЅРµ РјРѕР¶РµС‚Рµ Р·Р°Р№С‚Рё РІ СЂР°СѓРЅРґ Р·Р° РїСЂРёР·СЂР°РєР°, РїРѕСЃРєРѕР»СЊРєСѓ СЌС‚Рѕ Р±С‹Р»Рѕ Р·Р°РїСЂРµС‰РµРЅРѕ РЅР°СЃС‚СЂРѕР№РєР°РјРё СЃРµСЂРІРµСЂР°."))
 				return
 
 			if((world.time - round_start_time < (config.observe_delay MINUTES)))
-				to_chat(src, SPAN_WARNING("Извините, вам следует подождать [config.observe_delay] минут со старта раунда чтобы перейти в режим наблюдател&#255;."))
-				to_chat(src, SPAN_NOTICE("Проверьте таймер \"Round Duration\" во вкладке Status чтобы узнать сколько времени прошло."))
+				to_chat(src, SPAN_WARNING("РР·РІРёРЅРёС‚Рµ, РІР°Рј СЃР»РµРґСѓРµС‚ РїРѕРґРѕР¶РґР°С‚СЊ [config.observe_delay] РјРёРЅСѓС‚ СЃРѕ СЃС‚Р°СЂС‚Р° СЂР°СѓРЅРґР° С‡С‚РѕР±С‹ РїРµСЂРµР№С‚Рё РІ СЂРµР¶РёРј РЅР°Р±Р»СЋРґР°С‚РµР»СЏ."))
+				to_chat(src, SPAN_NOTICE("РџСЂРѕРІРµСЂСЊС‚Рµ С‚Р°Р№РјРµСЂ \"Round Duration\" РІРѕ РІРєР»Р°РґРєРµ Status С‡С‚РѕР±С‹ СѓР·РЅР°С‚СЊ СЃРєРѕР»СЊРєРѕ РІСЂРµРјРµРЅРё РїСЂРѕС€Р»Рѕ."))
 				return
 
 		if(!config.respawn_delay || client.holder || alert(src,"Are you sure you wish to observe? You will have to wait [OBSERV_SPAWN_DELAY] minute\s before being able to respawn!","Player Setup","Yes","No") == "Yes")
@@ -130,12 +130,12 @@
 			// eckff-inf@dev: Safety checks
 			if(!check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
 				if(!config.observers_allowed)
-					to_chat(src, SPAN_WARNING("Вы не можете зайти в раунд за призрака, поскольку это было запрещено настройками сервера."))
+					to_chat(src, SPAN_WARNING("Р’С‹ РЅРµ РјРѕР¶РµС‚Рµ Р·Р°Р№С‚Рё РІ СЂР°СѓРЅРґ Р·Р° РїСЂРёР·СЂР°РєР°, РїРѕСЃРєРѕР»СЊРєСѓ СЌС‚Рѕ Р±С‹Р»Рѕ Р·Р°РїСЂРµС‰РµРЅРѕ РЅР°СЃС‚СЂРѕР№РєР°РјРё СЃРµСЂРІРµСЂР°."))
 					return 1
 
 				if((world.time - round_start_time < (config.observe_delay MINUTES)))
-					to_chat(src, SPAN_WARNING("Извините, вам следует подождать [config.observe_delay] минут со старта раунда чтобы перейти в режим наблюдател&#255;."))
-					to_chat(src, SPAN_NOTICE("Проверьте таймер \"Round Duration\" во вкладке Status чтобы узнать сколько времени прошло."))
+					to_chat(src, SPAN_WARNING("РР·РІРёРЅРёС‚Рµ, РІР°Рј СЃР»РµРґСѓРµС‚ РїРѕРґРѕР¶РґР°С‚СЊ [config.observe_delay] РјРёРЅСѓС‚ СЃРѕ СЃС‚Р°СЂС‚Р° СЂР°СѓРЅРґР° С‡С‚РѕР±С‹ РїРµСЂРµР№С‚Рё РІ СЂРµР¶РёРј РЅР°Р±Р»СЋРґР°С‚РµР»СЏ."))
+					to_chat(src, SPAN_NOTICE("РџСЂРѕРІРµСЂСЊС‚Рµ С‚Р°Р№РјРµСЂ \"Round Duration\" РІРѕ РІРєР»Р°РґРєРµ Status С‡С‚РѕР±С‹ СѓР·РЅР°С‚СЊ СЃРєРѕР»СЊРєРѕ РІСЂРµРјРµРЅРё РїСЂРѕС€Р»Рѕ."))
 					return 1
 
 			var/mob/observer/ghost/observer = new()
@@ -218,7 +218,7 @@
 			if("nostats")
 				option = "NOSTATS"
 			if("later")
-				usr << browse(null,"window=privacypoll")
+				close_browser(usr,"window=privacypoll")
 				return
 			if("abstain")
 				option = "ABSTAIN"
@@ -231,7 +231,7 @@
 			var/DBQuery/query_insert = dbcon.NewQuery(sql)
 			query_insert.Execute()
 			to_chat(usr, "<b>Thank you for your vote!</b>")
-			usr << browse(null,"window=privacypoll")
+			close_browser(usr,"window=privacypoll")
 
 	if(!ready && href_list["preference"])
 		if(client)
@@ -452,7 +452,7 @@
 		additional_dat += "<br>"
 		dat = additional_dat + dat
 	dat = header + dat
-	src << browse(jointext(dat, null), "window=latechoices;size=450x640;can_close=1")
+	show_browser(src, jointext(dat, null), "window=latechoices;size=450x640;can_close=1")
 
 /mob/new_player/proc/create_character(var/turf/spawn_turf)
 	spawning = 1
@@ -501,6 +501,11 @@
 		if(client.prefs.relations.len)
 			for(var/T in client.prefs.relations)
 				var/TT = matchmaker.relation_types[T]
+				//[INF]	Nonexistent relation. Delete it.
+				if(!TT)
+					client.prefs.relations -= T
+					continue
+				//[/INF]
 				var/datum/relation/R = new TT
 				R.holder = mind
 				R.info = client.prefs.relations_info[T]
@@ -526,7 +531,7 @@
 /mob/new_player/proc/ViewManifest()
 	var/dat = "<div align='center'>"
 	dat += html_crew_manifest(OOC = 1)
-	//src << browse(dat, "window=manifest;size=370x420;can_close=1")
+	//show_browser(src, dat, "window=manifest;size=370x420;can_close=1")
 	var/datum/browser/popup = new(src, "Crew Manifest", "Crew Manifest", 370, 420, src)
 	popup.set_content(dat)
 	popup.open()
@@ -535,7 +540,7 @@
 	return 0
 
 /mob/new_player/proc/close_spawn_windows()
-	src << browse(null, "window=latechoices") //closes late choices window
+	close_browser(src, "window=latechoices") //closes late choices window
 	panel.close()
 
 /mob/new_player/proc/check_species_allowed(datum/species/S, var/show_alert=1)

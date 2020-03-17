@@ -102,7 +102,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/nt41/jacking
 	name = "xr36"
-	desc = "XR36 - export version of the XR36K, characterized by installing a ìhighî picatinny rail instead of a carrying handle on top of the receiver. The guide is equipped with a 3x4 double sight, and then a thin longitudinal groove is used. In addition, on the XR36 modification, a ìcheekî is installed on the standard frame stock."
+	desc = "XR36 - export version of the XR36K, characterized by installing a ‚Äúhigh‚Äù picatinny rail instead of a carrying handle on top of the receiver. The guide is equipped with a 3x4 double sight, and then a thin longitudinal groove is used. In addition, on the XR36 modification, a ‚Äúcheek‚Äù is installed on the standard frame stock."
 	icon_state = "xr36"
 	item_state = "xr36"
 	icon = 'infinity/icons/obj/guns/xr36.dmi'

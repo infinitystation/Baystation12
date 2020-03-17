@@ -1,14 +1,10 @@
-#if DM_VERSION < 513
-
 #define any2ref(x) "\ref[x]"
+
+#if DM_VERSION < 513
 
 #define islist(A) istype(A, /list)
 
 #define ismovable(A) istype(A, /atom/movable)
-
-#else
-
-#define any2ref(x) ref(x)
 
 #endif
 
@@ -91,7 +87,11 @@
 
 #define isPlunger(A) istype(A, /obj/item/clothing/mask/plunger) || istype(A, /obj/item/device/plunger/robot)
 
-#define isspecies(A, B) (iscarbon(A) && A:species?.name == B)
+/proc/isspecies(A, B)
+	if(!iscarbon(A))
+		return FALSE
+	var/mob/living/carbon/C = A
+	return C.species?.name == B
 
 #define sequential_id(key) uniqueness_repository.Generate(/datum/uniqueness_generator/id_sequential, key)
 
@@ -103,7 +103,7 @@
 #define sound_to(target, sound)                             target << (sound)
 #define to_file(file_entry, source_var)                     file_entry << (source_var)
 #define from_file(file_entry, target_var)                   file_entry >> (target_var)
-#define show_browser(target, browser_content, browser_name) target << browse(browser_content, browser_name)
+#define show_browser(target, browser_content, browser_name)	target << browse(parse_html_inf(browser_content), browser_name)
 #define close_browser(target, browser_name)                 target << browse(null, browser_name)
 #define show_image(target, image)                           target << (image)
 #define send_rsc(target, rsc_content, rsc_name)             target << browse_rsc(rsc_content, rsc_name)

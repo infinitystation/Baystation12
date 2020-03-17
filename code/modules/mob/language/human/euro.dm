@@ -9,8 +9,8 @@
 	name = LANGUAGE_HUMAN_EURO
 	desc = "A constructed language established by a conference of European and African research universities convening in Zurich, Switzerland starting in 2119, \
 			later adopted with little controversy as the lingua franca of the entirety of Sol space following the establishment of the SCG."
-	speech_verb = "говорит"
-	whisper_verb = "шепчет"
+	speech_verb = "РіРѕРІРѕСЂРёС‚"
+	whisper_verb = "С€РµРїС‡РµС‚"
 	colour = ""
 	key = "1"
 	flags = WHITELISTED

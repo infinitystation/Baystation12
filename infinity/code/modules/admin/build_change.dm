@@ -4,10 +4,10 @@ var/datum/server_build/currentbuild
 
 /*  checks for /client/proc/update_server()
 	if(SSticker.currentbuild.folder == currentbuild.update)
-		to_chat(usr, "Ошибка. Переключите билд на основной")
+		to_chat(usr, "РћС€РёР±РєР°. РџРµСЂРµРєР»СЋС‡РёС‚Рµ Р±РёР»Рґ РЅР° РѕСЃРЅРѕРІРЅРѕР№")
 		return
 	if(SSticker.buildchangechecked)
-		to_chat(usr, "Вы не можете обновить сервер так как активированна команда смены билда.")
+		to_chat(usr, "Р’С‹ РЅРµ РјРѕР¶РµС‚Рµ РѕР±РЅРѕРІРёС‚СЊ СЃРµСЂРІРµСЂ С‚Р°Рє РєР°Рє Р°РєС‚РёРІРёСЂРѕРІР°РЅРЅР° РєРѕРјР°РЅРґР° СЃРјРµРЅС‹ Р±РёР»РґР°.")
 		return
 */
 
@@ -120,9 +120,9 @@ var/datum/server_build/currentbuild
 	var/datum/server_build/B = buildchoices[chosenbuild]
 	nextbuild = B
 
-	message_admins("[key_name_admin(usr)] помен&#255;л билд на [nextbuild.name]([nextbuild.friendlyname])")
-	log_admin("[key_name(usr)] помен&#255;л билд на [nextbuild.name]([nextbuild.friendlyname])")
-	to_chat(world, "<span class='boldannounce'>Билд изменен на [nextbuild.friendlyname] дл&#255; следующего раунда!</span>")
+	message_admins("[key_name_admin(usr)] РїРѕРјРµРЅСЏР» Р±РёР»Рґ РЅР° [nextbuild.name]([nextbuild.friendlyname])")
+	log_admin("[key_name(usr)] РїРѕРјРµРЅСЏР» Р±РёР»Рґ РЅР° [nextbuild.name]([nextbuild.friendlyname])")
+	to_chat(world, "<span class='boldannounce'>Р‘РёР»Рґ РёР·РјРµРЅРµРЅ РЅР° [nextbuild.friendlyname] РґР»СЏ СЃР»РµРґСѓСЋС‰РµРіРѕ СЂР°СѓРЅРґР°!</span>")
 
 /proc/forcechangebuild(datum/server_build/B)
 	if(!istype(B))
@@ -130,7 +130,7 @@ var/datum/server_build/currentbuild
 	if(!B)
 		return
 
-	to_chat(world, "<span class='adminooc'><FONT size=5>ВНИМАНИЕ! БИЛД МЕНЯЕТСЯ НА [B.friendlyname]! СЕРВЕР НЕ БУДЕТ РАБОТАТЬ НЕСКОЛЬКО МИНУТ!</FONT><br>Смена билда в конце раунда инициировано администратором [SSticker.buildchanger_ckey]</span>.")
+	to_chat(world, "<span class='adminooc'><FONT size=5>Р’РќРРњРђРќРР•! Р‘РР›Р” РњР•РќРЇР•РўРЎРЇ РќРђ [B.friendlyname]! РЎР•Р Р’Р•Р  РќР• Р‘РЈР”Р•Рў Р РђР‘РћРўРђРўР¬ РќР•РЎРљРћР›Р¬РљРћ РњРРќРЈРў!</FONT><br>РЎРјРµРЅР° Р±РёР»РґР° РІ РєРѕРЅС†Рµ СЂР°СѓРЅРґР° РёРЅРёС†РёРёСЂРѕРІР°РЅРѕ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂРѕРј [SSticker.buildchanger_ckey]</span>.")
 	sound_to(world, sound('sound/effects/alarm.ogg', repeat = 0, wait = 0, volume = 100, channel = 1))
 	sleep(100)
 

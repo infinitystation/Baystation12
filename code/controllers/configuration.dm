@@ -243,9 +243,6 @@ var/list/gamemode_cache = list()
 	var/max_acts_per_interval = 140 //Number of actions per interval permitted for spam protection.
 	var/act_interval = 0.1 SECONDS //Interval for spam prevention.
 
-
-	var/sql_enabled = 1 // for sql switching //inf
-
 /datum/configuration/New()
 	var/list/L = typesof(/datum/game_mode) - /datum/game_mode
 	for (var/T in L)
@@ -767,7 +764,7 @@ var/list/gamemode_cache = list()
 				if("error_msg_delay")
 					error_msg_delay = text2num(value)
 
-			//[/INF]
+			//[INF]
 				if("discord_url")
 					discord_url = value
 				if("discord_password")
@@ -775,6 +772,11 @@ var/list/gamemode_cache = list()
 
 				if("lighting_style")
 					lighting_style = value
+
+				if("ntnet_radius_multiplyer")
+					ntnet_radius_multiplyer = text2num(value)
+				if("ntnet_speed_limiter")
+					ntnet_speed_limiter = text2num(value)
 			//[/INF]
 
 				if("max_gear_cost")

@@ -1,7 +1,8 @@
 /decl/webhook/roundend
 	id = WEBHOOK_ROUNDEND
-/* [ORIGINAL]
+
 // Data expects three numerical fields: "survivors", "escaped", "ghosts"
+/* [ORIGINAL]
 /decl/webhook/roundend/get_message(var/list/data)
 	. = ..()
 	var/desc = "A round of **[SSticker.mode ? SSticker.mode.name : "Unknown"]** has ended.\n"
@@ -20,7 +21,7 @@
 			if(!evacuation_controller.emergency_evacuation)
 				s_escaped = "transferred"
 
-			desc += "There [s_was] **[data["survivors"]] [s_survivor]** (**[data["escaped"]] [s_escaped])** and **[data["ghosts"]] ghosts**."
+			desc += "There [s_was] **[data["survivors"]] [s_survivor] ([data["escaped"]] [s_escaped])** and **[data["ghosts"]] ghosts.**"
 		else
 			desc += "There were **no survivors** ([data["ghosts"]] ghosts)."
 

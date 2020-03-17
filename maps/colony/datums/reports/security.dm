@@ -8,58 +8,58 @@
 
 /datum/computer_file/report/recipient/sec/investigation
 	form_name = "NT-SEC-43"
-	title = "Доклад о расследовании"
+	title = "Р”РѕРєР»Р°Рґ Рѕ СЂР°СЃСЃР»РµРґРѕРІР°РЅРёРё"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sec/investigation/generate_fields()
 	..()
-	add_field(/datum/report_field/text_label/header, "Департамент охраны ИСН Сьерра")
-	add_field(/datum/report_field/text_label/instruction, "Только дл&#255; внутреннего использовани&#255;.")
-	add_field(/datum/report_field/people/from_manifest, "Им&#255;")
-	add_field(/datum/report_field/date, "Дата")
-	add_field(/datum/report_field/time, "Врем&#255;")
-	add_field(/datum/report_field/simple_text, "Название дела")
-	add_field(/datum/report_field/pencode_text, "Заключение")
-	add_field(/datum/report_field/pencode_text, "Наблюдени&#255;")
-	add_field(/datum/report_field/signature, "Подпись")
+	add_field(/datum/report_field/text_label/header, "Р”РµРїР°СЂС‚Р°РјРµРЅС‚ РѕС…СЂР°РЅС‹ РРЎРќ РЎСЊРµСЂСЂР°")
+	add_field(/datum/report_field/text_label/instruction, "РўРѕР»СЊРєРѕ РґР»СЏ РІРЅСѓС‚СЂРµРЅРЅРµРіРѕ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ.")
+	add_field(/datum/report_field/people/from_manifest, "РРјСЏ")
+	add_field(/datum/report_field/date, "Р”Р°С‚Р°")
+	add_field(/datum/report_field/time, "Р’СЂРµРјСЏ")
+	add_field(/datum/report_field/simple_text, "РќР°Р·РІР°РЅРёРµ РґРµР»Р°")
+	add_field(/datum/report_field/pencode_text, "Р—Р°РєР»СЋС‡РµРЅРёРµ")
+	add_field(/datum/report_field/pencode_text, "РќР°Р±Р»СЋРґРµРЅРёСЏ")
+	add_field(/datum/report_field/signature, "РџРѕРґРїРёСЃСЊ")
 	set_access(access_edit = access_security)
 
 /datum/computer_file/report/recipient/sec/incident
 	form_name = "NT-SEC-12"
-	title = "Доклад об инциденте"
+	title = "Р”РѕРєР»Р°Рґ РѕР± РёРЅС†РёРґРµРЅС‚Рµ"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sec/incident/generate_fields()
 	..()
-	add_field(/datum/report_field/text_label/header, "Департамент охраны ИСН Сьерра")
-	add_field(/datum/report_field/text_label/instruction, "Заполн&#255;етс&#255; офицером при исполнении, реагировавшим на инцидент. Должно быть заполнено и зарегистрировано до конца смены!")
-	add_field(/datum/report_field/people/from_manifest, "Докладывающий офицер")
-	add_field(/datum/report_field/simple_text, "Тип инциденте/Преступлени&#255;")
-	add_field(/datum/report_field/date, "Дата")
-	add_field(/datum/report_field/time, "Врем&#255; инцидента")
-	add_field(/datum/report_field/people/list_from_manifest, "Офицер(ы), провод&#255;щие арест")
+	add_field(/datum/report_field/text_label/header, "Р”РµРїР°СЂС‚Р°РјРµРЅС‚ РѕС…СЂР°РЅС‹ РРЎРќ РЎСЊРµСЂСЂР°")
+	add_field(/datum/report_field/text_label/instruction, "Р—Р°РїРѕР»РЅСЏРµС‚СЃСЏ РѕС„РёС†РµСЂРѕРј РїСЂРё РёСЃРїРѕР»РЅРµРЅРёРё, СЂРµР°РіРёСЂРѕРІР°РІС€РёРј РЅР° РёРЅС†РёРґРµРЅС‚. Р”РѕР»Р¶РЅРѕ Р±С‹С‚СЊ Р·Р°РїРѕР»РЅРµРЅРѕ Рё Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅРѕ РґРѕ РєРѕРЅС†Р° СЃРјРµРЅС‹!")
+	add_field(/datum/report_field/people/from_manifest, "Р”РѕРєР»Р°РґС‹РІР°СЋС‰РёР№ РѕС„РёС†РµСЂ")
+	add_field(/datum/report_field/simple_text, "РўРёРї РёРЅС†РёРґРµРЅС‚Рµ/РџСЂРµСЃС‚СѓРїР»РµРЅРёСЏ")
+	add_field(/datum/report_field/date, "Р”Р°С‚Р°")
+	add_field(/datum/report_field/time, "Р’СЂРµРјСЏ РёРЅС†РёРґРµРЅС‚Р°")
+	add_field(/datum/report_field/people/list_from_manifest, "РћС„РёС†РµСЂ(С‹), РїСЂРѕРІРѕРґСЏС‰РёРµ Р°СЂРµСЃС‚")
 	add_field(/datum/report_field/simple_text, "Location")
-	add_field(/datum/report_field/pencode_text, "Персонал вовлеченный в инцидент", "\[small\]\[i\](Ж-Жертва, Под-Подозреваемый, С-Свидетель, ПБВ-Пропавший без вести, А-Арестованный, Д-Докладывающий, Пог-Погибший)\[/i\]\[/small\]")
-	add_field(/datum/report_field/pencode_text, "Описание предметов/собственности", "\[small\]\[i\](Пов-Повреждено, Д-Докатательство, Пот-Потер&#255;но, Н-Найдено, У-Украдено)\[/i\]\[/small\]")
-	add_field(/datum/report_field/pencode_text, "Изложение фактов")
-	add_field(/datum/report_field/signature, "Подпись докладывающего офицера")
+	add_field(/datum/report_field/pencode_text, "РџРµСЂСЃРѕРЅР°Р» РІРѕРІР»РµС‡РµРЅРЅС‹Р№ РІ РёРЅС†РёРґРµРЅС‚", "\[small\]\[i\](Р–-Р–РµСЂС‚РІР°, РџРѕРґ-РџРѕРґРѕР·СЂРµРІР°РµРјС‹Р№, РЎ-РЎРІРёРґРµС‚РµР»СЊ, РџР‘Р’-РџСЂРѕРїР°РІС€РёР№ Р±РµР· РІРµСЃС‚Рё, Рђ-РђСЂРµСЃС‚РѕРІР°РЅРЅС‹Р№, Р”-Р”РѕРєР»Р°РґС‹РІР°СЋС‰РёР№, РџРѕРі-РџРѕРіРёР±С€РёР№)\[/i\]\[/small\]")
+	add_field(/datum/report_field/pencode_text, "РћРїРёСЃР°РЅРёРµ РїСЂРµРґРјРµС‚РѕРІ/СЃРѕР±СЃС‚РІРµРЅРЅРѕСЃС‚Рё", "\[small\]\[i\](РџРѕРІ-РџРѕРІСЂРµР¶РґРµРЅРѕ, Р”-Р”РѕРєР°С‚Р°С‚РµР»СЊСЃС‚РІРѕ, РџРѕС‚-РџРѕС‚РµСЂСЏРЅРѕ, Рќ-РќР°Р№РґРµРЅРѕ, РЈ-РЈРєСЂР°РґРµРЅРѕ)\[/i\]\[/small\]")
+	add_field(/datum/report_field/pencode_text, "РР·Р»РѕР¶РµРЅРёРµ С„Р°РєС‚РѕРІ")
+	add_field(/datum/report_field/signature, "РџРѕРґРїРёСЃСЊ РґРѕРєР»Р°РґС‹РІР°СЋС‰РµРіРѕ РѕС„РёС†РµСЂР°")
 	set_access(access_edit = access_security)
 
 /datum/computer_file/report/recipient/sec/evidence
 	form_name = "NT-SEC-02b"
-	title = "Форма Доказательств и Собственности"
+	title = "Р¤РѕСЂРјР° Р”РѕРєР°Р·Р°С‚РµР»СЊСЃС‚РІ Рё РЎРѕР±СЃС‚РІРµРЅРЅРѕСЃС‚Рё"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sec/evidence/generate_fields()
 	..()
 	var/datum/report_field/temp_field
-	add_field(/datum/report_field/text_label/header, "Департамент охраны ИСН Сьерра")
-	add_field(/datum/report_field/date, "Дата")
-	add_field(/datum/report_field/time, "Врем&#255;")
-	add_field(/datum/report_field/people/from_manifest, "Конфисковано у")
-	add_field(/datum/report_field/pencode_text, "Список предметов, вз&#255;тых на хранение")
+	add_field(/datum/report_field/text_label/header, "Р”РµРїР°СЂС‚Р°РјРµРЅС‚ РѕС…СЂР°РЅС‹ РРЎРќ РЎСЊРµСЂСЂР°")
+	add_field(/datum/report_field/date, "Р”Р°С‚Р°")
+	add_field(/datum/report_field/time, "Р’СЂРµРјСЏ")
+	add_field(/datum/report_field/people/from_manifest, "РљРѕРЅС„РёСЃРєРѕРІР°РЅРѕ Сѓ")
+	add_field(/datum/report_field/pencode_text, "РЎРїРёСЃРѕРє РїСЂРµРґРјРµС‚РѕРІ, РІР·СЏС‚С‹С… РЅР° С…СЂР°РЅРµРЅРёРµ")
 	set_access(access_edit = access_security)
-	temp_field = add_field(/datum/report_field/signature, "Подпись сержанта/надзирател&#255;")
+	temp_field = add_field(/datum/report_field/signature, "РџРѕРґРїРёСЃСЊ СЃРµСЂР¶Р°РЅС‚Р°/РЅР°РґР·РёСЂР°С‚РµР»СЏ")
 	temp_field.set_access(access_edit = list(access_security, access_armory))
-	temp_field = add_field(/datum/report_field/signature, "Подпись детектива")
+	temp_field = add_field(/datum/report_field/signature, "РџРѕРґРїРёСЃСЊ РґРµС‚РµРєС‚РёРІР°")
 	temp_field.set_access(access_edit = list(access_security, access_forensics_lockers))

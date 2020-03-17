@@ -61,7 +61,7 @@
 	if(!istype(M))
 		return
 	busy = 1
-	visible_message("[src] быстро нажимает несколько кнопок и переключателей на [M].")
+	visible_message("[src] Р±С‹СЃС‚СЂРѕ РЅР°Р¶РёРјР°РµС‚ РЅРµСЃРєРѕР»СЊРєРѕ РєРЅРѕРїРѕРє Рё РїРµСЂРµРєР»СЋС‡Р°С‚РµР»РµР№ РЅР° [M].")
 	ignore_list += M		//Ignore this machine for a while
 	sleep(300)
 	ignore_list -= M

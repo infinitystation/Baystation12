@@ -3813,22 +3813,42 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_monitoring)
 "agh" = (
-/obj/machinery/door/airlock/hatch{
-	frequency = 1379;
-	id_tag = "engine_airlock_exterior";
-	name = "Engine Airlock Exterior";
-	req_access = newlist()
+/obj/machinery/embedded_controller/radio/airlock/advanced_airlock_controller{
+	id_tag = "engine_room_airlock";
+	name = "Engine Room Airlock";
+	pixel_x = 0;
+	pixel_y = 21;
+	req_access = list("ACCESS_ENGINE_EQUIP");
+	tag_airpump = "engine_airlock_pump";
+	tag_chamber_sensor = "eng_al_c_snsr";
+	tag_exterior_door = "engine_airlock_exterior";
+	tag_exterior_sensor = "eng_al_ext_snsr";
+	tag_interior_door = "engine_airlock_interior";
+	tag_interior_sensor = "eng_al_int_snsr"
 	},
 /obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/visible/universal{
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 4;
+	icon_state = "borderfloor_white"
+	},
+/obj/effect/floor_decal/industrial/danger{
+	icon_state = "danger";
 	dir = 4
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/engineering/engine_room)
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/engineering/engine_monitoring)
 "agi" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -3928,13 +3948,16 @@
 /turf/simulated/floor/plating,
 /area/engineering/engine_room)
 "ago" = (
+/obj/machinery/door/airlock/hatch{
+	frequency = 1379;
+	id_tag = "engine_airlock_exterior";
+	name = "Engine Airlock Exterior";
+	req_access = newlist()
+	},
 /obj/structure/cable/cyan{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
@@ -8288,42 +8311,13 @@
 /turf/simulated/floor/reinforced/airless,
 /area/space)
 "ann" = (
-/obj/machinery/embedded_controller/radio/airlock/advanced_airlock_controller{
-	id_tag = "engine_room_airlock";
-	name = "Engine Room Airlock";
-	pixel_x = 0;
-	pixel_y = 21;
-	req_access = list("ACCESS_ENGINE_EQUIP");
-	tag_airpump = "engine_airlock_pump";
-	tag_chamber_sensor = "eng_al_c_snsr";
-	tag_exterior_door = "engine_airlock_exterior";
-	tag_exterior_sensor = "eng_al_ext_snsr";
-	tag_interior_door = "engine_airlock_interior";
-	tag_interior_sensor = "eng_al_int_snsr"
-	},
 /obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/effect/floor_decal/borderfloor{
-	dir = 4;
-	icon_state = "borderfloor_white"
-	},
-/obj/effect/floor_decal/industrial/danger{
-	icon_state = "danger";
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/engineering/engine_monitoring)
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/engine_room)
 "ano" = (
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -9112,43 +9106,6 @@
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/heads/captain/office_anteroom)
 "aoC" = (
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/floor_decal/borderfloor{
-	dir = 4;
-	icon_state = "borderfloor_white"
-	},
-/obj/effect/floor_decal/industrial/danger{
-	icon_state = "danger";
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	icon_state = "map-scrubbers";
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/monotile,
-/area/engineering/engine_monitoring)
-"aoD" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/disposalpipe/segment,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/crew_quarters/heads/captain/office_anteroom)
-"aoE" = (
 /obj/machinery/embedded_controller/radio/airlock/advanced_airlock_controller{
 	id_tag = "engine_room_airlock";
 	name = "Engine Room Airlock";
@@ -9172,26 +9129,55 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
-"aoF" = (
+"aoD" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/wood/walnut,
+/area/crew_quarters/heads/captain/office_anteroom)
+"aoE" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 10;
-	icon_state = "intact"
 	},
 /obj/machinery/light/small{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
+"aoF" = (
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 4;
+	icon_state = "borderfloor_white"
+	},
+/obj/effect/floor_decal/industrial/danger{
+	icon_state = "danger";
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/engineering/engine_monitoring)
 "aoG" = (
 /obj/machinery/door/airlock/hatch{
 	frequency = 1379;
@@ -9830,9 +9816,6 @@
 "apF" = (
 /obj/effect/wallframe_spawn/reinforced/no_grille,
 /obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/simple/visible/universal{
-	dir = 4
-	},
 /turf/simulated/floor/plating,
 /area/engineering/engine_room)
 "apG" = (
@@ -9849,17 +9832,9 @@
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
-	},
 /turf/simulated/floor/plating,
 /area/engineering/engine_room)
 "apH" = (
-/obj/machinery/atmospherics/binary/dp_vent_pump/high_volume{
-	dir = 8;
-	frequency = 1379;
-	id = "engine_airlock_pump"
-	},
 /obj/machinery/camera/network/engine{
 	c_tag = "Engine - Access";
 	dir = 1
@@ -9871,9 +9846,6 @@
 "apI" = (
 /obj/structure/closet/radiation,
 /obj/item/clothing/glasses/meson,
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 9
-	},
 /obj/item/clothing/glasses/meson,
 /obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/warning/cee{
@@ -13004,7 +12976,6 @@
 	dir = 8;
 	external_pressure_bound = 100;
 	external_pressure_bound_default = 0;
-	frequency = 1438;
 	icon_state = "map_vent_in";
 	id_tag = "cooling_out";
 	initialize_directions = 1;
@@ -13300,11 +13271,10 @@
 /turf/simulated/floor/reinforced/oxygen,
 /area/engineering/atmos)
 "auW" = (
-/obj/machinery/atmospherics/unary/vent_pump{
+/obj/machinery/atmospherics/unary/vent_pump/tank{
 	dir = 1;
 	external_pressure_bound = 0;
 	external_pressure_bound_default = 0;
-	frequency = 1441;
 	icon_state = "map_vent_in";
 	id_tag = "o2_out";
 	initialize_directions = 1;
@@ -13316,7 +13286,6 @@
 	use_power = 1
 	},
 /obj/machinery/air_sensor{
-	frequency = 1441;
 	id_tag = "o2_sensor"
 	},
 /turf/simulated/floor/reinforced/oxygen,
@@ -13829,7 +13798,6 @@
 /area/crew_quarters/mess)
 "avR" = (
 /obj/machinery/air_sensor{
-	frequency = 1438;
 	id_tag = "engine_sensor"
 	},
 /obj/effect/floor_decal/industrial/warning{
@@ -17923,11 +17891,10 @@
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "aCi" = (
-/obj/machinery/atmospherics/unary/vent_pump{
+/obj/machinery/atmospherics/unary/vent_pump/tank{
 	dir = 8;
 	external_pressure_bound = 0;
 	external_pressure_bound_default = 0;
-	frequency = 1441;
 	icon_state = "map_vent_in";
 	id_tag = "co2_out";
 	initialize_directions = 1;
@@ -17939,7 +17906,6 @@
 	use_power = 1
 	},
 /obj/machinery/air_sensor{
-	frequency = 1441;
 	id_tag = "co2_sensor"
 	},
 /turf/simulated/floor/reinforced/carbon_dioxide,
@@ -20801,11 +20767,10 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftport)
 "aHf" = (
-/obj/machinery/atmospherics/unary/vent_pump{
+/obj/machinery/atmospherics/unary/vent_pump/tank{
 	dir = 8;
 	external_pressure_bound = 0;
 	external_pressure_bound_default = 0;
-	frequency = 1441;
 	icon_state = "map_vent_in";
 	id_tag = "h2_out";
 	initialize_directions = 1;
@@ -20817,7 +20782,6 @@
 	use_power = 1
 	},
 /obj/machinery/air_sensor{
-	frequency = 1441;
 	id_tag = "tox_sensor"
 	},
 /turf/simulated/floor/reinforced/hydrogen,
@@ -22298,11 +22262,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/seconddeck/fore_stairwell)
 "aJK" = (
-/obj/machinery/atmospherics/unary/vent_pump{
+/obj/machinery/atmospherics/unary/vent_pump/tank{
 	dir = 4;
 	external_pressure_bound = 0;
 	external_pressure_bound_default = 0;
-	frequency = 1441;
 	icon_state = "map_vent_in";
 	id_tag = "n2_out";
 	initialize_directions = 1;
@@ -22314,7 +22277,6 @@
 	use_power = 1
 	},
 /obj/machinery/air_sensor{
-	frequency = 1441;
 	id_tag = "n2_sensor"
 	},
 /turf/simulated/floor/reinforced/nitrogen,
@@ -24122,11 +24084,10 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/atmos)
 "aMT" = (
-/obj/machinery/atmospherics/unary/vent_pump{
+/obj/machinery/atmospherics/unary/vent_pump/tank{
 	dir = 8;
 	external_pressure_bound = 0;
 	external_pressure_bound_default = 0;
-	frequency = 1441;
 	icon_state = "map_vent_in";
 	id_tag = "n2o_out";
 	initialize_directions = 1;
@@ -24138,7 +24099,6 @@
 	use_power = 1
 	},
 /obj/machinery/air_sensor{
-	frequency = 1441;
 	id_tag = "n2o_sensor"
 	},
 /turf/simulated/floor/reinforced/n20,
@@ -24957,6 +24917,7 @@
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/light/small,
+/obj/item/weapon/stock_parts/circuitboard/ntnet_relay,
 /turf/simulated/floor/tiled/techmaint,
 /area/storage/tech)
 "aOq" = (
@@ -29238,9 +29199,8 @@
 	icon_state = "stripecee";
 	dir = 1
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1331;
 	id_tag = "sd_port_pump"
 	},
 /obj/machinery/airlock_sensor{
@@ -30805,9 +30765,8 @@
 	icon_state = "stripecee";
 	dir = 1
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1331;
 	id_tag = "sd_port_pump"
 	},
 /turf/simulated/floor/plating,
@@ -31369,9 +31328,8 @@
 "aZt" = (
 /obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/warning/cee,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1331;
 	id_tag = "sd_port_pump"
 	},
 /turf/simulated/floor/plating,
@@ -31433,9 +31391,8 @@
 "aZz" = (
 /obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/warning/cee,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1331;
 	id_tag = "sd_port_pump"
 	},
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
@@ -62118,8 +62075,8 @@ aaN
 air
 ame
 aeg
-ann
-aoC
+agh
+aoF
 azf
 afv
 agN
@@ -62320,7 +62277,7 @@ aaU
 aiM
 amz
 aZf
-agh
+ago
 apF
 aUd
 agl
@@ -62522,7 +62479,7 @@ ahe
 aiO
 amA
 aZf
-ago
+ann
 apG
 aUd
 ayY
@@ -62724,7 +62681,7 @@ ahf
 arx
 amB
 aZf
-aoE
+aoC
 apH
 arp
 aAI
@@ -62926,7 +62883,7 @@ ahB
 axd
 amC
 aZf
-aoF
+aoE
 apI
 aUd
 aso

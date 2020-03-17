@@ -35,7 +35,7 @@ GLOBAL_LIST_EMPTY(music_players)
 	var/frequency = 1
 
 	var/datum/sound_token/sound_token
-	var/datum/client_preference/preference
+	var/datum/client_preference/preference = /datum/client_preference/play_pmps
 	var/sound_id
 
 	var/break_chance = 3

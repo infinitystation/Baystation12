@@ -60,6 +60,11 @@
 			add_clothing_protection(wear_mask)
 		if(istype(back,/obj/item/weapon/rig))
 			process_rig(back)
+	else //[inf]
+		if(istype(src.head, /obj/item/clothing/head))
+			add_clothing_protection(head)
+		if(istype(src.glasses, /obj/item/clothing/glasses))
+			add_clothing_protection(glasses)//[/INF]
 
 /mob/living/carbon/human/proc/process_glasses(var/obj/item/clothing/glasses/G)
 	if(G)
@@ -348,3 +353,6 @@
 	for(var/obj/screen/equipment_screen in equipment_overlays) // check through our overlays to see if we have any source of the meson overlay
 		if(equipment_screen.color == "#9fd800") //INF, WAS if(equipment_screen.icon_state == "meson_hud")
 			return TRUE
+
+/mob/living/carbon/human/proc/is_in_pocket(var/obj/item/I)
+	return I in list(l_store, r_store)

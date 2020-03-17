@@ -73,17 +73,15 @@
 	var/question =  input(user, "Say something?", "Read Mind", "Penny for your thoughts?") as null|text
 	if(!question || user.incapacitated() || !do_after(user, 20))
 		return TRUE
-	question = sanitize_a0(question) //inf
 
 	var/started_mindread = world.time
 	to_chat(user, SPAN_NOTICE("<b>You dip your mentality into the surface layer of \the [target]'s mind, seeking an answer: <i>[question]</i></b>"))
 	to_chat(target, SPAN_NOTICE("<b>Your mind is compelled to answer: <i>[question]</i></b>"))
 
 	var/answer =  input(target, "Someone is reading your mind, answer a quesition...", "Read Mind") as null|text //inf, was var/answer =  input(target, question, "Read Mind") as null|text
-	if(!answer || world.time > started_mindread + 25 SECONDS || user.stat != CONSCIOUS || target.stat == DEAD)
+	if(!answer || world.time > started_mindread + 60 SECONDS || user.stat != CONSCIOUS || target.stat == DEAD)
 		to_chat(user, SPAN_NOTICE("<b>You receive nothing useful from \the [target].</b>"))
 	else
-		answer = sanitize_a0(answer) //inf
 		to_chat(user, SPAN_NOTICE("<b>You skim thoughts from the surface of \the [target]'s mind: <i>[answer]</i></b>"))
 	msg_admin_attack("[key_name(user)] read mind of [key_name(target)] with question \"[question]\" and [answer?"got answer \"[answer]\".":"got no answer."]")
 	return TRUE

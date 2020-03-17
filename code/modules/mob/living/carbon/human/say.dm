@@ -132,20 +132,20 @@
 	return real_name
 
 /mob/living/carbon/human/say_quote(var/message, var/datum/language/speaking = null)
-	var/verb = "говорит" //INF, WAS var/verb = "says"
+	var/verb = "РіРѕРІРѕСЂРёС‚" //INF, WAS var/verb = "says"
 	var/ending = copytext(message, length(message))
 
 	if(speaking)
 		verb = speaking.get_spoken_verb(ending)
 	else
 		if(ending == "!")
-			verb = pick("восклицает","выкрикивает") //INF, WAS verb=pick("exclaims","shouts","yells")
+			verb = pick("РІРѕСЃРєР»РёС†Р°РµС‚","РІС‹РєСЂРёРєРёРІР°РµС‚") //INF, WAS verb=pick("exclaims","shouts","yells")
 		else if(ending == "?")
-			verb = "спрашивает" //INF, WAS verb="asks
+			verb = "СЃРїСЂР°С€РёРІР°РµС‚" //INF, WAS verb="asks
 	return verb
 
 /mob/living/carbon/human/handle_speech_problems(var/list/message_data)
-	if(silent || (sdisabilities & MUTE))
+	if(silent || (sdisabilities & MUTED))
 		message_data[1] = ""
 		. = 1
 

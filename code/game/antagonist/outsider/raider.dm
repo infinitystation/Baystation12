@@ -6,15 +6,15 @@ GLOBAL_DATUM_INIT(raiders, /datum/antagonist/raider, new)
 	role_text_plural = "Raiders"
 	antag_indicator = "hudraider"
 	landmark_id = "voxstart"
-	welcome_text = "<hr>Ну <i>чо</i>, здарова. Налётчик - это не сама&#255; проста&#255; роль, как может показатьс&#255;. \
-	Даже её можно запороть скучной или безынициативной игрой. В первую очередь, тебе со своими братанами \
-	нужно придумать, что делать с экипажем и их временным имуществом - присваивайте себе всё, чего не смогли \
-	бы приобрести даже за 50 лет работы на НаноТрейзен. Материалы, оружие, электроника и другой ценный лут - \
-	даже живой товар, всё на чёрном рынке имеет свою цену. Вы - бандиты, пираты, грабители, частные \
-	предприниматели, но никак не воры и убийцы - держитесь друг друга и не оставл&#255;йте своих, потому что других, \
-	скорее всего, вам найти не суждено. И в особенности не зат&#255;гивайте с налётом своим планированием \
-	или даже хуже - лутанием локаций помимо основного судна. <br>Используйте префикс ':x (или :h)' \
-	дл&#255; общени&#255; со своими через рацию."
+	welcome_text = "<hr>РќСѓ <i>С‡Рѕ</i>, Р·РґР°СЂРѕРІР°. РќР°Р»С‘С‚С‡РёРє - СЌС‚Рѕ РЅРµ СЃР°РјР°СЏ РїСЂРѕСЃС‚Р°СЏ СЂРѕР»СЊ, РєР°Рє РјРѕР¶РµС‚ РїРѕРєР°Р·Р°С‚СЊСЃСЏ. \
+	Р”Р°Р¶Рµ РµС‘ РјРѕР¶РЅРѕ Р·Р°РїРѕСЂРѕС‚СЊ СЃРєСѓС‡РЅРѕР№ РёР»Рё Р±РµР·С‹РЅРёС†РёР°С‚РёРІРЅРѕР№ РёРіСЂРѕР№. Р’ РїРµСЂРІСѓСЋ РѕС‡РµСЂРµРґСЊ, С‚РµР±Рµ СЃРѕ СЃРІРѕРёРјРё Р±СЂР°С‚Р°РЅР°РјРё \
+	РЅСѓР¶РЅРѕ РїСЂРёРґСѓРјР°С‚СЊ, С‡С‚Рѕ РґРµР»Р°С‚СЊ СЃ СЌРєРёРїР°Р¶РµРј Рё РёС… РІСЂРµРјРµРЅРЅС‹Рј РёРјСѓС‰РµСЃС‚РІРѕРј - РїСЂРёСЃРІР°РёРІР°Р№С‚Рµ СЃРµР±Рµ РІСЃС‘, С‡РµРіРѕ РЅРµ СЃРјРѕРіР»Рё \
+	Р±С‹ РїСЂРёРѕР±СЂРµСЃС‚Рё РґР°Р¶Рµ Р·Р° 50 Р»РµС‚ СЂР°Р±РѕС‚С‹ РЅР° РќР°РЅРѕРўСЂРµР№Р·РµРЅ. РњР°С‚РµСЂРёР°Р»С‹, РѕСЂСѓР¶РёРµ, СЌР»РµРєС‚СЂРѕРЅРёРєР° Рё РґСЂСѓРіРѕР№ С†РµРЅРЅС‹Р№ Р»СѓС‚ - \
+	РґР°Р¶Рµ Р¶РёРІРѕР№ С‚РѕРІР°СЂ, РІСЃС‘ РЅР° С‡С‘СЂРЅРѕРј СЂС‹РЅРєРµ РёРјРµРµС‚ СЃРІРѕСЋ С†РµРЅСѓ. Р’С‹ - Р±Р°РЅРґРёС‚С‹, РїРёСЂР°С‚С‹, РіСЂР°Р±РёС‚РµР»Рё, С‡Р°СЃС‚РЅС‹Рµ \
+	РїСЂРµРґРїСЂРёРЅРёРјР°С‚РµР»Рё, РЅРѕ РЅРёРєР°Рє РЅРµ РІРѕСЂС‹ Рё СѓР±РёР№С†С‹ - РґРµСЂР¶РёС‚РµСЃСЊ РґСЂСѓРі РґСЂСѓРіР° Рё РЅРµ РѕСЃС‚Р°РІР»СЏР№С‚Рµ СЃРІРѕРёС…, РїРѕС‚РѕРјСѓ С‡С‚Рѕ РґСЂСѓРіРёС…, \
+	СЃРєРѕСЂРµРµ РІСЃРµРіРѕ, РІР°Рј РЅР°Р№С‚Рё РЅРµ СЃСѓР¶РґРµРЅРѕ. Р РІ РѕСЃРѕР±РµРЅРЅРѕСЃС‚Рё РЅРµ Р·Р°С‚СЏРіРёРІР°Р№С‚Рµ СЃ РЅР°Р»С‘С‚РѕРј СЃРІРѕРёРј РїР»Р°РЅРёСЂРѕРІР°РЅРёРµРј \
+	РёР»Рё РґР°Р¶Рµ С…СѓР¶Рµ - Р»СѓС‚Р°РЅРёРµРј Р»РѕРєР°С†РёР№ РїРѕРјРёРјРѕ РѕСЃРЅРѕРІРЅРѕРіРѕ СЃСѓРґРЅР°. <br>РСЃРїРѕР»СЊР·СѓР№С‚Рµ РїСЂРµС„РёРєСЃ ':x (РёР»Рё :h)' \
+	РґР»СЏ РѕР±С‰РµРЅРёСЏ СЃРѕ СЃРІРѕРёРјРё С‡РµСЂРµР· СЂР°С†РёСЋ."
 	flags = ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_CHOOSE_NAME | ANTAG_VOTABLE | ANTAG_SET_APPEARANCE | ANTAG_HAS_LEADER
 	antaghud_indicator = "hudraider"
 
@@ -251,6 +251,8 @@ GLOBAL_DATUM_INIT(raiders, /datum/antagonist/raider, new)
 /datum/antagonist/raider/proc/equip_vox(var/mob/living/carbon/human/player)
 
 	var/uniform_type = pick(list(/obj/item/clothing/under/vox/vox_robes,/obj/item/clothing/under/vox/vox_casual))
+	var/new_glasses = pick(raider_glasses)
+	var/new_holster = pick(raider_holster)
 
 	player.equip_to_slot_or_del(new uniform_type(player), slot_w_uniform)
 	player.equip_to_slot_or_del(new /obj/item/clothing/shoes/magboots/vox(player), slot_shoes) // REPLACE THESE WITH CODED VOX ALTERNATIVES.
@@ -258,7 +260,16 @@ GLOBAL_DATUM_INIT(raiders, /datum/antagonist/raider, new)
 	player.equip_to_slot_or_del(new /obj/item/clothing/mask/gas/swat/vox(player), slot_wear_mask)
 	player.equip_to_slot_or_del(new /obj/item/weapon/tank/nitrogen(player), slot_back)
 	player.equip_to_slot_or_del(new /obj/item/device/flashlight(player), slot_r_store)
-
+	player.equip_to_slot_or_del(new new_glasses(player),slot_glasses)
+	
+	var/obj/item/clothing/accessory/storage/holster/holster = new new_holster
+	if(holster)
+		var/obj/item/clothing/under/uniform = player.w_uniform
+		if(istype(uniform) && uniform.can_attach_accessory(holster))
+			uniform.attackby(holster, player)
+		else
+			player.put_in_any_hand_if_possible(holster)
+	
 	player.set_internals(locate(/obj/item/weapon/tank) in player.contents)
 	return 1
 

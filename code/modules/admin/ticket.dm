@@ -169,7 +169,7 @@ proc/get_open_ticket_by_client(var/datum/client_lite/owner)
 			var/list/msg_dat = list()
 			for(var/datum/ticket_msg/msg in open_ticket.msgs)
 				var/msg_to = msg.msg_to ? msg.msg_to : "Adminhelp"
-				msg_dat += "<li>\[[msg.time_stamp]\] [msg.msg_from] -> [msg_to]: [C.holder ? generate_ahelp_key_words(C.mob, msg.msg) : msg.msg]</li>"
+				msg_dat += "<li>\[[msg.time_stamp]\] [msg.msg_from] -> [msg_to]: [C.holder ? C.generate_ahelp_key_words(C.mob, msg.msg) : msg.msg]</li>"
 
 			if(msg_dat.len)
 				dat += "<ul>[jointext(msg_dat, null)]</ul></div>"
@@ -232,7 +232,7 @@ proc/get_open_ticket_by_client(var/datum/client_lite/owner)
 				if(!admin_found)
 					to_chat(usr, "<span class='warning'>Error: Private-Message: Client not found. They may have lost connection, so please be patient!</span>")
 			else
-				usr.client.adminhelp(sanitize_a0(input(usr,"", "adminhelp \"text\"") as text))
+				usr.client.adminhelp(input(usr,"", "adminhelp \"text\"") as text)
 
 /client/verb/view_tickets()
 	set name = "View Tickets"

@@ -101,7 +101,7 @@
 		if(newname)
 			fully_replace_character_name(newname)
 	src.verbs -= /mob/living/deity/verb/choose_form
-	show_browser(src, null, "window=godform")
+	close_browser(src, "window=godform")
 	for(var/m in minions)
 		var/datum/mind/mind = m
 		var/mob/living/L = mind.current

@@ -2,7 +2,7 @@
 #define SCANNER_THREAT_TRIGGER 4
 
 /obj/machinery/security_scanner
-	name = "security scanner"
+	name = "Security Scanner"
 	desc = "The latest innovation in invasive imagery, the programmable NT-X100 will scan anyone who walks through it with fans to simulate being patted down. <em>Nanotrasen is not to be held responsible for any deaths caused by the results the machine gives, or the machine itself.</em>"
 	icon = 'infinity/icons/obj/machines/security_scanner.dmi'
 	icon_state = "scanner_on"
@@ -32,9 +32,9 @@
 
 	// Banned items
 	var/list/banned_items = list(/obj/item/weapon/gun, /obj/item/weapon/melee, /obj/item/weapon/grenade)
-	var/list/storage_types = list(/obj/item/weapon/storage, /obj/item/clothing/suit/storage)
+	var/list/storage_types = list(/obj/item/weapon/storage, /obj/item/clothing/suit/storage, /obj/structure/closet)
 
-//	var/report_scans = FALSE
+	var/report_scans = FALSE
 
 //	var/last_perp = 0
 //	var/last_contraband = 0
@@ -69,7 +69,7 @@
 		visible_message(
 			SPAN_NOTICE("You begin [anchored ? "un" : ""]securing [src]..."),
 			SPAN_NOTICE("[user] begin [anchored ? "un" : ""]securing [src]..."))
-		playsound(src., 'sound/items/Ratchet.ogg', 50, 1)
+		playsound(src, 'sound/items/Ratchet.ogg', 50, 1)
 		if(do_after(user, 20))
 			visible_message(
 				SPAN_NOTICE("You [anchored ? "un" : ""]secure [src]."),
@@ -111,6 +111,8 @@
 			<br>
 			Check for <b>records</b>: <a href='?src=\ref[src];check_records=1'>[check_records ? "Yes" : "No"]</a><br>
 			Check for <b>arrests</b>: <a href='?src=\ref[src];check_arrests=1'>[check_arrests ? "Yes" : "No"]</a><br>
+			<br>
+			Radio reports mode: <a href='?src=\ref[src];report_scans=1'>[report_scans ? "Yes" : "No"]</a><br>
 			</tt>"})
 
 	var/datum/browser/popup = new(user, "security_scanner", "Security Scanner")
@@ -133,6 +135,8 @@
 		check_records = !check_records
 	else if(href_list["check_arrests"])
 		check_arrests = !check_arrests
+	else if(href_list["report_scans"])
+		report_scans = !report_scans
 
 	updateUsrDialog()
 	return
@@ -141,6 +145,8 @@
 	icon_state = "scanner_[on ? "on" : "off"]"
 
 /obj/machinery/security_scanner/Crossed(atom/movable/A)
+	if(A in subtypesof(/mob/living/bot))		// Ignore that small shit
+		return ..()
 	if(anchored && on && !stat)
 		if(isliving(A))
 			do_scan(A)
@@ -163,67 +169,116 @@
 		return
 
 	if(istype(I, banned_items))
-		return trigger(TRUE)
-
-	else if(istype(I, storage_types) && I.contents)
+		report(list("Item" = I))
+		trigger(TRUE)
+		return
+	else if(subtype_check(I, storage_types) && I.contents)
 		for(var/obj/item/thing in I.contents)
-			if(istype(thing, banned_items))
-				return trigger(TRUE)
+			if(subtype_check(thing, banned_items))
+				report(list("Item" = thing))
+				trigger(TRUE)
+				return
 
 /obj/machinery/security_scanner/proc/do_scan(mob/target)
 	if(!on)
 		return
 
-	to_chat(target, SPAN_NOTICE("You feel [pick("funny", "wrong", "confused", "dangerous", "sickly", "puzzled", "happy")]."))
+//	to_chat(target, SPAN_NOTICE("You feel [pick("funny", "wrong", "confused", "dangerous", "sickly", "puzzled", "happy")]."))
+	var/output = check_target(target)
 
-	if((check_target(target) >= SCANNER_THREAT_TRIGGER))
+	if(output["level"] >= SCANNER_THREAT_TRIGGER)
 		trigger(TRUE)
-
+		report(output)
 	else
 		trigger(FALSE)
 
-/obj/machinery/security_scanner/proc/check_target(mob/living/target)
-	if(!target || !istype(target))
-		return 0
+/obj/machinery/security_scanner/proc/subtype_check(var/I, var/list)
+	if(is_type_in_list(I, list))
+		return TRUE
+	for(var/A in list)
+		if(I in subtypesof(A))
+			return TRUE
+	return FALSE
 
-	var/threatcount = 0
+/obj/machinery/security_scanner/proc/check_target(mob/living/target)
+	. = list()
+	if(!target || !istype(target))
+		.["level"] = 0
+		return
 
 	if(emagged)
-		return 10
+		.["level"] = 10
+		return
 
 	// Agent cards lower threatlevel.
 	var/obj/item/weapon/card/id/id = target.GetIdCard()
 	if(id && istype(id, /obj/item/weapon/card/id/syndicate))
-		threatcount -= 2
+		.["level"] -= 2
 	// A proper CentCom id is hard currency.
 	else if(id && istype(id, /obj/item/weapon/card/id/centcom))
-		return SCANNER_THREAT_RESET
+		.["level"] = SCANNER_THREAT_RESET
+		return
 
-	if(check_items && ((!pass_access in target.GetAccess()) && bypass_filter) || !bypass_filter)
+	.["guns"] = list()
+	if(check_items && ((!pass_access) in target.GetAccess()) && bypass_filter || !bypass_filter)
 		for(var/obj/item/I in target.contents)
-			if(istype(I, banned_items))
-				threatcount += 4
+			if(subtype_check(I, banned_items))
+				.["level"] += 4
+				.["guns"] += I.name
 				break
 
-			else if(istype(I, storage_types) && I.contents)
+			else if(subtype_check(I, storage_types) && I.contents)
 				for(var/obj/item/thing in I.contents)
-					if(istype(thing, banned_items))
-						threatcount += 4
+					if(subtype_check(thing, banned_items))
+						.["level"] += 4
+						.["guns"] += thing.name
 						break
 
 	if(check_records || check_arrests)
 		var/perpname = target.name
 		if(id)
 			perpname = id.registered_name
+		.["Violator"] += perpname
 
-		var/datum/computer_file/report/crew_record/CR = get_crewmember_record(perpname)
+		var/datum/computer_file/report/crew_record/CR = RecordByName(perpname)
 		if(check_records && !CR && !target.isMonkey())
-			threatcount += 4
+			.["level"] += 4
+			.["Unknown"] += TRUE
 
 		if(check_arrests && CR && (CR.get_criminalStatus() == GLOB.arrest_security_status))
-			threatcount += 4
+			.["level"] += 4
+			.["Criminal"] += TRUE
 
-	return threatcount
+	return
+
+/obj/machinery/security_scanner/proc/report(var/list/list)
+	if(!report_scans)	return
+	GLOB.global_announcer.autosay("Violation detected at [x]:[y]:[z] in [get_area(src)]", name, "Security", z)
+	if(!list)	return
+	if(list["Item"])
+		GLOB.global_announcer.autosay("Detected <b><i>[list["Item"]]</i></b>.", name, "Security", z)
+		return
+	var/violator
+	var/criminal
+	var/unknown
+	if(!list["Violator"])
+		violator = "Unknown"
+	else
+		violator = list["Violator"]
+	if(list["Criminal"])
+		criminal = TRUE
+	if(list["Unknown"])
+		unknown = TRUE
+	var/list/guns = list["guns"]
+	if(guns.len)
+		GLOB.global_announcer.autosay("Scan result of <b><i>[list["Violator"]]</i></b>.", name, "Security", z)
+		GLOB.global_announcer.autosay("Detected next illegal objects: [jointext(guns, ", ")].", name, "Security", z)
+	else if(unknown)
+		GLOB.global_announcer.autosay("Non registered subject found!", name, "Security", z)
+	else if(criminal)
+		GLOB.global_announcer.autosay("Found <b><i>[violator]</i></b>, that currently is under arrest!", name, "Security", z)
+	else
+		GLOB.global_announcer.autosay("Unknown violation.", name, "Security", z)
 
 /obj/machinery/security_scanner/emag_act()
 	if(!emagged)
@@ -236,7 +291,7 @@
 		return
 
 /obj/machinery/fake_scanner
-	name = "security scanner"
+	name = "Security Scanner"
 	desc = "The latest innovation in invasive imagery, the programmable NT-X100 will scan anyone who walks through it with fans to simulate being patted down. <em>Nanotrasen is not to be held responsible for any deaths caused by the results the machine gives, or the machine itself. ... Is this one even working properly?</em>"
 	icon = 'infinity/icons/obj/machines/security_scanner.dmi'
 	icon_state = "scanner_on"

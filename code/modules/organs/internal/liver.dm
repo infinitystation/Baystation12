@@ -22,7 +22,7 @@
 
 	if (germ_level > INFECTION_LEVEL_ONE)
 		if(prob(1))
-			to_chat(owner, "<span class='danger'>У вас чешетс&#255; кожа.</span>")
+			to_chat(owner, "<span class='danger'>РЈ РІР°СЃ С‡РµС€РµС‚СЃСЏ РєРѕР¶Р°.</span>")
 	if (germ_level > INFECTION_LEVEL_TWO)
 		if(prob(1))
 			spawn owner.vomit()

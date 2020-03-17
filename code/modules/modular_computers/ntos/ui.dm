@@ -193,6 +193,15 @@
 	if(network_card && network_card.is_banned())
 		data["PC_ntneticon"] = "sig_warning.gif"
 	else
+//[INF]
+		var/ntnet_status = get_ntnet_status()
+		if(ntnet_status <= 0) data["PC_ntneticon"] = "sig_none.gif"
+		else if(0							<	ntnet_status && ntnet_status < NTNET_SPEED_LIMITER * 0.25)	data["PC_ntneticon"] = "__inf.sig_low.gif"
+		else if(NTNET_SPEED_LIMITER * 0.25	<=	ntnet_status && ntnet_status < NTNET_SPEED_LIMITER * 0.75)	data["PC_ntneticon"] = "sig_low.gif"
+		else if(NTNET_SPEED_LIMITER * 0.75	<=	ntnet_status && ntnet_status < NTNET_SPEED_LIMITER)			data["PC_ntneticon"] = "sig_high.gif"
+		else if(NTNET_SPEED_LIMITER			<=	ntnet_status) data["PC_ntneticon"] = "sig_lan.gif"
+//[/INF]
+/*[ORIGINAL]
 		switch(get_ntnet_status())
 			if(0)
 				data["PC_ntneticon"] = "sig_none.gif"
@@ -202,6 +211,8 @@
 				data["PC_ntneticon"] = "sig_high.gif"
 			if(3)
 				data["PC_ntneticon"] = "sig_lan.gif"
+[ORIGINAL]*/
+
 
 	var/list/program_headers = list()
 	for(var/datum/computer_file/program/P in running_programs)

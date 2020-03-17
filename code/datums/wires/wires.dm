@@ -85,7 +85,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 	else
 		user.unset_machine()
 		// No content means no window.
-		user << browse(null, "window=wires")
+		close_browser(user, "window=wires")
 		return
 
 	var/datum/browser/popup = new(user, "wires", holder.name, window_x, window_y)
@@ -161,13 +161,13 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 					var/obj/item/device/multitool/multimeter/O = L.get_active_hand()
 					if(O.mode == METER_MESURING)
 						if (L.skill_check(SKILL_ELECTRICAL, SKILL_BASIC))
-							to_chat(L, "<span class='notice'>Подаем напр#&255;жение...</span>")
+							to_chat(L, "<span class='notice'>РџРѕРґР°РµРј РЅР°РїСЂСЏР¶РµРЅРёРµ...</span>")
 							if(!do_after(L, 50, holder))
 								return
 							PulseColour(colour)
-							to_chat(L, "<span class='notice'>Провод пропульсован.</span>")
+							to_chat(L, "<span class='notice'>РџСЂРѕРІРѕРґ РїСЂРѕРїСѓР»СЊСЃРѕРІР°РЅ.</span>")
 						else
-							to_chat(L, "<span class='notice'>Вы не знаете с каким напр#&255;жением работает этот провод.</span>")
+							to_chat(L, "<span class='notice'>Р’С‹ РЅРµ Р·РЅР°РµС‚Рµ СЃ РєР°РєРёРј РЅР°РїСЂСЏР¶РµРЅРёРµРј СЂР°Р±РѕС‚Р°РµС‚ СЌС‚РѕС‚ РїСЂРѕРІРѕРґ.</span>")
 					else
 						if (L.skill_check(SKILL_ELECTRICAL, SKILL_BASIC))
 							if(!do_after(L, 10, holder))
@@ -183,7 +183,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 							else
 								to_chat(L, "the [colour] wire not connected")
 						else
-							to_chat(L, "<span class='notice'>Вы не умеете подключать мультиметр.</span>")
+							to_chat(L, "<span class='notice'>Р’С‹ РЅРµ СѓРјРµРµС‚Рµ РїРѕРґРєР»СЋС‡Р°С‚СЊ РјСѓР»СЊС‚РёРјРµС‚СЂ.</span>")
 			//[/inf]
 				else if(isMultitool(I) || isMultitool(offhand_item))
 					if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 30, SKILL_ADEPT)))
@@ -225,7 +225,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 					var/obj/item/device/multitool/multimeter/O = L.get_active_hand()
 					if (L.skill_check(SKILL_ELECTRICAL, SKILL_BASIC))
 						if(O.mode == METER_CHECKING)
-							to_chat(L, "<span class='notice'>Перебираем провода...</span>")
+							to_chat(L, "<span class='notice'>РџРµСЂРµР±РёСЂР°РµРј РїСЂРѕРІРѕРґР°...</span>")
 							var/name_by_type = name_by_type()
 							to_chat(L, "[name_by_type] wires:")
 							for(var/colour in src.wires)
@@ -244,11 +244,11 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 										to_chat(L, "the [colour] wire not connected")
 							//to_chat(L, "<span class='notice'>[all_solved_wires[holder_type]]</span>")
 						else
-							to_chat(L, "<span class='notice'>Переключите мультиметр в режим прозвонки.</span>")
+							to_chat(L, "<span class='notice'>РџРµСЂРµРєР»СЋС‡РёС‚Рµ РјСѓР»СЊС‚РёРјРµС‚СЂ РІ СЂРµР¶РёРј РїСЂРѕР·РІРѕРЅРєРё.</span>")
 					else
-						to_chat(L, "<span class='notice'>Вы не знаете как с этим работать.</span>")
+						to_chat(L, "<span class='notice'>Р’С‹ РЅРµ Р·РЅР°РµС‚Рµ РєР°Рє СЃ СЌС‚РёРј СЂР°Р±РѕС‚Р°С‚СЊ.</span>")
 				else
-					to_chat(L, "<span class='warning'>Вам нужен мультиметр.</span>")
+					to_chat(L, "<span class='warning'>Р’Р°Рј РЅСѓР¶РµРЅ РјСѓР»СЊС‚РёРјРµС‚СЂ.</span>")
 		//[/inf]
 			else if(href_list["examine"])
 				var/colour = href_list["examine"]
@@ -258,7 +258,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 			Interact(usr)
 
 	if(href_list["close"])
-		usr << browse(null, "window=wires")
+		close_browser(usr, "window=wires")
 		usr.unset_machine(holder)
 
 //

@@ -1,5 +1,6 @@
 # Модифицированный baystation12
-[![Build Status](https://travis-ci.org/infinitystation/Baystation12.svg?branch=master)](https://travis-ci.org/infinitystation/Baystation12)  
+[![Build Status](https://travis-ci.org/infinitystation/Baystation12.svg?branch=master)](https://travis-ci.org/infinitystation/Baystation12)
+[![CodeFactor](https://www.codefactor.io/repository/github/infinitystation/baystation12/badge)](https://www.codefactor.io/repository/github/infinitystation/baystation12)
 
 **Код**: https://github.com/infinitystation/Baystation12  
 **Сайт разработчика:** https://infinity-ss13.info/  

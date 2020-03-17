@@ -1,11 +1,11 @@
 /decl/webhook/roundstart/get_message(var/list/data)
 	. = ..()
-	var/desc = "Режим: [SSticker.master_mode]\n"
-	desc += "Количество игроков: [GLOB.player_list.len]"
+	var/desc = "Р РµР¶РёРј: [SSticker.master_mode]\n"
+	desc += "РљРѕР»РёС‡РµСЃС‚РІРѕ РёРіСЂРѕРєРѕРІ: [LAZYLEN(GLOB.player_list)]"
 //	desc += "."
 
 	.["embeds"] = list(list(
-		"title" = "Смена началась",
+		"title" = "РЎРјРµРЅР° РЅР°С‡Р°Р»Р°СЃСЊ",
 		"description" = desc,
 		"color" = COLOR_WEBHOOK_DEFAULT
 	))

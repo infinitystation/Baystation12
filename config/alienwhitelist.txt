@@ -110,6 +110,7 @@ forrya - giant armoured serpentid
 he11d1ver - giant armoured serpentid
 bob46 - giant armoured serpentid
 wheatley2013 - giant armoured serpentid
+sallyvadordomold - giant armoured serpentid
 inubashirimomiji - diona
 bartstarter - diona
 wolforbykot - diona
@@ -143,7 +144,8 @@ hellpony - vox
 reptiloid2 - vox
 mrkayde - vox
 darkman24rus - vox
-connor22 - vox
+connor22
+thehero13 - vox
 bob46 - vox
 solark - vox
 richardfox - vox
@@ -169,9 +171,12 @@ taushai - unathi
 cre77 - unathi
 s1334 - unathi
 he11d1ver - unathi
+fray3y - unathi
 blacksoul231 - unathi
 arhod - unathi
-moonmen - unathi 
+moonmen - unathi
+thehero13 - unathi
+adro244 - unathi
 moonmen - tajaran
 cuddleandtea - tajaran
 mrnicolas - tajaran

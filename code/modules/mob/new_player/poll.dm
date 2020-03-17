@@ -1,4 +1,3 @@
-
 /mob/new_player/proc/handle_privacy_poll()
 	establish_db_connection()
 	if(!dbcon.IsConnected())
@@ -39,7 +38,7 @@
 
 	output += "</div>"
 
-	src << browse(output,"window=privacypoll;size=600x500")
+	show_browser(src, output,"window=privacypoll;size=600x500")
 	return
 
 /datum/polloption
@@ -75,7 +74,7 @@
 
 		output += "</table>"
 
-		src << browse(output,"window=playerpolllist;size=500x300")
+		show_browser(src, output,"window=playerpolllist;size=500x300")
 
 
 
@@ -158,7 +157,7 @@
 
 				output += "</div>"
 
-				src << browse(output,"window=playerpoll;size=500x250")
+				show_browser(src, output,"window=playerpoll;size=500x250")
 
 			//Polls with a text input
 			if("TEXT")
@@ -200,7 +199,7 @@
 				else
 					output += "[vote_text]"
 
-				src << browse(output,"window=playerpoll;size=500x500")
+				show_browser(src, output,"window=playerpoll;size=500x500")
 
 			//Polls with a text input
 			if("NUMVAL")
@@ -271,7 +270,7 @@
 					output += "<p><input type='submit' value='Submit'>"
 					output += "</form>"
 
-				src << browse(output,"window=playerpoll;size=500x500")
+				show_browser(src, output,"window=playerpoll;size=500x500")
 			if("MULTICHOICE")
 				var/DBQuery/voted_query = dbcon.NewQuery("SELECT optionid FROM erro_poll_vote WHERE pollid = [pollid] AND ckey = '[usr.ckey]'")
 				voted_query.Execute()
@@ -333,7 +332,7 @@
 
 				output += "</div>"
 
-				src << browse(output,"window=playerpoll;size=500x250")
+				show_browser(src, output,"window=playerpoll;size=500x250")
 		return
 
 /mob/new_player/proc/vote_on_poll(var/pollid = -1, var/optionid = -1, var/multichoice = 0)
@@ -403,7 +402,7 @@
 		insert_query.Execute()
 
 		to_chat(usr, "<span class='notice'>Vote successful.</span>")
-		usr << browse(null,"window=playerpoll")
+		close_browser(usr,"window=playerpoll")
 
 
 /mob/new_player/proc/log_text_poll_reply(var/pollid = -1, var/replytext = "")
@@ -461,7 +460,7 @@
 		insert_query.Execute()
 
 		to_chat(usr, "<span class='notice'>Feedback logging successful.</span>")
-		usr << browse(null,"window=playerpoll")
+		close_browser(usr,"window=playerpoll")
 
 
 /mob/new_player/proc/vote_on_numval_poll(var/pollid = -1, var/optionid = -1, var/rating = null)
@@ -523,4 +522,4 @@
 		insert_query.Execute()
 
 		to_chat(usr, "<span class='notice'>Vote successful.</span>")
-		usr << browse(null,"window=playerpoll")
+		close_browser(usr,"window=playerpoll")

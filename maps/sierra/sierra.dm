@@ -33,6 +33,7 @@
 	#include "datums/reports/deck.dm"
 
 	#include "datums/shackle_law_sets.dm"
+	#include "datums/supplypacks/engineering.dm"
 	#include "datums/supplypacks/security.dm"
 	#include "datums/supplypacks/science.dm"
 

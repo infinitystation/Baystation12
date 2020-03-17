@@ -10,7 +10,7 @@ GLOBAL_VAR_INIT(coding_languages, list("Batch")) //,"Anaconda", "NTML")
 	code_lang = "Batch"
 	code_lang_desc = "Simple terminal commands code"
 
-/datum/computer_file/data/text/README/coding/batch
+/datum/computer_file/data/text/batch_manual
 	filename = "batch_manual"
 	stored_data = "\[center\]\[daislogo\]\[br\]\
 					\[h1\]=== Batch language manual ===\[/h1\]\[hr\]\
@@ -20,7 +20,8 @@ GLOBAL_VAR_INIT(coding_languages, list("Batch")) //,"Anaconda", "NTML")
 					If command last in program, don't write \';\' after this command.\[hr\]\[/center\]\
 					To compile your code, you should input in terminal \'alias -ex \[code file name without square brackets\]"
 
-/*/datum/computer_file/data/coding/python_borned/anaconda
+/*
+/datum/computer_file/data/coding/anaconda
 	filetype = "ANC"
 	code_lang = "Anaconda"
 	code_lang_desc = "Wide oriented utility language, can used for network works, data manipulation and etc."
@@ -28,4 +29,5 @@ GLOBAL_VAR_INIT(coding_languages, list("Batch")) //,"Anaconda", "NTML")
 /datum/computer_file/data/coding/html
 	filetype = "NTM"
 	code_lang = "NTML"
-	code_lang_desc = "NanoTrasen MarkUp Language, using to create ui for your programs, and maybe news articles."*/
+	code_lang_desc = "NanoTrasen MarkUp Language, using to create ui for your programs, and maybe news articles."
+*/

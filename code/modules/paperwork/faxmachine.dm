@@ -48,7 +48,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 /obj/machinery/photocopier/faxmachine/interact(mob/user)
 	user.set_machine(src)
 
-	var/dat = "Fax Machine<BR>"
+	var/dat = "<meta charset=\"UTF-8\">Fax Machine<BR>"
 
 	var/scan_name
 	if(scan)
@@ -178,7 +178,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 		return 0	//You can't send faxes to "Unknown"
 
 	flick("faxreceive", src)
-	playsound(loc, pick(send_or_reseive_sounds), 50, 1)//inf //was:'	playsound(loc, "sound/machines/dotprinter.ogg", 50, 1)'
+	playsound(loc, pick(send_or_reseive_sounds), 50)//inf //was:'	playsound(loc, "sound/machines/dotprinter.ogg", 50, 1)'
 	visible_message("[src] beeps, \"Incomming message.\"")
 
 	// give the sprite some time to flick
@@ -245,7 +245,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 
 
 /obj/machinery/photocopier/faxmachine/proc/message_admins(var/mob/sender, var/faxname, var/obj/item/sent, var/reply_type, font_colour="#006100", var/disturb = TRUE)
-	var/msg = "<span class='notice'><b><font color='[font_colour]'>[faxname]: </font>[get_options_bar(sender, 2,1,1)]"
+	var/msg = "<span class='notice'><b><font color='[font_colour]'>[faxname]: </font>[usr.client.get_options_bar(sender, 2,1,1)]"
 	msg += "(<A HREF='?_src_=holder;take_ic=\ref[sender]'>TAKE</a>) (<a href='?_src_=holder;FaxReply=\ref[sender];originfax=\ref[src];replyorigin=[reply_type]'>REPLY</a>)</b>: "
 	msg += "Receiving '[sent.name]' via secure connection ... <a href='?_src_=holder;AdminFaxView=\ref[sent]'>view message</a></span>"
 

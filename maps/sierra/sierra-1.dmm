@@ -378,9 +378,8 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 2;
-	frequency = 1380;
 	id_tag = "admin_shuttle_dock_pump"
 	},
 /obj/item/device/radio/intercom{
@@ -580,11 +579,10 @@
 	icon_state = "intact";
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump{
+/obj/machinery/atmospherics/unary/vent_pump/tank{
 	dir = 2;
 	external_pressure_bound = 0;
 	external_pressure_bound_default = 0;
-	frequency = 1441;
 	icon_state = "map_vent_in";
 	id_tag = "toxins_out";
 	initialize_directions = 1;
@@ -598,9 +596,8 @@
 /turf/simulated/floor/reinforced/airless,
 /area/shuttle/petrov/ship)
 "bv" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "admin_shuttle_dock_pump"
 	},
 /obj/effect/floor_decal/industrial/warning{
@@ -633,7 +630,6 @@
 	dir = 4
 	},
 /obj/machinery/air_sensor{
-	frequency = 1441;
 	id_tag = "toxins_sensor"
 	},
 /turf/simulated/floor/reinforced/airless,
@@ -843,7 +839,7 @@
 	name = "Storage Door Control";
 	pixel_x = 24;
 	pixel_y = 0;
-	req_access = list(list("ACCESS_MINING","ACCESS_XENOARCH","ACCESS_EL","ACCESS_ENGINE_EQUIP"))
+	req_access = list(list("ACCESS_MINING","ACCESS_XENOARCH","ACCESS_EXPLORER","ACCESS_ENGINE_EQUIP"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
@@ -1062,9 +1058,8 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/shuttle/petrov/ship)
 "cj" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 2;
-	frequency = 1380;
 	id_tag = "merchant_shuttle_station_pump"
 	},
 /obj/effect/floor_decal/industrial/warning/full,
@@ -1191,10 +1186,8 @@
 /turf/simulated/floor/tiled,
 /area/command/bsa)
 "cr" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 2;
-	frequency = 1331;
 	id_tag = "nuke_shuttle_dock_pump"
 	},
 /obj/item/device/radio/intercom{
@@ -1210,10 +1203,8 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 2;
-	frequency = 1331;
 	id_tag = "nuke_shuttle_dock_pump"
 	},
 /obj/structure/catwalk,
@@ -1247,10 +1238,8 @@
 	id_tag = "nuke_shuttle_dock_sensor";
 	pixel_y = 24
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 2;
-	frequency = 1331;
 	id_tag = "nuke_shuttle_dock_pump"
 	},
 /obj/structure/catwalk,
@@ -1488,9 +1477,8 @@
 	icon_state = "bordercolorcorner2";
 	dir = 5
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1380;
 	id_tag = "escape_pod_6_pump"
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
@@ -1617,10 +1605,8 @@
 /turf/simulated/floor/tiled,
 /area/command/bsa)
 "dd" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 2;
-	frequency = 1331;
 	id_tag = "nuke_shuttle_dock_pump"
 	},
 /obj/structure/extinguisher_cabinet{
@@ -1639,10 +1625,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 2;
-	frequency = 1380;
 	id_tag = "petrov_shuttle_dock_pump"
 	},
 /obj/structure/catwalk,
@@ -1840,9 +1824,8 @@
 	icon_state = "bordercolor";
 	dir = 8
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "escape_pod_6_pump"
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -1891,9 +1874,8 @@
 	icon_state = "bordercolor";
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1380;
 	id_tag = "escape_pod_6_pump"
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -1915,9 +1897,8 @@
 	icon_state = "bulb_map";
 	dir = 8
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "escape_pod_7_pump"
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -2265,9 +2246,8 @@
 	icon_state = "bulb_map";
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1380;
 	id_tag = "escape_pod_7_pump"
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -2499,10 +2479,8 @@
 /turf/simulated/wall/ocp_wall,
 /area/shuttle/petrov/ship)
 "ey" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 1;
-	frequency = 1331;
 	id_tag = "calypso_shuttle_pump_out_external"
 	},
 /obj/structure/catwalk,
@@ -2789,9 +2767,8 @@
 /obj/machinery/status_display{
 	pixel_x = -32
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "escape_pod_6_pump"
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -2835,10 +2812,8 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/expedition/storage)
 "fc" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 2;
-	frequency = 1331;
 	id_tag = "calypso_shuttle_pump_out_external"
 	},
 /obj/machinery/access_button/airlock_exterior{
@@ -3856,9 +3831,8 @@
 	icon_state = "bordercolorcorner2";
 	dir = 10
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "escape_pod_7_pump"
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
@@ -3904,11 +3878,10 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 6
 	},
-/obj/machinery/atmospherics/unary/vent_pump{
+/obj/machinery/atmospherics/unary/vent_pump/tank{
 	dir = 2;
 	external_pressure_bound = 0;
 	external_pressure_bound_default = 0;
-	frequency = 1439;
 	icon_state = "map_vent_in";
 	id_tag = "o21p_out";
 	initialize_directions = 1;
@@ -4379,9 +4352,8 @@
 /obj/machinery/status_display{
 	pixel_x = 32
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1380;
 	id_tag = "escape_pod_7_pump"
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -4957,9 +4929,8 @@
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/fore)
 "iA" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 2;
-	frequency = 1380;
 	id_tag = "specops_dock_pump"
 	},
 /obj/effect/floor_decal/industrial/warning/full,
@@ -5032,10 +5003,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 4;
-	frequency = 1431;
 	id_tag = "guppy_shuttle_pump_out_external"
 	},
 /obj/machinery/airlock_sensor{
@@ -5050,6 +5019,10 @@
 	master_tag = "guppy_shuttle";
 	pixel_x = 36;
 	pixel_y = 25
+	},
+/obj/effect/floor_decal/techfloor/hole{
+	icon_state = "techfloor_hole_left";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/guppy_hangar/start)
@@ -5325,10 +5298,8 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/exploration)
 "je" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 2;
-	frequency = 1380;
 	id_tag = "petrov_shuttle_dock_pump"
 	},
 /obj/machinery/light/small{
@@ -5341,10 +5312,8 @@
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aft)
 "jf" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 2;
-	frequency = 1380;
 	id_tag = "petrov_shuttle_pump"
 	},
 /obj/structure/catwalk,
@@ -5354,10 +5323,8 @@
 /turf/simulated/floor/plating,
 /area/shuttle/petrov/ship)
 "jg" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 2;
-	frequency = 1380;
 	id_tag = "petrov_shuttle_pump"
 	},
 /obj/structure/catwalk,
@@ -5721,10 +5688,8 @@
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 8
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 2;
-	frequency = 1331;
 	id_tag = "calypso_shuttle_pump_out_internal";
 	power_rating = 25000
 	},
@@ -5842,10 +5807,8 @@
 /turf/simulated/floor/plating,
 /area/shuttle/petrov/ship)
 "jX" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1331;
 	id_tag = "nuke_shuttle_dock_pump"
 	},
 /obj/structure/catwalk,
@@ -6579,7 +6542,6 @@
 "kZ" = (
 /obj/machinery/door/airlock/external{
 	autoset_access = 0;
-	density = 1;
 	frequency = 1431;
 	id_tag = "guppy_shuttle_outer";
 	name = "Guppy External Access";
@@ -6592,7 +6554,6 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden{
-	icon_state = "map";
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -7820,10 +7781,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/fore)
 "mO" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1331;
 	id_tag = "nuke_shuttle_dock_pump"
 	},
 /obj/structure/sign/warning/high_voltage{
@@ -9994,10 +9953,8 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/deckofficer)
 "qg" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1380;
 	id_tag = "petrov_shuttle_dock_pump"
 	},
 /obj/machinery/airlock_sensor{
@@ -10622,10 +10579,8 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/hallway/primary/thirddeck/center)
 "qZ" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1380;
 	id_tag = "petrov_shuttle_dock_pump"
 	},
 /obj/item/device/radio/intercom{
@@ -12314,11 +12269,10 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
 	},
-/obj/machinery/atmospherics/unary/vent_pump{
+/obj/machinery/atmospherics/unary/vent_pump/tank{
 	dir = 2;
 	external_pressure_bound = 0;
 	external_pressure_bound_default = 0;
-	frequency = 1439;
 	icon_state = "map_vent_in";
 	id_tag = "fuel1p_out";
 	initialize_directions = 1;
@@ -12751,10 +12705,8 @@
 /turf/simulated/floor/tiled/white,
 /area/maintenance/thirddeck/aft)
 "uh" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1380;
 	id_tag = "petrov_shuttle_pump"
 	},
 /obj/structure/sign/warning/airlock{
@@ -12769,10 +12721,8 @@
 /turf/simulated/floor/plating,
 /area/shuttle/petrov/ship)
 "ui" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1380;
 	id_tag = "petrov_shuttle_pump"
 	},
 /obj/structure/catwalk,
@@ -13489,10 +13439,8 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 2;
-	frequency = 1331;
 	id_tag = "calypso_shuttle_pump";
 	power_rating = 25000
 	},
@@ -13971,9 +13919,8 @@
 /area/quartermaster/office)
 "wk" = (
 /obj/effect/floor_decal/industrial/warning/full,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1380;
 	id_tag = "centcom_shuttle_dock_pump"
 	},
 /obj/machinery/airlock_sensor{
@@ -14814,9 +14761,8 @@
 /area/exploration_shuttle/medical)
 "xA" = (
 /obj/effect/floor_decal/industrial/warning/full,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1380;
 	id_tag = "skipjack_shuttle_dock_pump"
 	},
 /obj/machinery/airlock_sensor{
@@ -14970,10 +14916,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden{
-	dir = 4;
-	icon_state = "map"
-	},
 /obj/machinery/access_button{
 	command = "cycle_interior";
 	master_tag = "guppy_shuttle";
@@ -14981,6 +14923,14 @@
 	pixel_x = -22;
 	pixel_y = 32;
 	req_access = list("ACCESS_GUPPY")
+	},
+/obj/machinery/atmospherics/pipe/manifold/visible/fuel{
+	icon_state = "map";
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 5;
+	icon_state = "intact"
 	},
 /turf/simulated/floor/tiled,
 /area/guppy_hangar/start)
@@ -15056,9 +15006,8 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 9
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "rescue_shuttle_dock_pump"
 	},
 /obj/structure/catwalk,
@@ -15243,7 +15192,7 @@
 /turf/simulated/floor/tiled,
 /area/storage/primary)
 "yp" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
 	id_tag = "nuke_shuttle_dock_pump"
 	},
@@ -15712,9 +15661,8 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 6
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1380;
 	id_tag = "rescue_shuttle_dock_pump"
 	},
 /obj/item/device/radio/intercom{
@@ -16255,11 +16203,10 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5
 	},
-/obj/machinery/atmospherics/unary/vent_pump{
+/obj/machinery/atmospherics/unary/vent_pump/tank{
 	dir = 1;
 	external_pressure_bound = 0;
 	external_pressure_bound_default = 0;
-	frequency = 1439;
 	icon_state = "map_vent_in";
 	id_tag = "CO21p_out";
 	initialize_directions = 1;
@@ -16288,11 +16235,10 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5
 	},
-/obj/machinery/atmospherics/unary/vent_pump{
+/obj/machinery/atmospherics/unary/vent_pump/tank{
 	dir = 1;
 	external_pressure_bound = 0;
 	external_pressure_bound_default = 0;
-	frequency = 1439;
 	icon_state = "map_vent_in";
 	id_tag = "o22p_out";
 	initialize_directions = 1;
@@ -17481,7 +17427,6 @@
 	icon_state = "2-8"
 	},
 /obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
@@ -17490,9 +17435,11 @@
 /obj/machinery/airlock_sensor{
 	frequency = 1431;
 	id_tag = "guppy_shuttle_sensor";
-	pixel_x = 0;
 	pixel_y = 26
 	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/guppy_hangar/start)
 "BY" = (
@@ -17501,7 +17448,6 @@
 	},
 /obj/structure/shuttle/engine/heater{
 	dir = 1;
-	icon_state = "heater";
 	pixel_y = -32
 	},
 /turf/simulated/floor/plating,
@@ -18617,15 +18563,18 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 8;
-	frequency = 1431;
 	id_tag = "guppy_shuttle_pump_out_internal"
 	},
 /obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
 	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/noticeboard{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/guppy_hangar/start)
@@ -19023,10 +18972,8 @@
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 2;
-	frequency = 1331;
 	id_tag = "calypso_shuttle_pump";
 	power_rating = 25000
 	},
@@ -19061,15 +19008,20 @@
 /area/shuttle/petrov/ship)
 "Er" = (
 /obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
 	dir = 1
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 8;
-	frequency = 1431;
 	id_tag = "guppy_shuttle_pump"
 	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/random/tool,
+/obj/structure/closet/crate,
+/obj/random/tool,
+/obj/item/weapon/deck/cards,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/guppy_hangar/start)
 "Es" = (
@@ -19803,9 +19755,8 @@
 /obj/machinery/status_display{
 	pixel_x = -32
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "escape_pod_8_pump"
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -20345,12 +20296,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/fore)
 "Gy" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4
-	},
-/obj/structure/bed/chair/shuttle/blue{
-	icon_state = "shuttle_chair_preview";
-	dir = 4
+/obj/machinery/hologram/holopad/longrange,
+/obj/effect/floor_decal/industrial/outline,
+/obj/machinery/atmospherics/pipe/manifold/hidden{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/guppy_hangar/start)
@@ -20496,12 +20445,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
 "GH" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 4;
-	frequency = 1431;
 	id_tag = "guppy_shuttle_pump_out_external"
 	},
+/obj/effect/floor_decal/techfloor/hole/right,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/guppy_hangar/start)
 "GI" = (
@@ -20628,11 +20576,12 @@
 /area/maintenance/thirddeck/aft)
 "GT" = (
 /obj/effect/floor_decal/techfloor,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 8;
-	frequency = 1431;
 	id_tag = "guppy_shuttle_pump_out_internal"
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/guppy_hangar/start)
@@ -20719,15 +20668,15 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/center)
 "GY" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
 /obj/effect/floor_decal/techfloor,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 8;
-	frequency = 1431;
 	id_tag = "guppy_shuttle_pump"
+	},
+/obj/machinery/camera/network/pod{
+	c_tag = "General Utility Pod - Airlock";
+	dir = 1;
+	icon_state = "camera"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/guppy_hangar/start)
@@ -21153,17 +21102,13 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/storage)
 "HB" = (
-/obj/structure/bed/chair/shuttle/blue{
-	icon_state = "shuttle_chair_preview";
-	dir = 4
-	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 8
-	},
 /obj/structure/cable/yellow{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/guppy_hangar/start)
@@ -21175,14 +21120,15 @@
 	pixel_y = -32;
 	req_access = list("ACCESS_GUPPY")
 	},
-/obj/machinery/hologram/holopad/longrange,
-/obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/cable/cyan{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/overmap/visitable/ship/landable/guppy,
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/guppy_hangar/start)
 "HD" = (
@@ -21234,9 +21180,8 @@
 	icon_state = "bordercolorcorner2";
 	dir = 6
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1380;
 	id_tag = "escape_pod_8_pump"
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
@@ -21865,9 +21810,8 @@
 	icon_state = "bordercolorcorner2";
 	dir = 8
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "escape_pod_9_pump"
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
@@ -21882,20 +21826,12 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod9/station)
 "IF" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/table/steel_reinforced,
-/obj/machinery/recharger{
-	pixel_y = 0
-	},
-/obj/item/device/radio/intercom{
-	dir = 4;
-	pixel_x = -20
-	},
+/obj/structure/bed/chair/shuttle/blue,
 /turf/simulated/floor/tiled/monotile,
 /area/guppy_hangar/start)
 "IG" = (
@@ -22525,12 +22461,12 @@
 /turf/simulated/wall/r_titanium,
 /area/shuttle/escape_pod8/station)
 "JF" = (
-/obj/structure/bed/chair/shuttle/blue,
 /obj/structure/cable/cyan{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/bed/chair/shuttle/blue,
 /turf/simulated/floor/tiled/monotile,
 /area/guppy_hangar/start)
 "JG" = (
@@ -22558,12 +22494,14 @@
 /obj/machinery/power/apc/hyper{
 	dir = 4;
 	name = "east bump";
-	pixel_x = 24
+	pixel_x = 24;
+	req_access = list(list("ACCESS_ENGINE_EQUIP","ACCESS_GUPPY"))
 	},
 /obj/structure/cable/cyan{
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/monotile,
 /area/guppy_hangar/start)
 "JJ" = (
@@ -22636,17 +22574,14 @@
 /turf/simulated/floor/plating,
 /area/quartermaster/office)
 "JO" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/red{
-	dir = 5;
-	icon_state = "intact"
-	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/cable/yellow{
 	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/machinery/power/port_gen/pacman{
-	sheets = 5
+	anchored = 1;
+	sheets = 10
 	},
 /turf/simulated/floor/plating,
 /area/guppy_hangar/start)
@@ -22664,10 +22599,8 @@
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 8
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 1;
-	frequency = 1331;
 	id_tag = "calypso_shuttle_pump_out_internal";
 	power_rating = 25000
 	},
@@ -22675,10 +22608,8 @@
 /area/exploration_shuttle/airlock)
 "JQ" = (
 /obj/machinery/light/small,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 1;
-	frequency = 1331;
 	id_tag = "calypso_shuttle_pump_out_internal";
 	power_rating = 25000
 	},
@@ -22724,10 +22655,8 @@
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	controlled = 0;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 1;
-	frequency = 1331;
 	id_tag = "calypso_shuttle_pump";
 	power_rating = 25000
 	},
@@ -22945,14 +22874,12 @@
 /turf/simulated/floor/tiled/dark,
 /area/hallway/primary/thirddeck/center)
 "Kl" = (
-/obj/machinery/light{
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/cable/cyan,
 /obj/machinery/power/smes/buildable/preset/sierra/shuttle{
 	RCon_tag = "Shuttle - Guppy"
 	},
+/obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/guppy_hangar/start)
 "Km" = (
@@ -22968,8 +22895,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
+/obj/machinery/atmospherics/pipe/simple/hidden,
 /turf/simulated/floor/plating,
 /area/guppy_hangar/start)
 "Kn" = (
@@ -22988,9 +22916,8 @@
 /obj/machinery/status_display{
 	pixel_x = 32
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1380;
 	id_tag = "escape_pod_9_pump"
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -23021,11 +22948,10 @@
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "Kr" = (
-/obj/machinery/atmospherics/unary/vent_pump{
+/obj/machinery/atmospherics/unary/vent_pump/tank{
 	dir = 2;
 	external_pressure_bound = 0;
 	external_pressure_bound_default = 0;
-	frequency = 1439;
 	icon_state = "map_vent_in";
 	id_tag = "CO22p_out";
 	initialize_directions = 1;
@@ -23514,7 +23440,6 @@
 "Lr" = (
 /obj/machinery/door/airlock/external{
 	autoset_access = 0;
-	density = 1;
 	frequency = 1431;
 	id_tag = "guppy_shuttle_outer";
 	name = "Guppy External Access";
@@ -23534,11 +23459,16 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/shuttle_landmark/sierra/hangar/guppy,
+/obj/structure/bed/chair/shuttle/blue{
+	icon_state = "shuttle_chair_preview";
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/universal,
 /obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 9;
+	dir = 4;
 	icon_state = "intact"
 	},
-/obj/effect/shuttle_landmark/sierra/hangar/guppy,
 /turf/simulated/floor/tiled,
 /area/guppy_hangar/start)
 "Lt" = (
@@ -23660,15 +23590,14 @@
 /turf/simulated/floor/plating,
 /area/quartermaster/hangar)
 "LE" = (
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/portables_connector{
-	icon_state = "map_connector";
 	dir = 4
 	},
-/obj/machinery/portable_atmospherics/canister/air/airlock,
+/obj/machinery/light{
+	dir = 1;
+	icon_state = "tube_map"
+	},
 /turf/simulated/floor/plating,
 /area/guppy_hangar/start)
 "LF" = (
@@ -23679,13 +23608,11 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/expedition)
 "LG" = (
-/obj/machinery/camera/network/pod{
-	c_tag = "General Utility Pod - Crew Compartment";
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/atmospherics/portables_connector{
 	dir = 4
 	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/atmospherics/portables_connector,
-/obj/machinery/portable_atmospherics/canister/empty,
+/obj/machinery/portable_atmospherics/canister/air,
 /turf/simulated/floor/plating,
 /area/guppy_hangar/start)
 "LH" = (
@@ -23895,29 +23822,33 @@
 /turf/simulated/wall/r_wall/hull,
 /area/rnd/xenobiology/storage)
 "Md" = (
-/obj/structure/table/steel_reinforced,
-/obj/machinery/cell_charger,
-/obj/item/device/radio,
-/obj/item/device/radio,
-/obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/item/device/spaceflare,
 /obj/machinery/button/blast_door{
+	airflow_od = -6;
 	dir = 1;
 	id_tag = "guppy_shield";
 	name = "Window Shield Control";
-	pixel_x = 0;
+	pixel_x = 6;
 	pixel_y = -20;
 	req_access = list("ACCESS_GUPPY")
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/machinery/computer/shuttle_control/explore/guppy{
+	dir = 1
+	},
+/obj/machinery/button/blast_door{
+	active = "guppy_shield_left";
+	dir = 1;
+	id_tag = "guppy_shield_left";
+	name = "Left Window Shield Control";
+	pixel_x = -6;
+	pixel_y = -20;
+	req_access = list("ACCESS_GUPPY")
+	},
+/turf/simulated/floor/tiled/dark/monotile,
 /area/guppy_hangar/start)
 "Me" = (
 /obj/structure/table/standard,
@@ -23936,10 +23867,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/janitor)
 "Mf" = (
-/obj/machinery/computer/shuttle_control/explore/guppy{
-	icon_state = "computer";
-	dir = 1
-	},
 /obj/structure/cable/cyan,
 /obj/structure/cable/yellow{
 	d2 = 8;
@@ -23948,7 +23875,10 @@
 /obj/machinery/power/terminal{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/machinery/computer/ship/helm{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
 /area/guppy_hangar/start)
 "Mg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
@@ -24497,10 +24427,17 @@
 /turf/simulated/floor/plating,
 /area/quartermaster/hangar)
 "MW" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/alarm{
 	dir = 8;
-	pixel_x = 23
+	pixel_x = 23;
+	req_access = list(list("ACCESS_ATMOS","ACCESS_ENGINE_EQUIP","ACCESS_GUPPY"))
+	},
+/obj/machinery/computer/ship/sensors{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 9;
+	icon_state = "intact"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/guppy_hangar/start)
@@ -25727,11 +25664,10 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 9
 	},
-/obj/machinery/atmospherics/unary/vent_pump{
+/obj/machinery/atmospherics/unary/vent_pump/tank{
 	dir = 1;
 	external_pressure_bound = 0;
 	external_pressure_bound_default = 0;
-	frequency = 1439;
 	icon_state = "map_vent_in";
 	id_tag = "fuel2p_out";
 	initialize_directions = 1;
@@ -26299,19 +26235,14 @@
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aft)
 "Qk" = (
-/obj/structure/bed/chair/shuttle/blue{
-	icon_state = "shuttle_chair_preview";
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4;
-	icon_state = "intact"
-	},
 /obj/machinery/firealarm{
 	pixel_y = 24
+	},
+/obj/machinery/atmospherics/binary/pump{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/guppy_hangar/start)
@@ -26805,17 +26736,22 @@
 	dir = 4
 	},
 /obj/machinery/sleeper/survival_pod{
-	icon_state = "stasis_0";
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
 	},
 /obj/structure/closet/medical_wall/filled/small_shuttle{
-	pixel_x = 0;
 	pixel_y = 32
 	},
-/turf/simulated/floor/tiled,
+/obj/machinery/camera/network/pod{
+	c_tag = "General Utility Pod - Main compartment"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 10;
+	icon_state = "intact"
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/guppy_hangar/start)
 "QY" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -26845,7 +26781,6 @@
 /obj/effect/paint/nt_white,
 /obj/effect/paint_stripe/nt_red,
 /obj/structure/sign/nanotrasen{
-	icon_state = "NT";
 	dir = 1
 	},
 /turf/simulated/wall/r_titanium,
@@ -26973,9 +26908,9 @@
 	tag_exterior_sensor = "guppy_shuttle_sensor_external"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden{
-	dir = 8;
-	icon_state = "map"
+	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/guppy_hangar/start)
 "Rq" = (
@@ -27228,9 +27163,8 @@
 	icon_state = "bulb_map";
 	dir = 8
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "escape_pod_8_pump"
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -27483,9 +27417,8 @@
 	icon_state = "bulb_map";
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1380;
 	id_tag = "escape_pod_8_pump"
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -27582,9 +27515,8 @@
 	icon_state = "bulb_map";
 	dir = 8
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "escape_pod_9_pump"
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -27735,9 +27667,8 @@
 	icon_state = "bulb_map";
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1380;
 	id_tag = "escape_pod_9_pump"
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -27840,9 +27771,11 @@
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology/level2)
 "SK" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 23
+	},
+/obj/machinery/computer/ship/engines{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/guppy_hangar/start)
@@ -28628,6 +28561,29 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
+"Vk" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/device/radio/intercom{
+	dir = 4;
+	pixel_x = -20
+	},
+/obj/machinery/recharger,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/monotile,
+/area/guppy_hangar/start)
+"Vl" = (
+/obj/machinery/door/firedoor,
+/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/paint/nt_white,
+/obj/effect/paint_stripe/nt_red,
+/obj/machinery/door/blast/regular{
+	active_timers = 1;
+	dir = 4;
+	id_tag = "guppy_shield_left";
+	name = "Window Shield"
+	},
+/turf/simulated/floor/plating,
+/area/guppy_hangar/start)
 "Vn" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
@@ -29480,6 +29436,18 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
+"YY" = (
+/obj/structure/table/steel_reinforced,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/item/device/radio,
+/obj/item/device/radio,
+/obj/item/device/spaceflare,
+/obj/machinery/cell_charger,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/monotile,
+/area/guppy_hangar/start)
 "Zc" = (
 /obj/machinery/mining/brace{
 	dir = 4
@@ -29531,6 +29499,17 @@
 "Zi" = (
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/port)
+"Zj" = (
+/obj/machinery/shipsensors/weak,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/machinery/light/small{
+	dir = 1;
+	icon_state = "bulb_map"
+	},
+/turf/simulated/floor/reinforced,
+/area/guppy_hangar/start)
 "Zn" = (
 /turf/simulated/wall/prepainted,
 /area/maintenance/substation/thirddeck)
@@ -29571,6 +29550,12 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/storage)
+"Zw" = (
+/obj/effect/paint/nt_white,
+/obj/effect/paint_stripe/nt_red,
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
+/turf/simulated/wall/r_titanium,
+/area/guppy_hangar/start)
 "Zy" = (
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	icon_state = "steel_decals4";
@@ -29656,6 +29641,15 @@
 /obj/structure/anomaly_container,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/exploration_shuttle/cargo)
+"ZX" = (
+/obj/machinery/atmospherics/unary/engine,
+/obj/structure/sign/warning/hot_exhaust{
+	dir = 1;
+	icon_state = "fire";
+	pixel_y = -32
+	},
+/turf/simulated/floor/plating,
+/area/guppy_hangar/start)
 
 (1,1,1) = {"
 Is
@@ -52185,17 +52179,17 @@ iu
 yZ
 iu
 EG
-aO
-aO
+zg
+Zj
 iH
 GH
 Rc
+Vl
+Vl
+Vl
 Ji
 Ji
 Ji
-Ji
-aO
-aO
 sp
 Im
 Nv
@@ -52395,8 +52389,8 @@ Ji
 LE
 LG
 JO
-Ji
-Ji
+Vk
+YY
 Ji
 sp
 LD
@@ -52791,8 +52785,8 @@ GQ
 ZG
 GQ
 Fs
-BY
-Ji
+ZX
+Zw
 BX
 Rp
 Km
@@ -53197,8 +53191,8 @@ oC
 Fs
 AT
 Ji
-DE
 Ji
+DE
 Ji
 Ji
 Ji
