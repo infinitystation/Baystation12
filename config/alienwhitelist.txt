@@ -117,7 +117,6 @@ wolforbykot - diona
 sosiskoed - diona
 mukosuand - diona
 gumboldty - diona
-eggoflizard - diona
 vankoska - diona
 maxi2000 - diona
 mrkayde - diona
@@ -127,6 +126,7 @@ s1334 - diona
 sfd - diona
 spiderling - diona
 reptiloid2 - diona
+eggoflizard - diona
 wheatley2013 - vox
 wolforbykot - vox
 sosiskoed - vox
