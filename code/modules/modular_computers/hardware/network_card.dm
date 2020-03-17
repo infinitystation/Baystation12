@@ -10,7 +10,7 @@ var/global/ntnet_card_uid = 1
 	hardware_size = 1
 	var/identification_id = null	// Identification ID. Technically MAC address of this device. Can't be changed by user.
 	var/identification_string = "" 	// Identification string, technically nickname seen in the network. Can be set by user.
-	var/long_range = 0
+	var/long_range = 1//inf //was: var/long_range = 0
 	var/ethernet = 0 // Hard-wired, therefore always on, ignores NTNet wireless checks.
 	var/proxy_id     // If set, uses the value to funnel connections through another network card.
 	malfunction_probability = 1
@@ -34,7 +34,7 @@ var/global/ntnet_card_uid = 1
 /obj/item/weapon/stock_parts/computer/network_card/advanced
 	name = "advanced NTNet network card"
 	desc = "An advanced network card for usage with standard NTNet frequencies. It's transmitter is strong enough to connect even when far away."
-	long_range = 1
+	long_range = 2 //inf //was: long_range = 1
 	origin_tech = list(TECH_DATA = 4, TECH_ENGINEERING = 2)
 	power_usage = 100 // Better range but higher power usage.
 	icon_state = "netcard_advanced"

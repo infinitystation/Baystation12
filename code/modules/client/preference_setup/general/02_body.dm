@@ -150,7 +150,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	. = list()
 	if(!pref.preview_icon)
 		pref.update_preview_icon()
-	user << browse_rsc(pref.preview_icon, "previewicon.png")
+	send_rsc(user, pref.preview_icon, "previewicon.png")
 
 	var/datum/species/mob_species = all_species[pref.species]
 	var/title = "<b>Раса<a href='?src=\ref[src];show_species=1'><small>?</small></a>:</b> <a href='?src=\ref[src];set_species=1'>[mob_species.name]</a>"
@@ -413,7 +413,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		var/list/valid_hairstyles = mob_species.get_hair_styles()
 		var/nextStyleNum = GetNumOfHairStyle(c_style, valid_hairstyles) - 1
 		if(CanUseTopic(user))
-			if(!c_style || !c_style in valid_hairstyles)
+			if(!c_style || !(c_style in valid_hairstyles))
 				pref.h_style = valid_hairstyles[1]
 			else if(nextStyleNum <= valid_hairstyles.len && valid_hairstyles[nextStyleNum])
 				pref.h_style = valid_hairstyles[nextStyleNum]
@@ -435,7 +435,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		var/list/valid_hairstyles = mob_species.get_facial_hair_styles()
 		var/nextStyleNum = GetNumOfHairStyle(c_style, valid_hairstyles) - 1
 		if(CanUseTopic(user))
-			if(!c_style || !c_style in valid_hairstyles)
+			if(!c_style || !(c_style in valid_hairstyles))
 				pref.f_style = valid_hairstyles[1]
 			else if(nextStyleNum <= valid_hairstyles.len && valid_hairstyles[nextStyleNum])
 				pref.f_style = valid_hairstyles[nextStyleNum]

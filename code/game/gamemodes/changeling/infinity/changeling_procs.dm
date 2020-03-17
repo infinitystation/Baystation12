@@ -45,7 +45,8 @@
 	for(var/datum/power/changeling/P in mind.changeling.purchasedpowers)
 		switch(P.state)
 			if(2) //verbs
-				if(!ishuman(src) && !P.allowduringlesserform) continue
+				if(!ishuman(src) && !P.allowduringlesserform)
+					continue
 				if(!(P in src.verbs))
 					src.verbs += P.verbpath
 			if(1) //stings
@@ -54,8 +55,9 @@
 					if(P.name == button.name)
 						exists = 1
 				if(!exists)
-					if(!ishuman(src) && !P.allowduringlesserform) continue
-						ability_master.add_ling_ability(P.name, P.verbpath, P.icon_state)
+					if(!ishuman(src) && !P.allowduringlesserform)
+						continue
+					ability_master.add_ling_ability(P.name, P.verbpath, P.icon_state)
 
 	for(var/language in languages)
 		mind.changeling.absorbed_languages |= language

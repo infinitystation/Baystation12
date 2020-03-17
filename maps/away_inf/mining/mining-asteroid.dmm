@@ -522,9 +522,8 @@
 	tag_exterior_door = "mbase_airlock_space_exterior";
 	tag_interior_door = "mbase_airlock_space_interior"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "mbase_airlock_space_pump"
 	},
 /turf/simulated/floor/plating,
@@ -545,9 +544,8 @@
 	pixel_x = 24;
 	pixel_y = 0
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1380;
 	id_tag = "mbase_airlock_space_pump"
 	},
 /turf/simulated/floor/plating,
@@ -610,9 +608,8 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "mbase_airlock_space_pump"
 	},
 /turf/simulated/floor/plating,
@@ -623,9 +620,8 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/outpost/mining/cenral)
 "bA" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1380;
 	id_tag = "mbase_airlock_space_pump"
 	},
 /turf/simulated/floor/plating,
@@ -919,9 +915,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/recreation)
 "cb" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1379;
 	id_tag = "mbase_airlock_pump"
 	},
 /obj/structure/catwalk,
@@ -3087,9 +3082,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining)
 "gh" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1379;
 	id_tag = "mbase_airlock_pump"
 	},
 /obj/structure/catwalk,
@@ -3111,9 +3105,8 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/outpost/mining)
 "gj" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1379;
 	id_tag = "mbase_airlock_pump"
 	},
 /obj/structure/catwalk,
@@ -3124,9 +3117,8 @@
 /turf/simulated/floor/plating,
 /area/outpost/mining)
 "gk" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1379;
 	id_tag = "mbase_airlock_pump"
 	},
 /obj/structure/catwalk,
@@ -3152,18 +3144,16 @@
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/voidsuits)
 "gm" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1379;
 	id_tag = "mbase_airlock_pump"
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/outpost/mining)
 "gn" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1379;
 	id_tag = "mbase_airlock_pump"
 	},
 /obj/structure/catwalk,
@@ -3193,9 +3183,8 @@
 /turf/simulated/floor/airless/asteroid,
 /area/outpost/mining/relay)
 "gp" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1379;
 	id_tag = "mbase_airlock_pump"
 	},
 /obj/structure/catwalk,
@@ -3458,9 +3447,8 @@
 	tag_exterior_door = "mbaserelay_airlock_exterior";
 	tag_interior_door = "mbaserelay_airlock_interior"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1379;
 	id_tag = "mbaserelay_airlock_pump"
 	},
 /turf/simulated/floor/plating,
@@ -3473,9 +3461,8 @@
 	pixel_x = 24;
 	pixel_y = 0
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1379;
 	id_tag = "mbaserelay_airlock_pump"
 	},
 /turf/simulated/floor/plating,

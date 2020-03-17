@@ -31,7 +31,7 @@ GLOBAL_DATUM_INIT(mercs, /datum/antagonist/mercenary, new)
 	base_to_load = /datum/map_template/ruin/antag_spawn/mercenary
 
 //[INF]
-/datum/antagonist/cultist/create_objectives(var/datum/mind/mercenary, override = 1)
+/datum/antagonist/mercenary/create_objectives(var/datum/mind/mercenary, override = 1)
 	if(!..())
 		return
 //[/INF]

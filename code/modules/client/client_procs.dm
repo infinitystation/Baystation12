@@ -44,7 +44,7 @@
 
 	//search the href for script injection
 	if( findtext(href,"<script",1,0) )
-		world.log << "Attempted use of scripts within a topic call, by [src]"
+		to_world_log("Attempted use of scripts within a topic call, by [src]")
 		message_admins("Attempted use of scripts within a topic call, by [src]")
 		//qdel(usr)
 		return
@@ -174,7 +174,7 @@
 		handle_staff_login()
 		if(establish_db_connection())
 			var/sql_ckey = sanitizeSQL(src.ckey)
-			spawn for()
+			spawn while(1)
 				var/sum = 0
 				var/temp = 0
 				var/DBQuery/query_onilne = dbcon.NewQuery("SELECT sum FROM online_score WHERE ckey='[sql_ckey]' AND year=YEAR(NOW()) AND month=MONTH(NOW()) AND day=DAYOFMONTH(NOW());")

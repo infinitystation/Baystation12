@@ -1,4 +1,3 @@
-
 /datum/gear/uniform
 	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
@@ -7,10 +6,10 @@
 	path = /obj/item/clothing/under/solgov/utility
 
 /datum/gear/uniform/shortjumpskirt
-	allowed_roles = null //INF, WAS: RESTRICTED_ROLES
+	allowed_roles = null //INF, WAS: CASUAL_ROLES
 
 /datum/gear/uniform/blackjumpshorts
-	allowed_roles = null //INF, WAS: RESTRICTED_ROLES
+	allowed_roles = null //INF, WAS: CASUAL_ROLES
 
 /datum/gear/uniform/roboticist_skirt
 	allowed_roles = list(/datum/job/roboticist)
@@ -53,16 +52,16 @@
 	allowed_roles = null //INF, WAS: FORMAL_ROLES
 
 /datum/gear/uniform/shorts
-	allowed_roles = null //INF, WAS: RESTRICTED_ROLES
+	allowed_roles = null //INF, WAS: CASUAL_ROLES
 
 /datum/gear/uniform/shorts/custom
-	allowed_roles = null //INF, WAS: FORMAL_ROLES
+	allowed_roles = null //INF, WAS: CASUAL_ROLES
 
 /datum/gear/uniform/turtleneck
-	allowed_roles = null //INF, WAS: FORMAL_ROLES
+	allowed_roles = null //INF, WAS: SEMIFORMAL_ROLES
 
 /datum/gear/tactical/tacticool
-	allowed_roles = null //INF, WAS: RESTRICTED_ROLES
+	allowed_roles = null //INF, WAS: CASUAL_ROLES
 
 /datum/gear/uniform/sterile
 	allowed_roles = MEDICAL_ROLES
@@ -75,7 +74,6 @@
 
 /datum/gear/uniform/corp_flight
 	allowed_roles = list(/datum/job/nt_pilot)
-	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/uniform/corp_exec
 	allowed_roles = list(/datum/job/liaison)

@@ -69,7 +69,7 @@
 		visible_message(
 			SPAN_NOTICE("You begin [anchored ? "un" : ""]securing [src]..."),
 			SPAN_NOTICE("[user] begin [anchored ? "un" : ""]securing [src]..."))
-		playsound(src., 'sound/items/Ratchet.ogg', 50, 1)
+		playsound(src, 'sound/items/Ratchet.ogg', 50, 1)
 		if(do_after(user, 20))
 			visible_message(
 				SPAN_NOTICE("You [anchored ? "un" : ""]secure [src]."),
@@ -225,7 +225,7 @@
 		return
 
 	.["guns"] = list()
-	if(check_items && ((!pass_access in target.GetAccess()) && bypass_filter) || !bypass_filter)
+	if(check_items && ((!pass_access) in target.GetAccess()) && bypass_filter || !bypass_filter)
 		for(var/obj/item/I in target.contents)
 			if(subtype_check(I, banned_items))
 				.["level"] += 4

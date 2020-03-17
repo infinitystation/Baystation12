@@ -126,7 +126,7 @@
 		switch(newfiletype)
 			if("BAT")
 				F = create_file(newname, "", /datum/computer_file/data/coding/batch)
-				var/datum/computer_file/data/coding/batch/tmp/FT = F
+				var/datum/computer_file/data/coding/batch/FT = F
 				code_lang = FT.code_lang
 				code_lang_desc = FT.code_lang_desc
 			if("TXT")
@@ -180,10 +180,11 @@
 
 	if(href_list["PRG_printfile"])
 		. = 1
-		if(!computer.get_component(PART_PRINTER))
+		var/obj/item/weapon/stock_parts/computer/nano_printer/P = computer.get_component(PART_PRINTER)
+		if(!P)
 			error = "Missing Hardware: Your computer does not have the required hardware to complete this operation."
 			return 1
-		if(!computer.get_component(PART_PRINTER).print_text(pencode2html(loaded_data)))
+		if(!P.print_text(pencode2html(loaded_data)))
 			error = "Hardware error: Printer was unable to print the file. It may be out of paper."
 			return 1
 

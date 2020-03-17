@@ -9,7 +9,7 @@
 		updater && istype(updater) ? send2admindiscord("Происходит обновление. Инициировано [updater.ckey].") : null
 		SSwebhooks.send(WEBHOOK_SERVER_UPDATE)
 		game_log("SERVER", "Запущено обновление сервера. ")
-		shell("sh update_start.sh")
+		shell("bash update_start.sh")
 
 /datum/controller/subsystem/ticker/proc/update_map(New_Map)
 	if(shell("update_map.bat") == 0)

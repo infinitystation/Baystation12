@@ -130,7 +130,7 @@
 		var/obj/item/weapon/photo/P = W
 		dat += "<html><meta charset=\"UTF-8\"><head><title>[P.name]</title></head><body style='overflow:hidden'>"
 		dat += "<div> <img src='tmp_photo.png' width = '180'[P.scribble ? "<div> Written on the back:<br><i>[P.scribble]</i>" : null ]</body></html>"
-		user << browse_rsc(P.img, "tmp_photo.png")
+		send_rsc(user, P.img, "tmp_photo.png")
 		show_browser(user, JOINTEXT(dat), "window=[name]")
 
 /obj/item/weapon/paper_bundle/attack_self(mob/user as mob)
