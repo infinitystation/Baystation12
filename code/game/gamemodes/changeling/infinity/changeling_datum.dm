@@ -15,6 +15,9 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 	var/purchasedpowers = list()
 	var/mimicing = ""
 	var/datum/stings/chosen_sting = null
+	//stasis vars
+	var/stasis_state = 0
+	var/lost_chem_storage = 0
 
 /datum/changeling/New(var/gender=FEMALE)
 	..()

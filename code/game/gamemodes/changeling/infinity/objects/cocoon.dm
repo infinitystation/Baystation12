@@ -173,13 +173,14 @@ I don't know how to fix it, tried two days, sorry.
 	if(!victim.client)
 		return
 	victim.revive()
-	spawn(7 SECONDS)
-	GLOB.changelings.add_antagonist(victim.mind, 1)
-	if(victim.mind.changeling) //just to don't fuck up with runtimes further
-		victim.mind.changeling.chem_storage = 30
-		victim.mind.changeling.chem_charges = 30
-		victim.mind.changeling.geneticpoints = 4
 	to_chat(victim, SPAN_LING(FONT_LARGE("Отныне, <b><i>мы едины!</b></i> Нужно разорвать наш кокон, чтобы выбраться!")))
+	spawn(4 SECONDS)
+		GLOB.changelings.add_antagonist(victim.mind, 1)
+	spawn(7 SECONDS)
+		if(victim.mind.changeling) //just to don't fuck up with runtimes further
+			victim.mind.changeling.chem_storage = 30
+			victim.mind.changeling.chem_charges = 30
+			victim.mind.changeling.geneticpoints = 5
 	STOP_PROCESSING(SSobj, src)
 
 /obj/structure/changeling_cocoon/proc/convert(mob/user)

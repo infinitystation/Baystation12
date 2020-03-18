@@ -51,7 +51,7 @@
 		to_chat(src, SPAN_WARNING("У [T] нет этой части тела!"))
 
 	changeling.isabsorbing = 1
-	if(T.paralysis)
+	if(!T.paralysis)
 		if(alert(src, "Жертва в сознании. Предложить ей не сопротивляться и провести поглощение бескровно?", "Выбор", "Да", "Нет") == "Нет")
 			forced_absorbing = 1
 		if(!forced_absorbing)
@@ -169,6 +169,10 @@
 	else
 		changeling.chem_storage += 20
 		changeling.geneticpoints += 7
+	if(changeling.lost_chem_storage >= 10)
+		changeling.chem_storage += 10
+		changeling.lost_chem_storage -= 10
+		to_chat(src, SPAN_LING("Мы восстановили 10 потерянных после стазиса ечеек химикатов."))
 	changeling.chem_charges = changeling.chem_storage
 
 	//Steal all of their languages!
