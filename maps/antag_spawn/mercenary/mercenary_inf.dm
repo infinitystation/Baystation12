@@ -23,6 +23,28 @@
 	arrival_message = "Attention, vessel detected entering vessel proximity."
 	departure_message = "Attention, vessel detected leaving vessel proximity."
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling
+//SIERRA PRESET AHEAD
+	destination_tags = list(
+		"nav_merc_deck1",
+		"nav_merc_deck2",
+		"nav_merc_deck3",
+		"nav_merc_deck4",
+		"nav_merc_deck5",
+		"nav_away_5",
+		"nav_derelict_6",
+		"nav_cluster_5",
+		"nav_merc_dock",
+		"nav_merc_start",
+		"nav_lost_supply_base_antag",
+		"nav_marooned_antag",
+		"nav_smugglers_antag",
+		"nav_magshield_antag",
+		"nav_casino_antag",
+		"nav_yacht_antag",
+		"nav_slavers_base_antag",
+		"nav_mining_antag"
+		)
+//preset end
 
 /obj/effect/shuttle_landmark/merc/start
 	name = "Mercenary Base"
