@@ -1,7 +1,7 @@
-/decl/webhook/server_start
+/decl/webhook/send_ban
 	id = WEBHOOK_SEND_BAN
 
-/decl/webhook/server_start/get_message(var/list/data)
+/decl/webhook/send_ban/get_message(var/list/data)
 	. = ..()
 
 	if(!data["bantype"])
