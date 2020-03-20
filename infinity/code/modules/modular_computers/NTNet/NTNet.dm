@@ -1,12 +1,19 @@
-/datum/ntnet/proc/get_relay_on_z(var/z_lv)
+/datum/ntnet/proc/get_relay_for_atom(var/atom/A)
+	A = get_turf(A)
 	var/list/R_on_Z = list()
-	for(var/obj/machinery/ntnet_relay/i in relays) if(i.z in GetConnectedZlevels(z_lv)) R_on_Z += i
-	return R_on_Z.len ? pick(R_on_Z) : null
+	for(var/obj/machinery/ntnet_relay/i in relays) if(i.z in GetConnectedZlevels(A.z)) R_on_Z += i
+	var/list/L = list()
+
+	for(var/atom/i in R_on_Z) L["[GET_2D_DISTANCE(i, A)]"] = i
+	L["nums"] = list()
+	for(var/i in L) L["nums"] += text2num(i)
+
+	return L["[min(L["nums"])]"]
 
 /datum/ntnet/proc/get_connection_quality_for(var/obj/item/weapon/stock_parts/computer/network_card/A)
 	. = 0
-	var/atom/movable/At = get_turf(A.loc)
-	var/obj/machinery/ntnet_relay/R = get_relay_on_z(At.z)
+	var/atom/movable/At = get_turf(A)
+	var/obj/machinery/ntnet_relay/R = get_relay_for_atom(A)
 	if(R)
 		var/distance = GET_2D_DISTANCE(At, R)
 		if(!distance) distance = 1
