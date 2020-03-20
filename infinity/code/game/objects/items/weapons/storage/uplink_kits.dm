@@ -57,9 +57,10 @@
 
 /obj/item/weapon/storage/backpack/dufflebag/syndie_kit/stealthy
 	startswith = list(
-		/datum/uplink_item/item/stealth_items/chameleon_kit,
+		/obj/item/weapon/storage/backpack/chameleon/sydie_kit,
 		/obj/item/weapon/gun/projectile/pistol/military/alt,
-		/obj/item/weapon/storage/backpack/satchel/syndie_kit/clerical,
+		/obj/item/weapon/stamp/chameleon,
+		/obj/item/weapon/pen/chameleon,
 		/obj/item/weapon/storage/box/syndie_kit/imp_freedom,
 		/obj/item/device/uplink_service/fake_crew_announcement,
 		/obj/item/weapon/card/emag
