@@ -119,6 +119,7 @@
 	desc = "The rugged STS-35 is a durable automatic weapon of a make popular on the frontier worlds. Originally produced by Hephaestus. The serial number has been scratched off."
 	icon = 'icons/obj/guns/assault_rifle.dmi'
 	icon_state = "arifle"
+	var/orig_state = "arifle" //INF
 	item_state = null
 	force = 10
 	caliber = CALIBER_RIFLE
@@ -146,15 +147,17 @@
 	one_hand_penalty = 8
 
 	s_gun = "STS-35"
-//[/INF]
+
 /obj/item/weapon/gun/projectile/automatic/assault_rifle/on_update_icon()
 	..()
 	if(ammo_magazine)
-		icon_state = "arifle"
-		wielded_item_state = "arifle-wielded"
+		icon_state = orig_state //INF was arifle
+		wielded_item_state = "[orig_state]-wielded" //INF was arifle-wielded
 	else
-		icon_state = "arifle-empty"
-		wielded_item_state = "arifle-wielded-empty"
+		icon_state = "[orig_state]-empty" //INF was arifle-empty
+		wielded_item_state = "[orig_state]-wielded-empty" //INF was arifle-wielded-empty
+
+//[/INF]
 
 /obj/item/weapon/gun/projectile/automatic/sec_smg
 	name = "WT-550 submachine gun"

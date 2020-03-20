@@ -41,18 +41,37 @@
 	max_ammo = 15
 
 /obj/item/ammo_magazine/c12m
-	name = "magazine (12 gauge)"
+	name = "slug magazine"
 	icon = 'infinity/icons/obj/ammo.dmi'
 	icon_state = "m12gb"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_STEEL = 525)
 	caliber = CALIBER_SHOTGUN
+	multiple_sprites = 1
 	max_ammo = 8
 
 /obj/item/ammo_magazine/c12m/empty
 	icon_state = "m12gb-0"
 	initial_ammo = 0
+
+/obj/item/ammo_magazine/c12m/shock
+	name = "shock magazine"
+	icon_state = "m12gs"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun/stunshell
+	matter = list(MATERIAL_STEEL = 525)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 8
+
+/obj/item/ammo_magazine/c12m/buckshot
+	name = "buckshot magazine"
+	icon_state = "m12gb"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+	matter = list(MATERIAL_STEEL = 525)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 8
 
 /obj/item/ammo_magazine/c12755
 	name = "magazine (12.7x55mm)"
@@ -185,3 +204,13 @@
 	matter = list(MATERIAL_STEEL = 20000)
 	ammo_type = /obj/item/ammo_casing/rifle/tv
 	max_ammo = 130
+
+/obj/item/ammo_magazine/rifle/rubber
+	name = "rubber rifle magazine"
+	icon_state = "assault_rifle"
+	mag_type = MAGAZINE
+	caliber = CALIBER_RIFLE
+	matter = list(MATERIAL_STEEL = 1800)
+	ammo_type = /obj/item/ammo_casing/rifle/rubber
+	max_ammo = 20
+	multiple_sprites = 1

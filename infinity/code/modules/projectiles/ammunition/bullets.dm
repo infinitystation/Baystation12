@@ -94,6 +94,11 @@
 /obj/item/ammo_casing/e/pistol
 	projectile_type = /obj/item/projectile/bullet/Erifle/pistol
 
+/obj/item/ammo_casing/rifle/rubber
+	desc = "A rubber rifle bullet casing."
+	caliber = CALIBER_RIFLE
+	projectile_type = /obj/item/projectile/bullet/rifle/rubber
+
 // Instagib //
 /obj/item/ammo_casing/energy/instakill
 	projectile_type = /obj/item/projectile/beam/instakill
