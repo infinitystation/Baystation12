@@ -5,27 +5,27 @@
 	. = ..()
 
 	if(!data["bantype"])
-		.["content"] = "Тут должно быть сообщение о бане, но кто то вызвал вебхук вручную."
+		.["content"] = "РўСѓС‚ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ СЃРѕРѕР±С‰РµРЅРёРµ Рѕ Р±Р°РЅРµ, РЅРѕ РєС‚Рѕ С‚Рѕ РІС‹Р·РІР°Р» РІРµР±С…СѓРє РІСЂСѓС‡РЅСѓСЋ."
 		return
 	var/setter = list(
-		"name" = "Администратор",
+		"name" = "РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ",
 		"value" = data["setter"],
 		"inline" = 1
 	)
 	var/banned = list(
-		"name" = "Забанен",
+		"name" = "Р—Р°Р±Р°РЅРµРЅ",
 		"value" = data["banned"],
 		"inline" = 1
 	)
 	var/reason = list(
-		"name" = "Причина",
+		"name" = "РџСЂРёС‡РёРЅР°",
 		"value" = data["reason"]
 	)
 	var/list/desc = list(
 		"color" = COLOR_WEBHOOK_BAN,
 		"footer" = list(
 			"icon_url" = "https://cdn.discordapp.com/emojis/244791612268347392.png?v=1",	// :inf: emoji
-			"text" = "За обжалованием обращаться в #подача_заявок"
+			"text" = "Р—Р° РѕР±Р¶Р°Р»РѕРІР°РЅРёРµРј РѕР±СЂР°С‰Р°С‚СЊСЃСЏ РІ #РїРѕРґР°С‡Р°_Р·Р°СЏРІРѕРє"
 		),
 		"thumbnail" = list(
 			"url" = "https://cdn.discordapp.com/emojis/314350489020137474.png?v=1"			// :ban: emoji
@@ -34,51 +34,51 @@
 	switch(data["bantype"])
 		if(BANTYPE_PERMA)
 			desc.Add(list(
-				"title" = "ПЕРМАНЕНТНАЯ БЛОКИРОВКА",
-				"description" = "Пользователь был забанен навсегда",
+				"title" = "РџР•Р РњРђРќР•РќРўРќРђРЇ Р‘Р›РћРљРР РћР’РљРђ",
+				"description" = "РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ Р±С‹Р» Р·Р°Р±Р°РЅРµРЅ РЅР°РІСЃРµРіРґР°",
 				"fields" = list(
 					banned, setter, reason
 				)
 			))
 		if(BANTYPE_TEMP)
 			var/duration = list(
-				"name" = "Длительность",
+				"name" = "Р”Р»РёС‚РµР»СЊРЅРѕСЃС‚СЊ",
 				"value" = data["duration"]
 			)
 			desc.Add(list(
-				"title" = "ВРЕМЕННАЯ БЛОКИРОВКА",
-				"description" = "Пользователь был забанен на время",
+				"title" = "Р’Р Р•РњР•РќРќРђРЇ Р‘Р›РћРљРР РћР’РљРђ",
+				"description" = "РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ Р±С‹Р» Р·Р°Р±Р°РЅРµРЅ РЅР° РІСЂРµРјСЏ",
 				"fields" = list(
 					banned, setter, duration, reason
 				)
 			))
 		if(BANTYPE_JOB_PERMA)
 			var/banned_jobs = list(
-				"name" = "Заблокированные профессии",
+				"name" = "Р—Р°Р±Р»РѕРєРёСЂРѕРІР°РЅРЅС‹Рµ РїСЂРѕС„РµСЃСЃРёРё",
 				"value" = data["banned_jobs"],
 				"inline" = 1
 			)
 			desc.Add(list(
-				"title" = "ПЕРМАНЕНТНАЯ БЛОКИРОВКА ПРОФЕССИЙ",
-				"description" = "Пользователь навсегда потерял эти роли",
+				"title" = "РџР•Р РњРђРќР•РќРўРќРђРЇ Р‘Р›РћРљРР РћР’РљРђ РџР РћР¤Р•РЎРЎРР™",
+				"description" = "РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ РЅР°РІСЃРµРіРґР° РїРѕС‚РµСЂСЏР» СЌС‚Рё СЂРѕР»Рё",
 				"fields" = list(
 					banned, setter, banned_jobs, reason
 				)
 			))
 		if(BANTYPE_JOB_TEMP)
 			var/duration = list(
-				"name" = "Длительность",
+				"name" = "Р”Р»РёС‚РµР»СЊРЅРѕСЃС‚СЊ",
 				"value" = data["duration"],
 				"inline" = 1
 			)
 			var/banned_jobs = list(
-				"name" = "Заблокированные профессии",
+				"name" = "Р—Р°Р±Р»РѕРєРёСЂРѕРІР°РЅРЅС‹Рµ РїСЂРѕС„РµСЃСЃРёРё",
 				"value" = data["banned_jobs"],
 				"inline" = 1
 			)
 			desc.Add(list(
-				"title" = "ВРЕМЕННАЯ БЛОКИРОВКА ПРОФЕССИЙ",
-				"description" = "Пользователь потерял эти роли на время",
+				"title" = "Р’Р Р•РњР•РќРќРђРЇ Р‘Р›РћРљРР РћР’РљРђ РџР РћР¤Р•РЎРЎРР™",
+				"description" = "РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ РїРѕС‚РµСЂСЏР» СЌС‚Рё СЂРѕР»Рё РЅР° РІСЂРµРјСЏ",
 				"fields" = list(
 					banned, setter, duration, banned_jobs, reason
 				)
