@@ -302,6 +302,7 @@
 	docking_controller = "centcom_shuttle_dock_airlock"
 
 //Merc
+
 /obj/effect/shuttle_landmark/merc/deck1
 	name = "Northwest of Fourth Deck"
 	landmark_tag = "nav_merc_deck1"
@@ -321,6 +322,11 @@
 /obj/effect/shuttle_landmark/merc/deck5
 	name = "East of Bridge"
 	landmark_tag = "nav_merc_deck5"
+
+/obj/effect/shuttle_landmark/merc/dock
+	name = "Docking Port"
+	landmark_tag = "nav_merc_dock"
+	docking_controller = "nuke_shuttle_dock_airlock"
 
 //Skipjack
 
