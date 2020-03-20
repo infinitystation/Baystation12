@@ -253,6 +253,7 @@
 			return
 		if(M.loc.type == type) return //anti-double-sleepering //inf
 		set_occupant(M)
+		playsound(src, 'infinity/sound/SS2/effects/machines/medbed.wav', 50)//inf
 
 /obj/machinery/sleeper/proc/go_out()
 	if(!occupant)
