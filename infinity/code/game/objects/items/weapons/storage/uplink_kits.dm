@@ -57,7 +57,13 @@
 
 /obj/item/weapon/storage/backpack/dufflebag/syndie_kit/stealthy
 	startswith = list(
-		/obj/item/weapon/storage/backpack/chameleon/sydie_kit,
+		/obj/item/clothing/under/chameleon,
+		/obj/item/clothing/suit/chameleon,
+		/obj/item/clothing/shoes/chameleon,
+		/obj/item/clothing/head/chameleon,
+		/obj/item/clothing/mask/chameleon,
+		/obj/item/weapon/storage/box/syndie_kit/chameleon,
+		/obj/item/weapon/gun/energy/chameleon,
 		/obj/item/weapon/gun/projectile/pistol/military/alt,
 		/obj/item/weapon/stamp/chameleon,
 		/obj/item/weapon/pen/chameleon,
