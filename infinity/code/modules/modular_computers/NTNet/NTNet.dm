@@ -3,12 +3,13 @@
 	var/list/R_on_Z = list()
 	for(var/obj/machinery/ntnet_relay/i in relays) if(i.z in GetConnectedZlevels(A.z)) R_on_Z += i
 	var/list/L = list()
-
-	for(var/atom/i in R_on_Z) L["[GET_2D_DISTANCE(i, A)]"] = i
-	L["nums"] = list()
-	for(var/i in L) L["nums"] += text2num(i)
-
-	return L["[min(L["nums"])]"]
+	var/list/nums = list()
+	for(var/atom/i in R_on_Z)
+		var/n = GET_2D_DISTANCE(i, A)
+		L["[n]"] = i
+		nums += n
+	if(L.len && nums) . = L["[min(nums)]"]
+	return
 
 /datum/ntnet/proc/get_connection_quality_for(var/obj/item/weapon/stock_parts/computer/network_card/A)
 	. = 0
