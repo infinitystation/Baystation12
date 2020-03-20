@@ -35,3 +35,9 @@
 	path = /obj/item/weapon/storage/box/holobombs
 	desc = "Contains 5 holobomb and instruction. \
 			A bomb that changes appearance, and can destroy some hands."
+
+/datum/uplink_item/item/tools/door_charge
+	name = "Door Charge"
+	desc = "Special explosive, which can be planted on doors and will explode when somebody will open this door."
+	item_cost = 14
+	path = /obj/item/weapon/door_charge
