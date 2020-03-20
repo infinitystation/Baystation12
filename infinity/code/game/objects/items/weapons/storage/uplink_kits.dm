@@ -64,7 +64,6 @@
 
 /obj/item/weapon/storage/briefcase/syndie_kit/sniper
 	startswith = list(
-		/obj/item/clothing/under/lawyer/infil,
 		/obj/item/clothing/suit/storage/leather_jacket/armored,
 		/obj/item/weapon/gun/projectile/heavysniper,
 		/obj/item/weapon/storage/box/ammo/sniperammo,

@@ -14,7 +14,7 @@
 
 /datum/uplink_item/item/badassery/classic
 	name = "Classic Kit"
-	desc = "Old and faithful kit. It contains: Heavy armor, assault rifle, cryptographic sequencer and grenade."
+	desc = "Old and faithful kit. It contains: Heavy armor, assault rifle, cryptographic sequencer and grenade. Warning! This kit comes with crate."
 	item_cost = DEFAULT_TELECRYSTAL_AMOUNT
 	antag_roles = list(MODE_MERCENARY)
 	path = /obj/item/weapon/storage/backpack/dufflebag/syndie_kit/classic
