@@ -220,7 +220,7 @@
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 3, TECH_ESOTERIC = 4)
 	magazine_type = /obj/item/ammo_magazine/rifle/rubber
 	allowed_magazines = /obj/item/ammo_magazine/rifle/rubber
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_LARGE
 	mag_insert_sound = 'sound/items/bikehorn.ogg'
 	mag_remove_sound = 'sound/items/bikehorn.ogg'
 

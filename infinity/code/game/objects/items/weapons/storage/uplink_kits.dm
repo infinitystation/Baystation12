@@ -6,6 +6,9 @@
 		/obj/item/weapon/tank/emergency/oxygen/double
 		)
 
+/obj/item/weapon/storage/backpack/dufflebag/syndie_kit
+	max_w_class = ITEM_SIZE_HUGE
+
 /obj/item/weapon/storage/backpack/dufflebag/syndie_kit/plastique
 	startswith = list(
 		/obj/item/weapon/plastique = 6
@@ -62,8 +65,9 @@
 		/obj/item/weapon/card/emag
 		)
 
-/obj/item/weapon/storage/briefcase/syndie_kit/sniper
+/obj/item/weapon/storage/backpack/dufflebag/syndie_kit/sniper
 	startswith = list(
+		/obj/item/clothing/under/det,
 		/obj/item/clothing/suit/storage/leather_jacket/armored,
 		/obj/item/weapon/gun/projectile/heavysniper,
 		/obj/item/weapon/storage/box/ammo/sniperammo,

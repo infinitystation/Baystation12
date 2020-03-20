@@ -28,10 +28,10 @@
 
 /datum/uplink_item/item/badassery/sniper
 	name = "Sniper Kit"
-	desc = "Fashionable briefcase for fashionable operatives. It contains: Cool-looking armor vest, disguised as a suit, thermal googles and sniper rifle with ammo."
+	desc = "Fashionable kit for fashionable operatives. It contains: Cool-looking armor vest, disguised as a suit, thermal googles and sniper rifle with ammo."
 	item_cost = DEFAULT_TELECRYSTAL_AMOUNT
 	antag_roles = list(MODE_MERCENARY)
-	path = /obj/item/weapon/storage/briefcase/syndie_kit/sniper
+	path = /obj/item/weapon/storage/backpack/dufflebag/syndie_kit/sniper
 
 /datum/uplink_item/item/badassery/spaceass
 	name = "Space Assault Kit"
