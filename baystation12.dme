@@ -3329,6 +3329,7 @@
 #include "infinity\code\game\objects\effects\decals\posters.dm"
 #include "infinity\code\game\objects\effects\spawners\gibspawner.dm"
 #include "infinity\code\game\objects\items\contraband.dm"
+#include "infinity\code\game\objects\items\encryptionkey.dm"
 #include "infinity\code\game\objects\items\toys.dm"
 #include "infinity\code\game\objects\items\devices\blackout.dm"
 #include "infinity\code\game\objects\items\devices\hacktool.dm"

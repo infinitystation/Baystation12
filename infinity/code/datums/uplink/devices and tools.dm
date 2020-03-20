@@ -41,3 +41,9 @@
 	desc = "Special explosive, which can be planted on doors and will explode when somebody will open this door."
 	item_cost = 14
 	path = /obj/item/weapon/door_charge
+
+/datum/uplink_item/item/tools/encryptionkey_full
+	name = "Special Encryption Key"
+	desc = "This headset encryption key will allow you listen and speak on any channel! Use a screwdriver on your headset to exchange keys."
+	item_cost = 24
+	path = /obj/item/device/encryptionkey/syndie_full
