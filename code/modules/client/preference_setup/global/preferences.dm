@@ -99,10 +99,6 @@ var/list/_client_preferences_by_type
 	else
 		sound_to(preference_mob, sound(null, repeat = 0, wait = 0, volume = 85, channel = GLOB.lobby_sound_channel))
 
-/datum/client_preference/play_instruments
-	description ="Play instruments"
-	key = "SOUND_INSTRUMENTS"
-
 /datum/client_preference/play_ambiance
 	description ="Play ambience"
 	key = "SOUND_AMBIENCE"
@@ -197,6 +193,7 @@ var/list/_client_preferences_by_type
 	key = "BROWSER_STYLED"
 	options = list(GLOB.PREF_FANCY, GLOB.PREF_PLAIN)
 
+//[INF]
 /datum/client_preference/fullscreen_mode
 	description = "Fullscreen Mode"
 	key = "FULLSCREEN"
@@ -215,6 +212,7 @@ var/list/_client_preferences_by_type
 /datum/client_preference/chat_position/changed(mob/preference_mob, new_value)
 	if(preference_mob.client)
 		preference_mob.client.update_chat_position(new_value == GLOB.PREF_YES)
+//[/INF]
 
 /datum/client_preference/autohiss
 	description = "Autohiss"
