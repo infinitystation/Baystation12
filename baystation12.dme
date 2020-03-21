@@ -3363,6 +3363,7 @@
 #include "infinity\code\game\objects\items\weapons\grenades\ied.dm"
 #include "infinity\code\game\objects\items\weapons\grenades\smokebomb.dm"
 #include "infinity\code\game\objects\items\weapons\grenades\special.dm"
+#include "infinity\code\game\objects\items\weapons\implants\adrenal.dm"
 #include "infinity\code\game\objects\items\weapons\material\coins.dm"
 #include "infinity\code\game\objects\items\weapons\storage\backpack.dm"
 #include "infinity\code\game\objects\items\weapons\storage\belt.dm"

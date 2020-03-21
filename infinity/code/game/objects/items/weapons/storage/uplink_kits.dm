@@ -143,3 +143,6 @@
 		/obj/item/ammo_magazine/c12m = 2,
 		/obj/item/ammo_magazine/c12m/buckshot = 2
 		)
+
+/obj/item/weapon/storage/box/syndie_kit/imp_adr
+	startswith = list(/obj/item/weapon/implanter/adrenal)
