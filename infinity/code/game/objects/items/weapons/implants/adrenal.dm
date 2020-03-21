@@ -1,6 +1,6 @@
 /datum/reagent/stimulants
 	name = "Experimental Stimulants"
-	description = "Experimental Stimulants are very dangerous mix, which can increase your speed.."
+	description = "Experimental Stimulants are very dangerous mix, which can increase your speed."
 	taste_description = "metal"
 	reagent_state = LIQUID
 	color = "#ff2681"
@@ -48,7 +48,7 @@ obj/item/weapon/implant/adrenal/Initialize()
 	<b>Important Notes:</b> <font color='red'>Dangerous, can cause heart traumas</font><BR>
 	<HR>
 	<b>Implant Details:</b> <BR>
-	<b>Function:</b> When triggered transfers 15u of stimulants into user's bloodstream<BR>
+	<b>Function:</b> When triggered transfers 15u of stimulants into user's bloodstream<HR>
 	No Implant Specifics"}
 
 /obj/item/weapon/implant/adrenal/trigger(emote, mob/living/carbon/source as mob)

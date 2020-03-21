@@ -146,3 +146,6 @@
 
 /obj/item/weapon/storage/box/syndie_kit/imp_adr
 	startswith = list(/obj/item/weapon/implanter/adrenal)
+
+/obj/item/weapon/storage/box/syndie_kit/imp_emp
+	startswith = list(/obj/item/weapon/implanter/emp)
