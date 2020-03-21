@@ -32,6 +32,10 @@
 
 /datum/category_item/player_setup_item/antagonism/candidacy/content(var/mob/user)
 	. = list()
+	. += "<b>Легенда:</b><br>"
+	. += "Антагонист - вы можете стать антагонистом или целью этого же типа антагонистов.<br>"
+	. += "Цель - вы можете стать целью этого типа антагонистов.<br>"
+	. += "Нет - ни цель, ни антагонист этого типа.<br>"
 	. += "<b>Приоритет специальных ролей:</b><br>"
 	. += "<table>"
 	var/list/all_antag_types = GLOB.all_antag_types_
