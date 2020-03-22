@@ -4,9 +4,13 @@
 /decl/webhook/send_ban/get_message(var/list/data)
 	. = ..()
 
-	if(!data["bantype"])
+	if(!data["bantype"] || !data.len)
 		.["content"] = "Тут должно быть сообщение о бане, но кто то вызвал вебхук вручную."
 		return
+	//	Дискорд не допускает пустых строк в эмбеде, и удаляет его, по этому лучше уж [ДАННЫЕ УДАЛЕНЫ] ~Laxesh
+	if(!data["setter"])		data["setter"] = "ДАННЫЕ УДАЛЕНЫ"
+	if(!data["banned"])		data["banned"] = "ДАННЫЕ УДАЛЕНЫ"
+	if(!data["reason"])		data["reason"] = "ДАННЫЕ УДАЛЕНЫ"
 	var/setter = list(
 		"name" = "Администратор",
 		"value" = data["setter"],
@@ -41,6 +45,7 @@
 				)
 			))
 		if(BANTYPE_TEMP)
+			if(!data["duration"])		data["duration"] = "ДАННЫЕ УДАЛЕНЫ"
 			var/duration = list(
 				"name" = "Длительность",
 				"value" = data["duration"]
@@ -53,6 +58,7 @@
 				)
 			))
 		if(BANTYPE_JOB_PERMA)
+			if(!data["banned_jobs"])		data["banned_jobs"] = "ДАННЫЕ УДАЛЕНЫ"
 			var/banned_jobs = list(
 				"name" = "Заблокированные профессии",
 				"value" = data["banned_jobs"],
@@ -66,11 +72,13 @@
 				)
 			))
 		if(BANTYPE_JOB_TEMP)
+			if(!data["duration"])		data["duration"] = "ДАННЫЕ УДАЛЕНЫ"
 			var/duration = list(
 				"name" = "Длительность",
 				"value" = data["duration"],
 				"inline" = 1
 			)
+			if(!data["banned_jobs"])		data["banned_jobs"] = "ДАННЫЕ УДАЛЕНЫ"
 			var/banned_jobs = list(
 				"name" = "Заблокированные профессии",
 				"value" = data["banned_jobs"],
@@ -83,4 +91,7 @@
 					banned, setter, duration, banned_jobs, reason
 				)
 			))
+		else
+			.["content"] = "Неопознаный тип бана. Администрация, что вы за люди такие?"
+			return
 	.["embeds"] = list(desc)
