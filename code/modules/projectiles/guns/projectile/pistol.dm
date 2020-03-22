@@ -94,7 +94,7 @@
 /obj/item/weapon/gun/projectile/pistol/throwback
 	name = "pistol"
 	desc = "A product of one of thousands of illegal workshops from around the galaxy. Often replicas of ancient Earth handguns, these guns are usually found in hands of frontier colonists and pirates. Uses junk pistol magazines."
-	icon = 'icons/obj/guns/pistol_throwback.dmi'
+	icon = 'infinity/icons/obj/guns/pistol_throwback.dmi' //INF
 	icon_state = "pistol1"
 	magazine_type = /obj/item/ammo_magazine/pistol/throwback
 	fire_delay = 7
@@ -108,7 +108,7 @@
 
 /obj/item/weapon/gun/projectile/pistol/throwback/Initialize()
 	. = ..()
-	base_icon = "pistol[rand(1,4)]"
+	base_icon = "pistol1" //INF was "pistol[rand(1,4)]"
 	update_icon()
 
 /obj/item/weapon/gun/projectile/pistol/throwback/on_update_icon()
