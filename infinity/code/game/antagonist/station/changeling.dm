@@ -24,17 +24,14 @@
 				survive_objective.owner = changeling
 				changeling.objectives += survive_objective
 
-	for(var/i = 1, i <= 3, i++)
-		var/datum/objective/O
-		O = new /datum/objective/absorb_pointly()
-		O.owner = changeling
-		if(O.find_target())
-			for(var/datum/objective/absorb_pointly/A in changeling.objectives)
-				if(A.target == O.target)
-					continue
-				else
-					changeling.objectives += O
-					break
+	var/datum/objective/O
+	O = new /datum/objective/absorb_pointly()
+	O.owner = changeling
+	if(O.find_target())
+		changeling.objectives += O
+	else
+		to_chat(changeling.current, SPAN_LING("Мы не чувствуем жертв с полезными геномами. Стоит заняться чем-то ещё \
+		- например, создать условия, чтобы было проще охотиться."))
 /*
 	var/datum/objective/O
 	switch(rand(1,100))

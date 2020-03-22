@@ -25,8 +25,18 @@ var/global/list/all_objectives = list()
 	var/list/possible_targets = list()
 	for(var/datum/mind/possible_target in SSticker.minds)
 		if(possible_target != owner && ishuman(possible_target.current) && (possible_target.current.stat != DEAD) \
-		&& possible_target.current.client.wishes_to_be_role(owner.special_role) >= 1) //INF
-			possible_targets += possible_target
+//[INF]
+		&& possible_target.current.client.wishes_to_be_role(lowertext(owner.special_role)))
+			if(owner)
+				var/is_target = 0
+				for(var/datum/objective/O in owner.objectives)
+					if(possible_target == O.target)
+						is_target = 1
+						break
+				if(!is_target)
+					possible_targets += possible_target
+//[/INF]
+//INF			possible_targets += possible_target
 	if(possible_targets.len > 0)
 		target = pick(possible_targets)
 
