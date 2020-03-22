@@ -21,8 +21,12 @@ obj/item/weapon/implant/emp/Initialize()
 	<b>Implant Details:</b> <BR>
 	<b>Function:</b> When triggered starts an EMP<BR>
 	<b>Integrity:</b> The battery is extremely weak and commonly after injection its
-	life can drive down to only 1 use.<HR>
+	life can drive down to only 1 use. Implant is EMP-proof.<HR>
 	No Implant Specifics"}
+
+/obj/item/weapon/implant/emp/emp_act(severity)
+	if(prob(10))
+		disable(100, 1000)
 
 /obj/item/weapon/implant/emp/trigger(emote, mob/living/carbon/source as mob)
 	if (emote == activation_emote)
