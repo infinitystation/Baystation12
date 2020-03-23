@@ -149,3 +149,10 @@
 
 /obj/item/weapon/storage/box/syndie_kit/imp_emp
 	startswith = list(/obj/item/weapon/implanter/emp)
+
+/obj/item/weapon/storage/backpack/dufflebag/syndie_kit/space/heavy
+	startswith = list(
+		/obj/item/clothing/suit/space/void/merc/heavy/prepared,
+		/obj/item/clothing/mask/gas/syndicate,
+		/obj/item/weapon/tank/emergency/oxygen/double,
+		)
