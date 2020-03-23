@@ -32,3 +32,19 @@ CREATE TABLE `online_score` (
   `sum` int(11) DEFAULT 0,
   PRIMARY KEY (`ckey`, `year`, `month`, `day`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Table structure for table `erro_admin_tickets`
+--
+
+DROP TABLE IF EXISTS `erro_admin_tickets`;
+CREATE TABLE `erro_admin_tickets` (
+  `id` int(11) AUTO_INCREMENT,
+  `assignee` text DEFAULT NULL,
+  `ckey` varchar(32) NOT NULL,
+  `text` text DEFAULT NULL,
+  `status` enum('OPEN','CLOSED','SOLVED','TIMED_OUT') NOT NULL,
+  `round` varchar(32),
+  `inround_id` int(11),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
