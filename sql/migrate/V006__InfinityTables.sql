@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS `erro_messages` (
   KEY `idx_msg_ckey_time` (`targetckey`,`timestamp`, `deleted`),
   KEY `idx_msg_type_ckeys_time` (`type`,`targetckey`,`adminckey`,`timestamp`, `deleted`),
   KEY `idx_msg_type_ckey_time_odr` (`type`,`targetckey`,`timestamp`, `deleted`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Table structure for table `online_score`
@@ -31,7 +31,7 @@ CREATE TABLE `online_score` (
   `day` int(11) DEFAULT 0,
   `sum` int(11) DEFAULT 0,
   PRIMARY KEY (`ckey`, `year`, `month`, `day`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Table structure for table `erro_admin_tickets`
@@ -47,4 +47,4 @@ CREATE TABLE `erro_admin_tickets` (
   `round` varchar(32),
   `inround_id` int(11),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
