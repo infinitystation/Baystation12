@@ -5,6 +5,7 @@
 	reason = sql_sanitize_text(reason)
 //	reason = sanitize_a0(reason)
 
+	SSwebhooks.send(WEBHOOK_SEND_BAN, list("bantype" = bantype, "setter" = setter, "banned" = banned, "reason" = reason, "duration" = duration, "banned_jobs" = banned_jobs))
 	switch(bantype)
 		if(BANTYPE_PERMA)
 			to_world(SPAN_NOTICE("<b>BAN: Администратор [setter] [SPAN_DANGER("перманентно")] заблокировал(а) игрока [banned]. Причина: \"[reason_public]\"</b>"))

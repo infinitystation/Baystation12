@@ -102,7 +102,7 @@ var/global/ntnet_card_uid = 1
 */
 //[INF]
 	. = ntnet_global.get_connection_quality_for(src)
-	if(ethernet) . = 4
+	if(ethernet) . = NTNET_SPEED_LIMITER
 //[/INF]
 	if(proxy_id)
 		var/datum/extension/interactive/ntos/comp = ntnet_global.get_os_by_nid(proxy_id)

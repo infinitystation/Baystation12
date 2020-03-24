@@ -7,10 +7,12 @@
 //[INF]
 #define WEBHOOK_SERVER_UPDATE     "webhook_server_update"
 #define WEBHOOK_SERVER_START      "webhook_server_start"
+#define WEBHOOK_SEND_BAN          "webhook_send_ban"     // ban announcements
+
+// VVV Not working (or unconfirmed) || Working ^^^
 
 #define WEBHOOK_SEND_MESSAGE      "webhook_send_message" // for custom messages
 #define WEBHOOK_SEND_OOC          "webhook_send_ooc"     // OOC messages
-#define WEBHOOK_SEND_BAN          "webhook_send_ban"     // ban announcements
 #define WEBHOOK_SEND_PM           "webhook_send_pm"      // pm messages
 #define WEBHOOK_SEND_ADMIN        "webhook_send_admin"   // pm messages
 //[/INF]

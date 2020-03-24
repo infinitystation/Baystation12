@@ -51,7 +51,8 @@
 		to_chat(src, SPAN_WARNING("У [T] нет этой части тела!"))
 
 	changeling.isabsorbing = 1
-	if(T.paralysis)
+/* cocoon-army, unused
+	if(!T.paralysis)
 		if(alert(src, "Жертва в сознании. Предложить ей не сопротивляться и провести поглощение бескровно?", "Выбор", "Да", "Нет") == "Нет")
 			forced_absorbing = 1
 		if(!forced_absorbing)
@@ -65,6 +66,7 @@
 			return
 		else
 			forced_absorbing = 1
+cocoon-army, unused */
 	var/obj/item/organ/external/target_organ= pick(T.organs)
 	var/forced_gibbed = 0
 //fluff
@@ -160,15 +162,25 @@
 		to_chat(src, SPAN_DANGER(message))*/
 	else
 		visible_message(SPAN_NOTICE("[src] softly removes its proboscis from \the [T]."))
-		to_chat(src, SPAN_LING("Мы поглотили весь геном, что был у [T] благодаря отсутствию сопротивления! Хорошая работа."))
+//		to_chat(src, SPAN_LING("Мы поглотили весь геном, что был у [T] благодаря отсутствию сопротивления! Хорошая работа."))
+		to_chat(src, SPAN_LING("Мы успешно поглотили [T]!"))
 		playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 70, 1, -3.5)
 
+/* cocoon-army, unused
 	if(forced_absorbing)
 		changeling.chem_storage += 10
 		changeling.geneticpoints += 3
 	else
 		changeling.chem_storage += 20
 		changeling.geneticpoints += 7
+*/
+	changeling.chem_storage += 10
+	changeling.geneticpoints += 5
+
+	if(changeling.lost_chem_storage >= 10)
+		changeling.chem_storage += 10
+		changeling.lost_chem_storage -= 10
+		to_chat(src, SPAN_LING("Мы восстановили 10 потерянных после стазиса ечеек химикатов."))
 	changeling.chem_charges = changeling.chem_storage
 
 	//Steal all of their languages!
@@ -217,13 +229,17 @@
 	var/obj/item/organ/internal/heart/heart = T.internal_organs_by_name[BP_HEART]
 	for(heart in T.organs)
 		heart.pulse = 0
+/* cocoon-army, unused
 	if(T.mind?.changeling)
 		T.Drain() //effective execution.
 		T.death(0)
 		to_chat(T.client, SPAN_DANGER("Мы были поглощены сородичем. Это конец..."))
 		return
-//	T.death(0)
-
+*/
+	to_chat(T.client, SPAN_DANGER("Вы были поглощены генокрадом!"))
+	T.Drain()
+	T.death(0)
+/* cocoon-army, unused
 	var/obj/structure/changeling_cocoon/coc = new /obj/structure/changeling_cocoon(T.loc)
 	for(G in contents) //G - it's grab. Mentioned before
 		qdel(G)
@@ -243,5 +259,6 @@
 		for(var/mob/observer/ghost/O in GLOB.ghost_mob_list)
 			to_chat(O, FONT_LARGE(SPAN_LING(
 			"Появился кокон генокрада! Нажмите на него, чтобы стать одним из них. ([ghost_follow_link(coc, O)])")))
+*/
 	return 1
 
