@@ -1,4 +1,4 @@
-proc/corrupt_text(t)
+/proc/corrupt_text(t)
 	var/returntext = ""
 	for(var/i = 1, i <= length(t), i++)
 
@@ -13,7 +13,7 @@ proc/corrupt_text(t)
 
 	return returntext
 
-proc/corrupt_name(n, s)
+/proc/corrupt_name(n, s)
 	var/returnname = ""
 	for(var/i = 1, i <= length(n), i++)
 		var/letter = copytext(n, i, i+1)
@@ -72,8 +72,8 @@ proc/corrupt_name(n, s)
 
 	return returnname
 
-proc/fix_html(var/t)
+/proc/fix_html(t)
 	return replacetext(t, "я", "&#1103;")
 
-proc/sanitize_irc(t)
+/proc/sanitize_irc(t)
 	return replacetext(t, "@", "")
