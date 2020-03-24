@@ -108,7 +108,7 @@
 		to_chat(src, msg)
 
 /datum/client_preference/window_who
-	description ="Display content in a separate window"
+	description ="Who: Show in a separate window"
 	key = "WINDOW_WHO"
 	default_value = GLOB.PREF_NO
 
