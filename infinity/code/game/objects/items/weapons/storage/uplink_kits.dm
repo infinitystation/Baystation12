@@ -36,7 +36,7 @@
 
 /obj/item/weapon/storage/backpack/dufflebag/syndie_kit/pyro
 	startswith = list(
-		/obj/item/clothing/suit/space/void/merc/pyro/prepared,
+		/obj/item/clothing/suit/space/void/merc/heavy/prepared,
 		/obj/item/clothing/mask/gas/syndicate,
 		/obj/item/weapon/tank/emergency/oxygen/double,
 		/obj/item/weapon/flamethrower/full,
@@ -114,8 +114,7 @@
 
 /obj/item/weapon/storage/backpack/dufflebag/syndie_kit/heavy
 	startswith = list(
-		/obj/item/clothing/suit/armor/pcarrier/merc,
-		/obj/item/clothing/head/helmet/merc,
+		/obj/item/clothing/suit/space/void/merc/heavy/prepared,
 		/obj/item/weapon/gun/projectile/automatic/l6_saw,
 		/obj/item/ammo_magazine/box/machinegun = 3,
 		/obj/item/weapon/grenade/frag/high_yield,

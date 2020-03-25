@@ -7,5 +7,5 @@
 /datum/uplink_item/item/armor/heavy_space
 	name = "Elite Tactical Voidsuit"
 	item_cost = 80
-    antag_roles = list(MODE_MERCENARY)
+	antag_roles = list(MODE_MERCENARY)
 	path = /obj/item/weapon/storage/backpack/dufflebag/syndie_kit/space/heavy

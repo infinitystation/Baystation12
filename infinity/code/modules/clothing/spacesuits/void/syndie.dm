@@ -1,19 +1,3 @@
-/obj/item/clothing/suit/space/void/merc/pyro
-	name = "blood-red pyro voidsuit helmet"
-	desc = "An advanced helmet designed for work in special operations. Property of Gorlex Marauders. This one has a fire symbol on it."
-	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
-
-/obj/item/clothing/head/helmet/space/void/merc/pyro
-	name = "blood-red pyro voidsuit"
-	desc = "An advanced suit that protects against injuries during special operations. Property of Gorlex Marauders. This one has a fire symbol on it."
-	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
-
-/obj/item/clothing/suit/space/void/merc/pyro/prepared
-	helmet = /obj/item/clothing/head/helmet/space/void/merc/pyro
-	boots = /obj/item/clothing/shoes/magboots
-
-
-
 /obj/item/clothing/head/helmet/space/void/merc/heavy
 	name = "elite tactical voidsuit helmet"
 	desc = "A special and very rare helmet, designed to operate in very hostile envirements. Property of Gorlex Marauders."
@@ -35,6 +19,7 @@
 	species_restricted = list(SPECIES_HUMAN, SPECIES_IPC)
 	camera = /obj/machinery/camera/network/mercenary
 	light_overlay = "helmet_light_red"
+	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	tint = 1
 
 /obj/item/clothing/suit/space/void/merc/heavy
@@ -61,6 +46,7 @@
 	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit,/obj/item/weapon/gun,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/melee/energy/sword,/obj/item/weapon/handcuffs)
 	siemens_coefficient = 0.3
 	species_restricted = list(SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_IPC)
+	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	var/mode = 0
 
 	var/armor_normal = list(
