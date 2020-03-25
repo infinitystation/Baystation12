@@ -117,7 +117,7 @@
 		slot_r_hand_str = "det_hat",
 		)
 	armor = list(
-		melee = ARMOR_MELEE_RESISTANT, 
+		melee = ARMOR_MELEE_RESISTANT,
 		laser = ARMOR_LASER_SMALL,
 		energy = ARMOR_ENERGY_MINOR
 		)
@@ -164,12 +164,14 @@
 	desc = "You're not quite sure how you manage to take it on and off, but it implants nicely in your head."
 	icon_state = "dermal"
 	armor = list(
-		melee = ARMOR_MELEE_MAJOR, 
-		bullet = ARMOR_BALLISTIC_PISTOL, 
+		melee = ARMOR_MELEE_MAJOR,
+		bullet = ARMOR_BALLISTIC_PISTOL,
 		laser = ARMOR_LASER_HANDGUNS,
-		energy = ARMOR_ENERGY_SMALL, 
+		energy = ARMOR_ENERGY_SMALL,
 		bomb = ARMOR_BOMB_PADDED
 		)
+	item_flags = ITEM_FLAG_THICKMATERIAL
+	body_parts_covered = HEAD
 	siemens_coefficient = 0.6
 
 /obj/item/clothing/suit/armor/hos
@@ -178,10 +180,10 @@
 	icon_state = "hos"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	armor = list(
-		melee = ARMOR_MELEE_MAJOR, 
-		bullet = ARMOR_BALLISTIC_PISTOL, 
-		laser = ARMOR_LASER_HANDGUNS, 
-		energy = ARMOR_ENERGY_MINOR, 
+		melee = ARMOR_MELEE_MAJOR,
+		bullet = ARMOR_BALLISTIC_PISTOL,
+		laser = ARMOR_LASER_HANDGUNS,
+		energy = ARMOR_ENERGY_MINOR,
 		bomb = ARMOR_BOMB_PADDED
 		)
 	flags_inv = HIDEJUMPSUIT
