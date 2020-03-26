@@ -170,8 +170,8 @@
 		energy = ARMOR_ENERGY_SMALL,
 		bomb = ARMOR_BOMB_PADDED
 		)
-	item_flags = ITEM_FLAG_THICKMATERIAL
-	body_parts_covered = HEAD
+	item_flags = ITEM_FLAG_THICKMATERIAL //INF
+	body_parts_covered = HEAD //INF
 	siemens_coefficient = 0.6
 
 /obj/item/clothing/suit/armor/hos
