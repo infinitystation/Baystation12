@@ -9,7 +9,7 @@
 		winset(src, "mainwindow", "menu=menu;statusbar=true")
 		winset(src, "mainwindow.mainvsplit", "pos=3x0")
 	winset(src, "mainwindow", "is-maximized=true")
-	fit_viewport()
+//	fit_viewport()
 
 /client/proc/update_chat_position(use_alternative)
 	var/input_height = 0

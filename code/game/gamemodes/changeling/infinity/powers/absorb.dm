@@ -19,7 +19,7 @@
 		return
 
 	if(T.isSynthetic())
-		to_chat(src, SPAN_LING("Мы не можемь извлекать ДНК из синтетиков!"))
+		to_chat(src, SPAN_LING("Мы не можем извлекать ДНК из синтетиков!"))
 		return
 
 	if(T.species.species_flags & SPECIES_FLAG_NO_SCAN)
@@ -27,7 +27,7 @@
 		return
 
 	if(islesserform(T))
-		to_chat(src, SPAN_LING("ДНК этого существа не совместимо с нашей формой!"))
+		to_chat(src, SPAN_LING("ДНК этого существа несовместимо с нашей формой!"))
 		return
 
 	if(MUTATION_HUSK in T.mutations)
