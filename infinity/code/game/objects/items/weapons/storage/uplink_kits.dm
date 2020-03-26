@@ -155,3 +155,30 @@
 		/obj/item/clothing/mask/gas/syndicate,
 		/obj/item/weapon/tank/emergency/oxygen/double,
 		)
+
+/obj/item/weapon/storage/box/syndie_kit/chambox
+	name = "chameleon box"
+	desc = "A small box with holoprojector, designed to carry your goods stealthy."
+
+/obj/item/weapon/storage/box/syndie_kit/chambox/afterattack(obj/item/target, mob/user , proximity)
+	if(!proximity)
+		return
+	if(!target)
+		return
+	if(target.w_class <= w_class)
+		name = target.name
+		desc = target.desc
+		icon = target.icon
+		color = target.color
+		icon_state = target.icon_state
+		playsound(get_turf(src), 'sound/weapons/flash.ogg', 100, 1, -6)
+		update_icon()
+	else
+		to_chat(user, "\The [target] is too big for \the [src] hologramm")
+
+/obj/item/weapon/storage/box/syndie_kit/chambox/attack_self(mob/user)
+	to_chat(user, "You can't fold [src] flat!")
+
+/obj/item/weapon/storage/box/syndie_kit/jaunter
+	startswith = list(/obj/item/device/syndietele,
+					  /obj/item/device/syndiejaunter)
