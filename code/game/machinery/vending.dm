@@ -592,6 +592,15 @@
 	icon_state = "fridge_dark"
 	icon_deny = "fridge_dark-deny"
 	products = list(/obj/item/weapon/reagent_containers/food/drinks/glass2/square = 10,
+					/obj/item/weapon/reagent_containers/food/drinks/glass2/rocks = 5,
+					/obj/item/weapon/reagent_containers/food/drinks/glass2/shake = 5,
+					/obj/item/weapon/reagent_containers/food/drinks/glass2/cocktail = 5,
+					/obj/item/weapon/reagent_containers/food/drinks/glass2/shot = 5,
+					/obj/item/weapon/reagent_containers/food/drinks/glass2/pint = 5,
+					/obj/item/weapon/reagent_containers/food/drinks/glass2/mug = 5,
+					/obj/item/weapon/reagent_containers/food/drinks/glass2/wine = 5,
+					/obj/item/weapon/reagent_containers/food/drinks/glass2/carafe = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/glass2/flute = 5
 					/obj/item/weapon/reagent_containers/food/drinks/flask/barflask = 5,
 					/obj/item/weapon/reagent_containers/food/drinks/flask/vacuumflask = 5,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/gin = 5,
