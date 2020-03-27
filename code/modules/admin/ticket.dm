@@ -21,7 +21,7 @@ var/list/ticket_panels = list()
 	opened_time = world.time
 	if(establish_db_connection())
 		var/sql_ckey = sanitizeSQL(owner.ckey)
-		var/DBQuery/ticket_query = dbcon.NewQuery("INSERT INTO erro_admin_tickets(ckey,round,inround_id,status) VALUES ('[sql_ckey]', '[game_id]', [src.id], 'OPEN');")
+		var/DBQuery/ticket_query = dbcon.NewQuery("INSERT INTO erro_admin_tickets(ckey,round,inround_id,status,open_date) VALUES ('[sql_ckey]', '[game_id]', [src.id], 'OPEN', NOW());")
 		ticket_query.Execute()
 	to_check = addtimer(CALLBACK(src, .proc/timeoutcheck), 5 MINUTES, TIMER_STOPPABLE)
 	to_close = addtimer(CALLBACK(src, .proc/timeoutclose), 10 MINUTES, TIMER_STOPPABLE)
