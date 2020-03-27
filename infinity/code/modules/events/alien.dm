@@ -28,12 +28,12 @@
 //searching for spawning locations
 
 	for(var/obj/effect/landmark/L in landmarks_list)
-		if(L.name == "xeno_spawn" && L.z in affecting_z)
+		if(L.name == "xeno_spawn" && (L.z in affecting_z))
 			spawn_locations.Add(L.loc)
 
 	if(!spawn_locations.len)
 		for(var/obj/machinery/atmospherics/unary/vent_pump/temp_vent in SSmachines.machinery)
-			if(!temp_vent.welded && temp_vent.network && temp_vent.loc.z in affecting_z)
+			if(!temp_vent.welded && temp_vent.network && (temp_vent.loc.z in affecting_z))
 				if(temp_vent.network.normal_members.len > 50)
 					spawn_locations.Add(temp_vent.loc)
 

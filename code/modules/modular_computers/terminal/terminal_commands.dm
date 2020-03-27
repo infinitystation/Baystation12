@@ -63,7 +63,7 @@ Subtypes
 	if(text == "man")
 		var/end_msg = "The following commands are available.<br>Some may require additional access.<br>"
 		var/plus = ""
-		for(var/datum/terminal_command/i in var/t_comms = GLOB.terminal_commands)
+		for(var/datum/terminal_command/i in GLOB.terminal_commands)
 			if(copytext(plus, -1) && user.skill_check(i.core_skill, i.skill_needed))
 				plus = i.name + "<br>"
 				end_msg += plus
@@ -299,9 +299,10 @@ inf*/
 	skill_needed = SKILL_ADEPT
 
 /datum/terminal_command/ls/proper_input_entered(text, mob/user, datum/terminal/terminal)
-	var/datum/extension/interactive/ntos/CT = terminal.computer
-	if(!CT.get_component(PART_HDD).check_functionality()) return "[name]: Access attempt to local storage failed. Check integrity of your hard drive"
-	for(var/datum/computer_file/F in CT.get_component(PART_HDD).stored_files)
+	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = terminal.computer.get_component(PART_HDD)
+	if(!HDD)	return "[name]: no local storage found"
+	if(!HDD.check_functionality()) return "[name]: Access attempt to local storage failed. Check integrity of your hard drive"
+	for(var/datum/computer_file/F in HDD.stored_files)
 		if(F.is_illegal == 0)	. += F.filename + "." + F.filetype + "	|	" + num2text(F.size) + " GQ<br>"
 		else	 				. += "\[ENCRYPTED]" + "." + "\[ENCRYPTED]" + "	|	" + "\[ENCRYPTED]" + " GQ<br>"
 
@@ -340,9 +341,12 @@ inf*/
 /datum/terminal_command/session/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/datum/computer_file/program/PRG = /datum/computer_file/program
 	var/datum/extension/interactive/ntos/CT = terminal.computer
+	var/obj/item/weapon/stock_parts/computer/processor_unit/CPU = CT.get_component(PART_CPU)
+	if(!CPU)
+		return "session: CPU is missed."
 	if(length(text) > 18 || length(text) < 6)
 		return "session: Invalid input. Enter man session for syntax help."
-	if(!CT.get_component(PART_CPU).check_functionality())
+	if(!CPU.check_functionality())
 		return "session: Access attempt to RAM failed. Check integrity of your CPU."
 	var/ermsg = " programs is absent"
 	/*if(copytext(text, 8) == " -restore")
@@ -390,7 +394,12 @@ inf*/
 
 /datum/terminal_command/telnet/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/datum/extension/interactive/ntos/CT = terminal.computer
-	var/list/T = splittext(text, " ").Copy(2)
+	var/list/T = splittext(text, " ")
+	T = T.Copy(2)
+
+	var/obj/item/weapon/stock_parts/computer/network_card/NC = CT.get_component(PART_NETWORK)
+	if(!NC)
+		return "telnet: unable to connect to the remote terminal"
 
 	if(!T?.len) return "telnet: error, not enough arguments."
 	if(istype(terminal, /datum/terminal/remote)) return "telnet is not supported on remote terminals."
@@ -402,7 +411,12 @@ inf*/
 	if(!CT?.get_ntnet_status() && comp?.get_ntnet_status())	return "telnet: 0x12932910 (Network Error) Unable to establishe connection."
 	if(CT == comp)											return "telnet: unable to open remote terminal to self."
 
-	var/datum/computer_file/data/config/cfg_file = comp.get_component(PART_HDD).find_file_by_name("config")
+	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = comp.get_component(PART_HDD)
+	if(!HDD)
+		return "telnet: no local storage found"
+	if(!HDD.check_functionality())
+		return "telnet: Access attempt to local storage failed. Check integrity of your hard drive"
+	var/datum/computer_file/data/config/cfg_file = HDD.find_file_by_name("config")
 	if(cfg_file)
 		var/list/loginpassword = splittext(cfg_file.get_setting(TELNETPASS_SETTING),"@")
 		if(loginpassword && loginpassword.len >= 2)
@@ -413,7 +427,7 @@ inf*/
 					var/datum/terminal/remote/new_term = new (user, comp, CT)
 					LAZYADD(comp.terminals, new_term)
 					LAZYADD(CT.terminals, new_term)
-					ntnet_global.add_log("[CT.get_component(PART_NETWORK).get_network_tag()] open telnet tunnel to [comp.get_component(PART_NETWORK).get_network_tag()]")
+					ntnet_global.add_log("[NC.get_network_tag()] open telnet tunnel to [NC.get_network_tag()]")
 					return "telnet: <font color='#00ff00'>Connection established with login: [login], and password: [password].</font>"
 				else return "<font color='#ff0000'>telnet: INCORRECT PASSWORD.</font>"
 			else return "<font color='#ff0000'>telnet: INCORRECT LOGIN.</font>"
@@ -422,7 +436,7 @@ inf*/
 		var/datum/terminal/remote/new_term = new(user, comp, CT)
 		LAZYADD(comp.terminals, new_term)
 		LAZYADD(CT.terminals, new_term)
-		ntnet_global.add_log("[CT.get_component(PART_NETWORK).get_network_tag()] open telnet tunnel to [comp.get_component(PART_NETWORK).get_network_tag()]")
+		ntnet_global.add_log("[NC.get_network_tag()] open telnet tunnel to [NC.get_network_tag()]")
 		return "telnet: Connection established."
 
 /datum/terminal_command/remove
@@ -432,11 +446,15 @@ inf*/
 	skill_needed = SKILL_ADEPT
 
 /datum/terminal_command/remove/proper_input_entered(text, mob/user, datum/terminal/terminal)
-	var/datum/extension/interactive/ntos/CT = terminal.computer
+	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = terminal.computer.get_component(PART_HDD)
+	if(!HDD)
+		return "<font color='#ffa000'>remove: hard drive is missed.</font>"
+	if(!HDD.check_functionality())
+		return "<font color='#ffa000'>remove: Access attempt to local storage failed. Check integrity of your hard drive</font>"
 	var/file_name = copytext(text, 8)
-	var/file_obj = CT.get_component(PART_HDD).find_file_by_name(file_name)
-	if(file_obj in CT.get_component(PART_HDD).stored_files)
-		CT.get_component(PART_HDD).remove_file(file_obj)
+	var/file_obj = HDD.find_file_by_name(file_name)
+	if(file_obj in HDD.stored_files)
+		HDD.remove_file(file_obj)
 		return "<font color='#00ff00'>remove: [file_name] removed.</font>"
 	else if(!copytext(text, 7))
 		return "<font color='#ffa000'>remove: input filename.</font>"
@@ -454,12 +472,15 @@ inf*/
 	skill_needed = SKILL_ADEPT
 
 /datum/terminal_command/echo/proper_input_entered(text, mob/user, datum/terminal/terminal)
-	var/datum/extension/interactive/ntos/CT = terminal.computer
 	var/option = copytext(text, 6, 8)
-	if(!terminal.computer.get_component(PART_HDD).check_functionality()) return "<font color='#ff0000'>echo: check integrity of your hard drive.</font>"
+	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = terminal.computer.get_component(PART_HDD)
+	if(!HDD)
+		return "<font color='#ff0000'>echo: hard drive is missed.</font>"
+	if(!HDD.check_functionality())
+		return "<font color='#ff0000'>echo: check integrity of your hard drive.</font>"
 
 	if(option == "-s")
-		var/datum/computer_file/setted_file_by_command = CT.get_component(PART_HDD).find_file_by_name(copytext(text, 9))
+		var/datum/computer_file/setted_file_by_command = HDD.find_file_by_name(copytext(text, 9))
 		if(!istype(setted_file_by_command, /datum/computer_file/data)) return "<font color='#ffa000'>Can't set on binary files.</font>"
 		if(length(setted_file_by_command.filename) != 0)
 			terminal.setted_file = setted_file_by_command
@@ -475,8 +496,8 @@ inf*/
 
 	var/file_name = copytext(text, 6)
 	if(!file_name) return "<font color='#ffa000'>echo: enter filename.</font>"
-	var/file = CT.get_component(PART_HDD).find_file_by_name(file_name)
-	if(!file in CT.get_component(PART_HDD).stored_files) return "<font color='#ffa000'>echo: file not found.</font>"
+	var/file = HDD.find_file_by_name(file_name)
+	if(!(file in HDD.stored_files)) return "<font color='#ffa000'>echo: file not found.</font>"
 	if(!istype(file, /datum/computer_file/data)) return "<font color='#ffa000'>echo: file is binary.</font>"
 	var/datum/computer_file/data/end_file = file
 	if(!end_file.stored_data) return "<font color='#ff0000'>echo: file empty.</font>"
@@ -489,16 +510,19 @@ inf*/
 	pattern = "^probenet$"
 
 /datum/terminal_command/probenet/proper_input_entered(text, mob/user, datum/terminal/terminal)
-	var/datum/extension/interactive/ntos/CT = terminal.computer
-	if(!CT.get_component(PART_NETWORK)) return "<font color='#ffa000'>probenet: network card not found.</font>"
-	if(!CT.get_component(PART_NETWORK).check_functionality()) return "<font color='#ff0000'>probenet: check network card interity.</font>"
-	if(!CT.get_ntnet_status()) return "probenet: network card can't connect to network."
+	var/obj/item/weapon/stock_parts/computer/network_card/NC = terminal.computer.get_component(PART_NETWORK)
+	if(!NC) return "<font color='#ffa000'>probenet: network card not found.</font>"
+	if(!NC.check_functionality()) return "<font color='#ff0000'>probenet: check network card interity.</font>"
+	if(!terminal.computer.get_ntnet_status()) return "probenet: network card can't connect to network."
 
 	var/list/NIDS = list()
 	var/total = 0
 	for(var/datum/extension/interactive/ntos/comp in GLOB.CreatedOSes)
 		if(comp.get_ntnet_status() && comp.host_status())
-			NIDS += "[comp.get_component(PART_NETWORK).identification_id]"
+			var/obj/item/weapon/stock_parts/computer/network_card/comp_NC = comp.get_component(PART_NETWORK)
+			if(!comp_NC)
+				continue
+			NIDS += "[comp_NC.identification_id]"
 			total += 1
 	. += "<font color='#00ff00'>probenet: online NIDs:</font> | [NIDS.Join(" | ")] |<br><font color='00ff00'>Total online:</font> [total]."
 
@@ -513,8 +537,13 @@ inf*/
 	pattern = "^alias"
 
 /datum/terminal_command/alias/proper_input_entered(text, mob/user, datum/terminal/terminal)
-	var/datum/extension/interactive/ntos/CT = terminal.computer
 	var/option = copytext(text, 7, 10)
+
+	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = terminal.computer.get_component(PART_HDD)
+	if(!HDD)
+		return "<font color='00ff00'>alias: local storage is missed.</font>"
+	if(!HDD.check_functionality())
+		return "<font color='00ff00'>alias: check integrity of your hard drive.</font>"
 
 	if(option == "-cr")
 		if(copytext(text, 11, 15) == "-bat")
@@ -522,7 +551,7 @@ inf*/
 			if(length(ent_filename) != 0)
 				var/datum/computer_file/data/coding/batch/B = new()
 				B.filename = ent_filename
-				CT.get_component(PART_HDD).store_file(B)
+				HDD.store_file(B)
 				return "<font color='00ff00'>alias: file '[B.filename]' was created.</font>"
 			else
 				return "<font color='#ffa000'>alias: error, expected file name.</font>"
@@ -532,17 +561,17 @@ inf*/
 	if(option == "-mn")
 		if(copytext(text, 11, 15) == "-bat")
 			var/datum/computer_file/data/text/batch_manual/BRM = new()
-			CT.get_component(PART_HDD).store_file(BRM)
+			HDD.store_file(BRM)
 			return "alias: batch manual created."
 
 
 	if(option == "-ex")
 		var/inp_file_name = copytext(text, 11)
 		if(length(inp_file_name) != 0)
-			var/datum/computer_file/data/coding/batch/F = CT.get_component(PART_HDD).find_file_by_name(inp_file_name)
+			var/datum/computer_file/data/coding/batch/F = HDD.find_file_by_name(inp_file_name)
 			if(F.filetype != "BAT") return "<font color='#ffa000'>alias: incorrect file. Expected batch file.</font>"
 			var/code = F.stored_data
-			if(!";" in code) return "<font color='ff0000'>alias: compile error, lack this ';'.</font>"
+			if(!(";" in code)) return "<font color='ff0000'>alias: compile error, lack this ';'.</font>"
 			code = replacetext(code, " \[br]","")
 			code = replacetext(code, "\[br]","")
 
@@ -575,10 +604,12 @@ inf*/
 	var/override = 0
 	var/airlock_override_code = ""
 	var/decl/security_state/sec_code = decls_repository.get_decl(GLOB.using_map.security_state)
-	var/datum/extension/interactive/ntos/CT = terminal.computer
+	var/obj/item/weapon/stock_parts/computer/network_card/NC = terminal.computer.get_component(PART_NETWORK)
+	if(!NC) return "connect: network card not found."
+	if(!NC.check_functionality()) return "connect: check network card interity."
 
 	var/obj/machinery/door/airlock/DOOR = terminal.get_airlock_by_ID(txt[2])
-	if(DOOR && CT.get_component(PART_NETWORK).check_functionality())
+	if(DOOR && NC.check_functionality())
 		if(!DOOR.aiControlDisabled)
 			if(length(txt) == 2)
 				. += "Outputting data about airlock([txt[2]]):<hr>"

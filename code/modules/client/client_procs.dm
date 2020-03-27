@@ -174,7 +174,7 @@
 		handle_staff_login()
 		if(establish_db_connection())
 			var/sql_ckey = sanitizeSQL(src.ckey)
-			spawn for()
+			spawn while(1)
 				var/sum = 0
 				var/temp = 0
 				var/DBQuery/query_onilne = dbcon.NewQuery("SELECT sum FROM online_score WHERE ckey='[sql_ckey]' AND year=YEAR(NOW()) AND month=MONTH(NOW()) AND day=DAYOFMONTH(NOW());")
@@ -245,6 +245,14 @@
 
 	if(!winexists(src, "asset_cache_browser")) // The client is using a custom skin, tell them.
 		to_chat(src, "<span class='warning'>Unable to access asset cache browser, if you are using a custom skin file, please allow DS to download the updated version, if you are not, then make a bug report. This is not a critical issue but can cause issues with resource downloading, as it is impossible to know when extra resources arrived to you.</span>")
+
+	//[INF]
+	if(get_preference_value(/datum/client_preference/fullscreen_mode) != GLOB.PREF_OFF)
+		toggle_fullscreen(get_preference_value(/datum/client_preference/fullscreen_mode))
+
+	if(mob.get_preference_value(/datum/client_preference/chat_position) == GLOB.PREF_YES)
+		update_chat_position(TRUE)
+	//[/INF]
 
 	if(holder)
 		src.control_freak = 0 //Devs need 0 for profiler access

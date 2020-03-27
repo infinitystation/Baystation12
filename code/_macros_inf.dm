@@ -8,10 +8,12 @@
 
 #define GET_3D_DISTANCE(atom1, atom2) sqrt(GET_2D_DISTANCE(atom1, atom2) ** 2 + (atom1.z - atom2.z) ** 2)
 
+#define isbot(A)	is_type_in_list(A, list(/mob/living/bot/remotebot, /mob/living/bot/cleanbot, /mob/living/bot/farmbot, /mob/living/bot/secbot/ed209, /mob/living/bot/secbot, /mob/living/bot/medbot, /mob/living/bot/floorbot))
+
 /proc/parse_html_inf(var/browser_content)
-    if(isfile(browser_content))
-        return browser_content
-    else if(findtext(browser_content, "<html>"))
-        return replacetext(browser_content, "<html>", "<html><meta charset='UTF-8'>")
-    else
-        return "<HTML><meta charset='UTF-8'><BODY>[browser_content]</BODY></HTML>"
+	if(isfile(browser_content))
+		return browser_content
+	else if(findtext(browser_content, "<html>"))
+		return replacetext(browser_content, "<html>", "<html><meta charset='UTF-8'>")
+	else
+		return "<HTML><meta charset='UTF-8'><BODY>[browser_content]</BODY></HTML>"

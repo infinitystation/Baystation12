@@ -15,7 +15,7 @@
 	var/ruined = 0
 	var/rewrites_left = 2
 
-	var/list/datum/track/track
+	var/datum/track/track // Make list @eckff But not now... ~bear1ake
 	var/uploader_ckey
 
 /obj/item/music_tape/Initialize()

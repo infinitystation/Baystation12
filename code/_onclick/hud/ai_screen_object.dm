@@ -32,14 +32,7 @@
 	return 1
 
 //~_Elar_
-/obj/screen/ai_button/New(var/nscreen_loc, var/nname, var/nicon_state, var/nai_verb, var/list/ninput_procs = null)
+/obj/screen/ai_button/Initialize()
 	. = ..()
-	if(!template_icon[1]) template_icon[1] = icon
-	name = nname
-	icon_state = nicon_state
-	screen_loc = nscreen_loc
-	ai_verb = nai_verb
-	if(ninput_procs) input_procs.Add(ninput_procs)
-
 	template_undelay = image(template_icon[1], template_icon[2])
 	underlays += template_undelay

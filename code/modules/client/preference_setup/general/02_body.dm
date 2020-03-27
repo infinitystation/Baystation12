@@ -413,7 +413,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		var/list/valid_hairstyles = mob_species.get_hair_styles()
 		var/nextStyleNum = GetNumOfHairStyle(c_style, valid_hairstyles) - 1
 		if(CanUseTopic(user))
-			if(!c_style || !c_style in valid_hairstyles)
+			if(!c_style || !(c_style in valid_hairstyles))
 				pref.h_style = valid_hairstyles[1]
 			else if(nextStyleNum <= valid_hairstyles.len && valid_hairstyles[nextStyleNum])
 				pref.h_style = valid_hairstyles[nextStyleNum]
@@ -435,7 +435,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		var/list/valid_hairstyles = mob_species.get_facial_hair_styles()
 		var/nextStyleNum = GetNumOfHairStyle(c_style, valid_hairstyles) - 1
 		if(CanUseTopic(user))
-			if(!c_style || !c_style in valid_hairstyles)
+			if(!c_style || !(c_style in valid_hairstyles))
 				pref.f_style = valid_hairstyles[1]
 			else if(nextStyleNum <= valid_hairstyles.len && valid_hairstyles[nextStyleNum])
 				pref.f_style = valid_hairstyles[nextStyleNum]

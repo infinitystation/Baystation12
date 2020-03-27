@@ -21,7 +21,7 @@
 		SKILL_COMPUTER            = SKILL_EXPERT,
 		SKILL_SCIENCE             = SKILL_EXPERT,
 		SKILL_DEVICES             = SKILL_EXPERT,
-		SKILL_PILOT        = SKILL_ADEPT //INF
+		SKILL_PILOT               = SKILL_ADEPT //INF
 	)
 
 /obj/item/weapon/robot_module/clerical/butler
@@ -36,7 +36,7 @@
 		"Drone - Service" = "drone-service",
 		"Drone - Hydro" = "drone-hydro",
 		"Doot" = "eyebot-standard",
-		"Ver 06" = "wer6-Service"
+		"Ver 06" = "wer6-Service"//inf
 	)
 	equipment = list(
 		/obj/item/device/flash,
@@ -102,7 +102,7 @@
 		"Rich" =     "maximillion",
 		"Default" =  "Service2",
 		"Doot" =     "eyebot-standard",
-		"Ver 06" = "wer6-Clerical",
+		"Ver 06" = "wer6-Clerical",//inf
 		"Default" =  "Service2"
 	)
 	equipment = list(

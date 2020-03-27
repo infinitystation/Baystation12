@@ -69,7 +69,7 @@
 		visible_message(
 			SPAN_NOTICE("You begin [anchored ? "un" : ""]securing [src]..."),
 			SPAN_NOTICE("[user] begin [anchored ? "un" : ""]securing [src]..."))
-		playsound(src., 'sound/items/Ratchet.ogg', 50, 1)
+		playsound(src, 'sound/items/Ratchet.ogg', 50, 1)
 		if(do_after(user, 20))
 			visible_message(
 				SPAN_NOTICE("You [anchored ? "un" : ""]secure [src]."),
@@ -145,7 +145,7 @@
 	icon_state = "scanner_[on ? "on" : "off"]"
 
 /obj/machinery/security_scanner/Crossed(atom/movable/A)
-	if(A in subtypesof(/mob/living/bot))		// Ignore that small shit
+	if(isbot(A))		// Ignore that small shit
 		return ..()
 	if(anchored && on && !stat)
 		if(isliving(A))
@@ -219,8 +219,13 @@
 		.["level"] = SCANNER_THREAT_RESET
 		return
 
+	// Cyborg scanning feature will start here... someday
+	if(issilicon(target))
+		.["level"] = SCANNER_THREAT_RESET
+		return
+
 	.["guns"] = list()
-	if(check_items && ((!pass_access in target.GetAccess()) && bypass_filter) || !bypass_filter)
+	if(check_items && ((!pass_access) in target.GetAccess()) && bypass_filter || !bypass_filter)
 		for(var/obj/item/I in target.contents)
 			if(subtype_check(I, banned_items))
 				.["level"] += 4

@@ -1,0 +1,6226 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/turf/space,
+/area/space)
+"ab" = (
+/obj/effect/paint/dark_gunmetal,
+/turf/simulated/wall/r_titanium,
+/area/map_template/merc_shuttle)
+"ac" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 2;
+	icon_state = "pdoor0";
+	id_tag = "syndieshutters";
+	name = "Blast Doors";
+	opacity = 0
+	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/effect/paint/dark_gunmetal,
+/turf/simulated/floor/plating,
+/area/map_template/merc_shuttle)
+"ad" = (
+/turf/simulated/mineral,
+/area/space)
+"ae" = (
+/turf/simulated/floor/asteroid,
+/area/space)
+"af" = (
+/obj/effect/paint/dark_gunmetal,
+/turf/simulated/wall/titanium,
+/area/map_template/syndicate_mothership)
+"ag" = (
+/obj/effect/paint/dark_gunmetal,
+/turf/simulated/wall/r_titanium,
+/area/map_template/syndicate_mothership)
+"ah" = (
+/obj/structure/lattice,
+/turf/space,
+/area/space)
+"ai" = (
+/turf/simulated/wall/r_wall/prepainted,
+/area/map_template/syndicate_mothership)
+"aj" = (
+/obj/structure/shuttle/engine/propulsion{
+	icon_state = "propulsion_l";
+	dir = 8
+	},
+/obj/structure/shuttle/engine/heater{
+	dir = 8;
+	icon_state = "heater";
+	pixel_x = 32
+	},
+/turf/simulated/floor/airless,
+/area/map_template/syndicate_mothership)
+"ak" = (
+/obj/machinery/oxygen_pump{
+	pixel_x = -32
+	},
+/obj/effect/landmark{
+	name = "Syndicate-Spawn"
+	},
+/obj/structure/bed/chair/shuttle/red,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 9
+	},
+/obj/effect/landmark/start{
+	name = "Mercenary"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/syndicate_mothership)
+"al" = (
+/obj/effect/landmark{
+	name = "Syndicate-Spawn"
+	},
+/obj/structure/bed/chair/shuttle/red,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 1
+	},
+/obj/effect/landmark/start{
+	name = "Mercenary"
+	},
+/obj/machinery/light/halogen{
+	icon_state = "tube_map";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/syndicate_mothership)
+"am" = (
+/obj/effect/landmark{
+	name = "Syndicate-Spawn"
+	},
+/obj/structure/bed/chair/shuttle/red,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 1
+	},
+/obj/effect/landmark/start{
+	name = "Mercenary"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/syndicate_mothership)
+"an" = (
+/obj/machinery/computer/shuttle_control{
+	name = "stealth-shuttle control console"
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/syndicate_mothership)
+"ao" = (
+/obj/machinery/suit_storage_unit/standard_unit,
+/obj/effect/floor_decal/industrial/warning,
+/obj/structure/sign/warning/airlock{
+	dir = 4;
+	icon_state = "doors";
+	pixel_x = -32
+	},
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership)
+"ap" = (
+/obj/machinery/suit_storage_unit/standard_unit,
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership)
+"aq" = (
+/turf/simulated/wall/prepainted,
+/area/map_template/syndicate_mothership)
+"ar" = (
+/obj/structure/shuttle/engine/propulsion{
+	icon_state = "propulsion";
+	dir = 8
+	},
+/obj/structure/shuttle/engine/heater{
+	dir = 8;
+	icon_state = "heater";
+	pixel_x = 32
+	},
+/turf/simulated/floor/airless,
+/area/map_template/syndicate_mothership)
+"as" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/syndicate_mothership)
+"at" = (
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/syndicate_mothership)
+"au" = (
+/obj/effect/floor_decal/corner_techfloor_grid{
+	icon_state = "corner_techfloor_grid";
+	dir = 6
+	},
+/obj/effect/floor_decal/techfloor/corner,
+/obj/effect/floor_decal/techfloor/corner{
+	icon_state = "techfloor_corners";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/syndicate_mothership)
+"av" = (
+/obj/machinery/door/airlock/external/bolted_open,
+/obj/effect/floor_decal/industrial/warning/half{
+	icon_state = "warninghalf";
+	dir = 4
+	},
+/obj/machinery/shield_diffuser,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/syndicate_mothership)
+"aw" = (
+/obj/machinery/door/airlock/external/bolted_open,
+/obj/effect/floor_decal/industrial/warning/half{
+	icon_state = "warninghalf";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/syndicate_mothership)
+"ax" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/syndicate_mothership)
+"ay" = (
+/obj/machinery/dummy_airlock_controller{
+	pixel_x = -30;
+	pixel_y = -28
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership)
+"az" = (
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership)
+"aA" = (
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership)
+"aB" = (
+/obj/structure/shuttle/engine/propulsion{
+	icon_state = "propulsion_r";
+	dir = 8
+	},
+/obj/structure/shuttle/engine/heater{
+	dir = 8;
+	icon_state = "heater";
+	pixel_x = 32
+	},
+/turf/simulated/floor/airless,
+/area/map_template/syndicate_mothership)
+"aC" = (
+/obj/machinery/oxygen_pump{
+	pixel_x = -32
+	},
+/obj/effect/landmark{
+	name = "Syndicate-Spawn"
+	},
+/obj/structure/bed/chair/shuttle/red{
+	icon_state = "shuttle_chair_preview";
+	dir = 1
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 10
+	},
+/obj/effect/landmark/start{
+	name = "Mercenary"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/syndicate_mothership)
+"aD" = (
+/obj/effect/landmark{
+	name = "Syndicate-Spawn"
+	},
+/obj/structure/bed/chair/shuttle/red{
+	icon_state = "shuttle_chair_preview";
+	dir = 1
+	},
+/obj/effect/floor_decal/techfloor,
+/obj/effect/landmark/start{
+	name = "Mercenary"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/syndicate_mothership)
+"aE" = (
+/obj/effect/landmark{
+	name = "Syndicate-Spawn"
+	},
+/obj/structure/bed/chair/shuttle/red{
+	icon_state = "shuttle_chair_preview";
+	dir = 1
+	},
+/obj/effect/floor_decal/techfloor,
+/obj/effect/landmark/start{
+	name = "Mercenary"
+	},
+/obj/machinery/light/halogen,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/syndicate_mothership)
+"aF" = (
+/obj/machinery/recharge_station,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 6
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/syndicate_mothership)
+"aG" = (
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership)
+"aH" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership)
+"aI" = (
+/obj/structure/dispenser/oxygen,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/light{
+	icon_state = "tube_map";
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership)
+"aJ" = (
+/obj/structure/table/rack,
+/obj/item/weapon/storage/briefcase/inflatable,
+/obj/item/weapon/storage/briefcase/inflatable,
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership)
+"aK" = (
+/obj/machinery/suit_cycler,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership)
+"aL" = (
+/obj/machinery/door/airlock/centcom{
+	name = "Barracks";
+	opacity = 1;
+	req_access = newlist()
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership)
+"aM" = (
+/obj/structure/table/reinforced,
+/obj/item/modular_computer/pda/syndicate,
+/obj/item/modular_computer/pda/syndicate,
+/turf/simulated/floor/lino,
+/area/map_template/syndicate_mothership)
+"aN" = (
+/turf/simulated/floor/lino,
+/area/map_template/syndicate_mothership)
+"aO" = (
+/obj/structure/undies_wardrobe,
+/turf/simulated/floor/lino,
+/area/map_template/syndicate_mothership)
+"aP" = (
+/obj/structure/bookcase/manuals/research_and_development,
+/turf/simulated/floor/lino,
+/area/map_template/syndicate_mothership)
+"aQ" = (
+/obj/structure/table/reinforced,
+/obj/effect/landmark{
+	name = "Nuclear-Code"
+	},
+/turf/simulated/floor/lino,
+/area/map_template/syndicate_mothership)
+"aR" = (
+/obj/machinery/light{
+	icon_state = "tube_map";
+	dir = 4
+	},
+/turf/simulated/floor/lino,
+/area/map_template/syndicate_mothership)
+"aS" = (
+/obj/structure/table/reinforced,
+/obj/item/weapon/paper_bin,
+/obj/item/weapon/pen{
+	pixel_y = 4
+	},
+/obj/item/weapon/folder/red,
+/obj/item/weapon/folder/red,
+/turf/simulated/floor/lino,
+/area/map_template/syndicate_mothership)
+"aT" = (
+/obj/machinery/acting/changer,
+/turf/simulated/floor/lino,
+/area/map_template/syndicate_mothership)
+"aU" = (
+/obj/machinery/door/airlock/centcom{
+	name = "Barracks";
+	opacity = 1;
+	req_access = newlist()
+	},
+/turf/simulated/floor/cult,
+/area/map_template/syndicate_mothership)
+"aV" = (
+/obj/machinery/recharger,
+/obj/structure/table/steel_reinforced,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"aW" = (
+/obj/machinery/computer/modular/preset/full/merc,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"aX" = (
+/obj/structure/table/steel_reinforced,
+/obj/machinery/chemical_dispenser/bar_alc/full,
+/turf/simulated/floor/cult,
+/area/map_template/syndicate_mothership)
+"aY" = (
+/obj/structure/table/steel_reinforced,
+/obj/machinery/chemical_dispenser/bar_coffee/full,
+/turf/simulated/floor/cult,
+/area/map_template/syndicate_mothership)
+"aZ" = (
+/obj/structure/table/steel_reinforced,
+/obj/machinery/chemical_dispenser/bar_soft/full,
+/turf/simulated/floor/cult,
+/area/map_template/syndicate_mothership)
+"ba" = (
+/obj/structure/sign/double/map/left{
+	pixel_y = 32
+	},
+/obj/structure/table/steel_reinforced,
+/obj/item/weapon/storage/box/mixedglasses,
+/turf/simulated/floor/cult,
+/area/map_template/syndicate_mothership)
+"bb" = (
+/obj/structure/sign/double/map/right{
+	pixel_y = 32
+	},
+/obj/structure/table/steel_reinforced,
+/obj/item/weapon/paper_bin,
+/obj/item/weapon/pen,
+/turf/simulated/floor/cult,
+/area/map_template/syndicate_mothership)
+"bc" = (
+/turf/simulated/floor/cult,
+/area/map_template/syndicate_mothership)
+"bd" = (
+/obj/machinery/vending/snack{
+	name = "hacked Getmore Chocolate Corp";
+	prices = list()
+	},
+/turf/simulated/floor/cult,
+/area/map_template/syndicate_mothership)
+"be" = (
+/obj/structure/table/standard,
+/obj/machinery/chemical_dispenser/bar_soft/full{
+	pixel_x = 2;
+	pixel_y = 6
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/unsimulated/floor{
+	icon_state = "white"
+	},
+/area/map_template/syndicate_mothership)
+"bf" = (
+/obj/structure/table/standard,
+/obj/item/weapon/storage/box/glasses,
+/turf/unsimulated/floor{
+	icon_state = "white"
+	},
+/area/map_template/syndicate_mothership)
+"bg" = (
+/obj/structure/hygiene/sink/kitchen{
+	pixel_y = 28
+	},
+/turf/unsimulated/floor{
+	icon_state = "white"
+	},
+/area/map_template/syndicate_mothership)
+"bh" = (
+/obj/structure/closet/secure_closet/freezer/fridge,
+/turf/unsimulated/floor{
+	icon_state = "white"
+	},
+/area/map_template/syndicate_mothership)
+"bi" = (
+/obj/machinery/computer/shuttle_control/multi/syndicate,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"bj" = (
+/obj/machinery/constructable_frame/computerframe/deconstruct,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"bk" = (
+/obj/machinery/button/blast_door{
+	id_tag = "syndieshutters";
+	name = "remote shutter control";
+	req_access = list("ACCESS_SYNDICATE")
+	},
+/obj/structure/table/steel_reinforced,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"bl" = (
+/obj/machinery/microwave{
+	pixel_x = -1;
+	pixel_y = 2
+	},
+/obj/structure/table/steel,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"bm" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"bn" = (
+/obj/machinery/door/airlock/centcom{
+	name = "Kitchen";
+	opacity = 1;
+	req_access = newlist()
+	},
+/turf/unsimulated/floor{
+	icon_state = "white"
+	},
+/area/map_template/syndicate_mothership)
+"bo" = (
+/turf/unsimulated/floor{
+	icon_state = "white"
+	},
+/area/map_template/syndicate_mothership)
+"bp" = (
+/obj/structure/table/reinforced,
+/obj/machinery/microwave{
+	pixel_x = -1;
+	pixel_y = 8
+	},
+/turf/unsimulated/floor{
+	icon_state = "white"
+	},
+/area/map_template/syndicate_mothership)
+"bq" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"br" = (
+/obj/structure/bed/chair/shuttle/red{
+	icon_state = "shuttle_chair_preview";
+	dir = 1
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"bs" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"bt" = (
+/obj/machinery/constructable_frame/computerframe/deconstruct{
+	icon_state = "0";
+	dir = 8
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"bu" = (
+/obj/machinery/light/halogen{
+	icon_state = "tube_map";
+	dir = 8
+	},
+/obj/item/weapon/storage/box/sinpockets,
+/obj/structure/table/steel,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"bv" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"bw" = (
+/obj/structure/bed/chair/comfy/black{
+	dir = 4
+	},
+/turf/simulated/floor/cult,
+/area/map_template/syndicate_mothership)
+"bx" = (
+/obj/structure/table/glass,
+/turf/simulated/floor/cult,
+/area/map_template/syndicate_mothership)
+"by" = (
+/obj/structure/bed/chair/comfy/black{
+	dir = 8
+	},
+/turf/simulated/floor/cult,
+/area/map_template/syndicate_mothership)
+"bz" = (
+/obj/machinery/vending/coffee{
+	prices = list()
+	},
+/turf/simulated/floor/cult,
+/area/map_template/syndicate_mothership)
+"bA" = (
+/obj/structure/table/reinforced,
+/obj/item/weapon/storage/box/donkpockets{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/turf/unsimulated/floor{
+	icon_state = "white"
+	},
+/area/map_template/syndicate_mothership)
+"bB" = (
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"bC" = (
+/obj/structure/bed/chair/shuttle/red{
+	icon_state = "shuttle_chair_preview";
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"bD" = (
+/obj/machinery/light/halogen{
+	icon_state = "tube_map";
+	dir = 4
+	},
+/obj/machinery/computer/modular/preset/full/merc{
+	dir = 8
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"bE" = (
+/obj/item/stack/material/glass{
+	amount = 15
+	},
+/obj/item/weapon/cell{
+	charge = 100;
+	maxcharge = 15000
+	},
+/obj/structure/table/steel,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"bF" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"bG" = (
+/obj/machinery/vending/cola{
+	name = "hacked Robust Softdrinks";
+	prices = list()
+	},
+/turf/simulated/floor/cult,
+/area/map_template/syndicate_mothership)
+"bH" = (
+/obj/structure/closet/secure_closet/freezer/kitchen{
+	req_access = list("ACCESS_SYNDICATE")
+	},
+/turf/unsimulated/floor{
+	icon_state = "white"
+	},
+/area/map_template/syndicate_mothership)
+"bI" = (
+/obj/structure/table/reinforced,
+/obj/item/weapon/tray{
+	pixel_y = 5
+	},
+/turf/unsimulated/floor{
+	icon_state = "white"
+	},
+/area/map_template/syndicate_mothership)
+"bJ" = (
+/obj/structure/table/reinforced,
+/obj/item/weapon/reagent_containers/food/drinks/bottle/vodka{
+	pixel_x = 3;
+	pixel_y = 12
+	},
+/obj/item/weapon/reagent_containers/food/drinks/bottle/wine{
+	pixel_x = -1;
+	pixel_y = 8
+	},
+/obj/machinery/light{
+	icon_state = "tube_map";
+	dir = 4
+	},
+/turf/unsimulated/floor{
+	icon_state = "white"
+	},
+/area/map_template/syndicate_mothership)
+"bK" = (
+/obj/effect/floor_decal/corner_techfloor_grid{
+	icon_state = "corner_techfloor_grid";
+	dir = 10
+	},
+/obj/effect/floor_decal/techfloor/corner,
+/obj/effect/floor_decal/techfloor/corner{
+	icon_state = "techfloor_corners";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"bL" = (
+/obj/effect/floor_decal/techfloor,
+/obj/machinery/light/halogen,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"bM" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 6
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"bN" = (
+/obj/item/weapon/paper_bin,
+/obj/item/weapon/pen{
+	pixel_y = 4
+	},
+/obj/structure/table/steel_reinforced,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"bO" = (
+/obj/effect/paint/dark_gunmetal,
+/turf/simulated/wall/titanium,
+/area/map_template/merc_shuttle)
+"bP" = (
+/obj/machinery/door/airlock/hatch{
+	name = "Cockpit";
+	req_access = newlist()
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"bQ" = (
+/obj/structure/bed/chair/comfy/black{
+	dir = 8
+	},
+/obj/machinery/light/spot,
+/turf/simulated/floor/cult,
+/area/map_template/syndicate_mothership)
+"bR" = (
+/obj/machinery/vending/cigarette{
+	name = "hacked cigarette machine";
+	prices = list();
+	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	},
+/turf/simulated/floor/cult,
+/area/map_template/syndicate_mothership)
+"bS" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 9
+	},
+/obj/structure/bed/chair/shuttle/red{
+	icon_state = "shuttle_chair_preview";
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor/hole{
+	icon_state = "techfloor_hole_left";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"bT" = (
+/obj/effect/floor_decal/corner_techfloor_grid{
+	icon_state = "corner_techfloor_grid";
+	dir = 5
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	icon_state = "techfloor_corners";
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	icon_state = "techfloor_corners";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"bU" = (
+/obj/machinery/door/airlock/multi_tile/antagonist,
+/turf/simulated/floor/cult,
+/area/map_template/syndicate_mothership)
+"bV" = (
+/obj/structure/curtain/open/shower,
+/obj/structure/hygiene/shower{
+	dir = 4;
+	icon_state = "shower";
+	pixel_x = 5
+	},
+/obj/machinery/door/window/southleft,
+/turf/simulated/floor/tiled/freezer,
+/area/map_template/syndicate_mothership)
+"bW" = (
+/obj/structure/curtain/open/shower,
+/obj/structure/hygiene/shower{
+	dir = 8;
+	icon_state = "shower";
+	pixel_x = -5
+	},
+/obj/item/weapon/soap,
+/obj/machinery/door/window/southright,
+/turf/simulated/floor/tiled/freezer,
+/area/map_template/syndicate_mothership)
+"bX" = (
+/obj/structure/hygiene/toilet{
+	dir = 8
+	},
+/obj/machinery/newscaster{
+	pixel_y = 30
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/map_template/syndicate_mothership)
+"bY" = (
+/obj/structure/bed/chair/shuttle/red{
+	icon_state = "shuttle_chair_preview";
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1"
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"bZ" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"ca" = (
+/obj/machinery/fabricator{
+	desc = "Your typical Autolathe. It appears to have much more options than your regular one, however...";
+	fab_status_flags = 1;
+	name = "unlocked autolathe"
+	},
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"cb" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 8
+	},
+/obj/structure/bed/chair/shuttle/red{
+	icon_state = "shuttle_chair_preview";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"cc" = (
+/obj/structure/bed/chair/shuttle/red{
+	icon_state = "shuttle_chair_preview";
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1"
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"cd" = (
+/obj/effect/floor_decal/corner/red{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership)
+"ce" = (
+/obj/effect/floor_decal/corner/red{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership)
+"cf" = (
+/obj/machinery/door/airlock/centcom{
+	name = "Bathroom";
+	opacity = 1
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/map_template/syndicate_mothership)
+"cg" = (
+/turf/simulated/floor/tiled/freezer,
+/area/map_template/syndicate_mothership)
+"ch" = (
+/obj/machinery/door/airlock{
+	id_tag = "syndie_toilet";
+	name = "nuclear toilet"
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/map_template/syndicate_mothership)
+"ci" = (
+/obj/machinery/button/alternate/door/bolts{
+	id_tag = "syndie_toilet";
+	name = "lock";
+	pixel_y = -26;
+	req_access = list("ACCESS_SYNDICATE")
+	},
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 8
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/map_template/syndicate_mothership)
+"cj" = (
+/obj/item/stack/material/glass{
+	amount = 50
+	},
+/obj/item/stack/material/steel{
+	amount = 50
+	},
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/table/rack/dark,
+/obj/item/stack/material/aluminium/fifty,
+/obj/item/stack/material/plastic/fifty,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"ck" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 8
+	},
+/obj/structure/bed/chair/shuttle/red{
+	icon_state = "shuttle_chair_preview";
+	dir = 4
+	},
+/obj/machinery/light/halogen{
+	icon_state = "tube_map";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"cl" = (
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/closet,
+/obj/random/mre,
+/obj/random/mre,
+/obj/random/mre,
+/obj/random/mre,
+/obj/random/mre,
+/obj/random/mre,
+/obj/machinery/light/halogen{
+	icon_state = "tube_map";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"cm" = (
+/obj/structure/lattice,
+/obj/structure/grille,
+/turf/space,
+/area/space)
+"cn" = (
+/obj/item/weapon/storage/mirror{
+	pixel_x = -32
+	},
+/obj/structure/hygiene/sink{
+	dir = 8;
+	icon_state = "sink";
+	pixel_x = -22;
+	pixel_y = 0
+	},
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/freezer,
+/area/map_template/syndicate_mothership)
+"co" = (
+/obj/structure/flora/pottedplant/bamboo,
+/turf/simulated/floor/tiled/freezer,
+/area/map_template/syndicate_mothership)
+"cp" = (
+/obj/structure/closet,
+/obj/item/weapon/reagent_containers/food/snacks/tastybread,
+/obj/item/weapon/reagent_containers/food/snacks/tastybread,
+/obj/item/weapon/reagent_containers/food/snacks/tastybread,
+/obj/item/weapon/reagent_containers/food/snacks/tastybread,
+/obj/item/weapon/reagent_containers/food/snacks/tastybread,
+/obj/item/weapon/reagent_containers/food/snacks/tastybread,
+/obj/item/weapon/reagent_containers/food/snacks/tastybread,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"cq" = (
+/obj/structure/hygiene/toilet{
+	dir = 4
+	},
+/obj/machinery/flasher{
+	id_tag = "syndieflash";
+	pixel_y = 28
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"cr" = (
+/obj/effect/floor_decal/corner/red{
+	dir = 9
+	},
+/obj/machinery/light/spot{
+	dir = 8;
+	icon_state = "tube_map"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership)
+"cs" = (
+/obj/item/device/radio/intercom/syndicate{
+	dir = 8;
+	pixel_x = 22
+	},
+/obj/effect/floor_decal/corner/red{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership)
+"ct" = (
+/obj/structure/table/rack,
+/obj/item/weapon/storage/belt/utility/full_buy,
+/obj/item/weapon/storage/belt/utility/full_buy,
+/obj/item/weapon/storage/belt/utility/full_buy,
+/obj/item/weapon/storage/belt/utility/full_buy,
+/obj/item/weapon/storage/belt/utility/full_buy,
+/obj/item/weapon/storage/belt/utility/full_buy,
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/machinery/light/spot{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"cu" = (
+/obj/structure/table/rack,
+/obj/item/weapon/storage/belt/medical/emt,
+/obj/item/weapon/storage/belt/medical/emt,
+/obj/item/weapon/storage/belt/medical/emt,
+/obj/item/weapon/storage/belt/medical/emt,
+/obj/item/weapon/storage/belt/medical/emt,
+/obj/item/weapon/storage/belt/medical/emt,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"cv" = (
+/obj/structure/table/rack,
+/obj/item/weapon/storage/belt/holster/security/tactical,
+/obj/item/weapon/storage/belt/holster/security/tactical,
+/obj/item/weapon/storage/belt/holster/security/tactical,
+/obj/item/weapon/storage/belt/holster/security/tactical,
+/obj/item/weapon/storage/belt/holster/security/tactical,
+/obj/item/weapon/storage/belt/holster/security/tactical,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"cw" = (
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/pistol,
+/obj/item/ammo_magazine/pistol,
+/obj/item/ammo_magazine/pistol,
+/obj/item/ammo_magazine/pistol,
+/obj/item/ammo_magazine/pistol,
+/obj/item/ammo_magazine/pistol,
+/obj/item/weapon/gun/projectile/pistol/throwback,
+/obj/item/weapon/gun/projectile/pistol/throwback,
+/obj/item/weapon/gun/projectile/pistol/throwback,
+/obj/item/weapon/gun/projectile/pistol/throwback,
+/obj/item/weapon/gun/projectile/pistol/throwback,
+/obj/item/weapon/gun/projectile/pistol/throwback,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"cx" = (
+/obj/structure/table/rack,
+/obj/item/clothing/accessory/storage/holster/thigh,
+/obj/item/clothing/accessory/storage/holster/thigh,
+/obj/item/clothing/accessory/storage/holster/thigh,
+/obj/item/clothing/accessory/storage/holster/thigh,
+/obj/item/clothing/accessory/storage/holster/thigh,
+/obj/item/clothing/accessory/storage/holster/thigh,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"cy" = (
+/obj/structure/table/rack,
+/obj/item/clothing/accessory/storage/brown_vest,
+/obj/item/clothing/accessory/storage/brown_vest,
+/obj/item/clothing/accessory/storage/brown_vest,
+/obj/item/clothing/accessory/storage/brown_vest,
+/obj/item/clothing/accessory/storage/brown_vest,
+/obj/item/clothing/accessory/storage/brown_vest,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"cz" = (
+/obj/structure/table/rack,
+/obj/item/clothing/accessory/storage/white_vest,
+/obj/item/clothing/accessory/storage/white_vest,
+/obj/item/clothing/accessory/storage/white_vest,
+/obj/item/clothing/accessory/storage/white_vest,
+/obj/item/clothing/accessory/storage/white_vest,
+/obj/item/clothing/accessory/storage/white_vest,
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/machinery/light/spot{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"cA" = (
+/obj/structure/table/rack,
+/obj/item/clothing/accessory/storage/black_vest,
+/obj/item/clothing/accessory/storage/black_vest,
+/obj/item/clothing/accessory/storage/black_vest,
+/obj/item/clothing/accessory/storage/black_vest,
+/obj/item/clothing/accessory/storage/black_vest,
+/obj/item/clothing/accessory/storage/black_vest,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"cB" = (
+/obj/machinery/light/small/red{
+	icon_state = "bulb_map";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"cC" = (
+/obj/machinery/embedded_controller/radio/simple_docking_controller{
+	frequency = 1331;
+	id_tag = "merc_base";
+	pixel_x = -25;
+	pixel_y = -5
+	},
+/obj/effect/floor_decal/corner/red{
+	icon_state = "corner_white";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership)
+"cD" = (
+/obj/effect/floor_decal/corner/red{
+	icon_state = "corner_white";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership)
+"cE" = (
+/obj/effect/floor_decal/corner/red{
+	dir = 5
+	},
+/obj/structure/flora/pottedplant/minitree,
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership)
+"cF" = (
+/obj/structure/table/rack,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"cG" = (
+/obj/item/weapon/pinpointer/nukeop,
+/obj/item/weapon/pinpointer/nukeop,
+/obj/item/weapon/pinpointer/nukeop,
+/obj/item/weapon/pinpointer/nukeop,
+/obj/item/weapon/pinpointer/nukeop,
+/obj/item/weapon/pinpointer/nukeop,
+/obj/structure/table/rack,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"cH" = (
+/obj/structure/table/rack,
+/obj/item/stack/material/steel{
+	amount = 50
+	},
+/obj/item/stack/material/steel{
+	amount = 50
+	},
+/obj/item/stack/material/glass{
+	amount = 50
+	},
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/item/stack/material/plastic/fifty,
+/obj/item/stack/material/aluminium/fifty,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"cI" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 10
+	},
+/obj/machinery/vending/cigarette{
+	name = "hacked cigarette machine";
+	prices = list();
+	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"cJ" = (
+/obj/item/device/radio/intercom/syndicate{
+	dir = 1;
+	pixel_y = -28
+	},
+/obj/effect/floor_decal/techfloor,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"cK" = (
+/obj/effect/floor_decal/corner_techfloor_grid{
+	icon_state = "corner_techfloor_grid";
+	dir = 10
+	},
+/obj/effect/floor_decal/techfloor/corner,
+/obj/effect/floor_decal/techfloor/corner{
+	icon_state = "techfloor_corners";
+	dir = 8
+	},
+/obj/effect/floor_decal/corner_techfloor_grid{
+	icon_state = "corner_techfloor_grid";
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	icon_state = "techfloor_corners";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"cL" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 6
+	},
+/obj/effect/floor_decal/corner_techfloor_grid{
+	icon_state = "corner_techfloor_grid";
+	dir = 1
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	icon_state = "techfloor_corners";
+	dir = 1
+	},
+/obj/machinery/recharger/wallcharger{
+	dir = 1;
+	icon_state = "wrecharger0";
+	pixel_y = -22
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"cM" = (
+/obj/machinery/recharge_station,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"cN" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
+	dir = 4;
+	id_tag = "merc_shuttle_pump"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/map_template/merc_shuttle)
+"cO" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden{
+	icon_state = "map";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"cP" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
+	dir = 8;
+	id_tag = "merc_shuttle_pump"
+	},
+/obj/machinery/embedded_controller/radio/airlock/docking_port{
+	frequency = 1331;
+	id_tag = "merc_shuttle";
+	pixel_x = -8;
+	pixel_y = 25;
+	req_access = list("ACCESS_SYNDICATE")
+	},
+/obj/structure/catwalk,
+/obj/machinery/airlock_sensor{
+	frequency = 1331;
+	id_tag = "merc_shuttle_sensor";
+	pixel_x = 8;
+	pixel_y = 25
+	},
+/turf/simulated/floor/plating,
+/area/map_template/merc_shuttle)
+"cQ" = (
+/obj/machinery/door/airlock/external{
+	autoset_access = 0;
+	density = 1;
+	frequency = 1331;
+	id_tag = "merc_shuttle_outer";
+	name = "Ship External Access";
+	req_access = list("ACCESS_SYNDICATE")
+	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id_tag = "smindicate";
+	name = "Outer Airlock";
+	opacity = 0
+	},
+/obj/machinery/shield_diffuser,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"cR" = (
+/obj/structure/bed/padded,
+/obj/item/weapon/bedsheet,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"cS" = (
+/obj/machinery/door/airlock/hatch{
+	req_access = newlist()
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"cT" = (
+/obj/machinery/door/airlock/external{
+	frequency = 1331;
+	id_tag = "merc_base_hatch";
+	req_access = newlist()
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/syndicate_mothership)
+"cU" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/syndicate_mothership)
+"cV" = (
+/obj/effect/landmark{
+	name = "Syndicate-Uplink"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership)
+"cW" = (
+/obj/machinery/fabricator{
+	desc = "Your typical Autolathe. It appears to have much more options than your regular one, however...";
+	fab_status_flags = 1;
+	name = "unlocked autolathe"
+	},
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"cX" = (
+/obj/machinery/atmospherics/pipe/manifold4w/hidden,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"cY" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
+	dir = 8;
+	id_tag = "merc_shuttle_pump"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/map_template/merc_shuttle)
+"cZ" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id_tag = "smindicate";
+	name = "Outer Airlock";
+	opacity = 0
+	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/effect/paint/dark_gunmetal,
+/turf/simulated/floor/plating,
+/area/map_template/merc_shuttle)
+"da" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/effect/paint/dark_gunmetal,
+/turf/simulated/floor/plating,
+/area/map_template/merc_shuttle)
+"db" = (
+/obj/machinery/door/airlock/centcom{
+	glass = 1;
+	name = "Cell";
+	opacity = 0;
+	req_access = newlist()
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"dc" = (
+/obj/structure/flora/pottedplant/flower,
+/obj/effect/floor_decal/corner/red{
+	dir = 10
+	},
+/obj/structure/sign/warning/airlock{
+	dir = 4;
+	icon_state = "doors";
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership)
+"dd" = (
+/obj/effect/floor_decal/corner/red{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership)
+"de" = (
+/obj/machinery/door/airlock/multi_tile/antagonist{
+	dir = 8;
+	icon_state = "closed";
+	name = "Equipment"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership)
+"df" = (
+/obj/machinery/suit_cycler/syndicate{
+	locked = 0
+	},
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"dg" = (
+/obj/machinery/light/halogen{
+	icon_state = "tube_map";
+	dir = 8
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"dh" = (
+/obj/effect/floor_decal/corner_techfloor_grid{
+	icon_state = "corner_techfloor_grid";
+	dir = 5
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	icon_state = "techfloor_corners";
+	dir = 1
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	icon_state = "techfloor_corners";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"di" = (
+/obj/machinery/light/halogen{
+	icon_state = "tube_map";
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"dj" = (
+/obj/machinery/door/airlock/external{
+	autoset_access = 0;
+	frequency = 1331;
+	id_tag = "merc_shuttle_inner";
+	name = "Ship External Access";
+	req_access = list("ACCESS_SYNDICATE")
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"dk" = (
+/obj/structure/table/glass,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 8
+	},
+/obj/item/device/radio/electropack,
+/obj/item/device/assembly/signaler,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"dl" = (
+/obj/machinery/button/flasher{
+	id_tag = "syndieflash";
+	name = "Flasher";
+	pixel_x = 0;
+	pixel_y = 26
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 5
+	},
+/obj/effect/floor_decal/techfloor/hole/right{
+	icon_state = "techfloor_hole_right";
+	dir = 1
+	},
+/obj/structure/hygiene/sink{
+	dir = 4;
+	icon_state = "sink";
+	pixel_x = 22
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"dm" = (
+/obj/structure/table/rack,
+/obj/item/weapon/storage/box/teargas,
+/obj/item/weapon/storage/box/flashbangs,
+/obj/item/weapon/storage/box/smokes,
+/obj/item/weapon/storage/box/handcuffs{
+	pixel_x = 4;
+	pixel_y = 2
+	},
+/obj/item/weapon/storage/box/handcuffs{
+	pixel_x = 4;
+	pixel_y = 2
+	},
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"dn" = (
+/obj/structure/table/rack,
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/item/weapon/gun/energy/ionrifle/small,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"do" = (
+/obj/structure/table/rack,
+/obj/item/device/flash,
+/obj/item/device/flash,
+/obj/item/device/flash,
+/obj/item/device/flash,
+/obj/item/device/flash,
+/obj/item/device/flash,
+/obj/item/device/flash,
+/obj/item/device/flash,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"dp" = (
+/obj/structure/table/rack,
+/obj/item/weapon/tank/jetpack/oxygen,
+/obj/item/weapon/tank/jetpack/oxygen,
+/obj/item/weapon/tank/jetpack/oxygen,
+/obj/item/weapon/tank/jetpack/oxygen,
+/obj/item/weapon/tank/jetpack/oxygen,
+/obj/item/weapon/tank/jetpack/oxygen,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"dq" = (
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/item/device/radio/intercom/syndicate{
+	dir = 1;
+	pixel_y = -28
+	},
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"dr" = (
+/obj/machinery/portable_atmospherics/canister/nitrogen,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"ds" = (
+/obj/machinery/vending/clothing/tact,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"dt" = (
+/obj/structure/closet/secure_closet/medical_wall{
+	pixel_x = -24;
+	req_access = list("ACCESS_SYNDICATE")
+	},
+/obj/item/stack/medical/splint,
+/obj/item/stack/medical/ointment,
+/obj/item/stack/medical/ointment,
+/obj/item/stack/medical/bruise_pack,
+/obj/item/stack/medical/bruise_pack,
+/obj/item/stack/medical/bruise_pack,
+/obj/item/weapon/storage/belt/medical/emt/combat,
+/obj/item/weapon/storage/belt/medical/emt/combat,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 8
+	},
+/obj/effect/floor_decal/techfloor/hole{
+	icon_state = "techfloor_hole_left";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"du" = (
+/obj/effect/shuttle_landmark/merc/start,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"dv" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/obj/structure/closet/hydrant{
+	pixel_x = 24;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"dw" = (
+/obj/machinery/atmospherics/unary/tank/air{
+	dir = 4;
+	start_pressure = 740.5
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"dx" = (
+/obj/machinery/meter,
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 1
+	},
+/obj/effect/floor_decal/techfloor/hole/right{
+	icon_state = "techfloor_hole_right";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"dy" = (
+/obj/machinery/access_button{
+	command = "cycle_interior";
+	frequency = 1331;
+	master_tag = "merc_shuttle";
+	name = "interior access button";
+	pixel_x = 25;
+	pixel_y = 25;
+	req_access = list("ACCESS_SYNDICATE")
+	},
+/obj/effect/floor_decal/corner_techfloor_grid{
+	icon_state = "corner_techfloor_grid";
+	dir = 5
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	icon_state = "techfloor_corners";
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	icon_state = "techfloor_corners";
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 9
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals9,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"dz" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 5
+	},
+/obj/machinery/suit_cycler/syndicate{
+	locked = 0
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"dA" = (
+/obj/item/weapon/reagent_containers/syringe/drugs{
+	pixel_x = 3;
+	pixel_y = -1
+	},
+/obj/item/weapon/reagent_containers/syringe/drugs{
+	pixel_x = 3;
+	pixel_y = 4
+	},
+/obj/item/weapon/reagent_containers/syringe/drugs{
+	pixel_x = 3;
+	pixel_y = 9
+	},
+/obj/machinery/light/halogen{
+	icon_state = "tube_map";
+	dir = 8
+	},
+/obj/structure/table/glass,
+/obj/item/weapon/material/knife/combat,
+/obj/item/weapon/melee/telebaton,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 8
+	},
+/obj/item/weapon/handcuffs,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"dB" = (
+/obj/effect/floor_decal/corner_techfloor_grid{
+	icon_state = "corner_techfloor_grid";
+	dir = 6
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	icon_state = "techfloor_corners";
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor/corner,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"dC" = (
+/obj/machinery/door/airlock/centcom{
+	name = "Softsuit Storage";
+	opacity = 1
+	},
+/obj/effect/floor_decal/industrial/warning/half,
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership)
+"dD" = (
+/obj/machinery/door/airlock/centcom{
+	name = "Softsuit Storage";
+	opacity = 1
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership)
+"dE" = (
+/obj/effect/floor_decal/corner_techfloor_grid{
+	icon_state = "corner_techfloor_grid";
+	dir = 9
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	icon_state = "techfloor_corners";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_techfloor_grid{
+	icon_state = "corner_techfloor_grid";
+	dir = 9
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	icon_state = "techfloor_corners";
+	dir = 8
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	icon_state = "techfloor_corners";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"dF" = (
+/obj/effect/floor_decal/corner_techfloor_grid{
+	icon_state = "corner_techfloor_grid";
+	dir = 9
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	icon_state = "techfloor_corners";
+	dir = 1
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	icon_state = "techfloor_corners";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"dG" = (
+/obj/machinery/light/halogen{
+	icon_state = "tube_map";
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/obj/structure/table/steel_reinforced,
+/obj/machinery/recharger,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"dH" = (
+/obj/structure/closet{
+	name = "custodial"
+	},
+/obj/item/weapon/reagent_containers/glass/bucket,
+/obj/item/weapon/mop,
+/obj/item/weapon/reagent_containers/spray/cleaner,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"dI" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"dJ" = (
+/obj/structure/table/rack,
+/obj/item/clothing/shoes/magboots,
+/obj/item/clothing/suit/space/syndicate/black/med,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/head/helmet/space/syndicate/black/med,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"dK" = (
+/obj/structure/table/rack,
+/obj/item/clothing/shoes/magboots,
+/obj/item/clothing/suit/space/syndicate/black/blue,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/head/helmet/space/syndicate/black/blue,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"dL" = (
+/obj/vehicle/bike/electric,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"dM" = (
+/obj/effect/floor_decal/techfloor,
+/obj/structure/bed/chair/shuttle/red{
+	icon_state = "shuttle_chair_preview";
+	dir = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 8;
+	icon_state = "railing0-1"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"dN" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 6
+	},
+/obj/structure/bed/chair/shuttle/red{
+	icon_state = "shuttle_chair_preview";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"dO" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"dP" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 10
+	},
+/obj/structure/table/rack/dark,
+/obj/item/device/flashlight/upgraded,
+/obj/item/device/flashlight/upgraded,
+/obj/item/device/flashlight/upgraded,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"dQ" = (
+/obj/effect/floor_decal/techfloor,
+/obj/structure/table/rack/dark,
+/obj/item/weapon/storage/toolbox/syndicate,
+/obj/item/device/binoculars,
+/obj/item/weapon/shield_diffuser,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"dR" = (
+/obj/effect/floor_decal/techfloor,
+/obj/structure/table/rack/dark,
+/obj/item/weapon/barrier,
+/obj/item/weapon/barrier,
+/obj/item/weapon/barrier,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"dS" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 6
+	},
+/obj/structure/table/steel_reinforced,
+/obj/machinery/recharger,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"dT" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 8
+	},
+/obj/machinery/recharger/wallcharger{
+	dir = 4;
+	icon_state = "wrecharger0";
+	pixel_x = -22
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"dU" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/obj/machinery/recharger/wallcharger{
+	dir = 8;
+	icon_state = "wrecharger0";
+	pixel_x = 22
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"dV" = (
+/obj/structure/table/rack,
+/obj/item/clothing/shoes/magboots,
+/obj/item/clothing/suit/space/syndicate/black/engie,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/head/helmet/space/syndicate/black/engie,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"dW" = (
+/obj/structure/table/rack,
+/obj/item/clothing/shoes/magboots,
+/obj/item/clothing/suit/space/syndicate/black/orange,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/head/helmet/space/syndicate/black/orange,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"dX" = (
+/obj/vehicle/bike/electric,
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"dY" = (
+/obj/vehicle/bike/electric,
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/machinery/light{
+	icon_state = "tube_map";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"dZ" = (
+/obj/structure/table/standard,
+/obj/item/weapon/storage/backpack/dufflebag/syndie/med,
+/obj/item/weapon/storage/firstaid/combat,
+/obj/machinery/light/halogen{
+	icon_state = "tube_map";
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/obj/item/device/scanner/health,
+/obj/item/device/scanner/health,
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"ea" = (
+/obj/structure/table/standard,
+/obj/item/weapon/storage/firstaid/toxin{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/weapon/storage/firstaid/adv{
+	pixel_x = 1
+	},
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"eb" = (
+/obj/structure/table/rack,
+/obj/item/clothing/shoes/magboots,
+/obj/item/clothing/suit/space/syndicate/black,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/head/helmet/space/syndicate/black,
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"ec" = (
+/obj/structure/table/rack,
+/obj/item/clothing/shoes/magboots,
+/obj/item/clothing/suit/space/syndicate/black/red,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/head/helmet/space/syndicate/black/red,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"ed" = (
+/obj/structure/table/standard,
+/obj/item/weapon/storage/firstaid/o2,
+/obj/item/weapon/storage/firstaid/fire{
+	pixel_x = 1
+	},
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"ee" = (
+/obj/machinery/atmospherics/portables_connector,
+/obj/machinery/portable_atmospherics/canister/oxygen/prechilled,
+/obj/effect/floor_decal/industrial/warning/full,
+/obj/item/weapon/reagent_containers/glass/beaker/large/cryolife,
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"ef" = (
+/obj/machinery/atmospherics/unary/cryo_cell,
+/obj/machinery/light/halogen{
+	icon_state = "tube_map";
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning/full,
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"eg" = (
+/obj/machinery/light/halogen{
+	icon_state = "tube_map";
+	dir = 8
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"eh" = (
+/obj/machinery/light/halogen{
+	icon_state = "tube_map";
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"ei" = (
+/obj/machinery/light/halogen{
+	icon_state = "tube_map";
+	dir = 8
+	},
+/obj/structure/table/rack/dark,
+/obj/item/clothing/gloves/insulated/combat,
+/obj/item/clothing/gloves/insulated/combat,
+/obj/item/clothing/glasses/welding/superior,
+/obj/item/clothing/glasses/welding/superior,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"ej" = (
+/obj/structure/table/rack/dark,
+/obj/item/weapon/storage/backpack/dufflebag/syndie,
+/obj/item/weapon/storage/backpack/dufflebag/syndie,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"ek" = (
+/obj/structure/table/rack/dark,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 1
+	},
+/obj/item/weapon/storage/belt/utility/full_buy{
+	icon_state = "gearbelt";
+	item_state = "gearbelt"
+	},
+/obj/item/weapon/storage/belt/utility/full_buy{
+	icon_state = "gearbelt";
+	item_state = "gearbelt"
+	},
+/obj/item/weapon/storage/belt/utility/full_buy{
+	icon_state = "gearbelt";
+	item_state = "gearbelt"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"el" = (
+/obj/structure/table/rack/dark,
+/obj/item/clothing/glasses/night,
+/obj/item/clothing/glasses/night,
+/obj/item/clothing/glasses/night,
+/obj/item/clothing/glasses/night,
+/obj/item/clothing/glasses/night,
+/obj/item/clothing/glasses/night,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"em" = (
+/obj/machinery/vending/assist/antag,
+/obj/machinery/light/halogen{
+	icon_state = "tube_map";
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"en" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id_tag = "syndieshutters_infirmary";
+	name = "Blast Doors";
+	opacity = 0
+	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/effect/paint/dark_gunmetal,
+/turf/simulated/floor/plating,
+/area/map_template/merc_shuttle)
+"eo" = (
+/obj/structure/table/standard,
+/obj/item/weapon/defibrillator/loaded,
+/obj/item/weapon/defibrillator/compact/combat/loaded,
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"ep" = (
+/obj/structure/table/rack,
+/obj/item/clothing/shoes/magboots,
+/obj/item/clothing/mask/breath,
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/item/clothing/suit/space/syndicate,
+/obj/item/clothing/head/helmet/space/syndicate,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"eq" = (
+/obj/structure/table/rack,
+/obj/item/clothing/shoes/magboots,
+/obj/item/clothing/suit/space/syndicate/black/green,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/head/helmet/space/syndicate/black/green,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership)
+"er" = (
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/obj/structure/bed/roller,
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"es" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 5;
+	icon_state = "intact"
+	},
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"et" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 9
+	},
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"eu" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/obj/item/device/radio/intercom/syndicate{
+	dir = 8;
+	pixel_x = 22
+	},
+/obj/effect/floor_decal/techfloor/hole{
+	icon_state = "techfloor_hole_left";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"ev" = (
+/obj/item/device/radio/intercom/syndicate{
+	dir = 4;
+	pixel_x = -22
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"ew" = (
+/obj/structure/table/steel,
+/obj/random/loot,
+/obj/item/weapon/aicard,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"ex" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id_tag = "syndieshutters_workshop";
+	name = "Blast Doors";
+	opacity = 0
+	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/effect/paint/dark_gunmetal,
+/turf/simulated/floor/plating,
+/area/map_template/merc_shuttle)
+"ey" = (
+/obj/machinery/sleeper{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"ez" = (
+/obj/effect/floor_decal/corner/grey_alt/diagonal,
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"eA" = (
+/obj/effect/floor_decal/corner_techfloor_grid{
+	icon_state = "corner_techfloor_grid";
+	dir = 9
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	icon_state = "techfloor_corners";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"eB" = (
+/obj/effect/floor_decal/corner_techfloor_grid{
+	icon_state = "corner_techfloor_grid";
+	dir = 6
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	icon_state = "techfloor_corners";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"eC" = (
+/obj/item/weapon/stool,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"eD" = (
+/obj/structure/table/steel,
+/obj/item/weapon/pickaxe/diamonddrill,
+/obj/random/tech_supply,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"eE" = (
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/obj/machinery/sleeper{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"eF" = (
+/obj/structure/sign/warning/caution{
+	dir = 1;
+	icon_state = "securearea";
+	pixel_y = -32
+	},
+/obj/effect/floor_decal/techfloor,
+/obj/effect/floor_decal/corner_techfloor_grid{
+	icon_state = "corner_techfloor_grid";
+	dir = 1
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	icon_state = "techfloor_corners";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"eG" = (
+/obj/effect/floor_decal/corner_techfloor_grid{
+	icon_state = "corner_techfloor_grid";
+	dir = 10
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	icon_state = "techfloor_corners";
+	dir = 8
+	},
+/obj/effect/floor_decal/techfloor/corner,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"eH" = (
+/obj/machinery/button/alternate/door/bolts{
+	dir = 1;
+	id_tag = "syndieshutters_nuke";
+	name = "Nuclear Storage Bolts";
+	pixel_y = -20;
+	req_access = list("ACCESS_SYNDICATE")
+	},
+/obj/effect/floor_decal/techfloor,
+/obj/effect/floor_decal/corner_techfloor_grid{
+	icon_state = "corner_techfloor_grid";
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor/corner,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"eI" = (
+/obj/effect/floor_decal/corner_techfloor_grid{
+	icon_state = "corner_techfloor_grid";
+	dir = 9
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	icon_state = "techfloor_corners";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/merc_shuttle)
+"eJ" = (
+/obj/structure/table/steel,
+/obj/item/weapon/plastique,
+/obj/item/weapon/plastique,
+/obj/item/weapon/plastique,
+/obj/item/weapon/plastique,
+/obj/item/device/multitool/hacktool,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"eK" = (
+/obj/effect/floor_decal/corner/pink/diagonal,
+/obj/machinery/button/blast_door{
+	id_tag = "syndieshutters_infirmary";
+	name = "remote shutter control";
+	pixel_x = -25
+	},
+/obj/machinery/bodyscanner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"eL" = (
+/obj/effect/floor_decal/corner/pink/diagonal,
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"eM" = (
+/obj/effect/floor_decal/corner/beige/diagonal,
+/mob/living/bot/medbot,
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"eN" = (
+/obj/effect/floor_decal/corner/beige/diagonal,
+/obj/structure/table/standard,
+/obj/item/weapon/storage/box/syringes{
+	pixel_x = 3;
+	pixel_y = 2
+	},
+/obj/item/weapon/storage/box/beakers,
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"eO" = (
+/obj/effect/floor_decal/corner/beige/diagonal,
+/obj/machinery/chem_master,
+/obj/structure/closet/secure_closet/medical_wall{
+	pixel_x = 32;
+	req_access = list("ACCESS_SYNDICATE")
+	},
+/obj/item/bodybag/cryobag,
+/obj/item/bodybag/cryobag,
+/obj/item/bodybag/cryobag,
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"eP" = (
+/obj/machinery/door/airlock/vault/bolted{
+	id_tag = "syndieshutters_nuke";
+	name = "Nuclear Storage";
+	req_access = newlist()
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"eQ" = (
+/obj/machinery/light/halogen{
+	icon_state = "tube_map";
+	dir = 8
+	},
+/obj/structure/table/rack/dark,
+/obj/effect/spawner/newbomb/timer/syndicate,
+/obj/effect/spawner/newbomb/timer/syndicate,
+/obj/effect/spawner/newbomb/timer/syndicate,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"eR" = (
+/obj/item/device/multitool,
+/obj/item/device/multitool,
+/obj/item/weapon/tape_roll,
+/obj/item/weapon/tape_roll,
+/obj/machinery/button/blast_door{
+	id_tag = "syndieshutters_telebay";
+	name = "remote shutter control";
+	pixel_y = -25;
+	req_access = list("ACCESS_SYNDICATE")
+	},
+/obj/structure/table/rack/dark,
+/obj/effect/floor_decal/techfloor,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"eS" = (
+/obj/effect/floor_decal/techfloor/corner{
+	icon_state = "techfloor_corners";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"eT" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"eU" = (
+/obj/machinery/button/blast_door{
+	dir = 8;
+	id_tag = "syndieshutters_workshop";
+	name = "Space Shield";
+	pixel_x = 24;
+	pixel_y = 0
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/obj/structure/table/steel,
+/obj/item/weapon/stock_parts/console_screen,
+/obj/item/weapon/stock_parts/keyboard,
+/obj/item/weapon/stock_parts/power/battery/buildable/stock,
+/obj/item/weapon/cell,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"eV" = (
+/obj/effect/floor_decal/corner/pink/diagonal,
+/obj/machinery/body_scanconsole{
+	dir = 1
+	},
+/obj/machinery/light/halogen{
+	icon_state = "tube_map";
+	dir = 8
+	},
+/obj/structure/closet/secure_closet/medical_wall{
+	pixel_x = -32;
+	req_access = list("ACCESS_SYNDICATE")
+	},
+/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
+/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
+/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
+/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"eW" = (
+/obj/effect/floor_decal/corner/beige/diagonal,
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"eX" = (
+/obj/effect/floor_decal/corner/beige/diagonal,
+/obj/structure/bed/chair/office/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"eY" = (
+/obj/effect/floor_decal/corner/beige/diagonal,
+/obj/machinery/chemical_dispenser/ert,
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube_map"
+	},
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"eZ" = (
+/obj/effect/floor_decal/steeldecal/steel_decals10{
+	icon_state = "steel_decals10";
+	dir = 10
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals10{
+	icon_state = "steel_decals10";
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"fa" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 8
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"fb" = (
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"fc" = (
+/obj/machinery/door/blast/regular{
+	id_tag = "syndieshutters_telebay";
+	name = "Teleport"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"fd" = (
+/obj/structure/table/standard,
+/obj/item/weapon/reagent_containers/spray/cleaner{
+	pixel_x = -6
+	},
+/obj/item/weapon/reagent_containers/spray/sterilizine,
+/obj/structure/window/reinforced/crescent{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/pink/diagonal,
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"fe" = (
+/obj/machinery/door/window{
+	dir = 1;
+	name = "Surgery";
+	req_access = newlist()
+	},
+/obj/effect/floor_decal/corner/pink/diagonal,
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"ff" = (
+/obj/structure/grille,
+/obj/structure/lattice,
+/turf/space,
+/area/space)
+"fg" = (
+/obj/structure/iv_drip,
+/obj/structure/closet/secure_closet/medical_wall{
+	pixel_x = 32;
+	req_access = list("ACCESS_SYNDICATE")
+	},
+/obj/item/clothing/gloves/latex,
+/obj/item/clothing/mask/surgical,
+/obj/item/weapon/reagent_containers/glass/bottle/stoxin,
+/obj/item/weapon/reagent_containers/glass/bottle/stoxin,
+/obj/item/weapon/reagent_containers/syringe,
+/obj/structure/window/reinforced/crescent{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/pink/diagonal,
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"fh" = (
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1"
+	},
+/obj/machinery/light/small/red,
+/obj/machinery/portable_atmospherics/powered/scrubber,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"fi" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 8
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/obj/effect/landmark{
+	name = "Nuclear-Bomb"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"fj" = (
+/obj/machinery/light/small/red,
+/obj/structure/railing/mapped{
+	dir = 8;
+	icon_state = "railing0-1"
+	},
+/obj/machinery/portable_atmospherics/powered/pump/filled,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"fk" = (
+/obj/machinery/light/small/red{
+	icon_state = "bulb_map";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"fl" = (
+/obj/effect/floor_decal/techfloor/corner{
+	icon_state = "techfloor_corners";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"fm" = (
+/obj/machinery/light/small/red{
+	icon_state = "bulb_map";
+	dir = 1
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"fn" = (
+/obj/structure/table/standard,
+/obj/item/stack/medical/advanced/bruise_pack,
+/obj/item/weapon/reagent_containers/syringe/antiviral,
+/obj/item/weapon/reagent_containers/syringe/antiviral,
+/obj/effect/floor_decal/corner/pink/diagonal,
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"fo" = (
+/obj/machinery/optable,
+/obj/effect/floor_decal/corner/pink/diagonal,
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"fp" = (
+/obj/structure/table/standard,
+/obj/item/weapon/storage/firstaid/surgery,
+/obj/item/device/radio/intercom/syndicate{
+	dir = 8;
+	pixel_x = 22
+	},
+/obj/effect/floor_decal/corner/pink/diagonal,
+/turf/simulated/floor/tiled/white,
+/area/map_template/merc_shuttle)
+"fq" = (
+/obj/machinery/teleport/hub{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"fr" = (
+/obj/machinery/teleport/station{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"fs" = (
+/obj/machinery/constructable_frame/computerframe/deconstruct{
+	dir = 1
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor/hole{
+	icon_state = "techfloor_hole_left";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/merc_shuttle)
+"ft" = (
+/obj/structure/shuttle/engine/propulsion{
+	icon_state = "propulsion_l"
+	},
+/obj/structure/shuttle/engine/heater{
+	pixel_y = 32
+	},
+/turf/simulated/floor/airless,
+/area/map_template/merc_shuttle)
+"fu" = (
+/obj/structure/shuttle/engine/propulsion,
+/obj/structure/shuttle/engine/heater{
+	pixel_y = 32
+	},
+/turf/simulated/floor/airless,
+/area/map_template/merc_shuttle)
+"fv" = (
+/obj/structure/shuttle/engine/propulsion{
+	icon_state = "propulsion_r"
+	},
+/obj/structure/shuttle/engine/heater{
+	pixel_y = 32
+	},
+/turf/simulated/floor/airless,
+/area/map_template/merc_shuttle)
+
+(1,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(2,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(3,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(4,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(5,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(6,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(7,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(8,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(9,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(10,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(11,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ae
+ae
+ae
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+ae
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(12,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ae
+ae
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(13,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+"}
+(14,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ae
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(15,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(16,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ae
+ae
+ae
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(17,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ae
+ae
+ae
+ad
+ad
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(18,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ae
+ae
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+en
+en
+en
+ab
+ab
+ab
+ab
+ab
+bO
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(19,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ae
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ae
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+dZ
+eo
+ey
+eE
+eK
+eV
+fd
+fn
+ab
+ft
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(20,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ae
+ae
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+cq
+cR
+bO
+dk
+dA
+dH
+bO
+ea
+er
+ez
+ez
+eL
+eL
+fe
+fo
+ab
+fu
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(21,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+ad
+ae
+ae
+ae
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+cB
+bB
+da
+bm
+bv
+dI
+bO
+ed
+er
+ez
+ez
+eM
+eW
+fg
+fp
+ab
+fv
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(22,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+ae
+ae
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+bO
+ab
+bB
+bB
+db
+dh
+bB
+dM
+bO
+ee
+es
+ez
+ez
+eN
+eX
+ab
+ab
+ab
+bO
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(23,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ae
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+bl
+bu
+bE
+ab
+ab
+ab
+ab
+ab
+bO
+bO
+bO
+dl
+dB
+dN
+bO
+ef
+et
+ez
+ez
+eO
+eY
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(24,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+aa
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ac
+aV
+bm
+bv
+bF
+bO
+bS
+cb
+ck
+cb
+cI
+bO
+bO
+bO
+cS
+bO
+bO
+bO
+bO
+cS
+cS
+bO
+bO
+ab
+ab
+bO
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(25,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ac
+aW
+bq
+bB
+bK
+bP
+bT
+bB
+bB
+bB
+cJ
+bO
+dg
+dt
+dE
+bv
+dT
+eg
+bv
+eA
+eF
+bO
+eZ
+fh
+ab
+ft
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(26,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+af
+aj
+ar
+aB
+af
+aa
+aa
+aa
+aa
+aa
+ac
+bi
+br
+bB
+bL
+bO
+bY
+cc
+cc
+cc
+cK
+cS
+dh
+du
+bB
+bB
+bB
+bB
+bB
+bB
+eG
+eP
+fa
+fi
+ab
+fu
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(27,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ag
+ag
+ag
+ag
+ag
+aa
+aa
+aa
+aa
+aa
+ac
+bj
+bq
+bB
+bK
+bP
+bZ
+bZ
+bZ
+bZ
+cL
+bO
+di
+dv
+dB
+dO
+dU
+eh
+eu
+eB
+eH
+bO
+eZ
+fj
+ab
+fv
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(28,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ag
+ak
+as
+aC
+ag
+aa
+aa
+aa
+aa
+aa
+ac
+bk
+bs
+bC
+bM
+bO
+ca
+cj
+cl
+cp
+cM
+bO
+bO
+bO
+cS
+bO
+bO
+bO
+bO
+cS
+cS
+bO
+bO
+ab
+ab
+bO
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(29,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ag
+al
+at
+aD
+ag
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+bt
+bD
+bN
+ab
+ab
+ab
+ab
+ab
+bO
+bO
+bO
+dw
+dF
+dP
+bO
+ei
+ev
+eA
+eI
+eQ
+fb
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(30,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ag
+am
+at
+aD
+ag
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+bO
+ab
+cN
+cN
+da
+dx
+bB
+dQ
+bO
+ej
+bq
+bB
+bB
+eR
+bO
+ab
+ab
+ab
+bO
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(31,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ag
+am
+at
+aE
+ag
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+cO
+cX
+dj
+dy
+bB
+dR
+bO
+ek
+bq
+bB
+bB
+eS
+fc
+fk
+fq
+ab
+ft
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(32,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ag
+an
+au
+aF
+ag
+aa
+ah
+aa
+aa
+aG
+aG
+aG
+aG
+aG
+aG
+aG
+aa
+aa
+aa
+ab
+cP
+cY
+da
+dz
+dG
+dS
+bO
+el
+bs
+eC
+dO
+eT
+fc
+fl
+fr
+ab
+fu
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(33,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ag
+ag
+av
+ag
+ag
+aa
+ah
+ah
+ah
+aG
+aX
+bc
+bc
+bc
+bc
+aG
+aa
+aa
+aa
+ab
+cQ
+cZ
+ab
+ab
+ab
+ab
+ab
+em
+ew
+eD
+eJ
+eU
+bO
+fm
+fs
+ab
+fv
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(34,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+aa
+aa
+ai
+aw
+ai
+aa
+aa
+aa
+ah
+aa
+aG
+aY
+bc
+bw
+bw
+bw
+aG
+ah
+cm
+cm
+ai
+cT
+ai
+aa
+aa
+aa
+aa
+ab
+ab
+ex
+ex
+ex
+ab
+ab
+ab
+ab
+ab
+bO
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(35,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+ah
+ai
+ax
+aG
+ah
+aa
+aa
+ah
+aa
+aG
+aZ
+bc
+bx
+bx
+bx
+aG
+aa
+ah
+aa
+aG
+cU
+ai
+ah
+ah
+cm
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(36,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+ai
+ai
+aw
+ai
+ai
+ai
+ai
+aG
+ai
+ai
+ba
+bc
+by
+by
+bQ
+ai
+aG
+aG
+ai
+ai
+cT
+ai
+ai
+aa
+cm
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(37,1,1) = {"
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ai
+ao
+ay
+aH
+aJ
+ai
+aM
+aQ
+aS
+ai
+bb
+bc
+bc
+bc
+bc
+bU
+cd
+cd
+cr
+cC
+az
+dc
+aG
+ah
+cm
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(38,1,1) = {"
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ai
+ap
+az
+az
+az
+aL
+aN
+aN
+aN
+aU
+bc
+bc
+bc
+bc
+bc
+bc
+az
+az
+az
+az
+az
+dd
+aG
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(39,1,1) = {"
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ai
+ap
+az
+az
+az
+aq
+aO
+aN
+aN
+aq
+bd
+bc
+bz
+bG
+bR
+aq
+ce
+ce
+cs
+cD
+az
+dd
+aG
+ah
+cm
+cm
+cm
+cm
+cm
+cm
+cm
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(40,1,1) = {"
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ai
+aq
+aA
+aI
+aK
+aq
+aP
+aR
+aT
+aq
+aq
+bn
+aq
+aq
+aq
+aq
+cf
+aq
+aq
+cE
+az
+az
+ai
+aa
+aa
+aa
+aa
+ah
+aa
+ah
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(41,1,1) = {"
+aa
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+aq
+aq
+aq
+aq
+aq
+aq
+aq
+aq
+aq
+be
+bo
+bo
+bH
+aq
+bV
+cg
+cn
+aq
+aq
+az
+de
+ai
+ai
+ad
+aa
+ah
+ad
+ad
+ah
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(42,1,1) = {"
+aa
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+aq
+bf
+bo
+bo
+bo
+aq
+bW
+cg
+co
+aq
+cF
+az
+az
+dm
+ai
+ad
+ad
+ad
+ad
+ad
+ad
+ah
+aa
+ff
+ff
+ff
+ff
+ff
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(43,1,1) = {"
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+aq
+bg
+bo
+bo
+bI
+aq
+aq
+ch
+aq
+aq
+cG
+az
+az
+dn
+ai
+ai
+ai
+ai
+ai
+ai
+ad
+ad
+aa
+aa
+ah
+aa
+ah
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(44,1,1) = {"
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+aq
+bh
+bp
+bA
+bJ
+aq
+bX
+ci
+aq
+ct
+az
+az
+az
+do
+aG
+dJ
+dV
+eb
+ep
+ai
+ad
+ad
+ad
+ah
+ah
+ah
+ah
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(45,1,1) = {"
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+aq
+aq
+aq
+aq
+aq
+aq
+aq
+aq
+aq
+cu
+az
+az
+az
+az
+dC
+az
+az
+az
+az
+ai
+ad
+ad
+ad
+ad
+ad
+aa
+ah
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(46,1,1) = {"
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+aq
+cv
+az
+az
+az
+dp
+aG
+dK
+dW
+ec
+eq
+ai
+ad
+ad
+ad
+ad
+ad
+ad
+ah
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(47,1,1) = {"
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+aq
+cw
+az
+cV
+az
+dq
+aq
+aq
+aq
+aq
+aq
+ai
+ad
+ad
+ad
+ad
+ad
+ad
+ah
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(48,1,1) = {"
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+aq
+cx
+az
+az
+az
+dr
+aG
+dL
+dX
+dL
+aq
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(49,1,1) = {"
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+aq
+cy
+az
+az
+az
+az
+dD
+az
+az
+az
+aq
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(50,1,1) = {"
+aa
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ae
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+aq
+cz
+az
+az
+az
+ds
+aG
+az
+az
+az
+aq
+ad
+ad
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(51,1,1) = {"
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ae
+ae
+ae
+ae
+ae
+ae
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+aq
+cA
+az
+az
+az
+ds
+aq
+dL
+dY
+dL
+aq
+ad
+ad
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(52,1,1) = {"
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+ae
+ae
+ae
+ae
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+aq
+aq
+cH
+cW
+df
+aq
+aq
+aq
+aq
+aq
+aq
+ad
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(53,1,1) = {"
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+aq
+aq
+aq
+aq
+aq
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(54,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(55,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(56,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(57,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(58,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(59,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(60,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+ad
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}

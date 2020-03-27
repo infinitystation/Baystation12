@@ -51,7 +51,6 @@
 	if(T.mind?.changeling)
 		to_chat(user, SPAN_LING("Жало будет бесполезно против собрата"))
 		return
-	. = ..()
 	return 1
 
 /datum/stings/proc/try_to_sting(mob/user, mob/T)
@@ -69,13 +68,13 @@
 		return
 	switch(visible)
 		if(2)
-			user.visible_message(pick(SPAN_DANGER("[src]'s eyes balloon and burst out in a welter of blood, burrowing into [T]!"),
-									SPAN_DANGER("[src]'s arm rapidly shifts into a giant scorpion-stinger and stabs into [T]!"),
-									SPAN_DANGER("[src]'s throat lengthens and twists before vomitting a chunky red spew all over [T]!"),
-									SPAN_DANGER("[src]'s tongue stretches an impossible length and stabs into [T]!"),
-									SPAN_DANGER("[src] sneezes a cloud of shrieking spiders at [T]!"),
-									SPAN_DANGER("[src] erupts a grotesque tail and impales [T]!"),
-									SPAN_DANGER("[src]'s chin skin bulges and tears, launching a bone-dart at [T]!")))
+			user.visible_message(pick(SPAN_DANGER("[user]'s eyes balloon and burst out in a welter of blood, burrowing into [T]!"),
+									SPAN_DANGER("[user]'s arm rapidly shifts into a giant scorpion-stinger and stabs into [T]!"),
+									SPAN_DANGER("[user]'s throat lengthens and twists before vomitting a chunky red spew all over [T]!"),
+									SPAN_DANGER("[user]'s tongue stretches an impossible length and stabs into [T]!"),
+									SPAN_DANGER("[user] sneezes a cloud of shrieking spiders at [T]!"),
+									SPAN_DANGER("[user] erupts a grotesque tail and impales [T]!"),
+									SPAN_DANGER("[user]'s chin skin bulges and tears, launching a bone-dart at [T]!")))
 			to_chat(T, SPAN_WARNING("You was stinged!"))
 		if(1)
 			to_chat(user, SPAN_LING("Мы жалим [T] незаметно для окружающих и жертвы. Она чувствует лёгкий укол."))
@@ -90,7 +89,6 @@
 		if(istype(clothes) && (clothes.body_parts_covered & target_limb.body_part) && (clothes.item_flags & ITEM_FLAG_THICKMATERIAL))
 			to_chat(user, SPAN_DANGER("Жало не пробило защиту в выбранной части тела!"))
 			return //thick clothes will protect from the sting
-	. = ..()
 	return 1
 /*
 /datum/stings/proc/set_sting(mob/user)

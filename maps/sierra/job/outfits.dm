@@ -462,10 +462,6 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	id_type = /obj/item/weapon/card/id/sierra/crew/research/roboticist
 //	pda_type = /obj/item/modular_computer/pda/roboticist
 
-/decl/hierarchy/outfit/job/sierra/crew/research/scientist/psych
-	name = OUTFIT_JOB_NAME("Psychologist - Sierra")
-	uniform = /obj/item/clothing/under/rank/psych
-
 /decl/hierarchy/outfit/job/sierra/crew/research/assist
 	name = OUTFIT_JOB_NAME("Research Assistant - Sierra")
 	uniform = /obj/item/clothing/under/rank/scientist/nanotrasen
