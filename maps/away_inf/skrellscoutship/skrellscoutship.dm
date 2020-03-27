@@ -4,6 +4,7 @@
 #include "skrellscoutship_jobs.dm"
 #include "skrellscoutship_shuttles.dm"
 
+#undef WEBHOOK_SUBMAP_LOADED_SKRELL
 /datum/map_template/ruin/away_site/skrellscoutship
 	name = "Skrellian Scout Ship"
 	id = "awaysite_skrell_scout"
