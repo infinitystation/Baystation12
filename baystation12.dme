@@ -3288,6 +3288,7 @@
 #include "infinity\code\datums\uplink\hardsuit_modules.dm"
 #include "infinity\code\datums\uplink\highly_visible_and_dangerous_weapons.dm"
 #include "infinity\code\datums\uplink\implants.dm"
+#include "infinity\code\datums\uplink\services.dm"
 #include "infinity\code\datums\vote\vote.dm"
 #include "infinity\code\game\sound.dm"
 #include "infinity\code\game\antagonist\station\changeling.dm"

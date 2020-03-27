@@ -182,3 +182,9 @@
 /obj/item/weapon/storage/box/syndie_kit/jaunter
 	startswith = list(/obj/item/device/syndietele,
 					  /obj/item/device/syndiejaunter)
+
+/obj/item/weapon/storage/backpack/dufflebag/syndie_kit/l6_saw
+	startswith = list(
+		/obj/item/weapon/gun/projectile/automatic/l6_saw,
+		/obj/item/ammo_magazine/box/machinegun = 3
+		)
