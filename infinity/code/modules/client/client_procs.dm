@@ -17,7 +17,7 @@
 	// Hell
 
 	if (use_alternative == TRUE)
-		input_height = winget(src, "input", "size")
+		input_height = winget(src, "input_alt", "size")
 		input_height = text2num(splittext(input_height, "x")[2])
 		winset(src, "input_alt", "is-visible=true;is-disabled=false;is-default=true")
 		winset(src, "hotkey_toggle_alt", "is-visible=true;is-disabled=false;is-default=true")
