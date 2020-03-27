@@ -1,9 +1,9 @@
 /datum/uplink_item/item/services/assault_declaration
 	name = "Telecrystal Request"
 	desc = "An telecrystal request, which will give you boost of 450 telecrystals, but their teleportation will be detected by sensor arrays of NSV Sierra."
-	item_cost = 0
+	item_cost = 1
 	antag_roles = list(MODE_MERCENARY)
 
 /datum/uplink_item/item/services/assault_declaration/get_goods(var/obj/item/device/uplink/U, var/loc)
 	command_announcement.Announce("В секторе была замечена телепортация большого объема телекристаллов, использующихся Горлекскими Мародерами. Рекомендуется вызвать поддержку с ЦК для урегулирования ситуации.", "Показания датчиков [station_name()]" , msg_sanitized = 1, zlevels = GetConnectedZlevels(get_z(src)))
-	return new /obj/item/stack/telecrystal(loc, 450)
+	return new /obj/item/stack/telecrystal(loc, 451)
