@@ -1072,7 +1072,7 @@ window "outputwindow"
 		is-disabled = true
 		saved-params = "is-checked"
 		text = "Chat"
-		command = ".winset \"saybutton.is-checked=true?input.command=\"!say \\\"\" macrobutton.is-checked=false:input.command=\""
+		command = ".winset \"saybutton_alt.is-checked=true?input_alt.command=\"!say \\\"\" macrobutton.is-checked=false:input_alt.command=\""
 		button-type = pushbox
 	elem "input_alt"
 		type = INPUT
