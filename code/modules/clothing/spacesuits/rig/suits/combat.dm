@@ -71,7 +71,7 @@
 	icon_state = "military_rig"
 	suit_type = "military hardsuit"
 	armor = list(
-		melee = ARMOR_MELEE_VERY_MAJOR,
+		melee = ARMOR_MELEE_MAJOR,
 		bullet = ARMOR_BALLISTIC_RIFLE,
 		laser = ARMOR_LASER_HANDGUNS,
 		energy = ARMOR_ENERGY_SMALL,
@@ -112,7 +112,7 @@
 		)
 
 /obj/item/clothing/gloves/rig/military
-	item_flags = ITEM_FLAG_THICKMATERIAL | ITEM_FLAG_NOCUFFS
+	item_flags = ITEM_FLAG_THICKMATERIAL
 	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_UNATHI)
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_hands_unathi.dmi'
@@ -121,12 +121,7 @@
 /obj/item/weapon/rig/military/equipped
 	initial_modules = list(
 		/obj/item/rig_module/mounted/egun,
-		/obj/item/rig_module/vision/multi,
-		/obj/item/rig_module/grenade_launcher,
-		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/power_sink,
-		/obj/item/rig_module/electrowarfare_suite,
 		/obj/item/rig_module/chem_dispenser/combat,
 		/obj/item/rig_module/cooling_unit,
-		/obj/item/rig_module/device/healthscanner
 		)
