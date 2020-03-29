@@ -59,3 +59,10 @@
 	item_cost = 42
 	path = /obj/item/weapon/storage/box/syndie_kit/jaunter
 	desc = "Special device and beacon, useful to escape from thet red shirts. Don't forget to link jaunter to the beacon!"
+
+/datum/uplink_item/item/tools/stimpack
+	name = "Stimpack"
+	desc = "Autoinjector, containing 5u of experimental stimulants."
+	item_cost = 18
+	antag_costs = list(MODE_MERCENARY = 12)
+	path = /obj/item/weapon/reagent_containers/hypospray/autoinjector/stimpack

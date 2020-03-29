@@ -3590,6 +3590,7 @@
 #include "infinity\code\modules\reagents\reagent_containers\food\snacks.dm"
 #include "infinity\code\modules\reagents\reagent_containers\food\drinks\bottle.dm"
 #include "infinity\code\modules\reagents\reagent_containers\food\drinks\champagne.dm"
+#include "infinity\code\modules\reagents\reagents_containers\hypospray.dm"
 #include "infinity\code\modules\reagents\reagents_containers\food\drinks\bottle.dm"
 #include "infinity\code\modules\research\stock_parts.dm"
 #include "infinity\code\modules\research\designs\designs_bluespace.dm"
