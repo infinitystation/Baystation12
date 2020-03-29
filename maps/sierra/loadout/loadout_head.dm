@@ -25,5 +25,6 @@
 	beret_selection_type["white-red corporight security beret"] = /obj/item/clothing/head/beret/sec/corporate/whitered
 	beret_selection_type["SAARE beret"] = /obj/item/clothing/head/beret/sec/corporate/saare
 	beret_selection_type["PCRC beret"] = /obj/item/clothing/head/beret/sec/corporate/pcrc
+	beret_selection_type["ZPCI beret"] = /obj/item/clothing/head/beret/sec/corporate/zpci
 	gear_tweaks += new/datum/gear_tweak/path(beret_selection_type)
 
