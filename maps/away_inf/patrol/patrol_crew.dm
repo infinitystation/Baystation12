@@ -109,7 +109,7 @@
 /decl/hierarchy/outfit/job/patrol
 	hierarchy_type = /decl/hierarchy/outfit/job/patrol
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/away_solpatrol
-	shoes = /obj/item/clothing/shoes/workboots
+	shoes = /obj/item/clothing/shoes/dutyboots
 	l_ear = /obj/item/device/radio/headset/rescue
 	l_pocket = /obj/item/device/radio
 	r_pocket = /obj/item/weapon/crowbar/prybar
