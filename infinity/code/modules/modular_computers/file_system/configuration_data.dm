@@ -16,5 +16,5 @@
 
 /datum/computer_file/data/config/main/New()
 	. = ..()
-	stored_data += "[TELNETPASS_SETTING]:ROOT@[rand(1000, 9999)]<br>"
+	stored_data += "[MODULAR_CONFIG_REMCON_SETTING]:ROOT@[rand(1000, 9999)]<br>"
 

@@ -1,0 +1,8 @@
+{
+  "ckey" :            "kek4ik228",
+  "character_name" :  "Bruce Campton",
+  "item_name" :       "M5c Vanessa knife",
+  "item_desc" :       "A custom variant of M5 bayonet knife. This one has a strong red-coloured rubber handle, a bit elongated blade, which is stained in not-friendly colours on its point and edges. Also, there is a small engraving on the handle reading: 'From Vinnie'.",
+  "item_icon_state" : "kek4ik228_knife",
+  "item_path" :       "/obj/item/weapon/material/knife"
+  }

@@ -26,5 +26,5 @@
 
 #define COLOR_CONCRETE         "#d3d3d3"
 
-#define COLOR_WEBHOOK_DEV 0xff9900
-#define COLOR_WEBHOOK_BAN 0xcc0000
+#define COLOR_WEBHOOK_DEV 0xff8000
+#define COLOR_WEBHOOK_BAN 0xff0000

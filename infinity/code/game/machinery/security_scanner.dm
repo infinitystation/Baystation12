@@ -145,7 +145,7 @@
 	icon_state = "scanner_[on ? "on" : "off"]"
 
 /obj/machinery/security_scanner/Crossed(atom/movable/A)
-	if(A in subtypesof(/mob/living/bot))		// Ignore that small shit
+	if(isbot(A))		// Ignore that small shit
 		return ..()
 	if(anchored && on && !stat)
 		if(isliving(A))
@@ -216,6 +216,11 @@
 		.["level"] -= 2
 	// A proper CentCom id is hard currency.
 	else if(id && istype(id, /obj/item/weapon/card/id/centcom))
+		.["level"] = SCANNER_THREAT_RESET
+		return
+
+	// Cyborg scanning feature will start here... someday
+	if(issilicon(target))
 		.["level"] = SCANNER_THREAT_RESET
 		return
 
