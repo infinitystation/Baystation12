@@ -21,6 +21,7 @@
 		/datum/species/human/vatgrown		= list(SPECIAL_XENOS_ONLY_JOBS),
 		/datum/species/human/tritonian		= list(SPECIAL_XENOS_ONLY_JOBS),
 		/datum/species/human/booster		= list(SPECIAL_XENOS_ONLY_JOBS),
+		/datum/species/resomi				= list(/datum/job/captain, /datum/job/hos, /datum/job/officer, /datum/job/warden),
 		/datum/species/diona   		 = list(SPECIAL_XENOS_ONLY_JOBS, /datum/job/exploration_leader, /datum/job/explorer_pilot,\
 									/datum/job/officer, /datum/job/warden, /datum/job/detective, /datum/job/iaa,\
 									/datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer,/datum/job/qm,\
