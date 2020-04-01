@@ -74,12 +74,6 @@
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 
-/datum/job/detective/equip(var/mob/living/carbon/human/H)
-	. = ..()
-	if(.)
-		to_chat(H, SPAN_DANGER("У вас имплант лояльности. Вы не можете действовать против командования и корпоративных регуляций!"))
-		H.implant_loyalty(H)
-
 /datum/job/officer
 	title = "Security Guard"
 	department = "Security"
@@ -116,10 +110,3 @@
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
-
-/datum/job/officer/equip(var/mob/living/carbon/human/H)
-	. = ..()
-	if(.)
-		to_chat(H, SPAN_DANGER("У вас имплант лояльности. Вы не можете действовать против командования и корпоративных регуляций!"))
-		H.implant_loyalty(H)
-
