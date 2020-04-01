@@ -15,7 +15,12 @@
 	/datum/job/cmo, /datum/job/chief_engineer, /datum/job/exploration_leader, /datum/job/senior_engineer,\
 	/datum/job/senior_scientist, /datum/job/qm, /datum/job/warden
 	species_to_job_blacklist = list(
-		/datum/species/human  		 = list(SPECIAL_XENOS_ONLY_JOBS),
+		/datum/species/human  		 		= list(SPECIAL_XENOS_ONLY_JOBS),
+		/datum/species/human/gravworlder	= list(SPECIAL_XENOS_ONLY_JOBS),
+		/datum/species/human/spacer			= list(SPECIAL_XENOS_ONLY_JOBS),
+		/datum/species/human/vatgrown		= list(SPECIAL_XENOS_ONLY_JOBS),
+		/datum/species/human/tritonian		= list(SPECIAL_XENOS_ONLY_JOBS),
+		/datum/species/human/booster		= list(SPECIAL_XENOS_ONLY_JOBS),
 		/datum/species/diona   		 = list(SPECIAL_XENOS_ONLY_JOBS, /datum/job/exploration_leader, /datum/job/explorer_pilot,\
 									/datum/job/officer, /datum/job/warden, /datum/job/detective, /datum/job/iaa,\
 									/datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer,/datum/job/qm,\
