@@ -1,5 +1,11 @@
 /datum/uplink_item/item/grenades/gluon
-	name = "Gluon Grenade"
-	item_cost = 24
+	name = "1x Gluon Grenade"
+	item_cost = 18
 	antag_roles = list(MODE_MERCENARY)
 	path = /obj/item/weapon/grenade/chem_grenade/gluon
+
+/datum/uplink_item/item/grenades/gluons
+	name = "5x Gluon Grenades"
+	item_cost = 70
+	antag_roles = list(MODE_MERCENARY)
+	path = /obj/item/weapon/storage/box/syndie_kit/gluon

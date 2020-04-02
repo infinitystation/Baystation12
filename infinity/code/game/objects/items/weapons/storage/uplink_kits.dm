@@ -188,3 +188,8 @@
 		/obj/item/weapon/gun/projectile/automatic/l6_saw,
 		/obj/item/ammo_magazine/box/machinegun = 3
 		)
+
+/obj/item/weapon/storage/box/syndie_kit/gluon
+	name = "box of gluon grenades"
+	desc = "A box containing 5 gluon grenades."
+	startswith = list(/obj/item/weapon/grenade/chem_grenade/gluon = 5)
