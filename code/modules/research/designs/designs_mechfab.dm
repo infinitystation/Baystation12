@@ -540,3 +540,50 @@
 	materials = list(DEFAULT_WALL_MATERIAL = 30000, "glass" = 5000, "silver" = 1000)
 	id = "null _suit"
 	time = 120
+
+//[INF]
+/datum/design/item/mechfab/rig/industrial
+	category = "Hardsuits"
+	name = "Industrial suit control module"
+	build_path = /obj/item/weapon/rig/industrial
+	materials = list(DEFAULT_WALL_MATERIAL = 75000, "glass" = 1000,)
+	req_tech = list(TECH_MATERIAL = 6, TECH_MAGNET = 3, TECH_COMBAT = 4,TECH_POWER = 5)
+	id = "industrial _suit"
+	time = 120
+
+/datum/design/item/mechfab/rig/medical
+	category = "Hardsuits"
+	name = "Rescue suit control module"
+	build_path = /obj/item/weapon/rig/medical
+	materials = list(DEFAULT_WALL_MATERIAL = 30000, "glass" = 5000, "silver" = 4000, "gold" = 4000)
+	req_tech = list(TECH_MATERIAL = 4, TECH_COMBAT = 3, TECH_MAGNET = 3, TECH_BIO = 6,TECH_POWER = 5)
+	id = "medical _suit"
+	time = 120
+
+/datum/design/item/mechfab/rig/hazard
+	category = "Hardsuits"
+	name = "Hazard hardsuit control module"
+	build_path = /obj/item/weapon/rig/hazard
+	materials = list(DEFAULT_WALL_MATERIAL = 50000, "glass" = 25000, "silver" = 1500, "gold" = 1500, "diamond" = 1000)
+	req_tech = list(TECH_MATERIAL = 6, TECH_COMBAT = 5, TECH_MAGNET = 4, TECH_BIO = 2,TECH_POWER = 5)
+	id = "hazard _suit"
+	time = 120
+
+/datum/design/item/mechfab/rig/combat
+	category = "Hardsuits"
+	name = "combat hardsuit control module"
+	build_path = /obj/item/weapon/rig/combat
+	materials = list(DEFAULT_WALL_MATERIAL = 100000, "glass" = 50000, "silver" = 10000, "gold" = 10000, "diamond" = 5000)
+	req_tech = list(TECH_MATERIAL = 7, TECH_COMBAT = 6, TECH_MAGNET = 6, TECH_BIO = 4,TECH_POWER = 6, TECH_ESOTERIC = 2, TECH_ENGINEERING = 7)
+	id = "combat _suit"
+	time = 600
+
+/datum/design/item/mechfab/rig/military
+	category = "Hardsuits"
+	name = "military hardsuit control module"
+	build_path = /obj/item/weapon/rig/military
+	materials = list(DEFAULT_WALL_MATERIAL = 100000, "glass" = 50000, "silver" = 25000, "gold" = 25000, "diamond" = 15000, "uranium" = 5000)
+	req_tech = list(TECH_MATERIAL = 7, TECH_COMBAT = 6, TECH_MAGNET = 6, TECH_BIO = 6,TECH_POWER = 6, TECH_ESOTERIC = 4, TECH_ENGINEERING = 7, TECH_DATA = 5)
+	id = "military _suit"
+	time = 1200
+//[/INF]
