@@ -22,7 +22,7 @@
 /obj/item/weapon/grenade/frag/ied/attackby(var/obj/item/I, var/mob/user)
 	if(isWrench(I))
 		open_panel = !open_panel
-		to_chat(user, "<span class='notice'>You [open_panel ? "open" : "close"] the wire panel.</span>")
+		to_chat(user, SPAN_NOTICE("You [open_panel ? "open" : "close"] the wire panel."))
 	else if(isWirecutter(I) || isMultitool(I) || istype(I, /obj/item/device/assembly/signaler ))
 		wires.Interact(user)
 	else
