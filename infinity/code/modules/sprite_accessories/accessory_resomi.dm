@@ -40,6 +40,10 @@
 	name = "Resomi Mane"
 	icon_state = "resomi_mane"
 
+/datum/sprite_accessory/hair/resomi/mane_beardless
+	name = "Resomi Large Ears"
+	icon_state = "resomi_mane_beardless"
+
 /datum/sprite_accessory/hair/resomi/droopy
 	name = "Resomi Droopy"
 	icon_state = "resomi_droopy"
