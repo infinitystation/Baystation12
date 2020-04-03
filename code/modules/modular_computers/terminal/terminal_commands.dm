@@ -214,7 +214,7 @@ inf*/
 
 //[/INF]
 
-/*INF COMMENT, telnet replacing it, cuz IT-workers love to troll users though it //It can 'cause some balance.
+/*INF COMMENT, ntsh replacing it, cuz IT-workers love to troll users though it //It can 'cause some balance.
 /datum/terminal_command/ssh
 	name = "ssh"
 	man_entry = list("Format: ssh nid", "Opens a remote terminal at the location of nid, if a valid device nid is specified.")
@@ -386,39 +386,41 @@ inf*/
 		return
 	return "session: Wrong input. Enter man session for syntax help."
 
-/datum/terminal_command/telnet
-	name = "telnet"
-	man_entry = list("Format: telnet \[NID] \[LOGIN] \[PASSWORD].",
-					"Access remote terminal by login and password")
-	pattern = "^telnet"
+/datum/terminal_command/ntsh
+	name = "ntsh"
+	man_entry = list(
+					"NanoTrasen Secure Shell, a secure remote access protocol.",
+					"Format: ntsh \[NID] \[LOGIN] \[PASSWORD].",
+					"Connects to a remote terminal.")
+	pattern = "^ntsh"
 
-/datum/terminal_command/telnet/proper_input_entered(text, mob/user, datum/terminal/terminal)
+/datum/terminal_command/ntsh/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/datum/extension/interactive/ntos/CT = terminal.computer
 	var/list/T = splittext(text, " ")
 	T = T.Copy(2)
 
 	var/obj/item/weapon/stock_parts/computer/network_card/NC = CT.get_component(PART_NETWORK)
 	if(!NC)
-		return "telnet: unable to connect to the remote terminal"
+		return "[name]: unable to connect to the remote terminal"
 
-	if(!T?.len) return "telnet: error, not enough arguments."
-	if(istype(terminal, /datum/terminal/remote)) return "telnet is not supported on remote terminals."
+	if(!T?.len) return "[name]: error, not enough arguments."
+	if(istype(terminal, /datum/terminal/remote)) return "[name] is not supported on remote terminals."
 
 	var/nid = T[1]
 	nid = text2num(nid)
 	var/datum/extension/interactive/ntos/comp = ntnet_global.get_os_by_nid(nid)
 
-	if(!CT?.get_ntnet_status() && comp?.get_ntnet_status())	return "telnet: 0x12932910 (Network Error) Unable to establishe connection."
-	if(CT == comp)											return "telnet: unable to open remote terminal to self."
+	if(!CT?.get_ntnet_status() && comp?.get_ntnet_status())	return "[name]: 0x12932910 (Network Error) Unable to establishe connection."
+	if(CT == comp)											return "[name]: unable to open remote terminal to self."
 
 	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = comp.get_component(PART_HDD)
 	if(!HDD)
-		return "telnet: no local storage found"
+		return "[name]: no local storage found"
 	if(!HDD.check_functionality())
-		return "telnet: Access attempt to local storage failed. Check integrity of your hard drive"
+		return "[name]: Access attempt to local storage failed. Check integrity of your hard drive"
 	var/datum/computer_file/data/config/cfg_file = HDD.find_file_by_name("config")
 	if(cfg_file)
-		var/list/loginpassword = splittext(cfg_file.get_setting(TELNETPASS_SETTING),"@")
+		var/list/loginpassword = splittext(cfg_file.get_setting(MODULAR_CONFIG_REMCON_SETTING),"@")
 		if(loginpassword && loginpassword.len >= 2)
 			var/login = loginpassword[1]
 			var/password = loginpassword[2]
@@ -427,17 +429,17 @@ inf*/
 					var/datum/terminal/remote/new_term = new (user, comp, CT)
 					LAZYADD(comp.terminals, new_term)
 					LAZYADD(CT.terminals, new_term)
-					ntnet_global.add_log("[NC.get_network_tag()] open telnet tunnel to [NC.get_network_tag()]")
-					return "telnet: <font color='#00ff00'>Connection established with login: [login], and password: [password].</font>"
-				else return "<font color='#ff0000'>telnet: INCORRECT PASSWORD.</font>"
-			else return "<font color='#ff0000'>telnet: INCORRECT LOGIN.</font>"
-		else return "telnet: login and password needed."
+					ntnet_global.add_log("[NC.get_network_tag()] open [name] tunnel to [NC.get_network_tag()]")
+					return "[name]: <font color='#00ff00'>Connection established with login: [login], and password: [password].</font>"
+				else return "<font color='#ff0000'>[name]: INCORRECT PASSWORD.</font>"
+			else return "<font color='#ff0000'>[name]: INCORRECT LOGIN.</font>"
+		else return "[name]: login and password needed."
 	else
 		var/datum/terminal/remote/new_term = new(user, comp, CT)
 		LAZYADD(comp.terminals, new_term)
 		LAZYADD(CT.terminals, new_term)
-		ntnet_global.add_log("[NC.get_network_tag()] open telnet tunnel to [NC.get_network_tag()]")
-		return "telnet: Connection established."
+		ntnet_global.add_log("[NC.get_network_tag()] open [name] tunnel to [NC.get_network_tag()]")
+		return "[name]: Connection established."
 
 /datum/terminal_command/remove
 	name = "remove"
@@ -448,19 +450,19 @@ inf*/
 /datum/terminal_command/remove/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = terminal.computer.get_component(PART_HDD)
 	if(!HDD)
-		return "<font color='#ffa000'>remove: hard drive is missed.</font>"
+		return "<font color='#ffa000'>[name]: hard drive is missed.</font>"
 	if(!HDD.check_functionality())
-		return "<font color='#ffa000'>remove: Access attempt to local storage failed. Check integrity of your hard drive</font>"
+		return "<font color='#ffa000'>[name]: Access attempt to local storage failed. Check integrity of your hard drive</font>"
 	var/file_name = copytext(text, 8)
 	var/file_obj = HDD.find_file_by_name(file_name)
 	if(file_obj in HDD.stored_files)
 		HDD.remove_file(file_obj)
-		return "<font color='#00ff00'>remove: [file_name] removed.</font>"
+		return "<font color='#00ff00'>[name]: [file_name] removed.</font>"
 	else if(!copytext(text, 7))
-		return "<font color='#ffa000'>remove: input filename.</font>"
+		return "<font color='#ffa000'>[name]: input filename.</font>"
 	else
-		return"<font color = '#ff0000'>remove: file not found.</font>"
-	return "remove: something wrong"
+		return"<font color = '#ff0000'>[name]: file not found.</font>"
+	return "[name]: something wrong"
 
 /datum/terminal_command/echo
 	name = "echo"
@@ -475,34 +477,34 @@ inf*/
 	var/option = copytext(text, 6, 8)
 	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = terminal.computer.get_component(PART_HDD)
 	if(!HDD)
-		return "<font color='#ff0000'>echo: hard drive is missed.</font>"
+		return "<font color='#ff0000'>[name]: hard drive is missed.</font>"
 	if(!HDD.check_functionality())
-		return "<font color='#ff0000'>echo: check integrity of your hard drive.</font>"
+		return "<font color='#ff0000'>[name]: check integrity of your hard drive.</font>"
 
 	if(option == "-s")
 		var/datum/computer_file/setted_file_by_command = HDD.find_file_by_name(copytext(text, 9))
 		if(!istype(setted_file_by_command, /datum/computer_file/data)) return "<font color='#ffa000'>Can't set on binary files.</font>"
 		if(length(setted_file_by_command.filename) != 0)
 			terminal.setted_file = setted_file_by_command
-			return "<font color='#00ff00'>echo: file [terminal.setted_file.filename] successfuly setted.</font>"
-		return "<font color='#ffa000'>echo: file not found.</font>"
+			return "<font color='#00ff00'>[name]: file [terminal.setted_file.filename] successfuly setted.</font>"
+		return "<font color='#ffa000'>[name]: file not found.</font>"
 
 	if(option == "-a")
 		if(terminal.setted_file)
 			var/writening_data = copytext(text, 9)
 			terminal.setted_file.stored_data += writening_data
-			return "<font color='#00ff00'>echo: '[writening_data]' successfuly writen in [terminal.setted_file.filename].</font><br>Now file contain: [terminal.setted_file.stored_data]"
-		else return "<font color='#ffa000'>echo: file is not setted.</font>"
+			return "<font color='#00ff00'>[name]: '[writening_data]' successfuly writen in [terminal.setted_file.filename].</font><br>Now file contain: [terminal.setted_file.stored_data]"
+		else return "<font color='#ffa000'>[name]: file is not setted.</font>"
 
 	var/file_name = copytext(text, 6)
-	if(!file_name) return "<font color='#ffa000'>echo: enter filename.</font>"
+	if(!file_name) return "<font color='#ffa000'>[name]: enter filename.</font>"
 	var/file = HDD.find_file_by_name(file_name)
-	if(!(file in HDD.stored_files)) return "<font color='#ffa000'>echo: file not found.</font>"
-	if(!istype(file, /datum/computer_file/data)) return "<font color='#ffa000'>echo: file is binary.</font>"
+	if(!(file in HDD.stored_files)) return "<font color='#ffa000'>[name]: file not found.</font>"
+	if(!istype(file, /datum/computer_file/data)) return "<font color='#ffa000'>[name]: file is binary.</font>"
 	var/datum/computer_file/data/end_file = file
-	if(!end_file.stored_data) return "<font color='#ff0000'>echo: file empty.</font>"
+	if(!end_file.stored_data) return "<font color='#ff0000'>[name]: file empty.</font>"
 	var/echo_data = end_file.stored_data
-	return "echo: file store: [echo_data]"
+	return "[name]: file store: [echo_data]"
 
 /datum/terminal_command/probenet
 	name = "probenet"
@@ -511,9 +513,9 @@ inf*/
 
 /datum/terminal_command/probenet/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/obj/item/weapon/stock_parts/computer/network_card/NC = terminal.computer.get_component(PART_NETWORK)
-	if(!NC) return "<font color='#ffa000'>probenet: network card not found.</font>"
-	if(!NC.check_functionality()) return "<font color='#ff0000'>probenet: check network card interity.</font>"
-	if(!terminal.computer.get_ntnet_status()) return "probenet: network card can't connect to network."
+	if(!NC) return "<font color='#ffa000'>[name]: network card not found.</font>"
+	if(!NC.check_functionality()) return "<font color='#ff0000'>[name]: check network card interity.</font>"
+	if(!terminal.computer.get_ntnet_status()) return "[name]: network card can't connect to network."
 
 	var/list/NIDS = list()
 	var/total = 0
@@ -524,7 +526,7 @@ inf*/
 				continue
 			NIDS += "[comp_NC.identification_id]"
 			total += 1
-	. += "<font color='#00ff00'>probenet: online NIDs:</font> | [NIDS.Join(" | ")] |<br><font color='00ff00'>Total online:</font> [total]."
+	. += "<font color='#00ff00'>[name]: online NIDs:</font> | [NIDS.Join(" | ")] |<br><font color='00ff00'>Total online:</font> [total]."
 
 //BATCH Compilator
 /datum/terminal_command/alias
@@ -541,9 +543,9 @@ inf*/
 
 	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = terminal.computer.get_component(PART_HDD)
 	if(!HDD)
-		return "<font color='00ff00'>alias: local storage is missed.</font>"
+		return "<font color='00ff00'>[name]: local storage is missed.</font>"
 	if(!HDD.check_functionality())
-		return "<font color='00ff00'>alias: check integrity of your hard drive.</font>"
+		return "<font color='00ff00'>[name]: check integrity of your hard drive.</font>"
 
 	if(option == "-cr")
 		if(copytext(text, 11, 15) == "-bat")
@@ -552,26 +554,26 @@ inf*/
 				var/datum/computer_file/data/coding/batch/B = new()
 				B.filename = ent_filename
 				HDD.store_file(B)
-				return "<font color='00ff00'>alias: file '[B.filename]' was created.</font>"
+				return "<font color='00ff00'>[name]: file '[B.filename]' was created.</font>"
 			else
-				return "<font color='#ffa000'>alias: error, expected file name.</font>"
-		return "<font color='#ffa000'>alias: language marking option not found.</font>"
+				return "<font color='#ffa000'>[name]: error, expected file name.</font>"
+		return "<font color='#ffa000'>[name]: language marking option not found.</font>"
 
 
 	if(option == "-mn")
 		if(copytext(text, 11, 15) == "-bat")
 			var/datum/computer_file/data/text/batch_manual/BRM = new()
 			HDD.store_file(BRM)
-			return "alias: batch manual created."
+			return "[name]: batch manual created."
 
 
 	if(option == "-ex")
 		var/inp_file_name = copytext(text, 11)
 		if(length(inp_file_name) != 0)
 			var/datum/computer_file/data/coding/batch/F = HDD.find_file_by_name(inp_file_name)
-			if(F.filetype != "BAT") return "<font color='#ffa000'>alias: incorrect file. Expected batch file.</font>"
+			if(F.filetype != "BAT") return "<font color='#ffa000'>[name]: incorrect file. Expected batch file.</font>"
 			var/code = F.stored_data
-			if(!(";" in code)) return "<font color='ff0000'>alias: compile error, lack this ';'.</font>"
+			if(!(";" in code)) return "<font color='ff0000'>[name]: compile error, lack this ';'.</font>"
 			code = replacetext(code, " \[br]","")
 			code = replacetext(code, "\[br]","")
 
@@ -579,11 +581,11 @@ inf*/
 
 			for(var/i in code_list)
 				var/output = terminal.parse(i, user)
-				terminal.history += "<br>alias << [i]"
+				terminal.history += "<br>[name] << [i]"
 				terminal.history += "terminal >> [output]"
-			return "<font color='00ff00'>alias: execution complite.</font>"
+			return "<font color='00ff00'>[name]: execution complite.</font>"
 
-	return "alias: options not found."
+	return "[name]: options not found."
 ///BATCH Compilator
 
 //remote door control
@@ -600,13 +602,13 @@ inf*/
 /datum/terminal_command/connect/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/list/txt = splittext(text, " ")
 	if(length(txt) == 1)
-		return "connect: syntax error. Use 'man connect'"
+		return "[name]: syntax error. Use 'man [name]'"
 	var/override = 0
 	var/airlock_override_code = ""
 	var/decl/security_state/sec_code = decls_repository.get_decl(GLOB.using_map.security_state)
 	var/obj/item/weapon/stock_parts/computer/network_card/NC = terminal.computer.get_component(PART_NETWORK)
-	if(!NC) return "connect: network card not found."
-	if(!NC.check_functionality()) return "connect: check network card interity."
+	if(!NC) return "[name]: network card not found."
+	if(!NC.check_functionality()) return "[name]: check network card interity."
 
 	var/obj/machinery/door/airlock/DOOR = terminal.get_airlock_by_ID(txt[2])
 	if(DOOR && NC.check_functionality())
@@ -651,39 +653,39 @@ inf*/
 
 				//ACCESS CHECK
 				if(!has_access(DOOR.req_access, user.GetAccess()) && !override)
-					return "connect: <font color = '#ff0000'>ACCESS ERROR.</font>"
+					return "[name]: <font color = '#ff0000'>ACCESS ERROR.</font>"
 				else
 					switch(txt[3])
 						//density
 						if("-open")
 							if(!DOOR.open())
-								. += "connect: unable to open airlock, maybe it bolted or already opened or lack for energy."
+								. += "[name]: unable to open airlock, maybe it bolted or already opened or lack for energy."
 								return
-							. += "connect: Airlock with id([txt[2]]) was opened."
+							. += "[name]: Airlock with id([txt[2]]) was opened."
 							return
 						if("-close")
 							DOOR.close()
 							if(!DOOR.density)
-								. += "connect: unable to close airlock, maybe it bolted or already closed or lack for energy."
+								. += "[name]: unable to close airlock, maybe it bolted or already closed or lack for energy."
 								return
-							. += "connect: Airlock with id([txt[2]]) was closed."
+							. += "[name]: Airlock with id([txt[2]]) was closed."
 							return
 
 						//bolts
 						if("-lock")
 							if(!DOOR.lock())
-								. += "connect: unable to close airlock, maybe it bolted or already locked or lack for energy."
+								. += "[name]: unable to close airlock, maybe it bolted or already locked or lack for energy."
 								return
-							. += "connect: Airlock with id([txt[2]]) was locked."
+							. += "[name]: Airlock with id([txt[2]]) was locked."
 							return
 						if("-unlock")
 							if(!DOOR.unlock())
-								. += "connect: unable to close airlock, maybe it bolted or already unlocked or lack for energy."
+								. += "[name]: unable to close airlock, maybe it bolted or already unlocked or lack for energy."
 								return
-							. += "connect: Airlock with id([txt[2]]) was unlocked."
+							. += "[name]: Airlock with id([txt[2]]) was unlocked."
 							return
 		else
-			return "connect: <font color = '#ff0000'>ERROR</font>: Unable to establish a stable NTNet connection with airlock."
+			return "[name]: <font color = '#ff0000'>ERROR</font>: Unable to establish a stable NTNet connection with airlock."
 	else
-		return "connect: <font color = '#ff0000'>ERROR 404:</font>: Unable to found airlock."
+		return "[name]: <font color = '#ff0000'>ERROR 404:</font>: Unable to found airlock."
 //[/INFINITY]_______________________________________________________________________________________________________________

@@ -5,7 +5,7 @@
 
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Research Director"
+	supervisors = "Директором Исследований"
 	selection_color = "#633d63"
 	economic_power = 12
 	minimal_player_age = 10
@@ -48,7 +48,7 @@
 	department_flag = SCI
 	total_positions = 6
 	spawn_positions = 6
-	supervisors = "the Research Director"
+	supervisors = "Директором Исследований и Старшим Исследователем"
 	economic_power = 10
 	ideal_character_age = 45
 	alt_titles = list(
@@ -97,7 +97,7 @@
 
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Research Director"
+	supervisors = "Директором Исследований и Старшим Исследователем"
 	selection_color = "#633d63"
 	economic_power = 6
 	alt_titles = list(
@@ -149,7 +149,7 @@
 
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "the Research Director and Science Personnel"
+	supervisors = "Директором Исследований и остальным научным персоналом"
 	selection_color = "#633d63"
 	economic_power = 3
 	ideal_character_age = 30

@@ -10,7 +10,7 @@
 		winset(src, "mainwindow.mainvsplit", "pos=3x0")
 	winset(src, "mainwindow", "is-maximized=true")
 //	fit_viewport()
-
+/*
 /client/proc/update_chat_position(use_alternative)
 	var/input_height = 0
 
@@ -55,7 +55,7 @@
 		new_size = "[current_size[1]]x[text2num(current_size[2]) - input_height]"
 		winset(src, "mainwindow.mainvsplit", "size=[new_size]")
 //	fit_viewport()
-
+*/
 /client/verb/fit_viewport()
 	set name = "Fit Viewport"
 	set category = "OOC"

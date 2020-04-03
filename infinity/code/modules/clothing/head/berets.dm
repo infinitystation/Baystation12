@@ -80,3 +80,10 @@
 	icon = 'infinity/icons/obj/clothing/obj_head.dmi'
 	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
 	icon_state = "corporate_beret_whitered"
+
+/obj/item/clothing/head/beret/sec/corporate/zpci
+	name = "ZPCI beret"
+	desc = "Black beret with blue ZPCI logo, typically worn by company's employees."
+	icon = 'infinity/icons/obj/clothing/obj_head.dmi'
+	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
+	icon_state = "corporate_beret_ZPCI"

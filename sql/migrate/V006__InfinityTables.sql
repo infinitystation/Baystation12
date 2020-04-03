@@ -46,5 +46,6 @@ CREATE TABLE `erro_admin_tickets` (
   `status` enum('OPEN','CLOSED','SOLVED','TIMED_OUT') NOT NULL,
   `round` varchar(32),
   `inround_id` int(11),
+  `open_date` date,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

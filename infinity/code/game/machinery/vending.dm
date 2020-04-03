@@ -256,11 +256,10 @@
 					/obj/item/clothing/under/sl_suit = 2,
 					/obj/item/clothing/under/waiter = 2,
 					/obj/item/clothing/under/rank/vice = 2,
-					/obj/item/clothing/under/blazer = 2)
+					/obj/item/clothing/under/blazer = 2,
+					/obj/item/clothing/under/mime = 1,
+					/obj/item/clothing/under/sexymime = 1,
+					/obj/item/clothing/under/harness = 1,
+					/obj/item/clothing/under/stripper/mankini = 1)
 
-	contraband = list(/obj/item/clothing/under/rank/clown = 1,
-					  /obj/item/clothing/under/sexyclown = 1,
-					  /obj/item/clothing/under/mime = 1,
-					  /obj/item/clothing/under/sexymime = 1,
-					  /obj/item/clothing/under/harness = 1,
-					  /obj/item/clothing/under/stripper/mankini = 1)
+	contraband = list()

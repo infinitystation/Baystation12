@@ -2,7 +2,7 @@
 	title = "Senior Engineer"
 	department = "Engineering"
 	department_flag = ENG
-	supervisors = "the Chief Engineer"
+	supervisors = "Главным Инженером"
 	selection_color = "#5b4d20"
 
 	total_positions = 1
@@ -51,7 +51,7 @@
 	title = "Engineer"
 	department = "Engineering"
 	department_flag = ENG
-	supervisors = "the Chief Engineer and the Senior Engineer"
+	supervisors = "Главным и Старшим инженерами"
 	selection_color = "#5b4d20"
 
 	total_positions = 4
@@ -108,7 +108,7 @@
 	title = "Engineer Trainee"
 	department = "Engineering"
 	department_flag = ENG
-	supervisors = "the Chief Engineer and Engineering Personnel"
+	supervisors = "Главным и остальными инженерами"
 	selection_color = "#5b4d20"
 
 	total_positions = 2
@@ -156,7 +156,7 @@
 	title = "Information Technician"
 	department = "Engineering"
 	department_flag = ENG
-	supervisors = "the Chief Engineer and the Senior Engineer"
+	supervisors = "Главным и Старшим инженерами"
 	selection_color = "#5b4d20"
 
 	total_positions = 1

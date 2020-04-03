@@ -269,7 +269,7 @@ var/global/datum/ntnet/ntnet_global = new()
 		if(user.mind)
 			user.mind.initial_email_login["login"] = EA.login
 			user.mind.initial_email_login["password"] = EA.password
-			user.StoreMemory("Your email account address is [EA.login] and the password is [EA.password].", /decl/memory_options/system)
+			user.StoreMemory("Адрес Вашего почтового аккаунта <b>[EA.login]</b>, а его пароль <b>[EA.password]<b>.<br>", /decl/memory_options/system)
 		if(issilicon(user))
 			var/mob/living/silicon/S = user
 			var/datum/nano_module/email_client/my_client = S.get_subsystem_from_path(/datum/nano_module/email_client)
