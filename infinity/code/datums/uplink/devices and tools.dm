@@ -66,3 +66,9 @@
 	item_cost = 18
 	antag_costs = list(MODE_MERCENARY = 12)
 	path = /obj/item/weapon/reagent_containers/hypospray/autoinjector/stimpack
+
+/datum/uplink_item/item/tools/radlaser
+	name = "Radioactive Microlaser"
+	item_cost = 18
+	path = /obj/item/device/scanner/health/syndie
+	desc = "A tiny microlaser, hidden in health analyzer, that can irradiate your targets."

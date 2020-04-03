@@ -6,6 +6,8 @@
 	item_state = "signaler"
 	origin_tech = list(TECH_BLUESPACE = 4, TECH_ESOTERIC = 3)
 
+	w_class = ITEM_SIZE_NORMAL
+
 	var/animation_icon = 'infinity/icons/effects/bs_silk.dmi'
 	var/back_animation = "silc_teleport_back"
 	var/onhub_animation = "silc_get_hub"
@@ -28,6 +30,7 @@
 	icon = 'infinity/icons/obj/syndiejaunter.dmi'
 	icon_state = "jaunter"
 	item_state = "jaunter"
+	w_class = ITEM_SIZE_SMALL
 	var/obj/item/device/syndietele/beacon
 
 /obj/item/device/syndiejaunter/attack_self(mob/user)
