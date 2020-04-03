@@ -101,8 +101,8 @@
 	explosion_size = 6
 
 /obj/item/weapon/grenade/frag/high_yield/belt/Initialize()
+	. = ..()
 	wires = new(src)
-	..()
 
 /obj/item/weapon/grenade/frag/high_yield/belt/Destroy()
 	QDEL_NULL(wires)
