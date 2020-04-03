@@ -129,8 +129,8 @@
 	num_fragments = 120
 
 /obj/item/weapon/grenade/frag/high_yield/ied/Initialize()
+	. = ..()
 	wires = new(src)
-	..()
 
 /obj/item/weapon/grenade/frag/high_yield/ied/Destroy()
 	QDEL_NULL(wires)
