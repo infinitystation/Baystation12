@@ -15,7 +15,6 @@
 	name = "Data Capsule"
 	move_time = 30
 	shuttle_area = list(/area/shuttle/abadoned_data_capsule)
-	dock_target = "data_capsule"
 	current_location = "nav_mining_hiden"
 	landmark_transition = "nav_transit_blueriver"
 
