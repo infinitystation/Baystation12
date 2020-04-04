@@ -47,10 +47,7 @@ SUBSYSTEM_DEF(ticker)
 			playing_tick()
 		if(RUNLEVEL_POSTGAME)
 			post_game_tick()
-//[INF]
-	if(world.time % 600 == 0) //every 60 seconds
-		process_newscaster()
-//[/INF]
+
 /datum/controller/subsystem/ticker/proc/pregame_tick()
 	if(start_ASAP)
 		start_now()
@@ -140,6 +137,10 @@ SUBSYSTEM_DEF(ticker)
 		mode.cleanup()
 		log_and_message_admins(": Все антагонисты мертвы или игровой режим подошел к логическому завершению.") //Outputs as "Event: All antagonists are deceased or the gamemode has ended."
 		SSvote.initiate_vote(/datum/vote/transfer, automatic = 1)
+//[INF]
+	if(world.time % 600 == 0) //every 60 seconds
+		process_newscaster()
+//[/INF]
 
 /datum/controller/subsystem/ticker/proc/post_game_tick()
 	switch(end_game_state)
