@@ -6,8 +6,10 @@
 	applies_material_colour = 0
 	desc = "A handy utility blade for the discerning augmentee. Warranty void if used for cutting."
 	base_parry_chance = 30
+	melee_accuracy_bonus = 10 ///INF
 	unbreakable = 1
-	force_divisor = 0.2
+	force_divisor = 0.5 ///INF WAS 0.2
+	armor_penetration = 10 //INF
 	sharp = 1
 	edge = 1
 	attack_verb = list("stabbed", "sliced", "cut")

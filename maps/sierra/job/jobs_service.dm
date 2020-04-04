@@ -8,7 +8,7 @@
 	ideal_character_age = 40
 	economic_power = 4
 	minimal_player_age = 0
-	supervisors = "the Head of Personnel"
+	supervisors = "Главой Персонала"
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/service/chaplain
 	allowed_branches = list(/datum/mil_branch/civilian, /datum/mil_branch/contractor)
 	allowed_ranks = list(/datum/mil_rank/civ/contractor, /datum/mil_rank/civ/civ)
@@ -24,7 +24,7 @@
 
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Head of Personnel"
+	supervisors = "Главой Персонала"
 	ideal_character_age = 20
 	alt_titles = list(
 		"Sanitation Technician")
@@ -43,7 +43,7 @@
 	department_flag = SRV
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Head of Personnel"
+	supervisors = "Главой Персонала"
 	alt_titles = list(
 		"Cook",
 		"Culinary Specialist"
@@ -62,7 +62,7 @@
 /datum/job/bartender
 	department = "Service"
 	department_flag = SRV
-	supervisors = "the Head of Personnel"
+	supervisors = "Главой Персонала"
 	ideal_character_age = 30
 	selection_color = "#515151"
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/service/bartender
@@ -82,7 +82,7 @@
 	spawn_positions = 2
 	department = "Service"
 	department_flag = SRV
-	supervisors = "the Head of Personnel"
+	supervisors = "Главой Персонала"
 	ideal_character_age = 24
 	selection_color = "#515151"
 	minimal_player_age = 15

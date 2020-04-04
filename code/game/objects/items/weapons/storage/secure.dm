@@ -94,6 +94,7 @@
 		if ((usr.stat || usr.restrained()) || (get_dist(src, usr) > 1))
 			return
 		if (href_list["type"])
+			playsound(src, 'infinity/sound/SS2/effects/buttons/bset.wav', 50) //inf
 			if (href_list["type"] == "E")
 				if ((src.l_set == 0) && (length(src.code) == 5) && (!src.l_setshort) && (src.code != "ERROR"))
 					src.l_code = src.code

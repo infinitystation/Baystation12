@@ -1,7 +1,7 @@
 /datum/job/captain
 	title = "Captain"
 	department = "Command"
-	supervisors = "the NanoTrasen"
+	supervisors = "корпорацией"
 	department_flag = COM
 	head_position = 1
 	minimal_player_age = 21
@@ -28,7 +28,7 @@
 
 /datum/job/hop
 	title = "Head of Personnel"
-	supervisors = "the Captain"
+	supervisors = "Капитаном"
 	department = "Command"
 	department_flag = COM
 	head_position = 1
@@ -69,7 +69,7 @@
 
 /datum/job/rd
 	title = "Research Director"
-	supervisors = "NanoTrasen and the Captain"
+	supervisors = "Капитаном"
 	department = "Science"
 	department_flag = SCI|COM
 	head_position = 1
@@ -110,7 +110,7 @@
 
 /datum/job/cmo
 	title = "Chief Medical Officer"
-	supervisors = "the Captain and the Head of Personnel"
+	supervisors = "Капитаном"
 	head_position = 1
 	department = "Medical"
 	department_flag = MED|COM
@@ -151,7 +151,7 @@
 
 /datum/job/chief_engineer
 	title = "Chief Engineer"
-	supervisors = "the Captain and the Head of Personnel"
+	supervisors = "Капитаном"
 	head_position = 1
 	department = "Engineering"
 	department_flag = ENG|COM
@@ -206,7 +206,7 @@
 
 /datum/job/hos
 	title = "Head of Security"
-	supervisors = "the Captain and the Head of Personnel"
+	supervisors = "Капитаном"
 	head_position = 1
 	department = "Security"
 	department_flag = SEC|COM
@@ -248,7 +248,7 @@
 	department_flag = COM
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "NanoTrasen and Corporate Regulations"
+	supervisors = "Центральным Командованием"
 	selection_color = "#2f2f7f"
 	economic_power = 15
 	minimal_player_age = 10
@@ -273,7 +273,7 @@
 	department_flag = COM
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Captain and heads of staff"
+	supervisors = "Капитаном и остальными главами"
 	selection_color = "#2f2f7f"
 	minimal_player_age = 18
 	economic_power = 7

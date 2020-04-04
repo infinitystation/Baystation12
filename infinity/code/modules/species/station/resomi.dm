@@ -180,6 +180,10 @@
 		)
 	)
 
+/datum/species/resomi/equip_survival_gear(var/mob/living/carbon/human/H)
+	..()
+	H.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses/lenses(H), slot_glasses)
+
 /datum/species/resomi/get_surgery_overlay_icon(var/mob/living/carbon/human/H)
 	return 'infinity/icons/mob/human_races/species/resomi/surgery.dmi'
 

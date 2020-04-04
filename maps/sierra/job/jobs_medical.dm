@@ -7,7 +7,7 @@
 	ideal_character_age = 45
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Chief Medical Officer"
+	supervisors = "Главврачом"
 	selection_color = "#013d3b"
 	economic_power = 8
 	alt_titles = list(
@@ -42,7 +42,7 @@
 
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "the Chief Medical Officer"
+	supervisors = "Главврачом"
 	economic_power = 7
 	ideal_character_age = 40
 	alt_titles = list(
@@ -74,7 +74,7 @@
 
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Chief Medical Officer and Medical Personnel"
+	supervisors = "Главврачом и остальным медицинским персоналом"
 	selection_color = "#013d3b"
 	economic_power = 3
 	ideal_character_age = 30
@@ -107,7 +107,7 @@
 
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Chief Medical Officer"
+	supervisors = "Главврачом"
 	selection_color = "#013d3b"
 	economic_power = 5
 	ideal_character_age = 30
@@ -134,7 +134,7 @@
 	spawn_positions = 1
 	ideal_character_age = 40
 	economic_power = 8
-	supervisors = "the Chief Medical Officer"
+	supervisors = "Главврачом"
 	alt_titles = list(
 		"Mentalist" = /decl/hierarchy/outfit/job/sierra/crew/medical/counselor/mentalist
 	)

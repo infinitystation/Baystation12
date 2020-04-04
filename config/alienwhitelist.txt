@@ -13,6 +13,7 @@ taushai - machine
 netreson - machine
 billluxe - machine
 firsttea - machine
+maxim023 - machine
 diesiege - machine
 he11d1ver - machine
 rockyfail - machine
@@ -85,6 +86,8 @@ elar - resomi
 casly - resomi
 reptiloid2 - resomi
 mrnicolas - resomi
+adro244 - resomi
+messerko - resomi
 redknighthero - giant armoured serpentid
 coldmantis13 - giant armoured serpentid
 kirill1243 - giant armoured serpentid
@@ -127,6 +130,7 @@ s1334 - diona
 sfd - diona
 spiderling - diona
 reptiloid2 - diona
+eggoflizard - diona
 wheatley2013 - vox
 wolforbykot - vox
 sosiskoed - vox
@@ -151,7 +155,7 @@ bob46 - vox
 solark - vox
 richardfox - vox
 mmgy - vox
-niga2012 - vox
+adro244 - vox
 darkscarletblood - unathi
 kribleykrabley - unathi
 alchemisthero - unathi
@@ -159,6 +163,7 @@ kotovsyndrome - unathi
 wheatley2013 - unathi
 thesarkazmus - unathi
 wolforbykot - unathi
+eggoflizard - unathi
 colossus333 - unathi
 kirill1243 - unathi
 lunkydunk - unathi
@@ -178,6 +183,8 @@ arhod - unathi
 moonmen - unathi
 thehero13 - unathi
 adro244 - unathi
+dron240 - unathi
+portos - unathi
 moonmen - tajaran
 cuddleandtea - tajaran
 mrnicolas - tajaran
@@ -195,13 +202,13 @@ wolforbykot - tajaran
 diesiege - tajaran
 solartwin - tajaran
 arbuzpersikov - tajaran
+adro244 - tajaran
 wheatley2013 - adherent
 sosiskoed - adherent
 gumboldty - adherent
 sarumyn - adherent
 kareta - adherent
 s1334 - adherent
-wolfetd - adherent
 hardstuck - adherent
 jacking - adherent
 redknighthero - adherent

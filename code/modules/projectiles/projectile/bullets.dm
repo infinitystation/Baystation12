@@ -192,7 +192,7 @@
 	damage = 45
 	armor_penetration = 25
 	penetration_modifier = 1.5
-	penetrating = 1
+	penetrating = 0 //INF, WAS 1
 	//INF distance_falloff = 1.5
 
 /obj/item/projectile/bullet/rifle/military

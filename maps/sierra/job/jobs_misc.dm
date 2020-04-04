@@ -4,7 +4,7 @@
 	spawn_positions = 12
 	department = "Civilian"
 	department_flag = CIV
-	supervisors = "the Head of Personnel"
+	supervisors = "Главой Персонала"
 	selection_color = "#515151"
 //	economic_power = 6
 	announced = FALSE
@@ -36,7 +36,7 @@
 /datum/job/cyborg
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "your laws"
+	supervisors = "установленными Вам законами"
 
 /datum/job/merchant
 	title = "Merchant"
@@ -45,7 +45,7 @@
 
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the invisible hand of the market"
+	supervisors = "невидимой рукой рынка"
 	selection_color = "#515151"
 	ideal_character_age = 30
 	minimal_player_age = 7
@@ -67,8 +67,8 @@
 	to_chat(H, "Ваши свЯзи помогли вам узнать о словах, что помогут опознать местных... Особо заинтересованных покупателей:")
 	to_chat(H, "<b>Кодовые фразы</b>: <span class='danger'>[syndicate_code_phrase]</span>")
 	to_chat(H, "<b>Ответы на фразы</b>: <span class='danger'>[syndicate_code_response]</span>")
-	H.StoreMemory("<b>Code Phrase</b>: [syndicate_code_phrase]", /decl/memory_options/system)
-	H.StoreMemory("<b>Code Response</b>: [syndicate_code_response]", /decl/memory_options/system)
+	H.StoreMemory("<b>Кодовые Фразы</b>: [syndicate_code_phrase]", /decl/memory_options/system)
+	H.StoreMemory("<b>Ответы на фразы</b>: [syndicate_code_response]", /decl/memory_options/system)
 	return ..()
 
 /datum/job/merchant_trainee
@@ -78,7 +78,7 @@
 
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Merchant"
+	supervisors = "Торговцем"
 	selection_color = "#515151"
 	ideal_character_age = 20
 	minimal_player_age = 0
@@ -106,7 +106,6 @@
 
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "yourself"
 	selection_color = "#515151"
 	ideal_character_age = 30
 	minimal_player_age = 7

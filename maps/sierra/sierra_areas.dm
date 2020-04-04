@@ -500,6 +500,7 @@
 	name = "Second Deck - Bridge"
 	icon_state = "bridge"
 	req_access = list(access_bridge)
+	ambience = list('infinity/sound/SS2/ambience/ambbridge.wav')
 
 /area/bridge/nano
 	icon = 'infinity/icons/turf/areas.dmi'
@@ -1055,7 +1056,13 @@
 /area/chapel/main
 	name = "Second Deck - Chapel"
 	icon_state = "chapel"
-	ambience = list('sound/ambience/ambicha1.ogg','sound/ambience/ambicha2.ogg','sound/ambience/ambicha3.ogg','sound/ambience/ambicha4.ogg','sound/music/traitor.ogg')
+	ambience = list(
+			'sound/ambience/ambicha1.ogg',
+			'sound/ambience/ambicha2.ogg',
+			'sound/ambience/ambicha3.ogg',
+			'sound/ambience/ambicha4.ogg',
+			'sound/music/traitor.ogg'
+		)
 	sound_env = LARGE_ENCLOSED
 
 /area/chapel/office
@@ -1297,7 +1304,12 @@
 
 // Tcomm
 /area/tcommsat/
-	ambience = list('sound/ambience/ambisin2.ogg', 'sound/ambience/signal.ogg', 'sound/ambience/signal.ogg', 'sound/ambience/ambigen10.ogg')
+	ambience = list(
+			'sound/ambience/ambisin2.ogg',
+			'sound/ambience/signal.ogg',
+			'sound/ambience/ambigen10.ogg',
+			'infinity/sound/SS2/ambience/ambservers.wav'
+		)
 	req_access = list(access_tcomsat)
 
 /area/tcommsat/chamber
@@ -1327,11 +1339,15 @@
 
 /area/turret_protected
 	req_access = list(access_ai_upload)
+	ambience = list(
+		'sound/ambience/ambimalf.ogg',
+		'infinity/sound/SS2/ambience/ambservers.wav'
+		)
+	forced_ambience = list('infinity/sound/SS2/ambience/ambxerxes_looped.wav')
 
 /area/turret_protected/ai
 	name = "AI Chamber"
 	icon_state = "ai_chamber"
-	forced_ambience = list('infinity/sound/SS2/ambience/XXMIX_S.wav')
 
 /area/turret_protected/ai_cyborg_station
 	name = "Second Deck - Cyborg Station"
@@ -1342,12 +1358,10 @@
 /area/turret_protected/ai_upload
 	name = "Second Deck - AI Upload"
 	icon_state = "ai_upload"
-	ambience = list('sound/ambience/ambimalf.ogg')
 
 /area/turret_protected/ai_upload_foyer
 	name = "Second Deck - AI Upload Access"
 	icon_state = "ai_foyer"
-	ambience = list('sound/ambience/ambimalf.ogg')
 	sound_env = SMALL_ENCLOSED
 
 // Merchant

@@ -47,7 +47,10 @@ SUBSYSTEM_DEF(ticker)
 			playing_tick()
 		if(RUNLEVEL_POSTGAME)
 			post_game_tick()
-
+//[INF]
+	if(world.time % 600 == 0) //every 60 seconds
+		process_newscaster()
+//[/INF]
 /datum/controller/subsystem/ticker/proc/pregame_tick()
 	if(start_ASAP)
 		start_now()
