@@ -26,8 +26,6 @@
 	fuel_consumption = 2
 	warmup_time = 5
 
-	logging_home_tag = "nav_mining_hiden"
-
 	skill_needed = SKILL_BASIC
 
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling

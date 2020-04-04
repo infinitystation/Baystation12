@@ -433,6 +433,7 @@ SUBSYSTEM_DEF(jobs)
 
 				if(!G.slot || G.slot == slot_tie || (G.slot in loadout_taken_slots) || !G.spawn_on_mob(H, H.client.prefs.Gear()[G.display_name]))
 					spawn_in_storage.Add(G)
+
 				else
 					loadout_taken_slots.Add(G.slot)
 
@@ -545,12 +546,12 @@ SUBSYSTEM_DEF(jobs)
 			W.buckled_mob = H
 			W.add_fingerprint(H)
 
-	to_chat(H, "<font size = 3><B>Вы - [alt_title ? alt_title : rank].</B></font>")
+	to_chat(H, "<font size = 3><b>Вы - [alt_title ? alt_title : rank].</b></font>")
 
 	if(job.supervisors)
-		to_chat(H, "Вы напрямую отчитываетесь перед <b>[job.supervisors]</b>. Особые обстоятельства могут изменить это.</b>")
+		to_chat(H, "<b>Вы напрямую отчитываетесь перед <b>[job.supervisors]</b>. Особые обстоятельства могут изменить это.</b>")
 
-	to_chat(H, "Чтобы общаться на частоте Вашего отдела, используйте префикс \":h\". Для остальных каналов, осмотрите свой наушник.</b>")
+	to_chat(H, "<b>Чтобы общаться на частоте Вашего отдела, используйте префикс \":h\". Для остальных каналов, осмотрите свой наушник.</b>")
 
 	if(job.req_admin_notify)
 		to_chat(H, "<b>Ваша профессия особенно важна для игрового прогресса.</b> Если Вам требуется отключиться - пожалуйста, оповестите администрацию.</b>")
