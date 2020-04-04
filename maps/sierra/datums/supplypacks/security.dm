@@ -48,6 +48,8 @@
 	containername = "Heavy Combat Weapons crate"
 	security_level = SUPPLY_SECURITY_HIGH
 
+/*2 OP for us
+
 /decl/hierarchy/supply_pack/security/armory/sniperlaser
 	name = "Weapons - Energy marksman"
 	contains = list(/obj/item/weapon/gun/energy/sniperrifle = 2)
@@ -55,13 +57,14 @@
 	containername = "\improper Energy marksman crate"
 	security_level = SUPPLY_SECURITY_HIGH
 
-
 /decl/hierarchy/supply_pack/security/armory/bullpup
 	name = "Weapons - Ballistic rifles"
 	contains = list(/obj/item/weapon/gun/projectile/automatic/bullpup_rifle = 2)
 	cost = 150 //Because 5.56 is OP as fuck right now.
 	containername = "\improper Bullpup automatic rifle crate"
 	security_level = SUPPLY_SECURITY_HIGH
+
+*/
 
 /decl/hierarchy/supply_pack/security/armory/pdw
 	name = "Weapons - Ballistic NT41"
