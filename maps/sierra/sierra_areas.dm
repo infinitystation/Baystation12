@@ -815,7 +815,6 @@
 	icon_state = "bar"
 	sound_env = LARGE_SOFTFLOOR
 	req_access = list(access_bar)
-	secure = 0
 
 /area/crew_quarters/sauna
 	name = "Second Deck - Living - Sauna"
@@ -845,12 +844,10 @@
 	name = "Second Deck - Service - Galley"
 	icon_state = "kitchen"
 	req_access = list(access_kitchen)
-	secure = 0
 
 /area/crew_quarters/galley/backroom
 	name = "Second Deck - Service - Galley Cold Storage"
 	icon_state = "kitchen"
-	secure = 1
 
 /area/crew_quarters/actor
 	name = "Second Deck - Service - Actor"

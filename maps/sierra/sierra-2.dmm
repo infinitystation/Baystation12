@@ -5222,7 +5222,9 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/civilian{
-	name = "Canteen hub"
+	autoset_access = 0;
+	name = "Canteen hub";
+	req_access = list(list("ACCESS_BAR","ACCESS_KITCHEN"))
 	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/galley)
