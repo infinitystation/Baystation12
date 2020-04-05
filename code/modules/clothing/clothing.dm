@@ -311,6 +311,13 @@ BLIND     // can't see anything
 		)
 	blood_overlay_type = "bloodyhands"
 
+/obj/item/clothing/gloves/verb/toggle_layer()
+	set name = "Switch Gloves Layer"
+	set category = "Object"
+
+	use_alt_layer = !use_alt_layer
+	update_icon()
+
 /obj/item/clothing/gloves/Initialize()
 	if(item_flags & ITEM_FLAG_PREMODIFIED)
 		cut_fingertops()
