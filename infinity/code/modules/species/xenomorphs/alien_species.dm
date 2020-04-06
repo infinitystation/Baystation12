@@ -79,7 +79,7 @@
 		BP_HIVE =     /obj/item/organ/internal/xeno/hivenode,
 		)
 
-	move_intents = list(/decl/move_intent/walk)
+	move_intents = list(/decl/move_intent/walk, /decl/move_intent/run)
 	var/list/started_healing = list()
 	var/accelerated_healing_threshold = 10 SECONDS
 
@@ -142,9 +142,10 @@
 	inherent_verbs = list(
 		/mob/living/carbon/human/proc/plant,
 		/mob/living/carbon/human/proc/transfer_plasma,
-		/mob/living/carbon/human/proc/evolve,
+		/mob/living/carbon/human/proc/evolve_drone,
 		/mob/living/carbon/human/proc/resin,
-		/mob/living/carbon/human/proc/corrosive_acid
+		/mob/living/carbon/human/proc/corrosive_acid,
+		/mob/living/proc/night_vision
 		)
 /*
 /datum/species/xenos/drone/handle_post_spawn(var/mob/living/carbon/human/H)
@@ -158,7 +159,7 @@
 
 	name = "Xenophage Hunter"
 	total_health = 150
-//	base_color = "#001a33"
+	base_color = "#3d0500"
 
 	icobase = 'infinity/icons/mob/human_races/species/xenophage/body_hunter.dmi'
 	deform =  'infinity/icons/mob/human_races/species/xenophage/body_hunter.dmi'
@@ -167,6 +168,8 @@
 //	burn_mod =      0.8
 //	weeds_plasma_rate = 10
 //	slowdown = -0.5
+
+	natural_armour_values = list(melee = 35, bullet = 28, laser = 25, energy = 0, bomb = 0, bio = 100, rad = 100)
 
 	has_organ = list(
 		BP_EYES =     /obj/item/organ/internal/eyes/xeno,
@@ -182,7 +185,9 @@
 		/mob/living/carbon/human/proc/pry_open,
 		/mob/living/carbon/human/proc/tackle,
 		/mob/living/carbon/human/proc/leap,
-		/mob/living/carbon/human/proc/psychic_whisper
+		/mob/living/carbon/human/proc/evolve_hunter,
+		/mob/living/carbon/human/proc/psychic_whisper,
+		/mob/living/proc/night_vision
 		)
 
 	force_cultural_info = list(
@@ -209,7 +214,7 @@
 		BP_BRAIN =    /obj/item/organ/internal/brain/xeno,
 		BP_STOMACH =  /obj/item/organ/internal/stomach,
 		BP_PLASMA =   /obj/item/organ/internal/xeno/plasmavessel/sentinel,
-		BP_ACID =     /obj/item/organ/internal/xeno/acidgland,
+		BP_ACID =     /obj/item/organ/internal/xeno/acidgland/moderate,
 		BP_HIVE =     /obj/item/organ/internal/xeno/hivenode,
 		)
 
@@ -217,9 +222,11 @@
 		/mob/living/carbon/human/proc/plant,
 		/mob/living/carbon/human/proc/pry_open,
 		/mob/living/carbon/human/proc/tackle,
+		/mob/living/carbon/human/proc/evolve_sentinel,
 		/mob/living/carbon/human/proc/transfer_plasma,
-		/mob/living/carbon/human/proc/corrosive_acid,
-		/mob/living/carbon/human/proc/neurotoxin
+		/mob/living/carbon/human/proc/moderate_corrosive_acid,
+		/mob/living/carbon/human/proc/neurotoxin,
+		/mob/living/proc/night_vision
 		)
 
 	force_cultural_info = list(
@@ -251,9 +258,9 @@
 		BP_STOMACH =  /obj/item/organ/internal/stomach,
 		BP_EGG =      /obj/item/organ/internal/xeno/eggsac,
 		BP_PLASMA =   /obj/item/organ/internal/xeno/plasmavessel/queen,
-		BP_ACID =     /obj/item/organ/internal/xeno/acidgland,
+		BP_ACID =     /obj/item/organ/internal/xeno/acidgland/moderate,
 		BP_HIVE =     /obj/item/organ/internal/xeno/hivenode,
-		BP_RESIN =    /obj/item/organ/internal/xeno/resinspinner,
+		BP_RESIN =    /obj/item/organ/internal/xeno/resinspinner
 		)
 
 	inherent_verbs = list(
@@ -262,16 +269,138 @@
 		/mob/living/carbon/human/proc/lay_egg,
 		/mob/living/carbon/human/proc/plant,
 		/mob/living/carbon/human/proc/transfer_plasma,
-		/mob/living/carbon/human/proc/corrosive_acid,
+		/mob/living/carbon/human/proc/moderate_corrosive_acid,
 		/mob/living/carbon/human/proc/neurotoxin,
 		/mob/living/carbon/human/proc/resin,
-		/mob/living/carbon/human/proc/xeno_infest
+		/mob/living/carbon/human/proc/xeno_infest,
+		/mob/living/proc/night_vision
 		)
 
 	genders = list(FEMALE)
 
 	force_cultural_info = list(
 		TAG_CULTURE =   CULTURE_XENOPHAGE_Q,
+		TAG_HOMEWORLD = HOME_SYSTEM_DEEP_SPACE,
+		TAG_FACTION =   FACTION_XENOPHAGE,
+		TAG_RELIGION =  RELIGION_OTHER
+	)
+
+/datum/species/xenos/warrior
+
+	name = "Xenophage Warrior"
+	total_health = 100
+	base_color = "#3d0500"
+
+	icobase = 'infinity/icons/mob/human_races/species/xenophage/body_hunter.dmi'
+	deform =  'infinity/icons/mob/human_races/species/xenophage/body_hunter.dmi'
+
+//	brute_mod =     0.8
+//	burn_mod =      0.8
+//	weeds_plasma_rate = 10
+	slowdown = -0.5
+
+	natural_armour_values = list(melee = 15, bullet = 10, laser = 10, energy = 0, bomb = 0, bio = 100, rad = 100)
+
+	unarmed_types = list(/datum/unarmed_attack/claws/strong/warrior, /datum/unarmed_attack/bite/strong/warrior)
+
+	has_organ = list(
+		BP_EYES =     /obj/item/organ/internal/eyes/xeno,
+		BP_HEART =    /obj/item/organ/internal/heart/open,
+		BP_BRAIN =    /obj/item/organ/internal/brain/xeno,
+		BP_STOMACH =  /obj/item/organ/internal/stomach,
+		BP_PLASMA =   /obj/item/organ/internal/xeno/plasmavessel/hunter,
+		BP_HIVE =     /obj/item/organ/internal/xeno/hivenode,
+		)
+
+	inherent_verbs = list(
+		/mob/living/carbon/human/proc/plant,
+		/mob/living/carbon/human/proc/pry_open,
+		/mob/living/carbon/human/proc/tackle,
+		/mob/living/carbon/human/proc/leap,
+		/mob/living/carbon/human/proc/psychic_whisper,
+		/mob/living/proc/night_vision
+		)
+
+	force_cultural_info = list(
+		TAG_CULTURE =   CULTURE_XENOPHAGE_H,
+		TAG_HOMEWORLD = HOME_SYSTEM_DEEP_SPACE,
+		TAG_FACTION =   FACTION_XENOPHAGE,
+		TAG_RELIGION =  RELIGION_OTHER
+	)
+
+/datum/species/xenos/spitter
+	name = "Xenophage Spitter"
+
+//	brute_mod =     0.6
+//	burn_mod =      0.6
+	weeds_plasma_rate = 15
+	slowdown = 2
+	total_health = 170
+
+	natural_armour_values = list(melee = 35, bullet = 30, laser = 20, energy = 5, bomb = 10, bio = 100, rad = 100)
+
+	rarity_value = 5
+	base_color = "#001a13"
+	icobase = 'infinity/icons/mob/human_races/species/xenophage/body_drone.dmi'
+	deform =  'infinity/icons/mob/human_races/species/xenophage/body_drone.dmi'
+
+	move_intents = list(/decl/move_intent/walk)
+
+	has_organ = list(
+		BP_EYES =     /obj/item/organ/internal/eyes/xeno,
+		BP_HEART =    /obj/item/organ/internal/heart/open,
+		BP_BRAIN =    /obj/item/organ/internal/brain/xeno,
+		BP_STOMACH =  /obj/item/organ/internal/stomach,
+		BP_PLASMA =   /obj/item/organ/internal/xeno/plasmavessel,
+		BP_ACID =     /obj/item/organ/internal/xeno/acidgland/strong,
+		BP_HIVE =     /obj/item/organ/internal/xeno/hivenode
+		)
+
+	inherent_verbs = list(
+		/mob/living/carbon/human/proc/pry_open,
+		/mob/living/carbon/human/proc/transfer_plasma,
+		/mob/living/carbon/human/proc/strong_corrosive_acid,
+		/mob/living/carbon/human/proc/neurotoxin,
+		/mob/living/carbon/human/proc/spit_acid,
+		/mob/living/carbon/human/proc/tackle,
+		/mob/living/proc/night_vision
+		)
+
+/datum/species/xenos/hivelord
+	name = "Xenophage Hivelord"
+	base_color = "#2b0042"
+	total_health = 190
+	icobase = 'infinity/icons/mob/human_races/species/xenophage/body_sentinel.dmi'
+	deform =  'infinity/icons/mob/human_races/species/xenophage/body_sentinel.dmi'
+
+	weeds_plasma_rate = 15
+	slowdown = 1
+
+	has_organ = list(
+		BP_EYES =     /obj/item/organ/internal/eyes/xeno,
+		BP_HEART =    /obj/item/organ/internal/heart/open,
+		BP_BRAIN =    /obj/item/organ/internal/brain/xeno,
+		BP_STOMACH =  /obj/item/organ/internal/stomach,
+		BP_PLASMA =   /obj/item/organ/internal/xeno/plasmavessel,
+		BP_ACID =     /obj/item/organ/internal/xeno/acidgland/moderate,
+		BP_HIVE =     /obj/item/organ/internal/xeno/hivenode,
+		BP_RESIN = /obj/item/organ/internal/xeno/resinspinner
+		)
+
+	inherent_verbs = list(
+		/mob/living/carbon/human/proc/plant,
+		/mob/living/carbon/human/proc/pry_open,
+		/mob/living/carbon/human/proc/tackle,
+		/mob/living/carbon/human/proc/transfer_plasma,
+		/mob/living/carbon/human/proc/moderate_corrosive_acid,
+		/mob/living/carbon/human/proc/resin,
+		/mob/living/carbon/human/proc/neurotoxin,
+		/mob/living/carbon/human/proc/evolve_hivelord,
+		/mob/living/proc/night_vision
+		)
+
+	force_cultural_info = list(
+		TAG_CULTURE =   CULTURE_XENOPHAGE_S,
 		TAG_HOMEWORLD = HOME_SYSTEM_DEEP_SPACE,
 		TAG_FACTION =   FACTION_XENOPHAGE,
 		TAG_RELIGION =  RELIGION_OTHER
