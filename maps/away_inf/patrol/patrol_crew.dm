@@ -33,7 +33,7 @@
 	title = "Shuttle Crewman"
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/patrol/crewman
-	supervisors = "the Pilot, an officer"
+	supervisors = "Пилот, ваш офицер" //INF
 	info = "Вы просыпаетесь и выходите из криосна ощущая прохладный воздух на своём лице, а также лёгкую тошноту. \
 	Являясь одним из экипажа патрульного шаттла Страж 3 флота ЦПСС, ваша задача состоит в патруле и разведке данного \
 	сектора. По данным бортового компьютера поступал неизвестный сигнал о нападении воксов в этом секторе, возможно потребуется подробная \
@@ -51,7 +51,7 @@
 	title = "Pilot"
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/patrol/pilot
-	supervisors = "SCGF Command"
+	supervisors = "SCGF Коммандование" //INF
 	info = "Вы просыпаетесь и выходите из криосна ощущая прохладный воздух на своём лице, а также лёгкую тошноту. \
 	Являясь одним из экипажа патрульного шаттла 3 флота ЦПСС, ваша задача состоит в патруле и разведке данного сектора. \
 	По данным бортового компьютера поступал неизвестный сигнал о нападении воксов в этом секторе, возможно потребуется подробная \
@@ -67,7 +67,7 @@
 	title = "Corpsman"
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/patrol/corpsman
-	supervisors = "the Pilot, an officer"
+	supervisors = "Пилот, ваш офицер" //INF
 	info = "Вы просыпаетесь и выходите из криосна ощущая прохладный воздух на своём лице, а также лёгкую тошноту \
 	Являясь одним из экипажа патрульного шаттла 3 флота ЦПСС, ваша задача состоит в патруле и разведке данного сектора. \
 	По данным бортового компьютера поступал неизвестный сигнал о нападении воксов в этом секторе, возможно потребуется подробная \
@@ -84,7 +84,7 @@
 	title = "Technician"
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/patrol/engineer
-	supervisors = "the Pilot, an officer"
+	supervisors = "Пилот, ваш офицер"
 	info = "Вы просыпаетесь и выходите из криосна ощущая прохладный воздух на своём лице, а также лёгкую тошноту. \
 	Являясь одним из экипажа патрульного шаттла 3 флота ЦПСС, ваша задача состоит в патруле и разведке данного сектора. \
 	По данным бортового компьютера поступал неизвестный сигнал о нападении воксов в этом секторе, возможно потребуется подробная \
@@ -122,7 +122,7 @@
 
 /decl/hierarchy/outfit/job/patrol/crewman
 	name = PATROL_OUTFIT_JOB_NAME("Shuttle Crewman")
-	/obj/item/weapon/rig/military/equipped/enlisted
+	/obj/item/weapon/rig/military/equipped
 
 /decl/hierarchy/outfit/job/patrol/engineer
 	name = PATROL_OUTFIT_JOB_NAME("Technician")
