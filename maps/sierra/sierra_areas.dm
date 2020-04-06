@@ -578,11 +578,14 @@
 /area/engineering/engineering_monitoring
 	name = "Second Deck - Engineering - Monitoring"
 	icon_state = "engine_monitoring"
-	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/engineering/locker_room
 	name = "Second Deck - Engineering - Locker Room"
 	icon_state = "engineering_locker"
+
+/area/engineering/materials_storage
+	name = "Second Deck - Engineering - Materials Storage"
+	icon_state = "engineering_storage"
 
 /area/engineering/atmos
  	name = "Second Deck - Engineering - Atmospherics"
