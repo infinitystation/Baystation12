@@ -364,7 +364,7 @@ mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in ovi
 	A.open(1) //var/check =
 //	src.visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")
 
-/mob/living/carbon/human/proc/evolve_drone()
+/mob/living/carbon/human/proc/evolve_hivelord()
 	set name = "Evolve to queen (500)"
 	set desc = "Produce an interal egg sac capable of spawning children. Only one queen can exist at a time."
 	set category = "Abilities"
@@ -390,7 +390,7 @@ mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in ovi
 
 	return
 
-/mob/living/carbon/human/proc/evolve_defender()
+/mob/living/carbon/human/proc/evolve_sentinel()
 	set name = "Evolve (300)"
 	set desc = "Evolve an additional acid gland, capable of shooting acid."
 	set category = "Abilities"
@@ -401,9 +401,9 @@ mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in ovi
 
 	return
 
-/mob/living/carbon/human/proc/evolve_sentinel()
+/mob/living/carbon/human/proc/evolve_drone()
 	set name = "Evolve (300)"
-	set desc = "Evolve a resin gland in cost of some protection."
+	set desc = "Produce a better armor and acid gland."
 	set category = "Abilities"
 
 	if(check_alien_ability(300))

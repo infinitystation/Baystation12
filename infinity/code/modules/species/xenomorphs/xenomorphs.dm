@@ -22,11 +22,6 @@ proc/create_new_xenomorph(var/alien_caste,var/target)
 	. = ..(new_loc, "Xenophage Hunter")
 	GLOB.xenomorphs.add_antagonist(src.mind, 1)
 
-/mob/living/carbon/human/xdefender/New(var/new_loc)
-	h_style = "Bald"
-	. = ..(new_loc, "Xenophage Defender")
-	GLOB.xenomorphs.add_antagonist(src.mind, 1)
-
 /mob/living/carbon/human/xwarrior/New(var/new_loc)
 	h_style = "Bald"
 	. = ..(new_loc, "Xenophage Warrior")

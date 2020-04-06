@@ -236,44 +236,6 @@
 		TAG_RELIGION =  RELIGION_OTHER
 	)
 
-/datum/species/xenos/defender
-	name = "Xenophage Defender"
-
-//	brute_mod =     0.6
-//	burn_mod =      0.6
-	weeds_plasma_rate = 15
-	slowdown = 2
-	total_health = 200
-
-	natural_armour_values = list(melee = 45, bullet = 35, laser = 25, energy = 5, bomb = 15, bio = 100, rad = 100)
-
-	rarity_value = 5
-	base_color = "#000d1a"
-	icobase = 'infinity/icons/mob/human_races/species/xenophage/body_drone.dmi'
-	deform =  'infinity/icons/mob/human_races/species/xenophage/body_drone.dmi'
-
-	move_intents = list(/decl/move_intent/walk)
-
-	has_organ = list(
-		BP_EYES =     /obj/item/organ/internal/eyes/xeno,
-		BP_HEART =    /obj/item/organ/internal/heart/open,
-		BP_BRAIN =    /obj/item/organ/internal/brain/xeno,
-		BP_STOMACH =  /obj/item/organ/internal/stomach,
-		BP_PLASMA =   /obj/item/organ/internal/xeno/plasmavessel,
-		BP_ACID =     /obj/item/organ/internal/xeno/acidgland,
-		BP_HIVE =     /obj/item/organ/internal/xeno/hivenode
-		)
-
-	inherent_verbs = list(
-		/mob/living/carbon/human/proc/pry_open,
-		/mob/living/carbon/human/proc/transfer_plasma,
-		/mob/living/carbon/human/proc/evolve_defender,
-		/mob/living/carbon/human/proc/corrosive_acid,
-		/mob/living/carbon/human/proc/neurotoxin,
-		/mob/living/carbon/human/proc/tackle,
-		/mob/living/proc/night_vision
-		)
-
 /datum/species/xenos/queen
 
 	name = "Xenophage Queen"
@@ -419,7 +381,7 @@
 		BP_HEART =    /obj/item/organ/internal/heart/open,
 		BP_BRAIN =    /obj/item/organ/internal/brain/xeno,
 		BP_STOMACH =  /obj/item/organ/internal/stomach,
-		BP_PLASMA =   /obj/item/organ/internal/xeno/plasmavessel/sentinel,
+		BP_PLASMA =   /obj/item/organ/internal/xeno/plasmavessel,
 		BP_ACID =     /obj/item/organ/internal/xeno/acidgland/moderate,
 		BP_HIVE =     /obj/item/organ/internal/xeno/hivenode,
 		BP_RESIN = /obj/item/organ/internal/xeno/resinspinner
@@ -433,6 +395,7 @@
 		/mob/living/carbon/human/proc/moderate_corrosive_acid,
 		/mob/living/carbon/human/proc/resin,
 		/mob/living/carbon/human/proc/neurotoxin,
+		/mob/living/carbon/human/proc/evolve_hivelord,
 		/mob/living/proc/night_vision
 		)
 
