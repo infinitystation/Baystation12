@@ -166,5 +166,6 @@
 			H.apply_damage(200, BRUTE, location)
 			sleep(5)
 			var/mob/living/carbon/alien/larva/larva = new(get_turf(H))
+			GLOB.xenomorphs.add_antagonist(larva.mind, 1)
 			qdel(src)
 	. = ..()
