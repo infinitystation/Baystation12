@@ -168,10 +168,10 @@
 		/obj/item/clothing/suit/armor/pcarrier/medium/nt = 7
 	)
 
-/obj/structure/closet/secure_closet/guncabinet/sierra_armory/light/armor/ballistic
+/obj/structure/closet/secure_closet/guncabinet/sierra_armory/heavy/armor/ballistic
 	name = "ballistic armor locker"
 
-/obj/structure/closet/secure_closet/guncabinet/sierra_armory/light/armor/ballistic/WillContain()
+/obj/structure/closet/secure_closet/guncabinet/sierra_armory/heavy/armor/ballistic/WillContain()
 	return list(
 		/obj/item/clothing/head/helmet/ballistic = 3,
 		/obj/item/clothing/suit/armor/bulletproof = 3
@@ -196,10 +196,10 @@
 		/obj/item/weapon/shield/riot = 3
 	)
 
-/obj/structure/closet/secure_closet/guncabinet/sierra_armory/heavy/armor/accessories
+/obj/structure/closet/secure_closet/guncabinet/sierra_armory/light/armor/accessories
 	name = "armor accessories locker"
 
-/obj/structure/closet/secure_closet/guncabinet/sierra_armory/heavy/armor/accessories/WillContain()
+/obj/structure/closet/secure_closet/guncabinet/sierra_armory/light/armor/accessories/WillContain()
 	return list(
 		/obj/item/clothing/accessory/legguards = 3,
 		/obj/item/clothing/accessory/armguards = 3,
