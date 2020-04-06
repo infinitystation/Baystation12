@@ -132,7 +132,7 @@ Please contact me on #coderbus IRC. ~Carn x
 #define HO_DAMAGE_LAYER     3
 #define HO_SURGERY_LAYER    4 //bs12 specific.
 #define HO_UNDERWEAR_LAYER  5
-#define HO_GLOVES_ALT_LAYER 6
+#define HO_GLOVES_ALT_LAYER 6 //INF
 #define HO_UNIFORM_LAYER    7
 #define HO_ID_LAYER         8
 #define HO_SHOES_LAYER      9
@@ -154,7 +154,7 @@ Please contact me on #coderbus IRC. ~Carn x
 #define HO_L_HAND_LAYER     25
 #define HO_R_HAND_LAYER     26
 #define HO_FIRE_LAYER       27 //If you're on fire
-#define TOTAL_LAYERS        27
+#define TOTAL_LAYERS        27 //INF
 //////////////////////////////////
 
 /mob/living/carbon/human
@@ -542,15 +542,18 @@ var/global/list/damage_icon_parts = list()
 
 /mob/living/carbon/human/update_inv_gloves(var/update_icons=1)
 	if(gloves && !(wear_suit && wear_suit.flags_inv & HIDEGLOVES))
-		overlays_standing[gloves.use_alt_layer ? HO_GLOVES_ALT_LAYER : HO_GLOVES_LAYER] = gloves.get_mob_overlay(src,slot_gloves_str)
+		overlays_standing[gloves.use_alt_layer ? HO_GLOVES_ALT_LAYER : HO_GLOVES_LAYER] = gloves.get_mob_overlay(src,slot_gloves_str) //INF
+		loc.update_icon()
 	else
 		if(blood_DNA && species.blood_mask)
 			var/image/bloodsies	= overlay_image(species.blood_mask, "bloodyhands", hand_blood_color, RESET_COLOR)
 			overlays_standing[HO_GLOVES_LAYER]	= bloodsies
-			overlays_standing[HO_GLOVES_ALT_LAYER]	= bloodsies
+			overlays_standing[HO_GLOVES_ALT_LAYER]	= bloodsies //INF
+			loc.update_icon()
 		else
 			overlays_standing[HO_GLOVES_LAYER]	= null
-			overlays_standing[HO_GLOVES_ALT_LAYER]	= null
+			overlays_standing[HO_GLOVES_ALT_LAYER]	= null //INF
+			loc.update_icon()
 	if(update_icons)
 		queue_icon_update()
 
@@ -854,7 +857,7 @@ var/global/list/damage_icon_parts = list()
 #undef HO_DAMAGE_LAYER
 #undef HO_SURGERY_LAYER
 #undef HO_UNDERWEAR_LAYER
-#undef HO_GLOVES_ALT_LAYER
+#undef HO_GLOVES_ALT_LAYER //INF
 #undef HO_UNIFORM_LAYER
 #undef HO_ID_LAYER
 #undef HO_SHOES_LAYER
