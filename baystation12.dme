@@ -3557,6 +3557,7 @@
 #include "infinity\code\modules\projectiles\guns\projectile\energy\energy.dm"
 #include "infinity\code\modules\projectiles\projectile\beams.dm"
 #include "infinity\code\modules\projectiles\projectile\bullets.dm"
+#include "infinity\code\modules\projectiles\projectile\energy.dm"
 #include "infinity\code\modules\reagents\Chemistry-Recipes.dm"
 #include "infinity\code\modules\reagents\Chemistry-Reagents\Chemistry-Reagents-Food-Drinks.dm"
 #include "infinity\code\modules\reagents\Chemistry-Reagents\Chemistry-Reagents-Other.dm"

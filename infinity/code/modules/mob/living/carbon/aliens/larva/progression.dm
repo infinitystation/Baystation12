@@ -53,19 +53,24 @@
 		adult.add_language(L.name)
 	qdel(src)
 
-/mob/living/carbon/alien/larva/proc/update_progression()
+/mob/living/carbon/alien/larva/proc/update_progression(var/drinked_blood)
 	if(amount_grown < max_grown)
-		amount_grown++
+		if(drinked_blood)
+			amount_grown++
+		else
+			if(prob(30))
+				amount_grown++
 	return
 
 /mob/living/carbon/alien/larva/proc/confirm_evolution()
 
 	to_chat(src, SPAN_ALIEN("Вы растёте и становитесь ближе к тому, чтобы стать такой же прекрасной, как и ваши сестры!"))
 	to_chat(src, SPAN_ALIEN("Пришло время выбрать свою касту. Этот процесс зависит только от вас. Королева не может повлиять на то, как вы будете эволюционировать."))
-	to_chat(src, SPAN_ALIEN("<B>Охотники (Hunters)</B> - самые сильные и быстрые. Они могут охотиться на одиноких жертв вдали от травы и улья. Только они бегают с такой же скоростью, с которой бегает еда."))
-	to_chat(src, SPAN_ALIEN("<B>Стражи (Sentinels)</B> - те, кто способен плавить укрепления кислотой и бороться с на расстоянии. Они крепче, но медленнее охотников."))
-	to_chat(src, SPAN_ALIEN("<B>Дроны (Drones)</B> - рабочая сила улья. Строители стен и те, кто готов садить траву, не учавствуя в активных боях. Только дроны могут эволюционировать в Королеву."))
+	to_chat(src, SPAN_ALIEN("<B>Охотники (Hunters)</B> - самые сильные и быстрые. Они могут охотиться на одиноких жертв вдали от травы и улья. Только они бегают с такой же скоростью, с которой бегает еда. Могут стать еще быстрее за счет сбрасывания значительной части защитного панциря и превратится в Воина(Warrior)."))
+	to_chat(src, SPAN_ALIEN("<B>Стражи (Sentinels)</B> - те, кто способен плавить укрепления кислотой и бороться с на расстоянии. Они крепче, но медленнее охотников. Могут вырастить себе орган для создания резины и стать Лордом Улья(Hivelord)."))
+	to_chat(src, SPAN_ALIEN("<B>Защитники (Defenders)</B> - Тяжелые бойцы, способные на удержание позиций прямо под огнем. Они не могут бегать и бьют заметно слабее, но куда крепче. Может отрастить себе дополнительный выделительный мешок и стать Плевунами(Spitters), чья кислота будет прожигать даже укрепленные стены."))
+	to_chat(src, SPAN_ALIEN("<B>Дроны (Drones)</B> - рабочая сила улья. Строители стен и те, кто готов садить траву, не учавствуя в активных боях. Только дроны могут эволюционировать в Королеву(Queen)."))
 	to_chat(src, SPAN_ALIEN("Если вы - последняя (или первая) личинка, то станьте дроном, а затем Королевой."))
-	var/alien_caste = alert(src, "Please choose which alien caste you shall belong to.",,"Hunter","Sentinel","Drone")
+	var/alien_caste = alert(src, "Please choose which alien caste you shall belong to.","Hunter","Sentinel","Defender","Drone")
 	return alien_caste ? "Xenophage [alien_caste]" : null
 
