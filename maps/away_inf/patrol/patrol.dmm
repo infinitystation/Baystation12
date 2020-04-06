@@ -943,8 +943,6 @@
 	pixel_x = 31;
 	pixel_y = 29;
 	req_access = list("ACCESS_AWAYPATROL");
-	step_x = 0;
-	step_y = 0
 	},
 /turf/space,
 /area/space)
