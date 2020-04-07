@@ -6734,20 +6734,20 @@
 	icon_state = "bordercolorcorner2";
 	dir = 4
 	},
-/obj/machinery/requests_console{
-	announcementConsole = 0;
-	department = "Engineering";
-	departmentType = 0;
-	name = "Engineering RC";
-	pixel_x = 0;
-	pixel_y = 30
-	},
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube_map";
 	pixel_y = 0
 	},
 /obj/machinery/computer/modular/preset/engineering,
+/obj/machinery/button/blast_door{
+	dir = 2;
+	id_tag = "eng_lockdown_emg1";
+	name = "Main Enterence Control";
+	pixel_x = 0;
+	pixel_y = 28;
+	req_access = list("ACCESS_ENGINEERING")
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/engineering_monitoring)
 "akK" = (
@@ -7389,8 +7389,8 @@
 	},
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
-	id_tag = "eng_lockdown";
-	name = "Engineering Lockdown"
+	id_tag = "eng_lockdown_emg1";
+	name = "Emergency Exit"
 	},
 /turf/simulated/floor/plating,
 /area/engineering/engineering_monitoring)
@@ -11293,7 +11293,12 @@
 	icon_state = "bordercolor";
 	dir = 1
 	},
-/obj/machinery/alarm{
+/obj/machinery/requests_console{
+	announcementConsole = 0;
+	department = "Engineering";
+	departmentType = 0;
+	name = "Engineering RC";
+	pixel_x = 0;
 	pixel_y = 30
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -12199,8 +12204,8 @@
 /obj/effect/wallframe_spawn/reinforced/no_grille,
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
-	id_tag = "eng_lockdown";
-	name = "Engineering Lockdown"
+	id_tag = "eng_lockdown_emg1";
+	name = "Emergency Exit"
 	},
 /turf/simulated/floor/plating,
 /area/engineering/engineering_monitoring)
@@ -12679,7 +12684,6 @@
 	icon_state = "bordercolorcorner2";
 	dir = 8
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
@@ -14514,6 +14518,7 @@
 	icon_state = "4-8"
 	},
 /obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/engineering_monitoring)
 "awP" = (
@@ -14558,8 +14563,8 @@
 	},
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
-	id_tag = "eng_lockdown";
-	name = "Engineering Lockdown"
+	id_tag = "eng_lockdown_emg1";
+	name = "Emergency Exit"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/engineering/engineering_monitoring)
@@ -14654,7 +14659,6 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	icon_state = "steel_decals4";
 	dir = 1
@@ -14666,6 +14670,9 @@
 	dir = 6
 	},
 /obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -15460,6 +15467,11 @@
 /obj/effect/floor_decal/corner/yellow/bordercorner2{
 	icon_state = "bordercolorcorner2";
 	dir = 6
+	},
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 25;
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/hallway)
@@ -16303,11 +16315,11 @@
 	icon_state = "bordercolorcorner2";
 	dir = 1
 	},
-/obj/machinery/fabricator,
 /obj/machinery/firealarm{
 	dir = 2;
 	pixel_y = 24
 	},
+/obj/structure/closet/secure_closet/engineering_electrical,
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/locker_room)
 "azx" = (
@@ -16754,6 +16766,9 @@
 	amount = 20
 	},
 /obj/effect/floor_decal/industrial/outline/grey,
+/obj/item/stack/material/glass/phoronglass{
+	amount = 50
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/hardstorage)
 "aAa" = (
@@ -17073,6 +17088,9 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/engineering_senior,
+/obj/structure/sign/poster{
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/locker_room)
 "aAF" = (
@@ -17669,11 +17687,11 @@
 	icon_state = "bordercolorcorner2";
 	dir = 10
 	},
-/obj/structure/extinguisher_cabinet{
-	dir = 1;
-	pixel_x = -22
+/obj/structure/closet/secure_closet/engineering_welding,
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -23
 	},
-/obj/structure/flora/pottedplant/stoutbush,
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/locker_room)
 "aBB" = (
@@ -20292,13 +20310,13 @@
 	icon_state = "map_universal";
 	dir = 4
 	},
-/obj/machinery/door/blast/regular/open{
-	dir = 4;
-	id_tag = "eng_lockdown_emg1";
-	name = "Emergency Exit"
-	},
 /obj/machinery/door/airlock/engineering/striped{
 	name = "Materials Storage"
+	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	id_tag = "eng_lockdown";
+	name = "Engineering Lockdown"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/locker_room)
@@ -23401,13 +23419,6 @@
 	icon_state = "robotics";
 	dir = 1
 	},
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "eng_lockdown_emg1";
-	name = "Emergency Exit Control";
-	pixel_x = -24;
-	req_access = list("ACCESS_ENGINEERING")
-	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/locker_room)
 "aLz" = (
@@ -24185,7 +24196,7 @@
 /obj/effect/floor_decal/borderfloor,
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/yellow/border,
-/obj/structure/closet/secure_closet/engineering_welding,
+/obj/machinery/fabricator,
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/locker_room)
 "aMV" = (
@@ -26201,9 +26212,9 @@
 	name = "west bump";
 	pixel_x = -24
 	},
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -23
+/obj/structure/extinguisher_cabinet{
+	dir = 8;
+	pixel_y = -22
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/locker_room)
@@ -35552,9 +35563,6 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -35568,6 +35576,7 @@
 	name = "Engineering Bay";
 	sort_type = "Engineering Bay"
 	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/engineering_monitoring)
 "bha" = (
