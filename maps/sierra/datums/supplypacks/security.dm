@@ -39,13 +39,13 @@
 	contraband = 1
 	security_level = null
 
-/decl/hierarchy/supply_pack/security/armory/heavycombat
-	name = "Weapons - Heavy Combat Weapons"
-	contains = list(/obj/item/weapon/gun/energy/pulse_rifle/carbine = 2,
-					/obj/item/weapon/gun/energy/pulse_rifle/pistol = 2,
-					/obj/item/weapon/shield/riot/metal = 2)
+/decl/hierarchy/supply_pack/security/armory/advancedlaser
+	name = "Weapons - Advanced Laser Weapons"
+	contains = list(/obj/item/weapon/gun/energy/xray = 2,
+					/obj/item/weapon/gun/energy/xray/pistol = 2,
+					/obj/item/weapon/shield/energy = 2)
 	cost = 100
-	containername = "Heavy Combat Weapons crate"
+	containername = "Advanced Laser Weapons crate"
 	security_level = SUPPLY_SECURITY_HIGH
 
 /*2 OP for us
