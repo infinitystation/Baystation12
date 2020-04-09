@@ -3405,6 +3405,7 @@
 #include "infinity\code\modules\admin\update\update.dm"
 #include "infinity\code\modules\admin\verbs\randomverbs.dm"
 #include "infinity\code\modules\admin\verbs\respawn_as_self.dm"
+#include "infinity\code\modules\AiControl\_AiControl_Setup.dm"
 #include "infinity\code\modules\animations\animations_library.dm"
 #include "infinity\code\modules\atmospherics\components\unary\vent_pump.dm"
 #include "infinity\code\modules\bs_silk\accessory.dm"
