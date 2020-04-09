@@ -17,11 +17,15 @@
 #include "turret_matrix.dm"
 #include "turret_control.dm"
 
-#undef TURRET_FRIENDLY_COLOR
+#undef TURRET_COLOR
+#undef TURRET_COLOR_CLOSED
+
 #undef TURRET_ALLOWED_COLOR
 #undef TURRET_ENEMY_COLOR
-#undef TURRET_WALL_COLOR
+
 #undef TURRET_DOOR_OPEN_COLOR
 #undef TURRET_DOOR_CLOSED_COLOR
+
+#undef TURRET_WALL_COLOR
 
 #undef IM_ICON
