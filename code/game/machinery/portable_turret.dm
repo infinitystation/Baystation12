@@ -459,7 +459,6 @@ var/list/turret_icons
 //[INF]
 	CheckNeed2PopDown(targets, secondarytargets)
 /obj/machinery/porta_turret/proc/CheckNeed2PopDown(list/targets, list/secondarytargets)
-	. = ..()
 	if(!AiHolder.client)
 //[/INF]
 		if(!tryToShootAt(targets))

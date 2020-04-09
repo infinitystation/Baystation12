@@ -1,6 +1,5 @@
 /atom/var/mob/observer/eye/AiHolder/AiHolder
 /atom/proc/AiControl(mob/living/silicon/ai/ai)
-	. = ..()
 	if(!istype(ai)) return
 	if(!AiHolder) return
 	if(!AiHolder.MyAI) switch(alert(ai, "Are you sure that you want to put yourself in turret?", "Ai Control", "Yes", "No"))
