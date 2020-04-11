@@ -246,7 +246,7 @@
 		update_use_power(POWER_USE_OFF)
 		set_light(0)
 //ORIGINAL	change_power_consumption((light_outer_range * light_max_bright) * LIGHTING_POWER_FACTOR, POWER_USE_ACTIVE)
-	change_power_consumption(((light_outer_range^2) * light_max_bright) * LIGHTING_POWER_FACTOR, POWER_USE_ACTIVE) //INF
+	change_power_consumption(((light_outer_range**2) * light_max_bright) * LIGHTING_POWER_FACTOR, POWER_USE_ACTIVE) //INF
 
 /obj/machinery/light/proc/get_status()
 	if(!lightbulb)
