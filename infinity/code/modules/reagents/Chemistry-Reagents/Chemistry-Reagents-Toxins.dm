@@ -11,7 +11,7 @@
 	heating_products = null
 	heating_point = null
 	var/amount_to_zombify = 5
-	var/progress_zombify = 18000
+	var/progress_zombify = 3600
 
 /datum/reagent/toxin/zombie/affect_touch(var/mob/living/carbon/M, var/alien, var/removed)
 	affect_blood(M, alien, removed * 0.5)
