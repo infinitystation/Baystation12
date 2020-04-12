@@ -9,8 +9,8 @@
 	)
 	sprites = list(
 		"Drone" = "drone-engineer",
-		"Eyebot" = "eyebot-engineering",
-		"Ver 06" = "wer6-Engineering"
+		"Eyebot" = "eyebot-engineering"
+		//"Ver 06" = "wer6-Construction" BROKEN
 	)
 	equipment = list(
 		/obj/item/borg/sight/meson,

@@ -16,6 +16,8 @@
 		to_chat(src, "<span class='notice'>You have stopped hiding.</span>")
 	reset_layer()
 
+/*[ORIGINAL]
+
 /mob/living/proc/breath_death()
 	set name = "Breath Death"
 	set desc = "Infect others with your very breath."
@@ -70,3 +72,5 @@
 		if(target.getBruteLoss() < -target.maxHealth)
 			target.gib()
 		src.adjustBruteLoss(-25)
+
+[/ORIGINAL]*/
