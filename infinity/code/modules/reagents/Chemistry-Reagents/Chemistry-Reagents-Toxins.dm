@@ -11,7 +11,7 @@
 	heating_products = null
 	heating_point = null
 	var/amount_to_zombify = 5
-	var/progress_zombify = 100
+	var/progress_zombify = 18000
 
 /datum/reagent/toxin/zombie/affect_touch(var/mob/living/carbon/M, var/alien, var/removed)
 	affect_blood(M, alien, removed * 0.5)
@@ -28,8 +28,5 @@
 		else if (true_dose >= amount_to_zombify)
 			var/obj/item/organ/internal/romerol/ooze = new(H.get_organ(BP_HEAD))
 			ooze.replaced(H,progress_zombify)
-		else if (true_dose > 1 && prob(20))
-			var/obj/item/organ/internal/romerol/ooze = new(H.get_organ(BP_HEAD))
-			ooze.replaced(H, progress_zombify)
 		else if (prob(10))
 			to_chat(H, "<span class='warning'>You feel terribly ill!</span>")

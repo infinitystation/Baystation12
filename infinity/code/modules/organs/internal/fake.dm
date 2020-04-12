@@ -33,7 +33,7 @@
 	damage_reduction = 0
 	can_be_printed = FALSE
 	var/progress = 0
-	var/max_progress = 100
+	var/max_progress = 18000
 
 /obj/item/organ/internal/romerol/Initialize()
 	. = ..()
