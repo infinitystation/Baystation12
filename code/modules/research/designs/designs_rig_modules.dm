@@ -210,3 +210,41 @@
 	materials = list(MATERIAL_STEEL = 10000, MATERIAL_GLASS = 10000)
 	build_path = /obj/item/disk/integrated_circuit/upgrade/clone
 	sort_string = "WCLAE"
+
+//[INF]
+/datum/design/item/rig/lcan
+	name = "Mounted laser cannon"
+	desc = "A shoulder-mounted battery-powered laser cannon mount"
+	id = "rig_lcan"
+	req_tech = list(TECH_COMBAT = 6, TECH_POWER = 6, TECH_MAGNET = 6, TECH_ESOTERIC = 2, TECH_ENGINEERING = 6)
+	materials = list(MATERIAL_STEEL = 5000, MATERIAL_GLASS = 5000, MATERIAL_DIAMOND = 5000, MATERIAL_PLASTIC = 3500)
+	build_path = /obj/item/rig_module/mounted/lcannon
+	sort_string = "WCKABA"
+
+/datum/design/item/rig/muvis
+	name = "Hardsuit multi-visor"
+	desc = "A layered, translucent visor system for a hardsuit."
+	id = "rig_mvision"
+	req_tech = list(TECH_MATERIAL = 6, TECH_POWER = 6, TECH_MAGNET = 6, TECH_ESOTERIC = 4, TECH_ENGINEERING = 6,TECH_BIO = 6)
+	materials = list(MATERIAL_STEEL = 5000, MATERIAL_GLASS = 5000, MATERIAL_DIAMOND = 2500, MATERIAL_PLASTIC = 2500)
+	build_path = /obj/item/rig_module/vision/multi
+	sort_string = "WCAADB"
+
+datum/design/item/rig/tvis
+	name = "Hardsuit thermal scanner"
+	desc = "A layered, translucent visor system for a hardsuit."
+	id = "rig_tvision"
+	req_tech = list(TECH_MATERIAL = 4, TECH_MAGNET = 6, TECH_ESOTERIC = 3, TECH_ENGINEERING = 6,TECH_BIO = 6)
+	materials = list(MATERIAL_STEEL = 5000, MATERIAL_GLASS = 5000, MATERIAL_DIAMOND = 2500, MATERIAL_PLASTIC = 2500)
+	build_path = /obj/item/rig_module/vision/thermal
+	sort_string = "WCAADA"
+
+/datum/design/item/rig/defibrillator
+	name = "Mounted defibrillator"
+	desc = "A complex circuit with two metal electrodes, mountable on a RIG."
+	id = "rig_defib"
+	req_tech = list(TECH_MAGNET = 4, TECH_POWER = 4, TECH_BIO = 5, TECH_ENGINEERING = 5)
+	materials = list(MATERIAL_PLASTIC = 1000, MATERIAL_STEEL = 700, MATERIAL_GLASS = 500)
+	build_path = /obj/item/rig_module/device/defib
+	sort_string = "WCBAA"
+//[/INF]

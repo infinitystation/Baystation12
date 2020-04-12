@@ -533,10 +533,53 @@
 	materials = list(DEFAULT_WALL_MATERIAL = 3000)
 	id = "augment_circuitry"
 
-/datum/design/item/mechfab/rig/zero
+//Fancy hardsuits
+
+/datum/design/item/mechfab/rig
 	category = "Hardsuits"
+	time = 160
+
+/datum/design/item/mechfab/rig/light
+	time = 120
+
+/datum/design/item/mechfab/rig/light/zero
 	name = "Null suit control module"
 	build_path = /obj/item/weapon/rig/zero
 	materials = list(DEFAULT_WALL_MATERIAL = 30000, "glass" = 5000, "silver" = 1000)
-	id = "null _suit"
-	time = 120
+	req_tech = list(TECH_MAGNET = 3, TECH_MATERIAL = 4, TECH_ENGINEERING = 4)
+	id = "null_suit"
+
+/datum/design/item/mechfab/rig/light/internalaffairs
+	name = "Augmented tie"
+	build_path = /obj/item/weapon/rig/light/internalaffairs/equipped
+	materials = list(DEFAULT_WALL_MATERIAL = 20000, "glass" = 3000, "silver" = 750)
+	req_tech = list(TECH_MAGNET = 5, TECH_MATERIAL = 4, TECH_ENGINEERING = 4)
+	id = "iaa_suit"
+
+/datum/design/item/mechfab/rig/industrial
+	name = "Industrial suit control module"
+	build_path = /obj/item/weapon/rig/industrial
+	materials = list(DEFAULT_WALL_MATERIAL = 75000, "glass" = 3000, "silver" = 1000, "gold" = 500, "uranium" = 1000)
+	req_tech = list(TECH_MAGNET = 5, TECH_MATERIAL = 6, TECH_ENGINEERING = 6, TECH_BIO = 2)
+	id = "miner_suit"
+
+/datum/design/item/mechfab/rig/eva
+	name = "EVA hardsuit control module"
+	build_path = /obj/item/weapon/rig/eva
+	materials = list(DEFAULT_WALL_MATERIAL = 50000, "glass" = 5000, "silver" = 1000, "gold" = 500)
+	req_tech = list(TECH_MAGNET = 5, TECH_MATERIAL = 6, TECH_ENGINEERING = 6, TECH_BIO = 2)
+	id = "eva_suit"
+
+/datum/design/item/mechfab/rig/medical
+	name = "Rescue suit control module"
+	build_path = /obj/item/weapon/rig/medical
+	materials = list(DEFAULT_WALL_MATERIAL = 30000, "glass" = 5000, "silver" = 1500, "gold" = 750)
+	req_tech = list(TECH_MAGNET = 4, TECH_MATERIAL = 6, TECH_ENGINEERING = 4, TECH_BIO = 5)
+	id = "med_suit"
+
+/datum/design/item/mechfab/rig/hazard
+	name = "Hazard hardsuit control module"
+	build_path = /obj/item/weapon/rig/hazard
+	materials = list(DEFAULT_WALL_MATERIAL = 50000, "glass" = 7500, "silver" = 1500, "gold" = 1500, "diamond" = 1000)
+	req_tech = list(TECH_MATERIAL = 6, TECH_COMBAT = 5, TECH_MAGNET = 4, TECH_BIO = 2,TECH_POWER = 5)
+	id = "hazard_suit"

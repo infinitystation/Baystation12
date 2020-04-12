@@ -151,8 +151,15 @@
 		list("dylovene",      "dylovene",      /datum/reagent/dylovene,          80),
 		list("hyronalin",     "hyronalin",     /datum/reagent/hyronalin,         80),
 		list("spaceacillin",  "spaceacillin",  /datum/reagent/spaceacillin,      80),
-		list("tramadol",      "tramadol",      /datum/reagent/tramadol,          80)
+		list("tramadol",      "tramadol",      /datum/reagent/tramadol,          80),
+
+//[INF]
+		list("nanoblood",     "nanoblood",     /datum/reagent/nanoblood,         80),
+		list("bicaridine",    "bicaridine",    /datum/reagent/bicaridine,        80),
+		list("dermaline",     "dermaline",     /datum/reagent/dermaline,         80)
 		)
+
+//[/INF]
 
 	var/max_reagent_volume = 80 //Used when refilling.
 
