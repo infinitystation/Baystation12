@@ -34,7 +34,8 @@
 	id = "awaysite_bearcat_wreck"
 	description = "A wrecked light freighter."
 	suffixes = list("bearcat/bearcat-1.dmm", "bearcat/bearcat-2.dmm")
-	cost = 1
+	spawn_weight = 50 //INF, HABITABLE SHIPS SPAWN
+	cost = 2 //INF, WAS 1
 	shuttles_to_initialise = list(/datum/shuttle/autodock/ferry/lift)
 	area_usage_test_exempted_root_areas = list(/area/ship)
 	apc_test_exempt_areas = list(
