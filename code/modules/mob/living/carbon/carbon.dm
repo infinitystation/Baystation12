@@ -512,10 +512,3 @@
 		to_chat(src, "<span class='warning'>You are no longer running on internals.</span>")
 	if(internals)
 		internals.icon_state = "internal[!!internal]"
-//[inf]
-/mob/living/carbon/proc/has_fake_brain()
-	var/obj/item/organ/internal/brain/brain = internal_organs_by_name[BP_BRAIN]
-	if(istype(brain) && brain.fake_brain)
-		return 1
-	return 0
-//[/inf]
