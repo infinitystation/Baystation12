@@ -1,0 +1,6 @@
+{
+  "ckey" :            "moonmen",
+  "character_name" :  "Kalka Kaytam",
+  "item_path" :       "/obj/item/clothing/head/helmet/custom_moonmen",
+  "req_access" :      [ "ACCESS_SECURITY" ]
+  }
