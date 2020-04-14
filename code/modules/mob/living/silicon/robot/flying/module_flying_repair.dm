@@ -10,7 +10,7 @@
 	sprites = list(
 		"Drone" = "drone-engineer",
 		"Eyebot" = "eyebot-engineering"
-		//"Ver 06" = "wer6-Construction" BROKEN
+		"Ver 06" = "wer6-Construction"
 	)
 	equipment = list(
 		/obj/item/borg/sight/meson,
