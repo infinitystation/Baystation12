@@ -526,7 +526,10 @@
 	new_character.regenerate_icons()
 
 	new_character.key = key		//Manually transfer the key to log them in
-	new_character.Sleeping(10) //INF, should be enough to remove I SAW NAKED MEN!
+//[INF]
+	if(GAME_STATE == (RUNLEVEL_LOBBY || RUNLEVEL_SETUP))
+		new_character.Sleeping(15) //should be enough to remove I SAW NAKED MEN!
+//[/INF]
 	return new_character
 
 /mob/new_player/proc/ViewManifest()

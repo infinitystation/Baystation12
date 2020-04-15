@@ -3477,6 +3477,7 @@
 #include "infinity\code\modules\emotes\definitions\visible.dm"
 #include "infinity\code\modules\events\alien.dm"
 #include "infinity\code\modules\food\recipes_microwave.dm"
+#include "infinity\code\modules\games\cards.dm"
 #include "infinity\code\modules\hydroponics\grown_inedible.dm"
 #include "infinity\code\modules\hydroponics\seed_datums.dm"
 #include "infinity\code\modules\hydroponics\seed_packets.dm"
