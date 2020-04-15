@@ -1,4 +1,4 @@
-/atom/var/mob/living/silicon/AiHolder/AiHolder
+/atom/var/mob/AiHolder/AiHolder
 /atom/proc/AiControl(mob/living/silicon/ai/ai)
 	if(!istype(ai)) return
 	if(!AiHolder) return
@@ -18,17 +18,17 @@
 /atom/proc/onAiHolderClickOn(var/atom/A, var/params)
 
 #define AIHOLDER_CRASHMESSAGE "ATTEMPT TO CALL A FUNCTION OF THE HOLDER WITH src = [src.type]"
-/mob/living/silicon/AiHolder/onReturnAi2Core()
+/mob/AiHolder/onReturnAi2Core()
 	CRASH(AIHOLDER_CRASHMESSAGE)
-/mob/living/silicon/AiHolder/onAiHolderLife()
+/mob/AiHolder/onAiHolderLife()
 	CRASH(AIHOLDER_CRASHMESSAGE)
-/mob/living/silicon/AiHolder/onAiHolderLogin()
+/mob/AiHolder/onAiHolderLogin()
 	CRASH(AIHOLDER_CRASHMESSAGE)
-/mob/living/silicon/AiHolder/onAiHolderClickOn(var/atom/A, var/params)
+/mob/AiHolder/onAiHolderClickOn(var/atom/A, var/params)
 	CRASH(AIHOLDER_CRASHMESSAGE)
-/mob/living/silicon/AiHolder/assume_AI_control(mob/living/silicon/ai/ai)
+/mob/AiHolder/assume_AI_control(mob/living/silicon/ai/ai)
 	CRASH(AIHOLDER_CRASHMESSAGE)
-/mob/living/silicon/AiHolder/AiControl(mob/living/silicon/ai/ai)
+/mob/AiHolder/AiControl(mob/living/silicon/ai/ai)
 	CRASH(AIHOLDER_CRASHMESSAGE)
 #undef AIHOLDER_CRASHMESSAGE
 
