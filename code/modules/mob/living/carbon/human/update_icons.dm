@@ -543,7 +543,6 @@ var/global/list/damage_icon_parts = list()
 /mob/living/carbon/human/update_inv_gloves(var/update_icons=1)
 	if(gloves && !(wear_suit && wear_suit.flags_inv & HIDEGLOVES))
 		overlays_standing[gloves.use_alt_layer ? HO_GLOVES_ALT_LAYER : HO_GLOVES_LAYER] = gloves.get_mob_overlay(src,slot_gloves_str) //INF Original overlays_standing[HO_GLOVES_LAYER]	= gloves.get_mob_overlay(src,slot_gloves_str)
-		loc.update_icon()
 	else
 		if(blood_DNA && species.blood_mask)
 			var/image/bloodsies	= overlay_image(species.blood_mask, "bloodyhands", hand_blood_color, RESET_COLOR)
