@@ -132,7 +132,7 @@ Please contact me on #coderbus IRC. ~Carn x
 #define HO_DAMAGE_LAYER     3
 #define HO_SURGERY_LAYER    4 //bs12 specific.
 #define HO_UNDERWEAR_LAYER  5
-#define HO_GLOVES_ALT_LAYER 6 //INF
+#define HO_GLOVES_ALT_LAYER 6  //INF, WAS 5-26
 #define HO_UNIFORM_LAYER    7
 #define HO_ID_LAYER         8
 #define HO_SHOES_LAYER      9
@@ -154,7 +154,7 @@ Please contact me on #coderbus IRC. ~Carn x
 #define HO_L_HAND_LAYER     25
 #define HO_R_HAND_LAYER     26
 #define HO_FIRE_LAYER       27 //If you're on fire
-#define TOTAL_LAYERS        27 //INF
+#define TOTAL_LAYERS        27
 //////////////////////////////////
 
 /mob/living/carbon/human
@@ -549,11 +549,9 @@ var/global/list/damage_icon_parts = list()
 			var/image/bloodsies	= overlay_image(species.blood_mask, "bloodyhands", hand_blood_color, RESET_COLOR)
 			overlays_standing[HO_GLOVES_LAYER]	= bloodsies
 			overlays_standing[HO_GLOVES_ALT_LAYER]	= bloodsies //INF
-			loc.update_icon()
 		else
 			overlays_standing[HO_GLOVES_LAYER]	= null
 			overlays_standing[HO_GLOVES_ALT_LAYER]	= null //INF
-			loc.update_icon()
 	if(update_icons)
 		queue_icon_update()
 
