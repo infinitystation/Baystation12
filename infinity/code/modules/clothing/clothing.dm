@@ -1,4 +1,6 @@
-/obj/item/clothing/gloves/update_clothing_icon()
-	if (ismob(src.loc))
-		var/mob/M = src.loc
-		M.update_inv_gloves()
+/obj/item/clothing/gloves/verb/toggle_layer()
+	set name = "Switch Gloves Layer"
+	set category = "Object"
+
+	use_alt_layer = !use_alt_layer
+	update_icon()
