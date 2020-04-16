@@ -5,6 +5,7 @@
 	icon_state = "heph_hat"
 	item_state = "heph_hat"
 	item_icons = list(slot_head_str = CUSTOM_ITEM_MOB)
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/suit/storage/heph_coat
 	name = "large coat"
@@ -17,6 +18,7 @@
 	slots = 2
 	valid_accessory_slots = list(ACCESSORY_SLOT_ARMOR_C)
 	species_restricted = list(SPECIES_IPC)
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/under/rank/security/heph_pants
 	name = "gray slacks"
@@ -27,6 +29,7 @@
 	item_icons = list(slot_w_uniform_str = CUSTOM_ITEM_MOB)
 	worn_state = null
 	body_parts_covered = LOWER_TORSO|LEGS
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/shoes/jackboots/heph_boots
 	name = "polished boots"
@@ -37,6 +40,7 @@
 	item_state = "heph_boots"
 	var/footstep = 1
 	species_restricted = list(SPECIES_IPC)  //ИС - по флавору иное строение ступней; ООС - предотвращение кражи обуви некоторыми личностями ради спама звуком. Вы знете кто вы.
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/shoes/jackboots/heph_boots/handle_movement(var/turf/walking, var/running)
 	if(running)

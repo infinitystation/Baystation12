@@ -8,6 +8,7 @@
 	hardware_closed = "vashura_knife_open"
 	hardware_open = "vashura_knife"
 	handle_icon = "vashura_knife"
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/head/helmet/riot/custom_vashuara
 	name = "Crying Knight helmet"
@@ -24,6 +25,7 @@
 		energy = ARMOR_ENERGY_SMALL,
 		bomb = ARMOR_BOMB_PADDED
 		)
+	trade_blacklisted = TRUE
 
 /obj/item/custkit/vashara_helmet
 	name = "helmet customization kit"

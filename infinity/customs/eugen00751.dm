@@ -6,6 +6,7 @@
 /obj/item/clothing/head/HoS/dermal/beret/custom_eugen00751
 	name = "shabby armored beret"
 	desc = "This is an old, shabby beret, which is distinguished by special hardness from the others."
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/accessory/aquila
 	name = "silver aquila patch"
@@ -17,3 +18,4 @@
 		slot_w_uniform_str = CUSTOM_ITEM_MOB,
 		slot_tie_str = CUSTOM_ITEM_MOB,
 		slot_wear_suit_str = CUSTOM_ITEM_MOB)
+	trade_blacklisted = TRUE
