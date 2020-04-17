@@ -26,8 +26,8 @@
 	icon_state = "darkcannon"
 	item_state = "darkcannon"
 	projectile_type = /obj/item/projectile/beam/stun/darkmatter
-	//INF WAS self_recharge = 1
-	max_shots = 8 //INF
+	self_recharge = 1
+	max_shots = 4 //INF
 	firemodes = list(
 		list(mode_name="stunning", burst=1, fire_delay=null, move_delay=null, burst_accuracy=list(30), dispersion=null, projectile_type=/obj/item/projectile/beam/stun/darkmatter, charge_cost = 50),
 		list(mode_name="focused", burst=1, fire_delay=null, move_delay=null, burst_accuracy=list(30), dispersion=null, projectile_type=/obj/item/projectile/beam/darkmatter, charge_cost = 75),

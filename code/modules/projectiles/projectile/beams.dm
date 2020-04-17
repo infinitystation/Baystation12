@@ -283,12 +283,12 @@
 /obj/item/projectile/beam/darkmatter
 	name = "dark matter bolt"
 	icon_state = "darkb"
-	damage = 35 //INF, WAS 40
+	damage = 40
 	armor_penetration = 30 //INF, WAS 35
-	damage_type = BURN //INF, WAS BRUTE
-	sharp = 1 //INF
-	damage_flags = DAM_LASER //INF
-	eyeblur = 4 //INF
+	//INF damage_type = BURN
+	//INF sharp = 1 //INF
+	//INF damage_flags = DAM_LASER
+	//INF eyeblur = 4 //INF
 	muzzle_type = /obj/effect/projectile/darkmatter/muzzle
 	tracer_type = /obj/effect/projectile/darkmatter/tracer
 	impact_type = /obj/effect/projectile/darkmatter/impact
