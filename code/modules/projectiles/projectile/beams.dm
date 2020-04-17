@@ -11,7 +11,7 @@
 	damage_flags = DAM_LASER
 	eyeblur = 4
 	hitscan = 1
-	invisibility = 101	//beam projectiles are invisible as they are rendered by the effect engine
+	invisibility = 101	//A
 	penetration_modifier = 0.3
 	armor_penetration = 10 //INF, WAS NOTHING (0)
 	//INF distance_falloff = 2.5
@@ -283,9 +283,12 @@
 /obj/item/projectile/beam/darkmatter
 	name = "dark matter bolt"
 	icon_state = "darkb"
-	damage = 40
-	armor_penetration = 35
-	damage_type = BRUTE
+	damage = 35 //INF, WAS 40
+	armor_penetration = 30 //INF, WAS 35
+	damage_type = BURN //INF, WAS BRUTE
+	sharp = 1 //INF
+	damage_flags = DAM_LASER //INF
+	eyeblur = 4 //INF
 	muzzle_type = /obj/effect/projectile/darkmatter/muzzle
 	tracer_type = /obj/effect/projectile/darkmatter/tracer
 	impact_type = /obj/effect/projectile/darkmatter/impact
