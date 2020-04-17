@@ -462,7 +462,7 @@
 		detail_color = D.detail_color
 		update_icon()
 //[INF]
-	else if(is_type_in_list(I, list(/obj/item/weapon/gun/energy/, /obj/item/weapon/grenade/, /obj/item/weapon/aicard, /obj/item/device/paicard, /obj/item/device/mmi)) && opened)
+	else if(is_type_in_list(I, list(/obj/item/weapon/gun/energy/, /obj/item/weapon/grenade/, /obj/item/weapon/aicard, /obj/item/device/paicard, /obj/item/device/mmi, /obj/item/organ/internal/posibrain/)) && opened)
 		loading(I,user)
 //[/INF]
 	else if(istype(I, /obj/item/weapon/screwdriver))
