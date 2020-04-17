@@ -60,10 +60,12 @@
 		..()
 
 /obj/item/integrated_circuit/manipulation/weapon_firing/attack_self(var/mob/user)
-	eject_gun(user) //INF
-
 //[INF]
+	eject_gun(user)
+
+
 /obj/item/integrated_circuit/manipulation/weapon_firing/proc/eject_gun(var/mob/user)
+//[/INF]
 	if(installed_gun)
 		installed_gun.dropInto(loc)
 		to_chat(user, "<span class='notice'>You slide \the [installed_gun] out of the firing mechanism.</span>")
@@ -74,7 +76,6 @@
 		push_data()
 	else
 		to_chat(user, "<span class='notice'>There's no weapon to remove from the mechanism.</span>")
-//[/INF]
 
 /obj/item/integrated_circuit/manipulation/weapon_firing/do_work(ord)
 	if(!installed_gun)
