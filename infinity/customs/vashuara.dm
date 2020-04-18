@@ -3,10 +3,10 @@
 	desc = "A custom knife with wooden scabbard and handle. The handle and scabbard are inlaid with brass inserts. \
 	The Damascus steel blade is engraved and looks quite sharp."
 	icon = CUSTOM_ITEM_OBJ
-	icon_state = "vashura_knife_open"
+	icon_state = "vashura_knife"
 	takes_colour = FALSE
-	hardware_closed = "vashura_knife_open"
-	hardware_open = "vashura_knife"
+	hardware_open = "vashura_knife_open"
+	hardware_closed = "vashura_knife"
 	handle_icon = "vashura_knife"
 	trade_blacklisted = TRUE
 
