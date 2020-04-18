@@ -207,7 +207,7 @@
 					/obj/item/weapon/gun/energy/gun/secure = 4)
 
 /obj/machinery/vending/paimod
-	name = "IntelegenceTech"
+	name = "IntelligenceTech"
 	desc = "A pai modification vendor. Inside of showcase you see many of circuits, devices and etc."
 	icon = 'infinity/icons/obj/vending.dmi'
 	density = 1
