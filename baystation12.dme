@@ -3443,6 +3443,7 @@
 #include "infinity\code\modules\clothing\shoes\shoes.dm"
 #include "infinity\code\modules\clothing\shoes\shoes_resomi.dm"
 #include "infinity\code\modules\clothing\spacesuits\rig\rig.dm"
+#include "infinity\code\modules\clothing\spacesuits\rig\rig_pieces.dm"
 #include "infinity\code\modules\clothing\spacesuits\void\voidsuits.dm"
 #include "infinity\code\modules\clothing\suits\armor.dm"
 #include "infinity\code\modules\clothing\suits\suits.dm"

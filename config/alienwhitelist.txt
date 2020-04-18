@@ -4,6 +4,7 @@ cre77 - machine
 rucat - machine
 forrya - machine
 logfol - machine
+solark - machine
 kosteg - machine
 hodovoy - machine
 mishele - machine
@@ -178,7 +179,6 @@ daviii22 - unathi
 hodovoy - unathi
 vermout - unathi
 taushai - unathi
-solark - unathi
 cre77 - unathi
 s1334 - unathi
 he11d1ver - unathi
