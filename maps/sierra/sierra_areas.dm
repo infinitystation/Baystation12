@@ -843,6 +843,10 @@
 	icon_state = "cafeteria"
 	sound_env = LARGE_SOFTFLOOR
 
+/area/crew_quarters/cafe
+	name = "Second Deck - Living - Cafe"
+	icon_state = "cafeteria"
+
 /area/crew_quarters/galley
 	name = "Second Deck - Service - Galley"
 	icon_state = "kitchen"
