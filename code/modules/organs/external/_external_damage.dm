@@ -142,7 +142,7 @@ obj/item/organ/external/take_general_damage(var/amount, var/silent = FALSE)
 	if(damage_flags & DAM_SHARP)
 		organ_damage_threshold *= 0.5
 	if(laser)
-		organ_damage_threshold *= 2
+		organ_damage_threshold *= 1 //INF, WAS 2
 
 	if(!(cur_damage + damage_amt >= max_damage) && !(damage_amt >= organ_damage_threshold))
 		return FALSE
