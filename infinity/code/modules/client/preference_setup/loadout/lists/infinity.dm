@@ -20,7 +20,6 @@
 	display_name = "instruments selection"
 	description = "Musical instruments. Be ready for tomatoes and a spoiled eggs!"
 	path = /obj/item/device
-
 /datum/gear/music/New()
 	..()
 	var/instruments = list()
