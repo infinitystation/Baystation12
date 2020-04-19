@@ -98,22 +98,6 @@
 
 	return
 
-// Drone verbs.
-/mob/living/carbon/human/proc/evolve()
-	set name = "Evolve (500)"
-	set desc = "Produce an interal egg sac capable of spawning children. Only one queen can exist at a time."
-	set category = "Abilities"
-
-	if(alien_queen_exists())
-		to_chat(src, "<span class='notice'>We already have an active queen.</span>")
-		return
-
-	if(check_alien_ability(500))
-		visible_message("<span class='alium'><B>[src] begins to twist and contort!</B></span>", "<span class='alium'>You begin to evolve!</span>")
-		src.set_species("Xenophage Queen")
-
-	return
-
 /mob/living/carbon/human/proc/plant()
 	set name = "Plant Weeds (350)"
 	set desc = "Plants some alien weeds"
@@ -165,6 +149,76 @@
 
 	return
 
+/mob/living/carbon/human/proc/strong_corrosive_acid(O as obj|turf in oview(1)) //If they right click to corrode, an error will flash if its an invalid target./N
+	set name = "Corrosive Acid (200)"
+	set desc = "Drench an object in acid, destroying it over time."
+	set category = "Abilities"
+
+	if(!(O in oview(1)))
+		to_chat(src, "<span class='alium'>[O] is too far away.</span>")
+		return
+
+	// OBJ CHECK
+	var/cannot_melt
+	if(isobj(O))
+		var/obj/I = O
+		if(I.unacidable)
+			cannot_melt = 1
+	else
+		if(istype(O, /turf/simulated/wall))
+			var/turf/simulated/wall/W = O
+			if(W.material.flags & MATERIAL_UNMELTABLE)
+				cannot_melt = 1
+		else if(istype(O, /turf/simulated/floor))
+			var/turf/simulated/floor/F = O
+			if(F.flooring?.flags & TURF_ACID_IMMUNE)
+				cannot_melt = 1
+
+	if(cannot_melt)
+		to_chat(src, "<span class='alium'>You cannot dissolve this object.</span>")
+		return
+
+	if(check_alien_ability(200,0,BP_ACID) && !is_ventcrawling)
+		new /obj/effect/acid/strong(get_turf(O), O)
+		visible_message("<span class='alium'><B>[src] vomits globs of vile stuff all over [O]. It begins to sizzle and melt under the bubbling mess of acid!</B></span>")
+
+	return
+
+/mob/living/carbon/human/proc/moderate_corrosive_acid(O as obj|turf in oview(1)) //If they right click to corrode, an error will flash if its an invalid target./N
+	set name = "Corrosive Acid (200)"
+	set desc = "Drench an object in acid, destroying it over time."
+	set category = "Abilities"
+
+	if(!(O in oview(1)))
+		to_chat(src, "<span class='alium'>[O] is too far away.</span>")
+		return
+
+	// OBJ CHECK
+	var/cannot_melt
+	if(isobj(O))
+		var/obj/I = O
+		if(I.unacidable)
+			cannot_melt = 1
+	else
+		if(istype(O, /turf/simulated/wall))
+			var/turf/simulated/wall/W = O
+			if(W.material.flags & MATERIAL_UNMELTABLE)
+				cannot_melt = 1
+		else if(istype(O, /turf/simulated/floor))
+			var/turf/simulated/floor/F = O
+			if(F.flooring?.flags & TURF_ACID_IMMUNE)
+				cannot_melt = 1
+
+	if(cannot_melt)
+		to_chat(src, "<span class='alium'>You cannot dissolve this object.</span>")
+		return
+
+	if(check_alien_ability(200,0,BP_ACID) && !is_ventcrawling)
+		new /obj/effect/acid/moderate(get_turf(O), O)
+		visible_message("<span class='alium'><B>[src] vomits globs of vile stuff all over [O]. It begins to sizzle and melt under the bubbling mess of acid!</B></span>")
+
+	return
+
 /mob/living/carbon/human/proc/neurotoxin(mob/target as mob in oview())
 	set name = "Spit Neurotoxin (50)"
 	set desc = "Spits neurotoxin at someone, paralyzing them for a short time if they are not wearing protective gear."
@@ -181,6 +235,24 @@
 			return
 
 		var/obj/item/projectile/energy/neurotoxin/A = new /obj/item/projectile/energy/neurotoxin(usr.loc)
+		A.launch(target,get_organ_target())
+
+/mob/living/carbon/human/proc/spit_acid(mob/target as mob in oview())
+	set name = "Spit Acid (50)"
+	set desc = "Spits some acid at someone, dealing some damage to them if they are not wearing protective gear."
+	set category = "Abilities"
+
+
+	if(stat || paralysis || stunned || weakened || lying || restrained() || buckled)
+		to_chat(src, "You cannot spit acid in your current state.")
+		return
+
+	if(!(isxenomorph(target) || isalien(target)))
+		visible_message("<span class='warning'>[src] spits some acid at [target]!</span>", "<span class='alium'>You spit acid at [target].</span>")
+		if(!check_alien_ability(50,0,BP_ACID) && !is_ventcrawling)
+			return
+
+		var/obj/item/projectile/energy/alien_acid/A = new /obj/item/projectile/energy/alien_acid(usr.loc)
 		A.launch(target,get_organ_target())
 
 /mob/living/carbon/human/proc/resin() // -- TLE
@@ -235,12 +307,12 @@ mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in ovi
 		to_chat(src, SPAN_ALIEN("Это тело несовметимо с нашей физиологией..."))
 		return
 
-	var/confirm = alert(M, "Королева хочет сделать вас часть ульЯ. Вы согласны?", "Become Larva", "No", "Yes")
+	var/confirm = alert(M, "Королева хочет сделать вас часть Улья. Вы согласны?", "Become Larva", "No", "Yes")
 	if(!M || confirm != "Yes")
 		to_chat(src, SPAN_ALIEN("Несовместим с Ульем и не может стать его часть (требуется согласие жертвы)."))
 		return
 
-	src.visible_message(SPAN_DANGER("[src] встает перед [M], а затем, из её головы появляется полое, прозрачное жало!"))
+	src.visible_message(SPAN_DANGER("[src] встает перед [M], а затем, из её брюшка появляется полое, прозрачное жало!"))
 
 	if(!do_mob(src, M, 150))
 		return
@@ -291,3 +363,51 @@ mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in ovi
 //	A.set_broken(TRUE)
 	A.open(1) //var/check =
 //	src.visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")
+
+/mob/living/carbon/human/proc/evolve_hivelord()
+	set name = "Evolve to queen (500)"
+	set desc = "Produce an interal egg sac capable of spawning children. Only one queen can exist at a time."
+	set category = "Abilities"
+
+	if(alien_queen_exists())
+		to_chat(src, "<span class='notice'>We already have an active queen.</span>")
+		return
+
+	if(check_alien_ability(500))
+		visible_message("<span class='alium'><B>[src] begins to twist and contort!</B></span>", "<span class='alium'>You begin to evolve!</span>")
+		src.set_species("Xenophage Queen")
+
+	return
+
+/mob/living/carbon/human/proc/evolve_hunter()
+	set name = "Evolve (300)"
+	set desc = "Raise natural speed in cost of some armor. Also, your attacks will be stronger."
+	set category = "Abilities"
+
+	if(check_alien_ability(300))
+		visible_message("<span class='alium'><B>[src] begins to twist and contort!</B></span>", "<span class='alium'>You begin to evolve!</span>")
+		src.set_species("Xenophage Warrior")
+
+	return
+
+/mob/living/carbon/human/proc/evolve_sentinel()
+	set name = "Evolve (300)"
+	set desc = "Evolve an additional acid gland, capable of shooting acid."
+	set category = "Abilities"
+
+	if(check_alien_ability(300))
+		visible_message("<span class='alium'><B>[src] begins to twist and contort!</B></span>", "<span class='alium'>You begin to evolve!</span>")
+		src.set_species("Xenophage Spitter")
+
+	return
+
+/mob/living/carbon/human/proc/evolve_drone()
+	set name = "Evolve (300)"
+	set desc = "Produce a better armor and acid gland."
+	set category = "Abilities"
+
+	if(check_alien_ability(300))
+		visible_message("<span class='alium'><B>[src] begins to twist and contort!</B></span>", "<span class='alium'>You begin to evolve!</span>")
+		src.set_species("Xenophage Hivelord")
+
+	return

@@ -15,9 +15,7 @@
 		"Basic" = "Miner_old",
 		"Advanced Droid" = "droid-miner",
 		"Treadhead" = "Miner",
-		"Doot" = "eyebot-miner",
-		"Drone" = "drone-miner",
-		"Ver 06" = "wer6-Miner"
+//cuz flying		"Ver 06" = "wer6-Miner" //inf
 	)
 	supported_upgrades = list(
 		/obj/item/borg/upgrade/jetpack

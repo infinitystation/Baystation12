@@ -31,13 +31,13 @@
 
 /datum/job/submap/patrol
 	title = "Shuttle Crewman"
-	total_positions = 2
+	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/patrol/crewman
-	supervisors = "the Pilot, an officer"
-	info = "You remember waking up to alarms blaring in your face. Before you could react, a gush of hot air blew \
-	you away, knocking you cold unconcious.  Before this happened you were a crew member \
-	on this research vessel, SRV Verne, as it carried the members of the presitigous Ceti Technical institute in \
-	their pursuit of research. "
+	supervisors = "пилот, ваш офицер"
+	info = "Вы просыпаетесь и выходите из криосна, ощущая прохладный воздух на своём лице, а также лёгкую тошноту. \
+	Являясь одним из членов экипажа патрульного шаттла 3 флота ЦПСС, ваша задача состоит в патруле и разведке данного сектора. \
+	По данным бортового компьютера, поступал неизвестный сигнал о нападении воксов в этом регионе - возможно, потребуется подробная \
+	разведка."
 	required_language = LANGUAGE_HUMAN_EURO
 	whitelisted_species = list(SPECIES_HUMAN)
 	min_skill = list(SKILL_COMBAT  = SKILL_BASIC,
@@ -51,11 +51,11 @@
 	title = "Pilot"
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/patrol/pilot
-	supervisors = "SCGF Command"
-	info = "You remember waking up to alarms blaring in your face. Before you could react, a gush of hot air blew \
-	you away, knocking you cold unconcious.  Before this happened you were a crew member \
-	on this research vessel, SRV Verne, as it carried the members of the presitigous Ceti Technical institute in \
-	their pursuit of research. "
+	supervisors = "коммандование 3-го флота ЦПСС"
+	info = "Вы просыпаетесь и выходите из криосна, ощущая прохладный воздух на своём лице, а также лёгкую тошноту. \
+	Являясь одним из членов экипажа патрульного шаттла 3 флота ЦПСС, ваша задача состоит в патруле и разведке данного сектора. \
+	По данным бортового компьютера, поступал неизвестный сигнал о нападении воксов в этом регионе - возможно, потребуется подробная \
+	разведка."
 	min_skill = list(SKILL_COMBAT  = SKILL_BASIC,
 					 SKILL_WEAPONS = SKILL_BASIC,
 					 SKILL_HAULING = SKILL_BASIC,
@@ -67,10 +67,11 @@
 	title = "Corpsman"
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/patrol/corpsman
-	info = "You remember waking up to alarms blaring in your face. Before you could react, a gush of hot air blew \
-	you away, knocking you cold unconcious.  Before this happened you were a crew member \
-	on this research vessel, SRV Verne, as it carried the members of the presitigous Ceti Technical institute in \
-	their pursuit of research. "
+	supervisors = "пилот, ваш офицер"
+	info = "Вы просыпаетесь и выходите из криосна, ощущая прохладный воздух на своём лице, а также лёгкую тошноту. \
+	Являясь одним из членов экипажа патрульного шаттла 3 флота ЦПСС, ваша задача состоит в патруле и разведке данного сектора. \
+	По данным бортового компьютера, поступал неизвестный сигнал о нападении воксов в этом регионе - возможно, потребуется подробная \
+ 	разведка."
 	min_skill = list(SKILL_COMBAT  = SKILL_BASIC,
 					 SKILL_WEAPONS = SKILL_BASIC,
 					 SKILL_HAULING = SKILL_ADEPT,
@@ -83,10 +84,11 @@
 	title = "Technician"
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/patrol/engineer
-	info = "You remember waking up to alarms blaring in your face. Before you could react, a gush of hot air blew \
-	you away, knocking you cold unconcious.  Before this happened you were a crew member \
-	on this research vessel, SRV Verne, as it carried the members of the presitigous Ceti Technical institute in \
-	their pursuit of research. "
+	supervisors = "пилот, ваш офицер"
+	info = "Вы просыпаетесь и выходите из криосна, ощущая прохладный воздух на своём лице, а также лёгкую тошноту. \
+	Являясь одним из членов экипажа патрульного шаттла 3 флота ЦПСС, ваша задача состоит в патруле и разведке данного сектора. \
+	По данным бортового компьютера, поступал неизвестный сигнал о нападении воксов в этом регионе - возможно, потребуется подробная \
+	разведка."
 	min_skill = list(SKILL_COMBAT  = SKILL_BASIC,
 					 SKILL_WEAPONS = SKILL_BASIC,
 					 SKILL_HAULING = SKILL_ADEPT,
@@ -112,8 +114,6 @@
 	l_pocket = /obj/item/device/radio
 	r_pocket = /obj/item/weapon/crowbar/prybar
 	suit_store = /obj/item/weapon/tank/oxygen
-	belt = /obj/item/weapon/storage/belt/holster/security/away_patrol
-	back = /obj/item/weapon/storage/backpack/rucksack/navy
 	id_type = /obj/item/weapon/card/id/awaypatrol
 	id_slot = slot_wear_id
 	pda_type = null
@@ -122,19 +122,23 @@
 
 /decl/hierarchy/outfit/job/patrol/crewman
 	name = PATROL_OUTFIT_JOB_NAME("Shuttle Crewman")
+	back = /obj/item/weapon/rig/military/equipped/engineer
 
 /decl/hierarchy/outfit/job/patrol/engineer
 	name = PATROL_OUTFIT_JOB_NAME("Technician")
 	belt = /obj/item/weapon/storage/belt/utility/full
 	gloves = /obj/item/clothing/gloves/insulated/black
+	back = /obj/item/weapon/rig/military/equipped/engineer
 
 /decl/hierarchy/outfit/job/patrol/corpsman
 	name = PATROL_OUTFIT_JOB_NAME("Corpsman")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/medical/away_solpatrol
 	belt = /obj/item/weapon/storage/belt/medical/emt/combat
+	back = /obj/item/weapon/rig/military/equipped/corpsman
 
 /decl/hierarchy/outfit/job/patrol/pilot
 	name = PATROL_OUTFIT_JOB_NAME("Pilot")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/command/pilot/away_solpatrol
+	back = /obj/item/weapon/rig/military/equipped/comander
 
 #undef PATROL_OUTFIT_JOB_NAME

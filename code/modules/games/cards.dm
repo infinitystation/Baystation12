@@ -87,6 +87,11 @@
 
 /obj/item/weapon/deck/attackby(obj/O, mob/user)
 	if(istype(O,/obj/item/weapon/hand))
+//[INF]
+		if(user.a_intent != I_HURT)
+			to_chat(user, SPAN_WARNING("You can do it only at harm intent!"))
+			return
+//[/INF]
 		var/obj/item/weapon/hand/H = O
 		for(var/datum/playingcard/P in H.cards)
 			cards += P
@@ -128,8 +133,10 @@
 	H.cards += P
 	cards -= P
 	H.update_icon()
+	H.name = "hand of [(H.cards.len)] cards" //INF
 	user.visible_message("\The [user] draws a card.")
-	to_chat(user, "It's the [P].")
+//ORIG	to_chat(user, "It's the [P].")
+	to_chat(user, "It's the <b>[P]</b>.") //INF
 
 /obj/item/weapon/deck/verb/deal_card()
 
@@ -155,9 +162,9 @@
 
 	deal_at(usr, M)
 
-/obj/item/weapon/deck/proc/deal_at(mob/user, mob/target)
+/obj/item/weapon/deck/proc/deal_at(mob/user, atom/target) //INF, WAS mob/user, mob/target
 	var/obj/item/weapon/hand/H = new(get_step(user, user.dir))
-
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN / 2) //INF
 	H.cards += cards[1]
 	cards -= cards[1]
 	H.concealed = 1
@@ -166,7 +173,13 @@
 		user.visible_message("\The [user] deals a card to \himself.")
 	else
 		user.visible_message("\The [user] deals a card to \the [target].")
-	H.throw_at(get_step(target,target.dir),10,1,user)
+//ORIG	H.throw_at(get_step(target,target.dir),10,1,user)
+//[INF]
+	if(ismob(target))
+		H.throw_at(get_step(target,target.dir),10,1,user)
+	else
+		H.throw_at(get_turf(target),10,1,user)
+//[/INF]
 
 /obj/item/weapon/hand/attackby(obj/O, mob/user)
 	if(istype(O,/obj/item/weapon/hand))
@@ -176,6 +189,7 @@
 		H.concealed = src.concealed
 		qdel(src)
 		H.update_icon()
+		H.name = "hand of [(H.cards.len)] cards" //INF
 		return
 	..()
 
@@ -185,6 +199,24 @@
 	user.visible_message("\The [user] shuffles [src].")
 
 /obj/item/weapon/deck/MouseDrop(atom/over)
+//[INF]
+	if(over == usr && !usr.restrained() && !usr.stat && (usr.contents.Find(src) || in_range(src, usr)))
+		if(ishuman(over))
+			if(!usr.get_active_hand())		//if active hand is empty
+				var/mob/living/carbon/human/H = over
+				var/obj/item/organ/external/temp = H.organs_by_name[BP_R_HAND]
+
+				if(H.hand)
+					temp = H.organs_by_name[BP_L_HAND]
+				if(temp && !temp.is_usable())
+					to_chat(over, "<span class='notice'>You try to move your [temp.name], but cannot!</span>")
+					return
+
+				to_chat(over, "<span class='notice'>You pick up the [src].</span>")
+				usr.put_in_hands(src)
+	return
+//[/INF]
+/*[ORIG]
 	if(!usr || !over) return
 	if(!Adjacent(usr) || !over.Adjacent(usr)) return // should stop you from dragging through windows
 
@@ -195,7 +227,7 @@
 		return
 
 	deal_at(usr, over)
-
+[/ORIG]*/
 /obj/item/weapon/pack/
 	name = "card pack"
 	desc = "For those with disposible income."

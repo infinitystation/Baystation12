@@ -19,9 +19,7 @@
 		"Antique" = "engineerrobot",
 		"Landmate" = "landmate",
 		"Landmate - Treaded" = "engiborg+tread",
-		"Doot" = "eyebot-engineering",
-		"Drone" = "drone-engineer",
-		"Ver 06" = "wer6-Engineering",
+//cuz flying		"Ver 06" = "wer6-Engineering", //inf
 		"Motile" = "motile-eng"
 	)
 	no_slip = 1

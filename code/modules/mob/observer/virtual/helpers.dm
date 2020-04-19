@@ -88,7 +88,8 @@
 
 	ACQUIRE_VIRTUAL_OR_TURF(viewing_atom)
 	// As per http://www.byond.com/docs/ref/info.html#/proc/view by using a non-mob/client this automatically skips the vast majority of sight checks
-	for(var/mob/observer/virtual/v_mob in viewers(world.view, get_turf(viewing_atom.loc)))
+//ORIG	for(var/mob/observer/virtual/v_mob in viewers(world.view, get_turf(viewing_atom.loc)))
+	for(var/mob/observer/virtual/v_mob in hear(world.view, get_turf(viewing_atom.loc))) //INF
 		. |= v_mob.host
 
 /*

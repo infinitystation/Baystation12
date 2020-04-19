@@ -36,7 +36,7 @@
 		"Drone - Service" = "drone-service",
 		"Drone - Hydro" = "drone-hydro",
 		"Doot" = "eyebot-standard",
-		"Ver 06" = "wer6-Service"//inf
+//cuz flying		"Ver 06" = "wer6-Service"//inf
 	)
 	equipment = list(
 		/obj/item/device/flash,

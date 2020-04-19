@@ -4,3 +4,4 @@
 	icon_state = "locket"
 	held = ""
 	message = "\"Be safe, bro)! From Alisa\""
+	trade_blacklisted = TRUE

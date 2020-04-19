@@ -10,6 +10,7 @@
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "messa_amulet"
 	accessory_icons = list(slot_w_uniform_str = CUSTOM_ITEM_MOB, slot_wear_suit_str = CUSTOM_ITEM_MOB)
+	trade_blacklisted = TRUE
 
 //a gun
 
@@ -33,6 +34,7 @@
 		list(mode_name="shock", projectile_type=/obj/item/projectile/beam/stun/shock, modifystate="messithshock"),
 		list(mode_name="kill", projectile_type=/obj/item/projectile/beam, modifystate="messithkill"),
 		)
+	trade_blacklisted = TRUE
 
 /obj/item/weapon/gun/energy/gun/secure/messith/New()
 	..()
@@ -55,6 +57,7 @@
 	\"Мы безвольные, обученные неопытными, делающие невозможное для неблагодарных. Десяти минут слишком мало\"."
 	icon = 'infinity/icons/obj/lighters.dmi'
 	icon_state = "messotha"
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/accessory/armband/arhod_fusozai
 	name = "fusozai signa (Messiatith-H)"
@@ -66,3 +69,4 @@
 	accessory_icons = list(
 		slot_w_uniform_str = CUSTOM_ITEM_MOB,
 		slot_wear_suit_str = CUSTOM_ITEM_MOB)
+	trade_blacklisted = TRUE

@@ -4,3 +4,4 @@
 	It has a lot of golden lines, large shoulder straps and looks like is made of expensive, durable fabric. \
 	On the left side of the chest is the NT symbol in a golden frame. \
 	Tunic fastens with powerful magnets with latches. Very captain."
+	trade_blacklisted = TRUE
