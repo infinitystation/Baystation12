@@ -4,6 +4,7 @@ cre77 - machine
 rucat - machine
 forrya - machine
 logfol - machine
+solark - machine
 kosteg - machine
 hodovoy - machine
 mishele - machine
@@ -13,6 +14,7 @@ taushai - machine
 netreson - machine
 billluxe - machine
 firsttea - machine
+maxim023 - machine
 diesiege - machine
 he11d1ver - machine
 rockyfail - machine
@@ -35,6 +37,7 @@ exapster - machine
 hellpony - machine
 inubashirimomiji - skrell
 tenedegurechaff - skrell
+darkman24rus - skrell
 twinindifferent - skrell
 blacksoul231 - skrell
 wheatley2013 - skrell
@@ -74,6 +77,7 @@ furrfaq - resomi
 netreson - resomi
 hardstuck - resomi
 coltrane97 - resomi
+arbuzpersikov - resomi
 diesiege - resomi
 kirill1243 - resomi
 coldmantis13 - resomi
@@ -85,6 +89,8 @@ elar - resomi
 casly - resomi
 reptiloid2 - resomi
 mrnicolas - resomi
+adro244 - resomi
+messerko - resomi
 redknighthero - giant armoured serpentid
 coldmantis13 - giant armoured serpentid
 kirill1243 - giant armoured serpentid
@@ -114,6 +120,7 @@ sallyvadordomold - giant armoured serpentid
 inubashirimomiji - diona
 bartstarter - diona
 wolforbykot - diona
+eggoflizard - diona
 sosiskoed - diona
 mukosuand - diona
 gumboldty - diona
@@ -126,8 +133,10 @@ s1334 - diona
 sfd - diona
 spiderling - diona
 reptiloid2 - diona
+eggoflizard - diona
 wheatley2013 - vox
 wolforbykot - vox
+eggoflizard - vox
 sosiskoed - vox
 nikita588 - vox
 mrnicolas - vox
@@ -150,14 +159,16 @@ bob46 - vox
 solark - vox
 richardfox - vox
 mmgy - vox
-niga2012 - vox
+adro244 - vox
 darkscarletblood - unathi
 kribleykrabley - unathi
 alchemisthero - unathi
 kotovsyndrome - unathi
+arbuzpersikov - unathi
 wheatley2013 - unathi
 thesarkazmus - unathi
 wolforbykot - unathi
+eggoflizard - unathi
 colossus333 - unathi
 kirill1243 - unathi
 lunkydunk - unathi
@@ -174,8 +185,11 @@ he11d1ver - unathi
 fray3y - unathi
 blacksoul231 - unathi
 arhod - unathi
-moonmen - unathi 
-thehero13 - unathi 
+moonmen - unathi
+thehero13 - unathi
+adro244 - unathi
+dron240 - unathi
+portos - unathi
 moonmen - tajaran
 cuddleandtea - tajaran
 mrnicolas - tajaran
@@ -187,19 +201,20 @@ selles - tajaran
 logfol - tajaran
 solark - tajaran
 forrya - tajaran
+fukfuk - tajaran
 arhod - tajaran
 kordvik - tajaran
 wolforbykot - tajaran
 diesiege - tajaran
 solartwin - tajaran
 arbuzpersikov - tajaran
+adro244 - tajaran
 wheatley2013 - adherent
 sosiskoed - adherent
 gumboldty - adherent
 sarumyn - adherent
 kareta - adherent
 s1334 - adherent
-wolfetd - adherent
 hardstuck - adherent
 jacking - adherent
 redknighthero - adherent

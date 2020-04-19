@@ -22,7 +22,8 @@
 	set desc = "Recieve optional objectives."
 	set category = "OOC"
 
-	src.verbs -= /mob/proc/add_objectives
+	if(!src.mind.changeling) //INF, todo: make it flexable
+		src.verbs -= /mob/proc/add_objectives
 
 	if(!src.mind)
 		return
@@ -33,9 +34,10 @@
 		if(antagonist && antagonist.is_antagonist(src.mind))
 			antagonist.create_objectives(src.mind,1)
 
-	to_chat(src, FONT_LARGE(
-	"<b>Эти задачи носят рекомендательный характер. Если они не устраивают Вас - не выполняйте их, \
-	но придумайте что-то своё.</b>"))
+	if(!src.mind.changeling) //INF, todo: make it flexable
+		to_chat(src, FONT_LARGE(
+		"<b>Эти задачи носят рекомендательный характер. Если они не устраивают Вас - не выполняйте их, \
+		но придумайте что-то своё.</b>"))
 	show_objectives(src.mind)
 
 /mob/living/proc/set_ambition()

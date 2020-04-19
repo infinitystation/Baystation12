@@ -4,13 +4,15 @@
 #include "skrellscoutship_jobs.dm"
 #include "skrellscoutship_shuttles.dm"
 
+#undef WEBHOOK_SUBMAP_LOADED_SKRELL
 /datum/map_template/ruin/away_site/skrellscoutship
 	name = "Skrellian Scout Ship"
 	id = "awaysite_skrell_scout"
 	description = "A Skrellian SDTF scouting vessel."
 	prefix = "maps/away_inf/"
 	suffixes = list("skrellscoutship/skrellscoutship-1.dmm", "skrellscoutship/skrellscoutship-2.dmm")
-	cost = 0.5
+	spawn_weight = 50 //INF, HABITABLE SHIPS SPAWN
+	cost = 2
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/skrellscoutship, /datum/shuttle/autodock/overmap/skrellscoutshuttle)
 	apc_test_exempt_areas = list(
 		/area/ship/skrellscoutshuttle =                NO_SCRUBBER|NO_VENT|NO_APC,

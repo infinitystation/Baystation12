@@ -5,7 +5,7 @@
 
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Captain"
+	supervisors = "Директором Исследований и Капитаном"
 	selection_color = "#68099e"
 	minimal_player_age = 14
 	economic_power = 9
@@ -45,7 +45,7 @@
 	department_flag = EXP
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "the Captain and the Exploration Leader"
+	supervisors = "Лидером Экспедиции и Директором Исследований"
 	selection_color = "#68099e"
 	minimal_player_age = 4
 	ideal_character_age = 20
@@ -83,7 +83,7 @@
 	department_flag = EXP
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Captain and the Exploration Leader"
+	supervisors = "Лидером Экспедиции и Директором Исследований"
 	selection_color = "#68099e"
 	minimal_player_age = 14
 	ideal_character_age = 24
@@ -122,7 +122,7 @@
 	department_flag = EXP
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Captain and the Exploration Leader"
+	supervisors = "Лидером Экспедиции и Директором Исследований"
 	selection_color = "#68099e"
 	ideal_character_age = 34
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/medic
@@ -168,7 +168,7 @@
 	department_flag = EXP
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Captain and the Exploration Leader"
+	supervisors = "Лидером Экспедиции и Директором Исследований"
 	selection_color = "#68099e"
 	minimal_player_age = 8
 	ideal_character_age = 28

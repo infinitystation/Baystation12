@@ -153,7 +153,7 @@
 /obj/item/projectile/bullet/flechette
 	fire_sound = 'sound/weapons/gunshot/gunshot_4mm.ogg'
 	damage = 23
-	penetrating = 1
+	penetrating = 0 //INF, WAS 1. It already has nearly 100% AP
 	armor_penetration = 70
 	embed = 0
 	//INF distance_falloff = 2
@@ -192,7 +192,7 @@
 	damage = 45
 	armor_penetration = 25
 	penetration_modifier = 1.5
-	penetrating = 1
+	penetrating = 0 //INF, WAS 1
 	//INF distance_falloff = 1.5
 
 /obj/item/projectile/bullet/rifle/military

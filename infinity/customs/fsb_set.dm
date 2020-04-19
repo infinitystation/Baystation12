@@ -9,6 +9,7 @@
 		)
 	sprite_sheets = list()
 	pull_mask = 0
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/under/rank/security/fsb
 	name = "military uniform"
@@ -20,6 +21,7 @@
 		slot_w_uniform_str = CUSTOM_ITEM_MOB
 		)
 	worn_state = null
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/suit/armor/pcarrier/fsb
 	name = "tunic"
@@ -31,6 +33,7 @@
 		slot_wear_suit_str = CUSTOM_ITEM_MOB
 		)
 	sprite_sheets = list()
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/gloves/thick/fsb
 	icon = CUSTOM_ITEM_OBJ
@@ -39,6 +42,7 @@
 	item_icons = list(
 		slot_gloves_str = CUSTOM_ITEM_MOB
 		)
+	trade_blacklisted = TRUE
 
 /obj/item/weapon/storage/backpack/baul
 	name = "baul"
@@ -58,3 +62,4 @@
 		/obj/item/clothing/gloves/thick/fsb,
 		/obj/item/clothing/shoes/dutyboots
 		)
+	trade_blacklisted = TRUE

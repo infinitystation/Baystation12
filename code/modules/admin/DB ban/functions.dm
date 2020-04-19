@@ -130,7 +130,7 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 		setter = key_name_admin(usr, 0)
 
 	//[INF]
-		if(bantype != (BANTYPE_JOB_TEMP || BANTYPE_JOB_PERMA))
+		if((bantype != BANTYPE_JOB_TEMP) && (bantype != BANTYPE_JOB_PERMA))
 			var/banned_key = ckey
 			if(ismob(banned_mob))
 				banned_key = LAST_CKEY(banned_mob)

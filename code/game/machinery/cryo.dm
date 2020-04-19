@@ -134,7 +134,7 @@
 		scan = replacetext(scan,"'scan_notice'","'white'")
 		scan = replacetext(scan,"'scan_warning'","'average'")
 		scan = replacetext(scan,"'scan_danger'","'bad'")
-		scan += "<br>Cryostasis factor: [occupant.stasis_value]x"
+//INF		scan += "<br>Cryostasis factor: [occupant.stasis_value]x"
 		data["occupant"] = scan
 
 	data["cellTemperature"] = round(air_contents.temperature)

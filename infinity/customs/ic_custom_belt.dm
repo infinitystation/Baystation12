@@ -3,6 +3,7 @@
 	desc = "A portable(ish) machine made to print tiny modular circuitry out of metal. This one has fancy NanoTrasen brand design."
 	icon_state = "circuit_printer_custom"
 	icon = 'infinity/icons/customs/ic_belt_custom.dmi'
+	trade_blacklisted = TRUE
 
 /obj/item/weapon/storage/belt/holster/ic
 	name = "IC developer's belt"
@@ -22,6 +23,7 @@
 		/obj/item/device/integrated_electronics/detailer,
 		/obj/item/device/integrated_electronics/wirer
 		)
+	trade_blacklisted = TRUE
 
 /obj/item/weapon/storage/belt/holster/ic/on_update_icon()
 	..()

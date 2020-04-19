@@ -11,7 +11,7 @@ var/global/list/additional_antag_types = list()
 
 	var/required_players = 0                 // Minimum players for round to start if voted in.
 	var/required_enemies = 0                 // Minimum antagonists for round to start.
-	var/newscaster_announcements = null
+	var/list/newscaster_announcements = list() //INF, WAS var/newscaster_announcements = null
 	var/end_on_antag_death = FALSE           // Round will end when all antagonists are dead.
 	var/ert_disabled = FALSE                 // ERT cannot be called.
 	var/deny_respawn = FALSE	             // Disable respawn during this round.
@@ -419,6 +419,7 @@ var/global/list/additional_antag_types = list()
 				players -= player
 
 		// If we don't have enough antags, draft people who voted for the round.
+/*[ORIG]. We don't use low antag chance
 		if(candidates.len < required_enemies)
 			for(var/mob/new_player/player in players)
 				if(!antag_id || ((antag_id in player.client.prefs.be_special_role) || (antag_id in player.client.prefs.may_be_special_role)))
@@ -427,7 +428,7 @@ var/global/list/additional_antag_types = list()
 					players -= player
 					if(candidates.len == required_enemies || players.len == 0)
 						break
-
+[/ORIG]*/
 	return candidates		// Returns: The number of people who had the antagonist role set to yes, regardless of recomended_enemies, if that number is greater than required_enemies
 							//			required_enemies if the number of people with that role set to yes is less than recomended_enemies,
 							//			Less if there are not enough valid players in the game entirely to make required_enemies.
@@ -463,8 +464,15 @@ var/global/list/additional_antag_types = list()
 				antag_templates |= antag
 
 	shuffle(antag_templates) //In the case of multiple antag types
-	newscaster_announcements = pick(newscaster_standard_feeds)
-
+//INF	newscaster_announcements = pick(newscaster_standard_feeds)
+//[INF]
+	if(!newscaster_announcements.len)
+		var/daily_news = newscaster_standard_feeds
+		for(var/i = 1, i <= 2, i++)
+			var/news = pick(daily_news)
+			daily_news -= news
+			newscaster_announcements += news
+//[/INF]
 // Manipulates the end-game cinematic in conjunction with GLOB.cinematic
 /datum/game_mode/proc/nuke_act(obj/screen/cinematic_screen, station_missed = 0)
 	if(!cinematic_icon_states)

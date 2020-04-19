@@ -74,5 +74,21 @@
 
 	explanation_text = "It's a buyer's market out here. Steal [loot] for resale."
 
-/datum/objective/changeling_infestation
+/datum/objective/changeling_infestation //unused
 	explanation_text = "Захватить объект, поглотив его экипаж и сделав частью общности."
+
+/datum/objective/absorb_pointly/find_target()
+	..()
+	if(target?.current)
+		explanation_text = "Поглотить [target.current.real_name], [target.assigned_role]."
+	else
+		return 0
+	return target
+
+/datum/objective/absorb_pointly/find_target_by_role(role, role_type = 0)
+	..(role, role_type)
+	if(target?.current)
+		explanation_text = "Поглотить [target.current.real_name], [!role_type ? target.assigned_role : target.special_role]."
+	else
+		explanation_text = "Свободная Цель"
+	return target

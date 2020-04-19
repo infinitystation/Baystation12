@@ -4,3 +4,4 @@
 		/obj/item/clothing/mask/gas/clown_hat,
 		/obj/item/weapon/bikehorn,
 		)
+	trade_blacklisted = TRUE

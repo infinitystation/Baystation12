@@ -168,3 +168,4 @@
 	display_name = "janiHUD cartridge"
 	path = /obj/item/glass_cartridge/janihud
 	allowed_roles = list(/datum/job/janitor)
+

@@ -433,6 +433,7 @@ SUBSYSTEM_DEF(jobs)
 
 				if(!G.slot || G.slot == slot_tie || (G.slot in loadout_taken_slots) || !G.spawn_on_mob(H, H.client.prefs.Gear()[G.display_name]))
 					spawn_in_storage.Add(G)
+
 				else
 					loadout_taken_slots.Add(G.slot)
 
@@ -513,9 +514,9 @@ SUBSYSTEM_DEF(jobs)
 		var/datum/money_account/department_account = department_accounts[job.department]
 
 		if(department_account)
-			remembered_info += "<b>Your department's account number is:</b> #[department_account.account_number]<br>"
-			remembered_info += "<b>Your department's account pin is:</b> [department_account.remote_access_pin]<br>"
-			remembered_info += "<b>Your department's account funds are:</b> [GLOB.using_map.local_currency_name_short][department_account.money]<br>"
+			remembered_info += "<b>Номер Аккаунта Вашего департамента:</b> #[department_account.account_number]<br>"
+			remembered_info += "<b>Пин-код:</b> [department_account.remote_access_pin]<br>"
+			remembered_info += "<b>Сумма на счету:</b> [GLOB.using_map.local_currency_name_short][department_account.money]<br>"
 
 		H.StoreMemory(remembered_info, /decl/memory_options/system)
 
@@ -545,15 +546,15 @@ SUBSYSTEM_DEF(jobs)
 			W.buckled_mob = H
 			W.add_fingerprint(H)
 
-	to_chat(H, "<font size = 3><B>You are [job.total_positions == 1 ? "the" : "a"] [alt_title ? alt_title : rank].</B></font>")
+	to_chat(H, "<font size = 3><b>Вы - [alt_title ? alt_title : rank].</b></font>")
 
 	if(job.supervisors)
-		to_chat(H, "<b>As the [alt_title ? alt_title : rank] you answer directly to [job.supervisors]. Special circumstances may change this.</b>")
+		to_chat(H, "<b>Вы напрямую отчитываетесь перед <b>[job.supervisors]</b>. Особые обстоятельства могут изменить это.</b>")
 
-	to_chat(H, "<b>To speak on your department's radio channel use :h. For the use of other channels, examine your headset.</b>")
+	to_chat(H, "<b>Чтобы общаться на частоте Вашего отдела, используйте префикс \":h\". Для остальных каналов, осмотрите свой наушник.</b>")
 
 	if(job.req_admin_notify)
-		to_chat(H, "<b>You are playing a job that is important for Game Progression. If you have to disconnect, please notify the admins via adminhelp.</b>")
+		to_chat(H, "<b>Ваша профессия особенно важна для игрового прогресса. Если Вам требуется отключиться - пожалуйста, оповестите администрацию.</b>")
 
 	//Gives glasses to the vision impaired
 	if(H.disabilities & NEARSIGHTED)
