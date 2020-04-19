@@ -58,7 +58,7 @@
 	name = "nightvision cartrige"
 	id = "mgcartrige_ni"
 	req_tech = list(TECH_ENGINEERING = 4, TECH_MATERIAL = 4, TECH_COMBAT = 5)
-	materials = list(MATERIAL_STEEL = 250, MATERIAL_URANIUM = 200, MATERIAL_SILVER = 250, MATERIAL_GOLD = 250)
+	materials = list(MATERIAL_STEEL = 250, MATERIAL_SILVER = 500, MATERIAL_GLASS = 250)
 	build_path = /obj/item/glass_cartridge/night
 	sort_string = "GBAAT"
 
@@ -81,7 +81,7 @@
 /datum/design/item/optical/msechud
 	name = "SecHUD cartrige"
 	id = "mgcartrige_sh"
-	req_tech = list(TECH_MAGNET = 3, TECH_COMBAT = 3)
+	req_tech = list(TECH_MAGNET = 3, TECH_DATA = 3)
 	materials = list(MATERIAL_ALUMINIUM = 50, MATERIAL_GLASS = 50)
 	build_path = /obj/item/glass_cartridge/sechud
 	sort_string = "GBAAX"
@@ -94,10 +94,3 @@
 	build_path = /obj/item/glass_cartridge/janihud
 	sort_string = "GBAAY"
 
-/datum/design/item/optical/mthermal
-	name = "thermal cartrige"
-	id = "mgcartrige_th"
-	req_tech = list(TECH_ESOTERIC = 7, TECH_BLUESPACE = 5, TECH_BIO = 5, TECH_COMBAT = 8)
-	materials = list(MATERIAL_GOLD = 3000, MATERIAL_DIAMOND = 1500, MATERIAL_URANIUM = 2500, MATERIAL_SILVER = 5000, MATERIAL_STEEL = 250)
-	build_path = /obj/item/glass_cartridge/thermal
-	sort_string = "GBAAZ"

@@ -148,6 +148,7 @@
 /datum/gear/utility/gcartridge_wel
 	display_name = "welding cartridge"
 	path = /obj/item/glass_cartridge/welding
+	allowed_roles = list(/datum/job/chief_engineer, /datum/job/engineer, /datum/job/scientist, /datum/job/rd)
 	cost = 3
 
 /datum/gear/utility/gcartridge_pre

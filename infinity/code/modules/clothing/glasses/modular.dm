@@ -58,8 +58,8 @@
 			to_chat(user, SPAN_WARNING("There is no cartridges to remove."))
 			. = ..()
 			return
-		else if(cartridges.len == 1)
-			C = pick(cartridges)
+		else if(cartridges.len == 1 && cartridges[1])
+			С = cartridges[1]
 		else
 			C = input("Which cartridge do you want to remove?", "Removing cartridge", null) as null | anything in cartridges
 		if(C)
@@ -166,7 +166,7 @@
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 
 /obj/item/glass_cartridge/welding
-	name = "WeldProt cartridge"
+	name = "welding cartridge"
 	desc = "Used for eye protection during welding."
 	icon_state = "wel"
 	action_button_name = "Toggle WeldProt"
