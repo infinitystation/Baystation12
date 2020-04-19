@@ -34,7 +34,8 @@
 		/obj/item/clothing/accessory/storage/drop_pouches/custom_forrya,
 		/obj/item/clothing/mask/gas/alt/custom_forrya,
 		/obj/item/clothing/glasses/modular/advanced/taj/custom_forrya,
-		/obj/item/clothing/accessory/amulet/strong/frost)
+		/obj/item/clothing/accessory/amulet/strong/frost,
+		/obj/item/clothing/accessory/shouldercape/general)
 	item_icons = list(
 		slot_back_str = CUSTOM_ITEM_MOB)
 
