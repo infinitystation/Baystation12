@@ -39,12 +39,21 @@
 //	var/last_perp = 0
 //	var/last_contraband = 0
 
+/obj/machinery/security_scanner/Initialize(mapload)
+	if(mapload)
+		on = TRUE
+		bypass_filter = TRUE
+		check_items = TRUE
+		check_records = TRUE
+		check_arrests = TRUE
+	. = ..()
+
 /obj/machinery/security_scanner/power_change()
 	if(powered())
 		stat &= ~NOPOWER
 		update_icon()
 	else
-		on = 0
+		on = FALSE
 		stat |= NOPOWER
 		update_icon()
 
@@ -145,13 +154,24 @@
 	icon_state = "scanner_[on ? "on" : "off"]"
 
 /obj/machinery/security_scanner/Crossed(atom/movable/A)
-	if(isbot(A))		// Ignore that small shit
-		return ..()
 	if(anchored && on && !stat)
-		if(isliving(A))
+		if(isbot(A))		// Ignore that small shit
+			trigger(FALSE)
+			return ..()
+		else if(isliving(A))
 			do_scan(A)
-		if(istype(A, /obj/item))
-			do_scan_item(A)
+		else if(istype(A, /mob/observer/ghost))
+			//Ghost triggers feature here
+		else if(check_items && isobj(A))
+			var/list/items = do_scan_item(A)
+			if(items && items.len)
+				trigger(TRUE)
+				if(A in items)
+					report(list("Item" = A))
+				else
+					report(list("guns" = items, "Violator" = A))
+			else
+				trigger(FALSE)
 	return ..()
 
 /obj/machinery/security_scanner/proc/trigger(num)
@@ -162,22 +182,20 @@
 		if(TRUE)
 			playsound(src, fail_sound, 10, 0)
 			flick("scanner_red", src)
-		//	if(report_scans) todo - make special autoannounce to security channel
 
-/obj/machinery/security_scanner/proc/do_scan_item(obj/item/I)
-	if(icon_state != "scanner_on")
+/obj/machinery/security_scanner/proc/do_scan_item(obj/I)
+	var/list/ret = list()
+	if(icon_state != "scanner_on" && istype(I))
 		return
 
-	if(istype(I, banned_items))
-		report(list("Item" = I))
-		trigger(TRUE)
-		return
+	if(subtype_check(I, banned_items))
+		ret.Add(I)
+		return ret
 	else if(subtype_check(I, storage_types) && I.contents)
 		for(var/obj/item/thing in I.contents)
-			if(subtype_check(thing, banned_items))
-				report(list("Item" = thing))
-				trigger(TRUE)
-				return
+			ret.Add(do_scan_item(thing))
+	return ret
+
 
 /obj/machinery/security_scanner/proc/do_scan(mob/target)
 	if(!on)
@@ -202,6 +220,7 @@
 
 /obj/machinery/security_scanner/proc/check_target(mob/living/target)
 	. = list()
+//DEFAULTS
 	if(!target || !istype(target))
 		.["level"] = 0
 		return
@@ -219,11 +238,15 @@
 		.["level"] = SCANNER_THREAT_RESET
 		return
 
+//MEDICAL SCANS
+
+//CYBORG SCANS
 	// Cyborg scanning feature will start here... someday
 	if(issilicon(target))
 		.["level"] = SCANNER_THREAT_RESET
 		return
 
+//SECURITY SCANS
 	.["guns"] = list()
 	if(check_items && ((!pass_access) in target.GetAccess()) && bypass_filter || !bypass_filter)
 		for(var/obj/item/I in target.contents)
@@ -258,10 +281,12 @@
 
 /obj/machinery/security_scanner/proc/report(var/list/list)
 	if(!report_scans)	return
+//Triggered? Inform security
 	GLOB.global_announcer.autosay("Violation detected at [x]:[y]:[z] in [get_area(src)]", name, "Security", z)
 	if(!list)	return
+//SECURITY REPORTS
 	if(list["Item"])
-		GLOB.global_announcer.autosay("Detected <b><i>[list["Item"]]</i></b>.", name, "Security", z)
+		GLOB.global_announcer.autosay("Detected <b>[list["Item"]]</b>.", name, "Security", z)
 		return
 	var/violator
 	var/criminal
@@ -274,7 +299,9 @@
 		criminal = TRUE
 	if(list["Unknown"])
 		unknown = TRUE
-	var/list/guns = list["guns"]
+	var/list/guns = list()
+	if(list["guns"])
+		guns.Add(list["guns"])
 	if(guns.len)
 		GLOB.global_announcer.autosay("Scan result of <b><i>[list["Violator"]]</i></b>.", name, "Security", z)
 		GLOB.global_announcer.autosay("Detected next illegal objects: [jointext(guns, ", ")].", name, "Security", z)
@@ -282,6 +309,9 @@
 		GLOB.global_announcer.autosay("Non registered subject found!", name, "Security", z)
 	else if(criminal)
 		GLOB.global_announcer.autosay("Found <b><i>[violator]</i></b>, that currently is under arrest!", name, "Security", z)
+//MEDICAL REPORTS
+
+//UNKNOWN REPORTS
 	else
 		GLOB.global_announcer.autosay("Unknown violation.", name, "Security", z)
 
