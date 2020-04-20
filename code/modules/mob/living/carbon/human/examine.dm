@@ -348,17 +348,33 @@
 			if(MALE)  msg += "Он [pose]\n"
 			if(FEMALE)msg += "Она [pose]\n"
 			else      msg += "Оно [pose]\n"
-	//[BAY]:
-		/*
-		if(gender == MALE) //yes-yes. #INFINITY
+
+	if(user.mind.changeling)
+		if(user == src)
+			msg += SPAN_LING("Высшая форма жизни.\n")
+		else if(isSynthetic())
+			msg += SPAN_LING("Мы не можем извлекать геном из синтетиков!\n")
+		else if(MUTATION_HUSK in mutations)
+			msg += SPAN_LING("Геном этого существа слишком поврежден!\n")
+		else if(species.species_flags & SPECIES_FLAG_NO_SCAN)
+			msg += SPAN_LING("Мы не знаем, как усвоить геном этого существа!\n")
+		else if(stat == DEAD && world.time - timeofdeath > 5 MINUTES)
+			msg += SPAN_LING("Этот труп мертв больше 5 минут и не содержит усваиваемого генома.\n")
+		else if(islesserform(src))
+			msg += SPAN_LING("Это существо не даст нам новых геномов, но может помочь нам восстановиться после стазиса...\n")
+		else if(good_DNA)
+			msg += SPAN_LING("<i>Геном этого существо может быть полезным для нас...</i>\n")
+		else
+			msg += SPAN_LING("Геном этого существа <b>бесполезен</b> - мы ничего не получим.\n")
+//[/INF]
+/*[ORIG]
+		if(gender == MALE)
 			msg += "Он [pose]\n"
 		else if(gender == FEMALE)
 			msg += "Она [pose]\n"
 		else
 			msg += "Оно [pose]\n"
-		*/
-	//[/BAY]
-//[/INF]
+[/ORIG]*/
 	var/show_descs = show_descriptors_to(user, T)
 	if(show_descs)
 		msg += "<span class='notice'>[jointext(show_descs, "<br>")]</span>"

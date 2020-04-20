@@ -1,4 +1,4 @@
-/*
+
 /datum/antagonist/changeling/create_global_objectives(override = 1)
 
 	if(!..())
@@ -6,8 +6,8 @@
 
 	global_objectives = list()
 	global_objectives |= new /datum/objective/changeling_infestation
-*/
 
+/*
 /datum/antagonist/changeling/create_objectives(var/datum/mind/changeling)
 	if(!..())
 		return
@@ -50,3 +50,4 @@
 	changeling.objectives += O
 */
 	return
+*/

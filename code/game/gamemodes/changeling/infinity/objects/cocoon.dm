@@ -6,8 +6,10 @@
 	w_class = ITEM_SIZE_NO_CONTAINER
 	layer = ABOVE_WINDOW_LAYER
 	density = 1
-	var/mob/living/victim = null
+	var/mob/living/carbon/human/victim = null
 	var/birth_time = 60*2 //seconds
+	var/idle_time = 0
+	var/idle_time_max = 60 //seconds
 	var/progress = 0 //in seconds
 	var/last_sound_time
 	var/health
@@ -21,6 +23,11 @@
 
 /obj/structure/changeling_cocoon/Process()
 	if(!victim?.client)
+		idle_time++
+		if(idle_time >= idle_time_max)
+			if(victim)
+				victim.Drain()
+			qdel(src)
 		return
 	if(health < max_health)
 		if(prob(4))
@@ -136,12 +143,12 @@
 	spawn(1 SECOND)
 		if(Adjacent(user) && victim)
 			to_chat(user, SPAN_DANGER("[src] has faint pulse!"))
-
+/*
 /obj/structure/changeling_cocoon/attack_ghost(var/mob/observer/ghost/user)
 	if(convert(user))
 		spawn(1 SECOND)
 			if(user) qdel(user) // Remove the keyless ghost if it exists.
-
+*/
 /obj/structure/changeling_cocoon/proc/drop_victim()
 	if(victim)
 		visible_message(SPAN_DANGER("[victim] dropped from [src]!"))
@@ -173,7 +180,6 @@ I don't know how to fix it, tried two days, sorry.
 	if(!victim.client)
 		return
 	victim.revive()
-	to_chat(victim, SPAN_LING(FONT_LARGE("Отныне, <b><i>мы едины!</b></i> Нужно разорвать наш кокон, чтобы выбраться!")))
 	spawn(4 SECONDS)
 		GLOB.changelings.add_antagonist(victim.mind, 1)
 	spawn(7 SECONDS)
@@ -181,8 +187,11 @@ I don't know how to fix it, tried two days, sorry.
 			victim.mind.changeling.chem_storage = 30
 			victim.mind.changeling.chem_charges = 30
 			victim.mind.changeling.geneticpoints = 5
+	spawn(10 SECONDS)
+		to_chat(victim, SPAN_LING(FONT_LARGE("Отныне, <b><i>мы едины!</b></i> Нужно разорвать наш кокон, чтобы выбраться!")))
+		to_chat(victim, SPAN_NOTICE("(Атакуйте кокон)"))
 	STOP_PROCESSING(SSobj, src)
-
+/*
 /obj/structure/changeling_cocoon/proc/convert(mob/user)
 	if(!victim)
 		to_chat(user, SPAN_WARNING("Превращение уже завершилось."))
@@ -200,3 +209,4 @@ I don't know how to fix it, tried two days, sorry.
 	background()
 	to_chat(victim, SPAN_DANGER("Не покидайте тело и игру, чтобы процесс превращения продолжался и другие игроки не заняли его."))
 	return 1
+*/
