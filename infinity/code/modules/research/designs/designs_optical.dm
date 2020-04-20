@@ -10,7 +10,7 @@
 	name = "cheap modular glasses"
 	id = "mglasses_che"
 	req_tech = list(TECH_DATA = 1)
-	materials = list(MATERIAL_STEEL = 100, MATERIAL_GLASS = 200)
+	materials = list(MATERIAL_ALUMINIUM = 100, MATERIAL_GLASS = 200)
 	build_path = /obj/item/clothing/glasses/modular
 	sort_string = "GBAAL"
 
@@ -18,7 +18,7 @@
 	name = "modular glasses"
 	id = "mglasses_no"
 	req_tech = list(TECH_DATA = 1, TECH_MAGNET = 2, TECH_ENGINEERING = 2)
-	materials = list(MATERIAL_STEEL = 200, MATERIAL_GLASS = 200, MATERIAL_SILVER = 250)
+	materials = list(MATERIAL_ALUMINIUM = 200, MATERIAL_GLASS = 200, MATERIAL_SILVER = 250)
 	build_path = /obj/item/clothing/glasses/modular/normal
 	sort_string = "GBAAO"
 
@@ -26,7 +26,7 @@
 	name = "advanced modular glasses"
 	id = "mglasses_adva"
 	req_tech = list(TECH_DATA = 3, TECH_MAGNET = 3, TECH_ENGINEERING = 4, TECH_MATERIAL = 4)
-	materials = list(MATERIAL_STEEL = 250, MATERIAL_GLASS = 200, MATERIAL_SILVER = 250, MATERIAL_GOLD = 250)
+	materials = list(MATERIAL_ALUMINIUM = 250, MATERIAL_GLASS = 200, MATERIAL_SILVER = 250, MATERIAL_GOLD = 250)
 	build_path = /obj/item/clothing/glasses/modular/advanced
 	sort_string = "GBAAP"
 
@@ -41,7 +41,7 @@
 /datum/design/item/optical/mmater
 	name = "material cartrige"
 	id = "mgcartrige_ma"
-	req_tech = list(TECH_MAGNET = 4, TECH_ENGINEERING = 4)
+	req_tech = list(TECH_MAGNET = 4, TECH_ENGINEERING = 4, TECH_MATERIAL = 4)
 	materials = list(MATERIAL_STEEL = 250, MATERIAL_GLASS = 200, MATERIAL_SILVER = 250, MATERIAL_ALUMINIUM = 100)
 	build_path = /obj/item/glass_cartridge/material
 	sort_string = "GBAAR"
@@ -50,7 +50,7 @@
 	name = "welding cartrige"
 	id = "mgcartrige_we"
 	req_tech = list(TECH_MAGNET = 3, TECH_ENGINEERING = 4, TECH_MATERIAL = 4)
-	materials = list(MATERIAL_STEEL = 250, MATERIAL_GLASS = 200, MATERIAL_URANIUM = 300, MATERIAL_ALUMINIUM = 150)
+	materials = list(MATERIAL_STEEL = 250, MATERIAL_GLASS = 200, MATERIAL_ALUMINIUM = 250)
 	build_path = /obj/item/glass_cartridge/welding
 	sort_string = "GBAAS"
 

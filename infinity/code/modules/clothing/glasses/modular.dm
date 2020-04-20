@@ -300,8 +300,8 @@
 /obj/item/glass_cartridge/meson/attackby(obj/item/W as obj, mob/user as mob)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	add_fingerprint(user)
-	if(loc == user.loc)
-		to_chat(user, SPAN_NOTICE("You cannot interact with [src] while it in your hands."))
+	if(src != user.get_inactive_hand())
+		to_chat(user, SPAN_NOTICE("You cannot interact with [src] while it not in your hands"))
 		return
 	switch(buildstate)
 		if(0)
