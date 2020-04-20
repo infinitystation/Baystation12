@@ -129,25 +129,26 @@ cocoon-army, unused */
 						playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 10, 1, -3.5)
 						src.visible_message(SPAN_WARNING("\the [src]'s proboscis loudly sucks something from \the [T]'s [affecting.name]!"))
 			if(3)
-				var/message = "[src] begins to form some sort of cocoon around [T]!"
-	/*todo
-				if(forced_absorbing)
-					switch(cocoon_type)
-						if(3 to INFINITY) message = "[src] begins to form some sort of cocoon around [T]!"
-						if(2) message = "[src] rises above [T] and transforms its arm into a giant tube! The substance from the end of tube leaks on [T]!"
-						else
-				else
-					switch(cocoon_type)
-						if(1) message = "[src] begins to form some sort of cocoon around [T]!"
-						if(2)
-						if(3)*/
-				visible_message(SPAN_WARNING(message))
-				playsound(get_turf(src), 'infinity/sound/magic/demon_consume.ogg', 40, 1, -3.5)
-				if(!do_mob(src, T, 12 SECONDS))
-					src.visible_message(SPAN_WARNING("[src]'s stops formin the cocoon!"))
-					to_chat(src, SPAN_LING("Создание кокона было прервано!"))
-					changeling.isabsorbing = 0
-					return
+				if(!islesserform(T))
+					var/message = "[src] begins to form some sort of cocoon around [T]!"
+		/*todo
+					if(forced_absorbing)
+						switch(cocoon_type)
+							if(3 to INFINITY) message = "[src] begins to form some sort of cocoon around [T]!"
+							if(2) message = "[src] rises above [T] and transforms its arm into a giant tube! The substance from the end of tube leaks on [T]!"
+							else
+					else
+						switch(cocoon_type)
+							if(1) message = "[src] begins to form some sort of cocoon around [T]!"
+							if(2)
+							if(3)*/
+					visible_message(SPAN_WARNING(message))
+					playsound(get_turf(src), 'infinity/sound/magic/demon_consume.ogg', 40, 1, -3.5)
+					if(!do_mob(src, T, 12 SECONDS))
+						src.visible_message(SPAN_WARNING("[src]'s stops formin the cocoon!"))
+						to_chat(src, SPAN_LING("Создание кокона было прервано!"))
+						changeling.isabsorbing = 0
+						return
 
 		SSstatistics.add_field_details("changeling_powers","A[stage]")
 	if(forced_absorbing)
