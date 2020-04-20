@@ -241,6 +241,15 @@
 /obj/structure/holostool,
 /turf/simulated/floor/holofloor/wood,
 /area/holodeck/source_temple)
+"aaJ" = (
+/obj/item/weapon/paper/holodeck_gloves,
+/obj/structure/table/holotable,
+/turf/simulated/floor/holofloor/tiled/dark,
+/area/holodeck/source_boxingcourt)
+"aaK" = (
+/obj/structure/table/holotable,
+/turf/simulated/floor/holofloor/tiled/dark,
+/area/holodeck/source_boxingcourt)
 "aaN" = (
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine/centcomm{
@@ -31584,7 +31593,7 @@ bgF
 bhb
 bhB
 bds
-bdr
+aaJ
 aWe
 "}
 (84,1,1) = {"
@@ -31786,7 +31795,7 @@ bgG
 bhb
 bhB
 bds
-bdr
+aaK
 aWe
 "}
 (85,1,1) = {"
