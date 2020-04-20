@@ -75,7 +75,8 @@
 	explanation_text = "It's a buyer's market out here. Steal [loot] for resale."
 
 /datum/objective/changeling_infestation //unused
-	explanation_text = "Захватить объект, поглотив его экипаж и сделав частью общности."
+	explanation_text = "Захватить объект, поглотив его экипаж и сделав частью общности. Необходимо делать это настолько скрытно, \
+	насколько возможно - Корпорация будет только рада пленить нас."
 
 /datum/objective/absorb_pointly/find_target()
 	..()

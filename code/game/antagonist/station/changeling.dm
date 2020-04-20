@@ -7,7 +7,6 @@ GLOBAL_DATUM_INIT(changelings, /datum/antagonist/changeling, new)
 	feedback_tag = "changeling_objective"
 	blacklisted_jobs = list(/datum/job/ai, /datum/job/cyborg, /datum/job/submap)
 	protected_jobs = list(/datum/job/officer, /datum/job/warden, /datum/job/detective, /datum/job/captain, /datum/job/hos)
-/* cocoon-army, unused
 	welcome_text = "Используйте say \",g (сообщение)\", чтобы связаться с другими генокрадами.<br>\
 	Мы являемся частью общности - одним из сородичей, что трудится на её благо и ставить её интересы \
 	выше собственных, в том числе и жизни. Вместе, члены обнщости должны взять под контроль корабль, поглотив его экипаж \
@@ -15,8 +14,10 @@ GLOBAL_DATUM_INIT(changelings, /datum/antagonist/changeling, new)
 	охотиться без опаски - следует проявлять осторожность. Мы не так сильны в открытом бою.<br>\
 	Наше тело требует новые геномы, чтобы жить и развиваться. Не стоит поглощать или убивать сородичей \
 	- мы все практически родственники.<br>\
+	Избегайте поглощения существ, чей геном бесполезен для нас. Кровожадность - это не лучшая черта высшей формы жизни... \
+	Не говоря уже о том, что это привлечёт лишнее внимание от Высших Сил.<br>\
 	Сегодня экипаж станет частью общности. Удачной охоты."
-*/
+/* old
 	welcome_text = "Используйте say \",g (сообщение)\", чтобы связаться с сородичами.<br>\
 	Вы - генокрад. Существо, чьим призванием является поглощение разумных и использование их генома для \
 	улучшения собственного. Вы можете общаться с такими же как и вы посредством феромонов, однако, вы \
@@ -24,6 +25,7 @@ GLOBAL_DATUM_INIT(changelings, /datum/antagonist/changeling, new)
 	Вы не можете поглощать кого попало. Используйте кнопку OOC > Get Objectives, чтобы узнать о жертвах с полезными \
 	генами. <b><u>Поглощение без цели считается за убийство без причины</u></b> (если это не была самооборона, конечно).<br>\
 	Удачной охоты."
+*/
 	flags = ANTAG_SUSPICIOUS | ANTAG_RANDSPAWN | ANTAG_VOTABLE
 	antaghud_indicator = "hudchangeling"
 	skill_setter = /datum/antag_skill_setter/station

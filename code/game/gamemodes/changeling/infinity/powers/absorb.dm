@@ -25,11 +25,11 @@
 	if(T.species.species_flags & SPECIES_FLAG_NO_SCAN)
 		to_chat(src, SPAN_LING("Мы не знаем, как усвоить ДНК этого существа!"))
 		return
-
+/*
 	if(islesserform(T))
 		to_chat(src, SPAN_LING("ДНК этого существа несовместимо с нашей формой!"))
 		return
-
+*/
 	if(MUTATION_HUSK in T.mutations)
 		to_chat(src, SPAN_LING("ДНК этого существа слишком повреждено!"))
 		return
@@ -38,7 +38,7 @@
 		to_chat(src, SPAN_LING("Мы должны крепче держать добычу."))
 		return
 
-	if(T.stat == DEAD && world.time - timeofdeath > 5 MINUTES)
+	if(T.stat == DEAD && world.time - T.timeofdeath > 5 MINUTES)
 		to_chat(src, SPAN_LING("Этот труп мертв больше 5 минут и не содержит усваиваемого генома. Лучше поохотиться на другую жертву."))
 		return
 
@@ -103,7 +103,7 @@ cocoon-army, unused */
 				if(forced_absorbing)
 					src.visible_message(SPAN_DANGER("[src] violently stabs \the [T] with its proboscis!"))
 				else
-					src.visible_message(SPAN_WARNING("[src] gently stabs \the [T] with its proboscis!"))
+					src.visible_message(SPAN_WARNING("[src] stabs \the [T]'s [affecting] with its proboscis!"))
 				T.stun_effect_act(0, 15, affecting, "large organic needle")
 				playsound(get_turf(src), 'infinity/sound/effects/lingstabs.ogg', 50, 1, -3.5)
 				spawn(2.5 SECONDS)
@@ -130,7 +130,7 @@ cocoon-army, unused */
 						src.visible_message(SPAN_WARNING("\the [src]'s proboscis loudly sucks something from \the [T]'s [affecting.name]!"))
 			if(3)
 				var/message = "[src] begins to form some sort of cocoon around [T]!"
-/*todo
+	/*todo
 				if(forced_absorbing)
 					switch(cocoon_type)
 						if(3 to INFINITY) message = "[src] begins to form some sort of cocoon around [T]!"
@@ -161,7 +161,7 @@ cocoon-army, unused */
 			else
 		to_chat(src, SPAN_DANGER(message))*/
 	else
-		visible_message(SPAN_NOTICE("[src] softly removes its proboscis from \the [T]."))
+		visible_message(SPAN_NOTICE("[src] removes its proboscis from \the [T]."))
 //		to_chat(src, SPAN_LING("Мы поглотили весь геном, что был у [T] благодаря отсутствию сопротивления! Хорошая работа."))
 		to_chat(src, SPAN_LING("Мы успешно поглотили [T]!"))
 		playsound(get_turf(src), 'infinity/sound/effects/lingabsorbs.ogg', 70, 1, -3.5)
@@ -174,8 +174,16 @@ cocoon-army, unused */
 		changeling.chem_storage += 20
 		changeling.geneticpoints += 7
 */
-	changeling.chem_storage += 10
-	changeling.geneticpoints += 5
+
+	if(islesserform(T)) //monkey consume
+		to_chat(src, SPAN_LING("Мы не получили дополнительных химикатов или очков эволюции из-за низшей формы еды."))
+	else if(!T.good_DNA)
+		to_chat(src, SPAN_LING("Мы не получили дополнительных химикатов или очков эволюции из-за отсутствия полезных геномов у жертвы."))
+		log_and_message_admins("поглотил [key_name(T)]. Жертва не была желанной для поглощения.")
+	else
+		changeling.chem_storage += 10
+		changeling.geneticpoints += 5
+		to_chat(src, SPAN_LING("Мы увеличили наш запас химикатов за счет успешного поглощения и получили новые геномы."))
 
 	if(changeling.lost_chem_storage >= 10)
 		changeling.chem_storage += 10
@@ -184,14 +192,15 @@ cocoon-army, unused */
 	changeling.chem_charges = changeling.chem_storage
 
 	//Steal all of their languages!
-	for(var/language in T.languages)
-		if(!(language in changeling.absorbed_languages))
-			changeling.absorbed_languages += language
+	if(!islesserform(T)) //monkey consume
+		for(var/language in T.languages)
+			if(!(language in changeling.absorbed_languages))
+				changeling.absorbed_languages += language
+		changeling_update_languages(changeling.absorbed_languages)
 
-	changeling_update_languages(changeling.absorbed_languages)
+		var/datum/absorbed_dna/newDNA = new(T.real_name, T.dna, T.species.name, T.languages)
+		absorbDNA(newDNA)
 
-	var/datum/absorbed_dna/newDNA = new(T.real_name, T.dna, T.species.name, T.languages)
-	absorbDNA(newDNA)
 	if(T?.mind)
 		T.mind.CopyMemories(mind)
 
@@ -223,23 +232,27 @@ cocoon-army, unused */
 		T.mind.changeling.geneticpoints = 0
 		T.mind.changeling.absorbedcount = 0
 
-	changeling.absorbedcount++
+	if(!islesserform(T)) //monkey consume
+		changeling.absorbedcount++
 	changeling.isabsorbing = 0
 
 	var/obj/item/organ/internal/heart/heart = T.internal_organs_by_name[BP_HEART]
 	for(heart in T.organs)
 		heart.pulse = 0
-/* cocoon-army, unused
+
 	if(T.mind?.changeling)
 		T.Drain() //effective execution.
 		T.death(0)
 		to_chat(T.client, SPAN_DANGER("Мы были поглощены сородичем. Это конец..."))
 		return
-*/
+
 	to_chat(T.client, SPAN_DANGER("Вы были поглощены генокрадом!"))
-	T.Drain()
 	T.death(0)
-/* cocoon-army, unused
+
+	if(islesserform(T)) //monkey consume
+		T.Drain()
+		return 1 //no monkey-cocoon-army
+
 	var/obj/structure/changeling_cocoon/coc = new /obj/structure/changeling_cocoon(T.loc)
 	for(G in contents) //G - it's grab. Mentioned before
 		qdel(G)
@@ -252,13 +265,16 @@ cocoon-army, unused */
 		к сожалению, вы покидаете тело."))
 		T.ghostize(0) //cannot reenter in corpse
 	else
-		to_chat(T.client, SPAN_DANGER("Вы были поглощены генокрадом, однако, он оставил кокон, \
+//old		to_chat(T.client, SPAN_DANGER("Вы были поглощены генокрадом, однако, он оставил кокон, \
 		в котором Ваш персонаж станет одним из Них. Если вы выйдите или станете призраком, то \
 		другие призраки смогут вселиться в ваше старое тело."))
+		to_chat(T.client, SPAN_DANGER("Вы были поглощены генокрадом, однако, он оставил кокон, \
+		в котором Ваш персонаж станет одним из Них. Если вы выйдите или станете призраком, то \
+		<b>кокон оставит ваше тело в покое через минуту.</b>"))
+/*
 	spawn(6 SECONDS)
 		for(var/mob/observer/ghost/O in GLOB.ghost_mob_list)
 			to_chat(O, FONT_LARGE(SPAN_LING(
 			"Появился кокон генокрада! Нажмите на него, чтобы стать одним из них. ([ghost_follow_link(coc, O)])")))
 */
 	return 1
-
