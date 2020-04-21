@@ -20,7 +20,7 @@
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/n10mm
 	allowed_magazines = /obj/item/ammo_magazine/n10mm
-	screen_shake = 0.5 //SMG
+	screen_shake = 0.2 //SMG
 
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=1, burst_accuracy=null, dispersion=null),
@@ -72,6 +72,8 @@
 	icon = 'infinity/icons/event/guns.dmi'
 	icon_state = "pdw"
 	item_state = "c20r"
+	icon = 'infinity/icons/obj/guns.dmi'
+	force = 10
 	item_icons = list(
 		slot_r_hand_str = 'icons/mob/onmob/items/righthand_guns.dmi',
 		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_guns.dmi',
@@ -82,7 +84,10 @@
 	ammo_type = /obj/item/ammo_casing/c57
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/mc57
+	auto_eject = 1
+	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	allowed_magazines = /obj/item/ammo_magazine/mc57
+	screen_shake = 0.2
 
 	//machine pistol, like SMG but easier to one-hand with
 	firemodes = list(
@@ -93,7 +98,7 @@
 
 	bulk = GUN_BULK_SMG
 	w_class = ITEM_SIZE_NORMAL
-	one_hand_penalty = 3
+
 
 /obj/item/weapon/gun/projectile/automatic/bp15/on_update_icon()
 	icon_state = (ammo_magazine)? "pdw" : "pdw-empty"
