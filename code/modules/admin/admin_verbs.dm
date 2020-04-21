@@ -678,10 +678,12 @@ var/list/admin_verbs_mentor = list(
 	if(config)
 		if(config.log_hrefs)
 			config.log_hrefs = 0
-			to_chat(src, "<b>Stopped logging hrefs</b>")
+//ORIG			to_chat(src, "<b>Stopped logging hrefs</b>")
 		else
 			config.log_hrefs = 1
-			to_chat(src, "<b>Started logging hrefs</b>")
+//ORIG			to_chat(src, "<b>Started logging hrefs</b>")
+//Inf: who the fuck added this unloggable shit?
+		log_and_message_admins("turned [config.log_hrefs ? "on" : "off"] hrefs logging.") //INF
 
 /client/proc/check_ai_laws()
 	set name = "Check AI Laws"
