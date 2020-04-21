@@ -51,16 +51,8 @@
 	w_class = ITEM_SIZE_HUGE
 
 
-/obj/item/weapon/gun/energy/impulsegun
+/obj/item/weapon/gun/energy/plasmastun/impulsegun
 	name = "IG-96 sonic blast generator"
 	desc = "The NanoTrasen IG-96 generator is a weapon that creates ultrasonic impulses, stunning your enemies. Deals no damage, but is very useful as non-lethal weapon."
-	icon = 'icons/obj/guns/plasma_stun.dmi'
-	icon_state = "plasma_stun"
-	item_state = "plasma_stun"
-	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_POWER = 3)
-	fire_delay = 20
-	max_shots = 4
-	projectile_type = /obj/item/projectile/energy/plasmastun/sonic/weaked
-	combustion = 0
 
-	bulk = GUN_BULK_RIFLE
+	projectile_type = /obj/item/projectile/energy/plasmastun/sonic/weaked

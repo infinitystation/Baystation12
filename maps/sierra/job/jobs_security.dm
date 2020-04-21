@@ -1,4 +1,4 @@
-/datum/job/warden
+ /datum/job/warden
 	title = "Warden"
 	department = "Security"
 	department_flag = SEC
@@ -36,7 +36,7 @@
 							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/detective
-	title = "Detective"
+	title = "Criminal Investigator"
 	department = "Security"
 	department_flag = SEC
 	total_positions = 1
@@ -60,6 +60,8 @@
 	                    SKILL_FORENSICS   = SKILL_MAX)
 	skill_points = 22
 
+	alt_titles = list("Detective")
+
 	access = list(access_seceva, access_security, access_brig, access_forensics_lockers,
 			            access_maint_tunnels, access_emergency_storage, access_eva,
 			            access_sec_doors, access_hangar)
@@ -70,14 +72,14 @@
 							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/forenics_technican
-	title = "Forenics Technican"
+	title = "Forensic Technician"
 	department = "Security"
 	department_flag = SEC
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Head of Security"
 	economic_power = 5
-	minimal_player_age = 7
+	minimal_player_age = 21
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/security/detective
 	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/civilian, /datum/mil_branch/contractor)
@@ -85,9 +87,13 @@
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_COMPUTER    = SKILL_BASIC,
 	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_FORENSICS   = SKILL_ADEPT)
+	                    SKILL_FORENSICS   = SKILL_ADEPT,
+	                    SKILL_CHEMISTRY = SKILL_BASIC
+	               	)
 
-	max_skill = list(   SKILL_FORENSICS   = SKILL_MAX)
+	max_skill = list(   SKILL_FORENSICS   = SKILL_MAX,
+						SKILL_CHEMISTRY = SKILL_EXPERT.
+					)
 	skill_points = 22
 
 	access = list(access_seceva, access_security, access_brig, access_forensics_lockers,

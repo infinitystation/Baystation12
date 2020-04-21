@@ -21,6 +21,19 @@
 	vend_delay = 25
 	diona_spawn_chance = 1.2
 	base_type = /obj/machinery/vending/snack
-	products   = list(/obj/item/weapon/reagent_containers/food/snacks/rottentofu = 20, /obj/item/weapon/reagent_containers/food/snacks/ponkdocket = 8, /obj/item/weapon/reagent_containers/food/snacks/boiledegg = 5, /obj/item/weapon/reagent_containers/food/snacks/boiledrice = 5, /obj/item/weapon/reagent_containers/food/snacks/chips = 5)
-	prices     = list(/obj/item/weapon/reagent_containers/food/snacks/rottentofu = 0, /obj/item/weapon/reagent_containers/food/snacks/ponkdocket = 1, /obj/item/weapon/reagent_containers/food/snacks/boiledegg = 8, /obj/item/weapon/reagent_containers/food/snacks/boiledrice = 18, /obj/item/weapon/reagent_containers/food/snacks/chips = 32)
-	restockable = 0 //inf
+	products   = 	list(
+						/obj/item/weapon/reagent_containers/food/snacks/rottentofu = 20,
+						 /obj/item/weapon/reagent_containers/food/snacks/ponkdocket = 15,
+						 /obj/item/weapon/reagent_containers/food/snacks/boiledegg = 5,
+						 /obj/item/weapon/reagent_containers/food/snacks/boiledrice = 5,
+						 /obj/item/weapon/reagent_containers/food/snacks/chips = 5
+						 )
+
+	prices     = 	list(
+						 /obj/item/weapon/reagent_containers/food/snacks/rottentofu = 0,
+						 /obj/item/weapon/reagent_containers/food/snacks/ponkdocket = 0,
+						 /obj/item/weapon/reagent_containers/food/snacks/boiledegg = 8,  //If they somehow can get money, they can buy normal food
+						 /obj/item/weapon/reagent_containers/food/snacks/boiledrice = 18,
+						 /obj/item/weapon/reagent_containers/food/snacks/chips = 32)
+
+	restockable = 0
