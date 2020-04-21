@@ -7,11 +7,11 @@
 	global_objectives = list()
 	global_objectives |= new /datum/objective/changeling_infestation
 
-/*
-/datum/antagonist/changeling/create_objectives(var/datum/mind/changeling)
+
+/datum/antagonist/changeling/create_objectives(var/datum/mind/changeling, override = 1)
 	if(!..())
 		return
-
+/*
 	if(!(locate(/datum/objective/escape) in changeling.objectives) && \
 	   !(locate(/datum/objective/survive) in changeling.objectives))
 		switch(rand(1,10))
