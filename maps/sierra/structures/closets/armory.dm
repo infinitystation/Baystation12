@@ -63,7 +63,7 @@
 	name = "heavy stun guncabinet"
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/heavy/mass_stun/WillContain()
-	return list(/obj/item/weapon/gun/energy/impulsegun = 1,
+	return list(/obj/item/weapon/gun/energy/plasmastun/impulsegun = 1,
 				/obj/item/weapon/gun/energy/plasmastun = 1)
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/heavy/smg
