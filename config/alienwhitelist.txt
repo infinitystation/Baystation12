@@ -35,9 +35,9 @@ bob46 - machine
 empire2four - machine
 exapster - machine
 hellpony - machine
+adro244 - machine
 inubashirimomiji - skrell
 tenedegurechaff - skrell
-darkman24rus - skrell
 twinindifferent - skrell
 blacksoul231 - skrell
 wheatley2013 - skrell
@@ -136,7 +136,6 @@ reptiloid2 - diona
 eggoflizard - diona
 wheatley2013 - vox
 wolforbykot - vox
-eggoflizard - vox
 sosiskoed - vox
 nikita588 - vox
 mrnicolas - vox
