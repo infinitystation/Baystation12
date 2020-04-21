@@ -413,7 +413,7 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/donkpocket/ponkdocket
 	name = "\improper Ponk-docket"
-	desc = "The cheap version of dock-pocket, produced by BestFood Inc. It isn't a very good choice.
+	desc = "The cheap version of dock-pocket, produced by BestFood Inc. It isn't a very good choice."
 	icon_state = "donkpocket"
 	filling_color = "#c9c9a5"
 	center_of_mass = "x=16;y=10"

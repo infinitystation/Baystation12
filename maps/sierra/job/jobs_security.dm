@@ -92,7 +92,7 @@
 	               	)
 
 	max_skill = list(   SKILL_FORENSICS   = SKILL_MAX,
-						SKILL_CHEMISTRY = SKILL_EXPERT.
+						SKILL_CHEMISTRY = SKILL_EXPERT
 					)
 	skill_points = 22
 
