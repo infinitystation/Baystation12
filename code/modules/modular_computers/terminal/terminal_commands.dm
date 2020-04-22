@@ -241,7 +241,7 @@ inf*/
 	LAZYADD(comp.terminals, new_term)
 	LAZYADD(origin.terminals, new_term)
 	return "ssh: Connection established."
-*/
+INF*/
 /datum/terminal_command/proxy
 	name = "proxy"
 	man_entry = list(
@@ -396,6 +396,7 @@ inf*/
 
 /datum/terminal_command/ntsh/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/datum/extension/interactive/ntos/CT = terminal.computer
+	if(!CT.get_ntnet_status()) return "[name]: NetworkError\[0x12932910] Unable to establishe connection."
 	var/list/T = splittext(text, " ")
 	T = T.Copy(2)
 
@@ -410,14 +411,13 @@ inf*/
 	nid = text2num(nid)
 	var/datum/extension/interactive/ntos/comp = ntnet_global.get_os_by_nid(nid)
 
-	if(!CT?.get_ntnet_status() && comp?.get_ntnet_status())	return "[name]: 0x12932910 (Network Error) Unable to establishe connection."
-	if(CT == comp)											return "[name]: unable to open remote terminal to self."
+	if(comp == CT) return "[name]: Error; can not open remote terminal to self."
+	if(!comp || !comp.host_status() || !comp.get_ntnet_status()) return "[name]: No active device with this nid found."
+	if(comp.has_terminal(user)) return "[name]: A remote terminal to this device is already active."
 
 	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = comp.get_component(PART_HDD)
-	if(!HDD)
-		return "[name]: no local storage found"
-	if(!HDD.check_functionality())
-		return "[name]: Access attempt to local storage failed. Check integrity of your hard drive"
+	if(!HDD) return "[name]: no local storage found"
+	if(!HDD.check_functionality()) return "[name]: Access attempt to local storage failed. Check integrity of your hard drive"
 	var/datum/computer_file/data/config/cfg_file = HDD.find_file_by_name("config")
 	if(cfg_file)
 		var/list/loginpassword = splittext(cfg_file.get_setting(MODULAR_CONFIG_REMCON_SETTING),"@")
