@@ -170,11 +170,12 @@
 	icon_state = "corner_white_three_quarters";
 	dir = 8
 	},
+/obj/item/weapon/defibrillator/loaded,
+/obj/item/weapon/storage/box/syringes,
+/obj/item/weapon/storage/firstaid/surgery,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/medbay)
 "at" = (
-/obj/structure/table/standard,
-/obj/item/weapon/storage/box/syringes,
 /obj/structure/cable/cyan{
 	d1 = 2;
 	d2 = 4;
@@ -184,6 +185,7 @@
 	icon_state = "corner_white";
 	dir = 5
 	},
+/obj/machinery/optable,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/medbay)
 "au" = (
@@ -199,9 +201,6 @@
 /turf/simulated/wall/r_titanium,
 /area/ship/patrol/atmos)
 "aw" = (
-/obj/structure/table/standard,
-/obj/item/weapon/defibrillator/loaded,
-/obj/item/auto_cpr,
 /obj/structure/cable/cyan{
 	d2 = 8;
 	icon_state = "0-8"
@@ -214,6 +213,10 @@
 	dir = 1;
 	icon_state = "apc0";
 	pixel_y = 24
+	},
+/obj/machinery/bodyscanner{
+	icon_state = "body_scanner_0";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/medbay)
@@ -388,6 +391,9 @@
 	pixel_y = -4
 	},
 /obj/effect/shuttle_landmark/scgpatrol,
+/obj/machinery/access_button{
+	pixel_x = 25
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/patrol/airlock)
 "aT" = (
@@ -577,6 +583,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
+/obj/item/device/binoculars,
 /turf/simulated/floor/tiled/monotile,
 /area/ship/patrol/cockpit)
 "bi" = (
@@ -607,6 +614,11 @@
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /obj/machinery/computer/shuttle_control/explore/scgpatrol,
+/obj/machinery/turretid{
+	ailock = 1;
+	pixel_y = 20;
+	req_access = list("ACCESS_AWAYPATROL")
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/ship/patrol/cockpit)
 "bl" = (
@@ -713,6 +725,7 @@
 /obj/item/weapon/storage/mre/menu10,
 /obj/item/weapon/storage/mre/menu10,
 /obj/item/weapon/storage/mre/menu10,
+/obj/item/weapon/inflatable_dispenser,
 /turf/simulated/floor/tiled/monotile,
 /area/ship/patrol/airlock)
 "bu" = (
@@ -740,6 +753,18 @@
 /turf/space,
 /area/space)
 "bw" = (
+/obj/structure/table/rack,
+/obj/item/weapon/gun/projectile/automatic/bp15,
+/obj/item/weapon/gun/projectile/automatic/bp15,
+/obj/item/weapon/gun/projectile/automatic/bp15,
+/obj/item/weapon/gun/projectile/automatic/bp15,
+/obj/item/ammo_magazine/mc57,
+/obj/item/ammo_magazine/mc57,
+/obj/item/ammo_magazine/mc57,
+/obj/item/ammo_magazine/mc57,
+/obj/item/ammo_magazine/mc57,
+/obj/item/ammo_magazine/mc57,
+/obj/item/ammo_magazine/mc57,
 /turf/simulated/floor,
 /area/ship/patrol/power)
 "bx" = (
@@ -751,6 +776,14 @@
 	icon_state = "1-2"
 	},
 /obj/effect/paint/hull,
+/obj/machinery/door/blast/regular/open{
+	density = 0;
+	dir = 2;
+	icon_state = "pdoor0";
+	id_tag = "patrol_shutters";
+	name = "Protective Shutters";
+	opacity = 0
+	},
 /turf/simulated/floor,
 /area/ship/patrol/power)
 "by" = (
@@ -834,15 +867,18 @@
 	pixel_x = 23
 	},
 /obj/item/weapon/storage/belt/utility/full,
-/obj/item/weapon/material/hatchet,
 /obj/effect/floor_decal/corner/brown{
 	icon_state = "corner_white";
 	dir = 6
 	},
-/obj/random/bomb_supply,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
+/obj/item/weapon/storage/box/lights,
+/obj/item/rig_module/maneuvering_jets,
+/obj/item/rig_module/maneuvering_jets,
+/obj/item/rig_module/maneuvering_jets,
+/obj/item/rig_module/maneuvering_jets,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/cargo)
 "bE" = (
@@ -875,8 +911,6 @@
 /obj/structure/table/rack,
 /obj/item/device/spaceflare,
 /obj/item/weapon/storage/box/glowsticks,
-/obj/item/device/radio,
-/obj/item/device/radio,
 /obj/machinery/power/apc/away_patrol{
 	dir = 4;
 	icon_state = "apc0";
@@ -890,7 +924,6 @@
 	icon_state = "corner_white";
 	dir = 6
 	},
-/obj/random/bomb_supply,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/cargo)
 "bH" = (
@@ -934,29 +967,19 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/patrol/airlock)
-"bK" = (
-/obj/machinery/access_button{
-	command = "cycle_exterior";
-	frequency = 1331;
-	id_tag = "";
-	master_tag = "patrol_shuttle";
-	pixel_x = 31;
-	pixel_y = 29;
-	req_access = list("ACCESS_AWAYPATROL");
-	},
-/turf/space,
-/area/space)
 "du" = (
 /obj/machinery/light/halogen{
 	icon_state = "tube_map";
 	dir = 1
 	},
-/obj/structure/closet/crate/freezer/blood/small,
 /obj/effect/floor_decal/corner/paleblue/three_quarters{
 	icon_state = "corner_white_three_quarters";
 	dir = 1
 	},
-/obj/random/drinkbottle,
+/obj/machinery/body_scanconsole{
+	icon_state = "body_scannerconsole";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/medbay)
 "dv" = (
@@ -1011,7 +1034,6 @@
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/medbay)
 "dG" = (
-/obj/structure/iv_drip,
 /obj/machinery/alarm/away_patrol{
 	dir = 8;
 	icon_state = "alarm0";
@@ -1021,6 +1043,7 @@
 	icon_state = "corner_white";
 	dir = 6
 	},
+/obj/structure/iv_drip,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/medbay)
 "dH" = (
@@ -1061,11 +1084,12 @@
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/medbay)
 "dQ" = (
-/obj/structure/hygiene/sink,
 /obj/effect/floor_decal/corner/paleblue{
 	icon_state = "corner_white";
 	dir = 6
 	},
+/obj/structure/closet/crate/freezer/blood/small,
+/obj/random/drinkbottle,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/medbay)
 "dR" = (
@@ -1311,11 +1335,6 @@
 	icon_state = "shuttle_chair_preview";
 	dir = 1
 	},
-/obj/machinery/recharger/wallcharger{
-	dir = 1;
-	icon_state = "wrecharger0";
-	pixel_y = -22
-	},
 /obj/structure/cable/cyan{
 	d1 = 1;
 	d2 = 8;
@@ -1369,11 +1388,6 @@
 	icon_state = "shuttle_chair_preview";
 	dir = 1
 	},
-/obj/machinery/recharger/wallcharger{
-	dir = 1;
-	icon_state = "wrecharger0";
-	pixel_y = -22
-	},
 /obj/effect/floor_decal/corner/lightgrey{
 	icon_state = "corner_white";
 	dir = 10
@@ -1424,6 +1438,87 @@
 /obj/structure/cable/cyan,
 /turf/simulated/floor,
 /area/ship/patrol/power)
+"fD" = (
+/obj/effect/paint/hull,
+/obj/effect/wallframe_spawn/reinforced/hull,
+/obj/machinery/door/firedoor/autoset,
+/obj/machinery/door/blast/regular/open{
+	density = 0;
+	dir = 2;
+	icon_state = "pdoor0";
+	id_tag = "patrol_shutters";
+	name = "Protective Shutters";
+	opacity = 0
+	},
+/turf/simulated/floor,
+/area/ship/patrol/medbay)
+"kn" = (
+/obj/machinery/porta_turret{
+	ailock = 1;
+	check_arrest = 0;
+	check_records = 0;
+	req_access = list("ACCESS_AWAYPATROL")
+	},
+/turf/simulated/floor,
+/area/ship/patrol/medbay)
+"vp" = (
+/obj/machinery/porta_turret{
+	ailock = 1;
+	check_arrest = 0;
+	check_records = 0;
+	req_access = list("ACCESS_AWAYPATROL")
+	},
+/turf/simulated/floor,
+/area/ship/patrol/airlock)
+"Fe" = (
+/obj/effect/paint/hull,
+/obj/machinery/atmospherics/pipe/manifold/visible/fuel{
+	icon_state = "map";
+	dir = 4
+	},
+/turf/simulated/wall/r_titanium,
+/area/ship/patrol/cargo)
+"QP" = (
+/obj/machinery/porta_turret{
+	ailock = 1;
+	check_arrest = 0;
+	check_records = 0;
+	req_access = list("ACCESS_AWAYPATROL")
+	},
+/turf/simulated/floor,
+/area/ship/patrol/cockpit)
+"QQ" = (
+/obj/structure/bed/chair/shuttle/blue,
+/obj/effect/floor_decal/corner/lightgrey{
+	icon_state = "corner_white";
+	dir = 5
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_y = 20
+	},
+/turf/simulated/floor/tiled,
+/area/ship/patrol/airlock)
+"QY" = (
+/obj/machinery/atmospherics/unary/engine{
+	icon_state = "nozzle";
+	dir = 4
+	},
+/turf/simulated/floor/airless,
+/area/ship/patrol/cargo)
+"Rd" = (
+/obj/effect/paint/hull,
+/obj/effect/wallframe_spawn/reinforced/hull,
+/obj/machinery/door/firedoor/autoset,
+/obj/machinery/door/blast/regular/open{
+	density = 0;
+	dir = 2;
+	icon_state = "pdoor0";
+	id_tag = "patrol_shutters";
+	name = "Protective Shutters";
+	opacity = 0
+	},
+/turf/simulated/floor,
+/area/ship/patrol/airlock)
 
 (1,1,1) = {"
 aa
@@ -19710,9 +19805,9 @@ ag
 an
 ay
 ab
-aa
-aa
-aa
+QY
+QY
+QY
 aF
 aK
 eX
@@ -19912,9 +20007,9 @@ ah
 ao
 az
 aX
-aX
-aX
-aX
+Fe
+Fe
+Fe
 aX
 bH
 eY
@@ -20715,7 +20810,7 @@ aa
 aa
 aa
 aa
-aa
+kn
 au
 aA
 aB
@@ -20727,7 +20822,7 @@ aB
 aB
 aI
 aO
-aa
+vp
 aa
 aa
 aa
@@ -21120,7 +21215,7 @@ aa
 aa
 aa
 aa
-au
+fD
 at
 dE
 dO
@@ -21130,7 +21225,7 @@ ez
 aU
 aV
 fc
-aD
+Rd
 aa
 aa
 aa
@@ -21332,7 +21427,7 @@ aG
 eI
 aW
 fr
-aD
+Rd
 aa
 aa
 aa
@@ -21523,7 +21618,7 @@ aa
 aa
 aa
 aa
-aa
+kn
 au
 du
 dG
@@ -21531,11 +21626,11 @@ dQ
 aA
 bg
 bq
-eI
+QQ
 eS
 bs
 aD
-aa
+vp
 aa
 aa
 aa
@@ -22142,7 +22237,7 @@ eV
 bJ
 fj
 aS
-bK
+aa
 aa
 aa
 aa
@@ -23143,11 +23238,11 @@ aa
 aa
 aa
 aa
-aa
+QP
 aE
 aE
 aE
-aa
+QP
 aa
 aa
 aa

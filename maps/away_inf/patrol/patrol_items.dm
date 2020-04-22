@@ -1,5 +1,5 @@
 /obj/item/weapon/card/id/awaypatrol
-	desc = "An identification card issued to SolGov crewmembers aboard the Sol Ptrol Ships."
+	desc = "Удостоверение личности, выданное членам экипажа SolGov на борту Sol Patrol Corvette."
 	color = "#ccecff"
 	detail_color = "#e00000"
 	access = list(access_away_patrol)
@@ -9,7 +9,7 @@
  */
 
 /obj/item/device/radio/headset/rescue
-	name = "rescue team radio headset"
+	name = "solders team radio headset"
 	desc = "The headset of the rescue team member."
 	icon_state = "com_headset"
 	item_state = "headset"

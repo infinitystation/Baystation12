@@ -1,9 +1,9 @@
 /obj/effect/submap_landmark/joinable_submap/away_scg_patrol
-	name = "Patrol Ship"
+	name = "Patrol Corvette"
 	archetype = /decl/submap_archetype/away_scg_patrol
 
 /decl/submap_archetype/away_scg_patrol
-	descriptor = "SCGF Patrol Ship"
+	descriptor = "SCGF Patrol Corvette"
 	map = "Patrol Ship"
 	crew_jobs = list(
 		/datum/job/submap/patrol,
@@ -13,7 +13,7 @@
 	)
 
 /obj/effect/submap_landmark/spawnpoint/away_patrol
-	name = "Shuttle Crweman"
+	name = "Corvette Crweman"
 	movable_flags = MOVABLE_FLAG_EFFECTMOVE
 
 /obj/effect/submap_landmark/spawnpoint/away_patrol/pilot
@@ -30,7 +30,7 @@
  */
 
 /datum/job/submap/patrol
-	title = "Shuttle Crewman"
+	title = "Corvette Crewman"
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/patrol/crewman
 	supervisors = "пилот, ваш офицер"
@@ -121,7 +121,7 @@
 	flags = OUTFIT_EXTENDED_SURVIVAL
 
 /decl/hierarchy/outfit/job/patrol/crewman
-	name = PATROL_OUTFIT_JOB_NAME("Shuttle Crewman")
+	name = PATROL_OUTFIT_JOB_NAME("Corvette Crewman")
 	back = /obj/item/weapon/rig/military/equipped/engineer
 
 /decl/hierarchy/outfit/job/patrol/engineer

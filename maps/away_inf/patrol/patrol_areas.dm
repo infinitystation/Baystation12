@@ -1,5 +1,5 @@
 /area/ship/patrol
-	name = "\improper Sol Rescue Shuttle"
+	name = "\improper Sol Patrol Corvette"
 	icon_state = "shuttlered"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 	base_turf = /turf/simulated/floor/plating
