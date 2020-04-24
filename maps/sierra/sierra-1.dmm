@@ -703,7 +703,6 @@
 	},
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
 	dir = 4;
-	frequency = 1381;
 	id_tag = "eng1_access";
 	name = "Third Deck Starboard Nacelle Access";
 	pixel_x = -20;
@@ -1483,7 +1482,6 @@
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
 	dir = 8;
-	frequency = 1380;
 	id_tag = "escape_pod_6";
 	name = "escape pod one controller";
 	pixel_x = 20;
@@ -2440,7 +2438,6 @@
 /area/maintenance/thirddeck/forestarboard)
 "ev" = (
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
-	frequency = 1381;
 	id_tag = "eng1_access";
 	name = "Third Deck Starboard Nacelle Access";
 	pixel_x = 0;
@@ -2843,7 +2840,6 @@
 /area/maintenance/thirddeck/aft)
 "fe" = (
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
-	frequency = 1381;
 	id_tag = "eng1_access";
 	name = "First Reactive Engine Access";
 	pixel_y = 21;
@@ -3837,7 +3833,6 @@
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "escape_pod_7";
 	name = "escape pod two controller";
 	pixel_x = -20;
@@ -4068,7 +4063,6 @@
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	dir = 8;
 	display_name = "Starboard Dock A";
-	frequency = 1380;
 	id_tag = "merchant_shuttle_station_dock";
 	pixel_x = 20;
 	pixel_y = 0;
@@ -4491,7 +4485,6 @@
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	dir = 4;
 	display_name = "Starboard Dock C";
-	frequency = 1380;
 	id_tag = "admin_shuttle_dock_airlock";
 	pixel_x = -20;
 	pixel_y = 0;
@@ -6489,7 +6482,6 @@
 "kW" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "escape_pod_6_berth";
 	name = "escape pod one berth controller";
 	pixel_x = -20;
@@ -6624,18 +6616,14 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/shuttle/petrov/ship)
 "lg" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1381;
-	icon_state = "closed";
-	id_tag = "eng1_outer";
-	locked = 1;
-	name = "Third Deck Starboard Access";
-	req_access = newlist()
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/external/bolted/cycling{
+	id_tag = "eng1_outer";
+	name = "Third Deck Starboard Nacelle Access"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/thruster/d3starboard)
@@ -6645,13 +6633,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/external{
-	frequency = 1381;
-	icon_state = "closed";
+/obj/machinery/door/airlock/external/bolted/cycling{
 	id_tag = "eng1_inner";
-	locked = 1;
-	name = "Third Deck Starboard Nacelle Access";
-	req_access = newlist()
+	name = "Third Deck Starboard Nacelle Access"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/thruster/d3starboard)
@@ -10560,7 +10544,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
 	dir = 8;
-	frequency = 1380;
 	id_tag = "escape_pod_7_berth";
 	name = "escape pod two berth controller";
 	pixel_x = 20;
@@ -11692,7 +11675,6 @@
 	dir = 4
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
 	id_tag = "specops_dock_airlock";
 	pixel_x = 32;
 	pixel_y = 21;
@@ -13516,7 +13498,6 @@
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	dir = 8;
 	display_name = "Aft Dock (NanoTrasen)";
-	frequency = 1380;
 	id_tag = "petrov_shuttle_dock_airlock";
 	pixel_x = 20;
 	pixel_y = 32;
@@ -16871,7 +16852,6 @@
 "AY" = (
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	dir = 1;
-	frequency = 1380;
 	id_tag = "petrov_shuttle_airlock";
 	pixel_y = -20;
 	req_access = list("ACCESS_PETROV");
@@ -17159,7 +17139,6 @@
 "BA" = (
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
 	dir = 8;
-	frequency = 1381;
 	id_tag = "eng2_access";
 	name = "Third Deck Port Nacelle Access";
 	pixel_x = 20;
@@ -17486,7 +17465,6 @@
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	dir = 8;
 	display_name = "Fore Dock";
-	frequency = 1331;
 	id_tag = "nuke_shuttle_dock_airlock";
 	pixel_x = 20;
 	req_access = list("ACCESS_EXTERNAL");
@@ -17648,7 +17626,6 @@
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	dir = 1;
-	frequency = 1380;
 	id_tag = "centcom_shuttle_dock_airlock";
 	pixel_x = 32;
 	pixel_y = -20;
@@ -18768,7 +18745,6 @@
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	dir = 8;
 	display_name = "Port Dock A";
-	frequency = 1380;
 	id_tag = "skipjack_shuttle_dock_airlock";
 	pixel_x = 20;
 	pixel_y = 0;
@@ -19768,7 +19744,6 @@
 "FK" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "escape_pod_8_berth";
 	name = "escape pod three berth controller";
 	pixel_x = -20;
@@ -20048,7 +20023,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
 	dir = 8;
-	frequency = 1380;
 	id_tag = "escape_pod_9_berth";
 	name = "escape pod four berth controller";
 	pixel_x = 20;
@@ -20795,18 +20769,14 @@
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/center)
 "Hf" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1381;
-	icon_state = "closed";
-	id_tag = "eng2_outer";
-	locked = 1;
-	name = "Third Deck Port Nacelle Access";
-	req_access = newlist()
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/external/bolted/cycling{
+	id_tag = "eng2_outer";
+	name = "Third Deck Port Nacelle Access"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/thruster/d3port)
@@ -20874,7 +20844,6 @@
 	},
 /obj/structure/catwalk,
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
-	frequency = 1381;
 	id_tag = "eng2_access";
 	name = "Third Deck Port Nacelle Access";
 	pixel_y = 21;
@@ -21073,7 +21042,6 @@
 "Hz" = (
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
 	dir = 4;
-	frequency = 1381;
 	id_tag = "eng2_access";
 	name = "Third Deck Port Nacelle Access";
 	pixel_x = -21;
@@ -21186,7 +21154,6 @@
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
 	dir = 8;
-	frequency = 1380;
 	id_tag = "escape_pod_8";
 	name = "escape pod three controller";
 	pixel_x = 20;
@@ -21816,7 +21783,6 @@
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "escape_pod_9";
 	name = "escape pod four controller";
 	pixel_x = -20;
@@ -23986,7 +23952,6 @@
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	dir = 4;
 	display_name = "Port Dock C";
-	frequency = 1331;
 	id_tag = "rescue_shuttle_dock_airlock";
 	pixel_x = -20;
 	pixel_y = 0;
@@ -26900,7 +26865,7 @@
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	cycle_to_external_air = 1;
 	dir = 1;
-	frequency = 1431;
+	frequency = 1331;
 	id_tag = "guppy_shuttle";
 	pixel_x = -32;
 	pixel_y = -20;
@@ -27577,13 +27542,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/external{
-	frequency = 1381;
-	icon_state = "closed";
+/obj/machinery/door/airlock/external/bolted/cycling{
 	id_tag = "eng2_inner";
-	locked = 1;
-	name = "Third Deck Port Nacelle Access";
-	req_access = newlist()
+	name = "Third Deck Port Nacelle Access"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/thruster/d3port)

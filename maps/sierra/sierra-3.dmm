@@ -270,11 +270,10 @@
 /area/maintenance/solar/starboard)
 "aaF" = (
 /obj/machinery/door/airlock/external{
-	frequency = 1379;
+	frequency = 1380;
 	id_tag = "solar_starboard_inner";
 	locked = 1;
-	name = "Engineering External Access";
-	req_access = newlist()
+	name = "Engineering External Access"
 	},
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -346,11 +345,10 @@
 /area/maintenance/solar/starboard)
 "aaJ" = (
 /obj/machinery/door/airlock/external{
-	frequency = 1379;
+	frequency = 1380;
 	id_tag = "solar_starboard_outer";
 	locked = 1;
-	name = "Engineering External Access";
-	req_access = newlist()
+	name = "Engineering External Access"
 	},
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -1507,7 +1505,6 @@
 	},
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
 	dir = 4;
-	frequency = 1381;
 	id_tag = "eng3_access";
 	name = "First Deck Starboard Access";
 	pixel_x = -21;
@@ -1666,7 +1663,6 @@
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	dir = 4;
 	display_name = "First Deck Auxillary Dock";
-	frequency = 1331;
 	id_tag = "fd_starboard_airlock";
 	name = "First Deck Starboard Airlock Controller";
 	pixel_x = -20;
@@ -1987,7 +1983,6 @@
 /area/maintenance/firstdeck/aftstarboard)
 "aea" = (
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
-	frequency = 1381;
 	id_tag = "eng3_access";
 	name = "First Deck Starboard Access";
 	pixel_y = 21;
@@ -2003,17 +1998,14 @@
 /turf/simulated/floor/plating,
 /area/thruster/d1starboard)
 "aeb" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1381;
-	id_tag = "eng3_outer";
-	locked = 1;
-	name = "First Deck Starboard Access";
-	req_access = newlist()
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/external/bolted/cycling{
+	id_tag = "eng3_outer";
+	name = "First Deck Starboard Nacelle Access"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/thruster/d1starboard)
@@ -2026,7 +2018,6 @@
 /obj/machinery/light/small,
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
-	frequency = 1381;
 	id_tag = "eng3_access";
 	name = "First Deck Starboard Access";
 	pixel_y = 21;
@@ -2042,12 +2033,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/external{
-	frequency = 1381;
+/obj/machinery/door/airlock/external/bolted/cycling{
 	id_tag = "eng3_inner";
-	locked = 1;
-	name = "First Deck Starboard Access";
-	req_access = newlist()
+	name = "First Deck Starboard Nacelle Access"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/thruster/d1starboard)
@@ -2212,7 +2200,6 @@
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "escape_pod_12";
 	name = "escape pod seven controller";
 	pixel_x = -20;
@@ -2230,7 +2217,6 @@
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "escape_pod_13";
 	name = "escape pod eight controller";
 	pixel_x = -20;
@@ -2248,7 +2234,6 @@
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "escape_pod_14";
 	name = "escape pod nine controller";
 	pixel_x = -20;
@@ -4026,7 +4011,6 @@
 	dir = 1
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
-	frequency = 1380;
 	id_tag = "escape_pod_12_berth";
 	name = "escape pod seven berth controller";
 	pixel_x = -32;
@@ -4071,7 +4055,6 @@
 	dir = 1
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
-	frequency = 1380;
 	id_tag = "escape_pod_13_berth";
 	name = "escape pod eight berth controller";
 	pixel_x = -32;
@@ -4098,7 +4081,6 @@
 	dir = 1
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
-	frequency = 1380;
 	id_tag = "escape_pod_14_berth";
 	name = "escape pod nine berth controller";
 	pixel_x = -32;
@@ -32625,7 +32607,6 @@
 "aYU" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "escape_pod_10_berth";
 	name = "escape pod five berth controller";
 	pixel_x = -20;
@@ -34841,7 +34822,6 @@
 	dir = 8
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
-	frequency = 1380;
 	id_tag = "escape_pod_10";
 	name = "escape pod five controller";
 	pixel_x = -32;
@@ -35636,7 +35616,6 @@
 "bfd" = (
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
 	dir = 1;
-	frequency = 1381;
 	id_tag = "eng4_access";
 	name = "First Deck Port Nacelle Access";
 	pixel_y = -20;
@@ -35653,24 +35632,20 @@
 /turf/simulated/floor/plating,
 /area/thruster/d1port)
 "bfe" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1381;
-	id_tag = "eng4_outer";
-	locked = 1;
-	name = "First Deck Port Nacelle Access";
-	req_access = newlist()
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/external/bolted/cycling{
+	id_tag = "eng4_outer";
+	name = "First Deck Port Nacelle Access"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/thruster/d1port)
 "bff" = (
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
-	frequency = 1381;
 	id_tag = "eng4_access";
 	name = "First Deck Port Nacelle Access";
 	pixel_y = 21;
@@ -35693,12 +35668,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/external{
-	frequency = 1381;
+/obj/machinery/door/airlock/external/bolted/cycling{
 	id_tag = "eng4_inner";
-	locked = 1;
-	name = "First Deck Port Nacelle Access";
-	req_access = newlist()
+	name = "First Deck Port Nacelle Access"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/thruster/d1port)
@@ -36015,7 +35987,6 @@
 "bfW" = (
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
 	dir = 4;
-	frequency = 1381;
 	id_tag = "eng4_access";
 	name = "First Deck Port Nacelle Access";
 	pixel_x = -20;
@@ -36792,11 +36763,10 @@
 /area/maintenance/solar)
 "bhB" = (
 /obj/machinery/door/airlock/external{
-	frequency = 1379;
+	frequency = 1380;
 	id_tag = "solar_port_inner";
 	locked = 1;
-	name = "Engineering External Access";
-	req_access = newlist()
+	name = "Engineering External Access"
 	},
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -36866,11 +36836,10 @@
 /area/maintenance/solar)
 "bhF" = (
 /obj/machinery/door/airlock/external{
-	frequency = 1379;
+	frequency = 1380;
 	id_tag = "solar_port_outer";
 	locked = 1;
-	name = "Engineering External Access";
-	req_access = newlist()
+	name = "Engineering External Access"
 	},
 /obj/structure/cable/yellow{
 	d1 = 4;

@@ -31532,7 +31532,6 @@
 	},
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
 	dir = 8;
-	frequency = 1331;
 	id_tag = "sd_port_airlock";
 	name = "Second Deck Port Airlock Controller";
 	pixel_x = 20;
