@@ -256,10 +256,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/access_button{
-	command = "cycle_interior";
-	frequency = 1379;
-	master_tag = "solar_starboard_airlock";
+/obj/machinery/access_button/airlock_interior{
+	master_tag = "solar_starboard";
 	name = "interior access button";
 	pixel_x = 12;
 	pixel_y = 27;
@@ -269,10 +267,8 @@
 /turf/simulated/floor/plating,
 /area/maintenance/solar/starboard)
 "aaF" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1380;
+/obj/machinery/door/airlock/external/bolted/cycling{
 	id_tag = "solar_starboard_inner";
-	locked = 1;
 	name = "Engineering External Access"
 	},
 /obj/structure/cable/yellow{
@@ -287,7 +283,7 @@
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 8
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	id_tag = "solar_starboard_pump"
 	},
 /obj/machinery/light/small{
@@ -314,14 +310,10 @@
 	pixel_y = 27
 	},
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
-	id_tag = "solar_starboard_airlock";
+	id_tag = "solar_starboard";
 	pixel_x = -5;
 	pixel_y = 21;
-	req_access = list("ACCESS_EXTERNAL");
-	tag_airpump = "solar_starboard_pump";
-	tag_chamber_sensor = "solar_starboard_sensor";
-	tag_exterior_door = "solar_starboard_outer";
-	tag_interior_door = "solar_starboard_inner"
+	req_access = list("ACCESS_EXTERNAL")
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/solar/starboard)
@@ -330,7 +322,7 @@
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	id_tag = "solar_starboard_pump"
 	},
 /obj/machinery/light/small{
@@ -344,10 +336,8 @@
 /turf/simulated/floor/plating,
 /area/maintenance/solar/starboard)
 "aaJ" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1380;
+/obj/machinery/door/airlock/external/bolted/cycling{
 	id_tag = "solar_starboard_outer";
-	locked = 1;
 	name = "Engineering External Access"
 	},
 /obj/structure/cable/yellow{
@@ -364,10 +354,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/access_button{
-	command = "cycle_exterior";
-	frequency = 1379;
-	master_tag = "solar_starboard_airlock";
+/obj/machinery/access_button/airlock_exterior{
+	master_tag = "solar_starboard";
 	name = "exterior access button";
 	pixel_x = -12;
 	pixel_y = -19;
@@ -668,18 +656,13 @@
 /area/maintenance/firstdeck/forestarboard)
 "abv" = (
 /obj/machinery/shield_diffuser,
-/obj/machinery/door/airlock/external{
-	frequency = 1331;
+/obj/machinery/door/airlock/external/bolted/cycling{
 	id_tag = "fd_starboard_outer";
-	locked = 1;
-	name = "First Deck Port Airlock";
-	req_access = newlist()
+	name = "First Deck Port Airlock"
 	},
-/obj/machinery/access_button{
-	command = "cycle_exterior";
+/obj/machinery/access_button/airlock_exterior{
 	dir = 1;
-	frequency = 1331;
-	master_tag = "fd_starboard_airlock";
+	master_tag = "fd_starboard";
 	name = "exterior access button";
 	pixel_x = 24;
 	req_access = list("ACCESS_EXTERNAL")
@@ -997,7 +980,7 @@
 	dir = 1;
 	icon_state = "warningcee"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 4;
 	id_tag = "fd_starboard_pump"
 	},
@@ -1015,7 +998,7 @@
 	dir = 1;
 	icon_state = "warningcee"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 8;
 	id_tag = "fd_starboard_pump"
 	},
@@ -1505,11 +1488,9 @@
 	},
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
 	dir = 4;
-	id_tag = "eng3_access";
+	id_tag = "eng3";
 	name = "First Deck Starboard Access";
-	pixel_x = -21;
-	tag_exterior_door = "eng3_outer";
-	tag_interior_door = "eng3_inner"
+	pixel_x = -21
 	},
 /obj/machinery/camera/network/engineering{
 	c_tag = "First Deck - Starbound Necelle"
@@ -1663,16 +1644,12 @@
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	dir = 4;
 	display_name = "First Deck Auxillary Dock";
-	id_tag = "fd_starboard_airlock";
+	id_tag = "fd_starboard";
 	name = "First Deck Starboard Airlock Controller";
 	pixel_x = -20;
-	req_access = list("ACCESS_EXTERNAL");
-	tag_airpump = "fd_starboard_pump";
-	tag_chamber_sensor = "fd_starboard_sensor";
-	tag_exterior_door = "fd_starboard_outer";
-	tag_interior_door = "fd_starboard_inner"
+	req_access = list("ACCESS_EXTERNAL")
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 4;
 	id_tag = "fd_starboard_pump"
 	},
@@ -1682,11 +1659,10 @@
 /obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/warning/cee,
 /obj/machinery/airlock_sensor{
-	frequency = 1331;
 	id_tag = "fd_starboard_sensor";
 	pixel_x = 24
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 8;
 	id_tag = "fd_starboard_pump"
 	},
@@ -1893,7 +1869,7 @@
 /area/maintenance/firstdeck/aftstarboard)
 "adU" = (
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 4;
 	id_tag = "fd_starboard_pump"
 	},
@@ -1983,11 +1959,9 @@
 /area/maintenance/firstdeck/aftstarboard)
 "aea" = (
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
-	id_tag = "eng3_access";
+	id_tag = "eng3";
 	name = "First Deck Starboard Access";
-	pixel_y = 21;
-	tag_exterior_door = "eng3_outer";
-	tag_interior_door = "eng3_inner"
+	pixel_y = 21
 	},
 /obj/structure/cable/green{
 	d1 = 2;
@@ -2018,11 +1992,9 @@
 /obj/machinery/light/small,
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
-	id_tag = "eng3_access";
+	id_tag = "eng3";
 	name = "First Deck Starboard Access";
-	pixel_y = 21;
-	tag_exterior_door = "eng3_outer";
-	tag_interior_door = "eng3_inner"
+	pixel_y = 21
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
@@ -2175,20 +2147,15 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "aex" = (
-/obj/machinery/access_button{
-	command = "cycle_interior";
-	frequency = 1331;
-	master_tag = "fd_starboard_airlock";
+/obj/machinery/access_button/airlock_interior{
+	master_tag = "fd_starboard";
 	name = "interior access button";
 	pixel_x = -24;
 	req_access = list("ACCESS_EXTERNAL")
 	},
-/obj/machinery/door/airlock/external/glass{
-	frequency = 1331;
+/obj/machinery/door/airlock/external/glass/bolted/cycling{
 	id_tag = "fd_starboard_inner";
-	locked = 1;
-	name = "First Deck Port Airlock";
-	req_access = newlist()
+	name = "First Deck Port Airlock"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -2602,12 +2569,9 @@
 /turf/simulated/wall/r_titanium,
 /area/shuttle/escape_pod12/station)
 "afo" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1380;
+/obj/machinery/door/airlock/external/escapepod{
 	id_tag = "escape_pod_12_hatch";
-	locked = 1;
-	name = "Escape Pod Seven Hatch";
-	req_access = newlist()
+	name = "Escape Pod Seven Hatch"
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -2621,12 +2585,9 @@
 /turf/simulated/wall/r_titanium,
 /area/shuttle/escape_pod13/station)
 "afq" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1380;
+/obj/machinery/door/airlock/external/escapepod{
 	id_tag = "escape_pod_13_hatch";
-	locked = 1;
-	name = "Escape Pod Eight Hatch";
-	req_access = newlist()
+	name = "Escape Pod Eight Hatch"
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -2640,12 +2601,9 @@
 /turf/simulated/wall/r_titanium,
 /area/shuttle/escape_pod14/station)
 "afs" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1380;
+/obj/machinery/door/airlock/external/escapepod{
 	id_tag = "escape_pod_14_hatch";
-	locked = 1;
-	name = "Escape Pod Nine Hatch";
-	req_access = newlist()
+	name = "Escape Pod Nine Hatch"
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -3265,8 +3223,7 @@
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock/external/escapepod{
 	id_tag = "escape_pod_12_berth_hatch";
-	name = "Escape Pod Seven";
-	req_access = newlist()
+	name = "Escape Pod Seven"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/centralstarboard)
@@ -3275,8 +3232,7 @@
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock/external/escapepod{
 	id_tag = "escape_pod_13_berth_hatch";
-	name = "Escape Pod Eeigh";
-	req_access = newlist()
+	name = "Escape Pod Eeigh"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/centralstarboard)
@@ -3285,8 +3241,7 @@
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock/external/escapepod{
 	id_tag = "escape_pod_14_berth_hatch";
-	name = "Escape Pod Nine";
-	req_access = newlist()
+	name = "Escape Pod Nine"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/centralstarboard)
@@ -6704,7 +6659,7 @@
 /area/medical/subacute)
 "amp" = (
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 8;
 	id_tag = "fd_starboard_pump"
 	},
@@ -33079,8 +33034,7 @@
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock/external/escapepod{
 	id_tag = "escape_pod_10_berth_hatch";
-	name = "Escape Pod Five";
-	req_access = newlist()
+	name = "Escape Pod Five"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/sierra/hallway/port)
@@ -33627,12 +33581,9 @@
 /turf/simulated/wall/r_titanium,
 /area/shuttle/escape_pod10/station)
 "bbj" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1380;
+/obj/machinery/door/airlock/external/escapepod{
 	id_tag = "escape_pod_10_hatch";
-	locked = 1;
-	name = "Escape Pod Five Hatch";
-	req_access = newlist()
+	name = "Escape Pod Five Hatch"
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -34892,8 +34843,7 @@
 "bdE" = (
 /obj/machinery/door/airlock/external/escapepod{
 	id_tag = "escape_pod_10_berth_hatch";
-	name = "Escape Pod Five";
-	req_access = newlist()
+	name = "Escape Pod Five"
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -35320,8 +35270,7 @@
 "beA" = (
 /obj/machinery/door/airlock/external/escapepod{
 	id_tag = "escape_pod_10_berth_hatch";
-	name = "Escape Pod Five";
-	req_access = newlist()
+	name = "Escape Pod Five"
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -35616,12 +35565,10 @@
 "bfd" = (
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
 	dir = 1;
-	id_tag = "eng4_access";
+	id_tag = "eng4";
 	name = "First Deck Port Nacelle Access";
 	pixel_y = -20;
-	req_access = list("ACCESS_ENGINEERING");
-	tag_exterior_door = "eng4_outer";
-	tag_interior_door = "eng4_inner"
+	req_access = list("ACCESS_ENGINEERING")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -35646,12 +35593,10 @@
 "bff" = (
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
-	id_tag = "eng4_access";
+	id_tag = "eng4";
 	name = "First Deck Port Nacelle Access";
 	pixel_y = 21;
-	req_access = list("ACCESS_ENGINEERING");
-	tag_exterior_door = "eng4_outer";
-	tag_interior_door = "eng4_inner"
+	req_access = list("ACCESS_ENGINEERING")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -35987,12 +35932,10 @@
 "bfW" = (
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
 	dir = 4;
-	id_tag = "eng4_access";
+	id_tag = "eng4";
 	name = "First Deck Port Nacelle Access";
 	pixel_x = -20;
-	req_access = list("ACCESS_ENGINEERING");
-	tag_exterior_door = "eng4_outer";
-	tag_interior_door = "eng4_inner"
+	req_access = list("ACCESS_ENGINEERING")
 	},
 /obj/structure/cable/green,
 /obj/machinery/power/apc/high/critical{
@@ -36749,10 +36692,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/access_button{
-	command = "cycle_interior";
-	frequency = 1379;
-	master_tag = "solar_port_airlock";
+/obj/machinery/access_button/airlock_interior{
+	master_tag = "solar_port";
 	name = "interior access button";
 	pixel_x = 12;
 	pixel_y = -19;
@@ -36762,10 +36703,8 @@
 /turf/simulated/floor/plating,
 /area/maintenance/solar)
 "bhB" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1380;
+/obj/machinery/door/airlock/external/bolted/cycling{
 	id_tag = "solar_port_inner";
-	locked = 1;
 	name = "Engineering External Access"
 	},
 /obj/structure/cable/yellow{
@@ -36780,7 +36719,7 @@
 	dir = 8
 	},
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 1;
 	id_tag = "solar_port_pump"
 	},
@@ -36794,14 +36733,10 @@
 /area/maintenance/solar)
 "bhD" = (
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
-	id_tag = "solar_port_airlock";
+	id_tag = "solar_port";
 	pixel_x = -5;
 	pixel_y = 21;
-	req_access = list("ACCESS_EXTERNAL");
-	tag_airpump = "solar_port_pump";
-	tag_chamber_sensor = "solar_port_sensor";
-	tag_exterior_door = "solar_port_outer";
-	tag_interior_door = "solar_port_inner"
+	req_access = list("ACCESS_EXTERNAL")
 	},
 /obj/machinery/airlock_sensor{
 	id_tag = "solar_port_sensor";
@@ -36822,7 +36757,7 @@
 	dir = 4
 	},
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 1;
 	id_tag = "solar_port_pump"
 	},
@@ -36835,10 +36770,8 @@
 /turf/simulated/floor/plating,
 /area/maintenance/solar)
 "bhF" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1380;
+/obj/machinery/door/airlock/external/bolted/cycling{
 	id_tag = "solar_port_outer";
-	locked = 1;
 	name = "Engineering External Access"
 	},
 /obj/structure/cable/yellow{
@@ -36855,11 +36788,9 @@
 	icon_state = "4-8"
 	},
 /obj/structure/catwalk,
-/obj/machinery/access_button{
-	command = "cycle_exterior";
+/obj/machinery/access_button/airlock_exterior{
 	dir = 1;
-	frequency = 1379;
-	master_tag = "solar_port_airlock";
+	master_tag = "solar_port";
 	name = "exterior access button";
 	pixel_x = -12;
 	pixel_y = 27;
