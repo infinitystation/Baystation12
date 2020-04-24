@@ -240,12 +240,10 @@
 	updatecartridges()
 
 /obj/item/clothing/glasses/modular/normal
-	name = "modular glasses"
 	desc = "It's using different cartridges to grant user additional vision modifiers. This is the standard model."
 	maxcart = 2
 
 /obj/item/clothing/glasses/modular/advanced
-	name = "modular glasses"
 	desc = "It's using different cartridges to grant user additional vision modifiers. This is an advanced model with an increased number of slots."
 	maxcart = 4
 
