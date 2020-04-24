@@ -172,6 +172,10 @@
 		/obj/item/weapon/storage/firstaid/individual/military
 	)
 
+/obj/structure/closet/secure_closet/security/sierra/cadet
+	name = "cadet's locker"
+	req_access = list(access_security)
+
 /obj/structure/closet/secure_closet/brig/WillContain()
 	return list(
 		/obj/item/clothing/under/color/orange,

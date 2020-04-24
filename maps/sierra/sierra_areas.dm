@@ -890,23 +890,22 @@
 /* SECURITY AREAS
  *
  */
+/area/security/sierra/
+	icon_state = "security"
 
 /area/security/sierra/hallway
 	name = "First Deck - Security - Hallway - Fore"
-	icon_state = "security"
 	sound_env = LARGE_ENCLOSED
 
 /area/security/sierra/hallway/aft
 	name = "First Deck - Security - Hallway - Aft"
-	icon_state = "security"
 
 /area/security/sierra/hallway/port
 	name = "First Deck - Security - Hallway - Port"
-	icon_state = "security"
 
 /area/security/sierra/sergeant
 	name = "First Deck - Security - Warden"
-	icon_state = "brig"
+	icon_state = "Warden"
 	req_access = list(access_warden)
 
 /area/security/sierra/armory
@@ -916,16 +915,13 @@
 
 /area/security/sierra/armory/lobby
 	name = "First Deck - Security - Armory Lobby"
-	icon_state = "armory"
 
 /area/security/sierra/suits
 	name = "First Deck - Security - Suits Storage"
-	icon_state = "security"
 	req_access = list(access_seceva)
 
 /area/security/sierra/breakroom
 	name = "First Deck - Security - Break Room"
-	icon_state = "security"
 
 /area/security/sierra/hosbed
 	name = "First Deck - Security - HOS Bedroom"
@@ -939,11 +935,9 @@
 
 /area/security/sierra/forensic/lab
 	name = "First Deck - Security - Forensic Laboratory"
-	icon_state = "detective"
 
 /area/security/sierra/equipment
 	name = "First Deck - Security - Equipment"
-	icon_state = "security"
 	req_access = list(access_security)
 
 /area/security/sierra/interrogation
@@ -957,9 +951,8 @@
 	req_access = list(list(access_forensics_lockers, access_security))
 
 /area/security/range
-	name = "Second Deck - Firing Range"
-	icon_state = "firingrange"
-	req_access = list()
+	name = "First Deck - Security - Cadets"
+	icon_state = "security"
 
 /area/security/nuke_storage
 	name = "First Deck - Vault"
@@ -967,7 +960,7 @@
 	req_access = list(access_heads_vault)
 
 /area/security/sierra/dockcheck
-	name = "First Deck - Security - Fore Docks Checkpoint"
+	name = "Third Deck - Security - Fore Docks Checkpoint"
 	icon_state = "checkpoint1"
 	req_access = list(list(access_security, access_forensics_lockers))
 
