@@ -3641,6 +3641,7 @@
 #include "infinity\code\procs\announce.dm"
 #include "infinity\code\procs\light_type.dm"
 #include "infinity\customs\_custkit.dm"
+#include "infinity\customs\adro244_Hephaestus_outfit.dm"
 #include "infinity\customs\arhod.dm"
 #include "infinity\customs\army_overcoat.dm"
 #include "infinity\customs\asriel_zimmer_locket.dm"

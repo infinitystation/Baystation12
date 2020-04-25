@@ -1,0 +1,6 @@
+{
+  "ckey" :            "adro244",
+  "character_name" :  "Juggernaut",
+  "item_path" :       "/obj/item/weapon/clothingbag/rivalset",
+  "req_access" :      [ "ACCESS_GUARD" ]
+  }
