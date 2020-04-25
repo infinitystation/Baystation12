@@ -429,7 +429,7 @@ INF*/
 					var/datum/terminal/remote/new_term = new (user, comp, CT)
 					LAZYADD(comp.terminals, new_term)
 					LAZYADD(CT.terminals, new_term)
-					ntnet_global.add_log("[NC.get_network_tag()] open [name] tunnel to [comp.get_component(PART_NETWORK)?.get_network_tag()]")
+					ntnet_global.add_log("[NC.get_network_tag()] open [name] tunnel to [comp.get_network_tag()]")
 					return "[name]: <font color='#00ff00'>Connection established with login: [login], and password: [password].</font>"
 				else return "<font color='#ff0000'>[name]: INCORRECT PASSWORD.</font>"
 			else return "<font color='#ff0000'>[name]: INCORRECT LOGIN.</font>"
