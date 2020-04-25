@@ -15,3 +15,9 @@
 	id = access_troopsarm
 	desc = "Troops Armory"
 	access_type = ACCESS_TYPE_NONE
+
+/var/const/access_solgov_crew = 304
+/datum/access/crew
+	id = access_troopsarm
+	desc = "Troops Armory"
+	access_type = ACCESS_TYPE_NONE

@@ -185,7 +185,18 @@
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/aft)
 "au" = (
-/turf/simulated/wall,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/machinery/button/alternate/door{
+	id_tag = "cabinp_1";
+	name = "Lock";
+	pixel_x = -24;
+	pixel_y = 0;
+	!INVALID_VAR! = 4
+	},
+/turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
 "av" = (
 /turf/simulated/wall/r_wall,
@@ -358,7 +369,6 @@
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
 "aS" = (
-/obj/effect/landmark/overmap_target/sentinel/upper/dorms,
 /turf/simulated/wall,
 /area/ship/patrol/crew/hallway/upper/starboard)
 "aT" = (
@@ -467,34 +477,20 @@
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
 "bh" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 6
-	},
-/obj/machinery/button/alternate/door{
-	id_tag = "cabinp_1";
-	name = "Lock";
-	pixel_x = -24;
-	pixel_y = 0;
-	specialfunctions = 4
-	},
-/turf/simulated/floor/wood,
-/area/ship/patrol/crew/hallway/upper/starboard)
-"bi" = (
 /obj/structure/table/woodentable,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"bj" = (
+"bi" = (
 /obj/structure/table/woodentable,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"bk" = (
+"bj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -504,11 +500,11 @@
 	name = "Lock";
 	pixel_x = 24;
 	pixel_y = 0;
-	specialfunctions = 4
+	!INVALID_VAR! = 4
 	},
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"bl" = (
+"bk" = (
 /obj/structure/cryo_spawner/patrol_craft/engineer{
 	icon_state = "body_scanner_1";
 	dir = 4
@@ -516,7 +512,7 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/cryo)
-"bm" = (
+"bl" = (
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
 	dir = 8
@@ -524,7 +520,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/cryo)
-"bn" = (
+"bm" = (
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
 	dir = 4
@@ -532,7 +528,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/cryo)
-"bo" = (
+"bn" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/cryo_spawner/patrol_craft/crewman{
 	icon_state = "body_scanner_1";
@@ -540,7 +536,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/cryo)
-"bp" = (
+"bo" = (
 /obj/effect/floor_decal/corner/red{
 	dir = 8
 	},
@@ -551,31 +547,19 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig)
-"bq" = (
+"bp" = (
 /obj/effect/floor_decal/corner/red,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/structure/sink{
-	dir = 4;
-	icon_state = "sink";
-	pixel_x = 12;
-	pixel_y = 2
-	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig)
-"br" = (
+"bq" = (
 /obj/effect/floor_decal/corner/red{
 	dir = 8
 	},
-/obj/structure/sink{
-	icon_state = "sink";
-	dir = 8;
-	pixel_x = -12;
-	pixel_y = 2
-	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig)
-"bs" = (
+"br" = (
 /obj/effect/floor_decal/corner/red,
 /obj/machinery/light/small{
 	dir = 4;
@@ -584,7 +568,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig)
-"bt" = (
+"bs" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable{
@@ -599,7 +583,7 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/aft)
-"bu" = (
+"bt" = (
 /obj/machinery/alarm{
 	dir = 4;
 	icon_state = "alarm0";
@@ -607,19 +591,19 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper)
-"bv" = (
+"bu" = (
 /turf/simulated/open,
 /area/ship/patrol/crew/hallway/upper)
-"bw" = (
+"bv" = (
 /obj/effect/floor_decal/corner/grey_alt,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"bx" = (
+"bw" = (
 /obj/effect/floor_decal/corner/grey_alt,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"by" = (
+"bx" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/machinery/alarm{
 	dir = 8;
@@ -628,7 +612,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"bz" = (
+"by" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -638,7 +622,7 @@
 	},
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"bA" = (
+"bz" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -648,7 +632,7 @@
 	},
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"bB" = (
+"bA" = (
 /obj/effect/floor_decal/industrial/warning/half,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass{
@@ -657,7 +641,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/cryo)
-"bC" = (
+"bB" = (
 /obj/effect/floor_decal/industrial/warning/half,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass{
@@ -666,7 +650,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/cryo)
-"bD" = (
+"bC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
@@ -682,7 +666,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig)
-"bE" = (
+"bD" = (
 /obj/machinery/door/firedoor,
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -690,7 +674,7 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/crew/brig)
-"bF" = (
+"bE" = (
 /obj/machinery/door/firedoor,
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -698,7 +682,7 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/crew/brig)
-"bG" = (
+"bF" = (
 /obj/machinery/door/window/brigdoor/westleft{
 	dir = 1;
 	id = "Cell 2p";
@@ -714,10 +698,10 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig)
-"bH" = (
+"bG" = (
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/pods)
-"bI" = (
+"bH" = (
 /obj/structure/shuttle/engine/propulsion{
 	icon_state = "propulsion_l";
 	dir = 8
@@ -728,31 +712,31 @@
 	icon_state = "swall_c"
 	},
 /area/ship/patrol/maintenance/upper/pods)
-"bJ" = (
+"bI" = (
 /turf/simulated/wall/titanium,
 /area/ship/patrol/maintenance/upper/pods)
-"bK" = (
+"bJ" = (
 /turf/simulated/floor/reinforced/airless,
 /turf/simulated/shuttle/wall{
 	icon_state = "swall_c";
 	dir = 2
 	},
 /area/ship/patrol/maintenance/upper/pods)
-"bL" = (
+"bK" = (
 /obj/effect/floor_decal/industrial/warning/half{
 	icon_state = "warninghalf";
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
-/obj/effect/landmark/overmap_target/sentinel/upper/elevator,
+/obj/structure/inflatable/door,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"bM" = (
+"bL" = (
 /obj/effect/floor_decal/corner/grey_alt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"bN" = (
+"bM" = (
 /obj/effect/floor_decal/corner/grey_alt,
 /obj/effect/floor_decal/corner/grey_alt{
 	icon_state = "corner_white";
@@ -760,7 +744,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"bO" = (
+"bN" = (
 /obj/effect/floor_decal/corner/grey_alt{
 	icon_state = "corner_white";
 	dir = 1
@@ -768,7 +752,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"bP" = (
+"bO" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/warning/half{
 	icon_state = "warninghalf";
@@ -779,13 +763,13 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"bQ" = (
+"bP" = (
 /obj/effect/floor_decal/corner/grey_alt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"bR" = (
+"bQ" = (
 /obj/effect/floor_decal/corner/grey_alt,
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/machinery/alarm{
@@ -793,7 +777,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"bS" = (
+"bR" = (
 /obj/machinery/light{
 	dir = 1
 	},
@@ -804,7 +788,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"bT" = (
+"bS" = (
 /obj/effect/floor_decal/corner/grey_alt,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/machinery/power/apc{
@@ -818,12 +802,12 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"bU" = (
+"bT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"bV" = (
+"bU" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/warning/half{
 	icon_state = "warninghalf";
@@ -831,7 +815,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/cryo)
-"bW" = (
+"bV" = (
 /obj/effect/floor_decal/corner/grey_alt,
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/machinery/alarm{
@@ -839,17 +823,17 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/cryo)
-"bX" = (
+"bW" = (
 /obj/effect/floor_decal/corner/grey_alt,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/cryo)
-"bY" = (
+"bX" = (
 /obj/effect/floor_decal/corner/grey_alt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/cryo)
-"bZ" = (
+"bY" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/machinery/power/apc{
 	dir = 1;
@@ -864,7 +848,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/cryo)
-"ca" = (
+"bZ" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/warning/half{
 	icon_state = "warninghalf";
@@ -875,12 +859,12 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig)
-"cb" = (
+"ca" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig)
-"cc" = (
+"cb" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/machinery/door_timer/cell_1{
 	id = "Cell 1p";
@@ -888,7 +872,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig)
-"cd" = (
+"cc" = (
 /obj/machinery/light{
 	dir = 1
 	},
@@ -897,7 +881,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig)
-"ce" = (
+"cd" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/machinery/door_timer/cell_2{
 	id = "Cell 2p";
@@ -905,7 +889,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig)
-"cf" = (
+"ce" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
 	},
@@ -919,7 +903,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig)
-"cg" = (
+"cf" = (
 /obj/structure/sign/warning/pods{
 	dir = 4;
 	icon_state = "pods";
@@ -940,7 +924,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig)
-"ch" = (
+"cg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -959,7 +943,7 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/aft)
-"ci" = (
+"ch" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
@@ -978,7 +962,7 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/aft)
-"cj" = (
+"ci" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -987,7 +971,7 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/aft)
-"ck" = (
+"cj" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -1000,7 +984,7 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/wall/r_wall,
 /area/ship/patrol/maintenance/upper/aft)
-"cl" = (
+"ck" = (
 /obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
@@ -1008,7 +992,7 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/pods)
-"cm" = (
+"cl" = (
 /obj/structure/bed/chair/shuttle,
 /obj/item/device/radio/intercom{
 	dir = 4;
@@ -1016,11 +1000,11 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/maintenance/upper/pods)
-"cn" = (
+"cm" = (
 /obj/structure/bed/chair/shuttle,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/maintenance/upper/pods)
-"co" = (
+"cn" = (
 /obj/structure/bed/chair/shuttle,
 /obj/machinery/light{
 	icon_state = "tube1";
@@ -1028,29 +1012,21 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/maintenance/upper/pods)
-"cp" = (
+"co" = (
 /obj/machinery/computer/cryopod{
 	pixel_y = 32
 	},
 /obj/structure/table/steel,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/maintenance/upper/pods)
-"cq" = (
-/obj/effect/floor_decal/industrial/warning/half{
-	icon_state = "warninghalf";
-	dir = 4
-	},
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled,
-/area/ship/patrol/crew/hallway/upper)
-"cr" = (
+"cp" = (
 /obj/machinery/light,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"cs" = (
+"cq" = (
 /obj/effect/floor_decal/corner/grey_alt{
 	icon_state = "corner_white";
 	dir = 1
@@ -1060,7 +1036,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"ct" = (
+"cr" = (
 /obj/effect/floor_decal/corner/grey_alt{
 	icon_state = "corner_white";
 	dir = 1
@@ -1085,7 +1061,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"cu" = (
+"cs" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/warning/half{
 	icon_state = "warninghalf";
@@ -1108,7 +1084,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"cv" = (
+"ct" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/structure/cable{
@@ -1119,7 +1095,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"cw" = (
+"cu" = (
 /obj/effect/floor_decal/corner/grey_alt{
 	icon_state = "corner_white";
 	dir = 1
@@ -1136,7 +1112,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"cx" = (
+"cv" = (
 /obj/effect/floor_decal/corner/grey_alt{
 	icon_state = "corner_white";
 	dir = 1
@@ -1155,7 +1131,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"cy" = (
+"cw" = (
 /obj/effect/floor_decal/corner/grey_alt{
 	icon_state = "corner_white";
 	dir = 1
@@ -1175,7 +1151,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"cz" = (
+"cx" = (
 /obj/effect/floor_decal/corner/grey_alt{
 	icon_state = "corner_white";
 	dir = 1
@@ -1190,7 +1166,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"cA" = (
+"cy" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/warning/half{
 	icon_state = "warninghalf";
@@ -1210,7 +1186,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/cryo)
-"cB" = (
+"cz" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -1228,7 +1204,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/cryo)
-"cC" = (
+"cA" = (
 /obj/effect/floor_decal/corner/grey_alt{
 	icon_state = "corner_white";
 	dir = 1
@@ -1245,7 +1221,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/cryo)
-"cD" = (
+"cB" = (
 /obj/effect/floor_decal/corner/grey_alt{
 	icon_state = "corner_white";
 	dir = 1
@@ -1262,7 +1238,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/cryo)
-"cE" = (
+"cC" = (
 /obj/effect/floor_decal/corner/grey_alt{
 	icon_state = "corner_white";
 	dir = 1
@@ -1284,7 +1260,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/cryo)
-"cF" = (
+"cD" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/warning/half{
 	icon_state = "warninghalf";
@@ -1307,7 +1283,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig)
-"cG" = (
+"cE" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -1318,7 +1294,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig)
-"cH" = (
+"cF" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -1332,7 +1308,7 @@
 /obj/effect/floor_decal/corner/red,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig)
-"cI" = (
+"cG" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -1356,7 +1332,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig)
-"cJ" = (
+"cH" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -1378,7 +1354,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig)
-"cK" = (
+"cI" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
@@ -1393,7 +1369,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig)
-"cL" = (
+"cJ" = (
 /obj/structure/flora/pottedplant/smelly,
 /obj/structure/sign/warning/secure_area/armory{
 	pixel_y = -32
@@ -1404,7 +1380,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig)
-"cM" = (
+"cK" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -1413,21 +1389,27 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/pods)
-"cN" = (
+"cL" = (
+/obj/machinery/door/airlock/external/escapepod{
+	frequency = 1361
+	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/maintenance/upper/pods)
-"cO" = (
+"cM" = (
+/turf/simulated/floor/tiled,
+/area/ship/patrol/maintenance/upper/pods)
+"cN" = (
 /obj/machinery/cryopod,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/maintenance/upper/pods)
-"cP" = (
+"cO" = (
 /turf/simulated/wall,
 /area/ship/patrol/maintenance/upper)
-"cQ" = (
+"cP" = (
 /obj/machinery/door/firedoor,
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper)
-"cR" = (
+"cQ" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/warning/half,
 /obj/structure/sign/deck/first{
@@ -1435,7 +1417,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"cS" = (
+"cR" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/warning/half,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -1448,7 +1430,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"cT" = (
+"cS" = (
 /obj/structure/table/woodentable,
 /obj/effect/floor_decal/spline/fancy/wood{
 	icon_state = "spline_fancy";
@@ -1457,7 +1439,7 @@
 /obj/item/device/flashlight/lamp/green,
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"cU" = (
+"cT" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	icon_state = "spline_fancy";
 	dir = 1
@@ -1465,7 +1447,7 @@
 /obj/structure/bed/sofa/brown/left,
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"cV" = (
+"cU" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	icon_state = "spline_fancy";
 	dir = 1
@@ -1473,14 +1455,14 @@
 /obj/structure/bed/sofa/brown/right,
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"cW" = (
+"cV" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	icon_state = "spline_fancy";
 	dir = 1
 	},
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"cX" = (
+"cW" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	icon_state = "spline_fancy";
 	dir = 5
@@ -1491,7 +1473,7 @@
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"cY" = (
+"cX" = (
 /obj/machinery/door/firedoor,
 /obj/effect/wingrille_spawn/reinforced,
 /obj/structure/cable{
@@ -1500,7 +1482,7 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/crew/brig/office)
-"cZ" = (
+"cY" = (
 /obj/machinery/door/firedoor,
 /obj/effect/wingrille_spawn/reinforced,
 /obj/structure/cable{
@@ -1513,7 +1495,7 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/crew/brig/office)
-"da" = (
+"cZ" = (
 /obj/effect/floor_decal/industrial/warning/half{
 	icon_state = "warninghalf";
 	dir = 1
@@ -1537,13 +1519,12 @@
 	name = "Brig Entry";
 	req_access = list("ACCESS_BRIG")
 	},
-/obj/effect/landmark/overmap_target/sentinel/upper/brig,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig/office)
-"db" = (
+"da" = (
 /turf/simulated/wall/r_wall,
 /area/ship/patrol/crew/brig/office)
-"dc" = (
+"db" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/shutters{
@@ -1556,10 +1537,10 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/crew/brig/emergency_armory)
-"dd" = (
+"dc" = (
 /turf/simulated/wall/r_wall,
 /area/ship/patrol/crew/brig/emergency_armory)
-"de" = (
+"dd" = (
 /obj/structure/closet/crate/medical,
 /obj/item/weapon/storage/firstaid/individual/military,
 /obj/item/weapon/storage/firstaid/individual/military,
@@ -1570,7 +1551,7 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/crew/brig/emergency_armory)
-"df" = (
+"de" = (
 /obj/structure/closet/crate/internals,
 /obj/item/clothing/mask/gas/half,
 /obj/item/clothing/mask/gas/half,
@@ -1581,7 +1562,7 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/crew/brig/emergency_armory)
-"dg" = (
+"df" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -1592,6 +1573,15 @@
 	dir = 8;
 	icon_state = "tube1";
 	pixel_y = 0
+	},
+/turf/simulated/floor,
+/area/ship/patrol/maintenance/upper/pods)
+"dg" = (
+/obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
+	dir = 8;
+	frequency = 1361;
+	icon_state = "airlock_control_off";
+	pixel_x = 24
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/pods)
@@ -1870,14 +1860,10 @@
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
 "dP" = (
-/obj/effect/landmark/overmap_target/sentinel/upper/relaxation,
-/turf/simulated/floor/wood,
-/area/ship/patrol/crew/hallway/upper/starboard)
-"dQ" = (
 /obj/machinery/vending/cigarette,
 /turf/simulated/floor/carpet/blue2,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"dR" = (
+"dQ" = (
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
 	dir = 8
@@ -1892,7 +1878,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/cryo)
-"dS" = (
+"dR" = (
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
 	dir = 4
@@ -1902,14 +1888,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/cryo)
-"dT" = (
+"dS" = (
 /obj/structure/sign/warning/nosmoking_1{
 	pixel_x = 32
 	},
 /obj/machinery/cryopod,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/cryo)
-"dU" = (
+"dT" = (
 /obj/structure/table/standard,
 /obj/item/weapon/folder/red,
 /obj/item/weapon/folder/red,
@@ -1918,7 +1904,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig/office)
-"dV" = (
+"dU" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 8
 	},
@@ -1927,7 +1913,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig/office)
-"dW" = (
+"dV" = (
 /obj/machinery/alarm{
 	alarm_id = "xenobio3_alarm";
 	dir = 8;
@@ -1947,7 +1933,7 @@
 /obj/effect/floor_decal/industrial/warning/corner,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig/office)
-"dX" = (
+"dW" = (
 /obj/structure/table/steel,
 /obj/item/weapon/paper_bin{
 	pixel_x = -3;
@@ -1972,11 +1958,11 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/crew/brig/emergency_armory)
-"dY" = (
+"dX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/crew/brig/emergency_armory)
-"dZ" = (
+"dY" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/item/clothing/suit/armor/bulletproof,
@@ -1988,7 +1974,7 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/crew/brig/emergency_armory)
-"ea" = (
+"dZ" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/item/clothing/accessory/storage/holster/thigh,
@@ -1999,7 +1985,7 @@
 /obj/item/clothing/accessory/storage/holster/thigh,
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/crew/brig/emergency_armory)
-"eb" = (
+"ea" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/light{
@@ -2019,7 +2005,7 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/crew/brig/emergency_armory)
-"ec" = (
+"eb" = (
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "west bump";
@@ -2029,16 +2015,15 @@
 /obj/structure/cable,
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/pods)
-"ed" = (
+"ec" = (
 /obj/machinery/alarm{
 	dir = 8;
 	icon_state = "alarm0";
 	pixel_x = 24
 	},
-/obj/effect/landmark/overmap_target/sentinel/upper/pods,
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/pods)
-"ee" = (
+"ed" = (
 /obj/structure/bed/chair/wood{
 	dir = 8;
 	icon_state = "wooden_chair_preview"
@@ -2046,14 +2031,14 @@
 /obj/random/trash,
 /turf/simulated/floor/wood,
 /area/ship/patrol/maintenance/upper)
-"ef" = (
+"ee" = (
 /obj/machinery/door/airlock/maintenance{
 	req_access = list(80)
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper)
-"eg" = (
+"ef" = (
 /obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
@@ -2061,7 +2046,7 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper)
-"eh" = (
+"eg" = (
 /obj/machinery/door/firedoor,
 /obj/structure/cable{
 	d1 = 4;
@@ -2074,7 +2059,7 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper)
-"ei" = (
+"eh" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -2083,7 +2068,7 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper)
-"ej" = (
+"ei" = (
 /obj/machinery/door/firedoor,
 /obj/structure/cable{
 	d1 = 4;
@@ -2096,7 +2081,7 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/crew/hallway/upper)
-"ek" = (
+"ej" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
@@ -2108,7 +2093,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"el" = (
+"ek" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -2124,7 +2109,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"em" = (
+"el" = (
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube1";
@@ -2151,7 +2136,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"en" = (
+"em" = (
 /obj/structure/bookcase,
 /obj/item/weapon/book/manual/solgov_law,
 /obj/item/weapon/book/manual/sol_sop,
@@ -2163,7 +2148,7 @@
 	},
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"eo" = (
+"en" = (
 /obj/structure/bed/sofa/brown/left{
 	icon_state = "couchbrown_left";
 	dir = 1
@@ -2171,7 +2156,7 @@
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"ep" = (
+"eo" = (
 /obj/structure/bed/sofa/brown/right{
 	icon_state = "couchbrown_right";
 	dir = 1
@@ -2180,12 +2165,12 @@
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"eq" = (
+"ep" = (
 /obj/structure/flora/pottedplant/fern,
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"er" = (
+"eq" = (
 /obj/structure/bed/chair/comfy/brown{
 	icon_state = "comfychair_preview";
 	dir = 4
@@ -2196,13 +2181,13 @@
 	},
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"es" = (
+"er" = (
 /obj/machinery/computer/modular/preset/civilian{
 	dir = 8
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"et" = (
+"es" = (
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
 	dir = 4
@@ -2214,11 +2199,11 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/cryo)
-"eu" = (
+"et" = (
 /obj/machinery/cryopod,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/cryo)
-"ev" = (
+"eu" = (
 /obj/structure/table/standard,
 /obj/machinery/recharger,
 /obj/effect/floor_decal/corner/red{
@@ -2232,7 +2217,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig/office)
-"ew" = (
+"ev" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
@@ -2243,7 +2228,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig/office)
-"ex" = (
+"ew" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
@@ -2265,7 +2250,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig/office)
-"ey" = (
+"ex" = (
 /obj/effect/floor_decal/industrial/warning/half{
 	icon_state = "warninghalf";
 	dir = 4
@@ -2289,7 +2274,7 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/crew/brig/emergency_armory)
-"ez" = (
+"ey" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -2307,7 +2292,7 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/crew/brig/emergency_armory)
-"eA" = (
+"ez" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -2321,23 +2306,22 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/crew/brig/emergency_armory)
-"eB" = (
+"eA" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/crew/brig/emergency_armory)
-"eC" = (
+"eB" = (
 /obj/structure/table/woodentable,
 /obj/item/weapon/material/ashtray/plastic,
-/obj/item/weapon/cigbutt,
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper)
-"eD" = (
+"eC" = (
 /obj/random/trash,
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper)
-"eE" = (
+"eD" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -2352,10 +2336,10 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper)
-"eF" = (
+"eE" = (
 /turf/simulated/wall,
 /area/ship/patrol/crew/toilet)
-"eG" = (
+"eF" = (
 /obj/effect/floor_decal/corner/black{
 	icon_state = "corner_white";
 	dir = 5
@@ -2369,22 +2353,21 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/crew/hallway/upper)
-"eH" = (
+"eG" = (
 /obj/effect/floor_decal/corner/grey_alt{
 	icon_state = "corner_white";
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"eI" = (
+"eH" = (
 /turf/simulated/wall/r_wall,
 /area/ship/patrol/crew/hallway/upper/starboard)
-"eJ" = (
-/obj/structure/closet/secure_closet/security_torch,
+"eI" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig/office)
-"eK" = (
+"eJ" = (
 /obj/machinery/power/apc{
 	name = "south bump";
 	pixel_y = -25
@@ -2393,7 +2376,7 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig/office)
-"eL" = (
+"eK" = (
 /obj/machinery/vending/security,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/effect/floor_decal/industrial/warning/corner{
@@ -2402,7 +2385,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig/office)
-"eM" = (
+"eL" = (
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = -24;
@@ -2425,7 +2408,7 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/crew/brig/emergency_armory)
-"eN" = (
+"eM" = (
 /obj/machinery/power/apc/critical{
 	dir = 2;
 	name = "south bump";
@@ -2440,28 +2423,25 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/crew/brig/emergency_armory)
-"eO" = (
+"eN" = (
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/structure/closet/secure_closet/guncabinet/sec_armory/egun,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/crew/brig/emergency_armory)
-"eP" = (
+"eO" = (
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/structure/closet/secure_closet/guncabinet/sec_armory/egun,
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/crew/brig/emergency_armory)
-"eQ" = (
+"eP" = (
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/structure/closet/secure_closet/guncabinet/sec_armory/ion,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/crew/brig/emergency_armory)
-"eR" = (
+"eQ" = (
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1";
@@ -2469,23 +2449,23 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/pods)
-"eS" = (
+"eR" = (
 /obj/structure/table/steel,
 /obj/machinery/computer/cryopod{
 	pixel_y = 32
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/maintenance/upper/pods)
-"eT" = (
+"eS" = (
 /obj/machinery/constructable_frame/machine_frame,
 /obj/random/trash,
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper)
-"eU" = (
+"eT" = (
 /obj/structure/table/steel,
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper)
-"eV" = (
+"eU" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -2494,45 +2474,38 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper)
-"eW" = (
-/obj/machinery/shower{
-	icon_state = "shower";
-	dir = 4
-	},
+"eV" = (
 /obj/machinery/button/alternate/door{
 	id_tag = "showerp";
 	name = "Lock";
 	pixel_x = 24;
 	pixel_y = -8;
-	specialfunctions = 4
+	!INVALID_VAR! = 4
 	},
 /obj/machinery/light/small{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/toilet)
-"eX" = (
+"eW" = (
 /obj/machinery/button/alternate/door{
 	id_tag = "toiletp";
 	name = "Lock";
 	pixel_x = 24;
 	pixel_y = -8;
-	specialfunctions = 4
-	},
-/obj/structure/toilet{
-	pixel_y = 14
+	!INVALID_VAR! = 4
 	},
 /obj/machinery/light/small{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/toilet)
-"eY" = (
+"eX" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/warning/half,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"eZ" = (
+"eY" = (
 /obj/structure/flora/pottedplant/minitree,
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -2544,14 +2517,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fa" = (
+"eZ" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
 /obj/machinery/vending/cola,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fb" = (
+"fa" = (
 /obj/machinery/vending/snack,
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -2562,7 +2535,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fc" = (
+"fb" = (
 /obj/structure/sign/double/solgovflag/left{
 	pixel_y = 32
 	},
@@ -2573,7 +2546,7 @@
 /obj/machinery/recharger,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fd" = (
+"fc" = (
 /obj/structure/sign/double/solgovflag/right{
 	pixel_y = 32
 	},
@@ -2583,24 +2556,24 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fe" = (
+"fd" = (
 /obj/machinery/vending/coffee,
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"ff" = (
+"fe" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
 /obj/machinery/vending/cigarette,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fg" = (
+"ff" = (
 /turf/simulated/wall,
 /area/ship/patrol/crew/kitchen)
-"fh" = (
+"fg" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
@@ -2612,17 +2585,17 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fi" = (
+"fh" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
 /obj/machinery/cooker/fryer,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fj" = (
+"fi" = (
 /turf/simulated/wall/r_wall,
 /area/ship/patrol/crew/kitchen)
-"fk" = (
+"fj" = (
 /obj/machinery/door/firedoor,
 /obj/structure/cable{
 	d1 = 1;
@@ -2632,21 +2605,21 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper)
-"fl" = (
+"fk" = (
 /obj/machinery/door/airlock{
 	id_tag = "showerp";
 	name = "Shower"
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/toilet)
-"fm" = (
+"fl" = (
 /obj/machinery/door/airlock{
 	id_tag = "toiletp";
 	name = "Toilet"
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/toilet)
-"fn" = (
+"fm" = (
 /obj/machinery/light{
 	dir = 1
 	},
@@ -2662,14 +2635,14 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"fo" = (
+"fn" = (
 /obj/effect/floor_decal/corner/grey_alt{
 	icon_state = "corner_white";
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"fp" = (
+"fo" = (
 /obj/effect/floor_decal/corner/grey_alt{
 	icon_state = "corner_white";
 	dir = 8
@@ -2693,7 +2666,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"fq" = (
+"fp" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -2716,7 +2689,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fr" = (
+"fq" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
@@ -2735,7 +2708,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fs" = (
+"fr" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
@@ -2744,6 +2717,24 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/white,
+/area/ship/patrol/crew/kitchen)
+"fs" = (
+/obj/effect/floor_decal/corner/blue/diagonal{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -2769,24 +2760,6 @@
 	icon_state = "4-8";
 	pixel_y = 0
 	},
-/turf/simulated/floor/tiled/white,
-/area/ship/patrol/crew/kitchen)
-"fu" = (
-/obj/effect/floor_decal/corner/blue/diagonal{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_y = 0
-	},
 /obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
@@ -2794,7 +2767,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fv" = (
+"fu" = (
 /obj/effect/floor_decal/industrial/warning/half{
 	icon_state = "warninghalf";
 	dir = 4
@@ -2818,7 +2791,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fw" = (
+"fv" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
@@ -2836,7 +2809,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fx" = (
+"fw" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
@@ -2845,7 +2818,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fy" = (
+"fx" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
@@ -2857,7 +2830,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fz" = (
+"fy" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
@@ -2871,33 +2844,33 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fA" = (
+"fz" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fB" = (
+"fA" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Galley Maintenance";
 	req_access = list("ACCESS_KITCHEN")
 	},
 /turf/simulated/floor,
 /area/ship/patrol/crew/kitchen)
-"fC" = (
+"fB" = (
 /obj/machinery/door/airlock/maintenance{
 	req_access = list(80)
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/aft)
-"fD" = (
+"fC" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/maintenance{
 	req_access = list(80)
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/pods)
-"fE" = (
+"fD" = (
 /obj/structure/bed/chair/shuttle{
 	icon_state = "bschair_preview";
 	dir = 1
@@ -2905,7 +2878,7 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/maintenance/upper/pods)
-"fF" = (
+"fE" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
@@ -2913,7 +2886,7 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper)
-"fG" = (
+"fF" = (
 /obj/machinery/power/apc{
 	dir = 4;
 	name = "east bump";
@@ -2926,28 +2899,19 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper)
-"fH" = (
-/obj/structure/sink{
-	dir = 8;
-	icon_state = "sink";
-	pixel_x = -15
-	},
+"fG" = (
 /obj/item/weapon/storage/mirror{
 	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/toilet)
-"fI" = (
-/obj/structure/urinal{
-	pixel_y = 28
-	},
+"fH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
-/obj/effect/landmark/overmap_target/sentinel/upper/head,
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/toilet)
-"fJ" = (
+"fI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -2961,7 +2925,7 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/toilet)
-"fK" = (
+"fJ" = (
 /obj/effect/floor_decal/industrial/warning/half{
 	icon_state = "warninghalf";
 	dir = 4
@@ -2984,7 +2948,7 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/toilet)
-"fL" = (
+"fK" = (
 /obj/effect/floor_decal/corner/grey_alt{
 	icon_state = "corner_white";
 	dir = 4
@@ -3009,7 +2973,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"fM" = (
+"fL" = (
 /obj/effect/floor_decal/corner/grey_alt{
 	icon_state = "corner_white";
 	dir = 4
@@ -3037,7 +3001,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"fN" = (
+"fM" = (
 /obj/effect/floor_decal/corner/grey_alt{
 	icon_state = "corner_white";
 	dir = 8
@@ -3055,7 +3019,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"fO" = (
+"fN" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -3066,14 +3030,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fP" = (
+"fO" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fQ" = (
+"fP" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
@@ -3083,14 +3047,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fR" = (
+"fQ" = (
 /obj/structure/bed/chair,
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fS" = (
+"fR" = (
 /obj/structure/bed/chair,
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -3103,13 +3067,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fT" = (
-/obj/structure/sink{
-	dir = 4;
-	icon_state = "sink";
-	pixel_x = 11;
-	pixel_y = 0
-	},
+"fS" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
@@ -3120,13 +3078,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fU" = (
-/obj/structure/sink{
-	icon_state = "sink";
-	dir = 8;
-	pixel_x = -12;
-	pixel_y = 2
-	},
+"fT" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
@@ -3144,7 +3096,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fV" = (
+"fU" = (
 /obj/structure/table/marble,
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
@@ -3152,14 +3104,14 @@
 /obj/item/weapon/material/kitchen/rollingpin,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fW" = (
+"fV" = (
 /obj/structure/table/marble,
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fX" = (
+"fW" = (
 /obj/structure/table/marble,
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
@@ -3170,30 +3122,24 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"fY" = (
-/obj/structure/sink{
-	dir = 8;
-	icon_state = "sink";
-	pixel_x = -15
-	},
+"fX" = (
 /obj/item/weapon/storage/mirror{
 	pixel_x = -32
 	},
 /obj/machinery/alarm{
 	dir = 1;
-	pixel_y = -25;
-	
+	pixel_y = -25
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/toilet)
-"fZ" = (
+"fY" = (
 /obj/machinery/light/small,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/toilet)
-"ga" = (
+"fZ" = (
 /obj/structure/flora/pottedplant/large,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	icon_state = "map_vent_out";
@@ -3213,7 +3159,7 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/toilet)
-"gb" = (
+"ga" = (
 /obj/effect/floor_decal/corner/grey_alt{
 	icon_state = "corner_white";
 	dir = 4
@@ -3228,7 +3174,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"gc" = (
+"gb" = (
 /obj/effect/floor_decal/corner/grey_alt{
 	icon_state = "corner_white";
 	dir = 4
@@ -3241,19 +3187,19 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"gd" = (
+"gc" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	icon_state = "map_vent_out";
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"ge" = (
+"gd" = (
 /obj/machinery/door/firedoor,
 /obj/effect/wingrille_spawn/reinforced,
 /turf/simulated/floor,
 /area/ship/patrol/crew/kitchen)
-"gf" = (
+"ge" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
@@ -3265,7 +3211,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gg" = (
+"gf" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
@@ -3274,14 +3220,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gh" = (
+"gg" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gi" = (
+"gh" = (
 /obj/structure/table/standard,
 /obj/structure/flora/pottedplant/small{
 	pixel_x = 17;
@@ -3298,15 +3244,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gj" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/corner/blue/diagonal{
-	dir = 4
-	},
-/obj/effect/landmark/overmap_target/sentinel/upper/mess_hall,
-/turf/simulated/floor/tiled/white,
-/area/ship/patrol/crew/kitchen)
-"gk" = (
+"gi" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -3319,7 +3257,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gl" = (
+"gj" = (
 /obj/structure/noticeboard{
 	dir = 8;
 	pixel_x = 32
@@ -3329,7 +3267,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gm" = (
+"gk" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
@@ -3343,7 +3281,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gn" = (
+"gl" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
@@ -3351,7 +3289,7 @@
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"go" = (
+"gm" = (
 /obj/structure/table/marble,
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
@@ -3359,7 +3297,7 @@
 /obj/machinery/chemical_dispenser/bar_soft,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gp" = (
+"gn" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/chem_master/condimaster{
 	name = "CondiMaster Neo";
@@ -3367,28 +3305,25 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/kitchen)
-"gq" = (
-/obj/structure/sink/kitchen{
-	pixel_y = 27
-	},
+"go" = (
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/kitchen)
-"gr" = (
+"gp" = (
 /obj/machinery/gibber,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/kitchen)
-"gs" = (
+"gq" = (
 /obj/machinery/door/airlock/maintenance{
 	req_access = list(80)
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/aft)
-"gt" = (
+"gr" = (
 /turf/simulated/wall,
 /area/ship/patrol/maintenance/upper/port)
-"gu" = (
+"gs" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -3397,7 +3332,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
-"gv" = (
+"gt" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
@@ -3411,7 +3346,7 @@
 /obj/item/trash/tastybread,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gw" = (
+"gu" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -3419,7 +3354,7 @@
 /obj/item/trash/liquidfood,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gx" = (
+"gv" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -3432,7 +3367,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gy" = (
+"gw" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -3440,26 +3375,19 @@
 /obj/item/weapon/reagent_containers/food/snacks/liquidfood,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gz" = (
+"gx" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
 /obj/item/trash/candy/proteinbar,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gA" = (
+"gy" = (
 /obj/structure/table/marble,
 /obj/machinery/door/firedoor,
-/obj/machinery/door/blast/shutters/glass{
-	density = 1;
-	dir = 2;
-	icon_state = "closed";
-	id_tag = "kitchenshowp";
-	name = "kitchen showcase"
-	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gB" = (
+"gz" = (
 /obj/structure/table/marble,
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
@@ -3467,7 +3395,7 @@
 /obj/item/weapon/reagent_containers/food/snacks/mint,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gC" = (
+"gA" = (
 /obj/structure/table/marble,
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
@@ -3476,7 +3404,7 @@
 /obj/item/stack/package_wrap/twenty_five,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gD" = (
+"gB" = (
 /obj/structure/table/marble,
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
@@ -3492,26 +3420,26 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gE" = (
+"gC" = (
 /obj/structure/closet/secure_closet/freezer/kitchen{
 	req_access = newlist()
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/kitchen)
-"gF" = (
+"gD" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/kitchen)
-"gG" = (
+"gE" = (
 /obj/structure/kitchenspike,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/kitchen)
-"gH" = (
+"gF" = (
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/port)
-"gI" = (
+"gG" = (
 /obj/machinery/alarm{
 	dir = 0;
 	icon_state = "alarm0";
@@ -3520,7 +3448,7 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/port)
-"gJ" = (
+"gH" = (
 /obj/machinery/door/firedoor,
 /obj/structure/cable{
 	d1 = 1;
@@ -3533,7 +3461,7 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/crew/hallway/upper)
-"gK" = (
+"gI" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
@@ -3544,7 +3472,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gL" = (
+"gJ" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
@@ -3553,7 +3481,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gM" = (
+"gK" = (
 /obj/structure/bed/chair{
 	dir = 1
 	},
@@ -3562,7 +3490,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gN" = (
+"gL" = (
 /obj/structure/bed/chair{
 	dir = 1
 	},
@@ -3577,13 +3505,13 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gO" = (
+"gM" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gP" = (
+"gN" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
@@ -3599,7 +3527,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gQ" = (
+"gO" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
@@ -3608,7 +3536,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gR" = (
+"gP" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
@@ -3617,7 +3545,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gS" = (
+"gQ" = (
 /obj/structure/table/marble,
 /obj/machinery/firealarm{
 	dir = 4;
@@ -3630,26 +3558,25 @@
 /obj/item/weapon/reagent_containers/spray/cleaner,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gT" = (
+"gR" = (
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = -24;
 	pixel_y = 0
 	},
-/obj/structure/closet/chefcloset_torch,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/kitchen)
-"gU" = (
+"gS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/kitchen)
-"gV" = (
+"gT" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/light/small{
@@ -3663,14 +3590,14 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/kitchen)
-"gW" = (
+"gU" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/maintenance{
 	req_access = list(80)
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/port)
-"gX" = (
+"gV" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -3679,14 +3606,14 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/port)
-"gY" = (
+"gW" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
 /obj/structure/closet/crate/freezer/rations,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"gZ" = (
+"gX" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
@@ -3697,7 +3624,7 @@
 /obj/item/weapon/material/canknife,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"ha" = (
+"gY" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
@@ -3720,7 +3647,7 @@
 /obj/item/weapon/material/canknife,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"hb" = (
+"gZ" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
@@ -3734,7 +3661,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"hc" = (
+"ha" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
@@ -3752,7 +3679,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"hd" = (
+"hb" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
@@ -3769,7 +3696,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"he" = (
+"hc" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
@@ -3781,7 +3708,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"hf" = (
+"hd" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/freezer{
 	name = "Galley Cold Room";
@@ -3795,7 +3722,7 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/kitchen)
-"hg" = (
+"he" = (
 /obj/item/device/radio/intercom{
 	dir = 1;
 	pixel_y = -22
@@ -3808,13 +3735,13 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/kitchen)
-"hh" = (
+"hf" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/kitchen)
-"hi" = (
+"hg" = (
 /obj/structure/closet/secure_closet/freezer/meat,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/alarm{
@@ -3823,23 +3750,23 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/kitchen)
-"hj" = (
+"hh" = (
 /obj/effect/landmark/map_data{
 	height = 2
 	},
 /turf/space,
 /area/space)
-"hk" = (
+"hi" = (
 /turf/simulated/wall/r_wall,
 /area/ship/patrol/maintenance/upper/port)
-"hl" = (
+"hj" = (
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -24
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/port)
-"hm" = (
+"hk" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
@@ -3847,7 +3774,7 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/port)
-"hn" = (
+"hl" = (
 /obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
@@ -3855,7 +3782,7 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/port)
-"ho" = (
+"hm" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
@@ -3868,7 +3795,7 @@
 /obj/item/weapon/book/manual/barman_recipes,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"hp" = (
+"hn" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -3912,7 +3839,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"hq" = (
+"ho" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
@@ -3920,20 +3847,19 @@
 /obj/machinery/vending/fitness,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"hr" = (
+"hp" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
 /obj/machinery/alarm{
 	dir = 1;
-	pixel_y = -25;
-	
+	pixel_y = -25
 	},
 /obj/structure/table/standard,
 /obj/item/weapon/storage/box/cups,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"hs" = (
+"hq" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
@@ -3948,7 +3874,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"ht" = (
+"hr" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
@@ -3962,7 +3888,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"hu" = (
+"hs" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
@@ -3979,7 +3905,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"hv" = (
+"ht" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
@@ -3993,7 +3919,7 @@
 /obj/structure/cable,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"hw" = (
+"hu" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
@@ -4004,14 +3930,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"hx" = (
+"hv" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
 /obj/machinery/cooker/oven,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
-"hy" = (
+"hw" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/maintenance{
 	name = "Galley Maintenance";
@@ -4019,11 +3945,11 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/crew/kitchen)
-"hz" = (
+"hx" = (
 /obj/machinery/door/firedoor,
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/aft)
-"hA" = (
+"hy" = (
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
@@ -4037,7 +3963,7 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/aft)
-"hB" = (
+"hz" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
@@ -4045,12 +3971,11 @@
 	},
 /obj/machinery/alarm{
 	dir = 1;
-	pixel_y = -25;
-	
+	pixel_y = -25
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/port)
-"hC" = (
+"hA" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -4059,7 +3984,7 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/port)
-"hD" = (
+"hB" = (
 /obj/machinery/door/firedoor,
 /obj/structure/cable{
 	d1 = 4;
@@ -4072,7 +3997,7 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/port)
-"hE" = (
+"hC" = (
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
@@ -4090,7 +4015,7 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/port)
-"hF" = (
+"hD" = (
 /obj/machinery/door/firedoor,
 /obj/structure/cable{
 	d1 = 4;
@@ -4100,11 +4025,10 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/port)
-"hG" = (
+"hE" = (
 /obj/machinery/alarm{
 	dir = 1;
-	pixel_y = -25;
-	
+	pixel_y = -25
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -4114,7 +4038,7 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/port)
-"hH" = (
+"hF" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/maintenance{
 	req_access = list(80)
@@ -4127,7 +4051,7 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/aft)
-"hI" = (
+"hG" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
@@ -4135,7 +4059,7 @@
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/aft)
-"hJ" = (
+"hH" = (
 /obj/machinery/alarm{
 	dir = 8;
 	icon_state = "alarm0";
@@ -8488,7 +8412,7 @@ aa
 aa
 aa
 aa
-hj
+hh
 aa
 aa
 aa
@@ -9334,7 +9258,7 @@ ab
 dj
 dE
 dE
-eC
+eB
 dj
 ab
 ab
@@ -9455,7 +9379,7 @@ ab
 ae
 ae
 dF
-ee
+ed
 dF
 ae
 ae
@@ -9579,7 +9503,7 @@ dk
 dG
 dG
 dG
-eT
+eS
 ae
 ae
 ae
@@ -9700,8 +9624,8 @@ ae
 dl
 aC
 dG
-eD
-eU
+eC
+eT
 ae
 ae
 ae
@@ -9821,7 +9745,7 @@ ae
 ae
 ae
 ae
-ef
+ee
 ae
 ae
 ae
@@ -9937,18 +9861,18 @@ ae
 ae
 aC
 aC
-bu
+bt
 aC
 aC
-cP
+cO
 aC
 aC
 aC
 aC
 aC
-cP
+cO
 aC
-bu
+bt
 aC
 aC
 ae
@@ -10062,14 +9986,14 @@ aC
 aC
 aC
 aC
-cQ
+cP
 aC
 aC
-eg
-eE
-eV
-fk
-fF
+ef
+eD
+eU
+fj
+fE
 aC
 aC
 aC
@@ -10186,19 +10110,19 @@ bd
 bd
 bd
 bd
-cP
-eh
-cP
+cO
+eg
+cO
 aC
-cP
-fG
+cO
+fF
 aC
-gt
-gt
-gW
-hk
-hk
-hk
+gr
+gr
+gU
+hi
+hi
+hi
 ab
 ab
 ab
@@ -10303,24 +10227,24 @@ ag
 ag
 ag
 bd
-bv
-bv
-bv
-bv
+bu
+bu
+bu
+bu
 bd
 dH
-ei
-eF
-eF
-eF
-eF
-eF
-eF
-gH
-gH
-gH
-hk
-hk
+eh
+eE
+eE
+eE
+eE
+eE
+eE
+gF
+gF
+gF
+hi
+hi
 ab
 ab
 ab
@@ -10425,24 +10349,24 @@ ag
 ag
 ag
 bd
-bv
-bv
-bv
-bv
+bu
+bu
+bu
+bu
 bd
 dI
-ei
-eF
-eW
-fl
-fH
-fY
-eF
-gH
-gH
-gH
-hk
-hk
+eh
+eE
+eV
+fk
+fG
+fX
+eE
+gF
+gF
+gF
+hi
+hi
 ab
 ab
 ab
@@ -10547,24 +10471,24 @@ ag
 ag
 aN
 bd
-bv
-bv
-bv
-bv
+bu
+bu
+bu
+bu
 bd
 dJ
-ei
-eF
-eF
-eF
-fI
-fZ
-eF
-gI
-gH
-hl
-hk
-hk
+eh
+eE
+eE
+eE
+fH
+fY
+eE
+gG
+gF
+hj
+hi
+hi
 ab
 ab
 ab
@@ -10669,24 +10593,24 @@ ag
 ag
 ag
 bd
-bv
-bv
-bv
-bv
+bu
+bu
+bu
+bu
 bd
 dK
-ei
-eF
-eX
-fm
-fJ
-ga
-eF
-gH
-gH
-gH
-hk
-hk
+eh
+eE
+eW
+fl
+fI
+fZ
+eE
+gF
+gF
+gF
+hi
+hi
 ab
 ab
 ab
@@ -10792,23 +10716,23 @@ ah
 aO
 bd
 bd
-bL
-cq
+bK
+bK
 bd
 bd
 aO
-ej
+ei
 aO
 aO
 aO
-fK
+fJ
 aO
 aO
 aO
-gW
-hk
-hk
-hk
+gU
+hi
+hi
+hi
 ab
 ab
 ab
@@ -10913,25 +10837,25 @@ ag
 ag
 aO
 be
-bw
-bM
-cr
+bv
+bL
+cp
 aO
 dm
 dL
-ek
-eG
+ej
+eF
 aO
-fn
-fL
-gb
+fm
+fK
+ga
 be
 aO
-gH
-gH
-hk
-hk
-hk
+gF
+gF
+hi
+hi
+hi
 ab
 ab
 ab
@@ -11035,26 +10959,26 @@ ag
 ag
 aP
 bf
-bx
-bN
-cs
-cR
-bx
+bw
+bM
+cq
+cQ
+bw
 dM
-el
-eH
-eY
-fo
-fM
-gc
-gu
-gJ
-gX
-hm
+ek
+eG
+eX
+fn
+fL
+gb
+gs
+gH
+gV
 hk
-hk
-hk
-hk
+hi
+hi
+hi
+hi
 ab
 ab
 ab
@@ -11157,26 +11081,26 @@ ag
 ag
 aO
 bg
-by
-bO
-ct
-cS
+bx
+bN
+cr
+cR
 dn
 dN
-em
+el
 dn
-cS
-fp
-fN
-gd
+cR
+fo
+fM
+gc
 bg
 aO
-gH
-hn
-gX
-hB
-hk
-hk
+gF
+hl
+gV
+hz
+hi
+hi
 ab
 ab
 ab
@@ -11275,30 +11199,30 @@ ac
 ac
 ag
 ag
-au
-au
-au
-au
-au
-bP
-cu
-au
-au
-au
-au
-au
+aS
+aS
+aS
+aS
+aS
+bO
+cs
+aS
+aS
+aS
+aS
+aS
 aO
-fq
-fO
-ge
+fp
+fN
+gd
 aO
 aO
-fg
-fg
-gH
-hC
-hk
-hk
+ff
+ff
+gF
+hA
+hi
+hi
 ab
 ab
 ab
@@ -11397,30 +11321,30 @@ ac
 ac
 ag
 ag
-au
+aS
 aD
 aQ
-bh
-bz
-bQ
-cv
-cT
+au
+by
+bP
+ct
+cS
 do
 dO
-en
-au
-eZ
-fr
-fP
-gf
-gv
-gK
-gK
-fg
-gH
-hC
-hk
-hk
+em
+aS
+eY
+fq
+fO
+ge
+gt
+gI
+gI
+ff
+gF
+hA
+hi
+hi
 ab
 ab
 ab
@@ -11519,30 +11443,30 @@ ac
 ac
 ah
 am
-au
+aS
 aE
 aR
-bi
-au
-bR
-cw
-cU
+bh
+aS
+bQ
+cu
+cT
 dp
 dp
-eo
-au
-fa
-fs
-fQ
-gg
+en
+aS
+eZ
+fr
 fP
-gL
-gY
-fg
-fg
-hD
-hk
-hk
+gf
+fO
+gJ
+gW
+ff
+ff
+hB
+hi
+hi
 ab
 ab
 ab
@@ -11641,30 +11565,30 @@ ac
 ac
 ag
 ag
-au
-au
 aS
-au
-au
-bS
-cx
-cV
+aS
+aS
+aS
+aS
+bR
+cv
+cU
 dp
 dp
-ep
-au
-fb
-ft
-fR
-gh
-gw
-gM
-gZ
-ho
-fg
-hC
-hk
-hk
+eo
+aS
+fa
+fs
+fQ
+gg
+gu
+gK
+gX
+hm
+ff
+hA
+hi
+hi
 ab
 ab
 ab
@@ -11763,30 +11687,30 @@ ac
 ac
 ag
 ag
-au
+aS
 aE
 aT
-bj
-au
-bT
-cy
-cW
+bi
+aS
+bS
+cw
+cV
 dq
-dP
-eq
-au
-fc
-fu
-fS
-gi
-gx
-gN
-ha
-hp
-fg
-hC
-hk
-hk
+dq
+ep
+aS
+fb
+ft
+fR
+gh
+gv
+gL
+gY
+hn
+ff
+hA
+hi
+hi
 ab
 ab
 ab
@@ -11885,30 +11809,30 @@ ac
 ac
 ag
 ag
-au
+aS
 aF
 aU
-bk
-bA
-bU
-cz
-cX
+bj
+bz
+bT
+cx
+cW
 dr
 dr
-er
-au
-fd
-ft
-fR
-gj
-gh
+eq
+aS
+fc
+fs
+fQ
+gg
+gg
+gK
 gM
-gO
-hq
-fg
-hC
-hk
-hk
+ho
+ff
+hA
+hi
+hi
 ab
 ab
 ab
@@ -12012,25 +11936,25 @@ av
 av
 av
 av
-bV
-cA
+bU
+cy
 av
 ds
-dQ
-es
-eI
-fe
-ft
-fR
-gk
-gy
+dP
+er
+eH
+fd
+fs
+fQ
+gi
+gw
+gK
 gM
-gO
-hr
-fg
-hE
-hk
-hk
+hp
+ff
+hC
+hi
+hi
 ab
 ab
 ab
@@ -12132,27 +12056,27 @@ ag
 av
 aG
 aV
-bl
+bk
 av
-bW
-cB
-av
-av
+bV
+cz
 av
 av
 av
+av
+av
+fe
+fs
+fS
+gj
+gx
+gM
+gM
+hq
 ff
-ft
-fT
-gl
-gz
-gO
-gO
-hs
-fg
-hC
-hk
-hk
+hA
+hi
+hi
 ab
 ab
 ab
@@ -12254,27 +12178,27 @@ am
 av
 aH
 aW
-bm
-bB
-bX
-cC
-bB
-bm
-dR
+bl
+bA
+bW
+cA
+bA
+bl
+dQ
 aH
 av
-fg
-fv
-fg
-fg
-gA
-gA
-gA
-fg
-fg
-hF
-hk
-hk
+ff
+fu
+ff
+ff
+gy
+gy
+gy
+ff
+ff
+hD
+hi
+hi
 ab
 ab
 ab
@@ -12376,27 +12300,27 @@ ag
 av
 aI
 aX
-bn
-bC
-bY
-cD
-bC
-bn
-dS
-et
+bm
+bB
+bX
+cB
+bB
+bm
+dR
+es
 av
-fh
-fw
-fU
-gm
-gm
-gP
-hb
-ht
 fg
-hC
-hk
-hk
+fv
+fT
+gk
+gk
+gN
+gZ
+hr
+ff
+hA
+hi
+hi
 ab
 ab
 ab
@@ -12498,27 +12422,27 @@ ag
 av
 aJ
 aY
-bo
+bn
 av
-bZ
-cE
+bY
+cC
 av
 dt
-dT
-eu
+dS
+et
 av
-fi
-fx
+fh
+fw
+fU
 fV
-fW
-gB
-gQ
-hc
-hu
-fg
-hC
-hk
-hk
+gz
+gO
+ha
+hs
+ff
+hA
+hi
+hi
 ab
 ab
 ab
@@ -12622,25 +12546,25 @@ av
 av
 av
 av
-ca
-cF
+bZ
+cD
 av
 av
 av
 av
 av
-fj
-fy
-fW
-gn
-gC
-gR
-hd
-hv
-fg
-hC
-hk
-hk
+fi
+fx
+fV
+gl
+gA
+gP
+hb
+ht
+ff
+hA
+hi
+hi
 ab
 ab
 ab
@@ -12742,27 +12666,27 @@ ao
 aw
 aK
 aZ
-bp
-bD
-cb
-cG
-cY
+bo
+bC
+ca
+cE
+cX
 du
-dU
-ev
-eJ
-fj
+dT
+eu
+eI
+fi
+fy
 fz
-fA
-fA
-fA
-fA
-he
-hw
-fg
-hC
-hk
-hk
+fz
+fz
+fz
+hc
+hu
+ff
+hA
+hi
+hi
 ab
 ab
 ab
@@ -12864,27 +12788,27 @@ ap
 ag
 aK
 ba
-bq
-bE
-cc
-cH
-cZ
+bp
+bD
+cb
+cF
+cY
 dv
-dV
-ew
-eK
-fj
-fA
-fX
-go
-gD
-gS
-he
-hx
-fg
-hG
-hk
-hk
+dU
+ev
+eJ
+fi
+fz
+fW
+gm
+gB
+gQ
+hc
+hv
+ff
+hE
+hi
+hi
 ab
 ab
 ab
@@ -12988,23 +12912,23 @@ aK
 bb
 bb
 bb
-cd
-cI
-da
+cc
+cG
+cZ
 dw
-dW
-ex
-eL
-fj
-fB
-fg
-fg
-fg
-fg
-hf
-fg
-fg
-hH
+dV
+ew
+eK
+fi
+fA
+ff
+ff
+ff
+ff
+hd
+ff
+ff
+hF
 ad
 ad
 ab
@@ -13108,25 +13032,25 @@ ar
 ay
 aK
 bc
-br
-bF
-ce
-cJ
-db
-db
-db
-ey
-db
+bq
+bE
+cd
+cH
+da
+da
+da
+ex
+da
 ad
 ay
-fg
-gp
-gE
-gT
-hg
-fg
+ff
+gn
+gC
+gR
+he
+ff
 ay
-cj
+ci
 ad
 ad
 ab
@@ -13230,25 +13154,25 @@ ar
 ay
 aK
 aZ
-bs
-bG
-cf
-cK
-dc
+br
+bF
+ce
+cI
+db
 dx
-dX
-ez
-eM
+dW
+ey
+eL
 ad
 ay
-fg
-gq
-gF
-gU
-hh
-hy
+ff
+go
+gD
+gS
+hf
+hw
 ay
-cj
+ci
 ad
 ad
 ab
@@ -13354,23 +13278,23 @@ aK
 aK
 aK
 aK
-cg
-cL
-dd
+cf
+cJ
+dc
 dy
-dY
-eA
-eN
+dX
+ez
+eM
 ad
 ay
-fg
-gr
-gG
-gV
-hi
-fg
-hA
-hI
+ff
+gp
+gE
+gT
+hg
+ff
+hy
+hG
 ad
 ad
 ab
@@ -13476,23 +13400,23 @@ ay
 ay
 ax
 ad
-ch
+cg
 ad
-dd
+dc
 dz
-dZ
-eB
-eO
+dY
+eA
+eN
 ad
-fC
-fg
-fg
-fg
-fg
-fg
-fg
+fB
+ff
+ff
+ff
+ff
+ff
+ff
 ay
-hJ
+hH
 ad
 ad
 ab
@@ -13596,23 +13520,23 @@ ad
 aB
 aL
 aL
-bt
+bs
 aL
-ci
+ch
 ad
-de
+dd
 dA
-ea
+dZ
 dA
-eP
+eO
 ad
 ay
 ay
-gs
+gq
 ay
 ay
 ay
-hz
+hx
 ay
 ad
 ad
@@ -13720,13 +13644,13 @@ ad
 ad
 ad
 ay
-cj
+ci
 ad
-df
+de
 dB
-eb
+ea
 dB
-eQ
+eP
 ad
 ay
 ay
@@ -13842,7 +13766,7 @@ ad
 ad
 ad
 ad
-ck
+cj
 ad
 ad
 ad
@@ -13850,7 +13774,7 @@ ad
 ad
 ad
 ad
-fD
+fC
 ad
 ad
 ad
@@ -13963,17 +13887,17 @@ ab
 aM
 aM
 aM
-bH
-cl
-cM
-dg
-cM
-ec
-bH
-eR
-bH
-bH
-bH
+bG
+ck
+cK
+df
+cK
+eb
+bG
+eQ
+bG
+bG
+bG
 aM
 aM
 aM
@@ -14085,17 +14009,17 @@ ab
 ab
 aM
 aM
-bH
-bH
-bH
-bH
-bH
-ed
-bH
-bH
-bH
-bH
-bH
+bG
+bG
+bG
+dg
+bG
+ec
+bG
+bG
+bG
+dg
+bG
 aM
 aM
 ab
@@ -14207,16 +14131,16 @@ ab
 ab
 aM
 aM
+bH
 bI
-bJ
-cN
-bJ
+cL
+bI
 dC
 aM
+bH
 bI
-bJ
-cN
-bJ
+cL
+bI
 dC
 aM
 aM
@@ -14329,17 +14253,17 @@ ab
 ab
 ab
 aM
-bJ
-cm
-cN
+bI
+cl
+cM
 dh
-bJ
+bI
 aM
-bJ
-cm
-cN
+bI
+cl
+cM
 dh
-bJ
+bI
 aM
 ab
 ab
@@ -14451,17 +14375,17 @@ ab
 ab
 ab
 aM
-bJ
-cn
-cN
+bI
+cm
+cM
 dh
-bJ
+bI
 aM
-bJ
-cn
-cN
+bI
+cm
+cM
 dh
-bJ
+bI
 aM
 ab
 ab
@@ -14573,17 +14497,17 @@ ab
 ab
 ab
 aM
-bJ
-co
-cN
-dh
-bJ
-aM
-bJ
+bI
 cn
-cN
-fE
-bJ
+cM
+dh
+bI
+aM
+bI
+cm
+cM
+fD
+bI
 aM
 ab
 ab
@@ -14695,17 +14619,17 @@ aa
 ab
 ab
 aM
-bJ
-cn
-cN
-cN
-bJ
+bI
+cm
+cM
+cM
+bI
 aM
-bJ
-cn
-cN
-cN
-bJ
+bI
+cm
+cM
+cM
+bI
 aM
 ab
 ab
@@ -14817,17 +14741,17 @@ aa
 ab
 ab
 aM
-bJ
-cp
-cO
+bI
+co
+cN
 di
-bJ
+bI
 aM
-bJ
-eS
-cO
+bI
+eR
+cN
 di
-bJ
+bI
 aM
 ab
 ab
@@ -14939,16 +14863,16 @@ aa
 aa
 ab
 ab
-bK
 bJ
-bJ
-bJ
+bI
+bI
+bI
 dD
 ab
-bK
 bJ
-bJ
-bJ
+bI
+bI
+bI
 dD
 ab
 ab

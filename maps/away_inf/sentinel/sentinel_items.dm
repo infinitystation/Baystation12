@@ -30,6 +30,10 @@
 			            access_heads, access_atmospherics, access_kitchen, access_network, access_surgery, access_RC_announce, access_keycard_auth, access_tcomsat,
 			            access_solgov_crew, access_gun, access_albatross, access_barracks, access_troopsarm)
 
+/obj/item/weapon/card/id/torch/crew/bridgeofficer
+	job_access_type = /datum/job/officer
+	detail_color = COLOR_COMMAND_BLUE
+
 	//////////////
 	//RADIOHEADS//
 	//////////////
@@ -77,7 +81,7 @@
 
 /obj/item/weapon/storage/belt/security/patrol/New()
 	..()
-	new /obj/item/weapon/gun/projectile/sec/lethal(src)
+	new /obj/item/weapon/gun/projectile/pistol/military(src)
 	new /obj/item/ammo_magazine/machine_pistol(src)
 
 /obj/item/clothing/accessory/storage/bandolier/patrol/New()

@@ -2,6 +2,13 @@
 	//GUNCABINETS//
 	///////////////
 
+
+/decl/closet_appearance/secure_closet/guncabinet/patrol
+	color = COLOR_DARK_GUNMETAL
+	extra_decals = list(
+		"stripe_vertical_mid_full" = COLOR_NAVY_BLUE
+	)
+
 /obj/structure/closet/secure_closet/guncabinet/patrol
 	name = "storm group cabinet"
 	req_access = list(access_troopsarm)
@@ -15,7 +22,7 @@
 /obj/structure/closet/secure_closet/guncabinet/patrol/assault/WillContain()
 	return list(
 		/obj/item/ammo_magazine/mil_rifle = 12,
-		/obj/item/weapon/gun/projectile/automatic/z9 = 3
+		/obj/item/weapon/gun/projectile/automatic/bullpup_rifle = 3
 	)
 
 /obj/structure/closet/secure_closet/guncabinet/patrol/carabine/WillContain()
@@ -27,7 +34,7 @@
 /obj/structure/closet/secure_closet/guncabinet/patrol/shotgun/WillContain()
 	return list(
 		/obj/item/clothing/accessory/storage/bandolier/patrol = 2,
-		/obj/item/weapon/gun/projectile/shotgun/pump/combat/lethal = 2
+		/obj/item/weapon/gun/projectile/shotgun/pump/combat = 2
 	)
 
 	///////////
@@ -36,12 +43,10 @@
 
 /obj/structure/closet/secure_closet/patrol
 	name = "trooper locker"
+	desc = "It's a card-locked storage unit."
 	req_access = list(access_barracks)
-	icon_state = "sec1"
-	icon_closed = "sec"
-	icon_locked = "sec1"
-	icon_opened = "secopen"
-	icon_off = "secoff"
+	closet_appearance = /decl/closet_appearance/secure_closet/guncabinet/patrol
+
 
 /obj/structure/closet/secure_closet/patrol/WillContain()
 	return list(
@@ -119,8 +124,8 @@
 
 /obj/machinery/suit_storage_unit/patrol_marine
 	name = "Marine Voidsuit Storage Unit"
-	suit_type = /obj/item/clothing/suit/space/void/military/prepared/patrol
-	tank_type = /obj/item/weapon/tank/emergency/oxygen/double
-	mask_type = /obj/item/clothing/mask/gas/half
+	suit = /obj/item/clothing/suit/space/void/military/prepared/patrol
+	tank = /obj/item/weapon/tank/emergency/oxygen/double
+	mask = /obj/item/clothing/mask/gas/half
 	req_access = list(302)
 	islocked = 1

@@ -1,3 +1,7 @@
+#define WEBHOOK_SUBMAP_LOADED_SOL"webhook_submap_cobra"
+
+#include "id_toch.dm"
+#include "ranks.dm"
 #include "sentinel_areas.dm"
 #include "sentinel_crew.dm"
 #include "sentinel_datums.dm"
@@ -6,6 +10,8 @@
 #include "sentinel_shuttle.dm"
 #include "sentinel_structures.dm"
 #include "sentinel_turbolift.dm"
+
+#undef WEBHOOK_SUBMAP_LOADED_SOL
 
 	///////////
 	//OVERMAP//
@@ -16,7 +22,9 @@
 	color = "#990000"
 	fore_dir = WEST
 	vessel_mass = 100
-	default_delay = 30 SECONDS
+	desc = "Обнаружены значительные следы маскирующего устройства."
+	in_space = 1
+	icon_state = "ion1"
 	start_x = 2
 	start_y = 2
 
@@ -46,7 +54,7 @@
 	description = "A saviour for souls of SEV Torch's crew."
 	prefix = "maps/away_inf/"
 	suffixes = list("sentinel/sentinel-1.dmm", "sentinel/sentinel-2.dmm")
-	cost = 1000
+	cost = 0.1
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/albatross)
 
 
@@ -67,7 +75,7 @@
 	landmark_tag = "nav_patrol_4"
 
 /obj/machinery/door/airlock/autoname/command
-	icon = 'icons/obj/doors/Doorhatchele.dmi'
+	icon = 'icons/obj/doors/hatch/door.dmi'
 	req_access = list(access_heads)
 
 /obj/machinery/door/airlock/autoname/engineering
