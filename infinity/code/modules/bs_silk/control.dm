@@ -111,7 +111,8 @@ GLOBAL_LIST_EMPTY(hubs_id)
 /obj/machinery/computer/bs_snare_control/OnTopic(mob/user, list/href_list, state)
 	. = ..()
 	if(href_list["catch_snaring"])
-		if(!length(find_hub_by_ID(href_list["catch_snaring"])?.teleport_mobs()))
+		var/mob = find_hub_by_ID(href_list["catch_snaring"])
+		if(!mob || !length(mob.teleport_mobs())
 			playsound(loc, 'sound/machines/buzz-sigh.ogg', 50, 1, -1)
 			audible_message(SPAN_WARNING("The [src.name] buzzes and state \"SNARE EITHER DISABLED OR NOT AVAILABLE, TRY TO PROBE IT AGAIN, IF YOU ARE SURE THAT THE SNARE IN A GOOD CONDITION OR CONNECTED TO USER.\""),
 							SPAN_WARNING("The [src.name] buzzes and state something."),
