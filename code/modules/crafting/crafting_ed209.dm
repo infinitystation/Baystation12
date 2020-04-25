@@ -44,7 +44,7 @@
 	item_icon_state = "ed209_5"
 //[INF]
 /decl/crafting_stage/ed209_helmet/is_appropriate_tool(var/obj/item/thing)
-	. = istype(thing) && (thing in typesof(completion_trigger_type))
+	. = istype(thing) && thing in typesof(completion_trigger_type)
 //[/INF]
 
 /decl/crafting_stage/ed209_proximity
