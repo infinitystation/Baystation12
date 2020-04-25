@@ -24,7 +24,7 @@
 	range = 1
 	fuel_consumption = 2
 	warmup_time = 5
-	defer_initialisation = TRUE
+
 	skill_needed = SKILL_BASIC
 
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling
