@@ -306,6 +306,7 @@
 	},
 /obj/machinery/airlock_sensor{
 	id_tag = "solar_starboard_sensor";
+	master_tag = "solar_starboard";
 	pixel_x = 10;
 	pixel_y = 27
 	},
@@ -1660,6 +1661,7 @@
 /obj/effect/floor_decal/industrial/warning/cee,
 /obj/machinery/airlock_sensor{
 	id_tag = "fd_starboard_sensor";
+	master_tag = "fd_starboard";
 	pixel_x = 24
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
@@ -36740,6 +36742,7 @@
 	},
 /obj/machinery/airlock_sensor{
 	id_tag = "solar_port_sensor";
+	master_tag = "solar_port";
 	pixel_x = 8;
 	pixel_y = 27
 	},

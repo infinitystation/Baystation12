@@ -9078,6 +9078,7 @@
 	},
 /obj/machinery/airlock_sensor{
 	id_tag = "engine_airlock_sensor";
+	master_tag = "engine_airlock";
 	pixel_x = -24;
 	pixel_y = 24
 	},
@@ -29300,6 +29301,7 @@
 	},
 /obj/machinery/airlock_sensor{
 	id_tag = "sd_port_sensor";
+	master_tag = "sd_port";
 	pixel_x = -24;
 	pixel_y = 0
 	},
