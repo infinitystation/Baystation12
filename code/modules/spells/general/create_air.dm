@@ -12,6 +12,7 @@
 	hud_state = "wiz_air"
 	var/list/air_change = list(GAS_OXYGEN = ONE_ATMOSPHERE)
 	number_of_channels = 0
+	selection_type = "special"	//INF	We can't see gas_mixture
 
 /spell/create_air/choose_targets()
 	var/air = holder.return_air()

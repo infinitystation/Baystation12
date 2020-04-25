@@ -51,6 +51,7 @@
 		/area/outpost/mining/maints = NO_SCRUBBER|NO_VENT,
 		/area/outpost/mining/atmos = NO_SCRUBBER|NO_VENT,
 		/area/outpost/mining/relay = NO_SCRUBBER|NO_VENT,
+		/area/shuttle/abadoned_data_capsule = NO_SCRUBBER|NO_VENT
 	)
 	area_usage_test_exempted_root_areas = list(/area/mine)
 //	area_usage_test_exempted_areas = list(/area/djstation)

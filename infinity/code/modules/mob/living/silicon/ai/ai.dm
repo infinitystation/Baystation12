@@ -4,7 +4,10 @@
 
 	var/f_color = input("Choose your color, dark colors are not recommended!") as color
 	if(!f_color) return
-	for(var/turf/simulated/floor/bluegrid/F in get_areas(get_area(src).type)) F.color = f_color
+	var/area/area = get_area(src)
+	if(area.type)
+		for(var/turf/simulated/floor/bluegrid/F in get_areas(area.type))
+			F.color = f_color
 	to_chat(usr, "Proccessing strata color was changed to <font color='[f_color]'[f_color]</font>")
 
 /mob/living/silicon/ai/proc/show_crew_monitor()
