@@ -51,16 +51,6 @@
 	species_restricted = list(SPECIES_IPC)  //ИС - по флавору иное строение ступней; ООС - предотвращение кражи обуви некоторыми личностями ради спама звуком. Вы знете кто вы.
 	trade_blacklisted = TRUE
 
-/obj/item/clothing/shoes/jackboots/heph_boots/handle_movement(var/turf/walking, var/running)
-	if(running)
-		if(footstep >= 2)
-			footstep = 0
-			playsound(src, "heavystep", 50, 1) // this will get annoying very fast.
-		else
-			footstep++
-	else
-		playsound(src, "heavystep", 20, 1)
-
 /obj/item/weapon/clothingbag/rivalset
 	name = "outfit delivery package"
 	desc = "A utility bag stamped with a Hephaestus logo and a 'prototype' warning label."
