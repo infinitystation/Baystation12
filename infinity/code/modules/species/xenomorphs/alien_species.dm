@@ -115,13 +115,17 @@
 
 	move_trail = /obj/effect/decal/cleanable/blood/tracks/claw
 
+/datum/species/xenos/can_shred(var/mob/living/carbon/human/H, var/ignore_intent, var/ignore_antag)
+	return 1
+
 /datum/species/xenos/drone
 	name = "Xenophage Drone"
 
 //	brute_mod =     0.6
 //	burn_mod =      0.6
 	weeds_plasma_rate = 15
-	slowdown = 0.5
+
+	slowdown = -0.1
 
 	rarity_value = 5
 	base_color = "#000d1a"
@@ -133,7 +137,7 @@
 		BP_HEART =    /obj/item/organ/internal/heart/open,
 		BP_BRAIN =    /obj/item/organ/internal/brain/xeno,
 		BP_STOMACH =  /obj/item/organ/internal/stomach,
-		BP_PLASMA =   /obj/item/organ/internal/xeno/plasmavessel/queen,
+		BP_PLASMA =   /obj/item/organ/internal/xeno/plasmavessel,
 		BP_ACID =     /obj/item/organ/internal/xeno/acidgland,
 		BP_HIVE =     /obj/item/organ/internal/xeno/hivenode,
 		BP_RESIN =    /obj/item/organ/internal/xeno/resinspinner,
@@ -142,10 +146,11 @@
 	inherent_verbs = list(
 		/mob/living/carbon/human/proc/plant,
 		/mob/living/carbon/human/proc/transfer_plasma,
+		/mob/living/carbon/human/proc/pry_open,
 		/mob/living/carbon/human/proc/evolve_drone,
 		/mob/living/carbon/human/proc/resin,
 		/mob/living/carbon/human/proc/corrosive_acid,
-		/mob/living/proc/night_vision
+		/mob/living/carbon/proc/devour
 		)
 /*
 /datum/species/xenos/drone/handle_post_spawn(var/mob/living/carbon/human/H)
@@ -167,7 +172,8 @@
 //	brute_mod =     0.8
 //	burn_mod =      0.8
 //	weeds_plasma_rate = 10
-//	slowdown = -0.5
+
+	slowdown = -0.75
 
 	natural_armour_values = list(melee = 35, bullet = 28, laser = 25, energy = 0, bomb = 0, bio = 100, rad = 100)
 
@@ -178,6 +184,8 @@
 		BP_STOMACH =  /obj/item/organ/internal/stomach,
 		BP_PLASMA =   /obj/item/organ/internal/xeno/plasmavessel/hunter,
 		BP_HIVE =     /obj/item/organ/internal/xeno/hivenode,
+		BP_MIMIC = 	  /obj/item/organ/internal/xeno/mimicsac,
+		BP_RESIN =    /obj/item/organ/internal/xeno/resinspinner
 		)
 
 	inherent_verbs = list(
@@ -187,7 +195,8 @@
 		/mob/living/carbon/human/proc/leap,
 		/mob/living/carbon/human/proc/evolve_hunter,
 		/mob/living/carbon/human/proc/psychic_whisper,
-		/mob/living/proc/night_vision
+		/mob/living/carbon/human/proc/mimic,
+		/mob/living/carbon/proc/devour
 		)
 
 	force_cultural_info = list(
@@ -206,7 +215,6 @@
 	deform =  'infinity/icons/mob/human_races/species/xenophage/body_sentinel.dmi'
 
 	weeds_plasma_rate = 15
-	slowdown = 0.5
 
 	has_organ = list(
 		BP_EYES =     /obj/item/organ/internal/eyes/xeno,
@@ -216,6 +224,7 @@
 		BP_PLASMA =   /obj/item/organ/internal/xeno/plasmavessel/sentinel,
 		BP_ACID =     /obj/item/organ/internal/xeno/acidgland/moderate,
 		BP_HIVE =     /obj/item/organ/internal/xeno/hivenode,
+		BP_RESIN =    /obj/item/organ/internal/xeno/resinspinner,
 		)
 
 	inherent_verbs = list(
@@ -226,7 +235,7 @@
 		/mob/living/carbon/human/proc/transfer_plasma,
 		/mob/living/carbon/human/proc/moderate_corrosive_acid,
 		/mob/living/carbon/human/proc/neurotoxin,
-		/mob/living/proc/night_vision
+		/mob/living/carbon/proc/devour
 		)
 
 	force_cultural_info = list(
@@ -246,7 +255,7 @@
 //	burn_mod =      0.6
 	weeds_heal_rate = 2.5 //thicc
 	weeds_plasma_rate = 20
-	slowdown = 1
+	slowdown = 0.5
 
 	icobase = 'infinity/icons/mob/human_races/species/xenophage/body_queen.dmi'
 	deform =  'infinity/icons/mob/human_races/species/xenophage/body_queen.dmi'
@@ -273,7 +282,7 @@
 		/mob/living/carbon/human/proc/neurotoxin,
 		/mob/living/carbon/human/proc/resin,
 		/mob/living/carbon/human/proc/xeno_infest,
-		/mob/living/proc/night_vision
+		/mob/living/carbon/proc/devour
 		)
 
 	genders = list(FEMALE)
@@ -297,7 +306,8 @@
 //	brute_mod =     0.8
 //	burn_mod =      0.8
 //	weeds_plasma_rate = 10
-	slowdown = -0.5
+
+	slowdown = -1.25
 
 	natural_armour_values = list(melee = 15, bullet = 10, laser = 10, energy = 0, bomb = 0, bio = 100, rad = 100)
 
@@ -310,6 +320,8 @@
 		BP_STOMACH =  /obj/item/organ/internal/stomach,
 		BP_PLASMA =   /obj/item/organ/internal/xeno/plasmavessel/hunter,
 		BP_HIVE =     /obj/item/organ/internal/xeno/hivenode,
+		BP_MIMIC =    /obj/item/organ/internal/xeno/mimicsac,
+		BP_RESIN =    /obj/item/organ/internal/xeno/resinspinner
 		)
 
 	inherent_verbs = list(
@@ -318,7 +330,8 @@
 		/mob/living/carbon/human/proc/tackle,
 		/mob/living/carbon/human/proc/leap,
 		/mob/living/carbon/human/proc/psychic_whisper,
-		/mob/living/proc/night_vision
+		/mob/living/carbon/human/proc/mimic,
+		/mob/living/carbon/proc/devour
 		)
 
 	force_cultural_info = list(
@@ -334,7 +347,7 @@
 //	brute_mod =     0.6
 //	burn_mod =      0.6
 	weeds_plasma_rate = 15
-	slowdown = 2
+	slowdown = 0.25
 	total_health = 170
 
 	natural_armour_values = list(melee = 35, bullet = 30, laser = 20, energy = 5, bomb = 10, bio = 100, rad = 100)
@@ -353,7 +366,8 @@
 		BP_STOMACH =  /obj/item/organ/internal/stomach,
 		BP_PLASMA =   /obj/item/organ/internal/xeno/plasmavessel,
 		BP_ACID =     /obj/item/organ/internal/xeno/acidgland/strong,
-		BP_HIVE =     /obj/item/organ/internal/xeno/hivenode
+		BP_HIVE =     /obj/item/organ/internal/xeno/hivenode,
+		BP_RESIN =    /obj/item/organ/internal/xeno/resinspinner
 		)
 
 	inherent_verbs = list(
@@ -363,7 +377,7 @@
 		/mob/living/carbon/human/proc/neurotoxin,
 		/mob/living/carbon/human/proc/spit_acid,
 		/mob/living/carbon/human/proc/tackle,
-		/mob/living/proc/night_vision
+		/mob/living/carbon/proc/devour
 		)
 
 /datum/species/xenos/hivelord
@@ -374,7 +388,6 @@
 	deform =  'infinity/icons/mob/human_races/species/xenophage/body_sentinel.dmi'
 
 	weeds_plasma_rate = 15
-	slowdown = 1
 
 	has_organ = list(
 		BP_EYES =     /obj/item/organ/internal/eyes/xeno,
@@ -396,7 +409,7 @@
 		/mob/living/carbon/human/proc/resin,
 		/mob/living/carbon/human/proc/neurotoxin,
 		/mob/living/carbon/human/proc/evolve_hivelord,
-		/mob/living/proc/night_vision
+		/mob/living/carbon/proc/devour
 		)
 
 	force_cultural_info = list(

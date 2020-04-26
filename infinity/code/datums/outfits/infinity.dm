@@ -71,6 +71,17 @@
 							/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 1)
 
 
+/decl/hierarchy/outfit/alien
+	name = "Inf - Merchant Leader"
+	shoes = /obj/item/clothing/shoes/black
+	l_ear = /obj/item/device/radio/headset
+	uniform = /obj/item/clothing/under/thermal/heat/abductor
+	id_slot = slot_wear_id
+	id_type = /obj/item/weapon/card/id/merchant/leader
+	pda_slot = slot_r_store
+//	pda_type = /obj/item/modular_computer/pda/chef //cause I(?) like the look
+	id_pda_assignment = "Merchant Leader"
+
 			//////////
 			//CORPSES//
 			//////////

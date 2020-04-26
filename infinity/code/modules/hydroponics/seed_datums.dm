@@ -5,14 +5,15 @@
 	display_name = "alien weeds"
 	force_layer = OBJ_LAYER
 	chems = list(/datum/reagent/toxin/phoron = list(1,3))
+	growing_icon = 'infinity/icons/mob/alien.dmi'
 
 /datum/seed/xenomorph/New()
 	..()
-	set_trait(TRAIT_PLANT_ICON,"vine2")
+	set_trait(TRAIT_PLANT_ICON,"weeds")
 	set_trait(TRAIT_IMMUTABLE,1)
-	set_trait(TRAIT_PRODUCT_COLOUR,"#3d1934")
-	set_trait(TRAIT_FLESH_COLOUR,"#3d1934")
-	set_trait(TRAIT_PLANT_COLOUR,"#3d1934")
+	set_trait(TRAIT_PRODUCT_COLOUR,"#434149")
+	set_trait(TRAIT_FLESH_COLOUR,"#434149")
+	set_trait(TRAIT_PLANT_COLOUR,"#434149")
 	set_trait(TRAIT_PRODUCTION,1)
 	set_trait(TRAIT_YIELD,-1)
 	set_trait(TRAIT_SPREAD,2)

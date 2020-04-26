@@ -172,6 +172,13 @@
 	else
 		set_light(0)
 
+    //[INF]
+
+	if(istype(seed, /datum/seed/xenomorph))
+		set_opacity(0)
+
+    //[/INF]
+
 /obj/effect/vine/proc/calc_dir()
 	set background = 1
 	var/turf/T = get_turf(src)
@@ -231,7 +238,7 @@
 			damage *= 2
 		adjust_health(-damage)
 		playsound(get_turf(src), W.hitsound, 100, 1)
-		
+
 /obj/effect/vine/AltClick(var/mob/user)
 	if(!CanPhysicallyInteract(user) || user.incapacitated())
 		return ..()

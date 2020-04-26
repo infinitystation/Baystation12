@@ -25,6 +25,7 @@
 #define LIGHT_COLOR_EMERGENCY  "#ff3232" //Red color used by emergency lighting. rgb(255, 50, 50)
 
 #define COLOR_CONCRETE         "#d3d3d3"
+#define COLOR_ALIEN_CRYSTAL    "#ae56d6"
 
 #define COLOR_WEBHOOK_DEV 0xff8000
 #define COLOR_WEBHOOK_BAN 0xff0000

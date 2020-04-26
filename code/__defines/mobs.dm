@@ -186,6 +186,7 @@
 #define BP_CELL     "cell"
 #define BP_HIVE     "hive node"
 #define BP_LARVA    "alien larva" //INF
+#define BP_MIMIC    "mimic sac" //INF
 #define BP_NUTRIENT "nutrient vessel"
 #define BP_ACID     "acid gland"
 #define BP_EGG      "egg sac"

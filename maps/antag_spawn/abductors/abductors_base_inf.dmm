@@ -1,0 +1,55 @@
+"a" = (/turf/space,/area/space)
+"b" = (/turf/unsimulated/wall/alien{icon_state = "abductor_add2_dr"},/area/map_template/abductors_station)
+"c" = (/obj/machinery/computer/teleporter/abductor,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"d" = (/obj/effect/landmark{name = "AbductorShip"},/obj/machinery/teleport/hub/abductor,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"e" = (/obj/effect/landmark/start{name = "abductor_sci"},/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"f" = (/obj/effect/landmark/start{name = "abductor_agent"},/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"h" = (/obj/machinery/teleport/station,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"j" = (/obj/machinery/computer/abductor/camera,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"k" = (/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"l" = (/obj/structure/closet/abductor,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"m" = (/obj/structure/table/alien{pos = 2},/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"n" = (/obj/item/weapon/storage/belt/utility/alien,/obj/structure/table/alien,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"o" = (/obj/item/weapon/stock_parts/power/apc,/obj/item/weapon/stock_parts/console_screen,/obj/item/weapon/stock_parts/keyboard,/obj/structure/table/alien{pos = 1},/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"p" = (/obj/machinery/vending/abductor,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"q" = (/obj/machinery/optable/abductor,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"r" = (/obj/structure/table/alien,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"s" = (/turf/unsimulated/wall/alien{icon_state = "abductor_up_left"},/area/map_template/abductors_station)
+"t" = (/turf/unsimulated/wall/alien{icon_state = "abductor_mid_left"},/area/map_template/abductors_station)
+"u" = (/turf/unsimulated/wall/alien{icon_state = "abductor_bot_left"},/area/map_template/abductors_station)
+"v" = (/turf/unsimulated/wall/alien{icon_state = "abductor_up_right"},/area/map_template/abductors_station)
+"w" = (/turf/unsimulated/wall/alien{icon_state = "abductor_mid_right"},/area/map_template/abductors_station)
+"x" = (/turf/unsimulated/wall/alien{icon_state = "abductor_bot_right"},/area/map_template/abductors_station)
+"y" = (/turf/unsimulated/wall/alien{icon_state = "abductor_mid_up"},/area/map_template/abductors_station)
+"z" = (/turf/unsimulated/wall/alien{icon_state = "abductor_mid_down"},/area/map_template/abductors_station)
+"A" = (/turf/unsimulated/wall/alien{icon_state = "abductor_ul"},/area/map_template/abductors_station)
+"B" = (/turf/unsimulated/wall/alien{icon_state = "abductor_ur"},/area/map_template/abductors_station)
+"C" = (/turf/unsimulated/wall/alien{icon_state = "abductor_dl"},/area/map_template/abductors_station)
+"D" = (/turf/unsimulated/wall/alien{icon_state = "abductor_dr"},/area/map_template/abductors_station)
+"E" = (/turf/unsimulated/wall/alien{icon_state = "abductor_add_ur"},/area/map_template/abductors_station)
+"F" = (/turf/unsimulated/wall/alien{icon_state = "abductor_add2_ur"},/area/map_template/abductors_station)
+"G" = (/turf/unsimulated/wall/alien{icon_state = "abductor_add_ul"},/area/map_template/abductors_station)
+"H" = (/turf/unsimulated/wall/alien{icon_state = "abductor_add2_ul"},/area/map_template/abductors_station)
+"I" = (/turf/unsimulated/wall/alien{icon_state = "abductor_add_dr"},/area/map_template/abductors_station)
+"J" = (/turf/unsimulated/wall/alien{icon_state = "abductor_add2_dl"},/area/map_template/abductors_station)
+"K" = (/turf/unsimulated/wall/alien{icon_state = "abductor_add_dl"},/area/map_template/abductors_station)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaa
+aaaaaaGxyuEaaaaaa
+aaaaaHAchdBFaaaaa
+aaaaasjekflvaaaaa
+aaaaatmkkknwaaaaa
+aaaaauokkklxaaaaa
+aaaaaJCpqrDbaaaaa
+aaaaaaKvzsIaaaaaa
+aaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaa
+"}

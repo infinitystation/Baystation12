@@ -111,7 +111,7 @@
 			return
 	if(check_alien_ability(350,1,BP_RESIN) && !is_ventcrawling)
 		visible_message("<span class='alium'><B>[src] has planted some alien weeds!</B></span>")
-		new /obj/structure/alien/node(loc)
+		new /obj/structure/alien/weeds/node(loc)
 	return
 
 /mob/living/carbon/human/proc/corrosive_acid(O as obj|turf in oview(1)) //If they right click to corrode, an error will flash if its an invalid target./N
@@ -263,7 +263,7 @@
 	var/obj/structure/alien/A = locate() in loc
 	var/obj/structure/bed/nest/B = locate() in loc
 	var/obj/machinery/door/unpowered/simple/resin/C = locate() in loc
-	if(A || B || C)
+	if((A && !istype(A, /obj/structure/alien/weeds)) || B || C)
 		to_chat(src, "<span class='alium'>We can't secrete more resin here!</span>")
 		return
 	var/choice = input("Choose what you wish to shape.","Resin building") as null|anything in list("resin door","resin wall","resin membrane","resin nest") //would do it through typesof but then the player choice would have the type path and we don't want the internal workings to be exposed ICly - Urist
@@ -305,11 +305,6 @@ mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in ovi
 	var/obj/item/organ/affecting = M.get_organ(BP_CHEST)
 	if(!affecting || BP_IS_ROBOTIC(affecting))
 		to_chat(src, SPAN_ALIEN("Это тело несовметимо с нашей физиологией..."))
-		return
-
-	var/confirm = alert(M, "Королева хочет сделать вас часть Улья. Вы согласны?", "Become Larva", "No", "Yes")
-	if(!M || confirm != "Yes")
-		to_chat(src, SPAN_ALIEN("Несовместим с Ульем и не может стать его часть (требуется согласие жертвы)."))
 		return
 
 	src.visible_message(SPAN_DANGER("[src] встает перед [M], а затем, из её брюшка появляется полое, прозрачное жало!"))
@@ -410,4 +405,16 @@ mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in ovi
 		visible_message("<span class='alium'><B>[src] begins to twist and contort!</B></span>", "<span class='alium'>You begin to evolve!</span>")
 		src.set_species("Xenophage Hivelord")
 
+	return
+
+/mob/living/carbon/human/proc/mimic()
+	set name = "Mimic"
+	set desc = "Use your internal color sacs to mimic to your environment."
+	set category = "Abilities"
+
+	if(check_alien_ability(5))
+		if(src.alpha < 255)
+			src.alpha = 255
+		else
+			src.alpha *= 0.1
 	return

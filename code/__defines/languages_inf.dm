@@ -7,6 +7,7 @@
 #define LANGUAGE_PRESOMI			"Primitive schechi"
 #define LANGUAGE_PUNATI			"Primitive sinta'unathi"
 #define LANGUAGE_PSKRELLIAN		"Primitive skrellian"
+#define LANGUAGE_ABDUCTORS      "Mindlink"
 
 //WOLF_SWARM-INF
 /*
