@@ -40,7 +40,7 @@
 	item_icons = list(slot_gloves_str = CUSTOM_ITEM_MOB)
 	trade_blacklisted = TRUE
 
-/obj/item/clothing/shoes/jackboots/rivalboots
+/obj/item/clothing/shoes/jackboots/heph_boots/rivalboots
 	name = "polished jackboots"
 	desc = "A pair of steel-toed boots, a thunderous stomp accompanying each heavy step."
 	icon = CUSTOM_ITEM_OBJ
