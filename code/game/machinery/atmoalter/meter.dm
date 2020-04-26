@@ -1,7 +1,7 @@
 /obj/machinery/meter
 	name = "meter"
 	desc = "A gas flow meter."
-	icon = 'icons/obj/meter.dmi'
+	icon = 'infinity/icons/obj/meter.dmi'//'icons/obj/meter.dmi'
 	icon_state = "meterX"
 	var/atom/target = null //A pipe for the base type
 	anchored = 1.0
