@@ -36,6 +36,7 @@ empire2four - machine
 exapster - machine
 hellpony - machine
 adro244 - machine
+bannhammger - machine
 inubashirimomiji - skrell
 tenedegurechaff - skrell
 twinindifferent - skrell
@@ -160,6 +161,8 @@ solark - vox
 richardfox - vox
 mmgy - vox
 adro244 - vox
+arbuzpersikov - vox
+hodovoy - vox
 darkscarletblood - unathi
 kribleykrabley - unathi
 alchemisthero - unathi
