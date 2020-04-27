@@ -1,0 +1,12 @@
+/obj/machinery/alloyer/physical_attack_hand(mob/user)
+	. = ..()
+	if(Adjacent(user))
+		if(anchored && !panel_open) ui_interact(user)
+		else if(panel_open) to_chat(user, SPAN_WARNING("\icon[src]\the [src] need to close it's panel."))
+		else to_chat(user, SPAN_WARNING("\icon[src]\the [src] must be secured to floor."))
+	update_icon()
+
+/obj/machinery/alloyer/attackby(obj/item/I, mob/user)
+	. = ..()
+	if(istype(I, /obj/item/stack/material))
+		if(materials2alloy.len < 2) materials2alloy.Add(I)

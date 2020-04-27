@@ -157,7 +157,8 @@
 		to_chat(user, "<span class='notice'>There isn't enough material here to construct a wall.</span>")
 		return 0
 
-	var/material/M = SSmaterials.get_material_by_name(S.default_type)
+	var/material/M //inf
+	S.default_type == CUSTOM_ALLOY ? (M = null) : (M = SSmaterials.get_material_by_name(S.default_type)) //inf //was: var/material/M = SSmaterials.get_material_by_name(S.default_type)
 	if(!istype(M))
 		return 0
 

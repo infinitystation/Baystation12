@@ -95,6 +95,7 @@
 	var/obj/machinery/bssilk_hub/connected_hub = null
 
 /obj/machinery/computer/bssilk_control/physical_attack_hand(mob/user)
+	. = ..()
 	ui_interact(user)
 
 /obj/machinery/computer/bssilk_control/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)

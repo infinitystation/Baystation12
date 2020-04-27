@@ -1,0 +1,93 @@
+{{:helper.OMEGAMode()}}
+<style>
+	*{
+		--box-shadow-color: #006;
+		--transition-speed: 0.3s;
+	}
+	.styled-block{
+		padding: 10px;
+		margin: 10px;
+
+		width: 40%;
+
+		border: 2px solid #125;
+		border-radius: 8px;
+
+		white-space: pre-line;
+		text-align: center;
+	}
+	.small_size{
+		width: 10%;
+	}
+	.omegamat{
+		box-shadow: inset 0 0 5px 1px var(--box-shadow-color);
+		color: #aaf;
+		background: #2d66a6;
+		transition: background var(--transition-speed) ease-in-out;
+	}
+	.omegamat:hover{background: #3d76c6;--box-shadow-color: #009;}
+	.code_error_msg{
+		display: block;
+
+		padding: 20px;
+		border: solid #f00 1px;
+		width: 25%;
+		height: 25%;
+		text-align: center;
+		position: absolute;
+		top: 25%;
+		left: 30%;
+	}
+	table {
+		width: 100%;
+		border-collapse: separate;border-spacing: 10px 0;
+	}
+	table#onerow {
+		width: 40%;
+		border-collapse: separate;border-spacing: 0 10px;
+	}
+	span.redin * {color: #ddd; background: #f00;}
+</style>
+{{if data.ui_window != "reboot"}}
+	{{if data.ui_window != "main_menu"}}
+		<div align="left">{{:helper.link("Back", null, {"window" : "main_menu"})}}</div>
+	{{/if}}
+	<div align="right"><span class="redin">{{:helper.link("EMERGENCY SHUTDOWN", null, {"emergency_shutdown" : 1})}}</span></div>
+{{/if}}
+<br><br>
+{{if data.ui_window == "main_menu"}}
+	<div align="center">
+		<table>
+			<td class="omegamat styled-block"><h3>Material</h3><hr>{{:data.ui_win_preview.first_metal}}{{:helper.link("View Info", null, {"window" : "first_metal"})}}
+			<td class="omegamat styled-block"><h3>Material</h3><hr>{{:data.ui_win_preview.second_metal}}{{:helper.link("View Info", null, {"window" : "second_metal"})}}
+		</table><br>
+		<table id="onerow">
+			<td class="omegamat styled-block">
+				<h3>
+					Alloing Shemes
+				</h3><hr>
+				{{:helper.link('View', null, {"window" : "alloing_schemes"})}}
+			</td><tr>
+			<td class="omegamat styled-block">
+				{{:helper.link('Alloy', null, {"window" : "approximate_result"}, null, "omegamat styled-block")}}
+			</td>
+		</table>
+	</div>
+
+{{else data.ui_window == "first_metal"}}
+	{{:data.ui_win_data.first_metal}}
+
+{{else data.ui_window == "second_metal"}}
+	{{:data.ui_win_data.second_metal}}
+
+{{else data.ui_window == "alloing_schemes"}}
+	alloing_schemes
+
+{{else data.ui_window == "approximate_result"}}
+	approximate_result
+
+{{else data.ui_window == "reboot"}}
+	<div align="center">{{:helper.link("REBOT", null, {"bootmeup" : 1})}}</div>
+{{else}}
+	<div align="center" class="code_error_msg styled-block emergency">TEMPLATE ERROR</div>
+{{/if}}

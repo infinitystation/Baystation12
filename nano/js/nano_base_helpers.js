@@ -17,20 +17,35 @@ NanoBaseHelpers = function ()
 
 				return '';
 			},
-			// change ui styling to "DAIS mode"
+
+			//[INF]
 			DAISMode: function()
 			{
-				$('body').css("background-color","#382d1c");
-				$('body').css("background-image","url('uiBackground-DAIS.png')");
-				$('body').css("background-position","50% 0");
-				$('body').css("background-repeat","repeat-x");
+				$('body').css("background-color", "#382d1c");
+				$('body').css("background-image", "url('inf.uiBackground-DAIS.png')");
+				$('body').css("background-position", "50% 0");
+				$('body').css("background-repeat", "repeat-x");
 
-				$('#uiTitleFluff').css("background-image","url('uiTitleFluffDAIS.png')");
-				$('#uiTitleFluff').css("background-position","50% 50%");
+				$('#uiTitleFluff').css("background-image", "url('inf.uiTitleFluffDAIS.png')");
+				$('#uiTitleFluff').css("background-position", "50% 50%");
 				$('#uiTitleFluff').css("background-repeat", "no-repeat");
 
 				return ''
 			},
+			OMEGAMode: function() {
+				$('body').css("background-color", "#1d3126");
+				$('body').css("background-image", "url('inf.uiBackground-Omega.png')");
+				$('body').css("background-position", "50% 0");
+				$('body').css("background-repeat", "repeat-x");
+
+				$('#uiTitleFluff').css("background-image", "url('inf.uiTitleFluffOmega.png')");
+				$('#uiTitleFluff').css("background-size", "42");
+				$('#uiTitleFluff').css("background-position", "50% 50%");
+				$('#uiTitleFluff').css("background-repeat", "no-repeat");
+
+				return ''
+			},
+			//[/INF]
 
 			// Generate a Byond link
 			link: function( text, icon, parameters, status, elementClass, elementId) {
