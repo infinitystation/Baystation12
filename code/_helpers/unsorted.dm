@@ -1114,6 +1114,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 // call to generate a stack trace and print to runtime logs
 /proc/crash_at(msg, file, line)
 	CRASH("%% [file],[line] %% [msg]")
+	SSwebhooks.send(WEBHOOK_SEND_RUNTIME, list("file" = file, "msg" = msg, "line" = line))//inf
 
 /proc/pass()
 	return

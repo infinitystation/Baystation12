@@ -15,4 +15,5 @@
 #define WEBHOOK_SEND_OOC          "webhook_send_ooc"     // OOC messages
 #define WEBHOOK_SEND_PM           "webhook_send_pm"      // pm messages
 #define WEBHOOK_SEND_ADMIN        "webhook_send_admin"   // pm messages
+#define WEBHOOK_SEND_RUNTIME      "webhook_send_runtime" // runtimes
 //[/INF]
