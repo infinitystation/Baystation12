@@ -31,13 +31,13 @@
 	antag_tags = list(MODE_TRAITOR, MODE_CHANGELING, MODE_NINJA, MODE_WIZARD)
 	require_all_templates = TRUE
 
-/datum/game_mode/pizda
-	name = "Pizda"
-	round_description = "The ship is full of antagonists. Crew, the new objective - survive."
-	extended_round_description = "Jackpot! You got all your friends today - traitors, changelings, ninja and wisard."
-	config_tag = "pizda"
-	required_players = 0
-	required_enemies = 1
+/datum/game_mode/abductors
+	name = "Abductors"
+	round_description = "There are strange aliens in the sector! They want only one - insert some glands into you!"
+	extended_round_description = "There are strange aliens in the sector! They want only one - insert some glands into you!"
+	config_tag = "abductors"
+	required_players = 6
+	required_enemies = 2
 	end_on_antag_death = FALSE
-	antag_tags = list(MODE_ABDUCTOR)
+	antag_tags = list(MODE_ABDUCTOR, MODE_ABDUCTOR_SCI)
 	require_all_templates = TRUE

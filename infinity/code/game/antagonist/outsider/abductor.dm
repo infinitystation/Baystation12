@@ -1,9 +1,9 @@
 GLOBAL_DATUM_INIT(abductor, /datum/antagonist/abductors, new)
-GLOBAL_DATUM_INIT(abductor_sci, /datum/antagonist/abductors, new)
+GLOBAL_DATUM_INIT(abductor_sci, /datum/antagonist/abductors_sci, new)
 
 /datum/antagonist/abductors
 	id = MODE_ABDUCTOR
-	role_text = "Abductor"
+	role_text = "Abductor Agent"
 	role_text_plural = "Abductors"
 	landmark_id = "abductor_agent"
 	flags = ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_VOTABLE
@@ -18,13 +18,11 @@ GLOBAL_DATUM_INIT(abductor_sci, /datum/antagonist/abductors, new)
 	faction = "abductor"
 	base_to_load = /datum/map_template/ruin/antag_spawn/abductors
 
-	var/caste_name = "Agent"
-
 
 /datum/antagonist/abductors/update_antag_mob(var/datum/mind/abductor)
 	. = ..()
 
-	abductor.current.real_name = "Mothership Alpha [caste_name]"
+	abductor.current.real_name = "Mothership Alpha Agent"
 
 	abductor.current.SetName(abductor.current.real_name)
 
@@ -34,37 +32,56 @@ GLOBAL_DATUM_INIT(abductor_sci, /datum/antagonist/abductors, new)
 	if(!..())
 		return 0
 
-	abductor_mob.set_species("Abductor [caste_name]")
+	abductor_mob.set_species("Abductor Agent")
 
-	var/outfit_type = pick(subtypesof(/decl/hierarchy/outfit/merchant))
-	var/decl/hierarchy/outfit/wizard_outfit = outfit_by_type(outfit_type)
-	wizard_outfit.equip(abductor_mob)
+	var/outfit_type = pick(/decl/hierarchy/outfit/alien)
+	var/decl/hierarchy/outfit/abductor_outfit = outfit_by_type(outfit_type)
+	abductor_outfit.equip(abductor_mob)
+
+	for(var/language in ALL_NON_ANTAG_LANGUAGES)
+		abductor_mob.add_language(language, 0)
 
 	return 1
 
-/datum/antagonist/abductors/sci
+/datum/antagonist/abductors_sci
 	id = MODE_ABDUCTOR_SCI
-
+	role_text = "Abductor Scientist"
+	role_text_plural = "Abductors"
 	landmark_id = "abductor_sci"
+	flags = ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_VOTABLE
+	antaghud_indicator = "hudwizard"
 
-	caste_name = "Scientist"
+	hard_cap = 1
+	hard_cap_round = 3
+	initial_spawn_req = 1
+	initial_spawn_target = 1
+	min_player_age = 18
 
-/datum/antagonist/abductors/sci/update_antag_mob(var/datum/mind/abductor_sci)
+	faction = "abductor"
+
+
+/datum/antagonist/abductors_sci/update_antag_mob(var/datum/mind/abductor)
 	. = ..()
 
-	abductor_sci.current.real_name = "Mothership Alpha [caste_name]"
+	abductor.current.real_name = "Mothership Alpha Scientist"
 
-	abductor_sci.current.SetName(abductor_sci.current.real_name)
+	abductor.current.SetName(abductor.current.real_name)
 
-/datum/antagonist/abductors/sci/equip(var/mob/living/carbon/human/abductor_mob)
+
+/datum/antagonist/abductors_sci/equip(var/mob/living/carbon/human/abductor_mob)
 
 	if(!..())
 		return 0
 
-	abductor_mob.set_species("Abductor [caste_name]")
+	abductor_mob.set_species("Abductor Scientist")
 
-	var/outfit_type = pick(subtypesof(/decl/hierarchy/outfit/wizard))
-	var/decl/hierarchy/outfit/wizard_outfit = outfit_by_type(outfit_type)
-	wizard_outfit.equip(abductor_mob)
+	var/outfit_type = pick(/decl/hierarchy/outfit/alien_sci)
+	var/decl/hierarchy/outfit/abductor_outfit = outfit_by_type(outfit_type)
+	abductor_outfit.equip(abductor_mob)
+	var/obj/item/weapon/implant/abductors/imp = new
+	imp.implant_in_mob(abductor_mob, BP_HEAD)
 
-	return 1///obj/item/clothing/under/thermal/heat/abductor
+	for(var/language in ALL_NON_ANTAG_LANGUAGES)
+		abductor_mob.add_language(language, 0)
+
+	return 1

@@ -7,7 +7,7 @@
 	default_h_style = "Bald"
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/punch)
 
-	flash_mod = 2
+	override_organ_types = list(BP_EYES = /obj/item/organ/internal/eyes/abductor)
 
 	hidden_from_codex = TRUE
 

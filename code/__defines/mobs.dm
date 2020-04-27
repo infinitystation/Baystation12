@@ -198,6 +198,7 @@
 #define BP_ANCHOR   "anchoring ligament"
 #define BP_PHORON   "phoron filter"
 #define BP_ACETONE  "acetone reactor"
+#define BP_GLAND    "alien gland" //INF
 
 // Vox bits.
 #define BP_HINDTONGUE "hindtongue"

@@ -1,0 +1,244 @@
+/obj/item/random_gland
+	name = "alien gland"
+	desc = "A strange alien gland."
+	icon = 'infinity/icons/obj/abductor.dmi'
+	icon_state = "gland"
+
+/obj/item/random_gland/Initialize()
+	var/gland_type = pick(subtypesof(/obj/item/organ/internal/gland))
+	new gland_type(get_turf(src))
+	qdel(src)
+
+/obj/item/organ/internal/gland
+	name = "alien gland"
+	desc = "A strange alien gland."
+	icon = 'infinity/icons/obj/abductor.dmi'
+	icon_state = "gland"
+	organ_tag = BP_GLAND
+	parent_organ = BP_CHEST
+
+	var/real_name = ""
+	var/first_names = list("organic", "araneae cloister", "gastric animation",
+						   "white matter", "anthropmorphic", "roe-enzymatic",
+						   "pliant cartilage", "neural crosstalk", "contamination",
+						   "electron", "intrinsic", "effluvium sanguine-synonym",
+						   "pseudonuclear", "quantic", "anagraphic")
+
+	var/second_names = list("replicator", "accelerator", "galvanizer",
+							"randomiser", "transmorphosizer", "synthesizer",
+							"enabler", "uninhibitor", "incubator",
+							"discharger", "pharma-provider", "emitter",
+							"destabilizer", "de-observation matrix", "scrambler")
+
+
+/obj/item/organ/internal/gland/Initialize()
+	icon_state = "gland[rand(1,9)]"
+	real_name = "[pick(first_names)] [pick(second_names)]"
+	START_PROCESSING(SSprocessing, src)
+
+/obj/item/organ/internal/gland/Destroy()
+	STOP_PROCESSING(SSprocessing, src)
+	. = ..()
+
+/obj/item/organ/internal/gland/Process()
+	if(ishuman(loc))
+		var/mob/living/carbon/human/H = loc
+		effect(H)
+
+/obj/item/organ/internal/gland/examine(mob/user)
+	. = ..()
+	to_chat(user, "On closer look, you can say that it is definetly [real_name]")
+
+
+
+/obj/item/organ/internal/gland/proc/effect(var/mob/living/carbon/human/mob)
+	return
+
+/obj/item/organ/internal/gland/healing/organ/effect(var/mob/living/carbon/human/mob)
+	if(istype(mob))
+		var/mob/living/carbon/human/H = mob
+		for(var/obj/item/organ/I in H.internal_organs)
+			if(I.damage > 0)
+				I.damage = max(I.damage - 1, 0)
+				if(I.organ_tag == BP_BRAIN)
+					H.confused++
+					H.drowsyness++
+				if(prob(5))
+					to_chat(H, SPAN_WARNING("You feel a soothing sensation within your [I.parent_organ]..."))
+				return 1
+
+
+/obj/item/organ/internal/gland/healing/organs/bad/effect(var/mob/living/carbon/human/mob)
+	if(istype(mob))
+		var/mob/living/carbon/human/H = mob
+		for(var/obj/item/organ/I in H.internal_organs)
+			if(I.damage > 0)
+				I.damage = max(I.damage - 1, 0)
+				if(prob(5))
+					to_chat(H, SPAN_WARNING("You feel a sharp pain within your [I.parent_organ]..."))
+				if (H.getOxyLoss())
+					H.adjustOxyLoss(-0.25)
+				return 1
+
+/obj/item/organ/internal/gland/healing/effect(var/mob/living/carbon/human/mob)
+	if(istype(mob))
+		var/mob/living/carbon/human/H = mob
+		if(H.vessel.total_volume < H.vessel.maximum_volume)
+			H.regenerate_blood(2)
+		if (H.getOxyLoss())
+			H.adjustOxyLoss(-1)
+			return 1
+		if (H.getBruteLoss())
+			H.adjustBruteLoss(-1)
+			return 1
+		if (H.getFireLoss())
+			H.adjustFireLoss(-1)
+			return 1
+
+/obj/item/organ/internal/gland/spider/effect(var/mob/living/carbon/human/mob)
+	if(istype(mob))
+		var/mob/living/carbon/human/H = mob
+		if(H.faction != "spiders")
+			H.faction = "spiders"
+
+		if(prob(5))
+			H.visible_message(SPAN_WARNING("A small spider crawls out from [H]'s mouth!"))
+			new /obj/effect/spider/spiderling(get_turf(H))
+
+/obj/item/organ/internal/gland/slime/effect(var/mob/living/carbon/human/mob)
+	if(istype(mob))
+		var/mob/living/carbon/human/H = mob
+
+		if(prob(0.5))
+			var/mob/living/carbon/slime/slime = new(get_turf(H))
+			slime.Leader = H
+			slime.Friends[H] = H
+			H.visible_message(SPAN_WARNING("[H] vomits a globe of slime!"))
+			slime.colour = pick("grey", "orange", "blue", "purple", "metal")
+			new /obj/effect/decal/cleanable/vomit(get_turf(H))
+			playsound(H.loc, 'sound/effects/splat.ogg', 50, 1)
+			return 1
+
+		if(prob(0.2))
+			to_chat(H, "<span class='danger'>Your flesh rapidly mutates!</span>")
+			H.set_species(SPECIES_PROMETHEAN)
+			H.shapeshifter_set_colour("#05ff9b")
+			H.verbs -= /mob/living/carbon/human/proc/shapeshifter_select_colour
+
+/obj/item/organ/internal/gland/species/effect(var/mob/living/carbon/human/mob)
+	if(istype(mob))
+		var/mob/living/carbon/human/H = mob
+
+		if(prob(0.5))
+			var/new_species = pick(SPECIES_HUMAN, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_PROMETHEAN, SPECIES_YEOSA, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER, SPECIES_BOOSTER)
+			H.visible_message(SPAN_WARNING("[H]'s flesh rapidly mutates and he transforms into [lowertext(new_species)]!"))
+			H.set_species(new_species)
+
+/obj/item/weapon/reagent_containers/food/snacks/egg/alien
+	name = "alien egg"
+	desc = "Strange, a bit glowing egg with a thick shell."
+	icon_state = "lizard_egg"
+	w_class = ITEM_SIZE_SMALL
+
+/obj/item/weapon/reagent_containers/food/snacks/egg/alien/Initialize()
+	var/datum/reagent/random = pick(
+									/datum/reagent/blood, /datum/reagent/water, /datum/reagent/acetone, /datum/reagent/aluminium, /datum/reagent/ammonia, /datum/reagent/carbon,
+									/datum/reagent/copper, /datum/reagent/ethanol, /datum/reagent/hydrazine, /datum/reagent/iron, /datum/reagent/lithium, /datum/reagent/mercury,
+									/datum/reagent/phosphorus, /datum/reagent/potassium, /datum/reagent/radium, /datum/reagent/acid, /datum/reagent/sodium, /datum/reagent/sugar,
+									/datum/reagent/sulfur, /datum/reagent/lipozine, /datum/reagent/sodiumchloride, /datum/reagent/frostoil, /datum/reagent/capsaicin/condensed,
+									/datum/reagent/inaprovaline, /datum/reagent/bicaridine, /datum/reagent/kelotane, /datum/reagent/dermaline, /datum/reagent/dylovene,
+									/datum/reagent/dexalin, /datum/reagent/alkysine, /datum/reagent/hyperzine, /datum/reagent/tobacco, /datum/reagent/gold, /datum/reagent/silver,
+									/datum/reagent/uranium, /datum/reagent/thermite, /datum/reagent/space_cleaner, /datum/reagent/lube, /datum/reagent/glycerol, /datum/reagent/coolant,
+									/datum/reagent/toxin/carpotoxin, /datum/reagent/toxin/phoron, /datum/reagent/toxin/cyanide, /datum/reagent/toxin/zombiepowder, /datum/reagent/mutagen,
+									/datum/reagent/soporific, /datum/reagent/chloralhydrate, /datum/reagent/space_drugs, /datum/reagent/mindbreaker, /datum/reagent/slimetoxin)
+	src.reagents.add_reagent(random, 15)
+
+/obj/item/organ/internal/gland/egg/effect(var/mob/living/carbon/human/mob)
+	if(istype(mob))
+		var/mob/living/carbon/human/H = mob
+
+		if(prob(0.5))
+			new /obj/item/weapon/reagent_containers/food/snacks/egg/alien(get_turf(H))
+			H.visible_message(SPAN_WARNING("[H] vomits a strange egg!"))
+			new /obj/effect/decal/cleanable/vomit(get_turf(H))
+			playsound(H.loc, 'sound/effects/splat.ogg', 50, 1)
+
+
+/obj/item/organ/internal/gland/hallucination/effect(var/mob/living/carbon/human/mob)
+	if(istype(mob))
+		var/mob/living/carbon/human/H = mob
+
+		if(prob(1))
+			for(var/mob/living/carbon/human/M in range(8, H))
+				if(istype(M) && M != H)
+					M.hallucination(3, 50)
+
+/obj/item/organ/internal/gland/emp/effect(var/mob/living/carbon/human/mob)
+	if(istype(mob))
+		var/mob/living/carbon/human/H = mob
+
+		if(prob(1))
+			empulse(H, 2, 4)
+
+/obj/item/organ/internal/gland/chemical/effect(var/mob/living/carbon/human/mob)
+	if(istype(mob))
+		var/mob/living/carbon/human/H = mob
+
+		if (H.getToxLoss())
+			H.adjustToxLoss(-3)
+
+		var/obj/item/organ/I = H.internal_organs_by_name[BP_LIVER]
+
+		if(I.damage > 0)
+			I.damage = max(I.damage - 3, 0)
+
+		if(prob(2.5))
+			var/datum/reagent/random = pick(
+										/datum/reagent/blood, /datum/reagent/water, /datum/reagent/acetone, /datum/reagent/aluminium, /datum/reagent/ammonia, /datum/reagent/carbon,
+										/datum/reagent/copper, /datum/reagent/ethanol, /datum/reagent/hydrazine, /datum/reagent/iron, /datum/reagent/lithium, /datum/reagent/mercury,
+										/datum/reagent/phosphorus, /datum/reagent/potassium, /datum/reagent/radium, /datum/reagent/acid, /datum/reagent/sodium, /datum/reagent/sugar,
+										/datum/reagent/sulfur, /datum/reagent/lipozine, /datum/reagent/sodiumchloride, /datum/reagent/frostoil, /datum/reagent/capsaicin/condensed,
+										/datum/reagent/inaprovaline, /datum/reagent/bicaridine, /datum/reagent/kelotane, /datum/reagent/dermaline, /datum/reagent/dylovene,
+										/datum/reagent/dexalin, /datum/reagent/alkysine, /datum/reagent/hyperzine, /datum/reagent/tobacco, /datum/reagent/gold, /datum/reagent/silver,
+										/datum/reagent/uranium, /datum/reagent/thermite, /datum/reagent/space_cleaner, /datum/reagent/lube, /datum/reagent/glycerol, /datum/reagent/coolant,
+										/datum/reagent/toxin/carpotoxin, /datum/reagent/toxin/phoron, /datum/reagent/toxin/cyanide, /datum/reagent/toxin/zombiepowder, /datum/reagent/mutagen,
+										/datum/reagent/soporific, /datum/reagent/chloralhydrate, /datum/reagent/space_drugs, /datum/reagent/mindbreaker, /datum/reagent/slimetoxin)
+			H.reagents.add_reagent(random, 5)
+
+/obj/item/organ/internal/gland/plasma/effect(var/mob/living/carbon/human/mob)
+	if(istype(mob))
+		var/mob/living/carbon/human/H = mob
+
+		if(prob(2))
+			for(var/turf/simulated/floor/target_tile in range(2, get_turf(H)))
+				target_tile.assume_gas(GAS_PHORON, 10, 25+T0C)
+			H.visible_message(SPAN_NOTICE("[H] sneezes."))
+
+/obj/item/organ/internal/gland/quantum/effect(var/mob/living/carbon/human/mob)
+	if(istype(mob))
+		var/mob/living/carbon/human/H = mob
+
+		if(prob(1))
+			for(var/mob/living/carbon/human/M in range(8, H))
+				if(istype(M) && M != H)
+					playsound(H.loc, "sparks", 50, 1)
+					playsound(H.loc, 'sound/effects/phasein.ogg', 25, 1)
+					var/turf/turf = get_turf(M)
+					M.forceMove(get_turf(H))
+					H.forceMove(turf)
+					M.Weaken(1)
+					H.Weaken(1)
+
+/obj/item/organ/internal/gland/hunger/effect(var/mob/living/carbon/human/mob)
+	if(istype(mob))
+		var/mob/living/carbon/human/H = mob
+
+		if(H.species.gluttonous != GLUT_ANYTHING)
+			H.species.gluttonous = GLUT_ANYTHING
+			H.verbs += /mob/living/carbon/proc/devour
+			to_chat(H, SPAN_DANGER("Suddenly, you feel very hungry! You want to eat a whole man!"))
+			return
+
+		if(prob(0.25))
+			to_chat(H, SPAN_DANGER("You cannot hold your hunger anymore!"))
+			to_chat(H, SPAN_DANGER("You want to eat human flesh!"))

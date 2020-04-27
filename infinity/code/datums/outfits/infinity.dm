@@ -72,15 +72,23 @@
 
 
 /decl/hierarchy/outfit/alien
-	name = "Inf - Merchant Leader"
+	name = "Abductor Outfit"
 	shoes = /obj/item/clothing/shoes/black
-	l_ear = /obj/item/device/radio/headset
-	uniform = /obj/item/clothing/under/thermal/heat/abductor
-	id_slot = slot_wear_id
-	id_type = /obj/item/weapon/card/id/merchant/leader
-	pda_slot = slot_r_store
-//	pda_type = /obj/item/modular_computer/pda/chef //cause I(?) like the look
-	id_pda_assignment = "Merchant Leader"
+	l_ear = /obj/item/device/radio/headset/abductor
+	uniform = /obj/item/clothing/under/thermal/heat/abductor/white
+	belt = /obj/item/weapon/storage/belt/utility/alien
+	suit = /obj/item/clothing/suit/armor/abductor
+	head = /obj/item/clothing/head/helmet/abductor
+	r_hand = /obj/item/weapon/gun/energy/decloner
+	l_hand = /obj/item/weapon/melee/adv_baton
+
+/decl/hierarchy/outfit/alien_sci
+	name = "Abductor Outfit"
+	shoes = /obj/item/clothing/shoes/black
+	l_ear = /obj/item/device/radio/headset/abductor
+	uniform = /obj/item/clothing/under/thermal/heat/abductor/white
+	belt = /obj/item/weapon/storage/belt/utility/alien
+	r_hand = /obj/item/weapon/scitool
 
 			//////////
 			//CORPSES//
