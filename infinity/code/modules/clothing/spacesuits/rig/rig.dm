@@ -2,7 +2,7 @@
 	initial_modules = list(
 		/obj/item/rig_module/mounted/egun,
 		/obj/item/rig_module/vision/multi,
-		/obj/item/rig_module/ai_container,
+//INF		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/power_sink,
 		/obj/item/rig_module/chem_dispenser/combat,
 		/obj/item/rig_module/device/healthscanner

@@ -20,7 +20,7 @@
 
 /obj/item/weapon/rig/light/internalaffairs/equipped
 	initial_modules = list(
-		/obj/item/rig_module/ai_container,
+//INF		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/device/flash,
 		/obj/item/rig_module/device/paperdispenser,
 		/obj/item/rig_module/device/pen,
@@ -219,7 +219,7 @@
 /obj/item/weapon/rig/ce/equipped
 
 	initial_modules = list(
-		/obj/item/rig_module/ai_container,
+//INF		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/mounted/plasmacutter,
 		/obj/item/rig_module/device/rcd,
@@ -304,7 +304,7 @@
 /obj/item/weapon/rig/hazmat/equipped
 
 	initial_modules = list(
-		/obj/item/rig_module/ai_container,
+//INF		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/anomaly_scanner,
 		/obj/item/rig_module/cooling_unit,

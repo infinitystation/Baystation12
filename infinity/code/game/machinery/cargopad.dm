@@ -93,7 +93,7 @@
 	to_chat(usr, SPAN_NOTICE("There are [charge]% charges left."))
 
 /obj/item/weapon/rcs/Destroy()
-	START_PROCESSING(SSobj, src)
+	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
 /obj/item/weapon/rcs/Process()

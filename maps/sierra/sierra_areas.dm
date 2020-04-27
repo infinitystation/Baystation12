@@ -139,11 +139,6 @@
 	name = "Second Deck - Teleporter"
 	icon_state = "teleporter"
 
-/area/maintenance/bluespace
-	name = "Second Deck - Engineering - Bluespace Drive"
-	icon_state = "engineering"
-	req_access = list(list(access_engine_equip, access_heads), access_engine, access_maint_tunnels)
-
 /area/crew_quarters/safe_room/seconddeck
 	name = "Second Deck - Safe Room"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
@@ -374,21 +369,21 @@
 
 /area/turbolift/sierra_top
 	name = "Elevator - First Deck"
-	lift_floor_label = "Deck 1"
-	lift_floor_name = "Main Deck"
-	lift_announce_str = "Arriving at Main Deck: Bridge. Security Wing. Research Wing. Infirmary. AI Core. Telecommunications. EVA."
+	lift_floor_label = "1 Палуба"
+	lift_floor_name = "Главная палуба"
+	lift_announce_str = "Главная палуба: мостик, крыло охраны, исследовательское крыло, медицинский отсек, центр телекоммуникацй, отсек ВКД."
 
 /area/turbolift/sierra_middle
 	name = "Elevator - Second Deck"
-	lift_floor_label = "Deck 2"
-	lift_floor_name = "Living Deck"
-	lift_announce_str = "Arriving at Living Deck: Meeting Room. Cryogenic Storage. Dormitory. Holodeck. Lounge. Bar. Hydroponics. Gym. Laundry. Engineering. Atmospherics."
+	lift_floor_label = "2 Палуба"
+	lift_floor_name = "Жилая палуба"
+	lift_announce_str = "Жилая палуба: комната совещаний, отсек криосна, спальное крыло, голодек, лаундж, бар, гидропоника спортзал, прачечная, инженерный отсек."
 
 /area/turbolift/sierra_ground
 	name = "Elevator - Third Deck"
-	lift_floor_label = "Deck 3"
-	lift_floor_name = "Hangar Deck"
-	lift_announce_str = "Arriving at Hangar Deck: Shuttle Docks. Supply Office. Cargo Storage. Main Hangar. Expedition Preparation. Exploration Leader's Office. Mineral Processing. Sanitation."
+	lift_floor_label = "3 Палуба"
+	lift_floor_name = "Ангарная палуба"
+	lift_announce_str = "Ангарная палуба: главный ангар, экспедиционное крыло, крыло снабжения, стыковочные доки, склады, переработка руды, коморка уборщика."
 	base_turf = /turf/simulated/floor
 
 /area/turbolift/start
@@ -505,6 +500,7 @@
 	name = "Second Deck - Bridge"
 	icon_state = "bridge"
 	req_access = list(access_bridge)
+	ambience = list('infinity/sound/SS2/ambience/ambbridge.wav')
 
 /area/bridge/nano
 	icon = 'infinity/icons/turf/areas.dmi'
@@ -582,17 +578,31 @@
 /area/engineering/engineering_monitoring
 	name = "Second Deck - Engineering - Monitoring"
 	icon_state = "engine_monitoring"
-	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/engineering/locker_room
 	name = "Second Deck - Engineering - Locker Room"
 	icon_state = "engineering_locker"
+
+/area/engineering/materials_storage
+	name = "Second Deck - Engineering - Materials Storage"
+	icon_state = "engineering_storage"
 
 /area/engineering/atmos
  	name = "Second Deck - Engineering - Atmospherics"
  	icon_state = "atmos"
  	sound_env = LARGE_ENCLOSED
  	req_access = list(access_atmospherics)
+
+/area/engineering/bluespace
+	name = "Second Deck - Engineering - Bluespace Drive"
+	icon_state = "engine_monitoring"
+	req_access = list(list(access_engine_equip, access_heads), access_engine, access_maint_tunnels)
+	sound_env = SMALL_ENCLOSED
+
+/area/engineering/bluespace/chamber
+	name = "Second Deck - Engineering - Bluespace Drive - Chamber"
+	icon_state = "engine"
+	sound_env = LARGE_ENCLOSED
 
 // Shield Rooms
 /area/shield
@@ -693,8 +703,8 @@
 	sound_env = LARGE_ENCLOSED
 	req_access = list(access_hangar)
 
-/area/quartermaster/unused
-	name = "Third Deck - Abandoned - Ready Room"
+/area/quartermaster/hangar_atmos
+	name = "Third Deck - Hangar - Atmospherics Storage"
 	icon_state = "auxstorage"
 
 /* RND AREAS
@@ -808,19 +818,21 @@
 	icon_state = "bar"
 	sound_env = LARGE_SOFTFLOOR
 	req_access = list(access_bar)
-	secure = 0
 
-/area/crew_quarters/cryolocker
-	name = "Second Deck - Living - Cryogenic Storage"
-	icon_state = "locker"
+/area/crew_quarters/sauna
+	name = "Second Deck - Living - Sauna"
+	icon_state = "sauna"
+	sound_env = SMALL_ENCLOSED
 
 /area/crew_quarters/head
 	name = "Second Deck - Living - Restroom"
 	icon_state = "toilet"
+	sound_env = SMALL_ENCLOSED
 
 /area/crew_quarters/showers
 	name = "Second Deck - Living - Private Showers"
 	icon_state = "toilet"
+	sound_env = SMALL_ENCLOSED
 
 /area/crew_quarters/gym
 	name = "Second Deck - Living - Gym"
@@ -829,17 +841,26 @@
 /area/crew_quarters/mess
 	name = "Second Deck - Living - Canteen"
 	icon_state = "cafeteria"
+	sound_env = LARGE_SOFTFLOOR
+
+/area/crew_quarters/cafe
+	name = "Second Deck - Living - Cafe"
+	icon_state = "cafeteria"
 
 /area/crew_quarters/galley
 	name = "Second Deck - Service - Galley"
 	icon_state = "kitchen"
 	req_access = list(access_kitchen)
-	secure = 0
 
 /area/crew_quarters/galley/backroom
 	name = "Second Deck - Service - Galley Cold Storage"
 	icon_state = "kitchen"
-	secure = 1
+
+/area/crew_quarters/actor
+	name = "Second Deck - Service - Actor"
+	icon_state = "Theatre"
+	sound_env = SMALL_SOFTFLOOR
+	req_access = list(access_actor)
 
 /area/crew_quarters/lounge
 	name = "Second Deck - Living - Lounge"
@@ -1039,7 +1060,13 @@
 /area/chapel/main
 	name = "Second Deck - Chapel"
 	icon_state = "chapel"
-	ambience = list('sound/ambience/ambicha1.ogg','sound/ambience/ambicha2.ogg','sound/ambience/ambicha3.ogg','sound/ambience/ambicha4.ogg','sound/music/traitor.ogg')
+	ambience = list(
+			'sound/ambience/ambicha1.ogg',
+			'sound/ambience/ambicha2.ogg',
+			'sound/ambience/ambicha3.ogg',
+			'sound/ambience/ambicha4.ogg',
+			'sound/music/traitor.ogg'
+		)
 	sound_env = LARGE_ENCLOSED
 
 /area/chapel/office
@@ -1127,7 +1154,7 @@
 
 /area/admin_prison
 	name = "Admin Prison"
-	dynamic_lighting = 0
+	dynamic_lighting = 1
 	requires_power = 0
 	icon_state = "blue-red-d"
 
@@ -1281,7 +1308,12 @@
 
 // Tcomm
 /area/tcommsat/
-	ambience = list('sound/ambience/ambisin2.ogg', 'sound/ambience/signal.ogg', 'sound/ambience/signal.ogg', 'sound/ambience/ambigen10.ogg')
+	ambience = list(
+			'sound/ambience/ambisin2.ogg',
+			'sound/ambience/signal.ogg',
+			'sound/ambience/ambigen10.ogg',
+			'infinity/sound/SS2/ambience/ambservers.wav'
+		)
 	req_access = list(access_tcomsat)
 
 /area/tcommsat/chamber
@@ -1297,6 +1329,10 @@
 	icon_state = "tcomsatstore"
 
 // AI
+/area/maintenance/battle_data_servers
+	name = "First Deck - Battle Data Servers"
+	req_access = list(access_maint_tunnels)
+
 /area/ai_monitored
 	name = "AI Monitored Area"
 
@@ -1307,11 +1343,15 @@
 
 /area/turret_protected
 	req_access = list(access_ai_upload)
+	ambience = list(
+		'sound/ambience/ambimalf.ogg',
+		'infinity/sound/SS2/ambience/ambservers.wav'
+		)
+	forced_ambience = list('infinity/sound/SS2/ambience/ambxerxes_looped.wav')
 
 /area/turret_protected/ai
-	name = "First Deck - AI Chamber"
+	name = "AI Chamber"
 	icon_state = "ai_chamber"
-	ambience = list('sound/ambience/ambimalf.ogg')
 
 /area/turret_protected/ai_cyborg_station
 	name = "Second Deck - Cyborg Station"
@@ -1322,12 +1362,10 @@
 /area/turret_protected/ai_upload
 	name = "Second Deck - AI Upload"
 	icon_state = "ai_upload"
-	ambience = list('sound/ambience/ambimalf.ogg')
 
 /area/turret_protected/ai_upload_foyer
 	name = "Second Deck - AI Upload Access"
 	icon_state = "ai_foyer"
-	ambience = list('sound/ambience/ambimalf.ogg')
 	sound_env = SMALL_ENCLOSED
 
 // Merchant

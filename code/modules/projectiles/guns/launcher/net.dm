@@ -7,6 +7,7 @@
 	fire_sound_text = "a metallic thunk"
 	var/obj/item/weapon/net_shell/chambered
 	bulk = GUN_BULK_CARABINE //inf
+	release_force = 1//inf
 
 /obj/item/weapon/net_shell
 	name = "net gun shell"

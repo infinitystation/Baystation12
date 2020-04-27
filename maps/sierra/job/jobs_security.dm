@@ -4,7 +4,7 @@
 	department_flag = SEC
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Head of Security"
+	supervisors = "Главой Охраны"
 	economic_power = 8
 	minimal_player_age = 14
 	ideal_character_age = 35
@@ -66,7 +66,7 @@
 	skill_points = 22
 
 	access = list(access_seceva, access_security, access_brig, access_forensics_lockers,
-			            access_maint_tunnels, access_emergency_storage,
+			            access_maint_tunnels, access_emergency_storage, access_eva,
 			            access_sec_doors, access_morgue, access_hangar)
 
 	minimal_access = list()
@@ -80,7 +80,7 @@
 	department_flag = SEC
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "the Head of Security"
+	supervisors = "Главой Охраны и Смотрителем (сержантом)"
 	economic_power = 6
 	minimal_player_age = 10
 	ideal_character_age = 25

@@ -1,4 +1,4 @@
-/obj/item/device/scanner/xenobio ///obj/item/device/slime_scanner
+/obj/item/device/scanner/xenobio
 	name = "xenolife scanner"
 	desc = "Multipurpose organic life scanner. With spectral breath analyzer you can find out what snacks Ian had! Or what gasses alien life breathes."
 	icon_state = "xenobio"

@@ -56,3 +56,9 @@
 			. = TRUE
 			qdel(src)
 	acid_melted++
+
+/obj/effect/acid/moderate
+	acid_strength = ACID_MODERATE
+
+/obj/effect/acid/strong
+	acid_strength = ACID_STRONG

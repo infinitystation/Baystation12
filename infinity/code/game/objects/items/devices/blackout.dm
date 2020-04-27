@@ -46,19 +46,19 @@
 /obj/item/device/blackout/proc/hacktheenergy(var/obj/machinery/power/terminal/terminal_in, mob/user)
 	if(!istype(terminal_in) || !user) return // security
 
-	src.audible_message("<font color=Maroon><b>HackTheEnergy.exe Assistant</b></font> says, \"-- Начало. Подключаемс&#255; к терминалу. --\"")
+	src.audible_message("<font color=Maroon><b>HackTheEnergy.exe Assistant</b></font> says, \"-- РќР°С‡Р°Р»Рѕ. РџРѕРґРєР»СЋС‡Р°РµРјСЃСЏ Рє С‚РµСЂРјРёРЅР°Р»Сѓ. --\"")
 	if(!do_after(user, 30, terminal_in)) return
 
-	src.audible_message("<font color=Maroon><b>HackTheEnergy.exe Assistant</b></font> says, \"-- Подключение к терминалу успешно. Получаем информацию о электросети... --\"")
+	src.audible_message("<font color=Maroon><b>HackTheEnergy.exe Assistant</b></font> says, \"-- РџРѕРґРєР»СЋС‡РµРЅРёРµ Рє С‚РµСЂРјРёРЅР°Р»Сѓ СѓСЃРїРµС€РЅРѕ. РџРѕР»СѓС‡Р°РµРј РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ СЌР»РµРєС‚СЂРѕСЃРµС‚Рё... --\"")
 	if(!do_after(user, 80, terminal_in)) return
 
-	src.audible_message("<font color=Maroon><b>HackTheEnergy.exe Assistant</b></font> says, \"-- Сканирование электросети успешно. Начинаем процедуру пульсации. --\"")
+	src.audible_message("<font color=Maroon><b>HackTheEnergy.exe Assistant</b></font> says, \"-- РЎРєР°РЅРёСЂРѕРІР°РЅРёРµ СЌР»РµРєС‚СЂРѕСЃРµС‚Рё СѓСЃРїРµС€РЅРѕ. РќР°С‡РёРЅР°РµРј РїСЂРѕС†РµРґСѓСЂСѓ РїСѓР»СЊСЃР°С†РёРё. --\"")
 	icon_state = "device_blackout-on"
 	playsound(src, 'sound/items/goggles_charge.ogg', 50, 1)
 
 	if(do_after(user, 40, terminal_in))
-		src.audible_message("<font color=Maroon><b>HackTheEnergy.exe Assistant</b></font> says, \"-- Готово. Пульсаци&#255; завершена. \
-			Спасибо за пользование нашими услугами, желаем Вам удачной и продуктивной миссии. --\"")
+		src.audible_message("<font color=Maroon><b>HackTheEnergy.exe Assistant</b></font> says, \"-- Р“РѕС‚РѕРІРѕ. РџСѓР»СЊСЃР°С†РёСЏ Р·Р°РІРµСЂС€РµРЅР°. \
+			РЎРїР°СЃРёР±Рѕ Р·Р° РїРѕР»СЊР·РѕРІР°РЅРёРµ РЅР°С€РёРјРё СѓСЃР»СѓРіР°РјРё, Р¶РµР»Р°РµРј Р’Р°Рј СѓРґР°С‡РЅРѕР№ Рё РїСЂРѕРґСѓРєС‚РёРІРЅРѕР№ РјРёСЃСЃРёРё. --\"")
 
 		shots--
 		Cooldown = world.time

@@ -54,3 +54,36 @@
 	name = "head of security's beret"
 	desc = "A dark red beret of a head of corporative asset protection. Yeap, a head - not the head. They don't live too long."
 	icon_state = "hos_beret"
+
+/obj/item/clothing/head/HoS/dermal/beret
+	name = "commander's beret"
+	desc = "A stylish beret of forces commander. Has some armor layers, so, forget about stylish over armor - charge!"
+	icon_state = "beret_corporate_hos"
+
+/obj/item/clothing/head/beret/sec/corporate/saare
+	name = "SAARE beret"
+	desc = "A dark beret with a silver SAARE logo, usually worn by the company's employees."
+	icon = 'infinity/icons/obj/clothing/obj_head.dmi'
+	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
+	icon_state = "corporate_beret_SAARE"
+
+/obj/item/clothing/head/beret/sec/corporate/pcrc
+	name = "PCRC beret"
+	desc = "A navy blue beret with a cyan PCRC logo, usually worn by the company's employees."
+	icon = 'infinity/icons/obj/clothing/obj_head.dmi'
+	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
+	icon_state = "corporate_beret_PCRC"
+
+/obj/item/clothing/head/beret/sec/corporate/whitered
+	name = "white and red corporate beret"
+	desc = "A white corporate beret with a red logo."
+	icon = 'infinity/icons/obj/clothing/obj_head.dmi'
+	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
+	icon_state = "corporate_beret_whitered"
+
+/obj/item/clothing/head/beret/sec/corporate/zpci
+	name = "ZPCI beret"
+	desc = "Black beret with blue ZPCI logo, typically worn by company's employees."
+	icon = 'infinity/icons/obj/clothing/obj_head.dmi'
+	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
+	icon_state = "corporate_beret_ZPCI"

@@ -207,7 +207,7 @@
 					/obj/item/weapon/gun/energy/gun/secure = 4)
 
 /obj/machinery/vending/paimod
-	name = "IntelegenceTech"
+	name = "IntelligenceTech"
 	desc = "A pai modification vendor. Inside of showcase you see many of circuits, devices and etc."
 	icon = 'infinity/icons/obj/vending.dmi'
 	density = 1
@@ -231,26 +231,35 @@
 					/obj/item/weapon/paimod/hack_speed/standart		=	2,
 					/obj/item/weapon/paimod/hack_speed/advanced		=	1)
 
-// overrides ahead
+/obj/machinery/vending/costumes
+	name = "costumes dispenser"
+	desc = "All the costumes an actor could need. Probably."
+	icon_state = "theater"
+	icon_vend = "theater-vend"
+	icon_deny = "theater-deny"
+	products = list(/obj/item/clothing/head/bandana = 2,
+					/obj/item/clothing/head/beaverhat = 2,
+					/obj/item/clothing/head/bowler = 2,
+					/obj/item/clothing/head/bowlerhat = 2,
+					/obj/item/clothing/head/fedora = 2,
+					/obj/item/clothing/head/festive = 4,
+					/obj/item/clothing/head/flatcap = 2,
+					/obj/item/clothing/head/gentle_cap = 2,
+					/obj/item/clothing/head/that = 2,
+					/obj/item/clothing/under/assistantformal = 2,
+					/obj/item/clothing/under/blackjumpskirt = 2,
+					/obj/item/clothing/under/civilian = 2,
+					/obj/item/clothing/under/civilian/black = 2,
+					/obj/item/clothing/under/gentlesuit = 2,
+					/obj/item/clothing/under/schoolgirl = 2,
+					/obj/item/clothing/under/scratch = 2,
+					/obj/item/clothing/under/sl_suit = 2,
+					/obj/item/clothing/under/waiter = 2,
+					/obj/item/clothing/under/rank/vice = 2,
+					/obj/item/clothing/under/blazer = 2,
+					/obj/item/clothing/under/mime = 1,
+					/obj/item/clothing/under/sexymime = 1,
+					/obj/item/clothing/under/harness = 1,
+					/obj/item/clothing/under/stripper/mankini = 1)
 
-/obj/machinery/vending/fitness/build_inventory()
-	var/list/all_products = list(
-		list(src.products, CAT_NORMAL),
-		list(src.contraband, CAT_HIDDEN),
-		list(src.premium, CAT_COIN))
-
-	for(var/current_list in all_products)
-		var/category = current_list[2]
-
-		for(var/entry in current_list[1])
-			var/datum/stored_items/vending_products/product = new/datum/stored_items/vending_products(src, entry)
-
-			product.price = (entry in src.prices) ? src.prices[entry] : 0
-			product.amount = (current_list[1][entry]) ? current_list[1][entry] : 1
-			product.category = category
-			//inf ahead. Yeah, I (Terror4000rus) have to copy that all.
-			if(product.item_path != (/obj/item/weapon/towel/random||/obj/item/weapon/reagent_containers/pill/diet))
-				product.amount = rand(0,1)
-			//inf end
-
-			src.product_records.Add(product)
+	contraband = list()

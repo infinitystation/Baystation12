@@ -5,7 +5,7 @@
 	damage = 0
 	damage_type = BURN
 	damage_flags = 0
-	////distance_falloff = 2.5
+	//INF distance_falloff = 2.5
 
 //releases a burst of light on impact or after travelling a distance
 /obj/item/projectile/energy/flash
@@ -58,7 +58,7 @@
 	//residual illumination
 	new /obj/effect/effect/smoke/illumination(src.loc, rand(190,240), range=8, power=1, color=light_colour) //same lighting power as flare
 
-/obj/item/projectile/energy/electrode	//has more pain than a beam because it's harder to hit 
+/obj/item/projectile/energy/electrode	//has more pain than a beam because it's harder to hit
 	name = "electrode"
 	icon_state = "spark"
 	fire_sound = 'sound/weapons/Taser.ogg'
@@ -93,7 +93,7 @@
 /obj/item/projectile/energy/bolt
 	name = "bolt"
 	icon_state = "cbbolt"
-	damage = 3
+	damage = 10
 	damage_type = TOX
 	nodamage = 0
 	agony = 40
@@ -101,15 +101,13 @@
 
 /obj/item/projectile/energy/bolt/large
 	name = "largebolt"
-	damage = 10
+	damage = 20
 	agony = 60
 
 /obj/item/projectile/energy/neurotoxin
 	name = "neuro"
 	icon_state = "neurotoxin"
 	damage = 5
-	damage_type = BURN
-	weaken = 6
 	agony = 20
 	life_span = 6
 
@@ -165,7 +163,7 @@
 		to_chat(M, SPAN_DANGER("Your ears start to ring badly!"))
 		if(prob(M.ear_damage - 5))
 			to_chat(M, SPAN_DANGER("You can't hear anything!"))
-			M.set_sdisability(DEAF)
+			M.set_sdisability(DEAFENED)
 	else
 		if(M.ear_damage >= 5)
 			to_chat(M, SPAN_DANGER("Your ears start to ring!"))

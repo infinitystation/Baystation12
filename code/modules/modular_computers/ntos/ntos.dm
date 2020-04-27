@@ -11,7 +11,7 @@
 	var/screensaver_icon = "standby"
 
 	// Used for deciding if various tray icons need to be updated
-	var/last_battery_percent							
+	var/last_battery_percent
 	var/last_world_time
 	var/list/last_header_icons
 
@@ -26,8 +26,16 @@
 
 //[INF]
 	var/is_remote_ui = 0
+GLOBAL_LIST_EMPTY(CreatedOSes)
+/datum/extension/interactive/ntos/New()
+	. = ..()
+	GLOB.CreatedOSes += src
+
 //[/INF]
 /datum/extension/interactive/ntos/Destroy()
+	//[INF]
+	GLOB.CreatedOSes -= src
+	//[/INF]
 	system_shutdown()
 	. = ..()
 
@@ -47,13 +55,13 @@
 	regular_ui_update()
 
 /datum/extension/interactive/ntos/proc/host_status()
-	return TRUE
+	return on //inf//was: TRUE
 
 /datum/extension/interactive/ntos/proc/system_shutdown()
 	on = FALSE
 	for(var/datum/computer_file/program/P in running_programs)
 		kill_program(P, 1)
-	
+
 	var/obj/item/weapon/stock_parts/computer/network_card/network_card = get_component(PART_NETWORK)
 	if(network_card)
 		ntnet_global.unregister(network_card.identification_id)
@@ -153,8 +161,6 @@
 /datum/extension/interactive/ntos/proc/check_eye(var/mob/user)
 	if(active_program)
 		return active_program.check_eye(user)
-	else
-		return ..()
 
 /datum/extension/interactive/ntos/proc/process_updates()
 	if(update_progress < updates)

@@ -2,21 +2,19 @@
 	name = "wrist computer"
 	desc = "A wrist-mounted modular personal computer. Very stylish."
 	icon = 'infinity/icons/obj/wrist_computer.dmi'
-	item_icons = list(slot_wear_id_str = 'infinity/icons/mob/wrist_computer.dmi')
-
-	item_state_slots = list(slot_wear_id_str = "wc_base")
 	icon_state = "wc_base"
-	item_state = "wc_base"
-	icon_state_unpowered = "wc_base"
+	color = COLOR_GUNMETAL
+	item_state_slots = list(slot_wear_id_str = "wc_base")
+	light_color = LIGHT_COLOR_GREEN
+	var/stripe_color
 
 	slot_flags = SLOT_ID | SLOT_BELT
 
-	color = COLOR_GUNMETAL
-	item_state_slots = list(slot_wear_id_str = "wc_base")
+	icon_state_unpowered = "wc_base"
+	item_icons = list(slot_wear_id_str = 'infinity/icons/mob/wrist_computer.dmi')
+	item_state = "wc_base"
 
 	interact_sounds = list('infinity/sound/items/ui_pipboy_select.wav')
-
-	var/stripe_color
 
 /obj/item/modular_computer/pda/wrist/get_mob_overlay(var/mob/user_mob, var/slot)
 	var/image/ret = ..()
@@ -35,11 +33,26 @@
 			I.color = stripe_color
 			overlays.Add(I)
 	return ret
-/*
+
 /obj/item/modular_computer/pda/wrist/on_update_icon()
 	var/datum/extension/interactive/ntos/os = get_extension(src, /datum/extension/interactive/ntos)
 	icon_state = icon_state_unpowered
 	overlays.Cut()
+
+	if(os)
+		var/image/_screen_overlay = os.get_screen_overlay()
+	//	var/image/_keyboard_overlay = os.get_keyboard_overlay()
+
+		_screen_overlay.appearance_flags |= RESET_COLOR
+	//	_keyboard_overlay.appearance_flags |= RESET_COLOR
+
+		overlays += _screen_overlay
+	//	overlays += _keyboard_overlay
+
+	if(enabled)
+		set_light(0.2, 0.1, light_strength, l_color = (bsod || os.updating) ? "#0000ff" : light_color)
+	else
+		set_light(0)
 
 	if(stripe_color)
 		var/image/I = image(icon = icon, icon_state = "wc_stripe")
@@ -50,33 +63,6 @@
 	var/mob/living/carbon/human/H = loc
 	if(istype(H) && H.wear_id == src)
 		H.update_inv_wear_id()
-
-	if(bsod || os.updating)
-		var/image/I = image(icon = icon, icon_state ="bsod")
-		I.appearance_flags |= RESET_COLOR
-		overlays.Add(I)
-		return
-	if(!enabled)
-		if(icon_state_screensaver)
-			var/image/I = image(icon = icon, icon_state = icon_state_screensaver)
-			I.appearance_flags |= RESET_COLOR
-			overlays.Add(I)
-		set_light(0)
-		return
-	set_light(0.2, 0.1, light_strength)
-	if(active_program)
-		var/image/I = image(icon = icon, icon_state = active_program.program_icon_state ? active_program.program_icon_state : icon_state_menu)
-		I.appearance_flags |= RESET_COLOR
-		overlays.Add(I)
-		if(active_program.program_key_state)
-			I = image(icon = icon, icon_state = active_program.program_key_state)
-			I.appearance_flags |= RESET_COLOR
-			overlays.Add(I)
-	else
-		overlays.Add(icon_state_menu)
-		var/image/I = image(icon = icon, icon_state = icon_state_menu)
-		I.appearance_flags |= RESET_COLOR
-		overlays.Add(I)*/
 
 /obj/item/modular_computer/pda/wrist/AltClick(var/mob/user)
 	if(!CanPhysicallyInteract(user))

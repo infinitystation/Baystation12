@@ -1,10 +1,10 @@
 /datum/extension/interactive/ntos/device
 	expected_type = /obj/item/modular_computer
-
+/*INF
 /datum/extension/interactive/ntos/device/host_status()
 	var/obj/item/modular_computer/C = holder
 	return C.enabled
-
+UNF*/
 /datum/extension/interactive/ntos/device/get_hardware_flag()
 	var/obj/item/modular_computer/C = holder
 	return C.hardware_flag

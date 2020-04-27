@@ -104,7 +104,7 @@
 	bulk = GUN_BULK_SMG
 	w_class = ITEM_SIZE_LARGE
 	one_hand_penalty = 4
-
+	screen_shake = 0.5
 	s_gun = "C-20R"
 //[/INF]
 /obj/item/weapon/gun/projectile/automatic/merc_smg/on_update_icon()
@@ -182,11 +182,12 @@
 	accuracy_power = 7
 	w_class = ITEM_SIZE_NORMAL
 	one_hand_penalty = 3
-
+	screen_shake = 0.5
 	s_gun = "WT-550"
 //[/INF]
 /obj/item/weapon/gun/projectile/automatic/sec_smg/on_update_icon()
 	..()
+	icon_state = "smg" //INF
 	if(ammo_magazine)
 		overlays += image(icon, "mag-[round(ammo_magazine.stored_ammo.len,5)]")
 	if(ammo_magazine && LAZYLEN(ammo_magazine.stored_ammo))
@@ -276,7 +277,7 @@
 	name = "L6 machine gun"
 	desc = "A rather traditionally made L6 SAW with a pleasantly lacquered wooden pistol grip. Has 'Aussec Armoury- 2281' engraved on the reciever." //probably should refluff this
 	icon = 'icons/obj/guns/saw.dmi'
-	icon_state = "l6closed100"
+	icon_state = "l6closed50" //INF, WAS l6closed100
 	item_state = "l6closedmag"
 	w_class = ITEM_SIZE_HUGE
 	bulk = GUN_BULK_MACHINEGUN//inf, was 10

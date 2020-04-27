@@ -39,7 +39,11 @@
 
 		if(istype(H.gloves, /obj/item/clothing/gloves/boxing/hologlove))
 			H.do_attack_animation(src)
-			var/damage = 8 //INF, WAS var/damage = rand(0,9)
+			var/damage = 1.5 //INF, WAS var/damage = rand(0,9)
+//[INF]
+			if(weakened)
+				damage = 0
+//[/INF]
 			if(!damage)
 				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
 				visible_message("<span class='danger'>\The [H] has attempted to punch \the [src]!</span>")
@@ -58,18 +62,34 @@
 
 			apply_damage(damage, PAIN, affecting)
 //[INF]
+			if(gloves && istype(gloves, /obj/item/clothing/gloves/boxing/hologlove))
+				var/obj/item/clothing/gloves/boxing/hologlove/HG = H.gloves
+				HG.hits++
+				if(HG.hits >= HG.hits_needed)
+					var/armor_block = 100 * get_blocked_ratio(affecting, BRUTE)
+					apply_effect(5, WEAKEN, armor_block)
+					HG.hits = 0
+					var/obj/item/clothing/gloves/boxing/hologlove/G = gloves
+					G.hits = 0
+					to_chat(src, SPAN_DANGER("You was electrocuted by your own gloves as [H] did the last hit!"))
+					apply_damage(6, PAIN, affecting)
+					spawn(5)
+						playsound(loc, 'sound/machines/defib_success.ogg', 75, 1, -1)
+						audible_message("\icon[HG] <b>The gloves</b> объявляет, \"\the [src] был опрокинут после [HG.hits_needed] ударов!\"")
+/* old
 			var/weak_chance = rand(1, 15)
 			if(weak_chance >= 15)
 				visible_message("<span class='danger'>[H] has luckly weakend \the [src]!</span>")
 				var/armor_block = 100 * get_blocked_ratio(affecting, BRUTE)
 				apply_effect(1.5, WEAKEN, armor_block)
+*/
 //[/INF]
-/*INF
+/*[ORIG]
 			if(damage >= 9)
 				visible_message("<span class='danger'>[H] has weakened \the [src]!</span>")
 				var/armor_block = 100 * get_blocked_ratio(affecting, BRUTE, damage = damage)
 				apply_effect(4, WEAKEN, armor_block)
-/INF*/
+[/ORIG]*/
 			return
 
 	if(istype(H))
@@ -108,7 +128,8 @@
 					if(heart)
 						heart.external_pump = list(world.time, 0.4 + 0.1*pumping_skill + rand(-0.1,0.1))
 
-					if(stat != DEAD && prob(10 + 5 * pumping_skill))
+					if(stat != DEAD && prob(10 + 5 * pumping_skill) \
+					&& !(status_flags & FAKEDEATH)) //INF
 						resuscitate()
 
 				if(!H.check_has_mouth())

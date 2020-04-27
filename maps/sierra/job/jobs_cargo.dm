@@ -4,7 +4,7 @@
 	department_flag = SUP
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Head of Personnel"
+	supervisors = "Главой Персонала"
 	economic_power = 8
 	minimal_player_age = 7
 	ideal_character_age = 35
@@ -34,7 +34,7 @@
 	department_flag = SUP
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Quartermaster and Head of Personnel"
+	supervisors = "Завхозом и Главой Персонала"
 	ideal_character_age = 24
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/supply/tech
 	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
@@ -58,7 +58,7 @@
 	department_flag = SUP
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "the Quartermaster and Head of Personnel"
+	supervisors = "Завхозом и Главой Персонала"
 	selection_color = "#515151"
 	economic_power = 7
 	ideal_character_age = 25
@@ -87,7 +87,7 @@
 	department_flag = SUP
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Quartermaster and Supply Personnel"
+	supervisors = "Завхозом и Главой Персонала"
 	ideal_character_age = 20
 	selection_color = "#515151"
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/supply/assistant

@@ -133,6 +133,7 @@ GLOBAL_LIST_INIT(rpd_pipe_selection_skilled, list(
 
 /obj/item/weapon/rpd/afterattack(atom/A, mob/user, proximity)
 	if(!proximity) return
+	if(!istype(A, /turf)) return
 	if(istype(A, /obj/item/pipe))
 		recycle(A,user)
 	else

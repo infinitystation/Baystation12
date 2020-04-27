@@ -9,7 +9,6 @@
 	fore_dir = WEST
 	vessel_mass = 30
 	default_delay = 35 SECONDS
-	speed_mod = 5 SECONDS
 	start_x = 5
 	start_y = 5
 	initial_generic_waypoints = list(

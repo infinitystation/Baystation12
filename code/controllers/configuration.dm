@@ -164,7 +164,7 @@ var/list/gamemode_cache = list()
 	var/gateway_delay = 18000 //How long the gateway takes before it activates. Default is half an hour.
 	var/ghost_interaction = 0
 
-	var/comms_password = ""
+	var/comms_password = null
 	var/ban_comms_password = null
 	var/list/forbidden_versions = list() // Clients with these byond versions will be autobanned. Format: string "byond_version.byond_build"; separate with ; in config, e.g. 512.1234;512.1235
 	var/minimum_byond_version = 0
@@ -181,11 +181,6 @@ var/list/gamemode_cache = list()
 	var/admin_irc = ""
 	var/admin_log_irc = ""
 	var/announce_shuttle_dock_to_irc = FALSE
-
-
-	// Discord crap.
-	var/discord_url
-	var/discord_password
 
 	// Event settings
 	var/expected_round_length = 3 * 60 * 60 * 10 // 3 hours
@@ -247,9 +242,6 @@ var/list/gamemode_cache = list()
 	var/do_not_prevent_spam = FALSE //If this is true, skips spam prevention for user actions; inputs, verbs, macros, etc.
 	var/max_acts_per_interval = 140 //Number of actions per interval permitted for spam protection.
 	var/act_interval = 0.1 SECONDS //Interval for spam prevention.
-
-
-	var/sql_enabled = 1 // for sql switching //inf
 
 /datum/configuration/New()
 	var/list/L = typesof(/datum/game_mode) - /datum/game_mode
@@ -772,10 +764,20 @@ var/list/gamemode_cache = list()
 				if("error_msg_delay")
 					error_msg_delay = text2num(value)
 
+			//[INF]
 				if("discord_url")
 					discord_url = value
 				if("discord_password")
 					discord_password = value
+
+				if("lighting_style")
+					lighting_style = value
+
+				if("ntnet_radius_multiplyer")
+					ntnet_radius_multiplyer = text2num(value)
+				if("ntnet_speed_limiter")
+					ntnet_speed_limiter = text2num(value)
+			//[/INF]
 
 				if("max_gear_cost")
 					max_gear_cost = text2num(value)

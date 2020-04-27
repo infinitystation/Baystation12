@@ -1,0 +1,25 @@
+{{:helper.link('Add Hub ID', null, {'add_id' : 1}, null)}}<br><br>
+
+<table border='1'>
+	<tr>
+		<th>Hub ID
+		<th>Snare ID
+		<th>Activate
+		<th>Remove
+		<th>Snare Setup
+{{for data.hubs}}
+	<tr>
+		<td>{{:value.myId}}
+		<td>{{:value.sId}}
+		<td>{{:helper.link('Catch', null, {'catch_snaring' : value.myId}, null)}}
+		<td>{{:helper.link('Remove', null, {'remove_id' : value.myId}, null)}}
+		<td>{{:helper.link('Set Snare', null, {'set_id' : value.myId}, null)}}
+{{empty}}
+	<tr>
+		<td>NOT FOUND
+		<td>NOT FOUND
+		<td>NOT FOUND
+		<td>NOT FOUND
+		<td>NOT FOUND
+{{/for}}
+</table>

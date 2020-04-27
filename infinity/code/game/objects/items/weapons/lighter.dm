@@ -8,7 +8,7 @@
 	icon_state = "gold"
 
 /obj/item/weapon/flame/lighter/zippo/infinity/station
-	name = "\improper 13'th zippo "
+	name = "13'th zippo "
 	icon_state = "13"
 
 /obj/item/weapon/flame/lighter/zippo/infinity/black

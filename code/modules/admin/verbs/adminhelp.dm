@@ -2,7 +2,7 @@
 //This is a list of words which are ignored by the parser when comparing message contents for names. MUST BE IN LOWER CASE!
 var/list/adminhelp_ignored_words = list("unknown","the","a","an","of","monkey","alien","as")
 
-/proc/generate_ahelp_key_words(var/mob/mob, var/msg)
+/client/proc/generate_ahelp_key_words(var/mob/mob, var/msg)
 	var/list/surnames = list()
 	var/list/forenames = list()
 	var/list/ckeys = list()
@@ -84,7 +84,6 @@ var/list/adminhelp_ignored_words = list("unknown","the","a","an","of","monkey","
 	if(!msg)
 		return
 	msg = sanitize(msg)
-	msg = sanitize_a0(msg)
 	if(!msg)
 		return
 	var/original_msg = msg
@@ -115,6 +114,10 @@ var/list/adminhelp_ignored_words = list("unknown","the","a","an","of","monkey","
 		return
 
 	ticket.msgs += new /datum/ticket_msg(src.ckey, null, original_msg)
+	if(establish_db_connection())
+		var/sql_text = "HELP [src.ckey]: [sanitizeSQL(original_msg)]\n"
+		var/DBQuery/ticket_text = dbcon.NewQuery("UPDATE erro_admin_tickets SET text = '[sql_text]' WHERE round = '[game_id]' AND inround_id = '[ticket.id]';")
+		ticket_text.Execute()
 	update_ticket_panels()
 
 

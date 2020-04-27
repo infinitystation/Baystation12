@@ -167,7 +167,6 @@ var/list/admin_verbs_server = list(
 	/client/proc/cmd_toggle_admin_help,
 	/client/proc/observe_delay,
 	/datum/admins/proc/toggleevent,
-	/client/proc/update_server,
 //[/INF],
 	)
 var/list/admin_verbs_debug = list(
@@ -237,7 +236,8 @@ var/list/admin_verbs_possess = list(
 	)
 
 var/list/admin_verbs_permissions = list(
-	/client/proc/edit_admin_permissions
+	/client/proc/edit_admin_permissions,
+	/client/proc/update_server, //INF
 	)
 var/list/admin_verbs_rejuv = list(
 	/client/proc/respawn_character,
@@ -586,7 +586,7 @@ var/list/admin_verbs_mentor = list(
 		SSstatistics.add_field("ban_warn",1)
 	else
 		if(C)
-			to_chat(C, "<font color='red'><BIG><B>Вы были формально предупреждены администратором [key_name_admin(src, 0)].</B></BIG><br>Дальнейшие предупреждени&#255; приведут к автобану.</font>")
+			to_chat(C, "<font color='red'><BIG><B>Р’С‹ Р±С‹Р»Рё С„РѕСЂРјР°Р»СЊРЅРѕ РїСЂРµРґСѓРїСЂРµР¶РґРµРЅС‹ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂРѕРј [key_name_admin(src, 0)].</B></BIG><br>Р”Р°Р»СЊРЅРµР№С€РёРµ РїСЂРµРґСѓРїСЂРµР¶РґРµРЅРёСЏ РїСЂРёРІРµРґСѓС‚ Рє Р°РІС‚РѕР±Р°РЅСѓ.</font>")
 			log_and_message_admins("has warned [key_name_admin(C)]. They have [MAX_WARNS-D.warns] strikes remaining.")
 		else
 			log_and_message_admins("has warned [warned_ckey] (DC). They have [MAX_WARNS-D.warns] strikes remaining.")
@@ -678,10 +678,12 @@ var/list/admin_verbs_mentor = list(
 	if(config)
 		if(config.log_hrefs)
 			config.log_hrefs = 0
-			to_chat(src, "<b>Stopped logging hrefs</b>")
+//ORIG			to_chat(src, "<b>Stopped logging hrefs</b>")
 		else
 			config.log_hrefs = 1
-			to_chat(src, "<b>Started logging hrefs</b>")
+//ORIG			to_chat(src, "<b>Started logging hrefs</b>")
+//Inf: who the fuck added this unloggable shit?
+		log_and_message_admins("turned [config.log_hrefs ? "on" : "off"] hrefs logging.") //INF
 
 /client/proc/check_ai_laws()
 	set name = "Check AI Laws"
@@ -924,8 +926,8 @@ var/list/admin_verbs_mentor = list(
 	set name = "Man Up"
 	set desc = "Tells mob to man up and deal with it."
 
-	to_chat(T, SPAN_NOTICE("<b><font size=3>Возьми себ&#255; в руки и начни решать проблемы.</font></b>"))
-	to_chat(T, SPAN_NOTICE("Пр&#255;мо сейчас."))
+	to_chat(T, SPAN_NOTICE("<b><font size=3>Р’РѕР·СЊРјРё СЃРµР±СЏ РІ СЂСѓРєРё Рё РЅР°С‡РЅРё СЂРµС€Р°С‚СЊ РїСЂРѕР±Р»РµРјС‹.</font></b>"))
+	to_chat(T, SPAN_NOTICE("РџСЂСЏРјРѕ СЃРµР№С‡Р°СЃ."))
 	sound_to(T, 'sound/voice/ManUp1.ogg')
 	log_and_message_admins("told [key_name(T)] to man up and deal with it.")
 
@@ -935,7 +937,7 @@ var/list/admin_verbs_mentor = list(
 	set desc = "Tells everyone to man up and deal with it."
 
 	for (var/mob/T as mob in SSmobs.mob_list)
-		to_chat(T, SPAN_NOTICE("<br><center><b><font size=4>Возьми себ&#255; в руки.<br>Начни решать проблемы.</font></b><br>Пр&#255;мо сейчас.</center><br>"))
+		to_chat(T, SPAN_NOTICE("<br><center><b><font size=4>Р’РѕР·СЊРјРё СЃРµР±СЏ РІ СЂСѓРєРё.<br>РќР°С‡РЅРё СЂРµС€Р°С‚СЊ РїСЂРѕР±Р»РµРјС‹.</font></b><br>РџСЂСЏРјРѕ СЃРµР№С‡Р°СЃ.</center><br>"))
 		sound_to(T, 'sound/voice/ManUp1.ogg')
 
 	log_and_message_admins("told everyone to man up and deal with it.")

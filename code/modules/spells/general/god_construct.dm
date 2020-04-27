@@ -13,6 +13,7 @@
 
 	hud_state = "const_wall"
 	cast_sound = 'sound/effects/meteorimpact.ogg'
+	selection_type = "special"	//INF	We can't found TYPE in VIEW
 
 /spell/construction/choose_targets()
 	var/list/possible_targets = list()

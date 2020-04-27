@@ -51,7 +51,7 @@ var/list/airlock_overlays = list()
 	var/hasShocked = 0 //Prevents multiple shocks from happening
 	var/secured_wires = 0
 
-	var/open_sound_powered = 'sound/machines/airlock_open.ogg'
+	var/open_sound_powered =  'sound/machines/airlock_open.ogg'
 	var/open_sound_unpowered = 'sound/machines/airlock_open_force.ogg'
 	var/open_failure_access_denied = 'sound/machines/buzz-two.ogg'
 
@@ -1078,11 +1078,12 @@ About the new airlock wires panel:
 		if(!W.remove_fuel(0,user))
 			to_chat(user, SPAN_NOTICE("Your [W.name] doesn't have enough fuel."))
 			return
-		playsound(loc, 'sound/items/Welder.ogg', 50, 1)
+		playsound(src, 'sound/items/Welder.ogg', 50, 1)
 		user.visible_message(SPAN_WARNING("\The [user] begins welding \the [src] [welded ? "open" : "closed"]!"),
 							SPAN_NOTICE("You begin welding \the [src] [welded ? "open" : "closed"]."))
 		if(do_after(user, (rand(3,5)) SECONDS, src))
 			if(density && !(operating > 0) && !repairing)
+				playsound(src, 'sound/items/Welder2.ogg', 50, 1)
 				welded = !welded
 				update_icon()
 				return
@@ -1098,9 +1099,13 @@ About the new airlock wires panel:
 		else
 			src.p_open = 1
 
-		user.visible_message("[user] [p_open ? "exposed" : "unexposed"] the airlock wire panel.", "You [p_open ? "exposed" : "unexposed"] the airlock wire panel.")
+		//[INF]
+		user.visible_message(
+			"[user] [p_open ? "opened" : "closed"] the maintenance hatch of [src].",
+			SPAN_NOTICE("You [p_open ? "open" : "close"] the maintenance hatch of [src]."))
 		var/interact_sound = p_open ? GLOB.machinery_exposed_sound[1] : GLOB.machinery_exposed_sound[2]
-		playsound(src, pick(interact_sound), 50, 1)
+		playsound(src, pick(interact_sound), 50, 1, -6.5)
+		//[/INF]
 
 		src.update_icon()
 	else if(isWirecutter(C))
@@ -1135,15 +1140,12 @@ About the new airlock wires panel:
 			//if door is unbroken, hit with fire axe using harm intent
 	else if (istype(C, /obj/item/weapon/material/twohanded/fireaxe) && !(stat & BROKEN) && user.a_intent == I_HURT)
 		var/obj/item/weapon/material/twohanded/fireaxe/F = C
-		if (F.wielded)
-			playsound(src, 'sound/weapons/smash.ogg', 100, 1)
-			health -= F.force_wielded * 2
-			if(health <= 0)
-				user.visible_message(SPAN_DANGER("[user] smashes \the [C] into the airlock's control panel! It explodes in a shower of sparks!"), SPAN_DANGER("You smash \the [C] into the airlock's control panel! It explodes in a shower of sparks!"))
-				health = 0
-				set_broken(TRUE)
-			else
-				user.visible_message(SPAN_DANGER("[user] smashes \the [C] into the airlock's control panel!"))
+//[INF]
+		if (F.wielded && health <= 0)
+			user.visible_message(SPAN_DANGER("[user] smashes \the [C] into the airlock's control panel! It explodes in a shower of sparks!"), SPAN_DANGER("You smash \the [C] into the airlock's control panel! It explodes in a shower of sparks!"))
+			health = 0
+			set_broken(TRUE)
+//[/INF]
 		else
 			..()
 			return
@@ -1233,7 +1235,7 @@ About the new airlock wires panel:
 
 	//if the door is unpowered then it doesn't make sense to hear the woosh of a pneumatic actuator
 	if(arePowerSystemsOn())
-		playsound(src.loc, open_sound_powered, 100, 1)
+		playsound(src.loc, open_sound_powered, 100, need_change_sound_freq/*inf 1*/)
 	else
 		playsound(src.loc, open_sound_unpowered, 100, 1)
 
@@ -1286,7 +1288,7 @@ About the new airlock wires panel:
 
 	use_power_oneoff(360)	//360 W seems much more appropriate for an actuator moving an industrial door capable of crushing people
 	if(arePowerSystemsOn())
-		playsound(src.loc, close_sound_powered, 100, 1)
+		playsound(src.loc, close_sound_powered, 100, need_change_sound_freq /*1*/)
 	else
 		playsound(src.loc, close_sound_unpowered, 100, 1)
 
@@ -1374,8 +1376,10 @@ About the new airlock wires panel:
 		wires = new/datum/wires/airlock(src)
 
 /obj/machinery/door/airlock/Initialize()
-	GLOB.airlocks += src //inf
-	get_new_ntnet_id() //inf
+	//[INF]
+	GLOB.airlocks += src
+	get_new_ntnet_id()
+	//[/INF]
 	if(src.closeOtherId != null)
 		for (var/obj/machinery/door/airlock/A in world)
 			if(A.closeOtherId == src.closeOtherId && A != src)

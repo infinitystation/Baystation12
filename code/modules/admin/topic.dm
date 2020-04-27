@@ -67,17 +67,6 @@
 				if(!banckey || !banreason || !banjob || !banduration)
 					to_chat(usr, "Not enough parameters (Requires ckey, reason and job)")
 					return
-			if(BANTYPE_SOFTPERMA)
-				if(!banckey || !banreason)
-					to_chat(usr, "Not enough parameters (Requires ckey and reason)")
-					return
-				banduration = null
-				banjob = null
-			if(BANTYPE_SOFTBAN)
-				if(!banckey || !banreason || !banduration)
-					to_chat(usr, "Not enough parameters (Requires ckey, reason and duration)")
-					return
-				banjob = null
 
 		var/mob/playermob
 
@@ -96,7 +85,8 @@
 				banreason = "[banreason] (CUSTOM CID)"
 		else
 			message_admins("Ban process: A mob matching [playermob.ckey] was found at location [playermob.x], [playermob.y], [playermob.z]. Custom ip and computer id fields replaced with the ip and computer id from the located mob")
-		add_note(banckey,banreason, null, usr.ckey, 0)
+	//	notes_add(banckey,banreason,usr)
+		add_note(banckey,banreason, null, usr.ckey, 0) //inf
 
 		DB_ban_record(bantype, playermob, banduration, banreason, banjob, null, banckey, banip, bancid )
 
@@ -133,15 +123,16 @@
 
 				message_admins("[key_name_admin(usr)] removed [adm_ckey] from the admins list")
 				log_admin("[key_name(usr)] removed [adm_ckey] from the admins list")
-				send2adminirc("[get_key(usr)] удалил ранг у игрока: \"[adm_ckey]\"")
 				log_admin_rank_modification(adm_ckey, "Removed")
+
+				send2adminirc("[get_key(usr)] СѓРґР°Р»РёР» СЂР°РЅРі Сѓ РёРіСЂРѕРєР°: \"[adm_ckey]\"") //inf
 
 		else if(task == "rank")
 			var/new_rank
 			if(admin_ranks.len)
 				new_rank = input("Please select a rank", "New rank", null, null) as null|anything in (admin_ranks|"*New Rank*")
 			else
-				new_rank = input("Please select a rank", "New rank", null, null) as null|anything in list("Admin Observer","Game Admin", "Moderator", "Admin Candidate", "Trial Admin", "Badmin", "Game Admin", "Game Master", "Retired Admin", "JuniorDeveloper", "Developer", "SeniorDevepoper", "Wiki Mentor", "Head Wiki", "Host", "Head Admin", "Project Lead","*New Rank*")
+				new_rank = input("Please select a rank", "New rank", null, null) as null|anything in list("Game Master","Game Admin", "Trial Admin", "Admin Observer","*New Rank*")
 
 			var/rights = 0
 			if(D)
@@ -179,9 +170,10 @@
 			to_chat(C, "[key_name_admin(usr)] has set your admin rank to: [new_rank].")
 			message_admins("[key_name_admin(usr)] edited the admin rank of [adm_ckey] to [new_rank]")
 			log_admin("[key_name(usr)] edited the admin rank of [adm_ckey] to [new_rank]")
-			log_permissions("[key_name(usr)] edited the admin rank of [adm_ckey] to [new_rank]")
-			send2adminirc("[get_key(usr)] изменил ранг игрока: \"[adm_ckey]\" на \"[new_rank]\"")
 			log_admin_rank_modification(adm_ckey, new_rank)
+
+			log_permissions("[key_name(usr)] edited the admin rank of [adm_ckey] to [new_rank]") //inf
+			send2adminirc("[get_key(usr)] РёР·РјРµРЅРёР» СЂР°РЅРі РёРіСЂРѕРєР°: \"[adm_ckey]\" РЅР° \"[new_rank]\"") //inf
 
 		else if(task == "permissions")
 			if(!D)	return
@@ -196,9 +188,10 @@
 			to_chat(C, "[key_name_admin(usr)] has toggled your permission: [new_permission].")
 			message_admins("[key_name_admin(usr)] toggled the [new_permission] permission of [adm_ckey]")
 			log_admin("[key_name(usr)] toggled the [new_permission] permission of [adm_ckey]")
-			log_permissions("[key_name(usr)] toggled the [new_permission] permission of [adm_ckey]")
 			log_admin_permission_modification(adm_ckey, permissionlist[new_permission])
-			send2adminirc("[get_key(usr)] переключил флаг: \"[new_permission]\" игроку: \"[adm_ckey]\"")
+
+			log_permissions("[key_name(usr)] toggled the [new_permission] permission of [adm_ckey]") //inf
+			send2adminirc("[get_key(usr)] РїРµСЂРµРєР»СЋС‡РёР» С„Р»Р°Рі: \"[new_permission]\" РёРіСЂРѕРєСѓ: \"[adm_ckey]\"") //inf
 
 		edit_admin_permissions()
 
@@ -248,7 +241,6 @@
 
 		switch(href_list["simplemake"])
 			if("observer")			M.change_mob_type( /mob/observer/ghost , null, null, delmob )
-			if("larva")				M.change_mob_type( /mob/living/carbon/alien/larva , null, null, delmob )
 			if("nymph")				M.change_mob_type( /mob/living/carbon/alien/diona , null, null, delmob )
 			if("human")				M.change_mob_type( /mob/living/carbon/human , null, null, delmob, href_list["species"])
 			if("slime")				M.change_mob_type( /mob/living/carbon/slime , null, null, delmob )
@@ -315,13 +307,11 @@
 				minutes = CMinutes + mins
 				duration = GetExp(minutes)
 				reason = sanitize(input(usr,"Reason?","reason",reason2) as text|null)
-				reason = sanitize_a0(reason)
 				if(!reason)	return
 			if("No")
 				temp = 0
 				duration = "Perma"
 				reason = sanitize(input(usr,"Reason?","reason",reason2) as text|null)
-				reason = sanitize_a0(reason)
 				if(!reason)	return
 
 		ban_unban_log_save("[key_name(usr)] edited [banned_key]'s ban. Reason: [reason] Duration: [duration]")
@@ -653,7 +643,7 @@
 	// Finalize and display.
 		body = "<body>[jobs]</body>"
 		dat = "<tt>[header][body]</tt>"
-		usr << browse(dat, "window=jobban2;size=800x490")
+		show_browser(usr, dat, "window=jobban2;size=800x490")
 		return
 
 	//JOBBAN'S INNARDS
@@ -779,7 +769,6 @@
 						to_chat(usr, "<span class='warning'> Moderators can only job tempban up to [config.mod_job_tempban_max] minutes!</span>")
 						return
 					var/reason = sanitize(input(usr,"Reason?","Please State Reason","") as text|null)
-					reason = sanitize_a0(reason)
 					if(!reason)
 						return
 
@@ -795,10 +784,12 @@
 							msg = job
 						else
 							msg += ", [job]"
-					add_note(M.ckey, "Banned  from [msg] - [reason]", null, usr.ckey, 0)
+				//	notes_add(LAST_CKEY(M), "Banned  from [msg] - [reason]", usr)
+				//[INF]
+					add_note(LAST_CKEY(M), "Banned  from [msg] - [reason]", null, usr, 0)
+					to_world_ban(BANTYPE_JOB_TEMP, get_key(usr), get_key(M), reason, mins, banned_jobs = msg)
+				//[/INF]
 					message_admins("[key_name_admin(usr)] banned [key_name_admin(M)] from [msg] for [mins] minutes", 1)
-					to_world(SPAN_NOTICE("<b>JOB-BAN: Администратор [get_key(usr)] временно заблокировал(а) роли ([msg]) игроку [get_key(M)]. Причина: \"[reason]\"; Срок - [mins] минут.</b>"))
-					send2adminlogirc("Администратор [get_key(usr)] временно заблокировал(а) роли ([msg]) игроку [get_key(M)]. Причина: \"[reason]\"; Срок - [mins] минут.")
 					to_chat(M, "<span class='danger'>You have been jobbanned by [usr.client.ckey] from: [msg].</span>")
 					to_chat(M, "<span class='warning'>The reason is: [reason]</span>")
 					to_chat(M, "<span class='warning'>This jobban will be lifted in [mins] minutes.</span>")
@@ -807,7 +798,6 @@
 				if("No")
 					if(!check_rights(R_BAN))  return
 					var/reason = sanitize(input(usr,"Reason?","Please State Reason","") as text|null)
-					reason = sanitize_a0(reason)
 					if(reason)
 						var/msg
 						for(var/job in notbannedlist)
@@ -819,10 +809,12 @@
 							jobban_fullban(M, job, "[reason]; By [usr.ckey] on [time2text(world.realtime)]")
 							if(!msg)	msg = job
 							else		msg += ", [job]"
-						add_note(M.ckey, "Banned  from [msg] - [reason]", null, usr.ckey, 0)
+					//	notes_add(LAST_CKEY(M), "Banned  from [msg] - [reason]", usr)
+					//[INF]
+						add_note(LAST_CKEY(M), "Banned  from [msg] - [reason]", null, usr.ckey, 0)
+						to_world_ban(BANTYPE_JOB_PERMA, get_key(usr), get_key(M), reason, banned_jobs = msg)
+					//[/INF]
 						message_admins("[key_name_admin(usr)] banned [key_name_admin(M)] from [msg]", 1)
-						to_world(SPAN_NOTICE("<b>JOB-BAN: Администратор [get_key(usr)] перманентно заблокировал(а) роли ([msg]) игроку [get_key(M)]. Причина: \"[reason]\"</b>"))
-						send2adminlogirc("Администратор [get_key(usr)] перманентно заблокировал(а) роли ([msg]) игроку [get_key(M)]. Причина: \"[reason]\"")
 						to_chat(M, "<span class='danger'>You have been jobbanned by [usr.client.ckey] from: [msg].</span>")
 						to_chat(M, "<span class='warning'>The reason is: [reason]</span>")
 						to_chat(M, "<span class='warning'>Jobban can be lifted only upon request.</span>")
@@ -867,7 +859,6 @@
 			if(!check_if_greater_rights_than(M.client))
 				return
 			var/reason = sanitize(input("Please enter reason"))
-			reason = sanitize_a0(reason)
 			if(!reason)
 				to_chat(M, "<span class='warning'>You have been kicked from the server</span>")
 			else
@@ -902,9 +893,9 @@
 		var/mob/M = locate(href_list["newban"])
 		if(!ismob(M)) return
 
-		if(alert("ВНИМАНИЕ!\n \
-		Данный тип блокировки подразумевает полное отлучение игрока от сервера и он применим в случае экстренной ситуации (нарушение УК России, обход блокировок или эксплойты).\n \
-		Если случай не подходит под критерий \"серьёзно\" то используйте softban.",,"Continue", "Cancel") == "Cancel")
+		if(alert("Р’РќРРњРђРќРР•!\n \
+		Р”Р°РЅРЅС‹Р№ С‚РёРї Р±Р»РѕРєРёСЂРѕРІРєРё РїРѕРґСЂР°Р·СѓРјРµРІР°РµС‚ РїРѕР»РЅРѕРµ РѕС‚Р»СѓС‡РµРЅРёРµ РёРіСЂРѕРєР° РѕС‚ СЃРµСЂРІРµСЂР° Рё РѕРЅ РїСЂРёРјРµРЅРёРј РІ СЃР»СѓС‡Р°Рµ СЌРєСЃС‚СЂРµРЅРЅРѕР№ СЃРёС‚СѓР°С†РёРё (РЅР°СЂСѓС€РµРЅРёРµ РЈРљ Р РѕСЃСЃРёРё, РѕР±С…РѕРґ Р±Р»РѕРєРёСЂРѕРІРѕРє РёР»Рё СЌРєСЃРїР»РѕР№С‚С‹).\n \
+		Р•СЃР»Рё СЃР»СѓС‡Р°Р№ РЅРµ РїРѕРґС…РѕРґРёС‚ РїРѕРґ РєСЂРёС‚РµСЂРёР№ \"СЃРµСЂСЊС‘Р·РЅРѕ\" С‚Рѕ РёСЃРїРѕР»СЊР·СѓР№С‚Рµ softban.",,"Continue", "Cancel") == "Cancel")
 			return
 
 		if(M.client && M.client.holder)	return	//admins cannot be banned. Even if they could, the ban doesn't affect them anyway
@@ -924,29 +915,34 @@
 					return
 				if(mins >= 525600) mins = 525599
 				var/reason = sanitize(input(usr,"Reason?","reason","Ultra-Griefer") as text|null)
-				reason = sanitize_a0(reason)
 				if(!reason)
 					return
-				AddBan(M.ckey, M.computer_id, reason, usr.ckey, 1, mins)
-				ban_unban_log_save("[usr.client.ckey] has HARD banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.")
-				add_note(M.ckey,"[usr.client.ckey] has hard banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.", null, usr.ckey, 0)
-				to_chat(M, "<span class='danger'><BIG>Вы были ЖЕСТКО забанены администратором [key_name(usr)].\nПричина: [reason]</BIG></span>")
-				to_chat(M, "<span class='warning'>Это временный бан, он истечет через [mins] минут.</span>")
+				var/mob_key = LAST_CKEY(M)
+				if(mob_key != given_key)
+					to_chat(usr, SPAN_DANGER("This mob's occupant has changed from [given_key] to [mob_key]. Please try again."))
+					show_player_panel(M)
+					return
+				AddBan(mob_key, M.computer_id, reason, usr.ckey, 1, mins)
+				ban_unban_log_save("[usr.client.ckey] has HARD banned [mob_key]. - Reason: [reason] - This will be removed in [mins] minutes.")
+				add_note(mob_key,"[usr.client.ckey] has hard banned [mob_key]. - Reason: [reason] - This will be removed in [mins] minutes.", null, usr.ckey, 0)
+				//to_chat(M, "<span class='danger'>You have been banned by [usr.client.ckey].\nReason: [reason].</span>")
+				//to_chat(M, "<span class='warning'>This is a temporary ban, it will be removed in [mins] minutes.</span>")
+				to_chat(M, "<span class='danger'><BIG>Р’С‹ Р±С‹Р»Рё Р·Р°Р±Р°РЅРµРЅС‹ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂРѕРј [usr.client.key].\nРџСЂРёС‡РёРЅР°: [reason]</BIG></span>") //inf
+				to_chat(M, "<span class='warning'>Р­С‚Рѕ РІСЂРµРјРµРЅРЅС‹Р№ Р±Р°РЅ, РѕРЅ РёСЃС‚РµС‡РµС‚ С‡РµСЂРµР· [mins] РјРёРЅСѓС‚.</span>") //inf
 				SSstatistics.add_field("ban_tmp",1)
 				DB_ban_record(BANTYPE_TEMP, M, mins, reason)
 				SSstatistics.add_field("ban_tmp_mins",mins)
 				if(config.banappeals)
-					to_chat(M, "<span class='warning'>Чтобы оспорить решение администратора, перейдите сюда: [config.banappeals]</span>")
+					to_chat(M, "<span class='warning'>Р В§РЎвЂљР С•Р В±РЎвЂ№ Р С•РЎРѓР С—Р С•РЎР‚Р С‘РЎвЂљРЎРЉ РЎР‚Р ВµРЎв‚¬Р ВµР Р…Р С‘Р Вµ Р В°Р Т‘Р СР С‘Р Р…Р С‘РЎРѓРЎвЂљРЎР‚Р В°РЎвЂљР С•РЎР‚Р В°, Р С—Р ВµРЎР‚Р ВµР в„–Р Т‘Р С‘РЎвЂљР Вµ РЎРѓРЎР‹Р Т‘Р В°: [config.banappeals]</span>")
 				else
 					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
-				log_and_message_admins("has hard banned [M.ckey].\nReason: [reason]\nThis will be removed in [mins] minutes.")
+				log_and_message_admins("has banned [mob_key].\nReason: [reason]\nThis will be removed in [mins] minutes.")
 
 				qdel(M.client)
 				//qdel(M)	// See no reason why to delete mob. Important stuff can be lost. And ban can be lifted before round ends.
 			if("No")
 				if(!check_rights(R_BAN))   return
 				var/reason = sanitize(input(usr,"Reason?","reason","Griefer") as text|null)
-				reason = sanitize_a0(reason)
 				if(!reason)
 					return
 				var/mob_key = LAST_CKEY(M)
@@ -959,102 +955,24 @@
 					if("Yes")
 						AddBan(mob_key, M.computer_id, reason, usr.ckey, 0, 0, M.lastKnownIP)
 					if("No")
-						AddBan(M.ckey, M.computer_id, reason, usr.ckey, 0, 0)
-				to_chat(M, "<span class='danger'><BIG>Вы были ЖЕСТКО забанены администратором [usr.client.ckey].\nПричина: [reason]</BIG></span>")
-				to_chat(M, "<span class='warning'>Это перманентный бан.</span>")
+						AddBan(mob_key, M.computer_id, reason, usr.ckey, 0, 0)
+			//	to_chat(M, "<span class='danger'>You have been banned by [usr.client.ckey].\nReason: [reason].</span>")
+			//	to_chat(M, "<span class='warning'>This is a ban until appeal.</span>")
+				to_chat(M, "<span class='danger'><BIG>Р’С‹ Р±С‹Р»Рё Р–Р•РЎРўРљРћ Р·Р°Р±Р°РЅРµРЅС‹ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂРѕРј [usr.client.key].\nРџСЂРёС‡РёРЅР°: [reason]</BIG></span>") //inf
+				to_chat(M, "<span class='warning'>Р­С‚Рѕ РїРµСЂРјР°РЅРµРЅС‚РЅС‹Р№ Р±Р°РЅ.</span>") //inf
 				if(config.banappeals)
-					to_chat(M, "<span class='warning'>Чтобы оспорить решение администратора, перейдите сюда: [config.banappeals]</span>")
+				//	to_chat(M, "<span class='warning'>To try to resolve this matter head to [config.banappeals]</span>")
+					to_chat(M, "<span class='warning'>Р§С‚РѕР±С‹ РѕСЃРїРѕСЂРёС‚СЊ СЂРµС€РµРЅРёРµ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР°, РїРµСЂРµР№РґРёС‚Рµ СЃСЋРґР°: [config.banappeals]</span>") //inf
 				else
 					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
-				ban_unban_log_save("[usr.client.ckey] has hard permabanned [M.ckey]. - Reason: [reason] - This is a permanent ban.")
-				add_note(M.ckey,"[usr.client.ckey] has hard permabanned [M.ckey]. - Reason: [reason] - This is a permanent ban.", null, usr.ckey, 0)
-				log_and_message_admins("has banned [M.ckey].\nReason: [reason]\nThis is a permanent ban.")
+				ban_unban_log_save("[usr.client.ckey] has permabanned [mob_key]. - Reason: [reason] - This is a ban until appeal.")
+			//	notes_add(mob_key,"[usr.client.ckey] has permabanned [mob_key]. - Reason: [reason] - This is a ban until appeal.",usr)
+				add_note(mob_key,"[usr.client.ckey] has hard permabanned [mob_key]. - Reason: [reason] - This is a permanent ban.", null, usr.ckey, 0) //inf
+				log_and_message_admins("has banned [mob_key].\nReason: [reason]\nThis is a ban until appeal.")
 				SSstatistics.add_field("ban_perma",1)
 				DB_ban_record(BANTYPE_PERMA, M, -1, reason)
 
 				qdel(M.client)
-				//qdel(M)
-			if("Cancel")
-				return
-
-	else if(href_list["softban"])
-		if(!check_rights(R_MOD,0) && !check_rights(R_BAN, 0))
-			to_chat(usr, "<span class='warning'>You do not have the appropriate permissions to add bans!</span>")
-			return
-
-		if(check_rights(R_MOD,0) && !check_rights(R_ADMIN, 0) && !config.mods_can_job_tempban) // If mod and tempban disabled
-			to_chat(usr, "<span class='warning'>Mod jobbanning is disabled!</span>")
-			return
-
-		var/mob/M = locate(href_list["softban"])
-		if(!ismob(M)) return
-
-		if(M.client && M.client.holder)	return	//admins cannot be banned. Even if they could, the ban doesn't affect them anyway
-
-		switch(alert("Temporary Ban?",,"Yes","No", "Cancel"))
-			if("Yes")
-				var/mins = input(usr,"How long (in minutes)?","Ban time",1440) as num|null
-				if(!mins)
-					return
-				if(check_rights(R_MOD, 0) && !check_rights(R_BAN, 0) && mins > config.mod_tempban_max)
-					to_chat(usr, "<span class='warning'>Moderators can only job tempban up to [config.mod_tempban_max] minutes!</span>")
-					return
-				if(mins >= 525600) mins = 525599
-				var/reason = sanitize(input(usr,"Reason?","reason","Griefer") as text|null)
-				reason = sanitize_a0(reason)
-				if(!reason)
-					return
-				switch(alert(usr,"IP ban?",,"Yes","No","Cancel"))
-					if("Cancel")	return
-					if("Yes")
-						DB_ban_record(BANTYPE_SOFTBAN, M, mins, reason, bancid = M.computer_id, banip = M.lastKnownIP)
-					if("No")
-						DB_ban_record(BANTYPE_SOFTBAN, M, mins, reason, bancid = M.computer_id)
-				ban_unban_log_save("[usr.client.ckey] has soft banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.")
-				add_note(M.ckey,"[usr.client.ckey] has soft banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.", null, usr.ckey, 0)
-				to_chat(M, "<span class='warning'><BIG>Администратор [usr.client.ckey] заблокировал вашу игру на сервере.\nПричина: [reason]</BIG></span>")
-				to_chat(M, "<span class='warning'>Это временна&#255; блокировка, она истечет через [mins] минут.</span>")
-				to_chat(M, "<span class='notice'>У вас есть доступ к игре на сервере в качестве заключенного.</span>")
-				SSstatistics.add_field("ban_tmp",1)
-				SSstatistics.add_field("ban_tmp_mins",mins)
-				if(config.banappeals)
-					to_chat(M, "<span class='warning'>Чтобы оспорить решение администратора, перейдите сюда: [config.banappeals]</span>")
-				else
-					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
-				log_admin("[usr.client.ckey] has soft banned [M.ckey].\nReason: [reason]\nThis will be removed in [mins] minutes.")
-				message_admins("<span class='notice'>[usr.client.ckey] has soft banned [M.ckey].\nReason: [reason]\nThis will be removed in [mins] minutes.</span>")
-
-				qdel(M.client)
-				M.ckey = null
-				//qdel(M)	// See no reason why to delete mob. Important stuff can be lost. And ban can be lifted before round ends.
-			if("No")
-				if(!check_rights(R_BAN))   return
-				var/reason = sanitize(input(usr,"Reason?","reason","Griefer") as text|null)
-				reason = sanitize_a0(reason)
-				if(!reason)
-					return
-				switch(alert(usr,"IP ban?",,"Yes","No","Cancel"))
-					if("Cancel")	return
-					if("Yes")
-						DB_ban_record(BANTYPE_SOFTPERMA, M, -1, reason, bancid = M.computer_id, banip = M.lastKnownIP)
-					if("No")
-						DB_ban_record(BANTYPE_SOFTPERMA, M, -1, reason, bancid = M.computer_id)
-				to_chat(M, "<span class='warning'><BIG>Администратор [usr.client.ckey] заблокировал вашу игру на сервере.\nПричина: [reason]</BIG></span>")
-				to_chat(M, "<span class='warning'>Это перманентна&#255; блокировка.</span>")
-				to_chat(M, "<span class='notice'>У вас есть доступ к игре на сервере в качестве заключенного.</span>")
-				if(config.banappeals)
-					to_chat(M, "<span class='warning'>Чтобы оспорить решение администратора, перейдите сюда: [config.banappeals]</span>")
-				else
-					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
-				ban_unban_log_save("[usr.client.ckey] has soft permabanned [M.ckey]. - Reason: [reason] - This is a soft permanent ban.")
-				add_note(M.ckey,"[usr.client.ckey] has soft permabanned [M.ckey]. - Reason: [reason] - This is a soft permanent ban.", null, usr.ckey, 0)
-				log_admin("[usr.client.ckey] has soft banned [M.ckey].\nReason: [reason]\nThis is a soft permanent ban.")
-				message_admins("<span class='notice'>[usr.client.ckey] has soft banned [M.ckey].\nReason: [reason]\nThis is a soft permanent ban.</span>")
-				SSstatistics.add_field("ban_perma",1)
-
-
-				qdel(M.client)
-				M.ckey = null
 				//qdel(M)
 			if("Cancel")
 				return
@@ -1083,7 +1001,7 @@
 		dat += {"<A href='?src=\ref[src];c_mode2=secret'>Secret</A><br>"}
 		dat += {"<A href='?src=\ref[src];c_mode2=random'>Random</A><br>"}
 		dat += {"Now: [SSticker.master_mode]"}
-		usr << browse(dat, "window=c_mode")
+		show_browser(usr, dat, "window=c_mode")
 
 	else if(href_list["f_secret"])
 		if(!check_rights(R_ADMIN))	return
@@ -1097,7 +1015,7 @@
 			dat += {"<A href='?src=\ref[src];f_secret2=[mode]'>[config.mode_names[mode]]</A><br>"}
 		dat += {"<A href='?src=\ref[src];f_secret2=secret'>Random (default)</A><br>"}
 		dat += {"Now: [secret_force_mode]"}
-		usr << browse(dat, "window=f_secret")
+		show_browser(usr, dat, "window=f_secret")
 
 	else if(href_list["c_mode2"])
 		if(!check_rights(R_ADMIN|R_SERVER))	return
@@ -1198,30 +1116,6 @@
 
 		to_chat(M, "<span class='warning'>You have been sent to the prison station!</span>")
 		log_and_message_admins("sent [key_name_admin(M)] to the prison station.")
-
-	else if(href_list["sendbacktolobby"])
-		if(!check_rights(R_ADMIN))
-			return
-
-		var/mob/M = locate(href_list["sendbacktolobby"])
-
-		if(!isobserver(M))
-			to_chat(usr, "<span class='notice'>You can only send ghost players back to the Lobby.</span>")
-			return
-
-		if(!M.client)
-			to_chat(usr, "<span class='warning'>[M] doesn't seem to have an active client.</span>")
-			return
-
-		if(alert(usr, "Send [key_name(M)] back to Lobby?", "Message", "Yes", "No") != "Yes")
-			return
-
-		log_admin("[key_name(usr)] has sent [key_name(M)] back to the Lobby.")
-		message_admins("[key_name(usr)] has sent [key_name(M)] back to the Lobby.")
-
-		var/mob/new_player/NP = new()
-		NP.ckey = M.ckey
-		qdel(M)
 
 	else if(href_list["tdome1"])
 		if(!check_rights(R_FUN))	return
@@ -1635,9 +1529,9 @@
 
 			for (var/page = 1, page <= B.pages.len, page++)
 				var/obj/pageobj = B.pages[page]
-				data += "<A href='?src=\ref[src];AdminFaxViewPage=[page];paper_bundle=\ref[B]'>Page [page] - [pageobj.name]</A><BR>"
+				data += "<meta charset=\"UTF-8\"><A href='?src=\ref[src];AdminFaxViewPage=[page];paper_bundle=\ref[B]'>Page [page] - [pageobj.name]</A><BR>"
 
-			usr << browse(data, "window=[B.name]")
+			show_browser(usr, data, "window=[B.name]")
 		else
 			to_chat(usr, "<span class='warning'>The faxed item is not viewable. This is probably a bug, and should be reported on the tracker: [fax.type]</span>")
 	else if (href_list["AdminFaxViewPage"])
@@ -1851,6 +1745,9 @@
 									M.real_name = obj_name
 
 		log_and_message_admins("created [number] [english_list(paths)]")
+
+		send2adminirc("[get_key(usr)] СЃРѕР·РґР°Р» [number] [english_list(paths)] РїРѕ РєРѕРѕСЂРґРёРЅР°С‚Р°Рј \[X: [target.x], Y: [target.y], Z: [target.z]\]") //inf
+
 		return
 
 	else if(href_list["admin_secrets_panel"])
@@ -2079,50 +1976,6 @@
 
 			show_player_panel(M)
 
-	//Player Notes
-	if(href_list["addnote"])
-		var/target_ckey = href_list["addnote"]
-		add_note(target_ckey)
-
-	if(href_list["addnoteempty"])
-		add_note()
-
-	if(href_list["removenote"])
-		var/note_id = href_list["removenote"]
-		remove_note(note_id)
-
-	if(href_list["editnote"])
-		var/note_id = href_list["editnote"]
-		edit_note(note_id)
-
-	if(href_list["nonalpha"])
-		var/target = href_list["nonalpha"]
-		target = text2num(target)
-		show_note(index = target)
-
-	if(href_list["shownote"])
-		var/target = href_list["shownote"]
-		show_note(index = target)
-
-	if(href_list["shownoteckey"])
-		var/target_ckey = href_list["shownoteckey"]
-		show_note(target_ckey)
-
-	if(href_list["notessearch"])
-		var/target = href_list["notessearch"]
-		show_note(index = target)
-
-	if(href_list["noteedits"])
-		var/note_id = sanitizeSQL("[href_list["noteedits"]]")
-		var/DBQuery/query_noteedits = dbcon.NewQuery("SELECT edits FROM erro_messages WHERE id = '[note_id]'")
-		if(!query_noteedits.Execute())
-			var/err = query_noteedits.ErrorMsg()
-			log_game("SQL ERROR obtaining edits from notes table. Error : \[[err]\]\n")
-			return
-		if(query_noteedits.NextRow())
-			var/edit_log = query_noteedits.item[1]
-			usr << browse(edit_log,"window=noteedits")
-
 	// player info stuff
 
 	if(href_list["add_player_info"])
@@ -2130,23 +1983,34 @@
 		var/add = sanitize(input("Add Player Info") as null|text)
 		if(!add) return
 
-		add_note(key,add, null, usr.ckey, 0)
-		show_note(key)
+	//	notes_add(key,add,usr)
+	//	show_player_info(key)
+
+		add_note(key, add, null, usr.ckey, 0) //inf
+		show_note(key) //inf
 
 	if(href_list["remove_player_info"])
 		var/key = href_list["remove_player_info"]
 		var/index = text2num(href_list["remove_index"])
 
-		remove_note(index)
-		show_note(key)
+	//	notes_del(key, index)
+	//	show_player_info(key)
+
+		remove_note(index) //inf
+		show_note(key) //inf
 
 	if(href_list["notes"])
+	//	if(href_list["notes"] == "set_filter")
+	//		var/choice = input(usr,"Please specify a text filter to use or cancel to clear.","Player Notes",null) as text|null
+	//		PlayerNotesPage(choice)
+	//	else
 		var/ckey = href_list["ckey"]
 		if(!ckey)
 			var/mob/M = locate(href_list["mob"])
 			if(ismob(M))
-				ckey = M.ckey
-		show_note(ckey)
+				ckey = LAST_CKEY(M)
+	//	show_player_info(ckey)
+		show_note(ckey) //inf
 		return
 	if(href_list["setstaffwarn"])
 		var/mob/M = locate(href_list["setstaffwarn"])
@@ -2158,11 +2022,13 @@
 			if("Yes")
 				var/last_ckey = LAST_CKEY(M)
 				var/reason = sanitize(input(usr,"Staff warn message","Staff Warn","Problem Player") as text|null)
+//				reason = sanitize_a0(reason) //inf
 				if (!reason || reason == "")
 					return
-				add_note(M.ckey,"\[AUTO\] Staff warn enabled: [reason]", null, usr.ckey, 0)
+			//	notes_add(last_ckey,"\[AUTO\] Staff warn enabled: [reason]",usr)
+				add_note(last_ckey,"\[AUTO\] Staff warn enabled: [reason]", null, usr.ckey, 0) //inf
 				reason += "\n-- Set by [usr.client.ckey]([usr.client.holder.rank])"
-				DB_staffwarn_record(M.ckey, reason)
+				DB_staffwarn_record(last_ckey, reason)
 				if(M.client)
 					M.client.staffwarn = reason
 				SSstatistics.add_field("staff_warn",1)
@@ -2179,7 +2045,8 @@
 				var/last_ckey = LAST_CKEY(M)
 				if(!DB_staffwarn_remove(last_ckey))
 					return
-				add_note(M.ckey,"\[AUTO\] Staff warn disabled", null, usr.ckey, 0)
+			//	notes_add(last_ckey,"\[AUTO\] Staff warn disabled",usr)
+				add_note(last_ckey,"\[AUTO\] Staff warn disabled", null, usr.ckey, 0) //inf
 				if(M.client)
 					M.client.staffwarn = null
 				log_and_message_admins("has removed the staffwarn on [last_ckey].\n")
@@ -2187,13 +2054,12 @@
 			if("No")
 				return
 
-	if(href_list["stickyban"])
-		stickyban(href_list["stickyban"],href_list)
+	if(href_list["pilot"])
+		var/mob/M = locate(href_list["pilot"])
+		if(!ismob(M)) return
 
-/*	if(href_list["show_skills"])
-		var/mob/living/carbon/human/M = locate(href_list["show_skills"])
-		show_skill_window(usr, M)
-		skillset.open_ui(usr, M)*/
+		show_player_panel(M)
+
 
 mob/living/proc/can_centcom_reply()
 	return 0
@@ -2240,6 +2106,6 @@ mob/living/silicon/ai/can_centcom_reply()
 	return client && client.get_admin_jump_link(target, delimiter, prefix, sufix)
 
 /client/get_admin_jump_link(var/atom/target, var/delimiter, var/prefix, var/sufix)
-	if(holder && check_rights(R_INVESTIGATE, 0, src))
+	if(holder && check_rights(R_INVESTIGATE, 0, src)) //inf was: holder
 		var/short_links = get_preference_value(/datum/client_preference/ghost_follow_link_length) == GLOB.PREF_SHORT
 		return admin_jump_link(target, src, delimiter, prefix, sufix, short_links)

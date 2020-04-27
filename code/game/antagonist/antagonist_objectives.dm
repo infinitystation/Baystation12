@@ -22,7 +22,8 @@
 	set desc = "Recieve optional objectives."
 	set category = "OOC"
 
-	src.verbs -= /mob/proc/add_objectives
+	if(!src.mind.changeling) //INF, todo: make it flexable
+		src.verbs -= /mob/proc/add_objectives
 
 	if(!src.mind)
 		return
@@ -33,7 +34,10 @@
 		if(antagonist && antagonist.is_antagonist(src.mind))
 			antagonist.create_objectives(src.mind,1)
 
-	to_chat(src, "<b><font size=3>These objectives are completely voluntary. You are not required to complete them.</font></b>")
+	if(!src.mind.changeling) //INF, todo: make it flexable
+		to_chat(src, FONT_LARGE(
+		"<b>Р­С‚Рё Р·Р°РґР°С‡Рё РЅРѕСЃСЏС‚ СЂРµРєРѕРјРµРЅРґР°С‚РµР»СЊРЅС‹Р№ С…Р°СЂР°РєС‚РµСЂ. Р•СЃР»Рё РѕРЅРё РЅРµ СѓСЃС‚СЂР°РёРІР°СЋС‚ Р’Р°СЃ - РЅРµ РІС‹РїРѕР»РЅСЏР№С‚Рµ РёС…, \
+		РЅРѕ РїСЂРёРґСѓРјР°Р№С‚Рµ С‡С‚Рѕ-С‚Рѕ СЃРІРѕС‘.</b>"))
 	show_objectives(src.mind)
 
 /mob/living/proc/set_ambition()
@@ -65,17 +69,17 @@
 	log_and_message_admins("has set their ambitions to now be: [new_goal].")
 [ORIGINAL]*/
 //[INF]
-	var/new_goal = sanitize(input(src, "Напишите, чего вы хотите достичь в этом раунде как антагонист - \
-	свои цели. Они будут видны всем игрокам после конца раунда. Помните, что вы не можете \
-	Переписать их - только дополнить новыми строками.", "Antagonist Goal") as null|message)
+	var/new_goal = sanitize(input(src, "РќР°РїРёС€РёС‚Рµ, С‡РµРіРѕ Р’С‹ С…РѕС‚РёС‚Рµ РґРѕСЃС‚РёС‡СЊ РІ СЌС‚РѕРј СЂР°СѓРЅРґРµ РєР°Рє Р°РЅС‚Р°РіРѕРЅРёСЃС‚ - \
+	СЃРІРѕРё С†РµР»Рё. РћРЅРё Р±СѓРґСѓС‚ РІРёРґРЅС‹ РІСЃРµРј РёРіСЂРѕРєР°Рј РїРѕСЃР»Рµ РєРѕРЅС†Р° СЂР°СѓРЅРґР°. РџРѕРјРЅРёС‚Рµ, С‡С‚Рѕ Р’С‹ РЅРµ РјРѕР¶РµС‚Рµ \
+	РїРµСЂРµРїРёСЃР°С‚СЊ РёС… - С‚РѕР»СЊРєРѕ РґРѕРїРѕР»РЅРёС‚СЊ РЅРѕРІС‹РјРё СЃС‚СЂРѕРєР°РјРё.", "Antagonist Goal") as null|message)
 	if(!isnull(new_goal))
 		if(!goal)
 			goal = new /datum/goal/ambition(mind)
-		goal.description += "|[new_goal]"
-		to_chat(src, SPAN_NOTICE("Теперь, Ваша амбици&#255; выгл&#255;дит как <b>'[goal.description]'</b>. \
-		Вы можете просмотреть её через кнопку <b>Notes</b>. Если вы хотите изменить всю амбицию, \
-		то обратитесь к администратору."))
-		log_and_message_admins("обновил свою амбицию: [new_goal].")
+		goal.description += "<br>[roundduration2text()]: [new_goal]"
+		to_chat(src, SPAN_NOTICE("РўРµРїРµСЂСЊ, Р’Р°С€Р° Р°РјР±РёС†РёСЏ РІС‹РіР»СЏРґРёС‚ С‚Р°Рє: <b>[goal.description]</b><br>. \
+		Р’С‹ РјРѕР¶РµС‚Рµ РїСЂРѕСЃРјРѕС‚СЂРµС‚СЊ РµС‘ С‡РµСЂРµР· РєРЅРѕРїРєСѓ <b>Notes</b>. Р•СЃР»Рё Р’С‹ С…РѕС‚РёС‚Рµ РёР·РјРµРЅРёС‚СЊ РІСЃСЋ Р°РјР±РёС†РёСЋ, \
+		С‚Рѕ РѕР±СЂР°С‚РёС‚РµСЃСЊ Рє Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂСѓ."))
+		log_and_message_admins("РѕР±РЅРѕРІРёР» СЃРІРѕСЋ Р°РјР±РёС†РёСЋ: [new_goal].")
 //[/INF]
 
 //some antagonist datums are not actually antagonists, so we might want to avoid

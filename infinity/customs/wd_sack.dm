@@ -22,5 +22,4 @@
 		slot_r_hand_str = "backpack",
 		slot_back_str = "wd_sack"
 		)
-
-
+	trade_blacklisted = TRUE

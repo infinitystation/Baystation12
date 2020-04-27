@@ -69,6 +69,7 @@
 	. =..()
 	var/mob/living/L = .
 	if(istype(L))
-		if(prob(8))
+		if(L.weakened) return //INF
+		if(prob(5)) //INF, WAS 8
 			L.Weaken(3)
 			L.visible_message("<span class='danger'>\the [src] knocks down \the [L]!</span>")

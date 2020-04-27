@@ -528,9 +528,8 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/scrap/escape/starboard)
 "aX" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1379;
 	id_tag = "eva_pump"
 	},
 /obj/effect/floor_decal/industrial/warning{
@@ -2620,9 +2619,8 @@
 	icon_state = "warning";
 	dir = 6
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1379;
 	id_tag = "eva_pump"
 	},
 /obj/machinery/light/small,
@@ -3050,8 +3048,7 @@
 /turf/simulated/floor/carpet/blue2,
 /area/ship/scrap/crew/dorms)
 "ge" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1379;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	id_tag = "cargo_pump"
 	},
 /obj/structure/catwalk,
@@ -3482,8 +3479,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/ship/scrap/engineering/storage)
 "Pj" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1379;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	id_tag = "cargo_pump"
 	},
 /obj/machinery/light/small{

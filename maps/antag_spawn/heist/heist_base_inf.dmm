@@ -92,6 +92,10 @@
 /obj/machinery/chemical_dispenser/bar_soft/full,
 /turf/simulated/floor/tiled/white,
 /area/map_template/syndicate_mothership/raider_base)
+"an" = (
+/obj/machinery/recharge_station,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
 "ao" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/machinery/light/small{
@@ -1031,8 +1035,7 @@
 /turf/simulated/floor/plating,
 /area/map_template/skipjack_station/start)
 "cZ" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1331;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	id_tag = "vox_west_vent"
 	},
 /obj/random/junk,
@@ -1081,9 +1084,8 @@
 /turf/simulated/floor/plating,
 /area/map_template/skipjack_station/start)
 "dh" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 2;
-	frequency = 1380;
 	id_tag = "merc_shuttle_pump"
 	},
 /obj/structure/catwalk,
@@ -1108,9 +1110,8 @@
 	req_access = list("ACCESS_SYNDICATE");
 	tag_chamber_sensor = "vox_west_sensor"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 8;
-	frequency = 1331;
 	id_tag = "vox_west_vent"
 	},
 /obj/machinery/light/small,
@@ -1178,9 +1179,8 @@
 	pixel_y = 8;
 	req_access = list("ACCESS_SYNDICATE")
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "skipjack_shuttle_pump"
 	},
 /obj/structure/catwalk,
@@ -1289,10 +1289,6 @@
 /obj/structure/table/steel,
 /obj/item/weapon/beartrap,
 /obj/item/weapon/beartrap,
-/turf/simulated/floor/plating,
-/area/map_template/skipjack_station/start)
-"dD" = (
-/obj/machinery/vending/hydroseeds,
 /turf/simulated/floor/plating,
 /area/map_template/skipjack_station/start)
 "dE" = (
@@ -4189,7 +4185,7 @@ aa
 aa
 aa
 cU
-dD
+an
 dN
 dX
 dM

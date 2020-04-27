@@ -85,7 +85,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 	else
 		user.unset_machine()
 		// No content means no window.
-		user << browse(null, "window=wires")
+		close_browser(user, "window=wires")
 		return
 
 	var/datum/browser/popup = new(user, "wires", holder.name, window_x, window_y)
@@ -156,29 +156,18 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 					to_chat(L, "<span class='error'>You need wirecutters!</span>")
 			else if(href_list["pulse"])
 				var/colour = href_list["pulse"]
-				if(isMultitool(I) || isMultitool(offhand_item))
-					if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 30, SKILL_ADEPT)))
-						RandomPulse()
-						to_chat(L, "<span class='danger'>You accidentally pulse another wire!</span>")
-						if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 60, SKILL_BASIC)))
-							RandomPulse() //or two
-					else
-						PulseColour(colour)
-					if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 50, SKILL_BASIC)))
-						wires = shuffle(wires) //Leaves them in a different order for anyone else.
-						to_chat(L, "<span class='danger'>You get the wires all tangled up!</span>")
 			//[inf]
-				else if(isMultimeter(I))
+				if(isMultimeter(I))
 					var/obj/item/device/multitool/multimeter/O = L.get_active_hand()
 					if(O.mode == METER_MESURING)
 						if (L.skill_check(SKILL_ELECTRICAL, SKILL_BASIC))
-							to_chat(L, "<span class='notice'>Подаем напряжение...</span>")
+							to_chat(L, "<span class='notice'>РџРѕРґР°РµРј РЅР°РїСЂСЏР¶РµРЅРёРµ...</span>")
 							if(!do_after(L, 50, holder))
 								return
 							PulseColour(colour)
-							to_chat(L, "<span class='notice'>Провод пропульсован.</span>")
+							to_chat(L, "<span class='notice'>РџСЂРѕРІРѕРґ РїСЂРѕРїСѓР»СЊСЃРѕРІР°РЅ.</span>")
 						else
-							to_chat(L, "<span class='notice'>Вы не знаете с каким напряжением работает этот провод.</span>")
+							to_chat(L, "<span class='notice'>Р’С‹ РЅРµ Р·РЅР°РµС‚Рµ СЃ РєР°РєРёРј РЅР°РїСЂСЏР¶РµРЅРёРµРј СЂР°Р±РѕС‚Р°РµС‚ СЌС‚РѕС‚ РїСЂРѕРІРѕРґ.</span>")
 					else
 						if (L.skill_check(SKILL_ELECTRICAL, SKILL_BASIC))
 							if(!do_after(L, 10, holder))
@@ -194,8 +183,19 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 							else
 								to_chat(L, "the [colour] wire not connected")
 						else
-							to_chat(L, "<span class='notice'>Вы не умеете подключать мультиметр.</span>")
+							to_chat(L, "<span class='notice'>Р’С‹ РЅРµ СѓРјРµРµС‚Рµ РїРѕРґРєР»СЋС‡Р°С‚СЊ РјСѓР»СЊС‚РёРјРµС‚СЂ.</span>")
 			//[/inf]
+				else if(isMultitool(I) || isMultitool(offhand_item))
+					if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 30, SKILL_ADEPT)))
+						RandomPulse()
+						to_chat(L, "<span class='danger'>You accidentally pulse another wire!</span>")
+						if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 60, SKILL_BASIC)))
+							RandomPulse() //or two
+					else
+						PulseColour(colour)
+					if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 50, SKILL_BASIC)))
+						wires = shuffle(wires) //Leaves them in a different order for anyone else.
+						to_chat(L, "<span class='danger'>You get the wires all tangled up!</span>")
 				else
 					to_chat(L, "<span class='error'>You need a multitool or a multimeter!</span>")
 
@@ -225,7 +225,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 					var/obj/item/device/multitool/multimeter/O = L.get_active_hand()
 					if (L.skill_check(SKILL_ELECTRICAL, SKILL_BASIC))
 						if(O.mode == METER_CHECKING)
-							to_chat(L, "<span class='notice'>Перебираем провода...</span>")
+							to_chat(L, "<span class='notice'>РџРµСЂРµР±РёСЂР°РµРј РїСЂРѕРІРѕРґР°...</span>")
 							var/name_by_type = name_by_type()
 							to_chat(L, "[name_by_type] wires:")
 							for(var/colour in src.wires)
@@ -244,11 +244,11 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 										to_chat(L, "the [colour] wire not connected")
 							//to_chat(L, "<span class='notice'>[all_solved_wires[holder_type]]</span>")
 						else
-							to_chat(L, "<span class='notice'>Переключите мультиметр в режим прозвонки.</span>")
+							to_chat(L, "<span class='notice'>РџРµСЂРµРєР»СЋС‡РёС‚Рµ РјСѓР»СЊС‚РёРјРµС‚СЂ РІ СЂРµР¶РёРј РїСЂРѕР·РІРѕРЅРєРё.</span>")
 					else
-						to_chat(L, "<span class='notice'>Вы не знаете как с этим работать.</span>")
+						to_chat(L, "<span class='notice'>Р’С‹ РЅРµ Р·РЅР°РµС‚Рµ РєР°Рє СЃ СЌС‚РёРј СЂР°Р±РѕС‚Р°С‚СЊ.</span>")
 				else
-					to_chat(L, "<span class='warning'>Вам нужен мультиметр.</span>")
+					to_chat(L, "<span class='warning'>Р’Р°Рј РЅСѓР¶РµРЅ РјСѓР»СЊС‚РёРјРµС‚СЂ.</span>")
 		//[/inf]
 			else if(href_list["examine"])
 				var/colour = href_list["examine"]
@@ -258,7 +258,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 			Interact(usr)
 
 	if(href_list["close"])
-		usr << browse(null, "window=wires")
+		close_browser(usr, "window=wires")
 		usr.unset_machine(holder)
 
 //
@@ -323,7 +323,7 @@ var/const/POWER = 8
 /datum/wires/proc/PulseIndex(var/index)
 	if(IsIndexCut(index))
 		return
-	playsound(holder.loc, 'infinity/sound/items/multitool_pulse.ogg', 20, 1)//inf
+	playsound(holder.loc, 'infinity/sound/items/multitool_pulse.ogg', 20, 1, -6.5)//inf
 	UpdatePulsed(index)
 
 /datum/wires/proc/GetIndex(var/colour)
@@ -403,7 +403,7 @@ var/const/POWER = 8
 	else
 		wires_status |= index
 		UpdateCut(index, 0)
-	playsound(holder.loc, 'sound/items/Wirecutter.ogg', 100, 1)//inf
+	playsound(holder.loc, 'sound/items/Wirecutter.ogg', 100, 1, -6.5)//inf
 
 /datum/wires/proc/RandomCut()
 	var/r = rand(1, wires.len)

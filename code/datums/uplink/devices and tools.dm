@@ -21,7 +21,9 @@
 	name = "Operations Funding"
 	item_cost = 8
 	path = /obj/item/weapon/storage/secure/briefcase/money
-	desc = "A briefcase with 10,000 untraceable thalers. Makes a great bribe if they're willing to take you up on your offer."
+/datum/uplink_item/item/tools/money/New()
+	. = ..()
+	desc = "A briefcase with 10,000 untraceable [GLOB.using_map.local_currency_name]. Makes a great bribe if they're willing to take you up on your offer."
 
 /datum/uplink_item/item/tools/clerical
 	name = "Morphic Clerical Kit"
@@ -175,5 +177,5 @@
 	item_cost = 32
 	path = /obj/item/weapon/storage/box/holobombs
 	desc = "Contains 5 holobomb and instruction. \
-			A bomb that changes appearance, ànd can destroy some hands."
+			A bomb that changes appearance, and can destroy some hands."
 //[/INF]

@@ -29,7 +29,6 @@
 				ban["message"] = data["reason"]
 			else
 				var/reason = input(usr,"Reason","Reason","Ban Evasion") as text|null
-				reason = sanitize_a0(reason)
 				if (!reason)
 					return
 				ban["message"] = "[reason]"
@@ -116,7 +115,6 @@
 				return
 			var/oldreason = ban["message"]
 			var/reason = input(usr,"Reason","Reason","[ban["message"]]") as text|null
-			reason = sanitize_a0(reason)
 			if (!reason || reason == oldreason)
 				return
 			//we have to do this again incase something changed while we waited for input
@@ -193,7 +191,7 @@
 		[banhtml]
 	</body>
 	"}
-	usr << browse(html,"window=stickybans;size=700x400")
+	show_browser(usr, html,"window=stickybans;size=700x400")
 
 /proc/get_stickyban_from_ckey(var/ckey)
 	if (!ckey)

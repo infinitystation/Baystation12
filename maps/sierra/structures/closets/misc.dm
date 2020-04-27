@@ -21,6 +21,15 @@
 		"command" = COLOR_OFF_WHITE
 	)
 
+/decl/closet_appearance/crate/present
+	color = COLOR_RED_GRAY
+	extra_decals = list(
+		"crate_bracing" = COLOR_RED_GRAY,
+		"lid_stripes" = COLOR_GREEN_GRAY,
+		"crate_stripe_left" = COLOR_GREEN_GRAY,
+		"crate_stripe_right" = COLOR_GREEN_GRAY
+	)
+
 /obj/structure/closet/secure_closet/iaa
 	name = "\improper Internal Affairs Agent's locker"
 	req_access = list(access_iaa)
@@ -77,3 +86,9 @@
 
 /obj/structure/closet/secure_closet/medical2
 	closet_appearance = /decl/closet_appearance/secure_closet/white
+
+/obj/structure/closet/crate/present
+	name = "present crate"
+	desc = "Wow, a present!"
+	closet_appearance = /decl/closet_appearance/crate/present
+

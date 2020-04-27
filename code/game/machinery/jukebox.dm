@@ -58,10 +58,7 @@ datum/track/proc/GetTrack()
 	StopPlaying()
 	QDEL_NULL_LIST(tracks)
 	current_track = null
-
-	if(tape) // INF@CODE
-		QDEL_NULL(tape)
-
+	QDEL_NULL(tape) //INF
 	. = ..()
 
 /obj/machinery/media/jukebox/powered()
@@ -196,12 +193,12 @@ datum/track/proc/GetTrack()
 			to_chat(user, "<span class='warning'>\The [D] is ruined, you can't use it.</span>")
 			return
 
-		visible_message("<span class='notice'>[usr] insert \the [tape] in to \the [src].</span>")
-		user.drop_item()
-		D.forceMove(src)
-		tape = D
-		tracks += tape.track
-		verbs += /obj/machinery/media/jukebox/verb/eject
+		if(user.drop_item())
+			visible_message("<span class='notice'>[usr] insert \a [tape] into \the [src].</span>")
+			D.forceMove(src)
+			tape = D
+			tracks += tape.track
+			verbs += /obj/machinery/media/jukebox/verb/eject
 		return
 	// INF@CODE - END
 
@@ -228,8 +225,8 @@ datum/track/proc/GetTrack()
 		return
 
 	// Jukeboxes cheat massively and actually don't share id. This is only done because it's music rather than ambient noise.
-	sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, current_track.GetTrack(), volume = volume, range = 7, falloff = 3, prefer_mute = TRUE, preference = /datum/client_preference/play_jukeboxes)
-
+	sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, current_track.GetTrack(), volume = volume, range = 9, falloff = 3, prefer_mute = TRUE, preference = /datum/client_preference/play_jukeboxes, streaming = TRUE)
+	//^^ INF, WAS range = 7
 	playing = 1
 	update_use_power(POWER_USE_ACTIVE)
 	update_icon()

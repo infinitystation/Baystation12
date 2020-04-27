@@ -15,6 +15,7 @@
 	possible_transfer_amounts = null
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
 	slot_flags = SLOT_BELT
+	var/sound/inject_sound = sound('infinity/sound/SS2/effects/hypo.wav')
 
 /obj/item/weapon/reagent_containers/hypospray/attack(mob/living/M, mob/user)
 	if(!reagents.total_volume)
@@ -50,7 +51,7 @@
 		user.do_attack_animation(M)
 		to_chat(user, "<span class='notice'>You inject [M] with [src].</span>")
 		to_chat(M, "<span class='notice'>You feel a tiny prick!</span>")
-		playsound(src, 'sound/effects/hypospray.ogg',25)
+		playsound(src, inject_sound, 25)//inf//was:playsound(src, 'sound/effects/hypospray.ogg',25)
 		user.visible_message("<span class='warning'>[user] injects [M] with [src].</span>")
 
 		if(M.reagents)

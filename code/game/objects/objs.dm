@@ -153,13 +153,13 @@
 	return ..() && w_class <= round(amt/20)
 
 //[INF]
-/obj/hitby(atom/movable/AM as mob|obj, var/speed)
+/obj/hitby(atom/movable/AM as mob|obj, var/datum/thrownthing/TT)
 	if(src.density)
 		spawn(2)
 			step(AM, turn(AM.last_move, 180))
 		if(isliving(AM))
 			var/mob/living/M = AM
-			M.object_collision(src, speed)
+			M.object_collision(src, TT.speed)
 //[/INF]
 
 /obj/proc/can_embed()
@@ -185,7 +185,7 @@
 		return
 
 	set_dir(turn(dir, 90))
-	update_icon() 
+	update_icon()
 
 //For things to apply special effects after damaging an organ, called by organ's take_damage
 /obj/proc/after_wounding(obj/item/organ/external/organ, datum/wound)

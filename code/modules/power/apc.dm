@@ -281,7 +281,7 @@
 		status_overlays_environ.len = 5
 
 //[INF]
-		var/list/overlay_settings = list(plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
+		var/list/overlay_settings = list(EFFECTS_ABOVE_LIGHTING_PLANE, ABOVE_LIGHTING_LAYER)
 
 		status_overlays_lock[1] = overlay_image(icon, "apcox-0", plane = overlay_settings[1], layer = overlay_settings[2])    // 0=blue 1=red
 		status_overlays_lock[2] = overlay_image(icon, "apcox-1", plane = overlay_settings[1], layer = overlay_settings[2])
@@ -689,11 +689,11 @@ INF */
 //[INF]
 	if(isMultitool(W) && !wiresexposed && has_electronics)
 		if((user.skill_check(SKILL_ELECTRICAL, SKILL_PROF) || user.skill_check(SKILL_COMPUTER, SKILL_PROF)) && \
-		src in hacker?.hacked_apcs)
+		(src in hacker?.hacked_apcs))
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN) //don't spam
 			user.visible_message(SPAN_NOTICE("[user] moves [W] around the APC..."), \
 				SPAN_NOTICE("You begin to restore settings of circuits..."))
-			if(!do_after(user, 60, src) && src in hacker?.hacked_apcs)
+			if(!do_after(user, 60, src) && (src in hacker?.hacked_apcs))
 				return TRUE
 			hacker.hacked_apcs -= src
 			hacker = null

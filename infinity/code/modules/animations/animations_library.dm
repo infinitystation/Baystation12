@@ -104,7 +104,7 @@ Can look good elsewhere as well.*/
 	return speed
 
 //Fadeout when something gets hit. Not completely done yet, as offset doesn't want to cooperate.
-proc/animation_destruction_knock_fade(atom/A, speed = 7, x_n = rand(10,18), y_n = rand(10,18))
+/proc/animation_destruction_knock_fade(atom/A, speed = 7, x_n = rand(10,18), y_n = rand(10,18))
 	A.mouse_opacity = 0
 	A.density = FALSE
 	var/x_o = initial(A.pixel_x)
@@ -131,3 +131,89 @@ proc/animation_destruction_knock_fade(atom/A, speed = 7, x_n = rand(10,18), y_n 
 	animate(src, transform = matrix_list[1], time = speed, loop_amount)
 	for(var/i in 2 to sections)
 		animate(transform = matrix_list[i], time = speed)
+
+
+//// G O O N ////
+
+/proc/animate_fade_grayscale_in(atom/A, time = 5)
+	if (!istype(A) && !isclient(A))
+		return
+	A.color = list(1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1)
+	animate(A, color = list(0.33, 0.33, 0.33, 0, 0.33, 0.33, 0.33, 0, 0.33, 0.33, 0.33, 0, 0, 0, 0, 1), time = time, easing = SINE_EASING)
+	return
+
+/proc/animate_fadegrayscale(atom/A, time = 5)
+	if (!istype(A) && !isclient(A))
+		return
+	A.color = list(0.33, 0.33, 0.33, 0, 0.33, 0.33, 0.33, 0, 0.33, 0.33, 0.33, 0, 0, 0, 0, 1)
+	animate(A, color = list(1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1), time = time, easing = SINE_EASING)
+	return
+
+/proc/animate_tile_dropaway(atom/A)
+	if(!istype(A)) return
+	if(prob(10)) playsound(A, "sound/effects/creaking_metal[pick("1", "2")].ogg", 40, 1)
+
+	var/image/underneath = image('infinity/icons/effects/white.dmi')
+	underneath.appearance_flags = RESET_TRANSFORM | RESET_COLOR | RESET_ALPHA
+	A.underlays += underneath
+
+	var/matrix/pivot = matrix()
+	pivot.Scale(0.2, 1.0)
+	pivot.Translate(-16, 0)
+
+	var/matrix/shrink = matrix()
+	shrink.Scale(0.0, 0.0)
+	animate(A, color = "#808080", transform = pivot, time = 30, easing = BOUNCE_EASING)
+	animate(color = "#ffffff", alpha = 0, transform = shrink, time = 10, easing = SINE_EASING)
+
+/proc/attack_twitch(atom/A)
+	if(!istype(A)) return
+
+	var/which = A.dir
+
+	var/ipx = A.pixel_x
+	var/ipy = A.pixel_y
+	var/movepx = 0
+	var/movepy = 0
+	switch(which)
+		if(NORTH)
+			movepy = 3
+		if(WEST)
+			movepx = -3
+		if(SOUTH)
+			movepy = -3
+		if(EAST)
+			movepx = 3
+		if(NORTHEAST)
+			movepx = 3
+		if(NORTHWEST)
+			movepy = 3
+		if(SOUTHEAST)
+			movepy = -3
+		if(SOUTHWEST)
+			movepx = -3
+		else
+			return
+
+	var/x = movepx + ipx
+	var/y = movepy + ipy
+
+	animate(A, pixel_x = x, pixel_y = y, time = 0.6, easing = EASE_OUT)
+	var/matrix/M = matrix(A.transform)
+	animate(transform = turn(A.transform, (movepx - movepy) * 4), time = 0.6, easing = EASE_OUT)
+	animate(pixel_x = ipx, pixel_y = ipy, time = 0.6, easing = EASE_IN)
+	animate(transform = M, time = 0.6, easing = EASE_IN)
+
+/proc/sponge_size(atom/A, var/size = 1)
+	var/matrix/M2 = matrix()
+	M2.Scale(size,size)
+
+	animate(A, transform = M2, time = 30, easing = ELASTIC_EASING)
+
+/proc/animate_storage_rustle(atom/A)
+	var/matrix/M1 = A.transform
+	var/matrix/M2 = matrix()
+	M2.Scale(1.2,0.8)
+
+	animate(A, transform = M2, time = 30, easing = ELASTIC_EASING, flags = ANIMATION_END_NOW)
+	animate(A, transform = M1, time = 20, easing = ELASTIC_EASING)

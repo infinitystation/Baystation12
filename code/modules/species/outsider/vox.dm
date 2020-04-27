@@ -39,7 +39,7 @@
 
 	cold_level_1 = 80
 	cold_level_2 = 50
-	cold_level_3 = 0
+	cold_level_3 = -1
 	
 	min_age = 1
 	max_age = 100
@@ -138,7 +138,7 @@
 
 	slowdown = 1
 	hidden_from_codex = TRUE
-	spawn_flags = SPECIES_IS_WHITELISTED | SPECIES_NO_FBP_CONSTRUCTION
+	spawn_flags = SPECIES_IS_WHITELISTED /*[INF]*/| SPECIES_IS_RESTRICTED  /*[/INF]*/| SPECIES_NO_FBP_CONSTRUCTION
 	brute_mod = 0.8
 	burn_mod = 0.8
 	strength = STR_HIGH

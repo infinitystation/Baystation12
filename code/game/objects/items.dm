@@ -111,12 +111,16 @@
 		m.drop_from_inventory(src)
 	var/obj/item/weapon/storage/storage = loc
 	if(istype(storage))
-		storage.on_item_deletion()
-	return ..()
+		// some ui cleanup needs to be done
+		storage.on_item_pre_deletion(src) // must be done before deletion
+		. = ..()
+		storage.on_item_post_deletion(src) // must be done after deletion
+	else
+		return ..()
 
 /obj/item/crush_act()
 	playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
-	for(var/i in 1, i < w_class, i++)
+	for(var/i in 1 to w_class)
 		new /obj/item/weapon/scrap_lump(loc)
 	for(var/obj/item/I in contents)
 		I.forceMove(loc)
@@ -721,8 +725,8 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	user.visible_message("\The [user] peers through [zoomdevicename ? "the [zoomdevicename] of [src]" : "[src]"].")
 
 	GLOB.destroyed_event.register(src, src, /obj/item/proc/unzoom)
-	GLOB.moved_event.register(src, src, /obj/item/proc/unzoom)
-	GLOB.dir_set_event.register(src, src, /obj/item/proc/unzoom)
+	GLOB.moved_event.register(user, src, /obj/item/proc/unzoom)
+	GLOB.dir_set_event.register(user, src, /obj/item/proc/unzoom)
 	GLOB.item_unequipped_event.register(src, src, /obj/item/proc/zoom_drop)
 	GLOB.stat_set_event.register(user, src, /obj/item/proc/unzoom)
 
@@ -735,8 +739,8 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	zoom = 0
 
 	GLOB.destroyed_event.unregister(src, src, /obj/item/proc/unzoom)
-	GLOB.moved_event.unregister(src, src, /obj/item/proc/unzoom)
-	GLOB.dir_set_event.unregister(src, src, /obj/item/proc/unzoom)
+	GLOB.moved_event.unregister(user, src, /obj/item/proc/unzoom)
+	GLOB.dir_set_event.unregister(user, src, /obj/item/proc/unzoom)
 	GLOB.item_unequipped_event.unregister(src, src, /obj/item/proc/zoom_drop)
 
 	user = user == src ? loc : (user || loc)

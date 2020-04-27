@@ -28,7 +28,7 @@
 		/obj/item/rig_module/mounted/lcannon,
 		/obj/item/rig_module/vision/thermal,
 		/obj/item/rig_module/grenade_launcher,
-		/obj/item/rig_module/ai_container,
+//INF		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/power_sink,
 		/obj/item/rig_module/electrowarfare_suite,
 		/obj/item/rig_module/chem_dispenser/combat,
@@ -45,7 +45,7 @@
 //Has most of the modules removed
 /obj/item/weapon/rig/merc/empty
 	initial_modules = list(
-		/obj/item/rig_module/ai_container,
+//INF		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/electrowarfare_suite,
 		)
 

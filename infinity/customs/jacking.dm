@@ -15,6 +15,7 @@
 		slot_l_hand_str = "gas_mask_lh",
 		slot_r_hand_str = "gas_mask_rh"
 	)
+	trade_blacklisted = TRUE
 
 //ZPCI armor vest
 
@@ -27,6 +28,7 @@
 	item_icons = list(
 		slot_wear_suit_str = CUSTOM_ITEM_MOB
 	)
+	trade_blacklisted = TRUE
 
 //ZPCI helmet
 
@@ -46,6 +48,7 @@
 		slot_l_hand_str = "scphelmrlefthand",
 		slot_r_hand_str = "scphelmrighthand"
 	)
+	trade_blacklisted = TRUE
 
 //visor
 
@@ -59,6 +62,7 @@
 	item_icons = list(slot_glasses_str = CUSTOM_ITEM_MOB)
 	electric = TRUE
 	action_button_name = "Toggle Visor"
+	trade_blacklisted = TRUE
 
 /* SCG SOLDIER KIT
  * ===============
@@ -72,6 +76,7 @@
 	icon_state = "army_uniform"
 	item_state = "army_uniform"
 	rolled_sleeves = -1
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/glasses/sunglasses/sechud/custom_ballistic
 	name = "ballistic glasses"
@@ -80,6 +85,7 @@
 	icon_state = "ballistic_glasses"
 	item_state = "ballistic_glasses"
 	item_icons = list(slot_glasses_str = CUSTOM_ITEM_MOB)
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/accessory/armor/helmcover/custom_army
 	name = "military cover"
@@ -88,6 +94,7 @@
 	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
 	icon_state = "army_cover"
 	accessory_icons = list(slot_tie_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', slot_head_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi')
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/suit/armor/pcarrier/custom_army
 	name = "soldier plate carrier system"
@@ -97,12 +104,13 @@
 	icon_state = "army_armor"
 	sprite_sheets = list()
 //	starting_accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches)
+	trade_blacklisted = TRUE
 
 //a gun
 
 /obj/item/weapon/gun/projectile/automatic/nt41/jacking
 	name = "xr36"
-	desc = "XR36 - export version of the XR36K, characterized by installing a ìhighî picatinny rail instead of a carrying handle on top of the receiver. The guide is equipped with a 3x4 double sight, and then a thin longitudinal groove is used. In addition, on the XR36 modification, a ìcheekî is installed on the standard frame stock."
+	desc = "XR36 - export version of the XR36K, characterized by installing a ‚Äúhigh‚Äù picatinny rail instead of a carrying handle on top of the receiver. The guide is equipped with a 3x4 double sight, and then a thin longitudinal groove is used. In addition, on the XR36 modification, a ‚Äúcheek‚Äù is installed on the standard frame stock."
 	icon_state = "xr36"
 	item_state = "xr36"
 	icon = 'infinity/icons/obj/guns/xr36.dmi'
@@ -111,6 +119,7 @@
 		slot_r_hand_str = 'infinity/icons/mob/onmob/righthand.dmi',
 		slot_l_hand_str = 'infinity/icons/mob/onmob/lefthand.dmi',
 		)
+	trade_blacklisted = TRUE
 
 /obj/item/weapon/gun/projectile/automatic/nt41/jacking/on_update_icon()
 	..()
@@ -143,6 +152,7 @@
 	icon = 'infinity/icons/obj/clothing/obj_head.dmi'
 	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
 	icon_state = "zpci_knight_h"
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/suit/armor/pcarrier/custom_zpci_knight
 	name = "\improper ST-16/1"
@@ -152,6 +162,7 @@
 	icon_state = "zpci_knight_s"
 	sprite_sheets = list()
 //	starting_accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches)
+	trade_blacklisted = TRUE
 
 /obj/item/weapon/gun/energy/laser/secure/jacking
 	name = "\improper RG-104"
@@ -164,6 +175,7 @@
 		slot_r_hand_str = 'infinity/icons/mob/onmob/righthand.dmi',
 		slot_l_hand_str = 'infinity/icons/mob/onmob/lefthand.dmi',
 		)
+	trade_blacklisted = TRUE
 
 /obj/item/custkit/custom_zpci_knight
 	name = "laser carabine customization kit"
@@ -186,6 +198,7 @@
 	item_state_slots = list(
 		slot_wear_suit_str = "bhs",
 	)
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/head/bio_hood/virology/jacking
 	name = "biohazard hood"
@@ -194,6 +207,7 @@
 	item_icons = list(
 		slot_head_str = CUSTOM_ITEM_MOB,
 		)
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/accessory/badge/holo/jacking
 	name = "representation card"
@@ -201,6 +215,7 @@
 	icon_state = "IHO_badge"
 	badge_string = "Medical"
 	badge_access = access_medical
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/accessory/badge/holo/jacking/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(istype(O, /obj/item/weapon/card/id) || istype(O, /obj/item/modular_computer))
@@ -226,6 +241,7 @@
 		slot_l_hand_str = CUSTOM_ITEM_MOB,
 		slot_r_hand_str = CUSTOM_ITEM_MOB,
 		)
+	trade_blacklisted = TRUE
 
 /obj/item/weapon/storage/backpack/dufflebag/biohazard/jacking
 	startswith = list(
@@ -250,6 +266,7 @@
 	icon_state = "saare_tactical"
 	item_state = "saare_tactical"
 	rolled_sleeves = -1
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/glasses/sunglasses/sechud/custom_ballistic/orange
 	desc = "A ballistic glasses with medium shatter protection."
@@ -257,6 +274,7 @@
 	icon_state = "ballistic_glasses_orange"
 	item_state = "ballistic_glasses_orange"
 	item_icons = list(slot_glasses_str = CUSTOM_ITEM_MOB)
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/accessory/armor/helmcover/custom_saare
 	name = "spec ops cover"
@@ -265,6 +283,7 @@
 	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
 	icon_state = "spec_ops_cover"
 	accessory_icons = list(slot_tie_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', slot_head_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi')
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/suit/armor/pcarrier/custom_saare
 	name = "\improper DSH-116"
@@ -273,6 +292,7 @@
 	item_icons = list(slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi')
 	icon_state = "gcc_spec_opc_carrier"
 	sprite_sheets = list()
+	trade_blacklisted = TRUE
 
 /obj/item/weapon/clothingbag/custom_saare/Initialize()
 	new /obj/item/clothing/under/custom_saare_uniform(src)

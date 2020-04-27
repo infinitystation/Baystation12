@@ -10,7 +10,7 @@
 #define LIGHT_BURNED 3
 
 #define LIGHT_BULB_TEMPERATURE 400 //K - used value for a 60W bulb
-#define LIGHTING_POWER_FACTOR 5		//5W per luminosity * range
+#define LIGHTING_POWER_FACTOR 15		//5W per luminosity * range //INF, WAS 5
 
 
 #define LIGHTMODE_EMERGENCY "emergency_lighting"
@@ -245,7 +245,8 @@
 	else
 		update_use_power(POWER_USE_OFF)
 		set_light(0)
-	change_power_consumption((light_outer_range * light_max_bright) * LIGHTING_POWER_FACTOR, POWER_USE_ACTIVE)
+//ORIGINAL	change_power_consumption((light_outer_range * light_max_bright) * LIGHTING_POWER_FACTOR, POWER_USE_ACTIVE)
+	change_power_consumption(((light_outer_range**2) * light_max_bright) * LIGHTING_POWER_FACTOR, POWER_USE_ACTIVE) //INF
 
 /obj/machinery/light/proc/get_status()
 	if(!lightbulb)

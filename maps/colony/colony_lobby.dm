@@ -1,6 +1,5 @@
 /datum/map/colony
-	lobby_icon = 'maps/colony/icons/lobby.dmi'
-	lobby_screens = list("title")
+	lobby_screens = list('infinity/title_screens/infinity-2020.png')
 	lobby_tracks = list(
 		/music_track/chasing_time,
 		/music_track/human,

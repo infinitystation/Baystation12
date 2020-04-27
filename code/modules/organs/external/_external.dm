@@ -65,7 +65,6 @@
 	var/arterial_bleed_severity = 1    // Multiplier for bleeding in a limb.
 	var/tendon_name = "tendon"         // Flavour text for Achilles tendon, etc.
 	var/cavity_name = "cavity"
-	var/speed_mod = 0
 
 	// Surgery vars.
 	var/cavity_max_w_class = ITEM_SIZE_TINY //this is increased if bigger organs spawn by default inside
@@ -163,10 +162,10 @@
 			burn_damage = 15
 		if (3)
 			burn_damage = 7.5
-/*
+/*[INF]
 	var/mult = 1 + !!(BP_IS_ASSISTED(src)) // This macro returns (large) bitflags.
 	burn_damage *= mult/species.get_burn_mod(owner) //ignore burn mod for EMP damage
-*/
+[/INF]*/
 	var/power = 4 - severity //stupid reverse severity
 	for(var/obj/item/I in implants)
 		if(I.obj_flags & OBJ_FLAG_CONDUCTIBLE)
@@ -959,7 +958,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 		holder = owner
 	if(!holder)
 		return
-	if (holder.handcuffed && body_part in list(ARM_LEFT, ARM_RIGHT, HAND_LEFT, HAND_RIGHT))
+	if (holder.handcuffed && (body_part in list(ARM_LEFT, ARM_RIGHT, HAND_LEFT, HAND_RIGHT)))
 		holder.visible_message(\
 			"\The [holder.handcuffed.name] falls off of [holder.name].",\
 			"\The [holder.handcuffed.name] falls off you.")
@@ -1057,10 +1056,10 @@ obj/item/organ/external/proc/remove_clamps()
 			"<span class='danger'>You hear a sickening crack.</span>")
 		jostle_bone()
 		if(can_feel_pain())
-		//	owner.emote("scream")
-			owner.agony_scream() // inf-dev
+		//INF	owner.emote("scream")
+			owner.agony_scream() //INF
 
-	playsound(src.loc, pick(GLOB.trauma_sound), 100, 1, -2) // inf-dev
+	playsound(src.loc, pick(GLOB.trauma_sound), 100, 1, -2) //INF
 //	playsound(src.loc, "fracture", 100, 1, -2)
 	status |= ORGAN_BROKEN
 	broken_description = pick("broken","fracture","hairline fracture")
@@ -1117,13 +1116,17 @@ obj/item/organ/external/proc/remove_clamps()
 		 (species && !(species.get_bodytype(owner) in R.allowed_bodytypes)) || \
 		 (R.applies_to_part.len && !(organ_tag in R.applies_to_part)))
 			R = basic_robolimb
-			species.brute_mod = R.brute_mod
-			species.burn_mod = R.burn_mod
-			speed_mod = R.speed_mod
+//[INF]
+			brute_mod = R.brute_mod
+			burn_mod = R.burn_mod
+			slowdown = R.speed_mod
+//[/INF]
 		else
-			speed_mod = R.speed_mod
-			species.brute_mod = R.brute_mod
-			species.burn_mod = R.burn_mod
+//[INF]
+			slowdown = R.speed_mod
+			brute_mod = R.brute_mod
+			burn_mod = R.burn_mod
+//[/INF]
 			model = company
 			force_icon = R.icon
 			name = "robotic [initial(name)]"
@@ -1134,7 +1137,7 @@ obj/item/organ/external/proc/remove_clamps()
 	update_icon(1)
 	unmutate()
 
-	slowdown = 0
+//INF	slowdown = 0
 
 	for(var/obj/item/organ/external/T in children)
 		T.robotize(company, 1)

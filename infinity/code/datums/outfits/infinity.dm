@@ -52,7 +52,7 @@
 	suit = /obj/item/clothing/suit/armor/pcarrier/troops/heavy/pcrc
 	head = /obj/item/clothing/head/helmet/pcrc
 	belt = /obj/item/weapon/storage/belt/holster/security/tactical/troops
-	r_hand = /obj/item/weapon/gun/projectile/automatic/wt550/lethal
+	r_hand = /obj/item/weapon/gun/projectile/automatic/sec_smg/lethal
 	id_pda_assignment = "PCRC PMC"
 
 /decl/hierarchy/outfit/pmc/saare

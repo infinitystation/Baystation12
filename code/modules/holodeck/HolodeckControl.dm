@@ -45,22 +45,25 @@
 		dat += "Holodeck is <A href='?src=\ref[src];togglehololock=1'><font color=green>(UNLOCKED)</font></A><BR>"
 	else
 		dat += "Holodeck is <A href='?src=\ref[src];togglehololock=1'><font color=red>(LOCKED)</font></A><BR>"
-		show_browser(user, dat, "window=computer;size=400x500")
-		onclose(user, "computer")
+//inf		show_browser(user, dat, "window=computer;size=400x500")
+//inf		onclose(user, "computer")
+		OpenWithBrowserPopup(user, dat)
 		return
 
 	dat += "<HR>Current Loaded Programs:<BR>"
 
 	if(!linkedholodeck)
 		dat += "<span class='danger'>Warning: Unable to locate holodeck.<br></span>"
-		user << browse(dat, "window=computer;size=400x500")
-		onclose(user, "computer")
+//inf		show_browser(user, dat, "window=computer;size=400x500")
+//inf		onclose(user, "computer")
+		OpenWithBrowserPopup(user, dat)
 		return
 
 	if(!supported_programs.len)
 		dat += "<span class='danger'>Warning: No supported holo-programs loaded.<br></span>"
-		user << browse(dat, "window=computer;size=400x500")
-		onclose(user, "computer")
+//inf		show_browser(user, dat, "window=computer;size=400x500")
+//inf		onclose(user, "computer")
+		OpenWithBrowserPopup(user, dat)
 		return
 
 	for(var/prog in supported_programs)
@@ -97,9 +100,25 @@
 		dat += "Gravity is <A href='?src=\ref[src];gravity=1'><font color=green>(ON)</font></A><BR>"
 	else
 		dat += "Gravity is <A href='?src=\ref[src];gravity=1'><font color=blue>(OFF)</font></A><BR>"
-	user << browse(dat, "window=computer;size=400x500")
-	onclose(user, "computer")
+//inf	show_browser(user, dat, "window=computer;size=400x500")
+//inf	onclose(user, "computer")
+	OpenWithBrowserPopup(user, dat)
 	return
+
+//[INF]
+/obj/machinery/computer/HolodeckControl/proc/OpenWithBrowserPopup(var/mob/user, var/data) // dear god
+	if(!user || !data) return
+
+	if(user && user.client && user.client.get_preference_value(/datum/client_preference/browser_style) == GLOB.PREF_FANCY)
+		// replacing colors because previous one looks pretty bad on dark colors
+		data = replacetext(data, "green", "55cc55")
+		data = replacetext(data, "blue", "44cce5")
+		data = replacetext(data, "red", "cc5555")
+
+	var/datum/browser/popup = new(user, "holodeck-control", "Holodeck Controls", 400, 500)
+	popup.set_content(data)
+	popup.open(use_onclose = TRUE)
+//[/INF]
 
 /obj/machinery/computer/HolodeckControl/Topic(href, href_list)
 	if(..())

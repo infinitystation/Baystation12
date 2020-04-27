@@ -1,5 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/wt550/lethal
-	ammo_type = /obj/item/ammo_casing/c9mm
+/obj/item/weapon/gun/projectile/automatic/sec_smg/lethal
 	magazine_type = /obj/item/ammo_magazine/smg_top
 
 /obj/item/weapon/gun/projectile/automatic/nt41
@@ -21,6 +20,7 @@
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/n10mm
 	allowed_magazines = /obj/item/ammo_magazine/n10mm
+	screen_shake = 0.5 //SMG
 
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=1, burst_accuracy=null, dispersion=null),

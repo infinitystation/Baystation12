@@ -3,6 +3,10 @@
 	var/mob/living/silicon/ai/controlling_ai
 	var/obj/item/device/radio/old_rad
 
+/mob/living/exosuit/Destroy()
+	release_ai_control()
+	. = ..()
+
 /mob/living/exosuit/proc/assume_control(var/mob/living/silicon/ai/user)
 	user.controlling_exosuit = src
 	controlling_ai = user

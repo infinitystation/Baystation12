@@ -108,7 +108,11 @@
 /obj/machinery/atmospherics/unary/cryo_cell/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
 	if(user == occupant || user.stat)
 		return
-
+//[INF]
+	if(!user.skill_check(SKILL_MEDICAL, SKILL_ADEPT))
+		to_chat(user, "You don't know a thing about [src]'s interface to interract with it.")
+		return
+//[/INF]
 	// this is the data which will be sent to the ui
 	var/data[0]
 	data["isOperating"] = on
@@ -130,7 +134,7 @@
 		scan = replacetext(scan,"'scan_notice'","'white'")
 		scan = replacetext(scan,"'scan_warning'","'average'")
 		scan = replacetext(scan,"'scan_danger'","'bad'")
-		scan += "<br>Cryostasis factor: [occupant.stasis_value]x"
+//INF		scan += "<br>Cryostasis factor: [occupant.stasis_value]x"
 		data["occupant"] = scan
 
 	data["cellTemperature"] = round(air_contents.temperature)

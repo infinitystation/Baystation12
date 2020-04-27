@@ -5,7 +5,7 @@
 	fire_sound='sound/weapons/Laser.ogg'
 	impact_sounds = list(BULLET_IMPACT_MEAT = SOUNDS_LASER_MEAT, BULLET_IMPACT_METAL = SOUNDS_LASER_METAL)
 	pass_flags = PASS_FLAG_TABLE | PASS_FLAG_GLASS | PASS_FLAG_GRILLE
-	damage = 30
+	damage = 30 //INF, WAS 40
 	damage_type = BURN
 	sharp = 1 //concentrated burns
 	damage_flags = DAM_LASER
@@ -13,8 +13,8 @@
 	hitscan = 1
 	invisibility = 101	//beam projectiles are invisible as they are rendered by the effect engine
 	penetration_modifier = 0.3
-	armor_penetration = 10
-	//distance_falloff = 2.5
+	armor_penetration = 10 //INF, WAS NOTHING (0)
+	//INF distance_falloff = 2.5
 
 	muzzle_type = /obj/effect/projectile/laser/muzzle
 	tracer_type = /obj/effect/projectile/laser/tracer
@@ -27,10 +27,10 @@
 
 /obj/item/projectile/beam/smalllaser
 	damage = 25
-	armor_penetration = 0
+	armor_penetration = 0 //INF, WAS 10
 
 /obj/item/projectile/beam/midlaser
-	damage = 40
+	damage = 40 //INF, WAS 50
 	armor_penetration = 20
 
 /obj/item/projectile/beam/heavylaser
@@ -39,7 +39,7 @@
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 	damage = 60
 	armor_penetration = 30
-	//distance_falloff = 0.5
+	//INF distance_falloff = 0.5
 
 	muzzle_type = /obj/effect/projectile/laser/heavy/muzzle
 	tracer_type = /obj/effect/projectile/laser/heavy/tracer
@@ -220,7 +220,7 @@
 	damage_type = BURN
 	life_span = 5
 	pass_flags = PASS_FLAG_TABLE
-	//distance_falloff = 4
+	//INF distance_falloff = 4
 
 	muzzle_type = /obj/effect/projectile/trilaser/muzzle
 	tracer_type = /obj/effect/projectile/trilaser/tracer
@@ -239,7 +239,7 @@
 	damage = 2
 	agony = 7
 	sharp = FALSE
-	//distance_falloff = 5
+	//INF distance_falloff = 5
 	damage_flags = 0
 	damage_type = STUN
 	life_span = 3
@@ -267,8 +267,8 @@
 /obj/item/projectile/beam/particle
 	name = "particle lance"
 	icon_state = "particle"
-	damage = 25
-	armor_penetration = 40
+	damage = 35
+	armor_penetration = 50
 	muzzle_type = /obj/effect/projectile/laser_particle/muzzle
 	tracer_type = /obj/effect/projectile/laser_particle/tracer
 	impact_type = /obj/effect/projectile/laser_particle/impact

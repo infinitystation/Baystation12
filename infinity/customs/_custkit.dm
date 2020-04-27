@@ -1,11 +1,13 @@
 /obj/item/custkit
 	name = "customization kit"
-	desc = "This is OOC object, you should not see it. Ударьте этот подарок предметом, который нужно изменить."
+	desc = "This is OOC object, you should not see it. РЈРґР°СЂСЊС‚Рµ СЌС‚РѕС‚ РїРѕРґР°СЂРѕРє РїСЂРµРґРјРµС‚РѕРј, РєРѕС‚РѕСЂС‹Р№ РЅСѓР¶РЅРѕ РёР·РјРµРЅРёС‚СЊ."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "gift2"
 	w_class = 2
 	var/input
 	var/output
+
+	trade_blacklisted = TRUE
 
 /obj/item/custkit/attackby(obj/item/I, mob/user, params)
 	if(istype(I, input))

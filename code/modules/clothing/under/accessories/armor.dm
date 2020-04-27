@@ -73,7 +73,7 @@
 	desc = "A plasteel-reinforced synthetic armor plate, providing good protection. Attaches to a plate carrier."
 	icon_state = "armor_medium"
 	armor = list(
-		melee = ARMOR_MELEE_KNIVES,
+		melee = ARMOR_MELEE_RESISTANT,//INF before KNIVES
 		bullet = ARMOR_BALLISTIC_PISTOL,
 		laser = ARMOR_LASER_SMALL,
 		energy = ARMOR_ENERGY_SMALL,
@@ -98,7 +98,7 @@
 	desc = "A ceramics-reinforced synthetic armor plate, providing state of of the art protection. Attaches to a plate carrier."
 	icon_state = "armor_merc"
 	armor = list(
-		melee = ARMOR_MELEE_RESISTANT,
+		melee = ARMOR_MELEE_MAJOR, //INF before RESISTANT
 		bullet = ARMOR_BALLISTIC_RIFLE,
 		laser = ARMOR_LASER_MAJOR,
 		energy = ARMOR_ENERGY_RESISTANT,
@@ -187,7 +187,7 @@
 		melee = ARMOR_MELEE_KNIVES,
 		bullet = ARMOR_BALLISTIC_SMALL,
 		laser = ARMOR_LASER_RIFLES,
-		energy = ARMOR_ENERGY_RESISTANT,
+		energy = ARMOR_ENERGY_STRONG, //INF was RESISTANT
 		bomb = ARMOR_BOMB_PADDED
 		)
 	siemens_coefficient = 0
@@ -275,7 +275,7 @@
 		melee = ARMOR_MELEE_KNIVES,
 		bullet = ARMOR_BALLISTIC_SMALL,
 		laser = ARMOR_LASER_RIFLES,
-		energy = ARMOR_ENERGY_RESISTANT,
+		energy = ARMOR_ENERGY_STRONG, //INF was RESISTANT
 		bomb = ARMOR_BOMB_PADDED
 		)
 	siemens_coefficient = 0

@@ -57,7 +57,7 @@
 						uplink.hidden_uplink.forceMove(uplink)
 		else
 			input(user, "Please enter your unique tax ID:", "Authentication")
-	to_chat(user, "<span class='warning'>[computer] displays an \"ID not found\" error.</span>")
+	to_chat(user, "<span class='warning'>[computer.holder] displays an \"ID not found\" error.</span>")
 	prog.authenticated = 0
 	computer.kill_program()
 */ //[/INF]

@@ -40,7 +40,6 @@
 	warmup_time = 5
 	multiz = 1
 	range = 1
-	knockdown = 0 //INFINITY'S CHANGE!
 	current_location = "nav_skrellscout_start"
 	current_dock_target = "xil_dock"
 	shuttle_area = list(

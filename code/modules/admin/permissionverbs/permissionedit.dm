@@ -10,6 +10,7 @@
 
 	var/output = {"<!DOCTYPE html>
 <html>
+<meta charset=\"UTF-8\">
 <head>
 <title>Permissions Panel</title>
 <script type='text/javascript' src='search.js'></script>
@@ -42,7 +43,7 @@
 </body>
 </html>"}
 
-	usr << browse(output,"window=editrights;size=600x500")
+	show_browser(usr, output,"window=editrights;size=600x500")
 
 /datum/admins/proc/log_admin_rank_modification(var/adm_ckey, var/new_rank)
 	if(config.admin_legacy_system)	return

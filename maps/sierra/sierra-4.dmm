@@ -134,6 +134,37 @@
 "aau" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/merchant_station)
+"aav" = (
+/obj/machinery/telecomms/allinone{
+	intercept = 1
+	},
+/obj/effect/floor_decal/corner/red{
+	dir = 5
+	},
+/turf/unsimulated/floor{
+	icon_state = "steel"
+	},
+/area/centcom/control)
+"aaw" = (
+/obj/structure/curtain{
+	color = "#68ccab"
+	},
+/turf/simulated/floor/holofloor/wood,
+/area/holodeck/source_temple)
+"aax" = (
+/obj/structure/curtain,
+/turf/simulated/floor/holofloor/wood,
+/area/holodeck/source_temple)
+"aay" = (
+/obj/structure/curtain{
+	color = "#cd6889"
+	},
+/turf/simulated/floor/holofloor/wood,
+/area/holodeck/source_temple)
+"aaz" = (
+/obj/structure/table/rack/holorack,
+/turf/simulated/floor/holofloor/wood,
+/area/holodeck/source_temple)
 "aaA" = (
 /obj/machinery/vending/boozeomat{
 	density = 0;
@@ -206,6 +237,19 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/administration/centcom)
+"aaI" = (
+/obj/structure/holostool,
+/turf/simulated/floor/holofloor/wood,
+/area/holodeck/source_temple)
+"aaJ" = (
+/obj/item/weapon/paper/holodeck_gloves,
+/obj/structure/table/holotable,
+/turf/simulated/floor/holofloor/tiled/dark,
+/area/holodeck/source_boxingcourt)
+"aaK" = (
+/obj/structure/table/holotable,
+/turf/simulated/floor/holofloor/tiled/dark,
+/area/holodeck/source_boxingcourt)
 "aaN" = (
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine/centcomm{
@@ -1293,9 +1337,9 @@
 /obj/item/ammo_magazine/smg_top/rubber,
 /obj/item/ammo_magazine/smg_top/rubber,
 /obj/item/ammo_magazine/smg_top/rubber,
-/obj/item/weapon/gun/projectile/automatic/wt550,
-/obj/item/weapon/gun/projectile/automatic/wt550,
-/obj/item/weapon/gun/projectile/automatic/wt550,
+/obj/item/weapon/gun/projectile/automatic/sec_smg,
+/obj/item/weapon/gun/projectile/automatic/sec_smg,
+/obj/item/weapon/gun/projectile/automatic/sec_smg,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -3384,19 +3428,6 @@
 	dir = 1
 	},
 /area/centcom/specops)
-"aoW" = (
-/obj/structure/bed/chair/padded/light{
-	icon_state = "chair_preview";
-	dir = 8
-	},
-/obj/structure/bed/chair/padded/light{
-	icon_state = "chair_preview";
-	dir = 8
-	},
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/admin_prison)
 "aoX" = (
 /turf/unsimulated/floor{
 	name = "plating";
@@ -3825,18 +3856,6 @@
 "aqV" = (
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/specops/centcom)
-"aqW" = (
-/obj/structure/cryo_spawner/thunderdome/elsa{
-	icon_state = "body_scanner_1";
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/red{
-	dir = 9
-	},
-/turf/unsimulated/floor{
-	icon_state = "steel"
-	},
-/area/centcom/holding)
 "aqX" = (
 /obj/structure/table/reinforced,
 /turf/unsimulated/floor{
@@ -7242,86 +7261,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/shuttle/specops/centcom)
-"aCw" = (
-/obj/effect/landmark{
-	name = "prisonwarp"
-	},
-/turf/unsimulated/floor{
-	icon_state = "lino";
-	name = "linoleum"
-	},
-/area/admin_prison)
-"aCx" = (
-/obj/item/weapon/bedsheet/mime,
-/obj/structure/bed/padded,
-/turf/unsimulated/floor{
-	icon_state = "lino";
-	name = "linoleum"
-	},
-/area/admin_prison)
-"aCF" = (
-/obj/structure/closet/cabinet{
-	anchored = 1;
-	name = "anchored cabinet"
-	},
-/turf/unsimulated/floor{
-	icon_state = "lino";
-	name = "linoleum"
-	},
-/area/admin_prison)
-"aCG" = (
-/turf/unsimulated/floor{
-	icon_state = "lino";
-	name = "linoleum"
-	},
-/area/admin_prison)
-"aCJ" = (
-/turf/unsimulated/floor{
-	dir = 2;
-	icon = 'icons/turf/flooring/carpet.dmi';
-	icon_state = "brown";
-	name = "carpet"
-	},
-/area/admin_prison)
-"aCK" = (
-/obj/structure/bed/chair/padded/light,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/admin_prison)
-"aCL" = (
-/obj/structure/bed/chair/padded/light{
-	icon_state = "chair_preview";
-	dir = 4
-	},
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/admin_prison)
-"aCM" = (
-/obj/structure/table/standard,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/admin_prison)
-"aDb" = (
-/obj/structure/bed/chair/padded/light{
-	icon_state = "chair_preview";
-	dir = 8
-	},
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/admin_prison)
-"aDc" = (
-/obj/structure/bed/chair/padded/light{
-	icon_state = "chair_preview";
-	dir = 1
-	},
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/admin_prison)
 "aDn" = (
 /obj/machinery/door/airlock/centcom{
 	name = "General Access";
@@ -7332,23 +7271,6 @@
 	icon_state = "white"
 	},
 /area/tdome/tdomeobserve)
-"aDq" = (
-/obj/effect/wingrille_spawn/reinforced/crescent,
-/turf/unsimulated/floor/plating,
-/area/admin_prison)
-"aDr" = (
-/obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/mime,
-/turf/unsimulated/floor{
-	icon_state = "lino";
-	name = "linoleum"
-	},
-/area/admin_prison)
-"aDD" = (
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/admin_prison)
 "aDS" = (
 /obj/effect/landmark{
 	name = "ActorSpawn"
@@ -8940,9 +8862,8 @@
 /turf/simulated/floor/plating,
 /area/shuttle/merchant/home)
 "aTZ" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 2;
-	frequency = 1380;
 	id_tag = "merchant_ship_vent"
 	},
 /obj/structure/catwalk,
@@ -8967,9 +8888,8 @@
 	pixel_y = 28
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 2;
-	frequency = 1380;
 	id_tag = "merchant_ship_vent"
 	},
 /obj/machinery/light/small{
@@ -9647,9 +9567,8 @@
 /turf/simulated/floor/plating,
 /area/shuttle/merchant/home)
 "aVQ" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1380;
 	id_tag = "merchant_ship_vent"
 	},
 /obj/structure/catwalk,
@@ -9663,7 +9582,6 @@
 "aVR" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
-	frequency = 1380;
 	id_tag = "merchant_ship_vent"
 	},
 /obj/structure/sign/warning/airlock{
@@ -10238,9 +10156,8 @@
 /turf/simulated/floor/plating,
 /area/merchant_station)
 "aXO" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "merchant_station_vent"
 	},
 /obj/machinery/light/small{
@@ -12142,9 +12059,8 @@
 	dir = 1;
 	icon_state = "bulb_map"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "solar_merchant_pump"
 	},
 /obj/effect/floor_decal/industrial/warning/full,
@@ -14539,64 +14455,6 @@
 /area/holodeck/source_temple)
 "bli" = (
 /turf/simulated/wall/sandstone,
-/area/holodeck/source_temple)
-"blj" = (
-/obj/structure/table/rack/holorack,
-/turf/simulated/floor/holofloor/wood{
-	icon_state = "wood_broken3"
-	},
-/area/holodeck/source_temple)
-"blk" = (
-/obj/structure/holostool,
-/turf/simulated/floor/holofloor/wood{
-	icon_state = "wood_broken3"
-	},
-/area/holodeck/source_temple)
-"bll" = (
-/obj/structure/table/rack/holorack,
-/turf/simulated/floor/holofloor/wood{
-	icon_state = "wood_broken2"
-	},
-/area/holodeck/source_temple)
-"blm" = (
-/obj/structure/holostool,
-/turf/simulated/floor/holofloor/wood{
-	icon_state = "wood_broken4"
-	},
-/area/holodeck/source_temple)
-"bln" = (
-/obj/structure/table/rack/holorack,
-/turf/simulated/floor/holofloor/wood{
-	icon_state = "wood_broken1"
-	},
-/area/holodeck/source_temple)
-"blo" = (
-/obj/structure/holostool,
-/turf/simulated/floor/holofloor/wood{
-	icon_state = "wood_broken6"
-	},
-/area/holodeck/source_temple)
-"blq" = (
-/obj/structure/curtain{
-	color = "#68ccab"
-	},
-/turf/simulated/floor/holofloor/wood{
-	icon_state = "wood_broken6"
-	},
-/area/holodeck/source_temple)
-"blr" = (
-/obj/structure/curtain,
-/turf/simulated/floor/holofloor/wood{
-	icon_state = "wood_broken4"
-	},
-/area/holodeck/source_temple)
-"bls" = (
-/obj/structure/curtain{
-	color = "#cd6889"
-	},
-/turf/simulated/floor/holofloor/wood{
-	icon_state = "wood_broken3"
-	},
 /area/holodeck/source_temple)
 "blu" = (
 /turf/simulated/floor/holofloor/tiled/stone,
@@ -24635,11 +24493,11 @@ aab
 aab
 aab
 aab
-aDq
-aDq
-aDq
-aDq
-aDq
+aab
+aab
+aab
+aab
+aab
 aab
 aab
 aab
@@ -24833,19 +24691,19 @@ aab
 aab
 aab
 aab
-aDq
-aDq
-aDq
-aDq
-aDq
-aCM
-aCM
-aCM
-aDq
-aDq
-aDq
-aDq
-aDq
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
 asI
 aWZ
 aXE
@@ -25035,19 +24893,19 @@ aab
 aab
 aab
 aab
-aDq
-aCF
-aCG
-aDq
-aDD
-aDb
-aDb
-aoW
-aDD
-aDq
-aCG
-aDr
-aDq
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
 asI
 aWZ
 aXE
@@ -25237,19 +25095,19 @@ aab
 aab
 aab
 aab
-aDq
-aCw
-aCJ
-aCG
-aDD
-aDD
-aDD
-aDD
-aDD
-aCG
-aCJ
-aCw
-aDq
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
 asI
 aWZ
 aXE
@@ -25439,19 +25297,19 @@ aab
 aab
 aab
 aab
-aDq
-aCx
-aCG
-aDq
-aCL
-aDD
-aDD
-aDD
-aCL
-aDq
-aCG
-aCF
-aDq
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
 asI
 aWZ
 aXE
@@ -25641,19 +25499,19 @@ aab
 aab
 aab
 aab
-aDq
-aDq
-aDq
-aDq
-aCM
-aDc
-aDD
-aCK
-aCM
-aDq
-aDq
-aDq
-aDq
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
 asI
 aWZ
 aXE
@@ -25843,19 +25701,19 @@ aab
 aab
 aab
 aab
-aDq
-aCF
-aCG
-aDq
-aDb
-aDD
-aDD
-aDD
-aDb
-aDq
-aCG
-aCx
-aDq
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
 asI
 aWZ
 aXE
@@ -26045,19 +25903,19 @@ aab
 aab
 aab
 aab
-aDq
-aCw
-aCJ
-aCG
-aDD
-aDD
-aDD
-aDD
-aDD
-aCG
-aCJ
-aCw
-aDq
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
 asI
 aWZ
 aXE
@@ -26247,19 +26105,19 @@ aab
 aab
 aab
 aab
-aDq
-aCx
-aCG
-aDq
-aDD
-aDD
-aDD
-aDD
-aDD
-aDq
-aCG
-aCF
-aDq
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
 asI
 aWP
 aWP
@@ -26449,19 +26307,19 @@ aab
 aab
 aab
 aab
-aDq
-aDq
-aDq
-aDq
-aDD
-aDD
-aDD
-aDD
-aDD
-aDq
-aDq
-aDq
-aDq
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
 asI
 aXa
 aXa
@@ -26651,19 +26509,19 @@ aab
 aab
 aab
 aab
-aDq
-aCF
-aCG
-aDq
-aDD
-aDD
-aDD
-aDD
-aDD
-aDq
-aCG
-aCx
-aDq
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
 asI
 aXa
 aXF
@@ -26853,19 +26711,19 @@ aab
 aab
 aab
 aab
-aDq
-aCw
-aCJ
-aCG
-aDD
-aDD
-aDD
-aDD
-aDD
-aCG
-aCJ
-aCw
-aDq
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
 asI
 aXa
 aXa
@@ -27055,19 +26913,19 @@ aab
 aab
 aab
 aab
-aDq
-aCx
-aCG
-aDq
-aDD
-aDD
-aDD
-aDD
-aDD
-aDq
-aCG
-aCF
-aDq
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
 asI
 aXa
 aXa
@@ -27257,19 +27115,19 @@ aab
 aab
 aab
 aab
-aDq
-aDq
-aDq
-aDq
-aDq
-aDq
-aDq
-aDq
-aDq
-aDq
-aDq
-aDq
-aDq
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
+aab
 asI
 aXa
 aXa
@@ -31735,7 +31593,7 @@ bgF
 bhb
 bhB
 bds
-bdr
+aaJ
 aWe
 "}
 (84,1,1) = {"
@@ -31937,7 +31795,7 @@ bgG
 bhb
 bhB
 bds
-bdr
+aaK
 aWe
 "}
 (85,1,1) = {"
@@ -32186,7 +32044,7 @@ apt
 apt
 apt
 apt
-aqW
+aqX
 agb
 aab
 aab
@@ -32770,7 +32628,7 @@ abD
 abD
 abD
 agd
-agB
+aav
 agF
 agF
 aia
@@ -33553,7 +33411,7 @@ aHd
 aHv
 aHz
 bli
-blj
+aaz
 aWe
 "}
 (93,1,1) = {"
@@ -33754,8 +33612,8 @@ blu
 blu
 blu
 blu
-blq
-blk
+aaw
+aaI
 aWe
 "}
 (94,1,1) = {"
@@ -34159,7 +34017,7 @@ blB
 blK
 blu
 bli
-bll
+aaz
 aWe
 "}
 (96,1,1) = {"
@@ -34360,8 +34218,8 @@ blC
 blC
 blL
 blu
-blr
-blm
+aax
+aaI
 aWe
 "}
 (97,1,1) = {"
@@ -34765,7 +34623,7 @@ blC
 blL
 blu
 bli
-bln
+aaz
 aWe
 "}
 (99,1,1) = {"
@@ -34966,8 +34824,8 @@ blC
 blC
 blL
 blu
-bls
-blo
+aay
+aaI
 aWe
 "}
 (100,1,1) = {"

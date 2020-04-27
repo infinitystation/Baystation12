@@ -1,11 +1,11 @@
 GLOBAL_LIST_EMPTY(prefs_fixed)
 
 /client/verb/fix_preferences()
-	set name = "Fix characters load"
+	set name = "Fix Characters Load"
 	set category = "OOC"
 
 	if(ckey in GLOB.prefs_fixed)
-		to_chat(usr, SPAN_NOTICE("Ваши персонажи уже должны были загрузитьс&#255;. Если этого не произошло - пожалуйста, сообщите разработчикам."))
+		to_chat(usr, SPAN_NOTICE("Р’Р°С€Рё РїРµСЂСЃРѕРЅР°Р¶Рё СѓР¶Рµ РґРѕР»Р¶РЅС‹ Р±С‹Р»Рё Р·Р°РіСЂСѓР·РёС‚СЊСЃСЏ. Р•СЃР»Рё СЌС‚РѕРіРѕ РЅРµ РїСЂРѕРёР·РѕС€Р»Рѕ - РїРѕР¶Р°Р»СѓР№СЃС‚Р°, СЃРѕРѕР±С‰РёС‚Рµ СЂР°Р·СЂР°Р±РѕС‚С‡РёРєР°Рј."))
 		return
 
 	GLOB.prefs_fixed += ckey

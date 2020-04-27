@@ -93,6 +93,7 @@
 		/obj/item/seeds/tobaccoseed = 15,
 		/obj/item/seeds/tomatoseed = 15,
 		/obj/item/seeds/bamboo = 15,
+		/obj/item/seeds/mandarin = 15, //INF,
 		/obj/item/seeds/watermelonseed = 15,
 		/obj/item/seeds/wheatseed = 15,
 		/obj/item/seeds/whitebeetseed = 15,
@@ -123,6 +124,7 @@
 		/obj/item/seeds/grassseed = 15,
 		/obj/item/seeds/harebell = 15,
 		/obj/item/seeds/kudzuseed = 15,
+		/obj/item/seeds/mandarin = 15, //INF,
 		/obj/item/seeds/lavenderseed = 15,
 		/obj/item/seeds/lemonseed = 15,
 		/obj/item/seeds/libertymycelium = 15,
@@ -266,7 +268,7 @@
 			dat += "</tr>"
 		dat += "</table>"
 
-	user << browse(dat, "window=seedstorage;size=800x500")
+	show_browser(user, dat, "window=seedstorage;size=800x500")
 	onclose(user, "seedstorage")
 
 /obj/machinery/seed_storage/Topic(var/href, var/list/href_list)

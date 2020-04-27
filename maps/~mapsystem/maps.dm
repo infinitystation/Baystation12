@@ -117,6 +117,9 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 
 	var/supply_currency_name = "Credits"
 	var/supply_currency_name_short = "Cr."
+	var/local_currency_name = "thalers"
+	var/local_currency_name_singular = "thaler"
+	var/local_currency_name_short = "T"
 
 	var/list/available_cultural_info = list(
 		TAG_HOMEWORLD = list(
@@ -322,6 +325,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 /datum/map/proc/setup_economy()
 	news_network.CreateFeedChannel("Nyx Daily", "SolGov Minister of Information", 1, 1)
 	news_network.CreateFeedChannel("The Gibson Gazette", "Editor Mike Hammers", 1, 1)
+	news_network.CreateFeedChannel("Sol Central Gazette", "Chief Enlisted Manager Malbro Endson", 1, 1) //INF
 
 	for(var/loc_type in typesof(/datum/trade_destination) - /datum/trade_destination)
 		var/datum/trade_destination/D = new loc_type

@@ -12,7 +12,7 @@
 	if(!need_breathe()) return
 
 	var/datum/gas_mixture/breath = null
-
+	if(status_flags & FAKEDEATH) return //INF
 	//First, check if we can breathe at all
 	if(handle_drowning() || (is_asystole() && !(CE_STABLE in chem_effects) && active_breathe)) //crit aka circulatory shock
 		losebreath = max(2, losebreath + 1)

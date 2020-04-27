@@ -67,7 +67,6 @@
 			else		to_chat(src, "<span class='warning'>Error: Private-Message: Client not found. They may have lost connection, so try using an adminhelp!</span>")
 			return
 
-	msg = sanitize_a0(msg)
 
 	var/datum/client_lite/receiver_lite = client_repository.get_lite_client(C)
 	var/datum/client_lite/sender_lite = client_repository.get_lite_client(src)
@@ -112,7 +111,7 @@
 			spawn(0)	//so we don't hold the caller proc up
 				var/sender = src
 				var/sendername = key
-				var/reply = sanitize_a0(input(C, msg,"[recieve_pm_type] PM from [sendername]", "") as text|null)		//show message and await a reply
+				var/reply = input(C, msg,"[recieve_pm_type] PM from [sendername]", "") as text|null		//show message and await a reply
 				if(C && reply)
 					if(sender)
 						C.cmd_admin_pm(sender,reply)										//sender is still about, let's reply to them
@@ -148,6 +147,11 @@
 	admin_pm_repository.store_pm(src, C, msg)
 
 	ticket.msgs += new /datum/ticket_msg(src.ckey, C.ckey, msg)
+	if(establish_db_connection())
+		var/sql_text = "[src.ckey] -> [C.ckey]: [sanitizeSQL(msg)]\n"
+		var/DBQuery/ticket_text = dbcon.NewQuery("UPDATE erro_admin_tickets SET text = CONCAT(COALESCE(text,''), '[sql_text]') WHERE round = '[game_id]' AND inround_id = '[ticket.id]';")
+		ticket_text.Execute()
+
 	update_ticket_panels()
 
 	//we don't use message_admins here because the sender/receiver might get it too

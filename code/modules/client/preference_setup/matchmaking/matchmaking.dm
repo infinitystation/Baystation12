@@ -22,7 +22,7 @@ var/global/datum/matchmaker/matchmaker = new()
 		if(R.other && !R.finalized)
 			to_warn |= R.holder.current
 	for(var/mob/M in to_warn)
-		to_chat(M,"<span class='warning'>You have new connections. Use \"<a href='byond://?src=\ref[M];show_relations=1'>See Relationship Info</a>\" to view and finalize them.</span>")
+		to_chat(M,"<span class='warning'>Вы установили механические отношения с кем-то. Нажмите \"<a href='byond://?src=\ref[M];show_relations=1'>Посмотреть отношения</a>\" чтобы просмотреть и утвердить их.</span>")
 
 /datum/matchmaker/proc/get_relationships(datum/mind/M, finalized_only)
 	. = list()
@@ -102,8 +102,8 @@ var/global/datum/matchmaker/matchmaker = new()
 	return 1
 
 /datum/relation/proc/sever()
-	to_chat(holder.current,"<span class='warning'>Your connection with [other.holder] is no more.</span>")
-	to_chat(other.holder.current,"<span class='warning'>Your connection with [holder] is no more.</span>")
+	to_chat(holder.current,"<span class='warning'>Ваши отношения с [other.holder] окончены.</span>")
+	to_chat(other.holder.current,"<span class='warning'>Ваши отношения с [holder] окончены.</span>")
 	other.other = null
 	matchmaker.relations -= other
 	matchmaker.relations -= src
@@ -114,11 +114,11 @@ var/global/datum/matchmaker/matchmaker = new()
 //Finalizes and propagates info if both sides are done.
 /datum/relation/proc/finalize()
 	finalized = 1
-	to_chat(holder.current,"<span class='warning'>You have finalized a connection with [other.holder].</span>")
-	to_chat(other.holder.current,"<span class='warning'>[holder] has finalized a connection with you.</span>")
+	to_chat(holder.current,"<span class='warning'>Вы утвердили отношения с [other.holder].</span>")
+	to_chat(other.holder.current,"<span class='warning'>[holder] утвердил отношения с вами.</span>")
 	if(other && other.finalized)
-		to_chat(holder.current,"<span class='warning'>Your connection with [other.holder] is now confirmed!</span>")
-		to_chat(other.holder.current,"<span class='warning'>Your connection with [holder] is now confirmed!</span>")
+		to_chat(holder.current,"<span class='warning'>Ваши отношения с [other.holder] подтверждены!</span>")
+		to_chat(other.holder.current,"<span class='warning'>Ваши отношения с [holder] подтверждены!</span>")
 		var/list/candidates = filter_list(GLOB.player_list, /mob/living/carbon/human)
 		candidates -= holder.current
 		candidates -= other.holder.current
@@ -141,10 +141,10 @@ var/global/datum/matchmaker/matchmaker = new()
 			if(prob(70))
 				M.mind.known_connections += get_desc_string()
 			else
-				M.mind.known_connections += "[holder] and [other.holder] seem to know each other, but you're not sure on the details."
+				M.mind.known_connections += "[holder] и [other.holder], похоже, знают друг друга, но вы не уверены в деталях."
 
 /datum/relation/proc/get_desc_string()
-	return "[holder] and [other.holder] know each other."
+	return "[holder] и [other.holder] знают друг друга."
 
 /mob/living/verb/see_relationship_info()
 	set name = "See Relationship Info"
@@ -155,8 +155,8 @@ var/global/datum/matchmaker/matchmaker = new()
 	var/list/dat = list()
 	var/editable = 0
 	if(mind.gen_relations_info)
-		dat += "<b>Things they all know about you:</b><br>[mind.gen_relations_info]<hr>"
-		dat += "An <b>\[F\]</b> indicates that the other player has finalized the connection.<br>"
+		dat += "<b>Что им о вас известно:</b><br>[mind.gen_relations_info]<hr>"
+		dat += "<b>\[F\]</b> показывате что другой игрок утвердил отношения.<br>"
 		dat += "<br>"
 	for(var/datum/relation/R in relations)
 		dat += "<b>[R.other.finalized ? "\[F\] " : ""][R.other.holder]</b>, [R.other.holder.role_alt_title ? R.other.holder.role_alt_title : R.other.holder.assigned_role]."
@@ -165,13 +165,13 @@ var/global/datum/matchmaker/matchmaker = new()
 			editable = 1
 		dat += "<br>[R.desc]"
 		dat += "<br>"
-		dat += "<b>Things they know about you:</b>[!R.finalized ?"<a href='?src=\ref[src];info_relation=\ref[R]'>Edit</a>" : ""]<br>[R.info ? "[R.info]" : " Nothing specific."]"
+		dat += "<b>Что им о вас известно:</b>[!R.finalized ?"<a href='?src=\ref[src];info_relation=\ref[R]'>Edit</a>" : ""]<br>[R.info ? "[R.info]" : " Nothing specific."]"
 		if(R.other.info)
-			dat += "<br><b>Things you know about them:</b><br>[R.other.info]<br>[R.other.holder.gen_relations_info]"
+			dat += "<br><b>Что вы знаете о них:</b><br>[R.other.info]<br>[R.other.holder.gen_relations_info]"
 		dat += "<hr>"
 
 	if(mind.known_connections && mind.known_connections.len)
-		dat += "<b>Other people:</b>"
+		dat += "<b>Другие персонажи:</b>"
 		for(var/I in mind.known_connections)
 			dat += "<br><i>[I]</i>"
 
@@ -188,14 +188,14 @@ var/global/datum/matchmaker/matchmaker = new()
 	var/list/relations = matchmaker.get_relationships(mind,other.mind,TRUE)
 	var/list/dat = list("<h2>[other]</h2>")
 	if(mind.gen_relations_info)
-		dat += "<b>Things they know about you:</b><br>[mind.gen_relations_info]<hr>"
+		dat += "<b>Что им о вас известно:</b><br>[mind.gen_relations_info]<hr>"
 		dat += "<br>"
 	for(var/datum/relation/R in relations)
 		dat += "<br>[R.desc]"
 		dat += "<br>"
-		dat += "<b>Things they know about you:</b><br>[R.info ? "[R.info]" : " Nothing specific."]"
+		dat += "<b>Что им о вас известно:</b><br>[R.info ? "[R.info]" : " Nothing specific."]"
 		if(R.other.info)
-			dat += "<br><b>Things you know about them:</b><br>[R.other.info]<br>[R.other.holder.gen_relations_info]"
+			dat += "<br><b>Что вы знаете о них:</b><br>[R.other.info]<br>[R.other.holder.gen_relations_info]"
 		dat += "<hr>"
 
 	var/datum/browser/popup = new(usr, "relations", "Relationship Info")
@@ -219,14 +219,14 @@ var/global/datum/matchmaker/matchmaker = new()
 	if(href_list["info_relation"])
 		var/datum/relation/R = locate(href_list["info_relation"])
 		if(istype(R))
-			var/info = sanitize(input("What would you like the other party for this connection to know about your character?","Character info",R.info) as message|null)
+			var/info = sanitize(input("Что бы вы хотели позволить им знать о вашем персонаже?","Character info",R.info) as message|null)
 			if(info)
 				R.info = info
 				see_relationship_info()
 				return TOPIC_HANDLED
 	if(href_list["relations_close"])
 		var/ok = "Close anyway"
-		ok = alert("HEY! You have some non-finalized relationships. You can terminate them if they do not fit your character, or edit the info tidbit that the other party is given. THIS IS YOUR ONLY CHANCE to do so - after you close the window, they won't be editable.","Finalize relationships","Return to edit", "Close anyway")
+		ok = alert("У вас есть некоторые незавершенные отношения. Вы можете прекратить их действие, если они не соответствуют вашему персонажу, или отредактировать информацию, предоставленную другой стороне. ЭТО ВАМ ЕДИНСТВЕННЫЙ ШАНС - после закрытия окна они не будут редактироваться.","Утвердить","Редактировать", "Закрыть")
 		if(ok == "Close anyway")
 			var/list/relations = matchmaker.get_relationships(mind)
 			for(var/datum/relation/R in relations)

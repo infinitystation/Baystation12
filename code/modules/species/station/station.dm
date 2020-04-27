@@ -121,7 +121,7 @@
 	max_age = 120
 
 	burn_mod = 0.9
-	oxy_mod = 0.8 //INF, WAS 1.3
+	oxy_mod = 1.3
 	flash_mod = 1.2
 	toxins_mod = 0.8
 	siemens_coefficient = 1.3

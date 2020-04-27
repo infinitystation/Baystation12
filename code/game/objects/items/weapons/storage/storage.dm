@@ -96,6 +96,8 @@
 	storage_ui.on_open(user)
 	storage_ui.show_to(user)
 
+	animate_storage_rustle(src) //INF
+
 /obj/item/weapon/storage/proc/prepare_ui()
 	storage_ui.prepare_ui()
 
@@ -202,6 +204,8 @@
 				else if (W && W.w_class >= ITEM_SIZE_NORMAL) //Otherwise they can only see large or normal items from a distance...
 					M.show_message("<span class='notice'>\The [usr] puts [W] into [src].</span>", VISIBLE_MESSAGE)
 
+			animate_storage_rustle(src) //INF
+
 		if(!NoUpdate)
 			update_ui_after_item_insertion()
 	update_icon()
@@ -232,6 +236,7 @@
 	else
 		W.reset_plane_and_layer()
 	W.forceMove(new_location)
+	if(usr) animate_storage_rustle(src) //INF
 
 	if(usr && !NoUpdate)
 		update_ui_after_item_removal()
@@ -243,9 +248,13 @@
 	return 1
 
 // Only do ui functions for now; the obj is responsible for anything else.
-/obj/item/weapon/storage/proc/on_item_deletion(obj/item/W)
+/obj/item/weapon/storage/proc/on_item_pre_deletion(obj/item/W)
 	if(storage_ui)
 		storage_ui.on_pre_remove(null, W) // Supposed to be able to handle null user.
+
+// Only do ui functions for now; the obj is responsible for anything else.
+/obj/item/weapon/storage/proc/on_item_post_deletion(obj/item/W)
+	if(storage_ui)
 		update_ui_after_item_removal()
 	queue_icon_update()
 

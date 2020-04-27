@@ -181,22 +181,22 @@
 
 /datum/gear/shoes/caligae
 	display_name = "(Tajara) caligae"
-	path = /obj/item/clothing/shoes/sandal/tajaran/caligae
+	path = /obj/item/clothing/shoes/sandal/xeno/caligae
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
 
 /datum/gear/shoes/caligae/New()
 	..()
 	var/caligae = list()
-	caligae["no sock"] = /obj/item/clothing/shoes/sandal/tajaran/caligae
-	caligae["black sock"] = /obj/item/clothing/shoes/sandal/tajaran/caligae/black
-	caligae["grey sock"] = /obj/item/clothing/shoes/sandal/tajaran/caligae/grey
-	caligae["white sock"] = /obj/item/clothing/shoes/sandal/tajaran/caligae/white
+	caligae["no sock"] = /obj/item/clothing/shoes/sandal/xeno/caligae
+	caligae["black sock"] = /obj/item/clothing/shoes/sandal/xeno/caligae/black
+	caligae["grey sock"] = /obj/item/clothing/shoes/sandal/xeno/caligae/grey
+	caligae["white sock"] = /obj/item/clothing/shoes/sandal/xeno/caligae/white
 	gear_tweaks += new/datum/gear_tweak/path(caligae)
 
 /datum/gear/head/zhan_scarf
 	display_name = "(Tajara) Zhan headscarf"
-	path = /obj/item/clothing/head/tajaran/scarf
+	path = /obj/item/clothing/head/xeno/scarf
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
 
@@ -294,3 +294,24 @@
 	slot = slot_belt
 	cost = 4
 	whitelisted = list(SPECIES_ADHERENT)
+
+// Space-Adapted Human clothing
+/datum/gear/accessory/space_adapted
+	sort_category = "Xenowear"
+	category = /datum/gear/accessory/space_adapted
+	whitelisted = list(SPECIES_SPACER)
+
+/datum/gear/accessory/space_adapted/venter
+	display_name = "venter assembly"
+	path = /obj/item/clothing/accessory/space_adapted/venter
+	flags = GEAR_HAS_COLOR_SELECTION
+
+/datum/gear/accessory/space_adapted/legbrace
+	display_name = "legbrace"
+	path = /obj/item/clothing/accessory/space_adapted/bracer
+	flags = GEAR_HAS_COLOR_SELECTION
+
+/datum/gear/accessory/space_adapted/neckbrace
+	display_name = "neckbrace"
+	path = /obj/item/clothing/accessory/space_adapted/bracer/neckbrace
+	flags = GEAR_HAS_COLOR_SELECTION

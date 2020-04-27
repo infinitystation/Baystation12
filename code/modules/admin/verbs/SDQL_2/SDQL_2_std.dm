@@ -131,6 +131,7 @@
 /proc/_replacetext(Haystack, Needle, Replacement, Start = 1,End = 0)
 	return replacetext(Haystack, Needle, Replacement, Start, End)
 
+
 /proc/_replacetextEx(Haystack, Needle, Replacement, Start = 1,End = 0)
 	return replacetextEx(Haystack, Needle, Replacement, Start, End)
 

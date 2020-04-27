@@ -38,6 +38,8 @@
 
 	var/stat = CONSCIOUS //Whether a mob is alive or dead. TODO: Move this to living - Nodrak
 
+	var/obj/screen/cells = null
+
 	var/obj/screen/hands = null
 	var/obj/screen/pullin = null
 	var/obj/screen/purged = null
@@ -115,8 +117,6 @@
 
 	var/shakecamera = 0
 	var/a_intent = I_HELP//Living
-
-	var/stop_sight_update = 0 //for update_sight()
 
 	var/decl/move_intent/move_intent = /decl/move_intent/walk
 	var/list/move_intents = list(/decl/move_intent/walk)

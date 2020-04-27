@@ -14,6 +14,8 @@
 	var/list/climbers
 	var/climb_speed_mult = 1
 
+	var/trade_blacklisted //[INF] Using in traders goods list to restrict buying custom items
+
 /atom/New(loc, ...)
 	//atom creation method that preloads variables at creation
 	if(GLOB.use_preloader && (src.type == GLOB._preloader.target_path))//in case the instanciated atom is creating other atoms in New()

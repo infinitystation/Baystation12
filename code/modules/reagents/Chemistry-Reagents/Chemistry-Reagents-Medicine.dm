@@ -456,10 +456,12 @@
 		for(var/obj/item/organ/internal/I in H.internal_organs)
 			if(!BP_IS_ROBOTIC(I))
 				if(I.organ_tag == BP_BRAIN)
-					if(I.damage >= I.min_bruised_damage)
-						continue
+					// if we have located an organic brain, apply side effects
 					H.confused++
 					H.drowsyness++
+					// peridaxon only heals minor brain damage
+					if(I.damage >= I.min_bruised_damage)
+						continue
 				I.heal_damage(removed)
 
 /datum/reagent/ryetalyn
@@ -502,7 +504,7 @@
 			to_chat(M, pick(SPAN_NOTICE("The head aches from sounds..."), SPAN_NOTICE("My ears are plugged up...")))
 			M.stun_effect_act(0, 10, BP_HEAD, "headache")
 		if(prob(5) && !M.stat) //don't do that as dead person, please
-			M.custom_emote(VISIBLE_MESSAGE, pick("прижимает уши к голове.", "тяжело дышит через нос.", "морщится от боли."))
+			M.custom_emote(VISIBLE_MESSAGE, pick("РїСЂРёР¶РёРјР°РµС‚ СѓС€Рё Рє РіРѕР»РѕРІРµ.", "С‚СЏР¶РµР»Рѕ РґС‹С€РёС‚ С‡РµСЂРµР· РЅРѕСЃ.", "РјРѕСЂС‰РёС‚СЃСЏ РѕС‚ Р±РѕР»Рё."))
 		if(prob(10))
 			to_chat(M, SPAN_DANGER("My heart gonna break out from the chest!"))
 			M.stun_effect_act(0, 15, BP_CHEST, "heart damage") //a small pain without damage
