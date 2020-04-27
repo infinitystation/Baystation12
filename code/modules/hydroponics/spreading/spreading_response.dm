@@ -20,7 +20,7 @@
 	manual_unbuckle(user)
 
 /obj/effect/vine/Crossed(atom/movable/O)
-	if(isliving(O) && !(isxenomorph(O))) //INF was isliving(O)
+	if(isliving(O))
 		trodden_on(O)
 
 /obj/effect/vine/proc/trodden_on(var/mob/living/victim)
@@ -71,21 +71,14 @@
 	if(!Adjacent(victim))
 		return
 
-	if(istype(victim, /mob/living/carbon/alien/larva)) //INF
-		return
-
 	if(ishuman(victim))
 		var/mob/living/carbon/human/H = victim
-
-		if(isxenomorph(H)) //INF
-			return
-
 		if(H.species.species_flags & SPECIES_FLAG_NO_TANGLE)
 			return
 		if(victim.loc != loc && istype(H.shoes, /obj/item/clothing/shoes/magboots) && (H.shoes.item_flags & ITEM_FLAG_NOSLIP) || H.species.check_no_slip(H))
 			visible_message("<span class='danger'>Tendrils lash to drag \the [victim] but \the [src] can't pull them across the ground!</span>")
 			return
-
+	
 	victim.visible_message("<span class='danger'>Tendrils lash out from \the [src] and drag \the [victim] in!</span>", "<span class='danger'>Tendrils lash out from \the [src] and drag you in!</span>")
 	victim.forceMove(loc)
 	if(buckle_mob(victim))
@@ -103,7 +96,7 @@
 		var/breakouttime = rand(100, 200) //10 to 20 seconds.
 		if(buckled_mob != user)
 			if(isxenomorph(user))
-				breakouttime = 0.1
+				breakouttime = 20
 			if(do_mob(user, buckled_mob, breakouttime, incapacitation_flags = INCAPACITATION_DEFAULT & ~INCAPACITATION_RESTRAINED))
 				if(!buckled_mob)
 					return
