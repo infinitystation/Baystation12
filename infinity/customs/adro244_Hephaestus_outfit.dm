@@ -47,8 +47,7 @@
 	item_icons = list(slot_shoes_str = CUSTOM_ITEM_MOB)
 	icon_state = "rivalboots"
 	item_state = "rivalboots"
-	var/footstep = 1
-	species_restricted = list(SPECIES_IPC)  //ИС - по флавору иное строение ступней; ООС - предотвращение кражи обуви некоторыми личностями ради спама звуком. Вы знете кто вы.
+	species_restricted = list(SPECIES_IPC)
 	trade_blacklisted = TRUE
 
 /obj/item/weapon/clothingbag/rivalset
@@ -61,4 +60,4 @@
 	new /obj/item/clothing/suit/storage/rivalcoat(src)
 	new /obj/item/clothing/under/rank/security/rivalpants(src)
 	new /obj/item/clothing/gloves/thick/duty/rivalgloves(src)
-	new /obj/item/clothing/shoes/jackboots/rivalboots(src)
+	new /obj/item/clothing/shoes/jackboots/heph_boots/rivalboots(src)
