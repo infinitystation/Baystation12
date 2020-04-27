@@ -8,11 +8,6 @@
 #define LANGUAGE_PUNATI			"Primitive sinta'unathi"
 #define LANGUAGE_PSKRELLIAN		"Primitive skrellian"
 
-//WOLF_SWARM-INF
-/*
-#define LANGUAGE_SWARM          "Swarm Audio Language"
-#define LANGUAGE_SWARM_FAR      "Swarm Far Communicate Language"
-*/
 
 #define ANTAG_LANGUAGES 			list(LANGUAGE_CULT, LANGUAGE_ALIUM, LANGUAGE_OCCULT)
 
