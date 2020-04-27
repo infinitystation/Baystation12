@@ -4,7 +4,7 @@
 
 	var/atom/holder
 	var/mob/living/silicon/ai/MyAI
-
+	density = 0
 	invisibility = INVISIBILITY_SYSTEM
 //	see_invisible = SEE_INVISIBLE_LIVING
 
