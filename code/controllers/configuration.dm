@@ -777,6 +777,8 @@ var/list/gamemode_cache = list()
 					ntnet_radius_multiplyer = text2num(value)
 				if("ntnet_speed_limiter")
 					ntnet_speed_limiter = text2num(value)
+				if("ai_multicam")
+					ai_multicam = text2num(value)
 			//[/INF]
 
 				if("max_gear_cost")

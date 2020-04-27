@@ -1,0 +1,1 @@
+#define PIC_IN_PIC_STANDART_ICON 'infinity/icons/misc/pic_in_pic.dmi'

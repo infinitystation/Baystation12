@@ -1,3 +1,4 @@
+//INF_FILE
 //~KareTa
 /obj/screen/ai_button
 	var/mob/living/silicon/ai/ai_verb

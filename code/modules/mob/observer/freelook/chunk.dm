@@ -105,12 +105,14 @@
 	seenby += eye
 	eye.visibleChunks += src
 	if(eye.owner && eye.owner.client)
+		eye.visibleChunks += src//inf
 		eye.owner.client.images += obscured
 
 /datum/chunk/proc/remove_eye(mob/observer/eye/eye)
 	seenby -= eye
 	eye.visibleChunks -= src
 	if(eye.owner && eye.owner.client)
+		eye.visibleChunks -= src//inf
 		eye.owner.client.images -= obscured
 
 // Updates the chunk, makes sure that it doesn't update too much. If the chunk isn't being watched it will
