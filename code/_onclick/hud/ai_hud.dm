@@ -29,7 +29,7 @@
 	adding += new /obj/screen/ai_button{screen_loc = ui_ai_crew_rec;		name = "Crew Records";				icon_state = "ai_crew_rec";		ai_verb = /mob/living/silicon/ai/proc/show_crew_records}()
 
 	adding += new /obj/screen/ai_button{screen_loc = ui_multicam_mode;		name = "Multicamera Mode";			icon_state = "multicam";		ai_verb = /mob/living/silicon/ai/proc/toggle_multicam}()
-	adding += new /obj/screen/ai_button{screen_loc = ui_new_multicam_cam;	name = "Add New Camera";			icon_state = "multicam";		ai_verb = /mob/living/silicon/ai/proc/drop_new_multicam}()
+	adding += new /obj/screen/ai_button{screen_loc = ui_new_multicam_cam;	name = "Add New Camera";			icon_state = "new_cam";		ai_verb = /mob/living/silicon/ai/proc/drop_new_multicam}()
 
 	mymob.client.screen = list()
 	mymob.client.screen.Add(adding)

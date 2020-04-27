@@ -28,7 +28,7 @@
 	#define ui_ai_holo_mov			"WEST:6, NORTH-1:0"
 	//multicam
 		#define ui_multicam_mode	"WEST:6,SOUTH+1:5"
-		#define ui_new_multicam_cam	"WEST:6,SOUTH+1:5"
+		#define ui_new_multicam_cam	"WEST:6,SOUTH+2:5"
 
 
 //Crew
