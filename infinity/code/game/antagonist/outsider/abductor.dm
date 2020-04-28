@@ -12,7 +12,7 @@ GLOBAL_LIST_INIT(scientist_ship_names, list("Alpha", "Beta", "Gamma"))
 	flags = ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_VOTABLE
 	antaghud_indicator = "hudwizard"
 
-	hard_cap = 1
+	hard_cap = 2
 	hard_cap_round = 3
 	initial_spawn_req = 1
 	initial_spawn_target = 2
@@ -56,7 +56,7 @@ GLOBAL_LIST_INIT(scientist_ship_names, list("Alpha", "Beta", "Gamma"))
 	flags = ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_VOTABLE
 	antaghud_indicator = "hudwizard"
 
-	hard_cap = 1
+	hard_cap = 2
 	hard_cap_round = 3
 	initial_spawn_req = 1
 	initial_spawn_target = 2
