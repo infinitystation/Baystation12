@@ -307,9 +307,11 @@ var/list/spells = typesof(/spell) //needed for the badmin verb for now
 	else if(!targets.len)
 		return 0
 
+	//INF If some spells does nothing, try to set their selection_type = "special"
+	if(selection_type == "special")	return 1	//INF	Teleport and construction uses remote area or type as targets, so we can't locate them in our range or view
 	var/list/valid_targets = view_or_range(range, holder, selection_type)
 	for(var/target in targets)
-		if(!target in valid_targets) //INF, WAS if(!(target in valid_targets)) - it doesn't works with such amount of shitcode
+		if(!(target in valid_targets))
 			return 0
 	return 1
 

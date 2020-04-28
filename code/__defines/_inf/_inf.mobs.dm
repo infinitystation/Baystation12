@@ -14,24 +14,6 @@
 //Organs
 #define BP_FAKE    "fake_brain"
 
-
-//Swarm Limbs
-#define BP_L_F_LEG 		"left front leg"
-#define BP_R_F_LEG 		"right front leg"
-#define BP_L_B_LEG 		"left back leg"
-#define BP_R_B_LEG 		"right back leg"
-#define BP_SHELL   		"shell"
-#define BP_MANIPULATOR	"manipulator"
-
-//Swarm Organs
-#define BP_SENSOR			"sensor"
-#define BP_GENERATOR		"generator"
-#define BP_CORE				"core"
-#define BP_THRUSTER			"thruster"
-#define BP_ARMOR			"armor"
-#define BP_ANTI_EMP_PLATING	"anti EMP plating"
-#define BP_MATTER_TANK		"matter tank"
-
 #define SPECIES_TAJARA "Tajara"
 #define SPECIES_EROSAN "Erosan'Unathi"
 #define SPECIES_RESOMI "Resomi"

@@ -9,11 +9,6 @@
 #define LANGUAGE_PSKRELLIAN		"Primitive skrellian"
 #define LANGUAGE_ABDUCTORS      "Mindlink"
 
-//WOLF_SWARM-INF
-/*
-#define LANGUAGE_SWARM          "Swarm Audio Language"
-#define LANGUAGE_SWARM_FAR      "Swarm Far Communicate Language"
-*/
 
 #define ANTAG_LANGUAGES 			list(LANGUAGE_CULT, LANGUAGE_ALIUM, LANGUAGE_OCCULT)
 
