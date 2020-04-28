@@ -102,6 +102,11 @@
 	flags = GEAR_HAS_COLOR_SELECTION
 	path = /obj/item/clothing/shoes/footwraps
 
+/datum/gear/shoes/resomi/socks
+	display_name = "(Resomi) koishi"
+	flags = GEAR_HAS_COLOR_SELECTION
+	path = /obj/item/clothing/shoes/footwraps/socks_resomi
+
 /datum/gear/suit/resomi_labcoat
 	display_name = "(Resomi) small labcoat"
 	path = /obj/item/clothing/suit/storage/toggle/Resomilabcoat
