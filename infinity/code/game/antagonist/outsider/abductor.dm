@@ -1,6 +1,9 @@
 GLOBAL_DATUM_INIT(abductor, /datum/antagonist/abductors, new)
 GLOBAL_DATUM_INIT(abductor_sci, /datum/antagonist/abductors_sci, new)
 
+var/list/agent_ship_names     = list("Alpha", "Beta", "Gamma")
+var/list/scientist_ship_names = list("Alpha", "Beta", "Gamma")
+
 /datum/antagonist/abductors
 	id = MODE_ABDUCTOR
 	role_text = "Abductor Agent"
@@ -12,7 +15,7 @@ GLOBAL_DATUM_INIT(abductor_sci, /datum/antagonist/abductors_sci, new)
 	hard_cap = 1
 	hard_cap_round = 3
 	initial_spawn_req = 1
-	initial_spawn_target = 1
+	initial_spawn_target = 2
 	min_player_age = 18
 
 	faction = "abductor"
@@ -22,7 +25,9 @@ GLOBAL_DATUM_INIT(abductor_sci, /datum/antagonist/abductors_sci, new)
 /datum/antagonist/abductors/update_antag_mob(var/datum/mind/abductor)
 	. = ..()
 
-	abductor.current.real_name = "Mothership Alpha Agent"
+	abductor.current.real_name = "Mothership [agent_ship_names[0]] Agent"
+
+	agent_ship_names.Remove(agent_ship_names[0])
 
 	abductor.current.SetName(abductor.current.real_name)
 
@@ -54,7 +59,7 @@ GLOBAL_DATUM_INIT(abductor_sci, /datum/antagonist/abductors_sci, new)
 	hard_cap = 1
 	hard_cap_round = 3
 	initial_spawn_req = 1
-	initial_spawn_target = 1
+	initial_spawn_target = 2
 	min_player_age = 18
 
 	faction = "abductor"
@@ -63,7 +68,8 @@ GLOBAL_DATUM_INIT(abductor_sci, /datum/antagonist/abductors_sci, new)
 /datum/antagonist/abductors_sci/update_antag_mob(var/datum/mind/abductor)
 	. = ..()
 
-	abductor.current.real_name = "Mothership Alpha Scientist"
+	abductor.current.real_name = "Mothership [scientist_ship_names[0]] Scientist"
+	scientist_ship_names.Remove(scientist_ship_names[0])
 
 	abductor.current.SetName(abductor.current.real_name)
 

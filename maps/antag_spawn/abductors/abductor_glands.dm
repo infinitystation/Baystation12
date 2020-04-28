@@ -101,7 +101,7 @@
 		if(H.faction != "spiders")
 			H.faction = "spiders"
 
-		if(prob(5))
+		if(prob(0.4))
 			H.visible_message(SPAN_WARNING("A small spider crawls out from [H]'s mouth!"))
 			new /obj/effect/spider/spiderling(get_turf(H))
 

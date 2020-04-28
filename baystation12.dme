@@ -3703,7 +3703,6 @@
 #include "maps\antag_spawn\antag_spawn_bases.dm"
 #include "maps\antag_spawn\abductors\abductor_glands.dm"
 #include "maps\antag_spawn\abductors\abductors_inf.dm"
-#include "maps\antag_spawn\abductors\abductors_base_inf.dmm"
 #include "maps\antag_spawn\deity\deity.dm"
 #include "maps\antag_spawn\ert\ert_inf.dm"
 #include "maps\antag_spawn\heist\heist_inf.dm"
