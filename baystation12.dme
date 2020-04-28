@@ -3273,6 +3273,7 @@
 #include "infinity\code\changelog.dm"
 #include "infinity\code\_helpers\animations.dm"
 #include "infinity\code\_helpers\gauss.dm"
+#include "infinity\code\_helpers\unsorted.dm"
 #include "infinity\code\_onclick\hud\alien_larva.dm"
 #include "infinity\code\_onclick\hud\radial.dm"
 #include "infinity\code\controllers\configuration.dm"

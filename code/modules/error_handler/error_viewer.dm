@@ -169,6 +169,7 @@ GLOBAL_DATUM(error_cache, /datum/error_viewer/error_cache)
 	var/info
 
 /datum/error_viewer/error_entry/New(exception/e, list/desclines, skip_count)
+	spawn(0) SSwebhooks.send(WEBHOOK_SEND_RUNTIME, list("main_desc" = name, "additional_desc" = desc))//inf
 	if (!istype(e))
 		name = "<b>\[[time_stamp()]]</b> Uncaught exception: <b>[html_encode(e.name)]</b>"
 		return
