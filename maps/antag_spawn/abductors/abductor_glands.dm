@@ -30,10 +30,16 @@
 							"discharger", "pharma-provider", "emitter",
 							"destabilizer", "de-observation matrix", "scrambler")
 
+/obj/item/organ/internal/gland/proc/SetRandomIcon_State()
+	icon_state = "gland[rand(1,9)]"
+
+/obj/item/organ/internal/gland/proc/SetRandomName()
+	real_name = "[pick(first_names)] [pick(second_names)]"
 
 /obj/item/organ/internal/gland/Initialize()
-	icon_state = "gland[rand(1,9)]"
-	real_name = "[pick(first_names)] [pick(second_names)]"
+	SetRandomIcon_State()
+	SetRandomName()
+	. = ..()
 	START_PROCESSING(SSprocessing, src)
 
 /obj/item/organ/internal/gland/Destroy()

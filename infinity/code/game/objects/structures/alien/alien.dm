@@ -54,7 +54,7 @@
 	health = max(0, health - W.force)
 	playsound(loc, 'sound/effects/attackblob.ogg', 100, 1)
 	healthcheck()
-	. =..()
+	. = ..()
 	return
 
 /obj/structure/alien/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)

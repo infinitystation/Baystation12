@@ -5,10 +5,8 @@
 	layer = DECAL_LAYER
 	plane = DEFAULT_PLANE
 
-/obj/structure/alien/weeds/node/Initialize()
-	. = ..()
-
-	icon_state = "weednode"
+/obj/structure/alien/weeds/node/SetRandomIcon_State()
+	return
 
 /obj/structure/alien/weeds
 	name = "alien weeds"
@@ -19,13 +17,14 @@
 	var/max_distance = 3
 	var/distance = 0
 
-/obj/structure/alien/weeds
+/obj/structure/alien/weeds/proc/SetRandomIcon_State()
+	icon_state = "weeds-[rand(1,3)]"
 
 /obj/structure/alien/weeds/Initialize()
 	. = ..()
 
 	max_distance = rand(2,4)
-	icon_state = "weeds-[rand(1,3)]"
+	SetRandomIcon_State()
 
 	for(var/obj/structure/alien/weeds/weeds in range(1, src))
 		weeds.update_icon()

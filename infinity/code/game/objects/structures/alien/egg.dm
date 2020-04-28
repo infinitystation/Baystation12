@@ -43,7 +43,6 @@
 				var/throwdir = get_dir(hugger, H)
 				hugger.throw_at(get_edge_target_turf(H, throwdir),3,1)
 				update_icon()
-				return
 
 /obj/structure/alien/egg/on_update_icon()
 	if(progress == -1)

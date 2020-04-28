@@ -76,6 +76,9 @@
 	set name = "Tackle"
 	set desc = "Tackle someone down."
 
+	if(last_special > world.time)
+		return
+
 	if(incapacitated(INCAPACITATION_DISABLED) || buckled || pinned.len)
 		to_chat(src, "<span class='warning'>You cannot tackle in your current state.</span>")
 		return
@@ -114,6 +117,9 @@
 	set category = "Abilities"
 	set name = "Leap"
 	set desc = "Leap at a target and grab them aggressively."
+
+	if(last_special > world.time)
+		return
 
 	if(incapacitated(INCAPACITATION_DISABLED) || buckled || pinned.len)
 		to_chat(src, "<span class='warning'>You cannot leap in your current state.</span>")
