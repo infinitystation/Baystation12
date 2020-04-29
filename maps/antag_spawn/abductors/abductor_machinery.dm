@@ -13,6 +13,7 @@
 /obj/machinery/chemical_dispenser/full/abductor
 	icon = 'infinity/icons/obj/abductor.dmi'
 	icon_state = "chem_dispenser"
+	anchored = 0
 
 /obj/machinery/computer/abductor/camera
 	name = "human observation console"

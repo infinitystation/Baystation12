@@ -1,5 +1,6 @@
-GLOBAL_DATUM_INIT(abductor, /datum/antagonist/abductors, new)
+GLOBAL_DATUM_INIT(abductor,     /datum/antagonist/abductors, new)
 GLOBAL_DATUM_INIT(abductor_sci, /datum/antagonist/abductors_sci, new)
+GLOBAL_DATUM_INIT(abducted,     /datum/antagonist/abducted, new)
 
 GLOBAL_LIST_INIT(agent_ship_names,     list("Alpha", "Beta", "Gamma"))
 GLOBAL_LIST_INIT(scientist_ship_names, list("Alpha", "Beta", "Gamma"))
@@ -12,6 +13,8 @@ GLOBAL_LIST_INIT(scientist_ship_names, list("Alpha", "Beta", "Gamma"))
 	flags = ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_VOTABLE
 	antaghud_indicator = "hudwizard"
 
+	welcome_text
+
 	hard_cap = 2
 	hard_cap_round = 3
 	initial_spawn_req = 1
@@ -19,6 +22,14 @@ GLOBAL_LIST_INIT(scientist_ship_names, list("Alpha", "Beta", "Gamma"))
 	min_player_age = 18
 
 	faction = "abductor"
+
+	faction_role_text = "Abducted"
+	faction_descriptor = "Mothership"
+	faction_welcome = "<span class='changeling'>Ваша свобода воли была выброшена за борт сразу после того, как ваш разум стал частью Улья. \
+	Теперь, вы подчиняетесь Улью, и в особенности его Королеве, как послушный раб  подчиняется \
+	своему хозяину. \
+	Исполняйте указания бесприкословно. Служите своему новому дому.</span>"
+
 	base_to_load = /datum/map_template/ruin/antag_spawn/abductors
 
 
@@ -91,3 +102,15 @@ GLOBAL_LIST_INIT(scientist_ship_names, list("Alpha", "Beta", "Gamma"))
 		abductor_mob.add_language(language, 0)
 
 	return 1
+
+/datum/antagonist/abducted
+	id = MODE_ABDUCTED
+	role_text = "Abducted"
+	role_text_plural = "Abducted"
+
+	hard_cap = 100 //There can be LOTS of them
+	hard_cap_round = 100
+	antaghud_indicator = "hudwizard"
+
+	faction_role_text = "Abducted"
+	faction_descriptor = "Mothership"

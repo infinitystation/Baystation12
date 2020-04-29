@@ -319,9 +319,8 @@
 			playsound(loc, 'sound/weapons/Egloves.ogg', 50, 1, -1)
 			if(ishuman(target) && target.incapacitated())
 				var/mob/living/carbon/human/H = target
-				H.apply_effect(5, STUN)
-				H.apply_effect(5, WEAKEN)
-				user.visible_message(SPAN_DANGER("[user] stuns [H] with [src]!"))
+				H.sleeping = 10
+				user.visible_message(SPAN_DANGER("[user] puts [H] into sleep with [src]!"))
 
 	return 1
 

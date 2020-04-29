@@ -189,10 +189,6 @@
 	icon_state = "abductor_left_down"
 	},
 /area/map_template/abductors_station)
-"N" = (
-/obj/machinery/chemical_dispenser/full/abductor,
-/turf/unsimulated/floor/alien,
-/area/map_template/abductors_station)
 
 (1,1,1) = {"
 a
@@ -394,7 +390,7 @@ E
 B
 m
 r
-N
+k
 D
 I
 a

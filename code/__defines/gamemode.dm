@@ -59,9 +59,6 @@
 #define MODE_MISC_AGITATOR "provocateur"
 #define MODE_HUNTER        "hunter"
 
-#define MODE_ABDUCTOR      "abductor" //INF
-#define MODE_ABDUCTOR_SCI      "abductor scientist" //INF
-
 #define DEFAULT_TELECRYSTAL_AMOUNT 130
 #define TEAM_TELECRYSTAL_AMOUNT 780 //DEFAULT_TELECRYSTAL_AMOUNT*6
 #define IMPLANT_TELECRYSTAL_AMOUNT(x) (round(x * 0.49)) // If this cost is ever greater than half of DEFAULT_TELECRYSTAL_AMOUNT then it is possible to buy more TC than you spend

@@ -141,7 +141,7 @@
 	if(istype(mob))
 		if(mode == 1)
 			var/mob/living/carbon/human/H = mob
-			if(H.wear_suit == /obj/item/clothing/suit/armor/abductor)
+			if(istype(H.wear_suit, /obj/item/clothing/suit/armor/abductor))
 				console.marked = H
 				to_chat(user, SPAN_NOTICE("You successfully marked [H] with [src]."))
 				return
@@ -156,20 +156,8 @@
 						to_chat(user, SPAN_NOTICE("You successfully marked [H] with [src]."))
 		if(mode == 2)
 			var/mob/living/carbon/human/H = mob
-			if(H.wear_suit == /obj/item/clothing/suit/armor/abductor)
-				dis_console.appearances[H.name] = H.appearance
-				to_chat(user, SPAN_NOTICE("You successfully scanned [H] with [src]."))
-				return
-			else
-				if(!proximity)
-					return
-
-				else
-					user.visible_message(SPAN_WARNING("[user] starts to scan [H] with [src]!"))
-					if(do_after(user, 3 SECONDS, H, TRUE))
-						if(!(H.appearance in dis_console.appearances))
-							dis_console.appearances[H.name] = H.appearance
-						to_chat(user, SPAN_NOTICE("You successfully scanned [H] with [src]."))
+			dis_console.appearances[H.name] = H.appearance
+			to_chat(user, SPAN_NOTICE("You successfully scanned [H] with [src]."))
 
 /obj/item/weapon/scitool/attack_self(mob/user as mob)
 	if(mode == 1)
@@ -186,3 +174,62 @@
 			icon_state = "gizmo_scan"
 	loc.update_icon()
 	. = ..()
+
+
+
+/obj/item/weapon/mindtool
+	name = "Mind Interface Device"
+	desc = "An alien-looking tool with two electrodes."
+	icon_state = "mind_device_control"
+	icon = 'infinity/icons/obj/abductor.dmi'
+	slot_flags = SLOT_BELT
+	var/mode = 1
+
+/obj/item/weapon/mindtool/afterattack(var/mob/living/carbon/human/mob, var/mob/user, proximity)
+	if(istype(mob))
+		if(mode == 1)
+			var/mob/living/carbon/human/H = mob
+
+			if(locate(/obj/item/organ/internal/gland) in H.contents)
+				var/obj/item/organ/internal/gland/gland
+				if(gland.uses > 0)
+					gland.uses--
+				else
+					return
+				var/text = input("What would you like to ask for?", "Speak to creature", null, null)
+				text = sanitize(text)
+
+				if(!text) return
+
+				to_chat(H, "<span class='danger'>Вы внезапно чувствуете очень явный и требовательный приказ: <i>[text]</i>. Вы понимаете, что должны выполнить его любой ценой.</span>")
+
+		if(mode == 2)
+			var/mob/living/carbon/human/H = mob
+			var/text = input("What would you like to say to the creature?", "Speak to creature", null, null)
+			text = sanitize(text)
+
+			if(!text) return
+
+			to_chat(H, "<span class='danger'>Внезапно, вы слышите странные слова: <i>[text]</i>...</span>")
+
+/obj/item/weapon/mindtool/attack_self(mob/user as mob)
+	if(mode == 1)
+		mode = 2
+	else
+		mode = 1
+	update_icon()
+
+/obj/item/weapon/mindtool/on_update_icon()
+	switch(mode)
+		if(1)
+			icon_state = "mind_device_control"
+		if(2)
+			icon_state = "mind_device_message"
+	loc.update_icon()
+	. = ..()
+
+/obj/item/weapon/gun/energy/ionrifle/small/abductor
+	name = "alien silencer"
+	desc = "An alien-looking gun, capable of creating EMP to disable radio equipment."
+	icon = 'infinity/icons/obj/abductor.dmi'
+	icon_state = "silencer"
