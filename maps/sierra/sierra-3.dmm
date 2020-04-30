@@ -37758,7 +37758,7 @@
 "ihn" = (
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/machinery/airlock_sensor{
-	frequency = 1331;
+	master_tag = "firing_range";
 	id_tag = "firing_range_sensor";
 	pixel_x = 24;
 	pixel_y = -13

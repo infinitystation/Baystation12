@@ -110,3 +110,36 @@
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
+
+/datum/job/security_assistant
+	title = "Cadet"
+	department = "Security"
+	department_flag = SEC
+
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "Главой Охраны и остальным охранным персоналом"
+	economic_power = 3
+	ideal_character_age = 30
+	alt_titles = list(
+		)
+
+	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_COMBAT      = SKILL_BASIC,
+	                    SKILL_HAULING     = SKILL_BASIC)
+	skill_points = 18
+
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/security/assist
+	allowed_branches = list(
+			/datum/mil_branch/employee
+		)
+	allowed_ranks = list(
+			/datum/mil_rank/civ/nt
+		)
+
+	access = list(access_seceva, access_security, access_brig, access_maint_tunnels,
+						access_external_airlocks, access_emergency_storage,
+			            access_eva, access_sec_doors, access_hangar)
+
+	minimal_access = list()
+
