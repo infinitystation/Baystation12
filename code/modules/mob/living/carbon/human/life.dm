@@ -288,7 +288,7 @@
 		damage = Floor(damage * species.get_radiation_mod(src))
 		if(damage)
 			adjustToxLoss(damage * RADIATION_SPEED_COEFFICIENT)
-			immunity = max(0, immunity - damage * 15 * RADIATION_SPEED_COEFFICIENT) 
+			immunity = max(0, immunity - damage * 15 * RADIATION_SPEED_COEFFICIENT)
 			updatehealth()
 			if(!isSynthetic() && organs.len)
 				var/obj/item/organ/external/O = pick(organs)
@@ -1022,9 +1022,14 @@
 		if(wear_id)
 			var/obj/item/weapon/card/id/I = wear_id.GetIdCard()
 			if(I)
-				var/datum/job/J = SSjobs.get_by_title(I.GetJobName())
-				if(J)
-					holder.icon_state = J.hud_icon
+				//[INF]		There is no job "Centcom"
+				if(I.GetJobName() == "Centcom")
+					holder.icon_state = "hudcentcom"
+				else
+				//[/INF]
+					var/datum/job/J = SSjobs.get_by_title(I.GetJobName())
+					if(J)
+						holder.icon_state = J.hud_icon
 
 		hud_list[ID_HUD] = holder
 
