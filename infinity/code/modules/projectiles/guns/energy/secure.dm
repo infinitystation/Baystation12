@@ -21,12 +21,14 @@
 		slot_r_hand_str = 'infinity/icons/mob/onmob/items/righthand_guns_secure.dmi',
 		)
 	icon_state = "confusesecure"
+	item_state = null
+	item_state = null
 	max_shots = 5
 	projectile_type = /obj/item/projectile/beam/confuseray/weak
 
 	req_access = list(list(access_brig, access_bridge))
 	authorized_modes = list(AUTHORIZED)		// Authorized after registration, but can be disabled remotely
-	firemodes = list(list(mode_name = "functional"))
+	firemodes = list(list(mode_name = "any"))
 
 	is_serial = 1
 	s_type = "DS4-C"

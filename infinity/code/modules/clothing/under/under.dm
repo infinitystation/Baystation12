@@ -142,6 +142,6 @@
 	desc = "White uniform usually worn by NanoTrasen Security Cadets."
 	icon = 'infinity/icons/obj/clothing/obj_under.dmi'
 	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
-	icon_state = "cadet_standart"
-	item_state = "cadet_standart"
-	worn_state = "cadet_standart"
+	icon_state = "cadet_standard"
+	item_state = "cadet_standard"
+	worn_state = "cadet_standard"

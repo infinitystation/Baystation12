@@ -121,6 +121,7 @@
 	supervisors = "Главой Охраны и остальным охранным персоналом"
 	economic_power = 3
 	ideal_character_age = 30
+	selection_color = "#601c1c"
 	alt_titles = list(
 		)
 
