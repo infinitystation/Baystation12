@@ -78,7 +78,7 @@
 	explanation_text = "Захватить объект, поглотив его экипаж и сделав частью общности. Необходимо делать это настолько скрытно, \
 	насколько возможно - Корпорация будет только рада пленить нас."
 
-/datum/objective/absorb_pointly/find_target()
+/datum/objective/absorb_pointly/find_target(var/override = 0)
 	..()
 	if(target?.current)
 		explanation_text = "Поглотить [target.current.real_name], [target.assigned_role]."
