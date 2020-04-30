@@ -6346,7 +6346,8 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/effect/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "alJ" = (
 /obj/structure/cable/green{
@@ -7027,7 +7028,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/effect/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "amP" = (
 /turf/simulated/wall/r_wall/prepainted,
@@ -7809,7 +7811,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/effect/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "aoj" = (
 /obj/structure/table/standard,
@@ -8717,7 +8720,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/effect/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "apF" = (
 /obj/structure/window/reinforced,
@@ -28739,16 +28743,15 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/foreport)
 "aSj" = (
-/obj/structure/catwalk,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/foreport)
 "aSk" = (
-/obj/structure/catwalk,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
@@ -28759,10 +28762,10 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/foreport)
 "aSl" = (
-/obj/structure/catwalk,
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
@@ -28777,6 +28780,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/foreport)
 "aSm" = (
@@ -29778,9 +29782,6 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -20
-	},
-/obj/effect/decal/cleanable/cobweb2{
-	dir = 1
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/deployable/barrier,
@@ -37714,21 +37715,16 @@
 /turf/simulated/floor/reinforced/airless,
 /area/maintenance/firstdeck/forestarboard)
 "gqO" = (
-/obj/machinery/door/airlock/external{
+/obj/machinery/door/airlock/external/bolted/cycling{
 	dir = 4;
-	frequency = 1331;
 	id_tag = "firing_range_outer";
-	locked = 1;
 	name = "Firing Range Airlock"
 	},
-/obj/machinery/access_button{
-	command = "cycle_exterior";
+/obj/machinery/access_button/airlock_exterior{
 	desc = "Security access required.";
 	dir = 4;
-	frequency = 1331;
-	master_tag = "firing_range_airlock";
+	master_tag = "firing_range";
 	name = "exterior access button";
-	pixel_x = 0;
 	pixel_y = -24;
 	req_access = list("ACCESS_EXTERNAL","ACCESS_SECURITY")
 	},
@@ -37760,10 +37756,6 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "ihn" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
-	dir = 2;
-	id_tag = "firing_range_pump"
-	},
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/machinery/airlock_sensor{
 	frequency = 1331;
@@ -37773,14 +37765,12 @@
 	},
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
 	dir = 8;
-	id_tag = "firing_range_airlock";
+	id_tag = "firing_range";
 	pixel_x = 20;
-	pixel_y = 0;
-	req_access = list("ACCESS_EXTERNAL");
-	tag_airpump = "firing_range_pump";
-	tag_chamber_sensor = "firing_range_sensor";
-	tag_exterior_door = "firing_range_outer";
-	tag_interior_door = "firing_range_inner"
+	req_access = list("ACCESS_EXTERNAL")
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
+	id_tag = "firing_range_pump"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/forestarboard)
@@ -37874,18 +37864,14 @@
 /turf/space,
 /area/space)
 "kRG" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1331;
+/obj/machinery/door/airlock/external/bolted/cycling{
 	id_tag = "firing_range_outer";
-	locked = 1;
 	name = "Firing Range Airlock"
 	},
-/obj/machinery/access_button{
-	command = "cycle_exterior";
+/obj/machinery/access_button/airlock_exterior{
 	desc = "Security access required.";
 	dir = 1;
-	frequency = 1331;
-	master_tag = "firing_range_airlock";
+	master_tag = "firing_range";
 	name = "exterior access button";
 	pixel_x = 24;
 	req_access = list("ACCESS_EXTERNAL","ACCESS_SECURITY")
@@ -38024,16 +38010,12 @@
 "rHa" = (
 /obj/effect/floor_decal/industrial/warning/corner,
 /obj/machinery/atmospherics/pipe/simple/hidden,
-/obj/machinery/door/airlock/external/glass{
-	frequency = 1331;
+/obj/machinery/door/airlock/external/glass/bolted/cycling{
 	id_tag = "firing_range_inner";
-	locked = 1;
 	name = "Firing Range Airlock"
 	},
-/obj/machinery/access_button{
-	command = "cycle_interior";
-	frequency = 1331;
-	master_tag = "firing_range_airlock";
+/obj/machinery/access_button/airlock_interior{
+	master_tag = "firing_range";
 	name = "interior access button";
 	pixel_x = 24;
 	req_access = list("ACCESS_EXTERNAL")
