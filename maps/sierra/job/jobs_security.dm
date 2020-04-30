@@ -84,8 +84,7 @@
 	economic_power = 6
 	minimal_player_age = 10
 	ideal_character_age = 25
-	alt_titles = list(
-		"Junior Guard")
+	alt_titles = list()
 
 	skill_points = 20
 
