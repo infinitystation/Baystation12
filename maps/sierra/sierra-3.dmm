@@ -37496,26 +37496,86 @@
 /obj/item/weapon/storage/toolbox/mechanical,
 /turf/simulated/floor/bluegrid,
 /area/maintenance/battle_data_servers)
-"bzQ" = (
-/obj/structure/table/rack,
-/obj/random/maintenance,
-/obj/structure/railing/mapped,
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 6
+"bjP" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 10;
+	icon_state = "borderfloor_white"
 	},
-/obj/machinery/light/small{
-	dir = 1;
-	icon_state = "bulb_map"
+/obj/effect/floor_decal/corner/red/border{
+	dir = 10
+	},
+/obj/structure/closet/secure_closet/security/sierra/cadet,
+/turf/simulated/floor/tiled,
+/area/security/range)
+"bqv" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/obj/effect/floor_decal/industrial/warning/cee{
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
-"bPk" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 10
+"bHi" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/floor/reinforced/airless,
+/obj/structure/catwalk,
+/obj/effect/floor_decal/industrial/warning/half,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
-"bUR" = (
+"bJQ" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled,
+/area/security/range)
+"cXu" = (
+/obj/effect/floor_decal/industrial/outline/red,
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
+/turf/simulated/floor/tiled/steel_grid,
+/area/security/range)
+"dyQ" = (
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
+	id = "cadetwindow"
+	},
+/obj/machinery/door/blast/regular/open{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown";
+	opacity = 0
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/plating,
+/area/security/range)
+"eBD" = (
 /obj/structure/bed/chair/padded/red{
 	dir = 1
 	},
@@ -37532,134 +37592,13 @@
 	},
 /turf/simulated/floor/tiled,
 /area/security/range)
-"cIs" = (
-/obj/machinery/door/firedoor,
-/obj/machinery/door/blast/regular{
-	dir = 2;
-	id_tag = "firingspace";
-	name = "Firing Range Shields"
+"eEn" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 6
 	},
-/obj/machinery/door/blast/regular/open{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
-	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
-	id = "cadetwindow"
-	},
-/turf/simulated/floor/plating,
-/area/security/range)
-"cJY" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/floor_decal/industrial/hatch/red,
-/obj/machinery/door/blast/regular/open{
-	density = 0;
-	dir = 4;
-	icon_state = "pdoor0";
-	id_tag = "firingspace";
-	name = "FIRING RANGE SAFETY SHIELD";
-	opacity = 0
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/turf/simulated/floor/reinforced/airless,
 /area/maintenance/firstdeck/forestarboard)
-"cYl" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled,
-/area/security/range)
-"dst" = (
-/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
-	id = "cadetwindow"
-	},
-/obj/machinery/door/blast/regular/open{
-	density = 0;
-	dir = 4;
-	icon_state = "pdoor0";
-	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
-	},
-/obj/structure/cable/green,
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/turf/simulated/floor/plating,
-/area/security/range)
-"dvJ" = (
-/obj/structure/railing/mapped,
-/obj/effect/floor_decal/industrial/warning/corner{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/atmospherics/portables_connector,
-/obj/machinery/portable_atmospherics/canister/air/airlock,
-/turf/simulated/floor/plating,
-/area/maintenance/firstdeck/forestarboard)
-"eeq" = (
-/obj/effect/wallframe_spawn/reinforced/hull,
-/obj/machinery/door/firedoor,
-/obj/machinery/door/blast/regular{
-	dir = 2;
-	id_tag = "firingspace";
-	name = "Firing Range Shields"
-	},
-/obj/machinery/door/blast/regular/open{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
-	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/firstdeck/forestarboard)
-"fbY" = (
-/obj/effect/wallframe_spawn/reinforced/hull,
-/obj/machinery/door/firedoor,
-/obj/machinery/door/blast/regular{
-	dir = 2;
-	id_tag = "firingspace";
-	name = "Firing Range Shields"
-	},
-/obj/machinery/door/blast/regular/open{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
-	},
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/firstdeck/forestarboard)
-"fsg" = (
-/obj/machinery/door/firedoor,
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/security_scanner{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/hallway/primary/firstdeck/aft)
-"ftx" = (
+"flb" = (
 /obj/structure/table/standard,
 /obj/machinery/recharger/wallcharger{
 	dir = 4;
@@ -37684,7 +37623,19 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/range)
-"fFq" = (
+"fVx" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/universal{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
+"gcc" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Security Maintenance";
 	req_access = newlist()
@@ -37700,81 +37651,20 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/range)
-"fYH" = (
-/obj/machinery/papershredder,
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/red/border,
-/obj/machinery/light,
-/turf/simulated/floor/tiled,
-/area/security/range)
-"gjQ" = (
-/obj/item/target/alien,
-/obj/effect/floor_decal/industrial/warning{
-	dir = 5
-	},
-/turf/simulated/floor/reinforced/airless,
-/area/maintenance/firstdeck/forestarboard)
-"gqO" = (
-/obj/machinery/door/airlock/external/bolted/cycling{
-	dir = 4;
-	id_tag = "firing_range_outer";
-	name = "Firing Range Airlock"
-	},
-/obj/machinery/access_button/airlock_exterior{
-	desc = "Security access required.";
-	dir = 4;
-	master_tag = "firing_range";
-	name = "exterior access button";
-	pixel_y = -24;
-	req_access = list("ACCESS_EXTERNAL","ACCESS_SECURITY")
-	},
-/obj/machinery/camera/network/security{
-	c_tag = "Security - Firing Range - Space";
-	dir = 1
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/maintenance/firstdeck/forestarboard)
-"hfE" = (
+"gdu" = (
 /obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
-	dir = 9
+	dir = 4
 	},
-/obj/machinery/security_scanner,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/security/sierra/armory)
-"hOG" = (
-/obj/structure/catwalk,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden,
-/turf/simulated/floor/plating,
-/area/maintenance/firstdeck/forestarboard)
-"ihn" = (
-/obj/effect/floor_decal/industrial/warning/full,
-/obj/machinery/airlock_sensor{
-	master_tag = "firing_range";
-	id_tag = "firing_range_sensor";
-	pixel_x = 24;
-	pixel_y = -13
-	},
-/obj/machinery/embedded_controller/radio/airlock/airlock_controller{
-	dir = 8;
-	id_tag = "firing_range";
-	pixel_x = 20;
-	req_access = list("ACCESS_EXTERNAL")
-	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
-	id_tag = "firing_range_pump"
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/industrial/danger,
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	id_tag = "eva_shutters";
+	name = "EVA Shutters"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/maintenance/firstdeck/forestarboard)
-"ivf" = (
+/area/storage/eva)
+"gnk" = (
 /obj/effect/catwalk_plated,
 /obj/structure/cable/green{
 	d1 = 1;
@@ -37794,17 +37684,29 @@
 	},
 /turf/simulated/floor/plating,
 /area/security/sierra/hallway)
-"iKl" = (
-/obj/item/target/syndicate,
-/turf/simulated/floor/reinforced/airless,
-/area/maintenance/firstdeck/forestarboard)
-"jgN" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 6
+"gFQ" = (
+/obj/effect/floor_decal/industrial/warning/corner,
+/obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/machinery/door/airlock/external/glass/bolted/cycling{
+	id_tag = "firing_range_inner";
+	name = "Firing Range Airlock"
 	},
-/turf/simulated/floor/reinforced/airless,
+/obj/machinery/access_button/airlock_interior{
+	master_tag = "firing_range";
+	name = "interior access button";
+	pixel_x = 24;
+	req_access = list("ACCESS_EXTERNAL")
+	},
+/obj/machinery/door/blast/regular/open{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown";
+	opacity = 0
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/forestarboard)
-"jqQ" = (
+"gLO" = (
 /obj/effect/wallframe_spawn/reinforced/hull,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular{
@@ -37833,37 +37735,30 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
-"jYX" = (
-/obj/structure/catwalk,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+"gQA" = (
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
+	id = "cadetwindow"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 9;
-	icon_state = "intact"
+/obj/machinery/door/blast/regular/open{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown";
+	opacity = 0
+	},
+/obj/structure/cable/green,
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
 	},
 /turf/simulated/floor/plating,
+/area/security/range)
+"hxu" = (
+/obj/item/target,
+/turf/simulated/floor/reinforced/airless,
 /area/maintenance/firstdeck/forestarboard)
-"kwC" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/catwalk,
-/obj/effect/floor_decal/industrial/warning/cee{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/firstdeck/forestarboard)
-"kGS" = (
-/obj/structure/lattice,
-/obj/structure/grille/broken,
-/turf/space,
-/area/space)
-"kRG" = (
+"jfA" = (
 /obj/machinery/door/airlock/external/bolted/cycling{
 	id_tag = "firing_range_outer";
 	name = "Firing Range Airlock"
@@ -37878,12 +37773,7 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/forestarboard)
-"lZo" = (
-/obj/effect/floor_decal/industrial/outline/red,
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
-/turf/simulated/floor/tiled/steel_grid,
-/area/security/range)
-"mxb" = (
+"jMR" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Security Maintenance";
 	req_access = newlist()
@@ -37899,20 +37789,103 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/forestarboard)
-"nkj" = (
-/obj/effect/floor_decal/techfloor{
+"kqg" = (
+/obj/structure/catwalk,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/light/spot,
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
+"lVn" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/obj/effect/floor_decal/industrial/warning/cee{
 	dir = 4
 	},
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/industrial/danger,
-/obj/machinery/door/blast/shutters{
-	dir = 2;
-	id_tag = "eva_shutters";
-	name = "EVA Shutters"
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
+"mrd" = (
+/obj/item/target/alien,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 5
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/storage/eva)
-"nAa" = (
+/turf/simulated/floor/reinforced/airless,
+/area/maintenance/firstdeck/forestarboard)
+"nJg" = (
+/obj/structure/railing/mapped{
+	dir = 4;
+	tag = "icon-railing0 (EAST)"
+	},
+/obj/effect/floor_decal/industrial/outline/red,
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/security/range)
+"nLX" = (
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
+	id = "cadetwindow"
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/plating,
+/area/security/range)
+"nNc" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 10
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/maintenance/firstdeck/forestarboard)
+"nRq" = (
+/obj/machinery/fabricator{
+	fab_status_flags = 1
+	},
+/obj/item/stack/material/steel/fifty,
+/turf/simulated/floor/tiled/techfloor,
+/area/security/sierra/armory)
+"one" = (
+/obj/structure/catwalk,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 9;
+	icon_state = "intact"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
+"oZG" = (
+/turf/simulated/floor/reinforced/airless,
+/area/maintenance/firstdeck/forestarboard)
+"ptL" = (
+/obj/structure/catwalk,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden,
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
+"pGU" = (
+/obj/effect/wallframe_spawn/reinforced/hull,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular{
 	dir = 2;
@@ -37926,50 +37899,13 @@
 	name = "Security Department Lockdown";
 	opacity = 0
 	},
-/obj/structure/cable/green,
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
 /obj/structure/cable/green{
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
-	id = "cadetwindow"
-	},
-/turf/simulated/floor/plating,
-/area/security/range)
-"oXv" = (
-/obj/effect/floor_decal/industrial/outline/red,
-/turf/simulated/floor/tiled/steel_grid,
-/area/security/range)
-"pxv" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/deployable/barrier,
-/turf/simulated/floor/tiled/techfloor,
-/area/maintenance/firstdeck/forestarboard)
-"qtL" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/catwalk,
-/obj/effect/floor_decal/industrial/warning/half,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
-"qxy" = (
+"pXd" = (
 /obj/structure/catwalk,
 /obj/structure/cable/green{
 	d1 = 2;
@@ -37984,65 +37920,20 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
-"qPc" = (
-/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
-	id = "cadetwindow"
+"pXH" = (
+/obj/structure/table/rack,
+/obj/random/maintenance,
+/obj/structure/railing/mapped,
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 6
 	},
-/obj/machinery/door/firedoor,
-/obj/machinery/door/blast/regular{
-	dir = 2;
-	id_tag = "firingspace";
-	name = "Firing Range Shields"
-	},
-/obj/machinery/door/blast/regular/open{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
-	},
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
+/obj/machinery/light/small{
+	dir = 1;
+	icon_state = "bulb_map"
 	},
 /turf/simulated/floor/plating,
-/area/security/range)
-"rHa" = (
-/obj/effect/floor_decal/industrial/warning/corner,
-/obj/machinery/atmospherics/pipe/simple/hidden,
-/obj/machinery/door/airlock/external/glass/bolted/cycling{
-	id_tag = "firing_range_inner";
-	name = "Firing Range Airlock"
-	},
-/obj/machinery/access_button/airlock_interior{
-	master_tag = "firing_range";
-	name = "interior access button";
-	pixel_x = 24;
-	req_access = list("ACCESS_EXTERNAL")
-	},
-/obj/machinery/door/blast/regular/open{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/forestarboard)
-"rRl" = (
-/turf/simulated/floor/reinforced/airless,
-/area/maintenance/firstdeck/forestarboard)
-"rVy" = (
-/obj/machinery/suit_storage_unit/standard_unit,
-/obj/effect/floor_decal/industrial/outline/grey,
-/obj/machinery/camera/network/command{
-	c_tag = "First Deck - EVA";
-	dir = 8;
-	network = list("Command")
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/storage/eva)
-"szJ" = (
+"pZN" = (
 /obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "cadetwindow"
 	},
@@ -38057,128 +37948,24 @@
 /obj/structure/cable/green,
 /turf/simulated/floor/plating,
 /area/security/range)
-"sYt" = (
-/obj/structure/catwalk,
+"qmX" = (
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/firstdeck/forestarboard)
-"tig" = (
-/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
-	id = "cadetwindow"
-	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/plating,
-/area/security/range)
-"tmd" = (
-/obj/machinery/fabricator{
-	fab_status_flags = 1
-	},
-/obj/item/stack/material/steel/fifty,
-/turf/simulated/floor/tiled/techfloor,
-/area/security/sierra/armory)
-"twz" = (
-/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
-	id = "cadetwindow"
-	},
+/obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/door/blast/regular/open{
 	density = 0;
 	dir = 4;
 	icon_state = "pdoor0";
-	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
+	id_tag = "firingspace";
+	name = "FIRING RANGE SAFETY SHIELD";
 	opacity = 0
 	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/turf/simulated/floor/plating,
-/area/security/range)
-"tXC" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/catwalk,
-/obj/effect/floor_decal/industrial/warning/cee{
-	dir = 8
-	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/forestarboard)
-"uVF" = (
-/obj/effect/floor_decal/borderfloor{
-	dir = 10;
-	icon_state = "borderfloor_white"
-	},
-/obj/effect/floor_decal/corner/red/border{
-	dir = 10
-	},
-/obj/structure/closet/secure_closet/security/sierra/cadet,
-/turf/simulated/floor/tiled,
-/area/security/range)
-"uXS" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/simple/hidden/universal{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/firstdeck/forestarboard)
-"vhJ" = (
-/obj/structure/railing/mapped{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
-	},
-/obj/effect/floor_decal/industrial/outline/red,
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/steel_grid,
-/area/security/range)
-"vAy" = (
-/obj/item/target,
-/turf/simulated/floor/reinforced/airless,
-/area/maintenance/firstdeck/forestarboard)
-"wWz" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/catwalk,
-/obj/effect/floor_decal/industrial/warning/corner{
-	dir = 4
-	},
-/obj/machinery/camera/network/security{
-	c_tag = "Security - Firing Range Maintenance";
-	dir = 1
-	},
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/firstdeck/forestarboard)
-"xTg" = (
+"qrz" = (
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -38199,19 +37986,232 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/forestarboard)
-"xXu" = (
-/obj/structure/catwalk,
-/obj/effect/floor_decal/industrial/warning{
+"qBx" = (
+/obj/effect/wallframe_spawn/reinforced/hull,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/blast/regular{
+	dir = 2;
+	id_tag = "firingspace";
+	name = "Firing Range Shields"
+	},
+/obj/machinery/door/blast/regular/open{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown";
+	opacity = 0
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
+"qLX" = (
+/obj/machinery/suit_storage_unit/standard_unit,
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/machinery/camera/network/command{
+	c_tag = "First Deck - EVA";
+	dir = 8;
+	network = list("Command")
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/storage/eva)
+"rgV" = (
+/obj/machinery/door/airlock/external/bolted/cycling{
+	dir = 4;
+	id_tag = "firing_range_outer";
+	name = "Firing Range Airlock"
+	},
+/obj/machinery/access_button/airlock_exterior{
+	desc = "Security access required.";
+	dir = 4;
+	master_tag = "firing_range";
+	name = "exterior access button";
+	pixel_y = -24;
+	req_access = list("ACCESS_EXTERNAL","ACCESS_SECURITY")
+	},
+/obj/machinery/camera/network/security{
+	c_tag = "Security - Firing Range - Space";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/maintenance/firstdeck/forestarboard)
+"rnv" = (
+/obj/item/target/syndicate,
+/turf/simulated/floor/reinforced/airless,
+/area/maintenance/firstdeck/forestarboard)
+"rDN" = (
+/obj/effect/floor_decal/industrial/warning/full,
+/obj/machinery/airlock_sensor{
+	master_tag = "firing_range";
+	id_tag = "firing_range_sensor";
+	pixel_x = 24;
+	pixel_y = -13
+	},
+/obj/machinery/embedded_controller/radio/airlock/airlock_controller{
+	dir = 8;
+	id_tag = "firing_range";
+	pixel_x = 20;
+	req_access = list("ACCESS_EXTERNAL")
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
+	id_tag = "firing_range_pump"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/maintenance/firstdeck/forestarboard)
+"thw" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/deployable/barrier,
+/turf/simulated/floor/tiled/techfloor,
+/area/maintenance/firstdeck/forestarboard)
+"udz" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/blast/regular{
+	dir = 2;
+	id_tag = "firingspace";
+	name = "Firing Range Shields"
+	},
+/obj/machinery/door/blast/regular/open{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown";
+	opacity = 0
+	},
+/obj/structure/cable/green,
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
+	id = "cadetwindow"
+	},
+/turf/simulated/floor/plating,
+/area/security/range)
+"uVK" = (
+/obj/machinery/papershredder,
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/red/border,
+/obj/machinery/light,
+/turf/simulated/floor/tiled,
+/area/security/range)
+"waf" = (
+/obj/structure/railing/mapped,
+/obj/effect/floor_decal/industrial/warning/corner{
 	dir = 8
 	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/atmospherics/portables_connector,
+/obj/machinery/portable_atmospherics/canister/air/airlock,
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
+"wBo" = (
+/obj/structure/catwalk,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/light/spot,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
+"wCL" = (
+/obj/machinery/door/firedoor,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/security_scanner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/hallway/primary/firstdeck/aft)
+"wYh" = (
+/obj/effect/floor_decal/industrial/outline/red,
+/turf/simulated/floor/tiled/steel_grid,
+/area/security/range)
+"xlo" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/catwalk,
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 4
+	},
+/obj/machinery/camera/network/security{
+	c_tag = "Security - Firing Range Maintenance";
+	dir = 1
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
+"xmC" = (
+/obj/structure/lattice,
+/obj/structure/grille/broken,
+/turf/space,
+/area/space)
+"xtj" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/blast/regular{
+	dir = 2;
+	id_tag = "firingspace";
+	name = "Firing Range Shields"
+	},
+/obj/machinery/door/blast/regular/open{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown";
+	opacity = 0
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
+	id = "cadetwindow"
+	},
+/turf/simulated/floor/plating,
+/area/security/range)
+"xDg" = (
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
+	id = "cadetwindow"
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/door/blast/regular{
+	dir = 2;
+	id_tag = "firingspace";
+	name = "Firing Range Shields"
+	},
+/obj/machinery/door/blast/regular/open{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown";
+	opacity = 0
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/plating,
+/area/security/range)
+"xKM" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 9
+	},
+/obj/machinery/security_scanner,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/security/sierra/armory)
 
 (1,1,1) = {"
 aaa
@@ -45369,10 +45369,10 @@ aaa
 aae
 aaA
 aaA
-mxb
+jMR
 abs
-pxv
-pxv
+thw
+thw
 ari
 asq
 atQ
@@ -45571,15 +45571,15 @@ aaa
 aae
 aaA
 aaA
-cJY
+qmX
 amP
 amP
 amP
 amP
 amP
-twz
-dst
-szJ
+dyQ
+gQA
+pZN
 amP
 avd
 aAB
@@ -45770,18 +45770,18 @@ aaa
 aaa
 aaa
 aaa
-kGS
+xmC
 aaA
 aaA
-xXu
+kqg
 amP
 aoj
-ftx
+flb
 arj
-bUR
+eBD
 atR
 avl
-uVF
+bjP
 amP
 azp
 aAC
@@ -45972,16 +45972,16 @@ aaa
 aaa
 aaa
 aaa
-iKl
-bPk
-eeq
-tXC
-cIs
-lZo
+rnv
+nNc
+qBx
+bqv
+xtj
+cXu
 apF
 ark
 asr
-cYl
+bJQ
 avm
 awK
 amP
@@ -46173,19 +46173,19 @@ aaa
 aaa
 aaa
 aaa
-rRl
-rRl
-vAy
-jqQ
-qtL
-nAa
-oXv
+oZG
+oZG
+hxu
+gLO
+bHi
+udz
+wYh
 apG
 arl
 ass
-cYl
+bJQ
 avn
-fYH
+uVK
 amP
 azr
 aAE
@@ -46375,20 +46375,20 @@ aaa
 aaa
 aaa
 adz
-gjQ
-rRl
-jgN
-fbY
-kwC
-qPc
-vhJ
+mrd
+oZG
+eEn
+pGU
+lVn
+xDg
+nJg
 apG
 arm
 ast
-cYl
+bJQ
 avo
 awL
-tig
+nLX
 azs
 aAF
 aCt
@@ -46578,11 +46578,11 @@ aaa
 adz
 aao
 aaA
-gqO
+rgV
 aaA
 aaA
 alJ
-fFq
+gcc
 aok
 apI
 arn
@@ -46592,7 +46592,7 @@ avp
 awM
 ayb
 azt
-ivf
+gnk
 aCu
 aEj
 aEj
@@ -46779,11 +46779,11 @@ aaa
 aao
 aao
 aam
-kRG
-ihn
-rHa
-qxy
-wWz
+jfA
+rDN
+gFQ
+pXd
+xlo
 alK
 alK
 alK
@@ -46984,10 +46984,10 @@ aam
 aaA
 aaA
 aaA
-xTg
+qrz
 alK
 alK
-hfE
+xKM
 apJ
 aro
 asv
@@ -47185,8 +47185,8 @@ aam
 aam
 aaA
 aaA
-dvJ
-hOG
+waf
+ptL
 alK
 amR
 aol
@@ -47387,8 +47387,8 @@ aam
 agb
 aaA
 aaA
-bzQ
-jYX
+pXH
+one
 alK
 amX
 arp
@@ -47791,13 +47791,13 @@ afc
 agc
 ahl
 aiy
-uXS
+fVx
 akM
 alK
 amU
 aon
 apN
-tmd
+nRq
 asz
 alK
 avv
@@ -48196,7 +48196,7 @@ adB
 adB
 adB
 ajC
-sYt
+wBo
 alK
 amW
 aop
@@ -48398,7 +48398,7 @@ agd
 adB
 adB
 ajC
-sYt
+wBo
 alK
 alK
 alK
@@ -48600,7 +48600,7 @@ aep
 adB
 adB
 ajC
-sYt
+wBo
 alL
 anb
 aoq
@@ -49004,7 +49004,7 @@ agf
 adB
 aiz
 ajF
-sYt
+wBo
 alL
 amZ
 aos
@@ -57095,7 +57095,7 @@ auz
 awa
 axu
 ayH
-nkj
+gdu
 aBz
 aDq
 aEZ
@@ -57698,7 +57698,7 @@ bea
 arI
 atm
 aoR
-rVy
+qLX
 axw
 awb
 aoR
@@ -64166,7 +64166,7 @@ amC
 amC
 amC
 aAo
-fsg
+wCL
 aDS
 aFH
 aHg
