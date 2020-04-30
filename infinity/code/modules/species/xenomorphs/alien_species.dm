@@ -46,6 +46,10 @@
 	cold_level_2 = -1
 	cold_level_3 = -1
 
+	heat_level_1 = 900 //Default 360 - Higher is better
+	heat_level_2 = 1200 //Default 400
+	heat_level_3 = 2800 //Default 1000
+
 	species_flags = SPECIES_FLAG_NO_SCAN | SPECIES_FLAG_NO_PAIN | SPECIES_FLAG_NO_SLIP | SPECIES_FLAG_NO_POISON | SPECIES_FLAG_NO_EMBED | SPECIES_FLAG_NO_TANGLE
 	appearance_flags = HAS_EYE_COLOR | HAS_SKIN_COLOR
 
