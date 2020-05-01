@@ -254,7 +254,7 @@ var/list/spells = typesof(/spell) //needed for the badmin verb for now
 		if(!(spell_flags & GHOSTCAST))
 			if(!(spell_flags & NO_SOMATIC))
 				var/mob/living/L = user
-				if(L.incapacitated(INCAPACITATION_KNOCKOUT))
+				if(L.incapacitated(INCAPACITATION_KNOCKOUT)) //INF, was INCAPACITATION_STUNNED|INCAPACITATION_RESTRAINED|INCAPACITATION_BUCKLED_FULLY|INCAPACITATION_FORCELYING|INCAPACITATION_KNOCKOUT
 					to_chat(user, "<span class='warning'>You can't cast spells while incapacitated!</span>")
 					return 0
 

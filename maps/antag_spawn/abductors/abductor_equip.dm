@@ -6,6 +6,23 @@
 
 	var/obj/machinery/computer/abductor/camera/console
 
+/obj/item/weapon/implant/abductors/proc/teleport_target(var/mob/target, var/turf/target_pos)
+	new /obj/effect/temporary(get_turf(target), 5, icon, "teleport_effect_back")
+	target.dir = 2
+	target.forceMove(target_pos)
+	new /obj/effect/temporary(target_pos, 5, icon, "teleport_effect")
+
+	addtimer(CALLBACK(src, .proc/teleport_effect, target), 5)
+
+/obj/item/weapon/implant/abductors/proc/teleport_effect(var/mob/target)
+	var/datum/effect/effect/system/spark_spread/sparks = new /datum/effect/effect/system/spark_spread()
+	sparks.set_up(5, 0, get_turf(target))
+	sparks.start()
+	playsound(target.loc, "sparks", 50, 1)
+	playsound(target.loc, 'sound/effects/phasein.ogg', 25, 1)
+
+
+
 /obj/item/weapon/implant/abductors/proc/teleport_self_pos()
 	set name = "Teleport to eye"
 	set category = "Abilities"
@@ -19,22 +36,10 @@
 		if(ishuman(loc))
 			var/mob/living/carbon/human/scientist = loc
 
-			new /obj/effect/temporary(get_turf(scientist), 5, icon, "teleport_effect_back")
-			scientist.dir = 2
+			addtimer(CALLBACK(src, .proc/teleport_target, scientist, get_turf(console.eye)), 5)
 
-			spawn(5)
-				scientist.forceMove(get_turf(console.eye))
+			console.deactivate(scientist)
 
-				console.deactivate(mob)
-
-				new /obj/effect/temporary(get_turf(scientist), 5, icon, "teleport_effect")
-
-				spawn(5)
-					var/datum/effect/effect/system/spark_spread/sparks = new /datum/effect/effect/system/spark_spread()
-					sparks.set_up(5, 0, get_turf(scientist))
-					sparks.start()
-					playsound(scientist.loc, "sparks", 50, 1)
-					playsound(scientist.loc, 'sound/effects/phasein.ogg', 25, 1)
 
 /obj/item/weapon/implant/abductors/verb/teleport_ship()
 
@@ -47,27 +52,9 @@
 	var/mob/living/mob = loc
 
 	if(istype(mob))
-
-
 		if(do_after(mob, 4 SECONDS, get_turf(mob), TRUE))
 
-			new /obj/effect/temporary(get_turf(mob), 5, icon, "teleport_effect_back")
-			mob.dir = 2
-
-			spawn(5)
-				mob.forceMove(locate("landmark*AbductorShip").loc)
-				if(locate(/obj/item/grab) in mob.contents)
-					var/obj/item/grab/G = locate(/obj/item/grab) in mob.contents
-					if(G.affecting.incapacitated())
-						G.affecting.forceMove(locate("landmark*AbductorShip").loc)
-				new /obj/effect/temporary(get_turf(mob), 5, icon, "teleport_effect")
-
-				spawn(5)
-					var/datum/effect/effect/system/spark_spread/sparks = new /datum/effect/effect/system/spark_spread()
-					sparks.set_up(5, 0, get_turf(mob))
-					sparks.start()
-					playsound(src.loc, "sparks", 50, 1)
-					playsound(src.loc, 'sound/effects/phasein.ogg', 25, 1)
+			addtimer(CALLBACK(src, .proc/teleport_target, mob, get_turf(locate("landmark*AbductorShip"))), 5)
 
 /obj/item/weapon/implant/abductors/proc/pull_marked()
 
@@ -83,20 +70,7 @@
 		if(console.console.marked)
 			var/mob/living/carbon/human/marked = console.console.marked
 			if(istype(marked))
-				new /obj/effect/temporary(get_turf(marked), 5, icon, "teleport_effect_back")
-				marked.dir = 2
-
-				spawn(5)
-					marked.forceMove(get_turf(locate("landmark*AbductorShip")))
-
-					new /obj/effect/temporary(get_turf(marked), 5, icon, "teleport_effect")
-
-					spawn(5)
-						var/datum/effect/effect/system/spark_spread/sparks = new /datum/effect/effect/system/spark_spread()
-						sparks.set_up(5, 0, get_turf(marked))
-						sparks.start()
-						playsound(marked.loc, "sparks", 50, 1)
-						playsound(marked.loc, 'sound/effects/phasein.ogg', 25, 1)
+				addtimer(CALLBACK(src, .proc/teleport_target, marked, get_turf(locate("landmark*AbductorShip"))), 5)
 
 /obj/item/weapon/implant/abductors/proc/push_marked()
 

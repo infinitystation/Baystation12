@@ -70,35 +70,32 @@
 /obj/machinery/abductor_tele/Initialize()
 	hub = locate(/obj/machinery/abductor_hub)
 
+
+/obj/machinery/abductor_tele/proc/teleport_target(var/mob/mob, var/turf/target)
+	new /obj/effect/temporary(get_turf(mob), 5, icon, "teleport_effect_back")
+	mob.dir = 2
+	mob.forceMove(target)
+	new /obj/effect/temporary(target, 5, icon, "teleport_effect")
+	addtimer(CALLBACK(src, .proc/teleport_effect, target), 5)
+
+/obj/machinery/abductor_tele/proc/teleport_effect(var/turf/target)
+	var/datum/effect/effect/system/spark_spread/sparks = new /datum/effect/effect/system/spark_spread()
+	sparks.set_up(5, 0, target)
+	sparks.start()
+	playsound(target, "sparks", 50, 1)
+	playsound(target, 'sound/effects/phasein.ogg', 25, 1)
+
+
 /obj/machinery/abductor_tele/proc/teleport_from(var/turf/target)
 	var/mob/living/M = locate(/mob/living) in get_turf(hub)
 	if(M && ishuman(M))
 		var/mob/living/carbon/human/H = M
-		new /obj/effect/temporary(get_turf(H), 5, icon, "teleport_effect_back")
-		H.dir = 2
-		spawn(5)
-			H.forceMove(target)
-			new /obj/effect/temporary(get_turf(H), 5, icon, "teleport_effect")
-			spawn(5)
-				var/datum/effect/effect/system/spark_spread/sparks = new /datum/effect/effect/system/spark_spread()
-				sparks.set_up(5, 0, get_turf(H))
-				sparks.start()
-				playsound(H.loc, "sparks", 50, 1)
-				playsound(H.loc, 'sound/effects/phasein.ogg', 25, 1)
+		addtimer(CALLBACK(src, .proc/teleport_target, H, target), 5)
+
 
 /obj/machinery/abductor_tele/proc/teleport_to()
 	if(marked && ishuman(marked))
-		new /obj/effect/temporary(get_turf(marked), 5, icon, "teleport_effect_back")
-		marked.dir = 2
-		spawn(5)
-			marked.forceMove(get_turf(hub))
-			new /obj/effect/temporary(get_turf(marked), 5, icon, "teleport_effect")
-			spawn(5)
-				var/datum/effect/effect/system/spark_spread/sparks = new /datum/effect/effect/system/spark_spread()
-				sparks.set_up(5, 0, get_turf(marked))
-				sparks.start()
-				playsound(marked.loc, "sparks", 50, 1)
-				playsound(marked.loc, 'sound/effects/phasein.ogg', 25, 1)
+		addtimer(CALLBACK(src, .proc/teleport_target, marked, get_turf(hub)), 5)
 
 /obj/machinery/abductor_tele/attack_hand(mob/user as mob)
 	if(marked)
