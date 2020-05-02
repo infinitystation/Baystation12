@@ -395,9 +395,7 @@
 	},
 /obj/structure/catwalk,
 /obj/machinery/access_button/airlock_exterior{
-	frequency = 1380;
 	master_tag = "mbase_airlock_space";
-	pixel_x = 0;
 	pixel_y = -21
 	},
 /turf/space,
@@ -440,9 +438,8 @@
 /turf/simulated/wall/prepainted/mining_asteroid,
 /area/outpost/mining/power)
 "bg" = (
-/obj/machinery/door/airlock/external/bolted{
-	frequency = 1380;
-	id_tag = "mbase_airlock_space_exterior"
+/obj/machinery/door/airlock/external/bolted/cycling{
+	id_tag = "mbase_airlock_space_outer"
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -514,17 +511,16 @@
 "bp" = (
 /obj/structure/catwalk,
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
-	frequency = 1380;
 	id_tag = "mbase_airlock_space";
-	pixel_x = -24;
-	tag_airpump = "mbase_airlock_space_pump";
-	tag_chamber_sensor = "mbase_airlock_space_sensor";
-	tag_exterior_door = "mbase_airlock_space_exterior";
-	tag_interior_door = "mbase_airlock_space_interior"
+	pixel_x = -24
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 4;
 	id_tag = "mbase_airlock_space_pump"
+	},
+/obj/effect/floor_decal/industrial/warning/cee{
+	icon_state = "stripecee";
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining/cenral)
@@ -539,14 +535,17 @@
 "br" = (
 /obj/structure/catwalk,
 /obj/machinery/airlock_sensor{
-	frequency = 1380;
+	master_tag = "mbase_airlock_space";
 	id_tag = "mbase_airlock_space_sensor";
-	pixel_x = 24;
-	pixel_y = 0
+	pixel_x = 24
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 8;
 	id_tag = "mbase_airlock_space_pump"
+	},
+/obj/effect/floor_decal/industrial/warning/cee{
+	icon_state = "stripecee";
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining/cenral)
@@ -608,10 +607,11 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 4;
 	id_tag = "mbase_airlock_space_pump"
 	},
+/obj/effect/floor_decal/industrial/warning/cee,
 /turf/simulated/floor/plating,
 /area/outpost/mining/cenral)
 "bz" = (
@@ -620,10 +620,11 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/outpost/mining/cenral)
 "bA" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 8;
 	id_tag = "mbase_airlock_space_pump"
 	},
+/obj/effect/floor_decal/industrial/warning/cee,
 /turf/simulated/floor/plating,
 /area/outpost/mining/cenral)
 "bB" = (
@@ -782,9 +783,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/hangar)
 "bN" = (
-/obj/machinery/door/airlock/external/glass{
-	frequency = 1380;
-	id_tag = "mbase_airlock_space_interior";
+/obj/machinery/door/airlock/external/glass/bolted/cycling{
+	id_tag = "mbase_airlock_space_inner";
 	name = "External Airlock"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
@@ -889,11 +889,9 @@
 /area/outpost/mining/cenral)
 "bY" = (
 /obj/machinery/access_button/airlock_interior{
-	frequency = 1380;
 	master_tag = "mbase_airlock_space";
 	pixel_x = -6;
-	pixel_y = 26;
-	tag = ""
+	pixel_y = 26
 	},
 /obj/machinery/recharge_station,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -915,13 +913,17 @@
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/recreation)
 "cb" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 8;
 	id_tag = "mbase_airlock_pump"
 	},
 /obj/structure/catwalk,
 /obj/structure/sign/poster/humpost/hum_21{
 	pixel_x = 32
+	},
+/obj/effect/floor_decal/industrial/warning/half{
+	icon_state = "warninghalf";
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining)
@@ -2731,9 +2733,7 @@
 /area/outpost/mining/atmos)
 "fA" = (
 /obj/machinery/access_button/airlock_exterior{
-	frequency = 1379;
 	master_tag = "mbase_airlock";
-	pixel_x = 0;
 	pixel_y = 28
 	},
 /turf/simulated/floor/airless/asteroid,
@@ -2771,9 +2771,8 @@
 /area/outpost/mining)
 "fE" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
-/obj/machinery/door/airlock/external/glass{
-	frequency = 1379;
-	id_tag = "mbase_airlock_interior";
+/obj/machinery/door/airlock/external/glass/bolted/cycling{
+	id_tag = "mbase_airlock_inner";
 	name = "External Airlock"
 	},
 /obj/structure/cable{
@@ -3048,9 +3047,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/yellow,
 /obj/machinery/access_button/airlock_interior{
 	master_tag = "mbase_airlock";
-	pixel_x = 0;
-	pixel_y = -21;
-	tag = ""
+	pixel_y = -21
 	},
 /obj/effect/floor_decal/corner/brown{
 	dir = 6
@@ -3066,7 +3063,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining)
 "gh" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 4;
 	id_tag = "mbase_airlock_pump"
 	},
@@ -3074,12 +3071,15 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/effect/floor_decal/industrial/warning/cee{
+	icon_state = "stripecee";
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/outpost/mining)
 "gi" = (
-/obj/machinery/door/airlock/external/bolted{
-	frequency = 1379;
-	id_tag = "mbase_airlock_exterior"
+/obj/machinery/door/airlock/external/bolted/cycling{
+	id_tag = "mbase_airlock_outer"
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -3089,7 +3089,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/outpost/mining)
 "gj" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 8;
 	id_tag = "mbase_airlock_pump"
 	},
@@ -3098,21 +3098,25 @@
 	dir = 4;
 	pixel_y = 0
 	},
+/obj/effect/floor_decal/industrial/warning/cee{
+	icon_state = "stripecee";
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/outpost/mining)
 "gk" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 4;
 	id_tag = "mbase_airlock_pump"
 	},
 /obj/structure/catwalk,
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
 	id_tag = "mbase_airlock";
-	pixel_x = -24;
-	tag_airpump = "mbase_airlock_pump";
-	tag_chamber_sensor = "mbase_airlock_sensor";
-	tag_exterior_door = "mbase_airlock_exterior";
-	tag_interior_door = "mbase_airlock_interior"
+	pixel_x = -24
+	},
+/obj/effect/floor_decal/industrial/warning/half{
+	icon_state = "warninghalf";
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining)
@@ -3128,24 +3132,31 @@
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/voidsuits)
 "gm" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 4;
 	id_tag = "mbase_airlock_pump"
 	},
 /obj/structure/catwalk,
+/obj/effect/floor_decal/industrial/warning/half{
+	icon_state = "warninghalf";
+	dir = 8
+	},
 /turf/simulated/floor/plating,
 /area/outpost/mining)
 "gn" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 8;
 	id_tag = "mbase_airlock_pump"
 	},
 /obj/structure/catwalk,
 /obj/machinery/airlock_sensor{
-	frequency = 1379;
+	master_tag = "mbase_airlock";
 	id_tag = "mbase_airlock_sensor";
-	pixel_x = 24;
-	pixel_y = 0
+	pixel_x = 24
+	},
+/obj/effect/floor_decal/industrial/warning/half{
+	icon_state = "warninghalf";
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining)
@@ -3167,7 +3178,7 @@
 /turf/simulated/floor/airless/asteroid,
 /area/outpost/mining/relay)
 "gp" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 8;
 	id_tag = "mbase_airlock_pump"
 	},
@@ -3180,6 +3191,7 @@
 	icon_state = "chair_preview";
 	dir = 8
 	},
+/obj/effect/floor_decal/industrial/warning/cee,
 /turf/simulated/floor/plating,
 /area/outpost/mining)
 "gq" = (
@@ -3294,10 +3306,8 @@
 /area/outpost/mining/relay)
 "gH" = (
 /obj/machinery/access_button/airlock_exterior{
-	frequency = 1379;
 	master_tag = "mbaserelay_airlock";
-	pixel_x = -24;
-	pixel_y = 0
+	pixel_x = -24
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/mine/unexplored)
@@ -3334,7 +3344,7 @@
 /area/outpost/mining/relay)
 "gM" = (
 /obj/machinery/door/airlock/external/bolted/cycling{
-	id_tag = "mbaserelay_airlock_interior"
+	id_tag = "mbaserelay_airlock_inner"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
 	dir = 4;
@@ -3373,7 +3383,7 @@
 /area/outpost/mining/relay)
 "gP" = (
 /obj/machinery/door/airlock/external/bolted/cycling{
-	id_tag = "mbaserelay_airlock_exterior"
+	id_tag = "mbaserelay_airlock_outer"
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -3410,9 +3420,7 @@
 "gT" = (
 /obj/machinery/access_button/airlock_interior{
 	master_tag = "mbaserelay_airlock";
-	pixel_x = 23;
-	pixel_y = 0;
-	tag = ""
+	pixel_x = 23
 	},
 /obj/structure/bed/chair{
 	icon_state = "chair_preview";
@@ -3424,13 +3432,9 @@
 /obj/structure/catwalk,
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
 	id_tag = "mbaserelay_airlock";
-	pixel_x = -24;
-	tag_airpump = "mbaserelay_airlock_pump";
-	tag_chamber_sensor = "mbaserelay_airlock_sensor";
-	tag_exterior_door = "mbaserelay_airlock_exterior";
-	tag_interior_door = "mbaserelay_airlock_interior"
+	pixel_x = -24
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 1;
 	id_tag = "mbaserelay_airlock_pump"
 	},
@@ -3439,12 +3443,11 @@
 "gV" = (
 /obj/structure/catwalk,
 /obj/machinery/airlock_sensor{
-	frequency = 1379;
+	master_tag = "mbaserelay_airlock";
 	id_tag = "mbaserelay_airlock_sensor";
-	pixel_x = 24;
-	pixel_y = 0
+	pixel_x = 24
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 1;
 	id_tag = "mbaserelay_airlock_pump"
 	},
@@ -4103,6 +4106,18 @@
 /obj/item/weapon/scrap_lump,
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
+"QI" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
+	dir = 4;
+	id_tag = "mbase_airlock_pump"
+	},
+/obj/structure/catwalk,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning/cee,
+/turf/simulated/floor/plating,
+/area/outpost/mining)
 
 (1,1,1) = {"
 gB
@@ -24388,7 +24403,7 @@ ek
 gh
 gk
 gm
-gh
+QI
 fY
 dC
 hc
