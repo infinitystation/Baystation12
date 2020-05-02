@@ -6,9 +6,6 @@
 	item_state = "revolmask"
 	item_icons = list(slot_wear_mask_str = CUSTOM_ITEM_MOB)
 	trade_blacklisted = TRUE
-
-/obj/item/clothing/mask/gas/revolmask/Initialize()
-	. = ..()
 	tint = 0
 
 /obj/item/clothing/under/thermal/revoluni
