@@ -37445,7 +37445,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/reinforced/airless,
-/area/maintenance/firstdeck/forestarboard)
+/area/space)
 "cpk" = (
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/machinery/airlock_sensor{
@@ -37538,9 +37538,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
-"fsU" = (
-/turf/simulated/floor/reinforced/airless,
-/area/maintenance/firstdeck/forestarboard)
 "fvN" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Security Maintenance";
@@ -37625,7 +37622,7 @@
 "hLb" = (
 /obj/item/target/syndicate,
 /turf/simulated/floor/reinforced/airless,
-/area/maintenance/firstdeck/forestarboard)
+/area/space)
 "hLn" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 4
@@ -37664,7 +37661,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/reinforced/airless,
-/area/maintenance/firstdeck/forestarboard)
+/area/space)
 "kHM" = (
 /obj/effect/wallframe_spawn/reinforced/hull,
 /obj/machinery/door/firedoor,
@@ -37772,7 +37769,7 @@
 "mLZ" = (
 /obj/item/target,
 /turf/simulated/floor/reinforced/airless,
-/area/maintenance/firstdeck/forestarboard)
+/area/space)
 "mXP" = (
 /obj/structure/table/standard,
 /obj/machinery/recharger/wallcharger{
@@ -37954,7 +37951,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/reinforced/airless,
-/area/maintenance/firstdeck/forestarboard)
+/area/space)
 "qym" = (
 /obj/structure/bed/chair/padded/red{
 	dir = 1
@@ -46070,8 +46067,8 @@ aaa
 aaa
 aaa
 aaa
-fsU
-fsU
+aam
+aam
 mLZ
 nEh
 nsH
@@ -46273,7 +46270,7 @@ aaa
 aaa
 adz
 ckh
-fsU
+aam
 pWA
 flu
 vcD
