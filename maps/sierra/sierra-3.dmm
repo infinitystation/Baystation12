@@ -4531,11 +4531,8 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/security_scanner,
 /obj/machinery/door/blast/regular/open{
-	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
+	name = "Security Department Lockdown"
 	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/security/nuke_storage)
@@ -5911,11 +5908,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/floor_decal/industrial/hatch/grey,
 /obj/machinery/door/blast/regular/open{
-	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
+	name = "Security Department Lockdown"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/sierra/evidence)
@@ -8745,7 +8739,6 @@
 	id_tag = "firingspace";
 	name = "Firing Range Shields";
 	pixel_x = 20;
-	pixel_y = 0;
 	req_access = list("ACCESS_SEC_DOORS")
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -15422,11 +15415,8 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular/open{
-	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
+	name = "Security Department Lockdown"
 	},
 /turf/simulated/floor/plating,
 /area/security/sierra/hallway/aft)
@@ -15928,12 +15918,9 @@
 	dir = 4
 	},
 /obj/machinery/door/blast/regular/open{
-	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
+	name = "Security Department Lockdown"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/bridge/hall/level_two)
@@ -16408,12 +16395,9 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular/open{
-	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
+	name = "Security Department Lockdown"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/security/sierra/hallway/aft)
@@ -17379,12 +17363,9 @@
 	dir = 4
 	},
 /obj/machinery/door/blast/regular/open{
-	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
+	name = "Security Department Lockdown"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/bridge/hall/level_two)
@@ -17730,12 +17711,9 @@
 	name = "Security Entry"
 	},
 /obj/machinery/door/blast/regular/open{
-	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
+	name = "Security Department Lockdown"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/security/sierra/hallway/aft)
@@ -20522,12 +20500,9 @@
 	name = "Warden Desk"
 	},
 /obj/machinery/door/blast/regular/open{
-	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
+	name = "Security Department Lockdown"
 	},
 /turf/simulated/floor/plating,
 /area/security/sierra/sergeant)
@@ -21336,12 +21311,9 @@
 /obj/structure/wall_frame/prepainted,
 /obj/structure/table/wallf/steel,
 /obj/machinery/door/blast/regular/open{
-	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
+	name = "Security Department Lockdown"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/security/sierra/sergeant)
@@ -23527,12 +23499,9 @@
 	req_access = newlist()
 	},
 /obj/machinery/door/blast/regular/open{
-	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
+	name = "Security Department Lockdown"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/security/sierra/sergeant)
@@ -25807,11 +25776,8 @@
 	id_tag = "security_permabrig_shutters"
 	},
 /obj/machinery/door/blast/regular/open{
-	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
+	name = "Security Department Lockdown"
 	},
 /turf/simulated/floor/plating,
 /area/security/prison)
@@ -25826,11 +25792,8 @@
 	id_tag = "security_permabrig_shutters"
 	},
 /obj/machinery/door/blast/regular/open{
-	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
+	name = "Security Department Lockdown"
 	},
 /turf/simulated/floor/plating,
 /area/security/prison)
@@ -28716,12 +28679,9 @@
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/hatch/grey,
 /obj/machinery/door/blast/regular/open{
-	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
+	name = "Security Department Lockdown"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/foreport)
@@ -37500,6 +37460,7 @@
 	pixel_x = 20;
 	req_access = list("ACCESS_EXTERNAL")
 	},
+/obj/structure/catwalk,
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	id_tag = "firing_range_pump"
 	},
@@ -37520,12 +37481,9 @@
 	id = "cadetwindow"
 	},
 /obj/machinery/door/blast/regular/open{
-	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
+	name = "Security Department Lockdown"
 	},
 /obj/structure/cable/green,
 /turf/simulated/floor/plating,
@@ -37565,17 +37523,14 @@
 "flu" = (
 /obj/effect/wallframe_spawn/reinforced/hull,
 /obj/machinery/door/firedoor,
-/obj/machinery/door/blast/regular{
+/obj/machinery/door/blast/shutters{
 	dir = 2;
 	id_tag = "firingspace";
 	name = "Firing Range Shields"
 	},
 /obj/machinery/door/blast/regular/open{
-	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
+	name = "Security Department Lockdown"
 	},
 /obj/structure/cable/green{
 	d2 = 8;
@@ -37594,11 +37549,8 @@
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/hatch/grey,
 /obj/machinery/door/blast/regular/open{
-	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
+	name = "Security Department Lockdown"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/range)
@@ -37636,11 +37588,8 @@
 	req_access = list("ACCESS_EXTERNAL")
 	},
 /obj/machinery/door/blast/regular/open{
-	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
+	name = "Security Department Lockdown"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/forestarboard)
@@ -37656,13 +37605,10 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/industrial/hatch/red,
-/obj/machinery/door/blast/regular/open{
-	density = 0;
+/obj/machinery/door/blast/shutters/open{
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "firingspace";
-	name = "FIRING RANGE SAFETY SHIELD";
-	opacity = 0
+	name = "FIRING RANGE SAFETY SHIELD"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/forestarboard)
@@ -37722,17 +37668,14 @@
 "kHM" = (
 /obj/effect/wallframe_spawn/reinforced/hull,
 /obj/machinery/door/firedoor,
-/obj/machinery/door/blast/regular{
+/obj/machinery/door/blast/shutters{
 	dir = 2;
 	id_tag = "firingspace";
 	name = "Firing Range Shields"
 	},
 /obj/machinery/door/blast/regular/open{
-	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
+	name = "Security Department Lockdown"
 	},
 /obj/structure/cable/green{
 	d2 = 4;
@@ -37758,12 +37701,9 @@
 	id = "cadetwindow"
 	},
 /obj/machinery/door/blast/regular/open{
-	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
+	name = "Security Department Lockdown"
 	},
 /obj/structure/cable/green{
 	d1 = 2;
@@ -37781,17 +37721,14 @@
 	id = "cadetwindow"
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/door/blast/regular{
+/obj/machinery/door/blast/shutters{
 	dir = 2;
 	id_tag = "firingspace";
 	name = "Firing Range Shields"
 	},
 /obj/machinery/door/blast/regular/open{
-	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
+	name = "Security Department Lockdown"
 	},
 /obj/structure/cable/green{
 	d2 = 8;
@@ -37801,17 +37738,14 @@
 /area/security/range)
 "lTo" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/blast/regular{
+/obj/machinery/door/blast/shutters{
 	dir = 2;
 	id_tag = "firingspace";
 	name = "Firing Range Shields"
 	},
 /obj/machinery/door/blast/regular/open{
-	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
+	name = "Security Department Lockdown"
 	},
 /obj/structure/cable/green,
 /obj/structure/cable/green{
@@ -37875,13 +37809,10 @@
 	dir = 4;
 	icon_state = "intact"
 	},
-/obj/machinery/door/blast/regular/open{
-	density = 0;
+/obj/machinery/door/blast/shutters/open{
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "firingspace";
-	name = "FIRING RANGE SAFETY SHIELD";
-	opacity = 0
+	name = "FIRING RANGE SAFETY SHIELD"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/forestarboard)
@@ -37900,17 +37831,14 @@
 /area/maintenance/firstdeck/forestarboard)
 "nqT" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/blast/regular{
+/obj/machinery/door/blast/shutters{
 	dir = 2;
 	id_tag = "firingspace";
 	name = "Firing Range Shields"
 	},
 /obj/machinery/door/blast/regular/open{
-	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
+	name = "Security Department Lockdown"
 	},
 /obj/structure/cable/green{
 	d2 = 4;
@@ -37960,17 +37888,14 @@
 "nEh" = (
 /obj/effect/wallframe_spawn/reinforced/hull,
 /obj/machinery/door/firedoor,
-/obj/machinery/door/blast/regular{
+/obj/machinery/door/blast/shutters{
 	dir = 2;
 	id_tag = "firingspace";
 	name = "Firing Range Shields"
 	},
 /obj/machinery/door/blast/regular/open{
-	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
+	name = "Security Department Lockdown"
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -37998,12 +37923,9 @@
 	id = "cadetwindow"
 	},
 /obj/machinery/door/blast/regular/open{
-	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "security_lockdown";
-	name = "Security Department Lockdown";
-	opacity = 0
+	name = "Security Department Lockdown"
 	},
 /obj/structure/cable/green,
 /obj/structure/cable/green{
