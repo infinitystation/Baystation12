@@ -216,7 +216,6 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	uniform = /obj/item/clothing/under/rank/security/cadet
 	shoes = /obj/item/clothing/shoes/jackboots
 	id_type = /obj/item/weapon/card/id/sierra/crew/security/cadet
-	head = /obj/item/clothing/head/beret/sec/corporate/whitered
 
 	///////////
 	//MEDICAL//
