@@ -158,6 +158,7 @@
 /datum/gear/utility/gcartridge_med
 	display_name = "MedHUD cartridge"
 	path = /obj/item/glass_cartridge/medhud
+	allowed_roles = list(/datum/job/senior_doctor, /datum/job/doctor_trainee, /datum/job/doctor, /datum/job/explorer_medic, datum/job/cmo, /datum/job/rd)
 
 /datum/gear/utility/gcartridge_sec
 	display_name = "SecHUD cartridge"
