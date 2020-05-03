@@ -119,10 +119,9 @@
 	spawn_positions = 2
 	supervisors = "Главой Охраны и остальным охранным персоналом"
 	economic_power = 3
-	ideal_character_age = 30
+	ideal_character_age = 21
 	selection_color = "#601c1c"
-	alt_titles = list(
-		)
+	alt_titles = list("Junior Guard")
 
 	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_COMBAT      = SKILL_BASIC,

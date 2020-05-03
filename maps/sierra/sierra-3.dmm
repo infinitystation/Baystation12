@@ -15443,14 +15443,12 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/fore_stairwell)
 "azQ" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/fore_stairwell)
 "azR" = (
@@ -16489,9 +16487,6 @@
 "aBc" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass/civilian,
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/center)
 "aBd" = (
@@ -18857,9 +18852,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/aft)
 "aDT" = (
@@ -19283,9 +19275,6 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass/civilian,
 /obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/security_scanner{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -19930,9 +19919,6 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
-	},
-/obj/machinery/security_scanner{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/aft)
@@ -20674,7 +20660,6 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/firedoor,
-/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo/upper)
 "aGE" = (
@@ -20730,7 +20715,6 @@
 "aGM" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/central_stairwell)
 "aGN" = (
@@ -20744,7 +20728,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/central_stairwell)
 "aGO" = (
@@ -37600,14 +37583,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
-"fqD" = (
-/obj/machinery/door/firedoor,
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/security_scanner{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/hallway/primary/firstdeck/aft)
 "fsU" = (
 /turf/simulated/floor/reinforced/airless,
 /area/maintenance/firstdeck/forestarboard)
@@ -64166,7 +64141,7 @@ amC
 amC
 amC
 aAo
-fqD
+aCf
 aDS
 aFH
 aHg
