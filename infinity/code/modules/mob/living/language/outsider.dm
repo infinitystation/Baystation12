@@ -57,3 +57,14 @@
 		return 1
 
 	return 0
+    
+/datum/language/abductors
+	name = LANGUAGE_ABDUCTORS
+	desc = "Abductors have a telepathical link between them."
+	speech_verb = "транслирует"
+	ask_verb = "запрашивает"
+	exclaim_verb = "транслирует"
+	colour = "#90489c"
+	key = "w"
+	flags = RESTRICTED | HIVEMIND
+	shorthand = "N/A"

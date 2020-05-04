@@ -1,6 +1,6 @@
 /datum/event/aliens
 	announceWhen = 495
-	var/spawncount = 1
+	var/spawncount = 3 //Was 1, too hard and there was a chance of bug with no larvas
 
 /datum/event/aliens/announce()
 	GLOB.using_map.level_x_biohazard_announcement(9)

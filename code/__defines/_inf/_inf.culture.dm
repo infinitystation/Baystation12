@@ -65,6 +65,10 @@
 //#define FACTION_SCP             "Security Corporate Personal"
 #define FACTION_SEPTENERGO      "SeptEnergo Public Joint-Stock Company"
 
+#define FACTION_ABDUCTOR        "Mothership"
+#define CULTURE_ABDUCTOR_A      "Mothership Agent"
+#define CULTURE_ABDUCTOR_S      "Mothership Scientist"
+
 // Xenophage cultures
 #define CULTURE_XENOPHAGE_D    "Xenophage Drone"
 #define CULTURE_XENOPHAGE_H    "Xenophage Hunter"

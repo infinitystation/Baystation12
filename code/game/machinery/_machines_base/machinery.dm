@@ -283,6 +283,15 @@ Class Procs:
 // If you don't call parent in this proc, you must make all appropriate checks yourself.
 // If you do, you must respect the return value.
 /obj/machinery/attack_hand(mob/user)
+
+    //[INF]
+
+	if(isxenomorph(user))
+		attack_generic(user, 15, pick("strikes", "tears", "rips appart"))
+		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+
+    //[/INF]
+
 	if((. = ..())) // Buckling, climbers; unlikely to return true.
 		return
 	if(!CanPhysicallyInteract(user))
