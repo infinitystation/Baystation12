@@ -72,7 +72,7 @@
 
 
 /decl/hierarchy/outfit/alien
-	name = "Abductor Outfit"
+	name = "Abductor Agent Outfit"
 	shoes = /obj/item/clothing/shoes/black
 	l_ear = /obj/item/device/radio/headset/abductor
 	uniform = /obj/item/clothing/under/thermal/heat/abductor/white
@@ -83,7 +83,7 @@
 	l_hand = /obj/item/weapon/melee/adv_baton
 
 /decl/hierarchy/outfit/alien_sci
-	name = "Abductor Outfit"
+	name = "Abductor Scientist Outfit"
 	shoes = /obj/item/clothing/shoes/black
 	l_ear = /obj/item/device/radio/headset/abductor
 	uniform = /obj/item/clothing/under/thermal/heat/abductor/white
