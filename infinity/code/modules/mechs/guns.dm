@@ -8,6 +8,7 @@
 	self_recharge = TRUE
 	use_external_power = TRUE
 	has_safety = FALSE
+	one_hand_penalty= 0
 
 /obj/item/weapon/gun/energy/machingegun/mounted/mech
 	name = "mech machingegun"
@@ -17,18 +18,19 @@
 	item_state = "l6closedmag"
 	force = 10
 	projectile_type = /obj/item/projectile/bullet/rifle
-	max_shots = 18
+	max_shots = 30
 	multi_aim = 1
-	move_delay = 2
-	fire_delay=1
+	move_delay = 0
+	fire_delay=0
 	can_autofire=1
 	burst=5
 	accuracy = -1
 	bulk = GUN_BULK_RIFLE
 	w_class = ITEM_SIZE_HUGE
-	one_hand_penalty= 6
+	one_hand_penalty= 0
 
 	self_recharge = TRUE
+	recharge_time = 3
 	use_external_power = TRUE
 	has_safety = FALSE
 
