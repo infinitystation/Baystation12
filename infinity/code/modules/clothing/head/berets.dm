@@ -13,7 +13,7 @@
 /obj/item/clothing/head/beret/infinity/medical
 	name = "medical beret"
 	desc = "A white beret with more white medical cross on it. Sterill as well as surgeon's bomber jacket."
-	icon_state = "medical_beret"
+	icon_state = "medbay_beret"
 
 /obj/item/clothing/head/beret/infinity/medical_cmo
 	name = "chief medical officer's beret"
