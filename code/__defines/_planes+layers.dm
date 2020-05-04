@@ -93,7 +93,7 @@ What is the naming convention for planes or layers?
 	//ABOVE TURF
 	#define DECAL_LAYER                 2.03
 	#define RUNE_LAYER                  2.04
-	#define EXPOSED_DISPOSALS_PIPE_LAYER          2.049 //inf
+	#define EXPOSED_DISPOSALS_PIPE_LAYER          2.0499 //inf
 	#define ABOVE_TILE_LAYER            2.05
 	#define EXPOSED_PIPE_LAYER          2.06
 	#define EXPOSED_WIRE_LAYER          2.07
