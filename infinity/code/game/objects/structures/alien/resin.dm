@@ -18,7 +18,8 @@
 		resin.update_icon()
 	. = ..()
 
-/obj/structure/alien/resin/update_icon()
+/obj/structure/alien/resin/on_update_icon()
+	. = ..()
 	var/list/cardinal_neighbors = list()
 
 	for(var/check_dir in GLOB.cardinal)
