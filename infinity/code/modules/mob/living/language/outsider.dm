@@ -65,6 +65,6 @@
 	ask_verb = "запрашивает"
 	exclaim_verb = "транслирует"
 	colour = "#90489c"
-	key = "w"
+	key = "m"
 	flags = RESTRICTED | HIVEMIND
 	shorthand = "N/A"

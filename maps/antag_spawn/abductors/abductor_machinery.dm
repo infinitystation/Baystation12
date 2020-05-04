@@ -42,7 +42,7 @@
 			implant.verbs += /obj/item/weapon/implant/abductors/proc/push_marked
 			eye.possess(user)
 			to_chat(eye.owner, "<span class='notice'>You feel disorented for a moment as your mind connects to the camera network.</span>")
-			eye.forceMove(locate("landmark*Observer-Start").loc)
+			eye.forceMove(get_turf(locate("landmark*Observer-Start")))
 
 /obj/machinery/computer/abductor/camera/proc/deactivate(mob/user)
 	if(user == eye.owner)
