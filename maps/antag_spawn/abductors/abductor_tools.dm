@@ -233,3 +233,9 @@
 	desc = "An alien-looking gun, capable of creating EMP to disable radio equipment."
 	icon = 'infinity/icons/obj/abductor.dmi'
 	icon_state = "silencer"
+
+/obj/item/device/encryptionkey/alien
+	name = "alien encryption key"
+	desc = "Integrated encryption key."
+	icon_state = "sci_cypherkey"
+	channels = list("Command" = 1, "Security" = 1, "Engineering" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "Exploration" = 1, "AI Private" = 1)

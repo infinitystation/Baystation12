@@ -303,3 +303,4 @@
 	desc = "A strange-looking headset."
 	icon = 'infinity/icons/obj/abductor.dmi'
 	icon_state = "abductor_headset"
+	ks1type = /obj/item/device/encryptionkey/alien
