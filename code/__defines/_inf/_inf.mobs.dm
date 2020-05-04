@@ -17,7 +17,6 @@
 #define SPECIES_TAJARA "Tajara"
 #define SPECIES_EROSAN "Erosan'Unathi"
 #define SPECIES_RESOMI "Resomi"
-#define SPECIES_SWARM  "Swarm"
 #define SPECIES_XENO   "Xenophage"
 #define SPECIES_BIONIC "Bionic"
 
