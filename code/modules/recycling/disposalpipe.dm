@@ -12,7 +12,7 @@
 	dir = 0				// dir will contain dominant direction for junction pipes
 	var/health = 10 	// health points 0-10
 	alpha = 192 // Plane and alpha modified for mapping, reset to normal on spawn.
-	layer = DISPOSALS_PIPE_LAYER
+	layer = EXPOSED_DISPOSALS_PIPE_LAYER //inf was DISPOSALS_PIPE_LAYER
 	var/base_icon_state	// initial icon state on map
 	var/sort_type = ""
 	var/turn = DISPOSAL_FLIP_NONE
