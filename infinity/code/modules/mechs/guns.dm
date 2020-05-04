@@ -22,7 +22,7 @@
 	move_delay = 2
 	fire_delay=1
 	can_autofire=1
-	burst=1
+	burst=5
 	accuracy = -1
 	bulk = GUN_BULK_RIFLE
 	w_class = ITEM_SIZE_HUGE

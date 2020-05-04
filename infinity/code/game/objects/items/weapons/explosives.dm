@@ -1,6 +1,6 @@
 /obj/item/weapon/plastique/super
 	name = "X-4 explosives"
-	desc = "Military version of plastique explosions. Like C-4, but better."
+	desc = "Military version of plastique explosions."
 	icon = 'infinity/icons/obj/assemblies.dmi'
 	origin_tech = list(TECH_ESOTERIC = 4)
 	explosion_strengh = 1

@@ -3345,7 +3345,6 @@
 #include "infinity\code\game\objects\items\devices\radio\headset.dm"
 #include "infinity\code\game\objects\items\stacks\tiles\tile_types.dm"
 #include "infinity\code\game\objects\items\weapons\cards_Id.dm"
-#include "infinity\code\game\objects\items\weapons\energy.dm"
 #include "infinity\code\game\objects\items\weapons\explosives.dm"
 #include "infinity\code\game\objects\items\weapons\extunguisher.dm"
 #include "infinity\code\game\objects\items\weapons\lighter.dm"

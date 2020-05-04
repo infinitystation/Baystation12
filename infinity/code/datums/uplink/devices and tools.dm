@@ -1,7 +1,7 @@
 /datum/uplink_item/item/tools/superplastique
 	name = "X-4"
 	desc = "Upgraded version of C-4 explosives. Can destroy even a reinforced wall."
-	item_cost = 14
+	item_cost = 8
 	path = /obj/item/weapon/plastique/super
 
 /datum/uplink_item/item/tools/pcombo
@@ -12,8 +12,8 @@
 
 /datum/uplink_item/item/tools/spcombo
 	name = "Bag of X-4"
-	desc = "Bag, containing 3 military X-4 explosives. Be careful with it. 8 TC discount."
-	item_cost = 34
+	desc = "Bag, containing 3 military X-4 explosives. Be careful with it. 4 TC discount."
+	item_cost = 20
 	path = /obj/item/weapon/storage/backpack/dufflebag/syndie_kit/plastique/super
 
 /datum/uplink_item/item/tools/poisons
@@ -62,7 +62,7 @@
 
 /datum/uplink_item/item/tools/stimpack
 	name = "Stimpack"
-	desc = "Autoinjector, containing 5u of experimental stimulants."
+	desc = "Autoinjector, containing 5u of experimental stimulants, that will increase your speed temporarly."
 	item_cost = 18
 	antag_costs = list(MODE_MERCENARY = 12)
 	path = /obj/item/weapon/reagent_containers/hypospray/autoinjector/stimpack

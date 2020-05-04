@@ -121,20 +121,6 @@
 		/obj/item/weapon/shield/energy
 		)
 
-/obj/item/weapon/storage/backpack/clown/syndie_kit
-	name = "Syndies von Honkerton"
-	desc = "It's a backpack made by Honk! Co. At least it wants to look like it does..."
-	startswith = list(
-		/obj/item/clothing/shoes/clown_shoes,
-		/obj/item/clothing/mask/gas/clown_hat,
-		/obj/item/clothing/under/rank/clown,
-		/obj/item/weapon/bikehorn,
-		/obj/item/weapon/gun/projectile/automatic/assault_rifle/clown,
-		/obj/item/ammo_magazine/rifle/rubber = 3,
-		/obj/item/weapon/melee/energy/sword/clown,
-		/obj/item/weapon/grenade/spawnergrenade/banana
-		)
-
 /obj/item/weapon/storage/backpack/dufflebag/syndie_kit/mag_shotgun
 	startswith = list(
 		/obj/item/weapon/gun/projectile/shotgun/magazine,

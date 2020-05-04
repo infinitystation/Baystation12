@@ -1,15 +1,11 @@
-obj/item/weapon/implant/emp
+/obj/item/weapon/implant/emp
 	name = "emp implant"
 	desc = "This implant can start an EMP, which is useful to fry some electrocics."
 	origin_tech = list(TECH_MATERIAL = 2, TECH_MAGNET = 3, TECH_ESOTERIC = 3)
 	implant_color = "r"
 	hidden = 1
 	var/activation_emote
-	var/uses
-
-obj/item/weapon/implant/emp/Initialize()
-	. = ..()
-	uses = rand(1, 3)
+	var/uses = 2
 
 /obj/item/weapon/implant/emp/get_data()
 	return {"

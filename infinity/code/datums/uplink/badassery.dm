@@ -61,23 +61,16 @@
 	antag_roles = list(MODE_MERCENARY)
 	path = /obj/item/weapon/storage/backpack/dufflebag/syndie_kit/heavy
 
-/datum/uplink_item/item/badassery/clown
-	name = "Clown Kit"
-	desc = "This kit is developed special to HONK your enemies to death. It contains: Clown Suit, mask and shoes, banana grenade, beautiful clown rifle and honkenegry sword."
-	item_cost = DEFAULT_TELECRYSTAL_AMOUNT
-	antag_roles = list(MODE_MERCENARY)
-	path = /obj/item/weapon/storage/backpack/clown/syndie_kit
-
 /datum/uplink_item/item/badassery/mech
 	name = "Syndicate Mech"
 	desc = "Special heavy mech with cool weaponery. It has: taser, laser and shield generator. Ideal for murderbone."
-	item_cost = DEFAULT_TELECRYSTAL_AMOUNT
+	item_cost = DEFAULT_TELECRYSTAL_AMOUNT * 2
 	antag_roles = list(MODE_MERCENARY)
 	path = /mob/living/exosuit/premade/heavy/merc
 
 /datum/uplink_item/item/badassery/mech
 	name = "Combat Mech"
 	desc = "A terrible and at the same time beautiful combat mech to destroy all living things in your way. Comes with special plasma rifle, machinegun and shielding drone. Also, it is almoust EMP-proof!"
-	item_cost = DEFAULT_TELECRYSTAL_AMOUNT * 3
+	item_cost = DEFAULT_TELECRYSTAL_AMOUNT * 4
 	antag_roles = list(MODE_MERCENARY)
 	path = /mob/living/exosuit/premade/combat/merc

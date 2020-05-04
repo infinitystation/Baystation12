@@ -1,32 +1,4 @@
-/datum/reagent/stimulants
-	name = "Experimental Stimulants"
-	description = "Experimental Stimulants are very dangerous mix, which can increase your speed."
-	taste_description = "metal"
-	reagent_state = LIQUID
-	color = "#ff2681"
-	metabolism = REM * 0.20
-	overdose = REAGENTS_OVERDOSE / 3
-	value = 4.5
-
-/datum/reagent/stimulants/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	if(alien == IS_DIONA)
-		return
-
-	if(prob(2))
-		to_chat(M, SPAN_DANGER("My heart gonna break out from the chest!"))
-		M.stun_effect_act(0, 15, BP_CHEST, "heart damage") //a small pain without damage
-		if(prob(5))
-			for(var/obj/item/organ/internal/heart/H in M.internal_organs)
-				H.damage += 1
-
-	if(prob(5))
-		M.emote(pick("twitch", "blink_r", "shiver"))
-	M.add_chemical_effect(CE_SPEEDBOOST, 1.5)
-	M.add_chemical_effect(CE_PULSE, 3)
-
-
-
-obj/item/weapon/implant/adrenal
+/obj/item/weapon/implant/adrenal
 	name = "adrenal implant"
 	desc = "This implant can inject you with stimulants when you will need it."
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 3, TECH_ESOTERIC = 2)
@@ -35,10 +7,10 @@ obj/item/weapon/implant/adrenal
 	var/activation_emote
 	var/uses = 3
 
-obj/item/weapon/implant/adrenal/Initialize()
+/obj/item/weapon/implant/adrenal/Initialize()
 	. = ..()
 	create_reagents(30)
-	reagents.add_reagent(/datum/reagent/stimulants, 30)
+	reagents.add_reagent(/datum/reagent/nitritozadole, 30)
 
 /obj/item/weapon/implant/adrenal/get_data()
 	return {"

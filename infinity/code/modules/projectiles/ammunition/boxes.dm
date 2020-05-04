@@ -204,13 +204,3 @@
 	matter = list(MATERIAL_STEEL = 20000)
 	ammo_type = /obj/item/ammo_casing/rifle/tv
 	max_ammo = 130
-
-/obj/item/ammo_magazine/rifle/rubber
-	name = "rubber rifle magazine"
-	icon_state = "assault_rifle"
-	mag_type = MAGAZINE
-	caliber = CALIBER_RIFLE
-	matter = list(MATERIAL_STEEL = 1800)
-	ammo_type = /obj/item/ammo_casing/rifle/rubber
-	max_ammo = 20
-	multiple_sprites = 1
