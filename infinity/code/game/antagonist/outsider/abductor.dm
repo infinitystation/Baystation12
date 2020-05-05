@@ -8,7 +8,7 @@ GLOBAL_LIST_INIT(scientist_ship_names, list("Alpha", "Beta", "Gamma"))
 /datum/antagonist/abductors
 	id = MODE_ABDUCTOR
 	role_text = "Abductor Agent"
-	role_text_plural = "Abductors"
+	role_text_plural = "Abductor Agents"
 	landmark_id = "abductor_agent"
 	flags = ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_VOTABLE
 	antaghud_indicator = "hudwizard"
@@ -18,7 +18,7 @@ GLOBAL_LIST_INIT(scientist_ship_names, list("Alpha", "Beta", "Gamma"))
 	hard_cap = 2
 	hard_cap_round = 3
 	initial_spawn_req = 1
-	initial_spawn_target = 2
+	initial_spawn_target = 1
 	min_player_age = 18
 
 	faction = "abductor"
@@ -62,7 +62,7 @@ GLOBAL_LIST_INIT(scientist_ship_names, list("Alpha", "Beta", "Gamma"))
 /datum/antagonist/abductors_sci
 	id = MODE_ABDUCTOR_SCI
 	role_text = "Abductor Scientist"
-	role_text_plural = "Abductors"
+	role_text_plural = "Abductor Scientists"
 	landmark_id = "abductor_sci"
 	flags = ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_VOTABLE
 	antaghud_indicator = "hudwizard"
@@ -70,7 +70,7 @@ GLOBAL_LIST_INIT(scientist_ship_names, list("Alpha", "Beta", "Gamma"))
 	hard_cap = 2
 	hard_cap_round = 3
 	initial_spawn_req = 1
-	initial_spawn_target = 2
+	initial_spawn_target = 1
 	min_player_age = 18
 
 	faction = "abductor"
