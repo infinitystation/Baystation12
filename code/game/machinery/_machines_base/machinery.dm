@@ -284,13 +284,13 @@ Class Procs:
 // If you do, you must respect the return value.
 /obj/machinery/attack_hand(mob/user)
 
-    //[INF]
+	//[INF]
 
 	if(isxenomorph(user))
 		attack_generic(user, 15, pick("strikes", "tears", "rips appart"))
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 
-    //[/INF]
+	//[/INF]
 
 	if((. = ..())) // Buckling, climbers; unlikely to return true.
 		return

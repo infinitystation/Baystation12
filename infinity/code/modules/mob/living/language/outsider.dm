@@ -31,7 +31,7 @@
 		return 1
 
 	return 0
-    
+
 /datum/language/abductors
 	name = LANGUAGE_ABDUCTORS
 	desc = "Abductors have a telepathical link between them."
