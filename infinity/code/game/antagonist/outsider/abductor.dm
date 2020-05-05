@@ -13,7 +13,9 @@ GLOBAL_LIST_INIT(scientist_ship_names, list("Alpha", "Beta", "Gamma"))
 	flags = ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_VOTABLE
 	antaghud_indicator = "hudwizard"
 
-	welcome_text
+	welcome_text = "Вы - Похититель. Вы принадлежите высокотехнологичной расе пришельцев, что помешанна на экспериментах и каталогизировании всего живого. \
+					Ваша задача - похищать разумных существ и доставлять их ученому, что бы тот проводил над ними эксперименты. Помните, все ваше оборудрование управляется ученым, так что кооперация с ним необходима.\
+					Вы знаете как работает оборудование людей, но вам не рекомедуется использовать их оружие или вещи. В ином случае у вас могут быть проблемы с администрацией проекта."
 
 	hard_cap = 2
 	hard_cap_round = 3
@@ -22,13 +24,6 @@ GLOBAL_LIST_INIT(scientist_ship_names, list("Alpha", "Beta", "Gamma"))
 	min_player_age = 18
 
 	faction = "abductor"
-
-	faction_role_text = "Abducted"
-	faction_descriptor = "Mothership"
-	faction_welcome = "<span class='changeling'>Ваша свобода воли была выброшена за борт сразу после того, как ваш разум стал частью Улья. \
-	Теперь, вы подчиняетесь Улью, и в особенности его Королеве, как послушный раб  подчиняется \
-	своему хозяину. \
-	Исполняйте указания бесприкословно. Служите своему новому дому.</span>"
 
 	base_to_load = /datum/map_template/ruin/antag_spawn/abductors
 
@@ -66,6 +61,10 @@ GLOBAL_LIST_INIT(scientist_ship_names, list("Alpha", "Beta", "Gamma"))
 	landmark_id = "abductor_sci"
 	flags = ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_VOTABLE
 	antaghud_indicator = "hudwizard"
+
+	welcome_text = "Вы - Похититель. Вы принадлежите высокотехнологичной расе пришельцев, что помешанна на экспериментах и каталогизировании всего живого. \
+					Ваша задача - помогать Агенту в похищениях, наблюдая за ним через камеры и управляя его маскировкой через консоль. Эта роль командная и вам необходимо кооперироватся с агентом что бы успешно работать.\
+					Вы знаете как работает оборудование людей, но вам не рекомедуется использовать их оружие или вещи. В ином случае у вас могут быть проблемы с администрацией проекта."
 
 	hard_cap = 2
 	hard_cap_round = 3
