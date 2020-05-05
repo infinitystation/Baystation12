@@ -61,6 +61,12 @@
 			else
 				src.visible_message(SPAN_WARNING("[src] beeps, \"Unable to teleport creature. Creature is missing a gland.\""))
 
+	reward()
+
+/obj/structure/closet/experimention_machine/open(mob/user)
+	reward()
+
+/obj/structure/closet/experimention_machine/proc/reward()
 	if(experiments == 2 && rewards != 1)
 		rewards++
 		var/obj/item/weapon/mindtool/reward = new(get_turf(src))

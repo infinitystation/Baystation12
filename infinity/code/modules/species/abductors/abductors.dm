@@ -14,6 +14,10 @@
 	min_age = 10
 	max_age = 60
 
+	brute_mod = 0.75
+	burn_mod =  0.75
+	toxins_mod = 0
+
 	cold_level_1 = 250 //Default 260 - Lower is better
 	cold_level_2 = 220 //Default 200
 	cold_level_3 = 130 //Default 120
@@ -47,6 +51,7 @@
 
 	brute_mod = 2.5
 	burn_mod =  2.5
+	toxins_mod = 0
 
 	hidden_from_codex = TRUE
 

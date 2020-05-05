@@ -31,9 +31,7 @@ GLOBAL_LIST_INIT(scientist_ship_names, list("Alpha", "Beta", "Gamma"))
 /datum/antagonist/abductors/update_antag_mob(var/datum/mind/abductor)
 	. = ..()
 
-	abductor.current.real_name = "Mothership [GLOB.agent_ship_names[0]] Agent"
-
-	GLOB.agent_ship_names.Remove(GLOB.agent_ship_names[0])
+	abductor.current.real_name = "Mothership [GLOB.agent_ship_names[1]] Agent"
 
 	abductor.current.SetName(abductor.current.real_name)
 
@@ -49,8 +47,16 @@ GLOBAL_LIST_INIT(scientist_ship_names, list("Alpha", "Beta", "Gamma"))
 	var/decl/hierarchy/outfit/abductor_outfit = outfit_by_type(outfit_type)
 	abductor_outfit.equip(abductor_mob)
 
+	abductor_mob.forceMove(get_turf(locate("landmark*abductor_agent")))
+
 	for(var/language in ALL_NON_ANTAG_LANGUAGES)
 		abductor_mob.add_language(language, 0)
+
+	abductor_mob.real_name = "Mothership [GLOB.agent_ship_names[1]] Agent"
+
+	GLOB.agent_ship_names.Remove(GLOB.agent_ship_names[1])
+
+	abductor_mob.SetName(abductor_mob.real_name)
 
 	return 1
 
@@ -78,8 +84,8 @@ GLOBAL_LIST_INIT(scientist_ship_names, list("Alpha", "Beta", "Gamma"))
 /datum/antagonist/abductors_sci/update_antag_mob(var/datum/mind/abductor)
 	. = ..()
 
-	abductor.current.real_name = "Mothership [GLOB.scientist_ship_names[0]] Scientist"
-	GLOB.scientist_ship_names.Remove(GLOB.scientist_ship_names[0])
+	abductor.current.real_name = "Mothership [GLOB.scientist_ship_names[1]] Scientist"
+	GLOB.scientist_ship_names.Remove(GLOB.scientist_ship_names[1])
 
 	abductor.current.SetName(abductor.current.real_name)
 
@@ -97,8 +103,14 @@ GLOBAL_LIST_INIT(scientist_ship_names, list("Alpha", "Beta", "Gamma"))
 	var/obj/item/weapon/implant/abductors/imp = new
 	imp.implant_in_mob(abductor_mob, BP_HEAD)
 
+	abductor_mob.forceMove(get_turf(locate("landmark*abductor_sci")))
+
 	for(var/language in ALL_NON_ANTAG_LANGUAGES)
 		abductor_mob.add_language(language, 0)
+
+	abductor_mob.real_name = "Mothership [GLOB.scientist_ship_names[1]] Scientist"
+
+	abductor_mob.SetName(abductor_mob.real_name)
 
 	return 1
 

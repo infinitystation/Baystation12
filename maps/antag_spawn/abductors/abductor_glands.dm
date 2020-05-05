@@ -36,7 +36,7 @@
 	var/uses = 5
 	var/abilities = list()
 
-	var/mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум."
+	var/mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. Вы ни за что не хотите что бы ее удаляли."
 
 /obj/item/organ/internal/gland/proc/SetRandomIcon_State()
 	icon_state = "gland[rand(1,9)]"
@@ -68,6 +68,7 @@
 
 /obj/item/organ/internal/gland/proc/master_gland()
 	to_chat(owner, SPAN_NOTICE("Вы чувствуете как ваша сила растет, превышая все границы."))
+	mastered = 1
 	for(var/ability in abilities)
 		owner.verbs += ability
 
@@ -109,7 +110,7 @@
 
 
 /obj/item/organ/internal/gland/healing
-	mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. Вы чувствуете невероятную силу и ощущение, что вам никто не повредит. Никто и никогда."
+	mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. Вы ни за что не хотите что бы ее удаляли. Вы чувствуете невероятную силу и ощущение, что вам никто не повредит. Никто и никогда."
 
 /obj/item/organ/internal/gland/healing/effect(var/mob/living/carbon/human/mob)
 	if(istype(mob))
@@ -133,7 +134,7 @@
 
 
 /obj/item/organ/internal/gland/spider
-	mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. У вас появилось навязчивое желание создавать и защищать своих деток, даже не понимая про кого идет речь. Вы хотите уничтожить всех, кто может навредить Им."
+	mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. Вы ни за что не хотите что бы ее удаляли. У вас появилось навязчивое желание создавать и защищать своих деток, даже не понимая про кого идет речь. Вы хотите уничтожить всех, кто может навредить Им."
 	abilities = list(/mob/living/carbon/human/proc/vomit_spider, /mob/living/carbon/human/proc/vomit_spiderling)
 	to_master = 10
 
@@ -151,7 +152,7 @@
 
 
 /obj/item/organ/internal/gland/slime
-	mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. У вас появилось навязчивое желание создавать и защищать своих деток, даже не понимая про кого идет речь. Вы хотите уничтожить всех, кто может навредить Им."
+	mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. Вы ни за что не хотите что бы ее удаляли. У вас появилось навязчивое желание создавать и защищать своих деток, даже не понимая про кого идет речь. Вы хотите уничтожить всех, кто может навредить Им."
 	abilities = list(/mob/living/carbon/human/proc/mark_slime_enemy, /mob/living/carbon/human/proc/vomit_slime)
 	to_master = 10
 
@@ -180,7 +181,7 @@
 
 
 /obj/item/organ/internal/gland/species
-	mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. Вы желаете знать все и быть всем. Вы хотите лишь одного - изменять свое тело."
+	mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. Вы ни за что не хотите что бы ее удаляли. Вы желаете знать все и быть всем. Вы хотите лишь одного - изменять свое тело."
 	abilities = list(/mob/living/carbon/human/proc/mutate_appearance, /mob/living/carbon/human/proc/mutate_species)
 	to_master = 10
 
@@ -189,7 +190,7 @@
 		var/mob/living/carbon/human/H = mob
 
 		if(prob(0.5))
-			var/new_species = pick(SPECIES_HUMAN, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_PROMETHEAN, SPECIES_YEOSA, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER, SPECIES_BOOSTER, SPECIES_TAJARA, SPECIES_RESOMI)
+			var/new_species = pick(SPECIES_HUMAN, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_YEOSA, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER, SPECIES_BOOSTER, SPECIES_TAJARA, SPECIES_RESOMI)
 			H.visible_message(SPAN_WARNING("[H]'s flesh rapidly mutates and he transforms into [lowertext(new_species)]!"))
 			H.set_species(new_species)
 			effected++
@@ -219,7 +220,7 @@
 
 
 /obj/item/organ/internal/gland/egg
-	mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. У вас появилось настойчивое желание основать свой Улей. У вас ощущение, что от этого будет зависеть будущее вас и всей вашей расы."
+	mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. Вы ни за что не хотите что бы ее удаляли. У вас появилось настойчивое желание основать свой Улей. У вас ощущение, что от этого будет зависеть будущее вас и всей вашей расы."
 	abilities = list(/mob/living/carbon/human/proc/vomit_egg, /mob/living/carbon/human/proc/lay_creature)
 	to_master = 10
 
@@ -237,7 +238,7 @@
 
 
 /obj/item/organ/internal/gland/hallucination
-	mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. Вы хотите повелевать другими людьми, понимая, что скоро ваше желание станет реальностью. У вас появляется настойчивое желание находится в толпе..."
+	mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. Вы ни за что не хотите что бы ее удаляли. Вы хотите повелевать другими людьми, понимая, что скоро ваше желание станет реальностью. У вас появляется настойчивое желание находится в толпе..."
 	abilities = list(/mob/living/carbon/human/proc/commune, /mob/living/carbon/human/proc/command)
 	to_master = 15
 
@@ -254,7 +255,7 @@
 
 
 /obj/item/organ/internal/gland/emp
-	mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. У вас появилось недоверие к электронике и настойчивое желание ее уничтожить."
+	mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. Вы ни за что не хотите что бы ее удаляли. У вас появилось недоверие к электронике и настойчивое желание ее уничтожить."
 	abilities = list(/mob/living/carbon/human/proc/emp_light, /mob/living/carbon/human/proc/emp_heavy)
 	to_master = 20
 
@@ -269,7 +270,7 @@
 
 
 /obj/item/organ/internal/gland/chemical
-	mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. Вы чувствуете, что в вашей крови есть некий дар, и что вам явно надо делится им с другими."
+	mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. Вы ни за что не хотите что бы ее удаляли. Вы чувствуете, что в вашей крови есть некий дар, и что вам явно надо делится им с другими."
 	abilities = list(/mob/living/carbon/human/proc/create_chems, /mob/living/carbon/human/proc/create_smoke)
 	to_master = 24
 
@@ -294,15 +295,15 @@
 										/datum/reagent/inaprovaline, /datum/reagent/bicaridine, /datum/reagent/kelotane, /datum/reagent/dermaline, /datum/reagent/dylovene,
 										/datum/reagent/dexalin, /datum/reagent/alkysine, /datum/reagent/hyperzine, /datum/reagent/tobacco, /datum/reagent/gold, /datum/reagent/silver,
 										/datum/reagent/uranium, /datum/reagent/thermite, /datum/reagent/space_cleaner, /datum/reagent/lube, /datum/reagent/glycerol, /datum/reagent/coolant,
-										/datum/reagent/toxin/carpotoxin, /datum/reagent/toxin/phoron, /datum/reagent/toxin/cyanide, /datum/reagent/toxin/zombiepowder, /datum/reagent/mutagen,
-										/datum/reagent/soporific, /datum/reagent/chloralhydrate, /datum/reagent/space_drugs, /datum/reagent/mindbreaker, /datum/reagent/slimetoxin)
+										/datum/reagent/toxin/carpotoxin, /datum/reagent/toxin/phoron, /datum/reagent/toxin/cyanide,  /datum/reagent/mutagen, /datum/reagent/space_drugs,
+										/datum/reagent/mindbreaker, /datum/reagent/slimetoxin)
 			H.reagents.add_reagent(random, 5)
 			effected++
 
 
 
 /obj/item/organ/internal/gland/plasma
-	mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. Вы внезапно начинаете ощущать непреодолимое желание находится в фороне..."
+	mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. Вы ни за что не хотите что бы ее удаляли. Вы внезапно начинаете ощущать непреодолимое желание находится в фороне..."
 	abilities = list(/mob/living/carbon/human/proc/create_plasma, /mob/living/carbon/human/proc/create_spark)
 	to_master = 20
 
@@ -327,7 +328,7 @@
 
 
 /obj/item/organ/internal/gland/quantum
-	mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. Вы внезапно осознаете, что вам подвластно само время и пространство. Вы желаете... Приключений."
+	mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. Вы ни за что не хотите что бы ее удаляли. Вы внезапно осознаете, что вам подвластно само время и пространство. Вы желаете... Приключений."
 	abilities = list(/mob/living/carbon/human/proc/switch_places, /mob/living/carbon/human/proc/create_chaos)
 	to_master = 24
 
@@ -350,7 +351,7 @@
 
 
 /obj/item/organ/internal/gland/hunger
-	mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. Вы хотите лишь одного. ПОГЛОЩАТЬ. Ваш голод начинает давить на вас, не позволяя думать ни о чем другом."
+	mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. Вы ни за что не хотите что бы ее удаляли. Вы хотите лишь одного. ПОГЛОЩАТЬ. Ваш голод начинает давить на вас, не позволяя думать ни о чем другом."
 	abilities = list(/mob/living/carbon/human/proc/vomit)
 
 /obj/item/organ/internal/gland/hunger/effect(var/mob/living/carbon/human/mob)
@@ -374,7 +375,7 @@
 			to_chat(H, SPAN_DANGER("You want to eat human flesh!"))
 
 /obj/item/organ/internal/gland/gravity
-	mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. По вашим ощущениям, вы постоянно падаете, без возможности нащупать поверхрность..."
+	mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. Вы ни за что не хотите что бы ее удаляли. По вашим ощущениям, вы постоянно падаете, без возможности нащупать поверхрность..."
 	abilities = list(/mob/living/carbon/human/proc/change_gravity, /mob/living/carbon/human/proc/mass_gravity)
 	to_master = 24
 

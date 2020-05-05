@@ -216,7 +216,7 @@
 	item_state = "baton_active"
 	origin_tech = list(TECH_COMBAT = 5)
 
-	slot_flags = SLOT_BELT
+	slot_flags = SLOT_BELT | SLOT_BACK
 	force = 15
 	sharp = 0
 	edge = 0
