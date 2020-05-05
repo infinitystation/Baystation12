@@ -7,7 +7,7 @@
 	if(!SSticker.update_server)
 		switch(alert("Выберите способ.", "Update Server", "В конце раунда", "Принудительно", "Отмена"))
 			if("В конце раунда")
-				to_world(SPAN_NOTICE(FONT_LARGE("<b>\n Сервер уйдет на обновление в конце раунда!</b> \nИнициировано [src].\n")))
+				to_world(SPAN_NOTICE(FONT_LARGE("<b>\nСервер уйдет на обновление в конце раунда!</b> \nИнициировано [src].\n")))
 				game_log("SERVER", "[key_name(src)] подготовил обновление сервера. ")
 				SSticker.update_server = 1
 				SSticker.updater = src
@@ -24,7 +24,7 @@
 					shell("sh update_start.sh")
 	else
 		if(alert("Отменить обновление сервера в конце раунда?", "Cancel Update", "Да", "Нет") == "Да")
-			to_world(SPAN_NOTICE(FONT_LARGE("<b>\n Обновление сервера в конце раунда было отменено.</b> \n")))
+			to_world(SPAN_NOTICE(FONT_LARGE("<b>\nОбновление сервера в конце раунда было отменено.</b> \n")))
 			game_log("SERVER", "[key_name(src)] отменил обновление сервера.")
 			SSticker.update_server = 0
 			SSticker.updater = null
