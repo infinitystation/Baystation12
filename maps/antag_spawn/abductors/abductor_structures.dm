@@ -25,6 +25,27 @@
 	var/rewards = 0
 	var/list/experimented = list()
 
+/obj/structure/closet/experimention_machine/proc/teleport_target(var/mob/mob, var/turf/target)
+	mob.dir = 2
+	mob.forceMove(target)
+	new /obj/effect/temporary(target, 5, icon, "teleport_effect")
+	addtimer(CALLBACK(src, .proc/teleport_effect, mob, target), 5)
+
+/obj/structure/closet/experimention_machine/proc/teleport_effect(var/mob/mob, var/turf/target)
+	var/datum/effect/effect/system/spark_spread/sparks = new /datum/effect/effect/system/spark_spread()
+	sparks.set_up(5, 0, target)
+	sparks.start()
+	playsound(mob.loc, "sparks", 50, 1)
+	playsound(src.loc, 'sound/effects/phasein.ogg', 25, 1)
+	mob.Weaken(5)
+	src.visible_message(SPAN_NOTICE("[src] beeps, \"Creature successfully teleported. Catalogue updated.\""))
+	experiments++
+	experimented += mob
+	var/obj/item/organ/internal/gland/gland = locate(/obj/item/organ/internal/gland) in mob.contents
+	gland.activated = 1
+	if(mob.mind)
+		GLOB.abducted.add_antagonist_mind(mob.mind, 1, GLOB.abducted.faction_role_text, gland.mind_text)
+
 /obj/structure/closet/experimention_machine/close(mob/user)
 	. = ..()
 	for(var/mob/living/carbon/human/mob in src.contents)
@@ -35,23 +56,8 @@
 					return
 
 				mob.dir = 2
-				spawn(5)
-					mob.forceMove(get_turf(locate("landmark*Observer-Start")))
-					new /obj/effect/temporary(get_turf(mob), 5, icon, "teleport_effect")
-					spawn(5)
-						var/datum/effect/effect/system/spark_spread/sparks = new /datum/effect/effect/system/spark_spread()
-						sparks.set_up(5, 0, get_turf(mob))
-						sparks.start()
-						playsound(mob.loc, "sparks", 50, 1)
-						playsound(src.loc, 'sound/effects/phasein.ogg', 25, 1)
-						mob.Weaken(5)
-						src.visible_message(SPAN_NOTICE("[src] beeps, \"Creature successfully teleported. Catalogue updated.\""))
-						experiments++
-						experimented += mob
-						var/obj/item/organ/internal/gland/gland = locate(/obj/item/organ/internal/gland) in mob.contents
-						gland.activated = 1
-						if(mob.mind)
-							GLOB.abducted.add_antagonist_mind(mob.mind, 1, GLOB.abducted.faction_role_text, gland.mind_text)
+				addtimer(CALLBACK(src, .proc/teleport_target, mob, get_turf(locate("landmark*Observer-Start"))), 5)
+
 			else
 				src.visible_message(SPAN_WARNING("[src] beeps, \"Unable to teleport creature. Creature is missing a gland.\""))
 
