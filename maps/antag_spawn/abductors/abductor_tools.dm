@@ -191,11 +191,6 @@
 			var/mob/living/carbon/human/H = mob
 
 			if(locate(/obj/item/organ/internal/gland) in H.contents)
-				var/obj/item/organ/internal/gland/gland
-				if(gland.uses > 0)
-					gland.uses--
-				else
-					return
 				var/text = input("What would you like to ask for?", "Speak to creature", null, null)
 				text = sanitize(text)
 
@@ -232,6 +227,7 @@
 	name = "alien silencer"
 	desc = "An alien-looking gun, capable of creating EMP to disable radio equipment."
 	icon = 'infinity/icons/obj/abductor.dmi'
+	item_state = "secgundark"
 	icon_state = "silencer"
 
 /obj/item/device/encryptionkey/alien

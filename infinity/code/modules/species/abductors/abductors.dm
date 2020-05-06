@@ -33,6 +33,8 @@
 	species_flags = SPECIES_FLAG_NO_SCAN
 	appearance_flags = null
 
+	spawn_flags = SPECIES_IS_RESTRICTED
+
 	flesh_color = "#b9b9b9"
 	blood_color = "#da37e7"
 
