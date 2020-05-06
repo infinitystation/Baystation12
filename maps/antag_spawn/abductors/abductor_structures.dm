@@ -64,6 +64,7 @@
 	reward()
 
 /obj/structure/closet/experimention_machine/open(mob/user)
+	. = ..()
 	reward()
 
 /obj/structure/closet/experimention_machine/proc/reward()
