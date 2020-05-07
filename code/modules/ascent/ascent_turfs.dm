@@ -9,10 +9,10 @@
 	footstep_type = /decl/footsteps/tiles
 
 /turf/simulated/wall/ascent
-	color = COLOR_PURPLE
+	paint_color = COLOR_PURPLE //INF, WAS color
 
 /turf/simulated/wall/r_wall/ascent
-	color = COLOR_PURPLE
+	paint_color = COLOR_PURPLE //INF, WAS color
 
 /turf/simulated/floor/shuttle_ceiling/ascent
 	color = COLOR_PURPLE
