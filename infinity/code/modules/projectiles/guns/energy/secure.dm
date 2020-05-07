@@ -32,3 +32,4 @@
 
 	is_serial = 1
 	s_type = "DS4-C"
+	bulk = 0 //	"Even kid can shoot from it."
