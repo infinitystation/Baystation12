@@ -130,9 +130,9 @@
 	#include "../away_inf/smugglers/smugglers.dm"
 	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
 	#include "../away_inf/patrol/patrol.dm"
+	#include "../away_inf/bearcat/bearcat.dm"
 
 	#include "../away/ascent/ascent.dm"
-	#include "../away/bearcat/bearcat.dm"
 	#include "../away/derelict/derelict.dm"
 	#include "../away/magshield/magshield.dm"
 	#include "../away/casino/casino.dm"

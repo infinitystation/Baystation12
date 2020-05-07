@@ -1,4 +1,4 @@
-#define MAX_PROGRESS 200 //wass 100, too fast
+#define MAX_PROGRESS 150 //wass 100, too fast
 
 /obj/structure/alien/egg
 	desc = "It looks like a weird egg."
@@ -123,7 +123,7 @@
 	if(!aff_chest || BP_IS_ROBOTIC(aff_chest))
 		return
 
-	if(H.wear_mask && (istype(H.wear_mask, /obj/item/clothing/mask/gas) || istype(H.wear_mask, /obj/item/clothing/mask/facehugger)))
+	if(H.wear_mask && istype(H.wear_mask, /obj/item/clothing/mask/facehugger))
 		return
 
 	var/was_mask = 0
@@ -141,6 +141,8 @@
 		var/obj/item/organ/internal/xeno/larva/larva = new(affecting)
 		H.apply_damage(90, PAIN, affecting)
 		larva.replaced(H, affecting)
+		H.Weaken(8)
+		H.Stun(3)
 		addtimer(CALLBACK(src, .proc/detach), live_time)
 
 /obj/item/clothing/mask/facehugger/Crossed(atom/movable/A)

@@ -16,7 +16,7 @@
 	icon_state = "atlasuni"
 	item_state = "atlasuni"
 	worn_state = "atlasuni"
-
+	armor = list() //no armor
 	trade_blacklisted = TRUE
 
 /obj/item/clothing/head/helmet/atlashelm

@@ -19,9 +19,10 @@
 	thermostat = T0C + 36
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/storage/backpack/rucksack/revolpack
+/obj/item/weapon/storage/backpack/revolpack
 	name = "Belt Poaches"
 	desc = "A belt designed to be a convenient way of carrying supplies in countless poaches while keeping the hands free. It is made out of durable material to survive the struggles a field researcher may face. You can see a small medical badge on its back."
+	max_storage_space = DEFAULT_BACKPACK_STORAGE + 8
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "revolpack"
 	item_state = "revolpack"
@@ -54,6 +55,6 @@
 	..()
 	new /obj/item/clothing/mask/gas/revolmask(src)
 	new /obj/item/clothing/under/thermal/revoluni(src)
-	new /obj/item/weapon/storage/backpack/rucksack/revolpack(src)
+	new /obj/item/weapon/storage/backpack/revolpack(src)
 	new /obj/item/clothing/head/beret/revolberet(src)
 	new /obj/item/clothing/shoes/jackboots/revolboots(src)

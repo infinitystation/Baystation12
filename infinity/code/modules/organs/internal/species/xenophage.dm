@@ -169,3 +169,23 @@
 			GLOB.xenomorphs.add_antagonist(larva.mind, 1)
 			qdel(src)
 	. = ..()
+
+/obj/item/organ/internal/xeno/mimicsac
+	name = "mimic sac"
+	parent_organ = BP_CHEST
+	icon_state = "xgibmid2"
+	organ_tag = BP_MIMIC
+	associated_power = /mob/living/carbon/human/proc/mimic
+
+/obj/item/organ/internal/xeno/mimicsac/Process()
+	if(owner.alpha == 255)
+		return
+
+	if(owner.internal_organs_by_name[BP_PLASMA])
+		var/obj/item/organ/internal/xeno/plasmavessel/I = owner.internal_organs_by_name[BP_PLASMA]
+		if(istype(I))
+			if(I.stored_plasma < 5)
+				owner.alpha = 255
+				return
+			else
+				I.stored_plasma -= 5

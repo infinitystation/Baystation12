@@ -7,6 +7,7 @@
 #define LANGUAGE_PRESOMI			"Primitive schechi"
 #define LANGUAGE_PUNATI			"Primitive sinta'unathi"
 #define LANGUAGE_PSKRELLIAN		"Primitive skrellian"
+#define LANGUAGE_ABDUCTORS      "Mindlink"
 
 
 #define ANTAG_LANGUAGES 			list(LANGUAGE_CULT, LANGUAGE_ALIUM, LANGUAGE_OCCULT)
