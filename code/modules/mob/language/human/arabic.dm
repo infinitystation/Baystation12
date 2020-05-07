@@ -13,7 +13,7 @@
 		LANGUAGE_HUMAN_SELENIAN = 5,
 		LANGUAGE_SPACER = 20,
 		LANGUAGE_HUMAN_AVALON = 5, //inf
-		LANGUAGE_HUMAN_LORRIMAN = 10
+		LANGUAGE_HUMAN_LORRIMAN = 10 //inf
 	)
 	syllables = list(
 		"af", "if", "ba", "ta", "tha", "id", "jem", "ha", "kha", "dal", "dhl", "ra", "zay",

@@ -76,3 +76,7 @@
 #define CULTURE_XENOPHAGE_Q    "Xenophage Queen"
 #define FACTION_XENOPHAGE      "Xenophage Hive"
 
+// Human Cultures
+#define CULTURE_HUMAN_LORRIMAN "Lorrimanian"
+#define CULTURE_HUMAN_AVANOBLE "Avalon Noble"
+#define CULTURE_HUMAN_AVACOMMON "Avalon Commoner"

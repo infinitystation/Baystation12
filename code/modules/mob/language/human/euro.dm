@@ -24,7 +24,7 @@
 		LANGUAGE_HUMAN_SELENIAN = 75,
 		LANGUAGE_SPACER = 20,
 		LANGUAGE_HUMAN_AVALON = 35, //inf
-		LANGUAGE_HUMAN_LORRIMAN = 75
+		LANGUAGE_HUMAN_LORRIMAN = 75 //inf
 	)
 	syllables = list(
 		"al", "an", "ar", "as", "at", "ea", "ed", "en", "er", "es", "ha", "he", "hi", "in", "is", "it",

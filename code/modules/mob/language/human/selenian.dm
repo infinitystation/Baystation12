@@ -15,7 +15,7 @@
 		LANGUAGE_LEGALESE = 15,
 		LANGUAGE_SPACER = 20,
 		LANGUAGE_HUMAN_AVALON = 25, //inf
-		LANGUAGE_HUMAN_LORRIMAN = 75
+		LANGUAGE_HUMAN_LORRIMAN = 75 //inf
 	)
 	syllables = list(
 		"al", "an", "ar", "as", "at", "ed", "er", "ha", "he", "hi", "is", "le", "me", "on", "se", "ti",
