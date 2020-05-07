@@ -6340,7 +6340,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/effect/catwalk_plated,
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "alJ" = (
@@ -6350,9 +6350,6 @@
 	icon_state = "4-8"
 	},
 /obj/structure/catwalk,
-/obj/structure/sign/warning/airlock{
-	pixel_y = 32
-	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "alK" = (
@@ -7013,17 +7010,20 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/bridge/gun/energy)
 "amN" = (
-/obj/machinery/alarm{
-	dir = 4;
-	pixel_x = -23
+/obj/machinery/door/airlock/maintenance{
+	name = "Security Maintenance";
+	req_access = newlist()
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
 	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/catwalk_plated,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/forestarboard)
 "amP" = (
 /turf/simulated/wall/r_wall/prepainted,
@@ -7815,9 +7815,6 @@
 	pixel_x = -22
 	},
 /obj/item/weapon/gun/energy/laser/practice,
-/obj/item/device/radio/intercom{
-	pixel_y = 26
-	},
 /obj/effect/floor_decal/borderfloor{
 	icon_state = "borderfloor_white";
 	dir = 9
@@ -7843,9 +7840,6 @@
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube_map"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/security/range)
@@ -8720,17 +8714,6 @@
 "apF" = (
 /obj/structure/window/reinforced,
 /obj/effect/floor_decal/industrial/warning,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/security/range)
-"apG" = (
-/obj/structure/window/reinforced,
-/obj/effect/floor_decal/industrial/warning,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/security/range)
 "apI" = (
@@ -8741,10 +8724,6 @@
 	pixel_x = 20;
 	req_access = list("ACCESS_SEC_DOORS")
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/monotile,
 /area/security/range)
 "apJ" = (
@@ -9815,7 +9794,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 9
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/steel_grid,
 /area/security/range)
 "ark" = (
 /obj/structure/table/standard,
@@ -9833,7 +9812,7 @@
 /obj/item/weapon/paper_bin,
 /obj/item/weapon/pen,
 /obj/item/weapon/pen,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/steel_grid,
 /area/security/range)
 "arl" = (
 /obj/machinery/computer/modular/preset/security,
@@ -9844,7 +9823,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/steel_grid,
 /area/security/range)
 "arm" = (
 /obj/machinery/disposal,
@@ -9864,7 +9843,7 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/steel_grid,
 /area/security/range)
 "arn" = (
 /obj/machinery/camera/network/security{
@@ -9875,8 +9854,6 @@
 	pixel_x = 23;
 	pixel_y = -8
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment{
 	dir = 2;
 	icon_state = "pipe-c"
@@ -10531,6 +10508,7 @@
 	dir = 4
 	},
 /obj/item/weapon/folder/red,
+/obj/item/weapon/material/kitchen/utensil/fork/plastic,
 /turf/simulated/floor/tiled,
 /area/security/range)
 "ass" = (
@@ -10549,21 +10527,15 @@
 /turf/simulated/floor/tiled,
 /area/security/range)
 "asu" = (
-/obj/machinery/power/apc{
-	dir = 4;
-	name = "east bump";
-	pixel_x = 24
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
 /obj/effect/catwalk_plated,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 4
-	},
 /obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/obj/item/device/radio/intercom{
+	dir = 8;
+	pixel_x = 20
+	},
 /turf/simulated/floor/plating,
 /area/security/range)
 "asv" = (
@@ -11442,21 +11414,16 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled,
-/area/security/range)
-"atT" = (
-/obj/item/device/radio/intercom{
-	dir = 8;
-	pixel_x = 20
-	},
 /obj/structure/cable/green{
 	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d2 = 4;
+	icon_state = "1-4"
 	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/security/range)
+"atT" = (
 /obj/effect/catwalk_plated,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
 	d1 = 2;
@@ -12322,7 +12289,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/steel_grid,
 /area/security/range)
 "avm" = (
 /obj/item/weapon/stool/padded/red,
@@ -12345,11 +12312,10 @@
 	},
 /obj/effect/catwalk_plated,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	icon_state = "map-supply";
-	dir = 4
-	},
 /obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
 /turf/simulated/floor/plating,
 /area/security/range)
 "avq" = (
@@ -12372,6 +12338,10 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 23
+	},
+/obj/machinery/newscaster{
+	pixel_x = 10;
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/range)
@@ -13201,7 +13171,7 @@
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/red/border,
 /obj/structure/closet/secure_closet/security/sierra/cadet,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/steel_grid,
 /area/security/range)
 "awL" = (
 /obj/machinery/photocopier,
@@ -13214,7 +13184,7 @@
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	dir = 9
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/steel_grid,
 /area/security/range)
 "awM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -15790,6 +15760,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/catwalk_plated,
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
 "aAq" = (
@@ -17249,6 +17220,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/catwalk,
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/aft)
 "aCh" = (
@@ -37449,16 +37421,17 @@
 "cpk" = (
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/machinery/airlock_sensor{
-	master_tag = "firing_range";
 	id_tag = "firing_range_sensor";
+	master_tag = "firing_range";
 	pixel_x = 24;
-	pixel_y = -13
+	pixel_y = -8
 	},
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
 	dir = 8;
 	id_tag = "firing_range";
 	pixel_x = 20;
-	req_access = list("ACCESS_EXTERNAL")
+	pixel_y = 4;
+	req_access = list(list("ACCESS_SECURITY","ACCESS_EXTERNAL"))
 	},
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
@@ -37540,8 +37513,8 @@
 /area/maintenance/firstdeck/forestarboard)
 "fvN" = (
 /obj/machinery/door/airlock/maintenance{
-	name = "Security Maintenance";
-	req_access = newlist()
+	autoset_access = 0;
+	name = "Security Maintenance"
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/hatch/grey,
@@ -37553,7 +37526,6 @@
 /area/security/range)
 "fUC" = (
 /obj/machinery/door/airlock/external/bolted/cycling{
-	dir = 4;
 	id_tag = "firing_range_outer";
 	name = "Firing Range Airlock"
 	},
@@ -37562,12 +37534,9 @@
 	dir = 4;
 	master_tag = "firing_range";
 	name = "exterior access button";
-	pixel_y = -24;
+	pixel_x = -10;
+	pixel_y = 24;
 	req_access = list("ACCESS_EXTERNAL","ACCESS_SECURITY")
-	},
-/obj/machinery/camera/network/security{
-	c_tag = "Security - Firing Range - Space";
-	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/forestarboard)
@@ -37581,8 +37550,9 @@
 /obj/machinery/access_button/airlock_interior{
 	master_tag = "firing_range";
 	name = "interior access button";
-	pixel_x = 24;
-	req_access = list("ACCESS_EXTERNAL")
+	pixel_x = -24;
+	pixel_y = -10;
+	req_access = list(list("ACCESS_SECURITY","ACCESS_EXTERNAL"))
 	},
 /obj/machinery/door/blast/regular/open{
 	id_tag = "security_lockdown";
@@ -37644,6 +37614,15 @@
 	},
 /turf/simulated/floor/tiled,
 /area/security/range)
+"izy" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/deployable/barrier,
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 23
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/maintenance/firstdeck/forestarboard)
 "iSM" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -37867,20 +37846,16 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "nwl" = (
-/obj/machinery/door/airlock/maintenance{
-	name = "Security Maintenance";
-	req_access = newlist()
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
 	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/door/firedoor,
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "nEh" = (
 /obj/effect/wallframe_spawn/reinforced/hull,
@@ -37913,7 +37888,7 @@
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/red/border,
 /obj/machinery/light,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/steel_grid,
 /area/security/range)
 "paW" = (
 /obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
@@ -37941,7 +37916,8 @@
 	dir = 1;
 	master_tag = "firing_range";
 	name = "exterior access button";
-	pixel_x = 24;
+	pixel_x = -24;
+	pixel_y = 10;
 	req_access = list("ACCESS_EXTERNAL","ACCESS_SECURITY")
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -37956,10 +37932,6 @@
 /obj/structure/bed/chair/padded/red{
 	dir = 1
 	},
-/obj/machinery/newscaster{
-	pixel_x = -30;
-	pixel_y = 0
-	},
 /obj/effect/floor_decal/borderfloor{
 	icon_state = "borderfloor_white";
 	dir = 8
@@ -37967,7 +37939,16 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
 	},
-/turf/simulated/floor/tiled,
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -24
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/tiled/steel_grid,
 /area/security/range)
 "sDx" = (
 /obj/structure/catwalk,
@@ -37987,9 +37968,6 @@
 	tag = "icon-railing0 (EAST)"
 	},
 /obj/effect/floor_decal/industrial/outline/red,
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/range)
 "tzc" = (
@@ -38028,9 +38006,6 @@
 	c_tag = "Security - Firing Range Maintenance";
 	dir = 1
 	},
-/obj/machinery/light/small{
-	dir = 4
-	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "tYh" = (
@@ -38042,7 +38017,7 @@
 	dir = 10
 	},
 /obj/structure/closet/secure_closet/security/sierra/cadet,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/steel_grid,
 /area/security/range)
 "uko" = (
 /obj/effect/floor_decal/industrial/outline/red,
@@ -38060,11 +38035,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
-"vHA" = (
-/obj/effect/floor_decal/industrial/outline/red,
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
-/turf/simulated/floor/tiled/steel_grid,
-/area/security/range)
 "vNh" = (
 /obj/structure/catwalk,
 /obj/structure/cable/green{
@@ -38089,6 +38059,9 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light/spot,
+/obj/structure/sign/warning/airlock{
+	pixel_y = 32
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "xtO" = (
@@ -38103,6 +38076,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 5
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	icon_state = "bulb_map"
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
@@ -45265,7 +45242,7 @@ aaA
 aaA
 nwl
 abs
-eXk
+izy
 eXk
 ari
 asq
@@ -45871,7 +45848,7 @@ kyy
 kHM
 iSM
 nqT
-vHA
+uko
 apF
 ark
 asr
@@ -46074,7 +46051,7 @@ nEh
 nsH
 lTo
 uko
-apG
+apF
 arl
 ass
 hWw
@@ -46276,7 +46253,7 @@ flu
 vcD
 lFn
 tsG
-apG
+apF
 arm
 ast
 hWw
