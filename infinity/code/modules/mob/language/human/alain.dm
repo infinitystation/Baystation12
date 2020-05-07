@@ -2,7 +2,7 @@
 	name = LANGUAGE_HUMAN_AVALON
 	desc = "Алаин был создан в основном из языков Западной Европы, но с влиянием культур как Южной Африки, так и Индии, оставившие характерный след в написании и необычности произношения."
 	colour = "alain"
-	key = "y"
+	key = "9"
 	shorthand = "AL"
 	space_chance = 100
 	partial_understanding = list(

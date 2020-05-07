@@ -2,7 +2,7 @@
 	name = LANGUAGE_HUMAN_LORRIMAN
 	desc = "Общеизвестный диалект цюрихского языка, являющийся основным используемым на Лорримане. Характерными особенностями Лирриса являются строгость терминов, краткая информативность "
 	colour = "lirris"
-	key = "z"
+	key = "8"
 	shorthand = "LRS"
 	space_chance = 100
 	partial_understanding = list(
