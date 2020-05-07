@@ -32,6 +32,9 @@
 		M.gib()
 
 // For Security Cadets usage
+/obj/item/projectile/beam/confuseray/weak
+	life_span = 50
+
 /obj/item/projectile/beam/confuseray/weak/on_hit(var/atom/target, var/blocked = 0)
 	if(istype(target, /mob/living))
 		var/mob/living/L = target
