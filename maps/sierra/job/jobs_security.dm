@@ -136,8 +136,9 @@
 			/datum/mil_rank/civ/nt
 		)
 
-	access = list(access_seceva, access_security, access_brig, access_sec_doors,
-						access_emergency_storage, access_eva, access_hangar)
+	access = list(access_seceva, access_security, access_brig, access_maint_tunnels,
+						access_external_airlocks, access_emergency_storage,
+			            access_eva, access_sec_doors, access_hangar)
 
 	minimal_access = list()
 
