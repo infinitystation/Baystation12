@@ -14,7 +14,9 @@
 		LANGUAGE_HUMAN_RUSSIAN = 30,
 		LANGUAGE_HUMAN_SELENIAN = 15,
 		LANGUAGE_SPACER = 35,
-		LANGUAGE_LEGALESE = 25
+		LANGUAGE_LEGALESE = 25,
+		LANGUAGE_HUMAN_AVALON = 20, //inf
+		LANGUAGE_HUMAN_LORRIMAN = 5 //inf
 	)
 	syllables = list (
 		"yayo", "aiya", "chiksa", "tikat", "bazar","oi", "yo", "meit", "grok", "ken", "berk", "cohon", "pendeo"
