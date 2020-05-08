@@ -21,7 +21,7 @@
 	#include "../away/lar_maria/lar_maria.dm"
 //INF	#include "../away/skrellscoutship/skrellscoutship.dm"
 	#include "../away/unishi/unishi.dm"
-//INF	#include "../away/ascent/ascent.dm"
+	#include "../away/ascent/ascent.dm"
 
 	#include "../away/voxship/voxship.dm"
 

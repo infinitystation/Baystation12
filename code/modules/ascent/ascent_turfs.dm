@@ -4,6 +4,8 @@
 	icon = 'icons/turf/flooring/alium.dmi'
 	icon_base = "jaggy"
 	has_base_range = 6
+	has_damage_range = 4 //INF
+	has_burn_range = 2 //INF
 	color = COLOR_GRAY40
 	flags = TURF_CAN_BREAK | TURF_CAN_BURN
 	footstep_type = /decl/footsteps/tiles

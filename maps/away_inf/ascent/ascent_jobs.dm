@@ -1,34 +1,34 @@
-#define WEBHOOK_SUBMAP_LOADED_ASCENT "webhook_submap_ascent"
+#define WEBHOOK_SUBMAP_LOADED_ASCENT_INF "webhook_submap_ascent"
 
 // Submap datum and archetype.
-/decl/webhook/submap_loaded/ascent
-	id = WEBHOOK_SUBMAP_LOADED_ASCENT
+/decl/webhook/submap_loaded/ascent_inf
+	id = WEBHOOK_SUBMAP_LOADED_ASCENT_INF
 
-/decl/submap_archetype/ascent_seedship
-	descriptor = "Ascent colony ship"
-	map = ASCENT_COLONY_SHIP_NAME
+/decl/submap_archetype/ascent_seedship_inf
+	descriptor = "Damaged Ascent colony ship"
+	map = DAMAGED_ASCENT_COLONY_SHIP_NAME
 	blacklisted_species = null
 	whitelisted_species = null
 	crew_jobs = list(
-		/datum/job/submap/ascent,
-		/datum/job/submap/ascent/alate,
-		/datum/job/submap/ascent/drone,
-		//datum/job/submap/ascent/control_mind,
-		//datum/job/submap/ascent/msq,
-		//datum/job/submap/ascent/msw,
+		/datum/job/submap/ascent_inf,
+		/datum/job/submap/ascent_inf/alate,
+		/datum/job/submap/ascent_inf/drone,
+		//datum/job/submap/ascent_inf/control_mind,
+		//datum/job/submap/ascent_inf/msq,
+		//datum/job/submap/ascent_inf/msw,
 	)
-	call_webhook = WEBHOOK_SUBMAP_LOADED_ASCENT
+	call_webhook = WEBHOOK_SUBMAP_LOADED_ASCENT_INF
 
-/datum/submap/ascent
+/datum/submap/ascent_inf
 	var/gyne_name
 
-/datum/submap/ascent/sync_cell(obj/effect/overmap/visitable/cell)
+/datum/submap/ascent_inf/sync_cell(obj/effect/overmap/visitable/cell)
 	return
 
-/datum/submap/ascent/check_general_join_blockers(var/mob/new_player/joining, var/datum/job/submap/job)
+/datum/submap/ascent_inf/check_general_join_blockers(var/mob/new_player/joining, var/datum/job/submap/job)
 	. = ..()
-	if(. && istype(job, /datum/job/submap/ascent))
-		var/datum/job/submap/ascent/ascent_job = job
+	if(. && istype(job, /datum/job/submap/ascent_inf))
+		var/datum/job/submap/ascent_inf/ascent_job = job
 		if(ascent_job.set_species_on_join == SPECIES_MANTID_GYNE && !is_species_whitelisted(joining, SPECIES_MANTID_GYNE))
 			to_chat(joining, SPAN_WARNING("You are not whitelisted to play a [SPECIES_MANTID_GYNE]."))
 			return FALSE
@@ -36,14 +36,14 @@
 			to_chat(joining, SPAN_WARNING("You must be whitelisted to play a [SPECIES_NABBER] to join as a [SPECIES_MONARCH_QUEEN]."))
 			return FALSE
 
-/mob/living/carbon/human/proc/gyne_rename_lineage()
+/mob/living/carbon/human/proc/gyne_rename_lineage_inf()
 	set name = "Name Nest-Lineage"
 	set category = "IC"
 	set desc = "Rename yourself and your alates."
 
-	if(species.name == SPECIES_MANTID_GYNE && mind && istype(mind.assigned_job, /datum/job/submap/ascent))
-		var/datum/job/submap/ascent/ascent_job = mind.assigned_job
-		var/datum/submap/ascent/cutter = ascent_job.owner
+	if(species.name == SPECIES_MANTID_GYNE && mind && istype(mind.assigned_job, /datum/job/submap/ascent_inf))
+		var/datum/job/submap/ascent_inf/ascent_job = mind.assigned_job
+		var/datum/submap/ascent_inf/cutter = ascent_job.owner
 		if(istype(cutter))
 
 			var/new_number = input("What is your position in your lineage?", "Name Nest-Lineage") as num|null
@@ -65,7 +65,7 @@
 			for(var/mob/living/carbon/human/H in GLOB.human_mob_list)
 				if(!H.mind || H.species.name != SPECIES_MANTID_ALATE)
 					continue
-				var/datum/job/submap/ascent/temp_ascent_job = H.mind.assigned_job
+				var/datum/job/submap/ascent_inf/temp_ascent_job = H.mind.assigned_job
 				if(!istype(temp_ascent_job) || temp_ascent_job.owner != ascent_job.owner)
 					continue
 
@@ -74,10 +74,10 @@
 				H.fully_replace_character_name("[new_alate_number] [new_name]")
 				to_chat(H, SPAN_NOTICE("<font size = 3>Your gyne, [real_name], has awakened, and you recall your place in the nest-lineage: <b>[H.real_name]</b>.</font>"))
 
-	verbs -= /mob/living/carbon/human/proc/gyne_rename_lineage
+	verbs -= /mob/living/carbon/human/proc/gyne_rename_lineage_inf
 
 // Jobs.
-/datum/job/submap/ascent
+/datum/job/submap/ascent_inf
 	title = "Ascent Gyne"
 	total_positions = 1
 	supervisors = "самой собой"
@@ -98,18 +98,18 @@
 					SKILL_SCIENCE = SKILL_ADEPT,
 					SKILL_MEDICAL = SKILL_BASIC)
 
-/datum/job/submap/ascent/is_position_available()
+/datum/job/submap/ascent_inf/is_position_available()
 	. = ..()
 	if(. && requires_supervisor)
 		for(var/mob/M in GLOB.player_list)
 			if(!M.client || !M.mind || !M.mind.assigned_job || M.mind.assigned_job.title != requires_supervisor)
 				continue
-			var/datum/job/submap/ascent/ascent_job = M.mind.assigned_job
+			var/datum/job/submap/ascent_inf/ascent_job = M.mind.assigned_job
 			if(istype(ascent_job) && ascent_job.owner == owner)
 				return TRUE
 		return FALSE
 
-/datum/job/submap/ascent/is_available(client/caller)
+/datum/job/submap/ascent_inf/is_available(client/caller)
 	. = ..()
 	if(.)
 		switch(set_species_on_join)
@@ -118,14 +118,14 @@
 			if(SPECIES_MONARCH_QUEEN)
 				. = is_species_whitelisted(caller.mob, SPECIES_NABBER)
 
-/datum/job/submap/ascent/handle_variant_join(var/mob/living/carbon/human/H, var/alt_title)
+/datum/job/submap/ascent_inf/handle_variant_join(var/mob/living/carbon/human/H, var/alt_title)
 
 	if(ispath(set_species_on_join, /mob/living/silicon/robot))
 		return H.Robotize(set_species_on_join)
 	if(ispath(set_species_on_join, /mob/living/silicon/ai))
 		return H.AIize(set_species_on_join, move = FALSE)
 
-	var/datum/submap/ascent/cutter = owner
+	var/datum/submap/ascent_inf/cutter = owner
 	if(!istype(cutter))
 		crash_with("Ascent submap job is being used by a non-Ascent submap, aborting variant join.")
 		return
@@ -138,7 +138,7 @@
 	switch(H.species.name)
 		if(SPECIES_MANTID_GYNE)
 			H.real_name = "[random_id(/datum/species/mantid, 1, 99)] [cutter.gyne_name]"
-			H.verbs |= /mob/living/carbon/human/proc/gyne_rename_lineage
+			H.verbs |= /mob/living/carbon/human/proc/gyne_rename_lineage_inf
 		if(SPECIES_MANTID_ALATE)
 			var/new_alate_number = is_species_whitelisted(H, SPECIES_MANTID_GYNE) ? random_id(/datum/species/mantid, 1000, 9999) : random_id(/datum/species/mantid, 10000, 99999)
 			H.real_name = "[new_alate_number] [cutter.gyne_name]"
@@ -147,7 +147,7 @@
 		H.mind.name = H.real_name
 	return H
 
-/datum/job/submap/ascent/alate
+/datum/job/submap/ascent_inf/alate
 	title = "Ascent Alate"
 	total_positions = 2
 	supervisors = "Гииной"
@@ -161,7 +161,7 @@
 					SKILL_WEAPONS = SKILL_ADEPT,
 					SKILL_MEDICAL = SKILL_BASIC)
 
-/datum/job/submap/ascent/drone
+/datum/job/submap/ascent_inf/drone
 	title = "Ascent Drone"
 	supervisors = "Гииной"
 	total_positions = 1
@@ -170,7 +170,7 @@
 	requires_supervisor = "Ascent Gyne"
 
 /*
-/datum/job/submap/ascent/msw
+/datum/job/submap/ascent_inf/msw
 	title = "Serpentid Adjunct"
 	supervisors = "вашей Королевой"
 	total_positions = 3
@@ -184,7 +184,7 @@
 					SKILL_SCIENCE = SKILL_ADEPT,
 					SKILL_MEDICAL = SKILL_BASIC)
 
-/datum/job/submap/ascent/msq
+/datum/job/submap/ascent_inf/msq
 	title = "Serpentid Queen"
 	supervisors = "другими Королевами и Гииной"
 	total_positions = 2
@@ -198,24 +198,24 @@
 */
 
 // Spawn points.
-/obj/effect/submap_landmark/spawnpoint/ascent_seedship
+/obj/effect/submap_landmark/spawnpoint/ascent_seedship_inf
 	name = "Ascent Gyne"
 	movable_flags = MOVABLE_FLAG_EFFECTMOVE
 
-/obj/effect/submap_landmark/spawnpoint/ascent_seedship/alate
+/obj/effect/submap_landmark/spawnpoint/ascent_seedship_inf/alate
 	name = "Ascent Alate"
 
-/obj/effect/submap_landmark/spawnpoint/ascent_seedship/drone
+/obj/effect/submap_landmark/spawnpoint/ascent_seedship_inf/drone
 	name = "Ascent Drone"
 
-/obj/effect/submap_landmark/spawnpoint/ascent_seedship/adjunct
+/obj/effect/submap_landmark/spawnpoint/ascent_seedship_inf/adjunct
 	name = "Serpentid Adjunct"
 
-/obj/effect/submap_landmark/spawnpoint/ascent_seedship/queen
+/obj/effect/submap_landmark/spawnpoint/ascent_seedship_inf/queen
 	name = "Serpentid Queen"
 
 /*
-/datum/job/submap/ascent/control_mind
+/datum/job/submap/ascent_inf/control_mind
 	title = "Ascent Control Mind"
 	supervisors = "Гииной"
 	total_positions = 1

@@ -1,4 +1,4 @@
-#define ASCENT_COLONY_SHIP_NAME "\improper Damaged Ascent seedship"
+#define DAMAGED_ASCENT_COLONY_SHIP_NAME "\improper Damaged Ascent seedship"
 
 #include "ascent_areas.dm"
 #include "ascent_jobs.dm"
@@ -6,7 +6,7 @@
 
 // Map template data.
 /datum/map_template/ruin/away_site/ascent_seedship_inf
-	name = ASCENT_COLONY_SHIP_NAME
+	name = DAMAGED_ASCENT_COLONY_SHIP_NAME
 	id = "awaysite_ascent_seedship_inf"
 	description = "A small Ascent colony ship. Looks like it was damaged."
 	prefix = "maps/away_inf/"
@@ -14,28 +14,28 @@
 	cost = 2
 	spawn_weight = 50 //HABITABLE SHIPS SPAWN
 	shuttles_to_initialise = list(
-		/datum/shuttle/autodock/overmap/ascent,
-		/datum/shuttle/autodock/overmap/ascent/two
+		/datum/shuttle/autodock/overmap/ascent_inf,
+		/datum/shuttle/autodock/overmap/ascent_inf/two
 	)
 
 // Overmap objects.
 /obj/effect/overmap/visitable/ship/ascent_seedship_inf
-	name = ASCENT_COLONY_SHIP_NAME
+	name = DAMAGED_ASCENT_COLONY_SHIP_NAME
 	desc = "Wake signature indicates a small to medium sized vessel of unknown design."
 	vessel_mass = 6500
 	fore_dir = WEST
-	max_speed = 1/(1 SECOND)
+	max_speed = 0.6/(1 SECOND)
 	hide_from_reports = TRUE
 	initial_restricted_waypoints = list(
-		"Trichoptera" = list("nav_hangar_ascent_one"),
-		"Lepidoptera" = list("nav_hangar_ascent_two")
+		"Trichopterax" = list("nav_hangar_ascent_inf_one"),
+		"Lepidopterax" = list("nav_hangar_ascent_inf_two")
 	)
 	known = 0
 
 /obj/effect/submap_landmark/joinable_submap/ascent_seedship_inf
-	name = ASCENT_COLONY_SHIP_NAME
-	archetype = /decl/submap_archetype/ascent_seedship
-	submap_datum_type = /datum/submap/ascent
+	name = DAMAGED_ASCENT_COLONY_SHIP_NAME
+	archetype = /decl/submap_archetype/ascent_seedship_inf
+	submap_datum_type = /datum/submap/ascent_inf
 
 /obj/effect/submap_landmark/joinable_submap/ascent_seedship_inf/Initialize(mapload)
 	var/list/all_elements = list(

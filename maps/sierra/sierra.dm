@@ -133,6 +133,7 @@
 	#include "../away_inf/bearcat/bearcat.dm"
 	#include "../away_inf/ascent/ascent.dm"
 
+	#include "../away/ascent/ascent.dm"
 	#include "../away/derelict/derelict.dm"
 	#include "../away/magshield/magshield.dm"
 	#include "../away/casino/casino.dm"
