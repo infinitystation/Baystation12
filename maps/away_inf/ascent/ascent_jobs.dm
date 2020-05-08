@@ -1,4 +1,4 @@
-#define WEBHOOK_SUBMAP_LOADED_ASCENT_INF "webhook_submap_ascent"
+#define WEBHOOK_SUBMAP_LOADED_ASCENT_INF "webhook_submap_ascent_inf"
 
 // Submap datum and archetype.
 /decl/webhook/submap_loaded/ascent_inf
@@ -78,7 +78,7 @@
 
 // Jobs.
 /datum/job/submap/ascent_inf
-	title = "Ascent Gyne"
+	title = "Ascent gyne"
 	total_positions = 1
 	supervisors = "самой собой"
 	info = "You are the Gyne of an independent Ascent vessel. Your hunting has brought you to this remote sector full of crawling primitives. Impose your will, found a new nest, and bring prosperity to your lineage."
@@ -148,7 +148,7 @@
 	return H
 
 /datum/job/submap/ascent_inf/alate
-	title = "Ascent Alate"
+	title = "Ascent alate"
 	total_positions = 2
 	supervisors = "Гииной"
 	info = "You are an Alate of an independent Ascent vessel. Your Gyne has directed you to this remote sector full of crawling primitives. Follow her instructions and bring prosperity to your nest-lineage."
@@ -162,7 +162,7 @@
 					SKILL_MEDICAL = SKILL_BASIC)
 
 /datum/job/submap/ascent_inf/drone
-	title = "Ascent Drone"
+	title = "Ascent drone"
 	supervisors = "Гииной"
 	total_positions = 1
 	info = "You are a Machine Intelligence of an independent Ascent vessel. The Gyne you assist, and her children, have wandered into this sector full of primitive bioforms. Try to keep them alive, and assist where you can."
@@ -229,4 +229,4 @@
 	name = "TODO"
 */
 
-#undef WEBHOOK_SUBMAP_LOADED_ASCENT
+#undef WEBHOOK_SUBMAP_LOADED_ASCENT_INF
