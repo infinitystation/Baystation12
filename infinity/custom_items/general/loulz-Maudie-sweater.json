@@ -1,0 +1,8 @@
+{
+  "ckey" :            "loulz",
+  "character_name" :  "Maudie Young",
+  "item_name" :       "keyhole sweater",
+  "item_desc" :       "This is usual sweater. Except it's turtleneck. And have a keyhole. What else did you wanted?",
+  "item_icon_state" : "loulz_sweater",
+  "item_path" :       "/obj/item/clothing/accessory"
+  }
