@@ -83,7 +83,6 @@ diesiege - resomi
 kirill1243 - resomi
 coldmantis13 - resomi
 darkman24rus - resomi
-wheatley2013 - resomi
 twinindifferent - resomi
 hodovoy - resomi
 elar - resomi
@@ -97,6 +96,7 @@ redknighthero - giant armoured serpentid
 coldmantis13 - giant armoured serpentid
 kirill1243 - giant armoured serpentid
 coltrane97 - giant armoured serpentid
+darkman24rus - giant armoured serpentid
 diesiege - giant armoured serpentid
 themaybat - giant armoured serpentid
 sosiskoed - giant armoured serpentid
@@ -200,6 +200,7 @@ portos - unathi
 moonmen - tajaran
 cuddleandtea - tajaran
 mrnicolas - tajaran
+hodovoy - tajaran
 romeo517 - tajaran
 korramy - tajaran
 taushai - tajaran
