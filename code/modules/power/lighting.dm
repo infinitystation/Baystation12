@@ -187,6 +187,10 @@
 		set_dir(construct.dir)
 	else
 		lightbulb = new light_type(src)
+//[INF]
+		if(special_broken_chance)
+			lightbulb.broken_chance = special_broken_chance
+//[/INF]
 		if(prob(lightbulb.broken_chance))
 			broken(1)
 

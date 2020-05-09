@@ -614,7 +614,7 @@ datum/unit_test/ladder_check/start_test()
 		exceptions_by_turf[T] += exception[4]
 	exceptions = exceptions_by_turf
 
-	for(var/obj/structure/cable/C in world)
+	for(var/obj/structure/cable/C in GLOB.using_map.station_levels) //INF, WAS in world)
 		if(!all_ends_connected(C))
 			failures++
 

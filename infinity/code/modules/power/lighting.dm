@@ -1,3 +1,6 @@
+/obj/machinery/light
+	var/special_broken_chance = 0
+
 /obj/machinery/light/halogen
 	light_type = /obj/item/weapon/light/tube/halogen
 
