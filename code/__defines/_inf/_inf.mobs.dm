@@ -15,30 +15,14 @@
 #define BP_FAKE    "fake_brain"
 #define BP_ZOMB    "festering ooze"
 
-
-//Swarm Limbs
-#define BP_L_F_LEG 		"left front leg"
-#define BP_R_F_LEG 		"right front leg"
-#define BP_L_B_LEG 		"left back leg"
-#define BP_R_B_LEG 		"right back leg"
-#define BP_SHELL   		"shell"
-#define BP_MANIPULATOR	"manipulator"
-
-//Swarm Organs
-#define BP_SENSOR			"sensor"
-#define BP_GENERATOR		"generator"
-#define BP_CORE				"core"
-#define BP_THRUSTER			"thruster"
-#define BP_ARMOR			"armor"
-#define BP_ANTI_EMP_PLATING	"anti EMP plating"
-#define BP_MATTER_TANK		"matter tank"
-
 #define SPECIES_TAJARA "Tajara"
 #define SPECIES_EROSAN "Erosan'Unathi"
 #define SPECIES_RESOMI "Resomi"
-#define SPECIES_SWARM  "Swarm"
 #define SPECIES_XENO   "Xenophage"
 #define SPECIES_BIONIC "Bionic"
+
+#define SPECIES_ABDUCTOR     "Abductor Agent"
+#define SPECIES_ABDUCTOR_SCI "Abductor Scientist"
 
 #define HUMAN_SPECIES list(SPECIES_HUMAN, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_GRAVWORLDER, SPECIES_TRITONIAN, SPECIES_MULE, SPECIES_BOOSTER)
 #define UNATHI_SPECIES list(SPECIES_UNATHI, SPECIES_EROSAN, SPECIES_YEOSA)

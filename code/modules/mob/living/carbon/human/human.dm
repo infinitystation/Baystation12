@@ -7,6 +7,7 @@
 //[INF]
 	throw_range = 3 //NO, TILSON
 	throw_speed = 0.5
+	var/good_DNA = 0 //for changelings
 //[/INF]
 	var/list/hud_list[10]
 	var/embedded_flag	  //To check if we've need to roll for damage on movement while an item is imbedded in us.
@@ -57,6 +58,11 @@
 		dna.s_base = s_base
 		sync_organ_dna()
 	make_blood()
+//[INF]
+	spawn(2 SECONDS)
+		if(client?.wishes_to_be_role(GLOB.changelings.id) >= 1)
+			good_DNA = 1
+//[/INF]
 
 /mob/living/carbon/human/Destroy()
 	GLOB.human_mob_list -= src

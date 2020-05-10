@@ -40,6 +40,7 @@
 	#include "../away_inf/yacht/yacht.dm"
 	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
 //	#include "../away_inf/patrol/patrol.dm"
+	#include "../away_inf/ascent/ascent.dm"
 //[/INF]
 
 	#define using_map_DATUM /datum/map/away_sites_testing

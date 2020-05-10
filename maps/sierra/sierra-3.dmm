@@ -256,10 +256,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/access_button{
-	command = "cycle_interior";
-	frequency = 1379;
-	master_tag = "solar_starboard_airlock";
+/obj/machinery/access_button/airlock_interior{
+	master_tag = "solar_starboard";
 	name = "interior access button";
 	pixel_x = 12;
 	pixel_y = 27;
@@ -269,12 +267,9 @@
 /turf/simulated/floor/plating,
 /area/maintenance/solar/starboard)
 "aaF" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1379;
+/obj/machinery/door/airlock/external/bolted/cycling{
 	id_tag = "solar_starboard_inner";
-	locked = 1;
-	name = "Engineering External Access";
-	req_access = newlist()
+	name = "Engineering External Access"
 	},
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -288,7 +283,7 @@
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 8
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	id_tag = "solar_starboard_pump"
 	},
 /obj/machinery/light/small{
@@ -311,18 +306,15 @@
 	},
 /obj/machinery/airlock_sensor{
 	id_tag = "solar_starboard_sensor";
+	master_tag = "solar_starboard";
 	pixel_x = 10;
 	pixel_y = 27
 	},
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
-	id_tag = "solar_starboard_airlock";
+	id_tag = "solar_starboard";
 	pixel_x = -5;
 	pixel_y = 21;
-	req_access = list("ACCESS_EXTERNAL");
-	tag_airpump = "solar_starboard_pump";
-	tag_chamber_sensor = "solar_starboard_sensor";
-	tag_exterior_door = "solar_starboard_outer";
-	tag_interior_door = "solar_starboard_inner"
+	req_access = list("ACCESS_EXTERNAL")
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/solar/starboard)
@@ -331,7 +323,7 @@
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	id_tag = "solar_starboard_pump"
 	},
 /obj/machinery/light/small{
@@ -345,12 +337,9 @@
 /turf/simulated/floor/plating,
 /area/maintenance/solar/starboard)
 "aaJ" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1379;
+/obj/machinery/door/airlock/external/bolted/cycling{
 	id_tag = "solar_starboard_outer";
-	locked = 1;
-	name = "Engineering External Access";
-	req_access = newlist()
+	name = "Engineering External Access"
 	},
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -366,10 +355,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/access_button{
-	command = "cycle_exterior";
-	frequency = 1379;
-	master_tag = "solar_starboard_airlock";
+/obj/machinery/access_button/airlock_exterior{
+	master_tag = "solar_starboard";
 	name = "exterior access button";
 	pixel_x = -12;
 	pixel_y = -19;
@@ -670,18 +657,13 @@
 /area/maintenance/firstdeck/forestarboard)
 "abv" = (
 /obj/machinery/shield_diffuser,
-/obj/machinery/door/airlock/external{
-	frequency = 1331;
+/obj/machinery/door/airlock/external/bolted/cycling{
 	id_tag = "fd_starboard_outer";
-	locked = 1;
-	name = "First Deck Port Airlock";
-	req_access = newlist()
+	name = "First Deck Port Airlock"
 	},
-/obj/machinery/access_button{
-	command = "cycle_exterior";
+/obj/machinery/access_button/airlock_exterior{
 	dir = 1;
-	frequency = 1331;
-	master_tag = "fd_starboard_airlock";
+	master_tag = "fd_starboard";
 	name = "exterior access button";
 	pixel_x = 24;
 	req_access = list("ACCESS_EXTERNAL")
@@ -999,7 +981,7 @@
 	dir = 1;
 	icon_state = "warningcee"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 4;
 	id_tag = "fd_starboard_pump"
 	},
@@ -1017,7 +999,7 @@
 	dir = 1;
 	icon_state = "warningcee"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 8;
 	id_tag = "fd_starboard_pump"
 	},
@@ -1507,12 +1489,9 @@
 	},
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
 	dir = 4;
-	frequency = 1381;
-	id_tag = "eng3_access";
+	id_tag = "eng3";
 	name = "First Deck Starboard Access";
-	pixel_x = -21;
-	tag_exterior_door = "eng3_outer";
-	tag_interior_door = "eng3_inner"
+	pixel_x = -21
 	},
 /obj/machinery/camera/network/engineering{
 	c_tag = "First Deck - Starbound Necelle"
@@ -1666,17 +1645,12 @@
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	dir = 4;
 	display_name = "First Deck Auxillary Dock";
-	frequency = 1331;
-	id_tag = "fd_starboard_airlock";
+	id_tag = "fd_starboard";
 	name = "First Deck Starboard Airlock Controller";
 	pixel_x = -20;
-	req_access = list("ACCESS_EXTERNAL");
-	tag_airpump = "fd_starboard_pump";
-	tag_chamber_sensor = "fd_starboard_sensor";
-	tag_exterior_door = "fd_starboard_outer";
-	tag_interior_door = "fd_starboard_inner"
+	req_access = list("ACCESS_EXTERNAL")
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 4;
 	id_tag = "fd_starboard_pump"
 	},
@@ -1686,11 +1660,11 @@
 /obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/warning/cee,
 /obj/machinery/airlock_sensor{
-	frequency = 1331;
 	id_tag = "fd_starboard_sensor";
+	master_tag = "fd_starboard";
 	pixel_x = 24
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 8;
 	id_tag = "fd_starboard_pump"
 	},
@@ -1897,7 +1871,7 @@
 /area/maintenance/firstdeck/aftstarboard)
 "adU" = (
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 4;
 	id_tag = "fd_starboard_pump"
 	},
@@ -1987,12 +1961,9 @@
 /area/maintenance/firstdeck/aftstarboard)
 "aea" = (
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
-	frequency = 1381;
-	id_tag = "eng3_access";
+	id_tag = "eng3";
 	name = "First Deck Starboard Access";
-	pixel_y = 21;
-	tag_exterior_door = "eng3_outer";
-	tag_interior_door = "eng3_inner"
+	pixel_y = 21
 	},
 /obj/structure/cable/green{
 	d1 = 2;
@@ -2003,17 +1974,14 @@
 /turf/simulated/floor/plating,
 /area/thruster/d1starboard)
 "aeb" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1381;
-	id_tag = "eng3_outer";
-	locked = 1;
-	name = "First Deck Starboard Access";
-	req_access = newlist()
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/external/bolted/cycling{
+	id_tag = "eng3_outer";
+	name = "First Deck Starboard Nacelle Access"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/thruster/d1starboard)
@@ -2026,12 +1994,9 @@
 /obj/machinery/light/small,
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
-	frequency = 1381;
-	id_tag = "eng3_access";
+	id_tag = "eng3";
 	name = "First Deck Starboard Access";
-	pixel_y = 21;
-	tag_exterior_door = "eng3_outer";
-	tag_interior_door = "eng3_inner"
+	pixel_y = 21
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
@@ -2042,12 +2007,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/external{
-	frequency = 1381;
+/obj/machinery/door/airlock/external/bolted/cycling{
 	id_tag = "eng3_inner";
-	locked = 1;
-	name = "First Deck Starboard Access";
-	req_access = newlist()
+	name = "First Deck Starboard Nacelle Access"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/thruster/d1starboard)
@@ -2103,6 +2065,9 @@
 /area/thruster/d1starboard)
 "aen" = (
 /obj/random_multi/single_item/space_rabbit,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 5
+	},
 /turf/simulated/floor/reinforced/airless,
 /area/space)
 "aeo" = (
@@ -2187,20 +2152,15 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "aex" = (
-/obj/machinery/access_button{
-	command = "cycle_interior";
-	frequency = 1331;
-	master_tag = "fd_starboard_airlock";
+/obj/machinery/access_button/airlock_interior{
+	master_tag = "fd_starboard";
 	name = "interior access button";
 	pixel_x = -24;
 	req_access = list("ACCESS_EXTERNAL")
 	},
-/obj/machinery/door/airlock/external/glass{
-	frequency = 1331;
+/obj/machinery/door/airlock/external/glass/bolted/cycling{
 	id_tag = "fd_starboard_inner";
-	locked = 1;
-	name = "First Deck Port Airlock";
-	req_access = newlist()
+	name = "First Deck Port Airlock"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -2212,7 +2172,6 @@
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "escape_pod_12";
 	name = "escape pod seven controller";
 	pixel_x = -20;
@@ -2230,7 +2189,6 @@
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "escape_pod_13";
 	name = "escape pod eight controller";
 	pixel_x = -20;
@@ -2248,7 +2206,6 @@
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "escape_pod_14";
 	name = "escape pod nine controller";
 	pixel_x = -20;
@@ -2617,12 +2574,9 @@
 /turf/simulated/wall/r_titanium,
 /area/shuttle/escape_pod12/station)
 "afo" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1380;
+/obj/machinery/door/airlock/external/escapepod{
 	id_tag = "escape_pod_12_hatch";
-	locked = 1;
-	name = "Escape Pod Seven Hatch";
-	req_access = newlist()
+	name = "Escape Pod Seven Hatch"
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -2636,12 +2590,9 @@
 /turf/simulated/wall/r_titanium,
 /area/shuttle/escape_pod13/station)
 "afq" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1380;
+/obj/machinery/door/airlock/external/escapepod{
 	id_tag = "escape_pod_13_hatch";
-	locked = 1;
-	name = "Escape Pod Eight Hatch";
-	req_access = newlist()
+	name = "Escape Pod Eight Hatch"
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -2655,12 +2606,9 @@
 /turf/simulated/wall/r_titanium,
 /area/shuttle/escape_pod14/station)
 "afs" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1380;
+/obj/machinery/door/airlock/external/escapepod{
 	id_tag = "escape_pod_14_hatch";
-	locked = 1;
-	name = "Escape Pod Nine Hatch";
-	req_access = newlist()
+	name = "Escape Pod Nine Hatch"
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -3129,6 +3077,9 @@
 	pixel_x = -8;
 	pixel_y = 5
 	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 6
+	},
 /turf/simulated/floor/reinforced/airless,
 /area/space)
 "agc" = (
@@ -3139,6 +3090,10 @@
 	icon_state = "1-2"
 	},
 /obj/effect/wallframe_spawn/reinforced/hull,
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "agd" = (
@@ -3280,8 +3235,7 @@
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock/external/escapepod{
 	id_tag = "escape_pod_12_berth_hatch";
-	name = "Escape Pod Seven";
-	req_access = newlist()
+	name = "Escape Pod Seven"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/centralstarboard)
@@ -3290,8 +3244,7 @@
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock/external/escapepod{
 	id_tag = "escape_pod_13_berth_hatch";
-	name = "Escape Pod Eeigh";
-	req_access = newlist()
+	name = "Escape Pod Eeigh"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/centralstarboard)
@@ -3300,8 +3253,7 @@
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock/external/escapepod{
 	id_tag = "escape_pod_14_berth_hatch";
-	name = "Escape Pod Nine";
-	req_access = newlist()
+	name = "Escape Pod Nine"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/centralstarboard)
@@ -4026,7 +3978,6 @@
 	dir = 1
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
-	frequency = 1380;
 	id_tag = "escape_pod_12_berth";
 	name = "escape pod seven berth controller";
 	pixel_x = -32;
@@ -4071,7 +4022,6 @@
 	dir = 1
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
-	frequency = 1380;
 	id_tag = "escape_pod_13_berth";
 	name = "escape pod eight berth controller";
 	pixel_x = -32;
@@ -4098,7 +4048,6 @@
 	dir = 1
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
-	frequency = 1380;
 	id_tag = "escape_pod_14_berth";
 	name = "escape pod nine berth controller";
 	pixel_x = -32;
@@ -4580,6 +4529,11 @@
 	req_access = list("ACCESS_VAULT")
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/security_scanner,
+/obj/machinery/door/blast/regular/open{
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
+	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/security/nuke_storage)
 "aiB" = (
@@ -5131,6 +5085,10 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
+/obj/machinery/atmospherics/binary/pump/on{
+	dir = 8;
+	target_pressure = 200
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "ajE" = (
@@ -5147,6 +5105,9 @@
 /obj/structure/cable/green{
 	d2 = 2;
 	icon_state = "0-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
@@ -5165,9 +5126,6 @@
 /area/maintenance/firstdeck/forestarboard)
 "ajG" = (
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
@@ -5183,6 +5141,9 @@
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
@@ -5838,15 +5799,6 @@
 "akJ" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/bridge/gun/energy)
-"akK" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/maintenance/firstdeck/forestarboard)
 "akL" = (
 /obj/structure/catwalk,
 /obj/structure/cable/green{
@@ -5882,6 +5834,9 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "akO" = (
@@ -5895,6 +5850,12 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/security_scanner{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/forestarboard)
 "akP" = (
@@ -5903,6 +5864,10 @@
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9;
+	pixel_y = 0
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
@@ -5941,6 +5906,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/floor_decal/industrial/hatch/grey,
+/obj/machinery/door/blast/regular/open{
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/sierra/evidence)
 "akU" = (
@@ -6362,15 +6332,24 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/wall/r_wall/prepainted,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "alJ" = (
-/obj/structure/catwalk,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "alK" = (
@@ -6722,7 +6701,7 @@
 /area/medical/subacute)
 "amp" = (
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 8;
 	id_tag = "fd_starboard_pump"
 	},
@@ -7031,54 +7010,32 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/bridge/gun/energy)
 "amN" = (
-/obj/machinery/alarm{
-	dir = 4;
-	pixel_x = -23
+/obj/machinery/door/airlock/maintenance{
+	name = "Security Maintenance";
+	req_access = newlist()
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
 	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/maintenance/firstdeck/forestarboard)
-"amO" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/maintenance/firstdeck/forestarboard)
-"amP" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/maintenance/firstdeck/forestarboard)
-"amQ" = (
-/obj/machinery/door/airlock/maintenance{
-	name = "Security Maintenance";
-	req_access = newlist()
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/forestarboard)
+"amP" = (
+/turf/simulated/wall/r_wall/prepainted,
+/area/security/range)
 "amR" = (
-/obj/structure/table/rack,
+/obj/structure/closet/secure_closet/guncabinet/sierra_armory/shotgun,
 /obj/effect/floor_decal/techfloor{
 	dir = 9
 	},
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/item/weapon/storage/box/trackimp,
-/obj/item/weapon/storage/box/handcuffs,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/sierra/armory)
 "amS" = (
@@ -7103,13 +7060,10 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "amT" = (
+/obj/structure/closet/secure_closet/guncabinet/sierra_armory/smg,
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
-/obj/machinery/fabricator{
-	fab_status_flags = 1
-	},
-/obj/item/stack/material/steel/fifty,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/sierra/armory)
 "amU" = (
@@ -7162,9 +7116,6 @@
 "amX" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 1
-	},
-/obj/structure/railing/mapped{
-	dir = 4
 	},
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/militia,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -7854,40 +7805,48 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/maintenance/firstdeck/forestarboard)
-"aoi" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/deployable/barrier,
-/turf/simulated/floor/tiled/techfloor,
+/obj/effect/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "aoj" = (
-/turf/simulated/wall/r_wall/prepainted,
-/area/crew_quarters/safe_room/firstdeck)
+/obj/structure/table/standard,
+/obj/machinery/recharger/wallcharger{
+	dir = 4;
+	pixel_x = -22
+	},
+/obj/item/weapon/gun/energy/laser/practice,
+/obj/effect/floor_decal/borderfloor{
+	icon_state = "borderfloor_white";
+	dir = 9
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 9
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/red/bordercorner2{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/security/range)
 "aok" = (
-/obj/machinery/door/airlock/maintenance{
-	name = "Security Maintenance";
-	req_access = newlist()
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 9
 	},
-/obj/item/taperoll/engineering/applied,
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube_map"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/security/range)
 "aol" = (
-/obj/structure/railing/mapped,
-/obj/effect/floor_decal/techfloor{
-	dir = 8
+/obj/effect/floor_decal/techfloor/corner{
+	dir = 1
 	},
-/obj/structure/table/rack,
-/obj/item/clothing/suit/armor/pcarrier/medium,
-/obj/item/clothing/suit/armor/pcarrier/medium,
-/obj/item/clothing/head/helmet,
-/obj/item/clothing/head/helmet,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/sierra/armory)
 "aom" = (
@@ -8723,14 +8682,10 @@
 	dir = 4
 	},
 /obj/item/taperoll/engineering/applied,
+/obj/effect/floor_decal/industrial/hatch/grey,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/bridge/gun/energy)
 "apE" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 8;
@@ -8753,57 +8708,48 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/effect/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "apF" = (
-/obj/machinery/alarm{
-	pixel_y = 30
+/obj/structure/window/reinforced,
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/tiled/monotile,
+/area/security/range)
+"apI" = (
+/obj/machinery/button/blast_door{
+	dir = 8;
+	id_tag = "firingspace";
+	name = "Firing Range Shields";
+	pixel_x = 20;
+	req_access = list("ACCESS_SEC_DOORS")
 	},
-/obj/structure/bed/chair/padded/blue{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
-"apG" = (
-/obj/structure/table/standard,
-/obj/random/single{
-	icon = 'icons/obj/playing_cards.dmi';
-	icon_state = "deck";
-	name = "randomly spawned deck of cards";
-	spawn_nothing_percentage = 50;
-	spawn_object = /obj/item/weapon/deck/cards
-	},
-/obj/item/device/radio/intercom{
-	pixel_y = 26
-	},
-/obj/item/weapon/reagent_containers/food/drinks/glass2/shot,
-/obj/item/weapon/reagent_containers/food/drinks/bottle/premiumvodka,
-/turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
-"apH" = (
-/obj/structure/bed/chair/padded/blue{
+/turf/simulated/floor/tiled/monotile,
+/area/security/range)
+"apJ" = (
+/obj/structure/table/rack,
+/obj/item/weapon/storage/box/trackimp,
+/obj/item/weapon/storage/box/handcuffs,
+/obj/effect/floor_decal/techfloor{
 	dir = 8
 	},
-/turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
-"apI" = (
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
-"apJ" = (
-/obj/structure/closet/secure_closet/guncabinet/sierra_armory/shotgun,
-/obj/effect/floor_decal/techfloor{
-	dir = 9
+/obj/structure/railing/mapped{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/sierra/armory)
 "apK" = (
-/obj/structure/closet/secure_closet/guncabinet/sierra_armory/smg,
-/obj/effect/floor_decal/techfloor/corner{
+/obj/structure/table/rack,
+/obj/item/clothing/suit/armor/pcarrier/medium,
+/obj/item/clothing/suit/armor/pcarrier/medium,
+/obj/item/clothing/head/helmet,
+/obj/item/clothing/head/helmet,
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/structure/railing/mapped{
-	dir = 4
+	dir = 4;
+	tag = "icon-railing0 (EAST)"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/sierra/armory)
@@ -8854,7 +8800,6 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
-/obj/structure/railing/mapped,
 /obj/structure/table/rack,
 /obj/item/weapon/shield/riot,
 /obj/item/weapon/shield/riot,
@@ -9830,33 +9775,91 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/floor_decal/industrial/hatch/grey,
 /turf/simulated/floor/tiled/techfloor,
 /area/bridge/hall/level_two)
 "ari" = (
 /turf/simulated/wall/prepainted,
 /area/bridge/hall/level_two)
 "arj" = (
-/obj/machinery/light_construct{
+/obj/machinery/computer/modular/preset/security,
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube_map"
+	},
+/obj/effect/floor_decal/borderfloor{
+	icon_state = "borderfloor_white";
+	dir = 9
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/security/range)
+"ark" = (
+/obj/structure/table/standard,
+/obj/item/device/flashlight/lamp{
+	pixel_x = 0;
+	pixel_y = 15
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 1;
+	icon_state = "borderfloor_white"
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/obj/item/weapon/paper_bin,
+/obj/item/weapon/pen,
+/obj/item/weapon/pen,
+/turf/simulated/floor/tiled/steel_grid,
+/area/security/range)
+"arl" = (
+/obj/machinery/computer/modular/preset/security,
+/obj/effect/floor_decal/borderfloor{
+	dir = 1;
+	icon_state = "borderfloor_white"
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/security/range)
+"arm" = (
+/obj/machinery/disposal,
+/obj/effect/floor_decal/borderfloor{
+	dir = 1;
+	icon_state = "borderfloor_white"
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/red/bordercorner2{
+	dir = 1
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/security/range)
+"arn" = (
+/obj/machinery/camera/network/security{
+	c_tag = "Security - Cadets";
 	dir = 8
 	},
-/turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
-"ark" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
-/turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
-"arl" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
-/turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
-"arm" = (
-/turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
-"arn" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 23;
+	pixel_y = -8
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/security/range)
 "aro" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 8
@@ -9889,6 +9892,9 @@
 	pixel_x = 20
 	},
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/egun,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/sierra/armory)
 "ars" = (
@@ -10497,48 +10503,41 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/bridge/hall/level_two)
 "asr" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
-	dir = 5
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
-"ass" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
+/obj/structure/table/standard,
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
-"ast" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
+/obj/item/weapon/folder/red,
+/obj/item/weapon/material/kitchen/utensil/fork/plastic,
+/turf/simulated/floor/tiled,
+/area/security/range)
+"ass" = (
+/obj/structure/bed/chair/padded/red{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
-"asu" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
 	dir = 4
 	},
-/obj/structure/catwalk,
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
+/turf/simulated/floor/tiled,
+/area/security/range)
+"ast" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
-/obj/machinery/power/apc{
-	dir = 4;
-	name = "east bump";
-	pixel_x = 24
+/turf/simulated/floor/tiled,
+/area/security/range)
+"asu" = (
+/obj/effect/catwalk_plated,
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/obj/item/device/radio/intercom{
+	dir = 8;
+	pixel_x = 20
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
+/area/security/range)
 "asv" = (
 /obj/machinery/light{
 	dir = 8
@@ -11043,6 +11042,10 @@
 "atf" = (
 /obj/machinery/portable_atmospherics/powered/scrubber,
 /obj/effect/floor_decal/industrial/outline/grey,
+/obj/machinery/camera/network/command{
+	c_tag = "First Deck - EVA Medical";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/storage/eva)
 "atg" = (
@@ -11356,6 +11359,7 @@
 	name = "Lasers Battery";
 	secured_wires = 1
 	},
+/obj/effect/floor_decal/industrial/hatch/grey,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/bridge/gun/energy)
 "atN" = (
@@ -11372,6 +11376,9 @@
 	},
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/machinery/camera/network/command{
+	c_tag = "Command - Bridge Upper Hallway Stairs"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/bridge/hall/level_two)
@@ -11395,26 +11402,36 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/bridge/hall/level_two)
 "atR" = (
-/turf/simulated/wall/prepainted,
-/area/crew_quarters/safe_room/firstdeck)
-"atS" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
-"atT" = (
-/obj/machinery/atmospherics/binary/pump/on{
-	dir = 1;
-	target_pressure = 200
+/obj/effect/floor_decal/borderfloor{
+	icon_state = "borderfloor_white";
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /obj/structure/cable/green{
 	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d2 = 4;
+	icon_state = "1-4"
 	},
-/obj/structure/catwalk,
+/turf/simulated/floor/tiled/steel_grid,
+/area/security/range)
+"atT" = (
+/obj/effect/catwalk_plated,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
+/area/security/range)
 "atU" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 8
@@ -12264,55 +12281,70 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/bridge/hall/level_two)
 "avl" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
-"avm" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
-	dir = 1
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
-"avn" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
-	dir = 4
-	},
-/obj/machinery/door/firedoor,
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
-"avo" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+/obj/item/weapon/stool/padded/red,
+/obj/effect/floor_decal/borderfloor{
+	icon_state = "borderfloor_white";
 	dir = 8
 	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
-"avp" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/universal,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/security/range)
+"avm" = (
+/obj/item/weapon/stool/padded/red,
+/turf/simulated/floor/tiled,
+/area/security/range)
+"avn" = (
+/turf/simulated/floor/tiled,
+/area/security/range)
+"avo" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
+/turf/simulated/floor/tiled,
+/area/security/range)
+"avp" = (
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
-"avq" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 8
+/obj/effect/catwalk_plated,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
+/area/security/range)
+"avq" = (
+/obj/structure/bed/chair/padded/red{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 5
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 5
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 4;
+	icon_state = "borderfloorcorner2_white"
+	},
+/obj/effect/floor_decal/corner/red/bordercorner2{
+	dir = 4
+	},
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 23
+	},
+/obj/machinery/newscaster{
+	pixel_x = 10;
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/security/range)
 "avr" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/security/sierra/armory/lobby)
@@ -13132,41 +13164,75 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/bridge/hall/level_two)
 "awK" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
+/obj/structure/railing/mapped{
+	dir = 4;
+	tag = "icon-railing0 (EAST)"
+	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/red/border,
+/obj/structure/closet/secure_closet/security/sierra/cadet,
+/turf/simulated/floor/tiled/steel_grid,
+/area/security/range)
+"awL" = (
+/obj/machinery/photocopier,
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/red/border,
+/obj/effect/floor_decal/borderfloor/corner2{
+	icon_state = "borderfloorcorner2_white";
 	dir = 9
 	},
-/turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
-"awL" = (
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_y = -21
+/obj/effect/floor_decal/corner/red/bordercorner2{
+	dir = 9
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
-	},
-/obj/item/frame/fire_alarm,
-/turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
+/turf/simulated/floor/tiled/steel_grid,
+/area/security/range)
 "awM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
-"awN" = (
-/obj/machinery/light_construct{
-	dir = 4
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 8
 	},
-/turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/monotile,
+/area/security/range)
+"awN" = (
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 26
+	},
+/obj/structure/bed/chair/padded/red{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor{
+	icon_state = "borderfloor_white";
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 6
+	},
+/obj/effect/floor_decal/borderfloor/corner2,
+/obj/effect/floor_decal/corner/red/bordercorner2,
+/obj/machinery/button/windowtint{
+	dir = 1;
+	id = "cadetwindow";
+	pixel_x = 6;
+	pixel_y = -21
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -6;
+	pixel_y = -21
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/security/range)
 "awO" = (
 /obj/structure/table/rack,
 /obj/item/weapon/storage/toolbox/mechanical,
@@ -13984,13 +14050,19 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock/maintenance{
-	name = "Working Area"
-	},
-/obj/item/taperoll/engineering/applied,
 /obj/machinery/door/firedoor,
-/turf/simulated/floor/plating,
-/area/crew_quarters/safe_room/firstdeck)
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/door/airlock/security/striped{
+	name = "Cadets"
+	},
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/security/range)
 "ayc" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 8
@@ -14920,6 +14992,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/floor_decal/industrial/hatch/grey,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/bridge/hall/level_two)
 "azm" = (
@@ -15009,6 +15082,9 @@
 	icon_state = "0-2"
 	},
 /obj/structure/bed/chair/padded/red,
+/obj/machinery/camera/network/security{
+	c_tag = "Security - Hallway - Fore"
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/sierra/hallway)
 "azs" = (
@@ -15025,9 +15101,6 @@
 	dir = 1
 	},
 /obj/structure/bed/chair/padded/red,
-/obj/machinery/camera/network/security{
-	c_tag = "Security - Hallway - Fore"
-	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/sierra/hallway)
 "azt" = (
@@ -15044,6 +15117,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/sierra/hallway)
 "azu" = (
@@ -15085,6 +15159,9 @@
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	dir = 1
+	},
+/obj/machinery/camera/network/security{
+	c_tag = "Security - Hallway - Armory"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/sierra/hallway)
@@ -15307,6 +15384,10 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/regular/open{
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
+	},
 /turf/simulated/floor/plating,
 /area/security/sierra/hallway/aft)
 "azO" = (
@@ -15428,9 +15509,21 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/floor_decal/techfloor/corner{
+	icon_state = "techfloor_corners";
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/storage/eva)
 "azZ" = (
+/obj/effect/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/industrial/danger,
 /obj/machinery/door/blast/shutters{
 	dir = 2;
 	id_tag = "eva_shutters";
@@ -15790,6 +15883,14 @@
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/machinery/security_scanner{
+	dir = 4
+	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/bridge/hall/level_two)
@@ -16173,6 +16274,9 @@
 	dir = 10
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/security/sierra/hallway/aft)
 "aAV" = (
@@ -16260,6 +16364,11 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/security/sierra/hallway/aft)
 "aAY" = (
@@ -16651,13 +16760,10 @@
 	pixel_y = 28;
 	req_access = list("ACCESS_EVA")
 	},
-/turf/simulated/floor/tiled,
-/area/hallway/primary/firstdeck/center)
-"aBy" = (
-/obj/effect/floor_decal/borderfloor{
+/obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/blue/border{
+/obj/effect/floor_decal/corner/blue/bordercorner2{
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
@@ -16666,13 +16772,13 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/blue/border{
+/obj/effect/floor_decal/corner/lightgrey/border{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/blue/bordercorner2{
+/obj/effect/floor_decal/corner/lightgrey/bordercorner2{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -17223,6 +17329,14 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/machinery/security_scanner{
+	dir = 4
+	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/bridge/hall/level_two)
 "aCq" = (
@@ -17550,6 +17664,9 @@
 	req_access = newlist()
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/security/sierra/hallway/aft)
 "aCM" = (
@@ -17562,6 +17679,11 @@
 	dir = 8;
 	id_tag = "security_entry_airlock_enter";
 	name = "Security Entry"
+	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/security/sierra/hallway/aft)
@@ -20008,6 +20130,22 @@
 /obj/machinery/keycard_auth{
 	pixel_x = 24
 	},
+/obj/machinery/button/blast_door{
+	dir = 8;
+	id_tag = "firingspace";
+	name = "Firing Range Shields";
+	pixel_x = 20;
+	pixel_y = 12;
+	req_access = list("ACCESS_SEC_DOORS")
+	},
+/obj/machinery/button/blast_door{
+	dir = 8;
+	id_tag = "security_lockdown";
+	name = "SECURITY LOCKDOWN";
+	pixel_x = 20;
+	pixel_y = -12;
+	req_access = list("ACCESS_HEAD_OF_SECURITY")
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/crew_quarters/heads/office/hos)
 "aFZ" = (
@@ -20330,6 +20468,11 @@
 	dir = 4;
 	id_tag = "security_sergeant_shutters";
 	name = "Warden Desk"
+	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
 	},
 /turf/simulated/floor/plating,
 /area/security/sierra/sergeant)
@@ -20842,6 +20985,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment,
+/obj/machinery/camera/network/command{
+	c_tag = "Command - Bridge Upper Hallway";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/hall/level_two)
 "aHp" = (
@@ -21133,6 +21280,11 @@
 	},
 /obj/structure/wall_frame/prepainted,
 /obj/structure/table/wallf/steel,
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/security/sierra/sergeant)
 "aHO" = (
@@ -23316,6 +23468,11 @@
 	name = "Warden";
 	req_access = newlist()
 	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/security/sierra/sergeant)
 "aKS" = (
@@ -24130,6 +24287,7 @@
 	name = "Bridge Storage";
 	secured_wires = 1
 	},
+/obj/effect/floor_decal/industrial/hatch/grey,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/storage/bridge)
 "aMb" = (
@@ -24151,6 +24309,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
+/obj/effect/floor_decal/industrial/hatch/grey,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/bridge/hall/level_two)
 "aMd" = (
@@ -25152,6 +25311,9 @@
 /obj/machinery/power/port_gen/pacman{
 	sheets = 25
 	},
+/obj/machinery/camera/network/command{
+	c_tag = "Command - Bridge Atmospherics"
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/firstdeck/foreport)
 "aNw" = (
@@ -25583,6 +25745,10 @@
 /obj/machinery/door/blast/shutters/open{
 	id_tag = "security_permabrig_shutters"
 	},
+/obj/machinery/door/blast/regular/open{
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
+	},
 /turf/simulated/floor/plating,
 /area/security/prison)
 "aNX" = (
@@ -25594,6 +25760,10 @@
 	},
 /obj/machinery/door/blast/shutters/open{
 	id_tag = "security_permabrig_shutters"
+	},
+/obj/machinery/door/blast/regular/open{
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
 	},
 /turf/simulated/floor/plating,
 /area/security/prison)
@@ -27282,6 +27452,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/effect/floor_decal/industrial/hatch/grey,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/storage/bridge)
 "aQB" = (
@@ -27328,6 +27499,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/floor_decal/industrial/hatch/grey,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/sierra/hosbed)
 "aQF" = (
@@ -28475,19 +28647,24 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor,
+/obj/effect/floor_decal/industrial/hatch/grey,
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/foreport)
 "aSj" = (
-/obj/structure/catwalk,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/foreport)
 "aSk" = (
-/obj/structure/catwalk,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
@@ -28498,10 +28675,10 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/foreport)
 "aSl" = (
-/obj/structure/catwalk,
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
@@ -28516,6 +28693,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/foreport)
 "aSm" = (
@@ -28529,6 +28707,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/floor_decal/industrial/hatch/grey,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/brig)
 "aSn" = (
@@ -29516,9 +29695,6 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -20
-	},
-/obj/effect/decal/cleanable/cobweb2{
-	dir = 1
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/deployable/barrier,
@@ -32625,7 +32801,6 @@
 "aYU" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "escape_pod_10_berth";
 	name = "escape pod five berth controller";
 	pixel_x = -20;
@@ -33098,8 +33273,7 @@
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock/external/escapepod{
 	id_tag = "escape_pod_10_berth_hatch";
-	name = "Escape Pod Five";
-	req_access = newlist()
+	name = "Escape Pod Five"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/sierra/hallway/port)
@@ -33646,12 +33820,9 @@
 /turf/simulated/wall/r_titanium,
 /area/shuttle/escape_pod10/station)
 "bbj" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1380;
+/obj/machinery/door/airlock/external/escapepod{
 	id_tag = "escape_pod_10_hatch";
-	locked = 1;
-	name = "Escape Pod Five Hatch";
-	req_access = newlist()
+	name = "Escape Pod Five Hatch"
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -34841,7 +35012,6 @@
 	dir = 8
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
-	frequency = 1380;
 	id_tag = "escape_pod_10";
 	name = "escape pod five controller";
 	pixel_x = -32;
@@ -34912,8 +35082,7 @@
 "bdE" = (
 /obj/machinery/door/airlock/external/escapepod{
 	id_tag = "escape_pod_10_berth_hatch";
-	name = "Escape Pod Five";
-	req_access = newlist()
+	name = "Escape Pod Five"
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -35340,8 +35509,7 @@
 "beA" = (
 /obj/machinery/door/airlock/external/escapepod{
 	id_tag = "escape_pod_10_berth_hatch";
-	name = "Escape Pod Five";
-	req_access = newlist()
+	name = "Escape Pod Five"
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -35636,13 +35804,10 @@
 "bfd" = (
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
 	dir = 1;
-	frequency = 1381;
-	id_tag = "eng4_access";
+	id_tag = "eng4";
 	name = "First Deck Port Nacelle Access";
 	pixel_y = -20;
-	req_access = list("ACCESS_ENGINEERING");
-	tag_exterior_door = "eng4_outer";
-	tag_interior_door = "eng4_inner"
+	req_access = list("ACCESS_ENGINEERING")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -35653,30 +35818,24 @@
 /turf/simulated/floor/plating,
 /area/thruster/d1port)
 "bfe" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1381;
-	id_tag = "eng4_outer";
-	locked = 1;
-	name = "First Deck Port Nacelle Access";
-	req_access = newlist()
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/external/bolted/cycling{
+	id_tag = "eng4_outer";
+	name = "First Deck Port Nacelle Access"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/thruster/d1port)
 "bff" = (
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
-	frequency = 1381;
-	id_tag = "eng4_access";
+	id_tag = "eng4";
 	name = "First Deck Port Nacelle Access";
 	pixel_y = 21;
-	req_access = list("ACCESS_ENGINEERING");
-	tag_exterior_door = "eng4_outer";
-	tag_interior_door = "eng4_inner"
+	req_access = list("ACCESS_ENGINEERING")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -35693,12 +35852,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/external{
-	frequency = 1381;
+/obj/machinery/door/airlock/external/bolted/cycling{
 	id_tag = "eng4_inner";
-	locked = 1;
-	name = "First Deck Port Nacelle Access";
-	req_access = newlist()
+	name = "First Deck Port Nacelle Access"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/thruster/d1port)
@@ -36015,13 +36171,10 @@
 "bfW" = (
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
 	dir = 4;
-	frequency = 1381;
-	id_tag = "eng4_access";
+	id_tag = "eng4";
 	name = "First Deck Port Nacelle Access";
 	pixel_x = -20;
-	req_access = list("ACCESS_ENGINEERING");
-	tag_exterior_door = "eng4_outer";
-	tag_interior_door = "eng4_inner"
+	req_access = list("ACCESS_ENGINEERING")
 	},
 /obj/structure/cable/green,
 /obj/machinery/power/apc/high/critical{
@@ -36778,10 +36931,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/access_button{
-	command = "cycle_interior";
-	frequency = 1379;
-	master_tag = "solar_port_airlock";
+/obj/machinery/access_button/airlock_interior{
+	master_tag = "solar_port";
 	name = "interior access button";
 	pixel_x = 12;
 	pixel_y = -19;
@@ -36791,12 +36942,9 @@
 /turf/simulated/floor/plating,
 /area/maintenance/solar)
 "bhB" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1379;
+/obj/machinery/door/airlock/external/bolted/cycling{
 	id_tag = "solar_port_inner";
-	locked = 1;
-	name = "Engineering External Access";
-	req_access = newlist()
+	name = "Engineering External Access"
 	},
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -36810,7 +36958,7 @@
 	dir = 8
 	},
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 1;
 	id_tag = "solar_port_pump"
 	},
@@ -36824,17 +36972,14 @@
 /area/maintenance/solar)
 "bhD" = (
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
-	id_tag = "solar_port_airlock";
+	id_tag = "solar_port";
 	pixel_x = -5;
 	pixel_y = 21;
-	req_access = list("ACCESS_EXTERNAL");
-	tag_airpump = "solar_port_pump";
-	tag_chamber_sensor = "solar_port_sensor";
-	tag_exterior_door = "solar_port_outer";
-	tag_interior_door = "solar_port_inner"
+	req_access = list("ACCESS_EXTERNAL")
 	},
 /obj/machinery/airlock_sensor{
 	id_tag = "solar_port_sensor";
+	master_tag = "solar_port";
 	pixel_x = 8;
 	pixel_y = 27
 	},
@@ -36852,7 +36997,7 @@
 	dir = 4
 	},
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 1;
 	id_tag = "solar_port_pump"
 	},
@@ -36865,12 +37010,9 @@
 /turf/simulated/floor/plating,
 /area/maintenance/solar)
 "bhF" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1379;
+/obj/machinery/door/airlock/external/bolted/cycling{
 	id_tag = "solar_port_outer";
-	locked = 1;
-	name = "Engineering External Access";
-	req_access = newlist()
+	name = "Engineering External Access"
 	},
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -36886,11 +37028,9 @@
 	icon_state = "4-8"
 	},
 /obj/structure/catwalk,
-/obj/machinery/access_button{
-	command = "cycle_exterior";
+/obj/machinery/access_button/airlock_exterior{
 	dir = 1;
-	frequency = 1379;
-	master_tag = "solar_port_airlock";
+	master_tag = "solar_port";
 	name = "exterior access button";
 	pixel_x = -12;
 	pixel_y = 27;
@@ -37269,6 +37409,679 @@
 /obj/item/weapon/storage/toolbox/mechanical,
 /turf/simulated/floor/bluegrid,
 /area/maintenance/battle_data_servers)
+"ckh" = (
+/obj/item/target/alien,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 5
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"cpk" = (
+/obj/effect/floor_decal/industrial/warning/full,
+/obj/machinery/airlock_sensor{
+	id_tag = "firing_range_sensor";
+	master_tag = "firing_range";
+	pixel_x = 24;
+	pixel_y = -8
+	},
+/obj/machinery/embedded_controller/radio/airlock/airlock_controller{
+	dir = 8;
+	id_tag = "firing_range";
+	pixel_x = 20;
+	pixel_y = 4;
+	req_access = list(list("ACCESS_SECURITY","ACCESS_EXTERNAL"))
+	},
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
+	id_tag = "firing_range_pump"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/maintenance/firstdeck/forestarboard)
+"dzM" = (
+/obj/structure/railing/mapped,
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/atmospherics/portables_connector,
+/obj/machinery/portable_atmospherics/canister/air/airlock,
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
+"dUi" = (
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
+	id = "cadetwindow"
+	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
+	},
+/obj/structure/cable/green,
+/turf/simulated/floor/plating,
+/area/security/range)
+"dXY" = (
+/obj/effect/catwalk_plated,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/obj/structure/disposalpipe/junction{
+	dir = 4;
+	icon_state = "pipe-j2"
+	},
+/turf/simulated/floor/plating,
+/area/security/sierra/hallway)
+"eLa" = (
+/obj/machinery/fabricator{
+	fab_status_flags = 1
+	},
+/obj/item/stack/material/steel/fifty,
+/turf/simulated/floor/tiled/techfloor,
+/area/security/sierra/armory)
+"eXk" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/deployable/barrier,
+/turf/simulated/floor/tiled/techfloor,
+/area/maintenance/firstdeck/forestarboard)
+"flu" = (
+/obj/effect/wallframe_spawn/reinforced/hull,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	id_tag = "firingspace";
+	name = "Firing Range Shields"
+	},
+/obj/machinery/door/blast/regular/open{
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
+"fvN" = (
+/obj/machinery/door/airlock/maintenance{
+	autoset_access = 0;
+	name = "Security Maintenance";
+	req_access = list("ACCESS_SECURITY")
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/floor_decal/industrial/hatch/grey,
+/obj/machinery/door/blast/regular/open{
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/security/range)
+"fUC" = (
+/obj/machinery/door/airlock/external/bolted/cycling{
+	id_tag = "firing_range_outer";
+	name = "Firing Range Airlock"
+	},
+/obj/machinery/access_button/airlock_exterior{
+	desc = "Security access required.";
+	dir = 4;
+	master_tag = "firing_range";
+	name = "exterior access button";
+	pixel_x = -10;
+	pixel_y = 24;
+	req_access = list("ACCESS_EXTERNAL","ACCESS_SECURITY")
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/maintenance/firstdeck/forestarboard)
+"gLv" = (
+/obj/effect/floor_decal/industrial/warning/corner,
+/obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/machinery/door/airlock/external/glass/bolted/cycling{
+	id_tag = "firing_range_inner";
+	name = "Firing Range Airlock"
+	},
+/obj/machinery/access_button/airlock_interior{
+	master_tag = "firing_range";
+	name = "interior access button";
+	pixel_x = -24;
+	pixel_y = -10;
+	req_access = list(list("ACCESS_SECURITY","ACCESS_EXTERNAL"))
+	},
+/obj/machinery/door/blast/regular/open{
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/maintenance/firstdeck/forestarboard)
+"hdm" = (
+/obj/structure/lattice,
+/obj/structure/grille/broken,
+/turf/space,
+/area/space)
+"hdr" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/machinery/door/blast/shutters/open{
+	dir = 4;
+	id_tag = "firingspace";
+	name = "FIRING RANGE SAFETY SHIELD"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/maintenance/firstdeck/forestarboard)
+"hnp" = (
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
+	id = "cadetwindow"
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/plating,
+/area/security/range)
+"hLb" = (
+/obj/item/target/syndicate,
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"hLn" = (
+/obj/effect/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/industrial/danger,
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	id_tag = "eva_shutters";
+	name = "EVA Shutters"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/storage/eva)
+"hWw" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled,
+/area/security/range)
+"izy" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/deployable/barrier,
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 23
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/maintenance/firstdeck/forestarboard)
+"iSM" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/obj/effect/floor_decal/industrial/warning/cee{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
+"kyy" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 10
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"kHM" = (
+/obj/effect/wallframe_spawn/reinforced/hull,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	id_tag = "firingspace";
+	name = "Firing Range Shields"
+	},
+/obj/machinery/door/blast/regular/open{
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
+"ljy" = (
+/obj/structure/table/rack,
+/obj/random/maintenance,
+/obj/structure/railing/mapped,
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 6
+	},
+/obj/machinery/light/small{
+	dir = 1;
+	icon_state = "bulb_map"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
+"lki" = (
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
+	id = "cadetwindow"
+	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/plating,
+/area/security/range)
+"lFn" = (
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
+	id = "cadetwindow"
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	id_tag = "firingspace";
+	name = "Firing Range Shields"
+	},
+/obj/machinery/door/blast/regular/open{
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/plating,
+/area/security/range)
+"lTo" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	id_tag = "firingspace";
+	name = "Firing Range Shields"
+	},
+/obj/machinery/door/blast/regular/open{
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
+	},
+/obj/structure/cable/green,
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
+	id = "cadetwindow"
+	},
+/turf/simulated/floor/plating,
+/area/security/range)
+"lZg" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 9
+	},
+/obj/machinery/security_scanner,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/security/sierra/armory)
+"mLZ" = (
+/obj/item/target,
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"mXP" = (
+/obj/structure/table/standard,
+/obj/machinery/recharger/wallcharger{
+	dir = 4;
+	pixel_x = -22
+	},
+/obj/item/weapon/gun/energy/laser/practice,
+/obj/structure/window/reinforced,
+/obj/effect/floor_decal/borderfloor{
+	dir = 10;
+	icon_state = "borderfloor_white"
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 10
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	icon_state = "borderfloorcorner2_white";
+	dir = 9
+	},
+/obj/effect/floor_decal/corner/red/bordercorner2{
+	dir = 9
+	},
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/tiled/steel_grid,
+/area/security/range)
+"nfQ" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4;
+	icon_state = "intact"
+	},
+/obj/machinery/door/blast/shutters/open{
+	dir = 4;
+	id_tag = "firingspace";
+	name = "FIRING RANGE SAFETY SHIELD"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/maintenance/firstdeck/forestarboard)
+"nqx" = (
+/obj/structure/catwalk,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden,
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
+"nqT" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	id_tag = "firingspace";
+	name = "Firing Range Shields"
+	},
+/obj/machinery/door/blast/regular/open{
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
+	id = "cadetwindow"
+	},
+/turf/simulated/floor/plating,
+/area/security/range)
+"nsH" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/obj/effect/floor_decal/industrial/warning/half,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
+"nwl" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
+"nEh" = (
+/obj/effect/wallframe_spawn/reinforced/hull,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	id_tag = "firingspace";
+	name = "Firing Range Shields"
+	},
+/obj/machinery/door/blast/regular/open{
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
+"ozq" = (
+/obj/machinery/papershredder,
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/red/border,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/steel_grid,
+/area/security/range)
+"paW" = (
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
+	id = "cadetwindow"
+	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
+	},
+/obj/structure/cable/green,
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/plating,
+/area/security/range)
+"pbm" = (
+/obj/machinery/door/airlock/external/bolted/cycling{
+	id_tag = "firing_range_outer";
+	name = "Firing Range Airlock"
+	},
+/obj/machinery/access_button/airlock_exterior{
+	desc = "Security access required.";
+	dir = 1;
+	master_tag = "firing_range";
+	name = "exterior access button";
+	pixel_x = -24;
+	pixel_y = 10;
+	req_access = list("ACCESS_EXTERNAL","ACCESS_SECURITY")
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/maintenance/firstdeck/forestarboard)
+"pWA" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 6
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"qym" = (
+/obj/structure/bed/chair/padded/red{
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor{
+	icon_state = "borderfloor_white";
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -24
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/security/range)
+"sDx" = (
+/obj/structure/catwalk,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
+"tsG" = (
+/obj/structure/railing/mapped{
+	dir = 4;
+	tag = "icon-railing0 (EAST)"
+	},
+/obj/effect/floor_decal/industrial/outline/red,
+/turf/simulated/floor/tiled/steel_grid,
+/area/security/range)
+"tzc" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/universal{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
+"tME" = (
+/obj/machinery/suit_storage_unit/standard_unit,
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/machinery/camera/network/command{
+	c_tag = "First Deck - EVA";
+	dir = 8;
+	network = list("Command")
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/storage/eva)
+"tSe" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/catwalk,
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 4
+	},
+/obj/machinery/camera/network/security{
+	c_tag = "Security - Firing Range Maintenance";
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
+"tYh" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 10;
+	icon_state = "borderfloor_white"
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 10
+	},
+/obj/structure/closet/secure_closet/security/sierra/cadet,
+/turf/simulated/floor/tiled/steel_grid,
+/area/security/range)
+"uko" = (
+/obj/effect/floor_decal/industrial/outline/red,
+/turf/simulated/floor/tiled/steel_grid,
+/area/security/range)
+"vcD" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/obj/effect/floor_decal/industrial/warning/cee{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
+"vNh" = (
+/obj/structure/catwalk,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 9;
+	icon_state = "intact"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
+"xln" = (
+/obj/structure/catwalk,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/light/spot,
+/obj/structure/sign/warning/airlock{
+	pixel_y = 32
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
+"xtO" = (
+/obj/structure/catwalk,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 5
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	icon_state = "bulb_map"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
 
 (1,1,1) = {"
 aaa
@@ -44426,10 +45239,10 @@ aaa
 aae
 aaA
 aaA
+nwl
 abs
-amO
-amP
-aoi
+izy
+eXk
 ari
 asq
 atQ
@@ -44628,16 +45441,16 @@ aaa
 aae
 aaA
 aaA
-abs
+hdr
 amP
-aoi
-aoj
-aoj
-aoj
-aoj
-aoj
-aoj
-aoj
+amP
+amP
+amP
+amP
+lki
+paW
+dUi
+amP
 avd
 aAB
 aCp
@@ -44827,19 +45640,19 @@ aaa
 aaa
 aaa
 aaa
-aae
+hdm
 aaA
 aaA
-abs
-amQ
+xln
+amP
 aoj
-aoj
+mXP
 arj
-arm
+qym
 atR
 avl
-avl
-aoj
+tYh
+amP
 azp
 aAC
 aCq
@@ -45029,19 +45842,19 @@ aaa
 aaa
 aaa
 aaa
-aaA
-aaA
-aaA
-aaA
-akL
-aoj
+hLb
+kyy
+kHM
+iSM
+nqT
+uko
 apF
 ark
 asr
-atR
+hWw
 avm
 awK
-aoj
+amP
 azq
 aAD
 aCr
@@ -45230,20 +46043,20 @@ aaa
 aaa
 aaa
 aaa
-aaA
-aaA
-aaA
-aaA
-aaA
-akL
-aoj
-apG
+aam
+aam
+mLZ
+nEh
+nsH
+lTo
+uko
+apF
 arl
 ass
-atR
+hWw
 avn
-atR
-aoj
+ozq
+amP
 azr
 aAE
 aCs
@@ -45432,20 +46245,20 @@ aaa
 aaa
 aaa
 adz
-aaA
-aaA
-aaA
-abu
-aaA
-akL
-aoj
-apH
+ckh
+aam
+pWA
+flu
+vcD
+lFn
+tsG
+apF
 arm
 ast
-atS
+hWw
 avo
 awL
-aoj
+hnp
 azs
 aAF
 aCt
@@ -45632,14 +46445,14 @@ aaa
 aaa
 aaa
 aaa
-aao
+adz
 aao
 aaA
+fUC
 aaA
-ajC
-akK
+aaA
 alJ
-akP
+fvN
 aok
 apI
 arn
@@ -45649,7 +46462,7 @@ avp
 awM
 ayb
 azt
-aAG
+dXY
 aCu
 aEj
 aEj
@@ -45836,12 +46649,12 @@ aaa
 aao
 aao
 aam
-aaA
-aaA
-ajC
-akL
-abu
-abu
+pbm
+cpk
+gLv
+xtO
+tSe
+alK
 alK
 alK
 alK
@@ -45849,7 +46662,7 @@ alK
 alK
 avq
 awN
-aoj
+amP
 azu
 aAH
 aCv
@@ -46040,11 +46853,11 @@ aam
 aam
 aaA
 aaA
-ajC
-akL
+aaA
+nfQ
 alK
 alK
-alK
+lZg
 apJ
 aro
 asv
@@ -46242,8 +47055,8 @@ aam
 aam
 aaA
 aaA
-ajC
-akL
+dzM
+nqx
 alK
 amR
 aol
@@ -46444,11 +47257,11 @@ aam
 agb
 aaA
 aaA
-ajC
-akL
+ljy
+vNh
 alK
 amX
-aom
+arp
 apL
 arp
 asx
@@ -46650,7 +47463,7 @@ ajD
 akL
 alK
 amT
-aom
+arp
 apM
 arq
 asy
@@ -46848,13 +47661,13 @@ afc
 agc
 ahl
 aiy
-ahl
+tzc
 akM
 alK
 amU
 aon
 apN
-arp
+eLa
 asz
 alK
 avv
@@ -47253,7 +48066,7 @@ adB
 adB
 adB
 ajC
-akL
+sDx
 alK
 amW
 aop
@@ -47455,7 +48268,7 @@ agd
 adB
 adB
 ajC
-akL
+sDx
 alK
 alK
 alK
@@ -47657,7 +48470,7 @@ aep
 adB
 adB
 ajC
-akL
+sDx
 alL
 anb
 aoq
@@ -48061,7 +48874,7 @@ agf
 adB
 aiz
 ajF
-akL
+sDx
 alL
 amZ
 aos
@@ -55951,7 +56764,7 @@ avZ
 axt
 ayG
 azZ
-aBy
+aBe
 aDp
 aEY
 aGH
@@ -56152,7 +56965,7 @@ auz
 awa
 axu
 ayH
-azZ
+hLn
 aBz
 aDq
 aEZ
@@ -56755,7 +57568,7 @@ bea
 arI
 atm
 aoR
-awb
+tME
 axw
 awb
 aoR

@@ -35,9 +35,10 @@ bob46 - machine
 empire2four - machine
 exapster - machine
 hellpony - machine
+adro244 - machine
+bannhammger - machine
 inubashirimomiji - skrell
 tenedegurechaff - skrell
-darkman24rus - skrell
 twinindifferent - skrell
 blacksoul231 - skrell
 wheatley2013 - skrell
@@ -82,7 +83,6 @@ diesiege - resomi
 kirill1243 - resomi
 coldmantis13 - resomi
 darkman24rus - resomi
-wheatley2013 - resomi
 twinindifferent - resomi
 hodovoy - resomi
 elar - resomi
@@ -91,10 +91,12 @@ reptiloid2 - resomi
 mrnicolas - resomi
 adro244 - resomi
 messerko - resomi
+moonmen - resomi
 redknighthero - giant armoured serpentid
 coldmantis13 - giant armoured serpentid
 kirill1243 - giant armoured serpentid
 coltrane97 - giant armoured serpentid
+darkman24rus - giant armoured serpentid
 diesiege - giant armoured serpentid
 themaybat - giant armoured serpentid
 sosiskoed - giant armoured serpentid
@@ -117,6 +119,7 @@ he11d1ver - giant armoured serpentid
 bob46 - giant armoured serpentid
 wheatley2013 - giant armoured serpentid
 sallyvadordomold - giant armoured serpentid
+adro244 - giant armoured serpentid
 inubashirimomiji - diona
 bartstarter - diona
 wolforbykot - diona
@@ -136,7 +139,6 @@ reptiloid2 - diona
 eggoflizard - diona
 wheatley2013 - vox
 wolforbykot - vox
-eggoflizard - vox
 sosiskoed - vox
 nikita588 - vox
 mrnicolas - vox
@@ -160,6 +162,11 @@ solark - vox
 richardfox - vox
 mmgy - vox
 adro244 - vox
+arbuzpersikov - vox
+hodovoy - vox
+asriel15 - vox
+moonmen - vox
+devard - vox
 darkscarletblood - unathi
 kribleykrabley - unathi
 alchemisthero - unathi
@@ -193,6 +200,7 @@ portos - unathi
 moonmen - tajaran
 cuddleandtea - tajaran
 mrnicolas - tajaran
+hodovoy - tajaran
 romeo517 - tajaran
 korramy - tajaran
 taushai - tajaran

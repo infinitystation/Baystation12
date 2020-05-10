@@ -195,7 +195,7 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 			to_chat(user, "Lookup error: Unable to locate specified job in access database.")
 			return
 		for(var/datum/computer_file/report/crew_record/CR in GLOB.all_crew_records)
-			if(CR.get_name() == activewarrant.fields["namewarrant"] && CR.get_job() == J.title)
+			if(CR.get_name() == activewarrant.fields["namewarrant"] && ((CR.get_job() == J.title) || (CR.get_job() in J.alt_titles)))	//INF WAS	if(CR.get_name() == activewarrant.fields["namewarrant"] && CR.get_job() == J.title)
 				warrant_subject = CR
 
 		if(!warrant_subject)

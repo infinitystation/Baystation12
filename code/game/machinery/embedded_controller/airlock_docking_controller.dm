@@ -4,6 +4,7 @@
 	program = /datum/computer/file/embedded_program/docking/airlock
 	var/display_name			//how would it show up on docking monitoring program, area name + coordinates if unset
 	tag_secure = 1
+	frequency = AIRLOCK_AIR_FREQ	 //INF
 
 /obj/machinery/embedded_controller/radio/airlock/docking_port/Initialize()
 	. = ..()

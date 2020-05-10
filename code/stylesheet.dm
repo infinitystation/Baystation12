@@ -119,7 +119,8 @@ h1.alert, h2.alert		{color: #000000;}
 .arabic					{color: #128b11;}
 .spacer					{color: #9c660b;}
 .selenian       {color: #22228b;}
-
+.lirris					{color: #023638;}
+.alain					{color: #6a1b9a;}
 .interface				{color: #330033;}
 
 .good                   {color: #4f7529; font-weight: bold;}

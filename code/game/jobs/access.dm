@@ -266,17 +266,26 @@
 	var/obj/item/weapon/card/id/I = GetIdCard()
 
 	if(I)
+//[INF]		Please can we locate CentCom first, not null icon_state in ALL ICONS? Thank you
+		var/centcom = get_all_centcom_jobs()
+		if(I.assignment	in centcom) //Return with the NT logo if it is a Centcom job
+			return "Centcom"
+		if(I.rank in centcom)
+			return "Centcom"
+//[/INF]
 		var/job_icons = get_all_job_icons()
 		if(I.assignment	in job_icons) //Check if the job has a hud icon
 			return I.assignment
 		if(I.rank in job_icons)
 			return I.rank
 
+/*[ORIG]
 		var/centcom = get_all_centcom_jobs()
 		if(I.assignment	in centcom) //Return with the NT logo if it is a Centcom job
 			return "Centcom"
 		if(I.rank in centcom)
 			return "Centcom"
+[/ORIG]*/
 	else
 		return
 

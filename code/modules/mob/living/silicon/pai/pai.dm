@@ -238,6 +238,13 @@
 	if(world.time <= last_special)
 		return
 
+	//[INF]
+	var/obj/item/integrated_circuit/manipulation/ai/A = src.loc
+	if(istype(A))
+		A.unload_ai()
+		src.visible_message("[src] ejects from [A].")
+	//[/INF]
+
 	close_up()
 	update_verbs() //inf
 

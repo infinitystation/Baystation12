@@ -9,7 +9,7 @@
 /*ORIGINAL
 	. = istype(thing) && thing.type == begins_with_object_type
 /ORIGINAL*/
-	. = istype(thing) && thing in typesof(begins_with_object_type) //INF
+	. = istype(thing) && (thing in typesof(begins_with_object_type)) //INF
 
 /decl/crafting_stage/welding/secbot
 	progress_message = "You weld a hole into the front of the assembly."

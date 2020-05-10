@@ -37,10 +37,10 @@
 
 	min_age =                 1
 	max_age =                20
-//INF	slowdown =               -1
+//ORIG	slowdown =               -1
 	rarity_value =            3
 	gluttonous =              2
-	siemens_coefficient =     0
+//ORIG	siemens_coefficient =     0 commented because there is 0.2 at 32
 	body_temperature =        null
 
 	breath_type =             GAS_METHYL_BROMIDE
