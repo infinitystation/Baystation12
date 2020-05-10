@@ -3281,6 +3281,8 @@
 #include "infinity\code\datums\mutable_appearance.dm"
 #include "infinity\code\datums\outfits\infinity.dm"
 #include "infinity\code\datums\supplypacks\medical.dm"
+#include "infinity\code\datums\underwear\bottom.dm"
+#include "infinity\code\datums\underwear\top.dm"
 #include "infinity\code\datums\underwear\undershirt.dm"
 #include "infinity\code\datums\uplink\hardsuit_modules.dm"
 #include "infinity\code\datums\vote\vote.dm"
