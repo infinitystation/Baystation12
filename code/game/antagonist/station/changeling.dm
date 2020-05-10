@@ -31,7 +31,6 @@ GLOBAL_DATUM_INIT(changelings, /datum/antagonist/changeling, new)
 	skill_setter = /datum/antag_skill_setter/station
 
 	faction = "changeling"
-	blacklisted_species = list(SPECIES_ADHERENT, SPECIES_DIONA) //INF
 
 /datum/antagonist/changeling/get_special_objective_text(var/datum/mind/player)
 	return "<br><b>Позывной:</b> [player.changeling.changelingID].<br><b>Поглощено Геномов:</b> [player.changeling.absorbedcount]"

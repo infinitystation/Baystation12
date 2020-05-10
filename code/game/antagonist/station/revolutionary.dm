@@ -33,7 +33,7 @@ GLOBAL_DATUM_INIT(revs, /datum/antagonist/revolutionary, new)
 	restricted_jobs = list(/datum/job/captain, /datum/job/hop, /datum/job/hos, /datum/job/chief_engineer, /datum/job/rd, /datum/job/cmo, /datum/job/lawyer)
 	protected_jobs = list(/datum/job/officer, /datum/job/warden, /datum/job/detective)
 	ambitious = 0 //INF
-	blacklisted_species = list(SPECIES_DIONA, SPECIES_ADHERENT, SPECIES_NABBER) //INF
+
 
 /datum/antagonist/revolutionary/create_global_objectives()
 	if(!..())

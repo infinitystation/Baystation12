@@ -19,11 +19,6 @@
 			return 0
 		if(player.current && (player.current.status_flags & NO_ANTAG))
 			return 0
-//[INF]
-		var/mob/living/carbon/human/H = player.current
-		if(H.species.name in blacklisted_species)
-			return 0
-//[/INF]
 	return 1
 
 /datum/antagonist/proc/antags_are_dead()

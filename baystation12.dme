@@ -3285,7 +3285,6 @@
 #include "infinity\code\datums\uplink\hardsuit_modules.dm"
 #include "infinity\code\datums\vote\vote.dm"
 #include "infinity\code\game\sound.dm"
-#include "infinity\code\game\antagonist\antagonist.dm"
 #include "infinity\code\game\antagonist\outsider\abductor.dm"
 #include "infinity\code\game\antagonist\station\changeling.dm"
 #include "infinity\code\game\antagonist\station\traitor.dm"
