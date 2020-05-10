@@ -2,11 +2,9 @@
 	name = "alien weed node"
 	icon_state = "weednode"
 	health = 45
-	layer = DECAL_LAYER
-	plane = DEFAULT_PLANE
 
 /obj/structure/alien/weeds/node/SetRandomIcon_State()
-	return
+	node = src
 
 /obj/structure/alien/weeds
 	name = "alien weeds"
@@ -14,6 +12,10 @@
 	desc = "Some kind of strange, pulsating weeds."
 	health = 45
 
+	layer = PLANT_LAYER
+	plane = DEFAULT_PLANE
+
+	var/obj/structure/alien/weeds/node/node
 	var/max_distance = 3
 	var/distance = 0
 
@@ -29,12 +31,14 @@
 	for(var/obj/structure/alien/weeds/weeds in range(1, src))
 		weeds.update_icon()
 
-	addtimer(CALLBACK(src, .proc/spread), rand(1,3) SECONDS)
+	if(node)
+		addtimer(CALLBACK(src, .proc/spread), rand(1,3) SECONDS)
 
 /obj/structure/alien/weeds/proc/spread()
 
 	if(distance > max_distance)
-		addtimer(CALLBACK(src, .proc/spread), rand(5,10) SECONDS)
+		if(node)
+			addtimer(CALLBACK(src, .proc/spread), rand(5,10) SECONDS)
 		return
 
 	for(var/direction in GLOB.cardinal)
@@ -42,8 +46,11 @@
 		if(istype(turf_to_check, /turf/simulated/floor) && (!locate(/obj/structure/alien/weeds) in turf_to_check) && (!locate(/obj/structure/wall_frame) in turf_to_check))
 			var/obj/structure/alien/weeds/weeds = new(turf_to_check)
 			weeds.distance = distance + 1
+			weeds.node = node
+			addtimer(CALLBACK(weeds, .proc/spread), rand(5,10) SECONDS)
 
-	addtimer(CALLBACK(src, .proc/spread), rand(5,10) SECONDS)
+	if(node)
+		addtimer(CALLBACK(src, .proc/spread), rand(5,10) SECONDS)
 
 /obj/structure/alien/weeds/Destroy()
 

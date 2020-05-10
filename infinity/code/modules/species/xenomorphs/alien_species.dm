@@ -339,7 +339,7 @@
 		)
 
 	force_cultural_info = list(
-		TAG_CULTURE =   CULTURE_XENOPHAGE_H,
+		TAG_CULTURE =   CULTURE_XENOPHAGE_W,
 		TAG_HOMEWORLD = HOME_SYSTEM_DEEP_SPACE,
 		TAG_FACTION =   FACTION_XENOPHAGE,
 		TAG_RELIGION =  RELIGION_OTHER
@@ -384,6 +384,13 @@
 		/mob/living/carbon/proc/devour
 		)
 
+	force_cultural_info = list(
+		TAG_CULTURE =   CULTURE_XENOPHAGE_P,
+		TAG_HOMEWORLD = HOME_SYSTEM_DEEP_SPACE,
+		TAG_FACTION =   FACTION_XENOPHAGE,
+		TAG_RELIGION =  RELIGION_OTHER
+	)
+
 /datum/species/xenos/hivelord
 	name = "Xenophage Hivelord"
 	base_color = "#2b0042"
@@ -417,7 +424,7 @@
 		)
 
 	force_cultural_info = list(
-		TAG_CULTURE =   CULTURE_XENOPHAGE_S,
+		TAG_CULTURE =   CULTURE_XENOPHAGE_L,
 		TAG_HOMEWORLD = HOME_SYSTEM_DEEP_SPACE,
 		TAG_FACTION =   FACTION_XENOPHAGE,
 		TAG_RELIGION =  RELIGION_OTHER

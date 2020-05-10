@@ -115,7 +115,7 @@
 	return
 
 /mob/living/carbon/human/proc/corrosive_acid(O as obj|turf in oview(1)) //If they right click to corrode, an error will flash if its an invalid target./N
-	set name = "Corrosive Acid (200)"
+	set name = "Corrosive Acid (75)"
 	set desc = "Drench an object in acid, destroying it over time."
 	set category = "Abilities"
 
@@ -143,14 +143,14 @@
 		to_chat(src, "<span class='alium'>You cannot dissolve this object.</span>")
 		return
 
-	if(check_alien_ability(200,0,BP_ACID) && !is_ventcrawling)
+	if(check_alien_ability(75,0,BP_ACID) && !is_ventcrawling)
 		new /obj/effect/acid(get_turf(O), O)
 		visible_message("<span class='alium'><B>[src] vomits globs of vile stuff all over [O]. It begins to sizzle and melt under the bubbling mess of acid!</B></span>")
 
 	return
 
 /mob/living/carbon/human/proc/strong_corrosive_acid(O as obj|turf in oview(1)) //If they right click to corrode, an error will flash if its an invalid target./N
-	set name = "Corrosive Acid (200)"
+	set name = "Corrosive Acid (75)"
 	set desc = "Drench an object in acid, destroying it over time."
 	set category = "Abilities"
 
@@ -178,14 +178,14 @@
 		to_chat(src, "<span class='alium'>You cannot dissolve this object.</span>")
 		return
 
-	if(check_alien_ability(200,0,BP_ACID) && !is_ventcrawling)
+	if(check_alien_ability(75,0,BP_ACID) && !is_ventcrawling)
 		new /obj/effect/acid/strong(get_turf(O), O)
 		visible_message("<span class='alium'><B>[src] vomits globs of vile stuff all over [O]. It begins to sizzle and melt under the bubbling mess of acid!</B></span>")
 
 	return
 
 /mob/living/carbon/human/proc/moderate_corrosive_acid(O as obj|turf in oview(1)) //If they right click to corrode, an error will flash if its an invalid target./N
-	set name = "Corrosive Acid (200)"
+	set name = "Corrosive Acid (75)"
 	set desc = "Drench an object in acid, destroying it over time."
 	set category = "Abilities"
 
@@ -213,7 +213,7 @@
 		to_chat(src, "<span class='alium'>You cannot dissolve this object.</span>")
 		return
 
-	if(check_alien_ability(200,0,BP_ACID) && !is_ventcrawling)
+	if(check_alien_ability(75,0,BP_ACID) && !is_ventcrawling)
 		new /obj/effect/acid/moderate(get_turf(O), O)
 		visible_message("<span class='alium'><B>[src] vomits globs of vile stuff all over [O]. It begins to sizzle and melt under the bubbling mess of acid!</B></span>")
 
