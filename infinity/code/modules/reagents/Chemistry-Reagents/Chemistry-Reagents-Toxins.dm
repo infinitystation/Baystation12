@@ -26,6 +26,8 @@
 		if(H.get_organ(BP_ZOMB))
 			return
 		else if (true_dose >= amount_to_zombify)
+			if(locate(/obj/item/organ/internal/romerol) in H)
+				return
 			var/obj/item/organ/internal/romerol/ooze = new(H.get_organ(BP_HEAD))
 			ooze.replaced(H,progress_zombify)
 		else if (prob(10))
