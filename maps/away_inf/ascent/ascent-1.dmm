@@ -30,7 +30,7 @@
 /area/ship/ascent_inf/fore_starboard_prow)
 "ai" = (
 /obj/machinery/recharge_station/ascent,
-/obj/effect/submap_landmark/spawnpoint/ascent_seedship/drone,
+/obj/effect/submap_landmark/spawnpoint/ascent_seedship_inf/drone,
 /turf/simulated/floor/tiled/ascent,
 /area/ship/ascent_inf/wing_starboard)
 "aj" = (
@@ -881,7 +881,7 @@
 /area/ship/ascent_inf/bridge)
 "ch" = (
 /obj/structure/ascent_spawn,
-/obj/effect/submap_landmark/spawnpoint/ascent_seedship,
+/obj/effect/submap_landmark/spawnpoint/ascent_seedship_inf/alate,
 /turf/simulated/floor/tiled/ascent,
 /area/ship/ascent_inf/habitation)
 "ci" = (
@@ -926,7 +926,7 @@
 /area/ship/ascent_inf/wing_port)
 "cm" = (
 /obj/structure/ascent_spawn,
-/obj/effect/submap_landmark/spawnpoint/ascent_seedship/adjunct,
+/obj/effect/submap_landmark/spawnpoint/ascent_seedship_inf,
 /turf/simulated/floor/tiled/ascent,
 /area/ship/ascent_inf/habitation)
 "cn" = (
@@ -1536,7 +1536,7 @@
 /area/ship/ascent_inf/aft_starboard_jut)
 "dB" = (
 /obj/structure/ascent_spawn,
-/obj/effect/submap_landmark/spawnpoint/ascent_seedship/queen,
+/obj/effect/submap_landmark/spawnpoint/ascent_seedship_inf/adjunct,
 /turf/simulated/floor/tiled/ascent,
 /area/ship/ascent_inf/habitation)
 "dC" = (
@@ -1739,7 +1739,7 @@
 /area/ship/ascent_inf/wing_port)
 "dY" = (
 /obj/structure/ascent_spawn,
-/obj/effect/submap_landmark/spawnpoint/ascent_seedship/alate,
+/obj/effect/submap_landmark/spawnpoint/ascent_seedship_inf/queen,
 /turf/simulated/floor/tiled/ascent,
 /area/ship/ascent_inf/habitation)
 "dZ" = (
@@ -12438,7 +12438,7 @@ if
 bl
 bl
 ah
-dY
+ch
 bb
 br
 bu
@@ -12446,7 +12446,7 @@ bz
 fJ
 br
 bb
-cm
+dB
 cy
 ei
 lc
@@ -12560,7 +12560,7 @@ bl
 hg
 bl
 ah
-ch
+cm
 bb
 br
 jg
@@ -12568,7 +12568,7 @@ bb
 iI
 br
 bb
-dB
+dY
 cy
 ei
 hX
@@ -12682,7 +12682,7 @@ bl
 bl
 bl
 ah
-dY
+ch
 bb
 bF
 cz
@@ -12690,7 +12690,7 @@ iI
 bt
 cF
 bb
-cm
+dB
 cy
 ei
 hZ

@@ -154,7 +154,7 @@
 	info = "You are an Alate of an independent Ascent vessel. Your Gyne has directed you to this remote sector full of crawling primitives. Follow her instructions and bring prosperity to your nest-lineage."
 	set_species_on_join = SPECIES_MANTID_ALATE
 	outfit_type = /decl/hierarchy/outfit/job/ascent/tech
-	requires_supervisor = "Ascent Gyne"
+	requires_supervisor = "Ascent gyne"
 	min_skill = list(SKILL_EVA = SKILL_ADEPT,
 					SKILL_HAULING = SKILL_ADEPT,
 					SKILL_COMBAT = SKILL_ADEPT,
@@ -167,7 +167,7 @@
 	total_positions = 1
 	info = "You are a Machine Intelligence of an independent Ascent vessel. The Gyne you assist, and her children, have wandered into this sector full of primitive bioforms. Try to keep them alive, and assist where you can."
 	set_species_on_join = /mob/living/silicon/robot/flying/ascent
-	requires_supervisor = "Ascent Gyne"
+	requires_supervisor = "Ascent gyne"
 
 /*
 /datum/job/submap/ascent_inf/msw
@@ -199,20 +199,20 @@
 
 // Spawn points.
 /obj/effect/submap_landmark/spawnpoint/ascent_seedship_inf
-	name = "Ascent Gyne"
+	name = "Ascent gyne"
 	movable_flags = MOVABLE_FLAG_EFFECTMOVE
 
 /obj/effect/submap_landmark/spawnpoint/ascent_seedship_inf/alate
-	name = "Ascent Alate"
+	name = "Ascent alate"
 
 /obj/effect/submap_landmark/spawnpoint/ascent_seedship_inf/drone
-	name = "Ascent Drone"
+	name = "Ascent drone"
 
 /obj/effect/submap_landmark/spawnpoint/ascent_seedship_inf/adjunct
-	name = "Serpentid Adjunct"
+	name = "Serpentid adjunct"
 
 /obj/effect/submap_landmark/spawnpoint/ascent_seedship_inf/queen
-	name = "Serpentid Queen"
+	name = "Serpentid queen"
 
 /*
 /datum/job/submap/ascent_inf/control_mind
