@@ -3,6 +3,9 @@
 
 	#include "away_sites_testing_define.dm"
 
+	//	Customs-require	looking in example dir
+	#include "../example/compile_required_snatch.dm"
+
 	#include "blank.dmm"
 
 	#include "../away/empty.dmm"
