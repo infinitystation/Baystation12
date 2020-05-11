@@ -157,6 +157,10 @@
 		location = affected
 		to_chat(H, SPAN_DANGER("You feel like something enters your throat and travels to your chest, causing strong pain!"))
 
+
+/obj/item/organ/internal/xeno/larva/removed(var/mob/living/user)
+	H = null
+
 /obj/item/organ/internal/xeno/larva/Process()
 	if(H)
 		if(progress < max_progress)

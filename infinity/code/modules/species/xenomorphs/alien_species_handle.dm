@@ -28,6 +28,14 @@
 		H.death() //rip species and human mechanics
 		return
 
+	if(H.alpha < 255)
+		if(H.check_alien_ability(1))
+			if(!locate(/obj/structure/alien/weeds) in get_turf(H))
+				H.alpha += 4
+		else
+			H.alpha = 255
+			to_chat(H, SPAN_ALIEN("Вы более не можете поддерживать свою маскировку"))
+
 	H.set_see_in_dark(8)
 	H.see_invisible  = 25
 
@@ -38,7 +46,7 @@
 
 	var/obj/item/organ/internal/xeno/plasmavessel/P = H.internal_organs_by_name["plasma vessel"]
 
-	P.stored_plasma += weeds_plasma_rate * 0.1
+	P.stored_plasma += weeds_plasma_rate * 0.25
 
 	var/obj/structure/alien/weeds/plant = locate() in T
 
@@ -49,7 +57,7 @@
 
 	if(environment.gas["phoron"] > 0 || plant)
 		if(!regenerate(H))
-			P.stored_plasma += weeds_plasma_rate * 2.5
+			P.stored_plasma += weeds_plasma_rate * 2
 			P.stored_plasma = min(max(P.stored_plasma,0),P.max_plasma)
 	else
 		started_healing["\ref[H]"] = null

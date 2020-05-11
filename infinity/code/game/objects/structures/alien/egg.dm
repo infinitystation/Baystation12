@@ -35,14 +35,15 @@
 
 	if(progress >= MAX_PROGRESS)
 		for(var/mob/living/carbon/human/H in range(3, get_turf(src)))
-			if(istype(H))
+			if(istype(H) && !isxenomorph(H))
 				flick("egg_opening",src)
 				progress = -1 // No harvesting pls.
 				sleep(5)
 				var/obj/item/clothing/mask/facehugger/hugger = new(get_turf(src))
-				var/throwdir = get_dir(hugger, H)
-				hugger.throw_at(get_edge_target_turf(H, throwdir),3,1)
+				hugger.icon_state = "facehugger_thrown"
+				hugger.throw_at(H,3,1)
 				update_icon()
+				return
 
 /obj/structure/alien/egg/on_update_icon()
 	if(progress == -1)
@@ -61,22 +62,26 @@
 	progress = -1 // No harvesting pls.
 	sleep(5)
 	var/obj/item/clothing/mask/facehugger/hugger = new(get_turf(src))
-	var/throwdir = get_dir(hugger, user)
-	hugger.throw_at(get_edge_target_turf(user, throwdir),3,1)
+	if(!isxenomorph(user))
+		hugger.icon_state = "facehugger_thrown"
+		hugger.throw_at(user,3,1)
 	update_icon()
 	return 1
 
 /obj/structure/alien/egg/attackby(mob/user)
 	if(progress == -1)
+		. = ..()
 		return
 	if(progress < MAX_PROGRESS)
+		. = ..()
 		return
 	flick("egg_opening",src)
 	progress = -1 // No harvesting pls.
 	sleep(5)
 	var/obj/item/clothing/mask/facehugger/hugger = new(get_turf(src))
-	var/throwdir = get_dir(hugger, user)
-	hugger.throw_at(get_edge_target_turf(user, throwdir),3,1)
+	if(!isxenomorph(user))
+		hugger.icon_state = "facehugger_thrown"
+		hugger.throw_at(user,3,1)
 	update_icon()
 	return 1
 
@@ -91,6 +96,20 @@
 	w_class = ITEM_SIZE_SMALL
 	var/dead = 0
 	var/live_time = 150
+
+/obj/item/clothing/mask/facehugger/bullet_act()
+	if(dead)
+		qdel(src)
+	else
+		dead = 1
+		icon_state = "facehugger_dead"
+
+/obj/item/clothing/mask/facehugger/ex_act()
+	if(dead)
+		qdel(src)
+	else
+		dead = 1
+		icon_state = "facehugger_dead"
 
 /obj/item/clothing/mask/facehugger/afterattack(var/obj/target as obj, mob/user as mob, proximity)
 	if(!proximity)
@@ -109,7 +128,7 @@
 	if(dead)
 		return
 
-	if(istype(H, /mob/living/carbon/human/xdrone) || istype(H, /mob/living/carbon/human/xhunter) || istype(H, /mob/living/carbon/human/xqueen) || istype(H, /mob/living/carbon/human/xsentinel)|| istype(H, /mob/living/carbon/human/xlord) || istype(H, /mob/living/carbon/human/xspitter) || istype(H, /mob/living/carbon/human/xwarrior))
+	if(isxenomorph(H))
 		return
 
 

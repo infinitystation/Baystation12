@@ -225,7 +225,7 @@
 	attack_verb = list("beaten")
 	base_parry_chance = 30
 
-	var/stunforce = 0.2
+	var/stunforce = 0
 	var/agonyforce = 45
 	var/mode = 0
 
