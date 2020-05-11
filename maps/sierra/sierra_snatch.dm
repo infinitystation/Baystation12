@@ -23,3 +23,5 @@
 #include "..\torch\language\human\euro.dm"
 #include "..\torch\language\human\misc\spacer.dm"
 #include "..\torch\structures\signs.dm"
+//	INF(Torch required)
+#include "..\torch\items\clothing\solgov-infinity.dm"
