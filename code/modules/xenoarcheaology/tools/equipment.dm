@@ -4,6 +4,11 @@
 	icon = 'icons/obj/clothing/obj_suit.dmi'
 	item_icons = list(slot_wear_suit_str = 'icons/mob/onmob/onmob_suit.dmi')
 	icon_state = "bio_anom"
+//[INF]
+	sprite_sheets = list(
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi'
+		)
+//[/INF]
 
 /obj/item/clothing/head/bio_hood/anomaly
 	name = "Anomaly hood"
@@ -14,6 +19,11 @@
 		slot_r_hand_str = 'icons/mob/onmob/items/righthand_hats.dmi')
 	icon_state = "bio_anom"
 	item_state = "bio_anom"
+//[INF]
+	sprite_sheets = list(
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi'
+		)
+//[/INF]
 
 /obj/item/clothing/suit/space/void/excavation
 	name = "excavation voidsuit"

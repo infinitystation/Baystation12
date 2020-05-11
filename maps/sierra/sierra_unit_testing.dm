@@ -1,6 +1,3 @@
-/datum/unit_test/station_wires_shall_be_connected
-	exceptions = list(list(33, 101, 3, WEST),list(33, 105, 3, WEST))
-
 /datum/map/sierra
 	// Unit test exemptions
 	apc_test_exempt_areas = list(

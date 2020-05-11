@@ -42,6 +42,10 @@
 	next_stages = list(/decl/crafting_stage/ed209_proximity)
 	completion_trigger_type = /obj/item/clothing/head/helmet
 	item_icon_state = "ed209_5"
+//[INF]
+/decl/crafting_stage/ed209_helmet/is_appropriate_tool(var/obj/item/thing)
+	. = istype(thing) && (thing in typesof(completion_trigger_type))
+//[/INF]
 
 /decl/crafting_stage/ed209_proximity
 	progress_message = "You add the proximity sensor to the frame."
@@ -57,7 +61,7 @@
 /decl/crafting_stage/ed209_taser
 	progress_message = "You add the taser to the frame."
 	next_stages = list(/decl/crafting_stage/screwdriver/ed209)
-	completion_trigger_type = /obj/item/weapon/gun/energy/taser
+	completion_trigger_type = /obj/item/weapon/gun/energy/gun //INF, WAS /obj/item/weapon/gun/energy/taser
 	item_icon_state = "ed209_7"
 
 /decl/crafting_stage/screwdriver/ed209

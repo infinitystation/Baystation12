@@ -16,7 +16,9 @@
 		LANGUAGE_HUMAN_CHINESE = 5,
 		LANGUAGE_HUMAN_ARABIC = 10,
 		LANGUAGE_HUMAN_SELENIAN = 5,
-		LANGUAGE_SPACER = 20
+		LANGUAGE_SPACER = 20,
+		LANGUAGE_HUMAN_AVALON = 25, //inf
+		LANGUAGE_HUMAN_LORRIMAN = 15 //inf
 	)
 	syllables = list(
 		"ek", "aur", "ki", "ki", "ke", "de", "thaa", "ne", "me", "yaa", "se", "haa",

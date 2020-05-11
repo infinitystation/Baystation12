@@ -26,3 +26,9 @@
 
 /turf/simulated/wall/r_concrete/New(var/newloc)
 	..(newloc, MATERIAL_CONCRETE,MATERIAL_CONCRETE)
+
+/turf/simulated/wall/r_titanium/ascent
+	paint_color = COLOR_PURPLE
+
+/turf/simulated/wall/titanium/ascent
+	paint_color = COLOR_PURPLE

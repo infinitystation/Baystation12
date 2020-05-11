@@ -884,6 +884,15 @@ About the new airlock wires panel:
 			if(src.shock(user, 100))
 				return TRUE
 
+	//[INF]
+
+	if(isxenomorph(user))
+		var/mob/living/carbon/human/H = user
+		if(!locked || welded || brace)
+			H.pry_open(src)
+
+	//[/INF]
+
 /obj/machinery/door/airlock/CanUseTopic(var/mob/user)
 	if(operating < 0) //emagged
 		to_chat(user, "<span class='warning'>Unable to interface: Internal error.</span>")

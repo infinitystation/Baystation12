@@ -4,4 +4,4 @@
 	color = null
 	icon_state = "wrist_grayson"
 	icon_state_unpowered = "wrist_grayson"
-
+	trade_blacklisted = TRUE

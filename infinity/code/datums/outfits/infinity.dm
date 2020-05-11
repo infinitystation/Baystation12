@@ -71,6 +71,25 @@
 							/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 1)
 
 
+/decl/hierarchy/outfit/alien
+	name = "Abductor Agent Outfit"
+	shoes = /obj/item/clothing/shoes/black
+	l_ear = /obj/item/device/radio/headset/abductor
+	uniform = /obj/item/clothing/under/thermal/heat/abductor/white
+	belt = /obj/item/weapon/storage/belt/utility/alien
+	suit = /obj/item/clothing/suit/armor/abductor
+	head = /obj/item/clothing/head/helmet/abductor
+	r_hand = /obj/item/weapon/gun/energy/decloner
+	l_hand = /obj/item/weapon/melee/adv_baton
+
+/decl/hierarchy/outfit/alien_sci
+	name = "Abductor Scientist Outfit"
+	shoes = /obj/item/clothing/shoes/black
+	l_ear = /obj/item/device/radio/headset/abductor
+	uniform = /obj/item/clothing/under/thermal/heat/abductor/white
+	belt = /obj/item/weapon/storage/belt/utility/alien
+	r_hand = /obj/item/weapon/scitool
+
 			//////////
 			//CORPSES//
 			//////////

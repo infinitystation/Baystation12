@@ -8,6 +8,7 @@
 #define WEBHOOK_SERVER_UPDATE     "webhook_server_update"
 #define WEBHOOK_SERVER_START      "webhook_server_start"
 #define WEBHOOK_SEND_BAN          "webhook_send_ban"     // ban announcements
+#define WEBHOOK_SEND_RUNTIME      "webhook_send_runtime" // runtimes
 
 // VVV Not working (or unconfirmed) || Working ^^^
 

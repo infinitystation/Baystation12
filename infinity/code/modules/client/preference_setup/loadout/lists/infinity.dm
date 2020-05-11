@@ -115,3 +115,7 @@
 	display_name = "special scarfs selection"
 	path = /obj/item/clothing/accessory/scarf/inf
 	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/cards_compact
+	display_name = "deck of cards (compact)"
+	path = /obj/item/weapon/deck/compact

@@ -24,9 +24,7 @@
 		"Standard" = "surgeon",
 		"Advanced Droid" = "droid-medical",
 		"Needles" = "medicalrobot",
-		"Doot" = "eyebot-medical",
-		"Drone" = "drone-surgery",
-		"Ver 06" = "wer6-Surgeon"
+//cuz flying		"Ver 06" = "wer6-Surgeon" //inf
 		)
 	equipment = list(
 		/obj/item/device/flash,

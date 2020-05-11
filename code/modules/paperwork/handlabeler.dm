@@ -1,6 +1,6 @@
 /obj/item/weapon/hand_labeler
 	name = "hand labeler"
-	icon = 'icons/obj/bureaucracy.dmi'
+	icon = 'infinity/icons/obj/bureaucracy.dmi' //inf, was: 'icons/obj/bureaucracy.dmi'
 	icon_state = "labeler0"
 	item_state = "flight"
 	var/label = null

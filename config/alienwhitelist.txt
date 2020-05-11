@@ -4,6 +4,7 @@ cre77 - machine
 rucat - machine
 forrya - machine
 logfol - machine
+solark - machine
 kosteg - machine
 hodovoy - machine
 mishele - machine
@@ -34,6 +35,8 @@ bob46 - machine
 empire2four - machine
 exapster - machine
 hellpony - machine
+adro244 - machine
+bannhammger - machine
 inubashirimomiji - skrell
 tenedegurechaff - skrell
 twinindifferent - skrell
@@ -75,11 +78,11 @@ furrfaq - resomi
 netreson - resomi
 hardstuck - resomi
 coltrane97 - resomi
+arbuzpersikov - resomi
 diesiege - resomi
 kirill1243 - resomi
 coldmantis13 - resomi
 darkman24rus - resomi
-wheatley2013 - resomi
 twinindifferent - resomi
 hodovoy - resomi
 elar - resomi
@@ -87,10 +90,13 @@ casly - resomi
 reptiloid2 - resomi
 mrnicolas - resomi
 adro244 - resomi
+messerko - resomi
+moonmen - resomi
 redknighthero - giant armoured serpentid
 coldmantis13 - giant armoured serpentid
 kirill1243 - giant armoured serpentid
 coltrane97 - giant armoured serpentid
+darkman24rus - giant armoured serpentid
 diesiege - giant armoured serpentid
 themaybat - giant armoured serpentid
 sosiskoed - giant armoured serpentid
@@ -113,6 +119,7 @@ he11d1ver - giant armoured serpentid
 bob46 - giant armoured serpentid
 wheatley2013 - giant armoured serpentid
 sallyvadordomold - giant armoured serpentid
+adro244 - giant armoured serpentid
 inubashirimomiji - diona
 bartstarter - diona
 wolforbykot - diona
@@ -155,10 +162,16 @@ solark - vox
 richardfox - vox
 mmgy - vox
 adro244 - vox
+arbuzpersikov - vox
+hodovoy - vox
+asriel15 - vox
+moonmen - vox
+devard - vox
 darkscarletblood - unathi
 kribleykrabley - unathi
 alchemisthero - unathi
 kotovsyndrome - unathi
+arbuzpersikov - unathi
 wheatley2013 - unathi
 thesarkazmus - unathi
 wolforbykot - unathi
@@ -187,6 +200,7 @@ portos - unathi
 moonmen - tajaran
 cuddleandtea - tajaran
 mrnicolas - tajaran
+hodovoy - tajaran
 romeo517 - tajaran
 korramy - tajaran
 taushai - tajaran
@@ -195,6 +209,7 @@ selles - tajaran
 logfol - tajaran
 solark - tajaran
 forrya - tajaran
+fukfuk - tajaran
 arhod - tajaran
 kordvik - tajaran
 wolforbykot - tajaran

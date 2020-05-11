@@ -10,3 +10,4 @@
 		slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi',
 		)
 	rolled_sleeves = -1
+	trade_blacklisted = TRUE

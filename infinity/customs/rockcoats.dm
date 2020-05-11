@@ -8,9 +8,11 @@
 		slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi',
 		)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/suit/storage/rockcloak/alt
 	name = "\improper AF-B cloak"
 	desc = "An Anti-Front cloak. This one has a blue rock instead of a sign in it's front. This cloak also has a large blue stone on it's back, and in this stone you can notice some raindrops... Or tears. You also can see two small inscriptions in the lower part of this cloak. The first one says, \"Pl. Lim-01\", referring to it's owner. The second one says, \"Look into your future and never give up with your bass guitar. Be free\". It has a very unusual smell of orange, sea mud and scream."
 	icon_state = "afb"
 	item_state = "afb"
+	trade_blacklisted = TRUE

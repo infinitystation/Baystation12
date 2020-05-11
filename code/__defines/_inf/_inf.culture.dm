@@ -65,10 +65,21 @@
 //#define FACTION_SCP             "Security Corporate Personal"
 #define FACTION_SEPTENERGO      "SeptEnergo Public Joint-Stock Company"
 
+#define FACTION_ABDUCTOR        "Mothership"
+#define CULTURE_ABDUCTOR_A      "Mothership Agent"
+#define CULTURE_ABDUCTOR_S      "Mothership Scientist"
+
 // Xenophage cultures
 #define CULTURE_XENOPHAGE_D    "Xenophage Drone"
 #define CULTURE_XENOPHAGE_H    "Xenophage Hunter"
 #define CULTURE_XENOPHAGE_S    "Xenophage Sentinel"
+#define CULTURE_XENOPHAGE_W    "Xenophage Warrior"
+#define CULTURE_XENOPHAGE_L    "Xenophage Hivelord"
+#define CULTURE_XENOPHAGE_P    "Xenophage Spitter"
 #define CULTURE_XENOPHAGE_Q    "Xenophage Queen"
 #define FACTION_XENOPHAGE      "Xenophage Hive"
 
+// Human Cultures
+#define CULTURE_HUMAN_LORRIMAN "Lorrimanian"
+#define CULTURE_HUMAN_AVANOBLE "Avalon Noble"
+#define CULTURE_HUMAN_AVACOMMON "Avalon Commoner"

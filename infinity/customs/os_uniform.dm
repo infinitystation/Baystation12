@@ -14,3 +14,4 @@
 		slot_r_hand_str = "os_uniform_righthand"
 	)
 	starting_accessories = list(/obj/item/clothing/accessory/medal/solgov/silver/sword, /obj/item/clothing/accessory/ribbon/solgov/marksman, /obj/item/clothing/accessory/solgov/rank/fleet/officer/o3)
+	trade_blacklisted = TRUE

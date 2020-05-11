@@ -12,16 +12,9 @@
 	desc = replacetext(desc, "(MAPNAME)", GLOB.using_map.full_name)
 	drive = new(src)
 	drive.origin_tech = list(TECH_COMBAT = rand(2,5))
-	var/newdata
-	var/i = 0
-	while(i < 100)
-		var/list/L = list()
-		for(var/a in 1 to 6)
-			L += rand(100000, 999999)
-		newdata += "[L.Join(" ")]"
-		i+=1
-	var/datum/computer_file/data/file = new/datum/computer_file/data{filename = "ships_battle_statistic";filetype = "DAT"; read_only = 1; undeletable = 1; unsendable = 1;}()
-	file.stored_data = newdata
+
+	var/datum/computer_file/file = new/datum/computer_file{filename = "ships_battle_statistic";filetype = "BDT"; undeletable = 1; unsendable = 1;}()
+	file.size = rand(1400, 1900)
 	drive.store_file(file)
 
 /obj/structure/battle_data_server/examine(mob/user)
