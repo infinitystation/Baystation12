@@ -1,11 +1,6 @@
 //	This file used to snatch other maps code. I hate all of you lazy us ~Laxesh
 
 //	TORCH
-#include "..\torch\game\antagonist\outsider\deathsquad.dm"
-#include "..\torch\game\antagonist\outsider\ert.dm"
-#include "..\torch\game\antagonist\outsider\foundation.dm"
-#include "..\torch\game\antagonist\outsider\mercenary.dm"
-#include "..\torch\game\antagonist\outsider\raider.dm"
 #include "..\torch\items\clothing\ec_skillbadges.dm"
 #include "..\torch\items\clothing\solgov-accessory.dm"
 #include "..\torch\items\clothing\solgov-armor.dm"
