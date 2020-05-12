@@ -17,3 +17,7 @@
 /obj/machinery/door/airlock/glass/medical/mortus
 	door_color = COLOR_DARK_GUNMETAL
 	stripe_color = COLOR_SKY_BLUE
+
+/obj/machinery/door/airlock/glass/antagonist
+	door_color = COLOR_WALL_GUNMETAL
+	stripe_color = COLOR_RED_LIGHT

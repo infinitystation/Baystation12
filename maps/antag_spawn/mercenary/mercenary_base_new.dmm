@@ -1,0 +1,105 @@
+"aa" = (/turf/space,/area/space)
+"ab" = (/turf/simulated/wall/r_wall/prepainted,/area/map_template/merc_spawn)
+"ac" = (/turf/simulated/floor/tiled/dark/monotile,/area/map_template/merc_spawn)
+"ad" = (/turf/simulated/floor/tiled/dark,/area/map_template/merc_spawn)
+"ae" = (/obj/effect/paint/dark_gunmetal,/turf/simulated/wall/r_titanium,/area/map_template/merc_spawn)
+"af" = (/obj/structure/shuttle/engine/propulsion{dir = 4},/obj/structure/shuttle/engine/heater{dir = 8; icon_state = "heater"; pixel_x = 32},/turf/simulated/floor/airless,/area/map_template/merc_spawn)
+"ag" = (/obj/structure/bed/chair/shuttle/red,/turf/simulated/floor/tiled/techfloor,/area/map_template/merc_spawn)
+"ah" = (/obj/machinery/computer/shuttle_control,/turf/simulated/floor/tiled/techfloor,/area/map_template/merc_spawn)
+"ai" = (/obj/machinery/suit_storage_unit/syndie,/turf/simulated/floor/plating,/area/map_template/merc_spawn)
+"aj" = (/turf/simulated/floor/tiled/techfloor,/area/map_template/merc_spawn)
+"ak" = (/obj/machinery/door/airlock/external/bolted_open,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/merc_spawn)
+"al" = (/obj/machinery/light/small{dir = 1; icon_state = "bulb_map"},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/merc_spawn)
+"am" = (/obj/effect/floor_decal/spline/fancy/wood{icon_state = "spline_fancy"; dir = 1},/turf/simulated/floor/lino,/area/map_template/merc_spawn)
+"an" = (/obj/effect/floor_decal/spline/fancy/wood{icon_state = "spline_fancy"; dir = 5},/turf/simulated/floor/lino,/area/map_template/merc_spawn)
+"ao" = (/obj/machinery/suit_cycler/syndicate,/turf/simulated/floor/plating,/area/map_template/merc_spawn)
+"ap" = (/obj/structure/bed/chair/shuttle/red{icon_state = "shuttle_chair_preview"; dir = 1},/turf/simulated/floor/tiled/techfloor,/area/map_template/merc_spawn)
+"aq" = (/obj/machinery/computer/modular/preset/full/merc{icon_state = "computer"; dir = 1},/turf/simulated/floor/tiled/techfloor,/area/map_template/merc_spawn)
+"ar" = (/turf/simulated/mineral,/area/space)
+"as" = (/obj/effect/step_trigger/thrower{affect_ghosts = 0; direction = 4; icon_state = "eb"; name = "thrower_right"; tiles = 12},/turf/space,/area/space)
+"at" = (/obj/effect/step_trigger/thrower{affect_ghosts = 0; direction = 2; icon_state = "sb"; name = "thrower_down"; tiles = 12},/turf/space,/area/space)
+"au" = (/obj/effect/step_trigger/thrower{direction = 1; icon_state = "nb"; name = "thrower_up"; nostop = 0; tiles = 12},/turf/space,/area/space)
+"av" = (/obj/structure/lattice,/turf/space,/area/space)
+"aw" = (/obj/structure/grille,/obj/structure/lattice,/turf/space,/area/space)
+"ax" = (/obj/effect/wallframe_spawn/reinforced/no_grille,/turf/simulated/floor/plating,/area/map_template/merc_spawn)
+"ay" = (/turf/simulated/floor/lino,/area/map_template/merc_spawn)
+"az" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 4},/turf/simulated/floor/lino,/area/map_template/merc_spawn)
+"aA" = (/obj/machinery/portable_atmospherics/canister/oxygen,/turf/simulated/floor/plating,/area/map_template/merc_spawn)
+"aB" = (/obj/structure/dispenser/oxygen,/turf/simulated/floor/plating,/area/map_template/merc_spawn)
+"aC" = (/obj/machinery/door/airlock/glass/antagonist,/turf/simulated/floor/tiled/dark,/area/map_template/merc_spawn)
+"aD" = (/obj/machinery/door/airlock/antagonist,/turf/simulated/floor/tiled/dark,/area/map_template/merc_spawn)
+"aE" = (/obj/machinery/door/airlock/multi_tile/antagonist{icon_state = "closed"; dir = 8},/turf/simulated/floor/tiled/dark,/area/map_template/merc_spawn)
+"aF" = (/turf/simulated/floor/cult,/area/map_template/merc_spawn)
+"aG" = (/obj/machinery/door/airlock/multi_tile/antagonist{icon_state = "closed"; dir = 8},/turf/simulated/floor/cult,/area/map_template/merc_spawn)
+"aH" = (/obj/machinery/door/airlock/multi_tile/antagonist,/turf/simulated/floor/tiled/dark,/area/map_template/merc_spawn)
+"aI" = (/obj/machinery/door/airlock/external{frequency = 1331; id_tag = "merc_base_outer"; name = "Desperado External Airlock"},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/merc_spawn)
+"aJ" = (/obj/machinery/door/airlock/external{frequency = 1331; id_tag = "merc_base_hatch"; name = "Desperado Docking Airlock"},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/merc_spawn)
+"aK" = (/obj/machinery/door/airlock/antagonist,/turf/simulated/floor/tiled/white,/area/map_template/merc_spawn)
+"aL" = (/obj/machinery/embedded_controller/radio/simple_docking_controller{dir = 4; frequency = 1331; id_tag = "merc_base"; pixel_x = -25; req_access = list("ACCESS_CENT_GENERAL"); tag_door = "merc_base_hatch"},/turf/simulated/floor/tiled/dark,/area/map_template/merc_spawn)
+"aM" = (/turf/simulated/floor/tiled/white,/area/map_template/merc_spawn)
+"aN" = (/turf/simulated/wall/prepainted,/area/map_template/merc_spawn)
+"aO" = (/obj/machinery/power/apc{dir = 1; name = "north bump"; pixel_y = 24},/obj/structure/cable{icon_state = "0-2"; d2 = 2},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/merc_spawn)
+"aP" = (/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/merc_spawn)
+"aQ" = (/obj/machinery/door/airlock/antagonist,/turf/simulated/floor/tiled/techfloor,/area/map_template/merc_spawn)
+"aR" = (/obj/structure/cable{d2 = 8; icon_state = "0-8"},/obj/machinery/power/smes/buildable/max_cap_in_out,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/merc_spawn)
+"aS" = (/obj/machinery/telecomms/allinone{intercept = 1},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/merc_spawn)
+"aT" = (/obj/effect/floor_decal/corner/red/half{dir = 8},/turf/simulated/floor/tiled/dark,/area/map_template/merc_spawn)
+"aU" = (/obj/effect/floor_decal/corner/red/half{dir = 1},/obj/structure/flora/pottedplant/minitree,/turf/simulated/floor/tiled/dark,/area/map_template/merc_spawn)
+"aV" = (/obj/effect/floor_decal/corner/red/half{dir = 1},/obj/machinery/light/spot{dir = 1},/turf/simulated/floor/tiled/dark,/area/map_template/merc_spawn)
+"aW" = (/obj/effect/floor_decal/corner/red/half{dir = 4},/obj/machinery/light/spot{dir = 4},/obj/structure/table/steel_reinforced,/turf/simulated/floor/tiled/dark,/area/map_template/merc_spawn)
+"aX" = (/obj/effect/floor_decal/corner/red/half{dir = 4},/obj/structure/table/steel_reinforced,/turf/simulated/floor/tiled/dark,/area/map_template/merc_spawn)
+"aY" = (/obj/effect/floor_decal/corner/red/half{dir = 4},/obj/structure/flora/pottedplant/stoutbush,/turf/simulated/floor/tiled/dark,/area/map_template/merc_spawn)
+"aZ" = (/obj/structure/table/rack,/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/simulated/floor/tiled/dark/monotile,/area/map_template/merc_spawn)
+"ba" = (/obj/structure/table/rack,/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/simulated/floor/tiled/dark/monotile,/area/map_template/merc_spawn)
+"bb" = (/obj/structure/table/steel_reinforced,/turf/simulated/floor/cult,/area/map_template/merc_spawn)
+"bc" = (/obj/structure/table/glass,/turf/simulated/floor/cult,/area/map_template/merc_spawn)
+"bd" = (/obj/structure/bed/chair/comfy/red,/turf/simulated/floor/cult,/area/map_template/merc_spawn)
+"be" = (/obj/structure/bed/chair/comfy/red{icon_state = "comfychair_preview"; dir = 1},/turf/simulated/floor/cult,/area/map_template/merc_spawn)
+"bf" = (/obj/structure/bed/chair/comfy/red{icon_state = "comfychair_preview"; dir = 8},/turf/simulated/floor/cult,/area/map_template/merc_spawn)
+"bg" = (/obj/structure/table/rack,/turf/simulated/floor/tiled/dark/monotile,/area/map_template/merc_spawn)
+"bh" = (/obj/machinery/fabricator{desc = "Your typical Autolathe. It appears to have much more options than your regular one, however..."; fab_status_flags = 1; name = "unlocked autolathe"},/turf/simulated/floor/tiled/dark/monotile,/area/map_template/merc_spawn)
+"bi" = (/obj/machinery/vending/clothing/tact,/turf/simulated/floor/tiled/dark/monotile,/area/map_template/merc_spawn)
+"bj" = (/obj/machinery/suit_storage_unit/standard_unit,/turf/simulated/floor/plating,/area/map_template/merc_spawn)
+
+(1,1,1) = {"
+asatatatatatatatatatatatatatatatatatatararararararararararararararararararararararararararararararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaarararararararararararararararararararararararararararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaarararararararararararararararararararararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaararararararararararaNaNaNaNaNararararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaarararararararararaNacadacaNararararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaeaeaeaeaeaeaeaaaaabababababararaNaNaNaNaNacadacaNararararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafaeagagagagahaeabababbjbjbjaNaNaraNaiadaiaNacadacaNararararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafaeajajajajajakakalakamamanaoaNaraNaiadaiaNacadacaNararararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafaeapapapapaqaeabaxabayayazaAaNaraNaiadaiaNacadacaNararararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaeaeaeaeaeaeaeaaavabayayazaBaNaraNaxaCaxaNaxaCaxaNaNarararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaavabaNaDaNaNaNaNaNaZadbabgaZadbabgaNaNararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaawavaxaTadaVaUaNbgaZadadadadadadadadbgaNararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaawaaaxaTadadadadadadadadadadadadadadbhaNararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaawavaxaTadadadaEadadadadadadadadadadbiaNararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaxaTadadaYaNbgbgbgbgbgbgbgaZadbaaNaNararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaawavaxaTadadaWaNaNaNaNaNaNaNaNaNaCaNaNarararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaawaaaxaTadadaXaNaFaFaFaFaFaFaFbbaFaFaNarararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaawavaxaTadadadaFaFaFaFbdbdbdaFbbbfaFaNarararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaavaxaTadadadaGaFaFaFbcbcbcaFbbaFaFaNarararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaavabaNaHadaNaNaFaFaFbebebeaFbbbbaFaNarararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeabababadadadadaNaFaFaFaFaFaFaFaFaFaFaNarararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaIaJalaJadadadadaNaNaKaNaNaNaFaFaFaFaFaNarararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeabababaLadadadaNaMaMaMaMaNaFaFaFaFaFaNarararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababaxaxababaMaMaMaMaNaNaQaNaNaNaNarararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaavaaaaavabaMaMaMaMaNaOajajaNarararararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaawawawavabaMaMaMaMaNaPaRaSaNarararararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaawavabaNaNaNaNaNaNaNaNaNarararararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaarararararararararararararararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaawavavararararararararararararararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaawaaavararararararararararararararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaawavavavarararararararararararararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaawaaaaavarararararararararararararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaawavavavavararararararararararararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaavaaavaaaaarararararararararararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaawawawavavarararararararararararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaawaaararararararararararararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaawavararararararararararararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaararararararararararararar
+asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaarararararararararararararar
+asauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauauararararararararararararararar
+"}

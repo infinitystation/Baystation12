@@ -1,6 +1,6 @@
 /datum/map_template/ruin/antag_spawn/mercenary
 	name = "Mercenary Base"
-	suffixes = list("mercenary/mercenary_base_inf.dmm")
+	suffixes = list("mercenary/mercenary_base_new.dmm")
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/merc_shuttle)
 
 /obj/effect/overmap/visitable/merc_base
@@ -87,3 +87,14 @@
 /obj/machinery/vending/medical/torch
 	req_access = list(access_medical)
 //[/INF]
+
+/obj/machinery/suit_storage_unit/syndie
+	name = "Nonstandard Voidsuit Storage Unit"
+	suit= /obj/item/clothing/suit/space/void/merc
+	helmet = /obj/item/clothing/head/helmet/space/void/merc
+	boots = /obj/item/clothing/shoes/magboots
+	tank = /obj/item/weapon/tank/oxygen
+	mask = /obj/item/clothing/mask/breath
+	req_access = list(access_syndicate)
+	islocked = 1
+	mycolour = "#9e2626"
