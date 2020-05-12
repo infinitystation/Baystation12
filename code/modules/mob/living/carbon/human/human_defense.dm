@@ -15,15 +15,29 @@ meteor_act
 
 		//IFN
 
+	//[INF]
+
+	if(istype(martial_art) && martial_art.reflect_prob && !incapacitated())
+		if(prob(martial_art.reflect_prob))
+			if(martial_art.reflect_prob <= 25)
+				visible_message("[src] dodges [P]!")
+			else if(martial_art.reflect_prob <= 75)
+				visible_message("[src] dodges [P] with inhuman speed!")
+			else
+				visible_message("[src] deflects [P] with his own arm!")
+			return PROJECTILE_FORCE_MISS
+
+	//[/INF]
+
 	var/damage_mult = list(
-		BP_HEAD = 1, 
-		BP_CHEST = 1, 
-		BP_GROIN = 0.9, 
-		BP_L_LEG = 0.7, 
-		BP_R_LEG = 0.7, 
-		BP_L_ARM = 0.7, 
-		BP_R_ARM = 0.7, 
-		BP_L_HAND = 0.3, 
+		BP_HEAD = 1,
+		BP_CHEST = 1,
+		BP_GROIN = 0.9,
+		BP_L_LEG = 0.7,
+		BP_R_LEG = 0.7,
+		BP_L_ARM = 0.7,
+		BP_R_ARM = 0.7,
+		BP_L_HAND = 0.3,
 		BP_R_HAND = 0.3,
 		BP_L_FOOT = 0.3,
 		BP_R_FOOT = 0.3)

@@ -160,6 +160,17 @@ var/global/serials = list()
 	if(MUTATION_HULK in M.mutations)
 		to_chat(M, "<span class='danger'>Your fingers are much too large for the trigger guard!</span>")
 		return 0
+
+	//[INF]
+
+	var/mob/living/carbon/human/H = M
+	if(istype(H))
+		if(istype(H.martial_art) && H.martial_art.noshooting)
+			to_chat(H, SPAN_DANGER("Arts of [H.martial_art.name] prevents you from shooting guns!"))
+			return 0
+
+	//[/INF]
+
 	if((MUTATION_CLUMSY in M.mutations) && prob(40)) //Clumsy handling
 		var/obj/P = consume_next_projectile()
 		if(P)

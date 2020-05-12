@@ -11,6 +11,10 @@
 	for(var/obj/item/organ/external/O in organs)
 		if(BP_IS_ROBOTIC(O))
 			tally += O.slowdown
+
+	if(istype(martial_art))
+		tally -= martial_art.speedboost
+
 //[/INF]
 	tally += species.handle_movement_delay_special(src)
 
@@ -66,7 +70,7 @@
 
 	if(aiming && aiming.aiming_at) tally += 5 // Iron sights make you slower, it's a well-known fact.
 
-	if(facing_dir) 
+	if(facing_dir)
 		tally += 3 //Locking direction will slow you down.
 
 	if(MUTATION_FAT in src.mutations)

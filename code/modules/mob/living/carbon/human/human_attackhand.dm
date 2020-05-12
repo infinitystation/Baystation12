@@ -33,7 +33,7 @@
 	remove_cloaking_source(species)
 	// Should this all be in Touch()?
 	if(istype(H))
-		if(H != src && check_shields(0, null, H, H.zone_sel.selecting, H.name))
+		if(H != src && check_shields(0, null, H, H.zone_sel.selecting, H.name) && !(istype(H.martial_art) && H.martial_art.ignor_psishields)) //INF, was (H != src && check_shields(0, null, H, H.zone_sel.selecting, H.name))
 			H.do_attack_animation(src)
 			return 0
 
@@ -101,6 +101,16 @@
 
 	switch(M.a_intent)
 		if(I_HELP)
+
+			//[INF]
+
+			if(istype(H.martial_art))
+				H.martial_art.add_to_streak(H, "H", src)
+				if(H.martial_art.handle_help(H, src))
+					return
+
+			//[/INF]
+
 			if(H != src && istype(H) && (is_asystole() || (status_flags & FAKEDEATH) || failed_last_breath))
 				if (!cpr_time)
 					return 0
@@ -161,12 +171,31 @@
 			return 1
 
 		if(I_GRAB)
+
+			//[INF]
+
+			if(istype(H.martial_art))
+				H.martial_art.add_to_streak(H, "G", src)
+				if(H.martial_art.handle_grab(H, src))
+					return
+
+			//[/INF]
+
 			return H.species.attempt_grab(H, src)
 
 		if(I_HURT)
 			if(H.incapacitated())
 				to_chat(H, "<span class='notice'>You can't attack while incapacitated.</span>")
 				return
+
+			//[INF]
+
+			if(istype(H.martial_art))
+				H.martial_art.add_to_streak(H, "A", src)
+				if(H.martial_art.handle_harm(H, src))
+					return
+
+			//[/INF]
 
 			if(!istype(H))
 				attack_generic(H,rand(1,3),"punched")
@@ -201,8 +230,18 @@
 //INF					rand_damage = 5
 					accurate = 1
 				if(I_HURT, I_GRAB)
+
+					//[INF]
+
+					var/block_chance = 20
+
+					if(istype(H.martial_art))
+						block_chance *= H.martial_art.block_modifier
+
+					//[/INF]
+
 					// We're in a fighting stance, there's a chance we block
-					if(MayMove() && src!=H && prob(20))
+					if(MayMove() && src!=H && prob(block_chance)) //INF, was prob(20)
 						block = 1
 
 			if (M.grabbed_by.len)
@@ -281,7 +320,24 @@
 			// Finally, apply damage to target
 			apply_damage(real_damage, attack.get_damage_type(), hit_zone, damage_flags=attack.damage_flags())
 
+			//[INF]
+
+			if(istype(H.martial_art) && H.martial_art.additional_hit_damage && (istype(attack, /datum/unarmed_attack/punch) || istype(attack, /datum/unarmed_attack/light_strike)))
+				apply_damage(H.martial_art.additional_hit_damage, H.martial_art.additional_hit_type, hit_zone)
+
+			//[/INF]
+
 		if(I_DISARM)
+
+			//[INF]
+
+			if(istype(H.martial_art))
+				H.martial_art.add_to_streak(H, "D", src)
+				if(H.martial_art.handle_disarm(H, src))
+					return
+
+			//[/INF]
+
 			if(H.species)
 				admin_attack_log(M, src, "Disarmed their victim.", "Was disarmed.", "disarmed")
 				H.species.disarm_attackhand(H, src)
