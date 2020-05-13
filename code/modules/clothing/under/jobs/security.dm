@@ -177,6 +177,8 @@
 /obj/item/clothing/suit/armor/hos
 	name = "armored coat"
 	desc = "A greatcoat enhanced with a special alloy for some protection and style."
+	icon = 'infinity/icons/obj/clothing/obj_suit.dmi' //INF
+	item_icons = list(slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi') //INF
 	icon_state = "hos"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	armor = list(
@@ -186,7 +188,7 @@
 		energy = ARMOR_ENERGY_MINOR,
 		bomb = ARMOR_BOMB_PADDED
 		)
-	flags_inv = HIDEJUMPSUIT
+//INF	flags_inv = HIDEJUMPSUIT
 	siemens_coefficient = 0.6
 	valid_accessory_slots = list(ACCESSORY_SLOT_ARMBAND, ACCESSORY_SLOT_OVER, ACCESSORY_SLOT_INSIGNIA) //INF
 

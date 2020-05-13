@@ -9,11 +9,18 @@
 	hidden_from_codex = TRUE
 
 /datum/language/ling/broadcast(var/mob/living/speaker,var/message,var/speaker_mask)
+//[INF]
+	if(speaker.mind && speaker.mind.changeling)
+		..(speaker, message, "[speaker.mind.changeling.changelingID] ([speaker.mind])")
+	else
+		..(speaker, message)
+//[/INF]
+/*[ORIG]
 	if(speaker.mind && speaker.mind.changeling)
 		..(speaker,message,speaker.mind.changeling.changelingID)
 	else
 		..(speaker,message)
-
+[/ORIG]*/
 /datum/language/corticalborer
 	name = LANGUAGE_BORER_GLOBAL
 	desc = "Cortical borers possess a strange link between their tiny minds."

@@ -5,7 +5,7 @@
 			C.chosen_sting.try_to_sting(src, A)
 			next_click = world.time + 2 SECONDS
 			return
-	swap_hand()
+	..()
 
 /mob/living/carbon/AltClickOn(atom/A)
 	if(!stat && mind && iscarbon(A) && A != src)

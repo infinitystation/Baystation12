@@ -383,7 +383,7 @@
 		if(character.mind.role_alt_title)
 			rank = character.mind.role_alt_title
 		// can't use their name here, since cyborg namepicking is done post-spawn, so we'll just say "A new Cyborg has arrived"/"A new Android has arrived"/etc.
-		GLOB.global_announcer.autosay("Новый [rank ? " [rank]" : " visitor" ] [join_message ? join_message : "активировался"].", "Arrivals Announcement Computer")
+		GLOB.global_announcer.autosay("Новый [rank ? "[rank]" : "visitor" ] [join_message ? join_message : "активировался"].", "Arrivals Announcement Computer")
 
 /mob/new_player/proc/LateChoices()
 	var/name = client.prefs.be_random_name ? "friend" : client.prefs.real_name
@@ -526,7 +526,10 @@
 	new_character.regenerate_icons()
 
 	new_character.key = key		//Manually transfer the key to log them in
-	new_character.Sleeping(10) //INF, should be enough to remove I SAW NAKED MEN!
+//[INF]
+	if(GAME_STATE == (RUNLEVEL_LOBBY || RUNLEVEL_SETUP))
+		new_character.Sleeping(15) //should be enough to remove I SAW NAKED MEN!
+//[/INF]
 	return new_character
 
 /mob/new_player/proc/ViewManifest()

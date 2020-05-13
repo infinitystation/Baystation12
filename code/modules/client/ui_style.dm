@@ -1,7 +1,8 @@
 
 
 /var/all_ui_styles = list(
-	"Midnight" = 'icons/mob/screen/midnight-inf.dmi',
+	"Midnight" = 'icons/mob/screen/midnight-inf.dmi',//inf
+	"Hi-Tech"		= 'infinity/icons/mob/hud_styles/Hi-Tek.dmi',//inf
 	"Bay Midnight"     = 'icons/mob/screen/midnight.dmi',
 	"Orange"       = 'icons/mob/screen/orange.dmi',
 	"Old"          = 'icons/mob/screen/old.dmi',
@@ -45,7 +46,7 @@
 	var/icon/ic = all_ui_styles[UI_style_new]
 
 	for(var/obj/screen/I in icons)
-		if(I.name in list(I_HELP, I_HURT, I_DISARM, I_GRAB)) continue
+//inf		if(I.name in list(I_HELP, I_HURT, I_DISARM, I_GRAB)) continue
 		I.icon = ic
 		I.color = UI_style_color_new
 		I.alpha = UI_style_alpha_new

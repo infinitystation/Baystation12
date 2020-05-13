@@ -155,6 +155,14 @@
 			else
 				reagents.trans_to_obj(U, min(reagents.total_volume,1))
 				if (reagents.total_volume <= 0)
+//[INF]
+					user.update_personal_goal(/datum/goal/achievement/specific_object/food, type)
+					if(trash)
+						if(ispath(trash,/obj/item))
+							var/obj/item/TrashItem = new trash(get_turf(src))
+							TrashItem.pixel_x = src.pixel_x
+							TrashItem.pixel_y = src.pixel_y
+//[/INF]
 					qdel(src)
 			return
 

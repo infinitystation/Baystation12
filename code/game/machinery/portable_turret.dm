@@ -456,11 +456,18 @@ var/list/turret_icons
 
 	for(var/mob/M in mobs_in_view(world.view, src))
 		assess_and_assign(M, targets, secondarytargets)
-
-	if(!tryToShootAt(targets))
-		if(!tryToShootAt(secondarytargets)) // if no valid targets, go for secondary targets
-			popDown() // no valid targets, close the cover
-
+//[INF]
+	CheckNeed2PopDown(targets, secondarytargets)
+/obj/machinery/porta_turret/proc/CheckNeed2PopDown(list/targets, list/secondarytargets)
+	if(!AiHolder.client)
+//[/INF]
+		if(!tryToShootAt(targets))
+			if(!tryToShootAt(secondarytargets)) // if no valid targets, go for secondary targets
+				popDown() // no valid targets, close the cover
+//[INF]
+/obj/machinery/porta_turret/Process()
+	. = ..()
+//[/INF]
 	if(auto_repair && (health < maxhealth))
 		use_power_oneoff(20000)
 		health = min(health+1, maxhealth) // 1HP for 20kJ
@@ -507,10 +514,10 @@ var/list/turret_icons
 
 	if(iscuffed(L)) // If the target is handcuffed, leave it alone
 		return TURRET_NOT_TARGET
-//inf ahead. cause defines. fuck you, bay.
+//[INF]
 	if(isxenomorph(L) || isalien(L)) // Xenos are dangerous
 		return check_anomalies ? TURRET_PRIORITY_TARGET	: TURRET_NOT_TARGET
-//inf end
+//[/INF]
 	if(isanimal(L) || issmall(L)) // Animals are not so dangerous
 		return check_anomalies ? TURRET_SECONDARY_TARGET : TURRET_NOT_TARGET
 
@@ -588,7 +595,7 @@ var/list/turret_icons
 	src.raising = raising
 	set_density(raised || raising)
 
-/obj/machinery/porta_turret/proc/target(var/mob/living/target)
+/obj/machinery/porta_turret/proc/target(var/atom/target)
 	if(disabled)
 		return
 	if(target)
@@ -601,7 +608,8 @@ var/list/turret_icons
 		return 1
 	return
 
-/obj/machinery/porta_turret/proc/shootAt(var/mob/living/target)
+/obj/machinery/porta_turret/proc/shootAt(var/atom/target)
+	if(stat & BROKEN || stat & NOPOWER) return //inf
 	//any emagged turrets will shoot extremely fast! This not only is deadly, but drains a lot power!
 	if(!(emagged || attacked))		//if it hasn't been emagged or attacked, it has to obey a cooldown rate
 		if(last_fired || !raised)	//prevents rapid-fire shooting, unless it's been emagged

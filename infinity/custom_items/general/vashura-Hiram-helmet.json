@@ -1,0 +1,6 @@
+{
+  "ckey" :            "vashura",
+  "character_name" :  "Hiram Creep",
+  "item_path" :       "/obj/item/custkit/vashara_helmet",
+  "req_access" :      [ "ACCESS_SECURITY" ]
+  }

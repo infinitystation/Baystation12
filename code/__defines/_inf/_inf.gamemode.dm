@@ -1,5 +1,5 @@
 #define MODE_XENOMORPH "xeno"
 
-/* unused
-#define MODE_SWARM "Swarm"
-*/
+#define MODE_ABDUCTOR          "abductor"
+#define MODE_ABDUCTOR_SCI      "abductor scientist"
+#define MODE_ABDUCTED          "abducted"

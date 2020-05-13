@@ -419,6 +419,7 @@ var/global/list/additional_antag_types = list()
 				players -= player
 
 		// If we don't have enough antags, draft people who voted for the round.
+/*[ORIG]. We don't use low antag chance
 		if(candidates.len < required_enemies)
 			for(var/mob/new_player/player in players)
 				if(!antag_id || ((antag_id in player.client.prefs.be_special_role) || (antag_id in player.client.prefs.may_be_special_role)))
@@ -427,7 +428,7 @@ var/global/list/additional_antag_types = list()
 					players -= player
 					if(candidates.len == required_enemies || players.len == 0)
 						break
-
+[/ORIG]*/
 	return candidates		// Returns: The number of people who had the antagonist role set to yes, regardless of recomended_enemies, if that number is greater than required_enemies
 							//			required_enemies if the number of people with that role set to yes is less than recomended_enemies,
 							//			Less if there are not enough valid players in the game entirely to make required_enemies.

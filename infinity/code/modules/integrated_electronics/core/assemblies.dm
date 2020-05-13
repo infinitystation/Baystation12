@@ -6,6 +6,11 @@
 			if(!P.installed_gun)
 				icomponents+=P.displayed_name
 				ircomponents+=P
+	else if(istype(I, /obj/item/weapon/grenade/))
+		for (var/obj/item/integrated_circuit/manipulation/grenade/P in assembly_components)
+			if(!P.attached_grenade)
+				icomponents+=P.displayed_name
+				ircomponents+=P
 	else
 		var/obj/item/card = I
 		var/mob/living/L = locate(/mob/living) in card.contents

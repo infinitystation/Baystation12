@@ -11,6 +11,7 @@
 	description = "A small Ascent colony ship."
 	suffixes = list("ascent/ascent-1.dmm")
 	cost = 1000 //INF, WAS 1
+	spawn_weight = 50 //INF, HABITABLE SHIPS SPAWN
 	shuttles_to_initialise = list(
 		/datum/shuttle/autodock/overmap/ascent,
 		/datum/shuttle/autodock/overmap/ascent/two

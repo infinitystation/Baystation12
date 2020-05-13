@@ -38,7 +38,11 @@
 	recommended_players = 20
 //	minimum_players = 0 its already 0
 
-	away_site_budget = 2 //1 always wastes on mining asteroid
+	away_site_budget = 3.5 /*
+							2 for ascents/vox shoal/skrellin patrol/bearcat
+							0.5 for two away sites but lower one
+							0.5 always wastes on mining asteroid
+							*/
 	id_hud_icons = 'maps/sierra/icons/assignment_hud.dmi'
 
 	available_cultural_info = list(
@@ -101,6 +105,9 @@
 			CULTURE_HUMAN_SPAFRO,
 			CULTURE_HUMAN_CONFED,
 			CULTURE_HUMAN_OTHER,
+			CULTURE_HUMAN_LORRIMAN,
+			CULTURE_HUMAN_AVANOBLE,
+			CULTURE_HUMAN_AVACOMMON,
 			CULTURE_OTHER
 		),
 		TAG_RELIGION = list(

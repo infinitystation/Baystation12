@@ -15,7 +15,6 @@
 	name = "Data Capsule"
 	move_time = 30
 	shuttle_area = list(/area/shuttle/abadoned_data_capsule)
-	dock_target = "data_capsule"
 	current_location = "nav_mining_hiden"
 	landmark_transition = "nav_transit_blueriver"
 
@@ -25,9 +24,7 @@
 	range = 1
 	fuel_consumption = 2
 	warmup_time = 5
-
-	logging_home_tag = "nav_mining_hiden"
-
+	defer_initialisation = TRUE
 	skill_needed = SKILL_BASIC
 
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling

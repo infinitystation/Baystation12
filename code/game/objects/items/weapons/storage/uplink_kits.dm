@@ -155,7 +155,12 @@
 
 /obj/item/weapon/storage/secure/briefcase/heavysniper
 	startswith = list(
-		/obj/item/weapon/gun/projectile/heavysniper,
+		//inf /obj/item/weapon/gun/projectile/heavysniper,
+		//[INF],
+		/obj/item/weapon/weaponparts/core_part/heavysniper,
+		/obj/item/weapon/weaponparts/stock/scope/heavysniper,
+		/obj/item/weapon/weaponparts/stock/barrel/heavysniper,
+		//[/INF],
 		/obj/item/weapon/storage/box/ammo/sniperammo
 	)
 

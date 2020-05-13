@@ -90,7 +90,11 @@
 			L.visible_message(message = use_3p, self_message = use_1p, blind_message = emote_message_impaired, checkghosts = /datum/client_preference/ghost_sight)
 
 	do_extra(user, target)
-
+//[INF]
+	if(ismob(user))
+		var/mob/U = user
+		log_emote("[U.real_name]/[U.key] : [use_3p]")
+//[/INF]
 /decl/emote/proc/do_extra(var/atom/user, var/atom/target)
 	return
 

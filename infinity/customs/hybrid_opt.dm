@@ -2,6 +2,7 @@
 	name = "hybrid optical scanner"
 	desc = "This scanner has several buttons on one side and the TCC logo on the other. Under the logo engraving 'Thoughts are material.' On the inside there is a pair of connectors. It seems that this thing is not for ordinary eyes."
 	icon_state = "hybrids"
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/glasses/material/hybrid/special/Destroy()
 	STOP_PROCESSING(SSobj, src)

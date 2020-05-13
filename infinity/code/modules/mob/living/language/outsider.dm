@@ -1,29 +1,3 @@
-//Swarm Language
-
-/*/datum/language/swarm
-	name = LANGUAGE_SWARM
-	colour = "adherent"
-	desc = "Связь ближнего действия"
-	speech_verb = "транслирует"
-	ask_verb = "транслирует"
-	exclaim_verb = "транслирует"
-	key = "t"
-	flags = RESTRICTED
-	machine_understands = 0
-	syllables = list("шипит", "свистит", "скрежет")
-	shorthand = "Swarm"
-
-/datum/language/swarm_far
-	name = LANGUAGE_SWARM_FAR
-	desc = "Блюспэйс подключение к общей сети улья и разделённое на ячейки"
-	speech_verb = "транслирует"
-	ask_verb = "транслирует"
-	exclaim_verb = "транслирует"
-	colour = "adherent"
-	key = "z"
-	flags = RESTRICTED | HIVEMIND
-	shorthand = "N/A"*/
-
 /datum/language/xenocommon
 	name = LANGUAGE_XENOPHAGE
 	colour = "alien"
@@ -57,3 +31,14 @@
 		return 1
 
 	return 0
+
+/datum/language/abductors
+	name = LANGUAGE_ABDUCTORS
+	desc = "Abductors have a telepathical link between them."
+	speech_verb = "транслирует"
+	ask_verb = "запрашивает"
+	exclaim_verb = "транслирует"
+	colour = "#90489c"
+	key = "m"
+	flags = RESTRICTED | HIVEMIND
+	shorthand = "N/A"

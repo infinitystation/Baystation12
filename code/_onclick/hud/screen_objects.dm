@@ -180,6 +180,7 @@
 	usr.a_intent = intent
 
 /obj/screen/intent/on_update_icon()
+	. = ..()//inf
 	icon_state = "intent_[intent]"
 
 /obj/screen/Click(location, control, params)
