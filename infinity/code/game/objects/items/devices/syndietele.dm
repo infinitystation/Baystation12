@@ -6,7 +6,7 @@
 	item_state = "signaler"
 	origin_tech = list(TECH_BLUESPACE = 4, TECH_ESOTERIC = 3)
 
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_SMALL
 
 	var/animation_icon = 'infinity/icons/effects/bs_silk.dmi'
 	var/back_animation = "silc_teleport_back"
