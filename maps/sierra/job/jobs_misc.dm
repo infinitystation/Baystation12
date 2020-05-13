@@ -61,6 +61,7 @@
 	announced = FALSE
 	min_skill = list(	SKILL_FINANCE = SKILL_ADEPT,
 						SKILL_PILOT	  = SKILL_BASIC)
+	give_psionic_implant_on_join = FALSE
 	skill_points = 24
 
 /datum/job/merchant/equip(var/mob/living/carbon/human/H)
@@ -96,6 +97,7 @@
 	max_skill = list(   SKILL_COMBAT  = SKILL_MAX,
 	                    SKILL_WEAPONS = SKILL_MAX)
 	required_role = list("Merchant")
+	give_psionic_implant_on_join = FALSE
 
 	skill_points = 24
 /*

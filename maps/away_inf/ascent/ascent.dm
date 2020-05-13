@@ -22,6 +22,7 @@
 /obj/effect/overmap/visitable/ship/ascent_seedship_inf
 	name = DAMAGED_ASCENT_COLONY_SHIP_NAME
 	desc = "Wake signature indicates a small to medium sized vessel of unknown design."
+	color = COLOR_PURPLE
 	vessel_mass = 6500
 	fore_dir = WEST
 	max_speed = 0.6/(1 SECOND)

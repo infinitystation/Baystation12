@@ -3,6 +3,9 @@
 	#include "example_shuttles.dm"
 	#include "example_unit_testing.dm"
 
+	//[INF]	Customs-require
+	#include "compile_required_snatch.dm"
+	//[/INF]
 	#include "example_define.dm"
 
 	#include "example-1.dmm"
