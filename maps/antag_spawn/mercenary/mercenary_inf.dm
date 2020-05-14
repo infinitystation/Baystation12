@@ -28,7 +28,7 @@
 
 /datum/shuttle/autodock/overmap/merc_shuttle
 	name = "Desperado"
-	shuttle_area = list(/area/map_template/merc_shuttle,/area/map_template/merc_shuttle/rear)
+	shuttle_area = list(/area/map_template/merc_shuttle)
 	dock_target = "merc_shuttle"
 	current_location = "nav_merc_start"
 	defer_initialisation = TRUE
@@ -71,17 +71,34 @@
 	name = "\improper TCV Tersten Tenacity"
 	icon_state = "syndie-ship"
 	req_access = list(access_syndicate)
-	area_flags = AREA_FLAG_IS_NOT_PERSISTENT
+
+/area/map_template/merc_spawn/eva
+
+/area/map_template/merc_spawn/cryo
+
+/area/map_template/merc_spawn/hall
+
+/area/map_template/merc_spawn/armory
+
+/area/map_template/merc_spawn/hallway
+
+/area/map_template/merc_spawn/engineering
+
+/area/map_template/merc_spawn/brig
+
+/area/map_template/merc_spawn/bridge
+
+/area/map_template/merc_spawn/medbay
+
+/area/map_template/merc_spawn/teleport
+
+
 
 /area/map_template/merc_shuttle
-	name = "\improper Desperado Fore Compartment"
+	name = "\improper Desperado"
 	icon_state = "yellow"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 	req_access = list(access_syndicate)
-
-/area/map_template/merc_shuttle/rear
-	name = "\improper Desperado Rear Compartment"
-	icon_state = "green"
 
 //[INF]
 /obj/machinery/vending/medical/torch
@@ -98,3 +115,9 @@
 	req_access = list(access_syndicate)
 	islocked = 1
 	mycolour = "#9e2626"
+
+/obj/machinery/power/apc/syndieship
+	req_access = list(access_syndicate)
+
+/obj/machinery/alarm/syndieship
+	req_access = list(access_syndicate)
