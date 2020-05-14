@@ -3,7 +3,7 @@
 	name = SPECIES_XENO
 	name_plural = "Xenophages"
 
-	unarmed_types = list(/datum/unarmed_attack/claws/strong, /datum/unarmed_attack/bite/strong)
+	unarmed_types = list(/datum/unarmed_attack/claws/strong/xeno, /datum/unarmed_attack/bite/strong/xeno)
 	hud_type = /datum/hud_data/alien
 	rarity_value = 3
 	health_hud_intensity = 1
@@ -315,7 +315,7 @@
 
 	natural_armour_values = list(melee = 15, bullet = 10, laser = 10, energy = 0, bomb = 0, bio = 100, rad = 100)
 
-	unarmed_types = list(/datum/unarmed_attack/claws/strong/warrior, /datum/unarmed_attack/bite/strong/warrior)
+	unarmed_types = list(/datum/unarmed_attack/claws/strong/xeno/warrior, /datum/unarmed_attack/bite/strong/xeno/warrior)
 
 	has_organ = list(
 		BP_EYES =     /obj/item/organ/internal/eyes/xeno,
