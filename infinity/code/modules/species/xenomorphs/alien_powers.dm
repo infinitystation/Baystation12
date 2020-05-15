@@ -416,5 +416,16 @@ mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in ovi
 		if(src.alpha < 255)
 			src.alpha = 255
 		else
-			src.alpha *= 0.1
+			src.alpha = 0
+	return
+
+/mob/living/carbon/human/proc/create_hugger()
+	set name = "Vomit Facehugger (100)"
+	set desc = "Vomit a facehugger, capable of latching onto people and stunning them."
+	set category = "Abilities"
+
+	if(check_alien_ability(100))
+		visible_message("<span class='alium'><B>[src] vomits a strange creature with legs and a tail!</B></span>", "<span class='alium'>You vomit a facehugger!</span>")
+		var/obj/item/clothing/mask/facehugger/facehugger = new(get_turf(src))
+		src.put_in_hands(facehugger)
 	return

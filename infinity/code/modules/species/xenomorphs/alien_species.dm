@@ -154,7 +154,8 @@
 		/mob/living/carbon/human/proc/evolve_drone,
 		/mob/living/carbon/human/proc/resin,
 		/mob/living/carbon/human/proc/corrosive_acid,
-		/mob/living/carbon/proc/devour
+		/mob/living/carbon/proc/devour,
+		/mob/living/carbon/human/proc/create_hugger
 		)
 /*
 /datum/species/xenos/drone/handle_post_spawn(var/mob/living/carbon/human/H)
@@ -239,7 +240,8 @@
 		/mob/living/carbon/human/proc/transfer_plasma,
 		/mob/living/carbon/human/proc/moderate_corrosive_acid,
 		/mob/living/carbon/human/proc/neurotoxin,
-		/mob/living/carbon/proc/devour
+		/mob/living/carbon/proc/devour,
+		/mob/living/carbon/human/proc/create_hugger
 		)
 
 	force_cultural_info = list(
@@ -286,7 +288,8 @@
 		/mob/living/carbon/human/proc/neurotoxin,
 		/mob/living/carbon/human/proc/resin,
 		/mob/living/carbon/human/proc/xeno_infest,
-		/mob/living/carbon/proc/devour
+		/mob/living/carbon/proc/devour,
+		/mob/living/carbon/human/proc/create_hugger
 		)
 
 	genders = list(FEMALE)
@@ -381,7 +384,8 @@
 		/mob/living/carbon/human/proc/neurotoxin,
 		/mob/living/carbon/human/proc/spit_acid,
 		/mob/living/carbon/human/proc/tackle,
-		/mob/living/carbon/proc/devour
+		/mob/living/carbon/proc/devour,
+		/mob/living/carbon/human/proc/create_hugger
 		)
 
 	force_cultural_info = list(
@@ -420,7 +424,8 @@
 		/mob/living/carbon/human/proc/resin,
 		/mob/living/carbon/human/proc/neurotoxin,
 		/mob/living/carbon/human/proc/evolve_hivelord,
-		/mob/living/carbon/proc/devour
+		/mob/living/carbon/proc/devour,
+		/mob/living/carbon/human/proc/create_hugger
 		)
 
 	force_cultural_info = list(
