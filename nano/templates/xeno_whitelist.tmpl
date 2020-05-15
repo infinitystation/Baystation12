@@ -1,0 +1,49 @@
+{{if data}}
+	{{if data.disabled}}
+		<div class='notice'><center><h2><span class="bad">Вайтлист на ксеносов отключен в конфигурации сервера.</span></h2></center></div><br>
+	{{/if}}
+	{{if data.SQL == -1}}
+		<div class='notice'><center><h3><span class="average">Вайтлист работает в файловом режиме.<br>Использование БД отключено конфигурацией сервера.</span></h3></center></div><br>
+	{{else data.SQL == 0}}
+		<div class='notice'><center><h3><span class="bad">Не удалось установить подключение к Базе Данных.</span></h3><br>
+		{{:helper.link('Переподключение к БД.', null, {'DBreconnect' : 1})}}</center></div><br>
+	{{else data.SQL == 1}}
+		<div class='notice'><center><h3><span class="good">База Данных готова.</span></h3></center></div><br>
+	{{else}}
+		<div class='notice'><center><h3><span class="bad">Неожиданный код статуса Базы Данных: {{:data.SQL}}</span></h3><br>
+		{{:helper.link('Переподключение к БД.', null, {'DBreconnect' : 1})}}</center></div><br>
+	{{/if}}
+	<center>
+	<div style="text-align:center"> 
+	{{if data.SQL == -1}}
+		{{:helper.link('База Данных', null, {'mode': 1}, data.debug ? data.mode ? 'selected' : null : data.mode ? 'selected' : 'disabled')}}
+		{{:helper.link('Конфиг-Файл', null, {'mode': 0}, data.debug ? data.mode ? null : 'selected' : data.mode ? 'disabled' : 'selected')}}
+	{{else}}
+		{{:helper.link('База Данных', null, {'mode': 0}, data.debug ? data.mode ? null : 'selected' : data.mode ? 'disabled' : 'selected')}}
+		{{:helper.link('Конфиг-Файл', null, {'mode': 1}, data.debug ? data.mode ? 'selected' : null : data.mode ? 'selected' : 'disabled')}}
+	{{/if}}
+	</div>
+	</center><br><hr>
+	<table style="width:100%">
+	{{for data.currentlist}}
+		<tr>
+		<th>
+			{{:value.ckey}}
+		</th>
+		{{for value.races :xenos_value:xenos_key}}
+			<td>
+			{{if xenos_value}}
+				{{:helper.link(xenos_key, 'check-square', {'ckey' : value.ckey, 'race' : xenos_key}), 'selected'}}
+			{{else}}
+				{{:helper.link(xenos_key, 'square', {'ckey' : value.ckey, 'race' : xenos_key}), null}}
+			{{/if}}
+			</td>
+		{{/for}}
+		</tr>
+	{{empty}}
+		<center><h1><span class="average">Список пуст. Внесите новый ckey.</span></h1><br>Или используйте другой способ синхронизации вайтлиста.</center>
+	{{/for}}
+	</table>
+{{else}}
+	<center><h2><span class="bad">Интерфейс не получил никаких данных.<br>Перезагрузите окно.</span></h2></center>
+{{/if}}

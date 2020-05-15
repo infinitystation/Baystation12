@@ -25,7 +25,7 @@
 #define R_FUN           0x8
 #define R_SERVER        0x10
 #define R_DEBUG         0x20
-#define R_JUDGE         0x40
+#define R_JUDGE         0x40	//INF WAS R_POSSESS
 #define R_PERMISSIONS   0x80
 #define R_STEALTH       0x100
 #define R_REJUVINATE    0x200
@@ -33,7 +33,7 @@
 #define R_SOUNDS        0x800
 #define R_SPAWN         0x1000
 #define R_MOD           0x2000
-#define R_MENTOR        0x4000
+#define R_XENO	        0x4000	//INF
 #define R_HOST          0x8000 //higher than this will overflow
 #define R_INVESTIGATE   (R_ADMIN|R_MOD)
 
