@@ -19,7 +19,7 @@
 	item_flags = ITEM_FLAG_THICKMATERIAL
 	flags_inv = BLOCKHAIR
 	action_button_name = "Toggle Hood Light"
-	brightness_on = 1.5
+	brightness_on = 0.5
 	on = 0
 
 /obj/item/clothing/under/thermal/siegeuni
