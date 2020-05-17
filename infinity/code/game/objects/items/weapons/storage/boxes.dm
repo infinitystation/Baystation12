@@ -36,3 +36,7 @@
 	desc = "A box containing 5 photon disruption shells."
 	icon_state = "flashbang"
 	startswith = list(/obj/item/weapon/grenade/anti_photon/shell = 6)
+
+/obj/item/weapon/storage/box/ammo/sniperammo/soporific
+	name = "box of soporific sniper shells"
+	startswith = list(/obj/item/ammo_casing/shell/soporific = 7)
