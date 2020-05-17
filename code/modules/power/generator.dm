@@ -8,8 +8,8 @@
 	use_power = POWER_USE_IDLE
 	idle_power_usage = 100 //Watts, I hope.  Just enough to do the computer and display things.
 
-	var/integrity = 20 //INF
-	
+	var/integrity = 100 //INF
+
 	var/max_power = 3 MEGAWATTS //INF, WAS 500000
 	var/thermal_efficiency = 0.65
 
@@ -138,7 +138,7 @@
 		s.set_up(3, 1, src)
 		s.start()
 		stored_energy *= 0.5
-		integrity-- //INF
+		integrity -= round(abs(log(max_power - effective_gen))) //INF
 
 	//Power
 	last_circ1_gen = circ1.return_stored_energy()
