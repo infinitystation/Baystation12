@@ -8,6 +8,8 @@
 	use_power = POWER_USE_IDLE
 	idle_power_usage = 100 //Watts, I hope.  Just enough to do the computer and display things.
 
+	var/integrity = 100 //INF
+	
 	var/max_power = 3 MEGAWATTS //INF, WAS 500000
 	var/thermal_efficiency = 0.65
 
@@ -128,12 +130,15 @@
 	if(circ2.network2)
 		circ2.network2.update = 1
 
+	stat = integrity ? stat : BROKEN //INF: Integrity check
+
 	//Exceeding maximum power leads to some power loss
 	if(effective_gen > max_power && prob(5))
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 		s.set_up(3, 1, src)
 		s.start()
 		stored_energy *= 0.5
+		integrity-- //INF
 
 	//Power
 	last_circ1_gen = circ1.return_stored_energy()
