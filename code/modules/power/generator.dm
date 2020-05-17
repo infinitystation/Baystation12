@@ -130,7 +130,7 @@
 	if(circ2.network2)
 		circ2.network2.update = 1
 
-	stat = integrity ? stat : BROKEN //INF: Integrity check
+	stat = integrity ? stat : BROKEN //INF
 
 	//Exceeding maximum power leads to some power loss
 	if(effective_gen > max_power && prob(5))
@@ -138,7 +138,7 @@
 		s.set_up(3, 1, src)
 		s.start()
 		stored_energy *= 0.5
-		integrity -= round(abs(log(max_power - effective_gen))) //INF
+		integrity -= min(integrity, round(log(effective_gen - max_power + 1))) //INF
 
 	//Power
 	last_circ1_gen = circ1.return_stored_energy()
