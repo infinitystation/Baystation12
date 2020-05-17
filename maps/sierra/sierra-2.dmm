@@ -26445,13 +26445,13 @@
 /area/engineering/atmos)
 "aRb" = (
 /obj/effect/floor_decal/techfloor,
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
 /obj/item/weapon/material/shard/phoron,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/ai_abadoned)
 "aRc" = (
@@ -26546,14 +26546,14 @@
 /area/maintenance/seconddeck/starboard)
 "aRi" = (
 /obj/effect/floor_decal/techfloor,
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
 /obj/structure/window/phoronreinforced,
 /obj/random/trash,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
 /turf/simulated/floor/blackgrid,
 /area/ai_abadoned)
 "aRj" = (
@@ -29965,16 +29965,11 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
 "aWQ" = (
-/obj/effect/floor_decal/techfloor,
-/obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
-	dir = 1
+/obj/effect/floor_decal/techfloor/corner{
+	dir = 8
 	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
-	},
-/obj/machinery/constructable_frame/machine_frame/deconstruct,
-/turf/simulated/floor/blackgrid,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/ai_abadoned)
 "aWR" = (
 /obj/effect/floor_decal/corner/pink/mono,
@@ -31841,16 +31836,6 @@
 /obj/machinery/reagent_temperature,
 /turf/simulated/floor/tiled/white,
 /area/vacant/gambling)
-"bad" = (
-/obj/effect/floor_decal/techfloor/corner{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	icon_state = "map-supply";
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/ai_abadoned)
 "bae" = (
 /obj/structure/table/glass,
 /obj/machinery/photocopier/faxmachine{
@@ -31885,10 +31870,8 @@
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/techfloor/corner,
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 8
-	},
 /obj/random/trash,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ai_abadoned)
 "baj" = (
@@ -33243,6 +33226,13 @@
 /obj/effect/wallframe_spawn/no_grille,
 /turf/simulated/floor/plating,
 /area/bridge/lobby)
+"bcP" = (
+/obj/machinery/porta_turret_construct,
+/obj/machinery/atmospherics/pipe/cap/hidden/scrubbers{
+	dir = 1
+	},
+/turf/simulated/floor/blackgrid,
+/area/ai_abadoned)
 "bcS" = (
 /obj/machinery/atmospherics/pipe/simple/visible/black,
 /obj/machinery/door/blast/regular/open{
@@ -58009,7 +57999,7 @@ ael
 agp
 aEY
 aRi
-aWQ
+aVR
 abf
 aYV
 aZs
@@ -58211,7 +58201,7 @@ abf
 aid
 aKh
 aRb
-aca
+bcP
 abf
 aYV
 aZv
@@ -58819,7 +58809,7 @@ aLh
 aTE
 aYc
 avX
-bad
+aWQ
 bbg
 aYc
 arr
