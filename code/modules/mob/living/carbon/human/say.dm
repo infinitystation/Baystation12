@@ -21,6 +21,20 @@
 	message = sanitize(message)
 	var/obj/item/organ/internal/voicebox/vox = locate() in internal_organs
 	var/snowflake_speak = (speaking && (speaking.flags & (NONVERBAL|SIGNLANG))) || (vox && vox.is_usable() && vox.assists_languages[speaking])
+
+	//[INF]
+
+	var/obj/item/organ/internal/tongue/tongue = locate() in internal_organs
+
+	if(species.has_organ[BP_TONGUE] && (!tongue) && !snowflake_speak)
+		to_chat(src, SPAN_WARNING("You don't have a tongue and cannot speak propperly!"))
+		var/obj/item/organ/internal/tongue/tongue_spec = species.has_organ[BP_TONGUE]
+		if(tongue_spec.can_mumble)
+			emote(tongue_spec.notongue_speech)
+		return
+
+	//[/INF]
+
 	if(!isSynthetic() && need_breathe() && failed_last_breath && !snowflake_speak)
 		var/obj/item/organ/internal/lungs/L = internal_organs_by_name[species.breathing_organ]
 		if(!L || L.breath_fail_ratio > 0.9)

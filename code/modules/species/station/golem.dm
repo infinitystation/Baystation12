@@ -30,7 +30,8 @@
 	heat_level_3 = SYNTH_HEAT_LEVEL_3
 
 	has_organ = list(
-		BP_BRAIN = /obj/item/organ/internal/brain/golem
+		BP_BRAIN = /obj/item/organ/internal/brain/golem,
+		BP_TONGUE = /obj/item/organ/internal/tongue/crystal //INF
 		)
 
 	death_message = "becomes completely motionless..."

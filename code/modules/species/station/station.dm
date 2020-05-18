@@ -265,7 +265,8 @@
 		BP_LIVER =    /obj/item/organ/internal/liver,
 		BP_KIDNEYS =  /obj/item/organ/internal/kidneys,
 		BP_BRAIN =    /obj/item/organ/internal/brain,
-		BP_EYES =     /obj/item/organ/internal/eyes/skrell
+		BP_EYES =     /obj/item/organ/internal/eyes/skrell,
+		BP_TONGUE = /obj/item/organ/internal/tongue //INF
 		)
 
 /datum/species/skrell/get_sex(var/mob/living/carbon/human/H)

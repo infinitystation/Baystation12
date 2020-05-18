@@ -19,7 +19,8 @@
 /obj/item/organ/internal/xeno
 	name = "xeno organ"
 	desc = "It smells like an accident in a chemical factory."
-	icon = 'icons/effects/blood.dmi'
+	icon = 'infinity/icons/obj/surgery.dmi'
+	icon_state = "hivenode"
 	var/associated_power = /mob/living/carbon/human/proc/resin
 	damage_reduction = 0
 	max_damage = 120
@@ -37,21 +38,21 @@
 /obj/item/organ/internal/xeno/eggsac
 	name = "egg sac"
 	parent_organ = BP_GROIN
-	icon_state = "xgibmid1"
+	icon_state = "eggsac"
 	organ_tag = BP_EGG
 	associated_power = /mob/living/carbon/human/proc/lay_egg
 
 /obj/item/organ/internal/xeno/resinspinner
 	name = "resin spinner"
 	parent_organ = BP_HEAD
-	icon_state = "xgibmid2"
+	icon_state = "resinspinner"
 	organ_tag = BP_RESIN
 	associated_power = /mob/living/carbon/human/proc/resin
 
 /obj/item/organ/internal/xeno/acidgland
 	name = "acid gland"
 	parent_organ = BP_HEAD
-	icon_state = "xgibtorso"
+	icon_state = "acid"
 	organ_tag = BP_ACID
 	associated_power = /mob/living/carbon/human/proc/corrosive_acid
 
@@ -66,7 +67,7 @@
 /obj/item/organ/internal/xeno/plasmavessel
 	name = "plasma vessel"
 	parent_organ = BP_CHEST
-	icon_state = "xgibdown1"
+	icon_state = "plasma"
 	organ_tag = BP_PLASMA
 	var/stored_plasma = 350
 	var/max_plasma = 500
@@ -74,23 +75,26 @@
 /obj/item/organ/internal/xeno/plasmavessel/queen
 	name = "bloated plasma vessel"
 	stored_plasma = 350
+	icon_state = "plasma_large"
 	max_plasma = 1200
 	associated_power = /mob/living/carbon/human/proc/neurotoxin
 
 /obj/item/organ/internal/xeno/plasmavessel/sentinel
 	stored_plasma = 100
 	max_plasma = 450
+	icon_state = "plasma_small"
 	associated_power = /mob/living/carbon/human/proc/neurotoxin
 
 /obj/item/organ/internal/xeno/plasmavessel/hunter
 	name = "tiny plasma vessel"
+	icon_state = "plasma_tiny"
 	stored_plasma = 100
 	max_plasma = 300
 
 /obj/item/organ/internal/xeno/hivenode
 	name = "hive node"
 	parent_organ = BP_CHEST
-	icon_state = "xgibmid2"
+	icon_state = "hivenode"
 	organ_tag = BP_HIVE
 	var/painkiller = 500 //added bcause fuckers with it will need it
 
@@ -140,7 +144,7 @@
 /obj/item/organ/internal/xeno/larva
 	name = "alien larva"
 	parent_organ = BP_CHEST
-	icon_state = "xgibmid2"
+	icon_state = "resinspinner"
 	organ_tag = BP_LARVA
 	var/progress = 0
 	var/max_progress = 250
@@ -179,7 +183,7 @@
 /obj/item/organ/internal/xeno/mimicsac
 	name = "mimic sac"
 	parent_organ = BP_CHEST
-	icon_state = "xgibmid2"
+	icon_state = "neurotox"
 	organ_tag = BP_MIMIC
 	associated_power = /mob/living/carbon/human/proc/mimic
 
