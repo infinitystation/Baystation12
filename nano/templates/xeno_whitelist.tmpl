@@ -24,24 +24,37 @@
 	{{/if}}
 	</div>
 	</center><br><hr>
-	<table style="width:100%">
+	<table style="width:100%", align="center", border="1", rules="rows">
+	<tr>
+	<th>
+	</th>
+	{{if data.currentlist}}
+		{{for data.allxenos :name_value:name_key}}
+			<th>
+				{{:name_value}}
+			</th>
+		{{/for}}
+	{{/if}}
+	</tr>
 	{{for data.currentlist}}
 		<tr>
 		<th>
 			{{:value.ckey}}
 		</th>
-		{{for value.races :xenos_value:xenos_key}}
+		{{for data.lowerallxenos :xenos_value:xenos_key}}
 			<td>
-			{{if xenos_value}}
-				{{:helper.link(xenos_key, 'check-square', {'ckey' : value.ckey, 'race' : xenos_key}), 'selected'}}
-			{{else}}
-				{{:helper.link(xenos_key, 'square', {'ckey' : value.ckey, 'race' : xenos_key}), null}}
-			{{/if}}
+			{{for value.races :xenos2_value:xenos2_key}}
+				{{if xenos2_value == xenos_value}}
+					{{:helper.link(xenos_value, "check", {'ckey' : value.ckey, 'race' : xenos_value}, null)}}
+				{{/if}}
+			{{/for}}
 			</td>
 		{{/for}}
 		</tr>
 	{{empty}}
-		<center><h1><span class="average">Список пуст. Внесите новый ckey.</span></h1><br>Или используйте другой способ синхронизации вайтлиста.</center>
+		<tr>
+			<center><h1><span class="average">Список пуст. Внесите новый ckey.</span></h1><br>Или используйте другой способ синхронизации вайтлиста.</center>
+		</tr>
 	{{/for}}
 	</table>
 {{else}}

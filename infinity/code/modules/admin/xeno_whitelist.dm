@@ -2,11 +2,11 @@
 	set name = "Xenos Whitelist Panel"
 	set desc = "Use this to edit players xenowhitelist. Yupi!"
 	set category = "Admin"
-/*
-	if(istype(mob,/mob/new_player))
+
+	if(istype(usr,/mob/new_player))
 		to_chat(usr, "НаноУИ не работают в лобби. Когда нибудь я пойму почему. Пожалуйста зайди в раунд или обзерв. (с) Laxesh")
 		return
-*/
+
 	if(!istype(src,/datum/admins))
 		src = usr.client.holder
 	if(!istype(src,/datum/admins))
@@ -37,15 +37,16 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 	var/list/used = list()
 	var/list/noused = list()
 	var/list/xenoname = list()
-//	var/list/lowerxenoname = list()
+	var/list/lowerxenoname = list()
 
 /datum/nano_module/xenopanel/New()
 	.=..()
 	for(var/s in all_species)
 		var/datum/species/species = all_species[s]
-		if(species.spawn_flags & (SPECIES_IS_WHITELISTED|SPECIES_IS_RESTRICTED))
-//			lowerxenoname.Add("[lowertext(species.name)]")
-			xenoname.Add("[species.name]")
+		if(species.spawn_flags & SPECIES_IS_WHITELISTED)
+			if(!(species.get_bodytype() in xenoname))
+				lowerxenoname.Add("[lowertext(species.get_bodytype())]")
+				xenoname.Add("[species.get_bodytype()]")
 	used = ParseXenoWhitelist(GetXenoWhitelist(FALSE), xenoname)
 	noused = ParseXenoWhitelist(GetXenoWhitelist(TRUE), xenoname)
 
@@ -58,13 +59,13 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		establish_db_connection()
 		data["SQL"] = dbcon.IsConnected()
 	data["disabled"] = !config.usealienwhitelist
-	data["currentlist"] = alternate ? noused : used
+	data["currentlist"] = sortByKey(alternate ? noused : used, "ckey")
 	data["allxenos"] = xenoname
-//	data["lowerallxenos"] = lowerxenoname
+	data["lowerallxenos"] = lowerxenoname
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
-		ui = new(user, src, ui_key, "xeno_whitelist.tmpl", "XenoWhitelist Panel", 500, 500)
+		ui = new(user, src, ui_key, "xeno_whitelist.tmpl", "XenoWhitelist Panel", 3000, 1000)
 		ui.set_initial_data(data)
 		ui.open()
 
@@ -82,7 +83,6 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 
 //	Для того чтобы уи мог нормально читать дату, нам нужно наш общий список еще раз переделать. Да - говнокод, но зато какой! ~Laxesh
 /proc/ParseXenoWhitelist(var/list/list, var/list/allspecies)
-	. = list()
 	var/list/A = list()
 	if(!list.len)
 		return
@@ -91,17 +91,12 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		log_admin("Error: Alien Whitelist SQL usage has been turned on, but list wasn't reloaded.")
 		message_staff("Error: Alien Whitelist SQL usage has been turned on, but list wasn't reloaded.")
 		return
-	A = list()
+	A.Cut()
 	for(var/string in list)
 		var/list/unite = list()
-		var/list/race = list()
 		unite["ckey"] = string
-		for(var/check in allspecies)
-			race[check] = FALSE
-			if(lowertext(check) in list[string])
-				race[check] = TRUE
-			unite["races"] = race
-		A["[++A.len]"] = unite
+		unite["races"] = list[string]
+		A += list(unite)
 	return A
 
 //	При отключенном вайтлисте - лист не генерится, а так что генерим его сами.
