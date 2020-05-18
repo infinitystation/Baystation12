@@ -1,6 +1,6 @@
 #define MIN_LARVA_BLOOD_DRINK 1
 
-/mob/living/carbon/alien/larva/Life()
+/mob/living/carbon/alien/larva/Process()
 	. = ..()
 	if(stat != DEAD && auto_progress)
 		update_progression(FALSE)
@@ -14,8 +14,8 @@
 	if(!environment) return
 
 	var/turf/T = get_turf(src)
-	var/obj/effect/vine/plant = locate() in T
-	if(environment.gas["phoron"] > 0 || (plant && plant.seed.type == /datum/seed/xenomorph))
+	var/obj/structure/alien/weeds/plant = locate() in T
+	if(environment.gas["phoron"] > 0 || plant)
 		update_progression(FALSE) //it will boost them
 		adjustBruteLoss(-1)
 		adjustFireLoss(-1)

@@ -73,6 +73,9 @@
 #define CULTURE_XENOPHAGE_D    "Xenophage Drone"
 #define CULTURE_XENOPHAGE_H    "Xenophage Hunter"
 #define CULTURE_XENOPHAGE_S    "Xenophage Sentinel"
+#define CULTURE_XENOPHAGE_W    "Xenophage Warrior"
+#define CULTURE_XENOPHAGE_L    "Xenophage Hivelord"
+#define CULTURE_XENOPHAGE_P    "Xenophage Spitter"
 #define CULTURE_XENOPHAGE_Q    "Xenophage Queen"
 #define FACTION_XENOPHAGE      "Xenophage Hive"
 
