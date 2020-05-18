@@ -138,7 +138,7 @@
 		s.set_up(3, 1, src)
 		s.start()
 		stored_energy *= 0.5
-		integrity -= min(integrity, log((effective_gen - max_power) / 1e6 + 1)) //INF
+		integrity -= min(integrity, 2 * ((effective_gen - max_power) / 1e6) ** 2) //INF
 
 	//Power
 	last_circ1_gen = circ1.return_stored_energy()
