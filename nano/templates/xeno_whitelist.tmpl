@@ -37,19 +37,15 @@
 	{{if data.currentlist}}
 		<th>
 			{{:helper.link("Ckey", "check-square", {'sorting' : "ckey"}, data.sorting ? data.sorting == "ckey" ? 'selected' : null : 'selected')}}
-		</th>
 		{{for data.lowerallxenos :name_value:name_key}}
 			<th>
 				{{:helper.link(name_value, "check-square", {'sorting' : name_value}, data.sorting ? data.sorting == name_value ? 'selected' : null : null)}}
-			</th>
 		{{/for}}
 	{{/if}}
-	</tr>
 	{{for data.currentlist}}
 		<tr>
 		<th>
 			{{:value.ckey}}
-		</th>
 		{{for data.lowerallxenos :name_value:name_key}}
 			<td>
 			{{for value.YES :xenos_value:xenos_key}}
@@ -72,13 +68,10 @@
 					{{:helper.link(name_value, "times", {'ckey' : value.ckey, 'race' : name_value}, null, 'redButton')}}
 				{{/if}}
 			{{/for}}
-			</td>
 		{{/for}}
-		</tr>
 	{{empty}}
 		<tr>
 			<center><h1><span class="average">Список пуст. Внесите новый ckey.</span></h1><br>Или используйте другой способ синхронизации вайтлиста.</center>
-		</tr>
 	{{/for}}
 	</table>
 {{else}}
