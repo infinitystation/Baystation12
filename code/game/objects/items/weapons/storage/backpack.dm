@@ -256,7 +256,15 @@
 	name = "satchel"
 	desc = "A trendy looking satchel."
 	icon_state = "satchel-norm"
-
+	slot_flags = SLOT_BACK | SLOT_BELT
+	item_icons = list(
+		slot_belt_str = 'icons/mob/onmob/belt.dmi',
+		slot_back_str = 'icons/mob/onmob/back.dmi',
+		)
+	item_state_slots = list(
+		slot_belt_str = "satchel-norm-belt",
+		slot_back_str = "satchel-norm",
+		)
 /obj/item/weapon/storage/backpack/satchel/grey
 	name = "grey satchel"
 
@@ -294,10 +302,18 @@
 	desc = "A neat little folding clasp pocketbook with a shoulder sling."
 	icon_state = "pocketbook"
 	w_class = ITEM_SIZE_HUGE // to avoid recursive backpacks
-	slot_flags = SLOT_BACK
+	slot_flags = SLOT_BACK | SLOT_BELT
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 	color = "#212121"
+	item_icons = list(
+		slot_belt_str = 'icons/mob/onmob/belt.dmi',
+		slot_back_str = 'icons/mob/onmob/back.dmi',
+		)
+	item_state_slots = list(
+		slot_belt_str = "pocketbook-belt",
+		slot_back_str = "pocketbook",
+		)
 
 /obj/item/weapon/storage/backpack/satchel/pocketbook/brown
 	name = "brown pocketbook"

@@ -477,9 +477,9 @@
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = ITEM_SIZE_NORMAL * 3
 
-/obj/item/weapon/storage/belt/waistpack/big/Initialize()
-	.=..()
-	slowdown_per_slot[slot_belt] = 1
+///obj/item/weapon/storage/belt/waistpack/big/Initialize() //Убираю ненужный слоудаун при экипировке на пояс, т.к. его можно надеть на спину.
+//	.=..()
+//	slowdown_per_slot[slot_belt] = 1
 
 /obj/item/weapon/storage/belt/fire_belt
 	name = "firefighting equipment belt"
