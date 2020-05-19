@@ -12,6 +12,9 @@
 	{{/if}}
 	{{if data.SQL == -1}}
 		<div class='notice'><center><h3><span class="average">Вайтлист работает в файловом режиме.<br>Использование БД отключено конфигурацией сервера.</span></h3></center></div><br>
+		{{if data.SQL == -2}}
+			<div class='notice'><center><span class="bad">Не удалось установить подключение к Базе Данных.</span></div><br>
+		{{/if}}
 	{{else data.SQL == 0}}
 		<div class='notice'><center><h3><span class="bad">Не удалось установить подключение к Базе Данных.</span></h3><br>
 		{{:helper.link('Переподключение к БД.', null, {'DBreconnect' : 1})}}</center></div><br>
@@ -21,25 +24,41 @@
 		<div class='notice'><center><h3><span class="bad">Неожиданный код статуса Базы Данных: {{:data.SQL}}</span></h3><br>
 		{{:helper.link('Переподключение к БД.', null, {'DBreconnect' : 1})}}</center></div><br>
 	{{/if}}
-	<center>
-	<div style="text-align:center"> 
-	{{if data.SQL == -1}}
-		{{:helper.link('База Данных', null, {'mode': 1}, data.debug ? data.mode ? 'selected' : null : data.mode ? 'selected' : 'disabled')}}
-		{{:helper.link('Конфиг-Файл', null, {'mode': 0}, data.debug ? data.mode ? null : 'selected' : data.mode ? 'disabled' : 'selected')}}
-	{{else}}
-		{{:helper.link('База Данных', null, {'mode': 0}, data.debug ? data.mode ? null : 'selected' : data.mode ? 'disabled' : 'selected')}}
-		{{:helper.link('Конфиг-Файл', null, {'mode': 1}, data.debug ? data.mode ? 'selected' : null : data.mode ? 'selected' : 'disabled')}}
+	<table style="width:100%", align="center">
+	<tr>
+		<th>
+			{{:helper.link('ПРИНЯТЬ ИЗМЕНЕНИЯ', 'arrowstop-1-n', {'send': 1}, null, 'yellowButton')}}
+		<th>
+			{{:helper.link('Получить ВЛ | Сбросить изменения', 'refresh', {'refresh': 1}, null)}}
+	<tr>
+	{{if data.debug}}
+		<th>
+			{{:helper.link('СИНХРОНИЗИРОВАТЬ КОНФИГ --> БД', 'arrowthickstop-1-n', {'synch': 1}, null, 'redButton')}}
+		<th>
+			{{:helper.link('СИНХРОНИЗИРОВАТЬ БД --> КОНФИГ', 'arrowthickstop-1-s', {'synch': 2}, null, 'redButton')}}
 	{{/if}}
-	</div>
-	</center><br><hr>
+	<tr>
+	{{if data.SQL == -1}}
+		<th>
+			{{:helper.link('База Данных', null, {'mode': 1}, data.debug ? data.mode ? 'selected' : null : data.mode ? 'selected' : 'disabled')}}
+		<th>
+			{{:helper.link('Конфиг-Файл', null, {'mode': 0}, data.debug ? data.mode ? null : 'selected' : data.mode ? 'disabled' : 'selected')}}
+	{{else}}
+		<th>
+			{{:helper.link('База Данных', null, {'mode': 0}, data.debug ? data.mode ? null : 'selected' : data.mode ? 'disabled' : 'selected')}}
+		<th>
+			{{:helper.link('Конфиг-Файл', null, {'mode': 1}, data.debug ? data.mode ? 'selected' : null : data.mode ? 'selected' : 'disabled')}}
+	{{/if}}
+	</table>
+	<br><hr>
 	<table style="width:100%", align="center", border="1", rules="rows">
 	<tr>
 	{{if data.currentlist}}
 		<th>
-			{{:helper.link("Ckey", "check-square", {'sorting' : "ckey"}, data.sorting ? data.sorting == "ckey" ? 'selected' : null : 'selected')}}
+			{{:helper.link("Ckey", "search", {'sorting' : "ckey"}, data.sorting ? data.sorting == "ckey" ? 'selected' : null : 'selected')}}
 		{{for data.lowerallxenos :name_value:name_key}}
 			<th>
-				{{:helper.link(name_value, "check-square", {'sorting' : name_value}, data.sorting ? data.sorting == name_value ? 'selected' : null : null)}}
+				{{:helper.link(name_value, "search", {'sorting' : name_value}, data.sorting ? data.sorting == name_value ? 'selected' : null : null)}}
 		{{/for}}
 	{{/if}}
 	{{for data.currentlist}}
@@ -55,17 +74,17 @@
 			{{/for}}
 			{{for value.NO :xenos_value:xenos_key}}
 				{{if xenos_value == name_value}}
-					{{:helper.link(name_value, "box", {'ckey' : value.ckey, 'race' : name_value}, null)}}
+					{{:helper.link(name_value, "close", {'ckey' : value.ckey, 'race' : name_value}, null)}}
 				{{/if}}
 			{{/for}}
 			{{for value.GRANT :xenos_value:xenos_key}}
 				{{if xenos_value == name_value}}
-					{{:helper.link(name_value, "check-double", {'ckey' : value.ckey, 'race' : name_value}, null, 'yellowButton')}}
+					{{:helper.link(name_value, "plus", {'ckey' : value.ckey, 'race' : name_value}, null, 'yellowButton')}}
 				{{/if}}
 			{{/for}}
 			{{for value.REVOKE :xenos_value:xenos_key}}
 				{{if xenos_value == name_value}}
-					{{:helper.link(name_value, "times", {'ckey' : value.ckey, 'race' : name_value}, null, 'redButton')}}
+					{{:helper.link(name_value, "cancel", {'ckey' : value.ckey, 'race' : name_value}, null, 'redButton')}}
 				{{/if}}
 			{{/for}}
 		{{/for}}

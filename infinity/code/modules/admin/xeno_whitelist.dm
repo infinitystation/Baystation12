@@ -56,10 +56,10 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 	data["sorting"] = sortkey
 	data["debug"] = check_rights(R_DEBUG)
 	data["mode"] = alternate
-	data["SQL"] = -1
-	if(config.usealienwhitelistSQL)
-		establish_db_connection()
-		data["SQL"] = dbcon.IsConnected()
+	establish_db_connection()
+	data["SQL"] = dbcon.IsConnected()	// -2 No connection, disabled, -1 Connected, config setup, 0 No connection, SQL setup, 1 Connected, SQL use setup
+	if(!config.usealienwhitelistSQL)
+		data["SQL"] = data["SQL"] ? -1 : -2
 	data["disabled"] = !config.usealienwhitelist
 	data["currentlist"] = alternate ? noused : used
 	data["allxenos"] = xenoname
@@ -78,7 +78,13 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		. = TOPIC_REFRESH
 	else if (href_list["DBreconnect"])
 		establish_db_connection()
-		. = TOPIC_REFRESH
+		if(dbcon.IsConnected())
+			used = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(FALSE), lowerxenoname), "ckey")
+			noused = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), "ckey")
+			. = TOPIC_REFRESH
+		else
+			to_chat(user, "Не удалось установить подключение к БД")
+			. = TOPIC_NOACTION
 	else if (href_list["ckey"] && href_list["race"])
 		var/list/list = alternate ? noused : used
 		var/list/ckey
@@ -104,16 +110,30 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		else
 			log_admin("Error: Alien Whitelist Panel - unknown species found. Ckey [href_list["ckey"]]; Race [href_list["race"]]")
 			message_staff("Error: Alien Whitelist Panel - unknown species found. Ckey [href_list["ckey"]]; Race [href_list["race"]]")
-		to_world("[href_list["ckey"]] ^ [href_list["race"]]")
 		. = TOPIC_REFRESH
 	else if (href_list["sorting"])
 		sortkey = href_list["sorting"]
 		used = SortByRace(used, sortkey)
 		noused = SortByRace(noused, sortkey)
 		. = TOPIC_REFRESH
+	else if (href_list["send"])
+		var/list/curlist = alternate ? noused : used
+
+		. = TOPIC_REFRESH
+	else if (href_list["synch"])
+		if(alert("Вы уверены что хотите залить данные из [href_list["synch"] == 1 ? "конфига в БД" : "БД в конфиг"]?\nВсе изменения ниже будут отменены!", "Synch", "Да", "Отмена") == "Отмена")
+			return TOPIC_NOACTION
+		to_world("Когда нибудь ")
+		. = TOPIC_REFRESH
+	else if (href_list["refresh"])
+		if(alert("Вы уверены что хотите синхронизироваться с БД и конфиг-файлом?\nВсе изменения ниже будут отменены!", "Refresh", "Да", "Отмена") == "Отмена")
+			return TOPIC_NOACTION
+		used = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(FALSE), lowerxenoname), "ckey")
+		noused = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), "ckey")
+		. = TOPIC_REFRESH
 
 //	Если элемент есть в подлисте - вытаскиваем его повыше
-/proc/SortByRace(var/list/L, var/race)
+/proc/SortByRace(var/list/L, var/race = "ckey")
 	if(!L)
 		return
 	L = sortByKey(L, "ckey")
@@ -226,7 +246,7 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 				for(var/race in all_species)
 					var/datum/species/species = all_species[race]
 					if(species.spawn_flags & SPECIES_IS_WHITELISTED)
-						secondary[A[1]].Add("[lowertext(species.name)]")
+						secondary[A[1]] += list("[lowertext(species.name)]")
 			else
 				secondary[A[1]] = list(lowertext(A[2]))
 	. = secondary
