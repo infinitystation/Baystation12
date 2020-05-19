@@ -38,6 +38,7 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 	var/list/noused = list()
 	var/list/xenoname = list()
 	var/list/lowerxenoname = list()
+	var/sortkey = "ckey"
 
 /datum/nano_module/xenopanel/New()
 	.=..()
@@ -47,19 +48,20 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 			if(!(species.get_bodytype() in xenoname))
 				lowerxenoname.Add("[lowertext(species.get_bodytype())]")
 				xenoname.Add("[species.get_bodytype()]")
-	used = ParseXenoWhitelist(GetXenoWhitelist(FALSE), xenoname)
-	noused = ParseXenoWhitelist(GetXenoWhitelist(TRUE), xenoname)
+	used = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(FALSE), lowerxenoname), sortkey)
+	noused = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), sortkey)
 
 /datum/nano_module/xenopanel/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.xeno_state)
 	var/list/data = list()
+	data["sorting"] = sortkey
 	data["debug"] = check_rights(R_DEBUG)
-	data["SQL"] = -1
 	data["mode"] = alternate
+	data["SQL"] = -1
 	if(config.usealienwhitelistSQL)
 		establish_db_connection()
 		data["SQL"] = dbcon.IsConnected()
 	data["disabled"] = !config.usealienwhitelist
-	data["currentlist"] = sortByKey(alternate ? noused : used, "ckey")
+	data["currentlist"] = alternate ? noused : used
 	data["allxenos"] = xenoname
 	data["lowerallxenos"] = lowerxenoname
 
@@ -78,8 +80,63 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		establish_db_connection()
 		. = TOPIC_REFRESH
 	else if (href_list["ckey"] && href_list["race"])
+		var/list/list = alternate ? noused : used
+		var/list/ckey
+		for(ckey in list)
+			if(ckey["ckey"] == href_list["ckey"])
+				break
+		if(!ckey)
+			log_admin("Error: Alien Whitelist Panel - unknown ckey marker found. Ckey [href_list["ckey"]]; Race [href_list["race"]]")
+			message_staff("Error: Alien Whitelist Panel - unknown ckey marker found. Ckey [href_list["ckey"]]; Race [href_list["race"]]")
+			return TOPIC_NOACTION
+		if(href_list["race"] in ckey["YES"])
+			ckey["YES"] -= list(href_list["race"])
+			ckey["REVOKE"] += list(href_list["race"])
+		else if(href_list["race"] in ckey["REVOKE"])
+			ckey["REVOKE"] -= list(href_list["race"])
+			ckey["YES"] += list(href_list["race"])
+		else if(href_list["race"] in ckey["NO"])
+			ckey["NO"] -= list(href_list["race"])
+			ckey["GRANT"] += list(href_list["race"])
+		else if(href_list["race"] in ckey["GRANT"])
+			ckey["GRANT"] -= list(href_list["race"])
+			ckey["NO"] += list(href_list["race"])
+		else
+			log_admin("Error: Alien Whitelist Panel - unknown species found. Ckey [href_list["ckey"]]; Race [href_list["race"]]")
+			message_staff("Error: Alien Whitelist Panel - unknown species found. Ckey [href_list["ckey"]]; Race [href_list["race"]]")
 		to_world("[href_list["ckey"]] ^ [href_list["race"]]")
 		. = TOPIC_REFRESH
+	else if (href_list["sorting"])
+		sortkey = href_list["sorting"]
+		used = SortByRace(used, sortkey)
+		noused = SortByRace(noused, sortkey)
+		. = TOPIC_REFRESH
+
+//	Если элемент есть в подлисте - вытаскиваем его повыше
+/proc/SortByRace(var/list/L, var/race)
+	if(!L)
+		return
+	L = sortByKey(L, "ckey")
+	if(race && !(race == "ckey"))
+		var/list/insort = list()
+		var/list/secondsort = list()
+		var/list/tirhdsort = list()
+		var/list/notinsort = list()
+		for(var/list/s in L)
+			if(lowertext(race) in s["GRANT"])
+				insort[++insort.len] = s
+			else if(lowertext(race) in s["REVOKE"])
+				secondsort[++secondsort.len] = s
+			else if(lowertext(race) in s["YES"])
+				tirhdsort[++tirhdsort.len] = s
+			else
+				notinsort[++notinsort.len] = s
+		L.Cut()
+		L.Add(insort)
+		L.Add(secondsort)
+		L.Add(tirhdsort)
+		L.Add(notinsort)
+	return L
 
 //	Для того чтобы уи мог нормально читать дату, нам нужно наш общий список еще раз переделать. Да - говнокод, но зато какой! ~Laxesh
 /proc/ParseXenoWhitelist(var/list/list, var/list/allspecies)
@@ -95,7 +152,11 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 	for(var/string in list)
 		var/list/unite = list()
 		unite["ckey"] = string
-		unite["races"] = list[string]
+		for(var/s in allspecies)
+			if(s in list[string])
+				unite["YES"] += list(s)
+			else
+				unite["NO"] += list(s)
 		A += list(unite)
 	return A
 

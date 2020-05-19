@@ -1,3 +1,11 @@
+<style type="text/css">
+
+	.link, .linkOn, .linkOff, .selected, .disabled, .yellowButton, .redButton {
+		min-width: 70px;
+		margin: 0px 2px 0px 0px;
+	}
+</style>
+
 {{if data}}
 	{{if data.disabled}}
 		<div class='notice'><center><h2><span class="bad">Вайтлист на ксеносов отключен в конфигурации сервера.</span></h2></center></div><br>
@@ -26,12 +34,13 @@
 	</center><br><hr>
 	<table style="width:100%", align="center", border="1", rules="rows">
 	<tr>
-	<th>
-	</th>
 	{{if data.currentlist}}
-		{{for data.allxenos :name_value:name_key}}
+		<th>
+			{{:helper.link("Ckey", "check-square", {'sorting' : "ckey"}, data.sorting ? data.sorting == "ckey" ? 'selected' : null : 'selected')}}
+		</th>
+		{{for data.lowerallxenos :name_value:name_key}}
 			<th>
-				{{:name_value}}
+				{{:helper.link(name_value, "check-square", {'sorting' : name_value}, data.sorting ? data.sorting == name_value ? 'selected' : null : null)}}
 			</th>
 		{{/for}}
 	{{/if}}
@@ -41,11 +50,26 @@
 		<th>
 			{{:value.ckey}}
 		</th>
-		{{for data.lowerallxenos :xenos_value:xenos_key}}
+		{{for data.lowerallxenos :name_value:name_key}}
 			<td>
-			{{for value.races :xenos2_value:xenos2_key}}
-				{{if xenos2_value == xenos_value}}
-					{{:helper.link(xenos_value, "check", {'ckey' : value.ckey, 'race' : xenos_value}, null)}}
+			{{for value.YES :xenos_value:xenos_key}}
+				{{if xenos_value == name_value}}
+					{{:helper.link(name_value, "check", {'ckey' : value.ckey, 'race' : name_value}, null, 'selected')}}
+				{{/if}}
+			{{/for}}
+			{{for value.NO :xenos_value:xenos_key}}
+				{{if xenos_value == name_value}}
+					{{:helper.link(name_value, "box", {'ckey' : value.ckey, 'race' : name_value}, null)}}
+				{{/if}}
+			{{/for}}
+			{{for value.GRANT :xenos_value:xenos_key}}
+				{{if xenos_value == name_value}}
+					{{:helper.link(name_value, "check-double", {'ckey' : value.ckey, 'race' : name_value}, null, 'yellowButton')}}
+				{{/if}}
+			{{/for}}
+			{{for value.REVOKE :xenos_value:xenos_key}}
+				{{if xenos_value == name_value}}
+					{{:helper.link(name_value, "times", {'ckey' : value.ckey, 'race' : name_value}, null, 'redButton')}}
 				{{/if}}
 			{{/for}}
 			</td>
