@@ -509,7 +509,7 @@ decl/surgery_step/robotics/get_skill_reqs(mob/living/user, mob/living/carbon/hum
 			to_chat(user, SPAN_WARNING("That brain is not usable."))
 		else if(BP_IS_CRYSTAL(affected))
 			to_chat(user, SPAN_WARNING("The crystalline interior of \the [affected] is incompatible with \the [M]."))
-		else if(!target.get_organ(BP_HEAD).isSynthetic())
+		else if(!(affected.robotic >= ORGAN_ROBOT))
 			to_chat(user, SPAN_WARNING("You cannot install a computer brain into a meat body."))
 		else if(!target.should_have_organ(BP_BRAIN))
 			to_chat(user, SPAN_WARNING("You're pretty sure [target.species.name_plural] don't normally have a brain."))
