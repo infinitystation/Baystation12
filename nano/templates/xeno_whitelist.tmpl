@@ -12,9 +12,9 @@
 	{{/if}}
 	{{if data.SQL == -1}}
 		<div class='notice'><center><h3><span class="average">Вайтлист работает в файловом режиме.<br>Использование БД отключено конфигурацией сервера.</span></h3></center></div><br>
-		{{if data.SQL == -2}}
-			<div class='notice'><center><span class="bad">Не удалось установить подключение к Базе Данных.</span></div><br>
-		{{/if}}
+	{{else data.SQL == -2}}
+		<div class='notice'><center><h3><span class="average">Вайтлист работает в файловом режиме.<br>Использование БД отключено конфигурацией сервера.</span></h3></center></div><br>
+		<div class='notice'><center><span class="bad">Не удалось установить подключение к Базе Данных.</span></div><br>
 	{{else data.SQL == 0}}
 		<div class='notice'><center><h3><span class="bad">Не удалось установить подключение к Базе Данных.</span></h3><br>
 		{{:helper.link('Переподключение к БД.', null, {'DBreconnect' : 1})}}</center></div><br>
@@ -43,6 +43,11 @@
 			{{:helper.link('База Данных', null, {'mode': 1}, data.debug ? data.mode ? 'selected' : null : data.mode ? 'selected' : 'disabled')}}
 		<th>
 			{{:helper.link('Конфиг-Файл', null, {'mode': 0}, data.debug ? data.mode ? null : 'selected' : data.mode ? 'disabled' : 'selected')}}
+	{{else data.SQL == -2}}
+		<th>
+			{{:helper.link('База Данных', null, {'mode': 1}, data.debug ? data.mode ? 'selected' : null : data.mode ? 'selected' : 'disabled')}}
+		<th>
+			{{:helper.link('Конфиг-Файл', null, {'mode': 0}, data.debug ? data.mode ? null : 'selected' : data.mode ? 'disabled' : 'selected')}}
 	{{else}}
 		<th>
 			{{:helper.link('База Данных', null, {'mode': 0}, data.debug ? data.mode ? null : 'selected' : data.mode ? 'disabled' : 'selected')}}
@@ -50,12 +55,14 @@
 			{{:helper.link('Конфиг-Файл', null, {'mode': 1}, data.debug ? data.mode ? 'selected' : null : data.mode ? 'selected' : 'disabled')}}
 	{{/if}}
 	</table>
-	<br><hr>
+	<br>
+	<center>{{data.searchbox}}</center>
+	<hr>
 	<table style="width:100%", align="center", border="1", rules="rows">
 	<tr>
 	{{if data.currentlist}}
 		<th>
-			{{:helper.link("Ckey", "search", {'sorting' : "ckey"}, data.sorting ? data.sorting == "ckey" ? 'selected' : null : 'selected')}}
+			{{:helper.link("Ckey", "search", {'sorting' : "ckey"}, data.sorting ? data.sorting == "ckey" ? 'selected' : null : null)}}
 		{{for data.lowerallxenos :name_value:name_key}}
 			<th>
 				{{:helper.link(name_value, "search", {'sorting' : name_value}, data.sorting ? data.sorting == name_value ? 'selected' : null : null)}}
