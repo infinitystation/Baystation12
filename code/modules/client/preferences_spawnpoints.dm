@@ -79,9 +79,17 @@ GLOBAL_VAR(spawntypes)
 	for(var/obj/machinery/cryopod/C in shuffle(spots))
 		if(!C.occupant)
 			C.set_occupant(victim, 1)
+			to_chat(victim,SPAN_NOTICE("Вы постепенно пробуждаетесь от крио-сна на [GLOB.using_map.full_name]."))
+//[INF]
 			victim.sleeping = 0 //INF
-			victim.Sleeping(rand(1,3))
-			to_chat(victim,SPAN_NOTICE("Вы постепенно пробуждаетесь от крио-сна на [GLOB.using_map.full_name]. Процесс может занять некоторое время."))
+			victim.Sleeping(rand(2,7))
+			if(!victim.isSynthetic())
+				to_chat(victim,SPAN_WARNING("Тошнота, жажда, голод, сонливость - вот, что встречает Ваше ослабшее тело. \
+				Не удалось даже нормально выспаться в этом гробу..."))
+				victim.nutrition = rand(0,200)
+				victim.hydration = rand(0,200)
+				victim.SetStasis(10)
+//[/INF]
 			return
 
 /datum/spawnpoint/cyborg

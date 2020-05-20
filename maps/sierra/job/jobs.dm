@@ -26,6 +26,10 @@
 									/datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer,/datum/job/qm,\
 									/datum/job/senior_engineer, /datum/job/senior_doctor, /datum/job/psychiatrist,\
 									/*/datum/job/stowaway,*/ /datum/job/senior_scientist, /datum/job/security_assistant),
+		/datum/species/human/booster= list(HUMAN_ONLY_JOBS, /datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer,\
+									/datum/job/iaa, /datum/job/adjutant, /datum/job/exploration_leader, /datum/job/senior_engineer,\
+									/datum/job/warden, /datum/job/detective, /datum/job/officer,
+									/datum/job/qm, /datum/job/senior_scientist)
 	)
 #undef HUMAN_ONLY_JOBS
 
