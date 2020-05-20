@@ -256,15 +256,18 @@
 	name = "satchel"
 	desc = "A trendy looking satchel."
 	icon_state = "satchel-norm"
-	slot_flags = SLOT_BACK | SLOT_BELT
+	slot_flags = SLOT_BELT | SLOT_BACK //INF WAS slot_flags = SLOT_BACK
+//[INF]
+	max_storage_space = 15
 	item_icons = list(
-		slot_belt_str = 'icons/mob/onmob/belt.dmi',
+		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
 		slot_back_str = 'icons/mob/onmob/back.dmi',
 		)
 	item_state_slots = list(
 		slot_belt_str = "satchel-norm-belt",
 		slot_back_str = "satchel-norm",
 		)
+//[/INF]
 /obj/item/weapon/storage/backpack/satchel/grey
 	name = "grey satchel"
 
@@ -302,19 +305,20 @@
 	desc = "A neat little folding clasp pocketbook with a shoulder sling."
 	icon_state = "pocketbook"
 	w_class = ITEM_SIZE_HUGE // to avoid recursive backpacks
-	slot_flags = SLOT_BACK | SLOT_BELT
+	slot_flags = SLOT_BELT | SLOT_BACK //INF WAS slot_flags = SLOT_BACK
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 	color = "#212121"
+//[INF]
 	item_icons = list(
-		slot_belt_str = 'icons/mob/onmob/belt.dmi',
+		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
 		slot_back_str = 'icons/mob/onmob/back.dmi',
 		)
 	item_state_slots = list(
 		slot_belt_str = "pocketbook-belt",
 		slot_back_str = "pocketbook",
 		)
-
+//[/INF]
 /obj/item/weapon/storage/backpack/satchel/pocketbook/brown
 	name = "brown pocketbook"
 	color = "#3d2711"
@@ -330,6 +334,8 @@
 	item_state_slots = list(
 		slot_l_hand_str = "engiepack",
 		slot_r_hand_str = "engiepack",
+		slot_back_str = "satchel-eng", //INF
+		slot_belt_str = "satchel-eng-belt", //INF
 		)
 
 /obj/item/weapon/storage/backpack/satchel/med
@@ -339,27 +345,45 @@
 	item_state_slots = list(
 		slot_l_hand_str = "medicalpack",
 		slot_r_hand_str = "medicalpack",
+		slot_back_str = "satchel-med", //INF
+		slot_belt_str = "satchel-med-belt", //INF
 		)
 
 /obj/item/weapon/storage/backpack/satchel/vir
 	name = "virologist satchel"
 	desc = "A sterile satchel with virologist colours."
 	icon_state = "satchel-vir"
+	item_state_slots = list(
+		slot_back_str = "satchel-vir", //INF
+		slot_belt_str = "satchel-vir-belt", //INF
+		)
 
 /obj/item/weapon/storage/backpack/satchel/chem
 	name = "pharmacist satchel"
 	desc = "A sterile satchel with pharmacist colours."
 	icon_state = "satchel-chem"
+	item_state_slots = list(
+		slot_back_str = "satchel-chem", //INF
+		slot_belt_str = "satchel-chem-belt", //INF
+		)
 
 /obj/item/weapon/storage/backpack/satchel/gen
 	name = "geneticist satchel"
 	desc = "A sterile satchel with geneticist colours."
 	icon_state = "satchel-gen"
+	item_state_slots = list(
+		slot_back_str = "satchel-gen", //INF
+		slot_belt_str = "satchel-gen-belt", //INF
+		)
 
 /obj/item/weapon/storage/backpack/satchel/tox
 	name = "corporate satchel"
 	desc = "Useful for holding research materials. The colors on it denote it as a corporate bag."
 	icon_state = "satchel-nt"
+	item_state_slots = list(
+		slot_back_str = "satchel-nt", //INF
+		slot_belt_str = "satchel-nt-belt", //INF
+		)
 
 /obj/item/weapon/storage/backpack/satchel/sec
 	name = "security satchel"
@@ -368,16 +392,26 @@
 	item_state_slots = list(
 		slot_l_hand_str = "securitypack",
 		slot_r_hand_str = "securitypack",
+		slot_back_str = "satchel-sec", //INF
+		slot_belt_str = "satchel-sec-belt", //INF
 		)
 
 /obj/item/weapon/storage/backpack/satchel/sec/exo
 	name = "corporate security satchel"
 	icon_state = "satchel-sec_exo"
+	item_state_slots = list(
+		slot_back_str = "satchel-exo", //INF
+		slot_belt_str = "satchel-exo-belt", //INF
+		)
 
 /obj/item/weapon/storage/backpack/satchel/hyd
 	name = "hydroponics satchel"
 	desc = "A green satchel for plant related work."
 	icon_state = "satchel_hyd"
+	item_state_slots = list(
+		slot_back_str = "satchel-hyd", //INF
+		slot_belt_str = "satchel-hyd-belt", //INF
+		)
 
 /obj/item/weapon/storage/backpack/satchel/cap
 	name = "captain's satchel"
@@ -386,6 +420,8 @@
 	item_state_slots = list(
 		slot_l_hand_str = "satchel-cap",
 		slot_r_hand_str = "satchel-cap",
+		slot_back_str = "satchel-cap", //INF
+		slot_belt_str = "satchel-cap-belt", //INF
 		)
 
 //Smuggler's satchel
