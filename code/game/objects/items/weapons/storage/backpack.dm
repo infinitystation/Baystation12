@@ -258,7 +258,7 @@
 	icon_state = "satchel-norm"
 	slot_flags = SLOT_BELT | SLOT_BACK //INF WAS slot_flags = SLOT_BACK
 //[INF]
-	max_storage_space = 15
+	max_storage_space = 20
 	item_icons = list(
 		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
 		slot_back_str = 'icons/mob/onmob/back.dmi',
@@ -267,6 +267,7 @@
 		slot_belt_str = "satchel-norm-belt",
 		slot_back_str = "satchel-norm",
 		)
+
 //[/INF]
 /obj/item/weapon/storage/backpack/satchel/grey
 	name = "grey satchel"
