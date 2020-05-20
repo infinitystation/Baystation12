@@ -354,38 +354,58 @@
 	name = "virologist satchel"
 	desc = "A sterile satchel with virologist colours."
 	icon_state = "satchel-vir"
-	item_state_slots = list(
-		slot_back_str = "satchel-vir", //INF
-		slot_belt_str = "satchel-vir-belt", //INF
+//[INF]
+	item_icons = list(
+		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
+		slot_back_str = 'infinity/icons/mob/onmob/onmob_back.dmi',
 		)
-
+	item_state_slots = list(
+		slot_back_str = "satchel-vir",
+		slot_belt_str = "satchel-vir-belt",
+		)
+//[/INF]
 /obj/item/weapon/storage/backpack/satchel/chem
 	name = "pharmacist satchel"
 	desc = "A sterile satchel with pharmacist colours."
 	icon_state = "satchel-chem"
-	item_state_slots = list(
-		slot_back_str = "satchel-chem", //INF
-		slot_belt_str = "satchel-chem-belt", //INF
+//[INF]
+	item_icons = list(
+		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
+		slot_back_str = 'infinity/icons/mob/onmob/onmob_back.dmi',
 		)
-
+	item_state_slots = list(
+		slot_back_str = "satchel-chem",
+		slot_belt_str = "satchel-chem-belt",
+		)
+//[/INF]
 /obj/item/weapon/storage/backpack/satchel/gen
 	name = "geneticist satchel"
 	desc = "A sterile satchel with geneticist colours."
 	icon_state = "satchel-gen"
-	item_state_slots = list(
-		slot_back_str = "satchel-gen", //INF
-		slot_belt_str = "satchel-gen-belt", //INF
+//[INF]
+	item_icons = list(
+		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
+		slot_back_str = 'infinity/icons/mob/onmob/onmob_back.dmi',
 		)
-
+	item_state_slots = list(
+		slot_back_str = "satchel-gen",
+		slot_belt_str = "satchel-gen-belt",
+		)
+//[/INF]
 /obj/item/weapon/storage/backpack/satchel/tox
 	name = "corporate satchel"
 	desc = "Useful for holding research materials. The colors on it denote it as a corporate bag."
 	icon_state = "satchel-nt"
-	item_state_slots = list(
-		slot_back_str = "satchel-nt", //INF
-		slot_belt_str = "satchel-nt-belt", //INF
+//[INF]
+	item_icons = list(
+		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
+		slot_back_str = 'infinity/icons/mob/onmob/onmob_back.dmi',
 		)
-
+	item_state_slots = list(
+		slot_back_str = "satchel-tox",
+		slot_belt_str = "satchel-tox-belt",
+		)
+//[/INF]
 /obj/item/weapon/storage/backpack/satchel/sec
 	name = "security satchel"
 	desc = "A robust satchel for security related needs."
@@ -400,20 +420,21 @@
 /obj/item/weapon/storage/backpack/satchel/sec/exo
 	name = "corporate security satchel"
 	icon_state = "satchel-sec_exo"
-	item_state_slots = list(
-		slot_back_str = "satchel-exo", //INF
-		slot_belt_str = "satchel-exo-belt", //INF
-		)
 
 /obj/item/weapon/storage/backpack/satchel/hyd
 	name = "hydroponics satchel"
 	desc = "A green satchel for plant related work."
 	icon_state = "satchel_hyd"
-	item_state_slots = list(
-		slot_back_str = "satchel-hyd", //INF
-		slot_belt_str = "satchel-hyd-belt", //INF
+//[INF]
+	item_icons = list(
+		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
+		slot_back_str = 'infinity/icons/mob/onmob/onmob_back.dmi',
 		)
-
+	item_state_slots = list(
+		slot_back_str = "satchel-hyd",
+		slot_belt_str = "satchel-hyd-belt",
+		)
+//[/INF]
 /obj/item/weapon/storage/backpack/satchel/cap
 	name = "captain's satchel"
 	desc = "An exclusive satchel for officers."
