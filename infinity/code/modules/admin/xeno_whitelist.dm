@@ -4,7 +4,7 @@
 	set category = "Admin"
 
 	if(istype(usr,/mob/new_player))
-		to_chat(usr, "НаноУИ не работают в лобби. Когда нибудь я пойму почему. Пожалуйста зайди в раунд или обзерв. (с) Laxesh")
+		to_chat(usr, "РќР°РЅРѕРЈР РЅРµ СЂР°Р±РѕС‚Р°СЋС‚ РІ Р»РѕР±Р±Рё. РљРѕРіРґР° РЅРёР±СѓРґСЊ СЏ РїРѕР№РјСѓ РїРѕС‡РµРјСѓ. РџРѕР¶Р°Р»СѓР№СЃС‚Р° Р·Р°Р№РґРё РІ СЂР°СѓРЅРґ РёР»Рё РѕР±Р·РµСЂРІ. (СЃ) Laxesh")
 		return
 
 	if(!istype(src,/datum/admins))
@@ -39,6 +39,7 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 //	var/list/xenoname = list()
 	var/list/lowerxenoname = list()
 	var/sortkey = "ckey"
+	var/datum/nanoui/myui	// Shame on me
 
 /datum/nano_module/xenopanel/New()
 	.=..()
@@ -71,6 +72,7 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		ui = new(user, src, ui_key, "xeno_whitelist.tmpl", "XenoWhitelist Panel", 3000, 1000)
 		ui.set_initial_data(data)
 		ui.open()
+	myui = ui
 
 /datum/nano_module/xenopanel/Topic(var/mob/user, href_list, state)
 	..()
@@ -86,7 +88,7 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 			noused = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), "ckey")
 			. = TOPIC_REFRESH
 		else
-			to_chat(user, "Не удалось установить подключение к БД")
+			to_chat(user, "РќРµ СѓРґР°Р»РѕСЃСЊ СѓСЃС‚Р°РЅРѕРІРёС‚СЊ РїРѕРґРєР»СЋС‡РµРЅРёРµ Рє Р‘Р”")
 			. = TOPIC_NOACTION
 
 	else if (href_list["ckey"] && href_list["race"])
@@ -128,9 +130,9 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		var/list/revoke = list()
 		for(var/list/ckey in list)
 			if(ckey["GRANT"] && ckey["GRANT"].len)
-				grant[ckey["ckey"]] = ckey["GRANT"]
+				grant["[ckey["ckey"]]"] += ckey["GRANT"]
 			if(ckey["REVOKE"] && ckey["REVOKE"].len)
-				revoke[ckey["ckey"]] = ckey["REVOKE"]
+				revoke["[ckey["ckey"]]"] += ckey["REVOKE"]
 		var/success
 		if(!alternate)
 			if(config.usealienwhitelistSQL)
@@ -150,7 +152,7 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		. = TOPIC_REFRESH
 
 	else if (href_list["synch"])
-		if(alert("Вы уверены что хотите залить данные из [href_list["synch"] ? "БД в конфиг" : "конфига в БД"]?\nВсе изменения ниже будут отменены!", "Synch", "Да", "Отмена") == "Отмена")
+		if(alert("Р’С‹ СѓРІРµСЂРµРЅС‹ С‡С‚Рѕ С…РѕС‚РёС‚Рµ Р·Р°Р»РёС‚СЊ РґР°РЅРЅС‹Рµ РёР· [href_list["synch"] ? "Р‘Р” РІ РєРѕРЅС„РёРі" : "РєРѕРЅС„РёРіР° РІ Р‘Р”"]?\nР’СЃРµ РёР·РјРµРЅРµРЅРёСЏ РЅРёР¶Рµ Р±СѓРґСѓС‚ РѕС‚РјРµРЅРµРЅС‹!", "Synch", "Р”Р°", "РћС‚РјРµРЅР°") == "РћС‚РјРµРЅР°")
 			return TOPIC_NOACTION
 		/*
 		var/list/list
@@ -173,23 +175,29 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 			if(ckey["REVOKE"] && ckey["REVOKE"].len)
 				revoke[ckey["ckey"]] = ckey["REVOKE"]
 		*/
-		to_world("Когда нибудь ")
+		to_chat(user, "РљРѕРіРґР° РЅРёР±СѓРґСЊ")
 		. = TOPIC_REFRESH
 
 	else if (href_list["refresh"])
-		if(alert("Вы уверены что хотите синхронизироваться с БД | конфиг-файлом?\nВсе изменения ниже будут отменены!", "Refresh", "Да", "Отмена") == "Отмена")
+		if(alert("Р’С‹ СѓРІРµСЂРµРЅС‹ С‡С‚Рѕ С…РѕС‚РёС‚Рµ СЃРёРЅС…СЂРѕРЅРёР·РёСЂРѕРІР°С‚СЊСЃСЏ СЃ Р‘Р” | РєРѕРЅС„РёРі-С„Р°Р№Р»РѕРј?\nР’СЃРµ РёР·РјРµРЅРµРЅРёСЏ РЅРёР¶Рµ Р±СѓРґСѓС‚ РѕС‚РјРµРЅРµРЅС‹!", "Refresh", "Р”Р°", "РћС‚РјРµРЅР°") == "РћС‚РјРµРЅР°")
 			return TOPIC_NOACTION
 		used = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(FALSE), lowerxenoname), "ckey")
 		noused = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), "ckey")
 		. = TOPIC_REFRESH
-	else if(href_list["input"])
+	else if (href_list["input"])
 		var/input = lowertext(sanitize(href_list["input"]))
 		sortkey = input
-		inckeysearch(input)
+		if(!input)
+			return TOPIC_NOACTION
+		if(used)
+			used = inckeysearch(used, input)
+		if(noused)
+			noused = inckeysearch(noused, input)
+		if(myui)
+			myui.update()
 		. = TOPIC_REFRESH
 
-/datum/nano_module/xenopanel/proc/inckeysearch(var/ckey)
-	var/list/list = alternate ? noused : used
+/datum/nano_module/xenopanel/proc/inckeysearch(var/list/list, var/ckey)
 	var/list/newckey = list()
 	var/list/insort = list()
 	var/list/notinsort = list()
@@ -205,47 +213,42 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 			notinsort[++notinsort.len] = check
 
 	if(create)
-		var/list/check
+		var/list/check = list()
 		check["ckey"] = ckey
 		for(var/race in lowerxenoname)
 			check["NO"] += list(race)
 		newckey[++newckey.len] = check
 
-	if(alternate)
-		noused.Cut()
-		noused.Add(newckey)
-		noused.Add(insort)
-		noused.Add(notinsort)
-	else
-		used.Cut()
-		used.Add(newckey)
-		used.Add(insort)
-		used.Add(notinsort)
+	list.Cut()
+	list.Add(newckey)
+	list.Add(insort)
+	list.Add(notinsort)
+	return list
 
 /datum/nano_module/xenopanel/proc/upload_SQL(var/list/grant, var/list/revoke)
 	. = 1
 	if(grant && grant.len)
-		for(var/list/ckey in grant)
+		for(var/ckey in grant)
+			var/list/check = grant[ckey]
 			var/dbckey = sql_sanitize_text("[ckey]")
-			for(var/race in ckey)
+			for(var/race in check)
 				var/sql = "INSERT INTO `whitelist` (ckey,race) VALUES ([lowertext(dbckey)],[lowertext(race)])"
 				establish_db_connection()
 				if(!dbcon.IsConnected())
 					return 0
 				var/DBQuery/query_insert = dbcon.NewQuery(sql)
 				query_insert.Execute()
-				to_world(sql)
 	if(revoke && revoke.len)
-		for(var/list/ckey in revoke)
+		for(var/ckey in revoke)
+			var/list/check = revoke[ckey]
 			var/dbckey = sql_sanitize_text("[ckey]")
-			for(var/race in ckey)
+			for(var/race in check)
 				var/sql = "DELETE FROM `whitelist` WHERE ckey = [lowertext(dbckey)] AND race = [lowertext(race)]"
 				establish_db_connection()
 				if(!dbcon.IsConnected())
 					return 0
 				var/DBQuery/query_insert = dbcon.NewQuery(sql)
 				query_insert.Execute()
-				to_world(sql)
 	if(config.usealienwhitelistSQL)
 		return load_alienwhitelistSQL()
 
@@ -257,23 +260,26 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		return 0
 	var/list/list = splittext(text, "\n")
 	if(revoke && revoke.len)
-		for(var/list/ckey in revoke)
-			for(var/race in ckey)
+		for(var/ckey in revoke)
+			var/list/check = revoke[ckey]
+			for(var/race in check)
 				list -= "[lowertext(ckey)] - [lowertext(race)]"
 	if(grant && grant.len)
-		for(var/list/ckey in grant)
-			for(var/race in ckey)
+		for(var/ckey in grant)
+			var/list/check = grant[ckey]
+			for(var/race in check)
 				list += "[lowertext(ckey)] - [lowertext(race)]"
 	if(!list || !list.len)
 		log_misc("Failed to load config/alienwhitelist.txt")
 		return 0
 	text = jointext(list, "\n")
+	text = copytext(text, 1, length(text))	// Whoops too much newlines
 	fdel("config/alienwhitelist.txt")
 	text2file(text, "config/alienwhitelist.txt")
 	if(!config.usealienwhitelistSQL)
 		return load_alienwhitelist()
 
-//	Если элемент есть в подлисте - вытаскиваем его повыше
+//	Р•СЃР»Рё СЌР»РµРјРµРЅС‚ РµСЃС‚СЊ РІ РїРѕРґР»РёСЃС‚Рµ - РІС‹С‚Р°СЃРєРёРІР°РµРј РµРіРѕ РїРѕРІС‹С€Рµ
 /proc/SortByRace(var/list/L, var/race = "ckey")
 	if(!L)
 		return
@@ -299,7 +305,7 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		L.Add(notinsort)
 	return L
 
-//	Для того чтобы уи мог нормально читать дату, нам нужно наш общий список еще раз переделать. Да - говнокод, но зато какой! ~Laxesh
+//	Р”Р»СЏ С‚РѕРіРѕ С‡С‚РѕР±С‹ СѓРё РјРѕРі РЅРѕСЂРјР°Р»СЊРЅРѕ С‡РёС‚Р°С‚СЊ РґР°С‚Сѓ, РЅР°Рј РЅСѓР¶РЅРѕ РЅР°С€ РѕР±С‰РёР№ СЃРїРёСЃРѕРє РµС‰Рµ СЂР°Р· РїРµСЂРµРґРµР»Р°С‚СЊ. Р”Р° - РіРѕРІРЅРѕРєРѕРґ, РЅРѕ Р·Р°С‚Рѕ РєР°РєРѕР№! ~Laxesh
 /proc/ParseXenoWhitelist(var/list/list, var/list/allspecies)
 	var/list/A = list()
 	if(!list.len)
@@ -321,22 +327,22 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		A += list(unite)
 	return A
 
-//	При отключенном вайтлисте - лист не генерится, а так что генерим его сами.
-// 	Получаем лист в структуре - whitelist["ckey"]=list("race1","race2")
+//	РџСЂРё РѕС‚РєР»СЋС‡РµРЅРЅРѕРј РІР°Р№С‚Р»РёСЃС‚Рµ - Р»РёСЃС‚ РЅРµ РіРµРЅРµСЂРёС‚СЃСЏ, Р° С‚Р°Рє С‡С‚Рѕ РіРµРЅРµСЂРёРј РµРіРѕ СЃР°РјРё.
+// 	РџРѕР»СѓС‡Р°РµРј Р»РёСЃС‚ РІ СЃС‚СЂСѓРєС‚СѓСЂРµ - whitelist["ckey"]=list("race1","race2")
 /proc/GetXenoWhitelist(var/not_used_list = FALSE)
 	var/SQL = config.usealienwhitelistSQL
 	. = list()
-	//Нам нужен действующий ВЛ сервера, и он есть.
+	//РќР°Рј РЅСѓР¶РµРЅ РґРµР№СЃС‚РІСѓСЋС‰РёР№ Р’Р› СЃРµСЂРІРµСЂР°, Рё РѕРЅ РµСЃС‚СЊ.
 	if(!not_used_list && alien_whitelist)
 		. = alien_whitelist
-	//Нам нужен txt ВЛ, и его надо загрузить. (!XOR)
+	//РќР°Рј РЅСѓР¶РµРЅ txt Р’Р›, Рё РµРіРѕ РЅР°РґРѕ Р·Р°РіСЂСѓР·РёС‚СЊ. (!XOR)
 	else if(!(not_used_list ^ SQL) || (!alien_whitelist && !SQL))
 		var/text = file2text("config/alienwhitelist.txt")
 		if (text)
 			. = splittext(text, "\n")
 		else
 			return
-	//Нам нужен SQL ВЛ, и его надо загрузить. (XOR)
+	//РќР°Рј РЅСѓР¶РµРЅ SQL Р’Р›, Рё РµРіРѕ РЅР°РґРѕ Р·Р°РіСЂСѓР·РёС‚СЊ. (XOR)
 	else if((not_used_list ^ SQL) || (!alien_whitelist && SQL))
 		establish_db_connection()
 		if(!dbcon.IsConnected())
@@ -353,11 +359,11 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 					A.Add(row["race"])
 				else
 					.[row["ckey"]] = list(row["race"])
-	//Неизвестное состояние
+	//РќРµРёР·РІРµСЃС‚РЅРѕРµ СЃРѕСЃС‚РѕСЏРЅРёРµ
 	else
 		return
 
-	//Но при SQL лист по другому формируется. Приводим к общей структуре.
+	//РќРѕ РїСЂРё SQL Р»РёСЃС‚ РїРѕ РґСЂСѓРіРѕРјСѓ С„РѕСЂРјРёСЂСѓРµС‚СЃСЏ. РџСЂРёРІРѕРґРёРј Рє РѕР±С‰РµР№ СЃС‚СЂСѓРєС‚СѓСЂРµ.
 	if(SQL ^ not_used_list)
 		return
 	var/list/secondary = list()
