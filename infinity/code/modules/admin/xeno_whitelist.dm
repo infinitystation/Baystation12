@@ -252,13 +252,16 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 	if(config.usealienwhitelistSQL)
 		return load_alienwhitelistSQL()
 
-/datum/nano_module/xenopanel/proc/upload_CONFIG(var/list/grant, var/list/revoke)
+/datum/nano_module/xenopanel/proc/upload_CONFIG(var/list/grant, var/list/revoke, var/sort = FALSE)
 	. = 1
 	var/text = file2text("config/alienwhitelist.txt")
 	if (!text)
 		log_misc("Failed to load config/alienwhitelist.txt")
 		return 0
 	var/list/list = splittext(text, "\n")
+	// Empty line in the end
+	if(list[list.len] == "")
+		list -= list[list.len]
 	if(revoke && revoke.len)
 		for(var/ckey in revoke)
 			var/list/check = revoke[ckey]
@@ -272,8 +275,34 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 	if(!list || !list.len)
 		log_misc("Failed to load config/alienwhitelist.txt")
 		return 0
+	// Not working
+	if(sort)
+		var/ckeys = list()
+		var/list/racecheck = list()
+		for(var/check in list)
+			var/list/unite = splittext(check, " - ")
+			var/list/a = list()
+			a["ckey"] = unite[1]
+			a["race"] = unite[2]
+			ckeys += list(a)
+			if(!(unite[2] in racecheck))
+				racecheck[++racecheck.len] = unite[2]
+		ckeys = sortByKey(ckeys, "race")
+		var/list/result = list()
+		for(var/check in racecheck)
+			for(var/chekycheck in ckeys)
+				var/list/local = chekycheck
+				if(local["race"] == check)
+					result += list(chekycheck)
+		list.Cut()
+		for(var/ChEcK in result)
+			var/list/key = ChEcK
+			var/CKEY = key["ckey"]
+			var/RACE = key["race"]
+			var/unite = "[CKEY] - [RACE]"
+			list += unite
+
 	text = jointext(list, "\n")
-	text = copytext(text, 1, length(text))	// Whoops too much newlines
 	fdel("config/alienwhitelist.txt")
 	text2file(text, "config/alienwhitelist.txt")
 	if(!config.usealienwhitelistSQL)
