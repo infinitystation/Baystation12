@@ -129,10 +129,12 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		var/list/grant = list()
 		var/list/revoke = list()
 		for(var/list/ckey in list)
-			if(ckey["GRANT"] && ckey["GRANT"].len)
-				grant["[ckey["ckey"]]"] += ckey["GRANT"]
-			if(ckey["REVOKE"] && ckey["REVOKE"].len)
-				revoke["[ckey["ckey"]]"] += ckey["REVOKE"]
+			var/list/local = ckey["GRANT"]
+			if(local && local.len)
+				grant["[ckey["ckey"]]"] += local
+			local = ckey["REVOKE"]
+			if(local && local.len)
+				revoke["[ckey["ckey"]]"] += local
 		var/success
 		if(!alternate)
 			if(config.usealienwhitelistSQL)
@@ -152,30 +154,42 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		. = TOPIC_REFRESH
 
 	else if (href_list["synch"])
-		if(alert("Вы уверены что хотите залить данные из [href_list["synch"] ? "БД в конфиг" : "конфига в БД"]?\nВсе изменения ниже будут отменены!", "Synch", "Да", "Отмена") == "Отмена")
+		if(href_list["synch"] == "CDB")
+			if(alert("Вы уверены что хотите залить данные из конфига в БД?\nВсе изменения ниже будут отменены!", "Synch", "Да", "Отмена") == "Отмена")
+				return TOPIC_NOACTION
+		else if(href_list["synch"] == "DBC")
+			if(alert("Вы уверены что хотите залить данные из БД в конфиг?\nВсе изменения ниже будут отменены!", "Synch", "Да", "Отмена") == "Отмена")
+				return TOPIC_NOACTION
+		else
+			to_chat(user, "Я не поняла что и куда синхронизировать.")
 			return TOPIC_NOACTION
-		/*
 		var/list/list
 		if(config.usealienwhitelistSQL)
-			if(href_list["synch"])
+			if(href_list["synch"] == "CDB")
 				list = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), "ckey")
 			else
 				list = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(FALSE), lowerxenoname), "ckey")
 		else
-			if(href_list["synch"])
+			if(href_list["synch"] == "CDB")
 				list = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(FALSE), lowerxenoname), "ckey")
 			else
 				list = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), "ckey")
 
 		var/list/grant = list()
-		var/list/revoke = list()
 		for(var/list/ckey in list)
-			if(ckey["GRANT"] && ckey["GRANT"].len)
-				grant[ckey["ckey"]] = ckey["GRANT"]
-			if(ckey["REVOKE"] && ckey["REVOKE"].len)
-				revoke[ckey["ckey"]] = ckey["REVOKE"]
-		*/
-		to_chat(user, "Когда нибудь")
+			var/list/local = ckey["YES"]
+			if(local && local.len)
+				grant[ckey["ckey"]] = local
+		if(!grant || !grant.len)
+			to_chat(user, "Нечего переносить.")
+			return TOPIC_NOACTION
+		var/success
+		if(href_list["synch"] == "CDB")
+			success = upload_SQL(grant, null)
+		else
+			success = upload_CONFIG(grant, null)
+		if(!success)
+			to_chat(user, "Загрузка неудалась.")
 		. = TOPIC_REFRESH
 
 	else if (href_list["refresh"])

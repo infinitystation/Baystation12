@@ -33,9 +33,9 @@
 	<tr>
 	{{if data.debug}}
 		<th>
-			{{:helper.link('СИНХРОНИЗИРОВАТЬ КОНФИГ --> БД', 'arrowthickstop-1-n', {'synch': 1}, null, 'redButton')}}
+			{{:helper.link('СИНХРОНИЗИРОВАТЬ КОНФИГ --> БД', 'arrowthickstop-1-n', {'synch': 'CDB'}, null, 'redButton')}}
 		<th>
-			{{:helper.link('СИНХРОНИЗИРОВАТЬ БД --> КОНФИГ', 'arrowthickstop-1-s', {'synch': 2}, null, 'redButton')}}
+			{{:helper.link('СИНХРОНИЗИРОВАТЬ БД --> КОНФИГ', 'arrowthickstop-1-s', {'synch': 'DBC'}, null, 'redButton')}}
 	{{/if}}
 	<tr>
 	{{if data.SQL == -1}}
