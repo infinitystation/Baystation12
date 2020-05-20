@@ -231,9 +231,9 @@ redknighthero - adherent
 coldmantis13 - adherent
 forrya - adherent
 5au5age - adherent
-coldmantis13 - Kharmaan Gyne
-forrya - Kharmaan Gyne
-s1334 - Kharmaan Gyne
-wheatley2013 - Kharmaan Gyne
-dagger17 - Kharmaan Gyne
-cre77 - Kharmaan Gyne
+coldmantis13 - kharmaan gyne
+forrya - kharmaan gyne
+s1334 - kharmaan gyne
+wheatley2013 - kharmaan gyne
+dagger17 - kharmaan gyne
+cre77 - kharmaan gyne
