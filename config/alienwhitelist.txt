@@ -218,10 +218,11 @@ diesiege - tajara
 solartwin - tajara
 arbuzpersikov - tajara
 adro244 - tajara
+krisprs - tajara
 wheatley2013 - adherent
 sosiskoed - adherent
-ambrobene - adherent
 gumboldty - adherent
+vsrneji - adherent
 sarumyn - adherent
 kareta - adherent
 s1334 - adherent
@@ -237,3 +238,4 @@ s1334 - kharmaan gyne
 wheatley2013 - kharmaan gyne
 dagger17 - kharmaan gyne
 cre77 - kharmaan gyne
+adro244 - kharmaan gyne
