@@ -16,11 +16,10 @@
 	desc = "A smaller segment of a clusterbang. Better run."
 	name = "clusterbang segment"
 	icon = 'icons/obj/grenade.dmi'
-	icon_state = "clusterbang_segment"
+	icon_state = "clusterbang_segment_active"
 	det_time = 20
 
 /obj/item/weapon/grenade/flashbang/clusterbang/segment/Initialize()
-	icon_state = "clusterbang_segment_active"
 	var/throwdir = rand(1, 8)
 	throw_at(get_edge_target_turf(src, throwdir),rand(1, 4), 0)
 	activate()
