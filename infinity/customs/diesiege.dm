@@ -57,7 +57,7 @@
 	desc = "A utility bag. Simple as that"
 
 /obj/item/weapon/clothingbag/diesiegeset/New()
-	..()
+	. = ..()
 	new /obj/item/clothing/mask/gas/siegemask(src)
 	new /obj/item/clothing/under/thermal/siegeuni(src)
 	new /obj/item/weapon/storage/backpack/siegepack(src)
