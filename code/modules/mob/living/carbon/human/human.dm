@@ -603,6 +603,19 @@
 			total_protection = I.get_total_protection(flash_protection)
 	else // They can't be flashed if they don't have eyes.
 		return FLASH_PROTECTION_MAJOR
+
+	//[INF]
+
+	if(get_organ(BP_HEAD) && locate(/obj/item/bionics/lace) in get_organ(BP_HEAD))
+		var/obj/item/bionics/lace/lace = locate() in get_organ(BP_HEAD)
+		for(var/software in lace.software)
+			if(istype(software, /datum/lacesoft/visual/flashprot))
+				var/datum/lacesoft/visual/flashprot/flashprot = software
+				if(flashprot.active)
+					return FLASH_PROTECTION_MAJOR
+
+	//[/INF]
+
 	return total_protection
 
 /mob/living/carbon/human/flash_eyes(var/intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /obj/screen/fullscreen/flash)

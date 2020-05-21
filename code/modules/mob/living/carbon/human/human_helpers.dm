@@ -51,6 +51,17 @@
 	equipment_darkness_modifier = 0
 	equipment_overlays.Cut()
 
+	//[INF]
+
+	if(get_organ(BP_HEAD) && locate(/obj/item/bionics/lace) in get_organ(BP_HEAD))
+		var/obj/item/bionics/lace/lace = locate() in get_organ(BP_HEAD)
+		for(var/software in lace.software)
+			if(istype(software, /datum/lacesoft))
+				var/datum/lacesoft/lacesoft = software
+				lacesoft.process_hud(src)
+
+	//[/INF]
+
 	if (!client || client.eye == src || client.eye == src.loc) // !client is so the unit tests function
 		if(istype(src.head, /obj/item/clothing/head))
 			add_clothing_protection(head)
