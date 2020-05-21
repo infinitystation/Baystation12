@@ -45,7 +45,7 @@
 /obj/item/weapon/storage/backpack/holding
 	name = "bag of holding"
 	desc = "A backpack that opens into a localized pocket of Blue Space.\
-	Saddly, the hole for items is pretty small." //inf
+	Sadly, the hole for items is pretty small." //inf
 	origin_tech = list(TECH_BLUESPACE = 4)
 	icon_state = "holdingpack"
 	max_w_class = ITEM_SIZE_NORMAL
@@ -256,7 +256,7 @@
 	name = "satchel"
 	desc = "A trendy looking satchel."
 	icon_state = "satchel-norm"
-	slot_flags = SLOT_BELT | SLOT_BACK //INF WAS slot_flags = SLOT_BACK
+	slot_flags = SLOT_BACK | SLOT_BELT //INF WAS slot_flags = SLOT_BACK
 //[INF]
 	max_storage_space = 20
 	item_icons = list(
@@ -267,7 +267,6 @@
 		slot_belt_str = "satchel-norm-belt",
 		slot_back_str = "satchel-norm",
 		)
-
 //[/INF]
 /obj/item/weapon/storage/backpack/satchel/grey
 	name = "grey satchel"
@@ -279,6 +278,7 @@
 	name = "brown leather satchel"
 	desc = "A very fancy satchel made of some kind of leather."
 	icon_state = "satchel"
+	slot_flags = SLOT_BELT | SLOT_BACK //INF
 	color = "#3d2711"
 
 /obj/item/weapon/storage/backpack/satchel/leather/khaki
@@ -306,7 +306,6 @@
 	desc = "A neat little folding clasp pocketbook with a shoulder sling."
 	icon_state = "pocketbook"
 	w_class = ITEM_SIZE_HUGE // to avoid recursive backpacks
-	slot_flags = SLOT_BELT | SLOT_BACK //INF WAS slot_flags = SLOT_BACK
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 	color = "#212121"
@@ -452,7 +451,6 @@
 	desc = "A very slim satchel that can easily fit into tight spaces."
 	icon_state = "satchel-flat"
 	item_state = "satchel-norm"
-	slot_flags = SLOT_BACK //INF
 	level = 1
 	w_class = ITEM_SIZE_NORMAL //Can fit in backpacks itself.
 	storage_slots = 5
