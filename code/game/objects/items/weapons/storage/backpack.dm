@@ -402,8 +402,8 @@
 		slot_back_str = 'infinity/icons/mob/onmob/onmob_back.dmi',
 		)
 	item_state_slots = list(
-		slot_back_str = "satchel-tox",
-		slot_belt_str = "satchel-tox-belt",
+		slot_back_str = "satchel-nat",
+		slot_belt_str = "satchel-nat-belt",
 		)
 //[/INF]
 /obj/item/weapon/storage/backpack/satchel/sec
