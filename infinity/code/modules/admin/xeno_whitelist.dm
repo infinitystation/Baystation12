@@ -264,7 +264,7 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 				var/DBQuery/query_insert = dbcon.NewQuery(sql)
 				query_insert.Execute()
 	user = user.get_client()
-	SSwebhooks.send(WEBHOOK_XENO_WHITELIST, list("ckey" = user.ckey, "grant" = grant, "revoke" = revoke, "type" = "базу данных")
+	SSwebhooks.send(WEBHOOK_XENO_WHITELIST, list("ckey" = user.ckey, "grant" = grant, "revoke" = revoke, "type" = "базу данных"))
 	if(config.usealienwhitelistSQL)
 		return load_alienwhitelistSQL()
 
@@ -318,7 +318,7 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 			var/unite = "[CKEY] - [RACE]"
 			list += unite
 	user = user.get_client()
-	SSwebhooks.send(WEBHOOK_XENO_WHITELIST, list("ckey" = user.ckey, "grant" = grant, "revoke" = revoke, "type" = "конфиг-файл")
+	SSwebhooks.send(WEBHOOK_XENO_WHITELIST, list("ckey" = user.ckey, "grant" = grant, "revoke" = revoke, "type" = "конфиг-файл"))
 	text = jointext(list, "\n")
 	fdel("config/alienwhitelist.txt")
 	text2file(text, "config/alienwhitelist.txt")
