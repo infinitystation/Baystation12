@@ -402,8 +402,8 @@
 		slot_back_str = 'infinity/icons/mob/onmob/onmob_back.dmi',
 		)
 	item_state_slots = list(
-		slot_back_str = "satchel-nat",
-		slot_belt_str = "satchel-nat-belt",
+		slot_back_str = "satchel-nut",
+		slot_belt_str = "satchel-nut-belt",
 		)
 //[/INF]
 /obj/item/weapon/storage/backpack/satchel/sec
@@ -452,6 +452,7 @@
 	desc = "A very slim satchel that can easily fit into tight spaces."
 	icon_state = "satchel-flat"
 	item_state = "satchel-norm"
+	slot_flags = SLOT_BACK //INF
 	level = 1
 	w_class = ITEM_SIZE_NORMAL //Can fit in backpacks itself.
 	storage_slots = 5
