@@ -138,14 +138,14 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		var/success
 		if(!alternate)
 			if(config.usealienwhitelistSQL)
-				success = upload_SQL(grant, revoke)
+				success = upload_SQL(user, grant, revoke)
 			else
-				success = upload_CONFIG(grant,revoke)
+				success = upload_CONFIG(user, grant,revoke)
 		else
 			if(!config.usealienwhitelistSQL)
-				success = upload_SQL(grant, revoke)
+				success = upload_SQL(user, grant, revoke)
 			else
-				success = upload_CONFIG(grant,revoke)
+				success = upload_CONFIG(user, grant,revoke)
 		if(!success)
 			log_admin("Error: Alien Whitelist Panel - Unable to override WL source")
 			message_staff("Error: Alien Whitelist Panel - Unable to override WL source")
@@ -239,7 +239,7 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 	list.Add(notinsort)
 	return list
 
-/datum/nano_module/xenopanel/proc/upload_SQL(var/list/grant, var/list/revoke)
+/datum/nano_module/xenopanel/proc/upload_SQL(var/client/user, var/list/grant, var/list/revoke)
 	. = 1
 	if(grant && grant.len)
 		for(var/ckey in grant)
@@ -263,10 +263,12 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 					return 0
 				var/DBQuery/query_insert = dbcon.NewQuery(sql)
 				query_insert.Execute()
+	user = user.get_client()
+	SSwebhooks.send(WEBHOOK_XENO_WHITELIST, list("ckey" = user.ckey, "grant" = grant, "revoke" = revoke, "type" = "базу данных")
 	if(config.usealienwhitelistSQL)
 		return load_alienwhitelistSQL()
 
-/datum/nano_module/xenopanel/proc/upload_CONFIG(var/list/grant, var/list/revoke, var/sort = FALSE)
+/datum/nano_module/xenopanel/proc/upload_CONFIG(var/client/user, var/list/grant, var/list/revoke, var/sort = FALSE)
 	. = 1
 	var/text = file2text("config/alienwhitelist.txt")
 	if (!text)
@@ -315,7 +317,8 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 			var/RACE = key["race"]
 			var/unite = "[CKEY] - [RACE]"
 			list += unite
-
+	user = user.get_client()
+	SSwebhooks.send(WEBHOOK_XENO_WHITELIST, list("ckey" = user.ckey, "grant" = grant, "revoke" = revoke, "type" = "конфиг-файл")
 	text = jointext(list, "\n")
 	fdel("config/alienwhitelist.txt")
 	text2file(text, "config/alienwhitelist.txt")
