@@ -111,7 +111,7 @@ GLOBAL_VAR(spawntypes)
 					msg += SPAN_WARNING("В ушках звон, в голове белый шум... ")
 					victim.hallucination(100, 120)
 				if(prob(5)) //side medical effect. Stealth
-					victim.add_side_effect(pick(all_medical_side_effects))
+					victim.add_side_effect(pick(GLOB.all_medical_side_effects))
 				if(prob(5)) //cryo malfunction
 					msg += SPAN_DANGER("Вы чувствуете ужасающий холод во всём теле! Крио всё ещё охлаждает! ")
 					victim.bodytemperature = victim.species.cold_level_3

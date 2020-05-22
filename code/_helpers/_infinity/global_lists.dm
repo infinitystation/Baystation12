@@ -1,1 +1,1 @@
-var/global/list/all_medical_side_effects = list() //by names
+GLOBAL_LIST_EMPTY(all_medical_side_effects) //by names

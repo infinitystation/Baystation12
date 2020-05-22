@@ -156,7 +156,7 @@ var/global/list/string_slot_flags = list(
 	paths = subtypesof(/datum/medical_effect)
 	for(var/T in paths)
 		var/datum/medical_effect/M = new T
-		all_medical_side_effects += M.name
+		GLOB.all_medical_side_effects += M.name
 //[/INF]
 	return 1
 
