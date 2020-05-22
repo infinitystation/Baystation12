@@ -44,7 +44,7 @@
 		A[ckey] = B
 	revoke = A
 
-	var/list/unite = grant += revoke
+	var/list/unite = grant + revoke
 	if(!unite || !unite.len)
 		.["content"] = "Сюда пришло изменение вайтлиста, но мы потеряли список."
 		return

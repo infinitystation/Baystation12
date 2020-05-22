@@ -4,7 +4,7 @@
 	set category = "Admin"
 
 	if(istype(usr,/mob/new_player))
-		to_chat(usr, "НаноУИ не работают в лобби. Когда нибудь я пойму почему. Пожалуйста зайди в раунд или обзерв. (с) Laxesh")
+		to_chat(usr, "НаноУИ не работают в лобби. Когда нибудь я пойму почему. Пожалуйста зайди в раунд или обзерв.\n(с) Laxesh")
 		return
 
 	if(!istype(src,/datum/admins))
@@ -74,7 +74,7 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		ui.open()
 	myui = ui
 
-/datum/nano_module/xenopanel/Topic(var/mob/user, href_list, state)
+/datum/nano_module/xenopanel/Topic(var/href, href_list, state)
 	..()
 
 	if (href_list["mode"])
@@ -88,7 +88,7 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 			noused = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), "ckey")
 			. = TOPIC_REFRESH
 		else
-			to_chat(user, "Не удалось установить подключение к БД")
+			to_chat(usr, "Не удалось установить подключение к БД")
 			. = TOPIC_NOACTION
 
 	else if (href_list["ckey"] && href_list["race"])
@@ -138,14 +138,14 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		var/success
 		if(!alternate)
 			if(config.usealienwhitelistSQL)
-				success = upload_SQL(user, grant, revoke)
+				success = upload_SQL(usr, grant, revoke)
 			else
-				success = upload_CONFIG(user, grant,revoke)
+				success = upload_CONFIG(usr, grant,revoke)
 		else
 			if(!config.usealienwhitelistSQL)
-				success = upload_SQL(user, grant, revoke)
+				success = upload_SQL(usr, grant, revoke)
 			else
-				success = upload_CONFIG(user, grant,revoke)
+				success = upload_CONFIG(usr, grant,revoke)
 		if(!success)
 			log_admin("Error: Alien Whitelist Panel - Unable to override WL source")
 			message_staff("Error: Alien Whitelist Panel - Unable to override WL source")
@@ -161,7 +161,7 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 			if(alert("Вы уверены что хотите залить данные из БД в конфиг?\nВсе изменения ниже будут отменены!", "Synch", "Да", "Отмена") == "Отмена")
 				return TOPIC_NOACTION
 		else
-			to_chat(user, "Я не поняла что и куда синхронизировать.")
+			to_chat(usr, "Я не поняла что и куда синхронизировать.")
 			return TOPIC_NOACTION
 		var/list/list
 		if(config.usealienwhitelistSQL)
@@ -181,7 +181,7 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 			if(local && local.len)
 				grant[ckey["ckey"]] = local
 		if(!grant || !grant.len)
-			to_chat(user, "Нечего переносить.")
+			to_chat(usr, "Нечего переносить.")
 			return TOPIC_NOACTION
 		var/success
 		if(href_list["synch"] == "CDB")
@@ -189,7 +189,7 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		else
 			success = upload_CONFIG(grant, null)
 		if(!success)
-			to_chat(user, "Загрузка неудалась.")
+			to_chat(usr, "Загрузка неудалась.")
 		. = TOPIC_REFRESH
 
 	else if (href_list["refresh"])
@@ -268,7 +268,7 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 	if(config.usealienwhitelistSQL)
 		return load_alienwhitelistSQL()
 
-/datum/nano_module/xenopanel/proc/upload_CONFIG(var/client/user, var/list/grant, var/list/revoke, var/sort = FALSE)
+/datum/nano_module/xenopanel/proc/upload_CONFIG(var/client/user, var/list/grant, var/list/revoke, var/sort = TRUE)
 	. = 1
 	var/text = file2text("config/alienwhitelist.txt")
 	if (!text)
@@ -303,13 +303,18 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 			ckeys += list(a)
 			if(!(unite[2] in racecheck))
 				racecheck[++racecheck.len] = unite[2]
-		ckeys = sortByKey(ckeys, "race")
+		racecheck = sortList(racecheck)
 		var/list/result = list()
 		for(var/check in racecheck)
+			var/list/ckeys1 = list()
 			for(var/chekycheck in ckeys)
 				var/list/local = chekycheck
 				if(local["race"] == check)
-					result += list(chekycheck)
+					ckeys1 += list(chekycheck)
+			ckeys1 = sortByKey(ckeys1, "ckey")
+			result += ckeys1
+			ckeys1.Cut()
+
 		list.Cut()
 		for(var/ChEcK in result)
 			var/list/key = ChEcK
