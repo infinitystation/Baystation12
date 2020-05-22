@@ -43,9 +43,8 @@
 		CtrlClickOn(A)
 		return
 
-	if(!locate(/obj/effect/biomass) in get_turf(A))
-		expandTo(get_turf(A))
-		next_click = world.time + 3
+	expandTo(get_turf(A))
+	next_click = world.time + 3
 
 /mob/living/blobHolder/CtrlAltClickOn(var/atom/A)
 	if(A.AICtrlAltClick(src))

@@ -85,7 +85,7 @@
 	update_icon()
 
 /obj/effect/biomass/proc/expand(var/turf/T, var/manual = 0)
-	if(manual)
+	if(manual && !locate(/obj/effect/biomass) in get_turf(T))
 		if(core.resources >= 4)
 			core.resources -= 4
 		else
@@ -158,6 +158,12 @@
 			attack_living(L)
 			return
 
+	if(!pulsing)
+		return
+
+	if(locate(/obj/effect/biomass) in get_turf(T))
+		return
+
 	var/obj/effect/biomass/new_blob = new(T)
 	new_blob.color = color
 	new_blob.core = core
@@ -180,7 +186,7 @@
 	sleep(2)
 	if(!pulsing)
 		core.resources += core.resource_gain
-		return
+
 	var/pushDir = pick(dirs)
 	var/turf/T = get_step(src, pushDir)
 	var/obj/effect/biomass/B = (locate() in T)
@@ -290,14 +296,16 @@
 	health -= damage
 	playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 	if(health < 0)
+		visible_message(SPAN_DANGER("[src] blows up in splat of blob!"))
 		core.strain.killed(src)
 		if(strain.can_core == 1)
 			var/obj/item/blob_core/blob_core = new(get_turf(src))
 			blob_core.color = color
 			blob_core.strain = strain
-		blobHolder.eye.release(blobHolder)
-		qdel(blobHolder.eye)
-		qdel(blobHolder)
+		if(blobHolder)
+			blobHolder.eye.release(blobHolder)
+			qdel(blobHolder.eye)
+			qdel(blobHolder)
 		qdel(src)
 	else
 		update_icon()
