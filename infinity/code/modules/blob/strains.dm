@@ -9,6 +9,7 @@
 	var/laser_resist = 0.5
 	var/bomb_resist = 0.75
 	var/pulsing = 1
+	var/can_core = 0
 
 	var/resource_gain = 1
 
@@ -30,6 +31,9 @@
 /datum/blob_strain/proc/spore_death(var/mob/living/simple_animal/hostile/blobspore/spore)
 	return
 
+/datum/blob_strain/proc/core_squash(var/obj/item/blob_core/core, var/mob/living/user)
+	return
+
 
 
 /datum/blob_strain/blazing
@@ -40,7 +44,7 @@
 	tendril_damages = list(BRUTE = 5, BURN = 20)
 	brute_resist = 1
 	fire_resist = 0.1
-
+	can_core = 1
 	resource_gain = 1
 
 /datum/blob_strain/blazing/damaged(var/obj/effect/biomass/blob, var/mob/living/attacker, var/shot = 0)
@@ -51,6 +55,11 @@
 	attacker.IgniteMob()
 	attacker.emote("scream")
 
+/datum/blob_strain/blazing/core_squash(var/obj/item/blob_core/core, var/mob/living/user)
+	user.fire_stacks += 3
+	user.IgniteMob()
+	user.emote("scream")
+
 
 
 /datum/blob_strain/cryo
@@ -59,7 +68,7 @@
 	blob_color = "#8BA6E9"
 	tendril_damage_types = list(BRUTE)
 	tendril_damages = list(BRUTE = 10)
-
+	can_core = 1
 	resource_gain = 1
 
 /datum/blob_strain/cryo/damaged(var/obj/effect/biomass/blob, var/mob/living/attacker, var/shot = 0)
@@ -70,6 +79,11 @@
 		attacker.reagents.add_reagent(/datum/reagent/frostoil, 5)
 		attacker.reagents.add_reagent(/datum/reagent/drink/ice, 5)
 
+/datum/blob_strain/cryo/core_squash(var/obj/item/blob_core/core, var/mob/living/user)
+	if(user.reagents)
+		user.reagents.add_reagent(/datum/reagent/frostoil, 10)
+		user.reagents.add_reagent(/datum/reagent/clonexadone, 15)
+
 
 
 /datum/blob_strain/debris
@@ -78,7 +92,7 @@
 	blob_color = "#8B1000"
 	tendril_damage_types = list(BRUTE)
 	tendril_damages = list(BRUTE = 5)
-
+	can_core = 1
 	resource_gain = 1
 
 /datum/blob_strain/debris/expanded(var/obj/effect/biomass/blob, var/obj/effect/biomass/new_blob)
@@ -103,6 +117,17 @@
 		item.forceMove(get_turf(blob))
 		item.throw_at(get_edge_target_turf(item, rand(1, 8)),3,3)
 
+/datum/blob_strain/debris/core_squash(var/obj/item/blob_core/core, var/mob/living/user)
+	if(locate(/obj/item) in core)
+		var/obj/item/item = pick(locate() in core)
+		core.visible_message(SPAN_WARNING("[core] starts shaking and launches [item]!"))
+		item.forceMove(get_turf(core))
+		item.throw_at(get_edge_target_turf(item, rand(1, 8)),3,3)
+	else
+		var/obj/item/item = pick(locate() in get_turf(core))
+		core.visible_message(SPAN_WARNING("[core] suddenly throws a bunch of tendrils and grabs [item] from the ground!"))
+
+
 
 /datum/blob_strain/emp
 	name = "Electromagnetic Web"
@@ -112,7 +137,7 @@
 	tendril_damages = list(BRUTE = 5, BURN = 25)
 	brute_resist = 1
 	fire_resist = 0.75
-
+	can_core = 1
 	resource_gain = 1
 
 /datum/blob_strain/emp/damaged(var/obj/effect/biomass/blob, var/mob/living/attacker, var/shot = 0)
@@ -129,6 +154,9 @@
 
 /datum/blob_strain/emp/killed(var/obj/effect/biomass/blob)
 	empulse(get_turf(blob), 1, 2)
+
+/datum/blob_strain/emp/core_squash(var/obj/item/blob_core/core, var/mob/living/user)
+	empulse(get_turf(core), 1, 2)
 
 
 
@@ -155,7 +183,7 @@
 	tendril_damages = list(BRUTE = 15)
 	fire_resist = 1
 	bomb_resist = 0
-
+	can_core = 1
 	resource_gain = 1
 
 /datum/blob_strain/explosive/attack(var/obj/effect/biomass/blob, var/mob/living/victim)
@@ -165,7 +193,8 @@
 	if(prob(10))
 		explosion(victim, -1, -1, 0, 1)
 
-
+/datum/blob_strain/explosive/core_squash(var/obj/item/blob_core/core, var/mob/living/user)
+	explosion(user, -1, -1, 0, 1)
 
 
 /datum/blob_strain/fibers
@@ -193,7 +222,7 @@
 	blob_color = "#AAAABB"
 	tendril_damage_types = list(BRUTE, OXY)
 	tendril_damages = list(BRUTE = 15, OXY = 10)
-
+	can_core = 1
 	resource_gain = 1
 
 /datum/blob_strain/slime/damaged(var/obj/effect/biomass/blob, var/mob/living/attacker, var/shot = 0)
@@ -208,6 +237,11 @@
 			T.wet_floor()
 		for(var/atom/movable/AM in T)
 			AM.water_act(2)
+
+/datum/blob_strain/slime/core_squash(var/obj/item/blob_core/core, var/mob/living/user)
+	var/obj/effect/biomass/blob = new(get_turf(core))
+	wet_surroundings(blob, 100)
+	qdel(blob)
 
 
 
@@ -312,16 +346,19 @@
 
 /datum/blob_strain/fungal
 	name = "Fungal Bloom"
-
+	can_core = 1
 	blob_color = "#b57d7d"
 	brute_resist = 0.4
 	tendril_damage_types = list(BRUTE, TOX)
 	tendril_damages = list(BRUTE = 10, TOX = 10)
 
 /datum/blob_strain/fungal/spore_death(var/mob/living/simple_animal/hostile/blobspore/spore)
-	if(prob(10))
+	if(prob(10) && !locate(/obj/effect/biomass) in get_turf(spore))
 		var/obj/effect/biomass/node/node = new(get_turf(spore))
 		node.core = spore.core
+
+/datum/blob_strain/fungal/core_squash(var/obj/item/blob_core/core, var/mob/living/user)
+	new /mob/living/simple_animal/hostile/blobspore(get_turf(core))
 
 
 /datum/blob_strain/macrophage
@@ -348,6 +385,7 @@
 	var/obj/effect/biomass/other = locate() in oview(2, blob)
 	if(other && other.core)
 		other.core.resources += rand(1, 3)
+
 
 
 /datum/blob_strain/volatile

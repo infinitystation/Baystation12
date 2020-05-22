@@ -291,6 +291,10 @@
 	playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 	if(health < 0)
 		core.strain.killed(src)
+		if(strain.can_core == 1)
+			var/obj/item/blob_core/blob_core = new(get_turf(src))
+			blob_core.color = color
+			blob_core.strain = strain
 		blobHolder.eye.release(blobHolder)
 		qdel(blobHolder.eye)
 		qdel(blobHolder)

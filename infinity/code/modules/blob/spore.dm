@@ -25,7 +25,14 @@
 
 /mob/living/simple_animal/hostile/blobspore/death()
 	. = ..()
-	core.strain.spore_death(src)
+	if(core)
+		core.strain.spore_death(src)
+	var/datum/effect/effect/system/smoke_spread/bad/BS = new
+	var/turf/T = get_turf(src)
+	BS.attach(T)
+	BS.set_up(3, 0, T)
+	playsound(T, 'sound/effects/smoke.ogg', 50, 1, -3)
+	BS.start()
 	qdel(src)
 
 
@@ -34,7 +41,7 @@
 		infested.forceMove(get_turf(src))
 		visible_message("<span class='warning'>\The [infested] falls to the ground as the blob spore bursts.</span>")
 		infested = null
-	return ..()
+	. = ..()
 
 /mob/living/simple_animal/hostile/blobspore/infesting
 	name = "infesting blob spore"
@@ -94,12 +101,12 @@ mob/living/simple_animal/hostile/blobspore/Life()
 	melee_damage_lower += 8  // 10 total.
 	melee_damage_upper += 11 // 15 total.
 	emote_see = list("shambles around", "twitches", "stares")
-	attacktext = list("claws")
+	attacktext = "clawed"
 
 	H.forceMove(src)
 	infested = H
 
-	update_icons()
+	update_icon()
 	visible_message("<span class='warning'>The corpse of [H.name] suddenly rises!</span>")
 
 /mob/living/simple_animal/hostile/blobspore/GetIdCard()

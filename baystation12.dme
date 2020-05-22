@@ -3421,6 +3421,7 @@
 #include "infinity\code\modules\blob\abilities.dm"
 #include "infinity\code\modules\blob\blob.dm"
 #include "infinity\code\modules\blob\blobbernaut.dm"
+#include "infinity\code\modules\blob\blobcore.dm"
 #include "infinity\code\modules\blob\eye.dm"
 #include "infinity\code\modules\blob\spore.dm"
 #include "infinity\code\modules\blob\strains.dm"
