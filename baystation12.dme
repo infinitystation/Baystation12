@@ -139,6 +139,7 @@
 #include "code\_helpers\vector.dm"
 #include "code\_helpers\washing.dm"
 #include "code\_helpers\_infinity\game.dm"
+#include "code\_helpers\_infinity\global_lists.dm"
 #include "code\_helpers\_infinity\text.dm"
 #include "code\_helpers\_infinity\view.dm"
 #include "code\_helpers\sorts\__main.dm"
