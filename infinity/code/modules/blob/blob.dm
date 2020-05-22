@@ -173,6 +173,9 @@
 	for(var/blob_damage in tendril_damage_types)
 		L.apply_damage(tendril_damages[blob_damage], blob_damage, used_weapon = "blob tendril")
 
+/obj/effect/biomass/emp_act(var/severity)
+	core.strain.damaged(src, severity)
+
 /obj/effect/biomass/proc/pulse(var/forceLeft, var/list/dirs)
 	sleep(2)
 	if(!pulsing)
@@ -384,7 +387,7 @@
 /obj/effect/biomass/spore/pulse()
 	progress++
 	if(progress == 30)
-		var/mob/living/simple_animal/hostile/blobspore/spore = new(get_turf(src))
+		var/mob/living/simple_animal/hostile/blobspore/infesting/spore = new(get_turf(src))
 		spore.color = color
 		progress = 0
 	. = ..()

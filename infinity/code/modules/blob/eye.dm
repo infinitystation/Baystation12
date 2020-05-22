@@ -6,7 +6,7 @@
 	name = "blob"
 	see_in_dark = 7
 	faction = "blob"
-	invisibility = INVISIBILITY_EYE
+	invisibility = INVISIBILITY_ABSTRACT
 	var/obj/effect/biomass/core/core
 	var/mob/observer/eye/blob/eye
 
@@ -16,6 +16,7 @@
 	verbs += /mob/living/blobHolder/proc/blob_node
 	verbs += /mob/living/blobHolder/proc/blob_spore
 	verbs += /mob/living/blobHolder/proc/reroll_strain
+	verbs += /mob/living/blobHolder/proc/blobbernaut
 
 /mob/living/blobHolder/ClickOn(var/atom/A, params)
 	if(world.time <= next_click)
@@ -108,7 +109,7 @@
 		return
 
 	var/mob/observer/eye/blob/eye = new(get_turf(src))
-	blobHolder = new(get_turf(src))
+	blobHolder = new(eye)
 	blobHolder.ckey = user.ckey
 	blobHolder.core = src
 	blobHolder.eye = eye

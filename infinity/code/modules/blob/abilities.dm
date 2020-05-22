@@ -4,7 +4,7 @@
 	set desc="Create a blob factory which produces resources for your core."
 
 	if(!locate(/obj/effect/biomass) in get_turf(eye))
-		to_chat(src, "There is  no blob on this tile!")
+		to_chat(src, "There is no blob on this tile!")
 		return
 
 	for(var/obj/effect/biomass/factory/blob in range(get_turf(eye), 4))
@@ -32,7 +32,7 @@
 	set desc="Create a blob node which act like a secondary core."
 
 	if(!locate(/obj/effect/biomass) in get_turf(eye))
-		to_chat(src, "There is  no blob on this tile!")
+		to_chat(src, "There is no blob on this tile!")
 		return
 
 	for(var/obj/effect/biomass/node/blob in range(get_turf(eye), 5))
@@ -58,7 +58,7 @@
 	set desc="Create a blob node which will produce hostile spores."
 
 	if(!locate(/obj/effect/biomass) in get_turf(eye))
-		to_chat(src, "There is  no blob on this tile!")
+		to_chat(src, "There is no blob on this tile!")
 		return
 
 	if(locate(/obj/effect/biomass/core) in get_turf(eye) || locate(/obj/effect/biomass/node) in get_turf(eye) || locate(/obj/effect/biomass/factory) in get_turf(eye) || locate(/obj/effect/biomass/spore) in get_turf(eye))
@@ -95,3 +95,18 @@
 		var/choice = input(src, "Choose strain", "Choose strain") as null|anything in choose_strains
 		var/strain_type = choose_strains[choice]
 		core.strain = new strain_type
+
+/mob/living/blobHolder/proc/blobbernaut()
+	set category = "Blob"
+	set name = "Produce Blobbernaut(60)"
+	set desc="Produce a giant monster made out of blob."
+
+	if(!locate(/obj/effect/biomass/factory) in get_turf(eye))
+		to_chat(src, "There is no factory blob on this tile!")
+		return
+
+	if(core.resources >= 60)
+		core.resources -= 60
+		var/mob/living/simple_animal/hostile/blobbernaut/blobbernaut = new(get_turf(eye))
+		blobbernaut.color = color
+		blobbernaut.core = src.core

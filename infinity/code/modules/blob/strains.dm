@@ -27,6 +27,9 @@
 /datum/blob_strain/proc/attack(var/obj/effect/biomass/blob, var/mob/living/victim)
 	return
 
+/datum/blob_strain/proc/spore_death(var/mob/living/simple_animal/hostile/blobspore/spore)
+	return
+
 
 
 /datum/blob_strain/blazing
@@ -36,7 +39,7 @@
 	tendril_damage_types = list(BRUTE, BURN)
 	tendril_damages = list(BRUTE = 5, BURN = 20)
 	brute_resist = 1
-	fire_resist = 0.25
+	fire_resist = 0.1
 
 	resource_gain = 1
 
@@ -194,12 +197,17 @@
 	resource_gain = 1
 
 /datum/blob_strain/slime/damaged(var/obj/effect/biomass/blob, var/mob/living/attacker, var/shot = 0)
-	var/datum/effect/effect/system/smoke_spread/chem/S = new /datum/effect/effect/system/smoke_spread/chem
-	var/datum/reagents/water = new
-	water.add_reagent(/datum/reagent/water, 15)
-	S.attach(get_turf(blob))
-	S.set_up(water, 5, 0, get_turf(blob))
-	S.start()
+	wet_surroundings(blob, 50)
+
+/datum/blob_strain/slime/killed(var/obj/effect/biomass/blob)
+	wet_surroundings(blob, 100)
+
+/datum/blob_strain/slime/proc/wet_surroundings(var/obj/effect/biomass/B, var/probability = 50)
+	for(var/turf/simulated/T in range(1, get_turf(B)))
+		if(prob(probability))
+			T.wet_floor()
+		for(var/atom/movable/AM in T)
+			AM.water_act(2)
 
 
 
@@ -297,6 +305,70 @@
 	resource_gain = 1
 
 /datum/blob_strain/neurons/killed(var/obj/effect/biomass/blob)
-	if(prob(50))
-		var/mob/living/simple_animal/hostile/blobspore/fragile/spore = new(get_turf(blob))
+	if(prob(25))
+		var/mob/living/simple_animal/hostile/blobspore/weak/spore = new(get_turf(blob))
 		spore.color = blob.color
+
+
+/datum/blob_strain/fungal
+	name = "Fungal Bloom"
+
+	blob_color = "#b57d7d"
+	brute_resist = 0.4
+	tendril_damage_types = list(BRUTE, TOX)
+	tendril_damages = list(BRUTE = 10, TOX = 10)
+
+/datum/blob_strain/fungal/spore_death(var/mob/living/simple_animal/hostile/blobspore/spore)
+	if(prob(10))
+		var/obj/effect/biomass/node/node = new(get_turf(spore))
+		node.core = spore.core
+
+
+/datum/blob_strain/macrophage
+	name = "Ravenous Macrophage"
+
+	blob_color = "#d1ec3c"
+
+	fire_resist = 0.25
+
+	tendril_damage_types = list(BURN, TOX)
+	tendril_damages = list(BURN = 15, TOX = 10)
+
+/datum/blob_strain/macrophage/attack(var/obj/effect/biomass/blob, var/mob/living/victim)
+	var/mob/living/L = locate() in range(world.view, blob)
+	if(prob(1) && L.mind && !L.stat)
+		var/turf/T = get_turf(blob)
+		var/datum/effect/effect/system/smoke_spread/bad/BS = new
+		BS.attach(T)
+		BS.set_up(3, 0, T)
+		playsound(T, 'sound/effects/smoke.ogg', 50, 1, -3)
+		BS.start()
+
+/datum/blob_strain/macrophage/killed(var/obj/effect/biomass/blob)
+	var/obj/effect/biomass/other = locate() in oview(2, blob)
+	if(other && other.core)
+		other.core.resources += rand(1, 3)
+
+
+/datum/blob_strain/volatile
+	name = "Volatile Alluvium"
+
+	blob_color = "#6B481E"
+	tendril_damage_types = list(BURN, BRUTE)
+	tendril_damages = list(BURN = 5, BRUTE = 15)
+
+/datum/blob_strain/volatile/damaged(var/obj/effect/biomass/blob, var/mob/living/attacker, var/shot = 0)
+	if(shot)
+		return
+
+	if(prob(35) && istype(attacker, /mob/living/carbon/human))
+		var/mob/living/carbon/human/H = attacker
+		var/obj/item/I = H.get_active_hand()
+		H.drop_item()
+		if(I)
+			if((I.sharp || I.edge) && !istype(I, /obj/item/weapon/gun))
+				I.forceMove(get_turf(blob)) // Disarmed entirely.
+				blob.visible_message("<span class='danger'>The [name] heaves, \the [attacker]'s weapon becoming stuck in the churning mass!</span>")
+			else
+				I.throw_at(blob, 2, 4) // Just yoinked.
+				blob.visible_message("<span class='danger'>The [name] heaves, pulling \the [attacker]'s weapon from their hands!</span>")
