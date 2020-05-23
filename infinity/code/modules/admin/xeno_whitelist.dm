@@ -157,10 +157,10 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 
 	else if (href_list["synch"])
 		if(href_list["synch"] == "CDB")
-			if(alert("Вы уверены что хотите скопировать данные из конфига в БД?<br>Все изменения ниже будут отменены!", "Synch", "Да", "Отмена") == "Отмена")
+			if(alert("Вы уверены что хотите скопировать данные из конфига в БД?\nВсе изменения ниже будут отменены!", "Synch", "Да", "Отмена") == "Отмена")
 				return TOPIC_NOACTION
 		else if(href_list["synch"] == "DBC")
-			if(alert("Вы уверены что хотите скопировать данные из БД в конфиг?<br>Все изменения ниже будут отменены!", "Synch", "Да", "Отмена") == "Отмена")
+			if(alert("Вы уверены что хотите скопировать данные из БД в конфиг?\nВсе изменения ниже будут отменены!", "Synch", "Да", "Отмена") == "Отмена")
 				return TOPIC_NOACTION
 		else
 			to_chat(usr, "Ошибка синхронизации: неизвестные адреса синхронизации.")
@@ -195,7 +195,7 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		. = TOPIC_REFRESH
 
 	else if (href_list["refresh"])
-		if(alert("Вы уверены что хотите синхронизироваться с БД | конфиг-файлом?<br>Все изменения ниже будут отменены!", "Refresh", "Да", "Отмена") == "Отмена")
+		if(alert("Вы уверены что хотите синхронизироваться с БД | конфиг-файлом?\nВсе изменения ниже будут отменены!", "Refresh", "Да", "Отмена") == "Отмена")
 			return TOPIC_NOACTION
 		used = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(FALSE), lowerxenoname), "ckey")
 		noused = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), "ckey")
