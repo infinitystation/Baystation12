@@ -19,32 +19,28 @@
 	desc["color"] = COLOR_WEBHOOK_XENO
 	desc["author"] = list(
 		"name" = "Изменение вайтлиста на расы",
-		"icon_url" = "https://cdn.discordapp.com/emojis/244791612268347392.png?v=1")	// :inf: emoji
+		"icon_url" = "https://cdn.discordapp.com/emojis/244791612268347392.png")	// :inf: emoji
 
 	var/list/grant = data["grant"]
 	var/list/revoke = data["revoke"]
-	var/icon = "https://cdn.discordapp.com/emojis/680793066415980576.png?v=1"			// :SeemsRichKot: emoji
+	var/icon = "https://cdn.discordapp.com/emojis/680793066415980576.png"			// :SeemsRichKot: emoji
 	if(!grant || (revoke && (revoke.len >= grant.len)))
-		icon = "https://cdn.discordapp.com/emojis/601028456675016706.png?v=1"			// :resomisad: emoji
+		icon = "https://cdn.discordapp.com/emojis/601028456675016706.png"			// :resomisad: emoji
 	desc["thumbnail"] = list("url" = icon)
-	var/list/A = list()
-	var/list/B = list()
+	var/list/unite = list()
+
 	for(var/ckey in grant)
+		var/list/temp = list()
 		var/list/check = grant[ckey]
 		for(var/race in check)
-			B += "++[race]"
-		A[ckey] = B
-	grant = A
-	A.Cut()
-	B.Cut()
+			temp += "++[race]"
+		unite[ckey] += list(temp)
 	for(var/ckey in revoke)
+		var/list/temp = list()
 		var/list/check = revoke[ckey]
 		for(var/race in check)
-			B += "--[race]"
-		A[ckey] = B
-	revoke = A
-
-	var/list/unite = grant + revoke
+			temp += "--[race]"
+		unite[ckey] += list(temp)
 	if(!unite || !unite.len)
 		.["content"] = "Сюда пришло изменение вайтлиста, но мы потеряли список."
 		return

@@ -330,7 +330,7 @@ var/list/admin_verbs_mod = list(
 	/datum/admins/proc/sendFax,
 	/datum/admins/proc/view_persistent_data
 )
-
+//[INF]
 var/list/admin_verbs_xeno = list(
 	/client/proc/cmd_admin_pm_context,
 	/client/proc/cmd_admin_pm_panel,
@@ -339,7 +339,7 @@ var/list/admin_verbs_xeno = list(
 	/datum/admins/proc/xeno_whitelist_panel
 //INF	/datum/admins/proc/show_player_info
 )
-
+//[/INF]
 /client/proc/add_admin_verbs()
 	if(holder)
 		verbs += admin_verbs_default
@@ -352,14 +352,14 @@ var/list/admin_verbs_xeno = list(
 			verbs += admin_verbs_debug
 			if(config.debugparanoid && !(holder.rights & R_ADMIN))
 				verbs.Remove(admin_verbs_paranoid_debug)			//Right now it's just callproc but we can easily add others later on.
-		if(holder.rights & R_JUDGE)	     	verbs += admin_verbs_judge		//INF WAS R_POSSES and other verbs
+		if(holder.rights & R_JUDGE)	     	verbs += admin_verbs_judge		//INF WAS	if(holder.rights & R_POSSESS)	     	verbs += admin_verbs_possess
 		if(holder.rights & R_PERMISSIONS)	verbs += admin_verbs_permissions
 		if(holder.rights & R_STEALTH)		verbs += /client/proc/stealth
 		if(holder.rights & R_REJUVINATE)	verbs += admin_verbs_rejuv
 		if(holder.rights & R_SOUNDS)		verbs += admin_verbs_sounds
 		if(holder.rights & R_SPAWN)			verbs += admin_verbs_spawn
 		if(holder.rights & R_MOD)			verbs += admin_verbs_mod
-		if(holder.rights & R_XENO)			verbs += admin_verbs_xeno	//INF
+		if(holder.rights & R_XENO)			verbs += admin_verbs_xeno		//INF
 
 /client/proc/remove_admin_verbs()
 	verbs.Remove(

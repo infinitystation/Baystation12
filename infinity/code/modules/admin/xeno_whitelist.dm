@@ -3,6 +3,8 @@
 	set desc = "Use this to edit players xenowhitelist. Yupi!"
 	set category = "Admin"
 
+	if(!usr.client) return
+
 	if(istype(usr,/mob/new_player))
 		to_chat(usr, "НаноУИ не работают в лобби. Когда нибудь я пойму почему. Пожалуйста зайди в раунд или обзерв.\n(с) Laxesh")
 		return
@@ -155,13 +157,13 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 
 	else if (href_list["synch"])
 		if(href_list["synch"] == "CDB")
-			if(alert("Вы уверены что хотите залить данные из конфига в БД?\nВсе изменения ниже будут отменены!", "Synch", "Да", "Отмена") == "Отмена")
+			if(alert("Вы уверены что хотите скопировать данные из конфига в БД?<br>Все изменения ниже будут отменены!", "Synch", "Да", "Отмена") == "Отмена")
 				return TOPIC_NOACTION
 		else if(href_list["synch"] == "DBC")
-			if(alert("Вы уверены что хотите залить данные из БД в конфиг?\nВсе изменения ниже будут отменены!", "Synch", "Да", "Отмена") == "Отмена")
+			if(alert("Вы уверены что хотите скопировать данные из БД в конфиг?<br>Все изменения ниже будут отменены!", "Synch", "Да", "Отмена") == "Отмена")
 				return TOPIC_NOACTION
 		else
-			to_chat(usr, "Я не поняла что и куда синхронизировать.")
+			to_chat(usr, "Ошибка синхронизации: неизвестные адреса синхронизации.")
 			return TOPIC_NOACTION
 		var/list/list
 		if(config.usealienwhitelistSQL)
@@ -185,15 +187,15 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 			return TOPIC_NOACTION
 		var/success
 		if(href_list["synch"] == "CDB")
-			success = upload_SQL(grant, null)
+			success = upload_SQL(usr, grant, null)
 		else
-			success = upload_CONFIG(grant, null)
+			success = upload_CONFIG(usr, grant, null)
 		if(!success)
 			to_chat(usr, "Загрузка неудалась.")
 		. = TOPIC_REFRESH
 
 	else if (href_list["refresh"])
-		if(alert("Вы уверены что хотите синхронизироваться с БД | конфиг-файлом?\nВсе изменения ниже будут отменены!", "Refresh", "Да", "Отмена") == "Отмена")
+		if(alert("Вы уверены что хотите синхронизироваться с БД | конфиг-файлом?<br>Все изменения ниже будут отменены!", "Refresh", "Да", "Отмена") == "Отмена")
 			return TOPIC_NOACTION
 		used = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(FALSE), lowerxenoname), "ckey")
 		noused = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), "ckey")

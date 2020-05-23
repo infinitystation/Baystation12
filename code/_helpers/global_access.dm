@@ -193,10 +193,10 @@
 			return global.admin_verbs_fun;
 		if("admin_verbs_hideable")
 			return global.admin_verbs_hideable;
-		if("admin_verbs_judge")						//INF HERE WAS POSSESS
-			return global.admin_verbs_judge;
+		if("admin_verbs_judge")						//INF WAS 	if("admin_verbs_possess")
+			return global.admin_verbs_judge;		//INF WAS 		return global.admin_verbs_possess;
 		if("admin_verbs_xeno")						//INF
-			return global.admin_verbs_xeno;
+			return global.admin_verbs_xeno;			//INF
 		if("admin_verbs_mod")
 			return global.admin_verbs_mod;
 		if("admin_verbs_paranoid_debug")
@@ -1118,10 +1118,10 @@
 			global.admin_verbs_fun=newval;
 		if("admin_verbs_hideable")
 			global.admin_verbs_hideable=newval;
-		if("admin_verbs_judge")					//INF HERE WAS POSSESS
-			global.admin_verbs_judge=newval;
+		if("admin_verbs_judge")					//INF WAS 	if("admin_verbs_possess")
+			global.admin_verbs_judge=newval;	//INF WAS		global.admin_verbs_possess=newval;
 		if("admin_verbs_xeno")					//INF
-			global.admin_verbs_xeno=newval;
+			global.admin_verbs_xeno=newval;		//INF
 		if("admin_verbs_mod")
 			global.admin_verbs_mod=newval;
 		if("admin_verbs_paranoid_debug")
