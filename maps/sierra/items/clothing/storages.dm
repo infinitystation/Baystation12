@@ -13,12 +13,12 @@
 	icon_state = "satchel-nat"
 //[INF]
 	item_icons = list(
-		slot_belt_str = 'maps/sierra/icons/mob/belt.dmi',
+//		slot_belt_str = 'maps/sierra/icons/mob/belt.dmi',
 		slot_back_str = 'maps/sierra/icons/mob/back.dmi',
 		)
 	item_state_slots = list(
 		slot_belt_str = "satchel-nat-belt_inf",
-		slot_back_str = "satchel-nat_inf",
+//		slot_back_str = "satchel-nat_inf",
 		)
 //[/INF]
 /obj/item/weapon/storage/backpack/messenger/tox

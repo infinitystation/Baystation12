@@ -256,15 +256,15 @@
 	name = "satchel"
 	desc = "A trendy looking satchel."
 	icon_state = "satchel-norm"
-	slot_flags = SLOT_BACK | SLOT_BELT //INF WAS slot_flags = SLOT_BACK
+	slot_flags = SLOT_BACK //| SLOT_BELT //INF
 //[INF]
-	max_storage_space = 20
+//	max_storage_space = 20
 	item_icons = list(
-		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
+//		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
 		slot_back_str = 'icons/mob/onmob/back.dmi',
 		)
 	item_state_slots = list(
-		slot_belt_str = "satchel-norm-belt",
+//		slot_belt_str = "satchel-norm-belt",
 		slot_back_str = "satchel-norm",
 		)
 //[/INF]
@@ -278,7 +278,7 @@
 	name = "brown leather satchel"
 	desc = "A very fancy satchel made of some kind of leather."
 	icon_state = "satchel"
-	slot_flags = SLOT_BELT | SLOT_BACK //INF
+	slot_flags = SLOT_BACK //| SLOT_BELT //INF
 	color = "#3d2711"
 
 /obj/item/weapon/storage/backpack/satchel/leather/khaki
@@ -311,11 +311,11 @@
 	color = "#212121"
 //[INF]
 	item_icons = list(
-		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
+//		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
 		slot_back_str = 'icons/mob/onmob/back.dmi',
 		)
 	item_state_slots = list(
-		slot_belt_str = "pocketbook-belt",
+//		slot_belt_str = "pocketbook-belt",
 		slot_back_str = "pocketbook",
 		)
 //[/INF]
@@ -335,7 +335,7 @@
 		slot_l_hand_str = "engiepack",
 		slot_r_hand_str = "engiepack",
 		slot_back_str = "satchel-eng", //INF
-		slot_belt_str = "satchel-eng-belt", //INF
+//		slot_belt_str = "satchel-eng-belt", //INF
 		)
 
 /obj/item/weapon/storage/backpack/satchel/med
@@ -346,7 +346,7 @@
 		slot_l_hand_str = "medicalpack",
 		slot_r_hand_str = "medicalpack",
 		slot_back_str = "satchel-med", //INF
-		slot_belt_str = "satchel-med-belt", //INF
+//		slot_belt_str = "satchel-med-belt", //INF
 		)
 
 /obj/item/weapon/storage/backpack/satchel/vir
@@ -355,12 +355,12 @@
 	icon_state = "satchel-vir"
 //[INF]
 	item_icons = list(
-		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
+//		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
 		slot_back_str = 'infinity/icons/mob/onmob/onmob_back.dmi',
 		)
 	item_state_slots = list(
 		slot_back_str = "satchel-vir",
-		slot_belt_str = "satchel-vir-belt",
+//		slot_belt_str = "satchel-vir-belt",
 		)
 //[/INF]
 /obj/item/weapon/storage/backpack/satchel/chem
@@ -369,12 +369,12 @@
 	icon_state = "satchel-chem"
 //[INF]
 	item_icons = list(
-		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
+//		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
 		slot_back_str = 'infinity/icons/mob/onmob/onmob_back.dmi',
 		)
 	item_state_slots = list(
 		slot_back_str = "satchel-chem",
-		slot_belt_str = "satchel-chem-belt",
+//		slot_belt_str = "satchel-chem-belt",
 		)
 //[/INF]
 /obj/item/weapon/storage/backpack/satchel/gen
@@ -383,12 +383,12 @@
 	icon_state = "satchel-gen"
 //[INF]
 	item_icons = list(
-		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
+//		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
 		slot_back_str = 'infinity/icons/mob/onmob/onmob_back.dmi',
 		)
 	item_state_slots = list(
 		slot_back_str = "satchel-gen",
-		slot_belt_str = "satchel-gen-belt",
+//		slot_belt_str = "satchel-gen-belt",
 		)
 //[/INF]
 /obj/item/weapon/storage/backpack/satchel/tox
@@ -397,12 +397,12 @@
 	icon_state = "satchel-nt"
 //[INF]
 	item_icons = list(
-		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
+//		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
 		slot_back_str = 'infinity/icons/mob/onmob/onmob_back.dmi',
 		)
 	item_state_slots = list(
 		slot_back_str = "satchel-nut",
-		slot_belt_str = "satchel-nut-belt",
+//		slot_belt_str = "satchel-nut-belt",
 		)
 //[/INF]
 /obj/item/weapon/storage/backpack/satchel/sec
@@ -413,7 +413,7 @@
 		slot_l_hand_str = "securitypack",
 		slot_r_hand_str = "securitypack",
 		slot_back_str = "satchel-sec", //INF
-		slot_belt_str = "satchel-sec-belt", //INF
+//		slot_belt_str = "satchel-sec-belt", //INF
 		)
 
 /obj/item/weapon/storage/backpack/satchel/sec/exo
@@ -426,12 +426,12 @@
 	icon_state = "satchel_hyd"
 //[INF]
 	item_icons = list(
-		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
+//		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
 		slot_back_str = 'infinity/icons/mob/onmob/onmob_back.dmi',
 		)
 	item_state_slots = list(
 		slot_back_str = "satchel-hyd",
-		slot_belt_str = "satchel-hyd-belt",
+//		slot_belt_str = "satchel-hyd-belt",
 		)
 //[/INF]
 /obj/item/weapon/storage/backpack/satchel/cap
@@ -442,7 +442,7 @@
 		slot_l_hand_str = "satchel-cap",
 		slot_r_hand_str = "satchel-cap",
 		slot_back_str = "satchel-cap", //INF
-		slot_belt_str = "satchel-cap-belt", //INF
+//		slot_belt_str = "satchel-cap-belt", //INF
 		)
 
 //Smuggler's satchel
@@ -451,6 +451,7 @@
 	desc = "A very slim satchel that can easily fit into tight spaces."
 	icon_state = "satchel-flat"
 	item_state = "satchel-norm"
+	slot_flags = 0
 	level = 1
 	w_class = ITEM_SIZE_NORMAL //Can fit in backpacks itself.
 	storage_slots = 5

@@ -65,14 +65,14 @@ Torch specific items
 	desc = "A rugged satchel for field work."
 	icon_state = "satchel-exp"
 //[INF]
-	slot_flags = SLOT_BELT | SLOT_BACK
+	slot_flags = SLOT_BACK //| SLOT_BELT
 	item_icons = list(
-		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
+//		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
 		slot_back_str = 'infinity/icons/mob/onmob/onmob_back.dmi',
 		)
 	item_state_slots = list(
 		slot_back_str = "satchel-exp",
-		slot_belt_str = "satchel-exp-belt",
+//		slot_belt_str = "satchel-exp-belt",
 		)
 //[/INF]
 /obj/item/weapon/storage/backpack/messenger/explorer
