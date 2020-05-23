@@ -4,7 +4,7 @@
 /decl/webhook/send_ban/get_message(var/list/data)
 	. = ..()
 
-	if(!data || !data.len || !data["bantype"])
+	if(!length(data) || !data["bantype"])
 		.["content"] = "Тут должно быть сообщение о бане, но кто то вызвал вебхук вручную."
 		return
 	//	Дискорд не допускает пустых строк в эмбеде, и удаляет его, по этому лучше уж [ДАННЫЕ УДАЛЕНЫ] ~Laxesh

@@ -334,7 +334,7 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 
 //	Если элемент есть в подлисте - вытаскиваем его повыше
 /proc/SortByRace(var/list/L, var/race = "ckey")
-	if(!L)
+	if(!length(L))
 		return
 	L = sortByKey(L, "ckey")
 	if(race && !(race == "ckey"))

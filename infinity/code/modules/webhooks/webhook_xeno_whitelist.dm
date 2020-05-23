@@ -4,7 +4,7 @@
 /decl/webhook/send_ban/get_message(var/list/data)
 	. = ..()
 
-	if(!data || !data.len)
+	if(!length(data))
 		.["content"] = "Тут должно быть сообщение о вайтлисте, но кто то вызвал вебхук вручную."
 		return
 
