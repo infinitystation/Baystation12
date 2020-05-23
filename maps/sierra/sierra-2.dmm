@@ -9123,6 +9123,9 @@
 	dir = 8;
 	pixel_x = 23
 	},
+/obj/effect/landmark/start{
+	name = "Captain"
+	},
 /turf/simulated/floor/carpet/blue,
 /area/crew_quarters/heads/cobed)
 "aoQ" = (
@@ -31836,6 +31839,16 @@
 /obj/machinery/reagent_temperature,
 /turf/simulated/floor/tiled/white,
 /area/vacant/gambling)
+"bad" = (
+/obj/structure/bed/chair/office/comfy/beige{
+	icon_state = "comfyofficechair_preview";
+	dir = 4
+	},
+/obj/effect/landmark/start{
+	name = "Captain"
+	},
+/turf/simulated/floor/carpet/red,
+/area/crew_quarters/heads/office/captain)
 "bae" = (
 /obj/structure/table/glass,
 /obj/machinery/photocopier/faxmachine{
@@ -35677,13 +35690,6 @@
 /obj/random/maintenance,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/forestarboard)
-"bhn" = (
-/obj/structure/bed/chair/office/comfy/beige{
-	icon_state = "comfyofficechair_preview";
-	dir = 4
-	},
-/turf/simulated/floor/carpet/red,
-/area/crew_quarters/heads/office/captain)
 "bhp" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -44685,7 +44691,7 @@ abI
 abI
 aJr
 aod
-bhn
+bad
 biq
 asz
 aJr

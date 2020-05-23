@@ -21119,6 +21119,9 @@
 	req_access = list("ACCESS_HEAD_OF_SECURITY")
 	},
 /obj/structure/bed/chair/office/comfy/red,
+/obj/effect/landmark/start{
+	name = "Head of Security"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/crew_quarters/heads/office/hos)
 "aHv" = (
@@ -22270,6 +22273,9 @@
 /obj/item/weapon/bedsheet/hop,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
+	},
+/obj/effect/landmark/start{
+	name = "Head of Personnel"
 	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/heads/office/hop/cobed)
@@ -23606,6 +23612,9 @@
 /area/crew_quarters/heads/office/hop)
 "aKX" = (
 /obj/structure/bed/chair/office/comfy/blue,
+/obj/effect/landmark/start{
+	name = "Head of Personnel"
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/crew_quarters/heads/office/hop)
 "aKY" = (
@@ -26338,6 +26347,9 @@
 /obj/structure/bed/padded,
 /obj/item/weapon/storage/secure/safe{
 	pixel_x = 32
+	},
+/obj/effect/landmark/start{
+	name = "Head of Security"
 	},
 /turf/simulated/floor/carpet,
 /area/security/sierra/hosbed)
