@@ -54,7 +54,7 @@
 			text += race
 		fields += list(list(
 			"name" = ckey,
-			"value" = jointext(text, "\n\t")
+			"value" = "```yml\n[jointext(text, "\n\t")]```"
 		))
 	if(fields && fields.len)
 		desc["fields"] = list(fields)
