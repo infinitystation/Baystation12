@@ -13,7 +13,7 @@
 
 	var/maxHealth = 30
 	var/health
-	var/regen_rate = 5
+	var/regen_rate = 1
 	var/blob_color = "#8BA6E9"
 	var/tendril_damage_types = list(BRUTE)
 	var/tendril_damages = list(BRUTE = 30)
@@ -235,6 +235,9 @@
 		qdel(src)
 
 /obj/effect/biomass/Process()
+	var/datum/gas_mixture/environment = get_turf(src).return_air()
+	if(enviroment.temperature > 380)
+		take_damage((enviroment.temperature - 380) * 0.25 * fire_resist)
 	if(core)
 		regen()
 		readapt()
@@ -329,7 +332,11 @@
 	resource_gain = strain.resource_gain
 
 /obj/effect/biomass/core/Process()
-	resources += resource_gain
+	var/datum/gas_mixture/environment = get_turf(src).return_air()
+	if(enviroment.temperature > 380)
+		take_damage((enviroment.temperature - 380) * 0.25 * fire_resist)
+	if(prob(50))
+		resources += resource_gain
 	regen()
 	pulse(20, GLOB.alldirs)
 	readapt()
@@ -383,7 +390,8 @@
 	return
 
 /obj/effect/biomass/factory/pulse()
-	core.resources += core.resource_gain
+	if(prob(50))
+		core.resources += core.resource_gain
 	. = ..()
 
 
