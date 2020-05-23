@@ -50,11 +50,12 @@
 		var/list/check = unite[ckey]
 		check = sortList(check)	//sorting by race
 		var/list/text
+		text += "yml"
 		for(var/race in check)
 			text += race
 		fields += list(list(
 			"name" = ckey,
-			"value" = "```yml\n[jointext(text, "\n\t")]```"
+			"value" = "```[jointext(text, "\n\t")]```"
 		))
 	if(fields && fields.len)
 		desc["fields"] = list(fields)
