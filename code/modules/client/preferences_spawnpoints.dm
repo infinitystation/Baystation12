@@ -92,10 +92,7 @@ GLOBAL_VAR(spawntypes)
 					for(var/obj/effect/overmap/visitable/candidate in sector)
 						if(candidate.check_ownership(C))
 							sector = candidate
-				if(istype(sector, /obj/effect/overmap/visitable/ship))
-					greetings = " на судне '[GLOB.using_map.full_name]'."
-				else
-					greetings = " на станции '[GLOB.using_map.full_name]'."
+					greetings = " на [istype(sector, /obj/effect/overmap/visitable/ship) ? "судне" : "станции"] '[GLOB.using_map.full_name]'."
 			to_chat(victim, SPAN_NOTICE("Вы пробуждаетесь от крио-сна[greetings]"))
 			victim.sleeping = 0 //INF
 			victim.Sleeping(rand(2,7))
