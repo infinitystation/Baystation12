@@ -28,6 +28,7 @@
 		health = min(maxHealth, health + 1)
 	if(core)
 		color = core.strain.blob_color
+		faction = core.faction
 
 /mob/living/simple_animal/hostile/blobbernaut/death()
 	flick("blobbernaut_death",src)

@@ -26,6 +26,8 @@
 	var/obj/effect/biomass/core/core
 	var/refund_value = 2
 
+	var/faction = "blob"
+
 /obj/effect/biomass/proc/readapt()
 	blob_color = core.blob_color
 	tendril_damage_types = core.tendril_damage_types
@@ -35,6 +37,7 @@
 	laser_resist = core.laser_resist
 	bomb_resist = core.bomb_resist
 	pulsing = core.pulsing
+	faction = core.faction
 
 /obj/effect/biomass/Initialize(loc)
 	health = maxHealth
@@ -57,7 +60,7 @@
 
 	if(istype(mover, /mob/living))
 		var/mob/living/mob = mover
-		if(mob.faction == "blob")
+		if(mob.faction == faction)
 			return 1
 
 	return 0
@@ -85,7 +88,8 @@
 	update_icon()
 
 /obj/effect/biomass/proc/expand(var/turf/T, var/manual = 0)
-	if(manual && !locate(/obj/effect/biomass) in get_turf(T))
+	var/obj/effect/biomass/mass = locate() in get_turf(T)
+	if(manual && ((!mass) || mass.faction == faction))
 		if(core.resources >= 4)
 			core.resources -= 4
 		else
@@ -151,8 +155,11 @@
 	if(CA)
 		CA.ex_act(2)
 
+	if(mass && mass.faction != faction)
+		attack_blob(mass)
+
 	for(var/mob/living/L in T)
-		if(L.stat == DEAD || L.faction == "blob")
+		if(L.stat == DEAD || L.faction == faction)
 			continue
 		else
 			attack_living(L)
@@ -169,13 +176,26 @@
 	new_blob.core = core
 	core.strain.expanded(src, new_blob)
 
+/obj/effect/biomass/proc/attack_blob(var/obj/effect/biomass/L)
+	if(!L)
+		return
+	if(L.faction == faction)
+		return
+	L.visible_message(SPAN_DANGER("A tendril flies out from \the [src] and smashes into \the [L]!"))
+	playsound(loc, 'sound/effects/attackblob.ogg', 50, 1)
+	core.strain.attack(src, L)
+	for(var/blob_damage in tendril_damage_types)
+		switch(tendril_damages[blob_damage])
+			if("fire")
+				L.take_damage(blob_damage * L.fire_resist)
+			if("brute")
+				L.take_damage(blob_damage * L.brute_resist)
 
 /obj/effect/biomass/proc/attack_living(var/mob/living/L)
 	if(!L)
 		return
 	L.visible_message(SPAN_DANGER("A tendril flies out from \the [src] and smashes into \the [L]!"), SPAN_DANGER("A tendril flies out from \the [src] and smashes into you!"))
 	playsound(loc, 'sound/effects/attackblob.ogg', 50, 1)
-	core.strain.attack(src, L)
 	for(var/blob_damage in tendril_damage_types)
 		L.apply_damage(tendril_damages[blob_damage], blob_damage, used_weapon = "blob tendril")
 
@@ -327,6 +347,7 @@
 	bomb_resist = strain.bomb_resist
 	pulsing = strain.pulsing
 	resource_gain = strain.resource_gain
+	faction = blobHolder.ckey
 
 /obj/effect/biomass/core/Process()
 	if(prob(50))

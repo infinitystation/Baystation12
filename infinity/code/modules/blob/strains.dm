@@ -91,7 +91,7 @@
 
 	blob_color = "#8B1000"
 	tendril_damage_types = list(BRUTE)
-	tendril_damages = list(BRUTE = 5)
+	tendril_damages = list(BRUTE = 15, OXY = 5)
 	can_core = 1
 	resource_gain = 1
 

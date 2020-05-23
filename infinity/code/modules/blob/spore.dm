@@ -75,6 +75,10 @@
 
 
 mob/living/simple_animal/hostile/blobspore/Life()
+	if(core)
+		color = core.strain.blob_color
+		faction = core.faction
+
 	if(can_infest && !is_infesting && isturf(src.loc))
 		for(var/mob/living/carbon/human/H in view(src,1))
 			if(H.stat != DEAD) // We want zombies.
