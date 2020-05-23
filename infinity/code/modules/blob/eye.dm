@@ -1,12 +1,22 @@
 /mob/observer/eye/blob
 	name = "Inactive Blob Overmind"
 	name_sufix = "Blob Overmind"
+	icon_state = "block2"
+	icon = 'infinity/icons/mob/blob.dmi'
+	invisibility = INVISIBILITY_EYE - 2
+	see_invisible = INVISIBILITY_EYE - 1
+
+/mob/observer/eye/blob/Initialize()
+	. = ..()
+	set_see_invisible(INVISIBILITY_EYE - 1)
+
 
 /mob/living/blobHolder
 	name = "blob"
 	see_in_dark = 7
 	faction = "blob"
 	invisibility = INVISIBILITY_ABSTRACT
+	see_invisible = INVISIBILITY_EYE - 1
 	var/obj/effect/biomass/core/core
 	var/mob/observer/eye/blob/eye
 
@@ -17,6 +27,11 @@
 	verbs += /mob/living/blobHolder/proc/blob_spore
 	verbs += /mob/living/blobHolder/proc/reroll_strain
 	verbs += /mob/living/blobHolder/proc/blobbernaut
+	set_see_invisible(INVISIBILITY_EYE - 1)
+
+/mob/living/blobHolder/Life()
+	. = ..()
+	set_see_invisible(INVISIBILITY_EYE - 1)
 
 /mob/living/blobHolder/ClickOn(var/atom/A, params)
 	if(world.time <= next_click)
