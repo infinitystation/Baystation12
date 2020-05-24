@@ -3,12 +3,12 @@
 	name_sufix = "Blob Overmind"
 	icon_state = "block2"
 	icon = 'infinity/icons/mob/blob.dmi'
-	invisibility = INVISIBILITY_EYE - 2
-	see_invisible = INVISIBILITY_EYE - 1
+	invisibility = INVISIBILITY_EYE - 3
+	see_invisible = INVISIBILITY_EYE - 2
 
 /mob/observer/eye/blob/Initialize()
 	. = ..()
-	set_see_invisible(INVISIBILITY_EYE - 1)
+	set_see_invisible(INVISIBILITY_EYE - 2)
 
 
 /mob/living/blobHolder
@@ -16,7 +16,7 @@
 	see_in_dark = 7
 	faction = "blob"
 	invisibility = INVISIBILITY_ABSTRACT
-	see_invisible = INVISIBILITY_EYE - 1
+	see_invisible = INVISIBILITY_EYE - 2
 	var/obj/effect/biomass/core/core
 	var/mob/observer/eye/blob/eye
 
@@ -27,11 +27,11 @@
 	verbs += /mob/living/blobHolder/proc/blob_spore
 	verbs += /mob/living/blobHolder/proc/reroll_strain
 	verbs += /mob/living/blobHolder/proc/blobbernaut
-	set_see_invisible(INVISIBILITY_EYE - 1)
+	set_see_invisible(INVISIBILITY_EYE - 2)
 
 /mob/living/blobHolder/Life()
 	. = ..()
-	set_see_invisible(INVISIBILITY_EYE - 1)
+	set_see_invisible(INVISIBILITY_EYE - 2)
 
 /mob/living/blobHolder/ClickOn(var/atom/A, params)
 	if(world.time <= next_click)
@@ -62,8 +62,8 @@
 	next_click = world.time + 3
 
 /mob/living/blobHolder/CtrlAltClickOn(var/atom/A)
-	if(A.AICtrlAltClick(src))
-		return
+	if(locate(/mob/living) in get_turf(A))
+		rally_spores(get_turf(A))
 	. = ..()
 
 /mob/living/blobHolder/ShiftClickOn(var/atom/A)
@@ -82,15 +82,15 @@
 	. = ..()
 
 /mob/living/blobHolder/MiddleClickOn(var/atom/A)
-	if(A.AIMiddleClick(src))
-		return
+	if(locate(/mob/living) in get_turf(A))
+		rally_spores(get_turf(A))
 	. = ..()
 
 /mob/living/blobHolder/Stat()
 	. = ..()
 	if(statpanel("Status"))
 		if(core)
-			stat("Resources:",   "[core.resources]")
+			stat("Resources:",   "[round(core.resources)]")
 			stat("Core Health:", "[core.health]/[core.maxHealth]")
 
 

@@ -17,6 +17,12 @@
 	faction = "blob"
 	speed = 4
 
+	cold_damage_per_tick = 0
+	fire_alert = 0
+
+	min_gas = list()
+	max_gas = list()
+
 	var/mob/living/carbon/human/infested = null
 	var/can_infest = FALSE
 	var/is_infesting = FALSE

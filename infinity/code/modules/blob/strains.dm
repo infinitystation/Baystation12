@@ -34,6 +34,9 @@
 /datum/blob_strain/proc/core_squash(var/obj/item/blob_core/core, var/mob/living/user)
 	return
 
+/datum/blob_strain/proc/pre_expanded(var/turf/T, var/obj/effect/biomass/biomass)
+	return T
+
 
 
 /datum/blob_strain/blazing
@@ -207,12 +210,19 @@
 	pulsing = 0
 	resource_gain = 1
 
-/datum/blob_strain/fibers/expanded(var/obj/effect/biomass/blob, var/obj/effect/biomass/new_blob)
-	if(locate(/obj/effect/biomass/core) in range(get_turf(new_blob), 1))
-		var/obj/effect/biomass/core/core = locate(/obj/effect/biomass/core)
-		var/turf/T = get_turf(core)
-		core.forceMove(get_turf(new_blob))
-		new_blob.forceMove(get_turf(T))
+/datum/blob_strain/fibers/pre_expanded(var/turf/T, var/obj/effect/biomass/biomass)
+	if(biomass.core != biomass)
+		if(get_dist(biomass, biomass.core) <= 1)
+			var/obj/effect/biomass/core/core = biomass.core
+			var/turf/T2 = get_turf(core)
+			biomass.forceMove(T2)
+			core.forceMove(T)
+			return T2
+	else
+		var/turf/T2 = get_turf(biomass)
+		biomass.forceMove(T)
+		return T2
+	return T
 
 
 

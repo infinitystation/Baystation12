@@ -24,6 +24,9 @@
 		new_blob.color = color
 
 		new_blob.core = src.core
+	else
+		to_chat(core.blobHolder, SPAN_WARNING("You at least 40 resources to do this! You have only [core.resources]/40!"))
+		return
 
 
 /mob/living/blobHolder/proc/blob_node()
@@ -51,6 +54,9 @@
 		var/obj/effect/biomass/node/new_blob = new(get_turf(eye))
 		new_blob.color = color
 		new_blob.core = src.core
+	else
+		to_chat(core.blobHolder, SPAN_WARNING("You at least 50 resources to do this! You have only [core.resources]/50!"))
+		return
 
 /mob/living/blobHolder/proc/blob_spore()
 	set category = "Blob"
@@ -77,14 +83,20 @@
 		var/obj/effect/biomass/spore/new_blob = new(get_turf(eye))
 		new_blob.color = color
 		new_blob.core = src.core
+	else
+		to_chat(core.blobHolder, SPAN_WARNING("You at least 60 resources to do this! You have only [core.resources]/60!"))
+		return
 
 /mob/living/blobHolder/proc/reroll_strain()
 	set category = "Blob"
-	set name = "Reroll Strain(80)"
+	set name = "Reroll Strain(40)"
 	set desc="Choose your new strain from 4 random to rapidly change your strategy."
 
-	if(core.resources >= 80)
-		core.resources -= 80
+	if(core.resources >= 40 || core.free_reroll > 0)
+		if(core.free_reroll == 0)
+			core.resources -= 40
+		else
+			core.free_reroll -= 1
 		var/list/strains = subtypesof(/datum/blob_strain)
 		var/choose_strains = list()
 		for(var/i = 1 to 4)
@@ -95,6 +107,9 @@
 		var/choice = input(src, "Choose strain", "Choose strain") as null|anything in choose_strains
 		var/strain_type = choose_strains[choice]
 		core.strain = new strain_type
+	else
+		to_chat(core.blobHolder, SPAN_WARNING("You at least 80 resources to do this! You have only [core.resources]/80!"))
+		return
 
 /mob/living/blobHolder/proc/blobbernaut()
 	set category = "Blob"
@@ -104,9 +119,20 @@
 	if(!locate(/obj/effect/biomass/factory) in get_turf(eye))
 		to_chat(src, "There is no factory blob on this tile!")
 		return
-
 	if(core.resources >= 60)
 		core.resources -= 60
 		var/mob/living/simple_animal/hostile/blobbernaut/blobbernaut = new(get_turf(eye))
 		blobbernaut.color = color
 		blobbernaut.core = src.core
+	else
+		to_chat(core.blobHolder, SPAN_WARNING("You at least 60 resources to do this! You have only [core.resources]/60!"))
+		return
+
+/mob/living/blobHolder/proc/rally_spores(var/turf/T)
+	to_chat(src, SPAN_NOTICE("You rally your spores."))
+	for(var/mob/living/simple_animal/hostile/blobspore/BS in core.blob_mobs)
+		if(isturf(BS.loc) && get_dist(BS, T) <= 35 && !BS.key)
+			BS.LoseTarget()
+			BS.stance = HOSTILE_STANCE_ATTACK
+			BS.target_mob = locate() in T
+			BS.MoveToTarget()

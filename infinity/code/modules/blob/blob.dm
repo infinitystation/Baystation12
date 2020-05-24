@@ -93,7 +93,7 @@
 		if(core.resources >= 4)
 			core.resources -= 4
 		else
-			to_chat(core.blobHolder, "You at least 4 resources to do this!")
+			to_chat(core.blobHolder, SPAN_WARNING("You at least 4 resources to do this! You have only [core.resources]/4!"))
 			return
 
 
@@ -165,11 +165,31 @@
 			attack_living(L)
 			return
 
-	if(!pulsing)
+	if(!pulsing && !manual)
 		return
+
+	T = core.strain.pre_expanded(T, src)
 
 	if(locate(/obj/effect/biomass) in get_turf(T))
 		return
+
+	var/obj/effect/biomass/node/node = locate() in range(get_turf(src), 5)
+	var/obj/effect/biomass/core/core2 = locate() in range(get_turf(src), 8)
+
+	if(!node && !core2)
+		if(manual)
+			to_chat(core.blobHolder, SPAN_WARNING("You can't expand this far from your nodes and core! Build another node nearby and try again!"))
+		return
+	else
+		var/able_to_build = 0
+		if(node && node.faction == faction)
+			able_to_build = 1
+		if(core2 && core2.faction == faction)
+			able_to_build = 1
+		if(!able_to_build)
+			if(manual)
+				to_chat(core.blobHolder, SPAN_WARNING("You can't expand this far from your nodes and core! Build another node nearby and try again!"))
+			return
 
 	var/obj/effect/biomass/new_blob = new(T)
 	new_blob.color = color
@@ -254,7 +274,15 @@
 		new_blob.refund_value = refund_value
 		qdel(src)
 
+/obj/effect/biomass/proc/check_env()
+	var/turf/T = get_turf(src)
+	var/datum/gas_mixture/environment = T.return_air()
+	if(istype(environment))
+		if(environment.temperature > 380)
+			take_damage((environment.temperature - 380) * 0.25 * fire_resist)
+
 /obj/effect/biomass/Process()
+	check_env()
 	if(core)
 		regen()
 		readapt()
@@ -307,10 +335,14 @@
 
 	var/resources = 0
 	var/resource_gain = 1
+	var/free_reroll = 0
+	var/reroll_time = 0
 
 	var/mob/living/blobHolder/blobHolder
 
 	var/datum/blob_strain/strain
+
+	var/list/blob_mobs = list()
 
 /obj/effect/biomass/core/take_damage(var/damage)
 	health -= damage
@@ -335,6 +367,7 @@
 	core = src
 	var/strain_type = pick(subtypesof(/datum/blob_strain))
 	strain = new strain_type
+	reroll_time = world.time + 5 MINUTES
 	update_icon()
 
 /obj/effect/biomass/core/readapt()
@@ -350,8 +383,15 @@
 	faction = blobHolder.ckey
 
 /obj/effect/biomass/core/Process()
-	if(prob(50))
-		resources += resource_gain
+	if(world.time >= reroll_time)
+		if(!blobHolder)
+			strain = pick(subtypesof(/datum/blob_strain))
+			return
+		free_reroll += 1
+		reroll_time = world.time + 5 MINUTES
+		to_chat(blobHolder, SPAN_NOTICE("You get one free strain reroll! Now you have [free_reroll]. Use \"Reroll Strain\" ability to use it."))
+	check_env()
+	resources += resource_gain
 	regen()
 	pulse(20, GLOB.alldirs)
 	readapt()
@@ -405,27 +445,42 @@
 	return
 
 /obj/effect/biomass/factory/pulse()
-	if(prob(50))
-		core.resources += core.resource_gain
+	core.resources += core.resource_gain
 	. = ..()
 
 
 
 /obj/effect/biomass/spore
-	name = "producing mass"
+	name = "spore mass"
 	desc = "A strange filtrating blob guarded by a shield of tendrils. It looks fragile."
 	icon_state = "blob_factory"
 
 	maxHealth = 40
 	var/progress = 0
 
+	var/list/blob_mobs = list()
+
 /obj/effect/biomass/spore/pulse()
 	progress++
 	if(progress == 30)
 		var/mob/living/simple_animal/hostile/blobspore/infesting/spore = new(get_turf(src))
+		blob_mobs.Add(spore)
+		core.blob_mobs.Add(spore)
 		spore.color = color
+		spore.faction = faction
 		progress = 0
 	. = ..()
+
+/obj/effect/biomass/spore/take_damage(var/damage)
+	health -= damage
+	playsound(loc, 'sound/effects/splat.ogg', 50, 1)
+	if(health < 0)
+		core.strain.killed(src)
+		for(var/mob/living/mob in blob_mobs)
+			mob.death()
+		qdel(src)
+	else
+		update_icon()
 
 
 
@@ -465,3 +520,17 @@
 
 /obj/effect/biomass/shield/reinforce()
 	return
+
+/obj/effect/biomass/shield/CanPass(var/atom/movable/mover, var/turf/target, var/height = 0, var/air_group = 0)
+	if(air_group)
+		return 0
+
+	if(height == 0)
+		return 1
+
+	if(istype(mover, /mob/living))
+		var/mob/living/mob = mover
+		if(mob.faction == faction)
+			return 1
+
+	return 0
