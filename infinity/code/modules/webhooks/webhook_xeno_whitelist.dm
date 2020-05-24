@@ -1,7 +1,7 @@
-/decl/webhook/send_ban
+/decl/webhook/xeno_msg
 	id = WEBHOOK_XENO_WHITELIST
 
-/decl/webhook/send_ban/get_message(var/list/data)
+/decl/webhook/xeno_msg/get_message(var/list/data)
 	. = ..()
 
 	if(!length(data))
