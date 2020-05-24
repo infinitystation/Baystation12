@@ -75,6 +75,9 @@
 			take_damage(rand(20, 60) * brute_resist * bomb_resist)
 
 /obj/effect/biomass/proc/take_damage(var/damage)
+	if(core)
+		if(core.blobHolder)
+			core.blobHolder.announceOfDanger(src)
 	health -= damage
 	playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 	if(health < 0)
@@ -190,6 +193,11 @@
 			if(manual)
 				to_chat(core.blobHolder, SPAN_WARNING("You can't expand this far from your nodes and core! Build another node nearby and try again!"))
 			return
+
+	if(health < maxHealth / 2)
+		for(var/i = 1 to 3)
+			regen()
+		return
 
 	var/obj/effect/biomass/new_blob = new(T)
 	new_blob.color = color
@@ -391,7 +399,8 @@
 		reroll_time = world.time + 5 MINUTES
 		to_chat(blobHolder, SPAN_NOTICE("You get one free strain reroll! Now you have [free_reroll]. Use \"Reroll Strain\" ability to use it."))
 	check_env()
-	resources += resource_gain
+	if(prob(25))
+		resources += resource_gain
 	regen()
 	pulse(20, GLOB.alldirs)
 	readapt()
@@ -445,7 +454,8 @@
 	return
 
 /obj/effect/biomass/factory/pulse()
-	core.resources += core.resource_gain
+	if(prob(75))
+		core.resources += core.resource_gain
 	. = ..()
 
 

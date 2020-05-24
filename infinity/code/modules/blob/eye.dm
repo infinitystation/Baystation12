@@ -20,6 +20,9 @@
 	var/obj/effect/biomass/core/core
 	var/mob/observer/eye/blob/eye
 
+	var/last_announce = 0
+	var/obj/effect/biomass/oldmass
+
 /mob/living/blobHolder/Initialize()
 	. = ..()
 	verbs += /mob/living/blobHolder/proc/blob_factory
@@ -28,6 +31,13 @@
 	verbs += /mob/living/blobHolder/proc/reroll_strain
 	verbs += /mob/living/blobHolder/proc/blobbernaut
 	set_see_invisible(INVISIBILITY_EYE - 2)
+	last_announce = world.time
+
+/mob/living/blobHolder/proc/announceOfDanger(var/obj/effect/biomass/mass)
+	if(world.time - last_announce >= 15 SECONDS && mass != oldmass)
+		to_chat(src, SPAN_NOTICE("Your biomass was attacked! (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[mass.x];Y=[mass.y];Z=[mass.z]'>JMP</a>)"))
+		oldmass = mass
+		last_announce = world.time
 
 /mob/living/blobHolder/Life()
 	. = ..()
