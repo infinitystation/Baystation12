@@ -501,15 +501,16 @@ decl/surgery_step/robotics/get_skill_reqs(mob/living/user, mob/living/carbon/hum
 	max_duration = 80
 	surgery_candidate_flags = SURGERY_NO_CRYSTAL | SURGERY_NO_FLESH | SURGERY_NO_STUMP | SURGERY_NEEDS_ENCASEMENT
 
+//INF
 /decl/surgery_step/robotics/install_mmi/pre_surgery_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/device/mmi/M = tool
-	var/obj/item/organ/external/affected = target.get_organ(target_zone)
+	var/obj/item/organ/external/head/head = target.get_organ(BP_HEAD)
 	if(affected && istype(M))
 		if(!M.brainmob || !M.brainmob.client || !M.brainmob.ckey || M.brainmob.stat >= DEAD)
 			to_chat(user, SPAN_WARNING("That brain is not usable."))
 		else if(BP_IS_CRYSTAL(affected))
 			to_chat(user, SPAN_WARNING("The crystalline interior of \the [affected] is incompatible with \the [M]."))
-		else if(!target.get_organ(BP_HEAD).isSynthetic())
+		else if(!head.isSynthetic())
 			to_chat(user, SPAN_WARNING("You cannot install a computer brain into a meat body."))
 		else if(!target.should_have_organ(BP_BRAIN))
 			to_chat(user, SPAN_WARNING("You're pretty sure [target.species.name_plural] don't normally have a brain."))
