@@ -99,10 +99,6 @@
 		"Standard" = "surgeon",
 		"Advanced Droid" = "droid-medical",
 		"Needles" = "medicalrobot",
-		"Drone - Medical" = "drone-medical",
-		"Drone - Chemistry" = "drone-chemistry",
-		"Doot" = "eyebot-medical",
-		"Ver 06" = "wer6-Crisis"
 	)
 	equipment = list(
 		/obj/item/weapon/crowbar,
