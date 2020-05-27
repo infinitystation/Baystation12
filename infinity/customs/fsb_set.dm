@@ -45,7 +45,7 @@
 	trade_blacklisted = TRUE
 
 /obj/item/clothing/head/helmet/riot/fsb
-	name = "Altyn"
+	name = "altyn"
 	desc = "Green military helmet with visor"
 	icon = CUSTOM_ITEM_OBJ
 	item_icons = list(slot_head_str = CUSTOM_ITEM_MOB)
