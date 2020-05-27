@@ -194,9 +194,8 @@
 				to_chat(core.blobHolder, SPAN_WARNING("You can't expand this far from your nodes and core! Build another node nearby and try again!"))
 			return
 
-	if(health < maxHealth / 2)
-		for(var/i = 1 to 3)
-			regen()
+	if(health < maxHealth)
+		regen()
 		return
 
 	var/obj/effect/biomass/new_blob = new(T)
@@ -504,7 +503,7 @@
 	desc = "A mass of interwoven tendrils. They thrash around haphazardly at anything in reach."
 	icon_state = "blob_shield"
 
-	maxHealth = 80
+	maxHealth = 60
 
 /obj/effect/biomass/reinforced/reinforce(manual = 0)
 	if(!manual)
@@ -526,7 +525,7 @@
 	desc = "A pulsating mass of interwoven tendrils. These seem particularly robust, but not quite as active."
 	icon_state = "blob_idle_glow"
 
-	maxHealth = 120
+	maxHealth = 90
 
 /obj/effect/biomass/shield/reinforce()
 	return
