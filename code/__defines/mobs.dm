@@ -187,6 +187,7 @@
 #define BP_HIVE     "hive node"
 #define BP_LARVA    "alien larva" //INF
 #define BP_TONGUE   "tongue" //INF
+#define BP_EARS     "ears" //INF
 #define BP_MIMIC    "mimic sac" //INF
 #define BP_NUTRIENT "nutrient vessel"
 #define BP_ACID     "acid gland"

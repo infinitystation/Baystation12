@@ -82,7 +82,9 @@
 		BP_LIVER =    /obj/item/organ/internal/liver,
 		BP_KIDNEYS =  /obj/item/organ/internal/kidneys,
 		BP_BRAIN =    /obj/item/organ/internal/brain,
-		BP_EYES =     /obj/item/organ/internal/eyes
+		BP_EYES =     /obj/item/organ/internal/eyes,
+		BP_TONGUE =   /obj/item/organ/internal/tongue, //INF
+		BP_EARS =     /obj/item/organ/internal/ears //INF
 		)
 
 	additional_available_cultural_info = list(
@@ -139,7 +141,9 @@
 		BP_LIVER =    /obj/item/organ/internal/liver,
 		BP_KIDNEYS =  /obj/item/organ/internal/kidneys,
 		BP_BRAIN =    /obj/item/organ/internal/brain,
-		BP_EYES =     /obj/item/organ/internal/eyes
+		BP_EYES =     /obj/item/organ/internal/eyes,
+		BP_TONGUE =   /obj/item/organ/internal/tongue, //INF
+		BP_EARS =     /obj/item/organ/internal/ears //INF
 		)
 
 	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_TONE_TRITON | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR

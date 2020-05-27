@@ -377,6 +377,14 @@
 	if(total_damage > 10)
 		local_emp(initial_organ, 3)
 
+    //[INF]
+
+	if(get_organ(BP_IMPLANT_ELECTRO))
+		var/obj/item/organ/internal/electro/electro = get_organ(BP_IMPLANT_ELECTRO)
+		total_damage = electro.calculate_ecute(total_damage)
+
+    //[/INF]
+
 	return total_damage
 
 /mob/living/carbon/human/proc/trace_shock(var/obj/item/organ/external/init, var/obj/item/organ/external/floor)

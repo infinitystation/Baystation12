@@ -10,6 +10,8 @@
 	max_damage = 70
 	relative_size = 60
 
+	var/basic_filter = 1 //INF
+
 /obj/item/organ/internal/liver/robotize()
 	. = ..()
 	icon_state = "liver-prosthetic"
@@ -32,7 +34,7 @@
 		heal_damage(0.2 * owner.chem_effects[CE_ANTITOX])
 
 	// Get the effectiveness of the liver.
-	var/filter_effect = 3
+	var/filter_effect = 3 * basic_filter //INF, was 3
 	if(is_bruised())
 		filter_effect -= 1
 	if(is_broken())

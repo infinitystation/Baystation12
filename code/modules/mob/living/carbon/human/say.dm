@@ -29,7 +29,7 @@
 	if(species.has_organ[BP_TONGUE] && (!tongue) && !snowflake_speak)
 		to_chat(src, SPAN_WARNING("You don't have a tongue and cannot speak propperly!"))
 		var/obj/item/organ/internal/tongue/tongue_spec = species.has_organ[BP_TONGUE]
-		if(tongue_spec.can_mumble)
+		if(tongue_spec.notongue_speech)
 			emote(tongue_spec.notongue_speech)
 		return
 

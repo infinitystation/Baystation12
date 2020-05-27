@@ -93,7 +93,9 @@
 		BP_STOMACH =  /obj/item/organ/internal/stomach,
 		BP_KIDNEYS =  /obj/item/organ/internal/kidneys/resomi,
 		BP_BRAIN =    /obj/item/organ/internal/brain,
-		BP_EYES =     /obj/item/organ/internal/eyes/resomi
+		BP_EYES =     /obj/item/organ/internal/eyes/resomi,
+		BP_TONGUE =   /obj/item/organ/internal/tongue, //INF
+		BP_EARS =     /obj/item/organ/internal/ears //INF
 		)
 
 	unarmed_types = list(

@@ -7,13 +7,12 @@
 	parent_organ = BP_HEAD
 	surface_accessible = TRUE
 	relative_size = 5
-	var/can_mumble = TRUE
 	var/notongue_speech = "mumbles"
 
 /obj/item/organ/internal/tongue/robotic
 	name = "voice synthiser"
 	icon_state = "tonguerobot"
-	can_mumble = FALSE
+	notongue_speech = null
 
 /obj/item/organ/internal/tongue/xeno
 	name = "strange tongue"

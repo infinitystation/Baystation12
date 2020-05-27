@@ -44,6 +44,11 @@
 //[INF]
 			if(istype(M:head, /obj/item/clothing/head/helmet/space) && istype(M:wear_suit, /obj/item/clothing/suit/space))
 				ear_safety += 1
+
+			var/obj/item/organ/internal/ears/ears = locate() in M.internal_organs
+			if(ears.damage_mod <= 0.5)
+				ear_safety += 1
+
 //[/INF]
 	for(var/mob/living/exosuit/mecha in M.loc)
 		if(M in mecha.contents)

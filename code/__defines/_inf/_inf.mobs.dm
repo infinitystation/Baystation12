@@ -14,6 +14,14 @@
 //Organs
 #define BP_FAKE    "fake_brain"
 
+//Advanced implants
+#define BP_IMPLANT_NANITES "Nanite Hub"
+#define BP_IMPLANT_FILTER  "Blood Filter"
+#define BP_IMPLANT_ELECTRO "Grounding Cell"
+
+#define BP_IMPLANT_REVIVER "Automatic Recovery Implant"
+#define BP_IMPLANT_NUTRI   "Nutriment Pump Implant"
+
 #define SPECIES_TAJARA "Tajara"
 #define SPECIES_EROSAN "Erosan'Unathi"
 #define SPECIES_RESOMI "Resomi"

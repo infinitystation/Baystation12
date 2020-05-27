@@ -266,7 +266,8 @@
 		BP_KIDNEYS =  /obj/item/organ/internal/kidneys,
 		BP_BRAIN =    /obj/item/organ/internal/brain,
 		BP_EYES =     /obj/item/organ/internal/eyes/skrell,
-		BP_TONGUE = /obj/item/organ/internal/tongue //INF
+		BP_TONGUE =   /obj/item/organ/internal/tongue, //INF
+		BP_EARS =     /obj/item/organ/internal/ears //INF
 		)
 
 /datum/species/skrell/get_sex(var/mob/living/carbon/human/H)
