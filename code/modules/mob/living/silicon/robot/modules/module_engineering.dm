@@ -19,8 +19,7 @@
 		"Antique" = "engineerrobot",
 		"Landmate" = "landmate",
 		"Landmate - Treaded" = "engiborg+tread",
-//cuz flying		"Ver 06" = "wer6-Engineering", //inf
-		"Motile" = "motile-eng"
+		"Motile" = "motile-eng"//inf
 	)
 	no_slip = 1
 	equipment = list(

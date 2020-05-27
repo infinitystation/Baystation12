@@ -169,7 +169,6 @@ GLOBAL_DATUM(error_cache, /datum/error_viewer/error_cache)
 	var/info
 
 /datum/error_viewer/error_entry/New(exception/e, list/desclines, skip_count)
-	spawn(0) SSwebhooks.send(WEBHOOK_SEND_RUNTIME, list("main_desc" = name, "additional_desc" = desc))//inf
 	if (!istype(e))
 		name = "<b>\[[time_stamp()]]</b> Uncaught exception: <b>[html_encode(e.name)]</b>"
 		return
@@ -193,6 +192,8 @@ GLOBAL_DATUM(error_cache, /datum/error_viewer/error_cache)
 	if (usr)
 		usr_ref = "\ref[usr]"
 		usr_loc = get_turf(usr)
+
+	SSwebhooks.send(WEBHOOK_SEND_RUNTIME, list("main_desc" = name, "additional_desc" = desc))//inf
 
 /datum/error_viewer/error_entry/show_to(user, datum/error_viewer/back_to, linear)
 	if (!istype(back_to))

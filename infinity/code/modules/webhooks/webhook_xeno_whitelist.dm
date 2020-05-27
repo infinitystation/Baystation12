@@ -49,7 +49,7 @@
 	for(var/ckey in unite)
 		var/list/check = unite[ckey]
 		check = sortList(check)	//sorting by race
-		var/list/text
+		var/list/text = list()
 		text += "yml"
 		for(var/race in check)
 			text += race
