@@ -41,7 +41,7 @@
 	max_ammo = 15
 
 /obj/item/ammo_magazine/c12m
-	name = "slug magazine"
+	name = "slug drum"
 	icon = 'infinity/icons/obj/ammo.dmi'
 	icon_state = "m12gb"
 	mag_type = MAGAZINE
@@ -56,7 +56,7 @@
 	initial_ammo = 0
 
 /obj/item/ammo_magazine/c12m/shock
-	name = "shock magazine"
+	name = "shock drum"
 	icon_state = "m12gs"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/shotgun/stunshell
@@ -65,7 +65,7 @@
 	max_ammo = 8
 
 /obj/item/ammo_magazine/c12m/buckshot
-	name = "buckshot magazine"
+	name = "buckshot drum"
 	icon_state = "m12gb"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/shotgun/pellet
