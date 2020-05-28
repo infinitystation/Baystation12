@@ -127,6 +127,7 @@ shokumar - resomi
 solark - resomi
 taushai - resomi
 twinindifferent - resomi
+wheatley2013 - resomi
 arbuzpersikov - skrell
 blacksoul231 - skrell
 coldmantis13 - skrell
@@ -157,7 +158,8 @@ vladpavilen - skrell
 wheatley2013 - skrell
 wolforbykot - skrell
 interl0per - skrell	
-kirill1243 - skrell	
+kirill1243 - skrell
+fukfuk - skrell	
 adro244 - tajara
 arbuzpersikov - tajara
 arhod - tajara
