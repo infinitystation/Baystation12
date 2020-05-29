@@ -1,5 +1,4 @@
 <style type="text/css">
-
 	.link, .linkOn, .linkOff, .selected, .disabled, .yellowButton, .redButton {
 		min-width: 70px;
 		margin: 0px 2px 0px 0px;
@@ -27,15 +26,15 @@
 	<table style="width:100%", align="center">
 	<tr>
 		<th>
-			{{:helper.link('ПРИНЯТЬ ИЗМЕНЕНИЯ', 'arrowstop-1-n', {'send': 1}, null, 'yellowButton')}}
+			{{:helper.link('<span class="bad">ПРИМЕНИТЬ ИЗМЕНЕНИЯ.</span>', 'arrowstop-1-n', {'send': 1}, null, 'yellowButton')}}
 		<th>
 			{{:helper.link('Получить ВЛ | Сбросить изменения', 'refresh', {'refresh': 1}, null)}}
 	<tr>
 	{{if data.debug}}
 		<th>
-			{{:helper.link('СИНХРОНИЗИРОВАТЬ КОНФИГ --> БД', 'arrowthickstop-1-n', {'synch': 'CDB'}, null, 'redButton')}}
+			{{:helper.link('СИНХРОНИЗИРОВАТЬ КОНФИГ --> БД', 'alert', {'synch': 'CDB'}, null, 'redButton')}}
 		<th>
-			{{:helper.link('СИНХРОНИЗИРОВАТЬ БД --> КОНФИГ', 'arrowthickstop-1-s', {'synch': 'DBC'}, null, 'redButton')}}
+			{{:helper.link('СИНХРОНИЗИРОВАТЬ БД --> КОНФИГ', 'alert', {'synch': 'DBC'}, null, 'redButton')}}
 	{{/if}}
 	<tr>
 	{{if data.SQL == -1}}

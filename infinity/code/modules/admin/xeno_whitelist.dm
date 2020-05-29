@@ -19,8 +19,8 @@
 		if(!check_rights(R_DEBUG))
 			to_chat(usr, "<span class='warning'>Access Denied!</span>")
 			return
-		log_admin("[key_name(src)] access xeno whitelist via debug.")
-		message_staff("[key_name_admin(src)] currently debugging xeno whitelist.")
+		log_admin("[key_name(usr)] access xeno whitelist via debug.")
+		message_staff("[key_name_admin(usr)] currently debugging xeno whitelist.")
 
 	var/datum/nano_module/xenopanel/NM = new /datum/nano_module/xenopanel(usr)
 	NM.ui_interact(usr)
@@ -31,7 +31,7 @@
 GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 
 /datum/topic_state/admin_state/xeno/can_use_topic(var/src_object, var/mob/user)
-	return check_rights(R_XENO, 0, user) ? STATUS_INTERACTIVE : STATUS_CLOSE
+	return check_rights(R_XENO|R_DEBUG, 0, user) ? STATUS_INTERACTIVE : STATUS_CLOSE
 
 
 /datum/nano_module/xenopanel
@@ -53,6 +53,9 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 //				xenoname.Add("[species.get_bodytype()]")
 	used = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(FALSE), lowerxenoname), sortkey)
 	noused = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), sortkey)
+
+/datum/nano_module/xenopanel/CanUseTopic(var/mob/user, var/datum/topic_state/state = GLOB.xeno_state)
+	. = ..()
 
 /datum/nano_module/xenopanel/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.xeno_state)
 	var/list/data = list()
@@ -243,28 +246,33 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 
 /datum/nano_module/xenopanel/proc/upload_SQL(var/client/user, var/list/grant, var/list/revoke)
 	. = 1
+	user = user.get_client()
 	if(grant && grant.len)
 		for(var/ckey in grant)
 			var/list/check = grant[ckey]
 			var/dbckey = sql_sanitize_text("[ckey]")
 			for(var/race in check)
-				var/sql = "INSERT INTO `whitelist` (ckey,race) VALUES ([lowertext(dbckey)],[lowertext(race)])"
+				var/sql = "INSERT INTO `whitelist` (ckey,race) VALUES ('[lowertext(dbckey)]','[lowertext(race)]')"
 				establish_db_connection()
 				if(!dbcon.IsConnected())
 					return 0
 				var/DBQuery/query_insert = dbcon.NewQuery(sql)
 				query_insert.Execute()
+			log_admin("Alien Whitelist GRANTED by [user.ckey]. [lowertext(dbckey)]: [jointext(check, ", ")]")
+			message_staff("Alien Whitelist GRANTED by [user.ckey]. [lowertext(dbckey)]: [jointext(check, ", ")]")
 	if(revoke && revoke.len)
 		for(var/ckey in revoke)
 			var/list/check = revoke[ckey]
 			var/dbckey = sql_sanitize_text("[ckey]")
 			for(var/race in check)
-				var/sql = "DELETE FROM `whitelist` WHERE ckey = [lowertext(dbckey)] AND race = [lowertext(race)]"
+				var/sql = "DELETE FROM `whitelist` WHERE ckey = '[lowertext(dbckey)]' AND race = '[lowertext(race)]'"
 				establish_db_connection()
 				if(!dbcon.IsConnected())
 					return 0
 				var/DBQuery/query_insert = dbcon.NewQuery(sql)
 				query_insert.Execute()
+			log_admin("Alien Whitelist REVOKED by [user.ckey]. [lowertext(dbckey)]: [jointext(check, ", ")]")
+			message_staff("Alien Whitelist REVOKED by [user.ckey]. [lowertext(dbckey)]: [jointext(check, ", ")]")
 	user = user.get_client()
 	SSwebhooks.send(WEBHOOK_XENO_WHITELIST, list("ckey" = user.ckey, "grant" = grant, "revoke" = revoke, "type" = "базу данных"))
 	if(config.usealienwhitelistSQL)
@@ -272,6 +280,7 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 
 /datum/nano_module/xenopanel/proc/upload_CONFIG(var/client/user, var/list/grant, var/list/revoke, var/sort = TRUE)
 	. = 1
+	user = user.get_client()
 	var/text = file2text("config/alienwhitelist.txt")
 	if (!text)
 		log_misc("Failed to load config/alienwhitelist.txt")
@@ -285,11 +294,15 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 			var/list/check = revoke[ckey]
 			for(var/race in check)
 				list -= "[lowertext(ckey)] - [lowertext(race)]"
+			log_admin("Alien Whitelist REVOKED by [user.ckey]. [lowertext(ckey)]: [jointext(check, ", ")]")
+			message_staff("Alien Whitelist REVOKED by [user.ckey]. [lowertext(ckey)]: [jointext(check, ", ")]")
 	if(grant && grant.len)
 		for(var/ckey in grant)
 			var/list/check = grant[ckey]
 			for(var/race in check)
 				list += "[lowertext(ckey)] - [lowertext(race)]"
+			log_admin("Alien Whitelist GRANTED by [user.ckey]. [lowertext(ckey)]: [jointext(check, ", ")]")
+			message_staff("Alien Whitelist GRANTED by [user.ckey]. [lowertext(ckey)]: [jointext(check, ", ")]")
 	if(!list || !list.len)
 		log_misc("Failed to load config/alienwhitelist.txt")
 		return 0
@@ -324,7 +337,6 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 			var/RACE = key["race"]
 			var/unite = "[CKEY] - [RACE]"
 			list += unite
-	user = user.get_client()
 	SSwebhooks.send(WEBHOOK_XENO_WHITELIST, list("ckey" = user.ckey, "grant" = grant, "revoke" = revoke, "type" = "конфиг-файл"))
 	text = jointext(list, "\n")
 	fdel("config/alienwhitelist.txt")
