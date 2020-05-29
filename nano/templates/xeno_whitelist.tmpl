@@ -1,5 +1,4 @@
 <style type="text/css">
-
 	.link, .linkOn, .linkOff, .selected, .disabled, .yellowButton, .redButton {
 		min-width: 70px;
 		margin: 0px 2px 0px 0px;
@@ -15,28 +14,33 @@
 	{{else data.SQL == -2}}
 		<div class='notice'><center><h3><span class="average">Вайтлист работает в файловом режиме.<br>Использование БД отключено конфигурацией сервера.</span></h3></center></div><br>
 		<div class='notice'><center><span class="bad">Не удалось установить подключение к Базе Данных.</span></div><br>
+		{{:helper.link('Переподключение к БД.', null, {'DBreconnect' : 1})}}</center></div>
 	{{else data.SQL == 0}}
 		<div class='notice'><center><h3><span class="bad">Не удалось установить подключение к Базе Данных.</span></h3><br>
-		{{:helper.link('Переподключение к БД.', null, {'DBreconnect' : 1})}}</center></div><br>
+		{{:helper.link('Переподключение к БД.', null, {'DBreconnect' : 1})}}</center></div>
 	{{else data.SQL == 1}}
 		<div class='notice'><center><h3><span class="good">База Данных готова.</span></h3></center></div><br>
 	{{else}}
 		<div class='notice'><center><h3><span class="bad">Неожиданный код статуса Базы Данных: {{:data.SQL}}</span></h3><br>
-		{{:helper.link('Переподключение к БД.', null, {'DBreconnect' : 1})}}</center></div><br>
+		{{:helper.link('Переподключение к БД.', null, {'DBreconnect' : 1})}}</center></div>
+	{{/if}}
+	{{if data.debug}}
+	<div class='notice'><center><span class="bad">===== High-risk zone =====<br>Не трогайте эти кнопки, если не знааете что они делают!</span>
+	<table style="width:100%", align="center">
+	<tr>
+		<th>
+			{{:helper.link('СИНХРОНИЗИРОВАТЬ КОНФИГ --> БД', 'alert', {'synch': 'CDB'}, null, 'redButton')}}
+		<th>
+			{{:helper.link('СИНХРОНИЗИРОВАТЬ БД --> КОНФИГ', 'alert', {'synch': 'DBC'}, null, 'redButton')}}
+	</table>
+	<span class="bad">===== End of high-risk zone =====</span></center></div><br>
 	{{/if}}
 	<table style="width:100%", align="center">
 	<tr>
 		<th>
-			{{:helper.link('ПРИНЯТЬ ИЗМЕНЕНИЯ', 'arrowstop-1-n', {'send': 1}, null, 'yellowButton')}}
+			{{:helper.link('<span class="bad">ПРИМЕНИТЬ ИЗМЕНЕНИЯ</span>', 'arrowstop-1-n', {'send': 1}, null, 'yellowButton')}}
 		<th>
 			{{:helper.link('Получить ВЛ | Сбросить изменения', 'refresh', {'refresh': 1}, null)}}
-	<tr>
-	{{if data.debug}}
-		<th>
-			{{:helper.link('СИНХРОНИЗИРОВАТЬ КОНФИГ --> БД', 'arrowthickstop-1-n', {'synch': 'CDB'}, null, 'redButton')}}
-		<th>
-			{{:helper.link('СИНХРОНИЗИРОВАТЬ БД --> КОНФИГ', 'arrowthickstop-1-s', {'synch': 'DBC'}, null, 'redButton')}}
-	{{/if}}
 	<tr>
 	{{if data.SQL == -1}}
 		<th>
