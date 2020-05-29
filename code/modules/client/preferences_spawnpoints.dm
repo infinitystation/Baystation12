@@ -79,16 +79,55 @@ GLOBAL_VAR(spawntypes)
 	for(var/obj/machinery/cryopod/C in shuffle(spots))
 		if(!C.occupant)
 			C.set_occupant(victim, 1)
-			to_chat(victim,SPAN_NOTICE("Вы постепенно пробуждаетесь от крио-сна на [GLOB.using_map.full_name]."))
+			to_chat(victim,SPAN_NOTICE("Вы постепенно пробуждаетесь от крио-сна на корабле."))
 //[INF]
 			victim.sleeping = 0 //INF
 			victim.Sleeping(rand(2,7))
+			victim.bodytemperature = victim.species.cold_level_1 //very cold, but a point before damage
+			if(!victim.isSynthetic()) //fluff. I didn't used else at next lines because of code readness
+				to_chat(victim, SPAN_NOTICE("Вы чувствуете озноб и капли воды на себе. Криогенная жидкость только \
+				прекратила охлаждать атмосферу внутри капсулы... Сквозь веки бьёт яркий свет, пытаясь заставить проснуться. \
+				Похоже, смена начинается."))
+			else
+				to_chat(victim, SPAN_NOTICE("Получен сигнал к пробуждению. Батарея заряжена. Все системы в норме."))
 			if(!victim.isSynthetic())
-				to_chat(victim,SPAN_WARNING("Тошнота, жажда, голод, сонливость - вот, что встречает Ваше ослабшее тело. \
-				Не удалось даже нормально выспаться в этом гробу..."))
-				victim.nutrition = rand(0,200)
-				victim.hydration = rand(0,200)
-				victim.SetStasis(10)
+				var/msg
+/* bad ideas
+				if(prob(5))
+					victim.make_dizzy(200) //sea sick, it would make you mad very fast
+*/
+				if(prob(20)) //starvation
+					msg += SPAN_WARNING("Кажется, вы забыли поесть перед тем, как уйти в сон. Горло пересохло, а \
+					живот скрутило в спазме. ")
+					victim.nutrition = rand(0,200)
+					victim.hydration = rand(0,200)
+					if(victim.species.name == SPECIES_UNATHI)
+						victim.nutrition = 100
+				if(prob(15)) //stutterting and jittering (because of cold?)
+					msg += SPAN_WARNING("Трясет от холода. ")
+					victim.make_jittery(120)
+					victim.stuttering = 20
+				if(prob(10)) //hallucinations
+					msg += SPAN_WARNING("В ушках звон, в голове белый шум... ")
+					victim.hallucination(100, 120)
+				if(prob(5)) //side medical effect. Stealth
+					victim.add_side_effect(pick(GLOB.all_medical_side_effects))
+				if(prob(5)) //cryo malfunction
+					msg += SPAN_DANGER("Вы чувствуете ужасающий холод во всём теле! Крио всё ещё охлаждает! ")
+					victim.bodytemperature = victim.species.cold_level_3
+				if(prob(5)) //vomit
+					msg += SPAN_WARNING("Тошнит... ")
+					victim.vomit()
+				if(prob(5)) //sleepy crewman syndrome
+					msg += SPAN_WARNING("Вы долго не могли уснуть, не смотря на все усилия этой машины. \
+					Так не хочется вставать... Ноги ватные, руки тяжелые... ")
+					victim.drowsyness += 39 //59 seconds with high chance to fall asleep
+				if(!msg)
+					msg += SPAN_NOTICE("Кажется, в этот раз без осложнений... Правда, выспаться в саркофаге всё равно не удалось.")
+				else
+					msg += SPAN_WARNING("Не удалось даже нормально выспаться в этом гробу...")
+				to_chat(victim, msg)
+				victim.drowsyness += 20
 //[/INF]
 			return
 
