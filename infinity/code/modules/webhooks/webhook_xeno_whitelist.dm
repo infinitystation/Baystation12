@@ -27,6 +27,7 @@
 	if(!grant || (revoke && (revoke.len >= grant.len)))
 		icon = "https://cdn.discordapp.com/emojis/601028456675016706.png"			// :resomisad: emoji
 	desc["thumbnail"] = list("url" = icon)
+/*
 	var/list/unite = list()
 
 	for(var/ckey in grant)
@@ -41,6 +42,25 @@
 		for(var/race in check)
 			temp += "--[race]"
 		unite[ckey] += list(temp)
+*/
+	var/list/A = list()
+	var/list/B = list()
+	for(var/ckey in grant)
+		var/list/check = grant[ckey]
+		for(var/race in check)
+			B += "++[race]"
+		A[ckey] = B
+	grant = A
+	A.Cut()
+	B.Cut()
+	for(var/ckey in revoke)
+		var/list/check = revoke[ckey]
+		for(var/race in check)
+			B += "--[race]"
+		A[ckey] = B
+	revoke = A
+
+	var/list/unite = grant + revoke
 	if(!unite || !unite.len)
 		.["content"] = "Сюда пришло изменение вайтлиста, но мы потеряли список."
 		return
