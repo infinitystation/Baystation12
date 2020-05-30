@@ -79,8 +79,21 @@ GLOBAL_VAR(spawntypes)
 	for(var/obj/machinery/cryopod/C in shuffle(spots))
 		if(!C.occupant)
 			C.set_occupant(victim, 1)
-			to_chat(victim,SPAN_NOTICE("Вы постепенно пробуждаетесь от крио-сна на корабле."))
+/*[ORIG]
+			victim.Sleeping(rand(1,3))
+			to_chat(victim,SPAN_NOTICE("You are slowly waking up from the cryostasis aboard [GLOB.using_map.full_name]. It might take a few seconds."))
+			return
+[/ORIG]*/
 //[INF]
+			var/obj/effect/overmap/visitable/sector = map_sectors["[C.z]"]
+			var/greetings = ". Это может занять пару секунд."
+			if(sector && istype(sector))
+				if(!sector.check_ownership(C))
+					for(var/obj/effect/overmap/visitable/candidate in sector)
+						if(candidate.check_ownership(C))
+							sector = candidate
+					greetings = " на [istype(sector, /obj/effect/overmap/visitable/ship) ? "судне" : "станции"] '[GLOB.using_map.full_name]'."
+			to_chat(victim, SPAN_NOTICE("Вы пробуждаетесь от крио-сна[greetings]"))
 			victim.sleeping = 0 //INF
 			victim.Sleeping(rand(2,7))
 			victim.bodytemperature = victim.species.cold_level_1 //very cold, but a point before damage
