@@ -3670,7 +3670,7 @@
 #include "infinity\customs\agrevol.dm"
 #include "infinity\customs\arhod.dm"
 #include "infinity\customs\army_overcoat.dm"
-#include "infinity\customs\asriel_zimmer_locket.dm"
+#include "infinity\customs\asriel.dm"
 #include "infinity\customs\atlas.dm"
 #include "infinity\customs\chainsword.dm"
 #include "infinity\customs\Chowny-Geniffer_Fon_Livia.dm"
