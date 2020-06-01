@@ -74,14 +74,17 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
-		ui = new(user, src, ui_key, "xeno_whitelist.tmpl", "XenoWhitelist Panel", 3000, 1000)
+		ui = new(user, src, ui_key, "xeno_whitelist.tmpl", "XenoWhitelist Panel", 3000, 1000, src, state = state)
 		ui.set_initial_data(data)
 		ui.open()
 	myui = ui
 
 /datum/nano_module/xenopanel/Topic(var/href, href_list, state)
-	..()
-
+	if(..())
+		return 1
+	if(href_list["close"]) // This is called when the window is closed; we've signed up to get notified of it.
+		qdel(src)
+		return 1
 	if (href_list["mode"])
 		alternate = text2num(href_list["mode"])
 		. = TOPIC_REFRESH
@@ -169,22 +172,37 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 			to_chat(usr, "Ошибка синхронизации: неизвестные адреса синхронизации.")
 			return TOPIC_NOACTION
 		var/list/list
+		var/list/notlist
 		if(config.usealienwhitelistSQL)
 			if(href_list["synch"] == "CDB")
 				list = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), "ckey")
+				notlist = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(FALSE), lowerxenoname), "ckey")
 			else
 				list = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(FALSE), lowerxenoname), "ckey")
+				notlist = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), "ckey")
 		else
 			if(href_list["synch"] == "CDB")
 				list = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(FALSE), lowerxenoname), "ckey")
+				notlist = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), "ckey")
 			else
 				list = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), "ckey")
+				notlist = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(FALSE), lowerxenoname), "ckey")
 
 		var/list/grant = list()
 		for(var/list/ckey in list)
 			var/list/local = ckey["YES"]
 			if(local && local.len)
 				grant[ckey["ckey"]] = local
+
+		if(TRUE)		// HARD RESET not need this. But we not need HReset now.
+			var/list/notgrant = list()
+			for(var/list/ckey in notlist)
+				var/list/local = ckey["YES"]
+				if(local && local.len)
+					notgrant[ckey["ckey"]] = local
+
+			grant = difflist(grant, notgrant)
+
 		if(!grant || !grant.len)
 			to_chat(usr, "Нечего переносить.")
 			return TOPIC_NOACTION
@@ -258,8 +276,8 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 					return 0
 				var/DBQuery/query_insert = dbcon.NewQuery(sql)
 				query_insert.Execute()
-			log_admin("Alien Whitelist GRANTED by [user.ckey]. [lowertext(dbckey)]: [jointext(check, ", ")]")
-			message_staff("Alien Whitelist GRANTED by [user.ckey]. [lowertext(dbckey)]: [jointext(check, ", ")]")
+			log_admin("Alien Whitelist GRANTED (SQL) by [user.ckey]. [lowertext(dbckey)]: [jointext(check, ", ")]")
+			message_staff("Alien Whitelist GRANTED (SQL) by [user.ckey]. [lowertext(dbckey)]: [jointext(check, ", ")]")
 	if(revoke && revoke.len)
 		for(var/ckey in revoke)
 			var/list/check = revoke[ckey]
@@ -271,8 +289,8 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 					return 0
 				var/DBQuery/query_insert = dbcon.NewQuery(sql)
 				query_insert.Execute()
-			log_admin("Alien Whitelist REVOKED by [user.ckey]. [lowertext(dbckey)]: [jointext(check, ", ")]")
-			message_staff("Alien Whitelist REVOKED by [user.ckey]. [lowertext(dbckey)]: [jointext(check, ", ")]")
+			log_admin("Alien Whitelist REVOKED (SQL) by [user.ckey]. [lowertext(dbckey)]: [jointext(check, ", ")]")
+			message_staff("Alien Whitelist REVOKED (SQL) by [user.ckey]. [lowertext(dbckey)]: [jointext(check, ", ")]")
 	user = user.get_client()
 	SSwebhooks.send(WEBHOOK_XENO_WHITELIST, list("ckey" = user.ckey, "grant" = grant, "revoke" = revoke, "type" = "базу данных"))
 	if(config.usealienwhitelistSQL)
@@ -294,15 +312,15 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 			var/list/check = revoke[ckey]
 			for(var/race in check)
 				list -= "[lowertext(ckey)] - [lowertext(race)]"
-			log_admin("Alien Whitelist REVOKED by [user.ckey]. [lowertext(ckey)]: [jointext(check, ", ")]")
-			message_staff("Alien Whitelist REVOKED by [user.ckey]. [lowertext(ckey)]: [jointext(check, ", ")]")
+			log_admin("Alien Whitelist REVOKED (CONFIG) by [user.ckey]. [lowertext(ckey)]: [jointext(check, ", ")]")
+			message_staff("Alien Whitelist REVOKED (CONFIG) by [user.ckey]. [lowertext(ckey)]: [jointext(check, ", ")]")
 	if(grant && grant.len)
 		for(var/ckey in grant)
 			var/list/check = grant[ckey]
 			for(var/race in check)
 				list += "[lowertext(ckey)] - [lowertext(race)]"
-			log_admin("Alien Whitelist GRANTED by [user.ckey]. [lowertext(ckey)]: [jointext(check, ", ")]")
-			message_staff("Alien Whitelist GRANTED by [user.ckey]. [lowertext(ckey)]: [jointext(check, ", ")]")
+			log_admin("Alien Whitelist GRANTED (CONFIG) by [user.ckey]. [lowertext(ckey)]: [jointext(check, ", ")]")
+			message_staff("Alien Whitelist GRANTED (CONFIG) by [user.ckey]. [lowertext(ckey)]: [jointext(check, ", ")]")
 	if(!list || !list.len)
 		log_misc("Failed to load config/alienwhitelist.txt")
 		return 0
