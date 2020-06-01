@@ -28,6 +28,7 @@ sosiskoed - diona
 spiderling - diona
 vankoska - diona
 wolforbykot - diona
+adro244 - diona
 adro244 - giant armoured serpentid
 bob46 - giant armoured serpentid
 coldmantis13 - giant armoured serpentid
@@ -127,6 +128,7 @@ shokumar - resomi
 solark - resomi
 taushai - resomi
 twinindifferent - resomi
+wheatley2013 - resomi
 arbuzpersikov - skrell
 blacksoul231 - skrell
 coldmantis13 - skrell
@@ -157,7 +159,8 @@ vladpavilen - skrell
 wheatley2013 - skrell
 wolforbykot - skrell
 interl0per - skrell	
-kirill1243 - skrell	
+kirill1243 - skrell
+fukfuk - skrell	
 adro244 - tajara
 arbuzpersikov - tajara
 arhod - tajara
@@ -209,6 +212,7 @@ thesarkazmus - unathi
 vermout - unathi
 wheatley2013 - unathi
 wolforbykot - unathi
+logfol - unathi
 adro244 - vox
 arbuzpersikov - vox
 asriel15 - vox
