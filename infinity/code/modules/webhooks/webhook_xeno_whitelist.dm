@@ -49,23 +49,25 @@
 		var/list/check = grant[ckey]
 		for(var/race in check)
 			B += "++[race]"
-		A[ckey] = B
-	grant = A
+		A[ckey] = B.Copy()
+		B.Cut()
+	grant = A.Copy()
 	A.Cut()
 	B.Cut()
 	for(var/ckey in revoke)
 		var/list/check = revoke[ckey]
 		for(var/race in check)
 			B += "--[race]"
-		A[ckey] = B
-	revoke = A
+		A[ckey] = B.Copy()
+		B.Cut()
+	revoke = A.Copy()
 
 	var/list/unite = grant + revoke
 	if(!unite || !unite.len)
 		.["content"] = "Сюда пришло изменение вайтлиста, но мы потеряли список."
 		return
 	var/list/fields = list()
-	unite = sortList(unite)		//sorting by ckey
+	unite = sortAssoc(unite)		//sorting by ckey
 	for(var/ckey in unite)
 		var/list/check = unite[ckey]
 		check = sortList(check)	//sorting by race
