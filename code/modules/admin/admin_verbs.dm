@@ -336,8 +336,8 @@ var/list/admin_verbs_xeno = list(
 	/client/proc/cmd_admin_pm_panel,
 	/datum/admins/proc/PlayerNotes,
 	/client/proc/admin_ghost,
-	/datum/admins/proc/xeno_whitelist_panel
-//INF	/datum/admins/proc/show_player_info
+//MOVED2DEBUG_VERB_WHILE_FIXING	/datum/admins/proc/xeno_whitelist_panel
+//	/datum/admins/proc/show_player_info
 )
 //[/INF]
 /client/proc/add_admin_verbs()
