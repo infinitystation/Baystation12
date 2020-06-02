@@ -987,6 +987,13 @@
 		var/image/holder = hud_list[LIFE_HUD]
 		if(stat == DEAD)
 			holder.icon_state = "huddead"
+
+		//[INF]
+		else if(diseases.len > 0)
+			holder.icon_state = "hudill[get_worst_disease()]"
+			holder.icon = 'infinity/icons/mob/hud.dmi'
+		//[/INF]
+
 		else
 			holder.icon_state = "hudhealthy"
 		hud_list[LIFE_HUD] = holder
@@ -995,7 +1002,11 @@
 		var/image/holder = hud_list[STATUS_HUD]
 		if(stat == DEAD)
 			holder.icon_state = "huddead"
-
+		//[INF]
+		else if(diseases.len > 0)
+			holder.icon_state = "hudill[get_worst_disease()]"
+			holder.icon = 'infinity/icons/mob/hud.dmi'
+		//[/INF]
 		else if(has_brain_worms())
 			var/mob/living/simple_animal/borer/B = has_brain_worms()
 			if(B.controlling)
@@ -1008,6 +1019,11 @@
 		var/image/holder2 = hud_list[STATUS_HUD_OOC]
 		if(stat == DEAD)
 			holder2.icon_state = "huddead"
+		//[INF]
+		else if(diseases.len > 0)
+			holder.icon_state = "hudill[get_worst_disease()]"
+			holder.icon = 'infinity/icons/mob/hud.dmi'
+		//[/INF]
 		else if(has_brain_worms())
 			holder2.icon_state = "hudbrainworm"
 		else

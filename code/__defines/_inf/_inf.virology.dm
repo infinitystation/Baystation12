@@ -1,0 +1,33 @@
+#define VIRUS_SYMPTOM_LIMIT		6
+
+//Virus flags
+
+#define DISEASE_HIDDEN_SCANNER  1
+#define DISEASE_HIDDEN_PANDEMIC 2
+
+#define DISEASE_CUREABLE 		4
+#define DISEASE_CAN_CARRY 		8
+#define DISEASE_CAN_IMMUNE 		16
+
+//Virus spread flags
+
+#define DISEASE_SPREAD_SPECIAL 			1
+#define DISEASE_SPREAD_NON_CONTAGIOUS   2
+#define DISEASE_SPREAD_BLOOD 			4
+#define DISEASE_SPREAD_CONTACT_FLUIDS   8
+#define DISEASE_SPREAD_CONTACT_SKIN 	16
+#define DISEASE_SPREAD_AIRBORNE 		32
+
+//Severity Defines
+
+#define DISEASE_SEVERITY_POSITIVE	"Positive"
+#define DISEASE_SEVERITY_NONTHREAT	"Harmless"
+#define DISEASE_SEVERITY_MINOR		"Minor"
+#define DISEASE_SEVERITY_HARMFUL	"Harmful"
+#define DISEASE_SEVERITY_BIOHAZARD	"Biohazard"
+
+//Disease Biotypes
+
+#define DISEASE_BIOTYPE_ORGANIC     "Organic"
+#define DISEASE_BIOTYPE_ROBOTIC     "Robotic"
+#define DISEASE_BIOTYPE_INDEAD      "Undead"

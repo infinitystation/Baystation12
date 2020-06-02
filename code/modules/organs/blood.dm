@@ -28,7 +28,8 @@
 				"blood_DNA" = dna.unique_enzymes,
 				"blood_colour" = species.get_blood_colour(src),
 				"blood_type" = dna.b_type,
-				"trace_chem" = null
+				"trace_chem" = null,
+                "diseases" = list() //INF
 			)
 			B.color = B.data["blood_colour"]
 
