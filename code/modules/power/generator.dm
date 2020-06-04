@@ -158,8 +158,8 @@
 		update_icon()
 	add_avail(effective_gen)
 
-/obj/machinery/power/generator/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(isWrench(W))
+/obj/machinery/power/generator/attackby(obj/item/I as obj, mob/user as mob)
+	if(isWrench(I))
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
 		anchored = !anchored
 		user.visible_message("[user.name] [anchored ? "secures" : "unsecures"] the bolts holding [src.name] to the floor.", \
@@ -171,6 +171,16 @@
 		else
 			disconnect_from_network()
 		reconnect()
+	//[INF]
+	if(istype(I, /obj/item/stack/nanopaste))
+		var/obj/item/stack/nanopaste/S = I
+		if((effective_gen < (max_power * 0.1)) && (integrity > 25))
+			if(S.use(1))
+				integrity = 100
+				stat = 0
+		else
+			to_chat(user, "Generator must be stoped!")
+	//[/INF]
 	else
 		..()
 
