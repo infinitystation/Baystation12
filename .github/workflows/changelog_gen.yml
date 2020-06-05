@@ -8,7 +8,7 @@ on:
 jobs:
   Compile_Changelog:
     runs-on: ubuntu-latest
-#    if: github.repository == 'infinitystation/Baystation12'
+    if: github.repository == 'infinitystation/Baystation12'
     steps:
       - name: Get Repo
         uses: actions/checkout@v1
