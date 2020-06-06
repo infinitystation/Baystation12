@@ -1346,6 +1346,10 @@
 	name = "AI Chamber"
 	icon_state = "ai_chamber"
 
+/area/turret_protected/ai/airlock
+	name = "AI Chamber Outer Maintance"
+	icon_state = "ai_foyer"
+
 /area/turret_protected/ai_cyborg_station
 	name = "Second Deck - Cyborg Station"
 	icon_state = "ai_cyborg"
@@ -1360,6 +1364,9 @@
 	name = "Second Deck - AI Upload Access"
 	icon_state = "ai_foyer"
 	sound_env = SMALL_ENCLOSED
+
+/area/ai_abadoned
+	name = "Abadoned Chamber"
 
 // Merchant
 /area/merchant_station
