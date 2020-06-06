@@ -139,7 +139,7 @@
 		s.start()
 		stored_energy *= 0.5
 
-		integrity = max(0, integrity - min(integrity, ((effective_gen - max_power) / 1e6) ** 3)) // INF
+		integrity = clamp(integrity - ((effective_gen - max_power) / 1e6) ** 3, 0, integrity) //INF
 
 	//Power
 	last_circ1_gen = circ1.return_stored_energy()
@@ -177,7 +177,7 @@
 		if(effective_gen < (max_power * 0.1))
 			if(integrity > initial(integrity) / 4)
 				if(S.use(1))
-					integrity = max(0, min(initial(integrity), integrity + initial(integrity) / 10))
+					integrity = clamp(integrity + initial(integrity) / 10, 0, initial(integrity))
 					to_chat(user, "\icon[src] [src] has successfully repaired.")
 			else
 				to_chat(user, "\icon[src] [src] is not repairable!")
