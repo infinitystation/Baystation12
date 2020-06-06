@@ -174,11 +174,15 @@
 	//[INF]
 	if(istype(W, /obj/item/stack/nanopaste))
 		var/obj/item/stack/nanopaste/S = W
-		if((effective_gen < (max_power * 0.1)) && (integrity > initial(integrity) / 4))
-			if(S.use(1))
-				integrity = max(0, min(initial(integrity), integrity + initial(integrity) / 10))
+		if(effective_gen < (max_power * 0.1))
+			if(integrity > initial(integrity) / 4)
+				if(S.use(1))
+					integrity = max(0, min(initial(integrity), integrity + initial(integrity) / 10))
+					to_chat(user, "\icon[src] [src] has successfully repaired.")
+			else
+				to_chat(user, "\icon[src] [src] is not repairable!")
 		else
-			to_chat(user, "Generator must be stoped!")
+			to_chat(user, "\icon[src] [src] must be stoped first!")
 	//[/INF]
 	else
 		..()
