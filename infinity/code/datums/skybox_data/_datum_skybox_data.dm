@@ -19,13 +19,15 @@
 /datum/controller/subsystem/skybox/Initialize()
 	. = ..()
 	set_rand_skybox_datum()
+	set_random_skybox_color()
 
-/datum/controller/subsystem/skybox/proc/rebuild_all_skyboxes()
-	for(var/z in skybox_cache)
-		skybox_cache[z] = generate_skybox(z)
-
-	for(var/client/C)
-		C.update_skybox(1)
+/datum/controller/subsystem/skybox/proc/set_random_skybox_color()
+	if(length(skybox_data?.forced_colors))
+		background_color = PICK_OR_SET(skybox_data.forced_colors)
+	else
+		background_color = RANDOM_RGB
+	. = background_color
+	rebuild_skyboxes()
 
 /datum/controller/subsystem/skybox/proc/set_rand_skybox_datum()
 	var/list/skydatums = typesof(/datum/skybox_data)
@@ -57,4 +59,4 @@
 				background_icon = PICK_OR_SET(skybox_data.dyable_icon_states)
 		else
 			background_icon = PICK_OR_SET(skybox_data.undyable_icon_states)
-	rebuild_all_skyboxes()
+	rebuild_skyboxes()
