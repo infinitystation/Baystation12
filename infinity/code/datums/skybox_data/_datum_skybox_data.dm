@@ -2,11 +2,10 @@
 	var/skybox_icon = 'icons/skybox/skybox.dmi'
 	var/stars_icon
 	var/list/star_state = "stars"
-	var/list/dyable_icon_states = "dyable"
+	var/list/icon_states = "dyable"
 	var/list/cascade_icon_states = "cascade"
 	var/list/narsie_icon_states = "narsie"
-	var/list/forced_colors
-	var/list/undyable_icon_states
+	var/list/forced_colors //to forbide coloring, just set to "#ffffff"
 
 /datum/skybox_data/New()
 	. = ..()
@@ -54,9 +53,7 @@
 		else
 			use_stars = FALSE
 
-		if(!skybox_data.undyable_icon_states)
-			if(skybox_data.dyable_icon_states)
-				background_icon = PICK_OR_SET(skybox_data.dyable_icon_states)
-		else
-			background_icon = PICK_OR_SET(skybox_data.undyable_icon_states)
+		if(skybox_data.icon_states)
+			background_icon = PICK_OR_SET(skybox_data.icon_states)
+
 	rebuild_skyboxes()
