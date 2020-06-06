@@ -174,10 +174,9 @@
 	//[INF]
 	if(istype(I, /obj/item/stack/nanopaste))
 		var/obj/item/stack/nanopaste/S = I
-		if((effective_gen < (max_power * 0.1)) && (integrity > 25))
+		if((effective_gen < (max_power * 0.1)) && (integrity > initial(integrity) / 4))
 			if(S.use(1))
-				integrity = 100
-				stat = 0
+				integrity = max(0, min(initial(integrity), integrity + initial(integrity) / 10))
 		else
 			to_chat(user, "Generator must be stoped!")
 	//[/INF]
