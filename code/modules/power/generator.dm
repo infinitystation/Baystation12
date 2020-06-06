@@ -201,6 +201,7 @@
 		vertical = 1
 
 	var/data[0]
+	data["integrity"] = integrity
 	data["totalOutput"] = effective_gen/1000
 	data["maxTotalOutput"] = max_power/1000
 	data["thermalOutput"] = last_thermal_gen/1000
