@@ -6,7 +6,7 @@
 	anchored = 0
 
 	use_power = POWER_USE_IDLE
-	idle_power_usage = 100 //Watts, I hope.  Just enough to do the computer and display things.
+	idle_power_usage = 100 //Watts, W hope.  Just enough to do the computer and display things.
 
 	var/integrity = 100 //INF
 
@@ -158,8 +158,8 @@
 		update_icon()
 	add_avail(effective_gen)
 
-/obj/machinery/power/generator/attackby(obj/item/I as obj, mob/user as mob)
-	if(isWrench(I))
+/obj/machinery/power/generator/attackby(obj/item/W as obj, mob/user as mob) //INF, was: /obj/machinery/power/generator/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	if(isWrench(W))
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
 		anchored = !anchored
 		user.visible_message("[user.name] [anchored ? "secures" : "unsecures"] the bolts holding [src.name] to the floor.", \
@@ -172,8 +172,8 @@
 			disconnect_from_network()
 		reconnect()
 	//[INF]
-	if(istype(I, /obj/item/stack/nanopaste))
-		var/obj/item/stack/nanopaste/S = I
+	if(istype(W, /obj/item/stack/nanopaste))
+		var/obj/item/stack/nanopaste/S = W
 		if((effective_gen < (max_power * 0.1)) && (integrity > initial(integrity) / 4))
 			if(S.use(1))
 				integrity = max(0, min(initial(integrity), integrity + initial(integrity) / 10))
@@ -201,7 +201,7 @@
 		vertical = 1
 
 	var/data[0]
-	data["integrity"] = integrity
+	data["integrity"] = integrity //INF
 	data["totalOutput"] = effective_gen/1000
 	data["maxTotalOutput"] = max_power/1000
 	data["thermalOutput"] = last_thermal_gen/1000
