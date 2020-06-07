@@ -28,6 +28,7 @@
 		var/client/t = listening_mob.get_client()
 		if(!t)
 			continue
+		if(t.is_key_ignored(C.key)) continue//inf
 		listening_clients |= t
 		var/received_message = t.receive_looc(C, key, message, listening_mob.looc_prefix())
 		received_message = emoji_parse(received_message)
