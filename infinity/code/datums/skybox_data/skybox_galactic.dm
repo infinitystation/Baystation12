@@ -3,3 +3,4 @@
 	cascade_icon_states = list("cascade", "cascade2")
 	star_state = null
 	icon_states = "undyable"
+	undyable_probability = 40
