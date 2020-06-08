@@ -75,10 +75,10 @@
 		text += "yml"
 		for(var/race in check)
 			text += race
-		fields += list(list(
+		fields += list(
 			"name" = ckey,
 			"value" = "```[jointext(text, "\n\t")]```"
-		))
+		)
 	if(fields && fields.len)
 		desc["fields"] = list(fields)
 	.["embeds"] = list(desc)
