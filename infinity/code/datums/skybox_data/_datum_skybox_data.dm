@@ -7,7 +7,7 @@ GLOBAL_LIST_EMPTY(skybox_datas)
 	var/list/icon_states = "dyable"
 	var/list/cascade_icon_states = "cascade"
 	var/list/narsie_icon_states = "narsie"
-	var/list/forced_colors //to forbide coloring, just set to "#ffffff"
+	var/list/forced_colors
 	var/undyable_probability = 0 //probability of become undyable
 
 /datum/skybox_data/New()

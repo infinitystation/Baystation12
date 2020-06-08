@@ -32,6 +32,9 @@
 
 	GLOB.skybox_datas[newData.name] = newData
 
+	log_admin("[usr?.key] have created skybox prefab. With vars: [json_encode(newData.vars)]")
+	message_admins("[usr?.key] have created skybox prefab. With vars: [json_encode(newData.vars)]")
+
 	SSstatistics.add_field_details("admin_verb","CSB") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/select_and_apply_skybox_data()
@@ -48,5 +51,8 @@
 	else
 		return
 	SSskybox.set_skybox_datum(target)
+
+	log_admin("[usr?.key] have changed skybox to [target.name].")
+	message_admins("[usr?.key] have changed skybox to [target.name].")
 
 	SSstatistics.add_field_details("admin_verb","SAB") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
