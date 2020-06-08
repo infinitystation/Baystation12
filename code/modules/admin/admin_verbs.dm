@@ -119,6 +119,8 @@ var/list/admin_verbs_fun = list(
 //INF unused	/client/proc/create_dungeon,
 	/datum/admins/proc/ai_hologram_set,
 //[INF],
+	/datum/admins/proc/create_new_skybox_data,
+	/datum/admins/proc/select_and_apply_skybox_data,
 	/datum/admins/proc/intercom,		//send a fake intercom message, like an arrivals announcement,
 	/datum/admins/proc/intercom_convo,	//send a fake intercom conversation, like an ATC exchange,
 	/datum/admins/proc/mp_panel,
