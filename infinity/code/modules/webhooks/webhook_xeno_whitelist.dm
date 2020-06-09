@@ -48,7 +48,7 @@
 	for(var/ckey in grant)
 		var/list/check = grant[ckey]
 		for(var/race in check)
-			B += "++[race]"
+			B += "++'[replacetext(race, " ", "_")]'"
 		A[ckey] = B.Copy()
 		B.Cut()
 	grant = A.Copy()
@@ -57,7 +57,7 @@
 	for(var/ckey in revoke)
 		var/list/check = revoke[ckey]
 		for(var/race in check)
-			B += "--[race]"
+			B += "--'[replacetext(race, " ", "_")]'"
 		A[ckey] = B.Copy()
 		B.Cut()
 	revoke = A.Copy()
@@ -68,17 +68,17 @@
 		return
 	var/list/fields = list()
 	unite = sortAssoc(unite)		//sorting by ckey
-	for(var/ckey in unite)
-		var/list/check = unite[ckey]
+	for(var/ckey2 in unite)
+		var/list/check = unite[ckey2]
 		check = sortList(check)	//sorting by race
 		var/list/text = list()
 		text += "yml"
 		for(var/race in check)
 			text += race
-		fields += list(
-			"name" = ckey,
+		fields.Add(list(
+			"name" = ckey2,
 			"value" = "```[jointext(text, "\n\t")]```"
-		)
+		))
 	if(fields && fields.len)
 		desc["fields"] = list(fields)
 	.["embeds"] = list(desc)
