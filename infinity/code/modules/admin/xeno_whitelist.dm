@@ -148,12 +148,12 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 			if(config.usealienwhitelistSQL)
 				success = upload_SQL(usr, grant, revoke)
 			else
-				success = upload_CONFIG(usr, grant,revoke)
+				success = upload_CONFIG(usr, grant, revoke)
 		else
 			if(!config.usealienwhitelistSQL)
 				success = upload_SQL(usr, grant, revoke)
 			else
-				success = upload_CONFIG(usr, grant,revoke)
+				success = upload_CONFIG(usr, grant, revoke)
 		if(!success)
 			log_admin("Error: Alien Whitelist Panel - Unable to override WL source")
 			message_staff("Error: Alien Whitelist Panel - Unable to override WL source")
@@ -188,29 +188,29 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 				list = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), "ckey")
 				notlist = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(FALSE), lowerxenoname), "ckey")
 
-		var/list/grant = list()
-		for(var/list/ckey in list)
-			var/list/local = ckey["YES"]
+		var/list/grant1 = list()
+		for(var/list/ckey5 in list)
+			var/list/local = ckey5["YES"]
 			if(local && local.len)
-				grant[ckey["ckey"]] = local
+				grant1[ckey5["ckey"]] = local
 
 		if(TRUE)		// HARD RESET not need this. But we not need HReset now.
 			var/list/notgrant = list()
-			for(var/list/ckey in notlist)
-				var/list/local = ckey["YES"]
+			for(var/list/ckey6 in notlist)
+				var/list/local = ckey6["YES"]
 				if(local && local.len)
-					notgrant[ckey["ckey"]] = local
+					notgrant[ckey6["ckey"]] = local
 
-			grant = difflist(grant, notgrant)
+			grant1 = xeno_diff_list(grant1, notgrant)
 
-		if(!grant || !grant.len)
+		if(!grant1 || !grant1.len)
 			to_chat(usr, "Нечего переносить.")
 			return TOPIC_NOACTION
 		var/success
 		if(href_list["synch"] == "CDB")
-			success = upload_SQL(usr, grant, null)
+			success = upload_SQL(usr, grant1, null)
 		else
-			success = upload_CONFIG(usr, grant, null)
+			success = upload_CONFIG(usr, grant1, null)
 		if(!success)
 			to_chat(usr, "Загрузка неудалась.")
 		. = TOPIC_REFRESH
@@ -481,3 +481,16 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 				secondary[A[1]] = list(lowertext(A[2]))
 	. = secondary
 
+/proc/xeno_diff_list(var/list/a, var/list/b)
+	var/list/result = list()
+	for(var/check in a)
+		if(b[check] && islist(b[check]) && islist(a[check]))
+			var/list/temp = list()
+			for(var/check2 in a[check])
+				if(!check2 in b[check])
+					temp.Add(check2)
+			if(length(temp))
+				result[check] = temp
+		else if(!b[check])
+			result[check] = a[check]
+	return result
