@@ -487,7 +487,7 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		if(b[check] && islist(b[check]) && islist(a[check]))
 			var/list/temp = list()
 			for(var/check2 in a[check])
-				if(!check2 in b[check])
+				if(!(check2 in b[check]))
 					temp.Add(check2)
 			if(length(temp))
 				result[check] = temp
