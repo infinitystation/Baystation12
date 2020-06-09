@@ -331,6 +331,10 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		for(var/check in list)
 			var/list/unite = splittext(check, " - ")
 			var/list/a = list()
+			if(!unite[1] || !unite[2])
+				message_staff("Alien Whitelist ERROR when accessing CONFIG in line '[check]'")
+				log_admin("Alien Whitelist ERROR when accessing CONFIG in line '[check]'")
+				continue
 			a["ckey"] = unite[1]
 			a["race"] = unite[2]
 			ckeys += list(a)
