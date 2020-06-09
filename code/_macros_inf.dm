@@ -10,6 +10,8 @@
 
 #define isbot(A)	is_type_in_list(A, list(/mob/living/bot/remotebot, /mob/living/bot/cleanbot, /mob/living/bot/farmbot, /mob/living/bot/secbot/ed209, /mob/living/bot/secbot, /mob/living/bot/medbot, /mob/living/bot/floorbot))
 
+#define PICK_OR_SET(listOrVar) (islist(listOrVar) ? pick(listOrVar) : listOrVar)
+
 /proc/parse_html_inf(var/browser_content)
 	if(isfile(browser_content))
 		return browser_content
