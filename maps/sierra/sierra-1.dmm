@@ -223,6 +223,7 @@
 /area/hallway/primary/thirddeck/center)
 "aC" = (
 /obj/machinery/door/airlock/external/bolted/cycling{
+	frequency = 1380;
 	id_tag = "admin_shuttle_dock_outer";
 	name = "Docking Port Airlock"
 	},
@@ -374,19 +375,19 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
-	dir = 2;
-	id_tag = "admin_shuttle_dock_pump"
-	},
 /obj/item/device/radio/intercom{
 	dir = 8;
 	pixel_x = 20
 	},
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	id_tag = "admin_shuttle_dock_pump"
+	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/center)
 "aZ" = (
 /obj/machinery/door/airlock/external/bolted/cycling{
+	frequency = 1380;
 	id_tag = "admin_shuttle_dock_inner";
 	name = "Docking Port Airlock"
 	},
@@ -396,6 +397,7 @@
 "ba" = (
 /obj/machinery/shield_diffuser,
 /obj/machinery/door/airlock/external/glass/bolted/cycling{
+	frequency = 1380;
 	id_tag = "merchant_shuttle_station_outer";
 	name = "Docking Port Airlock"
 	},
@@ -581,14 +583,14 @@
 /turf/simulated/floor/reinforced/airless,
 /area/shuttle/petrov/ship)
 "bv" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
-	dir = 4;
-	id_tag = "admin_shuttle_dock_pump"
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
 	},
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	dir = 4;
+	id_tag = "admin_shuttle_dock_pump"
+	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/center)
 "bw" = (
@@ -823,6 +825,7 @@
 /area/quartermaster/hangar)
 "bQ" = (
 /obj/machinery/door/airlock/external/bolted/cycling{
+	frequency = 1380;
 	id_tag = "specops_dock_outer";
 	name = "Docking Port Airlock"
 	},
@@ -858,6 +861,7 @@
 "bT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/door/airlock/external/glass/bolted/cycling{
+	frequency = 1380;
 	id_tag = "merchant_shuttle_station_inner";
 	name = "Docking Port Airlock"
 	},
@@ -1029,12 +1033,9 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/shuttle/petrov/ship)
 "cj" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
-	dir = 2;
-	id_tag = "merchant_shuttle_station_pump"
-	},
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/machinery/airlock_sensor{
+	frequency = 1380;
 	id_tag = "merchant_shuttle_station_sensor";
 	master_tag = "merchant_shuttle_station";
 	pixel_x = -24
@@ -1043,6 +1044,9 @@
 	dir = 4
 	},
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	id_tag = "merchant_shuttle_station_pump"
+	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/fore)
 "ck" = (
@@ -1157,10 +1161,6 @@
 /turf/simulated/floor/tiled,
 /area/command/bsa)
 "cr" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
-	dir = 2;
-	id_tag = "nuke_shuttle_dock_airlock_pump"
-	},
 /obj/item/device/radio/intercom{
 	pixel_y = 26
 	},
@@ -1168,18 +1168,20 @@
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 8
 	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	id_tag = "nuke_shuttle_dock_airlock_pump"
+	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/fore)
 "cs" = (
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
-	dir = 2;
-	id_tag = "nuke_shuttle_dock_airlock_pump"
-	},
 /obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/warning/half,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	id_tag = "nuke_shuttle_dock_airlock_pump"
+	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/fore)
 "ct" = (
@@ -1205,16 +1207,16 @@
 /area/exploration_shuttle/medical)
 "cv" = (
 /obj/machinery/airlock_sensor{
+	frequency = 1380;
 	id_tag = "nuke_shuttle_dock_airlock_sensor";
 	master_tag = "nuke_shuttle_dock_airlock";
 	pixel_y = 24
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
-	dir = 2;
-	id_tag = "nuke_shuttle_dock_airlock_pump"
-	},
 /obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/warning/half,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	id_tag = "nuke_shuttle_dock_airlock_pump"
+	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/fore)
 "cw" = (
@@ -1575,10 +1577,6 @@
 /turf/simulated/floor/tiled,
 /area/command/bsa)
 "dd" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
-	dir = 2;
-	id_tag = "nuke_shuttle_dock_airlock_pump"
-	},
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
 	pixel_y = 29
@@ -1586,6 +1584,9 @@
 /obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 4
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	id_tag = "nuke_shuttle_dock_airlock_pump"
 	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/fore)
@@ -3193,11 +3194,13 @@
 /area/exploration_shuttle/cargo)
 "fJ" = (
 /obj/machinery/door/airlock/external/bolted/cycling{
+	frequency = 1380;
 	id_tag = "nuke_shuttle_dock_airlock_outer";
 	name = "Docking Port Airlock"
 	},
 /obj/machinery/shield_diffuser,
 /obj/machinery/access_button/airlock_exterior{
+	frequency = 1380;
 	master_tag = "nuke_shuttle_dock_airlock";
 	name = "exterior access button";
 	pixel_x = 0;
@@ -4020,6 +4023,7 @@
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	dir = 8;
 	display_name = "Starboard Dock A";
+	frequency = 1380;
 	id_tag = "merchant_shuttle_station";
 	pixel_x = 20;
 	pixel_y = 0;
@@ -4438,6 +4442,7 @@
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	dir = 4;
 	display_name = "Starboard Dock C";
+	frequency = 1380;
 	id_tag = "admin_shuttle_dock";
 	pixel_x = -20;
 	pixel_y = 0;
@@ -4871,12 +4876,9 @@
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/fore)
 "iA" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
-	dir = 2;
-	id_tag = "specops_dock_pump"
-	},
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/machinery/airlock_sensor{
+	frequency = 1380;
 	id_tag = "specops_dock_sensor";
 	master_tag = "specops_dock";
 	pixel_x = -24
@@ -4885,6 +4887,9 @@
 	dir = 4
 	},
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	id_tag = "specops_dock_pump"
+	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/fore)
 "iB" = (
@@ -5043,6 +5048,7 @@
 "iO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/door/airlock/external/bolted/cycling{
+	frequency = 1380;
 	id_tag = "specops_dock_inner";
 	name = "Docking Port Airlock"
 	},
@@ -5738,12 +5744,12 @@
 /turf/simulated/floor/plating,
 /area/shuttle/petrov/ship)
 "jX" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
+/obj/structure/catwalk,
+/obj/effect/floor_decal/industrial/warning/half,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
 	id_tag = "nuke_shuttle_dock_airlock_pump"
 	},
-/obj/structure/catwalk,
-/obj/effect/floor_decal/industrial/warning/half,
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/fore)
 "jY" = (
@@ -7700,10 +7706,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/fore)
 "mO" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
-	dir = 1;
-	id_tag = "nuke_shuttle_dock_airlock_pump"
-	},
 /obj/structure/sign/warning/high_voltage{
 	dir = 8;
 	pixel_x = 32
@@ -7711,6 +7713,10 @@
 /obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 4
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	dir = 1;
+	id_tag = "nuke_shuttle_dock_airlock_pump"
 	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/fore)
@@ -9108,6 +9114,7 @@
 	icon_state = "intact"
 	},
 /obj/machinery/door/airlock/external/bolted/cycling{
+	frequency = 1380;
 	id_tag = "nuke_shuttle_dock_airlock_inner";
 	name = "Docking Port Airlock"
 	},
@@ -9988,6 +9995,7 @@
 /area/quartermaster/expedition)
 "qq" = (
 /obj/machinery/door/airlock/external/bolted/cycling{
+	frequency = 1380;
 	id_tag = "centcom_shuttle_dock_outer";
 	name = "Docking Port Airlock"
 	},
@@ -10796,6 +10804,7 @@
 	dir = 8
 	},
 /obj/machinery/access_button/airlock_interior{
+	frequency = 1380;
 	master_tag = "nuke_shuttle_dock_airlock";
 	name = "interior access button";
 	pixel_x = -32;
@@ -11596,6 +11605,7 @@
 	dir = 4
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
+	frequency = 1380;
 	id_tag = "specops_dock";
 	pixel_x = 32;
 	pixel_y = 21;
@@ -11727,6 +11737,7 @@
 	dir = 9
 	},
 /obj/machinery/airlock_sensor{
+	frequency = 1380;
 	id_tag = "admin_shuttle_dock_sensor";
 	master_tag = "admin_shuttle_dock";
 	pixel_x = -24;
@@ -13807,11 +13818,8 @@
 /area/quartermaster/office)
 "wk" = (
 /obj/effect/floor_decal/industrial/warning/full,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
-	dir = 1;
-	id_tag = "centcom_shuttle_dock_pump"
-	},
 /obj/machinery/airlock_sensor{
+	frequency = 1380;
 	id_tag = "centcom_shuttle_dock_sensor";
 	pixel_x = -24
 	},
@@ -13819,6 +13827,10 @@
 	dir = 4
 	},
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	dir = 1;
+	id_tag = "centcom_shuttle_dock_pump"
+	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/fore)
 "wl" = (
@@ -14648,11 +14660,8 @@
 /area/exploration_shuttle/medical)
 "xA" = (
 /obj/effect/floor_decal/industrial/warning/full,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
-	dir = 1;
-	id_tag = "skipjack_shuttle_dock_airlock_pump"
-	},
 /obj/machinery/airlock_sensor{
+	frequency = 1380;
 	id_tag = "skipjack_shuttle_dock_airlock_sensor";
 	master_tag = "skipjack_shuttle_dock_airlock";
 	pixel_x = -24
@@ -14661,6 +14670,10 @@
 	dir = 4
 	},
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	dir = 1;
+	id_tag = "skipjack_shuttle_dock_airlock_pump"
+	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/fore)
 "xB" = (
@@ -14894,11 +14907,12 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 9
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
-	dir = 4;
-	id_tag = "rescue_shuttle_dock_airlock_pump"
-	},
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
+	dir = 4;
+	id_tag = "rescue_shuttle_dock_airlock_pump";
+	power_rating = 25000
+	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/center)
 "ya" = (
@@ -15080,13 +15094,13 @@
 /turf/simulated/floor/tiled,
 /area/storage/primary)
 "yp" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
-	dir = 1;
-	id_tag = "nuke_shuttle_dock_airlock_pump"
-	},
 /obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 8
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	dir = 1;
+	id_tag = "nuke_shuttle_dock_airlock_pump"
 	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/fore)
@@ -15547,15 +15561,16 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 6
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
-	dir = 1;
-	id_tag = "rescue_shuttle_dock_airlock_pump"
-	},
 /obj/item/device/radio/intercom{
 	dir = 8;
 	pixel_x = 20
 	},
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
+	dir = 1;
+	id_tag = "rescue_shuttle_dock_airlock_pump";
+	power_rating = 25000
+	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/center)
 "yT" = (
@@ -17360,6 +17375,7 @@
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	dir = 8;
 	display_name = "Fore Dock";
+	frequency = 1380;
 	id_tag = "nuke_shuttle_dock_airlock";
 	pixel_x = 20;
 	req_access = list("ACCESS_EXTERNAL")
@@ -17517,6 +17533,7 @@
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	dir = 1;
+	frequency = 1380;
 	id_tag = "centcom_shuttle_dock";
 	pixel_x = 32;
 	pixel_y = -20;
@@ -18596,6 +18613,7 @@
 "DY" = (
 /obj/machinery/shield_diffuser,
 /obj/machinery/door/airlock/external/glass/bolted/cycling{
+	frequency = 1380;
 	id_tag = "skipjack_shuttle_dock_airlock_outer";
 	name = "Docking Port Airlock"
 	},
@@ -18626,6 +18644,7 @@
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	dir = 8;
 	display_name = "Port Dock A";
+	frequency = 1380;
 	id_tag = "skipjack_shuttle_dock_airlock";
 	pixel_x = 20;
 	pixel_y = 0;
@@ -19606,7 +19625,7 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	id_tag = "escape_pod_8_pump"
+	id_tag = "skipjack_shuttle_pump"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod8/station)
@@ -20316,6 +20335,7 @@
 "GK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/door/airlock/external/bolted/cycling{
+	frequency = 1380;
 	id_tag = "centcom_shuttle_dock_inner";
 	name = "Docking Port Airlock"
 	},
@@ -23793,6 +23813,7 @@
 /area/janitor)
 "Ml" = (
 /obj/machinery/door/airlock/external/bolted/cycling{
+	frequency = 1331;
 	id_tag = "rescue_shuttle_dock_airlock_outer";
 	name = "Docking Port Airlock"
 	},
@@ -23809,6 +23830,7 @@
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	dir = 4;
 	display_name = "Port Dock C";
+	frequency = 1331;
 	id_tag = "rescue_shuttle_dock_airlock";
 	pixel_x = -20;
 	pixel_y = 0;
@@ -26257,6 +26279,7 @@
 "QD" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/door/airlock/external/glass/bolted/cycling{
+	frequency = 1380;
 	id_tag = "skipjack_shuttle_dock_airlock_inner";
 	name = "Docking Port Airlock"
 	},
@@ -26973,7 +26996,7 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	id_tag = "escape_pod_8_pump"
+	id_tag = "skipjack_shuttle_pump"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod8/station)
@@ -27694,6 +27717,7 @@
 	dir = 10
 	},
 /obj/machinery/airlock_sensor{
+	frequency = 1331;
 	id_tag = "rescue_shuttle_dock_airlock_sensor";
 	master_tag = "rescue_shuttle_dock_airlock";
 	pixel_x = -24;
@@ -27927,6 +27951,7 @@
 "Tx" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/door/airlock/external/bolted/cycling{
+	frequency = 1331;
 	id_tag = "rescue_shuttle_dock_airlock_inner";
 	name = "Docking Port Airlock"
 	},
