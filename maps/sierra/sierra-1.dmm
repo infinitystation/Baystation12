@@ -825,6 +825,7 @@
 /area/quartermaster/hangar)
 "bQ" = (
 /obj/machinery/door/airlock/external/bolted/cycling{
+	frequency = 1380;
 	id_tag = "specops_dock_outer";
 	name = "Docking Port Airlock"
 	},
@@ -4875,12 +4876,9 @@
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/fore)
 "iA" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
-	dir = 2;
-	id_tag = "specops_dock_pump"
-	},
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/machinery/airlock_sensor{
+	frequency = 1380;
 	id_tag = "specops_dock_sensor";
 	master_tag = "specops_dock";
 	pixel_x = -24
@@ -4889,6 +4887,9 @@
 	dir = 4
 	},
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	id_tag = "specops_dock_pump"
+	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/fore)
 "iB" = (
@@ -5047,6 +5048,7 @@
 "iO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/door/airlock/external/bolted/cycling{
+	frequency = 1380;
 	id_tag = "specops_dock_inner";
 	name = "Docking Port Airlock"
 	},
@@ -9993,6 +9995,7 @@
 /area/quartermaster/expedition)
 "qq" = (
 /obj/machinery/door/airlock/external/bolted/cycling{
+	frequency = 1380;
 	id_tag = "centcom_shuttle_dock_outer";
 	name = "Docking Port Airlock"
 	},
@@ -11602,6 +11605,7 @@
 	dir = 4
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
+	frequency = 1380;
 	id_tag = "specops_dock";
 	pixel_x = 32;
 	pixel_y = 21;
@@ -13814,11 +13818,8 @@
 /area/quartermaster/office)
 "wk" = (
 /obj/effect/floor_decal/industrial/warning/full,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
-	dir = 1;
-	id_tag = "centcom_shuttle_dock_pump"
-	},
 /obj/machinery/airlock_sensor{
+	frequency = 1380;
 	id_tag = "centcom_shuttle_dock_sensor";
 	pixel_x = -24
 	},
@@ -13826,6 +13827,10 @@
 	dir = 4
 	},
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	dir = 1;
+	id_tag = "centcom_shuttle_dock_pump"
+	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/fore)
 "wl" = (
@@ -17528,6 +17533,7 @@
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	dir = 1;
+	frequency = 1380;
 	id_tag = "centcom_shuttle_dock";
 	pixel_x = 32;
 	pixel_y = -20;
@@ -20329,6 +20335,7 @@
 "GK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/door/airlock/external/bolted/cycling{
+	frequency = 1380;
 	id_tag = "centcom_shuttle_dock_inner";
 	name = "Docking Port Airlock"
 	},
