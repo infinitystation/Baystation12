@@ -16,7 +16,7 @@
 	description = "A saviours for crew."
 	prefix = "maps/away_inf/"
 	suffixes = list("patrol/patrol.dmm")
-	cost = 1000
+	cost = 1.5
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/scgpatrol)
 	apc_test_exempt_areas = list(
 		/area/ship/patrol/atmos = NO_SCRUBBER|NO_VENT,
