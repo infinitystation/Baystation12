@@ -80,7 +80,6 @@
 
 /area/crew_quarters/commissary
 	name = "Third Deck - Commissary"
-	icon_state = "crew_quarters"
 	req_access = list(access_commissary)
 
 /* SECOND DECK (Z-2)
@@ -813,6 +812,9 @@
 	icon_state = "janitor"
 	req_access = list(access_janitor)
 
+/area/crew_quarters
+	icon_state = "crew_quarters"
+
 /area/crew_quarters/bar
 	name = "Second Deck - Service - Bar"
 	icon_state = "bar"
@@ -862,13 +864,16 @@
 	sound_env = SMALL_SOFTFLOOR
 	req_access = list(access_actor)
 
+/area/crew_quarters/dungeon_master_lounge
+	name = "First Deck - Living Room"
+	sound_env = MEDIUM_SOFTFLOOR
+
 /area/crew_quarters/lounge
 	name = "Second Deck - Living - Lounge"
-	icon_state = "crew_quarters"
 	sound_env = MEDIUM_SOFTFLOOR
 
 /area/crew_quarters/lounge/upper
-	name = "Second Deck - Living - Library" //at first deck, but merged
+	name = "First Deck - Living - Library" //at first deck, but merged
 
 /area/crew_quarters/sleep/bunk
 	name = "Second Deck - Living - Dormitory"

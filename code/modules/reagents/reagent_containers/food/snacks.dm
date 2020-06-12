@@ -3741,7 +3741,7 @@ obj/item/weapon/reagent_containers/food/snacks/oort
 //weebo vend! So japanese it hurts
 
 obj/item/weapon/reagent_containers/food/snacks/ricecake
-	name = "rice cake"
+	name = "おにぎり"//inf, was: "rice cake"
 	icon_state = "ricecake"
 	desc = "Ancient earth snack food made from balled up rice."
 	nutriment_desc = list("rice" = 4, "sweet?" = 1)
