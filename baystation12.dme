@@ -3480,6 +3480,7 @@
 #include "infinity\code\modules\culture_descriptor\faction\factions_tajaran.dm"
 #include "infinity\code\modules\culture_descriptor\faction\factions_vox.dm"
 #include "infinity\code\modules\culture_descriptor\faction\factions_xenophage.dm"
+#include "infinity\code\modules\culture_descriptor\location\locations_human.dm"
 #include "infinity\code\modules\culture_descriptor\location\locations_ipc.dm"
 #include "infinity\code\modules\culture_descriptor\location\locations_resomi.dm"
 #include "infinity\code\modules\culture_descriptor\location\locations_skrell.dm"
