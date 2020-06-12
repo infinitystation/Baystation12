@@ -69,6 +69,7 @@
 "bq" = (/obj/machinery/door/airlock/external{frequency = 1331; id_tag = "merc_base_hatch"; name = "Desperado Docking Airlock"},/obj/machinery/door/blast/shutters{dir = 4; id_tag = "mercship"; name = "Desperado Access Shutters"},/obj/machinery/door/firedoor/autoset,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/merc_spawn/eva)
 "br" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 6},/turf/simulated/floor/tiled/techfloor,/area/map_template/merc_spawn/teleport)
 "bs" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/tiled/techfloor,/area/map_template/merc_spawn/teleport)
+"bt" = (/obj/structure/table/steel_reinforced,/obj/effect/floor_decal/techfloor{icon_state = "techfloor_edges"; dir = 8},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/cell_charger,/turf/simulated/floor/tiled/techfloor,/area/map_template/merc_spawn/bridge)
 "bu" = (/obj/structure/table/steel_reinforced,/obj/effect/floor_decal/techfloor{dir = 4},/obj/machinery/light/small{icon_state = "bulb1"; dir = 4},/obj/item/weapon/stock_parts/power/apc/buildable,/obj/item/weapon/stock_parts/power/battery/buildable/responsive,/obj/item/weapon/stock_parts/keyboard,/obj/item/weapon/stock_parts/console_screen,/obj/item/weapon/cell/high,/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/turf/simulated/floor/tiled/techfloor,/area/map_template/merc_spawn/teleport)
 "bv" = (/turf/simulated/wall/prepainted,/area/map_template/merc_spawn/brig)
 "bw" = (/obj/structure/table/glass,/obj/effect/floor_decal/techfloor{icon_state = "techfloor_edges"; dir = 9},/obj/item/weapon/handcuffs,/obj/item/weapon/melee/telebaton,/obj/item/weapon/reagent_containers/syringe/drugs,/obj/item/weapon/reagent_containers/syringe/drugs,/obj/item/weapon/reagent_containers/syringe/drugs,/obj/item/weapon/material/knife/combat,/obj/machinery/atmospherics/unary/vent_pump/on,/turf/simulated/floor/tiled/techfloor,/area/map_template/merc_spawn/brig)
@@ -114,7 +115,6 @@
 "cl" = (/obj/structure/table/steel_reinforced,/obj/machinery/atmospherics/unary/vent_pump/on{dir = 2; level = 2},/turf/simulated/floor/cult,/area/map_template/merc_spawn/hall)
 "cm" = (/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{icon_state = "map-scrubbers"; dir = 1},/obj/machinery/atmospherics/pipe/manifold/hidden/supply,/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/cult,/area/map_template/merc_spawn/hall)
 "cn" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/cult,/area/map_template/merc_spawn/hall)
-"co" = (/obj/structure/table/steel_reinforced,/obj/effect/floor_decal/techfloor{icon_state = "techfloor_edges"; dir = 8},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/turf/simulated/floor/tiled/techfloor,/area/map_template/merc_spawn/bridge)
 "cp" = (/turf/simulated/wall/r_wall/prepainted,/area/map_template/merc_spawn/cryo)
 "cq" = (/turf/simulated/wall/prepainted,/area/map_template/merc_spawn/cryo)
 "cr" = (/obj/machinery/door/airlock/antagonist,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/door/firedoor/autoset,/turf/simulated/floor/tiled/dark,/area/map_template/merc_spawn/cryo)
@@ -338,7 +338,7 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaacBcBcBcBcBcBcBcBcBeVcBcBdfdfdgdfdfbvfgfhbyfOfjfifjaN
 aaaaaaaaaaababababababababaaaaadafahaiaiadaLbVcacbcccdcecgchcibvbvfkbvbvbvbvbvaNaRaSaTaUaOaOaaaaaaaa
 aaaaaaaaaaamabanaoanaoapabadadadajakavawadcjckcackckckckcackclbibjbkblbmbnbobpaNaVaXaXaYaZbaaaaaaaaa
 aaaaaaaaaaamabalalalalalaqaxaybqcRcSdadbdccmcndBcndDdEdFdGcndHbBbCbEbGbGbHbGbIbbbdaXbebfcfbaaaaaaaaa
-aaaaaaaaaaamabarasarasatabadadaddddodxezaddIckcackdXdYescackbObibJbKbLbMbMbNfNaNcoaXaXdteWbaaaaaaaaa
+aaaaaaaaaaamabarasarasatabadadaddddodxezaddIckcackdXdYescackbObibJbKbLbMbMbNfNaNbtaXaXdteWbaaaaaaaaa
 aaaaaaaaaaababababababababaaaaadaieBeIfqadeAeCeDeGdXdYescaeCckbPbPbQbPbPbPbPbPaNeXeYeZfaaOaOaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaagagagagagagagagagauagcpcqcqcrcqcqbPbRbSbTbWbXbYbZaNaNfbfcaOaOaaaaaaaaaa
 aaaaaaaaaaaaaCagagagagagagagagaDaGepaKedaKaKedbhdNcpaIctcucvcwbPdldmdrdsdufBdwdyaNaOaOaOaaaaaaaaaaaa
