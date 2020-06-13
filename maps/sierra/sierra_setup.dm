@@ -23,7 +23,7 @@
 	var/list/space_things = list()
 	var/obj/effect/overmap/sierra = map_sectors["1"]
 	for(var/zlevel in map_sectors)
-		var/obj/effect/overmap/O = map_sectors[zlevel]
+		var/obj/effect/overmap/visitable/O = map_sectors[zlevel]
 		if(O.name == sierra.name)
 			continue
 		if(istype(O, /obj/effect/overmap/visitable/ship/landable)) //Don't show shuttles
