@@ -24,13 +24,17 @@ SUBSYSTEM_DEF(ticker)
 	var/restart_timeout = 1 MINUTE
 
 	var/scheduled_map_change = 0
-	var/update_server //inf
-	var/client/updater
 	var/force_ending = 0            //Overriding this variable will force game end. Can be used for build update or adminbuse.
 
 	var/list/minds = list()         //Minds of everyone in the game.
 	var/list/antag_pool = list()
 	var/looking_for_antags = 0
+
+//[INF]
+	var/update_server
+	var/client/updater
+	var/respawn_cooldown = 0
+//[/INF]
 
 /datum/controller/subsystem/ticker/Initialize()
 	to_world("<B><FONT color='blue'>Добро пожаловать в лобби!</FONT></B>")
@@ -309,8 +313,17 @@ Helpers
 			else
 				if(player.create_character())
 					qdel(player)
+//[INF]
 		else if(player && !player.ready)
 			player.new_player_panel()
+	set_respawn_cooldown(30 SECONDS)
+/datum/controller/subsystem/ticker/proc/set_respawn_cooldown(r_time = DEFAULT_RESPAWN_COOLDOWN) //setting time when next player can respawn
+	respawn_cooldown = world.time + r_time
+
+/datum/controller/subsystem/ticker/proc/check_respawn_cooldown() //check respawn cooldown status // true if you cooldowned (can respawn if true)
+	. = min(0, world.time - respawn_cooldown)
+
+//[/INF]
 
 /datum/controller/subsystem/ticker/proc/collect_minds()
 	for(var/mob/living/player in GLOB.player_list)
