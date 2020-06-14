@@ -10,11 +10,12 @@
 	vessel_mass = 400
 
 /datum/shuttle/autodock/overmap/scgpatrol
-	name = "Sol Rescue Shuttle"
+	name = "Sol Patrol Shuttle"
 	warmup_time = 5
 	current_location = "nav_scgpatrol_start"
 	range = 2
-	shuttle_area = list(/area/ship/patrol/cargo,
+	shuttle_area = list(/area/ship/patrol/armory,
+						/area/ship/patrol/cargo,
 						/area/ship/patrol/medbay,
 						/area/ship/patrol/atmos,
 						/area/ship/patrol/power,
@@ -27,7 +28,7 @@
 /obj/machinery/computer/shuttle_control/explore/scgpatrol
 	name = "shuttle control console"
 	req_access = list(access_away_patrol)
-	shuttle_tag = "Sol Rescue Shuttle"
+	shuttle_tag = "Sol Patrol Shuttle"
 
 /obj/effect/shuttle_landmark/scgpatrol
 	name = "Uncharted Space"
