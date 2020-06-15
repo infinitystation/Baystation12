@@ -1683,9 +1683,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/ship/patrol/armory)
 "cc" = (
-/obj/structure/closet/secure_closet/guncabinet{
-	step_y = 1
-	},
+/obj/structure/closet/secure_closet/guncabinet,
 /obj/item/weapon/gun/projectile/pistol/military,
 /obj/item/weapon/gun/projectile/pistol/military,
 /obj/item/weapon/gun/projectile/pistol/military,
