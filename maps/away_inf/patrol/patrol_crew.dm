@@ -25,6 +25,32 @@
 /obj/effect/submap_landmark/spawnpoint/away_patrol/engineer
 	name = "Technician"
 
+/* ACCESS
+ * =======
+ */
+
+/var/const/access_away_patrol = "ACCESS_AWAYPATROL"
+/var/const/access_away_patrol_captain = "ACCESS_AWAYPATROL_CAPTAIN"
+
+/datum/access/away_patrol
+	id = access_away_patrol
+	desc = "SSV Crewman"
+	region = ACCESS_REGION_NONE
+
+/datum/access/away_patrol_captain
+	id = access_away_patrol_captain
+	desc = "SSV Captain"
+	region = ACCESS_REGION_NONE
+
+/obj/item/weapon/card/id/awaypatrol
+	color = COLOR_GRAY40
+	detail_color = "#7331c4"
+	access = list(access_away_patrol)
+
+/obj/item/weapon/card/id/awaypatrol/captain
+	access = list(access_away_patrol, access_away_patrol_captain)
+	extra_details = list("goldstripe")
+
 /* JOBS
  * =======
  */
@@ -140,5 +166,6 @@
 	name = PATROL_OUTFIT_JOB_NAME("Pilot")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/command/pilot/away_solpatrol
 	back = /obj/item/weapon/rig/military/equipped/comander
+	id_type = /obj/item/weapon/card/id/awaypatrol/captain
 
 #undef PATROL_OUTFIT_JOB_NAME
