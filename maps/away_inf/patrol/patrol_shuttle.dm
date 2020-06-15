@@ -1,10 +1,10 @@
 /obj/effect/overmap/visitable/ship/landable/patrol
-	name = "Sol Rescue Shuttle"
+	name = "Sol Patrol Shuttle"
 	desc = "A space object with wide of 19.5 meters, length of 34.2 meters and high near 4.3 meters. \
 	A Self Indentification Signal classifices the target as Sol Rescue Shuttle, a property of third fleet of \
 	Sol Central Government  Defencive Forces. Additional signature reports about the mothership, \
 	Sol Patrol Ship \"Sentinel\"."
-	shuttle = "Sol Rescue Shuttle"
+	shuttle = "Sol Patrol Shuttle"
 //	color = "#990000"
 	fore_dir = EAST
 	vessel_mass = 400
