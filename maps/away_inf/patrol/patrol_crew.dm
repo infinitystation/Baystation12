@@ -34,12 +34,12 @@
 
 /datum/access/away_patrol
 	id = access_away_patrol
-	desc = "SSV Crewman"
+	desc = "SPS Crewman"
 	region = ACCESS_REGION_NONE
 
 /datum/access/away_patrol_captain
 	id = access_away_patrol_captain
-	desc = "SSV Captain"
+	desc = "SPS Captain"
 	region = ACCESS_REGION_NONE
 
 /obj/item/weapon/card/id/awaypatrol
