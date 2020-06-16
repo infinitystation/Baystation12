@@ -1,7 +1,7 @@
 /obj/effect/shield
 	name = "energy shield"
 	desc = "An impenetrable field of energy, capable of blocking anything as long as it's active."
-	icon = 'icons/obj/machines/shielding.dmi'
+	icon = 'infinity/icons/obj/machines/shielding.dmi'
 	icon_state = "shield_normal"
 	alpha = 100
 	anchored = 1
@@ -12,6 +12,7 @@
 	var/disabled_for = 0
 	var/diffused_for = 0
 	atmos_canpass = CANPASS_PROC
+	dir = WEST			// INF
 
 
 /obj/effect/shield/on_update_icon()
@@ -21,9 +22,9 @@
 		set_opacity(0)
 
 	if(gen && gen.check_flag(MODEFLAG_OVERCHARGE))
-		icon_state = "shield_overcharged"
+		color = COLOR_YELLOW	// INF WAS	icon_state = "shield_overcharged"
 	else
-		icon_state = "shield_normal"
+		color = COLOR_CYAN		// INF WAS	icon_state = "shield_normal"
 
 // Prevents shuttles, singularities and pretty much everything else from moving the field segments away.
 // The only thing that is allowed to move us is the Destroy() proc.
@@ -36,7 +37,6 @@
 /obj/effect/shield/New()
 	..()
 	update_nearby_tiles()
-
 
 /obj/effect/shield/Destroy()
 	. = ..()
