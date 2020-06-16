@@ -5198,9 +5198,9 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "ajL" = (
-/obj/structure/ladder,
 /obj/structure/catwalk,
-/turf/simulated/open,
+/obj/machinery/space_heater,
+/turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "ajM" = (
 /obj/effect/floor_decal/techfloor{
@@ -7749,6 +7749,11 @@
 	pixel_y = 22;
 	req_access = list("ACCESS_CARGO")
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/bridge/gun/energy)
 "aob" = (
@@ -8618,6 +8623,11 @@
 /obj/structure/catwalk,
 /obj/item/weapon/mop,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/plating,
 /area/bridge/gun/energy)
 "apy" = (
@@ -26985,6 +26995,11 @@
 	dir = 8;
 	pixel_y = -22
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/storage/bridge)
 "aQu" = (
@@ -26994,11 +27009,21 @@
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 8
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/storage/bridge)
 "aQv" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/storage/bridge)
@@ -27010,6 +27035,11 @@
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/storage/bridge)
@@ -37327,6 +37357,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/item/device/radio/intercom/locked/ai_private{
+	pixel_y = 24;
+	pixel_x = 8
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/turret_protected/ai)
 "bkn" = (
@@ -37506,6 +37540,10 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
+/obj/item/device/radio/intercom/locked/ai_private{
+	dir = 8;
+	pixel_x = 24
+	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "blk" = (
@@ -37821,6 +37859,10 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
+/obj/item/device/radio/intercom/locked/ai_private{
+	dir = 8;
+	pixel_x = 24
+	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "fOb" = (
@@ -37922,6 +37964,16 @@
 /obj/structure/table/woodentable/walnut,
 /turf/simulated/floor/tiled,
 /area/crew_quarters/dungeon_master_lounge)
+"hvP" = (
+/obj/machinery/pointdefense{
+	initial_id_tag = "sierra_main_pd"
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
 "hLb" = (
 /obj/item/target/syndicate,
 /turf/simulated/floor/reinforced/airless,
@@ -38180,6 +38232,14 @@
 "kNo" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/medical/mentalhealth)
+"kSY" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/wall/r_wall/hull,
+/area/storage/bridge)
 "lfi" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -38338,6 +38398,14 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/turret_protected/ai)
+"lLZ" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/wall/r_wall/hull,
+/area/bridge/gun/energy)
 "lPB" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 10
@@ -38809,6 +38877,14 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/range)
+"qIS" = (
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/wall/r_wall/hull,
+/area/storage/bridge)
 "rab" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -38825,6 +38901,14 @@
 /obj/machinery/lapvend,
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/aft)
+"sAJ" = (
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/bridge/gun/energy)
 "sDx" = (
 /obj/structure/catwalk,
 /obj/structure/cable/green{
@@ -38975,6 +39059,14 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
+"vRC" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/wall/r_wall/hull,
+/area/storage/bridge)
 "vSs" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -39128,6 +39220,10 @@
 "ybC" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 8
+	},
+/obj/item/device/radio/intercom/locked/ai_private{
+	dir = 4;
+	pixel_x = -24
 	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
@@ -43663,7 +43759,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+hvP
 aiw
 apt
 apt
@@ -43683,9 +43779,9 @@ aKz
 aLX
 aLX
 aLX
-aLX
-aLX
-aaa
+qIS
+vRC
+aZX
 aaa
 aaa
 aaa
@@ -43865,7 +43961,7 @@ aaa
 aaa
 aaa
 aaa
-aiw
+lLZ
 aiw
 apu
 apu
@@ -43885,7 +43981,7 @@ aKy
 aLX
 aLX
 aLX
-aLX
+kSY
 aLX
 aLX
 aaa
@@ -44067,7 +44163,7 @@ aaa
 aaa
 aaa
 aaa
-aiw
+lLZ
 aiw
 apv
 apv
@@ -44087,7 +44183,7 @@ aKy
 aLY
 aLY
 aLY
-aLY
+apH
 aLY
 aLX
 aLX
@@ -44269,7 +44365,7 @@ aaa
 aaa
 aaa
 aiw
-aiw
+lLZ
 akJ
 apw
 apw
@@ -44471,7 +44567,7 @@ aaa
 aaa
 aiw
 aiw
-akJ
+sAJ
 aoa
 apx
 arb
