@@ -15,10 +15,10 @@
 	current_location = "nav_scgpatrol_start"
 	range = 2
 	shuttle_area = list(/area/ship/patrol/armory,
-						/area/ship/patrol/storage,
+						/area/ship/patrol/crew,
 						/area/ship/patrol/medbay,
 						/area/ship/patrol/engine,
-						/area/ship/patrol/crew,
+						/area/ship/patrol/storage,
 						/area/ship/patrol/cockpit,
 						/area/ship/patrol/hallway)
 	defer_initialisation = TRUE
