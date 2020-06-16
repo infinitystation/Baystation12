@@ -16,7 +16,7 @@
 	call_webhook = WEBHOOK_SUBMAP_LOADED_SOL
 
 /obj/effect/submap_landmark/spawnpoint/away_patrol
-	name = "Crewman"
+	name = "Sailor"
 	movable_flags = MOVABLE_FLAG_EFFECTMOVE
 
 /obj/effect/submap_landmark/spawnpoint/away_patrol/pilot
