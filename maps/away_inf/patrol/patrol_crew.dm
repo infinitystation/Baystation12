@@ -16,7 +16,7 @@
 	call_webhook = WEBHOOK_SUBMAP_LOADED_SOL
 
 /obj/effect/submap_landmark/spawnpoint/away_patrol
-	name = "Shuttle Crewman"
+	name = "Crewman"
 	movable_flags = MOVABLE_FLAG_EFFECTMOVE
 
 /obj/effect/submap_landmark/spawnpoint/away_patrol/pilot
@@ -59,7 +59,7 @@
  */
 
 /datum/job/submap/patrol
-	title = "Crewman"
+	title = "Sailor"
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/patrol/crewman
 	supervisors = "пилот, ваш офицер"
