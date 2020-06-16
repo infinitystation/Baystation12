@@ -150,6 +150,7 @@
 	id_type = /obj/item/weapon/card/id/awaypatrol
 	id_slot = slot_wear_id
 	pda_type = null
+	back = /obj/item/weapon/storage/backpack/rucksack/navy
 	backpack_contents = list(/obj/random/mre)
 	flags = OUTFIT_EXTENDED_SURVIVAL
 
