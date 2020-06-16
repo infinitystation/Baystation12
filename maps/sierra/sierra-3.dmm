@@ -12981,16 +12981,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftstarboard)
-"awG" = (
-/obj/effect/floor_decal/techfloor{
-	dir = 4
-	},
-/obj/effect/floor_decal/techfloor{
-	dir = 8
-	},
-/obj/machinery/door/window/phoronreinforced,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/turret_protected/ai)
 "awI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -13882,6 +13872,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
+	},
+/obj/machinery/door/window/phoronreinforced{
+	dir = 1
 	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
@@ -20756,6 +20749,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/machinery/door/window/phoronreinforced,
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "aHo" = (
@@ -21201,9 +21195,6 @@
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 8
-	},
-/obj/machinery/door/window/phoronreinforced{
-	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/turret_protected/ai)
@@ -44087,7 +44078,7 @@ apv
 apv
 akJ
 aKy
-awG
+aIa
 axY
 azk
 aAx
