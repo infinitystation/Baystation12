@@ -30,7 +30,7 @@
 	if(prob(2))
 		to_chat(M, SPAN_DANGER("My heart gonna break out from the chest!"))
 		M.stun_effect_act(0, 15, BP_CHEST, "heart damage") //a small pain without damage
-		if(prob(5))
+		if(prob(15))
 			for(var/obj/item/organ/internal/heart/H in M.internal_organs)
 				H.damage += 1
 

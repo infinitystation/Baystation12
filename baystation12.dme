@@ -3368,7 +3368,6 @@
 #include "infinity\code\game\objects\items\weapons\circuitboards\machinery\telecomms.dm"
 #include "infinity\code\game\objects\items\weapons\circuitboards\machinery\teleporter.dm"
 #include "infinity\code\game\objects\items\weapons\grenades\anti_photon_grenade.dm"
-#include "infinity\code\game\objects\items\weapons\grenades\clusterbang.dm"
 #include "infinity\code\game\objects\items\weapons\grenades\emgrenade.dm"
 #include "infinity\code\game\objects\items\weapons\grenades\flashbang.dm"
 #include "infinity\code\game\objects\items\weapons\grenades\ied.dm"
