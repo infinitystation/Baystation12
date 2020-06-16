@@ -1,4 +1,4 @@
-#define WEBHOOK_SUBMAP_LOADED_SOL"webhook_submap_sol"
+#define WEBHOOK_SUBMAP_LOADED_SOL	"webhook_submap_sol"
 
 /obj/effect/submap_landmark/joinable_submap/away_scg_patrol
 	name = "Patrol Ship"

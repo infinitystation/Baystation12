@@ -15,10 +15,6 @@
 	suffixes = list("patrol/patrol.dmm")
 	cost = 1000
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/scgpatrol)
-	apc_test_exempt_areas = list(
-		/area/ship/patrol/atmos = NO_SCRUBBER|NO_VENT,
-		/area/ship/patrol/power = NO_SCRUBBER|NO_VENT,
-	)
 
 /obj/effect/overmap/visitable/sector/scgpatrol
 	name = "Bluespace Traces"
