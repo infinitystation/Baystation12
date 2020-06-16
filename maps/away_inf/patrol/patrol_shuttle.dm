@@ -15,12 +15,12 @@
 	current_location = "nav_scgpatrol_start"
 	range = 2
 	shuttle_area = list(/area/ship/patrol/armory,
-						/area/ship/patrol/cargo,
+						/area/ship/patrol/storage,
 						/area/ship/patrol/medbay,
-						/area/ship/patrol/atmos,
-						/area/ship/patrol/power,
+						/area/ship/patrol/engine,
+						/area/ship/patrol/crew,
 						/area/ship/patrol/cockpit,
-						/area/ship/patrol/airlock)
+						/area/ship/patrol/hallway)
 	defer_initialisation = TRUE
 	flags = SHUTTLE_FLAGS_PROCESS
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling/hull
@@ -36,5 +36,3 @@
 
 /turf/simulated/floor/shuttle_ceiling/hull
 	color = COLOR_HULL
-
-#undef WEBHOOK_SUBMAP_LOADED_SOL

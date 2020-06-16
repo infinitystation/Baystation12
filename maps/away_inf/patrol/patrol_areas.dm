@@ -9,21 +9,21 @@
 /area/ship/patrol/armory
 	name ="\improper SP - Armory"
 	icon_state = "shuttlered"
-/area/ship/patrol/cargo
+/area/ship/patrol/crew
 	name = "\improper SP - Crew Quarters"
 	icon_state = "shuttlegrn2"
 /area/ship/patrol/medbay
 	name = "\improper SP - Medical"
 	icon_state = "shuttle3"
-/area/ship/patrol/atmos
+/area/ship/patrol/engine
 	name = "\improper SP - Engineering"
 	icon_state = "shuttlegrn"
-/area/ship/patrol/power
+/area/ship/patrol/storage
 	name = "\improper SP - Storage Hallway"
 /area/ship/patrol/cockpit
 	name = "\improper SP - Cockpit"
 	icon_state = "shuttle"
 	req_access = list(access_away_patrol_captain)
-/area/ship/patrol/airlock
+/area/ship/patrol/hallway
 	name = "\improper SP - Main Hallway"
 	icon_state = "shuttlered2"

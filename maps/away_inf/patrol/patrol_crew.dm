@@ -1,3 +1,5 @@
+#define WEBHOOK_SUBMAP_LOADED_SOL"webhook_submap_sol"
+
 /obj/effect/submap_landmark/joinable_submap/away_scg_patrol
 	name = "Patrol Ship"
 	archetype = /decl/submap_archetype/away_scg_patrol
@@ -11,6 +13,7 @@
 		/datum/job/submap/patrol/corpsman,
 		/datum/job/submap/patrol/engineer
 	)
+	call_webhook = WEBHOOK_SUBMAP_LOADED_SOL
 
 /obj/effect/submap_landmark/spawnpoint/away_patrol
 	name = "Crewman"
@@ -60,6 +63,7 @@
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/patrol/crewman
 	supervisors = "пилот, ваш офицер"
+	loadout_allowed = FALSE
 	info = "Вы просыпаетесь и выходите из криосна, ощущая прохладный воздух на своём лице, а также лёгкую тошноту. \
 	Являясь одним из членов экипажа патрульного шаттла 3 флота ЦПСС, ваша задача состоит в патруле и разведке данного сектора. \
 	По данным бортового компьютера, поступал неизвестный сигнал о нападении воксов в этом регионе - возможно, потребуется подробная \
@@ -78,6 +82,7 @@
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/patrol/pilot
 	supervisors = "коммандование 3-го флота ЦПСС"
+	loadout_allowed = FALSE
 	info = "Вы просыпаетесь и выходите из криосна, ощущая прохладный воздух на своём лице, а также лёгкую тошноту. \
 	Являясь одним из членов экипажа патрульного шаттла 3 флота ЦПСС, ваша задача состоит в патруле и разведке данного сектора. \
 	По данным бортового компьютера, поступал неизвестный сигнал о нападении воксов в этом регионе - возможно, потребуется подробная \
@@ -94,6 +99,7 @@
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/patrol/corpsman
 	supervisors = "пилот, ваш офицер"
+	loadout_allowed = FALSE
 	info = "Вы просыпаетесь и выходите из криосна, ощущая прохладный воздух на своём лице, а также лёгкую тошноту. \
 	Являясь одним из членов экипажа патрульного шаттла 3 флота ЦПСС, ваша задача состоит в патруле и разведке данного сектора. \
 	По данным бортового компьютера, поступал неизвестный сигнал о нападении воксов в этом регионе - возможно, потребуется подробная \
@@ -111,6 +117,7 @@
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/patrol/engineer
 	supervisors = "пилот, ваш офицер"
+	loadout_allowed = FALSE
 	info = "Вы просыпаетесь и выходите из криосна, ощущая прохладный воздух на своём лице, а также лёгкую тошноту. \
 	Являясь одним из членов экипажа патрульного шаттла 3 флота ЦПСС, ваша задача состоит в патруле и разведке данного сектора. \
 	По данным бортового компьютера, поступал неизвестный сигнал о нападении воксов в этом регионе - возможно, потребуется подробная \
@@ -136,7 +143,7 @@
 	hierarchy_type = /decl/hierarchy/outfit/job/patrol
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/away_solpatrol
 	shoes = /obj/item/clothing/shoes/dutyboots
-	l_ear = /obj/item/device/radio/headset/rescue
+	l_ear = /obj/item/device/radio/headset/away_scg_patrol
 	l_pocket = /obj/item/device/radio
 	r_pocket = /obj/item/weapon/crowbar/prybar
 	suit_store = /obj/item/weapon/tank/oxygen
@@ -166,3 +173,4 @@
 	id_type = /obj/item/weapon/card/id/awaypatrol/captain
 
 #undef PATROL_OUTFIT_JOB_NAME
+#undef WEBHOOK_SUBMAP_LOADED_SOL

@@ -1,5 +1,3 @@
-#define WEBHOOK_SUBMAP_LOADED_SOL"webhook_submap_sol"
-
 #include "patrol_crew.dm"
 #include "patrol_areas.dm"
 #include "patrol_items.dm"
