@@ -3,7 +3,7 @@
 	desc = "An impenetrable field of energy, capable of blocking anything as long as it's active."
 	icon = 'infinity/icons/obj/machines/shielding.dmi'
 	icon_state = "shield_normal"
-	alpha = 100
+//	alpha = 100
 	anchored = 1
 	layer = ABOVE_HUMAN_LAYER
 	density = 1
@@ -22,9 +22,9 @@
 		set_opacity(0)
 
 	if(gen && gen.check_flag(MODEFLAG_OVERCHARGE))
-		color = COLOR_YELLOW	// INF WAS	icon_state = "shield_overcharged"
+		color = COLOR_VIOLET		// INF WAS	icon_state = "shield_overcharged"
 	else
-		color = COLOR_CYAN		// INF WAS	icon_state = "shield_normal"
+		color = COLOR_DEEP_SKY_BLUE	// INF WAS	icon_state = "shield_normal"
 
 // Prevents shuttles, singularities and pretty much everything else from moving the field segments away.
 // The only thing that is allowed to move us is the Destroy() proc.
@@ -309,7 +309,7 @@
 // Small visual effect, makes the shield tiles brighten up by becoming more opaque for a moment, and spreads to nearby shields.
 /obj/effect/shield/proc/impact_effect(var/i, var/list/affected_shields = list())
 	i = between(1, i, 10)
-	alpha = 255
+	alpha = 100		// INF WAS	alpha = 100
 	animate(src, alpha = initial(alpha), time = 1 SECOND)
 	affected_shields |= src
 	i--
