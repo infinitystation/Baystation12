@@ -21121,12 +21121,14 @@
 /turf/simulated/floor/plating,
 /area/engineering/engine_eva)
 "aHK" = (
-/obj/structure/sign/nanotrasen{
-	pixel_y = 32
+/obj/structure/catwalk,
+/obj/structure/sign/warning/airlock{
+	dir = 1;
+	icon_state = "doors";
+	pixel_y = -32
 	},
-/obj/structure/lattice,
-/turf/space,
-/area/space)
+/turf/simulated/floor/plating,
+/area/maintenance/seconddeck/foreport)
 "aHL" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
@@ -27231,19 +27233,25 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
 "aSz" = (
-/obj/structure/catwalk,
-/obj/structure/sign/warning/airlock{
-	dir = 1;
-	icon_state = "doors";
-	pixel_y = -32
+/obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/machinery/access_button/airlock_interior{
+	master_tag = "sd_port";
+	name = "interior access button";
+	pixel_x = 24;
+	pixel_y = 0;
+	req_access = list("ACCESS_EXTERNAL")
 	},
-/turf/simulated/floor/plating,
+/obj/machinery/door/airlock/external/glass/bolted/cycling{
+	id_tag = "sd_port_inner";
+	name = "Second Deck Port Airlock"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/seconddeck/foreport)
 "aSA" = (
-/obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 6
 	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
 "aSB" = (
@@ -29001,19 +29009,22 @@
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology/level1)
 "aVp" = (
-/obj/machinery/atmospherics/pipe/simple/hidden,
-/obj/machinery/access_button/airlock_interior{
+/obj/structure/catwalk,
+/obj/effect/floor_decal/industrial/warning/cee{
+	icon_state = "stripecee";
+	dir = 1
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
+	dir = 4;
+	id_tag = "sd_port_pump"
+	},
+/obj/machinery/airlock_sensor{
+	id_tag = "sd_port_sensor";
 	master_tag = "sd_port";
-	name = "interior access button";
-	pixel_x = 24;
-	pixel_y = 0;
-	req_access = list("ACCESS_EXTERNAL")
+	pixel_x = -24;
+	pixel_y = 0
 	},
-/obj/machinery/door/airlock/external/glass/bolted/cycling{
-	id_tag = "sd_port_inner";
-	name = "Second Deck Port Airlock"
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
 "aVq" = (
 /obj/structure/railing/mapped,
@@ -29269,22 +29280,8 @@
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology/level1)
 "aVN" = (
-/obj/structure/catwalk,
-/obj/effect/floor_decal/industrial/warning/cee{
-	icon_state = "stripecee";
-	dir = 1
-	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
-	dir = 4;
-	id_tag = "sd_port_pump"
-	},
-/obj/machinery/airlock_sensor{
-	id_tag = "sd_port_sensor";
-	master_tag = "sd_port";
-	pixel_x = -24;
-	pixel_y = 0
-	},
-/turf/simulated/floor/plating,
+/obj/machinery/atmospherics/pipe/manifold4w/hidden,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/seconddeck/foreport)
 "aVO" = (
 /obj/effect/floor_decal/techfloor/corner{
@@ -29801,8 +29798,16 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/seconddeck/aftstarboard)
 "aWG" = (
-/obj/machinery/atmospherics/pipe/manifold4w/hidden,
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/structure/catwalk,
+/obj/effect/floor_decal/industrial/warning/cee{
+	icon_state = "stripecee";
+	dir = 1
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
+	dir = 8;
+	id_tag = "sd_port_pump"
+	},
+/turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
 "aWH" = (
 /obj/machinery/disposal,
@@ -30835,12 +30840,9 @@
 /area/crew_quarters/sauna)
 "aYx" = (
 /obj/structure/catwalk,
-/obj/effect/floor_decal/industrial/warning/cee{
-	icon_state = "stripecee";
-	dir = 1
-	},
+/obj/effect/floor_decal/industrial/warning/cee,
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
-	dir = 8;
+	dir = 4;
 	id_tag = "sd_port_pump"
 	},
 /turf/simulated/floor/plating,
@@ -31376,17 +31378,24 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/maintenance_equipstorage)
 "aZt" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/maintenance/seconddeck/foreport)
+"aZu" = (
 /obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/warning/cee,
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
-	dir = 4;
+	dir = 8;
 	id_tag = "sd_port_pump"
 	},
+/obj/machinery/embedded_controller/radio/airlock/airlock_controller{
+	dir = 8;
+	id_tag = "sd_port";
+	name = "Second Deck Port Airlock Controller";
+	pixel_x = 20;
+	req_access = list("ACCESS_EXTERNAL")
+	},
 /turf/simulated/floor/plating,
-/area/maintenance/seconddeck/foreport)
-"aZu" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden,
-/turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/seconddeck/foreport)
 "aZv" = (
 /obj/effect/floor_decal/corner/paleblue/mono,
@@ -31441,20 +31450,19 @@
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/sauna)
 "aZz" = (
-/obj/structure/catwalk,
-/obj/effect/floor_decal/industrial/warning/cee,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
-	dir = 8;
-	id_tag = "sd_port_pump"
+/obj/machinery/door/airlock/external/bolted/cycling{
+	id_tag = "sd_port_outer";
+	name = "Second Deck Port Airlock"
 	},
-/obj/machinery/embedded_controller/radio/airlock/airlock_controller{
-	dir = 8;
-	id_tag = "sd_port";
-	name = "Second Deck Port Airlock Controller";
-	pixel_x = 20;
+/obj/machinery/access_button/airlock_exterior{
+	master_tag = "sd_port";
+	name = "exterior access button";
+	pixel_x = 24;
+	pixel_y = 0;
 	req_access = list("ACCESS_EXTERNAL")
 	},
-/turf/simulated/floor/plating,
+/obj/machinery/shield_diffuser,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/seconddeck/foreport)
 "aZA" = (
 /obj/machinery/door/window/westright{
@@ -32865,20 +32873,12 @@
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/sauna)
 "bcl" = (
-/obj/machinery/shield_diffuser,
-/obj/machinery/door/airlock/external/bolted/cycling{
-	id_tag = "sd_port_outer";
-	name = "Second Deck Port Airlock"
+/obj/structure/lattice,
+/obj/structure/sign/nanotrasen{
+	pixel_y = 32
 	},
-/obj/machinery/access_button/airlock_exterior{
-	master_tag = "sd_port";
-	name = "exterior access button";
-	pixel_x = 24;
-	pixel_y = 0;
-	req_access = list("ACCESS_EXTERNAL")
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/maintenance/seconddeck/foreport)
+/turf/space,
+/area/space)
 "bcm" = (
 /obj/structure/bed/chair/armchair/black{
 	icon_state = "armchair_preview";
@@ -49900,7 +49900,7 @@ aEc
 aEc
 aEc
 aEc
-aam
+aah
 aam
 aam
 aam
@@ -50097,12 +50097,12 @@ aPe
 aPe
 aAU
 aSj
-aFs
+aHK
 aEc
+aVp
+aYx
 aEc
-aEc
-aEc
-aam
+bcl
 aam
 aam
 aam
@@ -50299,12 +50299,12 @@ aPi
 aPH
 aAU
 aSk
+aSA
 aSz
-aEc
 aVN
 aZt
-aEc
-aHK
+aZz
+aah
 aam
 aam
 aam
@@ -50501,11 +50501,11 @@ aPk
 aAU
 aAU
 aEK
-aSA
-aVp
+aTn
+aEc
 aWG
 aZu
-bcl
+aEc
 aah
 aam
 aam
@@ -50705,10 +50705,10 @@ aQY
 aQY
 aTn
 aEc
-aYx
-aZz
 aEc
-aah
+aEc
+aEc
+aEc
 aam
 aam
 aam

@@ -37258,6 +37258,9 @@
 	},
 /obj/machinery/computer/modular/preset/aislot/sysadmin,
 /obj/machinery/door/window/phoronreinforced,
+/obj/item/modular_computer/telescreen/preset/medical{
+	pixel_y = 26
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/turret_protected/ai)
 "bka" = (
@@ -37266,6 +37269,9 @@
 	},
 /obj/machinery/computer/modular/preset/dock,
 /obj/machinery/door/window/phoronreinforced,
+/obj/item/modular_computer/telescreen/preset/engineering{
+	pixel_y = 26
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/turret_protected/ai)
 "bkb" = (
