@@ -1,5 +1,5 @@
 /obj/item/weapon/card/id/awaypatrol
-	desc = "An identification card issued to SolGov crewmembers aboard the Sol Ptrol Ships."
+	desc = "An identification card issued to SolGov crewmembers aboard the Sol Patrol Ships."
 	color = "#ccecff"
 	detail_color = "#e00000"
 	access = list(access_away_patrol)

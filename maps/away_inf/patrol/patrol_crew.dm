@@ -13,7 +13,7 @@
 	)
 
 /obj/effect/submap_landmark/spawnpoint/away_patrol
-	name = "Shuttle Crweman"
+	name = "Crewman"
 	movable_flags = MOVABLE_FLAG_EFFECTMOVE
 
 /obj/effect/submap_landmark/spawnpoint/away_patrol/pilot
@@ -56,7 +56,7 @@
  */
 
 /datum/job/submap/patrol
-	title = "Shuttle Crewman"
+	title = "Crewman"
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/patrol/crewman
 	supervisors = "пилот, ваш офицер"
@@ -147,25 +147,22 @@
 	flags = OUTFIT_EXTENDED_SURVIVAL
 
 /decl/hierarchy/outfit/job/patrol/crewman
-	name = PATROL_OUTFIT_JOB_NAME("Shuttle Crewman")
-	back = /obj/item/weapon/rig/military/equipped/engineer
+	name = PATROL_OUTFIT_JOB_NAME("Crewman")
+
 
 /decl/hierarchy/outfit/job/patrol/engineer
 	name = PATROL_OUTFIT_JOB_NAME("Technician")
 	belt = /obj/item/weapon/storage/belt/utility/full
 	gloves = /obj/item/clothing/gloves/insulated/black
-	back = /obj/item/weapon/rig/military/equipped/engineer
 
 /decl/hierarchy/outfit/job/patrol/corpsman
 	name = PATROL_OUTFIT_JOB_NAME("Corpsman")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/medical/away_solpatrol
-	belt = /obj/item/weapon/storage/belt/medical/emt/combat
-	back = /obj/item/weapon/rig/military/equipped/corpsman
+
 
 /decl/hierarchy/outfit/job/patrol/pilot
 	name = PATROL_OUTFIT_JOB_NAME("Pilot")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/command/pilot/away_solpatrol
-	back = /obj/item/weapon/rig/military/equipped/comander
 	id_type = /obj/item/weapon/card/id/awaypatrol/captain
 
 #undef PATROL_OUTFIT_JOB_NAME

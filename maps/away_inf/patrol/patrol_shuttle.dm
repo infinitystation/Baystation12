@@ -27,7 +27,7 @@
 
 /obj/machinery/computer/shuttle_control/explore/scgpatrol
 	name = "shuttle control console"
-	req_access = list(access_away_patrol)
+	req_access = list(access_away_patrol_captain)
 	shuttle_tag = "Sol Patrol Shuttle"
 
 /obj/effect/shuttle_landmark/scgpatrol

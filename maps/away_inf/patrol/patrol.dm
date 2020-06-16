@@ -35,7 +35,7 @@
 /obj/machinery/telecomms/allinone/away_scg_patrol
 	listening_freqs = list(ERT_FREQ)
 	channel_color = COMMS_COLOR_CENTCOMM
-	channel_name = "Response Team"
+	channel_name = "SCG Patrol"
 	circuitboard = /obj/item/weapon/stock_parts/circuitboard/telecomms/allinone/away_scg_patrol
 
 /obj/item/weapon/stock_parts/circuitboard/telecomms/allinone/away_scg_patrol
@@ -75,3 +75,23 @@
 /obj/machinery/power/apc/away_patrol
 	req_access = list(access_away_patrol)
 	is_critical = 1
+
+/* Voidsuit Storage Unit
+ * ====
+ */
+
+/obj/machinery/suit_storage_unit
+	name = "Corpsman Voidsuit Storage Unit"
+	suit= /obj/item/clothing/suit/space/void/medical/alt/sol/prepared
+	boots = /obj/item/clothing/shoes/magboots
+	tank = /obj/item/weapon/tank/oxygen
+	req_access = list(access_away_patrol)
+	islocked = 1
+
+/obj/machinery/suit_storage_unit
+	name = "Technician Voidsuit Storage Unit"
+	suit= /obj/item/clothing/suit/space/void/engineering/alt/sol/prepared
+	boots = /obj/item/clothing/shoes/magboots
+	tank = /obj/item/weapon/tank/oxygen
+	req_access = list(access_away_patrol)
+	islocked = 1
