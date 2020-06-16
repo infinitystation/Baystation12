@@ -17078,6 +17078,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/floor_decal/techfloor{
+	dir = 4
+	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "aCm" = (
@@ -37789,14 +37792,10 @@
 	name = "AI Core Shield";
 	opacity = 0
 	},
-/obj/effect/floor_decal/techfloor{
-	dir = 1
-	},
-/obj/effect/floor_decal/techfloor,
 /obj/machinery/door/window/phoronreinforced{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "eXk" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -39205,17 +39204,13 @@
 	c_tag = "AI Core - Port";
 	dir = 1
 	},
-/obj/effect/floor_decal/techfloor{
-	dir = 1
-	},
-/obj/effect/floor_decal/techfloor,
 /obj/machinery/button/flasher{
 	dir = 1;
 	id_tag = "ai_core";
 	pixel_x = -10;
 	pixel_y = -24
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/turf/simulated/floor/greengrid,
 /area/turret_protected/ai)
 "ybC" = (
 /obj/effect/floor_decal/techfloor{
