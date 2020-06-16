@@ -7810,7 +7810,6 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "aoi" = (
-/obj/effect/paint/dark_gunmetal,
 /obj/effect/paint_stripe/turquoise,
 /obj/structure/cable/green{
 	d1 = 1;
@@ -13870,10 +13869,10 @@
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
-	},
 /obj/machinery/door/window/phoronreinforced{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
 	},
 /turf/simulated/floor/bluegrid,
@@ -14840,11 +14839,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
-/obj/machinery/ai_slipper,
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	icon_state = "map-scrubbers";
-	dir = 4
-	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "azm" = (
@@ -15651,7 +15646,8 @@
 /obj/machinery/power/apc{
 	dir = 4;
 	name = "east bump";
-	pixel_x = 24
+	pixel_x = 24;
+	pixel_y = 8
 	},
 /obj/structure/cable/yellow{
 	d2 = 2;
@@ -18697,10 +18693,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/machinery/alarm/cold{
-	dir = 8;
-	pixel_x = 22
-	},
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
@@ -19746,15 +19738,12 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
-/obj/machinery/ai_slipper,
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 4
-	},
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "aFS" = (
@@ -20741,15 +20730,13 @@
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
-	},
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/machinery/door/window/phoronreinforced,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "aHo" = (
@@ -22884,7 +22871,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/aft)
 "aKy" = (
-/obj/effect/paint/dark_gunmetal,
 /obj/effect/paint_stripe/turquoise,
 /turf/simulated/wall/r_wall/prepainted,
 /area/turret_protected/ai)
@@ -37222,7 +37208,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/paint/dark_gunmetal,
 /obj/effect/paint_stripe/turquoise,
 /turf/simulated/wall/r_wall/prepainted,
 /area/turret_protected/ai)
@@ -37324,7 +37309,13 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 9
 	},
-/obj/machinery/porta_turret,
+/obj/machinery/flasher{
+	id_tag = "ai_core";
+	pixel_y = 24
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 4
+	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "bkm" = (
@@ -37354,6 +37345,11 @@
 	},
 /obj/machinery/light/halogen{
 	icon_state = "tube_map";
+	dir = 1
+	},
+/obj/machinery/flasher{
+	id_tag = "ai_core";
+	pixel_y = -24;
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -37435,6 +37431,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
+/obj/machinery/porta_turret,
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "bkL" = (
@@ -37464,19 +37461,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/crew_quarters/dungeon_master_lounge)
-"bkN" = (
-/obj/effect/floor_decal/techfloor{
-	dir = 8
-	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 4
-	},
-/obj/machinery/light/halogen{
-	icon_state = "tube_map";
-	dir = 8
-	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai)
 "bkS" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 10
@@ -37730,14 +37714,21 @@
 /turf/simulated/floor/plating,
 /area/security/sierra/hallway)
 "dZG" = (
-/obj/machinery/ai_status_display{
-	pixel_x = -32
-	},
 /obj/effect/floor_decal/techfloor{
 	icon_state = "techfloor_edges";
 	dir = 10
 	},
-/obj/machinery/porta_turret,
+/obj/machinery/status_display{
+	pixel_x = -32
+	},
+/obj/machinery/flasher{
+	id_tag = "ai_core";
+	pixel_y = -24;
+	dir = 1
+	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4
+	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "eww" = (
@@ -37775,13 +37766,15 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/firstdeck/forestarboard)
 "fgU" = (
-/obj/machinery/status_display{
-	pixel_x = -32
-	},
 /obj/effect/floor_decal/techfloor{
 	dir = 8
 	},
 /obj/machinery/ai_slipper,
+/obj/machinery/flasher{
+	id_tag = "ai_core";
+	dir = 4;
+	pixel_x = -24
+	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "flu" = (
@@ -38023,6 +38016,10 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light/halogen,
+/obj/machinery/flasher{
+	id_tag = "ai_core";
+	pixel_y = 24
+	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "izy" = (
@@ -38125,6 +38122,16 @@
 /obj/machinery/porta_turret,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/turf/simulated/floor/bluegrid,
+/area/turret_protected/ai)
+"kvK" = (
+/obj/effect/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/machinery/alarm/cold{
+	dir = 4;
+	pixel_x = -24
 	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
@@ -38702,11 +38709,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/flasher{
-	id_tag = "ai_core";
-	pixel_y = -24;
-	dir = 1
-	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "paW" = (
@@ -38782,6 +38784,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/machinery/porta_turret,
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "qym" = (
@@ -38850,13 +38853,11 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 8
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4
-	},
 /obj/machinery/light/halogen{
 	icon_state = "tube_map";
 	dir = 8
 	},
+/obj/machinery/porta_turret,
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "tsG" = (
@@ -39127,11 +39128,6 @@
 "ybC" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 8
-	},
-/obj/machinery/flasher{
-	id_tag = "ai_core";
-	dir = 4;
-	pixel_x = -24
 	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
@@ -43878,10 +43874,10 @@ aiw
 aKy
 aKy
 bkl
-bkN
+tdd
 ybC
 fgU
-ybC
+kvK
 tdd
 dZG
 aKy
