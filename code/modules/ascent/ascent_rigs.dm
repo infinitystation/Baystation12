@@ -7,8 +7,8 @@
 	suit_type = "support exosuit"
 	armor = list(
 		melee = ARMOR_MELEE_MAJOR,
-		bullet = ARMOR_BALLISTIC_RESISTANT, //INF WAS 1.1 * ARMOR_BALLISTIC_RESISTANT
-		laser = ARMOR_LASER_MAJOR, //INF WAS 1.1 * ARMOR_LASER_RIFLES
+		bullet = 1.1 * ARMOR_BALLISTIC_RESISTANT,
+		laser = 1.1 * ARMOR_LASER_RIFLES,
 		energy = ARMOR_ENERGY_RESISTANT,
 		bomb = ARMOR_BOMB_RESISTANT,
 		bio = ARMOR_BIO_SHIELDED,
