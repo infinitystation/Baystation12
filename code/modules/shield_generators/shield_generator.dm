@@ -115,7 +115,7 @@
 		var/obj/effect/overmap/visitable/ship/sector = map_sectors["[src.z]"]
 		if(sector && istype(sector))
 			if(!sector.check_ownership(src))
-				for(var/obj/effect/overmap/visitable/candidate in sector)
+				for(var/obj/effect/overmap/visitable/ship/candidate in sector)
 					if(candidate.check_ownership(src))
 						sector = candidate
 			vessel_reverse_dir = GLOB.reverse_dir[sector.fore_dir]

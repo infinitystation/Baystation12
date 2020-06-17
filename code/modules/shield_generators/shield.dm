@@ -3,7 +3,7 @@
 	desc = "An impenetrable field of energy, capable of blocking anything as long as it's active."
 	icon = 'infinity/icons/obj/machines/shielding.dmi'
 	icon_state = "shield_normal"
-//	alpha = 100
+//	alpha = 100			// INF
 	anchored = 1
 	layer = ABOVE_HUMAN_LAYER
 	density = 1

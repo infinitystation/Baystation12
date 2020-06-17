@@ -32,8 +32,8 @@
 			E.strength = 1
 			E.set_density(1)
 			E.anchored = 1
-			E.set_invisibility(0)
 			E.color = fieldcolor	// INF
+			E.set_invisibility(0)
 		spawn(10)
 			UpdateMove()
 	return 1
