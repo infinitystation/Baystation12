@@ -15,6 +15,9 @@ stopserver
 reboot_called
 atupdate
 
+# sometimes something create backups of maps
+maps/*/backup/*.dmm
+
 # ignore config, but not subdirs
 !config/*/
 config/*
