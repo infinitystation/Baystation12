@@ -2544,9 +2544,9 @@
 	dir = 1
 	},
 /obj/machinery/camera/network/command{
-	c_tag = "Command - Bridge Hall Level One";
-	name = "Command - Bridge";
-	dir = 4
+	c_tag = "Command - Bridge";
+	dir = 4;
+	name = "Command - Bridge"
 	},
 /obj/machinery/computer/modular/preset/dock,
 /obj/effect/floor_decal/corner/darkblue/mono,
@@ -13659,7 +13659,7 @@
 	dir = 4
 	},
 /obj/machinery/camera/network/second_deck{
-	c_tag = "Bar - Aft Port";
+	c_tag = "Bar - Main";
 	dir = 1
 	},
 /turf/simulated/floor/carpet,
