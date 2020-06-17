@@ -260,5 +260,5 @@ obj/random/hostile/asteroid/spawn_choices()
 	icon = 'infinity/icons/obj/plants.dmi'
 	icon_state = "random"
 
-/obj/random/flora/spawn_choices()
+/obj/random/pottedplant/spawn_choices()
 	return subtypesof(/obj/structure/flora/pottedplant)
