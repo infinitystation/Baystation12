@@ -3436,11 +3436,6 @@
 	},
 /turf/simulated/floor/bluegrid,
 /area/engineering/bluespace/chamber)
-"afL" = (
-/obj/effect/overlay/coconut,
-/obj/effect/overlay/palmtree_r,
-/turf/simulated/floor/beach/sand/desert,
-/area/crew_quarters/heads/captain/beach)
 "afM" = (
 /obj/effect/floor_decal/spline/fancy/wood/corner{
 	icon_state = "spline_fancy_corner";
@@ -8133,11 +8128,11 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
-/obj/structure/flora/pottedplant/decorative,
 /obj/effect/floor_decal/corner/lightgrey/diagonal{
 	icon_state = "corner_white_diagonal";
 	dir = 4
 	},
+/obj/random/pottedplant,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/cafe)
 "ans" = (
@@ -8412,7 +8407,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
 "anR" = (
-/obj/structure/flora/pottedplant/minitree,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -8422,6 +8416,7 @@
 	icon_state = "corner_white_diagonal";
 	dir = 4
 	},
+/obj/random/pottedplant,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/cafe)
 "anS" = (
@@ -13474,12 +13469,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/seconddeck/center)
 "avu" = (
-/obj/structure/flora/pottedplant,
 /obj/machinery/alarm{
 	dir = 4;
 	icon_state = "alarm0";
 	pixel_x = -23
 	},
+/obj/random/pottedplant,
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/cafe)
 "avv" = (
@@ -13664,7 +13659,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/flora/pottedplant,
+/obj/random/pottedplant,
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/mess)
 "avK" = (
@@ -13760,7 +13755,7 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/ai_abadoned)
 "avT" = (
-/obj/structure/flora/pottedplant/tall,
+/obj/random/pottedplant,
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/mess)
 "avU" = (
@@ -15615,13 +15610,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/gym)
 "ayJ" = (
-/obj/structure/flora/pottedplant/minitree,
 /obj/effect/floor_decal/corner/darkblue/mono,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/camera/network/command{
 	c_tag = "Command - Bridge";
 	name = "Command - Bridge"
 	},
+/obj/random/pottedplant,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "ayK" = (
@@ -21006,7 +21001,7 @@
 	dir = 4;
 	icon_state = "railing0-1"
 	},
-/obj/structure/flora/pottedplant/decorative,
+/obj/random/pottedplant,
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
 "aHX" = (
@@ -24593,10 +24588,10 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
 "aOi" = (
-/obj/structure/flora/pottedplant/overgrown,
 /obj/machinery/light/spot{
 	dir = 1
 	},
+/obj/random/pottedplant,
 /turf/simulated/floor/lino,
 /area/bridge/meeting_room)
 "aOj" = (
@@ -24864,7 +24859,7 @@
 	icon_state = "spline_fancy_corner";
 	dir = 8
 	},
-/obj/structure/flora/pottedplant/fern,
+/obj/random/pottedplant,
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/sauna)
 "aOD" = (
@@ -26378,7 +26373,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/seconddeck/center)
 "aRx" = (
-/obj/structure/flora/pottedplant/large,
+/obj/random/pottedplant,
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
 "aRy" = (
@@ -32705,9 +32700,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bcC" = (
-/obj/structure/flora/pottedplant/large,
 /obj/effect/floor_decal/corner/darkblue/mono,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/random/pottedplant,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "bcD" = (
@@ -32720,6 +32715,7 @@
 "bcE" = (
 /obj/effect/floor_decal/corner/darkblue/border,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
+/obj/random/pottedplant,
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bcG" = (
@@ -33838,7 +33834,6 @@
 	name = "west bump";
 	pixel_x = -24
 	},
-/obj/structure/flora/pottedplant/flower,
 /obj/structure/cable/green{
 	d2 = 4;
 	icon_state = "0-4"
@@ -33847,6 +33842,7 @@
 	icon_state = "spline_plain";
 	dir = 8
 	},
+/obj/random/pottedplant,
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/actor)
 "beS" = (
@@ -34582,6 +34578,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
+/obj/random/pottedplant,
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bge" = (
@@ -35927,7 +35924,7 @@
 /turf/simulated/floor/grass,
 /area/bridge/lobby)
 "biU" = (
-/obj/structure/flora/pottedplant/tropical,
+/obj/random/pottedplant,
 /turf/simulated/floor/lino,
 /area/bridge/meeting_room)
 "biW" = (
@@ -46859,7 +46856,7 @@ aka
 ads
 ads
 afj
-afL
+aqK
 aej
 ads
 auP
