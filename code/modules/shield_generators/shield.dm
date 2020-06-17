@@ -309,8 +309,18 @@
 // Small visual effect, makes the shield tiles brighten up by becoming more opaque for a moment, and spreads to nearby shields.
 /obj/effect/shield/proc/impact_effect(var/i, var/list/affected_shields = list())
 	i = between(1, i, 10)
-	alpha = 100		// INF WAS	alpha = 100
+/*[ORIG]
+	alpha = 255
 	animate(src, alpha = initial(alpha), time = 1 SECOND)
+[/ORIG]*/
+//[INF]
+	var/backcolor = color
+	if(gen && gen.check_flag(MODEFLAG_OVERCHARGE))
+		color = COLOR_PINK
+	else
+		color = COLOR_CYAN_BLUE
+	animate(src, color = backcolor, time = 1 SECOND)
+//[/INF]
 	affected_shields |= src
 	i--
 	if(i)
