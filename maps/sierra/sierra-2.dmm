@@ -2543,11 +2543,6 @@
 /obj/machinery/light/spot{
 	dir = 1
 	},
-/obj/machinery/camera/network/command{
-	c_tag = "Command - Bridge";
-	dir = 4;
-	name = "Command - Bridge"
-	},
 /obj/machinery/computer/modular/preset/dock,
 /obj/effect/floor_decal/corner/darkblue/mono,
 /turf/simulated/floor/tiled/dark,
@@ -8299,6 +8294,9 @@
 /obj/effect/floor_decal/corner/lightgrey/diagonal{
 	icon_state = "corner_white_diagonal";
 	dir = 4
+	},
+/obj/machinery/camera/network/second_deck{
+	c_tag = "Cafe"
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/cafe)
@@ -15669,6 +15667,10 @@
 /obj/structure/flora/pottedplant/minitree,
 /obj/effect/floor_decal/corner/darkblue/mono,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/camera/network/command{
+	c_tag = "Command - Bridge";
+	name = "Command - Bridge"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "ayK" = (
@@ -33045,6 +33047,11 @@
 /obj/structure/flora/pottedplant/large,
 /obj/effect/floor_decal/corner/darkblue/mono,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/camera/network/command{
+	c_tag = "Command - Bridge 2";
+	dir = 1;
+	name = "Command - Bridge"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "bcD" = (
