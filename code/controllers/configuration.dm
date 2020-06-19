@@ -775,10 +775,15 @@ var/list/gamemode_cache = list()
 
 				if("ntnet_radius_multiplyer")
 					ntnet_radius_multiplyer = text2num(value)
+
 				if("ntnet_speed_limiter")
 					ntnet_speed_limiter = text2num(value)
+	
+				if("admin_midis_allowed")
+					admin_midis_allowed = TRUE
 
-				if("admin_midis_allowed") admin_midis_allowed = TRUE
+				if("default_respawn_cooldown")
+					default_respawn_cooldown = text2num(value) SECONDS
 			//[/INF]
 
 				if("max_gear_cost")
