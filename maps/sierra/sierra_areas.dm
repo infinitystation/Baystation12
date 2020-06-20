@@ -503,7 +503,7 @@
 
 /area/bridge/nano
 	icon = 'infinity/icons/turf/areas.dmi'
-	icon_state = "bridge_nano"  // Yes, this is exactly what no one has ever done, probably.
+	icon_state = "bridge_room"  // Yes, this is exactly what no one has ever done, probably.
 
 /area/bridge/meeting_room
 	name = "Second Deck - Command - Meeting Room"
@@ -883,10 +883,18 @@
 
 /area/crew_quarters/sleep/cryo
 	name = "Second Deck - Living - Cryogenic Storage"
-	icon_state = "Sleep"
+	icon = 'infinity/icons/turf/areas.dmi'
+	icon_state = "cryo"
 
 /area/crew_quarters/sleep/cryo/upper
-	name = "Second Deck - Living - Cryogenic Storage Upper"
+	name = "Second Deck - Living - Cryogenic Storage - Upper"
+	icon_state = "cryo_up"
+/area/crew_quarters/sleep/cryo/south
+	name = "Second Deck - Living - Cryogenic Storage - South"
+	icon_state = "cryo_south"
+
+/area/crew_quarters/sleep/cryo/first_deck
+	name = "First Deck - Cryogenic Storage"
 
 /area/crew_quarters/adherent
 	name = "Second Deck - Living - Adherent Maintenence"

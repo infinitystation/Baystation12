@@ -12,6 +12,8 @@
 
 #define PICK_OR_SET(listOrVar) (islist(listOrVar) ? pick(listOrVar) : listOrVar)
 
+#define any2bool(expression) (!(!(expression)))
+
 /proc/parse_html_inf(var/browser_content)
 	if(isfile(browser_content))
 		return browser_content

@@ -408,7 +408,7 @@
 	if(loc_list.len)
 		return pick(loc_list)
 	else
-		return locate("start*[title]") // use old stype
+		return pick(GLOB.newplayer_start)//inf, was: return locate("start*[title]") // use old stype
 
 /**
  *  Return appropriate /datum/spawnpoint for given client
@@ -437,9 +437,10 @@
 		else
 			spawnpos = spawntypes()[spawnpoint]
 
-	if(spawnpos && !spawnpos.check_job_spawning(title))
-		if(H)
+	if(spawnpos && !spawnpos.can_spawn_here(H, src))//inf, was: if(spawnpos && !spawnpos.check_job_spawning(title))
+/*[ORIGINAL]		if(H)
 			to_chat(H, "<span class='warning'>Your chosen spawnpoint ([spawnpos.display_name]) is unavailable for your chosen job ([title]). Spawning you at another spawn point instead.</span>")
+[/ORIGINAL]*/
 		spawnpos = null
 
 	if(!spawnpos)

@@ -26,6 +26,15 @@ GLOBAL_VAR(spawntypes)
 		return 0
 
 	return 1
+//[INF]
+/datum/spawnpoint/proc/can_spawn_here(mob/M, datum/job/job = null)
+	. = TRUE
+	if(job)
+		var/job_spawning_check = any2bool(check_job_spawning(job))
+		if(!job_spawning_check)
+			to_chat(M, SPAN_WARNING("Your chosen spawnpoint ([display_name]) is unavailable for your chosen job ([job.title]). Spawning you at another spawn point instead."))
+		. = . && job_spawning_check
+//[/INF]
 
 //Called after mob is created, moved to a turf and equipped.
 /datum/spawnpoint/proc/after_join(mob/victim)
@@ -66,6 +75,27 @@ GLOBAL_VAR(spawntypes)
 	..()
 	turfs = GLOB.latejoin_cryo
 
+/datum/spawnpoint/cryo/can_spawn_here(mob/M, datum/job/job = null)
+	. = ..()
+
+	if(.)
+		var/list/spots = list()
+		var/list/areas = list()
+		for(var/turf/t in turfs)
+			if(isturf(t))
+				var/area/Ar = get_area(t)
+				if(isarea(Ar) && !(Ar in areas))
+					areas.Add(Ar)
+		for(var/area/Area in areas)
+			if(isarea(Area)) //equal if(A), but at the same time check isarea this shit
+				for(var/obj/machinery/cryopod/C in Area)
+					if(!C.occupant)
+						spots += C
+		var/Have_Availible_Place = any2bool(length(spots))
+		if(M && !Have_Availible_Place)
+			to_chat(M, SPAN_WARNING("No avalible cryopods to spawn at, spawning in another accessible spawnpoint."))
+		. = . && Have_Availible_Place
+
 /datum/spawnpoint/cryo/after_join(mob/living/carbon/human/victim)
 	if(!istype(victim))
 		return
@@ -75,6 +105,12 @@ GLOBAL_VAR(spawntypes)
 	for(var/obj/machinery/cryopod/C in A)
 		if(!C.occupant)
 			spots += C
+//[INF]
+	if(!length(spots))
+		to_chat(victim, "Вы проснулись чуть раньше остальных.")
+		turfs -= get_turf(victim)
+		return
+//[/INF]
 
 	for(var/obj/machinery/cryopod/C in shuffle(spots))
 		if(!C.occupant)
@@ -104,45 +140,47 @@ GLOBAL_VAR(spawntypes)
 			else
 				to_chat(victim, SPAN_NOTICE("Получен сигнал к пробуждению. Батарея заряжена. Все системы в норме."))
 			if(!victim.isSynthetic())
-				var/msg
+				var/message
 /* bad ideas
 				if(prob(5))
 					victim.make_dizzy(200) //sea sick, it would make you mad very fast
 */
 				if(prob(20)) //starvation
-					msg += SPAN_WARNING("Кажется, вы забыли поесть перед тем, как уйти в сон. Горло пересохло, а \
+					message += SPAN_WARNING("Кажется, вы забыли поесть перед тем, как уйти в сон. Горло пересохло, а \
 					живот скрутило в спазме. ")
 					victim.nutrition = rand(0,200)
 					victim.hydration = rand(0,200)
+#ifdef SPECIES_UNATHI
 					if(victim.species.name == SPECIES_UNATHI)
 						victim.nutrition = 100
+#endif
 				if(prob(15)) //stutterting and jittering (because of cold?)
-					msg += SPAN_WARNING("Трясет от холода. ")
+					message += SPAN_WARNING("Трясет от холода. ")
 					victim.make_jittery(120)
 					victim.stuttering = 20
 				if(prob(10)) //hallucinations
-					msg += SPAN_WARNING("В ушках звон, в голове белый шум... ")
+					message += SPAN_WARNING("В ушках звон, в голове белый шум... ")
 					victim.hallucination(100, 120)
 				if(prob(5)) //side medical effect. Stealth
 					victim.add_side_effect(pick(GLOB.all_medical_side_effects))
 				if(prob(5)) //cryo malfunction
-					msg += SPAN_DANGER("Вы чувствуете ужасающий холод во всём теле! Крио всё ещё охлаждает! ")
+					message += SPAN_DANGER("Вы чувствуете ужасающий холод во всём теле! Крио всё ещё охлаждает! ")
 					victim.bodytemperature = victim.species.cold_level_3
 				if(prob(5)) //vomit
-					msg += SPAN_WARNING("Тошнит... ")
+					message += SPAN_WARNING("Тошнит... ")
 					victim.vomit()
 				if(prob(5)) //sleepy crewman syndrome
-					msg += SPAN_WARNING("Вы долго не могли уснуть, не смотря на все усилия этой машины. \
+					message += SPAN_WARNING("Вы долго не могли уснуть, не смотря на все усилия этой машины. \
 					Так не хочется вставать... Ноги ватные, руки тяжелые... ")
 					victim.drowsyness += 39 //59 seconds with high chance to fall asleep
-				if(!msg)
-					msg += SPAN_NOTICE("Кажется, в этот раз без осложнений... Правда, выспаться в саркофаге всё равно не удалось.")
+				if(!message)
+					message += SPAN_NOTICE("Кажется, в этот раз без осложнений... Правда, выспаться в саркофаге всё равно не удалось.")
 				else
-					msg += SPAN_WARNING("Не удалось даже нормально выспаться в этом гробу...")
-				to_chat(victim, msg)
+					message += SPAN_WARNING("Не удалось даже нормально выспаться в этом гробу...")
+				to_chat(victim, message)
 				victim.drowsyness += 20
 //[/INF]
-			return
+			break//inf, was: return
 
 /datum/spawnpoint/cyborg
 	display_name = "Cyborg Storage"
