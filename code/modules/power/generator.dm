@@ -178,12 +178,12 @@
 			if((integrity > initial(integrity) / 4) && (integrity < 100))
 				user.visible_message("[user.name] starts to applying [S] on [src].", \
 						"You start to apply [S] on [src].")
-				if(do_after(user, 10 SECOND, src))
+				if(do_after(user, 5 SECOND, src))
 					if(S.use(1))
 						integrity = clamp(integrity + initial(integrity) / 10, 0, initial(integrity))
 						to_chat(user, "\icon[src] [src] has successfully repaired.")
 			else
-				to_chat(user, "\icon[src] [src] can not repairable!")
+				to_chat(user, "\icon[src] [src] can not be repaired!")
 		else
 			to_chat(user, "\icon[src] [src] must be stoped first!")
 	//[/INF]
