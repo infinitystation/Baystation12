@@ -2522,15 +2522,15 @@
 	dir = 1
 	},
 /obj/machinery/computer/modular/preset/dock,
-/obj/effect/floor_decal/corner/darkblue/mono,
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "aey" = (
 /obj/machinery/computer/modular/preset/command,
-/obj/effect/floor_decal/corner/darkblue/mono,
 /obj/machinery/status_display{
 	pixel_y = 32
 	},
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "aez" = (
@@ -3290,6 +3290,9 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/effect/landmark/start{
+	name = "Captain"
+	},
 /turf/simulated/floor/carpet/blue,
 /area/crew_quarters/heads/cobed)
 "afC" = (
@@ -3301,7 +3304,7 @@
 /area/maintenance/seconddeck/aftstarboard)
 "afD" = (
 /obj/machinery/computer/rdservercontrol,
-/obj/effect/floor_decal/corner/darkblue/mono,
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "afE" = (
@@ -3982,7 +3985,7 @@
 /area/bridge/lobby)
 "agC" = (
 /obj/machinery/computer/robotics,
-/obj/effect/floor_decal/corner/darkblue/mono,
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "agD" = (
@@ -4770,11 +4773,14 @@
 /turf/simulated/floor/tiled,
 /area/crew_quarters/heads/office/ce)
 "ahL" = (
-/obj/effect/floor_decal/corner/darkblue/border,
 /obj/structure/table/glass,
 /obj/item/weapon/folder/blue,
 /obj/item/weapon/folder/blue,
 /obj/item/weapon/folder/blue,
+/obj/effect/floor_decal/corner/blue/border,
+/obj/effect/floor_decal/corner/blue{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "ahM" = (
@@ -6614,9 +6620,7 @@
 	icon_state = "computer";
 	dir = 4
 	},
-/obj/effect/floor_decal/corner/darkblue/border{
-	dir = 8
-	},
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "akV" = (
@@ -8131,7 +8135,6 @@
 	icon_state = "corner_white_diagonal";
 	dir = 4
 	},
-/obj/random/pottedplant,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/cafe)
 "ans" = (
@@ -8566,13 +8569,13 @@
 /turf/simulated/floor/carpet/red,
 /area/crew_quarters/heads/office/captain)
 "aoe" = (
-/obj/effect/floor_decal/corner/darkblue/mono,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
 /obj/machinery/computer/modular/preset/command{
 	dir = 4
 	},
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "aof" = (
@@ -8583,7 +8586,8 @@
 	icon_state = "comfychair_preview";
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/darkblue/border{
+/obj/effect/floor_decal/corner/blue/border{
+	icon_state = "bordercolor";
 	dir = 5
 	},
 /turf/simulated/floor/tiled/dark,
@@ -10266,7 +10270,6 @@
 /turf/simulated/floor/beach/sand/desert,
 /area/crew_quarters/heads/captain/beach)
 "aqM" = (
-/obj/effect/floor_decal/corner/darkblue/mono,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -10278,6 +10281,7 @@
 	},
 /obj/structure/table/steel_reinforced,
 /obj/item/device/binoculars,
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "aqN" = (
@@ -11076,7 +11080,11 @@
 /area/crew_quarters/mess)
 "arZ" = (
 /obj/machinery/door/firedoor,
-/turf/simulated/floor/wood/walnut,
+/obj/effect/floor_decal/corner/lightgrey/diagonal{
+	icon_state = "corner_white_diagonal";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
 /area/crew_quarters/cafe)
 "asa" = (
 /obj/effect/floor_decal/steeldecal/steel_decals6{
@@ -11331,13 +11339,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/gym)
 "asx" = (
-/obj/effect/floor_decal/corner/darkblue/mono,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
 /obj/machinery/computer/modular/preset/security{
 	dir = 4
 	},
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "asy" = (
@@ -12175,11 +12183,11 @@
 /obj/machinery/computer/modular/preset/sysadmin{
 	dir = 8
 	},
-/obj/effect/floor_decal/corner/darkblue/mono,
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = 26
 	},
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "atG" = (
@@ -13611,7 +13619,11 @@
 	name = "Civilian"
 	},
 /obj/machinery/door/firedoor,
-/turf/simulated/floor/wood/walnut,
+/obj/effect/floor_decal/corner/lightgrey/diagonal{
+	icon_state = "corner_white_diagonal";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
 /area/crew_quarters/cafe)
 "avD" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -14110,9 +14122,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
 "awv" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal{
-	dir = 4
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -14125,6 +14134,10 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced,
+/obj/effect/floor_decal/corner/grey/diagonal{
+	color = "#008c8c";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "aww" = (
@@ -14885,7 +14898,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/abandoned_common)
 "axw" = (
-/obj/effect/floor_decal/corner/darkblue/bordercorner,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -14897,10 +14909,17 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/effect/floor_decal/corner/blue/bordercorner,
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	icon_state = "bordercolorcorner";
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/yellow{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "axx" = (
-/obj/effect/floor_decal/corner/darkblue/mono,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -14913,6 +14932,7 @@
 /obj/machinery/computer/ship/engines{
 	dir = 8
 	},
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "axy" = (
@@ -15591,14 +15611,16 @@
 /turf/space,
 /area/space)
 "ayE" = (
-/obj/effect/floor_decal/corner/darkblue/border{
-	dir = 1
-	},
 /obj/structure/table/glass,
 /obj/item/weapon/paper_bin,
 /obj/item/weapon/pen/red,
 /obj/item/weapon/pen/blue,
 /obj/item/weapon/pen,
+/obj/effect/floor_decal/corner/blue/border{
+	icon_state = "bordercolor";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/blue,
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "ayF" = (
@@ -15649,13 +15671,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/gym)
 "ayJ" = (
-/obj/effect/floor_decal/corner/darkblue/mono,
-/obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/camera/network/command{
 	c_tag = "Command - Bridge";
 	name = "Command - Bridge"
 	},
 /obj/random/pottedplant,
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "ayK" = (
@@ -15713,7 +15735,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/seconddeck/fore)
 "ayO" = (
-/obj/effect/floor_decal/corner/darkblue/border,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -15730,6 +15751,11 @@
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
+	},
+/obj/effect/floor_decal/corner/blue/border,
+/obj/effect/floor_decal/corner/blue/border{
+	icon_state = "bordercolor";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
@@ -15827,7 +15853,6 @@
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/sleep/bunk)
 "ayX" = (
-/obj/effect/floor_decal/corner/darkblue/mono,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -15839,6 +15864,7 @@
 	pixel_x = 23
 	},
 /obj/structure/table/steel_reinforced,
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "ayY" = (
@@ -16141,7 +16167,8 @@
 	icon_state = "comfychair_preview";
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/darkblue/border{
+/obj/effect/floor_decal/corner/blue/border{
+	icon_state = "bordercolor";
 	dir = 9
 	},
 /turf/simulated/floor/tiled/dark,
@@ -16297,11 +16324,13 @@
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/heads/captain/office_anteroom)
 "azE" = (
-/obj/effect/floor_decal/corner/darkblue/bordercorner{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/darkblue/bordercorner{
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	icon_state = "bordercolorcorner";
 	dir = 8
+	},
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	icon_state = "bordercolorcorner";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
@@ -17064,11 +17093,12 @@
 /obj/machinery/keycard_auth{
 	pixel_y = 0
 	},
-/obj/effect/floor_decal/corner/darkblue/diagonal{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/darkblue/border{
+/obj/effect/floor_decal/corner/blue/border{
+	icon_state = "bordercolor";
 	dir = 1
+	},
+/obj/effect/floor_decal/corner/blue/diagonal{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
@@ -17564,9 +17594,9 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftport)
 "aBI" = (
-/obj/effect/floor_decal/corner/darkblue/mono,
 /obj/structure/table/glass,
 /obj/item/weapon/storage/box/donut,
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "aBJ" = (
@@ -17696,10 +17726,8 @@
 	icon_state = "computer";
 	dir = 4
 	},
-/obj/effect/floor_decal/corner/darkblue/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark,
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "aBZ" = (
 /obj/effect/floor_decal/techfloor{
@@ -18872,6 +18900,9 @@
 /obj/machinery/camera/network/second_deck{
 	c_tag = "Second Deck - Conference Room";
 	dir = 1
+	},
+/obj/effect/landmark/start{
+	name = "Captain"
 	},
 /turf/simulated/floor/lino,
 /area/bridge/meeting_room)
@@ -20536,6 +20567,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/floor_decal/corner_techfloor_grid,
 /obj/effect/floor_decal/techfloor/corner,
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo/south)
@@ -20830,6 +20862,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
+/obj/random/pottedplant,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "aHt" = (
@@ -23478,6 +23511,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 23
 	},
+/obj/random/pottedplant,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/fore)
 "aLW" = (
@@ -25293,14 +25327,12 @@
 /turf/simulated/floor/plating,
 /area/crew_quarters/safe_room/seconddeck)
 "aPm" = (
-/obj/effect/floor_decal/corner/darkblue/border{
-	dir = 8
-	},
 /obj/machinery/computer/ship/engines{
 	icon_state = "computer";
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "aPn" = (
 /obj/structure/catwalk,
@@ -31616,12 +31648,12 @@
 /turf/simulated/floor/carpet/red,
 /area/crew_quarters/heads/office/captain)
 "bae" = (
-/obj/effect/floor_decal/corner/darkblue/mono,
 /obj/structure/table/glass,
 /obj/machinery/photocopier/faxmachine{
 	department = "Bridge";
 	dir = 2
 	},
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "baf" = (
@@ -31940,12 +31972,9 @@
 /area/maintenance/abandoned_compartment)
 "baP" = (
 /obj/machinery/door/blast/shutters{
-	density = 0;
 	dir = 2;
-	icon_state = "shutter0";
 	id_tag = "heads_meeting";
-	name = "Meeting Room Window Shutters";
-	opacity = 0
+	name = "Meeting Room Window Shutters"
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced/polarized/no_grille{
@@ -32120,11 +32149,11 @@
 /turf/simulated/floor/plating,
 /area/maintenance/abandoned_compartment)
 "bbi" = (
-/obj/effect/floor_decal/corner/darkblue/mono,
 /obj/structure/table/glass,
 /obj/item/weapon/storage/secure/briefcase,
 /obj/item/weapon/book/manual/nt_tc,
 /obj/item/weapon/paper/sierra/teleport,
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "bbj" = (
@@ -32291,11 +32320,12 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/floor_decal/corner/darkblue/border{
-	dir = 1
-	},
 /obj/structure/table/glass,
 /obj/machinery/recharger,
+/obj/effect/floor_decal/corner/blue/border{
+	icon_state = "bordercolor";
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bbA" = (
@@ -32349,12 +32379,13 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	icon_state = "bordercolorcorner";
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bbE" = (
-/obj/effect/floor_decal/corner/darkblue/border{
-	dir = 8
-	},
 /obj/structure/bed/chair/comfy/captain{
 	icon_state = "capchair_preview";
 	dir = 8
@@ -32362,13 +32393,13 @@
 /obj/effect/landmark/start{
 	name = "Captain"
 	},
+/obj/effect/floor_decal/corner/blue/border{
+	icon_state = "bordercolor";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bbF" = (
-/obj/effect/floor_decal/corner/darkblue/bordercorner,
-/obj/effect/floor_decal/corner/darkblue/bordercorner{
-	dir = 1
-	},
 /obj/machinery/button/blast_door{
 	dir = 8;
 	id_tag = "bridge_windows";
@@ -32376,6 +32407,11 @@
 	pixel_x = 28;
 	pixel_y = 0;
 	req_access = list()
+	},
+/obj/effect/floor_decal/corner/blue/bordercorner,
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	icon_state = "bordercolorcorner";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
@@ -32406,15 +32442,15 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/floor_decal/corner/darkblue/diagonal{
-	dir = 8
-	},
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
@@ -32437,16 +32473,18 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/engine_eva)
 "bbJ" = (
-/obj/effect/floor_decal/corner/darkblue/border,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/floor_decal/corner/blue/border,
+/obj/effect/floor_decal/corner/blue{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bbK" = (
-/obj/effect/floor_decal/corner/darkblue/mono,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -32454,6 +32492,7 @@
 	icon_state = "console";
 	dir = 4
 	},
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "bbL" = (
@@ -32699,6 +32738,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
 "bcn" = (
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	icon_state = "bordercolorcorner";
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bco" = (
@@ -32717,9 +32760,6 @@
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/lounge)
 "bcr" = (
-/obj/effect/floor_decal/corner/darkblue/border{
-	dir = 1
-	},
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 8;
@@ -32744,19 +32784,24 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
+/obj/effect/floor_decal/corner/blue/border{
+	icon_state = "bordercolor";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bcs" = (
 /obj/machinery/computer/modular/preset/engineering{
 	dir = 8
 	},
-/obj/effect/floor_decal/corner/darkblue/mono,
 /obj/machinery/power/apc/high/critical{
 	dir = 4;
 	name = "east bump";
 	pixel_x = 24
 	},
 /obj/structure/cable/green,
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "bct" = (
@@ -32814,6 +32859,10 @@
 	dir = 8;
 	icon_state = "tube_map"
 	},
+/obj/effect/floor_decal/corner/blue/border{
+	icon_state = "bordercolor";
+	dir = 9
+	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bcy" = (
@@ -32836,32 +32885,31 @@
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/gym)
 "bcB" = (
-/obj/effect/floor_decal/corner/darkblue/border{
-	dir = 5
-	},
 /obj/machinery/light/spot,
 /obj/machinery/computer/modular/preset/security{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "bcC" = (
-/obj/effect/floor_decal/corner/darkblue/mono,
-/obj/effect/floor_decal/industrial/outline/yellow,
 /obj/random/pottedplant,
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "bcD" = (
 /obj/structure/bed/chair/comfy/blue,
-/obj/effect/floor_decal/corner/darkblue/border{
+/obj/effect/floor_decal/corner/blue/border{
+	icon_state = "bordercolor";
 	dir = 10
 	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bcE" = (
-/obj/effect/floor_decal/corner/darkblue/border,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/random/pottedplant,
+/obj/effect/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bcG" = (
@@ -32870,9 +32918,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/floor_decal/corner/darkblue/border,
 /obj/machinery/recharger,
 /obj/structure/table/glass,
+/obj/effect/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bcH" = (
@@ -33259,8 +33307,8 @@
 /obj/machinery/keycard_auth{
 	pixel_y = 0
 	},
-/obj/effect/floor_decal/corner/darkblue/diagonal,
-/obj/effect/floor_decal/corner/darkblue/border,
+/obj/effect/floor_decal/corner/blue/border,
+/obj/effect/floor_decal/corner/blue/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bdw" = (
@@ -33946,20 +33994,21 @@
 /obj/effect/floor_decal/corner/darkblue/diagonal{
 	dir = 8
 	},
-/obj/effect/floor_decal/corner/darkblue/bordercorner,
 /obj/effect/floor_decal/corner/red/diagonal{
 	dir = 4
 	},
+/obj/effect/floor_decal/corner/blue/bordercorner,
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "beQ" = (
-/obj/effect/floor_decal/corner/darkblue/diagonal{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/darkblue/border{
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/floor_decal/corner/blue/border{
+	icon_state = "bordercolor";
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/floor_decal/corner/blue/diagonal{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "beR" = (
@@ -34114,7 +34163,7 @@
 	icon_state = "computer";
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/darkblue/mono,
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bfi" = (
@@ -34278,10 +34327,11 @@
 /area/hydroponics)
 "bfw" = (
 /obj/effect/floor_decal/corner/darkblue/diagonal,
-/obj/effect/floor_decal/corner/darkblue/bordercorner{
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	icon_state = "bordercolorcorner";
 	dir = 4
 	},
-/obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bfx" = (
@@ -34367,9 +34417,9 @@
 /turf/simulated/floor/wood/ebony,
 /area/crew_quarters/actor)
 "bfD" = (
-/obj/effect/floor_decal/corner/darkblue/diagonal,
-/obj/effect/floor_decal/corner/darkblue/border,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/floor_decal/corner/blue/border,
+/obj/effect/floor_decal/corner/blue/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bfE" = (
@@ -34453,9 +34503,6 @@
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/actor)
 "bfJ" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal{
-	dir = 4
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -34467,6 +34514,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
+/obj/effect/floor_decal/corner/grey/diagonal{
+	color = "#008c8c";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bfK" = (
@@ -34477,7 +34528,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bfL" = (
-/obj/effect/floor_decal/corner/darkblue/mono,
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bfM" = (
@@ -34486,9 +34537,10 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/floor_decal/corner/darkblue/mono,
 /obj/machinery/hologram/holopad/longrange,
 /obj/effect/overmap/visitable/ship/sierra,
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "bfN" = (
@@ -34529,14 +34581,16 @@
 /turf/simulated/floor/bluegrid,
 /area/engineering/bluespace/chamber)
 "bfQ" = (
-/obj/effect/floor_decal/corner/darkblue/border{
-	dir = 1
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/floor_decal/corner/blue/border{
+	icon_state = "bordercolor";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/blue,
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bfR" = (
@@ -34560,7 +34614,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/floor_decal/corner/darkblue/diagonal,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 4;
@@ -34569,6 +34622,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/effect/floor_decal/corner/blue/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bfT" = (
@@ -34619,14 +34673,19 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/effect/floor_decal/corner/darkblue/bordercorner{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	icon_state = "bordercolorcorner";
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/blue/bordercorner,
+/obj/effect/floor_decal/corner/yellow{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
@@ -34651,7 +34710,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/computer/modular/preset/supply_public,
-/obj/effect/floor_decal/corner/darkblue/mono,
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bfZ" = (
@@ -34693,13 +34752,14 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
 "bgd" = (
-/obj/effect/floor_decal/corner/darkblue/border{
-	dir = 1
-	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
 /obj/random/pottedplant,
+/obj/effect/floor_decal/corner/blue/border{
+	icon_state = "bordercolor";
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bge" = (
@@ -36002,7 +36062,8 @@
 /area/chapel/main)
 "biH" = (
 /obj/structure/bed/chair/comfy/blue,
-/obj/effect/floor_decal/corner/darkblue/border{
+/obj/effect/floor_decal/corner/blue/border{
+	icon_state = "bordercolor";
 	dir = 6
 	},
 /turf/simulated/floor/tiled/dark,
@@ -36080,7 +36141,6 @@
 /obj/machinery/computer/prisoner{
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/darkblue/mono,
 /obj/machinery/status_display{
 	pixel_y = -32
 	},
@@ -36089,6 +36149,7 @@
 	dir = 1;
 	name = "Command - Bridge"
 	},
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "bjf" = (
@@ -36099,14 +36160,14 @@
 	icon_state = "computer";
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/darkblue/mono,
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "bjj" = (
 /obj/machinery/computer/station_alert/all{
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/darkblue/mono,
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
 "bjv" = (
@@ -36920,6 +36981,10 @@
 	dir = 4;
 	level = 2
 	},
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	icon_state = "bordercolorcorner";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "lim" = (
@@ -37050,6 +37115,18 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
+"ooI" = (
+/obj/structure/table/glass,
+/obj/machinery/light/spot{
+	dir = 8;
+	icon_state = "tube_map"
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	icon_state = "bordercolor";
+	dir = 10
+	},
+/turf/simulated/floor/tiled/dark,
+/area/bridge/nano)
 "owg" = (
 /obj/effect/floor_decal/corner_techfloor_grid{
 	icon_state = "corner_techfloor_grid";
@@ -37449,6 +37526,25 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
+"xNo" = (
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	icon_state = "bordercolorcorner";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/bridge/nano)
+"xWS" = (
+/obj/machinery/door/firedoor,
+/obj/effect/wallframe_spawn/reinforced/polarized/no_grille{
+	id = "meeting_windows"
+	},
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	id_tag = "heads_meeting";
+	name = "Meeting Room Window Shutters"
+	},
+/turf/simulated/floor/plating,
+/area/bridge/meeting_room)
 "xXl" = (
 /obj/machinery/uniform_vendor{
 	icon_state = "robotics"
@@ -42610,8 +42706,8 @@ aBI
 bcx
 bcn
 bfK
-bcn
-bcx
+xNo
+ooI
 bbi
 bcB
 bjf
@@ -46248,7 +46344,7 @@ biY
 bjL
 bkq
 bkE
-baP
+xWS
 aLi
 bgr
 bgz
@@ -46450,7 +46546,7 @@ bjv
 bjK
 bkr
 bkE
-baP
+xWS
 aMk
 bgs
 bgA
