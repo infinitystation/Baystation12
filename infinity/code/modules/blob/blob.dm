@@ -14,7 +14,7 @@
 	var/maxHealth = 30
 	var/health
 	var/regen_rate = 2
-	var/blob_color = "#8BA6E9"
+	var/blob_color = "#8ba6e9"
 	var/tendril_damage_types = list(BRUTE)
 	var/tendril_damages = list(BRUTE = 30)
 	var/brute_resist = 0.25
