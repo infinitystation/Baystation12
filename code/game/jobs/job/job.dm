@@ -405,10 +405,17 @@
 		if(sloc.name != title)	continue
 		if(locate(/mob/living) in sloc.loc)	continue
 		loc_list += sloc
-	if(loc_list.len)
+	//[INF]
+	var/list/L = list()
+	for(var/turf/i in GLOB.newplayer_start)
+		if(locate(/mob/living) in get_turf(i))	continue
+		L += i
+	loc_list.Add(L)
+	//[/INF]
+	if(length(loc_list))//inf, was: if(loc_list.len)
 		return pick(loc_list)
 	else
-		return pick(GLOB.newplayer_start)//inf, was: return locate("start*[title]") // use old stype
+		return locate("start*[title]") // use old stype
 
 /**
  *  Return appropriate /datum/spawnpoint for given client
