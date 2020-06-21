@@ -12,3 +12,6 @@
 
 	var/admin_midis_allowed = 0
 	var/default_respawn_cooldown = 3 SECONDS
+
+	var/ambience_probability = 5
+	var/ambience_delay = 2 MINUTE
