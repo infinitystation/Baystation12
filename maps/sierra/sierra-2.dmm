@@ -16766,8 +16766,6 @@
 	dir = 9;
 	pixel_y = 0
 	},
-/obj/machinery/hologram/holopad,
-/obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
 "aAs" = (
@@ -36608,7 +36606,7 @@
 	dir = 8
 	},
 /obj/machinery/camera/network/second_deck{
-	c_tag = "Cryogenic Storage - Aft Starboard";
+	c_tag = "Cryogenic Storage - First Cryopods";
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -37307,6 +37305,11 @@
 /obj/machinery/light/spot{
 	dir = 8
 	},
+/turf/simulated/floor/tiled/techfloor,
+/area/crew_quarters/sleep/cryo)
+"tDT" = (
+/obj/machinery/hologram/holopad,
+/obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
 "tEg" = (
@@ -54731,7 +54734,7 @@ aWX
 awU
 aBZ
 aGV
-aGV
+tDT
 jqe
 aYh
 mIA
