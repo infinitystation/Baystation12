@@ -334,12 +334,12 @@ var/list/admin_verbs_mod = list(
 )
 //[INF]
 var/list/admin_verbs_xeno = list(
-	/client/proc/cmd_admin_pm_context,
-	/client/proc/cmd_admin_pm_panel,
+//	/client/proc/cmd_admin_pm_context,
+//	/client/proc/cmd_admin_pm_panel,
+//	/client/proc/admin_ghost,
+//	/datum/admins/proc/show_player_info,
 	/datum/admins/proc/PlayerNotes,
-	/client/proc/admin_ghost,
-//MOVED2DEBUG_VERB_WHILE_FIXING	/datum/admins/proc/xeno_whitelist_panel
-//	/datum/admins/proc/show_player_info
+	/datum/admins/proc/xeno_whitelist_panel
 )
 //[/INF]
 /client/proc/add_admin_verbs()

@@ -1,0 +1,8 @@
+{
+  "ckey" :            "elloncake",
+  "character_name" :  "Selachii Reiihoz",
+  "item_name" :       "stretch fingerless gloves",
+  "item_desc" :       "Makes you look cool. Or edgy.",
+  "item_icon_state" : "elloncake_gloves",
+  "item_path" :       "/obj/item/clothing/gloves/thick/duty/modified"
+  }
