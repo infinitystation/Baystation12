@@ -1,7 +1,7 @@
 /datum/blob_strain
 	var/name = "Blob Strain"
 
-	var/blob_color = "#9ACD32"
+	var/blob_color = "#9acd32"
 	var/tendril_damage_types = list(BRUTE)
 	var/tendril_damages = list(BRUTE = 30)
 	var/brute_resist = 0.25
@@ -42,7 +42,7 @@
 /datum/blob_strain/blazing
 	name = "Blazing Oil"
 
-	blob_color = "#B68D00"
+	blob_color = "#b68d00"
 	tendril_damage_types = list(BRUTE, BURN)
 	tendril_damages = list(BRUTE = 5, BURN = 20)
 	brute_resist = 1
@@ -68,7 +68,7 @@
 /datum/blob_strain/cryo
 	name = "Cryogenic Poison"
 
-	blob_color = "#8BA6E9"
+	blob_color = "#8ba6e9"
 	tendril_damage_types = list(BRUTE)
 	tendril_damages = list(BRUTE = 10)
 	can_core = 1
@@ -92,7 +92,7 @@
 /datum/blob_strain/debris
 	name = "Debris Devourver"
 
-	blob_color = "#8B1000"
+	blob_color = "#8b1000"
 	tendril_damage_types = list(BRUTE)
 	tendril_damages = list(BRUTE = 15, OXY = 5)
 	can_core = 1
@@ -135,7 +135,7 @@
 /datum/blob_strain/emp
 	name = "Electromagnetic Web"
 
-	blob_color = "#83ECEC"
+	blob_color = "#83ecec"
 	tendril_damage_types = list(BRUTE, BURN)
 	tendril_damages = list(BRUTE = 5, BURN = 25)
 	brute_resist = 1
@@ -166,7 +166,7 @@
 /datum/blob_strain/jelly
 	name = "Energized Jelly"
 
-	blob_color = "#EFD65A"
+	blob_color = "#efd65a"
 	tendril_damage_types = list(BRUTE, OXY)
 	tendril_damages = list(BRUTE = 5, OXY = 15)
 	fire_resist = 0.3
@@ -181,7 +181,7 @@
 /datum/blob_strain/explosive
 	name = "Explosive Lattice"
 
-	blob_color = "#8B2500"
+	blob_color = "#8b2500"
 	tendril_damage_types = list(BRUTE)
 	tendril_damages = list(BRUTE = 15)
 	fire_resist = 1
@@ -203,7 +203,7 @@
 /datum/blob_strain/fibers
 	name = "Networked Fibers"
 
-	blob_color = "#CDC0B0"
+	blob_color = "#cdc0b0"
 	tendril_damage_types = list(BRUTE, BURN)
 	tendril_damages = list(BRUTE = 20, BURN = 15)
 
@@ -229,7 +229,7 @@
 /datum/blob_strain/slime
 	name = "Pressurized Slime"
 
-	blob_color = "#AAAABB"
+	blob_color = "#aaaabb"
 	tendril_damage_types = list(BRUTE, OXY)
 	tendril_damages = list(BRUTE = 15, OXY = 10)
 	can_core = 1
@@ -258,7 +258,7 @@
 /datum/blob_strain/reactive
 	name = "Reactive Spines"
 
-	blob_color = "#9ACD32"
+	blob_color = "#9acd32"
 	tendril_damage_types = list(BRUTE)
 	tendril_damages = list(BRUTE = 25)
 
@@ -285,7 +285,7 @@
 /datum/blob_strain/materia
 	name = "Regenerative Materia"
 
-	blob_color = "#C8A5DC"
+	blob_color = "#c8a5dc"
 	tendril_damage_types = list(BRUTE, TOX)
 	tendril_damages = list(BRUTE = 5, TOX = 15)
 
@@ -296,7 +296,7 @@
 /datum/blob_strain/foam
 	name = "Replicating Foam"
 
-	blob_color = "#7B5A57"
+	blob_color = "#7b5a57"
 	tendril_damage_types = list(BRUTE)
 	tendril_damages = list(BRUTE = 20)
 	brute_resist = 2
@@ -315,7 +315,7 @@
 /datum/blob_strain/shifting
 	name = "Shifting Fragments"
 
-	blob_color = "#C8963C"
+	blob_color = "#c8963c"
 	tendril_damage_types = list(BRUTE)
 	tendril_damages = list(BRUTE = 20)
 
@@ -342,7 +342,7 @@
 /datum/blob_strain/neurons
 	name = "Distributed Neurons"
 
-	blob_color = "#E88D5D"
+	blob_color = "#e88d5d"
 	tendril_damage_types = list(BRUTE, TOX)
 	tendril_damages = list(BRUTE = 5, TOX = 15)
 
@@ -401,7 +401,7 @@
 /datum/blob_strain/volatile
 	name = "Volatile Alluvium"
 
-	blob_color = "#6B481E"
+	blob_color = "#6b481e"
 	tendril_damage_types = list(BURN, BRUTE)
 	tendril_damages = list(BURN = 5, BRUTE = 15)
 
