@@ -53,7 +53,7 @@
 
 
 /obj/item/ammo_casing/shell/sleepy
-	name = "soporific shell casing"
+	name = "chloral hydrate shell casing"
 	desc = "A small autoinjector, filled with soporifics incide shell casing."
 	projectile_type = /obj/item/projectile/bullet/rifle/shell/sleepy
 
