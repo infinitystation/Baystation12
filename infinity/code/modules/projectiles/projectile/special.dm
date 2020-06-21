@@ -2,7 +2,7 @@
 
 
 /obj/item/projectile/bullet/rifle/shell/sleepy
-	name = "soporific dart"
+	name = "chloral hydrate dart"
 	icon = 'icons/obj/ammo.dmi'
 	icon_state = "syringe-cartridge-flight"
 	damage = 1
