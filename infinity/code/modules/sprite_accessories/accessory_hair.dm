@@ -83,10 +83,6 @@
 	icon_state = "hair_elize"
 	gender = FEMALE
 
-/datum/sprite_accessory/hair/infinity/amicia
-	name = "Amicia"
-	icon_state = "hair_amicia"
-	gender = FEMALE
 
 //[MODED_VG]__________________________________________________________
 /datum/sprite_accessory/hair/infinity/bedhead_4

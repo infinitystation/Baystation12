@@ -64,7 +64,7 @@
 
 	return match
 
-//inf("Already defined") #define RECOMMENDED_VERSION 512
+#define RECOMMENDED_VERSION 512
 /world/New()
 
 	enable_debugger()
@@ -106,7 +106,7 @@
 #endif
 	Master.Initialize(10, FALSE)
 
-//inf("Already defined") #undef RECOMMENDED_VERSION
+#undef RECOMMENDED_VERSION
 
 var/world_topic_spam_protect_ip = "0.0.0.0"
 var/world_topic_spam_protect_time = world.timeofday
