@@ -45,7 +45,7 @@
 /obj/item/weapon/storage/backpack/holding
 	name = "bag of holding"
 	desc = "A backpack that opens into a localized pocket of Blue Space.\
-	Saddly, the hole for items is pretty small." //inf
+	Sadly, the hole for items is pretty small." //inf
 	origin_tech = list(TECH_BLUESPACE = 4)
 	icon_state = "holdingpack"
 	max_w_class = ITEM_SIZE_NORMAL
@@ -256,7 +256,18 @@
 	name = "satchel"
 	desc = "A trendy looking satchel."
 	icon_state = "satchel-norm"
-
+	slot_flags = SLOT_BACK //| SLOT_BELT //INF
+//[INF]
+//	max_storage_space = 20
+	item_icons = list(
+//		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
+		slot_back_str = 'icons/mob/onmob/back.dmi',
+		)
+	item_state_slots = list(
+//		slot_belt_str = "satchel-norm-belt",
+		slot_back_str = "satchel-norm",
+		)
+//[/INF]
 /obj/item/weapon/storage/backpack/satchel/grey
 	name = "grey satchel"
 
@@ -267,6 +278,7 @@
 	name = "brown leather satchel"
 	desc = "A very fancy satchel made of some kind of leather."
 	icon_state = "satchel"
+	slot_flags = SLOT_BACK //| SLOT_BELT //INF
 	color = "#3d2711"
 
 /obj/item/weapon/storage/backpack/satchel/leather/khaki
@@ -294,11 +306,19 @@
 	desc = "A neat little folding clasp pocketbook with a shoulder sling."
 	icon_state = "pocketbook"
 	w_class = ITEM_SIZE_HUGE // to avoid recursive backpacks
-	slot_flags = SLOT_BACK
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 	color = "#212121"
-
+//[INF]
+	item_icons = list(
+//		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
+		slot_back_str = 'icons/mob/onmob/back.dmi',
+		)
+	item_state_slots = list(
+//		slot_belt_str = "pocketbook-belt",
+		slot_back_str = "pocketbook",
+		)
+//[/INF]
 /obj/item/weapon/storage/backpack/satchel/pocketbook/brown
 	name = "brown pocketbook"
 	color = "#3d2711"
@@ -314,6 +334,8 @@
 	item_state_slots = list(
 		slot_l_hand_str = "engiepack",
 		slot_r_hand_str = "engiepack",
+		slot_back_str = "satchel-eng", //INF
+//		slot_belt_str = "satchel-eng-belt", //INF
 		)
 
 /obj/item/weapon/storage/backpack/satchel/med
@@ -323,28 +345,66 @@
 	item_state_slots = list(
 		slot_l_hand_str = "medicalpack",
 		slot_r_hand_str = "medicalpack",
+		slot_back_str = "satchel-med", //INF
+//		slot_belt_str = "satchel-med-belt", //INF
 		)
 
 /obj/item/weapon/storage/backpack/satchel/vir
 	name = "virologist satchel"
 	desc = "A sterile satchel with virologist colours."
 	icon_state = "satchel-vir"
-
+//[INF]
+	item_icons = list(
+//		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
+		slot_back_str = 'infinity/icons/mob/onmob/onmob_back.dmi',
+		)
+	item_state_slots = list(
+		slot_back_str = "satchel-vir",
+//		slot_belt_str = "satchel-vir-belt",
+		)
+//[/INF]
 /obj/item/weapon/storage/backpack/satchel/chem
 	name = "pharmacist satchel"
 	desc = "A sterile satchel with pharmacist colours."
 	icon_state = "satchel-chem"
-
+//[INF]
+	item_icons = list(
+//		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
+		slot_back_str = 'infinity/icons/mob/onmob/onmob_back.dmi',
+		)
+	item_state_slots = list(
+		slot_back_str = "satchel-chem",
+//		slot_belt_str = "satchel-chem-belt",
+		)
+//[/INF]
 /obj/item/weapon/storage/backpack/satchel/gen
 	name = "geneticist satchel"
 	desc = "A sterile satchel with geneticist colours."
 	icon_state = "satchel-gen"
-
+//[INF]
+	item_icons = list(
+//		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
+		slot_back_str = 'infinity/icons/mob/onmob/onmob_back.dmi',
+		)
+	item_state_slots = list(
+		slot_back_str = "satchel-gen",
+//		slot_belt_str = "satchel-gen-belt",
+		)
+//[/INF]
 /obj/item/weapon/storage/backpack/satchel/tox
 	name = "corporate satchel"
 	desc = "Useful for holding research materials. The colors on it denote it as a corporate bag."
 	icon_state = "satchel-nt"
-
+//[INF]
+	item_icons = list(
+//		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
+		slot_back_str = 'infinity/icons/mob/onmob/onmob_back.dmi',
+		)
+	item_state_slots = list(
+		slot_back_str = "satchel-nut",
+//		slot_belt_str = "satchel-nut-belt",
+		)
+//[/INF]
 /obj/item/weapon/storage/backpack/satchel/sec
 	name = "security satchel"
 	desc = "A robust satchel for security related needs."
@@ -352,6 +412,8 @@
 	item_state_slots = list(
 		slot_l_hand_str = "securitypack",
 		slot_r_hand_str = "securitypack",
+		slot_back_str = "satchel-sec", //INF
+//		slot_belt_str = "satchel-sec-belt", //INF
 		)
 
 /obj/item/weapon/storage/backpack/satchel/sec/exo
@@ -362,7 +424,16 @@
 	name = "hydroponics satchel"
 	desc = "A green satchel for plant related work."
 	icon_state = "satchel_hyd"
-
+//[INF]
+	item_icons = list(
+//		slot_belt_str = 'infinity/icons/mob/onmob/onmob_belt.dmi',
+		slot_back_str = 'infinity/icons/mob/onmob/onmob_back.dmi',
+		)
+	item_state_slots = list(
+		slot_back_str = "satchel-hyd",
+//		slot_belt_str = "satchel-hyd-belt",
+		)
+//[/INF]
 /obj/item/weapon/storage/backpack/satchel/cap
 	name = "captain's satchel"
 	desc = "An exclusive satchel for officers."
@@ -370,6 +441,8 @@
 	item_state_slots = list(
 		slot_l_hand_str = "satchel-cap",
 		slot_r_hand_str = "satchel-cap",
+		slot_back_str = "satchel-cap", //INF
+//		slot_belt_str = "satchel-cap-belt", //INF
 		)
 
 //Smuggler's satchel
@@ -378,6 +451,7 @@
 	desc = "A very slim satchel that can easily fit into tight spaces."
 	icon_state = "satchel-flat"
 	item_state = "satchel-norm"
+	slot_flags = 0
 	level = 1
 	w_class = ITEM_SIZE_NORMAL //Can fit in backpacks itself.
 	storage_slots = 5
