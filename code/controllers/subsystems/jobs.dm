@@ -495,9 +495,19 @@ SUBSYSTEM_DEF(jobs)
 
 	if(!joined_late || job.latejoin_at_spawnpoints)
 		var/obj/S = job.get_roundstart_spawnpoint()
-
-		if(istype(S, /obj/effect/landmark/start) && istype(S.loc, /turf))
+		/*[BAY]
+		if(istype(S, /obj/effect/landmark/start) && istype(S.loc, /turf)
 			H.forceMove(S.loc)
+		[/BAY]*/
+		//[INF]
+		var/turf/truf = get_turf(S)
+		if((istype(S, /obj/effect/landmark/start) && isturf(truf)) || isturf(S))
+			H.forceMove(truf)
+			var/obj/structure/bed/b = locate(/obj/structure/bed) in truf
+			if(istype(b))
+				H.Sleeping(15)
+				b.buckle_mob(H)
+		//[/INF]
 		else
 			var/datum/spawnpoint/spawnpoint = job.get_spawnpoint(H.client)
 			H.forceMove(pick(spawnpoint.turfs))

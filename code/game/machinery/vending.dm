@@ -1420,6 +1420,7 @@
 	desc = "A distressingly ethnic vending machine loaded with high sucrose low calorie for lack of better words snacks."
 	vend_delay = 30
 	product_slogans = "Konnichiwa gaijin senpai! ;Notice me senpai!; Kawaii-desu!"
+	vend_reply = "Arigato, gozaimasu!"//inf
 	icon_state = "weeb"
 	icon_vend = "weeb-vend"
 	icon_deny = "weeb-deny"

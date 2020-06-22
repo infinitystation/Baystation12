@@ -14,6 +14,7 @@
 
 #define PICK_OR_SET(listOrVar) (islist(listOrVar) ? pick(listOrVar) : listOrVar)
 
+#define any2bool(expression) (!(!(expression)))
 
 #if DM_VERSION < RECOMMENDED_VERSION
 #warn Unsupported compiler version: please update byond or go to beta, otherwise some features won't work.

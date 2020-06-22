@@ -784,6 +784,12 @@ var/list/gamemode_cache = list()
 
 				if("default_respawn_cooldown")
 					default_respawn_cooldown = text2num(value) SECONDS
+
+				if("ambience_probability")
+					ambience_probability = text2num(value)
+
+				if("ambience_delay")
+					ambience_delay = text2num(value) MINUTES
 			//[/INF]
 
 				if("max_gear_cost")

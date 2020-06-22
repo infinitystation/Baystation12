@@ -39,7 +39,6 @@
 	description = "A medium-sized asteroid full of minerals. Old mining facility detected at one of sides, owner - NanoTrasen."
 	prefix = "maps/away_inf/"
 	suffixes = list("mining/mining-asteroid.dmm")
-	spawn_weight = 200 //Always
 	cost = 0.5
 	accessibility_weight = 10
 	generate_mining_by_z = 1
