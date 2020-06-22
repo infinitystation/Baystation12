@@ -11,17 +11,20 @@
 
 #define OBSERV_SPAWN_DELAY round(config.respawn_delay / 2)
 
-//Organs
+// Organs
 #define BP_FAKE    "fake_brain"
 
-#define SPECIES_TAJARA "Tajara"
-#define SPECIES_EROSAN "Erosan'Unathi"
-#define SPECIES_RESOMI "Resomi"
-#define SPECIES_XENO   "Xenophage"
-#define SPECIES_BIONIC "Bionic"
+// Species
+#define SPECIES_TAJARA			"Tajara"
+#define SPECIES_EROSAN			"Erosan'Unathi"
+#define SPECIES_RESOMI			"Resomi"
+#define SPECIES_XENO			"Xenophage"
+#define SPECIES_BIONIC			"Bionic"
 
-#define SPECIES_ABDUCTOR     "Abductor Agent"
-#define SPECIES_ABDUCTOR_SCI "Abductor Scientist"
+#define SPECIES_FBP				"Full Body Prosthesis"
+
+#define SPECIES_ABDUCTOR		"Abductor Agent"
+#define SPECIES_ABDUCTOR_SCI	"Abductor Scientist"
 
 #define HUMAN_SPECIES list(SPECIES_HUMAN, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_GRAVWORLDER, SPECIES_TRITONIAN, SPECIES_MULE, SPECIES_BOOSTER)
 #define UNATHI_SPECIES list(SPECIES_UNATHI, SPECIES_EROSAN, SPECIES_YEOSA)

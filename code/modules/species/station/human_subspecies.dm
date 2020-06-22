@@ -155,6 +155,7 @@
 	but is certainly both unique and remarkable in its ability to cope with the extremes that the \
 	Universe can throw at it."
 	var/list/mods = list()
+	spawn_flags = SPECIES_CAN_JOIN | SPECIES_IS_WHITELISTED			// INF hi whitelist
 
 #define MOD_BASE     0.85
 #define MOD_VARIANCE 0.35
