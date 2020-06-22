@@ -179,7 +179,7 @@ proc/get_open_ticket_by_client(var/datum/client_lite/owner)
 	var/list/ticket_dat = list()
 	for(var/id = tickets.len, id >= 1, id--)
 		var/datum/ticket/ticket = tickets[id]
-		if(C.holder || ticket.owner.ckey == C.ckey)
+		if((C.holder && !only_xenos(C)) || ticket.owner.ckey == C.ckey)	// INF WAS	if(C.holder || ticket.owner.ckey == C.ckey)
 			var/client/owner_client = client_by_ckey(ticket.owner.ckey)
 			var/open = 0
 			var/status = "Unknown status"

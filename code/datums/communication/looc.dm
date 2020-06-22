@@ -37,6 +37,7 @@
 		receive_communication(C, t, received_message)
 
 	for(var/client/adm in GLOB.admins)	//Now send to all admins that weren't in range.
+		if(only_xenos(adm))		return	// INF
 		if(!(adm in listening_clients) && adm.get_preference_value(/datum/client_preference/staff/show_rlooc) == GLOB.PREF_SHOW)
 			var/received_message = adm.receive_looc(C, key, message, "R")
 			received_message = emoji_parse(received_message)
