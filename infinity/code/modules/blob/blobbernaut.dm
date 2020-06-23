@@ -43,7 +43,7 @@
 	. = ..()
 
 /mob/living/simple_animal/hostile/blobbernaut/attack_ghost(var/mob/observer/ghost/user)
-	if(core)
+	if(!core)
 		return
 	if(!src)
 		return

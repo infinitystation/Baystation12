@@ -61,6 +61,7 @@
 	melee_damage_upper = 2
 
 /mob/living/simple_animal/hostile/blobspore/update_icon()
+	. = ..()
 	if(core)
 		color = core.strain.blob_color
 		set_light(3, 5, color)
