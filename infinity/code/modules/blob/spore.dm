@@ -60,7 +60,7 @@
 	melee_damage_lower = 1
 	melee_damage_upper = 2
 
-/mob/living/simple_animal/hostile/blobspore/update_icon()
+/mob/living/simple_animal/hostile/blobspore/on_update_icon()
 	. = ..()
 	if(core)
 		color = core.strain.blob_color
