@@ -504,7 +504,7 @@ SUBSYSTEM_DEF(jobs)
 		if((istype(S, /obj/effect/landmark/start) && isturf(truf)) || isturf(S))
 			H.forceMove(truf)
 			var/obj/structure/bed/b = locate(/obj/structure/bed) in truf
-			if(istype(b))
+			if(istype(b) && !joined_late)
 				H.Sleeping(15)
 				b.buckle_mob(H)
 		//[/INF]

@@ -535,10 +535,6 @@
 //[INF]
 	if(GAME_STATE == (RUNLEVEL_LOBBY || RUNLEVEL_SETUP))
 		new_character.Sleeping(15) //should be enough to remove I SAW NAKED MEN!
-	var/obj/structure/bed/b = locate(/obj/structure/bed) in spawn_turf
-	if(istype(b))
-		new_character.Sleeping(20)
-		b.buckle_mob(new_character)
 //[/INF]
 	return new_character
 
