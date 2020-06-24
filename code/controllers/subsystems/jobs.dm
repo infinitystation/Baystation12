@@ -494,11 +494,11 @@ SUBSYSTEM_DEF(jobs)
 	H.job = rank
 
 	if(!joined_late || job.latejoin_at_spawnpoints)
-		var/obj/S = job.get_roundstart_spawnpoint()
-		/*[BAY]
+		var/obj/S = job.get_job_spawnpoints()//inf, was: var/obj/S = job.get_roundstart_spawnpoint()
+		/*[ORIGINAL]
 		if(istype(S, /obj/effect/landmark/start) && istype(S.loc, /turf)
 			H.forceMove(S.loc)
-		[/BAY]*/
+		[/ORIGINAL]*/
 		//[INF]
 		var/turf/truf = get_turf(S)
 		if((istype(S, /obj/effect/landmark/start) && isturf(truf)) || isturf(S))
