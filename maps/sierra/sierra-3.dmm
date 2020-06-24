@@ -31403,11 +31403,10 @@
 	},
 /obj/machinery/light_switch{
 	dir = 4;
-	other_area = "First Deck - Telecoms";
 	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/tcommsat/computer)
+/area/tcommsat/chamber)
 "aXb" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -39200,6 +39199,9 @@
 	},
 /turf/simulated/floor/bluegrid,
 /area/maintenance/battle_data_servers)
+"wIQ" = (
+/turf/simulated/wall/prepainted,
+/area/tcommsat/chamber)
 "xhz" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -56407,7 +56409,7 @@ aRi
 aSX
 aUs
 aVC
-aPz
+wIQ
 aOk
 bap
 baq
