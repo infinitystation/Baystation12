@@ -426,7 +426,7 @@
 /datum/job/proc/get_job_spawnpoints()
 	var/list/loc_list = list()
 	for(var/obj/effect/landmark/start/sloc in landmarks_list)
-		if(sloc.name != title)	continue //inf, was: if(sloc.name != title)	continue
+		if(sloc.name != title)	continue
 		if(locate(/mob/living) in sloc.loc)	continue
 		loc_list += sloc
 	return length(loc_list) ? pick(loc_list) : null
