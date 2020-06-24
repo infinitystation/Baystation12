@@ -7,8 +7,6 @@
 	var/desc = "Новая смена скоро начнётся\n"
 	desc += "Объект: **[station_name()]**\n"
 	desc += "Адрес: <[get_world_url()]>"
-//	desc += "."
-	.["content"] = "@Roundwaiter"
 	.["embeds"] = list(list(
 		"title" = "Сервер запущен",
 		"description" = desc,
