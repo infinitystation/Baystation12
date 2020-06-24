@@ -19,6 +19,11 @@ GLOBAL_VAR(spawntypes)
 	var/list/disallow_job = null
 
 /datum/spawnpoint/proc/check_job_spawning(job)
+//[INF]
+	if(job && !istext(job)) //Cuz checking job titles
+		crash_with("Somebody tried to check job spawning not by job title.")
+		return FALSE
+//[/INF]
 	if(restrict_job && !(job in restrict_job))
 		return 0
 
@@ -30,7 +35,7 @@ GLOBAL_VAR(spawntypes)
 /datum/spawnpoint/proc/can_spawn_here(mob/M, datum/job/job = null)
 	. = TRUE
 	if(job)
-		var/job_spawning_check = any2bool(check_job_spawning(job))
+		var/job_spawning_check = any2bool(check_job_spawning(job.title))
 		if(!job_spawning_check)
 			to_chat(M, SPAN_WARNING("Your chosen spawnpoint ([display_name]) is unavailable for your chosen job ([job.title]). Spawning you at another spawn point instead."))
 		. = . && job_spawning_check
@@ -194,4 +199,3 @@ GLOBAL_VAR(spawntypes)
 /datum/spawnpoint/default
 	display_name = DEFAULT_SPAWNPOINT_ID
 	msg = "has arrived on the station"
-	always_visible = TRUE

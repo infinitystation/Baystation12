@@ -1365,14 +1365,25 @@
 	icon_state = "snix"
 	icon_vend = "snix-vend"
 	icon_deny = "snix-deny"
-	products = list(/obj/item/weapon/reagent_containers/food/snacks/semki = 7,
-					/obj/item/weapon/reagent_containers/food/snacks/canned/caviar = 7,
-					/obj/item/weapon/reagent_containers/food/snacks/squid = 7,
-					/obj/item/weapon/reagent_containers/food/snacks/croutons = 7,
-					/obj/item/weapon/reagent_containers/food/snacks/salo = 7,
-					/obj/item/weapon/reagent_containers/food/snacks/driedfish = 7,
-					/obj/item/weapon/reagent_containers/food/snacks/pistachios = 7,
+	products = list(/obj/item/weapon/reagent_containers/food/snacks/semki = 3,//inf, was: 7,
+					/obj/item/weapon/reagent_containers/food/snacks/canned/caviar = 3,//inf, was: 7,
+					/obj/item/weapon/reagent_containers/food/snacks/squid = 3,//inf, was: 7,
+					/obj/item/weapon/reagent_containers/food/snacks/croutons = 3,//inf, was: 7,
+					/obj/item/weapon/reagent_containers/food/snacks/salo = 3,//inf, was: 7,
+					/obj/item/weapon/reagent_containers/food/snacks/driedfish = 3,//inf, was: 7,
+					/obj/item/weapon/reagent_containers/food/snacks/pistachios = 3,//inf, was: 7,
 					)
+//[INF]
+	prices = list(/obj/item/weapon/reagent_containers/food/snacks/semki = 15,
+					/obj/item/weapon/reagent_containers/food/snacks/canned/caviar = 150,
+					/obj/item/weapon/reagent_containers/food/snacks/squid  = 20,
+					/obj/item/weapon/reagent_containers/food/snacks/croutons = 15,
+					/obj/item/weapon/reagent_containers/food/snacks/salo = 40,
+					/obj/item/weapon/reagent_containers/food/snacks/driedfish  = 50,
+					/obj/item/weapon/reagent_containers/food/snacks/pistachios = 50,
+					)
+//[/INF]
+
 
 	contraband = list(/obj/item/weapon/reagent_containers/food/snacks/canned/caviar/true = 1)
 	restockable = 0 //inf
