@@ -11,7 +11,7 @@
 
 	layer = BLOB_SHIELD_LAYER
 
-	var/maxHealth = 15
+	var/maxHealth = 10
 	var/health
 	var/regen_rate = 1
 	var/blob_color = "#8ba6e9"
@@ -503,7 +503,7 @@
 	desc = "A mass of interwoven tendrils. They thrash around haphazardly at anything in reach."
 	icon_state = "blob_shield"
 
-	maxHealth = 25
+	maxHealth = 20
 
 /obj/effect/biomass/reinforced/reinforce(manual = 0)
 	if(!manual)
@@ -525,7 +525,7 @@
 	desc = "A pulsating mass of interwoven tendrils. These seem particularly robust, but not quite as active."
 	icon_state = "blob_idle_glow"
 
-	maxHealth = 35
+	maxHealth = 30
 
 /obj/effect/biomass/shield/reinforce()
 	return
