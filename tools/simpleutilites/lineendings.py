@@ -3,14 +3,11 @@ from os.path import join
 import argparse
 
 opt = argparse.ArgumentParser()
-opt.add_argument('targetDir', help='Каталог с кодом для пропарсинга.')
+opt.add_argument('--targetDir', help='Directory to parse.', type=str, default='.',)
 
 args = opt.parse_args()
 
-root = '.'
-
-if args.targetDir:
-	root = args.targetDir
+root = args.targetDir
 
 fnames = []
 for path, subdirs, files in os.walk(root):
