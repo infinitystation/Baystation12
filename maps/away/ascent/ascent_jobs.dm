@@ -63,7 +63,7 @@
 			// Rename our alates (and only our alates).
 			cutter.gyne_name = new_name
 			for(var/mob/living/carbon/human/H in GLOB.human_mob_list)
-				if(!H.mind || H.species.name != SPECIES_MANTID_ALATE)
+				if(!H.mind || H.species.name != SPECIES_MANTID_ALATE || H.species.name != SPECIES_MONARCH_WORKER || H.species.name != SPECIES_MONARCH_QUEEN)
 					continue
 				var/datum/job/submap/ascent/temp_ascent_job = H.mind.assigned_job
 				if(!istype(temp_ascent_job) || temp_ascent_job.owner != ascent_job.owner)
@@ -80,8 +80,8 @@
 /datum/job/submap/ascent
 	title = "Ascent Gyne"
 	total_positions = 1
-	supervisors = "nobody but yourself"
-	info = "Вы гиина, одного из независимых судов восхождения. Ваша колонизация, привела вас в этот отдаленный сектор, полный примитивов. Создайте новое гнездо, и прославьте свою родословную."
+	supervisors = "Лишь вы."
+	info = "Вы гиина одного из независимых судов Восхождения. Ваша колонизация привела вас в этот сектор, наполненный пресмыкающимися примитивами. Создайте новое гнездо и прославьте свою династию."
 	outfit_type = /decl/hierarchy/outfit/job/ascent
 	blacklisted_species = null
 	whitelisted_species = null
@@ -149,8 +149,8 @@
 /datum/job/submap/ascent/alate
 	title = "Ascent Alate"
 	total_positions = 4
-	supervisors = "the Gyne"
-	info = "You are an Alate of an independent Ascent vessel. Your Gyne has directed you to this remote sector full of crawling primitives. Follow her instructions and bring prosperity to your nest-lineage."
+	supervisors = "Ваша Гина"
+	info = "Вы алат одного из незасисимых судов Восхождения. Твоя Гиина привела тебя в этот сектор, наполненный присмыкающимися примитвами. Слушай её приказы и прославь свою династию."
 	set_species_on_join = SPECIES_MANTID_ALATE
 	outfit_type = /decl/hierarchy/outfit/job/ascent/tech
 	requires_supervisor = "Ascent Gyne"
@@ -162,21 +162,21 @@
 
 /datum/job/submap/ascent/drone
 	title = "Ascent Drone"
-	supervisors = "the Gyne"
-	total_positions = 2
-	info = "You are a Machine Intelligence of an independent Ascent vessel. The Gyne you assist, and her children, have wandered into this sector full of primitive bioforms. Try to keep them alive, and assist where you can."
+	supervisors = "Ваша Гина"
+	total_positions = 1
+	info = "Вы дрон одного из независимых судов Восхождения. Гина, которой вы помогаете, и её дети, прибыли в этот сектор, наполненный пресмыкающимися примитивами. Служи им и любой ценой сохраняй их жизни."
 	set_species_on_join = /mob/living/silicon/robot/flying/ascent
 	requires_supervisor = "Ascent Gyne"
 
-/*
 /datum/job/submap/ascent/msw
 	title = "Serpentid Adjunct"
-	supervisors = "your Queen"
-	total_positions = 3
-	info = "You are a Monarch Serpentid Worker serving as an attendant to your Queen on this vessel. Serve her however she requires."
+	supervisors = "Ваша Королева"
+	total_positions = 1
+	info = "Вы рабочий Серпентид-Монархов, находящийся на независимом судне Восхождения как помощник своей королевы, следуйте её приказам."
 	set_species_on_join = SPECIES_MONARCH_WORKER
-	outfit_type = /decl/hierarchy/outfit/job/ascent/soldier
-	min_skill = list(SKILL_EVA = SKILL_ADEPT,
+	outfit_type = /decl/hierarchy/outfit/job/ascent/tech
+	requires_supervisor = "Serpentid Queen"
+    min_skill = list(SKILL_EVA = SKILL_ADEPT,
 					SKILL_HAULING = SKILL_ADEPT,
 					SKILL_COMBAT = SKILL_ADEPT,
 					SKILL_WEAPONS = SKILL_ADEPT,
@@ -185,16 +185,17 @@
 
 /datum/job/submap/ascent/msq
 	title = "Serpentid Queen"
-	supervisors = "your fellow Queens and the Gyne"
-	total_positions = 2
-	info = "You are a Monarch Serpentid Queen living on an independant Ascent vessel. Assist the Gyne in her duties and tend to your Workers."
-	set_species_on_join = SPECIES_MONARCH_QUEEN
-	min_skill = list(SKILL_EVA = SKILL_ADEPT,
+	supervisors = "Ваша Гина"
+	total_positions = 1
+	info = "Вы королева Серпентид-Монархов на одном из независимых судов Восхождения. Помогайте и служите Гине,так же приказывайте своим рабочим."
+	outfit_type = /decl/hierarchy/outfit/job/ascent
+    set_species_on_join = SPECIES_MONARCH_QUEEN
+	requires_supervisor = "Ascent Gyne"
+    min_skill = list(SKILL_EVA = SKILL_ADEPT,
 					SKILL_HAULING = SKILL_ADEPT,
 					SKILL_COMBAT = SKILL_ADEPT,
 					SKILL_WEAPONS = SKILL_ADEPT,
 					SKILL_MEDICAL = SKILL_BASIC)
-*/
 
 // Spawn points.
 /obj/effect/submap_landmark/spawnpoint/ascent_seedship
@@ -226,6 +227,7 @@
 
 /mob/living/silicon/ai/ascent
 	name = "TODO"
+Когда-нибудь я займусь и ними, но это потом.
 */
 
 #undef WEBHOOK_SUBMAP_LOADED_ASCENT
