@@ -1,4 +1,4 @@
-name: Compile changelogs
+name: Add Empty Lines to Code
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
     - master
 
 jobs:
-  Compile_Changelog:
+  Add_empty_lineendings:
     runs-on: ubuntu-latest
     if: github.repository == 'infinitystation/Baystation12'
     steps:
