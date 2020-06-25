@@ -3657,6 +3657,7 @@
 #include "infinity\code\modules\species\abductors\abductors.dm"
 #include "infinity\code\modules\species\holders\booster.dm"
 #include "infinity\code\modules\species\holders\FBP.dm"
+#include "infinity\code\modules\species\mantid\queen.dm"
 #include "infinity\code\modules\species\station\lizard.dm"
 #include "infinity\code\modules\species\station\resomi.dm"
 #include "infinity\code\modules\species\station\tajaran.dm"

@@ -63,7 +63,7 @@
 			// Rename our alates (and only our alates).
 			cutter.gyne_name = new_name
 			for(var/mob/living/carbon/human/H in GLOB.human_mob_list)
-				if(!H.mind || H.species.name != SPECIES_MANTID_ALATE || H.species.name != SPECIES_MONARCH_WORKER || H.species.name != SPECIES_MONARCH_QUEEN)
+				if(!H.mind || H.species.name != SPECIES_MANTID_ALATE || H.species.name != SPECIES_MONARCH_WORKER || H.species.name != SPECIES_MONARCH_QUEEN) // INF WAS	if(!H.mind || H.species.name != SPECIES_MANTID_ALATE)
 					continue
 				var/datum/job/submap/ascent/temp_ascent_job = H.mind.assigned_job
 				if(!istype(temp_ascent_job) || temp_ascent_job.owner != ascent_job.owner)
@@ -80,7 +80,7 @@
 /datum/job/submap/ascent
 	title = "Ascent Gyne"
 	total_positions = 1
-	supervisors = "Лишь вы."
+	supervisors = "Никто кроме вас."
 	info = "Вы гиина одного из независимых судов Восхождения. Ваша колонизация привела вас в этот сектор, наполненный пресмыкающимися примитивами. Создайте новое гнездо и прославьте свою династию."
 	outfit_type = /decl/hierarchy/outfit/job/ascent
 	blacklisted_species = null
@@ -148,7 +148,7 @@
 
 /datum/job/submap/ascent/alate
 	title = "Ascent Alate"
-	total_positions = 4
+	total_positions = 3
 	supervisors = "Ваша Гина"
 	info = "Вы алат одного из незасисимых судов Восхождения. Твоя Гиина привела тебя в этот сектор, наполненный присмыкающимися примитвами. Слушай её приказы и прославь свою династию."
 	set_species_on_join = SPECIES_MANTID_ALATE
@@ -176,7 +176,7 @@
 	set_species_on_join = SPECIES_MONARCH_WORKER
 	outfit_type = /decl/hierarchy/outfit/job/ascent/tech
 	requires_supervisor = "Serpentid Queen"
-    min_skill = list(SKILL_EVA = SKILL_ADEPT,
+	min_skill = list(SKILL_EVA = SKILL_ADEPT,
 					SKILL_HAULING = SKILL_ADEPT,
 					SKILL_COMBAT = SKILL_ADEPT,
 					SKILL_WEAPONS = SKILL_ADEPT,
@@ -187,11 +187,11 @@
 	title = "Serpentid Queen"
 	supervisors = "Ваша Гина"
 	total_positions = 1
-	info = "Вы королева Серпентид-Монархов на одном из независимых судов Восхождения. Помогайте и служите Гине,так же приказывайте своим рабочим."
+	info = "Вы королева Серпентид-Монархов на одном из независимых судов Восхождения. Помогайте и служите Гине, так же приказывайте своим рабочим."
 	outfit_type = /decl/hierarchy/outfit/job/ascent
-    set_species_on_join = SPECIES_MONARCH_QUEEN
+	set_species_on_join = SPECIES_MONARCH_QUEEN
 	requires_supervisor = "Ascent Gyne"
-    min_skill = list(SKILL_EVA = SKILL_ADEPT,
+	min_skill = list(SKILL_EVA = SKILL_ADEPT,
 					SKILL_HAULING = SKILL_ADEPT,
 					SKILL_COMBAT = SKILL_ADEPT,
 					SKILL_WEAPONS = SKILL_ADEPT,
