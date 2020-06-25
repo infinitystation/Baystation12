@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: '3.x'
-      - name: Changelog Compilation
+      - name: Empty Empty Lines Adding
         run: python tools/GenerateChangelog/simpleutilites/lineendings.py
       - name: Difference
         run: git diff
