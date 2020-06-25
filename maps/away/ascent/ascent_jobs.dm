@@ -227,7 +227,6 @@
 
 /mob/living/silicon/ai/ascent
 	name = "TODO"
-Когда-нибудь я займусь и ними, но это потом.
 */
 
 #undef WEBHOOK_SUBMAP_LOADED_ASCENT
