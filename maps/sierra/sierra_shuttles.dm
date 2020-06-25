@@ -479,6 +479,16 @@
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling/sierra
 	warmup_time = 7
 
+/datum/shuttle/autodock/overmap/exploration_shuttle/refresh_fuel_ports_list()	// Setting access onto APC and air alarms
+	..()
+	for(var/area/A in shuttle_area)
+		for(var/obj/machinery/alarm/alarm in A)
+			if(alarm.req_access)
+				alarm.req_access = list(list(access_engine_equip, access_expedition_shuttle, access_atmospherics), access_engine)	//(Engine equip OR Charon OR Atmos) + Engineering
+		for(var/obj/machinery/power/apc/apc in A)
+			if(apc.req_access)
+				apc.req_access = list(list(access_engine_equip, access_expedition_shuttle), access_engine)	//(Engine equip OR Charon) + Engineering
+
 /obj/effect/shuttle_landmark/sierra/hangar/exploration_shuttle
 	name = "Charon Hangar"
 	landmark_tag = "nav_hangar_calypso"

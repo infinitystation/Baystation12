@@ -212,7 +212,7 @@
 /obj/item/weapon/reagent_containers/spray/plantbgone/afterattack(atom/A as mob|obj, mob/user as mob, proximity)
 	if(!proximity) return
 
-	if(istype(A, /obj/effect/blob)) // blob damage in blob code
+	if(istype(A, /obj/effect/biomass)) // blob damage in blob code //INF, was /obj/effect/blob
 		return
 
 	..()

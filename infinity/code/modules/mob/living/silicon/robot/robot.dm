@@ -14,7 +14,9 @@
 	else
 		var/list/options = list()
 		for(var/i in module_sprites)
-			options[i] = image(icon = src.icon, icon_state = module_sprites[i])
+			var/image/j = image(icon = src.icon, icon_state = module_sprites[i])
+			j.name = i
+			options[i] = j
 		icontype = show_radial_menu(src, src, options, radius = 42)
 	if(!icontype)
 		choose_icon(triesleft, module_sprites)

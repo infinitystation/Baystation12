@@ -80,7 +80,6 @@
 
 /area/crew_quarters/commissary
 	name = "Third Deck - Commissary"
-	icon_state = "crew_quarters"
 	req_access = list(access_commissary)
 
 /* SECOND DECK (Z-2)
@@ -370,20 +369,20 @@
 /area/turbolift/sierra_top
 	name = "Elevator - First Deck"
 	lift_floor_label = "1 Палуба"
-	lift_floor_name = "Главная палуба"
-	lift_announce_str = "Главная палуба: мостик, крыло охраны, исследовательское крыло, медицинский отсек, центр телекоммуникацй, отсек ВКД."
+	lift_floor_name = "Оперативная палуба"
+	lift_announce_str = "Оперативная палуба: исследовательский отсек, медицинский отсек, отсек службы безопасности, серверная телекоммуникаций, отсек ВКД."
 
 /area/turbolift/sierra_middle
 	name = "Elevator - Second Deck"
 	lift_floor_label = "2 Палуба"
 	lift_floor_name = "Жилая палуба"
-	lift_announce_str = "Жилая палуба: комната совещаний, отсек криосна, спальное крыло, голодек, лаундж, бар, гидропоника спортзал, прачечная, инженерный отсек."
+	lift_announce_str = "Жилая палуба: мостик, комната совещаний, отсек криосна, спальное крыло, голодек, библиотека, бар, кафе, гидропоника, спортзал, прачечная, инженерный отсек."
 
 /area/turbolift/sierra_ground
 	name = "Elevator - Third Deck"
 	lift_floor_label = "3 Палуба"
-	lift_floor_name = "Ангарная палуба"
-	lift_announce_str = "Ангарная палуба: главный ангар, экспедиционное крыло, крыло снабжения, стыковочные доки, склады, переработка руды, коморка уборщика."
+	lift_floor_name = "Лётная палуба"
+	lift_announce_str = "Лётная палуба: главный ангар, экспедиционное крыло, крыло снабжения, стыковочные доки, склады, переработка руды, коморка уборщика, нижний этаж ксенобиологии, NSS 'Petrov'."
 	base_turf = /turf/simulated/floor
 
 /area/turbolift/start
@@ -504,7 +503,7 @@
 
 /area/bridge/nano
 	icon = 'infinity/icons/turf/areas.dmi'
-	icon_state = "bridge_nano"  // Yes, this is exactly what no one has ever done, probably.
+	icon_state = "bridge_room"  // Yes, this is exactly what no one has ever done, probably.
 
 /area/bridge/meeting_room
 	name = "Second Deck - Command - Meeting Room"
@@ -813,6 +812,9 @@
 	icon_state = "janitor"
 	req_access = list(access_janitor)
 
+/area/crew_quarters
+	icon_state = "crew_quarters"
+
 /area/crew_quarters/bar
 	name = "Second Deck - Service - Bar"
 	icon_state = "bar"
@@ -862,13 +864,16 @@
 	sound_env = SMALL_SOFTFLOOR
 	req_access = list(access_actor)
 
+/area/crew_quarters/dungeon_master_lounge
+	name = "First Deck - Living Room"
+	sound_env = MEDIUM_SOFTFLOOR
+
 /area/crew_quarters/lounge
 	name = "Second Deck - Living - Lounge"
-	icon_state = "crew_quarters"
 	sound_env = MEDIUM_SOFTFLOOR
 
 /area/crew_quarters/lounge/upper
-	name = "Second Deck - Living - Library" //at first deck, but merged
+	name = "First Deck - Living - Library" //at first deck, but merged
 
 /area/crew_quarters/sleep/bunk
 	name = "Second Deck - Living - Dormitory"
@@ -878,10 +883,18 @@
 
 /area/crew_quarters/sleep/cryo
 	name = "Second Deck - Living - Cryogenic Storage"
-	icon_state = "Sleep"
+	icon = 'infinity/icons/turf/areas.dmi'
+	icon_state = "cryo"
 
 /area/crew_quarters/sleep/cryo/upper
-	name = "Second Deck - Living - Cryogenic Storage Upper"
+	name = "Second Deck - Living - Cryogenic Storage - Upper"
+	icon_state = "cryo_up"
+/area/crew_quarters/sleep/cryo/south
+	name = "Second Deck - Living - Cryogenic Storage - South"
+	icon_state = "cryo_south"
+
+/area/crew_quarters/sleep/cryo/first_deck
+	name = "First Deck - Cryogenic Storage"
 
 /area/crew_quarters/adherent
 	name = "Second Deck - Living - Adherent Maintenence"
@@ -1346,6 +1359,10 @@
 	name = "AI Chamber"
 	icon_state = "ai_chamber"
 
+/area/turret_protected/ai/airlock
+	name = "AI Chamber Outer Maintance"
+	icon_state = "ai_foyer"
+
 /area/turret_protected/ai_cyborg_station
 	name = "Second Deck - Cyborg Station"
 	icon_state = "ai_cyborg"
@@ -1360,6 +1377,9 @@
 	name = "Second Deck - AI Upload Access"
 	icon_state = "ai_foyer"
 	sound_env = SMALL_ENCLOSED
+
+/area/ai_abadoned
+	name = "Abadoned Chamber"
 
 // Merchant
 /area/merchant_station

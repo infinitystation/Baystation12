@@ -253,3 +253,12 @@
 obj/random/hostile/asteroid/spawn_choices()
 	return list(/mob/living/simple_animal/hostile/carp,
 				/mob/living/simple_animal/hostile/hivebot)
+
+/obj/random/pottedplant
+	name = "random pottedplant"
+	desc = "This is a random potted plant."
+	icon = 'infinity/icons/obj/plants.dmi'
+	icon_state = "random"
+
+/obj/random/pottedplant/spawn_choices()
+	return subtypesof(/obj/structure/flora/pottedplant)

@@ -36,7 +36,7 @@
 	var/margin = 1.2											//Multiplier to price when selling to player
 	var/price_rng = 10                                          //Percentage max variance in sell prices.
 	var/insult_drop = 5                                         //How far disposition drops on insult
-	var/compliment_increase = 5                                 //How far compliments increase disposition
+	var/compliment_increase = 2                                 //How far compliments increase disposition
 	var/refuse_comms = 0                                        //Whether they refuse further communication
 
 	var/mob_transfer_message = "You are transported to ORIGIN." //What message gets sent to mobs that get sold.
@@ -124,9 +124,9 @@
 		if(SKILL_EXPERT)
 			. = 1
 		if(SKILL_EXPERT to SKILL_MAX)
-			. = 1 + (SKILL_EXPERT - skill) * 0.2
+			. = 1 + (SKILL_EXPERT - skill) * 0.1
 		else
-			. = 1 + (SKILL_EXPERT - skill) ** 2
+			. = 1 + (SKILL_EXPERT - skill) ** 3
 	//This condition ensures that the buy price is higher than the sell price on generic goods, i.e. the merchant can't be exploited
 	. = max(., price_rng/((margin - 1)*(200 - price_rng)))
 

@@ -21,6 +21,9 @@
 	var/can_namepick_as_adult = 0
 	var/adult_name
 
+/mob/living/carbon/alien/larva/can_feel_pain()
+	return 0
+
 /mob/living/carbon/alien/larva/New()
 	verbs += /mob/living/proc/night_vision
 	..()

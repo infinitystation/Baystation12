@@ -156,6 +156,7 @@
 	Universe can throw at it."
 	var/list/mods = list()
 
+
 #define MOD_BASE     0.85
 #define MOD_VARIANCE 0.35
 /datum/species/human/booster/proc/get_mod(var/mob/living/carbon/human/booster, var/mod_type)

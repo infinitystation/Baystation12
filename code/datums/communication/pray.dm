@@ -11,6 +11,7 @@
 		var/mob/M = m
 		if(!M.client)
 			continue
+		if(only_xenos(M.client))	continue	// INF
 		if(M.client.holder && M.client.get_preference_value(/datum/client_preference/staff/show_chat_prayers) == GLOB.PREF_SHOW)
 		//	receive_communication(communicator, M, "\[<A HREF='?_src_=holder;adminspawncookie=\ref[communicator]'>SC</a>\] \[<A HREF='?_src_=holder;narrateto=\ref[communicator]'>DN</a>\]<span class='notice'>\icon[cross] <b><font color=purple>PRAY: </font>[key_name(communicator, 1)]: </b>[message]</span>")
 			receive_communication(communicator, M, "\[<A HREF='?_src_=holder;pray_options=\ref[communicator]'>OPTIONS</a>\] \

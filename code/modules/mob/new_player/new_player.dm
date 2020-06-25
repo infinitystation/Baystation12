@@ -315,11 +315,16 @@
 		return 0
 	if(job.is_restricted(client.prefs, src))
 		return
-
+//[INF]
+	var/r_cdown = SSticker.check_respawn_cooldown()
+	if(r_cdown)
+		to_chat(usr, "You need to wait [abs(round(r_cdown / 10))] seconds before respawn.")
+		return
+//[/INF]
 	var/datum/spawnpoint/spawnpoint = job.get_spawnpoint(client)
 	var/turf/spawn_turf = pick(spawnpoint.turfs)
 	if(job.latejoin_at_spawnpoints)
-		var/obj/S = job.get_roundstart_spawnpoint()
+		var/obj/S = job.get_job_spawnpoints()//inf, was: var/obj/S = job.get_roundstart_spawnpoint()
 		spawn_turf = get_turf(S)
 
 	if(!SSjobs.check_unsafe_spawn(src, spawn_turf))
@@ -338,6 +343,7 @@
 
 	character = SSjobs.equip_rank(character, job.title, 1)					//equips the human
 	SScustomitems.equip_custom_items(character)
+	SSticker.set_respawn_cooldown() //inf
 
 	// AIs don't need a spawnpoint, they must spawn at an empty core
 	if(character.mind.assigned_role == "AI")

@@ -38,11 +38,8 @@
 	recommended_players = 20
 //	minimum_players = 0 its already 0
 
-	away_site_budget = 3.5 /*
-							2 for ascents/vox shoal/skrellin patrol/bearcat
-							0.5 for two away sites but lower one
-							0.5 always wastes on mining asteroid
-							*/
+	away_site_budget = 3.5
+
 	id_hud_icons = 'maps/sierra/icons/assignment_hud.dmi'
 
 	available_cultural_info = list(
@@ -64,6 +61,13 @@
 			HOME_SYSTEM_KINGSTON,
 			HOME_SYSTEM_GAIA,
 			HOME_SYSTEM_MAGNITKA,
+			HOME_SYSTEM_AVALON,
+			HOME_SYSTEM_MIRANIA,
+			HOME_SYSTEM_NYX_BRINKBURN,
+			HOME_SYSTEM_NYX_KALDARK,
+			HOME_SYSTEM_NYX_ROANOK,
+			HOME_SYSTEM_NYX_YUKLIT,
+			HOME_SYSTEM_NYX_CASSER,
 			HOME_SYSTEM_OTHER
 		),
 		TAG_FACTION = list(

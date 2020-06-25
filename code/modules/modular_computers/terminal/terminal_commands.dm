@@ -571,13 +571,19 @@ INF*/
 		var/inp_file_name = copytext(text, 11)
 		if(length(inp_file_name) != 0)
 			var/datum/computer_file/data/coding/batch/F = HDD.find_file_by_name(inp_file_name)
-			if(F.filetype != "BAT") return "<font color='#ffa000'>[name]: incorrect file. Expected batch file.</font>"
+			if(F.filetype != "BAT")
+				return "<font color='#ffa000'>[name]: incorrect file. Expected batch file.</font>"
 			var/code = F.stored_data
-			if(!(";" in code)) return "<font color='ff0000'>[name]: compile error, lack this ';'.</font>"
-			code = replacetext(code, " \[br]","")
-			code = replacetext(code, "\[br]","")
+			if(!findtext(code, ";"))
+				return "<font color='#ff0000'>[name]: compile error, lack this ';'.</font>"
 
-			var/list/code_list = splittext(code, ";")
+			var/regex/RegexHTML = new("<\[^<>]*>", "g")
+			var/regex/RegexFileHTML = new("\\\[\[^\\\[\\\]]*\\\]", "g")
+			code = RegexHTML.Replace(code)
+			code = RegexFileHTML.Replace(code)
+			code = replacetext_char(code, "\n", "")
+
+			var/list/code_list = splittext(code, "; ")
 
 			for(var/i in code_list)
 				var/output = terminal.parse(i, user)

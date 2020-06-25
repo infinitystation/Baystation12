@@ -27,6 +27,7 @@
 	if(pixel_x || pixel_y)
 		A.pixel_x = pixel_x
 		A.pixel_y = pixel_y
+	A.dir = dir //inf
 
 	return A
 
