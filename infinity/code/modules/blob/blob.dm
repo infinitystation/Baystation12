@@ -81,7 +81,8 @@
 	health -= damage
 	playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 	if(health < 0)
-		core.strain.killed(src)
+		if(core)
+			core.strain.killed(src)
 		qdel(src)
 	else
 		update_icon()
@@ -227,7 +228,7 @@
 		L.apply_damage(tendril_damages[blob_damage], blob_damage, used_weapon = "blob tendril")
 
 /obj/effect/biomass/emp_act(var/severity)
-	core.strain.damaged(src, severity)
+	core.strain.empd(src, severity)
 
 /obj/effect/biomass/proc/pulse(var/forceLeft, var/list/dirs)
 	sleep(2)
@@ -324,7 +325,8 @@
 
 	take_damage(damage)
 
-	core.strain.damaged(src, user)
+	if(core)
+		core.strain.damaged(src, user)
 
 	return
 
