@@ -24,6 +24,7 @@
 
 /decl/webhook/proc/send(var/list/data)
 	var/message = get_message(data)
+	message = sanitize_hook(message)		//INF		/code/modules/webhooks/__webhook_sanitize_inf.dm
 	if(message)
 		if(mentions)
 			if(message["content"])

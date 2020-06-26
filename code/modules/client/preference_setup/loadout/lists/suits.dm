@@ -66,6 +66,7 @@
 /datum/gear/suit/hoodie_sel/New()
 	..()
 	var/hoodies = list()
+	hoodies += /obj/item/clothing/suit/storage/toggle/hoodie/black //INF. It can be generated with hoodie_sel, but this one the way easier
 	hoodies += /obj/item/clothing/suit/storage/toggle/hoodie/cti
 	hoodies += /obj/item/clothing/suit/storage/toggle/hoodie/mu
 	hoodies += /obj/item/clothing/suit/storage/toggle/hoodie/nt

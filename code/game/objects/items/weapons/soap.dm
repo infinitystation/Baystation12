@@ -41,7 +41,7 @@
 	if (istype(AM))
 		if(AM.pulledby)
 			return
-		if(!AM.weakened || !AM.resting)
+		if((!AM.weakened || !AM.resting) && prob(30 + (log(6, reagents.total_volume) * 5)) && reagents.reagent_list.len) //inf, was: if(!AM.weakened || !AM.resting)
 			AM.slip("the [src.name]",3)
 
 /obj/item/weapon/soap/afterattack(atom/target, mob/user as mob, proximity)

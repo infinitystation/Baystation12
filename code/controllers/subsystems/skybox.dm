@@ -60,8 +60,8 @@ SUBSYSTEM_DEF(skybox)
 
 	return res
 
-/datum/controller/subsystem/skybox/proc/rebuild_skyboxes(var/list/zlevels)
-	for(var/z in zlevels)
+/datum/controller/subsystem/skybox/proc/rebuild_skyboxes(list/zlevels) //inf, was: /datum/controller/subsystem/skybox/proc/rebuild_skyboxes(var/list/zlevels)
+	for(var/z in zlevels ? zlevels : skybox_cache) //inf, was:	for(var/z in zlevels)
 		skybox_cache["[z]"] = generate_skybox(z)
 
 	for(var/client/C)

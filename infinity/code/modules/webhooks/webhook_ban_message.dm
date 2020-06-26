@@ -4,7 +4,7 @@
 /decl/webhook/send_ban/get_message(var/list/data)
 	. = ..()
 
-	if(!data.len || !data["bantype"])
+	if(!length(data) || !data["bantype"])
 		.["content"] = "Тут должно быть сообщение о бане, но кто то вызвал вебхук вручную."
 		return
 	//	Дискорд не допускает пустых строк в эмбеде, и удаляет его, по этому лучше уж [ДАННЫЕ УДАЛЕНЫ] ~Laxesh
@@ -28,11 +28,11 @@
 	var/list/desc = list(
 		"color" = COLOR_WEBHOOK_BAN,
 		"footer" = list(
-			"icon_url" = "https://cdn.discordapp.com/emojis/244791612268347392.png?v=1",	// :inf: emoji
+			"icon_url" = "https://cdn.discordapp.com/emojis/244791612268347392.png",	// :inf: emoji
 			"text" = "За обжалованием обращаться в #подача_заявок"
 		),
 		"thumbnail" = list(
-			"url" = "https://cdn.discordapp.com/emojis/314350489020137474.png?v=1"			// :ban: emoji
+			"url" = "https://cdn.discordapp.com/emojis/314350489020137474.png"			// :ban: emoji
 		)
 	)
 	switch(data["bantype"])

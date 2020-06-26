@@ -73,6 +73,9 @@
 #define CULTURE_XENOPHAGE_D    "Xenophage Drone"
 #define CULTURE_XENOPHAGE_H    "Xenophage Hunter"
 #define CULTURE_XENOPHAGE_S    "Xenophage Sentinel"
+#define CULTURE_XENOPHAGE_W    "Xenophage Warrior"
+#define CULTURE_XENOPHAGE_L    "Xenophage Hivelord"
+#define CULTURE_XENOPHAGE_P    "Xenophage Spitter"
 #define CULTURE_XENOPHAGE_Q    "Xenophage Queen"
 #define FACTION_XENOPHAGE      "Xenophage Hive"
 
@@ -80,3 +83,16 @@
 #define CULTURE_HUMAN_LORRIMAN "Lorrimanian"
 #define CULTURE_HUMAN_AVANOBLE "Avalon Noble"
 #define CULTURE_HUMAN_AVACOMMON "Avalon Commoner"
+#define CULTURE_HUMAN_LORDUP "Lordanian, Upper"
+#define CULTURE_HUMAN_LORDLOW "Lordanian, Lower"
+#define CULTURE_HUMAN_MIRANIAN "Miranian"
+#define CULTURE_HUMAN_NYXIAN "Nyxian"
+
+//Human Planets
+#define HOME_SYSTEM_AVALON               	"Avalon"
+#define HOME_SYSTEM_MIRANIA              	"Mirania"
+#define HOME_SYSTEM_NYX_BRINKBURN        	"Brinkburn"
+#define HOME_SYSTEM_NYX_KALDARK          	"Kaldark"
+#define HOME_SYSTEM_NYX_ROANOK           	"Roanok"
+#define HOME_SYSTEM_NYX_YUKLIT           	"Yuklit"
+#define HOME_SYSTEM_NYX_CASSER           	"Casser"

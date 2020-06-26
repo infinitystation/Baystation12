@@ -11,7 +11,7 @@
 	description = "A small Ascent colony ship. Looks like it was damaged."
 	prefix = "maps/away_inf/"
 	suffixes = list("ascent/ascent-1.dmm")
-	cost = 2
+	cost = 1000 //INF WAS 2
 	spawn_weight = 50 //HABITABLE SHIPS SPAWN
 	shuttles_to_initialise = list(
 		/datum/shuttle/autodock/overmap/ascent_inf,
@@ -22,6 +22,7 @@
 /obj/effect/overmap/visitable/ship/ascent_seedship_inf
 	name = DAMAGED_ASCENT_COLONY_SHIP_NAME
 	desc = "Wake signature indicates a small to medium sized vessel of unknown design."
+	color = COLOR_PURPLE
 	vessel_mass = 6500
 	fore_dir = WEST
 	max_speed = 0.6/(1 SECOND)

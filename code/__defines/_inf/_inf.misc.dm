@@ -26,3 +26,5 @@
 #define USE_FAIL_INCAPACITATED 5
 #define USE_FAIL_NOT_IN_USER 6
 #define USE_FAIL_IS_SILICON 7
+
+#define DEFAULT_RESPAWN_COOLDOWN config.default_respawn_cooldown

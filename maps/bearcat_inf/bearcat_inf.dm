@@ -11,6 +11,9 @@
 	#include "bearcat_overrides.dm"
 	#include "bearcat_shuttles.dm"
 	#include "bearcat_unit_testing.dm"
+
+	#include "bearcat_snatch.dm"
+
 	#include "bearcat-1.dmm"
 	#include "bearcat-2.dmm"
 	#include "bearcat-3.dmm"

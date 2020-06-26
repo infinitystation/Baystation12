@@ -39,6 +39,8 @@
 	var/spinup_delay      = 20
 	var/spinup_counter    = 0
 
+	var/vessel_reverse_dir	= EAST		// INF Reverse dir our vessel
+
 /obj/machinery/power/shield_generator/on_update_icon()
 	if(running)
 		icon_state = "generator1"
@@ -108,12 +110,22 @@
 		shielded_turfs = fieldtype_hull()
 	else
 		shielded_turfs = fieldtype_square()
-
+//[INF]
+	if(GLOB.using_map.use_overmap)
+		var/obj/effect/overmap/visitable/ship/sector = map_sectors["[src.z]"]
+		if(sector && istype(sector))
+			if(!sector.check_ownership(src))
+				for(var/obj/effect/overmap/visitable/ship/candidate in sector)
+					if(candidate.check_ownership(src))
+						sector = candidate
+			vessel_reverse_dir = GLOB.reverse_dir[sector.fore_dir]
+//[/INF]
 	for(var/turf/T in shielded_turfs)
 		var/obj/effect/shield/S = new(T)
 		S.gen = src
 		S.flags_updated()
 		field_segments |= S
+		if(check_flag(MODEFLAG_HULL))	S.set_dir(vessel_reverse_dir)	// INF
 	update_icon()
 
 
@@ -308,7 +320,7 @@
 		var/old_energy = current_energy
 		shutdown_field()
 		log_and_message_admins("has triggered \the [src]'s emergency shutdown!", user)
-		spawn()	
+		spawn()
 			empulse(src, old_energy / 60000000, old_energy / 32000000, 1) // If shields are charged at 450 MJ, the EMP will be 7.5, 14.0625. 90 MJ, 1.5, 2.8125
 		old_energy = 0
 

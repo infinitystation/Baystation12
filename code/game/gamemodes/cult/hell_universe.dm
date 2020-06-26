@@ -29,7 +29,7 @@ In short:
 	//Separated into separate procs for profiling
 	MiscSet()
 	KillMobs()
-	SSskybox.change_skybox("narsie", new_use_stars = FALSE, new_use_overmap_details = FALSE)
+	SSskybox.change_skybox((SSskybox.skybox_data ? PICK_OR_SET(SSskybox.skybox_data.narsie_icon_states) : "narsie"), "#ffffff", FALSE, FALSE) //inf, was: SSskybox.change_skybox("narsie", new_use_stars = FALSE, new_use_overmap_details = FALSE)
 
 /datum/universal_state/hell/proc/MiscSet()
 	for(var/turf/simulated/floor/T)

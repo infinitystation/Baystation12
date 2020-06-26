@@ -33,7 +33,7 @@
 	departments = SUP
 
 	hat = list(\
-		/obj/item/clothing/head/soft/yellow)
+		/obj/item/clothing/head/soft/yellow, /obj/item/clothing/head/beret/infinity/cargo)
 	under = list(\
 		/obj/item/clothing/under/rank/cargotech)
 	shoes = list(\

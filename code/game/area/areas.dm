@@ -269,7 +269,7 @@ inf*/
 		else	//stop any old area's forced ambience, and try to play our non-forced ones
 			sound_to(L, sound(null, channel = GLOB.forced_ambience_sound_channel)) //inf //was: sound_to(L, sound(null, channel = GLOB.lobby_sound_channel))
 			forced_ambiance_list -= L
-	if(ambience.len && prob(5) && (world.time >= L.client.played + 3 MINUTES))
+	if(ambience.len && prob(config.ambience_probability) && (world.time >= L.client.played + config.ambience_delay))//inf, was: if(ambience.len && prob(5) && (world.time >= L.client.played + 3 MINUTES))
 		L.playsound_local(T, sound(pick(ambience), repeat = 0, wait = 0, volume = 15, channel = GLOB.ambience_sound_channel)) //inf //was: L.playsound_local(T, sound(pick(ambience), repeat = 0, wait = 0, volume = 15, channel = GLOB.lobby_sound_channel))
 		L.client.played = world.time
 //[INF]
