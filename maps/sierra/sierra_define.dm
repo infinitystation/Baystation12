@@ -10,7 +10,7 @@
 	admin_levels = list(4,5)
 	empty_levels = list(6)
 	accessible_z_levels = list("1"=1,"2"=1,"3"=1,"6"=30)
-	overmap_size = 35
+	overmap_size = 40
 	overmap_event_areas = 34
 	usable_email_tlds = list("freemail.net")
 
