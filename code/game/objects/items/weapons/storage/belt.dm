@@ -467,7 +467,11 @@
 	max_w_class = ITEM_SIZE_SMALL
 	max_storage_space = ITEM_SIZE_SMALL * 3
 	slot_flags = SLOT_BELT | SLOT_BACK
-
+//inf
+	sprite_sheets = list(
+		SPECIES_HUMAN  = 'icons/mob/onmob/infinity/onmob_belt.dmi'
+		)
+//inf
 /obj/item/weapon/storage/belt/waistpack/big
 	name = "large waist pack"
 	desc = "A bag designed to be worn on the waist. Definitely makes your butt look big."
