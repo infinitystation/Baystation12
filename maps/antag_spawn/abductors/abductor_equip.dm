@@ -6,15 +6,14 @@
 
 	var/obj/machinery/computer/abductor/camera/console
 
-/obj/item/weapon/implant/abductors/proc/teleport_target(var/mob/target, var/turf/target_pos)
+/obj/item/weapon/implant/abductors/proc/teleport_target(var/mob/target, var/turf/target_pos, var/long_tp = 1)
 	new /obj/effect/temporary(get_turf(target), 5, icon, "teleport_effect_back")
 	target.dir = 2
-	target.forceMove(target_pos)
-	new /obj/effect/temporary(target_pos, 5, icon, "teleport_effect")
+	new /obj/effect/temporary(target_pos, 75, icon, "teleport_effect")
 
-	addtimer(CALLBACK(src, .proc/teleport_effect, target), 5)
+	addtimer(CALLBACK(src, .proc/teleport_effect, target, target_pos), 5 + 70 * long_tp)
 
-/obj/item/weapon/implant/abductors/proc/teleport_effect(var/mob/target)
+/obj/item/weapon/implant/abductors/proc/teleport_effect(var/mob/target, var/turf/target_pos)
 	var/datum/effect/effect/system/spark_spread/sparks = new /datum/effect/effect/system/spark_spread()
 	sparks.set_up(5, 0, get_turf(target))
 	sparks.start()
@@ -70,7 +69,7 @@
 		if(console.console.marked)
 			var/mob/living/carbon/human/marked = console.console.marked
 			if(istype(marked))
-				addtimer(CALLBACK(src, .proc/teleport_target, marked, get_turf(locate("landmark*AbductorShip"))), 5)
+				addtimer(CALLBACK(src, .proc/teleport_target, marked, get_turf(locate("landmark*AbductorShip")), 0), 5)
 
 /obj/item/weapon/implant/abductors/proc/push_marked()
 
@@ -84,7 +83,9 @@
 
 	if(istype(mob))
 		if(console.console.marked)
-			console.console.teleport_from(get_turf(console.eye))
+			var/mob/living/carbon/human/marked = console.console.marked
+			if(istype(marked))
+				addtimer(CALLBACK(src, .proc/teleport_target, marked, get_turf(console.eye)), 5)
 
 /obj/item/weapon/implant/abductors/proc/flip_vest()
 	set name = "Change agent's vest mode"
