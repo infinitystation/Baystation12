@@ -13,6 +13,7 @@
 	var/atom/target = null
 	var/open_panel = 0
 	var/image_overlay = null
+	var/explosion_strengh = -1 //INF
 
 /obj/item/weapon/plastique/New()
 	wires = new(src)
@@ -72,7 +73,7 @@
 	if(!target)
 		target = src
 	if(location)
-		explosion(location, -1, -1, 2, 3)
+		explosion(location, explosion_strengh, explosion_strengh, 2, 3) //INF, was location, -1, -1, 2, 3
 
 	if(target)
 		if (istype(target, /turf/simulated/wall))

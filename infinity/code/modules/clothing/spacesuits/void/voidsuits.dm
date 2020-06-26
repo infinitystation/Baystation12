@@ -145,4 +145,3 @@
 /obj/item/clothing/suit/space/void/avs/New()
 	..()
 	slowdown_per_slot[slot_wear_suit] = 2.2
-
