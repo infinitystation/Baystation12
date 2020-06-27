@@ -1,6 +1,6 @@
 /mob/living/silicon/robot/flying
 	desc = "A utility robot with an anti-gravity hover unit and a lightweight frame."
-	icon = 'icons/mob/robots_flying.dmi'
+	icon = 'infinity/icons/mob/robots_flying.dmi' //INF, WAS 'icons/mob/robots_flying.dmi'
 	icon_state = "drone-standard"
 	module_category = ROBOT_MODULE_TYPE_FLYING
 	dismantle_type = /obj/item/robot_parts/robot_suit/flyer

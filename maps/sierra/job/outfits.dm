@@ -211,6 +211,12 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	shoes = /obj/item/clothing/shoes/jackboots
 	id_type = /obj/item/weapon/card/id/sierra/crew/security
 
+/decl/hierarchy/outfit/job/sierra/crew/security/assist
+	name = OUTFIT_JOB_NAME("Cadet - Sierra")
+	uniform = /obj/item/clothing/under/rank/security/cadet
+	shoes = /obj/item/clothing/shoes/jackboots
+	id_type = /obj/item/weapon/card/id/sierra/crew/security/cadet
+
 	///////////
 	//MEDICAL//
 	///////////
@@ -378,6 +384,12 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	uniform = /obj/item/clothing/under/rank/chaplain
 	id_type = /obj/item/weapon/card/id/sierra/crew/service/chaplain
 
+/decl/hierarchy/outfit/job/sierra/crew/service/actor
+	name = OUTFIT_JOB_NAME("Actor - Sierra")
+	uniform = /obj/item/clothing/under/redcoat
+	id_type = /obj/item/weapon/card/id/sierra/crew/service/actor
+	shoes = /obj/item/clothing/shoes/laceup
+
 	///////////////
 	//EXPLORATION//
 	///////////////
@@ -455,10 +467,6 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	l_ear = /obj/item/device/radio/headset/sierra_roboticist
 	id_type = /obj/item/weapon/card/id/sierra/crew/research/roboticist
 //	pda_type = /obj/item/modular_computer/pda/roboticist
-
-/decl/hierarchy/outfit/job/sierra/crew/research/scientist/psych
-	name = OUTFIT_JOB_NAME("Psychologist - Sierra")
-	uniform = /obj/item/clothing/under/rank/psych
 
 /decl/hierarchy/outfit/job/sierra/crew/research/assist
 	name = OUTFIT_JOB_NAME("Research Assistant - Sierra")

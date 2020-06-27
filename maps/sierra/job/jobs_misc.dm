@@ -4,7 +4,7 @@
 	spawn_positions = 12
 	department = "Civilian"
 	department_flag = CIV
-	supervisors = "the Head of Personnel"
+	supervisors = "Р“Р»Р°РІРѕР№ РџРµСЂСЃРѕРЅР°Р»Р°"
 	selection_color = "#515151"
 //	economic_power = 6
 	announced = FALSE
@@ -14,7 +14,6 @@
 		"Botanist",
 		"Naturalist",
 		"Ecologist",
-		"Entertainer",
 		"Sociologist",
 		"Off-Duty",
 		"Trainer"
@@ -28,25 +27,25 @@
 	)
 
 /datum/job/assistant/get_description_blurb()
-	return "Вы - Матрос... Или, по крайней мере, одна из его подпрофессий. От Вас не ждут серьезного участия в раунде. \
-	Вы можете спокойно исследовать судно и попытаться найти себе занятие, или же посидеть в баре, пока Вас не \
-	позовут помочь с чёрной работой. Проявите креативность в своих подпрофессиях - например, журналисту следует \
-	искать сенсационные события, такие как незаконный арест охраны, изобретение нового супероружия в РНД или \
-	грубое нарушение техники безопасности... А возможно, даже попроситься в экспедицию."
+	return "Р’С‹ - РњР°С‚СЂРѕСЃ... РР»Рё, РїРѕ РєСЂР°Р№РЅРµР№ РјРµСЂРµ, РѕРґРЅР° РёР· РµРіРѕ РїРѕРґРїСЂРѕС„РµСЃСЃРёР№. РћС‚ Р’Р°СЃ РЅРµ Р¶РґСѓС‚ СЃРµСЂСЊРµР·РЅРѕРіРѕ СѓС‡Р°СЃС‚РёСЏ РІ СЂР°СѓРЅРґРµ. \
+	Р’С‹ РјРѕР¶РµС‚Рµ СЃРїРѕРєРѕР№РЅРѕ РёСЃСЃР»РµРґРѕРІР°С‚СЊ СЃСѓРґРЅРѕ Рё РїРѕРїС‹С‚Р°С‚СЊСЃСЏ РЅР°Р№С‚Рё СЃРµР±Рµ Р·Р°РЅСЏС‚РёРµ, РёР»Рё Р¶Рµ РїРѕСЃРёРґРµС‚СЊ РІ Р±Р°СЂРµ, РїРѕРєР° Р’Р°СЃ РЅРµ \
+	РїРѕР·РѕРІСѓС‚ РїРѕРјРѕС‡СЊ СЃ С‡С‘СЂРЅРѕР№ СЂР°Р±РѕС‚РѕР№. РџСЂРѕСЏРІРёС‚Рµ РєСЂРµР°С‚РёРІРЅРѕСЃС‚СЊ РІ СЃРІРѕРёС… РїРѕРґРїСЂРѕС„РµСЃСЃРёСЏС… - РЅР°РїСЂРёРјРµСЂ, Р¶СѓСЂРЅР°Р»РёСЃС‚Сѓ СЃР»РµРґСѓРµС‚ \
+	РёСЃРєР°С‚СЊ СЃРµРЅСЃР°С†РёРѕРЅРЅС‹Рµ СЃРѕР±С‹С‚РёСЏ, С‚Р°РєРёРµ РєР°Рє РЅРµР·Р°РєРѕРЅРЅС‹Р№ Р°СЂРµСЃС‚ РѕС…СЂР°РЅС‹, РёР·РѕР±СЂРµС‚РµРЅРёРµ РЅРѕРІРѕРіРѕ СЃСѓРїРµСЂРѕСЂСѓР¶РёСЏ РІ Р РќР” РёР»Рё \
+	РіСЂСѓР±РѕРµ РЅР°СЂСѓС€РµРЅРёРµ С‚РµС…РЅРёРєРё Р±РµР·РѕРїР°СЃРЅРѕСЃС‚Рё... Рђ РІРѕР·РјРѕР¶РЅРѕ, РґР°Р¶Рµ РїРѕРїСЂРѕСЃРёС‚СЊСЃСЏ РІ СЌРєСЃРїРµРґРёС†РёСЋ."
 
 /datum/job/cyborg
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "your laws"
+	supervisors = "СѓСЃС‚Р°РЅРѕРІР»РµРЅРЅС‹РјРё Р’Р°Рј Р·Р°РєРѕРЅР°РјРё"
 
 /datum/job/merchant
 	title = "Merchant"
 	department = "Civilian"
-	department_flag = CIV
+	department_flag = MSC
 
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the invisible hand of the market"
+	supervisors = "РЅРµРІРёРґРёРјРѕР№ СЂСѓРєРѕР№ СЂС‹РЅРєР°"
 	selection_color = "#515151"
 	ideal_character_age = 30
 	minimal_player_age = 7
@@ -62,24 +61,26 @@
 	announced = FALSE
 	min_skill = list(	SKILL_FINANCE = SKILL_ADEPT,
 						SKILL_PILOT	  = SKILL_BASIC)
+	give_psionic_implant_on_join = FALSE
 	skill_points = 24
+	required_role = list("MegaMerchant") //temporary toogling off merchants while they won't become away map
 
 /datum/job/merchant/equip(var/mob/living/carbon/human/H)
-	to_chat(H, "Ваши свЯзи помогли вам узнать о словах, что помогут опознать местных... Особо заинтересованных покупателей:")
-	to_chat(H, "<b>Кодовые фразы</b>: <span class='danger'>[syndicate_code_phrase]</span>")
-	to_chat(H, "<b>Ответы на фразы</b>: <span class='danger'>[syndicate_code_response]</span>")
-	H.StoreMemory("<b>Code Phrase</b>: [syndicate_code_phrase]", /decl/memory_options/system)
-	H.StoreMemory("<b>Code Response</b>: [syndicate_code_response]", /decl/memory_options/system)
+	to_chat(H, "Р’Р°С€Рё СЃРІСЏР·Рё РїРѕРјРѕРіР»Рё РІР°Рј СѓР·РЅР°С‚СЊ Рѕ СЃР»РѕРІР°С…, С‡С‚Рѕ РїРѕРјРѕРіСѓС‚ РѕРїРѕР·РЅР°С‚СЊ РјРµСЃС‚РЅС‹С…... РћСЃРѕР±Рѕ Р·Р°РёРЅС‚РµСЂРµСЃРѕРІР°РЅРЅС‹С… РїРѕРєСѓРїР°С‚РµР»РµР№:")
+	to_chat(H, "<b>РљРѕРґРѕРІС‹Рµ С„СЂР°Р·С‹</b>: <span class='danger'>[syndicate_code_phrase]</span>")
+	to_chat(H, "<b>РћС‚РІРµС‚С‹ РЅР° С„СЂР°Р·С‹</b>: <span class='danger'>[syndicate_code_response]</span>")
+	H.StoreMemory("<b>РљРѕРґРѕРІС‹Рµ Р¤СЂР°Р·С‹</b>: [syndicate_code_phrase]", /decl/memory_options/system)
+	H.StoreMemory("<b>РћС‚РІРµС‚С‹ РЅР° С„СЂР°Р·С‹</b>: [syndicate_code_response]", /decl/memory_options/system)
 	return ..()
 
 /datum/job/merchant_trainee
 	title = "Merchant Assistant"
 	department = "Civilian"
-	department_flag = CIV
+	department_flag = MSC
 
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Merchant"
+	supervisors = "РўРѕСЂРіРѕРІС†РµРј"
 	selection_color = "#515151"
 	ideal_character_age = 20
 	minimal_player_age = 0
@@ -97,17 +98,17 @@
 	max_skill = list(   SKILL_COMBAT  = SKILL_MAX,
 	                    SKILL_WEAPONS = SKILL_MAX)
 	required_role = list("Merchant")
+	give_psionic_implant_on_join = FALSE
 
 	skill_points = 24
 /*
 /datum/job/stowaway
 	title = "Stowaway"
 	department = "Civilian"
-	department_flag = CIV
+	department_flag = MSC
 
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "yourself"
 	selection_color = "#515151"
 	ideal_character_age = 30
 	minimal_player_age = 7

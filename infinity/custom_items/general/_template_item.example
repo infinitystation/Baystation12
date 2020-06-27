@@ -4,7 +4,7 @@
   "item_name" :       "Joe's spear",
   "item_desc" :       "Joe's spear. It courses with basic energy.",
   "item_icon_state" : "some_custom_spear_icon_state",
-  "item_path" :       "/obj/item/real_path/to_an_item"
+  "item_path" :       "/obj/item/real_path/to_an_item",
   "req_titles" :      [ "Janitor" ],
   "req_access" :      [ "ACCESS_CAVEMAN" ]
   }

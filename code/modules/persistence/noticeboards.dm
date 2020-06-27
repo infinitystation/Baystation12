@@ -1,7 +1,7 @@
 /obj/structure/noticeboard
 	name = "notice board"
 	desc = "A board for pinning important notices upon."
-	icon = 'infinity/icons/obj/objects.dmi'
+	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "nboard00"
 	density = 0
 	anchored = 1

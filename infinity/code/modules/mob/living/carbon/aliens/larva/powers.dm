@@ -2,10 +2,10 @@
 	if(!src)
 		return 0
 	if(!istype(loc, /turf))
-		to_chat(src, SPAN_DANGER("You cannot infest a target in your current position."))
+		to_chat(src, SPAN_DANGER("Вы не можете заразить цель в текущем положении."))
 		return 0
 	if(incapacitated())
-		to_chat(src, SPAN_DANGER("You cannot infest a target in your current state."))
+		to_chat(src, SPAN_DANGER("Вы не можете заразить цель в текущем положении."))
 		return 0
 	if(!M)
 		return 1
@@ -13,7 +13,7 @@
 //		to_chat(src, SPAN_DANGER("\The [M] is not prone."))
 //		return 0
 	if(!(src.Adjacent(M)))
-		to_chat(src, SPAN_DANGER("\The [M] is not in range."))
+		to_chat(src, SPAN_DANGER("[M] вне вашей зоны поражения."))
 		return 0
 	return 1
 
@@ -33,7 +33,7 @@
 			choices += H
 
 	if(!choices.len)
-		to_chat(src, SPAN_ALIEN("There are no viable hosts within range."))
+		to_chat(src, SPAN_ALIEN("Вблизи нет подходящих носителей."))
 		return
 
 	var/mob/living/carbon/human/H = input(src,"Who do you wish to infest?") as null|anything in choices
@@ -61,20 +61,20 @@
 	set desc = "Release your host."
 
 	if(incapacitated())
-		to_chat(src, SPAN_ALIEN("You cannot leave your host in your current state."))
+		to_chat(src, SPAN_ALIEN("Вы не можете покинуть хоста в текущем положении."))
 		return
 
 	if(!loc || !loc.loc)
-		to_chat(src, SPAN_ALIEN("You are not inside a host."))
+		to_chat(src, SPAN_ALIEN("Вы сейчас не находитесь в ком-либо."))
 		return
 
 	var/mob/living/carbon/human/H = loc.loc
 
 	if(!istype(H))
-		to_chat(src, SPAN_ALIEN("You are not inside a host."))
+		to_chat(src, SPAN_ALIEN("Вы сейчас не находитесь в ком-либо."))
 		return
 
-	to_chat(src, SPAN_ALIEN("You begin writhing your way free of \the [H]'s flesh..."))
+	to_chat(src, SPAN_ALIEN("Вы начинаете пробуривать себе путь наружу внутри плоти [H]..."))
 
 	if(!do_after(src, 30, H))
 		return
@@ -86,11 +86,11 @@
 
 /mob/living/carbon/alien/larva/proc/leave_host()
 	if(!loc || !loc.loc)
-		to_chat(src, SPAN_ALIEN("You are not inside a host."))
+		to_chat(src, SPAN_ALIEN("Вы сейчас не находитесь в ком-либо."))
 		return
 	var/mob/living/carbon/human/H = loc.loc
 	if(!istype(H))
-		to_chat(src, SPAN_ALIEN("You are not inside a host."))
+		to_chat(src, SPAN_ALIEN("Вы сейчас не находитесь в ком-либо."))
 		return
 	var/obj/item/weapon/holder/holder = loc
 	var/obj/item/organ/external/affected

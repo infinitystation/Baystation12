@@ -111,7 +111,7 @@
 		window_size = "size=[width]x[height];"
 
 	var/debugable = check_rights(R_DEBUG, 0, user)
-	user << browse(get_html(debugable), "window=[window_id];[window_size][list2params(window_options)]") // Open the window.
+	show_browser(user, get_html(debugable), "window=[window_id];[window_size][list2params(window_options)]") // Open the window.
 	if (!custom_browser_id)
 		spawn(2)
 			winset(user, window_id, "on-close=\"uiclose \ref[src]\"") // Instruct the client to signal UI when the window is closed.
@@ -139,7 +139,7 @@
   * Close the UI, and all its children.
  **/
 /datum/tgui/proc/close()
-	user << browse(null, "window=[window_id]") // Close the window.
+	close_browser(user, "window=[window_id]") // Close the window.
 	SStgui.on_close(src)
 	for(var/datum/tgui/child in children) // Loop through and close all children.
 		child.close()
@@ -267,7 +267,6 @@
 	// Generate the JSON.
 	var/json = json_encode(json_data)
 	// Strip #255/improper.
-	json = extA2U(json)
 	json = replacetext(json, "\proper", "")
 	json = replacetext(json, "\improper", "")
 

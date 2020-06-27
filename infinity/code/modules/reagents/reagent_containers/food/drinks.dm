@@ -1,7 +1,7 @@
 /obj/item/weapon/reagent_containers/food/drinks
 	var/open_sound = 'sound/effects/canopen.ogg'
 
-//Ìåõàíèêà ïèòüÿ çàëïîì
+//ГЊГҐГµГ Г­ГЁГЄГ  ГЇГЁГІГјГї Г§Г Г«ГЇГ®Г¬
 /obj/item/weapon/reagent_containers/food/drinks/Initialize()
 	. = ..()
 	if(is_open_container())

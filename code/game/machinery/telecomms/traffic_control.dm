@@ -54,7 +54,7 @@
 
 			for(var/mob/M in viewingcode)
 
-				if( (M.machine == src && M in view(1, src) ) || issilicon(M))
+				if( (M.machine == src && (M in view(1, src)) ) || issilicon(M))
 					winset(M, "tcscode", "is-disabled=true")
 					winset(M, "tcscode", "text=\"[showcode]\"")
 				else
@@ -68,11 +68,14 @@
 		viewingcode.Remove(editingcode)
 		update_ide()
 
-
-/obj/machinery/computer/telecomms/traffic/attack_ai(mob/user as mob)
-	attack_hand(user)
-
 /obj/machinery/computer/telecomms/traffic/attack_hand(mob/user as mob)
+	. = ..()
+	interact(user)
+/obj/machinery/computer/telecomms/traffic/attack_ai(mob/user as mob)
+	. = ..()
+	interact(user)
+
+/obj/machinery/computer/telecomms/traffic/interact(mob/user as mob)
 	if(stat & (BROKEN|NOPOWER))
 		return
 	user.set_machine(src)
@@ -112,7 +115,7 @@
 				dat += "<a href='?src=\ref[src];operation=togglerun'>NEVER</a>"
 
 
-	user << browse(dat, "window=traffic_control;size=575x400")
+	show_browser(user, dat, "window=traffic_control;size=575x400")
 	onclose(user, "server_control")
 
 	temp = ""
@@ -168,7 +171,7 @@
 				if(!editingcode)
 					lasteditor = usr
 					editingcode = usr
-					winshow(editingcode, "Telecomms IDE", 1) // show the IDE
+					winshow(editingcode, "TelecommsIDE") // show the IDE
 					winset(editingcode, "tcscode", "is-disabled=false")
 					winset(editingcode, "tcscode", "text=\"\"")
 					var/showcode = replacetext(storedcode, "\\\"", "\\\\\"")
@@ -179,7 +182,7 @@
 
 				else
 					viewingcode.Add(usr)
-					winshow(usr, "Telecomms IDE", 1) // show the IDE
+					winshow(usr, "TelecommsIDE") // show the IDE
 					winset(usr, "tcscode", "is-disabled=true")
 					winset(editingcode, "tcscode", "text=\"\"")
 					var/showcode = replacetext(storedcode, "\"", "\\\"")
@@ -189,7 +192,6 @@
 				SelectedServer.autoruncode = !(SelectedServer.autoruncode)
 
 	if(href_list["network"])
-
 		var/newnet = input(usr, "Which network do you want to view?", "Comm Monitor", network) as null|text
 
 		if(newnet && ((usr in range(1, src) || issilicon(usr))))
@@ -204,7 +206,6 @@
 				temp = "<font color = #336699>- NEW NETWORK TAG SET IN ADDRESS \[[network]\] -</font>"
 
 	updateUsrDialog()
-	return
 
 /*/obj/machinery/computer/telecomms/traffic/attackby(var/obj/item/weapon/D as obj, var/mob/user as mob)
 	if(isScrewdriver(D))

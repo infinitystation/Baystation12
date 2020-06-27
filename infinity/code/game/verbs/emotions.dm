@@ -6,215 +6,215 @@
 		emoteLastUse = world.time
 		return 1
 	else
-		to_chat(src, "<span class='warning'>Между эмоци&#255;ми должно пройти не менее [emoteCooldown / 10] секунд.</span>")
+		to_chat(src, "<span class='warning'>РњРµР¶РґСѓ СЌРјРѕС†РёСЏРјРё РґРѕР»Р¶РЅРѕ РїСЂРѕР№С‚Рё РЅРµ РјРµРЅРµРµ [emoteCooldown / 10] СЃРµРєСѓРЅРґ.</span>")
 		return 0
 
 /mob/living/verb/laugh()
-	set name = "Смеяться"
+	set name = "РЎРјРµСЏС‚СЊСЃСЏ"
 	set category = "Emote"
 	emote("laugh")
 
 /mob/living/verb/giggle()
-	set name = "Хихикать"
+	set name = "РҐРёС…РёРєР°С‚СЊ"
 	set category = "Emote"
 	emote("giggle")
 
 /mob/living/verb/scream()
-	set name = "Кричать"
+	set name = "РљСЂРёС‡Р°С‚СЊ"
 	set category = "Emote"
 	emote("scream")
 
 /mob/living/verb/scratch()
-	set name = "Почесаться"
+	set name = "РџРѕС‡РµСЃР°С‚СЊСЃСЏ"
 	set category = "Emote"
 	emote("scratch")
 
 /mob/living/verb/blush()
-	set name = "Краснеть"
+	set name = "РљСЂР°СЃРЅРµС‚СЊ"
 	set category = "Emote"
 	emote("blush")
 
 /mob/living/verb/blink()
-	set name = "Проморгаться"
+	set name = "РџСЂРѕРјРѕСЂРіР°С‚СЊСЃСЏ"
 	set category = "Emote"
 	emote("blink")
 
 /mob/living/verb/bow()
-	set name = "Поклониться"
+	set name = "РџРѕРєР»РѕРЅРёС‚СЊСЃСЏ"
 	set category = "Emote"
 	emote("bow")
 
 /mob/living/verb/choke()
-	set name = "Подавиться"
+	set name = "РџРѕРґР°РІРёС‚СЊСЃСЏ"
 	set category = "Emote"
 	emote("choke")
 
 /mob/living/verb/chuckle()
-	set name = "Усмехнуться"
+	set name = "РЈСЃРјРµС…РЅСѓС‚СЊСЃСЏ"
 	set category = "Emote"
 	emote("chuckle")
 
 /mob/living/verb/collapse()
-	set name = "Рухнуть"
+	set name = "Р СѓС…РЅСѓС‚СЊ"
 	set category = "Emote"
 	emote("collapse")
 
 /mob/living/verb/cough()
-	set name = "Кашлять"
+	set name = "РљР°С€Р»СЏС‚СЊ"
 	set category = "Emote"
 	emote("cough")
 
 /mob/living/verb/cry()
-	set name = "Плакать"
+	set name = "РџР»Р°РєР°С‚СЊ"
 	set category = "Emote"
 	emote("cry")
 
 /mob/living/verb/clap()
-	set name = "Хлопать"
+	set name = "РҐР»РѕРїР°С‚СЊ"
 	set category = "Emote"
 	emote("clap")
 
 /mob/living/verb/drool()
-	set name = "Нести чепуху"
+	set name = "РќРµСЃС‚Рё С‡РµРїСѓС…Сѓ"
 	set category = "Emote"
 	emote("drool")
 
 /mob/living/verb/faint()
-	set name = "Потерять сознание"
+	set name = "РџРѕС‚РµСЂСЏС‚СЊ СЃРѕР·РЅР°РЅРёРµ"
 	set category = "Emote"
 	emote("faint")
 
 /mob/living/verb/frown()
-	set name = "Хмуриться"
+	set name = "РҐРјСѓСЂРёС‚СЊСЃСЏ"
 	set category = "Emote"
 	emote("frown")
 
 /mob/living/verb/gasp()
-	set name = "Задыхаться"
+	set name = "Р—Р°РґС‹С…Р°С‚СЊСЃСЏ"
 	set category = "Emote"
 	emote("gasp")
 
 /mob/living/verb/glare()
-	set name = "Смотреть с ненавистью"
+	set name = "РЎРјРѕС‚СЂРµС‚СЊ СЃ РЅРµРЅР°РІРёСЃС‚СЊСЋ"
 	set category = "Emote"
 	emote("glare")
 
 /mob/living/verb/groan()
-	set name = "Болезненный стон"
+	set name = "Р‘РѕР»РµР·РЅРµРЅРЅС‹Р№ СЃС‚РѕРЅ"
 	set category = "Emote"
 	emote("groan")
 
 /mob/living/verb/grin()
-	set name = "Оскалиться в улыбке"
+	set name = "РћСЃРєР°Р»РёС‚СЊСЃСЏ РІ СѓР»С‹Р±РєРµ"
 	set category = "Emote"
 	emote("grin")
 
 /mob/living/verb/look()
-	set name = "Посмотреть"
+	set name = "РџРѕСЃРјРѕС‚СЂРµС‚СЊ"
 	set category = "Emote"
 	emote("look")
 
 /mob/living/verb/nod()
-	set name = "Кивнуть"
+	set name = "РљРёРІРЅСѓС‚СЊ"
 	set category = "Emote"
 	emote("nod")
 
 /mob/living/verb/moan()
-	set name = "Стонать"
+	set name = "РЎС‚РѕРЅР°С‚СЊ"
 	set category = "Emote"
 	emote("moan")
 
 /mob/living/verb/shake()
-	set name = "Трясти головой"
+	set name = "РўСЂСЏСЃС‚Рё РіРѕР»РѕРІРѕР№"
 	set category = "Emote"
 	emote("shake")
 
 /mob/living/verb/sigh()
-	set name = "Вздыхать"
+	set name = "Р’Р·РґС‹С…Р°С‚СЊ"
 	set category = "Emote"
 	emote("sigh")
 
 /mob/living/verb/smile()
-	set name = "Улыбнуться"
+	set name = "РЈР»С‹Р±РЅСѓС‚СЊСЃСЏ"
 	set category = "Emote"
 	emote("smile")
 
 /mob/living/verb/sneeze()
-	set name = "Чихнуть"
+	set name = "Р§РёС…РЅСѓС‚СЊ"
 	set category = "Emote"
 	emote("sneeze")
 
 /mob/living/verb/grunt()
-	set name = "Ворчать"
+	set name = "Р’РѕСЂС‡Р°С‚СЊ"
 	set category = "Emote"
 	emote("grunt")
 
 /mob/living/verb/sniff()
-	set name = "Понюхать"
+	set name = "РџРѕРЅСЋС…Р°С‚СЊ"
 	set category = "Emote"
 	emote("sniff")
 
 /mob/living/verb/snore()
-	set name = "Храпеть"
+	set name = "РҐСЂР°РїРµС‚СЊ"
 	set category = "Emote"
 	emote("snore")
 
 /mob/living/verb/shrug()
-	set name = "Пожать плечами"
+	set name = "РџРѕР¶Р°С‚СЊ РїР»РµС‡Р°РјРё"
 	set category = "Emote"
 	emote("shrug")
 
 /mob/living/verb/stare()
-	set name = "Пялиться"
+	set name = "РџСЏР»РёС‚СЊСЃСЏ"
 	set category = "Emote"
 	emote("stare")
 
 /mob/living/verb/tremble()
-	set name = "Дрожать в ужасе"
+	set name = "Р”СЂРѕР¶Р°С‚СЊ РІ СѓР¶Р°СЃРµ"
 	set category = "Emote"
 	emote("tremble")
 
 /mob/living/verb/twitch_v()
-	set name = "Сильно дёргаться"
+	set name = "РЎРёР»СЊРЅРѕ РґС‘СЂРіР°С‚СЊСЃСЏ"
 	set category = "Emote"
 	emote("twitch_v")
 
 /mob/living/verb/twitch()
-	set name = "Дёргаться"
+	set name = "Р”С‘СЂРіР°С‚СЊСЃСЏ"
 	set category = "Emote"
 	emote("twitch")
 
 /mob/living/verb/wave()
-	set name = "Махать"
+	set name = "РњР°С…Р°С‚СЊ"
 	set category = "Emote"
 	emote("wave")
 
 /mob/living/verb/whimper()
-	set name = "Хныкать"
+	set name = "РҐРЅС‹РєР°С‚СЊ"
 	set category = "Emote"
 	emote("whimper")
 
 /mob/living/verb/whistle()
-	set name = "Свистеть"
+	set name = "РЎРІРёСЃС‚РµС‚СЊ"
 	set category = "Emote"
 	emote("whistle")
 
 /mob/living/verb/wink()
-	set name = "Подмигнуть"
+	set name = "РџРѕРґРјРёРіРЅСѓС‚СЊ"
 	set category = "Emote"
 	emote("wink")
 
 /mob/living/verb/yawn()
-	set name = "Зевать"
+	set name = "Р—РµРІР°С‚СЊ"
 	set category = "Emote"
 	emote("yawn")
 
 /mob/living/verb/salute()
-	set name = "Сделать воинское приветствие"
+	set name = "РЎРґРµР»Р°С‚СЊ РІРѕРёРЅСЃРєРѕРµ РїСЂРёРІРµС‚СЃС‚РІРёРµ"
 	set category = "Emote"
 	emote("salute")
 
 /mob/living/verb/eyebrow()
-	set name = "Приподнять бровь"
+	set name = "РџСЂРёРїРѕРґРЅСЏС‚СЊ Р±СЂРѕРІСЊ"
 	set category = "Emote"
 	emote("eyebrow")

@@ -5,7 +5,7 @@
 /obj/machinery/telecomms/allinone/away_scg_patrol
 	listening_freqs = list(ERT_FREQ)
 	channel_color = COMMS_COLOR_CENTCOMM
-	channel_name = "Rescue"
+	channel_name = "SCG Patrol"
 	circuitboard = /obj/item/weapon/stock_parts/circuitboard/telecomms/allinone/away_scg_patrol
 
 /obj/item/weapon/stock_parts/circuitboard/telecomms/allinone/away_scg_patrol

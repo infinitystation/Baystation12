@@ -221,8 +221,6 @@
 			return 1
 	return 0
 
-	. = ..()
-
 /obj/structure/hygiene/urinal
 	name = "urinal"
 	desc = "The HU-452, an experimental urinal."
@@ -430,8 +428,10 @@
 		var/mob/living/carbon/human/H = user
 		var/obj/item/organ/external/temp = H.organs_by_name[BP_R_HAND]
 		var/target_zone = H.zone_sel.selecting
-		if((target_zone == BP_HEAD) && (H.organs_by_name[BP_HEAD]) && (H.organs_by_name[BP_HEAD].forehead_graffiti))
-			graffiti = 1
+		if((target_zone == BP_HEAD) && (H.organs_by_name[BP_HEAD]))
+			var/obj/item/organ/external/head/HD = H.organs_by_name[BP_HEAD]
+			if(HD.forehead_graffiti)
+				graffiti = 1
 		if (user.hand)
 			temp = H.organs_by_name[BP_L_HAND]
 		if(temp && !temp.is_usable())

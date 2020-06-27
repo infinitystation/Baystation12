@@ -93,5 +93,3 @@
 
 /obj/effect/paint/expeditionary
 	color = "#68099e"
-
-#undef WEBHOOK_SUBMAP_LOADED_SKRELL

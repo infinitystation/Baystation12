@@ -9,10 +9,9 @@
 
 	if(GAME_STATE > RUNLEVEL_LOBBY)
 		for(var/mob/new_player/player in GLOB.player_list)
-			if(!player?.client.banprisoned)
-				player.new_player_panel()
+			player.new_player_panel()
 
-	to_world("<B>Игроки [config.observers_allowed ? "отныне могут" : "больше не могут"] заходить за призраков из лобби.</b>")
+	to_world("<B>РРіСЂРѕРєРё [config.observers_allowed ? "РѕС‚РЅС‹РЅРµ РјРѕРіСѓС‚" : "Р±РѕР»СЊС€Рµ РЅРµ РјРѕРіСѓС‚"] Р·Р°С…РѕРґРёС‚СЊ Р·Р° РїСЂРёР·СЂР°РєРѕРІ РёР· Р»РѕР±Р±Рё.</b>")
 	log_and_message_admins("toggled observers game entering [config.observers_allowed ? "" : "dis"]allowed.")
 	SSstatistics.add_field_details("admin_verb","TOB") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -37,8 +36,8 @@
 	var/newtime = input("Set a new time. Its must be in MINUTES (not in seconds/byond tick). Set 0 to remove delay.", "Set Delay", oldtime) as num|null
 	if(!newtime || newtime == oldtime) return
 
-	var/message = newtime <= 0 ? "отключил(а) задержку дл&#255; наблюдателей" : "изменил(а) задержку дл&#255; наблюдателей с [oldtime] на [newtime] минут(ы)"
-	log_and_message_admins("Администратор [key_name_admin(usr)] [message].")
+	var/message = newtime <= 0 ? "РѕС‚РєР»СЋС‡РёР»(Р°) Р·Р°РґРµСЂР¶РєСѓ РґР»СЏ РЅР°Р±Р»СЋРґР°С‚РµР»РµР№" : "РёР·РјРµРЅРёР»(Р°) Р·Р°РґРµСЂР¶РєСѓ РґР»СЏ РЅР°Р±Р»СЋРґР°С‚РµР»РµР№ СЃ [oldtime] РЅР° [newtime] РјРёРЅСѓС‚(С‹)"
+	log_and_message_admins("РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ [key_name_admin(usr)] [message].")
 
 	config.observe_delay = newtime
 	SSstatistics.add_field_details("admin_verb","CROD") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -158,13 +157,13 @@
 
 	var/list/dat = list("<div align='center'><h1>Music Player Control Panel</h1><br>")
 
-	dat += "<b>Current musuc players in world ([GLOB.mp_list.len]):</b></div><br>"
+	dat += "<b>Current musuc players in world ([GLOB.music_players.len]):</b></div><br>"
 	dat += "<hr>"
 
-	if(GLOB.mp_list.len == 0)
+	if(GLOB.music_players.len == 0)
 		dat += "<div class='statusDisplay'><center>At the moment there are no devices in this world session.</center></div>"
 	else
-		for(var/a in GLOB.mp_list)
+		for(var/a in GLOB.music_players)
 			var/obj/item/music_player/p = a
 			dat += "<div class='statusDisplay'>"
 			dat += "Music Player #[p.serial_number] : <a href='?_src_=holder;mp_play=\ref[p]'>[p.mode ? "<font color=cc5555>Stop</font>" : "<font color=55cc55>Play</font>"]</a> | "
@@ -188,14 +187,22 @@
 	config.event_status = !(config.event_status)
 
 	if(config.event_status)
-		to_world("<B>Включено отображение статуса проведени&#255; ивента.</B>")
-		send2maindiscord("На сервере активировано отображение статуса ивента.")
-		send2mainirc("<@&631358488660017162> На сервере активировано отображение статуса ивента!")
+		to_world("<B>Р’РєР»СЋС‡РµРЅРѕ РѕС‚РѕР±СЂР°Р¶РµРЅРёРµ СЃС‚Р°С‚СѓСЃР° РїСЂРѕРІРµРґРµРЅРёСЏ РёРІРµРЅС‚Р°.</B>")
+		send2maindiscord("РќР° СЃРµСЂРІРµСЂРµ Р°РєС‚РёРІРёСЂРѕРІР°РЅРѕ РѕС‚РѕР±СЂР°Р¶РµРЅРёРµ СЃС‚Р°С‚СѓСЃР° РёРІРµРЅС‚Р°.")
+		send2mainirc("<@&631358488660017162> РќР° СЃРµСЂРІРµСЂРµ Р°РєС‚РёРІРёСЂРѕРІР°РЅРѕ РѕС‚РѕР±СЂР°Р¶РµРЅРёРµ СЃС‚Р°С‚СѓСЃР° РёРІРµРЅС‚Р°!")
 	else
-		to_world("<B>Отображение статуса проведени&#255; ивента отключено. Кина не будет :(</B>")
-		send2maindiscord("Ивент отменён.")
-		send2mainirc("Ивент отменён :(")
+		to_world("<B>РћС‚РѕР±СЂР°Р¶РµРЅРёРµ СЃС‚Р°С‚СѓСЃР° РїСЂРѕРІРµРґРµРЅРёСЏ РёРІРµРЅС‚Р° РѕС‚РєР»СЋС‡РµРЅРѕ. РљРёРЅР° РЅРµ Р±СѓРґРµС‚ :(</B>")
+		send2maindiscord("РРІРµРЅС‚ РѕС‚РјРµРЅС‘РЅ.")
+		send2mainirc("РРІРµРЅС‚ РѕС‚РјРµРЅС‘РЅ :(")
 
 	log_and_message_admins("[key_name_admin(usr)] toggled event status.")
 	world.update_status()
 //	SSstatistics.add_field_details("admin_verb","TES") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+/proc/only_xenos(var/client/C)
+	if(!C)
+		return
+	if(!istype(C))
+		C = C.get_client()
+	if(C.holder && (C.holder.rights == R_XENO))
+		return TRUE

@@ -5,21 +5,21 @@
 /datum/computer_file/report/recipient/fauna
 	logo = "\[logo\]"
 	form_name = "NT-EXP-19f"
-	title = "Доклад об инопланетной фауне"
+	title = "Р”РѕРєР»Р°Рґ РѕР± РёРЅРѕРїР»Р°РЅРµС‚РЅРѕР№ С„Р°СѓРЅРµ"
 
 /datum/computer_file/report/recipient/fauna/generate_fields()
 	..()
-	add_field(/datum/report_field/text_label/header, "Экспедиционный департамент ИСН Сьерра")
-	add_field(/datum/report_field/text_label/instruction, "Следующа&#255; форма должна быть заполнена членами экспедиционной команды после открыти&#255; и изучени&#255; новой формы инопланетной жизни.")
-	add_field(/datum/report_field/date, "Дата")
-	add_field(/datum/report_field/people/list_from_manifest, "Вовлеченный персонал")
-	add_field(/datum/report_field/pencode_text, "Анатоми&#255;/внешность")
-	add_field(/datum/report_field/pencode_text, "Способ передвижени&#255;")
-	add_field(/datum/report_field/pencode_text, "Рацион")
-	add_field(/datum/report_field/pencode_text, "Ареал")
-	add_field(/datum/report_field/simple_text, "Планета происхождени&#255;")
-	add_field(/datum/report_field/pencode_text, "Поведение")
-	add_field(/datum/report_field/pencode_text, "Привычки нападени&#255;/обороны")
-	add_field(/datum/report_field/pencode_text, "Особые характеристики")
-	add_field(/datum/report_field/pencode_text, "Классификаци&#255;")
-	add_field(/datum/report_field/text_label/instruction, "По заполнению и одобрению данной формы, Директор Исследований должен отправить ее по факсу и Агенту Внутренних Дел, и Капитану, а также сохранить копию в своем офисе наравне с другими докладами об экспедици&#255;х.")
+	add_field(/datum/report_field/text_label/header, "Р­РєСЃРїРµРґРёС†РёРѕРЅРЅС‹Р№ РґРµРїР°СЂС‚Р°РјРµРЅС‚ РРЎРќ РЎСЊРµСЂСЂР°")
+	add_field(/datum/report_field/text_label/instruction, "РЎР»РµРґСѓСЋС‰Р°СЏ С„РѕСЂРјР° РґРѕР»Р¶РЅР° Р±С‹С‚СЊ Р·Р°РїРѕР»РЅРµРЅР° С‡Р»РµРЅР°РјРё СЌРєСЃРїРµРґРёС†РёРѕРЅРЅРѕР№ РєРѕРјР°РЅРґС‹ РїРѕСЃР»Рµ РѕС‚РєСЂС‹С‚РёСЏ Рё РёР·СѓС‡РµРЅРёСЏ РЅРѕРІРѕР№ С„РѕСЂРјС‹ РёРЅРѕРїР»Р°РЅРµС‚РЅРѕР№ Р¶РёР·РЅРё.")
+	add_field(/datum/report_field/date, "Р”Р°С‚Р°")
+	add_field(/datum/report_field/people/list_from_manifest, "Р’РѕРІР»РµС‡РµРЅРЅС‹Р№ РїРµСЂСЃРѕРЅР°Р»")
+	add_field(/datum/report_field/pencode_text, "РђРЅР°С‚РѕРјРёСЏ/РІРЅРµС€РЅРѕСЃС‚СЊ")
+	add_field(/datum/report_field/pencode_text, "РЎРїРѕСЃРѕР± РїРµСЂРµРґРІРёР¶РµРЅРёСЏ")
+	add_field(/datum/report_field/pencode_text, "Р Р°С†РёРѕРЅ")
+	add_field(/datum/report_field/pencode_text, "РђСЂРµР°Р»")
+	add_field(/datum/report_field/simple_text, "РџР»Р°РЅРµС‚Р° РїСЂРѕРёСЃС…РѕР¶РґРµРЅРёСЏ")
+	add_field(/datum/report_field/pencode_text, "РџРѕРІРµРґРµРЅРёРµ")
+	add_field(/datum/report_field/pencode_text, "РџСЂРёРІС‹С‡РєРё РЅР°РїР°РґРµРЅРёСЏ/РѕР±РѕСЂРѕРЅС‹")
+	add_field(/datum/report_field/pencode_text, "РћСЃРѕР±С‹Рµ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё")
+	add_field(/datum/report_field/pencode_text, "РљР»Р°СЃСЃРёС„РёРєР°С†РёСЏ")
+	add_field(/datum/report_field/text_label/instruction, "РџРѕ Р·Р°РїРѕР»РЅРµРЅРёСЋ Рё РѕРґРѕР±СЂРµРЅРёСЋ РґР°РЅРЅРѕР№ С„РѕСЂРјС‹, Р”РёСЂРµРєС‚РѕСЂ РСЃСЃР»РµРґРѕРІР°РЅРёР№ РґРѕР»Р¶РµРЅ РѕС‚РїСЂР°РІРёС‚СЊ РµРµ РїРѕ С„Р°РєСЃСѓ Рё РђРіРµРЅС‚Сѓ Р’РЅСѓС‚СЂРµРЅРЅРёС… Р”РµР», Рё РљР°РїРёС‚Р°РЅСѓ, Р° С‚Р°РєР¶Рµ СЃРѕС…СЂР°РЅРёС‚СЊ РєРѕРїРёСЋ РІ СЃРІРѕРµРј РѕС„РёСЃРµ РЅР°СЂР°РІРЅРµ СЃ РґСЂСѓРіРёРјРё РґРѕРєР»Р°РґР°РјРё РѕР± СЌРєСЃРїРµРґРёС†РёСЏС….")

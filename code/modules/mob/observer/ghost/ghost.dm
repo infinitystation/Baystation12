@@ -162,15 +162,13 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set name = "Ghost"
 	set desc = "Relinquish your life and enter the land of the dead."
 
-	if(client && client.banprisoned) return
-
 	if(stat == DEAD)
 		announce_ghost_joinleave(ghostize(1))
 	else
 		if(!check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
 			if((world.time - round_start_time < (config.observe_delay MINUTES)))
-				to_chat(src, SPAN_WARNING("Èçâèíèòå, âàì ñëåäóåò ïîäîæäàòü [config.observe_delay] ìèíóò ñî ñòàðòà ðàóíäà ÷òîáû ïåðåéòè â ðåæèì íàáëþäàòåë&#255;."))
-				to_chat(src, SPAN_NOTICE("Ïðîâåðüòå òàéìåð \"Round Duration\" âî âêëàäêå Status ÷òîáû óçíàòü ñêîëüêî âðåìåíè ïðîøëî."))
+				to_chat(src, SPAN_WARNING("Ð˜Ð·Ð²Ð¸Ð½Ð¸Ñ‚Ðµ, Ð²Ð°Ð¼ ÑÐ»ÐµÐ´ÑƒÐµÑ‚ Ð¿Ð¾Ð´Ð¾Ð¶Ð´Ð°Ñ‚ÑŒ [config.observe_delay] Ð¼Ð¸Ð½ÑƒÑ‚ ÑÐ¾ ÑÑ‚Ð°Ñ€Ñ‚Ð° Ñ€Ð°ÑƒÐ½Ð´Ð° Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð¿ÐµÑ€ÐµÐ¹Ñ‚Ð¸ Ð² Ñ€ÐµÐ¶Ð¸Ð¼ Ð½Ð°Ð±Ð»ÑŽÐ´Ð°Ñ‚ÐµÐ»Ñ."))
+				to_chat(src, SPAN_NOTICE("ÐŸÑ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ñ‚Ð°Ð¹Ð¼ÐµÑ€ \"Round Duration\" Ð²Ð¾ Ð²ÐºÐ»Ð°Ð´ÐºÐµ Status Ñ‡Ñ‚Ð¾Ð±Ñ‹ ÑƒÐ·Ð½Ð°Ñ‚ÑŒ ÑÐºÐ¾Ð»ÑŒÐºÐ¾ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸ Ð¿Ñ€Ð¾ÑˆÐ»Ð¾."))
 				return
 
 		var/response
@@ -207,8 +205,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set category = "Ghost"
 	set name = "Re-enter Corpse"
 	if(!client)	return
-	if(client && client.banprisoned)
-		return
 	if(!(mind && mind.current && can_reenter_corpse))
 		to_chat(src, "<span class='warning'>You have no body.</span>")
 		return
@@ -219,6 +215,10 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	mind.current.key = key
 	mind.current.teleop = null
 	mind.current.reload_fullscreen()
+//[INF]
+	spawn(1 SECOND)
+		mind.current.ability_master.open_ability_master() //fix for hud icons
+//[/INF]
 	if(!admin_ghosted)
 		announce_ghost_joinleave(mind, 0, "They now occupy their body again.")
 	return 1
@@ -228,8 +228,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set name = "Toggle MedicHUD"
 	set desc = "Toggles Medical HUD allowing you to see how everyone is doing"
 	if(!client)
-		return
-	if(client && client.banprisoned)
 		return
 	if(medHUD)
 		medHUD = 0
@@ -245,10 +243,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 	if(!client)
 		return
-	if(client && client.banprisoned)
-		return
-	var/mentor = is_mentor(usr.client)
-	if(!config.antag_hud_allowed && (!client.holder || mentor))
+	if(!config.antag_hud_allowed && !client.holder)
 		to_chat(src, SPAN_WARNING("Admins have disabled this for this round"))
 		return
 	var/mob/observer/ghost/M = src
@@ -272,9 +267,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set category = "Ghost"
 	set name = "Teleport"
 	set desc= "Teleport to a location"
-
-	if(client && client.banprisoned)
-		return
 
 	var/area/thearea = area_repository.get_areas_by_z_level()[A]
 	if(!thearea)
@@ -302,8 +294,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set category = "Ghost"
 	set name = "Follow"
 	set desc = "Follow and haunt a mob."
-	if(client && client.banprisoned)
-		return
 
 	if(!fh.show_entry()) return
 	ManualFollow(fh.followed_instance)
@@ -360,8 +350,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/observer/ghost/verb/analyze_air()
 	set name = "Analyze Air"
 	set category = "Ghost"
-	if(client && client.banprisoned)
-		return
 
 	var/turf/t = get_turf(src)
 	if(t)
@@ -415,8 +403,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/observer/ghost/verb/become_mouse()
 	set name = "Become mouse"
 	set category = "Ghost"
-	if(client && client.banprisoned)
-		return
 
 	if(config.disable_player_mice)
 		to_chat(src, "<span class='warning'>Spawning as a mouse is currently disabled.</span>")
@@ -456,14 +442,12 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/observer/ghost/verb/view_manfiest()
 	set name = "Show Crew Manifest"
 	set category = "Ghost"
-	if(client && client.banprisoned)
-		return
 
 	var/dat
 	dat += "<h4>Crew Manifest</h4>"
 	dat += html_crew_manifest()
 
-	src << browse(dat, "window=manifest;size=370x420;can_close=1")
+	show_browser(src, dat, "window=manifest;size=370x420;can_close=1")
 
 //This is called when a ghost is drag clicked to something.
 /mob/observer/ghost/MouseDrop(atom/over)
@@ -510,8 +494,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set category = "Ghost"
 	set name = "Toggle Anonymous Chat"
 	set desc = "Toggles showing your key in dead chat."
-	if(client && client.banprisoned)
-		return
 
 	if(client.get_preference_value(/datum/client_preference/anon_say) == GLOB.PREF_NO)
 		client.set_preference(/datum/client_preference/anon_say, GLOB.PREF_YES)
@@ -533,8 +515,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set name = "Toggle Ghost Vision"
 	set desc = "Toggles your ability to see things only ghosts can see, like other ghosts"
 	set category = "Ghost"
-	if(client && client.banprisoned)
-		return
 	ghostvision = !(ghostvision)
 	updateghostsight()
 	to_chat(src, "You [(ghostvision?"now":"no longer")] have ghost vision.")
@@ -542,8 +522,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/observer/ghost/verb/toggle_darkness()
 	set name = "Toggle Darkness"
 	set category = "Ghost"
-	if(client && client.banprisoned)
-		return
 	seedarkness = !(seedarkness)
 	updateghostsight()
 	to_chat(src, "You [(seedarkness?"now":"no longer")] see darkness.")

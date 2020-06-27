@@ -4,50 +4,51 @@
 	minor_announcement = new(new_sound = sound('sound/AI/torch/commandreport.ogg', volume = 45))
 
 /datum/map/sierra/map_info(victim)
-	to_chat(victim, "<h2>Информаци&#255; о карте</h2>")
-	to_chat(victim, "Вы находитесь на борту <b>[station_name]</b>, исследовательского судна корпорации НаноТрейзен. Основна&#255; мисси&#255; вашего объекта - проведение исследований на нейтральной территории, как правило, на известной границе космоса с целью нахождени&#255; новых залежей форона, космических объектов, артефактов и останков инопланетных цивилизаций.")
-	to_chat(victim, "Охрана судна укомплектована сотрудниками Службы Безопасности НаноТрайзен и частных предпри&#255;тий.")
-	to_chat(victim, "Помимо ЧВК в охране, в остальных отделах также присутствуют подр&#255;дчики. Их нан&#255;ли как выдающихс&#255; специалистов в своей области, что превзошли корпоративного кандидата. Как правило, они либо работают на себ&#255; (civilian), либо на другую корпорацию (contractor). Полезные ссылки:")
-	to_chat(victim, "<a href=\"https://wiki.infinity-ss13.info/index.php?title=Стандартные_процедуры_НТ\">Процедуры НТ</a>, <a href=\"https://wiki.infinity-ss13.info/index.php?title=Корпоративные_законы\">Регул&#255;ции НТ</a>, <a href=\"https://wiki.infinity-ss13.info/index.php?title=Коды_угрозы_НТ\">Коды угроз НТ</a>, <a href=\"https://wiki.infinity-ss13.info/index.php?title=Итак,_Вы_хотите_узнать_о_мире_корпораций%3F\">Список корпораций</a>.")
-	to_chat(victim, "<br><span class='danger'>Внимание!</span> На данный момент существует баг, из-за которого слоты с персонажами могут не загрузитьс&#255;. Если он произошел - зайдите во вкладку OOC и нажмите 'Fix characters load'.")
+	to_chat(victim, "<h2>РРЅС„РѕСЂРјР°С†РёСЏ Рѕ РєР°СЂС‚Рµ</h2>")
+	to_chat(victim, "Р’С‹ РЅР°С…РѕРґРёС‚РµСЃСЊ РЅР° Р±РѕСЂС‚Сѓ <b>[station_name]</b>, РёСЃСЃР»РµРґРѕРІР°С‚РµР»СЊСЃРєРѕРіРѕ СЃСѓРґРЅР° РєРѕСЂРїРѕСЂР°С†РёРё РќР°РЅРѕРўСЂРµР№Р·РµРЅ. РћСЃРЅРѕРІРЅР°СЏ РјРёСЃСЃРёСЏ РІР°С€РµРіРѕ РѕР±СЉРµРєС‚Р° - РїСЂРѕРІРµРґРµРЅРёРµ РёСЃСЃР»РµРґРѕРІР°РЅРёР№ РЅР° РЅРµР№С‚СЂР°Р»СЊРЅРѕР№ С‚РµСЂСЂРёС‚РѕСЂРёРё, РєР°Рє РїСЂР°РІРёР»Рѕ, РЅР° РёР·РІРµСЃС‚РЅРѕР№ РіСЂР°РЅРёС†Рµ РєРѕСЃРјРѕСЃР° СЃ С†РµР»СЊСЋ РЅР°С…РѕР¶РґРµРЅРёСЏ РЅРѕРІС‹С… Р·Р°Р»РµР¶РµР№ С„РѕСЂРѕРЅР°, РєРѕСЃРјРёС‡РµСЃРєРёС… РѕР±СЉРµРєС‚РѕРІ, Р°СЂС‚РµС„Р°РєС‚РѕРІ Рё РѕСЃС‚Р°РЅРєРѕРІ РёРЅРѕРїР»Р°РЅРµС‚РЅС‹С… С†РёРІРёР»РёР·Р°С†РёР№.")
+	to_chat(victim, "РћС…СЂР°РЅР° СЃСѓРґРЅР° СѓРєРѕРјРїР»РµРєС‚РѕРІР°РЅР° СЃРѕС‚СЂСѓРґРЅРёРєР°РјРё РЎР»СѓР¶Р±С‹ Р‘РµР·РѕРїР°СЃРЅРѕСЃС‚Рё РќР°РЅРѕРўСЂР°Р№Р·РµРЅ Рё С‡Р°СЃС‚РЅС‹С… РїСЂРµРґРїСЂРёСЏС‚РёР№.")
+	to_chat(victim, "РџРѕРјРёРјРѕ Р§Р’Рљ РІ РѕС…СЂР°РЅРµ, РІ РѕСЃС‚Р°Р»СЊРЅС‹С… РѕС‚РґРµР»Р°С… С‚Р°РєР¶Рµ РїСЂРёСЃСѓС‚СЃС‚РІСѓСЋС‚ РїРѕРґСЂСЏРґС‡РёРєРё. РС… РЅР°РЅСЏР»Рё РєР°Рє РІС‹РґР°СЋС‰РёС…СЃСЏ СЃРїРµС†РёР°Р»РёСЃС‚РѕРІ РІ СЃРІРѕРµР№ РѕР±Р»Р°СЃС‚Рё, С‡С‚Рѕ РїСЂРµРІР·РѕС€Р»Рё РєРѕСЂРїРѕСЂР°С‚РёРІРЅРѕРіРѕ РєР°РЅРґРёРґР°С‚Р°. РљР°Рє РїСЂР°РІРёР»Рѕ, РѕРЅРё Р»РёР±Рѕ СЂР°Р±РѕС‚Р°СЋС‚ РЅР° СЃРµР±СЏ (civilian), Р»РёР±Рѕ РЅР° РґСЂСѓРіСѓСЋ РєРѕСЂРїРѕСЂР°С†РёСЋ (contractor). РџРѕР»РµР·РЅС‹Рµ СЃСЃС‹Р»РєРё:")
+	to_chat(victim, "<a href=\"https://wiki.infinity-ss13.info/index.php?title=РЎС‚Р°РЅРґР°СЂС‚РЅС‹Рµ_РїСЂРѕС†РµРґСѓСЂС‹_РќРў\">РџСЂРѕС†РµРґСѓСЂС‹ РќРў</a>, <a href=\"https://wiki.infinity-ss13.info/index.php?title=РљРѕСЂРїРѕСЂР°С‚РёРІРЅС‹Рµ_Р·Р°РєРѕРЅС‹\">Р РµРіСѓР»СЏС†РёРё РќРў</a>, <a href=\"https://wiki.infinity-ss13.info/index.php?title=РљРѕРґС‹_СѓРіСЂРѕР·С‹_РќРў\">РљРѕРґС‹ СѓРіСЂРѕР· РќРў</a>, <a href=\"https://wiki.infinity-ss13.info/index.php?title=РС‚Р°Рє,_Р’С‹_С…РѕС‚РёС‚Рµ_СѓР·РЅР°С‚СЊ_Рѕ_РјРёСЂРµ_РєРѕСЂРїРѕСЂР°С†РёР№%3F\">РЎРїРёСЃРѕРє РєРѕСЂРїРѕСЂР°С†РёР№</a>.")
+	to_chat(victim, "<br><span class='danger'>Р’РЅРёРјР°РЅРёРµ!</span> РќР° РґР°РЅРЅС‹Р№ РјРѕРјРµРЅС‚ СЃСѓС‰РµСЃС‚РІСѓРµС‚ Р±Р°Рі, РёР·-Р·Р° РєРѕС‚РѕСЂРѕРіРѕ СЃР»РѕС‚С‹ СЃ РїРµСЂСЃРѕРЅР°Р¶Р°РјРё РјРѕРіСѓС‚ РЅРµ Р·Р°РіСЂСѓР·РёС‚СЊСЃСЏ. Р•СЃР»Рё РѕРЅ РїСЂРѕРёР·РѕС€РµР» - Р·Р°Р№РґРёС‚Рµ РІРѕ РІРєР»Р°РґРєСѓ OOC Рё РЅР°Р¶РјРёС‚Рµ 'Fix characters load'.")
 
 /datum/map/sierra/send_welcome()
-	var/welcome_text = "<center><img src = ntlogo.png /><br /><font size = 3><b>NSV Sierra</b> Показани&#255; Сенсоров:</font><hr />"
+	var/welcome_text = "<center><img src = ntlogo.png /><br /><font size = 3><b>NSV Sierra</b> РџРѕРєР°Р·Р°РЅРёСЏ РЎРµРЅСЃРѕСЂРѕРІ:</font><hr />"
+	welcome_text += "РћС‚С‡РµС‚ СЃРіРµРЅРµСЂРёСЂРѕРІР°РЅ [stationdate2text()] РІ [stationtime2text()]</center><br /><br />"
+	welcome_text += "РўРµРєСѓС‰Р°СЏ СЃРёСЃС‚РµРјР°: <b>[system_name()]</b><br />"
+	welcome_text += "РЎР»РµРґСѓСЋС‰Р°СЏ СЃРёСЃС‚РµРјР° РґР»СЏ РїСЂС‹Р¶РєР°: <b>[generate_system_name()]</b><br />"
+	welcome_text += "Р”РЅРµР№ РґРѕ РЎРѕР»РЅРµС‡РЅРѕР№ РЎРёСЃС‚РµРјС‹: <b>[rand(15,45)]</b><br />"
+	welcome_text += "Р”РЅРµР№ СЃ РїРѕСЃР»РµРґРЅРµРіРѕ РІРёР·РёС‚Р° РІ РїРѕСЂС‚: <b>[rand(60,180)]</b><br />"
+	welcome_text += "Р РµР·СѓР»СЊС‚Р°С‚С‹ СЃРєР°РЅРёСЂРѕРІР°РЅРёСЏ РїРѕРєР°Р·Р°Р»Рё СЃР»РµРґСѓСЋС‰РёРµ РїРѕС‚РµРЅС†РёР°Р»СЊРЅС‹Рµ РѕР±СЉРµРєС‚С‹ РґР»СЏ РёСЃСЃР»РµРґРѕРІР°РЅРёСЏ:<br />"
 
 	var/list/space_things = list()
-	var/obj/effect/overmap/visitable/sierra = map_sectors["1"]
-
-	welcome_text += "Отчет сгенерирован [stationdate2text()] в [stationtime2text()]</center><br /><br />"
-	welcome_text += "Текуща&#255; система: <b>[system_name()]</b><br />"
-	welcome_text += "Следующа&#255; система дл&#255; прыжка: <b>[generate_system_name()]</b><br />"
-	welcome_text += "Дней до Солнечной Системы: <b>[rand(15,45)]</b><br />"
-	welcome_text += "Дней с последнего визита в порт: <b>[rand(60,180)]</b><br />"
-	welcome_text += "Результаты сканировани&#255; показали следующие потенциальные объекты дл&#255; исследовани&#255;:<br />"
+	var/obj/effect/overmap/sierra = map_sectors["1"]
 	for(var/zlevel in map_sectors)
-		var/obj/effect/overmap/O = map_sectors[zlevel]
+		var/obj/effect/overmap/visitable/O = map_sectors[zlevel]
 		if(O.name == sierra.name)
 			continue
-		if(istype(O, /obj/effect/overmap/visitable/ship/landable))
+		if(istype(O, /obj/effect/overmap/visitable/ship/landable)) //Don't show shuttles
+			continue
+		if(O.hide_from_reports)
 			continue
 		space_things |= O
 
 	var/list/distress_calls
 	for(var/obj/effect/overmap/visitable/O in space_things)
-		var/location_desc = " на текущем квадрате."
+		var/location_desc = " РЅР° С‚РµРєСѓС‰РµРј РєРІР°РґСЂР°С‚Рµ."
 		if(O.loc != sierra.loc)
 			var/bearing = round(90 - Atan2(O.x - sierra.x, O.y - sierra.y),5) //fucking triangles how do they work
 			if(bearing < 0)
 				bearing += 360
-			location_desc = ", по азимуту [bearing]."
+			location_desc = ", РїРѕ Р°Р·РёРјСѓС‚Сѓ [bearing]."
 		if(O.has_distress_beacon)
 			LAZYADD(distress_calls, "[O.has_distress_beacon][location_desc]")
 		welcome_text += "<li>\A <b>[O.name]</b>[location_desc]</li>"
 
 	if(LAZYLEN(distress_calls))
-		welcome_text += "<br><b>Обнаружены сигналы бедстви&#255;:</b><br>[jointext(distress_calls, "<br>")]<br>"
+		welcome_text += "<br><b>РћР±РЅР°СЂСѓР¶РµРЅС‹ СЃРёРіРЅР°Р»С‹ Р±РµРґСЃС‚РІРёСЏ:</b><br>[jointext(distress_calls, "<br>")]<br>"
 	else
-		welcome_text += "<br>Сигналов бедстви&#255; не обнаружено.<br />"
+		welcome_text += "<br>РЎРёРіРЅР°Р»РѕРІ Р±РµРґСЃС‚РІРёСЏ РЅРµ РѕР±РЅР°СЂСѓР¶РµРЅРѕ.<br />"
 	welcome_text += "<hr>"
 
 	post_comm_message("NSV Sierra Sensor Readings", welcome_text)
-	minor_announcement.Announce(message = "Сканирование сектора завершено. Информация передана в базу данных консолей связи.")
+	minor_announcement.Announce(message = "РЎРєР°РЅРёСЂРѕРІР°РЅРёРµ СЃРµРєС‚РѕСЂР° Р·Р°РІРµСЂС€РµРЅРѕ. РРЅС„РѕСЂРјР°С†РёСЏ РїРµСЂРµРґР°РЅР° РІ Р±Р°Р·Сѓ РґР°РЅРЅС‹С… РєРѕРЅСЃРѕР»РµР№ СЃРІСЏР·Рё.")

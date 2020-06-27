@@ -36,6 +36,7 @@
 	real_name = "unknown"
 
 	to_chat(src, "<B>You are now [species.name]. </B>")
+	ability_master.open_ability_master() //INF fix for hud icons
 	qdel(animation)
 
 	return src

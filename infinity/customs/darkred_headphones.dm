@@ -10,3 +10,4 @@
 		slot_l_ear_str = 'infinity/icons/mob/onmob/onmob_ears.dmi',
 		slot_r_ear_str = 'infinity/icons/mob/onmob/onmob_ears.dmi'
 		)
+	trade_blacklisted = TRUE

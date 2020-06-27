@@ -520,7 +520,12 @@
 		switch(Text)
 			if("brute")	L.adjustBruteLoss(amount)
 			if("fire")	L.adjustFireLoss(amount)
-			if("toxin")	L.adjustToxLoss(amount, admin_healing = 1) //INF, WAS if("toxin")	L.adjustToxLoss(amount)
+			if("toxin")
+				if(ishuman(L))
+					var/mob/living/carbon/human/H = L
+					H.adjustToxLoss(amount, admin_healing = 1)
+				else
+					L.adjustToxLoss(amount)
 			if("oxygen")L.adjustOxyLoss(amount)
 			if("brain")	L.adjustBrainLoss(amount)
 			if("clone")	L.adjustCloneLoss(amount)

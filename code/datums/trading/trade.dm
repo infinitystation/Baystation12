@@ -36,7 +36,7 @@
 	var/margin = 1.2											//Multiplier to price when selling to player
 	var/price_rng = 10                                          //Percentage max variance in sell prices.
 	var/insult_drop = 5                                         //How far disposition drops on insult
-	var/compliment_increase = 5                                 //How far compliments increase disposition
+	var/compliment_increase = 2                                 //How far compliments increase disposition
 	var/refuse_comms = 0                                        //Whether they refuse further communication
 
 	var/mob_transfer_message = "You are transported to ORIGIN." //What message gets sent to mobs that get sold.
@@ -104,13 +104,14 @@
 		return picked
 
 /datum/trader/proc/get_response(var/key, var/default)
-	var/text
 	if(speech && speech[key])
-		text = speech[key]
+		. = speech[key]
 	else
-		text = default
-	text = replacetext(text, "MERCHANT", name)
-	return replacetext(text, "ORIGIN", origin)
+		. = default
+	. = replacetext(., "MERCHANT", name)
+	. = replacetext(., "ORIGIN", origin)
+	. = replacetext(.,"CURRENCY_SINGULAR", GLOB.using_map.local_currency_name_singular)
+	. = replacetext(.,"CURRENCY", GLOB.using_map.local_currency_name)
 
 /datum/trader/proc/print_trading_items(var/num)
 	num = Clamp(num,1,trading_items.len)
@@ -123,9 +124,9 @@
 		if(SKILL_EXPERT)
 			. = 1
 		if(SKILL_EXPERT to SKILL_MAX)
-			. = 1 + (SKILL_EXPERT - skill) * 0.2
+			. = 1 + (SKILL_EXPERT - skill) * 0.1
 		else
-			. = 1 + (SKILL_EXPERT - skill) ** 2
+			. = 1 + (SKILL_EXPERT - skill) ** 3
 	//This condition ensures that the buy price is higher than the sell price on generic goods, i.e. the merchant can't be exploited
 	. = max(., price_rng/((margin - 1)*(200 - price_rng)))
 
@@ -241,7 +242,7 @@
 
 /datum/trader/proc/how_much_do_you_want(var/num, skill = SKILL_MAX)
 	var/atom/movable/M = trading_items[num]
-	. = get_response("how_much", "Hmm.... how about VALUE thalers?")
+	. = get_response("how_much", "Hmm.... how about VALUE CURRENCY?")
 	. = replacetext(.,"VALUE",get_item_value(num, skill))
 	. = replacetext(.,"ITEM", initial(M.name))
 

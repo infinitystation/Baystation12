@@ -32,6 +32,7 @@
 /datum/gear/accessory/ntaward_sci
 	allowed_roles = RESEARCH_ROLES
 	allowed_branches = list(/datum/mil_branch/employee)
+	allowed_skills = list(SKILL_SCIENCE = SKILL_EXPERT)
 
 /datum/gear/accessory/stethoscope
 	allowed_roles = STERILE_ROLES

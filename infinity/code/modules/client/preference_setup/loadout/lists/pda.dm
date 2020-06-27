@@ -1,4 +1,21 @@
-/datum/gear/utility/pda
+datum/gear/utility/modular_scanner
+	display_name = "Scanner module, paper"
+	cost = 1
+	path = /obj/item/weapon/stock_parts/computer/scanner/paper
+
+datum/gear/utility/modular_scanner/chemical
+	display_name = "Scanner module, reagents"
+	path = /obj/item/weapon/stock_parts/computer/scanner/reagent
+
+datum/gear/utility/modular_scanner/atmos
+	display_name = "Scanner module, atmos"
+	path = /obj/item/weapon/stock_parts/computer/scanner/atmos
+
+datum/gear/utility/modular_scanner/medical
+	display_name = "Scanner module, medical"
+	path = /obj/item/weapon/stock_parts/computer/scanner/medical
+
+datum/gear/utility/pda
 	display_name = "PDA selection"
 	path = /obj/item/modular_computer/pda
 	cost = 2

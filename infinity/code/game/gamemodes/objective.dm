@@ -1,8 +1,17 @@
 /datum/objective/nuclear
-	explanation_text = "���������� ������ � ������� &#255;������� ���&#255;��."
+	explanation_text = "Активировать систему самоуничтожения объекта."
+
+/datum/objective/nuclear/steal
+	explanation_text = "Похитить важные документы с судна - чертежи, отчеты, корпоративные шифры."
+
+/datum/objective/nuclear/steal_AI
+	explanation_text = "Перезаписать ИИ на интеллекарту (если он есть)."
+
+/datum/objective/nuclear/researches
+	explanation_text = "Перезаписать все исследования на съемный носитель."
 
 /datum/objective/nuclear/kidnap
-	var/list/roles = list(/datum/job/captain, /datum/job/rd, /datum/job/scientist, /datum/job/engineer)
+	var/list/roles = list(/datum/job/captain, /datum/job/rd, /datum/job/scientist, /datum/job/chief_engineer, /datum/job/lawyer)
 
 /datum/objective/nuclear/kidnap/proc/choose_target()
 	var/list/possible_targets = list()
@@ -22,9 +31,9 @@
 		target = pick(possible_targets)
 
 	if(target?.current)
-		explanation_text = "���������� �����, ����� �� ��&#255;�������� �������� [target.current.real_name] [target.assigned_role]. ���� ����� �����."
+		explanation_text = "Похитить [target.current.real_name] ([target.assigned_role]). Цель должна быть живой."
 	else
-		explanation_text = "������� �� ������� ���� ������ ������������������� ��� ����������� ������� ������� ����� ������� �����. ��������� - ������, �����, ��������."
+		explanation_text = "Захвать по крайней мере одного высокопоставленного или обладающего ценными данными члена экипажа живым. Приоритет - ученые, главы, инженеры."
 	return target
 
 /datum/objective/heist/loot/choose_target()
@@ -64,3 +73,23 @@
 			loot = "an ion gun"
 
 	explanation_text = "It's a buyer's market out here. Steal [loot] for resale."
+
+/datum/objective/changeling_infestation //unused
+	explanation_text = "Захватить объект, поглотив его экипаж и сделав частью общности. Необходимо делать это настолько скрытно, \
+	насколько возможно - Корпорация будет только рада пленить нас."
+
+/datum/objective/absorb_pointly/find_target(var/override = 0)
+	..()
+	if(target?.current)
+		explanation_text = "Поглотить [target.current.real_name], [target.assigned_role]."
+	else
+		return 0
+	return target
+
+/datum/objective/absorb_pointly/find_target_by_role(role, role_type = 0)
+	..(role, role_type)
+	if(target?.current)
+		explanation_text = "Поглотить [target.current.real_name], [!role_type ? target.assigned_role : target.special_role]."
+	else
+		explanation_text = "Свободная Цель"
+	return target

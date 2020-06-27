@@ -6,3 +6,4 @@
 	icon_state = "scp_carrier"
 	sprite_sheets = list()
 	starting_accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches)
+	trade_blacklisted = TRUE

@@ -115,7 +115,7 @@
 
 /decl/emote/audible/cat_purr
 	key = "purr"
-	emote_message_3p = "USER мурчит."
+	emote_message_3p = "USER РјСѓСЂС‡РёС‚."
 	emote_sound = 'infinity/sound/voice/cat_purr.ogg'
 
 /decl/emote/audible/cat_purr/long

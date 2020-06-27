@@ -11,8 +11,8 @@ The "dust" will damage the hull of the station causin minor hull breaches.
 	var/last_wave
 
 /datum/event/dust/announce()
-//	command_announcement.Announce("The [location_name()] is now passing through a belt of space dust.", "Сенсоры [location_name()]", zlevels = affecting_z)
-	priority_announcement.Announce("Объект [location_name()] вошел в зону скопления космической пыли.", "Сенсоры [location_name()]", zlevels = affecting_z)
+//	command_announcement.Announce("The [location_name()] is now passing through a belt of space dust.", "РЎРµРЅСЃРѕСЂС‹ [location_name()]", zlevels = affecting_z)
+	priority_announcement.Announce("РћР±СЉРµРєС‚ [location_name()] РІРѕС€РµР» РІ Р·РѕРЅСѓ СЃРєРѕРїР»РµРЅРёСЏ РєРѕСЃРјРёС‡РµСЃРєРѕР№ РїС‹Р»Рё.", "РЎРµРЅСЃРѕСЂС‹ [location_name()]", zlevels = affecting_z)
 
 
 /datum/event/dust/tick()
@@ -20,8 +20,8 @@ The "dust" will damage the hull of the station causin minor hull breaches.
 		dust_swarm(severity, affecting_z)
 
 /datum/event/dust/end()
-//	command_announcement.Announce("The [location_name()] has now passed through the belt of space dust.", "Сенсоры [location_name()]", zlevels = affecting_z)
-	priority_announcement.Announce("Объект [location_name()] покинул зону скопления космической пыли.", "Сенсоры [location_name()]", zlevels = affecting_z)
+//	command_announcement.Announce("The [location_name()] has now passed through the belt of space dust.", "РЎРµРЅСЃРѕСЂС‹ [location_name()]", zlevels = affecting_z)
+	priority_announcement.Announce("РћР±СЉРµРєС‚ [location_name()] РїРѕРєРёРЅСѓР» Р·РѕРЅСѓ СЃРєРѕРїР»РµРЅРёСЏ РєРѕСЃРјРёС‡РµСЃРєРѕР№ РїС‹Р»Рё.", "РЎРµРЅСЃРѕСЂС‹ [location_name()]", zlevels = affecting_z)
 
 /proc/dust_swarm(var/strength = EVENT_LEVEL_MUNDANE, var/list/zlevels)
 	var/numbers = rand(strength * 10, strength * 15)

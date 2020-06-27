@@ -22,13 +22,13 @@
 
 /datum/category_item/player_setup_item/background/languages/content()
 	. = list()
-	. += "<b>Languages</b><br>"
+	. += "<b>Языки</b><br>"
 	var/list/show_langs = get_language_text()
 	if(LAZYLEN(show_langs))
 		for(var/lang in show_langs)
 			. += lang
 	else
-		. += "Your current species, faction or home system selection does not allow you to choose additional languages.<br>"
+		. += "Ваша раса, фракция или место происхождения не позволяют вам выбирать языки.<br>"
 	. = jointext(.,null)
 
 /datum/category_item/player_setup_item/background/languages/OnTopic(var/href,var/list/href_list, var/mob/user)
@@ -41,15 +41,15 @@
 	else if(href_list["add_language"])
 
 		if(pref.alternate_languages.len >= MAX_LANGUAGES)
-			alert(user, "You have already selected the maximum number of languages!")
+			alert(user, "Вы уже выбрали максимальное количество языков!")
 			return
 
 		sanitize_alt_languages()
 		var/list/available_languages = allowed_languages - free_languages
 		if(!LAZYLEN(available_languages))
-			alert(user, "There are no additional languages available to select.")
+			alert(user, "Нету доступных для выбора языков.")
 		else
-			var/new_lang = input(user, "Select an additional language", "Character Generation", null) as null|anything in available_languages
+			var/new_lang = input(user, "Выберите дополнительный язык", "Создание персонажа", null) as null|anything in available_languages
 			if(new_lang)
 				pref.alternate_languages |= new_lang
 				return TOPIC_REFRESH
@@ -106,7 +106,6 @@
 		pref.alternate_languages.Cut(MAX_LANGUAGES + 1)
 
 /datum/category_item/player_setup_item/background/languages/proc/get_language_text()
-	. = ..()
 	sanitize_alt_languages()
 	if(LAZYLEN(pref.alternate_languages))
 		for(var/i = 1 to pref.alternate_languages.len)
@@ -114,9 +113,9 @@
 			if(free_languages[lang])
 				LAZYADD(., "- [lang] (required).<br>")
 			else
-				LAZYADD(., "- [lang] <a href='?src=\ref[src];remove_language=[i]'>Remove.</a> <span style='color:#ff0000;font-style:italic;'>[all_languages[lang].warning]</span><br>")
+				LAZYADD(., "- [lang] <a href='?src=\ref[src];remove_language=[i]'>Убрать.</a> <span style='color:#ff0000;font-style:italic;'>[all_languages[lang].warning]</span><br>")
 	if(pref.alternate_languages.len < MAX_LANGUAGES)
 		var/remaining_langs = MAX_LANGUAGES - pref.alternate_languages.len
-		LAZYADD(., "- <a href='?src=\ref[src];add_language=1'>add</a> ([remaining_langs] remaining)<br>")
+		LAZYADD(., "- <a href='?src=\ref[src];add_language=1'>добавить</a> ([remaining_langs] доступно)<br>")
 
 #undef MAX_LANGUAGES

@@ -63,6 +63,9 @@
 	job_access_type = /datum/job/officer
 	detail_color = "#e00000"
 
+/obj/item/weapon/card/id/sierra/crew/security/cadet
+	job_access_type = /datum/job/security_assistant
+
 /obj/item/weapon/card/id/sierra/crew/security/warden
 	job_access_type = /datum/job/warden
 	extra_details = list("onegoldstripe")
@@ -126,6 +129,9 @@
 
 /obj/item/weapon/card/id/sierra/crew/service/chaplain
 	job_access_type = /datum/job/chaplain
+
+/obj/item/weapon/card/id/sierra/crew/service/actor
+	job_access_type = /datum/job/actor
 
 //Explorers
 

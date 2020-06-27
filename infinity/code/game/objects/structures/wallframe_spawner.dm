@@ -28,3 +28,7 @@
 	icon_state = "wingrille"
 	frame_path = /obj/structure/wall_frame/wood
 	grille_path = null
+
+/obj/effect/wallframe_spawn/reinforced_phoron/ascent_inf
+	name = "reinforced phoron ascent wall frame window spawner"
+	frame_path = /obj/structure/wall_frame/ascent_inf

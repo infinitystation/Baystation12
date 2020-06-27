@@ -8,15 +8,48 @@
 	anchored = 1
 	health = 200
 
+/obj/structure/alien/resin/Initialize()
+	for(var/obj/structure/alien/resin/resin in range(1, src))
+		resin.update_icon()
+	. = ..()
+
+/obj/structure/alien/resin/Destroy()
+	for(var/obj/structure/alien/resin/resin in range(1, src))
+		resin.update_icon()
+	. = ..()
+
+/obj/structure/alien/resin/on_update_icon()
+	. = ..()
+	var/list/cardinal_neighbors = list()
+
+	for(var/check_dir in GLOB.cardinal)
+		var/turf/simulated/T = get_step(get_turf(src), check_dir)
+		if(istype(T))
+			cardinal_neighbors |= T
+
+	var/rot = 0
+
+	for(var/obj/structure/alien/resin/resin in range(1, src))
+		if(istype(resin))
+			if(resin.loc in cardinal_neighbors)
+				var/cur_rot = 0.5
+				for(var/neighbor in cardinal_neighbors)
+					cur_rot = cur_rot * 2
+					if(resin.loc == neighbor)
+						break
+				rot += cur_rot
+
+	icon_state = "[initial(icon_state)][rot]"
+
 /obj/structure/alien/resin/wall
 	name = "resin wall"
 	desc = "Purple slime solidified into a wall."
-	icon_state = "resinwall"
+	icon_state = "wall"
 
 /obj/structure/alien/resin/membrane
 	name = "resin membrane"
 	desc = "Purple slime just thin enough to let light pass through."
-	icon_state = "resinmembrane"
+	icon_state = "membrane"
 	opacity = 0
 	health = 120
 
@@ -31,6 +64,7 @@
 	..()
 
 /obj/structure/alien/resin/attack_hand(var/mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if (MUTATION_HULK in user.mutations)
 		visible_message("<span class='danger'>\The [user] destroys \the [name]!</span>")
 		health = 0
@@ -45,6 +79,6 @@
 				return
 		visible_message("<span class='danger'>\The [user] claws at \the [src]!</span>")
 		// Todo check attack datums.
-		health -= rand(5,10)
+		health -= rand(2,6)
 	healthcheck()
 	return

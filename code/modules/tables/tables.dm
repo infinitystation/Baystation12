@@ -162,6 +162,16 @@
 		var/obj/item/weapon/hand/H = W
 		if(H.cards && H.cards.len == 1)
 			usr.visible_message("\The [user] plays \the [H.cards[1].name].")
+//[INF]
+	if(istype(W, /obj/item/weapon/deck)) //playing cards
+		if(user.a_intent == I_GRAB)
+			var/obj/item/weapon/deck/D = W
+			if(!D.cards.len)
+				to_chat(usr, "There are no cards in the deck.")
+				return
+			D.deal_at(usr, src)
+			return
+//[/INF]
 	return ..()
 
 /obj/structure/table/MouseDrop_T(obj/item/stack/material/what)

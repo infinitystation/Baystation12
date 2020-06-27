@@ -274,7 +274,7 @@
 		to_chat(user, SPAN_WARNING("The rune fizzles uselessly."))
 		return
 //[INF]
-	var/new_name = sanitize(input(user, "Вашего голема будут звать...", "Time to Choose") as text)
+	var/new_name = sanitize(input(user, "Р’Р°С€РµРіРѕ РіРѕР»РµРјР° Р±СѓРґСѓС‚ Р·РІР°С‚СЊ...", "Time to Choose") as text)
 	if(!new_name) return
 //[/INF]
 	visible_message(SPAN_WARNING("A craggy humanoid figure coalesces into being!"))
@@ -292,7 +292,7 @@
 		G.set_default_language(lang)
 		I.languages[lang.name] = 1
 
-	to_chat(G, FONT_LARGE(SPAN_BOLD("Вы не помните о своей прошлой жизни. Вы были созданы буквально только что. Ваши знани&#255; ограничены &#255;зыком. У вас есть создатель и больше ничего. Служите [user] или погибните пыта&#255;сь."))) //inf
+	to_chat(G, FONT_LARGE(SPAN_BOLD("Р’С‹ РЅРµ РїРѕРјРЅРёС‚Рµ Рѕ СЃРІРѕРµР№ РїСЂРѕС€Р»РѕР№ Р¶РёР·РЅРё. Р’С‹ Р±С‹Р»Рё СЃРѕР·РґР°РЅС‹ Р±СѓРєРІР°Р»СЊРЅРѕ С‚РѕР»СЊРєРѕ С‡С‚Рѕ. Р’Р°С€Рё Р·РЅР°РЅРёСЏ РѕРіСЂР°РЅРёС‡РµРЅС‹ СЏР·С‹РєРѕРј. РЈ РІР°СЃ РµСЃС‚СЊ СЃРѕР·РґР°С‚РµР»СЊ Рё Р±РѕР»СЊС€Рµ РЅРёС‡РµРіРѕ. РЎР»СѓР¶РёС‚Рµ [user] РёР»Рё РїРѕРіРёР±РЅРёС‚Рµ РїС‹С‚Р°СЏСЃСЊ."))) //inf
 	to_chat(G, SPAN_ITALIC("You move slowly and are vulnerable to trauma, but are resistant to heat and cold."))
 	qdel(src)
 

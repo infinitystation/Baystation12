@@ -28,7 +28,7 @@
 	description = "Tiny movable ship with spiders."
 	prefix = "maps/away_inf/"
 	suffixes = list("yacht/yacht.dmm")
-	cost = 1
+	cost = 0.5
 	area_usage_test_exempted_root_areas = list(/area/yacht)
 
 /obj/effect/shuttle_landmark/nav_yacht/nav1

@@ -29,7 +29,7 @@ SUBSYSTEM_DEF(jobs)
 
 	// Create main map jobs.
 	primary_job_datums.Cut()
-	for(var/jobtype in (list(/datum/job/assistant) | GLOB.using_map.allowed_jobs))
+	for(var/jobtype in (list(DEFAULT_JOB_TYPE) | GLOB.using_map.allowed_jobs))
 		var/datum/job/job = get_by_path(jobtype)
 		if(!job)
 			job = new jobtype
@@ -141,6 +141,7 @@ SUBSYSTEM_DEF(jobs)
 	return titles_to_datums[rank]
 
 /datum/controller/subsystem/jobs/proc/get_by_path(var/path)
+	RETURN_TYPE(/datum/job)
 	return types_to_datums[path]
 
 /datum/controller/subsystem/jobs/proc/check_general_join_blockers(var/mob/new_player/joining, var/datum/job/job)
@@ -368,7 +369,7 @@ SUBSYSTEM_DEF(jobs)
 	// For those who wanted to be assistant if their preferences were filled, here you go.
 	for(var/mob/new_player/player in unassigned_roundstart)
 		if(player.client.prefs.alternate_option == BE_ASSISTANT)
-			var/datum/job/ass = /datum/job/assistant
+			var/datum/job/ass = DEFAULT_JOB_TYPE
 			if((GLOB.using_map.flags & MAP_HAS_BRANCH) && player.client.prefs.branches[initial(ass.title)])
 				var/datum/mil_branch/branch = mil_branches.get_branch(player.client.prefs.branches[initial(ass.title)])
 				ass = branch.assistant_job
@@ -404,7 +405,7 @@ SUBSYSTEM_DEF(jobs)
 			if(G)
 				var/permitted = 0
 				if(G.allowed_branches)
-					if(H.char_branch && H.char_branch.type in G.allowed_branches)
+					if(H.char_branch && (H.char_branch.type in G.allowed_branches))
 						permitted = 1
 				else
 					permitted = 1
@@ -432,6 +433,7 @@ SUBSYSTEM_DEF(jobs)
 
 				if(!G.slot || G.slot == slot_tie || (G.slot in loadout_taken_slots) || !G.spawn_on_mob(H, H.client.prefs.Gear()[G.display_name]))
 					spawn_in_storage.Add(G)
+
 				else
 					loadout_taken_slots.Add(G.slot)
 
@@ -492,10 +494,20 @@ SUBSYSTEM_DEF(jobs)
 	H.job = rank
 
 	if(!joined_late || job.latejoin_at_spawnpoints)
-		var/obj/S = job.get_roundstart_spawnpoint()
-
-		if(istype(S, /obj/effect/landmark/start) && istype(S.loc, /turf))
+		var/obj/S = job.get_job_spawnpoints()//inf, was: var/obj/S = job.get_roundstart_spawnpoint()
+		/*[ORIGINAL]
+		if(istype(S, /obj/effect/landmark/start) && istype(S.loc, /turf)
 			H.forceMove(S.loc)
+		[/ORIGINAL]*/
+		//[INF]
+		var/turf/truf = get_turf(S)
+		if((istype(S, /obj/effect/landmark/start) && isturf(truf)) || isturf(S))
+			H.forceMove(truf)
+			var/obj/structure/bed/b = locate(/obj/structure/bed) in truf
+			if(istype(b) && !joined_late)
+				H.Sleeping(15)
+				b.buckle_mob(H)
+		//[/INF]
 		else
 			var/datum/spawnpoint/spawnpoint = job.get_spawnpoint(H.client)
 			H.forceMove(pick(spawnpoint.turfs))
@@ -512,9 +524,9 @@ SUBSYSTEM_DEF(jobs)
 		var/datum/money_account/department_account = department_accounts[job.department]
 
 		if(department_account)
-			remembered_info += "<b>Your department's account number is:</b> #[department_account.account_number]<br>"
-			remembered_info += "<b>Your department's account pin is:</b> [department_account.remote_access_pin]<br>"
-			remembered_info += "<b>Your department's account funds are:</b> T[department_account.money]<br>"
+			remembered_info += "<b>Номер Аккаунта Вашего департамента:</b> #[department_account.account_number]<br>"
+			remembered_info += "<b>Пин-код:</b> [department_account.remote_access_pin]<br>"
+			remembered_info += "<b>Сумма на счету:</b> [GLOB.using_map.local_currency_name_short][department_account.money]<br>"
 
 		H.StoreMemory(remembered_info, /decl/memory_options/system)
 
@@ -544,15 +556,15 @@ SUBSYSTEM_DEF(jobs)
 			W.buckled_mob = H
 			W.add_fingerprint(H)
 
-	to_chat(H, "<font size = 3><B>You are [job.total_positions == 1 ? "the" : "a"] [alt_title ? alt_title : rank].</B></font>")
+	to_chat(H, "<font size = 3><b>Вы - [alt_title ? alt_title : rank].</b></font>")
 
 	if(job.supervisors)
-		to_chat(H, "<b>As the [alt_title ? alt_title : rank] you answer directly to [job.supervisors]. Special circumstances may change this.</b>")
+		to_chat(H, "<b>Вы напрямую отчитываетесь перед <b>[job.supervisors]</b>. Особые обстоятельства могут изменить это.</b>")
 
-	to_chat(H, "<b>To speak on your department's radio channel use :h. For the use of other channels, examine your headset.</b>")
+	to_chat(H, "<b>Чтобы общаться на частоте Вашего отдела, используйте префикс \":h\". Для остальных каналов, осмотрите свой наушник.</b>")
 
 	if(job.req_admin_notify)
-		to_chat(H, "<b>You are playing a job that is important for Game Progression. If you have to disconnect, please notify the admins via adminhelp.</b>")
+		to_chat(H, "<b>Ваша профессия особенно важна для игрового прогресса. Если Вам требуется отключиться - пожалуйста, оповестите администрацию.</b>")
 
 	//Gives glasses to the vision impaired
 	if(H.disabilities & NEARSIGHTED)

@@ -12,7 +12,9 @@
 		LANGUAGE_HUMAN_IBERIAN = 25,
 		LANGUAGE_HUMAN_RUSSIAN = 25,
 		LANGUAGE_HUMAN_SELENIAN = 25,
-		LANGUAGE_GUTTER = 35
+		LANGUAGE_GUTTER = 35,
+		LANGUAGE_HUMAN_LORRIMAN = 15, //Inf
+		LANGUAGE_HUMAN_AVALON = 20 //inf
 	)
 	syllables = list(
 		"ada", "zir", "bian", "ach", "usk", "ado", "ich", "cuan", "iga", "qing", "le", "que", "ki", "qaf", "dei", "eta"

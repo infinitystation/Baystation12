@@ -5,7 +5,7 @@
 		"boxingcourt"      = new/datum/holodeck_program(/area/holodeck/source_boxingcourt, list('sound/music/THUNDERDOME.ogg')),
 		"basketball"       = new/datum/holodeck_program(/area/holodeck/source_basketball, list('sound/music/THUNDERDOME.ogg')),
 		"thunderdomecourt" = new/datum/holodeck_program(/area/holodeck/source_thunderdomecourt, list('sound/music/THUNDERDOME.ogg')),
-		"beach"            = new/datum/holodeck_program(/area/holodeck/source_beach),
+		"beach"            = new/datum/holodeck_program(/area/holodeck/source_beach, list('sound/music/europa/WildEncounters.ogg')),
 		"desert"           = new/datum/holodeck_program(/area/holodeck/source_desert,
 														list(
 															'sound/effects/wind/wind_2_1.ogg',
@@ -39,12 +39,12 @@
 		"meetinghall"      = new/datum/holodeck_program(/area/holodeck/source_meetinghall),
 		"courtroom"        = new/datum/holodeck_program(/area/holodeck/source_courtroom, list('sound/music/traitor.ogg')),
 		"voleyball"        = new/datum/holodeck_program(/area/holodeck/source_volleyball, list('sound/music/THUNDERDOME.ogg')),
-		"cafe"             = new/datum/holodeck_program(/area/holodeck/source_cafe),
-		"wildlifecarp"     = new/datum/holodeck_program(/area/holodeck/source_wildlife, list()),
-		"paradeground"     = new/datum/holodeck_program(/area/holodeck/source_military, list()),
-		"temple"           = new/datum/holodeck_program(/area/holodeck/source_temple),
-		"plaza"            = new/datum/holodeck_program(/area/holodeck/source_plaza),
-		"turnoff"          = new/datum/holodeck_program(/area/holodeck/source_plating, list())
+		"cafe"             = new/datum/holodeck_program(/area/holodeck/source_cafe, list('infinity/sound/music/newyear/eminem_lovethewayyoulie.ogg')),
+		"wildlifecarp"     = new/datum/holodeck_program(/area/holodeck/source_wildlife),
+		"paradeground"     = new/datum/holodeck_program(/area/holodeck/source_military),
+		"temple"           = new/datum/holodeck_program(/area/holodeck/source_temple, list('infinity/sound/music/newyear/river-flows-in-you.ogg')),
+		"plaza"            = new/datum/holodeck_program(/area/holodeck/source_plaza, list('sound/music/europa/WildEncounters.ogg')),
+		"turnoff"          = new/datum/holodeck_program(/area/holodeck/source_plating)
 	)
 
 	holodeck_supported_programs = list(

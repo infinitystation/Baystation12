@@ -38,7 +38,7 @@
 	/datum/job/captain, /datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos, \
 	/datum/job/iaa, \
 	/datum/job/senior_engineer, /datum/job/engineer, /datum/job/infsys, /datum/job/roboticist, /datum/job/engineer_trainee, \
-	/datum/job/officer, /datum/job/warden, /datum/job/detective, \
+	/datum/job/officer, /datum/job/warden, /datum/job/detective, /datum/job/security_assistant, \
 	/datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee,/datum/job/chemist, \
 	/datum/job/psychiatrist, \
 	/datum/job/qm, /datum/job/cargo_tech, /datum/job/cargo_assistant,\
@@ -85,7 +85,7 @@
 
 //For members of the security department
 #define SECURITY_ROLES list(\
-	/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer)
+	/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/security_assistant)
 
 //For members of the supply department
 #define SUPPLY_ROLES list(\
@@ -104,7 +104,7 @@
 //For jobs that spawn with weapons in their lockers
 #define ARMED_ROLES list(\
 	/datum/job/captain, /datum/job/hop, /datum/job/hos,\
-	/datum/job/officer, /datum/job/warden, /datum/job/detective, /datum/job/merchant, /datum/job/merchant_trainee)
+	/datum/job/officer, /datum/job/warden, /datum/job/detective, /datum/job/security_assistant, /datum/job/merchant, /datum/job/merchant_trainee)
 
 //For jobs that spawn with armor in their lockers
 #define ARMORED_ROLES list(\

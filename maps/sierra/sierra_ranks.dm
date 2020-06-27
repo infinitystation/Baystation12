@@ -35,7 +35,6 @@
 			/datum/mil_branch/skrell_fleet),
 		/datum/species/adherent = list(
 			/datum/mil_branch/contractor,
-			/datum/mil_branch/employee,
 			/datum/mil_branch/alien,
 			/datum/mil_branch/skrell_fleet),
 		/datum/species/unathi   = list(
@@ -76,7 +75,8 @@
 		/datum/species/unathi     = list(/datum/mil_branch/civilian,
 										 /datum/mil_branch/employee,
 										 /datum/mil_branch/contractor),
-		/datum/species/adherent   = list(/datum/mil_branch/civilian),
+		/datum/species/adherent   = list(/datum/mil_branch/civilian,
+										 /datum/mil_branch/employee),
 		/datum/species/vox        = list(/datum/mil_branch/alien,
 										 /datum/mil_branch/civilian)
 	)

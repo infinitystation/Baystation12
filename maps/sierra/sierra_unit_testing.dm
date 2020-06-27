@@ -1,6 +1,3 @@
-/datum/unit_test/station_wires_shall_be_connected
-	exceptions = list(list(33, 101, 3, WEST),list(33, 105, 3, WEST))
-
 /datum/map/sierra
 	// Unit test exemptions
 	apc_test_exempt_areas = list(
@@ -11,11 +8,8 @@
 		/area/engineering/engine_smes = NO_SCRUBBER|NO_VENT,
 		/area/holodeck = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/maintenance = NO_SCRUBBER|NO_VENT,
-		/area/maintenance/solar = NO_SCRUBBER,
 		/area/maintenance/exterior = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/maintenance/compactor = 0,
-		/area/maintenance/seconddeck/foreport = NO_SCRUBBER,
-		/area/maintenance/firstdeck/centralstarboard  = NO_SCRUBBER,
 		/area/turret_protected/ai_cyborg_station = NO_SCRUBBER|NO_VENT,
 		/area/maintenance/thirddeck/aft = 0,
 		/area/maintenance/waterstore = 0,
@@ -24,15 +18,13 @@
 		/area/maintenance/firstdeck/fore = NO_SCRUBBER|NO_VENT,
 		/area/maintenance/firstdeck/aftport = 0,
 		/area/maintenance/abandoned_common = 0,
-		/area/maintenance/battle_data_servers = NO_SCRUBBER|NO_VENT,
 		/area/shield = NO_SCRUBBER|NO_VENT,
 		/area/shuttle = NO_SCRUBBER|NO_VENT|NO_APC,
-		/area/shuttle/escape_pod8 = NO_SCRUBBER|NO_APC,
-		/area/shuttle/escape_pod9 = NO_SCRUBBER|NO_APC,
-		/area/shuttle/escape_pod6 = NO_SCRUBBER|NO_APC,
-		/area/shuttle/escape_pod7 = NO_SCRUBBER|NO_APC,
-		/area/shuttle/escape_pod10 = NO_SCRUBBER|NO_APC,
-		/area/bridge/nano = NO_SCRUBBER|NO_VENT,
+		/area/shuttle/escape_pod6/station = NO_SCRUBBER|NO_APC|NO_VENT,
+		/area/shuttle/escape_pod7/station = NO_SCRUBBER|NO_APC|NO_VENT,
+		/area/shuttle/escape_pod8/station = NO_SCRUBBER|NO_APC|NO_VENT,
+		/area/shuttle/escape_pod9/station = NO_SCRUBBER|NO_APC|NO_VENT,
+		/area/shuttle/escape_pod10/station = NO_SCRUBBER|NO_APC|NO_VENT,
 		/area/shuttle/merchant = 0,
 		/area/shuttle/petrov = 0,
 		/area/solar = NO_SCRUBBER|NO_VENT|NO_APC,

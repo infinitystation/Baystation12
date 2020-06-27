@@ -187,7 +187,7 @@
 		melee = ARMOR_MELEE_KNIVES,
 		bullet = ARMOR_BALLISTIC_SMALL,
 		laser = ARMOR_LASER_RIFLES,
-		energy = ARMOR_ENERGY_RESISTANT,
+		energy = ARMOR_ENERGY_STRONG, //INF was RESISTANT
 		bomb = ARMOR_BOMB_PADDED
 		)
 	siemens_coefficient = 0
@@ -275,7 +275,7 @@
 		melee = ARMOR_MELEE_KNIVES,
 		bullet = ARMOR_BALLISTIC_SMALL,
 		laser = ARMOR_LASER_RIFLES,
-		energy = ARMOR_ENERGY_RESISTANT,
+		energy = ARMOR_ENERGY_STRONG, //INF was RESISTANT
 		bomb = ARMOR_BOMB_PADDED
 		)
 	siemens_coefficient = 0

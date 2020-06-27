@@ -4,7 +4,7 @@
 	icon_state = "repairbot"
 
 	emote_type = 2		// pAIs emotes are heard, not seen, so they can be seen through a container (eg. person)
-	pass_flags = 1
+	pass_flags = PASS_FLAG_TABLE
 	mob_size = MOB_SMALL
 
 	can_pull_size = ITEM_SIZE_SMALL
@@ -237,6 +237,13 @@
 
 	if(world.time <= last_special)
 		return
+
+	//[INF]
+	var/obj/item/integrated_circuit/manipulation/ai/A = src.loc
+	if(istype(A))
+		A.unload_ai()
+		src.visible_message("[src] ejects from [A].")
+	//[/INF]
 
 	close_up()
 	update_verbs() //inf

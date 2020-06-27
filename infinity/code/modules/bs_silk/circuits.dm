@@ -1,12 +1,12 @@
-/obj/item/weapon/stock_parts/circuitboard/bssilk_cons
-	name = T_BOARD("bluespace snare console")
+/obj/item/weapon/stock_parts/circuitboard/bs_snare_control
+	name = T_BOARD("bluespace snare manager console")
 	origin_tech = list(TECH_DATA = 4, TECH_BLUESPACE = 6)
-	build_path = /obj/machinery/computer/bssilk_control
+	build_path = /obj/machinery/computer/bs_snare_control
 
-/obj/item/weapon/stock_parts/circuitboard/bssilk_hub
+/obj/item/weapon/stock_parts/circuitboard/bs_snare_hub
 	name = T_BOARD("bluespace snare hub")
 	origin_tech = list(TECH_DATA = 4, TECH_BLUESPACE = 6)
-	build_path = /obj/machinery/bssilk_hub
+	build_path = /obj/machinery/bs_snare_hub
 	req_components = list(
 		/obj/item/bluespace_crystal = 2,
 		/obj/item/weapon/stock_parts/capacitor/super = 2,

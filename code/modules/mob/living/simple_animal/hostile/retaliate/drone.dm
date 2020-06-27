@@ -82,7 +82,7 @@
 
 //self repair systems have a chance to bring the drone back to life
 /mob/living/simple_animal/hostile/retaliate/malf_drone/Life()
-
+	..() //INF
 	//emps and lots of damage can temporarily shut us down
 	if(disabled > 0)
 		set_stat(UNCONSCIOUS)
@@ -155,7 +155,7 @@
 			if(!disabled && exploding)
 				explosion(get_turf(src), 0, 1, 4, 7)
 				//proc/explosion(turf/epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range, adminlog = 1)
-	..()
+//INF	..()
 
 //ion rifle!
 /mob/living/simple_animal/hostile/retaliate/malf_drone/emp_act(severity)

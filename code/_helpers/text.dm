@@ -16,7 +16,7 @@
 // Run all strings to be used in an SQL query through this proc first to properly escape out injection attempts.
 /proc/sanitizeSQL(var/t as text)
 	var/sqltext = dbcon.Quote(t);
-	return copytext(sqltext, 2, lentext(sqltext));//Quote() adds quotes around input, we already do that
+	return copytext(sqltext, 2, length(sqltext));//Quote() adds quotes around input, we already do that
 
 /*
  * Text sanitization
@@ -36,8 +36,6 @@
 			return
 		input = copytext(input,1,max_length)
 
-	input = replace_characters(input, list("ˇ"="___255_"))
-
 	if(extra)
 		input = replace_characters(input, list("\n"=" ","\t"=" "))
 
@@ -55,8 +53,6 @@
 	if(trim)
 		//Maybe, we need trim text twice? Here and before copytext?
 		input = trim(input)
-
-	input = replace_characters(input, list("___255_"="&#255;"))
 
 	return input
 
@@ -166,16 +162,11 @@
 	for(var/i=1, i<=length(text), i++)
 		switch(text2ascii(text,i))
 			if(62,60,92,47)	return			//rejects the text if it contains these bad characters: <, >, \ or /
-			//if(127 to 255)	return			//rejects non-ASCII letters
+			if(127 to 255)	return			//rejects non-ASCII letters
 			if(0 to 31)		return			//more weird stuff
 			if(32)			continue		//whitespace
 			else			non_whitespace = 1
 	if(non_whitespace)		return text		//only accepts the text if it has some non-spaces
-
-
-//Old variant. Haven't dared to replace in some places.
-/proc/sanitize_old(var/t,var/list/repl_chars = list("ˇ"="___255_"))
-	return replacetext(html_encode(replace_characters(t,repl_chars)), "___255_", "&#255;")
 
 // Truncates text to limit if necessary.
 /proc/dd_limittext(message, length)
@@ -184,6 +175,10 @@
 		return message
 	else
 		return copytext(message, 1, length + 1)
+
+//Old variant. Haven't dared to replace in some places.
+/proc/sanitize_old(var/t,var/list/repl_chars = list("\n"="#","\t"="#"))
+	return html_encode(replace_characters(t,repl_chars))
 
 /*
  * Text searches
@@ -263,22 +258,9 @@
 /proc/trim(text)
 	return trim_left(trim_right(text))
 
-/proc/ruppertext(t as text)
-	t = uppertext(t)
-	. = ""
-	for(var/i in 1 to length(t))
-		var/a = text2ascii(t, i)
-		if (a > 223)
-			. += ascii2text(a - 32)
-		else if (a == 184)
-			. += ascii2text(168)
-		else
-			. += ascii2text(a)
-	. = replacetext(.,"&#255;","ﬂ")
-
 //Returns a string with the first element of the string capitalized.
 /proc/capitalize(var/t as text)
-	return ruppertext(copytext(t, 1, 2)) + copytext(t, 2)
+	return uppertext(copytext_char(t, 1, 2)) + copytext_char(t, 2)
 
 //This proc strips html properly, remove < > and all text between
 //for complete text sanitizing should be used sanitize()
@@ -310,9 +292,9 @@
 //This is used for fingerprints
 /proc/stringmerge(var/text,var/compare,replace = "*")
 	var/newtext = text
-	if(lentext(text) != lentext(compare))
+	if(length(text) != length(compare))
 		return 0
-	for(var/i = 1, i < lentext(text), i++)
+	for(var/i = 1, i < length(text), i++)
 		var/a = copytext(text,i,i+1)
 		var/b = copytext(compare,i,i+1)
 		//if it isn't both the same letter, or if they are both the replacement character
@@ -332,7 +314,7 @@
 	if(!text || !character)
 		return 0
 	var/count = 0
-	for(var/i = 1, i <= lentext(text), i++)
+	for(var/i = 1, i <= length(text), i++)
 		var/a = copytext(text,i,i+1)
 		if(a == character)
 			count++
@@ -347,8 +329,8 @@
 //Used in preferences' SetFlavorText and human's set_flavor verb
 //Previews a string of len or less length
 proc/TextPreview(var/string,var/len=40)
-	if(lentext(string) <= len)
-		if(!lentext(string))
+	if(length(string) <= len)
+		if(!length(string))
 			return "\[...\]"
 		else
 			return string
@@ -357,24 +339,12 @@ proc/TextPreview(var/string,var/len=40)
 
 //alternative copytext() for encoded text, doesn't break html entities (&#34; and other)
 /proc/copytext_preserve_html(var/text, var/first, var/last)
-	var/temp = replacetextEx(text, "&#255;", "ﬂ")
-	temp = replacetextEx(temp, "&#1103;", "ﬂ")
-	var/delta = length(text) - length(temp)
-	if(delta < 0)
-		delta = 0
-	var/msg = html_encode(copytext(html_decode(text), first, last + delta))
-	msg = replacetextEx(msg, "&amp;#255;", "&#255;")
-	msg = replacetextEx(msg, "&amp;#1103;", "&#1103;")
-	return msg
+	return html_encode(copytext(html_decode(text), first, last))
 
-//For generating neat chat tag-images
-//The icon var could be local in the proc, but it's a waste of resources
-//	to always create it and then throw it out.
-/var/icon/text_tag_icons = new('./icons/chattags.dmi')
 /proc/create_text_tag(var/tagname, var/tagdesc = tagname, var/client/C = null)
 	if(!(C && C.get_preference_value(/datum/client_preference/chat_tags) == GLOB.PREF_SHOW))
 		return tagdesc
-	return "<IMG src='\ref[text_tag_icons.icon]' class='text_tag' iconstate='[tagname]'" + (tagdesc ? " alt='[tagdesc]'" : "") + ">"
+	return "<IMG src='\ref['./icons/chattags.dmi']' class='text_tag' iconstate='[tagname]'" + (tagdesc ? " alt='[tagdesc]'" : "") + ">"
 
 /proc/contains_az09(var/input)
 	for(var/i=1, i<=length(input), i++)
@@ -393,7 +363,7 @@ proc/TextPreview(var/string,var/len=40)
 	return 0
 
 //unicode sanitization
-/proc/sanitize_u(t)
+/*/proc/sanitize_u(t)
 	t = html_encode(sanitize(t))
 	t = replacetext(t, "____255_", "&#1103;")
 	return t
@@ -410,23 +380,19 @@ proc/TextPreview(var/string,var/len=40)
 
 //clean sanitize cp1251
 /proc/sanitize_a0(t)
-	t = replacetext(t, "ˇ", "&#255;")
+	t = replacetext(t, "—è", "&#255;")
 	return t
 
 //clean sanitize unicode
 /proc/sanitize_u0(t)
-	t = replacetext(t, "ˇ", "&#1103;")
+	t = replacetext(t, "—è", "&#1103;")
 	return t
-
-GLOBAL_LIST_INIT(cyrillic_symbols, list("‡", "·", "‚", "„", "‰", "Â", "∏", "Ê", "Á", "Ë", "È", "Í", "Î", "Ï", \
-	"Ì", "Ó", "Ô", "", "Ò", "Ú", "Û", "Ù", "ı", "ˆ", "˜", "¯", "˘", "¸", "˚", "˙", "˝", "˛", "ˇ", \
-	"¿", "¡", "¬", "√", "ƒ", "≈", "®", "∆", "«", "»", "…", " ", "À", "Ã", "Õ", "Œ", "œ", \
-	"–", "—", "“", "”", "‘", "’", "÷", "◊", "ÿ", "Ÿ", "‹", "€", "⁄", "›", "ﬁ", "ﬂ"))
 
 /proc/remore_cyrillic(t)
 	for(var/i in GLOB.cyrillic_symbols)
 		t = replacetext(t, i, "")
 	return t
+*/
 
 var/list/alphabet = list("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z")
 
@@ -483,7 +449,7 @@ var/list/alphabet = list("a","b","c","d","e","f","g","h","i","j","k","l","m","n"
 	t = replacetext(t, "\[cell\]", "<td>")
 	t = replacetext(t, "\[exologo\]", "<img src = exologo.png>")
 	t = replacetext(t, "\[logo\]", "<img src = ntlogo.png>")
-	t = replacetext(t, "ˇ", "&#1103;")
+	t = replacetext(t, "—è", "&#1103;")
 	t = replacetext(t, "&#255;", "&#1103;")
 	t = replacetext(t, "\[bluelogo\]", "<img src = bluentlogo.png>")
 	t = replacetext(t, "\[solcrest\]", "<img src = sollogo.png>")
@@ -629,9 +595,9 @@ var/list/alphabet = list("a","b","c","d","e","f","g","h","i","j","k","l","m","n"
 		. += .(rest)
 
 /proc/deep_string_equals(var/A, var/B)
-	if (lentext(A) != lentext(B))
+	if (length(A) != length(B))
 		return FALSE
-	for (var/i = 1 to lentext(A))
+	for (var/i = 1 to length(A))
 		if (text2ascii(A, i) != text2ascii(B, i))
 			return FALSE
 	return TRUE

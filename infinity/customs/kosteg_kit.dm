@@ -6,6 +6,7 @@
 	icon_state = "kosteg_suit"
 	item_state = "kosteg_suit"
 	rolled_sleeves = -1
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/shoes/zoneboots
 	name = "go-go boots"
@@ -14,6 +15,7 @@
 	item_icons = list(slot_shoes_str = CUSTOM_ITEM_MOB)
 	icon_state = "kosteg_boots"
 	item_state = "kosteg_boots"
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/accessory/zonehairclip
 	name = "skull hairclip"
@@ -24,6 +26,7 @@
 	icon_state = "kosteg_mask"
 	item_state = "kosteg_mask"
 	slot_flags = SLOT_EARS | SLOT_TIE
+	trade_blacklisted = TRUE
 
 /obj/item/weapon/clothingbag/zone
 	New()

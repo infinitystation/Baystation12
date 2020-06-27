@@ -257,11 +257,13 @@
 		toggle_open(2) //forces the icons to refresh on screen
 
 //Changeling Abilities
+
 /obj/screen/ability/verb_based/changeling
+	icon = 'infinity/icons/obj/action_buttons/changeling_new.dmi' //INF
 	icon_state = "ling_spell_base"
 	background_base_state = "ling"
 
-/obj/screen/movable/ability_master/proc/add_ling_ability(var/object_given, var/verb_given, var/name_given, var/ability_icon_given, var/arguments)
+/obj/screen/movable/ability_master/proc/add_ling_verb(var/object_given, var/verb_given, var/name_given, var/ability_icon_given, var/arguments) //INF, WAS proc/add_ling_ability
 	if(!object_given)
 		message_admins("ERROR: add_ling_ability() was not given an object in its arguments.")
 	if(!verb_given)
@@ -279,7 +281,6 @@
 	ability_objects.Add(A)
 	if(my_mob.client)
 		toggle_open(2) //forces the icons to refresh on screen
-
 
 /////////Obj Abilities////////
 //Buttons to trigger objects//
@@ -352,7 +353,7 @@
 		toggle_open(2) //forces the icons to refresh on screen
 
 /mob/Life()
-	..()
+	UNLINT(..())
 	if(ability_master)
 		ability_master.update_spells(0)
 

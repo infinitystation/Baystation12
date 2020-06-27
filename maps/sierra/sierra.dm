@@ -18,6 +18,8 @@
 	#include "sierra_turfs.dm"
 	#include "sierra_unit_testing.dm"
 
+	#include "sierra_snatch.dm"
+
 	#include "datums/programs.dm"
 
 	#include "datums/uniforms.dm"
@@ -33,6 +35,7 @@
 	#include "datums/reports/deck.dm"
 
 	#include "datums/shackle_law_sets.dm"
+	#include "datums/supplypacks/engineering.dm"
 	#include "datums/supplypacks/security.dm"
 	#include "datums/supplypacks/science.dm"
 
@@ -107,6 +110,7 @@
 	#include "loadout/loadout_eyes.dm"
 	#include "loadout/loadout_gloves.dm"
 	#include "loadout/loadout_head.dm"
+	#include "loadout/loadout_pda.dm"
 	#include "loadout/loadout_shoes.dm"
 	#include "loadout/loadout_suit.dm"
 	#include "loadout/loadout_uniform.dm"
@@ -128,9 +132,10 @@
 	#include "../away_inf/smugglers/smugglers.dm"
 	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
 	#include "../away_inf/patrol/patrol.dm"
+	#include "../away_inf/bearcat/bearcat.dm"
+	#include "../away_inf/ascent/ascent.dm"
 
 	#include "../away/ascent/ascent.dm"
-	#include "../away/bearcat/bearcat.dm"
 	#include "../away/derelict/derelict.dm"
 	#include "../away/magshield/magshield.dm"
 	#include "../away/casino/casino.dm"

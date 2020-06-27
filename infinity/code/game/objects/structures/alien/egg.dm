@@ -1,4 +1,4 @@
-#define MAX_PROGRESS 100
+#define MAX_PROGRESS 150 //wass 100, too fast
 
 /obj/structure/alien/egg
 	desc = "It looks like a weird egg."
@@ -27,13 +27,23 @@
 		attack_ghost(usr)
 
 /obj/structure/alien/egg/Process()
-	progress++
-	if(progress >= MAX_PROGRESS)
-		for(var/mob/observer/ghost/O in GLOB.ghost_mob_list)
-			if(MODE_XENOMORPH in O?.client?.prefs.be_special_role)
-				to_chat(O, "<span class='notice'>An alien is ready to hatch! ([ghost_follow_link(src, O)]) (<a href='byond://?src=\ref[src];spawn=1'>spawn</a>)</span>")
-		STOP_PROCESSING(SSobj, src)
+	if(progress == MAX_PROGRESS)
 		update_icon()
+		progress++
+	else if(progress < MAX_PROGRESS)
+		progress++
+
+	/*if(progress >= MAX_PROGRESS)
+		for(var/mob/living/carbon/human/H in range(3, get_turf(src)))
+			if(istype(H) && !isxenomorph(H))
+				flick("egg_opening",src)
+				progress = -1 // No harvesting pls.
+				sleep(5)
+				var/obj/item/clothing/mask/facehugger/hugger = new(get_turf(src))
+				hugger.icon_state = "facehugger_thrown"
+				hugger.throw_at(H,3,1)
+				update_icon()
+				return*/
 
 /obj/structure/alien/egg/on_update_icon()
 	if(progress == -1)
@@ -42,6 +52,138 @@
 		icon_state = "egg_growing"
 	else
 		icon_state = "egg"
+
+/*/obj/structure/alien/egg/attack_hand(mob/user)
+	if(progress == -1)
+		return
+	if(progress < MAX_PROGRESS)
+		return
+	flick("egg_opening",src)
+	progress = -1 // No harvesting pls.
+	sleep(5)
+	var/obj/item/clothing/mask/facehugger/hugger = new(get_turf(src))
+	if(!isxenomorph(user))
+		hugger.icon_state = "facehugger_thrown"
+		hugger.throw_at(user,3,1)
+	update_icon()
+	return 1
+
+/obj/structure/alien/egg/attackby(mob/user)
+	if(progress == -1)
+		. = ..()
+		return
+	if(progress < MAX_PROGRESS)
+		. = ..()
+		return
+	flick("egg_opening",src)
+	progress = -1 // No harvesting pls.
+	sleep(5)
+	var/obj/item/clothing/mask/facehugger/hugger = new(get_turf(src))
+	if(!isxenomorph(user))
+		hugger.icon_state = "facehugger_thrown"
+		hugger.throw_at(user,3,1)
+	update_icon()
+	return 1*/
+
+/obj/item/clothing/mask/facehugger
+	name = "facehugger"
+	desc = "A gross - looking alien. It is moving!"
+	icon = 'infinity/icons/mob/alien.dmi'
+	icon_state = "facehugger"
+	item_state = "facehugger"
+	tint = 7
+	throw_range = 5
+	w_class = ITEM_SIZE_SMALL
+	var/dead = 0
+	var/live_time = 150
+
+/obj/item/clothing/mask/facehugger/bullet_act()
+	if(dead)
+		qdel(src)
+	else
+		dead = 1
+		icon_state = "facehugger_dead"
+
+/obj/item/clothing/mask/facehugger/ex_act()
+	if(dead)
+		qdel(src)
+	else
+		dead = 1
+		icon_state = "facehugger_dead"
+
+/obj/item/clothing/mask/facehugger/afterattack(var/obj/target as obj, mob/user as mob, proximity)
+	if(!proximity)
+		return
+	if(!istype(target))
+		return
+	if(dead == 0)
+		leap(target)
+
+/obj/item/clothing/mask/facehugger/proc/leap(atom/movable/A)
+	var/mob/living/carbon/human/H = A
+
+	if(!istype(H))
+		return
+
+	if(dead)
+		return
+
+	if(isxenomorph(H))
+		return
+
+
+	if(H.head && (istype(H.head, /obj/item/clothing/head/bio_hood) || istype(H.head, /obj/item/clothing/head/helmet/riot) || istype(H.head, /obj/item/clothing/head/helmet/space) || istype(H.head, /obj/item/clothing/head/welding)))
+		return
+
+	var/obj/item/organ/aff_head = H.get_organ(BP_HEAD)
+	var/obj/item/organ/aff_chest = H.get_organ(BP_CHEST)
+	if(!aff_head || BP_IS_ROBOTIC(aff_head))
+		return
+	if(!aff_chest || BP_IS_ROBOTIC(aff_chest))
+		return
+
+	if(H.wear_mask && istype(H.wear_mask, /obj/item/clothing/mask/facehugger))
+		return
+
+	var/was_mask = 0
+	if(H.wear_mask)
+		H.drop_from_inventory(H.wear_mask)
+		was_mask = 1
+	if(H.equip_to_slot_if_possible(src, slot_wear_mask))
+		canremove = 0
+		if(was_mask)
+			H.visible_message(SPAN_DANGER("[src] jumps onto [H] and tears his mask off!"), SPAN_DANGER("[src] jumps onto you and tears your mask off!"))
+		else
+			H.visible_message(SPAN_DANGER("[src] jumps onto [H]!"), SPAN_DANGER("[src] jumps onto you!"))
+		src.pickup(H)
+		var/obj/item/organ/affecting = H.get_organ(BP_CHEST)
+		//var/obj/item/organ/internal/xeno/larva/larva = new(affecting)
+		H.apply_damage(90, PAIN, affecting)
+		//larva.replaced(H, affecting)
+		H.Weaken(8)
+		H.Stun(3)
+		addtimer(CALLBACK(src, .proc/detach), live_time)
+
+/obj/item/clothing/mask/facehugger/Crossed(atom/movable/A)
+	if(dead == 0)
+		leap(A)
+	else
+		icon_state = "facehugger_dead"
+
+/obj/item/clothing/mask/facehugger/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	. = ..()
+	if(dead == 0)
+		leap(hit_atom)
+
+/obj/item/clothing/mask/facehugger/proc/detach()
+	var/mob/living/carbon/human/H = src.loc
+	if(!istype(H))
+		return
+	dead = 1
+	canremove = 1
+	H.drop_from_inventory(src)
+	H.visible_message(SPAN_DANGER("[src] falls after violating [H]'s face!"), SPAN_DANGER("[src] falls after violating your face!"))
+	icon_state = "facehugger_impregnated"
 
 /obj/structure/alien/egg/attack_ghost(var/mob/observer/ghost/user)
 	if(progress == -1) //Egg has been hatched.

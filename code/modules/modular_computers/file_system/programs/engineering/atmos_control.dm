@@ -31,7 +31,7 @@
 
 //inf	if(monitored_alarm_ids)
 	for(var/obj/machinery/alarm/alarm in SSmachines.machinery)
-//inf		if(alarm.alarm_id && alarm.alarm_id in monitored_alarm_ids)
+//inf		if(alarm.alarm_id && (alarm.alarm_id in monitored_alarm_ids))
 		if(alarm.z in GLOB.using_map.station_levels) //inf
 			monitored_alarms += alarm
 	// machines may not yet be ordered at this point

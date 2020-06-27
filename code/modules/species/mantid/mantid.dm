@@ -37,10 +37,10 @@
 
 	min_age =                 1
 	max_age =                20
-//INF	slowdown =               -1
+//ORIG	slowdown =               -1
 	rarity_value =            3
 	gluttonous =              2
-	siemens_coefficient =     0
+//ORIG	siemens_coefficient =     0 commented because there is 0.2 at 32
 	body_temperature =        null
 
 	breath_type =             GAS_METHYL_BROMIDE
@@ -144,6 +144,8 @@
 	blood_volume =         1200
 	spawns_with_stack =       0
 
+	spawn_flags =             SPECIES_IS_RESTRICTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_FBP_CHARGEN | SPECIES_IS_WHITELISTED//INF
+
 	pixel_offset_x =        -4
 	antaghud_offset_y =      18
 	antaghud_offset_x =      4
@@ -234,3 +236,4 @@
 /datum/species/nabber/monarch/queen
 	name = SPECIES_MONARCH_QUEEN
 	name_plural = "Monarch Serpentid Queens"
+	spawn_flags =             SPECIES_IS_RESTRICTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_FBP_CHARGEN | SPECIES_IS_WHITELISTED//INF

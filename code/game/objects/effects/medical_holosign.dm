@@ -8,7 +8,7 @@
 /obj/effect/medical_holosign/Initialize(mapload, var/creator)
 	. = ..()
 	playsound(loc, 'sound/machines/ping.ogg', 50, 0) //make some noise!
-	set_light(l_range = 2, l_power = 1, l_color = "#4c88ad")
+	set_light(l_inner_range = 1, l_outer_range = 2, l_max_bright = 1, l_color = "#4c88ad")
 	if(creator)
 		visible_message("<span class='notice'>[creator] created a medical hologram!</span>")
 	addtimer(CALLBACK(src,/datum/proc/qdel_self), duration)

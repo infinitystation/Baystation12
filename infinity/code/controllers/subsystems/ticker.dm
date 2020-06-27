@@ -1,22 +1,23 @@
 /datum/controller/subsystem/ticker/proc/update_server()
 	end_game_state = END_GAME_AWAITING_UPDATE
-	to_world(SPAN_NOTICE(FONT_LARGE("<b>\n=== Сервер уходит на обновление! ===\n=== Он будет недоступен несколько минут. ===\n</b>")))
+	to_world(SPAN_NOTICE(FONT_LARGE("<b>\n РЎРµСЂРІРµСЂ СѓС…РѕРґРёС‚ РЅР° РѕР±РЅРѕРІР»РµРЅРёРµ!\n Р—Р°РїСѓСЃРє С‡РµСЂРµР· РѕРґРЅСѓ РјРёРЅСѓС‚Сѓ (РёР»Рё РјРµРЅСЊС€Рµ). \n</b>")))
 
 	sleep(10 SECONDS)
 
 	if(end_game_state == END_GAME_AWAITING_UPDATE)
-		send2mainirc("Производится обновление сервера.")
-		updater && istype(updater) ? send2admindiscord("Происходит обновление. Инициировано [updater.ckey].") : null
-		game_log("SERVER", "Запущено обновление сервера. ")
-		shell("update.bat")
+		send2mainirc("РџСЂРѕРёР·РІРѕРґРёС‚СЃСЏ РѕР±РЅРѕРІР»РµРЅРёРµ СЃРµСЂРІРµСЂР°.")
+		updater && istype(updater) ? send2admindiscord("\n РџСЂРѕРёСЃС…РѕРґРёС‚ РѕР±РЅРѕРІР»РµРЅРёРµ. РРЅРёС†РёРёСЂРѕРІР°РЅРѕ [updater.ckey].") : null
+		SSwebhooks.send(WEBHOOK_SERVER_UPDATE)
+		game_log("SERVER", "Р—Р°РїСѓС‰РµРЅРѕ РѕР±РЅРѕРІР»РµРЅРёРµ СЃРµСЂРІРµСЂР°. ")
+		shell("sh ./update_start.sh")
 
 /datum/controller/subsystem/ticker/proc/update_map(New_Map)
 	if(shell("update_map.bat") == 0)
-		send2mainirc("Следующей картой будет - [New_Map]!")
-		log_and_message_admins("Компилирование карты завершено. Следующей картой будет - [New_Map].")
+		send2mainirc("РЎР»РµРґСѓСЋС‰РµР№ РєР°СЂС‚РѕР№ Р±СѓРґРµС‚ - [New_Map]!")
+		log_and_message_admins("РљРѕРјРїРёР»РёСЂРѕРІР°РЅРёРµ РєР°СЂС‚С‹ Р·Р°РІРµСЂС€РµРЅРѕ. РЎР»РµРґСѓСЋС‰РµР№ РєР°СЂС‚РѕР№ Р±СѓРґРµС‚ - [New_Map].")
 	else
 		scheduled_map_change = 1
-		log_and_message_admins("Ошибка в компилировании карты! Возпроизведение резервного обновлениЯ в конце раунда! Доложить об ошибке разработчикам!")
+		log_and_message_admins("РћС€РёР±РєР° РІ РєРѕРјРїРёР»РёСЂРѕРІР°РЅРёРё РєР°СЂС‚С‹! Р’РѕР·РїСЂРѕРёР·РІРµРґРµРЅРёРµ СЂРµР·РµСЂРІРЅРѕРіРѕ РѕР±РЅРѕРІР»РµРЅРёРЇ РІ РєРѕРЅС†Рµ СЂР°СѓРЅРґР°! Р”РѕР»РѕР¶РёС‚СЊ РѕР± РѕС€РёР±РєРµ СЂР°Р·СЂР°Р±РѕС‚С‡РёРєР°Рј!")
 
 	if(GAME_STATE == RUNLEVEL_POSTGAME)
 		end_game_state = END_GAME_READY_TO_END

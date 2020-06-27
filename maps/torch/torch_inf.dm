@@ -1,7 +1,9 @@
 /datum/map/torch
 	minimum_players = 10
 
-/datum/map/torch
+//		Non-Torch files, that requires Torch. Shame on you...
+#include "items\clothing\solgov-infinity.dm"
+
 #define HUMAN_ONLY_JOBS /datum/job/captain, /datum/job/hop, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos, /datum/job/representative, /datum/job/sea, /datum/job/pathfinder
 	species_to_job_blacklist = list(
 		/datum/species/unathi         = list(HUMAN_ONLY_JOBS, /datum/job/liaison, /datum/job/warden),
@@ -101,24 +103,24 @@
 				species_blacklist |= job.type
 
 /datum/map/torch/map_info(victim)
-	to_chat(victim, "<h2>Информаци&#255; о карте</h2>")
-	to_chat(victim, "Вы находитесь на борту [station_name] - корабле Экспедиционного Корпуса ЦПСС. Основной задачей корабл&#255; &#255;вл&#255;етс&#255; поиск неизвестных разумных форм жизни и исследование космоса.")
-	to_chat(victim, "Корабль укомплектован персоналом из ЦПСС, сотрудниками Организации Экспедиционного Корпуса и наемными контрактниками.")
-	to_chat(victim, "Это неисследованна&#255; область космического пространства вдали от территории ЦПСС, поэтому Вы можете встретить лишь небольшие аванпосты и дрейфующие суда. Ни одно известное правительство не претендует на этот сектор.")
-	to_chat(victim, "<b>Полезные статьи:</b>")
-	to_chat(victim, "Устав (руководство по военке): https://wiki.infinity-ss13.info/index.php?title=Руководство_военного")
-	to_chat(victim, "Закон ЦПСС (действует на борту): https://wiki.infinity-ss13.info/index.php?title=Закон_ЦПСС")
-	to_chat(victim, "Доп.закон дл&#255; военных: https://wiki.infinity-ss13.info/index.php?title=Военно-юридический_кодекс_ПСС")
-	to_chat(victim, "Униформа экипажа: https://wiki.infinity-ss13.info/index.php?title=Униформа_экипажа")
+	to_chat(victim, "<h2>РРЅС„РѕСЂРјР°С†РёСЏ Рѕ РєР°СЂС‚Рµ</h2>")
+	to_chat(victim, "Р’С‹ РЅР°С…РѕРґРёС‚РµСЃСЊ РЅР° Р±РѕСЂС‚Сѓ [station_name] - РєРѕСЂР°Р±Р»Рµ Р­РєСЃРїРµРґРёС†РёРѕРЅРЅРѕРіРѕ РљРѕСЂРїСѓСЃР° Р¦РџРЎРЎ. РћСЃРЅРѕРІРЅРѕР№ Р·Р°РґР°С‡РµР№ РєРѕСЂР°Р±Р»СЏ СЏРІР»СЏРµС‚СЃСЏ РїРѕРёСЃРє РЅРµРёР·РІРµСЃС‚РЅС‹С… СЂР°Р·СѓРјРЅС‹С… С„РѕСЂРј Р¶РёР·РЅРё Рё РёСЃСЃР»РµРґРѕРІР°РЅРёРµ РєРѕСЃРјРѕСЃР°.")
+	to_chat(victim, "РљРѕСЂР°Р±Р»СЊ СѓРєРѕРјРїР»РµРєС‚РѕРІР°РЅ РїРµСЂСЃРѕРЅР°Р»РѕРј РёР· Р¦РџРЎРЎ, СЃРѕС‚СЂСѓРґРЅРёРєР°РјРё РћСЂРіР°РЅРёР·Р°С†РёРё Р­РєСЃРїРµРґРёС†РёРѕРЅРЅРѕРіРѕ РљРѕСЂРїСѓСЃР° Рё РЅР°РµРјРЅС‹РјРё РєРѕРЅС‚СЂР°РєС‚РЅРёРєР°РјРё.")
+	to_chat(victim, "Р­С‚Рѕ РЅРµРёСЃСЃР»РµРґРѕРІР°РЅРЅР°СЏ РѕР±Р»Р°СЃС‚СЊ РєРѕСЃРјРёС‡РµСЃРєРѕРіРѕ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІР° РІРґР°Р»Рё РѕС‚ С‚РµСЂСЂРёС‚РѕСЂРёРё Р¦РџРЎРЎ, РїРѕСЌС‚РѕРјСѓ Р’С‹ РјРѕР¶РµС‚Рµ РІСЃС‚СЂРµС‚РёС‚СЊ Р»РёС€СЊ РЅРµР±РѕР»СЊС€РёРµ Р°РІР°РЅРїРѕСЃС‚С‹ Рё РґСЂРµР№С„СѓСЋС‰РёРµ СЃСѓРґР°. РќРё РѕРґРЅРѕ РёР·РІРµСЃС‚РЅРѕРµ РїСЂР°РІРёС‚РµР»СЊСЃС‚РІРѕ РЅРµ РїСЂРµС‚РµРЅРґСѓРµС‚ РЅР° СЌС‚РѕС‚ СЃРµРєС‚РѕСЂ.")
+	to_chat(victim, "<b>РџРѕР»РµР·РЅС‹Рµ СЃС‚Р°С‚СЊРё:</b>")
+	to_chat(victim, "РЈСЃС‚Р°РІ (СЂСѓРєРѕРІРѕРґСЃС‚РІРѕ РїРѕ РІРѕРµРЅРєРµ): https://wiki.infinity-ss13.info/index.php?title=Р СѓРєРѕРІРѕРґСЃС‚РІРѕ_РІРѕРµРЅРЅРѕРіРѕ")
+	to_chat(victim, "Р—Р°РєРѕРЅ Р¦РџРЎРЎ (РґРµР№СЃС‚РІСѓРµС‚ РЅР° Р±РѕСЂС‚Сѓ): https://wiki.infinity-ss13.info/index.php?title=Р—Р°РєРѕРЅ_Р¦РџРЎРЎ")
+	to_chat(victim, "Р”РѕРї.Р·Р°РєРѕРЅ РґР»СЏ РІРѕРµРЅРЅС‹С…: https://wiki.infinity-ss13.info/index.php?title=Р’РѕРµРЅРЅРѕ-СЋСЂРёРґРёС‡РµСЃРєРёР№_РєРѕРґРµРєСЃ_РџРЎРЎ")
+	to_chat(victim, "РЈРЅРёС„РѕСЂРјР° СЌРєРёРїР°Р¶Р°: https://wiki.infinity-ss13.info/index.php?title=РЈРЅРёС„РѕСЂРјР°_СЌРєРёРїР°Р¶Р°")
 
 /datum/map/torch/send_welcome()
-	var/welcome_text = "<center><img src = sollogo.png /><br /><font size = 3><b>SEV Torch</b> Показани&#255; Сенсоров:</font><hr />"
-	welcome_text += "Отчет сгенерирован [stationdate2text()] в [stationtime2text()]</center><br /><br />"
-	welcome_text += "Текуща&#255; система: <b>[system_name()]</b><br />"
-	welcome_text += "Следующа&#255; система дл&#255; прыжка: <b>[generate_system_name()]</b><br />"
-	welcome_text += "Дней до Солнечной Системы: <b>[rand(15,45)]</b><br />"
-	welcome_text += "Дней с последнего визита в порт: <b>[rand(60,180)]</b><br />"
-	welcome_text += "Результаты сканировани&#255; показали следующие потенциальные объекты дл&#255; исследовани&#255;:<br />"
+	var/welcome_text = "<center><img src = sollogo.png /><br /><font size = 3><b>SEV Torch</b> РџРѕРєР°Р·Р°РЅРёСЏ РЎРµРЅСЃРѕСЂРѕРІ:</font><hr />"
+	welcome_text += "РћС‚С‡РµС‚ СЃРіРµРЅРµСЂРёСЂРѕРІР°РЅ [stationdate2text()] РІ [stationtime2text()]</center><br /><br />"
+	welcome_text += "РўРµРєСѓС‰Р°СЏ СЃРёСЃС‚РµРјР°: <b>[system_name()]</b><br />"
+	welcome_text += "РЎР»РµРґСѓСЋС‰Р°СЏ СЃРёСЃС‚РµРјР° РґР»СЏ РїСЂС‹Р¶РєР°: <b>[generate_system_name()]</b><br />"
+	welcome_text += "Р”РЅРµР№ РґРѕ РЎРѕР»РЅРµС‡РЅРѕР№ РЎРёСЃС‚РµРјС‹: <b>[rand(15,45)]</b><br />"
+	welcome_text += "Р”РЅРµР№ СЃ РїРѕСЃР»РµРґРЅРµРіРѕ РІРёР·РёС‚Р° РІ РїРѕСЂС‚: <b>[rand(60,180)]</b><br />"
+	welcome_text += "Р РµР·СѓР»СЊС‚Р°С‚С‹ СЃРєР°РЅРёСЂРѕРІР°РЅРёСЏ РїРѕРєР°Р·Р°Р»Рё СЃР»РµРґСѓСЋС‰РёРµ РїРѕС‚РµРЅС†РёР°Р»СЊРЅС‹Рµ РѕР±СЉРµРєС‚С‹ РґР»СЏ РёСЃСЃР»РµРґРѕРІР°РЅРёСЏ:<br />"
 	var/list/space_things = list()
 	var/obj/effect/overmap/torch = map_sectors["1"]
 	for(var/zlevel in map_sectors)
@@ -129,18 +131,18 @@
 
 	var/list/distress_calls
 	for(var/obj/effect/overmap/O in space_things)
-		var/location_desc = " на текущем квадрате."
+		var/location_desc = " РЅР° С‚РµРєСѓС‰РµРј РєРІР°РґСЂР°С‚Рµ."
 		if(O.loc != torch.loc)
 			var/bearing = round(90 - Atan2(O.x - torch.x, O.y - torch.y),5) //fucking triangles how do they work
 			if(bearing < 0)
 				bearing += 360
-			location_desc = ", по азимуту [bearing]."
+			location_desc = ", РїРѕ Р°Р·РёРјСѓС‚Сѓ [bearing]."
 		welcome_text += "<li>\A <b>[O.name]</b>[location_desc]</li>"
 
 	if(LAZYLEN(distress_calls))
-		welcome_text += "<br><b>Обнаружены сигналы бедстви&#255;:</b><br>[jointext(distress_calls, "<br>")]<br>"
+		welcome_text += "<br><b>РћР±РЅР°СЂСѓР¶РµРЅС‹ СЃРёРіРЅР°Р»С‹ Р±РµРґСЃС‚РІРёСЏ:</b><br>[jointext(distress_calls, "<br>")]<br>"
 	else
-		welcome_text += "<br>Сигналов бедстви&#255; не обнаружено.<br />"
+		welcome_text += "<br>РЎРёРіРЅР°Р»РѕРІ Р±РµРґСЃС‚РІРёСЏ РЅРµ РѕР±РЅР°СЂСѓР¶РµРЅРѕ.<br />"
 	welcome_text += "<hr>"
 
 	post_comm_message("SEV Torch Sensor Readings", welcome_text)

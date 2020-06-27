@@ -68,7 +68,9 @@
 	if(stat != DEAD && !InStasis())
 		//Updates the number of stored chemicals for powers
 		handle_changeling()
-
+//[INF]
+		if(status_flags & FAKEDEATH) return //act like a dead mob - even if its broken by itself...
+//[/INF]
 		//Organs and blood
 		handle_organs()
 		stabilize_body_temperature() //Body temperature adjusts itself (self-regulation)
@@ -200,7 +202,7 @@
 		eye_blurry = 1
 	else
 		//blindness
-		if(!(sdisabilities & BLIND))
+		if(!(sdisabilities & BLINDED))
 			if(equipment_tint_total >= TINT_BLIND)	// Covered eyes, heal faster
 				eye_blurry = max(eye_blurry-2, 0)
 
@@ -286,7 +288,7 @@
 		damage = Floor(damage * species.get_radiation_mod(src))
 		if(damage)
 			adjustToxLoss(damage * RADIATION_SPEED_COEFFICIENT)
-			immunity = max(0, immunity - damage * 15 * RADIATION_SPEED_COEFFICIENT) 
+			immunity = max(0, immunity - damage * 15 * RADIATION_SPEED_COEFFICIENT)
 			updatehealth()
 			if(!isSynthetic() && organs.len)
 				var/obj/item/organ/external/O = pick(organs)
@@ -409,7 +411,9 @@
 			burn_dam = COLD_DAMAGE_LEVEL_2
 		else
 			burn_dam = COLD_DAMAGE_LEVEL_3
-		SetStasis(getCryogenicFactor(bodytemperature), STASIS_COLD)
+
+		if(!istype(loc, /obj/machinery/atmospherics/unary/cryo_cell)) //INF
+			SetStasis(getCryogenicFactor(bodytemperature), STASIS_COLD)
 		if(!chem_effects[CE_CRYO])
 			take_overall_damage(burn=burn_dam, used_weapon = "Low Body Temperature")
 			fire_alert = max(fire_alert, 1)
@@ -883,11 +887,23 @@
 		to_chat(src,"<span class='notice'>You feel like you're [pick("moving","flying","floating","falling","hovering")].</span>")
 
 /mob/living/carbon/human/proc/handle_changeling()
+/*original
 	if(mind && mind.changeling)
 		mind.changeling.regenerate()
+/original*/
+//[INF]
+	if(!client) return
+	if(mind?.changeling)
+		mind.changeling.regenerate()
+		if(hud_used?.changeling_chems)
+			var/datum/changeling/changeling = mind.changeling
+			hud_used.changeling_chems.invisibility = 0
+			hud_used.changeling_chems.maptext = "<div align='center' valign='middle' style='position:relative; top:0px; left:6px'><font color='#dd66dd'>[round(changeling.chem_charges)]</font></div>"
+	else
+		hud_used.changeling_chems.invisibility = INVISIBILITY_ABSTRACT
+//[/INF]
 
 /mob/living/carbon/human/proc/handle_shock()
-	..()
 	if(status_flags & GODMODE)	return 0	//godmode
 	if(!can_feel_pain())
 		shock_stage = 0
@@ -1006,9 +1022,14 @@
 		if(wear_id)
 			var/obj/item/weapon/card/id/I = wear_id.GetIdCard()
 			if(I)
-				var/datum/job/J = SSjobs.get_by_title(I.GetJobName())
-				if(J)
-					holder.icon_state = J.hud_icon
+				//[INF]		There is no job "Centcom"
+				if(I.GetJobName() == "Centcom")
+					holder.icon_state = "hudcentcom"
+				else
+				//[/INF]
+					var/datum/job/J = SSjobs.get_by_title(I.GetJobName())
+					if(J)
+						holder.icon_state = J.hud_icon
 
 		hud_list[ID_HUD] = holder
 

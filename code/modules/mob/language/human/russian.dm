@@ -7,7 +7,9 @@
 	partial_understanding = list(
 		LANGUAGE_HUMAN_EURO = 5,
 		LANGUAGE_HUMAN_SELENIAN = 10,
-		LANGUAGE_SPACER = 20
+		LANGUAGE_SPACER = 20,
+		LANGUAGE_HUMAN_AVALON = 5, //inf
+		LANGUAGE_HUMAN_LORRIMAN = 10 //inf
 	)
 	syllables = list(
 		"rus", "zem", "ave", "groz", "ski", "ska", "ven", "konst", "pol", "lin", "svy",

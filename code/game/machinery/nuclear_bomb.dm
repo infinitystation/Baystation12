@@ -27,6 +27,7 @@ var/bomb_set
 	wires = /datum/wires/nuclearbomb
 	var/decl/security_level/original_level
 	interact_offline = 1 //inf
+	var/countdown_plaing//inf
 
 /obj/machinery/nuclearbomb/New()
 	..()
@@ -41,6 +42,9 @@ var/bomb_set
 	if(timing)
 		timeleft = max(timeleft - (wait / 10), 0)
 		playsound(loc, 'sound/items/timer.ogg', timeleft <= 30 ? 50 : 25)
+		if(timeleft <= 8 && !countdown_plaing)
+			playsound(src, 'infinity/sound/SS2/effects/machines/countdown.wav', 100)//inf
+			countdown_plaing = 1
 		if(timeleft <= 0)
 			addtimer(CALLBACK(src, .proc/explode), 0)
 		SSnano.update_uis(src)
@@ -240,13 +244,16 @@ var/bomb_set
 				auth = I
 	if(is_auth(usr))
 		if(href_list["type"])
+			playsound(src, 'infinity/sound/SS2/effects/buttons/bkeypad.wav', 50)//inf
 			if(href_list["type"] == "E")
 				if(code == r_code)
 					yes_code = 1
 					code = null
 					log_and_message_admins("has armed \the [src]")
+					playsound(src, 'infinity/sound/SS2/effects/machines/login.wav', 100)//inf
 				else
 					code = "ERROR"
+					playsound(src, 'infinity/sound/SS2/effects/machines/error.wav', 100)//inf
 			else
 				if(href_list["type"] == "R")
 					yes_code = 0
@@ -259,6 +266,7 @@ var/bomb_set
 						code += lastentered
 						if(length(code) > 5)
 							code = "ERROR"
+							playsound(src, 'infinity/sound/SS2/effects/machines/error.wav', 100)//inf
 		if(yes_code)
 			if(href_list["time"])
 				if(timing)
@@ -423,6 +431,7 @@ var/bomb_set
 /obj/item/weapon/folder/envelope/nuke_instructions/Initialize()
 	. = ..()
 	var/obj/item/weapon/paper/R = new(src)
+/*[ORIGINAL]
 	R.set_content("<center><img src=sollogo.png><br><br>\
 	<b>Warning: Classified<br>[GLOB.using_map.station_name] Self-Destruct System - Instructions</b></center><br><br>\
 	In the event of a Delta-level emergency, this document will guide you through the activation of the vessel's \
@@ -444,10 +453,35 @@ var/bomb_set
 	13) When ready, disable the safety switch.<br>\
 	14) Start the countdown.<br><br>\
 	This concludes the instructions.", "vessel self-destruct instructions")
-
+[/ORIGINAL]*/
+//[INF]
+	R.set_content("\
+	<tt><center><b><font color='red'>КОНФИДЕЦИАЛЬНО</font></b><br>\
+	<h3>ДЕПАРТАМЕНТ ЗАЩИТЫ АКТИВОВ</h3>\
+	<img src = ntlogo.png>\
+	<br><b>[GLOB.using_map.station_name], Система Самоуничтожения</b></center><hr>\
+	В случае событий, повлекших повышение уровня угрозы до уровня Дельта, это руководство поможет Вам активировать \
+	систему самоуничтожения судна с помощью стационарной боеголовки. Пожалуйста, читайте внимательно.<hr>\
+	1) (Опционально) Объявите экипажу об активации процедуры самоуничтожения и начните эвакуацию.<br>\
+	2) Вызовите доверенного члена экипажа с доступом к Keycard Authentication Device.<br>\
+	3) Пройдите к бункеру с боеголовкой. Он расположен в технических помещениях отсека Службы Безопасности.<br>\
+	4) Поднимите блокировочные болты на шлюзе (нажатием на кнопку, или иным способом если этот недоступен) и пройдите в хранилище.<br>\
+	5) Требуется, чтобы двое (2) находились напротив Keycard Authentication Devices. На интерфейсе KAD выберите \
+	Grant Nuclear Authentication Code. Оба (2) должны провести картой по KAD одновременно. KAD погаснет если авторизация не была синхронной.<br>\
+	6) KAD отобразит код активации на дисплее. Запомните его.<br>\
+	7) Вставьте диск авторизации ядерного протокола в терминал устройства самоуничтожения.<br>\
+	8) Введите код доступа в терминал.<br>\
+	9) Процесс авторизации завершен. Откройте два стеллажа с ядерными цилиндрами. Они вмонтированы в одну из стен помещения.<br>\
+	10) Вставьте шесть (6) цилиндров в гнёзда, размещенные в полу комнаты.<br>\
+	11) Активируйте гнёзда. Цилинды будут опущены к ядру системы самоуничтожения.<br>\
+	12) Вернитесь к терминалу. Введите время, по окончанию которого произойдет детонация.<br>\
+	13) Когда вы закончите, переключите предохранитель (кнопка safety).<br>\
+	14) Начните обратный отсчет.<br><br>\
+	Конец руководства.</tt>", "vessel self-destruct instructions")
+//[/INF]
 	//stamp the paper
 	var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
-	stampoverlay.icon_state = "paper_stamp-hos"
+	stampoverlay.icon_state = "paper_stamp-cos"
 	R.stamped += /obj/item/weapon/stamp
 	R.overlays += stampoverlay
 	R.stamps += "<HR><i>This paper has been stamped as 'Top Secret'.</i>"

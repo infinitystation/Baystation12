@@ -51,6 +51,7 @@
 	icon_state = "server"
 	desc = "Impact resistant server rack. You might be able to pry a disk out."
 	var/disk_looted
+	density = 1//inf
 
 /obj/structure/backup_server/attackby(obj/item/W, mob/user, var/click_params)
 	. = ..() //inf

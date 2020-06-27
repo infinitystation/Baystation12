@@ -53,7 +53,7 @@
 	if(user.skill_check(SKILL_ELECTRICAL, SKILL_ADEPT))
 		data["breaker_info"] = breakerlist
 	else
-		var/datum/extension/fake_data/fake_data = get_or_create_extension(src, /datum/extension/fake_data, /datum/extension/fake_data, 20)
+		var/datum/extension/fake_data/fake_data = get_or_create_extension(src, /datum/extension/fake_data, 20)
 		data["skill_fail"] = fake_data.update_and_return_data()
 	data["hide_smes"] = hide_SMES
 	data["hide_smes_details"] = hide_SMES_details

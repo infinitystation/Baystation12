@@ -7,3 +7,4 @@
 	icon_state = "red_dress"
 	item_state = "p_suit"
 	worn_state = "red_dress"
+	trade_blacklisted = TRUE

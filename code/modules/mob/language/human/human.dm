@@ -2,8 +2,8 @@
 /datum/language/human
 	name = "proto-sapien"
 	desc = "This is the human root language. If you have this, please tell a developer."
-	speech_verb = "говорит"
-	whisper_verb = "шепчет"
+	speech_verb = "РіРѕРІРѕСЂРёС‚"
+	whisper_verb = "С€РµРїС‡РµС‚"
 	colour = "solcom"
 	flags = WHITELISTED
 	shorthand = "???"
@@ -13,7 +13,7 @@
 /datum/language/human/get_spoken_verb(var/msg_end)
 	switch(msg_end)
 		if("!")
-			return pick("восклицает", "выкрикивает") //inf, was "exclaims","shouts","yells"
+			return pick("РІРѕСЃРєР»РёС†Р°РµС‚", "РІС‹РєСЂРёРєРёРІР°РµС‚") //inf, was "exclaims","shouts","yells"
 		if("?")
 			return ask_verb
 	return speech_verb

@@ -16,10 +16,7 @@
 	GLOB.player_list |= src
 
 	if(client)
-		if(client.banprisoned)
-			new_player_panel_prisoner()
-		else
-			new_player_panel()
+		new_player_panel()
 
 	if(!SScharacter_setup.initialized)
 		SScharacter_setup.newplayers_requiring_init += src

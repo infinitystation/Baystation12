@@ -106,6 +106,14 @@
 		MC.set_colour(paint_colour)
 		return
 
+	//[INF]
+	var/obj/machinery/suit_storage_unit/SC = A
+	if(istype(SC))
+		SC.mycolour = paint_colour
+		SC.update_icon()
+		return
+	//[/INF]
+
 	var/obj/machinery/door/airlock/D = A
 	if(istype(D))
 		var/choice

@@ -2,14 +2,14 @@
 	logo = "\[logo\]"
 
 /datum/computer_file/report/recipient/sci/proc/add_header()
-	add_field(/datum/report_field/simple_text, "Судно", "ИСН Сьерра")
-	add_field(/datum/report_field/date, "Дата")
-	add_field(/datum/report_field/time, "Врем&#255;")
-	add_field(/datum/report_field/simple_text, "Номер")
+	add_field(/datum/report_field/simple_text, "РЎСѓРґРЅРѕ", "РРЎРќ РЎСЊРµСЂСЂР°")
+	add_field(/datum/report_field/date, "Р”Р°С‚Р°")
+	add_field(/datum/report_field/time, "Р’СЂРµРјСЏ")
+	add_field(/datum/report_field/simple_text, "РќРѕРјРµСЂ")
 
 /datum/computer_file/report/recipient/sci/anomaly
 	form_name = "NT-1546"
-	title = "Отчет об объекте аномалистики"
+	title = "РћС‚С‡РµС‚ РѕР± РѕР±СЉРµРєС‚Рµ Р°РЅРѕРјР°Р»РёСЃС‚РёРєРё"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sci/anomaly/New()
@@ -19,10 +19,10 @@
 /datum/computer_file/report/recipient/sci/anomaly/generate_fields()
 	..()
 	add_header()
-	add_field(/datum/report_field/simple_text, "Кодовое название объекта")
-	add_field(/datum/report_field/people/from_manifest, "Отчитывающийс&#255; ученый")
-	add_field(/datum/report_field/people/from_manifest, "Провер&#255;ющий Директор Исследований")
-	add_field(/datum/report_field/pencode_text, "Процедуры содержани&#255;")
-	add_field(/datum/report_field/pencode_text, "Общее описание")
-	add_field(/datum/report_field/simple_text, "Примерный возраст объекта")
-	add_field(/datum/report_field/simple_text, "Уровень опасности объекта")
+	add_field(/datum/report_field/simple_text, "РљРѕРґРѕРІРѕРµ РЅР°Р·РІР°РЅРёРµ РѕР±СЉРµРєС‚Р°")
+	add_field(/datum/report_field/people/from_manifest, "РћС‚С‡РёС‚С‹РІР°СЋС‰РёР№СЃСЏ СѓС‡РµРЅС‹Р№")
+	add_field(/datum/report_field/people/from_manifest, "РџСЂРѕРІРµСЂСЏСЋС‰РёР№ Р”РёСЂРµРєС‚РѕСЂ РСЃСЃР»РµРґРѕРІР°РЅРёР№")
+	add_field(/datum/report_field/pencode_text, "РџСЂРѕС†РµРґСѓСЂС‹ СЃРѕРґРµСЂР¶Р°РЅРёСЏ")
+	add_field(/datum/report_field/pencode_text, "РћР±С‰РµРµ РѕРїРёСЃР°РЅРёРµ")
+	add_field(/datum/report_field/simple_text, "РџСЂРёРјРµСЂРЅС‹Р№ РІРѕР·СЂР°СЃС‚ РѕР±СЉРµРєС‚Р°")
+	add_field(/datum/report_field/simple_text, "РЈСЂРѕРІРµРЅСЊ РѕРїР°СЃРЅРѕСЃС‚Рё РѕР±СЉРµРєС‚Р°")

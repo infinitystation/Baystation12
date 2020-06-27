@@ -1,7 +1,7 @@
 /datum/language/ling
 	name = LANGUAGE_CHANGELING_GLOBAL
-	desc = "Although they are normally wary and suspicious of each other, changelings can commune over a distance."
-	speech_verb = "говорит"
+	desc = "Changelings can commune over a distance via pheromones."
+	speech_verb = "РїРµСЂРµРґР°РµС‚"
 	colour = "changeling"
 	key = "g"
 	flags = RESTRICTED | HIVEMIND
@@ -9,18 +9,24 @@
 	hidden_from_codex = TRUE
 
 /datum/language/ling/broadcast(var/mob/living/speaker,var/message,var/speaker_mask)
-
+//[INF]
+	if(speaker.mind && speaker.mind.changeling)
+		..(speaker, message, "[speaker.mind.changeling.changelingID] ([speaker.mind])")
+	else
+		..(speaker, message)
+//[/INF]
+/*[ORIG]
 	if(speaker.mind && speaker.mind.changeling)
 		..(speaker,message,speaker.mind.changeling.changelingID)
 	else
 		..(speaker,message)
-
+[/ORIG]*/
 /datum/language/corticalborer
 	name = LANGUAGE_BORER_GLOBAL
 	desc = "Cortical borers possess a strange link between their tiny minds."
-	speech_verb = "поет"
-	ask_verb = "поет"
-	exclaim_verb = "поет"
+	speech_verb = "РїРѕРµС‚"
+	ask_verb = "РїРѕРµС‚"
+	exclaim_verb = "РїРѕРµС‚"
 	colour = "alien"
 	key = "z"
 	flags = RESTRICTED | HIVEMIND
@@ -49,9 +55,9 @@
 /datum/language/vox
 	name = LANGUAGE_VOX
 	desc = "The common tongue of the various Vox ships making up the Shoal. It sounds like chaotic shrieking to everyone else."
-	speech_verb = "визжит"
-	ask_verb = "рокочет"
-	exclaim_verb = "верещит"
+	speech_verb = "РІРёР·Р¶РёС‚"
+	ask_verb = "СЂРѕРєРѕС‡РµС‚"
+	exclaim_verb = "РІРµСЂРµС‰РёС‚"
 	colour = "vox"
 	key = "x"
 	flags = WHITELISTED
@@ -76,9 +82,9 @@
 /datum/language/cultcommon
 	name = LANGUAGE_CULT
 	desc = "The chants of the occult, the incomprehensible."
-	speech_verb = "молвит"
-	ask_verb = "молвит"
-	exclaim_verb = "напевает"
+	speech_verb = "РјРѕР»РІРёС‚"
+	ask_verb = "РјРѕР»РІРёС‚"
+	exclaim_verb = "РЅР°РїРµРІР°РµС‚"
 	colour = "cult"
 	key = "f"
 	flags = RESTRICTED
@@ -97,9 +103,9 @@
 /datum/language/cult
 	name = LANGUAGE_CULT_GLOBAL
 	desc = "The initiated can share their thoughts by means defying all reason."
-	speech_verb = "молвит"
-	ask_verb = "молвит"
-	exclaim_verb = "напевает"
+	speech_verb = "РјРѕР»РІРёС‚"
+	ask_verb = "РјРѕР»РІРёС‚"
+	exclaim_verb = "РЅР°РїРµРІР°РµС‚"
 	colour = "cult"
 	key = "y"
 	flags = RESTRICTED | HIVEMIND
@@ -109,7 +115,7 @@
 /datum/language/alium
 	name = LANGUAGE_ALIUM
 	colour = "cult"
-	speech_verb = "шипит"
+	speech_verb = "С€РёРїРёС‚"
 	key = "c"
 	flags = RESTRICTED
 	syllables = list("qy","bok","mok","yok","dy","gly","ryl","byl","dok","forbici", "tarem", "n'ath", "reth", "sh'yro", "eth", "d'raggathnor","niii",
@@ -120,7 +126,7 @@
 	hidden_from_codex = TRUE
 
 /datum/language/alium/New()
-	speech_verb = pick("шипит","ворчит","свистит","булькает","щебечет","визжит","трещит","щелкает")
+	speech_verb = pick("С€РёРїРёС‚","РІРѕСЂС‡РёС‚","СЃРІРёСЃС‚РёС‚","Р±СѓР»СЊРєР°РµС‚","С‰РµР±РµС‡РµС‚","РІРёР·Р¶РёС‚","С‚СЂРµС‰РёС‚","С‰РµР»РєР°РµС‚")
 	..()
 
 /datum/language/alium/get_random_name()

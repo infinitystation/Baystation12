@@ -23,9 +23,9 @@
 /datum/event/meteor_wave/announce()
 	switch(severity)
 		if(EVENT_LEVEL_MAJOR)
-			priority_announcement.Announce(replacetext(GLOB.using_map.meteor_detected_message, "%STATION_NAME%", location_name()), "Сенсоры [location_name()]", new_sound = GLOB.using_map.meteor_detected_sound, zlevels = affecting_z)
+			priority_announcement.Announce(replacetext(GLOB.using_map.meteor_detected_message, "%STATION_NAME%", location_name()), "РЎРµРЅСЃРѕСЂС‹ [location_name()]", new_sound = GLOB.using_map.meteor_detected_sound, zlevels = affecting_z)
 		else
-			priority_announcement.Announce("Объект [location_name()] проходит через метеоритный дождь.", "Сенсоры [location_name()]", zlevels = affecting_z)
+			priority_announcement.Announce("РћР±СЉРµРєС‚ [location_name()] РїСЂРѕС…РѕРґРёС‚ С‡РµСЂРµР· РјРµС‚РµРѕСЂРёС‚РЅС‹Р№ РґРѕР¶РґСЊ.", "РЎРµРЅСЃРѕСЂС‹ [location_name()]", zlevels = affecting_z)
 
 /datum/event/meteor_wave/tick()
 	// Begin sending the alarm signals to shield diffusers so the field is already regenerated (if it exists) by the time actual meteors start flying around.
@@ -53,9 +53,9 @@
 /datum/event/meteor_wave/end()
 	switch(severity)
 		if(EVENT_LEVEL_MAJOR)
-			priority_announcement.Announce("Объект [location_name()] покинул зону метеоритного шторма.", "Сенсоры [location_name()]", zlevels = affecting_z)
+			priority_announcement.Announce("РћР±СЉРµРєС‚ [location_name()] РїРѕРєРёРЅСѓР» Р·РѕРЅСѓ РјРµС‚РµРѕСЂРёС‚РЅРѕРіРѕ С€С‚РѕСЂРјР°.", "РЎРµРЅСЃРѕСЂС‹ [location_name()]", zlevels = affecting_z)
 		else
-			priority_announcement.Announce("Объект [location_name()] покинул зону метеоритного дождя.", "Сенсоры [location_name()]", zlevels = affecting_z)
+			priority_announcement.Announce("РћР±СЉРµРєС‚ [location_name()] РїРѕРєРёРЅСѓР» Р·РѕРЅСѓ РјРµС‚РµРѕСЂРёС‚РЅРѕРіРѕ РґРѕР¶РґСЏ.", "РЎРµРЅСЃРѕСЂС‹ [location_name()]", zlevels = affecting_z)
 
 /datum/event/meteor_wave/proc/get_meteors()
 	switch(severity)

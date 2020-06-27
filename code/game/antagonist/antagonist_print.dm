@@ -10,8 +10,8 @@
 		text += get_special_objective_text(P)
 		var/datum/goal/ambition = SSgoals.ambitions[P]
 		if(ambition)
-			text += "<br>Цель как антагониста:" //INF, WAS text += "<br>Their goals for today were..."
-			text += "<br><span class='notice'>[ambition.summarize()]</span>"
+			text += "<br>Р¦РµР»СЊ РєР°Рє Р°РЅС‚Р°РіРѕРЅРёСЃС‚Р°:" //INF, WAS text += "<br>Their goals for today were..."
+			text += "<span class='notice'>[ambition.summarize()]</span>" //ING, WAS text += "<span class='notice'><br>[ambition.summarize()]</span>"
 		if(!global_objectives.len && P.objectives && P.objectives.len)
 			var/num = 1
 			for(var/datum/objective/O in P.objectives)
@@ -19,7 +19,7 @@
 				num++
 
 	if(global_objectives && global_objectives.len)
-		text += "<BR><FONT size = 2>Их целью было:</FONT>" //INF, WAS text += "<BR><FONT size = 2>Their objectives were:</FONT>"
+		text += "<BR><FONT size = 2>РС… С†РµР»СЊСЋ Р±С‹Р»Рѕ:</FONT>" //INF, WAS text += "<BR><FONT size = 2>Their objectives were:</FONT>"
 		var/num = 1
 		for(var/datum/objective/O in global_objectives)
 			text += print_objective(O, num)

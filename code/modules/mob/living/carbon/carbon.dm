@@ -324,7 +324,10 @@
 
 	item.throw_at(target, throw_range, item.throw_speed * skill_mod, src)
 
+	//[INF]
 	playsound(src, 'infinity/sound/effects/throw.ogg', 50, 1)
+	attack_twitch(src)
+	//[/INF]
 
 /mob/living/carbon/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	..()
@@ -421,7 +424,7 @@
 	<BR><A href='?src=\ref[user];refresh=1'>Refresh</A>
 	<BR><A href='?src=\ref[user];mach_close=mob[name]'>Close</A>
 	<BR>"}
-	user << browse(dat, text("window=mob[];size=325x500", name))
+	show_browser(user, dat, text("window=mob[];size=325x500", name))
 	onclose(user, "mob[name]")
 	return
 
@@ -509,10 +512,3 @@
 		to_chat(src, "<span class='warning'>You are no longer running on internals.</span>")
 	if(internals)
 		internals.icon_state = "internal[!!internal]"
-//[inf]
-/mob/living/carbon/proc/has_fake_brain()
-	var/obj/item/organ/internal/brain/brain = internal_organs_by_name[BP_BRAIN]
-	if(istype(brain) && brain.fake_brain)
-		return 1
-	return 0
-//[/inf]

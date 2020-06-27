@@ -1840,9 +1840,8 @@
 	pixel_x = 0;
 	pixel_y = -35
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "solar_pump"
 	},
 /obj/structure/cable/yellow{

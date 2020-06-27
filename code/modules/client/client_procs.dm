@@ -44,7 +44,7 @@
 
 	//search the href for script injection
 	if( findtext(href,"<script",1,0) )
-		world.log << "Attempted use of scripts within a topic call, by [src]"
+		to_world_log("Attempted use of scripts within a topic call, by [src]")
 		message_admins("Attempted use of scripts within a topic call, by [src]")
 		//qdel(usr)
 		return
@@ -127,7 +127,8 @@
 	var/bad_version = config.minimum_byond_version && byond_version < config.minimum_byond_version
 	var/bad_build = config.minimum_byond_build && byond_build < config.minimum_byond_build
 	if (bad_build || bad_version)
-		to_chat(src, "You are attempting to connect with a out of date version of BYOND. Please update to the latest version at http://www.byond.com/ before trying again.")
+		to_chat(src, "RU: Вы пытаетесь подключиться со старой версией BYOND. Пожалуйста, обновитесь до бета-версии для игры на сервере.\
+		<br>ENG: You are attempting to connect with a out of date version of BYOND. Please update to the latest beta version.")
 		qdel(src)
 		return
 
@@ -165,15 +166,17 @@
 
 	//Admin Authorisation
 	holder = admin_datums[ckey]
+
+	// inf Подсчет онлайна сотрудника ~bear1ake
 	if(holder)
 		GLOB.admins += src
 		holder.owner = src
 		handle_staff_login()
-		if(dbcon.IsConnected())
+		if(establish_db_connection())
 			var/sql_ckey = sanitizeSQL(src.ckey)
-			spawn for()
+			spawn while(1)
 				var/sum = 0
-				var/temp
+				var/temp = 0
 				var/DBQuery/query_onilne = dbcon.NewQuery("SELECT sum FROM online_score WHERE ckey='[sql_ckey]' AND year=YEAR(NOW()) AND month=MONTH(NOW()) AND day=DAYOFMONTH(NOW());")
 				query_onilne.Execute()
 				if(query_onilne.NextRow())
@@ -186,6 +189,9 @@
 					var/DBQuery/query_o_s_ins = dbcon.NewQuery("INSERT INTO online_score(ckey,year,month,day,sum) VALUES ('[sql_ckey]', YEAR(NOW()), MONTH(NOW()), DAYOFMONTH(NOW()), 1);")
 					query_o_s_ins.Execute()
 				sleep(600)
+		else
+			log_admin("Онлайн сотрудника [ckey] не будет считаться, проверьте соединение с базой данных")
+	// /inf
 
 	//preferences datum - also holds some persistant data for the client (because we may as well keep these datums to a minimum)
 	prefs = SScharacter_setup.preferences_datums[ckey]
@@ -193,7 +199,6 @@
 		prefs = new /datum/preferences(src)
 	prefs.last_ip = address				//these are gonna be used for banning
 	prefs.last_id = computer_id			//these are gonna be used for banning
-	prisoner_init()
 	apply_fps(prefs.clientfps)
 
 	. = ..()	//calls mob.Login()
@@ -240,6 +245,14 @@
 
 	if(!winexists(src, "asset_cache_browser")) // The client is using a custom skin, tell them.
 		to_chat(src, "<span class='warning'>Unable to access asset cache browser, if you are using a custom skin file, please allow DS to download the updated version, if you are not, then make a bug report. This is not a critical issue but can cause issues with resource downloading, as it is impossible to know when extra resources arrived to you.</span>")
+
+//[INF]
+//	if(get_preference_value(/datum/client_preference/fullscreen_mode) != GLOB.PREF_OFF)
+//		toggle_fullscreen(get_preference_value(/datum/client_preference/fullscreen_mode))
+
+//	if(mob.get_preference_value(/datum/client_preference/chat_position) == GLOB.PREF_YES)
+//		update_chat_position(TRUE)
+//[/INF]
 
 	if(holder)
 		src.control_freak = 0 //Devs need 0 for profiler access
@@ -363,11 +376,11 @@
 	var/seconds = inactivity/10
 	return "[round(seconds / 60)] minute\s, [seconds % 60] second\s"
 
-/*
 // Byond seemingly calls stat, each tick.
 // Calling things each tick can get expensive real quick.
 // So we slow this down a little.
 // See: http://www.byond.com/docs/ref/info.html#/client/proc/Stat
+
 /client/Stat()
 	if(!usr)
 		return
@@ -375,8 +388,7 @@
 	statpanel("Status")
 
 	. = ..()
-	sleep(1)
-*/
+
 //send resources to the client. It's here in its own proc so we can move it around easiliy if need be
 /client/proc/send_resources()
 

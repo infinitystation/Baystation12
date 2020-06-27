@@ -1,7 +1,7 @@
 /datum/language/gutter
 	name = LANGUAGE_GUTTER
 	desc = "This crude pidgin tongue developed on Pluto during its busier days. Nowadays it serves as a trade language for criminal elements and those who wish they were ones."
-	speech_verb = "базарит"
+	speech_verb = "Р±Р°Р·Р°СЂРёС‚"
 	colour = "rough"
 	key = "t"
 	space_chance = 70
@@ -14,7 +14,9 @@
 		LANGUAGE_HUMAN_RUSSIAN = 30,
 		LANGUAGE_HUMAN_SELENIAN = 15,
 		LANGUAGE_SPACER = 35,
-		LANGUAGE_LEGALESE = 25
+		LANGUAGE_LEGALESE = 25,
+		LANGUAGE_HUMAN_AVALON = 20, //inf
+		LANGUAGE_HUMAN_LORRIMAN = 5 //inf
 	)
 	syllables = list (
 		"yayo", "aiya", "chiksa", "tikat", "bazar","oi", "yo", "meit", "grok", "ken", "berk", "cohon", "pendeo"

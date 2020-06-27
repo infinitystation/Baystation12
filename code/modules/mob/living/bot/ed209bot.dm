@@ -6,11 +6,11 @@
 	attack_state = "ed209-c"
 	layer = MOB_LAYER
 	density = 1
-	health = 100
-	maxHealth = 100
+	health = 160 //INF, WAS 100
+	maxHealth = 160 //INF, WAS 100
 
 	is_ranged = 1
-	preparing_arrest_sounds = new()
+//INF	preparing_arrest_sounds = new()
 
 	a_intent = I_HURT
 	mob_bump_flag = HEAVY
@@ -27,7 +27,7 @@
 	visible_message("<span class='warning'>[src] blows apart!</span>")
 	var/turf/Tsec = get_turf(src)
 
-	var/obj/item/weapon/gun/energy/taser/G = new /obj/item/weapon/gun/energy/taser(Tsec)
+	var/obj/item/weapon/gun/energy/gun/G = new /obj/item/weapon/gun/energy/gun(Tsec) //INF, WAS /obj/item/weapon/gun/energy/taser
 	G.power_supply.charge = 0
 	if(prob(50))
 		new /obj/item/robot_parts/l_leg(Tsec)
@@ -37,7 +37,7 @@
 		if(prob(50))
 			new /obj/item/clothing/head/helmet(Tsec)
 		else
-			new /obj/item/clothing/suit/armor/vest(Tsec)
+			new /obj/item/clothing/accessory/armorplate(Tsec) //INF, WAS /obj/item/clothing/suit/armor/vest
 
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 	s.set_up(3, 1, src)

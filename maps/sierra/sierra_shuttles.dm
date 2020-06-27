@@ -170,7 +170,7 @@
 
 /datum/shuttle/autodock/ferry/petrov
 	name = "Petrov"
-	dock_target = "petrov_shuttle_airlock"
+	dock_target = "petrov_shuttle"
 	waypoint_station = "nav_petrov_start"
 	waypoint_offsite = "nav_petrov_out"
 	logging_home_tag = "nav_petrov_start"
@@ -185,7 +185,7 @@
 /obj/effect/shuttle_landmark/petrov/start
 	name = "First Deck"
 	landmark_tag = "nav_petrov_start"
-	docking_controller = "petrov_shuttle_dock_airlock"
+	docking_controller = "petrov_shuttle_dock"
 
 /obj/effect/shuttle_landmark/petrov/out
 	name = "Space near the vessel"
@@ -254,7 +254,7 @@
 /obj/effect/shuttle_landmark/merchant/out
 	name = "Docking Bay"
 	landmark_tag = "nav_merchant_out"
-	docking_controller = "merchant_shuttle_station_dock"
+	docking_controller = "merchant_shuttle_station"
 
 //Admin
 
@@ -277,7 +277,7 @@
 /obj/effect/shuttle_landmark/admin/out
 	name = "Docking Bay"
 	landmark_tag = "nav_admin_out"
-	docking_controller = "admin_shuttle_dock_airlock"
+	docking_controller = "admin_shuttle_dock"
 
 //Transport
 
@@ -299,31 +299,9 @@
 /obj/effect/shuttle_landmark/ferry/out
 	name = "Docking Bay"
 	landmark_tag = "nav_ferry_out"
-	docking_controller = "centcom_shuttle_dock_airlock"
+	docking_controller = "centcom_shuttle_dock"
 
 //Merc
-
-/datum/shuttle/autodock/multi/antag/mercenary
-	destination_tags = list(
-		"nav_merc_deck1",
-		"nav_merc_deck2",
-		"nav_merc_deck3",
-		"nav_merc_deck4",
-		"nav_merc_deck5",
-		"nav_away_5",
-		"nav_derelict_6",
-		"nav_cluster_5",
-		"nav_merc_dock",
-		"nav_merc_start",
-		"nav_lost_supply_base_antag",
-		"nav_marooned_antag",
-		"nav_smugglers_antag",
-		"nav_magshield_antag",
-		"nav_casino_antag",
-		"nav_yacht_antag",
-		"nav_slavers_base_antag",
-		"nav_mining_antag"
-		)
 
 /obj/effect/shuttle_landmark/merc/deck1
 	name = "Northwest of Fourth Deck"
@@ -344,6 +322,11 @@
 /obj/effect/shuttle_landmark/merc/deck5
 	name = "East of Bridge"
 	landmark_tag = "nav_merc_deck5"
+
+/obj/effect/shuttle_landmark/merc/dock
+	name = "Docking Port"
+	landmark_tag = "nav_merc_dock"
+	docking_controller = "nuke_shuttle_dock_airlock"
 
 //Skipjack
 
@@ -459,7 +442,7 @@
 /obj/effect/shuttle_landmark/specops/out
 	name = "Docking Bay"
 	landmark_tag = "nav_specops_out"
-	docking_controller = "specops_dock_airlock"
+	docking_controller = "specops_dock"
 
 //Cargo drone
 
@@ -495,6 +478,16 @@
 	logging_access = access_expedition_shuttle_helm
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling/sierra
 	warmup_time = 7
+
+/datum/shuttle/autodock/overmap/exploration_shuttle/refresh_fuel_ports_list()	// Setting access onto APC and air alarms
+	..()
+	for(var/area/A in shuttle_area)
+		for(var/obj/machinery/alarm/alarm in A)
+			if(alarm.req_access)
+				alarm.req_access = list(list(access_engine_equip, access_expedition_shuttle, access_atmospherics), access_engine)	//(Engine equip OR Charon OR Atmos) + Engineering
+		for(var/obj/machinery/power/apc/apc in A)
+			if(apc.req_access)
+				apc.req_access = list(list(access_engine_equip, access_expedition_shuttle), access_engine)	//(Engine equip OR Charon) + Engineering
 
 /obj/effect/shuttle_landmark/sierra/hangar/exploration_shuttle
 	name = "Charon Hangar"
@@ -585,14 +578,14 @@
 /obj/effect/shuttle_landmark/sierra/deck3/patrol
 	name = "Third Deck Starboard Dock"
 	landmark_tag = "nav_deck3_patrol"
-	docking_controller = "admin_shuttle_dock_airlock"
+	docking_controller = "admin_shuttle_dock"
 
 /obj/effect/shuttle_landmark/sierra/deck3/skrellshuttle
 	name = "Third Deck Starboard Dock"
 	landmark_tag = "nav_deck3_skrellshuttle"
-	docking_controller = "admin_shuttle_dock_airlock"
+	docking_controller = "admin_shuttle_dock"
 
 /obj/effect/shuttle_landmark/sierra/deck1/skrellscout
 	name = "First Deck Auxillary Dock"
 	landmark_tag = "nav_deck1_skrellscout"
-	docking_controller = "fd_starboard_airlock"
+	docking_controller = "fd_starboard"

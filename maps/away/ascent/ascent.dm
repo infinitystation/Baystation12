@@ -10,7 +10,8 @@
 	id = "awaysite_ascent_seedship"
 	description = "A small Ascent colony ship."
 	suffixes = list("ascent/ascent-1.dmm")
-	cost = 1000 //INF, WAS 1
+	cost = 2 //INF, WAS 0.5
+	spawn_weight = 50 //INF, HABITABLE SHIPS SPAWN
 	shuttles_to_initialise = list(
 		/datum/shuttle/autodock/overmap/ascent,
 		/datum/shuttle/autodock/overmap/ascent/two
@@ -23,6 +24,7 @@
 	vessel_mass = 6500
 	fore_dir = WEST
 	max_speed = 1/(1 SECOND)
+	hide_from_reports = TRUE
 	initial_restricted_waypoints = list(
 		"Trichoptera" = list("nav_hangar_ascent_one"),
 		"Lepidoptera" = list("nav_hangar_ascent_two")

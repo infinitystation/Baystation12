@@ -24,3 +24,9 @@
 	w_class = ITEM_SIZE_SMALL
 	species_restricted = list(SPECIES_RESOMI)
 
+/obj/item/clothing/shoes/footwraps/socks_resomi
+	name = "koishi"
+	desc = "Looks like socks but with toe holes and thick sole."
+	icon_state = "socks"
+	icon = 'infinity/icons/obj/clothing/species/resomi/obj_feet_resomi.dmi'
+	item_state = "socks"

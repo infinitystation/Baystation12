@@ -48,7 +48,7 @@
 	var/area/A = get_area(src)
 	A.turret_controls += src
 
-	power_change() //Checks power and initial settings
+	updateTurrets()	//Initial settings
 	. = ..()
 
 /obj/machinery/turretid/proc/isLocked(mob/user)
@@ -179,11 +179,6 @@
 
 	queue_icon_update()
 
-/obj/machinery/turretid/power_change()
-	. = ..()
-	if(.)
-		updateTurrets()
-
 /obj/machinery/turretid/on_update_icon()
 	..()
 	if(stat & NOPOWER)
@@ -210,6 +205,8 @@
 		check_weapons = pick(0, 1)
 		check_access = pick(0, 0, 0, 0, 1)	// check_access is a pretty big deal, so it's least likely to get turned on
 		check_anomalies = pick(0, 1)
+		locked = pick(0, 1)
+		ailock = pick(0, 1)
 
 		enabled=0
 		updateTurrets()

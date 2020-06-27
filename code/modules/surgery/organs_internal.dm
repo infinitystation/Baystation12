@@ -105,7 +105,15 @@
 	else
 		var/obj/item/organ/organ_to_remove = attached_organs[1]
 		if(attached_organs.len > 1)
-			organ_to_remove = input(user, "Which organ do you want to separate?") as null|anything in attached_organs
+	//		organ_to_remove = input(user, "Which organ do you want to separate?") as null|anything in attached_organs
+	//[INF]
+			var/list/options = list()
+			for(var/i in attached_organs)
+				var/obj/item/organ/I = target.internal_organs_by_name[i]
+				options[i] = image(icon = I.icon, icon_state = I.icon_state)
+			organ_to_remove = show_radial_menu(user, target, options, radius = 32, require_near = TRUE)
+	//[/INF]
+
 		if(organ_to_remove)
 			return organ_to_remove
 	return FALSE
@@ -156,7 +164,14 @@
 		else
 			var/obj/item/organ/organ_to_remove = removable_organs[1]
 			if(removable_organs.len > 1)
-				organ_to_remove = input(user, "Which organ do you want to remove?") as null|anything in removable_organs
+	//			organ_to_remove = input(user, "Which organ do you want to remove?") as null|anything in removable_organs
+	//[INF]
+				var/list/options = list()
+				for(var/i in removable_organs)
+					var/obj/item/organ/I = target.internal_organs_by_name[i]
+					options[i] = image(icon = I.icon, icon_state = I.icon_state)
+				organ_to_remove = show_radial_menu(user, target, options, radius = 32, require_near = TRUE)
+	//[/INF]
 			if(organ_to_remove)
 				return organ_to_remove
 	return FALSE
@@ -224,7 +239,7 @@
 /decl/surgery_step/internal/replace_organ/get_skill_reqs(mob/living/user, mob/living/carbon/human/target, obj/item/tool)
 	var/obj/item/organ/internal/O = tool
 	var/obj/item/organ/external/affected = target.get_organ(user.zone_sel.selecting)
-	if(BP_IS_ROBOTIC(O))
+	if(BP_IS_ROBOTIC(O) || istype(O, /obj/item/organ/internal/augment))
 		if(BP_IS_ROBOTIC(affected))
 			return SURGERY_SKILLS_ROBOTIC
 		else
@@ -398,7 +413,7 @@
 	if(!istype(container) || !container.reagents.has_reagent(/datum/reagent/peridaxon) || !..())
 		return FALSE
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
-	var/obj/item/organ/internal/list/dead_organs = list()
+	var/list/obj/item/organ/internal/dead_organs = list()
 	for(var/obj/item/organ/internal/I in target.internal_organs)
 		if(I && !(I.status & ORGAN_CUT_AWAY) && (I.status & ORGAN_DEAD) && I.parent_organ == affected.organ_tag && !BP_IS_ROBOTIC(I))
 			dead_organs |= I

@@ -12,7 +12,7 @@
 	nanomodule_path = /datum/nano_module/program/computer_newsbrowser/
 	var/datum/computer_file/data/news_article/loaded_article
 	var/download_progress = 0
-	var/download_netspeed = 0
+//inf	var/download_netspeed = 0
 	var/downloading = 0
 	var/message = ""
 	var/show_archived = 0
@@ -20,8 +20,9 @@
 /datum/computer_file/program/newsbrowser/process_tick()
 	if(!downloading)
 		return
-	download_netspeed = 0
+//inf download_netspeed = 0
 	// Speed defines are found in misc.dm
+/*inf
 	switch(ntnet_status)
 		if(1)
 			download_netspeed = NTNETSPEED_LOWSIGNAL
@@ -29,7 +30,8 @@
 			download_netspeed = NTNETSPEED_HIGHSIGNAL
 		if(3)
 			download_netspeed = NTNETSPEED_ETHERNET
-	download_progress += download_netspeed
+inf*/
+	download_progress += get_signal(NTNET_SOFTWAREDOWNLOAD)
 	if(download_progress >= loaded_article.size)
 		downloading = 0
 		requires_ntnet = 0 // Turn off NTNet requirement as we already loaded the file into local memory.
@@ -105,7 +107,7 @@
 		data["download_running"] = 1
 		data["download_progress"] = PRG.download_progress
 		data["download_maxprogress"] = PRG.loaded_article.size
-		data["download_rate"] = PRG.download_netspeed
+		data["download_rate"] = PRG.get_signal(NTNET_SOFTWAREDOWNLOAD) //inf//was: data["download_rate"] = PRG.download_netspeed
 	else										// Viewing list of articles
 		var/list/all_articles[0]
 		for(var/datum/computer_file/data/news_article/F in ntnet_global.available_news)

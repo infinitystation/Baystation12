@@ -16,14 +16,14 @@
 	name = "bluespace snare control"
 	id = "bsc"
 	req_tech = list(TECH_BLUESPACE = 5, TECH_DATA = 4)
-	build_path = /obj/item/weapon/stock_parts/circuitboard/bssilk_cons
+	build_path = /obj/item/weapon/stock_parts/circuitboard/bs_snare_control
 	sort_string = "KCAAH"
 
 /datum/design/circuit/bs_silk_hub
 	name = "bluespace snare hub"
 	id = "bsh"
 	req_tech = list(TECH_BLUESPACE = 5, TECH_DATA = 4)
-	build_path = /obj/item/weapon/stock_parts/circuitboard/bssilk_hub
+	build_path = /obj/item/weapon/stock_parts/circuitboard/bs_snare_hub
 	sort_string = "KCAAI"
 
 /datum/design/circuit/teleport_hub

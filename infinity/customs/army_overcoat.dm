@@ -10,3 +10,4 @@
 		slot_r_hand_str = 'icons/mob/onmob/infinity/r_hand_suits.dmi',
 		)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+	trade_blacklisted = TRUE

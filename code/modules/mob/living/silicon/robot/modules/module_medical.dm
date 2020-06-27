@@ -24,9 +24,7 @@
 		"Standard" = "surgeon",
 		"Advanced Droid" = "droid-medical",
 		"Needles" = "medicalrobot",
-		"Doot" = "eyebot-medical",
-		"Drone" = "drone-surgery",
-		"Ver 06" = "wer6-Surgeon"
+//cuz flying		"Ver 06" = "wer6-Surgeon" //inf
 		)
 	equipment = list(
 		/obj/item/device/flash,
@@ -55,7 +53,7 @@
 	emag = /obj/item/weapon/reagent_containers/spray
 	skills = list(
 		SKILL_ANATOMY     = SKILL_PROF,
-		SKILL_MEDICAL     = SKILL_PROF, //inf //was:		SKILL_MEDICAL     = SKILL_ADEPT,
+		SKILL_MEDICAL     = SKILL_PROF, //inf //was:		SKILL_MEDICAL     = SKILL_EXPERT,
 		SKILL_VIROLOGY    = SKILL_ADEPT, //inf
 		SKILL_CHEMISTRY   = SKILL_ADEPT,
 		SKILL_BUREAUCRACY = SKILL_ADEPT,
@@ -101,10 +99,6 @@
 		"Standard" = "surgeon",
 		"Advanced Droid" = "droid-medical",
 		"Needles" = "medicalrobot",
-		"Drone - Medical" = "drone-medical",
-		"Drone - Chemistry" = "drone-chemistry",
-		"Doot" = "eyebot-medical",
-		"Ver 06" = "wer6-Crisis"
 	)
 	equipment = list(
 		/obj/item/weapon/crowbar,

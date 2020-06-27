@@ -35,3 +35,5 @@
 
 /turf/simulated/floor/shuttle_ceiling/hull
 	color = COLOR_HULL
+
+#undef WEBHOOK_SUBMAP_LOADED_SOL

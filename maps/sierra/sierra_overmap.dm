@@ -4,8 +4,6 @@
 	the target as NanoTrasen Science Vessel, a property of NanoTrasen Corporation."
 	fore_dir = WEST
 	vessel_mass = 63000
-	start_x = 4
-	start_y = 5
 	base = TRUE
 	color = LIGHT_COLOR_PURPLE
 	icon = 'icons/obj/overmap_inf.dmi'
@@ -13,6 +11,7 @@
 	initial_restricted_waypoints = list(
 		"Charon" = list("nav_hangar_calypso"),
 		"Guppy" = list("nav_hangar_guppy"),
+		"Desperado" = list("nav_merc_dock"), //antag_spawn/mercenary/mercenary_inf.dmm shuttle,
 		"Albatross" = list("nav_albatross_dock"), //away_inf/sentinel/sentinel.dmm shuttle,
 		"Sol Rescue Shuttle" = list("nav_deck3_patrol"), //away_inf/patrol/patrol.dmm shuttle,
 		"Skrellian Shuttle" = list("nav_deck3_skrellshuttle"), //away_inf/skrellscoutship.dm shuttle,
@@ -61,11 +60,12 @@
 /obj/effect/overmap/visitable/ship/landable/guppy
 	name = "Guppy"
 	shuttle = "Guppy"
-	max_speed = 1/(10 SECONDS)
-	burn_delay = 2 SECONDS
-	vessel_mass = 2200
+	max_speed = 1/(4 SECONDS) //was 1/(10 SECONDS)
+	burn_delay = 0.5 SECONDS //was 2 SECONDS, just try to not burn all the fuel
+	vessel_mass = 500 //was 2200, yes, it's 500 tonnes
 	fore_dir = SOUTH
 	vessel_size = SHIP_SIZE_TINY
+	skill_needed = SKILL_BASIC //was trained
 
 /obj/machinery/computer/shuttle_control/explore/exploration_shuttle
 	name = "charon control console"

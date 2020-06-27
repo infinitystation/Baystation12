@@ -5,8 +5,9 @@
 	icon = 'icons/mob/human.dmi'
 	icon_state = "body_m_s"
 //[INF]
-	throw_range = 3 //NO TILSON //:KREYGASM:
+	throw_range = 3 //NO, TILSON
 	throw_speed = 0.5
+	var/good_DNA = 0 //for changelings
 //[/INF]
 	var/list/hud_list[10]
 	var/embedded_flag	  //To check if we've need to roll for damage on movement while an item is imbedded in us.
@@ -41,7 +42,7 @@
 	hud_list[STATUS_HUD]      = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudhealthy")
 	hud_list[LIFE_HUD]	      = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudhealthy")
 	hud_list[ID_HUD]          = new /image/hud_overlay(GLOB.using_map.id_hud_icons, src, "hudunknown")
-	hud_list[WANTED_HUD]      = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
+	hud_list[WANTED_HUD]      = new /image/hud_overlay('infinity/icons/mob/hud.dmi', src, "hudblank") //INF, was 'icons/mob/hud.dmi'
 	hud_list[IMPLOYAL_HUD]    = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
 	hud_list[IMPCHEM_HUD]     = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
 	hud_list[IMPTRACK_HUD]    = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
@@ -57,6 +58,11 @@
 		dna.s_base = s_base
 		sync_organ_dna()
 	make_blood()
+//[INF]
+	spawn(2 SECONDS)
+		if(client?.wishes_to_be_role(GLOB.changelings.id) >= 1)
+			good_DNA = 1
+//[/INF]
 
 /mob/living/carbon/human/Destroy()
 	GLOB.human_mob_list -= src
@@ -244,7 +250,7 @@
 	dat += "<BR><A href='?src=\ref[src];refresh=1'>Refresh</A>"
 	dat += "<BR><A href='?src=\ref[user];mach_close=mob[name]'>Close</A>"
 
-	user << browse(dat, text("window=mob[name];size=340x540"))
+	show_browser(user, dat, text("window=mob[name];size=340x540"))
 	onclose(user, "mob[name]")
 	return
 
@@ -340,7 +346,7 @@
 	var/obj/item/organ/external/floor_organ
 
 	if(!lying)
-		var/obj/item/organ/external/list/standing = list()
+		var/list/obj/item/organ/external/standing = list()
 		for(var/limb_tag in list(BP_L_FOOT, BP_R_FOOT))
 			var/obj/item/organ/external/E = organs_by_name[limb_tag]
 			if(E && E.is_usable())
@@ -355,7 +361,7 @@
 	if(!floor_organ)
 		floor_organ = pick(organs)
 
-	var/obj/item/organ/external/list/to_shock = trace_shock(initial_organ, floor_organ)
+	var/list/obj/item/organ/external/to_shock = trace_shock(initial_organ, floor_organ)
 
 	if(to_shock && to_shock.len)
 		shock_damage /= to_shock.len
@@ -374,7 +380,7 @@
 	return total_damage
 
 /mob/living/carbon/human/proc/trace_shock(var/obj/item/organ/external/init, var/obj/item/organ/external/floor)
-	var/obj/item/organ/external/list/traced_organs = list(floor)
+	var/list/obj/item/organ/external/traced_organs = list(floor)
 
 	if(!init)
 		return
@@ -572,7 +578,7 @@
 	var/msg
 	switch(key)
 		if("done")
-			show_browser(src, null, "window=flavor_changes")
+			close_browser(src, "window=flavor_changes")
 			return
 		if("general")
 			msg = sanitize(input(src,"Update the general description of your character. This will be shown regardless of clothing. Do not include OOC information here.","Flavor Text",html_decode(flavor_texts[key])) as message, extra = 0)
@@ -591,7 +597,7 @@
 	var/total_protection = flash_protection
 	if(species.has_organ[species.vision_organ])
 		var/obj/item/organ/internal/eyes/I = internal_organs_by_name[species.vision_organ]
-		if(!I.is_usable())
+		if(!I?.is_usable()) //INF WAS if(!I.is_usable()) -- other way, changelings without head would do this check
 			return FLASH_PROTECTION_MAJOR
 		else
 			total_protection = I.get_total_protection(flash_protection)
@@ -705,8 +711,10 @@
 	else if(!(locate(/mob) in contents))
 		nothing_to_puke = TRUE
 
+	stun_effect_act(0, 10, BP_GROIN, "stomach spasm") //INF
 	if(nothing_to_puke)
-		custom_emote(1,"dry heaves.")
+		custom_emote(1,"морщится.")
+		to_chat(src, SPAN_WARNING("Вас скручивает в спазме от попытки стошнить хоть что-то...")) //INF
 		return
 
 	if(should_have_organ(BP_STOMACH))
@@ -721,7 +729,7 @@
 			if(species.gluttonous & GLUT_PROJECTILE_VOMIT)
 				M.throw_at(get_edge_target_turf(src,dir),7,7,src)
 
-	visible_message(SPAN_DANGER("\The [src] throws up!"),SPAN_DANGER("You throw up!"))
+	visible_message(SPAN_DANGER("\The [src] стошнило!"),SPAN_DANGER("Вас стошнило!"))
 	playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 	var/turf/location = loc
 	if(istype(location, /turf/simulated))
@@ -1216,7 +1224,7 @@
 
 	// Rebuild the HUD and visual elements.
 	if(client)
-		Login()
+		remake_Hud() //INF WAS Login()
 
 	full_prosthetic = null
 
@@ -1563,6 +1571,7 @@
 
 /mob/living/carbon/human/proc/pulse()
 	var/obj/item/organ/internal/heart/H = internal_organs_by_name[BP_HEART]
+	if(status_flags & FAKEDEATH) return PULSE_NONE //INF
 	return H ? H.pulse : PULSE_NONE
 
 /mob/living/carbon/human/can_devour(atom/movable/victim, var/silent = FALSE)

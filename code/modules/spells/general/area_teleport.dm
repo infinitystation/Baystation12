@@ -12,6 +12,7 @@
 	smoke_spread = 1
 	smoke_amt = 5
 
+	selection_type = "special"	//INF	We can't found teleport turf in our VIEW
 	var/randomise_selection = 0 //if it lets the usr choose the teleport loc or picks it from the list
 	var/invocation_area = 1 //if the invocation appends the selected area
 

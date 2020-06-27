@@ -104,7 +104,7 @@
 	bulk = GUN_BULK_SMG
 	w_class = ITEM_SIZE_LARGE
 	one_hand_penalty = 4
-
+	screen_shake = 0.5
 	s_gun = "C-20R"
 //[/INF]
 /obj/item/weapon/gun/projectile/automatic/merc_smg/on_update_icon()
@@ -182,11 +182,12 @@
 	accuracy_power = 7
 	w_class = ITEM_SIZE_NORMAL
 	one_hand_penalty = 3
-
+	screen_shake = 0.5
 	s_gun = "WT-550"
 //[/INF]
 /obj/item/weapon/gun/projectile/automatic/sec_smg/on_update_icon()
 	..()
+	icon_state = "smg" //INF
 	if(ammo_magazine)
 		overlays += image(icon, "mag-[round(ammo_magazine.stored_ammo.len,5)]")
 	if(ammo_magazine && LAZYLEN(ammo_magazine.stored_ammo))

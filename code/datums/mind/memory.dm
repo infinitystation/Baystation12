@@ -54,21 +54,21 @@
 		var/datum/memory/M = mem
 		var/owner_name = M.OwnerName()
 		if(owner_name != last_owner_name)
-			output += "<B>[current.real_name]'s Memories</B><HR>"
+			output += "<meta charset=\"UTF-8\"><B>Воспоминания [current.real_name]</B><HR>"
 			last_owner_name = owner_name
-		output += "[M.memory] <a href='?src=\ref[src];remove_memory=\ref[M]'>\[Remove\]</a>"
+		output += "[M.memory] <a href='?src=\ref[src];remove_memory=\ref[M]'>\[Убрать\]</a>"
 
 	if(objectives.len > 0)
-		output += "<HR><B>Objectives:</B>"
+		output += "<HR><B>Цели:</B>"
 
 		var/obj_count = 1
 		for(var/datum/objective/objective in objectives)
-			output += "<B>Objective #[obj_count]</B>: [objective.explanation_text]"
+			output += "<B>Цель #[obj_count]</B>: [objective.explanation_text]"
 			obj_count++
 
 	if(SSgoals.ambitions[src])
 		var/datum/goal/ambition/ambition = SSgoals.ambitions[src]
-		output += "<HR><B>Ambitions:</B> [ambition.summarize()]"
+		output += "<HR><B>Амбиции:</B> [ambition.summarize()]"
 
 	show_browser(recipient, replacetext(jointext(output, "<BR>"),"\n","<BR>"),"window=memory")
 

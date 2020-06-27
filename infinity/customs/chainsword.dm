@@ -29,6 +29,7 @@
 	var/icon_state_off = "chainsword_off"
 	var/icon_state_on = "chainsword_on"
 	var/fuel = 50
+	trade_blacklisted = TRUE
 
 /obj/item/weapon/chainsword/proc/set_status(new_status, mob/user)
 	if (!new_status)

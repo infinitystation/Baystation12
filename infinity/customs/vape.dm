@@ -11,6 +11,7 @@
 	var/icon_inactive = "vape_red_off"
 	var/vape_status = "closed"
 	var/isvaping = FALSE
+	trade_blacklisted = TRUE
 
 /obj/item/vape/New()
 	..()

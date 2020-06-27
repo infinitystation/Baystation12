@@ -5,6 +5,7 @@
 	icon_state = "gentle_cap"
 	item_state = "gentle_cap"
 	item_icons = list(slot_head_str = CUSTOM_ITEM_MOB)
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/suit/storage/gentle_suit
 	name = "black trenchcoat"
@@ -14,6 +15,7 @@
 	item_state = "gentle_suit"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB)
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/under/gentle_under
 	name = "gentleman suit"
@@ -23,6 +25,7 @@
 	item_state = "gentle_under"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	item_icons = list(slot_w_uniform_str = CUSTOM_ITEM_MOB)
+	trade_blacklisted = TRUE
 
 /obj/item/weapon/clothingbag/gentle_set
 	New()

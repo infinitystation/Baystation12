@@ -1,3 +1,5 @@
+#define WEBHOOK_SUBMAP_LOADED_SOL"webhook_submap_sol"
+
 #include "patrol_areas.dm"
 #include "patrol_crew.dm"
 #include "patrol_items.dm"
@@ -9,7 +11,7 @@
  */
 
 /datum/map_template/ruin/away_site/patrol
-	name = "Sol Rescue Shuttle (ERT)"
+	name = "Sol Patrol Shuttle"
 	id = "awaysite_patrol_ship"
 	description = "A saviours for crew."
 	prefix = "maps/away_inf/"

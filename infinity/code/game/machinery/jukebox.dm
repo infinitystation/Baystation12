@@ -15,7 +15,10 @@
 		for(var/datum/track/T in tracks)
 			if(T == tape.track)
 				tracks -= T
-		visible_message(SPAN_NOTICE("[usr] eject \the [tape] from \the [src]."))
-		usr.put_in_hands(tape)
+
+		if(!usr.put_in_hands(tape))
+			tape.dropInto(loc)
+
 		tape = null
+		visible_message(SPAN_NOTICE("[usr] eject \a [tape] from \the [src]."))
 		verbs -= /obj/machinery/media/jukebox/verb/eject

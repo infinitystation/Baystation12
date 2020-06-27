@@ -1,21 +1,26 @@
 //Makes sure we don't get any merchant antags as a balance concern. Can also be used for future Sierra specific antag restrictions.
 /datum/antagonist/changeling
-	blacklisted_jobs = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/merchant_trainee, /datum/job/captain, /datum/job/hop, /datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/submap)
+	blacklisted_jobs = list(/datum/job/ai, /datum/job/cyborg, /datum/job/submap)
+	protected_jobs = list(/datum/job/captain, /datum/job/hop, /datum/job/hos, /datum/job/detective, /datum/job/warden, /datum/job/officer, /datum/job/security_assistant, /datum/job/merchant, /datum/job/merchant_trainee)
 
 /datum/antagonist/godcultist
-	blacklisted_jobs = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/merchant_trainee, /datum/job/captain, /datum/job/hop, /datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/iaa, /datum/job/submap)
+	blacklisted_jobs = list(/datum/job/ai, /datum/job/cyborg, /datum/job/chaplain, /datum/job/submap)
+	protected_jobs = list(/datum/job/captain, /datum/job/hop, /datum/job/hos, /datum/job/detective, /datum/job/warden, /datum/job/officer, /datum/job/security_assistant, /datum/job/iaa, /datum/job/merchant, /datum/job/merchant_trainee)
 
 /datum/antagonist/cultist
-	blacklisted_jobs = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/merchant_trainee, /datum/job/captain, /datum/job/hop, /datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/iaa, /datum/job/psychiatrist, /datum/job/submap)
+	blacklisted_jobs = list(/datum/job/ai, /datum/job/cyborg, /datum/job/chaplain, /datum/job/submap)
+	protected_jobs = list(/datum/job/captain, /datum/job/hop, /datum/job/hos, /datum/job/detective, /datum/job/warden, /datum/job/officer, /datum/job/security_assistant, /datum/job/iaa, /datum/job/merchant, /datum/job/merchant_trainee)
 
 /datum/antagonist/loyalists
-	blacklisted_jobs = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/merchant_trainee, /datum/job/submap)
+	blacklisted_jobs = list(/datum/job/ai, /datum/job/cyborg, /datum/job/submap, /datum/job/merchant, /datum/job/merchant_trainee)
 
 /datum/antagonist/revolutionary
-	blacklisted_jobs = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/merchant_trainee, /datum/job/iaa, /datum/job/submap)
+	blacklisted_jobs = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/merchant_trainee, /datum/job/submap)
+	protected_jobs = list(/datum/job/iaa)
 
 /datum/antagonist/traitor
-	blacklisted_jobs = list(/datum/job/merchant, /datum/job/merchant_trainee, /datum/job/captain, /datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/iaa, /datum/job/submap)
+	blacklisted_jobs = list(/datum/job/submap)
+	protected_jobs = list(/datum/job/captain, /datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/security_assistant, /datum/job/iaa, /datum/job/merchant, /datum/job/merchant_trainee)
 
 /datum/antagonist/ert/equip(var/mob/living/carbon/human/player)
 	if(!..())

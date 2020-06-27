@@ -193,10 +193,10 @@
 			return global.admin_verbs_fun;
 		if("admin_verbs_hideable")
 			return global.admin_verbs_hideable;
-		if("admin_verbs_judge")
-			return global.admin_verbs_judge;
-		if("admin_verbs_mentor")
-			return global.admin_verbs_mentor;
+		if("admin_verbs_judge")						//INF WAS 	if("admin_verbs_possess")
+			return global.admin_verbs_judge;		//INF WAS 		return global.admin_verbs_possess;
+		if("admin_verbs_xeno")						//INF
+			return global.admin_verbs_xeno;			//INF
 		if("admin_verbs_mod")
 			return global.admin_verbs_mod;
 		if("admin_verbs_paranoid_debug")
@@ -857,8 +857,6 @@
 			return global.tape_roll_applications;
 		if("telecomms_list")
 			return global.telecomms_list;
-		if("text_tag_icons")
-			return global.text_tag_icons;
 		if("ticket_panels")
 			return global.ticket_panels;
 		if("tickets")
@@ -925,7 +923,7 @@
 			return global.z_levels;
 		if("zone_blocked")
 			return global.zone_blocked;
-		
+
 /proc/writeglobal(which, newval)
 	switch(which)
 		if("ANTAG_FREQS")
@@ -1120,10 +1118,10 @@
 			global.admin_verbs_fun=newval;
 		if("admin_verbs_hideable")
 			global.admin_verbs_hideable=newval;
-		if("admin_verbs_judge")
-			global.admin_verbs_judge=newval;
-		if("admin_verbs_mentor")
-			global.admin_verbs_mentor=newval;
+		if("admin_verbs_judge")					//INF WAS 	if("admin_verbs_possess")
+			global.admin_verbs_judge=newval;	//INF WAS		global.admin_verbs_possess=newval;
+		if("admin_verbs_xeno")					//INF
+			global.admin_verbs_xeno=newval;		//INF
 		if("admin_verbs_mod")
 			global.admin_verbs_mod=newval;
 		if("admin_verbs_paranoid_debug")
@@ -1784,8 +1782,6 @@
 			global.tape_roll_applications=newval;
 		if("telecomms_list")
 			global.telecomms_list=newval;
-		if("text_tag_icons")
-			global.text_tag_icons=newval;
 		if("ticket_panels")
 			global.ticket_panels=newval;
 		if("tickets")
@@ -1852,7 +1848,7 @@
 			global.z_levels=newval;
 		if("zone_blocked")
 			global.zone_blocked=newval;
-		
+
 /var/list/_all_globals=list(
 	"ANTAG_FREQS",
 	"BSACooldown",
@@ -2282,7 +2278,6 @@
 	"tank_gauge_cache",
 	"tape_roll_applications",
 	"telecomms_list",
-	"text_tag_icons",
 	"ticket_panels",
 	"tickets",
 	"total_lighting_corners",

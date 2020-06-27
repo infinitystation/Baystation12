@@ -174,8 +174,8 @@ var/list/ai_verbs_default = list(
 	hud_list[HEALTH_HUD]      = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
 	hud_list[STATUS_HUD]      = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
 	hud_list[LIFE_HUD] 		  = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
-	hud_list[ID_HUD]          = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
-	hud_list[WANTED_HUD]      = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
+	hud_list[ID_HUD]          = new /image/hud_overlay(GLOB.using_map.id_hud_icons, src, "hudblank") //INF, was 'icons/mob/hud.dmi'
+	hud_list[WANTED_HUD]      = new /image/hud_overlay('infinity/icons/mob/hud.dmi', src, "hudblank") //INF, was 'icons/mob/hud.dmi'
 	hud_list[IMPLOYAL_HUD]    = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
 	hud_list[IMPCHEM_HUD]     = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
 	hud_list[IMPTRACK_HUD]    = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
@@ -187,12 +187,12 @@ var/list/ai_verbs_default = list(
 	ai_radio.myAi = src
 
 /mob/living/silicon/ai/proc/on_mob_init()
-	to_chat(src, "<B>Вы играете за Искусстенный Интеллект объекта [station_name()]. ИИ не может перемещатьс&#255; сам по себе, но можно взаимодействовать со множеством электронных объектов в момент, когда они наход&#255;тс&#255; его зоне видимости (через камеры).</B>")
-	to_chat(src, "<B>Чтобы увидеть другие зоны, нажмите на себ&#255; дл&#255; выведени&#255; списка доступных камер.</B>")
-	to_chat(src, "<B>В момент просмотра через камеры, вы можете использовать подключенные к системе энергоснабжени&#255; объекты. Например компьютеры, АПС, шлюзы, интеркомы, системы контрол&#255; атмосферы и т.п.</B>")
-	to_chat(src, "Чтобы начать взаимодействие, просто нажмите на объект.")
-	to_chat(src, "Дл&#255; общени&#255; с подчиненными вам киборгами, андроидами и роботами пишите перед своими сообщени&#255;ми в игровой чат ',b'. Дл&#255; общени&#255; через активный голопад, используйте ':h'.")
-	to_chat(src, "Дл&#255; использовани&#255; каналов различных департаментов:")
+	to_chat(src, "<B>Р’С‹ РёРіСЂР°РµС‚Рµ Р·Р° РСЃРєСѓСЃСЃС‚РµРЅРЅС‹Р№ РРЅС‚РµР»Р»РµРєС‚ РѕР±СЉРµРєС‚Р° [station_name()]. РР РЅРµ РјРѕР¶РµС‚ РїРµСЂРµРјРµС‰Р°С‚СЊСЃСЏ СЃР°Рј РїРѕ СЃРµР±Рµ, РЅРѕ РјРѕР¶РЅРѕ РІР·Р°РёРјРѕРґРµР№СЃС‚РІРѕРІР°С‚СЊ СЃРѕ РјРЅРѕР¶РµСЃС‚РІРѕРј СЌР»РµРєС‚СЂРѕРЅРЅС‹С… РѕР±СЉРµРєС‚РѕРІ РІ РјРѕРјРµРЅС‚, РєРѕРіРґР° РѕРЅРё РЅР°С…РѕРґСЏС‚СЃСЏ РµРіРѕ Р·РѕРЅРµ РІРёРґРёРјРѕСЃС‚Рё (С‡РµСЂРµР· РєР°РјРµСЂС‹).</B>")
+	to_chat(src, "<B>Р§С‚РѕР±С‹ СѓРІРёРґРµС‚СЊ РґСЂСѓРіРёРµ Р·РѕРЅС‹, РЅР°Р¶РјРёС‚Рµ РЅР° СЃРµР±СЏ РґР»СЏ РІС‹РІРµРґРµРЅРёСЏ СЃРїРёСЃРєР° РґРѕСЃС‚СѓРїРЅС‹С… РєР°РјРµСЂ.</B>")
+	to_chat(src, "<B>Р’ РјРѕРјРµРЅС‚ РїСЂРѕСЃРјРѕС‚СЂР° С‡РµСЂРµР· РєР°РјРµСЂС‹, РІС‹ РјРѕР¶РµС‚Рµ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РїРѕРґРєР»СЋС‡РµРЅРЅС‹Рµ Рє СЃРёСЃС‚РµРјРµ СЌРЅРµСЂРіРѕСЃРЅР°Р±Р¶РµРЅРёСЏ РѕР±СЉРµРєС‚С‹. РќР°РїСЂРёРјРµСЂ РєРѕРјРїСЊСЋС‚РµСЂС‹, РђРџРЎ, С€Р»СЋР·С‹, РёРЅС‚РµСЂРєРѕРјС‹, СЃРёСЃС‚РµРјС‹ РєРѕРЅС‚СЂРѕР»СЏ Р°С‚РјРѕСЃС„РµСЂС‹ Рё С‚.Рї.</B>")
+	to_chat(src, "Р§С‚РѕР±С‹ РЅР°С‡Р°С‚СЊ РІР·Р°РёРјРѕРґРµР№СЃС‚РІРёРµ, РїСЂРѕСЃС‚Рѕ РЅР°Р¶РјРёС‚Рµ РЅР° РѕР±СЉРµРєС‚.")
+	to_chat(src, "Р”Р»СЏ РѕР±С‰РµРЅРёСЏ СЃ РїРѕРґС‡РёРЅРµРЅРЅС‹РјРё РІР°Рј РєРёР±РѕСЂРіР°РјРё, Р°РЅРґСЂРѕРёРґР°РјРё Рё СЂРѕР±РѕС‚Р°РјРё РїРёС€РёС‚Рµ РїРµСЂРµРґ СЃРІРѕРёРјРё СЃРѕРѕР±С‰РµРЅРёСЏРјРё РІ РёРіСЂРѕРІРѕР№ С‡Р°С‚ ',b'. Р”Р»СЏ РѕР±С‰РµРЅРёСЏ С‡РµСЂРµР· Р°РєС‚РёРІРЅС‹Р№ РіРѕР»РѕРїР°Рґ, РёСЃРїРѕР»СЊР·СѓР№С‚Рµ ':h'.")
+	to_chat(src, "Р”Р»СЏ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ РєР°РЅР°Р»РѕРІ СЂР°Р·Р»РёС‡РЅС‹С… РґРµРїР°СЂС‚Р°РјРµРЅС‚РѕРІ:")
 
 	var/radio_text = ""
 	for(var/i = 1 to silicon_radio.channels.len)
@@ -206,8 +206,8 @@ var/list/ai_verbs_default = list(
 
 	if (GLOB.malf && !(mind in GLOB.malf.current_antagonists))
 		show_laws()
-		to_chat(src, "<b>Данные законы могут быть изменены другими игроками, случайными событиями или в том случае, если вы &#255;вл&#255;етесь сбойным ИИ.</b>")
-//		to_chat(src, "<span class='danger'><B>Внимание! Разработчиками Искусственного Интеллекта были введены специальные протоколы! Ознакомление с оными возможно на следующей странице: https://wiki.infinity-ss13.info/index.php?title=SCG_AI_Rules_and_Regulations</b></span>")
+		to_chat(src, "<b>Р”Р°РЅРЅС‹Рµ Р·Р°РєРѕРЅС‹ РјРѕРіСѓС‚ Р±С‹С‚СЊ РёР·РјРµРЅРµРЅС‹ РґСЂСѓРіРёРјРё РёРіСЂРѕРєР°РјРё, СЃР»СѓС‡Р°Р№РЅС‹РјРё СЃРѕР±С‹С‚РёСЏРјРё РёР»Рё РІ С‚РѕРј СЃР»СѓС‡Р°Рµ, РµСЃР»Рё РІС‹ СЏРІР»СЏРµС‚РµСЃСЊ СЃР±РѕР№РЅС‹Рј РР.</b>")
+//		to_chat(src, "<span class='danger'><B>Р’РЅРёРјР°РЅРёРµ! Р Р°Р·СЂР°Р±РѕС‚С‡РёРєР°РјРё РСЃРєСѓСЃСЃС‚РІРµРЅРЅРѕРіРѕ РРЅС‚РµР»Р»РµРєС‚Р° Р±С‹Р»Рё РІРІРµРґРµРЅС‹ СЃРїРµС†РёР°Р»СЊРЅС‹Рµ РїСЂРѕС‚РѕРєРѕР»С‹! РћР·РЅР°РєРѕРјР»РµРЅРёРµ СЃ РѕРЅС‹РјРё РІРѕР·РјРѕР¶РЅРѕ РЅР° СЃР»РµРґСѓСЋС‰РµР№ СЃС‚СЂР°РЅРёС†Рµ: https://wiki.infinity-ss13.info/index.php?title=SCG_AI_Rules_and_Regulations</b></span>")
 
 	job = "AI"
 	setup_icon()
@@ -219,8 +219,8 @@ var/list/ai_verbs_default = list(
 
 	if(alert(src, "Announce your presence?", "AI Presense","Yes", "No") == "Yes")
 		switch(input(src, "Announce your presence?", "Presence.") in list("Torch Voice Announcement", "TG Voice Announcement"))
-			if("Torch Voice Announcement")	announcement.Announce("Новый ИИ загружен в ядро.", new_sound = 'sound/AI/newAI.ogg')
-			if("TG Voice Announcement")	announcement.Announce("Новый ИИ загружен в ядро.", new_sound = 'infinity/sound/AI/TG/newai.ogg')
+			if("Torch Voice Announcement")	announcement.Announce("РќРѕРІС‹Р№ РР Р·Р°РіСЂСѓР¶РµРЅ РІ СЏРґСЂРѕ.", new_sound = 'sound/AI/newAI.ogg')
+			if("TG Voice Announcement")	announcement.Announce("РќРѕРІС‹Р№ РР Р·Р°РіСЂСѓР¶РµРЅ РІ СЏРґСЂРѕ.", new_sound = 'infinity/sound/AI/TG/newai.ogg')
 
 /mob/living/silicon/ai/Destroy()
 	for(var/robot in connected_robots)
@@ -330,7 +330,7 @@ var/list/ai_verbs_default = list(
 	if(message_cooldown)
 		to_chat(src, "Please allow one minute to pass between announcements.")
 		return
-	var/input = input(usr, "Please write a message to announce to the [station_name()] crew.", "A.I. Announcement")
+	var/input = input(usr, "Please write a message to announce to the [station_name()] crew.", "A.I. Announcement") as null|message
 	if(!input)
 		return
 

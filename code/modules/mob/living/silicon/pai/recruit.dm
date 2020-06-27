@@ -46,7 +46,7 @@ var/datum/paiController/paiController			// Global handler for pAI candidates
 			if(pai.mind) update_antag_icons(pai.mind)
 
 			pai_candidates -= candidate
-			usr << browse(null, "window=findPai")
+			close_browser(usr, "window=findPai")
 
 	if(href_list["new"])
 		var/datum/paiCandidate/candidate = locate(href_list["candidate"])
@@ -92,7 +92,7 @@ var/datum/paiController/paiController			// Global handler for pAI candidates
 					for(var/obj/item/device/paicard/p in world)
 						if(p.looking_for_personality == 1)
 							p.alertUpdate()
-				usr << browse(null, "window=paiRecruit")
+				close_browser(usr, "window=paiRecruit")
 				return
 
 		recruitWindow(usr, href_list["allow_submit"] != "0")
@@ -169,7 +169,7 @@ var/datum/paiController/paiController			// Global handler for pAI candidates
 			"}
 
 	dat += {"
-	<body>
+	<meta charset=\"UTF-8\"><body>
 		<b><font size="3px">pAI Personality Configuration</font></b>
 		<p class="top">Please configure your pAI personality's options. Remember, what you enter here could determine whether or not the user requesting a personality chooses you!</p>
 
@@ -227,7 +227,7 @@ var/datum/paiController/paiController			// Global handler for pAI candidates
 	<body>
 	"}
 
-	M << browse(dat, "window=paiRecruit;size=580x580;")
+	show_browser(M, dat, "window=paiRecruit;size=580x580;")
 
 /datum/paiController/proc/findPAI(var/obj/item/device/paicard/p, var/mob/user)
 	requestRecruits(user)
@@ -246,6 +246,7 @@ var/datum/paiController/paiController			// Global handler for pAI candidates
 		<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">
 		<html>
 			<head>
+			<meta charset=\"UTF-8\"><body>
 				<style>
 					body {
 						margin-top:5px;
@@ -343,7 +344,7 @@ var/datum/paiController/paiController			// Global handler for pAI candidates
 		</html>
 	"}
 
-	user << browse(dat, "window=findPai")
+	show_browser(user, dat, "window=findPai")
 
 
 /datum/paiController/proc/requestRecruits(var/mob/user)

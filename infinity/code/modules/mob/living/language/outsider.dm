@@ -1,36 +1,10 @@
-//Swarm Language
-
-/*/datum/language/swarm
-	name = LANGUAGE_SWARM
-	colour = "adherent"
-	desc = "Связь ближнего действия"
-	speech_verb = "транслирует"
-	ask_verb = "транслирует"
-	exclaim_verb = "транслирует"
-	key = "t"
-	flags = RESTRICTED
-	machine_understands = 0
-	syllables = list("шипит", "свистит", "скрежет")
-	shorthand = "Swarm"
-
-/datum/language/swarm_far
-	name = LANGUAGE_SWARM_FAR
-	desc = "Блюспэйс подключение к общей сети улья и разделённое на ячейки"
-	speech_verb = "транслирует"
-	ask_verb = "транслирует"
-	exclaim_verb = "транслирует"
-	colour = "adherent"
-	key = "z"
-	flags = RESTRICTED | HIVEMIND
-	shorthand = "N/A"*/
-
 /datum/language/xenocommon
 	name = LANGUAGE_XENOPHAGE
 	colour = "alien"
 	desc = "The common tongue of the xenophages."
-	speech_verb = "шипит"
-	ask_verb = "шипит"
-	exclaim_verb = "шипит"
+	speech_verb = "С€РёРїРёС‚"
+	ask_verb = "С€РёРїРёС‚"
+	exclaim_verb = "С€РёРїРёС‚"
 	key = "i"
 	flags = RESTRICTED
 	syllables = list("sss","sSs","SSS")
@@ -40,9 +14,9 @@
 /datum/language/xenos
 	name = LANGUAGE_XENOPHAGE_HIVE
 	desc = "Xenophages have the strange ability to commune over a psychic hivemind."
-	speech_verb = "шипит"
-	ask_verb = "шипит"
-	exclaim_verb = "шипит"
+	speech_verb = "С€РёРїРёС‚"
+	ask_verb = "С€РёРїРёС‚"
+	exclaim_verb = "С€РёРїРёС‚"
 	colour = "alien"
 	key = "a"
 	flags = RESTRICTED | HIVEMIND
@@ -57,3 +31,14 @@
 		return 1
 
 	return 0
+
+/datum/language/abductors
+	name = LANGUAGE_ABDUCTORS
+	desc = "Abductors have a telepathical link between them."
+	speech_verb = "С‚СЂР°РЅСЃР»РёСЂСѓРµС‚"
+	ask_verb = "Р·Р°РїСЂР°С€РёРІР°РµС‚"
+	exclaim_verb = "С‚СЂР°РЅСЃР»РёСЂСѓРµС‚"
+	colour = "#90489c"
+	key = "m"
+	flags = RESTRICTED | HIVEMIND
+	shorthand = "N/A"

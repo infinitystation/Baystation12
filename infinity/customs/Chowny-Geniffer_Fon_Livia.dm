@@ -11,6 +11,7 @@
 		slot_r_hand_str = "netgun_inRighthand_geniffer",
 		slot_l_hand_str = "netgun_inLefthand_geniffer"
 		)
+	trade_blacklisted = TRUE
 
 /obj/item/weapon/gun/launcher/net/geniffer/Initialize()
 	. = ..()

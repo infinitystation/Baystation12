@@ -6,7 +6,7 @@
 	mob_size = MOB_TINY
 	see_in_dark = 8
 
-	speak_emote = list("шипит")
+	speak_emote = list("С€РёРїРёС‚")
 	icon_state = "larva"
 	language = "Hivemind"
 	species_language = "Xenophage"
@@ -20,6 +20,9 @@
 	var/time_of_birth
 	var/can_namepick_as_adult = 0
 	var/adult_name
+
+/mob/living/carbon/alien/larva/can_feel_pain()
+	return 0
 
 /mob/living/carbon/alien/larva/New()
 	verbs += /mob/living/proc/night_vision
@@ -52,7 +55,7 @@
 	if(src.mind)
 		return
 	if(jobban_isbanned(user, MODE_XENOMORPH))
-		to_chat(user, SPAN_DANGER("У вас имеетс&#255; бан на роль ксенофага. Вы не можете играть за них."))
+		to_chat(user, SPAN_DANGER("РЈ РІР°СЃ РёРјРµРµС‚СЃСЏ Р±Р°РЅ РЅР° СЂРѕР»СЊ РєСЃРµРЅРѕС„Р°РіР°. Р’С‹ РЅРµ РјРѕР¶РµС‚Рµ РёРіСЂР°С‚СЊ Р·Р° РЅРёС…."))
 		return
 	var/confirm = alert(user, "Are you sure you want to join as a Xenophage larva?", "Become Larva", "No", "Yes")
 	if(!src || confirm != "Yes")

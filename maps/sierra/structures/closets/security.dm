@@ -172,6 +172,25 @@
 		/obj/item/weapon/storage/firstaid/individual/military
 	)
 
+/obj/structure/closet/secure_closet/security/sierra/cadet
+	name = "cadet's locker"
+	req_access = list(access_security)
+
+/obj/structure/closet/secure_closet/security/sierra/cadet/WillContain()
+	return list(
+		/obj/item/device/flash,
+		/obj/item/device/radio/off,
+		/obj/item/device/flashlight/maglight,
+		/obj/item/device/holowarrant,
+		/obj/item/device/hailer,
+		/obj/item/taperoll/police,
+		/obj/item/weapon/storage/belt/holster/security,
+		/obj/item/weapon/reagent_containers/spray/pepper,
+		/obj/item/weapon/crowbar/prybar,
+		/obj/item/weapon/gun/energy/confuseray/secure,
+		/obj/item/clothing/glasses/hud/security
+	)
+
 /obj/structure/closet/secure_closet/brig/WillContain()
 	return list(
 		/obj/item/clothing/under/color/orange,

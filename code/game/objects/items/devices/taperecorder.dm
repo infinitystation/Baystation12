@@ -348,7 +348,7 @@
 		if (findtextEx(printedmessage,"*",1,2)) //replace action sounds
 			printedmessage = "\[[time2text(mytape.timestamp[i]*10,"mm:ss")]\] (Unrecognized sound)"
 		t1 += "[printedmessage]<BR>"
-	P.info = sanitize_a2u(t1)
+	P.info = t1
 	P.SetName("Transcript")
 	canprint = 0
 	sleep(300)

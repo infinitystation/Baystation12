@@ -11,9 +11,9 @@
 //[/inf]
 	name = LANGUAGE_SKRELLIAN
 	desc = "A melodic and complex language spoken by the Skrell of Qerrbalak. Some of the notes are inaudible to humans."
-	speech_verb = "поет"
-	ask_verb = "поет"
-	exclaim_verb = "поет"
+	speech_verb = "РїРѕРµС‚"
+	ask_verb = "РїРѕРµС‚"
+	exclaim_verb = "РїРѕРµС‚"
 	colour = "skrell"
 	key = "k"
 	flags = WHITELISTED

@@ -4,7 +4,7 @@ var/list/admin_verbs_default = list(
 	/client/proc/hide_verbs,			//hides all our adminverbs,
 	/client/proc/getserverlog,			//allows us to fetch server logs (diary) for other days,
 	/client/proc/hide_most_verbs,		//hides all our hideable adminverbs,
-//INF unused	/client/proc/cmd_check_new_players,
+	/client/proc/cmd_check_new_players,
 	/client/proc/cmd_staff_say,
 	)
 
@@ -60,14 +60,13 @@ var/list/admin_verbs_admin = list(
 	/client/proc/cmd_admin_say,			//admin-only ooc chat,
 	/datum/admins/proc/togglehubvisibility, //toggles visibility on the BYOND Hub,
 	/datum/admins/proc/PlayerNotes,
-//INF	/datum/admins/proc/show_player_info,
+//inf	/datum/admins/proc/show_player_info,
 	/client/proc/free_slot_submap,
 	/client/proc/free_slot_crew,			//frees slot for chosen job,
 	/client/proc/cmd_admin_change_custom_event,
 //INF	/client/proc/cmd_admin_rejuvenate,
 	/client/proc/toggleghostwriters,
 	/client/proc/toggledrones,
-//INF unused	/client/proc/check_customitem_activity,
 	/datum/admins/proc/show_skills,
 	/client/proc/man_up,
 	/client/proc/global_man_up,
@@ -83,7 +82,7 @@ var/list/admin_verbs_admin = list(
 	/client/proc/change_human_appearance_self,	// Allows the human-based mob itself change its basic appearance ,
 	/client/proc/change_security_level,
 	/client/proc/view_chemical_reaction_logs,
-//INF unused	/client/proc/makePAI,
+	/client/proc/makePAI,
 	/client/proc/fixatmos,
 	/client/proc/list_traders,
 	/client/proc/add_trader,
@@ -120,6 +119,8 @@ var/list/admin_verbs_fun = list(
 //INF unused	/client/proc/create_dungeon,
 	/datum/admins/proc/ai_hologram_set,
 //[INF],
+	/datum/admins/proc/create_new_skybox_data,
+	/datum/admins/proc/select_and_apply_skybox_data,
 	/datum/admins/proc/intercom,		//send a fake intercom message, like an arrivals announcement,
 	/datum/admins/proc/intercom_convo,	//send a fake intercom conversation, like an ATC exchange,
 	/datum/admins/proc/mp_panel,
@@ -320,7 +321,7 @@ var/list/admin_verbs_mod = list(
 	/client/proc/debug_global_variables,
 	/datum/admins/proc/PlayerNotes,
 	/client/proc/admin_ghost,
-//INF unused	/datum/admins/proc/show_player_info,
+//inf	/datum/admins/proc/show_player_info,
 	/client/proc/player_panel_new,
 	/client/proc/dsay,
 	/datum/admins/proc/show_skills,
@@ -331,15 +332,16 @@ var/list/admin_verbs_mod = list(
 	/datum/admins/proc/sendFax,
 	/datum/admins/proc/view_persistent_data
 )
-
-var/list/admin_verbs_mentor = list(
-	/client/proc/cmd_admin_pm_context,
-	/client/proc/cmd_admin_pm_panel,
+//[INF]
+var/list/admin_verbs_xeno = list(
+//	/client/proc/cmd_admin_pm_context,
+//	/client/proc/cmd_admin_pm_panel,
+//	/client/proc/admin_ghost,
+//	/datum/admins/proc/show_player_info,
 	/datum/admins/proc/PlayerNotes,
-	/client/proc/admin_ghost,
-//INF	/datum/admins/proc/show_player_info
+	/datum/admins/proc/xeno_whitelist_panel
 )
-
+//[/INF]
 /client/proc/add_admin_verbs()
 	if(holder)
 		verbs += admin_verbs_default
@@ -352,14 +354,14 @@ var/list/admin_verbs_mentor = list(
 			verbs += admin_verbs_debug
 			if(config.debugparanoid && !(holder.rights & R_ADMIN))
 				verbs.Remove(admin_verbs_paranoid_debug)			//Right now it's just callproc but we can easily add others later on.
-		if(holder.rights & R_JUDGE)	     	verbs += admin_verbs_judge
+		if(holder.rights & R_JUDGE)	     	verbs += admin_verbs_judge		//INF WAS	if(holder.rights & R_POSSESS)	     	verbs += admin_verbs_possess
 		if(holder.rights & R_PERMISSIONS)	verbs += admin_verbs_permissions
 		if(holder.rights & R_STEALTH)		verbs += /client/proc/stealth
 		if(holder.rights & R_REJUVINATE)	verbs += admin_verbs_rejuv
 		if(holder.rights & R_SOUNDS)		verbs += admin_verbs_sounds
 		if(holder.rights & R_SPAWN)			verbs += admin_verbs_spawn
 		if(holder.rights & R_MOD)			verbs += admin_verbs_mod
-		if(holder.rights & R_MENTOR)		verbs += admin_verbs_mentor
+		if(holder.rights & R_XENO)			verbs += admin_verbs_xeno		//INF
 
 /client/proc/remove_admin_verbs()
 	verbs.Remove(
@@ -422,14 +424,9 @@ var/list/admin_verbs_mentor = list(
 	if(!holder)	return
 	if(isghost(mob))
 		var/mob/observer/ghost/ghost = mob
-		if(!is_mentor(usr.client))
-			ghost.can_reenter_corpse = 1
-		if(ghost.can_reenter_corpse)
-			ghost.reenter_corpse()
-			SSstatistics.add_field_details("admin_verb","P") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-		else
-			to_chat(ghost, "<font color='red'>Error:  Aghost:  Can't reenter corpse, mentors that use adminHUD while aghosting are not permitted to enter their corpse again</font>")
-			return
+		ghost.reenter_corpse()
+		SSstatistics.add_field_details("admin_verb","P") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
 	else if(istype(mob,/mob/new_player))
 		to_chat(src, "<font color='red'>Error: Aghost: Can't admin-ghost whilst in the lobby. Join or Observe first.</font>")
 	else
@@ -586,7 +583,7 @@ var/list/admin_verbs_mentor = list(
 		SSstatistics.add_field("ban_warn",1)
 	else
 		if(C)
-			to_chat(C, "<font color='red'><BIG><B>Вы были формально предупреждены администратором [key_name_admin(src, 0)].</B></BIG><br>Дальнейшие предупреждени&#255; приведут к автобану.</font>")
+			to_chat(C, "<font color='red'><BIG><B>Р’С‹ Р±С‹Р»Рё С„РѕСЂРјР°Р»СЊРЅРѕ РїСЂРµРґСѓРїСЂРµР¶РґРµРЅС‹ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂРѕРј [key_name_admin(src, 0)].</B></BIG><br>Р”Р°Р»СЊРЅРµР№С€РёРµ РїСЂРµРґСѓРїСЂРµР¶РґРµРЅРёСЏ РїСЂРёРІРµРґСѓС‚ Рє Р°РІС‚РѕР±Р°РЅСѓ.</font>")
 			log_and_message_admins("has warned [key_name_admin(C)]. They have [MAX_WARNS-D.warns] strikes remaining.")
 		else
 			log_and_message_admins("has warned [warned_ckey] (DC). They have [MAX_WARNS-D.warns] strikes remaining.")
@@ -678,10 +675,12 @@ var/list/admin_verbs_mentor = list(
 	if(config)
 		if(config.log_hrefs)
 			config.log_hrefs = 0
-			to_chat(src, "<b>Stopped logging hrefs</b>")
+//ORIG			to_chat(src, "<b>Stopped logging hrefs</b>")
 		else
 			config.log_hrefs = 1
-			to_chat(src, "<b>Started logging hrefs</b>")
+//ORIG			to_chat(src, "<b>Started logging hrefs</b>")
+//Inf: who the fuck added this unloggable shit?
+		log_and_message_admins("turned [config.log_hrefs ? "on" : "off"] hrefs logging.") //INF
 
 /client/proc/check_ai_laws()
 	set name = "Check AI Laws"
@@ -924,8 +923,8 @@ var/list/admin_verbs_mentor = list(
 	set name = "Man Up"
 	set desc = "Tells mob to man up and deal with it."
 
-	to_chat(T, SPAN_NOTICE("<b><font size=3>Возьми себ&#255; в руки и начни решать проблемы.</font></b>"))
-	to_chat(T, SPAN_NOTICE("Пр&#255;мо сейчас."))
+	to_chat(T, SPAN_NOTICE("<b><font size=3>Р’РѕР·СЊРјРё СЃРµР±СЏ РІ СЂСѓРєРё Рё РЅР°С‡РЅРё СЂРµС€Р°С‚СЊ РїСЂРѕР±Р»РµРјС‹.</font></b>"))
+	to_chat(T, SPAN_NOTICE("РџСЂСЏРјРѕ СЃРµР№С‡Р°СЃ."))
 	sound_to(T, 'sound/voice/ManUp1.ogg')
 	log_and_message_admins("told [key_name(T)] to man up and deal with it.")
 
@@ -935,7 +934,7 @@ var/list/admin_verbs_mentor = list(
 	set desc = "Tells everyone to man up and deal with it."
 
 	for (var/mob/T as mob in SSmobs.mob_list)
-		to_chat(T, SPAN_NOTICE("<br><center><b><font size=4>Возьми себ&#255; в руки.<br>Начни решать проблемы.</font></b><br>Пр&#255;мо сейчас.</center><br>"))
+		to_chat(T, SPAN_NOTICE("<br><center><b><font size=4>Р’РѕР·СЊРјРё СЃРµР±СЏ РІ СЂСѓРєРё.<br>РќР°С‡РЅРё СЂРµС€Р°С‚СЊ РїСЂРѕР±Р»РµРјС‹.</font></b><br>РџСЂСЏРјРѕ СЃРµР№С‡Р°СЃ.</center><br>"))
 		sound_to(T, 'sound/voice/ManUp1.ogg')
 
 	log_and_message_admins("told everyone to man up and deal with it.")

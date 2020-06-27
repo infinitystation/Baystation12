@@ -24,12 +24,12 @@
 /datum/event/rogue_drone/announce()
 	var/msg
 	if(prob(33))
-		msg = "Внимание: неавторизованные патрульные дроны обнаружены в космическом пространстве [location_name()]"
+		msg = "Р’РЅРёРјР°РЅРёРµ: РЅРµР°РІС‚РѕСЂРёР·РѕРІР°РЅРЅС‹Рµ РїР°С‚СЂСѓР»СЊРЅС‹Рµ РґСЂРѕРЅС‹ РѕР±РЅР°СЂСѓР¶РµРЅС‹ РІ РєРѕСЃРјРёС‡РµСЃРєРѕРј РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРµ [location_name()]"
 	else if(prob(50))
-		msg = "Неавторизованные патрульные дроны замечены в космическом пространстве [location_name()]. Всему экипажу быть на чеку."
+		msg = "РќРµР°РІС‚РѕСЂРёР·РѕРІР°РЅРЅС‹Рµ РїР°С‚СЂСѓР»СЊРЅС‹Рµ РґСЂРѕРЅС‹ Р·Р°РјРµС‡РµРЅС‹ РІ РєРѕСЃРјРёС‡РµСЃРєРѕРј РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРµ [location_name()]. Р’СЃРµРјСѓ СЌРєРёРїР°Р¶Сѓ Р±С‹С‚СЊ РЅР° С‡РµРєСѓ."
 	else
-		msg = "Множество маломощных энергетических источников обнаружено в космическом пространстве [location_name()]."
-	priority_announcement.Announce(msg, "Сенсоры [location_name()]", zlevels = affecting_z)
+		msg = "РњРЅРѕР¶РµСЃС‚РІРѕ РјР°Р»РѕРјРѕС‰РЅС‹С… СЌРЅРµСЂРіРµС‚РёС‡РµСЃРєРёС… РёСЃС‚РѕС‡РЅРёРєРѕРІ РѕР±РЅР°СЂСѓР¶РµРЅРѕ РІ РєРѕСЃРјРёС‡РµСЃРєРѕРј РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРµ [location_name()]."
+	priority_announcement.Announce(msg, "РЎРµРЅСЃРѕСЂС‹ [location_name()]", zlevels = affecting_z)
 
 /datum/event/rogue_drone/end()
 	var/num_recovered = 0
@@ -44,6 +44,6 @@
 		num_recovered++
 
 	if(num_recovered > drones_list.len * 0.75)
-		priority_announcement.Announce("Be advised: sensors indicate the unidentified drone swarm has left the immediate proximity of the [location_name()].", "Сенсоры [location_name()]", zlevels = affecting_z)
+		priority_announcement.Announce("Be advised: sensors indicate the unidentified drone swarm has left the immediate proximity of the [location_name()].", "РЎРµРЅСЃРѕСЂС‹ [location_name()]", zlevels = affecting_z)
 	else
-		priority_announcement.Announce("Be advised: sensors indicate the unidentified drone swarm has left the immediate proximity of the [location_name()].", "Сенсоры [location_name()]", zlevels = affecting_z)
+		priority_announcement.Announce("Be advised: sensors indicate the unidentified drone swarm has left the immediate proximity of the [location_name()].", "РЎРµРЅСЃРѕСЂС‹ [location_name()]", zlevels = affecting_z)

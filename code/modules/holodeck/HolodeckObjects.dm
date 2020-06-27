@@ -140,10 +140,13 @@
 
 /obj/item/clothing/gloves/boxing/hologlove
 	name = "boxing gloves"
-	desc = "Because you really needed another excuse to punch your crewmates."
+//ORIG	desc = "Because you really needed another excuse to punch your crewmates."
+	desc = "A state of the art electronic boxing gloves, used at holodecks for clever fights." //INF
 	icon_state = "boxing"
 	item_state = "boxing"
 	species_restricted = null //INF, hologram
+	var/hits = 0 //INF
+	var/hits_needed = 12 //INF
 
 /obj/structure/window/holowindow/full
 	dir = 5

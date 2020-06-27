@@ -1,6 +1,6 @@
 /datum/event/aliens
 	announceWhen = 495
-	var/spawncount = 1
+	var/spawncount = 3 //Was 1, too hard and there was a chance of bug with no larvas
 
 /datum/event/aliens/announce()
 	GLOB.using_map.level_x_biohazard_announcement(9)
@@ -28,12 +28,12 @@
 //searching for spawning locations
 
 	for(var/obj/effect/landmark/L in landmarks_list)
-		if(L.name == "xeno_spawn" && L.z in affecting_z)
+		if(L.name == "xeno_spawn" && (L.z in affecting_z))
 			spawn_locations.Add(L.loc)
 
 	if(!spawn_locations.len)
 		for(var/obj/machinery/atmospherics/unary/vent_pump/temp_vent in SSmachines.machinery)
-			if(!temp_vent.welded && temp_vent.network && temp_vent.loc.z in affecting_z)
+			if(!temp_vent.welded && temp_vent.network && (temp_vent.loc.z in affecting_z))
 				if(temp_vent.network.normal_members.len > 50)
 					spawn_locations.Add(temp_vent.loc)
 
@@ -57,7 +57,7 @@
 
 //		for(var/mob/observer/ghost/O in GLOB.ghost_mob_list)
 //			to_chat(O, FONT_LARGE(SPAN_NOTICE(
-//			"По&#255;вилась личинка пришельцев! [new_xeno.key ? "" : "Нажмите на неё, чтобы зан&#255;ть тело."] ([ghost_follow_link(new_xeno, O)])")))
+//			"РџРѕСЏРІРёР»Р°СЃСЊ Р»РёС‡РёРЅРєР° РїСЂРёС€РµР»СЊС†РµРІ! [new_xeno.key ? "" : "РќР°Р¶РјРёС‚Рµ РЅР° РЅРµС‘, С‡С‚РѕР±С‹ Р·Р°РЅСЏС‚СЊ С‚РµР»Рѕ."] ([ghost_follow_link(new_xeno, O)])")))
 		spawn_locations -= spot
 		spawncount--
 		xeno -= candidates

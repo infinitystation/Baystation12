@@ -1,9 +1,9 @@
 #define MIN_LARVA_BLOOD_DRINK 1
 
-/mob/living/carbon/alien/larva/Life()
+/mob/living/carbon/alien/larva/Process()
 	. = ..()
 	if(stat != DEAD && auto_progress)
-		update_progression()
+		update_progression(FALSE)
 
 /mob/living/carbon/alien/larva/update_living_sight()
 	set_sight(sight&(~(SEE_TURFS|SEE_MOBS|SEE_OBJS)))
@@ -14,13 +14,15 @@
 	if(!environment) return
 
 	var/turf/T = get_turf(src)
-	var/obj/effect/vine/plant = locate() in T
-	if(environment.gas["phoron"] > 0 || (plant && plant.seed.type == /datum/seed/xenomorph))
-//		update_progression()
+	var/obj/structure/alien/weeds/plant = locate() in T
+	if(environment.gas["phoron"] > 0 || plant)
+		update_progression(FALSE) //it will boost them
 		adjustBruteLoss(-1)
 		adjustFireLoss(-1)
 		adjustToxLoss(-1)
 		adjustOxyLoss(-1)
+	else
+
 
 // Maybe not the -best- place but it's semiappropriate and fitting.
 // Drink the blood of your host!
@@ -33,14 +35,14 @@
 	if(!istype(M))
 		return
 	if(amount_grown >= max_grown)
-		to_chat(src, SPAN_ALIEN("Вы готовы к продолжению эволюции!"))
+		to_chat(src, SPAN_ALIEN("Р’С‹ РіРѕС‚РѕРІС‹ Рє РїСЂРѕРґРѕР»Р¶РµРЅРёСЋ СЌРІРѕР»СЋС†РёРё!"))
 		leave_host()
 		return
 	if(M.vessel.total_volume > M.vessel.total_volume/2)
 		M.vessel.trans_to(src,min(M.vessel.total_volume,MIN_LARVA_BLOOD_DRINK))
-		update_progression()
+		update_progression(TRUE)
 	else
-		to_chat(src, SPAN_ALIEN("Это существо уже слишком обескровлено..."))
+		to_chat(src, SPAN_ALIEN("Р­С‚Рѕ СЃСѓС‰РµСЃС‚РІРѕ СѓР¶Рµ СЃР»РёС€РєРѕРј РѕР±РµСЃРєСЂРѕРІР»РµРЅРѕ..."))
 		leave_host()
 
 #undef MIN_LARVA_BLOOD_DRINK

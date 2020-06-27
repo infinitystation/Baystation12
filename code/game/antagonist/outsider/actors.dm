@@ -4,7 +4,7 @@ GLOBAL_DATUM_INIT(actor, /datum/antagonist/actor, new)
 	id = MODE_ACTOR
 	role_text = "Actor"
 	role_text_plural = "Actors"
-	welcome_text = "Вы были нан&#255;ты чтобы развлекать людей с помощью телевидени&#255;!"
+	welcome_text = "Р’С‹ Р±С‹Р»Рё РЅР°РЅСЏС‚С‹ С‡С‚РѕР±С‹ СЂР°Р·РІР»РµРєР°С‚СЊ Р»СЋРґРµР№ СЃ РїРѕРјРѕС‰СЊСЋ С‚РµР»РµРІРёРґРµРЅРёСЏ!"
 	landmark_id = "ActorSpawn"
 	id_type = /obj/item/weapon/card/id/syndicate
 
@@ -24,8 +24,8 @@ GLOBAL_DATUM_INIT(actor, /datum/antagonist/actor, new)
 	if(!..())
 		return
 
-	player.current.show_message("<span class='info'>Вы - актер, работающий на [GLOB.using_map.company_name] и назначенный на обеспечение многих корпоративных объектов развлекательным телевизионным контентом.</span>")
-	player.current.show_message("<span class='info'>Развлекайте экипаж! Старайтесь не отвлекать их и уж точно не мешать им в работе. И помните, [GLOB.using_map.company_name] прежде всего!</span>")
+	player.current.show_message("<span class='info'>Р’С‹ - Р°РєС‚РµСЂ, СЂР°Р±РѕС‚Р°СЋС‰РёР№ РЅР° [GLOB.using_map.company_name] Рё РЅР°Р·РЅР°С‡РµРЅРЅС‹Р№ РЅР° РѕР±РµСЃРїРµС‡РµРЅРёРµ РјРЅРѕРіРёС… РєРѕСЂРїРѕСЂР°С‚РёРІРЅС‹С… РѕР±СЉРµРєС‚РѕРІ СЂР°Р·РІР»РµРєР°С‚РµР»СЊРЅС‹Рј С‚РµР»РµРІРёР·РёРѕРЅРЅС‹Рј РєРѕРЅС‚РµРЅС‚РѕРј.</span>")
+	player.current.show_message("<span class='info'>Р Р°Р·РІР»РµРєР°Р№С‚Рµ СЌРєРёРїР°Р¶! РЎС‚Р°СЂР°Р№С‚РµСЃСЊ РЅРµ РѕС‚РІР»РµРєР°С‚СЊ РёС… Рё СѓР¶ С‚РѕС‡РЅРѕ РЅРµ РјРµС€Р°С‚СЊ РёРј РІ СЂР°Р±РѕС‚Рµ. Р РїРѕРјРЅРёС‚Рµ, [GLOB.using_map.company_name] РїСЂРµР¶РґРµ РІСЃРµРіРѕ!</span>")
 
 /datum/antagonist/actor/equip(var/mob/living/carbon/human/player)
 	player.equip_to_slot_or_del(new /obj/item/clothing/under/chameleon(src), slot_w_uniform)

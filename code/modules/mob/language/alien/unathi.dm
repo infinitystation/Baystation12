@@ -3,9 +3,9 @@
 	native_speaker = list(SPECIES_YEOSA, SPECIES_UNATHI, SPECIES_EROSAN, SPECIES_IPC)
 	name = LANGUAGE_UNATHI_SINTA
 	desc = "The common language of Moghes, composed of sibilant hisses and rattles. Spoken natively by Unathi."
-	speech_verb = "шипит"
-	ask_verb = "шипит"
-	exclaim_verb = "громко шипит"
+	speech_verb = "С€РёРїРёС‚"
+	ask_verb = "С€РёРїРёС‚"
+	exclaim_verb = "РіСЂРѕРјРєРѕ С€РёРїРёС‚"
 	colour = "soghun"
 	key = "o"
 	flags = WHITELISTED
@@ -24,9 +24,9 @@
 /datum/language/yeosa
 	name = LANGUAGE_UNATHI_YEOSA
 	desc = "A language of Moghes consisting of a combination of spoken word and gesticulation. While it is uncommonly spoken in the drier regions, it enjoys popular usage as the official tongue of the Yeosa clans."
-	speech_verb = "шипит"
-	ask_verb = "трещит"
-	exclaim_verb = "р&#255;вкает"
+	speech_verb = "С€РёРїРёС‚"
+	ask_verb = "С‚СЂРµС‰РёС‚"
+	exclaim_verb = "СЂСЏРІРєР°РµС‚"
 	colour = "yeosa"
 	key = "h"
 	flags = WHITELISTED

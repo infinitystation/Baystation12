@@ -7,7 +7,7 @@
 		slot_r_hand_str = 'icons/mob/onmob/items/righthand_guns_secure.dmi',
 		)
 	req_access = list(list(access_brig, access_bridge))
-	authorized_modes = list(ALWAYS_AUTHORIZED, UNAUTHORIZED)
+	authorized_modes = list(AUTHORIZED, AUTHORIZED, UNAUTHORIZED) //inf, was: list(ALWAYS_AUTHORIZED, AUTHORIZED, UNAUTHORIZED)
 	s_gun = "LP90-CS"
 
 /obj/item/weapon/gun/energy/stunrevolver/secure
@@ -35,7 +35,7 @@
 		)
 	item_state = null	//so the human update icon uses the icon_state instead.
 	req_access = list(list(access_brig, access_bridge))
-	authorized_modes = list(ALWAYS_AUTHORIZED, UNAUTHORIZED)
+	authorized_modes = list(AUTHORIZED, AUTHORIZED, UNAUTHORIZED) //inf, was: list(ALWAYS_AUTHORIZED, AUTHORIZED, UNAUTHORIZED)
 	s_gun = "LP90-S"
 
 /obj/item/weapon/gun/energy/revolver/secure
@@ -55,7 +55,7 @@
 		list(mode_name="kill", projectile_type=/obj/item/projectile/beam, modifystate="energyrevolverkill"),
 		)
 	req_access = list(list(access_brig, access_heads))
-	authorized_modes = list(ALWAYS_AUTHORIZED, UNAUTHORIZED)
+	authorized_modes = list(AUTHORIZED, AUTHORIZED, UNAUTHORIZED) //inf, was: list(ALWAYS_AUTHORIZED, AUTHORIZED, UNAUTHORIZED)
 	is_serial = 1
 	s_gun = "LR680-S"
 

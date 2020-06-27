@@ -184,7 +184,6 @@
 	icon_state = "corner_white";
 	dir = 5
 	},
-/obj/item/clothing/suit/space/void/medical/alt/sol/prepared,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/medbay)
 "au" = (
@@ -392,22 +391,16 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/patrol/airlock)
 "aT" = (
-/obj/machinery/light{
-	icon_state = "tube_map";
-	dir = 8
+/obj/effect/floor_decal/corner/brown{
+	icon_state = "corner_white";
+	dir = 9
 	},
-/obj/structure/table/steel_reinforced,
-/obj/structure/cable/cyan,
-/obj/effect/floor_decal/corner/blue/mono,
-/obj/machinery/power/apc/away_patrol{
-	pixel_y = -22
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
-	},
-/obj/item/clothing/suit/space/void/pilot/sol/prepared,
-/turf/simulated/floor/tiled/monotile,
-/area/ship/patrol/cockpit)
+/obj/structure/table/reinforced,
+/obj/item/weapon/storage/box/cups,
+/obj/item/weapon/paper_bin,
+/obj/item/weapon/pen,
+/turf/simulated/floor/tiled,
+/area/ship/patrol/cargo)
 "aU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/cyan{
@@ -514,12 +507,15 @@
 /turf/simulated/floor,
 /area/ship/patrol/cockpit)
 "bd" = (
+/obj/machinery/photocopier/faxmachine{
+	department = "Sol Patrol Vessel";
+	req_access = list("ACCESS_AWAYPATROL")
+	},
+/obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/brown{
 	icon_state = "corner_white";
 	dir = 9
 	},
-/obj/structure/table/reinforced,
-/obj/item/weapon/storage/box/cups,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/cargo)
 "be" = (
@@ -568,18 +564,21 @@
 /turf/simulated/floor,
 /area/ship/patrol/cockpit)
 "bh" = (
-/obj/machinery/alarm/away_patrol{
-	dir = 4;
-	icon_state = "alarm0";
-	pixel_x = -23
+/obj/machinery/light{
+	icon_state = "tube_map";
+	dir = 8
 	},
-/obj/effect/floor_decal/corner/lightgrey/mono,
-/obj/structure/table/standard,
-/obj/item/clothing/suit/space/void/engineering/alt/sol/prepared,
-/obj/item/clothing/suit/space/void/engineering/alt/sol/prepared,
-/obj/item/clothing/suit/space/void/engineering/alt/sol/prepared,
+/obj/structure/table/steel_reinforced,
+/obj/structure/cable/cyan,
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/machinery/power/apc/away_patrol{
+	pixel_y = -22
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
 /turf/simulated/floor/tiled/monotile,
-/area/ship/patrol/airlock)
+/area/ship/patrol/cockpit)
 "bi" = (
 /obj/machinery/computer/ship/sensors{
 	icon_state = "computer";
@@ -611,9 +610,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/ship/patrol/cockpit)
 "bl" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1331;
 	id_tag = "patrol_shuttle_pump_out_external"
 	},
 /obj/effect/floor_decal/industrial/warning/full,
@@ -694,7 +692,7 @@
 	master_tag = "patrol_shuttle";
 	pixel_x = 24;
 	pixel_y = 0;
-	req_access = list("ACCESS_AWAY_PATROL")
+	req_access = list("ACCESS_AWAYPATROL")
 	},
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/lightgrey{
@@ -704,16 +702,19 @@
 /turf/simulated/floor/tiled,
 /area/ship/patrol/airlock)
 "bt" = (
-/obj/machinery/photocopier/faxmachine{
-	department = "Sol Patrol Vessel"
+/obj/machinery/alarm/away_patrol{
+	dir = 4;
+	icon_state = "alarm0";
+	pixel_x = -23
 	},
-/obj/structure/table/reinforced,
-/obj/effect/floor_decal/corner/brown{
-	icon_state = "corner_white";
-	dir = 9
-	},
-/turf/simulated/floor/tiled,
-/area/ship/patrol/cargo)
+/obj/effect/floor_decal/corner/lightgrey/mono,
+/obj/structure/table/standard,
+/obj/item/weapon/storage/mre/menu10,
+/obj/item/weapon/storage/mre/menu10,
+/obj/item/weapon/storage/mre/menu10,
+/obj/item/weapon/storage/mre/menu10,
+/turf/simulated/floor/tiled/monotile,
+/area/ship/patrol/airlock)
 "bu" = (
 /obj/structure/cable/cyan{
 	d1 = 2;
@@ -912,6 +913,39 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/patrol/cargo)
+"bJ" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden{
+	dir = 1;
+	icon_state = "map"
+	},
+/obj/machinery/embedded_controller/radio/airlock/docking_port{
+	cycle_to_external_air = 1;
+	frequency = 1331;
+	id_tag = "patrol_shuttle";
+	pixel_x = 24;
+	pixel_y = 0;
+	req_access = list("ACCESS_AWAYPATROL");
+	tag_airpump = "patrol_shuttle_pump";
+	tag_chamber_sensor = "patrol_shuttle_sensor";
+	tag_exterior_door = "patrol_shuttle_outer";
+	tag_exterior_sensor = "patrol_shuttle_sensor_external";
+	tag_interior_door = "patrol_shuttle_inner";
+	tag_interior_sensor = ""
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/ship/patrol/airlock)
+"bK" = (
+/obj/machinery/access_button{
+	command = "cycle_exterior";
+	frequency = 1331;
+	id_tag = "";
+	master_tag = "patrol_shuttle";
+	pixel_x = 31;
+	pixel_y = 29;
+	req_access = list("ACCESS_AWAYPATROL");
+	},
+/turf/space,
+/area/space)
 "du" = (
 /obj/machinery/light/halogen{
 	icon_state = "tube_map";
@@ -1226,9 +1260,8 @@
 /turf/simulated/floor/tiled,
 /area/ship/patrol/airlock)
 "eU" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1331;
 	id_tag = "patrol_shuttle_pump";
 	power_rating = 25000
 	},
@@ -1236,9 +1269,8 @@
 /turf/simulated/floor,
 /area/ship/patrol/airlock)
 "eV" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1331;
 	id_tag = "patrol_shuttle_pump";
 	power_rating = 25000
 	},
@@ -1304,26 +1336,9 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/patrol/airlock)
-"fe" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden{
-	dir = 1;
-	icon_state = "map"
-	},
-/obj/machinery/embedded_controller/radio/airlock/docking_port{
-	cycle_to_external_air = 1;
-	frequency = 1331;
-	id_tag = "patrol_shuttle";
-	pixel_x = 24;
-	pixel_y = 0;
-	req_access = list("ACCESS_AWAY_PATROL");
-	tag_exterior_sensor = "patrol_shuttle_sensor_external"
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/ship/patrol/airlock)
 "fi" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1331;
 	id_tag = "patrol_shuttle_pump_out_internal";
 	power_rating = 25000
 	},
@@ -1332,9 +1347,8 @@
 /turf/simulated/floor,
 /area/ship/patrol/airlock)
 "fj" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1331;
 	id_tag = "patrol_shuttle_pump_out_internal";
 	power_rating = 25000
 	},
@@ -20100,8 +20114,8 @@ ai
 ap
 aB
 aY
+aT
 bd
-bt
 bB
 bE
 aB
@@ -20912,7 +20926,7 @@ aA
 eh
 bq
 eG
-bh
+bt
 aP
 aD
 aa
@@ -22125,10 +22139,10 @@ bc
 bz
 aR
 eV
-fe
+bJ
 fj
 aS
-aa
+bK
 aa
 aa
 aa
@@ -22526,7 +22540,7 @@ aN
 af
 bk
 es
-aT
+bh
 af
 aN
 bl

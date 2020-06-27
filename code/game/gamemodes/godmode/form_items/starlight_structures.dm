@@ -143,7 +143,7 @@
 				if(istype(l, /mob/living/starlight_soul))
 					to_chat(l, "<span class='notice'>\The [src] is looking for a soul to become a [looking_for]. Accept?</span> (<a href='?\ref[src];accept=[looking_for]'>Yes</a>)")
 			addtimer(CALLBACK(src, .proc/stop_looking_for, FALSE), 30 SECONDS)
-		show_browser(linked_god, null, "window=gateway")
+		close_browser(linked_god, "window=gateway")
 		return TOPIC_HANDLED
 
 /obj/structure/deity/radiant_statue

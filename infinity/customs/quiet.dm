@@ -19,6 +19,7 @@
 	var/sound2 = 'infinity/sound/items/creo_2.ogg'
 	var/sound3 = 'infinity/sound/items/creo_3.ogg'
 	var/can_sound = TRUE
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/mask/gas/creo/New()
 	last_time = world.time
@@ -75,6 +76,7 @@
 		slot_l_hand_str = "quietkatana_l",
 		slot_r_hand_str = "quietkatana_r"
 	)
+	trade_blacklisted = TRUE
 
 //TODO@INF._ELAR_: Sheath for custom katana QUIET
 /*/obj/item/clothing/accessory/storage/holster/sheath/snow_hand
@@ -107,7 +109,9 @@
 		slot_l_ear_str = CUSTOM_ITEM_MOB,
 		slot_r_ear_str = CUSTOM_ITEM_MOB
 	)
+	trade_blacklisted = TRUE
 
+/*
 /obj/item/clothing/ears/earmuffs/headphones/mental/verb/remotesay()
 	set name = "Project mind"
 	set category = "Superpower"
@@ -136,6 +140,7 @@
 	log_say("[key_name(usr)] sent a telepathic message using [src.name] to [key_name(target)]: [say]")
 	for(var/mob/observer/ghost/G in world)
 		G.show_message("<i>Telepathic message using [src.name] from <b>[src]</b> to <b>[target]</b>: [say]</i>")
+*/
 
 /obj/item/clothing/mask/surgical/quiet
 	desc = "Sterile mask. It has shades of winter camouflage."
@@ -148,6 +153,8 @@
 		slot_mask_str = "quiet_sterile"
 		)
 	down_icon_state = "quiet_sterile_down"
+	trade_blacklisted = TRUE
+
 /*
 /obj/item/clothing/under/casual_pants/camo/quiet
 	/*name = "white camo pants"
@@ -202,6 +209,7 @@
 	base_parry_chance = 0
 	var/tick_cost = 1
 	var/obj/item/weapon/cell/bcell = /obj/item/weapon/cell/device/high
+	trade_blacklisted = TRUE
 
 /obj/item/weapon/melee/energy/toothpick/New()
 	if(ispath(bcell))

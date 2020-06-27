@@ -120,7 +120,7 @@
 	name = "double emergency nitrogen tank"
 	icon_state = "emergency_double_nitrogen"
 	gauge_icon = "indicator_emergency_double"
-	volume = 60
+	volume = 90 //inf, was 60
 
 /*
  * Nitrogen

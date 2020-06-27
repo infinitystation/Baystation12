@@ -85,7 +85,7 @@
 		setClickCooldown(15)
 		return
 
-	if(!get_cell().checked_use(arms.power_use * CELLRATE))
+	if(!get_cell()?.checked_use(arms.power_use * CELLRATE))
 		to_chat(user, SPAN_WARNING("Error: Power levels insufficient."))
 
 	// User is not necessarily the exosuit, or the same person, so update intent.
@@ -156,7 +156,7 @@
 					ruser = user
 				temp_system.afterattack(A,ruser,adj,params)
 			if(system_moved) //We are using a proxy system that may not have logging like mech equipment does
-				log_and_message_admins("used [temp_system] targetting [A]", user, src.loc)
+				log_attack("[user] used [temp_system] targetting [A]", user, src.loc) //INF, WAS log_and_message_admins("used [temp_system] targetting [A]", user, src.loc)
 			//Mech equipment subtypes can add further click delays
 			var/extra_delay = 0
 			if(ME != null)

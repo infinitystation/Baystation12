@@ -42,7 +42,7 @@ You can set verify to TRUE if you want send() to sleep until the client has the 
 		return 0
 
 	var/decl/asset_cache/asset_cache = decls_repository.get_decl(/decl/asset_cache)
-	client << browse_rsc(asset_cache.cache[asset_name], asset_name)
+	send_rsc(client, asset_cache.cache[asset_name], asset_name)
 	if(!verify || !winexists(client, "asset_cache_browser")) // Can't access the asset cache browser, rip.
 		if (client)
 			client.cache += asset_name
@@ -52,13 +52,17 @@ You can set verify to TRUE if you want send() to sleep until the client has the 
 
 	client.sending |= asset_name
 	var/job = ++client.last_asset_job
-
-	client << browse({"
+//[INF]
+#if DM_VERSION > RECOMMENDED_VERSION
+//[/INF]
+	show_browser(client, {"
 	<script>
 		window.location.href="?asset_cache_confirm_arrival=[job]"
 	</script>
 	"}, "window=asset_cache_browser")
-
+//[INF]
+#endif
+//[/INF]
 	var/t = 0
 	var/timeout_time = (ASSET_CACHE_SEND_TIMEOUT * client.sending.len) + ASSET_CACHE_SEND_TIMEOUT
 	while(client && !client.completed_asset_jobs.Find(job) && t < timeout_time) // Reception is handled in Topic()
@@ -94,7 +98,7 @@ You can set verify to TRUE if you want send() to sleep until the client has the 
 	var/decl/asset_cache/asset_cache = decls_repository.get_decl(/decl/asset_cache)
 	for(var/asset in unreceived)
 		if (asset in asset_cache.cache)
-			client << browse_rsc(asset_cache.cache[asset], asset)
+			send_rsc(client, asset_cache.cache[asset], asset)
 
 	if(!verify || !winexists(client, "asset_cache_browser")) // Can't access the asset cache browser, rip.
 		if (client)
@@ -104,13 +108,17 @@ You can set verify to TRUE if you want send() to sleep until the client has the 
 		return 0
 	client.sending |= unreceived
 	var/job = ++client.last_asset_job
-
-	client << browse({"
+//[INF]
+#if DM_VERSION > RECOMMENDED_VERSION
+//[/INF]
+	show_browser(client, {"
 	<script>
 		window.location.href="?asset_cache_confirm_arrival=[job]"
 	</script>
 	"}, "window=asset_cache_browser")
-
+//[INF]
+#endif
+//[/INF]
 	var/t = 0
 	var/timeout_time = ASSET_CACHE_SEND_TIMEOUT * client.sending.len
 	while(client && !client.completed_asset_jobs.Find(job) && t < timeout_time) // Reception is handled in Topic()

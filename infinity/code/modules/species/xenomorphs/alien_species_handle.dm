@@ -28,16 +28,36 @@
 		H.death() //rip species and human mechanics
 		return
 
+	if(H.alpha < 255)
+		if(H.check_alien_ability(1))
+			if(!locate(/obj/structure/alien/weeds) in get_turf(H))
+				H.alpha += 4
+		else
+			H.alpha = 255
+			to_chat(H, SPAN_ALIEN("Вы более не можете поддерживать свою маскировку"))
+
+	H.set_see_in_dark(8)
+	H.see_invisible  = 25
+
 	var/turf/T = H.loc
 	if(!T) return
 	var/datum/gas_mixture/environment = T.return_air()
 	if(!environment) return
 
-	var/obj/effect/vine/plant = locate() in T
-	if(environment.gas["phoron"] > 0 || plant?.seed?.name == "xenomorph")
+	var/obj/item/organ/internal/xeno/plasmavessel/P = H.internal_organs_by_name["plasma vessel"]
+
+	P.stored_plasma += weeds_plasma_rate * 0.25
+
+	var/obj/structure/alien/weeds/plant = locate() in T
+
+	if(plant)
+		slowdown = initial(slowdown) - 0.25
+	else
+		slowdown = initial(slowdown)
+
+	if(environment.gas["phoron"] > 0 || plant)
 		if(!regenerate(H))
-			var/obj/item/organ/internal/xeno/plasmavessel/P = H.internal_organs_by_name["plasma vessel"]
-			P.stored_plasma += weeds_plasma_rate
+			P.stored_plasma += weeds_plasma_rate * 2
 			P.stored_plasma = min(max(P.stored_plasma,0),P.max_plasma)
 	else
 		started_healing["\ref[H]"] = null
@@ -97,6 +117,21 @@
 		return TRUE
 
 	return FALSE
+
+/datum/species/xenos/disarm_attackhand(var/mob/living/carbon/human/attacker, var/mob/living/carbon/human/target)
+	attacker.do_attack_animation(target)
+
+	if(target.w_uniform)
+		target.w_uniform.add_fingerprint(attacker)
+
+	var/push_mod = min(max(1 + attacker.get_skill_difference(SKILL_COMBAT, target), 1), 3)
+
+	target.apply_effect(push_mod * 0.1, STUN, 0)
+	target.apply_effect(push_mod, WEAKEN, 0)
+
+	playsound(target.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+
+	target.visible_message("<span class='danger'>[attacker] has takled [target] down!</span>")
 
 /datum/hud_data/alien
 

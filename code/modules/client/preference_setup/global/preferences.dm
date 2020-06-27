@@ -105,7 +105,7 @@ var/list/_client_preferences_by_type
 
 /datum/client_preference/play_ambiance/changed(var/mob/preference_mob, var/new_value)
 	if(new_value == GLOB.PREF_NO)
-		sound_to(preference_mob, sound(null, repeat = 0, wait = 0, volume = 0, channel = GLOB.lobby_sound_channel))
+		sound_to(preference_mob, sound(null, repeat = 0, wait = 0, volume = 0, channel = GLOB.forced_ambience_sound_channel))//inf//was: sound_to(preference_mob, sound(null, repeat = 0, wait = 0, volume = 0, channel = GLOB.lobby_sound_channel))
 		sound_to(preference_mob, sound(null, repeat = 0, wait = 0, volume = 0, channel = GLOB.ambience_sound_channel))
 
 /datum/client_preference/play_instruments
@@ -192,6 +192,28 @@ var/list/_client_preferences_by_type
 	description = "Fake NanoUI Browser Style"
 	key = "BROWSER_STYLED"
 	options = list(GLOB.PREF_FANCY, GLOB.PREF_PLAIN)
+
+//[INF]
+/datum/client_preference/fullscreen_mode
+	description = "Fullscreen Mode"
+	key = "FULLSCREEN"
+	options = list(GLOB.PREF_BASIC, GLOB.PREF_FULL, GLOB.PREF_NO)
+	default_value = GLOB.PREF_NO
+
+/datum/client_preference/fullscreen_mode/changed(mob/preference_mob, new_value)
+	if(preference_mob.client)
+		preference_mob.client.toggle_fullscreen(new_value)
+/*
+/datum/client_preference/chat_position
+	description = "Alternative Chat Position"
+	key = "CHAT_ALT"
+	default_value = GLOB.PREF_NO
+
+/datum/client_preference/chat_position/changed(mob/preference_mob, new_value)
+	if(preference_mob.client)
+		preference_mob.client.update_chat_position(new_value == GLOB.PREF_YES)
+*/
+//[/INF]
 
 /datum/client_preference/autohiss
 	description = "Autohiss"

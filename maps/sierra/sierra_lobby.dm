@@ -1,5 +1,6 @@
 /datum/map/sierra
-	lobby_screens = list('maps/sierra/lobby/sierra.png', 'maps/sierra/lobby/station.png')
+//	lobby_screens = list('maps/sierra/lobby/sierra.png', 'maps/sierra/lobby/station.png')
+	lobby_screens = list('infinity/title_screens/infinity-2020.png')
 	lobby_tracks = list(
 		/music_track/chasing_time,
 		/music_track/human,
@@ -7,7 +8,6 @@
 		/music_track/treacherous_voyage,
 		/music_track/comet_haley,
 		/music_track/rising,
-		/music_track/bluesinvelvetroom,
 		/music_track/lysendraa,
 		/music_track/martiancowboy,
 		/music_track/monument,

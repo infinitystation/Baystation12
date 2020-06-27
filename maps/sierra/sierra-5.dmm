@@ -179,10 +179,6 @@
 /obj/effect/shuttle_landmark/sierra/transit/blueriver_shuttle,
 /turf/space/transit/north,
 /area/space)
-"aw" = (
-/obj/effect/shuttle_landmark/merc/internim,
-/turf/space/transit/north,
-/area/space)
 "ax" = (
 /obj/effect/step_trigger/thrower{
 	affect_ghosts = 0;
@@ -15897,7 +15893,7 @@ aF
 aF
 aF
 aF
-aw
+aF
 aF
 aF
 aF

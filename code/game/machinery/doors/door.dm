@@ -52,6 +52,8 @@
 
 	atmos_canpass = CANPASS_PROC
 
+	var/need_change_sound_freq = 1 //inf
+
 /obj/machinery/door/attack_generic(var/mob/user, var/damage, var/attack_verb, var/environment_smash)
 	if(environment_smash >= 1)
 		damage = max(damage, 10)
@@ -90,7 +92,7 @@
 	update_nearby_tiles(need_rebuild=1)
 
 /obj/machinery/door/Initialize()
-	set_extension(src, /datum/extension/penetration/proc_call, .proc/CheckPenetration)
+	set_extension(src, /datum/extension/penetration, /datum/extension/penetration/proc_call, .proc/CheckPenetration)
 	. = ..()
 	if(autoset_access)
 #ifdef UNIT_TEST
@@ -297,11 +299,18 @@
 /obj/machinery/door/emag_act(var/remaining_charges)
 	if(density && operable())
 		do_animate("emag")
+		addtimer(CALLBACK(src, .proc/emag_open), 6) //inf
+/*[ORIGINAL]
 		sleep(6)
 		open()
 		operating = -1
+[/ORIGINAL]*/
 		return 1
-
+//[INF]
+/obj/machinery/door/proc/emag_open()
+	open()
+	operating = -1
+//[/INF]
 //psa to whoever coded this, there are plenty of objects that need to call attack() on doors without bludgeoning them.
 /obj/machinery/door/proc/check_force(obj/item/I as obj, mob/user as mob)
 	if(src.density && istype(I, /obj/item/weapon) && user.a_intent == I_HURT && !istype(I, /obj/item/weapon/card))

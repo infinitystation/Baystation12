@@ -78,7 +78,7 @@
 		if (4.0) return EAST
 		if (8.0) return WEST
 		else
-			world.log << "UNKNOWN DIRECTION: [direction]"
+			to_world_log("UNKNOWN DIRECTION: [direction]")
 
 // Turns a direction into text
 /proc/dir2text(direction)
@@ -151,7 +151,7 @@
 	if (rights & R_FUN)         . += "[seperator]+FUN"
 	if (rights & R_SERVER)      . += "[seperator]+SERVER"
 	if (rights & R_DEBUG)       . += "[seperator]+DEBUG"
-	if (rights & R_JUDGE)       . += "[seperator]+JUDGE"
+	if (rights & R_JUDGE)       . += "[seperator]+JUDGE"			//INF WAS if (rights & R_POSSESS)       . += "[seperator]+POSSESS"
 	if (rights & R_PERMISSIONS) . += "[seperator]+PERMISSIONS"
 	if (rights & R_STEALTH)     . += "[seperator]+STEALTH"
 	if (rights & R_REJUVINATE)  . += "[seperator]+REJUVINATE"
@@ -159,6 +159,7 @@
 	if (rights & R_SOUNDS)      . += "[seperator]+SOUND"
 	if (rights & R_SPAWN)       . += "[seperator]+SPAWN"
 	if (rights & R_MOD)         . += "[seperator]+MODERATOR"
+	if (rights & R_XENO)		. += "[seperator]+XENOMODERATOR"	//INF
 	return .
 
 // heat2color functions. Adapted from: http://www.tannerhelland.com/4435/convert-temperature-rgb-algorithm-code/

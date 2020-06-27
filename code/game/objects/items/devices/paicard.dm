@@ -35,6 +35,7 @@
 	var/dat = {"
 		<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">
 		<html>
+		<meta charset=\"UTF-8\">
 			<head>
 				<style>
 					body {
@@ -220,7 +221,7 @@
 				<br>
 				<p>Each time this button is pressed, a request will be sent out to any available personalities. Check back often give plenty of time for personalities to respond. This process could take anywhere from 15 seconds to several minutes, depending on the available personalities' timeliness.</p>
 			"}
-	user << browse(dat, "window=paicard")
+	show_browser(user, dat, "window=paicard")
 	onclose(user, "paicard")
 	return
 
