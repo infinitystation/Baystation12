@@ -3,9 +3,6 @@
 	suffixes = list("mercenary/mercenary_base_ship.dmm")
 	shuttles_to_initialise = list(/datum/shuttle/autodock/multi/antag/merc)
 
-
-//REWORK
-
 /obj/effect/overmap/visitable/ship/merc
 	name = "strange ion cloud"
 	desc = "Unusual ion cloud. Sensors detects a non-standart cloaking device, location unknown."
