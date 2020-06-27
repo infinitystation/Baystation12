@@ -563,15 +563,6 @@ datum/unit_test/mob_damage/resomi/halloss
 		return 1
 
 	var/list/valid_states = icon_states(icon_file)
-[/ORIG]*/
-//[INF]
-	var/list/valid_states = list()
-	for(var/icon_file in icon_files)
-		if(!isicon(icon_file))
-			fail("[icon_file] is not a valid icon file.")
-			return 1
-		valid_states += icon_states(icon_file)
-//[/INF]
 
 	if(!valid_states.len)
 		return 1
@@ -582,6 +573,24 @@ datum/unit_test/mob_damage/resomi/halloss
 		if(!(modname in valid_states))
 			log_unit_test("[bad_msg] does not contain a valid icon state in [icon_file][ascii_reset]")
 			failed=1
+[/ORIG]*/
+//[INF]
+	var/list/valid_states = list()
+	for(var/icon_file in icon_files)
+		if(!isicon(icon_file))
+			fail("[icon_file] is not a valid icon file.")
+			failed=1
+			continue
+
+		var/list/valid_states = icon_states(icon_file)
+
+		for(var/i=1, i<=SSrobots.all_module_names.len, i++)
+			var/modname = lowertext(SSrobots.all_module_names[i])
+			var/bad_msg = "[ascii_red]--------------- [modname]"
+			if(!(modname in valid_states))
+				log_unit_test("[bad_msg] does not contain a valid icon state in [icon_file][ascii_reset]")
+				failed=1
+//[/INF]
 
 	if(failed)
 		fail("Some icon states did not exist")
