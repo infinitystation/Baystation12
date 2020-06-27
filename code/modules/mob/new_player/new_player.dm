@@ -191,6 +191,12 @@
 		var/datum/species/S = all_species[client.prefs.species]
 		if(!check_species_allowed(S))
 			return 0
+//[INF]
+		if(client.prefs.organ_data[BP_CHEST] == "cyborg")
+			if(!whitelist_lookup(SPECIES_FBP, client.ckey) && client.prefs.species != SPECIES_IPC)
+				to_chat(usr, "Нельзя зайти за ППТ без вайтлиста.")
+				return 0
+//[/INF]
 
 		AttemptLateSpawn(job, client.prefs.spawnpoint)
 		return
@@ -462,6 +468,13 @@
 
 /mob/new_player/proc/create_character(var/turf/spawn_turf)
 	spawning = 1
+//[INF]
+	if(client.prefs.organ_data[BP_CHEST] == "cyborg")
+		if(!whitelist_lookup(SPECIES_FBP, client.ckey) && client.prefs.species != SPECIES_IPC)
+			to_chat(src, "Нельзя зайти за ППТ без вайтлиста.")
+			spawning = 0
+			return null
+//[/INF]
 	close_spawn_windows()
 
 	var/mob/living/carbon/human/new_character

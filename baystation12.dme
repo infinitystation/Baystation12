@@ -3680,8 +3680,6 @@
 #include "infinity\code\modules\species\species.dm"
 #include "infinity\code\modules\species\species_attack.dm"
 #include "infinity\code\modules\species\abductors\abductors.dm"
-#include "infinity\code\modules\species\holders\booster.dm"
-#include "infinity\code\modules\species\holders\FBP.dm"
 #include "infinity\code\modules\species\station\lizard.dm"
 #include "infinity\code\modules\species\station\resomi.dm"
 #include "infinity\code\modules\species\station\tajaran.dm"

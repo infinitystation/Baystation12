@@ -550,10 +550,6 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		var/datum/species/current_species = all_species[pref.species]
 		if(current_species.spawn_flags & SPECIES_NO_FBP_CHARGEN)
 			limb_selection_list -= "Full Body"
-//[INF]
-		else if(!is_species_whitelisted(user, SPECIES_FBP))
-			limb_selection_list -= "Full Body"
-//[/INF]
 		else if(pref.organ_data[BP_CHEST] == "cyborg")
 			limb_selection_list |= "Head"
 
@@ -604,6 +600,10 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 				limb =        BP_CHEST
 				third_limb =  BP_GROIN
 				choice_options = list("Normal","Prosthesis")
+//[INF]
+				if((!whitelist_lookup(SPECIES_FBP, user.ckey) && current_species.name != SPECIES_IPC) && !user.client.holder)
+					choice_options -= "Prosthesis"
+//[/INF]
 
 		var/new_state = input(user, "Выберите состоянии конечности:") as null|anything in choice_options
 		if(!new_state || !CanUseTopic(user)) return TOPIC_NOACTION
