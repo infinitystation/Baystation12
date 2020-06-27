@@ -582,7 +582,7 @@ datum/unit_test/mob_damage/resomi/halloss
 			failed=1
 			continue
 
-		valid_states = icon_states(icon_file)
+		valid_states += icon_states(icon_file)
 
 	if(!valid_states.len)
 		return 1
