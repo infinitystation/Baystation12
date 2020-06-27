@@ -575,7 +575,6 @@ datum/unit_test/mob_damage/resomi/halloss
 			failed=1
 [/ORIG]*/
 //[INF]
-	var/list/valid_states = list()
 	for(var/icon_file in icon_files)
 		if(!isicon(icon_file))
 			fail("[icon_file] is not a valid icon file.")
