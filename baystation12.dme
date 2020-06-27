@@ -3781,7 +3781,6 @@
 #include "maps\antag_spawn\ert\ert_inf.dm"
 #include "maps\antag_spawn\heist\heist_inf.dm"
 #include "maps\antag_spawn\mercenary\mercenary_inf.dm"
-#include "maps\antag_spawn\mercenary\mercenary_base_ship.dmm"
 #include "maps\antag_spawn\ninja\ninja_inf.dm"
 #include "maps\antag_spawn\wizard\wizard_inf.dm"
 #include "maps\away\away_sites.dm"

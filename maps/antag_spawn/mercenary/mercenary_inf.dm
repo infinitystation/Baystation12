@@ -97,3 +97,8 @@
 
 /obj/machinery/alarm/syndieship
 	req_access = list(access_syndicate)
+
+/obj/machinery/computer/shuttle_control/multi/merc
+	name = "desperado control console"
+	req_access = list(access_syndicate)
+	shuttle_tag = "Desperado"
