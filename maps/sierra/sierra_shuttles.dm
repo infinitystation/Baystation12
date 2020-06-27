@@ -303,6 +303,30 @@
 
 //Merc
 
+/datum/shuttle/autodock/multi/antag/merc
+	destination_tags = list(
+		"nav_desperado_start",
+		"nav_merc_deck1",
+		"nav_merc_deck2",
+		"nav_merc_deck3",
+		"nav_merc_deck4",
+		"nav_merc_deck5",
+		"nav_merc_dock",
+		"nav_away_6",
+		"nav_derelict_5",
+		"nav_cluster_6",
+		"nav_ninja_start",
+		"nav_lost_supply_base_antag",
+		"nav_marooned_antag",
+		"nav_smugglers_antag",
+		"nav_bearcat_antag",
+		"nav_magshield_antag",
+		"nav_casino_antag",
+		"nav_yacht_antag",
+		"nav_slavers_base_antag",
+		"nav_mining_antag"
+		)
+
 /obj/effect/shuttle_landmark/merc/deck1
 	name = "Northwest of Fourth Deck"
 	landmark_tag = "nav_merc_deck1"
