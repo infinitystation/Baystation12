@@ -89,14 +89,8 @@
 	add_field(/datum/report_field/text_label/header, "Носитель")
 	add_field(/datum/report_field/people/from_manifest, "Имя и должность")
 	temp_field = add_field(/datum/report_field/simple_text, "ДНК")
-	temp_field.set_access(access = access_forensics_lockers, access_edit = access_forensics_lockers)
-	temp_field.set_access(access_security, override = 0)
-	temp_field.set_access(access_heads, override = 0)
 	temp_field.required = TRUE
 	temp_field = add_field(/datum/report_field/simple_text, "Дактилоскопический слепок")
-	temp_field.set_access(access = access_forensics_lockers, access_edit = access_forensics_lockers)
-	temp_field.set_access(access_security, override = 0)
-	temp_field.set_access(access_heads, override = 0)
 	temp_field.required = TRUE
 	add_field(/datum/report_field/text_label/instruction, "Место для подписей")
 	add_field(/datum/report_field/signature, "Подпись заявителя")
