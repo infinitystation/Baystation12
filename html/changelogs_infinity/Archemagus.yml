@@ -1,0 +1,5 @@
+author: Archemagus (aka Laxesh)
+delete-after: True
+changes:
+  - tweak: "Добавлен бланк для регистрации оружия в report editor."
+  - experiment: "Поля ДНК и дактилоскопического слепка - обязательны для заполнения. Слава Бюрократии!"
