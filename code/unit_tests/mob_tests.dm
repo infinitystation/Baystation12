@@ -552,7 +552,6 @@ datum/unit_test/mob_damage/resomi/halloss
 
 /datum/unit_test/robot_module_icons
 	name = "MOB: Robot module icon check"
-//[INF]
 	var/list/icon_files = list('icons/mob/screen1_robot.dmi', 'infinity/icons/mob/screen1_robot.dmi')	// INF WAS		var/icon_files = list('icons/mob/screen1_robot.dmi)
 
 /datum/unit_test/robot_module_icons/start_test()
