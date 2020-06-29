@@ -10,6 +10,7 @@ proc/is_complete_print(var/print)
 
 atom/var/list/fingerprintshidden
 atom/var/fingerprintslast
+atom/var/list/fingerprintsmob //INF
 
 atom/var/list/suit_fibers
 atom/var/list/fingerprints
@@ -21,6 +22,17 @@ obj/item/var/list/trace_DNA
 		return
 	if(fingerprintslast == M.key)
 		return
+        
+    //[INF]
+    
+    if(!fingerprintsmob)
+		fingerprintsmob = list()
+	if (ishuman(M))
+		var/mob/living/carbon/human/H = M
+        src.fingerprintsmob.Add(H)
+    
+    //[/INF]
+    
 	fingerprintslast = M.key
 	if(!fingerprintshidden)
 		fingerprintshidden = list()
