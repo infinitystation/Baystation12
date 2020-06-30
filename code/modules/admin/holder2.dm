@@ -141,6 +141,11 @@ NOTE: It checks usr by default. Supply the "user" argument if you wish to check 
 	if(!holder)
 		to_chat(src, "<span class='warning'>Error: You are not an admin.</span>")
 		return
+//[INF]
+	if(only_xenos(usr))
+		to_chat(src, "<span class='warning'>Error: You are not an *rightfully* admin.</span>")
+		return
+//[/INF]
 
 	holder.stealthy_ = holder.stealthy_ == STEALTH_OFF ? STEALTH_MANUAL : STEALTH_OFF
 	if(holder.stealthy_)
