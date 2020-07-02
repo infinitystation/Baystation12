@@ -1357,7 +1357,7 @@ var/global/floorIsLava = 0
 	if(istype(H))
 		H.regenerate_icons()
 
-/client/proc/get_options_bar(whom, detail = 2, name = 0, link = 1, highlight_special = 1, var/datum/ticket/ticket = null)
+/proc/get_options_bar(whom, detail = 2, name = 0, link = 1, highlight_special = 1, var/datum/ticket/ticket = null)
 	if(!whom)
 		return "<b>(*null*)</b>"
 	var/mob/M

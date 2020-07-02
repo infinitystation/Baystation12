@@ -10,7 +10,7 @@
 	if(!borg)
 		CRASH("Invalid spawn location.")
 	registered_owner = borg.name
-	GLOB.registered_cyborg_weapons += src
+//	GLOB.registered_cyborg_weapons += src
 	..()
 
 /obj/item/weapon/gun/energy/confuseray/secure

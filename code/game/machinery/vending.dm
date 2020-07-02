@@ -924,7 +924,6 @@
 	products = list(/obj/item/weapon/reagent_containers/glass/bottle/antitoxin = 4,
 					/obj/item/weapon/reagent_containers/glass/bottle/inaprovaline = 4,
 					/obj/item/weapon/reagent_containers/glass/bottle/stoxin = 4,
-					/obj/item/weapon/reagent_containers/glass/bottle/hyronalin = 4,
 					/obj/item/weapon/reagent_containers/syringe/antiviral = 8,
 					/obj/item/weapon/reagent_containers/syringe = 12,
 					/obj/item/device/scanner/health = 5,

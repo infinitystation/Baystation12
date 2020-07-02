@@ -252,7 +252,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 
 //[INF]
 	GLOB.fax_cache += "*[time_stamp()]*: DESTINATION - [msg]<br>" //inf
-	if(!disturb) return
+//	if(!disturb) return Не знаю что это...
 //[/INF]
 
 	for(var/client/C in GLOB.admins)
