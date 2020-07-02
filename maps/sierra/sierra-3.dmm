@@ -1109,8 +1109,7 @@
 	dir = 4
 	},
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftstarboard)
@@ -1446,8 +1445,7 @@
 	dir = 4
 	},
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /obj/structure/railing/mapped,
 /turf/simulated/open,
@@ -1622,8 +1620,7 @@
 "adE" = (
 /obj/machinery/space_heater,
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
@@ -2770,8 +2767,7 @@
 	pixel_y = 1
 	},
 /obj/machinery/body_scan_display{
-	pixel_y = 24;
-	tag = "scan_room"
+	pixel_y = 24
 	},
 /obj/effect/floor_decal/corner/paleblue/mono,
 /turf/simulated/floor/tiled/white/monotile,
@@ -4250,8 +4246,7 @@
 /area/medical/surgery)
 "aig" = (
 /obj/machinery/body_scan_display{
-	pixel_x = 32;
-	tag = "surgery"
+	pixel_x = 32
 	},
 /obj/effect/floor_decal/corner/pink/mono,
 /obj/machinery/vitals_monitor,
@@ -6094,8 +6089,7 @@
 /area/medical/surgery)
 "alv" = (
 /obj/machinery/body_scan_display{
-	pixel_x = 32;
-	tag = "surgery2"
+	pixel_x = 32
 	},
 /obj/effect/floor_decal/corner/pink/mono,
 /obj/machinery/vitals_monitor,
@@ -8625,8 +8619,7 @@
 	dir = 1
 	},
 /obj/structure/railing/mapped{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/sierra/armory)
@@ -8975,8 +8968,7 @@
 /area/engineering/auxpower)
 "aqo" = (
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /obj/structure/railing/mapped{
 	dir = 1
@@ -10419,8 +10411,7 @@
 "asz" = (
 /obj/effect/floor_decal/techfloor,
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/ion,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -11990,8 +11981,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/railing/mapped{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+	dir = 4
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -12841,8 +12831,7 @@
 /area/bridge/hall/level_two)
 "awK" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+	dir = 4
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/red/border,
@@ -23293,8 +23282,7 @@
 	dir = 8
 	},
 /obj/structure/railing/mapped{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+	dir = 4
 	},
 /turf/simulated/open,
 /area/crew_quarters/sleep/cryo/upper)
@@ -25336,8 +25324,7 @@
 	icon_state = "0-2"
 	},
 /obj/structure/railing/mapped{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/tcommsat/chamber)
@@ -25575,8 +25562,7 @@
 "aOB" = (
 /obj/machinery/optable,
 /obj/machinery/body_scan_display{
-	pixel_y = 24;
-	tag = "robotic_surgery"
+	pixel_y = 24
 	},
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 1
@@ -27287,8 +27273,7 @@
 	dir = 4
 	},
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/tcommsat/chamber)
@@ -27314,8 +27299,7 @@
 	dir = 4
 	},
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/tcommsat/chamber)
@@ -27338,8 +27322,7 @@
 	dir = 8
 	},
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 4
@@ -28867,8 +28850,7 @@
 	dir = 4
 	},
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/tcommsat/chamber)
@@ -28891,8 +28873,7 @@
 	dir = 4
 	},
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/tcommsat/chamber)
@@ -29651,8 +29632,7 @@
 	dir = 4
 	},
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/tcommsat/chamber)
@@ -30078,8 +30058,7 @@
 /area/security/brig)
 "aVd" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+	dir = 4
 	},
 /obj/machinery/computer/modular/preset/library,
 /turf/simulated/floor/carpet,
@@ -30327,8 +30306,7 @@
 	dir = 8
 	},
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/tcommsat/chamber)
@@ -34126,8 +34104,7 @@
 	dir = 4
 	},
 /obj/structure/railing/mapped{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+	dir = 4
 	},
 /obj/machinery/cryopod{
 	dir = 2
@@ -34163,8 +34140,7 @@
 	},
 /obj/machinery/portable_atmospherics/powered/pump/filled,
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /obj/machinery/light{
 	dir = 1
@@ -34671,8 +34647,7 @@
 	dir = 4
 	},
 /obj/structure/railing/mapped{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod10/station)
@@ -34698,8 +34673,7 @@
 	},
 /obj/machinery/portable_atmospherics/powered/scrubber,
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/shuttle/escape_pod10/station)
@@ -34748,8 +34722,7 @@
 /area/maintenance/firstdeck/centralport)
 "bdI" = (
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor,
@@ -34811,8 +34784,7 @@
 "bdR" = (
 /obj/structure/table/rack,
 /obj/structure/railing/mapped{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+	dir = 4
 	},
 /obj/random/maintenance,
 /turf/simulated/floor/plating,
@@ -35203,8 +35175,7 @@
 	dir = 1
 	},
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor,
@@ -35217,8 +35188,7 @@
 /area/maintenance/firstdeck/centralport)
 "beK" = (
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
@@ -35586,8 +35556,7 @@
 	dir = 8
 	},
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/shuttle/escape_pod10/station)
@@ -35947,8 +35916,7 @@
 	dir = 8
 	},
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
@@ -38995,8 +38963,7 @@
 /area/turret_protected/ai)
 "tsG" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+	dir = 4
 	},
 /obj/effect/floor_decal/industrial/outline/red,
 /turf/simulated/floor/tiled/steel_grid,
@@ -39194,8 +39161,7 @@
 /area/hallway/primary/firstdeck/aft)
 "wqp" = (
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /obj/machinery/space_heater,
 /turf/simulated/floor/plating,

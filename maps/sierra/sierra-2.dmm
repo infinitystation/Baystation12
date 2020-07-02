@@ -5743,8 +5743,7 @@
 /area/maintenance/seconddeck/forestarboard)
 "ajY" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+	dir = 4
 	},
 /obj/structure/table/rack,
 /obj/random/maintenance,
@@ -5766,8 +5765,7 @@
 /area/maintenance/abandoned_common)
 "aka" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+	dir = 4
 	},
 /obj/structure/table/rack,
 /obj/item/weapon/cell/device/standard,
@@ -22068,8 +22066,7 @@
 /obj/structure/table/rack,
 /obj/random/maintenance,
 /obj/structure/railing/mapped{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
@@ -23300,8 +23297,7 @@
 	dir = 1
 	},
 /obj/structure/railing/mapped{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+	dir = 4
 	},
 /obj/structure/table/rack,
 /obj/structure/table/rack,
@@ -23716,8 +23712,7 @@
 "aOU" = (
 /obj/structure/table/rack,
 /obj/structure/railing/mapped{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
@@ -23810,8 +23805,7 @@
 "aPh" = (
 /obj/random/obstruction,
 /obj/structure/railing/mapped{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
@@ -23861,8 +23855,7 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/target_stake,
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/seconddeck/foreport)
@@ -24329,8 +24322,7 @@
 /area/maintenance/seconddeck/aftport)
 "aQl" = (
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /obj/structure/table/standard,
 /obj/random/snack,
@@ -24339,8 +24331,7 @@
 /area/bridge/lobby)
 "aQm" = (
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /obj/structure/railing/mapped,
 /turf/simulated/open,
@@ -24578,8 +24569,7 @@
 "aQH" = (
 /obj/structure/table/rack,
 /obj/structure/railing/mapped{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+	dir = 4
 	},
 /obj/random/maintenance,
 /turf/simulated/floor/plating,
@@ -24608,8 +24598,7 @@
 "aQL" = (
 /obj/random/junk,
 /obj/structure/railing/mapped{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
@@ -25481,8 +25470,7 @@
 /area/maintenance/seconddeck/foreport)
 "aSy" = (
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /obj/structure/closet/emcloset{
 	anchored = 1;
@@ -29847,8 +29835,7 @@
 	},
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+	dir = 4
 	},
 /obj/structure/cable{
 	d2 = 2;
@@ -32697,8 +32684,7 @@
 /area/bridge/nano)
 "bfZ" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+	dir = 4
 	},
 /obj/structure/railing/mapped{
 	dir = 1
@@ -32720,8 +32706,7 @@
 /obj/structure/table/rack,
 /obj/random/maintenance,
 /obj/structure/railing/mapped{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+	dir = 4
 	},
 /obj/structure/railing/mapped{
 	dir = 1
@@ -34091,8 +34076,7 @@
 /area/bridge/lobby)
 "bjx" = (
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /obj/structure/bed/chair/padded/green,
 /obj/effect/landmark/start,
@@ -34123,8 +34107,7 @@
 "bjJ" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/railing/mapped{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+	dir = 4
 	},
 /turf/simulated/floor/grass,
 /area/bridge/lobby)
@@ -34195,8 +34178,7 @@
 /area/bridge/lobby)
 "bks" = (
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /obj/structure/bed/chair/padded/green{
 	dir = 1
@@ -34575,8 +34557,7 @@
 "cag" = (
 /obj/structure/closet/secure_closet/personal,
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 1

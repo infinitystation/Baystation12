@@ -300,7 +300,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb2{
-	tag = "icon-cobweb2 (WEST)";
 	icon_state = "cobweb2";
 	dir = 8
 	},
@@ -530,7 +529,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/disposal/small,
 /obj/structure/disposalpipe/trunk{
-	tag = "icon-pipe-t (NORTH)";
 	icon_state = "pipe-t";
 	dir = 1
 	},
@@ -613,7 +611,6 @@
 "bD" = (
 /obj/structure/bookcase,
 /obj/effect/decal/cleanable/cobweb{
-	tag = "icon-cobweb1 (WEST)";
 	icon_state = "cobweb1";
 	dir = 8
 	},
@@ -629,7 +626,6 @@
 	},
 /obj/structure/bookcase,
 /obj/effect/decal/cleanable/cobweb2{
-	tag = "icon-cobweb2 (EAST)";
 	icon_state = "cobweb2";
 	dir = 4
 	},
@@ -693,7 +689,6 @@
 /area/yacht/living)
 "bL" = (
 /obj/structure/bed/sofa/black/right{
-	tag = "icon-couchblack_right (WEST)";
 	icon_state = "couchblack_right";
 	dir = 8
 	},
@@ -774,7 +769,6 @@
 	dir = 8
 	},
 /obj/structure/bed/sofa/black/left{
-	tag = "icon-couchblack_left (WEST)";
 	icon_state = "couchblack_left";
 	dir = 8
 	},
@@ -823,7 +817,6 @@
 "bZ" = (
 /obj/structure/filingcabinet,
 /obj/effect/decal/cleanable/cobweb2{
-	tag = "icon-cobweb2 (NORTH)";
 	icon_state = "cobweb2";
 	dir = 1
 	},
@@ -1329,7 +1322,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/firecloset,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
-	tag = "icon-map_scrubber_on (NORTH)";
 	icon_state = "map_scrubber_on";
 	dir = 1
 	},
@@ -2033,7 +2025,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/secure_closet/freezer/meat,
 /obj/effect/decal/cleanable/cobweb{
-	tag = "icon-cobweb1 (NORTH)";
 	icon_state = "cobweb1";
 	dir = 1
 	},
