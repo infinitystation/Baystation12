@@ -1615,10 +1615,6 @@
 "adB" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/security/nuke_storage)
-"adC" = (
-/obj/structure/closet/secure_closet/nuke_wall,
-/turf/simulated/wall/r_wall/prepainted,
-/area/security/nuke_storage)
 "adD" = (
 /obj/structure/bed,
 /turf/simulated/floor/plating,
@@ -2078,9 +2074,6 @@
 /area/security/nuke_storage)
 "aer" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/item/modular_computer/telescreen/preset/generic{
-	pixel_y = 24
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
 	},
@@ -2088,31 +2081,33 @@
 	name = "xeno_spawn";
 	pixel_x = -1
 	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/security/nuke_storage)
-"aes" = (
-/obj/machinery/camera/all/command{
-	c_tag = "Vault - Interior"
-	},
-/obj/effect/floor_decal/industrial/warning,
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24
 	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/security/nuke_storage)
+"aes" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/security/nuke_storage)
 "aet" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/item/modular_computer/telescreen/preset/generic{
-	pixel_y = 24
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 6
+	},
+/obj/machinery/camera/all/command{
+	c_tag = "Vault - Interior"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/security/nuke_storage)
@@ -4765,8 +4760,7 @@
 /area/medical/sleeper)
 "aji" = (
 /obj/machinery/body_scanconsole{
-	dir = 4;
-	display_tags = list("surgery","surgery2","robotic_surgery","scan_room")
+	dir = 4
 	},
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 4
@@ -38565,6 +38559,15 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/forestarboard)
+"nke" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/item/modular_computer/telescreen/preset/generic{
+	pixel_y = 24
+	},
+/turf/simulated/floor/blackgrid,
+/area/security/nuke_storage)
 "nmQ" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -38835,6 +38838,15 @@
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/dungeon_master_lounge)
+"pQw" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/item/modular_computer/telescreen/preset/generic{
+	pixel_y = 24
+	},
+/turf/simulated/floor/blackgrid,
+/area/security/nuke_storage)
 "pSw" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/effect/landmark/start{
@@ -39139,6 +39151,10 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
+"vRu" = (
+/obj/machinery/nuke_cylinder_dispenser,
+/turf/simulated/wall/r_wall/prepainted,
+/area/security/nuke_storage)
 "vRC" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -49903,8 +49919,8 @@ aaz
 abr
 acc
 abY
-adC
-aeq
+adB
+nke
 aeq
 age
 adB
@@ -50307,7 +50323,7 @@ aaA
 aaA
 abs
 abs
-adB
+vRu
 aes
 aff
 agg
@@ -50711,8 +50727,8 @@ aaA
 aaA
 abs
 abs
-adC
-aeu
+adB
+pQw
 aeu
 agi
 adB
