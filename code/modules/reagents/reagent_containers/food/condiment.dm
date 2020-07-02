@@ -28,7 +28,7 @@
 		/datum/reagent/sugar = /obj/item/weapon/reagent_containers/food/condiment/sugar,
 		/datum/reagent/nutriment/mayo = /obj/item/weapon/reagent_containers/food/condiment/mayo,
 		/datum/reagent/nutriment/vinegar = /obj/item/weapon/reagent_containers/food/condiment/vinegar,
-		/datum/reagent/nutriment/szechuan = /obj/item/weapon/reagent_containers/food/condiment/szechuan,	// INF
+		/datum/reagent/nutriment/szechuan = /obj/item/weapon/reagent_containers/food/condiment/szechuan,
 		/datum/reagent/oliveoil = /obj/item/weapon/reagent_containers/food/condiment/small/oliveoil
 		)
 
