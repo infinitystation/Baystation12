@@ -49,7 +49,7 @@
 
 	fire_alert = 0 //Reset this here, because both breathe() and handle_environment() have a chance to set it.
 
-	//TODO: seperate this out
+	//TODO: separate this out
 	// update the current life tick, can be used to e.g. only do something every 4 ticks
 	life_tick++
 
@@ -140,7 +140,7 @@
 
 // Calculate how vulnerable the human is to the current pressure.
 // Returns 0 (equals 0 %) if sealed in an undamaged suit that's rated for the pressure, 1 if unprotected (equals 100%).
-// Suitdamage can modifiy this in 10% steps.
+// Suitdamage can modify this in 10% steps.
 /mob/living/carbon/human/proc/get_pressure_weakness(pressure)
 
 	var/pressure_adjustment_coefficient = 0
@@ -150,7 +150,7 @@
 		var/list/covers = get_covering_equipped_items(zone)
 		var/zone_exposure = 1
 		for(var/obj/item/clothing/C in covers)
-			zone_exposure = min(zone_exposure, C.get_pressure_weakness(pressure))
+			zone_exposure = min(zone_exposure, C.get_pressure_weakness(pressure,zone))
 		if(zone_exposure >= 1)
 			return 1
 		pressure_adjustment_coefficient = max(pressure_adjustment_coefficient, zone_exposure)
@@ -158,7 +158,7 @@
 
 	return pressure_adjustment_coefficient
 
-// Calculate how much of the enviroment pressure-difference affects the human.
+// Calculate how much of the environment pressure-difference affects the human.
 /mob/living/carbon/human/calculate_affecting_pressure(var/pressure)
 	var/pressure_difference
 
@@ -563,7 +563,7 @@
 
 	// Trace chemicals
 	for(var/T in chem_doses)
-		if(bloodstr.has_reagent(T) || ingested.has_reagent(T) || touching.has_reagent(T))
+		if(bloodstr?.has_reagent(T) || ingested?.has_reagent(T) || touching?.has_reagent(T))
 			continue
 		var/datum/reagent/R = T
 		chem_doses[T] -= initial(R.metabolism)*2
@@ -1133,6 +1133,7 @@
 	shock_stage = 0
 	..()
 	adjust_stamina(100)
+	UpdateAppearance()
 
 /mob/living/carbon/human/reset_view(atom/A)
 	..()

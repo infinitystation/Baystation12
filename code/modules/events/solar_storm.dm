@@ -18,7 +18,7 @@
 	solar_gen_rate = mult * base_solar_gen_rate
 
 /datum/event/solar_storm/start()
-	priority_announcement.Announce("Угроза солнечного ветра подтверждена - космическое пространство [location_name()] находится в зоне поражения. Настоятельно рекомендуется воздержаться от любой деятельности на обшивке до спада активности.", "Сенсоры [location_name()]", zlevels = affecting_z)
+	command_announcement.Announce("Угроза солнечного ветра подтверждена - космическое пространство [location_name()] находится в зоне поражения. Настоятельно рекомендуется воздержаться от любой деятельности на обшивке до спада активности.", "Сенсоры [location_name()]", zlevels = affecting_z)
 	adjust_solar_output(5)
 
 /datum/event/solar_storm/tick()

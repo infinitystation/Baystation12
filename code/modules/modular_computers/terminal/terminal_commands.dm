@@ -172,7 +172,6 @@ Subtypes
 //inf	man_entry = list("Format: ping nid", "Checks connection to the given nid.")
 	man_entry = list("Format: ping \[nid1] \[nid2] ... \[nid_n]", "Send packets through nearest NTNet relay and the given nids.", "Returns time lapse of packet retrieval.") //inf
 	pattern = "^ping"
-	skill_needed = SKILL_BASIC
 
 /datum/terminal_command/ping/proper_input_entered(text, mob/user, datum/terminal/terminal)
 /*inf

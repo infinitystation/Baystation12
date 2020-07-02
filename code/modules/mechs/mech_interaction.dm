@@ -51,6 +51,13 @@
 	if(LAZYISIN(pilots, user) && !hatch_closed)
 		return TRUE
 	. = ..()
+
+//UI distance checks
+/mob/living/exosuit/contents_nano_distance(src_object, mob/living/user)
+	. = ..()
+	if(!hatch_closed)
+		return max(shared_living_nano_distance(src_object), .) //Either visible to mech(outside) or visible to user (inside)
+	
 	
 /mob/living/exosuit/ClickOn(var/atom/A, var/params, var/mob/user)
 
@@ -64,15 +71,22 @@
 	if(modifiers["shift"])
 		user.examinate(A)
 		return
+		
+	if(modifiers["ctrl"])
+		if(selected_system)
+			if(selected_system == A)
+				selected_system.CtrlClick(user)
+				setClickCooldown(3)
+			return	
 
 	if(!(user in pilots) && user != src)
 		return
 
+	if(!canClick())
+		return
+	
 	// Are we facing the target?
 	if(A.loc != src && !(get_dir(src, A) & dir))
-		return
-
-	if(!canClick())
 		return
 
 	if(!arms)
@@ -159,7 +173,7 @@
 				log_attack("[user] used [temp_system] targetting [A]", user, src.loc) //INF, WAS log_and_message_admins("used [temp_system] targetting [A]", user, src.loc)
 			//Mech equipment subtypes can add further click delays
 			var/extra_delay = 0
-			if(ME != null)
+			if(!isnull(selected_system))
 				ME = selected_system
 				extra_delay = ME.equipment_delay
 			setClickCooldown(arms ? arms.action_delay + extra_delay : 15 + extra_delay)
@@ -217,7 +231,9 @@
 	if(!check_enter(user))
 		return
 	to_chat(user, SPAN_NOTICE("You start climbing into \the [src]..."))
-	if(!do_after(user, 25))
+	if(!body || !do_after(user, body.climb_time))
+		return
+	if(!body)
 		return
 	if(!check_enter(user))
 		return

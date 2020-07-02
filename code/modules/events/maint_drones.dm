@@ -20,12 +20,12 @@
 	var/naming
 	switch(severity)
 		if(EVENT_LEVEL_MUNDANE)
-			naming = "Один сбойный дрон обнаружено"
+			naming = "Один сбойный дрон обнаружен"
 		if(EVENT_LEVEL_MODERATE)
 			naming = "Четверо сбойных дронов обнаружено"
 		if(EVENT_LEVEL_MAJOR)
 			naming = "Шесть и более сбойных дронов обнаружено"
-	priority_announcement.Announce("[naming] в технических помещениях судна. Требуется устранение дронов силами Службы Безопасности.", "Станция Контроля Дронов", zlevels = affecting_z)
+	command_announcement.Announce("[naming] в технических помещениях судна. Требуется устранение дронов силами Службы Безопасности.", "Станция Контроля Дронов", zlevels = affecting_z)
 
 /datum/event/rogue_maint_drones/proc/get_infestation_turfs()
 	var/area/location = pick_area(list(/proc/is_not_space_area, /proc/is_station_area, /proc/is_maint_area))

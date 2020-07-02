@@ -37,6 +37,7 @@
 /datum/gear/accessory/tags
 	display_name = "dog tags"
 	path = /obj/item/clothing/accessory/badge/solgov/tags
+	custom_setup_proc = /obj/item/clothing/accessory/badge/solgov/tags/proc/loadout_setup
 
 /datum/gear/accessory/ec_scarf
 	display_name = "Expeditionary Corps scarf"
@@ -92,7 +93,7 @@
 /datum/gear/accessory/armband_corpsman
 	display_name = "medical armband"
 	path = /obj/item/clothing/accessory/armband/medblue
-	allowed_roles = list(/datum/job/cmo, /datum/job/senior_doctor, /datum/job/doctor, /datum/job/medical_trainee)
+	allowed_roles = list(/datum/job/cmo, /datum/job/senior_doctor, /datum/job/junior_doctor, /datum/job/doctor, /datum/job/medical_trainee)
 
 /datum/gear/accessory/armband_engineering
 	allowed_roles = ENGINEERING_ROLES
@@ -123,7 +124,7 @@
 	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/merchant)
 
 /datum/gear/storage/white_vest
-	allowed_roles = list(/datum/job/cmo, /datum/job/senior_doctor, /datum/job/doctor, /datum/job/medical_trainee, /datum/job/chemist, /datum/job/merchant, /datum/job/medical_trainee)
+	allowed_roles = list(/datum/job/cmo, /datum/job/senior_doctor, /datum/job/junior_doctor, /datum/job/doctor, /datum/job/medical_trainee, /datum/job/chemist, /datum/job/merchant, /datum/job/medical_trainee)
 
 /datum/gear/storage/brown_drop_pouches
 	allowed_roles = list(/datum/job/chief_engineer, /datum/job/senior_engineer, /datum/job/engineer, /datum/job/roboticist, /datum/job/qm, /datum/job/cargo_tech,
@@ -133,7 +134,7 @@
 	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/merchant)
 
 /datum/gear/storage/white_drop_pouches
-	allowed_roles = list(/datum/job/cmo, /datum/job/senior_doctor, /datum/job/doctor, /datum/job/medical_trainee, /datum/job/chemist, /datum/job/merchant, /datum/job/medical_trainee)
+	allowed_roles = list(/datum/job/cmo, /datum/job/senior_doctor, /datum/job/junior_doctor, /datum/job/doctor, /datum/job/medical_trainee, /datum/job/chemist, /datum/job/merchant, /datum/job/medical_trainee)
 
 /datum/gear/tactical/holster
 	allowed_roles = ARMED_ROLES
@@ -180,6 +181,9 @@
 
 /datum/gear/clothing/suspenders
 	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
+
+/datum/gear/clothing/suspenders/colorable
+	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/clothing/wcoat
 	allowed_roles = null //INF, WAS: FORMAL_ROLES
@@ -285,3 +289,10 @@
 	pouches["green large armor pouches"] = /obj/item/clothing/accessory/storage/pouches/large/green
 	pouches["tan large armor pouches"] = /obj/item/clothing/accessory/storage/pouches/large/tan
 	gear_tweaks += new/datum/gear_tweak/path(pouches)
+
+/datum/gear/passport
+	display_name = "passports selection"
+	description = "A selection of passports."
+	path = /obj/item/weapon/passport
+	flags = GEAR_HAS_SUBTYPE_SELECTION
+	custom_setup_proc = /obj/item/weapon/passport/proc/set_info

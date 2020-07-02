@@ -43,7 +43,7 @@
 	else
 		luminosity = 1
 
-	opaque_counter = opacity
+	RecalculateOpacity()
 
 	if (mapload && permit_ao)
 		queue_ao()
@@ -287,7 +287,7 @@ var/const/enterloopsanity = 100
 
 /turf/proc/remove_cleanables()
 	for(var/obj/effect/O in src)
-		if(istype(O,/obj/effect/rune) || istype(O,/obj/effect/decal/cleanable) || istype(O,/obj/effect/overlay))
+		if(istype(O,/obj/effect/rune) || istype(O,/obj/effect/decal/cleanable))
 			qdel(O)
 
 /turf/proc/update_blood_overlays()
@@ -304,10 +304,13 @@ var/const/enterloopsanity = 100
 		if(isliving(AM))
 			var/mob/living/M = AM
 			M.turf_collision(src, TT.speed)
+			if(M.pinned.len)
+				return
+
 		var/intial_dir = TT.init_dir
 		spawn(2)
 			step(AM, turn(intial_dir, 180))
-
+				
 /turf/proc/can_engrave()
 	return FALSE
 
@@ -358,3 +361,13 @@ var/const/enterloopsanity = 100
 
 /turf/proc/is_floor()
 	return FALSE
+
+/turf/proc/get_obstruction()
+	if (density)
+		LAZYADD(., src)
+	if (contents.len > 100 || contents.len <= !!lighting_overlay)
+		return    // fuck it, too/not-enough much shit here
+	for (var/thing in src)
+		var/atom/movable/AM = thing
+		if (AM.simulated && AM.blocks_airlock())
+			LAZYADD(., AM)

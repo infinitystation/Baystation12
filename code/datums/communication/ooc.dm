@@ -16,13 +16,15 @@
 		if(!config.dooc_allowed && (C.mob.stat == DEAD))
 			to_chat(C, SPAN_DANGER("[name] for dead mobs has been turned off."))
 			return FALSE
+//[INF]
 		if(findtext(message, "byond://"))
-			to_chat(C, "<B>Advertising other servers is not allowed.</B>")
+			to_chat(C, "<B>Реклама стороних проектов не поощеряется =(</B>")
 			log_and_message_admins("has attempted to advertise in [name]: [message]")
 			return FALSE
 	if(name == "OOC" && !config.ooc_allowed && !check_rights(R_PERMISSIONS, 0, C))
-		to_chat(C, SPAN_DANGER("You don't have enough rights to write to the disabled OOC."))
+		to_chat(C, SPAN_DANGER("У кого то не хватает прав чтобы пользоваться отключенным OOC."))
 		return FALSE
+//[/INF]
 
 /decl/communication_channel/ooc/do_communicate(var/client/C, var/message)
 	var/datum/admins/holder = C.holder
