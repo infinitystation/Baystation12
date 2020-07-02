@@ -175,9 +175,6 @@
 		/obj/item/weapon/storage/backpack/dufflebag/firefighter
 		)
 
-	if(prob(25))
-		new /obj/item/weapon/ladder_mobile(src)
-
 /*
  * First Aid
  */

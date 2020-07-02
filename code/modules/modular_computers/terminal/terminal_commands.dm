@@ -461,7 +461,6 @@ INF*/
 		return "<font color='#ffa000'>[name]: input filename.</font>"
 	else
 		return"<font color = '#ff0000'>[name]: file not found.</font>"
-	return "[name]: something wrong"
 
 /datum/terminal_command/echo
 	name = "echo"

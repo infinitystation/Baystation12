@@ -87,7 +87,6 @@
 		return !density
 	else
 		return 1
-	return 1
 
 /obj/structure/barrier/attack_hand(mob/living/carbon/human/user as mob)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
