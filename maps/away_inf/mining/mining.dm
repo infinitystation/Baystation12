@@ -22,8 +22,6 @@
 		"nav_mining_9"
 	)
 	known = 1
-	start_x = 4
-	start_y = 5
 
 /obj/effect/overmap/visitable/sector/mining_asteroid/generate_skybox()
 	return overlay_image('icons/skybox/rockbox.dmi', "rockbox", COLOR_ASTEROID_ROCK, RESET_COLOR)
