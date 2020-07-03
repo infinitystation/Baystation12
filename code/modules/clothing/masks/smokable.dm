@@ -42,9 +42,8 @@
 //[INF]
 			if(smoketime <= 30)
 				to_chat(C, SPAN_WARNING("[src] will end in a half of minute. Better find an ashtray."))
-				alerted = 1
+				alerted = TRUE
 //[/INF]
-
 		else // else just remove some of the reagents
 			reagents.remove_any(REM)
 	var/turf/T = get_turf(src)
@@ -210,7 +209,9 @@
 //[INF]
 			var/mob/living/carbon/human/M = loc
 			if(M.wear_mask == src)
-				to_chat(M, SPAN_WARNING("Вы передержали [src] во рту и обожгли губы."))
+				var/obj/item/organ/external/head/head = M.get_organ(BP_HEAD)
+				M.custom_pain("Вы передержали [src] во рту и обожгли губы.", 5, affecting = head)
+				M.apply_damage(2, BURN, BP_HEAD)
 //				M.custom_emote(1, "выплевывает сигарету. От неё остался бычок.")
 //[/INF]
 /*[ORIG]
