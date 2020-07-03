@@ -33,12 +33,18 @@
 
 /obj/item/clothing/mask/smokable/proc/smoke(amount)
 	smoketime -= amount
-	if(reagents && reagents.total_volume) // check if it has any reagents at all
+	if(reagents && reagents.total_volume /*INF*/|| !alerted /*/INF*/) // check if it has any reagents at all
 		if(ishuman(loc))
 			var/mob/living/carbon/human/C = loc
 			if (src == C.wear_mask && C.check_has_mouth()) // if it's in the human/monkey mouth, transfer reagents to the mob
 				reagents.trans_to_mob(C, REM, CHEM_INGEST, 0.2) // Most of it is not inhaled... balance reasons.
 				add_trace_DNA(C)
+//[INF]
+			if(smoketime <= 30)
+				to_chat(C, SPAN_WARNING("[src] will end in a half of minute. Better find an ashtray."))
+				alerted = 1
+//[/INF]
+
 		else // else just remove some of the reagents
 			reagents.remove_any(REM)
 	var/turf/T = get_turf(src)
@@ -200,9 +206,17 @@
 		if(brand)
 			butt.desc += " This one is a [brand]."
 		if(ismob(loc))
-			var/mob/living/M = loc
+//ORIG			var/mob/living/M = loc
+//[INF]
+			var/mob/living/carbon/human/M = loc
+			if(M.wear_mask == src)
+				to_chat(M, SPAN_WARNING("Вы передержали [src] во рту и обожгли губы."))
+				M.custom_emote(1, "выплевывает сигарету. От неё остался бычок.")
+//[/INF]
+/*[ORIG]
 			if (!no_message)
 				to_chat(M, "<span class='notice'>Your [name] goes out.</span>")
+[/ORIG]*/
 		qdel(src)
 
 /obj/item/clothing/mask/smokable/cigarette/menthol

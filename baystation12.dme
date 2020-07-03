@@ -3494,6 +3494,7 @@
 #include "infinity\code\modules\clothing\head\helmet.dm"
 #include "infinity\code\modules\clothing\masks\masks.dm"
 #include "infinity\code\modules\clothing\masks\masks_xeno.dm"
+#include "infinity\code\modules\clothing\masks\smokable.dm"
 #include "infinity\code\modules\clothing\shoes\shoes.dm"
 #include "infinity\code\modules\clothing\shoes\shoes_resomi.dm"
 #include "infinity\code\modules\clothing\spacesuits\rig\rig.dm"
