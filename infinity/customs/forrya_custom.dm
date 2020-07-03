@@ -415,11 +415,11 @@
 	var/input = input(user, "Установите поддерживаемую температуру", "Термостат", 20) as num
 	input = clamp(input, 5, 55)
 	thermostat = T0C + input
-	to_chat(user, "<span class='notice'>Ты повернул термостат костюма на отметку в [input] градусов.")
+	to_chat(user, "<span class='notice'>Ты повернул термостат костюма на отметку в [input] градусов.</span>")
 
 /obj/item/clothing/under/thermal/heat/thermosuit/examine(mob/user)
 	. = ..()
-	to_chat(user, "<span class='notice'>Термостат стоит на отметке [thermostat] градусов.")
+	to_chat(user, "<span class='notice'>Термостат стоит на отметке [thermostat] градусов.</span>")
 
 /obj/item/clothing/under/thermal/heat/thermosuit/verb/set_temp()
 	set name = "Roll Thermostat"
