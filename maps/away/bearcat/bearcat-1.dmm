@@ -2754,7 +2754,7 @@
 /obj/effect/paint/brown,
 /turf/simulated/wall/r_wall,
 /area/ship/scrap/broken1)
-"va" = (
+"tS" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -2785,11 +2785,7 @@
 /obj/effect/paint/brown,
 /turf/simulated/wall/r_wall,
 /area/ship/scrap/maintenance/techstorage)
-"Bu" = (
-/obj/effect/paint/brown,
-/turf/simulated/wall/r_wall,
-/area/ship/scrap/maintenance/eva)
-"EP" = (
+"zq" = (
 /obj/machinery/door/airlock/autoname/bearcat,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -2799,6 +2795,10 @@
 	},
 /turf/simulated/floor/usedup,
 /area/ship/scrap/cargo/lower)
+"Bu" = (
+/obj/effect/paint/brown,
+/turf/simulated/wall/r_wall,
+/area/ship/scrap/maintenance/eva)
 "GU" = (
 /obj/effect/paint/brown,
 /turf/simulated/wall/r_wall,
@@ -10315,7 +10315,7 @@ ao
 ao
 ao
 ao
-EP
+zq
 ao
 ao
 ao
@@ -10438,7 +10438,7 @@ aH
 aS
 be
 bv
-va
+tS
 bU
 cg
 cx

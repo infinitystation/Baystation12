@@ -6087,14 +6087,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery)
-"alv" = (
-/obj/machinery/body_scan_display{
-	pixel_x = 32
-	},
-/obj/effect/floor_decal/corner/pink/mono,
-/obj/machinery/vitals_monitor,
-/turf/simulated/floor/tiled/white/monotile,
-/area/medical/surgery)
 "alw" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -37610,6 +37602,10 @@
 /obj/machinery/ai_status_display,
 /turf/simulated/wall/r_wall/prepainted,
 /area/assembly/chargebay)
+"dxt" = (
+/obj/machinery/nuke_cylinder_dispenser,
+/turf/simulated/wall/r_wall/prepainted,
+/area/security/nuke_storage)
 "dzM" = (
 /obj/structure/railing/mapped,
 /obj/effect/floor_decal/industrial/warning/corner{
@@ -37620,6 +37616,15 @@
 /obj/machinery/portable_atmospherics/canister/air/airlock,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
+"dSq" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/item/modular_computer/telescreen/preset/generic{
+	pixel_y = 24
+	},
+/turf/simulated/floor/blackgrid,
+/area/security/nuke_storage)
 "dUi" = (
 /obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "cadetwindow"
@@ -38255,6 +38260,15 @@
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/dungeon_master_lounge)
+"lvl" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/item/modular_computer/telescreen/preset/generic{
+	pixel_y = 24
+	},
+/turf/simulated/floor/blackgrid,
+/area/security/nuke_storage)
 "lwh" = (
 /obj/item/weapon/storage/pill_bottle/dice_nerd,
 /turf/simulated/floor/plating,
@@ -38527,15 +38541,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/forestarboard)
-"nke" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8
-	},
-/obj/item/modular_computer/telescreen/preset/generic{
-	pixel_y = 24
-	},
-/turf/simulated/floor/blackgrid,
-/area/security/nuke_storage)
 "nmQ" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -38806,15 +38811,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/dungeon_master_lounge)
-"pQw" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4
-	},
-/obj/item/modular_computer/telescreen/preset/generic{
-	pixel_y = 24
-	},
-/turf/simulated/floor/blackgrid,
-/area/security/nuke_storage)
 "pSw" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/effect/landmark/start{
@@ -39118,10 +39114,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
-"vRu" = (
-/obj/machinery/nuke_cylinder_dispenser,
-/turf/simulated/wall/r_wall/prepainted,
-/area/security/nuke_storage)
 "vRC" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -49886,7 +49878,7 @@ abr
 acc
 abY
 adB
-nke
+dSq
 aeq
 age
 adB
@@ -50289,7 +50281,7 @@ aaA
 aaA
 abs
 abs
-vRu
+dxt
 aes
 aff
 agg
@@ -50694,7 +50686,7 @@ aaA
 abs
 abs
 adB
-pQw
+lvl
 aeu
 agi
 adB
@@ -62820,7 +62812,7 @@ agR
 aig
 ajp
 akv
-alv
+aig
 amB
 aeK
 apg

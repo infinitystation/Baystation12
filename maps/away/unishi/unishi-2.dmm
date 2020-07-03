@@ -134,9 +134,6 @@
 "ax" = (
 /turf/simulated/wall/titanium,
 /area/unishi/chem)
-"ay" = (
-/turf/simulated/wall/r_wall,
-/area/unishi/library)
 "az" = (
 /obj/machinery/door/airlock/glass/research,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -605,34 +602,9 @@
 	},
 /turf/simulated/floor,
 /area/unishi/common)
-"bD" = (
-/obj/structure/table/glass,
-/obj/item/weapon/reagent_containers/glass/bottle/tericadone,
-/obj/item/weapon/reagent_containers/glass/bottle/tericadone,
-/obj/item/weapon/reagent_containers/glass/bottle/tericadone,
-/obj/item/weapon/reagent_containers/glass/bottle/tericadone,
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -22;
-	req_access = newlist()
-	},
-/obj/item/stack/material/diamond/ten,
-/obj/item/stack/material/steel/fifty,
-/obj/item/stack/material/silver/ten,
-/obj/item/stack/material/glass/fifty,
-/obj/item/clothing/glasses/science,
-/obj/item/clothing/glasses/science,
-/turf/simulated/floor/tiled,
-/area/unishi/rnd)
 "bE" = (
 /turf/simulated/floor/tiled/dark,
 /area/unishi/classroom)
-"bF" = (
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
-	dir = 5
-	},
-/turf/simulated/wall/titanium,
-/area/unishi/smresearch)
 "bG" = (
 /obj/structure/closet/firecloset,
 /turf/simulated/floor/tiled/dark,
@@ -1578,6 +1550,25 @@
 /area/unishi/rnd)
 "dZ" = (
 /obj/machinery/r_n_d/protolathe,
+/turf/simulated/floor/tiled,
+/area/unishi/rnd)
+"ea" = (
+/obj/structure/table/glass,
+/obj/item/weapon/reagent_containers/glass/bottle/tericadone,
+/obj/item/weapon/reagent_containers/glass/bottle/tericadone,
+/obj/item/weapon/reagent_containers/glass/bottle/tericadone,
+/obj/item/weapon/reagent_containers/glass/bottle/tericadone,
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22;
+	req_access = newlist()
+	},
+/obj/item/stack/material/diamond/ten,
+/obj/item/stack/material/steel/fifty,
+/obj/item/stack/material/silver/ten,
+/obj/item/stack/material/glass/fifty,
+/obj/item/clothing/glasses/science,
+/obj/item/clothing/glasses/science,
 /turf/simulated/floor/tiled,
 /area/unishi/rnd)
 "eb" = (
@@ -3038,6 +3029,12 @@
 	},
 /turf/simulated/wall/titanium,
 /area/unishi/smresearch)
+"hF" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 5
+	},
+/turf/simulated/wall/titanium,
+/area/unishi/smresearch)
 "qW" = (
 /obj/structure/table/standard,
 /obj/machinery/reagent_temperature,
@@ -3052,6 +3049,9 @@
 /obj/machinery/reagent_temperature/cooler,
 /turf/simulated/floor/tiled/white,
 /area/unishi/chem)
+"Zw" = (
+/turf/simulated/wall/r_wall,
+/area/unishi/library)
 
 (1,1,1) = {"
 aa
@@ -7790,7 +7790,7 @@ df
 dr
 dA
 dN
-bD
+ea
 em
 ev
 eD
@@ -7971,7 +7971,7 @@ am
 ar
 ao
 aw
-ay
+Zw
 aE
 aP
 aW
@@ -8175,7 +8175,7 @@ ao
 at
 ao
 at
-ay
+Zw
 aG
 aG
 aY
@@ -8277,7 +8277,7 @@ ao
 aq
 ao
 aq
-ay
+Zw
 aH
 aR
 aS
@@ -8379,7 +8379,7 @@ ap
 aq
 ao
 aq
-ay
+Zw
 aI
 aS
 aS
@@ -8481,7 +8481,7 @@ ak
 ak
 ak
 ak
-ay
+Zw
 aJ
 aS
 aZ
@@ -8631,7 +8631,7 @@ hd
 hd
 hz
 hD
-bF
+hF
 aa
 aa
 aa

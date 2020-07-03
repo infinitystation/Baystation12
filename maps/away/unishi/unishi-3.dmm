@@ -212,9 +212,6 @@
 	},
 /turf/simulated/floor,
 /area/unishi/bridge)
-"aR" = (
-/turf/simulated/wall/r_titanium,
-/area/unishi/bridge)
 "aS" = (
 /obj/machinery/door/airlock/command,
 /obj/machinery/door/firedoor,
@@ -313,6 +310,7 @@
 /turf/simulated/wall,
 /area/unishi/living)
 "bg" = (
+/obj/structure/sign/warning/secure_area/armory,
 /turf/simulated/wall/r_titanium,
 /area/unishi/living)
 "bh" = (
@@ -2004,13 +2002,9 @@
 	},
 /turf/simulated/floor/tiled,
 /area/unishi/living)
-"fh" = (
-/obj/structure/sign/warning/secure_area/armory,
+"fH" = (
 /turf/simulated/wall/r_titanium,
 /area/unishi/living)
-"fi" = (
-/turf/simulated/floor/reinforced/airless,
-/area/space)
 "gj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -2023,6 +2017,9 @@
 	},
 /turf/simulated/floor/tiled,
 /area/unishi/living)
+"hG" = (
+/turf/simulated/wall/r_titanium,
+/area/unishi/bridge)
 "pd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -2071,6 +2068,9 @@
 /obj/random/hat,
 /turf/simulated/floor/wood,
 /area/unishi/living)
+"Au" = (
+/turf/simulated/floor/reinforced/airless,
+/area/space)
 "AK" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
@@ -6398,12 +6398,12 @@ aa
 aa
 aa
 aa
-fi
-fi
-fi
-fi
-fi
-fi
+Au
+Au
+Au
+Au
+Au
+Au
 be
 be
 be
@@ -6807,9 +6807,9 @@ aw
 as
 aE
 aJ
-aR
-aR
-bg
+hG
+hG
+fH
 be
 be
 bf
@@ -6909,9 +6909,9 @@ ax
 as
 aF
 aK
-aR
+hG
 aW
-bg
+fH
 bl
 bq
 by
@@ -7011,9 +7011,9 @@ ay
 as
 aG
 cg
-aR
+hG
 aX
-fh
+bg
 bm
 bp
 bp
@@ -7826,12 +7826,12 @@ aa
 aa
 aa
 aa
-fi
-fi
-fi
-fi
-fi
-fi
+Au
+Au
+Au
+Au
+Au
+Au
 be
 be
 be

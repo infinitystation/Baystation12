@@ -9371,6 +9371,9 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/safe_room/bridge)
+"uc" = (
+/turf/simulated/floor/tiled/techfloor,
+/area/crew_quarters/safe_room/bridge)
 "ud" = (
 /obj/structure/bed/chair/padded/blue{
 	icon_state = "chair_preview";
@@ -9647,25 +9650,6 @@
 /obj/structure/bed/chair/padded/blue,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/heads/office/sea)
-"uH" = (
-/turf/simulated/floor/tiled/techfloor,
-/area/crew_quarters/safe_room/bridge)
-"uI" = (
-/obj/structure/bed/chair/padded/blue{
-	icon_state = "chair_preview";
-	dir = 8
-	},
-/obj/machinery/alarm{
-	dir = 8;
-	icon_state = "alarm0";
-	pixel_x = 24
-	},
-/obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/crew_quarters/safe_room/bridge)
 "uJ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -10070,12 +10054,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/crew_quarters/heads/office/sea)
-"vS" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/crew_quarters/safe_room/bridge)
 "vT" = (
 /obj/machinery/atmospherics/pipe/manifold/visible{
 	dir = 1
@@ -10083,17 +10061,20 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/safe_room/bridge)
 "vU" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/structure/bed/chair/padded/blue{
+	icon_state = "chair_preview";
 	dir = 8
 	},
-/obj/structure/fireaxecabinet{
-	pixel_x = 32
+/obj/machinery/alarm{
+	dir = 8;
+	icon_state = "alarm0";
+	pixel_x = 24
 	},
-/obj/item/modular_computer/laptop/preset/custom_loadout/standard,
-/obj/structure/table/standard{
-	name = "plastic table frame"
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/safe_room/bridge)
 "vX" = (
 /obj/structure/filingcabinet/chestdrawer{
@@ -11542,6 +11523,19 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/heads/office/xo)
+"zU" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 8
+	},
+/obj/structure/fireaxecabinet{
+	pixel_x = 32
+	},
+/obj/item/modular_computer/laptop/preset/custom_loadout/standard,
+/obj/structure/table/standard{
+	name = "plastic table frame"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/crew_quarters/safe_room/bridge)
 "zV" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
@@ -15462,6 +15456,19 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/aquila/medical)
+"Rc" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/obj/item/modular_computer/telescreen/preset/medical{
+	pixel_x = 32
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/crew_quarters/safe_room/bridge)
 "Rd" = (
 /obj/machinery/hologram/holopad,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -16105,15 +16112,10 @@
 /turf/simulated/floor/carpet,
 /area/crew_quarters/heads/office/cl/backroom)
 "Tn" = (
-/obj/structure/bed/chair/padded/blue{
-	icon_state = "chair_preview";
+/obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
-/obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
-	dir = 8
-	},
-/turf/simulated/floor/tiled/techfloor,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/safe_room/bridge)
 "To" = (
 /obj/machinery/disposal,
@@ -16215,19 +16217,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/aux_eva)
-"TT" = (
-/obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
-	dir = 4
-	},
-/obj/item/modular_computer/telescreen/preset/medical{
-	pixel_x = 32
-	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/crew_quarters/safe_room/bridge)
 "TV" = (
 /obj/structure/closet/secure_closet/liaison,
 /obj/machinery/camera/network/command{
@@ -17258,6 +17247,17 @@
 /obj/random_multi/single_item/poppy,
 /turf/simulated/floor/plating,
 /area/maintenance/bridge/forestarboard)
+"Yw" = (
+/obj/structure/bed/chair/padded/blue{
+	icon_state = "chair_preview";
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/crew_quarters/safe_room/bridge)
 "Yz" = (
 /obj/structure/flora/pottedplant/orientaltree,
 /obj/effect/floor_decal/spline/fancy/wood/corner{
@@ -27831,9 +27831,9 @@ rR
 Ik
 to
 ub
-Tn
+Yw
 Pf
-vS
+Tn
 wz
 Xa
 ti
@@ -28032,8 +28032,8 @@ AJ
 rS
 PB
 tp
-uH
-uH
+uc
+uc
 Qf
 vT
 wA
@@ -28233,11 +28233,11 @@ Og
 Vl
 Pg
 VY
-TT
+Rc
 ud
-uI
-vp
 vU
+vp
+zU
 IF
 yL
 ti
