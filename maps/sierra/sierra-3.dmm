@@ -16095,7 +16095,9 @@
 /area/hallway/primary/firstdeck/fore)
 "aBc" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/glass/civilian,
+/obj/machinery/door/airlock/glass/civilian{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/center)
 "aBd" = (
@@ -18838,7 +18840,9 @@
 /area/hallway/primary/firstdeck/fore)
 "aED" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/glass/civilian,
+/obj/machinery/door/airlock/glass/civilian{
+	dir = 8
+	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -22242,7 +22246,8 @@
 	id_tag = "pmdoor";
 	name = "Head of Personnel's Quarter";
 	secured_wires = 1;
-	stripe_color = "#b7f27d"
+	stripe_color = "#b7f27d";
+	dir = 4
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/wood/walnut,
@@ -23171,9 +23176,9 @@
 /area/crew_quarters/heads/office/hop)
 "aLd" = (
 /obj/machinery/door/airlock/command{
+	dir = 4;
 	id_tag = "pmdoor";
 	name = "Head of Personnel";
-	req_access = newlist();
 	secured_wires = 1;
 	stripe_color = "#b7f27d"
 	},
@@ -38048,6 +38053,10 @@
 /obj/random/vendor{
 	dir = 1
 	},
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -23
+	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/dungeon_master_lounge)
 "jyb" = (
@@ -38943,7 +38952,8 @@
 "sMZ" = (
 /obj/machinery/door/airlock/highsecurity{
 	locked = 1;
-	name = "Abadoned Battle Data Servers Access"
+	name = "Abadoned Battle Data Servers Access";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/drone_fabrication)

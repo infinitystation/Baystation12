@@ -5,6 +5,7 @@
 /obj/item/weapon/clothingbag/forryaniyar/Initialize()
 	. = ..()
 	new /obj/item/weapon/storage/backpack/satchel/custom_forrya(src)
+	new /obj/item/clothing/under/thermal/heat/thermosuit(src)
 
 /obj/item/clothing/shoes/workboots/custom_forrya_winter
 	name = "small winter boots"
@@ -393,3 +394,35 @@
 	desc = "The amulet of Tajara, which looks old enough, as if it has passed through the ages. The runes on the amulet are etched with acid, it is also covered with silvery metal and seems even covered with frost. It looks very cold, and it seems that touching it can burn with frost."
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "forrya_amulet"
+
+/*
+ * THERMOSUIT
+ * ==========
+ */
+
+/obj/item/clothing/under/thermal/heat/thermosuit
+	name = "modified uniform"
+	desc = "Comfortable work uniform with a layer of fabric inside. It looks quite soft and comfortable. The decorative belt has a pair of invisible buttons and switches."
+	icon_state = "thermosuit"
+	worn_state = "thermosuit"
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(
+		slot_w_uniform_str = CUSTOM_ITEM_MOB,
+		)
+
+/obj/item/clothing/under/thermal/heat/thermosuit/attack_self(mob/user as mob)
+	. = ..()
+	var/input = input(user, "Установите поддерживаемую температуру", "Термостат", 20) as num
+	input = clamp(input, 5, 55)
+	thermostat = T0C + input
+	to_chat(user, "<span class='notice'>Ты повернул термостат костюма на отметку в [input] градусов.</span>")
+
+/obj/item/clothing/under/thermal/heat/thermosuit/examine(mob/user)
+	. = ..()
+	to_chat(user, "<span class='notice'>Термостат стоит на отметке [thermostat] градусов.</span>")
+
+/obj/item/clothing/under/thermal/heat/thermosuit/verb/set_temp()
+	set name = "Roll Thermostat"
+	set category = "Object"
+	set src in usr
+	attack_self(usr)
