@@ -211,7 +211,7 @@
 			var/mob/living/carbon/human/M = loc
 			if(M.wear_mask == src)
 				to_chat(M, SPAN_WARNING("Вы передержали [src] во рту и обожгли губы."))
-				M.custom_emote(1, "выплевывает сигарету. От неё остался бычок.")
+//				M.custom_emote(1, "выплевывает сигарету. От неё остался бычок.")
 //[/INF]
 /*[ORIG]
 			if (!no_message)
