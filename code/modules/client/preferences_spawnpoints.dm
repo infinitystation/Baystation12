@@ -37,7 +37,7 @@ GLOBAL_VAR(spawntypes)
 	if(job)
 		var/job_spawning_check = any2bool(check_job_spawning(job.title))
 		if(!job_spawning_check)
-			to_chat(M, SPAN_WARNING("Your chosen spawnpoint ([display_name]) is unavailable for your chosen job ([job.title]). Spawning you at another spawn point instead."))
+			to_chat(M, SPAN_WARNING("Your chosen spawnpoint ([display_name]) is unavailable for your chosen job ([job.title]).."))
 		. = . && job_spawning_check
 //[/INF]
 
