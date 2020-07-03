@@ -196,7 +196,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	if(AM == user)
 		user.visible_message("<span class='danger'>[user] climbs into [src].</span>", \
 							 "<span class='notice'>You climb into [src].</span>")
-		log_and_message_admins("has stuffed themselves into [src].", AM)		 
+		log_and_message_admins("has stuffed themselves into [src].", AM)
 	else
 		user.visible_message("<span class='[is_dangerous ? "danger" : "notice"]'>[user] stuffs [AM] into [src][is_dangerous ? "!" : "."]</span>", \
 							 "<span class='notice'>You stuff [AM] into [src].</span>")
@@ -229,7 +229,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	return
 
 /obj/machinery/disposal/DefaultTopicState()
-	return GLOB.outside_state	
+	return GLOB.outside_state
 
 // human interact with machine
 /obj/machinery/disposal/physical_attack_hand(mob/user)
@@ -480,6 +480,8 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 			return
 		if(prob(75))
 			I.forceMove(src)
+			var/datum/thrownthing/TT = I.throwing	// INF stop flying pls
+			TT.finalize(TRUE)						// INF
 			visible_message("\The [I] lands in \the [src].")
 		else
 			visible_message("\The [I] bounces off of \the [src]'s rim!")
@@ -629,7 +631,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 				if(!src || !W.isOn()) return
 				to_chat(user, "You sliced the floorweld off the disposal outlet.")
 				var/obj/structure/disposalconstruct/machine/outlet/C = new (loc, src)
-				src.transfer_fingerprints_to(C)								
+				src.transfer_fingerprints_to(C)
 				C.anchored = 1
 				C.set_density(1)
 				C.update()
