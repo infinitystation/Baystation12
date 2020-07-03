@@ -149,6 +149,16 @@ GLOBAL_VAR(spawntypes)
 /* bad ideas
 				if(prob(5))
 					victim.make_dizzy(200) //sea sick, it would make you mad very fast
+				if(prob(10)) //hallucinations
+					message += SPAN_WARNING("В ушках звон, в голове белый шум... ")
+					victim.hallucination(100, 120)
+				if(prob(5)) //cryo malfunction
+					message += SPAN_DANGER("Вы чувствуете ужасающий холод во всём теле! Крио всё ещё охлаждает! ")
+					victim.bodytemperature = victim.species.cold_level_3
+				if(prob(5)) //sleepy crewman syndrome
+					message += SPAN_WARNING("Вы долго не могли уснуть, не смотря на все усилия этой машины. \
+					Так не хочется вставать... Ноги ватные, руки тяжелые... ")
+					victim.drowsyness += 39 //59 seconds with high chance to fall asleep
 */
 				if(prob(20)) //starvation
 					message += SPAN_WARNING("Кажется, вы забыли поесть перед тем, как уйти в сон. Горло пересохло, а \
@@ -163,27 +173,46 @@ GLOBAL_VAR(spawntypes)
 					message += SPAN_WARNING("Трясет от холода. ")
 					victim.make_jittery(120)
 					victim.stuttering = 20
-				if(prob(10)) //hallucinations
-					message += SPAN_WARNING("В ушках звон, в голове белый шум... ")
-					victim.hallucination(100, 120)
 				if(prob(5)) //side medical effect. Stealth
 					victim.add_side_effect(pick(GLOB.all_medical_side_effects))
-				if(prob(5)) //cryo malfunction
-					message += SPAN_DANGER("Вы чувствуете ужасающий холод во всём теле! Крио всё ещё охлаждает! ")
-					victim.bodytemperature = victim.species.cold_level_3
 				if(prob(5)) //vomit
 					message += SPAN_WARNING("Тошнит... ")
 					victim.vomit()
-				if(prob(5)) //sleepy crewman syndrome
-					message += SPAN_WARNING("Вы долго не могли уснуть, не смотря на все усилия этой машины. \
-					Так не хочется вставать... Ноги ватные, руки тяжелые... ")
-					victim.drowsyness += 39 //59 seconds with high chance to fall asleep
 				if(!message)
-					message += SPAN_NOTICE("Кажется, в этот раз без осложнений... Правда, выспаться в саркофаге всё равно не удалось.")
+					message += SPAN_NOTICE("Кажется, в этот раз без осложнений... Правда, выспаться в саркофаге всё равно не удалось.<br>")
 				else
-					message += SPAN_WARNING("Не удалось даже нормально выспаться в этом гробу...")
+					message += SPAN_WARNING("Не удалось даже нормально выспаться в этом гробу...<br>")
+				switch(rand(1, 10))
+					if(1)
+						message += SPAN_WARNING("Вы чувствуете раздражение и лёгкую обиду. Криокапсула, теснота корабля, \
+						задержки с едой... Впрочем, это довольно легко побороть.")
+					if(2)
+						message += SPAN_NOTICE("Вы чувствуете себя нормально. Не смотря на капсулу, хочется покушать и заняться работой.")
+					if(3)
+						message += SPAN_NOTICE("Вы чувствуете усталось. Вас всё ещё немного клонит в сон...")
+					if(4)
+						message += SPAN_WARNING("Вы чувствуете лёгкий испуг. Как будто снилось что-то плохое...")
+					if(5)
+						message += SPAN_NOTICE("<b>Вы уверенны в себе. Надо держаться в тонусе и не унывать - если не вы, то никто.</b>")
+					if(6)
+						message += SPAN_WARNING("Вы чувствуете лёгкую тревогу. В этой смене что-то произойдет...")
+					if(7)
+						message += SPAN_NOTICE("Вы чувствуете привкус железа во рту. К чему бы это...")
+					if(8)
+						message += SPAN_NOTICE("У вас лёгкое головокружение. Типичное пробуждение...")
+					if(9)
+						message += SPAN_NOTICE("Вы чувствуете себя грязно. В прямом смысле. Нужно будет посетить душ...")
+					if(10)
+						message += SPAN_WARNING("У вас затекли конечности. И как только заснули в такой неудобной позе...")
+					if(11)
+						message += SPAN_NOTICE("Этот запах... Криогенная жидкость. Жжёт в носу.")
+					if(12)
+						message += SPAN_NOTICE("Вы что-то забыли. Вы точно что-то хотели сделать в эту смену, но не помните что...")
+					if(13)
+						message += SPAN_NOTICE("Вы практически не помните, что происходило в вашей прошлой смене... Это странно.")
 				to_chat(victim, message)
-				victim.drowsyness += 20
+
+				victim.drowsyness += 30
 //[/INF]
 			break//inf, was: return
 
