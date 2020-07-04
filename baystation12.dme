@@ -163,6 +163,8 @@
 #include "code\_onclick\hud\ability_screen_objects.dm"
 #include "code\_onclick\hud\ability_screen_objects_inf.dm"
 #include "code\_onclick\hud\action.dm"
+#include "code\_onclick\hud\ai_hud.dm"
+#include "code\_onclick\hud\ai_screen_object.dm"
 #include "code\_onclick\hud\chorus.dm"
 #include "code\_onclick\hud\fullscreen.dm"
 #include "code\_onclick\hud\global_hud.dm"

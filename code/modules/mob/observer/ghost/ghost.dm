@@ -307,6 +307,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/observer/ghost/start_following(var/atom/a)
 	..()
 	to_chat(src, "<span class='notice'>Now following \the [following].</span>")
+	verbs += /mob/observer/ghost/proc/scan_target
 
 /mob/observer/ghost/stop_following()
 	if(following)
