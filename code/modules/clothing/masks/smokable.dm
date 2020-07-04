@@ -33,7 +33,7 @@
 
 /obj/item/clothing/mask/smokable/proc/smoke(amount)
 	smoketime -= amount
-	if(reagents && reagents.total_volume /*INF*/|| !alerted /*/INF*/) // check if it has any reagents at all
+	if(reagents && reagents.total_volume /*INF*/|| !alerted /*/INF*/) //inf, was: if(reagents && reagents.total_volume)
 		if(ishuman(loc))
 			var/mob/living/carbon/human/C = loc
 			if (src == C.wear_mask && C.check_has_mouth()) // if it's in the human/monkey mouth, transfer reagents to the mob
