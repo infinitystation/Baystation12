@@ -470,14 +470,15 @@
 		// Step through all spawnpoints and pick first appropriate for job
 		for(var/spawntype in GLOB.using_map.allowed_spawns)
 			var/datum/spawnpoint/candidate = spawntypes()[spawntype]
-			if(candidate.check_job_spawning(title))
+			if(spawnpos.can_spawn_here(H, src))//inf, was: if(candidate.check_job_spawning(title))
 				spawnpos = candidate
 				break
 
 	if(!spawnpos)
 		// Pick at random from all the (wrong) spawnpoints, just so we have one
 		warning("Could not find an appropriate spawnpoint for job [title].")
-		spawnpos = spawntypes()[pick(GLOB.using_map.allowed_spawns)]
+		var/list/spawntyps = spawntypes()
+		spawnpos = spawntyps[pick(GLOB.using_map.allowed_spawns)]//inf, was: spawnpos = spawntypes()[pick(GLOB.using_map.allowed_spawns)]
 
 	return spawnpos
 

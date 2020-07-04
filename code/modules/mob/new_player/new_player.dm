@@ -474,6 +474,9 @@
 			to_chat(src, "Нельзя зайти за ППТ без вайтлиста.")
 			spawning = 0
 			return null
+	spawn(1)
+		if(!spawning)
+			new_player_panel()
 //[/INF]
 	close_spawn_windows()
 
@@ -488,7 +491,13 @@
 		if(!job)
 			job = SSjobs.get_by_title(GLOB.using_map.default_assistant_title)
 		var/datum/spawnpoint/spawnpoint = job.get_spawnpoint(client, client.prefs.ranks[job.title])
-		spawn_turf = pick(spawnpoint.turfs)
+		if(spawnpoint)//inf
+			spawn_turf = pick(spawnpoint.turfs)
+//[INF]
+		else
+			spawning = 0
+			return null
+//[/INF]
 
 	if(chosen_species)
 		if(!check_species_allowed(chosen_species))
