@@ -7,12 +7,13 @@
 	item_state = "plasticx"
 	item_flags = ITEM_FLAG_NO_BLUDGEON
 	w_class = ITEM_SIZE_SMALL
-	origin_tech = list(TECH_ILLEGAL = 2)
+	origin_tech = list(TECH_ESOTERIC = 2)
 	var/datum/wires/explosive/c4/wires = null
 	var/timer = 10
 	var/atom/target = null
 	var/open_panel = 0
 	var/image_overlay = null
+	var/explosion_strengh = -1 //INF
 
 /obj/item/weapon/plastique/New()
 	wires = new(src)
@@ -72,7 +73,7 @@
 	if(!target)
 		target = src
 	if(location)
-		explosion(location, -1, -1, 2, 3)
+		explosion(location, explosion_strengh, explosion_strengh, 2, 3) //INF, was location, -1, -1, 2, 3
 
 	if(target)
 		if (istype(target, /turf/simulated/wall))

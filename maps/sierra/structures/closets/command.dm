@@ -64,6 +64,7 @@
 		/obj/item/ammo_magazine/speedloader,
 		/obj/item/weapon/storage/box/PDAs,
 		/obj/item/weapon/storage/box/ids,
+		/obj/item/clothing/head/beret/infinity/captain,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/captain, /obj/item/weapon/storage/backpack/satchel/cap)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/captain, /obj/item/weapon/storage/backpack/messenger/com))
 	)
@@ -93,6 +94,8 @@
 		/obj/item/weapon/material/clipboard,
 		/obj/item/weapon/storage/box/PDAs,
 		/obj/item/weapon/storage/box/ids,
+		/obj/item/weapon/storage/belt/holster/general,
+		/obj/item/clothing/head/beret/infinity/hop
 	)
 
 /obj/structure/closet/secure_closet/adjutant

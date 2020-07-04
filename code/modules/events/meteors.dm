@@ -1,6 +1,7 @@
 /datum/event/meteor_wave
 	startWhen		= 30	// About one minute early warning
 	endWhen 		= 60	// Adjusted automatically in tick()
+	has_skybox_image = TRUE
 	var/alarmWhen   = 30
 	var/next_meteor = 40
 	var/waves = 1
@@ -8,6 +9,8 @@
 	var/next_meteor_lower = 10
 	var/next_meteor_upper = 20
 
+/datum/event/meteor_wave/get_skybox_image()
+	return overlay_image('icons/skybox/rockbox.dmi', "rockbox", COLOR_ASTEROID_ROCK, RESET_COLOR)
 
 /datum/event/meteor_wave/setup()
 	waves = 0
@@ -20,9 +23,9 @@
 /datum/event/meteor_wave/announce()
 	switch(severity)
 		if(EVENT_LEVEL_MAJOR)
-			priority_announcement.Announce(replacetext(GLOB.using_map.meteor_detected_message, "%STATION_NAME%", location_name()), "Сенсоры [location_name()]", new_sound = GLOB.using_map.meteor_detected_sound, zlevels = affecting_z)
+			priority_announcement.Announce(replacetext(GLOB.using_map.meteor_detected_message, "%STATION_NAME%", location_name()), "РЎРµРЅСЃРѕСЂС‹ [location_name()]", new_sound = GLOB.using_map.meteor_detected_sound, zlevels = affecting_z)
 		else
-			priority_announcement.Announce("Объект [location_name()] проходит через метеоритный дождь.", "Сенсоры [location_name()]", zlevels = affecting_z)
+			priority_announcement.Announce("РћР±СЉРµРєС‚ [location_name()] РїСЂРѕС…РѕРґРёС‚ С‡РµСЂРµР· РјРµС‚РµРѕСЂРёС‚РЅС‹Р№ РґРѕР¶РґСЊ.", "РЎРµРЅСЃРѕСЂС‹ [location_name()]", zlevels = affecting_z)
 
 /datum/event/meteor_wave/tick()
 	// Begin sending the alarm signals to shield diffusers so the field is already regenerated (if it exists) by the time actual meteors start flying around.
@@ -50,9 +53,9 @@
 /datum/event/meteor_wave/end()
 	switch(severity)
 		if(EVENT_LEVEL_MAJOR)
-			priority_announcement.Announce("Объект [location_name()] покинул зону метеоритного шторма.", "Сенсоры [location_name()]", zlevels = affecting_z)
+			priority_announcement.Announce("РћР±СЉРµРєС‚ [location_name()] РїРѕРєРёРЅСѓР» Р·РѕРЅСѓ РјРµС‚РµРѕСЂРёС‚РЅРѕРіРѕ С€С‚РѕСЂРјР°.", "РЎРµРЅСЃРѕСЂС‹ [location_name()]", zlevels = affecting_z)
 		else
-			priority_announcement.Announce("Объект [location_name()] покинул зону метеоритного дождя.", "Сенсоры [location_name()]", zlevels = affecting_z)
+			priority_announcement.Announce("РћР±СЉРµРєС‚ [location_name()] РїРѕРєРёРЅСѓР» Р·РѕРЅСѓ РјРµС‚РµРѕСЂРёС‚РЅРѕРіРѕ РґРѕР¶РґСЏ.", "РЎРµРЅСЃРѕСЂС‹ [location_name()]", zlevels = affecting_z)
 
 /datum/event/meteor_wave/proc/get_meteors()
 	switch(severity)
@@ -100,7 +103,7 @@
 	next_meteor_lower = 5
 	next_meteor_upper = 10
 	next_meteor = 0
-	var/obj/effect/overmap/ship/victim
+	var/obj/effect/overmap/visitable/ship/victim
 
 /datum/event/meteor_wave/overmap/kill()
 	. = ..()

@@ -8,7 +8,7 @@
 	req_access = list(access_skrellscoutship)
 	shuttle_tag = "Skrellian Shuttle"
 
-/obj/effect/overmap/ship/landable/skrellscoutship
+/obj/effect/overmap/visitable/ship/landable/skrellscoutship
 	name = "light skrellian vessel"
 	shuttle = "Skrellian Scout"
 	multiz = 1
@@ -23,11 +23,11 @@
 	)
 
 
-/obj/effect/overmap/ship/landable/skrellscoutship/New()
+/obj/effect/overmap/visitable/ship/landable/skrellscoutship/New()
 	name = "SSV [pick("Xilvuxix", "Zuuvixix", "Quizuu", "Vulzxixvuu","Quumzoox","Quuvuzxuu")]"
 	..()
 
-/obj/effect/overmap/ship/landable/skrellscoutshuttle
+/obj/effect/overmap/visitable/ship/landable/skrellscoutshuttle
 	name = "SSV-S"
 	shuttle = "Skrellian Shuttle"
 	fore_dir = WEST
@@ -40,7 +40,6 @@
 	warmup_time = 5
 	multiz = 1
 	range = 1
-	knockdown = 0 //INFINITY'S CHANGE!
 	current_location = "nav_skrellscout_start"
 	current_dock_target = "xil_dock"
 	shuttle_area = list(
@@ -55,7 +54,7 @@
 	knockdown = FALSE
 	flags = SHUTTLE_FLAGS_PROCESS
 	skill_needed = SKILL_NONE
-	ceiling_type = /turf/simulated/floor/shuttle_ceiling/torch
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling/skrell
 
 /obj/effect/shuttle_landmark/skrellscoutship/start
 	name = "Uncharted Space"
@@ -71,7 +70,7 @@
 	defer_initialisation = TRUE
 	flags = SHUTTLE_FLAGS_PROCESS
 	skill_needed = SKILL_NONE
-	ceiling_type = /turf/simulated/floor/shuttle_ceiling/torch
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling/skrell
 	mothershuttle = "Skrellian Scout"
 
 /obj/effect/shuttle_landmark/skrellscoutshuttle/start
@@ -86,29 +85,9 @@
 	name = "Docking Port"
 	landmark_tag = "nav_skrellscoutsh_altdock"
 
-/*
- * Infinity: Presets from torch (map's author, I hate you)
- */
-/obj/machinery/power/apc/shuttle
-	req_access = list(access_engine_equip)
 
-/obj/machinery/vending/medical/torch
-	req_access = list(access_medical)
+/turf/simulated/floor/shuttle_ceiling/skrell
+	color = COLOR_HULL
 
-/obj/machinery/power/smes/buildable/preset/torch/engine_main/configure_and_install_coils()
-	component_parts += new /obj/item/weapon/smes_coil/super_io(src)
-	component_parts += new /obj/item/weapon/smes_coil/super_io(src)
-	component_parts += new /obj/item/weapon/smes_coil/super_capacity(src)
-	component_parts += new /obj/item/weapon/smes_coil/super_capacity(src)
-	_input_maxed = TRUE
-	_output_maxed = TRUE
-	_input_on = TRUE
-	_output_on = TRUE
-	_fully_charged = TRUE
-
-/obj/effect/paint/expeditionary
-	color = "#68099e"
-
-/*
- * Infinity: Presets from torch: Ending
- */
+/turf/simulated/floor/shuttle_ceiling/skrell/air
+	initial_gas = list(GAS_OXYGEN = MOLES_O2STANDARD, GAS_NITROGEN = MOLES_N2STANDARD)

@@ -39,7 +39,11 @@
 
 		if(istype(H.gloves, /obj/item/clothing/gloves/boxing/hologlove))
 			H.do_attack_animation(src)
-			var/damage = rand(0, 9)
+			var/damage = 1.5 //INF, WAS var/damage = rand(0,9)
+//[INF]
+			if(weakened)
+				damage = 0
+//[/INF]
 			if(!damage)
 				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
 				visible_message("<span class='danger'>\The [H] has attempted to punch \the [src]!</span>")
@@ -57,15 +61,36 @@
 			visible_message("<span class='danger'>[H] has punched \the [src]!</span>")
 
 			apply_damage(damage, PAIN, affecting)
+//[INF]
+			if(gloves && istype(gloves, /obj/item/clothing/gloves/boxing/hologlove))
+				var/obj/item/clothing/gloves/boxing/hologlove/HG = H.gloves
+				HG.hits++
+				if(HG.hits >= HG.hits_needed)
+					var/armor_block = 100 * get_blocked_ratio(affecting, BRUTE)
+					apply_effect(5, WEAKEN, armor_block)
+					HG.hits = 0
+					var/obj/item/clothing/gloves/boxing/hologlove/G = gloves
+					G.hits = 0
+					to_chat(src, SPAN_DANGER("You was electrocuted by your own gloves as [H] did the last hit!"))
+					apply_damage(6, PAIN, affecting)
+					spawn(5)
+						playsound(loc, 'sound/machines/defib_success.ogg', 75, 1, -1)
+						audible_message("\icon[HG] <b>The gloves</b> объявляет, \"\the [src] был опрокинут после [HG.hits_needed] ударов!\"")
+/* old
+			var/weak_chance = rand(1, 15)
+			if(weak_chance >= 15)
+				visible_message("<span class='danger'>[H] has luckly weakend \the [src]!</span>")
+				var/armor_block = 100 * get_blocked_ratio(affecting, BRUTE)
+				apply_effect(1.5, WEAKEN, armor_block)
+*/
+//[/INF]
+/*[ORIG]
 			if(damage >= 9)
 				visible_message("<span class='danger'>[H] has weakened \the [src]!</span>")
-				var/armor_block = 100 * get_blocked_ratio(affecting, BRUTE)
+				var/armor_block = 100 * get_blocked_ratio(affecting, BRUTE, damage = damage)
 				apply_effect(4, WEAKEN, armor_block)
-
+[/ORIG]*/
 			return
-
-	if(istype(M,/mob/living/carbon))
-		M.spread_disease_to(src, "Contact")
 
 	if(istype(H))
 		for (var/obj/item/grab/G in H)
@@ -81,7 +106,7 @@
 					return 0
 
 				var/pumping_skill = max(M.get_skill_value(SKILL_MEDICAL),M.get_skill_value(SKILL_ANATOMY))
-				var/cpr_delay = 15 * M.skill_delay_mult(SKILL_ANATOMY, 0.2) 
+				var/cpr_delay = 15 * M.skill_delay_mult(SKILL_ANATOMY, 0.2)
 				cpr_time = 0
 
 				H.visible_message("<span class='notice'>\The [H] is trying to perform CPR on \the [src].</span>")
@@ -103,7 +128,8 @@
 					if(heart)
 						heart.external_pump = list(world.time, 0.4 + 0.1*pumping_skill + rand(-0.1,0.1))
 
-					if(stat != DEAD && prob(10 + 5 * pumping_skill))
+					if(stat != DEAD && prob(10 + 5 * pumping_skill) \
+					&& !(status_flags & FAKEDEATH)) //INF
 						resuscitate()
 
 				if(!H.check_has_mouth())
@@ -146,7 +172,10 @@
 				attack_generic(H,rand(1,3),"punched")
 				return
 
-			var/rand_damage = rand(1, 5)
+//INF			var/rand_damage = rand(1, 5)
+//[INF]
+			var/rand_damage = H.get_skill_value(SKILL_COMBAT) * 0.6 + H.get_skill_value(SKILL_HAULING) * 0.3
+//[/INF]
 			var/block = 0
 			var/accurate = 0
 			var/hit_zone = H.zone_sel.selecting
@@ -169,7 +198,7 @@
 			switch(src.a_intent)
 				if(I_HELP)
 					// We didn't see this coming, so we get the full blow
-					rand_damage = 5
+//INF					rand_damage = 5
 					accurate = 1
 				if(I_HURT, I_GRAB)
 					// We're in a fighting stance, there's a chance we block
@@ -182,7 +211,7 @@
 
 			if(src.grabbed_by.len || !src.MayMove() || src==H || H.species.species_flags & SPECIES_FLAG_NO_BLOCK)
 				accurate = 1 // certain circumstances make it impossible for us to evade punches
-				rand_damage = 5
+//INF				rand_damage = 5
 
 			// Process evasion and blocking
 			var/miss_type = 0

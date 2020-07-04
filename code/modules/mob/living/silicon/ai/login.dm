@@ -1,4 +1,4 @@
-/mob/living/silicon/ai/Login()	//ThisIsDumb(TM) TODO: tidy this up ¬_¬ ~Carn
+/mob/living/silicon/ai/Login()	//ThisIsDumb(TM) TODO: tidy this up Â¬_Â¬ ~Carn
 	..()
 	if(stat != DEAD)
 		for(var/obj/machinery/ai_status_display/O in SSmachines.machinery) //change status

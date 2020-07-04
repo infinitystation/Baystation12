@@ -13,7 +13,7 @@
 
 /obj/item/ammo_magazine/c22m
 	name = "magazine (.22LR)"
-	icon = 'icons/obj/infinity_ammo.dmi'
+	icon = 'infinity/icons/obj/ammo.dmi'
 	icon_state = "letal22"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/a22lr
@@ -32,7 +32,7 @@
 
 /obj/item/ammo_magazine/c22m/rubber
 	name = "magazine (.22LR, rubber)"
-	icon = 'icons/obj/infinity_ammo.dmi'
+	icon = 'infinity/icons/obj/ammo.dmi'
 	icon_state = "ruber22"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/a22lr/rubber
@@ -41,22 +41,41 @@
 	max_ammo = 15
 
 /obj/item/ammo_magazine/c12m
-	name = "magazine (12 gauge)"
-	icon = 'icons/obj/infinity_ammo.dmi'
+	name = "slug drum"
+	icon = 'infinity/icons/obj/ammo.dmi'
 	icon_state = "m12gb"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_STEEL = 525)
 	caliber = CALIBER_SHOTGUN
+	multiple_sprites = 1
 	max_ammo = 8
 
 /obj/item/ammo_magazine/c12m/empty
 	icon_state = "m12gb-0"
 	initial_ammo = 0
 
+/obj/item/ammo_magazine/c12m/shock
+	name = "shock drum"
+	icon_state = "m12gs"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun/stunshell
+	matter = list(MATERIAL_STEEL = 525)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 8
+
+/obj/item/ammo_magazine/c12m/buckshot
+	name = "buckshot drum"
+	icon_state = "m12gb"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+	matter = list(MATERIAL_STEEL = 525)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 8
+
 /obj/item/ammo_magazine/c12755
 	name = "magazine (12.7x55mm)"
-	icon_state = "5.56"
+	icon_state = "assault_rifle"
 	mag_type = MAGAZINE
 	caliber = CALIBER_ANTIMATERIAL_SMALL
 	matter = list(MATERIAL_STEEL = 2300)
@@ -97,7 +116,7 @@
 
 /obj/item/ammo_magazine/n10mm
 	name = "NT41 magazine (5.7x28mm)"
-	icon = 'icons/obj/infinity_ammo.dmi'
+	icon = 'infinity/icons/obj/ammo.dmi'
 	icon_state = "10mm"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/nt28mm

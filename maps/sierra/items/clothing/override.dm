@@ -23,3 +23,12 @@
 
 /obj/item/clothing/accessory/badge/nanotrasen
 	badge_string = "NanoTrasen Executive Body"
+
+/*
+ * OTHER
+ * =====
+ */
+
+/obj/item/clothing/head/helmet/tactical
+	desc = "Reinforced headgear. Protects the head from impacts."
+	icon_state = "helmet"

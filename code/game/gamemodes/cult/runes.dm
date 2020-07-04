@@ -5,7 +5,6 @@
 	icon = 'infinity/icons/effects/uristrunes.dmi'
 	icon_state = "blank"
 	unacidable = 1
-	plane = ABOVE_TURF_PLANE
 	layer = RUNE_LAYER
 
 	var/blood
@@ -18,6 +17,7 @@
 	bcolor = blcolor
 	blood = nblood
 	update_icon()
+	set_extension(src, /datum/extension/turf_hand, 10)
 
 /obj/effect/rune/on_update_icon()
 	overlays.Cut()
@@ -39,7 +39,7 @@
 	color = bcolor
 	desc = "A strange collection of symbols drawn in [blood]."
 
-/obj/effect/rune/examine(var/mob/user)
+/obj/effect/rune/examine(mob/user)
 	. = ..()
 	if(iscultist(user))
 		to_chat(user, "This is \a [cultname] rune.")
@@ -177,7 +177,7 @@
 		A.forceMove(T)
 	return ..()
 
-/obj/effect/rune/teleport/examine(var/mob/user)
+/obj/effect/rune/teleport/examine(mob/user)
 	. = ..()
 	if(iscultist(user))
 		to_chat(user, "Its name is [destination].")
@@ -270,7 +270,7 @@
 		wall = new /obj/effect/cultwall(get_turf(src), bcolor)
 		wall.rune = src
 		t = wall.health
-	user.pay_for_rune(t / 50)
+	user.remove_blood_simple(t / 50)
 	speak_incantation(user, "Khari[pick("'","`")]d! Eske'te tannin!")
 	flick("cultwall", src)
 	to_chat(user, "<span class='warning'>Your blood flows into the rune, and you feel that the very space over the rune thickens.</span>")
@@ -300,7 +300,7 @@
 		rune = null
 	return ..()
 
-/obj/effect/cultwall/examine(var/mob/user)
+/obj/effect/cultwall/examine(mob/user)
 	. = ..()
 	if(iscultist(user))
 		if(health == max_health)
@@ -615,7 +615,7 @@
 /datum/reagent/hell_water
 	name = "Hell water"
 	reagent_state = LIQUID
-	color = "#0050a177"
+	color = "#0050a1"
 	metabolism = REM * 0.1
 
 /datum/reagent/hell_water/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)

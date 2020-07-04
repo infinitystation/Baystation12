@@ -5,12 +5,12 @@
 	endWhen = rand(15, 60)
 
 /datum/event/gravity/announce()
-	priority_announcement.Announce("Отклонения в показателях генератора искусственной гравитации достигли неблагоприятного уровня. Искусственная гравитация сильно ослабнет на время перезапуска генератора.", "Гравитация Ослабла", zlevels = affecting_z)
+	command_announcement.Announce("РћС‚РєР»РѕРЅРµРЅРёСЏ РІ РїРѕРєР°Р·Р°С‚РµР»СЏС… РіРµРЅРµСЂР°С‚РѕСЂР° РёСЃРєСѓСЃСЃС‚РІРµРЅРЅРѕР№ РіСЂР°РІРёС‚Р°С†РёРё РґРѕСЃС‚РёРіР»Рё РЅРµР±Р»Р°РіРѕРїСЂРёСЏС‚РЅРѕРіРѕ СѓСЂРѕРІРЅСЏ. РСЃРєСѓСЃСЃС‚РІРµРЅРЅР°СЏ РіСЂР°РІРёС‚Р°С†РёСЏ СЃРёР»СЊРЅРѕ РѕСЃР»Р°Р±РЅРµС‚ РЅР° РІСЂРµРјСЏ РїРµСЂРµР·Р°РїСѓСЃРєР° РіРµРЅРµСЂР°С‚РѕСЂР°.", "Р“СЂР°РІРёС‚Р°С†РёСЏ РћСЃР»Р°Р±Р»Р°", zlevels = affecting_z)
 
 /datum/event/gravity/start()
 	gravity_is_on = 0
 	for(var/area/A in world)
-		if(A.z in GLOB.using_map.station_levels)
+		if(A.z in affecting_z)
 			A.gravitychange(gravity_is_on)
 
 /datum/event/gravity/end()
@@ -18,7 +18,7 @@
 		gravity_is_on = 1
 
 		for(var/area/A in world)
-			if((A.z in GLOB.using_map.station_levels) && initial(A.has_gravity))
+			if((A.z in affecting_z) && initial(A.has_gravity))
 				A.gravitychange(gravity_is_on)
 
-		priority_announcement.Announce("Генератор гравитации успешно перенастроек и запущен. Текущая сила притяжения - 9.8.", "Гравитация Восстановлена", zlevels = affecting_z)
+		command_announcement.Announce("Р“РµРЅРµСЂР°С‚РѕСЂ РіСЂР°РІРёС‚Р°С†РёРё СѓСЃРїРµС€РЅРѕ РїРµСЂРµРєР°Р»РёР±СЂРѕРІР°РЅ Рё Р·Р°РїСѓС‰РµРЅ. РўРµРєСѓС‰Р°СЏ СЃРёР»Р° РїСЂРёС‚СЏР¶РµРЅРёСЏ - 9.8.", "Р“СЂР°РІРёС‚Р°С†РёСЏ Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅР°", zlevels = affecting_z)

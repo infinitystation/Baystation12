@@ -2,5 +2,5 @@
 	artist = "Jasper Byrne"
 	title = "Miami"
 	album = "Final Chapter"
-	song = 'sound/music/infinity/JohnnyCash_Hurt.ogg'
+	song = 'infinity/sound/music/JohnnyCash_Hurt.ogg'
 	license = /decl/license/grandfathered

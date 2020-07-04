@@ -130,7 +130,7 @@
 	school = "racial"
 	spell_flags = INCLUDEUSER
 	invocation_type = SpI_EMOTE
-	range = -1
+	range = 0	//INF was -1 view(-1) detects usr.content but not usr as itself
 	invocation = "begins to grow!"
 	charge_max = 1200 //2 minutes
 	duration = 300 //30 seconds
@@ -138,7 +138,7 @@
 	smoke_amt = 5
 	smoke_spread = 1
 
-	possible_transformations = list(/mob/living/simple_animal/parrot/space/lesser)
+	possible_transformations = list(/mob/living/simple_animal/hostile/retaliate/parrot/space/lesser)
 
 	hud_state = "wiz_vox"
 
@@ -173,9 +173,10 @@
 
 /spell/moghes_blessing/cast(var/list/targets, mob/user)
 	for(var/obj/item/I in targets)
-		set_extension(I, /datum/extension/moghes_blessing, /datum/extension/moghes_blessing)
+		set_extension(I, /datum/extension/moghes_blessing)
 
 /datum/extension/moghes_blessing
+	base_type = /datum/extension/moghes_blessing
 	expected_type = /obj/item
 	flags = EXTENSION_FLAG_IMMEDIATE
 

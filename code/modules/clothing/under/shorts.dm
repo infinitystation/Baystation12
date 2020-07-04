@@ -4,6 +4,7 @@
 	name = "athletic shorts"
 	icon_state = "shorts"
 	desc = "95% Polyester, 5% Spandex!"
+	w_class = ITEM_SIZE_SMALL //INF //they are smaller than jumpsuit
 	gender = PLURAL
 	body_parts_covered = LOWER_TORSO
 	item_icons = list(slot_w_uniform_str = 'icons/mob/onmob/onmob_under_pants.dmi')

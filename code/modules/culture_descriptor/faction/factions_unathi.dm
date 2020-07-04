@@ -1,39 +1,45 @@
 /decl/cultural_info/faction/unathi
 	name = FACTION_UNATHI_POLAR
-	description = "These Unathi hail from the dense jungles of Moghes' Poles. Generally they're the most welcoming of outsiders and the most \
-	common to find off world. Most of these Unathi are followers of the Precursors or the Fruitful Lights, with technology and progress being \
-	an important concept in the polar city-states."
+	description = "Эти Унати родом из густых джунглей на полюсах Могеса. Как правило, они самые дружелюбные к \
+	посторонним и наиболее часто встречающиеся в мире. Большинство из этих Унати являются последователями \
+	Предшественников или Плодотворных Огней, а технология и прогресс являются важной концепцией в их полярных \
+	городах-государствах."
 	language = LANGUAGE_UNATHI_SINTA
 	secondary_langs = list(LANGUAGE_UNATHI_YEOSA)
 
 /decl/cultural_info/faction/unathi/desert
 	name = FACTION_UNATHI_DESERT
-	description = "These are the survivalists of the Unathi. They hunker down in long forgotten bunkers of the Precursors and survive on \
-	whatever creatures still live in the deserts. They're incredibly self sufficient despite their living conditions.They have a heavy focus on \
-	the Precursors and the Grand Strategem in their clan faiths, and are often considered the most spiritual."
+	description = "Это унатхи-выживальщики. Они охотятся в давно забытых бункерах Предтеч и перемещаются на любых \
+	существах, которые все еще обитают в пустынях. Они невероятно самодостаточны, несмотря на свои скудные \
+	жилищные условия. Их клановые верования сосредоточены на Предтечах и идеях Великой Стратегии и часто эти \
+	унатхи считаются самыми духовными."
 
 /decl/cultural_info/faction/unathi/savannah
 	name = FACTION_UNATHI_SAVANNAH
-	description = "These Unathi are nomadic clans, traveling across the Great Plains of Moghes or the stars of our universe, hoping they can turn \
-	Moghes into a new paradise. Most Savannah Unathi follow the Hand of the Vines."
+	description = "Эти унатхи - кочевые кланы, путешествующие по Великим Равнинам Могеса или даже звездам нашей \
+	вселенной, надеясь, смогут превратить Могес в новый рай. Большинство унатхов Саванн исповедуют Длань Лозы."
 
 /decl/cultural_info/faction/unathi/peak
 	name = FACTION_UNATHI_DIAMOND_PEAK
-	description = "Brutish and isolationist, Unathi from the Diamond Peaks are not fond of outsiders, be it other Unathi or offworlders. They care \
-	about themselves. Conflict and victory are core values of their clans and you can find most of them in their clan strongholds fighting in \
-	gladiatorial matches in hopes to further their personal faith in the Grand Strategem."
+	description = "Унатхи из Алмазных Пиков - жестокие изоляционисты, не любят посторонних, будь то другие \
+	унахти или инопланетяне. Они беспокоятся о себе. Конфликт и победа являются основными ценностями их кланов, \
+	и вы можете найти большинство из них в их клановых цитаделях, сражающихся в гладиаторских матчах в надежде \
+	укрепить свою собственную веру в Великую Стратегию."
 
 /decl/cultural_info/faction/unathi/swamp
 	name = FACTION_UNATHI_SALT_SWAMP
-	description = "Often considered the least traditional of the Unathi, Salt Swamp Unathi are noted for their friendliness and openness to outsiders, \
-	along with their knack for rituals that often get mistaken as 'parties' by Humans. The Fruitful Lights and Hand of the Vines both have numerous \
-	followers with these Unathi."
+	description = "Унатхи их Соленых Болот, которые часто считаются наименее традиционными среди всех унатхов, \
+	известны своей дружелюбностью и открытостью для посторонних, а также своей склонностью к ритуалам, которые \
+	люди часто ошибочно принимают за «вечеринки». Среди этих унатхов много последователей Плодородных Огней и \
+	Длани Лозы."
 
 /decl/cultural_info/faction/unathi/yeosa
 	name = FACTION_UNATHI_YEOSA
-	description = "The strangest of the Unathi groups, the Yeosa are notable for their aquatic lifestyles. Not only are they adapted biologically to an \
-	amphibious lifestyle, their culture focuses around the islands and seas of Moghes. They are very friendly and open to outsiders, often trading their goods and technologies \
-	to the Sinta of the land. Most strangely is their third sex, the Caretakers, of whom have given up masculine or feminine sexual characteristics to ascend to near-divine status in their clans, \
-	being in charge of taking care of children, and doing a majority of the medical work."
+	description = "Йоха'Унатхи - самая странная из групп унатхов, отличаются своим водным образом жизни. Они не \
+	только биологически адаптированы к амфибийному образу жизни, их культура сосредоточена вокруг островов и \
+	морей Могеса. Они очень дружелюбны и открыты для посторонних, часто торгуют своими товарами и технологиями с \
+	земель Синта'Унатхов. Наиболее странным является их концепция третьего пола - Смотрителей, которые отказались \
+	от мужских и женских половых признаков, чтобы подняться до почти божественного статуса в своих кланах, \
+	отвечая за заботу о детях и выполняя большую часть медицинской работы."
 	language = LANGUAGE_UNATHI_YEOSA
 	secondary_langs = list(LANGUAGE_UNATHI_SINTA)

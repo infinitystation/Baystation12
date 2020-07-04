@@ -7,7 +7,7 @@
 	spell_flags = Z2NOCAST | NEEDSCLOTHES | INCLUDEUSER
 	invocation = "none"
 	invocation_type = SpI_NONE
-	range = -1
+	range = 0	//INF was -1 view(-1) detects usr.content but not usr as itself
 	max_targets = 1
 	level_max = list(Sp_TOTAL = 4, Sp_SPEED = 4, Sp_POWER = 3)
 	cooldown_min = 100 //50 deciseconds reduction per rank
@@ -30,7 +30,7 @@
 			animation.set_density(0)
 			animation.anchored = 1
 			animation.icon = 'icons/mob/mob.dmi'
-			animation.layer = 5
+			animation.layer = FLY_LAYER
 			target.ExtinguishMob()
 			if(target.buckled)
 				target.buckled = null
@@ -119,3 +119,4 @@
 
 /spell/targeted/ethereal_jaunt/tower
 	charge_max = 2
+	spell_flags = Z2NOCAST | INCLUDEUSER

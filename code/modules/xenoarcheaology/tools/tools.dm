@@ -1,3 +1,32 @@
+/*//inf
+/obj/item/device/gps
+	name = "relay positioning device"
+	desc = "Triangulates the approximate co-ordinates using a nearby satellite network."
+	icon = 'icons/obj/device.dmi'
+	icon_state = "locator"
+	item_state = "locator"
+	origin_tech = list(TECH_MATERIAL = 2, TECH_DATA = 2, TECH_BLUESPACE = 2)
+	matter = list(MATERIAL_ALUMINIUM = 250, MATERIAL_STEEL = 250, MATERIAL_GLASS = 50)
+	w_class = ITEM_SIZE_SMALL
+
+/obj/item/device/gps/attack_self(var/mob/user as mob)
+	to_chat(user, "<span class='notice'>\icon[src] \The [src] flashes <i>[get_coordinates()]</i>.</span>")
+
+/obj/item/device/gps/examine(mob/user)
+	. = ..()
+	to_chat(user, "<span class='notice'>\The [src]'s screen shows: <i>[get_coordinates()]</i>.</span>")
+
+/obj/item/device/gps/proc/get_coordinates()
+	var/turf/T = get_turf(src)
+	return T ? "[T.x]:[T.y]:[T.z]" : "N/A"
+
+/mob/living/carbon/human/Stat()
+	. = ..()
+	if(statpanel("Status"))
+		var/obj/item/device/gps/L = locate() in src
+		if(L)
+			stat("Coordinates:", "[L.get_coordinates()]")
+*/ //inf
 /obj/item/device/measuring_tape
 	name = "measuring tape"
 	desc = "A coiled metallic tape used to check dimensions and lengths."
@@ -186,7 +215,7 @@
 	dat += "<hr>"
 	dat += "<A href='?src=\ref[src];refresh=1'>Refresh</a><br>"
 	dat += "<A href='?src=\ref[src];close=1'>Close</a><br>"
-	user << browse(dat,"window=depth_scanner;size=300x500")
+	show_browser(user, dat,"window=depth_scanner;size=300x500")
 	onclose(user, "depth_scanner")
 
 /obj/item/device/depth_scanner/OnTopic(user, href_list)
@@ -246,7 +275,7 @@
 				<A href='byond://?src=\ref[src];freq=2'>+</A>
 				<A href='byond://?src=\ref[src];freq=10'>+</A><BR>
 				"}
-	user << browse(dat,"window=locater;size=300x150")
+	show_browser(user, dat,"window=locater;size=300x150")
 	onclose(user, "locater")
 
 /obj/item/weapon/pinpointer/radio/OnTopic(user, href_list)

@@ -35,6 +35,7 @@
 	var/dat = {"
 		<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">
 		<html>
+		<meta charset=\"UTF-8\">
 			<head>
 				<style>
 					body {
@@ -220,13 +221,18 @@
 				<br>
 				<p>Each time this button is pressed, a request will be sent out to any available personalities. Check back often give plenty of time for personalities to respond. This process could take anywhere from 15 seconds to several minutes, depending on the available personalities' timeliness.</p>
 			"}
-	user << browse(dat, "window=paicard")
+	show_browser(user, dat, "window=paicard")
 	onclose(user, "paicard")
 	return
 
-/obj/item/device/paicard/Topic(href, href_list)
+/obj/item/device/paicard/CanUseTopic(mob/user, datum/topic_state/state, href_list)
+	. = ..()
+	// possible NRE in Topic
+	if(href_list && (href_list["setdna"] || href_list["setlaws"] || href_list["wires"]) && !istype(pai))
+		return FALSE
 
-	if(!usr || usr.stat)
+/obj/item/device/paicard/Topic(href, href_list)
+	if ((. = ..()))
 		return
 
 	if(href_list["setdna"])
@@ -331,43 +337,3 @@
 		var/rendered = "<span class='message'>[msg]</span>"
 		pai.show_message(rendered, type)
 	..()
-
-//[INF]
-/obj/item/device/paicard/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(pai)
-		if(istype(W, /obj/item/weapon/paimod))
-			var/obj/item/weapon/paimod/PMOD = W
-			if(PMOD.is_broken)
-				visible_message(SPAN_NOTICE("[user.name] tried to install [PMOD.name] in [pai.name], but nothing happened."))
-				return
-			if(istype(PMOD, /obj/item/weapon/paimod/memory))
-				var/obj/item/weapon/paimod/memory/MMOD = PMOD
-				visible_message(SPAN_NOTICE("[user.name] installed [MMOD.name] in [pai.name]."))
-				pai.ram += MMOD.mmemory
-				to_chat(pai, SPAN_NOTICE("Your ram is increased by [MMOD.mmemory]. Now your ram = [pai.ram]."))
-				qdel(MMOD)
-				return
-			if(istype(PMOD, /obj/item/weapon/paimod/hack_speed))
-				var/obj/item/weapon/paimod/hack_speed/HMOD = PMOD
-				pai.hack_speed += HMOD.additional_speed
-				visible_message(SPAN_NOTICE("[user.name] installed [HMOD.name] in [pai.name]."))
-				to_chat(pai, SPAN_NOTICE("Your hack speed is increased by [HMOD.additional_speed] times."))
-				qdel(HMOD)
-				return
-			if(istype(PMOD, /obj/item/weapon/paimod/hack_camo))
-				var/obj/item/weapon/paimod/hack_camo/CHMOD = PMOD
-				visible_message(SPAN_NOTICE("[user.name] installed [CHMOD.name] in [pai.name]."))
-				pai.is_hack_covered = 1
-				to_chat(pai, SPAN_NOTICE("Now your hack covered."))
-				qdel(CHMOD)
-				return
-			if(istype(PMOD, /obj/item/weapon/paimod/advanced_holo))
-				var/obj/item/weapon/paimod/advanced_holo/HoloMOD = PMOD
-				visible_message(SPAN_NOTICE("[user.name] installed [HoloMOD.name] in [pai.name]."))
-				pai.is_advanced_holo = 1
-				if(!/mob/living/silicon/pai/proc/choose_chassis in pai.verbs)
-					pai.verbs += /mob/living/silicon/pai/proc/choose_chassis
-				to_chat(pai, SPAN_NOTICE("Now you can choose premium chassis and change it anytime."))
-				qdel(HoloMOD)
-				return
-//[/INF]

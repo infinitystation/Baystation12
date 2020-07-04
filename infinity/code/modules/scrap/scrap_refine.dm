@@ -9,7 +9,7 @@
 /obj/structure/scrap_cube/crush_act()
 	playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
 	for(var/obj/structure/rubble/r in contents)
-		for(var/i in 1, i < r.lootleft, i++)
+		for(var/a in 1 to LAZYLEN(r.lootleft))
 			new /obj/item/weapon/scrap_lump(loc)
 	qdel(src)
 
@@ -46,3 +46,14 @@
 
 /obj/item/weapon/scrap_lump/crush_act()
 	return
+
+// rubble //
+/obj/structure/rubble/proc/make_cube()
+	var/obj/container = new /obj/structure/scrap_cube(loc, lootleft)
+	forceMove(container)
+
+/obj/structure/rubble/crush_act()
+	playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
+	for(var/a in 1 to LAZYLEN(lootleft))
+		new /obj/item/weapon/scrap_lump(loc)
+	qdel(src)

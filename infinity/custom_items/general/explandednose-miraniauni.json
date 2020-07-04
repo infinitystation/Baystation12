@@ -1,0 +1,8 @@
+{
+  "ckey" :            "ExplandedNose",
+  "character_name" :  "Malphias Berith",
+  "item_name" :       "mirania admiral uniform",
+  "item_desc" :       "A strange-looking formal tunic, externally sheathed with decorative plates made of soft metal and decorated with an amazing-looking axelband on the belt, but without any identifying marks.",
+  "item_icon_state" : "explanded_uni",
+  "item_path" :       "/obj/item/clothing/under"
+  }

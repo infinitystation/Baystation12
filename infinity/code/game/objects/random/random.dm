@@ -1,3 +1,8 @@
+/obj/random_multi/single_item/captains_spare_id
+	icon = 'icons/obj/card.dmi'
+	icon_state = "base"
+	color = COLOR_AMBER
+
 /obj/random/trap //let's start this file with some traps
 	name = "random trap"
 	desc = "This is a placeholder for a random trap."
@@ -7,13 +12,39 @@
 
 /obj/random/trap/spawn_choices()
 	return list(/obj/item/weapon/beartrap/deployed = 3,
-				/obj/random/mine = 1) // Try randome
+				/*/obj/random/mine = 1 cannot be defused + old as shit*/)
 
 /obj/random/mine/spawn_choices()
 	return list(/obj/effect/mine/dnascramble = 1,
 				/obj/effect/mine/phoron = 1,
 				/obj/effect/mine/n2o = 2,
 				/obj/effect/mine/stun = 4)
+
+/obj/random/chem_disp_cartridge/chem
+	name = "random chemical reagent containers"
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "cartridge"
+
+/obj/random/reagent_containers/chem/spawn_choices()
+	return list(/obj/item/weapon/reagent_containers/chem_disp_cartridge/hydrazine = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/lithium = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/carbon = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/ammonia = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/acetone = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/sodium = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/aluminium = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/silicon = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/phosphorus = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/sulfur = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/hclacid = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/potassium = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/iron = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/copper = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/mercury = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/radium = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/ethanol = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/sacid = 1,
+	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/tungsten = 1,)
 
 /obj/random/gloves/poor
 	name = "random poor gloves"
@@ -80,14 +111,14 @@
 	desc = "This is a random flora."
 	icon = 'icons/obj/flora/snowflora.dmi'
 	icon_state = "snowgrass1bb"
-//	spawn_nothing_percentage = 20
+	spawn_nothing_percentage = 20
 
 /obj/random/snowland/spawn_choices()
 	return list(/obj/structure/flora/bush = 5,
 				/obj/structure/flora/grass/brown = 3,
 				/obj/structure/flora/grass/both = 4,
 				/obj/structure/flora/grass/green = 3,
-				/obj/structure/flora/tree/dead = 3,
+				/obj/structure/flora/tree/dead = 1,
 				/obj/structure/flora/tree/pine = 2)
 
 //
@@ -136,8 +167,8 @@
 
 /obj/random/glasses/spawn_choices()
 	return list(/obj/item/clothing/glasses/eyepatch = 2,
-				/obj/item/clothing/glasses/gglasses = 4,
-				/obj/item/clothing/glasses/regular = 3,
+//				/obj/item/clothing/glasses/gglasses = 4,
+//				/obj/item/clothing/glasses/regular = 3,
 				/obj/item/clothing/glasses/sunglasses = 5,
 				/obj/item/clothing/glasses/sunglasses/big = 2,
 				/obj/item/clothing/glasses/sunglasses/blindfold = 1,
@@ -217,8 +248,17 @@
 	desc = "This is a random asteroid hostile mob."
 	icon = 'icons/mob/amorph.dmi'
 	icon_state = "standing"
-	spawn_nothing_percentage = 75
+	spawn_nothing_percentage = 60
 
 obj/random/hostile/asteroid/spawn_choices()
 	return list(/mob/living/simple_animal/hostile/carp,
 				/mob/living/simple_animal/hostile/hivebot)
+
+/obj/random/pottedplant
+	name = "random pottedplant"
+	desc = "This is a random potted plant."
+	icon = 'infinity/icons/obj/plants.dmi'
+	icon_state = "random"
+
+/obj/random/pottedplant/spawn_choices()
+	return subtypesof(/obj/structure/flora/pottedplant)

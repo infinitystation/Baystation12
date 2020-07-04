@@ -10,7 +10,7 @@
 	tail_blend = ICON_MULTIPLY
 
 //we need to change almost all things below
-
+/*
 	darksight_range = 3
 	darksight_tint = DARKTINT_MODERATE
 	gluttonous = GLUT_TINY
@@ -21,7 +21,7 @@
 	blood_volume = 800
 
 	health_hud_intensity = 2
-	hunger_factor = DEFAULT_HUNGER_FACTOR * 0.8
+//	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.5
 
 	min_age = 18
 	max_age = 260
@@ -36,6 +36,8 @@
 
 	base_auras = null //no fancy regeneration
 	inherent_verbs = null //no fancy regeneration
+*/
+	override_organ_types = list(BP_EYES = /obj/item/organ/internal/eyes/unathi/erosan)
 
 	//humanlike height and build
 	descriptors = list(

@@ -7,7 +7,15 @@
 	pixel_y = -128
 	health = 100
 	maxHealth = 100 //I dunno what to do with health at this point.
-	universal_understand = 1
+	universal_understand = TRUE
+
+	meat_type = null
+	meat_amount = 0
+	skin_material = null
+	skin_amount = 0
+	bone_material = null
+	bone_amount = 0
+
 	var/eye_type = /mob/observer/eye/cult
 	var/list/minions = list() //Minds of those who follow him
 	var/list/structures = list() //The objs that this dude controls.
@@ -93,7 +101,7 @@
 		if(newname)
 			fully_replace_character_name(newname)
 	src.verbs -= /mob/living/deity/verb/choose_form
-	show_browser(src, null, "window=godform")
+	close_browser(src, "window=godform")
 	for(var/m in minions)
 		var/datum/mind/mind = m
 		var/mob/living/L = mind.current

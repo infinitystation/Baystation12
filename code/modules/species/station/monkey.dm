@@ -28,9 +28,10 @@
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/monkey
 
 	rarity_value = 0.1
-	total_health = 150
+	total_health = 120 //inf, was 150
 	brute_mod = 1.5
 	burn_mod = 1.5
+	blood_volume = 220 //inf, was NOTHING (560)
 
 	spawn_flags = SPECIES_IS_RESTRICTED
 
@@ -52,6 +53,9 @@
 		TAG_HOMEWORLD = HOME_SYSTEM_STATELESS,
 		TAG_FACTION =   FACTION_TEST_SUBJECTS
 	)
+
+	var/list/no_touchie = list(/obj/item/weapon/mirror,
+							   /obj/item/weapon/storage/mirror)
 
 /datum/species/monkey/New()
 	equip_adjust = list(
@@ -83,7 +87,7 @@
 	if(!held && !H.restrained() && prob(5))
 		var/list/touchables = list()
 		for(var/obj/O in range(1,get_turf(H)))
-			if(O.simulated && O.Adjacent(H))
+			if(O.simulated && O.Adjacent(H) && !is_type_in_list(O, no_touchie))
 				touchables += O
 		if(touchables.len)
 			var/obj/touchy = pick(touchables)
@@ -92,7 +96,6 @@
 	if(prob(1))
 		H.emote(pick("scratch","jump","roll","tail"))
 
-/* // rest in peace.
 	if(H.get_shock() && H.shock_stage < 40 && prob(3))
 		H.custom_emote("chimpers pitifully")
 
@@ -104,7 +107,6 @@
 
 	if(!H.restrained() && H.lying && H.shock_stage >= 60 && prob(3))
 		H.custom_emote("thrashes in agony")
-*/
 
 /datum/species/monkey/handle_post_spawn(var/mob/living/carbon/human/H)
 	..()

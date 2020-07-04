@@ -34,7 +34,7 @@
 		F = create_file(filename, loaded_data, /datum/computer_file/data/text)
 		return !isnull(F)
 	var/datum/computer_file/data/backup = F.clone()
-	var/obj/item/weapon/computer_hardware/hard_drive/HDD = computer.hard_drive
+	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = computer.get_component(PART_HDD)
 	if(!HDD)
 		return
 	HDD.remove_file(F)
@@ -126,7 +126,7 @@
 		switch(newfiletype)
 			if("BAT")
 				F = create_file(newname, "", /datum/computer_file/data/coding/batch)
-				var/datum/computer_file/data/coding/batch/tmp/FT = F
+				var/datum/computer_file/data/coding/batch/FT = F
 				code_lang = FT.code_lang
 				code_lang_desc = FT.code_lang_desc
 			if("TXT")
@@ -180,10 +180,11 @@
 
 	if(href_list["PRG_printfile"])
 		. = 1
-		if(!computer.nano_printer)
+		var/obj/item/weapon/stock_parts/computer/nano_printer/P = computer.get_component(PART_PRINTER)
+		if(!P)
 			error = "Missing Hardware: Your computer does not have the required hardware to complete this operation."
 			return 1
-		if(!computer.nano_printer.print_text(pencode2html(loaded_data)))
+		if(!P.print_text(pencode2html(loaded_data)))
 			error = "Hardware error: Printer was unable to print the file. It may be out of paper."
 			return 1
 
@@ -195,16 +196,16 @@
 	var/datum/computer_file/program/codeprocessor/PRG
 	PRG = program
 
-	var/obj/item/weapon/computer_hardware/hard_drive/HDD
-	var/obj/item/weapon/computer_hardware/hard_drive/portable/RHDD
+	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD
+	var/obj/item/weapon/stock_parts/computer/hard_drive/portable/RHDD
 	if(PRG.error)
 		data["error"] = PRG.error
 	if(PRG.browsing)
 		data["browsing"] = PRG.browsing
-		if(!PRG.computer || !PRG.computer.hard_drive)
+		if(!PRG.computer || !PRG.computer.has_component(PART_HDD))
 			data["error"] = "I/O ERROR: Unable to access hard drive."
 		else
-			HDD = PRG.computer.hard_drive
+			HDD = PRG.computer.get_component(PART_HDD)
 			var/list/files[0]
 			for(var/datum/computer_file/data/F in HDD.stored_files)
 				if(F.filetype in PRG.allowed_filetypes)
@@ -215,7 +216,7 @@
 
 			data["files"] = files
 
-			RHDD = PRG.computer.portable_drive
+			RHDD = PRG.computer.get_component(PART_DRIVE)
 			if(RHDD)
 				data["usbconnected"] = 1
 				var/list/usbfiles[0]

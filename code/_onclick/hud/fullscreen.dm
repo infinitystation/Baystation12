@@ -95,6 +95,7 @@
 	layer = BLIND_LAYER
 
 /obj/screen/fullscreen/impaired
+	icon = 'infinity/icons/mob/screen_full.dmi' //inf, was nothing
 	icon_state = "impairedoverlay"
 	layer = IMPAIRED_LAYER
 
@@ -102,6 +103,7 @@
 	icon = 'icons/mob/screen1.dmi'
 	screen_loc = "WEST,SOUTH to EAST,NORTH"
 	icon_state = "blurry"
+	alpha = 100
 
 /obj/screen/fullscreen/flash
 	icon = 'icons/mob/screen1.dmi'

@@ -67,37 +67,10 @@
 
 /obj/item/weapon/folder/nt/rd
 
-/obj/item/weapon/folder/envelope/blanks
-	desc = "A thick envelope. A large corporate logo is stamped in the corner, along with 'CONFIDENTIAL'."
-
-/obj/item/weapon/folder/envelope/blanks/Initialize()
-	. = ..()
-	new/obj/item/weapon/paper/blanks(src)
-
-/obj/item/weapon/paper/blanks
-	name = "RE: Regarding testing supplies"
-	info = {"
-	<tt><center><b><font color='red'>CONFIDENTIAL: UPPER MANAGEMENT ONLY</font></b>
-	<h3>CORPORATE RESEARCH DIVISION</h3>
-	<img src = exologo.png>
-	</center>
-	<b>FROM:</b> Hieronimus Blackstone, Overseer of Torch Cooperation Project<br>
-	<b>TO:</b> Chief Science Officer of SEV Torch branch<br>
-	<b>CC:</b> Liason with SCG services aboard SEV Torch<br>
-	<b>SUBJECT:</b> RE: Testing Materials<br>
-	<hr>
-	We have reviewed your request, and would like to make an addition to the list of needed materials.<br>
-	As we hold very high hopes for this branch, it would be only right to provide our scientists with the most accurate testing environment. And by that we mean the living human subjects. Our Ethics Review Board suggested a workaround for that pesky 'consent' requierment.<br>
-	In the Research Wing you should find a small section labeled 'Aux Custodial Supplies'. Inside we have provided several mind-blank vatgrown clones. Our Law Special Response Team so far had not found SCG legislation that explicitly forbids their use in research.<br>
-	They come in self-contained life support bags, with additional measures to make them easier to use for, let's say, more sensitive personnel. As our preliminary study showed, 75% more subjects were more willing to harm a (consenting) intern if their face was fully hidden.<br>
-	We are expecting great results from this program. Do not disappoint us.<br>
-	<i>H.B.</i></tt>
-	"}
-
 /obj/item/weapon/paper/liason_note
 	name = "note"
 	info = {"
-	<i>Pick your way out.<br>
+	<i>Here's your back-out plan.<br>
 	H.B.</i>
 	"}
 
@@ -110,7 +83,7 @@
 
 /obj/item/weapon/folder/envelope/captain/LateInitialize()
 	..()
-	var/obj/effect/overmap/torch = map_sectors["[z]"]
+	var/obj/effect/overmap/visitable/torch = map_sectors["[z]"]
 	var/memo = {"
 	<tt><center><b><font color='red'>SECRET - CODE WORDS: TORCH</font></b>
 	<h3>SOL CENTRAL GOVERNMENT EXPEDITIONARY COMMAND</h3>

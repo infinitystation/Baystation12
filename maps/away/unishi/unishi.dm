@@ -13,7 +13,7 @@
 		/datum/job/submap/unishi_researcher
 	)
 
-/obj/effect/overmap/ship/unishi
+/obj/effect/overmap/visitable/ship/unishi
 	name = "SRV Verne"
 	desc = "Sensor array detects unknown class medium size vessel. The vessel appears unarmed.\
 	A small amount of radiation has been detected at the aft of the ship"
@@ -30,7 +30,7 @@
 	id = "awaysite_unishi"
 	description = "CTI research ship.."
 	suffixes = list("unishi/unishi-1.dmm", "unishi/unishi-2.dmm", "unishi/unishi-3.dmm")
-	cost = 2
+	cost = 2000 //inf, was 2, we aren't using it
 	area_usage_test_exempted_root_areas = list(/area/unishi)
 
 
@@ -97,16 +97,19 @@ obj/item/weapon/paper/prof2
 
 
 
-/obj/machinery/computer/log_printer/
+/obj/machinery/computer/log_printer
 	name = "Computer"
+	construct_state = null
+	base_type = /obj/machinery/computer/log_printer
 	var/logtype
 	var/used = 0
 
-/obj/machinery/computer/log_printer/attack_hand(mob/living/user as mob)
-	if(!used && !isghost(usr))
-		to_chat(usr, "Default Boot Device File Integrity Damaged. Startup aborted. Error log printing.")
+/obj/machinery/computer/log_printer/interface_interact(mob/living/user)
+	if(CanInteract(user, DefaultTopicState()))
+		to_chat(user, "Default Boot Device File Integrity Damaged. Startup aborted. Error log printing.")
 		new logtype(loc)
 		used = 1
+		return TRUE
 
 /obj/machinery/computer/log_printer/prof1
 	name = "Professor's Computer"

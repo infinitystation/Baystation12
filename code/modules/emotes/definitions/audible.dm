@@ -2,47 +2,28 @@
 	key = "burp"
 	emote_message_3p = "USER burps."
 	message_type = AUDIBLE_MESSAGE
-	var/emote_sound
-
-/decl/emote/audible/do_extra(var/atom/user)
+//	var/emote_sound
+/*
+/decl/emote/audible/do_extra(var/atom/user) // infinity for new sound emote system
 	if(emote_sound)
 		playsound(user.loc, emote_sound, 50, 0)
-
+*/
 /decl/emote/audible/deathgasp_alien
 	key = "deathgasp"
 	emote_message_3p = "USER lets out a waning guttural screech, green blood bubbling from its maw."
 
 /decl/emote/audible/gasp
 	key ="gasp"
-	emote_message_3p = "USER задыхаетс&#255;!"
+	emote_message_3p = "USER Р·Р°РґС‹С…Р°РµС‚СЃСЏ!"
 	conscious = 0
-
-/decl/emote/audible/gasp/do_extra(var/mob/M)
-	emote_sound = null
-	if(M.stat)//No dead or unconcious people screaming pls.
-		return
-
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(H.isMonkey()|| M.gender == NEUTER)
-			return
-
-		if(M.gender == MALE)
-			emote_sound = "sound/voice/gasp_male_[rand(1,7)].ogg"
-
-		if(M.gender == FEMALE)
-			emote_sound = "sound/voice/gasp_female[rand(1,7)].ogg"
-
-		if(emote_sound)
-			playsound(M, emote_sound, 30, 0, 1)
 
 /decl/emote/audible/scretch
 	key ="scretch"
-	emote_message_3p = "USER чешетс&#255;."
+	emote_message_3p = "USER С‡РµС€РµС‚СЃСЏ."
 
 /decl/emote/audible/choke
 	key ="choke"
-	emote_message_3p = "USER давитс&#255;!"
+	emote_message_3p = "USER РґР°РІРёС‚СЃСЏ!"
 	conscious = 0
 
 /decl/emote/audible/gnarl
@@ -51,8 +32,13 @@
 
 /decl/emote/audible/chirp
 	key ="chirp"
-	emote_message_3p = "USER щебечет!"
+	emote_message_3p = "USER С‰РµР±РµС‡РµС‚!"
 	emote_sound = 'sound/misc/nymphchirp.ogg'
+
+/decl/emote/audible/multichirp
+	key ="mchirp"
+	emote_message_3p = "USER chirps a chorus of notes!"
+	emote_sound = 'sound/misc/multichirp.ogg'
 
 /decl/emote/audible/alarm
 	key = "alarm"
@@ -71,22 +57,8 @@
 
 /decl/emote/audible/whistle
 	key = "whistle"
-	emote_message_1p = "Вы свистите!"
-	emote_message_3p = "USER свистит!"
-
-/decl/emote/audible/whistle/do_extra(var/mob/M)
-	if(M.stat)//No dead or unconcious people screaming pls.
-		return
-
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(H.isMonkey())//|| M.gender == NEUTER) It would be nice to whistle in Machine body. ~Quardbreak
-			return
-
-		emote_sound = "sound/voice/whistle.ogg"
-
-		if(emote_sound)
-			playsound(M, emote_sound, 30, 0, 1)
+	emote_message_1p = "Р’С‹ СЃРІРёСЃС‚РёС‚Рµ!"
+	emote_message_3p = "USER СЃРІРёСЃС‚РёС‚!"
 
 /decl/emote/audible/boop
 	key = "boop"
@@ -95,307 +67,80 @@
 
 /decl/emote/audible/sneeze
 	key = "sneeze"
-	emote_message_3p = "USER чихает!"
-
-/decl/emote/audible/sneeze/do_extra(var/mob/M)
-	emote_sound = null
-	if(M.stat)//No dead or unconcious people screaming pls.
-		return
-
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(H.isMonkey()|| M.gender == NEUTER)
-			return
-
-		if(M.gender == MALE)
-			emote_sound = "sound/voice/sneeze_male_[rand(1,2)].ogg"
-
-		if(M.gender == FEMALE)
-			emote_sound = "sound/voice/sneeze_female_[rand(1,2)].ogg"
-
-		if(emote_sound)
-			playsound(M, emote_sound, 30, 0, 1)
+	emote_message_3p = "USER С‡РёС…Р°РµС‚!"
 
 /decl/emote/audible/sniff
 	key = "sniff"
-	emote_message_3p = "USER нюхает."
+	emote_message_3p = "USER РЅСЋС…Р°РµС‚."
 
 /decl/emote/audible/snore
 	key = "snore"
-	emote_message_3p = "USER храпит."
+	emote_message_3p = "USER С…СЂР°РїРёС‚."
 	conscious = 0
-
-/decl/emote/audible/snore/do_extra(var/mob/M)
-	emote_sound = null
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(H.isMonkey()|| M.gender == NEUTER)
-			return
-
-		emote_sound = "sound/voice/snore_[rand(1,7)].ogg"
-
-		if(emote_sound)
-			playsound(M, emote_sound, 30, 0, 1)
 
 /decl/emote/audible/whimper
 	key = "whimper"
-	emote_message_3p = "USER хнычет."
+	emote_message_3p = "USER С…РЅС‹С‡РµС‚."
 
 /decl/emote/audible/yawn
 	key = "yawn"
-	emote_message_3p = "USER зевает."
-
-/decl/emote/audible/yawn/do_extra(var/mob/M)
-	emote_sound = null
-	if(M.stat)//No dead or unconcious people screaming pls.
-		return
-
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(H.isMonkey()|| M.gender == NEUTER)
-			return
-
-		if(M.gender == MALE)
-			emote_sound = "sound/voice/yawn_male_[rand(1,2)].ogg"
-
-		if(M.gender == FEMALE)
-			emote_sound = "sound/voice/yawn_female_[rand(1,3)].ogg"
-
-		if(emote_sound)
-			playsound(M, emote_sound, 30, 0, 1)
-
+	emote_message_3p = "USER Р·РµРІР°РµС‚."
 
 /decl/emote/audible/clap
 	key = "clap"
-	emote_message_3p = "USER хлопает."
-
-/decl/emote/audible/clap/do_extra(var/mob/M)
-	if(M.stat)//No dead or unconcious people screaming pls.
-		return
-
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(H.isMonkey())
-			return
-
-		emote_sound = "sound/effects/clap.ogg"
-
-		if(emote_sound)
-			playsound(M, emote_sound, 30, 0, 1)
+	emote_message_3p = "USER С…Р»РѕРїР°РµС‚."
 
 /decl/emote/audible/chuckle
 	key = "chuckle"
-	emote_message_3p = "USER усмехаетс&#255;."
-
-/decl/emote/audible/chuckle/do_extra(var/mob/M)
-	emote_sound = null
-	if(M.stat)//No dead or unconcious people screaming pls.
-		return
-
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(H.isMonkey()|| M.gender == NEUTER)
-			return
-
-		if(H.get_species() == SPECIES_RESOMI)
-			emote_sound = "sound/voice/resomicougha.ogg"
-
-		if(emote_sound)
-			playsound(M, emote_sound, 30, 0, 1)
+	emote_message_3p = "USER СѓСЃРјРµС…Р°РµС‚СЃСЏ."
 
 /decl/emote/audible/cough
 	key = "cough"
-	emote_message_3p = "USER кашл&#255;ет!"
+	emote_message_3p = "USER РєР°С€Р»СЏРµС‚!"
 	conscious = 0
-
-/decl/emote/audible/cough/do_extra(var/mob/M)
-	emote_sound = null
-	if(M.stat)//No dead or unconcious people screaming pls.
-		return
-
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(H.isMonkey()|| M.gender == NEUTER)
-			return
-
-		if(M.gender == MALE)
-			emote_sound = "sound/voice/cough_male.ogg"
-
-		if(M.gender == FEMALE)
-			emote_sound = "sound/voice/cough_female.ogg"
-
-		if(H.get_species() == SPECIES_RESOMI)
-			emote_sound = "sound/voice/resomicoughb.ogg"
-
-		if(emote_sound)
-			playsound(M, emote_sound, 30, 0, 1)
-
-/decl/emote/audible/salute
-	key = "salute"
-	emote_message_3p_target = "USER выполн&#255;ет воинское приветствие TARGET."
-	emote_message_3p = "USER выполн&#255;ет воинское приветствие."
-
-/decl/emote/audible/salute/do_extra(var/mob/M)
-	if(M.stat)//No dead or unconcious people screaming pls.
-		return
-
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(H.isMonkey())
-			return
-
-		emote_sound = "sound/effects/salute.ogg"
-
-		if(emote_sound)
-			playsound(M, emote_sound, 30, 0, 1)
 
 /decl/emote/audible/cry
 	key = "cry"
-	emote_message_3p = "USER плачет..."
-
-/decl/emote/audible/cry/do_extra(var/mob/M)
-	emote_sound = null
-	if(M.stat)//No dead or unconcious people screaming pls.
-		return
-
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(H.isMonkey()|| M.gender == NEUTER)
-			return
-
-		if(M.gender == MALE)
-			emote_sound = "sound/voice/cry_male_[rand(1,2)].ogg"
-
-		if(M.gender == FEMALE)
-			emote_sound = "sound/voice/cry_female_[rand(1,3)].ogg"
-
-		if(emote_sound)
-			playsound(M, emote_sound, 30, 0, 1)
+	emote_message_3p = "USER РїР»Р°С‡РµС‚..."
 
 /decl/emote/audible/sigh
 	key = "sigh"
-	emote_message_3p = "USER вздыхает."
-
-/decl/emote/audible/sigh/do_extra(var/mob/M)
-	emote_sound = null
-	if(M.stat)//No dead or unconcious people screaming pls.
-		return
-
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(H.isMonkey()|| M.gender == NEUTER)
-			return
-
-		if(M.gender == MALE)
-			emote_sound = "sound/voice/sigh_male.ogg"
-
-		if(M.gender == FEMALE)
-			emote_sound = "sound/voice/sigh_female.ogg"
-
-		if(emote_sound)
-			playsound(M, emote_sound, 30, 0, 1)
-
+	emote_message_3p = "USER РІР·РґС‹С…Р°РµС‚."
 
 /decl/emote/audible/laugh
 	key = "laugh"
-	emote_message_3p = "USER смеетс&#255;!"
-	emote_message_3p_target = "USER смеетс&#255; над TARGET!"
-
-/decl/emote/audible/laugh/do_extra(var/mob/M)
-	emote_sound = null
-	if(M.stat)//No dead or unconcious people screaming pls.
-		return
-
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(H.isMonkey()|| M.gender == NEUTER)
-			return
-
-		if(M.gender == MALE)
-			emote_sound = "sound/voice/laugh_male_1.ogg" //we also have 2, 3
-
-		if(M.gender == FEMALE)
-			emote_sound = "sound/voice/laugh_female_2.ogg" //we also have 1, 3
-
-		if(H.get_species() == SPECIES_RESOMI)
-			emote_sound = "sound/voice/resomicougha.ogg"
-
-		if(emote_sound)
-			playsound(M, emote_sound, 30, 0, 1)
+	emote_message_3p = "USER СЃРјРµРµС‚СЃСЏ!"
+	emote_message_3p_target = "USER СЃРјРµРµС‚СЃСЏ РЅР°Рґ TARGET!"
 
 /decl/emote/audible/mumble
 	key = "mumble"
-	emote_message_3p = "USER бормочет."
+	emote_message_3p = "USER Р±РѕСЂРјРѕС‡РµС‚."
 
 /decl/emote/audible/grumble
 	key = "grumble"
-	emote_message_3p = "USER бурчит."
+	emote_message_3p = "USER Р±СѓСЂС‡РёС‚."
 
 /decl/emote/audible/groan
 	key = "groan"
-	emote_message_3p = "USER досадно вздыхает..."
+	emote_message_3p = "USER Р±РѕР»РµР·РЅРµРЅРЅРѕ СЃС‚РѕРЅРµС‚!"
 	conscious = 0
 
 /decl/emote/audible/moan
 	key = "moan"
-	emote_message_3p = "USER стонет!"
+	emote_message_3p = "USER СЃС‚РѕРЅРµС‚!"
 	conscious = 0
 
 /decl/emote/audible/giggle
 	key = "giggle"
-	emote_message_3p = "USER хихикает."
-
-/decl/emote/audible/giggle/do_extra(var/mob/M)
-	emote_sound = null
-	if(M.stat)//No dead or unconcious people screaming pls.
-		return
-
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(H.isMonkey()|| M.gender == NEUTER)
-			return
-
-		if(M.gender == MALE)
-			emote_sound = "sound/voice/giggle_male_2.ogg" //we also have 1
-
-		if(M.gender == FEMALE)
-			emote_sound = "sound/voice/giggle_female_3.ogg" //we also have 1, 2
-
-		if(emote_sound)
-			playsound(M, emote_sound, 30, 0, 1)
+	emote_message_3p = "USER С…РёС…РёРєР°РµС‚."
 
 /decl/emote/audible/scream
 	key = "scream"
-	emote_message_3p = "USER кричит!"
-
-/decl/emote/audible/scream/do_extra(var/mob/M)
-	emote_sound = null
-	if(M.stat)//No dead or unconcious people screaming pls.
-		return
-
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(H.isMonkey()|| M.gender == NEUTER)
-			return
-
-		if(M.gender == MALE)
-			emote_sound = "sound/voice/scream_male_[rand(1,3)].ogg"
-
-		if(M.gender == FEMALE)
-			emote_sound = "sound/voice/scream_female_[rand(1,2)].ogg"
-
-		if(H.get_species() == SPECIES_XENO)
-			emote_sound = "sound/voice/alien_pain.ogg"
-
-		if(H.get_species() == SPECIES_RESOMI)
-			emote_sound = "sound/voice/resomisneeze.ogg"
-
-		if(emote_sound)
-			playsound(M, emote_sound, 30, 0, 1)
+	emote_message_3p = "USER РєСЂРёС‡РёС‚!"
 
 /decl/emote/audible/grunt
 	key = "grunt"
-	emote_message_3p = "USER ворчит."
+	emote_message_3p = "USER РІРѕСЂС‡РёС‚."
 
 /decl/emote/audible/slap
 	key = "slap"
@@ -407,16 +152,42 @@
 
 /decl/emote/audible/bug_hiss
 	key ="hiss"
-	emote_message_3p_target = "USER шипит на TARGET!"
-	emote_message_3p = "USER шипит!"
+	emote_message_3p_target = "USER С€РёРїРёС‚ РЅР° TARGET!"
+	emote_message_3p = "USER С€РёРїРёС‚!"
 	emote_sound = 'sound/voice/BugHiss.ogg'
 
 /decl/emote/audible/bug_buzz
 	key ="buzz"
-	emote_message_3p = "USER жужжит."
+	emote_message_3p = "USER Р¶СѓР¶Р¶РёС‚."
 	emote_sound = 'sound/voice/BugBuzz.ogg'
 
 /decl/emote/audible/bug_chitter
 	key ="chitter"
-	emote_message_3p = "USER верещит!"
+	emote_message_3p = "USER РІРµСЂРµС‰РёС‚!"
 	emote_sound = 'sound/voice/Bug.ogg'
+
+/decl/emote/audible/vox_shriek
+	key ="shriek"
+	emote_message_3p = "USER SHRIEKS!"
+	emote_sound = 'sound/voice/shriek1.ogg'
+
+/decl/emote/audible/roar
+	key = "roar"
+	emote_message_3p = "USER roars!"
+
+/decl/emote/audible/bellow
+	key = "bellow"
+	emote_message_3p = "USER bellows!"
+
+/decl/emote/audible/howl
+	key = "howl"
+	emote_message_3p = "USER howls!"
+
+/decl/emote/audible/wheeze
+	key = "wheeze"
+	emote_message_3p = "USER wheezes."
+
+/decl/emote/audible/hiss
+	key ="hiss_"
+	emote_message_3p_target = "USER hisses softly at TARGET."
+	emote_message_3p = "USER hisses softly."

@@ -8,7 +8,7 @@
 	opacity = 0.4
 	shard_type = SHARD_SHARD
 	tableslam_noise = 'sound/effects/Glasshit.ogg'
-	hardness = 100
+	hardness = MATERIAL_VERY_HARD + 20
 	brute_armor = 10
 	burn_armor = 50		// Diamond walls are immune to fire, therefore it makes sense for them to be almost undamageable by burn damage type.
 	stack_origin_tech = list(TECH_MATERIAL = 6)
@@ -20,7 +20,7 @@
 	ore_result_amount = 5
 	ore_spread_chance = 10
 	ore_scan_icon = "mineral_rare"
-	xarch_source_mineral = "nitrogen"
+	xarch_source_mineral = GAS_NITROGEN
 	ore_icon_overlay = "gems"
 	sale_price = 5
 	sheet_singular_name = "gem"
@@ -29,8 +29,7 @@
 
 /material/diamond/crystal
 	name = MATERIAL_CRYSTAL
-	hardness = 80
-	icon_reinf = "reinf_over"
+	hardness = MATERIAL_VERY_HARD
 	stack_type = null
 	ore_compresses_to = null
 	sale_price = null
@@ -46,7 +45,7 @@
 	icon_colour = "#d9c179"
 	shard_type = SHARD_STONE_PIECE
 	weight = 22
-	hardness = 55
+	hardness = MATERIAL_HARD - 5
 	brute_armor = 3
 	door_icon_base = "stone"
 	sheet_singular_name = "brick"
@@ -64,7 +63,7 @@
 	lore_text = "A metamorphic rock largely sourced from Earth. Prized for use in extremely expensive decorative surfaces."
 	icon_colour = "#aaaaaa"
 	weight = 26
-	hardness = 60
+	hardness = MATERIAL_HARD
 	brute_armor = 3
 	integrity = 201 //hack to stop kitchen benches being flippable, todo: refactor into weight system
 	stack_type = /obj/item/stack/material/marble
@@ -72,3 +71,19 @@
 	chem_products = null
 	sale_price = 4
 	value = 20
+
+/material/stone/concrete
+	name = MATERIAL_CONCRETE
+	lore_text = "The most ubiquitous building material of old Earth, now in space. Consists of mineral aggregate bound with some sort of cementing solution."
+	stack_type = /obj/item/stack/material/generic/brick
+	icon_colour = COLOR_GRAY
+	value = 1
+	var/image/texture
+
+/material/stone/concrete/New()
+	..()
+	texture = image('icons/turf/wall_texture.dmi', "concrete")
+	texture.blend_mode = BLEND_MULTIPLY
+
+/material/stone/concrete/get_wall_texture()
+	return texture

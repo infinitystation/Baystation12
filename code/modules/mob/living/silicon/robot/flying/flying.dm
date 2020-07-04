@@ -1,10 +1,10 @@
 /mob/living/silicon/robot/flying
 	desc = "A utility robot with an anti-gravity hover unit and a lightweight frame."
-	icon = 'icons/mob/robots_flying.dmi'
+	icon = 'infinity/icons/mob/robots_flying.dmi' //INF, WAS 'icons/mob/robots_flying.dmi'
 	icon_state = "drone-standard"
 	module_category = ROBOT_MODULE_TYPE_FLYING
 	dismantle_type = /obj/item/robot_parts/robot_suit/flyer
-	speed = -1 // nyoom
+	speed = -0.5 // nyoom //INF, WAS -1
 	power_efficiency = 0.75
 
 	// They are not very heavy or strong.
@@ -47,7 +47,7 @@
 /mob/living/silicon/robot/flying/Allow_Spacemove()
 	return (pass_flags & PASS_FLAG_TABLE) || ..()
 
-/mob/living/silicon/robot/flying/can_fall()
+/mob/living/silicon/robot/flying/can_fall(var/anchor_bypass = FALSE, var/turf/location_override = loc)
 	return !Allow_Spacemove()
 
 /mob/living/silicon/robot/flying/can_overcome_gravity()

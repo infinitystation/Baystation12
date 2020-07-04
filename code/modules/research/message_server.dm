@@ -63,6 +63,7 @@ var/global/list/obj/machinery/message_server/message_servers = list()
 	return ..()
 
 /obj/machinery/message_server/Process()
+	..()
 	if(active && (stat & (BROKEN|NOPOWER)))
 		active = 0
 		power_failure = 10
@@ -107,17 +108,18 @@ var/global/list/obj/machinery/message_server/message_servers = list()
 			Console.set_light(0.3, 0.1, 2)
 
 
-/obj/machinery/message_server/attack_hand(user as mob)
+/obj/machinery/message_server/interface_interact(mob/user)
+	if(!CanInteract(user, DefaultTopicState()))
+		return FALSE
 	to_chat(user, "You toggle PDA message passing from [active ? "On" : "Off"] to [active ? "Off" : "On"]")
 	active = !active
 	power_failure = 0
 	update_icon()
-
-	return
+	return TRUE
 
 /obj/machinery/message_server/attackby(obj/item/weapon/O as obj, mob/living/user as mob)
 	if (active && !(stat & (BROKEN|NOPOWER)) && (spamfilter_limit < MESSAGE_SERVER_DEFAULT_SPAM_LIMIT*2) && \
-		istype(O,/obj/item/weapon/circuitboard/message_monitor))
+		istype(O,/obj/item/weapon/stock_parts/circuitboard/message_monitor))
 		spamfilter_limit += round(MESSAGE_SERVER_DEFAULT_SPAM_LIMIT / 2)
 		qdel(O)
 		to_chat(user, "You install additional memory and processors into message server. Its filtering capabilities been enhanced.")
@@ -142,9 +144,8 @@ var/global/list/obj/machinery/message_server/message_servers = list()
 		if(!(H.z in connected_levels))
 			continue
 		var/obj/item/modular_computer/pda/pda = locate() in H
-		var/obj/item/modular_computer/wrist/w = locate() in H
 		var/obj/item/device/radio/headset/hs = locate() in H
-		if(!pda && !w && !hs)
+		if(!pda && !hs)
 			continue
 
 		var/datum/job/J = SSjobs.get_by_title(H.get_authentification_rank())
@@ -154,9 +155,6 @@ var/global/list/obj/machinery/message_server/message_servers = list()
 		if(J.department_flag & department)
 			if(pda)
 				to_chat(H, SPAN_NOTICE("Your [pda] alerts you to the fact that somebody is requesting your presence at your department."))
-				reached++
-			else if(w)
-				to_chat(H, SPAN_NOTICE("Your [w] alerts you to the fact that somebody is requesting your presence at your department."))
 				reached++
 			else if(hs && hs.listening)
 				to_chat(H, SPAN_NOTICE("Your [hs] vibrates and alerts you to the fact that somebody is requesting your presence at your department."))

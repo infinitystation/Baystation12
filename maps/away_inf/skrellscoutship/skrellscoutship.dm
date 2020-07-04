@@ -1,131 +1,41 @@
+#define WEBHOOK_SUBMAP_LOADED_SKRELL "webhook_submap_skrell"
+
 #include "skrellscoutship_areas.dm"
+#include "skrellscoutship_jobs.dm"
 #include "skrellscoutship_shuttles.dm"
 
+#undef WEBHOOK_SUBMAP_LOADED_SKRELL
 /datum/map_template/ruin/away_site/skrellscoutship
 	name = "Skrellian Scout Ship"
 	id = "awaysite_skrell_scout"
 	description = "A Skrellian SDTF scouting vessel."
 	prefix = "maps/away_inf/"
 	suffixes = list("skrellscoutship/skrellscoutship-1.dmm", "skrellscoutship/skrellscoutship-2.dmm")
-	cost = 1
+	spawn_weight = 50 //INF, HABITABLE SHIPS SPAWN
+	cost = 2
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/skrellscoutship, /datum/shuttle/autodock/overmap/skrellscoutshuttle)
+	apc_test_exempt_areas = list(
+		/area/ship/skrellscoutshuttle =                NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/ship/skrellscoutship/crew/toilets =      NO_SCRUBBER|NO_VENT,
+		/area/ship/skrellscoutship/maintenance/power = NO_SCRUBBER|NO_VENT,
+		/area/ship/skrellscoutship/solars =            NO_SCRUBBER|NO_VENT|NO_APC
+	)
 
-/obj/effect/overmap/sector/skrellscoutspace
-	name = "Empty Sector"
+/obj/effect/overmap/visitable/sector/skrellscoutspace
+	name = "strange ion cloud"
 	desc = "Slight traces of a cloaking device are present. Unable to determine exact location."
+	hide_from_reports = TRUE
 	in_space = 1
-	icon_state = "event"
+	icon_state = "ion1"
 
-/obj/effect/submap_landmark/joinable_submap/skrellscoutship
-	name = "Xilvuxix"
-	archetype = /decl/submap_archetype/skrellscoutship
-
-/obj/effect/submap_landmark/spawnpoint/skrellscoutship
-	name = "Qrri-Zuumqix"
-	movable_flags = MOVABLE_FLAG_EFFECTMOVE
-
-/obj/effect/submap_landmark/spawnpoint/skrellscoutship/leader
-	name = "Qrri-Vuxix"
-
-/decl/submap_archetype/skrellscoutship
-	descriptor = "Skrellian Scout Ship"
-	map = "Xilvuxix"
-	crew_jobs = list(
-		/datum/job/submap/skrellscoutship_crew,
-		/datum/job/submap/skrellscoutship_crew/leader
-	)
-
-//Access + Loadout
-
-/var/const/access_skrellscoutship = "ACCESS_SKRELLSCOUT"
-
-/datum/access/skrellscoutship
-	id = access_skrellscoutship
-	desc = "SSV Crewman"
-	region = ACCESS_REGION_NONE
-
-/obj/item/weapon/card/id/skrellscoutship
-	color = COLOR_GRAY40
-	detail_color = "#7331c4"
-	access = list(access_skrellscoutship)
-
-/datum/job/submap/skrellscoutship_crew
-	title = "Qrri-Zuumqix"
-	supervisors = "your Qrri-Vuxix"
-	total_positions = 5
-	whitelisted_species = list("Skrell")
-	outfit_type = /decl/hierarchy/outfit/job/skrellscoutship
-	info = "Your vessel is scouting through unknown space, working to map out any potential dangers, as well as potential allies."
-	branch = /datum/mil_branch/skrell_fleet
-	rank = /datum/mil_rank/skrell_fleet
-	allowed_branches = list(/datum/mil_branch/skrell_fleet)
-	allowed_ranks = list(/datum/mil_rank/skrell_fleet)
-	skill_points = 30
-
-/datum/job/submap/skrellscoutship_crew/leader
-	title = "Qrri-Vuxix"
-	supervisors = "your SDTF"
-	total_positions = 1
-	outfit_type = /decl/hierarchy/outfit/job/skrellscoutship
-	info = "Your vessel is scouting through unknown space, working to map out any potential dangers, as well as potential allies."
-
-/datum/job/submap/skrellscoutship_crew/equip(var/mob/living/carbon/human/H, var/alt_title, var/datum/mil_branch/branch, var/datum/mil_rank/grade)
-	. = ..(H, alt_title, branch, grade)	//passing through arguments
-	//Limited to subcastes that make sense on the vessel. No need for ground-forces or R&D on such a ship.
-	var/skrellscoutcastes = list(
-		"Malish-Katish" = list(
-			"Mero'ta-Ketish",
-			"Toglo'i-Ketish"
-		),
-		"Kanin-Katish" = list(
-			"Xiqarr-Ketish",
-			"Mero'tol-Ketish",
-			"Goxo’i-Ketish"
-		),
-		"Raskinta-Katish" = list(
-			"Me'kerr-Ketish",
-			"Qi'kerr-Ketish",
-			"Me’xoal-Ketish"
-		)
-	)
-
-	var/skrellcaste = input(H, "What is your Skrell's Caste?", "SDTF Rank") as null|anything in skrellscoutcastes
-	if(skrellcaste)
-		var/skrellsubcaste = input(H, "What is your Skrell's Subcaste?", "SDTF Rank") as null|anything in skrellscoutcastes[skrellcaste]
-		var/obj/item/weapon/card/id/C = H.wear_id
-		if(istype(C))
-			C.assignment = skrellsubcaste
-
-/obj/item/clothing/gloves/thick/swat/skrell
-	name = "black gloves"
-	desc = "A pair of black, reinforced gloves. The tag on the inner stitching appears to be written in some form of Skrellian."
-
-/obj/item/clothing/under/skrelljumpsuit
-	name = "black bodysuit"
-	desc = "A sleek, skin-tight bodysuit designed to not wick moisture away from the body. The inner stitching appears to contain something written in Skrellian."
-	icon_state = "skrell_suit"
-	item_state = "black"
-	worn_state = "skrell_suit"
-
-/decl/hierarchy/outfit/job/skrellscoutship
-	name = "Xilvuxix Crew"
-	uniform = /obj/item/clothing/under/skrelljumpsuit
-	shoes = /obj/item/clothing/shoes/dutyboots
-	gloves = /obj/item/clothing/gloves/thick/swat/skrell
-	pda_type = /obj/item/modular_computer/pda
-	pda_slot = slot_l_store
-	l_ear = /obj/item/device/radio/headset/skrellian
-	id_type = /obj/item/weapon/card/id/skrellscoutship
-	l_pocket = /obj/item/clothing/accessory/badge/tags/skrell
-
-/obj/item/weapon/circuitboard/telecomms/allinone/skrellscoutship
+/obj/item/weapon/stock_parts/circuitboard/telecomms/allinone/skrellscoutship
 	build_path = /obj/machinery/telecomms/allinone/skrellscoutship
 
 /obj/machinery/telecomms/allinone/skrellscoutship
 	listening_freqs = list(SKRELL_FREQ)
 	channel_color = COMMS_COLOR_SKRELL
 	channel_name = "Recon"
-	circuitboard = /obj/item/weapon/circuitboard/telecomms/allinone/skrellscoutship
+	circuitboard = /obj/item/weapon/stock_parts/circuitboard/telecomms/allinone/skrellscoutship
 
 /obj/item/device/radio/headset/skrellian
 	name = "recon headset"
@@ -164,20 +74,65 @@
 /datum/mil_rank/skrell_fleet
 	name = "NULL"
 
-/obj/machinery/alarm/skrellian/New()
-	..()
-	temperature = 313.15
-	target_temperature = 313.15 //40C
-	req_access = list(access_skrellscoutship)
-	TLV["temperature"] =	list(T0C+5, T0C+25, T0C+55, T0C+65) // T0C = 0.0 C
-
-
-/turf/simulated/floor/tiled/skrell //override
-	temperature = 313.15
-
-/obj/machinery/power/apc/skrellian
-	is_critical = 1
+/obj/machinery/power/apc/skrell
 	req_access = list(access_skrellscoutship)
 
-/turf/simulated/floor/shuttle_ceiling/hull
-	color = COLOR_HULL
+/obj/machinery/alarm/skrell
+	req_access = list(access_skrellscoutship)
+	target_temperature = T0C+40
+
+/obj/machinery/alarm/skrell/Initialize()
+	. = ..()
+	TLV["pressure"] =		list(ONE_ATMOSPHERE*0.80,ONE_ATMOSPHERE*0.90,ONE_ATMOSPHERE*1.30,ONE_ATMOSPHERE*1.40) /* kpa */
+	TLV["temperature"] =	list(T0C-26, T0C, T0C+80, T0C+90) // K
+
+/obj/machinery/power/smes/buildable/preset/skrell
+	uncreated_component_parts = list(
+		/obj/item/weapon/stock_parts/smes_coil/super_io = 2,
+		/obj/item/weapon/stock_parts/smes_coil/super_capacity = 2)
+	_input_maxed = TRUE
+	_output_maxed = TRUE
+	_input_on = TRUE
+	_output_on = TRUE
+	_fully_charged = TRUE
+
+/obj/machinery/vending/medical/skrell
+	req_access = list(access_skrellscoutship)
+
+/obj/machinery/suit_storage_unit/skrell
+	name = "Black Voidsuit Storage Unit"
+	suit= /obj/item/clothing/suit/space/void/skrell/black
+	helmet = /obj/item/clothing/head/helmet/space/void/skrell/black
+	boots = /obj/item/clothing/shoes/magboots
+	tank = /obj/item/weapon/tank/oxygen
+	mask = /obj/item/clothing/mask/gas/half
+	req_access = list(access_skrellscoutship)
+	islocked = 1
+
+/obj/machinery/suit_storage_unit/skrell/white
+	name = "White Voidsuit Storage Unit"
+	suit= /obj/item/clothing/suit/space/void/skrell/white
+	helmet = /obj/item/clothing/head/helmet/space/void/skrell/white
+
+/*
+ * AIRLOCKS
+ * ========
+ */
+
+/obj/machinery/door/airlock/skrell
+	door_color = COLOR_SILVER
+
+/obj/machinery/door/airlock/skrell/engineering
+	stripe_color = COLOR_AMBER
+
+/obj/machinery/door/airlock/skrell/command
+	stripe_color = COLOR_COMMAND_BLUE
+
+/obj/machinery/door/airlock/skrell/medical
+	stripe_color = COLOR_DEEP_SKY_BLUE
+
+/obj/machinery/door/airlock/skrell/security
+	stripe_color = COLOR_NT_RED
+
+/obj/machinery/door/airlock/skrell/living
+	stripe_color = COLOR_CIVIE_GREEN

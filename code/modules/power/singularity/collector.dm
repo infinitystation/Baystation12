@@ -4,7 +4,7 @@ var/global/list/rad_collectors = list()
 /obj/machinery/power/rad_collector
 	name = "radiation collector array"
 	desc = "A device which uses radiation and phoron to produce power."
-	icon = 'infinity/icons/obj/singularity.dmi'
+	icon = 'icons/obj/machines/rad_collector.dmi'
 	icon_state = "ca"
 	anchored = 0
 	density = 1
@@ -22,15 +22,24 @@ var/global/list/rad_collectors = list()
 	var/drainratio = 1
 	var/recievepulse_mult = 0
 
+
+	var/last_rads
+	var/max_rads = 250 // rad collector will reach max power output at this value, and break at twice this value
+	var/max_power = 5e5
+	var/pulse_coeff = 20
+	var/end_time = 0
+	var/alert_delay = 10 SECONDS
+	construct_state = /decl/machine_construction/default/panel_closed //inf
+
 /obj/machinery/power/rad_collector/Initialize()
 	. = ..()
 	rad_collectors += src
-	component_parts = list(
-		new /obj/item/weapon/circuitboard/rad_collector,
+/*	component_parts = list(
+		new /obj/item/weapon/stock_parts/circuitboard/rad_collector,
 		new /obj/item/weapon/stock_parts/manipulator,
 		new /obj/item/weapon/stock_parts/manipulator,
 		new /obj/item/weapon/stock_parts/capacitor,
-		new /obj/item/weapon/stock_parts/capacitor)
+		new /obj/item/weapon/stock_parts/capacitor)*/
 	RefreshParts()
 
 /obj/machinery/power/rad_collector/RefreshParts()
@@ -59,33 +68,43 @@ var/global/list/rad_collectors = list()
 	//so that we don't zero out the meter if the SM is processed first.
 	last_power = last_power_new
 	last_power_new = 0
-
+	last_rads = SSradiation.get_rads_at_turf(get_turf(src))
 	if(P && active)
-		var/rads = SSradiation.get_rads_at_turf(get_turf(src))
-		if(rads)
-			receive_pulse(rads * recievepulse_mult) //Maths is hard
+		if(last_rads > max_rads*2)
+			collector_break()
+		if(last_rads)
+			if(last_rads > max_rads)
+				if(world.time > end_time)
+					end_time = world.time + alert_delay
+					visible_message("\icon[src] \the [src] beeps loudly as the radiation reaches dangerous levels, indicating imminent damage.")
+					playsound(src, 'sound/effects/screech.ogg', 100, 1, 1)
+			receive_pulse(12.5*(last_rads/max_rads)/(0.3+(last_rads/max_rads)))
 
 	if(P)
-		if(P.air_contents.gas["phoron"] == 0)
+		if(P.air_contents.gas[GAS_PHORON] == 0)
 			investigate_log("<font color='red'>out of fuel</font>.","singulo")
 			eject()
 		else
-			P.air_adjust_gas("phoron", -0.001*drainratio)
+			P.air_adjust_gas(GAS_PHORON, -0.01*drainratio*min(last_rads,max_rads)/max_rads) //fuel cost increases linearly with incoming radiation
 
-/obj/machinery/power/rad_collector/attack_hand(mob/user as mob)
-	if(anchored)
-		if((stat & BROKEN) || melted)
-			to_chat(user, "<span class='warning'>The [src] is completely destroyed!</span>")
-		if(!src.locked)
-			toggle_power()
-			user.visible_message("[user.name] turns the [src.name] [active? "on":"off"].", \
-			"You turn the [src.name] [active? "on":"off"].")
-			investigate_log("turned [active?"<font color='green'>on</font>":"<font color='red'>off</font>"] by [user.key]. [P?"Fuel: [round(P.air_contents.gas["phoron"]/0.29)]%":"<font color='red'>It is empty</font>"].","singulo")
-			return
-		else
-			to_chat(user, "<span class='warning'>The controls are locked!</span>")
-			return
+/obj/machinery/power/rad_collector/CanUseTopic(mob/user)
+	if(!anchored)
+		return STATUS_CLOSE
+	return ..()
 
+/obj/machinery/power/rad_collector/interface_interact(mob/user)
+	if(!CanInteract(user, DefaultTopicState()))
+		return FALSE
+	. = TRUE
+	if((stat & BROKEN) || melted)
+		to_chat(user, "<span class='warning'>The [src] is completely destroyed!</span>")
+	if(!src.locked)
+		toggle_power()
+		user.visible_message("[user.name] turns the [src.name] [active? "on":"off"].", \
+		"You turn the [src.name] [active? "on":"off"].")
+		investigate_log("turned [active?"<font color='green'>on</font>":"<font color='red'>off</font>"] by [user.key]. [P?"Fuel: [round(P.air_contents.gas[GAS_PHORON]/0.29)]%":"<font color='red'>It is empty</font>"].","singulo")
+	else
+		to_chat(user, "<span class='warning'>The controls are locked!</span>")
 
 /obj/machinery/power/rad_collector/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/weapon/tank/phoron))
@@ -147,16 +166,11 @@ var/global/list/rad_collectors = list()
 	if(anchored)
 		to_chat(user, "<span class='warning'>The [src] needs to be unsecured from the floor first.</span>")
 		return
-	if(default_deconstruction_screwdriver(user, W))
-		return
-	if(default_deconstruction_crowbar(user, W))
-		return
-	if(default_part_replacement(user, W))
-		return
-	return
+	return ..()
 
-/obj/machinery/power/rad_collector/examine(mob/user)
-	if (..(user, 3) && !(stat & BROKEN))
+/obj/machinery/power/rad_collector/examine(mob/user, distance)
+	. = ..()
+	if (distance <= 3 && !(stat & BROKEN))
 		to_chat(user, "The meter indicates that \the [src] is collecting [last_power] W.")
 		return 1
 
@@ -203,7 +217,7 @@ var/global/list/rad_collectors = list()
 /obj/machinery/power/rad_collector/proc/receive_pulse(var/pulse_strength)
 	if(P && active)
 		var/power_produced = 0
-		power_produced = P.air_contents.gas["phoron"]*pulse_strength*20
+		power_produced = min(100*P.air_contents.gas[GAS_PHORON]*pulse_strength*pulse_coeff,max_power)
 		add_avail(power_produced)
 		last_power_new = power_produced
 		return
@@ -219,15 +233,20 @@ var/global/list/rad_collectors = list()
 		icon_state = "ca"
 
 	overlays.Cut()
+	underlays.Cut()
+
 	if(P)
-		overlays += image('infinity/icons/obj/singularity.dmi', "ptank")
+		overlays += image(icon, "ptank")
+		underlays += image(icon, "ca_filling")
+	underlays += image(icon, "ca_inside")
 	if(stat & (NOPOWER|BROKEN))
 		return
 	if(active)
-		overlays += image('infinity/icons/obj/singularity.dmi', "on")
+		var/rad_power = round(min(100 * last_rads / max_rads, 100), 20)
+		overlays += image(icon, "rads_[rad_power]")
+		overlays += image(icon, "on")
 
-
-/obj/machinery/power/rad_collector/proc/toggle_power()
+/obj/machinery/power/rad_collector/toggle_power()
 	active = !active
 	if(active)
 		flick("ca_active", src)

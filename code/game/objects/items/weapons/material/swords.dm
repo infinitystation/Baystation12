@@ -6,6 +6,7 @@
 	slot_flags = SLOT_BELT
 	w_class = ITEM_SIZE_LARGE
 	force_divisor = 0.5 // 30 when wielded with hardnes 60 (steel)
+	armor_penetration = 10
 	thrown_force_divisor = 0.5 // 10 when thrown with weight 20 (steel)
 	sharp = 1
 	edge = 1
@@ -16,6 +17,7 @@
 	worth_multiplier = 30
 
 /obj/item/weapon/material/sword/replica
+	max_force = 10
 	edge = 0
 	sharp = 0
 	force_divisor = 0.2
@@ -36,6 +38,7 @@
 	slot_flags = SLOT_BELT | SLOT_BACK
 
 /obj/item/weapon/material/sword/katana/replica
+	max_force = 10
 	edge = 0
 	sharp = 0
 	force_divisor = 0.2
@@ -45,9 +48,8 @@
 	name = "vibrokatana"
 	desc = "A high-tech take on a woefully underpowered weapon. Can't mistake its sound for anything."
 	default_material = MATERIAL_TITANIUM
-	hitsound = 'sound/weapons/anime_sword.wav'
+	hitsound = 'infinity/sound/weapons/anime_sword.wav'
 
 /obj/item/weapon/material/sword/katana/vibro/equipped(mob/user, slot)
 	if(slot == slot_l_hand || slot == slot_r_hand)
-		playsound(src, 'sound/weapons/katana_out.wav', 50, 1, -5)
-	
+		playsound(src, 'infinity/sound/weapons/katana_out.wav', 50, 1, -5)

@@ -59,11 +59,10 @@
 
 /obj/item/weapon/defibrillator/examine(mob/user)
 	. = ..()
-	if(.)
-		if(bcell)
-			to_chat(user, "The charge meter is showing [bcell.percent()]% charge left.")
-		else
-			to_chat(user, "There is no cell inside.")
+	if(bcell)
+		to_chat(user, "The charge meter is showing [bcell.percent()]% charge left.")
+	else
+		to_chat(user, "There is no cell inside.")
 
 /obj/item/weapon/defibrillator/ui_action_click()
 	toggle_paddles()
@@ -599,7 +598,8 @@
 
 /obj/item/weapon/shockpaddles/standalone/Process()
 	if(fail_counter > 0)
-		SSradiation.radiate(src, fail_counter--)
+		SSradiation.radiate(src, (fail_counter * 2))
+		fail_counter--
 	else
 		STOP_PROCESSING(SSobj, src)
 

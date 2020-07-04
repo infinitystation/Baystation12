@@ -3,7 +3,15 @@
 	desc = "A sleek and dangerous hardsuit for active combat."
 	icon_state = "security_rig"
 	suit_type = "combat hardsuit"
-	armor = list(melee = 80, bullet = 65, laser = 55, energy = 15, bomb = 80, bio = 100, rad = 60)
+	armor = list(
+		melee = ARMOR_MELEE_VERY_HIGH,
+		bullet = ARMOR_BALLISTIC_RIFLE,
+		laser = ARMOR_LASER_MAJOR,
+		energy = ARMOR_ENERGY_MINOR,
+		bomb = ARMOR_BOMB_RESISTANT,
+		bio = ARMOR_BIO_SHIELDED,
+		rad = ARMOR_RAD_RESISTANT
+		)
 	online_slowdown = 1
 	offline_slowdown = 3
 	offline_vision_restriction = TINT_HEAVY
@@ -62,7 +70,15 @@
 	desc = "An austere hardsuit used by paramilitary groups and real soldiers alike."
 	icon_state = "military_rig"
 	suit_type = "military hardsuit"
-	armor = list(melee = 80, bullet = 75, laser = 60, energy = 15, bomb = 80, bio = 100, rad = 30)
+	armor = list(
+		melee = ARMOR_MELEE_MAJOR, //INF WAS ARMOR_MELEE_VERY_HIGH
+		bullet = ARMOR_BALLISTIC_RIFLE, //INF WAS ARMOR_BALLISTIC_AP
+		laser = ARMOR_LASER_HANDGUNS, //INF WAS ARMOR_LASER_RIFLES
+		energy = ARMOR_ENERGY_SMALL, //INF WAS ARMOR_ENERGY_MINOR
+		bomb = ARMOR_BOMB_RESISTANT,
+		bio = ARMOR_BIO_SHIELDED,
+		rad = ARMOR_RAD_MINOR
+		)
 	online_slowdown = 1
 	offline_slowdown = 3
 	offline_vision_restriction = TINT_HEAVY
@@ -96,7 +112,7 @@
 		)
 
 /obj/item/clothing/gloves/rig/military
-	item_flags = ITEM_FLAG_THICKMATERIAL | ITEM_FLAG_NOCUFFS
+	item_flags = ITEM_FLAG_THICKMATERIAL //INF WAS ITEM_FLAG_THICKMATERIAL | ITEM_FLAG_NOCUFFS
 	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_UNATHI)
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_hands_unathi.dmi'
@@ -105,12 +121,12 @@
 /obj/item/weapon/rig/military/equipped
 	initial_modules = list(
 		/obj/item/rig_module/mounted/egun,
-		/obj/item/rig_module/vision/multi,
-		/obj/item/rig_module/grenade_launcher,
-		/obj/item/rig_module/ai_container,
+		//INF /obj/item/rig_module/vision/multi,
+		//INF /obj/item/rig_module/grenade_launcher,
+		//INF /obj/item/rig_module/ai_container,
 		/obj/item/rig_module/power_sink,
-		/obj/item/rig_module/electrowarfare_suite,
-		/obj/item/rig_module/chem_dispenser/combat,
+		//INF /obj/item/rig_module/electrowarfare_suite,
+		//INF /obj/item/rig_module/chem_dispenser/combat,
 		/obj/item/rig_module/cooling_unit,
-		/obj/item/rig_module/device/healthscanner
+		//INF /obj/item/rig_module/device/healthscanner
 		)

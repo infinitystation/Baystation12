@@ -75,10 +75,9 @@ var/list/gear_datums = list()
 
 /datum/category_item/player_setup_item/loadout/proc/skill_check(var/list/jobs, var/list/skills_required)
 	for(var/datum/job/J in jobs)
-		var/list/skills = pref.skills_allocated[J]
 		. = TRUE
 		for(var/R in skills_required)
-			if(skills[R] + pref.get_min_skill(J, R) < skills_required[R])
+			if(pref.get_total_skill_value(J, R) < skills_required[R])
 				. = FALSE
 				break
 		if(.)
@@ -171,8 +170,9 @@ var/list/gear_datums = list()
 		var/datum/job/J = SSjobs.get_by_title(job_title)
 		if(J)
 			dd_insertObjectList(jobs, J)
+	var/list/valid_gear_list = valid_gear_choices() //INF
 	for(var/gear_name in LC.gear)
-		if(!(gear_name in valid_gear_choices()))
+		if(!(gear_name in valid_gear_list)) //INF, WAS if(!(gear_name in valid_gear_choices()))
 			continue
 		var/list/entry = list()
 		var/datum/gear/G = LC.gear[gear_name]

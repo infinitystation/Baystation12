@@ -262,11 +262,6 @@
 	desc = "This plaque memorializes those engineers and technicians who made the ultimate sacrifice to save their vessel and its crew."
 	icon_state = "atmosplaque"
 
-/obj/structure/sign/floorplaque
-	name = "\improper commemorative plaque"
-	desc = "A list of dead explorers who gave their lives in search of the next great discovery. Hope you don't join them."
-	icon_state = "floorplaque"
-
 /obj/structure/sign/double/maltesefalcon	//The sign is 64x32, so it needs two tiles. ;3
 	name = "The Maltese Falcon"
 	desc = "The Maltese Falcon, Space Bar and Grill."
@@ -431,26 +426,8 @@
 	..()
 
 /obj/item/sign/medipolma/examine(mob/user)
-	..()
+	. = ..()
 	if(claimant)
 		to_chat(user,"This one belongs to Dr.[claimant], MD.")
 	else
 		to_chat(user,"The name is left blank for some reason.")
-
-/obj/structure/sign/nanotrasen
-	name = "\improper Nanotrasen logo"
-	desc = "Логотип корпорации будущего. Нано - отражение технологий, Трэйзен - Фамили&#255; генерального директора корпорации."
-	icon = 'icons/obj/infinity_decals.dmi'
-	icon_state = "NT"
-
-/obj/structure/sign/spider_clan
-	name = "\improper Spider Clan"
-	desc = "Клан паука - органиазаци&#255;, в которой обучаютс&#255; лучшие наемные убийцы изведанного космоса. Веро&#255тно, мне повезло, если &#255; знаю это."
-	icon = 'icons/obj/infinity_decals.dmi'
-	icon_state = "spider_clan"
-
-/obj/structure/sign/fifthfleet
-	name = "\improper Fifth Fleet"
-	desc = "Недавно созданный, оборудованный и модифицированный Пятый Флот был введен в 2297 г Ассамблеями для того, чтобы действовать как Силы Быстрого Реагирования. Хотя он еще невелик, в Пятый Флот входят одни из самых ярких умов Сил Обороны и оснащен новейшими технологиями."
-	icon = 'icons/obj/infinity_decals.dmi'
-	icon_state = "fifthfleet"

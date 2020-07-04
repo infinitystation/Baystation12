@@ -42,7 +42,7 @@
 		kill()
 
 /datum/event/mail/announce()
-	command_announcement.Announce("A batch of mail adressed to the crew of \the [location_name()] has arrived at the sorting office and will arrive on the next available supply shuttle.", pick("Major Bill's Shipping", "Flefingbridge Transport", "SolX Freight", "QuiCo. Mailing Services"), zlevels = affecting_z)
+	command_announcement.Announce("A batch of mail adressed to the crew of \the [station_name()] has arrived at the sorting office and will arrive on the next available supply shuttle.", pick("Major Bill's Shipping", "Flefingbridge Transport", "SolX Freight", "QuiCo. Mailing Services"), zlevels = affecting_z)
 
 /datum/event/mail/tick()
 	var/datum/shuttle/autodock/ferry/supply/shuttle = SSsupply.shuttle
@@ -70,8 +70,8 @@
 		letter.icon_state = "paper_words"
 
 		var/gift_path = pick(possible_gifts)
-		// 0.1% chance to get a rare gift (effectively a 0.00025% chance when the event happens)
-		if(rand(1,1000) == 1)
+		// 15% chance to get a rare gift
+		if(prob(15))
 			gift_path = pick(rare_gifts)
 
 		var/obj/item/gift = new gift_path()

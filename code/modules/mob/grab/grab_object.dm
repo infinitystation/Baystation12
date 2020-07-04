@@ -47,10 +47,10 @@
 	GLOB.dismembered_event.register(affecting, src, .proc/on_organ_loss)
 	GLOB.zone_selected_event.register(assailant.zone_sel, src, .proc/on_target_change)
 
-/obj/item/grab/examine(var/user)
-	..()
+/obj/item/grab/examine(mob/user)
+	. = ..()
 	var/obj/item/O = get_targeted_organ()
-	to_chat(user,"A grab on \the [affecting]'s [O.name].")
+	to_chat(user, "A grab on \the [affecting]'s [O.name].")
 
 /obj/item/grab/Process()
 	current_grab.process(src)
@@ -139,19 +139,26 @@
 		return 0
 	if(assailant.anchored || affecting.anchored)
 		return 0
-	if(assailant == affecting)
-		to_chat(assailant, "<span class='notice'>You can't grab yourself.</span>")
-		return 0
 	if(assailant.get_active_hand())
 		to_chat(assailant, "<span class='notice'>You can't grab someone if your hand is full.</span>")
 		return 0
+/*INF
 	if(assailant.grabbed_by.len)
 		to_chat(assailant, "<span class='notice'>You can't grab someone if you're being grabbed.</span>")
 		return 0
+INF*/
 	var/obj/item/organ/organ = get_targeted_organ()
 	if(!istype(organ))
 		to_chat(assailant, "<span class='notice'>\The [affecting] is missing that body part!</span>")
 		return 0
+	if(assailant == affecting)
+		if(!current_grab.can_grab_self)	//let's not nab ourselves
+			to_chat(assailant, "<span class='notice'>You can't grab yourself!</span>")
+			return 0
+		var/list/bad_parts = assailant.hand ? list(BP_L_ARM, BP_L_HAND) :  list(BP_R_ARM, BP_R_HAND)
+		if(organ.organ_tag in bad_parts)
+			to_chat(assailant, "<span class='notice'>You can't grab your own [organ.name] with itself!</span>")
+			return 0
 	for(var/obj/item/grab/G in affecting.grabbed_by)
 		if(G.assailant == assailant && G.target_zone == target_zone)
 			var/obj/O = G.get_targeted_organ()

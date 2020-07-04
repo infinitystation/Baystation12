@@ -1,0 +1,6 @@
+{
+  "ckey" :            "moonmen",
+  "character_name" :  "Timur Glazkov",
+  "item_path" :       "/obj/item/weapon/storage/backpack/baul",
+  "req_access" :      [ "ACCESS_SECURITY" ]
+  }

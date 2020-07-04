@@ -2,7 +2,7 @@
 			AHTUNG!
 		146% copypaste
 ******************************/
-
+//inf //SolatK
 /datum/build_mode/callproc
 	name = "Call proc"
 	icon_state = "buildmode10"
@@ -19,10 +19,10 @@
 	. = ..()
 
 /datum/build_mode/callproc/Help()
-	to_chat(user, "<span class='notice'>***********************************************************</span>")
-	to_chat(user, "<span class='notice'>Right Click on call proc Mode Button = set proc & vars</span>")
-	to_chat(user, "<span class='notice'>Left Click                           = apply proc to atom</span>")
-	to_chat(user, "<span class='notice'>***********************************************************</span>")
+	to_chat(user, SPAN_NOTICE("**************************************"))
+	to_chat(user, SPAN_NOTICE("L.Click on target = apply proc to atom"))
+	to_chat(user, SPAN_NOTICE("R.Click on button = set proc & vars"))
+	to_chat(user, SPAN_NOTICE("**************************************"))
 
 /datum/build_mode/callproc/Configurate()
 	proc_name = input("Enter proc name:", "Proc name", proc_name) as text|null
@@ -32,16 +32,16 @@
 	get_args()
 
 /datum/build_mode/callproc/OnClick(var/atom/A, var/list/parameters)
-	if(!check_rights(R_DEBUG, 1, src) && !check_rights(R_VAREDIT, 1, src))
+	if(!check_rights(R_DEBUG, 1, user) && !check_rights(R_VAREDIT, 1, user))
 		return
-	log_admin("[key_name(usr)] called [A]'s [proc_name]() with [arguments.len ? "the arguments [list2params(arguments)]" : "no arguments"].")
-	message_admins("[key_name(usr)] called [A]'s [proc_name]() with [arguments.len ? "the arguments [list2params(arguments)]" : "no arguments"].")
-	if(arguments.len)
-		returnval = call(A, proc_name)(arglist(arguments))
-	else
-		returnval = call(A, proc_name)()
-
-	to_chat(usr, "<span class='info'>[proc_name]() returned: [json_encode(returnval)]</span>")
+	if(parameters["left"] && istype(A))
+		log_admin("[key_name(user)] called [A]'s [proc_name]() with [arguments.len ? "the arguments [list2params(arguments)]" : "no arguments"].")
+		message_admins("[key_name(user)] called [A]'s [proc_name]() with [arguments.len ? "the arguments [list2params(arguments)]" : "no arguments"].")
+		if(arguments.len)
+			returnval = call(A, proc_name)(arglist(arguments))
+		else
+			returnval = call(A, proc_name)()
+		to_chat(user, "<span class='info'>[proc_name]() returned: [json_encode(returnval)]</span>")
 
 /datum/build_mode/callproc/proc/get_args()
 	var/done = 0

@@ -1,6 +1,8 @@
+//INF FILE
 /obj/structure/bed/sofa
 	name = "leather sofa"
 	desc = "A wide and comfy sofa - no one assistant was ate by it due production! It's made of steel and covered with synthetic leather."
+	icon = 'infinity/icons/obj/furniture.dmi'
 	icon_state = "sofa_right"
 	buckle_dir = 0
 	buckle_lying = 0
@@ -10,7 +12,7 @@
 
 /obj/structure/bed/sofa/New(var/newloc)
 	base_icon = icon_state
-	..(newloc,MATERIAL_LEATHER)
+	..(newloc,MATERIAL_LEATHER_GENERIC)
 
 /obj/structure/bed/sofa/post_buckle_mob()
 	update_icon()
@@ -18,13 +20,13 @@
 
 /obj/structure/bed/sofa/on_update_icon()
 	overlays.Cut()
-	var/image/I = image('icons/obj/furniture_inf.dmi', "[base_icon]_over")
-	I.plane = ABOVE_HUMAN_PLANE
+	var/image/I = image(src, "[base_icon]_over")
+//	I.plane = ABOVE_HUMAN_PLANE
 	I.layer = ABOVE_HUMAN_LAYER
 	overlays |= I
 	if(buckled_mob)
-		var/image/D = image('icons/obj/furniture_inf.dmi', "[base_icon]_armrest")
-		D.plane = ABOVE_HUMAN_PLANE
+		var/image/D = image(src, "[base_icon]_armrest")
+//		D.plane = ABOVE_HUMAN_PLANE
 		D.layer = ABOVE_HUMAN_LAYER
 		overlays |= D
 

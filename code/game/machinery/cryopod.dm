@@ -3,7 +3,6 @@
  * Stealing a lot of concepts/code from sleepers due to massive laziness.
  * The despawn tick will only fire if it's been more than time_till_despawned ticks
  * since time_entered, which is world.time when the occupant moves in.
- * ~ Zuhayr
  */
 
 
@@ -14,7 +13,6 @@
 	desc = "An interface between crew and the cryogenic storage oversight systems."
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "cellconsole"
-	circuit = /obj/item/weapon/circuitboard/cryopodcontrol
 	density = 0
 	interact_offline = 1
 	light_color = "#00bf00"
@@ -35,20 +33,15 @@
 	icon = 'icons/obj/robot_storage.dmi'
 	icon_state = "console"
 	light_color = "#00bfe1"
-	circuit = /obj/item/weapon/circuitboard/robotstoragecontrol
-
 	storage_type = "cyborgs"
 	storage_name = "Robotic Storage Control"
 	allow_items = 0
 
-/obj/machinery/computer/cryopod/attack_ai()
-	src.attack_hand()
+/obj/machinery/computer/cryopod/interface_interact(mob/user)
+	interact(user)
+	return TRUE
 
-/obj/machinery/computer/cryopod/attack_hand(mob/user = usr)
-	if(stat & (NOPOWER|BROKEN))
-		return
-	..()
-
+/obj/machinery/computer/cryopod/interact(mob/user)
 	user.set_machine(src)
 
 	var/dat
@@ -61,7 +54,7 @@
 		dat += "<a href='?src=\ref[src];item=1'>Recover object</a>.<br>"
 		dat += "<a href='?src=\ref[src];allitems=1'>Recover all objects</a>.<br>"
 
-	user << browse(dat, "window=cryopod_console")
+	show_browser(user, dat, "window=cryopod_console")
 	onclose(user, "cryopod_console")
 
 /obj/machinery/computer/cryopod/OnTopic(user, href_list, state)
@@ -99,7 +92,7 @@
 			to_chat(user, "<span class='notice'>\The [I] is no longer in storage.</span>")
 			return TOPIC_HANDLED
 
-		visible_message("<span class='notice'>The console beeps happily as it disgorges \the [I].</span>", 3)
+		visible_message("<span class='notice'>The console beeps happily as it disgorges \the [I].</span>", range = 3)
 
 		I.dropInto(loc)
 		frozen_items -= I
@@ -112,21 +105,19 @@
 			to_chat(user, "<span class='notice'>There is nothing to recover from storage.</span>")
 			return TOPIC_HANDLED
 
-		visible_message("<span class='notice'>The console beeps happily as it disgorges the desired objects.</span>", 3)
+		visible_message("<span class='notice'>The console beeps happily as it disgorges the desired objects.</span>", range = 3)
 
 		for(var/obj/item/I in frozen_items)
 			I.dropInto(loc)
 			frozen_items -= I
 		. = TOPIC_REFRESH
 
-	attack_hand(user)
-
-/obj/item/weapon/circuitboard/cryopodcontrol
+/obj/item/weapon/stock_parts/circuitboard/cryopodcontrol
 	name = "Circuit board (Cryogenic Oversight Console)"
 	build_path = /obj/machinery/computer/cryopod
 	origin_tech = list(TECH_DATA = 3)
 
-/obj/item/weapon/circuitboard/robotstoragecontrol
+/obj/item/weapon/stock_parts/circuitboard/robotstoragecontrol
 	name = "Circuit board (Robotic Storage Console)"
 	build_path = /obj/machinery/computer/cryopod/robot
 	origin_tech = list(TECH_DATA = 3)
@@ -157,9 +148,10 @@
 
 	var/base_icon_state = "body_scanner_0"
 	var/occupied_icon_state = "body_scanner_1"
-	var/on_store_message = "has entered long-term storage."
+	var/on_store_message = "погружается в криосон."
 	var/on_store_name = "Cryogenic Oversight"
-	var/on_enter_occupant_message = "You feel cool air surround you. You go numb as your senses turn inward."
+	var/on_enter_occupant_message = "Вы чувствуете, как прохладный воздух окружает Вас. \
+	Тело постепенно немеете, пока чувства затупляются..."
 	var/allow_occupant_types = list(/mob/living/carbon/human)
 	var/disallow_occupant_types = list()
 
@@ -196,9 +188,10 @@
 	icon_state = "pod_0"
 	base_icon_state = "pod_0"
 	occupied_icon_state = "pod_1"
-	on_store_message = "has entered robotic storage."
+	on_store_message = "переходит в хранилище синтетиков."
 	on_store_name = "Robotic Storage Oversight"
-	on_enter_occupant_message = "The storage unit broadcasts a sleep signal to you. Your systems start to shut down, and you enter low-power mode."
+	on_enter_occupant_message = "Хранилище передает Вам сигнал отключения. \
+	Ваши системы начинают постепенно отключаться, переходя в режим пониженного энергопотребления..."
 	allow_occupant_types = list(/mob/living/silicon/robot)
 //	disallow_occupant_types = list(/mob/living/silicon/robot/drone)
 	applies_stasis = 0
@@ -218,8 +211,8 @@
 	. = ..()
 	airtank = new()
 	airtank.temperature = T0C
-	airtank.adjust_gas("oxygen", MOLES_O2STANDARD, 0)
-	airtank.adjust_gas("nitrogen", MOLES_N2STANDARD)
+	airtank.adjust_gas(GAS_OXYGEN, MOLES_O2STANDARD, 0)
+	airtank.adjust_gas(GAS_NITROGEN, MOLES_N2STANDARD)
 	airtank.total_moles = 103.984
 	airtank.temperature = 293
 	return_air()
@@ -238,9 +231,9 @@
 
 	var/list/possible_locations = list()
 	if(GLOB.using_map.use_overmap)
-		var/obj/effect/overmap/O = map_sectors["[z]"]
-		for(var/obj/effect/overmap/OO in range(O,2))
-			if(OO.in_space || istype(OO,/obj/effect/overmap/sector/exoplanet))
+		var/obj/effect/overmap/visitable/O = map_sectors["[z]"]
+		for(var/obj/effect/overmap/visitable/OO in range(O,2))
+			if(OO.in_space || istype(OO,/obj/effect/overmap/visitable/sector/exoplanet))
 				possible_locations |= text2num(level)
 
 	var/newz = GLOB.using_map.get_empty_zlevel()
@@ -282,8 +275,7 @@
 
 	// Don't send messages unless we *need* the computer, and less than five minutes have passed since last time we messaged
 	if(!control_computer && urgent && last_no_computer_message + 5*60*10 < world.time)
-		log_admin("Cryopod in [src.loc.loc] could not find control computer!")
-		message_admins("Cryopod in [src.loc.loc] could not find control computer!")
+		log_and_message_admins("Cryopod in [src.loc.loc] could not find control computer!")
 		last_no_computer_message = world.time
 
 	return control_computer != null
@@ -305,10 +297,10 @@
 
 /obj/machinery/cryopod/examine(mob/user)
 	. = ..()
-	if (. && occupant && user.Adjacent(src))
-		occupant.examine(user)
+	if (occupant && user.Adjacent(src))
+		occupant.examine(arglist(args))
 
-//Lifted from Unity stasis.dm and refactored. ~Zuhayr
+//Lifted from Unity stasis.dm and refactored.
 /obj/machinery/cryopod/Process()
 	if(occupant)
 		if(applies_stasis && iscarbon(occupant) && (world.time > time_entered + 20 SECONDS))
@@ -360,6 +352,7 @@
 	var/list/items = src.contents.Copy()
 	items -= occupant // Don't delete the occupant
 	items -= announce // or the autosay radio.
+	items -= component_parts
 
 	for(var/obj/item/W in items)
 
@@ -407,6 +400,9 @@
 	// Delete them from datacore.
 	var/sanitized_name = occupant.real_name
 	sanitized_name = sanitize(sanitized_name)
+	var/datum/computer_file/report/crew_record/R = get_crewmember_record(sanitized_name)
+	if(R)
+		qdel(R)
 
 	icon_state = base_icon_state
 
@@ -424,12 +420,9 @@
 		control_computer._admin_logs += "[key_name(occupant)] ([role_alt_title]) at [stationtime2text()]"
 	log_and_message_admins("[key_name(occupant)] ([role_alt_title]) entered cryostorage.")
 
-	var/datum/computer_file/report/crew_record/R = get_crewmember_record(sanitized_name)
-	if(R)
+	if(loc.z in GLOB.using_map.station_levels) //INF
 		announce.autosay("[occupant.real_name], [role_alt_title], [on_store_message]", "[on_store_name]")
-		qdel(R)
-
-	visible_message("<span class='notice'>\The [initial(name)] hums and hisses as it moves [occupant.real_name] into storage.</span>", 3)
+	visible_message("<span class='notice'>\The [initial(name)] hums and hisses as it moves [occupant.real_name] into storage.</span>", range = 3)
 
 	//This should guarantee that ghosts don't spawn.
 	occupant.ckey = null
@@ -443,8 +436,8 @@
 		if(target != user)
 			if(alert(target,"Would you like to enter long-term storage?",,"Yes","No") != "Yes")
 				return
-	if(!user.incapacitated() && user.Adjacent(src) && user.Adjacent(target))
-		visible_message("[user] starts putting [target] into \the [src].", 3)
+	if(!user.incapacitated() && !user.anchored && user.Adjacent(src) && user.Adjacent(target))
+		visible_message("[user] starts putting [target] into \the [src].", range = 3)
 		if(!do_after(user, 20, src)|| QDELETED(target))
 			return
 		set_occupant(target)
@@ -500,7 +493,7 @@
 	light_outer_range = 1
 
 	//Eject any items that aren't meant to be in the pod.
-	var/list/items = src.contents
+	var/list/items = contents - component_parts
 	if(occupant) items -= occupant
 	if(announce) items -= announce
 
@@ -530,7 +523,7 @@
 			to_chat(usr, "You're too busy getting your life sucked out of you.")
 			return
 
-	visible_message("[usr] starts climbing into \the [src].", 3)
+	visible_message("\The [usr] starts climbing into \the [src].", range = 3)
 
 	if(do_after(usr, 20, src))
 
@@ -577,7 +570,8 @@
 	if(occupant.client)
 		if(!silent)
 			to_chat(occupant, "<span class='notice'>[on_enter_occupant_message]</span>")
-			to_chat(occupant, "<span class='notice'><b>If you ghost, log out or close your client now, your character will shortly be permanently removed from the round.</b></span>")
+			to_chat(occupant, "<span class='notice'><b>Если Вы выйдете из тела или закроете игру, \
+			то Ваш персонаж будет немедленно убран из раунда в крио-сон.</b></span>")
 		occupant.client.perspective = EYE_PERSPECTIVE
 		occupant.client.eye = src
 	occupant.forceMove(src)

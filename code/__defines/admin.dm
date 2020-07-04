@@ -15,8 +15,6 @@
 #define BANTYPE_JOB_PERMA   3
 #define BANTYPE_JOB_TEMP    4
 #define BANTYPE_ANY_FULLBAN 5 // Used to locate stuff to unban.
-#define BANTYPE_SOFTPERMA   6
-#define BANTYPE_SOFTBAN     7
 
 #define ROUNDSTART_LOGOUT_REPORT_TIME 6000 // Amount of time (in deciseconds) after the rounds starts, that the player disconnect report is issued.
 
@@ -27,7 +25,7 @@
 #define R_FUN           0x8
 #define R_SERVER        0x10
 #define R_DEBUG         0x20
-#define R_JUDGE         0x40
+#define R_JUDGE         0x40	//INF WAS R_POSSESS
 #define R_PERMISSIONS   0x80
 #define R_STEALTH       0x100
 #define R_REJUVINATE    0x200
@@ -35,7 +33,7 @@
 #define R_SOUNDS        0x800
 #define R_SPAWN         0x1000
 #define R_MOD           0x2000
-#define R_MENTOR        0x4000
+#define R_XENO	        0x4000	//INF
 #define R_HOST          0x8000 //higher than this will overflow
 #define R_INVESTIGATE   (R_ADMIN|R_MOD)
 
@@ -48,3 +46,6 @@
 #define TICKET_CLOSED 0   // Ticket has been resolved or declined
 #define TICKET_OPEN     1 // Ticket has been created, but not responded to
 #define TICKET_ASSIGNED 2 // An admin has assigned themself to the ticket and will respond
+
+#define LAST_CKEY(M) (M.ckey || M.last_ckey)
+#define LAST_KEY(M)  (M.key || M.last_ckey)

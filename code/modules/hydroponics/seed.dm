@@ -24,6 +24,13 @@
 	var/splat_type = /obj/effect/decal/cleanable/fruit_smudge // Graffiti decal.
 	var/has_mob_product
 	var/force_layer
+	var/req_CO2_moles    = 1.0// Moles of CO2 required for photosynthesis.
+
+//[INF]
+	var/growing_icon	=	'icons/obj/hydroponics_growing.dmi'
+	var/vines_icon		=	'icons/obj/hydroponics_vines.dmi'
+	var/large_icon		=	'icons/obj/hydroponics_large.dmi'
+//[/INF]
 
 /datum/seed/New()
 
@@ -62,6 +69,7 @@
 	set_trait(TRAIT_IDEAL_HEAT,           293)          // Preferred temperature in Kelvin.
 	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.25)         // Plant eats this much per tick.
 	set_trait(TRAIT_PLANT_COLOUR,         "#46b543")    // Colour of the plant icon.
+	set_trait(TRAIT_PHOTOSYNTHESIS,       1)            // If it turns CO2 into oxygen
 
 	update_growth_stages()
 
@@ -78,6 +86,9 @@
 	if(!isnull(ubound))  nval = min(nval,ubound)
 	if(!isnull(lbound))  nval = max(nval,lbound)
 	traits["[trait]"] =  nval
+
+	if(trait == TRAIT_PLANT_ICON)
+		update_growth_stages()
 
 /datum/seed/proc/create_spores(var/turf/T)
 	if(!T)
@@ -147,7 +158,7 @@
 	if(!get_trait(TRAIT_STINGS))
 		return
 
-	if(chems && chems.len && target.reagents)
+	if(chems && chems.len && target.reagents && length(target.organs))
 
 		var/obj/item/organ/external/affecting = pick(target.organs)
 
@@ -164,6 +175,22 @@
 				target.reagents.add_reagent(rid,injecting)
 		else
 			to_chat(target, "<span class='danger'>Sharp spines scrape against your armour!</span>")
+
+/datum/seed/proc/do_photosynthesis(var/turf/current_turf, var/datum/gas_mixture/environment, var/light_supplied)
+	// Photosynthesis - *very* simplified process.
+	// For now, only light-dependent reactions are available (no Calvin cycle).
+	// It's active only for those plants which doesn't consume nor exude gasses.
+	if(!get_trait(TRAIT_PHOTOSYNTHESIS))
+		return
+	if(!(environment) || !(environment.gas))
+		return
+	if(LAZYLEN(exude_gasses) || LAZYLEN(consume_gasses ))
+		return
+	if(!(light_supplied) || !(get_trait(TRAIT_REQUIRES_WATER)))
+		return
+	if(environment.get_gas(GAS_CO2) >= req_CO2_moles)
+		environment.adjust_gas(GAS_CO2, -req_CO2_moles, 1)
+		environment.adjust_gas(GAS_OXYGEN, req_CO2_moles, 1)
 
 //Splatter a turf.
 /datum/seed/proc/splatter(var/turf/T,var/obj/item/thrown)
@@ -314,6 +341,16 @@
 		if(abs(light_supplied - get_trait(TRAIT_IDEAL_LIGHT)) > get_trait(TRAIT_LIGHT_TOLERANCE))
 			health_change += rand(1,3) * HYDRO_SPEED_MULTIPLIER
 
+	for(var/obj/effect/effect/smoke/chem/smoke in range(1, current_turf))
+		if(smoke.reagents.has_reagent(/datum/reagent/toxin/plantbgone))
+			return 100
+
+	// Pressure and temperature are needed as much as water and light.
+	// If any of the previous environment checks has failed
+	// the photosynthesis cannot be triggered.
+	if(health_change == 0)
+		do_photosynthesis(current_turf, environment, light_supplied)
+
 	return health_change
 
 /datum/seed/proc/apply_special_effect(var/mob/living/target,var/obj/item/thrown)
@@ -416,12 +453,12 @@
 
 	if(prob(5))
 		consume_gasses = list()
-		var/gas = pick("oxygen","nitrogen","phoron","carbon_dioxide")
+		var/gas = pick(GAS_OXYGEN,GAS_NITROGEN,GAS_PHORON,GAS_CO2)
 		consume_gasses[gas] = rand(3,9)
 
 	if(prob(5))
 		exude_gasses = list()
-		var/gas = pick("oxygen","nitrogen","phoron","carbon_dioxide")
+		var/gas = pick(GAS_OXYGEN,GAS_NITROGEN,GAS_PHORON,GAS_CO2)
 		exude_gasses[gas] = rand(3,9)
 
 	chems = list()
@@ -801,19 +838,19 @@
 
 /datum/seed/proc/get_icon(growth_stage)
 	var/plant_icon = get_trait(TRAIT_PLANT_ICON)
-	var/image/res = image('icons/obj/hydroponics_growing.dmi', "[plant_icon]-[growth_stage]")
+	var/image/res = image(growing_icon, "[plant_icon]-[growth_stage]") //inf //was `var/image/res = image('icons/obj/hydroponics_growing.dmi', "[plant_icon]-[growth_stage]")`
 	if(get_growth_type())
 		res.icon_state = "[get_growth_type()]-[growth_stage]"
 	else
 		res.icon_state = "[plant_icon]-[growth_stage]"
 
 	if(get_growth_type())
-		res.icon = 'icons/obj/hydroponics_vines.dmi'
+		res.icon = vines_icon //inf //was `res.icon = 'icons/obj/hydroponics_vines.dmi'`
 
 	res.color = get_trait(TRAIT_PLANT_COLOUR)
 
 	if(get_trait(TRAIT_LARGE))
-		res.icon = 'icons/obj/hydroponics_large.dmi'
+		res.icon = large_icon //inf //was `res.icon = 'icons/obj/hydroponics_large.dmi'
 		res.pixel_x = -8
 		res.pixel_y = -16
 

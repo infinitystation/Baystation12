@@ -6,11 +6,10 @@
 	density = 0
 	anchored = 1
 	w_class = ITEM_SIZE_NORMAL
-	plane = ABOVE_PLATING_PLANE
 	layer = LATTICE_LAYER
 	color = COLOR_STEEL
 	var/init_material = MATERIAL_STEEL
-	//	obj_flags = OBJ_FLAG_CONDUCTIBLE
+	obj_flags = OBJ_FLAG_NOFALL
 
 /obj/structure/lattice/get_material()
 	return material
@@ -71,7 +70,8 @@
 		return
 	if(istype(C, /obj/item/weapon/gun/energy/plasmacutter))
 		var/obj/item/weapon/gun/energy/plasmacutter/cutter = C
-		cutter.slice(user)
+		if(!cutter.slice(user))
+			return
 		deconstruct(user)
 		return
 	if (istype(C, /obj/item/stack/material/rods))

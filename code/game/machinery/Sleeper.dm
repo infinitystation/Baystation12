@@ -3,11 +3,14 @@
 	desc = "A fancy bed with built-in injectors, a dialysis machine, and a limited health scanner."
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_0"
-	var/base_icon = "sleeper"
 	density = 1
 	anchored = 1
 	clicksound = 'sound/machines/buttonbeep.ogg'
 	clickvol = 30
+	base_type = /obj/machinery/sleeper
+	construct_state = /decl/machine_construction/default/panel_closed
+	uncreated_component_parts = null
+	stat_immune = 0
 	var/mob/living/carbon/human/occupant = null
 	var/list/base_chemicals = list("Inaprovaline" = /datum/reagent/inaprovaline, "Soporific" = /datum/reagent/soporific, "Paracetamol" = /datum/reagent/paracetamol, "Dylovene" = /datum/reagent/dylovene, "Dexalin" = /datum/reagent/dexalin)
 	var/list/available_chemicals = list()
@@ -21,50 +24,24 @@
 	var/stasis = 1
 	var/synth_modifier = 1
 	var/pump_speed
+	var/stasis_power = 5 KILOWATTS
 
 	idle_power_usage = 15
 	active_power_usage = 1 KILOWATTS //builtin health analyzer, dialysis machine, injectors.
 
-/obj/machinery/sleeper/Initialize()
+/obj/machinery/sleeper/Initialize(mapload, d = 0, populate_parts = TRUE)
 	. = ..()
-	component_parts = list(
-		new /obj/item/weapon/circuitboard/sleeper,
-		new /obj/item/weapon/stock_parts/scanning_module,
-		new /obj/item/weapon/stock_parts/manipulator,
-		new /obj/item/weapon/stock_parts/manipulator,
-		new /obj/item/weapon/stock_parts/console_screen,
-		new /obj/item/weapon/reagent_containers/syringe,
-		new /obj/item/weapon/reagent_containers/syringe,
-		new /obj/item/weapon/reagent_containers/glass/beaker/large)
-	RefreshParts()
-
-	beaker = locate(/obj/item/weapon/reagent_containers/glass/beaker/large) in component_parts
+	if(populate_parts)
+		beaker = new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
 	update_icon()
 
-/obj/machinery/sleeper/RefreshParts()
-	var/U = 0
-
-	for(var/obj/item/weapon/stock_parts/P in component_parts)
-		if(istype(P, /obj/item/weapon/stock_parts/manipulator))
-			U += P.rating
-		if(istype(P, /obj/item/weapon/stock_parts/scanning_module))
-			U += P.rating
-
-	switch(U)
-		if(0 to 5)
-			available_chemicals = list("Inaprovaline" = /datum/reagent/inaprovaline, "Soporific" = /datum/reagent/soporific, "Paracetamol" = /datum/reagent/paracetamol, "Dylovene" = /datum/reagent/dylovene, "Dexalin" = /datum/reagent/dexalin)
-		if(6 to 8)
-			available_chemicals = list("Inaprovaline" = /datum/reagent/inaprovaline, "Soporific" = /datum/reagent/soporific, "Tramadol" = /datum/reagent/tramadol, "Dylovene" = /datum/reagent/dylovene, "Hyronalin" = /datum/reagent/hyronalin, "Dexalin" = /datum/reagent/dexalin, "Kelotane" = /datum/reagent/kelotane)
-		else
-			available_chemicals = list("Inaprovaline" = /datum/reagent/inaprovaline, "Soporific" = /datum/reagent/soporific, "Tramadol" = /datum/reagent/tramadol, "Dylovene" = /datum/reagent/dylovene, "Arithrazine" = /datum/reagent/arithrazine, "Dexalin Plus" = /datum/reagent/dexalinp, "Dermaline" = /datum/reagent/dermaline, "Bicaridine" = /datum/reagent/bicaridine, "Alkysine" = /datum/reagent/alkysine)
-
-/obj/machinery/sleeper/examine(mob/user)
+/obj/machinery/sleeper/examine(mob/user, distance)
 	. = ..()
-	if (. && user.Adjacent(src))
+	if (distance <= 1)
 		if (beaker)
 			to_chat(user, "It is loaded with a beaker.")
 		if(occupant)
-			occupant.examine(user)
+			occupant.examine(arglist(args))
 		if (emagged && user.skill_check(SKILL_MEDICAL, SKILL_EXPERT))
 			to_chat(user, "The sleeper chemical synthesis controls look tampered with.")
 
@@ -98,13 +75,23 @@
 		occupant.SetStasis(stasis)
 
 /obj/machinery/sleeper/on_update_icon()
-	icon_state = "[base_icon]_[occupant ? "1" : "0"]"
+//[INF]
+	var/list/bas_icon = splittext(icon_state, "_")
+	if(length(bas_icon)) bas_icon = bas_icon[1]
+//[/INF]
+	if(!occupant)
+		icon_state = "[bas_icon]_0"//inf//was: icon_state = "sleeper_0"
+	else if(stat & (BROKEN|NOPOWER))
+		icon_state = "[bas_icon]_1"//inf//was: icon_state = "sleeper_1"
+	else
+		icon_state = (("[bas_icon]_2" in icon_states(icon)) ? "[bas_icon]_2" : "[bas_icon]_1") //inf//was: icon_state = "sleeper_2"
 
-/obj/machinery/sleeper/attack_hand(var/mob/user)
-	if(..())
-		return 1
+/obj/machinery/sleeper/DefaultTopicState()
+	return GLOB.outside_state
 
+/obj/machinery/sleeper/interface_interact(var/mob/user)
 	ui_interact(user)
+	return TRUE
 
 /obj/machinery/sleeper/ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.outside_state)
 	var/data[0]
@@ -116,16 +103,16 @@
 		var/list/reagent = list()
 		reagent["name"] = T
 		if(occupant && occupant.reagents)
-			reagent["amount"] = occupant.reagents.get_reagent_amount(T)
+			reagent["amount"] = occupant.reagents.get_reagent_amount(available_chemicals[T])
 		reagents += list(reagent)
 	data["reagents"] = reagents.Copy()
 
-	if(occupant)
+	if(istype(occupant))
 		var/scan = user.skill_check(SKILL_MEDICAL, SKILL_ADEPT) ? medical_scan_results(occupant) : "<span class='white'><b>Contains: \the [occupant]</b></span>"
 		scan = replacetext(scan,"'scan_notice'","'white'")
 		scan = replacetext(scan,"'scan_warning'","'average'")
 		scan = replacetext(scan,"'scan_danger'","'bad'")
-		data["occupant"] = scan
+		data["occupant"] =scan
 	else
 		data["occupant"] = 0
 	if(beaker)
@@ -172,23 +159,18 @@
 				return TOPIC_REFRESH
 	if(href_list["stasis"])
 		var/nstasis = text2num(href_list["stasis"])
-		if(stasis != nstasis && nstasis in stasis_settings)
+		if(stasis != nstasis && (nstasis in stasis_settings))
 			stasis = text2num(href_list["stasis"])
-			change_power_consumption(initial(active_power_usage) + 5 KILOWATTS * (stasis-1), POWER_USE_ACTIVE)
+			change_power_consumption(initial(active_power_usage) + stasis_power * (stasis-1), POWER_USE_ACTIVE)
 			return TOPIC_REFRESH
 
-/obj/machinery/sleeper/attack_ai(var/mob/user)
-	return attack_hand(user)
-
-/obj/machinery/sleeper/attackby(var/obj/item/I, var/mob/user)
-	if(default_deconstruction_screwdriver(user, I))
+/obj/machinery/sleeper/state_transition(var/decl/machine_construction/default/new_state)
+	. = ..()
+	if(istype(new_state))
 		updateUsrDialog()
 		go_out()
-		return
-	if(default_deconstruction_crowbar(user, I))
-		return
-	if(default_part_replacement(user, I))
-		return
+
+/obj/machinery/sleeper/attackby(var/obj/item/I, var/mob/user)
 	if(istype(I, /obj/item/weapon/reagent_containers/glass))
 		add_fingerprint(user)
 		if(!beaker)
@@ -198,9 +180,8 @@
 			user.visible_message("<span class='notice'>\The [user] adds \a [I] to \the [src].</span>", "<span class='notice'>You add \a [I] to \the [src].</span>")
 		else
 			to_chat(user, "<span class='warning'>\The [src] has a beaker already.</span>")
-		return
-	else
-		..()
+		return TRUE
+	return ..()
 
 /obj/machinery/sleeper/dismantle()
 	if(occupant)
@@ -270,7 +251,9 @@
 		if(occupant)
 			to_chat(user, "<span class='warning'>\The [src] is already occupied.</span>")
 			return
+		if(M.loc.type == type) return //anti-double-sleepering //inf
 		set_occupant(M)
+		playsound(src, 'infinity/sound/SS2/effects/machines/medbed.wav', 50)//inf
 
 /obj/machinery/sleeper/proc/go_out()
 	if(!occupant)
@@ -329,19 +312,13 @@
 		to_chat(user, "There's no suitable occupant in \the [src].")
 
 /obj/machinery/sleeper/RefreshParts()
-	var/T = 0
-
-	for (var/obj/item/weapon/stock_parts/scanning_module/S in component_parts) // scanning modules reduce power required and increase speed of dialysis / stomach pump
-		T += S.rating
-
+	..()
+	var/T = Clamp(total_component_rating_of_type(/obj/item/weapon/stock_parts/scanning_module), 1, 10)
 	T = max(T,1)
 	synth_modifier = 1/T
 	pump_speed = 2 + T
-	T = 0
 
-	for (var/obj/item/weapon/stock_parts/manipulator/M in component_parts) // manipulators unlock new drugs
-		T += M.rating
-
+	T = total_component_rating_of_type(/obj/item/weapon/stock_parts/manipulator)
 	available_chemicals = base_chemicals.Copy()
 	if (T >= 4)
 		available_chemicals |= upgrade_chemicals
@@ -358,32 +335,3 @@
 	else
 		available_chemicals -= antag_chemicals
 	return 1
-
-//Survival/Stasis sleepers
-/obj/machinery/sleeper/survival_pod
-	name = "stasis pod"
-	desc = "A comfortable pod for stasing of wounded occupants. Similar pods were on first humanity's colonial ships. Now days, you can see them in EMT centers with stasis setting from 20x to 22x."
-	icon_state = "stasis_0"
-	base_icon = "stasis"
-	stasis = 20
-	active_power_usage = 55000
-
-/obj/machinery/sleeper/survival_pod/ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.outside_state)
-	var/data[0]
-
-	data["power"] = stat & (NOPOWER|BROKEN) ? 0 : 1
-
-	if(occupant)
-		var/scan = user.skill_check(SKILL_MEDICAL, SKILL_ADEPT) ? medical_scan_results(occupant) : "<span class='white'><b>Contains: \the [occupant]</b></span>"
-		scan = replacetext(scan,"'scan_notice'","'white'")
-		scan = replacetext(scan,"'scan_warning'","'average'")
-		scan = replacetext(scan,"'scan_danger'","'bad'")
-		data["occupant"] = scan
-	else
-		data["occupant"] = 0
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		ui = new(user, src, ui_key, "stasis.tmpl", "Stasis Pod UI", 400, 300, state = state)
-		ui.set_initial_data(data)
-		ui.open()

@@ -15,10 +15,10 @@
 		explosion_resistance = reinf_material.explosion_resistance
 
 	if(reinf_material)
-		SetName("reinforced [material.display_name] [initial(name)]")
+		SetName("reinforced [material.display_name] [material.wall_name]")
 		desc = "It seems to be a section of hull reinforced with [reinf_material.display_name] and plated with [material.display_name]."
 	else
-		SetName("[material.display_name] [initial(name)]")
+		SetName("[material.display_name] [material.wall_name]")
 		desc = "It seems to be a section of hull plated with [material.display_name]."
 
 	set_opacity(material.opacity >= 0.5)
@@ -89,7 +89,9 @@
 				I = image('icons/turf/wall_masks.dmi', reinf_material.icon_reinf)
 				I.color = reinf_color
 				overlays += I
-
+	var/image/texture = material.get_wall_texture()
+	if(texture)
+		overlays += texture
 	if(stripe_color)
 		for(var/i = 1 to 4)
 			if(other_connections[i] != "0")

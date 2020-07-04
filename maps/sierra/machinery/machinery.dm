@@ -47,7 +47,7 @@
 	available_modifications = list(/decl/item_modifier/space_suit/explorer)
 
 /obj/machinery/suit_cycler/pilot
-	req_access = list(access_explorer, access_expedition_shuttle_helm)
+	req_access = list(access_explorer) //because unathi version of expeditonary suit it shit
 
 /obj/machinery/suit_storage_unit/explorer
 	name = "Exploration Voidsuit Storage Unit"
@@ -58,6 +58,7 @@
 	mask = /obj/item/clothing/mask/gas/half
 	req_access = list(access_explorer)
 	islocked = 1
+	mycolour = "#9966ff"
 
 /obj/machinery/suit_storage_unit/pilot
 	name = "Expeditionary Pilot Voidsuit Storage Unit"
@@ -68,6 +69,10 @@
 	mask = /obj/item/clothing/mask/breath
 	req_access = list(access_explorer, access_expedition_shuttle_helm)
 	islocked = 1
+	mycolour = "#990000"
+
+/obj/machinery/suit_storage_unit/standard_unit
+	islocked = 0
 
 /obj/machinery/photocopier/faxmachine/centcomm
 	req_access = list(access_cent_general)
@@ -177,3 +182,13 @@
 	if(href_list["logout"])
 		authenticated = 0
 	updateUsrDialog()
+
+//bridge space turrets
+
+/obj/machinery/turretid/sierra_bridge
+	lethal = 1
+	check_arrest = 1	//checks if the perp is set to arrest
+	check_records = 1	//checks if a security record exists at all
+	check_weapons = 1	//checks if it can shoot people that have a weapon they aren't authorized to have
+	check_access = 1	//if this is active, the turret shoots everything that does not meet the access requirements
+	req_access = list(access_bridge)

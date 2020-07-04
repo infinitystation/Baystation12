@@ -15,6 +15,14 @@
 		LANGUAGE_GUTTER           = TRUE,
 		LANGUAGE_SPACER           = TRUE
 		)
+	skills = list(
+		SKILL_BUREAUCRACY         = SKILL_PROF,
+		SKILL_FINANCE             = SKILL_PROF,
+		SKILL_COMPUTER            = SKILL_EXPERT,
+		SKILL_SCIENCE             = SKILL_EXPERT,
+		SKILL_DEVICES             = SKILL_EXPERT,
+		SKILL_PILOT               = SKILL_ADEPT //INF
+	)
 
 /obj/item/weapon/robot_module/clerical/butler
 	name = "service robot module"
@@ -25,10 +33,6 @@
 		"Bro" = "Brobot",
 		"Rich" = "maximillion",
 		"Default" = "Service2",
-		"Drone - Service" = "drone-service",
-		"Drone - Hydro" = "drone-hydro",
-		"Doot" = "eyebot-standard",
-		"Ver 06" = "wer6-Service"
 	)
 	equipment = list(
 		/obj/item/device/flash,
@@ -49,6 +53,14 @@
 		/obj/item/weapon/reagent_containers/borghypo/service
 	)
 	emag = /obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer
+	skills = list(
+		SKILL_BUREAUCRACY         = SKILL_PROF,
+		SKILL_COMPUTER            = SKILL_EXPERT,
+		SKILL_COOKING             = SKILL_PROF,
+		SKILL_BOTANY              = SKILL_PROF,
+		SKILL_MEDICAL             = SKILL_BASIC,
+		SKILL_CHEMISTRY           = SKILL_ADEPT
+	)
 
 /obj/item/weapon/robot_module/clerical/butler/finalize_equipment()
 	. = ..()
@@ -85,9 +97,6 @@
 		"Bro" =      "Brobot",
 		"Rich" =     "maximillion",
 		"Default" =  "Service2",
-		"Doot" =     "eyebot-standard",
-		"Ver 06" = "wer6-Clerical",
-		"Default" =  "Service2"
 	)
 	equipment = list(
 		/obj/item/device/flash,

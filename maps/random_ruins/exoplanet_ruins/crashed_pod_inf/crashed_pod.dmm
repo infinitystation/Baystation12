@@ -45,7 +45,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4;
-	layer = 2.4;
 	level = 2
 	},
 /obj/machinery/power/port_gen/pacman/super,
@@ -116,7 +115,7 @@
 /obj/item/weapon/storage/mirror{
 	pixel_x = 27
 	},
-/obj/item/weapon/circuitboard/solar_control,
+/obj/item/weapon/stock_parts/circuitboard/solar_control,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/crashed_pod)
 "aq" = (
@@ -182,9 +181,9 @@
 /obj/structure/closet/crate,
 /obj/effect/floor_decal/industrial/hatch/orange,
 /obj/item/device/scanner/gas,
-/obj/item/weapon/circuitboard/unary_atmos/cooler,
-/obj/item/weapon/circuitboard/unary_atmos/heater,
-/obj/item/weapon/circuitboard/oxyregenerator,
+/obj/item/weapon/stock_parts/circuitboard/unary_atmos/cooler,
+/obj/item/weapon/stock_parts/circuitboard/unary_atmos/heater,
+/obj/item/weapon/stock_parts/circuitboard/oxyregenerator,
 /obj/item/weapon/tank/oxygen/red,
 /obj/structure/cable,
 /obj/item/stack/material/uranium/ten,
@@ -202,7 +201,7 @@
 /obj/item/trash/candy/proteinbar,
 /obj/item/trash/liquidfood,
 /obj/item/weapon/stock_parts/matter_bin/super,
-/obj/item/weapon/circuitboard/biogenerator,
+/obj/item/weapon/stock_parts/circuitboard/biogenerator,
 /obj/item/weapon/bedsheet/orange,
 /obj/item/weapon/bedsheet/orange,
 /obj/item/weapon/stock_parts/matter_bin/adv,
@@ -303,7 +302,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pod)
 "aI" = (
-/obj/machinery/atmospherics/pipe/tank/air,
+/obj/machinery/atmospherics/unary/tank/air,
 /obj/effect/floor_decal/industrial/outline/blue,
 /obj/effect/decal/cleanable/generic,
 /turf/simulated/floor/tiled/techfloor,
@@ -374,7 +373,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pod)
 "aR" = (
-/obj/machinery/autolathe,
+/obj/machinery/fabricator,
 /obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/crashed_pod)

@@ -104,7 +104,6 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 
 /obj/machinery/telecomms/proc/receive_information(datum/signal/signal, obj/machinery/telecomms/machine_from)
 	// receive information from linked machinery
-	..()
 
 /obj/machinery/telecomms/proc/is_freq_listening(datum/signal/signal)
 	// return 1 if found, 0 if not found
@@ -160,6 +159,16 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 		icon_state = initial(icon_state)
 	else
 		icon_state = "[initial(icon_state)]_off"
+
+/obj/machinery/telecomms/Move()
+	. = ..()
+	listening_levels = GetConnectedZlevels(z)
+	update_power()
+
+/obj/machinery/telecomms/forceMove(var/newloc)
+	. = ..(newloc)
+	listening_levels = GetConnectedZlevels(z)
+	update_power()
 
 /obj/machinery/telecomms/proc/update_power()
 	if(toggled)
@@ -259,7 +268,8 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	idle_power_usage = 600
 	machinetype = 1
 	produces_heat = 0
-	circuitboard = /obj/item/weapon/circuitboard/telecomms/receiver
+	circuitboard = /obj/item/weapon/stock_parts/circuitboard/telecomms/receiver
+	base_type = /obj/machinery/telecomms/receiver
 	outage_probability = 10
 
 /obj/machinery/telecomms/receiver/receive_signal(datum/signal/signal)
@@ -315,7 +325,8 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	anchored = 1
 	idle_power_usage = 1600
 	machinetype = 7
-	circuitboard = /obj/item/weapon/circuitboard/telecomms/hub
+	circuitboard = /obj/item/weapon/stock_parts/circuitboard/telecomms/hub
+	base_type = /obj/machinery/telecomms/hub
 	long_range_link = 1
 	netspeed = 40
 	outage_probability = 10
@@ -326,19 +337,18 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 			//If the signal is compressed, send it to the bus.
 			relay_information(signal, /obj/machinery/telecomms/bus, 1) // ideally relay the copied information to bus units
 		else
-			// Get a list of relays that we're linked to, then send the signal to their levels.
-			relay_information(signal, /obj/machinery/telecomms/relay, 1)
 			relay_information(signal, /obj/machinery/telecomms/broadcaster, 1) // Send it to a broadcaster.
 
 
-/*
-	The relay idles until it receives information. It then passes on that information
-	depending on where it came from.
+//[INF]
+	/*
+		The relay idles until it receives information. It then passes on that information
+		depending on where it came from.
 
-	The relay is needed in order to send information pass Z levels. It must be linked
-	with a HUB, the only other machine that can send/receive pass Z levels.
-*/
-
+		The relay is needed in order to send information pass Z levels. It must be linked
+		with a HUB, the only other machine that can send/receive pass Z levels.
+	*/
+		
 /obj/machinery/telecomms/relay
 	name = "Telecommunication Relay"
 	icon = 'icons/obj/stationobjs.dmi'
@@ -348,24 +358,29 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	anchored = 1
 	machinetype = 8
 	produces_heat = 0
-	circuitboard = /obj/item/weapon/circuitboard/telecomms/relay
+	circuitboard = /obj/item/weapon/stock_parts/circuitboard/telecomms/relay
+	base_type = /obj/machinery/telecomms/relay
 	netspeed = 5
 	long_range_link = 1
 	var/broadcasting = 1
 	var/receiving = 1
+	var/usage_offise = 10 KILOWATTS
 
-/obj/machinery/telecomms/relay/forceMove(var/newloc)
-	. = ..(newloc)
-	listening_levels = GetConnectedZlevels(z)
-	update_power()
-
+/obj/item/weapon/stock_parts/circuitboard/telecomms/relay
+	name = T_BOARD("relay mainframe")
+	build_path = /obj/machinery/telecomms/relay
+	origin_tech = list(TECH_DATA = 3, TECH_ENGINEERING = 4, TECH_BLUESPACE = 3)
+	req_components =	list(
+								/obj/item/weapon/stock_parts/manipulator = 2,
+								/obj/item/weapon/stock_parts/subspace/filter = 2
+							)
 // Relays on ship's Z levels use less power as they don't have to transmit over such large distances.
 /obj/machinery/telecomms/relay/update_power()
 	..()
 	if(z in GLOB.using_map.station_levels)
 		change_power_consumption(2.5 KILOWATTS, POWER_USE_IDLE)
 	else
-		change_power_consumption(100 KILOWATTS, POWER_USE_IDLE)
+		change_power_consumption(usage_offise, POWER_USE_IDLE) //inf, was change_power_consumption(100 KILOWATTS, POWER_USE_IDLE)
 
 /obj/machinery/telecomms/relay/receive_information(datum/signal/signal, obj/machinery/telecomms/machine_from)
 
@@ -392,6 +407,17 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 		return 0
 	return receiving
 
+/obj/machinery/telecomms/relay/preset
+	network = "tcommsat"
+/obj/machinery/telecomms/relay/preset/centcom
+	id = "Centcom Relay"
+	hide = 1
+	toggled = 1
+	produces_heat = 0
+	autolinkers = list("c_relay")
+	construct_state = /decl/machine_construction/tcomms/panel_closed/cannot_print //INF 
+
+//[/INF]
 /*
 	The bus mainframe idles and waits for hubs to relay them signals. They act
 	as junctions for the network.
@@ -411,7 +437,8 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	anchored = 1
 	idle_power_usage = 1000
 	machinetype = 2
-	circuitboard = /obj/item/weapon/circuitboard/telecomms/bus
+	circuitboard = /obj/item/weapon/stock_parts/circuitboard/telecomms/bus
+	base_type = /obj/machinery/telecomms/bus
 	netspeed = 40
 	var/change_frequency = 0
 
@@ -463,7 +490,8 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	idle_power_usage = 600
 	machinetype = 3
 	delay = 5
-	circuitboard = /obj/item/weapon/circuitboard/telecomms/processor
+	circuitboard = /obj/item/weapon/stock_parts/circuitboard/telecomms/processor
+	base_type = /obj/machinery/telecomms/processor
 	var/process_mode = 1 // 1 = Uncompress Signals, 0 = Compress Signals
 
 /obj/machinery/telecomms/processor/receive_information(datum/signal/signal, obj/machinery/telecomms/machine_from)
@@ -499,7 +527,8 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	anchored = 1
 	idle_power_usage = 300
 	machinetype = 4
-	circuitboard = /obj/item/weapon/circuitboard/telecomms/server
+	circuitboard = /obj/item/weapon/stock_parts/circuitboard/telecomms/server
+	base_type = /obj/machinery/telecomms/server
 	var/list/log_entries = list()
 	var/list/stored_names = list()
 	var/list/TrafficActions = list()
@@ -557,6 +586,7 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 				log.parameters["name"] = signal.data["name"]
 				log.parameters["realname"] = signal.data["realname"]
 				log.parameters["language"] = signal.data["language"]
+				log.parameters["messagetime"] = stationtime2text() //inf
 
 				var/race = "Unknown"
 				if(ishuman(M) || isbrain(M))
@@ -586,6 +616,7 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 					log.parameters["name"] = Gibberish(signal.data["name"], signal.data["compression"] + 50)
 					log.parameters["realname"] = Gibberish(signal.data["realname"], signal.data["compression"] + 50)
 					log.parameters["vname"] = Gibberish(signal.data["vname"], signal.data["compression"] + 50)
+					log.parameters["messagetime"] = world.time//inf
 					log.input_type = "Corrupt File"
 
 				// Log and store everything that needs to be logged

@@ -31,7 +31,7 @@
 	var/facedir = 0 // if 1: atom faces the direction of movement
 	var/nostop = 0 // if 1: will only be stopped by teleporters
 	var/list/affecting = list()
-	icon = 'icons/obj/infinity_throwers.dmi'
+	icon = 'infinity/icons/obj/throwers.dmi'
 
 /obj/effect/step_trigger/thrower/Trigger(var/atom/movable/AM)
 	if(!AM || !istype(AM) || !AM.simulated)

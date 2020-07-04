@@ -6,7 +6,6 @@
 	anchored = 1.0
 	icon_keyboard = "med_key"
 	icon_screen = "crew"
-	circuit = /obj/item/weapon/circuitboard/operating
 	var/mob/living/carbon/human/victim = null
 	var/obj/machinery/optable/table = null
 
@@ -18,28 +17,19 @@
 			table.computer = src
 			break
 
-/obj/machinery/computer/operating/attack_ai(mob/user)
-	if(stat & (BROKEN|NOPOWER))
-		return
+/obj/machinery/computer/operating/interface_interact(user)
 	interact(user)
-
-
-/obj/machinery/computer/operating/attack_hand(mob/user)
-	..()
-	if(stat & (BROKEN|NOPOWER))
-		return
-	interact(user)
-
+	return TRUE
 
 /obj/machinery/computer/operating/interact(mob/user)
 	if ( (get_dist(src, user) > 1 ) || (stat & (BROKEN|NOPOWER)) )
 		if (!istype(user, /mob/living/silicon))
 			user.unset_machine()
-			user << browse(null, "window=op")
+			close_browser(user, "window=op")
 			return
 
 	user.set_machine(src)
-	var/dat = "<HEAD><TITLE>Operating Computer</TITLE><META HTTP-EQUIV='Refresh' CONTENT='10'></HEAD><BODY>\n"
+	var/dat = "<meta charset=\"UTF-8\"><HEAD><TITLE>Operating Computer</TITLE><META HTTP-EQUIV='Refresh' CONTENT='10'></HEAD><BODY>\n"
 	dat += "<A HREF='?src=\ref[user];mach_close=op'>Close</A><br><br>" //| <A HREF='?src=\ref[user];update=1'>Update</A>"
 	if(src.table && (src.table.check_victim()))
 		src.victim = src.table.victim
@@ -55,7 +45,7 @@
 <BR>
 <B>No Patient Detected</B>
 "}
-	user << browse(dat, "window=op")
+	show_browser(user, dat, "window=op")
 	onclose(user, "op")
 
 /obj/machinery/computer/operating/Process()

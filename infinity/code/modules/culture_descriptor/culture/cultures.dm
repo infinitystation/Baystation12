@@ -1,3 +1,4 @@
+/*
 /decl/cultural_info/culture/human
 	secondary_langs = list(LANGUAGE_HUMAN_EURO)
 
@@ -17,3 +18,4 @@
 
 /decl/cultural_info/culture/human/other
 	secondary_langs = list(LANGUAGE_SIGN)
+*/

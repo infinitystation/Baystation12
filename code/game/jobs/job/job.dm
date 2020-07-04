@@ -19,10 +19,10 @@
 	var/minimal_player_age = 0            // If you have use_age_restriction_for_jobs config option enabled and the database set up, this option will add a requirement for players to be at least minimal_player_age days old. (meaning they first signed in at least that many days before.)
 	var/department = null                 // Does this position have a department tag?
 	var/head_position = 0                 // Is this position Command?
-	var/minimum_character_age = 0
+	var/minimum_character_age			  // List of species = age, if species is not here, it's auto-pass
 	var/ideal_character_age = 30
 	var/create_record = 1                 // Do we announce/make records for people who spawn on this job?
-
+	var/is_semi_antagonist = FALSE        // Whether or not this job is given semi-antagonist status.
 	var/account_allowed = 1               // Does this job type come with a station account?
 	var/economic_power = 2             // With how much does this job modify the initial account amount?
 
@@ -51,6 +51,7 @@
 	var/list/species_branch_rank_cache_ = list()
 	var/list/psi_faculties                // Starting psi faculties, if any.
 	var/psi_latency_chance = 0            // Chance of an additional psi latency, if any.
+	var/give_psionic_implant_on_join = TRUE // If psionic, will be implanted for control.
 
 	var/required_language
 
@@ -85,7 +86,25 @@
 			H.set_psi_rank(psi, psi_faculties[psi], take_larger = TRUE, defer_update = TRUE)
 	if(H.psi)
 		H.psi.update()
-		H.give_psi_implant()
+//[INF]
+		var/latency = 1
+		for(var/n in H.psi.ranks)
+			if(H.psi.ranks[n] > 1)
+				latency = 0
+				break
+		if(!latency)
+//[/INF]
+			if(give_psionic_implant_on_join)
+				var/obj/item/weapon/implant/psi_control/imp = new
+				imp.implanted(H)
+				imp.forceMove(H)
+				imp.imp_in = H
+				imp.implanted = TRUE
+				var/obj/item/organ/external/affected = H.get_organ(BP_HEAD)
+				if(affected)
+					affected.implants += imp
+					imp.part = affected
+				to_chat(H, SPAN_DANGER("As a registered psionic, you are fitted with a psi-dampening control implant. Using psi-power while the implant is active will result in neural shocks and your violation being reported."))
 
 	var/decl/hierarchy/outfit/outfit = get_outfit(H, alt_title, branch, grade)
 	if(outfit) . = outfit.equip(H, title, alt_title)
@@ -131,14 +150,14 @@
 	var/datum/money_account/M = create_account("[H.real_name]'s account", H.real_name, money_amount)
 	if(H.mind)
 		var/remembered_info = ""
-		remembered_info += "<b>Your account number is:</b> #[M.account_number]<br>"
-		remembered_info += "<b>Your account pin is:</b> [M.remote_access_pin]<br>"
-		remembered_info += "<b>Your account funds are:</b> T[M.money]<br>"
+		remembered_info += "<b>Номер Вашего аккаунта:</b> #[M.account_number]<br>"
+		remembered_info += "<b>Пин-код:</b> [M.remote_access_pin]<br>"
+		remembered_info += "<b>Сумма на счету:</b> [GLOB.using_map.local_currency_name_short][M.money]<br>"
 
 		if(M.transaction_log.len)
 			var/datum/transaction/T = M.transaction_log[1]
-			remembered_info += "<b>Your account was created:</b> [T.time], [T.date] at [T.get_source_name()]<br>"
-		H.mind.store_memory(remembered_info)
+			remembered_info += "<b>Создан:</b> [T.time], [T.date] в [T.get_source_name()]<br>"
+		H.StoreMemory(remembered_info, /decl/memory_options/system)
 		H.mind.initial_account = M
 
 // overrideable separately so AIs/borgs can have cardborg hats without unneccessary new()/qdel()
@@ -184,9 +203,6 @@
 
 /datum/job/proc/is_restricted(var/datum/preferences/prefs, var/feedback)
 
-	if(minimum_character_age && (prefs.age < minimum_character_age))
-		to_chat(feedback, "<span class='boldannounce'>Not old enough. Minimum character age is [minimum_character_age].</span>")
-		return TRUE
 
 	if(!isnull(allowed_branches) && (!prefs.branches[title] || !is_branch_allowed(prefs.branches[title])))
 		to_chat(feedback, "<span class='boldannounce'>Wrong branch of service for [title]. Valid branches are: [get_branches()].</span>")
@@ -201,6 +217,10 @@
 		to_chat(feedback, "<span class='boldannounce'>Restricted species, [S], for [title].</span>")
 		return TRUE
 
+	if(LAZYACCESS(minimum_character_age, S.get_bodytype()) && (prefs.age < minimum_character_age[S.get_bodytype()]))
+		to_chat(feedback, "<span class='boldannounce'>Not old enough. Minimum character age is [minimum_character_age[S.get_bodytype()]].</span>")
+		return TRUE
+	
 	if(!S.check_background(src, prefs))
 		to_chat(feedback, "<span class='boldannounce'>Incompatible background for [title].</span>")
 		return TRUE
@@ -341,21 +361,23 @@
 /datum/job/proc/get_unavailable_reasons(var/client/caller)
 	var/list/reasons = list()
 	if(jobban_isbanned(caller, title))
-		reasons["You are jobbanned."] = TRUE
+		reasons["У Вас имеются джоббаны."] = TRUE
+	if(is_semi_antagonist && jobban_isbanned(caller, MODE_MISC_AGITATOR))
+		reasons["У Вас джоббан на роль полу-антагониста."] = TRUE
 	if(!player_old_enough(caller))
-		reasons["Your player age is too low."] = TRUE
+		reasons["С Вашего первого захода прошло мало времени."] = TRUE
 	if(!is_position_available())
-		reasons["There are no positions left."] = TRUE
+		reasons["Не осталось доступных ролей."] = TRUE
 	if(!isnull(allowed_branches) && (!caller.prefs.branches[title] || !is_branch_allowed(caller.prefs.branches[title])))
-		reasons["Your branch of service does not allow it."] = TRUE
+		reasons["Ваша служебная ветка имеет ограничения."] = TRUE
 	else if(!isnull(allowed_ranks) && (!caller.prefs.ranks[title] || !is_rank_allowed(caller.prefs.branches[title], caller.prefs.ranks[title])))
-		reasons["Your rank choice does not allow it."] = TRUE
+		reasons["Ваш служебный ранг имеет ограничения."] = TRUE
 	var/datum/species/S = all_species[caller.prefs.species]
 	if(S)
 		if(!is_species_allowed(S))
-			reasons["Your species choice does not allow it."] = TRUE
+			reasons["Ваша раса имеет ограничения."] = TRUE
 		if(!S.check_background(src, caller.prefs))
-			reasons["Your background choices do not allow it."] = TRUE
+			reasons["Предыстория Вашего персонажа имеет ограничения."] = TRUE
 	if(LAZYLEN(reasons))
 		. = reasons
 
@@ -368,6 +390,8 @@
 		return FALSE
 	if(jobban_isbanned(caller, title))
 		return FALSE
+	if(is_semi_antagonist && jobban_isbanned(caller, MODE_MISC_AGITATOR))
+		return FALSE
 	if(!player_old_enough(caller))
 		return FALSE
 	return TRUE
@@ -376,15 +400,38 @@
 	total_positions++
 
 /datum/job/proc/get_roundstart_spawnpoint()
+/*[ORIGINAL]
 	var/list/loc_list = list()
 	for(var/obj/effect/landmark/start/sloc in landmarks_list)
 		if(sloc.name != title)	continue
 		if(locate(/mob/living) in sloc.loc)	continue
 		loc_list += sloc
+
 	if(loc_list.len)
 		return pick(loc_list)
+[/ORIGINAL]*/
+//[INF]
+	var/spawnpoint_loc = get_job_spawnpoints()
+	if(spawnpoint_loc)
+		return spawnpoint_loc
+//[/INF]
 	else
-		return locate("start*[title]") // use old stype
+//[INF]
+		var/list/L = list()
+		for(var/turf/i in GLOB.newplayer_start)
+			if(locate(/mob/living) in get_turf(i))	continue
+			L += i
+		return pick(L)
+
+/datum/job/proc/get_job_spawnpoints()
+	var/list/loc_list = list()
+	for(var/obj/effect/landmark/start/sloc in landmarks_list)
+		if(sloc.name != title)	continue
+		if(locate(/mob/living) in sloc.loc)	continue
+		loc_list += sloc
+	return length(loc_list) ? pick(loc_list) : null
+//[/INF]
+//inf		return locate("start*[title]") // use old stype
 
 /**
  *  Return appropriate /datum/spawnpoint for given client
@@ -413,28 +460,31 @@
 		else
 			spawnpos = spawntypes()[spawnpoint]
 
-	if(spawnpos && !spawnpos.check_job_spawning(title))
-		if(H)
+	if(spawnpos && !spawnpos.can_spawn_here(H, src))//inf, was: if(spawnpos && !spawnpos.check_job_spawning(title))
+/*[ORIGINAL]		if(H)
 			to_chat(H, "<span class='warning'>Your chosen spawnpoint ([spawnpos.display_name]) is unavailable for your chosen job ([title]). Spawning you at another spawn point instead.</span>")
+[/ORIGINAL]*/
 		spawnpos = null
 
 	if(!spawnpos)
 		// Step through all spawnpoints and pick first appropriate for job
 		for(var/spawntype in GLOB.using_map.allowed_spawns)
 			var/datum/spawnpoint/candidate = spawntypes()[spawntype]
-			if(candidate.check_job_spawning(title))
+			if(spawnpos.can_spawn_here(H, src))//inf, was: if(candidate.check_job_spawning(title))
 				spawnpos = candidate
 				break
 
 	if(!spawnpos)
 		// Pick at random from all the (wrong) spawnpoints, just so we have one
 		warning("Could not find an appropriate spawnpoint for job [title].")
-		spawnpos = spawntypes()[pick(GLOB.using_map.allowed_spawns)]
+		var/list/spawntyps = spawntypes()
+		spawnpos = spawntyps[pick(GLOB.using_map.allowed_spawns)]//inf, was: spawnpos = spawntypes()[pick(GLOB.using_map.allowed_spawns)]
 
 	return spawnpos
 
-/datum/job/proc/post_equip_rank(var/mob/person)
-	return
+/datum/job/proc/post_equip_rank(var/mob/person, var/alt_title)
+	if(is_semi_antagonist && person.mind)
+		GLOB.provocateurs.add_antagonist(person.mind)
 
 /datum/job/proc/get_alt_title_for(var/client/C)
 	return C.prefs.GetPlayerAltTitle(src)
@@ -444,3 +494,6 @@
 		current_positions -= 1
 		return TRUE
 	return FALSE
+
+/datum/job/proc/handle_variant_join(var/mob/living/carbon/human/H, var/alt_title)
+	return

@@ -27,9 +27,9 @@
 	var/static/next_assembly_id = 0
 	var/interact_page = 0
 	var/components_per_page = 5
+	var/magnetized = 0 //INF
 	health = 30
 	pass_flags = 0
-	armor = list("melee" = 50, "bullet" = 70, "laser" = 70, "energy" = 100, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
 	anchored = FALSE
 	var/detail_color = COLOR_ASSEMBLY_BLACK
 	var/list/color_whitelist = list( //This is just for checking that hacked colors aren't in the save data.
@@ -53,8 +53,6 @@
 
 /obj/item/device/electronic_assembly/examine(mob/user)
 	. = ..()
-	if(!.)
-		return
 	if(IC_FLAG_ANCHORABLE & circuit_flags)
 		to_chat(user, "<span class='notice'>The anchoring bolts [anchored ? "are" : "can be"] <b>wrenched</b> in place and the maintenance panel [opened ? "can be" : "is"] <b>screwed</b> in place.</span>")
 	else
@@ -166,8 +164,6 @@
 
 
 /obj/item/device/electronic_assembly/proc/open_interact(mob/user)
-	. = ..()
-
 	var/total_part_size = return_total_size()
 	var/total_complexity = return_total_complexity()
 	var/list/HTML = list()
@@ -301,7 +297,7 @@
 	overlays += detail_overlay
 
 /obj/item/device/electronic_assembly/examine(mob/user)
-	..()
+	. = ..()
 	if (!Adjacent(user))
 		return
 	for(var/I in assembly_components)
@@ -463,6 +459,10 @@
 		var/obj/item/device/integrated_electronics/detailer/D = I
 		detail_color = D.detail_color
 		update_icon()
+//[INF]
+	else if(is_type_in_list(I, list(/obj/item/weapon/gun/energy/, /obj/item/weapon/grenade/, /obj/item/weapon/aicard, /obj/item/device/paicard, /obj/item/device/mmi, /obj/item/organ/internal/posibrain/)) && opened)
+		loading(I,user)
+//[/INF]
 	else if(istype(I, /obj/item/weapon/screwdriver))
 		var/hatch_locked = FALSE
 		for(var/obj/item/integrated_circuit/manipulation/hatchlock/H in assembly_components)
@@ -522,13 +522,8 @@
 /obj/item/device/electronic_assembly/proc/get_object()
 	return src
 
-/obj/item/device/electronic_assembly/attack_tk(mob/user)
-	if(anchored)
-		return
-	..()
-
 /obj/item/device/electronic_assembly/attack_hand(mob/user)
-	if(anchored)
+	if(anchored || (magnetized && istype(src.loc, /turf/simulated/floor/))) //INF
 		attack_self(user)
 		return
 	..()

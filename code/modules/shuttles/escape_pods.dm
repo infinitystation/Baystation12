@@ -18,12 +18,12 @@ var/list/escape_pods_by_name = list()
 
 	//find the arming controller (berth)
 	var/arming_controller_tag = arming_controller
-	arming_controller = locate(arming_controller_tag)
+	arming_controller = SSshuttle.docking_registry[arming_controller_tag]
 	if(!istype(arming_controller))
 		CRASH("Could not find arming controller for escape pod \"[name]\", tag was '[arming_controller_tag]'.")
 
 	//find the pod's own controller
-	var/datum/computer/file/embedded_program/docking/simple/prog = locate(dock_target)
+	var/datum/computer/file/embedded_program/docking/simple/prog = SSshuttle.docking_registry[dock_target]
 	var/obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod/controller_master = prog.master
 	if(!istype(controller_master))
 		CRASH("Escape pod \"[name]\" could not find it's controller master!")
@@ -52,6 +52,7 @@ var/list/escape_pods_by_name = list()
 	program = /datum/computer/file/embedded_program/docking/simple/escape_pod
 	var/datum/shuttle/autodock/ferry/escape_pod/pod
 	var/tag_pump
+	frequency = EXTERNAL_AIR_FREQ	 //INF
 
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
 	var/data[0]
@@ -90,6 +91,7 @@ var/list/escape_pods_by_name = list()
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth
 	name = "escape pod berth controller"
 	program = /datum/computer/file/embedded_program/docking/simple/escape_pod_berth
+	frequency = EXTERNAL_AIR_FREQ	 //INF
 
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
 	var/data[0]

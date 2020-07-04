@@ -1,0 +1,8 @@
+{
+  "ckey" :            "kotovsyndrome",
+  "character_name" :  "Osr Issarik",
+  "item_name" :       "Joe's spear",
+  "item_desc" :       "A talisman with teeths on a strong string. There is a five teeths on it: one looks like a cannine, three looks like a human, and the last one looks like a crocodile.",
+  "item_icon_state" : "talisman-5",
+  "item_path" :       "/obj/item/clothing/accessory/necklace/talisman"
+  }

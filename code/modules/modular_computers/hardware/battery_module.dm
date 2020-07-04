@@ -1,6 +1,6 @@
 // This device is wrapper for actual power cell. I have decided to not use power cells directly as even low-end cells available on station
 // have tremendeous capacity in comparsion. Higher tier cells would provide your device with nearly infinite battery life, which is something i want to avoid.
-/obj/item/weapon/computer_hardware/battery_module
+/obj/item/weapon/stock_parts/computer/battery_module
 	name = "standard battery"
 	desc = "A standard power cell, commonly seen in high-end portable microcomputers or low-end laptops. It's rating is 150 Wh."
 	icon_state = "battery_normal"
@@ -10,7 +10,7 @@
 	var/battery_rating = 150
 	var/obj/item/weapon/cell/battery = null
 
-/obj/item/weapon/computer_hardware/battery_module/advanced
+/obj/item/weapon/stock_parts/computer/battery_module/advanced
 	name = "advanced battery"
 	desc = "An advanced power cell, often used in most laptops. It is too large to be fitted into smaller devices. It's rating is 250 Wh."
 	icon_state = "battery_advanced"
@@ -18,7 +18,7 @@
 	hardware_size = 2
 	battery_rating = 250
 
-/obj/item/weapon/computer_hardware/battery_module/super
+/obj/item/weapon/stock_parts/computer/battery_module/super
 	name = "super battery"
 	desc = "A very advanced power cell, often used in high-end devices, or as uninterruptable power supply for important consoles or servers. It's rating is 400 Wh."
 	icon_state = "battery_super"
@@ -26,7 +26,7 @@
 	hardware_size = 2
 	battery_rating = 400
 
-/obj/item/weapon/computer_hardware/battery_module/ultra
+/obj/item/weapon/stock_parts/computer/battery_module/ultra
 	name = "ultra battery"
 	desc = "A very advanced large power cell. It's often used as uninterruptable power supply for critical consoles or servers. It's rating is 600 Wh."
 	icon_state = "battery_ultra"
@@ -34,14 +34,14 @@
 	hardware_size = 3
 	battery_rating = 600
 
-/obj/item/weapon/computer_hardware/battery_module/micro
+/obj/item/weapon/stock_parts/computer/battery_module/micro
 	name = "micro battery"
 	desc = "A small power cell, commonly seen in most portable microcomputers. It's rating is 100 Wh."
 	icon_state = "battery_micro"
 	origin_tech = list(TECH_POWER = 2, TECH_ENGINEERING = 2)
 	battery_rating = 100
 
-/obj/item/weapon/computer_hardware/battery_module/nano
+/obj/item/weapon/stock_parts/computer/battery_module/nano
 	name = "nano battery"
 	desc = "A tiny power cell, commonly seen in low-end portable microcomputers. It's rating is 60 Wh."
 	icon_state = "battery_nano"
@@ -49,7 +49,7 @@
 	battery_rating = 60
 
 // This is not intended to be obtainable in-game. Intended for adminbus and debugging purposes.
-/obj/item/weapon/computer_hardware/battery_module/lambda
+/obj/item/weapon/stock_parts/computer/battery_module/lambda
 	name = "lambda coil"
 	desc = "A very complex power source compatible with various computers. It is capable of providing power for nearly unlimited duration."
 	icon_state = "battery_lambda"
@@ -57,30 +57,28 @@
 	hardware_size = 1
 	battery_rating = 3000
 
-/obj/item/weapon/computer_hardware/battery_module/lambda/New()
+/obj/item/weapon/stock_parts/computer/battery_module/lambda/New()
 	..()
 	battery = new/obj/item/weapon/cell/infinite(src)
 
 
-/obj/item/weapon/computer_hardware/battery_module/diagnostics(var/mob/user)
-	..()
-	to_chat(user, "Internal battery charge: [battery.charge]/[battery.maxcharge] CU")
+/obj/item/weapon/stock_parts/computer/battery_module/diagnostics()
+	. = ..()
+	. += "Internal battery charge: [battery.charge]/[battery.maxcharge] CU"
 
-/obj/item/weapon/computer_hardware/battery_module/New()
+/obj/item/weapon/stock_parts/computer/battery_module/Initialize()
+	. = ..()
 	battery = new/obj/item/weapon/cell(src)
 	battery.maxcharge = battery_rating
 	battery.charge = 0
-	..()
 
-/obj/item/weapon/computer_hardware/battery_module/Destroy()
+/obj/item/weapon/stock_parts/computer/battery_module/Destroy()
 	QDEL_NULL(battery)
-	if(holder2 && (holder2.battery_module == src))
-		holder2.ai_slot = null
 	return ..()
 
-/obj/item/weapon/computer_hardware/battery_module/proc/charge_to_full()
+/obj/item/weapon/stock_parts/computer/battery_module/proc/charge_to_full()
 	if(battery)
 		battery.charge = battery.maxcharge
 
-/obj/item/weapon/computer_hardware/battery_module/get_cell()
+/obj/item/weapon/stock_parts/computer/battery_module/get_cell()
 	return battery

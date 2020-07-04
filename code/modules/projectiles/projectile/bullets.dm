@@ -7,13 +7,16 @@
 	damage_flags = DAM_BULLET | DAM_SHARP
 	nodamage = 0
 	embed = 1
-	sharp = 1
-	step_delay = 0.4
+	sharp = 1 //INF, WAS NOTHING (0)
+	step_delay = 0.4 //INF, WAS NOTHING (1)
 	penetration_modifier = 1.0
 	var/mob_passthrough_check = 0
 
 	muzzle_type = /obj/effect/projectile/bullet/muzzle
 	miss_sounds = list('sound/weapons/guns/miss1.ogg','sound/weapons/guns/miss2.ogg','sound/weapons/guns/miss3.ogg','sound/weapons/guns/miss4.ogg')
+	ricochet_sounds = list('sound/weapons/guns/ricochet1.ogg', 'sound/weapons/guns/ricochet2.ogg',
+							'sound/weapons/guns/ricochet3.ogg', 'sound/weapons/guns/ricochet4.ogg')
+	impact_sounds = list(BULLET_IMPACT_MEAT = SOUNDS_BULLET_MEAT, BULLET_IMPACT_METAL = SOUNDS_BULLET_METAL)
 
 /obj/item/projectile/bullet/on_hit(var/atom/target, var/blocked = 0)
 	if (..(target, blocked))
@@ -39,9 +42,6 @@
 /obj/item/projectile/bullet/check_penetrate(var/atom/A)
 	if(QDELETED(A) || !A.density) return 1 //if whatever it was got destroyed when we hit it, then I guess we can just keep going
 
-	if(istype(A, /obj/mecha))
-		return 1 //mecha have their own penetration handling
-
 	if(ismob(A))
 		if(!mob_passthrough_check)
 			return 0
@@ -63,7 +63,7 @@
 //For projectiles that actually represent clouds of projectiles
 /obj/item/projectile/bullet/pellet
 	name = "shrapnel" //'shrapnel' sounds more dangerous (i.e. cooler) than 'pellet'
-	damage = 22.5
+	damage = 37.5
 	//icon_state = "bullet" //TODO: would be nice to have it's own icon state
 	var/pellets = 4			//number of pellets
 	var/range_step = 2		//projectile will lose a fragment each time it travels this distance. Can be a non-integer.
@@ -124,20 +124,20 @@
 
 /obj/item/projectile/bullet/pistol
 	fire_sound = 'sound/weapons/gunshot/gunshot_pistol.ogg'
-	damage = 30
+	damage = 45
 	distance_falloff = 3
 
 /obj/item/projectile/bullet/pistol/holdout
-	damage = 25
+	damage = 40
 	penetration_modifier = 1.2
-	distance_falloff = 4
+	//INF distance_falloff = 4
 
 /obj/item/projectile/bullet/pistol/strong
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
 	damage = 50
-	armor_penetration = 20
 	penetration_modifier = 0.8
 	distance_falloff = 2.5
+	armor_penetration = 15
 
 /obj/item/projectile/bullet/pistol/rubber //"rubber" bullets
 	name = "rubber bullet"
@@ -146,22 +146,25 @@
 	agony = 30
 	embed = 0
 
+/obj/item/projectile/bullet/pistol/rubber/holdout
+	agony = 20
+
 //4mm. Tiny, very low damage, does not embed, but has very high penetration. Only to be used for the experimental SMG.
 /obj/item/projectile/bullet/flechette
 	fire_sound = 'sound/weapons/gunshot/gunshot_4mm.ogg'
-	damage = 8
-	penetrating = 1
+	damage = 23
+	penetrating = 0 //INF, WAS 1. It already has nearly 100% AP
 	armor_penetration = 70
 	embed = 0
-	distance_falloff = 2
+	//INF distance_falloff = 2
 
 /* shotgun projectiles */
 
 /obj/item/projectile/bullet/shotgun
 	name = "slug"
 	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
-	damage = 55
-	armor_penetration = 20
+	damage = 65
+	armor_penetration = 10
 
 /obj/item/projectile/bullet/shotgun/beanbag		//because beanbags are not bullets
 	name = "beanbag"
@@ -170,14 +173,14 @@
 	agony = 60
 	embed = 0
 	armor_penetration = 0
-	distance_falloff = 3
+	//INF distance_falloff = 3
 
 //Should do about 80 damage at 1 tile distance (adjacent), and 50 damage at 3 tiles distance.
 //Overall less damage than slugs in exchange for more damage at very close range and more embedding
 /obj/item/projectile/bullet/pellet/shotgun
 	name = "shrapnel"
 	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
-	damage = 15
+	damage = 30
 	pellets = 6
 	range_step = 1
 	spread_step = 10
@@ -186,16 +189,16 @@
 
 /obj/item/projectile/bullet/rifle
 	fire_sound = 'sound/weapons/gunshot/gunshot3.ogg'
-	damage = 30
+	damage = 45
 	armor_penetration = 25
 	penetration_modifier = 1.5
-	penetrating = 1
-	distance_falloff = 1.5
+	penetrating = 0 //INF, WAS 1
+	//INF distance_falloff = 1.5
 
 /obj/item/projectile/bullet/rifle/military
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
-	damage = 25
-	armor_penetration = 40
+	damage = 40
+	armor_penetration = 35
 	penetration_modifier = 1
 
 /obj/item/projectile/bullet/rifle/shell
@@ -203,26 +206,28 @@
 	damage = 80
 	stun = 3
 	weaken = 3
-	penetrating = 5
-	armor_penetration = 80
-	hitscan = 1 //so the PTR isn't useless as a sniper weapon
-	penetration_modifier = 1.25
-	distance_falloff = 0.5
+	//INF distance_falloff = 0.5
+	penetrating = 3
+	armor_penetration = 70
+	penetration_modifier = 1.2
 
 /obj/item/projectile/bullet/rifle/shell/apds
-	damage = 75
-	penetrating = 6
-	armor_penetration = 95
+	damage = 70
+	penetrating = 5
+	armor_penetration = 80
 	penetration_modifier = 1.5
 
 /* Miscellaneous */
 /obj/item/projectile/bullet/gyro
 	name = "minirocket"
 	fire_sound = 'sound/effects/Explosion1.ogg'
+	var/gyro_devastation = -1
+	var/gyro_heavy_impact = 0
+	var/gyro_light_impact = 2
 
 /obj/item/projectile/bullet/gyro/on_hit(var/atom/target, var/blocked = 0)
 	if(isturf(target))
-		explosion(target, -1, 0, 2)
+		explosion(target, gyro_devastation, gyro_heavy_impact, gyro_light_impact)
 	..()
 
 /obj/item/projectile/bullet/blank
@@ -251,7 +256,7 @@
 	damage = 0
 	nodamage = 1
 	embed = 0
-	sharp = 0
+	sharp = 0 //INF, WAS NOTHING (1)
 
 /obj/item/projectile/bullet/pistol/cap/Process()
 	qdel(src)
@@ -262,8 +267,8 @@
 	icon_state = "rock"
 	damage = 40
 	armor_penetration = 25
-	kill_count = 255
-	distance_falloff = 0
+	life_span = 255
+	//INF distance_falloff = 0
 
 /obj/item/projectile/bullet/rock/New()
 	icon_state = "rock[rand(1,3)]"

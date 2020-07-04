@@ -78,8 +78,8 @@
 	to_chat(brainmob, "<span class='notice'>You feel slightly disoriented. That's normal when you're just \a [initial(src.name)].</span>")
 	callHook("debrain", list(brainmob))
 
-/obj/item/organ/internal/brain/examine(mob/user) // -- TLE
-	. = ..(user)
+/obj/item/organ/internal/brain/examine(mob/user)
+	. = ..()
 	if(brainmob && brainmob.client)//if thar be a brain inside... the brain.
 		to_chat(user, "You can feel the small spark of life still left in this one.")
 	else
@@ -182,47 +182,47 @@
 						damage = max(damage-1, 0)
 				if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
 					if(prob(1))
-						to_chat(owner, "<span class='warning'>[pick("У вас кружитс&#255; голова","Вам т&#255;жело удержать равновесие","Вы чувствуете слабость")]...</span>")
+						to_chat(owner, "<span class='warning'>[pick("РЈ РІР°СЃ РєСЂСѓР¶РёС‚СЃСЏ РіРѕР»РѕРІР°","Р’Р°Рј С‚СЏР¶РµР»Рѕ СѓРґРµСЂР¶Р°С‚СЊ СЂР°РІРЅРѕРІРµСЃРёРµ","Р’С‹ С‡СѓРІСЃС‚РІСѓРµС‚Рµ СЃР»Р°Р±РѕСЃС‚СЊ")]...</span>")
 					damprob = owner.chem_effects[CE_STABLE] ? 30 : 60
 					if(!past_damage_threshold(2) && prob(damprob))
-						take_internal_damage(1)
+						take_internal_damage(0.5) //INF, 0.5 was 1
 				if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
 					owner.eye_blurry = max(owner.eye_blurry,6)
 					damprob = owner.chem_effects[CE_STABLE] ? 40 : 80
 					if(!past_damage_threshold(4) && prob(damprob))
-						take_internal_damage(1)
+						take_internal_damage(0.5) //INF, 0.5 was 1
 					if(!owner.paralysis && prob(10))
 						owner.Paralyse(rand(1,3))
-						to_chat(owner, "<span class='warning'>[pick("Вы падаете от головоружени&#255;","Вы тер&#255;ете равновесие и падаете от слабости","Вы обессиленно упали")]...</span>")
+						to_chat(owner, "<span class='warning'>[pick("Р’С‹ РїР°РґР°РµС‚Рµ РѕС‚ РіРѕР»РѕРІРѕСЂСѓР¶РµРЅРёСЏ","Р’С‹ С‚РµСЂСЏРµС‚Рµ СЂР°РІРЅРѕРІРµСЃРёРµ Рё РїР°РґР°РµС‚Рµ РѕС‚ СЃР»Р°Р±РѕСЃС‚Рё","Р’С‹ РѕР±РµСЃСЃРёР»РµРЅРЅРѕ СѓРїР°Р»Рё")]...</span>")
 				if(BLOOD_VOLUME_SURVIVE to BLOOD_VOLUME_BAD)
 					owner.eye_blurry = max(owner.eye_blurry,6)
 					damprob = owner.chem_effects[CE_STABLE] ? 60 : 100
 					if(!past_damage_threshold(6) && prob(damprob))
-						take_internal_damage(1)
+						take_internal_damage(0.5) //INF, 0.5 was 1
 					if(!owner.paralysis && prob(15))
 						owner.Paralyse(3,5)
-						to_chat(owner, "<span class='warning'>[pick("Вы падаете от головоружени&#255;","Вы тер&#255;ете равновесие и падаете от слабости","Вы обессиленно упали")]...</span>")
+						to_chat(owner, "<span class='warning'>[pick("Р’С‹ РїР°РґР°РµС‚Рµ РѕС‚ РіРѕР»РѕРІРѕСЂСѓР¶РµРЅРёСЏ","Р’С‹ С‚РµСЂСЏРµС‚Рµ СЂР°РІРЅРѕРІРµСЃРёРµ Рё РїР°РґР°РµС‚Рµ РѕС‚ СЃР»Р°Р±РѕСЃС‚Рё","Р’С‹ РѕР±РµСЃСЃРёР»РµРЅРЅРѕ СѓРїР°Р»Рё")]...</span>")
 				if(-(INFINITY) to BLOOD_VOLUME_SURVIVE) // Also see heart.dm, being below this point puts you into cardiac arrest.
 					owner.eye_blurry = max(owner.eye_blurry,6)
 					damprob = owner.chem_effects[CE_STABLE] ? 80 : 100
 					if(prob(damprob))
-						take_internal_damage(1)
+						take_internal_damage(0.5) //INF, 0.5 was 1
 					if(prob(damprob))
-						take_internal_damage(1)
+						take_internal_damage(0.5) //INF, 0.5 was 1
 	..()
 
 /obj/item/organ/internal/brain/take_internal_damage(var/damage, var/silent)
 	set waitfor = 0
-	..()
-	if(damage >= 10) //This probably won't be triggered by oxyloss or mercury. Probably.
-		var/damage_secondary = damage * 0.20
+	..(damage * 2, silent) //INF Was ..()
+	if(damage / 2 >= 10) //This probably won't be triggered by oxyloss or mercury. Probably. //INF. Was (damage >= 10)
+		var/damage_secondary = damage / 2 * 0.20 // INF. Was (damage * 0.20)
 		owner.flash_eyes()
 		owner.eye_blurry += damage_secondary
-		owner.confused += damage_secondary * 2
-		owner.Paralyse(damage_secondary)
-		owner.Weaken(round(damage, 1))
-		if(prob(30))
-			addtimer(CALLBACK(src, .proc/brain_damage_callback, damage), rand(6, 20) SECONDS, TIMER_UNIQUE)
+//INF		owner.confused += damage_secondary * 2
+//INF		owner.Paralyse(damage_secondary)
+//INF		owner.Weaken(round(damage / 2, 1))
+//INF		if(prob(30))
+//INF			addtimer(CALLBACK(src, .proc/brain_damage_callback, damage), rand(6, 20) SECONDS, TIMER_UNIQUE)
 
 /obj/item/organ/internal/brain/proc/brain_damage_callback(var/damage) //Confuse them as a somewhat uncommon aftershock. Side note: Only here so a spawn isn't used. Also, for the sake of a unique timer.
 	to_chat(owner, "<span class = 'notice' font size='10'><B>I can't remember which way is forward...</B></span>")

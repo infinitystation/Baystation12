@@ -44,6 +44,7 @@
 	GLOB.admin_log.Add(text)
 	if (config.log_admin)
 		game_log("ADMIN", text)
+//		send2adminirc(text, 1)//inf
 
 /proc/log_debug(text)
 	if (config.log_debug)
@@ -160,7 +161,7 @@
 	else if(ismob(whom))
 		M = whom
 		C = M.client
-		key = M.key
+		key = LAST_KEY(M)
 	else if(istype(whom, /datum/mind))
 		var/datum/mind/D = whom
 		key = D.key

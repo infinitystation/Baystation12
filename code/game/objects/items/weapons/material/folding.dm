@@ -7,7 +7,8 @@
 	icon_state = "knife_preview"
 	item_state = null
 	force = 0.2 //force of folded obj
-	force_divisor = 0.1 //force 6 when made of steel
+	max_force = 10
+	force_divisor = 0.2
 	applies_material_colour = FALSE
 	applies_material_name = FALSE
 	unbreakable = TRUE
@@ -92,8 +93,9 @@
 /obj/item/weapon/material/knife/folding/combat //master obj
 	name = "the concept of a fighting knife in which the blade can be stowed in its own handle"
 	desc = "This is a master item - berate the admin or mapper who spawned this"
-	force_divisor = 0.25 // 15 when wielded with hardness 60 (steel)
-	thrown_force_divisor = 0.25 // 5 when thrown with weight 20 (steel)
+	max_force = 15
+	force_divisor = 0.25
+	thrown_force_divisor = 0.25
 	attack_cooldown_modifier = -1
 	takes_colour = FALSE
 	worth_multiplier = 8

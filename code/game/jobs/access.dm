@@ -16,14 +16,12 @@
 	var/obj/item/weapon/card/id/id = GetIdCard()
 	if(id)
 		. += id.GetAccess()
-	if(maint_all_access)
-		. |= access_maint_tunnels
 
 /atom/movable/proc/GetIdCard()
 	return null
 
-/atom/movable/proc/check_access(obj/item/I)
-	return check_access_list(I ? I.GetAccess() : list())
+/atom/movable/proc/check_access(atom/movable/A)
+	return check_access_list(A ? A.GetAccess() : list())
 
 /atom/movable/proc/check_access_list(list/L)
 	var/list/R = get_req_access()
@@ -32,6 +30,11 @@
 		R = list()
 	if(!istype(L, /list))
 		return FALSE
+
+	if(maint_all_access)
+		L = L.Copy()
+		L |= access_maint_tunnels
+
 	return has_access(R, L)
 
 /proc/has_access(list/req_access, list/accesses)
@@ -230,6 +233,9 @@
 		var/obj/item/weapon/card/id = I ? I.GetIdCard() : null
 		if(id)
 			return id
+	var/obj/item/organ/internal/controller/controller = locate() in internal_organs
+	if(istype(controller))
+		return controller.GetIdCard()
 
 /mob/living/carbon/human/GetAccess()
 	. = list()
@@ -237,6 +243,9 @@
 		var/obj/item/I = item_slot
 		if(I)
 			. |= I.GetAccess()
+	var/obj/item/organ/internal/controller/controller = locate() in internal_organs
+	if(istype(controller))
+		. |= controller.GetAccess()
 #undef HUMAN_ID_CARDS
 
 /mob/living/silicon/GetIdCard()
@@ -257,17 +266,26 @@
 	var/obj/item/weapon/card/id/I = GetIdCard()
 
 	if(I)
+//[INF]		Please can we locate CentCom first, not null icon_state in ALL ICONS? Thank you
+		var/centcom = get_all_centcom_jobs()
+		if(I.assignment	in centcom) //Return with the NT logo if it is a Centcom job
+			return "Centcom"
+		if(I.rank in centcom)
+			return "Centcom"
+//[/INF]
 		var/job_icons = get_all_job_icons()
 		if(I.assignment	in job_icons) //Check if the job has a hud icon
 			return I.assignment
 		if(I.rank in job_icons)
 			return I.rank
 
+/*[ORIG]
 		var/centcom = get_all_centcom_jobs()
 		if(I.assignment	in centcom) //Return with the NT logo if it is a Centcom job
 			return "Centcom"
 		if(I.rank in centcom)
 			return "Centcom"
+[/ORIG]*/
 	else
 		return
 

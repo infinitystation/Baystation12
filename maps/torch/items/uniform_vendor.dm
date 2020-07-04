@@ -25,10 +25,11 @@
 	else
 		icon_state = "[initial(icon_state)]-off"
 
-/obj/machinery/uniform_vendor/attack_hand(mob/user)
-	if(..())
-		return
+/obj/machinery/uniform_vendor/interface_interact(mob/user)
+	interact(user)
+	return TRUE
 
+/obj/machinery/uniform_vendor/interact(mob/user)
 	var/dat = list()
 	dat += "User ID: <a href='byond://?src=\ref[src];ID=1'>[ID ? "[ID.registered_name], [ID.military_rank], [ID.military_branch]" : "--------"]</a>"
 	dat += "<hr>"
@@ -124,9 +125,8 @@
 	var/decl/hierarchy/mil_uniform/user_outfit = decls_repository.get_decl(/decl/hierarchy/mil_uniform)
 	var/mil_uniforms = user_outfit
 	for(var/decl/hierarchy/mil_uniform/child in user_outfit.children)
-		if(istype(user_branch,child.branch))
+		if(is_type_in_list(user_branch, child.branches))
 			user_outfit = child
-
 	if(user_outfit == mil_uniforms) //We haven't found a branch
 		return null //Return no uniforms, which will cause the machine to spit out an error.
 

@@ -3,7 +3,7 @@
 	desc = "Used to teleport objects to and from the telescience telepad."
 	icon_screen = "teleport"
 	light_color = LIGHT_COLOR_BLUE
-	circuit = /obj/item/weapon/circuitboard/telesci_console
+	//circuit = /obj/item/weapon/stock_parts/circuitboard/telesci_console
 	var/sending = 1
 	var/obj/machinery/telepad/telepad = null
 	var/temp_msg = "Telescience control console initialized.<BR>Welcome."
@@ -72,9 +72,9 @@
 		..()
 
 /obj/machinery/computer/telescience/attack_ai(mob/user)
-	src.attack_hand(user)
+	src.physical_attack_hand(user)
 
-/obj/machinery/computer/telescience/attack_hand(mob/user)
+/obj/machinery/computer/telescience/physical_attack_hand(mob/user)
 	if(..())
 		return
 	if(!user.skill_check(SKILL_SCIENCE, SKILL_EXPERT))
@@ -326,7 +326,7 @@
 		var/new_z = input("Please input desired sector.", name, z_co) as num
 		if(..())
 			return
-		z_co = Clamp(round(new_z), 1, 15)
+		z_co = Clamp(round(new_z), 1, 25)
 
 	if(href_list["ejectGPS"])
 		if(inserted_gps)
@@ -361,7 +361,7 @@
 
 /obj/machinery/computer/telescience/proc/recalibrate(mob/user)
 	var/mult = 1
-	if(user && user.skill_check(SKILL_SCIENCE, SKILL_PROF))
+	if(user?.skill_check(SKILL_SCIENCE, SKILL_PROF))
 		mult = 2
 	teles_left = rand(30, 40) * mult
 	power_off = rand(-4, 0) / mult

@@ -4,10 +4,10 @@
 #define TAG_RELIGION  "religion"
 
 #define ALL_CULTURAL_TAGS list( \
-	TAG_CULTURE =   "Culture", \
-	TAG_HOMEWORLD = "Residence", \
-	TAG_FACTION =   "Faction", \
-	TAG_RELIGION =  "Beliefs" \
+	TAG_CULTURE =   "Культура", \
+	TAG_HOMEWORLD = "Место проживания", \
+	TAG_FACTION =   "Фракция", \
+	TAG_RELIGION =  "Верования" \
 	)
 
 // Cultural IDs.
@@ -24,6 +24,7 @@
 #define FACTION_DAIS           "Deimos Advanced Information Systems"
 #define FACTION_OTHER          "Other Faction"
 #define FACTION_TEST_SUBJECTS  "Test Subjects"
+#define FACTION_SPACECOPS  "Sol Federal Police"
 
 #define HOME_SYSTEM_EARTH      "Earth"
 #define HOME_SYSTEM_LUNA       "Luna"
@@ -74,13 +75,18 @@
 #define RELIGION_JUDAISM       "Judaism"
 #define RELIGION_HINDUISM      "Hinduism"
 #define RELIGION_BUDDHISM      "Buddhism"
+#define RELIGION_SIKHISM       "Sikhism"
+#define RELIGION_JAINISM       "Jainism"
 #define RELIGION_ISLAM         "Islam"
 #define RELIGION_CHRISTIANITY  "Christianity"
+#define RELIGION_BAHAI_FAITH   "Baha'i Faith"
 #define RELIGION_AGNOSTICISM   "Agnosticism"
 #define RELIGION_DEISM         "Deism"
 #define RELIGION_ATHEISM       "Atheism"
 #define RELIGION_THELEMA       "Thelema"
 #define RELIGION_SPIRITUALISM  "Spiritualism"
+#define RELIGION_SHINTO        "Shinto"
+#define RELIGION_TAOISM        "Taoism"
 
 // Skrellian cultures.
 #define CULTURE_SKRELL_QERR     "Qerr-Katish"
@@ -98,7 +104,7 @@
 #define FACTION_SKRELL_QERRVOAL "Qerr'voal"
 #define FACTION_SKRELL_QALAOA "Qala'oa"
 #define FACTION_SKRELL_YIITALANA "Yii'talana"
-#define FACTION_SKRELL_KRIGLI "Kri'gli"
+#define FACTION_SKRELL_KRRIGLI "Krri'gli"
 #define FACTION_SKRELL_QONPRRI "Qon'prri"
 
 // Adherent cultures.
@@ -160,13 +166,6 @@
 #define RELIGION_UNATHI_VINE         "Hand of the Vine"
 #define RELIGION_UNATHI_LIGHTS       "The Fruitful Lights"
 
-// Xenophage cultures.
-#define CULTURE_XENOPHAGE_D    "Xenophage Drone"
-#define CULTURE_XENOPHAGE_H    "Xenophage Hunter"
-#define CULTURE_XENOPHAGE_S    "Xenophage Sentinel"
-#define CULTURE_XENOPHAGE_Q    "Xenophage Queen"
-#define FACTION_XENOPHAGE      "Xenophage Hive"
-
 // Nabber grades.
 #define CULTURE_NABBER_CMINUS "Grade C-"
 #define CULTURE_NABBER_C      "Grade C"
@@ -177,3 +176,11 @@
 #define CULTURE_NABBER_AMINUS "Grade A-"
 #define CULTURE_NABBER_A      "Grade A"
 #define CULTURE_NABBER_APLUS  "Grade A+"
+
+// Ascent culture.
+#define CULTURE_ASCENT           "The Ascent"
+#define HOME_SYSTEM_KHARMAANI    "Core"
+#define FACTION_ASCENT_GYNE      "Ascent Gyne"
+#define FACTION_ASCENT_ALATE     "Ascent Alate"
+#define FACTION_ASCENT_SERPENTID "Ascent Serpentid"
+#define RELIGION_KHARMAANI       "Nest-Lineage Veneration"

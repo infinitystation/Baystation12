@@ -1,6 +1,5 @@
-//Infinity Station sign. ~Quardbreak
 /obj/effect/floor_decal/ss13/infinity
-	icon = 'icons/turf/flooring/infinity_decals.dmi'
+	icon = 'infinity/icons/turf/flooring/decals.dmi'
 
 /obj/effect/floor_decal/ss13/infinity/l1
 	name = "L1"
@@ -48,7 +47,7 @@
 
 /obj/effect/floor_decal/parade
 	name = "first"
-	icon = 'icons/turf/flooring/infinity_decals.dmi'
+	icon = 'infinity/icons/turf/flooring/decals.dmi'
 	icon_state = "first"
 
 /obj/effect/floor_decal/parade/second

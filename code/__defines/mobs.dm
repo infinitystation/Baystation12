@@ -8,12 +8,10 @@
 #define CANWEAKEN   0x2
 #define CANPARALYSE 0x4
 #define CANPUSH     0x8
-#define LEAPING     0x10
-#define PASSEMOTES  0x20    // Mob has a cortical borer or holders inside of it that need to see emotes.
+#define PASSEMOTES  0x10    // Mob has a cortical borer or holders inside of it that need to see emotes.
 #define GODMODE     0x1000
 #define FAKEDEATH   0x2000  // Replaces stuff like changeling.changeling_fakedeath.
 #define NO_ANTAG    0x4000  // Players are restricted from gaining antag roles when occupying this mob
-#define XENO_HOST   0x8000  // Tracks whether we're gonna be a baby alien's mummy.
 
 // Grab Types
 #define GRAB_NORMAL			"normal"
@@ -104,14 +102,14 @@
 #define MIN_SUPPLIED_LAW_NUMBER 15
 #define MAX_SUPPLIED_LAW_NUMBER 50
 
-// Character's economic class
-#define CLASS_UPPER 		"Wealthy"
-#define CLASS_UPMID			"Well-off"
-#define CLASS_MIDDLE 		"Average"
-#define CLASS_LOWMID		"Underpaid"
-#define CLASS_LOWER			"Poor"
+// NT's alignment towards the character
+#define COMPANY_LOYAL 			"Loyal"
+#define COMPANY_SUPPORTATIVE	"Supportive"
+#define COMPANY_NEUTRAL 		"Neutral"
+#define COMPANY_SKEPTICAL		"Skeptical"
+#define COMPANY_OPPOSED			"Opposed"
 
-#define ECONOMIC_CLASS		list(CLASS_UPPER,CLASS_UPMID,CLASS_MIDDLE,CLASS_LOWMID,CLASS_LOWER)
+#define COMPANY_ALIGNMENTS		list(COMPANY_LOYAL,COMPANY_SUPPORTATIVE,COMPANY_NEUTRAL,COMPANY_SKEPTICAL,COMPANY_OPPOSED)
 
 // Defines mob sizes, used by lockers and to determine what is considered a small sized mob, etc.
 #define MOB_LARGE  		40
@@ -140,21 +138,21 @@
 // Devour speeds, returned by can_devour()
 #define DEVOUR_SLOW 1
 #define DEVOUR_FAST 2
-
+/*INF, WAS. SEE MOBS_INF.DM
 #define TINT_NONE 0
 #define TINT_MODERATE 1
 #define TINT_HEAVY 2
 #define TINT_BLIND 3
-
+*/
 #define FLASH_PROTECTION_VULNERABLE -2
 #define FLASH_PROTECTION_REDUCED -1
 #define FLASH_PROTECTION_NONE 0
-#define FLASH_PROTECTION_MODERATE 1
-#define FLASH_PROTECTION_MAJOR 2
+#define FLASH_PROTECTION_MINOR 1
+#define FLASH_PROTECTION_MODERATE 2
+#define FLASH_PROTECTION_MAJOR 3
 
 #define ANIMAL_SPAWN_DELAY round(config.respawn_delay / 6)
 #define DRONE_SPAWN_DELAY  round(config.respawn_delay / 3)
-#define OBSERV_SPAWN_DELAY round(config.respawn_delay / 2)
 
 // Incapacitation flags, used by the mob/proc/incapacitated() proc
 #define INCAPACITATION_NONE 0
@@ -187,6 +185,8 @@
 #define BP_APPENDIX "appendix"
 #define BP_CELL     "cell"
 #define BP_HIVE     "hive node"
+#define BP_LARVA    "alien larva" //INF
+#define BP_MIMIC    "mimic sac" //INF
 #define BP_NUTRIENT "nutrient vessel"
 #define BP_ACID     "acid gland"
 #define BP_EGG      "egg sac"
@@ -198,17 +198,20 @@
 #define BP_ANCHOR   "anchoring ligament"
 #define BP_PHORON   "phoron filter"
 #define BP_ACETONE  "acetone reactor"
+#define BP_GLAND    "alien gland" //INF
 
 // Vox bits.
 #define BP_HINDTONGUE "hindtongue"
 
 // Robo Organs.
-#define BP_POSIBRAIN	"posibrain"
-#define BP_VOICE		"vocal synthesiser"
-#define BP_STACK		"stack"
-#define BP_FLOAT		"floatation disc"
-#define BP_JETS			"maneuvering jets"
-#define BP_COOLING_FINS "cooling fins"
+#define BP_POSIBRAIN         "posibrain"
+#define BP_VOICE             "vocal synthesiser"
+#define BP_STACK             "stack"
+#define BP_OPTICS            "optics"
+#define BP_FLOAT             "floatation disc"
+#define BP_JETS              "maneuvering jets"
+#define BP_COOLING_FINS      "cooling fins"
+#define BP_SYSTEM_CONTROLLER "system controller"
 
 //Augmetations
 #define BP_AUGMENT_R_ARM         "right arm augment"
@@ -240,28 +243,14 @@
 #define BP_ALL_LIMBS list(BP_CHEST, BP_GROIN, BP_HEAD, BP_L_ARM, BP_R_ARM, BP_L_HAND, BP_R_HAND, BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT)
 #define BP_BY_DEPTH list(BP_HEAD, BP_L_HAND, BP_R_HAND, BP_L_ARM, BP_R_ARM, BP_L_FOOT, BP_R_FOOT, BP_L_LEG, BP_R_LEG, BP_GROIN, BP_CHEST)
 
-//Swarm Limbs
-#define BP_L_F_LEG 		"left front leg"
-#define BP_R_F_LEG 		"right front leg"
-#define BP_L_B_LEG 		"left back leg"
-#define BP_R_B_LEG 		"right back leg"
-#define BP_SHELL   		"shell"
-#define BP_MANIPULATOR	"manipulator"
-
-//Swarm Organs
-#define BP_SENSOR			"sensor"
-#define BP_GENERATOR		"generator"
-#define BP_CORE				"core"
-#define BP_THRUSTER			"thruster"
-#define BP_ARMOR			"armor"
-#define BP_ANTI_EMP_PLATING	"anti EMP plating"
-#define BP_MATTER_TANK		"matter tank"
-
 // Prosthetic helpers.
 #define BP_IS_ROBOTIC(org)  (org.status & ORGAN_ROBOTIC)
 #define BP_IS_ASSISTED(org) (org.status & ORGAN_ASSISTED)
 #define BP_IS_BRITTLE(org)  (org.status & ORGAN_BRITTLE)
 #define BP_IS_CRYSTAL(org)  (org.status & ORGAN_CRYSTAL)
+
+// Limb flag helpers
+#define BP_IS_DEFORMED(org) (org.limb_flags & ORGAN_FLAG_DEFORMED)
 
 #define SYNTH_BLOOD_COLOUR "#030303"
 #define SYNTH_FLESH_COLOUR "#575757"
@@ -301,31 +290,35 @@
 #define CORPSE_CAN_REENTER 1
 #define CORPSE_CAN_REENTER_AND_RESPAWN 2
 
-#define SPECIES_HUMAN       "Human"
-#define SPECIES_TAJARA      "Tajara"
-#define SPECIES_DIONA       "Diona"
-#define SPECIES_VOX         "Vox"
-#define SPECIES_VOX_ARMALIS "Vox Armalis"
-#define SPECIES_IPC         "Machine"
-#define SPECIES_UNATHI      "Unathi"
-#define SPECIES_SKRELL      "Skrell"
-#define SPECIES_NABBER      "giant armoured serpentid"
-#define SPECIES_PROMETHEAN  "Promethean"
-#define SPECIES_XENO        "Xenophage"
-#define SPECIES_RESOMI      "Resomi"
-#define SPECIES_ALIEN       "Humanoid"
-#define SPECIES_ADHERENT    "Adherent"
-#define SPECIES_GOLEM       "Golem"
-#define SPECIES_YEOSA       "Yeosa'Unathi"
-#define SPECIES_EROSAN      "Erosan'Unathi"
-#define SPECIES_VATGROWN    "Vat-Grown Human"
-#define SPECIES_SPACER      "Space-Adapted Human"
-#define SPECIES_TRITONIAN   "Tritonian"
-#define SPECIES_GRAVWORLDER "Grav-Adapted Human"
-#define SPECIES_SWARM		"Swarm"
+#define SPECIES_HUMAN		"Human"
+#define SPECIES_DIONA		"Diona"
+#define SPECIES_VOX			"Vox"
+#define SPECIES_VOX_ARMALIS	"Vox Armalis"
+#define SPECIES_IPC			"Machine"
+#define SPECIES_UNATHI		"Unathi"
+#define SPECIES_SKRELL		"Skrell"
+#define SPECIES_PROMETHEAN	"Promethean"
+#define SPECIES_ALIEN		"Humanoid"
+#define SPECIES_ADHERENT	"Adherent"
+#define SPECIES_GOLEM		"Golem"
+#define SPECIES_YEOSA		"Yeosa'Unathi"
+#define SPECIES_VATGROWN	"Vat-Grown Human"
+#define SPECIES_SPACER		"Space-Adapted Human"
+#define SPECIES_TRITONIAN	"Tritonian"
+#define SPECIES_GRAVWORLDER	"Grav-Adapted Human"
+#define SPECIES_MULE		"Mule"
+#define SPECIES_BOOSTER		"Booster"
 
-#define STATION_SPECIES list(SPECIES_HUMAN, SPECIES_DIONA, SPECIES_IPC, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_TRITONIAN, SPECIES_SPACER, SPECIES_VATGROWN, SPECIES_GRAVWORLDER, SPECIES_RESOMI, SPECIES_TAJARA)
-#define RESTRICTED_SPECIES list(SPECIES_VOX, SPECIES_XENO, SPECIES_ALIEN, SPECIES_GOLEM)
+#define UNRESTRICTED_SPECIES	list(SPECIES_HUMAN, SPECIES_DIONA, SPECIES_IPC, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_TRITONIAN, SPECIES_SPACER, SPECIES_VATGROWN, SPECIES_GRAVWORLDER, SPECIES_BOOSTER, SPECIES_MULE,\
+							SPECIES_RESOMI, SPECIES_TAJARA)//inf
+#define RESTRICTED_SPECIES		list(SPECIES_VOX, SPECIES_ALIEN, SPECIES_GOLEM, SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_MONARCH_WORKER, SPECIES_MONARCH_QUEEN, \
+	SPECIES_XENO) //inf
+
+#define SPECIES_NABBER         "giant armoured serpentid"
+#define SPECIES_MONARCH_WORKER "Monarch Serpentid Worker"
+#define SPECIES_MONARCH_QUEEN  "Monarch Serpentid Queen"
+#define SPECIES_MANTID_ALATE   "Kharmaan Alate"
+#define SPECIES_MANTID_GYNE    "Kharmaan Gyne"
 
 #define SURGERY_CLOSED 0
 #define SURGERY_OPEN 1
@@ -356,7 +349,13 @@
 #define MOB_CLIMB_TIME_MEDIUM 50
 
 #define MOB_FACTION_NEUTRAL "neutral"
+
 #define ROBOT_MODULE_TYPE_GROUNDED "grounded"
 #define ROBOT_MODULE_TYPE_FLYING   "flying"
 
 #define RADIO_INTERRUPT_DEFAULT 30
+
+#define MOB_FLAG_HOLY_BAD                0x001  // If this mob is allergic to holiness
+
+#define MARKING_TARGET_SKIN 0 // Draw a datum/sprite_accessory/marking to the mob's body, eg. tattoos
+#define MARKING_TARGET_HAIR 1 // Draw a datum/sprite_accessory/marking to the mob's hair, eg. ears & horns

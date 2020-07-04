@@ -60,7 +60,8 @@
 /turf/simulated/floor/holofloor/wood
 	name = "wooden floor"
 	icon = 'icons/turf/flooring/wood.dmi'
-	icon_state = "walnut"
+	icon_state = "wood"
+	color = WOOD_COLOR_CHOCOLATE
 	initial_flooring = /decl/flooring/wood
 
 /turf/simulated/floor/holofloor/grass
@@ -139,9 +140,13 @@
 
 /obj/item/clothing/gloves/boxing/hologlove
 	name = "boxing gloves"
-	desc = "Because you really needed another excuse to punch your crewmates."
+//ORIG	desc = "Because you really needed another excuse to punch your crewmates."
+	desc = "A state of the art electronic boxing gloves, used at holodecks for clever fights." //INF
 	icon_state = "boxing"
 	item_state = "boxing"
+	species_restricted = null //INF, hologram
+	var/hits = 0 //INF
+	var/hits_needed = 12 //INF
 
 /obj/structure/window/holowindow/full
 	dir = 5
@@ -313,9 +318,9 @@
 			return
 		if(prob(50))
 			I.dropInto(loc)
-			visible_message("<span class='notice'>Swish! \the [I] lands in \the [src].</span>", 3)
+			visible_message("<span class='notice'>Swish! \the [I] lands in \the [src].</span>", range = 3)
 		else
-			visible_message("<span class='warning'>\The [I] bounces off of \the [src]'s rim!</span>", 3)
+			visible_message("<span class='warning'>\The [I] bounces off of \the [src]'s rim!</span>", range = 3)
 		return 0
 	else
 		return ..(mover, target, height, air_group)
@@ -351,7 +356,7 @@
 			return
 		if(prob(10))
 			I.dropInto(loc)
-			visible_message("<span class='notice'>Swish! \the [I] gets caught in \the [src].</span>", 3)
+			visible_message("<span class='notice'>Swish! \the [I] gets caught in \the [src].</span>", range = 3)
 			return 0
 		else
 			return 1
@@ -383,22 +388,15 @@
 /obj/machinery/readybutton/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	to_chat(user, "The device is a solid button, there's nothing you can do with it!")
 
-/obj/machinery/readybutton/attack_hand(mob/user as mob)
-
-	if(user.stat || stat & (NOPOWER|BROKEN))
-		to_chat(user, "This device is not powered.")
-		return
-
-	if(!user.IsAdvancedToolUser())
-		return 0
-
-	currentarea = get_area(src.loc)
+/obj/machinery/readybutton/physical_attack_hand(mob/user)
+	currentarea = get_area(src)
 	if(!currentarea)
 		qdel(src)
+		return TRUE
 
 	if(eventstarted)
-		to_chat(usr, "The event has already begun!")
-		return
+		to_chat(user, "The event has already begun!")
+		return TRUE
 
 	ready = !ready
 
@@ -413,6 +411,7 @@
 
 	if(numbuttons == numready)
 		begin_event()
+	return TRUE
 
 /obj/machinery/readybutton/on_update_icon()
 	if(ready)

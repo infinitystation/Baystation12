@@ -12,7 +12,7 @@
 /turf/simulated/wall/voxshuttle,
 /area/space)
 "ae" = (
-/obj/item/modular_computer/console/preset/merchant{
+/obj/machinery/computer/modular/preset/merchant{
 	icon_state = "console";
 	dir = 4
 	},
@@ -147,7 +147,7 @@
 	icon_state = "shower";
 	pixel_x = -9
 	},
-/obj/structure/drain,
+/obj/structure/hygiene/drain,
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/white,
 /area/space)
@@ -1175,7 +1175,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/space)
 "cN" = (
-/obj/mecha/working/ripley,
+/mob/living/exosuit/premade/powerloader,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/space)
 "cO" = (
@@ -1187,7 +1187,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/space)
 "cQ" = (
-/obj/mecha/combat/durand,
+/mob/living/exosuit/premade/heavy,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/space)
 "cR" = (

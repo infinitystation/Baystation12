@@ -5,7 +5,10 @@
 		"Science" = TRUE,
 		"Service" = TRUE
 	)
-	sprites = list("Drone" = "drone-hydro")
+	sprites = list(
+		"Drone" = "drone-hydro",
+		"Ver 06" = "wer6-Research" //INF
+	)
 
 	equipment = list(
 		/obj/item/weapon/storage/plants,
@@ -19,4 +22,11 @@
 		/obj/item/weapon/gripper/cultivator,
 		/obj/item/device/scanner/plant,
 		/obj/item/weapon/robot_harvester
+	)
+	emag = /obj/item/weapon/melee/energy/machete
+	skills = list(
+		SKILL_BOTANY    = SKILL_MAX,
+		SKILL_COMBAT    = SKILL_EXPERT,
+		SKILL_CHEMISTRY = SKILL_EXPERT,
+		SKILL_SCIENCE   = SKILL_EXPERT,
 	)

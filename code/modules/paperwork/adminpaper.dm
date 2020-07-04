@@ -16,7 +16,8 @@
 	var/footer = null
 	var/footerOn = FALSE
 
-	var/logo_list = list("sollogo.png","eclogo.png","fleetlogo.png","exologo.png","ntlogo.png","daislogo.png","xynlogo.png","terralogo.png", "ocielogo.png", "ccalogo.png")
+	var/logo_list = list("sollogo.png","eclogo.png","fleetlogo.png","exologo.png","ntlogo.png","daislogo.png","xynlogo.png","terralogo.png", "sfplogo.png",\
+																																							"ocielogo.png", "ccalogo.png")//inf
 	var/logo = ""
 
 /obj/item/weapon/paper/admin/New()
@@ -71,7 +72,7 @@
 	updateDisplay()
 
 obj/item/weapon/paper/admin/proc/updateDisplay()
-	usr << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[headerOn ? header : ""][info_links][stamps][footerOn ? footer : ""][interactions]</BODY></HTML>", "window=[name];can_close=0")
+	show_browser(usr, "<HTML><meta charset=\"UTF-8\"><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[headerOn ? header : ""][info_links][stamps][footerOn ? footer : ""][interactions]</BODY></HTML>", "window=[name];can_close=0")
 
 
 
@@ -120,7 +121,7 @@ obj/item/weapon/paper/admin/proc/updateDisplay()
 				if(footerOn)
 					info += footer
 				updateinfolinks()
-				usr << browse(null, "window=[name]")
+				close_browser(usr, "window=[name]")
 				admindatum.faxCallback(src, destination)
 		return
 
@@ -131,7 +132,7 @@ obj/item/weapon/paper/admin/proc/updateDisplay()
 		return
 
 	if(href_list["cancel"])
-		usr << browse(null, "window=[name]")
+		close_browser(usr, "window=[name]")
 		qdel(src)
 		return
 

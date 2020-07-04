@@ -1,0 +1,25 @@
+body {
+	margin: 0; padding: 0;
+	font-family: Tahoma, sans-serif;
+}
+.hero-bkg-animated {
+  background: gray url(Space.png) repeat 0 0;
+  width: 100%;
+  margin: 0;
+  height: 365px;
+  box-sizing: border-box;
+  -webkit-animation: slide 20s linear infinite;
+}
+@-webkit-keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: 0 -480px; }
+}
+A {
+	color: #1994d1;
+}
+A:visited {
+	color: #cecece;
+}
+A:active {
+	color: #ffff00;
+}

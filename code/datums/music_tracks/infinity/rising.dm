@@ -2,6 +2,6 @@
 	artist = "Jamatar"
 	title = "Lepus Rising"
 	album = "Journeys - EP"
-	song = 'sound/infinity_lobby_music/jamatar_lepus_rising.ogg'
+	song = 'infinity/sound/music/jamatar_lepus_rising.ogg'
 	license = /decl/license/cc_by_3_0
 	url = "https://soundcloud.com/jamatar/02-lepus-rising"

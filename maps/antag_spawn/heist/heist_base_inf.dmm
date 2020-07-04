@@ -1,0 +1,6876 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/turf/space,
+/area/space)
+"ab" = (
+/turf/simulated/mineral,
+/area/map_template/syndicate_mothership/raider_base)
+"ac" = (
+/turf/simulated/wall/prepainted,
+/area/map_template/syndicate_mothership/raider_base)
+"ad" = (
+/obj/structure/bed/padded,
+/obj/effect/landmark/start{
+	name = "Raider"
+	},
+/obj/effect/landmark{
+	name = "voxstart"
+	},
+/obj/structure/curtain/bed,
+/turf/simulated/floor/carpet,
+/area/map_template/syndicate_mothership/raider_base)
+"ae" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/wood/walnut,
+/area/map_template/syndicate_mothership/raider_base)
+"af" = (
+/obj/structure/bed/padded,
+/obj/structure/curtain/bed,
+/obj/effect/landmark/start{
+	name = "Raider"
+	},
+/obj/effect/landmark{
+	name = "voxstart"
+	},
+/turf/simulated/floor/carpet,
+/area/map_template/syndicate_mothership/raider_base)
+"ag" = (
+/obj/structure/bed/padded,
+/obj/structure/curtain/bed,
+/obj/effect/landmark/start{
+	name = "Raider"
+	},
+/obj/effect/landmark{
+	name = "voxstart"
+	},
+/obj/structure/sign/poster/humpost/hum_21{
+	pixel_y = 32
+	},
+/turf/simulated/floor/carpet,
+/area/map_template/syndicate_mothership/raider_base)
+"ah" = (
+/obj/machinery/door/airlock/hatch{
+	req_access = newlist()
+	},
+/turf/simulated/floor/wood/walnut,
+/area/map_template/syndicate_mothership/raider_base)
+"ai" = (
+/obj/machinery/vending/cigarette{
+	name = "hacked cigarette machine";
+	prices = list();
+	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership/raider_base)
+"aj" = (
+/obj/machinery/vending/snack{
+	name = "hacked Getmore Chocolate Corp";
+	prices = list()
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership/raider_base)
+"ak" = (
+/obj/structure/closet/secure_closet/freezer/kitchen,
+/obj/machinery/light/small{
+	dir = 8;
+	icon_state = "bulb_map"
+	},
+/turf/simulated/floor/tiled/white,
+/area/map_template/syndicate_mothership/raider_base)
+"al" = (
+/obj/structure/table/reinforced,
+/obj/machinery/microwave{
+	pixel_x = -1;
+	pixel_y = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/map_template/syndicate_mothership/raider_base)
+"am" = (
+/obj/structure/table/reinforced,
+/obj/machinery/chemical_dispenser/bar_soft/full,
+/turf/simulated/floor/tiled/white,
+/area/map_template/syndicate_mothership/raider_base)
+"an" = (
+/obj/machinery/recharge_station,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"ao" = (
+/obj/structure/closet/secure_closet/freezer/fridge,
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/map_template/syndicate_mothership/raider_base)
+"ap" = (
+/turf/simulated/floor/asteroid/aired,
+/area/map_template/syndicate_mothership/raider_base)
+"aq" = (
+/turf/simulated/floor/asteroidplate,
+/area/map_template/syndicate_mothership/raider_base)
+"ar" = (
+/obj/random/junk,
+/obj/machinery/light/small{
+	dir = 1;
+	icon_state = "bulb_map"
+	},
+/turf/simulated/floor/asteroidplate,
+/area/map_template/syndicate_mothership/raider_base)
+"as" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership/raider_base)
+"at" = (
+/obj/effect/catwalk_plated/dark,
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"au" = (
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership/raider_base)
+"av" = (
+/obj/random/junk,
+/obj/effect/catwalk_plated/dark,
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"aw" = (
+/obj/effect/catwalk_plated/dark,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"ax" = (
+/obj/random/junk,
+/obj/effect/catwalk_plated/dark,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"ay" = (
+/obj/item/weapon/tray{
+	pixel_y = 5
+	},
+/turf/simulated/floor/tiled/white,
+/area/map_template/syndicate_mothership/raider_base)
+"az" = (
+/turf/simulated/floor/tiled/white,
+/area/map_template/syndicate_mothership/raider_base)
+"aA" = (
+/obj/random/trash,
+/turf/simulated/floor/tiled/white,
+/area/map_template/syndicate_mothership/raider_base)
+"aB" = (
+/obj/structure/closet/secure_closet/freezer/meat,
+/turf/simulated/floor/tiled/white,
+/area/map_template/syndicate_mothership/raider_base)
+"aC" = (
+/obj/random/trash,
+/turf/simulated/floor/asteroidplate,
+/area/map_template/syndicate_mothership/raider_base)
+"aD" = (
+/obj/machinery/door/airlock/hatch{
+	name = "\improper NO DUST BREATHER ALLOWED";
+	req_access = newlist()
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership/raider_base)
+"aE" = (
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership/raider_base)
+"aF" = (
+/obj/item/device/radio/intercom/raider{
+	dir = 4;
+	pixel_x = -22
+	},
+/obj/random/trash,
+/turf/simulated/floor/tiled/white,
+/area/map_template/syndicate_mothership/raider_base)
+"aG" = (
+/obj/random/junk,
+/turf/simulated/floor/tiled/white,
+/area/map_template/syndicate_mothership/raider_base)
+"aH" = (
+/obj/random/coin,
+/turf/simulated/floor/asteroidplate,
+/area/map_template/syndicate_mothership/raider_base)
+"aI" = (
+/obj/machinery/door/airlock/hatch{
+	req_access = newlist()
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership/raider_base)
+"aJ" = (
+/obj/effect/decal/cleanable/blood,
+/obj/machinery/light/small{
+	dir = 8;
+	icon_state = "bulb_map"
+	},
+/turf/simulated/floor/tiled/white,
+/area/map_template/syndicate_mothership/raider_base)
+"aK" = (
+/obj/machinery/gibber,
+/turf/simulated/floor/tiled/white,
+/area/map_template/syndicate_mothership/raider_base)
+"aL" = (
+/obj/structure/kitchenspike,
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/map_template/syndicate_mothership/raider_base)
+"aM" = (
+/obj/structure/hygiene/urinal{
+	pixel_y = 32
+	},
+/obj/item/weapon/soap,
+/turf/simulated/floor/tiled/freezer,
+/area/map_template/syndicate_mothership/raider_base)
+"aN" = (
+/obj/structure/hygiene/urinal{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/map_template/syndicate_mothership/raider_base)
+"aO" = (
+/obj/machinery/acting/changer,
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 8
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/map_template/syndicate_mothership/raider_base)
+"aP" = (
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/closet/crate/freezer/blood/small,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership/raider_base)
+"aQ" = (
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/closet/crate/internals,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership/raider_base)
+"aR" = (
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/closet/crate/internals/fuel,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership/raider_base)
+"aS" = (
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/closet/crate/freezer,
+/obj/item/weapon/reagent_containers/food/snacks/meat/beef,
+/obj/item/weapon/reagent_containers/food/snacks/meat/beef,
+/obj/item/weapon/reagent_containers/food/snacks/meat/beef,
+/obj/item/weapon/reagent_containers/food/snacks/meat/chicken,
+/obj/item/weapon/reagent_containers/food/snacks/meat/corgi,
+/obj/random/snack,
+/obj/random/snack,
+/obj/random/snack,
+/obj/random/medical/lite,
+/obj/random/junk,
+/obj/random/junk,
+/obj/random/drinkbottle,
+/obj/random/drinkbottle,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership/raider_base)
+"aT" = (
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/table/rack,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/item/weapon/storage/backpack/satchel,
+/obj/item/weapon/storage/backpack/satchel,
+/obj/item/weapon/storage/backpack/satchel,
+/obj/item/clothing/accessory/storage/black_vest,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership/raider_base)
+"aU" = (
+/obj/effect/catwalk_plated/dark,
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"aV" = (
+/obj/machinery/door/airlock/hatch{
+	req_access = newlist()
+	},
+/turf/simulated/floor/tiled/white,
+/area/map_template/syndicate_mothership/raider_base)
+"aW" = (
+/obj/machinery/mech_recharger,
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership/raider_base)
+"aX" = (
+/obj/machinery/mech_recharger,
+/mob/living/exosuit/premade/powerloader,
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership/raider_base)
+"aY" = (
+/obj/random/junk,
+/turf/simulated/floor/asteroid/aired,
+/area/map_template/syndicate_mothership/raider_base)
+"aZ" = (
+/obj/random/loot,
+/turf/simulated/floor/asteroid/aired,
+/area/map_template/syndicate_mothership/raider_base)
+"ba" = (
+/obj/machinery/light/small{
+	dir = 1;
+	icon_state = "bulb_map"
+	},
+/turf/simulated/floor/asteroidplate,
+/area/map_template/syndicate_mothership/raider_base)
+"bb" = (
+/obj/machinery/door/airlock/hatch{
+	name = "\improper NO DUST BREATHER ALLOWED";
+	req_access = newlist()
+	},
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"bc" = (
+/turf/simulated/floor/tiled/freezer,
+/area/map_template/syndicate_mothership/raider_base)
+"bd" = (
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/tiled/freezer,
+/area/map_template/syndicate_mothership/raider_base)
+"be" = (
+/obj/machinery/door/airlock/hatch{
+	name = "\improper LITTLE VOX ROOM";
+	req_access = newlist()
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/map_template/syndicate_mothership/raider_base)
+"bf" = (
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership/raider_base)
+"bg" = (
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/table/rack,
+/obj/item/weapon/storage/backpack/dufflebag,
+/obj/item/weapon/storage/backpack/dufflebag,
+/obj/item/weapon/storage/backpack/dufflebag,
+/obj/item/clothing/accessory/storage/drop_pouches/black,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership/raider_base)
+"bh" = (
+/obj/effect/catwalk_plated/dark,
+/obj/structure/sign/poster{
+	pixel_y = 32
+	},
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"bi" = (
+/obj/random/junk,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership/raider_base)
+"bj" = (
+/obj/vehicle/bike/thermal{
+	icon_state = "bike_off";
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 8;
+	icon_state = "railing0-1"
+	},
+/obj/effect/decal/cleanable/blood/oil/streak,
+/obj/structure/sign/warning/nosmoking_1{
+	desc = "A warning sign which reads 'NO SMOKING'. Someone has scratched a variety of crude words in gutter across the entire sign.";
+	pixel_y = 32
+	},
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"bk" = (
+/obj/item/trash/cigbutt,
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"bl" = (
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"bm" = (
+/obj/vehicle/bike/thermal{
+	icon_state = "bike_off";
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership/raider_base)
+"bn" = (
+/obj/item/stack/material/steel,
+/obj/item/stack/material/steel,
+/turf/simulated/floor/asteroid/aired,
+/area/map_template/syndicate_mothership/raider_base)
+"bo" = (
+/obj/structure/reagent_dispensers/fueltank,
+/turf/simulated/floor/asteroid/aired,
+/area/map_template/syndicate_mothership/raider_base)
+"bp" = (
+/obj/item/weapon/storage/mirror{
+	dir = 2;
+	pixel_x = -32
+	},
+/obj/structure/hygiene/sink{
+	dir = 8;
+	icon_state = "sink";
+	pixel_x = -22;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/map_template/syndicate_mothership/raider_base)
+"bq" = (
+/obj/item/device/radio/intercom/raider{
+	dir = 8;
+	pixel_x = 22
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership/raider_base)
+"br" = (
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/closet/crate/trashcart,
+/obj/structure/railing/mapped,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership/raider_base)
+"bs" = (
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/closet/crate/radiation_gear,
+/obj/structure/railing/mapped,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership/raider_base)
+"bt" = (
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/closet/crate/freezer/rations,
+/obj/structure/railing/mapped,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership/raider_base)
+"bu" = (
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/railing/mapped,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership/raider_base)
+"bv" = (
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/table/rack,
+/obj/item/weapon/storage/backpack,
+/obj/item/weapon/storage/backpack,
+/obj/item/weapon/storage/backpack,
+/obj/item/clothing/accessory/storage/webbing,
+/obj/structure/sign/poster/tjpost/tj_3{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership/raider_base)
+"bw" = (
+/obj/vehicle/bike/thermal{
+	icon_state = "bike_off";
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/railing/mapped{
+	dir = 8;
+	icon_state = "railing0-1"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership/raider_base)
+"bx" = (
+/obj/random/trash,
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership/raider_base)
+"by" = (
+/obj/item/weapon/weldingtool,
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"bz" = (
+/obj/item/weapon/storage/toolbox/mechanical,
+/obj/item/weapon/wrench,
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"bA" = (
+/obj/item/clothing/head/xenos,
+/turf/simulated/floor/asteroid/aired,
+/area/map_template/syndicate_mothership/raider_base)
+"bB" = (
+/obj/item/weapon/storage/mirror/raider{
+	pixel_x = -32
+	},
+/obj/structure/hygiene/sink{
+	dir = 8;
+	icon_state = "sink";
+	pixel_x = -22;
+	pixel_y = 0
+	},
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/freezer,
+/area/map_template/syndicate_mothership/raider_base)
+"bC" = (
+/obj/structure/hygiene/shower{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"bD" = (
+/obj/structure/hygiene/shower{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/map_template/syndicate_mothership/raider_base)
+"bE" = (
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/table/rack,
+/obj/item/weapon/storage/belt/holster,
+/obj/item/weapon/storage/belt/holster/security,
+/obj/item/weapon/storage/belt/medical/emt/combat,
+/obj/item/weapon/storage/belt/utility/full_buy{
+	icon_state = "gearbelt";
+	item_state = "gearbelt"
+	},
+/obj/item/clothing/accessory/storage/brown_vest,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership/raider_base)
+"bF" = (
+/obj/structure/wall_frame/standard,
+/obj/item/weapon/material/shard,
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"bG" = (
+/obj/effect/wallframe_spawn/no_grille,
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"bH" = (
+/obj/item/device/radio/intercom/raider{
+	dir = 4;
+	pixel_x = -22
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership/raider_base)
+"bI" = (
+/obj/vehicle/bike/thermal{
+	icon_state = "bike_off";
+	dir = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 8;
+	icon_state = "railing0-1"
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	icon_state = "bulb_map"
+	},
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"bJ" = (
+/obj/item/weapon/reagent_containers/glass/bucket,
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"bK" = (
+/obj/vehicle/bike/thermal{
+	icon_state = "bike_off";
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership/raider_base)
+"bL" = (
+/obj/item/mech_equipment/mounted_system/taser/ion,
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"bM" = (
+/obj/effect/decal/cleanable/blood/oil/streak,
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"bN" = (
+/obj/item/clothing/mask/gas/swat{
+	desc = "A close-fitting mask clearly not made for a human face.";
+	name = "\improper alien mask"
+	},
+/turf/simulated/floor/asteroid/aired,
+/area/map_template/syndicate_mothership/raider_base)
+"bO" = (
+/obj/item/xenos_claw,
+/turf/simulated/floor/asteroidplate,
+/area/map_template/syndicate_mothership/raider_base)
+"bP" = (
+/obj/structure/table/rack,
+/obj/item/clothing/suit/space/vox/carapace,
+/obj/item/clothing/head/helmet/space/vox/carapace,
+/obj/item/clothing/shoes/magboots/vox,
+/obj/item/clothing/gloves/vox,
+/obj/item/weapon/gun/launcher/alien/spikethrower,
+/obj/item/clothing/under/vox/vox_casual,
+/turf/simulated/floor/asteroidplate,
+/area/map_template/syndicate_mothership/raider_base)
+"bQ" = (
+/obj/structure/table/rack,
+/obj/item/clothing/suit/space/vox/carapace,
+/obj/item/clothing/head/helmet/space/vox/carapace,
+/obj/item/clothing/shoes/magboots/vox,
+/obj/item/clothing/gloves/vox,
+/obj/item/weapon/gun/launcher/alien/spikethrower,
+/obj/item/clothing/under/vox/vox_robes,
+/turf/simulated/floor/asteroidplate,
+/area/map_template/syndicate_mothership/raider_base)
+"bR" = (
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/closet/crate/med_crate/burn,
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership/raider_base)
+"bS" = (
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/closet/crate/med_crate/oxyloss,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership/raider_base)
+"bT" = (
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/closet/crate/med_crate/toxin,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership/raider_base)
+"bU" = (
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/closet/crate/med_crate/trauma,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership/raider_base)
+"bV" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership/raider_base)
+"bW" = (
+/turf/simulated/floor/wood/walnut,
+/area/map_template/syndicate_mothership/raider_base)
+"bX" = (
+/obj/structure/flora/pottedplant{
+	desc = "Used to bring the room together...before the accident.";
+	icon_state = "plant-25";
+	name = "Jamie"
+	},
+/turf/simulated/floor/wood/walnut,
+/area/map_template/syndicate_mothership/raider_base)
+"bY" = (
+/obj/structure/sign/poster/humpost/hum_3{
+	pixel_y = 32
+	},
+/turf/simulated/floor/wood/walnut,
+/area/map_template/syndicate_mothership/raider_base)
+"bZ" = (
+/obj/structure/reagent_dispensers/beerkeg,
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 8
+	},
+/turf/simulated/floor/wood/walnut,
+/area/map_template/syndicate_mothership/raider_base)
+"ca" = (
+/obj/machinery/door/airlock/hatch{
+	req_access = newlist()
+	},
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"cb" = (
+/obj/random/trash,
+/obj/machinery/button/blast_door{
+	dir = 1;
+	id_tag = "raidgar";
+	name = "Garage Shutters Control";
+	pixel_y = -21
+	},
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"cc" = (
+/obj/item/pizzabox/meat,
+/turf/simulated/floor/asteroid/aired,
+/area/map_template/syndicate_mothership/raider_base)
+"cd" = (
+/obj/structure/table/rack,
+/obj/item/clothing/suit/space/vox/medic,
+/obj/item/clothing/head/helmet/space/vox/medic,
+/obj/item/clothing/shoes/magboots/vox,
+/obj/item/clothing/gloves/vox,
+/obj/item/clothing/under/vox/vox_robes,
+/obj/item/weapon/gun/projectile/dartgun/vox/raider,
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 8
+	},
+/turf/simulated/floor/asteroidplate,
+/area/map_template/syndicate_mothership/raider_base)
+"ce" = (
+/obj/structure/table/rack,
+/obj/item/clothing/suit/space/vox/carapace,
+/obj/item/clothing/head/helmet/space/vox/carapace,
+/obj/item/clothing/shoes/magboots/vox,
+/obj/item/clothing/gloves/vox,
+/obj/item/weapon/gun/launcher/alien/spikethrower,
+/obj/item/clothing/under/vox/vox_casual,
+/obj/machinery/light/small{
+	dir = 8;
+	icon_state = "bulb_map"
+	},
+/turf/simulated/floor/asteroidplate,
+/area/map_template/syndicate_mothership/raider_base)
+"cf" = (
+/obj/machinery/light/small{
+	dir = 8;
+	icon_state = "bulb_map"
+	},
+/turf/simulated/floor/wood/walnut,
+/area/map_template/syndicate_mothership/raider_base)
+"cg" = (
+/obj/effect/decal/cleanable/generic,
+/obj/item/weapon/stool/bar/padded,
+/turf/simulated/floor/wood/walnut,
+/area/map_template/syndicate_mothership/raider_base)
+"ch" = (
+/obj/item/weapon/stool/bar/padded,
+/turf/simulated/floor/wood/walnut,
+/area/map_template/syndicate_mothership/raider_base)
+"ci" = (
+/obj/machinery/door/blast/shutters{
+	id_tag = "raidgar";
+	name = "Garage Shutters"
+	},
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"cj" = (
+/obj/structure/table/rack,
+/obj/item/clothing/suit/space/vox/pressure,
+/obj/item/clothing/head/helmet/space/vox/pressure,
+/obj/item/clothing/shoes/magboots/vox,
+/obj/item/clothing/gloves/vox,
+/obj/item/clothing/under/vox/vox_casual,
+/obj/item/weapon/gun/projectile/dartgun/vox/raider,
+/turf/simulated/floor/asteroidplate,
+/area/map_template/syndicate_mothership/raider_base)
+"ck" = (
+/obj/structure/table/rack,
+/obj/item/clothing/suit/space/vox/stealth,
+/obj/item/clothing/head/helmet/space/vox/stealth,
+/obj/item/clothing/shoes/magboots/vox,
+/obj/item/clothing/gloves/vox,
+/obj/item/clothing/glasses/thermal/plain/monocle,
+/obj/item/clothing/under/vox/vox_robes,
+/obj/item/weapon/gun/projectile/dartgun/vox/medical,
+/turf/simulated/floor/asteroidplate,
+/area/map_template/syndicate_mothership/raider_base)
+"cl" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership/raider_base)
+"cm" = (
+/obj/item/weapon/material/ashtray/bronze,
+/obj/item/weapon/stool/bar/padded,
+/turf/simulated/floor/wood/walnut,
+/area/map_template/syndicate_mothership/raider_base)
+"cn" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/item/weapon/material/ashtray/bronze,
+/turf/simulated/floor/wood/walnut,
+/area/map_template/syndicate_mothership/raider_base)
+"co" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/turf/simulated/floor/wood/walnut,
+/area/map_template/syndicate_mothership/raider_base)
+"cp" = (
+/obj/structure/hygiene/sink{
+	dir = 4;
+	icon_state = "sink";
+	pixel_x = 22;
+	pixel_y = 0
+	},
+/turf/simulated/floor/wood/walnut,
+/area/map_template/syndicate_mothership/raider_base)
+"cq" = (
+/obj/item/weapon/tank/nitrogen,
+/turf/simulated/floor/asteroidplate,
+/area/map_template/syndicate_mothership/raider_base)
+"cr" = (
+/obj/item/weapon/storage/backpack,
+/turf/simulated/floor/asteroidplate,
+/area/map_template/syndicate_mothership/raider_base)
+"cs" = (
+/obj/structure/sign/poster{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership/raider_base)
+"ct" = (
+/obj/item/weapon/reagent_containers/glass/rag,
+/turf/simulated/floor/wood/walnut,
+/area/map_template/syndicate_mothership/raider_base)
+"cu" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/random/loot,
+/turf/simulated/floor/wood/walnut,
+/area/map_template/syndicate_mothership/raider_base)
+"cv" = (
+/obj/random/junk,
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership/raider_base)
+"cw" = (
+/obj/random/trash,
+/turf/simulated/floor/asteroid/aired,
+/area/map_template/syndicate_mothership/raider_base)
+"cx" = (
+/obj/random/junk,
+/turf/simulated/floor/asteroidplate,
+/area/map_template/syndicate_mothership/raider_base)
+"cy" = (
+/mob/living/simple_animal/hostile/retaliate/parrot{
+	available_channels = list();
+	ears = list();
+	name = "\proper Meatbag";
+	speak = list("Yaaar!","Squaaak!","Fight me Matey!","BAWWWWK Vox trying to eat me!")
+	},
+/turf/simulated/floor/asteroidplate,
+/area/map_template/syndicate_mothership/raider_base)
+"cz" = (
+/obj/effect/paint/dark_gunmetal,
+/turf/simulated/wall/r_wall,
+/area/map_template/syndicate_mothership/raider_base)
+"cA" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/paint/dark_gunmetal,
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"cB" = (
+/obj/item/device/radio/intercom/raider{
+	dir = 4;
+	pixel_x = -22
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	icon_state = "bulb_map"
+	},
+/turf/simulated/floor/wood/walnut,
+/area/map_template/syndicate_mothership/raider_base)
+"cC" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/item/pizzabox/meat,
+/turf/simulated/floor/wood/walnut,
+/area/map_template/syndicate_mothership/raider_base)
+"cD" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/item/weapon/storage/box/glasses/shot,
+/turf/simulated/floor/wood/walnut,
+/area/map_template/syndicate_mothership/raider_base)
+"cE" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/machinery/chemical_dispenser/bar_alc/full{
+	icon_state = "booze_dispenser";
+	dir = 1
+	},
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 8
+	},
+/turf/simulated/floor/wood/walnut,
+/area/map_template/syndicate_mothership/raider_base)
+"cF" = (
+/obj/machinery/embedded_controller/radio/simple_docking_controller{
+	frequency = 1380;
+	id_tag = "skipjack_base";
+	pixel_x = -25;
+	pixel_y = -5
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/syndicate_mothership/raider_base)
+"cG" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/asteroid/aired,
+/area/map_template/syndicate_mothership/raider_base)
+"cH" = (
+/obj/structure/closet/crate,
+/obj/item/weapon/tank/nitrogen,
+/obj/item/weapon/tank/nitrogen,
+/obj/item/weapon/tank/nitrogen,
+/obj/item/weapon/tank/nitrogen,
+/obj/item/weapon/tank/nitrogen,
+/obj/item/weapon/tank/nitrogen,
+/obj/item/clothing/mask/gas/swat/vox,
+/obj/item/clothing/mask/gas/swat/vox,
+/obj/item/clothing/mask/gas/swat/vox,
+/obj/item/clothing/mask/gas/swat/vox,
+/obj/item/clothing/mask/gas/swat/vox,
+/obj/item/clothing/mask/gas/swat/vox,
+/turf/simulated/floor/asteroid/aired,
+/area/map_template/syndicate_mothership/raider_base)
+"cI" = (
+/obj/machinery/portable_atmospherics/canister/nitrogen,
+/turf/simulated/floor/asteroid/aired,
+/area/map_template/syndicate_mothership/raider_base)
+"cJ" = (
+/obj/item/clothing/head/philosopher_wig,
+/obj/machinery/light/small,
+/turf/simulated/floor/asteroidplate,
+/area/map_template/syndicate_mothership/raider_base)
+"cK" = (
+/obj/machinery/door/airlock/external{
+	autoset_access = 0;
+	name = "Shuttle Airlock";
+	req_access = list("ACCESS_SYNDICATE")
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership/raider_base)
+"cL" = (
+/turf/simulated/floor/airless,
+/area/map_template/syndicate_mothership/raider_base)
+"cM" = (
+/obj/structure/lattice,
+/turf/space,
+/area/space)
+"cN" = (
+/obj/machinery/door/airlock/external{
+	frequency = 1380;
+	id_tag = "skipjack_base_hatch";
+	req_access = newlist()
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/syndicate_mothership/raider_base)
+"cO" = (
+/obj/item/trash/cheesie,
+/turf/space,
+/area/space)
+"cP" = (
+/obj/effect/catwalk_plated/dark,
+/obj/machinery/light/small{
+	dir = 8;
+	icon_state = "bulb_map"
+	},
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"cQ" = (
+/obj/structure/lattice,
+/obj/structure/grille,
+/turf/space,
+/area/space)
+"cR" = (
+/obj/effect/catwalk_plated/dark,
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 8
+	},
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"cS" = (
+/obj/machinery/door/airlock/external/glass,
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"cT" = (
+/obj/machinery/door/airlock/external/glass{
+	frequency = 1380;
+	id_tag = "skipjack_base_hatch"
+	},
+/turf/simulated/floor/plating,
+/area/map_template/syndicate_mothership/raider_base)
+"cU" = (
+/obj/effect/paint/dark_gunmetal,
+/turf/simulated/wall/r_titanium,
+/area/map_template/skipjack_station/start)
+"cV" = (
+/obj/machinery/door/airlock/hatch{
+	frequency = 1380;
+	icon_state = "closed";
+	id_tag = "vox_northwest_lock";
+	locked = 0
+	},
+/obj/machinery/shield_diffuser,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"cW" = (
+/obj/machinery/access_button{
+	command = "cycle_exterior";
+	frequency = 1380;
+	master_tag = "vox_west_control";
+	req_access = list("ACCESS_SYNDICATE")
+	},
+/obj/effect/paint/dark_gunmetal,
+/turf/simulated/wall/r_titanium,
+/area/map_template/skipjack_station/start)
+"cX" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 2;
+	icon_state = "pdoor0";
+	id_tag = "SkipjackShuttersNorth";
+	name = "Blast Doors";
+	opacity = 0
+	},
+/obj/effect/paint/dark_gunmetal,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"cY" = (
+/obj/machinery/shield_diffuser,
+/obj/machinery/door/airlock/external/bolted/cycling{
+	frequency = 1380;
+	id_tag = "skipjack_shuttle_outer";
+	name = "Ship External Access"
+	},
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"cZ" = (
+/obj/random/junk,
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	id_tag = "vox_west_vent"
+	},
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"da" = (
+/obj/machinery/airlock_sensor{
+	frequency = 1380;
+	id_tag = "vox_west_sensor";
+	pixel_x = 25
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"db" = (
+/obj/structure/flora/pottedplant/minitree,
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"dc" = (
+/obj/machinery/computer/shuttle_control/multi/vox,
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"dd" = (
+/obj/structure/table/steel,
+/obj/random/plushie,
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"de" = (
+/obj/machinery/computer/modular/preset/civilian,
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"df" = (
+/obj/structure/flora/pottedplant/unusual,
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"dg" = (
+/obj/random/trash,
+/obj/machinery/airlock_sensor{
+	frequency = 1380;
+	id_tag = "skipjack_shuttle_sensor";
+	pixel_x = 8;
+	pixel_y = 25
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dh" = (
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	id_tag = "skipjack_shuttle_pump"
+	},
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"di" = (
+/obj/machinery/atmospherics/pipe/manifold/visible{
+	dir = 8
+	},
+/obj/machinery/meter,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dj" = (
+/obj/machinery/embedded_controller/radio/airlock/airlock_controller{
+	frequency = 1380;
+	id_tag = "vox_west_control";
+	pixel_x = 24;
+	req_access = list("ACCESS_SYNDICATE");
+	tag_airpump = "vox_west_vent";
+	tag_chamber_sensor = "vox_west_sensor";
+	tag_exterior_door = "vox_northwest_lock";
+	tag_interior_door = "vox_southwest_lock"
+	},
+/obj/machinery/light/small,
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	dir = 8;
+	id_tag = "vox_west_vent"
+	},
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dk" = (
+/obj/machinery/computer/station_alert/all{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"dl" = (
+/obj/structure/bed/chair/comfy/captain,
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"dm" = (
+/obj/machinery/button/blast_door{
+	id_tag = "SkipjackShuttersNorth";
+	name = "Skipjack North Shutters";
+	pixel_y = 39;
+	req_access = list("ACCESS_SYNDICATE")
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "SkipjackShuttersWest";
+	name = "Skipjack West Shutters";
+	pixel_x = -5;
+	pixel_y = 31;
+	req_access = list("ACCESS_SYNDICATE")
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "SkipjackShuttersEast";
+	name = "Skipjack East Shutters";
+	pixel_x = 5;
+	pixel_y = 31;
+	req_access = list("ACCESS_SYNDICATE")
+	},
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"dn" = (
+/obj/structure/bed/chair{
+	dir = 1
+	},
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"do" = (
+/obj/machinery/constructable_frame/computerframe/deconstruct{
+	dir = 8
+	},
+/obj/machinery/light/small{
+	dir = 4;
+	icon_state = "bulb_map"
+	},
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"dp" = (
+/obj/machinery/light/small,
+/obj/machinery/embedded_controller/radio/airlock/docking_port{
+	frequency = 1380;
+	id_tag = "skipjack_shuttle";
+	pixel_x = -25;
+	pixel_y = 8;
+	req_access = list("ACCESS_SYNDICATE")
+	},
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	dir = 4;
+	id_tag = "skipjack_shuttle_pump"
+	},
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dq" = (
+/obj/machinery/atmospherics/pipe/manifold/visible{
+	dir = 4
+	},
+/obj/machinery/meter,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dr" = (
+/obj/machinery/door/airlock/hatch{
+	frequency = 1380;
+	icon_state = "closed";
+	id_tag = "vox_southwest_lock";
+	locked = 0
+	},
+/obj/machinery/atmospherics/pipe/simple/visible,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"ds" = (
+/obj/effect/paint/dark_gunmetal,
+/turf/simulated/wall/titanium,
+/area/map_template/skipjack_station/start)
+"dt" = (
+/obj/structure/table/rack,
+/obj/random/hardsuit,
+/obj/item/clothing/glasses/thermal/plain/monocle,
+/obj/random/glasses,
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"du" = (
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"dv" = (
+/obj/random/maintenance,
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"dw" = (
+/obj/random/junk,
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"dx" = (
+/obj/structure/table/rack,
+/obj/random/hardsuit,
+/obj/item/clothing/head/pirate,
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"dy" = (
+/obj/machinery/atmospherics/pipe/simple/visible,
+/obj/machinery/door/airlock/external/bolted/cycling{
+	frequency = 1380;
+	id_tag = "skipjack_shuttle_inner";
+	name = "Ship External Access"
+	},
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dz" = (
+/obj/machinery/atmospherics/pipe/simple/visible,
+/obj/machinery/access_button{
+	command = "cycle_interior";
+	frequency = 1380;
+	master_tag = "vox_west_control";
+	pixel_x = -22;
+	req_access = list("ACCESS_SYNDICATE")
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dA" = (
+/obj/structure/table/rack,
+/obj/random/maintenance,
+/obj/item/clothing/shoes/magboots,
+/obj/item/weapon/tank/oxygen,
+/obj/random/voidsuit,
+/obj/random/voidhelmet,
+/obj/item/weapon/material/harpoon,
+/obj/random/energy,
+/obj/random/hat,
+/obj/item/device/flash,
+/obj/machinery/light/small{
+	icon_state = "bulb_map";
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dB" = (
+/obj/machinery/microwave{
+	pixel_x = -1;
+	pixel_y = 8
+	},
+/obj/structure/table/steel,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dC" = (
+/obj/item/seeds/potatoseed,
+/obj/item/seeds/potatoseed,
+/obj/item/seeds/ambrosiavulgarisseed,
+/obj/item/weapon/material/minihoe,
+/obj/item/weapon/beartrap,
+/obj/structure/table/steel,
+/obj/item/weapon/beartrap,
+/obj/item/weapon/beartrap,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dE" = (
+/obj/structure/table/rack,
+/obj/item/weapon/melee/energy/sword/pirate,
+/obj/item/clothing/suit/space/pirate,
+/obj/item/clothing/suit/space/pirate,
+/obj/item/weapon/tank/oxygen,
+/obj/item/clothing/shoes/magboots,
+/obj/random/voidsuit,
+/obj/random/voidhelmet,
+/obj/random/maintenance,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/random/gloves,
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"dF" = (
+/obj/structure/table/rack,
+/obj/item/weapon/melee/energy/sword/pirate,
+/obj/item/clothing/suit/space/pirate,
+/obj/item/clothing/suit/space/pirate,
+/obj/item/weapon/tank/oxygen,
+/obj/item/clothing/shoes/magboots,
+/obj/random/voidsuit,
+/obj/random/voidhelmet,
+/obj/random/maintenance,
+/obj/machinery/light/small{
+	dir = 4;
+	icon_state = "bulb_map"
+	},
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"dG" = (
+/obj/structure/table/rack,
+/obj/item/weapon/storage/belt/utility/full,
+/obj/item/weapon/storage/belt/utility/full,
+/obj/item/device/multitool,
+/obj/item/device/multitool,
+/obj/item/clothing/shoes/magboots,
+/obj/random/maintenance,
+/obj/item/weapon/tank/oxygen,
+/obj/random/voidsuit,
+/obj/random/voidhelmet,
+/obj/random/maintenance,
+/obj/random/hat,
+/obj/item/weapon/storage/belt/utility,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dH" = (
+/obj/machinery/suit_cycler/syndicate{
+	locked = 0
+	},
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dI" = (
+/obj/structure/table/standard,
+/obj/item/weapon/storage/fancy/cigarettes,
+/obj/item/weapon/flame/lighter/zippo,
+/obj/item/clothing/gloves/insulated,
+/obj/item/stack/material/steel{
+	amount = 50
+	},
+/obj/item/stack/material/glass{
+	amount = 50
+	},
+/obj/item/weapon/card/emag,
+/obj/item/device/flash,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dJ" = (
+/obj/structure/table/rack,
+/obj/random/maintenance,
+/obj/item/clothing/shoes/magboots,
+/obj/item/weapon/tank/oxygen,
+/obj/random/voidsuit,
+/obj/random/voidhelmet,
+/obj/random/energy,
+/obj/random/gloves,
+/obj/item/weapon/barrier,
+/obj/item/weapon/barrier,
+/obj/machinery/light/small{
+	icon_state = "bulb_map";
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dK" = (
+/obj/machinery/atmospherics/pipe/simple/visible,
+/obj/machinery/access_button{
+	command = "cycle_interior";
+	frequency = 1380;
+	master_tag = "skipjack_shuttle";
+	name = "interior access button";
+	pixel_x = 25;
+	pixel_y = 25;
+	req_access = list("ACCESS_SYNDICATE")
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dL" = (
+/obj/machinery/atmospherics/pipe/simple/visible,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dM" = (
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dN" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dO" = (
+/obj/effect/paint/brown,
+/turf/simulated/wall/titanium,
+/area/map_template/skipjack_station/start)
+"dP" = (
+/obj/effect/wallframe_spawn/reinforced/no_grille,
+/obj/effect/paint/brown,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dQ" = (
+/obj/machinery/door/airlock/hatch{
+	req_access = newlist()
+	},
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"dR" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/table/rack,
+/obj/random/maintenance,
+/obj/item/clothing/shoes/magboots,
+/obj/item/weapon/tank/oxygen,
+/obj/random/voidsuit,
+/obj/random/voidhelmet,
+/obj/random/projectile,
+/obj/item/weapon/tape_roll,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dS" = (
+/obj/random/loot,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dT" = (
+/obj/item/robot_parts/head,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dU" = (
+/turf/simulated/mineral,
+/area/space)
+"dV" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	density = 0;
+	dir = 4;
+	icon_state = "shutter0";
+	id_tag = "SkipjackShuttersWest";
+	name = "Skipjack Shutters";
+	opacity = 0
+	},
+/obj/effect/paint/dark_gunmetal,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dW" = (
+/obj/random/trash,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dX" = (
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dY" = (
+/obj/random/maintenance,
+/obj/random/loot,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"dZ" = (
+/obj/random/trash,
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"ea" = (
+/obj/item/robot_parts/l_leg,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"eb" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	density = 0;
+	dir = 8;
+	icon_state = "shutter0";
+	id_tag = "SkipjackShuttersEast";
+	name = "Skipjack Shutters";
+	opacity = 0
+	},
+/obj/effect/paint/dark_gunmetal,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"ec" = (
+/obj/random/trash,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"ed" = (
+/obj/structure/table/rack,
+/obj/item/weapon/gun/launcher/crossbow,
+/obj/item/stack/material/rods{
+	amount = 10
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/item/weapon/beartrap,
+/obj/item/weapon/beartrap,
+/obj/item/weapon/beartrap,
+/obj/item/weapon/beartrap,
+/obj/item/weapon/beartrap,
+/obj/item/weapon/beartrap,
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"ee" = (
+/obj/structure/table/rack,
+/obj/item/weapon/grenade/empgrenade,
+/obj/item/weapon/grenade/flashbang,
+/obj/item/weapon/grenade/spawnergrenade/manhacks,
+/obj/random/energy,
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"ef" = (
+/obj/structure/table/steel,
+/obj/machinery/recharger,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"eg" = (
+/obj/item/robot_parts/robot_suit,
+/obj/item/robot_parts/r_leg,
+/obj/item/robot_parts/r_arm,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"eh" = (
+/obj/machinery/atmospherics/pipe/simple/visible,
+/obj/random/maintenance,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"ei" = (
+/obj/machinery/floodlight{
+	icon_state = "flood00";
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"ej" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"ek" = (
+/obj/structure/bed/chair,
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"el" = (
+/obj/effect/shuttle_landmark/skipjack/start,
+/obj/structure/bed/chair,
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"em" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/bed/chair,
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"en" = (
+/obj/machinery/door/airlock/hatch{
+	req_access = newlist()
+	},
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"eo" = (
+/obj/structure/hygiene/sink{
+	dir = 8;
+	icon_state = "sink";
+	pixel_x = -22;
+	pixel_y = 0
+	},
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"ep" = (
+/obj/item/weapon/wrench,
+/obj/item/weapon/mop,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"eq" = (
+/obj/machinery/atmospherics/pipe/simple/visible,
+/obj/item/weapon/crowbar,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"er" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/obj/machinery/portable_atmospherics/canister/air/airlock,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"es" = (
+/obj/structure/closet/crate/freezer/rations,
+/obj/item/clothing/mask/gas/cyborg,
+/obj/item/weapon/storage/box/donkpockets{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/weapon/reagent_containers/food/snacks/tastybread,
+/obj/item/weapon/reagent_containers/food/snacks/tastybread,
+/obj/machinery/light/small,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"et" = (
+/obj/machinery/floodlight,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"eu" = (
+/obj/machinery/fabricator{
+	desc = "Your typical Autolathe. It appears to have much more options than your regular one, however...";
+	fab_status_flags = 1;
+	name = "unlocked autolathe"
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	icon_state = "bulb_map"
+	},
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"ev" = (
+/obj/structure/table/rack,
+/obj/item/stack/material/steel/fifty,
+/obj/item/stack/material/steel/fifty,
+/obj/item/stack/material/aluminium/fifty,
+/obj/item/stack/material/plastic/fifty,
+/obj/item/stack/material/glass/fifty,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"ew" = (
+/obj/structure/table/steel,
+/obj/random/maintenance,
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"ex" = (
+/obj/item/weapon/deck/cards,
+/obj/structure/table/steel,
+/obj/random/projectile,
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"ey" = (
+/obj/structure/table/steel,
+/obj/random/loot,
+/obj/item/weapon/gun/energy/ionrifle/small,
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"ez" = (
+/obj/machinery/bodyscanner{
+	dir = 8
+	},
+/turf/simulated/floor/shuttle/white,
+/area/map_template/skipjack_station/start)
+"eA" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/machinery/body_scanconsole{
+	dir = 8
+	},
+/turf/simulated/floor/shuttle/white,
+/area/map_template/skipjack_station/start)
+"eB" = (
+/obj/structure/closet/medical_wall/filled{
+	pixel_x = 28
+	},
+/turf/simulated/floor/shuttle/white,
+/area/map_template/skipjack_station/start)
+"eC" = (
+/obj/structure/table/standard,
+/obj/item/weapon/reagent_containers/glass/bottle/stoxin,
+/obj/item/weapon/reagent_containers/glass/bottle/stoxin,
+/obj/item/weapon/reagent_containers/glass/beaker/vial/random/toxin,
+/obj/item/weapon/reagent_containers/syringe,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"eD" = (
+/obj/structure/table/standard,
+/obj/item/weapon/storage/box/syringegun,
+/obj/item/weapon/gun/launcher/syringe/rapid,
+/obj/machinery/light/small,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"eE" = (
+/obj/random/junk,
+/turf/simulated/floor/shuttle/white,
+/area/map_template/skipjack_station/start)
+"eF" = (
+/turf/simulated/floor/shuttle/white,
+/area/map_template/skipjack_station/start)
+"eG" = (
+/obj/structure/hygiene/sink{
+	dir = 4;
+	icon_state = "sink";
+	pixel_x = 22
+	},
+/turf/simulated/floor/shuttle/white,
+/area/map_template/skipjack_station/start)
+"eH" = (
+/obj/structure/shuttle/engine/propulsion,
+/obj/structure/shuttle/engine/heater{
+	pixel_y = 32
+	},
+/turf/simulated/floor/airless,
+/area/map_template/skipjack_station/start)
+"eI" = (
+/obj/structure/reagent_dispensers/watertank,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"eJ" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/shuttle/red,
+/area/map_template/skipjack_station/start)
+"eK" = (
+/obj/random/trash,
+/turf/simulated/floor/shuttle/white,
+/area/map_template/skipjack_station/start)
+"eL" = (
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"eM" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/effect/paint/brown,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"eN" = (
+/obj/machinery/door/airlock/centcom{
+	glass = 1;
+	name = "Cell";
+	opacity = 0;
+	req_access = newlist()
+	},
+/turf/simulated/floor/shuttle/black,
+/area/map_template/skipjack_station/start)
+"eO" = (
+/obj/machinery/optable,
+/turf/simulated/floor/shuttle/white,
+/area/map_template/skipjack_station/start)
+"eP" = (
+/obj/structure/table/standard,
+/obj/item/weapon/storage/firstaid/surgery,
+/turf/simulated/floor/shuttle/white,
+/area/map_template/skipjack_station/start)
+"eQ" = (
+/obj/machinery/portable_atmospherics/canister/nitrogen,
+/obj/item/weapon/tank/nitrogen,
+/obj/machinery/light/small{
+	dir = 8;
+	icon_state = "bulb_map"
+	},
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"eR" = (
+/obj/structure/bed,
+/obj/item/weapon/bedsheet,
+/turf/simulated/floor/shuttle/black,
+/area/map_template/skipjack_station/start)
+"eS" = (
+/turf/simulated/floor/shuttle/black,
+/area/map_template/skipjack_station/start)
+"eT" = (
+/obj/structure/bed/chair,
+/turf/simulated/floor/shuttle/black,
+/area/map_template/skipjack_station/start)
+"eU" = (
+/obj/random/maintenance,
+/turf/simulated/floor/shuttle/white,
+/area/map_template/skipjack_station/start)
+"eV" = (
+/obj/structure/table/standard,
+/obj/item/weapon/reagent_containers/syringe/antiviral,
+/obj/item/weapon/reagent_containers/syringe/antiviral,
+/obj/item/weapon/reagent_containers/syringe/antiviral,
+/turf/simulated/floor/shuttle/white,
+/area/map_template/skipjack_station/start)
+"eW" = (
+/obj/structure/reagent_dispensers/fueltank,
+/turf/simulated/floor/plating,
+/area/map_template/skipjack_station/start)
+"eX" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/turf/simulated/floor/shuttle/black,
+/area/map_template/skipjack_station/start)
+"eY" = (
+/obj/structure/table/steel,
+/turf/simulated/floor/shuttle/black,
+/area/map_template/skipjack_station/start)
+"eZ" = (
+/obj/structure/table/standard,
+/obj/item/weapon/storage/firstaid/fire{
+	pixel_x = 1
+	},
+/obj/item/weapon/storage/firstaid/o2,
+/obj/item/weapon/storage/belt/medical/emt,
+/obj/item/device/scanner/health,
+/turf/simulated/floor/shuttle/white,
+/area/map_template/skipjack_station/start)
+"fa" = (
+/obj/structure/table/standard,
+/obj/item/weapon/storage/firstaid/adv{
+	pixel_x = 1
+	},
+/obj/item/weapon/storage/firstaid/toxin{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/item/weapon/melee/baton/cattleprod,
+/obj/item/weapon/defibrillator/compact/combat/loaded,
+/turf/simulated/floor/shuttle/white,
+/area/map_template/skipjack_station/start)
+"fb" = (
+/obj/structure/bed,
+/obj/item/weapon/bedsheet,
+/obj/machinery/light/small,
+/turf/simulated/floor/shuttle/black,
+/area/map_template/skipjack_station/start)
+"fc" = (
+/obj/structure/table/steel,
+/obj/item/weapon/deck/cards,
+/obj/machinery/light/small,
+/turf/simulated/floor/shuttle/black,
+/area/map_template/skipjack_station/start)
+
+(1,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(2,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(3,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(4,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(5,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(6,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(7,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(8,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(9,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(10,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(11,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(12,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+bA
+bN
+cc
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(13,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aY
+aq
+bO
+aq
+aq
+cq
+cw
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(14,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ap
+aq
+bP
+cd
+cj
+aq
+ap
+cG
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(15,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ap
+ap
+aY
+ap
+aC
+ac
+ac
+ac
+aq
+cx
+cH
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(16,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ap
+ap
+aq
+aq
+aq
+aq
+aq
+bQ
+ce
+ck
+aq
+aq
+cI
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(17,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ap
+aq
+aH
+ab
+aZ
+aq
+aq
+aq
+aq
+aq
+cr
+cy
+cJ
+ac
+ab
+ab
+ab
+aa
+ab
+aa
+aa
+aa
+aa
+dU
+dU
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(18,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+aq
+aq
+ab
+ab
+aq
+ap
+ab
+ap
+aY
+ap
+ap
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+dU
+dU
+dU
+dU
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(19,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+aq
+aq
+ab
+ab
+aq
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+dU
+dU
+dU
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(20,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+aq
+aC
+ab
+ac
+ba
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+dU
+aa
+aa
+aa
+aa
+aa
+aa
+dU
+dU
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(21,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+ar
+aq
+ac
+ac
+bb
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+dU
+dU
+dU
+dU
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(22,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+ac
+aD
+ac
+aM
+bc
+bp
+bB
+ac
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+dU
+dU
+dU
+dU
+dU
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(23,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ac
+ac
+ac
+as
+au
+ac
+aN
+bd
+bl
+bC
+ac
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+dU
+dU
+dU
+dU
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(24,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ac
+ad
+ac
+at
+aE
+ac
+aO
+bc
+bc
+bD
+ac
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+dU
+dU
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(25,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ac
+ae
+ah
+au
+aE
+ac
+ac
+be
+be
+ac
+ac
+ac
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(26,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ac
+af
+ac
+av
+aE
+at
+at
+au
+au
+at
+au
+ac
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(27,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ac
+ac
+ac
+aw
+aE
+aE
+aE
+bf
+bq
+au
+au
+ac
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(28,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ac
+af
+ac
+at
+aE
+ac
+ac
+ac
+ac
+aI
+ac
+ac
+ac
+ac
+cz
+cz
+cz
+cz
+cz
+cU
+cU
+cU
+cU
+cU
+cU
+dV
+dV
+dV
+ds
+ds
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(29,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ac
+ae
+ah
+au
+aE
+ac
+aP
+aE
+br
+aE
+bR
+ac
+cl
+at
+at
+cK
+at
+cP
+cS
+cV
+cZ
+di
+dr
+dz
+dL
+dL
+dL
+dL
+er
+dO
+dO
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(30,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ac
+af
+ac
+at
+aE
+ac
+aQ
+at
+bs
+at
+bS
+ac
+at
+aE
+aE
+cK
+aE
+aE
+cz
+cW
+da
+dj
+ds
+dA
+dM
+dW
+dM
+dM
+es
+dO
+eH
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(31,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ac
+ac
+ac
+aw
+aE
+ac
+aR
+at
+bt
+at
+bT
+ac
+at
+cs
+cz
+cz
+cA
+cA
+cz
+cU
+cU
+cU
+cU
+dB
+dM
+dX
+dM
+ei
+et
+dO
+eH
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(32,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ac
+af
+ac
+at
+aE
+ac
+aS
+aE
+bu
+aE
+bU
+ac
+av
+aE
+cA
+cL
+cL
+cM
+aa
+aa
+aa
+aa
+cU
+dC
+dM
+dY
+ec
+dO
+dO
+dO
+dO
+dO
+dO
+dO
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(33,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ac
+ae
+ah
+au
+aE
+aI
+aE
+at
+at
+at
+aE
+ac
+aw
+aE
+cA
+aa
+cO
+aa
+aa
+aa
+aa
+aa
+cU
+an
+dN
+dX
+dM
+dO
+eu
+dX
+eI
+eL
+eQ
+dO
+dO
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(34,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ac
+ag
+ac
+at
+aE
+ac
+aT
+bg
+bv
+bE
+bV
+ac
+aE
+aE
+cA
+aa
+aa
+cQ
+aa
+aa
+cU
+cU
+cU
+ds
+dO
+dQ
+dO
+dO
+ev
+dX
+dX
+dX
+dX
+eW
+dO
+dO
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(35,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ac
+ac
+ac
+ax
+aE
+ac
+ac
+ac
+ac
+ac
+aI
+ac
+ah
+ah
+cz
+cz
+cM
+cM
+aa
+cU
+cU
+cU
+dt
+dE
+dP
+du
+ed
+dO
+dP
+en
+dP
+dO
+dO
+dO
+dO
+dO
+dO
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(36,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ac
+ai
+au
+aE
+aE
+aE
+aE
+aE
+ah
+bW
+cf
+bW
+ct
+cB
+cz
+aa
+cQ
+aa
+cU
+db
+dk
+du
+du
+dP
+du
+du
+ej
+du
+du
+eJ
+dO
+eR
+eR
+fb
+dO
+eH
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(37,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ac
+aj
+au
+at
+at
+aU
+at
+aE
+ac
+bX
+bW
+cm
+ch
+ch
+cA
+aa
+cM
+aa
+cX
+dc
+dl
+du
+du
+dP
+du
+du
+ek
+ew
+dn
+du
+eM
+eS
+eS
+eS
+dO
+eH
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(38,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ac
+ac
+ac
+ac
+ac
+ac
+at
+aE
+ac
+bY
+cg
+cn
+cu
+cC
+cA
+aa
+cQ
+aa
+cX
+dd
+dm
+dv
+du
+dQ
+du
+du
+el
+ex
+dn
+du
+eN
+eS
+eX
+eX
+dO
+eH
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(39,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ac
+ak
+ay
+aF
+aJ
+ac
+bh
+aE
+bF
+bW
+ch
+co
+bW
+cD
+cA
+aa
+cQ
+aa
+cX
+de
+dn
+du
+du
+dP
+dZ
+du
+em
+ey
+dn
+eJ
+dO
+eT
+eY
+fc
+dO
+eH
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(40,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ac
+al
+az
+aG
+az
+aV
+bi
+aE
+bG
+bZ
+bW
+cp
+bW
+cE
+cz
+aa
+cQ
+aa
+cU
+df
+do
+dw
+du
+dP
+du
+ee
+dO
+dP
+dP
+dP
+dO
+dO
+dO
+dO
+dO
+eH
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(41,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ac
+am
+az
+aA
+aK
+ac
+au
+aE
+ac
+ac
+bG
+ac
+ah
+cz
+cz
+cM
+cM
+aa
+cU
+cU
+cU
+dx
+dF
+dP
+du
+ef
+dO
+ez
+eE
+eF
+eO
+eF
+eZ
+dO
+dO
+dO
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(42,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ac
+az
+aA
+az
+aL
+ac
+aw
+aE
+bH
+aE
+aE
+aE
+aE
+cA
+aa
+aa
+cQ
+aa
+aa
+cU
+cU
+cU
+ds
+dO
+dQ
+dO
+dO
+eA
+eF
+eK
+eF
+eU
+fa
+dO
+dO
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(43,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ac
+ao
+aB
+ac
+ac
+ac
+at
+at
+at
+au
+aU
+at
+cv
+cA
+cM
+aa
+aa
+aa
+aa
+aa
+aa
+cU
+dG
+dR
+dX
+dX
+en
+eB
+eG
+eF
+eP
+eV
+dO
+dO
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(44,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ac
+ac
+ac
+ac
+ab
+ac
+ac
+ac
+ac
+ca
+ac
+at
+aE
+cA
+cL
+aa
+cM
+aa
+aa
+aa
+aa
+cU
+dH
+dM
+dX
+dM
+dO
+dO
+dO
+dO
+dO
+dO
+dO
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(45,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+bj
+bw
+bI
+cb
+ac
+at
+aE
+cz
+cz
+cA
+cA
+cz
+cU
+cU
+cU
+cU
+dI
+dS
+ea
+dM
+eo
+eC
+dO
+eH
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(46,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aW
+bk
+bl
+bJ
+aE
+ci
+au
+bi
+cF
+cN
+aE
+aE
+cz
+cU
+dg
+dp
+ds
+dJ
+dT
+dW
+eg
+ep
+eD
+dO
+eH
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(47,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+aX
+bl
+bx
+bk
+bl
+ci
+au
+aU
+at
+cN
+at
+cR
+cT
+cY
+dh
+dq
+dy
+dK
+dL
+dL
+eh
+eq
+er
+ds
+ds
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(48,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+bm
+bl
+bK
+bK
+ac
+ac
+ac
+ac
+cz
+cz
+cz
+cz
+cU
+cU
+cU
+cU
+cU
+cU
+eb
+eb
+eb
+ds
+ds
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(49,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+bn
+by
+bL
+ac
+ac
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(50,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+bo
+bz
+bM
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(51,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(52,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(53,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(54,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(55,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(56,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(57,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(58,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(59,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(60,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(61,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(62,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(63,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(64,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(65,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(66,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(67,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(68,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(69,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(70,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}

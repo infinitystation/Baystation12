@@ -1,0 +1,6 @@
+{
+  "ckey" :            "evgen00751",
+  "character_name" :  "Andy Robberts",
+  "item_path" :       "/obj/item/custkit/custom_beret_eugen00751",
+  "req_access" :      [ "ACCESS_HEAD_OF_SECURITY" ]
+  }

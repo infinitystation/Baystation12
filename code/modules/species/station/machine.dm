@@ -38,7 +38,6 @@
 
 	blood_color = "#1f181f"
 	flesh_color = "#575757"
-	virus_immune = 1
 
 	has_organ = list(
 		BP_POSIBRAIN = /obj/item/organ/internal/posibrain,
@@ -103,7 +102,6 @@
 			FACTION_VEY_MED,
 			FACTION_BISHOP,
 			FACTION_ZPCI,
-			FACTION_SCP,
 			FACTION_OTHER
 		)
 	)

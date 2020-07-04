@@ -61,6 +61,7 @@
 	icon = 'icons/obj/drink_glasses/pint.dmi'
 	filling_states = "16;33;50;66;83;100"
 	volume = 60
+	matter = list(MATERIAL_GLASS = 125)
 	possible_transfer_amounts = "5;10;15;30;60"
 	rim_pos = "y=25;x_left=12;x_right=21"
 
@@ -85,6 +86,17 @@
 	volume = 25
 	possible_transfer_amounts = "5;10;15;25"
 	rim_pos = "y=25;x_left=12;x_right=21"
+
+/obj/item/weapon/reagent_containers/food/drinks/glass2/flute
+	name = "flute glass"
+	desc = "A piece of very elegant stemware."
+	base_name = "glass"
+	base_icon = "flute"
+	icon = 'icons/obj/drink_glasses/flute.dmi'
+	filling_states = "20;40;60;80;100"
+	volume = 25
+	possible_transfer_amounts = "5;10;15;25"
+	rim_pos = "y=24;x_left=13;x_right=19"
 
 /obj/item/weapon/reagent_containers/food/drinks/glass2/carafe
 	name = "pitcher"
@@ -112,6 +124,12 @@
 	base_icon = "coffeecup"
 	rim_pos = "y=22;x_left=12;x_right=20"
 	filling_overlayed = TRUE
+
+/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/foundation
+	name = "\improper Foundation coffee cup"
+	desc = "A white coffee cup with the Cuchulain Foundation logo stencilled onto it."
+	icon_state = "coffeecup_foundation"
+	base_name = "\improper Foundation cup"
 
 /obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/black
 	name = "black coffee cup"
@@ -157,7 +175,7 @@
 
 /obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/punitelli
 	name = "#1 monkey coffee cup"
-	desc = "A white coffee cup, prominently featuring a \"#1 monkey\"."
+	desc = "A white coffee cup, prominently featuring a \"#1 monkey\" decal."
 	icon_state = "coffeecup_punitelli"
 	base_name = "#1 monkey cup"
 
@@ -232,3 +250,10 @@
 	filling_states = "100"
 	base_name = "teacup"
 	base_icon = "teacup"
+
+/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/custom/inherit_custom_item_data(var/datum/custom_item/citem)
+	. = ..()
+	if(citem.additional_data["base_name"])
+		base_name = citem.additional_data["base_name"] || base_name
+	custom_name = citem.item_name
+	custom_desc = citem.item_desc

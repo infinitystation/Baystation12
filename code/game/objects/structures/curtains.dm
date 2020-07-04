@@ -2,15 +2,17 @@
 	name = "curtain"
 	icon = 'icons/obj/curtain.dmi'
 	icon_state = "closed"
-	plane = OBJ_PLANE
 	layer = ABOVE_WINDOW_LAYER
 	opacity = 1
 	density = 0
 	anchored = TRUE
 
+/obj/structure/curtain/Initialize()
+	.=..()
+	set_extension(src, /datum/extension/turf_hand)
+
 /obj/structure/curtain/open
 	icon_state = "open"
-	plane = ABOVE_HUMAN_PLANE
 	layer = ABOVE_HUMAN_LAYER
 	opacity = 0
 
@@ -26,15 +28,13 @@
 	..()
 
 /obj/structure/curtain/proc/toggle()
-	playsound(get_turf(loc), 'sound/effects/curtain.ogg', 15, 1, -5)
+	playsound(get_turf(loc), 'infinity/sound/effects/curtain.ogg', 15, 1, -5)
 	set_opacity(!opacity)
 	if(opacity)
 		icon_state = "closed"
-		plane = ABOVE_HUMAN_PLANE
-		layer = ABOVE_WINDOW_LAYER
+		layer = ABOVE_HUMAN_LAYER
 	else
 		icon_state = "open"
-		plane = OBJ_PLANE
 		layer = ABOVE_WINDOW_LAYER
 
 /obj/structure/curtain/black

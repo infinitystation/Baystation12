@@ -70,7 +70,7 @@
 	light_color_status_display = COLOR_ORANGE
 	overlay_alarm = "alarm_orange"
 	overlay_status_display = "status_display_orange"
-
+	airlock_override = 1 //inf
 	psionic_control_level = PSI_IMPLANT_LOG
 
 	up_description = "A major engineering emergency has developed. Engineering personnel are required to report to their supervisor for orders, and non-engineering personnel are required to evacuate any affected areas and obey relevant instructions from engineering staff."
@@ -105,6 +105,7 @@
 	light_color_status_display = COLOR_RED
 	overlay_alarm = "alarm_red"
 	overlay_status_display = "status_display_red"
+	airlock_override = 1
 
 	up_description = "A severe emergency has occurred. All staff are to report to their supervisor for orders. All crew should obey orders from relevant emergency personnel. Security personnel are permitted to search staff and facilities, and may have weapons unholstered at any time. Saferooms have been unbolted."
 	psionic_control_level = PSI_IMPLANT_DISABLED

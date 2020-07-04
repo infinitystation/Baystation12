@@ -7,7 +7,7 @@
 	if(!speaking)
 		speaking = parse_language(message)
 		if (speaking)
-			message = copytext(message,2+length(speaking.key))
+			message = copytext(message, 2+length(speaking.key))
 		else
 			speaking = get_any_good_language(set_default=TRUE)
 			if (!speaking)
@@ -15,18 +15,21 @@
 				emote("custom", AUDIBLE_MESSAGE, "[pick("grunts", "babbles", "gibbers", "jabbers", "burbles")] aimlessly.")
 				return
 
+	if(has_chem_effect(CE_VOICELOSS, 1))
+		whispering = TRUE
+
 	message = sanitize(message)
 	var/obj/item/organ/internal/voicebox/vox = locate() in internal_organs
 	var/snowflake_speak = (speaking && (speaking.flags & (NONVERBAL|SIGNLANG))) || (vox && vox.is_usable() && vox.assists_languages[speaking])
 	if(!isSynthetic() && need_breathe() && failed_last_breath && !snowflake_speak)
 		var/obj/item/organ/internal/lungs/L = internal_organs_by_name[species.breathing_organ]
-		if(L.breath_fail_ratio > 0.9)
-			if(world.time < L.last_successful_breath + 2 MINUTES) //if we're in grace suffocation period, give it up for last words
+		if(!L || L.breath_fail_ratio > 0.9)
+			if(L && world.time < L.last_successful_breath + 2 MINUTES) //if we're in grace suffocation period, give it up for last words
 				to_chat(src, "<span class='warning'>You use your remaining air to say something!</span>")
 				L.last_successful_breath = world.time - 2 MINUTES
 				return ..(message, speaking = speaking)
 
-			to_chat(src, "<span class='warning'>You don't have enough air in [L] to make a sound!</span>")
+			to_chat(src, "<span class='warning'>You don't have enough air[L ? " in [L]" : ""] to make a sound!</span>")
 			return
 		else if(L.breath_fail_ratio > 0.7)
 			whisper_say(length(message) > 5 ? stars(message) : message, speaking)
@@ -108,7 +111,14 @@
 			voice_sub = rig.speech.voice_holder.voice
 
 	if(!voice_sub)
-		for(var/obj/item/gear in list(wear_mask,wear_suit,head))
+
+		var/list/check_gear = list(wear_mask, head)
+		if(wearing_rig)
+			var/datum/extension/armor/rig/armor_datum = get_extension(wearing_rig, /datum/extension/armor)
+			if(istype(armor_datum) && armor_datum.sealed && wearing_rig.helmet == head)
+				check_gear |= wearing_rig
+
+		for(var/obj/item/gear in check_gear)
 			if(!gear)
 				continue
 			var/obj/item/voice_changer/changer = locate() in gear
@@ -122,21 +132,20 @@
 	return real_name
 
 /mob/living/carbon/human/say_quote(var/message, var/datum/language/speaking = null)
-	var/verb = "says"
-	var/ending = copytext(message, length(message) - 1)
+	var/verb = "говорит" //INF, WAS var/verb = "says"
+	var/ending = copytext(message, length(message))
 
 	if(speaking)
 		verb = speaking.get_spoken_verb(ending)
 	else
-		if(copytext(ending, length(ending))=="!")
-			verb=pick("exclaims","shouts","yells")
-		else if(copytext(ending, length(ending))=="?")
-			verb="asks"
-
+		if(ending == "!")
+			verb = pick("восклицает","выкрикивает") //INF, WAS verb=pick("exclaims","shouts","yells")
+		else if(ending == "?")
+			verb = "спрашивает" //INF, WAS verb="asks
 	return verb
 
 /mob/living/carbon/human/handle_speech_problems(var/list/message_data)
-	if(silent || (sdisabilities & MUTE))
+	if(silent || (sdisabilities & MUTED))
 		message_data[1] = ""
 		. = 1
 
@@ -204,17 +213,17 @@
 					used_radios += r_ear
 
 /mob/living/carbon/human/handle_speech_sound()
-	if(species.name == SPECIES_HUMAN)
-		species.speech_sounds = gender == MALE ? 'sound/voice/clearing-throat-m.ogg' : 'sound/voice/clearing-throat-f.ogg'
+	if(species.name == SPECIES_HUMAN) // infinity. needed for gender check
+		species.speech_sounds = GLOB.human_clearing_throat[gender]
 	if(species.speech_sounds && prob(species.speech_chance))
 		var/list/returns[2]
-		returns[1] = sound(pick(species.speech_sounds), volume = 35)
+		returns[1] = sound(pick(species.speech_sounds))
 		returns[2] = 50
 		return returns
 	return ..()
 
 /mob/living/carbon/human/can_speak(datum/language/speaking)
-	if(species && (speaking.name in species.assisted_langs))
+	if(species && speaking && (speaking.name in species.assisted_langs))
 		for(var/obj/item/organ/internal/voicebox/I in src.internal_organs)
 			if(I.is_usable() && I.assists_languages[speaking])
 				return TRUE
@@ -231,5 +240,9 @@
 		var/datum/language/L = language_keys[language_prefix]
 		if (can_speak(L))
 			return L
+		else if(L.primitive_version) //inf, for primitive version of xeno langs
+			L = all_languages[L.primitive_version]
+			if(can_speak(L))
+				return L
 
 	return null

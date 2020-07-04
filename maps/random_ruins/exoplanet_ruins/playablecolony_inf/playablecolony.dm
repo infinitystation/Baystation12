@@ -3,8 +3,12 @@
 	id = "playablecolony"
 	description = "a fully functional colony on the frontier of settled space"
 	suffixes = list("playablecolony_inf/colony.dmm")
-	cost = 2
+	cost = 2000 //was 2, we aren't using it now
 	template_flags = TEMPLATE_FLAG_CLEAR_CONTENTS | TEMPLATE_FLAG_NO_RUINS | TEMPLATE_FLAG_NO_RADS
+	ruin_tags = RUIN_HUMAN|RUIN_HABITAT
+	apc_test_exempt_areas = list(
+		/area/map_template/colony/mineralprocessing = NO_SCRUBBER|NO_VENT
+	)
 
 /decl/submap_archetype/playablecolony
 	descriptor = "established colony"

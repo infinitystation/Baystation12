@@ -12,20 +12,23 @@
 	path = /obj/item/clothing/shoes/dress
 
 /datum/gear/shoes/athletic
-	allowed_roles = SEMIFORMAL_ROLES
+	allowed_roles = null //INF, WAS: SEMIFORMAL_ROLES
 
 /datum/gear/shoes/color
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/shoes/flats
-	allowed_roles = SEMIANDFORMAL_ROLES
+	allowed_roles = null //INF, WAS: SEMIFORMAL_ROLES
 
 /datum/gear/shoes/high
-	allowed_roles = FORMAL_ROLES
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_roles = null //INF, WAS: FORMAL_ROLES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/shoes/sandal
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/shoes/heels
-	allowed_roles = SEMIANDFORMAL_ROLES
+	allowed_roles = null //INF, WAS: SEMIFORMAL_ROLES
+
+/datum/gear/shoes/boots
+	allowed_branches = CIVILIAN_BRANCHES

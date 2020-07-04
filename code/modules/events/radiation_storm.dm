@@ -6,17 +6,28 @@
 	startWhen				= 2
 	announceWhen			= 1
 	endWhen					= revokeAccess
+	has_skybox_image		= TRUE
 	var/postStartTicks 		= 0
 
+/datum/event/radiation_storm/syndicate
+	has_skybox_image = FALSE
+
+/datum/event/radiation_storm/get_skybox_image()
+	if(prob(75)) // Sometimes, give no skybox image, to avoid metagaming it
+		var/image/res = overlay_image('icons/skybox/radbox.dmi', "beam", null, RESET_COLOR)
+		res.alpha = rand(40,80)
+		return res
+
 /datum/event/radiation_storm/announce()
-	priority_announcement.Announce("Зафиксировано повышение уровня радиации поблизости судна. Всему персоналу настоятельно рекомендуется пройти в экранированные отсеки до покидания зоны повышенной радиоактивности. Экранированные отсеки - технические тоннели, челноки, камеры заключения, убежища, дормиторий.", "Сенсоры [location_name()]", new_sound = GLOB.using_map.radiation_detected_sound, zlevels = affecting_z)
+	command_announcement.Announce("Р—Р°С„РёРєСЃРёСЂРѕРІР°РЅРѕ РїРѕРІС‹С€РµРЅРёРµ СѓСЂРѕРІРЅСЏ СЂР°РґРёР°С†РёРё РїРѕР±Р»РёР·РѕСЃС‚Рё СЃСѓРґРЅР°. Р’СЃРµРјСѓ РїРµСЂСЃРѕРЅР°Р»Сѓ РЅР°СЃС‚РѕСЏС‚РµР»СЊРЅРѕ СЂРµРєРѕРјРµРЅРґСѓРµС‚СЃСЏ РїСЂРѕР№С‚Рё РІ СЌРєСЂР°РЅРёСЂРѕРІР°РЅРЅС‹Рµ РѕС‚СЃРµРєРё РґРѕ РїРѕРєРёРґР°РЅРёСЏ Р·РѕРЅС‹ РїРѕРІС‹С€РµРЅРЅРѕР№ СЂР°РґРёРѕР°РєС‚РёРІРЅРѕСЃС‚Рё.", "РЎРµРЅСЃРѕСЂС‹ [location_name()]", new_sound = GLOB.using_map.radiation_detected_sound, zlevels = affecting_z)
 
 /datum/event/radiation_storm/start()
+	..()
 	GLOB.using_map.make_maint_all_access(1)
 
 /datum/event/radiation_storm/tick()
 	if(activeFor == enterBelt)
-		priority_announcement.Announce("Возрастание радиационного фона прекращено. Настоятельно рекомендуется оставаться в экранированных помещениях до снижения уровня фона.", "Сенсоры [location_name()]", zlevels = affecting_z)
+		command_announcement.Announce("Р’РѕР·СЂР°СЃС‚Р°РЅРёРµ СЂР°РґРёР°С†РёРѕРЅРЅРѕРіРѕ С„РѕРЅР° РїСЂРµРєСЂР°С‰РµРЅРѕ. РќР°СЃС‚РѕСЏС‚РµР»СЊРЅРѕ СЂРµРєРѕРјРµРЅРґСѓРµС‚СЃСЏ РѕСЃС‚Р°РІР°С‚СЊСЃСЏ РІ СЌРєСЂР°РЅРёСЂРѕРІР°РЅРЅС‹С… РїРѕРјРµС‰РµРЅРёСЏС… РґРѕ СЃРЅРёР¶РµРЅРёСЏ СѓСЂРѕРІРЅСЏ С„РѕРЅР°.", "РЎРµРЅСЃРѕСЂС‹ [location_name()]", zlevels = affecting_z)
 		radiate()
 
 	if(activeFor >= enterBelt && activeFor <= leaveBelt)
@@ -27,11 +38,11 @@
 		radiate()
 
 	else if(activeFor == leaveBelt)
-		priority_announcement.Announce("Зафиксировано снижение радиационного фона. Настоятельно рекомендуется подождать минуту до окончательного спада радиационного осадка. Обратитесь в лазарет при обнаружении признаков радиационного заражения. Доступ в технические помещения будет возвращен в ближайшее время.", "Сенсоры [location_name()]", zlevels = affecting_z)
+		command_announcement.Announce("Р—Р°С„РёРєСЃРёСЂРѕРІР°РЅРѕ СЃРЅРёР¶РµРЅРёРµ СЂР°РґРёР°С†РёРѕРЅРЅРѕРіРѕ С„РѕРЅР°. РќР°СЃС‚РѕСЏС‚РµР»СЊРЅРѕ СЂРµРєРѕРјРµРЅРґСѓРµС‚СЃСЏ РїРѕРґРѕР¶РґР°С‚СЊ РјРёРЅСѓС‚Сѓ РґРѕ РѕРєРѕРЅС‡Р°С‚РµР»СЊРЅРѕРіРѕ СЃРїР°РґР° СЂР°РґРёР°С†РёРѕРЅРЅРѕРіРѕ РѕСЃР°РґРєР°. РћР±СЂР°С‚РёС‚РµСЃСЊ РІ Р»Р°Р·Р°СЂРµС‚ РїСЂРё РѕР±РЅР°СЂСѓР¶РµРЅРёРё РїСЂРёР·РЅР°РєРѕРІ СЂР°РґРёР°С†РёРѕРЅРЅРѕРіРѕ Р·Р°СЂР°Р¶РµРЅРёСЏ. Р”РѕСЃС‚СѓРї РІ С‚РµС…РЅРёС‡РµСЃРєРёРµ РїРѕРјРµС‰РµРЅРёСЏ Р±СѓРґРµС‚ РІРѕР·РІСЂР°С‰РµРЅ РІ Р±Р»РёР¶Р°Р№С€РµРµ РІСЂРµРјСЏ.", "РЎРµРЅСЃРѕСЂС‹ [location_name()]", zlevels = affecting_z)
 
 /datum/event/radiation_storm/proc/radiate()
 	var/radiation_level = rand(15, 35)
-	for(var/z in GLOB.using_map.station_levels)
+	for(var/z in affecting_z)
 		SSradiation.z_radiate(locate(1, 1, z), radiation_level, 1)
 
 	for(var/mob/living/carbon/C in GLOB.living_mob_list_)
@@ -42,7 +53,7 @@
 			continue
 		if(istype(C,/mob/living/carbon/human))
 			var/mob/living/carbon/human/H = C
-			if(prob(5 * (1 - H.get_blocked_ratio(null, IRRADIATE, damage_flags = DAM_DISPERSED))))
+			if(prob(5 * (1 - H.get_blocked_ratio(null, IRRADIATE, damage_flags = DAM_DISPERSED, armor_pen = radiation_level))))
 				if (prob(75))
 					randmutb(H) // Applies bad mutation
 					domutcheck(H,null,MUTCHK_FORCED)

@@ -20,12 +20,12 @@
 /datum/gear/head/veteranhat
 	display_name = "veteran hat"
 	path = /obj/item/clothing/head/soft/solgov/veteranhat
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/head/solhat
 	display_name = "sol central government hat"
 	path = /obj/item/clothing/head/soft/solgov
-	allowed_branches = SOLGOV_BRANCHES
+	allowed_branches = null //INF, WAS: SOLGOV_BRANCHES
 
 /datum/gear/head/fleethat
 	display_name = "fleet cap"
@@ -43,32 +43,35 @@
 	allowed_roles = STERILE_ROLES
 
 /datum/gear/head/beret
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/mask/bandana
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/head/bandana
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
+
+/datum/gear/head/beanie
 	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/head/bow
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/head/cap
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/head/hairflower
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/head/hardhat
 	allowed_roles = TECHNICAL_ROLES
 
 /datum/gear/head/formalhat
-	allowed_roles = FORMAL_ROLES
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_roles = null //INF, WAS: FORMAL_ROLES
+	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/head/informalhat
-	allowed_roles = SEMIFORMAL_ROLES
+	allowed_roles = null //INF, WAS: SEMIFORMAL_ROLES
 
 /datum/gear/head/welding
 	allowed_roles = TECHNICAL_ROLES

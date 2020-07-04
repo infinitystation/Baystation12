@@ -36,7 +36,7 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 		var/list/archivedwarrants = list()
 		for(var/datum/computer_file/data/warrant/W in GLOB.all_warrants)
 			var/charges = W.fields["charges"]
-			if(lentext(charges) > 50)
+			if(length(charges) > 50)
 				charges = copytext(charges, 1, 50) + "..."
 			var/warrant = list(
 			"warrantname" = W.fields["namewarrant"],
@@ -130,7 +130,7 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 	if(href_list["deletewarrant"])
 		. = 1
 		if(!activewarrant)
-			for(var/datum/computer_file/report/crew_record/W in GLOB.all_crew_records)
+			for(var/datum/computer_file/data/warrant/W in GLOB.all_warrants)
 				if(W.uid == text2num(href_list["deletewarrant"]))
 					activewarrant = W
 					break
@@ -195,7 +195,7 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 			to_chat(user, "Lookup error: Unable to locate specified job in access database.")
 			return
 		for(var/datum/computer_file/report/crew_record/CR in GLOB.all_crew_records)
-			if(CR.get_name() == activewarrant.fields["namewarrant"] && CR.get_job() == J.title)
+			if(CR.get_name() == activewarrant.fields["namewarrant"] && ((CR.get_job() == J.title) || (CR.get_job() in J.alt_titles)))	//INF WAS	if(CR.get_name() == activewarrant.fields["namewarrant"] && CR.get_job() == J.title)
 				warrant_subject = CR
 
 		if(!warrant_subject)

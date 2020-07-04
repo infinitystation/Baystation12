@@ -1,7 +1,7 @@
 /obj/structure/rubble
 	name = "pile of rubble"
 	desc = "One man's garbage is another man's treasure."
-	icon = 'icons/obj/rubble.dmi'
+	icon = 'infinity/icons/obj/rubble.dmi' // inf-dev
 	icon_state = "base"
 	appearance_flags = PIXEL_SCALE
 	opacity = 1
@@ -13,6 +13,8 @@
 	var/emptyprob = 95
 	var/health = 40
 	var/is_rummaging = 0
+
+//	color = "#54362e" // inf-dev
 
 /obj/structure/rubble/New()
 	if(prob(emptyprob))
@@ -27,7 +29,8 @@
 	overlays.Cut()
 	var/list/parts = list()
 	for(var/i = 1 to 7)
-		var/image/I = image(icon,"rubble[rand(1,15)]")
+		var/image/I = image(icon,"rubble[rand(1,76)]")
+//		I.color = "#54362e" // inf-dev
 		if(prob(10))
 			var/atom/A = pick(loot)
 			if(initial(A.icon) && initial(A.icon_state))
@@ -55,50 +58,44 @@
 		visible_message("[user] starts rummaging through \the [src].")
 		is_rummaging = 1
 		if(do_after(user, 30))
-			var/obj/item/booty = pick(loot)
+			var/obj/item/booty = pickweight(loot)
 			booty = new booty(loc)
 			lootleft--
 			update_icon()
 			to_chat(user, "<span class='notice'>You find \a [booty] and pull it carefully out of \the [src].</span>")
-			new /obj/item/weapon/scrap_lump(loc)
+			new /obj/item/weapon/scrap_lump(loc) // inf-dev
 		is_rummaging = 0
 	else
 		to_chat(user, "<span class='warning'>Someone is already rummaging here!</span>")
 
 /obj/structure/rubble/attackby(var/obj/item/I, var/mob/user)
-	if (istype(I, /obj/item/weapon/pickaxe) || istype(I, /obj/item/weapon/shovel))
-		var/digspeed
-		if (istype(I, /obj/item/weapon/pickaxe))
-			var/obj/item/weapon/pickaxe/P = I
-			digspeed = P.digspeed
-		if (istype(I, /obj/item/weapon/shovel))
-			digspeed = 70
-
+	if (istype(I, /obj/item/weapon/pickaxe))
+		var/obj/item/weapon/pickaxe/P = I
 		visible_message("[user] starts clearing away \the [src].")
-		if(do_after(user, digspeed, src))
+		if(do_after(user,P.digspeed, src))
+			visible_message("[user] clears away \the [src].")
+			if(lootleft && prob(1))
+				var/obj/item/booty = pickweight(loot)
+				booty = new booty(loc)
+			qdel(src)
+	// infinity ahead
+	if (istype(I, /obj/item/weapon/shovel))
+		visible_message("[user] starts clearing away \the [src].")
+		if(do_after(user, 70, src))
 			visible_message("[user] clears away \the [src].")
 			if(lootleft && prob(1))
 				var/obj/item/booty = pick(loot)
 				booty = new booty(loc)
 			new /obj/item/weapon/scrap_lump(loc)
 			qdel(src)
+	// infinity end
 	else
 		..()
 		health -= I.force
 		if(health < 1)
 			visible_message("[user] clears away \the [src].")
-			new /obj/item/weapon/scrap_lump(loc)
+			new /obj/item/weapon/scrap_lump(loc) // inf-dev
 			qdel(src)
-
-/obj/structure/rubble/proc/make_cube()
-	var/obj/container = new /obj/structure/scrap_cube(loc, lootleft)
-	forceMove(container)
-
-/obj/structure/rubble/crush_act()
-	playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
-	for(var/i in 1, i < lootleft, i++)
-		new /obj/item/weapon/scrap_lump(loc)
-	qdel(src)
 
 /obj/structure/rubble/house
 	loot = list(/obj/item/weapon/archaeological_find/bowl,
@@ -111,20 +108,27 @@
 	/obj/item/weapon/archaeological_find/mask,
 	/obj/item/weapon/archaeological_find/coin,
 	/obj/item/weapon/archaeological_find,
-	/obj/item/weapon/archaeological_find/material)
+	/obj/item/weapon/archaeological_find/material = 5,
+	/obj/item/weapon/archaeological_find/material/exotic = 2,
+	/obj/item/weapon/archaeological_find/parts = 3
+	)
+
+/obj/structure/rubble/lab
+	emptyprob = 30
+	loot = list(
+	/obj/item/weapon/archaeological_find/statuette,
+	/obj/item/weapon/archaeological_find/instrument,
+	/obj/item/weapon/archaeological_find/mask,
+	/obj/item/weapon/archaeological_find,
+	/obj/item/weapon/archaeological_find/material = 10,
+	/obj/item/weapon/archaeological_find/material/exotic = 10,
+	/obj/item/weapon/archaeological_find/parts = 10
+	)
 
 /obj/structure/rubble/war
 	emptyprob = 95 //can't have piles upon piles of guns
 	loot = list(/obj/item/weapon/archaeological_find/knife,
-	/obj/item/weapon/archaeological_find/remains/xeno,
-	/obj/item/weapon/archaeological_find/remains/robot,
-	/obj/item/weapon/archaeological_find/remains,
 	/obj/item/weapon/archaeological_find/gun,
 	/obj/item/weapon/archaeological_find/laser,
-	/obj/item/weapon/archaeological_find/statuette,
-	/obj/item/weapon/archaeological_find/instrument,
-	/obj/item/weapon/archaeological_find/container,
-	/obj/item/weapon/archaeological_find/mask,
 	/obj/item/weapon/archaeological_find/sword,
-	/obj/item/weapon/archaeological_find/katana,
-	/obj/item/weapon/archaeological_find/trap)
+	/obj/item/weapon/archaeological_find/katana)

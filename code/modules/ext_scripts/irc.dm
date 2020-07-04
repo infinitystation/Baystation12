@@ -14,7 +14,8 @@
 		send2irc(config.main_irc, msg)
 	return
 
-/proc/send2adminirc(var/msg)
+/proc/send2adminirc(var/msg, var/log = 0)//inf //was: /proc/send2adminirc(var/msg)
+	if(log) msg = "\[ADMIN_LOG] `[msg]`"//inf
 	if(config.admin_irc)
 		send2irc(config.admin_irc, sanitize_irc(msg))
 	return
@@ -46,6 +47,15 @@
 
 		export2irc(params)
 
+/proc/get_world_url()
+	. = "byond://"
+	if(config.serverurl)
+		. += config.serverurl
+	else if(config.server)
+		. += config.server
+	else
+		. += "[world.address]:[world.port]"
+
 /hook/startup/proc/ircNotify()
-	send2mainirc("@Roundwaiter Сервер запускается на карте [GLOB.using_map.full_name], IP: <byond://[config.serverurl ? config.serverurl : (config.server ? config.server : "[world.address]:[world.port]")]>")
+	send2mainirc("@Roundwaiter РЎРµСЂРІРµСЂ Р·Р°РїСѓСЃРєР°РµС‚СЃСЏ РЅР° РєР°СЂС‚Рµ [GLOB.using_map.full_name], IP: <byond://[config.serverurl ? config.serverurl : (config.server ? config.server : "[world.address]:[world.port]")]>")
 	return 1

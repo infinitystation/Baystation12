@@ -7,17 +7,15 @@
 #define MATERIAL_DIAMOND                 "diamond"
 #define MATERIAL_PHORON                  "phoron"
 #define MATERIAL_URANIUM                 "uranium"
-#define MATERIAL_COTTON                  "cotton"
 #define MATERIAL_CRYSTAL                 "crystal"
 #define MATERIAL_SANDSTONE               "sandstone"
-#define MATERIAL_LEATHER                 "leather"
+#define MATERIAL_CONCRETE                "concrete"
 #define MATERIAL_IRON                    "iron"
 #define MATERIAL_PLATINUM                "platinum"
 #define MATERIAL_BRONZE                  "bronze"
 #define MATERIAL_PHORON_GLASS            "phglass"
 #define MATERIAL_REINFORCED_PHORON_GLASS "rphglass"
 #define MATERIAL_MARBLE                  "marble"
-#define MATERIAL_RESIN                   "resin"
 #define MATERIAL_CULT                    "cult"
 #define MATERIAL_REINFORCED_CULT         "cult2"
 #define MATERIAL_VOX                     "voxalloy"
@@ -58,7 +56,41 @@
 #define MATERIAL_EBONY                   "ebony"
 #define MATERIAL_WALNUT                  "walnut"
 #define MATERIAL_BAMBOO                  "bamboo"
+#define MATERIAL_YEW                     "yew"
 
+// skins and bones
+#define MATERIAL_SKIN_GENERIC            "skin"
+#define MATERIAL_SKIN_LIZARD             "lizardskin"
+#define MATERIAL_SKIN_CHITIN             "chitin"
+#define MATERIAL_SKIN_FUR                "brown fur"
+#define MATERIAL_SKIN_FUR_GRAY           "gray fur"
+#define MATERIAL_SKIN_FUR_WHITE          "white fur"
+#define MATERIAL_SKIN_GOATHIDE           "goathide"
+#define MATERIAL_SKIN_COWHIDE            "cowhide"
+#define MATERIAL_SKIN_SHARK              "sharkskin"
+#define MATERIAL_SKIN_FISH               "fishskin"
+#define MATERIAL_SKIN_FUR_ORANGE         "orange fur"
+#define MATERIAL_SKIN_FUR_BLACK          "black fur"
+#define MATERIAL_SKIN_FUR_HEAVY          "heavy fur"
+#define MATERIAL_SKIN_FISH_PURPLE        "purple fishskin"
+#define MATERIAL_SKIN_FEATHERS           "white feathers"
+#define MATERIAL_SKIN_FEATHERS_PURPLE    "purple feathers"
+#define MATERIAL_SKIN_FEATHERS_BLUE      "blue feathers"
+#define MATERIAL_SKIN_FEATHERS_GREEN     "green feathers"
+#define MATERIAL_SKIN_FEATHERS_BROWN     "brown feathers"
+#define MATERIAL_SKIN_FEATHERS_RED       "red feathers"
+#define MATERIAL_SKIN_FEATHERS_BLACK     "black feathers"
+
+#define MATERIAL_BONE_GENERIC            "bone"
+#define MATERIAL_BONE_CARTILAGE          "cartilage"
+#define MATERIAL_BONE_FISH               "fishbone"
+
+#define MATERIAL_LEATHER_GENERIC         "leather"
+#define MATERIAL_LEATHER_LIZARD          "scaled hide"
+#define MATERIAL_LEATHER_FUR             "furred hide"
+#define MATERIAL_LEATHER_CHITIN          "treated chitin"
+
+// defaults
 #define DEFAULT_WALL_MATERIAL      MATERIAL_STEEL
 #define DEFAULT_FURNITURE_MATERIAL MATERIAL_ALUMINIUM
 
@@ -94,3 +126,10 @@
 #define USE_MATERIAL_COLOR 				0x1
 #define USE_MATERIAL_SINGULAR_NAME    	0x2
 #define USE_MATERIAL_PLURAL_NAME    	0x4
+
+//Arbitrary hardness thresholds
+#define  MATERIAL_SOFT   10
+#define  MATERIAL_FLEXIBLE  20
+#define  MATERIAL_RIGID  40
+#define  MATERIAL_HARD  60
+#define  MATERIAL_VERY_HARD  80

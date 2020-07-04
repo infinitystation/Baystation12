@@ -1,7 +1,7 @@
 SUBSYSTEM_DEF(codex)
 	name = "Codex"
 	flags = SS_NO_FIRE
-	init_order = SS_INIT_MISC_LATE
+	init_order = SS_INIT_MISC_CODEX
 	var/regex/linkRegex
 
 	var/list/entries_by_path =   list()
@@ -54,7 +54,7 @@ SUBSYSTEM_DEF(codex)
 		var/replacement = linkRegex.group[4]
 		if(linked_entry)
 			replacement = "<a href='?src=\ref[SScodex];show_examined_info=\ref[linked_entry];show_to=\ref[viewer]'>[replacement]</a>"
-		string = replacetextEx(string, linkRegex.match, replacement)
+		string = replacetextEx_char(string, linkRegex.match, replacement)
 	return string
 
 /datum/controller/subsystem/codex/proc/get_codex_entry(var/entry)
@@ -76,17 +76,8 @@ SUBSYSTEM_DEF(codex)
 
 /datum/controller/subsystem/codex/proc/present_codex_entry(var/mob/presenting_to, var/datum/codex_entry/entry)
 	if(entry && istype(presenting_to) && presenting_to.client)
-		var/list/dat = list()
-		if(entry.lore_text)
-			dat += "<font color='#abdb9b'>[parse_links(entry.lore_text, presenting_to)]</font>"
-		if(entry.mechanics_text)
-			dat += "<h3>OOC Information</h3>"
-			dat += "<font color='#9ebcd8'>[parse_links(entry.mechanics_text, presenting_to)]</font>"
-		if(entry.antag_text && presenting_to.mind && player_is_antag(presenting_to.mind))
-			dat += "<h3>Antagonist Information</h3>"
-			dat += "<font color='#e5a2a2'>[parse_links(entry.antag_text, presenting_to)]</font>"
-		var/datum/browser/popup = new(presenting_to, "codex", "Codex - [entry.display_name]")
-		popup.set_content(jointext(dat, null))
+		var/datum/browser/popup = new(presenting_to, "codex", "Codex", nheight=425)
+		popup.set_content(parse_links(entry.get_text(presenting_to), presenting_to))
 		popup.open()
 
 /datum/controller/subsystem/codex/proc/retrieve_entries_for_string(var/searching)

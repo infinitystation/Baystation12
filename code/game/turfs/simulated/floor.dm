@@ -2,6 +2,8 @@
 	name = "plating"
 	icon = 'icons/turf/flooring/plating.dmi'
 	icon_state = "plating"
+	permit_ao = TRUE
+
 	// Damage to flooring.
 	var/broken
 	var/burnt
@@ -56,7 +58,7 @@
 	icon = base_icon
 	icon_state = base_icon_state
 	color = base_color
-	plane = PLATING_PLANE
+	layer = PLATING_LAYER
 
 	if(flooring)
 		flooring.on_remove()
@@ -78,9 +80,9 @@
 		O.hide(O.hides_under_flooring() && src.flooring)
 
 	if(flooring)
-		plane = TURF_PLANE
+		layer = TURF_LAYER
 	else
-		plane = PLATING_PLANE
+		layer = PLATING_LAYER
 
 /turf/simulated/floor/can_engrave()
 	return (!flooring || flooring.can_engrave)
@@ -92,4 +94,7 @@
 	initial_gas = null
 
 /turf/simulated/floor/shuttle_ceiling/air
-	initial_gas = list("oxygen" = MOLES_O2STANDARD, "nitrogen" = MOLES_N2STANDARD)
+	initial_gas = list(GAS_OXYGEN = MOLES_O2STANDARD, GAS_NITROGEN = MOLES_N2STANDARD)
+
+/turf/simulated/floor/is_floor()
+	return TRUE

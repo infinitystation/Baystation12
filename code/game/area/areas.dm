@@ -38,6 +38,30 @@
 		has_gravity = 0
 	power_change()		// all machines set to current power level, also updates lighting icon
 
+/area/Destroy()
+	..()
+	return QDEL_HINT_HARDDEL
+
+// Changes the area of T to A. Do not do this manually.
+// Area is expected to be a non-null instance.
+/proc/ChangeArea(var/turf/T, var/area/A)
+	if(!istype(A))
+		CRASH("Area change attempt failed: invalid area supplied.")
+	var/area/old_area = get_area(T)
+	if(old_area == A)
+		return
+	A.contents.Add(T)
+	if(old_area)
+		old_area.Exited(T, A)
+		for(var/atom/movable/AM in T)
+			old_area.Exited(AM, A)  // Note: this _will_ raise exited events.
+	A.Entered(T, old_area)
+	for(var/atom/movable/AM in T)
+		A.Entered(AM, old_area) // Note: this will _not_ raise moved or entered events. If you change this, you must also change everything which uses them.
+
+	for(var/obj/machinery/M in T)
+		M.area_changed(old_area, A) // They usually get moved events, but this is the one way an area can change without triggering one.
+
 /area/proc/get_contents()
 	return contents
 
@@ -222,8 +246,9 @@ var/list/mob/living/forced_ambiance_list = new
 	if(!(L && L.client && L.get_preference_value(/datum/client_preference/play_ambiance) == GLOB.PREF_YES))	return
 
 	var/turf/T = get_turf(L)
+/*inf[MOVED]
 	var/hum = 0
-	if(!L.ear_deaf && !always_unpowered && power_environ)
+	if(L.get_sound_volume_multiplier() >= 0.2 && !always_unpowered && power_environ)
 		for(var/obj/machinery/atmospherics/unary/vent_pump/vent in src)
 			if(vent.can_pump())
 				hum = 1
@@ -235,19 +260,34 @@ var/list/mob/living/forced_ambiance_list = new
 	else
 		if(L.client.ambience_playing)
 			L.client.ambience_playing = 0
-			sound_to(L, sound(null, channel = 2))
-
+			sound_to(L, sound(null, channel = GLOB.ambience_sound_channel))
+inf*/
 	if(L.lastarea != src)
 		if(LAZYLEN(forced_ambience))
 			forced_ambiance_list |= L
-			L.playsound_local(T,sound(pick(forced_ambience), repeat = 1, wait = 0, volume = 25, channel = GLOB.lobby_sound_channel))
+			L.playsound_local(T,sound(pick(forced_ambience), repeat = 1, wait = 0, volume = 25, channel = GLOB.forced_ambience_sound_channel)) //inf //was: L.playsound_local(T,sound(pick(forced_ambience), repeat = 1, wait = 0, volume = 25, channel = GLOB.lobby_sound_channel))
 		else	//stop any old area's forced ambience, and try to play our non-forced ones
-			sound_to(L, sound(null, channel = GLOB.lobby_sound_channel))
+			sound_to(L, sound(null, channel = GLOB.forced_ambience_sound_channel)) //inf //was: sound_to(L, sound(null, channel = GLOB.lobby_sound_channel))
 			forced_ambiance_list -= L
-	if(ambience.len && prob(5) && (world.time >= L.client.played + 3 MINUTES))
-		L.playsound_local(T, sound(pick(ambience), repeat = 0, wait = 0, volume = 15, channel = GLOB.lobby_sound_channel))
+	if(ambience.len && prob(config.ambience_probability) && (world.time >= L.client.played + config.ambience_delay))//inf, was: if(ambience.len && prob(5) && (world.time >= L.client.played + 3 MINUTES))
+		L.playsound_local(T, sound(pick(ambience), repeat = 0, wait = 0, volume = 15, channel = GLOB.ambience_sound_channel)) //inf //was: L.playsound_local(T, sound(pick(ambience), repeat = 0, wait = 0, volume = 15, channel = GLOB.lobby_sound_channel))
 		L.client.played = world.time
-
+//[INF]
+	var/hum = 0
+	if(L.get_sound_volume_multiplier() >= 0.2 && !always_unpowered && power_environ)
+		for(var/obj/machinery/atmospherics/unary/vent_pump/vent in src)
+			if(vent.can_pump())
+				hum = 1
+				break
+	if(hum)
+		if(!L.client.ambience_playing)
+			L.client.ambience_playing = 1
+			L.playsound_local(T,sound('sound/ambience/shipambience.ogg', repeat = 1, wait = 0, volume = 10, channel = GLOB.environment_sound_channel))
+	else
+		if(L.client.ambience_playing)
+			L.client.ambience_playing = 0
+			sound_to(L, sound(null, channel = GLOB.environment_sound_channel))
+//[/INF]
 /area/proc/gravitychange(var/gravitystate = 0)
 	has_gravity = gravitystate
 
@@ -317,4 +357,3 @@ var/list/mob/living/forced_ambiance_list = new
 
 /area/proc/has_turfs()
 	return !!(locate(/turf) in src)
-

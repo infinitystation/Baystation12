@@ -6,6 +6,7 @@ GLOBAL_DATUM_INIT(thralls, /datum/antagonist/thrall, new)
 	welcome_text = "Your mind is no longer solely your own..."
 	id = MODE_THRALL
 	flags = ANTAG_IMPLANT_IMMUNE
+	ambitious = 0 //INF
 
 	var/list/thrall_controllers = list()
 
@@ -16,7 +17,6 @@ GLOBAL_DATUM_INIT(thralls, /datum/antagonist/thrall, new)
 	var/datum/objective/obey = new
 	obey.owner = player
 	obey.explanation_text = "Obey your master, [controller.real_name], in all things."
-	obey.completed = TRUE
 	player.objectives |= obey
 
 /datum/antagonist/thrall/add_antagonist(var/datum/mind/player, var/ignore_role, var/do_not_equip, var/move_to_spawn, var/do_not_announce, var/preserve_appearance, var/mob/new_controller)

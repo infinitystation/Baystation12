@@ -185,9 +185,8 @@
 	integrated_ai = null
 	update_verb_holder()
 
-/obj/item/rig_module/ai_container/proc/integrate_ai(var/obj/item/ai,var/mob/user) //вырублено, пока не пофиксим/понерфим это говно
-	to_chat(user, "<span class='warning'>This feature is currently disabled.</span>")
-/*	if(!ai) return
+/obj/item/rig_module/ai_container/proc/integrate_ai(var/obj/item/ai,var/mob/user)
+	if(!ai) return
 
 	// The ONLY THING all the different AI systems have in common is that they all store the mob inside an item.
 	var/mob/living/ai_mob = locate(/mob/living) in ai.contents
@@ -223,7 +222,7 @@
 			to_chat(user, "<span class='warning'>There is no active AI within \the [ai].</span>")
 	else
 		to_chat(user, "<span class='warning'>There is no active AI within \the [ai].</span>")
-	update_verb_holder()*/
+	update_verb_holder()
 	return
 
 /obj/item/rig_module/datajack
@@ -280,9 +279,6 @@
 			incoming_files = input_machine.files
 		else if(istype(input_device,/obj/machinery/r_n_d/server))
 			var/obj/machinery/r_n_d/server/input_machine = input_device
-			incoming_files = input_machine.files
-		else if(istype(input_device,/obj/machinery/mecha_part_fabricator))
-			var/obj/machinery/mecha_part_fabricator/input_machine = input_device
 			incoming_files = input_machine.files
 
 		if(!incoming_files || !incoming_files.known_tech || !incoming_files.known_tech.len)

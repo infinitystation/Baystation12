@@ -3,12 +3,12 @@
 	uniform = /obj/item/clothing/under/solgov
 
 /decl/hierarchy/outfit/scg/troops
-	name = "SCG MarineHolder"
+	name = "Inf - SCG MarineHolder"
 	head = /obj/item/clothing/head/helmet/marine
 	mask = /obj/item/clothing/mask/gas/half
 	l_ear = /obj/item/device/radio/headset/specops
 	suit = /obj/item/clothing/suit/armor/pcarrier/troops/heavy
-	suit_store = /obj/item/weapon/gun/projectile/automatic/wt550/lethal
+	suit_store = /obj/item/weapon/gun/projectile/automatic/sec_smg/lethal
 	gloves = /obj/item/clothing/gloves/thick/combat/marine
 	belt = /obj/item/weapon/storage/belt/holster/security/tactical/troops
 	uniform = /obj/item/clothing/under/solgov/utility/army/urban
@@ -37,7 +37,7 @@
 			qdel(tag)
 
 /decl/hierarchy/outfit/scg/troops/standart
-	name = "SCG Marine Standart"
+	name = "Inf - SCG Marine Standart"
 	id_pda_assignment = "Marine Trooper"
 
 /decl/hierarchy/outfit/scg/troops/standart/post_equip(var/mob/living/carbon/human/H)
@@ -51,7 +51,7 @@
 			qdel(rank)
 
 /decl/hierarchy/outfit/scg/troops/engineer
-	name = "SCG Marine Combat Engineer"
+	name = "Inf - SCG Marine Combat Engineer"
 	glasses = /obj/item/clothing/glasses/welding
 	gloves = /obj/item/clothing/gloves/insulated/combat
 	back = /obj/item/weapon/storage/backpack/satchel/eng
@@ -77,7 +77,7 @@
 			qdel(rank)
 
 /decl/hierarchy/outfit/scg/troops/medic
-	name = "SCG Marine Corpsman"
+	name = "Inf - SCG Marine Corpsman"
 	glasses = /obj/item/clothing/glasses/hud/health
 	back = /obj/item/weapon/storage/backpack/satchel/med
 	suit = /obj/item/clothing/suit/armor/pcarrier/troops
@@ -105,7 +105,7 @@
 			qdel(rank)
 
 /decl/hierarchy/outfit/scg/troops/sergeant
-	name = "SCG Marine Sergeant"
+	name = "Inf - SCG Marine Sergeant"
 	back = /obj/item/weapon/storage/backpack/security
 	id_type = /obj/item/weapon/card/id/security/head
 	id_pda_assignment = "Marine Squad Leader"
@@ -128,7 +128,7 @@
 			qdel(rank)
 
 /decl/hierarchy/outfit/marshal
-	name = "OCIE tracker"
+	name = "Inf - OCIE tracker"
 	shoes = /obj/item/clothing/shoes/jackboots
 	uniform = /obj/item/clothing/under/rank/security/navyblue
 	suit = /obj/item/clothing/suit/armor/pcarrier/light/sol

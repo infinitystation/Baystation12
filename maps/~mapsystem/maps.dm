@@ -6,7 +6,7 @@ var/const/MAP_HAS_BRANCH = 1	//Branch system for occupations, togglable
 var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 
 /hook/startup/proc/initialise_map_list()
-	for(var/type in typesof(/datum/map) - /datum/map)
+	for(var/type in subtypesof(/datum/map))
 		var/datum/map/M
 		if(type == GLOB.using_map.type)
 			M = GLOB.using_map
@@ -14,7 +14,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		else
 			M = new type
 		if(!M.path)
-			log_error("Map '[M]' does not have a defined path, not adding to map list!")
+			log_error("Map '[M]' ([type]) does not have a defined path, not adding to map list!")
 		else
 			GLOB.all_maps[M.path] = M
 		if(M.playable && M != GLOB.using_map)
@@ -89,8 +89,8 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	var/overmap_z = 0		//If 0 will generate overmap zlevel on init. Otherwise will populate the zlevel provided.
 	var/overmap_event_areas = 0 //How many event "clouds" will be generated
 
-	var/lobby_icon									// The icon which contains the lobby image(s)
-	var/list/lobby_screens = list()                 // The list of lobby screen to pick() from. If left unset the first icon state is always selected.
+	var/list/lobby_screens = list('icons/default_lobby.png')    // The list of lobby screen images to pick() from.
+	var/current_lobby_screen
 	var/music_track/lobby_track                     // The track that will play in the lobby screen.
 	var/list/lobby_tracks = list()                  // The list of lobby tracks to pick() from. If left unset will randomly select among all available /music_track subtypes.
 	var/welcome_sound = 'sound/AI/welcome.ogg'		// Sound played on roundstart
@@ -117,6 +117,9 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 
 	var/supply_currency_name = "Credits"
 	var/supply_currency_name_short = "Cr."
+	var/local_currency_name = "thalers"
+	var/local_currency_name_singular = "thaler"
+	var/local_currency_name_short = "T"
 
 	var/list/available_cultural_info = list(
 		TAG_HOMEWORLD = list(
@@ -168,6 +171,9 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 			CULTURE_HUMAN_SPAFRO,
 			CULTURE_HUMAN_CONFED,
 			CULTURE_HUMAN_OTHER,
+			CULTURE_HUMAN_LORRIMAN, //Inf
+			CULTURE_HUMAN_AVANOBLE, //inf
+			CULTURE_HUMAN_AVACOMMON, // Inf
 			CULTURE_OTHER
 		),
 		TAG_RELIGION = list(
@@ -175,13 +181,18 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 			RELIGION_JUDAISM,
 			RELIGION_HINDUISM,
 			RELIGION_BUDDHISM,
+			RELIGION_SIKHISM,
+			RELIGION_JAINISM,
 			RELIGION_ISLAM,
 			RELIGION_CHRISTIANITY,
+			RELIGION_BAHAI_FAITH,
 			RELIGION_AGNOSTICISM,
 			RELIGION_DEISM,
 			RELIGION_ATHEISM,
 			RELIGION_THELEMA,
-			RELIGION_SPIRITUALISM
+			RELIGION_SPIRITUALISM,
+			RELIGION_SHINTO,
+			RELIGION_TAOISM
 		)
 	)
 
@@ -205,6 +216,10 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	// List of /datum/department types to instantiate at roundstart.
 	var/list/departments
 
+	var/evac_on_delta_code //inf, decides if station need to evacuate if delta code reached
+
+	var/minimum_players = 0 //inf
+
 /datum/map/New()
 	if(!map_levels)
 		map_levels = station_levels.Copy()
@@ -216,11 +231,12 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 				allowed_jobs += jtype
 	if(!LAZYLEN(planet_size))
 		planet_size = list(world.maxx, world.maxy)
+	current_lobby_screen = pick(lobby_screens)
 
 /datum/map/proc/get_lobby_track(var/exclude)
 	var/lobby_track_type
 	if(lobby_tracks.len)
-		lobby_track_type = pick(lobby_tracks - exclude)
+		lobby_track_type = pickweight(lobby_tracks - exclude)
 	else
 		lobby_track_type = pick(subtypesof(/music_track) - exclude)
 	return decls_repository.get_decl(lobby_track_type)
@@ -272,8 +288,8 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		return
 
 	for(var/i = 0, i < num_exoplanets, i++)
-		var/exoplanet_type = pick(subtypesof(/obj/effect/overmap/sector/exoplanet))
-		var/obj/effect/overmap/sector/exoplanet/new_planet = new exoplanet_type(null, planet_size[1], planet_size[2])
+		var/exoplanet_type = pick(subtypesof(/obj/effect/overmap/visitable/sector/exoplanet))
+		var/obj/effect/overmap/visitable/sector/exoplanet/new_planet = new exoplanet_type(null, planet_size[1], planet_size[2])
 		new_planet.build_level()
 
 // Used to apply various post-compile procedural effects to the map.
@@ -312,6 +328,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 /datum/map/proc/setup_economy()
 	news_network.CreateFeedChannel("Nyx Daily", "SolGov Minister of Information", 1, 1)
 	news_network.CreateFeedChannel("The Gibson Gazette", "Editor Mike Hammers", 1, 1)
+	news_network.CreateFeedChannel("Sol Central Gazette", "Chief Enlisted Manager Malbro Endson", 1, 1) //INF
 
 	for(var/loc_type in typesof(/datum/trade_destination) - /datum/trade_destination)
 		var/datum/trade_destination/D = new loc_type
@@ -372,3 +389,14 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		num2text(SUP_FREQ)   = list(access_cargo),
 		num2text(SRV_FREQ)   = list(access_janitor, access_hydroponics),
 	)
+
+/datum/map/proc/show_titlescreen(client/C)
+	winset(C, "lobbybrowser", "is-disabled=false;is-visible=true")
+
+	show_browser(C, current_lobby_screen, "file=titlescreen.png;display=0")
+	show_browser(C, file('html/lobby_titlescreen.html'), "window=lobbybrowser")
+
+/datum/map/proc/hide_titlescreen(client/C)
+	if(C.mob) // Check if the client is still connected to something
+		// Hide title screen, allowing player to see the map
+		winset(C, "lobbybrowser", "is-disabled=true;is-visible=false")

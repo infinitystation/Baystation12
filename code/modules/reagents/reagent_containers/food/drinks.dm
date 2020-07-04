@@ -13,11 +13,6 @@
 	var/base_name = null // Name to put in front of drinks, i.e. "[base_name] of [contents]"
 	var/base_icon = null // Base icon name for fill states
 
-/obj/item/weapon/reagent_containers/food/drinks/Initialize()
-	. = ..()
-	if(is_open_container())
-		verbs += /obj/item/weapon/reagent_containers/food/drinks/proc/gulp_whole
-
 /obj/item/weapon/reagent_containers/food/drinks/on_reagent_change()
 	update_icon()
 	return
@@ -27,10 +22,15 @@
 		open(user)
 
 /obj/item/weapon/reagent_containers/food/drinks/proc/open(mob/user)
-	playsound(loc,'sound/effects/canopen.ogg', rand(10,50), 1)
+//	playsound(loc,'sound/effects/canopen.ogg', rand(10,50), 1) inf-dev: see below
 	to_chat(user, "<span class='notice'>You open \the [src] with an audible pop!</span>")
 	atom_flags |= ATOM_FLAG_OPEN_CONTAINER
+
+	// INF@CODE - START
 	verbs += /obj/item/weapon/reagent_containers/food/drinks/proc/gulp_whole
+	if(open_sound)
+		playsound(src, open_sound, rand(10, 50), 1)
+	// INF@CODE - END
 
 /obj/item/weapon/reagent_containers/food/drinks/attack(mob/M as mob, mob/user as mob, def_zone)
 	if(force && !(item_flags & ITEM_FLAG_NO_BLUDGEON) && user.a_intent == I_HURT)
@@ -51,7 +51,7 @@
 	if(user.a_intent == I_HURT)
 		if(reagents && reagents.total_volume)
 			to_chat(user, "<span class='notice'>You splash the contents of \the [src] onto [target].</span>") //They are on harm intent, aka wanting to spill it.
-			playsound(src,'sound/effects/Splash_Small_01_mono.ogg',50,1)
+			playsound(src,'infinity/sound/effects/Splash_Small_01_mono.ogg',50,1)
 			reagents.splash(target, reagents.total_volume)
 			return
 	..()
@@ -85,8 +85,9 @@
 /obj/item/weapon/reagent_containers/food/drinks/feed_sound(var/mob/user)
 	playsound(user.loc, 'sound/items/drink.ogg', rand(10, 50), 1)
 
-/obj/item/weapon/reagent_containers/food/drinks/examine(mob/user)
-	if(!..(user, 1))
+/obj/item/weapon/reagent_containers/food/drinks/examine(mob/user, distance)
+	. = ..()
+	if(distance > 1)
 		return
 	if(!reagents || reagents.total_volume == 0)
 		to_chat(user, "<span class='notice'>\The [src] is empty!</span>")
@@ -120,43 +121,6 @@
 		SetName(initial(name))
 		desc = initial(desc)
 
-/obj/item/weapon/reagent_containers/food/drinks/proc/gulp_whole()
-	set category = "Object"
-	set name = "Gulp Down"
-	set src in view(1)
-
-	if(!istype(usr.get_active_hand(), src))
-		to_chat(usr, SPAN_WARNING("You need to hold \the [src] in hands!"))
-		return
-
-	if(is_open_container())
-		if(!reagents || reagents.total_volume == 0)
-			to_chat(usr, "<span class='notice'>\The [src] is empty!</span>")
-		else
-			if(ishuman(usr))
-				var/mob/living/carbon/human/H = usr
-				if(!H.check_has_mouth())
-					to_chat(H, "Where do you intend to put \the [src]? You don't have a mouth!")
-					return
-				var/obj/item/blocked = H.check_mouth_coverage()
-				if(blocked)
-					to_chat(H, SPAN_WARNING("\The [blocked] is in the way!"))
-					return
-			if(reagents.total_volume > 30) // 30 equates to 3 SECONDS.
-				usr.visible_message(SPAN_NOTICE("[usr] prepares to gulp down [src]."), SPAN_NOTICE("You prepare to gulp down [src]."))
-			playsound(usr, 'sound/items/drinking.ogg', reagents.total_volume, 1)
-			if(!do_after(usr, reagents.total_volume))
-				if(!Adjacent(usr))
-					return
-				standard_splash_mob(src, src)
-			if(!Adjacent(usr))
-				return
-			usr.visible_message(SPAN_NOTICE("[usr] gulped down the whole [src]!"),SPAN_NOTICE("You gulped down the whole [src]!"))
-			playsound(usr, 'sound/items/drinking_after.ogg', reagents.total_volume, 1)
-			reagents.trans_to_mob(usr, reagents.total_volume, CHEM_INGEST)
-	else
-		to_chat(usr, SPAN_NOTICE("You need to open \the [src] first!"))
-
 ////////////////////////////////////////////////////////////////////////////////
 /// Drinks. END
 ////////////////////////////////////////////////////////////////////////////////
@@ -186,7 +150,8 @@
 	icon_state = "milk"
 	item_state = "carton"
 	center_of_mass = "x=16;y=9"
-/obj/item/weapon/reagent_containers/food/drinks/milk/New()
+
+/obj/item/weapon/reagent_containers/food/drinks/milk/Initialize()
 	. = ..()
 	reagents.add_reagent(/datum/reagent/drink/milk, 50)
 
@@ -196,24 +161,26 @@
 	icon_state = "soymilk"
 	item_state = "carton"
 	center_of_mass = "x=16;y=9"
-	New()
-		..()
-		reagents.add_reagent(/datum/reagent/drink/milk/soymilk, 50)
+
+/obj/item/weapon/reagent_containers/food/drinks/soymilk/Initialize()
+	. = ..()
+	reagents.add_reagent(/datum/reagent/drink/milk/soymilk, 50)
 
 /obj/item/weapon/reagent_containers/food/drinks/milk/smallcarton
 	name = "small milk carton"
 	volume = 30
 	icon_state = "mini-milk"
-/obj/item/weapon/reagent_containers/food/drinks/milk/smallcarton/New()
-	..()
+
+/obj/item/weapon/reagent_containers/food/drinks/milk/smallcarton/Initialize()
+	. = ..()
 	reagents.add_reagent(/datum/reagent/drink/milk, 30)
 
 /obj/item/weapon/reagent_containers/food/drinks/milk/smallcarton/chocolate
 	name = "small chocolate milk carton"
 	desc = "It's milk! This one is in delicious chocolate flavour."
 
-/obj/item/weapon/reagent_containers/food/drinks/milk/smallcarton/chocolate/New()
-	..()
+/obj/item/weapon/reagent_containers/food/drinks/milk/smallcarton/chocolate/Initialize()
+	. = ..()
 	reagents.add_reagent(/datum/reagent/drink/milk/chocolate, 30)
 
 
@@ -222,7 +189,8 @@
 	desc = "Careful, the beverage you're about to enjoy is extremely hot."
 	icon_state = "coffee"
 	center_of_mass = "x=15;y=10"
-/obj/item/weapon/reagent_containers/food/drinks/coffee/New()
+
+/obj/item/weapon/reagent_containers/food/drinks/coffee/Initialize()
 	. = ..()
 	reagents.add_reagent(/datum/reagent/drink/coffee, 30)
 
@@ -232,7 +200,7 @@
 	icon_state = "coffee"
 	center_of_mass = "x=15;y=10"
 
-/obj/item/weapon/reagent_containers/food/drinks/ice/New()
+/obj/item/weapon/reagent_containers/food/drinks/ice/Initialize()
 	. = ..()
 	reagents.add_reagent(/datum/reagent/drink/ice, 30)
 
@@ -243,7 +211,7 @@
 	item_state = "coffee"
 	center_of_mass = "x=15;y=13"
 
-/obj/item/weapon/reagent_containers/food/drinks/h_chocolate/New()
+/obj/item/weapon/reagent_containers/food/drinks/h_chocolate/Initialize()
 	. = ..()
 	reagents.add_reagent(/datum/reagent/drink/hot_coco, 30)
 
@@ -253,9 +221,10 @@
 	desc = "Just add 10ml water, self heats! A taste that reminds you of your school years."
 	icon_state = "ramen"
 	center_of_mass = "x=16;y=11"
-	New()
-		..()
-		reagents.add_reagent(/datum/reagent/drink/dry_ramen, 30)
+
+/obj/item/weapon/reagent_containers/food/drinks/dry_ramen/Initialize()
+	. = ..()
+	reagents.add_reagent(/datum/reagent/drink/dry_ramen, 30)
 
 
 /obj/item/weapon/reagent_containers/food/drinks/sillycup
@@ -265,13 +234,12 @@
 	possible_transfer_amounts = null
 	volume = 10
 	center_of_mass = "x=16;y=12"
-	New()
-		..()
-	on_reagent_change()
-		if(reagents.total_volume)
-			icon_state = "water_cup"
-		else
-			icon_state = "water_cup_e"
+
+/obj/item/weapon/reagent_containers/food/drinks/sillycup/on_reagent_change()
+	if(reagents.total_volume)
+		icon_state = "water_cup"
+	else
+		icon_state = "water_cup_e"
 
 
 //////////////////////////pitchers, pots, flasks and cups //
@@ -351,7 +319,7 @@
 	name = "cup of black tea"
 	desc = "A tall plastic cup of hot black tea."
 
-/obj/item/weapon/reagent_containers/food/drinks/tea/black/New()
+/obj/item/weapon/reagent_containers/food/drinks/tea/black/Initialize()
 	. = ..()
 	reagents.add_reagent(/datum/reagent/drink/tea, 30)
 
@@ -359,6 +327,14 @@
 	name = "cup of green tea"
 	desc = "A tall plastic cup of hot green tea."
 
-/obj/item/weapon/reagent_containers/food/drinks/tea/green/New()
+/obj/item/weapon/reagent_containers/food/drinks/tea/green/Initialize()
 	. = ..()
 	reagents.add_reagent(/datum/reagent/drink/tea/green, 30)
+
+/obj/item/weapon/reagent_containers/food/drinks/tea/chai
+	name = "cup of chai tea"
+	desc = "A tall plastic cup of hot chai tea."
+
+/obj/item/weapon/reagent_containers/food/drinks/tea/chai/Initialize()
+	. = ..()
+	reagents.add_reagent(/datum/reagent/drink/tea/chai, 30)

@@ -40,14 +40,13 @@
 			overlays  += "sheater-open"
 
 /obj/machinery/space_heater/examine(mob/user)
-	. = ..(user)
+	. = ..()
 
 	to_chat(user, "The heater is [on ? "on" : "off"] and the hatch is [panel_open ? "open" : "closed"].")
 	if(panel_open)
 		to_chat(user, "The power cell is [cell ? "installed" : "missing"].")
 	else
 		to_chat(user, "The charge meter reads [cell ? round(cell.percent(),1) : 0]%")
-	return
 
 /obj/machinery/space_heater/emp_act(severity)
 	if(stat & (BROKEN|NOPOWER))
@@ -78,20 +77,19 @@
 		user.visible_message("<span class='notice'>[user] [panel_open ? "opens" : "closes"] the hatch on the [src].</span>", "<span class='notice'>You [panel_open ? "open" : "close"] the hatch on the [src].</span>")
 		update_icon(1)
 		if(!panel_open && user.machine == src)
-			show_browser(user, null, "window=spaceheater")
+			close_browser(user, "window=spaceheater")
 			user.unset_machine()
 	else
 		..()
 	return
 
-/obj/machinery/space_heater/attack_hand(mob/user as mob)
-	..()
-	interact(user)
-
-/obj/machinery/space_heater/interact(mob/user as mob)
-
+/obj/machinery/space_heater/interface_interact(mob/user)
 	if(panel_open)
+		interact(user)
+		return TRUE
 
+/obj/machinery/space_heater/interact(mob/user)
+	if(panel_open)
 		var/list/dat = list()
 		dat += "Power cell: "
 		if(cell)
@@ -112,16 +110,19 @@
 		popup.set_content(jointext(dat, null))
 		popup.set_title_image(usr.browse_rsc_icon(src.icon, "sheater-standby"))
 		popup.open()
-	else
+
+	return
+
+/obj/machinery/space_heater/physical_attack_hand(mob/user)
+	if(!panel_open)
 		on = !on
 		user.visible_message("<span class='notice'>[user] switches [on ? "on" : "off"] the [src].</span>","<span class='notice'>You switch [on ? "on" : "off"] the [src].</span>")
 		update_icon()
-	return
-
+		return TRUE
 
 /obj/machinery/space_heater/Topic(href, href_list, state = GLOB.physical_state)
 	if (..())
-		show_browser(usr, null, "window=spaceheater")
+		close_browser(usr, "window=spaceheater")
 		usr.unset_machine()
 		return 1
 

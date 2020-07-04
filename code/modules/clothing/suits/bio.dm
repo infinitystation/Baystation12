@@ -2,8 +2,8 @@
 /obj/item/clothing/head/bio_hood
 	name = "bio hood"
 	icon_state = "bio"
-	icon = 'icons/obj/clothing/infinity/hats.dmi'
-	item_icons = list(slot_head_str = 'icons/mob/infinity/hats.dmi',
+	icon = 'infinity/icons/obj/clothing/obj_head.dmi'
+	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi',
 		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_hats.dmi',
 		slot_r_hand_str = 'icons/mob/onmob/items/righthand_hats.dmi',)
 	item_state_slots = list(
@@ -12,18 +12,22 @@
 		)
 	desc = "A hood that protects the head and face from biological comtaminants."
 	permeability_coefficient = 0
-	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 100, rad = 20)
+	armor = list(
+		bio = ARMOR_BIO_SHIELDED, 
+		rad = ARMOR_RAD_MINOR
+		)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	item_flags = ITEM_FLAG_THICKMATERIAL
 	body_parts_covered = HEAD|FACE|EYES
 	siemens_coefficient = 0.9
+	tint = 1
 
 /obj/item/clothing/suit/bio_suit
 	name = "bio suit"
 	desc = "A suit that protects against biological contamination."
 	icon_state = "bio"
-	icon = 'icons/obj/clothing/infinity/suits.dmi'
-	item_icons = list(slot_wear_suit_str = 'icons/mob/infinity/suits.dmi')
+	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi')
 	item_state_slots = list(
 		slot_l_hand_str = "bio_suit",
 		slot_r_hand_str = "bio_suit",
@@ -33,7 +37,10 @@
 	permeability_coefficient = 0
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 	allowed = list(/obj/item/weapon/tank/emergency,/obj/item/weapon/pen,/obj/item/device/flashlight/pen,/obj/item/device/scanner/health,/obj/item/device/ano_scanner,/obj/item/clothing/head/bio_hood,/obj/item/clothing/mask/gas)
-	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 100, rad = 20)
+	armor = list(
+		bio = ARMOR_BIO_SHIELDED, 
+		rad = ARMOR_RAD_MINOR
+		)
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL
 	item_flags = ITEM_FLAG_THICKMATERIAL
 	siemens_coefficient = 0.9
@@ -106,5 +113,4 @@
 	icon = 'icons/obj/clothing/obj_suit.dmi'
 	item_icons = list(slot_wear_suit_str = 'icons/mob/onmob/onmob_suit.dmi')
 	icon_state = "plaguedoctor"
-	//item_state = "bio_suit"
 	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL

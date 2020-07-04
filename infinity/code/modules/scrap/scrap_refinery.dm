@@ -1,13 +1,5 @@
 var/const/SAFETY_COOLDOWN = 100
 
-/obj/item/weapon/circuitboard/recycler
-	name = "Circuit board (Recycler)"
-	board_type = "machine"
-	build_path = /obj/machinery/recycler
-	origin_tech = "engineering = 3"
-	req_components = list(/obj/item/weapon/stock_parts/manipulator = 1)
-
-
 /obj/machinery/recycler
 	name = "recycler"
 	desc = "A large crushing machine which is used to grind lumps of trash down; there are lights on the side of it."
@@ -22,13 +14,11 @@ var/const/SAFETY_COOLDOWN = 100
 	var/blood = 0
 	var/eat_dir = WEST
 	var/chance_to_recycle = 1
+	construct_state = /decl/machine_construction/default/panel_closed
+	uncreated_component_parts = null
 
 /obj/machinery/recycler/Initialize()
-	// On us
 	. = ..()
-	component_parts = list()
-	component_parts += new /obj/item/weapon/circuitboard/recycler(null)
-	component_parts += new /obj/item/weapon/stock_parts/manipulator(null)
 	RefreshParts()
 	update_icon()
 
@@ -54,18 +44,7 @@ var/const/SAFETY_COOLDOWN = 100
 		emag_act(user)
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		return
-	if(default_deconstruction_screwdriver(user, I))
-		return
-
-	if(default_part_replacement(user, I))
-		return
-
-	if(default_deconstruction_crowbar(user, I))
-		return
-
-	default_deconstruction_crowbar(user, I)
-	..()
-	return
+	return ..()
 
 /obj/machinery/recycler/emag_act(mob/user)
 	if(!emagged)
@@ -145,15 +124,14 @@ var/const/SAFETY_COOLDOWN = 100
 
 	if(issilicon(L))
 		playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
-	else
-		L.emote("scream",,, 1)
 
 	var/gib = 1
 	// By default, the emagged recycler will gib all non-carbons. (human simple animal mobs don't count)
 	if(iscarbon(L))
+		var/mob/living/carbon/C = L
 		gib = 0
-		if(L.stat == CONSCIOUS)
-			L.emote("scream",,, 1)
+		if(C.can_feel_pain())
+			C.agony_scream()
 		add_blood(L)
 
 	if(!blood && !issilicon(L))

@@ -28,8 +28,6 @@ datum/track/proc/GetTrack()
 	clicksound = 'sound/machines/buttonbeep.ogg'
 	pixel_x = -8
 
-	var/obj/item/device/cassette/cassette
-
 	var/playing = 0
 	var/volume = 20
 
@@ -58,10 +56,9 @@ datum/track/proc/GetTrack()
 
 /obj/machinery/media/jukebox/Destroy()
 	StopPlaying()
-	if(cassette)
-		QDEL_NULL(cassette)
 	QDEL_NULL_LIST(tracks)
 	current_track = null
+	QDEL_NULL(tape) //INF
 	. = ..()
 
 /obj/machinery/media/jukebox/powered()
@@ -87,19 +84,9 @@ datum/track/proc/GetTrack()
 		else
 			overlays += "[state_base]-running"
 
-/obj/machinery/media/jukebox/interact(mob/user)
-	if(!anchored)
-		to_chat(usr, "<span class='warning'>You must secure \the [src] first.</span>")
-		return
-
-	if(stat & (NOPOWER|BROKEN))
-		to_chat(usr, "\The [src] doesn't appear to function.")
-		return
-
-	ui_interact(user)
-
 /obj/machinery/media/jukebox/CanUseTopic(user, state)
-	if(!anchored || inoperable())
+	if(!anchored)
+		to_chat(user, "<span class='warning'>You must secure \the [src] first.</span>")
 		return STATUS_CLOSE
 	return ..()
 
@@ -112,7 +99,8 @@ datum/track/proc/GetTrack()
 		"current_track" = current_track != null ? current_track.title : "No track selected",
 		"playing" = playing,
 		"tracks" = juke_tracks,
-		"volume" = volume
+		"volume" = volume,
+		"tape" = tape
 	)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -142,9 +130,13 @@ datum/track/proc/GetTrack()
 		else
 			StartPlaying()
 		return TOPIC_REFRESH
-	
+
 	if (href_list["volume"])
 		AdjustVolume(text2num(href_list["volume"]))
+		return TOPIC_REFRESH
+
+	if (href_list["eject"])
+		eject()
 		return TOPIC_REFRESH
 
 /obj/machinery/media/jukebox/proc/emag_play()
@@ -152,7 +144,7 @@ datum/track/proc/GetTrack()
 	for(var/mob/living/carbon/M in ohearers(6, src))
 		if(istype(M, /mob/living/carbon/human))
 			var/mob/living/carbon/human/H = M
-			if(istype(H.l_ear, /obj/item/clothing/ears/earmuffs) || istype(H.r_ear, /obj/item/clothing/ears/earmuffs))
+			if(H.get_sound_volume_multiplier() < 0.2)
 				continue
 		M.sleeping = 0
 		M.stuttering += 20
@@ -166,11 +158,9 @@ datum/track/proc/GetTrack()
 	spawn(15)
 		explode()
 
-/obj/machinery/media/jukebox/attack_ai(mob/user as mob)
-	return src.attack_hand(user)
-
-/obj/machinery/media/jukebox/attack_hand(var/mob/user as mob)
-	interact(user)
+/obj/machinery/media/jukebox/interface_interact(var/mob/user)
+	ui_interact(user)
+	return TRUE
 
 /obj/machinery/media/jukebox/proc/explode()
 	walk_to(src,0)
@@ -192,23 +182,25 @@ datum/track/proc/GetTrack()
 		power_change()
 		return
 
-	if(istype(W, /obj/item/device/cassette))
-		var/obj/item/device/cassette/D = W
-		if(cassette)
-			to_chat(user, "<span class='notice'>There is already a cassette inside.</span>")
+	// INF@CODE - START
+	if(istype(W, /obj/item/music_tape))
+		var/obj/item/music_tape/D = W
+		if(tape)
+			to_chat(user, "<span class='notice'>There is already \a [tape] inside.</span>")
 			return
 
 		if(D.ruined)
 			to_chat(user, "<span class='warning'>\The [D] is ruined, you can't use it.</span>")
 			return
 
-		visible_message("<span class='notice'>[usr] insert the cassette in to \the [src].</span>")
-		user.drop_item()
-		D.forceMove(src)
-		cassette = D
-		tracks += cassette.track
-		//current_track = cassette.track
+		if(user.drop_item())
+			visible_message("<span class='notice'>[usr] insert \a [tape] into \the [src].</span>")
+			D.forceMove(src)
+			tape = D
+			tracks += tape.track
+			verbs += /obj/machinery/media/jukebox/verb/eject
 		return
+	// INF@CODE - END
 
 	return ..()
 
@@ -233,8 +225,8 @@ datum/track/proc/GetTrack()
 		return
 
 	// Jukeboxes cheat massively and actually don't share id. This is only done because it's music rather than ambient noise.
-	sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, current_track.GetTrack(), volume = volume, range = 7, falloff = 3, prefer_mute = TRUE, preference = /datum/client_preference/play_jukeboxes)
-
+	sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, current_track.GetTrack(), volume = volume, range = 9, falloff = 3, prefer_mute = TRUE, preference = /datum/client_preference/play_jukeboxes, streaming = TRUE)
+	//^^ INF, WAS range = 7
 	playing = 1
 	update_use_power(POWER_USE_ACTIVE)
 	update_icon()
@@ -243,24 +235,3 @@ datum/track/proc/GetTrack()
 	volume = Clamp(new_volume, 0, 50)
 	if(sound_token)
 		sound_token.SetVolume(volume)
-
-/obj/machinery/media/jukebox/verb/eject()
-	set name = "Eject Disk"
-	set category = "Object"
-	set src in oview(1)
-
-	if(usr.incapacitated())
-		return
-
-	if(!cassette)
-		to_chat(usr, "<span class='notice'>There is no cassette inside \the [src].</span>")
-	else
-		StopPlaying()
-		current_track = null
-		for(var/datum/track/T in tracks)
-			if(T == cassette.track)
-				tracks -= T
-		visible_message("<span class='notice'>[usr] eject the cassette from \the [src].</span>")
-		usr.put_in_hands(cassette)
-		cassette = null
-	return

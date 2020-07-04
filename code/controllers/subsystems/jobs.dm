@@ -29,7 +29,7 @@ SUBSYSTEM_DEF(jobs)
 
 	// Create main map jobs.
 	primary_job_datums.Cut()
-	for(var/jobtype in (list(/datum/job/assistant) | GLOB.using_map.allowed_jobs))
+	for(var/jobtype in (list(DEFAULT_JOB_TYPE) | GLOB.using_map.allowed_jobs))
 		var/datum/job/job = get_by_path(jobtype)
 		if(!job)
 			job = new jobtype
@@ -116,6 +116,9 @@ SUBSYSTEM_DEF(jobs)
 	syndicate_code_phrase = generate_code_phrase()
 	syndicate_code_response	= generate_code_phrase()
 
+	// Set up AI spawn locations
+	spawn_empty_ai()
+
 	. = ..()
 
 /datum/controller/subsystem/jobs/proc/guest_jobbans(var/job)
@@ -138,6 +141,7 @@ SUBSYSTEM_DEF(jobs)
 	return titles_to_datums[rank]
 
 /datum/controller/subsystem/jobs/proc/get_by_path(var/path)
+	RETURN_TYPE(/datum/job)
 	return types_to_datums[path]
 
 /datum/controller/subsystem/jobs/proc/check_general_join_blockers(var/mob/new_player/joining, var/datum/job/job)
@@ -155,6 +159,11 @@ SUBSYSTEM_DEF(jobs)
 	if(SSticker.mode && SSticker.mode.explosion_in_progress)
 		to_chat(joining, "<span class='warning'>The [station_name()] is currently exploding. Joining would go poorly.</span>")
 		return FALSE
+//[INF]
+	if(!job.is_required_roles_filled())
+		to_chat(joining, SPAN_WARNING("For joining as <b>\a [job.title]</b> there should be <b>\a [job.required_role]</b> in crew."))
+		return FALSE
+//[/INF]
 	return TRUE
 
 /datum/controller/subsystem/jobs/proc/check_latejoin_blockers(var/mob/new_player/joining, var/datum/job/job)
@@ -177,7 +186,7 @@ SUBSYSTEM_DEF(jobs)
 	if(airstatus || radlevel > 0)
 		var/reply = alert(spawner, "Warning. Your selected spawn location seems to have unfavorable conditions. \
 		You may die shortly after spawning. \
-		Spawn anyway? More information: [airstatus] Radiation: [radlevel] Bq", "Atmosphere warning", "Abort", "Spawn anyway")
+		Spawn anyway? More information: [airstatus] Radiation: [radlevel] Roentgen", "Atmosphere warning", "Abort", "Spawn anyway")
 		if(reply == "Abort")
 			return FALSE
 		else
@@ -185,19 +194,18 @@ SUBSYSTEM_DEF(jobs)
 			log_and_message_admins("User [spawner] spawned at spawn point with dangerous atmosphere.")
 	return TRUE
 
-
-/datum/controller/subsystem/jobs/proc/assign_role(var/mob/new_player/player, var/rank, var/latejoin = 0)
+/datum/controller/subsystem/jobs/proc/assign_role(var/mob/new_player/player, var/rank, var/latejoin = 0, var/datum/game_mode/mode = SSticker.mode)
 	if(player && player.mind && rank)
 		var/datum/job/job = get_by_title(rank)
 		if(!job)
-			return 0
-		if(job.minimum_character_age && (player.client.prefs.age < job.minimum_character_age))
 			return 0
 		if(jobban_isbanned(player, rank))
 			return 0
 		if(!job.player_old_enough(player.client))
 			return 0
 		if(job.is_restricted(player.client.prefs))
+			return 0
+		if(job.title in mode.disabled_jobs)
 			return 0
 
 		var/position_limit = job.total_positions
@@ -227,7 +235,7 @@ SUBSYSTEM_DEF(jobs)
 			candidates += player
 	return candidates
 
-/datum/controller/subsystem/jobs/proc/give_random_job(var/mob/new_player/player)
+/datum/controller/subsystem/jobs/proc/give_random_job(var/mob/new_player/player, var/datum/game_mode/mode = SSticker.mode)
 	for(var/datum/job/job in shuffle(primary_job_datums))
 		if(!job)
 			continue
@@ -243,13 +251,15 @@ SUBSYSTEM_DEF(jobs)
 			continue
 		if(!job.player_old_enough(player.client))
 			continue
+		if(job.title in mode.disabled_jobs)
+			continue
 		if((job.current_positions < job.spawn_positions) || job.spawn_positions == -1)
-			assign_role(player, job.title)
+			assign_role(player, job.title, mode = mode)
 			unassigned_roundstart -= player
 			break
 
 ///This proc is called before the level loop of divide_occupations() and will try to select a head, ignoring ALL non-head preferences for every level until it locates a head or runs out of levels to check
-/datum/controller/subsystem/jobs/proc/fill_head_position()
+/datum/controller/subsystem/jobs/proc/fill_head_position(var/datum/game_mode/mode)
 	for(var/level = 1 to 3)
 		for(var/command_position in titles_by_department(COM))
 			var/datum/job/job = get_by_title(command_position)
@@ -279,19 +289,19 @@ SUBSYSTEM_DEF(jobs)
 						// If there's ABSOLUTELY NOBODY ELSE
 						if(candidates.len == 1) weightedCandidates[V] = 1
 			var/mob/new_player/candidate = pickweight(weightedCandidates)
-			if(assign_role(candidate, command_position))
+			if(assign_role(candidate, command_position, mode = mode))
 				return 1
 	return 0
 
 ///This proc is called at the start of the level loop of divide_occupations() and will cause head jobs to be checked before any other jobs of the same level
-/datum/controller/subsystem/jobs/proc/CheckHeadPositions(var/level)
+/datum/controller/subsystem/jobs/proc/CheckHeadPositions(var/level, var/datum/game_mode/mode)
 	for(var/command_position in titles_by_department(COM))
 		var/datum/job/job = get_by_title(command_position)
 		if(!job)	continue
 		var/list/candidates = find_occupation_candidates(job, level)
 		if(!candidates.len)	continue
 		var/mob/new_player/candidate = pick(candidates)
-		assign_role(candidate, command_position)
+		assign_role(candidate, command_position, mode = mode)
 
 /** Proc divide_occupations
  *  fills var "assigned_role" for all ready players.
@@ -314,11 +324,11 @@ SUBSYSTEM_DEF(jobs)
 	var/datum/job/assist = new DEFAULT_JOB_TYPE ()
 	var/list/assistant_candidates = find_occupation_candidates(assist, 3)
 	for(var/mob/new_player/player in assistant_candidates)
-		assign_role(player, GLOB.using_map.default_assistant_title)
+		assign_role(player, GLOB.using_map.default_assistant_title, mode = mode)
 		assistant_candidates -= player
 
 	//Select one head
-	fill_head_position()
+	fill_head_position(mode)
 
 	//Other jobs are now checked
 	// New job giving system by Donkie
@@ -329,7 +339,7 @@ SUBSYSTEM_DEF(jobs)
 	var/list/shuffledoccupations = shuffle(primary_job_datums)
 	for(var/level = 1 to 3)
 		//Check the head jobs first each level
-		CheckHeadPositions(level)
+		CheckHeadPositions(level, mode)
 
 		// Loop through all unassigned players
 		var/list/deferred_jobs = list()
@@ -339,14 +349,14 @@ SUBSYSTEM_DEF(jobs)
 				if(job && !mode.disabled_jobs.Find(job.title) )
 					if(job.defer_roundstart_spawn)
 						deferred_jobs[job] = TRUE
-					else if(attempt_role_assignment(player, job, level))
+					else if(attempt_role_assignment(player, job, level, mode))
 						unassigned_roundstart -= player
 						break
 
 		if(LAZYLEN(deferred_jobs))
 			for(var/mob/new_player/player in unassigned_roundstart)
 				for(var/datum/job/job in deferred_jobs)
-					if(attempt_role_assignment(player, job, level))
+					if(attempt_role_assignment(player, job, level, mode))
 						unassigned_roundstart -= player
 						break
 			deferred_jobs.Cut()
@@ -355,15 +365,15 @@ SUBSYSTEM_DEF(jobs)
 	// Also makes sure that they got their preference correct
 	for(var/mob/new_player/player in unassigned_roundstart)
 		if(player.client.prefs.alternate_option == GET_RANDOM_JOB)
-			give_random_job(player)
+			give_random_job(player, mode)
 	// For those who wanted to be assistant if their preferences were filled, here you go.
 	for(var/mob/new_player/player in unassigned_roundstart)
 		if(player.client.prefs.alternate_option == BE_ASSISTANT)
-			var/datum/job/ass = /datum/job/assistant
+			var/datum/job/ass = DEFAULT_JOB_TYPE
 			if((GLOB.using_map.flags & MAP_HAS_BRANCH) && player.client.prefs.branches[initial(ass.title)])
 				var/datum/mil_branch/branch = mil_branches.get_branch(player.client.prefs.branches[initial(ass.title)])
 				ass = branch.assistant_job
-			assign_role(player, initial(ass.title))
+			assign_role(player, initial(ass.title), mode = mode)
 	//For ones returning to lobby
 	for(var/mob/new_player/player in unassigned_roundstart)
 		if(player.client.prefs.alternate_option == RETURN_TO_LOBBY)
@@ -372,12 +382,12 @@ SUBSYSTEM_DEF(jobs)
 			unassigned_roundstart -= player
 	return TRUE
 
-/datum/controller/subsystem/jobs/proc/attempt_role_assignment(var/mob/new_player/player, var/datum/job/job, var/level)
+/datum/controller/subsystem/jobs/proc/attempt_role_assignment(var/mob/new_player/player, var/datum/job/job, var/level, var/datum/game_mode/mode)
 	if(!jobban_isbanned(player, job.title) && \
 	 job.player_old_enough(player.client) && \
 	 player.client.prefs.CorrectLevel(job, level) && \
 	 job.is_position_available())
-		assign_role(player, job.title)
+		assign_role(player, job.title, mode = mode)
 		return TRUE
 	return FALSE
 
@@ -395,7 +405,7 @@ SUBSYSTEM_DEF(jobs)
 			if(G)
 				var/permitted = 0
 				if(G.allowed_branches)
-					if(H.char_branch && H.char_branch.type in G.allowed_branches)
+					if(H.char_branch && (H.char_branch.type in G.allowed_branches))
 						permitted = 1
 				else
 					permitted = 1
@@ -423,6 +433,7 @@ SUBSYSTEM_DEF(jobs)
 
 				if(!G.slot || G.slot == slot_tie || (G.slot in loadout_taken_slots) || !G.spawn_on_mob(H, H.client.prefs.Gear()[G.display_name]))
 					spawn_in_storage.Add(G)
+
 				else
 					loadout_taken_slots.Add(G.slot)
 
@@ -484,9 +495,19 @@ SUBSYSTEM_DEF(jobs)
 
 	if(!joined_late || job.latejoin_at_spawnpoints)
 		var/obj/S = job.get_roundstart_spawnpoint()
-
-		if(istype(S, /obj/effect/landmark/start) && istype(S.loc, /turf))
+		/*[ORIGINAL]
+		if(istype(S, /obj/effect/landmark/start) && istype(S.loc, /turf)
 			H.forceMove(S.loc)
+		[/ORIGINAL]*/
+		//[INF]
+		var/turf/truf = get_turf(S)
+		if((istype(S, /obj/effect/landmark/start) && isturf(truf)) || isturf(S))
+			H.forceMove(truf)
+			var/obj/structure/bed/b = locate(/obj/structure/bed) in truf
+			if(istype(b) && !joined_late)
+				H.Sleeping(15)
+				b.buckle_mob(H)
+		//[/INF]
 		else
 			var/datum/spawnpoint/spawnpoint = job.get_spawnpoint(H.client)
 			H.forceMove(pick(spawnpoint.turfs))
@@ -503,11 +524,11 @@ SUBSYSTEM_DEF(jobs)
 		var/datum/money_account/department_account = department_accounts[job.department]
 
 		if(department_account)
-			remembered_info += "<b>Your department's account number is:</b> #[department_account.account_number]<br>"
-			remembered_info += "<b>Your department's account pin is:</b> [department_account.remote_access_pin]<br>"
-			remembered_info += "<b>Your department's account funds are:</b> T[department_account.money]<br>"
+			remembered_info += "<b>Номер Аккаунта Вашего департамента:</b> #[department_account.account_number]<br>"
+			remembered_info += "<b>Пин-код:</b> [department_account.remote_access_pin]<br>"
+			remembered_info += "<b>Сумма на счету:</b> [GLOB.using_map.local_currency_name_short][department_account.money]<br>"
 
-		H.mind.store_memory(remembered_info)
+		H.StoreMemory(remembered_info, /decl/memory_options/system)
 
 	var/alt_title = null
 	if(H.mind)
@@ -515,14 +536,10 @@ SUBSYSTEM_DEF(jobs)
 		H.mind.assigned_role = rank
 		alt_title = H.mind.role_alt_title
 
-		switch(rank)
-			if("Robot")
-				return H.Robotize(SSrobots.get_mob_type_by_title(alt_title ? alt_title : job.title))
-			if("AI")
-				return H
-			if("Captain")
-				var/sound/announce_sound = (GAME_STATE <= RUNLEVEL_SETUP)? null : sound('sound/misc/boatswain.ogg', volume=20)
-				captain_announcement.Announce("All hands, Captain [H.real_name] on deck!", new_sound=announce_sound)
+	var/mob/other_mob = job.handle_variant_join(H, alt_title)
+	if(other_mob)
+		job.post_equip_rank(other_mob, alt_title || rank)
+		return other_mob
 
 	if(spawn_in_storage)
 		for(var/datum/gear/G in spawn_in_storage)
@@ -539,19 +556,19 @@ SUBSYSTEM_DEF(jobs)
 			W.buckled_mob = H
 			W.add_fingerprint(H)
 
-	to_chat(H, "<B>You are [job.total_positions == 1 ? "the" : "a"] [alt_title ? alt_title : rank].</B>")
+	to_chat(H, "<font size = 3><b>Вы - [alt_title ? alt_title : rank].</b></font>")
 
 	if(job.supervisors)
-		to_chat(H, "<b>As the [alt_title ? alt_title : rank] you answer directly to [job.supervisors]. Special circumstances may change this.</b>")
+		to_chat(H, "<b>Вы напрямую отчитываетесь перед <b>[job.supervisors]</b>. Особые обстоятельства могут изменить это.</b>")
 
-	to_chat(H, "<b>To speak on your department's radio channel use :h. For the use of other channels, examine your headset.</b>")
+	to_chat(H, "<b>Чтобы общаться на частоте Вашего отдела, используйте префикс \":h\". Для остальных каналов, осмотрите свой наушник.</b>")
 
 	if(job.req_admin_notify)
-		to_chat(H, "<b>You are playing a job that is important for Game Progression. If you have to disconnect, please notify the admins via adminhelp.</b>")
+		to_chat(H, "<b>Ваша профессия особенно важна для игрового прогресса. Если Вам требуется отключиться - пожалуйста, оповестите администрацию.</b>")
 
 	//Gives glasses to the vision impaired
 	if(H.disabilities & NEARSIGHTED)
-		var/equipped = H.equip_to_slot_or_del(new /obj/item/clothing/glasses/regular(H), slot_glasses)
+		var/equipped = H.equip_to_slot_or_del(new /obj/item/clothing/glasses/prescription(H), slot_glasses)
 		if(equipped)
 			var/obj/item/clothing/glasses/G = H.glasses
 			G.prescription = 7
@@ -559,10 +576,19 @@ SUBSYSTEM_DEF(jobs)
 	BITSET(H.hud_updateflag, ID_HUD)
 	BITSET(H.hud_updateflag, IMPLOYAL_HUD)
 	BITSET(H.hud_updateflag, SPECIALROLE_HUD)
-	
-	job.post_equip_rank(H)
+
+	job.post_equip_rank(H, alt_title || rank)
 
 	return H
 
 /datum/controller/subsystem/jobs/proc/titles_by_department(var/dept)
 	return positions_by_department["[dept]"] || list()
+
+/datum/controller/subsystem/jobs/proc/spawn_empty_ai()
+	for(var/obj/effect/landmark/start/S in landmarks_list)
+		if(S.name != "AI")
+			continue
+		if(locate(/mob/living) in S.loc)
+			continue
+		empty_playable_ai_cores += new /obj/structure/AIcore/deactivated(get_turf(S))
+	return 1

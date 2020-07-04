@@ -15,7 +15,7 @@
 /obj/machinery/door/blast/regular{
 	dir = 8;
 	icon_state = "pdoor1";
-	id = "mc_chamber_vent";
+	id_tag = "mc_chamber_vent";
 	tag = "icon-pdoor1 (WEST)"
 	},
 /turf/simulated/floor,
@@ -69,7 +69,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "pdoor0";
-	id = "mc_laser";
+	id_tag = "mc_laser";
 	name = "Protective Shutters";
 	opacity = 0;
 	tag = "icon-pdoor0"
@@ -110,7 +110,7 @@
 	density = 0;
 	dir = 8;
 	icon_state = "pdoor0";
-	id = "mc_bridge";
+	id_tag = "mc_bridge";
 	name = "Reinforsed Secret Wall";
 	opacity = 0;
 	tag = "icon-pdoor0 (WEST)";
@@ -159,7 +159,7 @@
 /obj/machinery/door/blast/shutters/open{
 	dir = 2;
 	icon_state = "shutter0";
-	id = "mc_trade";
+	id_tag = "mc_trade";
 	name = "Trade Zone Shutters";
 	tag = "icon-shutter1"
 	},
@@ -232,7 +232,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "pdoor0";
-	id = "mc_bridge";
+	id_tag = "mc_bridge";
 	name = "Protective Shutters";
 	opacity = 0;
 	tag = "icon-pdoor0";
@@ -252,7 +252,7 @@
 	density = 0;
 	dir = 8;
 	icon_state = "pdoor0";
-	id = "mc_bridge";
+	id_tag = "mc_bridge";
 	name = "Emergency Blast Door";
 	opacity = 0;
 	tag = "icon-pdoor0 (WEST)";
@@ -487,14 +487,13 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/space)
 "bm" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	tag = "icon-blastctrl (EAST)";
 	name = "Emergency Blast Door contol";
 	icon_state = "blastctrl";
 	dir = 4;
 	pixel_x = 1;
 	pixel_y = 0;
-	wifi_sender = 1
 	},
 /turf/simulated/wall/sandstone,
 /area/space)
@@ -556,7 +555,7 @@
 	density = 0;
 	dir = 1;
 	icon_state = "pdoor0";
-	id = "mc_chamber_doors";
+	id_tag = "mc_chamber_doors";
 	name = "Blast Door";
 	opacity = 0
 	},
@@ -576,7 +575,7 @@
 	density = 0;
 	dir = 1;
 	icon_state = "pdoor0";
-	id = "mc_chamber_doors";
+	id_tag = "mc_chamber_doors";
 	name = "Blast Door";
 	opacity = 0
 	},
@@ -600,7 +599,7 @@
 	density = 0;
 	dir = 1;
 	icon_state = "pdoor0";
-	id = "mc_chamber_doors";
+	id_tag = "mc_chamber_doors";
 	name = "Blast Door";
 	opacity = 0
 	},
@@ -816,7 +815,7 @@
 /turf/simulated/floor,
 /area/space)
 "bI" = (
-/obj/machinery/computer/general_air_control/large_tank_control,
+/obj/machinery/computer/air_control/large_tank_control,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
@@ -864,7 +863,7 @@
 	icon_state = "intact";
 	dir = 4
 	},
-/obj/machinery/computer/general_air_control/large_tank_control,
+/obj/machinery/computer/air_control/large_tank_control,
 /obj/machinery/alarm{
 	alarm_id = "xenobio4_alarm";
 	dir = 2;
@@ -897,15 +896,15 @@
 	icon_state = "map";
 	dir = 8
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	name = "Combustion Chamber Vent";
 	pixel_x = 24;
 	pixel_y = 38;
 	pixel_x = 0;
 	pixel_y = 0
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "mc_chamber_doors";
+/obj/machinery/button/blast_door{
+	id_tag = "mc_chamber_doors";
 	name = "Combustion Chamber Blast Doors";
 	pixel_x = 24;
 	pixel_y = 26
@@ -930,7 +929,7 @@
 /turf/simulated/wall/r_wall,
 /area/space)
 "bT" = (
-/obj/item/modular_computer/console/preset,
+/obj/machinery/computer/modular/preset,
 /turf/simulated/floor/tiled,
 /area/space)
 "bU" = (
@@ -954,20 +953,20 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "mc_bridge";
+/obj/machinery/button/blast_door{
+	id_tag = "mc_bridge";
 	name = "Bridge Window Blastdoors";
 	pixel_y = 2;
 	wifi_sender = 2
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "mc_sensors";
+/obj/machinery/button/blast_door{
+	id_tag = "mc_sensors";
 	name = "Sonar Blastdoor";
 	pixel_y = -6;
 	wifi_sender = 3
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "mc_laser";
+/obj/machinery/button/blast_door{
+	id_tag = "mc_laser";
 	name = "Laser Blastdoor";
 	pixel_y = 10;
 	wifi_sender = 4
@@ -989,7 +988,7 @@
 /turf/simulated/wall/r_wall,
 /area/space)
 "bX" = (
-/obj/item/modular_computer/console/preset/merchant,
+/obj/machinery/computer/modular/preset/merchant,
 /turf/simulated/floor/tiled/steel_grid,
 /area/space)
 "bY" = (
@@ -1153,7 +1152,7 @@
 /turf/simulated/floor/tiled,
 /area/space)
 "ct" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 2;
 	icon_state = "blastctrl";
 	name = "Emergency Blast Door contol";
@@ -1240,7 +1239,7 @@
 /turf/simulated/floor,
 /area/space)
 "cD" = (
-/obj/machinery/computer/general_air_control/large_tank_control,
+/obj/machinery/computer/air_control/large_tank_control,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
@@ -1272,7 +1271,7 @@
 	icon_state = "intact";
 	dir = 4
 	},
-/obj/machinery/computer/general_air_control/large_tank_control,
+/obj/machinery/computer/air_control/large_tank_control,
 /turf/simulated/floor,
 /area/space)
 "cI" = (
@@ -1346,7 +1345,7 @@
 /turf/simulated/wall/r_wall,
 /area/space)
 "cS" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	tag = "icon-air_map (EAST)";
 	icon_state = "air_map";
 	dir = 4
@@ -1376,7 +1375,7 @@
 /turf/simulated/floor/tiled,
 /area/space)
 "cV" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	tag = "icon-air_map (WEST)";
 	icon_state = "air_map";
 	dir = 8
@@ -1500,7 +1499,7 @@
 	density = 0;
 	dir = 8;
 	icon_state = "pdoor0";
-	id = "mc_bridge";
+	id_tag = "mc_bridge";
 	name = "Emergency Blast Door";
 	opacity = 0;
 	tag = "icon-pdoor0 (WEST)"
@@ -1523,7 +1522,7 @@
 /turf/simulated/floor,
 /area/space)
 "dl" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	tag = "icon-air_map (EAST)";
 	icon_state = "air_map";
 	dir = 4
@@ -1552,7 +1551,7 @@
 /turf/simulated/floor/tiled,
 /area/space)
 "dp" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	tag = "icon-air_map (WEST)";
 	icon_state = "air_map";
 	dir = 8
@@ -1617,7 +1616,7 @@
 	density = 0;
 	dir = 8;
 	icon_state = "pdoor0";
-	id = "mc_bridge";
+	id_tag = "mc_bridge";
 	name = "Reinforsed Secret Wall";
 	opacity = 0;
 	tag = "icon-pdoor0 (WEST)";
@@ -1634,7 +1633,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "pdoor0";
-	id = "mc_sensors";
+	id_tag = "mc_sensors";
 	name = "Protective Shutters";
 	opacity = 0;
 	tag = "icon-pdoor0";
@@ -1693,7 +1692,7 @@
 	density = 0;
 	dir = 8;
 	icon_state = "pdoor0";
-	id = "mc_bridge";
+	id_tag = "mc_bridge";
 	name = "Emergency Blast Door";
 	opacity = 0;
 	tag = "icon-pdoor0 (WEST)"
@@ -1805,7 +1804,7 @@
 /turf/simulated/floor,
 /area/space)
 "dM" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	tag = "icon-blastctrl (EAST)";
 	name = "Emergency Blast Door contol";
 	icon_state = "blastctrl";

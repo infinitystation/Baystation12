@@ -86,7 +86,7 @@
 	. += "<style>.Points,a.Points{background: #cc5555;}</style>"
 	. += "<style>a.Points:hover{background: #55cc55;}</style>"
 	. += "<tt><center>"
-	. += "<font size=3><b>Select and configure your occupation preferences. Unavailable occupations are crossed out.</b></font>"
+	. += "<font size=3><b>Выберите и настройте желаемую должность. Недоступные будут перечеркнуты.</b></font>"
 	. += "<br>"
 
 	// Display everything.
@@ -143,13 +143,14 @@
 				rank_branch_string = "[branch_string][rank_branch_string]"
 
 				var/title = job.title
-				var/title_link = job.alt_titles ? "<a href='?src=\ref[src];select_alt_title=\ref[job]'>[pref.GetPlayerAltTitle(job)]</a>" : job.title
+				var/title_link = length(job.alt_titles) ? "<a href='?src=\ref[src];select_alt_title=\ref[job]'>[pref.GetPlayerAltTitle(job)]</a>" : job.title
 				if((title in SSjobs.titles_by_department(COM)) || (title == "AI"))//Bold head jobs
 					title_link = "<b>[title_link]</b>"
 
 				var/help_link = "</td><td width = '10%' align = 'center'><a href='?src=\ref[src];job_info=[title]'>?</a></td>"
 				lastJob = job
 
+				var/bodytype = S.get_bodytype()
 				var/bad_message = ""
 				if(job.total_positions == 0 && job.spawn_positions == 0)
 					bad_message = "<b>\[UNAVAILABLE]</b>"
@@ -158,13 +159,16 @@
 				else if(!job.player_old_enough(user.client))
 					var/available_in_days = job.available_in_days(user.client)
 					bad_message = "\[IN [(available_in_days)] DAYS]"
-				else if(job.minimum_character_age && user.client && (user.client.prefs.age < job.minimum_character_age))
-					bad_message = "\[MINIMUM CHARACTER AGE: [job.minimum_character_age]]"
+				else if(LAZYACCESS(job.minimum_character_age, bodytype) && user.client && (user.client.prefs.age < job.minimum_character_age[bodytype]))
+					bad_message = "\[MIN CHAR AGE: [job.minimum_character_age[bodytype]]]"
 				else if(!job.is_species_allowed(S))
 					bad_message = "<b>\[SPECIES RESTRICTED]</b>"
 				else if(!S.check_background(job, user.client.prefs))
 					bad_message = "<b>\[BACKGROUND RESTRICTED]</b>"
-
+//[INF]
+				else if(!job.is_required_roles_filled())
+					bad_message = "<b>\[HEAD NEEDED]</b>"
+//[/INF]
 				var/current_level = JOB_LEVEL_NEVER
 				if(pref.job_high == job.title)
 					current_level = JOB_LEVEL_HIGH
@@ -418,7 +422,8 @@
 
 		var/description = job.get_description_blurb()
 		if(description)
-			dat += html_encode(description)
+//inf		dat += html_encode(description) //inf below
+			dat += description
 		var/datum/browser/popup = new(user, "Job Info", "[capitalize(rank)]", 430, 520, src)
 		popup.set_content(jointext(dat,"<br>"))
 		popup.open()

@@ -1,12 +1,15 @@
 #include "mining_areas.dm"
-
+#include "mining_shuttles.dm"
+#include "notes.dm"
+#include "walls.dm"
 //MINING-1 // CLUSTER
-/obj/effect/overmap/sector/mining_asteroid
+/obj/effect/overmap/visitable/sector/mining_asteroid
 	name = "large asteroid"
 	desc = "A medium-sized asteroid with a big belt of small one. Old mining facility detected on one of sides, owner - NanoTrasen."
 	icon_state = "sector"
 	initial_restricted_waypoints = list(
-		"Guppy" = list("nav_mining_8")
+		"Guppy" = list("nav_mining_8", "nav_mining_hiden"),
+		"Data Capsule" = list("nav_mining_hiden")
 	)
 	initial_generic_waypoints = list(
 		"nav_mining_1",
@@ -19,18 +22,37 @@
 		"nav_mining_9"
 	)
 	known = 1
-	start_x = 4
-	start_y = 5
+
+/obj/effect/overmap/visitable/sector/mining_asteroid/generate_skybox()
+	return overlay_image('icons/skybox/rockbox.dmi', "rockbox", COLOR_ASTEROID_ROCK, RESET_COLOR)
+
+/obj/effect/overmap/visitable/sector/mining_asteroid/get_skybox_representation()
+	var/image/res = overlay_image('icons/skybox/rockbox.dmi', "rockbox", COLOR_ASTEROID_ROCK, RESET_COLOR)
+	res.transform *= 0.5
+	return res
 
 /datum/map_template/ruin/away_site/mining_asteroid
 	name = "Mining - Asteroid Base"
 	id = "awaysite_mining_asteroid_base"
-	description = "A medium-sized asteroid full of minerals. Old mining facility detected on one of sides, owner - NanoTrasen."
+	description = "A medium-sized asteroid full of minerals. Old mining facility detected at one of sides, owner - NanoTrasen."
 	prefix = "maps/away_inf/"
 	suffixes = list("mining/mining-asteroid.dmm")
-	cost = 1
+	cost = 0.5
 	accessibility_weight = 10
-	template_flags = TEMPLATE_FLAG_SPAWN_GUARANTEED
+	generate_mining_by_z = 1
+	apc_test_exempt_areas = list(
+//		/area/outpost/abandoned = NO_SCRUBBER,
+		/area/mine/explored = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/mine/unexplored = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/outpost/mining/solar = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/outpost/mining/maints = NO_SCRUBBER|NO_VENT,
+		/area/outpost/mining/atmos = NO_SCRUBBER|NO_VENT,
+		/area/outpost/mining/relay = NO_SCRUBBER|NO_VENT,
+		/area/shuttle/abadoned_data_capsule = NO_SCRUBBER|NO_VENT
+	)
+	area_usage_test_exempted_root_areas = list(/area/mine)
+//	area_usage_test_exempted_areas = list(/area/djstation)
+	area_coherency_test_exempt_areas =  list(/area/mine/explored, /area/mine/unexplored)
 
 /obj/effect/shuttle_landmark/mining/nav1
 	name = "Asteroid Navpoint #1"
@@ -74,9 +96,16 @@
 	name = "Mining Asteroid Center"
 	landmark_tag = "nav_mining_antag"
 
+/obj/machinery/telecomms/relay/preset/mining_away
+	id = "Outpost Mining Relay"
+	autolinkers = list("m_relay_a")
+	usage_offise = 5 KILOWATTS
+	outage_probability = 100
+
+	construct_state = /decl/machine_construction/tcomms/panel_closed/cannot_print
 /*
 //MINING-2 // SIGNAL
-/obj/effect/overmap/sector/away
+/obj/effect/overmap/visitable/sector/away
 	name = "faint signal from an asteroid"
 	desc = "Faint signal detected, originating from the human-made structures on the site's surface."
 	icon_state = "sector"
@@ -130,31 +159,3 @@
 	name = "Away Landing zone #7"
 	landmark_tag = "nav_away_7"
 */
-
-/obj/item/weapon/paper/mining_base/eva
-	info = "<i>ГДЕ СКАФАНДРЫ, СУКА?<br>Распилено, привыкай :)</i>"
-
-/obj/item/weapon/paper/mining_base/buttons
-	info = "<i>Я вытащил внешние кнопки для шлюзов, ну это нахуй.<br> \
-	Вставил ебаные кнопки обратно и добавил на них ограничение по доступу - это не дело. Если у вас яйца размером с горошек \
-	и вы боитесь каких-то слухов - это <b>ваши</b> проблемы.</i>"
-
-/obj/item/weapon/paper/mining_base/note
-	info = "<i>Это самая стремная база, на которой мне доводилось находиться. Я впервые вижу такое количество ебаного мусора, \
-	пыли, мышей - хоть капканы ставь, откуда они здесь?<br> \
-	У меня создается впечатление, что базу построили недавно, но специально мусором наговнили, потому-что плитка не выглядит \
-	настолько всрато. \
-	Когда мы прилетели, обнаружилось, что практически всё оборудование куда-то пропало - решили, что спиздили предыдущие группы. \
-	Как обычно, впрочем.<br> \
-	Астероиды странный, даже очень. Либо его практически не копали, что явно пиздеж, потому-что до нас здесь было минимум \
-	7 бригад, либо... Даже не знаю. Сказать, что здесь аномалия или типо того? В последнем выходе мы заметили, что тоннели \
-	пропадают. Прошло часов 6 и возможно, это просто обрушение, но мы не настолько долбоебы, чтобы копать в такую ширь... \
-	Да и гравитации здесь практически нет - из-за чего это?<br> \
-	Начальство ничего по этому поводу не говорит - копайте, как копали.<br> \
-	Тем, кто прилетит - записывайте всё, где выкопали и что нашли. Что-то здесь не чисто. И ни слова руководству.</i>"
-
-/obj/item/weapon/paper/mining_base/shutters
-	info = "<i>Не поднимайте космические створки без необходимости. Бригады докладывают, что происходят \"самопроизвольные\" \
-	разрушения внешних иллюминаторов - без вмешательства космических тел и тому подобного.<br> \
-	Обновляйте противметоритную защиту чаще - это просто пыль.<br> \
-	Обновлено - в секторе обнаружены малые стаи космических карпов, будьте осторожны.</i>"

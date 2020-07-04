@@ -22,7 +22,7 @@
 
 	if (germ_level > INFECTION_LEVEL_ONE)
 		if(prob(1))
-			to_chat(owner, "<span class='danger'>У вас чешетс&#255; кожа.</span>")
+			to_chat(owner, "<span class='danger'>РЈ РІР°СЃ С‡РµС€РµС‚СЃСЏ РєРѕР¶Р°.</span>")
 	if (germ_level > INFECTION_LEVEL_TWO)
 		if(prob(1))
 			spawn owner.vomit()
@@ -64,9 +64,9 @@
 	var/blood_volume = owner.get_blood_volume()
 	if(blood_volume < BLOOD_VOLUME_SAFE || is_bruised())
 		if(owner.nutrition >= 300)
-			owner.nutrition -= 10
+			owner.adjust_nutrition(-10)
 		else if(owner.nutrition >= 200)
-			owner.nutrition -= 3
+			owner.adjust_nutrition(-3)
 
 //We got it covered in Process with more detailed thing
 /obj/item/organ/internal/liver/handle_regeneration()

@@ -5,10 +5,13 @@
 	suffixes = list("ec_old_crash/ec_old_crash.dmm")
 	cost = 0.5
 	apc_test_exempt_areas = list(
-		/area/map_template/ecship/engine = NO_SCRUBBER|NO_APC,
-		/area/map_template/ecship/cockpit = NO_SCRUBBER|NO_APC
+		/area/map_template/ecship = 0,
+		/area/map_template/ecship/engine = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/map_template/ecship/cockpit = NO_SCRUBBER|NO_APC,
+		/area/map_template/ecship/crew = NO_SCRUBBER|NO_APC
 	)
 	ruin_tags = RUIN_HUMAN|RUIN_WRECK
+	template_flags = TEMPLATE_FLAG_CLEAR_CONTENTS | TEMPLATE_FLAG_NO_RUINS
 
 /area/map_template/ecship/crew
 	name = "\improper Crew Area"
@@ -42,10 +45,10 @@
 	external_pressure_bound = 0.25 * ONE_ATMOSPHERE
 
 /turf/simulated/floor/tiled/lowpressure
-	initial_gas = list("carbon_dioxide" = MOLES_O2STANDARD)
+	initial_gas = list(GAS_CO2 = MOLES_O2STANDARD)
 
 /turf/simulated/floor/tiled/white/lowpressure
-	initial_gas = list("carbon_dioxide" = MOLES_O2STANDARD)
+	initial_gas = list(GAS_CO2 = MOLES_O2STANDARD)
 
 /obj/item/weapon/disk/astrodata
 	name = "astronomical data disk"

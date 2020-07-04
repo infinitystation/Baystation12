@@ -106,7 +106,7 @@
 
 /obj/structure/cryo_spawner/central_command/Initialize()
 	. = ..()
-	if(default_outfit && default_outfit.name)
+	if(default_outfit?.name)
 		SetName("cryogenic sleeper ([default_outfit.name])")
 
 /obj/structure/cryo_spawner/central_command

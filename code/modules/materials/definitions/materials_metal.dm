@@ -2,6 +2,7 @@
 	name = MATERIAL_URANIUM
 	lore_text = "A highly radioactive metal. Commonly used as fuel in fission reactors."
 	mechanics_text = "Uranium ingots are used as fuel in some forms of portable generator."
+	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/uranium
 	radioactivity = 12
 	icon_base = "stone"
@@ -14,17 +15,18 @@
 	chem_products = list(
 				/datum/reagent/uranium = 20
 				)
-	construction_difficulty = 2
+	construction_difficulty = MATERIAL_HARD_DIY
 	sale_price = 2
 	value = 100
 
 /material/gold
 	name = MATERIAL_GOLD
 	lore_text = "A heavy, soft, ductile metal. Once considered valuable enough to back entire currencies, now predominantly used in corrosion-resistant electronics."
+	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/gold
-	icon_colour = "#ffcc33"
+	icon_colour = COLOR_GOLD
 	weight = 25
-	hardness = 25
+	hardness = MATERIAL_FLEXIBLE + 5
 	integrity = 100
 	stack_origin_tech = list(TECH_MATERIAL = 4)
 	sheet_singular_name = "ingot"
@@ -32,7 +34,7 @@
 	chem_products = list(
 				/datum/reagent/gold = 20
 				)
-	construction_difficulty = 2
+	construction_difficulty = MATERIAL_HARD_DIY
 	ore_smelts_to = MATERIAL_GOLD
 	ore_result_amount = 5
 	ore_name = "native gold"
@@ -52,16 +54,17 @@
 	name = MATERIAL_BRONZE
 	lore_text = "An alloy of copper and tin."
 	icon_colour = "#edd12f"
-	construction_difficulty = 2
+	construction_difficulty = MATERIAL_HARD_DIY
 	ore_smelts_to = null
 	ore_compresses_to = null
 	sale_price = null
 
 /material/copper
 	name = MATERIAL_COPPER
+	wall_name = "bulkhead"
 	icon_colour = "#b87333"
 	weight = 15
-	hardness = 30
+	hardness = MATERIAL_FLEXIBLE + 10
 	stack_origin_tech = list(TECH_MATERIAL = 2)
 	sheet_singular_name = "ingot"
 	sheet_plural_name = "ingots"
@@ -69,7 +72,7 @@
 		/datum/reagent/copper = 12,
 		/datum/reagent/silver = 8
 		)
-	construction_difficulty = 2
+	construction_difficulty = MATERIAL_HARD_DIY
 	ore_smelts_to = MATERIAL_COPPER
 	ore_result_amount = 5
 	ore_spread_chance = 10
@@ -81,17 +84,18 @@
 /material/silver
 	name = MATERIAL_SILVER
 	lore_text = "A soft, white, lustrous transition metal. Has many and varied industrial uses in electronics, solar panels and mirrors."
+	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/silver
 	icon_colour = "#d1e6e3"
 	weight = 22
-	hardness = 50
+	hardness = MATERIAL_FLEXIBLE + 10
 	stack_origin_tech = list(TECH_MATERIAL = 3)
 	sheet_singular_name = "ingot"
 	sheet_plural_name = "ingots"
 	chem_products = list(
 				/datum/reagent/silver = 20
 				)
-	construction_difficulty = 2
+	construction_difficulty = MATERIAL_HARD_DIY
 	ore_smelts_to = MATERIAL_SILVER
 	ore_result_amount = 5
 	ore_spread_chance = 10
@@ -104,6 +108,7 @@
 /material/steel
 	name = MATERIAL_STEEL
 	lore_text = "A strong, flexible alloy of iron and carbon. Probably the single most fundamentally useful and ubiquitous substance in human space."
+	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/steel
 	integrity = 150
 	brute_armor = 5
@@ -119,7 +124,7 @@
 	alloy_product = TRUE
 	sale_price = 1
 	ore_smelts_to = MATERIAL_STEEL
-	construction_difficulty = 1
+	construction_difficulty = MATERIAL_NORMAL_DIY
 	value = 4
 
 /material/steel/holographic
@@ -137,6 +142,7 @@
 /material/aluminium
 	name = MATERIAL_ALUMINIUM
 	lore_text = "A low-density ductile metal with a silvery-white sheen."
+	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/aluminium
 	chem_products = list(
 				/datum/reagent/aluminium = 20
@@ -163,6 +169,7 @@
 /material/plasteel
 	name = MATERIAL_PLASTEEL
 	lore_text = "An alloy of steel and platinum. When regular high-tensile steel isn't tough enough to get the job done, the smart consumer turns to frankly absurd alloys of steel and platinum."
+	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/plasteel
 	integrity = 400
 	melting_point = 6000
@@ -172,11 +179,11 @@
 	explosion_resistance = 25
 	brute_armor = 6
 	burn_armor = 10
-	hardness = 80
+	hardness = MATERIAL_VERY_HARD
 	weight = 23
 	stack_origin_tech = list(TECH_MATERIAL = 2)
 	hitsound = 'sound/weapons/smash.ogg'
-	construction_difficulty = 2
+	construction_difficulty = MATERIAL_HARD_DIY
 	alloy_materials = list(MATERIAL_STEEL = 2500, MATERIAL_PLATINUM = 1250)
 	alloy_product = TRUE
 	sale_price = 2
@@ -196,7 +203,7 @@
 	door_icon_base = "metal"
 	icon_colour = "#d1e6e3"
 	icon_reinf = "reinf_metal"
-	construction_difficulty = 3
+	construction_difficulty = MATERIAL_VERY_HARD_DIY
 	alloy_materials = null
 	alloy_product = FALSE
 	value = 30
@@ -214,19 +221,20 @@
 	weight = 27
 	stack_origin_tech = list(TECH_MATERIAL = 3)
 	alloy_materials = list(MATERIAL_PLASTEEL = 7500, MATERIAL_OSMIUM = 3750)
-	construction_difficulty = 3
+	construction_difficulty = MATERIAL_VERY_HARD_DIY
 	alloy_product = TRUE
 	sale_price = 3
 
 /material/osmium
 	name = MATERIAL_OSMIUM
 	lore_text = "An extremely hard form of platinum."
+	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/osmium
 	icon_colour = "#9999ff"
 	stack_origin_tech = list(TECH_MATERIAL = 5)
 	sheet_singular_name = "ingot"
 	sheet_plural_name = "ingots"
-	construction_difficulty = 3
+	construction_difficulty = MATERIAL_VERY_HARD_DIY
 	sale_price = 3
 	ore_smelts_to = MATERIAL_OSMIUM
 	value = 30
@@ -235,31 +243,34 @@
 	name = MATERIAL_TRITIUM
 	lore_text = "A radioactive isotope of hydrogen. Useful as a fusion reactor fuel material."
 	mechanics_text = "Tritium is useable as a fuel in some forms of portable generator. It can also be converted into a fuel rod suitable for a R-UST fusion plant injector by clicking a stack on a fuel compressor. It fuses hotter than deuterium but is correspondingly more unstable."
+	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/tritium
 	icon_colour = "#777777"
 	stack_origin_tech = list(TECH_MATERIAL = 5)
 	sheet_singular_name = "ingot"
 	sheet_plural_name = "ingots"
 	is_fusion_fuel = 1
-	construction_difficulty = 2
+	construction_difficulty = MATERIAL_HARD_DIY
 	value = 300
 
 /material/deuterium
 	name = MATERIAL_DEUTERIUM
 	lore_text = "One of the two stable isotopes of hydrogen; also known as heavy hydrogen. Useful as a chemically synthesised fusion reactor fuel material."
 	mechanics_text = "Deuterium can be converted into a fuel rod suitable for a R-UST fusion plant injector by clicking a stack on a fuel compressor. It is the most 'basic' fusion fuel."
+	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/deuterium
 	icon_colour = "#999999"
 	stack_origin_tech = list(TECH_MATERIAL = 3)
 	sheet_singular_name = "ingot"
 	sheet_plural_name = "ingots"
 	is_fusion_fuel = 1
-	construction_difficulty = 2
+	construction_difficulty = MATERIAL_HARD_DIY
 
 /material/mhydrogen
 	name = MATERIAL_HYDROGEN
 	lore_text = "When hydrogen is exposed to extremely high pressures and temperatures, such as at the core of gas giants like Jupiter, it can take on metallic properties and - more importantly - acts as a room temperature superconductor. Achieving solid metallic hydrogen at room temperature, though, has proven to be rather tricky."
 	display_name = "metallic hydrogen"
+	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/mhydrogen
 	icon_colour = "#e6c5de"
 	stack_origin_tech = list(TECH_MATERIAL = 6, TECH_POWER = 6, TECH_MAGNET = 5)
@@ -267,7 +278,7 @@
 	chem_products = list(
 				/datum/reagent/hydrazine = 20
 				)
-	construction_difficulty = 2
+	construction_difficulty = MATERIAL_HARD_DIY
 	ore_smelts_to = MATERIAL_TRITIUM
 	ore_compresses_to = MATERIAL_HYDROGEN
 	ore_name = "raw hydrogen"
@@ -279,13 +290,14 @@
 /material/platinum
 	name = MATERIAL_PLATINUM
 	lore_text = "A very dense, unreactive, precious metal. Has many industrial uses, particularly as a catalyst."
+	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/platinum
 	icon_colour = "#deddff"
 	weight = 27
 	stack_origin_tech = list(TECH_MATERIAL = 2)
 	sheet_singular_name = "ingot"
 	sheet_plural_name = "ingots"
-	construction_difficulty = 2
+	construction_difficulty = MATERIAL_HARD_DIY
 	ore_smelts_to = MATERIAL_PLATINUM
 	ore_compresses_to = MATERIAL_OSMIUM
 	ore_result_amount = 5
@@ -299,13 +311,14 @@
 /material/iron
 	name = MATERIAL_IRON
 	lore_text = "A ubiquitous, very common metal. The epitaph of stars and the primary ingredient in Earth's core."
+	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/iron
 	icon_colour = "#5c5454"
 	weight = 22
 	sheet_singular_name = "ingot"
 	sheet_plural_name = "ingots"
 	hitsound = 'sound/weapons/smash.ogg'
-	construction_difficulty = 1
+	construction_difficulty = MATERIAL_NORMAL_DIY
 	chem_products = list(
 				/datum/reagent/iron = 20
 				)
@@ -316,6 +329,7 @@
 /material/voxalloy
 	name = MATERIAL_VOX
 	display_name = "durable alloy"
+	wall_name = "bulkhead"
 	stack_type = null
 	icon_colour = "#6c7364"
 	integrity = 1200
@@ -323,7 +337,7 @@
 	explosion_resistance = 200 // Hull plating.
 	hardness = 500
 	weight = 500
-	construction_difficulty = 2
+	construction_difficulty = MATERIAL_HARD_DIY
 	hidden_from_codex = TRUE
 	value = 100
 
@@ -331,13 +345,15 @@
 /material/voxalloy/elevatorium
 	name = MATERIAL_ELEVATORIUM
 	display_name = "elevator panelling"
+	wall_name = "bulkhead"
 	icon_colour = "#666666"
-	construction_difficulty = 2
+	construction_difficulty = MATERIAL_HARD_DIY
 	hidden_from_codex = TRUE
 
 /material/aliumium
 	name = MATERIAL_ALIENALLOY
 	display_name = "alien alloy"
+	wall_name = "bulkhead"
 	stack_type = null
 	icon_base = "jaggy"
 	door_icon_base = "metal"
@@ -346,7 +362,7 @@
 	sheet_singular_name = "chunk"
 	sheet_plural_name = "chunks"
 	stack_type = /obj/item/stack/material/aliumium
-	construction_difficulty = 3
+	construction_difficulty = MATERIAL_VERY_HARD_DIY
 	hidden_from_codex = TRUE
 
 /material/aliumium/New()
@@ -365,6 +381,7 @@
 
 /material/hematite
 	name = MATERIAL_HEMATITE
+	wall_name = "bulkhead"
 	stack_type = null
 	icon_colour = "#aa6666"
 	ore_smelts_to = MATERIAL_IRON
@@ -377,6 +394,7 @@
 
 /material/rutile
 	name = MATERIAL_RUTILE
+	wall_name = "bulkhead"
 	stack_type = null
 	icon_colour = "#d8ad97"
 	ore_smelts_to = MATERIAL_TITANIUM

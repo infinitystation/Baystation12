@@ -12,7 +12,7 @@
 	nanomodule_path = /datum/nano_module/program/computer_newsbrowser/
 	var/datum/computer_file/data/news_article/loaded_article
 	var/download_progress = 0
-	var/download_netspeed = 0
+//inf	var/download_netspeed = 0
 	var/downloading = 0
 	var/message = ""
 	var/show_archived = 0
@@ -20,8 +20,9 @@
 /datum/computer_file/program/newsbrowser/process_tick()
 	if(!downloading)
 		return
-	download_netspeed = 0
+//inf download_netspeed = 0
 	// Speed defines are found in misc.dm
+/*inf
 	switch(ntnet_status)
 		if(1)
 			download_netspeed = NTNETSPEED_LOWSIGNAL
@@ -29,13 +30,14 @@
 			download_netspeed = NTNETSPEED_HIGHSIGNAL
 		if(3)
 			download_netspeed = NTNETSPEED_ETHERNET
-	download_progress += download_netspeed
+inf*/
+	download_progress += get_signal(NTNET_SOFTWAREDOWNLOAD)
 	if(download_progress >= loaded_article.size)
 		downloading = 0
 		requires_ntnet = 0 // Turn off NTNet requirement as we already loaded the file into local memory.
 	SSnano.update_uis(NM)
 
-/datum/computer_file/program/newsbrowser/kill_program()
+/datum/computer_file/program/newsbrowser/on_shutdown()
 	..()
 	requires_ntnet = 1
 	loaded_article = null
@@ -73,12 +75,9 @@
 		var/savename = sanitize(input(usr, "Enter file name or leave blank to cancel:", "Save article", loaded_article.filename))
 		if(!savename)
 			return 1
-		var/obj/item/weapon/computer_hardware/hard_drive/HDD = computer.hard_drive
-		if(!HDD)
-			return 1
 		var/datum/computer_file/data/news_article/N = loaded_article.clone()
 		N.filename = savename
-		HDD.store_file(N)
+		computer.store_file(N)
 	if(href_list["PRG_toggle_archived"])
 		. = 1
 		show_archived = !show_archived
@@ -108,7 +107,7 @@
 		data["download_running"] = 1
 		data["download_progress"] = PRG.download_progress
 		data["download_maxprogress"] = PRG.loaded_article.size
-		data["download_rate"] = PRG.download_netspeed
+		data["download_rate"] = PRG.get_signal(NTNET_SOFTWAREDOWNLOAD) //inf//was: data["download_rate"] = PRG.download_netspeed
 	else										// Viewing list of articles
 		var/list/all_articles[0]
 		for(var/datum/computer_file/data/news_article/F in ntnet_global.available_news)

@@ -9,6 +9,9 @@
 	icon_state = "bus"
 	anchored = 1
 	density = 1
+	construct_state = /decl/machine_construction/default/panel_closed
+	uncreated_component_parts = null
+	stat_immune = 0
 	var/datum/ntnet/NTNet = null // This is mostly for backwards reference and to allow varedit modifications from ingame.
 	var/enabled = 1				// Set to 0 if the relay was turned off
 	var/dos_failure = 0			// Set to 1 if the relay failed due to (D)DoS attack
@@ -32,9 +35,10 @@
 
 /obj/machinery/ntnet_relay/on_update_icon()
 	if(operable())
-		icon_state = "bus"
+		icon_state = "[initial(icon_state)]"//inf//was: icon_state = "bus"
+	else if(dos_failure) icon_state = "[initial(icon_state)]_ddosed"//inf
 	else
-		icon_state = "bus_off"
+		icon_state = "[initial(icon_state)]_off"//inf//was: icon_state = "bus_off"
 
 /obj/machinery/ntnet_relay/Process()
 	if(operable())
@@ -47,6 +51,7 @@
 
 	// If DoS traffic exceeded capacity, crash.
 	if((dos_overload > dos_capacity) && !dos_failure)
+		playsound(src, 'infinity/sound/SS2/effects/critical.wav', 100) //inf
 		dos_failure = 1
 		update_icon()
 		ntnet_global.add_log("Quantum relay switched from normal operation mode to overload recovery mode.")
@@ -55,7 +60,6 @@
 		dos_failure = 0
 		update_icon()
 		ntnet_global.add_log("Quantum relay switched from overload recovery mode to normal operation mode.")
-	..()
 
 /obj/machinery/ntnet_relay/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.default_state)
 	var/list/data = list()
@@ -63,6 +67,7 @@
 	data["dos_capacity"] = dos_capacity
 	data["dos_overload"] = dos_overload
 	data["dos_crashed"] = dos_failure
+	data["portable_drive"] = !!get_component_of_type(/obj/item/weapon/stock_parts/computer/hard_drive/portable)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
@@ -71,17 +76,20 @@
 		ui.open()
 		ui.set_auto_update(1)
 
-/obj/machinery/ntnet_relay/attack_hand(var/mob/living/user)
+/obj/machinery/ntnet_relay/interface_interact(var/mob/living/user)
 	ui_interact(user)
+	return TRUE
 
 /obj/machinery/ntnet_relay/Topic(href, href_list)
 	if(..())
 		return 1
+	playsound(src, 'infinity/sound/SS2/effects/buttons/bhac.wav', 50) //inf
 	if(href_list["restart"])
 		dos_overload = 0
 		dos_failure = 0
 		update_icon()
 		ntnet_global.add_log("Quantum relay manually restarted from overload recovery mode to normal operation mode.")
+		playsound(src, 'infinity/sound/SS2/effects/simcomp.wav', 50) //inf
 		return 1
 	else if(href_list["toggle"])
 		enabled = !enabled
@@ -91,15 +99,14 @@
 	else if(href_list["purge"])
 		ntnet_global.banned_nids.Cut()
 		ntnet_global.add_log("Manual override: Network blacklist cleared.")
+		playsound(src, 'infinity/sound/SS2/effects/mempurge.wav', 50) //inf
 		return 1
+	else if(href_list["eject_drive"] && uninstall_component(/obj/item/weapon/stock_parts/computer/hard_drive/portable))
+		visible_message("\icon[src] [src] beeps and ejects its portable disk.")
 
 /obj/machinery/ntnet_relay/New()
 	uid = gl_uid
 	gl_uid++
-	component_parts = list()
-	component_parts += new /obj/item/stack/cable_coil(src,15)
-	component_parts += new /obj/item/weapon/circuitboard/ntnet_relay(src)
-
 	if(ntnet_global)
 		ntnet_global.relays.Add(src)
 		NTNet = ntnet_global
@@ -116,22 +123,11 @@
 		D.error = "Connection to quantum relay severed"
 	..()
 
-/obj/machinery/ntnet_relay/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
-	if(isScrewdriver(W))
-		playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
-		panel_open = !panel_open
-		to_chat(user, "You [panel_open ? "open" : "close"] the maintenance hatch")
+/obj/machinery/ntnet_relay/attackby(obj/item/P, mob/user)
+	if (!istype(P,/obj/item/weapon/stock_parts/computer/hard_drive/portable))
 		return
-	if(isCrowbar(W))
-		if(!panel_open)
-			to_chat(user, "Open the maintenance panel first.")
-			return
-		playsound(src.loc, 'sound/items/Crowbar.ogg', 50, 1)
-		to_chat(user, "You disassemble \the [src]!")
-
-		for(var/atom/movable/A in component_parts)
-			A.forceMove(src.loc)
-		new/obj/machinery/constructable_frame/machine_frame(src.loc)
-		qdel(src)
-		return
-	..()
+	else if (get_component_of_type(/obj/item/weapon/stock_parts/computer/hard_drive/portable))
+		to_chat(user, "This relay's portable drive slot is already occupied.")
+	else if(user.unEquip(P,src))
+		install_component(P)
+		to_chat(user, "You install \the [P] into \the [src]")

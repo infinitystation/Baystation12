@@ -1,7 +1,16 @@
+/obj/item/weapon/gun/projectile/revolver
+	name = "al-Maliki & Mosley \"Magnum Double Action\" revolver"
+
+/obj/item/weapon/gun/projectile/revolver/medium
+	name = "Lumoco Arms' \"Solid\" revolver"
+
+/obj/item/weapon/gun/projectile/revolver/holdout
+	name = "al-Maliki & Mosley \"Partner\" holdout revolver"
+
 /obj/item/weapon/gun/projectile/revolver/lr22
 	name = ".22LR revolver"
 	desc = "A rugged revolver based on the Smith & Wesson 617 model, with modern improvements. Uses .22LR rounds."
-	icon = 'icons/obj/infinity_guns.dmi'
+	icon = 'infinity/icons/obj/guns.dmi'
 	icon_state = "22lr_revolver"
 	item_state = "revolver"
 	max_shells = 10
@@ -11,7 +20,7 @@
 
 /obj/item/weapon/gun/projectile/revolver/shotgun
 	name = "RSH-12 shotgun-revolver"
-	desc = "The old RSH-12 shotgun revolder designer for spec ops. Useful for sweeping alleys."
+	desc = "The old RSH-12 revolder designer for spec ops. Useful for sweeping alleys. Uses 12G ammo"
 	icon = 'infinity/icons/obj/guns.dmi'
 	icon_state = "rsh-12"
 	item_icons = list(

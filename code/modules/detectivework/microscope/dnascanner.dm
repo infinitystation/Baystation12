@@ -2,7 +2,7 @@
 /obj/machinery/dnaforensics
 	name = "DNA analyzer"
 	desc = "A high tech machine that is designed to read DNA samples properly."
-	icon = 'icons/obj/forensics.dmi'
+	icon = 'infinity/icons/obj/forensics.dmi' //INF WAS 'icons/obj/forensics.dmi'
 	icon_state = "dnaopen"
 	anchored = 1
 	density = 1
@@ -124,11 +124,9 @@
 		update_icon()
 	return
 
-/obj/machinery/dnaforensics/attack_ai(mob/user as mob)
+/obj/machinery/dnaforensics/interface_interact(mob/user)
 	ui_interact(user)
-
-/obj/machinery/dnaforensics/attack_hand(mob/user as mob)
-	ui_interact(user)
+	return TRUE
 
 /obj/machinery/dnaforensics/verb/toggle_lid()
 	set category = "Object"

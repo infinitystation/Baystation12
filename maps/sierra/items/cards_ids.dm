@@ -63,6 +63,9 @@
 	job_access_type = /datum/job/officer
 	detail_color = "#e00000"
 
+/obj/item/weapon/card/id/sierra/crew/security/cadet
+	job_access_type = /datum/job/security_assistant
+
 /obj/item/weapon/card/id/sierra/crew/security/warden
 	job_access_type = /datum/job/warden
 	extra_details = list("onegoldstripe")
@@ -124,6 +127,11 @@
 /obj/item/weapon/card/id/sierra/crew/service/bartender
 	job_access_type = /datum/job/bartender
 
+/obj/item/weapon/card/id/sierra/crew/service/chaplain
+	job_access_type = /datum/job/chaplain
+
+/obj/item/weapon/card/id/sierra/crew/service/actor
+	job_access_type = /datum/job/actor
 
 //Explorers
 
@@ -196,6 +204,7 @@
 	job_access_type = /datum/job/merchant
 
 //Stowaway
+/*
 /obj/item/weapon/card/id/sierra/stowaway
 	desc = "An identification card issued to personnel aboard the NSV Sierra. Looks like the photo fell off this one."
 	job_access_type = /datum/job/stowaway
@@ -216,3 +225,4 @@
 	fingerprint_hash = md5(registered_name)
 	dna_hash = md5(fingerprint_hash)
 	blood_type = RANDOM_BLOOD_TYPE
+*/

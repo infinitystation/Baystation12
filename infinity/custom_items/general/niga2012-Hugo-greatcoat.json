@@ -1,0 +1,8 @@
+{
+  "ckey" :            "niga2012",
+  "character_name" :  "Hugo Zalack",
+  "item_name" :       "greatcoat",
+  "item_desc" :       "A greatcoat that fits perfectly on its owner.",
+  "item_icon_state" : "niga_greatcoat",
+  "item_path" :       "/obj/item/clothing/suit/storage/leather_jacket"
+  }

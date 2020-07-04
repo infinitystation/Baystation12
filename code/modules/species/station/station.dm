@@ -15,7 +15,7 @@
 
 	gluttonous = GLUT_TINY
 
-	speech_chance = 40
+	speech_chance = 40 //INF
 	ambiguous_genders = 0
 	bandages_icon = 'icons/mob/bandage.dmi'
 
@@ -41,7 +41,14 @@
 			CULTURE_HUMAN_SPACER,
 			CULTURE_HUMAN_SPAFRO,
 			CULTURE_HUMAN_CONFED,
-			CULTURE_HUMAN_OTHER
+			CULTURE_HUMAN_OTHER,
+			CULTURE_HUMAN_AVACOMMON, //inf
+			CULTURE_HUMAN_AVANOBLE, //inf
+			CULTURE_HUMAN_LORRIMAN, //inf
+			CULTURE_HUMAN_LORDUP, //inf
+			CULTURE_HUMAN_LORDLOW, //inf
+			CULTURE_HUMAN_MIRANIAN, //inf
+			CULTURE_HUMAN_NYXIAN //inf
 		)
 	)
 
@@ -53,7 +60,7 @@
 		return
 
 	if(H.get_shock() && H.shock_stage < 40 && prob(3))
-		H.emote(pick("moan","groan"))
+		H.agony_moan() //INF, WAS H.emote(pick("moan","groan"))
 
 	if(H.shock_stage > 10 && prob(3))
 		H.emote(pick("cry","whimper"))
@@ -114,9 +121,9 @@
 	assisted_langs = list(LANGUAGE_NABBER)
 	health_hud_intensity = 1.75
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/fish/octopus
+	bone_material = MATERIAL_BONE_CARTILAGE
 	genders = list(PLURAL)
 	hidden_from_codex = FALSE
-
 	min_age = 19
 	max_age = 120
 
@@ -151,6 +158,9 @@
 	heat_level_1 = 420 //Default 360 - Higher is better
 	heat_level_2 = 480 //Default 400
 	heat_level_3 = 1100 //Default 1000
+
+	cold_discomfort_level = 292 //Higher than perhaps it should be, to avoid big speed reduction at normal room temp
+	heat_discomfort_level = 368
 
 	reagent_tag = IS_SKRELL
 
@@ -233,7 +243,7 @@
 			FACTION_SKRELL_QERRVOAL,
 			FACTION_SKRELL_QALAOA,
 			FACTION_SKRELL_YIITALANA,
-			FACTION_SKRELL_KRIGLI,
+			FACTION_SKRELL_KRRIGLI,
 			FACTION_SKRELL_QONPRRI,
 			FACTION_OTHER
 		),
@@ -263,7 +273,7 @@
 		)
 
 /datum/species/skrell/get_sex(var/mob/living/carbon/human/H)
-	return H.descriptors["headtail length"] == 1 ? MALE : FEMALE
+	return istype(H) && (H.descriptors["headtail length"] == 1 ? MALE : FEMALE)
 
 /datum/species/skrell/check_background()
 	return TRUE
@@ -275,10 +285,10 @@
 	deform = 'icons/mob/human_races/species/diona/deformed_body.dmi'
 	preview_icon = 'icons/mob/human_races/species/diona/preview.dmi'
 	hidden_from_codex = FALSE
-
+	move_intents = list(/decl/move_intent/walk, /decl/move_intent/creep)
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/diona)
 	//primitive_form = "Nymph"
-	slowdown = 7
+	slowdown = 5
 	rarity_value = 3
 	hud_type = /datum/hud_data/diona
 	siemens_coefficient = 0.3
@@ -288,6 +298,7 @@
 	spawns_with_stack = 0
 	health_hud_intensity = 2
 	hunger_factor = 3
+	thirst_factor = 0.01
 
 	min_age = 1
 	max_age = 300
@@ -350,7 +361,7 @@
 
 	blood_color = "#004400"
 	flesh_color = "#907e4a"
-	virus_immune = 1
+//	virus_immune = 1
 
 	reagent_tag = IS_DIONA
 	genders = list(PLURAL)
@@ -405,6 +416,12 @@
 	else
 		H.equip_to_slot_or_del(new /obj/item/device/flashlight/flare(H), slot_r_hand)
 
+/datum/species/diona/skills_from_age(age)
+	switch(age)
+		if(101 to 200)	. = 12 // age bracket before this is 46 to 100 . = 8 making this +4
+		if(201 to 300)	. = 16 // + 8
+		else			. = ..()
+
 // Dionaea spawned by hand or by joining will not have any
 // nymphs passed to them. This should take care of that.
 /datum/species/diona/handle_post_spawn(var/mob/living/carbon/human/H)
@@ -441,5 +458,20 @@
 	return "sap"
 
 /datum/species/diona/handle_environment_special(var/mob/living/carbon/human/H)
-	if(!H.InStasis() && H.stat != DEAD && H.nutrition < 10)
+	if(H.InStasis() || H.stat == DEAD)
+		return
+
+	if(H.nutrition < 10)
 		H.take_overall_damage(2,0)
+
+	if(H.hydration < 550 && H.loc)
+		var/is_in_water = FALSE
+		if(H.loc.is_flooded(lying_mob = TRUE))
+			is_in_water = TRUE
+		else
+			for(var/obj/structure/hygiene/shower/shower in H.loc)
+				if(shower.on)
+					is_in_water = TRUE
+					break
+		if(is_in_water)
+			H.adjust_hydration(100)

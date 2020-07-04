@@ -1,8 +1,8 @@
 //Multimeter by Bear1ake, ported from Infinity-tgstation
 /obj/item/device/multitool/multimeter
 	name = "multimeter"
-	desc = "Используетс&#255; дл&#255; измерени&#255; потреблени&#255; электроэнергии оборудовани&#255; и прозвонки проводов. Рекомендуетс&#255; докторами."
-	icon = 'icons/obj/items_inf.dmi'
+	desc = "РСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ РёР·РјРµСЂРµРЅРёСЏ РїРѕС‚СЂРµР±Р»РµРЅРёСЏ СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё РѕР±РѕСЂСѓРґРѕРІР°РЅРёСЏ Рё РїСЂРѕР·РІРѕРЅРєРё РїСЂРѕРІРѕРґРѕРІ. Р РµРєРѕРјРµРЅРґСѓРµС‚СЃСЏ РґРѕРєС‚РѕСЂР°РјРё."
+	icon = 'infinity/icons/obj/items.dmi'
 	icon_state = "multimeter"
 	origin_tech = list(TECH_MAGNET = 4, TECH_ENGINEERING = 4)
 	slot_flags = SLOT_BELT
@@ -14,4 +14,4 @@
 			mode = METER_CHECKING
 		if(METER_CHECKING)
 			mode = METER_MESURING
-	to_chat(user, "Режим сменён на: [mode].")
+	to_chat(user, "Р РµР¶РёРј СЃРјРµРЅС‘РЅ РЅР°: [mode].")

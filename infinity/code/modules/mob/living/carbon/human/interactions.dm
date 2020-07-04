@@ -19,25 +19,21 @@
 		partner = M
 		make_interaction(machine)
 
-
-/mob/living/carbon/human/proc/is_nude()
-	return (!wear_suit && !w_uniform) ? 1 : 0 //TODO: Nudity check for underwear
-
 /mob/living/carbon/human/make_interaction()
 	set_machine(src)
 
 	var/mob/living/carbon/human/H = usr
 	var/mob/living/carbon/human/P = H.partner
 	var/obj/item/organ/external/temp = H.organs_by_name["r_hand"]
-	var/hashands = (temp && temp.is_usable())
+	var/hashands = (temp?.is_usable())
 	if (!hashands)
 		temp = H.organs_by_name["l_hand"]
-		hashands = (temp && temp.is_usable())
+		hashands = (temp?.is_usable())
 	temp = P.organs_by_name["r_hand"]
-	var/hashands_p = (temp && temp.is_usable())
+	var/hashands_p = (temp?.is_usable())
 	if (!hashands_p)
 		temp = P.organs_by_name["l_hand"]
-		hashands = (temp && temp.is_usable())
+		hashands = (temp?.is_usable())
 	var/mouthfree = !((H.head && (H.check_mouth_coverage())) || (H.wear_mask && (H.check_mouth_coverage())))
 	var/mouthfree_p = !((P.head && (P.check_mouth_coverage())) || (P.wear_mask && (P.check_mouth_coverage())))
 
@@ -45,35 +41,35 @@
 	var/dat = "<B><HR><FONT size=3>INTERACTIONS - [H.partner]</FONT></B><BR><HR>"
 	var/ya = "&#1103;"
 
-	dat +=  {"• <A href='?src=\ref[src];interaction=bow'>Отвесить поклон.</A><BR>"}
+	dat +=  {"вЂў <A href='?src=\ref[src];interaction=bow'>РћС‚РІРµСЃРёС‚СЊ РїРѕРєР»РѕРЅ.</A><BR>"}
 	if (hashands)
-		dat +=  {"<font size=3><B>Руки:</B></font><BR>"}
-		dat +=  {"• <A href='?src=\ref[src];interaction=bow_affably'>Приветливо кивнуть.</A><BR>"}
+		dat +=  {"<font size=3><B>Р СѓРєРё:</B></font><BR>"}
+		dat +=  {"вЂў <A href='?src=\ref[src];interaction=bow_affably'>РџСЂРёРІРµС‚Р»РёРІРѕ РєРёРІРЅСѓС‚СЊ.</A><BR>"}
 		if (Adjacent(P))
-			dat +=  {"• <A href='?src=\ref[src];interaction=handshake'>Пожать руку.</A><BR>"}
-			dat +=  {"• <A href='?src=\ref[src];interaction=hug'>Обнимашки!</A><BR>"}
-			dat +=  {"• <A href='?src=\ref[src];interaction=cheer'>Похлопать по плечу</A><BR>"}
-			dat +=  {"• <A href='?src=\ref[src];interaction=five'>Дать п[ya]ть.</A><BR>"}
-			if (hashands_p)
-				dat +=  {"• <A href='?src=\ref[src];interaction=give'>Передать предмет.</A><BR>"}
-			dat +=  {"• <A href='?src=\ref[src];interaction=slap'><font color=red>Дать пощечину!</font></A><BR>"}
+			dat +=  {"вЂў <A href='?src=\ref[src];interaction=handshake'>РџРѕР¶Р°С‚СЊ СЂСѓРєСѓ.</A><BR>"}
+			dat +=  {"вЂў <A href='?src=\ref[src];interaction=hug'>РћР±РЅРёРјР°С€РєРё!</A><BR>"}
+			dat +=  {"вЂў <A href='?src=\ref[src];interaction=cheer'>РџРѕС…Р»РѕРїР°С‚СЊ РїРѕ РїР»РµС‡Сѓ</A><BR>"}
+			dat +=  {"вЂў <A href='?src=\ref[src];interaction=five'>Р”Р°С‚СЊ Рї[ya]С‚СЊ.</A><BR>"}
 			if ((P.species.name == SPECIES_TAJARA)  || (P.species.name == SPECIES_VOX)|| (P.species.name == SPECIES_RESOMI) || (P.species.name == SPECIES_YEOSA) || (P.species.name == SPECIES_EROSAN) || (P.species.name == SPECIES_UNATHI))
-				dat +=  {"• <A href='?src=\ref[src];interaction=pull'><font color=red>Дёрнуть за хвост!</font></A><BR>"}
-				if(P.can_inject(H))
-					dat +=  {"• <A href='?src=\ref[src];interaction=pet'>Погладить.</A><BR>"}
-					dat +=  {"• <A href='?src=\ref[src];interaction=scratch'>Почесать.</A><BR>"}
-			dat +=  {"• <A href='?src=\ref[src];interaction=knock'><font color=red>Дать подзатыльник.</font></A><BR>"}
-		dat +=  {"• <A href='?src=\ref[src];interaction=fuckyou'><font color=red>Показать средний палец.</font></A><BR>"}
-		dat +=  {"• <A href='?src=\ref[src];interaction=threaten'><font color=red>Погрозить кулаком.</font></A><BR>"}
+				dat +=  {"вЂў <A href='?src=\ref[src];interaction=pull'><font color=red>Р”С‘СЂРЅСѓС‚СЊ Р·Р° С…РІРѕСЃС‚!</font></A><BR>"}
+				dat +=  {"вЂў <A href='?src=\ref[src];interaction=pet'>РџРѕРіР»Р°РґРёС‚СЊ.</A><BR>"}
+				dat +=  {"вЂў <A href='?src=\ref[src];interaction=scratch'>РџРѕС‡РµСЃР°С‚СЊ.</A><BR>"}
+			if (hashands_p)
+				dat +=  {"вЂў <A href='?src=\ref[src];interaction=give'>РџРµСЂРµРґР°С‚СЊ РїСЂРµРґРјРµС‚.</A><BR>"}
+			dat +=  {"вЂў <A href='?src=\ref[src];interaction=slap'><font color=red>Р”Р°С‚СЊ РїРѕС‰РµС‡РёРЅСѓ!</font></A><BR>"}
+			dat +=  {"вЂў <A href='?src=\ref[src];interaction=knock'><font color=red>Р”Р°С‚СЊ РїРѕРґР·Р°С‚С‹Р»СЊРЅРёРє.</font></A><BR>"}
+		dat +=  {"вЂў <A href='?src=\ref[src];interaction=fuckyou'><font color=red>РџРѕРєР°Р·Р°С‚СЊ СЃСЂРµРґРЅРёР№ РїР°Р»РµС†.</font></A><BR>"}
+		dat +=  {"вЂў <A href='?src=\ref[src];interaction=threaten'><font color=red>РџРѕРіСЂРѕР·РёС‚СЊ РєСѓР»Р°РєРѕРј.</font></A><BR>"}
+		dat +=  {"вЂў <A href='?src=\ref[src];interaction=slapass'><font color=red>Р©Р»РµРїРЅСѓС‚СЊ РїРѕ Р·Р°РґРЅРёС†Рµ.</font></A><BR>"}
 
 	if (mouthfree && H.species.name != "Diona")
-		dat += {"<font size=3><B>Лицо:</B></font><BR>"}
-		dat += {"• <A href='?src=\ref[src];interaction=kiss'>Поцеловать.</A><BR>"}
+		dat += {"<font size=3><B>Р›РёС†Рѕ:</B></font><BR>"}
+		dat += {"вЂў <A href='?src=\ref[src];interaction=kiss'>РџРѕС†РµР»РѕРІР°С‚СЊ.</A><BR>"}
 		if (Adjacent(P))
 			if (mouthfree_p)
-				dat += {"• <A href='?src=\ref[src];interaction=lick'>Лизнуть в щеку.</A><BR>"}
-			dat +=  {"• <A href='?src=\ref[src];interaction=spit'><font color=red>Плюнуть.</font></A><BR>"}
-		dat +=  {"• <A href='?src=\ref[src];interaction=tongue'><font color=red>Показать [ya]зык.</font></A><BR>"}
+				dat += {"вЂў <A href='?src=\ref[src];interaction=lick'>Р›РёР·РЅСѓС‚СЊ РІ С‰РµРєСѓ.</A><BR>"}
+			dat +=  {"вЂў <A href='?src=\ref[src];interaction=spit'><font color=red>РџР»СЋРЅСѓС‚СЊ.</font></A><BR>"}
+		dat +=  {"вЂў <A href='?src=\ref[src];interaction=tongue'><font color=red>РџРѕРєР°Р·Р°С‚СЊ [ya]Р·С‹Рє.</font></A><BR>"}
 
 	var/datum/browser/popup = new(usr, "interactions", "Interactions", 340, 480)
 	popup.set_content(dat)

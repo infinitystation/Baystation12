@@ -1,14 +1,16 @@
 /obj/machinery/power/generator
 	name = "thermoelectric generator"
 	desc = "It's a high efficiency thermoelectric generator."
-	icon_state = "teg"
+	icon_state = "teg-unassembled"
 	density = 1
 	anchored = 0
 
 	use_power = POWER_USE_IDLE
-	idle_power_usage = 100 //Watts, I hope.  Just enough to do the computer and display things.
+	idle_power_usage = 100 //Watts, W hope.  Just enough to do the computer and display things.
 
-	var/max_power = 500000
+	var/integrity = 100 //INF
+
+	var/max_power = 3 MEGAWATTS //INF, WAS 500000
 	var/thermal_efficiency = 0.65
 
 	var/obj/machinery/atmospherics/binary/circulator/circ1
@@ -35,6 +37,10 @@
 //and a circulator to the WEST of the generator connects first to the NORTH, then to the SOUTH
 //note that the circulator's outlet dir is it's always facing dir, and it's inlet is always the reverse
 /obj/machinery/power/generator/proc/reconnect()
+	if(circ1)
+		circ1.temperature_overlay = null
+	if(circ2)
+		circ2.temperature_overlay = null
 	circ1 = null
 	circ2 = null
 	if(src.loc && anchored)
@@ -54,15 +60,29 @@
 			if(circ1 && circ2 && (circ1.dir != EAST || circ2.dir != WEST))
 				circ1 = null
 				circ2 = null
+	update_icon()
 
 /obj/machinery/power/generator/on_update_icon()
-	if(stat & (NOPOWER|BROKEN))
-		overlays.Cut()
+	icon_state = anchored ? "teg-assembled" : "teg-unassembled"
+	overlays.Cut()
+	if (circ1)
+		circ1.temperature_overlay = null
+	if (circ2)
+		circ2.temperature_overlay = null
+	if (stat & (NOPOWER|BROKEN))
+		return 1
 	else
-		overlays.Cut()
-
-		if(lastgenlev != 0)
+		if (lastgenlev != 0)
 			overlays += image('icons/obj/power.dmi', "teg-op[lastgenlev]")
+			if (circ1 && circ2)
+				var/extreme = (lastgenlev > 9) ? "ex" : ""
+				if (circ1.last_temperature < circ2.last_temperature)
+					circ1.temperature_overlay = "circ-[extreme]cold"
+					circ2.temperature_overlay = "circ-[extreme]hot"
+				else
+					circ1.temperature_overlay = "circ-[extreme]hot"
+					circ2.temperature_overlay = "circ-[extreme]cold"
+		return 1
 
 /obj/machinery/power/generator/Process()
 	if(!circ1 || !circ2 || !anchored || stat & (BROKEN|NOPOWER))
@@ -110,12 +130,16 @@
 	if(circ2.network2)
 		circ2.network2.update = 1
 
+	stat = integrity ? stat : BROKEN //INF
+
 	//Exceeding maximum power leads to some power loss
 	if(effective_gen > max_power && prob(5))
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 		s.set_up(3, 1, src)
 		s.start()
 		stored_energy *= 0.5
+
+		integrity = clamp(integrity - ((effective_gen - max_power) / 1e6) ** 3, 0, integrity) //INF
 
 	//Power
 	last_circ1_gen = circ1.return_stored_energy()
@@ -125,7 +149,7 @@
 	stored_energy -= lastgen1
 	effective_gen = (lastgen1 + lastgen2) / 2
 
-	// update icon overlays and power usage only if displayed level has changed
+	// update icon overlays and power usage only when necessary
 	var/genlev = max(0, min( round(11*effective_gen / max_power), 11))
 	if(effective_gen > 100 && genlev == 0)
 		genlev = 1
@@ -134,10 +158,7 @@
 		update_icon()
 	add_avail(effective_gen)
 
-/obj/machinery/power/generator/attack_ai(mob/user)
-	attack_hand(user)
-
-/obj/machinery/power/generator/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/machinery/power/generator/attackby(obj/item/W as obj, mob/user as mob) //INF, was: /obj/machinery/power/generator/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(isWrench(W))
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
 		anchored = !anchored
@@ -150,15 +171,35 @@
 		else
 			disconnect_from_network()
 		reconnect()
+	//[INF]
+	if(istype(W, /obj/item/stack/nanopaste))
+		var/obj/item/stack/nanopaste/S = W
+		if(effective_gen < (max_power * 0.1))
+			if((integrity > initial(integrity) / 4) && (integrity < 100))
+				user.visible_message("[user.name] starts to applying [S] on [src].", \
+						"You start to apply [S] on [src].")
+				if(do_after(user, 5 SECOND, src))
+					if(S.use(1))
+						integrity = clamp(integrity + initial(integrity) / 10, 0, initial(integrity))
+						to_chat(user, "\icon[src] [src] has successfully repaired.")
+			else
+				to_chat(user, "\icon[src] [src] can not be repaired!")
+		else
+			to_chat(user, "\icon[src] [src] must be stoped first!")
+	//[/INF]
 	else
 		..()
 
-/obj/machinery/power/generator/attack_hand(mob/user)
-	add_fingerprint(user)
-	if(stat & (BROKEN|NOPOWER) || !anchored) return
+/obj/machinery/power/generator/CanUseTopic(mob/user)
+	if(!anchored)
+		return STATUS_CLOSE
+	return ..()
+
+/obj/machinery/power/generator/interface_interact(mob/user)
 	if(!circ1 || !circ2) //Just incase the middle part of the TEG was not wrenched last.
 		reconnect()
 	ui_interact(user)
+	return TRUE
 
 /obj/machinery/power/generator/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
 	// this is the data which will be sent to the ui
@@ -167,6 +208,7 @@
 		vertical = 1
 
 	var/data[0]
+	data["integrity"] = integrity //INF
 	data["totalOutput"] = effective_gen/1000
 	data["maxTotalOutput"] = max_power/1000
 	data["thermalOutput"] = last_thermal_gen/1000

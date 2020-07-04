@@ -69,11 +69,12 @@
 		to_chat(src, "Some accounts did not have proper ages set in their clients.  This function requires database to be present")
 
 	if(msg != "")
-		src << browse(msg, "window=Player_age_check")
+		show_browser(src, msg, "window=Player_age_check")
 	else
 		to_chat(src, "No matches for that age range found.")
 
 
+/*Check out infinity/code/modules/admin/verbs/randomverbs.dm
 /client/proc/cmd_admin_world_narrate() // Allows administrators to fluff events a little easier -- TLE
 	set category = "Special Verbs"
 	set name = "Global Narrate"
@@ -90,6 +91,7 @@
 
 	log_and_message_admins(" - GlobalNarrate [result[2]]/[result[3]]: [result[4]]")
 	SSstatistics.add_field_details("admin_verb","GLN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+*/
 
 
 /proc/cmd_admin_narrate_helper(var/user, var/style, var/size, var/message)
@@ -623,7 +625,13 @@ Traitors and the like can also be revived with the previous role mostly intact.
 		log_admin("[key_name(usr)] deleted [O] at ([O.x],[O.y],[O.z])")
 		message_admins("[key_name_admin(usr)] deleted [O] at ([O.x],[O.y],[O.z])", 1)
 		SSstatistics.add_field_details("admin_verb","DEL") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-		qdel(O)
+
+		// turfs are special snowflakes that'll explode if qdel'd
+		if (isturf(O))
+			var/turf/T = O
+			T.ChangeTurf(world.turf)
+		else
+			qdel(O)
 
 /client/proc/cmd_admin_list_open_jobs()
 	set category = "Admin"
@@ -642,7 +650,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 
 	dat += "</center></body></html>"
 
-	src << browse(jointext(dat, null), "window=freeslots;size=300x640;can_close=1")
+	show_browser(src, jointext(dat, null), "window=freeslots;size=300x640;can_close=1")
 	SSstatistics.add_field_details("admin_verb","LFS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_explosion(atom/O as obj|mob|turf in range(world.view))

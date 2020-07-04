@@ -19,7 +19,7 @@
 
 //Sierra map alert levels. Refer to security_state.dm.
 /decl/security_state/default/sierradept
-	all_security_levels = list(/decl/security_level/default/sierradept/code_green, /decl/security_level/default/sierradept/code_violet, /decl/security_level/default/sierradept/code_orange, /decl/security_level/default/sierradept/code_blue, /decl/security_level/default/sierradept/code_red, /decl/security_level/default/code_delta)
+	all_security_levels = list(/decl/security_level/default/sierradept/code_green, /decl/security_level/default/sierradept/code_violet, /decl/security_level/default/sierradept/code_orange, /decl/security_level/default/sierradept/code_blue, /decl/security_level/default/sierradept/code_red, /decl/security_level/default/sierradept/code_delta)
 
 /decl/security_level/default/sierradept
 	icon = 'maps/sierra/icons/security_state.dmi'
@@ -40,13 +40,17 @@
 	var/static/datum/announcement/priority/security/security_announcement_green = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/misc/notice2.ogg'))
 
 /decl/security_level/default/sierradept/code_green/switching_down_to()
-	security_announcement_green.Announce("The situation has been resolved, and all crew are to return to their regular duties.", "Attention! Alert level lowered to code green.")
+	security_announcement_green.Announce("Все угрозы для судна и его экипажа были устранены. \
+	Персоналу следует вернуться к выполнению рабочих обязанностей в штатном режиме.", \
+	"Внимание! Зелёный код")
 	notify_station()
+	GLOB.using_map.unlock_secure_areas()
+	GLOB.using_map.unlock_high_secure_areas()
 
 /decl/security_level/default/sierradept/code_violet
 	name = "code violet"
 
-	light_max_bright = 0.5
+	light_max_bright = 0.25
 	light_inner_range = 1
 	light_outer_range = 2
 	light_color_alarm = COLOR_VIOLET
@@ -57,25 +61,53 @@
 	overlay_alarm = "alarm_violet"
 	overlay_status_display = "status_display_violet"
 
-	up_description = "A major medical emergency has developed. Medical personnel are required to report to their supervisor for orders, and non-medical personnel are required to obey all relevant instructions from medical staff."
-	down_description = "Code violet procedures are now in effect; Medical personnel are required to report to their supervisor for orders, and non-medical personnel are required to obey relevant instructions from medical staff."
+/decl/security_level/default/sierradept/code_violet/switching_up_to()
+	security_announcement_up.Announce("На судне находятся нелокализованные вредоносные патогены. \
+	Всему медицинскому персоналу требуется обратиться к вышестоящим сотрудникам для получения инструкций. \
+	Не-медицинскому персоналу следует выполнять инструкции от медицинского персонала.", "Внимание! Фиолетовый код")
+	notify_station()
+	GLOB.using_map.toggle_crew_sensors(2)
+
+/decl/security_level/default/sierradept/code_violet/switching_down_to()
+	security_announcement_down.Announce("На судне находятся нелокализованные вредоносные патогены. \
+	Всему медицинскому персоналу требуется обратиться к вышестоящим сотрудникам для получения инструкций. \
+	Не-медицинскому персоналу следует выполнять инструкции от медицинского персонала.", "Внимание! Код угрозы понижен до Фиолетового")
+	notify_station()
+	GLOB.using_map.unlock_high_secure_areas()
+	GLOB.using_map.unlock_secure_areas()
+	GLOB.using_map.toggle_crew_sensors(2)
 
 /decl/security_level/default/sierradept/code_orange
 	name = "code orange"
 
-	light_max_bright = 0.5
+	light_max_bright = 0.25
 	light_inner_range = 1
 	light_outer_range = 2
 	light_color_alarm = COLOR_ORANGE
 	light_color_status_display = COLOR_ORANGE
 	overlay_alarm = "alarm_orange"
 	overlay_status_display = "status_display_orange"
-
+	airlock_override = 1
 	psionic_control_level = PSI_IMPLANT_LOG
 
-	up_description = "A major engineering emergency has developed. Engineering personnel are required to report to their supervisor for orders, and non-engineering personnel are required to evacuate any affected areas and obey relevant instructions from engineering staff."
-	down_description = "Code orange procedures are now in effect; Engineering personnel are required to report to their supervisor for orders, and non-engineering personnel are required to evacuate any affected areas and obey relevant instructions from engineering staff."
+/decl/security_level/default/sierradept/code_orange/switching_up_to()
+	security_announcement_up.Announce("Тяжелые нарушения в работе оборудования и повреждение переборок. \
+	Всему инженерному персоналу требуется обратиться к вышестоящим сотрудникам для получения инструкций. \
+	Весь не-инженерный персонал должен покинуть затронутые повреждениями отсеки. Рекомендуется ношение скафандров и \
+	следование указаниям инженерного персонала.", "Внимание! Оранжевый код")
+	notify_station()
+	GLOB.using_map.lock_high_secure_areas()
+	GLOB.using_map.toggle_crew_sensors(1)
 
+/decl/security_level/default/sierradept/code_orange/switching_down_to()
+	security_announcement_down.Announce("Тяжелые нарушения в работе оборудования и повреждение переборок. \
+	Всему инженерному персоналу требуется обратиться к вышестоящим сотрудникам для получения инструкций. \
+	Весь не-инженерный персонал должен покинуть затронутые повреждениями отсеки. Рекомендуется ношение скафандров и \
+	следование указаниям инженерного персонала.", "Внимание! Код угрозы понижен до Оражевого")
+	notify_station()
+	GLOB.using_map.lock_high_secure_areas()
+	GLOB.using_map.unlock_secure_areas()
+	GLOB.using_map.toggle_crew_sensors(1)
 
 /decl/security_level/default/sierradept/code_blue
 	name = "code blue"
@@ -88,56 +120,82 @@
 	light_color_status_display = COLOR_BLUE
 	overlay_alarm = "alarm_blue"
 	overlay_status_display = "status_display_blue"
-
 	psionic_control_level = PSI_IMPLANT_LOG
 
-	up_description = "A major security emergency has developed. Security personnel are to report to their supervisor for orders, are permitted to search staff and facilities, and may have weapons visible on their person."
-	down_description = "Code blue procedures are now in effect. Security personnel are to report to their supervisor for orders, are permitted to search staff and facilities, and may have weapons visible on their person."
+/decl/security_level/default/sierradept/code_blue/switching_up_to()
+	security_announcement_up.Announce("По новой информации на судне может присутствовать угроза для безопасности экипажа. \
+	Всей охране требуется обратиться к вышестоящим сотрудникам для получения указаний; \
+	разрешено обыскивать сотрудников и отсеки, а так же держать оружие на виду.", "Внимание! Синий код")
+	notify_station()
+	GLOB.using_map.lock_high_secure_areas()
+
+/decl/security_level/default/sierradept/code_blue/switching_down_to()
+	security_announcement_down.Announce("Потенциальная угроза для экипажа. \
+	Всей охране требуется обратиться к вышестоящим сотрудникам для получения указаний; \
+	разрешено обыскивать сотрудников и отсеки, а так же держать оружие на виду.", "Внимание! Код угрозы понижен до Синего")
+	notify_station()
+	GLOB.using_map.unlock_secure_areas()
 
 /decl/security_level/default/sierradept/code_red
 	name = "code red"
 	icon = 'icons/misc/security_state.dmi'
 
-	light_max_bright = 0.75
+	light_max_bright = 0.5
 	light_inner_range = 1
-	light_outer_range = 3
+	light_outer_range = 2
 	light_color_alarm = COLOR_RED
 	light_color_status_display = COLOR_RED
 	overlay_alarm = "alarm_red"
 	overlay_status_display = "status_display_red"
 
-	up_description = "A severe emergency has occurred. All staff are to report to their supervisor for orders. All crew should obey orders from relevant emergency personnel. Security personnel are permitted to search staff and facilities, and may have weapons unholstered at any time. Saferooms have been unbolted."
+	airlock_override = 1
 	psionic_control_level = PSI_IMPLANT_DISABLED
-
-
 	var/static/datum/announcement/priority/security/security_announcement_red = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/misc/redalert1.ogg'))
 
 /decl/security_level/default/sierradept/code_red/switching_up_to()
-	security_announcement_red.Announce("A severe emergency has occurred. All staff are to report to their supervisor for orders. All crew should obey orders from relevant emergency personnel. Security personnel are permitted to search staff and facilities, and may have weapons unholstered at any time. Saferooms have been unbolted.", "Attention! Code red alert procedures now in effect!")
+	security_announcement_red.Announce("На судно объявлено чрезвычайное положение. \
+	Весь экипаж должен обратиться к главам для получения инструкций. \
+	Охране разрешено обыскивать сотрудников и отсеки, а так же держать оружие на виду.", \
+	"Внимание! Красный код")
 	notify_station()
 	GLOB.using_map.unbolt_saferooms()
+	GLOB.using_map.lock_secure_areas()
+	GLOB.using_map.lock_high_secure_areas()
+	GLOB.using_map.toggle_crew_sensors(3)
 
 /decl/security_level/default/sierradept/code_red/switching_down_to()
-	security_announcement_red.Announce("The self-destruct mechanism has been deactivated. All staff are to report to their supervisor for orders. All crew should obey orders from relevant emergency personnel. Security personnel are permitted to search staff and facilities, and may have weapons unholstered at any time.", "Attention! Code red alert procedures now in effect!")
+	security_announcement_red.Announce("Взрывное устройство было обезврежено. \
+	Весь экипаж должен обратиться к главам для получения инструкций. \
+	Охране разрешено обыскивать сотрудников и отсеки, а так же держать оружие на виду.", \
+	"Внимание! Код угрозы понижен до Красного")
 	notify_station()
+	GLOB.using_map.lock_secure_areas()
+	GLOB.using_map.lock_high_secure_areas()
 
 /decl/security_level/default/sierradept/code_delta
 	name = "code delta"
 
-	light_max_bright = 0.75
-	light_inner_range = 0.1
+	light_max_bright = 0.7
+	light_inner_range = 1
 	light_outer_range = 3
 	light_color_alarm = COLOR_RED
 	light_color_status_display = COLOR_NAVY_BLUE
 
+	icon = 'icons/misc/security_state.dmi'
 	overlay_alarm = "alarm_delta"
 	overlay_status_display = "status_display_delta"
 
+	psionic_control_level = PSI_IMPLANT_DISABLED
 	var/static/datum/announcement/priority/security/security_announcement_delta = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/effects/siren.ogg'))
 
 /decl/security_level/default/sierradept/code_delta/switching_up_to()
-	security_announcement_delta.Announce("Code Delta procedures have been engaged. All crew are instructed to obey all instructions given by heads of staff. Any violations of these orders can be punished by death. This is not a drill.", "Attention! Delta security level reached!")
+	security_announcement_delta.Announce("Внимание всему персоналу! На судне обнаружено взрывное устройство \
+	большой мощности с активированным обратным отсчетом. Весь экипаж должен следовать инструкциям глав и охраны. \
+	Это не учебная тревога.", "Внимание! Код Дельта")
 	notify_station()
+	GLOB.using_map.unlock_secure_areas()
+	GLOB.using_map.unlock_high_secure_areas()
+	GLOB.using_map.toggle_crew_sensors(3)
 
 #undef PSI_IMPLANT_AUTOMATIC
 #undef PSI_IMPLANT_SHOCK

@@ -1,6 +1,6 @@
 #include "white_star_areas.dm"
 
-/obj/effect/overmap/ship/white_star
+/obj/effect/overmap/visitable/ship/white_star
 	name = "Unidentified ship"
 	desc = "Error. Scanning is impossible."
 	color = "#c6d8eb"

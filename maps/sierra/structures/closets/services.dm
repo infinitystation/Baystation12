@@ -23,7 +23,9 @@
 		/obj/item/clothing/gloves/latex,
 		/obj/item/weapon/reagent_containers/spray/cleaner,
 		/obj/item/clothing/head/chefhat,
-		/obj/item/clothing/suit/chef/classic
+		/obj/item/clothing/suit/chef/classic,
+		/obj/item/clothing/mask/surgical,
+		/obj/item/clothing/head/beret/infinity
 	)
 
 /obj/structure/closet/secure_closet/hydroponics_sierra //done so that it has no access reqs
@@ -74,7 +76,8 @@
 		/obj/item/clothing/glasses/hud/janitor,
 		/obj/item/weapon/storage/belt/janitor,
 		/obj/item/clothing/mask/plunger,
-		/obj/item/weapon/soap/nanotrasen
+		/obj/item/weapon/soap,
+		/obj/item/clothing/head/beret/infinity
 	)
 
 /obj/structure/closet/secure_closet/bar_sierra
@@ -99,7 +102,27 @@
 		/obj/item/weapon/storage/pill_bottle/dylovene,
 		/obj/item/weapon/reagent_containers/spray/cleaner,
 		/obj/item/weapon/reagent_containers/glass/rag,
-		/obj/item/weapon/paper/bar_permit,
-		/obj/item/weapon/gun/projectile/shotgun/doublebarrel/empty
+		/obj/item/weapon/paper/sierra/bar_permit,
+		/obj/item/weapon/gun/projectile/shotgun/doublebarrel/empty,
+		/obj/item/clothing/head/beret/infinity
 	)
 
+/obj/structure/closet/secure_closet/chaplain_sierra
+	name = "chaplain's locker"
+	closet_appearance = /decl/closet_appearance/secure_closet/chaplain
+	req_access = list(access_chapel_office)
+
+/obj/structure/closet/secure_closet/chaplain_sierra/WillContain()
+	return list(
+		/obj/item/clothing/under/rank/chaplain,
+		/obj/item/clothing/shoes/black,
+		/obj/item/clothing/suit/chaplain_hoodie,
+		/obj/item/weapon/storage/candle_box = 3,
+		/obj/item/weapon/deck/tarot,
+		/obj/item/weapon/reagent_containers/food/drinks/bottle/holywater,
+		/obj/item/weapon/nullrod,
+		/obj/item/weapon/storage/bible,
+		/obj/item/weapon/storage/belt/general,
+		/obj/item/weapon/material/urn,
+		/obj/item/device/taperecorder
+	)

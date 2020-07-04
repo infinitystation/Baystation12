@@ -37,11 +37,6 @@
 	icon_state = "hair_harley"
 	gender = FEMALE
 
-/datum/sprite_accessory/hair/infinity/hair_dave
-	name = "Style Brother"
-	icon_state = "hair_dave"
-	gender = MALE
-
 /datum/sprite_accessory/hair/infinity/undercut
 	name = "Undercut Female"
 	icon_state = "hair_undercut"
@@ -67,6 +62,10 @@
 	name = "Ponytail 4(TG)"
 	icon_state = "hair_ponytail4"
 
+/datum/sprite_accessory/hair/infinity/ponytail_hayasaka
+	name = "Ponytail Hayasaka"
+	icon_state = "hair_ponytail_hayasaka"
+
 /datum/sprite_accessory/hair/infinity/zone
 	name = "Zone"
 	icon_state = "hair_zone"
@@ -79,9 +78,19 @@
 	name = "Long hair 4"
 	icon_state = "hair_long"
 
+/datum/sprite_accessory/hair/infinity/elize
+	name = "Elize"
+	icon_state = "hair_elize"
+	gender = FEMALE
+
+/datum/sprite_accessory/hair/infinity/amicia
+	name = "Amicia"
+	icon_state = "hair_amicia"
+	gender = FEMALE
+
 //[MODED_VG]__________________________________________________________
 /datum/sprite_accessory/hair/infinity/bedhead_4
-	name = "Bedhead 4"
+	name = "80s"
 	icon_state = "hair_80s"
 
 /datum/sprite_accessory/hair/infinity/long_bedhead
@@ -164,6 +173,7 @@
 /datum/sprite_accessory/hair/infinity/slightlymessy
 	name = "Slightly Messy"
 	icon_state = "hair_slightlymessy"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/infinity/geisha
 	name = "Geisha"
@@ -189,3 +199,61 @@
 	name = "Country"
 	icon_state = "hair_country"
 //[/MODED_VG]_________________________________________________________
+
+//[AURORA]
+/datum/sprite_accessory/hair/infinity/eighties_ponytail
+	name = "80s Ponytail"
+	icon_state = "hair_80s_ponytail"
+
+/datum/sprite_accessory/hair/infinity/eighties_ponytail/alt
+	name = "80s Ponytail Alt"
+	icon_state = "hair_80s_ponytail_alt"
+
+/datum/sprite_accessory/hair/infinity/big_bow
+	name = "Big Bow"
+	icon_state = "hair_big_bow"
+
+/datum/sprite_accessory/hair/infinity/bun_odango
+	name = "Odango Bun"
+	icon_state = "hair_bun_odango"
+
+/datum/sprite_accessory/hair/infinity/bun_odango2
+	name = "Odango Bun 2"
+	icon_state = "hair_bun_odango2"
+
+/datum/sprite_accessory/hair/infinity/bun_odango3
+	name = "Odango Bun 3"
+	icon_state = "hair_bun_odango3"
+
+/datum/sprite_accessory/hair/infinity/bun_odango4
+	name = "Odango Bun 4"
+	icon_state = "hair_bun_odango4"
+
+/datum/sprite_accessory/hair/infinity/drills_celes
+	name = "Celes"
+	icon_state = "hair_drills_celes"
+
+/datum/sprite_accessory/hair/infinity/pigtails_belle
+	name = "Pigtails Belle"
+	icon_state = "hair_pigtails_belle"
+
+/datum/sprite_accessory/hair/infinity/pigtails_kagami
+	name = "Pigtails Kagami"
+	icon_state = "hair_pigtails_kagami"
+
+/datum/sprite_accessory/hair/infinity/pigtails_low
+	name = "Pigtails Low"
+	icon_state = "hair_pigtails_low"
+
+/datum/sprite_accessory/hair/infinity/pigtails_twintail_ombre
+	name = "Pigtails Twintail_Ombre"
+	icon_state = "hair_pigtails_twintail_ombre"
+
+/datum/sprite_accessory/hair/infinity/pigtails_twintail_ombre/alt
+	name = "Pigtails Twintail_Ombre Alt"
+	icon_state = "hair_pigtails_twintail_ombre_alt"
+
+/datum/sprite_accessory/hair/infinity/twincurls2
+	name = "Curls Twin"
+	icon_state = "hair_twincurls2"
+//[/AURORA]

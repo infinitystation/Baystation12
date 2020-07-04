@@ -122,3 +122,15 @@ var/const/NETWORK_ENGINEERING_OUTPOST = "Engineering Outpost"
 
 /obj/machinery/computer/shuttle_control/merchant
 	req_access = list(access_merchant_leader)
+
+/turf/simulated/wall //landlubbers go home
+	name = "bulkhead"
+
+/turf/simulated/floor
+	name = "bare deck"
+
+/turf/simulated/floor/tiled
+	name = "deck"
+
+/decl/flooring/tiling
+	name = "deck"

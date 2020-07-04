@@ -4,7 +4,7 @@
 	icon = 'icons/obj/guncabinet.dmi'
 	closet_appearance = null
 
-/obj/structure/closet/secure_closet/guncabinet/Initialize()
+/obj/structure/closet/secure_closet/guncabinet/New()
 	. = ..()
 	update_icon()
 

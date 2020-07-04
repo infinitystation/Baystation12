@@ -1,7 +1,7 @@
 #include "smugglers_areas.dm"
 #include "../../away/mining/mining_areas.dm"
 
-/obj/effect/overmap/sector/smugglers
+/obj/effect/overmap/visitable/sector/smugglers
 	name = "asteroid station"
 	desc = "A small station built into an asteroid. No radio traffic detected."
 	icon_state = "object"
@@ -20,7 +20,14 @@
 	description = "Yarr."
 	prefix = "maps/away_inf/"
 	suffixes = list("smugglers/smugglers.dmm")
-	cost = 1
+	cost = 0.5
+	generate_mining_by_z = 1
+	area_usage_test_exempted_root_areas = list(/area/smugglers)
+	apc_test_exempt_areas = list(
+		/area/smugglers/base = NO_SCRUBBER|NO_VENT,
+		/area/smugglers/dorms = NO_SCRUBBER|NO_VENT,
+		/area/smugglers/office = NO_SCRUBBER|NO_VENT
+	)
 
 /obj/effect/shuttle_landmark/nav_asteroid_base
 	name = "Abandoned Asteroid Base North"
@@ -100,7 +107,7 @@
 	name = "Random Ammo Magazine"
 	desc = "This is smuggler's random ammo magazine."
 	icon = 'icons/obj/ammo.dmi'
-	icon_state = "45-10"
+	icon_state = "magnum"
 
 /obj/random/ammo_magazine_smug/spawn_choices()
 	return list(

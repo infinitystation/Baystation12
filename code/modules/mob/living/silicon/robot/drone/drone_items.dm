@@ -20,14 +20,18 @@
 		/obj/item/frame,
 		/obj/item/weapon/camera_assembly,
 		/obj/item/weapon/tank,
-		/obj/item/weapon/circuitboard,
-		/obj/item/weapon/smes_coil,
-		/obj/item/weapon/computer_hardware,
+		/obj/item/weapon/stock_parts/circuitboard,
+		/obj/item/weapon/stock_parts/smes_coil,
+		/obj/item/weapon/stock_parts/computer,
 		/obj/item/weapon/fuel_assembly,
 		/obj/item/stack/material/deuterium,
 		/obj/item/stack/material/tritium,
-		/obj/item/stack/tile
-		)
+		/obj/item/stack/tile,
+		//[INF],
+		/obj/item/stack/cable_coil,
+		/obj/item/clamp
+		//[/INF]
+	)
 
 	var/obj/item/wrapped = null // Item currently being held.
 
@@ -41,7 +45,7 @@
 	can_hold = list(
 	/obj/item/weapon/cell,
 	/obj/item/weapon/stock_parts,
-	/obj/item/weapon/circuitboard/miningdrill
+	/obj/item/weapon/stock_parts/circuitboard/miningdrill
 	)
 
 /obj/item/weapon/gripper/clerical
@@ -66,6 +70,7 @@
 		/obj/item/weapon/reagent_containers/glass,
 		/obj/item/weapon/reagent_containers/pill,
 		/obj/item/weapon/reagent_containers/ivbag,
+		/obj/item/stack/material/phoron,
 		/obj/item/weapon/storage/pill_bottle,
 		)
 
@@ -84,12 +89,11 @@
 		/obj/item/organ/internal/brain,
 		/obj/item/organ/internal/posibrain,
 		/obj/item/stack/cable_coil,
-		/obj/item/weapon/circuitboard,
+		/obj/item/weapon/stock_parts/circuitboard,
 		/obj/item/slime_extract,
 		/obj/item/weapon/reagent_containers/glass,
 		/obj/item/weapon/reagent_containers/food/snacks/monkeycube,
-		/obj/item/mecha_parts,
-		/obj/item/weapon/computer_hardware,
+		/obj/item/weapon/stock_parts/computer,
 		/obj/item/device/transfer_valve,
 		/obj/item/device/assembly/signaler,
 		/obj/item/device/assembly/timer,
@@ -163,7 +167,7 @@
 	set desc = "Release an item from your magnetic gripper."
 	set category = "Silicon Commands"
 	if(!wrapped)
-		//There's some weirdness with items being lost inside the arm. Trying to fix all cases. ~Z
+		// Ensure fumbled items are accessible.
 		for(var/obj/item/thing in src.contents)
 			thing.dropInto(loc)
 		return
@@ -183,7 +187,7 @@
 
 /obj/item/weapon/gripper/resolve_attackby(var/atom/target, var/mob/living/user, params)
 
-	//There's some weirdness with items being lost inside the arm. Trying to fix all cases. ~Z
+	// Ensure fumbled items are accessible.
 	if(!wrapped)
 		for(var/obj/item/thing in src.contents)
 			wrapped = thing
@@ -232,20 +236,12 @@
 
 	else if(istype(target,/obj/machinery/power/apc))
 		var/obj/machinery/power/apc/A = target
-		if(A.opened)
-			if(A.cell)
-
-				wrapped = A.cell
-
-				A.cell.add_fingerprint(user)
-				A.cell.update_icon()
-				A.cell.forceMove(src)
-				A.cell = null
-
-				A.charging = 0
-				A.update_icon()
-
-				user.visible_message("<span class='danger'>[user] removes the power cell from [A]!</span>", "You remove the power cell.")
+		if(A.components_are_accessible(/obj/item/weapon/stock_parts/power/battery))
+			var/obj/item/weapon/stock_parts/power/battery/bat = A.get_component_of_type(/obj/item/weapon/stock_parts/power/battery)
+			var/obj/item/weapon/cell/cell = bat.extract_cell(src)
+			if(cell)
+				wrapped = cell
+				cell.forceMove(src)
 
 	else if(istype(target,/mob/living/silicon/robot))
 		var/mob/living/silicon/robot/A = target
@@ -362,7 +358,7 @@
 				plastic.add_charge(2000)
 		else if(istype(W,/obj/item/weapon/light))
 			var/obj/item/weapon/light/L = W
-			if(L.status >= 2) //In before someone changes the inexplicably local defines. ~ Z
+			if(L.status >= 2)
 				if(metal)
 					metal.add_charge(250)
 				if(glass)
@@ -464,4 +460,4 @@
 
 	dat += resources
 
-	src << browse(dat, "window=robotmod")
+	show_browser(src, dat, "window=robotmod")

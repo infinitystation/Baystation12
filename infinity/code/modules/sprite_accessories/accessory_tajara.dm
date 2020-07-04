@@ -61,10 +61,6 @@
 	name = "Tajara Ribbons"
 	icon_state = "hair_ribbons"
 
-/datum/sprite_accessory/hair/taj/ears_earrings
-	name = "Tajara Earrings"
-	icon_state = "hair_earrings"
-
 /datum/sprite_accessory/hair/taj/ears_combedback
 	name = "Tajara Combedback"
 	icon_state = "hair_combedback"
@@ -72,10 +68,6 @@
 /datum/sprite_accessory/hair/taj/ears_tailedbangs
 	name = "Tajara Tailedbangs"
 	icon_state = "hair_tailedbangs"
-
-/datum/sprite_accessory/hair/taj/ears_lynx
-	name = "Tajara Lynx"
-	icon_state = "hair_lynx"
 
 /datum/sprite_accessory/hair/taj/ears_longtail
 	name = "Tajara Longtail"
@@ -104,6 +96,98 @@
 /datum/sprite_accessory/hair/taj/ears_dreadlocks
 	name = "Tajara Dreadlocks"
 	icon_state = "hair_dreadlocks"
+
+/datum/sprite_accessory/hair/taj/ears_clean_noear
+	name = "Tajara Clean (No ears)"
+	icon_state = "hair_clean_s_noear"
+
+/datum/sprite_accessory/hair/taj/ears_bangs_noear
+	name = "Tajara Bangs (No ears)"
+	icon_state = "hair_bangs_s_noear"
+
+/datum/sprite_accessory/hair/taj/ears_braid_noear
+	name = "Tajara Braid (No ears)"
+	icon_state = "hair_tbraid_s_noear"
+
+/datum/sprite_accessory/hair/taj/ears_shaggy_noear
+	name = "Tajara Shaggy (No ears)"
+	icon_state = "hair_shaggy_s_noear"
+
+/datum/sprite_accessory/hair/taj/ears_mohawk_noear
+	name = "Tajaran Mohawk (No ears)"
+	icon_state = "hair_mohawk_s_noear"
+
+/datum/sprite_accessory/hair/taj/ears_plait_noear
+	name = "Tajara Plait (No ears)"
+	icon_state = "hair_plait_s_noear"
+
+/datum/sprite_accessory/hair/taj/ears_straight_noear
+	name = "Tajara Straight (No ears)"
+	icon_state = "hair_straight_s_noear"
+
+/datum/sprite_accessory/hair/taj/ears_long_noear
+	name = "Tajara Long (No ears)"
+	icon_state = "hair_long_s_noear"
+
+/datum/sprite_accessory/hair/taj/ears_rattail_noear
+	name = "Tajara Rat Tail (No ears)"
+	icon_state = "hair_rattail_s_noear"
+
+/datum/sprite_accessory/hair/taj/ears_spiky_noear
+	name = "Tajara Spiky (No ears)"
+	icon_state = "hair_tajspiky_s_noear"
+
+/datum/sprite_accessory/hair/taj/ears_messy_noear
+	name = "Tajara Messy (No ears)"
+	icon_state = "hair_messy_s_noear"
+
+/datum/sprite_accessory/hair/taj/ears_bob_noear
+	name = "Tajara Bob (No ears)"
+	icon_state = "hair_tbob_s_noear"
+
+/datum/sprite_accessory/hair/taj/ears_sidebraid_noear
+	name = "Tajara Sidebraid (No ears)"
+	icon_state = "hair_sidebraid_s_noear"
+
+/datum/sprite_accessory/hair/taj/ears_ribbons_noear
+	name = "Tajara Ribbons (No ears)"
+	icon_state = "hair_ribbons_s_noear"
+
+/datum/sprite_accessory/hair/taj/ears_combedback_noear
+	name = "Tajara Combedback (No ears)"
+	icon_state = "hair_combedback_s_noear"
+
+/datum/sprite_accessory/hair/taj/ears_tailedbangs_noear
+	name = "Tajara Tailedbangs (No ears)"
+	icon_state = "hair_tailedbangs_s_noear"
+
+/datum/sprite_accessory/hair/taj/ears_longtail_noear
+	name = "Tajara Longtail (No ears)"
+	icon_state = "hair_longtail_s_noear"
+
+/datum/sprite_accessory/hair/taj/ears_shy_noear
+	name = "Tajara Shy (No ears)"
+	icon_state = "hair_shy_s_noear"
+
+/datum/sprite_accessory/hair/taj/ears_ponytail_noear
+	name = "Tajara Ponytail (No ears)"
+	icon_state = "hair_ponytail_s_noear"
+
+/datum/sprite_accessory/hair/taj/ears_overeye_noear
+	name = "Tajara Overeye (No ears)"
+	icon_state = "hair_overeye_s_noear"
+
+/datum/sprite_accessory/hair/taj/ears_tough_noear
+	name = "Tajara Tough (No ears)"
+	icon_state = "hair_tough_s_noear"
+
+/datum/sprite_accessory/hair/taj/ears_cuttail_noear
+	name = "Tajara Cuttail (No ears)"
+	icon_state = "hair_cuttail_s_noear"
+
+/datum/sprite_accessory/hair/taj/ears_dreadlocks_noear
+	name = "Tajara Dreadlocks (No ears)"
+	icon_state = "hair_dreadlocks_s_noear"
 
 // FACIAL
 
@@ -230,6 +314,21 @@
 /datum/sprite_accessory/marking/taj/all
 	name = "All Taj Head (Taj)"
 	icon_state = "taj_all"
+	body_parts = list(BP_HEAD)
+
+/datum/sprite_accessory/marking/taj/earslynx
+	name = "Lynx Ear (Taj)"
+	icon_state = "taj_earsout_lynx"
+	body_parts = list(BP_HEAD)
+
+/datum/sprite_accessory/marking/taj/earsearrings
+	name = "Earrings (Taj)"
+	icon_state = "taj_earrings"
+	body_parts = list(BP_HEAD)
+
+/datum/sprite_accessory/marking/taj/facelynx
+	name = "Lynx cheeks (Taj)"
+	icon_state = "taj_lynxcheeks"
 	body_parts = list(BP_HEAD)
 
 // SKIN

@@ -1,1 +1,0 @@
-#define SPECIES_BIONIC 		"Bionic"

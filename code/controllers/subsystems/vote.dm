@@ -71,10 +71,13 @@ SUBSYSTEM_DEF(vote)
 		var/next_allowed_time = (last_started_time + config.vote_delay)
 		if(next_allowed_time > world.time)
 			return FALSE
-	
+
 	var/datum/vote/new_vote = new vote_type
 	if(!new_vote.setup(creator, automatic))
 		return FALSE
+	if(new_vote.startshow)
+		for(var/mob/M in GLOB.player_list)
+			show_panel(M)
 
 	active_vote = new_vote
 	last_started_time = world.time
@@ -87,7 +90,7 @@ SUBSYSTEM_DEF(vote)
 	voting |= C
 
 	. = list()
-	. += "<html><head><title>Voting Panel</title></head><body>"
+	. += "<html><meta charset=\"UTF-8\"<title>Voting Panel</title></meta><body>"
 	if(active_vote)
 		. += active_vote.interface(C.mob)
 		if(admin)
@@ -126,7 +129,7 @@ SUBSYSTEM_DEF(vote)
 	onclose(user, "vote", src)
 
 /datum/controller/subsystem/vote/proc/close_panel(mob/user)
-	show_browser(user, null, "window=vote")
+	close_browser(user, "window=vote")
 	if(user)
 		voting -= user.client
 

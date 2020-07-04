@@ -4,7 +4,7 @@
 	var/equipment = list()
 	var/spells = list()
 
-/datum/spellbound_type/proc/spawn_servant(var/atom/a, var/mob/master, var/mob/user)
+/datum/spellbound_type/proc/spawn_servant(var/atom/a, var/mob/living/master, var/mob/user)
 	set waitfor = 0
 	var/mob/living/carbon/human/H = new(a)
 	H.ckey = user.ckey
@@ -13,7 +13,7 @@
 	var/obj/item/weapon/implant/translator/natural/I = new()
 	I.implant_in_mob(H, BP_HEAD)
 	if (master.languages.len)
-		var/datum/language/lang = master.languages[1]
+		var/datum/language/lang = master.default_language //INF, WAS: master.languages[1]
 		H.add_language(lang.name)
 		H.set_default_language(lang)
 		I.languages[lang.name] = 1
@@ -111,8 +111,23 @@
 		if("Bear")
 			var/obj/item/clothing/under/under = locate() in equipment
 			var/obj/item/clothing/head/head = locate() in equipment
-			under.armor = list(melee = 60, bullet = 35, laser = 20,energy = 20, bomb = 0, bio = 0, rad = 0) //More armor
-			head.armor = list(melee = 30, bullet = 15, laser = 10,energy = 10, bomb = 0, bio = 0, rad = 0)
+
+			var/datum/extension/armor/A = get_extension(under, /datum/extension/armor)
+			if(A)
+				A.armor_values = list(
+					melee = ARMOR_MELEE_VERY_HIGH, 
+					bullet = ARMOR_BALLISTIC_PISTOL, 
+					laser = ARMOR_LASER_SMALL, 
+					energy = ARMOR_ENERGY_SMALL
+					) //More armor
+			A = get_extension(head, /datum/extension/armor)
+			if(A)
+				A.armor_values = list(
+					melee = ARMOR_MELEE_RESISTANT, 
+					bullet = ARMOR_BALLISTIC_MINOR, 
+					laser = ARMOR_LASER_MINOR, 
+					energy = ARMOR_ENERGY_MINOR
+					)
 			familiar_type = /mob/living/simple_animal/hostile/bear
 	var/spell/targeted/shapeshift/familiar/F = new()
 	F.possible_transformations = list(familiar_type)
@@ -158,7 +173,7 @@
 					/obj/item/clothing/shoes/dress/infilshoes = slot_shoes)
 		spells += /spell/toggle_armor/infiltrator/fem
 	..()
-
+/*
 /datum/spellbound_type/servant/overseer
 	name = "Overseer"
 	desc = "A ghost, or an imaginary friend; the Overseer is immune to space and can turn invisible at a whim, but has little offensive capabilities."
@@ -175,7 +190,7 @@
 /datum/spellbound_type/servant/overseer/equip_servant(var/mob/living/carbon/human/H)
 	..()
 	H.add_aura(new /obj/aura/regenerating(H))
-
+*/
 /obj/effect/cleanable/spellbound
 	name = "strange rune"
 	desc = "some sort of runic symbol drawn in... crayon?"
@@ -258,7 +273,7 @@
 			if(turfs.len)
 				src.visible_message("<span class='notice'>\The [src] vanishes!</span>")
 				src.forceMove(pick(turfs))
-	show_browser(user, null, "window=summoning")
+	close_browser(user, "window=summoning")
 	qdel(src)
 
 /obj/item/weapon/summoning_stone/OnTopic(user, href_list, state)

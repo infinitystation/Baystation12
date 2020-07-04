@@ -8,7 +8,8 @@
 	var/heartbeat = 0
 	var/beat_sound = 'sound/effects/singlebeat.ogg'
 	var/tmp/next_blood_squirt = 0
-	relative_size = 15
+	damage_reduction = 0.7
+	relative_size = 5
 	max_damage = 45
 	var/open
 	var/list/external_pump
@@ -38,20 +39,20 @@
 	..()
 
 /obj/item/organ/internal/heart/proc/handle_pulse()
-	if(BP_IS_ROBOTIC(src))
+	if(BP_IS_ROBOTIC(src) || owner.stat == DEAD) //inf
 		pulse = PULSE_NONE	//that's it, you're dead (or your metal heart is), nothing can influence your pulse
 		return
 
 	// pulse mod starts out as just the chemical effect amount
 	var/pulse_mod = owner.chem_effects[CE_PULSE]
 	var/is_stable = owner.chem_effects[CE_STABLE]
-		
+
 	// If you have enough heart chemicals to be over 2, you're likely to take extra damage.
 	if(pulse_mod > 2 && !is_stable)
 		var/damage_chance = (pulse_mod - 2) ** 2
 		if(prob(damage_chance))
 			take_internal_damage(0.5)
-	
+
 	// Now pulse mod is impacted by shock stage and other things too
 	if(owner.shock_stage > 30)
 		pulse_mod++
@@ -174,8 +175,10 @@
 				SPAN_DANGER("Blood sprays out from \the [owner]'s [spray_organ]!"),
 				FONT_HUGE(SPAN_DANGER("Blood sprays out from your [spray_organ]!"))
 			)
-			owner.Stun(1)
+			//inf owner.Stun(1)
 			owner.eye_blurry = 2
+
+			playsound(owner, 'infinity/sound/effects/gore/blood_splat.ogg', 100, 0, -2) // inf-dev
 
 			//AB occurs every heartbeat, this only throttles the visible effect
 			next_blood_squirt = world.time + 80

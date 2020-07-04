@@ -1,4 +1,4 @@
-/obj/machinery/door/proc/crush()
+/obj/machinery/door/blast/proc/crush()
 	for(var/mob/living/L in get_turf(src))
 		if(ishuman(L)) //For humans
 			var/mob/living/carbon/human/H = L
@@ -6,12 +6,11 @@
 			H.Weaken(5)
 			if(H.can_feel_pain())
 				H.emote("scream")
+		else if(istype(L, /mob/living/exosuit))
+			L.apply_damage((DOOR_CRUSH_DAMAGE / 2), BRUTE)
 		else //for simple_animals & borgs
 			L.adjustBruteLoss(DOOR_CRUSH_DAMAGE)
-	for(var/obj/mecha/M in get_turf(src))
-		M.take_damage(DOOR_CRUSH_DAMAGE)
 
-//??? ???? ???
 /obj/machinery/door/blast/regular/admin/ex_act()
 	return
 

@@ -1,4 +1,4 @@
-
+/* see infinity/code/game/verbs/who.dm
 /client/verb/who()
 	set name = "Who"
 	set category = "OOC"
@@ -7,15 +7,7 @@
 
 	var/list/Lines = list()
 
-	var/living = 0
-	var/dead = 0
-	var/observers = 0
-	var/lobby = 0
-	var/living_antags = 0
-	var/dead_antags = 0
-
 	if(check_rights(R_INVESTIGATE, 0))
-		log_admin("[key_name(usr)] checked advanced who in-round.")
 		for(var/client/C in GLOB.clients)
 			var/entry = "\t[C.key]"
 			if(!C.mob) //If mob is null, print error and skip rest of info for client.
@@ -23,85 +15,49 @@
 				Lines += entry
 				continue
 
-			if(isghost(C.mob))
-				entry += " - <font color='gray'><b>Observing</b></font> as <b>[C.mob.real_name]</b>"
-			else if(isliving(C.mob))
-				entry += " - <font color='green'><b>Playing</b></font> as <b>[C.mob.real_name]</b>"
-
+			entry += " - Playing as [C.mob.real_name]"
 			switch(C.mob.stat)
 				if(UNCONSCIOUS)
-					entry += " - <font color='#404040'><b>Unconscious</b></font>"
-					living++
+					entry += " - <font color='darkgray'><b>Unconscious</b></font>"
 				if(DEAD)
 					if(isghost(C.mob))
 						var/mob/observer/ghost/O = C.mob
 						if(O.started_as_observer)
-							observers++
+							entry += " - <font color='gray'>Observing</font>"
 						else
-							entry += " - <b>DEAD</b>"
-							dead++
-					else if(isnewplayer(C.mob))
-						entry += " - <font color='#006400'><b>In lobby</b></font>"
-						lobby++
+							entry += " - <font color='black'><b>DEAD</b></font>"
 					else
-						entry += " - <b>DEAD</b>"
-						dead++
-				else
-					living++
+						entry += " - <font color='black'><b>DEAD</b></font>"
 
+			var/age
 			if(isnum(C.player_age))
-				var/age = C.player_age
+				age = C.player_age
+			else
+				age = 0
 
-				if(age <= 1)
-					age = "<font color='#ff0000'><b>[age]</b></font>"
-				else if(age < 10)
-					age = "<font color='#ff8c00'><b>[age]</b></font>"
+			if(age <= 1)
+				age = "<font color='#ff0000'><b>[age]</b></font>"
+			else if(age < 10)
+				age = "<font color='#ff8c00'><b>[age]</b></font>"
 
-				entry += " - [age]"
+			entry += " - [age]"
 
 			if(is_special_character(C.mob))
 				entry += " - <b><font color='red'>Antagonist</font></b>"
-				if(!C.mob.mind.current || C.mob.mind.current?.stat == DEAD)
-					dead_antags++
-				else
-					living_antags++
-
 			if(C.is_afk())
-				entry += " - <b>AFK: [C.inactivity2text()]</b>"
+				entry += " (AFK - [C.inactivity2text()])"
 			entry += " (<A HREF='?_src_=holder;adminmoreinfo=\ref[C.mob]'>?</A>)"
 			Lines += entry
 	else
 		for(var/client/C in GLOB.clients)
 			if(!C.is_stealthed())
-				var/entry = "[C.key]"
-				switch(C.mob.stat)
-					if(DEAD)
-						if(isghost(C.mob))
-							var/mob/observer/ghost/O = C.mob
-							if(O.started_as_observer)
-								entry += " - <font color='gray'><b>Observing</b></font>"
-							else
-								entry += " - <font color='green'><b>Playing</b></font>"
-						else if(isnewplayer(C.mob))
-							entry += " - <font color='#006400'><b>In Lobby</b></font>"
-					else
-						entry += " - <font color='green'><b>Playing</b></font>"
-
-				if(C.is_afk())
-					entry += " - <b>AFK: [C.inactivity2text()]</b>"
-
-				Lines += entry
+				Lines += C.key
 
 	for(var/line in sortList(Lines))
 		msg += "[line]\n"
 
-	if(check_rights(R_INVESTIGATE, 0))
-		msg += "<b><font color='green'>Total Living: [living]</font> | Total Dead: [dead] | <font color='gray'>Observing: [observers]</font> | <font color='#006400'>In Lobby: [lobby]</font> | <font color='#8100aa'>Living Antags: [living_antags]</font> | <font color='#9b0000'>Dead Antags: [dead_antags]</font></b>\n"
-		msg += "<b>Total Players: [length(Lines)]</b>"
-		to_chat(src, msg)
-	else
-		msg += "<b>Total Players: [length(Lines)]</b>"
-		to_chat(src, msg)
+	msg += "<b>Total Players: [length(Lines)]</b>"
+	to_chat(src, msg)
 
 /client/verb/staffwho()
 	set category = "Admin"
@@ -152,3 +108,4 @@
 		to_chat(src, "<span class='info'>Adminhelps are also sent to IRC. If no admins are available in game try anyway and an admin on IRC may see it and respond.</span>")
 	to_chat(src, "<b>Current Staff ([active_staff]/[total_staff]):</b>")
 	to_chat(src, jointext(msg,"\n"))
+*/

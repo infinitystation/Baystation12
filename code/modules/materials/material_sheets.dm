@@ -15,7 +15,6 @@
 	var/material/reinf_material
 	var/perunit = SHEET_MATERIAL_AMOUNT
 	var/material_flags = USE_MATERIAL_COLOR|USE_MATERIAL_SINGULAR_NAME|USE_MATERIAL_PLURAL_NAME
-	var/plural_name
 	var/matter_multiplier = 1
 
 /obj/item/stack/material/Initialize(mapload, var/amount, var/_material, var/_reinf_material)
@@ -30,7 +29,7 @@
 	if(default_reinf_type)
 		reinf_material = SSmaterials.get_material_by_name(default_reinf_type)
 	base_state = icon_state
-	
+
 	if(!stacktype)
 		stacktype = material.stack_type
 	if(islist(material.stack_origin_tech))
@@ -48,7 +47,7 @@
 	if(!material)
 		return
 	recipes = material.get_recipes(reinf_material && reinf_material.name)
-	..() 
+	..()
 
 /obj/item/stack/material/get_codex_value()
 	return (material && !material.hidden_from_codex) ? "[lowertext(material.display_name)] (material)" : ..()
@@ -76,7 +75,7 @@
 
 	if(material_flags & USE_MATERIAL_PLURAL_NAME)
 		plural_name = material.sheet_plural_name
-	
+
 	if(amount>1)
 		SetName("[material.use_name] [plural_name]")
 		desc = "A stack of [material.use_name] [plural_name]."
@@ -383,19 +382,6 @@
 	icon_state = "refined"
 	default_type = "refscrap"
 
-/obj/item/stack/material/titanium
-	name = "titanium"
-	icon = 'icons/obj/items_inf.dmi'
-	icon_state = "sheet-titanium"
-	item_state = "sheet-metal"
-	default_type = "titanium"
-
-/obj/item/stack/material/titanium/ten
-	amount = 10
-
-/obj/item/stack/material/titanium/fifty
-	amount = 50
-
 /obj/item/stack/material/wood
 	name = "wooden plank"
 	icon_state = "sheet-wood"
@@ -459,6 +445,16 @@
 /obj/item/stack/material/wood/bamboo/fifty
 	amount = 50
 
+/obj/item/stack/material/wood/yew
+	name = "yew plank"
+	default_type = MATERIAL_YEW
+
+/obj/item/stack/material/wood/yew/ten
+	amount = 10
+
+/obj/item/stack/material/wood/yew/twentyfive
+	amount = 25
+
 /obj/item/stack/material/cloth
 	name = "cloth"
 	icon_state = "sheet-cloth"
@@ -482,7 +478,7 @@
 	name = "leather"
 	desc = "The by-product of mob grinding."
 	icon_state = "sheet-leather"
-	default_type = MATERIAL_LEATHER
+	default_type = MATERIAL_LEATHER_GENERIC
 	material_flags = USE_MATERIAL_SINGULAR_NAME|USE_MATERIAL_PLURAL_NAME
 
 /obj/item/stack/material/glass
@@ -493,7 +489,7 @@
 	default_type = MATERIAL_GLASS
 
 /obj/item/stack/material/glass/on_update_icon()
-	if(reinf_material) 
+	if(reinf_material)
 		icon_state = "sheet-glass-reinf"
 		base_state = icon_state
 		plural_icon_state = "sheet-glass-reinf-mult"
@@ -555,3 +551,18 @@
 /obj/item/stack/material/generic/Initialize()
 	. = ..()
 	if(material) color = material.icon_colour
+
+/obj/item/stack/material/generic/skin
+	icon_state = "skin"
+	plural_icon_state = "skin-mult"
+	max_icon_state = "skin-max"
+
+/obj/item/stack/material/generic/bone
+	icon_state = "bone"
+	plural_icon_state = "bone-mult"
+	max_icon_state = "bone-max"
+
+/obj/item/stack/material/generic/brick
+	icon_state = "brick"
+	plural_icon_state = "brick-mult"
+	max_icon_state = "brick-max"

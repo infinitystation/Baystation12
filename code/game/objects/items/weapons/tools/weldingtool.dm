@@ -1,7 +1,7 @@
 /obj/item/weapon/weldingtool
 	name = "welding tool"
 	icon = 'icons/obj/tools.dmi'
-	icon_state = "welder_m"
+	icon_state = "welder"
 	item_state = "welder"
 	desc = "A portable welding gun with a port for attaching fuel tanks."
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
@@ -21,8 +21,8 @@
 	var/welding_resource = "welding fuel"
 	var/obj/item/weapon/welder_tank/tank = /obj/item/weapon/welder_tank // where the fuel is stored
 
-	var/activate_sound = 'sound/items/WelderActivate.ogg'
-	var/deactivate_sound = 'sound/items/WelderDeactivate.ogg'
+	var/activate_sound = 'infinity/sound/items/WelderActivate.ogg'
+	var/deactivate_sound = 'infinity/sound/items/WelderDeactivate.ogg'
 
 /obj/item/weapon/weldingtool/Initialize()
 	if(ispath(tank))
@@ -30,7 +30,7 @@
 		w_class = tank.size_in_use
 		force = tank.unlit_force
 
-	set_extension(src, /datum/extension/base_icon_state, /datum/extension/base_icon_state, icon_state)
+	set_extension(src, /datum/extension/base_icon_state, icon_state)
 	update_icon()
 
 	. = ..()
@@ -43,14 +43,12 @@
 
 	return ..()
 
-/obj/item/weapon/weldingtool/examine(mob/user)
-	var/near = ..(user, 0)
-	if (istype(src, /obj/item/weapon/weldingtool/electric))
-		return near
+/obj/item/weapon/weldingtool/examine(mob/user, distance)
+	. = ..()
 	if (!tank)
 		to_chat(user, "There is no [welding_resource] source attached.")
 	else
-		to_chat(user, (near ? "It has [get_fuel()] [welding_resource] remaining. " : "") + "[tank] is attached.")
+		to_chat(user, (distance <= 1 ? "It has [get_fuel()] [welding_resource] remaining. " : "") + "[tank] is attached.")
 
 /obj/item/weapon/weldingtool/MouseDrop(atom/over)
 	if(!CanMouseDrop(over, usr))
@@ -179,6 +177,8 @@
 		burn_fuel(amount)
 		if(M)
 			M.welding_eyecheck()//located in mob_helpers.dm
+			set_light(0.7, 2, 5, l_color = COLOR_LIGHT_CYAN)
+			addtimer(CALLBACK(src, /atom/proc/update_icon), 5)
 		return 1
 	else
 		if(M)
@@ -219,7 +219,14 @@
 
 /obj/item/weapon/weldingtool/on_update_icon()
 	..()
-	icon_state = "welder" + (tank ? "_" + tank.icon_state : "") + (welding ? "_on" : "")
+	overlays.Cut()
+	if(tank)
+		overlays += image('icons/obj/tools.dmi', "welder_[tank.icon_state]")
+	if(welding)
+		overlays += image('icons/obj/tools.dmi', "welder_on")
+		set_light(0.6, 0.5, 2.5, l_color =COLOR_PALE_ORANGE)
+	else
+		set_light(0)
 	item_state = welding ? "welder1" : "welder"
 	var/mob/M = loc
 	if(istype(M))

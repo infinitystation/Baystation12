@@ -1,21 +1,24 @@
 var/create_object_html = null
-var/list/create_object_forms = list(/obj, /obj/structure, /obj/machinery, /obj/effect, /obj/item, /obj/mecha, /obj/item/weapon, /obj/item/clothing, /obj/item/stack, /obj/item/device, /obj/item/weapon/reagent_containers, /obj/item/weapon/gun)
-
+//[inf]
+GLOBAL_VAR_INIT(create_object_forms, list(
+/obj, /obj/structure, /obj/machinery, /obj/effect, /obj/item,
+/obj/item/weapon, /obj/item/clothing, /obj/item/stack,
+/obj/item/device, /obj/item/weapon/reagent_containers, /obj/item/weapon/gun, /obj/prefab))
+//[/inf]
 /datum/admins/proc/create_object(var/mob/user)
 	if (!create_object_html)
-		var/objectjs = null
+		var/objectjs = GLOB.create_object_forms //inf@WAS: var/objectjs = null
 		objectjs = jointext(typesof(/obj), ";")
 		create_object_html = file2text('html/create_object.html')
 		create_object_html = replacetext(create_object_html, "null /* object types */", "\"[objectjs]\"")
 
-	user << browse(replacetext(create_object_html, "/* ref src */", "\ref[src]"), "window=create_object;size=425x475")
+	show_browser(user, replacetext(create_object_html, "/* ref src */", "\ref[src]"), "window=create_object;size=425x580") //INF
+
 
 /datum/admins/proc/quick_create_object(var/mob/user)
-	var/path = input("Select the path of the object you wish to create.", "Path", /obj) in create_object_forms
-	var/html_form = create_object_forms[path]
-
 
 	var/quick_create_object_html = null
+	var/path = input("Select the path of the object you wish to create.", "Path", /obj) as null|anything in GLOB.create_object_forms // inf
 	if(!path)
 		return
 
@@ -25,4 +28,4 @@ var/list/create_object_forms = list(/obj, /obj/structure, /obj/machinery, /obj/e
 		quick_create_object_html = file2text('html/create_object.html')
 		quick_create_object_html = replacetext(quick_create_object_html, "null /* object types */", "\"[objectjs]\"")
 
-	user << browse(replacetext(html_form, "/* ref src */", "\ref[src]"), "window=qco[path];size=425x475")
+	show_browser(user, replacetext(quick_create_object_html, "/* ref src */", "\ref[src]"), "window=quick_create_object;size=425x570") //INF

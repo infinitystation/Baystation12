@@ -128,7 +128,7 @@
 /turf/simulated/mineral,
 /area/mine/explored)
 "aT" = (
-/obj/effect/overmap/sector/orb,
+/obj/effect/overmap/visitable/sector/orb,
 /turf/simulated/wall/alium,
 /area/mine/explored)
 "aU" = (
@@ -220,10 +220,6 @@
 /area/space)
 "bg" = (
 /obj/effect/shuttle_landmark/orb/nav1,
-/turf/space,
-/area/space)
-"bi" = (
-/obj/effect/landmark/random_gen/asteroid,
 /turf/space,
 /area/space)
 "cf" = (
@@ -364,7 +360,7 @@
 /area/mine/unexplored)
 "SY" = (
 /obj/structure/fountain,
-/mob/living/simple_animal/parrot/space,
+/mob/living/simple_animal/hostile/retaliate/parrot/space,
 /turf/simulated/floor/airless/stone,
 /area/mine/explored)
 "TP" = (
@@ -572,7 +568,7 @@ aa
 aa
 aa
 aa
-bi
+aa
 "}
 (2,1,1) = {"
 aa

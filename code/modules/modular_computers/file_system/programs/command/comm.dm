@@ -46,11 +46,11 @@
 	var/list/data = host.initial_data()
 
 	if(program)
-		data["emagged"] = program.computer_emagged
 		data["net_comms"] = !!program.get_signal(NTNET_COMMUNICATION) //Double !! is needed to get 1 or 0 answer
 		data["net_syscont"] = !!program.get_signal(NTNET_SYSTEMCONTROL)
 		if(program.computer)
-			data["have_printer"] = !!program.computer.nano_printer
+			data["emagged"] = program.computer.emagged()
+			data["have_printer"] =  program.computer.has_component(PART_PRINTER)
 		else
 			data["have_printer"] = 0
 	else
@@ -140,15 +140,12 @@
 				if(announcment_cooldown)
 					to_chat(usr, "Please allow at least one minute to pass between announcements")
 					return TRUE
-				var/input = input(usr, "Please write a message to announce to the [station_name()].", "Priority Announcement") as null|text
+				var/input = input(usr, "Please write a message to announce to the [station_name()].", "Priority Announcement") as null|message
 				if(!input || !can_still_topic())
 					return 1
-				var/affected_zlevels = GLOB.using_map.contact_levels
-				var/atom/A = host
-				if(istype(A))
-					affected_zlevels = GetConnectedZlevels(A.z)
+				var/affected_zlevels = GetConnectedZlevels(get_host_z())
 				crew_announcement.Announce(input, zlevels = affected_zlevels)
-				ntnet_global.add_log("***[program.computer.network_card.get_network_tag()] make announcement.***")
+				ntnet_global.add_log("***[program.computer.get_network_tag()] make announcement.***")
 				announcment_cooldown = 1
 				spawn(600)//One minute cooldown
 					announcment_cooldown = 0
@@ -156,7 +153,7 @@
 			. = 1
 			if(href_list["target"] == "emagged")
 				if(program)
-					if(is_autenthicated(user) && program.computer_emagged && !issilicon(usr) && ntn_comm)
+					if(is_autenthicated(user) && program.computer.emagged() && !issilicon(usr) && ntn_comm)
 						if(centcomm_message_cooldown)
 							to_chat(usr, "<span class='warning'>Arrays recycling. Please stand by.</span>")
 							SSnano.update_uis(src)
@@ -185,7 +182,7 @@
 					Centcomm_announce(input, usr)
 					to_chat(usr, "<span class='notice'>Message transmitted.</span>")
 					log_say("[key_name(usr)] has made an IA [GLOB.using_map.boss_short] announcement: [input]")
-					ntnet_global.add_log("***[program.computer.network_card.get_network_tag()] send emergency message.***")
+					ntnet_global.add_log("***[program.computer.get_network_tag()] send emergency message.***")
 					centcomm_message_cooldown = 1
 					spawn(300) //30 second cooldown
 						centcomm_message_cooldown = 0
@@ -202,7 +199,7 @@
 				var/confirm = alert("Are you sure you want to [selected_evac_option.option_desc]?", name, "No", "Yes")
 				if (confirm == "Yes" && can_still_topic())
 					evacuation_controller.handle_evac_option(selected_evac_option.option_target, user)
-					ntnet_global.add_log("***[program.computer.network_card.get_network_tag()] [selected_evac_option.option_desc]***")
+					ntnet_global.add_log("***[program.computer.get_network_tag()] [selected_evac_option.option_desc]***")
 		if("setstatus")
 			. = 1
 			if(is_autenthicated(user) && ntn_cont)
@@ -246,26 +243,23 @@
 		if("delmessage")
 			. = 1
 			if(is_autenthicated(user) && ntn_comm && l != global_message_listener)
-				ntnet_global.add_log("***[program.computer.network_card.get_network_tag()] deleted [current_viewing_message]***")
+				ntnet_global.add_log("***[program.computer.get_network_tag()] deleted [current_viewing_message]***")
 				l.Remove(current_viewing_message)
 			current_status = STATE_MESSAGELIST
 
 		if("printmessage")
 			. = 1
 			if(is_autenthicated(user) && ntn_comm)
-				if(program && program.computer && program.computer.nano_printer)
-					if(!program.computer.nano_printer.print_text(current_viewing_message["contents"],current_viewing_message["title"]))
-						to_chat(usr, "<span class='notice'>Hardware Error: Printer was unable to print the selected file.</span>")
-					else
-						program.computer.visible_message("<span class='notice'>\The [program.computer] prints out a paper.</span>")
+				if(!program.computer.print_paper(current_viewing_message["contents"],current_viewing_message["title"]))
+					to_chat(usr, "<span class='notice'>Hardware Error: Printer was unable to print the selected file.</span>")
 		if("unbolt_doors")
 			GLOB.using_map.unbolt_saferooms()
 			to_chat(usr, "<span class='notice'>The console beeps, confirming the signal was sent to have the saferooms unbolted.</span>")
-			ntnet_global.add_log("***[program.computer.network_card.get_network_tag()] unbolted saferooms.***")
+			ntnet_global.add_log("***[program.computer.get_network_tag()] unbolted saferooms.***")
 		if("bolt_doors")
 			GLOB.using_map.bolt_saferooms()
 			to_chat(usr, "<span class='notice'>The console beeps, confirming the signal was sent to have the saferooms bolted.</span>")
-			ntnet_global.add_log("***[program.computer.network_card.get_network_tag()] bolted saferooms.***")
+			ntnet_global.add_log("***[program.computer.get_network_tag()] bolted saferooms.***")
 
 #undef STATE_DEFAULT
 #undef STATE_MESSAGELIST
@@ -314,7 +308,6 @@ var/last_message_id = 0
 	if(!frequency) return
 
 	var/datum/signal/status_signal = new
-	status_signal.source = src
 	status_signal.transmission_method = 1
 	status_signal.data["command"] = command
 
@@ -322,19 +315,18 @@ var/last_message_id = 0
 		if("message")
 			status_signal.data["msg1"] = data1
 			status_signal.data["msg2"] = data2
-			log_admin("STATUS: [key_name(usr)] set status screen message with [src]: [data1] [data2]")
+			log_admin("STATUS: [key_name(usr)] set status screen message with: [data1] [data2]")
 		if("image")
 			status_signal.data["picture_state"] = data1
 
-	frequency.post_signal(src, status_signal)
+	frequency.post_signal(signal = status_signal)
 
 /proc/cancel_call_proc(var/mob/user)
 	if (!evacuation_controller)
 		return
 
 	if(evacuation_controller.cancel_evacuation())
-		log_game("[key_name(user)] has cancelled the evacuation.")
-		message_admins("[key_name_admin(user)] has cancelled the evacuation.", 1)
+		log_and_message_admins("has cancelled the evacuation.", user)
 
 	return
 

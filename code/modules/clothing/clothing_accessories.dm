@@ -50,10 +50,16 @@
 
 	if (usr.incapacitated())
 		return
-
-	if (!usr.unEquip(src))
-		return
-
+	if(!undress_do_affter_needed)//inf
+		if (!usr.unEquip(src))
+			return
+//[INF]
+	else
+		usr.visible_message(SPAN_NOTICE("[usr.name] started to undress the [src.name]."), SPAN_NOTICE("You started to undress the [src.name]."))
+		if(do_after(usr, 4 SECONDS))
+			if(!usr.unEquip(src))
+				return
+//[/INF]
 	switch(over_object.name)
 		if("r_hand")
 			usr.put_in_r_hand(src)
@@ -61,8 +67,8 @@
 			usr.put_in_l_hand(src)
 	src.add_fingerprint(usr)
 
-/obj/item/clothing/examine(var/mob/user)
-	. = ..(user)
+/obj/item/clothing/examine(mob/user)
+	. = ..()
 	for(var/obj/item/clothing/accessory/A in accessories)
 		to_chat(user, "\icon[A] \A [A] is attached to it.")
 	switch(ironed_state)

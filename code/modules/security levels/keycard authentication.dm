@@ -18,6 +18,8 @@
 	idle_power_usage = 2
 	active_power_usage = 6
 	power_channel = ENVIRON
+	var/list/isounds = list("card_swipe" = 'infinity/sound/SS2/effects/machines/keycard.wav', "access_deny" = 'infinity/sound/SS2/effects/machines/access_needed.wav') //inf
+	var/last_activation = 0 //inf
 
 /obj/machinery/keycard_auth/attack_ai(mob/user as mob)
 	to_chat(user, "<span class='warning'>A firewall prevents you from interfacing with this device!</span>")
@@ -27,9 +29,11 @@
 	if(stat & (NOPOWER|BROKEN))
 		to_chat(user, "This device is not powered.")
 		return
-	if(istype(W,/obj/item/weapon/card/id))
+	if(istype(W,/obj/item/weapon/card/id) && last_activation + 2 SECONDS < world.time) //inf //was: if(istype(W,/obj/item/weapon/card/id))
+		last_activation = world.time//inf
 		var/obj/item/weapon/card/id/ID = W
 		if(access_keycard_auth in ID.access)
+			playsound(src, sound(isounds["card_swipe"]))//inf
 			if(active == 1)
 				//This is not the device that made the initial request. It is the device confirming the request.
 				if(event_source && event_source.event_triggered_by != usr)
@@ -40,22 +44,21 @@
 			else if(screen == 2)
 				event_triggered_by = usr
 				broadcast_request() //This is the device making the initial event request. It needs to broadcast to other devices
+		else playsound(src, sound(isounds["access_deny"])) //inf
 
 //icon_state gets set everwhere besides here, that needs to be fixed sometime
 /obj/machinery/keycard_auth/on_update_icon()
 	if(stat &NOPOWER)
 		icon_state = "auth_off"
 
-/obj/machinery/keycard_auth/attack_hand(mob/user as mob)
-	if(stat & (NOPOWER|BROKEN))
-		to_chat(user, "This device is not powered.")
-		return
-	if(!user.IsAdvancedToolUser())
-		return 0
+/obj/machinery/keycard_auth/interface_interact(mob/user)
 	if(busy)
 		to_chat(user, "This device is busy.")
-		return
+		return TRUE
+	interact(user)
+	return TRUE
 
+/obj/machinery/keycard_auth/interact(mob/user)
 	user.set_machine(src)
 
 	var/dat = "<h1>Keycard Authentication Device</h1>"
@@ -82,11 +85,11 @@
 		dat += "<li><A href='?src=\ref[src];triggerevent=Revoke Emergency Maintenance Access'>Revoke Emergency Maintenance Access</A></li>"
 		dat += "<li><A href='?src=\ref[src];triggerevent=Grant Nuclear Authorization Code'>Grant Nuclear Authorization Code</A></li>"
 		dat += "</ul>"
-		user << browse(dat, "window=keycard_auth;size=500x250")
+		show_browser(user, dat, "window=keycard_auth;size=500x250")
 	if(screen == 2)
 		dat += "Please swipe your card to authorize the following event: <b>[event]</b>"
 		dat += "<p><A href='?src=\ref[src];reset=1'>Back</A>"
-		user << browse(dat, "window=keycard_auth;size=500x250")
+		show_browser(user, dat, "window=keycard_auth;size=500x250")
 	return
 
 /obj/machinery/keycard_auth/CanUseTopic(var/mob/user, href_list)
@@ -132,8 +135,7 @@
 	if(confirmed)
 		confirmed = 0
 		trigger_event(event)
-		log_game("[key_name(event_triggered_by)] triggered and [key_name(event_confirmed_by)] confirmed event [event]")
-		message_admins("[key_name(event_triggered_by)] triggered and [key_name(event_confirmed_by)] confirmed event [event]", 1)
+		log_and_message_admins("triggered and [key_name(event_confirmed_by)] confirmed event [event]", event_triggered_by || usr)
 	reset()
 
 /obj/machinery/keycard_auth/proc/receive_request(var/obj/machinery/keycard_auth/source)

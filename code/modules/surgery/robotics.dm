@@ -8,8 +8,10 @@
 //////////////////////////////////////////////////////////////////
 /decl/surgery_step/robotics
 	can_infect = 0
-	core_skill = SKILL_DEVICES
 	surgery_candidate_flags = SURGERY_NO_CRYSTAL | SURGERY_NO_FLESH | SURGERY_NO_STUMP
+
+decl/surgery_step/robotics/get_skill_reqs(mob/living/user, mob/living/carbon/human/target, obj/item/tool)
+	return SURGERY_SKILLS_ROBOTIC
 
 /decl/surgery_step/robotics/assess_bodypart(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = ..()
@@ -204,7 +206,8 @@
 				return FALSE
 		if(istype(tool, /obj/item/weapon/gun/energy/plasmacutter))
 			var/obj/item/weapon/gun/energy/plasmacutter/cutter = tool
-			cutter.slice(user)
+			if(!cutter.slice(user))
+				return FALSE
 		return TRUE
 	return FALSE
 
@@ -339,7 +342,13 @@
 	)
 	min_duration = 70
 	max_duration = 90
-	surgery_candidate_flags = SURGERY_NO_CRYSTAL | SURGERY_NO_STUMP
+	surgery_candidate_flags = SURGERY_NO_STUMP
+
+/decl/surgery_step/robotics/fix_organ_robotic/get_skill_reqs(mob/living/user, mob/living/carbon/human/target, obj/item/tool)
+	if(target.isSynthetic())
+		return SURGERY_SKILLS_ROBOTIC
+	else
+		return SURGERY_SKILLS_ROBOTIC_ON_MEAT
 
 /decl/surgery_step/robotics/fix_organ_robotic/assess_bodypart(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = ..()
@@ -401,7 +410,15 @@
 	if(!LAZYLEN(attached_organs))
 		to_chat(user, SPAN_WARNING("There are no appropriate internal components to decouple."))
 		return FALSE
-	var/organ_to_remove = input(user, "Which organ do you want to prepare for removal?") as null|anything in attached_organs
+//	var/organ_to_remove = input(user, "Which organ do you want to prepare for removal?") as null|anything in attached_organs
+//[INF]
+	var/list/options = list()
+	for(var/i in attached_organs)
+		var/obj/item/organ/I = target.internal_organs_by_name[i]
+		options[i] = image(icon = I.icon, icon_state = I.icon_state)
+	var/organ_to_remove
+	organ_to_remove = show_radial_menu(user, target, options, radius = 32, require_near = TRUE)
+//[/INF]
 	if(organ_to_remove)
 		return organ_to_remove
 
@@ -537,13 +554,12 @@
 /decl/surgery_step/internal/remove_organ/robotic
 	name = "Remove robotic component"
 	can_infect = 0
-	core_skill = SKILL_DEVICES
 	surgery_candidate_flags = SURGERY_NO_CRYSTAL | SURGERY_NO_FLESH | SURGERY_NO_STUMP | SURGERY_NEEDS_ENCASEMENT
 
 /decl/surgery_step/internal/replace_organ/robotic
 	name = "Replace robotic component"
 	can_infect = 0
-	core_skill = SKILL_DEVICES
+	robotic_surgery = TRUE
 	surgery_candidate_flags = SURGERY_NO_CRYSTAL | SURGERY_NO_FLESH | SURGERY_NO_STUMP | SURGERY_NEEDS_ENCASEMENT
 
 /decl/surgery_step/remove_mmi
@@ -556,8 +572,10 @@
 		/obj/item/weapon/material/kitchen/utensil/fork = 20
 	)
 	can_infect = 0
-	core_skill = SKILL_DEVICES
 	surgery_candidate_flags = SURGERY_NO_CRYSTAL | SURGERY_NO_FLESH | SURGERY_NO_STUMP | SURGERY_NEEDS_ENCASEMENT
+
+/decl/surgery_step/remove_mmi/get_skill_reqs(mob/living/user, mob/living/carbon/human/target, obj/item/tool)
+	return SURGERY_SKILLS_ROBOTIC
 
 /decl/surgery_step/remove_mmi/assess_bodypart(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = ..()

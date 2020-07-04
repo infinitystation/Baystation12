@@ -1,18 +1,18 @@
 #include "tajsciship_areas.dm"
 #include "tajsciship_shuttles.dm"
 #include "tajsciship_equipment.dm"
-#include "tajsciship-1.dmm"
 
 /datum/map_template/ruin/away_site/tajsciship
-	name = "CCA NSV Ir'Shira-13"
+	name = "AEV Ir'Shira"
 	id = "awaysite_taj_sciship"
 	description = "A CCA EC scouting station."
 	suffixes = list("tajsc/tajsciship-1.dmm")
-	cost = 5555 //nu tipa chtobi poka ne vipadala hdd a tak 0.5
-	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/tajscishuttle)
+	cost = 0
+	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/tajscishuttle, /obj/effect/overmap/visitable/ship/tajsciship)
 	prefix = "map/away_inf/"
+	template_flags = TEMPLATE_FLAG_SPAWN_GUARANTEED
 
-/obj/effect/overmap/sector/tajscispace
+/obj/effect/overmap/visitable/sector/tajscispace
 	name = "Abnormal sector"
 	desc = "Slight traces of a bluespace are present. Dangerous place."
 	in_space = 1
@@ -44,7 +44,7 @@
 	req_access = list(access_tajsciship)
 	shuttle_tag = "CCA EC Shuttle"
 
-/var/const/access_tajsciship = "access_tajsciship"
+/var/const/access_tajsciship = "ACCESS_TAJSCISHIP"
 /datum/access/tajsciship
 	id = access_tajsciship
 	desc = "CCA NSV Ir'Shira-13 EC"
@@ -82,7 +82,7 @@
 	pda_type = /obj/item/modular_computer/pda
 	pda_slot = slot_l_store
 	id_type = /obj/item/weapon/card/id/tajsciship
-	uniform = /obj/item/clothing/under/tajsciship/ccaecjumpsuit
+	uniform = /obj/item/clothing/under/tajsciship
 	shoes = /obj/item/clothing/shoes/workboots/toeless
 	l_pocket = /obj/item/clothing/accessory/badge/tajamc
 	r_pocket = /obj/item/clothing/accessory/inf_pin/ccapin
@@ -95,7 +95,7 @@
 	pda_slot = slot_l_store
 	id_type = /obj/item/weapon/card/id/tajsciship
 	name = TAJSCISHIP_OUTFIT_JOB_NAME("K-1 Field Commander")
-	uniform = /obj/item/clothing/under/tajsciship/ccaecjumpsuit
+	uniform = /obj/item/clothing/under/tajsciship
 	shoes = /obj/item/clothing/shoes/workboots/toeless
 	l_pocket = /obj/item/clothing/accessory/badge/tajamc
 	r_pocket = /obj/item/clothing/accessory/inf_pin/ccapin

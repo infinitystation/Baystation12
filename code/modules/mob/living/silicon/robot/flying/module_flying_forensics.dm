@@ -5,11 +5,13 @@
 	networks = list(NETWORK_SECURITY)
 	subsystems = list(
 		/datum/nano_module/crew_monitor,
-		/datum/nano_module/digitalwarrant
+		/datum/nano_module/digitalwarrant,
+		/datum/nano_module/records //INF
 	)
 	sprites = list(
 		"Drone" = "drone-sec",
-		"Eyebot" = "eyebot-security"
+		"Eyebot" = "eyebot-security",
+		"Ver 06" = "wer6-Security" //INF
 	)
 	equipment = list(
 		/obj/item/swabber,
@@ -26,6 +28,17 @@
 		/obj/item/weapon/crowbar
 	)
 	emag = /obj/item/weapon/gun/energy/laser/mounted
+	skills = list(
+		SKILL_BUREAUCRACY         = SKILL_PROF,
+		SKILL_COMPUTER            = SKILL_EXPERT,
+		SKILL_FORENSICS           = SKILL_PROF,
+		SKILL_WEAPONS             = SKILL_EXPERT,
+		SKILL_CONSTRUCTION        = SKILL_ADEPT,
+//[INF]
+		SKILL_ANATOMY     = SKILL_EXPERT,
+		SKILL_MEDICAL     = SKILL_EXPERT
+//[/INF]
+	)
 
 /obj/item/weapon/robot_module/flying/forensics/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	var/obj/item/weapon/reagent_containers/spray/luminol/luminol = locate() in equipment

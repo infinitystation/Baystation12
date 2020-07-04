@@ -96,7 +96,7 @@
 	icon_state = "bookMedical"
 	author = "Medical Department"
 	title = "Medical Diagnostics Manual"
-	url = "Руководство_по_медицине"
+	url = "Р СѓРєРѕРІРѕРґСЃС‚РІРѕ_РїРѕ_РјРµРґРёС†РёРЅРµ"
 
 /obj/item/weapon/book/manual/medical_diagnostics_manual/New()
 	..()
@@ -137,3 +137,11 @@
 			</html>
 
 		"}
+
+/obj/item/weapon/book/manual/chemistry_recipes
+	name = "Guide to Medicines & Drugs"
+	desc = "A thick manual of chemistry, formulae and recipes useful for a Chemist."
+	icon_state = "bookChemistry"
+	author = "Zeng-Hu Pharmaceuticals"
+	title = "Guide to Medicines & Drugs"
+	url = "List_of_Medical_Chemicals"

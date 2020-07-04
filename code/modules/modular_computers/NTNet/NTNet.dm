@@ -1,3 +1,4 @@
+//inf//It would be nice to translate it into a list, but it is too large then it would be better to send it to Bey
 var/global/datum/ntnet/ntnet_global = new()
 
 
@@ -14,6 +15,7 @@ var/global/datum/ntnet/ntnet_global = new()
 	var/list/email_accounts = list()				// I guess we won't have more than 999 email accounts active at once in single round, so this will do until Servers are implemented someday.
 	var/list/available_reports = list()             // A list containing one of each available report datums, used for the report editor program.
 	var/list/banned_nids = list()
+	var/list/registered_nids = list()				// list of nid - os datum pairs
 	// Amount of logs the system tries to keep in memory. Keep below 999 to prevent byond from acting weirdly.
 	// High values make displaying logs much laggier.
 	var/setting_maxlogcount = 100
@@ -27,6 +29,7 @@ var/global/datum/ntnet/ntnet_global = new()
 
 	var/intrusion_detection_enabled = 1 		// Whether the IDS warning system is enabled
 	var/intrusion_detection_alarm = 0			// Set when there is an IDS warning due to malicious (antag) software.
+	var/airlock_override_key = "" //inf
 
 
 // If new NTNet datum is spawned, it replaces the old one.
@@ -40,14 +43,15 @@ var/global/datum/ntnet/ntnet_global = new()
 	build_news_list()
 	build_emails_list()
 	build_reports_list()
+	airlock_override_key = GenerateCode()//inf
 	add_log("NTNet logging system activated.")
 
-/datum/ntnet/proc/add_log_with_ids_check(var/log_string, var/obj/item/weapon/computer_hardware/network_card/source = null)
+/datum/ntnet/proc/add_log_with_ids_check(var/log_string, var/obj/item/weapon/stock_parts/computer/network_card/source = null)
 	if(intrusion_detection_enabled)
 		add_log(log_string, source)
 
 // Simplified logging: Adds a log. log_string is mandatory parameter, source is optional.
-/datum/ntnet/proc/add_log(var/log_string, var/obj/item/weapon/computer_hardware/network_card/source = null)
+/datum/ntnet/proc/add_log(var/log_string, var/obj/item/weapon/stock_parts/computer/network_card/source = null)
 	var/log_text = "[stationtime2text()] - "
 	if(source)
 		log_text += "[source.get_network_tag()] - "
@@ -64,10 +68,24 @@ var/global/datum/ntnet/ntnet_global = new()
 			else
 				break
 
-/datum/ntnet/proc/get_computer_by_nid(var/NID)
-	for(var/obj/item/modular_computer/comp in SSobj.processing)
-		if(comp && comp.network_card && comp.network_card.identification_id == NID)
-			return comp
+	for(var/obj/machinery/ntnet_relay/R in ntnet_global.relays)
+		var/obj/item/weapon/stock_parts/computer/hard_drive/portable/P = R.get_component_of_type(/obj/item/weapon/stock_parts/computer/hard_drive/portable)
+		if(P)
+			var/datum/computer_file/data/logfile/file = P.find_file_by_name("ntnet_log")
+			if(!istype(file))
+				file = new()
+				file.filename = "ntnet_log"
+				P.store_file(file)
+			file.stored_data += log_text + "\[br\]"
+
+/datum/ntnet/proc/get_os_by_nid(var/NID)
+	return registered_nids["[NID]"]
+
+/datum/ntnet/proc/register(var/NID, var/datum/extension/interactive/ntos/os)
+	registered_nids["[NID]"] = os
+
+/datum/ntnet/proc/unregister(var/NID)
+	registered_nids -= "[NID]"
 
 /datum/ntnet/proc/check_banned(var/NID)
 	if(!relays || !relays.len)
@@ -80,6 +98,7 @@ var/global/datum/ntnet/ntnet_global = new()
 	return FALSE
 
 // Checks whether NTNet operates. If parameter is passed checks whether specific function is enabled.
+//inf//todo: relocate settings in relay
 /datum/ntnet/proc/check_function(var/specific_action = 0)
 	if(!relays || !relays.len) // No relays found. NTNet is down
 		return 0
@@ -225,7 +244,7 @@ var/global/datum/ntnet/ntnet_global = new()
 	add_log("Email address changed for [user]: [old_login] changed to [new_login]")
 	if(user.mind)
 		user.mind.initial_email_login["login"] = new_login
-		user.mind.store_memory("Your email account address has been changed to [new_login].")
+		user.StoreMemory("Your email account address has been changed to [new_login].", /decl/memory_options/system)
 	if(issilicon(user))
 		var/mob/living/silicon/S = user
 		var/datum/nano_module/email_client/my_client = S.get_subsystem_from_path(/datum/nano_module/email_client)
@@ -243,14 +262,14 @@ var/global/datum/ntnet/ntnet_global = new()
 	// If even fallback login generation failed, just don't give them an email. The chance of this happening is astronomically low.
 	if(find_email_by_name(login))
 		to_chat(user, "You were not assigned an email address.")
-		user.mind.store_memory("You were not assigned an email address.")
+		user.StoreMemory("You were not assigned an email address.", /decl/memory_options/system)
 	else
 		var/datum/computer_file/data/email_account/EA = new/datum/computer_file/data/email_account(login, user.real_name, assignment)
 		EA.password = GenerateKey()
 		if(user.mind)
 			user.mind.initial_email_login["login"] = EA.login
 			user.mind.initial_email_login["password"] = EA.password
-			user.mind.store_memory("Your email account address is [EA.login] and the password is [EA.password].")
+			user.StoreMemory("Адрес Вашего почтового аккаунта <b>[EA.login]</b>, а его пароль <b>[EA.password]</b>.<br>", /decl/memory_options/system)
 		if(issilicon(user))
 			var/mob/living/silicon/S = user
 			var/datum/nano_module/email_client/my_client = S.get_subsystem_from_path(/datum/nano_module/email_client)
@@ -266,3 +285,10 @@ var/global/datum/ntnet/ntnet_global = new()
 		ntnet_global.create_email(src, newname, domain)
 	else
 		ntnet_global.rename_email(src, old_email, newname, domain)
+
+//[inf]
+/datum/ntnet/proc/GenerateCode()
+	var/Key = pick(GLOB.greek_letters)
+	Key += "[rand(1,99)]"
+	return Key
+//[/inf]

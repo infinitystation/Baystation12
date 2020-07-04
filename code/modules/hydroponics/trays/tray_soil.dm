@@ -4,6 +4,7 @@
 	icon_state = "soil"
 	density = 0
 	use_power = POWER_USE_OFF
+	stat_immune = NOINPUT | NOSCREEN | NOPOWER
 	mechanical = 0
 	tray_light = 0
 
@@ -58,7 +59,7 @@
 	if(living_observers_present(connected_zlevels))
 		return ..()
 
-/obj/machinery/portable_atmospherics/hydroponics/soil/invisible/remove_dead()
+/obj/machinery/portable_atmospherics/hydroponics/soil/invisible/remove_dead(mob/user, silent)
 	..()
 	qdel(src)
 

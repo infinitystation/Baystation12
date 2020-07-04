@@ -54,7 +54,7 @@
 
 /datum/reagent/ammonia/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien == IS_VOX)
-		M.adjustOxyLoss(-removed * 10)
+		M.add_chemical_effect(CE_OXYGENATED, 2)
 	else if(alien != IS_DIONA)
 		M.adjustToxLoss(removed * 1.5)
 
@@ -105,8 +105,10 @@
 	taste_description = "pure alcohol"
 	reagent_state = LIQUID
 	color = "#404030"
+	alpha = 180
 	touch_met = 5
 	var/nutriment_factor = 0
+	var/hydration_factor = 0
 	var/strength = 10 // This is, essentially, units between stages - the lower, the stronger. Less fine tuning, more clarity.
 	var/toxicity = 1
 
@@ -128,7 +130,8 @@
 	return
 
 /datum/reagent/ethanol/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
-	M.nutrition += nutriment_factor * removed
+	M.adjust_nutrition(nutriment_factor * removed)
+	M.adjust_hydration(hydration_factor * removed)
 	var/strength_mod = 1
 	if(alien == IS_SKRELL)
 		strength_mod *= 5
@@ -283,19 +286,6 @@
 
 /datum/reagent/radium/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	M.apply_damage(10 * removed, IRRADIATE, armor_pen = 100) // Radium may increase your chances to cure a disease
-	if(M.virus2.len)
-		for(var/ID in M.virus2)
-			var/datum/disease2/disease/V = M.virus2[ID]
-			if(prob(5))
-				M.antibodies |= V.antigen
-				if(prob(50))
-					M.apply_damage(50, IRRADIATE, armor_pen = 100) // curing it that way may kill you instead
-					var/absorbed = 0
-					var/obj/item/organ/internal/diona/nutrients/rad_organ = locate() in M.internal_organs
-					if(rad_organ && !rad_organ.is_broken())
-						absorbed = 1
-					if(!absorbed)
-						M.adjustToxLoss(100)
 
 /datum/reagent/radium/touch_turf(var/turf/T)
 	if(volume >= 3)
@@ -306,7 +296,7 @@
 			return
 
 /datum/reagent/acid
-	name = "Sulphuric acid"
+	name = "Sulphuric Acid"
 	description = "A very corrosive mineral acid with the molecular formula H2SO4."
 	taste_description = "acid"
 	reagent_state = LIQUID
@@ -432,7 +422,7 @@
 	value = DISPENSER_REAGENT_VALUE
 
 /datum/reagent/sugar/affect_blood(var/mob/living/carbon/human/M, var/alien, var/removed)
-	M.nutrition += removed * 3
+	M.adjust_nutrition(removed * 3)
 
 	if(alien == IS_UNATHI)
 		var/datum/species/unathi/S = M.species

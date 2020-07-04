@@ -22,6 +22,8 @@
 	var/material_alteration = MATERIAL_ALTERATION_ALL
 	var/buckling_sound = 'sound/effects/buckle.ogg'
 
+	var/base_icon_file = 'icons/obj/furniture.dmi' //INF
+
 /obj/structure/bed/New(newloc, new_material = DEFAULT_FURNITURE_MATERIAL, new_padding_material)
 	..(newloc)
 	color = null
@@ -44,7 +46,8 @@
 	// Base icon.
 	var/cache_key = "[base_icon]-[material.name]"
 	if(isnull(stool_cache[cache_key]))
-		var/image/I = image('icons/obj/furniture.dmi', base_icon)
+//INF		var/image/I = image('icons/obj/furniture.dmi', base_icon)
+		var/image/I = image(base_icon_file, base_icon) //INF
 		if(material_alteration & MATERIAL_ALTERATION_COLOR)
 			I.color = material.icon_colour
 		stool_cache[cache_key] = I
@@ -175,17 +178,10 @@
 	base_icon = "psychbed"
 
 /obj/structure/bed/psych/New(var/newloc)
-	..(newloc,MATERIAL_WOOD, MATERIAL_LEATHER)
+	..(newloc,MATERIAL_WALNUT, MATERIAL_LEATHER_GENERIC)
 
 /obj/structure/bed/padded/New(var/newloc)
-	..(newloc,MATERIAL_ALUMINIUM,MATERIAL_COTTON)
-
-/obj/structure/bed/alien
-	name = "resting contraption"
-	desc = "This looks similar to contraptions from earth. Could aliens be stealing our technology?"
-
-/obj/structure/bed/alien/New(var/newloc)
-	..(newloc,MATERIAL_RESIN)
+	..(newloc,MATERIAL_ALUMINIUM,MATERIAL_CLOTH)
 
 /*
  * Roller beds
@@ -195,7 +191,7 @@
 	icon = 'icons/obj/rollerbed.dmi'
 	icon_state = "down"
 	anchored = 0
-	buckle_pixel_shift = "x=0;y=6"
+	buckle_pixel_shift = "x=0;y=0;z=6"
 	var/item_form_type = /obj/item/roller	//The folded-up object path.
 	var/obj/item/weapon/reagent_containers/beaker
 	var/iv_attached = 0
@@ -252,11 +248,11 @@
 		if(iv_attached)
 			detach_iv(M, usr)
 		queue_icon_update()
-		
+
 /obj/structure/bed/roller/Process()
 	if(!iv_attached || !buckled_mob || !beaker)
 		return PROCESS_KILL
-	
+
 	//SSObj fires twice as fast as SSMobs, so gotta slow down to not OD our victims.
 	if(SSobj.times_fired % 2)
 		return
@@ -264,7 +260,7 @@
 	if(beaker.volume > 0)
 		beaker.reagents.trans_to_mob(buckled_mob, beaker.amount_per_transfer_from_this, CHEM_BLOOD)
 		queue_icon_update()
-		
+
 /obj/structure/bed/roller/proc/remove_beaker(mob/user)
 	to_chat(user, "You detach \the [beaker] to \the [src].")
 	iv_attached = FALSE
@@ -300,7 +296,7 @@
 		if(user_buckle_mob(over_object, usr))
 			attach_iv(buckled_mob, usr)
 			return
-	if(beaker) 
+	if(beaker)
 		remove_beaker(usr)
 		return
 	if(buckled_mob)	return

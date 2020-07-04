@@ -6,6 +6,7 @@
 	item_flags = ITEM_FLAG_NO_BLUDGEON
 	matter = list(MATERIAL_ALUMINIUM = 200)
 	origin_tech = list(TECH_MAGNET = 1, TECH_BIO = 1)
+	printout_color = "#deebff"
 	var/mode = 1
 
 /obj/item/device/scanner/health/is_valid_scan_target(atom/O)
@@ -28,10 +29,8 @@
 
 	var/mob/living/carbon/human/scan_subject = null
 	if (istype(target, /mob/living/carbon/human))
-		user.visible_message("<span class='notice'>\The [user] runs \the [scanner] over \the [target].</span>")
 		scan_subject = target
 	else if (istype(target, /obj/structure/closet/body_bag))
-		user.visible_message("<span class='notice'>\The [user] runs \the [scanner] over \the [target].</span>")
 		var/obj/structure/closet/body_bag/B = target
 		if(!B.opened)
 			var/list/scan_content = list()
@@ -47,7 +46,8 @@
 			else
 				to_chat(user, "\The [scanner] does not detect anyone inside \the [target].")
 				return
-	else
+
+	if(!scan_subject)
 		return
 
 	if (scan_subject.isSynthetic())
@@ -55,7 +55,9 @@
 		return
 
 	. = medical_scan_results(scan_subject, verbose, user.get_skill_value(SKILL_MEDICAL))
-	to_chat(user, "<hr>[.]<hr>")
+	to_chat(user, "<hr>")
+	to_chat(user, .)
+	to_chat(user, "<hr>")
 
 /proc/medical_scan_results(var/mob/living/carbon/human/H, var/verbose, var/skill_level = SKILL_DEFAULT)
 	. = list()
@@ -89,7 +91,7 @@
 			else
 				if(skill_level < SKILL_BASIC)
 					brain_result = "there's movement on the graph"
-				else
+				else if(istype(brain))
 					switch(brain.get_current_damage_threshold())
 						if(0)
 							brain_result = "normal"
@@ -103,6 +105,8 @@
 							brain_result = "<span class='scan_danger'>fading</span>"
 						else
 							brain_result = "<span class='scan_danger'>ERROR - Hardware fault</span>"
+				else
+					brain_result = "<span class='scan_danger'>ERROR - Organ not recognized</span>"
 	else
 		brain_result = "<span class='scan_danger'>ERROR - Nonstandard biology</span>"
 	dat += "Brain activity: [brain_result]."
@@ -286,13 +290,6 @@
 				chemtraces += "[initial(R.name)] ([H.chem_doses[T]])"
 		if(chemtraces.len)
 			. += "<span class='scan_notice'>Metabolism products of [english_list(chemtraces)] found in subject's system.</span>"
-
-	if(H.virus2.len)
-		for (var/ID in H.virus2)
-			if (ID in virusDB)
-				print_reagent_default_message = FALSE
-				var/datum/computer_file/data/virus_record/V = virusDB[ID]
-				. += "<span class='scan_warning'>Warning: Pathogen [V.fields["name"]] detected in subject's blood. Known antigen : [V.fields["antigen"]]</span>"
 
 	if(print_reagent_default_message)
 		. += "No results."

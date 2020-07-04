@@ -30,7 +30,7 @@
 	name = "Captain's room"
 	icon_state = "cpt"
 
-/obj/effect/overmap/ship/salvage
+/obj/effect/overmap/visitable/ship/salvage
 	name = "PSV Pancake"
 	fore_dir = WEST
 	vessel_mass = 10
@@ -103,7 +103,7 @@
 	range = 3
 	ceiling_type = /turf/space
 
-/obj/effect/overmap/ship/landable/salvage
+/obj/effect/overmap/visitable/ship/landable/salvage
 	name = "Salvage shuttle"
 	shuttle = "Salvage shuttle"
 	fore_dir = SOUTH
@@ -285,10 +285,10 @@
 	required_access = access_salvage
 	requires_ntnet = 0
 
-/obj/item/modular_computer/console/preset/merchant/salvage/install_default_programs()
+/obj/machinery/computer/modular/preset/merchant/salvage/install_default_programs()
 	hard_drive.store_file(new/datum/computer_file/program/merchant/salvage())
 	hard_drive.store_file(new/datum/computer_file/program/wordprocessor())
 
 /obj/item/weapon/paper/salvage_pacman
 	name = "note"
-	info = "П.А.К.М.А.Н. включать на второю мощность. Хватает для питания корабля, и не выделяет радиацию."
+	info = "Рџ.Рђ.Рљ.Рњ.Рђ.Рќ. РІРєР»СЋС‡Р°С‚СЊ РЅР° РІС‚РѕСЂРѕСЋ РјРѕС‰РЅРѕСЃС‚СЊ. РҐРІР°С‚Р°РµС‚ РґР»СЏ РїРёС‚Р°РЅРёСЏ РєРѕСЂР°Р±Р»СЏ, Рё РЅРµ РІС‹РґРµР»СЏРµС‚ СЂР°РґРёР°С†РёСЋ."

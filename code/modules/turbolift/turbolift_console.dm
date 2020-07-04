@@ -4,7 +4,6 @@
 	icon = 'icons/obj/turbolift.dmi'
 	anchored = 1
 	density = 0
-	plane = OBJ_PLANE
 	layer = ABOVE_OBJ_LAYER
 
 	var/datum/turbolift/lift
@@ -56,6 +55,7 @@
 	icon_state = "button"
 	var/light_up = FALSE
 	var/datum/turbolift_floor/floor
+	mouse_opacity = 2 //No more eyestrain aiming at tiny pixels
 
 /obj/structure/lift/button/Destroy()
 	if(floor && floor.ext_panel == src)
@@ -70,6 +70,7 @@
 /obj/structure/lift/button/interact(var/mob/user)
 	if(!..())
 		return
+	playsound(src, 'infinity/sound/SS2/effects/buttons/butelev.wav', 50)//inf
 	light_up()
 	pressed(user)
 	if(floor == lift.current_floor)
@@ -95,6 +96,7 @@
 /obj/structure/lift/panel
 	name = "elevator control panel"
 	icon_state = "panel"
+	mouse_opacity = 2 //No more eyestrain aiming at tiny pixels
 
 
 /obj/structure/lift/panel/attack_ghost(var/mob/user)
@@ -132,6 +134,7 @@
 /obj/structure/lift/panel/OnTopic(user, href_list)
 	if(href_list["move_to_floor"])
 		lift.queue_move_to(locate(href_list["move_to_floor"]))
+		playsound(src, 'infinity/sound/SS2/effects/buttons/butelev.wav', 50)//inf
 		. = TOPIC_REFRESH
 	if(href_list["open_doors"])
 		lift.open_doors()

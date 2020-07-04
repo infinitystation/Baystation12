@@ -393,7 +393,7 @@ Checks if a list has the same entries and values as an element of big.
 
 //Don't use this on lists larger than half a dozen or so
 /proc/insertion_sort_numeric_list_ascending(var/list/L)
-	//world.log << "ascending len input: [L.len]"
+	//to_world_log("ascending len input: [L.len]")
 	var/list/out = list(pop(L))
 	for(var/entry in L)
 		if(isnum(entry))
@@ -406,13 +406,13 @@ Checks if a list has the same entries and values as an element of big.
 			if(!success)
 				out.Add(entry)
 
-	//world.log << "	output: [out.len]"
+	//to_world_log("output: [out.len]")
 	return out
 
 /proc/insertion_sort_numeric_list_descending(var/list/L)
-	//world.log << "descending len input: [L.len]"
+	//to_world_log("descending len input: [L.len]")
 	var/list/out = insertion_sort_numeric_list_ascending(L)
-	//world.log << "	output: [out.len]"
+	//to_world_log("output: [out.len]")
 	return reverselist(out)
 
 
@@ -619,13 +619,13 @@ proc/dd_sortedTextList(list/incoming)
 	return "[src]"
 
 /obj/machinery/dd_SortValue()
-	return "[sanitize_old(name)]"
+	return "[name]"
 
 /obj/machinery/camera/dd_SortValue()
 	return "[c_tag]"
 
 /datum/alarm/dd_SortValue()
-	return "[sanitize_old(last_name)]"
+	return "[last_name]"
 
 //creates every subtype of prototype (excluding prototype) and adds it to list L.
 //if no list/L is provided, one is created.
@@ -750,6 +750,13 @@ proc/dd_sortedTextList(list/incoming)
 		if(ispath(T, key))
 			return key
 
+// Gets the first instance that is of the given type (strictly)
+/proc/get_instance_of_strict_type(var/list/L, var/T)
+	for(var/key in L)
+		var/atom/A = key
+		if(A.type == T)
+			return A
+//[INF]
 //Like typesof() or subtypesof(), but returns a typecache instead of a list
 /proc/typecacheof(path, ignore_root_path, only_root_path = FALSE)
 	if(ispath(path))
@@ -784,3 +791,4 @@ proc/dd_sortedTextList(list/incoming)
 
 		return 0
 	return L[A.type]
+//[/INF]

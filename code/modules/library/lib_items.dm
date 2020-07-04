@@ -99,11 +99,12 @@
 
 	New()
 		..()
+		new /obj/item/weapon/book/manual/medical_cloning(src)
 		new /obj/item/weapon/book/manual/medical_diagnostics_manual(src)
 		new /obj/item/weapon/book/manual/medical_diagnostics_manual(src)
 		new /obj/item/weapon/book/manual/medical_diagnostics_manual(src)
-		new /obj/item/weapon/book/manual/materials_chemistry_analysis(src)
-		new /obj/item/weapon/book/manual/stasis(src)
+		new /obj/item/weapon/book/manual/chemistry_recipes(src)
+		new /obj/item/weapon/book/manual/stasis(src)//inf
 		update_icon()
 
 
@@ -119,9 +120,10 @@
 		new /obj/item/weapon/book/manual/atmospipes(src)
 		new /obj/item/weapon/book/manual/engineering_singularity_safety(src)
 		new /obj/item/weapon/book/manual/evaguide(src)
-		new /obj/item/weapon/book/manual/gravitygenerator(src)
-		new /obj/item/weapon/book/manual/supermatter_engine(src)
 		new /obj/item/weapon/book/manual/rust_engine(src)
+
+		new /obj/item/weapon/book/manual/gravitygenerator(src)//inf
+		new /obj/item/weapon/book/manual/supermatter_engine(src)//inf
 		update_icon()
 
 /obj/structure/bookcase/manuals/research_and_development
@@ -169,15 +171,15 @@
 			to_chat(user, "<span class='notice'>The pages of [title] have been cut out!</span>")
 			return
 	if(src.dat)
-		user << browse(dat, "window=book;size=1000x550")
+		show_browser(user, dat, "window=book;size=1000x550")
 		user.visible_message("[user] opens a book titled \"[src.title]\" and begins reading intently.")
-		message_admins("[key_name_admin(user)]<A HREF='?_src_=holder;adminmoreinfo=\ref[user]'>?</A> (<A HREF='?_src_=holder;adminplayerobservefollow=\ref[user]'>FLW</A>) прочитал(а) книгу [name]/[title].")
-		log_game("[user.ckey]/[user.real_name] прочитал(а) книгу [name]/[title].")
+		message_admins("[key_name_admin(user)]<A HREF='?_src_=holder;adminmoreinfo=\ref[user]'>?</A> (<A HREF='?_src_=holder;adminplayerobservefollow=\ref[user]'>FLW</A>) РїСЂРѕС‡РёС‚Р°Р»(Р°) РєРЅРёРіСѓ [name]/[title].")
+		log_game("[user.ckey]/[user.real_name] РїСЂРѕС‡РёС‚Р°Р»(Р°) РєРЅРёРіСѓ [name]/[title].")
 		onclose(user, "book")
-		playsound(src.loc, pick('sound/items/BOOK_Turn_Page_1.ogg',\
-			'sound/items/BOOK_Turn_Page_2.ogg',\
-			'sound/items/BOOK_Turn_Page_3.ogg',\
-			'sound/items/BOOK_Turn_Page_4.ogg',\
+		playsound(src.loc, pick('infinity/sound/items/BOOK_Turn_Page_1.ogg',\
+			'infinity/sound/items/BOOK_Turn_Page_2.ogg',\
+			'infinity/sound/items/BOOK_Turn_Page_3.ogg',\
+			'infinity/sound/items/BOOK_Turn_Page_4.ogg',\
  			), rand(40,80), 1)
 	else
 		to_chat(user, "This book is completely blank!")
@@ -241,7 +243,7 @@
 	if(user.zone_sel.selecting == BP_EYES)
 		user.visible_message("<span class='notice'>You open up the book and show it to [M]. </span>", \
 			"<span class='notice'> [user] opens up a book and shows it to [M]. </span>")
-		M << browse("<i>Author: [author].</i><br><br>" + "[dat]", "window=book;size=1000x550")
+		show_browser(M, "<i>Author: [author].</i><br><br>" + "[dat]", "window=book;size=1000x550")
 		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN) //to prevent spam
 
 /*

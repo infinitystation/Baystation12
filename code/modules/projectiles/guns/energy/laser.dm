@@ -5,14 +5,17 @@
 	icon_state = "laser"
 	item_state = "laser"
 	slot_flags = SLOT_BELT|SLOT_BACK
-	w_class = ITEM_SIZE_LARGE
 	force = 10
-	one_hand_penalty = 2
-	bulk = GUN_BULK_RIFLE
 	origin_tech = list(TECH_COMBAT = 3, TECH_MAGNET = 2)
 	matter = list(MATERIAL_STEEL = 2000)
 	projectile_type = /obj/item/projectile/beam/midlaser
 	wielded_item_state = "laser-wielded"
+
+	bulk = GUN_BULK_CARABINE
+	w_class = ITEM_SIZE_LARGE
+	one_hand_penalty = 2
+	s_gun = "G40E"
+	is_serial = 1
 
 /obj/item/weapon/gun/energy/laser/mounted
 	self_recharge = 1
@@ -26,6 +29,7 @@
 	icon_state = "laserp"
 	projectile_type = /obj/item/projectile/beam/practice
 	charge_cost = 10 //How much energy is needed to fire.
+	is_serial = 0
 
 /obj/item/weapon/gun/energy/laser/practice/proc/hacked()
 	return projectile_type != /obj/item/projectile/beam/practice
@@ -56,9 +60,13 @@ obj/item/weapon/gun/energy/retro
 	item_state = "retro"
 	desc = "An older model of the basic lasergun. Nevertheless, it is still quite deadly and easy to maintain, making it a favorite amongst pirates and other outlaws."
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
-	w_class = ITEM_SIZE_NORMAL
 	projectile_type = /obj/item/projectile/beam
 	fire_delay = 15 //old technology, and a pistol
+
+	bulk = GUN_BULK_REVOLVER
+	w_class = ITEM_SIZE_NORMAL
+	s_gun = "G21E"
+	is_serial = 1
 
 /obj/item/weapon/gun/energy/captain
 	name = "antique laser gun"
@@ -68,12 +76,14 @@ obj/item/weapon/gun/energy/retro
 	desc = "A rare weapon, handcrafted by a now defunct specialty manufacturer on Luna for a small fortune. It's certainly aged well."
 	force = 5
 	slot_flags = SLOT_BELT //too unusually shaped to fit in a holster
-	w_class = ITEM_SIZE_NORMAL
 	projectile_type = /obj/item/projectile/beam
 	origin_tech = null
 	max_shots = 5 //to compensate a bit for self-recharging
-	one_hand_penalty = 1 //a little bulky
 	self_recharge = 1
+
+	w_class = ITEM_SIZE_NORMAL
+	bulk = GUN_BULK_REVOLVER //inf
+	one_hand_penalty = 1 //a little bulky
 
 /obj/item/weapon/gun/energy/lasercannon
 	name = "expermental laser cannon"
@@ -83,14 +93,18 @@ obj/item/weapon/gun/energy/retro
 	item_state = null
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3, TECH_POWER = 3)
 	slot_flags = SLOT_BELT|SLOT_BACK
-	one_hand_penalty = 6 //large and heavy
-	w_class = ITEM_SIZE_HUGE
 	projectile_type = /obj/item/projectile/beam/heavylaser
 	charge_cost = 40
 	max_shots = 6
-	accuracy = 2
 	fire_delay = 20
 	wielded_item_state = "gun_wielded"
+
+//	accuracy = 2
+	one_hand_penalty = 6 //large and heavy
+	bulk = GUN_BULK_MACHINEGUN
+	w_class = ITEM_SIZE_HUGE
+	is_serial = 1
+	s_gun = "LC"
 
 /obj/item/weapon/gun/energy/lasercannon/mounted
 	name = "mounted laser cannon"
@@ -108,14 +122,18 @@ obj/item/weapon/gun/energy/retro
 	icon_state = "xray"
 	item_state = "xray"
 	slot_flags = SLOT_BELT|SLOT_BACK
-	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 3, TECH_MAGNET = 2, TECH_ILLEGAL = 2)
+	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 3, TECH_MAGNET = 2, TECH_ESOTERIC = 2)
 	projectile_type = /obj/item/projectile/beam/xray/midlaser
-	one_hand_penalty = 2
-	w_class = ITEM_SIZE_LARGE
 	charge_cost = 15
 	max_shots = 10
 	wielded_item_state = "gun_wielded"
 	combustion = 0
+
+	bulk = GUN_BULK_CARABINE //inf
+	w_class = ITEM_SIZE_LARGE
+	one_hand_penalty = 2
+	s_gun = "G56E"
+	is_serial = 1
 
 /obj/item/weapon/gun/energy/xray/pistol
 	name = "G56E-s x-ray pistol"
@@ -123,11 +141,14 @@ obj/item/weapon/gun/energy/retro
 	icon_state = "oldxray"
 	item_state = "oldxray"
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
-	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3, TECH_MAGNET = 2, TECH_ILLEGAL = 2)
+	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3, TECH_MAGNET = 2, TECH_ESOTERIC = 2)
 	projectile_type = /obj/item/projectile/beam/xray
-	one_hand_penalty = 1
-	w_class = ITEM_SIZE_NORMAL
 	fire_delay = 10
+
+	bulk = GUN_BULK_REVOLVER
+	w_class = ITEM_SIZE_NORMAL
+	one_hand_penalty = 1
+	s_gun = "G56E-S"
 
 /obj/item/weapon/gun/energy/sniperrifle
 	name = "9E marksman energy rifle"
@@ -137,17 +158,21 @@ obj/item/weapon/gun/energy/retro
 	item_state = "laser"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 5, TECH_POWER = 4)
 	projectile_type = /obj/item/projectile/beam/sniper
-	one_hand_penalty = 5 // The weapon itself is heavy, and the long barrel makes it hard to hold steady with just one hand.
 	slot_flags = SLOT_BACK
 	charge_cost = 40
 	max_shots = 4
 	fire_delay = 35
 	force = 10
-	w_class = ITEM_SIZE_HUGE
+	wielded_item_state = "gun_wielded"
+	scope_zoom = 2
+
 	accuracy = -2 //shooting at the hip
 	scoped_accuracy = 9
-	scope_zoom = 2
-	wielded_item_state = "gun_wielded"
+	bulk = GUN_BULK_SNIPER_RIFLE
+	w_class = ITEM_SIZE_HUGE
+	one_hand_penalty = 5 // The weapon itself is heavy, and the long barrel makes it hard to hold steady with just one hand.
+	s_gun = "9E"
+	is_serial = 1
 
 /obj/item/weapon/gun/energy/sniperrifle/on_update_icon()
 	..()

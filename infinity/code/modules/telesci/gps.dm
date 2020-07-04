@@ -1,6 +1,6 @@
-var/list/GPS_list = list()
+GLOBAL_LIST_EMPTY(GPS_list)
 
-var/global/list/gps_by_type = list()
+GLOBAL_LIST_EMPTY(gps_by_type)
 
 /obj/item/device/gps
 	name = "global positioning system"
@@ -18,15 +18,15 @@ var/global/list/gps_by_type = list()
 
 /obj/item/device/gps/Initialize()
 	. = ..()
-	GPS_list += src
-	LAZYADD(gps_by_type["[type]"], src)
-	gpstag = "[gps_prefix][LAZYLEN(gps_by_type["[type]"])]"
+	GLOB.GPS_list += src
+	LAZYADD(GLOB.gps_by_type["[type]"], src)
+	gpstag = "[gps_prefix][LAZYLEN(GLOB.gps_by_type["[type]"])]"
 	name = "global positioning system ([gpstag])"
 	overlays += image(icon, "working")
 
 /obj/item/device/gps/Destroy()
-	GPS_list -= src
-	var/list/typelist = gps_by_type["[type]"]
+	GLOB.GPS_list -= src
+	var/list/typelist = GLOB.gps_by_type["[type]"]
 	LAZYREMOVE(typelist, src)
 	return ..()
 
@@ -44,17 +44,17 @@ var/global/list/gps_by_type = list()
 /obj/item/device/gps/attack_self(mob/user)
 
 	var/obj/item/device/gps/t = ""
-	var/gps_window_height = 110 + GPS_list.len * 20 // Variable window height, depending on how many GPS units there are to show
+	var/gps_window_height = 110 + GLOB.GPS_list.len * 20 // Variable window height, depending on how many GPS units there are to show
 	if(emped)
 		t += "ERROR"
 	else
 		t += "<BR><A href='?src=\ref[src];tag=1'>Set Tag</A> "
 		t += "<BR>Tag: [gpstag]"
-		if(locked_location && locked_location.loc)
+		if(locked_location?.loc)
 			t += "<BR>Bluespace coordinates saved: [locked_location.loc]"
 			gps_window_height += 20
 
-		for(var/obj/item/device/gps/G in GPS_list)
+		for(var/obj/item/device/gps/G in GLOB.GPS_list)
 			var/turf/pos = get_turf(G)
 			var/area/gps_area = get_area(G)
 			var/tracked_gpstag = G.gpstag

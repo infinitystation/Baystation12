@@ -27,7 +27,7 @@
 	else
 		AM.forceMove(loc)
 
-/obj/machinery/scrap/stacking_machine/attack_hand(mob/user)
+/obj/machinery/scrap/stacking_machine/physical_attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

@@ -1,10 +1,3 @@
-// fun if you want to typecast humans/monkeys/etc without writing long path-filled lines.
-/proc/isxenomorph(A)
-	if(istype(A, /mob/living/carbon/human))
-		var/mob/living/carbon/human/H = A
-		return istype(H.species, /datum/species/xenos)
-	return 0
-
 /proc/issmall(A)
 	if(A && istype(A, /mob/living))
 		var/mob/living/L = A
@@ -33,6 +26,10 @@
 		update_emotes()
 	return full_prosthetic
 
+/mob/living/carbon/human/proc/isFBP()
+	return istype(internal_organs_by_name[BP_BRAIN], /obj/item/organ/internal/mmi_holder)
+
+
 /mob/living/silicon/isSynthetic()
 	return 1
 
@@ -60,7 +57,7 @@
 proc/isdeaf(A)
 	if(isliving(A))
 		var/mob/living/M = A
-		return (M.sdisabilities & DEAF) || M.ear_deaf
+		return (M.sdisabilities & DEAFENED) || M.ear_deaf
 	return 0
 
 proc/hasorgans(A) // Fucking really??
@@ -103,25 +100,25 @@ proc/getsensorlevel(A)
 
 //The base miss chance for the different defence zones
 var/list/global/base_miss_chance = list(
-	BP_HEAD = 70,
+	BP_HEAD = 35,
 	BP_CHEST = 10,
 	BP_GROIN = 20,
-	BP_L_LEG = 60,
-	BP_R_LEG = 60,
+	BP_L_LEG = 30,
+	BP_R_LEG = 30,
 	BP_L_ARM = 30,
 	BP_R_ARM = 30,
-	BP_L_HAND = 50,
-	BP_R_HAND = 50,
-	BP_L_FOOT = 70,
-	BP_R_FOOT = 70,
+	BP_L_HAND = 80, //INF was 50
+	BP_R_HAND = 80, //INF was 50
+	BP_L_FOOT = 80, //INF was 50
+	BP_R_FOOT = 80, //INF was 50
 )
 
 //Used to weight organs when an organ is hit randomly (i.e. not a directed, aimed attack).
 //Also used to weight the protection value that armour provides for covering that body part when calculating protection from full-body effects.
 var/list/global/organ_rel_size = list(
-	BP_HEAD = 25,
-	BP_CHEST = 70,
-	BP_GROIN = 30,
+	BP_HEAD = 20,
+	BP_CHEST = 60,
+	BP_GROIN = 40,
 	BP_L_LEG = 25,
 	BP_R_LEG = 25,
 	BP_L_ARM = 25,
@@ -190,14 +187,17 @@ var/list/global/organ_rel_size = list(
 	var/scatter_chance
 	if (zone in base_miss_chance)
 		miss_chance = base_miss_chance[zone]
-	miss_chance = max(miss_chance + miss_chance_mod, 0)
-	scatter_chance = min(95, miss_chance + 60)
+	miss_chance = max(min(miss_chance + miss_chance_mod, 94),0)
+	scatter_chance = min(95, miss_chance + 35)
 	if(prob(miss_chance))
-		if(ranged_attack && prob(scatter_chance))
-			return null
-		else if(prob(70))
-			return null
-		return (ran_zone())
+		if(ranged_attack)
+			if(prob(100 - scatter_chance))
+				return (ran_zone())
+			else
+				return null
+//		else if(prob(70))
+//			return null
+//		return (ran_zone())
 	return zone
 
 //Replaces some of the characters with *, used in whispers. pr = probability of no star.
@@ -211,8 +211,8 @@ var/list/global/organ_rel_size = list(
 	var/intag = 0
 	var/block = list()
 	. = list()
-	for(var/i = 1, i <= length(n), i++)
-		var/char = copytext(n, i, i+1)
+	for(var/i = 1, i <= length_char(n), i++)
+		var/char = copytext_char(n, i, i+1)
 		if(!intag && (char == "<"))
 			intag = 1
 			. += stars_no_html(JOINTEXT(block), pr, re_encode) //stars added here
@@ -229,8 +229,8 @@ var/list/global/organ_rel_size = list(
 /proc/stars_no_html(text, pr, re_encode)
 	text = html_decode(text) //We don't want to screw up escaped characters
 	. = list()
-	for(var/i = 1, i <= length(text), i++)
-		var/char = copytext(text, i, i+1)
+	for(var/i = 1, i <= length_char(text), i++)
+		var/char = copytext_char(text, i, i+1)
 		if(char == " " || prob(pr))
 			. += char
 		else
@@ -241,23 +241,23 @@ var/list/global/organ_rel_size = list(
 
 proc/slur(phrase)
 	phrase = html_decode(phrase)
-	var/leng=lentext(phrase)
-	var/counter=lentext(phrase)
+	var/leng=length_char(phrase)
+	var/counter=length_char(phrase)
 	var/newphrase=""
 	var/newletter=""
 	while(counter>=1)
-		newletter=copytext(phrase,(leng-counter)+1,(leng-counter)+2)
+		newletter=copytext_char(phrase,(leng-counter)+1,(leng-counter)+2)
 		if(rand(1,3)==3)
 			if(lowertext(newletter)=="o")	newletter="u"
 			if(lowertext(newletter)=="s")	newletter="ch"
 			if(lowertext(newletter)=="a")	newletter="ah"
 			if(lowertext(newletter)=="c")	newletter="k"
 
-			if(lowertext(newletter)=="Ó")	newletter="Û"
-			if(lowertext(newletter)=="Ò")	newletter="Á"
-			if(lowertext(newletter)=="‡")	newletter="‡ı"
-			if(lowertext(newletter)=="Ò")	newletter="Í"
-			if(lowertext(newletter)=="˜")	newletter="Á"
+			if(lowertext(newletter)=="–æ")	newletter="—É"
+			if(lowertext(newletter)=="—Å")	newletter="–∑"
+			if(lowertext(newletter)=="–∞")	newletter="–∞—Ö"
+			if(lowertext(newletter)=="—Å")	newletter="–∫"
+			if(lowertext(newletter)=="—á")	newletter="–∑"
 		switch(rand(1,15))
 			if(1,3,5,8)	newletter="[lowertext(newletter)]"
 			if(2,4,6,15)	newletter="[uppertext(newletter)]"
@@ -266,19 +266,21 @@ proc/slur(phrase)
 			//if(11,12)	newletter="<big>[newletter]</big>"
 			//if(13)	newletter="<small>[newletter]</small>"
 		newphrase+="[newletter]";counter-=1
-	return sanitize_a0(newphrase)
+	return newphrase
 
 /proc/stutter(n)
 	var/te = html_decode(n)
 	var/t = ""//placed before the message. Not really sure what it's for.
-	n = length(n)//length of the entire word
+	n = length_char(n)//length of the entire word
 	var/p = null
 	p = 1//1 is the start of any word
 	while(p <= n)//while P, which starts at 1 is less or equal to N which is the length.
-		var/n_letter = copytext(te, p, p + 1)//copies text from a certain distance. In this case, only one letter at a time.
+		var/n_letter = copytext_char(te, p, p + 1)//copies text from a certain distance. In this case, only one letter at a time.
+//[INF]
 		var/list/letters_list = list(
 			"b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z",
-			"·","Ò","‰","Ù","„","˜","Ê","Í","Î","Ú","Ì","","Ú","‚","ı","Û","Á")
+			"–±","—Å","–¥","—Ñ","–≥","—á","–∂","–∫","–ª","—Ç","–Ω","—Ä","—Ç","–≤","—Ö","—É","–∑")
+//[/INF]
 		if (prob(80) && (ckey(n_letter) in letters_list))
 			if (prob(10))
 				n_letter = text("[n_letter]-[n_letter]-[n_letter]-[n_letter]")//replaces the current letter with this instead.
@@ -292,15 +294,15 @@ proc/slur(phrase)
 						n_letter = text("[n_letter]-[n_letter]")
 		t = text("[t][n_letter]")//since the above is ran through for each letter, the text just adds up back to the original word.
 		p++//for each letter p is increased to find where the next letter will be.
-	return sanitize_a0(t)
+	return sanitize(t)
 
 
 proc/Gibberish(t, p)//t is the inputted message, and any value higher than 70 for p will cause letters to be replaced instead of added
 	/* Turn text into complete gibberish! */
 	var/returntext = ""
-	for(var/i = 1, i <= length(t), i++)
+	for(var/i = 1, i <= length_char(t), i++)
 
-		var/letter = copytext(t, i, i+1)
+		var/letter = copytext_char(t, i, i+1)
 		if(prob(50))
 			if(p >= 70)
 				letter = ""
@@ -321,15 +323,15 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 */
 	var/te = html_decode(n)
 	var/t = ""
-	n = length(n)
+	n = length_char(n)
 	var/p = 1
 	while(p <= n)
 		var/n_letter
 		var/n_mod = rand(1,4)
 		if(p+n_mod>n+1)
-			n_letter = copytext(te, p, n+1)
+			n_letter = copytext_char(te, p, n+1)
 		else
-			n_letter = copytext(te, p, p+n_mod)
+			n_letter = copytext_char(te, p, p+n_mod)
 		if (prob(50))
 			if (prob(30))
 				n_letter = text("[n_letter]-[n_letter]-[n_letter]")
@@ -345,6 +347,29 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 /proc/shake_camera(mob/M, duration, strength=1)
 	if(!M || !M.client || M.stat || isEye(M) || isAI(M) || duration <= 0)
 		return
+	M.shakecamera = 1
+	spawn(1)
+		if(!M.client)
+			return
+
+		var/atom/oldeye=M.client.eye
+		var/aiEyeFlag = 0
+		if(istype(oldeye, /mob/observer/eye/aiEye))
+			aiEyeFlag = 1
+
+		var/x
+		for(x=0; x<duration, x++)
+			if(aiEyeFlag)
+				M.client.eye = locate(dd_range(1,oldeye.loc.x+rand(-strength,strength),world.maxx),dd_range(1,oldeye.loc.y+rand(-strength,strength),world.maxy),oldeye.loc.z)
+			else
+				M.client.eye = locate(dd_range(1,M.loc.x+rand(-strength,strength),world.maxx),dd_range(1,M.loc.y+rand(-strength,strength),world.maxy),M.loc.z)
+			sleep(1)
+			if(!M.client)
+				return
+
+		M.client.eye=oldeye
+		M.shakecamera = 0
+/*INF@SAVE4SOMETHING
 	var/client/C = M.client
 	var/oldx = C.pixel_x
 	var/oldy = C.pixel_y
@@ -357,7 +382,7 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 		else
 			animate(pixel_x=rand(min,max), pixel_y=rand(min,max), time=1)
 	animate(pixel_x=oldx, pixel_y=oldy, time=1)
-
+*/
 /proc/findname(msg)
 	for(var/mob/M in SSmobs.mob_list)
 		if (M.real_name == text("[msg]"))
@@ -420,10 +445,10 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 			else
 				hud_used.action_intent.icon_state = I_HELP
 
-proc/is_blind(A)
+/proc/is_blind(A)
 	if(istype(A, /mob/living/carbon))
 		var/mob/living/carbon/C = A
-		if(C.sdisabilities & BLIND || C.blinded)
+		if(C.sdisabilities & BLINDED|| C.blinded)
 			return 1
 	return 0
 
@@ -439,8 +464,7 @@ proc/is_blind(A)
 /proc/broadcast_hud_message(var/message, var/broadcast_source, var/list/targets, var/icon)
 	var/turf/sourceturf = get_turf(broadcast_source)
 	for(var/mob/M in targets)
-		var/turf/targetturf = get_turf(M)
-		if(!sourceturf || (targetturf.z in GetConnectedZlevels(sourceturf.z)))
+		if(!sourceturf || (get_z(M) in GetConnectedZlevels(sourceturf.z)))
 			M.show_message("<span class='info'>\icon[icon] [message]</span>", 1)
 
 /proc/mobs_in_area(var/area/A)
@@ -623,7 +647,8 @@ proc/is_blind(A)
 		client.images -= image
 
 /mob/proc/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /obj/screen/fullscreen/flash)
-	return
+	for(var/mob/M in contents)
+		M.flash_eyes(intensity, override_blindness_check, affect_silicon, visual, type)
 
 /mob/proc/fully_replace_character_name(var/new_name, var/in_depth = TRUE)
 	if(!new_name || new_name == real_name)	return 0
@@ -642,11 +667,11 @@ proc/is_blind(A)
 	return //Only for living/carbon/human/
 
 /mob/living/carbon/human/jittery_damage()
-	var/mob/living/carbon/human/H = src
-	var/obj/item/organ/internal/heart/L = H.internal_organs_by_name[BP_HEART]
-	if(L && istype(L))
-		if(BP_IS_ROBOTIC(L))
-			return 0//Robotic hearts don't get jittery.
+	var/obj/item/organ/internal/heart/L = internal_organs_by_name[BP_HEART]
+	if(!istype(L))
+		return 0
+	if(BP_IS_ROBOTIC(L))
+		return 0//Robotic hearts don't get jittery.
 	if(src.jitteriness >= 400 && prob(5)) //Kills people if they have high jitters.
 		if(prob(1))
 			L.take_internal_damage(L.max_damage / 2, 0)
@@ -679,6 +704,7 @@ proc/is_blind(A)
 	var/attempt = null
 	var/success = 0
 	var/turf/end
+	var/candidates = L.Copy()
 	while(L.len)
 		attempt = pick(L)
 		success = Move(attempt)
@@ -689,7 +715,7 @@ proc/is_blind(A)
 			break
 
 	if(!success)
-		end = pick(L)
+		end = pick(candidates)
 		forceMove(end)
 
 	return end
@@ -726,3 +752,16 @@ proc/is_blind(A)
 
 /mob/proc/unset_sdisability(sdisability)
 	sdisabilities &= ~sdisability
+
+/mob/proc/get_accumulated_vision_handlers()
+	var/result[2]
+	var/asight = 0
+	var/ainvis = 0
+	for(var/atom/vision_handler in additional_vision_handlers)
+		//Grab their flags
+		asight |= vision_handler.additional_sight_flags()
+		ainvis = max(ainvis, vision_handler.additional_see_invisible())
+	result[1] = asight
+	result[2] = ainvis
+
+	return result

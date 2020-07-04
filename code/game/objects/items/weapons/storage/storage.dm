@@ -96,6 +96,8 @@
 	storage_ui.on_open(user)
 	storage_ui.show_to(user)
 
+	animate_storage_rustle(src) //INF
+
 /obj/item/weapon/storage/proc/prepare_ui()
 	storage_ui.prepare_ui()
 
@@ -141,6 +143,10 @@
 			if(!stop_messages && !istype(W, /obj/item/weapon/hand_labeler))
 				to_chat(user, "<span class='notice'>\The [src] has no more space specifically for \the [W].</span>")
 			return 0
+
+	//If attempting to lable the storage item, silently fail to allow it
+	if(istype(W, /obj/item/weapon/hand_labeler) && user.a_intent != I_HELP)
+		return FALSE
 
 	// Don't allow insertion of unsafed compressed matter implants
 	// Since they are sucking something up now, their afterattack will delete the storage
@@ -198,6 +204,8 @@
 				else if (W && W.w_class >= ITEM_SIZE_NORMAL) //Otherwise they can only see large or normal items from a distance...
 					M.show_message("<span class='notice'>\The [usr] puts [W] into [src].</span>", VISIBLE_MESSAGE)
 
+			animate_storage_rustle(src) //INF
+
 		if(!NoUpdate)
 			update_ui_after_item_insertion()
 	update_icon()
@@ -228,6 +236,7 @@
 	else
 		W.reset_plane_and_layer()
 	W.forceMove(new_location)
+	if(usr) animate_storage_rustle(src) //INF
 
 	if(usr && !NoUpdate)
 		update_ui_after_item_removal()
@@ -239,9 +248,13 @@
 	return 1
 
 // Only do ui functions for now; the obj is responsible for anything else.
-/obj/item/weapon/storage/proc/on_item_deletion(obj/item/W)
+/obj/item/weapon/storage/proc/on_item_pre_deletion(obj/item/W)
 	if(storage_ui)
 		storage_ui.on_pre_remove(null, W) // Supposed to be able to handle null user.
+
+// Only do ui functions for now; the obj is responsible for anything else.
+/obj/item/weapon/storage/proc/on_item_post_deletion(obj/item/W)
+	if(storage_ui)
 		update_ui_after_item_removal()
 	queue_icon_update()
 
@@ -252,7 +265,9 @@
 
 //This proc is called when you want to place an item into the storage item.
 /obj/item/weapon/storage/attackby(obj/item/W as obj, mob/user as mob)
-	..()
+	. = ..()
+	if (.) //if the item was used as a crafting component, just return
+		return
 
 	if(isrobot(user) && (W == user.get_active_hand()))
 		return //Robots can't store their modules.
@@ -342,7 +357,7 @@
 		verbs -= /obj/item/weapon/storage/verb/toggle_gathering_mode
 
 	if(isnull(max_storage_space) && !isnull(storage_slots))
-		max_storage_space = storage_slots*base_storage_cost(max_w_class)
+		max_storage_space = storage_slots*BASE_STORAGE_COST(max_w_class)
 
 	storage_ui = new storage_ui(src)
 	prepare_ui()
@@ -423,4 +438,4 @@
 
 /obj/item/proc/get_storage_cost()
 	//If you want to prevent stuff above a certain w_class from being stored, use max_w_class
-	return base_storage_cost(w_class)
+	return BASE_STORAGE_COST(w_class)

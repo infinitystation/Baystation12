@@ -2,6 +2,7 @@
 	var/unique_name
 	var/datum/detective_gun_skin/unique_reskin
 	var/static/list/gun_options
+	bulk = GUN_BULK_REVOLVER //inf
 
 /obj/item/weapon/gun/projectile/pistol/sec/detective/Initialize()
 	. = ..()
@@ -79,7 +80,7 @@
 	name = initial(d.name)
 	icon_state = initial(d.icon)
 	icon_state = initial(d.icon_state)
-
+/* [INF]
 /datum/detective_gun_skin/colt
 	name = "\improper Colt M1911"
 	icon_state = "colt"
@@ -108,3 +109,25 @@
 	name = "\improper H&K VP"
 	icon_state = "VP78"
 	icon = 'icons/obj/guns/pistol.dmi'
+[/INF] */
+
+//[INF]
+/datum/detective_gun_skin/mk_standard
+	name = "\improper NT MK 58"
+	icon_state = "secguncomp"
+
+/datum/detective_gun_skin/colt
+	name = "\improper Colt M1911"
+	icon_state = "pistol4"
+	icon = 'icons/obj/guns/pistol_throwback.dmi'
+
+/datum/detective_gun_skin/usp
+	name = "\improper USP"
+	icon_state = "pistol2"
+	icon = 'icons/obj/guns/pistol_throwback.dmi'
+
+/datum/detective_gun_skin/vp
+	name = "\improper H&K VP"
+	icon_state = "pistol3"
+	icon = 'icons/obj/guns/pistol_throwback.dmi'
+//[/INF]

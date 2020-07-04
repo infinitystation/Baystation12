@@ -1,9 +1,6 @@
 /atom/movable/proc/get_mob()
 	return
 
-/obj/mecha/get_mob()
-	return occupant
-
 /obj/vehicle/train/get_mob()
 	return buckled_mob
 
@@ -125,8 +122,12 @@ proc/ageAndGender2Desc(age, gender, species_name = "", var/synthetic_flag = 0)//
 
 //checks whether this item is a module of the robot it is located in.
 /proc/is_robot_module(var/obj/item/thing)
-	if (!thing || !istype(thing.loc, /mob/living/silicon/robot))
-		return 0
+	if(!thing)
+		return FALSE
+	if(istype(thing.loc, /mob/living/exosuit))
+		return FALSE
+	if(!istype(thing.loc, /mob/living/silicon/robot))
+		return FALSE
 	var/mob/living/silicon/robot/R = thing.loc
 	return (thing in R.module.equipment)
 
@@ -157,11 +158,11 @@ proc/ageAndGender2Desc(age, gender, species_name = "", var/synthetic_flag = 0)//
 		if(uninterruptible)
 			continue
 
-		if(!user || user.incapacitated(incapacitation_flags) || user.loc != user_loc)
+		if(QDELETED(user) || user.incapacitated(incapacitation_flags) || user.loc != user_loc)
 			. = 0
 			break
 
-		if(target.loc != target_loc)
+		if(QDELETED(target) || target.loc != target_loc)
 			. = 0
 			break
 
@@ -204,11 +205,11 @@ proc/ageAndGender2Desc(age, gender, species_name = "", var/synthetic_flag = 0)//
 		if (progress)
 			progbar.update(world.time - starttime)
 
-		if(!user || user.incapacitated(incapacitation_flags) || (user.loc != original_loc && !can_move) || (same_direction && user.dir != original_dir))
+		if(QDELETED(user) || user.incapacitated(incapacitation_flags) || (user.loc != original_loc && !can_move) || (same_direction && user.dir != original_dir))
 			. = 0
 			break
 
-		if(target_loc && (!target || QDELETED(target) || target_loc != target.loc || target_type != target.type))
+		if(target_loc && (QDELETED(target) || target_loc != target.loc || target_type != target.type))
 			. = 0
 			break
 
@@ -291,3 +292,21 @@ proc/ageAndGender2Desc(age, gender, species_name = "", var/synthetic_flag = 0)//
 				selected = M
 				break
 	return selected
+
+/proc/damflags_to_strings(damflags)
+	var/list/res = list()
+	if(damflags & DAM_SHARP)
+		res += "sharp"
+	if(damflags & DAM_EDGE)
+		res += "edge"
+	if(damflags & DAM_LASER)
+		res += "laser"
+	if(damflags & DAM_BULLET)
+		res += "bullet"
+	if(damflags & DAM_EXPLODE)
+		res += "explode"
+	if(damflags & DAM_DISPERSED)
+		res += "dispersed"
+	if(damflags & DAM_BIO)
+		res += "bio"
+	return english_list(res)

@@ -16,5 +16,3 @@ set /p updbranch="Choose branch to update by %Data% commits from %repname%: "
 git checkout %updbranch%
 git pull %repname% %Data%
 echo Update completed
-set /p end_ans="Push to origin? [1(Yes)/0(No)): "
-if %end_ans%==1 git push origin master

@@ -103,9 +103,9 @@
 	else
 		..()
 
-/obj/machinery/atm/attack_hand(mob/user)
-	if(!..())
-		interact(user)
+/obj/machinery/atm/interface_interact(mob/user)
+	interact(user)
+	return TRUE
 
 /obj/machinery/atm/interact(mob/user)
 
@@ -169,13 +169,13 @@
 								t += "<td>[T.time]</td>"
 								t += "<td>[T.get_target_name()]</td>"
 								t += "<td>[T.purpose]</td>"
-								t += "<td>T[T.amount]</td>"
+								t += "<td>[GLOB.using_map.local_currency_name_short][T.amount]</td>"
 								t += "<td>[T.get_source_name()]</td>"
 								t += "</tr>"
 							t += "</table>"
 							t += "<A href='?src=\ref[src];choice=print_transaction'>Print</a><br>"
 						if(TRANSFER_FUNDS)
-							t += "<b>Account balance:</b> T[authenticated_account.money]<br>"
+							t += "<b>Account balance:</b> [GLOB.using_map.local_currency_name_short][authenticated_account.money]<br>"
 							t += "<form name='transfer' action='?src=\ref[src]' method='get'>"
 							t += "<input type='hidden' name='src' value='\ref[src]'>"
 							t += "<input type='hidden' name='choice' value='transfer'>"
@@ -185,7 +185,7 @@
 							t += "<input type='submit' value='Transfer funds'><br>"
 							t += "</form>"
 						else
-							t += "<b>Account balance:</b> T[authenticated_account.money]"
+							t += "<b>Account balance:</b> [GLOB.using_map.local_currency_name_short][authenticated_account.money]"
 							t += "<form name='withdrawal' action='?src=\ref[src]' method='get'>"
 							t += "<input type='hidden' name='src' value='\ref[src]'>"
 							t += "<input type='radio' name='choice' value='withdrawal' checked> Cash  <input type='radio' name='choice' value='e_withdrawal'> Chargecard<br>"
@@ -228,6 +228,8 @@
 		return
 
 /obj/machinery/atm/Topic(var/href, var/href_list)
+	if((. = ..()))
+		return
 	if(href_list["choice"])
 		switch(href_list["choice"])
 			if("transfer")
@@ -342,13 +344,13 @@
 					R.info = "<b>Automated Teller Account Statement</b><br><br>"
 					R.info += "<i>Account holder:</i> [authenticated_account.owner_name]<br>"
 					R.info += "<i>Account number:</i> [authenticated_account.account_number]<br>"
-					R.info += "<i>Balance:</i> T[authenticated_account.money]<br>"
+					R.info += "<i>Balance:</i> [GLOB.using_map.local_currency_name_short][authenticated_account.money]<br>"
 					R.info += "<i>Date and time:</i> [stationtime2text()], [stationdate2text()]<br><br>"
 					R.info += "<i>Service terminal ID:</i> [machine_id]<br>"
 
 					//stamp the paper
 					var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
-					stampoverlay.icon_state = "paper_stamp-cent"
+					stampoverlay.icon_state = "paper_stamp-boss"
 					if(!R.stamped)
 						R.stamped = new
 					R.stamped += /obj/item/weapon/stamp
@@ -383,14 +385,14 @@
 						R.info += "<td>[T.time]</td>"
 						R.info += "<td>[T.get_target_name()]</td>"
 						R.info += "<td>[T.purpose]</td>"
-						R.info += "<td>T[T.amount]</td>"
+						R.info += "<td>[GLOB.using_map.local_currency_name_short][T.amount]</td>"
 						R.info += "<td>[T.get_source_name()]</td>"
 						R.info += "</tr>"
 					R.info += "</table>"
 
 					//stamp the paper
 					var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
-					stampoverlay.icon_state = "paper_stamp-cent"
+					stampoverlay.icon_state = "paper_stamp-boss"
 					if(!R.stamped)
 						R.stamped = new
 					R.stamped += /obj/item/weapon/stamp
@@ -419,7 +421,7 @@
 				authenticated_account = null
 				account_security_level = 0
 
-	src.attack_hand(usr)
+	interact(usr)
 
 /obj/machinery/atm/proc/scan_user(mob/living/carbon/human/human_user as mob)
 	if(!authenticated_account)

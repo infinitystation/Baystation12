@@ -5,7 +5,6 @@
 	icon_state = "base"
 	density = 1
 	w_class = ITEM_SIZE_NO_CONTAINER
-	layer = 2
 
 	var/welded = 0
 	var/large = 1
@@ -64,9 +63,9 @@
 /obj/structure/closet/proc/WillContain()
 	return null
 
-/obj/structure/closet/examine(mob/user)
-	. = ..(user, 1)
-	if(. && !opened)
+/obj/structure/closet/examine(mob/user, distance)
+	. = ..()
+	if(distance <= 1 && !opened)
 		var/content_size = 0
 		for(var/atom/movable/AM in src.contents)
 			if(!AM.anchored)
@@ -144,7 +143,8 @@
 	src.opened = 0
 
 	playsound(src.loc, close_sound, 50, 0, -3)
-	density = 1
+	if(!wall_mounted)
+		density = 1
 
 	update_icon()
 
@@ -278,8 +278,6 @@
 			var/obj/item/grab/G = W
 			src.MouseDrop_T(G.affecting, user)      //act like they were dragged onto the closet
 			return 0
-		if(istype(W,/obj/item/tk_grab))
-			return 0
 		if(isWelder(W))
 			var/obj/item/weapon/weldingtool/WT = W
 			if(WT.remove_fuel(0,user))
@@ -287,7 +285,8 @@
 				return
 		if(istype(W, /obj/item/weapon/gun/energy/plasmacutter))
 			var/obj/item/weapon/gun/energy/plasmacutter/cutter = W
-			cutter.slice(user)
+			if(!cutter.slice(user))
+				return
 			slice_into_parts(W, user)
 			return
 		if(istype(W, /obj/item/weapon/storage/laundry_basket) && W.contents.len)
@@ -332,12 +331,12 @@
 		if(isMultimeter(W))
 			var/obj/item/device/multitool/multimeter/O = W
 			if(O.mode != METER_CHECKING)
-				to_chat(user, "<span class='notice'>Переключите мультиметр.</span>")
+				to_chat(user, "<span class='notice'>РџРµСЂРµРєР»СЋС‡РёС‚Рµ РјСѓР»СЊС‚РёРјРµС‚СЂ.</span>")
 			else
 				if (user.skill_check(SKILL_ELECTRICAL, SKILL_ADEPT))
 					src.interact(usr)
 				else
-					to_chat(user, "<span class='notice'>Вы не умеете работать с этим замком.</span>")
+					to_chat(user, "<span class='notice'>Р’С‹ РЅРµ СѓРјРµРµС‚Рµ СЂР°Р±РѕС‚Р°С‚СЊ СЃ СЌС‚РёРј Р·Р°РјРєРѕРј.</span>")
 		else
 			src.togglelock(user, W)
 	else
@@ -388,12 +387,6 @@
 	src.add_fingerprint(user)
 	src.toggle(user)
 
-// tk grab then use on self
-/obj/structure/closet/attack_self_tk(mob/user as mob)
-	src.add_fingerprint(user)
-	if(!src.toggle())
-		to_chat(usr, "<span class='notice'>It won't budge!</span>")
-
 /obj/structure/closet/attack_ghost(mob/ghost)
 	if(ghost.client && ghost.client.inquisitive_ghost)
 		ghost.examinate(src)
@@ -441,12 +434,14 @@
 		return 1 // Closed and locked
 	return (!welded) //closed but not welded...
 
-/obj/structure/closet/proc/mob_breakout(var/mob/living/escapee)
+/obj/structure/closet/mob_breakout(var/mob/living/escapee)
+
+	. = ..()
 	var/breakout_time = 2 //2 minutes by default
-
 	if(breakout || !req_breakout())
-		return
+		return FALSE
 
+	. = TRUE
 	escapee.setClickCooldown(100)
 
 	//okay, so the closet is either welded or locked... resist!!!
@@ -458,11 +453,11 @@
 	for(var/i in 1 to (6*breakout_time * 2)) //minutes * 6 * 5seconds * 2
 		if(!do_after(escapee, 50, incapacitation_flags = INCAPACITATION_DEFAULT & ~INCAPACITATION_RESTRAINED)) //5 seconds
 			breakout = 0
-			return
+			return FALSE
 		//Perform the same set of checks as above for weld and lock status to determine if there is even still a point in 'resisting'...
 		if(!req_breakout())
 			breakout = 0
-			return
+			return FALSE
 
 		playsound(src.loc, 'sound/effects/grillehit.ogg', 100, 1)
 		shake_animation()
@@ -502,8 +497,8 @@
 /obj/structure/closet/proc/togglelock(var/mob/user, var/obj/item/weapon/card/id/id_card)
 	if(!(setup & CLOSET_HAS_LOCK))
 		return FALSE
-	if(!CanPhysicallyInteract(user))
-		return FALSE
+/*inf	if(!CanPhysicallyInteract(user))
+		return FALSE*/
 	if(src.opened)
 		to_chat(user, "<span class='notice'>Close \the [src] first.</span>")
 		return FALSE
@@ -582,10 +577,14 @@
 	desc += " It appears to be broken."
 	return TRUE
 
+/obj/structure/closet/CanUseTopicPhysical(mob/user)
+	return CanUseTopic(user, GLOB.physical_no_access_state)
+
+//[INF]
 /obj/structure/closet/interact(mob/user)
 	src.add_fingerprint(user)
 	var/dat = ""
-	dat += "<a href='?src=\ref[src];check=1'>Проверить замок</a><hr>"
+	dat += "<a href='?src=\ref[src];check=1'>РџСЂРѕРІРµСЂРёС‚СЊ Р·Р°РјРѕРє</a><hr>"
 	for(var/i = 1 to codelen)
 		dat += "<a href='?src=\ref[src];inc=[i]'>+</a>"
 	dat += "<br>"
@@ -616,18 +615,18 @@
 		validate = 0
 
 		if(W.mode != METER_CHECKING)
-			to_chat(usr, "<span class='notice'>Переключите мультиметр.</span>")
+			to_chat(usr, "<span class='notice'>РџРµСЂРµРєР»СЋС‡РёС‚Рµ РјСѓР»СЊС‚РёРјРµС‚СЂ.</span>")
 			return
 
-		to_chat(usr, "<span class='notice'>Провер&#255;ем замок...</span>")
+		to_chat(usr, "<span class='notice'>РџСЂРѕРІРµСЂСЏРµРј Р·Р°РјРѕРє...</span>")
 		for(var/i = 1 to codelen)
 			if(do_after(user, 10, src))
 				if(code2[i] == code1[i])
 					validate++
-					to_chat(usr, "<span class='notice'>Ключ подходит.</span>")
-					playsound(W.loc, 'sound/machines/mbeep.ogg', 30, 1, frequency = rand(50000, 55000))
+					to_chat(usr, "<span class='notice'>РљР»СЋС‡ РїРѕРґС…РѕРґРёС‚.</span>")
+					playsound(W.loc, 'infinity/sound/machines/mbeep.ogg', 30, 1, frequency = rand(50000, 55000))
 				else
-					to_chat(usr, "<span class='notice'>Ключ не подходит.</span>")
+					to_chat(usr, "<span class='notice'>РљР»СЋС‡ РЅРµ РїРѕРґС…РѕРґРёС‚.</span>")
 		W.in_use = FALSE
 
 		if(validate < codelen)
@@ -651,3 +650,4 @@
 		if(code2[inc] < 0)
 			code2[inc] = 9
 		interact(user)
+//[/INF]

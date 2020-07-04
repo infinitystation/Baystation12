@@ -41,7 +41,7 @@
 	var/check_records = 1	//checks if a security record exists at all
 	var/check_weapons = 0	//checks if it can shoot people that have a weapon they aren't authorized to have
 	var/check_access = 1	//if this is active, the turret shoots everything that does not meet the access requirements
-	var/check_anomalies = 1	//checks if it can shoot at unidentified lifeforms (ie xenos)
+	var/check_anomalies = 1	//checks if it can shoot at unidentified lifeforms
 	var/check_synth	 = 0 	//if active, will shoot at anything not an AI or cyborg
 	var/ailock = 0 			// AI cannot use this
 
@@ -59,6 +59,8 @@
 	var/wrenching = 0
 	var/last_target			//last target fired at, prevents turrets from erratically firing at all valid targets in range
 
+	req_access = list(list(access_security, access_bridge))
+
 /obj/machinery/porta_turret/crescent
 	enabled = 0
 	ailock = 1
@@ -68,6 +70,7 @@
 	check_records = 1
 	check_weapons = 1
 	check_anomalies = 1
+	req_access = list(access_cent_specops)
 
 /obj/machinery/porta_turret/stationary
 	ailock = 1
@@ -98,7 +101,6 @@
 
 /obj/machinery/porta_turret/New()
 	..()
-	req_access = list(list(access_security, access_bridge))
 
 	//Sets up a spark system
 	spark_system = new /datum/effect/effect/system/spark_spread
@@ -106,10 +108,6 @@
 	spark_system.attach(src)
 
 	setup()
-
-/obj/machinery/porta_turret/crescent/New()
-	..()
-	req_access = list(access_cent_specops)
 
 /obj/machinery/porta_turret/Destroy()
 	qdel(spark_system)
@@ -203,17 +201,9 @@ var/list/turret_icons
 
 	return 0
 
-/obj/machinery/porta_turret/attack_ai(mob/user)
-	if(isLocked(user))
-		return
-
+/obj/machinery/porta_turret/interface_interact(mob/user)
 	ui_interact(user)
-
-/obj/machinery/porta_turret/attack_hand(mob/user)
-	if(isLocked(user))
-		return
-
-	ui_interact(user)
+	return TRUE
 
 /obj/machinery/porta_turret/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
 	var/data[0]
@@ -422,12 +412,15 @@ var/list/turret_icons
 		if(prob(5))
 			emagged = 1
 
-		enabled=0
-		spawn(rand(60,600))
-			if(!enabled)
-				enabled=1
+	disabled = 1
+	var/power = 4 - severity
+	addtimer(CALLBACK(src,/obj/machinery/porta_turret/proc/enable), rand(60*power,600*power))
 
 	..()
+
+/obj/machinery/porta_turret/proc/enable()
+	if(disabled)
+		disabled = 0
 
 /obj/machinery/porta_turret/ex_act(severity)
 	switch (severity)
@@ -448,8 +441,6 @@ var/list/turret_icons
 	atom_flags |= ATOM_FLAG_CLIMBABLE // they're now climbable
 
 /obj/machinery/porta_turret/Process()
-	//the main machinery process
-
 	if(stat & (NOPOWER|BROKEN))
 		//if the turret has no power or is broken, make the turret pop down if it hasn't already
 		popDown()
@@ -465,11 +456,18 @@ var/list/turret_icons
 
 	for(var/mob/M in mobs_in_view(world.view, src))
 		assess_and_assign(M, targets, secondarytargets)
-
-	if(!tryToShootAt(targets))
-		if(!tryToShootAt(secondarytargets)) // if no valid targets, go for secondary targets
-			popDown() // no valid targets, close the cover
-
+//[INF]
+	CheckNeed2PopDown(targets, secondarytargets)
+/obj/machinery/porta_turret/proc/CheckNeed2PopDown(list/targets, list/secondarytargets)
+	if(!AiHolder.client)
+//[/INF]
+		if(!tryToShootAt(targets))
+			if(!tryToShootAt(secondarytargets)) // if no valid targets, go for secondary targets
+				popDown() // no valid targets, close the cover
+//[INF]
+/obj/machinery/porta_turret/Process()
+	. = ..()
+//[/INF]
 	if(auto_repair && (health < maxhealth))
 		use_power_oneoff(20000)
 		health = min(health+1, maxhealth) // 1HP for 20kJ
@@ -516,12 +514,12 @@ var/list/turret_icons
 
 	if(iscuffed(L)) // If the target is handcuffed, leave it alone
 		return TURRET_NOT_TARGET
-
-	if(isanimal(L) || issmall(L)) // Animals are not so dangerous
-		return check_anomalies ? TURRET_SECONDARY_TARGET : TURRET_NOT_TARGET
-
+//[INF]
 	if(isxenomorph(L) || isalien(L)) // Xenos are dangerous
 		return check_anomalies ? TURRET_PRIORITY_TARGET	: TURRET_NOT_TARGET
+//[/INF]
+	if(isanimal(L) || issmall(L)) // Animals are not so dangerous
+		return check_anomalies ? TURRET_SECONDARY_TARGET : TURRET_NOT_TARGET
 
 	if(ishuman(L))	//if the target is a human, analyze threat level
 		if(assess_perp(L) < 4)
@@ -597,7 +595,7 @@ var/list/turret_icons
 	src.raising = raising
 	set_density(raised || raising)
 
-/obj/machinery/porta_turret/proc/target(var/mob/living/target)
+/obj/machinery/porta_turret/proc/target(var/atom/target)
 	if(disabled)
 		return
 	if(target)
@@ -610,7 +608,8 @@ var/list/turret_icons
 		return 1
 	return
 
-/obj/machinery/porta_turret/proc/shootAt(var/mob/living/target)
+/obj/machinery/porta_turret/proc/shootAt(var/atom/target)
+	if(stat & BROKEN || stat & NOPOWER) return //inf
 	//any emagged turrets will shoot extremely fast! This not only is deadly, but drains a lot power!
 	if(!(emagged || attacked))		//if it hasn't been emagged or attacked, it has to obey a cooldown rate
 		if(last_fired || !raised)	//prevents rapid-fire shooting, unless it's been emagged

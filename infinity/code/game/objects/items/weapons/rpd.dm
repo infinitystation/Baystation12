@@ -2,7 +2,7 @@
 
 /obj/item/weapon/rpd
 	name = "rapid pipe dispencer"
-	icon = 'icons/obj/items_inf.dmi'
+	icon = 'infinity/icons/obj/items.dmi'
 	icon_state = "rpd"
 	item_state = "rpd"
 	opacity = 0
@@ -18,97 +18,65 @@
 	origin_tech = list(TECH_ENGINEERING = 4, TECH_MATERIAL = 2)
 	matter = list(DEFAULT_WALL_MATERIAL = 50000)
 	var/wait = 0
+	var/pipe_color = "white"
 
-/obj/item/weapon/rpd/Initialize()
-	. = ..()
+/obj/item/weapon/rpd/proc/get_console_data(var/list/pipe_categories, var/color_options = FALSE)
+	. = list()
+	. += "<table>"
+	if(color_options)
+		. += "<tr><td>Color</td><td><a href='?src=\ref[src];color=\ref[src]'><font color = '[pipe_color]'>[pipe_color]</font></a></td></tr>"
+	for(var/category in pipe_categories)
+		var/datum/pipe/cat = category
+		. += "<tr><td><font color = '#517087'><strong>[initial(cat.category)]</strong></font></td></tr>"
+		for(var/datum/pipe/pipe in pipe_categories[category])
+			var/line = "[pipe.name]</td>"
+			. += "<tr><td>[line]<td><a href='?src=\ref[src];build=\ref[pipe]'>Dispense</a></td><td><a href='?src=\ref[src];buildfive=\ref[pipe]'>5x</a></td><td><a href='?src=\ref[src];buildten=\ref[pipe]'>10x</a></td></tr>"
+	.+= "</table>"
+	. = JOINTEXT(.)
 
-/obj/item/weapon/rpd/attack_self(mob/user)
-	if(..())
-		return
-	var/dat = {"
-	<b>Regular pipes:</b><BR>
-	<A href='?src=\ref[src];make=0;dir=1'>Pipe</A><BR>
-	<A href='?src=\ref[src];make=1;dir=5'>Bent Pipe</A><BR>
-	<A href='?src=\ref[src];make=5;dir=1'>Manifold</A><BR>
-	<A href='?src=\ref[src];make=8;dir=1'>Manual Valve</A><BR>
-	<A href='?src=\ref[src];make=9;dir=1'>Digital Valve</A><BR>
-	<A href='?src=\ref[src];make=44;dir=1'>Automatic Shutoff Valve</A><BR>
-	<A href='?src=\ref[src];make=20;dir=1'>Pipe Cap</A><BR>
-	<A href='?src=\ref[src];make=19;dir=1'>4-Way Manifold</A><BR>
-	<A href='?src=\ref[src];make=18;dir=1'>Manual T-Valve</A><BR>
-	<A href='?src=\ref[src];make=43;dir=1'>Manual T-Valve - Mirrored</A><BR>
-	<A href='?src=\ref[src];make=21;dir=1'>Upward Pipe</A><BR>
-	<A href='?src=\ref[src];make=22;dir=1'>Downward Pipe</A><BR>
-	<b>Supply pipes:</b><BR>
-	<A href='?src=\ref[src];make=29;dir=1'>Pipe</A><BR>
-	<A href='?src=\ref[src];make=30;dir=5'>Bent Pipe</A><BR>
-	<A href='?src=\ref[src];make=33;dir=1'>Manifold</A><BR>
-	<A href='?src=\ref[src];make=41;dir=1'>Pipe Cap</A><BR>
-	<A href='?src=\ref[src];make=35;dir=1'>4-Way Manifold</A><BR>
-	<A href='?src=\ref[src];make=37;dir=1'>Upward Pipe</A><BR>
-	<A href='?src=\ref[src];make=39;dir=1'>Downward Pipe</A><BR>
-	<b>Scrubbers pipes:</b><BR>
-	<A href='?src=\ref[src];make=31;dir=1'>Pipe</A><BR>
-	<A href='?src=\ref[src];make=32;dir=5'>Bent Pipe</A><BR>
-	<A href='?src=\ref[src];make=34;dir=1'>Manifold</A><BR>
-	<A href='?src=\ref[src];make=42;dir=1'>Pipe Cap</A><BR>
-	<A href='?src=\ref[src];make=36;dir=1'>4-Way Manifold</A><BR>
-	<A href='?src=\ref[src];make=38;dir=1'>Upward Pipe</A><BR>
-	<A href='?src=\ref[src];make=40;dir=1'>Downward Pipe</A><BR>
-	<b>Fuel pipes:</b><BR>
-	<A href='?src=\ref[src];make=45;dir=1'>Pipe</A><BR>
-	<A href='?src=\ref[src];make=46;dir=5'>Bent Pipe</A><BR>
-	<A href='?src=\ref[src];make=47;dir=1'>Manifold</A><BR>
-	<A href='?src=\ref[src];make=51;dir=1'>Pipe Cap</A><BR>
-	<A href='?src=\ref[src];make=48;dir=1'>4-Way Manifold</A><BR>
-	<A href='?src=\ref[src];make=49;dir=1'>Upward Pipe</A><BR>
-	<A href='?src=\ref[src];make=50;dir=1'>Downward Pipe</A><BR>
-	<b>Devices:</b><BR>
-	<A href='?src=\ref[src];make=28;dir=1'>Universal pipe adapter</A><BR>
-	<A href='?src=\ref[src];make=4;dir=1'>Connector</A><BR>
-	<A href='?src=\ref[src];make=7;dir=1'>Unary Vent</A><BR>
-	<A href='?src=\ref[src];make=10;dir=1'>Gas Pump</A><BR>
-	<A href='?src=\ref[src];make=15;dir=1'>Pressure Regulator</A><BR>
-	<A href='?src=\ref[src];make=16;dir=1'>High Power Gas Pump</A><BR>
-	<A href='?src=\ref[src];make=11;dir=1'>Scrubber</A><BR>
-	<A href='?src=\ref[src];makemeter=1'>Meter</A><BR>
-	<A href='?src=\ref[src];make=13;dir=1'>Gas Filter</A><BR>
-	<A href='?src=\ref[src];make=23;dir=1'>Gas Filter - Mirrored</A><BR>
-	<A href='?src=\ref[src];make=14;dir=1'>Gas Mixer</A><BR>
-	<A href='?src=\ref[src];make=25;dir=1'>Gas Mixer - Mirrored</A><BR>
-	<A href='?src=\ref[src];make=24;dir=1'>Gas Mixer - T</A><BR>
-	<A href='?src=\ref[src];make=26;dir=1'>Omni Gas Mixer</A><BR>
-	<A href='?src=\ref[src];make=27;dir=1'>Omni Gas Filter</A><BR>
-	<b>Heat exchange:</b><BR>
-	<A href='?src=\ref[src];make=2;dir=1'>Pipe</A><BR>
-	<A href='?src=\ref[src];make=3;dir=5'>Bent Pipe</A><BR>
-	<A href='?src=\ref[src];make=6;dir=1'>Junction</A><BR>
-	<A href='?src=\ref[src];make=17;dir=1'>Heat Exchanger</A><BR>
-	"}
-	user << browse("<HEAD><TITLE>[src]</TITLE></HEAD><TT>[dat]</TT>", "window=pipedispenser")
-	onclose(user, "pipedispenser")
-	return
+/obj/item/weapon/rpd/proc/build_quantity(var/datum/pipe/P, var/quantity)
+	for(var/I = quantity;I > 0;I -= 1)
+		P.Build(P, usr.loc, pipe_color)
 
 /obj/item/weapon/rpd/Topic(href, href_list, state = GLOB.physical_state)
 	if((. = ..()))
-		usr << browse(null, "window=pipedispenser")
 		return
 
-	if(href_list["make"])
+	if(href_list["build"])
 		if(!wait)
-			var/p_type = text2num(href_list["make"])
-			var/p_dir = text2num(href_list["dir"])
-			var/obj/item/pipe/P = new (usr.loc, pipe_type=p_type, dir=p_dir)
-			P.update()
+			var/datum/pipe/P = locate(href_list["build"])
+			P.Build(P, usr.loc, pipe_color)
 			wait = 1
 			spawn(10)
 				wait = 0
-	if(href_list["makemeter"])
+
+	if(href_list["buildfive"])
 		if(!wait)
-			new /obj/item/pipe_meter(usr.loc)
+			var/datum/pipe/P = locate(href_list["buildfive"])
+			build_quantity(P, 5)
 			wait = 1
 			spawn(15)
 				wait = 0
+
+	if(href_list["buildten"])
+		if(!wait)
+			var/datum/pipe/P = locate(href_list["buildten"])
+			build_quantity(P, 10)
+			wait = 1
+			spawn(20)
+				wait = 0
+
+	if(href_list["color"])
+		var/choice = input(usr, "What color do you want pipes to have?") as null|anything in pipe_colors
+		if(!choice)
+			return 1
+		pipe_color = choice
+		updateUsrDialog()
+
+/obj/item/weapon/rpd/attack_self(user as mob)
+	var/datum/browser/popup = new (user, "Pipe List", "[src] Control Panel")
+	popup.set_content(get_console_data(GLOB.all_pipe_datums_by_category, TRUE))
+	popup.open()
 
 /obj/item/weapon/rpd/attackby(var/obj/item/W as obj, var/mob/user as mob)
 	if (istype(W, /obj/item/pipe) || istype(W, /obj/item/pipe_meter))

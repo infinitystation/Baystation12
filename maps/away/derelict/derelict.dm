@@ -1,6 +1,6 @@
 #include "derelict_areas.dm"
 
-/obj/effect/overmap/sector/derelict
+/obj/effect/overmap/visitable/sector/derelict
 	name = "debris field"
 	desc = "A large field of miscellanious debris."
 	icon_state = "object"
@@ -29,10 +29,10 @@
 		/area/AIsattele = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/constructionsite = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/constructionsite/ai = NO_SCRUBBER|NO_VENT,
-		/area/constructionsite/atmospherics = NO_SCRUBBER,
-		/area/constructionsite/teleporter = NO_SCRUBBER,
+		/area/constructionsite/atmospherics = NO_SCRUBBER|NO_VENT,
+		/area/constructionsite/teleporter = NO_SCRUBBER|NO_VENT,
 		/area/derelict/ship = NO_SCRUBBER|NO_VENT,
-		/area/djstation = NO_SCRUBBER|NO_APC
+		/area/djstation = NO_SCRUBBER|NO_VENT|NO_APC
 	)
 	area_coherency_test_subarea_count = list(
 		/area/constructionsite = 7,

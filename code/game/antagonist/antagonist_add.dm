@@ -3,6 +3,13 @@
 	if(!add_antagonist_mind(player, ignore_role))
 		return
 
+	if(base_to_load)
+		var/datum/map_template/base = new base_to_load()
+		report_progress("Loading map template '[base]' for [role_text]...")
+		base_to_load = null
+		base.load_new_z()
+		get_starting_locations()
+
 	//do this again, just in case
 	if(flags & ANTAG_OVERRIDE_JOB)
 		player.assigned_job = null
@@ -14,7 +21,8 @@
 		create_default(player.current)
 	else
 		create_antagonist(player, move_to_spawn, do_not_announce, preserve_appearance)
-		skill_setter.initialize_skills(player.current.skillset)
+		if(istype(skill_setter))
+			skill_setter.initialize_skills(player.current.skillset)
 		if(!do_not_equip)
 			equip(player.current)
 
@@ -43,10 +51,28 @@
 		player.current.client.verbs += /client/proc/aooc
 
 	spawn(1 SECOND) //Added a delay so that this should pop up at the bottom and not the top of the text flood the new antag gets.
+/*[ORIGINAL]
 		to_chat(player.current, "<span class='notice'>Once you decide on a goal to pursue, you can optionally display it to \
 			everyone at the end of the shift with the <b>Set Ambition</b> verb, located in the IC tab.  You can change this at any time, \
 			and it otherwise has no bearing on your round.</span>")
-	player.current.verbs += /mob/living/proc/set_ambition
+[/ORIGINAL]*/
+//[INF]
+	if(ambitious)
+//		to_chat(player.current, SPAN_NOTICE("Вы можете самостоятельно назначить себе особые цели, которые будут видны \
+		всем игрокам после завершения раунда. Если ваши основные цели вызывают у вас отторжение и вы хотели бы \
+		выполнить что-то <u>более интересное</u>, то вы можете использовать <b>Set Ambition</b> для выставления \
+		себе желаемых целей (они могут отличаться от стандартных - проявите фантазию).<br>\
+		Старайтесь действовать после получаса игры - до этого планируйте и делайте вид, что вы - обычный член персонала. \
+		Не заставляйте экипаж скучать 2 часа, чтобы вы в последние 10 минут попыталсь бесславно выполнить механо-задания."))
+
+		to_chat(player.current, SPAN_NOTICE("Вы должны самостоятельно придумать себе цели, которые будете \
+		преследовать как антагонист. Они должны содержать в себе что-то, что вредит и представляет угрозу экипажу \
+		(примеры или конкретные задания, возможно, были описаны выше). Не забывайте также о том, что вашему \
+		персонажу желательно пережить все события, а не умереть \"геройской смертью\". \
+		Используйте для этого <b>Set Ambition</b> (во вкладке IC), чтобы после завершения раунда другие игроки видели, \
+		к чему вы стремились."))
+
+		player.current.verbs += /mob/living/proc/set_ambition
 
 	// Handle only adding a mind and not bothering with gear etc.
 	if(nonstandard_role_type)

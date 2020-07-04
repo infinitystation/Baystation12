@@ -64,8 +64,10 @@
 
 	return match
 
-#define RECOMMENDED_VERSION 512
+//inf("Already defined") #define RECOMMENDED_VERSION 512
 /world/New()
+
+	enable_debugger()
 	//set window title
 	name = "[server_name] - [GLOB.using_map.full_name]"
 
@@ -76,7 +78,8 @@
 	diary = file("data/logs/[date_string].log")
 	diary << "[log_end]\n[log_end]\nStarting up. (ID: [game_id]) [time2text(world.timeofday, "hh:mm.ss")][log_end]\n---------------------[log_end]"
 	changelog_hash = md5('html/changelog.html')					//used for telling if the changelog has changed recently
-	inf_changelog_hash = md5('html/changelog_infinity.html')
+
+	GLOB.changelog_hash_infinity = md5('html/changelog_infinity.html')
 
 	if(config && config.server_name != null && config.server_suffix && world.port > 0)
 		// dumb and hardcoded but I don't care~
@@ -88,7 +91,7 @@
 		log = runtime_log // Note that, as you can see, this is misnamed: this simply moves world.log into the runtime log file.
 
 	if(byond_version < RECOMMENDED_VERSION)
-		world.log << "Your server's byond version does not meet the recommended requirements for this server. Please update BYOND"
+		to_world_log("Your server's byond version does not meet the recommended requirements for this server. Please update BYOND")
 
 	callHook("startup")
 	//Emergency Fix
@@ -103,7 +106,7 @@
 #endif
 	Master.Initialize(10, FALSE)
 
-#undef RECOMMENDED_VERSION
+//inf("Already defined") #undef RECOMMENDED_VERSION
 
 var/world_topic_spam_protect_ip = "0.0.0.0"
 var/world_topic_spam_protect_time = world.timeofday
@@ -197,6 +200,8 @@ var/world_topic_spam_protect_time = world.timeofday
 		return list2params(L)
 
 	else if(copytext(T,1,5) == "laws")
+		if(!config.comms_password)
+			return "Not enabled"
 		var/input[] = params2list(T)
 		if(input["key"] != config.comms_password)
 			if(world_topic_spam_protect_ip == addr && abs(world_topic_spam_protect_time - world.time) < 50)
@@ -219,6 +224,11 @@ var/world_topic_spam_protect_time = world.timeofday
 			var/info = list()
 			info["name"] = S.name
 			info["key"] = S.key
+
+			if(istype(S, /mob/living/silicon/robot))
+				var/mob/living/silicon/robot/R = S
+				info["master"] = R.connected_ai?.name
+				info["sync"] = R.lawupdate
 
 			if(!S.laws)
 				info["laws"] = null
@@ -247,6 +257,8 @@ var/world_topic_spam_protect_time = world.timeofday
 			return list2params(ret)
 
 	else if(copytext(T,1,5) == "info")
+		if(!config.comms_password)
+			return "Not enabled"
 		var/input[] = params2list(T)
 		if(input["key"] != config.comms_password)
 			if(world_topic_spam_protect_ip == addr && abs(world_topic_spam_protect_time - world.time) < 50)
@@ -314,7 +326,8 @@ var/world_topic_spam_protect_time = world.timeofday
 				4. sender = the ircnick that send the message.
 		*/
 
-
+		if(!config.comms_password)
+			return "Not enabled"
 		var/input[] = params2list(T)
 		if(input["key"] != config.comms_password)
 			if(world_topic_spam_protect_ip == addr && abs(world_topic_spam_protect_time - world.time) < 50)
@@ -365,6 +378,8 @@ var/world_topic_spam_protect_time = world.timeofday
 				1. notes = ckey of person the notes lookup is for
 				2. validationkey = the key the bot has, it should match the gameservers commspassword in it's configuration.
 		*/
+		if(!config.comms_password)
+			return "Not enabled"
 		var/input[] = params2list(T)
 		if(input["key"] != config.comms_password)
 			if(world_topic_spam_protect_ip == addr && abs(world_topic_spam_protect_time - world.time) < 50)
@@ -380,6 +395,8 @@ var/world_topic_spam_protect_time = world.timeofday
 		return show_player_info_irc(ckey(input["notes"]))
 
 	else if(copytext(T,1,4) == "age")
+		if(!config.comms_password)
+			return "Not enabled"
 		var/input[] = params2list(T)
 		if(input["key"] != config.comms_password)
 			if(world_topic_spam_protect_ip == addr && abs(world_topic_spam_protect_time - world.time) < 50)
@@ -401,9 +418,9 @@ var/world_topic_spam_protect_time = world.timeofday
 			return "Database connection failed or not set up"
 
 	else if(copytext(T,1,14) == "placepermaban")
-		var/input[] = params2list(T)
 		if(!config.ban_comms_password)
 			return "Not enabled"
+		var/input[] = params2list(T)
 		if(input["bankey"] != config.ban_comms_password)
 			if(world_topic_spam_protect_ip == addr && abs(world_topic_spam_protect_time - world.time) < 50)
 				spawn(50)
@@ -434,6 +451,8 @@ var/world_topic_spam_protect_time = world.timeofday
 		qdel(C)
 
 	else if(copytext(T,1,19) == "prometheus_metrics")
+		if(!config.comms_password)
+			return "Not enabled"
 		var/input[] = params2list(T)
 		if(input["key"] != config.comms_password)
 			if(world_topic_spam_protect_ip == addr && abs(world_topic_spam_protect_time - world.time) < 50)
@@ -496,7 +515,7 @@ var/world_topic_spam_protect_time = world.timeofday
 	return 1
 
 /world/proc/load_motd()
-	join_motd = sanitize_a0(file2text("config/motd.txt"))
+	join_motd = file2text("config/motd.txt")
 
 
 /proc/load_configuration()
@@ -535,19 +554,38 @@ var/world_topic_spam_protect_time = world.timeofday
 	var/s = ""
 
 	if (config && config.server_name)
-		s += "<b>[config.server_name]</b>: "
+		s += "<b>[config.server_name]</b>"
 
-	s += "<b>[station_name()]</b>";
+//	s += "<b>[station_name()]</b>"
 	s += " ("
-	s += "<a href=\"https://infinity-ss13.info\">" //Change this to wherever you want the hub to link to.
+//	s += "<a href=\"https://infinity-ss13.info\">" //Change this to wherever you want the hub to link to.
 //	s += "[game_version]"
-	s += "Forum"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
-	s += "</a>|"
-	s += "<a href=\"https://discord.gg/N4atUkH\">" //Change this to wherever you want the hub to link to.
-	s += "Discord"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
+//	s += "Forum"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
+//	s += "</a>|"
+	s += "<a href=\"https://discord.gg/N4atUkH\">"
+	s += "Discord"
 	s += "</a>"
 	s += ")"
+	s += " A medium/hard RP server with modified Bay12 code."
+//	s += "<br><b>Map:</b> [station_name()]"
+	var/n = 0
+	for (var/mob/M in GLOB.player_list)
+		if (M.client)
+			n++
+	s += "<br><b>Players:</b> [n] | "
+	if(SSticker.runlevels == RUNLEVEL_POSTGAME)
+		s += "<b>Mode:</b> ENDING"
+	else if(config.event_status)
+		s += "<b>Mode:</b> <u>EVENT!</u>"
+	else if(SSticker.master_mode)
+		s +="<b>Mode:</b> [SSticker.master_mode]"
+	else
+		s += "<b>Mode:</b> STARTING"
+//	s += "<br><b>Round Duration:</b> [roundduration2text()]"
+	if(!config.enter_allowed)
+		s += "<br><b>Status:</b> closed"
 
+/*inf, original bs12 ahead
 	var/list/features = list()
 
 	if(SSticker.master_mode)
@@ -582,7 +620,7 @@ var/world_topic_spam_protect_time = world.timeofday
 
 	if (features)
 		s += ": [jointext(features, ", ")]"
-
+*/
 	/* does this help? I do not know */
 	if (src.status != s)
 		src.status = s
@@ -603,9 +641,9 @@ var/failed_old_db_connections = 0
 
 /hook/startup/proc/connectDB()
 	if(!setup_database_connection())
-		world.log << "Your server failed to establish a connection with the feedback database."
+		to_world_log("Your server failed to establish a connection with the feedback database.")
 	else
-		world.log << "Feedback database connection established."
+		to_world_log("Feedback database connection established.")
 	return 1
 
 proc/setup_database_connection()
@@ -625,11 +663,15 @@ proc/setup_database_connection()
 	dbcon.Connect("dbi:mysql:[db]:[address]:[port]","[user]","[pass]")
 	. = dbcon.IsConnected()
 	if ( . )
+		var/DBQuery/unicode_query = dbcon.NewQuery("SET NAMES utf8mb4 COLLATE utf8mb4_general_ci")	// Установка кодировки и сравнения (4-байтный UTF-8) для сервера БД ~bear1ake
+		if(!unicode_query.Execute())					// Не понимаю, каким образом это может произойти, но...
+			failed_db_connections++						// ... постараемся запомнить этот факт ...
+			to_world_log(unicode_query.ErrorMsg())		// ... оповестим сервер об этом ...
+			return										// ... и прекратим подключение ~bear1ake
 		failed_db_connections = 0	//If this connection succeeded, reset the failed connections counter.
 	else
 		failed_db_connections++		//If it failed, increase the failed connections counter.
-		world.log << dbcon.ErrorMsg()
-
+		to_world_log(dbcon.ErrorMsg())
 	return .
 
 //This proc ensures that the connection to the feedback database (global variable dbcon) is established
@@ -642,14 +684,14 @@ proc/establish_db_connection()
 	else
 		return 1
 
-
+/* [original] Два подключения к одному серверу и одной базе? Пожалуй нет. ~bear1ake
 /hook/startup/proc/connectOldDB()
 	if(!setup_old_database_connection())
-		world.log << "Your server failed to establish a connection with the SQL database."
+		to_world_log("Your server failed to establish a connection with the SQL database.")
 	else
-		world.log << "SQL database connection established."
+		to_world_log("SQL database connection established.")
 	return 1
-
+[/original] */
 //These two procs are for the old database, while it's being phased out. See the tgstation.sql file in the SQL folder for more information.
 proc/setup_old_database_connection()
 
@@ -668,10 +710,15 @@ proc/setup_old_database_connection()
 	dbcon_old.Connect("dbi:mysql:[db]:[address]:[port]","[user]","[pass]")
 	. = dbcon_old.IsConnected()
 	if ( . )
+		var/DBQuery/unicode_query = dbcon_old.NewQuery("SET NAMES utf8mb4 COLLATE utf8mb4_general_ci")	// Установка кодировки и сравнения (4-байтный UTF-8) для сервера БД ~bear1ake
+		if(!unicode_query.Execute())					// Не понимаю, каким образом это может произойти, но...
+			failed_db_connections++						// ... постараемся запомнить этот факт ...
+			to_world_log(unicode_query.ErrorMsg())		// ... оповестим сервер об этом ...
+			return										// ... и прекратим подключение ~bear1ake
 		failed_old_db_connections = 0	//If this connection succeeded, reset the failed connections counter.
 	else
 		failed_old_db_connections++		//If it failed, increase the failed connections counter.
-		world.log << dbcon.ErrorMsg()
+		to_world_log(dbcon.ErrorMsg())
 
 	return .
 
@@ -686,3 +733,8 @@ proc/establish_old_db_connection()
 		return 1
 
 #undef FAILED_DB_CONNECTION_CUTOFF
+
+/world/proc/enable_debugger()
+	var/dll = world.GetConfig("env", "EXTOOLS_DLL")
+	if (dll)
+		call(dll, "debug_initialize")()

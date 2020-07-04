@@ -172,7 +172,7 @@
 	corps += /obj/item/clothing/under/morpheus
 	corps += /obj/item/clothing/under/skinner
 	corps += /obj/item/clothing/under/dais
-	corps += /obj/item/clothing/under/scp_uniform
+//	corps += /obj/item/clothing/under/scp_uniform
 	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(corps)
 
 /datum/gear/uniform/corp_guard

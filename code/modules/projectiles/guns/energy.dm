@@ -8,7 +8,8 @@ GLOBAL_LIST_INIT(registered_cyborg_weapons, list())
 	icon_state = "energy"
 	fire_sound = 'sound/weapons/Taser.ogg'
 	fire_sound_text = "laser blast"
-	accuracy = 1
+	s_type = "E" //inf thing, serials
+//inf	accuracy = 1
 
 	var/obj/item/weapon/cell/power_supply //What type of power cell this uses
 	var/charge_cost = 20 //How much energy is needed to fire.
@@ -76,18 +77,8 @@ GLOBAL_LIST_INIT(registered_cyborg_weapons, list())
 	return new projectile_type(src)
 
 /obj/item/weapon/gun/energy/proc/get_external_power_supply()
-	if(isrobot(src.loc))
-		var/mob/living/silicon/robot/R = src.loc
-		return R.cell
-	if(istype(src.loc, /obj/item/rig_module))
-		var/obj/item/rig_module/module = src.loc
-		if(module.holder && module.holder.wearer)
-			var/mob/living/carbon/human/H = module.holder.wearer
-			if(istype(H) && H.back)
-				var/obj/item/weapon/rig/suit = H.back
-				if(istype(suit))
-					return suit.cell
-	return null
+	if(isrobot(loc) || istype(loc, /obj/item/rig_module) || istype(loc, /obj/item/mech_equipment))
+		return loc.get_cell()
 
 /obj/item/weapon/gun/energy/examine(mob/user)
 	. = ..(user)
@@ -99,7 +90,6 @@ GLOBAL_LIST_INIT(registered_cyborg_weapons, list())
 	else
 		var/shots_remaining = round(power_supply.charge / charge_cost)
 		to_chat(user, "Has [shots_remaining] shot\s remaining.")
-	return
 
 /obj/item/weapon/gun/energy/on_update_icon()
 	..()

@@ -20,7 +20,6 @@
 	var/emagged = 0
 	var/ui_ref
 	var/list/monitored_alarms = list()
-	var/list/zlevel_alarms = list()
 
 /datum/nano_module/atmos_control/New(atmos_computer, var/list/req_access, monitored_alarm_ids)
 	..()
@@ -30,17 +29,13 @@
 	else if(req_access)
 		log_debug("\The [src] was given an unepxected req_access: [req_access]")
 
-	if(monitored_alarm_ids)
-		for(var/obj/machinery/alarm/alarm in SSmachines.machinery)
-			if(alarm.alarm_id && alarm.alarm_id in monitored_alarm_ids)
-				monitored_alarms += alarm
-		// machines may not yet be ordered at this point
-		monitored_alarms = dd_sortedObjectList(monitored_alarms)
-	else
-		for(var/obj/machinery/alarm/alarm in SSmachines.machinery)
-			if(isStationLevel(alarm.z))
-				zlevel_alarms += alarm
-		zlevel_alarms = dd_sortedObjectList(zlevel_alarms)
+//inf	if(monitored_alarm_ids)
+	for(var/obj/machinery/alarm/alarm in SSmachines.machinery)
+//inf		if(alarm.alarm_id && (alarm.alarm_id in monitored_alarm_ids))
+		if(alarm.z in GLOB.using_map.station_levels) //inf
+			monitored_alarms += alarm
+	// machines may not yet be ordered at this point
+	monitored_alarms = dd_sortedObjectList(monitored_alarms)
 
 /datum/nano_module/atmos_control/Topic(href, href_list)
 	if(..())
@@ -48,7 +43,7 @@
 
 	if(href_list["alarm"])
 		if(ui_ref)
-			var/obj/machinery/alarm/alarm = locate(href_list["alarm"]) in (monitored_alarms.len ? monitored_alarms : zlevel_alarms)
+			var/obj/machinery/alarm/alarm = locate(href_list["alarm"]) in (monitored_alarms.len ? monitored_alarms : SSmachines.machinery)
 			if(alarm)
 				var/datum/topic_state/TS = generate_state(alarm)
 				alarm.ui_interact(usr, master_ui = ui_ref, state = TS)
@@ -59,7 +54,7 @@
 	var/alarms[0]
 
 	// TODO: Move these to a cache, similar to cameras
-	for(var/obj/machinery/alarm/alarm in (monitored_alarms.len ? monitored_alarms : zlevel_alarms))
+	for(var/obj/machinery/alarm/alarm in (monitored_alarms.len ? monitored_alarms : SSmachines.machinery))
 		alarms[++alarms.len] = list("name" = sanitize(alarm.name), "ref"= "\ref[alarm]", "danger" = max(alarm.danger_level, alarm.alarm_area.atmosalm))
 	data["alarms"] = alarms
 

@@ -50,8 +50,8 @@
 /datum/report_field/proc/set_value(given_value)
 	value = given_value
 
-//Exports the contents of the field into html for viewing. 
-/datum/report_field/proc/get_value()
+//Exports the contents of the field into html for viewing.
+/datum/report_field/proc/get_value(in_line = 0)
 	return value
 
 //In case the name needs to be displayed dynamically.
@@ -94,7 +94,7 @@ Basic field subtypes.
 
 //For information between fields.
 /datum/report_field/text_label/instruction/generate_row_pencode(access, with_fields)
-	return "\[small\]\[i\][display_name()]\[i\]\[/small\]"
+	return "\[small\]\[i\][display_name()]\[/i\]\[/small\]"
 
 /datum/report_field/text_label/instruction/generate_nano_data(list/given_access)
 	var/dat = ..()
@@ -103,7 +103,7 @@ Basic field subtypes.
 
 //For headers between fields.
 /datum/report_field/text_label/header/generate_row_pencode(access, with_fields)
-	return "\[h3][display_name()]\[h3]"
+	return "\[h3][display_name()]\[/h3]"
 
 /datum/report_field/text_label/header/generate_nano_data(list/given_access)
 	var/dat = ..()
@@ -128,7 +128,7 @@ Basic field subtypes.
 	needs_big_box = 1
 
 /datum/report_field/pencode_text/get_value()
-	return pencode2html(value)
+	return digitalPencode2html(value)
 
 /datum/report_field/pencode_text/set_value(given_value)
 	if(istext(given_value))

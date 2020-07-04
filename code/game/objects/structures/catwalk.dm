@@ -5,9 +5,9 @@
 	icon_state = "catwalk"
 	density = 0
 	anchored = 1.0
-	plane = ABOVE_TURF_PLANE
 	layer = CATWALK_LAYER
-	footstep_type = FOOTSTEP_CATWALK
+	footstep_type = /decl/footsteps/catwalk
+	obj_flags = OBJ_FLAG_NOFALL
 	var/hatch_open = FALSE
 	var/obj/item/stack/tile/mono/plated_tile
 
@@ -84,7 +84,8 @@
 		return
 	if(istype(C, /obj/item/weapon/gun/energy/plasmacutter))
 		var/obj/item/weapon/gun/energy/plasmacutter/cutter = C
-		cutter.slice(user)
+		if(!cutter.slice(user))
+			return
 		deconstruct(user)
 		return
 	if(isCrowbar(C) && plated_tile)
@@ -120,6 +121,9 @@
 						break
 				update_icon()
 
+/obj/structure/catwalk/refresh_neighbors()
+	return
+
 /obj/effect/catwalk_plated
 	name = "plated catwalk spawner"
 	icon = 'icons/obj/catwalks.dmi'
@@ -127,7 +131,7 @@
 	density = 1
 	anchored = 1.0
 	var/activated = FALSE
-	layer = ABOVE_TURF_PLANE
+	layer = CATWALK_LAYER
 	var/plating_type = /decl/flooring/tiling/mono
 
 /obj/effect/catwalk_plated/Initialize(mapload)

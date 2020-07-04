@@ -9,20 +9,20 @@
 	default_h_style = "Tajaran Ears"
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/claws, /datum/unarmed_attack/punch, /datum/unarmed_attack/bite/sharp)
 
-	darksight_range = 8
+	darksight_range = 7
 	darksight_tint = DARKTINT_GOOD
-//	slowdown = -0.25 they have sprint now
-	brute_mod = 1.1
-	burn_mod =  1.2
+	slowdown = -0.5
+	brute_mod = 1.15
+	burn_mod =  1.15
 	flash_mod = 1.5
-	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.4
+	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.5
 
 	gluttonous = GLUT_TINY
 	hidden_from_codex = FALSE
 	health_hud_intensity = 1.75
 
 	min_age = 19
-	max_age = 140
+	max_age = 140 //good medicine?
 
 	description = "The Tajaran are a species of furred mammalian bipeds hailing from the chilly planet of Ahdomai \
 	in the Zamsiin-lr system. They are a naturally superstitious species, with the new generations growing up with tales \
@@ -59,7 +59,7 @@
 	reagent_tag = IS_TAJARA
 
 	move_trail = /obj/effect/decal/cleanable/blood/tracks/paw
-
+/*
 	base_auras = list(
 		/obj/aura/speed/bio/tajaran
 		)
@@ -67,7 +67,7 @@
 	inherent_verbs = list(
 		/mob/living/carbon/human/proc/toggle_sprint
 		)
-
+*/
 	sexybits_location = BP_GROIN
 
 	available_cultural_info = list(
@@ -110,6 +110,9 @@
 		TAG_FACTION = list(
 			FACTION_TAJARAN_HADII,
 			FACTION_TAJARAN_KAYTAM,
+			FACTION_TAJARAN_KAYTAM_KSD,
+			FACTION_TAJARAN_SHISHI,
+			FACTION_TAJARAN_JAR,
 			FACTION_TAJARAN_NAZKIIN,
 			FACTION_TAJARAN_OTHER,
 			FACTION_NANOTRASEN,

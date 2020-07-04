@@ -1,0 +1,6 @@
+{
+  "ckey" :            "bob46",
+  "character_name" :  "Drake Hauhurst",
+  "item_path" :       "/obj/item/clothing/mask/gas/custom",
+  "req_access" :      [ "ACCESS_SECURITY" ]
+  }

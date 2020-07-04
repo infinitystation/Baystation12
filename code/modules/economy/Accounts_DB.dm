@@ -2,7 +2,7 @@
 /obj/machinery/computer/account_database
 	name = "accounts uplink terminal"
 	desc = "Access transaction logs, account data and all kinds of other financial records."
-	req_access = list(list(access_hop, access_captain))
+	var/needed_access = list(list(access_hop, access_captain))
 	var/receipt_num
 	var/machine_id = ""
 	var/obj/item/weapon/card/id/held_card
@@ -10,14 +10,12 @@
 	var/creating_new_account = 0
 	var/const/fund_cap = 1000000
 
-	circuit = /obj/item/weapon/circuitboard/account_database
-
 	proc/get_access_level()
 		if (!held_card)
 			return 0
 		if(access_cent_captain in held_card.access)
 			return 2
-		else if(access_hop in held_card.access || access_captain in held_card.access)
+		else if(access_hop in held_card.access || (access_captain in held_card.access))
 			return 1
 
 	proc/accounting_letterhead(report_name)
@@ -45,9 +43,9 @@
 
 	attack_hand(user)
 
-/obj/machinery/computer/account_database/attack_hand(mob/user as mob)
-	if(stat & (NOPOWER|BROKEN)) return
+/obj/machinery/computer/account_database/interface_interact(mob/user)
 	ui_interact(user)
+	return TRUE
 
 /obj/machinery/computer/account_database/ui_interact(mob/user, ui_key="main", var/datum/nanoui/ui = null, var/force_open = 1)
 	user.set_machine(src)
@@ -56,7 +54,7 @@
 	data["src"] = "\ref[src]"
 	data["id_inserted"] = !!held_card
 	data["id_card"] = held_card ? text("[held_card.registered_name], [held_card.assignment]") : "-----"
-	data["access_level"] = check_access(held_card)
+	data["access_level"] = has_access(needed_access, held_card && held_card.GetAccess())
 	data["machine_id"] = machine_id
 	data["creating_new_account"] = creating_new_account
 	data["detailed_account_view"] = !!detailed_account_view
@@ -175,7 +173,7 @@
 					text = {"
 						[accounting_letterhead(title)]
 						<u>Holder:</u> [detailed_account_view.owner_name]<br>
-						<u>Balance:</u> T[detailed_account_view.money]<br>
+						<u>Balance:</u> [GLOB.using_map.local_currency_name_short][detailed_account_view.money]<br>
 						<u>Status:</u> [detailed_account_view.suspended ? "Suspended" : "Active"]<br>
 						<u>Transactions:</u> ([detailed_account_view.transaction_log.len])<br>
 						<table>
@@ -229,7 +227,7 @@
 								<tr>
 									<td>#[D.account_number]</td>
 									<td>[D.owner_name]</td>
-									<td>T[D.money]</td>
+									<td>[GLOB.using_map.local_currency_name_short][D.money]</td>
 									<td>[D.suspended ? "Suspended" : "Active"]</td>
 								</tr>
 						"}

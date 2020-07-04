@@ -18,12 +18,14 @@
 	name = "coat of paint"
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "wall_paint_effect"
-	plane = TURF_PLANE
 	layer = TURF_DETAIL_LAYER
 	blend_mode = BLEND_MULTIPLY
 
 /obj/effect/paint/Initialize()
-	..()
+	. = ..()
+	return INITIALIZE_HINT_LATELOAD
+
+/obj/effect/paint/LateInitialize()
 	var/turf/simulated/wall/W = get_turf(src)
 	if(istype(W))
 		W.paint_color = color
@@ -32,7 +34,7 @@
 	if(WF)
 		WF.paint_color = color
 		WF.update_icon()
-	return INITIALIZE_HINT_QDEL
+	qdel(src)
 
 /obj/effect/paint/pink
 	color = COLOR_PINK
@@ -45,9 +47,6 @@
 
 /obj/effect/paint/silver
 	color = COLOR_SILVER
-
-/obj/effect/paint/nt_white
-	color = COLOR_OFF_WHITE
 
 /obj/effect/paint/black
 	color = COLOR_DARK_GRAY
@@ -66,12 +65,14 @@
 	name = "stripe of paint"
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "white"
-	plane = TURF_PLANE
 	layer = TURF_DETAIL_LAYER
 	blend_mode = BLEND_MULTIPLY
 
 /obj/effect/paint_stripe/Initialize()
-	..()
+	. = ..()
+	return INITIALIZE_HINT_LATELOAD
+
+/obj/effect/paint_stripe/LateInitialize()
 	var/turf/simulated/wall/W = get_turf(src)
 	if(istype(W))
 		W.stripe_color = color
@@ -80,16 +81,13 @@
 	if(WF)
 		WF.stripe_color = color
 		WF.update_icon()
-	return INITIALIZE_HINT_QDEL
+	qdel(src)
 
 /obj/effect/paint_stripe/green
 	color = COLOR_GREEN_GRAY
 
 /obj/effect/paint_stripe/red
 	color = COLOR_RED_GRAY
-
-/obj/effect/paint_stripe/nt_red
-	color = COLOR_NT_RED
 
 /obj/effect/paint_stripe/paleblue
 	color = COLOR_PALE_BLUE_GRAY
@@ -111,3 +109,17 @@
 
 /obj/effect/paint/brown
 	color = COLOR_DARK_BROWN
+
+/obj/effect/gas_setup	//cryogenic
+	icon = 'icons/mob/screen1.dmi'
+	icon_state = "x3"
+	var/tempurature = 70
+	var/pressure = 20* ONE_ATMOSPHERE
+
+/obj/effect/gas_setup/Initialize()
+	var/obj/machinery/atmospherics/pipe/P = locate() in loc
+	if(P && !P.air_temporary)
+		P.air_temporary = new(P.volume, tempurature)
+		var/datum/gas_mixture/G = P.air_temporary
+		G.adjust_gas(GAS_OXYGEN,((pressure*P.volume)/(R_IDEAL_GAS_EQUATION*temperature)))
+	return INITIALIZE_HINT_QDEL

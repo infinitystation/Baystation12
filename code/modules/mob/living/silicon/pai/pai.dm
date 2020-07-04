@@ -4,12 +4,13 @@
 	icon_state = "repairbot"
 
 	emote_type = 2		// pAIs emotes are heard, not seen, so they can be seen through a container (eg. person)
-	pass_flags = 1
+	pass_flags = PASS_FLAG_TABLE
 	mob_size = MOB_SMALL
 
 	can_pull_size = ITEM_SIZE_SMALL
 	can_pull_mobs = MOB_PULL_SMALLER
 
+	holder_type = /obj/item/weapon/holder
 	idcard = /obj/item/weapon/card/id
 	silicon_radio = null // pAIs get their radio from the card they belong to.
 
@@ -22,7 +23,7 @@
 	var/obj/item/device/paicard/card	// The card we inhabit
 
 	var/chassis = "repairbot"   // A record of your chosen chassis.
-	var/global/list/possible_chassis = list(
+	var/list/possible_chassis = list( //inf //WAS: var/global/list/possible_chassis = list(
 		"Drone" = "repairbot",
 		"Cat" = "cat",
 		"Mouse" = "mouse",
@@ -32,14 +33,6 @@
 		"Corgi" = "corgi",
 		"Crow" = "crow"
 		)
-//[INF]
-//[_Elar_]
-	var/global/list/premium_chassis = list(
-		"Human Female" = "h_female",
-		"Human Female Red" = "h_female_dead"
-		)
-//[/_Elar_]
-//[/INF]
 	var/global/list/possible_say_verbs = list(
 		"Robotic" = list("states","declares","queries"),
 		"Natural" = list("says","yells","asks"),
@@ -80,13 +73,6 @@
 	var/obj/machinery/door/hackdoor		// The airlock being hacked
 	var/hackprogress = 0				// Possible values: 0 - 1000, >= 1000 means the hack is complete and will be reset upon next check
 	var/hack_aborted = 0
-	//[INF]
-	var/hack_speed = 1
-
-	var/is_hack_covered = 0
-
-	var/is_advanced_holo = 0
-	//[/INF]
 
 	var/translator_on = 0 // keeps track of the translator module
 
@@ -107,6 +93,7 @@
 		if(!card.radio)
 			card.radio = new /obj/item/device/radio(card)
 		silicon_radio = card.radio
+	RecalculateModifications() //inf
 
 /mob/living/silicon/pai/Destroy()
 	card = null
@@ -125,6 +112,11 @@
 	statpanel("Status")
 	if (src.client.statpanel == "Status")
 		show_silenced()
+		//[INF]
+		stat("Hack Cover: ", is_hack_covered ? "<font color='#f00'>PRESENTED</font>" : "<font color='#fa0'>NOT FOUND</font>")
+		stat("Hack Speed Multiplier: ", hack_speed ? hack_speed : "None left")
+		stat("Memory: ", ram)
+		//[/INF]
 
 /mob/living/silicon/pai/check_eye(var/mob/user as mob)
 	if (!src.current)
@@ -132,12 +124,7 @@
 	return 0
 
 /mob/living/silicon/pai/restrained()
-	if(istype(src.loc,/obj/item/device/paicard))
-		return 0
-	..()
-
-/mob/living/silicon/pai/MouseDrop(atom/over_object)
-	return
+	return !istype(loc, /obj/item/device/paicard) && ..()
 
 /mob/living/silicon/pai/emp_act(severity)
 	// Silence for 2 minutes
@@ -193,7 +180,7 @@
 
 // Procs/code after this point is used to convert the stationary pai item into a
 // mobile pai mob. This also includes handling some of the general shit that can occur
-// to it. Really this deserves its own file, but for the moment it can sit here. ~ Z
+// to it. Really this deserves its own file.
 
 /mob/living/silicon/pai/verb/fold_out()
 	set category = "pAI Commands"
@@ -211,10 +198,10 @@
 	last_special = world.time + 100
 
 	//I'm not sure how much of this is necessary, but I would rather avoid issues.
-	if(istype(card.loc,/obj/item/rig_module) || istype(card.loc,/obj/item/integrated_circuit/manipulation/ai/))
+	if(istype(card.loc, /obj/item/rig_module) || istype(card.loc, /obj/item/integrated_circuit/manipulation/ai/))
 		to_chat(src, "There is no room to unfold inside \the [card.loc]. You're good and stuck.")
 		return 0
-	else if(istype(card.loc,/mob))
+	else if(istype(card.loc, /mob))
 		var/mob/holder = card.loc
 		if(ishuman(holder))
 			var/mob/living/carbon/human/H = holder
@@ -226,8 +213,9 @@
 					break
 		holder.drop_from_inventory(card)
 
-	src.client.perspective = EYE_PERSPECTIVE
-	src.client.eye = src
+	if(client)
+		client.perspective = EYE_PERSPECTIVE
+		client.eye = src
 	dropInto(card.loc)
 
 	card.forceMove(src)
@@ -235,6 +223,7 @@
 
 	var/turf/T = get_turf(src)
 	if(istype(T)) T.visible_message("<b>[src]</b> folds outwards, expanding into a mobile form.")
+	update_verbs() //inf
 
 /mob/living/silicon/pai/verb/fold_up()
 	set category = "pAI Commands"
@@ -249,7 +238,15 @@
 	if(world.time <= last_special)
 		return
 
+	//[INF]
+	var/obj/item/integrated_circuit/manipulation/ai/A = src.loc
+	if(istype(A))
+		A.unload_ai()
+		src.visible_message("[src] ejects from [A].")
+	//[/INF]
+
 	close_up()
+	update_verbs() //inf
 
 /mob/living/silicon/pai/proc/choose_chassis()
 	set category = "pAI Commands"
@@ -258,32 +255,16 @@
 	var/choice
 	var/finalized = "No"
 	while(finalized == "No" && src.client)
-		if(!is_advanced_holo)
-			choice = input(usr,"What would you like to use for your hologram icon? This decision can only be made once.") as null|anything in possible_chassis
-			if(!choice) return
 
-			icon_state = possible_chassis[choice]
-			finalized = alert("Look at your sprite. Is this what you wish to use?",,"No","Yes")
-			chassis = possible_chassis[choice]
+		choice = input(usr,"What would you like to use for your mobile chassis icon? This decision can only be made once.") as null|anything in possible_chassis
+		if(!choice) return
 
-		else
-			switch(alert("Do you want to choose premium hologram icon?", "Hologram", "Standart", "Premium"))
-				if("Standart")
-					choice = input(usr,"What would you like to use for your hologram icon? This decision can only be made once.") as null|anything in possible_chassis
-					if(!choice) return
-					icon_state = possible_chassis[choice]
-					finalized = alert("Look at your sprite. Is this what you wish to use?",,"No","Yes")
-					chassis = possible_chassis[choice]
+		icon_state = possible_chassis[choice]
+		finalized = alert("Look at your sprite. Is this what you wish to use?",,"No","Yes")
 
-				if("Premium")
-					choice = input(usr,"What would you like to use for your hologram icon? This decision can only be made once.") as null|anything in premium_chassis
-					if(!choice) return
-					icon_state = premium_chassis[choice]
-					finalized = alert("Look at your sprite. Is this what you wish to use?",,"No","Yes")
-					chassis = premium_chassis[choice]
-
-	if(!is_advanced_holo) verbs -= /mob/living/silicon/pai/proc/choose_chassis
-	if(!/mob/living/proc/hide in verbs) verbs += /mob/living/proc/hide
+	if(!is_advanced_holo) //inf
+		verbs -= /mob/living/silicon/pai/proc/choose_chassis
+	verbs += /mob/living/proc/hide
 
 /mob/living/silicon/pai/proc/choose_verbs()
 	set category = "pAI Commands"
@@ -315,56 +296,26 @@
 		to_chat(src, "<span class='notice'>You are now [resting ? "resting" : "getting up"]</span>")
 
 //Overriding this will stop a number of headaches down the track.
-/mob/living/silicon/pai/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	//[INF]
-	if(istype(W, /obj/item/weapon/paimod))
-		var/obj/item/weapon/paimod/PMOD = W
-		if(PMOD.is_broken)
-			visible_message(SPAN_NOTICE("[user.name] tried to install [PMOD.name] in [src.name], but nothing happened."))
-			return
-		if(istype(PMOD, /obj/item/weapon/paimod/memory))
-			var/obj/item/weapon/paimod/memory/MMOD = PMOD
-			visible_message(SPAN_NOTICE("[user.name] installed [MMOD.name] in [src.name]."))
-			src.ram += MMOD.mmemory
-			to_chat(src, SPAN_NOTICE("Your ram is increased by [MMOD.mmemory]. Now your ram = [src.ram]."))
-			qdel(MMOD)
-			return
-		if(istype(PMOD, /obj/item/weapon/paimod/hack_speed))
-			var/obj/item/weapon/paimod/hack_speed/HMOD = PMOD
-			src.hack_speed += HMOD.additional_speed
-			visible_message(SPAN_NOTICE("[user.name] installed [HMOD.name] in [src.name]."))
-			to_chat(src, SPAN_NOTICE("Your hack speed is increased by [HMOD.additional_speed] times."))
-			qdel(HMOD)
-			return
-		if(istype(PMOD, /obj/item/weapon/paimod/hack_camo))
-			var/obj/item/weapon/paimod/hack_camo/CHMOD = PMOD
-			visible_message(SPAN_NOTICE("[user.name] installed [CHMOD.name] in [src.name]."))
-			src.is_hack_covered = 1
-			to_chat(src, SPAN_NOTICE("Now your hack covered."))
-			qdel(CHMOD)
-			return
-		if(istype(PMOD, /obj/item/weapon/paimod/advanced_holo))
-			var/obj/item/weapon/paimod/advanced_holo/HoloMOD = PMOD
-			visible_message(SPAN_NOTICE("[user.name] installed [HoloMOD.name] in [src.name]."))
-			src.is_advanced_holo = 1
-			if(!/mob/living/silicon/pai/proc/choose_chassis in src.verbs)
-				src.verbs += /mob/living/silicon/pai/proc/choose_chassis
-			to_chat(src, SPAN_NOTICE("Now you can choose premium chassis and change it anytime."))
-			qdel(HoloMOD)
-			return
-	//[/INF]
+/mob/living/silicon/pai/attackby(obj/item/weapon/W, mob/user)
+	var/obj/item/weapon/card/id/card = W.GetIdCard()
+	if(card && user.a_intent == I_HELP)
+		var/list/new_access = card.GetAccess()
+		src.idcard.access = new_access
+		visible_message("<span class='notice'>[user] slides [W] across [src].</span>")
+		to_chat(src, SPAN_NOTICE("Your access has been updated!"))
+		return FALSE // don't continue processing click callstack.
 	if(W.force)
-		visible_message("<span class='danger'>[user.name] attacks [src] with [W]!</span>")
+		visible_message("<span class='danger'>[user] attacks [src] with [W]!</span>")
 		src.adjustBruteLoss(W.force)
 		src.updatehealth()
 	else
-		visible_message("<span class='warning'>[user.name] bonks [src] harmlessly with [W].</span>")
+		visible_message("<span class='warning'>[user] bonks [src] harmlessly with [W].</span>")
 	spawn(1)
 		if(stat != 2) close_up()
 	return
 
 /mob/living/silicon/pai/attack_hand(mob/user as mob)
-	visible_message("<span class='danger'>[user.name] boops [src] on the head.</span>")
+	visible_message("<span class='danger'>[user] boops [src] on the head.</span>")
 	close_up()
 
 //I'm not sure how much of this is necessary, but I would rather avoid issues.
@@ -372,15 +323,16 @@
 
 	last_special = world.time + 100
 
-	if(src.loc == card)
+	if(loc == card)
 		return
 
 	var/turf/T = get_turf(src)
 	if(istype(T)) T.visible_message("<b>[src]</b> neatly folds inwards, compacting down to a rectangular card.")
 
-	src.stop_pulling()
-	src.client.perspective = EYE_PERSPECTIVE
-	src.client.eye = card
+	stop_pulling()
+	if(client)
+		client.perspective = EYE_PERSPECTIVE
+		client.eye = card
 
 	//stop resting
 	resting = 0
@@ -391,13 +343,13 @@
 		var/mob/living/M = H.loc
 		if(istype(M))
 			M.drop_from_inventory(H, get_turf(src))
-		dropInto(loc)
+		H.dropInto(get_turf(M))
 
 	// Move us into the card and move the card to the ground.
-	card.dropInto(src.loc)
-	forceMove(card)
+	card.dropInto(get_turf(card))
 	resting = 0
 	icon_state = "[chassis]"
+	forceMove(card)
 
 // No binary for pAIs.
 /mob/living/silicon/pai/binarycheck()
@@ -405,13 +357,13 @@
 
 // Handle being picked up.
 /mob/living/silicon/pai/get_scooped(var/mob/living/carbon/grabber, var/self_drop)
-	var/obj/item/weapon/holder/H = ..(grabber, self_drop)
-	if(!istype(H))
-		return
-	H.icon_state = "pai-[icon_state]"
-	grabber.update_inv_l_hand()
-	grabber.update_inv_r_hand()
-	return H
+	. = ..()
+	if(.)
+		var/obj/item/weapon/holder/H = .
+		if(istype(H))
+			H.icon_state = "pai-[icon_state]"
+			grabber.update_inv_l_hand()
+			grabber.update_inv_r_hand()
 
 /mob/living/silicon/pai/verb/wipe_software()
 	set name = "Wipe Software"

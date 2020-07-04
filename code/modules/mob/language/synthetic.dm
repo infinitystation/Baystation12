@@ -1,10 +1,10 @@
 /datum/language/binary
-	name = "Robot Talk"
+	name = LANGUAGE_ROBOT_GLOBAL
 	desc = "Most human facilities support free-use communications protocols and routing hubs for synthetic use."
 	colour = "say_quote"
-	speech_verb = "сообщает"
-	ask_verb = "запрашивает"
-	exclaim_verb = "объявляет"
+	speech_verb = "СЃРѕРѕР±С‰Р°РµС‚"
+	ask_verb = "Р·Р°РїСЂР°С€РёРІР°РµС‚"
+	exclaim_verb = "РѕР±СЉСЏРІР»СЏРµС‚"
 	key = "b"
 	flags = RESTRICTED | HIVEMIND
 	shorthand = "N/A"
@@ -53,11 +53,11 @@
 		R.cell_use_power(C.active_usage)
 
 /datum/language/binary/drone
-	name = "Drone Talk"
+	name = LANGUAGE_DRONE_GLOBAL
 	desc = "A heavily encoded damage control coordination stream."
-	speech_verb = "транслирует"
-	ask_verb = "транслирует"
-	exclaim_verb = "транслирует"
+	speech_verb = "С‚СЂР°РЅСЃР»РёСЂСѓРµС‚"
+	ask_verb = "С‚СЂР°РЅСЃР»РёСЂСѓРµС‚"
+	exclaim_verb = "С‚СЂР°РЅСЃР»РёСЂСѓРµС‚"
 	colour = "say_quote"
 	key = "d"
 	flags = RESTRICTED | HIVEMIND

@@ -1,10 +1,3 @@
-/obj/item/weapon/circuitboard/pile_ripper
-	name = "Circuit board (Pile Ripper)"
-	board_type = "machine"
-	build_path = /obj/machinery/pile_ripper
-	origin_tech = "engineering = 3"
-	req_components = list(/obj/item/weapon/stock_parts/manipulator = 1)
-
 /obj/machinery/pile_ripper
 	name = "pile ripper"
 	desc = "This machine rips everything in front of it apart."
@@ -21,13 +14,11 @@
 	var/blood = 0
 	var/rating = 1
 	var/last_ripped = 0
+	construct_state = /decl/machine_construction/default/panel_closed
+	uncreated_component_parts = null
 
 /obj/machinery/pile_ripper/Initialize()
-	// On us
 	. = ..()
-	component_parts = list()
-	component_parts += new /obj/item/weapon/circuitboard/pile_ripper(null)
-	component_parts += new /obj/item/weapon/stock_parts/manipulator(null)
 	RefreshParts()
 	update_icon()
 
@@ -89,18 +80,7 @@
 	if (istype(I, /obj/item/weapon/card/emag))
 		emag_act(user)
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-
-	if(default_deconstruction_screwdriver(user, I))
-		return
-
-	if(default_part_replacement(user, I))
-		return
-
-	if(default_deconstruction_crowbar(user, I))
-		return
-
-	else
-		default_deconstruction_crowbar(user,I)
+	return ..()
 
 /obj/machinery/pile_ripper/emag_act(mob/user)
 	if(!emagged)
@@ -128,9 +108,10 @@
 	var/gib = 1
 	// By default, the emagged pile_ripper will gib all non-carbons. (human simple animal mobs don't count)
 	if(iscarbon(L))
+		var/mob/living/carbon/C = L
 		gib = 0
-		if(L.stat == CONSCIOUS)
-			L.emote("scream",,, 1)
+		if(C.can_feel_pain())
+			C.agony_scream()
 		add_blood(L)
 	if(!blood && !issilicon(L))
 		blood = 1

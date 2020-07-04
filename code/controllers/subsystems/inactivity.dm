@@ -7,19 +7,22 @@ SUBSYSTEM_DEF(inactivity)
 	var/number_kicked = 0
 
 /datum/controller/subsystem/inactivity/fire(resumed = FALSE)
-//	if (!config.kick_inactive) // we are using this for kicking staff in AFK
-//		suspend()
-//		return
+	if (!config.kick_inactive)
+		suspend()
+		return
 	if (!resumed)
 		client_list = GLOB.clients.Copy()
 
 	while(client_list.len)
 		var/client/C = client_list[client_list.len]
 		client_list.len--
-//		if(!C.holder && C.is_afk(config.kick_inactive MINUTES) && !isobserver(C.mob))
-		if(C.holder && check_rights(R_ADMIN, 0, C) && C.is_afk(config.kick_inactive MINUTES) && config.kick_inactive)
+//		if(!C.holder && C.is_afk(config.kick_inactive MINUTES) && !isobserver(C.mob)) inf@dev: bay
+		if((C.holder && check_rights(R_ADMIN, 0, C) || isnewplayer(C)) && C.is_afk(config.kick_inactive MINUTES))
 			log_access("AFK: [key_name(C)]")
-			to_chat(C, SPAN_WARNING("Вы, администратор, не проЯвлЯли активность в течение ([config.kick_inactive]) минут и были отсоеденены. Прожмите de-admin в следующий раз перед длительным отходом."))
+//			to_chat(C, "<SPAN CLASS='warning'>You have been inactive for more than [config.kick_inactive] minute\s and have been disconnected.</SPAN>")
+			to_chat(C, SPAN_WARNING("Р’С‹ РЅРµ РїСЂРѕСЏРІР»СЏР»Рё Р°РєС‚РёРІРЅРѕСЃС‚СЊ РІ С‚РµС‡РµРЅРёРµ [config.kick_inactive] РјРёРЅСѓС‚ Рё Р±С‹Р»Рё РѕС‚СЃРѕРµРґРµРЅРµРЅС‹."))
+			if(C.holder && check_rights(R_ADMIN, 0, C))
+				to_chat(C, SPAN_NOTICE(" * РџСЂРѕР¶РјРёС‚Рµ de-admin РІ СЃР»РµРґСѓСЋС‰РёР№ СЂР°Р· РїРµСЂРµРґ РґР»РёС‚РµР»СЊРЅС‹Рј РѕС‚С…РѕРґРѕРј. * "))
 			qdel(C)
 			number_kicked++
 		if (MC_TICK_CHECK)

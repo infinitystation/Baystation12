@@ -31,6 +31,10 @@
 	husk_icon = 		'infinity/icons/mob/human_races/species/resomi/husk.dmi'
 
 	slowdown = -0.8 //speed fix?
+
+	darksight_range = 2
+	darksight_tint = DARKTINT_GOOD
+	flash_mod = 2
 	total_health = 150
 	brute_mod = 1.35
 	burn_mod =  1.35
@@ -40,7 +44,7 @@
 	light_sensitive = 6
 	gluttonous = GLUT_TINY
 	blood_volume = 280
-	hunger_factor = DEFAULT_HUNGER_FACTOR * 3
+	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.5
 	taste_sensitivity = TASTE_SENSITIVE
 	pulse_rate_mod = 1.5
 	body_temperature = 314.15
@@ -100,7 +104,7 @@
 		)
 
 	inherent_verbs = list(
-		/mob/living/carbon/human/proc/sonar_ping,
+		/mob/living/carbon/human/proc/resomi_sonar_ping,
 		/mob/living/proc/toggle_pass_table
 		)
 
@@ -122,8 +126,8 @@
 			CULTURE_HUMAN_PLUTO,
 			CULTURE_HUMAN_BELTER,
 			CULTURE_HUMAN_CETI,
-			//CULTURE_RESOMI_LOSTCOLONYRICH,
-			//CULTURE_RESOMI_LOSTCOLONYPOOR,
+			CULTURE_RESOMI_LOSTCOLONYRICH,
+			CULTURE_RESOMI_LOSTCOLONYPOOR,
 			//CULTURE_RESOMI_SAVEEL,
 			CULTURE_OTHER
 		),
@@ -176,5 +180,16 @@
 		)
 	)
 
+/datum/species/resomi/equip_survival_gear(var/mob/living/carbon/human/H)
+	..()
+	H.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses/lenses(H), slot_glasses)
+
 /datum/species/resomi/get_surgery_overlay_icon(var/mob/living/carbon/human/H)
 	return 'infinity/icons/mob/human_races/species/resomi/surgery.dmi'
+
+/datum/species/resomi/skills_from_age(age)
+	switch(age)
+		if(0 to 17)		. = -4
+		if(18 to 25)	. = 0
+		if(26 to 35)	. = 4
+		else			. = 8

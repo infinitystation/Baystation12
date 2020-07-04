@@ -54,7 +54,12 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 	var/conversion_blurb = "You catch a glimpse of the Realm of Nar-Sie, the Geometer of Blood. You now see how flimsy the world is, you see that it should be open to the knowledge of That Which Waits. Assist your new compatriots in their dark dealings. Their goals are yours, and yours are theirs. You serve the Dark One above all else. Bring It back."
 
 	faction = "cult"
-
+	ambitious = 0 //INF
+//[INF]
+/datum/antagonist/cultist/create_objectives(var/datum/mind/cultist, override = 1)
+	if(!..())
+		return
+//[/INF]
 /datum/antagonist/cultist/create_global_objectives()
 
 	if(!..())
@@ -96,7 +101,7 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 	if(!..())
 		return 0
 	to_chat(player.current, "<span class='danger'>An unfamiliar white light flashes through your mind, cleansing the taint of the dark-one and the memories of your time as his servant with it.</span>")
-	player.memory = ""
+	player.ClearMemories(type)
 	if(show_message)
 		player.current.visible_message("<span class='notice'>[player.current] looks like they just reverted to their old faith!</span>")
 	remove_cult_magic(player.current)

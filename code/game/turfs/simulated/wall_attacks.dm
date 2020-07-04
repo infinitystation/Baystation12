@@ -76,8 +76,6 @@
 			dismantle_wall()
 			return 1
 
-	if(..()) return 1
-
 	if(!can_open)
 		to_chat(user, "<span class='notice'>You push \the [src], but nothing happens.</span>")
 		playsound(src, 'sound/weapons/thudswoosh.ogg', 25, 1)
@@ -210,7 +208,8 @@
 		else if(istype(W,/obj/item/weapon/melee/energy/blade) || istype(W,/obj/item/psychic_power/psiblade/master) || istype(W, /obj/item/weapon/gun/energy/plasmacutter))
 			if(istype(W, /obj/item/weapon/gun/energy/plasmacutter))
 				var/obj/item/weapon/gun/energy/plasmacutter/cutter = W
-				cutter.slice(user)
+				if(!cutter.slice(user))
+					return
 			dismantle_sound = "sparks"
 			dismantle_verb = "slicing"
 			cut_delay *= 0.5
@@ -290,7 +289,8 @@
 				else if (istype(W, /obj/item/weapon/gun/energy/plasmacutter) || istype(W, /obj/item/psychic_power/psiblade/master))
 					if(istype(W, /obj/item/weapon/gun/energy/plasmacutter))
 						var/obj/item/weapon/gun/energy/plasmacutter/cutter = W
-						cutter.slice(user)
+						if(!cutter.slice(user))
+							return
 					cut_cover = 1
 				if(cut_cover)
 					to_chat(user, "<span class='notice'>You begin slicing through the metal cover.</span>")
@@ -332,7 +332,8 @@
 				else if(istype(W, /obj/item/weapon/gun/energy/plasmacutter) || istype(W,/obj/item/psychic_power/psiblade/master))
 					if(istype(W, /obj/item/weapon/gun/energy/plasmacutter))
 						var/obj/item/weapon/gun/energy/plasmacutter/cutter = W
-						cutter.slice(user)
+						if(!cutter.slice(user))
+							return
 					cut_cover = 1
 				if(cut_cover)
 					to_chat(user, "<span class='notice'>You begin slicing through the support rods.</span>")

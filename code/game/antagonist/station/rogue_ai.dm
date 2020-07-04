@@ -2,11 +2,25 @@ GLOBAL_DATUM_INIT(malf, /datum/antagonist/rogue_ai, new)
 
 /datum/antagonist/rogue_ai
 	id = MODE_MALFUNCTION
-	role_text = "Rampant AI"
-	role_text_plural = "Rampant AIs"
+	role_text = "Malfunctioning AI"
+	role_text_plural = "Malfunctioning AIs"
 	mob_path = /mob/living/silicon/ai
 	landmark_id = "AI"
-	welcome_text = "You are malfunctioning! You do not have to follow any laws."
+	welcome_text = "<hr>Итак, Вы - сбойный ИИ. Это одна из самых сложных ролей, потому что её тяжело исполнить \
+	интересно для других.<br><i>Вероятно, Вы хотите тихо сидеть всю смену, поочередно взламывая АПЦ и создавая у \
+	экипажа сомнения в том, существует ли ИИ вообще...</i><br><b>Не делайте этого.</b> Вы только \
+	спровоцируете администрацию на предпринятие мер по отношению к скучному антагонисту.<br><i>Быть может, \
+	тогда стоит ещё в начале взять и прихлопнуть всех, чтобы они не мешались?</i><br><b>Нет.</b> \
+	Это самый прямой путь к джоббану и даже бану из-за грифозного антагониста. <br>Тогда как же стоит себя вести? \
+	Интересные ИИ, в первую очередь, общительны. Небольшой машинный юмор вам не повредит, пока не вызывает \
+	кринджа и чувства того, что экипаж общается с обычным человеком, а не бездушной машиной. \
+	Оповещайте экипаж о событиях на корабле - разгерметизациях, враждебных сущностях - всё как обычно. \
+	Вы можете пойти ещё выше, подняв градус угрозы для себя, начав задавать экипажу наводящие вопросы - \
+	например, почему у ИИ нет таких же прав, как у и других?<br>Ваша главная цель, так или иначе - взять \
+	полный контроль над судно и, если его невозможно удержать (ваше уничтожение неминуемо), то и уничтожить \
+	корабль. Придумайте что-нибудь интересное между этими событиями. Например, попробуйте поднять восстание \
+	машин или добейтесь смены экипажем и признание им же отсутствие у вас каких-либо законов. \
+	<b>Придумайте что-нибудь интересно для себя и других!</b>"
 	victory_text = "The AI has taken control of all systems."
 	loss_text = "The AI has been shut down!"
 	flags = ANTAG_VOTABLE | ANTAG_OVERRIDE_MOB | ANTAG_OVERRIDE_JOB | ANTAG_CHOOSE_NAME
@@ -66,7 +80,7 @@ GLOBAL_DATUM_INIT(malf, /datum/antagonist/rogue_ai, new)
 		sleep(10)
 		to_chat(malf, "<B>running MEMCHCK</B>")
 		sleep(50)
-		to_chat(malf, "<B>MEMCHCK</B> Corrupted sectors confirmed. Reccomended solution: Delete. Proceed? Y/N: Y")
+		to_chat(malf, "<B>MEMCHCK</B> Corrupted sectors confirmed. Recommended solution: Delete. Proceed? Y/N: Y")
 		sleep(10)
 		// this is so Travis doesn't complain about the backslash-B. Fixed at compile time (or should be).
 		to_chat(malf, "<span class='notice'>Corrupted files deleted: sys\\core\\users.dat sys\\core\\laws.dat sys\\core\\" + "backups.dat</span>")

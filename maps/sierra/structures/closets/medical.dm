@@ -16,13 +16,12 @@
 		/obj/item/device/radio/headset/heads/cmo,
 		/obj/item/device/radio/headset/heads/cmo/alt,
 		/obj/item/device/flash,
+		/obj/item/clothing/suit/armor/pcarrier/light,
 		/obj/item/device/megaphone,
 		/obj/item/weapon/reagent_containers/hypospray/vial,
 		/obj/item/device/flashlight/pen,
 		/obj/item/weapon/storage/belt/medical,
 		/obj/item/device/remote_device/chief_medical_officer,
-		/obj/item/clothing/suit/armor/pcarrier/medium,
-		/obj/item/clothing/head/helmet,
 		/obj/item/device/taperecorder,
 		/obj/item/device/tape/random = 3,
 		/obj/item/clothing/glasses/hud/health,
@@ -76,10 +75,9 @@
 
 /obj/structure/closet/wardrobe/medic_sierra/WillContain()
 	return list(
-		RANDOM_SCRUBS = 3,
-		/obj/item/clothing/shoes/white = 3,
-		/obj/item/clothing/suit/storage/toggle/labcoat = 3,
-		/obj/item/clothing/under/sterile = 3,
+		/obj/item/clothing/shoes/white = 2,
+		/obj/item/clothing/suit/storage/toggle/labcoat = 2,
+		/obj/item/clothing/under/sterile = 2,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/medic, /obj/item/weapon/storage/backpack/satchel/med)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/med, /obj/item/weapon/storage/backpack/messenger/med))
 	)

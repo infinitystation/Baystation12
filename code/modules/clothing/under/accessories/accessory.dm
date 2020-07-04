@@ -14,7 +14,7 @@
 	var/list/accessory_icons = list(slot_w_uniform_str = 'icons/mob/onmob/onmob_accessories.dmi', slot_wear_suit_str = 'icons/mob/onmob/onmob_accessories.dmi')
 	sprite_sheets = list(
 		SPECIES_NABBER = 'icons/mob/species/nabber/onmob_accessories_gas.dmi',
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/ties.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_accessories_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_accessories_unathi.dmi'
 		)
 	var/list/on_rolled = list()	//used when jumpsuit sleevels are rolled ("rolled" entry) or it's rolled down ("down"). Set to "none" to hide in those states.
@@ -116,3 +116,9 @@
 	name = "scarf"
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "whitescarf"
+
+//Bracelets
+/obj/item/clothing/accessory/bracelet
+	name = "bracelet"
+	desc = "A simple bracelet with a clasp."
+	icon_state = "bracelet"

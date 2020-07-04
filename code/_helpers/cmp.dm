@@ -67,6 +67,9 @@
 /proc/cmp_clientcolor_priority(datum/client_color/A, datum/client_color/B)
 	return B.priority - A.priority
 
+/proc/cmp_power_component_priority(obj/item/weapon/stock_parts/power/A, obj/item/weapon/stock_parts/power/B)
+	return B.priority - A.priority
+
 /proc/cmp_fusion_reaction_asc(var/decl/fusion_reaction/A, var/decl/fusion_reaction/B)
 	return A.priority - B.priority
 
@@ -78,3 +81,6 @@
 
 /proc/cmp_emails_asc(var/datum/computer_file/data/email_account/A, var/datum/computer_file/data/email_account/B)
 	return cmp_text_asc(A.login,B.login)
+
+/proc/cmp_planelayer(atom/A, atom/B)
+	return (B.plane - A.plane) || (B.layer - A.layer)

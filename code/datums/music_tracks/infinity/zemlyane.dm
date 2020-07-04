@@ -2,5 +2,5 @@
 	artist = "Zemlyane"
 	title = "The Earth in window"
 	album = "Placeholder"
-	song = 'sound/music/newyear/zemlyane.ogg'
+	song = 'infinity/sound/music/newyear/zemlyane.ogg'
 	license =  /decl/license/grandfathered

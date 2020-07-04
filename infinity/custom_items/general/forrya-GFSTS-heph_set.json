@@ -1,0 +1,6 @@
+{
+  "ckey" :            "forrya",
+  "character_name" :  "GFSTS-III",
+  "item_path" :       "/obj/item/weapon/clothingbag/heph_set",
+  "req_access" :      [ "ACCESS_SECURITY" ]
+  }

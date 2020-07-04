@@ -15,6 +15,14 @@
 		/obj/item/stack/flag/green,
 		/obj/item/stack/flag/red
 	)
+	skills = list(
+		SKILL_ELECTRICAL          = SKILL_PROF,
+		SKILL_ATMOS               = SKILL_PROF,
+		SKILL_PILOT               = SKILL_EXPERT,
+		SKILL_BOTANY              = SKILL_PROF,
+		SKILL_EVA                 = SKILL_PROF,
+		SKILL_MECH                = HAS_PERK,
+	)
 
 	equipment = list(
 		/obj/item/weapon/material/hatchet/machete/unbreakable,
@@ -31,8 +39,11 @@
 		/obj/item/weapon/crowbar,
 		/obj/item/weapon/wirecutters,
 		/obj/item/device/multitool,
-		/obj/item/bioreactor
+		/obj/item/bioreactor,
+		/obj/item/weapon/inflatable_dispenser/robot
 	)
+
+	emag = /obj/item/weapon/melee/energy/machete
 
 /obj/item/weapon/robot_module/flying/surveyor/finalize_synths()
 	. = ..()

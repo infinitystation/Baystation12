@@ -104,6 +104,12 @@
 	desc = "Warden"
 	region = ACCESS_REGION_SECURITY
 
+/var/const/access_actor = "ACCESS_ACTOR"//98
+/datum/access/actor
+	id = access_actor
+	desc = "Actor"
+	region = ACCESS_REGION_GENERAL
+
 /************
 * NSV sierra *
 ************/

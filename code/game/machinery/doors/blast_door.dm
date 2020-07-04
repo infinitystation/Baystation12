@@ -22,11 +22,10 @@
 	var/icon_state_open_broken = null
 	var/icon_state_closed_broken = null
 
-	var/open_sound = 'sound/machines/blastdoor_open.ogg'
-	var/close_sound = 'sound/machines/blastdoor_close.ogg'
+	var/open_sound = 'infinity/sound/SS2/effects/machines/blast_open_close.ogg'//inf //was: 'sound/machines/blastdoor_open.ogg'
+	var/close_sound = 'infinity/sound/SS2/effects/machines/blast_open_close.ogg'//inf //was: 'sound/machines/blastdoor_close.ogg'
 
 	closed_layer = ABOVE_WINDOW_LAYER
-	var/id = 1.0
 	dir = 1
 	explosion_resistance = 25
 
@@ -35,16 +34,24 @@
 	block_air_zones = 0
 
 	var/begins_closed = TRUE
-	var/_wifi_id
-	var/datum/wifi/receiver/button/door/wifi_receiver
 	var/material/implicit_material
 	autoset_access = FALSE // Uses different system with buttons.
 	pry_mod = 1.35
 
+	uncreated_component_parts = list(
+		/obj/item/weapon/stock_parts/radio/receiver,
+		/obj/item/weapon/stock_parts/power/apc
+	)
+	// To be fleshed out and moved to parent door, but staying minimal for now.
+	public_methods = list(
+		/decl/public_access/public_method/open_door,
+		/decl/public_access/public_method/close_door_delayed,
+		/decl/public_access/public_method/toggle_door
+	)
+	stock_part_presets = list(/decl/stock_part_preset/radio/receiver/blast_door = 1)
+
 /obj/machinery/door/blast/Initialize()
 	. = ..()
-	if(_wifi_id)
-		wifi_receiver = new(_wifi_id, src)
 
 	if(!begins_closed)
 		icon_state = icon_state_open
@@ -56,28 +63,8 @@
 
 /obj/machinery/door/blast/examine(mob/user)
 	. = ..()
-	if(. && (stat & BROKEN))
+	if((stat & BROKEN))
 		to_chat(user, "It's broken.")
-
-/obj/machinery/door/blast/Destroy()
-	qdel(wifi_receiver)
-	wifi_receiver = null
-	return ..()
-
-/obj/machinery/door/blast/attack_generic(var/mob/user, var/damage)
-	if(stat & (BROKEN|NOPOWER))
-		if(damage >= 10)
-			if(src.density)
-				visible_message("<span class='danger'>\The [user] forces \the [src] open!</span>")
-				open(1)
-			else
-				visible_message("<span class='danger'>\The [user] forces \the [src] closed!</span>")
-				close(1)
-		else
-			visible_message("<span class='notice'>\The [user] strains fruitlessly to force \the [src] [density ? "open" : "closed"].</span>")
-		return
-	..()
-
 
 // Proc: Bumped()
 // Parameters: 1 (AM - Atom that tried to walk through this object)
@@ -110,13 +97,13 @@
 // Description: Opens the door. No checks are done inside this proc.
 /obj/machinery/door/blast/proc/force_open()
 	operating = 1
-	playsound(src.loc, open_sound, 100, 1)
+	playsound(src.loc, open_sound, 100, need_change_sound_freq) //inf //was: playsound(src.loc, open_sound, 100, 1)
 	flick(icon_state_opening, src)
 	set_density(0)
 	update_nearby_tiles()
 	update_icon()
 	set_opacity(0)
-	sleep(8)
+	sleep(15)
 	layer = open_layer
 	operating = 0
 
@@ -125,14 +112,16 @@
 // Description: Closes the door. No checks are done inside this proc.
 /obj/machinery/door/blast/proc/force_close()
 	operating = 1
-	playsound(src.loc, close_sound, 100, 1)
+	playsound(src.loc, close_sound, 100, need_change_sound_freq) //inf //was: playsound(src.loc, close_sound, 100, 1)
+
 	layer = closed_layer
 	flick(icon_state_closing, src)
+	crush() //inf
 	set_density(1)
 	update_nearby_tiles()
 	update_icon()
 	set_opacity(1)
-	sleep(8)
+	sleep(15)
 	operating = 0
 
 // Proc: force_toggle()
@@ -204,8 +193,11 @@
 	if (operating || (stat & BROKEN || stat & NOPOWER))
 		return
 	force_close()
-	crush()
 
+/obj/machinery/door/blast/toggle()
+	if (operating || (stat & BROKEN || stat & NOPOWER))
+		return
+	force_toggle()
 
 // Proc: repair()
 // Parameters: None
@@ -219,7 +211,43 @@
 	if(air_group) return 1
 	return ..()
 
+// Used with mass drivers to time the close.
+/obj/machinery/door/blast/proc/delayed_close()
+	set waitfor = FALSE
+	sleep(5 SECONDS)
+	close()
 
+/decl/public_access/public_method/close_door_delayed
+	name = "delayed close door"
+	desc = "Closes the door if possible, after a short delay."
+	call_proc = /obj/machinery/door/blast/proc/delayed_close
+
+/decl/stock_part_preset/radio/receiver/blast_door
+	frequency = BLAST_DOORS_FREQ
+	receive_and_call = list(
+		"open_door" = /decl/public_access/public_method/open_door,
+		"close_door_delayed" = /decl/public_access/public_method/close_door_delayed,
+		"toggle_door" = /decl/public_access/public_method/toggle_door
+	)
+
+/obj/machinery/button/blast_door
+	icon = 'icons/obj/stationobjs.dmi'
+	name = "remote blast door-control"
+	desc = "It controls blast doors, remotely."
+	icon_state = "blastctrl"
+	stock_part_presets = list(/decl/stock_part_preset/radio/basic_transmitter/blast_door_button = 1)
+
+/decl/stock_part_preset/radio/basic_transmitter/blast_door_button
+	transmit_on_change = list(
+		"toggle_door" = /decl/public_access/public_variable/button_active,
+	)
+	frequency = BLAST_DOORS_FREQ
+
+/obj/machinery/button/blast_door/on_update_icon()
+	if(operating)
+		icon_state = "blastctrl1"
+	else
+		icon_state = "blastctrl"
 
 // SUBTYPE: Regular
 // Your classical blast door, found almost everywhere.
@@ -237,17 +265,19 @@
 	min_force = 30
 	maxhealth = 1000
 	block_air_zones = 1
+	need_change_sound_freq = 0 //inf
 
 /obj/machinery/door/blast/regular/escape_pod
 	name = "Escape Pod release Door"
 
-/obj/machinery/door/blast/regular/escape_pod/Process()	
-	if(evacuation_controller.emergency_evacuation && evacuation_controller.state >= EVAC_LAUNCHING && src.icon_state == icon_state_closed)		
+/obj/machinery/door/blast/regular/escape_pod/Process()
+	if(evacuation_controller.emergency_evacuation && evacuation_controller.state >= EVAC_LAUNCHING && src.icon_state == icon_state_closed)
 		src.force_open()
 	. = ..()
 
 /obj/machinery/door/blast/regular/open
 	begins_closed = FALSE
+	icon_state = "pdoor0" //INF
 
 // SUBTYPE: Shutters
 // Nicer looking, and also weaker, shutters. Found in kitchen and similar areas.

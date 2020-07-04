@@ -5,7 +5,7 @@
 	organ_tag = BP_EYES
 	parent_organ = BP_HEAD
 	surface_accessible = TRUE
-	relative_size = 10
+	relative_size = 5
 	var/phoron_guard = 0
 	var/list/eye_colour = list(0,0,0)
 	var/innate_flash_protection = FLASH_PROTECTION_NONE
@@ -15,6 +15,9 @@
 	var/apply_eye_colour = TRUE
 	var/tmp/last_cached_eye_colour
 	var/tmp/last_eye_cache_key
+	var/flash_mod
+	var/darksight_range
+	var/darksight_tint
 
 /obj/item/organ/internal/eyes/proc/get_eye_cache_key()
 	last_cached_eye_colour = rgb(eye_colour[1],eye_colour[2], eye_colour[3])
@@ -82,7 +85,7 @@
 	var/oldbroken = is_broken()
 	. = ..()
 	if(is_broken() && !oldbroken && owner && !owner.stat)
-		to_chat(owner, "<span class='danger'>Вы ослепли!</span>")
+		to_chat(owner, "<span class='danger'>Р’С‹ РѕСЃР»РµРїР»Рё!</span>")
 
 /obj/item/organ/internal/eyes/Process() //Eye damage replaces the old eye_stat var.
 	..()
@@ -94,6 +97,12 @@
 		owner.eye_blind = 20
 	if(night_vision == TRUE)
 		owner.see_invisible = 15
+
+/obj/item/organ/internal/eyes/New()
+	..()
+	flash_mod = species.flash_mod
+	darksight_range = species.darksight_range
+	darksight_tint = species.darksight_tint
 
 /obj/item/organ/internal/eyes/proc/get_total_protection(var/flash_protection = FLASH_PROTECTION_NONE)
 	return (flash_protection + innate_flash_protection)
@@ -116,6 +125,9 @@
 	dead_icon = "camera_broken"
 	verbs |= /obj/item/organ/internal/eyes/proc/change_eye_color
 	update_colour()
+	flash_mod = 1
+	darksight_range = 2
+	darksight_tint = DARKTINT_NONE
 
 /obj/item/organ/internal/eyes/get_mechanical_assisted_descriptor()
 	return "retinal overlayed [name]"

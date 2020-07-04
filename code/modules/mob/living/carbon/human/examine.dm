@@ -1,4 +1,5 @@
-/mob/living/carbon/human/examine(mob/user, show_look_message)
+/mob/living/carbon/human/examine(mob/user, distance/* INF ahead */, mirror = 0)
+	. = TRUE
 	var/skipgloves = 0
 	var/skipsuitstorage = 0
 	var/skipjumpsuit = 0
@@ -7,9 +8,6 @@
 	var/skipears = 0
 	var/skipeyes = 0
 	var/skipface = 0
-
-	if(show_look_message && !isobserver(user)) // necessary check in case the eyes of the beholder are hidden
-		user.visible_message("<span class='notice'><font size=1><i>[user] looks at [src].</i></font></span>")
 
 	//exosuits and helmets obscure our view and stuff.
 	if(wear_suit)
@@ -25,10 +23,12 @@
 		skipface = head.flags_inv & HIDEFACE
 
 	if(wear_mask)
+		skipeyes |= wear_mask.flags_inv & HIDEEYES
+		skipears |= wear_mask.flags_inv & HIDEEARS
 		skipface |= wear_mask.flags_inv & HIDEFACE
 
 	//no accuately spotting headsets from across the room.
-	if(get_dist(user, src) > 3)
+	if(distance > 3)
 		skipears = 1
 
 	var/list/msg = list("<span class='info'>*---------*\nThis is ")
@@ -64,8 +64,9 @@
 	if(!(skipjumpsuit && skipface))
 		var/species_name = "\improper "
 		if(is_synth && species.cyborg_noun)
-			species_name += "[species.cyborg_noun] "
-		species_name += "[species.name]"
+			species_name += "[species.cyborg_noun] [species.get_bodytype(src)]"
+		else
+			species_name += "[species.name]"
 		msg += ", <b><font color='[species.get_flesh_colour(src)]'>\a [species_name]!</font></b>[(user.can_use_codex() && SScodex.get_codex_entry(get_codex_value())) ?  SPAN_NOTICE(" \[<a href='?src=\ref[SScodex];show_examined_info=\ref[src];show_to=\ref[user]'>?</a>\]") : ""]"
 
 	var/extra_species_text = species.get_additional_examine_text(src)
@@ -175,14 +176,9 @@
 	if(mSmallsize in mutations)
 		msg += "[T.He] [T.is] small halfling!\n"
 
-	var/distance = 0
-	if(isghost(user) || user.stat == DEAD) // ghosts can see anything
-		distance = 1
-	else
-		distance = get_dist(user,src)
 	if (src.stat)
 		msg += "<span class='warning'>[T.He] [T.is]n't responding to anything around [T.him] and seems to be unconscious.</span>\n"
-		if((stat == DEAD || is_asystole() || src.losebreath) && distance <= 3)
+		if((stat == DEAD || /*INF*/status_flags & FAKEDEATH ||/*/INF*/ is_asystole() || src.losebreath) && distance <= 3)
 			msg += "<span class='warning'>[T.He] [T.does] not appear to be breathing.</span>\n"
 		if(ishuman(user) && !user.incapacitated() && Adjacent(user))
 			spawn(0)
@@ -199,7 +195,8 @@
 		msg += "<span class='warning'>[T.He] [T.is] on fire!.</span>\n"
 
 	var/ssd_msg = species.get_ssd(src)
-	if(ssd_msg && (!should_have_organ(BP_BRAIN) || has_brain()) && stat != DEAD)
+	if(ssd_msg && (!should_have_organ(BP_BRAIN) || has_brain()) && stat != DEAD \
+	&& !(status_flags & FAKEDEATH)) //INF
 		if(!key)
 			msg += "<span class='deadsay'>[T.He] [T.is] [ssd_msg]. It doesn't look like [T.he] [T.is] waking up anytime soon.</span>\n"
 		else if(!client)
@@ -207,7 +204,8 @@
 
 	var/obj/item/organ/external/head/H = organs_by_name[BP_HEAD]
 	if(istype(H) && H.forehead_graffiti && H.graffiti_style)
-		msg += "<span class='notice'>[T.He] [T.has] \"[H.forehead_graffiti]\" written on [T.his] [H.name] in [H.graffiti_style]!</span>\n"
+		if(user != src || mirror) //INF
+			msg += "<span class='notice'>[T.He] [T.has] \"[H.forehead_graffiti]\" written on [T.his] [H.name] in [H.graffiti_style]!</span>\n"
 
 	if(became_younger)
 		msg += "[T.He] looks a lot younger than you remember.\n"
@@ -343,14 +341,40 @@
 	msg += applying_pressure
 
 	if (pose)
-		if( findtext(pose,".",lentext(pose)) == 0 && findtext(pose,"!",lentext(pose)) == 0 && findtext(pose,"?",lentext(pose)) == 0 )
+		if( findtext(pose,".",length(pose)) == 0 && findtext(pose,"!",length(pose)) == 0 && findtext(pose,"?",length(pose)) == 0 )
 			pose = addtext(pose,".") //Makes sure all emotes end with a period.
-		if(gender == MALE) //yes-yes. #INFINITY
-			msg += "�� [pose]\n"
-		else if(gender == FEMALE)
-			msg += "��� [pose]\n"
+//[INF]
+		switch(gender)
+			if(MALE)  msg += "Он [pose]\n"
+			if(FEMALE)msg += "Она [pose]\n"
+			else      msg += "Оно [pose]\n"
+
+	if(user.mind.changeling)
+		if(user == src)
+			msg += SPAN_LING("Высшая форма жизни.\n")
+		else if(isSynthetic())
+			msg += SPAN_LING("Мы не можем извлекать геном из синтетиков!\n")
+		else if(MUTATION_HUSK in mutations)
+			msg += SPAN_LING("Геном этого существа слишком поврежден!\n")
+		else if(species.species_flags & SPECIES_FLAG_NO_SCAN)
+			msg += SPAN_LING("Мы не знаем, как усвоить геном этого существа!\n")
+		else if(stat == DEAD && world.time - timeofdeath > 5 MINUTES)
+			msg += SPAN_LING("Этот труп мертв больше 5 минут и не содержит усваиваемого генома.\n")
+		else if(islesserform(src))
+			msg += SPAN_LING("Это существо не даст нам новых геномов, но может помочь нам восстановиться после стазиса...\n")
+		else if(good_DNA || player_is_antag(mind))
+			msg += SPAN_LING("<i>Геном этого существо может быть полезным для нас...</i>\n")
 		else
-			msg += "��� [pose]\n"
+			msg += SPAN_LING("Геном этого существа <b>бесполезен</b> - мы ничего не получим.\n")
+//[/INF]
+/*[ORIG]
+		if(gender == MALE)
+			msg += "Он [pose]\n"
+		else if(gender == FEMALE)
+			msg += "Она [pose]\n"
+		else
+			msg += "Оно [pose]\n"
+[/ORIG]*/
 	var/show_descs = show_descriptors_to(user, T)
 	if(show_descs)
 		msg += "<span class='notice'>[jointext(show_descs, "<br>")]</span>"
@@ -382,7 +406,7 @@
 	set category = "IC"
 
 	var/list/HTML = list()
-	HTML += "<body>"
+	HTML += "<meta charset=\"UTF-8\"><body>"
 	HTML += "<tt><center>"
 	HTML += "<b>Update Flavour Text</b> <hr />"
 	HTML += "<br></center>"
@@ -416,4 +440,4 @@
 	HTML += "<hr />"
 	HTML +="<a href='?src=\ref[src];flavor_change=done'>\[Done\]</a>"
 	HTML += "<tt>"
-	src << browse(jointext(HTML,null), "window=flavor_changes;size=430x300")
+	show_browser(src, jointext(HTML,null), "window=flavor_changes;size=430x300")

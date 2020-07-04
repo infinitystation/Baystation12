@@ -8,6 +8,7 @@
 	matter = list(MATERIAL_STEEL = 1000)
 	screen_shake = 1
 	combustion = 1
+	s_type = "K" //inf thing, serials
 
 	var/caliber = CALIBER_PISTOL		//determines which casings will fit
 	var/handle_casings = EJECT_CASINGS	//determines how spent casings should be handled
@@ -37,6 +38,45 @@
 	//var/list/icon_keys = list()		//keys
 	//var/list/ammo_states = list()	//values
 
+	//[INF]
+	//Attachments for ballistic weapon
+	/*
+	var/attachments
+
+/obj/item/weapon/gun/projectile/attackby(var/obj/item/A as obj, mob/user as mob)
+	if (istype(A, /obj/item/weapon/attachment) && user.unEquip(A))
+		A.loc = src
+		attachments[A.type] = A
+		verbs |= /obj/item/weapon/gun/projectile/proc/removetie_verb
+		update_icon()
+	..()
+/obj/item/weapon/gun/projectile/proc/remove_attachments(/obj/item/weapon/attachment/A as obj)
+	if (ismob(loc.loc))
+		var/mob/M = loc.loc
+		M.put_in_hands(attachments[A.type])
+	else
+		attachments[A.type].loc = get_turf(src)
+	attachments[A.type] = null
+	update_icon()
+
+/obj/item/weapon/gun/projectile/proc/removetie_verb()
+	set name = "Remove attachment"
+	set category = "Object"
+	set src in usr
+	if(!istype(usr, /mob/living)) return
+	if(usr.stat) return
+	if(!attachments.len) return
+	var/obj/item/weapon/attachment/A
+	var/list/removables = list()
+	for(var/obj/item/weapon/attachment/ass in attachments)
+		removables |= ass
+	A = input("Select an attachment to remove from [src]") as null|anything in removables
+	remove_attachments(A)
+	removables -= A
+	if(!removables.len)
+		src.verbs -= /obj/item/weapon/gun/projectile/proc/removetie_verb
+*/
+	//[/INF]
 /obj/item/weapon/gun/projectile/Initialize()
 	. = ..()
 	if (starts_loaded)
@@ -103,6 +143,7 @@
 	switch(handle_casings)
 		if(EJECT_CASINGS) //eject casing onto ground.
 			chambered.dropInto(loc)
+			chambered.throw_at(get_ranged_target_turf(get_turf(src),turn(loc.dir,270),1), rand(0,1), 5)
 			if(LAZYLEN(chambered.fall_sounds))
 				playsound(loc, pick(chambered.fall_sounds), 50, 1)
 		if(CYCLE_CASINGS) //cycle the casing back to the end.
@@ -178,7 +219,7 @@
 		if(!do_after(user, 4, src))
 			return
 		is_jammed = 0
-		playsound(src.loc, 'sound/weapons/guns/interact/gun_bullet_insert.ogg', 50, 1)
+		playsound(src.loc, 'infinity/sound/weapons/guns/interact/gun_bullet_insert.ogg', 50, 1)
 	if(ammo_magazine)
 		user.put_in_hands(ammo_magazine)
 		user.visible_message("[user] removes [ammo_magazine] from [src].", "<span class='notice'>You remove [ammo_magazine] from [src].</span>")
@@ -199,13 +240,13 @@
 				loaded.Cut()
 			if(count)
 				user.visible_message("[user] unloads [src].", "<span class='notice'>You unload [count] round\s from [src].</span>")
-				playsound(src.loc, 'sound/weapons/guns/interact/gun_bullet_insert.ogg', 50, 1)
+				playsound(src.loc, 'infinity/sound/weapons/guns/interact/gun_bullet_insert.ogg', 50, 1)
 		else if(load_method & SINGLE_CASING)
 			var/obj/item/ammo_casing/C = loaded[loaded.len]
 			loaded.len--
 			user.put_in_hands(C)
 			user.visible_message("[user] removes \a [C] from [src].", "<span class='notice'>You remove \a [C] from [src].</span>")
-			playsound(src.loc, 'sound/weapons/guns/interact/gun_bullet_insert.ogg', 50, 1)
+			playsound(src.loc, 'infinity/sound/weapons/guns/interact/gun_bullet_insert.ogg', 50, 1)
 	else
 		to_chat(user, "<span class='warning'>[src] is empty.</span>")
 	update_icon()
@@ -241,14 +282,13 @@
 		update_icon() //make sure to do this after unsetting ammo_magazine
 
 /obj/item/weapon/gun/projectile/examine(mob/user)
-	. = ..(user)
+	. = ..()
 	if(is_jammed && user.skill_check(SKILL_WEAPONS, SKILL_BASIC))
 		to_chat(user, "<span class='warning'>It looks jammed.</span>")
 	if(ammo_magazine)
 		to_chat(user, "It has \a [ammo_magazine] loaded.")
 	if(user.skill_check(SKILL_WEAPONS, SKILL_ADEPT))
 		to_chat(user, "Has [getAmmo()] round\s remaining.")
-	return
 
 /obj/item/weapon/gun/projectile/proc/getAmmo()
 	var/bullets = 0

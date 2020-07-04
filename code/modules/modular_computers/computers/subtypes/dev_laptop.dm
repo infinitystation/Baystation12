@@ -1,7 +1,7 @@
 /obj/item/modular_computer/laptop
 	name = "laptop computer"
 	desc = "A portable clamshell computer."
-	icon = 'icons/obj/modular_laptop_inf.dmi'
+	icon = 'infinity/icons/obj/modular_laptop.dmi'
 	icon_state = "laptop-open"
 	icon_state_unpowered = "laptop-open"
 	var/icon_state_closed = "laptop-closed"
@@ -40,8 +40,8 @@
 		return
 	anchored = !anchored
 	screen_on = anchored
-	dir = user.dir
-	src.set_dir(turn(src.dir, -180))
+
+	dir = get_dir(loc, user.loc)
 	update_icon()
 
 /obj/item/modular_computer/laptop/on_update_icon()

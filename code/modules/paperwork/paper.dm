@@ -9,7 +9,7 @@
 /obj/item/weapon/paper
 	name = "sheet of paper"
 	gender = NEUTER
-	icon = 'icons/obj/bureaucracy_inf.dmi'
+	icon = 'infinity/icons/obj/bureaucracy.dmi'
 	icon_state = "paper"
 	item_state = "paper"
 	randpixel = 8
@@ -22,7 +22,7 @@
 	body_parts_covered = HEAD
 	attack_verb = list("bapped")
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/head.dmi'
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi'
 		)
 
 	var/info		//What's actually written on the paper.
@@ -75,11 +75,11 @@
 	if(new_text)
 		free_space -= length(strip_html_properly(new_text))
 
-/obj/item/weapon/paper/examine(mob/user)
+/obj/item/weapon/paper/examine(mob/user, distance)
 	. = ..()
 	if(name != "sheet of paper")
 		to_chat(user, "It's titled '[name]'.")
-	if(in_range(user, src) || isghost(user))
+	if(distance <= 1)
 		show_content(usr)
 	else
 		to_chat(user, "<span class='notice'>You have to go closer if you want to read it.</span>")
@@ -89,7 +89,7 @@
 	if(!forceshow && istype(user,/mob/living/silicon/ai))
 		var/mob/living/silicon/ai/AI = user
 		can_read = get_dist(src, AI.camera) < 2
-	user << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY bgcolor='[color]'>[can_read ? info : stars(info)][stamps]</BODY></HTML>", "window=[name]")
+	show_browser(user, "<HTML><meta charset=\"UTF-8\"><HEAD><TITLE>[name]</TITLE></HEAD><BODY bgcolor='[color]'>[can_read ? info : stars(info)][stamps]</BODY></HTML>", "window=[name]")
 	onclose(user, "[name]")
 
 /obj/item/weapon/paper/verb/rename()
@@ -103,9 +103,10 @@
 	var/n_name = sanitizeSafe(input(usr, "What would you like to label the paper?", "Paper Labelling", null)  as text, MAX_NAME_LEN)
 
 	// We check loc one level up, so we can rename in clipboards and such. See also: /obj/item/weapon/photo/rename()
-	if((loc == usr || loc.loc && loc.loc == usr) && usr.stat == 0 && n_name)
-		SetName(n_name)
-		add_fingerprint(usr)
+	if(!n_name || !CanInteract(usr, GLOB.deep_inventory_state))
+		return
+	SetName(n_name)
+	add_fingerprint(usr)
 
 /obj/item/weapon/paper/attack_self(mob/living/user as mob)
 	if(user.a_intent == I_HURT)
@@ -287,31 +288,34 @@
 			to_chat(usr, "<span class='info'>There isn't enough space left on \the [src] to write anything.</span>")
 			return
 
-		var/t =  sanitize(input("Enter what you want to write:", "Write", null, null) as message, free_space, extra = 0, trim = 0)
-
-		if(!t)
-			return
-
-		var/obj/item/i = usr.get_active_hand() // Check to see if he still got that darn pen, also check what type of pen
+		var/obj/item/I = usr.get_active_hand() // Check to see if he still got that darn pen, also check what type of pen
 		var/iscrayon = 0
 		var/isfancy = 0
-		if(!istype(i, /obj/item/weapon/pen))
+		if(!istype(I, /obj/item/weapon/pen))
 			if(usr.back && istype(usr.back,/obj/item/weapon/rig))
 				var/obj/item/weapon/rig/r = usr.back
 				var/obj/item/rig_module/device/pen/m = locate(/obj/item/rig_module/device/pen) in r.installed_modules
 				if(!r.offline && m)
-					i = m.device
+					I = m.device
 				else
 					return
 			else
 				return
 
-		if(istype(i, /obj/item/weapon/pen/crayon))
-			iscrayon = 1
+		var/obj/item/weapon/pen/P = I
+		if(!P.active)
+			P.toggle()
 
-		if(istype(i, /obj/item/weapon/pen/fancy))
-			isfancy = 1
+		if(P.iscrayon)
+			iscrayon = TRUE
 
+		if(P.isfancy)
+			isfancy = TRUE
+
+		var/t =  sanitize(input("Enter what you want to write:", "Write", null, null) as message, free_space, extra = 0, trim = 0)
+
+		if(!t)
+			return
 
 		// if paper is not in usr, then it must be near them, or in a clipboard or folder, which must be in or near usr
 		if(src.loc != usr && !src.Adjacent(usr) && !((istype(src.loc, /obj/item/weapon/material/clipboard) || istype(src.loc, /obj/item/weapon/folder)) && (src.loc.loc == usr || src.loc.Adjacent(usr)) ) )
@@ -325,7 +329,7 @@
 
 		var/last_fields_value = fields
 
-		t = parsepencode(t, i, usr, iscrayon, isfancy) // Encode everything from pencode to html
+		t = parsepencode(t, I, usr, iscrayon, isfancy) // Encode everything from pencode to html
 
 
 		if(fields > MAX_FIELDS)
@@ -345,7 +349,7 @@
 
 		update_space(t)
 
-		usr << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY bgcolor='[color]'>[info_links][stamps]</BODY></HTML>", "window=[name]") // Update the window
+		show_browser(usr, "<HTML><meta charset=\"UTF-8\"><HEAD><TITLE>[name]</TITLE></HEAD><BODY bgcolor='[color]'>[info_links][stamps]</BODY></HTML>", "window=[name]") // Update the window
 
 		playsound(src, pick('sound/effects/pen1.ogg','sound/effects/pen2.ogg'), 10)
 		update_icon()
@@ -399,20 +403,20 @@
 		if ( istype(RP) && RP.mode == 2 )
 			RP.RenamePaper(user,src)
 		else
-			user << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY bgcolor='[color]'>[info_links][stamps]</BODY></HTML>", "window=[name]")
+			show_browser(user, "<HTML><meta charset=\"UTF-8\"><HEAD><TITLE>[name]</TITLE></HEAD><BODY bgcolor='[color]'>[info_links][stamps]</BODY></HTML>", "window=[name]")
 		return
 
 	else if(istype(P, /obj/item/weapon/stamp) || istype(P, /obj/item/clothing/ring/seal))
 		if((!in_range(src, usr) && loc != user && !( istype(loc, /obj/item/weapon/material/clipboard) ) && loc.loc != user && user.get_active_hand() != P))
 			return
 
-		playsound(src,'sound/effects/Stamp2.ogg',40,1)
+		playsound(src,'infinity/sound/effects/Stamp2.ogg',40,1)
 		stamps += (stamps=="" ? "<HR>" : "<BR>") + "<i>This paper has been stamped with the [P.name].</i>"
 
 		var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
 		var/x
 		var/y
-		if(istype(P, /obj/item/weapon/stamp/captain) || istype(P, /obj/item/weapon/stamp/centcomm))
+		if(istype(P, /obj/item/weapon/stamp/captain) || istype(P, /obj/item/weapon/stamp/boss))
 			x = rand(-2, 0)
 			y = rand(-1, 2)
 		else
@@ -438,7 +442,7 @@
 		stamped += P.type
 		overlays += stampoverlay
 
-		playsound(src, 'sound/effects/stamp2.ogg', 50, 1)
+		playsound(src, 'infinity/sound/effects/stamp2.ogg', 50, 1)
 		to_chat(user, "<span class='notice'>You stamp the paper with your [P.name].</span>")
 
 	else if(istype(P, /obj/item/weapon/flame))
@@ -458,8 +462,9 @@
 	stamps += (stamps=="" ? "<HR>" : "<BR>") + "<i>This paper has been stamped with the [P.name].</i>"
 
 	var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
-	var/{x; y;}
-	if(istype(P, /obj/item/weapon/stamp/captain) || istype(P, /obj/item/weapon/stamp/centcomm))
+	var/x
+	var/y
+	if(istype(P, /obj/item/weapon/stamp/captain) || istype(P, /obj/item/weapon/stamp/boss))
 		x = rand(-2, 0)
 		y = rand(-1, 2)
 	else
@@ -520,7 +525,7 @@
 
 /obj/item/weapon/paper/exodus_armory
 	name = "armory inventory"
-	info = "<center>\[logo]<BR><b><large>NSS Exodus</large></b><BR><i><date></i><BR><i>Armoury Inventory - Revision <field></i></center><hr><center>Armoury</center><list>\[*]<b>Deployable barriers</b>: 4\[*]<b>Biohazard suit(s)</b>: 1\[*]<b>Biohazard hood(s)</b>: 1\[*]<b>Face Mask(s)</b>: 1\[*]<b>Extended-capacity emergency oxygen tank(s)</b>: 1\[*]<b>Bomb suit(s)</b>: 1\[*]<b>Bomb hood(s)</b>: 1\[*]<b>Security officer's jumpsuit(s)</b>: 1\[*]<b>Brown shoes</b>: 1\[*]<b>Handcuff(s)</b>: 14\[*]<b>R.O.B.U.S.T. cartridges</b>: 7\[*]<b>Flash(s)</b>: 4\[*]<b>Can(s) of pepperspray</b>: 4\[*]<b>Gas mask(s)</b>: 6<field></list><hr><center>Secure Armoury</center><list>\[*]<b>LAEP90 Perun energy guns</b>: 4\[*]<b>Stun Revolver(s)</b>: 1\[*]<b>Taser Gun(s)</b>: 4\[*]<b>Stun baton(s)</b>: 4\[*]<b>Airlock Brace</b>: 3\[*]<b>Maintenance Jack</b>: 1\[*]<b>Stab Vest(s)</b>: 3\[*]<b>Riot helmet(s)</b>: 3\[*]<b>Riot shield(s)</b>: 3\[*]<b>Corporate security heavy armoured vest(s)</b>: 4\[*]<b>NanoTrasen helmet(s)</b>: 4\[*]<b>Portable flasher(s)</b>: 3\[*]<b>Tracking implant(s)</b>: 4\[*]<b>Chemical implant(s)</b>: 5\[*]<b>Implanter(s)</b>: 2\[*]<b>Implant pad(s)</b>: 2\[*]<b>Locator(s)</b>: 1<field></list><hr><center>Tactical Equipment</center><list>\[*]<b>Implanter</b>: 1\[*]<b>Death Alarm implant(s)</b>: 7\[*]<b>Security radio headset(s)</b>: 4\[*]<b>Ablative vest(s)</b>: 2\[*]<b>Ablative helmet(s)</b>: 2\[*]<b>Ballistic vest(s)</b>: 2\[*]<b>Ballistic helmet(s)</b>: 2\[*]<b>Tear Gas Grenade(s)</b>: 7\[*]<b>Flashbang(s)</b>: 7\[*]<b>Beanbag Shell(s)</b>: 7\[*]<b>Stun Shell(s)</b>: 7\[*]<b>Illumination Shell(s)</b>: 7\[*]<b>W-T Remmington 29x shotgun(s)</b>: 2\[*]<b>NT Mk60 EW Halicon ion rifle(s)</b>: 2\[*]<b>Hephaestus Industries G40E laser carbine(s)</b>: 4\[*]<b>Flare(s)</b>: 4<field></list><hr><b>Warden (print)</b>:<field><b>Signature</b>:<br>"
+	info = "<center>\[logo]<BR><b><large>NSS Exodus</large></b><BR><i><date></i><BR><i>Armoury Inventory - Revision <field></i></center><hr><center>Armoury</center><list>\[*]<b>Deployable barriers</b>: 4\[*]<b>Biohazard suit(s)</b>: 1\[*]<b>Biohazard hood(s)</b>: 1\[*]<b>Face Mask(s)</b>: 1\[*]<b>Extended-capacity emergency oxygen tank(s)</b>: 1\[*]<b>Bomb suit(s)</b>: 1\[*]<b>Bomb hood(s)</b>: 1\[*]<b>Security officer's jumpsuit(s)</b>: 1\[*]<b>Brown shoes</b>: 1\[*]<b>Handcuff(s)</b>: 14\[*]<b>R.O.B.U.S.T. cartridges</b>: 7\[*]<b>Flash(s)</b>: 4\[*]<b>Can(s) of pepperspray</b>: 4\[*]<b>Gas mask(s)</b>: 6<field></list><hr><center>Secure Armoury</center><list>\[*]<b>LAEP90 Perun energy guns</b>: 4\[*]<b>Stun Revolver(s)</b>: 1\[*]<b>Electrolaser(s)</b>: 4\[*]<b>Stun baton(s)</b>: 4\[*]<b>Airlock Brace</b>: 3\[*]<b>Maintenance Jack</b>: 1\[*]<b>Stab Vest(s)</b>: 3\[*]<b>Riot helmet(s)</b>: 3\[*]<b>Riot shield(s)</b>: 3\[*]<b>Corporate security heavy armoured vest(s)</b>: 4\[*]<b>NanoTrasen helmet(s)</b>: 4\[*]<b>Portable flasher(s)</b>: 3\[*]<b>Tracking implant(s)</b>: 4\[*]<b>Chemical implant(s)</b>: 5\[*]<b>Implanter(s)</b>: 2\[*]<b>Implant pad(s)</b>: 2\[*]<b>Locator(s)</b>: 1<field></list><hr><center>Tactical Equipment</center><list>\[*]<b>Implanter</b>: 1\[*]<b>Death Alarm implant(s)</b>: 7\[*]<b>Security radio headset(s)</b>: 4\[*]<b>Ablative vest(s)</b>: 2\[*]<b>Ablative helmet(s)</b>: 2\[*]<b>Ballistic vest(s)</b>: 2\[*]<b>Ballistic helmet(s)</b>: 2\[*]<b>Tear Gas Grenade(s)</b>: 7\[*]<b>Flashbang(s)</b>: 7\[*]<b>Beanbag Shell(s)</b>: 7\[*]<b>Stun Shell(s)</b>: 7\[*]<b>Illumination Shell(s)</b>: 7\[*]<b>W-T Remmington 29x shotgun(s)</b>: 2\[*]<b>NT Mk60 EW Halicon ion rifle(s)</b>: 2\[*]<b>Hephaestus Industries G40E laser carbine(s)</b>: 4\[*]<b>Flare(s)</b>: 4<field></list><hr><b>Warden (print)</b>:<field><b>Signature</b>:<br>"
 
 /obj/item/weapon/paper/exodus_cmo
 	name = "outgoing CMO's notes"
@@ -543,14 +548,6 @@
 	..()
 	icon_state = "workvisa" //Has to be here or it'll assume default paper sprites.
 
-/obj/item/weapon/paper/reacengi
-	name = "reactive engines guide"
-	info = "<I>Смена #03-A, инженерный департамент произвел модификацию реактивных двигателей. <br>Кратка&#255; инструкци&#255; по эксплуатации: <br>1) В начале Вашей смены нажмите на все кнопочки над консолью включени&#255;/отключени&#255; подачи топлива движков. Все должны гореть зеленым. <br>2) Всю смену нажимайте на запальник слева от указанных выше кнопок. <br>3) В случае ЧП, мы <b>не виноваты</b>.</i>"
-
-/obj/item/weapon/paper/compactor
-	name = "compactor guide"
-	info = "<I>Обслуживание гидравлического пресса <br>Кратка&#255; инструкци&#255; по эксплуатации: <br>1) Не помещайте крупные объекты в камеру - поршни выйдут из стро&#255;. <br>2) В случае поломки одного из поршей (лампочка будет гореть красным) - пройдите в секцию обслуживани&#255; поршней, отверткой открутите панель на неисправном поршне, с помощью гаечного ключа выпустите давление из главной камеры. Не забудьте поставить всё на место по завершению процедуры. <br>3) Оденьте рабочие перчатки и противогаз при обслуживании поршн&#255; - возможна утечка гор&#255;чего воздуха.</i>"
-
 /obj/item/weapon/paper/travelvisa
 	name = "Sol Travel Visa"
 	info = "<center><b><large>Travel Visa of the Sol Central Government</large></b></center><br><center><img src = sollogo.png><br><br><i><small>Issued on behalf of the Secretary-General.</small></i></center><hr><BR>This paper hereby permits the carrier to travel unhindered through Sol territories, colonies, and space for the purpose of pleasure and recreation."
@@ -560,18 +557,6 @@
 	..()
 	icon_state = "travelvisa"
 
-/obj/item/weapon/paper/merchant
-	name = "novice help"
-	info = "<I><center><b>Помощь новичку</b></center><hr><h3>Вступление</h3>Торговцы бывают разными. В основном, самым важным критерием стоит то, насколько хорошо развито красноречие. В случае с вашим небольшим аванпостом, маловеро&#255;тно, что вам удастс&#255; кому-то угрожать - необходимо искать общий &#255;зык.<h3>Вежливые торговцы</h3>Как бы вы не презирали экипаж, запомните - ведите себ&#255; по-взрослому, в меру серьезно, без излишней фамиль&#255;рности, но дружелюбно. Не идите на конфликт со Службой Безопасности и тем более командованием, если не хотите провести неопределенный срок в ожидании нового судна в зоне действи&#255; сенсоров.<h3>Наценка</h3>Практически все товары, что наход&#255;тс&#255; на вашей базе достались вам путём купли-продажи. Цена, выдававема&#255; самим сканером, &#255;вл&#255;етс&#255; ценой на рынке в среднем. Никто не будет сильно злитьс&#255; из-за того, что вы накинете 20, 40 или даже 100 процентов к изначальной цене (особенно, если у покупател&#255; нет сканера) - прикидывайте, насколько экипажу нужна та или ина&#255; вещь и сколько они готовы отдать за неё.<h3>Закон</h3>Никто не имеет права обыскивать ваше судно. Никто не имеет права заходить на судно без вашего разрешени&#255;. Никто не имеет права задерживать вас за то, что вы подлетели к шлюзу - другое дело, если вы соверште незаконную стыковку (в лучшем случае, вас попрос&#255;т отстыковатьс&#255;).<h3>Проникновение</h3> Чужой экипаж не имеет права проникать на ваш корабль без вашего разрешения. Вы не имеете права проникать на корабль без разрешения экипажа - помните, что если вы торгуете с крупным судном, то на нём, скорее всего, есть вооруженная охрана, которая может расстрелять вас за взлом внешнего шлюза.</I>"
-
-/obj/item/weapon/paper/roles_nuclear
-	name = "black market"
-	info = "<tt><center>Доступ к черному рынку</center><hr>Используя доступные каналы поставки, Наниматель смог обеспечить вашу команду определенным бюджетом на данную операцию - выражен в телекристаллах. Выбери среди себя главного или возьмите поровну - главное, чтобы работы была сделана. <b>Аплинк с кристаллами у беретоносца.</b> <hr>Аванпост под наблюдением. Удачи.</tt>"
-
-/obj/item/weapon/paper/sierra_shelter
-	name = "crumpled note"
-	info = "Д.Брэдсон, мы выполнили вашу просьбу и подготовили подходящее для вас убежище, список оборудования и карта тайников находится в папке D4. Мы получили ваше письмо и смеем вас заверить в надёжности данного варианта, мы гантируем что они не будут искать вас на экпедиционном судне NT. Прочую информацию вы сможете найти в документе C3"
-
-/obj/item/weapon/paper/joke
-	name = "strange paper"
-	info = "<I>Привет! Кем бы ты не был у тебя точно есть глаза раз ты читаешь эту записку, так вот! Вернёмся к делу, если у тебя есть глаза значит ты видишь и этот новенький лазерный карабин заточённый в стеклянную камеру, интересно ты бы хотел его потрогать? А может даже стать его хозяином? Знаешь, мне он не нужен, завтра меня всё равно увольняют (если ты это читаешь то это значит что я уже давно уволен и прожигаю последние деньги на венерианских курортах), поэтому думаю мне не успеет прилететь от ГСБ за его потерю, и завтра всё равно завезут новые карабины, с системой авторизации, да. Исходя из всего этого ты можешь точно быть уверен в том что о нём все забудут, а, прости, продолжим, ты бы хотел стать обладателем данного прекрасного образца современного вооружения? Да? Если да то он тут, за стеклом, разбей стекло и достань его. Что? Ты думал всё будет так просто? Нет, я отдам свою Алевтину только сильному человеку способному сломать тоненькое стёклышко, или ксеносу, прости если обидел, я на самом деле не против ксеносов, да, да и мы сами ксеносы.. хе-хе   Ах да, её зовут Алевтина, мне правда ещё не довелось стрелять из неё, но я уверен у тебя (кем бы ты не был) мой дорогой читатель всё ещё впереди, только спаси её из заточения..            Ах и ещё один момент, если ты всё таки оказался слабой и хрупкой девушкой (или ты прыщавый программист-задохлик что постоянно сидит в телекомах) и так и не смог(ла) сломать это стекло то оставь или верни эту записку на место, пусть более достойный заберёт её. Может я поступаю несправедливо, но я не хочу отдавать ОПАСНОЕ оружие школьнику которому едва исполнилось 19 лет и его наняли чтобы он отчищал техи от дерьма (и речь тут не о уборщиках а о практикантах-недоинженерах), либо бабе, место которой на кухне. А если ты не первое и не второе то я даже не знаю кто ты, может маломощный старик? А таких берут на Сиерру? Хотя о чём речь? Таким задохликам не то что не должен достаться карабин, им даже в космосе находится не стоит.</I>"
+/obj/item/weapon/paper/aromatherapy_disclaimer
+	name = "aromatherapy disclaimer"
+	info = "<I>The manufacturer and the retailer make no claims of the contained products' effacy.</I> <BR><BR><B>Use at your own risk.</B>"

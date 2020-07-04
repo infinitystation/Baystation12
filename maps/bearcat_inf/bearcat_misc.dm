@@ -9,31 +9,36 @@
 
 /decl/flooring/tiling
 	name = "deck"
+/turf/simulated/floor/shuttle_ceiling/bearcat
+	color = COLOR_DARK_BROWN
+
+/obj/machinery/power/smes/buildable/preset/bearcat/shuttle
+	uncreated_component_parts = list(/obj/item/weapon/stock_parts/smes_coil/weak = 1)
+	_input_maxed = TRUE
+	_output_maxed = TRUE
+	_input_on = TRUE
+	_output_on = TRUE
+	_fully_charged = TRUE
 
 //wild capitalism (no)
 /datum/computer_file/program/merchant
-	required_access = 57
+	required_access = list(access_merchant)
 
-/obj/machinery/door/airlock/autoname/command
-//	icon = 'icons/obj/doors/Doorhatchele.dmi'
-	req_access = list(access_heads)
+/obj/structure/closet/secure_closet/security/bearcat
+	name = "security guard's locker"
+	req_access = list(access_brig)
 
-/obj/machinery/door/airlock/autoname/engineering
-	req_access = list(access_engine)
-
-/obj/machinery/power/smes/buildable/explor_shuttle/New()
-	..(0)
-	component_parts += new /obj/item/weapon/smes_coil/weak(src)
-	recalc_coils()
-
-	component_parts = list()
-	component_parts += new /obj/item/stack/cable_coil(src,30)
-	component_parts += new /obj/item/weapon/circuitboard/smes(src)
-	src.wires = new /datum/wires/smes(src)
-
-	// Allows for mapped-in SMESs with larger capacity/IO
-	if(cur_coils)
-		for(var/i = 1, i <= cur_coils, i++)
-			component_parts += new /obj/item/weapon/smes_coil/weak(src)
-		recalc_coils()
-	..()
+/obj/structure/closet/secure_closet/security/bearcat/WillContain()
+	return list(
+		new/datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/security, /obj/item/weapon/storage/backpack/satchel/sec)),
+		new/datum/atom_creator/simple(/obj/item/weapon/storage/backpack/dufflebag/sec, 50),
+		/obj/item/clothing/mask/gas/half,
+		/obj/item/weapon/handcuffs,
+		/obj/item/weapon/storage/belt/holster/security,
+		/obj/item/device/flash,
+		/obj/item/device/radio/off,
+		/obj/item/taperoll/police,
+		/obj/item/device/hailer,
+		/obj/item/weapon/gun/energy/stunrevolver,
+		/obj/item/device/holowarrant,
+	)

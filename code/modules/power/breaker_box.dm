@@ -62,18 +62,18 @@
 	busy = 0
 
 
-/obj/machinery/power/breakerbox/attack_hand(mob/user)
+/obj/machinery/power/breakerbox/physical_attack_hand(mob/user)
 	if(!user.skill_check(skill_req, skill_level_req))
 		to_chat(user, "<span class='warning'>You don't know what to do with it. </span>")
 		return
 
 	if(update_locked)
 		to_chat(user, "<span class='warning'>System locked. Please try again later.</span>")
-		return
+		return TRUE
 
 	if(busy)
 		to_chat(user, "<span class='warning'>System is busy. Please wait until current operation is finished before changing power settings.</span>")
-		return
+		return TRUE
 
 	busy = 1
 	for(var/mob/O in viewers(user))
@@ -88,6 +88,7 @@
 		spawn(600)
 			update_locked = 0
 	busy = 0
+	return TRUE
 
 /obj/machinery/power/breakerbox/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
 	if(isMultitool(W))
@@ -139,6 +140,3 @@
 		update_locked = 1
 		spawn(600)
 			update_locked = 0
-
-/obj/machinery/power/breakerbox/Process()
-	return 1

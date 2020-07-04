@@ -13,11 +13,11 @@
 	var/datum/computer_file/data/warrant/active
 
 //look at it
-/obj/item/device/holowarrant/examine(mob/user)
+/obj/item/device/holowarrant/examine(mob/user, distance)
 	. = ..()
 	if(active)
 		to_chat(user, "It's a holographic warrant for '[active.fields["namewarrant"]]'.")
-	if(in_range(user, src) || isghost(user))
+	if(distance <= 1)
 		show_content(user)
 	else
 		to_chat(user, "<span class='notice'>You have to be closer if you want to read it.</span>")
@@ -83,8 +83,8 @@
 		return
 	if(active.fields["arrestsearch"] == "arrest")
 		var/output = {"
-		<HTML><HEAD><TITLE>[active.fields["namewarrant"]]</TITLE></HEAD>
-		<BODY bgcolor='#ffffff'><center><large><b>SCG OCIE Warrant Tracker System</b></large></br>
+		<HTML><meta charset=\"UTF-8\"><HEAD><TITLE>[active.fields["namewarrant"]]</TITLE></HEAD>
+		<BODY bgcolor='#ffffff'><center><large><b>SCG SFP Warrant Tracker System</b></large></br>
 		</br>
 		Issued in the jurisdiction of the</br>
 		[GLOB.using_map.boss_name] in [GLOB.using_map.system_name]</br>
@@ -102,8 +102,8 @@
 		show_browser(user, output, "window=Warrant for the arrest of [active.fields["namewarrant"]]")
 	if(active.fields["arrestsearch"] ==  "search")
 		var/output= {"
-		<HTML><HEAD><TITLE>Search Warrant: [active.fields["namewarrant"]]</TITLE></HEAD>
-		<BODY bgcolor='#ffffff'><center><large><b>SCG OCIE Warrant Tracker System</b></large></br>
+		<HTML><meta charset=\"UTF-8\"><HEAD><TITLE>Search Warrant: [active.fields["namewarrant"]]</TITLE></HEAD>
+		<BODY bgcolor='#ffffff'><center><large><b>SCG SFP Warrant Tracker System</b></large></br>
 		</br>
 		Issued in the jurisdiction of the</br>
 		[GLOB.using_map.boss_name] in [GLOB.using_map.system_name]</br>

@@ -102,7 +102,7 @@
 "al" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "ws_weapon";
+	id_tag = "ws_weapon";
 	name = "Weapon Blast Door"
 	},
 /obj/machinery/shield_diffuser,
@@ -278,7 +278,7 @@
 /turf/simulated/floor/tiled/white,
 /area/white_star/section2)
 "aA" = (
-/obj/item/modular_computer/console/preset/command{
+/obj/machinery/computer/modular/preset/command{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
@@ -460,17 +460,17 @@
 /turf/simulated/floor/tiled/white,
 /area/white_star/section2)
 "aR" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
-	id = "ws_main_weapon";
+	id_tag = "ws_main_weapon";
 	name = "Main Weapon Blast Door";
 	pixel_x = -24;
 	pixel_y = 6;
 	req_access = list(83)
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
-	id = "ws_weapon";
+	id_tag = "ws_weapon";
 	name = "Weapon Blast Door";
 	pixel_x = -24;
 	pixel_y = -6
@@ -598,7 +598,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "ws_rocket_storage";
+	id_tag = "ws_rocket_storage";
 	name = "Rocket Storage Blast Door"
 	},
 /turf/simulated/floor/reinforced,
@@ -776,7 +776,7 @@
 "bw" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "ws_main_weapon";
+	id_tag = "ws_main_weapon";
 	name = "Main Weapon Door"
 	},
 /obj/machinery/shield_diffuser,
@@ -856,17 +856,17 @@
 /obj/machinery/light/small{
 	dir = 2
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
-	id = "ws_main_weapon";
+	id_tag = "ws_main_weapon";
 	name = "Main Weapon Blast Door";
 	pixel_x = -24;
 	pixel_y = 6;
 	req_access = list(83)
 	},
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 4;
-	id = "ws_rocket_storage";
+	id_tag = "ws_rocket_storage";
 	name = "Storage Blast Door";
 	pixel_x = -24;
 	pixel_y = -6
@@ -888,15 +888,15 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "ws_bsd";
+/obj/machinery/button/blast_door{
+	id_tag = "ws_bsd";
 	name = "BS Drive Blast Door";
 	pixel_x = 24;
 	pixel_y = 6;
 	req_access = newlist()
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "ws_reactor";
+/obj/machinery/button/blast_door{
+	id_tag = "ws_reactor";
 	name = "Reactor Blast Door";
 	pixel_x = 24;
 	pixel_y = -6
@@ -908,7 +908,7 @@
 /obj/structure/grille,
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "ws_bsd";
+	id_tag = "ws_bsd";
 	name = "BS Drive Blast Door"
 	},
 /obj/structure/cable{
@@ -933,7 +933,7 @@
 "bI" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "ws_reactor";
+	id_tag = "ws_reactor";
 	name = "Reactor Blast Door"
 	},
 /obj/structure/cable/yellow{
@@ -1139,8 +1139,8 @@
 /turf/simulated/floor/plating,
 /area/white_star/section2)
 "bU" = (
-/obj/machinery/button/remote/blast_door{
-	id = "ws_obd";
+/obj/machinery/button/blast_door{
+	id_tag = "ws_obd";
 	name = "Outer Blast Door";
 	pixel_x = 24;
 	pixel_y = 6;
@@ -1374,9 +1374,7 @@
 /area/white_star/section1)
 "ch" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 4;
-	level = 1
+	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/light{
@@ -1545,9 +1543,7 @@
 	pixel_y = 0
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 4;
-	level = 1
+	dir = 1
 	},
 /turf/simulated/floor/reinforced,
 /area/white_star/section1)
@@ -1755,9 +1751,7 @@
 /area/white_star/section2)
 "cP" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 4;
-	level = 1
+	dir = 1
 	},
 /obj/structure/closet/walllocker{
 	pixel_y = -28
@@ -1849,7 +1843,7 @@
 	id_tag = "ws_outer"
 	},
 /obj/machinery/door/blast/regular{
-	id = "ws_obd";
+	id_tag = "ws_obd";
 	name = "Outer Blast Door"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -1930,7 +1924,7 @@
 	id_tag = "ws_outer"
 	},
 /obj/machinery/door/blast/regular{
-	id = "ws_obd";
+	id_tag = "ws_obd";
 	name = "Outer Blast Door"
 	},
 /obj/effect/floor_decal/industrial/warning,

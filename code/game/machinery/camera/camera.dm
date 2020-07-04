@@ -6,7 +6,6 @@
 	use_power = POWER_USE_ACTIVE
 	idle_power_usage = 5
 	active_power_usage = 10
-	plane = ABOVE_HUMAN_PLANE
 	layer = CAMERA_LAYER
 
 	var/list/network = list(NETWORK_EXODUS)
@@ -22,7 +21,7 @@
 	var/toughness = 5 //sorta fragile
 
 	// WIRES
-	var/datum/wires/camera/wires = null // Wires datum
+	wires = /datum/wires/camera
 
 	//OTHER
 
@@ -71,7 +70,6 @@
 	return 1
 
 /obj/machinery/camera/New()
-	wires = new(src)
 	assembly = new(src)
 	assembly.state = 4
 
@@ -81,7 +79,7 @@
 	for(var/obj/machinery/camera/C in cameranet.cameras)
 		var/list/tempnetwork = C.network&src.network
 		if(C != src && C.c_tag == src.c_tag && tempnetwork.len)
-			world.log << "[src.c_tag] [src.x] [src.y] [src.z] conflicts with [C.c_tag] [C.x] [C.y] [C.z]"
+			to_world_log("[src.c_tag] [src.x] [src.y] [src.z] conflicts with [C.c_tag] [C.x] [C.y] [C.z]")
 	*/
 	if(!src.network || src.network.len < 1)
 		if(loc)
@@ -111,8 +109,6 @@
 	if(assembly)
 		qdel(assembly)
 		assembly = null
-	qdel(wires)
-	wires = null
 	return ..()
 
 /obj/machinery/camera/Process()
@@ -122,9 +118,6 @@
 		update_icon()
 		update_coverage()
 	return internal_process()
-
-/obj/machinery/camera/proc/internal_process()
-	return
 
 /obj/machinery/camera/emp_act(severity)
 	if(!isEmpProof() && prob(100/severity))
@@ -136,7 +129,7 @@
 			triggerCameraAlarm()
 			update_icon()
 			update_coverage()
-			START_PROCESSING(SSmachines, src)
+			START_PROCESSING_MACHINE(src, MACHINERY_PROCESS_SELF)
 
 /obj/machinery/camera/bullet_act(var/obj/item/projectile/P)
 	take_damage(P.get_structure_damage())
@@ -163,10 +156,9 @@
 	src.view_range = num
 	cameranet.update_visibility(src, 0)
 
-/obj/machinery/camera/attack_hand(mob/living/carbon/human/user as mob)
+/obj/machinery/camera/physical_attack_hand(mob/living/carbon/human/user)
 	if(!istype(user))
 		return
-
 	if(user.species.can_shred(user))
 		set_status(0)
 		user.do_attack_animation(src)
@@ -174,9 +166,11 @@
 		playsound(src.loc, 'sound/weapons/slash.ogg', 100, 1)
 		add_hiddenprint(user)
 		destroy()
+		return TRUE
 
 /obj/machinery/camera/attackby(obj/item/W as obj, mob/living/user as mob)
 	update_coverage()
+	var/datum/wires/camera/camera_wires = wires
 	// DECONSTRUCTION
 	if(isScrewdriver(W))
 //		to_chat(user, "<span class='notice'>You start to [panel_open ? "close" : "open"] the camera's panel.</span>")
@@ -187,9 +181,9 @@
 		playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
 
 	else if((isWirecutter(W) || isMultitool(W)) && panel_open)
-		interact(user)
+		return wires.Interact(user)
 
-	else if(isWelder(W) && (wires.CanDeconstruct() || (stat & BROKEN)))
+	else if(isWelder(W) && (camera_wires.CanDeconstruct() || (stat & BROKEN)))
 		if(weld(W, user))
 			if(assembly)
 				assembly.dropInto(loc)
@@ -222,7 +216,7 @@
 			if(!O.client) continue
 			if(U.name == "Unknown") to_chat(O, "<b>[U]</b> holds \a [itemname] up to one of your cameras ...")
 			else to_chat(O, "<b><a href='byond://?src=\ref[O];track2=\ref[O];track=\ref[U];trackname=[U.name]'>[U]</a></b> holds \a [itemname] up to one of your cameras ...")
-			O << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", itemname, info), text("window=[]", itemname))
+			show_browser(O, text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", itemname, info), text("window=[]", itemname))
 
 	else if(W.damtype == BRUTE || W.damtype == BURN) //bashing cameras
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -397,17 +391,6 @@
 
 	busy = 0
 	return 0
-
-/obj/machinery/camera/interact(mob/living/user as mob)
-	if(!panel_open || istype(user, /mob/living/silicon/ai))
-		return
-
-	if(stat & BROKEN)
-		to_chat(user, "<span class='warning'>\The [src] is broken.</span>")
-		return
-
-	user.set_machine(src)
-	wires.Interact(user)
 
 /obj/machinery/camera/proc/add_network(var/network_name)
 	add_networks(list(network_name))

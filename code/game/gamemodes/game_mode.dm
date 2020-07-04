@@ -11,7 +11,7 @@ var/global/list/additional_antag_types = list()
 
 	var/required_players = 0                 // Minimum players for round to start if voted in.
 	var/required_enemies = 0                 // Minimum antagonists for round to start.
-	var/newscaster_announcements = null
+	var/list/newscaster_announcements = list() //INF, WAS var/newscaster_announcements = null
 	var/end_on_antag_death = FALSE           // Round will end when all antagonists are dead.
 	var/ert_disabled = FALSE                 // ERT cannot be called.
 	var/deny_respawn = FALSE	             // Disable respawn during this round.
@@ -126,15 +126,11 @@ var/global/list/additional_antag_types = list()
 			SSticker.mode.antag_templates |= antag
 			message_admins("Admin [key_name_admin(usr)] added [antag.role_text] template to game mode.")
 
-	// I am very sure there's a better way to do this, but I'm not sure what it might be. ~Z
-	spawn(1)
-		for(var/datum/admins/admin in world)
-			if(usr.client == admin.owner)
-				admin.show_game_mode(usr)
-				return
+	if (usr.client && usr.client.holder)
+		usr.client.holder.show_game_mode(usr)
 
 /datum/game_mode/proc/announce() //to be called when round starts
-	to_world("<B>Текущий игровой режим [capitalize(name)]!</B>")
+	to_world("<B>РўРµРєСѓС‰РёР№ РёРіСЂРѕРІРѕР№ СЂРµР¶РёРј [capitalize(name)]!</B>")
 	if(round_description) to_world("[round_description]")
 	if(round_autoantag) to_world("Antagonists will be added to the round automagically as needed.")
 	if(antag_templates && antag_templates.len)
@@ -284,9 +280,9 @@ var/global/list/additional_antag_types = list()
 		"artifacts of eldritch horror",
 		"a brain slug infestation",
 		"killer bugs that lay eggs in the husks of the living",
-		"a deserted transport carrying xenomorph specimens",
+		"a deserted transport carrying xenofauna specimens",
 		"an emissary for the gestalt requesting a security detail",
-		"a Tajaran slave rebellion",
+		"a Tajaran slave rebellion",//inf
 		"radical Skrellian transevolutionaries",
 		"classified security operations",
 		"a gargantuan glowing goat"
@@ -313,12 +309,10 @@ var/global/list/additional_antag_types = list()
 /datum/game_mode/proc/declare_completion()
 	set waitfor = FALSE
 
-	check_victory()
 	sleep(2)
 
 	var/list/all_antag_types = GLOB.all_antag_types_
 	for(var/datum/antagonist/antag in antag_templates)
-		antag.check_victory()
 		antag.print_player_summary()
 		sleep(2)
 	for(var/antag_type in all_antag_types)
@@ -383,8 +377,9 @@ var/global/list/additional_antag_types = list()
 	if(escaped_total > 0)
 		SSstatistics.set_field("escaped_total",escaped_total)
 
-	send2mainirc("Раунд с режимом [src.name] завершен. Выживших: [surviving_total]; призраков: [ghosts]; игроков: [clients]; продолжительность: [roundduration2text()].")
-	send2maindiscord("Раунд с режимом [src.name] завершен. Выживших: [surviving_total]; призраков:  [ghosts]; игроков: [clients]; продолжительность: [roundduration2text()].")
+//INF	send2mainirc("A round of [src.name] has ended - [surviving_total] survivor\s, [ghosts] ghost\s.")
+	send2mainirc("Р Р°СѓРЅРґ СЃ СЂРµР¶РёРјРѕРј [src.name] Р·Р°РІРµСЂС€РµРЅ. Р’С‹Р¶РёРІС€РёС…: [surviving_total]; РїСЂРёР·СЂР°РєРѕРІ: [ghosts]; РёРіСЂРѕРєРѕРІ: [clients]; РїСЂРѕРґРѕР»Р¶РёС‚РµР»СЊРЅРѕСЃС‚СЊ: [roundduration2text()].") //INF
+	SSwebhooks.send(WEBHOOK_ROUNDEND, list("survivors" = surviving_total, "escaped" = escaped_total, "ghosts" = ghosts))
 
 	return 0
 
@@ -424,6 +419,7 @@ var/global/list/additional_antag_types = list()
 				players -= player
 
 		// If we don't have enough antags, draft people who voted for the round.
+/*[ORIG]. We don't use low antag chance
 		if(candidates.len < required_enemies)
 			for(var/mob/new_player/player in players)
 				if(!antag_id || ((antag_id in player.client.prefs.be_special_role) || (antag_id in player.client.prefs.may_be_special_role)))
@@ -432,7 +428,7 @@ var/global/list/additional_antag_types = list()
 					players -= player
 					if(candidates.len == required_enemies || players.len == 0)
 						break
-
+[/ORIG]*/
 	return candidates		// Returns: The number of people who had the antagonist role set to yes, regardless of recomended_enemies, if that number is greater than required_enemies
 							//			required_enemies if the number of people with that role set to yes is less than recomended_enemies,
 							//			Less if there are not enough valid players in the game entirely to make required_enemies.
@@ -468,11 +464,15 @@ var/global/list/additional_antag_types = list()
 				antag_templates |= antag
 
 	shuffle(antag_templates) //In the case of multiple antag types
-	newscaster_announcements = pick(newscaster_standard_feeds)
-
-/datum/game_mode/proc/check_victory()
-	return
-
+//INF	newscaster_announcements = pick(newscaster_standard_feeds)
+//[INF]
+	if(!newscaster_announcements.len)
+		var/daily_news = newscaster_standard_feeds
+		for(var/i = 1, i <= 2, i++)
+			var/news = pick(daily_news)
+			daily_news -= news
+			newscaster_announcements += news
+//[/INF]
 // Manipulates the end-game cinematic in conjunction with GLOB.cinematic
 /datum/game_mode/proc/nuke_act(obj/screen/cinematic_screen, station_missed = 0)
 	if(!cinematic_icon_states)
@@ -554,9 +554,9 @@ proc/display_roundstart_logout_report()
 		return
 
 	var/obj_count = 1
-	to_chat(player.current, "<span class='notice'>Your current objectives:</span>")
+	to_chat(player.current, "<span class='notice'>РўРµРєСѓС‰РёРµ С†РµР»Рё:</span>")
 	for(var/datum/objective/objective in player.objectives)
-		to_chat(player.current, "<B>Objective #[obj_count]</B>: [objective.explanation_text]")
+		to_chat(player.current, "<B>Р¦РµР»СЊ #[obj_count]</B>: [objective.explanation_text]")
 		obj_count++
 
 /mob/verb/check_round_info()

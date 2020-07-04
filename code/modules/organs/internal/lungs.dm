@@ -67,9 +67,9 @@
  */
 /obj/item/organ/internal/lungs/proc/sync_breath_types()
 	min_breath_pressure = species.breath_pressure
-	breath_type = species.breath_type ? species.breath_type : "oxygen"
-	poison_types = species.poison_types ? species.poison_types : list("phoron" = TRUE)
-	exhale_type = species.exhale_type ? species.exhale_type : "carbon_dioxide"
+	breath_type = species.breath_type ? species.breath_type : GAS_OXYGEN
+	poison_types = species.poison_types ? species.poison_types : list(GAS_PHORON = TRUE)
+	exhale_type = species.exhale_type ? species.exhale_type : GAS_CO2
 
 /obj/item/organ/internal/lungs/Process()
 	..()
@@ -84,9 +84,9 @@
 		if(prob(2))
 			if(active_breathing)
 				owner.visible_message(
-					"<B>[owner]</B> кашл&#255;ет кровью!",
-					"<span class='warning'>Вы кашл&#255;ете кровью!</span>",
-					"Вы слышите кашель!",
+					"<B>[owner]</B> РєР°С€Р»СЏРµС‚ РєСЂРѕРІСЊСЋ!",
+					"<span class='warning'>Р’С‹ РєР°С€Р»СЏРµС‚Рµ РєСЂРѕРІСЊСЋ!</span>",
+					"Р’С‹ СЃР»С‹С€РёС‚Рµ РєР°С€РµР»СЊ!",
 				)
 			else
 				var/obj/item/organ/parent = owner.get_organ(parent_organ)
@@ -98,9 +98,9 @@
 		if(prob(4))
 			if(active_breathing)
 				owner.visible_message(
-					"<B>[owner]</B> задыхаетс&#255;!",
-					"<span class='danger'>Вы задыхаетесь!</span>",
-					"Вы слышите как кто-то задыхаетс&#255;!",
+					"<B>[owner]</B> Р·Р°РґС‹С…Р°РµС‚СЃСЏ!",
+					"<span class='danger'>Р’С‹ Р·Р°РґС‹С…Р°РµС‚РµСЃСЊ!</span>",
+					"Р’С‹ СЃР»С‹С€РёС‚Рµ РєР°Рє РєС‚Рѕ-С‚Рѕ Р·Р°РґС‹С…Р°РµС‚СЃСЏ!",
 				)
 			else
 				to_chat(owner, "<span class='danger'>You're having trouble getting enough [breath_type]!</span>")
@@ -110,7 +110,7 @@
 /obj/item/organ/internal/lungs/proc/rupture()
 	var/obj/item/organ/external/parent = owner.get_organ(parent_organ)
 	if(istype(parent))
-		owner.custom_pain("Вы чувствуете колющую боль в [parent.name]!", 50, affecting = parent)
+		owner.custom_pain("Р’С‹ С‡СѓРІСЃС‚РІСѓРµС‚Рµ РєРѕР»СЋС‰СѓСЋ Р±РѕР»СЊ РІ [parent.name]!", 50, affecting = parent)
 	bruise()
 
 //exposure to extreme pressures can rupture lungs
@@ -202,7 +202,7 @@
 				breath.adjust_gas(gasname, -breath.gas[gasname], update = 0) //update after
 
 	// Moved after reagent injection so we don't instantly poison ourselves with CO2 or whatever.
-	if(exhale_type)
+	if(exhale_type && (!istype(owner.wear_mask) || !(exhale_type in owner.wear_mask.filtered_gases)))
 		breath.adjust_gas_temp(exhale_type, inhaled_gas_used, owner.bodytemperature, update = 0) //update afterwards
 
 	// Were we able to breathe?
@@ -246,7 +246,7 @@
 		var/damage = 0
 		if(breath.temperature <= species.cold_level_1)
 			if(prob(20))
-				to_chat(owner, "<span class='danger'>Ваше лицо замерзает вместе с вашими легкими!</span>")
+				to_chat(owner, "<span class='danger'>Р’Р°С€Рµ Р»РёС†Рѕ Р·Р°РјРµСЂР·Р°РµС‚ РІРјРµСЃС‚Рµ СЃ РІР°С€РёРјРё Р»РµРіРєРёРјРё!</span>")
 			switch(breath.temperature)
 				if(species.cold_level_3 to species.cold_level_2)
 					damage = COLD_GAS_DAMAGE_LEVEL_3
@@ -262,7 +262,7 @@
 			owner.fire_alert = 1
 		else if(breath.temperature >= species.heat_level_1)
 			if(prob(20))
-				to_chat(owner, "<span class='danger'>Ваше лицо горит вместе с вашими легкими!</span>")
+				to_chat(owner, "<span class='danger'>Р’Р°С€Рµ Р»РёС†Рѕ РіРѕСЂРёС‚ РІРјРµСЃС‚Рµ СЃ РІР°С€РёРјРё Р»РµРіРєРёРјРё!</span>")
 
 			switch(breath.temperature)
 				if(species.heat_level_1 to species.heat_level_2)

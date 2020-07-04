@@ -257,14 +257,14 @@
 	starting_reagents = list(/datum/reagent/nutriment/soysauce = 5)
 
 /obj/item/weapon/reagent_containers/food/condiment/small/packet/coffee
-	name = "coffee powder packet"
-	desc = "Contains 5u of coffee powder. Mix with 25u of water and heat."
-	starting_reagents = list(/datum/reagent/nutriment/coffee = 5)
+	name = "instant coffee powder packet"
+	desc = "Contains 5u of instant coffee powder. Mix with 25u of water."
+	starting_reagents = list(/datum/reagent/nutriment/coffee/instant = 5)
 
 /obj/item/weapon/reagent_containers/food/condiment/small/packet/tea
-	name = "tea powder packet"
-	desc = "Contains 5u of black tea powder. Mix with 25u of water and heat."
-	starting_reagents = list(/datum/reagent/nutriment/tea = 5)
+	name = "instant tea powder packet"
+	desc = "Contains 5u of instant black tea powder. Mix with 25u of water."
+	starting_reagents = list(/datum/reagent/nutriment/tea/instant = 5)
 
 /obj/item/weapon/reagent_containers/food/condiment/small/packet/cocoa
 	name = "cocoa powder packet"
@@ -363,11 +363,3 @@
 	amount_per_transfer_from_this = 1
 	volume = 20
 	starting_reagents = list(/datum/reagent/nutriment/soysauce = 20)
-
-/obj/item/weapon/reagent_containers/food/condiment/szechuan
-	name = "szechuan sauce"
-	desc = "A long forgotten sauce of Earth, recently re-discovered. Its taste is said to be stuff of legends."
-	icon = 'icons/obj/food_alt.dmi'
-	icon_state = "szechuan"
-	center_of_mass = "x=16;y=6"
-	starting_reagents = list(/datum/reagent/nutriment/szechuan = 50)

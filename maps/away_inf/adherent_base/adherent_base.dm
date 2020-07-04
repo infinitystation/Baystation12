@@ -1,9 +1,10 @@
 #include "adherent_base_areas.dm"
 #include "adherent_base_preset.dm"
 #include "adherent_base_turfs.dm"
+#include "adherent_base_notes.dm"
 #include "adherentbot.dm"
 
-/obj/effect/overmap/sector/adherent_base
+/obj/effect/overmap/visitable/sector/adherent_base
 	name = "aquatic planet"
 	desc = "There is faint \"S.O.S.\" signal incoming from the water surface. Decyphering codes are very old."
 	color = COLOR_OCEAN

@@ -1,0 +1,8 @@
+{
+  "ckey" :            "he11d1ver",
+  "character_name" :  "Aard Barnes",
+  "item_path" :       "/obj/item/weapon/material/knife/kitchen",
+  "item_name" :       "engraved huntsman knife",
+  "item_desc" :       "A stylish, yet lethal knife. Engraved on the blade are the words \"Farewell, my lovely\".",
+  "item_icon_state" : "he11d1ver_knife"
+  }

@@ -4,7 +4,6 @@
 	icon_keyboard = "atmos_key"
 	icon_screen = "area_atmos"
 	light_color = "#e6ffff"
-	circuit = /obj/item/weapon/circuitboard/area_atmos
 
 	var/list/connectedscrubbers = new()
 	var/status = ""
@@ -13,6 +12,7 @@
 
 	//Simple variable to prevent me from doing attack_hand in both this and the child computer
 	var/zone = "This computer is working on a wireless range, the range is currently limited to 25 meters."
+	base_type = /obj/machinery/computer/area_atmos //inf
 
 	New()
 		..()
@@ -89,7 +89,7 @@
 				<i>[zone]</i>
 			</body>
 		</html>"}
-		user << browse("[dat]", "window=miningshuttle;size=400x400")
+		show_browser(user, "[dat]", "window=miningshuttle;size=400x400")
 		status = ""
 
 	Topic(href, href_list)
@@ -110,7 +110,7 @@
 					src.updateUsrDialog()
 				return
 
-			scrubber.on = text2num(href_list["toggle"])
+			scrubber.update_use_power(text2num(href_list["toggle"]) ? POWER_USE_ACTIVE : POWER_USE_IDLE)
 			scrubber.update_icon()
 
 	proc/validscrubber( var/obj/machinery/portable_atmospherics/powered/scrubber/huge/scrubber as obj )

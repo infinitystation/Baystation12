@@ -53,7 +53,6 @@
 /obj/effect/decal/cleanable/cobweb
 	name = "cobweb"
 	desc = "Somebody should remove that."
-	plane = ABOVE_HUMAN_PLANE
 	layer = ABOVE_HUMAN_LAYER
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "cobweb1"
@@ -67,7 +66,6 @@
 /obj/effect/decal/cleanable/cobweb2
 	name = "cobweb"
 	desc = "Somebody should remove that."
-	plane = ABOVE_HUMAN_PLANE
 	layer = ABOVE_HUMAN_LAYER
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "cobweb2"
@@ -81,7 +79,6 @@
 	icon_state = "vomit_1"
 	persistent = TRUE
 	generic_filth = TRUE
-	var/list/viruses = list()
 
 /obj/effect/decal/cleanable/vomit/New()
 	random_icon_states = icon_states(icon)

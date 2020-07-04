@@ -64,7 +64,7 @@
 		qdel(src)
 		return
 
-	var/obj/effect/overmap/cell = map_sectors["[associated_z]"]
+	var/obj/effect/overmap/visitable/cell = map_sectors["[associated_z]"]
 	if(istype(cell))
 		sync_cell(cell)
 
@@ -83,7 +83,10 @@
 		qdel(src)
 		return
 
-/datum/submap/proc/sync_cell(var/obj/effect/overmap/cell)
+	if(archetype && archetype.call_webhook)
+		SSwebhooks.send(archetype.call_webhook, list("name" = name))
+
+/datum/submap/proc/sync_cell(var/obj/effect/overmap/visitable/cell)
 	name = cell.name
 
 /datum/submap/proc/available()

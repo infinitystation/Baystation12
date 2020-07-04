@@ -113,11 +113,6 @@
 				else
 					to_chat(user, "<span class='warning'>\The [W] is empty.</span>")
 
-	examine(mob/user)
-		. = ..(user)
-		if(detonator)
-			to_chat(user, "With attached [detonator.name]")
-
 	activate(mob/user as mob)
 		if(active) return
 
@@ -164,7 +159,12 @@
 
 		for(var/obj/item/weapon/reagent_containers/glass/G in beakers)
 			G.reagents.trans_to_obj(src, G.reagents.total_volume)
-
+//[INF]
+		if(istype(loc, /mob/living/carbon))		//drop dat grenade if it goes off in your hand
+			var/mob/living/carbon/C = loc
+			C.drop_from_inventory(src)
+			C.throw_mode_off()
+//[/INF]
 		if(src.reagents.total_volume) //The possible reactions didnt use up all reagents.
 			var/datum/effect/effect/system/steam_spread/steam = new /datum/effect/effect/system/steam_spread()
 			steam.set_up(10, 0, get_turf(src))
@@ -174,23 +174,20 @@
 			for(var/atom/A in view(affected_area, src.loc))
 				if( A == src ) continue
 				src.reagents.touch(A)
-
+/* INF
 		if(istype(loc, /mob/living/carbon))		//drop dat grenade if it goes off in your hand
 			var/mob/living/carbon/C = loc
 			C.drop_from_inventory(src)
 			C.throw_mode_off()
-
+/INF */
 		set_invisibility(INVISIBILITY_MAXIMUM) //Why am i doing this?
 		spawn(50)		   //To make sure all reagents can work
 			qdel(src)	   //correctly before deleting the grenade.
 
-/obj/item/weapon/grenade/chem_grenade/Crossed(atom/movable/AM)
+/obj/item/weapon/grenade/chem_grenade/examine(mob/user)
+	. = ..()
 	if(detonator)
-		detonator.Crossed(AM)
-
-/obj/item/weapon/grenade/chem_grenade/on_found(mob/finder)
-	if(detonator)
-		detonator.on_found(finder)
+		to_chat(user, "With attached [detonator.name]")
 
 /obj/item/weapon/grenade/chem_grenade/large
 	name = "large chem grenade"
@@ -309,4 +306,26 @@
 		beakers += B1
 		beakers += B2
 		icon_state = initial(icon_state) +"_locked"
+
+/obj/item/weapon/grenade/chem_grenade/water
+	name = "water grenade"
+	desc = "A water grenade, generally used for firefighting."
+	icon_state = "waterg"
+	item_state = "waterg"
+	stage = 2
+	path = 1
+
+/obj/item/weapon/grenade/chem_grenade/water/Initialize()
+	. = ..()
+	var/obj/item/weapon/reagent_containers/glass/beaker/B1 = new(src)
+	var/obj/item/weapon/reagent_containers/glass/beaker/B2 = new(src)
+
+	B1.reagents.add_reagent(/datum/reagent/water, 40)
+	B2.reagents.add_reagent(/datum/reagent/water, 40)
+
+	detonator = new/obj/item/device/assembly_holder/timer_igniter(src)
+
+	beakers += B1
+	beakers += B2
+	icon_state = initial(icon_state) +"_locked"
 

@@ -14,8 +14,9 @@
 /datum/money_account/New(var/account_type)
 	account_type = account_type ? account_type : ACCOUNT_TYPE_PERSONAL
 
-/datum/money_account/proc/add_transaction(var/datum/transaction/T)
-	money = max(0, money + T.amount)
+// is_source inverts the amount.
+/datum/money_account/proc/add_transaction(var/datum/transaction/T, is_source = FALSE)
+	money = max(is_source ? money - T.amount : money + T.amount, 0)
 	transaction_log += T
 
 /datum/money_account/proc/get_balance()
@@ -70,14 +71,14 @@
 		R.info += "<i>Account holder:</i> [M.owner_name]<br>"
 		R.info += "<i>Account number:</i> [M.account_number]<br>"
 		R.info += "<i>Account pin:</i> [M.remote_access_pin]<br>"
-		R.info += "<i>Starting balance:</i> T[M.money]<br>"
+		R.info += "<i>Starting balance:</i> [GLOB.using_map.local_currency_name_short][M.money]<br>"
 		R.info += "<i>Date and time:</i> [stationtime2text()], [stationdate2text()]<br><br>"
 		R.info += "<i>Creation terminal ID:</i> [source_db.machine_id]<br>"
 		R.info += "<i>Authorised officer overseeing creation:</i> [source_db.held_card.registered_name]<br>"
 
 		//stamp the paper
 		var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
-		stampoverlay.icon_state = "paper_stamp-cent"
+		stampoverlay.icon_state = "paper_stamp-boss"
 		if(!R.stamped)
 			R.stamped = new
 		R.stamped += /obj/item/weapon/stamp

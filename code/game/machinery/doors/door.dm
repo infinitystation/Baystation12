@@ -44,10 +44,15 @@
 	dir = SOUTH
 	var/width = 1
 
+	//Used for intercepting clicks on our turf. Set 0 to disable click interception
+	var/turf_hand_priority = 3
+
 	// turf animation
 	var/atom/movable/overlay/c_animation = null
 
 	atmos_canpass = CANPASS_PROC
+
+	var/need_change_sound_freq = 1 //inf
 
 /obj/machinery/door/attack_generic(var/mob/user, var/damage, var/attack_verb, var/environment_smash)
 	if(environment_smash >= 1)
@@ -76,6 +81,9 @@
 		else
 			bound_width = world.icon_size
 			bound_height = width * world.icon_size
+
+	if (turf_hand_priority)
+		set_extension(src, /datum/extension/turf_hand, turf_hand_priority)
 
 	health = maxhealth
 	update_connections(1)
@@ -138,14 +146,6 @@
 				open()
 		return
 
-	if(istype(AM, /obj/mecha))
-		var/obj/mecha/mecha = AM
-		if(density)
-			if(mecha.occupant && (src.allowed(mecha.occupant) || src.check_access_list(mecha.operation_req_access)))
-				open()
-			else
-				do_animate("deny")
-		return
 	if(istype(AM, /obj/structure/bed/chair/wheelchair))
 		var/obj/structure/bed/chair/wheelchair/wheel = AM
 		if(density)
@@ -200,30 +200,23 @@
 
 
 
-/obj/machinery/door/hitby(AM as mob|obj, var/speed=5)
+/obj/machinery/door/hitby(AM as mob|obj, var/datum/thrownthing/TT)
 
 	..()
 	visible_message("<span class='danger'>[src.name] was hit by [AM].</span>")
 	var/tforce = 0
 	if(ismob(AM))
-		tforce = 15 * (speed/5)
+		tforce = 3 * TT.speed
 	else
-		tforce = AM:throwforce * (speed/5)
+		tforce = AM:throwforce * (TT.speed/THROWFORCE_SPEED_DIVISOR)
 	playsound(src.loc, hitsound, 100, 1)
 	take_damage(tforce)
 	return
 
-/obj/machinery/door/attack_ai(mob/user as mob)
-	return src.attack_hand(user)
-
-/obj/machinery/door/attack_hand(mob/user as mob)
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-	return src.attackby(user, user)
-
-/obj/machinery/door/attack_tk(mob/user as mob)
-	if(requiresID() && !allowed(null))
-		return
-	..()
+// This is legacy code that should be revisited, probably by moving the bulk of the logic into here.
+/obj/machinery/door/interface_interact(user)
+	if(CanInteract(user, DefaultTopicState()))
+		return attackby(user, user)
 
 /obj/machinery/door/attackby(obj/item/I as obj, mob/user as mob)
 	src.add_fingerprint(user, 0, I)
@@ -291,11 +284,6 @@
 
 	if(src.operating) return
 
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		if(H.get_species() == SPECIES_XENO)
-			H.pry_open(src)
-
 	if(src.allowed(user) && operable())
 		if(src.density)
 			open()
@@ -311,11 +299,18 @@
 /obj/machinery/door/emag_act(var/remaining_charges)
 	if(density && operable())
 		do_animate("emag")
+		addtimer(CALLBACK(src, .proc/emag_open), 6) //inf
+/*[ORIGINAL]
 		sleep(6)
 		open()
 		operating = -1
+[/ORIGINAL]*/
 		return 1
-
+//[INF]
+/obj/machinery/door/proc/emag_open()
+	open()
+	operating = -1
+//[/INF]
 //psa to whoever coded this, there are plenty of objects that need to call attack() on doors without bludgeoning them.
 /obj/machinery/door/proc/check_force(obj/item/I as obj, mob/user as mob)
 	if(src.density && istype(I, /obj/item/weapon) && user.a_intent == I_HURT && !istype(I, /obj/item/weapon/card))
@@ -469,6 +464,12 @@
 		qdel(fire)
 	return
 
+/obj/machinery/door/proc/toggle(forced = 0)
+	if(density)
+		open(forced)
+	else
+		close(forced)
+
 /obj/machinery/door/proc/requiresID()
 	return 1
 
@@ -532,7 +533,7 @@
 				W.update_connections(1)
 				W.update_icon()
 
-		else if( istype(T, /turf/simulated/shuttle/wall) ||  istype(T, /turf/unsimulated/wall))
+		else if( istype(T, /turf/simulated/shuttle/wall) ||	istype(T, /turf/unsimulated/wall))
 			success = 1
 		else
 			for(var/obj/O in T)
@@ -578,3 +579,20 @@
 		req_access = req_access_union(fore, aft)
 	else
 		req_access = req_access_diff(fore, aft)
+
+/obj/machinery/door/do_simple_ranged_interaction(var/mob/user)
+	if(!requiresID() || allowed(null))
+		toggle()
+	return TRUE
+
+// Public access
+
+/decl/public_access/public_method/open_door
+	name = "open door"
+	desc = "Opens the door if possible."
+	call_proc = /obj/machinery/door/proc/open
+
+/decl/public_access/public_method/toggle_door
+	name = "toggle door"
+	desc = "Toggles whether the door is open or not, if possible."
+	call_proc = /obj/machinery/door/proc/toggle

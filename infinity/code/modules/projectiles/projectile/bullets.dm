@@ -13,8 +13,9 @@
 
 /obj/item/projectile/bullet/pistol/medium/fast
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
-	damage = 18 //4.6x30 mm, 5.7x28 mm
-	armor_penetration = 25
+	damage = 45 //4.6x30 mm, 5.7x28 mm
+	armor_penetration = 7.5
+	distance_falloff = 2
 
 
 /obj/item/projectile/bullet/pistol/strong/rubber
@@ -25,12 +26,14 @@
 	agony = 60
 
 /obj/item/projectile/bullet/smg/uni46x30mm
-	damage = 20
-	armor_penetration = 5
+	damage = 45
+	armor_penetration = 7.5
+	distance_falloff = 2
 
 /obj/item/projectile/bullet/smg/uni46x30mm_charged
 	damage = 15
-	armor_penetration = 30
+	armor_penetration = 20
+	distance_falloff = 2
 
 /obj/item/projectile/bullet/explosion/shotgun
 	name = "grenade"

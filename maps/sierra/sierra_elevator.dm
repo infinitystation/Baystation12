@@ -9,4 +9,3 @@
 		/area/turbolift/sierra_middle,
 		/area/turbolift/sierra_top,
 		)
-

@@ -1,23 +1,6 @@
 /datum/map/bearcat
 	allowed_jobs = list(/datum/job/captain, /datum/job/chief_engineer, /datum/job/hop, /datum/job/officer, /datum/job/bartender, /datum/job/doctor, /datum/job/engineer, /datum/job/qm, /datum/job/roboticist, /datum/job/assistant, /datum/job/cyborg)
 
-/datum/job/captain
-	supervisors = "the Merchant Code and your conscience"
-	outfit_type = /decl/hierarchy/outfit/job/bearcat/captain
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_SCIENCE     = SKILL_ADEPT,
-	                    SKILL_PILOT       = SKILL_ADEPT)
-
-	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
-	                    SKILL_SCIENCE     = SKILL_MAX)
-	skill_points = 30
-
-/datum/job/captain/equip(var/mob/living/carbon/human/H)
-	. = ..()
-	if(H.client)
-		H.client.verbs += /client/proc/rename_ship
-		H.client.verbs += /client/proc/rename_company
-
 /client/proc/rename_ship()
 	set name = "Rename Ship"
 	set category = "Captain's Powers"
@@ -27,7 +10,7 @@
 		return
 	GLOB.using_map.station_short = ship
 	GLOB.using_map.station_name = "FTV [ship]"
-	var/obj/effect/overmap/ship/bearcat/B = locate() in world
+	var/obj/effect/overmap/visitable/ship/bearcat/B = locate() in world
 	if(B)
 		B.name = GLOB.using_map.station_name
 	command_announcement.Announce("Attention all hands on [GLOB.using_map.station_name]! Thank you for your attention.", "Ship re-christened")
@@ -48,8 +31,43 @@
 		command_announcement.Announce("Congratulations to all employes of [capitalize(GLOB.using_map.company_name)] on the new name. The rebranding have changed the [GLOB.using_map.company_short] market value by [0.01*rand(-10,10)]%.", "Company name change approved")
 	verbs -= /client/proc/rename_company
 
+/datum/job/captain
+	supervisors = "the Merchant Code and your conscience"
+	outfit_type = /decl/hierarchy/outfit/job/bearcat/captain
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_SCIENCE     = SKILL_ADEPT,
+	                    SKILL_PILOT       = SKILL_ADEPT)
+
+	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
+	                    SKILL_SCIENCE     = SKILL_MAX)
+	skill_points = 30
+
+/datum/job/captain/equip(var/mob/living/carbon/human/H)
+	. = ..()
+	if(H.client)
+		H.client.verbs += /client/proc/rename_ship
+		H.client.verbs += /client/proc/rename_company
+
 /datum/job/captain/get_access()
 	return get_all_station_access()
+
+/datum/job/hop
+	title = "First Mate"
+	supervisors = "the Captain and the Merchant Code"
+	outfit_type = /decl/hierarchy/outfit/job/bearcat/mate
+	hud_icon = "hudheadofpersonnel"
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
+	                    SKILL_COMPUTER    = SKILL_BASIC,
+	                    SKILL_PILOT       = SKILL_BASIC)
+
+	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
+	                    SKILL_SCIENCE     = SKILL_MAX)
+
+	skill_points = 30
+	access = list(access_brig, access_eva, access_bar,
+			            access_medical, access_medical_equip, access_engine, access_change_ids, access_ai_upload, access_eva, access_heads,
+			            access_all_personal_lockers, access_cargo_bot, access_qm, access_mining_station, access_robotics,
+			            access_hop, access_RC_announce, access_keycard_auth)
 
 /datum/job/chief_engineer
 	title = "Chief Engineer"
@@ -69,6 +87,45 @@
 	                    SKILL_ATMOS        = SKILL_MAX,
 	                    SKILL_ENGINES      = SKILL_MAX)
 	skill_points = 30
+	access = list(access_engine, access_heads, access_eva, access_robotics, access_ai_upload, access_RC_announce, access_keycard_auth, access_ce)
+
+/datum/job/qm
+	title = "Quartermaster"
+	supervisors = "your greed, the Captain and the First Mate."
+	outfit_type = /decl/hierarchy/outfit/job/bearcat/qm
+	total_positions = 1
+	spawn_positions = 1
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
+	                    SKILL_FINANCE     = SKILL_BASIC,
+	                    SKILL_HAULING     = SKILL_BASIC,
+	                    SKILL_EVA         = SKILL_BASIC,
+	                    SKILL_PILOT       = SKILL_BASIC)
+
+	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
+	skill_points = 18
+	access = list(access_qm, access_cargo_bot)
+
+/datum/job/assistant
+	title = "Deck Hand"
+	supervisors = "Quartermaster, the Captain and the First Mate"
+	outfit_type = /decl/hierarchy/outfit/job/bearcat/hand
+	alt_titles = list(
+		"Steward" = /decl/hierarchy/outfit/job/bearcat/hand/cook,
+		"Cargo Hand",
+		"Digger" = /decl/hierarchy/outfit/job/bearcat/hand/digger,
+		)
+	hud_icon = "hudcargotechnician"
+
+/datum/job/bartender
+	title = "Bartender"
+	supervisors = "the Captain"
+	outfit_type = /decl/hierarchy/outfit/job/bearcat/bartender
+	total_positions = 1
+	spawn_positions = 1
+	min_skill = list(   SKILL_COOKING   = SKILL_BASIC,
+	                    SKILL_BOTANY    = SKILL_BASIC,
+	                    SKILL_CHEMISTRY = SKILL_BASIC)
+	access = list(access_bar)
 
 /datum/job/doctor
 	title = "Doctor"
@@ -88,47 +145,7 @@
 	                    SKILL_CHEMISTRY   = SKILL_MAX,
 	                    SKILL_VIROLOGY    = SKILL_MAX)
 	skill_points = 32
-	access = list(access_medical_equip, access_kitchen)
-
-/datum/job/hop
-	title = "First Mate"
-	supervisors = "the Captain and the Merchant Code"
-	outfit_type = /decl/hierarchy/outfit/job/bearcat/mate
-	hud_icon = "hudheadofpersonnel"
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
-	                    SKILL_COMPUTER    = SKILL_BASIC,
-	                    SKILL_PILOT       = SKILL_BASIC)
-
-	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
-	                    SKILL_SCIENCE     = SKILL_MAX)
-
-	skill_points = 30
-	access = list(access_security, access_sec_doors, access_brig, access_forensics_lockers,
-			            access_medical, access_engine, access_change_ids, access_ai_upload, access_eva, access_heads,
-			            access_all_personal_lockers, access_maint_tunnels, access_bar, access_janitor, access_construction, access_morgue,
-			            access_crematorium, access_kitchen, access_cargo, access_cargo_bot, access_mailsorting, access_qm, access_hydroponics, access_lawyer,
-			            access_chapel_office, access_library, access_research, access_mining, access_heads_vault, access_mining_station,
-			            access_hop, access_RC_announce, access_keycard_auth, access_gateway)
-/datum/job/bartender
-	title = "Bartender"
-	supervisors = "the Captain"
-	outfit_type = /decl/hierarchy/outfit/job/bearcat/bartender
-	total_positions = 1
-	spawn_positions = 1
-	min_skill = list(   SKILL_COOKING   = SKILL_BASIC,
-	                    SKILL_BOTANY    = SKILL_BASIC,
-	                    SKILL_CHEMISTRY = SKILL_BASIC)
-
-/datum/job/assistant
-	title = "Deck Hand"
-	supervisors = "Quartermaster, the Captain and the First Mate"
-	outfit_type = /decl/hierarchy/outfit/job/bearcat/hand
-	alt_titles = list(
-		"Steward" = /decl/hierarchy/outfit/job/bearcat/hand/cook,
-		"Cargo Hand",
-		"Digger" = /decl/hierarchy/outfit/job/bearcat/hand/digger,
-		)
-	hud_icon = "hudcargotechnician"
+	access = list(access_medical_equip, access_medical)
 
 /datum/job/engineer
 	title = "Junior Engineer"
@@ -136,6 +153,7 @@
 	total_positions = 2
 	spawn_positions = 2
 	hud_icon = "hudengineer"
+	outfit_type = /decl/hierarchy/outfit/job/bearcat/engineer
 	alt_titles = null
 	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
 	                    SKILL_EVA          = SKILL_BASIC,
@@ -149,6 +167,7 @@
 	                    SKILL_ATMOS        = SKILL_MAX,
 	                    SKILL_ENGINES      = SKILL_MAX)
 	skill_points = 20
+	access = list(access_engine, access_eva)
 
 /datum/job/roboticist
 	title = "Roboticist"
@@ -169,22 +188,7 @@
 	                    SKILL_ANATOMY      = SKILL_MAX,
 	                    SKILL_MEDICAL      = SKILL_MAX)
 	skill_points = 18
-
-/datum/job/qm
-	title = "Quartermaster"
-	supervisors = "your greed, the Captain and the First Mate."
-	outfit_type = /decl/hierarchy/outfit/job/bearcat/qm
-	total_positions = 1
-	spawn_positions = 1
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
-	                    SKILL_FINANCE     = SKILL_BASIC,
-	                    SKILL_HAULING     = SKILL_BASIC,
-	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_PILOT       = SKILL_BASIC)
-
-	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
-	skill_points = 18
-
+	access = list(access_robotics)
 
 /datum/job/officer
 	title = "Security"
@@ -206,6 +210,7 @@
 	                    SKILL_WEAPONS     = SKILL_MAX,
 	                    SKILL_FORENSICS   = SKILL_MAX)
 	skill_points = 18
+	access = list(access_brig, access_eva)
 
 /datum/job/cyborg
 	supervisors = "your laws and the Captain"
@@ -233,7 +238,6 @@
 	r_pocket = /obj/item/device/radio
 	id_type = /obj/item/weapon/card/id/gold
 
-
 /decl/hierarchy/outfit/job/bearcat/captain/post_equip(var/mob/living/carbon/human/H)
 	..()
 	var/obj/item/clothing/uniform = H.w_uniform
@@ -257,6 +261,23 @@
 	belt = /obj/item/weapon/storage/belt/utility/full
 	id_type = /obj/item/weapon/card/id/engineering/head
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
+
+/decl/hierarchy/outfit/job/bearcat/chief_engineer/New()
+	..()
+	BACKPACK_OVERRIDE_ENGINEERING
+
+/decl/hierarchy/outfit/job/bearcat/engineer
+	name = BEARCAT_OUTFIT_JOB_NAME("Engineer")
+	head = /obj/item/clothing/head/hardhat
+	uniform = /obj/item/clothing/under/hazard
+	r_pocket = /obj/item/device/t_scanner
+	belt = /obj/item/weapon/storage/belt/utility/full
+	l_ear = null
+	l_hand = /obj/item/device/radio
+
+/decl/hierarchy/outfit/job/bearcat/engineer/New()
+	..()
+	BACKPACK_OVERRIDE_ENGINEERING
 
 /decl/hierarchy/outfit/job/bearcat/doc
 	name = BEARCAT_OUTFIT_JOB_NAME("Doctor")
@@ -311,31 +332,6 @@
 	l_hand = null
 	suit = /obj/item/clothing/suit/armor/pcarrier/medium
 	gloves = /obj/item/clothing/gloves/thick
-
-/obj/structure/closet/secure_closet/security/bearcat
-	name = "security guard's locker"
-	req_access = list(access_brig)
-/*	icon_state = "sec1"
-	icon_closed = "sec"
-	icon_locked = "sec1"
-	icon_opened = "secopen"
-	icon_broken = "secbroken"
-	icon_off = "secoff"*/
-
-/obj/structure/closet/secure_closet/security/bearcat/WillContain()
-	return list(
-		new/datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/security, /obj/item/weapon/storage/backpack/satchel/sec)),
-		new/datum/atom_creator/simple(/obj/item/weapon/storage/backpack/dufflebag/sec, 50),
-		/obj/item/clothing/mask/gas/half,
-		/obj/item/weapon/handcuffs,
-		/obj/item/weapon/storage/belt/holster/security,
-		/obj/item/device/flash,
-		/obj/item/device/radio/off,
-		/obj/item/taperoll/police,
-		/obj/item/device/hailer,
-		/obj/item/weapon/gun/energy/stunrevolver,
-		/obj/item/device/holowarrant,
-	)
 
 /decl/hierarchy/outfit/job/bearcat/bartender
 	name = BEARCAT_OUTFIT_JOB_NAME("Bartender")

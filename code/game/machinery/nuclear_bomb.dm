@@ -7,7 +7,9 @@ var/bomb_set
 	icon_state = "idle"
 	density = 1
 	use_power = POWER_USE_OFF
+	uncreated_component_parts = null
 	unacidable = 1
+	interact_offline = TRUE
 
 	var/deployable = 0
 	var/extended = 0
@@ -18,24 +20,20 @@ var/bomb_set
 	var/code = ""
 	var/yes_code = 0
 	var/safety = 1
-	var/spam_check = 0
-	var/escaped = 0
-	var/time_before_launch = 60
 	var/obj/item/weapon/disk/nuclear/auth = null
 	var/removal_stage = 0 // 0 is no removal, 1 is covers removed, 2 is covers open, 3 is sealant open, 4 is unwrenched, 5 is removed from bolts.
 	var/lastentered
 	var/previous_level = ""
-	var/datum/wires/nuclearbomb/wires = null
+	wires = /datum/wires/nuclearbomb
 	var/decl/security_level/original_level
+	interact_offline = 1 //inf
+	var/countdown_plaing//inf
 
 /obj/machinery/nuclearbomb/New()
 	..()
 	r_code = "[rand(10000, 99999.0)]"//Creates a random code upon object spawn.
-	wires = new/datum/wires/nuclearbomb(src)
 
 /obj/machinery/nuclearbomb/Destroy()
-	qdel(wires)
-	wires = null
 	qdel(auth)
 	auth = null
 	return ..()
@@ -44,10 +42,13 @@ var/bomb_set
 	if(timing)
 		timeleft = max(timeleft - (wait / 10), 0)
 		playsound(loc, 'sound/items/timer.ogg', timeleft <= 30 ? 50 : 25)
+		if(timeleft <= 8 && !countdown_plaing)
+			playsound(src, 'infinity/sound/SS2/effects/machines/countdown.wav', 100)//inf
+			countdown_plaing = 1
 		if(timeleft <= 0)
 			addtimer(CALLBACK(src, .proc/explode), 0)
 		SSnano.update_uis(src)
-		if(!escaped && timeleft <= time_before_launch)
+		if(!escaped && timeleft <= time_before_launch && GLOB.using_map.evac_on_delta_code)
 			escaped = 1
 			start_evacuation()
 
@@ -151,19 +152,9 @@ var/bomb_set
 				return
 	..()
 
-/obj/machinery/nuclearbomb/attack_ghost(mob/user as mob)
-	attack_hand(user)
-
-/obj/machinery/nuclearbomb/attack_ai(mob/user)
-	return
-
-/obj/machinery/nuclearbomb/attack_hand(mob/user as mob)
-	if(extended)
-		if(panel_open)
-			wires.Interact(user)
-		else
-			ui_interact(user)
-	else if(deployable)
+/obj/machinery/nuclearbomb/physical_attack_hand(mob/user)
+	if(!extended && deployable)
+		. = TRUE
 		if(removal_stage < 5)
 			src.anchored = 1
 			visible_message("<span class='warning'>With a steely snap, bolts slide out of [src] and anchor it to the flooring!</span>")
@@ -173,7 +164,11 @@ var/bomb_set
 		if(!src.lighthack)
 			flick("lock", src)
 			update_icon()
-	return
+
+/obj/machinery/nuclearbomb/interface_interact(mob/user as mob)
+	if(extended && !panel_open)
+		ui_interact(user)
+		return TRUE
 
 /obj/machinery/nuclearbomb/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
 	var/data[0]
@@ -249,13 +244,16 @@ var/bomb_set
 				auth = I
 	if(is_auth(usr))
 		if(href_list["type"])
+			playsound(src, 'infinity/sound/SS2/effects/buttons/bkeypad.wav', 50)//inf
 			if(href_list["type"] == "E")
 				if(code == r_code)
 					yes_code = 1
 					code = null
 					log_and_message_admins("has armed \the [src]")
+					playsound(src, 'infinity/sound/SS2/effects/machines/login.wav', 100)//inf
 				else
 					code = "ERROR"
+					playsound(src, 'infinity/sound/SS2/effects/machines/error.wav', 100)//inf
 			else
 				if(href_list["type"] == "R")
 					yes_code = 0
@@ -268,6 +266,7 @@ var/bomb_set
 						code += lastentered
 						if(length(code) > 5)
 							code = "ERROR"
+							playsound(src, 'infinity/sound/SS2/effects/machines/error.wav', 100)//inf
 		if(yes_code)
 			if(href_list["time"])
 				if(timing)
@@ -296,10 +295,10 @@ var/bomb_set
 					spam_check = world.time + 100
 				if(!timing && !safety)
 					start_bomb()
-					prepare_evacuation()
+					if(GLOB.using_map.evac_on_delta_code) prepare_evacuation()
 				else
 					check_cutoff()
-					addtimer(CALLBACK(src, .proc/stop_evacuation), 10 SECONDS)
+					if(GLOB.using_map.evac_on_delta_code) addtimer(CALLBACK(src, .proc/stop_evacuation), 10 SECONDS)
 			if(href_list["safety"])
 				if (wires.IsIndexCut(NUCLEARBOMB_WIRE_SAFETY))
 					to_chat(usr, "<span class='warning'>Nothing happens, something might be wrong with the wiring.</span>")
@@ -333,30 +332,6 @@ var/bomb_set
 	original_level = security_state.current_security_level
 	security_state.set_security_level(security_state.severe_security_level, TRUE)
 	update_icon()
-
-/obj/machinery/nuclearbomb/proc/prepare_evacuation()
-	GLOB.using_map.make_maint_all_access()
-	var/zlevels = GetConnectedZlevels(z)
-	for(var/obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod/E in world)
-		if(!(E.z in zlevels))
-			continue
-		E.pod.arming_controller.arm()
-
-/obj/machinery/nuclearbomb/proc/start_evacuation()
-	var/zlevels = GetConnectedZlevels(z)
-	for(var/obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod/E in world)
-		if(!(E.z in zlevels))
-			continue
-		E.pod.launch()
-
-/obj/machinery/nuclearbomb/proc/stop_evacuation()
-	GLOB.using_map.revoke_maint_all_access()
-	if(!escaped)
-		var/zlevels = GetConnectedZlevels(z)
-		for(var/obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod/E in world)
-			if(!(E.z in zlevels))
-				continue
-			E.pod.arming_controller.unarm()
 
 /obj/machinery/nuclearbomb/proc/check_cutoff()
 	secure_device()
@@ -445,8 +420,8 @@ var/bomb_set
 		/obj/item/modular_computer/laptop/preset/custom_loadout/cheap/
 	)
 
-/obj/item/weapon/storage/secure/briefcase/nukedisk/examine(var/user)
-	..()
+/obj/item/weapon/storage/secure/briefcase/nukedisk/examine(mob/user)
+	. = ..()
 	to_chat(user,"On closer inspection, you see \a [GLOB.using_map.company_name] emblem is etched into the front of it.")
 
 /obj/item/weapon/folder/envelope/nuke_instructions
@@ -456,6 +431,7 @@ var/bomb_set
 /obj/item/weapon/folder/envelope/nuke_instructions/Initialize()
 	. = ..()
 	var/obj/item/weapon/paper/R = new(src)
+/*[ORIGINAL]
 	R.set_content("<center><img src=sollogo.png><br><br>\
 	<b>Warning: Classified<br>[GLOB.using_map.station_name] Self-Destruct System - Instructions</b></center><br><br>\
 	In the event of a Delta-level emergency, this document will guide you through the activation of the vessel's \
@@ -477,10 +453,35 @@ var/bomb_set
 	13) When ready, disable the safety switch.<br>\
 	14) Start the countdown.<br><br>\
 	This concludes the instructions.", "vessel self-destruct instructions")
-
+[/ORIGINAL]*/
+//[INF]
+	R.set_content("\
+	<tt><center><b><font color='red'>КОНФИДЕЦИАЛЬНО</font></b><br>\
+	<h3>ДЕПАРТАМЕНТ ЗАЩИТЫ АКТИВОВ</h3>\
+	<img src = ntlogo.png>\
+	<br><b>[GLOB.using_map.station_name], Система Самоуничтожения</b></center><hr>\
+	В случае событий, повлекших повышение уровня угрозы до уровня Дельта, это руководство поможет Вам активировать \
+	систему самоуничтожения судна с помощью стационарной боеголовки. Пожалуйста, читайте внимательно.<hr>\
+	1) (Опционально) Объявите экипажу об активации процедуры самоуничтожения и начните эвакуацию.<br>\
+	2) Вызовите доверенного члена экипажа с доступом к Keycard Authentication Device.<br>\
+	3) Пройдите к бункеру с боеголовкой. Он расположен в технических помещениях отсека Службы Безопасности.<br>\
+	4) Поднимите блокировочные болты на шлюзе (нажатием на кнопку, или иным способом если этот недоступен) и пройдите в хранилище.<br>\
+	5) Требуется, чтобы двое (2) находились напротив Keycard Authentication Devices. На интерфейсе KAD выберите \
+	Grant Nuclear Authentication Code. Оба (2) должны провести картой по KAD одновременно. KAD погаснет если авторизация не была синхронной.<br>\
+	6) KAD отобразит код активации на дисплее. Запомните его.<br>\
+	7) Вставьте диск авторизации ядерного протокола в терминал устройства самоуничтожения.<br>\
+	8) Введите код доступа в терминал.<br>\
+	9) Процесс авторизации завершен. Откройте два стеллажа с ядерными цилиндрами. Они вмонтированы в одну из стен помещения.<br>\
+	10) Вставьте шесть (6) цилиндров в гнёзда, размещенные в полу комнаты.<br>\
+	11) Активируйте гнёзда. Цилинды будут опущены к ядру системы самоуничтожения.<br>\
+	12) Вернитесь к терминалу. Введите время, по окончанию которого произойдет детонация.<br>\
+	13) Когда вы закончите, переключите предохранитель (кнопка safety).<br>\
+	14) Начните обратный отсчет.<br><br>\
+	Конец руководства.</tt>", "vessel self-destruct instructions")
+//[/INF]
 	//stamp the paper
 	var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
-	stampoverlay.icon_state = "paper_stamp-hos"
+	stampoverlay.icon_state = "paper_stamp-cos"
 	R.stamped += /obj/item/weapon/stamp
 	R.overlays += stampoverlay
 	R.stamps += "<HR><i>This paper has been stamped as 'Top Secret'.</i>"

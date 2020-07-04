@@ -14,36 +14,10 @@
 	allowed_roles = ARMORED_ROLES
 
 /datum/gear/tactical/armor_pouches
-	display_name = "armor pouches selection"
-	path = /obj/item/clothing/accessory/storage/pouches
-	cost = 3
 	allowed_roles = ARMORED_ROLES
-
-/datum/gear/tactical/armor_pouches/New()
-	..()
-	var/pouches = list()
-	pouches["tan storage pouches"] = /obj/item/clothing/accessory/storage/pouches/tan
-	pouches["navy storage pouches"] = /obj/item/clothing/accessory/storage/pouches/navy
-	pouches["green storage pouches"] = /obj/item/clothing/accessory/storage/pouches/green
-	pouches["blue storage pouches"] = /obj/item/clothing/accessory/storage/pouches/blue
-	pouches["black storage pouches"] = /obj/item/clothing/accessory/storage/pouches
-	gear_tweaks += new/datum/gear_tweak/path(pouches)
 
 /datum/gear/tactical/large_pouches
-	display_name = "large armor pouches selection"
-	path = /obj/item/clothing/accessory/storage/pouches/large
-	cost = 6
 	allowed_roles = ARMORED_ROLES
-
-/datum/gear/tactical/large_pouches/New()
-	..()
-	var/lpouches = list()
-	lpouches["large tan storage pouches"] = /obj/item/clothing/accessory/storage/pouches/large/tan
-	lpouches["large navy storage pouches"] = /obj/item/clothing/accessory/storage/pouches/large/navy
-	lpouches["large green storage pouches"] = /obj/item/clothing/accessory/storage/pouches/large/green
-	lpouches["large blue storage pouches"] = /obj/item/clothing/accessory/storage/pouches/large/blue
-	lpouches["large black storage pouches"] = /obj/item/clothing/accessory/storage/pouches/large
-	gear_tweaks += new/datum/gear_tweak/path(lpouches)
 
 /datum/gear/tactical/tacticool
 
@@ -59,22 +33,6 @@
 	cost = 3
 	allowed_roles = list("Journalist") //etc.broken
 */
-/datum/gear/tactical/pcarrier
-	display_name = "empty plate carriers selection"
-	path = /obj/item/clothing/suit/armor/pcarrier
-	cost = 1
-	slot = slot_wear_suit
-	allowed_roles = ARMORED_ROLES
-
-/datum/gear/tactical/pcarrier/New()
-	..()
-	var/armor = list()
-	armor["black plate carrier"]	= /obj/item/clothing/suit/armor/pcarrier
-	armor["blue plate carrier"] 	= /obj/item/clothing/suit/armor/pcarrier/blue
-	armor["navy plate carrier"] 	= /obj/item/clothing/suit/armor/pcarrier/navy
-	armor["green plate carrier"] 	= /obj/item/clothing/suit/armor/pcarrier/green
-	armor["tan plate carrier"] 		= /obj/item/clothing/suit/armor/pcarrier/tan
-	gear_tweaks += new/datum/gear_tweak/path(armor)
 
 /datum/gear/tactical/security_uniforms
 	display_name = "security uniform"
@@ -90,9 +48,8 @@
 	uniforms +=	/obj/item/clothing/under/rank/security/navyblue/alt
 	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(uniforms)
 
-/datum/gear/tactical/camo_inf/
+/datum/gear/tactical/camo_inf
 	display_name = "camo uniform - colorable"
-	allowed_roles = SECURITY_ROLES
 	path = /obj/item/clothing/under/gray_camo
 	slot = slot_w_uniform
 	flags = GEAR_HAS_COLOR_SELECTION

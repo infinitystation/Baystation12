@@ -1,7 +1,7 @@
 /datum/job/captain
 	title = "Captain"
 	department = "Command"
-	supervisors = "the NanoTrasen"
+	supervisors = "корпорацией"
 	department_flag = COM
 	head_position = 1
 	minimal_player_age = 21
@@ -28,7 +28,7 @@
 
 /datum/job/hop
 	title = "Head of Personnel"
-	supervisors = "the Captain"
+	supervisors = "Капитаном"
 	department = "Command"
 	department_flag = COM
 	head_position = 1
@@ -58,7 +58,7 @@
 			            access_medical_equip, access_gun, access_expedition_shuttle, access_guppy,
 			            access_seneng, access_senmed, access_hangar, access_guppy_helm, access_expedition_shuttle_helm, access_explorer, access_el,
 						access_tox, access_tox_storage, access_research, access_mining, access_mining_office, access_mining_station, access_xenobiology, access_xenoarch,
-						access_petrov, access_petrov_helm)
+						access_petrov, access_petrov_helm, access_actor)
 
 	minimal_access = list()
 
@@ -69,7 +69,7 @@
 
 /datum/job/rd
 	title = "Research Director"
-	supervisors = "NanoTrasen and the Captain"
+	supervisors = "Капитаном"
 	department = "Science"
 	department_flag = SCI|COM
 	head_position = 1
@@ -98,7 +98,7 @@
 	access = list(access_tox, access_tox_storage, access_emergency_storage, access_teleporter, access_bridge, access_rd, access_ai_upload,
 						access_research, access_robotics, access_mining, access_mining_office, access_mining_station, access_xenobiology,
 						access_RC_announce, access_keycard_auth, access_xenoarch, access_heads,
-						access_sec_doors, access_medical, access_network, access_maint_tunnels,
+						access_sec_doors, access_medical, access_network, access_maint_tunnels, access_eva,
 						access_expedition_shuttle, access_guppy, access_hangar, access_petrov, access_petrov_helm, access_guppy_helm)
 
 	minimal_access = list()
@@ -110,7 +110,7 @@
 
 /datum/job/cmo
 	title = "Chief Medical Officer"
-	supervisors = "the Captain and the Head of Personnel"
+	supervisors = "Капитаном"
 	head_position = 1
 	department = "Medical"
 	department_flag = MED|COM
@@ -151,7 +151,7 @@
 
 /datum/job/chief_engineer
 	title = "Chief Engineer"
-	supervisors = "the Captain and the Head of Personnel"
+	supervisors = "Капитаном"
 	head_position = 1
 	department = "Engineering"
 	department_flag = ENG|COM
@@ -198,9 +198,15 @@
 							 /datum/computer_file/program/shields_monitor,
 							 /datum/computer_file/program/reports)
 
+/datum/job/chief_engineer/get_description_blurb()
+	return "Главный инженер - руководитель и администратор инженерного отдела, \
+	он командует инженерами, а также требует от них отчеты о проведенных работах. \
+	Отвечает за то, что реактор благополучно запустили, что щиты корабля правильно настроили, \
+	и что любые механические неисправности устраняются быстро и эффективно."
+
 /datum/job/hos
 	title = "Head of Security"
-	supervisors = "the Captain and the Head of Personnel"
+	supervisors = "Капитаном"
 	head_position = 1
 	department = "Security"
 	department_flag = SEC|COM
@@ -239,10 +245,10 @@
 /datum/job/iaa
 	title = "Internal Affairs Agent"
 	department = "Support"
-	department_flag = SPT
+	department_flag = COM
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "NanoTrasen and Corporate Regulations"
+	supervisors = "Центральным Командованием"
 	selection_color = "#2f2f7f"
 	economic_power = 15
 	minimal_player_age = 10
@@ -264,10 +270,10 @@
 /datum/job/adjutant
 	title = "Adjutant"
 	department = "Support"
-	department_flag = SPT
+	department_flag = COM
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Captain and heads of staff"
+	supervisors = "Капитаном и остальными главами"
 	selection_color = "#2f2f7f"
 	minimal_player_age = 18
 	economic_power = 7
@@ -284,7 +290,7 @@
 
 
 	access = list(	access_security, access_medical, access_engine, access_maint_tunnels, access_emergency_storage,
-					access_heads, access_bridge, access_janitor, access_kitchen, access_cargo, access_RC_announce, access_keycard_auth,
+					access_heads, access_bridge, access_janitor, access_kitchen, access_actor, access_cargo, access_RC_announce, access_keycard_auth,
 					access_guppy, access_guppy_helm, access_external_airlocks, access_expedition_shuttle,
 					access_eva, access_hangar, access_explorer, access_expedition_shuttle_helm, access_gun)
 

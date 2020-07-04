@@ -23,6 +23,8 @@
 /client/Topic(href, href_list, hsrc)
 	if(!usr || usr != mob)	//stops us calling Topic for somebody else's client. Also helps prevent usr=null
 		return
+	if(!user_acted(src))
+		return
 
 	#if defined(TOPIC_DEBUGGING)
 	log_debug("[src]'s Topic: [href] destined for [hsrc].")
@@ -42,7 +44,7 @@
 
 	//search the href for script injection
 	if( findtext(href,"<script",1,0) )
-		world.log << "Attempted use of scripts within a topic call, by [src]"
+		to_world_log("Attempted use of scripts within a topic call, by [src]")
 		message_admins("Attempted use of scripts within a topic call, by [src]")
 		//qdel(usr)
 		return
@@ -76,8 +78,6 @@
 
 		ticket.close(client_repository.get_lite_client(usr.client))
 
-
-
 	//Logs all hrefs
 	if(config && config.log_hrefs && href_logfile)
 		to_chat(href_logfile, "<small>[time2text(world.timeofday,"hh:mm")] [src] (usr:[usr])</small> || [hsrc ? "[hsrc] " : ""][href]<br>")
@@ -88,10 +88,19 @@
 		if("prefs")		return prefs.process_link(usr,href_list)
 		if("vars")		return view_var_Topic(href,href_list,hsrc)
 
+	if(codex_topic(href, href_list))
+		return
+
+	if(href_list["SDQL_select"])
+		debug_variables(locate(href_list["SDQL_select"]))
+		return
+
 	..()	//redirect to hsrc.Topic()
 
 //This stops files larger than UPLOAD_LIMIT being sent from client to server via input(), client.Import() etc.
 /client/AllowUpload(filename, filelength)
+	if(!user_acted(src))
+		return 0
 	if(filelength > UPLOAD_LIMIT)
 		to_chat(src, "<font color='red'>Error: AllowUpload(): File Upload too large. Upload Limit: [UPLOAD_LIMIT/1024]KiB.</font>")
 		return 0
@@ -111,13 +120,15 @@
 /client/New(TopicData)
 	TopicData = null							//Prevent calls to client.Topic from connect
 
-	if(!(connection in list("seeker", "web")))					//Invalid connection type.
-		return null
+	switch (connection)
+		if ("seeker", "web") // check for invalid connection type. do nothing if valid
+		else return null
 	#if DM_VERSION >= 512
 	var/bad_version = config.minimum_byond_version && byond_version < config.minimum_byond_version
 	var/bad_build = config.minimum_byond_build && byond_build < config.minimum_byond_build
 	if (bad_build || bad_version)
-		to_chat(src, "You are attempting to connect with a out of date version of BYOND. Please update to the latest version at http://www.byond.com/ before trying again.")
+		to_chat(src, "RU: Вы пытаетесь подключиться со старой версией BYOND. Пожалуйста, обновитесь до бета-версии для игры на сервере.\
+		<br>ENG: You are attempting to connect with a out of date version of BYOND. Please update to the latest beta version.")
 		qdel(src)
 		return
 
@@ -155,15 +166,17 @@
 
 	//Admin Authorisation
 	holder = admin_datums[ckey]
+
+	// inf Подсчет онлайна сотрудника ~bear1ake
 	if(holder)
 		GLOB.admins += src
 		holder.owner = src
 		handle_staff_login()
-		if(dbcon.IsConnected())
+		if(establish_db_connection())
 			var/sql_ckey = sanitizeSQL(src.ckey)
-			spawn for()
+			spawn while(1)
 				var/sum = 0
-				var/temp
+				var/temp = 0
 				var/DBQuery/query_onilne = dbcon.NewQuery("SELECT sum FROM online_score WHERE ckey='[sql_ckey]' AND year=YEAR(NOW()) AND month=MONTH(NOW()) AND day=DAYOFMONTH(NOW());")
 				query_onilne.Execute()
 				if(query_onilne.NextRow())
@@ -176,6 +189,9 @@
 					var/DBQuery/query_o_s_ins = dbcon.NewQuery("INSERT INTO online_score(ckey,year,month,day,sum) VALUES ('[sql_ckey]', YEAR(NOW()), MONTH(NOW()), DAYOFMONTH(NOW()), 1);")
 					query_o_s_ins.Execute()
 				sleep(600)
+		else
+			log_admin("Онлайн сотрудника [ckey] не будет считаться, проверьте соединение с базой данных")
+	// /inf
 
 	//preferences datum - also holds some persistant data for the client (because we may as well keep these datums to a minimum)
 	prefs = SScharacter_setup.preferences_datums[ckey]
@@ -183,7 +199,6 @@
 		prefs = new /datum/preferences(src)
 	prefs.last_ip = address				//these are gonna be used for banning
 	prefs.last_id = computer_id			//these are gonna be used for banning
-	prisoner_init()
 	apply_fps(prefs.clientfps)
 
 	. = ..()	//calls mob.Login()
@@ -195,7 +210,6 @@
 		to_chat(src, "<h2 class='alert'>A custom event is taking place. OOC Info:</h2>")
 		to_chat(src, "<span class='alert'>[custom_event_msg]</span>")
 		to_chat(src, "<br>")
-
 
 	if(holder)
 		add_admin_verbs()
@@ -213,16 +227,15 @@
 
 	send_resources()
 
-
 	if(prefs.lastchangelog != changelog_hash) //bolds the changelog button on the interface so we know there are updates.
-		to_chat(src, "<span class='info'>You have unread updates in the Baystation 12 changelog.</span>")
+		to_chat(src, "<span class='info'>You have unread updates in the changelog.</span>")
 		winset(src, "rpane.changelog", "background-color=#eaeaea;font-style=bold")
 		if(config.aggressive_changelog)
 			src.changes()
 
-	if(prefs.lastinfchangelog != inf_changelog_hash) //bolds the changelog button on the interface so we know there are updates.
+	if(prefs.lastchangelog_infinity != GLOB.changelog_hash_infinity)
 		to_chat(src, "<span class='info'>You have unread updates in the Infinity changelog.</span>")
-		winset(src, "rpane.changelog_infinity", "background-color=#5fe65c;font-style=bold")
+		winset(src, "rpane.changelog_infinity", "background-color=#8053ad;font-style=bold")
 		if(config.aggressive_changelog)
 			src.changes_infinity()
 
@@ -233,24 +246,16 @@
 	if(!winexists(src, "asset_cache_browser")) // The client is using a custom skin, tell them.
 		to_chat(src, "<span class='warning'>Unable to access asset cache browser, if you are using a custom skin file, please allow DS to download the updated version, if you are not, then make a bug report. This is not a critical issue but can cause issues with resource downloading, as it is impossible to know when extra resources arrived to you.</span>")
 
+//[INF]
+//	if(get_preference_value(/datum/client_preference/fullscreen_mode) != GLOB.PREF_OFF)
+//		toggle_fullscreen(get_preference_value(/datum/client_preference/fullscreen_mode))
+
+//	if(mob.get_preference_value(/datum/client_preference/chat_position) == GLOB.PREF_YES)
+//		update_chat_position(TRUE)
+//[/INF]
+
 	if(holder)
 		src.control_freak = 0 //Devs need 0 for profiler access
-
-/client/proc/handle_staff_login()
-	if(admin_datums[ckey] && SSticker)
-		var/datum/admins/holder = admin_datums[ckey]
-		message_staff("[key_name(src)] ([holder.rank]) logged.")
-
-/client/proc/handle_staff_logout()
-	if(admin_datums[ckey] && SSticker)
-		var/datum/admins/holder = admin_datums[ckey]
-		message_staff("[key_name(src)] ([holder.rank]) logout.")
-		if(!GLOB.admins.len) //Apparently the admin logging out is no longer an admin at this point, so we have to check this towards 0 and not towards 1. Awell.
-			send2adminirc("[key_name(src)] logged out - no more admins online.")
-			if(config.delist_when_no_admins && world.visibility)
-				world.visibility = FALSE
-				send2adminirc("Toggled hub visibility. The server is now invisible ([world.visibility]).")
-
 	//////////////
 	//DISCONNECT//
 	//////////////
@@ -375,6 +380,7 @@
 // Calling things each tick can get expensive real quick.
 // So we slow this down a little.
 // See: http://www.byond.com/docs/ref/info.html#/client/proc/Stat
+
 /client/Stat()
 	if(!usr)
 		return
@@ -382,7 +388,6 @@
 	statpanel("Status")
 
 	. = ..()
-	sleep(1)
 
 //send resources to the client. It's here in its own proc so we can move it around easiliy if need be
 /client/proc/send_resources()
@@ -402,8 +407,8 @@
 		'html/images/daislogo.png',
 		'html/images/eclogo.png',
 		'html/images/fleetlogo.png',
-		'html/images/ocielogo.png',
-		'html/images/ccalogo.png'
+		'html/images/sfplogo.png',
+		'html/images/ccalogo.png'//inf
 		)
 
 	var/decl/asset_cache/asset_cache = decls_repository.get_decl(/decl/asset_cache)
@@ -430,3 +435,9 @@ client/verb/character_setup()
 /client/proc/apply_fps(var/client_fps)
 	if(world.byond_version >= 511 && byond_version >= 511 && client_fps >= CLIENT_MIN_FPS && client_fps <= CLIENT_MAX_FPS)
 		vars["fps"] = prefs.clientfps
+
+/client/MouseDrag(src_object, over_object, src_location, over_location, src_control, over_control, params)
+	. = ..()
+	var/mob/living/M = mob
+	if(istype(M))
+		M.OnMouseDrag(src_object, over_object, src_location, over_location, src_control, over_control, params)

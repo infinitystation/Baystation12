@@ -18,9 +18,10 @@
 	var/health = 100
 	var/paint_color
 	var/stripe_color
+	rad_resistance_modifier = 0.5
 
 	blend_objects = list(/obj/machinery/door, /turf/simulated/wall) // Objects which to blend with
-	noblend_objects = list(/obj/machinery/door/window, /obj/machinery/door/blast/regular/evacshield)
+	noblend_objects = list(/obj/machinery/door/window, /obj/machinery/door/blast/regular/evacshield, /obj/machinery/door/firedoor/border_only) //INF, WAS: /obj/machinery/door/window
 	material = DEFAULT_WALL_MATERIAL
 
 /obj/structure/wall_frame/New(var/new_loc, var/materialtype)
@@ -35,10 +36,7 @@
 	update_icon()
 
 /obj/structure/wall_frame/examine(mob/user)
-	. = ..(user)
-
-	if(!.)
-		return
+	. = ..()
 
 	if(health == material.integrity)
 		to_chat(user, "<span class='notice'>It seems to be in fine condition.</span>")
@@ -88,7 +86,8 @@
 
 	else if(istype(W, /obj/item/weapon/gun/energy/plasmacutter))
 		var/obj/item/weapon/gun/energy/plasmacutter/cutter = W
-		cutter.slice(user)
+		if(!cutter.slice(user))
+			return
 		playsound(src.loc, 'sound/items/Welder.ogg', 100, 1)
 		to_chat(user, "<span class='notice'>Now slicing through the low wall...</span>")
 		if(do_after(user, 20,src))
@@ -138,7 +137,7 @@
 	paint_color = COLOR_WALL_GUNMETAL
 
 /obj/structure/wall_frame/wood
-	paint_color = "#824b28"
+	paint_color = "#78523b"
 
 /obj/structure/wall_frame/crystal
 	paint_color = COLOR_PALE_BLUE_GRAY
@@ -164,12 +163,15 @@
 	take_damage(damage)
 	return
 
-/obj/structure/wall_frame/hitby(AM as mob|obj, var/speed=THROWFORCE_SPEED_DIVISOR)
+/obj/structure/wall_frame/hitby(AM as mob|obj, var/datum/thrownthing/TT)
 	..()
-	if(ismob(AM))
-		return
-	var/obj/O = AM
-	var/tforce = O.throwforce * (speed/THROWFORCE_SPEED_DIVISOR)
+	var/tforce = 0
+	if(ismob(AM)) // All mobs have a multiplier and a size according to mob_defines.dm
+		var/mob/I = AM
+		tforce = I.mob_size * (TT.speed/THROWFORCE_SPEED_DIVISOR)
+	else
+		var/obj/O = AM
+		tforce = O.throwforce * (TT.speed/THROWFORCE_SPEED_DIVISOR)
 	if (tforce < 15)
 		return
 	take_damage(tforce)

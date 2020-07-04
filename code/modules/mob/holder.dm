@@ -10,7 +10,7 @@ var/list/holder_mob_icon_cache = list()
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/species/vox/onmob_head_vox.dmi',
 		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_head_vox_armalis.dmi',
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/head.dmi'
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi'
 		)
 
 	origin_tech = null
@@ -34,7 +34,7 @@ var/list/holder_mob_icon_cache = list()
 /obj/item/weapon/holder/Destroy()
 	for(var/atom/movable/AM in src)
 		AM.forceMove(get_turf(src))
-		unregister_all_movement(last_holder, AM)
+//inf		unregister_all_movement(last_holder, AM)
 	last_holder = null
 	STOP_PROCESSING(SSobj, src)
 	return ..()
@@ -48,9 +48,9 @@ var/list/holder_mob_icon_cache = list()
 		update_state()
 
 /obj/item/weapon/holder/proc/update_state()
-	if(last_holder != loc)
-		for(var/mob/M in contents)
-			unregister_all_movement(last_holder, M)
+//inf	if(last_holder != loc)
+//inf		for(var/mob/M in contents)
+//inf			unregister_all_movement(last_holder, M)
 
 	if(istype(loc,/turf) || !(contents.len))
 		for(var/mob/M in contents)
@@ -58,9 +58,9 @@ var/list/holder_mob_icon_cache = list()
 			mob_container.dropInto(loc)
 			M.reset_view()
 		qdel(src)
-	else if(last_holder != loc)
-		for(var/mob/M in contents)
-			register_all_movement(loc, M)
+//inf	else if(last_holder != loc)
+//inf		for(var/mob/M in contents)
+//inf			register_all_movement(loc, M)
 
 	last_holder = loc
 
@@ -108,7 +108,7 @@ var/list/holder_mob_icon_cache = list()
 	overlays |= M.overlays
 	var/mob/living/carbon/human/H = loc
 	last_holder = H
-	register_all_movement(H, M)
+//inf	register_all_movement(H, M)
 
 	update_held_icon()
 

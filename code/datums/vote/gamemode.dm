@@ -4,6 +4,7 @@
 	win_x = 500
 	win_y = 1200 // 1100
 	show_leading = 1
+	startshow = 1 //inf
 
 /datum/vote/gamemode/can_run(mob/creator, automatic)
 	if(GAME_STATE >= RUNLEVEL_GAME)

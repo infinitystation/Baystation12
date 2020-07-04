@@ -37,7 +37,7 @@
 	var/initial_spawn_req = 1               // Gamemode using this template won't start without this # candidates.
 	var/initial_spawn_target = 3            // Gamemode will attempt to spawn this many antags.
 	var/announced                           // Has an announcement been sent?
-	var/spawn_announcement                  // When the datum spawn proc is called, does it announce to the world? (ie. xenos)
+	var/spawn_announcement                  // When the datum spawn proc is called, does it announce to the world? (ie. borers)
 	var/spawn_announcement_title            // Report title.
 	var/spawn_announcement_sound            // Report sound clip.
 	var/spawn_announcement_delay            // Time between initial spawn and round announcement.
@@ -73,18 +73,30 @@
 	var/default_access = list()
 	var/id_type = /obj/item/weapon/card/id
 
-	var/antag_text = "You are an antagonist! Within the rules, \
-		try to act as an opposing force to the crew. Further RP and try to make sure \
-		other players have <i>fun</i>! If you are confused or at a loss, always adminhelp, \
-		and before taking extreme actions, please try to also contact the administration! \
-		Think through your actions and make the roleplay immersive! <b>Please remember all \
-		rules aside from those without explicit exceptions apply to antagonists.</b>"
+	var/antag_text = "Вы - антагонист! Действуйте как противник по отношению к экипажу. \
+		Старайтесь следовать ролевой моделе, которую подразумевает \
+		Ваша роль и оставьте приятные впечатления от игры не только для себя, \
+		но и для других игроков! \
+		<b>Пожалуйста, не забывайте, что правила действуют на антагонистов точно так же, как и на других игроков \
+		- не убивайте и не лишайте возможности нормально продолжать игру, если на это нет весомых \
+		причин (ваша роль не является лицензией на убийство!)</b> Не уходите в рабочую атмосферу раунда и не делайте вид, \
+		что Вы - обычный член экипажа или \"добрый антагонист\" (на долгий период). От вас часто зависит то, \
+		будет ли угроза для экипажа в смене или нет, что составляет большую часть интереса от игры. \
+		Старайтесь начинать действовать после получаса (или часа) от начал раунда, не затягивайте планированием \
+		или выжиданием удобного момента, которым может стать прыжок после двухчасовой скуки. \
+		Если Вы растеряны или не знаете, что делать - не бойтесь спрашивать администраторов (F1). Сюда также \
+		входит совершение действие, которые, по вашему мнению, могут нарушать правила сервера."
+	// Map template that antag needs to load before spawning. Nulled after it's loaded.
+	var/datum/map_template/base_to_load
+
+	var/ambitious = 1 //INF (0 for roles with restriced objectives - actors, ERT, death squad and so)
 
 /datum/antagonist/New()
 	GLOB.all_antag_types_[id] = src
 	GLOB.all_antag_spawnpoints_[landmark_id] = list()
 	GLOB.antag_names_to_ids_[role_text] = id
-	skill_setter = new skill_setter
+	if(ispath(skill_setter))
+		skill_setter = new skill_setter
 	..()
 
 /datum/antagonist/proc/Initialize()

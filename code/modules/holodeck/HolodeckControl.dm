@@ -3,12 +3,10 @@
 	desc = "A computer used to control a nearby holodeck."
 	icon_keyboard = "tech_key"
 	icon_screen = "holocontrol"
-	req_access = list(access_bridge)
+	var/lock_access = list(access_bridge)
 	var/islocked = 0
 
 	active_power_usage = 8000 //8kW for the scenery + 500W per holoitem
-
-	circuit = /obj/item/weapon/circuitboard/holodeckcontrol
 
 	var/item_power_usage = 500
 
@@ -34,13 +32,11 @@
 	if (programs_list_id in GLOB.using_map.holodeck_restricted_programs)
 		restricted_programs |= GLOB.using_map.holodeck_restricted_programs[programs_list_id]
 
-/obj/machinery/computer/HolodeckControl/attack_ai(var/mob/user as mob)
-	return src.attack_hand(user)
+/obj/machinery/computer/HolodeckControl/interface_interact(var/mob/user)
+	interact(user)
+	return TRUE
 
-/obj/machinery/computer/HolodeckControl/attack_hand(var/mob/user as mob)
-	if(..())
-		return 1
-
+/obj/machinery/computer/HolodeckControl/interact(var/mob/user)
 	user.set_machine(src)
 	var/dat
 
@@ -49,22 +45,25 @@
 		dat += "Holodeck is <A href='?src=\ref[src];togglehololock=1'><font color=green>(UNLOCKED)</font></A><BR>"
 	else
 		dat += "Holodeck is <A href='?src=\ref[src];togglehololock=1'><font color=red>(LOCKED)</font></A><BR>"
-		show_browser(user, dat, "window=computer;size=400x500")
-		onclose(user, "computer")
+//inf		show_browser(user, dat, "window=computer;size=400x500")
+//inf		onclose(user, "computer")
+		OpenWithBrowserPopup(user, dat)
 		return
 
 	dat += "<HR>Current Loaded Programs:<BR>"
 
 	if(!linkedholodeck)
 		dat += "<span class='danger'>Warning: Unable to locate holodeck.<br></span>"
-		user << browse(dat, "window=computer;size=400x500")
-		onclose(user, "computer")
+//inf		show_browser(user, dat, "window=computer;size=400x500")
+//inf		onclose(user, "computer")
+		OpenWithBrowserPopup(user, dat)
 		return
 
 	if(!supported_programs.len)
 		dat += "<span class='danger'>Warning: No supported holo-programs loaded.<br></span>"
-		user << browse(dat, "window=computer;size=400x500")
-		onclose(user, "computer")
+//inf		show_browser(user, dat, "window=computer;size=400x500")
+//inf		onclose(user, "computer")
+		OpenWithBrowserPopup(user, dat)
 		return
 
 	for(var/prog in supported_programs)
@@ -101,9 +100,25 @@
 		dat += "Gravity is <A href='?src=\ref[src];gravity=1'><font color=green>(ON)</font></A><BR>"
 	else
 		dat += "Gravity is <A href='?src=\ref[src];gravity=1'><font color=blue>(OFF)</font></A><BR>"
-	user << browse(dat, "window=computer;size=400x500")
-	onclose(user, "computer")
+//inf	show_browser(user, dat, "window=computer;size=400x500")
+//inf	onclose(user, "computer")
+	OpenWithBrowserPopup(user, dat)
 	return
+
+//[INF]
+/obj/machinery/computer/HolodeckControl/proc/OpenWithBrowserPopup(var/mob/user, var/data) // dear god
+	if(!user || !data) return
+
+	if(user && user.client && user.client.get_preference_value(/datum/client_preference/browser_style) == GLOB.PREF_FANCY)
+		// replacing colors because previous one looks pretty bad on dark colors
+		data = replacetext(data, "green", "55cc55")
+		data = replacetext(data, "blue", "44cce5")
+		data = replacetext(data, "red", "cc5555")
+
+	var/datum/browser/popup = new(user, "holodeck-control", "Holodeck Controls", 400, 500)
+	popup.set_content(data)
+	popup.open(use_onclose = TRUE)
+//[/INF]
 
 /obj/machinery/computer/HolodeckControl/Topic(href, href_list)
 	if(..())
@@ -126,11 +141,9 @@
 			safety_disabled = !safety_disabled
 			update_projections()
 			if(safety_disabled)
-				message_admins("[key_name_admin(usr)] overrode the holodeck's safeties")
-				log_game("[key_name(usr)] overrided the holodeck's safeties")
+				log_and_message_admins("overrode the holodeck's safeties")
 			else
-				message_admins("[key_name_admin(usr)] restored the holodeck's safeties")
-				log_game("[key_name(usr)] restored the holodeck's safeties")
+				log_and_message_admins("restored the holodeck's safeties")
 
 		else if(href_list["gravity"])
 			toggleGravity(linkedholodeck)
@@ -358,4 +371,4 @@
 		return 1
 
 /obj/machinery/computer/HolodeckControl/proc/cantogglelock(var/mob/user)
-	return allowed(user)
+	return has_access(lock_access, user.GetAccess())

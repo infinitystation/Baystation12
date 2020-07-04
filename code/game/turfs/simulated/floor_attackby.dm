@@ -130,7 +130,8 @@
 					return
 		else if(istype(C, /obj/item/weapon/gun/energy/plasmacutter) && (is_plating()) && !broken && !burnt)
 			var/obj/item/weapon/gun/energy/plasmacutter/cutter = C
-			cutter.slice(user)
+			if(!cutter.slice(user))
+				return ..()
 			playsound(src, 'sound/items/Welder.ogg', 80, 1)
 			visible_message("<span class='notice'>[user] has started slicing through the plating's reinforcements!</span>")
 			if(do_after(user, 3 SECONDS) && welder_melt())
@@ -146,43 +147,6 @@
 	remove_decals()
 	update_icon()
 	return 1
-
-/turf/simulated/floor/acid_melt()
-	. = FALSE
-	var/turf/T = GetBelow(src)
-
-	if(flooring)
-		visible_message("<span class='alium'>The acid dissolves the [flooring.descriptor]!</span>")
-		make_plating()
-
-	else if(is_plating() && !(broken || burnt))
-		playsound(src, 'sound/items/Welder.ogg', 80, 1)
-		visible_message("<span class='alium'>The acid has started melting \the [name]'s reinforcements!</span>")
-		if(T)
-			T.audible_message("<span class='warning'>A strange sizzling noise eminates from the ceiling.</span>")
-		burnt = 1
-		remove_decals()
-		update_icon()
-
-	else if(broken || burnt)
-		if(acid_melted == 0)
-			visible_message("<span class='alium'>The acid has melted the plating's reinforcements! It's about to break through!.</span>")
-			playsound(src, 'sound/items/Welder.ogg', 80, 1)
-
-			if(T)
-				T.visible_message("<span class='warning'>A strange substance drips from the ceiling, dropping below with a sizzle.</span>")
-			acid_melted++
-		else
-			visible_message("<span class='danger'>The acid melts the plating away into nothing!</span>")
-			new /obj/item/stack/tile/floor(src)
-			src.ReplaceWithLattice()
-			playsound(src, 'sound/items/Deconstruct.ogg', 80, 1)
-			if(T)
-				T.visible_message("<span class='danger'>The ceiling above melts away!</span>")
-			. = TRUE
-			qdel(src)
-	else
-		return TRUE
 
 /turf/simulated/floor/can_build_cable(var/mob/user)
 	if(!is_plating() || flooring)

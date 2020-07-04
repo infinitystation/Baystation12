@@ -57,14 +57,20 @@
 /datum/antagonist/proc/create_nuke(var/atom/paper_spawn_loc, var/datum/mind/code_owner)
 
 	// Decide on a code.
+/*inf, we are using ship's nuke
 	var/obj/effect/landmark/nuke_spawn = locate(nuke_spawn_loc ? nuke_spawn_loc : "landmark*Nuclear-Bomb")
-
-	var/code
+*/
+	var/code/*inf
 	if(nuke_spawn)
 		var/obj/machinery/nuclearbomb/nuke = new(get_turf(nuke_spawn))
 		code = "[rand(10000, 99999)]"
 		nuke.r_code = code
-
+*/
+//inf ahead
+	var/obj/machinery/nuclearbomb/station/station_nuke = locate() in SSmachines.machinery
+	if(station_nuke)
+		code = station_nuke.r_code
+//inf end
 	if(code)
 		if(!paper_spawn_loc)
 			if(leader && leader.current)
@@ -75,7 +81,7 @@
 		if(paper_spawn_loc)
 			// Create and pass on the bomb code paper.
 			var/obj/item/weapon/paper/P = new(paper_spawn_loc)
-			P.info = "The nuclear authorization code is: <b>[code]</b>"
+			P.info = "The nuclear authorization code of target's self-destruction is: <b>[code]</b>"
 			P.SetName("nuclear bomb code")
 			if(leader && leader.current)
 				if(get_turf(P) == get_turf(leader.current) && !(leader.current.l_hand && leader.current.r_hand))
@@ -84,8 +90,8 @@
 		if(!code_owner && leader)
 			code_owner = leader
 		if(code_owner)
-			code_owner.store_memory("<B>Nuclear Bomb Code</B>: [code]", 0, 0)
-			to_chat(code_owner.current, "The nuclear authorization code is: <B>[code]</B>")
+			code_owner.StoreMemory("<B>Target's Nuclear Bomb Code</B>: [code]", /decl/memory_options/system)
+			to_chat(code_owner.current, "The nuclear authorization code of target's self-destruction is: <B>[code]</B>")
 	else
 		message_admins("<span class='danger'>Could not spawn nuclear bomb. Contact a developer.</span>")
 		return
@@ -97,12 +103,14 @@
 
 	// Basic intro text.
 	to_chat(player.current, "<span class='danger'><font size=3>You are a [role_text]!</font></span>")
-	if(leader_welcome_text && player == leader)
-		to_chat(player.current, "<span class='notice'>[leader_welcome_text]</span>")
-	else
-		to_chat(player.current, "<span class='notice'>[welcome_text]</span>")
-	if (config.objectives_disabled == CONFIG_OBJECTIVE_NONE || !player.objectives.len)
+	if (config.objectives_disabled == CONFIG_OBJECTIVE_NONE || !player.objectives.len) //inf, was moved from lines below
 		to_chat(player.current, "<span class='notice'>[antag_text]</span>")
+	if(leader_welcome_text && player == leader)
+		to_chat(player.current, "<span class='antagdesc'>[leader_welcome_text]</span>")
+	else
+		to_chat(player.current, "<span class='antagdesc'>[welcome_text]</span>")
+//INF	if (config.objectives_disabled == CONFIG_OBJECTIVE_NONE || !player.objectives.len)
+//INF		to_chat(player.current, "[antag_text]")
 
 	if((flags & ANTAG_HAS_NUKE) && !spawned_nuke)
 		create_nuke()

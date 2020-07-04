@@ -7,6 +7,9 @@
 	filename = "deckmngr"
 	filedesc = "Deck Management"
 	nanomodule_path = /datum/nano_module/deck_management
+	program_icon_state = "request"
+	program_key_state = "rd_key"
+	program_menu_icon = "clock"
 	extended_desc = "A tool for managing shuttles, filling out flight plans, and submitting flight-related paperwork."
 	size = 18
 	available_on_ntnet = 1
@@ -148,7 +151,7 @@
 	var/mission_data = list()
 	mission_data["name"] = mission.name
 	mission_data["departure"] = mission.depart_time || "N/A"
-	mission_data["return"] = mission.return_time || "N/A"
+	mission_data["return_time"] = mission.return_time || "N/A"
 	switch(mission.stage)
 		if(SHUTTLE_MISSION_QUEUED)
 			mission_data["status"] = "Mission Scheduled."
@@ -335,7 +338,7 @@
 			return 1
 		var/datum/shuttle_log/my_log = SSshuttle.shuttle_logs[selected_shuttle]
 		if(world.time - my_log.last_spam >= 1 MINUTE) //Slow down with that spam button
-			GLOB.global_announcer.autosay("[selected_shuttle.name] планирует отбывать на миссию в [time]. Следующим членам экипажа проследовать в [place] незамедлительно: [crew].", "Hangar Announcement System")
+			GLOB.global_announcer.autosay("[selected_shuttle.name] РїР»Р°РЅРёСЂСѓРµС‚ РѕС‚Р±С‹РІР°С‚СЊ РЅР° РјРёСЃСЃРёСЋ РІ [time]. РЎР»РµРґСѓСЋС‰РёРј С‡Р»РµРЅР°Рј СЌРєРёРїР°Р¶Р° РїСЂРѕСЃР»РµРґРѕРІР°С‚СЊ РІ [place] РЅРµР·Р°РјРµРґР»РёС‚РµР»СЊРЅРѕ: [crew].", "Hangar Announcement System")
 			my_log.last_spam = world.time
 		else
 			to_chat(user, "<span class='warning'>It's too soon after the previous announcement!</span>")

@@ -5,7 +5,7 @@
 	slot = ACCESSORY_SLOT_ARMBAND
 	species_restricted = null
 	on_rolled = list("down" = "none")
-	sprite_sheets = list(SPECIES_NABBER = 'icons/mob/species/nabber/onmob_accessories_gas.dmi')
+	sprite_sheets = list(SPECIES_NABBER = 'icons/mob/species/nabber/onmob_accessories_gas.dmi', SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_accessories_resomi.dmi')
 
 /obj/item/clothing/accessory/armband/cargo
 	name = "cargo armband"

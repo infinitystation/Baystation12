@@ -29,11 +29,11 @@
 	radio.power_usage = 0
 	. = ..()
 
-/obj/item/device/camera/tvcamera/examine()
+/obj/item/device/camera/tvcamera/examine(mob/user)
 	. = ..()
-	to_chat(usr, "Video feed is currently: [camera.status ? "Online" : "Offline"]")
-	to_chat(usr, "Audio feed is currently: [radio.broadcasting ? "Online" : "Offline"]")
-	to_chat(usr, "Photography setting is currently: [on ? "On" : "Off"]")
+	to_chat(user, "Video feed is currently: [camera.status ? "Online" : "Offline"]")
+	to_chat(user, "Audio feed is currently: [radio.broadcasting ? "Online" : "Offline"]")
+	to_chat(user, "Photography setting is currently: [on ? "On" : "Off"]")
 
 /obj/item/device/camera/tvcamera/attack_self(mob/user)
 	add_fingerprint(user)
@@ -57,7 +57,7 @@
 	if (href_list["focus"])
 		change_size()
 	if(href_list["channel"])
-		var/nc = sanitize_a0(input(usr, "Channel name", "Select new channel name", channel) as text|null)
+		var/nc = input(usr, "Channel name", "Select new channel name", channel) as text|null
 		if(nc)
 			channel = nc
 			camera.c_tag = channel

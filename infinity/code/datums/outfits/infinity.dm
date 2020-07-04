@@ -1,5 +1,5 @@
 /decl/hierarchy/outfit/merchant/leader
-	name = "Merchant Leader"
+	name = "Inf - Merchant Leader"
 	shoes = /obj/item/clothing/shoes/black
 	l_ear = /obj/item/device/radio/headset
 	uniform = /obj/item/clothing/under/color/black
@@ -10,7 +10,7 @@
 	id_pda_assignment = "Merchant Leader"
 
 /decl/hierarchy/outfit/merchant/vox_leader
-	name = "Merchant - Vox Leader"
+	name = "Inf - Merchant - Vox Leader"
 	id_type = /obj/item/weapon/card/id/merchant/leader
 	shoes = /obj/item/clothing/shoes/jackboots/unathi
 	uniform = /obj/item/clothing/under/vox/vox_robes
@@ -18,7 +18,7 @@
 
 /*
 /decl/hierarchy/outfit/daft_punk
-	name = "Daft Punk"
+	name = "Inf - Daft Punk"
 	shoes = /obj/item/clothing/shoes/laceup
 	uniform = /obj/item/clothing/under/suit_jacket/charcoal
 	suit = /obj/item/clothing/suit/storage/toggle/suit/black
@@ -30,7 +30,7 @@
 */
 
 /decl/hierarchy/outfit/pmc
-	name = "PMC aUnknown"
+	name = "Inf - PMC aUnknown"
 	shoes = /obj/item/clothing/shoes/combat/marine
 	uniform = /obj/item/clothing/under/syndicate/combat
 	l_ear = /obj/item/device/radio/headset/raider
@@ -45,18 +45,18 @@
 							/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 1)
 
 /decl/hierarchy/outfit/pmc/pcrc
-	name = "PMC PCRC"
+	name = "Inf - PMC PCRC"
 	uniform = /obj/item/clothing/under/pcrc/tactical
 	glasses = /obj/item/clothing/glasses/tacgoggles
 	mask = /obj/item/clothing/mask/gas/half
 	suit = /obj/item/clothing/suit/armor/pcarrier/troops/heavy/pcrc
 	head = /obj/item/clothing/head/helmet/pcrc
 	belt = /obj/item/weapon/storage/belt/holster/security/tactical/troops
-	r_hand = /obj/item/weapon/gun/projectile/automatic/wt550/lethal
+	r_hand = /obj/item/weapon/gun/projectile/automatic/sec_smg/lethal
 	id_pda_assignment = "PCRC PMC"
 
 /decl/hierarchy/outfit/pmc/saare
-	name = "PMC SAARE"
+	name = "Inf - PMC SAARE"
 	uniform = /obj/item/clothing/under/saare/tactical
 	glasses = /obj/item/clothing/glasses/tacgoggles
 	mask = /obj/item/clothing/mask/gas/half
@@ -71,6 +71,25 @@
 							/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 1)
 
 
+/decl/hierarchy/outfit/alien
+	name = "Abductor Agent Outfit"
+	shoes = /obj/item/clothing/shoes/black
+	l_ear = /obj/item/device/radio/headset/abductor
+	uniform = /obj/item/clothing/under/thermal/heat/abductor/white
+	belt = /obj/item/weapon/storage/belt/utility/alien
+	suit = /obj/item/clothing/suit/armor/abductor
+	head = /obj/item/clothing/head/helmet/abductor
+	r_hand = /obj/item/weapon/gun/energy/decloner
+	l_hand = /obj/item/weapon/melee/adv_baton
+
+/decl/hierarchy/outfit/alien_sci
+	name = "Abductor Scientist Outfit"
+	shoes = /obj/item/clothing/shoes/black
+	l_ear = /obj/item/device/radio/headset/abductor
+	uniform = /obj/item/clothing/under/thermal/heat/abductor/white
+	belt = /obj/item/weapon/storage/belt/utility/alien
+	r_hand = /obj/item/weapon/scitool
+
 			//////////
 			//CORPSES//
 			//////////
@@ -84,7 +103,7 @@
 	corpse_outfits = list(/decl/hierarchy/outfit/mercenary/syndicate/commando)
 
 /decl/hierarchy/outfit/pirat_inf
-	name = "Dead Pirat Inf"
+	name = "Inf - Dead Pirat Inf"
 	uniform = /obj/item/clothing/under/pirate
 	shoes = /obj/random/shoes/poor
 	gloves = /obj/random/gloves/poor
@@ -92,16 +111,16 @@
 	l_pocket = /obj/item/device/radio/off
 
 /obj/effect/landmark/corpse/inf_pirat
-	name = "Pirat"
+	name = "Inf - Pirat"
 	corpse_outfits = list(/decl/hierarchy/outfit/pirat_inf)
 
 /decl/hierarchy/outfit/pirat_inf/space
-	name = "Dead Space Pirat Inf"
+	name = "Inf - Dead Space Pirat Inf"
 	suit = /obj/item/clothing/suit/space
 	mask = /obj/item/clothing/mask/breath
 	head = /obj/item/clothing/head/helmet/space
 	back = /obj/item/weapon/tank/oxygen
 
 /obj/effect/landmark/corpse/inf_pirat/space
-	name = "Space Pirat"
+	name = "Inf - Space Pirat"
 	corpse_outfits = list(/decl/hierarchy/outfit/pirat_inf/space)

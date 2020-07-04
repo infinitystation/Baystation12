@@ -1,0 +1,8 @@
+{
+  "ckey" :            "ExplandedNose",
+  "character_name" :  "Malphias Berith",
+  "item_name" :       "mirania admiral boots",
+  "item_desc" :       "Heavy army boots with an unusually high shaft, which is studded with a bizarre metal on the front.",
+  "item_icon_state" : "explanded_boots",
+  "item_path" :       "/obj/item/clothing/shoes/dutyboots"
+  }

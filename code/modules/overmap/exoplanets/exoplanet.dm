@@ -1,4 +1,4 @@
-/obj/effect/overmap/sector/exoplanet
+/obj/effect/overmap/visitable/sector/exoplanet
 	name = "exoplanet"
 	icon_state = "globe"
 	in_space = 0
@@ -19,7 +19,13 @@
 	var/maxx
 	var/maxy
 	var/landmark_type = /obj/effect/shuttle_landmark/automatic
+
 	var/list/rock_colors = list(COLOR_ASTEROID_ROCK)
+	var/list/plant_colors = list("RANDOM")
+	var/grass_color
+	var/surface_color = COLOR_ASTEROID_ROCK
+	var/water_color = "#436499"
+	var/image/skybox_image
 
 	var/list/actors = list() //things that appear in engravings on xenoarch finds.
 	var/list/species = list() //list of names to use for simple animals
@@ -41,7 +47,7 @@
 
 	var/habitability_class
 
-/obj/effect/overmap/sector/exoplanet/proc/generate_habitability()
+/obj/effect/overmap/visitable/sector/exoplanet/proc/generate_habitability()
 	var/roll = rand(1,100)
 	switch(roll)
 		if(1 to 10)
@@ -51,7 +57,7 @@
 		else
 			habitability_class = HABITABILITY_BAD
 
-/obj/effect/overmap/sector/exoplanet/New(nloc, max_x, max_y)
+/obj/effect/overmap/visitable/sector/exoplanet/New(nloc, max_x, max_y)
 	if(!GLOB.using_map.use_overmap)
 		return
 
@@ -77,7 +83,7 @@
 		possible_features += new ruin
 	..()
 
-/obj/effect/overmap/sector/exoplanet/proc/build_level()
+/obj/effect/overmap/visitable/sector/exoplanet/proc/build_level()
 	generate_habitability()
 	generate_atmosphere()
 	generate_map()
@@ -85,10 +91,11 @@
 	generate_landing(2)
 	update_biome()
 	generate_daycycle()
+	generate_planet_image()
 	START_PROCESSING(SSobj, src)
 
 //attempt at more consistent history generation for xenoarch finds.
-/obj/effect/overmap/sector/exoplanet/proc/get_engravings()
+/obj/effect/overmap/visitable/sector/exoplanet/proc/get_engravings()
 	if(!actors.len)
 		actors += pick("alien humanoid","an amorphic blob","a short, hairy being","a rodent-like creature","a robot","a primate","a reptilian alien","an unidentifiable object","a statue","a starship","unusual devices","a structure")
 		actors += pick("alien humanoids","amorphic blobs","short, hairy beings","rodent-like creatures","robots","primates","reptilian aliens")
@@ -101,7 +108,7 @@
 	engravings += "."
 	return engravings
 
-/obj/effect/overmap/sector/exoplanet/Process(wait, tick)
+/obj/effect/overmap/visitable/sector/exoplanet/Process(wait, tick)
 	if(animals.len < 0.5*max_animal_count && !repopulating)
 		repopulating = 1
 		max_animal_count = round(max_animal_count * 0.5)
@@ -113,8 +120,8 @@
 					var/mob_type = pick(repopulate_types)
 					var/mob/S = new mob_type(T)
 					animals += S
-					GLOB.death_event.register(S, src, /obj/effect/overmap/sector/exoplanet/proc/remove_animal)
-					GLOB.destroyed_event.register(S, src, /obj/effect/overmap/sector/exoplanet/proc/remove_animal)
+					GLOB.death_event.register(S, src, /obj/effect/overmap/visitable/sector/exoplanet/proc/remove_animal)
+					GLOB.destroyed_event.register(S, src, /obj/effect/overmap/visitable/sector/exoplanet/proc/remove_animal)
 					adapt_animal(S)
 			if(animals.len >= max_animal_count)
 				repopulating = 0
@@ -140,7 +147,7 @@
 		if(daycolumn && tick % round(daycycle_column_delay / wait) == 0)
 			update_daynight()
 
-/obj/effect/overmap/sector/exoplanet/proc/update_daynight()
+/obj/effect/overmap/visitable/sector/exoplanet/proc/update_daynight()
 	var/light = 0.1
 	if(!night)
 		light = lightlevel
@@ -150,13 +157,18 @@
 	if(daycolumn > maxx)
 		daycolumn = 0
 
-/obj/effect/overmap/sector/exoplanet/proc/remove_animal(var/mob/M)
+/obj/effect/overmap/visitable/sector/exoplanet/proc/remove_animal(var/mob/M)
 	animals -= M
 	GLOB.death_event.unregister(M, src)
 	GLOB.destroyed_event.unregister(M, src)
 	repopulate_types |= M.type
 
-/obj/effect/overmap/sector/exoplanet/proc/generate_map()
+/obj/effect/overmap/visitable/sector/exoplanet/proc/generate_map()
+	var/list/grasscolors = plant_colors.Copy()
+	grasscolors -= "RANDOM"
+	if(length(grasscolors))
+		grass_color = pick(grasscolors)
+
 	for(var/datum/exoplanet_theme/T in themes)
 		T.before_map_generation(src)
 	for(var/zlevel in map_z)
@@ -170,15 +182,15 @@
 		var/padding = TRANSITIONEDGE
 		for(var/map_type in map_generators)
 			if(ispath(map_type, /datum/random_map/noise/exoplanet))
-				var/datum/random_map/noise/exoplanet/RM = new map_type(null,padding,padding,zlevel,maxx-padding,maxy-padding,0,1,1,planetary_area)
+				var/datum/random_map/noise/exoplanet/RM = new map_type(null,padding,padding,zlevel,maxx-padding,maxy-padding,0,1,1,planetary_area, plant_colors)
 				get_biostuff(RM)
 			else
-				new map_type(null,1,1,zlevel,maxx,maxy,0,1,1)
+				new map_type(null,1,1,zlevel,maxx,maxy,0,1,1,planetary_area)
 
-/obj/effect/overmap/sector/exoplanet/proc/generate_features()
+/obj/effect/overmap/visitable/sector/exoplanet/proc/generate_features()
 	spawned_features = seedRuins(map_z, features_budget, /area/exoplanet, possible_features, maxx, maxy)
 
-/obj/effect/overmap/sector/exoplanet/proc/get_biostuff(var/datum/random_map/noise/exoplanet/random_map)
+/obj/effect/overmap/visitable/sector/exoplanet/proc/get_biostuff(var/datum/random_map/noise/exoplanet/random_map)
 	if(!istype(random_map))
 		return
 	seeds += random_map.small_flora_types
@@ -187,18 +199,18 @@
 	for(var/mob/living/simple_animal/A in GLOB.living_mob_list_)
 		if(A.z in map_z)
 			animals += A
-			GLOB.death_event.register(A, src, /obj/effect/overmap/sector/exoplanet/proc/remove_animal)
-			GLOB.destroyed_event.register(A, src, /obj/effect/overmap/sector/exoplanet/proc/remove_animal)
+			GLOB.death_event.register(A, src, /obj/effect/overmap/visitable/sector/exoplanet/proc/remove_animal)
+			GLOB.destroyed_event.register(A, src, /obj/effect/overmap/visitable/sector/exoplanet/proc/remove_animal)
 	max_animal_count = animals.len
 
-/obj/effect/overmap/sector/exoplanet/proc/update_biome()
+/obj/effect/overmap/visitable/sector/exoplanet/proc/update_biome()
 	for(var/datum/seed/S in seeds)
 		adapt_seed(S)
 
 	for(var/mob/living/simple_animal/A in animals)
 		adapt_animal(A)
 
-/obj/effect/overmap/sector/exoplanet/proc/generate_daycycle()
+/obj/effect/overmap/visitable/sector/exoplanet/proc/generate_daycycle()
 	if(lightlevel)
 		night = FALSE //we start with a day if we have light.
 
@@ -206,7 +218,7 @@
 		//Otherwise the right side of the exoplanet can get stuck in a forever day.
 		daycycle = rand(10 MINUTES, 40 MINUTES)
 
-/obj/effect/overmap/sector/exoplanet/proc/adapt_seed(var/datum/seed/S)
+/obj/effect/overmap/visitable/sector/exoplanet/proc/adapt_seed(var/datum/seed/S)
 	S.set_trait(TRAIT_IDEAL_HEAT,          atmosphere.temperature + rand(-5,5),800,70)
 	S.set_trait(TRAIT_HEAT_TOLERANCE,      S.get_trait(TRAIT_HEAT_TOLERANCE) + rand(-5,5),800,70)
 	S.set_trait(TRAIT_LOWKPA_TOLERANCE,    atmosphere.return_pressure() + rand(-5,-50),80,0)
@@ -227,7 +239,7 @@
 			S.chems[/datum/reagent/nutriment] = nutriment
 			S.chems[chem_type] = list(rand(1,10),rand(10,20))
 
-/obj/effect/overmap/sector/exoplanet/proc/adapt_animal(var/mob/living/simple_animal/A)
+/obj/effect/overmap/visitable/sector/exoplanet/proc/adapt_animal(var/mob/living/simple_animal/A)
 	if(species[A.type])
 		A.SetName(species[A.type])
 		A.real_name = species[A.type]
@@ -242,7 +254,7 @@
 			var/gasnum = min(rand(1,3), goodgases.len)
 			for(var/i = 1 to gasnum)
 				var/gas = pick(goodgases)
-				breathgas[gas] = round(0.4*goodgases[gas])
+				breathgas[gas] = round(0.4*goodgases[gas], 0.1)
 				goodgases -= gas
 		if(!badgas)
 			var/list/badgases = gas_data.gases.Copy()
@@ -261,10 +273,10 @@
 		A.min_gas = null
 		A.max_gas = null
 
-/obj/effect/overmap/sector/exoplanet/proc/get_random_species_name()
+/obj/effect/overmap/visitable/sector/exoplanet/proc/get_random_species_name()
 	return pick("nol","shan","can","fel","xor")+pick("a","e","o","t","ar")+pick("ian","oid","ac","ese","inian","rd")
 
-/obj/effect/overmap/sector/exoplanet/proc/rename_species(var/species_type, var/newname, var/force = FALSE)
+/obj/effect/overmap/visitable/sector/exoplanet/proc/rename_species(var/species_type, var/newname, var/force = FALSE)
 	if(species[species_type] && !force)
 		return FALSE
 
@@ -278,7 +290,7 @@
 	return TRUE
 
 //Tries to generate num landmarks, but avoids repeats.
-/obj/effect/overmap/sector/exoplanet/proc/generate_landing(num = 1)
+/obj/effect/overmap/visitable/sector/exoplanet/proc/generate_landing(num = 1)
 	var/places = list()
 	var/attempts = 10*num
 	var/new_type = landmark_type
@@ -307,25 +319,25 @@
 		places += T
 		new new_type(T)
 
-/obj/effect/overmap/sector/exoplanet/proc/generate_atmosphere()
+/obj/effect/overmap/visitable/sector/exoplanet/proc/generate_atmosphere()
 	atmosphere = new
 	if(habitability_class == HABITABILITY_IDEAL)
-		atmosphere.adjust_gas("oxygen", MOLES_O2STANDARD, 0)
-		atmosphere.adjust_gas("nitrogen", MOLES_N2STANDARD)
+		atmosphere.adjust_gas(GAS_OXYGEN, MOLES_O2STANDARD, 0)
+		atmosphere.adjust_gas(GAS_NITROGEN, MOLES_N2STANDARD)
 	else //let the fuckery commence
 		var/list/newgases = gas_data.gases.Copy()
 		if(prob(90)) //all phoron planet should be rare
-			newgases -= "phoron"
+			newgases -= GAS_PHORON
 		if(prob(50)) //alium gas should be slightly less common than mundane shit
-			newgases -= "aliether"
-		newgases -= "watervapor"
+			newgases -= GAS_ALIEN
+		newgases -= GAS_STEAM
 
 		var/total_moles = MOLES_CELLSTANDARD * rand(80,120)/100
 		var/badflag = 0
 
 		//Breathable planet
 		if(habitability_class == HABITABILITY_OKAY)
-			atmosphere.gas["oxygen"] += MOLES_O2STANDARD
+			atmosphere.gas[GAS_OXYGEN] += MOLES_O2STANDARD
 			total_moles -= MOLES_O2STANDARD
 			badflag = XGM_GAS_FUEL|XGM_GAS_CONTAMINANT
 
@@ -352,7 +364,7 @@
 			total_moles = max(total_moles - part, 0)
 			i++
 
-/obj/effect/overmap/sector/exoplanet/get_scan_data(mob/user)
+/obj/effect/overmap/visitable/sector/exoplanet/get_scan_data(mob/user)
 	. = ..()
 	var/list/extra_data = list("<hr>")
 	if(atmosphere)
@@ -384,6 +396,77 @@
 
 	. += jointext(extra_data, "<br>")
 
+/obj/effect/overmap/visitable/sector/exoplanet/get_skybox_representation()
+	return skybox_image
+
+/obj/effect/overmap/visitable/sector/exoplanet/proc/get_base_image()
+	var/image/base = image('icons/skybox/planet.dmi', "base")
+	base.color = get_surface_color()
+	return base
+
+/obj/effect/overmap/visitable/sector/exoplanet/proc/generate_planet_image()
+	skybox_image = image('icons/skybox/planet.dmi', "")
+
+	skybox_image.overlays += get_base_image()
+
+	for(var/datum/exoplanet_theme/theme in themes)
+		skybox_image.overlays += theme.get_planet_image_extra()
+	
+	if(water_color) //TODO: move water levels out of randommap into exoplanet
+		var/image/water = image('icons/skybox/planet.dmi', "water")
+		water.color = water_color
+		water.appearance_flags = PIXEL_SCALE
+		water.transform = water.transform.Turn(rand(0,360))
+		skybox_image.overlays += water
+	
+	if(atmosphere && atmosphere.return_pressure() > SOUND_MINIMUM_PRESSURE)
+
+		var/atmo_color = get_atmosphere_color()
+		if(!atmo_color)
+			atmo_color = COLOR_WHITE
+
+		var/image/clouds = image('icons/skybox/planet.dmi', "weak_clouds")
+
+		if(water_color)
+			clouds.overlays += image('icons/skybox/planet.dmi', "clouds")
+
+		clouds.color = atmo_color
+		skybox_image.overlays += clouds
+
+		var/image/atmo = image('icons/skybox/planet.dmi', "atmoring")
+		skybox_image.underlays += atmo
+		
+	var/image/shadow = image('icons/skybox/planet.dmi', "shadow")
+	shadow.blend_mode = BLEND_MULTIPLY
+	skybox_image.overlays += shadow
+
+	var/image/light = image('icons/skybox/planet.dmi', "lightrim")
+	skybox_image.overlays += light
+
+	if(prob(20))
+		var/image/rings = image('icons/skybox/planet_rings.dmi')
+		rings.icon_state = pick("sparse", "dense")
+		rings.color = pick("#f0fcff", "#dcc4ad", "#d1dcad", "#adb8dc")
+		rings.pixel_x = -128
+		rings.pixel_y = -128
+		skybox_image.overlays += rings
+
+	skybox_image.pixel_x = rand(0,64)
+	skybox_image.pixel_y = rand(128,256)
+	skybox_image.appearance_flags = RESET_COLOR
+
+/obj/effect/overmap/visitable/sector/exoplanet/proc/get_surface_color()
+	return surface_color
+
+/obj/effect/overmap/visitable/sector/exoplanet/proc/get_atmosphere_color()
+	var/list/colors = list()
+	for(var/g in atmosphere.gas)
+		if(gas_data.tile_overlay_color[g])
+			colors += gas_data.tile_overlay_color[g]
+	if(colors.len)
+		return MixColors(colors)
+
 /area/exoplanet
 	name = "\improper Planetary surface"
 	ambience = list('sound/effects/wind/wind_2_1.ogg','sound/effects/wind/wind_2_2.ogg','sound/effects/wind/wind_3_1.ogg','sound/effects/wind/wind_4_1.ogg','sound/effects/wind/wind_4_2.ogg','sound/effects/wind/wind_5_1.ogg')
+	always_unpowered = 1

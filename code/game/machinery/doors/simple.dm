@@ -89,9 +89,10 @@
 	playsound(src.loc, material.dooropen_noise, 100, 1)
 	..()
 
-/obj/machinery/door/unpowered/simple/set_broken()
+/obj/machinery/door/unpowered/simple/set_broken(var/new_state, var/cause = MACHINE_BROKEN_GENERIC)
 	..()
-	deconstruct(null)
+	if(new_state)
+		deconstruct(null)
 
 /obj/machinery/door/unpowered/simple/deconstruct(mob/user, moved = FALSE)
 	material.place_dismantled_product(get_turf(src))
@@ -185,8 +186,9 @@
 
 	return
 
-/obj/machinery/door/unpowered/simple/examine(mob/user)
-	if(..(user,1) && lock)
+/obj/machinery/door/unpowered/simple/examine(mob/user, distance)
+	. = ..()
+	if(distance <= 1 && lock)
 		to_chat(user, "<span class='notice'>It appears to have a lock.</span>")
 
 /obj/machinery/door/unpowered/simple/can_open()
@@ -195,9 +197,8 @@
 	return 1
 
 /obj/machinery/door/unpowered/simple/Destroy()
-	qdel(lock)
-	lock = null
-	..()
+	QDEL_NULL(lock)
+	return ..()
 
 /obj/machinery/door/unpowered/simple/iron/New(var/newloc,var/material_name,var/complexity)
 	..(newloc, MATERIAL_IRON, complexity)
@@ -245,9 +246,6 @@
 	..(newloc, MATERIAL_WOOD, complexity)
 	glass = 1
 	set_opacity(0)
-
-/obj/machinery/door/unpowered/simple/resin/New(var/newloc,var/material_name,var/complexity)
-	..(newloc, MATERIAL_RESIN, complexity)
 
 /obj/machinery/door/unpowered/simple/cult/New(var/newloc,var/material_name,var/complexity)
 	..(newloc, MATERIAL_CULT, complexity)

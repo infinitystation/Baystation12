@@ -6,6 +6,8 @@
 	item_state = null	//so the human update icon uses the icon_state instead.
 	max_shots = 10
 	fire_delay = 10 // To balance for the fact that it is a pistol and can be used one-handed without penalty
+	s_gun = "LP90"
+	is_serial = 1
 
 	projectile_type = /obj/item/projectile/beam/stun
 	origin_tech = list(TECH_COMBAT = 3, TECH_MAGNET = 2)
@@ -17,21 +19,24 @@
 		list(mode_name="kill", projectile_type=/obj/item/projectile/beam, modifystate="energykill"),
 		)
 
+	accuracy_power = 4
+	bulk = GUN_BULK_REVOLVER
+
 /obj/item/weapon/gun/energy/gun/skrell
 	name = "skrellian handgun"
 	desc = "A common Skrellian side-arm, the Xuxquu*'Voom-5, or XV-5, is a more traditional energy weapon, tuned to dispense beams in three different wavelengths."
 	w_class = ITEM_SIZE_NORMAL
-	slot_flags = SLOT_BELT
+	slot_flags = SLOT_BELT|SLOT_HOLSTER //INF, WAS SLOT_BELT
 	icon = 'icons/obj/guns/skrell_pistol.dmi'
 	icon_state = "skrell_pistol"
 	max_shots = 10
 	fire_delay = 6
-	one_hand_penalty = 1
 	self_recharge = 1
 
 	projectile_type = /obj/item/projectile/beam/stun
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 5, TECH_POWER = 3)
 	modifystate = "skrell_pistol_stun"
+	is_serial = 0
 
 	firemodes = list(
 		list(mode_name="stun", projectile_type=/obj/item/projectile/beam/stun, modifystate="skrell_pistol_stun"),
@@ -39,21 +44,28 @@
 		list(mode_name="kill", projectile_type=/obj/item/projectile/beam, modifystate="skrell_pistol_kill"),
 		)
 
+	one_hand_penalty = 1
+	bulk = GUN_BULK_PISTOL
+	is_serial = 0
+
 /obj/item/weapon/gun/energy/gun/small
 	name = "LAEP90-C 'Perun' small energy gun"
 	desc = "A smaller model of the versatile LAEP90 Perun, the LAEP90-C packs considerable utility in a smaller package. Best used in situations where full-sized sidearms are inappropriate."
 	icon = 'icons/obj/guns/small_egun.dmi'
 	icon_state = "smallgunstun"
 	max_shots = 5
-	w_class = ITEM_SIZE_SMALL
 	force = 2 //it's the size of a car key, what did you expect?
 	modifystate = "smallgunstun"
+	s_gun = "LP90-C"
 
 	firemodes = list(
 		list(mode_name="stun", projectile_type=/obj/item/projectile/beam/stun, modifystate="smallgunstun"),
 		list(mode_name="shock", projectile_type=/obj/item/projectile/beam/stun/shock, modifystate="smallgunshock"),
 		list(mode_name="kill", projectile_type=/obj/item/projectile/beam/smalllaser, modifystate="smallgunkill"),
 		)
+
+	bulk = GUN_BULK_PISTOL
+	w_class = ITEM_SIZE_SMALL
 
 /obj/item/weapon/gun/energy/gun/mounted
 	name = "mounted energy gun"
@@ -68,12 +80,9 @@
 	icon_state = "nucgun"
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 5, TECH_POWER = 3)
 	slot_flags = SLOT_BELT
-	w_class = ITEM_SIZE_LARGE
 	force = 8 //looks heavier than a pistol
 	self_recharge = 1
 	modifystate = null
-	one_hand_penalty = 1 //bulkier than an e-gun, but not quite the size of a carbine
-
 	firemodes = list(
 		list(mode_name="stun", projectile_type=/obj/item/projectile/beam/stun),
 		list(mode_name="shock", projectile_type=/obj/item/projectile/beam/stun/shock),
@@ -82,10 +91,16 @@
 
 	var/fail_counter = 0
 
+	bulk = GUN_BULK_RIFLE //inf
+	w_class = ITEM_SIZE_LARGE
+	one_hand_penalty = 1 //bulkier than an e-gun, but not quite the size of a carbine
+	is_serial = 0
+
 //override for failcheck behaviour
 /obj/item/weapon/gun/energy/gun/nuclear/Process()
 	if(fail_counter > 0)
-		SSradiation.radiate(src, fail_counter--)
+		SSradiation.radiate(src, (fail_counter * 2))
+		fail_counter--
 
 	return ..()
 

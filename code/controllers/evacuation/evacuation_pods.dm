@@ -110,8 +110,17 @@
 	if (evacuation_controller.is_evacuating())
 		to_chat(user, "Jump preparation already in progress.")
 		return
+//[INF]
+	if(!is_bsd_fine())
+		to_chat(user, "The bluespace drive is not located, unpowered or wasn't recalibrated. Aborting.")
+		return 0
+//[/INF]
 	if (evacuation_controller.call_evacuation(user, 0))
 		log_and_message_admins("[user? key_name(user) : "Autotransfer"] has initiated bluespace jump preparation.")
+//[INF]
+		for(var/obj/machinery/bluespacedrive/M in SSmachines.machinery)
+			M.charge()
+//[/INF]
 
 /datum/evacuation_option/cancel_abandon_ship
 	option_text = "Cancel abandonment"

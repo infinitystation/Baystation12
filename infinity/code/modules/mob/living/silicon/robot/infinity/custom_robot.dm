@@ -1,5 +1,5 @@
 /mob/living/silicon/robot/custom
 	name = "Custom Cyborg"
 	real_name = "custborg"
-	icon = 'icons/mob/infinity/infinity_robots.dmi'
+	icon = 'infinity/icons/mob/onmob/infinity_robots.dmi'
 	icon_state = "custborg"

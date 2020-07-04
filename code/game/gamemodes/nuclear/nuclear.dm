@@ -12,7 +12,6 @@ var/list/nuke_disks = list()
 		colony of sizable population and considerable wealth causes it to often be the target of various \
 		attempts of robbery, fraud and other malicious actions."
 	config_tag = "mercenary"
-	votable = FALSE
 	required_players = 15
 	required_enemies = 1
 	end_on_antag_death = FALSE

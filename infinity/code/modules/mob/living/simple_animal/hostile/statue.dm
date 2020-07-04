@@ -199,7 +199,7 @@
 		if(safe)
 			WF.dismantle()
 			return WF
-	for(var/obj/machinery/light/L in close_view).
+	for(var/obj/machinery/light/L in close_view)
 		if(L && L.on)
 			L.broken()
 			return L

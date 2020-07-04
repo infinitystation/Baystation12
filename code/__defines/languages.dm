@@ -13,26 +13,31 @@
 #define LANGUAGE_SPACER         "Spacer"
 
 //Alien
-#define LANGUAGE_EAL            "Encoded Audio Language"
-#define LANGUAGE_UNATHI_SINTA   "Sinta'unathi"
-#define LANGUAGE_UNATHI_YEOSA   "Yeosa'unathi"
-#define LANGUAGE_SKRELLIAN      "Skrellian"
-#define LANGUAGE_ROOTLOCAL      "Local Rootspeak"
-#define LANGUAGE_ROOTGLOBAL     "Global Rootspeak"
-#define LANGUAGE_ADHERENT       "Protocol"
-#define LANGUAGE_VOX            "Vox-pidgin"
-#define LANGUAGE_NABBER         "Serpentid"
+#define LANGUAGE_EAL               "Encoded Audio Language"
+#define LANGUAGE_UNATHI_SINTA      "Sinta'unathi"
+#define LANGUAGE_UNATHI_YEOSA      "Yeosa'unathi"
+#define LANGUAGE_SKRELLIAN         "Skrellian"
+#define LANGUAGE_ROOTLOCAL         "Local Rootspeak"
+#define LANGUAGE_ROOTGLOBAL        "Global Rootspeak"
+#define LANGUAGE_ADHERENT          "Protocol"
+#define LANGUAGE_VOX               "Vox-pidgin"
+#define LANGUAGE_NABBER            "Serpentid"
 
 //Antag
-#define LANGUAGE_XENOPHAGE      "Xenophage"
-#define LANGUAGE_XENOPHAGE_HIVE "Hivemind"
-#define LANGUAGE_CULT           "Cult"
-#define LANGUAGE_CULT_GLOBAL    "Occult"
-#define LANGUAGE_ALIUM          "Alium"
+#define LANGUAGE_CULT              "Cult"
+#define LANGUAGE_CULT_GLOBAL       "Occult"
+#define LANGUAGE_ALIUM             "Alium"
 
 //Other
-#define LANGUAGE_PRIMITIVE      "Primitive"
-#define LANGUAGE_SIGN           "Sign Language"
+#define LANGUAGE_PRIMITIVE         "Primitive"
+#define LANGUAGE_SIGN              "Sign Language"
+#define LANGUAGE_ROBOT_GLOBAL      "Robot Talk"
+#define LANGUAGE_DRONE_GLOBAL      "Drone Talk"
+#define LANGUAGE_CHANGELING_GLOBAL "Changeling"
+#define LANGUAGE_BORER_GLOBAL      "Cortical Link"
+#define LANGUAGE_MANTID_NONVOCAL   "Ascent-Glow"
+#define LANGUAGE_MANTID_VOCAL      "Ascent-Voc"
+#define LANGUAGE_MANTID_BROADCAST  "Worldnet"
 
 // Language flags.
 #define WHITELISTED  1   // Language is available if the speaker is whitelisted.
@@ -45,3 +50,4 @@
 #define NO_TALK_MSG  128 // Do not show the "\The [speaker] talks into \the [radio]" message
 #define NO_STUTTER   256 // No stuttering, slurring, or other speech problems
 #define ALT_TRANSMIT 512 // Language is not based on vision or sound (Todo: add this into the say code and use it for the rootspeak languages)
+#define BAD_SPEAKER  1024// INF

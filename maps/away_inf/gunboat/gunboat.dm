@@ -2,14 +2,13 @@
 #include "gunboat_crew.dm"
 #include "gunboat_define.dm"
 
-/obj/effect/overmap/ship/gunboat
+/obj/effect/overmap/visitable/ship/gunboat
 	name = "gunboat"
 	desc = "Sensor array is detecting a small vessel with heavy armor."
 	color = "#ffc966"
 	fore_dir = WEST
 	vessel_mass = 30
 	default_delay = 35 SECONDS
-	speed_mod = 5 SECONDS
 	start_x = 5
 	start_y = 5
 	initial_generic_waypoints = list(
@@ -19,7 +18,7 @@
 		"nav_gunboat_antag"
 		)
 
-/obj/effect/overmap/ship/gunboat/New()
+/obj/effect/overmap/visitable/ship/gunboat/New()
 	name = "SGC [pick("Bearcat", "Firebug", "Defiant", "Unsinkable","Horizon","Vagrant")]"
 	..()
 

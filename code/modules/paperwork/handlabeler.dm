@@ -1,6 +1,6 @@
 /obj/item/weapon/hand_labeler
 	name = "hand labeler"
-	icon = 'icons/obj/bureaucracy.dmi'
+	icon = 'infinity/icons/obj/bureaucracy.dmi' //inf, was: 'icons/obj/bureaucracy.dmi'
 	icon_state = "labeler0"
 	item_state = "flight"
 	var/label = null
@@ -29,7 +29,7 @@
 		var/datum/extension/labels/L = get_extension(A, /datum/extension/labels)
 		if(!L.CanAttachLabel(user, label))
 			return
-	playsound(src,'sound/effects/FOLEY_Gaffer_Tape_Tear_mono.ogg',100,1)
+	playsound(src,'infinity/sound/effects/FOLEY_Gaffer_Tape_Tear_mono.ogg',100,1)
 	A.attach_label(user, src, label)
 
 /atom/proc/attach_label(var/user, var/atom/labeler, var/label_text)
@@ -48,7 +48,7 @@
 /obj/attach_label(var/user, var/atom/labeler, var/label_text)
 	if(!simulated)
 		return
-	var/datum/extension/labels/L = get_or_create_extension(src, /datum/extension/labels, /datum/extension/labels)
+	var/datum/extension/labels/L = get_or_create_extension(src, /datum/extension/labels)
 	L.AttachLabel(user, label_text)
 
 /obj/item/weapon/hand_labeler/attack_self(mob/user as mob)

@@ -277,6 +277,7 @@
 			var/obj/item/stack/medical/splint/S = split(1, TRUE)
 			if(S)
 				if(affecting.apply_splint(S))
+					M.verbs += /mob/living/carbon/human/proc/remove_splints
 					S.forceMove(affecting)
 					if (M != user)
 						user.visible_message("<span class='danger'>\The [user] finishes applying [src] to [M]'s [limb].</span>", "<span class='danger'>You finish applying \the [src] to [M]'s [limb].</span>", "<span class='danger'>You hear something being wrapped.</span>")
@@ -304,6 +305,10 @@
 	icon_state = "resin-pack"
 	heal_brute = 10
 	heal_burn =  10
+
+/obj/item/stack/medical/resin/drone
+	amount = 25
+	max_amount = 25
 
 /obj/item/stack/medical/resin/handmade
 	name = "resin globules"

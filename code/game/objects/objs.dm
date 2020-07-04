@@ -43,25 +43,14 @@
 /obj/proc/updateUsrDialog()
 	if(in_use)
 		var/is_in_use = 0
-		var/list/nearby = viewers(1, src)
+		var/list/nearby = viewers(1, src) | usr
 		for(var/mob/M in nearby)
 			if ((M.client && M.machine == src))
-				is_in_use = 1
-				src.attack_hand(M)
-		if (istype(usr, /mob/living/silicon/ai) || istype(usr, /mob/living/silicon/robot))
-			if (!(usr in nearby))
-				if (usr.client && usr.machine==src) // && M.machine == src is omitted because if we triggered this by using the dialog, it doesn't matter if our machine changed in between triggering it and this - the dialog is probably still supposed to refresh.
+				if(CanUseTopic(M, DefaultTopicState()) > STATUS_CLOSE)
 					is_in_use = 1
-					src.attack_ai(usr)
-
-		// check for TK users
-
-		if (istype(usr, /mob/living/carbon/human))
-			if(istype(usr.l_hand, /obj/item/tk_grab) || istype(usr.r_hand, /obj/item/tk_grab/))
-				if(!(usr in nearby))
-					if(usr.client && usr.machine==src)
-						is_in_use = 1
-						src.attack_hand(usr)
+					interact(M)
+				else
+					M.unset_machine()
 		in_use = is_in_use
 
 /obj/proc/updateDialog()
@@ -71,8 +60,11 @@
 		var/is_in_use = 0
 		for(var/mob/M in nearby)
 			if ((M.client && M.machine == src))
-				is_in_use = 1
-				src.interact(M)
+				if(CanUseTopic(M, DefaultTopicState()) > STATUS_CLOSE)
+					is_in_use = 1
+					interact(M)
+				else
+					M.unset_machine()
 		var/ai_in_use = AutoUpdateAI(src)
 
 		if(!ai_in_use && !is_in_use)
@@ -132,7 +124,7 @@
 		if(damtype == BURN)
 			. |= DAM_LASER
 
-/obj/attackby(obj/item/O as obj, mob/user as mob)
+/obj/attackby(obj/item/O, mob/user)
 	if(obj_flags & OBJ_FLAG_ANCHORABLE)
 		if(isWrench(O))
 			wrench_floor_bolts(user)
@@ -158,15 +150,17 @@
 	..()
 
 /obj/is_fluid_pushable(var/amt)
-	return ..() && w_class <= round(amt/20)// Called when turf is hit by a thrown object
+	return ..() && w_class <= round(amt/20)
 
-/obj/hitby(atom/movable/AM as mob|obj, var/speed)
+//[INF]
+/obj/hitby(atom/movable/AM as mob|obj, var/datum/thrownthing/TT)
 	if(src.density)
 		spawn(2)
 			step(AM, turn(AM.last_move, 180))
 		if(isliving(AM))
 			var/mob/living/M = AM
-			M.object_collision(src, speed)
+			M.object_collision(src, TT.speed)
+//[/INF]
 
 /obj/proc/can_embed()
 	return is_sharp(src)
@@ -175,11 +169,11 @@
 	if(obj_flags & OBJ_FLAG_ROTATABLE)
 		rotate(user)
 	..()
-	
+
 /obj/examine(mob/user)
-	. = ..(user)
-	if(. && (obj_flags & OBJ_FLAG_ROTATABLE))
-		to_chat(user, "<span class='subtle'>Can be rotated with alt-click.</span>")
+	. = ..()
+	if((obj_flags & OBJ_FLAG_ROTATABLE))
+		to_chat(user, SPAN_SUBTLE("Can be rotated with alt-click."))
 
 /obj/proc/rotate(mob/user)
 	if(!CanPhysicallyInteract(user))
@@ -188,6 +182,10 @@
 
 	if(anchored)
 		to_chat(user, SPAN_NOTICE("\The [src] is secured to the floor!"))
-		return 
+		return
 
 	set_dir(turn(dir, 90))
+	update_icon()
+
+//For things to apply special effects after damaging an organ, called by organ's take_damage
+/obj/proc/after_wounding(obj/item/organ/external/organ, datum/wound)

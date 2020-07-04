@@ -1,5 +1,5 @@
 /mob/living/simple_animal/hostile/true_changeling
-	name = "shambling horror"
+	name = "abomination"
 	desc = "A monstrous creature, made of twisted flesh and bone."
 	speak_emote = list("gibbers")
 	icon = 'icons/mob/infinity_mob.dmi'
@@ -25,7 +25,7 @@
 	environment_smash = 2
 	break_stuff_probability = 85
 	attacktext = "mangled"
-	attack_sound = 'sound/weapons/bloodyslice.ogg'
+	attack_sound = 'infinity/sound/weapons/bloodyslice.ogg'
 
 	see_in_dark = 8
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
@@ -97,7 +97,7 @@
 	..()
 	if(!gibbed)
 		visible_message("<b>[src]</b> lets out a waning scream as it falls, twitching, to the floor!")
-		playsound(loc, 'sound/effects/creepyshriek.ogg', 30, 1)
+		playsound(loc, 'infinity/sound/effects/creepyshriek.ogg', 30, 1)
 		gibs(src.loc)
 		qdel(src)
 		return
@@ -176,7 +176,7 @@
 
 	visible_message("<span class='warning'>\The [src]'s skin bulges and tears, launching a bone-dart at [target]!</span>")
 
-	playsound(src.loc, 'sound/weapons/bloodyslice.ogg', 50, 1)
+	playsound(src.loc, 'infinity/sound/weapons/bloodyslice.ogg', 50, 1)
 	var/obj/item/weapon/bone_dart/A = new /obj/item/weapon/bone_dart(usr.loc)
 	A.throw_at(target, 10, 20, usr)
 //	add_logs(src, target, "launched a bone dart at")

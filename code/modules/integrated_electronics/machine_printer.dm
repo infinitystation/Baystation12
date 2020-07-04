@@ -26,7 +26,7 @@ var/list/integrated_circuit_blacklist = list(/obj/item/integrated_circuit, /obj/
 						"Assemblies" = typesof(/obj/item/device/electronic_assembly))
 
 	component_parts = list()
-	component_parts += new /obj/item/weapon/circuitboard/integrated_printer(src)
+	component_parts += new /obj/item/weapon/stock_parts/circuitboard/integrated_printer(src)
 	component_parts += new /obj/item/weapon/stock_parts/matter_bin(src)
 	component_parts += new /obj/item/weapon/stock_parts/manipulator(src)
 	component_parts += new /obj/item/weapon/stock_parts/micro_laser(src)

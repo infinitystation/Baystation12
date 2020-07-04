@@ -68,6 +68,12 @@ medals
 	desc = "A white heart emblazoned with a red cross awarded to members of the SCG for service as a medical professional in a combat zone."
 	icon_state = "white_heart"
 
+/obj/item/clothing/accessory/solgov
+	var/check_codex_val = FACTION_FLEET
+
+/obj/item/clothing/accessory/solgov/get_codex_value()
+	return check_codex_val || ..()
+
 /obj/item/clothing/accessory/solgov/torch_patch
 	name = "\improper Torch mission patch"
 	desc = "A fire resistant shoulder patch, worn by the personnel involved in the Torch Project."
@@ -87,6 +93,7 @@ patches
 	icon_state = "ecpatch1"
 	on_rolled = list("down" = "none")
 	slot = ACCESSORY_SLOT_INSIGNIA
+	check_codex_val = FACTION_EXPEDITIONARY
 
 /obj/item/clothing/accessory/solgov/ec_patch/fieldops
 	name = "\improper Field Operations patch"
@@ -98,6 +105,7 @@ patches
 	desc = "A radiation-shielded shoulder patch, denoting service in the the Sol Central Government Expeditionary Corps Cultural Exchange program."
 	icon_state = "ecpatch3"
 	slot = ACCESSORY_SLOT_INSIGNIA
+	check_codex_val = FACTION_EXPEDITIONARY
 
 /obj/item/clothing/accessory/solgov/fleet_patch
 	name = "\improper First Fleet patch"
@@ -130,22 +138,23 @@ patches
 scarves
 *****/
 /obj/item/clothing/accessory/solgov/ec_scarf
-	name = "expeditionary dress scarf"
-	desc = "An SCG blue silk scarf, meant to be worn with the Expeditionary Corps dress uniform."
+	name = "expeditionary scarf"
+	desc = "An SCG blue silk scarf, meant to be worn with Expeditionary Corps uniforms."
 	icon = 'icons/obj/clothing/obj_accessories.dmi'
 	accessory_icons = list(slot_w_uniform_str = 'icons/mob/onmob/onmob_accessories.dmi', slot_wear_suit_str = 'icons/mob/onmob/onmob_accessories.dmi')
 	icon_state = "whitescarf"
 	on_rolled = list("down" = "none")
 	color = "#68a0ce"
+	check_codex_val = FACTION_EXPEDITIONARY
 
 /obj/item/clothing/accessory/solgov/ec_scarf/observatory
-	name = "\improper Observatory dress scarf"
-	desc = "A silk scarf in Expeditionary Corps Observatory section colors, meant to be worn with the Expeditionary Corps dress uniform."
+	name = "\improper Observatory scarf"
+	desc = "A silk scarf in Expeditionary Corps Observatory section colors, meant to be worn with Expeditionary Corps uniforms."
 	color = "#58bb59"
 
 /obj/item/clothing/accessory/solgov/ec_scarf/fieldops
-	name = "\improper Field Operations dress scarf"
-	desc = "A silk scarf in Expeditionary Corps Field Operations section colors, meant to be worn with the Expeditionary Corps dress uniform."
+	name = "\improper Field Operations scarf"
+	desc = "A silk scarf in Expeditionary Corps Field Operations section colors, meant to be worn with Expeditionary Corps uniforms."
 	color = "#9f84b3"
 
 /******
@@ -200,7 +209,7 @@ specialty pins
 
 /obj/item/clothing/accessory/solgov/specialty/brig
 	name = "brig blazes"
-	desc = "Red blazes denoting a brig officer."
+	desc = "Red blazes denoting a brig chief."
 	icon_state = "fleetspec_brig"
 
 /obj/item/clothing/accessory/solgov/specialty/forensic
@@ -219,8 +228,8 @@ specialty pins
 	icon_state = "fleetspec_counselor"
 
 /obj/item/clothing/accessory/solgov/specialty/chemist
-	name = "chemistry blazes"
-	desc = "Orange blazes denoting a chemist."
+	name = "pharmacy blazes"
+	desc = "Orange blazes denoting a pharmacist."
 	icon_state = "fleetspec_chemist"
 
 /obj/item/clothing/accessory/solgov/specialty/enlisted
@@ -237,6 +246,7 @@ specialty pins
 	name = "pilot's qualification pin"
 	desc = "An iron pin denoting the qualification to fly SCG spacecraft."
 	icon_state = "pin_pilot"
+	slot = ACCESSORY_SLOT_INSIGNIA //INF
 
 /*****
 badges
@@ -260,6 +270,9 @@ badges
 	icon_state = "tags"
 	badge_string = "Sol Central Government"
 	slot_flags = SLOT_MASK | SLOT_TIE
+	var/owner_rank
+	var/owner_name
+	var/owner_branch
 
 /obj/item/clothing/accessory/badge/solgov/tags/Initialize()
 	. = ..()
@@ -272,6 +285,9 @@ badges
 /obj/item/clothing/accessory/badge/solgov/tags/set_desc(var/mob/living/carbon/human/H)
 	if(!istype(H))
 		return
+	owner_rank = H.char_rank && H.char_rank.name
+	owner_name = H.real_name
+	owner_branch = H.char_branch && H.char_branch.name
 	var/decl/cultural_info/culture = H.get_cultural_value(TAG_RELIGION)
 	var/religion = culture ? culture.name : "Unset"
 	desc = "[initial(desc)]\nName: [H.real_name] ([H.get_species()])[H.char_branch ? "\nBranch: [H.char_branch.name]" : ""]\nReligion: [religion]\nBlood type: [H.b_type]"
@@ -337,8 +353,8 @@ armour attachments
 	icon_state = "medictag"
 
 /obj/item/clothing/accessory/armor/tag/solgov/agent
-	name = "\improper OCIE AGENT tag"
-	desc = "An armor tag with the word OCIE AGENT printed in gold lettering on it."
+	name = "\improper SFP AGENT tag"
+	desc = "An armor tag with the words SFP AGENT printed in gold lettering on it."
 	icon_state = "agenttag"
 
 /obj/item/clothing/accessory/armor/tag/solgov/com
@@ -546,7 +562,8 @@ ranks - ec
 	gender = PLURAL
 	high_visibility = 1
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_accessories_sol_unathi.dmi'
+		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_accessories_sol_unathi.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_accessories_resomi.dmi'
 		)
 
 /obj/item/clothing/accessory/solgov/rank/get_fibers()

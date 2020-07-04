@@ -96,7 +96,7 @@
 	var/set_luminosity = max > 1e-6
 	#endif
 
-	/* if((rr & gr & br & ar) && (rg + gg + bg + ag + rb + gb + bb + ab == 8)) // Черные тайлы не оч. Да и проверка касается всего. ~bear1ake
+	/* if((rr & gr & br & ar) && (rg + gg + bg + ag + rb + gb + bb + ab == 8)) // Р§РµСЂРЅС‹Рµ С‚Р°Р№Р»С‹ РЅРµ РѕС‡. Р”Р° Рё РїСЂРѕРІРµСЂРєР° РєР°СЃР°РµС‚СЃСЏ РІСЃРµРіРѕ. ~bear1ake
 	//anything that passes the first case is very likely to pass the second, and addition is a little faster in this case
 		icon_state = "transparent"
 		color = null
@@ -114,6 +114,8 @@
 		)
 
 	luminosity = set_luminosity
+	// if (T.above && T.above.shadower)
+	// 	T.above.shadower.copy_lighting(src)
 
 // Variety of overrides so the overlays don't get affected by weird things.
 /atom/movable/lighting_overlay/ex_act()

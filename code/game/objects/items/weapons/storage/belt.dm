@@ -14,7 +14,7 @@
 	var/overlay_flags
 	attack_verb = list("whipped", "lashed", "disciplined")
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/belt.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_belt_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/belt.dmi'
 		)
 
@@ -66,7 +66,7 @@
 
 /obj/item/weapon/storage/belt/holster/Initialize()
 	. = ..()
-	set_extension(src, /datum/extension/holster, /datum/extension/holster, src, sound_in, sound_out, can_holster)
+	set_extension(src, /datum/extension/holster, src, sound_in, sound_out, can_holster)
 
 /obj/item/weapon/storage/belt/holster/attackby(obj/item/W as obj, mob/user as mob)
 	var/datum/extension/holster/H = get_extension(src, /datum/extension/holster)
@@ -83,7 +83,7 @@
 		. = ..(user)
 
 /obj/item/weapon/storage/belt/holster/examine(mob/user)
-	. = ..(user)
+	. = ..()
 	var/datum/extension/holster/H = get_extension(src, /datum/extension/holster)
 	H.examine_holster(user)
 
@@ -445,15 +445,19 @@
 
 /obj/item/weapon/storage/belt/holster/security/tactical
 	name = "combat belt"
-	desc = "Can hold security gear like handcuffs and flashes, with more pouches for more storage."
+	desc = "A special combat belt with varios strapes and pouches for ammo and grenades." //INF WAS "Can hold security gear like handcuffs and flashes, with more pouches for more storage."
 	icon_state = "swatbelt"
 	item_state = "swatbelt"
-	storage_slots = 10
-
-/obj/item/weapon/storage/belt/holster/security/tactical/Initialize()
-	.=..()
-	slowdown_per_slot[slot_belt] = 1
-
+	storage_slots = 11 //INF WAS 10
+//[INF]
+	can_hold = list(
+		/obj/item/weapon/grenade,
+		/obj/item/weapon/handcuffs,
+		/obj/item/ammo_casing/shotgun,
+		/obj/item/ammo_magazine,
+		/obj/item/weapon/magnetic_ammo,
+		)
+//[/INF]
 /obj/item/weapon/storage/belt/waistpack
 	name = "waist pack"
 	desc = "A small bag designed to be worn on the waist. May make your butt look big."
@@ -476,3 +480,26 @@
 /obj/item/weapon/storage/belt/waistpack/big/Initialize()
 	.=..()
 	slowdown_per_slot[slot_belt] = 1
+
+/obj/item/weapon/storage/belt/fire_belt
+	name = "firefighting equipment belt"
+	desc = "A belt specially designed for firefighting."
+	icon_state = "firebelt"
+	item_state = "gear"
+	storage_slots = 5
+	overlay_flags = BELT_OVERLAY_ITEMS
+	can_hold = list(
+		/obj/item/weapon/grenade/chem_grenade/water,
+		/obj/item/weapon/crowbar/emergency_forcing_tool,
+		/obj/item/weapon/extinguisher/mini,
+		/obj/item/inflatable/door
+		)
+
+
+/obj/item/weapon/storage/belt/fire_belt/full
+	startswith = list(
+		/obj/item/inflatable/door,
+		/obj/item/weapon/crowbar/emergency_forcing_tool,
+		/obj/item/weapon/extinguisher/mini,
+		/obj/item/weapon/grenade/chem_grenade/water = 2
+	)

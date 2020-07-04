@@ -1,0 +1,7 @@
+#include "abductor_equip.dm"
+#include "abductor_glands.dm"
+#include "abductor_machinery.dm"
+#include "abductor_structures.dm"
+#include "abductor_tools.dm"
+#include "abductors_inf.dm"
+#include "glands_abilities.dm"

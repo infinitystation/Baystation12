@@ -4,7 +4,7 @@
 /mob/living/simple_animal/hostile/commanded/nanomachine
 	name = "swarm"
 	desc = "a cloud of tiny, tiny robots."
-	icon = 'icons/mob/critter.dmi'
+	icon = 'icons/mob/simple_animal/critter.dmi'
 	icon_state = "blobsquiggle_grey"
 	attacktext = "swarmed"
 	health = 10
@@ -12,7 +12,7 @@
 	var/regen_time = 0
 	melee_damage_lower = 1
 	melee_damage_upper = 2
-	can_escape = 1
+	can_escape = TRUE
 	var/emergency_protocols = 0
 	known_commands = list("stay", "stop", "attack", "follow", "heal", "emergency protocol")
 
@@ -54,9 +54,12 @@
 	if(!Adjacent(target_mob) || SA_attackable(target_mob))
 		stance = COMMANDED_HEAL
 		return 0
-	if(target_mob.stat || target_mob.health >= target_mob.maxHealth) //he's either dead or healthy, move along.
-		allowed_targets -= target_mob
-		target_mob = null
+	if(ishuman(target_mob))
+		var/mob/living/carbon/human/target = target_mob
+		if(target.last_dam <= 0)
+			stance = COMMANDED_HEAL
+			return 0
+	else if(target_mob.stat || target_mob.health >= target_mob.maxHealth) //he is either dead or healthy, move along.
 		stance = COMMANDED_HEAL
 		return 0
 	src.visible_message("\The [src] glows green for a moment, healing \the [target_mob]'s wounds.")

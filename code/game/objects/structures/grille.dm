@@ -9,12 +9,13 @@
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	layer = BELOW_OBJ_LAYER
 	explosion_resistance = 1
+	rad_resistance_modifier = 0.1
 	var/init_material = MATERIAL_STEEL
 	var/health = 10
 	var/destroyed = 0
 
 	blend_objects = list(/obj/machinery/door, /turf/simulated/wall) // Objects which to blend with
-	noblend_objects = list(/obj/machinery/door/window)
+	noblend_objects = list(/obj/machinery/door/window, /obj/machinery/door/firedoor/border_only, /obj/machinery/door/blast/regular/evacshield) //INF, WAS: /obj/machinery/door/window
 
 /obj/structure/grille/get_material()
 	return material
@@ -206,7 +207,7 @@
 		return 0
 	if(!prob(prb))
 		return 0
-	if(!in_range(src, user))//To prevent TK and mech users from getting shocked
+	if(!in_range(src, user))//To prevent TK and exosuit users from getting shocked
 		return 0
 	var/turf/T = get_turf(src)
 	var/obj/structure/cable/C = T.get_cable_node()

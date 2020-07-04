@@ -5,6 +5,21 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 	id = MODE_TRAITOR
 	antaghud_indicator = "hud_traitor"
 	blacklisted_jobs = list(/datum/job/submap)
+	welcome_text = "<hr><u>Ваша роль подразумевает скрытную или (полу-скрытную) игру.</u> В первую очередь, \
+	вам требуется определить, кто вы. Возможны, Вы шпион, наемный убийца \
+	(не рекомендуется), амбициозный вор, поставщик оружия, террорист или даже кто-то иной - главное, \
+	чтобы этот кто-то был противником для безопасности корабля или экипажа.<br>После определения со своим прошлым, \
+	вам следует придумать себе задания. Шпион работает на кого-то другого, \
+	и вероятно, его заинтересуют важные документы в центральном шкафчике в кабинете Агента Внутренних Дел, а \
+	также чертежи корабля .Убийце нужно убить кого-то важного, или даже лучше - вызвать эвакуацию на корабле \
+	и взяв цель в заложники, улетев на отдельной капсуле вместе с ней. Вор может решить \
+	украсть личный телепорт, карту капитана или другой важный предмет. Поставщик оружия через НТнет может, \
+	продавать вещи из аплинка. Террорист занимается подрывом (не полным уничтожением) важных \
+	частей корабля (лучше всего спросить администрацию, можно ли подрывать тот или иной отсек или объект - \
+	последствия для экипажа могут быть слишком плачевными, что вызовет только негодование)...<br>Но помните, \
+	что это - лишь примеры того, как Вы можете отыгрывать. Не делайте того, что было бы скучно и даже непритятно \
+	Вам самим по отношению к экипажу. \
+	<b>Придумайте что-нибудь интересно для себя и других - проявите фантазию!</b>"
 	protected_jobs = list(/datum/job/officer, /datum/job/warden, /datum/job/detective, /datum/job/captain, /datum/job/lawyer, /datum/job/hos)
 	flags = ANTAG_SUSPICIOUS | ANTAG_RANDSPAWN | ANTAG_VOTABLE
 	skill_setter = /datum/antag_skill_setter/station
@@ -18,7 +33,7 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 	if(href_list["spawn_uplink"])
 		spawn_uplink(locate(href_list["spawn_uplink"]))
 		return 1
-
+/* original
 /datum/antagonist/traitor/create_objectives(var/datum/mind/traitor)
 	if(!..())
 		return
@@ -32,11 +47,6 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 		var/datum/objective/survive/survive_objective = new
 		survive_objective.owner = traitor
 		traitor.objectives += survive_objective
-
-		if(prob(10))
-			var/datum/objective/block/block_objective = new
-			block_objective.owner = traitor
-			traitor.objectives += block_objective
 	else
 		switch(rand(1,100))
 			if(1 to 33)
@@ -72,7 +82,7 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 					survive_objective.owner = traitor
 					traitor.objectives += survive_objective
 	return
-
+/original */
 /datum/antagonist/traitor/equip(var/mob/living/carbon/human/traitor_mob)
 	if(istype(traitor_mob, /mob/living/silicon)) // this needs to be here because ..() returns false if the mob isn't human
 		add_law_zero(traitor_mob)
@@ -80,6 +90,8 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 		if(istype(traitor_mob, /mob/living/silicon/robot))
 			var/mob/living/silicon/robot/R = traitor_mob
 			R.SetLockdown(0)
+			R.emagged = 1 // Provides a traitor robot with its module's emag item
+			R.verbs |= /mob/living/silicon/robot/proc/ResetSecurityCodes
 		return 1
 
 	if(!..())
@@ -103,20 +115,20 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 	if(LAZYLEN(dudes))
 		var/mob/living/carbon/human/M = pick(dudes)
 		to_chat(traitor_mob, "We have received credible reports that [M.real_name] might be willing to help our cause. If you need assistance, consider contacting them.")
-		traitor_mob.mind.store_memory("<b>Potential Collaborator</b>: [M.real_name]")
+		traitor_mob.StoreMemory("<b>Potential Collaborator</b>: [M.real_name]", /decl/memory_options/system)
 		to_chat(M, "<span class='warning'>The subversive potential of your faction has been noticed, and you may be contacted for assistance soon...</span>")
 
 /datum/antagonist/traitor/proc/give_codewords(mob/living/traitor_mob)
 	to_chat(traitor_mob, "<u><b>Your employers provided you with the following information on how to identify possible allies:</b></u>")
 	to_chat(traitor_mob, "<b>Code Phrase</b>: <span class='danger'>[syndicate_code_phrase]</span>")
 	to_chat(traitor_mob, "<b>Code Response</b>: <span class='danger'>[syndicate_code_response]</span>")
-	traitor_mob.mind.store_memory("<b>Code Phrase</b>: [syndicate_code_phrase]")
-	traitor_mob.mind.store_memory("<b>Code Response</b>: [syndicate_code_response]")
+	traitor_mob.StoreMemory("<b>Code Phrase</b>: [syndicate_code_phrase]", /decl/memory_options/system)
+	traitor_mob.StoreMemory("<b>Code Response</b>: [syndicate_code_response]", /decl/memory_options/system)
 	to_chat(traitor_mob, "Use the code words, preferably in the order provided, during regular conversation, to identify other agents. Proceed with caution, however, as everyone is a potential foe.")
 	if(istype(traitor_mob, /mob/living/silicon))
 		sound_to(traitor_mob, 'sound/voice/AISyndiHack.ogg')
 	else
-		sound_to(traitor_mob, 'sound/voice/syndicate_intro.ogg')
+		sound_to(traitor_mob, 'infinity/sound/voice/syndicate_intro.ogg')
 
 /datum/antagonist/traitor/proc/spawn_uplink(var/mob/living/carbon/human/traitor_mob)
 	setup_uplink_source(traitor_mob, DEFAULT_TELECRYSTAL_AMOUNT)

@@ -10,13 +10,26 @@
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.01
 	siemens_coefficient = 0.9
-	armor = list(melee = 5, bullet = 5, laser = 5, energy = 0, bomb = 0, bio = 75, rad = 0)
+	armor = list(
+		melee = ARMOR_MELEE_MINOR,
+		bio = ARMOR_BIO_STRONG
+		)
+	filtered_gases = list(
+		GAS_PHORON,
+		GAS_N2O,
+		GAS_CHLORINE,
+		GAS_AMMONIA,
+		GAS_CO,
+		GAS_METHYL_BROMIDE,
+		GAS_METHANE
+	)
 	var/clogged
 	var/filter_water
 	var/gas_filter_strength = 1			//For gas mask filters
-	var/list/filtered_gases = list("phoron","sleeping_agent","chlorine","ammonia","carbon_monoxide","methyl_bromide")
 
-/obj/item/clothing/mask/gas/examine(var/mob/user)
+	tint = 2 //INF
+
+/obj/item/clothing/mask/gas/examine(mob/user)
 	. = ..()
 	if(clogged)
 		to_chat(user, "<span class='warning'>The intakes are clogged with [clogged]!</span>")
@@ -54,14 +67,22 @@
 	siemens_coefficient = 0.7
 	body_parts_covered = FACE
 	w_class = ITEM_SIZE_SMALL
-	armor = list(melee = 10, bullet = 10, laser = 10, energy = 0, bomb = 0, bio = 55, rad = 0)
+	armor = list(
+		melee = ARMOR_MELEE_SMALL,
+		bullet = ARMOR_BALLISTIC_MINOR,
+		laser = ARMOR_LASER_MINOR,
+		bio = ARMOR_BIO_RESISTANT
+		)
+	tint = 0 //INF
+//[INF]
 	sprite_sheets = list(
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/mask.dmi',
-		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/mask.dmi',
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/masks.dmi',
+		SPECIES_VOX = 'icons/mob/species/vox/onmob_mask_vox.dmi',
+		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_mask_vox_armalis.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_mask_resomi.dmi',
+		SPECIES_UNATHI = 'infinity/icons/mob/species/unathi/onmob_mask_unathi.dmi',
 		SPECIES_EROSAN = 'infinity/icons/mob/species/erosan/mask.dmi',
 		)
-
+//[/INF]
 //In scaling order of utility and seriousness
 
 /obj/item/clothing/mask/gas/radical
@@ -70,7 +91,11 @@
 	icon_state = "gas_mask"
 	item_state = "gas_mask"
 	body_parts_covered = FACE|EYES
-	armor = list(melee = 5, bullet = 5, laser = 5, energy = 0, bomb = 0, bio = 75, rad = 25)
+	armor = list(
+		melee = ARMOR_MELEE_MINOR,
+		bio = ARMOR_BIO_STRONG,
+		rad = ARMOR_RAD_SMALL
+		)
 
 /obj/item/clothing/mask/gas/budget
 	name = "gas mask"
@@ -78,7 +103,10 @@
 	icon_state = "gas_alt"
 	item_state = "gas_alt"
 	body_parts_covered = FACE|EYES
-	armor = list(melee = 5, bullet = 5, laser = 5, energy = 0, bomb = 0, bio = 25, rad = 0)
+	armor = list(
+		melee = ARMOR_MELEE_MINOR,
+		bio = ARMOR_BIO_SMALL
+		)
 
 /obj/item/clothing/mask/gas/swat
 	name = "\improper SWAT mask"
@@ -87,7 +115,13 @@
 	item_state = "swat"
 	siemens_coefficient = 0.7
 	body_parts_covered = FACE|EYES
-	armor = list(melee = 15, bullet = 15, laser = 15, energy = 0, bomb = 0, bio = 75, rad = 0)
+	armor = list(
+		melee = ARMOR_MELEE_SMALL,
+		bullet = ARMOR_BALLISTIC_MINOR,
+		laser = ARMOR_LASER_MINOR,
+		bio = ARMOR_BIO_STRONG
+		)
+	tint = 0 //INF
 
 /obj/item/clothing/mask/gas/syndicate
 	name = "tactical mask"
@@ -95,7 +129,13 @@
 	icon_state = "swat"
 	item_state = "swat"
 	siemens_coefficient = 0.7
-	armor = list(melee = 15, bullet = 15, laser = 15, energy = 0, bomb = 0, bio = 75, rad = 0)
+	armor = list(
+		melee = ARMOR_MELEE_SMALL,
+		bullet = ARMOR_BALLISTIC_SMALL,
+		laser = ARMOR_LASER_MINOR,
+		bio = ARMOR_BIO_STRONG
+		)
+	tint = 0 //INF
 
 /obj/item/clothing/mask/gas/death_commando
 	name = "\improper Death Commando Mask"
@@ -116,7 +156,9 @@
 	desc = "A modernised version of the classic design, this mask will not only filter out phoron but it can also be connected to an air supply."
 	icon_state = "plaguedoctor"
 	item_state = "plaguedoctor"
-	armor = list(melee = 0, bullet = 0, laser = 2,energy = 2, bomb = 0, bio = 90, rad = 0)
+	armor = list(
+		bio = ARMOR_BIO_SHIELDED
+		)
 	body_parts_covered = HEAD|FACE|EYES
 
 /obj/item/clothing/mask/gas/clown_hat
@@ -124,18 +166,24 @@
 	desc = "A true prankster's facial attire. A clown is incomplete without their wig and mask."
 	icon_state = "clown"
 	item_state = "clown"
+	tint = 1 //INF
+	body_parts_covered = EYES //INF
 
 /obj/item/clothing/mask/gas/sexyclown
 	name = "sexy-clown wig and mask"
 	desc = "A feminine clown mask for the dabbling crossdressers or female entertainers."
 	icon_state = "sexyclown"
 	item_state = "sexyclown"
+	tint = 1 //INF
+	body_parts_covered = EYES //INF
 
 /obj/item/clothing/mask/gas/mime
 	name = "mime mask"
 	desc = "The traditional mime's mask. It has an eerie facial posture."
 	icon_state = "mime"
 	item_state = "mime"
+	tint = 1 //INF
+	body_parts_covered = EYES //INF
 
 /obj/item/clothing/mask/gas/monkeymask
 	name = "monkey mask"
@@ -149,6 +197,8 @@
 	desc = "A traditional female mime's mask."
 	icon_state = "sexymime"
 	item_state = "sexymime"
+	tint = 1 //INF
+	body_parts_covered = EYES //INF
 
 /obj/item/clothing/mask/gas/owl_mask
 	name = "owl mask"
@@ -161,29 +211,53 @@
 
 /obj/item/clothing/mask/gas/vox
 	name = "vox breathing mask"
-	desc = "A small oxygen filter for use by Vox"
+	desc = "A small oxygen filter for use by Vox. WARNING: DOESN'T FILTERS HOT SPRAY!"
 	icon_state = "respirator"
 	item_state = "respirator"
 	flags_inv = 0
-	body_parts_covered = FACE
-	species_restricted = list(SPECIES_VOX, SPECIES_VOX_ARMALIS)
-	filtered_gases = list("phoron", "sleeping_agent", "oxygen")
-	w_class = ITEM_SIZE_SMALL
+	body_parts_covered = 0
 
+	species_restricted = list(SPECIES_VOX, SPECIES_VOX_ARMALIS)
+	filtered_gases = list(GAS_PHORON, GAS_N2O, GAS_OXYGEN,\
+															GAS_CHLORINE, GAS_AMMONIA, GAS_METHYL_BROMIDE, GAS_CO, GAS_CO2)//inf
+
+	tint = 0 //INF
 
 /obj/item/clothing/mask/gas/swat/vox
 	name = "alien mask"
-	desc = "Clearly not designed for a human face."
+	desc = "Clearly not designed for a human face. WARNING: DOESN'T FILTERS HOT SPRAY!"
 	icon_state = "voxswat"
 	item_state = "voxswat"
-	body_parts_covered = 0 //Hack to allow vox to eat while wearing this mask.
+	body_parts_covered = EYES
 	species_restricted = list(SPECIES_VOX, SPECIES_VOX_ARMALIS)
-	filtered_gases = list("phoron", "sleeping_agent", "oxygen")
+	filtered_gases = list(
+		GAS_OXYGEN,
+		GAS_PHORON,
+		GAS_N2O,
+		GAS_CHLORINE,
+		GAS_AMMONIA,
+		GAS_CO,
+		GAS_METHYL_BROMIDE,
+		GAS_METHANE
+		)
+	tint = 0 //INF
 
 /obj/item/clothing/mask/gas/aquabreather
 	name = "aquabreather"
 	desc = "A compact CO2 scrubber and breathing apparatus that draws oxygen from water."
 	icon_state = "halfgas"
 	filter_water = TRUE
+//[INF]
+	sprite_sheets = list(
+		SPECIES_VOX = 'icons/mob/species/vox/onmob_mask_vox.dmi',
+		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_mask_vox_armalis.dmi',
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/mask.dmi',
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/mask.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_mask_resomi.dmi',
+		SPECIES_EROSAN = 'infinity/icons/mob/species/erosan/mask.dmi',
+		)
+//[/INF]
+
 	body_parts_covered = FACE
+	tint = 0 //INF
 	w_class = 2

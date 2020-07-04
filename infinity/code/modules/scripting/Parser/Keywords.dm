@@ -12,15 +12,15 @@ var/const/KW_WARN = 3 //Warning
 var/const/Class: n_Keyword
 var/const/Represents a special statement in the code triggered by a keyword.
 */
-/n_Keyword
-	New(inline=0)
-		src.inline=inline
-		return ..()
+/n_Keyword/New(inline=0)
+	src.inline=inline
+	return ..()
 
 /*
 	Var: inline
 	1 if the keyword is in an expression (e.g. the new keyword in many languages), 0 otherwise (such as the if and else keywords).
 */
+/n_Keyword
 	var/inline
 
 /*
@@ -78,7 +78,7 @@ var/const/Represents a special statement in the code triggered by a keyword.
 				.=KW_PASS
 				var/list/L=parser.curBlock.statements
 				var/node/statement/IfStatement/stmt
-				if(L&&L.len) stmt=L[L.len] //Get the last statement in the current block
+				if(L?.len) stmt=L[L.len] //Get the last statement in the current block
 				if(!stmt || !istype(stmt) || stmt.else_block) //Ensure that it is an if statement
 					parser.errors+=new/scriptError/ExpectedToken("if statement",parser.curToken)
 					return KW_FAIL
@@ -134,7 +134,7 @@ var/const/Represents a special statement in the code triggered by a keyword.
 				parser.NextToken()
 				if(!parser.CheckToken("(", /token/symbol))
 					return KW_FAIL
-				for() //for now parameters can be separated by whitespace - they don't need a comma in between
+				while(1) //for now parameters ? can be separated by whitespace - they don't need a comma in between
 					if(istype(parser.curToken, /token/symbol))
 						switch(parser.curToken.value)
 							if(",")

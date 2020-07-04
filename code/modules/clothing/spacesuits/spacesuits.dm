@@ -13,7 +13,10 @@
 		slot_r_hand_str = "s_helmet",
 		)
 	permeability_coefficient = 0
-	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 100, rad = 50)
+	armor = list(
+		bio = ARMOR_BIO_SHIELDED, 
+		rad = ARMOR_RAD_SMALL
+		)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EYES
 	cold_protection = HEAD
@@ -23,7 +26,7 @@
 	siemens_coefficient = 0.9
 	center_of_mass = null
 	randpixel = 0
-	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_DIONA, "Xenophage")
+	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_DIONA)
 	flash_protection = FLASH_PROTECTION_MAJOR
 
 	var/obj/machinery/camera/camera
@@ -32,6 +35,7 @@
 	light_overlay = "helmet_light"
 	brightness_on = 0.5
 	on = 0
+	tint = 2 //INF, WAS NOTHING (0)
 
 	var/tinted = null	//Set to non-null for toggleable tint helmets
 
@@ -65,8 +69,9 @@
 		else
 			to_chat(usr, "<span class='notice'>Camera deactivated.</span>")
 
-/obj/item/clothing/head/helmet/space/examine(var/mob/user)
-	if(..(user, 1) && camera)
+/obj/item/clothing/head/helmet/space/examine(mob/user, distance)
+	. = ..()
+	if(distance <= 1 && camera)
 		to_chat(user, "This helmet has a built-in camera. Its [!ispath(camera) && camera.status ? "" : "in"]active.")
 
 /obj/item/clothing/head/helmet/space/proc/update_tint()
@@ -112,7 +117,10 @@
 	item_flags = ITEM_FLAG_THICKMATERIAL
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank/emergency,/obj/item/device/suit_cooling_unit)
-	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 100, rad = 50)
+	armor = list(
+		bio = ARMOR_BIO_SHIELDED, 
+		rad = ARMOR_RAD_SMALL
+		)
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
 	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
@@ -121,8 +129,9 @@
 	siemens_coefficient = 0.9
 	center_of_mass = null
 	randpixel = 0
-	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_DIONA, "Xenophage")
-	valid_accessory_slots = list(ACCESSORY_SLOT_INSIGNIA)
+	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_DIONA)
+	valid_accessory_slots = list(ACCESSORY_SLOT_INSIGNIA, \
+								ACCESSORY_SLOT_ARMBAND, ACCESSORY_SLOT_OVER) // INF@CODE
 
 /obj/item/clothing/suit/space/New()
 	..()

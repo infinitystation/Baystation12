@@ -22,8 +22,8 @@
 
 	data["message"] = message
 	if(active_record)
-		user << browse_rsc(active_record.photo_front, "front_[active_record.uid].png")
-		user << browse_rsc(active_record.photo_side, "side_[active_record.uid].png")
+		send_rsc(user, active_record.photo_front, "front_[active_record.uid].png")
+		send_rsc(user, active_record.photo_side, "side_[active_record.uid].png")
 		data["creation"] = check_access(user, access_bridge)
 		data["pic_edit"] = check_access(user, access_bridge) || check_access(user, access_security)
 		data += active_record.generate_nano_data(user_access)
@@ -53,8 +53,9 @@
 /datum/nano_module/records/proc/get_record_access(var/mob/user)
 	var/list/user_access = using_access || user.GetAccess()
 
-	var/obj/item/modular_computer/PC = nano_host()
-	if(istype(PC) && PC.computer_emagged)
+	var/obj/PC = nano_host()
+	var/datum/extension/interactive/ntos/os = get_extension(PC, /datum/extension/interactive/ntos)
+	if(os && os.emagged())
 		user_access = user_access.Copy()
 		user_access |= access_syndicate
 

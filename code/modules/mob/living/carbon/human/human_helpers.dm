@@ -51,14 +51,20 @@
 	equipment_darkness_modifier = 0
 	equipment_overlays.Cut()
 
-	if(istype(src.head, /obj/item/clothing/head))
-		add_clothing_protection(head)
-	if(istype(src.glasses, /obj/item/clothing/glasses))
-		process_glasses(glasses)
-	if(istype(src.wear_mask, /obj/item/clothing/mask))
-		add_clothing_protection(wear_mask)
-	if(istype(back,/obj/item/weapon/rig))
-		process_rig(back)
+	if (!client || client.eye == src || client.eye == src.loc) // !client is so the unit tests function
+		if(istype(src.head, /obj/item/clothing/head))
+			add_clothing_protection(head)
+		if(istype(src.glasses, /obj/item/clothing/glasses))
+			process_glasses(glasses)
+		if(istype(src.wear_mask, /obj/item/clothing/mask))
+			add_clothing_protection(wear_mask)
+		if(istype(back,/obj/item/weapon/rig))
+			process_rig(back)
+	else //[inf]
+		if(istype(src.head, /obj/item/clothing/head))
+			add_clothing_protection(head)
+		if(istype(src.glasses, /obj/item/clothing/glasses))
+			add_clothing_protection(glasses)//[/INF]
 
 /mob/living/carbon/human/proc/process_glasses(var/obj/item/clothing/glasses/G)
 	if(G)
@@ -113,6 +119,9 @@
 				PDA.SetName(replacetext(PDA.name, old_name, new_name))
 				search_pda = 0
 
+	if(wearing_rig && wearing_rig.update_visible_name)
+		wearing_rig.visible_name = real_name
+
 
 //Get species or synthetic temp if the mob is a FBP. Used when a synthetic type human mob is exposed to a temp check.
 //Essentially, used when a synthetic human mob should act diffferently than a normal type mob.
@@ -156,7 +165,7 @@
 /mob/living/carbon/human/proc/sonar_ping()
 	set name = "Listen In"
 	set desc = "Allows you to listen in to movement and noises around you."
-	set category = "IC"
+	set category = "Abilities"
 
 	if(incapacitated())
 		to_chat(src, "<span class='warning'>You need to recover before you can use this ability.</span>")
@@ -211,10 +220,8 @@
 
 /mob/living/carbon/human/reset_layer()
 	if(hiding)
-		plane = HIDING_MOB_PLANE
 		layer = HIDING_MOB_LAYER
 	else if(lying)
-		plane = LYING_HUMAN_PLANE
 		layer = LYING_HUMAN_LAYER
 	else
 		..()
@@ -233,8 +240,14 @@
 			E.damage += rand(1, 2)
 			if(E.damage > 12)
 				eye_blurry += rand(3,6)
+		if(FLASH_PROTECTION_MINOR)
+			to_chat(src, "<span class='warning'>Your eyes stings!</span>")
+			E.damage += rand(1, 4)
+			if(E.damage > 10)
+				eye_blurry += rand(3,6)
+				E.damage += rand(1, 4)
 		if(FLASH_PROTECTION_NONE)
-			to_chat(src, "<span class='warning'>Your eyes burn.</span>")
+			to_chat(src, "<span class='warning'>Your eyes burn!</span>")
 			E.damage += rand(2, 4)
 			if(E.damage > 10)
 				E.damage += rand(4,10)
@@ -334,3 +347,12 @@
 	if(isSynthetic())
 		return // Can't cure disabilites, so don't give them.
 	..()
+
+/mob/living/carbon/human/proc/has_meson_effect()
+	. = FALSE
+	for(var/obj/screen/equipment_screen in equipment_overlays) // check through our overlays to see if we have any source of the meson overlay
+		if(equipment_screen.color == "#9fd800") //INF, WAS if(equipment_screen.icon_state == "meson_hud")
+			return TRUE
+
+/mob/living/carbon/human/proc/is_in_pocket(var/obj/item/I)
+	return I in list(l_store, r_store)

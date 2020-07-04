@@ -41,16 +41,10 @@
 /obj/structure/closet/secure_closet/hos/sierra/WillContain()
 	return list(
 		/obj/item/clothing/suit/armor/pcarrier/medium/nt,
-		/obj/item/clothing/under/rank/head_of_security/jensen,
-		/obj/item/clothing/under/rank/head_of_security/corp/alt,
-		/obj/item/clothing/under/rank/head_of_security/navyblue,
-		/obj/item/clothing/under/rank/head_of_security/navyblue/alt,
 		/obj/item/clothing/suit/storage/hoscoat,
 		/obj/item/clothing/suit/armor/hos,
-		/obj/item/clothing/head/beret/sec/corporate/hos,
 		/obj/item/clothing/head/helmet/nt,
 		/obj/item/clothing/head/HoS/dermal,
-		/obj/item/clothing/head/HoS,
 		/obj/item/device/radio/headset/heads/hos,
 		/obj/item/device/radio/headset/heads/hos/alt,
 		/obj/item/clothing/glasses/sunglasses/sechud/toggle,
@@ -86,6 +80,7 @@
 		/obj/item/clothing/suit/armor/pcarrier/medium/nt,
 		/obj/item/clothing/head/helmet/nt,
 		/obj/item/clothing/head/beret/sec/corporate/warden,
+		/obj/item/clothing/head/beret/sec/navy/warden,
 		/obj/item/clothing/under/rank/warden/corp/alt,
 		/obj/item/clothing/under/rank/warden/navyblue,
 		/obj/item/clothing/under/rank/warden/navyblue/alt,
@@ -157,8 +152,6 @@
 		/obj/item/clothing/head/helmet/nt,
 		/obj/item/device/radio/headset/headset_sec,
 		/obj/item/device/radio/headset/headset_sec/alt,
-		/obj/item/clothing/head/beret/sec/corporate/officer,
-		/obj/item/clothing/under/rank/security/corp,
 		/obj/item/weapon/storage/belt/holster/security,
 		/obj/item/device/flash,
 		/obj/item/weapon/reagent_containers/spray/pepper,
@@ -178,3 +171,36 @@
 		/obj/item/clothing/mask/gas/half,
 		/obj/item/weapon/storage/firstaid/individual/military
 	)
+
+/obj/structure/closet/secure_closet/security/sierra/cadet
+	name = "cadet's locker"
+	req_access = list(access_security)
+
+/obj/structure/closet/secure_closet/security/sierra/cadet/WillContain()
+	return list(
+		/obj/item/device/flash,
+		/obj/item/device/radio/off,
+		/obj/item/device/flashlight/maglight,
+		/obj/item/device/holowarrant,
+		/obj/item/device/hailer,
+		/obj/item/taperoll/police,
+		/obj/item/weapon/storage/belt/holster/security,
+		/obj/item/weapon/reagent_containers/spray/pepper,
+		/obj/item/weapon/crowbar/prybar,
+		/obj/item/weapon/gun/energy/confuseray/secure,
+		/obj/item/clothing/glasses/hud/security
+	)
+
+/obj/structure/closet/secure_closet/brig/WillContain()
+	return list(
+		/obj/item/clothing/under/color/orange,
+		/obj/item/clothing/shoes/orange,
+		/obj/item/modular_computer/pda,
+		/obj/item/device/radio/headset
+	)
+
+/obj/structure/closet/wardrobe/orange/New()
+	..()
+	new /obj/item/modular_computer/pda(src)
+	new /obj/item/modular_computer/pda(src)
+	new /obj/item/modular_computer/pda(src)

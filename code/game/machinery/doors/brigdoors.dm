@@ -41,7 +41,7 @@
 			targets += M
 
 	for(var/obj/machinery/flasher/F in SSmachines.machinery)
-		if(F.id == src.id)
+		if(F.id_tag == src.id)
 			targets += F
 
 	for(var/obj/structure/closet/secure_closet/brig/C in world)
@@ -56,7 +56,6 @@
 // if it's less than 0, open door, reset timer
 // update the door_timer window and the icon
 /obj/machinery/door_timer/Process()
-
 	if(stat & (NOPOWER|BROKEN))	return
 	if(src.timing)
 
@@ -148,12 +147,9 @@
 
 	return
 
-//Allows AIs to use door_timer, see human attack_hand function below
-/obj/machinery/door_timer/attack_ai(var/mob/user as mob)
-	return src.attack_hand(user)
-
-/obj/machinery/door_timer/attack_hand(var/mob/user as mob)
+/obj/machinery/door_timer/interface_interact(var/mob/user)
 	ui_interact(user)
+	return TRUE
 
 /obj/machinery/door_timer/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
 	var/list/data = list()
@@ -201,7 +197,7 @@
 		for(var/obj/machinery/flasher/F in targets)
 			F.flash()
 		. =  TOPIC_REFRESH
-		
+
 	if (href_list["adjust"])
 		timetoset += text2num(href_list["adjust"])
 		timetoset = Clamp(timetoset, 0, 36000)
@@ -254,7 +250,7 @@
 //Stolen from status_display
 /obj/machinery/door_timer/proc/texticon(var/tn, var/px = 0, var/py = 0)
 	var/image/I = image('icons/obj/status_display.dmi', "blank")
-	var/len = lentext(tn)
+	var/len = length(tn)
 
 	for(var/d = 1 to len)
 		var/char = copytext(tn, len-d+1, len-d+2)

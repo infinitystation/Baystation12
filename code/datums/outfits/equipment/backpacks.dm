@@ -15,7 +15,7 @@
 /decl/backpack_outfit/backpack
 	name = "Backpack"
 	path = /obj/item/weapon/storage/backpack
-	is_default = TRUE
+//inf	is_default = TRUE
 
 /decl/backpack_outfit/rucksack
 	name = "Rucksack"
@@ -25,6 +25,7 @@
 /decl/backpack_outfit/satchel
 	name = "Satchel"
 	path = /obj/item/weapon/storage/backpack/satchel
+	is_default = TRUE //inf
 
 /decl/backpack_outfit/satchel/New()
 	..()

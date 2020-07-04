@@ -134,8 +134,8 @@
 			/obj/item/weapon = "WEAPON",
 			/obj/machinery/atmospherics = "ATMOS_MECH",
 			/obj/machinery/portable_atmospherics = "PORT_ATMOS",
-			/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack = "MECHA_MISSILE_RACK",
-			/obj/item/mecha_parts/mecha_equipment = "MECHA_EQUIP",
+			//obj/item/mech_equipment/weapon/ballistic/missile_rack = "MECHA_MISSILE_RACK",
+			/obj/item/mech_equipment = "MECHA_EQUIP",
 			/obj/item/organ = "ORGAN",
 			/obj/item = "ITEM",
 			/obj/machinery = "MACHINERY",
@@ -365,20 +365,16 @@
 	for(var/areatype in areas_without_camera)
 		log_debug("* [areatype]")
 
-/client/proc/cmd_admin_dress(mob/living/carbon/human/F as mob in GLOB.human_mob_list)
+/client/proc/cmd_admin_dress(mob/H as mob in SSmobs.mob_list) //inf, was /datum/admins/proc/cmd_admin_dress(),
 	set category = "Fun"
 	set name = "Select equipment"
 
 	if(!check_rights(R_FUN))
 		return
 
-	var/mob/living/carbon/human/H
-	if(F)
-		H = F
-	else
-		H = input("Select mob.", "Select equipment.") as null|anything in GLOB.human_mob_list
-	if(!H)
-		return
+//inf	var/mob/living/carbon/human/H = input("Select mob.", "Select equipment.") as null|anything in GLOB.human_mob_list
+//inf	if(!H)
+//inf		return
 
 	var/decl/hierarchy/outfit/outfit = input("Select outfit.", "Select equipment.") as null|anything in outfits()
 	if(!outfit)
@@ -398,6 +394,56 @@
 		H.delete_inventory(TRUE)
 	outfit.equip(H)
 	log_and_message_admins("changed the equipment of [key_name(H)] to [outfit.name].")
+
+/client/proc/startSinglo()
+	set category = "Debug"
+	set name = "Start Singularity"
+	set desc = "Sets up the singularity and all machines to get power flowing"
+
+	if(alert("Are you sure? This will start up the engine. Should only be used during debug!",,"Yes","No") != "Yes")
+		return
+
+	for(var/obj/machinery/power/emitter/E in world)
+		if(E.anchored)
+			E.active = 1
+
+	for(var/obj/machinery/field_generator/F in world)
+		if(F.anchored)
+			F.Varedit_start = 1
+	spawn(30)
+		for(var/obj/machinery/the_singularitygen/G in world)
+			if(G.anchored)
+				var/obj/singularity/S = new /obj/singularity(get_turf(G), 50)
+				spawn(0)
+					qdel(G)
+				S.energy = 1750
+				S.current_size = 7
+				S.icon = 'icons/effects/224x224.dmi'
+				S.icon_state = "singularity_s7"
+				S.pixel_x = -96
+				S.pixel_y = -96
+				S.grav_pull = 0
+				//S.consume_range = 3
+				S.dissipate = 0
+				//S.dissipate_delay = 10
+				//S.dissipate_track = 0
+				//S.dissipate_strength = 10
+
+	for(var/obj/machinery/power/rad_collector/Rad in world)
+		if(Rad.anchored)
+			if(!Rad.P)
+				var/obj/item/weapon/tank/phoron/Phoron = new/obj/item/weapon/tank/phoron(Rad)
+				Phoron.air_contents.gas[GAS_PHORON] = 70
+				Rad.drainratio = 0
+				Rad.P = Phoron
+				Phoron.forceMove(Rad)
+
+			if(!Rad.active)
+				Rad.toggle_power()
+
+	for(var/obj/machinery/power/smes/SMES in world)
+		if(SMES.anchored)
+			SMES.input_attempt = 1
 
 /client/proc/cmd_debug_mob_lists()
 	set category = "Debug"
@@ -481,7 +527,6 @@
 /obj/effect/debugmarker
 	icon = 'icons/effects/lighting_overlay.dmi'
 	icon_state = "transparent"
-	plane = ABOVE_TURF_PLANE
 	layer = HOLOMAP_LAYER
 	alpha = 127
 
@@ -498,7 +543,8 @@
 		var/netcolor = rgb(rand(100,255),rand(100,255),rand(100,255))
 		for(var/obj/structure/cable/C in PN.cables)
 			var/image/I = image('icons/effects/lighting_overlay.dmi', get_turf(C), "transparent")
-			I.plane = ABOVE_TURF_PLANE
+			I.plane = DEFAULT_PLANE
+			I.layer = EXPOSED_WIRE_LAYER
 			I.alpha = 127
 			I.color = netcolor
 			I.maptext = "\ref[PN]"

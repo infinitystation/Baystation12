@@ -32,9 +32,13 @@ a creative player the means to solve many problems.  Circuits are held inside an
 
 /obj/item/integrated_circuit/examine(mob/user)
 	. = ..()
-	if(.)
+	external_examine(user)
+
+/obj/item/integrated_circuit/ShiftClick(mob/living/user)
+	if(istype(user))
 		interact(user)
-		external_examine(user)
+	else
+		..()
 
 // This should be used when someone is examining while the case is opened.
 /obj/item/integrated_circuit/proc/internal_examine(mob/user)
@@ -143,6 +147,10 @@ a creative player the means to solve many problems.  Circuits are held inside an
 	HTML += "<a href='?src=\ref[src];scan=1'>\[Copy Ref\]</a>"
 	if(assembly && removable)
 		HTML += "  |  <a href='?src=\ref[assembly];component=\ref[src];remove=1'>\[Remove\]</a>"
+	//[INF]
+	if((istype(src, /obj/item/integrated_circuit/manipulation/weapon_firing) && src.vars["installed_gun"] != null) || (istype(src, /obj/item/integrated_circuit/manipulation/ai) && src.vars["controlling"] != null) || (istype(src, /obj/item/integrated_circuit/manipulation/grenade) && src.vars["attached_grenade"] != null))
+		HTML += "  |  <a href='?src=\ref[src];iremove=1'>\[Remove item\]</a>"
+	//[/INF]
 	HTML += "<br>"
 
 	HTML += "<colgroup>"
@@ -289,6 +297,19 @@ a creative player the means to solve many problems.  Circuits are held inside an
 			to_chat(usr, "<span class='warning'>You need a screwdriver to remove components.</span>")
 		interact_with_assembly(usr)
 		. = IC_TOPIC_REFRESH
+	//[INF]
+	else if(href_list["iremove"])
+		if(istype(src,/obj/item/integrated_circuit/manipulation/weapon_firing))
+			var/obj/item/integrated_circuit/manipulation/weapon_firing/B = src
+			B.eject_gun(usr)
+		else if(istype(src,/obj/item/integrated_circuit/manipulation/ai))
+			var/obj/item/integrated_circuit/manipulation/ai/B = src
+			B.unload_ai()
+		else if(istype(src,/obj/item/integrated_circuit/manipulation/grenade))
+			var/obj/item/integrated_circuit/manipulation/grenade/B = src
+			B.detach_grenade()
+		internal_examine(usr)
+	//[/INF]
 
 	else
 		. = OnICTopic(href_list, usr)

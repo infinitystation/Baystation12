@@ -7,7 +7,7 @@
 	ideal_character_age = 45
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Chief Medical Officer"
+	supervisors = "Главврачом"
 	selection_color = "#013d3b"
 	economic_power = 8
 	alt_titles = list(
@@ -26,9 +26,9 @@
 	                    SKILL_ANATOMY     = SKILL_MAX)
 	skill_points = 26
 
-	access = list(access_medical, access_morgue, access_virology, access_maint_tunnels, access_emergency_storage,
-			            access_crematorium, access_surgery, access_eva,
-			            access_medical_equip, access_senmed, access_hangar, access_chemistry)
+	access = list(	access_medical, access_morgue, access_virology, access_maint_tunnels, access_emergency_storage,
+				access_crematorium, access_surgery, access_eva, access_external_airlocks,
+				access_medical_equip, access_senmed, access_hangar, access_chemistry)
 
 	minimal_access = list()
 
@@ -42,12 +42,11 @@
 
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "the Chief Medical Officer"
+	supervisors = "Главврачом"
 	economic_power = 7
 	ideal_character_age = 40
 	alt_titles = list(
-		"Paramedic" = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/paramedic,
-		"Virologist" = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/virologist)
+		"Paramedic" = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/paramedic)
 
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor
 	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
@@ -75,7 +74,7 @@
 
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Chief Medical Officer and Medical Personnel"
+	supervisors = "Главврачом и остальным медицинским персоналом"
 	selection_color = "#013d3b"
 	economic_power = 3
 	ideal_character_age = 30
@@ -108,7 +107,7 @@
 
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Chief Medical Officer"
+	supervisors = "Главврачом"
 	selection_color = "#013d3b"
 	economic_power = 5
 	ideal_character_age = 30
@@ -134,11 +133,10 @@
 	total_positions = 1
 	spawn_positions = 1
 	ideal_character_age = 40
-	economic_power = 5
-	supervisors = "the Chief Medical Officer"
+	economic_power = 8
+	supervisors = "Главврачом"
 	alt_titles = list(
-		"Psychiatrist" = /decl/hierarchy/outfit/job/sierra/crew/medical/counselor/psychiatrist,
-		"Chaplain" = /decl/hierarchy/outfit/job/sierra/crew/medical/counselor/chaplain,
+		"Mentalist" = /decl/hierarchy/outfit/job/sierra/crew/medical/counselor/mentalist
 	)
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/counselor
 	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/civilian, /datum/mil_branch/contractor)
@@ -154,3 +152,21 @@
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
+
+	give_psionic_implant_on_join = FALSE
+
+/datum/job/psychiatrist/equip(var/mob/living/carbon/human/H)
+	if(H.mind.role_alt_title == "Counselor")
+		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_OPERANT)
+	if(H.mind.role_alt_title == "Mentalist")
+		psi_faculties = list("[PSI_COERCION]" = PSI_RANK_OPERANT)
+	return ..()
+
+/datum/job/psychiatrist/get_description_blurb()
+	return "Вы - друг, наставник, священник... Или обычный психотерапевт. Помимо своих прямых обязанностей в обеспечении \
+	персонала качественной (насколько это возможно) психологической помощью, у вас имеется особенность - вы псионически \
+	одарены. Корпорация хорошо платит вам за то, чтобы вы проводили псионическое обследования членов экипажа на \
+	предмет обладания особыми силами, естественно, с отчетом об этом. Ваша зарплата превышает таковую у \
+	среднестатистческого менталиста из Фонда, и, вероятно, не просто так.<hr>В то время, как Менталист склонен к \
+	исправлению психологических недугов, поиску псионики и даже чтению мыслей, Советник может проводить медицинскую \
+	диагностику и слабое лечение."

@@ -1,15 +1,19 @@
 /area/ship/tajsciship
-	name = "CCA NSV Ma'Shira-13"
+	name = "Tajaran Ship" //CCA NSV Ma'Shira-13
 	icon_state = "ship"
 	icon = 'maps/away_inf/tajsc/tajsciship.dmi'
-	req_access = list("access_tajsciship")
+	req_access = list(access_tajsciship)
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
+	turf_initializer = /decl/turf_initializer/maintenance/heavy //damaged ship
 
-/area/ship/tajsciship/dorms
+/area/ship/tajsciship/bridge
+	name = "Bridge"
+
+/area/ship/tajsciship/dormitory
 	name = "Living Area"
 	icon_state = "dorms"
 
-/area/ship/tajsciship/meatbay
+/area/ship/tajsciship/medbay
 	name = "Medical Zone"
 	icon_state = "meatbay"
 
@@ -29,15 +33,21 @@
 	name = "Enginus"
 	icon_state = "engines"
 
-/area/ship/tajsciship/sklad1
+/area/ship/tajsciship/storage
 	name = "Empty Room"
 	icon_state = "sklad1"
 
-/area/ship/tajsciship/solari
-	name = "Solar Panels"
+/area/ship/tajsciship/solars
+	name = "Solar Array Control"
 	icon_state = "solari"
 
-/area/ship/tajscishuttle
+/area/ship/tajsciship/solars/array
+	name = "Solar Array"
+	icon_state = "solari"
+	area_flags = AREA_FLAG_EXTERNAL
+	turf_initializer = null
+
+/area/ship/tajsciship/shuttle
 	name = "CCA EC Shuttle"
 	icon_state = "shtl"
 	base_turf = /turf/simulated/floor/plating

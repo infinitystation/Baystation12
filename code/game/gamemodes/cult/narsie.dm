@@ -15,6 +15,8 @@ var/global/list/narsie_list = list()
 	grav_pull = 10 //How many tiles out do we pull?
 	consume_range = 3 //How many tiles out do we eat
 
+	var/invoke_sound = 'infinity/sound/TG/cult/invoke_general.ogg' //inf
+	var/acquire_sound = 'infinity/sound/TG/cult/narsie_attack.ogg' //inf
 
 /obj/singularity/narsie/New()
 	..()
@@ -44,7 +46,7 @@ var/global/list/narsie_list = list()
 	..()
 	if(announce)
 		to_world("<font size='15' color='red'><b>[uppertext(name)] HAS RISEN</b></font>")
-		sound_to(world, sound('sound/effects/wind/wind_5_1.ogg'))
+		sound_to(world, sound(invoke_sound)) //inf //was: "sound_to(world, sound('sound/effects/wind/wind_5_1.ogg'))"
 
 	narsie_spawn_animation()
 
@@ -274,8 +276,7 @@ var/global/list/narsie_list = list()
 			continue
 		if(cult_nh_mind.current.stat)
 			continue
-		var/turf/pos = get_turf(cult_nh_mind.current)
-		if(pos.z != src.z)
+		if(get_z(cult_nh_mind.current) != z)
 			continue
 		cultists += cult_nh_mind.current
 	if(cultists.len)
@@ -315,6 +316,7 @@ var/global/list/narsie_list = list()
 
 	if (ishuman(target))
 		to_chat(target, "<span class='danger'>[capname] HUNGERS FOR YOUR SOUL.</span>")
+		sound_to(target, sound(acquire_sound)) //inf
 	else
 		to_chat(target, "<span class='danger'>[capname] HAS CHOSEN YOU TO LEAD HIM TO HIS NEXT MEAL.</span>")
 /obj/singularity/narsie/on_capture()

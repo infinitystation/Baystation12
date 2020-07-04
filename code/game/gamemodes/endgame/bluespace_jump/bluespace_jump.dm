@@ -11,8 +11,6 @@
 /datum/universal_state/bluespace_jump/OnEnter()
 	var/space_zlevel = GLOB.using_map.get_empty_zlevel() //get a place for stragglers
 	for(var/mob/living/M in SSmobs.mob_list)
-		if(is_bot(M))
-			continue
 		if(M.z in affected_levels)
 			var/area/A = get_area(M)
 			if(istype(A,/area/space)) //straggler
@@ -56,7 +54,8 @@
 	if(M.client)
 		to_chat(M,"<span class='notice'>You feel oddly light, and somewhat disoriented as everything around you shimmers and warps ever so slightly.</span>")
 		M.overlay_fullscreen("bluespace", /obj/screen/fullscreen/bluespace_overlay)
-	M.confused = 20
+	if(isbot(M))	M.say("Jump detected. Activating bluespace navigation subystem.")	// INF WAS	M.confused = 20
+	else	M.confused = 20																// INF
 	bluegoasts += new/obj/effect/bluegoast/(get_turf(M),M)
 
 /datum/universal_state/bluespace_jump/proc/clear_bluespaced(var/mob/living/M)
@@ -119,8 +118,8 @@
 /obj/effect/bluegoast/proc/mirror_dir(var/atom/movable/am, var/old_dir, var/new_dir)
 	set_dir(GLOB.reverse_dir[new_dir])
 
-/obj/effect/bluegoast/examine(user)
-	return daddy.examine(user)
+/obj/effect/bluegoast/examine()
+	return daddy.examine(arglist(args))
 
 /obj/effect/bluegoast/proc/blueswitch()
 	var/mob/living/carbon/human/H = new(get_turf(src), daddy.species.name)

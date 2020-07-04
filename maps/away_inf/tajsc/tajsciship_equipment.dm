@@ -1,12 +1,11 @@
-
-/obj/item/weapon/circuitboard/telecomms/allinone/tajsciship
+/obj/item/weapon/stock_parts/circuitboard/telecomms/allinone/tajsciship
 	build_path = /obj/machinery/telecomms/allinone/tajsciship
 
 /obj/machinery/telecomms/allinone/tajsciship
 	listening_freqs = list(TAJSCISHIP_FREQ)
-	channel_color = COMMS_COLOR_SYNDICATE
+	channel_color = COMMS_COLOR_ENTERTAIN
 	channel_name = "CCA EC"
-	circuitboard = /obj/item/weapon/circuitboard/telecomms/allinone/tajsciship
+	circuitboard = /obj/item/weapon/stock_parts/circuitboard/telecomms/allinone/tajsciship
 
 /obj/item/device/radio/headset/tajsciship
 	name = "CCA EC headset"
@@ -22,11 +21,9 @@
 	icon_state = "sci_cypherkey"
 	channels = list("CCA EC" = 1)
 
-/obj/item/clothing/under/tajsciship/ccaecjumpsuit
+/obj/item/clothing/under/tajsciship
 	name = "CCA EC uniform"
 	desc = "A comfortable for tajara turtleneck and black utility trousers."
-	armor = list(melee = 5, bullet = 5, laser = 5, energy = 5, bomb = 0, bio = 5, rad = 5)
-	siemens_coefficient = 0.8
 	icon = 'maps/away_inf/tajsc/tajsciship.dmi'
 	icon_state = "blackutility"
 	item_state = "bl_suit"
@@ -41,6 +38,7 @@
 	name = "Ammunition crate"
 	desc = "A secure weapons crate. It has a CCA mark on him."
 	closet_appearance = /decl/closet_appearance/crate/secure/weapon
+
 /obj/structure/closet/crate/secure/tajquip/prespawned/WillContain()
 	return list(
 		/obj/item/weapon/gun/projectile/shotgun/shotguntaj = 1,
@@ -60,6 +58,30 @@
 	req_access = list(access_tajsciship)
 	TLV["temperature"] =	list(T0C-30, T0C-15, T0C+15, T0C+30)
 
-/obj/machinery/power/apc/shuttle/tajaran
-	cell_type = /obj/item/weapon/cell/high
+/obj/machinery/power/apc/tajaran
+	cell_type = /obj/item/weapon/cell/crap
 	req_access = list(access_tajsciship)
+
+/obj/machinery/power/smes/buildable/preset/tajsciship/configure_and_install_coils()
+	component_parts += new /obj/item/weapon/stock_parts/smes_coil(src)
+	component_parts += new /obj/item/weapon/stock_parts/smes_coil(src)
+	_input_maxed = TRUE
+	_output_maxed = TRUE
+	_input_on = TRUE
+	_output_on = TRUE
+
+/obj/machinery/power/smes/buildable/preset/tajsciship/substation/configure_and_install_coils()
+	component_parts += new /obj/item/weapon/stock_parts/smes_coil/weak(src)
+	_input_maxed = TRUE
+	_output_maxed = TRUE
+	_input_on = TRUE
+	_output_on = TRUE
+
+/turf/simulated/wall/r_wall/hull/tajsciship
+	color = COLOR_SUN
+
+/obj/structure/wall_frame/hull/tajsciship
+	paint_color = COLOR_SUN
+
+/obj/effect/wallframe_spawn/reinforced/hull/tajsciship
+	frame_path = /obj/structure/wall_frame/hull/tajsciship

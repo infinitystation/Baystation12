@@ -2,5 +2,5 @@
 	artist = "Unknown"
 	title = "Make this Right"
 	album = "Right Deals"
-	song = 'sound/music/infinity/TheToxicAvenger_MakeThisRight.ogg'
+	song = 'infinity/sound/music/TheToxicAvenger_MakeThisRight.ogg'
 	license =  /decl/license/grandfathered

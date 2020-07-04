@@ -52,8 +52,7 @@
 		MATERIAL_MAPLE =       TRUE,
 		MATERIAL_EBONY =       TRUE,
 		MATERIAL_WALNUT =      TRUE,
-		MATERIAL_COTTON =      TRUE,
-		MATERIAL_LEATHER =     TRUE,
+		MATERIAL_LEATHER_GENERIC =     TRUE,
 		MATERIAL_PLASTIC =     TRUE,
 		MATERIAL_CARDBOARD =   TRUE,
 		MATERIAL_CLOTH =       TRUE,
@@ -100,7 +99,7 @@
 			for(var/datum/reagent/R in ingested.reagent_list)
 				var/inedible_nutriment_amount = gains_nutriment_from_inedible_reagents[R.type]
 				if(inedible_nutriment_amount > 0)
-					owner.nutrition += inedible_nutriment_amount
+					owner.adjust_nutrition(inedible_nutriment_amount)
 
 		// Do we have any objects to digest?
 		var/list/check_materials
@@ -121,7 +120,7 @@
 
 				// Process it.
 				if(can_digest_matter[mat])
-					owner.nutrition += max(1, Floor(digested/100))
+					owner.adjust_nutrition(max(1, Floor(digested/100)))
 					updated_stacks = TRUE
 				else if(can_process_matter[mat])
 					LAZYDISTINCTADD(check_materials, mat)
@@ -186,8 +185,8 @@
 	do_backup()
 	robotize()
 
-/obj/item/organ/internal/voxstack/examine(var/mob/user)
-	. = ..(user)
+/obj/item/organ/internal/voxstack/examine(mob/user)
+	. = ..()
 
 	var/user_vox = isspecies(user, SPECIES_VOX) || isspecies(user, SPECIES_VOX_ARMALIS)
 	if (istype(backup))

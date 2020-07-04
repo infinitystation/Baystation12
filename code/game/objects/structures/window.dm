@@ -8,6 +8,7 @@
 	layer = SIDE_WINDOW_LAYER
 	anchored = 1.0
 	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CHECKS_BORDER
+	obj_flags = OBJ_FLAG_ROTATABLE
 	alpha = 180
 	var/material/reinf_material
 	var/init_material = MATERIAL_GLASS
@@ -21,8 +22,9 @@
 	var/silicate = 0 // number of units of silicate
 	var/basestate = "window"
 	var/reinf_basestate = "rwindow"
+	rad_resistance_modifier = 0.5
 	blend_objects = list(/obj/machinery/door, /turf/simulated/wall) // Objects which to blend with
-	noblend_objects = list(/obj/machinery/door/window, /obj/machinery/door/blast/regular/evacshield)
+	noblend_objects = list(/obj/machinery/door/window, /obj/machinery/door/blast/regular/evacshield, /obj/machinery/door/firedoor/border_only) //INF, WAS: /obj/machinery/door/window
 	atmos_canpass = CANPASS_PROC
 
 /obj/structure/window/get_material()
@@ -52,10 +54,9 @@
 
 	maxhealth = material.integrity
 	if(reinf_material)
-		maxhealth += 0.25 * reinf_material.integrity
+		maxhealth += 0.5 * reinf_material.integrity
 
 	if(is_fulltile())
-		maxhealth *= 4
 		layer = FULL_WINDOW_LAYER
 
 	health = maxhealth
@@ -114,11 +115,14 @@
 		if(sound_effect)
 			playsound(loc, 'sound/effects/Glasshit.ogg', 100, 1)
 		if(health < maxhealth / 4 && initialhealth >= maxhealth / 4)
-			visible_message("<span class='notice'>\The [src] looks like it's about to shatter!</span>")
+			visible_message(SPAN_DANGER("\The [src] looks like it's about to shatter!"))
+			playsound(loc, "glasscrack", 100, 1)
 		else if(health < maxhealth / 2 && initialhealth >= maxhealth / 2)
-			visible_message("\The [src] looks seriously damaged!" )
+			visible_message(SPAN_WARNING("\The [src] looks seriously damaged!"))
+			playsound(loc, "glasscrack", 100, 1)
 		else if(health < maxhealth * 3/4 && initialhealth >= maxhealth * 3/4)
-			visible_message("Cracks begin to appear in \the [src]!" )
+			visible_message(SPAN_WARNING("Cracks begin to appear in \the [src]!"))
+			playsound(loc, "glasscrack", 100, 1)
 	return
 
 /obj/structure/window/proc/apply_silicate(var/amount)
@@ -143,7 +147,7 @@
 /obj/structure/window/proc/shatter(var/display_message = 1)
 	playsound(src, "shatter", 70, 1)
 	if(display_message)
-		visible_message("<span class='notice'>\The [src] shatters!</span>")
+		visible_message("<span class='warning'>\The [src] shatters!</span>")
 
 	var/debris_count = is_fulltile() ? 4 : 1
 	for(var/i = 0 to debris_count)
@@ -185,25 +189,21 @@
 		return 0
 	return 1
 
-/obj/structure/window/hitby(atom/movable/AM)
+/obj/structure/window/hitby(atom/movable/AM, var/datum/thrownthing/TT)
 	..()
 	visible_message("<span class='danger'>[src] was hit by [AM].</span>")
 	var/tforce = 0
 	if(ismob(AM)) // All mobs have a multiplier and a size according to mob_defines.dm
 		var/mob/I = AM
-		tforce = I.mob_size * 2 * I.throw_multiplier
+		tforce = I.mob_size * (TT.speed/THROWFORCE_SPEED_DIVISOR)
 	else if(isobj(AM))
 		var/obj/item/I = AM
-		tforce = I.throwforce
+		tforce = I.throwforce * (TT.speed/THROWFORCE_SPEED_DIVISOR)
 	if(reinf_material) tforce *= 0.25
 	if(health - tforce <= 7 && !reinf_material)
 		set_anchored(FALSE)
 		step(src, get_dir(AM, src))
 	take_damage(tforce)
-
-/obj/structure/window/attack_tk(mob/user as mob)
-	user.visible_message("<span class='notice'>Something knocks on [src].</span>")
-	playsound(loc, 'sound/effects/Glasshit.ogg', 50, 1)
 
 /obj/structure/window/attack_hand(mob/user as mob)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -218,7 +218,7 @@
 		if (istype(user,/mob/living/carbon/human))
 			var/mob/living/carbon/human/H = user
 			if(H.species.can_shred(H))
-				attack_generic(H,25)
+				attack_generic(H,25,pick("strikes")) //inf, was without ',pick("strikes")'
 				return
 
 		playsound(src.loc, 'sound/effects/glassknock.ogg', 80, 1)
@@ -248,6 +248,11 @@
 	else
 		visible_message("<span class='notice'>\The [user] bonks \the [src] harmlessly.</span>")
 	return 1
+
+/obj/structure/window/do_simple_ranged_interaction(var/mob/user)
+	visible_message(SPAN_NOTICE("Something knocks on \the [src]."))
+	playsound(loc, 'sound/effects/Glasshit.ogg', 50, 1)
+	return TRUE
 
 /obj/structure/window/attackby(obj/item/W as obj, mob/user as mob)
 	if(!istype(W)) return//I really wish I did not need this
@@ -284,7 +289,7 @@
 				S.update_strings()
 				S.update_icon()
 			qdel(src)
-	else if(isCoil(W) && reinf_material && !polarized && init_material != /obj/item/stack/material/glass/phoronrglass)
+	else if(isCoil(W) && !polarized && is_fulltile() && init_material != /obj/item/stack/material/glass/phoronrglass)
 		var/obj/item/stack/cable_coil/C = W
 		if (C.use(1))
 			playsound(src.loc, 'sound/effects/sparks1.ogg', 75, 1)
@@ -301,10 +306,11 @@
 		return
 	else if(istype(W, /obj/item/weapon/gun/energy/plasmacutter) && anchored)
 		var/obj/item/weapon/gun/energy/plasmacutter/cutter = W
-		cutter.slice(user)
+		if(!cutter.slice(user))
+			return
 		playsound(src, 'sound/items/Welder.ogg', 80, 1)
 		visible_message("<span class='notice'>[user] has started slicing through the window's frame!</span>")
-		if(do_after(user,30,src))
+		if(do_after(user,20,src))
 			visible_message("<span class='warning'>[user] has sliced through the window's frame!</span>")
 			playsound(src, 'sound/items/Welder.ogg', 80, 1)
 			construction_state = 0
@@ -353,7 +359,7 @@
 
 	if (anchored)
 		to_chat(user, SPAN_NOTICE("\The [src] is secured to the floor!"))
-		return 
+		return
 
 	update_nearby_tiles(need_rebuild=1) //Compel updates before
 	set_dir(turn(dir, 90))
@@ -443,6 +449,9 @@
 	dir = 5
 	icon_state = "window_full"
 
+/obj/structure/window/basic/full/polarized
+	polarized = 1
+
 /obj/structure/window/phoronbasic
 	name = "phoron window"
 	color = GLASS_COLOR_PHORON
@@ -522,13 +531,12 @@
 	icon = 'icons/obj/power.dmi'
 	icon_state = "light0"
 	desc = "A remote control switch for electrochromic windows."
+	var/id
 	var/range = 7
-
-/obj/machinery/button/windowtint/attack_hand(mob/user as mob)
-	if(..())
-		return 1
-
-	toggle_tint()
+	stock_part_presets = null // This isn't a radio-enabled button; it communicates with nearby structures in view.
+	uncreated_component_parts = list(
+		/obj/item/weapon/stock_parts/power/apc
+	)
 
 /obj/machinery/button/windowtint/attackby(obj/item/device/W as obj, mob/user as mob)
 	if(isMultitool(W))
@@ -548,19 +556,18 @@
 		new /obj/item/frame/light_switch/windowtint(user.loc, 1)
 		qdel(src)
 
-/obj/machinery/button/windowtint/proc/toggle_tint()
-	use_power_oneoff(5)
-
-	active = !active
-	queue_icon_update()
+/obj/machinery/button/windowtint/activate()
+	if(operating)
+		return
 	for(var/obj/structure/window/W in range(src,range))
 		if(W.polarized && (W.id == src.id || !W.id))
 			W.toggle()
+	..()
 
 /obj/machinery/button/windowtint/power_change()
 	. = ..()
-	if(active && !powered(power_channel))
-		toggle_tint()
+	if(active && (stat & NOPOWER))
+		activate()
 
 /obj/machinery/button/windowtint/on_update_icon()
 	icon_state = "light[active]"
@@ -597,7 +604,7 @@
 			to_chat(user, "<span class='notice'>There is already a window there.</span>")
 			return
 	to_chat(user, "<span class='notice'>You start placing the window.</span>")
-	if(do_after(user,20,src))
+	if(do_after(user,20))
 		for(var/obj/structure/window/WINDOW in loc)
 			if(WINDOW.dir == dir_to_set)//checking this for a 2nd time to check if a window was made while we were waiting.
 				to_chat(user, "<span class='notice'>There is already a window facing this way there.</span>")

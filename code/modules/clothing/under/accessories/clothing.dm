@@ -151,11 +151,12 @@
 	update_clothing_icon()	//so our overlays update
 
 /obj/item/clothing/accessory/toggleable/vest
-	name = "black vest"
+	name = "vest"
 	desc = "A slick suit vest."
 	icon_state = "det_vest"
 
 /obj/item/clothing/accessory/toggleable/vest/black
+	name = "black vest"
 	color = COLOR_GRAY15
 
 /obj/item/clothing/accessory/toggleable/tan_jacket
@@ -213,7 +214,7 @@
 	icon_state = "hawaii"
 	sprite_sheets = list(
 		SPECIES_NABBER = 'icons/mob/species/nabber/ties.dmi',
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/ties.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_accessories_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/ties.dmi',
 		"Monkey" = 'icons/mob/species/monkey/onmob_accessories_monkey.dmi'
 		)
@@ -324,3 +325,39 @@
 	name = "tangzhuang jacket"
 	desc = "A traditional Chinese coat tied together with straight, symmetrical knots."
 	icon_state = "tangzhuang"  //This was originally intended to have the ability to roll sleeves. I can't into code. Will be done later (hopefully.)
+
+/obj/item/clothing/accessory/fire_overpants
+	name = "fire overpants"
+	desc = "some overpants made of fire-resistant synthetic fibers. To be worn over the uniform."
+	icon_state = "fire_overpants"
+	gas_transfer_coefficient = 0.90
+	permeability_coefficient = 0.50
+	body_parts_covered = LEG_LEFT | LEG_RIGHT | LOWER_TORSO
+	cold_protection = LOWER_TORSO | LEG_LEFT | LEG_RIGHT
+	heat_protection = LOWER_TORSO | LEG_LEFT | LEG_RIGHT
+	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
+	max_pressure_protection = FIRESUIT_MAX_PRESSURE
+	armor = list(melee = 0, bullet = 0, laser = 10, energy = 10, bomb = 10, bio = 0, rad = 0)
+
+/obj/item/clothing/accessory/fire_overpants/Initialize()
+	. = ..()
+	slowdown_per_slot[slot_wear_suit] = 0.2
+
+/obj/item/clothing/accessory/space_adapted/venter
+	name = "venter assembly"
+	desc = "A series of complex tubes, meant to dissipate heat from the skin passively."
+	icon_state = "venter"
+	item_state = "venter"
+	slot = "over"
+
+/obj/item/clothing/accessory/space_adapted/bracer
+	name = "legbrace"
+	desc = "A lightweight polymer frame meant to brace and hold someone's legs upright comfortably, protecting their bones from high levels of gravity."
+	icon_state = "legbrace"
+	item_state = "legbrace"
+
+/obj/item/clothing/accessory/space_adapted/bracer/neckbrace
+	name = "neckbrace"
+	desc = "A lightweight polymer frame meant to brace and hold someone's neck upright comfortably, protecting their bones from high levels of gravity."
+	icon_state = "neckbrace"
+	item_state = "neckbrace"

@@ -1,0 +1,8 @@
+{
+  "ckey" :            "twinindifferent",
+  "character_name" :  "Shattara",
+  "item_name" :       "starclaymore patch",
+  "item_desc" :       "Black patch with two starfighters on it and Starclaymore mercenaries logo. Fancy. Maybe.",
+  "item_icon_state" : "starclaymore_patch",
+  "item_path" :       "/obj/item/clothing/accessory/shouldercape"
+  }

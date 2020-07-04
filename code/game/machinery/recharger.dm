@@ -9,31 +9,16 @@
 	idle_power_usage = 4
 	active_power_usage = 30 KILOWATTS
 	var/obj/item/charging = null
-	var/list/allowed_devices = list(/obj/item/weapon/melee/energy/toothpick, /obj/item/weapon/gun/energy, /obj/item/weapon/gun/magnetic/railgun, /obj/item/weapon/melee/baton, /obj/item/weapon/cell, /obj/item/modular_computer/, /obj/item/device/suit_sensor_jammer, /obj/item/weapon/computer_hardware/battery_module, /obj/item/weapon/shield_diffuser, /obj/item/clothing/mask/smokable/ecig, /obj/item/device/radio)
+	var/list/allowed_devices = list(/obj/item/weapon/gun/energy, /obj/item/weapon/gun/magnetic/railgun, /obj/item/weapon/melee/baton, /obj/item/weapon/cell, /obj/item/modular_computer/, /obj/item/device/suit_sensor_jammer, /obj/item/weapon/stock_parts/computer/battery_module, /obj/item/weapon/shield_diffuser, /obj/item/clothing/mask/smokable/ecig, /obj/item/device/radio,\
+									/obj/item/weapon/melee/energy/toothpick, /obj/item/music_player)
 	var/icon_state_charged = "recharger2"
 	var/icon_state_charging = "recharger1"
 	var/icon_state_idle = "recharger0" //also when unpowered
 	var/portable = 1
-
-/obj/machinery/recharger/New()
-	..()
-	component_parts = list()
-	component_parts += new /obj/item/weapon/circuitboard/recharger(src)
-	component_parts += new /obj/item/weapon/stock_parts/capacitor(src)
-	component_parts += new /obj/item/weapon/stock_parts/capacitor(src)
-	RefreshParts()
-
-/obj/machinery/recharger/RefreshParts()
-	var/C
-	for(var/obj/item/weapon/stock_parts/SP in component_parts)
-		if(istype(SP, /obj/item/weapon/stock_parts/capacitor))
-			C += SP.rating / 2
-	active_power_usage *= C
+	construct_state = /decl/machine_construction/default/panel_closed //inf
+	uncreated_component_parts = null //inf
 
 /obj/machinery/recharger/attackby(obj/item/weapon/G as obj, mob/user as mob)
-	if(istype(user,/mob/living/silicon))
-		return
-
 	var/allowed = 0
 	for (var/allowed_type in allowed_devices)
 		if (istype(G, allowed_type)) allowed = 1
@@ -59,35 +44,23 @@
 			G.forceMove(src)
 			charging = G
 			update_icon()
-			return
-
-	if(portable)
+	else if(portable && isWrench(G))
 		if(charging)
 			to_chat(user, "<span class='warning'>Remove [charging] first!</span>")
 			return
-		if(isWrench(G))
-			anchored = !anchored
-			to_chat(user, "You [anchored ? "attached" : "detached"] the recharger.")
-			playsound(loc, 'sound/items/Ratchet.ogg', 75, 1)
-			return
-		if(default_deconstruction_screwdriver(user, G))
-			return
-		if(default_deconstruction_crowbar(user, G))
-			return
-		if(default_part_replacement(user, G))
-			return
-
-/obj/machinery/recharger/attack_hand(mob/user as mob)
-	if(istype(user,/mob/living/silicon))
-		return
-
+		anchored = !anchored
+		to_chat(user, "You [anchored ? "attached" : "detached"] the recharger.")
+		playsound(loc, 'sound/items/Ratchet.ogg', 75, 1)
 	..()
 
+/obj/machinery/recharger/physical_attack_hand(mob/user)
 	if(charging)
 		charging.update_icon()
 		user.put_in_hands(charging)
 		charging = null
 		update_icon()
+		return TRUE
+
 
 /obj/machinery/recharger/MouseDrop(var/obj/structure/table/T)
 	if(!anchored && istype(T) && CanMouseDrop(T, usr))
@@ -132,13 +105,12 @@
 
 /obj/machinery/recharger/examine(mob/user)
 	. = ..()
-	if(!. || isnull(charging))
+	if(isnull(charging))
 		return
 
-	else
-		var/obj/item/weapon/cell/C = charging.get_cell()
-		if(!isnull(C))
-			to_chat(user, "Item's charge at [round(C.percent())]%.")
+	var/obj/item/weapon/cell/C = charging.get_cell()
+	if(!isnull(C))
+		to_chat(user, "Item's charge at [round(C.percent())]%.")
 
 /obj/machinery/recharger/wallcharger
 	name = "wall recharger"

@@ -14,6 +14,7 @@
 	var/scannable = 0 // Shows up on health analyzers.
 	var/color = "#000000"
 	var/color_weight = 1
+	var/alpha = 255
 	var/flags = 0
 	var/hidden_from_codex
 
@@ -44,6 +45,11 @@
 
 	var/temperature_multiplier = 1
 	var/value = 1
+
+	var/scent //refer to _scent.dm
+	var/scent_intensity = /decl/scent_intensity/normal
+	var/scent_descriptor = SCENT_DESC_SMELL
+	var/scent_range = 1
 
 /datum/reagent/New(var/datum/reagents/holder)
 	if(!istype(holder))

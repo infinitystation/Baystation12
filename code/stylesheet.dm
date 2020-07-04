@@ -22,8 +22,8 @@ em						{font-style: normal;font-weight: bold;}
 .ooc .looc				{color: #3a9696;}
 .ooc .elevated			{color: #306082;}
 .ooc .moderator			{color: #184880;}
-.ooc .developer			{color: #b55801;}
-.ooc .admin				{color: #992d22;}
+.ooc .developer			{color: #1b521f;}
+.ooc .admin				{color: #b82e00;}
 .ooc .aooc				{color: #960018;}
 
 .staffwarn				{color: #ff0000; font-weight:bold; font-size: 150%;}
@@ -34,9 +34,13 @@ em						{font-style: normal;font-weight: bold;}
 .pm  .other				{color: #0000ff;}
 
 /* Admin: Channels */
-.staff_channel			{color: #e5892d;	font-weight: bold;}
-.staff_channel .admin		{color: #b82e00;	font-weight: bold;}
+.mod_channel			{color: #735638;	font-weight: bold;}
+.mod_channel .admin		{color: #b82e00;	font-weight: bold;}
 .admin_channel			{color: #ff5097;	font-weight: bold;}
+
+.staff_channel			{color: #a66300;	font-weight: bold;}
+.staff_channel .admin	{color: #b82e00;	font-weight: bold;}
+.staff_channel .developer {color: #1b521f;	font-weight: bold;}
 
 /* Radio: Misc */
 .deadsay				{color: #530fad;}
@@ -77,7 +81,9 @@ h1.alert, h2.alert		{color: #000000;}
 .italic				{font-style: italic;}
 .bold					{font-weight: bold;}
 .danger					{color: #ff0000; font-weight: bold;}
+.bigdanger					{color: #ff0000; font-weight: bold; font-size: 115%;}
 .warning				{color: #ff0000; font-style: italic;}
+.bigwarning				{color: #ff0000; font-style: italic; font-size: 115%;}
 .boldannounce			{color: #ff0000; font-weight: bold;}
 .rose					{color: #ff5050;}
 .info					{color: #0000cc;}
@@ -85,7 +91,9 @@ h1.alert, h2.alert		{color: #000000;}
 .subtle					{color: #000099; font-size: 75%; font-style: italic;}
 .alium					{color: #00ff00;}
 .cult					{color: #800080; font-weight: bold; font-style: italic;}
-.fountain				{color: #800080; font-style: italic; font-size: 175%;}
+.cultannounce			{color: #800080; font-style: italic; font-size: 175%;}
+.mfauna					{color: #884422; font-weight: bold; font-size: 125%;}
+.antagdesc				{color: #ff0033}
 
 .reflex_shoot			{color: #000099; font-style: italic;}
 
@@ -111,7 +119,8 @@ h1.alert, h2.alert		{color: #000000;}
 .arabic					{color: #128b11;}
 .spacer					{color: #9c660b;}
 .selenian       {color: #22228b;}
-
+.lirris					{color: #023638;}
+.alain					{color: #6a1b9a;}
 .interface				{color: #330033;}
 
 .good                   {color: #4f7529; font-weight: bold;}

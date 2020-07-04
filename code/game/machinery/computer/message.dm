@@ -6,7 +6,6 @@
 	icon_screen = "comm_logs"
 	light_color = "#00b000"
 	var/hack_icon = "error"
-	circuit = /obj/item/weapon/circuitboard/message_monitor
 	//Server linked to.
 	var/obj/machinery/message_server/linkedServer = null
 	//Sparks effect - For emag
@@ -71,16 +70,16 @@
 			linkedServer = message_servers[1]
 	return ..()
 
-/obj/machinery/computer/message_monitor/attack_hand(var/mob/living/user as mob)
-	if(stat & (NOPOWER|BROKEN))
-		return
-	if(!istype(user))
-		return
+/obj/machinery/computer/message_monitor/interface_interact(user)
+	interact(user)
+	return TRUE
+
+/obj/machinery/computer/message_monitor/interact(var/mob/living/user)
 	//If the computer is being hacked or is emagged, display the reboot message.
 	if(hacking || emag)
 		message = rebootmsg
 	var/list/dat = list()
-	dat += "<head><title>Message Monitor Console</title></head><body>"
+	dat += "<meta charset=\"UTF-8\"><head><title>Message Monitor Console</title></head><body>"
 	dat += "<center><h2>Message Monitor Console</h2></center><hr>"
 	dat += "<center><h4><font color='blue'[message]</h5></center>"
 
@@ -192,9 +191,6 @@
 	popup.open()
 	return
 
-/obj/machinery/computer/message_monitor/attack_ai(mob/user as mob)
-	return src.attack_hand(user)
-
 /obj/machinery/computer/message_monitor/proc/BruteForce(mob/user as mob)
 	if(isnull(linkedServer))
 		to_chat(user, "<span class='warning'>Could not complete brute-force: Linked Server Disconnected!</span>")
@@ -300,12 +296,12 @@
 	if (href_list["back"])
 		src.screen = 0
 
-	return src.attack_hand(usr)
+	return interact(usr)
 
 
 /obj/item/weapon/paper/monitorkey
 	//..()
-	name = "Monitor Decryption Key"
+	name = "Monitor and airlocks Decryption Keys"//inf
 	var/obj/machinery/message_server/server = null
 
 /obj/item/weapon/paper/monitorkey/New()
@@ -319,3 +315,8 @@
 						info_links = info
 						icon_state = "paper_words"
 						break
+		//[inf]
+		if(ntnet_global)
+			if(!isnull(ntnet_global.airlock_override_key))
+				info += "<hr><center><h2>Daily Airlocks' access Override Key Reset</h2></center><br>The new NTNet airlocks override key is '[ntnet_global.airlock_override_key]'.<br>This key need to be maximaly hidden from not autorised personel.<br>The override of the access system to the airlocks' can be carried out only during the red and orange code."
+		//[/inf]

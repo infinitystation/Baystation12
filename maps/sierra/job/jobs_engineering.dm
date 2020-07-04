@@ -2,7 +2,7 @@
 	title = "Senior Engineer"
 	department = "Engineering"
 	department_flag = ENG
-	supervisors = "the Chief Engineer"
+	supervisors = "Главным Инженером"
 	selection_color = "#5b4d20"
 
 	total_positions = 1
@@ -42,11 +42,16 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/shields_monitor)
 
+/datum/job/senior_engineer/get_description_blurb()
+	return "Старший Инженер выполняет распоряжения Главного Инженера и контролирует повседневную работу отдела.\
+	 Он - очень опытный и высокопоставленный сотрудник, поэтому должен иметь обширные знания во многих \
+	 областях инженерии. При необходимости он может инструктировать рядовых инженеров."
+
 /datum/job/engineer
 	title = "Engineer"
 	department = "Engineering"
 	department_flag = ENG
-	supervisors = "the Chief Engineer and the Senior Engineer"
+	supervisors = "Главным и Старшим инженерами"
 	selection_color = "#5b4d20"
 
 	total_positions = 4
@@ -94,11 +99,16 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/shields_monitor)
 
+/datum/job/engineer/get_description_blurb()
+	return "Инженер поддерживает рабочее состояние систем корабля. Он отвечает за обеспечение энергией, \
+	воздухом; ремонтирует повреждения, которые могут возникнуть при несчастных случаях. \
+	Почти любая проблема, связанная с механикой и машинерией на борту возлагается на инженеров."
+
 /datum/job/engineer_trainee
 	title = "Engineer Trainee"
 	department = "Engineering"
 	department_flag = ENG
-	supervisors = "the Chief Engineer and Engineering Personnel"
+	supervisors = "Главным и остальными инженерами"
 	selection_color = "#5b4d20"
 
 	total_positions = 2
@@ -137,11 +147,16 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/shields_monitor)
 
+/datum/job/engineer_trainee/get_description_blurb()
+	return "Инженер-стажер выполняет несложные поручения инженеров, изучая инженерную механику на практике. \
+	От стажера не ожидается, что он самостоятельно запустит реактор суперматерии или выполнит другое сложное \
+	задание. Он - ассистент в инженерном отделе."
+
 /datum/job/infsys
 	title = "Information Technician"
 	department = "Engineering"
 	department_flag = ENG
-	supervisors = "the Chief Engineer and the Senior Engineer"
+	supervisors = "Главным и Старшим инженерами"
 	selection_color = "#5b4d20"
 
 	total_positions = 1

@@ -7,7 +7,6 @@
 	faction = "fishes"
 	maxHealth = 10
 	health = 10
-	meat_amount = 1
 	mob_size = MOB_TINY
 	can_pull_size = 0
 	can_pull_mobs = 0
@@ -18,6 +17,10 @@
 	mob_always_swap = 1
 
 
+	meat_amount = 1
+	bone_amount = 3
+	skin_amount = 3
+	
 /mob/living/simple_animal/aquatic/fish/grump
 	icon_state = "grump"
 	icon_living = "grump"
