@@ -483,7 +483,7 @@
 		"ERROR" = list(jobs = list(), color = "#ffffff", colBreak = 1)
 		)
 
-	dat += "<tr><td></td><td colspan = 3><b>[GLOB.using_map.station_name]</b></td></tr>"
+	dat += "<tr><td></td><td align = 'center' colspan = 3><b>[GLOB.using_map.station_name]</b></td></tr>"
 
 	// TORCH JOBS
 	var/list/job_summaries
@@ -534,7 +534,7 @@
 		dat += "<legend align='center' style='color: [color]'>[jobcat]</legend>"
 		dat += "<table>"
 		if(length(categorizedJobs[jobcat]["jobs"]) < 1)
-			dat += "<tr><td></td><td><i>Нет доступных ролей.</i><br></td></tr>"
+			dat += "<tr><td></td><td align = 'center'><i>Нет доступных ролей.</i><br></td></tr>"
 			dat += "</table>"
 			dat += "</fieldset><br>"
 			continue
@@ -578,7 +578,7 @@
 					dat += "</table>"
 					dat += "</fieldset><br>"
 				else
-					dat += "<tr><td></td><td><i>Нет доступных ролей.</i></td></tr>"
+					dat += "<tr><td></td><td align = 'center'><i>Нет доступных ролей.</i></td></tr>"
 					dat += "</table>"
 					dat += "</fieldset><br>"
 		dat += "</td></tr></table>"
