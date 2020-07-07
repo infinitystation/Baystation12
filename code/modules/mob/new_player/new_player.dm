@@ -495,7 +495,7 @@
 			catcheck |= job.department_flag
 		if(summary && summary != "")
 			for(var/category in categorizedJobs)
-				var/list/jobs = categorizedJobs[category]["jobs"]
+				var/list/jobs = list()
 				if(job.department_flag & categorizedJobs[category]["dep"])
 					jobs += job
 				if(category == "ERROR")
@@ -510,7 +510,7 @@
 					if(!check)
 						jobs += job
 				if(length(jobs))
-					categorizedJobs[category]["jobs"].Add(jobs)
+					categorizedJobs[category]["jobs"] += jobs
 		else
 			for(var/raisin in job.get_unavailable_reasons(client))
 				hidden_reasons[raisin] = TRUE
