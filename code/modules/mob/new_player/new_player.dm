@@ -495,7 +495,7 @@
 			catcheck |= job.department_flag
 		if(summary && summary != "")
 			for(var/category in categorizedJobs)
-				var/list/jobs = list()
+				var/list/jobs = categorizedJobs[category]["jobs"]
 				if(job.department_flag & categorizedJobs[category]["dep"])
 					jobs += job
 				if(category == "ERROR")
@@ -583,7 +583,7 @@
 					dat += "</fieldset><br>"
 		dat += "</td></tr></table>"
 	// END SUBMAP JOBS
-	dat += "</center></body></html>"
+	dat += "</body></html>"
 	if(LAZYLEN(hidden_reasons))
 		var/list/additional_dat = list("<br><b>Некоторые роли были убраны из этого списка по следующим причинам:</b><br>")
 		for(var/raisin in hidden_reasons)
