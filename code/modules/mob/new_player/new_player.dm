@@ -483,7 +483,7 @@
 		"ERROR" = list(jobs = list(), color = "#ffffff", colBreak = 1)
 		)
 
-	dat += "<tr><td></td><td align = 'center' colspan = 3><b>[GLOB.using_map.station_name]</b></td></tr>"
+	dat += "<tr><td align = 'center' colspan = 3><b>[GLOB.using_map.station_name]</b></td></tr>"
 
 	// TORCH JOBS
 	var/list/job_summaries
@@ -532,7 +532,7 @@
 		var/color = categorizedJobs[jobcat]["color"]
 		dat += "<fieldset style='width: 250px; border: 2px solid [color]; display: inline'>"
 		dat += "<legend align='center' style='color: [color]'>[jobcat]</legend>"
-		dat += "<table>"
+		dat += "<table align = 'center'>"
 		if(length(categorizedJobs[jobcat]["jobs"]) < 1)
 			dat += "<tr><td></td><td align = 'center'><i>Нет доступных ролей.</i><br></td></tr>"
 			dat += "</table>"
@@ -562,7 +562,7 @@
 				var/color = "ffffff"
 				dat += "<fieldset style='border: 2px solid [color]; display: inline'>"
 				dat += "<legend align='center' style='color: [color]'><b>[submap.name] ([submap.archetype.descriptor])</b></legend>"
-				dat += "<table>"
+				dat += "<table align = 'center'>"
 				job_summaries = list()
 				for(var/otherthing in submap.jobs)
 					var/datum/job/job = submap.jobs[otherthing]
