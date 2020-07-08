@@ -596,7 +596,20 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/machinery/light/small{
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/centralstarboard)
+"abf" = (
+/obj/effect/floor_decal/corner/paleblue{
+	dir = 5
+	},
+/obj/machinery/pager/robotics{
+	pixel_y = 30;
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/center)
+"abi" = (
+/obj/effect/floor_decal/floordetail/edgedrain{
+	icon_state = "edge";
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -49146,8 +49159,8 @@ kyb
 atK
 apo
 kdb
-kEb
-ycz
+oJb
+abf
 ayg
 azq
 aAr

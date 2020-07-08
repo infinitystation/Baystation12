@@ -295,7 +295,10 @@ Helpers
 			var/datum/game_mode/M = gamemode_cache[mode_tag]
 			if(M)
 				mode_names += M.name
-		to_world("<B>Возможные режимы:</B> [english_list(mode_names)]")
+		if (config.secret_hide_possibilities)
+			message_admins("<B>Возможные режимы:</B> [english_list(mode_names)]")
+		else
+			to_world("<B>Возможные режимы:</B> [english_list(mode_names)]")
 	else
 		mode.announce()
 
@@ -466,7 +469,7 @@ Helpers
 		if(istype(robo,/mob/living/silicon/robot/drone))
 			dronecount++
 			continue
-			
+
 		if (!robo.connected_ai)
 			if (robo.stat != 2)
 				to_world("<b>[robo.name] [(robo.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW) ? "(Played by: [robo.key])" : ""] пережил события без ИИ-хозяина! Его законы:</b>")
