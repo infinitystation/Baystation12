@@ -3731,6 +3731,7 @@
 #include "infinity\customs\cust_zippo.dm"
 #include "infinity\customs\dakimakura.dm"
 #include "infinity\customs\darkred_headphones.dm"
+#include "infinity\customs\deadlizard.dm"
 #include "infinity\customs\diesiege.dm"
 #include "infinity\customs\eguitar.dm"
 #include "infinity\customs\eugen00751.dm"

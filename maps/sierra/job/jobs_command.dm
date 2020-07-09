@@ -30,7 +30,7 @@
 	title = "Head of Personnel"
 	supervisors = "Капитаном"
 	department = "Command"
-	department_flag = COM
+	department_flag = COM|SRV
 	head_position = 1
 	total_positions = 1
 	spawn_positions = 1
