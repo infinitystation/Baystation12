@@ -43,7 +43,7 @@
 		if(currently_building.len)
 			var/con_speed = construct_speed / currently_building.len
 			for(var/b in currently_building)
-				if(!istype(b, /obj/structure/chorus_blueprint)	currently_building -= b	// INF`sanity check
+				if(!istype(b, /obj/structure/chorus_blueprint))	currently_building -= b	// INF sanity check
 				var/obj/structure/chorus_blueprint/cb = b
 				if(cb.build_amount(con_speed))
 					currently_building -= cb
