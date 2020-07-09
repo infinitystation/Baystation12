@@ -43,7 +43,7 @@
 		/obj/item/stack/material/cyborg/glass,
 		/obj/item/stack/material/cyborg/glass/reinforced,
 		/obj/item/stack/cable_coil/cyborg,
-		/obj/item/weapon/rpd, //INF
+		/obj/item/weapon/rpd,//INF
 		/obj/item/stack/material/cyborg/plasteel
 	)
 	synths = list(
