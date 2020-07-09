@@ -484,11 +484,11 @@
 	w_class = ITEM_SIZE_LARGE
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = ITEM_SIZE_NORMAL * 3
-/* [INF]
+
 /obj/item/weapon/storage/belt/waistpack/big/Initialize()
 	.=..()
 	slowdown_per_slot[slot_belt] = 1
-[/INF] */
+
 /obj/item/weapon/storage/belt/fire_belt
 	name = "firefighting equipment belt"
 	desc = "A belt specially designed for firefighting."
