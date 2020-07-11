@@ -1,5 +1,5 @@
 /datum/spawnpoint/cryo/proc/give_effect(mob/living/carbon/human/H)
-	var/message
+	var/message = ""
 /* bad ideas
 	if(prob(5))
 		H.make_dizzy(200) //sea sick, it would make you mad very fast
@@ -19,8 +19,8 @@
 		живот скрутило в спазме. ")
 		H.nutrition = rand(0,200)
 		H.hydration = rand(0,200)
-	if(H.species.name == SPECIES_UNATHI)
-		H.nutrition = 100
+		if(H.species.name == SPECIES_UNATHI)
+			H.nutrition = rand(100,200)
 	if(prob(15)) //stutterting and jittering (because of cold?)
 		message += SPAN_WARNING("Трясет от холода. ")
 		H.make_jittery(120)
