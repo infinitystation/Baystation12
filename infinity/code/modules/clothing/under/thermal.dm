@@ -42,12 +42,16 @@
 	if(!istype(loc, /mob/living/carbon/human))
 		return
 	var/mob/living/carbon/human/H = loc
-	var/temp_adj = min(H.bodytemperature - thermostat, max_cooling)
+	var/temp_adj = min(abs(H.bodytemperature - thermostat), max_cooling)
 
-	if (temp_adj < 0.5)    //only cools, doesn't heat, also we don't need extreme precision esli     if (temp_adj > 0.5) to greet
+	if(temp_adj < 0.5)
 		return
 
-	H.bodytemperature -= temp_adj
+	if(thermostat < H.bodytemperature)		// Cooling
+		H.bodytemperature -= temp_adj
+
+	else if(thermostat > H.bodytemperature)	// Heating
+		H.bodytemperature += temp_adj
 
 /obj/item/clothing/under/thermal/Initialize()
 	. = ..()
@@ -79,17 +83,6 @@
 	desc = "Stylish fitting skrellian thermal suit. This one is white."
 	icon_state = "thermoskr_2"
 	item_state = "thermoskr_2"
-
-/obj/item/clothing/under/thermal/heat/Process()
-	if(!istype(loc, /mob/living/carbon/human))
-		return
-	var/mob/living/carbon/human/H = loc
-	var/temp_adj = min(H.bodytemperature - thermostat, max_cooling)
-
-	if (temp_adj > 0.5)    //only cools, doesn't heat, also we don't need extreme precision esli     if (temp_adj > 0.5) to greet
-		return
-
-	H.bodytemperature -= temp_adj
 
 /obj/item/clothing/under/thermal/heat/unati
 	name = "black thermal suit"

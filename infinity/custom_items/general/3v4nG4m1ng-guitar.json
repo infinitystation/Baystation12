@@ -1,0 +1,8 @@
+{
+  "ckey" :            "3v4nG4m1ng",
+  "character_name" :  "Lenny Whittier",
+  "item_name" :       "Black Mamba",
+  "item_desc" :       "Specially ordered from a famous master and performer - Electro Guitar. The case shows a red rose, symbolizing how the owner wants to get rid of all worries. You can also see the gilded stakes. Apparently, the owner is a rich man.",
+  "item_icon_state" : "mamba_guitar",
+  "item_path" :       "/obj/item/device/synthesized_instrument/guitar"
+  }
