@@ -1,3 +1,4 @@
+/* INF
 /obj/item/weapon/implant/loyalty
 	name = "loyalty implant"
 	desc = "Makes you loyal or such."
@@ -35,3 +36,51 @@
 /obj/item/weapon/implantcase/loyalty
 	name = "glass case - 'loyalty'"
 	imp = /obj/item/weapon/implant/loyalty
+*/
+
+//[INF]
+
+/obj/item/weapon/implant/loyalty
+	name = "MindGuard implant"
+	desc = "This implant protects your brain from any sort of brainwashing."
+	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 3)
+	known = 1
+
+/obj/item/weapon/implant/loyalty/get_data()
+	return {"
+	<b>Implant Specifications:</b><BR>
+	<b>Name:</b> MindGuard Security Implant<BR>
+	<b>Life:</b> Ten years.<BR>
+	<b>Important Notes:</b> Protects owner's from being brainwashed.<BR>
+	<HR>
+	<b>Implant Details:</b><BR>
+	<b>Function:</b> Intercepts dangerous signals, while constantly checking host's brain.<BR>
+	<b>Special Features:</b> Will prevent and cure most forms of brainwashing.<BR>
+	<b>Integrity:</b> Implant will last so long it is inside the bloodstream."}
+
+/obj/item/weapon/implant/loyalty/implanted(mob/M)
+	if(!istype(M, /mob/living/carbon/human))	return FALSE
+	var/mob/living/carbon/human/H = M
+	var/datum/antagonist/antag_data = get_antag_data(H.mind.special_role)
+	if(antag_data && (antag_data.flags & ANTAG_IMPLANT_IMMUNE))
+		to_chat(H, SPAN_WARNING("You feel that MindGuard implant is trying to invade your mind and protect you from brainwashing, but fails!"))
+	else
+		clear_antag_roles(H.mind, 1)
+		to_chat(H, "<span class='notice'>You feel that your mind now is free, as MindGuard activates and starts to protect your brain.</span>")
+	return TRUE
+
+/obj/item/weapon/implanter/loyalty
+	name = "implanter - 'MindGuard'"
+	imp = /obj/item/weapon/implant/loyalty
+
+/obj/item/weapon/implantcase/loyalty
+	name = "glass case - 'MindGuard'"
+	imp = /obj/item/weapon/implant/loyalty
+
+/obj/item/weapon/storage/secure/briefcase/mindguard
+	startswith = list(
+		/obj/item/weapon/implanter/loyalty = 1,
+		/obj/item/weapon/implantcase/loyalty = 5
+	)
+
+//[/INF]

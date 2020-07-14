@@ -16,7 +16,7 @@ GLOBAL_DATUM_INIT(ninjas, /datum/antagonist/ninja, new)
 	возможно, даже опорочить чужую репутацию.</u> <i>Ваш заказчик, помимо всего прочего, накладывает на вас \
 	дополнительные условия - постарайтесь следовать им безукоснительно.</i> В конце-концов, преимущество в \
 	экипировке и навыках здесь у вас, а не у кого-то ещё."
-	flags = ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_CHOOSE_NAME | ANTAG_RANDSPAWN | ANTAG_VOTABLE | ANTAG_SET_APPEARANCE
+	flags = ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_CHOOSE_NAME | ANTAG_RANDSPAWN | ANTAG_VOTABLE | ANTAG_SET_APPEARANCE | ANTAG_IMPLANT_IMMUNE //INF
 	antaghud_indicator = "hudninja"
 
 	initial_spawn_req = 1

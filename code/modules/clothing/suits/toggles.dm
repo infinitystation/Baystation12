@@ -5,6 +5,8 @@
 	var/hoodtype = null //so the chaplain hoodie or other hoodies can override this
 	var/suittoggled = 0
 
+	var/change_sprites = 1 //INF
+
 /obj/item/clothing/suit/storage/hooded/New()
 	MakeHood()
 	..()
@@ -52,7 +54,8 @@
 			else
 				H.equip_to_slot_if_possible(hood,slot_head,0,0,1)
 				suittoggled = 1
-				hood.icon_state = "[icon_state]_hood"
+				if(change_sprites) //INF
+					hood.icon_state = "[icon_state]_hood"
 //				hood.item_state = "[icon_state]_hood"
 				update_icon()
 				H.update_inv_wear_suit()
@@ -61,7 +64,8 @@
 
 /obj/item/clothing/suit/storage/hooded/on_update_icon()
 	if(suittoggled)
-		icon_state = "[initial(icon_state)]_t"
+		if(change_sprites) //INF
+			icon_state = "[initial(icon_state)]_t"
 	else
 		icon_state = "[initial(icon_state)]"
 

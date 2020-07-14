@@ -6,8 +6,8 @@
 	base_cost = 75
 	var/forge_type = /obj/structure/deity/blood_forge
 	var/list/recipes = list(/obj/item/weapon/melee/cultblade = 50,
-							/obj/item/clothing/head/culthood/alt = 10,
-							/obj/item/clothing/suit/cultrobes/alt = 20
+							//INF /obj/item/clothing/head/culthood/alt = 10,
+							/obj/item/clothing/suit/storage/hooded/cultrobes = 20 //INF was /obj/item/clothing/suit/cultrobes
 							)
 
 /datum/deity_item/blood_crafting/buy(var/mob/living/deity/user)
@@ -26,9 +26,9 @@
 	category = DEITY_BLOOD_CRAFT
 	base_cost = 75
 	requirements = list(DEITY_BLOOD_CRAFT = 1)
-	recipes = list(/obj/item/clothing/suit/cultrobes/magusred = 80,
-					/obj/item/clothing/head/culthood/magus = 50,
-					/obj/structure/constructshell/cult = 70) //also shield?
+	recipes = list(/obj/item/clothing/suit/storage/hooded/cultrobes/magusred = 80,  //INF was /obj/item/clothing/suit/cultrobes/magruised
+					//INF /obj/item/clothing/head/culthood/magus = 50,
+					/obj/item/weapon/shield/mirror = 70) //also shield? //INF, was /obj/structure/constructshell/cult
 
 /datum/deity_item/blood_crafting/space
 	name = DEITY_VOID_CRAFT

@@ -26,6 +26,11 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
 
+/datum/job/captain/equip(var/mob/living/carbon/human/H)
+	. = ..()
+	if(.)
+		H.implant_loyalty(H, TRUE) //У нас не лояльность а МайндГард, по факту - защита от промывки мозгов ~SmArtKar
+
 /datum/job/hop
 	title = "Head of Personnel"
 	supervisors = "Капитаном"
@@ -242,6 +247,11 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
 
+/datum/job/hos/equip(var/mob/living/carbon/human/H)
+	. = ..()
+	if(.)
+		H.implant_loyalty(H, TRUE) //У нас не лояльность а МайндГард, по факту - защита от промывки мозгов ~SmArtKar
+
 /datum/job/iaa
 	title = "Internal Affairs Agent"
 	department = "Support"
@@ -266,6 +276,11 @@
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/reports)
+
+/datum/job/iaa/equip(var/mob/living/carbon/human/H)
+	. = ..()
+	if(.)
+		H.implant_loyalty(H, TRUE) //У нас не лояльность а МайндГард, по факту - защита от промывки мозгов ~SmArtKar
 
 /datum/job/adjutant
 	title = "Adjutant"

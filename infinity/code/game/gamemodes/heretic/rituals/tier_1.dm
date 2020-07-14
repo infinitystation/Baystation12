@@ -1,4 +1,6 @@
 
+//Tier 1 rituals. Basically, they will be avalible roundstart
+
 /datum/ritual/convert
 	name = "Conversion Ritual"
 	desc = "Convert faithless creature in our religion and make it serve our god."
@@ -10,7 +12,7 @@
 	required_cultists = 3 //You need whole starting cult, but hey, victims can't resist!
 	ritual_radius = 1
 
-/datum/ritual/convert/cast(var/obj/effect/ritual_rune, var/mob/living/user)
+/datum/ritual/convert/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
 
 	var/mob/living/carbon/target = null
@@ -20,12 +22,16 @@
 			break
 
 	if(!target)
-		to_chat(src, SPAN_WARNING("You need somebody on the rune to convert!"))
+		to_chat(user, SPAN_WARNING("You need somebody on the rune to convert!"))
 		return
 
 	mass_incantation(ritual_rune, "Ar'Ene theih plehe a e'nrathep!")
 
 	sleep(5)
+
+	if(!(target in GLOB.cult.chosens))
+		ritual_rune.visible_message(SPAN_WARNING("[ritual_rune] suddenly starts to glow, but just for a bit before darkening slowly... [target] isn't chosen and can't be converted yet..."))
+		return
 
 	if(target.species == SPECIES_IPC || target.species == SPECIES_DIONA)
 		ritual_rune.visible_message(SPAN_WARNING("[ritual_rune] suddenly starts to glow, but just for a bit before darkening slowly..."))
@@ -37,6 +43,8 @@
 
 	if(!GLOB.cult.can_become_antag(target.mind, 1))
 		to_chat(target, "<span class='danger'>Are you going insane?</span>")
+	else
+		new /obj/item/weapon/melee/cultblade/dagger(get_turf(src))
 
 	GLOB.cult.add_antagonist(target.mind, ignore_role = 1, do_not_equip = 1)
 
@@ -59,6 +67,49 @@
 					to_chat(target, "<span class='cult'>Your mind turns to ash as the burning flames engulf your very soul and images of an unspeakable horror begin to bombard the last remnants of mental resistance.</span>")
 					target.take_overall_damage(0, 10)
 
+/datum/ritual/teleport
+	name = "Teleportation Ritual"
+	desc = "Teleport anybody above the rune to another one."
+
+	requirments = list() //Its combat ritual, using blood is kinda stupid. Basically, its a god damn holder
+
+	ritual_flags = 0
+
+	required_cultists = 1
+	ritual_radius = 1
+
+/datum/ritual/teleport/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
+	. = ..()
+	var/mob/living/target = locate() in get_turf(ritual_rune)
+	if(!target)
+		return
+
+	var/list/t = list()
+	for(var/obj/effect/rune/teleport/T in GLOB.cult.teleport_runes)
+		if(T == src)
+			continue
+		t[T.description] = T
+
+	var/choice = input(user,"Choose the rune to teleport to.") in t
+
+	var/obj/effect/rune/teleport/targ = t[choice]
+	if(istype(targ))
+		target.forceMove(get_turf(targ))
+
+/datum/ritual/book_summon
+	name = "Attributes Summoning Ritual"
+	desc = "Completing this ritual will summon a tome."
+
+	requirments = list(/obj/effect/decal/cleanable/blood = 1,
+						/obj/item/weapon/book = 1)
+
+	required_cultists = 1
+	ritual_radius = 1
+
+/datum/ritual/book_summon/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
+	. = ..()
+	mass_incantation("Ya'dajake wa'yeha na'rp!")
+	new /obj/item/weapon/book/tome(get_turf(ritual_rune))
 
 
 /datum/ritual/astral
@@ -73,13 +124,13 @@
 	required_cultists = 1
 	ritual_radius = 1
 
-/datum/ritual/astral/cast(var/obj/effect/ritual_rune, var/mob/living/user)
+/datum/ritual/astral/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
 
 	var/tmpkey = user.key
 	if(user.loc != get_turf(src))
 		return
-	speak_incantation(user, "Fwe[pick("'","`")]sh mah erl nyag r'ya!")
+	speak_incantation(user, "Fwe'sh mah erl nyag r'ya!")
 	user.visible_message(SPAN_WARNING("\The [user]'s eyes glow blue as \he freezes in place, absolutely motionless."), SPAN_WARNING("The shadow that is your spirit separates itself from your body. You are now in the realm beyond. While this is a great sight, being here strains your mind and body. Hurry..."), "You hear only complete silence for a moment.")
 	announce_ghost_joinleave(user.ghostize(1), 1, "You feel that they had to use some [pick("dark", "black", "blood", "forgotten", "forbidden")] magic to [pick("invade", "disturb", "disrupt", "infest", "taint", "spoil", "blight")] this place!")
 
@@ -113,8 +164,10 @@
 	required_cultists = 3
 	ritual_radius = 1
 
-/datum/ritual/offering/cast(var/obj/effect/ritual_rune, var/mob/living/user)
+/datum/ritual/offering/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
+
+	var/mob/living/victim
 
 	var/turf/T = get_turf(ritual_rune)
 	for(var/mob/living/M in T)
@@ -137,15 +190,16 @@
 		if(ishuman(victim))
 			var/mob/living/carbon/human/H = victim
 			if(H.is_asystole())
-				H.adjustBrainLoss(2 + casters.len)
+				H.adjustBrainLoss(2 + check_cultists(ritual_rune))
 		sleep(40)
 
 	if(victim && victim.loc == T && victim.stat == DEAD)
 		GLOB.cult.add_cultiness(CULTINESS_PER_SACRIFICE)
 		var/obj/item/device/soulstone/heretic/F = new(get_turf(ritual_rune))
-		for(var/mob/M in cultists | get_cultists())
-			to_chat(M, "<span class='warning'>The Geometer of Blood accepts this offering.</span>")
-		visible_message("<span class='notice'>\The [F] appears over \the [src].</span>")
+
+		ritual_rune.visible_message(SPAN_WARNING("The Geometer of Blood accepts this offering."))
+
+		ritual_rune.visible_message(SPAN_NOTICE("\The [F] appears over \the [src]."))
 		GLOB.cult.sacrificed += victim.mind
 		if(victim.mind == GLOB.cult.sacrifice_target)
 			for(var/datum/mind/H in GLOB.cult.current_antagonists)
@@ -163,7 +217,7 @@
 
 /datum/ritual/curse_pain
 	name = "Curse Of Pain"
-	desc = "Make anybody, who last touched the item you will put on the rune, feel horrible pain."
+	desc = "Make anybody, who last touched the item you will put on the rune feel horrible pain."
 
 	requirments = list(/obj/effect/decal/cleanable/blood = 1,
 					   /obj/item/weapon/material/knife = 0)
@@ -173,13 +227,14 @@
 	required_cultists = 1
 	ritual_radius = 1
 
-/datum/ritual/curse_pain/cast(var/obj/effect/ritual_rune, var/mob/living/user)
+/datum/ritual/curse_pain/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
 	var/obj/item/cursed
 
 	for(var/obj/item/curse in get_turf(ritual_rune))
-		if(!istype(/obj/item/weapon/material/knife))
+		if(!istype(curse, /obj/item/weapon/material/knife))
 			cursed = curse
+			break
 
 	var/mob/living/carbon/human/cursing = null
 
@@ -191,9 +246,74 @@
 		break
 
 	if(!cursing)
+		ritual_rune.visible_message(SPAN_WARNING("[ritual_rune] starts glowing red, but fails to activate without an item that victim touched."))
 		return
 
 	while(cursing.stat != DEAD && check_cultists(ritual_rune))
 		cursing.custom_pain("You feel horrible pain, like your whole body is burning!", 50 * check_cultists(ritual_rune))
-		mass_incantation("Yu'gular faras desdae!")
-		sleep(40 * rand(1, 2.5))
+		mass_incantation("Yu'gular faras des'dae!")
+		sleep(20 * rand(1, 2.5))
+
+/datum/ritual/chosen
+	name = "Blood Vision Ritual"
+	desc = "Get names of three people, who are chosen by your god for conversion."
+
+	requirments = list(/obj/effect/decal/cleanable/blood = 1)
+
+	ritual_flags = NEEDS_KNIFE | NEEDS_BOOK | RITUAL_BLOODY
+
+	required_cultists = 3
+	ritual_radius = 1
+
+/datum/ritual/chosen/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
+	. = ..()
+
+	if(GLOB.cult.last_chosen_time > world.time)
+		ritual_rune.visible_message(SPAN_WARNING("[ritual_rune] suddenly starts to glow, but just for a bit before darkening slowly... You can't get new conversion targets yet."))
+
+	mass_incantation("Ha'ehaneas yu'wahajna!")
+
+	GLOB.cult.last_chosen_time = world.time + 10 MINUTES
+
+	var/list/avalible = list()
+
+	for(var/mob/living/carbon/human/H in GLOB.player_list)
+		if(!iscultist(H) && H.stat != DEAD && H.mind && !istype(H.mind.assigned_job, /datum/job/submap))
+			avalible.Add(H)
+
+
+	for(var/datum/mind/H in GLOB.cult.current_antagonists)
+		if(H.current && !H.current.stat)
+			to_chat(H.current, FONT_LARGE("<span class='cult'>Nar'Sie marked three people for conversion:</span>"))
+
+	GLOB.cult.chosens.Cut()
+	for(var/i = 1 to 3)
+		var/mob/living/carbon/human/H = pick_n_take(avalible)
+		GLOB.cult.chosens.Add(H)
+
+		for(var/datum/mind/M in GLOB.cult.current_antagonists)
+			if(M.current && !M.current.stat)
+				to_chat(M.current, FONT_LARGE("<span class='cult'>[H.real_name], as [H.mind.assigned_job]</span>"))
+
+/datum/ritual/wall
+	name = "Shield Ritual"
+	desc = "This ritual will create an impassible shield above the rune."
+
+	requirments = list(/obj/effect/decal/cleanable/blood = 1)
+
+	required_cultists = 1
+
+	ritual_flags = NEEDS_BOOK
+
+
+/datum/ritual/wall/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
+	. = ..()
+
+	var/obj/effect/cultwall/wall = locate() in get_turf(ritual_rune)
+	if(wall)
+		wall.health = wall.max_health
+		return
+
+	wall = new /obj/effect/cultwall(get_turf(ritual_rune), "#c80000", ritual_rune)
+
+	mass_incantation(ritual_rune, "Khari'd! Aje'kaner ha'yeh!")

@@ -26,7 +26,7 @@ GLOBAL_DATUM_INIT(changelings, /datum/antagonist/changeling, new)
 	генами. <b><u>Поглощение без цели считается за убийство без причины</u></b> (если это не была самооборона, конечно).<br>\
 	Удачной охоты."
 */
-	flags = ANTAG_SUSPICIOUS | ANTAG_RANDSPAWN | ANTAG_VOTABLE
+	flags = ANTAG_SUSPICIOUS | ANTAG_RANDSPAWN | ANTAG_VOTABLE | ANTAG_IMPLANT_IMMUNE //INF
 	antaghud_indicator = "hudchangeling"
 	skill_setter = /datum/antag_skill_setter/station
 

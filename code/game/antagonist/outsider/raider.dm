@@ -15,7 +15,7 @@ GLOBAL_DATUM_INIT(raiders, /datum/antagonist/raider, new)
 	скорее всего, вам найти не суждено. И в особенности не затягивайте с налётом своим планированием \
 	или даже хуже - лутанием локаций помимо основного судна. <br>Используйте префикс ':x (или :h)' \
 	для общения со своими через рацию."
-	flags = ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_CHOOSE_NAME | ANTAG_VOTABLE | ANTAG_SET_APPEARANCE | ANTAG_HAS_LEADER
+	flags = ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_CHOOSE_NAME | ANTAG_VOTABLE | ANTAG_SET_APPEARANCE | ANTAG_HAS_LEADER | ANTAG_IMPLANT_IMMUNE //INF
 	antaghud_indicator = "hudraider"
 
 	hard_cap = 6

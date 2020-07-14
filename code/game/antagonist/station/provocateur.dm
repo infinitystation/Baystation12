@@ -5,7 +5,7 @@ GLOBAL_DATUM_INIT(provocateurs, /datum/antagonist/provocateur, new)
 	role_text = "Provocateur"
 	role_text_plural = "Provocateurs"
 	antaghud_indicator = "hud_renegade" //INF, WAS hud_traitor
-	flags = ANTAG_RANDOM_EXCEPTED
+	flags = ANTAG_RANDOM_EXCEPTED | ANTAG_IMPLANT_IMMUNE //INF
 	welcome_text = "Вы отвратительны, не так ли?"
 	antag_text = "<hr>Ваша роль - <b>не</b> лицензия на убийства, но она дает вам разрешение на совершение \
 	преступлений, создание неприятностей этими же преступлениями и совершение иных действий, \

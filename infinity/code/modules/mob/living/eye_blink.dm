@@ -43,7 +43,9 @@
 			BLUE = b_skin
 		else
 			return
-
+    
+    mirror_curse = max(mirror_curse - 1, 0)
+    
 	if(!stat && !(status_flags & FAKEDEATH))
 		if(rand(1,100) <= 20)
 			if(!eye_close_stat)

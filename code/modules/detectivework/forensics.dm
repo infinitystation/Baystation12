@@ -22,17 +22,17 @@ obj/item/var/list/trace_DNA
 		return
 	if(fingerprintslast == M.key)
 		return
-        
+
     //[INF]
-    
-    if(!fingerprintsmob)
+
+	if(!fingerprintsmob)
 		fingerprintsmob = list()
-	if (ishuman(M))
+	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-        src.fingerprintsmob.Add(H)
-    
+		src.fingerprintsmob.Add(H)
+
     //[/INF]
-    
+
 	fingerprintslast = M.key
 	if(!fingerprintshidden)
 		fingerprintshidden = list()

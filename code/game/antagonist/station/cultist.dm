@@ -44,6 +44,10 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 
 	var/allow_narsie = 1
 	var/powerless = 0
+	var/chorus = 0 //INF
+	var/list/chosens = list() //INF
+	var/last_chosen_time = 0
+	var/reality_torn = 0 //INF
 	var/datum/mind/sacrifice_target
 	var/list/obj/effect/rune/teleport/teleport_runes = list()
 	var/list/rune_strokes = list()
@@ -66,11 +70,13 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 		return
 
 	global_objectives = list()
+	/* [INF]
 	if(prob(50))
 		global_objectives |= new /datum/objective/cult/survive
 	else
-		global_objectives |= new /datum/objective/cult/eldergod
+ 	[/INF] */
 
+	global_objectives |= new /datum/objective/cult/eldergod
 	var/datum/objective/cult/sacrifice/sacrifice = new()
 	sacrifice.find_target()
 	sacrifice_target = sacrifice.target
@@ -117,6 +123,10 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 				if(H.species.species_flags & SPECIES_FLAG_NO_SCAN)
 					return 0
 				return 1
+
+			else if(istype(player.current, /mob/living/simple_animal/construct)) //INF
+				return 1
+
 			else if(isnewplayer(player.current))
 				if(player.current.client && player.current.client.prefs)
 					var/datum/species/S = all_species[player.current.client.prefs.species]

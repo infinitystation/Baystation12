@@ -351,7 +351,7 @@
 /obj/item/weapon/archaeological_find/robes/spawn_item()
 	var/list/possible_spawns = list(/obj/item/clothing/head/culthood,
 	/obj/item/clothing/head/culthood/magus,
-	/obj/item/clothing/head/culthood/alt,
+	//INF /obj/item/clothing/head/culthood/alt,
 	/obj/item/clothing/head/helmet/space/cult)
 	var/new_type = pick(possible_spawns)
 	return new new_type(loc)

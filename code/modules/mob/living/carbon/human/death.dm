@@ -30,7 +30,7 @@
 	BITSET(hud_updateflag, HEALTH_HUD)
 	BITSET(hud_updateflag, STATUS_HUD)
 	BITSET(hud_updateflag, LIFE_HUD)
-	
+
 	//Handle species-specific deaths.
 	species.handle_death(src)
 
@@ -63,6 +63,14 @@
 
 	if(wearing_rig)
 		wearing_rig.notify_ai("<span class='danger'>Warning: user death event. Mobility control passed to integrated intelligence system.</span>")
+
+    //[INF]
+	if(bloodybond.len)
+		dust()
+		for(var/mob/living/L in bloodybond)
+			L.dust()
+
+    //[/INF]
 
 	. = ..(gibbed,"no message")
 	if(!gibbed)

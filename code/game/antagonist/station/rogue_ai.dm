@@ -23,7 +23,7 @@ GLOBAL_DATUM_INIT(malf, /datum/antagonist/rogue_ai, new)
 	<b>Придумайте что-нибудь интересно для себя и других!</b>"
 	victory_text = "The AI has taken control of all systems."
 	loss_text = "The AI has been shut down!"
-	flags = ANTAG_VOTABLE | ANTAG_OVERRIDE_MOB | ANTAG_OVERRIDE_JOB | ANTAG_CHOOSE_NAME
+	flags = ANTAG_VOTABLE | ANTAG_OVERRIDE_MOB | ANTAG_OVERRIDE_JOB | ANTAG_CHOOSE_NAME | ANTAG_IMPLANT_IMMUNE //INF
 	hard_cap = 1
 	hard_cap_round = 1
 	initial_spawn_req = 1

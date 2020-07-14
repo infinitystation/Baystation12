@@ -16,7 +16,7 @@ GLOBAL_DATUM_INIT(mercs, /datum/antagonist/mercenary, new)
 	Доставьте их в качестве заложников на свою базу за минуту до того, как залитый кровью невинных корабль \
 	будет уничтожен ядерным огнём. <br>Используйте префикс ':t' для общения со своими через рацию.\
 	<br><b>Определитесь с главным и постарайтесь не прикончить друг друга ещё до начала операции.</b>"
-	flags = ANTAG_VOTABLE | ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_CHOOSE_NAME | ANTAG_HAS_NUKE | ANTAG_SET_APPEARANCE | ANTAG_HAS_LEADER
+	flags = ANTAG_VOTABLE | ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_CHOOSE_NAME | ANTAG_HAS_NUKE | ANTAG_SET_APPEARANCE | ANTAG_HAS_LEADER | ANTAG_IMPLANT_IMMUNE //INF
 	antaghud_indicator = "hudoperative"
 
 	hard_cap = 4

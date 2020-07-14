@@ -97,7 +97,7 @@
 								/obj/item/weapon/melee/cultblade                = TRADER_THIS_TYPE,
 								/obj/item/clothing/head/culthood                = TRADER_ALL,
 								/obj/item/clothing/suit/space/cult              = TRADER_ALL,
-								/obj/item/clothing/suit/cultrobes               = TRADER_ALL,
+								/obj/item/clothing/suit/storage/hooded/cultrobes               = TRADER_ALL, //INF was /obj/item/clothing/suit/cultrobes
 								/obj/item/clothing/head/helmet/space/cult       = TRADER_ALL,
 								/obj/structure/cult                             = TRADER_SUBTYPES_ONLY,
 								/obj/structure/constructshell                   = TRADER_ALL,

@@ -70,7 +70,7 @@
 	invocation_type = SpI_NONE
 	range = 0
 
-	summon_type = list(/obj/item/device/soulstone)
+	summon_type = list(/obj/item/device/soulstone/heretic) //INF, was /obj/item/device/soulstone
 
 	hud_state = "const_stone"
 	override_base = "const"
@@ -115,8 +115,8 @@
 //Code for the Juggernaut construct's forcefield, that seemed like a good place to put it.
 /obj/effect/forcefield/cult
 	desc = "That eerie looking obstacle seems to have been pulled from another dimension through sheer force."
-	name = "Juggerwall"
-	icon = 'icons/effects/effects.dmi'
-	icon_state = "m_shield_cult"
+	name = "red shield" //INF, was "Juggerwall"
+	icon = 'infinity/icons/effects/cult.dmi' //INF, was 'icons/effects/effects.dmi'
+	icon_state = "cultshield"
 	light_color = "#b40000"
 	light_outer_range = 2
