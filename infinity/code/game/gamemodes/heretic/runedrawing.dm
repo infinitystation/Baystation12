@@ -15,7 +15,7 @@
 	set name = "Rune: Teleportation"
 
 	var/obj/effect/rune/teleport/rune = make_rune(/obj/effect/rune/teleport)
-	rune.destination = sanitize(input(user, "Choose a new rune name.", "Destination", "") as text|null)
+	rune.destination = sanitize(input(src, "Choose a new rune name.", "Destination", "") as text|null)
 
 /mob/proc/rune_astral()
 	set category = "Cult Magic"
@@ -105,10 +105,10 @@
 
 	make_rune(/obj/effect/rune/see_ghosts, tome_required = 1)
 
-/mob/proc/rune_huge/bloody_bond()
+/mob/proc/bloody_bond()
 	set category = "Cult Magic"
 	set name = "Rune: Bloody Bond"
-	make_rune(/obj/effect/rune/bloody_bond, cost = 20, tome_required = 1)
+	make_rune(/obj/effect/rune/huge/bloody_bond, cost = 20, tome_required = 1)
 
 /mob/proc/rune_blood_boil()
 	set category = "Cult Magic"
@@ -174,12 +174,12 @@
 
 //Tier 5 runes
 
-/mob/proc/rune_huge/apocalypse()
+/mob/proc/apocalypse()
 	set category = "Cult Magic"
 	set name = "Rune: Apocalypse"
-	make_rune(/obj/effect/rune/apocalypse, cost = 55, tome_required = 1)
+	make_rune(/obj/effect/rune/huge/apocalypse, cost = 55, tome_required = 1)
 
-/mob/proc/rune_huge/narnar()
+/mob/proc/narnar()
 	set category = "Cult Magic"
 	set name = "Rune: Reality Tearing"
-	make_rune(/obj/effect/rune/narnar, cost = 60, tome_required = 1)
+	make_rune(/obj/effect/rune/huge/narnar, cost = 60, tome_required = 1)

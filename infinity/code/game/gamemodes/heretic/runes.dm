@@ -24,7 +24,7 @@ var/list/Tier3Runes = 	   list(
 								/mob/proc/rune_massshift,
 								/mob/proc/rune_god_eye,
 								/mob/proc/rune_see_ghosts,
-								/mob/proc/rune_huge/bloody_bond,
+								/mob/proc/bloody_bond,
 								/mob/proc/rune_blood_boil,
 								/mob/proc/rune_necro_advanced,
 								/mob/proc/rune_dark_chorus,
@@ -41,8 +41,8 @@ var/list/Tier4Runes =      list(
 							   )
 
 var/list/TierNarNarRunes = list(
-								/mob/proc/rune_huge/apocalypse,
-								/mob/proc/rune_huge/narnar
+								/mob/proc/apocalypse,
+								/mob/proc/narnar
 							   )
 
 

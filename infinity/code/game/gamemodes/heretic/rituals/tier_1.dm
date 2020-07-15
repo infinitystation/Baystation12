@@ -88,7 +88,7 @@
 	for(var/obj/effect/rune/teleport/T in GLOB.cult.teleport_runes)
 		if(T == src)
 			continue
-		t[T.description] = T
+		t[T.destination] = T
 
 	var/choice = input(user,"Choose the rune to teleport to.") in t
 
