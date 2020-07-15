@@ -267,11 +267,6 @@
 
 	software_on_spawn = list(/datum/computer_file/program/reports)
 
-/datum/job/iaa/equip(var/mob/living/carbon/human/H)
-	. = ..()
-	if(.)
-		H.implant_loyalty(H, TRUE) //У нас не лояльность а МайндГард, по факту - защита от промывки мозгов ~SmArtKar
-
 /datum/job/adjutant
 	title = "Adjutant"
 	department = "Support"

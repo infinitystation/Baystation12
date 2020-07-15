@@ -402,7 +402,7 @@ BLIND     // can't see anything
 ///////////////////////////////////////////////////////////////////////
 //Head
 /obj/item/clothing/head
-	name = "headwear" //INF was "head"
+	name = "head"
 	icon = 'icons/obj/clothing/obj_head.dmi'
 	item_icons = list(
 		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_hats.dmi',
@@ -775,7 +775,7 @@ BLIND     // can't see anything
 //Suit
 /obj/item/clothing/suit
 	icon = 'icons/obj/clothing/obj_suit.dmi'
-	name = "overwear" //INF was "suit"
+	name = "suit"
 	var/fire_resist = T0C+100
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	allowed = list(/obj/item/weapon/tank/emergency)
@@ -829,7 +829,7 @@ BLIND     // can't see anything
 		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_uniforms.dmi',
 		slot_r_hand_str = 'icons/mob/onmob/items/righthand_uniforms.dmi',
 		)
-	name = "underwear" //INF was "under"
+	name = "under"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	permeability_coefficient = 0.90
 	slot_flags = SLOT_ICLOTHING

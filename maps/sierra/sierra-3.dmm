@@ -647,32 +647,6 @@
 "abs" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/maintenance/firstdeck/forestarboard)
-"abt" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/turf/simulated/open,
-/area/maintenance/firstdeck/aftstarboard)
-"abu" = (
-/obj/structure/catwalk,
-/obj/structure/disposalpipe/sortjunction{
-	dir = 4;
-	name = "Drone Station";
-	sort_type = "Drone Station"
-	},
-/turf/simulated/floor/plating,
-/turf/simulated/open,
-/area/maintenance/firstdeck/centralstarboard)
 "abv" = (
 /obj/machinery/shield_diffuser,
 /obj/machinery/door/airlock/external/bolted/cycling{
@@ -3183,19 +3157,6 @@
 /obj/structure/lattice,
 /turf/simulated/open,
 /area/maintenance/firstdeck/forestarboard)
-"agk" = (
-/obj/structure/table/rack,
-/obj/item/weapon/storage/box/trackimp,
-/obj/item/weapon/storage/box/handcuffs,
-/obj/effect/floor_decal/techfloor{
-	dir = 8
-	},
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/item/weapon/storage/secure/briefcase/mindguard,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/security/sierra/armory)
 "ago" = (
 /turf/simulated/wall/r_wall/hull,
 /area/shield/firstdeck)
@@ -5724,6 +5685,22 @@
 "akJ" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/bridge/gun/energy)
+"akK" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/turf/simulated/open,
+/area/maintenance/firstdeck/aftstarboard)
 "akL" = (
 /obj/structure/catwalk,
 /obj/structure/cable/green{
@@ -6320,6 +6297,16 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/security/sierra/evidence)
+"alQ" = (
+/obj/structure/catwalk,
+/obj/structure/disposalpipe/sortjunction{
+	dir = 4;
+	name = "Drone Station";
+	sort_type = "Drone Station"
+	},
+/turf/simulated/floor/plating,
+/turf/simulated/open,
+/area/maintenance/firstdeck/centralstarboard)
 "alR" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -8622,6 +8609,18 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/security/range)
+"apJ" = (
+/obj/structure/table/rack,
+/obj/item/weapon/storage/box/trackimp,
+/obj/item/weapon/storage/box/handcuffs,
+/obj/effect/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/security/sierra/armory)
 "apK" = (
 /obj/structure/table/rack,
 /obj/item/clothing/suit/armor/pcarrier/medium,
@@ -48106,7 +48105,7 @@ nfQ
 alK
 alK
 lZg
-agk
+apJ
 aro
 asv
 alK
@@ -54362,7 +54361,7 @@ aaB
 aaB
 agq
 ahy
-abu
+alQ
 ajR
 akV
 akV
@@ -63043,7 +63042,7 @@ aaM
 aaM
 acu
 adk
-abt
+akK
 aeL
 aeL
 agS
