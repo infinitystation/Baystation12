@@ -16,6 +16,8 @@
 		to_chat(src, "<span class='notice'>You have stopped hiding.</span>")
 	reset_layer()
 
+/*[ORIGINAL]  //INF, now new version in infinity weapons
+
 /mob/living/proc/breath_death()
 	set name = "Breath Death"
 	set desc = "Infect others with your very breath."
@@ -24,7 +26,7 @@
 	if (last_special > world.time)
 		to_chat(src, "<span class='warning'>You aren't ready to do that! Wait [round(last_special - world.time) / 10] seconds.</span>")
 		return
-	
+
 	if (incapacitated())
 		to_chat(src, "<span class='warning'>You can't do that while you're incapacitated!</span>")
 		return
@@ -38,6 +40,8 @@
 	chem.set_up(get_step(T, dir), 2, 10)
 	playsound(T, 'sound/hallucinations/wail.ogg', 20, 1)
 
+[/ORIGINAL]*/
+
 /mob/living/proc/consume()
 	set name = "Consume"
 	set desc = "Regain life by consuming it from others."
@@ -46,7 +50,7 @@
 	if (last_special > world.time)
 		to_chat(src, "<span class='warning'>You aren't ready to do that! Wait [round(last_special - world.time) / 10] seconds.</span>")
 		return
-	
+
 	if (incapacitated())
 		to_chat(src, "<span class='warning'>You can't do that while you're incapacitated!</span>")
 		return

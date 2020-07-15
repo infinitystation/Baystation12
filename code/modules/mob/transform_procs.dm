@@ -315,6 +315,7 @@
 			organ.rejuvenate(1)
 			organ.max_damage *= 3
 			organ.min_broken_damage = Floor(organ.max_damage * 0.75)
-	verbs += /mob/living/proc/breath_death
-	verbs += /mob/living/proc/consume
+	verbs += /mob/living/proc/zombie_claws //INF was breath_death
+	verbs += /mob/living/proc/consume //INF
+	verbs += /mob/living/proc/night_vision
 	playsound(get_turf(src), 'sound/hallucinations/wail.ogg', 20, 1)
