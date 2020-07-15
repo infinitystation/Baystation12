@@ -9,7 +9,7 @@
 
 	ritual_flags = NEEDS_KNIFE | NEEDS_BOOK | RITUAL_BLOODY
 
-	required_cultists = 3 //You need whole starting cult, but hey, victims can't resist!
+	required_cultists = 1
 	ritual_radius = 1
 
 /datum/ritual/convert/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
@@ -37,16 +37,26 @@
 		ritual_rune.visible_message(SPAN_WARNING("[ritual_rune] suddenly starts to glow, but just for a bit before darkening slowly..."))
 		return
 
-	to_chat(target, "<span class='cult'>Your blood pulses. Your head throbs. The world goes red. All at once you are aware of a horrible, horrible truth. The veil of reality has been ripped away and in the festering wound left behind something sinister takes root.</span>")
+	if(check_cultists(ritual_rune, user) < 3)
+		var/choice = alert("Do you want to join the cult?",,"Yes","No")
+		if(choice == "Yes")
+			to_chat(target, "<span class='cult'>Your blood pulses. Your head throbs. The world goes red. All at once you are aware of a horrible, horrible truth. The veil of reality has been ripped away and in the festering wound left behind something sinister takes root.</span>")
+			sleep(5)
+			if(!GLOB.cult.can_become_antag(target.mind, 1))
+				to_chat(target, "<span class='danger'>Are you going insane?</span>")
+			else
+				new /obj/item/weapon/melee/cultblade/dagger(get_turf(src))
 
-	sleep(5)
-
-	if(!GLOB.cult.can_become_antag(target.mind, 1))
-		to_chat(target, "<span class='danger'>Are you going insane?</span>")
+			GLOB.cult.add_antagonist(target.mind, ignore_role = 1, do_not_equip = 1)
 	else
-		new /obj/item/weapon/melee/cultblade/dagger(get_turf(src))
+		to_chat(target, "<span class='cult'>Your blood pulses. Your head throbs. The world goes red. All at once you are aware of a horrible, horrible truth. The veil of reality has been ripped away and in the festering wound left behind something sinister takes root.</span>")
+		sleep(5)
+		if(!GLOB.cult.can_become_antag(target.mind, 1))
+			to_chat(target, "<span class='danger'>Are you going insane?</span>")
+		else
+			new /obj/item/weapon/melee/cultblade/dagger(get_turf(src))
 
-	GLOB.cult.add_antagonist(target.mind, ignore_role = 1, do_not_equip = 1)
+		GLOB.cult.add_antagonist(target.mind, ignore_role = 1, do_not_equip = 1)
 
 	sleep(5)
 

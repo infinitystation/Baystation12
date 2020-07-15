@@ -440,9 +440,20 @@
 							)
 
 /mob/living/simple_animal/construct/builder/UnarmedAttack(var/atom/A, var/proximity)
-	if(istype(A, /turf))
-		var/turf/T = A
-		T.cultify()
+	if(is_angelic)
+		if(istype(A, /turf/simulated/wall/cult))
+			var/turf/simulated/wall/cult/W = A
+			visible_message("<span class='notice'>\The [src] touches \the [A], and the enchantment affecting it fizzles away.</span>", "<span class='notice'>You touch \the [A], and the enchantment affecting it fizzles away.</span>")
+			W.ChangeTurf(/turf/simulated/wall)
+
+		if(istype(A, /turf/simulated/floor/cult))
+			var/turf/simulated/floor/cult/F = A
+			visible_message("<span class='notice'>\The [src] touches \the [A], and the enchantment affecting it fizzles away.</span>", "<span class='notice'>You touch \the [A], and the enchantment affecting it fizzles away.</span>")
+			F.ChangeTurf(/turf/simulated/floor)
+	else
+		if(istype(A, /turf))
+			var/turf/T = A
+			T.cultify()
 	. = ..()
 
 
