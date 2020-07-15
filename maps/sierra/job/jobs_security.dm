@@ -35,11 +35,6 @@
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 
-/datum/job/warden/equip(var/mob/living/carbon/human/H)
-	. = ..()
-	if(.)
-		H.implant_loyalty(H, TRUE) //У нас не лояльность а МайндГард, по факту - защита от промывки мозгов ~SmArtKar
-
 /datum/job/detective
 	title = "Detective"
 	department = "Security"
@@ -79,11 +74,6 @@
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 
-/datum/job/detective/equip(var/mob/living/carbon/human/H)
-	. = ..()
-	if(.)
-		H.implant_loyalty(H, TRUE) //У нас не лояльность а МайндГард, по факту - защита от промывки мозгов ~SmArtKar
-
 /datum/job/officer
 	title = "Security Guard"
 	department = "Security"
@@ -120,11 +110,6 @@
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 
-/datum/job/officer/equip(var/mob/living/carbon/human/H)
-	. = ..()
-	if(.)
-		H.implant_loyalty(H, TRUE) //У нас не лояльность а МайндГард, по факту - защита от промывки мозгов ~SmArtKar
-
 /datum/job/security_assistant
 	title = "Security Cadet"
 	department = "Security"
@@ -156,9 +141,3 @@
 			            access_eva, access_sec_doors, access_hangar)
 
 	minimal_access = list()
-
-
-/datum/job/security_assistant/equip(var/mob/living/carbon/human/H)
-	. = ..()
-	if(.)
-		H.implant_loyalty(H, TRUE) //У нас не лояльность а МайндГард, по факту - защита от промывки мозгов ~SmArtKar
