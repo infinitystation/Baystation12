@@ -55,7 +55,7 @@
 	desc = "Break the chains, that hold your dark god, Nar'Sie"
 	requirments = list(/obj/effect/decal/cleanable/blood = 1,
 					   /obj/item/organ/internal/heart = 1,
-					   /obj/item/device/soulstone = 1,
+					   /obj/item/device/soulstone = 3,
 					   /obj/item/organ/external/head = 1) //Pretty much the same.
 
 	required_cultists = 9

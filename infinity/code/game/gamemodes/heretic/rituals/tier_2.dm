@@ -265,7 +265,7 @@
 
 /datum/ritual/curse_mirrors
 	name = "Curse Of Mirrors"
-	desc = "Victim will hear everybody as himself. Lasts 3 minutes."
+	desc = "Victim will hear everybody as himself. Lasts 5 minutes."
 
 	requirments = list(/obj/effect/decal/cleanable/blood = 1,
 					   /obj/item/weapon/material/shard = 3)
@@ -297,7 +297,7 @@
 		ritual_rune.visible_message(SPAN_WARNING("[ritual_rune] starts glowing red, but fails to activate without an item that victim touched."))
 		return
 
-	cursing.mirror_curse += 60
+	cursing.mirror_curse += 5 MINUTES
 
 	mass_incantation("Ha'yahaje ra'wayanarar!")
 
