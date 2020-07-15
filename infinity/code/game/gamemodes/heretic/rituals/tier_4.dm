@@ -67,7 +67,7 @@
 		if(wall)
 			wall.health = wall.max_health
 			continue
-		wall = new(T, "#c80000", ritual_rune)
+		wall = new(T, "#ffffff", ritual_rune)
 
 	mass_incantation(ritual_rune, "Khari'd! Eske'te tannin!")
 

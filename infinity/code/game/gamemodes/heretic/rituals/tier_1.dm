@@ -314,6 +314,6 @@
 		wall.health = wall.max_health
 		return
 
-	wall = new /obj/effect/cultwall(get_turf(ritual_rune), "#c80000", ritual_rune)
+	wall = new /obj/effect/cultwall(get_turf(ritual_rune), "#ffffff", ritual_rune)
 
 	mass_incantation(ritual_rune, "Khari'd! Aje'kaner ha'yeh!")
