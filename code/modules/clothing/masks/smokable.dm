@@ -33,19 +33,21 @@
 
 /obj/item/clothing/mask/smokable/proc/smoke(amount)
 	smoketime -= amount
-	if(reagents && reagents.total_volume || !alerted) //inf, was: if(reagents && reagents.total_volume) // check if it has any reagents at all
+	if(reagents && reagents.total_volume) // check if it has any reagents at all
 		if(ishuman(loc))
 			var/mob/living/carbon/human/C = loc
 			if (src == C.wear_mask && C.check_has_mouth()) // if it's in the human/monkey mouth, transfer reagents to the mob
 				reagents.trans_to_mob(C, REM, CHEM_INGEST, 0.2) // Most of it is not inhaled... balance reasons.
 				add_trace_DNA(C)
-//[INF]
-			if(smoketime <= 30)
-				to_chat(C, SPAN_WARNING("[src] will end in a half of minute. Better find an ashtray."))
-				alerted = TRUE
-//[/INF]
 		else // else just remove some of the reagents
 			reagents.remove_any(REM)
+//[INF]
+	if(!alerted && smoketime <= 30)
+		if(ismob(loc))
+			var/mob/M = loc
+			to_chat(M, SPAN_WARNING("[src] will burn out soon. Better find an ashtray."))
+		alerted = TRUE
+//[/INF]
 	var/turf/T = get_turf(src)
 	if(T)
 		var/datum/gas_mixture/environment = T.return_air()
@@ -205,16 +207,15 @@
 		if(brand)
 			butt.desc += " This one is a [brand]."
 		if(ismob(loc))
-//ORIG			var/mob/living/M = loc
 //[INF]
 			var/mob/living/carbon/human/M = loc
 			if(M.wear_mask == src)
 				var/obj/item/organ/external/head/head = M.get_organ(BP_HEAD)
 				M.custom_pain("Вы передержали [src] во рту и обожгли губы.", 5, affecting = head)
 				M.apply_damage(2, BURN, BP_HEAD)
-//				M.custom_emote(1, "выплевывает сигарету. От неё остался бычок.")
 //[/INF]
 /*[ORIG]
+			var/mob/living/M = loc
 			if (!no_message)
 				to_chat(M, "<span class='notice'>Your [name] goes out.</span>")
 [/ORIG]*/
