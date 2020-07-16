@@ -9,7 +9,7 @@
 	throwforce = 1
 	throw_speed = 3
 	throw_range = 5
-	origin_tech = list(TECH_BIO = 1)
+	origin_tech = list(TECH_BIO = 4)
 	attack_verb = list("attacked", "slapped", "whacked")
 	relative_size = 85
 	damage_reduction = 0
@@ -17,28 +17,18 @@
 	var/progress = 0
 	var/max_progress = 360
 
-/obj/item/organ/internal/romerol/Initialize()
-	. = ..()
-	START_PROCESSING(SSobj, src)
-
-/obj/item/organ/internal/romerol/replaced(var/mob/living/carbon/human/target, var/needed_progress)
-	if(!..()) return 0
-
+/obj/item/organ/internal/romerol/proc/set_progress(var/needed_progress)
 	if(owner && ishuman(owner))
 		max_progress = needed_progress
 
 /obj/item/organ/internal/romerol/Process()
 	if(owner)
-
-		if(prob(progress / max_progress) * 10))
+		if(prob(progress / max_progress * 10))
 			owner.Weaken(1)
 
 		if(progress < max_progress)
 			progress++
 		else
 			owner.zombify()
-			if(owner.reagents && owner.reagents.has_reagent(/datum/reagent/toxin/zombie))
-				var/toremove = owner.reagents.get_reagent_amount(/datum/reagent/toxin/zombie)
-				owner.reagents.del_reagent(/datum/reagent/toxin/zombie)
 			qdel(src)
 	. = ..()

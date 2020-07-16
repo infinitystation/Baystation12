@@ -6,7 +6,7 @@
 	hitsound = 'infinity/sound/weapons/bloodyslice.ogg'
 	w_class = 4
 	force = 8
-	base_parry_chance = 10
+	base_parry_chance = 0
 	canremove = 0
 	sharp = 0
 	edge = 0
@@ -19,7 +19,7 @@
 
 /obj/item/weapon/melee/claws/Initialize()
 	. = ..()
-	create_reagents(5)
+	create_reagents(2)
 
 /obj/item/weapon/melee/claws/dropped(var/mob/living/user)
 	visible_message(SPAN_DANGER("[user] retracts their claws with strange sound"),
@@ -40,7 +40,7 @@
 				if(istype(clothes) && (clothes.body_parts_covered & affecting.body_part) && (clothes.item_flags & ITEM_FLAG_THICKMATERIAL))
 					return
 
-			var/amount = rand(2, 5)
+			var/amount = rand(0.5, 2.0)
 			reagents.add_reagent(/datum/reagent/toxin/zombie, amount)
 			reagents.trans_to_mob(target, amount, CHEM_BLOOD)
 
@@ -72,6 +72,9 @@
 							SPAN_DANGER("You hear strange noises of organic matter ripping and tearing!"))
 	playsound(get_turf(src), 'infinity/sound/effects/lingextends.ogg', 5, 1)
 	spawn(1 SECOND)
+		if(M.l_hand || M.r_hand)
+			to_chat(M, SPAN_LING("Your hands are full."))
+			return
 		claw = new(M)
 		claw.creator = M
 		M.put_in_hands(claw)
