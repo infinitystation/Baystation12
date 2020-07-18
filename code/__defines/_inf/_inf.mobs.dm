@@ -13,6 +13,7 @@
 
 // Organs
 #define BP_FAKE    "fake_brain"
+#define BP_ZOMB    "festering ooze"
 
 // Species
 #define SPECIES_TAJARA			"Tajara"

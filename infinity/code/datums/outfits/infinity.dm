@@ -89,6 +89,7 @@
 	uniform = /obj/item/clothing/under/thermal/heat/abductor/white
 	belt = /obj/item/weapon/storage/belt/utility/alien
 	r_hand = /obj/item/weapon/scitool
+	gloves = /obj/item/clothing/gloves/latex
 
 			//////////
 			//CORPSES//
