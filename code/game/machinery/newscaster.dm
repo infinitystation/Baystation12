@@ -70,7 +70,7 @@
 	if(announcement_message)
 		newChannel.announcement = announcement_message
 	else
-		newChannel.announcement = "Свежие новости от [channel_name]!"
+		newChannel.announcement = "Свежие новости в газете \"[channel_name]\"!"
 	network_channels += newChannel
 
 /datum/feed_network/proc/SubmitArticle(var/msg, var/author, var/channel_name, var/obj/item/weapon/photo/photo, var/adminMessage = 0, var/message_type = "")
