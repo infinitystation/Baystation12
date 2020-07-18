@@ -58,7 +58,7 @@
 /datum/job/submap/yachtman
 	title = "Yachtman"
 	info = "Ты, устав от богатой жизни, с друзьями путешествуешь по бескрайнему космосу, в поисках интересной жизни."
-	total_positions = 3
+	total_positions = 2
 	outfit_type = /decl/hierarchy/outfit/job/yachtman
 
 /decl/hierarchy/outfit/job/yachtman
@@ -82,3 +82,9 @@
 	_input_on = TRUE
 	_output_on = TRUE
 	_fully_charged = TRUE
+
+/obj/machinery/power/apc/yacht
+	req_access = list()
+
+/obj/machinery/alarm/yacht
+	req_access = list()
