@@ -286,12 +286,12 @@ obj/item/organ/external/take_general_damage(var/amount, var/silent = FALSE)
 		if(agony_amount < 5) return
 
 		if(limb_flags & ORGAN_FLAG_CAN_GRASP)
-			if(prob((agony_amount/max_damage)*100))
+			if(agony_amount >= (max_damage * 1.3)) //INF, WAS if(prob((agony_amount/max_damage)*100))
 				owner.grasp_damage_disarm(src)
 				return 1
 
 		else if((limb_flags & ORGAN_FLAG_CAN_STAND))
-			if(prob((agony_amount/max_damage)*100))
+			if(agony_amount >= (max_damage * 1.3)) //INF, WAS if(prob((agony_amount/max_damage)*100))
 				owner.stance_damage_prone(src)
 				return 1
 
