@@ -194,6 +194,11 @@ var/list/_client_preferences_by_type
 	options = list(GLOB.PREF_FANCY, GLOB.PREF_PLAIN)
 
 //[INF]
+/datum/client_preference/floating_messages
+	description = "Floating chat messages"
+	key = "FLOATING_CHAT"
+	options = list(GLOB.PREF_HIDE, GLOB.PREF_SHOW)
+
 /datum/client_preference/fullscreen_mode
 	description = "Fullscreen Mode"
 	key = "FULLSCREEN"
