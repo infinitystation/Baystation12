@@ -66,11 +66,11 @@
 
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/research/scientist
 	allowed_branches = list(
-		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/civilian,
-		/datum/mil_branch/solgov
+		/datum/mil_branch/solgov,
+		/datum/mil_branch/expeditionary_corps
 	)
-	allowed_ranks = list(,
+	allowed_ranks = list(
 		/datum/mil_rank/ec/o1,
 		/datum/mil_rank/civ/contractor = /decl/hierarchy/outfit/job/torch/passenger/research/scientist,
 		/datum/mil_rank/sol/scientist = /decl/hierarchy/outfit/job/torch/passenger/research/scientist/solgov
@@ -103,9 +103,9 @@
 
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/research
 	allowed_branches = list(
-		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/civilian,
-		/datum/mil_branch/solgov
+		/datum/mil_branch/solgov,
+		/datum/mil_branch/expeditionary_corps
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/e3,

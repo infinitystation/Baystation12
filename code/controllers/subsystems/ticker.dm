@@ -108,9 +108,6 @@ SUBSYSTEM_DEF(ticker)
 		send2mainirc("Раунд с режимом [SSticker.master_mode] начался;. Игроков: [GLOB.player_list.len].")
 		sound_to(world, sound(GLOB.using_map.welcome_sound))
 
-		//Holiday Round-start stuff	~Carn
-		Holiday_Game_Start()
-
 	if(!length(GLOB.admins))
 		send2adminirc("Раунд начался без администраторов в игре!")
 
@@ -298,7 +295,10 @@ Helpers
 			var/datum/game_mode/M = gamemode_cache[mode_tag]
 			if(M)
 				mode_names += M.name
-		to_world("<B>Возможные режимы:</B> [english_list(mode_names)]")
+		if (config.secret_hide_possibilities)
+			message_admins("<B>Возможные режимы:</B> [english_list(mode_names)]")
+		else
+			to_world("<B>Возможные режимы:</B> [english_list(mode_names)]")
 	else
 		mode.announce()
 
@@ -448,19 +448,18 @@ Helpers
 					to_chat(Player, "<font color='red'><b>Вы не пережили события на [station_name()]...</b></font>")
 	to_world("<br>")
 
-	for (var/mob/living/silicon/ai/aiPlayer in SSmobs.mob_list)
-		if (aiPlayer.stat != 2)
-			to_world("<b>[aiPlayer.name] (Игрок: [aiPlayer.key]), его законы были следующими:</b>")
-
+	for(var/mob/living/silicon/ai/aiPlayer in SSmobs.mob_list)
+		if(aiPlayer.stat != 2)
+			to_world("<b>[aiPlayer.name] [(aiPlayer.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW) ? "(Played by: [aiPlayer.key])\'s" : ""], его законы были следующими:</b>")
 		else
-			to_world("<b>[aiPlayer.name] (Игрок: [aiPlayer.key]), его законы перед уничтожением были следующими:</b>")
+			to_world("<b>[aiPlayer.name] [(aiPlayer.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW) ? "(Played by: [aiPlayer.key])\'s" : ""], его законы перед уничтожением были следующими:</b>")
 
 		aiPlayer.show_laws(1)
 
 		if (aiPlayer.connected_robots.len)
 			var/robolist = "<b>Лояльными роботами ИИ были:</b> "
 			for(var/mob/living/silicon/robot/robo in aiPlayer.connected_robots)
-				robolist += "[robo.name][robo.stat?" (Deactivated) (Played by: [robo.key]), ":" (Played by: [robo.key]), "]"
+				robolist += "[robo.name][robo.stat ? " (Deactivated)" : ""] [(robo.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW) ? "(Played by: [robo.key])" : ""],"
 			to_world("[robolist]")
 
 	var/dronecount = 0
@@ -473,10 +472,10 @@ Helpers
 
 		if (!robo.connected_ai)
 			if (robo.stat != 2)
-				to_world("<b>[robo.name] (Игрок: [robo.key]) пережил события без ИИ-хозяина! Его законы:</b>")
+				to_world("<b>[robo.name] [(robo.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW) ? "(Played by: [robo.key])" : ""] пережил события без ИИ-хозяина! Его законы:</b>")
 
 			else
-				to_world("<b>[robo.name] (Игрок: [robo.key]) не смог пережить тяготы бытия синтетика без ИИ-хозяина. Его законы:</b>")
+				to_world("<b>[robo.name] [(robo.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW) ? "(Played by: [robo.key])" : ""] не смог пережить тяготы бытия синтетика без ИИ-хозяина. Его законы:</b>")
 
 
 			if(robo) //How the hell do we lose robo between here and the world messages directly above this?

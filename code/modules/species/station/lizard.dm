@@ -85,8 +85,6 @@
 		/mob/living/carbon/human/proc/diona_heal_toggle
 		)
 
-	prone_overlay_offset = list(-4, -4)
-
 	override_organ_types = list(
 		BP_EYES = /obj/item/organ/internal/eyes/unathi,
 		BP_BRAIN = /obj/item/organ/internal/brain/unathi
@@ -117,23 +115,8 @@
 		),
 		TAG_HOMEWORLD = list(
 			HOME_SYSTEM_MOGHES,
-			HOME_SYSTEM_EARTH,
-			HOME_SYSTEM_LUNA,
-			HOME_SYSTEM_MARS,
-			HOME_SYSTEM_VENUS,
-			HOME_SYSTEM_CERES,
-			HOME_SYSTEM_PLUTO,
-			HOME_SYSTEM_TAU_CETI,
-			HOME_SYSTEM_HELIOS,
-			HOME_SYSTEM_TERSTEN,
-			HOME_SYSTEM_AHDOMAI,
-			HOME_SYSTEM_LORRIMAN,
-			HOME_SYSTEM_CINU,
-			HOME_SYSTEM_YUKLID,
-			HOME_SYSTEM_LORDANIA,
-			HOME_SYSTEM_KINGSTON,
-			HOME_SYSTEM_GAIA,
-			HOME_SYSTEM_OTHER
+			HOME_SYSTEM_OUERE,
+			HOME_SYSTEM_OFFWORLD
 		),
 		TAG_FACTION = list(
 			FACTION_UNATHI_POLAR,
@@ -186,7 +169,17 @@
 			list(/decl/emote/audible/grunt, /decl/emote/audible/groan, /decl/emote/audible/wheeze, /decl/emote/audible/hiss) = 50,
 			list(/decl/emote/audible/grunt, /decl/emote/audible/groan, /decl/emote/audible/hiss) = 20,
 		)
-		
+
+	exertion_effect_chance = 10
+	exertion_hydration_scale = 1
+	exertion_reagent_scale = 5
+	exertion_reagent_path = /datum/reagent/lactate
+	exertion_emotes_biological = list(
+		/decl/emote/exertion/biological,
+		/decl/emote/exertion/biological/breath,
+		/decl/emote/exertion/biological/pant
+	)
+
 /datum/species/unathi/equip_survival_gear(var/mob/living/carbon/human/H)
 	..()
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sandal(H),slot_shoes)

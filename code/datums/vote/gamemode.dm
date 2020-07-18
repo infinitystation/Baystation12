@@ -1,9 +1,9 @@
 /datum/vote/gamemode
 	name = "game mode"
-	additional_header = "<td align = 'center'><b>Minimum Players</b></td></tr>"
+	additional_header = "<th>Minimum Players</th>"
 	win_x = 500
-	win_y = 1200 // 1100
-	show_leading = 1
+	win_y = 1100
+	result_length = 3
 	startshow = 1 //inf
 
 /datum/vote/gamemode/can_run(mob/creator, automatic)

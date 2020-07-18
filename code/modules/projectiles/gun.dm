@@ -8,6 +8,7 @@
 /datum/firemode
 	var/name = "default"
 	var/list/settings = list()
+	var/list/original_settings
 
 /datum/firemode/New(obj/item/weapon/gun/gun, list/properties = null)
 	..()
@@ -24,8 +25,18 @@
 			settings[propname] = propvalue
 
 /datum/firemode/proc/apply_to(obj/item/weapon/gun/gun)
+	LAZYINITLIST(original_settings)
+
 	for(var/propname in settings)
+		original_settings[propname] = gun.vars[propname]
 		gun.vars[propname] = settings[propname]
+
+/datum/firemode/proc/restore_original_settings(obj/item/weapon/gun/gun)
+	if (LAZYLEN(original_settings))
+		for (var/propname in original_settings)
+			gun.vars[propname] = original_settings[propname]
+	
+		LAZYCLEARLIST(original_settings)
 
 //Parent gun type. Guns are weapons that can be aimed at mobs and act over a distance
 /obj/item/weapon/gun
@@ -227,7 +238,7 @@ var/global/serials = list()
 		if(user.a_intent == I_HURT && !user.skill_fail_prob(SKILL_WEAPONS, 100, SKILL_EXPERT, 0.5)) //reflex un-safeying
 			toggle_safety(user)
 		else
-			handle_click_empty(user)
+			handle_click_safety(user)
 			return
 
 	if(world.time < next_fire_time)
@@ -295,6 +306,9 @@ var/global/serials = list()
 	else
 		src.visible_message("*click click*")
 	playsound(src.loc, 'sound/weapons/empty.ogg', 100, 1)
+
+/obj/item/weapon/gun/proc/handle_click_safety(mob/user)
+	user.visible_message(SPAN_WARNING("[user] squeezes the trigger of \the [src] but it doesn't move!"), SPAN_WARNING("You squeeze the trigger but it doesn't move!"), range = 3)
 
 //called after successfully firing
 /obj/item/weapon/gun/proc/handle_post_fire(mob/user, atom/target, var/pointblank=0, var/reflex=0)
@@ -612,6 +626,9 @@ var/global/serials = list()
 	var/next_mode = get_next_firemode()
 	if(!next_mode || next_mode == sel_mode)
 		return null
+
+	var/datum/firemode/old_mode = firemodes[sel_mode]
+	old_mode.restore_original_settings(src)
 
 	sel_mode = next_mode
 	var/datum/firemode/new_mode = firemodes[sel_mode]

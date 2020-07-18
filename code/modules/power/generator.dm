@@ -138,6 +138,8 @@
 		s.set_up(3, 1, src)
 		s.start()
 		stored_energy *= 0.5
+		if (powernet)
+			powernet.apcs_overload(0, 2, 5)
 
 		integrity = clamp(integrity - ((effective_gen - max_power) / 1e6) ** 3, 0, integrity) //INF
 

@@ -42,7 +42,7 @@
 	back = /obj/item/weapon/storage/backpack/satchel/pocketbook
 	backpack_contents = list(/obj/item/weapon/storage/firstaid/individual/military/troops = 1,
 							/obj/item/weapon/material/knife/folding/tacticool = 1,
-							/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 1)
+							/obj/item/weapon/reagent_containers/food/snacks/proteinbar = 1)
 
 /decl/hierarchy/outfit/pmc/pcrc
 	name = "Inf - PMC PCRC"
@@ -68,7 +68,7 @@
 	back = /obj/item/weapon/storage/backpack/satchel/pocketbook/khaki
 	backpack_contents = list(/obj/item/weapon/storage/firstaid/individual/military/troops = 1,
 							/obj/item/weapon/material/knife/folding/tacticool = 1,
-							/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 1)
+							/obj/item/weapon/reagent_containers/food/snacks/proteinbar = 1)
 
 
 /decl/hierarchy/outfit/alien

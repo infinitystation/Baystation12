@@ -27,8 +27,8 @@
 	to_chat(src, SPAN_NOTICE("<b>You have shunted your primary control loop into \a [initial(name)].</b> Use the <b>Release Control</b> verb to return to your core."))
 
 /mob/living/exosuit/attack_ai(var/mob/living/silicon/ai/user)
-	if(user.controlling_drone)
-		to_chat(user, SPAN_WARNING("You are already remote controlling something."))
+//	if(user.controlling_drone)
+//		to_chat(user, SPAN_WARNING("You are already remote controlling something."))
 	if(stat != 0 || client || key)
 		to_chat(user, SPAN_WARNING("You cannot take control of an autonomous, active exosuit."))
 		return
@@ -60,4 +60,4 @@
 		controlling_ai = null
 	radio = old_rad
 
-	verbs -= /mob/living/silicon/robot/drone/proc/release_ai_control_verb
+	verbs -= /mob/living/exosuit/proc/release_ai_control_verb

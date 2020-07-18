@@ -47,6 +47,8 @@
 
 #define ishuman(A) istype(A, /mob/living/carbon/human)
 
+#define isid(A) istype(A, /obj/item/weapon/card/id)
+
 #define isitem(A) istype(A, /obj/item)
 
 #define isliving(A) istype(A, /mob/living)
@@ -143,8 +145,6 @@
 // Spawns multiple objects of the same type
 #define cast_new(type, num, args...) if((num) == 1) { new type(args) } else { for(var/i=0;i<(num),i++) { new type(args) } }
 
-#define FLAGS_EQUALS(flag, flags) ((flag & (flags)) == (flags))
-
 #define JOINTEXT(X) jointext(X, null)
 
 #define SPAN_ITALIC(X) "<span class='italic'>[X]</span>"
@@ -162,6 +162,10 @@
 #define SPAN_MFAUNA(X) "<span class='mfauna'>[X]</span>"
 
 #define SPAN_SUBTLE(X) "<span class='subtle'>[X]</span>"
+
+#define SPAN_INFO(X) "<span class='info'>[X]</span>"
+
+#define FONT_COLORED(color, text) "<font color='[color]'>[text]</font>"
 
 #define FONT_SMALL(X) "<font size='1'>[X]</font>"
 
