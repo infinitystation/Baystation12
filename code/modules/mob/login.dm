@@ -100,6 +100,14 @@
 	//set macro to normal incase it was overriden (like cyborg currently does)
 //INF	winset(src, null, "mainwindow.macro=macro hotkey_toggle.is-checked=false input.focus=true input.background-color=#d3b5b5")
 
+//[INF]
+	if(get_preference_value(/datum/client_preference/chat_position) == GLOB.PREF_YES)
+		client.update_chat_position(TRUE)
+
+	if(get_preference_value(/datum/client_preference/fullscreen_mode) != GLOB.PREF_OFF)
+		client.toggle_fullscreen(get_preference_value(/datum/client_preference/fullscreen_mode))
+//[/INF]
+
 /mob/living/carbon/Login()
 	. = ..()
 	if(internals && internal)

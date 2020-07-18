@@ -39,3 +39,11 @@
 		alert_desc = SL.up_description
 	to_chat(src, "<span class='notice'>The alert level on the [station_name()] is currently: <font color=[SL.light_color_alarm]><B>[SL.name]</B></font>. [alert_desc]</span>")
 */
+
+//[INF]
+	if(get_preference_value(/datum/client_preference/chat_position) == GLOB.PREF_YES)
+		client.update_chat_position(TRUE)
+
+	if(get_preference_value(/datum/client_preference/fullscreen_mode) != GLOB.PREF_OFF)
+		client.toggle_fullscreen(get_preference_value(/datum/client_preference/fullscreen_mode))
+//[/INF]

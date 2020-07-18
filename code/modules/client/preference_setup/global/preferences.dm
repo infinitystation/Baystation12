@@ -203,7 +203,7 @@ var/list/_client_preferences_by_type
 /datum/client_preference/fullscreen_mode/changed(mob/preference_mob, new_value)
 	if(preference_mob.client)
 		preference_mob.client.toggle_fullscreen(new_value)
-/*
+
 /datum/client_preference/chat_position
 	description = "Alternative Chat Position"
 	key = "CHAT_ALT"
@@ -212,7 +212,6 @@ var/list/_client_preferences_by_type
 /datum/client_preference/chat_position/changed(mob/preference_mob, new_value)
 	if(preference_mob.client)
 		preference_mob.client.update_chat_position(new_value == GLOB.PREF_YES)
-*/
 //[/INF]
 
 /datum/client_preference/autohiss
