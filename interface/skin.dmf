@@ -903,6 +903,14 @@ menu "menu"
 		name = "&Scaling"
 		command = ""
 		saved-params = "is-checked"
+	elem "zoommode"
+		name = "&Smooth Scaling"
+		command = ".winset \"zoommode.is-checked=true?map.zoom-mode=normal:map.zoom-mode=distort\""
+		category = "&Scaling"
+		is-checked = true
+		can-check = true
+		group = "scale"
+		saved-params = "is-checked"
 	elem "NN"
 		name = "&Nearest Neighbor"
 		command = ".winset \"mapwindow.map.zoom-mode=distort\""
@@ -1024,7 +1032,7 @@ window "mapwindow"
 		font-family = "Arial Rounded MT Bold,Arial Black,Arial,sans-serif"
 		font-size = 7
 		is-default = true
-		saved-params = "icon-size"
+		saved-params = "icon-size;zoom-mode"
 		on-show = ".winset\"mainwindow.mainvsplit.left=mapwindow\""
 		on-hide = ".winset\"mainwindow.mainvsplit.left=\""
 	elem "lobbybrowser"
