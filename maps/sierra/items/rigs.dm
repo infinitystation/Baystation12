@@ -195,7 +195,8 @@
 	name = "HoS' HCM"
 	suit_type = "security command hardsuit"
 	desc = "A specialized hardsuit rig control module issued to ranking security command staff of the NanoTrasen and their peers."
-	icon_state = "command_sec_rig"
+	icon = 'infinity/icons/obj/rig_modules.dmi'
+	icon_state = "hos_rig"
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
 		bullet = ARMOR_BALLISTIC_PISTOL,
@@ -208,6 +209,8 @@
 
 	chest_type = /obj/item/clothing/suit/space/rig/command/hos
 	helm_type = /obj/item/clothing/head/helmet/space/rig/command/hos
+	boot_type = /obj/item/clothing/shoes/magboots/rig/command/hos
+	glove_type = /obj/item/clothing/gloves/rig/command/hos
 
 	allowed = list(/obj/item/weapon/gun,
 	 			  /obj/item/ammo_magazine,
@@ -220,9 +223,29 @@
 	req_access = list(access_hos)
 
 /obj/item/clothing/head/helmet/space/rig/command/hos
-	icon_state = "command_sec_rig"
+	icon_state = "hos_rig"
+	icon = 'infinity/icons/obj/clothing/obj_head.dmi'
+	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
+	species_restricted = list(SPECIES_HUMAN) //no available icons for aliens
+
 /obj/item/clothing/suit/space/rig/command/hos
-	icon_state = "command_sec_rig"
+	icon_state = "hos_rig"
+	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi')
+	species_restricted = list(SPECIES_HUMAN)
+
+/obj/item/clothing/shoes/magboots/rig/command/hos
+	icon_state = "hos_rig"
+	icon = 'infinity/icons/obj/clothing/obj_feet.dmi'
+	item_icons = list(slot_shoes_str = 'infinity/icons/mob/onmob/onmob_feet.dmi')
+	species_restricted = list(SPECIES_HUMAN)
+
+/obj/item/clothing/gloves/rig/command/hos
+	icon_state = "hos_rig"
+	icon = 'infinity/icons/obj/clothing/obj_hands.dmi'
+	item_icons = list(slot_gloves_str = 'infinity/icons/mob/onmob/onmob_hands.dmi')
+	species_restricted = list(SPECIES_HUMAN)
+
 
 /obj/item/weapon/rig/command/hos/equipped
 	initial_modules = list(
