@@ -1,5 +1,6 @@
 /obj/item/clothing/under/rank/security/alt
 	icon = 'infinity/icons/blue_brig/obj/clothing/uniform.dmi'
+	worn_state = "security"
 	item_icons = list(
 		slot_w_uniform_str = 'infinity/icons/blue_brig/mob/uniform.dmi',
 		icon_l_hand_str = 'infinity/icons/blue_brig/mob/clothing-lefthand.dmi',
@@ -8,6 +9,7 @@
 
 /obj/item/clothing/under/rank/security/corp/alt
 	icon = 'infinity/icons/blue_brig/obj/clothing/uniform.dmi'
+	worn_state = "security"
 	item_icons = list(
 		slot_w_uniform_str = 'infinity/icons/blue_brig/mob/uniform.dmi',
 		icon_l_hand_str = 'infinity/icons/blue_brig/mob/clothing-lefthand.dmi',
