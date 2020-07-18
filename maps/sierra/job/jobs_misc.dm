@@ -41,7 +41,7 @@
 /datum/job/merchant
 	title = "Merchant"
 	department = "Civilian"
-	department_flag = MSC
+	department_flag = CIV
 
 	total_positions = 1
 	spawn_positions = 1
@@ -76,7 +76,7 @@
 /datum/job/merchant_trainee
 	title = "Merchant Assistant"
 	department = "Civilian"
-	department_flag = MSC
+	department_flag = CIV
 
 	total_positions = 2
 	spawn_positions = 2
@@ -105,7 +105,7 @@
 /datum/job/stowaway
 	title = "Stowaway"
 	department = "Civilian"
-	department_flag = MSC
+	department_flag = CIV
 
 	total_positions = 2
 	spawn_positions = 2
