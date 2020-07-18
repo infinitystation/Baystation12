@@ -982,7 +982,7 @@ window "mainwindow"
 	elem "mainvsplit"
 		type = CHILD
 		pos = 3,0
-		size = 634x416
+		size = 640x420
 		anchor1 = 0,0
 		anchor2 = 100,100
 		saved-params = "splitter"
@@ -1070,6 +1070,42 @@ window "outputwindow"
 		saved-params = "max-lines"
 		style = ".system {color:#ff0000;}"
 		max-lines = 0
+	elem "saybutton_alt"
+		type = BUTTON
+		pos = 519,460
+		size = 40x20
+		anchor1 = 100,100
+		anchor2 = none
+		is-visible = false
+		is-disabled = true
+		saved-params = "is-checked"
+		text = "Chat"
+		command = ".winset \"saybutton_alt.is-checked=true?input_alt.command=\"!say \\\"\" macrobutton.is-checked=false:input_alt.command=\""
+		button-type = pushbox
+	elem "input_alt"
+		type = INPUT
+		pos = 1,460
+		size = 517x20
+		anchor1 = 0,100
+		anchor2 = 100,100
+		background-color = #d3b5b5
+		is-visible = false
+		is-disabled = true
+		is-default = true
+		border = sunken
+		saved-params = "command"
+	elem "hotkey_toggle_alt"
+		type = BUTTON
+		pos = 560,460
+		size = 80x20
+		anchor1 = 100,100
+		anchor2 = none
+		is-visible = false
+		is-disabled = true
+		saved-params = ""
+		text = "Hotkey Toggle"
+		command = ".winset \"mainwindow.macro!=macro ? mainwindow.macro=macro hotkey_toggle.is-checked=false input.focus=true : mainwindow.macro=hotkeymode hotkey_toggle.is-checked=true mapwindow.map.focus=true\""
+		button-type = pushbox
 
 window "rpane"
 	elem "rpane"
