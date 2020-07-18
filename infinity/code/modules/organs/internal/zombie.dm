@@ -17,7 +17,9 @@
 	var/progress = 0
 	var/max_progress = 360
 
-/obj/item/organ/internal/romerol/proc/set_progress(var/needed_progress)
+/obj/item/organ/internal/romerol/replaced(var/mob/living/carbon/human/target, var/needed_progress = 360)
+	if(!..()) return 0
+
 	if(owner && ishuman(owner))
 		max_progress = needed_progress
 

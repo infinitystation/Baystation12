@@ -24,7 +24,7 @@
 #################################
 
 # Your name.  
-author: Terror4000rus
+author: SmArtKar
 
 # Optional: Remove this file after generating master changelog.  Useful for PR changelogs that won't get used again.
 delete-after: True
@@ -34,10 +34,6 @@ delete-after: True
 # SCREW THIS UP AND IT WON'T WORK.
 # Also, all entries are changed into a single [] after a master changelog generation. Just remove the brackets when you add new entries.
 # Please surround your changes in  double quotes ("), as certain characters otherwise screws up compiling. The quotes will not show up in the changelog.
-changes: 
-  - bugfix: "Задание на похищение у трейторов и рейдеров теперь правильно ищет цели для похищения."
-  - experiment: "В очередной раз обновлены задания для генокрадов."
-  - null: "Больше не нужно поглощать весь экипаж и захватывать корабль. Поглотите столько полезных геномов (желающих стать генками игроков, считайте - и антагонистов) сколько сможете."
-  - null: "Требуется украсть 3-4 предмета на корабле. Генокрадов достаточно много, так что, это может быть занятно."
-  - null: "Нужно вызвать эвакуацию. В подах будет хорошая концетрация биоматериала."
-  - null: "Добавлен референс, что своих бросать не стоит - особенно, если их забрали учёные."
+changes:
+  - rscadd: "Теперь вместо моментальной зомбификации, у зараженного есть время на удаление опухоли из мозга что и зомбифицирует жертву."
+  - rscadd: "Старое 'Дыхание Смерти' было заменено выпускаемыми когтями с зомби-токсином."
