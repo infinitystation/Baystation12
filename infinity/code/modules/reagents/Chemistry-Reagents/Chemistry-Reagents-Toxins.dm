@@ -29,7 +29,6 @@
 			if(locate(/obj/item/organ/internal/romerol) in H)
 				return
 			var/obj/item/organ/internal/romerol/ooze = new(H.get_organ(BP_HEAD))
-			ooze.replaced(H)
-			ooze.set_progress(progress_zombify)
+			ooze.replaced(H, progress_zombify)
 		else if (prob(10))
 			to_chat(H, "<span class='warning'>You feel terribly ill!</span>")
