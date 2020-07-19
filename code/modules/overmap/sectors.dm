@@ -24,6 +24,13 @@
 
 	var/has_distress_beacon
 
+	//[INF]
+
+	var/hidden_name = "ion cloud"
+	var/hidden_icon_state = "ion1"
+
+	//[/INF]
+
 /obj/effect/overmap/visitable/Initialize()
 	. = ..()
 	if(. == INITIALIZE_HINT_QDEL)
@@ -34,7 +41,7 @@
 
 	if(!GLOB.using_map.overmap_z)
 		build_overmap()
-		
+
 	start_x = start_x || rand(OVERMAP_EDGE, GLOB.using_map.overmap_size - OVERMAP_EDGE)
 	start_y = start_y || rand(OVERMAP_EDGE, GLOB.using_map.overmap_size - OVERMAP_EDGE)
 
@@ -118,7 +125,7 @@
 	testing("Building overmap...")
 	world.maxz++
 	GLOB.using_map.overmap_z = world.maxz
-	
+
 	testing("Putting overmap on [GLOB.using_map.overmap_z]")
 	var/area/overmap/A = new
 	for (var/square in block(locate(1,1,GLOB.using_map.overmap_z), locate(GLOB.using_map.overmap_size,GLOB.using_map.overmap_size,GLOB.using_map.overmap_z)))
