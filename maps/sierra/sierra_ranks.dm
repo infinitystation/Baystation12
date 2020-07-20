@@ -137,7 +137,7 @@
 /datum/mil_branch/employee
 	name = "Employee"
 	name_short = "empl"
-	email_domain = "freemail.net"
+	email_domain = "ntmail.corp"
 
 	rank_types = list(
 		/datum/mil_rank/civ/nt,
