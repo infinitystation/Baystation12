@@ -24,6 +24,7 @@
 
 #define SPECIES_FBP				"Full Body Prosthesis"
 
+#define SPECIES_SKELETON		"Skeleton"
 #define SPECIES_ABDUCTOR		"Abductor Agent"
 #define SPECIES_ABDUCTOR_SCI	"Abductor Scientist"
 

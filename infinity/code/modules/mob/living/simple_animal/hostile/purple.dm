@@ -24,6 +24,7 @@
 	heat_damage_per_tick = 20
 	cold_damage_per_tick = 20
 	faction = "locust"
+	attacktext = "stabbed"
 	pass_flags = PASS_FLAG_TABLE
 	move_to_delay = 1
 	speed = 0
@@ -35,16 +36,16 @@
 	if(stunned)
 		icon_state = "[initial(icon_state)]_stunned"
 
-/mob/living/simple_animal/hostile/locust/gib()
-	create_reagents(25)
-	reagents.add_reagent(/datum/reagent/acid/alien, 10) //HEHEHE
-	reagents.add_reagent(/datum/reagent/potassium, 5)
-	reagents.add_reagent(/datum/reagent/sugar, 5)
-	reagents.add_reagent(/datum/reagent/phosphorus, 5)
+/mob/living/simple_animal/hostile/locust/gib(anim="locust_gib",do_gibs = 0)
+	create_reagents(50)
+	reagents.add_reagent(/datum/reagent/acid/alien, 20) //HEHEHE
+	reagents.add_reagent(/datum/reagent/potassium, 10)
+	reagents.add_reagent(/datum/reagent/sugar, 10)
+	reagents.add_reagent(/datum/reagent/phosphorus, 10)
 	. = ..()
 
 /mob/living/simple_animal/hostile/locust/death(var/gibbed)
-	gib()
+	gibbed = 1 // :)
 	. = ..()
 
 /mob/living/simple_animal/hostile/locust/explosive
@@ -54,6 +55,7 @@
 	icon_living = "scuttler"
 	icon_dead = "scuttler"
 	icon_gib = "scuttler_gib"
+	attacktext = "bumped into"
 	speed = 1
 	maxHealth = 10
 	health = 10
@@ -71,7 +73,9 @@
 	. = ..()
 
 /mob/living/simple_animal/hostile/locust/explosive/Bump(atom/A)
-	gib() // hehe
+	gib(icon_gib) // hehe
+	. = ..()
 
 /mob/living/simple_animal/hostile/locust/explosive/AttackingTarget()
-	gib()
+	gib(icon_gib)
+	. = ..()

@@ -39,6 +39,6 @@
 
 /obj/item/weapon/door_charge/proc/explode(var/obj/machinery/door/airlock/airlock)
 	if(!airlock.density)
-		explosion(get_turf(airlock), -1, 1, 2, 3)
+		explosion(get_turf(airlock), -1, 2, 3, 4)
 		airlock.ex_act(1)
 		qdel(src)

@@ -16,3 +16,9 @@
 	desc = "Buckshot drum for AS-53 shotgun. Contains 8 bullets."
 	item_cost = 10
 	path = /obj/item/ammo_magazine/c12m/buckshot
+
+/datum/uplink_item/item/ammo/c12755
+	name = "Sniper magazine (12.7x55mm)"
+	desc = "A magasine full of 12.7x55mm bullets."
+	item_cost = 9
+	path = /obj/item/ammo_magazine/c12755
