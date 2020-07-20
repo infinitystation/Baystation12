@@ -318,6 +318,7 @@
 			organ.max_damage *= 3
 			organ.min_broken_damage = Floor(organ.max_damage * 0.75)
 	//INF verbs += /mob/living/proc/breath_death
+	zombified = 1 //INF
 	verbs += /mob/living/proc/zombie_claws //INF
 	verbs += /mob/living/proc/consume
 	playsound(get_turf(src), 'sound/hallucinations/wail.ogg', 20, 1)

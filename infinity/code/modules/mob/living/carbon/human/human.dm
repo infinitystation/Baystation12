@@ -197,3 +197,20 @@
 	var/obj/item/organ/internal/xeno/plasmavessel/P = internal_organs_by_name[BP_PLASMA]
 	if(P)
 		stat(null, "Phoron Stored: [P.stored_plasma]/[P.max_plasma]")
+
+/mob/living/carbon/human/proc/zombie_rejuvenate()
+	var/obj/item/organ/internal/brain/brain = get_organ(BP_BRAIN)
+	if(!brain)
+		return
+
+	visible_message("<span class='danger'>Suddenly, [src] raises from the ground!</span>", "<span class='danger'>You feel that your body is ready to rip and tear again, and raise from the dead!</span>")
+	Weaken(5)
+	if (should_have_organ(BP_HEART))
+		vessel.add_reagent(/datum/reagent/blood, species.blood_volume - vessel.total_volume)
+	for (var/o in organs)
+		var/obj/item/organ/organ = o
+		organ.vital = 0
+		if (!BP_IS_ROBOTIC(organ))
+			organ.rejuvenate(1)
+			organ.max_damage *= 3
+			organ.min_broken_damage = Floor(organ.max_damage * 0.75)

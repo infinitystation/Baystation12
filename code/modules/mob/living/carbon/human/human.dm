@@ -8,6 +8,8 @@
 	throw_range = 3 //NO, TILSON
 	throw_speed = 0.5
 	var/good_DNA = 0 //for changelings
+
+	var/zombified = 0 //Reeeeeee
 //[/INF]
 	var/list/hud_list[10]
 	var/embedded_flag	  //To check if we've need to roll for damage on movement while an item is imbedded in us.
@@ -745,9 +747,9 @@
 		if(stomach.ingested.total_volume)
 			stomach.ingested.trans_to_holder(D.reagents, 15)
 		return
-			
+
 	var/turf/location = loc
-	
+
 	visible_message(SPAN_DANGER("\The [src] стошнило!"),SPAN_DANGER("Вас стошнило!"))
 	playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 	if(istype(location, /turf/simulated))
@@ -1637,6 +1639,12 @@
 		if(!istype(check_organ))
 			return 0
 		return check_organ.can_feel_pain()
+
+	//[INF]
+	if(zombified)
+		return 0
+	//[/INF]
+
 	return !(species.species_flags & SPECIES_FLAG_NO_PAIN)
 
 /mob/living/carbon/human/get_breath_volume()
@@ -1646,6 +1654,14 @@
 		. *= (!BP_IS_ROBOTIC(H)) ? pulse()/PULSE_NORM : 1.5
 
 /mob/living/carbon/human/need_breathe()
+
+	//[INF]
+
+	if(zombified)
+		return 0
+
+	//[/INF]
+
 	if(!(mNobreath in mutations) && species.breathing_organ && should_have_organ(species.breathing_organ))
 		return 1
 	else

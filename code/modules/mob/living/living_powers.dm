@@ -24,7 +24,7 @@
 	if (last_special > world.time)
 		to_chat(src, "<span class='warning'>You aren't ready to do that! Wait [round(last_special - world.time) / 10] seconds.</span>")
 		return
-	
+
 	if (incapacitated())
 		to_chat(src, "<span class='warning'>You can't do that while you're incapacitated!</span>")
 		return
@@ -46,7 +46,7 @@
 	if (last_special > world.time)
 		to_chat(src, "<span class='warning'>You aren't ready to do that! Wait [round(last_special - world.time) / 10] seconds.</span>")
 		return
-	
+
 	if (incapacitated())
 		to_chat(src, "<span class='warning'>You can't do that while you're incapacitated!</span>")
 		return
@@ -66,7 +66,8 @@
 	if(do_mob(src, target, 5 SECONDS))
 		to_chat(target,"<span class='danger'>\The [src] scrapes your flesh from your bones!</span>")
 		to_chat(src,"<span class='danger'>You feed hungrily off \the [target]'s flesh.</span>")
-		target.adjustBruteLoss(25)
-		if(target.getBruteLoss() < -target.maxHealth)
-			target.gib()
-		src.adjustBruteLoss(-25)
+		//INF target.adjustBruteLoss(50)
+		//INF if(target.getBruteLoss() < -target.maxHealth)
+		target.gib()
+		src.adjustBruteLoss(-50) //INF, was -25
+		src.adjustFireLoss(-50) //INF, was -25
