@@ -257,6 +257,7 @@
 /obj/item/weapon/melee/baton/cattleprod
 	name = "stunprod"
 	desc = "An improvised stun baton."
+    icon = 'icons/obj/item/weapons.dmi'//inf
 	icon_state = "stunprod_nocell"
 	item_state = "prod"
 	force = 3
