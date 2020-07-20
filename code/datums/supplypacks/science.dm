@@ -87,4 +87,3 @@
 	cost = 90
 	containertype = /obj/structure/largecrate
 	containername = "space-bike crate"
-
