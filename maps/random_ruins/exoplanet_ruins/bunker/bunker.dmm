@@ -90,7 +90,6 @@
 /area/bunker/maint/west)
 "ar" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
-	tag = "icon-intact (WEST)";
 	icon_state = "intact";
 	dir = 8
 	},
@@ -98,7 +97,6 @@
 /area/bunker/maint/east)
 "as" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
-	tag = "icon-intact (WEST)";
 	icon_state = "intact";
 	dir = 8
 	},
@@ -311,8 +309,7 @@
 /obj/structure/filingcabinet/wallcabinet{
 	dir = 4;
 	icon_state = "wallcabinet";
-	pixel_x = -29;
-	tag = "icon-wallcabinet (EAST)"
+	pixel_x = -29
 	},
 /obj/item/weapon/pen,
 /turf/simulated/floor/tiled/dark,
@@ -399,7 +396,6 @@
 /area/bunker/command/armory)
 "bd" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
-	tag = "icon-intact (SOUTHEAST)";
 	icon_state = "intact";
 	dir = 6
 	},
@@ -477,7 +473,6 @@
 /area/bunker/hallway)
 "bk" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
-	tag = "icon-intact (NORTH)";
 	icon_state = "intact";
 	dir = 1
 	},
@@ -497,8 +492,7 @@
 	dir = 8;
 	icon_state = "sink";
 	pixel_x = -14;
-	pixel_y = 4;
-	tag = "icon-sink (WEST)"
+	pixel_y = 4
 	},
 /obj/item/weapon/storage/mirror{
 	pixel_x = -26
@@ -518,7 +512,6 @@
 "bo" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/grey_alt{
-	tag = "icon-corner_white (NORTH)";
 	icon_state = "corner_white";
 	dir = 1
 	},
@@ -526,7 +519,6 @@
 /area/bunker/hallway)
 "bp" = (
 /obj/effect/floor_decal/corner/grey_alt{
-	tag = "icon-corner_white (NORTH)";
 	icon_state = "corner_white";
 	dir = 1
 	},
@@ -535,7 +527,6 @@
 "bq" = (
 /obj/structure/closet/firecloset,
 /obj/effect/floor_decal/corner/grey_alt{
-	tag = "icon-corner_white (NORTH)";
 	icon_state = "corner_white";
 	dir = 1
 	},
@@ -626,8 +617,7 @@
 	dir = 4;
 	icon_state = "sink";
 	pixel_x = 14;
-	pixel_y = 4;
-	tag = "icon-sink (EAST)"
+	pixel_y = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/bunker/medical)
@@ -908,7 +898,6 @@
 	},
 /obj/machinery/power/port_gen/pacman/super/potato,
 /obj/machinery/light/small/red{
-	tag = "icon-bulb1 (EAST)";
 	icon_state = "bulb1";
 	dir = 4
 	},
@@ -996,7 +985,6 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/corner/grey_alt{
-	tag = "icon-corner_white (NORTH)";
 	icon_state = "corner_white";
 	dir = 1
 	},
@@ -1360,7 +1348,6 @@
 /area/bunker/maint/south)
 "hf" = (
 /obj/effect/floor_decal/corner/grey_alt{
-	tag = "icon-corner_white (NORTH)";
 	icon_state = "corner_white";
 	dir = 1
 	},
@@ -1576,7 +1563,6 @@
 /area/bunker/command)
 "oX" = (
 /obj/effect/floor_decal/corner/grey_alt{
-	tag = "icon-corner_white (NORTH)";
 	icon_state = "corner_white";
 	dir = 1
 	},
@@ -1701,8 +1687,7 @@
 /obj/machinery/shower{
 	dir = 8;
 	icon_state = "shower";
-	pixel_w = -6;
-	tag = "icon-shower (WEST)"
+	pixel_w = -6
 	},
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/freezer,
@@ -1774,7 +1759,6 @@
 /area/bunker/storage)
 "BB" = (
 /obj/effect/floor_decal/corner/grey_alt{
-	tag = "icon-corner_white (NORTH)";
 	icon_state = "corner_white";
 	dir = 1
 	},
@@ -1881,7 +1865,6 @@
 /area/bunker/living)
 "Iq" = (
 /obj/effect/floor_decal/corner/grey_alt{
-	tag = "icon-corner_white (NORTH)";
 	icon_state = "corner_white";
 	dir = 1
 	},
@@ -1949,7 +1932,6 @@
 /area/bunker/maint/west)
 "KS" = (
 /obj/effect/floor_decal/corner/grey_alt{
-	tag = "icon-corner_white (NORTH)";
 	icon_state = "corner_white";
 	dir = 1
 	},
@@ -2140,7 +2122,6 @@
 /area/bunker/eva)
 "WG" = (
 /obj/effect/floor_decal/corner/grey_alt{
-	tag = "icon-corner_white (NORTH)";
 	icon_state = "corner_white";
 	dir = 1
 	},

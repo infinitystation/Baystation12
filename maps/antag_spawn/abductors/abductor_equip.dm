@@ -227,7 +227,7 @@
 	base_parry_chance = 30
 
 	var/stunforce = 0
-	var/agonyforce = 45
+	var/agonyforce = 15 //Nerfed this shit a lot
 	var/mode = 0
 
 	item_icons = list(
@@ -284,7 +284,7 @@
 			if(ishuman(target))
 				var/mob/living/carbon/human/H = target
 				user.visible_message("[user] attempts to handcuff [H]!")
-				if(do_after(user, 0.5 SECONDS, H, TRUE))
+				if(do_after(user, 4 SECONDS, H, TRUE))
 					var/obj/item/weapon/handcuffs/wizard/cuffs = new()
 					cuffs.forceMove(H)
 					H.handcuffed = cuffs
@@ -294,7 +294,7 @@
 			playsound(loc, 'sound/weapons/Egloves.ogg', 50, 1, -1)
 			if(ishuman(target) && target.incapacitated())
 				var/mob/living/carbon/human/H = target
-				H.sleeping = 10
+				H.sleeping = 60
 				user.visible_message(SPAN_DANGER("[user] puts [H] into sleep with [src]!"))
 
 	return 1

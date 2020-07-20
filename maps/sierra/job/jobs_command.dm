@@ -30,7 +30,7 @@
 	title = "Head of Personnel"
 	supervisors = "Капитаном"
 	department = "Command"
-	department_flag = COM
+	department_flag = COM|SRV
 	head_position = 1
 	total_positions = 1
 	spawn_positions = 1
@@ -245,7 +245,7 @@
 /datum/job/iaa
 	title = "Internal Affairs Agent"
 	department = "Support"
-	department_flag = COM
+	department_flag = SPT
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "Центральным Командованием"
@@ -270,7 +270,7 @@
 /datum/job/adjutant
 	title = "Adjutant"
 	department = "Support"
-	department_flag = COM
+	department_flag = SPT
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "Капитаном и остальными главами"

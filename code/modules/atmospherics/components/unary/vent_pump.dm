@@ -43,9 +43,9 @@
 	build_icon_state = "uvent"
 
 	uncreated_component_parts = list(
-		/obj/item/weapon/stock_parts/power/apc/buildable,
-		/obj/item/weapon/stock_parts/radio/receiver/buildable,
-		/obj/item/weapon/stock_parts/radio/transmitter/on_event/buildable,
+		/obj/item/weapon/stock_parts/power/apc,
+		/obj/item/weapon/stock_parts/radio/receiver,
+		/obj/item/weapon/stock_parts/radio/transmitter/on_event,
 	)
 	public_variables = list(
 		/decl/public_access/public_variable/input_toggle,
@@ -71,11 +71,8 @@
 	)
 
 	frame_type = /obj/item/pipe
-	construct_state = /decl/machine_construction/default/panel_closed/item_chassis
-	base_type = /obj/machinery/atmospherics/unary/vent_pump/buildable
-
-/obj/machinery/atmospherics/unary/vent_pump/buildable
-	uncreated_component_parts = null
+	construct_state = /decl/machine_construction/default/item_chassis
+	base_type = /obj/machinery/atmospherics/unary/vent_pump
 
 /obj/machinery/atmospherics/unary/vent_pump/on
 	use_power = POWER_USE_IDLE
@@ -426,7 +423,7 @@
 /decl/public_access/public_variable/pressure_bound/external/write_var(obj/machinery/atmospherics/unary/vent_pump/machine, new_value)
 	if(new_value == "default")
 		new_value = machine.external_pressure_bound_default
-	new_value = Clamp(new_value, 0, MAX_PUMP_PRESSURE)
+	new_value = Clamp(text2num(new_value), 0, MAX_PUMP_PRESSURE)
 	. = ..()
 	if(.)
 		machine.external_pressure_bound = new_value
@@ -545,9 +542,11 @@
 
 /decl/stock_part_preset/radio/receiver/vent_pump/engine
 	frequency = ATMOS_ENGINE_FREQ
+	filter = RADIO_ATMOSIA
 
 /decl/stock_part_preset/radio/event_transmitter/vent_pump/engine
 	frequency = ATMOS_ENGINE_FREQ
+	filter = RADIO_ATMOSIA
 
 /obj/machinery/atmospherics/unary/vent_pump/engine
 	name = "Engine Core Vent"

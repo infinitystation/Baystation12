@@ -71,7 +71,6 @@
 		/datum/mil_branch/civilian = /decl/hierarchy/outfit/job/torch/crew/engineering/contractor
 	)
 	allowed_ranks = list(
-		/datum/mil_rank/fleet/e2,
 		/datum/mil_rank/fleet/e3,
 		/datum/mil_rank/fleet/e4,
 		/datum/mil_rank/fleet/e5,
@@ -126,7 +125,7 @@
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/e3,
-		/datum/mil_rank/fleet/e2,
+		/datum/mil_rank/fleet/e2
 	)
 
 	skill_points = 4
@@ -163,20 +162,28 @@
 /datum/job/roboticist
 	title = "Roboticist"
 	department = "Engineering"
-	department_flag = ENG
+	department_flag = ENG|ROB
 
 	total_positions = 2
 	spawn_positions = 2
 	minimal_player_age = 0
 	minimum_character_age = list(SPECIES_HUMAN = 25)
-	supervisors = "the Chief Engineer and the Corporate Liaison."
+	supervisors = "the Chief Engineer."
 	selection_color = "#5b4d20"
 	economic_power = 6
 	alt_titles = list(
 		"Mechsuit Technician")
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/engineering/roboticist
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/contractor)
+	allowed_branches = list(
+		/datum/mil_branch/expeditionary_corps = /decl/hierarchy/outfit/job/torch/crew/engineering/roboticistec,
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/engineering/roboticistfleet,
+		/datum/mil_branch/civilian = /decl/hierarchy/outfit/job/torch/crew/engineering/roboticist
+	)
+	allowed_ranks = list(
+		/datum/mil_rank/fleet/e5,
+		/datum/mil_rank/ec/e5,
+		/datum/mil_rank/civ/contractor
+	)
 	min_skill = list(   SKILL_COMPUTER		= SKILL_ADEPT,
 	                    SKILL_DEVICES		= SKILL_ADEPT,
 	                    SKILL_EVA           = SKILL_ADEPT,
@@ -192,8 +199,8 @@
 	                    SKILL_ANATOMY      = SKILL_EXPERT)
 	skill_points = 20
 
-	access = list(access_robotics, access_robotics_engineering, access_engine, access_solgov_crew)
+	access = list(access_robotics, access_engine, access_solgov_crew)
 	minimal_access = list()
 
 /datum/job/roboticist/get_description_blurb()
-	return "You are the Roboticist. You are responsible for repairing, upgrading and handling ship synthetics (like robots). You are also responsible for the production of exosuits(mechs) and bots for various departments. You answer to the Corporate Liaison and the Chief Engineer."
+	return "You are the Roboticist. You are responsible for repairing, upgrading and handling ship synthetics (like robots). You are also responsible for the production of exosuits(mechs) and bots for various departments. You answer to the Chief Engineer."

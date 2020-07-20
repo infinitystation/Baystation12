@@ -1,12 +1,21 @@
-
 /datum/antagonist/changeling/create_global_objectives(override = 1)
 
 	if(!..())
 		return
 
 	global_objectives = list()
-	global_objectives |= new /datum/objective/changeling_infestation
+	global_objectives |= new /datum/objective/changeling
 
+	var/i = 1
+	var/max_steal_objectives = pick(3, 3, 4)
+	while(i <= max_steal_objectives)
+		var/datum/objective/O = new /datum/objective/steal()
+		O.find_target()
+		global_objectives |= O
+		i++
+
+	global_objectives |= new /datum/objective/changeling/evacuate
+	global_objectives |= new /datum/objective/changeling/stealth
 
 /datum/antagonist/changeling/create_objectives(var/datum/mind/changeling, override = 1)
 	if(!..())

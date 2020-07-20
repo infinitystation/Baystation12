@@ -110,6 +110,7 @@ var/global/floorIsLava = 0
 
 	if(M.client)
 		body += "| <A HREF='?src=\ref[src];sendtoprison=\ref[M]'>Prison</A> | "
+		body += "<A HREF='?src=\ref[src];reloadsave=\ref[M]'>Reload Save</A> | "
 		var/muted = M.client.prefs.muted
 		body += {"<br><b>Mute: </b>
 			\[<A href='?src=\ref[src];mute=\ref[M];mute_type=[MUTE_IC]'><font color='[(muted & MUTE_IC)?"red":"blue"]'>IC</font></a> |
@@ -1356,7 +1357,7 @@ var/global/floorIsLava = 0
 	if(istype(H))
 		H.regenerate_icons()
 
-/client/proc/get_options_bar(whom, detail = 2, name = 0, link = 1, highlight_special = 1, var/datum/ticket/ticket = null)
+/proc/get_options_bar(whom, detail = 2, name = 0, link = 1, highlight_special = 1, var/datum/ticket/ticket = null)
 	if(!whom)
 		return "<b>(*null*)</b>"
 	var/mob/M
@@ -1386,7 +1387,7 @@ var/global/floorIsLava = 0
 
 		if(4)	//Mentors
 			var/ref_mob = "\ref[M]"
-			return "<b>[key_name(C, link, name, highlight_special, ticket)] (<A HREF='?_src_=holder;adminmoreinfo=\ref[M]'>?</A>) (<A HREF='?_src_=holder;adminplayeropts=[ref_mob]'>PP</A>) (<A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A>) ([admin_jump_link(M, src)])</b>"
+			return "<b>[key_name(C, link, name, highlight_special, ticket)] (<A HREF='?_src_=holder;adminmoreinfo=\ref[M]'>?</A>) (<A HREF='?_src_=holder;adminplayeropts=[ref_mob]'>PP</A>) (<A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A>) ([admin_jump_link(M)])</b>"
 
 /proc/ishost(var/client/C)
 	return check_rights(R_HOST, 0, C)
@@ -1518,6 +1519,20 @@ var/global/floorIsLava = 0
 
 			P.adminbrowse()
 
+
+/client/proc/check_fax_history()
+	set category = "Special Verbs"
+	set name = "Check Fax History"
+	set desc = "Look up the faxes sent this round."
+
+	var/data = "<center><b>Fax History:</b></center><br>"
+
+	if(GLOB.adminfaxes)
+		for(var/obj/item/item in GLOB.adminfaxes)
+			data += "[item.name] - <a href='?_src_=holder;AdminFaxView=\ref[item]'>view message</a><br>"
+	else
+		data += "<center>No faxes yet.</center>"
+	show_browser(usr, "<HTML><HEAD><TITLE>Fax History</TITLE></HEAD><BODY>[data]</BODY></HTML>", "window=FaxHistory;size=450x400")
 
 datum/admins/var/obj/item/weapon/paper/admin/faxreply // var to hold fax replies in
 

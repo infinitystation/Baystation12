@@ -31,6 +31,10 @@
 	islocked = 1
 	mycolour = "#ffbf00"//inf
 
+/obj/machinery/suit_storage_unit/engineering/unishi
+	req_access = null
+	islocked = 0
+
 /obj/machinery/suit_storage_unit/engineering/alt
 	suit= /obj/item/clothing/suit/space/void/engineering/alt
 	helmet = /obj/item/clothing/head/helmet/space/void/engineering/alt

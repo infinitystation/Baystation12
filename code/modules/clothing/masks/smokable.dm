@@ -90,10 +90,18 @@
 		if(submerged(depth))
 			extinguish(no_message = TRUE)
 
+/obj/item/clothing/mask/smokable/proc/is_wet()
+	if(ishuman(loc))
+		var/mob/living/carbon/human/C = loc
+		return locate(/datum/reagent/water) in C.touching.reagent_list
+
 /obj/item/clothing/mask/smokable/proc/light(var/flavor_text = "[usr] lights the [name].")
 	if(QDELETED(src))
 		return
 	if(!lit)
+		if(is_wet())
+			to_chat(usr, "<span class='warning'>You are too wet to light \the [src].</span>")
+			return
 		if(submerged())
 			to_chat(usr, "<span class='warning'>You cannot light \the [src] underwater.</span>")
 			return
@@ -218,6 +226,8 @@
 			var/mob/living/M = loc
 			if (!no_message)
 				to_chat(M, "<span class='notice'>Your [name] goes out.</span>")
+			// if the mob has free hands, put the cig in them
+			 M.put_in_any_hand_if_possible(butt)
 [/ORIG]*/
 		qdel(src)
 
@@ -353,7 +363,7 @@
 
 /obj/item/clothing/mask/smokable/cigarette/attack_self(var/mob/user)
 	if(lit == 1)
-		user.visible_message("<span class='notice'>[user] calmly drops and treads on the lit [src], putting it out instantly.</span>")
+		user.visible_message("<span class='notice'>[user] puts out the lit [src].</span>")
 		extinguish(no_message = 1)
 	return ..()
 

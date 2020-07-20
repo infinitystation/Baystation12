@@ -6,7 +6,7 @@
 	var/mech_health = 300
 	var/obj/item/weapon/cell/cell
 	var/obj/item/robot_parts/robot_component/diagnosis_unit/diagnostics
-	var/obj/item/robot_parts/robot_component/armour/exosuit/armour
+	var/obj/item/robot_parts/robot_component/armour/exosuit/m_armour
 	var/obj/machinery/portable_atmospherics/canister/air_supply
 	var/datum/gas_mixture/cockpit
 	var/transparent_cabin = FALSE
@@ -17,6 +17,7 @@
 	var/min_pilot_size = MOB_SMALL
 	var/max_pilot_size = MOB_LARGE
 	has_hardpoints = list(HARDPOINT_BACK, HARDPOINT_LEFT_SHOULDER, HARDPOINT_RIGHT_SHOULDER)
+	var/climb_time = 25
 
 /obj/item/mech_component/chassis/New()
 	..()
@@ -33,14 +34,14 @@
 /obj/item/mech_component/chassis/Destroy()
 	QDEL_NULL(cell)
 	QDEL_NULL(diagnostics)
-	QDEL_NULL(armour)
+	QDEL_NULL(m_armour)
 	QDEL_NULL(air_supply)
 	. = ..()
 
 /obj/item/mech_component/chassis/update_components()
 	diagnostics = locate() in src
 	cell =        locate() in src
-	armour =      locate() in src
+	m_armour =    locate() in src
 	air_supply =  locate() in src
 
 /obj/item/mech_component/chassis/show_missing_parts(var/mob/user)
@@ -48,7 +49,7 @@
 		to_chat(user, SPAN_WARNING("It is missing a power cell."))
 	if(!diagnostics)
 		to_chat(user, SPAN_WARNING("It is missing a diagnostics unit."))
-	if(!armour)
+	if(!m_armour)
 		to_chat(user, SPAN_WARNING("It is missing exosuit armour plating."))
 
 /obj/item/mech_component/chassis/Initialize()
@@ -81,7 +82,7 @@
 		cockpit.react()
 
 /obj/item/mech_component/chassis/ready_to_install()
-	return (cell && diagnostics && armour)
+	return (cell && diagnostics && m_armour)
 
 /obj/item/mech_component/chassis/prebuild()
 	diagnostics = new(src)
@@ -100,12 +101,11 @@
 			return
 		if(install_component(thing,user)) cell = thing
 	else if(istype(thing, /obj/item/robot_parts/robot_component/armour/exosuit))
-		if(armour)
+		if(m_armour)
 			to_chat(user, SPAN_WARNING("\The [src] already has armour installed."))
 			return
 		if(install_component(thing, user))
-			armour = thing
-			set_extension(src, /datum/extension/armor, armour.armor)
+			m_armour = thing
 	else
 		return ..()
 

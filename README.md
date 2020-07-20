@@ -2,10 +2,10 @@
 [![Build Status](https://travis-ci.org/infinitystation/Baystation12.svg?branch=master)](https://travis-ci.org/infinitystation/Baystation12)
 [![CodeFactor](https://www.codefactor.io/repository/github/infinitystation/baystation12/badge)](https://www.codefactor.io/repository/github/infinitystation/baystation12)
 
-**Код**: https://github.com/infinitystation/Baystation12  
-**Сайт разработчика:** https://infinity-ss13.info/  
-**Discord**: https://discord.gg/N4atUkH  
-**Используемые карты:** Sierra, Модифицированный Bearcat 
+[**Код:**](https://github.com/infinitystation/Baystation12/) https://github.com/infinitystation/Baystation12
+[**Сайт разработчика:**](https://infinity-ss13.info/) https://infinity-ss13.info/
+[**Discord:**](https://discord.gg/N4atUkH/) https://discord.gg/N4atUkH
+**Используемые карты:** Sierra, Модифицированный Bearcat
 
 **Сайт оригинального разработчика:** https://baystation12.net  
 **Оригинальный код:** https://github.com/Baystation12/Baystation12  

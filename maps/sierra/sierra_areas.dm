@@ -1353,7 +1353,7 @@
 		'sound/ambience/ambimalf.ogg',
 		'infinity/sound/SS2/ambience/ambservers.wav'
 		)
-	forced_ambience = list('infinity/sound/SS2/ambience/ambxerxes_looped.wav')
+	forced_ambience = list('infinity/sound/SS2/ambience/ambxerxes_looped.wav', 'infinity/sound/ambience/ai_port_hum.ogg')
 
 /area/turret_protected/ai
 	name = "AI Chamber"
