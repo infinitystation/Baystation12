@@ -507,10 +507,6 @@ decl/surgery_step/robotics/get_skill_reqs(mob/living/user, mob/living/carbon/hum
 	if(affected && istype(M))
 		if(!M.brainmob || !M.brainmob.client || !M.brainmob.ckey || M.brainmob.stat >= DEAD)
 			to_chat(user, SPAN_WARNING("That brain is not usable."))
-//[INF]
-		else if(!is_species_whitelisted(M.brainmob, SPECIES_FBP))
-			to_chat(user, SPAN_WARNING("That brain is not usable. Try another."))
-//[/INF]
 		else if(BP_IS_CRYSTAL(affected))
 			to_chat(user, SPAN_WARNING("The crystalline interior of \the [affected] is incompatible with \the [M]."))
 		else if(!target.isSynthetic())

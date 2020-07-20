@@ -20,15 +20,14 @@
 	for(var/datum/mind/possible_target in SSticker.minds)
 		if(possible_target != owner && ishuman(possible_target.current) && (possible_target.current.stat != DEAD) && (!possible_target.special_role))
 			possible_targets += possible_target
-			for(var/datum/job/role in SSjobs.get_by_path(roles))
+			for(var/job_type in roles)
+				var/datum/job/role = SSjobs.get_by_path(job_type)
 				if(possible_target.assigned_role == role.title)
 					priority_targets += possible_target
 					continue
 
 	if(priority_targets.len > 0)
 		target = pick(priority_targets)
-	else if(possible_targets.len > 0)
-		target = pick(possible_targets)
 
 	if(target?.current)
 		explanation_text = "Похитить [target.current.real_name] ([target.assigned_role]). Цель должна быть живой."
@@ -74,10 +73,16 @@
 
 	explanation_text = "It's a buyer's market out here. Steal [loot] for resale."
 
-/datum/objective/changeling_infestation //unused
-	explanation_text = "Захватить объект, поглотив его экипаж и сделав частью общности. Необходимо делать это настолько скрытно, \
-	насколько возможно - Корпорация будет только рада пленить нас."
+/datum/objective/changeling
+	explanation_text = "Поглотить как можно больше существ с полезными геномами."
 
+/datum/objective/changeling/evacuate
+	explanation_text = "Покинуть объект с помощью эвакуации. Кто-то должен остаться, чтобы поглотить опоздавших."
+
+/datum/objective/changeling/stealth
+	explanation_text = "Не оставлять своих. Корпорация будет только рада пленить и изучить нас."
+
+//unused
 /datum/objective/absorb_pointly/find_target(var/override = 0)
 	..()
 	if(target?.current)
@@ -93,3 +98,4 @@
 	else
 		explanation_text = "Свободная Цель"
 	return target
+//unused end

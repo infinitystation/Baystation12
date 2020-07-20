@@ -5,7 +5,16 @@
 /decl/cultural_info/culture/human
 	name = CULTURE_HUMAN
 	description = "Вы из одной из разнообразных культур человеческих планет."
-	secondary_langs = HUMAN_LANGUAGES_FULL
+	secondary_langs = list(
+		LANGUAGE_HUMAN_EURO,
+		LANGUAGE_HUMAN_CHINESE,
+		LANGUAGE_HUMAN_ARABIC,
+		LANGUAGE_HUMAN_INDIAN,
+		LANGUAGE_HUMAN_IBERIAN,
+		LANGUAGE_HUMAN_RUSSIAN,
+		LANGUAGE_SPACER,
+		LANGUAGE_SIGN
+	)
 
 /decl/cultural_info/culture/human/martian_surfacer
 	name = CULTURE_HUMAN_MARTIAN
@@ -86,6 +95,7 @@
 	известна в человеческом пространстве."
 	economic_power = 1
 
+
 /decl/cultural_info/culture/human/plutonian
 	name = CULTURE_HUMAN_PLUTO
 	description = "Вы с Плутона, один из многих обитателей этого жестокого и неумолимого мира. В течение многих \
@@ -96,6 +106,15 @@
 	покинуть это место и переехать в более комфортные места. К сожалению, несмотря на усилия ЦПСС, многие \
 	плутониане, как правило, поддерживают преступные связи, даже за пределами планеты."
 	economic_power = 0.8
+	secondary_langs = list (LANGUAGE_HUMAN_EURO,
+		LANGUAGE_HUMAN_CHINESE,
+		LANGUAGE_HUMAN_ARABIC,
+		LANGUAGE_HUMAN_INDIAN,
+		LANGUAGE_HUMAN_IBERIAN,
+		LANGUAGE_HUMAN_RUSSIAN,
+		LANGUAGE_SPACER,
+		LANGUAGE_GUTTER,
+		LANGUAGE_SIGN)
 
 /decl/cultural_info/culture/human/earthling
 	name = CULTURE_HUMAN_EARTH
@@ -165,6 +184,15 @@
 	description = "Некоторые люди происходят из мест, о которых никто никогда не слышал, или мест, слишком \
 	необузданных и фантастических, чтобы внести их в Галактическую Энциклопедию. Вы один из них."
 	economic_power = 1
+	secondary_langs = list (LANGUAGE_HUMAN_EURO,
+		LANGUAGE_HUMAN_CHINESE,
+		LANGUAGE_HUMAN_ARABIC,
+		LANGUAGE_HUMAN_INDIAN,
+		LANGUAGE_HUMAN_IBERIAN,
+		LANGUAGE_HUMAN_RUSSIAN,
+		LANGUAGE_SPACER,
+		LANGUAGE_GUTTER,
+		LANGUAGE_SIGN)
 
 /decl/cultural_info/culture/human/vatgrown
 	name = CULTURE_HUMAN_VATGROWN

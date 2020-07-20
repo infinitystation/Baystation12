@@ -118,7 +118,6 @@
 			if(M.can_feel_pain())
 				M.agony_scream()
 		return
-	return ..()
 
 	//Stuff you can do if the maint hatch is open
 	if(panel_open)

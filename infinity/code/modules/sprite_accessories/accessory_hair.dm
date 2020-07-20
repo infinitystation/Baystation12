@@ -21,7 +21,7 @@
 	icon_state = "hair_pais"
 
 /datum/sprite_accessory/hair/infinity/new_ponytail
-	name = "Ponytail 7"
+	name = "Ponytail 7 (alt)"
 	icon_state = "hair_ponytail"
 
 /datum/sprite_accessory/hair/infinity/shortflip
@@ -69,10 +69,6 @@
 /datum/sprite_accessory/hair/infinity/zone
 	name = "Zone"
 	icon_state = "hair_zone"
-
-/datum/sprite_accessory/hair/infinity/modern
-	name = "Modern"
-	icon_state = "hair_modern"
 
 /datum/sprite_accessory/hair/infinity/long
 	name = "Long hair 4"
@@ -153,10 +149,6 @@
 /datum/sprite_accessory/hair/infinity/terezi
 	name = "Terezi"
 	icon_state = "hair_terezi"
-
-/datum/sprite_accessory/hair/infinity/tressshoulder
-	name = "Tress Shoulder"
-	icon_state = "hair_tressshoulder"
 
 /datum/sprite_accessory/hair/infinity/vriska
 	name = "Vriska"

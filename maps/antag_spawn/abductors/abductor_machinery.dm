@@ -125,6 +125,12 @@
 	if(locate(/obj/item/clothing/suit/armor/abductor))
 		vest = locate(/obj/item/clothing/suit/armor/abductor)
 
+/obj/machinery/abductor_disguise/Process()
+	if(!vest)
+		if(locate(/obj/item/clothing/suit/armor/abductor))
+			vest = locate(/obj/item/clothing/suit/armor/abductor)
+	. = ..()
+
 /obj/machinery/abductor_disguise/attack_hand(mob/user as mob)
 	var/app = appearances[input("Choose disguise for the agent.", "Disguise") as null|anything in appearances]
 	vest.try_disguise(app)

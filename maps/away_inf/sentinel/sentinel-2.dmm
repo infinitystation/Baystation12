@@ -3444,7 +3444,7 @@
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
-/obj/item/trash/candy/proteinbar,
+/obj/item/trash/proteinbar,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
 "gA" = (

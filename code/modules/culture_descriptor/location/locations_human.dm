@@ -14,7 +14,6 @@
 	distance = "1.5 А.Е."
 	capital = "Олимпус"
 	economic_power = 1.1
-//	secondary_langs = HUMAN_LANGUAGES_FULL //inf
 
 /decl/cultural_info/location/human/earth
 	name = HOME_SYSTEM_EARTH
@@ -101,6 +100,7 @@
 	посчастливилось покинуть это место, очень редко хотят вернуться обратно."
 	capital = "Нью Санто-Доминго"
 	economic_power = 0.8
+	secondary_langs = list(LANGUAGE_GUTTER)
 
 /decl/cultural_info/location/human/cetiepsilon
 	name = HOME_SYSTEM_TAU_CETI

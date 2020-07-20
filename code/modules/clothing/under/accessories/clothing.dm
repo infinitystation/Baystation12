@@ -12,6 +12,11 @@
 	desc = "They suspend the illusion of the mime's play."
 	icon_state = "suspenders"
 
+/obj/item/clothing/accessory/suspenders/colorable
+	name = "suspenders"
+	desc = "They suspend the illusion of the mime's play."
+	icon_state = "suspenders_color"
+
 /obj/item/clothing/accessory/tunic
 	name = "researcher's tunic"
 	desc = "A fashionable tunic that EXO provides to their lab workers."
@@ -332,16 +337,16 @@
 	icon_state = "fire_overpants"
 	gas_transfer_coefficient = 0.90
 	permeability_coefficient = 0.50
-	body_parts_covered = LEG_LEFT | LEG_RIGHT | LOWER_TORSO
-	cold_protection = LOWER_TORSO | LEG_LEFT | LEG_RIGHT
-	heat_protection = LOWER_TORSO | LEG_LEFT | LEG_RIGHT
+
+	armor = list(laser = ARMOR_LASER_MINOR, energy = ARMOR_ENERGY_MINOR, bomb = ARMOR_BOMB_MINOR)
+	body_parts_covered = LOWER_TORSO | LEGS
+	slowdown = 0.5
+
+	heat_protection = LOWER_TORSO | LEGS
+	cold_protection = LOWER_TORSO | LEGS
+
 	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	max_pressure_protection = FIRESUIT_MAX_PRESSURE
-	armor = list(melee = 0, bullet = 0, laser = 10, energy = 10, bomb = 10, bio = 0, rad = 0)
-
-/obj/item/clothing/accessory/fire_overpants/Initialize()
-	. = ..()
-	slowdown_per_slot[slot_wear_suit] = 0.2
 
 /obj/item/clothing/accessory/space_adapted/venter
 	name = "venter assembly"

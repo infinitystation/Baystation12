@@ -25,12 +25,23 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 
 /obj/machinery/photocopier/faxmachine/Initialize()
 	. = ..()
-	if(!admin_departments)
-		admin_departments = list("[GLOB.using_map.boss_name]", "Sol Federal Police", "[GLOB.using_map.boss_short] Supply") + GLOB.using_map.map_admin_faxes
+
 	GLOB.allfaxes += src
-	if(!destination) destination = "[GLOB.using_map.boss_name]"
-	if(!(("[department]" in GLOB.alldepartments) || ("[department]" in admin_departments)))
+
+	if (!admin_departments)
+		if (length(GLOB.using_map?.map_admin_faxes))
+			admin_departments = GLOB.using_map.map_admin_faxes.Copy()
+		else
+			admin_departments = list("[station_name()] Head Office", "[station_name()] Supply")
+
+	if ( !(("[department]" in GLOB.alldepartments) || ("[department]" in admin_departments)))
 		GLOB.alldepartments |= department
+
+	if (!destination)
+		if (length(admin_departments))
+			destination = admin_departments[1]
+		else if (length(GLOB.alldepartments))
+			destination = pick(GLOB.alldepartments)
 
 /obj/machinery/photocopier/faxmachine/attackby(obj/item/O as obj, mob/user as mob)
 	if(istype(O, /obj/item/weapon/card/id))
@@ -78,7 +89,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 
 				dat += "<a href='byond://?src=\ref[src];send=1'>Send</a><br>"
 				dat += "<b>Currently sending:</b> [copyitem.name]<br>"
-				dat += "<b>Sending to:</b> <a href='byond://?src=\ref[src];dept=1'>[destination]</a><br>"
+				dat += "<b>Sending to:</b> <a href='byond://?src=\ref[src];dept=1'>[destination ? destination : "Nobody"]</a><br>"
 
 		else
 			if(sendcooldown)
@@ -97,26 +108,24 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 	onclose(user, "copier")
 	return
 
-/obj/machinery/photocopier/faxmachine/Topic(href, href_list)
-	var/mob/user = usr
+/obj/machinery/photocopier/faxmachine/OnTopic(mob/user, href_list, state)
 	if(href_list["send"])
-		if(!sendcooldown)//inf
+		if(!sendcooldown)	// INF
 			if(copyitem)
 				if (destination in admin_departments)
 					send_admin_fax(user, destination)
 				else
 					sendfax(destination)
+
 				if (sendcooldown)
 					spawn(sendcooldown) // cooldown time
 						sendcooldown = 0
-		else to_chat(user, "You can't do that.")//inf
+		else to_chat(user, "You can't do that.")	// INF
+		return TOPIC_REFRESH
 
-	else if(href_list["remove"])
-		if(copyitem)
-			user.put_in_hands(copyitem)
-			to_chat(user, "<span class='notice'>You take \the [copyitem] out of \the [src].</span>")
-			copyitem = null
-			updateUsrDialog()
+	if(href_list["remove"])
+		OnRemove(user)
+		return TOPIC_REFRESH
 
 	if(href_list["scan"])
 		if (scan)
@@ -130,21 +139,23 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 			if (istype(I, /obj/item/weapon/card/id) && user.unEquip(I, src))
 				scan = I
 		authenticated = 0
+		return TOPIC_REFRESH
 
 	if(href_list["dept"])
-		var/lastdestination = destination
-		destination = input(user, "Which department?", "Choose a department") as null|anything in (GLOB.alldepartments + admin_departments)
-		if(!destination)
-			destination = lastdestination
+		var/desired_destination = input(user, "Which department?", "Choose a department", "") as null|anything in (GLOB.alldepartments + admin_departments)
+		if(desired_destination && CanInteract(user, state))
+			destination = desired_destination
+		return TOPIC_REFRESH
 
 	if(href_list["auth"])
 		if ( (!( authenticated ) && (scan)) )
 			if (has_access(send_access, scan.GetAccess()))
 				authenticated = 1
+		return TOPIC_REFRESH
 
 	if(href_list["logout"])
 		authenticated = 0
-	updateUsrDialog()
+		return TOPIC_REFRESH
 
 /obj/machinery/photocopier/faxmachine/proc/sendfax(var/destination)
 	if(stat & (BROKEN|NOPOWER))
@@ -153,19 +164,20 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 	use_power_oneoff(200)
 
 	var/success = 0
-	for(var/obj/machinery/photocopier/faxmachine/F in GLOB.allfaxes)
-		if( F.department == destination )
-			success = F.recievefax(copyitem)
+	if (destination)
+		for (var/obj/machinery/photocopier/faxmachine/F in GLOB.allfaxes)
+			if (F.department == destination)
+				success = F.recievefax(copyitem)
 
 	if (success)
 		visible_message("[src] beeps, \"Message transmitted successfully.\"")
+//[INF]
 		log_fax("[key_name(usr)] sends fax to the [destination]")
 		sendcooldown = 600
-//[INF]
 		var/obj/item/rcvdcopy = copyitem
 		GLOB.adminfaxes += rcvdcopy
 		var/mob/intercepted = check_for_interception()
-		message_admins(usr, "[uppertext(destination)] FAX[intercepted ? "(Intercepted by [intercepted])" : null]", rcvdcopy, destination, "#006100", disturb = FALSE) //INF
+		message_admins(usr, "[uppertext(destination)] FAX[intercepted ? "(Intercepted by [intercepted])" : null]", rcvdcopy, destination, "#006100") //INF
 //[/INF]
 	else
 		visible_message("[src] beeps, \"Error transmitting message.\"")
@@ -222,18 +234,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 
 	var/mob/intercepted = check_for_interception()
 
-
-	//message badmins that a fax has arrived
-	if (destination == GLOB.using_map.boss_name)
-		message_admins(sender, "[uppertext(destination)] FAX[intercepted ? "(Intercepted by [intercepted])" : null]", rcvdcopy, destination, "#006100")
-	else if (destination == "Sol Federal Police")
-		message_admins(sender, "[uppertext(destination)] FAX[intercepted ? "(Intercepted by [intercepted])" : null]", rcvdcopy, destination, "#1f66a0")
-	else if (destination == "[GLOB.using_map.boss_short] Supply")
-		message_admins(sender, "[uppertext(destination)] FAX[intercepted ? "(Intercepted by [intercepted])" : null]", rcvdcopy, destination, "#5f4519")
-	else if (destination in GLOB.using_map.map_admin_faxes)
-		message_admins(sender, "[uppertext(destination)] FAX[intercepted ? "(Intercepted by [intercepted])" : null]", rcvdcopy, destination, "#510b74")
-	else
-		message_admins(sender, "[uppertext(destination)] FAX[intercepted ? "(Intercepted by [intercepted])" : null]", rcvdcopy, "UNKNOWN")
+	message_admins(sender, "[uppertext(destination)] FAX[intercepted ? "(Intercepted by [intercepted])" : null]", rcvdcopy, destination ? destination : "UNKNOWN")
 
 	sendcooldown = 600
 	sleep(50)
@@ -244,15 +245,12 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 	visible_message("[src] beeps, \"Message transmitted successfully.\"")
 
 
-/obj/machinery/photocopier/faxmachine/proc/message_admins(var/mob/sender, var/faxname, var/obj/item/sent, var/reply_type, font_colour="#006100", var/disturb = TRUE)
-	var/msg = "<span class='notice'><b><font color='[font_colour]'>[faxname]: </font>[usr.client.get_options_bar(sender, 2,1,1)]"
+/obj/machinery/photocopier/faxmachine/proc/message_admins(mob/sender, faxname, obj/item/sent, reply_type)
+	var/msg = "<span class='notice'><b><font color='#006100'>[faxname]: </font>[get_options_bar(sender, 2,1,1)]"
 	msg += "(<A HREF='?_src_=holder;take_ic=\ref[sender]'>TAKE</a>) (<a href='?_src_=holder;FaxReply=\ref[sender];originfax=\ref[src];replyorigin=[reply_type]'>REPLY</a>)</b>: "
 	msg += "Receiving '[sent.name]' via secure connection ... <a href='?_src_=holder;AdminFaxView=\ref[sent]'>view message</a></span>"
 
-//[INF]
-	GLOB.fax_cache += "*[time_stamp()]*: DESTINATION - [msg]<br>" //inf
-	if(!disturb) return
-//[/INF]
+	GLOB.fax_cache += "*[time_stamp()]*: DESTINATION - [msg]<br>"	// INF
 
 	for(var/client/C in GLOB.admins)
 		if(check_rights((R_ADMIN|R_MOD),0,C))

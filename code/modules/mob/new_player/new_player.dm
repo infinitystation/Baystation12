@@ -191,6 +191,12 @@
 		var/datum/species/S = all_species[client.prefs.species]
 		if(!check_species_allowed(S))
 			return 0
+//[INF]
+		if(client.prefs.organ_data[BP_CHEST] == "cyborg")
+			if(!whitelist_lookup(SPECIES_FBP, client.ckey) && client.prefs.species != SPECIES_IPC)
+				to_chat(usr, "Нельзя зайти за ППТ без вайтлиста.")
+				return 0
+//[/INF]
 
 		AttemptLateSpawn(job, client.prefs.spawnpoint)
 		return
@@ -410,6 +416,7 @@
 	dat += "Выберите одну из доступных ролей:<br>"
 	dat += "<a href='byond://?src=\ref[src];invalid_jobs=1'>[show_invalid_jobs ? "Скрыть":"Показать"] недоступные профессии.</a><br>"
 	dat += "<table>"
+/*[ORIG]
 	dat += "<tr><td colspan = 3><b>[GLOB.using_map.station_name]:</b></td></tr>"
 
 	// TORCH JOBS
@@ -459,9 +466,149 @@
 		dat = additional_dat + dat
 	dat = header + dat
 	show_browser(src, jointext(dat, null), "window=latechoices;size=450x640;can_close=1")
+[/ORIG]*/
+//[INF]
+	var/list/categorizedJobs = list(
+		"Command" = list(jobs = list(), dep = COM, color = "#aac1ee"),
+		"Command Support" = list(jobs = list(), dep = SPT, color = "#aac1ee"),
+		"Engineering" = list(jobs = list(), dep = ENG, color = "#ffd699"),
+		"Security" = list(jobs = list(), dep = SEC, color = "#ff9999"),
+		"Miscellaneous" = list(jobs = list(), dep = CIV, color = "#ffffff", colBreak = 1),
+		"Synthetic" = list(jobs = list(), dep = MSC, color = "#ccffcc"),
+		"Service" = list(jobs = list(), dep = SRV, color = "#cccccc"),
+		"Medical" = list(jobs = list(), dep = MED, color = "#99ffe6"),
+		"Science" = list(jobs = list(), dep = SCI, color = "#e6b3e6", colBreak = 1),
+		"Supply" = list(jobs = list(), dep = SUP, color = "#ead4ae"),
+		"Expedition" = list(jobs = list(), dep = EXP, color = "#ffd699"),
+		"ERROR" = list(jobs = list(), color = "#ffffff", colBreak = 1)
+		)
+
+	dat += "<tr><td align = 'center' colspan = 3><b>[GLOB.using_map.station_name]</b></td></tr>"
+
+	// TORCH JOBS
+	var/list/job_summaries
+	var/list/hidden_reasons = list()
+	var/catcheck
+	for(var/datum/job/job in SSjobs.primary_job_datums)
+		var/summary = job.get_join_link(client, "byond://?src=\ref[src];SelectedJob=[job.title]", show_invalid_jobs)
+		if(job.department_flag)
+			catcheck |= job.department_flag
+		if(summary && summary != "")
+			for(var/category in categorizedJobs)
+				var/list/jobs = list()
+				if(job.department_flag & categorizedJobs[category]["dep"])
+					jobs += job
+				if(category == "ERROR")
+					if(!job.department_flag)
+						jobs += job
+						continue
+					var/check = FALSE
+					for(var/categ in categorizedJobs)
+						if(job in categorizedJobs[categ]["jobs"])
+							check = TRUE
+							continue
+					if(!check)
+						jobs += job
+				if(length(jobs))
+					categorizedJobs[category]["jobs"] += jobs
+		else
+			for(var/raisin in job.get_unavailable_reasons(client))
+				hidden_reasons[raisin] = TRUE
+	dat += "<tr><td valign='top'>"
+	for(var/jobcat in categorizedJobs)
+		if(categorizedJobs[jobcat]["colBreak"])
+			dat += "</td><td valign='top'>"
+		if((length(categorizedJobs[jobcat]["jobs"]) < 1) && (jobcat == "ERROR"))
+			continue
+		var/flag = categorizedJobs[jobcat]["dep"]
+		if(!flag)
+			log_admin("[jobcat] НЕТ ФЛАГА КАТЕГОРИИ.")
+			message_staff("[jobcat] НЕТ ФЛАГА КАТЕГОРИИ.")
+			continue
+		else if(!(catcheck & flag))
+//			log_admin("[jobcat] НЕ ПРЕДУСМОТРЕНЫ ПРОФЕСИИ.")
+//			message_staff("[jobcat] НЕ ПРЕДУСМОТРЕНЫ ПРОФЕСИИ.")
+			continue
+		var/color = categorizedJobs[jobcat]["color"]
+		dat += "<fieldset style='width: 250px; border: 2px solid [color]; display: inline'>"
+		dat += "<legend align='center' style='color: [color]'>[jobcat]</legend>"
+		dat += "<table align = 'center'>"
+		if(length(categorizedJobs[jobcat]["jobs"]) < 1)
+			dat += "<tr><td></td><td align = 'center'><i>Нет доступных ролей.</i><br></td></tr>"
+			dat += "</table>"
+			dat += "</fieldset><br>"
+			continue
+		for(var/datum/job/prof in categorizedJobs[jobcat]["jobs"])
+			if(jobcat == "Command")
+				if(istype(prof, /datum/job/captain))
+					dat += prof.get_join_link(client, "byond://?src=\ref[src];SelectedJob=[prof.title]", show_invalid_jobs, TRUE)
+				else
+					dat += prof.get_join_link(client, "byond://?src=\ref[src];SelectedJob=[prof.title]", show_invalid_jobs)
+			else if(prof.department_flag & COM)
+				dat += prof.get_join_link(client, "byond://?src=\ref[src];SelectedJob=[prof.title]", show_invalid_jobs, TRUE)
+			else
+				dat += prof.get_join_link(client, "byond://?src=\ref[src];SelectedJob=[prof.title]", show_invalid_jobs)
+		dat += "</table>"
+		dat += "</fieldset><br>"
+	dat += "</td></tr></table>"
+	// END TORCH JOBS
+
+	// SUBMAP JOBS
+	if(SSmapping.submaps)
+		dat += "<table><tr><td>"
+		for(var/thing in SSmapping.submaps)
+			var/datum/submap/submap = thing
+			if(submap && submap.available())
+				var/color = "ffffff"
+				dat += "<fieldset style='border: 2px solid [color]; display: inline'>"
+				dat += "<legend align='center' style='color: [color]'><b>[submap.name] ([submap.archetype.descriptor])</b></legend>"
+				dat += "<table align = 'center'>"
+				job_summaries = list()
+				for(var/otherthing in submap.jobs)
+					var/datum/job/job = submap.jobs[otherthing]
+					var/summary = job.get_join_link(client, "byond://?src=\ref[submap];joining=\ref[src];join_as=[otherthing]", show_invalid_jobs)
+					if(summary && summary != "")
+						job_summaries += summary
+					else
+						for(var/raisin in job.get_unavailable_reasons(client))
+							hidden_reasons[raisin] = TRUE
+
+				if(LAZYLEN(job_summaries))
+					dat += job_summaries
+					dat += "</table>"
+					dat += "</fieldset><br>"
+				else
+					dat += "<tr><td></td><td align = 'center'><i>Нет доступных ролей.</i></td></tr>"
+					dat += "</table>"
+					dat += "</fieldset><br>"
+		dat += "</td></tr></table>"
+	// END SUBMAP JOBS
+	dat += "</body></html>"
+	if(LAZYLEN(hidden_reasons))
+		var/list/additional_dat = list("<br><b>Некоторые роли были убраны из этого списка по следующим причинам:</b><br>")
+		for(var/raisin in hidden_reasons)
+			additional_dat += "[raisin]<br>"
+		additional_dat += "<br>"
+		dat = additional_dat + dat
+	dat = header + dat
+	var/datum/browser/popup = new(src, "latechoices", "Choose Profession", 900, 900)
+	popup.add_stylesheet("playeroptions", 'html/browser/playeroptions.css')
+	popup.set_content(jointext(dat, null))
+	popup.open(0) // 0 is passed to open so that it doesn't use the onclose() proc
+//[/INF]
 
 /mob/new_player/proc/create_character(var/turf/spawn_turf)
 	spawning = 1
+//[INF]
+	if(client.prefs.organ_data[BP_CHEST] == "cyborg")
+		if(!whitelist_lookup(SPECIES_FBP, client.ckey) && client.prefs.species != SPECIES_IPC)
+			to_chat(src, "Нельзя зайти за ППТ без вайтлиста.")
+			spawning = 0
+			return null
+	spawn(1)
+		if(!spawning)
+			new_player_panel()
+//[/INF]
 	close_spawn_windows()
 
 	var/mob/living/carbon/human/new_character
@@ -475,7 +622,13 @@
 		if(!job)
 			job = SSjobs.get_by_title(GLOB.using_map.default_assistant_title)
 		var/datum/spawnpoint/spawnpoint = job.get_spawnpoint(client, client.prefs.ranks[job.title])
-		spawn_turf = pick(spawnpoint.turfs)
+		if(spawnpoint)//inf
+			spawn_turf = pick(spawnpoint.turfs)
+//[INF]
+		else
+			spawning = 0
+			return null
+//[/INF]
 
 	if(chosen_species)
 		if(!check_species_allowed(chosen_species))

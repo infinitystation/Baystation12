@@ -29,8 +29,8 @@
 	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
 
 	item_icons = list(
-        slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi',
-        slot_l_hand_str = 'icons/mob/onmob/items/lefthand_spacesuits.dmi',
+		slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi',
+		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_spacesuits.dmi',
 		slot_r_hand_str = 'icons/mob/onmob/items/righthand_spacesuits.dmi',)
 
 

@@ -228,7 +228,8 @@
 
 	deal_at(usr, over)
 [/ORIG]*/
-/obj/item/weapon/pack/
+
+/obj/item/weapon/pack
 	name = "card pack"
 	desc = "For those with disposible income."
 
@@ -237,6 +238,12 @@
 	w_class = ITEM_SIZE_TINY
 	var/list/cards = list()
 
+/obj/item/weapon/pack/Initialize()
+	. = ..()
+	SetupCards()
+
+/obj/item/weapon/pack/proc/SetupCards()
+	return
 
 /obj/item/weapon/pack/attack_self(var/mob/user)
 	user.visible_message("[user] rips open \the [src]!")

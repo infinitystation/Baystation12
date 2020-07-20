@@ -10,7 +10,6 @@
 		/obj/item/weapon/storage/box/syringes,
 		/obj/item/weapon/reagent_containers/dropper = 1,
 		/obj/item/weapon/reagent_containers/glass/beaker = 1,
-		/obj/item/weapon/reagent_containers/glass/bottle/hyronalin = 1,
 		/obj/item/weapon/storage/firstaid/regular,
 		/obj/item/weapon/storage/firstaid/adv,
 		/obj/item/weapon/storage/firstaid/fire,

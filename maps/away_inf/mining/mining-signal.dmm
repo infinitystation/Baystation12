@@ -46,7 +46,6 @@
 /area/outpost/abandoned)
 "ao" = (
 /obj/structure/cryofeed{
-	tag = "icon-cryo_rear (EAST)";
 	icon_state = "cryo_rear";
 	dir = 4
 	},
@@ -54,7 +53,6 @@
 /area/outpost/abandoned)
 "ap" = (
 /obj/structure/icarus/broken_cryo{
-	tag = "icon-broken_cryo (EAST)";
 	icon_state = "broken_cryo";
 	dir = 4
 	},
@@ -62,7 +60,6 @@
 /area/outpost/abandoned)
 "aq" = (
 /obj/structure/icarus/broken_cryo{
-	tag = "icon-broken_cryo (WEST)";
 	icon_state = "broken_cryo";
 	dir = 8
 	},
@@ -87,7 +84,6 @@
 /area/mine/explored)
 "av" = (
 /obj/effect/floor_decal/industrial/warning/dust{
-	tag = "icon-warning_dust (NORTH)";
 	icon_state = "warning_dust";
 	dir = 1
 	},
@@ -112,7 +108,6 @@
 /area/mine/explored)
 "az" = (
 /obj/effect/floor_decal/industrial/warning/dust{
-	tag = "icon-warning_dust (EAST)";
 	icon_state = "warning_dust";
 	dir = 4
 	},
@@ -120,7 +115,6 @@
 /area/mine/explored)
 "aA" = (
 /obj/machinery/light/spot{
-	tag = "icon-tube1 (WEST)";
 	icon_state = "tube1";
 	dir = 8
 	},
@@ -128,7 +122,6 @@
 /area/outpost/abandoned)
 "aB" = (
 /obj/machinery/light/spot{
-	tag = "icon-tube1 (EAST)";
 	icon_state = "tube1";
 	dir = 4
 	},
@@ -160,7 +153,6 @@
 /area/mine/unexplored)
 "aJ" = (
 /obj/structure/bed/chair{
-	tag = "icon-chair_preview (WEST)";
 	icon_state = "chair_preview";
 	dir = 8
 	},
@@ -219,8 +211,7 @@
 /obj/machinery/power/solar,
 /obj/structure/cable/orange{
 	d2 = 4;
-	icon_state = "0-4";
-	tag = "icon-0-4"
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/outpost/abandoned)
@@ -228,14 +219,12 @@
 /obj/structure/cable/orange{
 	d1 = 2;
 	d2 = 8;
-	icon_state = "2-8";
-	tag = "icon-2-8"
+	icon_state = "2-8"
 	},
 /obj/structure/cable/orange{
 	d1 = 2;
 	d2 = 4;
-	icon_state = "2-4";
-	tag = "icon-2-4"
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/outpost/abandoned)
@@ -244,8 +233,7 @@
 /obj/machinery/power/solar,
 /obj/structure/cable/orange{
 	d2 = 8;
-	icon_state = "0-8";
-	tag = "icon-0-8"
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/outpost/abandoned)
@@ -253,20 +241,17 @@
 /obj/structure/cable/orange{
 	d1 = 2;
 	d2 = 8;
-	icon_state = "2-8";
-	tag = "icon-2-8"
+	icon_state = "2-8"
 	},
 /obj/structure/cable/orange{
 	d1 = 2;
 	d2 = 4;
-	icon_state = "2-4";
-	tag = "icon-2-4"
+	icon_state = "2-4"
 	},
 /obj/structure/cable/orange{
 	d1 = 1;
 	d2 = 2;
-	icon_state = "1-2";
-	tag = "icon-1-2"
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/outpost/abandoned)
@@ -280,8 +265,7 @@
 /obj/structure/cable/orange{
 	d1 = 1;
 	d2 = 4;
-	icon_state = "1-4";
-	tag = "icon-1-4"
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/outpost/abandoned)
@@ -289,8 +273,7 @@
 /obj/structure/cable/orange{
 	d1 = 4;
 	d2 = 8;
-	icon_state = "4-8";
-	tag = "icon-4-8"
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/outpost/abandoned)
@@ -298,20 +281,17 @@
 /obj/structure/cable/orange{
 	d1 = 1;
 	d2 = 2;
-	icon_state = "1-2";
-	tag = "icon-1-2"
+	icon_state = "1-2"
 	},
 /obj/structure/cable/orange{
 	d1 = 2;
 	d2 = 8;
-	icon_state = "2-8";
-	tag = "icon-2-8"
+	icon_state = "2-8"
 	},
 /obj/structure/cable/orange{
 	d1 = 2;
 	d2 = 4;
-	icon_state = "2-4";
-	tag = "icon-2-4"
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/outpost/abandoned)
@@ -319,8 +299,7 @@
 /obj/structure/cable/orange{
 	d1 = 1;
 	d2 = 8;
-	icon_state = "1-8";
-	tag = "icon-1-8"
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/outpost/abandoned)
@@ -332,8 +311,7 @@
 /obj/structure/cable/orange{
 	d1 = 1;
 	d2 = 2;
-	icon_state = "1-2";
-	tag = "icon-1-2"
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
 /area/outpost/abandoned)
@@ -345,8 +323,7 @@
 /obj/structure/cable/orange{
 	d1 = 2;
 	d2 = 4;
-	icon_state = "2-4";
-	tag = "icon-2-4"
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/plating,
 /area/outpost/abandoned)
@@ -354,8 +331,7 @@
 /obj/structure/cable/orange{
 	d1 = 4;
 	d2 = 8;
-	icon_state = "4-8";
-	tag = "icon-4-8"
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
 /area/outpost/abandoned)
@@ -363,8 +339,7 @@
 /obj/structure/cable/orange{
 	d1 = 1;
 	d2 = 8;
-	icon_state = "1-8";
-	tag = "icon-1-8"
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/plating,
 /area/outpost/abandoned)

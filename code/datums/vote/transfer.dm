@@ -1,3 +1,7 @@
+#define CHOICE_TRANSFER "Initiate crew transfer"
+#define CHOICE_EXTEND "Extend the round ([config.vote_autotransfer_interval / 600] minutes)"
+#define CHOICE_ADD_ANTAG "Add antagonist"
+
 /datum/vote/transfer
 	name = "transfer"
 	question = "End the shift?"
@@ -15,9 +19,9 @@
 		return FALSE
 
 /datum/vote/transfer/setup_vote(mob/creator, automatic)
-	choices = list("Initiate Crew Transfer", "Extend the Round ([config.vote_autotransfer_interval / 600] minutes)")
+	choices = list(CHOICE_TRANSFER, CHOICE_EXTEND)
 	if (config.allow_extra_antags && SSvote.is_addantag_allowed(creator, automatic))
-		choices += "Add Antagonist"
+		choices += CHOICE_ADD_ANTAG
 	..()
 
 /datum/vote/transfer/handle_default_votes()
@@ -35,15 +39,15 @@
 			factor = 1.2
 		else
 			factor = 1.4
-	choices["Initiate Crew Transfer"] = round(choices["Initiate Crew Transfer"] * factor)
+	choices[CHOICE_TRANSFER] = round(choices[CHOICE_TRANSFER] * factor)
 	to_world("<font color='purple'>Crew Transfer Factor: [factor]</font>")
 
 /datum/vote/transfer/report_result()
 	if(..())
 		return 1
-	if(result[1] == "Initiate Crew Transfer")
+	if(result[1] == CHOICE_TRANSFER)
 		init_autotransfer()
-	else if(result[1] == "Add Antagonist")
+	else if(result[1] == CHOICE_ADD_ANTAG)
 		SSvote.queued_auto_vote = /datum/vote/add_antagonist
 
 /datum/vote/transfer/mob_not_participating(mob/user)
@@ -51,3 +55,14 @@
 		return
 	if(config.vote_no_dead_crew_transfer)
 		return !isliving(user) || ismouse(user) || is_drone(user)
+
+/datum/vote/transfer/check_toggle()
+	return config.allow_vote_restart ? "Allowed" : "Disallowed"
+
+/datum/vote/transfer/toggle(mob/user)
+	if(is_admin(user))
+		config.allow_vote_restart = !config.allow_vote_restart
+
+#undef CHOICE_TRANSFER
+#undef CHOICE_EXTEND
+#undef CHOICE_ADD_ANTAG

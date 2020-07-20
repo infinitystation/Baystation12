@@ -1,3 +1,5 @@
+#define HOLDER_LIST		list(SPECIES_FBP)
+
 /datum/admins/proc/xeno_whitelist_panel()
 	set name = "Xenos Whitelist Panel"
 	set desc = "Use this to edit players xenowhitelist. Yupi!"
@@ -38,7 +40,6 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 	var/alternate = FALSE	// 0 - current whitelist, 1 - not used whitelist
 	var/list/used = list()
 	var/list/noused = list()
-//	var/list/xenoname = list()
 	var/list/lowerxenoname = list()
 	var/sortkey = "ckey"
 	var/datum/nanoui/myui	// Shame on me
@@ -50,7 +51,8 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		if(species.spawn_flags & SPECIES_IS_WHITELISTED)
 			if(!(lowertext(species.whitelistName()) in lowerxenoname))
 				lowerxenoname.Add("[lowertext(species.whitelistName())]")
-//				xenoname.Add("[species.get_bodytype()]")
+	for(var/s2 in HOLDER_LIST)
+		lowerxenoname.Add("[lowertext(s2)]")
 	used = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(FALSE), lowerxenoname), sortkey)
 	noused = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), sortkey)
 
@@ -69,7 +71,6 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		data["SQL"] = data["SQL"] ? -1 : -2
 	data["disabled"] = !config.usealienwhitelist
 	data["currentlist"] = alternate ? noused : used
-//	data["allxenos"] = xenoname
 	data["lowerallxenos"] = lowerxenoname
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -498,3 +499,4 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		else if(!b[check])
 			result[check] = a[check]
 	return result
+#undef HOLDER_LIST

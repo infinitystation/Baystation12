@@ -40,7 +40,6 @@
 //ORIG	slowdown =               -1
 	rarity_value =            3
 	gluttonous =              2
-//ORIG	siemens_coefficient =     0 commented because there is 0.2 at 32
 	body_temperature =        null
 
 	breath_type =             GAS_METHYL_BROMIDE
@@ -111,6 +110,16 @@
 			list(/decl/emote/visible/ascent_glimmer, /decl/emote/visible/ascent_pulse) = 50,
 			list(/decl/emote/visible/ascent_flicker, /decl/emote/visible/ascent_glint) = 20,
 		)
+
+	exertion_effect_chance = 10
+	exertion_hydration_scale = 1
+	exertion_reagent_scale = 5
+	exertion_reagent_path = /datum/reagent/lactate
+	exertion_emotes_biological = list(
+		/decl/emote/exertion/biological,
+		/decl/emote/exertion/biological/breath,
+		/decl/emote/exertion/biological/pant
+	)
 
 /datum/species/mantid/handle_sleeping(var/mob/living/carbon/human/H)
 	return

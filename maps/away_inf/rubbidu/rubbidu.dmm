@@ -5709,7 +5709,6 @@
 	req_access = list(79)
 	},
 /obj/structure/bed/chair/shuttle{
-	tag = "icon-shuttle_chair_preview (NORTH)";
 	icon_state = "shuttle_chair_preview";
 	dir = 1
 	},
@@ -8056,7 +8055,6 @@
 /area/exploration_shuttle/airlock)
 "nU" = (
 /obj/effect/floor_decal/industrial/warning{
-	tag = "icon-warning (SOUTHEAST)";
 	icon_state = "warning";
 	dir = 6
 	},
@@ -9554,7 +9552,6 @@
 	pixel_x = 26
 	},
 /obj/structure/bed/chair/shuttle{
-	tag = "icon-shuttle_chair_preview (NORTH)";
 	icon_state = "shuttle_chair_preview";
 	dir = 1
 	},

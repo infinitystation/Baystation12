@@ -417,8 +417,7 @@
 "bi" = (
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
@@ -584,8 +583,7 @@
 "bG" = (
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
@@ -946,8 +944,7 @@
 	},
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/railing/mapped{
 	dir = 1;
@@ -1157,8 +1154,7 @@
 "cW" = (
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
@@ -1511,8 +1507,7 @@
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/machinery/air_sensor{
 	id_tag = "tajshut_out"
@@ -5310,8 +5305,7 @@
 "lT" = (
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
@@ -6071,8 +6065,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden,
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/railing/mapped{
 	dir = 4;
@@ -6089,8 +6082,7 @@
 /obj/machinery/portable_atmospherics/powered/pump/filled,
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/machinery/atmospherics/portables_connector{
 	dir = 8
@@ -6156,8 +6148,7 @@
 	},
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/railing/mapped{
 	dir = 4;
@@ -6176,8 +6167,7 @@
 	},
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/machinery/atmospherics/portables_connector{
 	dir = 8
@@ -6250,8 +6240,7 @@
 "nO" = (
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
@@ -6374,8 +6363,7 @@
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/structure/railing/mapped{
 	dir = 4;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/railing/mapped{
 	dir = 1;
@@ -6395,8 +6383,7 @@
 /obj/structure/reagent_dispensers/watertank,
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/railing/mapped{
 	dir = 1;
@@ -6408,8 +6395,7 @@
 /obj/structure/reagent_dispensers/fueltank,
 /obj/structure/railing/mapped{
 	dir = 4;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/railing/mapped{
 	dir = 1;
@@ -6441,8 +6427,7 @@
 /obj/machinery/portable_atmospherics/canister/hydrogen,
 /obj/structure/railing/mapped{
 	dir = 4;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/ship/tajsciship/engines)
@@ -6450,8 +6435,7 @@
 /obj/structure/reagent_dispensers/watertank,
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/tiled/old_tile,
 /area/ship/tajsciship/hangar)
@@ -6459,8 +6443,7 @@
 /obj/structure/reagent_dispensers/fueltank,
 /obj/structure/railing/mapped{
 	dir = 4;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/tiled/old_tile,
 /area/ship/tajsciship/hangar)
@@ -6485,8 +6468,7 @@
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/structure/railing/mapped{
 	dir = 4;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/steel_grid,
@@ -6495,8 +6477,7 @@
 /obj/structure/reagent_dispensers/watertank,
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/old_tile,
@@ -6505,8 +6486,7 @@
 /obj/structure/reagent_dispensers/fueltank,
 /obj/structure/railing/mapped{
 	dir = 4;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/old_tile,
@@ -6669,8 +6649,7 @@
 "oO" = (
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
@@ -7080,8 +7059,7 @@
 /obj/machinery/light,
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
@@ -7196,8 +7174,7 @@
 "pN" = (
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/railing/mapped,
 /obj/effect/floor_decal/industrial/warning{
