@@ -3568,6 +3568,7 @@
 #include "infinity\code\modules\mob\living\simple_animal\friendly\fox.dm"
 #include "infinity\code\modules\mob\living\simple_animal\friendly\koala.dm"
 #include "infinity\code\modules\mob\living\simple_animal\hostile\changeling_mob.dm"
+#include "infinity\code\modules\mob\living\simple_animal\hostile\purple.dm"
 #include "infinity\code\modules\mob\living\simple_animal\hostile\rabbit.dm"
 #include "infinity\code\modules\mob\new_player\login.dm"
 #include "infinity\code\modules\modular_computers\computers\modular_computer\interaction.dm"

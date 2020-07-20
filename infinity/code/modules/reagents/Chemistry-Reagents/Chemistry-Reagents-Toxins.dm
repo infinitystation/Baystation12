@@ -32,3 +32,9 @@
 			ooze.replaced(H, progress_zombify)
 		else if (prob(10))
 			to_chat(H, "<span class='warning'>You feel terribly ill!</span>")
+
+/datum/reagent/acid/alien
+	name = "alien acid"
+	taste_description = "rotten socks, and a hint of acid"
+	power = 6
+	color = "#baca07"
