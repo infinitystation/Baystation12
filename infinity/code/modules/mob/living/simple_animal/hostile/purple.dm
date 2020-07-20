@@ -54,11 +54,21 @@
 	icon_living = "scuttler"
 	icon_dead = "scuttler"
 	icon_gib = "scuttler_gib"
-	speed = -1
+	speed = 1
 	maxHealth = 10
 	health = 10
 	melee_damage_lower = 1
 	melee_damage_upper = 1
+
+/mob/living/simple_animal/hostile/locust/explosive/MoveToTarget()
+	icon_state = "scuttler_rolling"
+	speed = -1
+	. = ..()
+
+/mob/living/simple_animal/hostile/locust/explosive/LostTarget()
+	icon_state = initial(icon_state)
+	speed = initial(speed)
+	. = ..()
 
 /mob/living/simple_animal/hostile/locust/explosive/Bump(atom/A)
 	gib() // hehe
