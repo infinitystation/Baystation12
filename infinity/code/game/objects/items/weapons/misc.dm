@@ -216,3 +216,70 @@
 	origin_tech = list(TECH_MATERIAL = 1)
 	matter = list(MATERIAL_STEEL = 2300)
 	attack_verb = list("shoved", "bashed")
+
+/obj/item/weapon/material/sword/gold //Just a bit better
+	name = "golden claymore"
+	icon = 'infinity/icons/obj/weapons.dmi'
+	icon_state = "claymore_gold"
+	item_state = "claymore_gold"
+	armor_penetration = 25
+	base_parry_chance = 65
+	worth_multiplier = 40
+
+/obj/item/weapon/material/sword/valhalla
+	name = "bloody claymore"
+	icon_state = "claymore_valhalla"
+	item_state = "claymore_valhalla"
+	armor_penetration = 60
+	base_parry_chance = 25
+	worth_multiplier = 45
+
+/obj/item/weapon/material/sword/dyrnwyn
+	name = "\improper Dyrnwyn"
+	desc = "The legendary sword of Rhydderch Hael, said to draw in flame when held by a worthy man."
+	icon = 'infinity/icons/obj/weapons.dmi'
+	icon_state = "claymore_blazing"
+	item_state = "claymore_blazing"
+	item_icons = list(
+		slot_l_hand_str = 'infinity/icons/mob/onmob/lefthand.dmi',
+		slot_r_hand_str = 'infinity/icons/mob/onmob/righthand.dmi',
+		)
+	damtype = BURN
+	slot_flags = SLOT_BELT
+	w_class = ITEM_SIZE_LARGE
+	force_divisor = 0.5
+	armor_penetration = 15
+	thrown_force_divisor = 0.5
+	sharp = 1
+	edge = 1
+	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	hitsound = 'sound/items/welder2.ogg'
+	base_parry_chance = 50
+	melee_accuracy_bonus = 10
+	worth_multiplier = 30
+
+/obj/item/weapon/material/sword/dyrnwyn/pickup(var/mob/living/user as mob)
+	if(user.mind)
+		if(!GLOB.wizards.is_antagonist(user.mind) || user.mind.special_role != ANTAG_SERVANT)
+			START_PROCESSING(SSobj, src)
+			to_chat(user,"<span class='danger'>\The [src] heats up in your hands, burning you!</span>")
+
+/obj/item/weapon/material/sword/dyrnwyn/Process()
+	if(istype(loc, /mob/living))
+		if(istype(loc, /mob/living/carbon/human))
+			var/mob/living/carbon/human/H = loc
+			var/hand = BP_R_HAND
+			if(H.l_hand == src)
+				hand = BP_L_HAND
+			var/obj/item/organ/external/E = H.get_organ(hand)
+			E.take_external_damage(burn=2,used_weapon="stovetop")
+		else
+			var/mob/living/M = loc
+			M.adjustFireLoss(2)
+		if(prob(2))
+			to_chat(loc,"<span class='danger'>\The [src] is burning you!</span>")
+	return 1
+
+/obj/item/weapon/material/sword/dyrnwyn/dropped()
+	STOP_PROCESSING(SSobj, src)
+

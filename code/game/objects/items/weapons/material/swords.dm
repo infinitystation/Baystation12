@@ -31,6 +31,7 @@
 	item_icons = list(
 		slot_s_store_str = 'icons/mob/onmob/back.dmi'
 		)
+	icon = 'icons/obj/weapons.dmi' //INF
 	icon_state = "katana"
 	item_state = "katana"
 	furniture_icon = "katana_handle"
@@ -48,6 +49,7 @@
 /obj/item/weapon/material/sword/katana/vibro
 	name = "vibrokatana"
 	desc = "A high-tech take on a woefully underpowered weapon. Can't mistake its sound for anything."
+	icon = 'icons/obj/weapons.dmi' //INF
 	default_material = MATERIAL_TITANIUM
 	hitsound = 'infinity/sound/weapons/anime_sword.wav'
 

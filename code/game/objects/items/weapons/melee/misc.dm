@@ -44,6 +44,7 @@
 /obj/item/weapon/material/sword/replica/officersword
 	name = "fleet officer's sword"
 	desc = "A polished sword issued to officers of the fleet."
+	icon = 'icons/obj/weapons.dmi' //INF
 	icon_state = "officersword"
 	item_state = "officersword"
 	slot_flags = SLOT_BELT
