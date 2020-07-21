@@ -44,4 +44,8 @@
 	invisibility = 0
 	anchored = TRUE
 	phase = CHORUS_PHASE_EGG
+<<<<<<< HEAD
 	update_sight()
+=======
+	update_sight()
+>>>>>>> master

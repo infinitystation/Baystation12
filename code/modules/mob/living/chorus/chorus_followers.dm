@@ -104,4 +104,8 @@
 			. += mind.current
 
 /mob/living/chorus/proc/follow_follower(var/mob/living/L)
+<<<<<<< HEAD
 	eyeobj.start_following(L)
+=======
+	eyeobj.start_following(L)
+>>>>>>> master

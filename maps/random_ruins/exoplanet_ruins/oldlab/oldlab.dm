@@ -42,4 +42,8 @@ area/map_template/oldlab
 
 /area/map_template/oldlab/station/living
 	name = "\improper Living Quarters"
+<<<<<<< HEAD
 	icon_state = "surgery"
+=======
+	icon_state = "surgery"
+>>>>>>> master

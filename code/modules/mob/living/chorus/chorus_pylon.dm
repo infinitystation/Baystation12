@@ -18,4 +18,8 @@
 	if(!pylon)
 		return
 	pylon.underlays -= pylon_image
+<<<<<<< HEAD
 	pylon = null
+=======
+	pylon = null
+>>>>>>> master

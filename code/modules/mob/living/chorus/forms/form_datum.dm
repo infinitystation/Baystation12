@@ -44,4 +44,8 @@
 	return buildings["[type]"]
 
 /datum/chorus_form/proc/print_end_game_screen(var/mob/living/chorus/C)
+<<<<<<< HEAD
 	to_world("\The [C] was a [name] Chorus")
+=======
+	to_world("\The [C] was a [name] Chorus")
+>>>>>>> master

@@ -21,4 +21,8 @@
 	return TRUE
 
 /datum/chorus_resource/proc/printed_cost(var/minimum = FALSE)
+<<<<<<< HEAD
 	return "<font color=\"[name_color]\">[minimum ? copytext(name, 1, 2) : name]</font>"
+=======
+	return "<font color=\"[name_color]\">[minimum ? copytext(name, 1, 2) : name]</font>"
+>>>>>>> master

@@ -21,4 +21,8 @@ GLOBAL_DATUM_INIT(chorus, /datum/antagonist/chorus, new)
 		if(!player?.current || player?.current.stat)
 			continue
 		var/mob/living/chorus/C = player.current
+<<<<<<< HEAD
 		C.print_end_game_screen()
+=======
+		C.print_end_game_screen()
+>>>>>>> master

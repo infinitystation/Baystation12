@@ -123,4 +123,8 @@
 	activation_cost_amount = 50
 	gives_sight = TRUE
 	density = TRUE
+<<<<<<< HEAD
 	turf_type_to_add = /turf/simulated/floor/scales
+=======
+	turf_type_to_add = /turf/simulated/floor/scales
+>>>>>>> master

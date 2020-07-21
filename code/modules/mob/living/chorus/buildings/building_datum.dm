@@ -131,4 +131,8 @@
 		for(var/turf/T in range(range, target))
 			if(T.density || istype(T, /turf/space))
 				continue
+<<<<<<< HEAD
 			T.ChangeTurf(turf_to_change_to)
+=======
+			T.ChangeTurf(turf_to_change_to)
+>>>>>>> master

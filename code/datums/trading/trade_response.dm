@@ -6,4 +6,8 @@
 /datum/trade_response/New(var/t, var/m, var/s, var/i)
 	text = t
 	money_delta = m
+<<<<<<< HEAD
 	success = s
+=======
+	success = s
+>>>>>>> master

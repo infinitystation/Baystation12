@@ -197,4 +197,8 @@
 		target.ChangeTurf(turf_type_to_add)
 	var/atom/a = new type(target, owner)
 	to_chat(owner, "<span class='notice'>You extend \the [src] [extend_text].</span>")
+<<<<<<< HEAD
 	a.visible_message("<span class='danger'>\The [a] [growth_verb] [through_text]!</span>")
+=======
+	a.visible_message("<span class='danger'>\The [a] [growth_verb] [through_text]!</span>")
+>>>>>>> master

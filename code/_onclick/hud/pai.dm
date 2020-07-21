@@ -101,4 +101,8 @@
 
 	var/stat_silicon_subsystem/SSS = pAI.silicon_subsystems_by_name[ss_name]
 	if(istype(SSS))
+<<<<<<< HEAD
 		SSS.Click()
+=======
+		SSS.Click()
+>>>>>>> master

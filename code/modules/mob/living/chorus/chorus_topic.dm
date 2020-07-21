@@ -26,4 +26,8 @@
 		if(cb)
 			set_selected_building(cb)
 		return TOPIC_HANDLED
+<<<<<<< HEAD
 	return ..()
+=======
+	return ..()
+>>>>>>> master

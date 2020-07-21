@@ -40,4 +40,8 @@
 			T.ChangeTurf(construct_path)
 		else
 			new construct_path(get_turf(src))
+<<<<<<< HEAD
 	qdel(src)
+=======
+	qdel(src)
+>>>>>>> master

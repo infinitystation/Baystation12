@@ -7,4 +7,8 @@
 		to_chat(src, "<span class='notice'>Broadcasting message to all followers...</span>")
 		for(var/m in followers)
 			var/datum/mind/mind = m
+<<<<<<< HEAD
 			to_chat(mind.current, "<span class='cult'><font size='3'>[message]</font></span>")
+=======
+			to_chat(mind.current, "<span class='cult'><font size='3'>[message]</font></span>")
+>>>>>>> master

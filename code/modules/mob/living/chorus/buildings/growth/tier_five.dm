@@ -64,4 +64,8 @@
 	if(owner)
 		GLOB.destroyed_event.unregister(owner, src)
 		owner = null
+<<<<<<< HEAD
 	. = ..()
+=======
+	. = ..()
+>>>>>>> master

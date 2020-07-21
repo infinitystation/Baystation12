@@ -25,4 +25,8 @@
 	if(last_click + self_click_cooldown < world.time)
 		last_click = world.time
 		return TRUE
+<<<<<<< HEAD
 	return FALSE
+=======
+	return FALSE
+>>>>>>> master

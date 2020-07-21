@@ -91,4 +91,8 @@
 	name = "parasite adapter"
 	desc = "An odd tentacle with a disgusting looking claw at the end"
 	icon_state = "growth_converter"
+<<<<<<< HEAD
 	gives_sight = FALSE
+=======
+	gives_sight = FALSE
+>>>>>>> master

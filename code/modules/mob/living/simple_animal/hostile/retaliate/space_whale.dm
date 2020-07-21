@@ -72,4 +72,8 @@
 		return FALSE
 
 /mob/living/simple_animal/hostile/retaliate/space_whale/Allow_Spacemove()
+<<<<<<< HEAD
 	return TRUE
+=======
+	return TRUE
+>>>>>>> master

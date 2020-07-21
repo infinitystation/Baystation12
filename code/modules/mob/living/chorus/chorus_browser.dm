@@ -35,4 +35,8 @@
 		ui.set_auto_update(TRUE)
 
 /mob/living/chorus/proc/update_nano_resource(var/datum/chorus_resource/resource)
+<<<<<<< HEAD
 	nano_data["resources"][resource.index]["amount"] = resource.get_amount()
+=======
+	nano_data["resources"][resource.index]["amount"] = resource.get_amount()
+>>>>>>> master

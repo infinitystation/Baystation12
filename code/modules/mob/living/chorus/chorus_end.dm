@@ -5,4 +5,8 @@
 	if(buildings.len)
 		to_world("Had [buildings.len] structures")
 	if(followers.len)
+<<<<<<< HEAD
 		to_world("Had [followers.len] followers")
+=======
+		to_world("Had [followers.len] followers")
+>>>>>>> master

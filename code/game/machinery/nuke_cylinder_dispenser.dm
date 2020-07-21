@@ -73,4 +73,8 @@
 		if(locked)
 			overlays += "red_light"
 		else
+<<<<<<< HEAD
 			overlays += "green_light"
+=======
+			overlays += "green_light"
+>>>>>>> master

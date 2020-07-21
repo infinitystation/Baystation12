@@ -56,4 +56,8 @@
 /obj/structure/chorus/sight_organ
 	name = "sight organ"
 	desc = "An eye on a stalk... it seems to look about the room."
+<<<<<<< HEAD
 	icon_state = "growth_eye"
+=======
+	icon_state = "growth_eye"
+>>>>>>> master
