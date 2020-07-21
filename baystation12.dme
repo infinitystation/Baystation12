@@ -3347,6 +3347,7 @@
 #include "infinity\code\game\objects\items\weapons\explosives.dm"
 #include "infinity\code\game\objects\items\weapons\extunguisher.dm"
 #include "infinity\code\game\objects\items\weapons\lighter.dm"
+#include "infinity\code\game\objects\items\weapons\misc.dm"
 #include "infinity\code\game\objects\items\weapons\soap.dm"
 #include "infinity\code\game\objects\items\weapons\surgery_tools.dm"
 #include "infinity\code\game\objects\items\weapons\syndie_special.dm"
