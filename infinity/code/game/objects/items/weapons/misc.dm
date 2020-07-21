@@ -196,3 +196,23 @@
 		return
 
 	. = ..()
+
+/obj/item/weapon/shield/roman
+	name = "roman shield"
+	desc = "An ancient metal shield, used by Roman Empire."
+	icon = 'infinity/icons/obj/weapons.dmi'
+	icon_state = "roman_shield"
+	item_icons = list(
+		slot_l_hand_str = 'infinity/icons/mob/onmob/lefthand.dmi',
+		slot_r_hand_str = 'infinity/icons/mob/onmob/righthand.dmi',
+		)
+	slot_flags = SLOT_BACK
+	force = 12
+	throwforce = 12
+	base_block_chance = 75
+	throw_speed = 1
+	throw_range = 2
+	w_class = ITEM_SIZE_HUGE
+	origin_tech = list(TECH_MATERIAL = 1)
+	matter = list(MATERIAL_STEEL = 2300)
+	attack_verb = list("shoved", "bashed")
