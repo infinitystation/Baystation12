@@ -125,3 +125,14 @@
 /obj/effect/landmark/corpse/inf_pirat/space
 	name = "Inf - Space Pirat"
 	corpse_outfits = list(/decl/hierarchy/outfit/pirat_inf/space)
+
+/decl/hierarchy/outfit/permaban_guy
+	name = "Inf - PermaBan Guy"
+	uniform = /obj/item/clothing/under/syndicate/tacticool
+	shoes = /obj/item/clothing/shoes/jackboots
+	gloves = /obj/item/clothing/gloves/thick/swat
+	head = /obj/item/clothing/mask/bandana
+	glasses = /obj/item/clothing/glasses/sunglasses
+	l_hand = null
+	r_hand = null
+	suit = /obj/item/clothing/suit/storage/leather_jacket/armored

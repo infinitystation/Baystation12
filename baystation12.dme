@@ -3417,6 +3417,7 @@
 #include "infinity\code\game\verbs\who.dm"
 #include "infinity\code\modules\admin\admin_verbs.dm"
 #include "infinity\code\modules\admin\ban_messages.dm"
+#include "infinity\code\modules\admin\epic_perm.dm"
 #include "infinity\code\modules\admin\sql_notes.dm"
 #include "infinity\code\modules\admin\topic.dm"
 #include "infinity\code\modules\admin\xeno_whitelist.dm"

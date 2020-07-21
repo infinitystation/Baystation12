@@ -972,6 +972,13 @@
 				SSstatistics.add_field("ban_perma",1)
 				DB_ban_record(BANTYPE_PERMA, M, -1, reason)
 
+				//[INF]
+
+				if(istype(M, /mob/living/carbon/human))
+					epic_perm(M)
+
+				//[/INF]
+
 				qdel(M.client)
 				//qdel(M)
 			if("Cancel")
