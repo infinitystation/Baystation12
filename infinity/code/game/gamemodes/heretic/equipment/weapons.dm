@@ -2,6 +2,7 @@
 	name = "blood halberd"
 	desc = "A sickening spear composed entirely of crystallized blood."
 	icon_state = "bloodspear0"
+	item_state = "bloodspear0"
 	icon = 'infinity/icons/obj/cult.dmi'
 	slot_flags = SLOT_BACK
 	force = 17
@@ -63,6 +64,29 @@
 			playsound(T, 'sound/effects/glassbr3.ogg', 100)
 	qdel(src)
 
+/obj/item/weapon/melee/cult_spear/update_twohanding()
+	var/mob/living/M = loc
+	if(istype(M) && is_held_twohanded(M))
+		icon_state = "bloodspear1"
+		item_state = "bloodspear1"
+		if(owner != M)
+			force = 18
+			throwforce = 25
+		else
+			force = 24
+			throwforce = 40
+	else
+		icon_state = "bloodspear0"
+		item_state = "bloodspear0"
+		if(owner != M)
+			force = 10
+			throwforce = 25
+		else
+			force = 17
+			throwforce = 40
+
+	update_icon()
+
 /obj/item/weapon/melee/cult_spear/dropped()
 	force = 17
 	throwforce = 40
@@ -78,6 +102,7 @@
 			throwforce = 40
 	else
 		user.unEquip(src)
+		recall()
 		to_chat(user, SPAN_WARNING("An unseen force suddenly rips [src] out of your hands!"))
 
 /obj/item/weapon/shield/mirror

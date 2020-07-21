@@ -322,7 +322,7 @@
 	name = "burning hand"
 	desc = "A burning hand, which is used to cast bloody spells..."
 
-	icon = 'infinity/icons/obj/weapons.dmi'
+	icon = 'infinity/icons/obj/cult.dmi'
 	icon_state = "spellhand"
 
 	item_icons = list(

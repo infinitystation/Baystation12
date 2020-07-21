@@ -34,8 +34,8 @@
 		if("Flask of Unholy Water")
 			new /obj/item/weapon/reagent_containers/glass/beaker/unholywater(get_turf(src))
 
-		if("\"Black Death\" Dagger")
-			new /obj/item/weapon/material/knife/ritual/shadow(get_turf(src))
+		if("Shadow Shackles")
+			new /obj/item/weapon/handcuffs/wizard/shadow(get_turf(src))
 
 		if("Construct Shell")
 			new /obj/structure/constructshell/cult(get_turf(src))
