@@ -44,8 +44,7 @@
 //[INF]
 	if(!alerted && smoketime <= 30)
 		if(ismob(loc))
-			var/mob/M = loc
-			to_chat(M, SPAN_WARNING("[src] will burn out soon. Better find an ashtray."))
+			to_chat(loc, SPAN_WARNING("[src] will burn out soon. Better find an ashtray."))
 		alerted = TRUE
 //[/INF]
 	var/turf/T = get_turf(src)
@@ -219,7 +218,7 @@
 			var/mob/living/carbon/human/M = loc
 			if(M.wear_mask == src)
 				var/obj/item/organ/external/head/head = M.get_organ(BP_HEAD)
-				M.custom_pain("Вы передержали [src] во рту и обожгли губы.", 5, affecting = head)
+				M.custom_pain("\the [src] burned out in your mouth.", 5, affecting = head)
 				M.apply_damage(2, BURN, BP_HEAD)
 //[/INF]
 /*[ORIG]
