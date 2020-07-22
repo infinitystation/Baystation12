@@ -51,24 +51,34 @@
 	req_access = list(access_syndicate)
 
 /area/map_template/merc_spawn/eva
+	name = "\improper TCV Tersten Tenacity EVA"
 
 /area/map_template/merc_spawn/cryo
+	name = "\improper TCV Tersten Tenacity Cryogenics"
 
 /area/map_template/merc_spawn/hall
+	name = "\improper TCV Tersten Tenacity Main Hall"
 
 /area/map_template/merc_spawn/armory
+	name = "\improper TCV Tersten Tenacity Armory"
 
 /area/map_template/merc_spawn/hallway
+	name = "\improper TCV Tersten Tenacity Hallway"
 
 /area/map_template/merc_spawn/engineering
+	name = "\improper TCV Tersten Tenacity Engineering"
 
 /area/map_template/merc_spawn/brig
+	name = "\improper TCV Tersten Tenacity Holding Facility"
 
 /area/map_template/merc_spawn/bridge
+	name = "\improper TCV Tersten Tenacity Bridge"
 
 /area/map_template/merc_spawn/medbay
+	name = "\improper TCV Tersten Tenacity Medbay"
 
 /area/map_template/merc_spawn/teleport
+	name = "\improper TCV Tersten Tenacity Teleporter"
 
 /area/map_template/merc_shuttle
 	name = "\improper Desperado"
@@ -152,3 +162,14 @@
 		bound_width = world.icon_size
 		bound_height = width * world.icon_size
 	update_icon()
+
+/obj/machinery/door/airlock/glass/antagonist
+	door_color = COLOR_WALL_GUNMETAL
+	stripe_color = COLOR_RED_LIGHT
+/obj/machinery/door/airlock/antagonist
+	door_color = COLOR_WALL_GUNMETAL
+	stripe_color = COLOR_RED_LIGHT
+
+/obj/machinery/door/airlock/multi_tile/antagonist
+	door_color = COLOR_WALL_GUNMETAL
+	stripe_color = COLOR_RED_LIGHT
