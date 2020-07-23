@@ -83,7 +83,7 @@
 	
 /decl/hierarchy/supply_pack/science/space_bike
 	name = "Exploration - Space-bike"
-	contains = list(/obj/vehicle/bike/electric)
+	contains = list(/obj/vehicle/bike/thermal)
 	cost = 90
 	containertype = /obj/structure/largecrate
 	containername = "space-bike crate"
