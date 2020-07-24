@@ -307,8 +307,4 @@ obj/item/weapon/paper/meatstation/weapon_note//and this one's here to give playe
 
 /obj/random/single/meatstation/low/wormscientist
 	icon_state = "wormscientist10"
-<<<<<<< HEAD
 	spawn_object = /mob/living/simple_animal/hostile/meatstation/wormscientist
-=======
-	spawn_object = /mob/living/simple_animal/hostile/meatstation/wormscientist
->>>>>>> master

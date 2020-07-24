@@ -111,8 +111,4 @@
 
 /area/miningstation/cryo
 	name = "Cryogenic Storage"
-<<<<<<< HEAD
 	icon_state = "storage"
-=======
-	icon_state = "storage"
->>>>>>> master

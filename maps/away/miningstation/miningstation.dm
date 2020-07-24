@@ -368,8 +368,4 @@
 			We're not making it off this station alive. Something... something's attacking the crew here. I'm not sure what it is but it seems like it's getting worse as time goes on.. I'm sitting here in the power room, hoping they don't find me... If somehow, someone finds this, please... inform Lillian Mason that her husband, Clark Mason, is no longer here. I'm going to try to see if I can find to at least get a distress beacon out. Wish me luck.
 			Until we meet again in heaven,
 			Clark Mason</i>
-<<<<<<< HEAD
 			"}
-=======
-			"}
->>>>>>> master
