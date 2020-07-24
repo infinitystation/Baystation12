@@ -145,6 +145,8 @@
 	#include "../away/unishi/unishi.dm"
 	#include "../away/slavers/slavers_base.dm"
 	#include "../away/voxship/voxship.dm"
+	#include "../away/meatstation/meatstation.dm"
+	#include "../away/miningstation/miningstation.dm"
 
 	#define using_map_DATUM /datum/map/sierra
 
