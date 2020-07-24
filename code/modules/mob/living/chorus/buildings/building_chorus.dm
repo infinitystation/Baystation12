@@ -56,8 +56,4 @@
 		qdel(src)
 
 /obj/structure/chorus/bullet_act(var/obj/item/projectile/P)
-<<<<<<< HEAD
 	take_damage(P.damage)
-=======
-	take_damage(P.damage)
->>>>>>> master

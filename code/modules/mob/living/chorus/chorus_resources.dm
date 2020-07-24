@@ -44,8 +44,4 @@
 /mob/living/chorus/proc/update_resource(var/datum/chorus_resource/r)
 	update_nano_resource(r)
 	var/datum/hud/chorus/C = hud_used
-<<<<<<< HEAD
 	C.update_resource(r.index, "[r.printed_cost()] [r.get_amount()]")
-=======
-	C.update_resource(r.index, "[r.printed_cost()] [r.get_amount()]")
->>>>>>> master

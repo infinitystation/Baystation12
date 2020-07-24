@@ -76,8 +76,4 @@
 	C.update_followers_buildings(followers.len, buildings.len)
 
 /mob/living/chorus/proc/start_delete()
-<<<<<<< HEAD
 	set_selected_building(deletion)
-=======
-	set_selected_building(deletion)
->>>>>>> master

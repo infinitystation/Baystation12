@@ -70,8 +70,4 @@
 			bound_width = 64
 
 /mob/living/simple_animal/juvenile_space_whale/Allow_Spacemove()
-<<<<<<< HEAD
 	return TRUE
-=======
-	return TRUE
->>>>>>> master

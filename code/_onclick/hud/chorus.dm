@@ -190,8 +190,4 @@
 /obj/screen/chorus_center_on_form/Click()
 	if(usr && istype(usr, /mob/living/chorus))
 		var/mob/living/chorus/C = usr
-<<<<<<< HEAD
 		C.eyeobj.setLoc(get_turf(C))
-=======
-		C.eyeobj.setLoc(get_turf(C))
->>>>>>> master
