@@ -53,8 +53,4 @@
 	if(released_eggs)
 		to_world("<span class='notice'>Spawned [released_eggs] children!</span>")
 	else
-<<<<<<< HEAD
 		to_world("<span class='danger'>Last of its kind..</span>")
-=======
-		to_world("<span class='danger'>Last of its kind..</span>")
->>>>>>> master

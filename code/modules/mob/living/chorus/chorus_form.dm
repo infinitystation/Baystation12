@@ -64,8 +64,4 @@
 					<td>[initial(G.desc)]</td>
 				</tr>"}
 	dat += "</table>"
-<<<<<<< HEAD
 	show_browser(src, JOINTEXT(dat), "window=godform;can_close=0")
-=======
-	show_browser(src, JOINTEXT(dat), "window=godform;can_close=0")
->>>>>>> master

@@ -59,8 +59,4 @@
 
 /area/meatstation/lab
 	name = "Xenobio Lab"
-<<<<<<< HEAD
 	icon_state = "mslab"
-=======
-	icon_state = "mslab"
->>>>>>> master

@@ -22,8 +22,4 @@
 	keep_following(new_loc = get_turf(following))
 
 /mob/observer/proc/keep_following(var/atom/movable/moving_instance, var/atom/old_loc, var/atom/new_loc)
-<<<<<<< HEAD
 	forceMove(get_turf(new_loc))
-=======
-	forceMove(get_turf(new_loc))
->>>>>>> master
