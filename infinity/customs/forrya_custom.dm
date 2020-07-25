@@ -275,8 +275,7 @@
 		/obj/item/clothing/suit/storage/hooded/wintercoat/custom_forrya,
 		/obj/item/clothing/shoes/workboots/custom_forrya_winter,
 		/obj/item/clothing/accessory/badge/tajamc,
-		/obj/item/clothing/accessory/inf_pin/ccapin,
-		/obj/item/music_player/csplayer)
+		/obj/item/clothing/accessory/inf_pin/ccapin)
 
 	trade_blacklisted = TRUE
 

@@ -147,38 +147,6 @@
 			GLOB.global_announcer.autosay("[this_message]", "[this_sender]", "[channel == "Common" ? null : channel]") //Common is a weird case, as it's not a "channel", it's just talking into a radio without a channel set.
 			sleep(this_wait SECONDS)
 
-/datum/admins/proc/mp_panel()
-	set category = "Fun"
-	set name = "MP Panel"
-	set desc = "Lists all current music players and control it."
-
-	if(!check_rights(R_ADMIN|R_FUN, 0, usr))
-		return
-
-	var/list/dat = list("<div align='center'><h1>Music Player Control Panel</h1><br>")
-
-	dat += "<b>Current musuc players in world ([GLOB.music_players.len]):</b></div><br>"
-	dat += "<hr>"
-
-	if(GLOB.music_players.len == 0)
-		dat += "<div class='statusDisplay'><center>At the moment there are no devices in this world session.</center></div>"
-	else
-		for(var/a in GLOB.music_players)
-			var/obj/item/music_player/p = a
-			dat += "<div class='statusDisplay'>"
-			dat += "Music Player #[p.serial_number] : <a href='?_src_=holder;mp_play=\ref[p]'>[p.mode ? "<font color=cc5555>Stop</font>" : "<font color=55cc55>Play</font>"]</a> | "
-			dat += "<a href='?_src_=holder;mp_volume=\ref[p]'>Volume</a> | "
-			dat += "<a href='?_src_=holder;adminplayerobservefollow=\ref[p]'>Current location</a> | "
-			dat += "<a href='?_src_=vars;Vars=\ref[p]'>VV</a> | "
-			dat += "<a href='?_src_=holder;mp_explode=\ref[p]'><font color=cc5555>\[X\]</font></a><br>"
-			dat += "</div>"
-
-	var/datum/browser/popup = new(usr, "mp_panel",, 465, 325, src)
-	popup.set_content(jointext(dat, null))
-	popup.open()
-
-	SSstatistics.add_field("admin_verb","MPP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
 /datum/admins/proc/toggleevent()
 	set category = "Server"
 	set desc = "Event status in hub."

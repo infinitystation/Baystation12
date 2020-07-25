@@ -58,7 +58,6 @@ datum/track/proc/GetTrack()
 	StopPlaying()
 	QDEL_NULL_LIST(tracks)
 	current_track = null
-	QDEL_NULL(tape) //INF
 	. = ..()
 
 /obj/machinery/media/jukebox/powered()
@@ -99,8 +98,7 @@ datum/track/proc/GetTrack()
 		"current_track" = current_track != null ? current_track.title : "No track selected",
 		"playing" = playing,
 		"tracks" = juke_tracks,
-		"volume" = volume,
-		"tape" = tape
+		"volume" = volume
 	)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -133,10 +131,6 @@ datum/track/proc/GetTrack()
 
 	if (href_list["volume"])
 		AdjustVolume(text2num(href_list["volume"]))
-		return TOPIC_REFRESH
-
-	if (href_list["eject"])
-		eject()
 		return TOPIC_REFRESH
 
 /obj/machinery/media/jukebox/proc/emag_play()
@@ -181,26 +175,6 @@ datum/track/proc/GetTrack()
 		wrench_floor_bolts(user, 0)
 		power_change()
 		return
-
-	// INF@CODE - START
-	if(istype(W, /obj/item/music_tape))
-		var/obj/item/music_tape/D = W
-		if(tape)
-			to_chat(user, "<span class='notice'>There is already \a [tape] inside.</span>")
-			return
-
-		if(D.ruined)
-			to_chat(user, "<span class='warning'>\The [D] is ruined, you can't use it.</span>")
-			return
-
-		if(user.drop_item())
-			visible_message("<span class='notice'>[usr] insert \a [tape] into \the [src].</span>")
-			D.forceMove(src)
-			tape = D
-			tracks += tape.track
-			verbs += /obj/machinery/media/jukebox/verb/eject
-		return
-	// INF@CODE - END
 
 	return ..()
 

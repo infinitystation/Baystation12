@@ -120,10 +120,6 @@ var/list/_client_preferences_by_type
 	description ="Play boomboxes"
 	key = "SOUND_BOOMBOXES"
 
-/datum/client_preference/play_pmps
-	description ="Play pmps"
-	key = "SOUND_PMPS"
-
 /datum/client_preference/ghost_ears
 	description ="Ghost ears"
 	key = "CHAT_GHOSTEARS"

@@ -124,7 +124,6 @@ var/list/admin_verbs_fun = list(
 	/datum/admins/proc/select_and_apply_skybox_data,
 	/datum/admins/proc/intercom,		//send a fake intercom message, like an arrivals announcement,
 	/datum/admins/proc/intercom_convo,	//send a fake intercom conversation, like an ATC exchange,
-	/datum/admins/proc/mp_panel,
 	/proc/possess,
 	/proc/release,
 	/client/proc/colorooc

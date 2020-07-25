@@ -377,7 +377,6 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	uniform = /obj/item/clothing/under/rank/bartender
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/weapon/card/id/sierra/crew/service/bartender
-	l_pocket = /obj/item/music_tape/custom
 
 /decl/hierarchy/outfit/job/sierra/crew/service/chaplain
 	name = OUTFIT_JOB_NAME("Chaplain - Sierra")
