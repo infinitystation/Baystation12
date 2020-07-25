@@ -52,7 +52,7 @@
 		return
 
 	message_admins("[key_name_admin(src)] accessed file: [path]")
-	src << ftp(file(path))
+	to_target(src, ftp(file(path))) //INF, WAS to_target(src, run(file(path)))
 	to_chat(src, "Attempting to send file, this may take a fair few minutes if the file is very large.")
 	return
 
@@ -72,8 +72,8 @@
 		return
 
 	message_admins("[key_name_admin(src)] accessed file: [path]")
-	log_admin("[key_name_admin(src)] accessed file: [path]")
-	src << ftp(file(path))
+	log_admin("[key_name_admin(src)] accessed file: [path]") //INF
+	to_target(src, ftp(file(path))) //INF, WAS to_target(src, run(file(path)))
 	to_chat(src, "Attempting to send file, this may take a fair few minutes if the file is very large.")
 	return
 
@@ -88,7 +88,7 @@
 
 	var/path = "data/logs/[time2text(world.realtime,"YYYY/MM/DD")].log" //INF, WAS "YYYY/MM-Month/DD-Day"
 	if( fexists(path) )
-		src << ftp(file(path))
+		to_target(src, ftp(file(path))) //INF, WAS to_target(src, run(file(path)))
 	else
 		to_chat(src, "<font color='red'>Error: view_txt_log(): File not found/Invalid path([path]).</font>")
 		return
@@ -103,11 +103,11 @@
 
 	var/path = "data/logs/[time2text(world.realtime,"YYYY/MM-Month/DD-Day")] Attack.log"
 	if( fexists(path) )
-		src << ftp(file(path))
+		to_target(src, ftp(file(path))) //INF, WAS to_target(src, run(file(path)))
 	else
 		to_chat(src, "<font color='red'>Error: view_atk_log(): File not found/Invalid path([path]).</font>")
 		return
-	usr << ftp(file(path))
+	to_target(src, ftp(file(path))) //INF, WAS to_target(src, run(file(path)))
 	SSstatistics.add_field_details("admin_verb","SSAL") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 [/INF]*/

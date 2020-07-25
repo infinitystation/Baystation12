@@ -55,11 +55,7 @@ You can set verify to TRUE if you want send() to sleep until the client has the 
 //[INF]
 #if DM_VERSION > RECOMMENDED_VERSION
 //[/INF]
-	show_browser(client, {"
-	<script>
-		window.location.href="?asset_cache_confirm_arrival=[job]"
-	</script>
-	"}, "window=asset_cache_browser")
+	show_browser(client, "<script>window.location.href=\"?asset_cache_confirm_arrival=[job]\"</script>", "window=asset_cache_browser")
 //[INF]
 #endif
 //[/INF]
@@ -111,11 +107,7 @@ You can set verify to TRUE if you want send() to sleep until the client has the 
 //[INF]
 #if DM_VERSION > RECOMMENDED_VERSION
 //[/INF]
-	show_browser(client, {"
-	<script>
-		window.location.href="?asset_cache_confirm_arrival=[job]"
-	</script>
-	"}, "window=asset_cache_browser")
+	show_browser(client, "<script>window.location.href=\"?asset_cache_confirm_arrival=[job]\"</script>", "window=asset_cache_browser")
 //[INF]
 #endif
 //[/INF]

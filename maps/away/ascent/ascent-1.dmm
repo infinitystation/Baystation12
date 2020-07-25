@@ -1,4 +1,4 @@
-//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+﻿//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
 /turf/space,
 /area/space)
@@ -17,9 +17,6 @@
 /obj/item/weapon/material/knife/kitchen/cleaver/ascent,
 /turf/simulated/floor/tiled/ascent,
 /area/ship/ascent/fore_port_prow)
-"ag" = (
-/turf/simulated/wall/r_wall/ascent,
-/area/ship/ascent/wing_starboard)
 "ah" = (
 /turf/simulated/wall/r_wall/ascent,
 /area/ship/ascent/fore_starboard_prow)
@@ -213,9 +210,6 @@
 	},
 /turf/simulated/floor/ascent,
 /area/ship/ascent/fore_starboard_spike)
-"aQ" = (
-/turf/simulated/wall/r_wall/ascent,
-/area/ship/ascent/habitation)
 "aR" = (
 /obj/effect/catwalk_plated/ascent,
 /obj/machinery/light/ascent{
@@ -602,9 +596,6 @@
 	},
 /turf/simulated/floor/ascent,
 /area/ship/ascent/bridge)
-"bP" = (
-/turf/simulated/wall/r_wall/ascent,
-/area/ship/ascent/wing_port)
 "bQ" = (
 /turf/simulated/floor/tiled/ascent,
 /area/ship/ascent/wing_port)
@@ -2666,8 +2657,8 @@
 /area/ship/ascent/hydroponics_port)
 "gq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
-	icon_state = "intact";
-	dir = 4
+	dir = 4;
+	icon_state = "intact"
 	},
 /turf/simulated/wall/r_wall/ascent,
 /area/ship/ascent/shuttle_starboard)
@@ -4450,8 +4441,8 @@
 	pixel_y = 32
 	},
 /obj/structure/railing/mapped{
-	icon_state = "railing0-1";
-	dir = 4
+	dir = 4;
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/tiled/ascent,
 /area/ship/ascent/fore_starboard_prow)
@@ -4491,8 +4482,8 @@
 /area/ship/ascent/shuttle_starboard)
 "vY" = (
 /obj/structure/railing/mapped{
-	icon_state = "railing0-1";
-	dir = 4
+	dir = 4;
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/ascent,
 /area/ship/ascent/fore_starboard_prow)
@@ -4682,8 +4673,8 @@
 	name = "heavy duty box"
 	},
 /obj/structure/railing/mapped{
-	icon_state = "railing0-1";
-	dir = 8
+	dir = 8;
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/ascent,
 /area/ship/ascent/fore_starboard_prow)
@@ -4786,8 +4777,8 @@
 "IQ" = (
 /obj/effect/wallframe_spawn/reinforced_phoron/hull,
 /obj/machinery/atmospherics/pipe/simple/visible/red{
-	icon_state = "intact";
-	dir = 4
+	dir = 4;
+	icon_state = "intact"
 	},
 /turf/simulated/floor/ascent,
 /area/ship/ascent/shuttle_starboard)
@@ -5026,8 +5017,8 @@
 /area/ship/ascent/fore_starboard_jut)
 "QT" = (
 /obj/structure/hygiene/shower/ascent{
-	icon_state = "shower";
-	dir = 1
+	dir = 1;
+	icon_state = "shower"
 	},
 /turf/simulated/floor/tiled/ascent,
 /area/ship/ascent/fore_hallway)
@@ -5083,8 +5074,8 @@
 /area/ship/ascent/shuttle_starboard)
 "TO" = (
 /obj/structure/hygiene/shower/ascent{
-	icon_state = "shower";
-	dir = 8
+	dir = 8;
+	icon_state = "shower"
 	},
 /turf/simulated/floor/tiled/ascent,
 /area/ship/ascent/fore_hallway)
@@ -5142,8 +5133,8 @@
 /area/ship/ascent/habitation)
 "Vx" = (
 /obj/structure/railing/mapped{
-	icon_state = "railing0-1";
-	dir = 4
+	dir = 4;
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/tiled/ascent,
 /area/ship/ascent/fore_starboard_prow)
@@ -11423,11 +11414,11 @@ Ap
 as
 ER
 ah
-aQ
-aQ
+bz
+bz
 dP
-aQ
-aQ
+bz
+bz
 cy
 cR
 cv
@@ -11665,7 +11656,7 @@ as
 as
 Ap
 as
-aQ
+bz
 pp
 bt
 bN
@@ -11673,7 +11664,7 @@ bU
 bN
 cz
 JE
-aQ
+bz
 cv
 cv
 hc
@@ -11909,7 +11900,7 @@ as
 as
 as
 as
-aQ
+bz
 lG
 br
 bu
@@ -11917,7 +11908,7 @@ aQ
 fJ
 br
 vt
-aQ
+bz
 cv
 cv
 hK
@@ -12031,7 +12022,7 @@ as
 as
 aX
 ah
-aQ
+bz
 As
 bE
 bK
@@ -12039,7 +12030,7 @@ bA
 gR
 fA
 uV
-aQ
+bz
 cy
 cv
 hc
@@ -12639,7 +12630,7 @@ ie
 iE
 fv
 jq
-ag
+aj
 bb
 bb
 az
@@ -12651,7 +12642,7 @@ az
 az
 bb
 bb
-bP
+bW
 do
 fh
 ey
@@ -12761,7 +12752,7 @@ it
 iG
 fg
 jr
-ag
+aj
 az
 az
 az
@@ -12773,7 +12764,7 @@ be
 az
 az
 az
-bP
+bW
 dW
 fi
 eF
@@ -12883,7 +12874,7 @@ Xa
 iE
 fv
 js
-ag
+aj
 az
 ck
 fL
@@ -12895,7 +12886,7 @@ be
 fL
 ck
 az
-bP
+bW
 dX
 bP
 bP
@@ -13735,7 +13726,7 @@ GZ
 JC
 CW
 ag
-ag
+aj
 cj
 az
 az
@@ -13979,7 +13970,7 @@ Fd
 If
 NR
 ag
-ag
+aj
 aC
 bJ
 az
@@ -14222,18 +14213,18 @@ Of
 wM
 lJ
 RK
-ag
+aj
 Zn
 bI
 aO
 aZ
 ak
 jf
-ag
+aj
 bf
 ci
 ca
-bP
+bW
 jg
 bQ
 cd
@@ -14477,7 +14468,7 @@ ag
 dt
 en
 dv
-bP
+bW
 jB
 bQ
 bQ
@@ -14594,12 +14585,12 @@ dr
 ax
 ak
 jy
-ag
-ag
+aj
+aj
 dO
 en
 ji
-bP
+bW
 hw
 bQ
 bQ
@@ -14714,17 +14705,17 @@ ag
 ag
 gQ
 ay
-ag
-ag
+aj
+aj
 BX
 BX
 BX
 eu
 BX
 BX
-bP
-bP
-bP
+bW
+bW
+bW
 dd
 dQ
 bP

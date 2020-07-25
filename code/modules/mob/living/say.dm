@@ -361,7 +361,7 @@ proc/get_radio_key_from_channel(var/channel)
 					temp = (H.get_species() == SPECIES_RESOMI ? message : stars(message))
 				else
 					temp = stars(message)
-				show_image(M, speech_bubble)
+				image_to(M, speech_bubble)
 				M.hear_say(temp, verb, speaking, alt_name, italics, src, speech_sound, sound_vol)
 				if(M.client)
 					speech_bubble_recipients |= M.client

@@ -24,6 +24,7 @@
 	closed_layer = ABOVE_WINDOW_LAYER
 	movable_flags = MOVABLE_FLAG_Z_INTERACT
 	pry_mod = 0.75
+	var/locked = FALSE //If the door is forced open, it will not close again until the next atmosphere alert in the area
 
 	//These are frequenly used with windows, so make sure zones can pass.
 	//Generally if a firedoor is at a place where there should be a zone boundery then there will be a regular door underneath it.
@@ -102,7 +103,11 @@
 
 /obj/machinery/door/firedoor/examine(mob/user, distance)
 	. = ..()
-	if(distance > 1 || !density)
+	if(distance > 1)
+		return
+	if(locked)
+		to_chat(user, SPAN_WARNING("A light on the control mechanism is flashing red, indicating it is locked open."))
+	if(!density)
 		return
 
 	if(pdiff >= FIREDOOR_MAX_PRESSURE_DIFF)
@@ -144,6 +149,12 @@
 		return ..()
 	return 0
 
+/obj/machinery/door/firedoor/proc/get_alarm()
+	for(var/area/A in areas_added) //Checks if there are fire alarms in any areas associated with that firedoor
+		if(A.fire || A.air_doors_activated)
+			return TRUE
+	return FALSE
+
 /obj/machinery/door/firedoor/attack_hand(mob/user as mob)
 	add_fingerprint(user)
 	if(operating)
@@ -154,9 +165,7 @@
 		return
 
 	var/alarmed = lockdown
-	for(var/area/A in areas_added)		//Checks if there are fire alarms in any areas associated with that firedoor
-		if(A.fire || A.air_doors_activated)
-			alarmed = 1
+	alarmed = get_alarm()
 
 	var/answer = alert(user, "Would you like to [density ? "open" : "close"] this [src.name]?[ alarmed && density ? "\nNote that by doing so, you acknowledge any damages from opening this\n[src.name] as being your own fault, and you will be held accountable under the law." : ""]",\
 	"\The [src]", "Yes, [density ? "open" : "close"]", "No")
@@ -182,24 +191,27 @@
 			// Accountability!
 			users_to_open |= user.name
 			needs_to_close = !issilicon(user)
-		OPEN_IN(src, 0, FALSE)
+		spawn()
+			open()
 	else
-		CLOSE_IN(src, 0, FALSE)
+		spawn()
+			locked = FALSE
+			close()
 
 	if(needs_to_close)
-		spawn(50)
-			alarmed = 0
-			for(var/area/A in areas_added)		//Just in case a fire alarm is turned off while the firedoor is going through an autoclose cycle
-				if(A.fire || A.air_doors_activated)
-					alarmed = 1
-			if(alarmed)
-				nextstate = FIREDOOR_CLOSED
-				close()
+		sleep(100)
+		alarmed = 0
+		alarmed = get_alarm()	//Just in case a fire alarm is turned off while the firedoor is going through an autoclose cycle
+
+		if(alarmed)
+			nextstate = FIREDOOR_CLOSED
+			close()
 
 /obj/machinery/door/firedoor/attackby(obj/item/weapon/C as obj, mob/user as mob)
 	add_fingerprint(user, 0, C)
 	if(operating)
-		return//Already doing something.
+		return //Already doing something.
+
 	if(isWelder(C) && !repairing)
 		var/obj/item/weapon/weldingtool/W = C
 		if(W.remove_fuel(0, user))
@@ -278,10 +290,14 @@
 						"You force \the [ blocked ? "welded" : "" ] [src] [density ? "open" : "closed"] with \the [C]!",\
 						"You hear metal strain and groan, and a door [density ? "opening" : "closing"].")
 			if(density)
-//inf				OPEN_IN(src, 0, TRUE)
-				open(user, 1) //because OPEN_IN doesn't logs user
+				spawn(0)
+					open(user, 1) //INF, WAS open(1)
+					if(lockdown || get_alarm())
+						locked = TRUE
 			else
-				CLOSE_IN(src, 0, FALSE)
+				spawn(0)
+					locked = FALSE
+					close()
 			return
 		else
 			to_chat(user, "<span class='notice'>You must remain still to interact with \the [src].</span>")
@@ -359,8 +375,9 @@
 	return
 
 /obj/machinery/door/firedoor/close()
-	if(closing)
+	if(closing || locked)
 		return
+
 	closing = 1
 	latetoggle()
 	var/list/people = list()
@@ -398,7 +415,7 @@
 
 				M.visible_message(SPAN_DANGER("\The [src] knocks [M.name] out of the way!"), SPAN_DANGER("\The [src] knocks you out of the way!"))
 				M.apply_damage(10, BRUTE, used_weapon = src)
-				if(direction) 
+				if(direction)
 					M.Move(get_step(src, direction))
 	closing = 0
 	return ..()

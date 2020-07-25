@@ -24,7 +24,7 @@ var/list/gamemode_cache = list()
 	var/log_pda = 0						// log pda messages
 	var/log_hrefs = 0					// logs all links clicked in-game. Could be used for debugging and tracking down exploits
 	var/log_runtime = 0					// logs world.log to a file
-	var/log_world_output = 0			// log world.log << messages
+	var/log_world_output = 0			// log world.log to game log
 	var/allow_admin_ooccolor = 0		// Allows admins with relevant permissions to have their own ooc colour
 	var/allow_vote_restart = 0 			// allow votes to restart
 	var/ert_admin_call_only = 0
@@ -105,6 +105,9 @@ var/list/gamemode_cache = list()
 	var/issuereporturl
 
 	var/forbidden_message_regex
+	var/forbidden_message_warning = "<B>Your message matched a filter and has not been sent.</B>"
+	var/forbidden_message_no_notifications = FALSE
+	var/forbidden_message_hide_details = FALSE
 
 	var/forbid_singulo_possession = 0
 
@@ -832,6 +835,15 @@ var/list/gamemode_cache = list()
 						config.forbidden_message_regex = flags ? regex(matcher, flags) : regex(matcher)
 					catch(var/exception/ex)
 						log_error("Invalid regex '[value]' supplied to '[name]': [ex]")
+
+				if ("forbidden_message_warning")
+					config.forbidden_message_warning = length(value) ? value : FALSE
+
+				if ("forbidden_message_no_notifications")
+					config.forbidden_message_no_notifications = TRUE
+
+				if ("forbidden_message_hide_details")
+					config.forbidden_message_hide_details = TRUE
 
 				else
 					log_misc("Unknown setting in configuration: '[name]'")

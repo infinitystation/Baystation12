@@ -18,7 +18,7 @@
 	if(!S)					return 0
 	S.cd = "/"
 
-	S["version"] >> savefile_version
+	from_save(S["version"], savefile_version)
 	player_setup.load_preferences(S)
 	loaded_preferences = S
 	return 1
@@ -34,7 +34,7 @@
 	if(!S)					return 0
 	S.cd = "/"
 
-	S["version"] << SAVEFILE_VERSION_MAX
+	to_save(S["version"], SAVEFILE_VERSION_MAX)
 	player_setup.save_preferences(S)
 	loaded_preferences = S
 	return 1
@@ -56,9 +56,9 @@
 		slot = sanitize_integer(slot, 1, config.character_slots, initial(default_slot))
 		if(slot != default_slot)
 			default_slot = slot
-			S["default_slot"] << slot
+			to_save(S["default_slot"], slot)
 	else
-		S["default_slot"] << default_slot
+		to_save(S["default_slot"], default_slot)
 
 	if(slot != SAVE_RESET)
 		S.cd = GLOB.using_map.character_load_path(S, slot)
@@ -82,7 +82,7 @@
 	if(!S)					return 0
 	S.cd = GLOB.using_map.character_save_path(default_slot)
 
-	S["version"] << SAVEFILE_VERSION_MAX
+	to_save(S["version"], SAVEFILE_VERSION_MAX)
 	player_setup.save_character(S)
 	loaded_character = S
 	return S

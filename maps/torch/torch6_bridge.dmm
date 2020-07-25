@@ -1944,8 +1944,8 @@
 	dir = 4;
 	icon_state = "tube1"
 	},
-/obj/machinery/photocopier/faxmachine{
-	department = "Bridge"
+/obj/machinery/photocopier/faxmachine/torch{
+	department = "Torch - Bridge"
 	},
 /obj/machinery/button/alternate/door{
 	id_tag = "meetingstarboard";
@@ -6418,8 +6418,8 @@
 	dir = 8;
 	pixel_x = 20
 	},
-/obj/machinery/photocopier/faxmachine{
-	department = "COS"
+/obj/machinery/photocopier/faxmachine/torch{
+	department = "Torch - Chief of Security"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/crew_quarters/heads/office/cos)
@@ -9371,9 +9371,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/safe_room/bridge)
-"uc" = (
-/turf/simulated/floor/tiled/techfloor,
-/area/crew_quarters/safe_room/bridge)
 "ud" = (
 /obj/structure/bed/chair/padded/blue{
 	icon_state = "chair_preview";
@@ -9650,6 +9647,25 @@
 /obj/structure/bed/chair/padded/blue,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/heads/office/sea)
+"uH" = (
+/turf/simulated/floor/tiled/techfloor,
+/area/crew_quarters/safe_room/bridge)
+"uI" = (
+/obj/structure/bed/chair/padded/blue{
+	icon_state = "chair_preview";
+	dir = 8
+	},
+/obj/machinery/alarm{
+	dir = 8;
+	icon_state = "alarm0";
+	pixel_x = 24
+	},
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/crew_quarters/safe_room/bridge)
 "uJ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -10054,6 +10070,12 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/crew_quarters/heads/office/sea)
+"vS" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/crew_quarters/safe_room/bridge)
 "vT" = (
 /obj/machinery/atmospherics/pipe/manifold/visible{
 	dir = 1
@@ -10061,20 +10083,17 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/safe_room/bridge)
 "vU" = (
-/obj/structure/bed/chair/padded/blue{
-	icon_state = "chair_preview";
+/obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
-/obj/machinery/alarm{
-	dir = 8;
-	icon_state = "alarm0";
-	pixel_x = 24
+/obj/structure/fireaxecabinet{
+	pixel_x = 32
 	},
-/obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
-	dir = 4
+/obj/item/modular_computer/laptop/preset/custom_loadout/standard,
+/obj/structure/table/standard{
+	name = "plastic table frame"
 	},
-/turf/simulated/floor/tiled/techfloor,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/safe_room/bridge)
 "vX" = (
 /obj/structure/filingcabinet/chestdrawer{
@@ -10481,9 +10500,8 @@
 /area/crew_quarters/heads/office/cos)
 "wD" = (
 /obj/structure/table/woodentable/walnut,
-/obj/machinery/photocopier/faxmachine{
-	anchored = 1;
-	department = "SolGov Representative"
+/obj/machinery/photocopier/faxmachine/torch{
+	department = "Torch - SolGov Representative"
 	},
 /obj/item/device/radio/intercom{
 	dir = 4;
@@ -11523,19 +11541,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/heads/office/xo)
-"zU" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8
-	},
-/obj/structure/fireaxecabinet{
-	pixel_x = 32
-	},
-/obj/item/modular_computer/laptop/preset/custom_loadout/standard,
-/obj/structure/table/standard{
-	name = "plastic table frame"
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/crew_quarters/safe_room/bridge)
 "zV" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
@@ -12835,8 +12840,8 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge)
 "FG" = (
-/obj/machinery/photocopier/faxmachine{
-	department = "XO"
+/obj/machinery/photocopier/faxmachine/torch{
+	department = "Torch - Executive Officer"
 	},
 /obj/structure/noticeboard{
 	pixel_y = 30
@@ -13650,8 +13655,8 @@
 /obj/structure/table/standard{
 	name = "plastic table frame"
 	},
-/obj/machinery/photocopier/faxmachine{
-	department = "SEA"
+/obj/machinery/photocopier/faxmachine/torch{
+	department = "Torch - Senior Enlisted Advisor"
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /obj/machinery/requests_console{
@@ -14109,8 +14114,8 @@
 "KP" = (
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/structure/table/glass,
-/obj/machinery/photocopier/faxmachine{
-	department = "Chief Medical Officer's Office - Torch"
+/obj/machinery/photocopier/faxmachine/torch{
+	department = "Torch - Chief Medical Officer"
 	},
 /obj/item/weapon/stamp/cmo,
 /obj/item/device/radio{
@@ -14593,8 +14598,8 @@
 	pixel_x = -6;
 	pixel_y = 24
 	},
-/obj/machinery/photocopier/faxmachine{
-	department = "CO"
+/obj/machinery/photocopier/faxmachine/torch{
+	department = "Torch - Commanding Officer"
 	},
 /obj/machinery/button/windowtint{
 	id = "co_windows";
@@ -15456,19 +15461,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/aquila/medical)
-"Rc" = (
-/obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
-	dir = 4
-	},
-/obj/item/modular_computer/telescreen/preset/medical{
-	pixel_x = 32
-	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/crew_quarters/safe_room/bridge)
 "Rd" = (
 /obj/machinery/hologram/holopad,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -16112,10 +16104,15 @@
 /turf/simulated/floor/carpet,
 /area/crew_quarters/heads/office/cl/backroom)
 "Tn" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/structure/bed/chair/padded/blue{
+	icon_state = "chair_preview";
 	dir = 4
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/safe_room/bridge)
 "To" = (
 /obj/machinery/disposal,
@@ -16217,6 +16214,19 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/aux_eva)
+"TT" = (
+/obj/effect/floor_decal/techfloor{
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/obj/item/modular_computer/telescreen/preset/medical{
+	pixel_x = 32
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/crew_quarters/safe_room/bridge)
 "TV" = (
 /obj/structure/closet/secure_closet/liaison,
 /obj/machinery/camera/network/command{
@@ -16244,9 +16254,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/aquila/maintenance)
 "Uc" = (
-/obj/machinery/photocopier/faxmachine{
-	anchored = 1;
-	department = "Corporate Liasion"
+/obj/machinery/photocopier/faxmachine/torch{
+	department = "Torch - Corporate Liasion"
 	},
 /obj/structure/table/woodentable_reinforced/walnut,
 /obj/structure/noticeboard{
@@ -16814,8 +16823,8 @@
 /area/security/bridgecheck)
 "Wi" = (
 /obj/structure/table/glass,
-/obj/machinery/photocopier/faxmachine{
-	department = "Chief Science Officer's Office - Torch"
+/obj/machinery/photocopier/faxmachine/torch{
+	department = "Torch - Chief Science Officer"
 	},
 /obj/machinery/newscaster{
 	pixel_y = 32
@@ -17247,17 +17256,6 @@
 /obj/random_multi/single_item/poppy,
 /turf/simulated/floor/plating,
 /area/maintenance/bridge/forestarboard)
-"Yw" = (
-/obj/structure/bed/chair/padded/blue{
-	icon_state = "chair_preview";
-	dir = 4
-	},
-/obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
-	dir = 8
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/crew_quarters/safe_room/bridge)
 "Yz" = (
 /obj/structure/flora/pottedplant/orientaltree,
 /obj/effect/floor_decal/spline/fancy/wood/corner{
@@ -17522,8 +17520,8 @@
 	pixel_y = 0
 	},
 /obj/effect/floor_decal/corner/yellow/mono,
-/obj/machinery/photocopier/faxmachine{
-	department = "CE"
+/obj/machinery/photocopier/faxmachine/torch{
+	department = "Torch - Chief Engineer"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/heads/office/ce)
@@ -27831,9 +27829,9 @@ rR
 Ik
 to
 ub
-Yw
-Pf
 Tn
+Pf
+vS
 wz
 Xa
 ti
@@ -28032,8 +28030,8 @@ AJ
 rS
 PB
 tp
-uc
-uc
+uH
+uH
 Qf
 vT
 wA
@@ -28233,11 +28231,11 @@ Og
 Vl
 Pg
 VY
-Rc
+TT
 ud
-vU
+uI
 vp
-zU
+vU
 IF
 yL
 ti

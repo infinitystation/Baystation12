@@ -3005,8 +3005,8 @@
 	pixel_y = -6
 	},
 /obj/structure/table/standard,
-/obj/machinery/photocopier/faxmachine{
-	department = "Pathfinder"
+/obj/machinery/photocopier/faxmachine/torch{
+	department = "Torch - Pathfinder"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/command/pathfinder)
@@ -4580,6 +4580,12 @@
 /obj/item/weapon/book/manual/nt_regs,
 /turf/simulated/floor/wood,
 /area/command/captainmess)
+"pz" = (
+/obj/machinery/door/firedoor,
+/obj/effect/wallframe_spawn/reinforced/hull,
+/obj/effect/shuttle_landmark/ascent_seedship/torch/trichoptera,
+/turf/simulated/floor/plating,
+/area/hallway/primary/fourthdeck/aft)
 "pD" = (
 /obj/structure/railing/mapped{
 	dir = 8;
@@ -8355,12 +8361,6 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/aft)
-"Bt" = (
-/obj/machinery/door/firedoor,
-/obj/effect/wallframe_spawn/reinforced/hull,
-/obj/effect/shuttle_landmark/ascent_seedship/torch/trichoptera,
-/turf/simulated/floor/plating,
-/area/hallway/primary/fourthdeck/aft)
 "Bu" = (
 /obj/structure/catwalk,
 /obj/structure/cable{
@@ -13438,8 +13438,8 @@
 	dir = 4
 	},
 /obj/structure/table/standard,
-/obj/machinery/photocopier/faxmachine{
-	department = "Quartermaster's Office"
+/obj/machinery/photocopier/faxmachine/torch{
+	department = "Torch - Deck Chief"
 	},
 /obj/machinery/camera/network/supply{
 	c_tag = "Supply Office - Deck Officer";
@@ -40722,7 +40722,7 @@ JP
 aJ
 Px
 Ms
-Bt
+pz
 aa
 aa
 aa

@@ -33,13 +33,12 @@
 	var/ai_control_disabled = 0         // Whether the AI control is disabled.
 	var/list/mode_list = null           // A list of shield_mode datums.
 	var/full_shield_strength = 0        // The amount of power shields need to be at full operating strength.
+	var/vessel_reverse_dir	= EAST		// Reverse dir of our vessel
 
 	var/idle_multiplier   = 1           // Trades off cost vs. spin-up time from idle to running
 	var/idle_valid_values = list(1, 2, 5, 10)
 	var/spinup_delay      = 20
 	var/spinup_counter    = 0
-
-	var/vessel_reverse_dir	= EAST		// INF Reverse dir our vessel
 
 /obj/machinery/power/shield_generator/on_update_icon()
 	if(running)
@@ -110,7 +109,8 @@
 		shielded_turfs = fieldtype_hull()
 	else
 		shielded_turfs = fieldtype_square()
-//[INF]
+
+	// Rotate shield's animation relative to located ship
 	if(GLOB.using_map.use_overmap)
 		var/obj/effect/overmap/visitable/ship/sector = map_sectors["[src.z]"]
 		if(sector && istype(sector))
@@ -119,13 +119,13 @@
 					if(candidate.check_ownership(src))
 						sector = candidate
 			vessel_reverse_dir = GLOB.reverse_dir[sector.fore_dir]
-//[/INF]
+
 	for(var/turf/T in shielded_turfs)
 		var/obj/effect/shield/S = new(T)
 		S.gen = src
 		S.flags_updated()
 		field_segments |= S
-		if(check_flag(MODEFLAG_HULL))	S.set_dir(vessel_reverse_dir)	// INF
+		S.set_dir(vessel_reverse_dir)
 	update_icon()
 
 
