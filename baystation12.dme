@@ -3533,6 +3533,7 @@
 #include "infinity\code\modules\mechs\mech_interaction.dm"
 #include "infinity\code\modules\mechs\premade\combat.dm"
 #include "infinity\code\modules\mob\animations.dm"
+#include "infinity\code\modules\mob\floating_message.dm"
 #include "infinity\code\modules\mob\holder.dm"
 #include "infinity\code\modules\mob\login.dm"
 #include "infinity\code\modules\mob\logout.dm"
