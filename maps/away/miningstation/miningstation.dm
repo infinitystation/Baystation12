@@ -13,7 +13,7 @@
 	description = "An orbital Mining Station bearing authentication codes from Grayson Mining Industries, sensors show inconsistant lifesigns aboard the station."
 	suffixes = list("miningstation/miningstation.dmm")
 	prefix = "maps/away_inf/" //INF
-	cost = 0.5 //INF, WAS 2
+	cost = 0.5 //INF WAS 2
 	area_usage_test_exempted_root_areas = list(/area/miningstation)
 
 ///////////////////////////////////crew
