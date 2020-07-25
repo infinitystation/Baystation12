@@ -3770,7 +3770,6 @@
 #include "maps\antag_spawn\wizard\wizard_inf.dm"
 #include "maps\away\away_sites.dm"
 #include "maps\bearcat_inf\bearcat_define.dm"
-#include "maps\example\example.dm"
 #include "maps\random_ruins\exoplanet_ruins\exoplanet_ruins.dm"
 #include "maps\random_ruins\exoplanet_ruins\crashed_pod_inf\crashed_pod.dm"
 #include "maps\random_ruins\exoplanet_ruins\datacapsule\datacapsule.dm"
