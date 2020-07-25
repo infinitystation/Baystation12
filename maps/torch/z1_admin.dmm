@@ -1,4 +1,4 @@
-﻿//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aaa" = (
 /turf/unsimulated/wall,
 /area/space)
@@ -11846,17 +11846,6 @@
 	},
 /turf/simulated/floor/holofloor/beach/sand,
 /area/holodeck/source_volleyball)
-"jhl" = (
-/obj/structure/table/holo_woodentable,
-/obj/effect/floor_decal/spline/fancy/wood{
-	dir = 1;
-	icon_state = "spline_fancy"
-	},
-/obj/item/weapon/flame/candle{
-	holographic = 1
-	},
-/turf/simulated/floor/holofloor/carpet,
-/area/holodeck/source_cafe)
 "jlA" = (
 /obj/machinery/light/spot,
 /turf/simulated/floor/plating,

@@ -65,6 +65,11 @@
 	name = "TCV Tersten Tenacity - North-West"
 	landmark_tag = "nav_merc_4"
 
+/obj/effect/shuttle_landmark/merc/dock
+	name = "Docking Port"
+	landmark_tag = "nav_merc_dock"
+	docking_controller = "nuke_shuttle_dock_airlock"
+
 //Areas
 
 /area/map_template/merc_spawn
