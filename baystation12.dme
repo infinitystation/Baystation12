@@ -3525,6 +3525,7 @@
 #include "infinity\code\modules\hydroponics\seed_packets.dm"
 #include "infinity\code\modules\integrated_electronics\core\assemblies.dm"
 #include "infinity\code\modules\integrated_electronics\subtypes\manipulation.dm"
+#include "infinity\code\modules\item_worth\materials.dm"
 #include "infinity\code\modules\materials\material_sheets.dm"
 #include "infinity\code\modules\materials\reciepes.dm"
 #include "infinity\code\modules\materials\definitions\materials_other.dm"
