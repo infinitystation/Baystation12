@@ -1,6 +1,6 @@
 {
   "ckey"			:	"asriel15",
   "character_name"	:	"Friedrich Zimmer",
-  "item_icon_state"	:	"asri_zim_locket",
-  "item_path"		:	"/obj/item/clothing/accessory/locket/custom/asriel_zimmer"
+  "item_icon_state"	:	"asriel_locket",
+  "item_path"		:	"/obj/item/clothing/accessory/locket/custom/asriel_locket"
   }
