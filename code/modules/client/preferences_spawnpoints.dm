@@ -135,55 +135,22 @@ GLOBAL_VAR(spawntypes)
 							sector = candidate
 					greetings = " на [istype(sector, /obj/effect/overmap/visitable/ship) ? "судне" : "станции"] '[GLOB.using_map.full_name]'."
 			to_chat(victim, SPAN_NOTICE("Вы пробуждаетесь от крио-сна[greetings]"))
-			victim.sleeping = 0 //INF
+			victim.sleeping = 0
 			victim.Sleeping(rand(2,7))
 			victim.bodytemperature = victim.species.cold_level_1 //very cold, but a point before damage
+
 			if(!victim.isSynthetic()) //fluff. I didn't used else at next lines because of code readness
 				to_chat(victim, SPAN_NOTICE("Вы чувствуете озноб и капли воды на себе. Криогенная жидкость только \
 				прекратила охлаждать атмосферу внутри капсулы... Сквозь веки бьёт яркий свет, пытаясь заставить проснуться. \
 				Похоже, смена начинается."))
 			else
 				to_chat(victim, SPAN_NOTICE("Получен сигнал к пробуждению. Батарея заряжена. Все системы в норме."))
+
 			if(!victim.isSynthetic())
-				var/message
-/* bad ideas
-				if(prob(5))
-					victim.make_dizzy(200) //sea sick, it would make you mad very fast
-*/
-				if(prob(20)) //starvation
-					message += SPAN_WARNING("Кажется, вы забыли поесть перед тем, как уйти в сон. Горло пересохло, а \
-					живот скрутило в спазме. ")
-					victim.nutrition = rand(0,200)
-					victim.hydration = rand(0,200)
-#ifdef SPECIES_UNATHI
-					if(victim.species.name == SPECIES_UNATHI)
-						victim.nutrition = 100
-#endif
-				if(prob(15)) //stutterting and jittering (because of cold?)
-					message += SPAN_WARNING("Трясет от холода. ")
-					victim.make_jittery(120)
-					victim.stuttering = 20
-				if(prob(10)) //hallucinations
-					message += SPAN_WARNING("В ушках звон, в голове белый шум... ")
-					victim.hallucination(100, 120)
-				if(prob(5)) //side medical effect. Stealth
-					victim.add_side_effect(pick(GLOB.all_medical_side_effects))
-				if(prob(5)) //cryo malfunction
-					message += SPAN_DANGER("Вы чувствуете ужасающий холод во всём теле! Крио всё ещё охлаждает! ")
-					victim.bodytemperature = victim.species.cold_level_3
-				if(prob(5)) //vomit
-					message += SPAN_WARNING("Тошнит... ")
-					victim.vomit()
-				if(prob(5)) //sleepy crewman syndrome
-					message += SPAN_WARNING("Вы долго не могли уснуть, не смотря на все усилия этой машины. \
-					Так не хочется вставать... Ноги ватные, руки тяжелые... ")
-					victim.drowsyness += 39 //59 seconds with high chance to fall asleep
-				if(!message)
-					message += SPAN_NOTICE("Кажется, в этот раз без осложнений... Правда, выспаться в саркофаге всё равно не удалось.")
-				else
-					message += SPAN_WARNING("Не удалось даже нормально выспаться в этом гробу...")
-				to_chat(victim, message)
-				victim.drowsyness += 20
+				give_effect(victim)
+				give_advice(victim)
+
+				victim.drowsyness += 30
 //[/INF]
 			break//inf, was: return
 

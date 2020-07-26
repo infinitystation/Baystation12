@@ -70,7 +70,7 @@
 	if(announcement_message)
 		newChannel.announcement = announcement_message
 	else
-		newChannel.announcement = "Breaking news from [channel_name]!"
+		newChannel.announcement = "Свежие новости в газете \"[channel_name]\"!"
 	network_channels += newChannel
 
 /datum/feed_network/proc/SubmitArticle(var/msg, var/author, var/channel_name, var/obj/item/weapon/photo/photo, var/adminMessage = 0, var/message_type = "")
@@ -944,7 +944,7 @@ obj/item/weapon/newspaper/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	var/turf/T = get_turf(src)                      //Who the fuck uses spawn(600) anyway, jesus christ
 	if(news_call)
 		for(var/mob/O in hearers(world.view-1, T))
-			O.show_message("<span class='newscaster'><EM>[src.name]</EM> beeps, \"[news_call]\"</span>",2)
+			O.show_message("<span class='newscaster'><EM>[src.name]</EM> объявляет, \"[news_call]\"</span>",2)
 		src.alert = 1
 		src.update_icon()
 		spawn(300)

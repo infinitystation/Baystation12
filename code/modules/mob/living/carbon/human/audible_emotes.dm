@@ -18,6 +18,8 @@
 
 		if(scream_sound)
 			if(H.species.name in SOUNDED_SPECIES)
+				if(H.species.name == SPECIES_RESOMI)
+					scream_sound = 'infinity/sound/voice/resomisneeze.ogg'
 				playsound(src, scream_sound, 50, 0, 1)
 
 	if(message)

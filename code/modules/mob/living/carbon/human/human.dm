@@ -711,7 +711,7 @@
 	else if(!(locate(/mob) in contents))
 		nothing_to_puke = TRUE
 
-	stun_effect_act(0, 10, BP_GROIN, "stomach spasm") //INF
+	stun_effect_act(0, 5, BP_GROIN, "stomach spasm") //INF
 	if(nothing_to_puke)
 		custom_emote(1,"морщится.")
 		to_chat(src, SPAN_WARNING("Вас скручивает в спазме от попытки стошнить хоть что-то...")) //INF
