@@ -1,22 +1,22 @@
 /datum/job/submap/bearcat_captain
-	title = "Independant Captain"
+	title = "Independant First Mate"
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/captain
-	supervisors = "your bottom line"
-	info = "Your ship has suffered a catastrophic amount of damage, leaving it dark and crippled in the depths of \
-	unexplored space. The Captain is dead, leaving you, previously the First Mate in charge. Organize what's left of \
-	your crew, and maybe you'll be able to survive long enough to be rescued."
-	required_language = LANGUAGE_SPACER //INF
+	supervisors = "собственным здравым смыслом"
+	info = "Ваш корабль получил катастрофические повреждения, что перебили свет и обрекли его на медленную смерть от астероидов \
+	в глубинах неисследованного космоса. Капитан погиб, оставив Вас, некогда своего Первого Помощника на самого себя. Организуйте то, \
+	что осталось от вашего экипажа, и возможно, вам удастся продержаться достаточно долго, чтобы спастись или даже вернуться в порт."
+	required_language = LANGUAGE_SPACER
 
 /datum/job/submap/bearcat_crewman
 	title = "Independant Crewman"
-	supervisors = "the Captain"
+	supervisors = "Капитаном"
 	total_positions = 3
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/crew
-	info = "Your ship has suffered a catastrophic amount of damage, leaving it dark and crippled in the depths of \
-	unexplored space. Work together with the Acting Captain and what's left of the crew, and maybe you'll be able \
-	to survive long enough to be rescued."
-	required_language = LANGUAGE_SPACER //INF
+	info = "Ваш корабль получил катастрофические повреждения, что перебили свет и обрекли его на медленную смерть от астероидов \
+	в глубинах неисследованного космоса. Работайте сообща с Первым Помощником и оставшимся экипажем, и возможно, \
+	вам удастся продержаться достаточно долго, чтобы спастись или даже вернуться в порт."
+	required_language = LANGUAGE_SPACER
 
 #define BEARCAT_OUTFIT_JOB_NAME(job_name) ("Bearcat - Job - " + job_name)
 
@@ -33,7 +33,7 @@
 	id_type = /obj/item/weapon/card/id/bearcat
 
 /decl/hierarchy/outfit/job/bearcat/captain
-	name = BEARCAT_OUTFIT_JOB_NAME("Captain")
+	name = BEARCAT_OUTFIT_JOB_NAME("First Mate")
 	uniform = /obj/item/clothing/under/casual_pants/classicjeans
 	shoes = /obj/item/clothing/shoes/black
 	pda_type = /obj/item/modular_computer/pda/captain
@@ -52,7 +52,7 @@
 #undef BEARCAT_OUTFIT_JOB_NAME
 
 /obj/effect/submap_landmark/spawnpoint/captain
-	name = "Independant Captain"
+	name = "Independant First Mate"
 
 /obj/effect/submap_landmark/spawnpoint/crewman
 	name = "Independant Crewman"
