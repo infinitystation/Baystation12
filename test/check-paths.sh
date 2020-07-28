@@ -32,7 +32,7 @@ exactly 10 "/obj text paths" '"/obj'
 exactly 8 "/turf text paths" '"/turf'
 exactly 144 "to_world uses" '\sto_world\('
 exactly 69 "to_world_log uses" '\sto_world_log\('
-exactly 122 "<< uses" '(?<!<)<<(?!<)' -P
+exactly 112 "<< uses" '(?<!<)<<(?!<)' -P
 exactly 0 "incorrect indentations" '^( {4,})' -P
 exactly 32 "text2path uses" 'text2path'
 exactly 3 "update_icon() override" '/update_icon\((.*)\)'  -P
