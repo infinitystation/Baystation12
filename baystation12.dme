@@ -3688,6 +3688,8 @@
 #include "infinity\code\modules\telesci\gps.dm"
 #include "infinity\code\modules\telesci\telepads.dm"
 #include "infinity\code\modules\telesci\telesci_computer.dm"
+#include "infinity\code\modules\vision_cone\mob_settings.dm"
+#include "infinity\code\modules\vision_cone\vision_cone.dm"
 #include "infinity\code\modules\weapon_construction\_weapon_construction_setup.dm"
 #include "infinity\code\modules\webhooks\webhook_ban_message.dm"
 #include "infinity\code\modules\webhooks\webhook_roundend.dm"

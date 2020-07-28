@@ -716,6 +716,16 @@
 	else if( lying != lying_prev )
 		update_icons()
 
+		//[INF]
+		if(isliving(src))
+			var/mob/living/L = src
+			L.check_fov()
+			if(lying)
+				L.reset_vision_cone()
+			else
+				L.update_vision_cone()
+		//[INF]
+
 /mob/proc/reset_layer()
 	if(lying)
 		plane = DEFAULT_PLANE
