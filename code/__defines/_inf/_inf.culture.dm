@@ -54,7 +54,7 @@
 #define FACTION_WARD_TAKAHASHI  "Ward-Takahashi GMB"
 #define FACTION_GRAYSON         "Grayson Manufactories Ltd."
 #define FACTION_AERTHER         "Aether Atmospherics and Recycling"
-#define FACTION_SAARE           "Strategic Assault and Asset Retention Enterprises"
+// #define FACTION_SAARE           "Strategic Assault and Asset Retention Enterprises"
 #define FACTION_MAJOR_BILL      "Major Bill's"
 #define FACTION_FOCAL_POINT     "Focal Point Energistics"
 #define FACTION_XION            "Xion Industrial"
