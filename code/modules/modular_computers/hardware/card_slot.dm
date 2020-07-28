@@ -72,8 +72,10 @@
 		return FALSE
 
 	if(user)
-		to_chat(user, "You remove [stored_card] from [src].")
-		user.put_in_hands(stored_card)
+		if(loc.Adjacent(user))//inf
+			to_chat(user, "You remove [stored_card] from [src].")
+			user.put_in_hands(stored_card)
+		else stored_card.dropInto(get_turf(loc)) //inf
 	else
 		dropInto(loc)
 	stored_card = null
