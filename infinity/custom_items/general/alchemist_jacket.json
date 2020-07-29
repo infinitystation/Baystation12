@@ -1,0 +1,9 @@
+{
+  "ckey" :            "alchemisthero",
+  "character_name" :  "Robert Camoran",
+  "item_name" :       "old jacket",
+  "item_desc" :       "Уникальная куртка неизвестного AHst'a. На спине разрисован треугольник с глазом по центру. Видимо, это как-то связано с первым носителем и его предтечам.",
+  "item_icon_state" : "ahst_jacket",
+  "item_path" :       "/obj/item/clothing/suit/storage/toggle/suit",
+  "additional_data": {"icon_open":"ahst_jacket", "icon_close":"ahst_jacket_toggle"}
+  }

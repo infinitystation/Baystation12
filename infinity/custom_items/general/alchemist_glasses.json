@@ -1,0 +1,8 @@
+{
+  "ckey" :            "alchemisthero",
+  "character_name" :  "Robert Camoran",
+  "item_name" :       "Purple glasses",
+  "item_desc" :       "Обычные розовые очки. Красиво переливаются на желтом свету.",
+  "item_icon_state" : "ahst_purple_glasses",
+  "item_path" :       "/obj/item/clothing/glasses"
+  }
