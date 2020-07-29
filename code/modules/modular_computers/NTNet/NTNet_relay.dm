@@ -131,3 +131,5 @@
 	else if(user.unEquip(P,src))
 		install_component(P)
 		to_chat(user, "You install \the [P] into \the [src]")
+	else
+		return ..()
