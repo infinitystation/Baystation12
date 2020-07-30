@@ -472,7 +472,7 @@ This function completely restores a damaged organ to perfect condition.
 	if(!surgical && (type in list(CUT, PIERCE, BRUISE)) && damage > 15 && local_damage > 30)
 
 		var/internal_damage
-		if(prob(damage) && sever_artery())
+		if((local_damage >= max_damage) && sever_artery()) //INF, WAS if(prob(damage) && sever_artery())
 			internal_damage = TRUE
 		if(prob(ceil(damage/4)) && sever_tendon())
 			internal_damage = TRUE

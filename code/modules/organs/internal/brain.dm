@@ -213,7 +213,7 @@
 
 /obj/item/organ/internal/brain/take_internal_damage(var/damage, var/silent)
 	set waitfor = 0
-	..(damage * 2, silent) //INF Was ..()
+	..()
 	if(damage / 2 >= 10) //This probably won't be triggered by oxyloss or mercury. Probably. //INF. Was (damage >= 10)
 		var/damage_secondary = damage / 2 * 0.20 // INF. Was (damage * 0.20)
 		owner.flash_eyes()

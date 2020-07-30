@@ -522,9 +522,10 @@
 		if(shrapnel)
 			shrapnel.forceMove(organ)
 			organ.embed(shrapnel)
+/*[ORIG] less random, less blood loss
 	else if(prob(2 * damage_prob))
 		organ.sever_artery()
-
+[/ORIG]*/
 	organ.owner.projectile_hit_bloody(src, wound.damage*5, null, organ)
 
 /obj/item/projectile/proc/get_shrapnel()

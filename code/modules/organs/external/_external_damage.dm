@@ -160,8 +160,13 @@ obj/item/organ/external/take_general_damage(var/amount, var/silent = FALSE)
 
 	organ_hit_chance += 5 * damage_amt/organ_damage_threshold
 
-	if(encased && !(status & ORGAN_BROKEN)) //ribs protect
-		organ_hit_chance *= 0.6
+//[INF]
+	if(laser)
+		if(cur_damage + damage_amt < max_damage)
+			organ_hit_chance *= 0.0
+//[/INF]
+	else if(encased && !(status & ORGAN_BROKEN)) //ribs protect //INF, WAS if(encased && !(status & ORGAN_BROKEN))
+		organ_hit_chance *= 0.0 //INF, WAS 0.6
 
 	organ_hit_chance = min(organ_hit_chance, 100)
 	if(prob(organ_hit_chance))
