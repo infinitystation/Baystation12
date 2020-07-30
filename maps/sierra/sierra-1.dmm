@@ -402,10 +402,10 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 5
 	},
-/obj/item/robot_rack/roller,
-/obj/item/robot_rack/roller,
 /obj/item/weapon/cane,
 /obj/item/bodybag/rescue/loaded,
+/obj/item/roller,
+/obj/item/roller,
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/medical)
 "bc" = (

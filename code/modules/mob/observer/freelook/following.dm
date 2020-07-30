@@ -13,4 +13,8 @@
 
 mob/observer/eye/EyeMove()
 	stop_following()
+<<<<<<< HEAD
 	. = ..()
+=======
+	. = ..()
+>>>>>>> master
