@@ -4,13 +4,14 @@ set -eo pipefail
 FAILED=0
 shopt -s globstar
 
-exactly() { # exactly N name search [mode]
+exactly() { # exactly N name search [mode] [filter]
 	count="$1"
 	name="$2"
 	search="$3"
 	mode="${4:--E}"
+	filter="${5:-**/*.dm}"
 
-	num="$(grep "$mode" "$search" **/*.dm | wc -l || true)"
+	num="$(grep "$mode" "$search" $filter | wc -l || true)"
 
 	if [ $num -eq $count ]; then
 		echo "$num $name"
@@ -29,14 +30,17 @@ exactly 2 "/datum text paths" '"/datum'
 exactly 2 "/mob text paths" '"/mob'
 exactly 10 "/obj text paths" '"/obj'
 exactly 8 "/turf text paths" '"/turf'
+exactly 146 "to_world uses" '\sto_world\('
+exactly 69 "to_world_log uses" '\sto_world_log\('
 exactly 1 "world<< uses" 'world<<|world[[:space:]]<<'
 exactly 2 "world.log<< uses" 'world.log<<|world.log[[:space:]]<<'
-exactly 218 "<< uses" '(?<!<)<<(?!<)' -P
+exactly 214 "<< uses" '(?<!<)<<(?!<)' -P
 exactly 0 "incorrect indentations" '^( {4,})' -P
 exactly 32 "text2path uses" 'text2path'
 exactly 3 "update_icon() override" '/update_icon\((.*)\)'  -P
 exactly 1 "goto uses" 'goto '
-exactly 550 "spawn uses" 'spawn\s*\(\s*(-\s*)?\d*\s*\)' -P
+exactly 539 "spawn uses" 'spawn\s*\(\s*(-\s*)?\d*\s*\)' -P
+exactly 0 "tag uses" '\stag = ' -P '**/*.dmm'
 # With the potential exception of << if you increase any of these numbers you're probably doing it wrong
 
 #broken_files=0

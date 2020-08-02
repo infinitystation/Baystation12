@@ -58,6 +58,7 @@ var/list/gamemode_cache = list()
 	var/list/modes = list()				// allowed modes
 	var/list/votable_modes = list()		// votable modes
 	var/list/probabilities = list()		// relative probability of each mode
+	var/secret_hide_possibilities = FALSE // Whether or not secret modes show list of possible round types
 	var/humans_need_surnames = 0
 	var/allow_random_events = 0			// enables random events mid-round when set to 1
 	var/allow_ai = 1					// allow ai job
@@ -102,6 +103,8 @@ var/list/gamemode_cache = list()
 	var/forumurl
 	var/githuburl
 	var/issuereporturl
+
+	var/forbidden_message_regex
 
 	var/forbid_singulo_possession = 0
 
@@ -580,9 +583,6 @@ var/list/gamemode_cache = list()
 				if("popup_admin_pm")
 					config.popup_admin_pm = 1
 
-				if("allow_holidays")
-					Holiday = 1
-
 				if("use_irc_bot")
 					use_irc_bot = 1
 
@@ -601,6 +601,9 @@ var/list/gamemode_cache = list()
 					config.antag_hud_allowed = 1
 				if("antag_hud_restricted")
 					config.antag_hud_restricted = 1
+
+				if("secret_hide_possibilities")
+					secret_hide_possibilities = TRUE
 
 				if("humans_need_surnames")
 					humans_need_surnames = 1
@@ -819,6 +822,17 @@ var/list/gamemode_cache = list()
 				if ("act_interval")
 					config.act_interval = text2num(value) SECONDS
 
+				if ("forbidden_message_regex")
+					var/end = findlasttext(value, "/")
+					if (length(value) < 3 || value[1] != "/" || end < 3)
+						log_error("Invalid regex '[value]' supplied to '[name]'")
+					var/matcher = copytext(value, 2, end)
+					var/flags = end == length(value) ? FALSE : copytext(value, end + 1)
+					try
+						config.forbidden_message_regex = flags ? regex(matcher, flags) : regex(matcher)
+					catch(var/exception/ex)
+						log_error("Invalid regex '[value]' supplied to '[name]': [ex]")
+
 				else
 					log_misc("Unknown setting in configuration: '[name]'")
 
@@ -887,6 +901,12 @@ var/list/gamemode_cache = list()
 
 				else
 					log_misc("Unknown setting in configuration: '[name]'")
+
+		else if(type == "using_map")
+			if(!value)
+				log_misc("Unknown value for setting [name] in [filename].")
+			else
+				GLOB.using_map.setup_config(name, value, filename)
 
 	fps = round(fps)
 	if(fps <= 0)

@@ -295,7 +295,10 @@
 		/obj/item/clothing/head/soft,
 		/obj/item/weapon/hand_labeler,
 		/obj/item/clothing/gloves,
-		/obj/item/weapon/crowbar/prybar
+		/obj/item/weapon/crowbar/prybar,
+		/obj/item/weapon/tank/emergency,
+		/obj/item/clothing/mask/breath,
+		/obj/item/toy/bosunwhistle
 		)
 
 /obj/item/weapon/storage/belt/janitor
@@ -351,7 +354,10 @@
 		/obj/item/clothing/head/soft,
 		/obj/item/weapon/hand_labeler,
 		/obj/item/clothing/gloves,
-		/obj/item/weapon/crowbar/prybar
+		/obj/item/weapon/crowbar/prybar,
+		/obj/item/weapon/tank/emergency,
+		/obj/item/clothing/mask/breath,
+		/obj/item/toy/bosunwhistle
 		)
 
 /obj/item/weapon/storage/belt/holster/forensic

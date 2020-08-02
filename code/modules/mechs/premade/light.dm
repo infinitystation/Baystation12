@@ -72,10 +72,11 @@
 	power_use = 5
 	has_hardpoints = list(HARDPOINT_BACK)
 	desc = "The Veymed Odysseus series cockpits combine ultralight materials and clear aluminum laminates to provide an optimized cockpit experience."
+	climb_time = 15
 
 /obj/item/mech_component/chassis/light/prebuild()
 	. = ..()
-	armour = new /obj/item/robot_parts/robot_component/armour/exosuit/radproof(src)
+	m_armour = new /obj/item/robot_parts/robot_component/armour/exosuit/radproof(src)
 
 /obj/item/mech_component/chassis/light/Initialize()
 	pilot_positions = list(

@@ -186,7 +186,7 @@ proc/get_radio_key_from_channel(var/channel)
 
 	message = html_decode(message)
 
-	var/end_char = copytext_char(message, -1) //inf
+	var/end_char = copytext_char(message, length_char(message), length_char(message) + 1) // INF Localiztion
 	if(!(end_char in list(".", "?", "!", "-", "~")))
 		message += "."
 
@@ -284,12 +284,8 @@ proc/get_radio_key_from_channel(var/channel)
 		message_range = 1
 		if(speaking)
 			message_range = speaking.get_talkinto_msg_range(message)
-		var/msg
 		if(!speaking || !(speaking.flags & NO_TALK_MSG))
-			msg = "<span class='notice'>\The [src] talks into \the [used_radios[1]].</span>"
-		for(var/mob/living/M in hearers(5, src))
-			if((M != src) && msg)
-				M.show_message(msg)
+			src.visible_message(SPAN_NOTICE("\The [src] talks into \the [used_radios[1]]."), SPAN_NOTICE("You hear someone talk into their headset."), 5, exclude_mobs = list(src))
 			if (speech_sound)
 				sound_vol *= 0.5
 

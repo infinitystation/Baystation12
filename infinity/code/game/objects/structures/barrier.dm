@@ -58,27 +58,27 @@
 	..()
 	update_layers()
 
-/obj/structure/barrier/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
-	if(!density)
-		return 1
+/obj/structure/barrier/CanPass(atom/movable/mover, turf/target, height = 0, air_group = 0)
+	if(!density || air_group || !height)
+		return TRUE
 
 	if(istype(mover, /obj/item/projectile))
 		var/obj/item/projectile/proj = mover
 
 		if(Adjacent(proj?.firer))
-			return 1
+			return TRUE
 
 		if(mover.dir != reverse_direction(dir))
-			return 1
+			return TRUE
 
 		if(get_dist(proj.starting, loc) <= 1)//allows to fire from 1 tile away of barrier
-			return 1
+			return TRUE
 
 		return check_cover(mover, target)
 
 	if(get_dir(get_turf(src), target) == dir && density)//turned in front of barrier
-		return 0
-	return 1
+		return FALSE
+	return TRUE
 
 /obj/structure/barrier/CheckExit(atom/movable/O as mob|obj, target as turf)
 	if(O?.checkpass(PASS_FLAG_TABLE))
@@ -87,7 +87,6 @@
 		return !density
 	else
 		return 1
-	return 1
 
 /obj/structure/barrier/attack_hand(mob/living/carbon/human/user as mob)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)

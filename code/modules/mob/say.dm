@@ -6,9 +6,6 @@
 	set category = "IC"
 	return
 
-	if(typing_indicator)
-		qdel(typing_indicator)
-
 /mob/verb/say_verb(message as text)
 	set name = "Say"
 	set category = "IC"

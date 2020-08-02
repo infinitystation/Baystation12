@@ -162,6 +162,16 @@
 	desc = "A high-visibility vest used in work zones. This one is green!"
 	icon_state = "hazard_g"
 
+
+/obj/item/clothing/suit/storage/toggle/highvis
+	name = "high visibility jacket"
+	desc = "A loose-fitting, high visibility jacket to help crew be recognizable in high traffic areas with large industrial equipment. Don't catch the Charon's landing gear with your teeth!"
+	icon_state = "highvis_open"
+	icon_open = "highvis_open"
+	icon_closed = "highvis"
+	blood_overlay_type = "coat"
+	body_parts_covered = UPPER_TORSO|ARMS
+
 //Lawyer
 /obj/item/clothing/suit/storage/toggle/suit
 	name = "suit jacket"
@@ -202,6 +212,13 @@
 	icon_state = "ems_jacket_closed"
 	icon_open = "ems_jacket_open"
 	icon_closed = "ems_jacket_closed"
+
+/obj/item/clothing/suit/storage/toggle/fr_jacket/emrs
+	name = "medical jacket"
+	desc = "A white jacket often worn in emergency medical and reanimation services across human space."
+	icon_state = "medical_jacket_closed"
+	icon_open = "medical_jacket_open"
+	icon_closed = "medical_jacket_closed"
 
 /obj/item/clothing/suit/storage/medical_chest_rig
 	name = "\improper MT chest-rig"

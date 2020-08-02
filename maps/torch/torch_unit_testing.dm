@@ -12,7 +12,6 @@
 		/area/engineering/engine_smes = NO_SCRUBBER|NO_VENT,
 		/area/engineering/fuelbay = NO_SCRUBBER|NO_VENT,
 		/area/engineering/wastetank = NO_SCRUBBER|NO_VENT,
-		/area/engineering/shieldbay = NO_SCRUBBER|NO_VENT,
 		/area/hallway/primary/seconddeck/center = NO_SCRUBBER|NO_VENT,
 		/area/holodeck = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/maintenance = NO_SCRUBBER|NO_VENT,
@@ -23,6 +22,7 @@
 		/area/maintenance/firstdeck/foreport = NO_SCRUBBER|NO_VENT,
 		/area/maintenance/firstdeck/forestarboard = NO_SCRUBBER|NO_VENT,
 		/area/maintenance/incinerator = NO_SCRUBBER,
+		/area/maintenance/disposal = NO_SCRUBBER,
 		/area/maintenance/seconddeck/aftport = NO_SCRUBBER|NO_VENT,
 		/area/maintenance/seconddeck/forestarboard = NO_SCRUBBER|NO_VENT,
 		/area/maintenance/thirddeck/aftstarboard = NO_SCRUBBER|NO_VENT,
@@ -39,7 +39,6 @@
 		/area/shuttle/escape_pod9/station = NO_SCRUBBER|NO_APC|NO_VENT,
 		/area/shuttle/escape_pod10/station = NO_SCRUBBER|NO_APC|NO_VENT,
 		/area/shuttle/escape_pod11/station = NO_SCRUBBER|NO_APC|NO_VENT,
-		/area/security/oldopscheck = NO_APC,
 		/area/solar = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/storage = NO_SCRUBBER|NO_VENT,
 		/area/storage/auxillary/port = 0,
@@ -99,10 +98,6 @@
 datum/unit_test/zas_area_test/supply_centcomm
 	name = "ZAS: Supply Shuttle (CentComm)"
 	area_path = /area/supply/dock
-
-datum/unit_test/zas_area_test/virology
-	name = "ZAS: Virology"
-	area_path = /area/medical/virology
 
 datum/unit_test/zas_area_test/xenobio
 	name = "ZAS: Xenobiology"

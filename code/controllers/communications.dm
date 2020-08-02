@@ -156,25 +156,31 @@ var/list/radiochannels = list(
 	"Service" 		= SRV_FREQ,
 	"AI Private"	= AI_FREQ,
 	"Entertainment" = ENT_FREQ,
-	"Medical(I)"	= MED_I_FREQ,
-	"Security(I)"	= SEC_I_FREQ,
-	"Recon"			= SKRELL_FREQ,
-	"CCA EC"        = TAJSCISHIP_FREQ
+	"CCA EC"        = TAJSCISHIP_FREQ,	// INF
+	"Medical (I)"	= MED_I_FREQ,
+	"Security (I)"	= SEC_I_FREQ,
+	"Recon"			= SKRELL_FREQ
 )
 
 var/list/channel_color_presets = list(
-	"Global Green" = COMMS_COLOR_COMMON,
-	"Phenomenal Purple" = COMMS_COLOR_SCIENCE,
+	"Bemoaning Brown" = COMMS_COLOR_SUPPLY,
 	"Bitchin' Blue" = COMMS_COLOR_COMMAND,
+	"Bold Brass" = COMMS_COLOR_EXPLORER,
+	"Gastric Green" = COMMS_COLOR_SERVICE,
+	"Global Green" = COMMS_COLOR_COMMON,
 	"Menacing Maroon" = COMMS_COLOR_SYNDICATE,
-	"Pretty Periwinkle" = COMMS_COLOR_CENTCOMM,
-	"Painful Pink" = COMMS_COLOR_AI,
-	"Raging Red" = COMMS_COLOR_SECURITY,
 	"Operational Orange" = COMMS_COLOR_ENGINEER,
+	"Painful Pink" = COMMS_COLOR_AI,
+	"Phenomenal Purple" = COMMS_COLOR_SCIENCE,
+	"Pretty Periwinkle" = COMMS_COLOR_CENTCOMM,
+	"Raging Red" = COMMS_COLOR_SECURITY,
+	"Spectacular Silver" = COMMS_COLOR_ENTERTAIN,
 	"Tantalizing Turquoise" = COMMS_COLOR_MEDICAL,
+//[INF]
 	"Bemoaning Brown" = COMMS_COLOR_SUPPLY,
 	"Gastric Green" = COMMS_COLOR_SERVICE,
 	"Bold Brass" = COMMS_COLOR_EXPLORER,
+//[/INF]
 	"Viewable Violet" = COMMS_COLOR_SKRELL
 )
 
@@ -185,7 +191,7 @@ var/list/CENT_FREQS = list(ERT_FREQ, DTH_FREQ)
 var/list/ANTAG_FREQS = list(SYND_FREQ, RAID_FREQ)
 
 //Department channels, arranged lexically
-var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, SEC_FREQ, SCI_FREQ, SRV_FREQ, SUP_FREQ, EXP_FREQ, ENT_FREQ)
+var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, SEC_FREQ, SCI_FREQ, SRV_FREQ, SUP_FREQ, EXP_FREQ, ENT_FREQ, MED_I_FREQ, SEC_I_FREQ)
 
 #define TRANSMISSION_WIRE	0
 #define TRANSMISSION_RADIO	1
@@ -220,6 +226,10 @@ var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, SEC_FREQ, SCI
 		return "srvradio"
 	if(frequency == ENT_FREQ) //entertainment
 		return "entradio"
+	if(frequency == MED_I_FREQ) // Medical intercom
+		return "mediradio"
+	if(frequency == SEC_I_FREQ) // Security intercom
+		return "seciradio"
 	if(frequency in DEPT_FREQS)
 		return "deptradio"
 

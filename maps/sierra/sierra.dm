@@ -130,10 +130,10 @@
 //  #include "../away_inf/tajsc/tajsciship.dm"
 	#include "../away_inf/blueriver/blueriver.dm"
 	#include "../away_inf/smugglers/smugglers.dm"
-	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
+//	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
 	#include "../away_inf/patrol/patrol.dm"
 	#include "../away_inf/bearcat/bearcat.dm"
-	#include "../away_inf/ascent/ascent.dm"
+//	#include "../away_inf/ascent/ascent.dm"
 
 	#include "../away/ascent/ascent.dm"
 	#include "../away/derelict/derelict.dm"
@@ -141,9 +141,12 @@
 	#include "../away/casino/casino.dm"
 	#include "../away/errant_pisces/errant_pisces.dm"
 	#include "../away/lar_maria/lar_maria.dm"
+	#include "../away/skrellscoutship/skrellscoutship.dm"
 	#include "../away/unishi/unishi.dm"
 	#include "../away/slavers/slavers_base.dm"
 	#include "../away/voxship/voxship.dm"
+	#include "../away/meatstation/meatstation.dm"
+	#include "../away/miningstation/miningstation.dm"
 
 	#define using_map_DATUM /datum/map/sierra
 

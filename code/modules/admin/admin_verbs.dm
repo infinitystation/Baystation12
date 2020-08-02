@@ -88,6 +88,7 @@ var/list/admin_verbs_admin = list(
 	/client/proc/add_trader,
 	/client/proc/remove_trader,
 	/datum/admins/proc/sendFax,
+	/client/proc/check_fax_history
 )
 var/list/admin_verbs_ban = list(
 	/client/proc/unban_panel,
@@ -148,7 +149,6 @@ var/list/admin_verbs_spawn = list(
 	)
 var/list/admin_verbs_server = list(
 	/datum/admins/proc/capture_map_part,
-	/client/proc/Set_Holiday,
 	/datum/admins/proc/startnow,
 	/datum/admins/proc/endnow,
 	/datum/admins/proc/restart,
@@ -287,7 +287,6 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/cmd_admin_create_centcom_report,
 	/client/proc/toggle_random_events,
 	/client/proc/cmd_admin_add_random_ai_law,
-	/client/proc/Set_Holiday,
 	/datum/admins/proc/startnow,
 	/datum/admins/proc/restart,
 	/datum/admins/proc/delay,
@@ -333,6 +332,8 @@ var/list/admin_verbs_mod = list(
 	/client/proc/cmd_admin_direct_narrate,
 	/client/proc/aooc,
 	/datum/admins/proc/sendFax,
+	/client/proc/check_fax_history,
+	/datum/admins/proc/paralyze_mob,
 	/datum/admins/proc/view_persistent_data
 )
 //[INF]

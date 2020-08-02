@@ -107,8 +107,8 @@
 	if(A)
 		to_chat(src, "<span class='alium'>We can't plant here!</span>")
 		return
-		if(!do_mob(src, src, 100))
-			return
+	if(!do_mob(src, src, 100))
+		return
 	if(check_alien_ability(350,1,BP_RESIN) && !is_ventcrawling)
 		visible_message("<span class='alium'><B>[src] has planted some alien weeds!</B></span>")
 		new /obj/structure/alien/weeds/node(loc)

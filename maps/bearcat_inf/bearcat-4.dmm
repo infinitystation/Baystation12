@@ -352,7 +352,6 @@
 /area/acting/stage)
 "dd" = (
 /obj/machinery/light{
-	tag = "icon-tube1 (NORTH)";
 	icon_state = "tube1";
 	dir = 1
 	},

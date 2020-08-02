@@ -11,8 +11,7 @@
 	selection_color = "#013d3b"
 	economic_power = 8
 	alt_titles = list(
-		"Surgeon",
-		"Resident")
+		"Surgeon")
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/medical/senior
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
@@ -28,12 +27,54 @@
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_MEDICAL     = SKILL_EXPERT,
 	                    SKILL_ANATOMY     = SKILL_EXPERT,
-	                    SKILL_CHEMISTRY   = SKILL_BASIC)
+	                    SKILL_CHEMISTRY   = SKILL_BASIC,
+						SKILL_DEVICES     = SKILL_ADEPT)
 
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
 	                    SKILL_ANATOMY     = SKILL_MAX,
 	                    SKILL_CHEMISTRY   = SKILL_MAX)
 	skill_points = 20
+
+	access = list(access_medical, access_morgue, access_virology, access_maint_tunnels, access_emergency_storage,
+			            access_crematorium, access_chemistry, access_surgery,
+			            access_medical_equip, access_solgov_crew, access_senmed)
+
+	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
+							 /datum/computer_file/program/camera_monitor)
+
+/datum/job/junior_doctor
+	title = "Medical Resident"
+	department = "Medical"
+	department_flag = MED
+	minimal_player_age = 2
+	minimum_character_age = list(SPECIES_HUMAN = 24)
+	ideal_character_age = 45
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "Physicians and the Chief Medical Officer"
+	selection_color = "#013d3b"
+	economic_power = 6
+	outfit_type = /decl/hierarchy/outfit/job/torch/crew/medical/senior
+	allowed_branches = list(
+		/datum/mil_branch/expeditionary_corps,
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/medical/senior/fleet,
+		/datum/mil_branch/civilian = /decl/hierarchy/outfit/job/torch/crew/medical/contractor/senior
+	)
+	allowed_ranks = list(
+		/datum/mil_rank/ec/o1,
+		/datum/mil_rank/fleet/o1,
+		/datum/mil_rank/civ/contractor
+	)
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_MEDICAL     = SKILL_EXPERT,
+	                    SKILL_ANATOMY     = SKILL_EXPERT,
+	                    SKILL_CHEMISTRY   = SKILL_BASIC,
+						SKILL_DEVICES     = SKILL_ADEPT)
+
+	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
+	                    SKILL_ANATOMY     = SKILL_MAX,
+	                    SKILL_CHEMISTRY   = SKILL_MAX)
+	skill_points = 16
 
 	access = list(access_medical, access_morgue, access_virology, access_maint_tunnels, access_emergency_storage,
 			            access_crematorium, access_chemistry, access_surgery,
@@ -156,7 +197,7 @@
 	minimal_access = list()
 
 /datum/job/chemist/get_description_blurb()
-	return "You are a Laboratory Technician. You make medicine, and work in the virology lab. You are not a doctor or medic, but have surface level knowledge in those fields. You should not be treating patients, but rather providing the the medicine to do so. You are subordinate to Physicians and Medical Techncians."	
+	return "You are a Laboratory Technician. You make medicine. You are not a doctor or medic, but have surface level knowledge in those fields. You should not be treating patients, but rather providing the the medicine to do so. You are subordinate to Physicians and Medical Techncians."	
 
 /datum/job/psychiatrist
 	title = "Counselor"
@@ -169,7 +210,10 @@
 	supervisors = "the Chief Medical Officer"
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/medical/counselor
 	alt_titles = list(
+		"Psychiatrist",
+		"Psionic Counselor" = /decl/hierarchy/outfit/job/torch/crew/medical/counselor/mentalist,
 		"Mentalist" = /decl/hierarchy/outfit/job/torch/crew/medical/counselor/mentalist
+		
 	)
 
 	allowed_branches = list(
@@ -196,7 +240,7 @@
 	give_psionic_implant_on_join = FALSE
 
 /datum/job/psychiatrist/equip(var/mob/living/carbon/human/H)
-	if(H.mind.role_alt_title == "Counselor")
+	if(H.mind.role_alt_title == "Psionic Counselor")
 		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_OPERANT)
 	if(H.mind.role_alt_title == "Mentalist")
 		psi_faculties = list("[PSI_COERCION]" = PSI_RANK_OPERANT)
@@ -204,4 +248,4 @@
 
 
 /datum/job/psychiatrist/get_description_blurb()
-	return "You are the Counselor. You are psionically awakened, part of a tiny minority, and you are the first and only exposure most of the crew will have to the mentally gifted. Your main responsibility is the mental health and wellbeing of the crew. You are subordinate to the Chief Medical Officer."
+		return "You are the Counselor. Your main responsibility is the mental health and wellbeing of the crew. You are subordinate to the Chief Medical Officer."

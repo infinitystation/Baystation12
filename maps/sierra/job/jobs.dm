@@ -18,7 +18,7 @@
 		/datum/species/unathi/erosan = list(HUMAN_ONLY_JOBS, /datum/job/iaa),
 		/datum/species/skrell  		 = list(HUMAN_ONLY_JOBS),
 		/datum/species/tajaran 		 = list(HUMAN_ONLY_JOBS),
-		/datum/species/machine 		 = list(HUMAN_ONLY_JOBS, /datum/job/security_assistant),
+		/datum/species/machine 		 = list(HUMAN_ONLY_JOBS, /datum/job/security_assistant, /datum/job/psychiatrist),
 		/datum/species/resomi  		 = list(HUMAN_ONLY_JOBS, /datum/job/officer, /datum/job/exploration_leader,\
 									/datum/job/warden, /datum/job/chief_engineer, /datum/job/rd, /datum/job/iaa, /datum/job/security_assistant),
 		/datum/species/diona   		 = list(HUMAN_ONLY_JOBS, /datum/job/exploration_leader, /datum/job/explorer_pilot,\

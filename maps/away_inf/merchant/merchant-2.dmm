@@ -42,7 +42,6 @@
 /area/space)
 "ak" = (
 /obj/structure/cable{
-	tag = "icon-1-8 (WEST)";
 	icon_state = "4-8";
 	dir = 4;
 	d1 = 1;
@@ -58,7 +57,6 @@
 /area/space)
 "am" = (
 /obj/structure/cable{
-	tag = "icon-1-8 (WEST)";
 	icon_state = "4-8";
 	dir = 4;
 	d1 = 1;
@@ -70,7 +68,6 @@
 /obj/structure/lattice,
 /obj/structure/railing,
 /obj/structure/cable{
-	tag = "icon-0-1 (NORTH)";
 	icon_state = "0-1";
 	dir = 1
 	},
@@ -153,7 +150,6 @@
 /area/space)
 "az" = (
 /obj/structure/bed/chair/wood{
-	tag = "icon-wooden_chair_preview (EAST)";
 	icon_state = "wooden_chair_preview";
 	dir = 4
 	},
@@ -161,7 +157,6 @@
 /area/space)
 "aA" = (
 /obj/structure/bed/chair/wood{
-	tag = "icon-wooden_chair_preview (WEST)";
 	icon_state = "wooden_chair_preview";
 	dir = 8
 	},
@@ -226,7 +221,6 @@
 /area/space)
 "aJ" = (
 /obj/structure/bed/chair/wood{
-	tag = "icon-wooden_chair_preview (WEST)";
 	icon_state = "wooden_chair_preview";
 	dir = 8
 	},
@@ -260,7 +254,6 @@
 /area/space)
 "aO" = (
 /obj/structure/cable{
-	tag = "icon-1-8 (WEST)";
 	icon_state = "0-1";
 	dir = 8;
 	d1 = 1;
@@ -285,7 +278,6 @@
 /area/space)
 "aQ" = (
 /obj/structure/cable{
-	tag = "icon-1-8 (WEST)";
 	icon_state = "0-2";
 	dir = 4;
 	d1 = 1;
@@ -302,7 +294,6 @@
 /area/space)
 "aR" = (
 /obj/structure/cable{
-	tag = "icon-1-8 (WEST)";
 	icon_state = "1-2";
 	dir = 4;
 	d1 = 1;
@@ -407,7 +398,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/extinguisher_cabinet{
-	tag = "icon-extinguisher_closed (WEST)";
 	icon_state = "extinguisher_closed";
 	dir = 8;
 	pixel_x = 31
@@ -424,14 +414,12 @@
 /area/space)
 "bk" = (
 /obj/structure/cable{
-	tag = "icon-1-8 (WEST)";
 	icon_state = "4-8";
 	dir = 4;
 	d1 = 1;
 	d2 = 2
 	},
 /obj/structure/cable{
-	tag = "icon-1-8 (WEST)";
 	icon_state = "2-8";
 	dir = 4;
 	d1 = 1;
@@ -443,7 +431,6 @@
 /area/space)
 "bl" = (
 /obj/structure/cable{
-	tag = "icon-1-8 (WEST)";
 	icon_state = "0-1";
 	dir = 4;
 	d1 = 1;
@@ -489,7 +476,6 @@
 /area/space)
 "bq" = (
 /obj/structure/cable{
-	tag = "icon-0-1 (NORTH)";
 	icon_state = "0-1";
 	dir = 1
 	},
@@ -507,7 +493,6 @@
 /area/space)
 "br" = (
 /obj/structure/cable{
-	tag = "icon-1-8 (WEST)";
 	icon_state = "4-8";
 	dir = 4;
 	d1 = 1;
@@ -545,14 +530,12 @@
 /area/space)
 "bx" = (
 /obj/structure/cable{
-	tag = "icon-1-8 (WEST)";
 	icon_state = "1-8";
 	dir = 8;
 	d1 = 1;
 	d2 = 2
 	},
 /obj/structure/cable{
-	tag = "icon-1-8 (WEST)";
 	icon_state = "2-8";
 	dir = 4;
 	d1 = 1;
@@ -566,7 +549,6 @@
 /area/space)
 "by" = (
 /obj/structure/cable{
-	tag = "icon-1-2 (WEST)";
 	icon_state = "1-2";
 	dir = 8;
 	d1 = 1;
@@ -583,7 +565,6 @@
 /area/space)
 "bA" = (
 /obj/structure/cable{
-	tag = "icon-1-2 (WEST)";
 	icon_state = "1-2";
 	dir = 8;
 	d1 = 1;
@@ -632,7 +613,6 @@
 	icon_state = "1-2"
 	},
 /obj/structure/cable{
-	tag = "icon-1-8 (WEST)";
 	icon_state = "2-8";
 	dir = 4;
 	d1 = 1;
@@ -644,7 +624,6 @@
 /area/space)
 "bF" = (
 /obj/structure/cable{
-	tag = "icon-1-8 (WEST)";
 	icon_state = "1-2";
 	dir = 4;
 	d1 = 1;
@@ -660,7 +639,6 @@
 /area/space)
 "bH" = (
 /obj/structure/cable{
-	tag = "icon-1-8 (WEST)";
 	icon_state = "1-2";
 	dir = 4;
 	d1 = 1;
@@ -719,7 +697,6 @@
 /area/space)
 "bM" = (
 /obj/structure/cable{
-	tag = "icon-1-8 (WEST)";
 	icon_state = "4-8";
 	dir = 4;
 	d1 = 1;
@@ -742,7 +719,6 @@
 /area/space)
 "bO" = (
 /obj/structure/cable{
-	tag = "icon-1-8 (WEST)";
 	icon_state = "0-2";
 	dir = 4;
 	d1 = 1;
@@ -765,7 +741,6 @@
 	icon_state = "1-4"
 	},
 /obj/structure/cable{
-	tag = "icon-1-8 (WEST)";
 	icon_state = "1-2";
 	dir = 4;
 	d1 = 1;
@@ -775,7 +750,6 @@
 /area/space)
 "bQ" = (
 /obj/structure/cable{
-	tag = "icon-1-2 (WEST)";
 	icon_state = "1-2";
 	dir = 8;
 	d1 = 1;
@@ -785,7 +759,6 @@
 /area/space)
 "bR" = (
 /obj/structure/cable{
-	tag = "icon-1-2 (WEST)";
 	icon_state = "1-2";
 	dir = 8;
 	d1 = 1;
@@ -797,7 +770,6 @@
 /area/space)
 "bS" = (
 /obj/structure/cable{
-	tag = "icon-1-2 (WEST)";
 	icon_state = "1-2";
 	dir = 8;
 	d1 = 1;
@@ -866,7 +838,6 @@
 /area/space)
 "cb" = (
 /obj/structure/cable{
-	tag = "icon-1-8 (WEST)";
 	icon_state = "0-2";
 	dir = 4;
 	d1 = 1;
@@ -994,7 +965,6 @@
 /area/space)
 "co" = (
 /obj/structure/cable{
-	tag = "icon-1-8 (WEST)";
 	icon_state = "1-2";
 	dir = 4;
 	d1 = 1;
@@ -1023,7 +993,6 @@
 /area/space)
 "cr" = (
 /obj/structure/cable{
-	tag = "icon-1-8 (WEST)";
 	icon_state = "1-8";
 	dir = 8;
 	d1 = 1;
@@ -1056,7 +1025,6 @@
 /area/space)
 "cv" = (
 /obj/structure/cable{
-	tag = "icon-1-8 (WEST)";
 	icon_state = "0-1";
 	dir = 8;
 	d1 = 1;
