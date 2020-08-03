@@ -207,7 +207,6 @@ var/list/gamemode_cache = list()
 	var/dsay_allowed = 1
 	var/aooc_allowed = 1
 	var/ahelp_allowed = 1
-	var/observers_allowed = 1
 
 	var/starlight = 0	// Whether space turfs have ambient light or not
 
@@ -499,9 +498,6 @@ var/list/gamemode_cache = list()
 				if ("disable_respawn")
 					config.abandon_allowed = 0
 
-				if ("disable_observers")
-					config.observers_allowed = 0
-
 				if ("usewhitelist")
 					config.usewhitelist = 1
 
@@ -768,6 +764,9 @@ var/list/gamemode_cache = list()
 					error_msg_delay = text2num(value)
 
 			//[INF]
+				if ("disable_observers")
+					config.observers_allowed = FALSE
+
 				if("discord_url")
 					discord_url = value
 				if("discord_password")
@@ -785,14 +784,17 @@ var/list/gamemode_cache = list()
 				if("admin_midis_allowed")
 					admin_midis_allowed = TRUE
 
-				if("default_respawn_cooldown")
-					default_respawn_cooldown = text2num(value) SECONDS
+				if("default_latejoin_cooldown")
+					default_latejoin_cooldown = text2num(value) SECONDS
 
 				if("ambience_probability")
 					ambience_probability = text2num(value)
 
 				if("ambience_delay")
 					ambience_delay = text2num(value) MINUTES
+
+				if("deny_notdead_observer_becoming")
+					deny_notdead_observer_becoming = TRUE
 			//[/INF]
 
 				if("max_gear_cost")
