@@ -17,6 +17,7 @@
 
 /spell/aoe_turf/conjure/construct/lesser
 	charge_max = 1800
+	spell_flags = CONSTRUCT_CHECK //INF
 	summon_type = list(/obj/structure/constructshell/cult)
 	hud_state = "const_shell"
 	override_base = "const"
@@ -64,8 +65,8 @@
 	name = "Summon Soulstone"
 	desc = "This spell reaches into Nar-Sie's realm, summoning one of the legendary fragments across time and space"
 
-	charge_max = 3000
-	spell_flags = 0
+	charge_max = 5000 //INF, was 3000
+	spell_flags = CONSTRUCT_CHECK //INF
 	invocation = "none"
 	invocation_type = SpI_NONE
 	range = 0

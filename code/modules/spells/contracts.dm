@@ -1,7 +1,7 @@
 /obj/item/weapon/contract
 	name = "contract"
 	desc = "written in the blood of some unfortunate fellow."
-	icon = 'icons/mob/screen_spells.dmi'
+	icon = 'infinity/icons/mob/screen_spells.dmi' //INF, was icon = 'icons/mob/screen_spells.dmi'
 	icon_state = "master_open"
 
 	var/contract_master = null

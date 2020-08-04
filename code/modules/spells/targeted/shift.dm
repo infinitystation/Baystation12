@@ -12,13 +12,13 @@
 
 /spell/targeted/ethereal_jaunt/shift/jaunt_disappear(var/atom/movable/overlay/animation, var/mob/living/simple_animal/construct/target) //INF, was var/mob/living/target
 	animation.icon = 'infinity/icons/mob/cult.dmi' //INF
-	animation.icon_state = "phase_shift[target.is_angelic ? "" : "_angelic"]" //INF, was "phase_shift"
+	animation.icon_state = "phase_shift"
 	animation.dir = target.dir
 	flick("phase_shift",animation)
 
 /spell/targeted/ethereal_jaunt/shift/jaunt_reappear(var/atom/movable/overlay/animation, var/mob/living/simple_animal/construct/target) //INF, was var/mob/living/target
 	animation.icon = 'infinity/icons/mob/cult.dmi' //INF
-	animation.icon_state = "phase_shift2[target.is_angelic ? "" : "_angelic"]" //INF, was "phase_shift2"
+	animation.icon_state = "phase_shift2"
 	animation.dir = target.dir
 	flick("phase_shift2",animation)
 

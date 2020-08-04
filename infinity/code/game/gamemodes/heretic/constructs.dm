@@ -57,11 +57,11 @@
 
 /obj/item/device/soulstone/on_update_icon()
 	if(full == SOULSTONE_EMPTY)
-		icon_state = "soulstone"
+		icon_state = "[(is_evil) ? "" : "purified_"]soulstone"
 	if(full == SOULSTONE_ESSENCE)
-		icon_state = "soulstone2" //TODO: A spookier sprite. Also unique sprites.
+		icon_state = "[(is_evil) ? "" : "purified_"]soulstone2" //TODO: A spookier sprite. Also unique sprites.
 	if(full == SOULSTONE_CRACKED)
-		icon_state = "soulstone"//TODO: cracked sprite
+		icon_state = "[(is_evil) ? "" : "purified_"]soulstone"//TODO: cracked sprite
 		SetName("cracked soulstone")
 
 /obj/item/device/soulstone/attackby(var/obj/item/I, var/mob/user)
@@ -70,6 +70,7 @@
 		to_chat(user, "<span class='notice'>You cleanse \the [src] of taint, purging its shackles to its creator..</span>")
 		is_evil = 0
 		icon_state = "purified_soulstone"
+		update_icon()
 		return
 	if(I.force >= 5)
 		if(full != SOULSTONE_CRACKED)
@@ -167,8 +168,13 @@
 		//C.cancel_camera()
 		if(S.is_evil)
 			GLOB.cult.add_antagonist(C.mind)
+		C.process_spells()
 		qdel(S)
 		qdel(src)
+
+/obj/item/device/soulstone/heretic/pure
+	icon_state = "purified_soulstone"
+	is_evil = 0
 
 /obj/item/device/soulstone/heretic/attack(var/mob/living/M, var/mob/user)
 	if(M == shade)
@@ -189,6 +195,41 @@
 
 	M.dust()
 	set_full(SOULSTONE_ESSENCE)
+
+/obj/item/device/soulstone/heretic/attack_self(var/mob/user)
+	if(full != SOULSTONE_ESSENCE)
+		to_chat(user, "<span class='notice'>This [src] has no life essence.</span>")
+		return
+
+	if(!shade.key) // No key = hasn't been used
+		to_chat(user, "<span class='notice'>You cut your finger and let the blood drip on \the [src].</span>")
+		user.remove_blood_simple(1)
+		var/datum/ghosttrap/cult/shade/S = get_ghost_trap("soul stone")
+		S.request_player(shade, "The soul stone shade summon ritual has been performed. ")
+	else if(!shade.client) // Has a key but no client - shade logged out
+		to_chat(user, "<span class='notice'>\The [shade] in \the [src] is dormant.</span>")
+		return
+	else if(shade.loc == src)
+		var/choice = alert("Would you like to invoke the spirit within?",,"Yes","No")
+		if(choice == "Yes")
+			if(is_evil)
+				shade.icon_state = "shade"
+				shade.icon_living = "shade"
+				shade.icon_dead = "shade"
+				shade.faction = "cult"
+			else
+				shade.icon_state = "shade_angelic"
+				shade.icon_living = "shade_angelic"
+				shade.icon_dead = "shade_angelic"
+				shade.faction = "neutral"
+			shade.dropInto(loc)
+			to_chat(user, "<span class='notice'>You summon \the [shade].</span>")
+		if(choice == "No")
+			return
+	else if(shade.loc != src)
+		to_chat(user, "<span class='notice'>You recapture \the [shade].</span>")
+		shade.forceMove(src)
+		return
 
 /mob/living/simple_animal/construct
 	name = "Construct"
@@ -230,6 +271,7 @@
 	var/nullblock = 0
 	var/is_angelic = 0
 	var/list/construct_spells = list()
+	var/list/angelic_spells = list()
 
 /mob/living/simple_animal/construct/cultify()
 	return
@@ -238,12 +280,20 @@
 	..()
 	name = text("[initial(name)] ([random_id(/mob/living/simple_animal/construct, 1000, 9999)])")
 	real_name = name
-	add_language(LANGUAGE_CULT)
-	add_language(LANGUAGE_CULT_GLOBAL)
+	if(!is_angelic)
+		add_language(LANGUAGE_CULT)
+		add_language(LANGUAGE_CULT_GLOBAL)
+	update_icon()
+	flick("make_[icon_state][is_angelic]", src)
+
+/mob/living/simple_animal/construct/proc/process_spells()
+	if(is_angelic)
+		for(var/spell in angelic_spells)
+			src.add_spell(new spell, "holy_spell_ready")
+		return
+
 	for(var/spell in construct_spells)
 		src.add_spell(new spell, "const_spell_ready")
-	flick("make_[icon_state][is_angelic]", src)
-	update_icon()
 
 /mob/living/simple_animal/construct/death(gibbed, deathmessage, show_dead_message)
 	var/obj/item/weapon/ectoplasm/ectoplasm = new(src.loc)
@@ -296,6 +346,9 @@
 
 	. = ..()
 
+/mob/living/simple_animal/construct/electrocute_act(shock_damage, obj/source, siemens_coeff = 1, def_zome = null)
+	return 0
+
 /////////////////Juggernaut///////////////
 
 
@@ -304,7 +357,7 @@
 	name = "Juggernaut"
 	real_name = "Juggernaut"
 	desc = "A possessed suit of armour driven by the will of the restless dead"
-	icon = 'infinity/icons/mob/mob.dmi'
+	icon = 'infinity/icons/mob/cult.dmi'
 	icon_state = "juggernaut"
 	icon_living = "juggernaut"
 	maxHealth = 250
@@ -322,6 +375,7 @@
 	status_flags = 0
 	resistance = 10
 	construct_spells = list(/spell/aoe_turf/conjure/forcewall_cult)
+	angelic_spells = list(/spell/aoe_turf/conjure/forcewall_holy)
 	can_escape = TRUE
 
 /mob/living/simple_animal/construct/armoured/Life()
@@ -350,6 +404,14 @@
 
 	return (..(P))
 
+/mob/living/simple_animal/construct/armoured/holy
+	faction = "neutral"
+	is_angelic = 1
+
+/mob/living/simple_animal/construct/armoured/holy/Initialize()
+	. = ..()
+	process_spells()
+
 
 
 ////////////////////////Wraith/////////////////////////////////////////////
@@ -360,7 +422,7 @@
 	name = "Wraith"
 	real_name = "Wraith"
 	desc = "A wicked bladed shell contraption piloted by a bound spirit"
-	icon = 'infinity/icons/mob/mob.dmi'
+	icon = 'infinity/icons/mob/cult.dmi'
 	icon_state = "wraith"
 	icon_living = "wraith"
 	icon_dead = "wraith_dead"
@@ -374,14 +436,22 @@
 	see_in_dark = 7
 	attack_sound = 'sound/weapons/rapidslice.ogg'
 	construct_spells = list(/spell/targeted/ethereal_jaunt/shift)
+	angelic_spells = list(/spell/targeted/ethereal_jaunt/holy_shift)
 
+/mob/living/simple_animal/construct/wraith/holy
+	faction = "neutral"
+	is_angelic = 1
+
+/mob/living/simple_animal/construct/wraith/holy/Initialize()
+	. = ..()
+	process_spells()
 
 /*
 /mob/living/simple_animal/construct/wraith/benemoth
 	name = "Benemoth"
 	real_name = "Benemoth"
 	desc = "An upgraded version of Wraith, this construct is capable of fast movement and sudden attacks"
-	icon = 'infinity/icons/mob/mob.dmi'
+	icon = 'infinity/icons/mob/cult.dmi'
 	icon_state = "chosen"
 	icon_living = "chosen"
 	maxHealth = 75
@@ -420,7 +490,7 @@
 	name = "Artificer"
 	real_name = "Artificer"
 	desc = "A bulbous construct dedicated to building and maintaining The Cult of Nar-Sie's armies"
-	icon = 'infinity/icons/mob/mob.dmi'
+	icon = 'infinity/icons/mob/cult.dmi'
 	icon_state = "artificer"
 	icon_living = "artificer"
 	maxHealth = 50
@@ -429,15 +499,22 @@
 	harm_intent_damage = 5
 	melee_damage_lower = 5
 	melee_damage_upper = 5
-	attacktext = "rammed"
+	attacktext = "slashed" //L - Logic
 	speed = 0
 	environment_smash = 1
 	attack_sound = 'sound/weapons/rapidslice.ogg'
 	construct_spells = list(/spell/aoe_turf/conjure/construct/lesser,
 							/spell/aoe_turf/conjure/wall,
-							/spell/aoe_turf/conjure/floor,
-							/spell/aoe_turf/conjure/pylon
+							/spell/aoe_turf/conjure/pylon,
+							/spell/aoe_turf/conjure/soulstone,
+							/spell/targeted/projectile/cult_missile
 							)
+	angelic_spells = list(/spell/aoe_turf/conjure/construct/lesser/holy,
+						  /spell/aoe_turf/conjure/soulstone/holy,
+						  /spell/targeted/projectile/holy_missile
+						  )
+
+
 
 /mob/living/simple_animal/construct/builder/UnarmedAttack(var/atom/A, var/proximity)
 	if(is_angelic)
@@ -456,12 +533,19 @@
 			T.cultify()
 	. = ..()
 
+/mob/living/simple_animal/construct/builder/holy
+	faction = "neutral"
+	is_angelic = 1
+
+/mob/living/simple_animal/construct/builder/holy/Initialize()
+	. = ..()
+	process_spells()
 
 /mob/living/simple_animal/construct/builder/proteon
 	name = "Proteon"
 	real_name = "Proteon"
 	desc = "An upgraded version of Builder, capable of healing allied Nar'Sien cultists with his punches."
-	icon = 'infinity/icons/mob/mob.dmi'
+	icon = 'infinity/icons/mob/cult.dmi'
 	icon_state = "proteon"
 	icon_living = "proteon"
 	maxHealth = 75
@@ -476,7 +560,6 @@
 	attack_sound = 'sound/weapons/rapidslice.ogg'
 	construct_spells = list(/spell/aoe_turf/conjure/construct/lesser,
 							/spell/aoe_turf/conjure/wall,
-							/spell/aoe_turf/conjure/floor,
 							/spell/aoe_turf/conjure/pylon
 							)
 
@@ -500,7 +583,7 @@
 	name = "Behemoth"
 	real_name = "Behemoth"
 	desc = "The pinnacle of occult technology, Behemoths are the ultimate weapon in the Cult of Nar-Sie's arsenal."
-	icon = 'infinity/icons/mob/mob.dmi'
+	icon = 'infinity/icons/mob/cult.dmi'
 	icon_state = "behemoth"
 	icon_living = "behemoth"
 	maxHealth = 750
@@ -528,7 +611,7 @@
 	name = "Harvester"
 	real_name = "Harvester"
 	desc = "The promised reward of the livings who follow Nar-Sie. Obtained by offering their bodies to the geometer of blood"
-	icon = 'infinity/icons/mob/mob.dmi'
+	icon = 'infinity/icons/mob/cult.dmi'
 	icon_state = "harvester"
 	icon_living = "harvester"
 	icon_dead = "harvester_dead"
@@ -552,7 +635,7 @@
 	eye_glow.plane = EFFECTS_ABOVE_LIGHTING_PLANE
 	eye_glow.layer = EYE_GLOW_LAYER
 	overlays += eye_glow
-	set_light(-2, 0.1, 1.5, l_color = "#ffffff")
+	//set_light(-2, 0.1, 1.5, l_color = "#ffffff")
 
 ////////////////HUD//////////////////////
 
