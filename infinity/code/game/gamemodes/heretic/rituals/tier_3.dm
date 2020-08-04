@@ -92,14 +92,14 @@
 		for(var/mob/living/carbon/human/bonded2 in bonds)
 			if(bonded != bonded2)
 				bonded.bloodybond.Add(bonded2)
-				for (var/o in bonded.organs)
-					var/obj/item/organ/organ = o
-					organ.vital = 0
-					organ.cultised = 1
-					if (!BP_IS_ROBOTIC(organ))
-						organ.rejuvenate(1)
-						organ.max_damage *= 1.5
-						organ.min_broken_damage = Floor(organ.max_damage * 0.75)
+		for (var/o in bonded.organs)
+			var/obj/item/organ/organ = o
+			organ.vital = 0
+			organ.cultised = 1
+			if (!BP_IS_ROBOTIC(organ))
+				organ.rejuvenate(1)
+				organ.max_damage *= 1.5
+				organ.min_broken_damage = Floor(organ.max_damage * 0.75)
 
 /datum/ritual/blood_boil
 	name = "Blood Boil Ritual"
@@ -143,7 +143,8 @@
 	desc = "This ritual can raise dead. It looks almost perfect, but you think you can do something with mortal form..."
 
 	requirments = list(/obj/effect/decal/cleanable/blood = 1,
-					   /obj/item/organ/internal/heart = 1)
+					   /obj/item/organ/internal/heart = 1,
+					   /obj/item/device/soulstone = 0)
 
 	required_cultists = 3
 

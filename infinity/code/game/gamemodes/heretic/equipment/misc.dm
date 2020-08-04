@@ -51,6 +51,13 @@ obj/item/weapon/handcuffs/wizard/shadow
 	target.equip_to_slot(cuffs,slot_handcuffed)
 	return 1
 
+/obj/item/device/flashlight/flashdark/stone
+	name = "shadowstone shard"
+	desc = "The stone is blacker than the night itself, it seems to dim all the light around."
+	icon = 'infinity/icons/obj/objects.dmi'
+	icon_state = "hellstone"
+	item_state = "electronic"
+
 /obj/item/clothing/glasses/tacgoggles/cult
 	name = "hell goggles"
 	desc = "Its look equally funny and frightening."

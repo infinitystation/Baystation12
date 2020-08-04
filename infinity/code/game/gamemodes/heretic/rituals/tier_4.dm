@@ -3,7 +3,8 @@
 	desc = "This ritual will raise dead people, while making them much stronger that they were before."
 
 	requirments = list(/obj/effect/decal/cleanable/blood = 1,
-					   /obj/item/organ/internal/heart = 1)
+					   /obj/item/organ/internal/heart = 1,
+					   /obj/item/device/soulstone = 1)
 
 	required_cultists = 5
 
@@ -85,15 +86,16 @@
 /datum/ritual/weapon/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
 	mass_incantation(ritual_rune, "H'ayepaen ja'enemrahd!")
-	user.put_in_hands(new /obj/item/weapon/melee/cultblade(user))
+	user.put_in_hands(new /obj/item/weapon/melee/cultbastard(user))
 
 
 /datum/ritual/hellhunter
-	name = "Summon Hellhunter Equipment Ritual"
-	desc = "Summon pair of hell glasses and a hellstone shard."
+	name = "Summon Hellhunter Glasses Ritual"
+	desc = "Summon pair of hell glasses"
 
 	requirments = list(/obj/effect/decal/cleanable/blood = 1,
-					   /obj/item/device/soulstone = 1)
+					   /obj/item/device/soulstone = 1,
+					   /obj/item/clothing/glasses = 1)
 
 	required_cultists = 1
 
@@ -102,7 +104,6 @@
 /datum/ritual/hellhunter/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
 	mass_incantation(ritual_rune, "Wa'harjare naje'yakanja!")
-	new /obj/item/device/flashlight/flashdark/stone(get_turf(ritual_rune))
 	new /obj/item/clothing/glasses/tacgoggles/cult(get_turf(ritual_rune))
 
 

@@ -315,3 +315,18 @@
 	. = ..()
 	mass_incantation(ritual_rune, "N'ath reth sh'yro eth d'raggathnor!")
 	user.put_in_hands(new /obj/item/weapon/melee/cultblade(user))
+
+/datum/ritual/shadowstone
+	name = "Shadowstone ritual"
+	desc = "This ritual will transmutate the glass shard into a shadowstone."
+
+	requirments = list(/obj/effect/decal/cleanable/blood = 1,
+					   /obj/item/weapon/material/shard = 1)
+
+	required_cultists = 1
+
+	ritual_flags = NEEDS_BOOK | NEEDS_FLOOR
+
+/datum/ritual/shadowstone/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
+	mass_incantation("V'hajera re'thanara!")
+	new /obj/item/device/flashlight/flashdark/stone(get_turf(ritual_rune))

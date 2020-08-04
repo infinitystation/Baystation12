@@ -237,7 +237,7 @@ var/list/TierNarNarRunes = list(
 	. = ..()
 	if(iscultist(user))
 		to_chat(user, "This is \a [cultname] rune.")
-		to_chat(user, "<span class = 'cult italic'>[ritual.desc]</span>"
+		to_chat(user, "<span class = 'cult italic'>[ritual.desc]</span>")
 
 /obj/effect/rune/attackby(var/obj/item/I, var/mob/living/user)
 	if(istype(I, /obj/item/weapon/book/tome) && iscultist(user))
