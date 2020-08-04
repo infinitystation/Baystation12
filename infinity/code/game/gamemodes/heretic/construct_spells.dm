@@ -99,13 +99,6 @@
 		new summon_type(get_step(user, NORTH))
 		new summon_type(get_step(user, SOUTH))
 
-/obj/effect/forcefield/cult/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
-	if(isliving(mover))
-		var/mob/living/L = mover
-		if(iscultist(L))
-			return 1
-	. = ..()
-
 /obj/effect/forcefield/holy
 	desc = "A blue, glowing wall that looks like it has been pulled from another dimension."
 	name = "holy shield"
@@ -115,7 +108,7 @@
 	light_outer_range = 2
 	density = 0
 
-/obj/effect/forcefield/cult/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
+/obj/effect/forcefield/holy/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if(isliving(mover))
 		var/mob/living/L = mover
 		if(iscultist(L))

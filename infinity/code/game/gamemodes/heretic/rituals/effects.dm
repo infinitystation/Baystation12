@@ -63,3 +63,10 @@
 	if(health <= 0)
 		visible_message("<span class='warning'>\The [src] dissipates.</span>")
 		qdel(src)
+
+/obj/effect/cultwall/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
+	if(isliving(mover))
+		var/mob/living/L = mover
+		if(iscultist(L))
+			return 1
+	. = ..()

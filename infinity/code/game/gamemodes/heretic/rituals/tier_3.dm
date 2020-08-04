@@ -209,14 +209,15 @@
 
 /datum/ritual/silence
 	name = "Silence Ritual"
-	desc = "This ritual will put victim on a very, very long fire."
+	desc = "This ritual will mute the victim for 10 minutes straight."
 
 	requirments = list(/obj/effect/decal/cleanable/blood = 1,
-					   /obj/item/weapon/flame/lighter = 3) //E
+					   /obj/item/clothing/mask/muzzle = 1,
+					   /obj/item/weapon/material/knife = 0) //E
 
 	required_cultists = 3
 
-	ritual_flags = NEEDS_KNIFE | NEEDS_FLOOR | NEEDS_ARMOR | RITUAL_BLOODY
+	ritual_flags = NEEDS_KNIFE | NEEDS_FLOOR | RITUAL_BLOODY
 
 /datum/ritual/silence/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()

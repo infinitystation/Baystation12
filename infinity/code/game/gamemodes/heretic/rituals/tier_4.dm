@@ -112,7 +112,8 @@
 
 	requirments = list(/obj/effect/decal/cleanable/blood = 1,
 					   /obj/item/device/soulstone = 1,
-					   /obj/item/weapon/flame/lighter = 3) //E
+					   /obj/item/weapon/flame/lighter = 1,
+					   /obj/item/weapon/paper = 1)
 
 	required_cultists = 3
 
@@ -141,6 +142,8 @@
 		ritual_rune.visible_message(SPAN_WARNING("[ritual_rune] starts glowing red, but fails to activate without an item that victim touched."))
 		return
 
-	mass_incantation(ritual_rune, "Wa'hwaye ja'ieyane!")
-	cursing.fire_stacks = FIRE_MAX_STACKS //T4 rune, what the fuck ya wanted
-	cursing.IgniteMob()
+	while(cursing.stat != DEAD && check_cultists(ritual_rune))
+		mass_incantation(ritual_rune, "Wa'hwaye ja'ieyane!")
+		cursing.fire_stacks = FIRE_MAX_STACKS //T4 rune, what the fuck ya wanted
+		cursing.IgniteMob()
+		sleep(20 * rand(1, 2.5))

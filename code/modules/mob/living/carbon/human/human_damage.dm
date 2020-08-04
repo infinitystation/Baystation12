@@ -49,9 +49,25 @@
 	return amount
 
 /mob/living/carbon/human/setHalLoss(var/amount)
+	//[INF]
+
+	var/obj/item/organ/internal/heart/heart = internal_organs_by_name[BP_HEART]
+	if(heart.cultised)
+		return 0
+
+	//[/INF]
+
 	adjustHalLoss(getHalLoss()-amount)
 
 /mob/living/carbon/human/adjustHalLoss(var/amount)
+	//[INF]
+
+	var/obj/item/organ/internal/heart/heart = internal_organs_by_name[BP_HEART]
+	if(heart.cultised)
+		return 0
+
+	//[/INF]
+
 	var/heal = (amount < 0)
 	amount = abs(amount)
 	var/list/pick_organs = organs.Copy()
@@ -101,16 +117,37 @@
 /mob/living/carbon/human/Stun(amount)
 	amount *= species.stun_mod
 	if(amount <= 0 || (MUTATION_HULK in mutations)) return
+	//[INF]
+
+	var/obj/item/organ/internal/heart/heart = internal_organs_by_name[BP_HEART]
+	if(heart.cultised)
+		return 0
+
+	//[/INF]
 	..()
 
 /mob/living/carbon/human/Weaken(amount)
 	amount *= species.weaken_mod
 	if(amount <= 0 || (MUTATION_HULK in mutations)) return
+	//[INF]
+
+	var/obj/item/organ/internal/heart/heart = internal_organs_by_name[BP_HEART]
+	if(heart.cultised)
+		return 0
+
+	//[/INF]
 	..(amount)
 
 /mob/living/carbon/human/Paralyse(amount)
 	amount *= species.paralysis_mod
 	if(amount <= 0 || (MUTATION_HULK in mutations)) return
+	//[INF]
+
+	var/obj/item/organ/internal/heart/heart = internal_organs_by_name[BP_HEART]
+	if(heart.cultised)
+		return 0
+
+	//[/INF]
 	// Notify our AI if they can now control the suit.
 	if(wearing_rig && !stat && paralysis < amount) //We are passing out right this second.
 		wearing_rig.notify_ai("<span class='danger'>Warning: user consciousness failure. Mobility control passed to integrated intelligence system.</span>")
