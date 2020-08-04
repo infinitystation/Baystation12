@@ -5,7 +5,7 @@ GLOBAL_DATUM_INIT(thralls, /datum/antagonist/thrall, new)
 	role_text_plural = "Thralls"
 	welcome_text = "Your mind is no longer solely your own..."
 	id = MODE_THRALL
-	flags = 0 //INF
+	flags = ANTAG_IMPLANT_IMMUNE
 	ambitious = 0 //INF
 
 	var/list/thrall_controllers = list()

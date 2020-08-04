@@ -1,4 +1,3 @@
-/* INF
 /obj/item/weapon/implant/loyalty
 	name = "loyalty implant"
 	desc = "Makes you loyal or such."
@@ -36,9 +35,8 @@
 /obj/item/weapon/implantcase/loyalty
 	name = "glass case - 'loyalty'"
 	imp = /obj/item/weapon/implant/loyalty
-*/
 
-//[INF]
+/*[INF]
 
 /obj/item/weapon/implant/loyalty
 	name = "MindGuard implant"
@@ -83,4 +81,4 @@
 		/obj/item/weapon/implantcase/loyalty = 5
 	)
 
-//[/INF]
+*/ //[/INF]

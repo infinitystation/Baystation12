@@ -7,7 +7,7 @@ GLOBAL_DATUM_INIT(commandos, /datum/antagonist/deathsquad/mercenary, new)
 	role_text_plural = "Commandos"
 	welcome_text = "You are in the employ of a criminal syndicate hostile to corporate interests."
 	id_type = /obj/item/weapon/card/id/syndicate_command
-	flags = ANTAG_RANDOM_EXCEPTED | ANTAG_IMPLANT_IMMUNE //INF
+	flags = ANTAG_RANDOM_EXCEPTED
 
 	hard_cap = 4
 	hard_cap_round = 8
