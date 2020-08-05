@@ -190,11 +190,3 @@
 		to_chat(eye.owner, "<span class='notice'>You feel disorented for a moment as you return to your mortal body from \the [src].</span>")
 		eye.release(eye.owner)
 		eye.forceMove(src)
-
-
-/obj/item/device/flashlight/flashdark/stone
-	name = "hellstone shard"
-	desc = "The stone is blacker than the night itself, it seems to dim all the light around."
-	icon = 'infinity/icons/obj/objects.dmi'
-	icon_state = "hellstone"
-	item_state = "electronic"
