@@ -60,3 +60,15 @@
 	display_name = "gloves, work"
 	path = /obj/item/clothing/gloves/thick
 	cost = 3
+
+//[INF]
+/datum/gear/gloves/wristwatch
+	display_name = "wristwatch"
+	path = /obj/item/clothing/gloves/wristwatch
+	cost = 1
+
+/datum/gear/gloves/wristwatch/gold
+	display_name = "wristwatch, gold"
+	path = /obj/item/clothing/gloves/wristwatch/gold
+	cost = 3
+//[/INF]
