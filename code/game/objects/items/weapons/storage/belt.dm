@@ -478,13 +478,7 @@
 		SPECIES_HUMAN = 'icons/mob/onmob/infinity/onmob_belt.dmi',
 		)
 //[/INF]
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 
-=======
->>>>>>> Убираю "съедание" этой чудовищной сумкой части руки. А ещё убираем замедление, поскольку оно вообще не нужно.
->>>>>>> infinitystation-master
 /obj/item/weapon/storage/belt/waistpack/big
 	name = "large waist pack"
 	desc = "A bag designed to be worn on the waist. Definitely makes your butt look big."
