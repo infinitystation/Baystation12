@@ -319,6 +319,10 @@
 	material = MATERIAL_CULT
 	req_access = list("ACCESS_CENT_CAPTAIN") //I don't want bots to open those
 
+/obj/machinery/door/unpowered/simple/cult/Initialize()
+	. = ..()
+	new /obj/effect/temporary(get_turf(src), 4.5, 'infinity/icons/effects/cult.dmi', "door_glow")
+
 /obj/machinery/door/unpowered/simple/cult/allowed(mob/M)
 	if(!iscultist(M))
 		M.Weaken(2)
@@ -329,5 +333,14 @@
 
 /obj/machinery/door/unpowered/simple/cult/open(var/forced = 0)
 	if(forced)
+		return
+	. = ..()
+
+/obj/machinery/door/unpowered/simple/cult/attack_hand(mob/user)
+	if(iscultist(user))
+		if(density)
+			open()
+		else
+			close()
 		return
 	. = ..()

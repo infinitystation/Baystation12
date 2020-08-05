@@ -407,5 +407,14 @@
 		if(L in holder.languages && !("Quiet" in additional_affects))
 			holder.say(act_word.word, L)
 
-	holder.adjustBruteLoss(pain_mod * 2)
-	holder.adjustFireLoss(pain_mod * 1)
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+
+		var/obj/item/organ/external/O = H.get_organ(pick(BP_L_HAND, BP_R_HAND))
+		if(!O)
+			H.adjustBruteLoss(pain_mod * 2)
+			H.adjustFireLoss(pain_mod)
+			return
+
+		H.apply_damage(pain_mod * 2, BRUTE, O)
+		H.apply_damage(pain_mod, BURN, O)

@@ -11,8 +11,6 @@
 
 	user.visible_message(SPAN_WARNING("[user] finishes carving something on his wrist with [src]!"))
 
-	user.verbs += /mob/living/carbon/human/proc/activate_carvings
-
 	user.cutted_spells.Add(spell)
 
 
@@ -94,5 +92,11 @@
 	if(!("Long" in additional_affects))
 		cutted_spells.Remove(choice)
 
-	adjustBruteLoss(pain_mod * 2)
-	adjustFireLoss(pain_mod * 1)
+	var/obj/item/organ/external/O = get_organ(pick(BP_L_HAND, BP_R_HAND))
+	if(!O)
+		adjustBruteLoss(pain_mod * 2)
+		adjustFireLoss(pain_mod)
+		return
+
+	apply_damage(pain_mod * 2, BRUTE, O)
+	apply_damage(pain_mod, BURN, O)

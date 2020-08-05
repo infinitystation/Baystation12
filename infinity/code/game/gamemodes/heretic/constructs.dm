@@ -374,11 +374,9 @@
 	attack_sound = 'sound/weapons/heavysmash.ogg'
 	status_flags = 0
 	resistance = 10
-	construct_spells = list(/spell/aoe_turf/conjure/forcewall_cult,
-							/spell/targeted/projectile/dumbfire/gauntlet
+	construct_spells = list(/spell/aoe_turf/conjure/forcewall_cult
 							)
-	angelic_spells = list(/spell/aoe_turf/conjure/forcewall_holy,
-							/spell/targeted/projectile/dumbfire/gauntlet_holy
+	angelic_spells = list(/spell/aoe_turf/conjure/forcewall_holy
 							)
 	can_escape = TRUE
 

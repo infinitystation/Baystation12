@@ -72,4 +72,4 @@
 	. = ..()
 
 /obj/effect/temporary/cult_floor
-	layer = DECAL_PLATING_LAYER
+	layer = DECAL_LAYER

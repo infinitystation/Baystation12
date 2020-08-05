@@ -7,7 +7,8 @@ var/list/Tier1Runes = 	   list(
 								/mob/proc/rune_offering,
 								/mob/proc/rune_curse_pain,
 								/mob/proc/rune_chosen,
-								/mob/proc/rune_wall
+								/mob/proc/rune_wall,
+								/mob/living/carbon/human/proc/activate_carvings
 							   )
 
 
