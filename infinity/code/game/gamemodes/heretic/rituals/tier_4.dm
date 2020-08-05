@@ -21,7 +21,7 @@
 			break
 
 	if(!target)
-		to_chat(src, SPAN_WARNING("You need somebody on the rune to revive!"))
+		to_chat(user, SPAN_WARNING("You need somebody on the rune to revive!"))
 		return
 
 	mass_incantation(ritual_rune, "Pasnar val'keriam usinar. Savrae ines amutan. Yam'toth remium il'tarat!")

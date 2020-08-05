@@ -128,7 +128,7 @@
 	desc = "This ritual can raise dead in form of ghouls. They are much weaker and slower. Probably you can make the ritual more accurate if more acolytes will join the cult..."
 
 	requirments = list(/obj/effect/decal/cleanable/blood = 1,
-					   /obj/item/organ/internal/heart = 1) //You can literraly get the heart from the dead person ya wanna to raise. He will grow new ones
+					   /obj/item/device/soulstone = 1)
 
 	required_cultists = 1
 
@@ -145,7 +145,7 @@
 			break
 
 	if(!target)
-		to_chat(src, SPAN_WARNING("You need somebody on the rune to revive!"))
+		to_chat(user, SPAN_WARNING("You need somebody on the rune to revive!"))
 		return
 
 	mass_incantation(ritual_rune, "Dedo ol'btoh! Ah'sau re'haba!")

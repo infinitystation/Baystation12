@@ -11,7 +11,7 @@ GLOBAL_DATUM_INIT(loyalists, /datum/antagonist/loyalists, new)
 	victory_feedback_tag = "win - rev heads killed"
 	loss_feedback_tag = "loss - heads killed"
 	antaghud_indicator = "hud_loyal" //INF, WAS hudloyalist - because haven't in sprites previous
-	flags = ANTAG_IMPLANT_IMMUNE //INF
+	flags = 0
 
 	hard_cap = 2
 	hard_cap_round = 4

@@ -120,9 +120,6 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 					return 0
 				return 1
 
-			else if(istype(player.current, /mob/living/simple_animal/construct)) //INF
-				return 1
-
 			else if(isnewplayer(player.current))
 				if(player.current.client && player.current.client.prefs)
 					var/datum/species/S = all_species[player.current.client.prefs.species]
@@ -131,6 +128,10 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 					if(player.current.client.prefs.organ_data[BP_CHEST] == "cyborg") // Full synthetic.
 						return 0
 					return 1
+	if(player.current && istype(player.current, /mob/living/simple_animal/construct)) //INF
+		var/mob/living/simple_animal/construct/C = player.current
+		return !C.is_angelic
+
  	return 0
 
 /datum/antagonist/cultist/add_antagonist(var/datum/mind/player, var/ignore_role, var/do_not_equip, var/move_to_spawn, var/do_not_announce, var/preserve_appearance)

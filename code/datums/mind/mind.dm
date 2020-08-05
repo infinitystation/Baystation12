@@ -408,10 +408,10 @@
 						if(I in organs.implants)
 							qdel(I)
 							break
-				to_chat(H, "<span class='notice'><font size =3><B>You feel a wave of discomfort as your MindGuard implant shuts down. You are no longer protected from brainwashing!</B></font></span>") //INF, was "Your loyalty implant has been deactivated."
+				to_chat(H, "<span class='notice'><font size =3><B>Your loyalty implant has been deactivated.</B></font></span>")
 				log_admin("[key_name_admin(usr)] has de-loyalty implanted [current].")
 			if("add")
-				to_chat(H, "<span class='danger'><font size =3>You feel more stable and protected as your MindGuard implant activates. Now you are fully protected from any sort of brainwashing</font></span>") //INF, was You somehow have become the recepient of a loyalty transplant, and it just activated!
+				to_chat(H, "<span class='danger'><font size =3>You somehow have become the recepient of a loyalty transplant, and it just activated!</font></span>")
 				H.implant_loyalty(H, override = TRUE)
 				log_admin("[key_name_admin(usr)] has loyalty implanted [current].")
 			else

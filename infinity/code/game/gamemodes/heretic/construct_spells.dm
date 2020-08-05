@@ -50,6 +50,8 @@
 	summon_type = /obj/effect/forcefield/cult
 	duration = 200
 
+	spell_flags = CONSTRUCT_CHECK
+
 	hud_state = "const_juggwall"
 
 /spell/aoe_turf/conjure/forcewall_cult/cast(list/targets, mob/user)
@@ -433,3 +435,63 @@
 	icon_state = "cultm"
 
 	proj_trail = 0
+
+/spell/targeted/projectile/dumbfire/gauntlet
+	name = "Gauntlet Blast"
+	desc = "Empower your gauntlet with eldritch force and shoot it towards your target!"
+	feedback = "GB"
+	proj_type = /obj/item/projectile/spell_projectile/gauntlet
+
+	school = "conjuration"
+	charge_max = 10 SECONDS
+	spell_flags = CONSTRUCT_CHECK
+	invocation_type = SpI_NONE
+	range = 20
+
+	duration = 20
+	proj_step_delay = 3
+
+	amt_dam_brute = 25
+	amt_stunned = 3
+
+	hud_state = "gauntlet"
+
+/obj/item/projectile/spell_projectile/gauntlet
+	name = "empowered gauntlet"
+	icon = 'infinity/icons/effects/cult.dmi'
+	icon_state = "gauntlet"
+
+/spell/targeted/projectile/dumbfire/gauntlet/prox_cast(var/list/targets, spell_holder)
+	for(var/mob/living/M in targets)
+		if(!iscultist(M))
+			apply_spell_damage(M)
+
+/spell/targeted/projectile/dumbfire/gauntlet_holy
+	name = "Gauntlet Blast"
+	desc = "Empower your gauntlet with eldritch force and shoot it towards your target!"
+	feedback = "GB"
+	proj_type = /obj/item/projectile/spell_projectile/gauntlet_holy
+
+	school = "conjuration"
+	charge_max = 10 SECONDS
+	spell_flags = CONSTRUCT_CHECK | HOLY_CHECK
+	invocation_type = SpI_NONE
+	range = 20
+
+	duration = 20
+	proj_step_delay = 3
+
+	amt_dam_brute = 25
+	amt_stunned = 3
+
+	hud_state = "holy_gauntlet"
+
+/obj/item/projectile/spell_projectile/gauntlet_holy
+	name = "empowered gauntlet"
+	icon = 'infinity/icons/effects/cult.dmi'
+	icon_state = "holy_gauntlet"
+
+/spell/targeted/projectile/dumbfire/gauntlet_holy/prox_cast(var/list/targets, spell_holder)
+	for(var/mob/living/M in targets)
+		if(iscultist(M))
+			apply_spell_damage(M)

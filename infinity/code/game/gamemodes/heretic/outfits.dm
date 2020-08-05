@@ -10,7 +10,7 @@
 	spawn_flags = SPECIES_IS_RESTRICTED
 	brute_mod = 2
 	burn_mod = 2
-	species_flags = SPECIES_FLAG_NO_SCAN
+	species_flags = SPECIES_FLAG_NO_SCAN | SPECIES_NO_FBP_CONSTRUCTION
 	force_cultural_info = list(
 		TAG_CULTURE =   CULTURE_CULTIST,
 		TAG_HOMEWORLD = HOME_SYSTEM_STATELESS,
@@ -18,9 +18,8 @@
 	)
 
 /datum/species/human/cult/handle_death(var/mob/living/carbon/human/H)
-	spawn(1)
-		if(H)
-			H.dust()
+	if(H)
+		H.dust()
 
 /datum/species/human/cult/handle_post_spawn(var/mob/living/carbon/human/H)
 	H.s_tone = 35

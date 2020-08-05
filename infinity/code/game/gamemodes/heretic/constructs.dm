@@ -369,13 +369,17 @@
 	melee_damage_upper = 30
 	attacktext = "smashed their armoured gauntlet into"
 	mob_size = MOB_LARGE
-	speed = 3
+	speed = 2
 	environment_smash = 2
 	attack_sound = 'sound/weapons/heavysmash.ogg'
 	status_flags = 0
 	resistance = 10
-	construct_spells = list(/spell/aoe_turf/conjure/forcewall_cult)
-	angelic_spells = list(/spell/aoe_turf/conjure/forcewall_holy)
+	construct_spells = list(/spell/aoe_turf/conjure/forcewall_cult,
+							/spell/targeted/projectile/dumbfire/gauntlet
+							)
+	angelic_spells = list(/spell/aoe_turf/conjure/forcewall_holy,
+							/spell/targeted/projectile/dumbfire/gauntlet_holy
+							)
 	can_escape = TRUE
 
 /mob/living/simple_animal/construct/armoured/Life()
@@ -431,7 +435,7 @@
 	melee_damage_lower = 25
 	melee_damage_upper = 25
 	attacktext = "slashed"
-	speed = -1
+	speed = -2
 	environment_smash = 1
 	see_in_dark = 7
 	attack_sound = 'sound/weapons/rapidslice.ogg'

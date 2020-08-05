@@ -19,6 +19,22 @@
 	reagents.add_reagent(/datum/reagent/hell_water, 50)
 	update_icon()
 
+/obj/item/weapon/reagent_containers/glass/beaker/unholywater/throw_impact(atom/hit_atom, var/datum/thrownthing/TT)
+	. = ..()
+	if(TT.thrower && TT.thrower.a_intent != I_HELP)
+		if(reagents)
+			reagents.splash(hit_atom, reagents.total_volume)
+			smash(loc, hit_atom)
+
+/obj/item/weapon/reagent_containers/glass/beaker/unholywater/proc/smash(var/newloc, atom/against = null)
+	new /obj/effect/temporary(newloc, 12, 'infinity/icons/effects/cult.dmi', "bloodsparkles")
+	if(prob(33))
+		new/obj/item/weapon/material/shard(newloc)
+	if(ismob(against))
+		var/mob/M = against
+		M.Stun(1)
+		M.Weaken(3)
+
 obj/item/weapon/handcuffs/wizard/shadow
 	name = "shadow shackles"
 	desc = "A pair of shadow handcuffs, usually seen in Nar'Sien armies."

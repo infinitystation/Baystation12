@@ -123,6 +123,7 @@
 		if(!do_after(caster,50))
 			return
 		new /obj/machinery/door/unpowered/simple/cult(get_turf(A))
+		new /obj/effect/temporary(get_turf(A), 4.5, 'infinity/icons/effects/cult.dmi', "door_glow")
 		qdel(A)
 		return
 
@@ -400,10 +401,10 @@
 		if(!act_word)
 			continue
 
-		act_word.affect(target, multiplier, src, "Mass" in additional_affects)
+		act_word.affect(target, multiplier, user, "Mass" in additional_affects)
 
 		var/datum/language/L = all_languages[LANGUAGE_CULT]
-		if(L in holder.languages && !"Quiet" in additional_affects)
+		if(L in holder.languages && !("Quiet" in additional_affects))
 			holder.say(act_word.word, L)
 
 	holder.adjustBruteLoss(pain_mod * 2)

@@ -88,7 +88,7 @@
 			act_word.affect(A, multiplier, src, "Mass" in additional_affects)
 
 		var/datum/language/L = all_languages[LANGUAGE_CULT]
-		if(L in languages && !"Quiet" in additional_affects)
+		if(L in languages && !("Quiet" in additional_affects))
 			say(act_word.word, L)
 
 	if(!("Long" in additional_affects))

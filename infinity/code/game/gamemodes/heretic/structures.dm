@@ -95,7 +95,7 @@
 	light_outer_range = 13
 	light_color = "#3e0000"
 
-	var/range = 1
+	var/range = 0
 
 /obj/structure/cult/pylon/attack_hand(mob/M as mob)
 	attackpylon(M, 5)
@@ -173,14 +173,19 @@
 						M.adjustBruteLoss(-1)
 						M.adjustFireLoss(-1)
 
+	if(prob(75))
+		return
+
 	var/list/turfs = list()
 	var/list/turfs_old = list()
 
 	for(var/turf/simulated/turf in range(range - 1, src))
 		turfs_old.Add(turf)
 
-	for(var/turf/simulated/turf in range(range, src))
+	for(var/turf/simulated/turf in range(range + rand(0, 2), src))
 		if(turf in turfs_old)
+			continue
+		if(turf.icon_state == "cult" || turf.icon_state == "cult-narsie")
 			continue
 		turfs.Add(turf)
 
@@ -312,9 +317,17 @@
 /obj/machinery/door/unpowered/simple/cult
 	name = "runed door"
 	material = MATERIAL_CULT
+	req_access = list("ACCESS_CENT_CAPTAIN") //I don't want bots to open those
 
 /obj/machinery/door/unpowered/simple/cult/allowed(mob/M)
 	if(!iscultist(M))
 		M.Weaken(2)
+		playsound(get_turf(src),'infinity/sound/TG/cult/invoke_general.ogg',50,1)
+		new /obj/effect/temporary(get_turf(src), 4.5, 'infinity/icons/effects/cult.dmi', "door_glow")
 		return 0
 	return ..(M)
+
+/obj/machinery/door/unpowered/simple/cult/open(var/forced = 0)
+	if(forced)
+		return
+	. = ..()

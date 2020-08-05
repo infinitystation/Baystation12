@@ -288,7 +288,7 @@
 	var/list/avalible = list()
 
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
-		if(!iscultist(H) && H.stat != DEAD && H.mind && !istype(H.mind.assigned_job, /datum/job/submap))
+		if(!iscultist(H) && H.stat != DEAD && H.mind && !(H.species == SPECIES_IPC || H.species == SPECIES_DIONA) && !istype(H.mind.assigned_job, /datum/job/submap))
 			avalible.Add(H)
 
 
