@@ -44,24 +44,17 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 	var/conversion_blurb = "You catch a glimpse of the Realm of Nar-Sie, the Geometer of Blood. You now see how flimsy the world is, you see that it should be open to the knowledge of That Which Waits. Assist your new compatriots in their dark dealings. Their goals are yours, and yours are theirs. You serve the Dark One above all else. Bring It back."
 
 	faction = "cult"
-	ambitious = 0 //INF
-//[INF]
+	ambitious = 0
 /datum/antagonist/cultist/create_objectives(var/datum/mind/cultist, override = 1)
 	if(!..())
 		return
-//[/INF]
+
 /datum/antagonist/cultist/create_global_objectives()
 
 	if(!..())
 		return
 
 	global_objectives = list()
-	/* [INF]
-	if(prob(50))
-		global_objectives |= new /datum/objective/cult/survive
-	else
- 	[/INF] */
-
 	global_objectives |= new /datum/objective/cult/eldergod
 	var/datum/objective/cult/sacrifice/sacrifice = new()
 	sacrifice.find_target()
@@ -128,7 +121,7 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 					if(player.current.client.prefs.organ_data[BP_CHEST] == "cyborg") // Full synthetic.
 						return 0
 					return 1
-	if(player.current && istype(player.current, /mob/living/simple_animal/construct)) //INF
+	if(player.current && istype(player.current, /mob/living/simple_animal/construct))
 		var/mob/living/simple_animal/construct/C = player.current
 		return !C.is_angelic
 
@@ -238,14 +231,15 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 		to_chat(src, "<span class='warning'>Not when you are incapacitated.</span>")
 		return
 
-	message_cult_communicate()
-	remove_blood_simple(3)
+	if(!GLOB.cult.chorus)
+		message_cult_communicate()
+		remove_blood_simple(3)
 
 	var/input = input(src, "Please choose a message to tell to the other acolytes.", "Voice of Blood", "")
 	if(!input)
 		return
 
-	if(!GLOB.cult.chorus) //INF
+	if(!GLOB.cult.chorus)
 		whisper("[input]")
 
 	input = sanitize(input)

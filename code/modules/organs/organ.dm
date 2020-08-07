@@ -326,7 +326,7 @@ var/list/organ_cache = list()
 	target.attackby(O, user)
 
 /obj/item/organ/proc/can_feel_pain()
-    return (!BP_IS_ROBOTIC(src) && (!species || !(species.species_flags & SPECIES_FLAG_NO_PAIN))) && cultised
+	return (!BP_IS_ROBOTIC(src) && (!species || !(species.species_flags & SPECIES_FLAG_NO_PAIN))) && cultised
 	//INF return (!BP_IS_ROBOTIC(src) && (!species || !(species.species_flags & SPECIES_FLAG_NO_PAIN)))
 
 /obj/item/organ/proc/is_usable()

@@ -50,7 +50,7 @@
 	if(!ghost_ability_check())
 		return
 
-	empulse(get_turf(src), 0, 1)
+	empulse(get_turf(src), -1, 0)
 
 	ghost_magic_cd = world.time + 120 SECONDS
 

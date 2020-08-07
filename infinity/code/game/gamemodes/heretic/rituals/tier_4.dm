@@ -91,7 +91,7 @@
 
 /datum/ritual/hellhunter
 	name = "Summon Hellhunter Glasses Ritual"
-	desc = "Summon pair of hell glasses"
+	desc = "Summon pair of hell glasses that will protect you from bright light and allow you to see people through walls"
 
 	requirments = list(/obj/effect/decal/cleanable/blood = 1,
 					   /obj/item/device/soulstone = 1,

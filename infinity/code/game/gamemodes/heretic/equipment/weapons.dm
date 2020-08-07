@@ -100,6 +100,7 @@
 		else
 			force = 17
 			throwforce = 40
+		update_twohanding()
 	else
 		user.unEquip(src)
 		recall()

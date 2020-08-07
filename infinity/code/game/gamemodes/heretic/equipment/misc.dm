@@ -34,6 +34,7 @@
 		var/mob/M = against
 		M.Stun(1)
 		M.Weaken(3)
+	qdel(src)
 
 obj/item/weapon/handcuffs/wizard/shadow
 	name = "shadow shackles"
