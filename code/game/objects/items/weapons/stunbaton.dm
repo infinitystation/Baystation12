@@ -100,12 +100,13 @@
 			to_chat(user, "<span class='notice'>[src] already has a cell.</span>")
 	else if(isScrewdriver(W))
 		if(bcell)
-			bcell.update_icon()
-			bcell.dropInto(loc)
-			bcell = null
-			to_chat(user, "<span class='notice'>You remove the cell from the [src].</span>")
-			status = 0
-			update_icon()
+			if(eject_item(bcell, user))//inf
+				bcell.update_icon()
+//inf				bcell.dropInto(loc)
+				bcell = null
+//inf				to_chat(user, "<span class='notice'>You remove the cell from the [src].</span>")
+				status = 0
+				update_icon()
 	else
 		..()
 
