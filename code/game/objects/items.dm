@@ -667,7 +667,8 @@ GLOBAL_LIST_EMPTY(blood_overlay_cache)
 
 /obj/item/proc/showoff(mob/user)
 	for (var/mob/M in view(user))
-		M.show_message("[user] holds up [src]. <a HREF=?src=\ref[M];lookitem=\ref[src]>Take a closer look.</a>",1)
+		if(!user.is_invisible_to(M)) //INF
+			M.show_message("[user] holds up [src]. <a HREF=?src=\ref[M];lookitem=\ref[src]>Take a closer look.</a>",1)
 
 /mob/living/carbon/verb/showoff()
 	set name = "Show Held Item"
@@ -707,6 +708,12 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	user.client.view = viewsize
 	zoom = 1
 
+//[INF]
+	if(user.vision_cone_overlay)
+		var/mob/living/vision_cone_mob = user
+		vision_cone_mob.hide_cone()
+//[/INF]
+
 	var/viewoffset = WORLD_ICON_SIZE * tileoffset
 	switch(user.dir)
 		if (NORTH)
@@ -736,6 +743,13 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 /obj/item/proc/unzoom(var/mob/user)
 	if(!zoom)
 		return
+
+//[INF]
+	if(user.vision_cone_overlay)
+		var/mob/living/vision_cone_mob = user
+		vision_cone_mob.update_vision_cone()
+//[/INF]
+
 	zoom = 0
 
 	GLOB.destroyed_event.unregister(src, src, /obj/item/proc/unzoom)

@@ -148,7 +148,7 @@
 
 		if(self_message && M == src)
 			M.show_message(self_message, AUDIBLE_MESSAGE, deaf_message, VISIBLE_MESSAGE)
-		else if(M.see_invisible >= invisibility || narrate) // Cannot view the invisible
+		else if(is_invisible_to(M) || narrate) // Cannot view the invisible
 			M.show_message(mob_message, AUDIBLE_MESSAGE, deaf_message, VISIBLE_MESSAGE)
 		else
 			M.show_message(mob_message, AUDIBLE_MESSAGE)
@@ -715,6 +715,8 @@
 		regenerate_icons()
 	else if( lying != lying_prev )
 		update_icons()
+
+	update_vision_cone() //INF
 
 /mob/proc/reset_layer()
 	if(lying)

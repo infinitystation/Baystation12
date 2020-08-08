@@ -228,7 +228,12 @@ GLOBAL_LIST_INIT(possible_say_verbs, list(
 	is_in_card = FALSE
 	var/turf/T = get_turf(src)
 	if(istype(T)) T.visible_message("<b>[src]</b> folds outwards, expanding into a mobile form.")
-	update_verbs() //inf
+
+//[INF]
+	update_verbs()
+	use_vision_cone = TRUE
+	show_cone()
+//[/INF]
 
 /mob/living/silicon/pai/verb/fold_up()
 	set category = "pAI Commands"
@@ -246,17 +251,19 @@ GLOBAL_LIST_INIT(possible_say_verbs, list(
 		return
 	last_special = world.time + 100
 
+	// Move us into the card and move the card to the ground.
+	stop_pulling()
+	resting = 0
+
 //[INF]
 	var/obj/item/integrated_circuit/manipulation/ai/A = src.loc
 	if(istype(A))
 		A.unload_ai()
 		src.visible_message("[src] ejects from [A].")
-	update_verbs() //inf
+	update_verbs()
+	hide_cone()
+	use_vision_cone = initial(use_vision_cone)
 //[/INF]
-
-	// Move us into the card and move the card to the ground.
-	stop_pulling()
-	resting = 0
 
 	// If we are being held, handle removing our holder from their inv.
 	var/obj/item/weapon/holder/H = loc

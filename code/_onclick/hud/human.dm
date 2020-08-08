@@ -274,6 +274,12 @@
 	mymob.ling_sting.screen_loc = ui_ling_sting
 	mymob.ling_sting.invisibility = 101
 	hud_elements |= mymob.ling_sting
+
+	if(target.use_vision_cone)
+		var/mob/living/carbon/human/H = mymob
+		H.vision_cone_overlay = new /obj/screen/fov()
+		hud_elements |= H.vision_cone_overlay
+
 //[/INF]
 
 	mymob.pain = new /obj/screen/fullscreen/pain( null )
