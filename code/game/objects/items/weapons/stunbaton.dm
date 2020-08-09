@@ -244,6 +244,7 @@
 	name = "electrified arm"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "electrified_arm"
+	item_icons = null//inf
 
 /obj/item/weapon/melee/baton/robot/electrified_arm/on_update_icon()
 	if(status)
@@ -257,7 +258,8 @@
 /obj/item/weapon/melee/baton/cattleprod
 	name = "stunprod"
 	desc = "An improvised stun baton."
-	icon_state = "stunprod_nocell"
+	icon = 'icons/obj/weapons.dmi' //inf
+	icon_state = "stunprod"//inf, was icon_state = "stunprod_nocell"
 	item_state = "prod"
 	force = 3
 	throwforce = 5
@@ -266,3 +268,4 @@
 	hitcost = 25
 	attack_verb = list("poked")
 	slot_flags = null
+	item_icons = null//inf
