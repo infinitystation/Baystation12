@@ -80,3 +80,6 @@
 /datum/gear/suit/militaryjacket
 	display_name = "military jacket"
 	path = /obj/item/clothing/suit/storage/tgbomber/militaryjacket
+
+/datum/gear/suit/sec_jacket
+	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/merchant, /datum/job/merchant_trainee)
