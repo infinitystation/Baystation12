@@ -35,7 +35,8 @@
 	for (var/o in target.organs)
 		var/obj/item/organ/organ = o
 		organ.vital = 0
-		organ.cultised = 1
+		var/datum/active_effect/no_pain/necromancy/no_pain = new()
+		no_pain.add_to_human(target)
 		if (!BP_IS_ROBOTIC(organ))
 			organ.rejuvenate(1)
 			organ.max_damage *= 1.2 //Not as cool as bloodbond, but still.

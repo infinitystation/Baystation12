@@ -36,6 +36,13 @@
 
 	animate_tail_stop()
 
+	//[INF]
+
+	for(var/datum/active_effect/effect in active_effects)
+		effect.handle_death()
+
+	//[/INF]
+
 	//Handle brain slugs.
 	var/obj/item/organ/external/head = get_organ(BP_HEAD)
 	var/mob/living/simple_animal/borer/B
@@ -63,14 +70,6 @@
 
 	if(wearing_rig)
 		wearing_rig.notify_ai("<span class='danger'>Warning: user death event. Mobility control passed to integrated intelligence system.</span>")
-
-    //[INF]
-	if(bloodybond.len)
-		dust()
-		for(var/mob/living/L in bloodybond)
-			L.dust()
-
-    //[/INF]
 
 	. = ..(gibbed,"no message")
 	if(!gibbed)

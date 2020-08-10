@@ -1636,7 +1636,7 @@
 
     //[INF]
 
-	if(is_cult_heart())
+	if(is_painless())
 		return 0
 
     //[/INF]

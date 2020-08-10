@@ -13,14 +13,6 @@
 		ChangeToHusk()
 	return
 
-//[INF]
-
-/mob/living/carbon/human/proc/is_cult_heart()
-	var/obj/item/organ/internal/heart/heart = internal_organs_by_name[BP_HEART]
-	return heart.cultised
-
-//[/INF]
-
 /mob/living/carbon/human/adjustBrainLoss(var/amount)
 	if(status_flags & GODMODE)	return 0	//godmode
 	if(should_have_organ(BP_BRAIN))
@@ -59,7 +51,7 @@
 /mob/living/carbon/human/setHalLoss(var/amount)
 	//[INF]
 
-	if(is_cult_heart())
+	if(is_painless())
 		return 0
 
 	//[/INF]
@@ -69,7 +61,7 @@
 /mob/living/carbon/human/adjustHalLoss(var/amount)
 	//[INF]
 
-	if(is_cult_heart())
+	if(is_painless())
 		return 0
 
 	//[/INF]
@@ -125,7 +117,7 @@
 	if(amount <= 0 || (MUTATION_HULK in mutations)) return
 	//[INF]
 
-	if(is_cult_heart())
+	if(is_painless())
 		return 0
 
 	//[/INF]
@@ -136,7 +128,7 @@
 	if(amount <= 0 || (MUTATION_HULK in mutations)) return
 	//[INF]
 
-	if(is_cult_heart())
+	if(is_painless())
 		return 0
 
 	//[/INF]
@@ -147,7 +139,7 @@
 	if(amount <= 0 || (MUTATION_HULK in mutations)) return
 	//[INF]
 
-	if(is_cult_heart())
+	if(is_painless())
 		return 0
 
 	//[/INF]

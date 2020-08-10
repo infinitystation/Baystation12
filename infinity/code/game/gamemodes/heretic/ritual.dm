@@ -168,11 +168,3 @@
 				organ.max_damage *= 0.5
 				organ.min_broken_damage = Floor(organ.max_damage * 0.75)
 	playsound(get_turf(src), 'sound/hallucinations/wail.ogg', 20, 1)
-
-/mob
-	var/mirror_curse = 0 //If it isn't 0, victim will hear everybody as himself for a period of time(in eye_blink)
-
-	//ELAR YOU MOTHERFUCKER, FIND THE WAY TO MAKE EVERYBODY LOOK LIKE THAT ONE MOB
-
-/mob/living/carbon/human
-	var/list/bloodybond = list()

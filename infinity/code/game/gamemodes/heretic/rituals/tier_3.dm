@@ -89,13 +89,12 @@
 				speak_incantation(cultist, "Ahe'ohaja ware'opa!")
 
 	for(var/mob/living/carbon/human/bonded in bonds)
-		for(var/mob/living/carbon/human/bonded2 in bonds)
-			if(bonded != bonded2)
-				bonded.bloodybond.Add(bonded2)
+		var/datum/active_effect/no_pain/blood_bond/bond = new()
+		bond.add_to_human(bonded)
+		bond.blood_bonded = bonds
 		for (var/o in bonded.organs)
 			var/obj/item/organ/organ = o
 			organ.vital = 0
-			organ.cultised = 1
 			if (!BP_IS_ROBOTIC(organ))
 				organ.rejuvenate(1)
 				organ.max_damage *= 1.5

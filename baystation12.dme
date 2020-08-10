@@ -3565,6 +3565,8 @@
 #include "infinity\code\modules\mob\living\carbon\aliens\larva\life.dm"
 #include "infinity\code\modules\mob\living\carbon\aliens\larva\powers.dm"
 #include "infinity\code\modules\mob\living\carbon\aliens\larva\progression.dm"
+#include "infinity\code\modules\mob\living\carbon\human\active_effects.dm"
+#include "infinity\code\modules\mob\living\carbon\human\hear_say.dm"
 #include "infinity\code\modules\mob\living\carbon\human\human.dm"
 #include "infinity\code\modules\mob\living\carbon\human\human_powers.dm"
 #include "infinity\code\modules\mob\living\carbon\human\interactions.dm"

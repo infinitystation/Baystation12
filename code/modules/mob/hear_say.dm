@@ -56,11 +56,6 @@
 	if(italics)
 		message = "<i>[message]</i>"
 
-    //[INF]
-	if(mirror_curse)
-		speaker_name = real_name
-    //[/INF]
-
 	var/track = null
 	if(isghost(src))
 		if(speaker_name != speaker.real_name && speaker.real_name)

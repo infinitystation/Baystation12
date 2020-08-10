@@ -297,7 +297,8 @@
 		ritual_rune.visible_message(SPAN_WARNING("[ritual_rune] starts glowing red, but fails to activate without an item that victim touched."))
 		return
 
-	cursing.mirror_curse += 5 MINUTES
+	var/datum/active_effect/speech_affection/mirror_curse/mirror_curse = new()
+	mirror_curse.add_to_human(cursing)
 
 	mass_incantation("Ha'yahaje ra'wayanarar!")
 
