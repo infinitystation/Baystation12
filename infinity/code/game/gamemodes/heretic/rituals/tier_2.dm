@@ -280,7 +280,7 @@
 	var/obj/item/cursed
 
 	for(var/obj/item/curse in get_turf(ritual_rune))
-		if(!istype(curse, /obj/item/weapon/material/shard))
+		if(!(curse.type in requirments))
 			cursed = curse
 			break
 
@@ -329,5 +329,6 @@
 	ritual_flags = NEEDS_BOOK | NEEDS_FLOOR
 
 /datum/ritual/shadowstone/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
+	. = ..()
 	mass_incantation("V'hajera re'thanara!")
 	new /obj/item/device/flashlight/flashdark/stone(get_turf(ritual_rune))

@@ -242,7 +242,7 @@
 	var/obj/item/cursed
 
 	for(var/obj/item/curse in get_turf(ritual_rune))
-		if(!istype(curse, /obj/item/weapon/material/knife))
+		if(!(curse.type in requirments))
 			cursed = curse
 			break
 
