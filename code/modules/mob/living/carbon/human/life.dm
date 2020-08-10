@@ -973,7 +973,6 @@
 
 
 /mob/living/carbon/human/proc/handle_hud_list()
-    
 	if (BITTEST(hud_updateflag, HEALTH_HUD) && hud_list[HEALTH_HUD])
 		var/image/holder = hud_list[HEALTH_HUD]
 		if(stat == DEAD)

@@ -56,7 +56,6 @@
 				suittoggled = 1
 				if(change_sprites) //INF
 					hood.icon_state = "[icon_state]_hood"
-//				hood.item_state = "[icon_state]_hood"
 				update_icon()
 				H.update_inv_wear_suit()
 	else
