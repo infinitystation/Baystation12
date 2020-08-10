@@ -745,9 +745,9 @@
 		if(stomach.ingested.total_volume)
 			stomach.ingested.trans_to_holder(D.reagents, 15)
 		return
-			
+
 	var/turf/location = loc
-	
+
 	visible_message(SPAN_DANGER("\The [src] стошнило!"),SPAN_DANGER("Вас стошнило!"))
 	playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 	if(istype(location, /turf/simulated))
@@ -1636,8 +1636,7 @@
 
     //[INF]
 
-	var/obj/item/organ/internal/heart/H = internal_organs_by_name[BP_HEART]
-	if(H && H.cultised)
+	if(is_cult_heart())
 		return 0
 
     //[/INF]
