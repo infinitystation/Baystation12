@@ -12,15 +12,13 @@
 		duration -= 1
 		if(duration < 1)
 			handle_removal()
-			owner.active_effects.Remove(src)
-			qdel(src)
 
 /datum/active_effect/proc/handle_removal()
+	owner.active_effects.Remove(src)
+	qdel(src)
 
 /datum/active_effect/proc/handle_death()
 	handle_removal()
-	owner.active_effects.Remove(src)
-	qdel(src)
 
 
 
@@ -54,8 +52,6 @@
 	infinite = TRUE
 
 /datum/active_effect/no_pain/blood_bond/handle_death()
-	handle_removal()
-	owner.active_effects.Remove(src)
 	for(var/mob/living/carbon/human/H in blood_bonded)
 		if(H == owner)
 			continue
@@ -67,4 +63,4 @@
 
 	owner.dust()
 
-	qdel(src)
+	. = ..()
