@@ -89,7 +89,7 @@
 				speak_incantation(cultist, "Ahe'ohaja ware'opa!")
 
 	for(var/mob/living/carbon/human/bonded in bonds)
-		var/datum/active_effect/no_pain/blood_bond/bond = new()
+		var/datum/active_effect/blood_bond/bond = new()
 		bond.add_to_human(bonded)
 		bond.blood_bonded = bonds
 		for (var/o in bonded.organs)

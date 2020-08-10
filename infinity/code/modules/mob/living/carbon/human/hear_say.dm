@@ -54,7 +54,7 @@
 	if(italics)
 		message = "<i>[message]</i>"
 
-	for(var/datum/active_effect/speech_affection/effect in active_effects)
+	for(var/datum/active_effect/effect in active_effects)
 		message = effect.handle_heard_msg(message)
 		speaker_name = effect.handle_heard_name(speaker_name)
 

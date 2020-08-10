@@ -22,7 +22,7 @@
 
 	//[INF]
 
-	for(var/datum/active_effect/speech_affection/effect in active_effects)
+	for(var/datum/active_effect/effect in active_effects)
 		message = effect.handle_speech(message)
 
 	//[/INF]
