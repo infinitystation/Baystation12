@@ -206,8 +206,6 @@
 		effect.handle_effect()
 
 /mob/living/carbon/human/proc/is_painless()
+	. = 0
 	for(var/datum/active_effect/effect in active_effects)
-		if(effect.no_pain())
-			return 1
-
-	return 0
+		. = . || effect.no_pain()
