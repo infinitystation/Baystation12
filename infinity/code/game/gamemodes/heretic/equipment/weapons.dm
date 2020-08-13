@@ -320,7 +320,7 @@
 		if(ishuman(A))
 			var/mob/living/carbon/human/H = A
 			if(H.stat != CONSCIOUS)
-				var/obj/item/device/soulstone/SS = new(src)
+				var/obj/item/device/soulstone/heretic/SS = new(src)
 				SS.attack(H, user)
 				if(!SS.full)
 					qdel(SS)

@@ -100,3 +100,4 @@
 
 	apply_damage(pain_mod * 2, BRUTE, O)
 	apply_damage(pain_mod, BURN, O)
+	remove_blood_simple(pain_mod * 2)

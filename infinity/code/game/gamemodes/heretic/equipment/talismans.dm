@@ -1,6 +1,6 @@
 /obj/item/weapon/book/tome
 	name = "arcane tome"
-	icon = 'icons/obj/weapons.dmi'
+	icon = 'infinity/icons/obj/cult.dmi'
 	icon_state = "tome"
 	throw_speed = 1
 	throw_range = 5
@@ -8,16 +8,44 @@
 	unique = 1
 	carved = 2 // Don't carve it
 
+	var/opened = TRUE
+
+/obj/item/weapon/book/tome/Initialize()
+	. = ..()
+	flick("tome_spawn", src)
+
 /obj/item/weapon/book/tome/examine(mob/user)
 	. = ..()
-	if(!iscultist(user))
-		to_chat(user, "An old, dusty tome with frayed edges and a sinister looking cover.")
+	if(!opened)
+		if(!iscultist(user))
+			to_chat(user, "An old, dusty tome with frayed edges and a sinister looking cover.")
+		else
+			to_chat(user, "<span class='cult italic'>The scriptures of Nar-Sie, The One Who Sees, The Geometer of Blood. Contains the details of every ritual his followers could think of. Most of these are useless, though. You can use it in-hand to search in it for some spells</span>")
 	else
-		to_chat(user, "<span class='cult italic'>The scriptures of Nar-Sie, The One Who Sees, The Geometer of Blood. Contains the details of every ritual his followers could think of. Most of these are useless, though. You can use it in-hand to search in it for some spells</span>")
+		if(!iscultist(user))
+			to_chat(user, "\The [src] seems full of illegible scribbles. Is this a joke?")
+			to_chat(user, SPAN_DANGER("\The [src] suddenly closes on your fingers as it starts to glow in sinister-red!"))
+			user.Weaken(2)
+			user.Stun(1)
+			flick("tome_stun[opened]", src)
+			user.unEquip(src)
+			opened = FALSE
+			return
+		show_guide(user)
+
+
 
 /obj/item/weapon/book/tome/afterattack(var/atom/A, var/mob/user, var/proximity)
 	if(!proximity || !iscultist(user))
 		return
+
+	if(isliving(A))
+		var/mob/living/L = A
+		if(!iscultist(L))
+			L.Weaken(2)
+			L.Stun(1)
+			flick("tome_stun[opened]", src)
+
 	if(A.reagents && A.reagents.has_reagent(/datum/reagent/water/holywater))
 		to_chat(user, "<span class='notice'>You unbless \the [A].</span>")
 		var/holy2water = A.reagents.get_reagent_amount(/datum/reagent/water/holywater)
@@ -31,13 +59,29 @@
 
 /obj/item/weapon/book/tome/attack_self(var/mob/user)
 	if(!iscultist(user))
+		to_chat(user, SPAN_DANGER("\The [src] suddenly heats up in your hands as it starts to glow in sinister-red!"))
+		user.Weaken(2)
+		user.Stun(1)
+		flick("tome_stun[opened]", src)
+		user.unEquip(src)
+		opened = FALSE
+		return
+
+	flick("tome_flick[opened]", src)
+	opened = !opened
+
+/obj/item/weapon/book/tome/proc/show_guide(var/mob/user)
+	if(!iscultist(user))
 		to_chat(user, "\The [src] seems full of illegible scribbles. Is this a joke?")
 		return
 
 	to_chat(user, "<span class='warning'>You start reading [src] and looking for any ancient words...</span>")
 
-	if(!do_after(user,10))
+	icon_state = "tome_flick"
+	if(!do_after(user, 27))
+		icon_state = "tome"
 		return
+	icon_state = "tome"
 
 	/*to_chat(user, "<span class='cult italic'>Looks like you can make some spells by carving ancient words on your flesh.\n\
 											 The spell must be composed of 3 parts: \[Element\] \[Method\] \[Words Of Power\].\n\
@@ -61,12 +105,3 @@
 	to_chat(user, "<span class='cult italic'>Khari'd De'erah Il'tarat - you will convert objects around you.</span>")
 	to_chat(user, "<span class='cult italic'>Jab'a'rate Uba'rate - creates an EMP</span>")
 	to_chat(user, "<span class='cult italic'>Tag'nerea Ger'be'rah - handcuffs whoever you touch</span>")
-
-/obj/item/weapon/book/tome/afterattack(var/atom/A, var/mob/user, var/proximity)
-	if(!proximity || !iscultist(user))
-		return
-	if(A.reagents && A.reagents.has_reagent(/datum/reagent/water/holywater))
-		to_chat(user, "<span class='notice'>You unbless \the [A].</span>")
-		var/holy2water = A.reagents.get_reagent_amount(/datum/reagent/water/holywater)
-		A.reagents.del_reagent(/datum/reagent/water/holywater)
-		A.reagents.add_reagent(/datum/reagent/water, holy2water)

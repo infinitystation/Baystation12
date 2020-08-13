@@ -301,7 +301,7 @@
 
 /obj/item/weapon/archaeological_find/crystal/spawn_item()
 	if(prob(10))
-		new /obj/item/device/soulstone(loc)
+		new /obj/item/device/soulstone(loc) //INF, was new /obj/item/device/soulstone(loc)
 		return //inf
 	if(prob(20)) //inf
 		apply_image_decorations = 1

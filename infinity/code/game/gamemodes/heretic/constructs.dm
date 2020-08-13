@@ -4,7 +4,7 @@
 #define SOULSTONE_ESSENCE 1
 
 /obj/item/device/soulstone
-	name = "soul stone shard"
+	name = "soulstone"
 	icon = 'infinity/icons/obj/cult.dmi'
 	icon_state = "soulstone"
 	item_state = "electronic"
@@ -14,6 +14,7 @@
 	origin_tech = list(TECH_BLUESPACE = 4, TECH_MATERIAL = 4)
 
 	var/full = SOULSTONE_EMPTY
+	var/icon_type = "soulstone"
 	var/is_evil = 1
 	var/mob/living/simple_animal/shade = null
 	var/smashing = 0
@@ -27,6 +28,11 @@
 	return (full == SOULSTONE_EMPTY) ? src : FALSE
 
 /obj/item/device/soulstone/proc/shatter()
+	playsound(loc, "shatter", 70, 1)
+	new /obj/item/device/soulstone/heretic/shard(get_turf(src))
+	qdel(src)
+
+/obj/item/device/soulstone/heretic/shard/shatter()
 	playsound(loc, "shatter", 70, 1)
 	for(var/i=1 to rand(2,5))
 		new /obj/item/weapon/material/shard(get_turf(src), MATERIAL_NULLGLASS)
@@ -57,11 +63,11 @@
 
 /obj/item/device/soulstone/on_update_icon()
 	if(full == SOULSTONE_EMPTY)
-		icon_state = "[(is_evil) ? "" : "purified_"]soulstone"
+		icon_state = "[(is_evil) ? "" : "purified_"][icon_type]"
 	if(full == SOULSTONE_ESSENCE)
-		icon_state = "[(is_evil) ? "" : "purified_"]soulstone2" //TODO: A spookier sprite. Also unique sprites.
+		icon_state = "[(is_evil) ? "" : "purified_"][icon_type]2"
 	if(full == SOULSTONE_CRACKED)
-		icon_state = "[(is_evil) ? "" : "purified_"]soulstone"//TODO: cracked sprite
+		icon_state = "[(is_evil) ? "" : "purified_"][icon_type]3"
 		SetName("cracked soulstone")
 
 /obj/item/device/soulstone/attackby(var/obj/item/I, var/mob/user)
@@ -69,7 +75,7 @@
 	if(is_evil && istype(I, /obj/item/weapon/nullrod))
 		to_chat(user, "<span class='notice'>You cleanse \the [src] of taint, purging its shackles to its creator..</span>")
 		is_evil = 0
-		icon_state = "purified_soulstone"
+		desc = "A strange, ridged chunk of some glassy blue material. It's pretty warm to the touch."
 		update_icon()
 		return
 	if(I.force >= 5)
@@ -124,6 +130,7 @@
 				shade.icon_dead = "shade_angelic"
 				shade.faction = "neutral"
 			shade.dropInto(loc)
+			adjust_abilities(shade)
 			to_chat(user, "<span class='notice'>You summon \the [shade].</span>")
 		if(choice == "No")
 			return
@@ -168,11 +175,13 @@
 		//C.cancel_camera()
 		if(S.is_evil)
 			GLOB.cult.add_antagonist(C.mind)
+		S.adjust_abilities(C)
 		C.process_spells()
 		qdel(S)
 		qdel(src)
 
 /obj/item/device/soulstone/heretic/pure
+	desc = "A strange, ridged chunk of some glassy blue material. It's pretty warm to the touch."
 	icon_state = "purified_soulstone"
 	is_evil = 0
 
@@ -223,6 +232,7 @@
 				shade.icon_dead = "shade_angelic"
 				shade.faction = "neutral"
 			shade.dropInto(loc)
+			adjust_abilities(shade)
 			to_chat(user, "<span class='notice'>You summon \the [shade].</span>")
 		if(choice == "No")
 			return
@@ -230,6 +240,19 @@
 		to_chat(user, "<span class='notice'>You recapture \the [shade].</span>")
 		shade.forceMove(src)
 		return
+
+/obj/item/device/soulstone/proc/adjust_abilities(var/mob/living/L)
+
+/obj/item/device/soulstone/heretic/shard
+	name = "soulstone shard"
+	icon_state = "soulshard"
+	desc = "A shard of strange, glassy red material. Achingly cold to the touch."
+
+	icon_type = "soulshard"
+
+/obj/item/device/soulstone/heretic/shard/adjust_abilities(var/mob/living/L)
+	L.maxHealth = initial(L.maxHealth) / 2
+	L.health = min(L.health, L.maxHealth)
 
 /mob/living/simple_animal/construct
 	name = "Construct"

@@ -418,3 +418,4 @@
 
 		H.apply_damage(pain_mod * 2, BRUTE, O)
 		H.apply_damage(pain_mod, BURN, O)
+		H.remove_blood_simple(pain_mod * 2)
