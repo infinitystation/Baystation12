@@ -3,7 +3,14 @@
 	var/sound_id
 	var/datum/sound_token/sound_token
 
-#define UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(lproc) ##lproc{ . = ..(); update_enviroment_sound();}
+/obj/machinery/light/get_power_usage()
+	. = ..()
+	if(use_power == POWER_USE_ACTIVE && istype(lightbulb))
+		. *= lightbulb.power_usage_multiplier
+		. *= max1(log(lightbulb.b_outer_range)) * max1(log(2, lightbulb.b_inner_range)) * max1(log(10, lightbulb.b_max_bright * 100))
+
+
+#define UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(lproc) ##lproc{. = ..(); update_enviroment_sound();}
 UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/Initialize(mapload, obj/machinery/light_construct/construct))
 UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/seton(state))
 UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/broken())
@@ -25,6 +32,11 @@ UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/remove_bulb())
 	var/enviroment_sound_range = 3
 	var/enviroment_sound_volume = 30
 
+	var/power_usage_multiplier = 1
+
+/obj/item/weapon/light/bulb
+	power_usage_multiplier = 0.5
+
 /obj/machinery/light/xenon
 	light_type = /obj/item/weapon/light/tube/xenon
 
@@ -35,7 +47,7 @@ UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/remove_bulb())
 	b_max_bright = 0.95
 	b_inner_range = 3
 	b_outer_range = 8
-	b_curve = 2
+	power_usage_multiplier = 3
 
 	enviroment_sound_range = 4
 	enviroment_sound = 'infinity/sound/ambience/external/1/neon_hum.ogg'

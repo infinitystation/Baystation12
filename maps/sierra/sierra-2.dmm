@@ -7727,12 +7727,12 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/cafe)
 "ans" = (
-/obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/green,
 /obj/structure/sign/poster{
 	pixel_x = -32
 	},
-/obj/effect/landmark/start,
+/obj/structure/bed/chair/wood/walnut{
+	dir = 4
+	},
 /turf/simulated/floor/carpet/green,
 /area/crew_quarters/sleep/bunk)
 "ant" = (
@@ -12121,8 +12121,11 @@
 /area/crew_quarters/heads/office/ce)
 "auw" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/structure/closet/cabinet,
-/obj/item/toy/plushie/lizard,
+/obj/structure/table/woodentable/walnut,
+/obj/structure/flora/pottedplant/deskferntrim{
+	pixel_y = 12;
+	pixel_x = 7
+	},
 /turf/simulated/floor/carpet/green,
 /area/crew_quarters/sleep/bunk)
 "aux" = (
@@ -15552,6 +15555,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/seconddeck/fore)
 "azO" = (
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -23
+	},
 /turf/simulated/floor/carpet/green,
 /area/crew_quarters/sleep/bunk)
 "azP" = (
@@ -16739,6 +16746,10 @@
 /turf/simulated/floor/carpet/purple,
 /area/crew_quarters/sleep/bunk)
 "aBW" = (
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 24
+	},
 /turf/simulated/floor/carpet/purple,
 /area/crew_quarters/sleep/bunk)
 "aBX" = (
@@ -17066,13 +17077,13 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/hardstorage)
 "aCw" = (
-/obj/structure/bed/chair/wood/walnut{
-	dir = 4
-	},
 /obj/item/device/radio/intercom{
 	dir = 1;
 	pixel_y = -29
 	},
+/obj/structure/bed/padded,
+/obj/effect/landmark/start,
+/obj/item/weapon/bedsheet/green,
 /turf/simulated/floor/carpet/green,
 /area/crew_quarters/sleep/bunk)
 "aCx" = (
@@ -17169,7 +17180,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/teleporter/seconddeck)
 "aCF" = (
-/obj/structure/table/woodentable/walnut,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
@@ -17180,6 +17190,8 @@
 	pixel_x = 24
 	},
 /obj/machinery/light/small,
+/obj/structure/closet/cabinet,
+/obj/random/plushie,
 /turf/simulated/floor/carpet/green,
 /area/crew_quarters/sleep/bunk)
 "aCG" = (
@@ -17651,13 +17663,8 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/teleporter/seconddeck)
 "aDv" = (
-/obj/structure/table/woodentable/walnut,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
-	},
-/obj/structure/flora/pottedplant/deskleaf{
-	pixel_x = -5;
-	pixel_y = 2
 	},
 /obj/machinery/button/alternate/door/bolts{
 	dir = 4;
@@ -17666,16 +17673,18 @@
 	pixel_x = -24
 	},
 /obj/machinery/light/small,
+/obj/random/plushie,
+/obj/structure/closet/cabinet,
 /turf/simulated/floor/carpet/purple,
 /area/crew_quarters/sleep/bunk)
 "aDw" = (
-/obj/structure/bed/chair/wood/walnut{
-	dir = 8
-	},
 /obj/item/device/radio/intercom{
 	dir = 1;
 	pixel_y = -29
 	},
+/obj/structure/bed/padded,
+/obj/effect/landmark/start,
+/obj/item/weapon/bedsheet/purple,
 /turf/simulated/floor/carpet/purple,
 /area/crew_quarters/sleep/bunk)
 "aDx" = (
@@ -18161,6 +18170,9 @@
 /obj/item/device/radio/intercom{
 	pixel_y = 26
 	},
+/obj/structure/sign/poster{
+	pixel_x = -32
+	},
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/sleep/bunk)
 "aEu" = (
@@ -18515,7 +18527,7 @@
 "aFb" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/structure/closet/cabinet,
-/obj/item/toy/plushie/spider,
+/obj/random/plushie,
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/sleep/bunk)
 "aFc" = (
@@ -18957,8 +18969,9 @@
 /turf/simulated/floor/plating,
 /area/crew_quarters/safe_room/seconddeck)
 "aFT" = (
-/obj/structure/sign/poster{
-	pixel_x = -32
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -24
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/sleep/bunk)
@@ -19801,6 +19814,10 @@
 /turf/simulated/floor/carpet/purple,
 /area/chapel/main)
 "aHB" = (
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 24
+	},
 /turf/simulated/floor/carpet/red,
 /area/crew_quarters/sleep/bunk)
 "aHC" = (
@@ -20272,6 +20289,10 @@
 	dir = 4
 	},
 /obj/effect/landmark/start,
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -20
+	},
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/sleep/bunk)
 "aIy" = (
@@ -21816,6 +21837,7 @@
 "aLc" = (
 /obj/machinery/light_switch{
 	dir = 4;
+	on = 1;
 	pixel_x = -23
 	},
 /obj/structure/cable/green{
@@ -22386,7 +22408,7 @@
 /turf/simulated/floor/reinforced/airless,
 /area/space)
 "aMi" = (
-/obj/structure/flora/pottedplant/subterranean,
+/obj/structure/flora/pottedplant/unusual,
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/sleep/bunk)
 "aMk" = (
@@ -22621,10 +22643,13 @@
 /area/maintenance/seconddeck/forestarboard)
 "aMH" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/structure/closet/cabinet,
-/obj/item/toy/plushie/farwa,
 /obj/structure/sign/poster{
 	pixel_y = 32
+	},
+/obj/structure/table/woodentable/walnut,
+/obj/structure/flora/pottedplant/deskleaf{
+	pixel_x = -5;
+	pixel_y = 2
 	},
 /turf/simulated/floor/carpet/purple,
 /area/crew_quarters/sleep/bunk)
@@ -24321,9 +24346,7 @@
 /area/maintenance/seconddeck/forestarboard)
 "aPO" = (
 /obj/structure/table/steel,
-/obj/item/device/flashlight/lamp{
-	on = 0
-	},
+/obj/item/device/flashlight/lamp,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
 "aPP" = (
@@ -25175,12 +25198,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/seconddeck/center)
 "aRx" = (
-/obj/structure/flora/pottedplant/large,
 /obj/effect/floor_decal/techfloor,
 /obj/machinery/camera/network/second_deck{
 	c_tag = "Cryogenic Storage - South Part";
 	dir = 1
 	},
+/obj/structure/flora/pottedplant/aquatic,
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo/south)
 "aRy" = (
@@ -25456,6 +25479,10 @@
 	},
 /obj/structure/sign/poster{
 	pixel_x = -32
+	},
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -20
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/sleep/bunk)
@@ -28910,9 +28937,9 @@
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/sauna)
 "aXV" = (
-/obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/purple,
-/obj/effect/landmark/start,
+/obj/structure/bed/chair/wood/walnut{
+	dir = 8
+	},
 /turf/simulated/floor/carpet/purple,
 /area/crew_quarters/sleep/bunk)
 "aXW" = (

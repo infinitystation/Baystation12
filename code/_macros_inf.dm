@@ -16,6 +16,8 @@
 
 #define any2bool(expression) (!(!(expression)))
 
+#define max1(thing) (max((thing), 1))
+
 #if DM_VERSION < RECOMMENDED_VERSION
 #warn Unsupported compiler version: please update byond or go to beta, otherwise some features won't work.
 /proc/copytext_char(T,Start=1,End=0)

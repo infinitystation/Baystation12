@@ -7,6 +7,8 @@
 	power_cost = 1
 /obj/item/device/flashlight/lamp
 	power_cost = 0.25
+/obj/item/device/flashlight/lamp/lava
+	on = 1
 
 /obj/item/device/flashlight/upgraded
 	cell = /obj/item/weapon/cell/device/high

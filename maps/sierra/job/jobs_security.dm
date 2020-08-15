@@ -36,7 +36,7 @@
 							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/detective
-	title = "Detective"
+	title = "Criminal Investigator"
 	department = "Security"
 	department_flag = SEC
 	total_positions = 2
@@ -47,7 +47,6 @@
 	ideal_character_age = 35
 	skill_points = 14
 	alt_titles = list(
-		"Criminal Investigator",
 		"Forensic Technician"
 		)
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/security/detective
