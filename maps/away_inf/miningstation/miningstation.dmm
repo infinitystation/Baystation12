@@ -4154,7 +4154,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
-/obj/machinery/light/halogen,
+/obj/machinery/light,
 /turf/simulated/floor/tiled/white,
 /area/miningstation/intensive)
 "iV" = (
@@ -4431,7 +4431,7 @@
 /obj/effect/floor_decal/corner/blue{
 	dir = 6
 	},
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 4
 	},
@@ -4709,7 +4709,7 @@
 	dir = 9
 	},
 /obj/structure/closet/body_bag,
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 1
 	},
@@ -5842,7 +5842,7 @@
 /obj/effect/floor_decal/corner/blue{
 	dir = 4
 	},
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 4
 	},
@@ -6459,7 +6459,7 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/blue,
-/obj/machinery/light/halogen,
+/obj/machinery/light,
 /turf/simulated/floor/tiled/white,
 /area/miningstation/intensive)
 "ou" = (
@@ -6700,7 +6700,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
-/obj/machinery/light/halogen,
+/obj/machinery/light,
 /turf/simulated/floor/tiled/white,
 /area/miningstation/physician1)
 "oW" = (

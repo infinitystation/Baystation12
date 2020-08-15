@@ -5960,7 +5960,7 @@
 /turf/simulated/floor,
 /area/tdome/testing/engineering)
 "axU" = (
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor,
@@ -5990,7 +5990,7 @@
 /turf/simulated/floor,
 /area/tdome/testing/engineering/unpowered)
 "axY" = (
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor,
@@ -6154,7 +6154,7 @@
 /turf/simulated/floor/holofloor/concrete,
 /area/holodeck/source_plaza)
 "ayQ" = (
-/obj/machinery/light/halogen,
+/obj/machinery/light,
 /turf/simulated/floor,
 /area/tdome/testing/engineering)
 "ayR" = (
@@ -6162,7 +6162,7 @@
 /turf/simulated/floor,
 /area/tdome/testing/engineering)
 "ayS" = (
-/obj/machinery/light/halogen,
+/obj/machinery/light,
 /turf/simulated/floor,
 /area/tdome/testing/engineering/unpowered)
 "ayU" = (

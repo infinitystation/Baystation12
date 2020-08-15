@@ -155,7 +155,7 @@
 /area/ship/patrol/atmos)
 "as" = (
 /obj/structure/table/standard,
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 1
 	},
@@ -947,7 +947,7 @@
 /turf/space,
 /area/space)
 "du" = (
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 1
 	},

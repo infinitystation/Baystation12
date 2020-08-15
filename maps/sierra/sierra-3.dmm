@@ -37276,7 +37276,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/machinery/flasher{
@@ -37367,7 +37367,7 @@
 	dir = 5
 	},
 /obj/machinery/porta_turret,
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/bluegrid,
@@ -38003,7 +38003,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/light/halogen,
+/obj/machinery/light,
 /obj/machinery/flasher{
 	id_tag = "ai_core";
 	pixel_y = 24
@@ -38961,7 +38961,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 8
 	},
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/machinery/porta_turret,
@@ -39056,7 +39056,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/bluegrid,
@@ -39186,7 +39186,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 8
 	},
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/bluegrid,
