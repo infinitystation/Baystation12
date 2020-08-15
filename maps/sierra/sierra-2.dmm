@@ -654,24 +654,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hydroponics)
 "abr" = (
-/obj/effect/catwalk_plated/white,
-/obj/structure/railing/mapped,
-/obj/structure/disposalpipe/segment{
-	dir = 4
+/obj/structure/noticeboard{
+	dir = 4;
+	pixel_x = -32
 	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/medical/maintenance_equipstorage)
+/turf/simulated/floor/lino,
+/area/bridge/meeting_room)
 "abs" = (
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 1
@@ -692,7 +680,19 @@
 /turf/simulated/floor/reinforced/airless,
 /area/crew_quarters/heads/cobed)
 "abu" = (
-/turf/simulated/floor/tiled/white/monotile,
+/obj/structure/table/rack,
+/obj/item/wheelchair_kit,
+/obj/item/wheelchair_kit,
+/obj/item/weapon/cane,
+/obj/item/weapon/cane,
+/obj/item/weapon/cane,
+/obj/effect/floor_decal/borderfloorwhite,
+/obj/effect/floor_decal/corner/paleblue/border,
+/obj/effect/floor_decal/borderfloorwhite/corner2,
+/obj/effect/floor_decal/corner/paleblue/bordercorner2,
+/obj/machinery/light/spot,
+/obj/item/weapon/storage/box/rxglasses,
+/turf/simulated/floor/tiled/white,
 /area/medical/maintenance_equipstorage)
 "abv" = (
 /obj/machinery/cooker/oven,
@@ -5635,18 +5635,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/heads/office/ce)
 "ajN" = (
-/obj/structure/table/rack,
-/obj/item/wheelchair_kit,
-/obj/item/wheelchair_kit,
-/obj/item/weapon/cane,
-/obj/item/weapon/cane,
-/obj/item/weapon/cane,
-/obj/effect/floor_decal/borderfloorwhite,
-/obj/effect/floor_decal/corner/paleblue/border,
-/obj/effect/floor_decal/borderfloorwhite/corner2,
-/obj/effect/floor_decal/corner/paleblue/bordercorner2,
-/obj/machinery/light/spot,
-/obj/item/weapon/storage/box/rxglasses,
+/obj/structure/ladder/up,
 /turf/simulated/floor/tiled/white,
 /area/medical/maintenance_equipstorage)
 "ajO" = (
@@ -22227,14 +22216,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/atmos)
-"aLR" = (
-/obj/structure/table/rack,
-/obj/random/maintenance,
-/obj/structure/railing/mapped{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/seconddeck/foreport)
 "aLS" = (
 /obj/structure/bed/chair/comfy/brown{
 	dir = 4
@@ -23565,9 +23546,6 @@
 /area/rnd/xenobiology/entry)
 "aOl" = (
 /obj/machinery/papershredder,
-/obj/structure/noticeboard{
-	dir = 1
-	},
 /turf/simulated/floor/lino,
 /area/bridge/meeting_room)
 "aOm" = (
@@ -26724,6 +26702,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
+/obj/effect/landmark/start{
+	name = "Research Director"
+	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/level1)
 "aUm" = (
@@ -29339,7 +29320,6 @@
 	pixel_y = -24
 	},
 /obj/structure/cable,
-/obj/structure/closet/secure_closet/medical2,
 /turf/simulated/floor/tiled/white,
 /area/medical/maintenance_equipstorage)
 "aYU" = (
@@ -29784,7 +29764,6 @@
 /turf/simulated/floor/reinforced/airless,
 /area/space)
 "aZF" = (
-/obj/structure/railing/mapped,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -29898,8 +29877,8 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
 "aZM" = (
-/obj/structure/stairs/west,
-/turf/simulated/floor/tiled/white/monotile,
+/obj/structure/closet/secure_closet/medical2,
+/turf/simulated/floor/tiled/white,
 /area/medical/maintenance_equipstorage)
 "aZN" = (
 /obj/structure/table/steel,
@@ -43359,7 +43338,7 @@ awy
 aof
 aoR
 aPQ
-aQS
+abr
 aOl
 aof
 bja
@@ -46000,7 +45979,7 @@ aDS
 aPC
 aFs
 bgc
-aLR
+aPb
 aEc
 aEc
 aEc
@@ -56060,7 +56039,7 @@ aZJ
 aYJ
 aYO
 aYQ
-abr
+ach
 abu
 abd
 aYK
