@@ -1,0 +1,6 @@
+{
+  "ckey" :            "adro244",
+  "character_name" :  "Bernard Elderich",
+  "item_path" :       "/obj/item/clothing/suit/space/void/pilot/adro",
+  "req_access" :      [ "ACCESS_GUARD" ]
+  }

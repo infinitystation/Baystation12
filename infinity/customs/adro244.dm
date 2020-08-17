@@ -1,3 +1,4 @@
+//	Hephaestus_outfit
 /obj/item/clothing/mask/gas/half/rivalmask
 	name = "thermal cover"
 	desc = "A close-fitting mask with a single tear in the middle."
@@ -61,3 +62,24 @@
 	new /obj/item/clothing/under/rank/security/rivalpants(src)
 	new /obj/item/clothing/gloves/thick/duty/rivalgloves(src)
 	new /obj/item/clothing/shoes/jackboots/heph_boots/rivalboots(src)
+
+//	dEUS VULT
+/obj/item/clothing/head/helmet/space/void/pilot/adro
+	name = "Knight helmet"
+	desc = "This helmet look like part of ancient armor, but this one from Avalon and has hight-teck technologies, wich makes it more easier to wear and support HUDs."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "adro_knight_helmet"
+	item_state = "adro_knight_helmet"
+	item_icons = list(slot_head_str = CUSTOM_ITEM_MOB)
+	trade_blacklisted = TRUE
+
+/obj/item/clothing/suit/space/void/pilot/adro
+	name = "Knight armor"
+	desc = "Personal metall armor with parts of hydraulic mechanism inside, they make this armor easier to wear and support their owner in all situations"
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "adro_knight_armor"
+	item_state = "adro_knight_armor"
+	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB)
+	trade_blacklisted = TRUE
+
+	helmet = /obj/item/clothing/head/helmet/space/void/pilot/adro
