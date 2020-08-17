@@ -7,13 +7,13 @@
 	if(icon_state == "redknight_grammy")
 		to_chat(user, "Тебе нужно его сначала открыть.")
 	else
-		..()
+		. = ..()
 
 /obj/item/music_player/radio/custom_tape/redknighthero/attackby(obj/item/I, mob/user, params)
 	if(icon_state == "redknight_grammy")
 		to_chat(user, "Тебе нужно его сначала открыть.")
 	else
-		..()
+		. = ..()
 
 /obj/item/music_player/radio/custom_tape/redknighthero/verb/open()
 	set name = "Toggle Open"
