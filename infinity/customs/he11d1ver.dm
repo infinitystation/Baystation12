@@ -15,3 +15,7 @@
 	allowed_ckeys = list("helldiver")
 	applies_to_part = list(BP_L_ARM, BP_L_HAND)
 	unavailable_at_fab = 1
+
+	brute_mod = 0.7
+	burn_mod = 0.7
+	speed_mod = 0.18
