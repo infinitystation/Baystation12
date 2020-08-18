@@ -25,9 +25,8 @@
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "technomancer_uniform_obj"
 	item_state = "technomancer_uniform"
-	item_icons = list(slot_w_uniform_str = CUSTOM_ITEM_MOB)
 	worn_state = null
-	body_parts_covered = LOWER_TORSO|LEGS
+	item_icons = list(slot_w_uniform_str = CUSTOM_ITEM_MOB)
 	trade_blacklisted = TRUE
 
 /obj/item/weapon/clothingbag/technomancer

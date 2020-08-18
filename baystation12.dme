@@ -3739,6 +3739,7 @@
 #include "infinity\customs\kosteg_kit.dm"
 #include "infinity\customs\lizard_w_bow.dm"
 #include "infinity\customs\moghes.dm"
+#include "infinity\customs\moodyblues1606.dm"
 #include "infinity\customs\moonmen.dm"
 #include "infinity\customs\os_uniform.dm"
 #include "infinity\customs\pink_guitar.dm"

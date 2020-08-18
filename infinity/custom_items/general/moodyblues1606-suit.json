@@ -1,8 +1,5 @@
 {
   "ckey" :            "Moodyblues1606",
   "character_name" :  "Cassidy Streicher",
-  "item_name" :       "Classical suit",
-  "item_desc" :       "Гладко выглаженные брюки, черный жилет и белая рубашка. И все это дополняет красивый черный галстук.",
-  "item_icon_state" : "casual_uniform",
-  "item_path" :       "/obj/item/clothing/under/rank"
+  "item_path" :       "/obj/item/clothing/under/rank/sivuha"
   }
