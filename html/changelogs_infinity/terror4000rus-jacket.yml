@@ -1,0 +1,4 @@
+author: Terror4000rus
+delete-after: True
+changes:
+  - rscadd: "Во вкладку лодаута с верхней одеждой добавлена private security jacket. Доступна только охранникам-контрактникам. Имеет спрайт куртки агента FSP."

@@ -3454,6 +3454,7 @@
 #include "infinity\code\modules\client\preference_setup\loadout\lists\pda.dm"
 #include "infinity\code\modules\client\preference_setup\loadout\lists\resomi.dm"
 #include "infinity\code\modules\client\preference_setup\loadout\lists\resomi_cloaks.dm"
+#include "infinity\code\modules\client\preference_setup\loadout\lists\suits.dm"
 #include "infinity\code\modules\client\preference_setup\loadout\lists\xenowear.dm"
 #include "infinity\code\modules\clothing\clothing.dm"
 #include "infinity\code\modules\clothing\accessories\accessories_resomi.dm"
