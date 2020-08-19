@@ -26,10 +26,8 @@
 /mob/living/carbon/human/death(gibbed,deathmessage="seizes up and falls limp...", show_dead_message = "You have died.")
 
     //[INF]
-
 	if(zombified)
 		addtimer(CALLBACK(src, .proc/zombie_rejuvenate), 5 MINUTES)
-
     //[/INF]
 
 	if(stat == DEAD) return
