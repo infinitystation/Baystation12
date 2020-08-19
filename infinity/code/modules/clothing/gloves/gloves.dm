@@ -39,8 +39,8 @@
 	desc = "A wristwatch. This one is silver and EMP-resistance."
 	icon = 'infinity/icons/obj/clothing/obj_hands.dmi'
 	item_icons = list(slot_gloves_str = 'infinity/icons/mob/onmob/onmob_hands.dmi')
-	icon_state = "watch"
-	item_state = "watch"
+	icon_state = "watch_black"
+	item_state = "watch_black"
 
 /obj/item/clothing/gloves/wristwatch/gold
 	name = "watch"
