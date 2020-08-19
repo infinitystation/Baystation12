@@ -69,5 +69,4 @@
 		target.adjustBruteLoss(50)
 		if(target.getBruteLoss() < -target.maxHealth)
 			target.gib()
-		src.adjustBruteLoss(-50) //INF, was -25
-		src.adjustFireLoss(-50) //INF, was -25
+		adjustBruteLoss(-50) //inf, was: src.adjustBruteLoss(-25)
