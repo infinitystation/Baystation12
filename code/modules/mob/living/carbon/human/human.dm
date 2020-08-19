@@ -1656,10 +1656,8 @@
 /mob/living/carbon/human/need_breathe()
 
 	//[INF]
-
 	if(zombified)
 		return 0
-
 	//[/INF]
 
 	if(!(mNobreath in mutations) && species.breathing_organ && should_have_organ(species.breathing_organ))
