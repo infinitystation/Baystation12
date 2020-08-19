@@ -66,8 +66,8 @@
 	if(do_mob(src, target, 5 SECONDS))
 		to_chat(target,"<span class='danger'>\The [src] scrapes your flesh from your bones!</span>")
 		to_chat(src,"<span class='danger'>You feed hungrily off \the [target]'s flesh.</span>")
-		//INF target.adjustBruteLoss(50)
-		//INF if(target.getBruteLoss() < -target.maxHealth)
-		target.gib()
+		target.adjustBruteLoss(50)
+		if(target.getBruteLoss() < -target.maxHealth)
+			target.gib()
 		src.adjustBruteLoss(-50) //INF, was -25
 		src.adjustFireLoss(-50) //INF, was -25
