@@ -6,7 +6,7 @@
 									   /datum/job/roboticist, /datum/job/chemist, /datum/job/bartender),
 		/datum/species/nabber = list(/datum/job/ai, /datum/job/cyborg, /datum/job/janitor, /datum/job/scientist_assistant,\
 									 /datum/job/chemist, /datum/job/roboticist, /datum/job/cargo_assistant, /datum/job/chef,\
-									 /datum/job/engineer_trainee, /datum/job/doctor_trainee, /datum/job/bartender),
+									 /datum/job/engineer_trainee, /datum/job/doctor_trainee, /datum/job/bartender, /datum/job/engineer),
 		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/merchant_trainee),
 		/datum/species/human/mule	= list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/merchant_trainee)
 	)
