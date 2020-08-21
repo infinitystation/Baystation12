@@ -23,16 +23,8 @@
 	name = "Technomancer's jumpsuit"
 	desc = "Этот комбинезон - мечта инженеров, которые хоть как-то ознакомлены с культом поклонения Богу-Машине. По легендам, комбинезоны последователей этой веры максимально оптимизированы для работы вместе с техномантскими скафандрами."
 	icon = CUSTOM_ITEM_OBJ
-	icon_state = "technomancer_uniform_obj"
+	icon_state = "technomancer_uniform"
 	item_state = "technomancer_uniform"
 	worn_state = null
 	item_icons = list(slot_w_uniform_str = CUSTOM_ITEM_MOB)
 	trade_blacklisted = TRUE
-
-/obj/item/weapon/clothingbag/technomancer
-	name = "outfit delivery package"
-	desc = "A utility bag stamped with a Technomancer logo."
-
-/obj/item/weapon/clothingbag/technomancer/New()
-	..()
-	new /obj/item/clothing/suit/space/void/sivuha(src)

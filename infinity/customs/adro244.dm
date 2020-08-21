@@ -77,8 +77,8 @@
 	name = "Knight armor"
 	desc = "Personal metall armor with parts of hydraulic mechanism inside, they make this armor easier to wear and support their owner in all situations"
 	icon = CUSTOM_ITEM_OBJ
-	icon_state = "adro_knight_armor"
-	item_state = "adro_knight_armor"
+	icon_state = "adro_knight_suit"
+	item_state = "adro_knight_suit"
 	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB)
 	trade_blacklisted = TRUE
 

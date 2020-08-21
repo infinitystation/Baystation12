@@ -12,7 +12,7 @@
 	name = "Classical suit"
 	desc = "Гладко выглаженные брюки, черный жилет и белая рубашка. И все это дополняет красивый черный галстук."
 	icon = CUSTOM_ITEM_OBJ
-	icon_state = "casual_uniform_obj"
+	icon_state = "casual_uniform"
 	item_state = "casual_uniform"
 	worn_state = null
 	item_icons = list(slot_w_uniform_str = CUSTOM_ITEM_MOB)
