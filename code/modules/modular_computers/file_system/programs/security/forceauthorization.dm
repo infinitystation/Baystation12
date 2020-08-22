@@ -62,4 +62,5 @@
 		var/do_authorize = text2num(href_list["authorize"])
 		var/mode = text2num(href_list["mode"])
 		return isnum(do_authorize) && isnum(mode) && G && G.authorize(mode, do_authorize, FindNameFromID(usr)) //inf, was: return isnum(do_authorize) && isnum(mode) && G && G.authorize(mode, do_authorize, usr.name
+
 	return FALSE
