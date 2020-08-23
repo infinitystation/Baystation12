@@ -85,10 +85,6 @@
 
 			act_word.affect(A, multiplier, src, "Mass" in additional_affects)
 
-		var/datum/language/L = all_languages[LANGUAGE_CULT]
-		if(L in languages && !("Quiet" in additional_affects))
-			say(act_word.word, L)
-
 	if(!("Long" in additional_affects))
 		cutted_spells.Remove(choice)
 
@@ -98,6 +94,15 @@
 		adjustFireLoss(pain_mod)
 		return
 
+	var/datum/language/L = all_languages[LANGUAGE_CULT]
+
 	apply_damage(pain_mod * 2, BRUTE, O)
 	apply_damage(pain_mod, BURN, O)
 	remove_blood_simple(pain_mod * 2)
+
+	for(var/datum/active_effect/cult_tattoo/silence/tattoo in active_effects)
+		if(istype(tattoo))
+			return
+
+	if(!("Quiet" in additional_affects))
+		say(choice, L)

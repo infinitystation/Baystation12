@@ -51,8 +51,8 @@
 			L.Weaken(5)
 			break_spear(T)
 	else
-		. = ..()
 		recall()
+		. = ..()
 
 /obj/item/weapon/melee/cult_spear/proc/break_spear(turf/T)
 	if(src)
@@ -93,6 +93,8 @@
 
 /obj/item/weapon/melee/cult_spear/pickup(mob/living/user as mob)
 	if(iscultist(user))
+		if(!owner)
+			owner = user
 		if(owner != user)
 			to_chat(user,"<span class='cult'>You can hold the spear, but you feel how it weakens without being nearby it's real owner...</span>")
 			force = 10 //Becomes really weak, you should not use other's spears

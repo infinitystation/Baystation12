@@ -13,6 +13,10 @@
 
 /datum/ritual/necro_max/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
+
+	if(!.)
+		return
+
 	var/mob/living/carbon/human/target = null
 
 	for(var/mob/living/carbon/human/M in get_turf(src))
@@ -22,6 +26,7 @@
 
 	if(!target)
 		to_chat(user, SPAN_WARNING("You need somebody on the rune to revive!"))
+		performing = FALSE
 		return
 
 	mass_incantation(ritual_rune, "Pasnar val'keriam usinar. Savrae ines amutan. Yam'toth remium il'tarat!")
@@ -42,6 +47,8 @@
 			organ.max_damage *= 1.2 //Not as cool as bloodbond, but still.
 			organ.min_broken_damage = Floor(organ.max_damage * 0.75)
 
+	performing = FALSE
+
 /datum/ritual/wall_mega
 	name = "Shieldcasting Ritual"
 	desc = "This ritual will create an impassible sphere around the rune."
@@ -55,6 +62,9 @@
 
 /datum/ritual/wall_mega/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
+
+	if(!.)
+		return
 
 	var/list/ignore_turfs = list()
 
@@ -72,6 +82,7 @@
 		wall = new(T, "#ffffff", ritual_rune)
 
 	mass_incantation(ritual_rune, "Khari'd! Eske'te tannin!")
+	performing = FALSE
 
 /datum/ritual/weapon_bloody
 	name = "Summon Bloody Bastard Ritual"
@@ -84,10 +95,15 @@
 
 	ritual_flags = NEEDS_KNIFE | NEEDS_FLOOR | NEEDS_ARMOR | RITUAL_BLOODY
 
-/datum/ritual/weapon/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
+/datum/ritual/weapon_bloody/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
+
+	if(!.)
+		return
+
 	mass_incantation(ritual_rune, "H'ayepaen ja'enemrahd!")
 	user.put_in_hands(new /obj/item/weapon/melee/cultbastard(user))
+	performing = FALSE
 
 
 /datum/ritual/hellhunter
@@ -104,8 +120,13 @@
 
 /datum/ritual/hellhunter/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
+
+	if(!.)
+		return
+
 	mass_incantation(ritual_rune, "Wa'harjare naje'yakanja!")
 	new /obj/item/clothing/glasses/tacgoggles/cult(get_turf(ritual_rune))
+	performing = FALSE
 
 
 /datum/ritual/dark_phoenix
@@ -123,6 +144,10 @@
 
 /datum/ritual/dark_phoenix/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
+
+	if(!.)
+		return
+
 
 	var/obj/item/cursed
 
@@ -142,6 +167,7 @@
 
 	if(!cursing)
 		ritual_rune.visible_message(SPAN_WARNING("[ritual_rune] starts glowing red, but fails to activate without an item that victim touched."))
+		performing = FALSE
 		return
 
 	while(cursing.stat != DEAD && check_cultists(ritual_rune))
@@ -149,3 +175,5 @@
 		cursing.fire_stacks = FIRE_MAX_STACKS //T4 rune, what the fuck ya wanted
 		cursing.IgniteMob()
 		sleep(20 * rand(1, 2.5))
+
+	performing = FALSE

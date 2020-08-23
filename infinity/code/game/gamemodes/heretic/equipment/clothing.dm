@@ -3,15 +3,17 @@
 	desc = "Blood-soaked robes infused with dark magic; allows the user to move at inhuman speeds, but at the cost of increased damage."
 	armor = list("melee" = -45, "bullet" = -45, "laser" = -45,"energy" = -45, "bomb" = -45, "bio" = -45, "rad" = -45)
 	hoodtype = /obj/item/clothing/head/culthood/berserkerhood
+	color = "#c94b4b"
 
-/obj/item/clothing/suit/hooded/cultrobes/berserker/New()
-	..()
+/obj/item/clothing/suit/storage/hooded/cultrobes/berserker/New()
+	. = ..()
 	slowdown_per_slot[slot_wear_suit] = -1
 
 /obj/item/clothing/head/culthood/berserkerhood
 	name = "flagellant's hood"
 	desc = "Blood-soaked hood infused with dark magic."
 	armor = list("melee" = -45, "bullet" = -45, "laser" = -45,"energy" = -45, "bomb" = -45, "bio" = -45, "rad" = -45)
+	color = "#c94b4b"
 
 /obj/item/clothing/suit/storage/hooded/cultrobes/cult_shield
 	name = "empowered cultist armor"

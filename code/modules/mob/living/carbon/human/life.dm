@@ -1124,6 +1124,19 @@
 	if(burn_temperature < 1)
 		return
 
+	//[INF]
+
+	var/effect_nofire = FALSE
+
+	for(var/datum/active_effect/effect in active_effects)
+		if(effect.handle_fire())
+			effect_nofire = TRUE
+
+	if(effect_nofire)
+		return 0
+
+	//[/INF]
+
 	for(var/obj/item/organ/external/E in organs)
 		if(!(E.body_part & protected_limbs) && prob(20))
 			E.take_external_damage(burn = round(species_heat_mod * log(10, (burn_temperature + 10)), 0.1), used_weapon = "fire")

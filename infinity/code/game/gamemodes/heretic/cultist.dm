@@ -30,12 +30,15 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 
 	var/allow_narsie = 1
 	var/powerless = 0
-	var/chorus = 0 //INF
-	var/list/chosens = list() //INF
+	var/chorus = 0
+	var/list/chosens = list()
+	var/cult_level = 1
 	var/last_chosen_time = 0
-	var/reality_torn = 0 //INF
+	var/reality_torn = 0
 	var/datum/mind/sacrifice_target
 	var/list/obj/effect/rune/teleport/teleport_runes = list()
+	var/list/bloodstones = list()
+	var/list/spires = list()
 	var/list/rune_strokes = list()
 	var/list/sacrificed = list()
 	var/cult_rating = 0
@@ -107,6 +110,8 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 		if(player.current)
 			if(ishuman(player.current))
 				var/mob/living/carbon/human/H = player.current
+				if(istype(H.species, /datum/species/human/cult))
+					return 1
 				if(H.isSynthetic())
 					return 0
 				if(H.species.species_flags & SPECIES_FLAG_NO_SCAN)
@@ -160,6 +165,7 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 
 /datum/antagonist/cultist/proc/update_cult_magic(var/list/to_update)
 	if(CULT_RUNES_1 in to_update)
+		cult_level = 2
 		for(var/datum/mind/H in GLOB.cult.current_antagonists)
 			if(H.current)
 				to_chat(H.current, FONT_LARGE("<span class='cult'>Act II.</span>"))
@@ -167,6 +173,7 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 				add_cult_magic(H.current)
 
 	if(CULT_RUNES_2 in to_update)
+		cult_level = 3
 		for(var/datum/mind/H in GLOB.cult.current_antagonists)
 			if(H.current)
 				to_chat(H.current, FONT_LARGE("<span class='cult'>Act III.</span>"))
@@ -174,13 +181,14 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 				add_cult_magic(H.current)
 
 	if(CULT_RUNES_3 in to_update)
+		cult_level = 4
 		for(var/datum/mind/H in GLOB.cult.current_antagonists)
 			if(H.current)
 				to_chat(H.current, FONT_LARGE("<span class='cult'>Act IV.</span>"))
 				to_chat(H.current, "<span class='cult'>The veil is torn apart and now you are almost near your target.</span>")
 				add_cult_magic(H.current)
 
-	if(CULT_RUNES_4 in to_update)
+	if(CULT_RUNES_4 in to_update) //It has its own tier but eh, it basically is just needed for narnar runes to work
 		for(var/datum/mind/H in GLOB.cult.current_antagonists)
 			if(H.current)
 				to_chat(H.current, FONT_LARGE("<span class='cult'>Act V.</span>"))
@@ -190,6 +198,9 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 	if((CULT_GHOSTS_1 in to_update) || (CULT_GHOSTS_2 in to_update) || (CULT_GHOSTS_3 in to_update) || (CULT_GHOSTS_4 in to_update))
 		for(var/mob/observer/ghost/D in SSmobs.mob_list)
 			add_ghost_magic(D)
+
+	for(var/obj/structure/cult/spire/spire in spires)
+		spire.update_icon()
 
 /datum/antagonist/cultist/proc/offer_uncult(var/mob/M)
 	if(!iscultist(M) || !M.mind)
@@ -231,11 +242,19 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 	set category = "Cult Magic"
 	set name = "Communicate"
 
-	if(incapacitated() && !GLOB.cult.chorus)
+	var/chorus = GLOB.cult.chorus
+
+	if(ishuman(src))
+		var/mob/living/carbon/human/H = src
+		for(var/datum/active_effect/cult_tattoo/chorus/tattoo in H.active_effects)
+			if(istype(tattoo))
+				chorus = TRUE
+
+	if(incapacitated() && !chorus)
 		to_chat(src, "<span class='warning'>Not when you are incapacitated.</span>")
 		return
 
-	if(!GLOB.cult.chorus)
+	if(!chorus)
 		message_cult_communicate()
 		remove_blood_simple(3)
 
@@ -243,7 +262,7 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 	if(!input)
 		return
 
-	if(!GLOB.cult.chorus)
+	if(!chorus)
 		whisper("[input]")
 
 	input = sanitize(input)

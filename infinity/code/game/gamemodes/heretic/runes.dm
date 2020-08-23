@@ -56,8 +56,8 @@ var/list/TierNarNarRunes = list(
 	if(istype(get_active_hand(), /obj/item/weapon/book/tome) || istype(get_inactive_hand(), /obj/item/weapon/book/tome))
 		has_tome = 1
 
-	if(!((istype(get_active_hand(), /obj/item/weapon/material/knife) || istype(get_inactive_hand(), /obj/item/weapon/material/knife)) || (istype(get_active_hand(), /obj/item/weapon/melee/cultblade/dagger) || istype(get_inactive_hand(), /obj/item/weapon/melee/cultblade/dagger))))
-		to_chat(src, "<span class='warning'>You can't manage to slise open your finger without a knife or ritual dagger!</span>")
+	if(!(get_active_hand().sharp || get_inactive_hand().sharp))
+		to_chat(src, "<span class='warning'>You can't manage to slise open your finger without anything sharp!</span>")
 		return
 
 	else if(tome_required && mob_needs_tome())
@@ -119,10 +119,26 @@ var/list/TierNarNarRunes = list(
 			self += ", having to cut your finger two more times before you make it resemble the pattern in your memory. It still looks a little off."
 			timer += 80
 			damage *= 2
+
+	if(ishuman(src))
+		var/mob/living/carbon/human/H = src
+		for(var/datum/active_effect/cult_tattoo/fast/tattoo in H.active_effects)
+			if(istype(tattoo))
+				timer *= 0.5
+				break
+
 	visible_message("<span class='warning'>\The [src] slices open a finger and begins to chant and paint symbols on the floor.</span>", "<span class='notice'>[self]</span>", "You hear chanting.")
 
 	if(do_after(src, timer))
-		remove_blood_simple(cost * damage)
+		var/bloodstone_compensated = 0
+		for(var/obj/structure/cult/bloodstone/stone in GLOB.cult.bloodstones)
+			var/old_comp = bloodstone_compensated
+			bloodstone_compensated = min(cost * damage, bloodstone_compensated + stone.blood_stored)
+			stone.blood_stored -= bloodstone_compensated - old_comp
+			if(bloodstone_compensated == cost * damage)
+				break
+		if(bloodstone_compensated < cost * damage)
+			remove_blood_simple(cost * damage - bloodstone_compensated)
 		if(locate(/obj/effect/rune) in T)
 			return
 		var/obj/effect/rune/R = new rune(T, get_rune_color(), get_blood_name())
@@ -164,6 +180,9 @@ var/list/TierNarNarRunes = list(
 	return 0
 
 /mob/living/carbon/human/mob_needs_tome()
+	for(var/datum/active_effect/cult_tattoo/memorise/tattoo in active_effects)
+		if(istype(tattoo))
+			return 0
 	return 1
 
 /mob/proc/get_rune_color()

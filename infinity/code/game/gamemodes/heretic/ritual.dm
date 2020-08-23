@@ -13,7 +13,6 @@
 	var/name = "Buggy Ritual"
 	var/desc = "Summons an admin to ask you how you reached this shit. Report this!"
 
-	var/rune_type
 	var/requirments = list()
 	var/ritual_flags = NEEDS_KNIFE
 
@@ -22,7 +21,15 @@
 
 	var/noghosts = 0
 
+	var/performing = FALSE
+
 /datum/ritual/proc/speak_incantation(var/mob/living/user, var/incantation)
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		for(var/datum/active_effect/cult_tattoo/silence/tattoo in H.active_effects)
+			if(istype(tattoo))
+				return
+
 	var/datum/language/L = all_languages[LANGUAGE_CULT]
 	if(incantation && (L in user.languages))
 		user.say(incantation, L)
@@ -45,17 +52,26 @@
 	return cultists
 
 /datum/ritual/proc/mass_incantation(var/obj/effect/rune/ritual_rune, var/incantation)
-	for(var/mob/cultist in orange(ritual_rune, ritual_radius))
+	for(var/mob/cultist in range(ritual_radius, get_turf(ritual_rune)))
 		if(iscultist(cultist))
 			speak_incantation(cultist, incantation)
 
-/datum/ritual/proc/cast(var/obj/effect/rune/ritual_rune, var/mob/user)
+/datum/ritual/proc/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
+
+	if(performing)
+		to_chat(user, SPAN_WARNING("Somebody is already performing a ritual on this rune."))
+		return
+
 	var/has_knife = 0
 	var/has_tome = 0
 	var/has_robes = 0
 	var/cult_ground = 0
 
-	mass_incantation("Da gla'rar nao'reda!")
+	performing = TRUE
+
+	sleep(15)
+
+	mass_incantation(ritual_rune, "Da gla'rar nao'reda!")
 
 	if(istype(user.get_active_hand(), /obj/item/weapon/material/knife) || istype(user.get_inactive_hand(), /obj/item/weapon/material/knife))
 		has_knife = 1
@@ -66,56 +82,69 @@
 	if(istype(user.get_equipped_item(slot_head), /obj/item/clothing/head/culthood) && istype(user.get_equipped_item(slot_wear_suit), /obj/item/clothing/suit/storage/hooded/cultrobes) && istype(user.get_equipped_item(slot_shoes), /obj/item/clothing/shoes/cult))  //INF was /obj/item/clothing/suit/cultrobes
 		has_robes = 1
 
-	if(!istype(ritual_rune, rune_type))
-		return 0
-
 	var/turf/T = get_turf(ritual_rune)
 	if(T.holy)
-		to_chat(src, SPAN_WARNING("This place is blessed, you may not perform rituals on it - defile it first."))
+		to_chat(user, SPAN_WARNING("This place is blessed, you may not perform rituals on it - defile it first."))
+		performing = FALSE
 		return
+
 	if(!istype(T, /turf/simulated))
 		to_chat(src, SPAN_WARNING("You need more space to perform a ritual here."))
+		performing = FALSE
 		return
+
 	if(T.icon_state == "cult" || T.icon_state == "cult-narsie")
 		cult_ground = 1
 
 	if(ritual_flags & NEEDS_KNIFE && !has_knife)
 		to_chat(user, SPAN_WARNING("You can't perform this ritual without a knife!"))
+		performing = FALSE
 		return
 
 	if(ritual_flags & NEEDS_BOOK && !has_tome)
 		to_chat(user, SPAN_WARNING("The ritual is too complex to perform it without a tome!"))
+		performing = FALSE
 		return
 
-	mass_incantation("Ka'anahe ra jab'a'rate!")
+	sleep(15)
+
+	mass_incantation(ritual_rune, "Ka'anahe ra jab'a'rate!")
 
 	if(ritual_flags & NEEDS_ARMOR && !has_robes)
 		to_chat(user, SPAN_WARNING("You can't manage to perform this ritual without a propper set of clothing!"))
+		performing = FALSE
 		return
 
 	if(ritual_flags & NEEDS_FLOOR && !cult_ground)
 		to_chat(user, SPAN_WARNING("Your connection to this world is too strong on non-defiled floor!"))
+		performing = FALSE
 		return
 
 	for(var/obj in requirments)
 		if(!locate(obj) in get_turf(ritual_rune))
-			to_chat(user, SPAN_WARNING("You need [obj] on the rune to perform this ritual!"))
+			var/atom/ay = new obj(ritual_rune)
+			to_chat(user, SPAN_WARNING("You need [ay] on the rune to perform this ritual!"))
+			qdel(ay)
+			performing = FALSE
 			return
 
 	for(var/obj in requirments)
 		if(requirments[obj] > 1)
 			var/list/listing = locate(obj) in get_turf(ritual_rune)
 			if(listing.len < requirments[obj])
-				to_chat(user, SPAN_WARNING("You need at least [requirments[obj]] [obj] on the rune to perform this ritual!"))
+				var/atom/ay = new obj(ritual_rune)
+				to_chat(user, SPAN_WARNING("You need at least [requirments[obj]] [ay] on the rune to perform this ritual!"))
+				performing = FALSE
+				qdel(ay)
 				return
 
 
-	sleep(5)
+	sleep(15)
 
 	if(!check_cultists(ritual_rune))
 		return
 
-	mass_incantation("Ya za'nere da per'ene!")
+	mass_incantation(ritual_rune, "Ya za'nere da per'ene!")
 
 	for(var/obj in requirments)
 		if(requirments[obj])
@@ -128,8 +157,9 @@
 			var/mob/living/carbon/human/H = user
 			H.drip(5, get_turf(ritual_rune))
 			H.visible_message(SPAN_WARNING("[H] cuts his finger and lets some blood out!"))
-			sleep(5)
+			sleep(15)
 			if(!check_cultists(ritual_rune))
+				performing = FALSE
 				return
 
 	if(ritual_flags & RITUAL_VERY_BLOODY)
@@ -138,9 +168,14 @@
 			for(var/i = 1 to 3)
 				H.drip(5, get_turf(ritual_rune))
 			H.visible_message(SPAN_WARNING("[H] cuts his wrist and blood sprays from the cut!"))
-			sleep(5)
+			sleep(15)
 			if(!check_cultists(ritual_rune))
+				performing = FALSE
 				return
+
+	sleep(15)
+
+	return 1
 
 
 /mob/living/carbon/human/proc/zombify_cult()

@@ -12,6 +12,9 @@
 /datum/ritual/armor/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
 
+	if(!.)
+		return
+
 	mass_incantation(ritual_rune, "Ta'gh fara'qha fel d'amar det!")
 
 	var/obj/O = user.get_equipped_item(slot_wear_suit)
@@ -34,6 +37,7 @@
 		user.equip_to_slot_or_del(C, slot_back)
 
 	user.update_icons()
+	performing = FALSE
 
 /datum/ritual/cultistshift
 	name = "Bloody Call Ritual"
@@ -46,6 +50,9 @@
 
 /datum/ritual/cultistshift/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
+
+	if(!.)
+		return
 
 	var/list/cultists = list()
 	for(var/datum/mind/M in GLOB.cult.current_antagonists)
@@ -65,6 +72,7 @@
 
 	var/obj/effect/temporary/effect2 = new(get_turf(ritual_rune), 8, 'infinity/icons/effects/effects.dmi', "cultin")
 	effect2.dir = cultist.dir
+	performing = FALSE
 
 /datum/ritual/spiritrealm
 	name = "Spirit Realm Ritual"
@@ -81,6 +89,9 @@
 /datum/ritual/spiritrealm/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
 
+	if(!.)
+		return
+
 	var/mob/observer/ghost/ghost
 	for(var/mob/observer/ghost/O in range(get_turf(ritual_rune), 1))
 		if(!O.client)
@@ -91,6 +102,7 @@
 		break
 	if(!ghost)
 		ritual_rune.visible_message(SPAN_WARNING("The rune fizzles uselessly."))
+		performing = FALSE
 		return
 
 	var/mob/living/carbon/human/G = new(get_turf(ritual_rune))
@@ -118,10 +130,11 @@
 	to_chat(G, "<span class='cult itallic'>You are a dark spirit, called by Nar'Sie cult. You must help the cult at all costs!</span>")
 
 	while(get_turf(user) == get_turf(ritual_rune))
-		user.take_overall_damage(0, 0.5)
+		user.take_overall_damage(0, 0.25)
 		sleep(1)
 
 	G.dust()
+	performing = FALSE
 
 /datum/ritual/necro_basic
 	name = "Imperfect Ritual"
@@ -138,6 +151,9 @@
 /datum/ritual/necro_basic/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
 
+	if(!.)
+		return
+
 	var/mob/living/carbon/human/target = null
 	for(var/mob/living/carbon/human/M in get_turf(src))
 		if(M.stat == DEAD)
@@ -146,6 +162,7 @@
 
 	if(!target)
 		to_chat(user, SPAN_WARNING("You need somebody on the rune to revive!"))
+		performing = FALSE
 		return
 
 	mass_incantation(ritual_rune, "Dedo ol'btoh! Ah'sau re'haba!")
@@ -153,6 +170,7 @@
 	target.zombify_cult()
 
 	GLOB.cult.add_antagonist(target.mind, ignore_role = 1, do_not_equip = 1)
+	performing = FALSE
 
 
 
@@ -170,6 +188,9 @@
 /datum/ritual/blooddrain/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
 
+	if(!.)
+		return
+
 	var/mob/living/carbon/human/target = null
 	for(var/mob/living/carbon/human/M in get_turf(src))
 		if(!iscultist(M) && M.stat != DEAD)
@@ -178,6 +199,7 @@
 
 	if(!target)
 		to_chat(user, SPAN_WARNING("You need somebody on the rune to convert!"))
+		performing = FALSE
 		return
 
 	mass_incantation(ritual_rune, "Wa'awaue ha raha'ja!")
@@ -188,14 +210,17 @@
 	while(target.vessel.has_reagent(/datum/reagent/blood, speed))
 		if(!target.vessel.has_reagent(/datum/reagent/blood, speed))
 			to_chat(user, "<span class='warning'>This body has no blood in it.</span>")
+			performing = FALSE
 			return
 
 		target.vessel.remove_reagent(/datum/reagent/blood, speed)
-		mass_incantation("Yu'gular faras desdae. Havas mithum javara. Umathar uf'kal thenar!")
+		mass_incantation(ritual_rune, "Yu'gular faras desdae. Havas mithum javara. Umathar uf'kal thenar!")
 		user.visible_message("<span class='warning'>Blood flows from \the [src] into \the [user]!</span>", "<span class='cult'>The blood starts flowing from \the [src] into your frail mortal body. [capitalize(english_list(heal_user(user, speed), nothing_text = "you feel no different"))].</span>", "You hear liquid flow.")
 
 		speed = min(speed + 1, 20)
 		sleep(3)
+
+	performing = FALSE
 
 /datum/ritual/blooddrain/proc/heal_user(var/mob/living/carbon/human/user, var/speed = 1)
 	if(!istype(user))
@@ -277,6 +302,10 @@
 
 /datum/ritual/curse_pain/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
+
+	if(!.)
+		return
+
 	var/obj/item/cursed
 
 	for(var/obj/item/curse in get_turf(ritual_rune))
@@ -295,12 +324,14 @@
 
 	if(!cursing)
 		ritual_rune.visible_message(SPAN_WARNING("[ritual_rune] starts glowing red, but fails to activate without an item that victim touched."))
+		performing = FALSE
 		return
 
 	var/datum/active_effect/mirror_curse/mirror_curse = new()
 	mirror_curse.add_to_human(cursing)
 
-	mass_incantation("Ha'yahaje ra'wayanarar!")
+	mass_incantation(ritual_rune, "Ha'yahaje ra'wayanarar!")
+	performing = FALSE
 
 /datum/ritual/weapon
 	name = "Summon Weapon ritual"
@@ -314,8 +345,13 @@
 
 /datum/ritual/weapon/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
+
+	if(!.)
+		return
+
 	mass_incantation(ritual_rune, "N'ath reth sh'yro eth d'raggathnor!")
 	user.put_in_hands(new /obj/item/weapon/melee/cultblade(user))
+	performing = FALSE
 
 /datum/ritual/shadowstone
 	name = "Shadowstone ritual"
@@ -330,5 +366,10 @@
 
 /datum/ritual/shadowstone/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
-	mass_incantation("V'hajera re'thanara!")
+
+	if(!.)
+		return
+
+	mass_incantation(ritual_rune, "V'hajera re'thanara!")
 	new /obj/item/device/flashlight/flashdark/stone(get_turf(ritual_rune))
+	performing = FALSE

@@ -13,6 +13,9 @@
 /datum/ritual/massshift/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
 
+	if(!.)
+		return
+
 	for(var/datum/mind/M in GLOB.cult.current_antagonists)
 		if(M.current && M.current.stat != DEAD)
 			mass_incantation(ritual_rune, "Eha'wajae nerkaeh ja'raree!")
@@ -29,6 +32,8 @@
 			effect2.dir = M.current.dir
 			sleep(max(1, 7 - check_cultists(ritual_rune)))
 
+	performing = FALSE
+
 /datum/ritual/god_eye
 	name = "Eye of God"
 	desc = "This eye allows you to see anything, that your cultists can see!"
@@ -44,9 +49,14 @@
 
 /datum/ritual/god_eye/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
+
+	if(!.)
+		return
+
 	mass_incantation(ritual_rune, "Ja'opar ha'veha yu're!")
 
 	new /obj/item/clothing/glasses/god_eye(get_turf(ritual_rune))
+	performing = FALSE
 
 /datum/ritual/see_ghosts
 	name = "Vision of the Undead"
@@ -63,8 +73,13 @@
 
 /datum/ritual/see_ghosts/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
+
+	if(!.)
+		return
+
 	mass_incantation(ritual_rune, "Veya'hebe haurat'ere!")
 	user.see_invisible = SEE_INVISIBLE_CULT
+	performing = FALSE
 
 /datum/ritual/bloody_bond
 	name = "Blood Bond Ritual"
@@ -80,10 +95,14 @@
 
 /datum/ritual/bloody_bond/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
+
+	if(!.)
+		return
+
 	var/list/bonds = list()
 	for(var/mob/living/carbon/human/cultist in orange(ritual_rune, ritual_radius))
 		if(iscultist(cultist))
-			var/choice = alert("Would you like to bond your life with others on this rune?",,"Yes","No")
+			var/choice = alert(cultist, "Would you like to bond your life with others on this rune?",,"Yes","No")
 			if(choice == "Yes")
 				bonds.Add(cultist)
 				speak_incantation(cultist, "Ahe'ohaja ware'opa!")
@@ -100,6 +119,8 @@
 				organ.max_damage *= 1.5
 				organ.min_broken_damage = Floor(organ.max_damage * 0.75)
 
+	performing = FALSE
+
 /datum/ritual/blood_boil
 	name = "Blood Boil Ritual"
 	desc = "This ritual will boil the blood of your enemies!"
@@ -113,6 +134,9 @@
 
 /datum/ritual/blood_boil/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
+
+	if(!.)
+		return
 
 	mass_incantation(ritual_rune, "Dedo ol'btoh!")
 
@@ -137,6 +161,8 @@
 		sleep(10)
 		mass_incantation(ritual_rune, "Ko'eha va'epea!")
 
+	performing = FALSE
+
 /datum/ritual/necro_advanced
 	name = "Revival Ritual"
 	desc = "This ritual can raise dead. It looks almost perfect, but you think you can do something with mortal form..."
@@ -152,6 +178,10 @@
 
 /datum/ritual/necro_advanced/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
+
+	if(!.)
+		return
+
 	var/mob/living/carbon/human/target = null
 
 	for(var/mob/living/carbon/human/M in get_turf(src))
@@ -161,6 +191,7 @@
 
 	if(!target)
 		to_chat(user, SPAN_WARNING("You need somebody on the rune to revive!"))
+		performing = FALSE
 		return
 
 	mass_incantation(ritual_rune, "Pasnar val'keriam usinar. Savrae ines amutan. Yam'toth remium il'tarat!")
@@ -170,6 +201,7 @@
 	GLOB.cult.add_antagonist(target.mind, ignore_role = 1, do_not_equip = 1)
 
 	target.visible_message("<span class='warning'>\The [target]'s eyes glow with a faint red as \he stands up, slowly starting to breathe again.</span>", "<span class='warning'>Life... I'm alive again...</span>", "You hear liquid flow.")
+	performing = FALSE
 
 /datum/ritual/dark_chorus
 	name = "Dark Chorus"
@@ -183,6 +215,10 @@
 
 /datum/ritual/dark_chorus/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
+
+	if(!.)
+		return
+
 	mass_incantation(ritual_rune, "Ha'taye raba'pehe! Ja'uayhrm nauhda! Waj'aueh ahyue!")
 
 	GLOB.cult.chorus = 1
@@ -191,21 +227,7 @@
 		if(H.current)
 			to_chat(H.current, "<span class='cult italic'>You feel your mind being shifted somewhere and connected to the Nar'Sie, Geometer of Blood! Now communicating with your cult will be much, much easier!</span>")
 
-/datum/ritual/weapon
-	name = "Summon Weapon Ritual"
-	desc = "This ritual can summon a cult blade, capable of killing your enemies easily."
-
-	requirments = list(/obj/effect/decal/cleanable/blood = 1,
-					   /obj/item/weapon/material/knife = 1)
-
-	required_cultists = 1
-
-	ritual_flags = NEEDS_BOOK | NEEDS_FLOOR | NEEDS_ARMOR
-
-/datum/ritual/weapon/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
-	. = ..()
-	mass_incantation(ritual_rune, "N'ath reth sh'yro eth d'raggathnor!")
-	user.put_in_hands(new /obj/item/weapon/melee/cultbastard(user))
+	performing = FALSE
 
 /datum/ritual/silence
 	name = "Silence Ritual"
@@ -221,6 +243,9 @@
 
 /datum/ritual/silence/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
+
+	if(!.)
+		return
 
 	var/obj/item/cursed
 
@@ -240,7 +265,9 @@
 
 	if(!cursing)
 		ritual_rune.visible_message(SPAN_WARNING("[ritual_rune] starts glowing red, but fails to activate without an item that victim touched."))
+		performing = FALSE
 		return
 
 	mass_incantation(ritual_rune, "Ere'hewo ja'eyrep!")
 	cursing.silent = 10 MINUTES
+	performing = FALSE

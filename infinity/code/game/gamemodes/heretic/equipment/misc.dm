@@ -39,6 +39,8 @@
 obj/item/weapon/handcuffs/wizard/shadow
 	name = "shadow shackles"
 	desc = "A pair of shadow handcuffs, usually seen in Nar'Sien armies."
+	icon = 'infinity/icons/obj/cult.dmi'
+	icon_state = "shadowcuff"
 	elastic = 1
 
 /obj/item/weapon/handcuffs/wizard/shadow/place_handcuffs(var/mob/living/carbon/target, var/mob/user, var/silent)

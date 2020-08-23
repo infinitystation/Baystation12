@@ -9,7 +9,7 @@
 	melee_damage_lower = 5
 	melee_damage_upper = 5
 	a_intent = I_HURT
-	attacktext = "gored"
+	attacktext = "smashed"
 	maxHealth = 100
 	health = 100
 	speed = 2

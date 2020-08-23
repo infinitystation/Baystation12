@@ -403,9 +403,7 @@
 
 		act_word.affect(target, multiplier, user, "Mass" in additional_affects)
 
-		var/datum/language/L = all_languages[LANGUAGE_CULT]
-		if(L in holder.languages && !("Quiet" in additional_affects))
-			holder.say(act_word.word, L)
+	var/datum/language/L = all_languages[LANGUAGE_CULT]
 
 	if(ishuman(holder))
 		var/mob/living/carbon/human/H = holder
@@ -414,8 +412,14 @@
 		if(!O)
 			H.adjustBruteLoss(pain_mod * 2)
 			H.adjustFireLoss(pain_mod)
-			return
-
-		H.apply_damage(pain_mod * 2, BRUTE, O)
-		H.apply_damage(pain_mod, BURN, O)
+		else
+			H.apply_damage(pain_mod * 2, BRUTE, O)
+			H.apply_damage(pain_mod, BURN, O)
 		H.remove_blood_simple(pain_mod * 2)
+
+		for(var/datum/active_effect/cult_tattoo/silence/tattoo in H.active_effects)
+			if(istype(tattoo))
+				return
+
+	if(!("Quiet" in additional_affects))
+		holder.say(spellphrase, L)

@@ -48,3 +48,32 @@
 	. += new /datum/stack_recipe/cult/forge(src)
 	. += new /datum/stack_recipe/cult/pylon(src)
 	. += new /datum/stack_recipe/cult/archives(src)
+
+/obj/item/stack/material/cult/attack_self(mob/user as mob)
+	if(amount < 5)
+		to_chat(user, SPAN_WARNING("There's not enough [src] to make anything!"))
+		return
+
+	var/list/options = list()
+	var/optionals = list("Runic Door" = /obj/machinery/door/unpowered/simple/cult,
+						 "Archives" = /obj/structure/cult/tome,
+						 "Pylon" = /obj/structure/cult/pylon,
+						 "Daemon Forge" = /obj/structure/cult/forge,
+						 "Altar" = /obj/structure/cult/talisman,
+						 "Bloodstone" = /obj/structure/cult/bloodstone
+						 )
+	for(var/i in optionals)
+		var/obj/I = optionals[i]
+		var/obj/optionality = new I(src)
+		options[i] = image(icon = 'infinity/icons/obj/cultradial.dmi', icon_state = optionality.icon_state)
+		qdel(optionality)
+
+	var/choice = show_radial_menu(user, src, options, radius = 32, require_near = TRUE, menu_icon = 'infinity/icons/obj/cultradial.dmi')
+	if(!choice)
+		return
+
+	var/choice_type = optionals[choice]
+
+	new choice_type(get_turf(src))
+
+	amount -= 5

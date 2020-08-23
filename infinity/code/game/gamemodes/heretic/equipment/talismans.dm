@@ -8,7 +8,7 @@
 	unique = 1
 	carved = 2 // Don't carve it
 
-	var/opened = TRUE
+	var/opened = FALSE
 
 /obj/item/weapon/book/tome/Initialize()
 	. = ..()
@@ -30,6 +30,7 @@
 			flick("tome_stun[opened]", src)
 			user.unEquip(src)
 			opened = FALSE
+			icon_state = "tome"
 			return
 		show_guide(user)
 
@@ -45,6 +46,8 @@
 			L.Weaken(2)
 			L.Stun(1)
 			flick("tome_stun[opened]", src)
+			opened = FALSE
+			icon_state = "tome"
 
 	if(A.reagents && A.reagents.has_reagent(/datum/reagent/water/holywater))
 		to_chat(user, "<span class='notice'>You unbless \the [A].</span>")
@@ -65,9 +68,14 @@
 		flick("tome_stun[opened]", src)
 		user.unEquip(src)
 		opened = FALSE
+		icon_state = "tome"
 		return
 
 	flick("tome_flick[opened]", src)
+	if(opened)
+		icon_state = "tome"
+	else
+		icon_state = "tome_open"
 	opened = !opened
 
 /obj/item/weapon/book/tome/proc/show_guide(var/mob/user)
@@ -80,8 +88,10 @@
 	icon_state = "tome_flick"
 	if(!do_after(user, 27))
 		icon_state = "tome"
+		flick("tome_stun[opened]", src)
+		opened = FALSE
 		return
-	icon_state = "tome"
+	icon_state = "tome_open"
 
 	/*to_chat(user, "<span class='cult italic'>Looks like you can make some spells by carving ancient words on your flesh.\n\
 											 The spell must be composed of 3 parts: \[Element\] \[Method\] \[Words Of Power\].\n\

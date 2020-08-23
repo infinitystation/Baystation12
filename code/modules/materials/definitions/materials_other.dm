@@ -19,6 +19,7 @@
 	conductive = 0
 	construction_difficulty = MATERIAL_NORMAL_DIY
 	hidden_from_codex = TRUE
+	door_icon_base = "cultdoor" //INF
 
 /material/cult/place_dismantled_girder(var/turf/target)
 	new /obj/structure/girder/cult(target)

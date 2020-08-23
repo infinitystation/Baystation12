@@ -158,15 +158,19 @@
 		if(S.shade.loc != S)
 			to_chat(user, "<span class='notice'>Recapture the shade back into \the [I] first.</span>")
 			return
-		var/construct = alert(user, "Please choose which type of construct you wish to create.",,"Artificer", "Wraith", "Juggernaut")
-		var/ctype
-		switch(construct)
-			if("Artificer")
-				ctype = /mob/living/simple_animal/construct/builder
-			if("Wraith")
-				ctype = /mob/living/simple_animal/construct/wraith
-			if("Juggernaut")
-				ctype = /mob/living/simple_animal/construct/armoured
+
+		var/list/options = list()
+		var/optionals = list("Artificer" = /mob/living/simple_animal/construct/builder, "Wraith" = /mob/living/simple_animal/construct/wraith, "Juggernaut" = /mob/living/simple_animal/construct/armoured)
+		for(var/i in optionals)
+			var/mob/opt = optionals[i]
+			var/mob/optionality = new opt(src)
+			options[i] = image(icon = 'infinity/icons/obj/cultradial.dmi', icon_state = optionality.icon_state)
+			qdel(optionality)
+
+		var/choice = show_radial_menu(user, src, options, radius = 32, require_near = TRUE, menu_icon = 'infinity/icons/obj/cultradial.dmi')
+
+		var/ctype = optionals[choice]
+
 		var/mob/living/simple_animal/construct/C = new ctype(get_turf(src))
 		C.key = S.shade.key
 		if(!S.is_evil)

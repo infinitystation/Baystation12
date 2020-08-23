@@ -10,6 +10,10 @@
 	var/charges = 5
 	var/lit = 0
 
+/obj/item/device/flashlight/flare/culttorch/New()
+	. = ..()
+	icon_state = "torch"
+
 /obj/item/device/flashlight/flare/culttorch/attack_self(var/mob/user)
 	if(lit || charges == 0)
 		return
