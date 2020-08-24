@@ -43,7 +43,7 @@
 	item_state = "watch_black"
 
 /obj/item/clothing/gloves/wristwatch/gold
-	name = "watch"
+	name = "watch gold"
 	desc = "A wristwatch. This one is golden and in makes you feel like a boss."
 	icon_state = "watch_gold"
 	item_state = "watch_gold"
