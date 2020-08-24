@@ -45,8 +45,6 @@
 /obj/item/clothing/gloves/wristwatch/gold
 	name = "watch"
 	desc = "A wristwatch. This one is golden and in makes you feel like a boss."
-	icon = 'infinity/icons/obj/clothing/obj_hands.dmi'
-	item_icons = list(slot_gloves_str = 'infinity/icons/mob/onmob/onmob_hands.dmi')
 	icon_state = "watch_gold"
 	item_state = "watch_gold"
 
