@@ -33,7 +33,7 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 	if(href_list["spawn_uplink"])
 		spawn_uplink(locate(href_list["spawn_uplink"]))
 		return 1
-/* original
+
 /datum/antagonist/traitor/create_objectives(var/datum/mind/traitor)
 	if(!..())
 		return
@@ -82,7 +82,7 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 					survive_objective.owner = traitor
 					traitor.objectives += survive_objective
 	return
-/original */
+
 /datum/antagonist/traitor/equip(var/mob/living/carbon/human/traitor_mob)
 	if(istype(traitor_mob, /mob/living/silicon)) // this needs to be here because ..() returns false if the mob isn't human
 		add_law_zero(traitor_mob)
