@@ -98,6 +98,7 @@
 	load_mods()
 	//end-emergency fix
 
+	TgsNew() //inf
 	. = ..()
 
 #ifdef UNIT_TEST
@@ -106,12 +107,14 @@
 #endif
 	Master.Initialize(10, FALSE)
 
+	TgsInitializationComplete() //inf
 //inf("Already defined") #undef RECOMMENDED_VERSION
 
 var/world_topic_spam_protect_ip = "0.0.0.0"
 var/world_topic_spam_protect_time = world.timeofday
 
 /world/Topic(T, addr, master, key)
+	TGS_TOPIC //inf
 	diary << "TOPIC: \"[T]\", from:[addr], master:[master], key:[key][log_end]"
 
 	/* * * * * * * *
@@ -490,9 +493,12 @@ var/world_topic_spam_protect_time = world.timeofday
 
 
 /world/Reboot(var/reason)
+	TgsReboot() //inf
+	/*[ORIG]
 	spawn(0)
 		sound_to(world, sound(pick('sound/AI/newroundsexy.ogg','sound/misc/apcdestroyed.ogg','sound/misc/bangindonk.ogg')))// random end sounds!! - LastyBatsy
 
+	[/ORIG]*/
 	Master.Shutdown()
 
 	if(config.server)	//if you set a server location in config.txt, it sends you there instead of trying to reconnect to the same world address. -- NeoFite
@@ -705,14 +711,14 @@ proc/establish_db_connection()
 	else
 		return 1
 
-/* [original] Два подключения к одному серверу и одной базе? Пожалуй нет. ~bear1ake
+/*[original]
 /hook/startup/proc/connectOldDB()
 	if(!setup_old_database_connection())
 		to_world_log("Your server failed to establish a connection with the SQL database.")
 	else
 		to_world_log("SQL database connection established.")
 	return 1
-[/original] */
+[/original]*/
 //These two procs are for the old database, while it's being phased out. See the tgstation.sql file in the SQL folder for more information.
 proc/setup_old_database_connection()
 
@@ -731,11 +737,13 @@ proc/setup_old_database_connection()
 	dbcon_old.Connect("dbi:mysql:[db]:[address]:[port]","[user]","[pass]")
 	. = dbcon_old.IsConnected()
 	if ( . )
-		var/DBQuery/unicode_query = dbcon_old.NewQuery("SET NAMES utf8mb4 COLLATE utf8mb4_general_ci")	// Установка кодировки и сравнения (4-байтный UTF-8) для сервера БД ~bear1ake
-		if(!unicode_query.Execute())					// Не понимаю, каким образом это может произойти, но...
-			failed_db_connections++						// ... постараемся запомнить этот факт ...
-			to_world_log(unicode_query.ErrorMsg())		// ... оповестим сервер об этом ...
-			return										// ... и прекратим подключение ~bear1ake
+		var/DBQuery/unicode_query = dbcon_old.NewQuery("SET NAMES utf8mb4 COLLATE utf8mb4_general_ci")
+//[INF]
+		if(!unicode_query.Execute())
+			failed_db_connections++
+			to_world_log(unicode_query.ErrorMsg())
+			return
+//[/INF]
 		failed_old_db_connections = 0	//If this connection succeeded, reset the failed connections counter.
 	else
 		failed_old_db_connections++		//If it failed, increase the failed connections counter.
