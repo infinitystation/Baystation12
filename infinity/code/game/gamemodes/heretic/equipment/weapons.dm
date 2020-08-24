@@ -264,6 +264,16 @@
 	throwforce = 10
 	armor_penetration = 35
 
+/obj/item/weapon/melee/cultblade/dagger/afterattack(var/mob/living/carbon/human/M, var/mob/living/carbon/human/user)
+	if(!istype(M) || !istype(user))
+		return
+	for(var/datum/active_effect/cult_tattoo/tattoo in user.active_effects)
+		if(istype(tattoo, /datum/active_effect/cult_tattoo/dagger))
+			if(M.should_have_organ(BP_HEART) && M.vessel && M.vessel.has_reagent(/datum/reagent/blood, 15))
+				M.vessel.remove_reagent(/datum/reagent/blood, 15)
+				user.vessel.add_reagent(/datum/reagent/blood, 15)
+			break
+
 /obj/item/weapon/melee/cultbastard
 	name = "bloody bastard sword"
 	desc = "An eldritch sword used by Nar'Sien cultists to rapidly harvest the souls of non-believers. Use it on construct shells to put souls incide."

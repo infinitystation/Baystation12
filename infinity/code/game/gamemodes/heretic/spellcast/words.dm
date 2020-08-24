@@ -123,7 +123,7 @@
 		if(!do_after(caster,50))
 			return
 		new /obj/machinery/door/unpowered/simple/cult(get_turf(A))
-		new /obj/effect/temporary(get_turf(A), 4.5, 'infinity/icons/effects/cult.dmi', "door_glow")
+		//new /obj/effect/temporary(get_turf(A), 4.5, 'infinity/icons/effects/cult.dmi', "door_glow")
 		qdel(A)
 		return
 
