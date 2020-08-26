@@ -18,7 +18,7 @@
 	allowed_branches = null //INF, WAS: CIVILIAN_BRANCHES
 
 /datum/gear/gloves/botany
-	allowed_roles = list(/datum/job/rd, /datum/job/scientist, /datum/job/scientist_assistant, /datum/job/chef, /datum/job/bartender, /datum/job/assistant, /datum/job/merchant, /datum/job/pathfinder, /datum/job/nt_pilot, /datum/job/explorer)
+	allowed_roles = list(/datum/job/rd, /datum/job/scientist, /datum/job/scientist_assistant, /datum/job/chef, /datum/job/bartender, /datum/job/assistant, /datum/job/submap/merchant, /datum/job/pathfinder, /datum/job/nt_pilot, /datum/job/explorer)
 
 /datum/gear/gloves/dress
 	display_name = "gloves, dress"

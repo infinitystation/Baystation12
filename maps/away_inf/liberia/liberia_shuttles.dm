@@ -17,20 +17,15 @@
 
 /obj/effect/shuttle_landmark/mule/start
 	name = "Mule Docked"
-	landmark_tag = "nav_hangar_mule"
+	landmark_tag = "nav_mule_start"
 	docking_controller = "mule_port_dock"
-	base_area = /area/liberia/Mule
+	base_area = /area/liberia/DockingHall
 	movable_flags = MOVABLE_FLAG_EFFECTMOVE
-
-//Add Torck Docking Port for Mule
-/obj/effect/shuttle_landmark/ascent_seedship/torch/mule
-	name = "Mule Docking Port"
-	landmark_tag = "nav_mule_altdock"
 
 /datum/shuttle/autodock/overmap/mule
 	name = "Mule"
 	warmup_time = 5
-	current_location = "nav_hangar_mule"
+	current_location = "nav_mule_start"
 	range = 2
 	dock_target = "mule_port_shuttle_dock"
 	shuttle_area = /area/liberia/Mule

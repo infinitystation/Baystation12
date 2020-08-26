@@ -1,31 +1,31 @@
 #define WEBHOOK_SUBMAP_LOADED_LIBERIA "webhook_submap_liberia"
 
 #include "liberia_areas.dm"
-//#include "liberia_jobs.dm"
+#include "liberia_jobs.dm"
 #include "liberia_shuttles.dm"
 
 // Map template data.
-/datum/map_template/ruin/away_site/liberia
-	name = "Liberia"
-	id = "awaysite_liberia"
-	description = "A Merchant ship."
-	prefix = "maps/away_inf/"
-	suffixes = list("liberia/liberia.dmm")
-	cost = 0.5 //INF WAS 2
+/datum/map_template/ruin/away_site/liberia //Основной файл
+	name = "Liberia" //Имя
+	id = "awaysite_liberia" //ID
+	description = "A Merchant ship." //Описание
+	prefix = "maps/away_inf/" //Префикс
+	suffixes = list("liberia/liberia.dmm") //Суффикс
+	cost = 0.5 //Шанса появления
 	spawn_weight = 50 //HABITABLE SHIPS SPAWN
-	shuttles_to_initialise = list(
+	shuttles_to_initialise = list( //Инициализация шаттлов
 		/datum/shuttle/autodock/overmap/mule
-		)
+	)
 
 // Overmap objects.
-/obj/effect/overmap/visitable/ship/liberia
-	name = "Liberia"
-	desc = "Sensors detect a merchant ship."
-	color = "#8A6642"
+/obj/effect/overmap/visitable/ship/liberia //Объект в Системе
+	name = "Liberia" //Название
+	desc = "Sensors detect a merchant ship." //Данные с сенсоров
+	color = "#8a6642" //Цвет
 	vessel_mass = 3000
 	fore_dir = WEST
 	max_speed = 1/(1 SECOND)
+	known = 1
 	initial_restricted_waypoints = list(
-		"Mule" = list("nav_hangar_mule")
+		"Mule" = list("nav_mule_start")
 	)
-	known = 0
