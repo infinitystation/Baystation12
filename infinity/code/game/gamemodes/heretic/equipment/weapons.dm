@@ -269,7 +269,7 @@
 		return
 	for(var/datum/active_effect/cult_tattoo/tattoo in user.active_effects)
 		if(istype(tattoo, /datum/active_effect/cult_tattoo/dagger))
-			if(M.should_have_organ(BP_HEART) && M.vessel && M.vessel.has_reagent(/datum/reagent/blood, 15))
+			if(M.should_have_organ(BP_HEART) && M.vessel && M.vessel.has_reagent(/datum/reagent/blood, 15) && user.should_have_organ(BP_HEART) && user.vessel)
 				M.vessel.remove_reagent(/datum/reagent/blood, 15)
 				user.vessel.add_reagent(/datum/reagent/blood, 15)
 			break

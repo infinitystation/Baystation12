@@ -134,10 +134,12 @@
 	if(!istype(A, /turf/simulated/wall))
 		return
 	var/turf/simulated/wall/wall = A
+	if(locate(/obj/effect/sigil) in wall)
+		return
 	if(owner.should_have_organ(BP_HEART) && owner.vessel && owner.vessel.has_reagent(/datum/reagent/blood, max(50, owner.species.blood_volume * 0.5)))
 		owner.vessel.remove_reagent(/datum/reagent/blood, 50)
 		owner.visible_message(SPAN_WARNING("[owner] cuts their wrist and starts drawing something on the [wall]!"))
-		if(!do_after(owner, 40, wall))
+		if(!do_after(owner, 240, wall))
 			return
 		new /obj/effect/sigil(wall)
 
@@ -146,6 +148,13 @@
 	name = "Dark Form"
 	tier = 3
 	icon_state = "manifest"
+
+/datum/active_effect/cult_tattoo/manifest/add_to_human(var/mob/living/carbon/human/H)
+	. = ..()
+	owner.species.blood_color = "#2b1217"
+	owner.species.flesh_color = "#d5d4d3"
+	owner.species.brute_mod = 1.25
+	owner.species.burn_mod = 1.25
 
 /datum/active_effect/cult_tattoo/manifest/no_pain()
 	return 1

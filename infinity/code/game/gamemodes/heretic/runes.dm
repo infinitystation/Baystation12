@@ -5,6 +5,7 @@ var/list/Tier1Runes = 	   list(
 								/mob/proc/rune_teleport,
 								/mob/proc/rune_astral,
 								/mob/proc/rune_offering,
+								/mob/proc/rune_spire,
 								/mob/proc/rune_curse_pain,
 								/mob/proc/rune_chosen,
 								/mob/proc/rune_wall,
@@ -264,6 +265,14 @@ var/list/TierNarNarRunes = list(
 		user.visible_message("<span class='notice'>[user] rubs \the [src] with \the [I], and \the [src] is absorbed by it.</span>", "You retrace your steps, carefully undoing the lines of \the [src].")
 		qdel(src)
 		return
+	else if((istype(I, /obj/item/weapon/melee/cultblade/dagger) || istype(I, /obj/item/weapon/material/knife)) && iscultist(user))
+		if(user.is_muzzled())
+			to_chat(user, "You are unable to speak the words of the rune.")
+			return
+		if(GLOB.cult.powerless)
+			to_chat(user, "You read the words, but nothing happens.")
+			return fizzle(user)
+		cast(user)
 	else if(istype(I, /obj/item/weapon/nullrod))
 		user.visible_message("<span class='notice'>[user] hits \the [src] with \the [I], and it disappears, fizzling.</span>", "<span class='notice'>You disrupt the vile magic with the deadening field of \the [I].</span>", "You hear a fizzle.")
 		qdel(src)
@@ -293,6 +302,7 @@ var/list/TierNarNarRunes = list(
 		fizzle(user)
 		return
 	ritual.cast(src, user)
+	qdel(src)
 
 /obj/effect/rune/proc/fizzle(var/mob/living/user)
 	visible_message("<span class='warning'>The markings pulse with a small burst of light, then fall dark.</span>", "You hear a fizzle.")
@@ -322,6 +332,11 @@ var/list/TierNarNarRunes = list(
 	cultname = "astral journey"
 	strokes = 5
 	ritualtype = /datum/ritual/astral
+
+/obj/effect/rune/spire
+	cultname = "spire ritual"
+	strokes = 4
+	ritualtype = /datum/ritual/spire
 
 /obj/effect/rune/offering
 	cultname = "offering"

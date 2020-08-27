@@ -82,7 +82,29 @@
 				if(75 to 100)
 					to_chat(target, "<span class='cult'>Your mind turns to ash as the burning flames engulf your very soul and images of an unspeakable horror begin to bombard the last remnants of mental resistance.</span>")
 					target.take_overall_damage(0, 10)
+		sleep(15)
 
+	performing = FALSE
+
+/datum/ritual/spire
+	name = "Spire Ritual"
+	desc = "Create an unholy spire, which will allow you to imbue words of your dark god into your flesh."
+
+	requirments = list(/obj/effect/decal/cleanable/blood = 1)
+
+	ritual_flags = NEEDS_KNIFE | RITUAL_VERY_BLOODY
+
+	required_cultists = 1
+	ritual_radius = 1
+
+/datum/ritual/spire/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
+	. = ..()
+
+	if(!.)
+		return
+
+	mass_incantation(ritual_rune, "Ta'ruk ahe'abanar!")
+	new /obj/structure/cult/spire(get_turf(ritual_rune))
 	performing = FALSE
 
 /datum/ritual/teleport

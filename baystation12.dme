@@ -3287,6 +3287,7 @@
 #include "infinity\code\game\gamemodes\heretic\ghost_powers.dm"
 #include "infinity\code\game\gamemodes\heretic\hellstatus.dm"
 #include "infinity\code\game\gamemodes\heretic\illusions.dm"
+#include "infinity\code\game\gamemodes\heretic\markings.dm"
 #include "infinity\code\game\gamemodes\heretic\narnar.dm"
 #include "infinity\code\game\gamemodes\heretic\outfits.dm"
 #include "infinity\code\game\gamemodes\heretic\ritual.dm"

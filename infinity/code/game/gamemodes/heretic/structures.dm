@@ -533,6 +533,13 @@
 		return
 	var/choice_type = optionals[choice]
 	var/datum/active_effect/cult_tattoo/tattoo = new choice_type
+
+	var/datum/sprite_accessory/marking/mark_datum = GLOB.body_marking_styles_list[tattoo.name]
+
+	for(var/BP in mark_datum.body_parts)
+		var/obj/item/organ/external/O = user.organs_by_name[BP]
+		if(O)
+			O.markings[tattoo.name] = list("datum" = mark_datum)
 	tattoo.add_to_human(user)
 
 /obj/structure/cult/spire/Initialize()
@@ -562,8 +569,11 @@
 		return
 
 	var/push_dir = get_dir(user, src)
+	if(!istype(get_step(get_turf(src), push_dir), /turf/simulated/floor))
+		return
 	var/obj/effect/temporary/effect = new(get_turf(user), 8, 'infinity/icons/effects/effects.dmi', "cultout")
 	effect.dir = user.dir
 	user.forceMove(get_step(get_turf(src), push_dir))
 	var/obj/effect/temporary/effect2 = new(get_turf(user), 8, 'infinity/icons/effects/effects.dmi', "cultin")
 	effect2.dir = user.dir
+

@@ -65,7 +65,7 @@
 	name = "Summon Soulstone"
 	desc = "This spell reaches into Nar-Sie's realm, summoning one of the legendary fragments across time and space"
 
-	charge_max = 5000 //INF, was 3000
+	charge_max = 3000
 	spell_flags = CONSTRUCT_CHECK //INF
 	invocation = "none"
 	invocation_type = SpI_NONE

@@ -495,3 +495,37 @@
 	for(var/mob/living/M in targets)
 		if(iscultist(M))
 			apply_spell_damage(M)
+
+
+/spell/aoe_turf/conjure/cult_construction
+	name = "Construcion"
+	desc = "This spell will allow you to make any cultist structure."
+	charge_max = 3000
+	spell_flags = CONSTRUCT_CHECK
+	invocation = "none"
+	invocation_type = SpI_NONE
+	range = 0
+
+	hud_state = "const_pylon"
+
+/spell/aoe_turf/conjure/cult_construction/cast(list/targets, mob/user)
+	var/list/options = list()
+	var/optionals = list("Runic Door" = /obj/machinery/door/unpowered/simple/cult,
+						 "Archives" = /obj/structure/cult/tome,
+						 "Pylon" = /obj/structure/cult/pylon,
+						 "Daemon Forge" = /obj/structure/cult/forge,
+						 "Altar" = /obj/structure/cult/talisman,
+						 "Bloodstone" = /obj/structure/cult/bloodstone
+						 )
+	for(var/i in optionals)
+		var/obj/I = optionals[i]
+		var/obj/optionality = new I(user)
+		options[i] = image(icon = 'infinity/icons/obj/cultradial.dmi', icon_state = optionality.icon_state)
+		qdel(optionality)
+
+	var/choice = show_radial_menu(user, user, options, radius = 32, require_near = TRUE, menu_icon = 'infinity/icons/obj/cultradial.dmi')
+	if(!choice)
+		return
+
+	var/choice_type = optionals[choice]
+	new choice_type(get_turf(user))

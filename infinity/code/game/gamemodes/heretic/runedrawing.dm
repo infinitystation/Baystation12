@@ -29,6 +29,12 @@
 
 	make_rune(/obj/effect/rune/offering, tome_required = 1)
 
+/mob/proc/rune_spire()
+	set category = "Cult Magic"
+	set name = "Rune: Spire"
+
+	make_rune(/obj/effect/rune/spire, tome_required = 1)
+
 /mob/proc/rune_curse_pain()
 	set category = "Cult Magic"
 	set name = "Rune: Pain Curse"

@@ -340,6 +340,7 @@
 		if(health < maxHealth)
 			adjustBruteLoss(-5)
 			user.visible_message("<span class='notice'>\The [user] mends some of \the [src]'s wounds.</span>")
+			new /obj/effect/temporary(get_turf(src), 5, 'infinity/icons/effects/effects.dmi', "constheal")
 		else
 			to_chat(user, "<span class='notice'>\The [src] is undamaged.</span>")
 		return
@@ -370,6 +371,7 @@
 	if(istype(A, /obj/effect/rune) && is_angelic)
 		A.visible_message("<span class='notice'>[src] hits \the [A], and it disappears, fizzling.</span>", "<span class='notice'>You disrupt the vile magic with the deadening field of your fists.</span>", "You hear a fizzle.")
 		qdel(A)
+		return
 
 	. = ..()
 
@@ -534,7 +536,7 @@
 	attack_sound = 'sound/weapons/rapidslice.ogg'
 	construct_spells = list(/spell/aoe_turf/conjure/construct/lesser,
 							/spell/aoe_turf/conjure/wall,
-							/spell/aoe_turf/conjure/pylon,
+							/spell/aoe_turf/conjure/cult_construction,
 							/spell/aoe_turf/conjure/soulstone,
 							/spell/targeted/projectile/cult_missile
 							)
@@ -551,15 +553,18 @@
 			var/turf/simulated/wall/cult/W = A
 			visible_message("<span class='notice'>\The [src] touches \the [A], and the enchantment affecting it fizzles away.</span>", "<span class='notice'>You touch \the [A], and the enchantment affecting it fizzles away.</span>")
 			W.ChangeTurf(/turf/simulated/wall)
+			return
 
 		if(istype(A, /turf/simulated/floor/cult))
 			var/turf/simulated/floor/cult/F = A
 			visible_message("<span class='notice'>\The [src] touches \the [A], and the enchantment affecting it fizzles away.</span>", "<span class='notice'>You touch \the [A], and the enchantment affecting it fizzles away.</span>")
 			F.ChangeTurf(/turf/simulated/floor)
+			return
 	else
 		if(istype(A, /turf))
 			var/turf/T = A
 			T.cultify()
+			return
 	. = ..()
 
 /mob/living/simple_animal/construct/builder/holy
