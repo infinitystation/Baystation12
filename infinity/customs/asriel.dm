@@ -8,11 +8,10 @@
 	held = 1
 	trade_blacklisted = TRUE
 
-/obj/item/clothing/head/helmet/riot/custom_asriel
+/obj/item/clothing/head/helmet/custom_asriel
 	name = "rogue knight helmet"
 	desc = "A black, somewhat rusty-looking helmet with some unreadable markings and words on it."
 	icon = CUSTOM_ITEM_OBJ
 	item_icons = list(slot_head_str = CUSTOM_ITEM_MOB)
 	icon_state = "asriel_helmet"
-	body_parts_covered = HEAD
 	trade_blacklisted = TRUE
