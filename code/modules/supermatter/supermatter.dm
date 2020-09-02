@@ -563,6 +563,11 @@
 /obj/machinery/power/supermatter/shard/announce_warning() //Shards don't get announcements
 	return
 
+//[INF]
+/obj/machinery/power/supermatter/CtrlClick(mob/user as mob)
+	src.attack_hand(user)
+//[/INF]
+
 #undef LIGHT_POWER_CALC
 #undef DETONATION_MOB_CONCUSSION
 #undef DETONATION_APC_OVERLOAD_PROB
