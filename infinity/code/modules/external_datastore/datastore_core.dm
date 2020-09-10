@@ -16,6 +16,3 @@
 	if(!fexists(sourceOfData))
 		return
 	data = json_decode(file2text(sourceOfData))
-
-/datum/external_datastore/proc/debug_out()
-	. = json_encode(data)
