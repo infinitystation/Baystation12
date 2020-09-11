@@ -466,7 +466,9 @@ INF*/
 	name = "echo"
 	man_entry = list("Format: echo \[FILENAME].",
 					"Read stored data of file and return it in terminal.",
-					"Use 'echo -a \[Your data]' to write in file. Before it you must set editing file, use 'echo -s \[filename]'"
+					"Use 'echo -a \[Your data]' to write in file. Before it you must set editing file, use 'echo -s \[filename]'",
+					"You can also create a new file using echo -s \[filename]'.\[filetype]'",
+					"Supported filetypes for creation: CFG, DAT, TXT."
 					)
 	pattern = "^echo"
 	skill_needed = SKILL_ADEPT
@@ -481,11 +483,29 @@ INF*/
 
 	if(option == "-s")
 		var/datum/computer_file/setted_file_by_command = HDD.find_file_by_name(copytext(text, 9))
-		if(!istype(setted_file_by_command, /datum/computer_file/data)) return "<font color='#ffa000'>Can't set on binary files.</font>"
-		if(length(setted_file_by_command.filename) != 0)
+		if(!istype(setted_file_by_command, /datum/computer_file/data) && setted_file_by_command) return "<font color='#ffa000'>Can't set on binary files.</font>"
+		if(setted_file_by_command && length(setted_file_by_command.filename) != 0)
 			terminal.setted_file = setted_file_by_command
 			return "<font color='#00ff00'>[name]: file [terminal.setted_file.filename] successfuly setted.</font>"
-		return "<font color='#ffa000'>[name]: file not found.</font>"
+		var/filetype
+		var/gettype = lowertext(splittext(copytext(text, 9),".")[2])
+		if(!gettype)
+			return "<font color='#ffa000'>[name]: file not found.</font>"
+		if(gettype == "cfg")
+			filetype = /datum/computer_file/data/config
+		else if(gettype == "dat")
+			filetype = /datum/computer_file/data
+		else if(gettype == "txt")
+			filetype = /datum/computer_file/data/text
+		else
+			return "<font color ='#ffa000'>[name]: could not create file UNKNOWN, please specify available filetype.</font>"
+		var/datum/computer_file/file = new filetype()
+		file.filename = splittext(copytext(text, 9),".")[1]
+		if(HDD.store_file(file))
+			return "<font color ='#00ff00'>[name]: Successfuly created file [file.filename].[file.filetype]</font>"
+		else
+			qdel(file)
+			return "<font color ='#ffa000'>[name]: could not create file [file.filename].[file.filetype], check your hard drive.</font>"
 
 	if(option == "-a")
 		if(terminal.setted_file)
@@ -692,4 +712,23 @@ INF*/
 			return "[name]: <font color = '#ff0000'>ERROR</font>: Unable to establish a stable NTNet connection with airlock."
 	else
 		return "[name]: <font color = '#ff0000'>ERROR 404:</font>: Unable to found airlock."
+
+/datum/terminal_command/confedit
+	name = "confedit"
+	man_entry = list("Format: confedit \[FILENAME]@\[OPTION]=\[VALUE].",
+					"Allows easy edition of .CFG files."
+					)
+	pattern = "^confedit"
+	skill_needed = SKILL_ADEPT
+
+/datum/terminal_command/confedit/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	var/data = copytext(text, 10)
+	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = terminal.computer.get_component(PART_HDD)
+	if(!HDD)
+		return "<font color='00ff00'>[name]: local storage is missed.</font>"
+	if(!HDD.check_functionality())
+		return "<font color='00ff00'>[name]: check integrity of your hard drive.</font>"
+
+//fill this in pls
+
 //[/INFINITY]_______________________________________________________________________________________________________________
