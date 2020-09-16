@@ -27,7 +27,7 @@
 		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_head_unathi.dmi',
 		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_head_skrell.dmi',
-		SPECIES_NABBER = 'infinity/icons/mob/onmob/items/onmob_voidsuit_gas.dmi',
+		SPECIES_NABBER = 'infinity/icons/mob/onmob/items/onmob_voidsuit_gas.dmi', //inf
 		)
 	sprite_sheets_obj = list(
 		SPECIES_TAJARA = 'icons/obj/clothing/species/tajaran/hats.dmi',
@@ -36,7 +36,7 @@
 //		SPECIES_UNATHI = 'icons/obj/clothing/species/unathi/obj_head_unathi.dmi',
 		SPECIES_UNATHI = 'infinity/icons/obj/clothing/species/erosan/hats.dmi',
 		SPECIES_SKRELL = 'icons/obj/clothing/species/skrell/obj_head_skrell.dmi',
-		SPECIES_NABBER = 'infinity/icons/obj/clothing/obj_voidsuit_gas.dmi',
+		SPECIES_NABBER = 'infinity/icons/obj/clothing/obj_voidsuit_gas.dmi', //inf
 		)
 
 	light_overlay = "helmet_light"
