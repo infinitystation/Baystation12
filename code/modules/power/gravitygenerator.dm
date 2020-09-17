@@ -84,7 +84,7 @@
 	show_browser(user, dat, "window=gravgen")
 	onclose(user, "gravgen")
 
-
+/*[BAY]
 /obj/machinery/computer/gravity_control_computer/Topic(href, href_list)
 	set background = 1
 	if((. = ..()))
@@ -108,3 +108,4 @@
 				A.gravitychange(1)
 
 	src.updateUsrDialog()
+[BAY]*/

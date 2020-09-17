@@ -1,0 +1,21 @@
+{{:helper.TechMode()}}
+{{:helper.link("Set Gravitational Generator ID",null,{"set_grav_id":1})}}<br><hr>
+
+{{if data.gravity_generator_loc}}
+
+	{{if data.emagged}}
+		{{:helper.link("Reverse Gravity","refresh", {"set_range":1}, "redButton")}}
+	{{/if}}<br><br>
+	{{if data.grav_on}}
+		{{:helper.link("Shutdown","power",{"shutdown_gen" : 1}, "redButton")}}
+		{{:helper.link("Set Range","arrow-4-diag", {"set_range":1})}}{{if data.range}}: {{:data.range}}{{/if}}
+		{{if data.power_usage}}
+			<br>
+			<b>Power Usage:</b> {{:data.power_usage}}
+		{{/if}}
+	{{else}}
+		{{:helper.link("Enable","power",{"enable_gen" : 1})}}
+	{{/if}}
+{{else}}
+	No gravitational generator connected.
+{{/if}}

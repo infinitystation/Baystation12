@@ -27183,7 +27183,16 @@
 "aTa" = (
 /obj/structure/table/steel,
 /obj/random/snack,
-/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/teacup,
+/obj/item/weapon/reagent_containers/food/drinks/teapot{
+	pixel_y = 16;
+	pixel_x = 4
+	},
+/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/metal{
+	desc = "A metal tea cup. You're sure it is for tea, do not try to put coffe in.";
+	name = "metal tea cup";
+	pixel_x = 10;
+	pixel_y = 6
+	},
 /turf/simulated/floor/lino,
 /area/tcommsat/computer)
 "aTb" = (
