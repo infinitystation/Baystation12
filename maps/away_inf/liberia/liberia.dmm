@@ -20,7 +20,6 @@
 	name = "Station Exterior"
 	},
 /obj/machinery/shield_diffuser,
-/obj/effect/shuttle_landmark/mule/start,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/liberia/DockingHall)
 "ae" = (
@@ -1093,10 +1092,10 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/liberia/EngineeringReactor)
 "cc" = (
-/obj/effect/overmap/visitable/ship/landable/mule,
 /obj/machinery/computer/shuttle_control/explore/mule{
 	dir = 4
 	},
+/obj/effect/overmap/visitable/ship/landable/mule,
 /turf/simulated/floor/carpet/blue2,
 /area/liberia/Mule)
 "cd" = (
@@ -1817,6 +1816,10 @@
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
+	},
+/obj/structure/fuel_port{
+	pixel_x = 32;
+	pixel_y = -32
 	},
 /turf/simulated/floor/plating,
 /area/liberia/Mule)
@@ -2666,6 +2669,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/shield_diffuser,
+/obj/effect/shuttle_landmark/mule/start,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/liberia/Mule)
 "ez" = (
@@ -5970,12 +5974,6 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/liberia/Atmos)
-"kI" = (
-/obj/effect/paint/silver,
-/obj/effect/paint_stripe/yellow,
-/obj/structure/fuel_port,
-/turf/simulated/wall/r_titanium,
-/area/liberia/Mule)
 "kJ" = (
 /obj/structure/cable/blue{
 	d1 = 2;
@@ -8015,6 +8013,16 @@
 "Iw" = (
 /turf/simulated/wall/prepainted,
 /area/liberia/DockingHall)
+"Iy" = (
+/obj/effect/paint/silver,
+/obj/effect/paint_stripe/yellow,
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/wall/r_titanium,
+/area/liberia/Mule)
 "IA" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/liberia/EngineeringStorage)
@@ -8376,10 +8384,12 @@
 "PW" = (
 /obj/machinery/shipsensors,
 /obj/structure/cable/blue{
-	d2 = 8;
-	icon_state = "0-8"
+	d2 = 2;
+	icon_state = "0-2"
 	},
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/industrial/warning/full,
+/obj/structure/catwalk,
+/turf/simulated/floor/airless,
 /area/liberia/Mule)
 "Qi" = (
 /obj/effect/floor_decal/corner/blue{
@@ -8441,9 +8451,9 @@
 /obj/effect/paint/silver,
 /obj/effect/paint_stripe/yellow,
 /obj/structure/cable/blue{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/plating,
 /area/liberia/Mule)
@@ -8906,14 +8916,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/plating,
 /area/liberia/HallWay)
-"Yq" = (
-/obj/structure/cable/blue{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/plating,
-/area/liberia/Mule)
 "Yt" = (
 /obj/structure/table/rack/dark,
 /obj/structure/railing/mapped{
@@ -23047,7 +23049,7 @@ aa
 aa
 aa
 aa
-Yq
+aa
 QE
 bF
 ce
@@ -23250,7 +23252,7 @@ aa
 aa
 aa
 PW
-ex
+Iy
 bN
 cf
 cM
@@ -26688,7 +26690,7 @@ ex
 ex
 ex
 ex
-kI
+ex
 EG
 lh
 EG

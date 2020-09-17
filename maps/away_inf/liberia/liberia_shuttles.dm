@@ -19,8 +19,8 @@
 	name = "Mule Docked"
 	landmark_tag = "nav_mule_start"
 	docking_controller = "mule_port_dock"
-	base_area = /area/liberia/DockingHall
-	movable_flags = MOVABLE_FLAG_EFFECTMOVE
+//	base_area = /area/liberia/DockingHall
+//	movable_flags = MOVABLE_FLAG_EFFECTMOVE
 
 /datum/shuttle/autodock/overmap/mule
 	name = "Mule"
