@@ -11,6 +11,7 @@
 	initial_restricted_waypoints = list(
 		"Charon" = list("nav_hangar_calypso"),
 		"Guppy" = list("nav_hangar_guppy"),
+		"Mule" = list("nav_merchant_out"), //away_inf/liberia/liberia.dmm shuttle,
 		"Desperado" = list("nav_merc_dock"), //antag_spawn/mercenary/mercenary_inf.dmm shuttle,
 		"Albatross" = list("nav_albatross_dock"), //away_inf/sentinel/sentinel.dmm shuttle,
 		"Sol Rescue Shuttle" = list("nav_deck3_patrol"), //away_inf/patrol/patrol.dmm shuttle,
