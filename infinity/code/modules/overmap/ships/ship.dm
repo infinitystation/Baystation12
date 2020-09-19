@@ -1,8 +1,8 @@
-/obj/effect/overmap/ship/Move(var/newloc,var/dir)
+/obj/effect/overmap/Move(var/newloc,var/dir)
 	. = ..()
 	break_docks()
 
-/obj/effect/overmap/ship/proc/break_docks(var/force_break = 0)
+/obj/effect/overmap/proc/break_docks(var/force_break = 0)
 	for(var/obj/docking_port/dock in connectors)
 		if(isnull(dock))
 			connectors -= dock

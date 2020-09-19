@@ -5,7 +5,7 @@
 
 /obj/docking_port
 	name = "telescopic docking port"
-	desc = "A telescopic bridge with integrated life support module. Basicly - a big umbilical between two space objects. It has pretty small space inside, so you cannot move objects larger than a man through it."
+	desc = "A structure, also known as telescopic bridge (telebridge) with integrated life support module. Allows create \"safe\" way to other space objects with same space speed. It has pretty small moving area inside, so you cannot transfer objects larger than a man through it."
 
 	icon = 'infinity/icons/obj/overmap/docking_port.dmi'
 	icon_state = "dock_contracted"
@@ -18,9 +18,11 @@
 	pixel_x = -32
 	var/side = null //NORTH SOUTH EAST WEST are valid values for this. Setting this causes side-restrictions to apply
 	var/obj/effect/overmap/our_ship
-	var/broke = TDP_UNBREAKABLE //Use -1 to stop breaking.
-	//var/id = "CHANGE ME OR SUFFER!" //ID currently not used?
+	var/broke = 0 //Use TDP_UNBREAKABLE to stop breaking.
+	var/repair_step = 0
+	var/repair_busy = 0
 	var/obj/docking_port/current_connected
+	var/movement_cooldown = 0
 
 /obj/docking_port/New()
 	. = ..()
@@ -70,10 +72,14 @@
 
 	cross_dock(usr)
 
+/obj/docking_port/examine(mob/user)
+	. = ..()
+	if(broke)
+		to_chat(user, SPAN_WARNING("The dock exchanges smoke from a hatch and the bridge looks broken. Seems like it was busted."))
+
 /obj/docking_port/proc/cross_dock(var/mob/user, var/mob/loader = null)
 	if(!istype(user))
 		return
-
 	if(!current_connected)
 		to_chat(user, SPAN_NOTICE("[src] is not connected to anything."))
 		return
@@ -81,6 +87,10 @@
 		return
 	if(!isturf(current_connected.loc))
 		return
+	if(movement_cooldown + 10 SECONDS > world.time)
+		to_chat(user, SPAN_NOTICE("The dock's bridge didn't restor its form since last cross. Wait a bit."))
+		return
+	movement_cooldown = world.time
 	user.forceMove(loc)
 	if(loader)
 		loader.visible_message(SPAN_NOTICE("[loader] starts pushing [user] through [src]\'s airlock."))
@@ -121,10 +131,12 @@
 	user.visible_message(SPAN_NOTICE("[user] loads [over_object] into [src]."))
 	translate_obj(over_object)
 
-/obj/docking_port/attackby(var/obj/item/grab/I, var/mob/user)
-	if(!istype(I))
+/obj/docking_port/attackby(var/obj/item/I, var/mob/user)
+	if(!repair(user, I))
 		return
-	cross_dock(I.affecting, user)
+	if(istype(I, /obj/item/grab))
+		var/obj/item/grab/G = I
+		cross_dock(G.affecting, user)
 
 /obj/docking_port/proc/check_dir_compatible(var/obj/docking_port/dock)
 	if(isnull(side) || isnull(dock.side)) //Null value means either we or they don't care about sides.
@@ -210,11 +222,12 @@
 /obj/docking_port/attack_hand(var/mob/user)
 	if(!our_ship)
 		ship_setup()
+	if(repair_step >= 1)
+		repair(user)
+		return
 	pick_entity_connect_disconnect(user)
 
 /obj/docking_port/proc/dock_break()
-	if(isnull(current_connected))
-		return
 	if(initial(broke) == TDP_UNBREAKABLE)
 		current_connected.visual_dock_change(1)
 		current_connected.current_connected = null
@@ -225,86 +238,9 @@
 	icon_state = "dock_broken"
 	visible_message(SPAN_WARNING("[src] flexes and strains from movement."))
 	visible_message(SPAN_DANGER("-SNAP-"))
-	current_connected.current_connected = null
+	if(current_connected?.current_connected)
+		current_connected.current_connected = null
 	current_connected = null
-
-/obj/docking_port/north
-	dir = NORTH
-
-/obj/docking_port/south
-	dir = SOUTH
-	pixel_y = -96
-
-/obj/docking_port/east
-	dir = EAST
-	pixel_x = 0
-
-/obj/docking_port/west
-	dir = WEST
-	pixel_x = -96
-
-/* TODO for ascents
-/obj/docking_port/ascents
-	icon = 'infinity/icons/obj/overmap/ascent_docking_port.dmi'
-
-/obj/docking_port/ascents/north
-	dir = NORTH
-
-/obj/docking_port/ascents/south
-	dir = SOUTH
-	pixel_y = -96
-
-/obj/docking_port/ascents/east
-	dir = EAST
-	pixel_x = 0
-
-/obj/docking_port/ascents/west
-	dir = WEST
-	pixel_x = -96
-*/
-
-/obj/docking_port/one_way
-	name = "reinforced telescopic docking port"
-	desc = "A telescopic bridge with integrated life support module. Basicly - a big umbilical between two space objects. It has pretty small space inside, so you cannot move objects larger than a man through it. Looks like this one was reinforced, so other ports can't connect to it at their own."
-
-/obj/docking_port/one_way/ship_setup()
-	. = ..()
-	if(our_ship)
-		our_ship.connectors -= src
-
-/obj/docking_port/one_way/north
-	dir = NORTH
-
-/obj/docking_port/one_way/south
-	dir = SOUTH
-	pixel_y = -96
-
-/obj/docking_port/one_way/east
-	dir = EAST
-	pixel_x = 0
-
-/obj/docking_port/one_way/west
-	dir = WEST
-	pixel_x = -96
-
-/* TODO for ascents
-/obj/docking_port/one_way/ascents
-	icon = 'infinity/icons/obj/overmap/ascent_docking_port.dmi'
-
-/obj/docking_port/one_way/ascents/north
-	dir = NORTH
-
-/obj/docking_port/one_way/ascents/south
-	dir = SOUTH
-	pixel_y = -96
-
-/obj/docking_port/one_way/ascents/east
-	dir = EAST
-	pixel_x = 0
-
-/obj/docking_port/one_way/ascents/west
-	dir = WEST
-	pixel_x = -96
-*/
+	set_extension(src, /datum/extension/scent/burned_wiring)
 
 #undef TDP_CROSS_DELAY
