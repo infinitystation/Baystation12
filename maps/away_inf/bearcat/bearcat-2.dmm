@@ -6180,6 +6180,7 @@
 /obj/item/device/spaceflare,
 /obj/item/device/radio,
 /obj/item/weapon/material/hatchet/machete/steel,
+/obj/item/weapon/tank/hydrogen,
 /turf/simulated/floor/airless,
 /area/ship/scrap/shuttle/outgoing)
 "kD" = (
@@ -6221,6 +6222,20 @@
 /obj/effect/shuttle_landmark/bearcat_shuttle,
 /obj/structure/inflatable,
 /turf/simulated/floor/tiled/techfloor/grid,
+/area/ship/scrap/shuttle/outgoing)
+"kG" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/closet/crate/trashcart,
+/obj/item/stack/material/phoron/ten,
+/obj/item/stack/material/uranium/ten,
+/obj/item/stack/material/steel/fifty,
+/obj/item/stack/material/silver/ten,
+/turf/simulated/floor/airless,
+/area/ship/scrap/shuttle/outgoing)
+"kH" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/ore_box,
+/turf/simulated/floor/airless,
 /area/ship/scrap/shuttle/outgoing)
 "lX" = (
 /obj/item/stack/material/steel,
@@ -12147,7 +12162,7 @@ ae
 al
 bX
 bJ
-gu
+kG
 jJ
 jq
 bu
@@ -12269,7 +12284,7 @@ ae
 aG
 cb
 ae
-gu
+kH
 gu
 kt
 bu
