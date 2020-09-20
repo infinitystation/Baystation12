@@ -33,9 +33,10 @@
 	pixel_x = -96
 */
 
-/obj/docking_port/one_way
+/obj/docking_port/one_way/Initialize()
+	. = ..()
 	name = "reinforced telescopic docking port"
-	desc = "A structure, also known as telescopic bridge (telebridge) with integrated life support module. Allows create \"safe\" way to other space objects with same space speed. It has pretty small moving area inside, so you cannot transfer objects larger than a man through it. Looks like this one was reinforced - other ports can't connect to it at their own."
+	desc += " Looks like this one was reinforced - other ports can't connect to it at their own."
 
 /obj/docking_port/one_way/ship_setup()
 	. = ..()

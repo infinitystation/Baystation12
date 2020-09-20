@@ -31,7 +31,6 @@
 		/area/space = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/storage = NO_SCRUBBER|NO_VENT,
 		/area/storage/eva = 0,
-		/area/storage/auxillary/port = 0,
 		/area/storage/primary = 0,
 		/area/storage/tech = 0,
 		/area/storage/bridge = 0,

@@ -1,9 +1,9 @@
 /obj/docking_port/proc/repair(var/mob/user, var/obj/item/I)
 	if(!broke)
 		return 1
-	if(!ishuman(user))
-		return
-	var/mob/living/carbon/human/H = user
+	if(issilicon(user))
+		if(!Adjacent(user))
+			return
 	if(!user.skill_check(SKILL_CONSTRUCTION, SKILL_EXPERT))
 		to_chat(user, SPAN_NOTICE("The dock looks too complicated. The damage is too high to be repaired with your construction skills."))
 		return
@@ -38,7 +38,7 @@
 				set_extension(src, /datum/extension/scent/burned_wiring/strong)
 				return
 		if(2)
-			if(!H.get_active_hand())
+			if(!user.get_active_hand())
 				repair_busy = 1
 				user.visible_message("[user] removes some trash from \the [src] open panel", "You remove some trash from \the [src]'s interior.")
 				playsound(src.loc, 'sound/effects/metalscrape2.ogg', 60, 1)
@@ -52,6 +52,9 @@
 				new /obj/item/weapon/material/shard/shrapnel(user.loc)
 				new /obj/effect/decal/cleanable/molten_item(user.loc)
 /* todo
+				if(!ishuman(user))
+					return
+				var/mob/living/carbon/human/H = user
 				var/sharp = 1
 				if(istype(H.gloves, /obj/item/clothing/gloves))
 					var/obj/item/clothing/gloves/GL = H.gloves
@@ -141,7 +144,7 @@
 				repair_step++
 				return
 		if(9)
-			if(!H.get_active_hand())
+			if(!user.get_active_hand())
 				repair_busy = 1
 				user.visible_message("[user] puts back \the [src]'s hatch.", "You put back \the [src]'s hatch.")
 				if(!do_after(user, 4 SECONDS, src))
