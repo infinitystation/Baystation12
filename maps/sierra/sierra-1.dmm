@@ -15312,14 +15312,37 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/thirddeck/forestarboard)
 "zI" = (
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/door/blast/shutters{
-	dir = 4;
-	id_tag = "portaux_warehouse";
-	name = "TDP Hallway Shutters"
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/command/dock)
+/obj/effect/floor_decal/borderfloor{
+	dir = 9
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 9
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 10
+	},
+/obj/effect/floor_decal/corner/blue/bordercorner2{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/blue/bordercorner2{
+	dir = 10
+	},
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "tdp_shutters";
+	name = "TDP Shutters Control";
+	pixel_x = -24;
+	pixel_y = 0;
+	req_access = list("ACCESS_BRIDGE")
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/thirddeck/fore)
 "zJ" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/borderfloor{
@@ -15499,12 +15522,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/security_scanner,
-/obj/machinery/door/airlock/glass/command{
-	autoset_access = 0;
-	name = "Telescopic Dockng Port";
-	req_access = list("ACCESS_EXTERNAL")
-	},
 /obj/structure/disposalpipe/segment,
+/obj/machinery/door/airlock/glass/command{
+	name = "Telescopic Dockng Port"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/command/dock)
 "zW" = (
@@ -15915,37 +15936,14 @@
 /turf/simulated/floor/tiled,
 /area/command/dock)
 "AI" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4
-	},
-/obj/effect/floor_decal/borderfloor{
-	dir = 9
-	},
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 9
-	},
-/obj/effect/floor_decal/borderfloor/corner2{
-	dir = 1
-	},
-/obj/effect/floor_decal/borderfloor/corner2{
-	dir = 10
-	},
-/obj/effect/floor_decal/corner/blue/bordercorner2{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/blue/bordercorner2{
-	dir = 10
-	},
-/obj/machinery/button/blast_door{
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/door/blast/shutters{
 	dir = 4;
-	id_tag = "portaux_warehouse";
-	name = "TDP Shutters Control";
-	pixel_x = -24;
-	pixel_y = 0;
-	req_access = list("ACCESS_BRIDGE")
+	id_tag = "tdp_shutters";
+	name = "TDP Shutters"
 	},
-/turf/simulated/floor/tiled,
-/area/hallway/primary/thirddeck/fore)
+/turf/simulated/floor/tiled/monotile,
+/area/command/dock)
 "AJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
@@ -39732,8 +39730,8 @@ uT
 ng
 uM
 uM
-zI
-zI
+AI
+AI
 uM
 uM
 uM
@@ -39933,7 +39931,7 @@ Ws
 vH
 yv
 tO
-AI
+zI
 fk
 hq
 Gn
