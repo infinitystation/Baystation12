@@ -97,7 +97,7 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 		data["canburn"] = linked.can_burn()
 		data["accellimit"] = accellimit*1000
 
-		data["distress"] = distress
+		data["distress"] = distress //INF
 
 		var/speed = round(linked.get_speed()*1000, 0.01)
 		if(linked.get_speed() < SHIP_SPEED_SLOW)
