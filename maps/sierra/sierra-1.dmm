@@ -14535,8 +14535,7 @@
 /obj/structure/table/wallf/steel,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/window/westleft{
-	name = "TDP Desk";
-	req_access = list("ACCESS_BRIDGE")
+	name = "TDP Desk"
 	},
 /turf/simulated/floor/plating,
 /area/command/dock)
