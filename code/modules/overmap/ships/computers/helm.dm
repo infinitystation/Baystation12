@@ -32,12 +32,12 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 /obj/machinery/computer/ship/helm/Process()
 	..()
 //[INF]
-	if(distress)
+	if(distress && linked)
 		animate(linked, transform = matrix()*1.4, time = 5)
 		animate(linked, transform = matrix(), time = 10)
 		linked.color = "#ff2222"
-	else
-		linked.color = initial(linked.color)
+	else if(linked)
+		linked.color = initial(linked.color) //I know, i know. its pretty bad.
 //[/INF]
 	if (autopilot && dx && dy)
 		var/turf/T = locate(dx,dy,GLOB.using_map.overmap_z)
