@@ -31,14 +31,14 @@
 
 	default_law_type = /datum/ai_laws/nanotrasen
 	use_overmap = 1
-	num_exoplanets = 0
+	num_exoplanets = 1
 	planet_size = list(129,129)
 
 	playable = 1
 	recommended_players = 20
 //	minimum_players = 0 its already 0
 
-	away_site_budget = 0
+	away_site_budget = 3.5
 
 	id_hud_icons = 'maps/sierra/icons/assignment_hud.dmi'
 

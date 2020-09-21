@@ -81,6 +81,8 @@ add wires
 			to_chat(user, SPAN_WARNING("Access Restriction Protocol: malfunction, electromagnetic hack detected. Please report to dry dock security."))
 		else
 			to_chat(user, SPAN_NOTICE("Access Restriction Protocol: [req_access.len ? "ON" : "UNSET"]"))
+		if(current_connected)
+			to_chat(user, SPAN_NOTICE("Current Connected key: [current_connected.name]"))
 	else
 		to_chat(user, SPAN_NOTICE("You need to get closer if you want to check the status panel."))
 		return
@@ -108,7 +110,7 @@ add wires
 		to_chat(user, SPAN_DANGER("Already Hacked"))
 		return
 	else
-		emagged = 1
+		emagged = TRUE
 		req_access = list()
 		to_chat(user, SPAN_NOTICE("You use the cryptographic sequencer on the [src]. Access restriction was hacked. Have a nice dock."))
-		return 1
+		return TRUE

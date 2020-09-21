@@ -1,68 +1,71 @@
-/obj/docking_port/proc/cross_dock(var/mob/user, var/mob/loader = null)
-	if(!istype(user))
-		return
+/obj/docking_port/proc/cross_dock(var/mob/target)
 	if(!current_connected)
-		to_chat(user, SPAN_NOTICE("[src] is not connected to anything."))
+		to_chat(usr, SPAN_NOTICE("[src] is not connected to anything."))
 		return
 	if(!isturf(loc))
 		return
 	if(!isturf(current_connected.loc))
 		return
 	if(busy_to_cross)
-		to_chat(user, SPAN_NOTICE("Someone is already moving though."))
+		to_chat(usr, SPAN_NOTICE("Someone is already moving though."))
 		return
-//check for atmosphere
-	var/radlevel = SSradiation.get_rads_at_turf(current_connected.loc)
-	var/airstatus = IsTurfAtmosUnsafe(current_connected.loc)
-	if(airstatus || radlevel > 0)
-		var/reply = alert(user, "Warning. Dangerouse environmental conditions. Are you sure you want to cross the dock? \
-		DETAILS: Atmosphere: [airstatus] Radiation: [radlevel] Roentgen.", "Dangerouse area", "No", "Cross")
-		if(reply == "No")
-			return FALSE
+	if(target.anchored)
+		return
+	if(istype(target, /mob/living/exosuit))
+		return
+	if(!Adjacent(usr) || !usr.Adjacent(target))
+		return
 //check for movement cooldown
 	if(movement_cooldown + 10 SECONDS > world.time)
-		to_chat(user, SPAN_NOTICE("The dock's bridge didn't restor its form since last cross. Wait a bit."))
+		to_chat(usr, SPAN_NOTICE("The dock's bridge didn't restor its form since last cross. Wait a bit."))
 		return
+//check for atmosphere
+	if(target == usr)
+		var/radlevel = SSradiation.get_rads_at_turf(current_connected.loc)
+		var/airstatus = IsTurfAtmosUnsafe(current_connected.loc)
+		if(airstatus || radlevel > 0)
+			var/reply = alert(usr, "Warning. Dangerouse environmental conditions. Are you sure you want to cross the dock? \
+			DETAILS: Atmosphere: [airstatus] Radiation: [radlevel] Roentgen.", "Dangerouse area", "No", "Cross")
+			if(reply == "No")
+				return FALSE
 //cross time!
-	user.forceMove(loc)
-	busy_to_cross = 1
-	if(loader)
-		loader.visible_message(SPAN_NOTICE("[loader] starts pushing [user] through [src]\'s airlock."))
-	else
-		user.visible_message(SPAN_NOTICE("[user] starts climbing through [src]\'s airlock..."))
-	if(loader)
-		if(!do_after(loader, TDP_CROSS_DELAY, user))
-			busy_to_cross = 0
+	target.forceMove(loc)
+	busy_to_cross = TRUE
+	if(target == usr)
+		target.visible_message(SPAN_NOTICE("[usr] starts climbing through [src]\'s airlock..."))
+		if(!do_after(target, TDP_CROSS_DELAY, src))
+			busy_to_cross = FALSE
 			return
 	else
-		if(!do_after(user, TDP_CROSS_DELAY, src))
-			busy_to_cross = 0
+		usr.visible_message(SPAN_NOTICE("[usr] starts pushing [target] through [src]\'s airlock."))
+		if(!do_after(target, TDP_CROSS_DELAY, usr))
+			busy_to_cross = FALSE
 			return
-	if(!src.Adjacent(user) || !(user.loc = loc))
-		busy_to_cross = 0
+	if(!src.Adjacent(usr) || !(target.loc = loc))
+		busy_to_cross = FALSE
 		return
 	if(movement_cooldown + 10 SECONDS > world.time) //when two players are trying to cross from both sides
-		to_chat(user, SPAN_NOTICE("The dock's bridge didn't restor its form since last cross. Wait a bit."))
+		to_chat(usr, SPAN_NOTICE("The dock's bridge didn't restor its form since last cross. Wait a bit."))
+		busy_to_cross = FALSE
 		return
-	busy_to_cross = 0
+	busy_to_cross = FALSE
 //succeseful (from this side) cross
 	movement_cooldown = world.time
 	current_connected.movement_cooldown = world.time
-	if(loader)
-		loader.visible_message(SPAN_NOTICE("[loader] pushes [user] through [src]\'s airlock."))
+	if(target == usr)
+		target.visible_message(SPAN_NOTICE("[target] climbs through [src]\'s airlock."))
 	else
-		user.visible_message(SPAN_NOTICE("[user] climbs through [src]\'s airlock."))
-	translate_obj(user)
-
+		usr.visible_message(SPAN_NOTICE("[usr] pushes [target] through [src]\'s airlock."))
+	translate_obj(target)
 
 /obj/docking_port/proc/check_dir_compatible(var/obj/docking_port/dock)
 	if(isnull(side) || isnull(dock.side)) //Null value means either we or they don't care about sides.
-		return 1
+		return TRUE
 	if((side == NORTH && dock.side == SOUTH) || (side == SOUTH && dock.side == NORTH))
-		return 1
+		return TRUE
 	if((side == EAST && dock.side == WEST) || (side == WEST && dock.side == EAST)) //Splitting these up for the sake of readability.
-		return 1
-	return 0
+		return TRUE
+	return
 
 /obj/docking_port/proc/get_all_docks(var/obj/effect/overmap/connect_to)
 	var/list/valid_docks = list()
@@ -96,7 +99,7 @@
 		to_chat(user, SPAN_WARNING("[src]'s lockdown protoctol disallows any docking procedures. Turn off the protocol firstly."))
 		return
 	if(docking_cooldown + TDP_DOCKING_DELAY > world.time)
-		to_chat(user, SPAN_WARNING("[src] systems are recallibrating since last docking procedure. Please, wait."))
+		to_chat(user, SPAN_WARNING("[src]'s systems are recalibrating since last docking procedure. Please, wait."))
 		return
 	if(current_connected)
 		disconnect(user)
@@ -140,8 +143,8 @@
 	current_connected = null
 	set_extension(src, /datum/extension/scent/burned_wiring)
 
-/obj/docking_port/proc/visual_dock_change(var/contract = 0, var/no_message = 0)
-	if(contract == 1)
+/obj/docking_port/proc/visual_dock_change(var/contract = FALSE, var/no_message = FALSE)
+	if(contract == TRUE)
 		icon_state = "dock_contracted"
 		flick("dock_contract", src)
 		if(!no_message)
@@ -152,20 +155,47 @@
 		if(!no_message)
 			visible_message(SPAN_NOTICE("[src] starts extending towards [current_connected.our_ship.name]."))
 
+/obj/docking_port/proc/panel_interraction(var/mob/user)
+	if(broke)
+		to_chat(user, SPAN_WARNING("It's broken."))
+		return
+	if(!usr.IsAdvancedToolUser())
+		to_chat(usr, SPAN_WARNING("You don't have the dexterity to do this!"))
+		return
+	if(req_access.len)
+		if(!check_access(user, req_access))
+			to_chat(user, SPAN_WARNING("Access Denied"))
+			return
+	var/list/choices_panel = list("Cancel","Docking", "Lockdown", "Announce")
+	var/pick_choice = input(user, "Select a module you want to interract with.", "Dock Control Panel", "Cancel") in choices_panel
+	if(!Adjacent(user) && !issilicon(user))
+		to_chat(user, SPAN_WARNING("You have to stay close to the dock while working with with panel."))
+		return
+	switch(pick_choice)
+		if("Docking")
+			pick_entity_connect_disconnect(user)
+		if("Lockdown")
+			lock_dock(user)
+		if("Announce")
+			announce_turn(user)
+
 //connect/disconnect
 
 /obj/docking_port/proc/disconnect(var/mob/user)
-	var/confirm = alert(user, "Are you sure you want to disconnect from [current_connected.name] on [current_connected.our_ship.name]?", , "No", "Yes")
+	var/confirm = alert(user, "Are you sure you want to disconnect from [current_connected.name]?", , "No", "Yes")
 	if(confirm != "Yes")
 		return
 	if(!current_connected) //Already disconncted. Stop spamming
+		return
+	if(!Adjacent(user) && !issilicon(user))
+		to_chat(user, SPAN_WARNING("You have to stay close to the dock while working with with panel."))
 		return
 	docking_cooldown = world.time
 	current_connected.movement_cooldown = world.time
 	current_connected.visual_dock_change(1)
 	visual_dock_change(1)
-	try_to_announce("Внимание. Производится отстыковка от [current_connected].")
-	current_connected.try_to_announce("Внимание. Получен запрос на отстыковку от [src]. Процедура выполняется.")
+	try_to_announce("Р’РЅРёРјР°РЅРёРµ. РџСЂРѕРёР·РІРѕРґРёС‚СЃСЏ РѕС‚СЃС‚С‹РєРѕРІРєР° РѕС‚ [current_connected].")
+	current_connected.try_to_announce("Р’РЅРёРјР°РЅРёРµ. РџРѕР»СѓС‡РµРЅ Р·Р°РїСЂРѕСЃ РЅР° РѕС‚СЃС‚С‹РєРѕРІРєСѓ РѕС‚ [src]. РџСЂРѕС†РµРґСѓСЂР° РІС‹РїРѕР»РЅСЏРµС‚СЃСЏ.")
 	current_connected.current_connected = null
 	current_connected = null
 
@@ -181,11 +211,14 @@
 		if(isnull(dock))
 			to_chat(user, SPAN_NOTICE("Connection point selection cancelled."))
 			return
+	if(!Adjacent(user) && !issilicon(user))
+		to_chat(user, SPAN_WARNING("You have to stay close to the dock while working with with panel."))
+		return
 	if(dock.broke)
-		to_chat(user, SPAN_WARNING("[dock] doesn't responds to connection request. It could be damaged."))
+		to_chat(user, SPAN_WARNING("[dock] doesn't respond to connection request. It could be damaged."))
 		return
 	if(dock.locked)
-		to_chat(user, SPAN_WARNING("[dock]'s lockdown protocol was enabled. Connection request denied."))
+		to_chat(user, SPAN_WARNING("[dock]'s lockdown protocol is activated. Connection request denied."))
 		return
 	if(dock)
 		current_connected = dock
@@ -194,8 +227,8 @@
 		dock.visual_dock_change()
 		docking_cooldown = world.time
 		current_connected.movement_cooldown = world.time
-		try_to_announce("Внимание. Производится соединение стыковочных портов с [current_connected].")
-		current_connected.try_to_announce("Внимание. Получен запрос на стыковку от [src]. Процедура выполняется.")
+		try_to_announce("Р’РЅРёРјР°РЅРёРµ. РџСЂРѕРёР·РІРѕРґРёС‚СЃСЏ СЃРѕРµРґРёРЅРµРЅРёРµ СЃС‚С‹РєРѕРІРѕС‡РЅС‹С… РїРѕСЂС‚РѕРІ СЃ [current_connected].")
+		current_connected.try_to_announce("Р’РЅРёРјР°РЅРёРµ. РџРѕР»СѓС‡РµРЅ Р·Р°РїСЂРѕСЃ РЅР° СЃС‚С‹РєРѕРІРєСѓ РѕС‚ [src]. РџСЂРѕС†РµРґСѓСЂР° РІС‹РїРѕР»РЅСЏРµС‚СЃСЏ.")
 	else
 		visible_message(SPAN_NOTICE("[src] beeps a message: \"No valid connection points. Repositioning may reveal more connection points.\""))
 
@@ -252,10 +285,10 @@
 	if(!isnull(our_ship))
 		our_ship.connectors += src
 		if(name == "telescopic docking port")
-			name = "[our_ship] - [name] [our_ship.connectors.len]"
+			name = "[name] [our_ship.connectors.len] ([our_ship])"
 
 /obj/docking_port/proc/translate_obj(var/obj/to_move)
-	if(!isturf(current_connected.loc))
+	if(!isturf(current_connected?.loc))
 		return
 	to_move.forceMove(current_connected.loc)
 

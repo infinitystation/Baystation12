@@ -3605,7 +3605,6 @@
 #include "infinity\code\modules\overmap\docks\docks_interraction.dm"
 #include "infinity\code\modules\overmap\docks\docks_repair.dm"
 #include "infinity\code\modules\overmap\docks\docks_subtypes.dm"
-#include "infinity\code\modules\overmap\docks\docks_verbs.dm"
 #include "infinity\code\modules\overmap\docks\~docks_undeff.dm"
 #include "infinity\code\modules\overmap\ships\ship.dm"
 #include "infinity\code\modules\overmap\ships\engines\gas_thruster.dm"
