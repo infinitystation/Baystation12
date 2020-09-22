@@ -134,10 +134,12 @@
 /obj/effect/seal_field/Initialize()
 	. = ..()
 	START_PROCESSING(SSobj, src)
+	SSair.mark_for_update(loc)
 
 /obj/effect/seal_field/Destroy()
-	. = ..()
 	STOP_PROCESSING(SSobj, src)
+	SSair.mark_for_update(loc)
+	. = ..()
 
 //Wires
 
