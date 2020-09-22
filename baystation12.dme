@@ -3522,7 +3522,6 @@
 #include "infinity\code\modules\emotes\definitions\visible.dm"
 #include "infinity\code\modules\events\alien.dm"
 #include "infinity\code\modules\external_datastore\_datastore_setup.dm"
-#include "infinity\code\modules\external_datastore\datastore_core.dm"
 #include "infinity\code\modules\food\recipes_microwave.dm"
 #include "infinity\code\modules\games\cards.dm"
 #include "infinity\code\modules\holodeck\holodeck.dm"
