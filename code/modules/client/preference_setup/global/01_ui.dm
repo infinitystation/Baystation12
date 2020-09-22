@@ -67,7 +67,7 @@
 	else if(href_list["select_ooc_color"])
 		var/new_ooccolor = input(user, "Выберите цвет Вашего текста в OOC:", "Глобальные Предпочтения") as color|null
 		if(new_ooccolor && can_select_ooc_color(user) && CanUseTopic(user))
-			pref.ooccolor = new_ooccolor
+			pref.client.set_ooc_color(new_ooccolor) //inf, was: pref.ooccolor = new_ooccolor
 			return TOPIC_REFRESH
 
 	else if(href_list["select_fps"])
