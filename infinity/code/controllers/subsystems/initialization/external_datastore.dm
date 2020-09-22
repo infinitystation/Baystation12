@@ -16,7 +16,7 @@ SUBSYSTEM_DEF(exdata)
 		var/datum/external_datastore/path = i
 		if(!ispath(path, /datum/external_datastore))
 			continue
-		if(initial(path.sourceOfData) && initial(path.name))
+		if(fexists(initial(path.sourceOfData)) && initial(path.name))
 			var/datum/external_datastore/newi = new path()
 			stores[newi.name] = newi
 

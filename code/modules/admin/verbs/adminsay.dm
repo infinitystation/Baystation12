@@ -5,7 +5,7 @@
 	if(!check_rights(R_ADMIN))	return
 
 	msg = sanitize(msg)
-	msg = emoji_parse(msg)
+	msg = emoji_parse_by_user(msg, src)//inf
 	if(!msg)	return
 
 	log_admin("ADMIN: [key_name(src)] : [msg]")
@@ -26,7 +26,7 @@
 		return
 
 	msg = sanitize(msg)
-	msg = emoji_parse(msg)
+	msg = emoji_parse_by_user(msg, src)//inf
 	log_staff_say("[key_name(src)] : [msg]")
 
 	if (!msg)

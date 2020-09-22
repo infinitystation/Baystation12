@@ -795,6 +795,8 @@ var/list/gamemode_cache = list()
 
 				if("deny_notdead_observer_becoming")
 					deny_notdead_observer_becoming = TRUE
+				if("donaters_only_emoji")
+					donaters_only_emoji = TRUE
 			//[/INF]
 
 				if("max_gear_cost")
