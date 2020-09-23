@@ -13,8 +13,6 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 	var/speedlimit = 1/(20 SECONDS) //top speed for autopilot, 5
 	var/accellimit = 0.001 //manual limiter for acceleration
 
-	var/distress = 0 //INF
-
 /obj/machinery/computer/ship/helm/Initialize()
 	. = ..()
 	get_known_sectors()
@@ -31,14 +29,6 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 
 /obj/machinery/computer/ship/helm/Process()
 	..()
-//[INF]
-	if(distress && linked)
-		animate(linked, transform = matrix()*1.4, time = 5)
-		animate(linked, transform = matrix(), time = 10)
-		linked.color = "#ff2222"
-	else if(linked)
-		linked.color = initial(linked.color) //I know, i know. its pretty bad.
-//[/INF]
 	if (autopilot && dx && dy)
 		var/turf/T = locate(dx,dy,GLOB.using_map.overmap_z)
 		if(linked.loc == T)
@@ -97,7 +87,7 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 		data["canburn"] = linked.can_burn()
 		data["accellimit"] = accellimit*1000
 
-		data["distress"] = distress //INF
+		data["distress"] = linked ? linked.distress : 0 //INF
 
 		var/speed = round(linked.get_speed()*1000, 0.01)
 		if(linked.get_speed() < SHIP_SPEED_SLOW)
@@ -216,8 +206,8 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 		viewing_overmap(user) ? unlook(user) : look(user)
 
 //[INF]
-	if (href_list["distress"])
-		distress = !distress
+	if (href_list["distress"] && linked)
+		linked.distress = !linked.distress
 //[/INF]
 
 	add_fingerprint(user)
