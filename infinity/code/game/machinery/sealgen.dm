@@ -46,7 +46,6 @@
 	update_icon()
 	change_power_consumption(field_density ? initial(active_power_usage)*3 : initial(active_power_usage), use_power_mode = POWER_USE_ACTIVE)
 	update_use_power(current_field ? POWER_USE_ACTIVE : POWER_USE_IDLE)
-	SSair.mark_for_update(current_field ? current_field.loc : loc)
 	if(current_field)
 		current_field.density = field_density
 		animate(current_field,alpha = 200,time = 2)
@@ -65,7 +64,7 @@
 /obj/machinery/sealgen/proc/activate()
 	if(stat & NOPOWER) return
 	current_field = new(get_step(src,dir))
-	current_field.dir = dir
+	current_field.dir = NORTH //was dir
 	current_field.generator = src
 	colorize(field_color)
 	START_PROCESSING_MACHINE(src, MACHINERY_PROCESS_SELF)
@@ -129,7 +128,7 @@
 	icon = 'infinity/icons/obj/machines/shielding.dmi'
 	icon_state = "shield_normal"
 
-	atmos_canpass = CANPASS_NEVER //That's it.
+	atmos_canpass = CANPASS_PROC //That's it. //FUCK YOU ZAS
 
 	anchored = TRUE
 	density = FALSE
@@ -144,6 +143,24 @@
 		user.visible_message(SPAN_DANGER("[user] begins waving around [src]."),SPAN_WARNING("You begin to wave around [src], trying to dispel it."))
 		if(do_after(user, dispel_delay, src))
 			generator.off()
+
+/obj/effect/seal_field/c_airblock(turf/other)
+	return BLOCKED
+
+/obj/effect/seal_field/proc/airupd(var/turf/N)
+	var/turf/simulated/T = N ? N : loc
+	if(istype(T))
+		var/zone/Z = T.zone
+		if(Z) Z.rebuild()
+
+/obj/effect/seal_field/New()
+	..()
+	update_nearby_tiles()
+
+/obj/effect/seal_field/Destroy()
+	. = ..()
+	update_nearby_tiles()
+	forceMove(null, 1)
 
 //Wires
 
@@ -185,6 +202,9 @@ var/const/SEALGEN_WIRE_POWER = 4
 	desc = "A briefcase that contains a highly sophisticated generator, capable of projecting fields that will block any gas movement, still allowing to walk nearby."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "secure"
+	item_state = "briefcase"
+
+	w_class = ITEM_SIZE_HUGE
 
 	var/deploy_time = 2 SECONDS
 
@@ -222,12 +242,12 @@ var/const/SEALGEN_WIRE_POWER = 4
 //Vending & cargo
 
 /obj/machinery/vending/engivend/Initialize()
-	products[/obj/item/sealgen_case] = 6
+	products[/obj/item/sealgen_case] = 3
 	. = ..()
 
 /decl/hierarchy/supply_pack/machinery/sealgen
 	name = "Machinery - SFG Crate"
 	containername = "sealing field generator crate"
 	containertype = /obj/structure/closet/crate
-	cost = 15
-	contains = list(/obj/item/sealgen_case = 6)
+	cost = 30
+	contains = list(/obj/item/sealgen_case = 3)
