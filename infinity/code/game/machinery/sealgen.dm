@@ -221,5 +221,5 @@ var/const/SEALGEN_WIRE_POWER = 4
 	name = "Machinery - SFG Crate"
 	containername = "sealing field generator crate"
 	containertype = /obj/structure/closet/crate
-	cost = 5
+	cost = 15
 	contains = list(/obj/item/sealgen_case = 6)
