@@ -4,8 +4,10 @@
 	icon = 'infinity/icons/obj/machines/shielding.dmi'
 	icon_state = "sealgen"
 
-	anchored = 1
-	density = 1
+	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
+
+	anchored = TRUE
+	density = TRUE
 
 	active_power_usage = 2500
 	idle_power_usage = 50
@@ -15,14 +17,14 @@
 	var/fold_time = 2 SECONDS
 
 	var/field_color = COLOR_YELLOW
-	var/field_density = 0 //It can be used to block movement via panel manipulation
+	var/field_density = FALSE //It can be used to block movement via wires, though you can dispel it with hand
 
-	var/hatch_open = 0
+	var/hatch_open = FALSE
 	wires = /datum/wires/sealgen
 
 	req_access = list(access_engine_equip)
 
-	var/locked = 0
+	var/locked = FALSE
 
 //General proc overrides
 
@@ -44,8 +46,11 @@
 	update_icon()
 	change_power_consumption(field_density ? initial(active_power_usage)*3 : initial(active_power_usage), use_power_mode = POWER_USE_ACTIVE)
 	update_use_power(current_field ? POWER_USE_ACTIVE : POWER_USE_IDLE)
+	SSair.mark_for_update(current_field ? current_field.loc : loc)
 	if(current_field)
 		current_field.density = field_density
+		animate(current_field,alpha = 200,time = 2)
+		animate(current_field,alpha = initial(alpha),time = 2)
 
 /obj/machinery/sealgen/Destroy()
 	off()
@@ -61,23 +66,28 @@
 	if(stat & NOPOWER) return
 	current_field = new(get_step(src,dir))
 	current_field.dir = dir
+	current_field.generator = src
 	colorize(field_color)
+	START_PROCESSING_MACHINE(src, MACHINERY_PROCESS_SELF)
 
 /obj/machinery/sealgen/proc/off()
 	qdel(current_field)
 	current_field = null
+	STOP_PROCESSING_MACHINE(src, MACHINERY_PROCESS_SELF)
 
 /obj/machinery/sealgen/proc/colorize()
 	if(!current_field) return
 	current_field.color = field_color
-	current_field.set_light(1, 0.1, 5, l_color = field_color) //Glowy thing
+	current_field.set_light(1, 0.3, 5, l_color = field_color) //Glowy thing
 
 //Interaction
 
 /obj/machinery/sealgen/attack_hand(var/mob/user)
+
 	if(locked)
 		to_chat(user, SPAN_WARNING("It's locked! You can't [current_field ? "shut it down" : "turn it on"]."))
 		return
+
 	if(!current_field)
 		activate()
 	else
@@ -86,8 +96,9 @@
 	update_icon()
 
 /obj/machinery/sealgen/attackby(obj/item/weapon/W, mob/user)
+
 	if(isMultitool(W) && !locked)
-		field_color = input(usr, "Choose field colour.", "Field color", COLOR_YELLOW) as color|null
+		field_color = input(usr, "Choose field colour.", "Field color", initial(field_color)) as color|null
 		to_chat(usr, SPAN_NOTICE("You change \the [src] field <font color='[field_color]'>color.</font>"))
 		colorize()
 		return
@@ -120,26 +131,19 @@
 
 	atmos_canpass = CANPASS_NEVER //That's it.
 
-	anchored = 1
-	density = 0
-	opacity = 0
+	anchored = TRUE
+	density = FALSE
+	opacity = FALSE
 
-/obj/effect/seal_field/Process()
-	animate(src,alpha = 200,time = 5)
-	animate(src,alpha = initial(alpha),time = 5)
-	return 1
+	var/dispel_delay = 10 SECONDS
+	var/obj/machinery/sealgen/generator
 
-//Just for effect
-
-/obj/effect/seal_field/Initialize()
-	. = ..()
-	START_PROCESSING(SSobj, src)
-	SSair.mark_for_update(loc)
-
-/obj/effect/seal_field/Destroy()
-	STOP_PROCESSING(SSobj, src)
-	SSair.mark_for_update(loc)
-	. = ..()
+/obj/effect/seal_field/attack_hand(var/mob/user)
+	..()
+	if(density)
+		user.visible_message(SPAN_DANGER("[user] begins waving around [src]."),SPAN_WARNING("You begin to wave around [src], trying to dispel it."))
+		if(do_after(user, dispel_delay, src))
+			generator.off()
 
 //Wires
 
@@ -165,6 +169,7 @@ var/const/SEALGEN_WIRE_POWER = 4
 		if(SEALGEN_WIRE_DENSITY)
 			S.field_density = !mended
 		if(SEALGEN_WIRE_POWER)
+			if(!S.current_field) return
 			S.off()
 			S.shock(usr, 100)
 
@@ -207,8 +212,11 @@ var/const/SEALGEN_WIRE_POWER = 4
 /obj/machinery/sealgen/proc/fold(var/mob/user)
 	if(current_field)
 		off()
-	var/obj/item/sealgen_case/case = new(get_turf(user))
-	user.put_in_hands(case)
+	if(user)
+		var/obj/item/sealgen_case/case = new(get_turf(user))
+		user.put_in_hands(case)
+	else
+		new/obj/item/sealgen_case(get_turf(src))
 	qdel(src)
 
 //Vending & cargo
