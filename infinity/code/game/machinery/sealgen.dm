@@ -136,6 +136,7 @@
 
 	var/dispel_delay = 10 SECONDS
 	var/obj/machinery/sealgen/generator
+	var/ded = FALSE
 
 /obj/effect/seal_field/attack_hand(var/mob/user)
 	..()
@@ -145,22 +146,16 @@
 			generator.off()
 
 /obj/effect/seal_field/c_airblock(turf/other)
-	return BLOCKED
-
-/obj/effect/seal_field/proc/airupd(var/turf/N)
-	var/turf/simulated/T = N ? N : loc
-	if(istype(T))
-		var/zone/Z = T.zone
-		if(Z) Z.rebuild()
+	return ded ? 0 : BLOCKED
 
 /obj/effect/seal_field/New()
 	..()
-	update_nearby_tiles()
+	update_nearby_tiles(need_rebuild=1)
 
 /obj/effect/seal_field/Destroy()
-	. = ..()
+	ded = TRUE
 	update_nearby_tiles()
-	forceMove(null, 1)
+	. = ..()
 
 //Wires
 
