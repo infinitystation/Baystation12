@@ -23,7 +23,7 @@ var/global/datum/matchmaker/matchmaker = new()
 			to_warn |= R.holder.current
 //[INF]
 	if(char)
-		to_chat(char,"<span class='warning'>Вы установили механические отношения с кем-то. Нажмите \"<a href='byond://?src=\ref[M];show_relations=1'>Посмотреть отношения</a>\" чтобы просмотреть и утвердить их.</span>")
+		to_chat(char,"<span class='warning'>Вы установили механические отношения с кем-то. Нажмите \"<a href='byond://?src=\ref[char];show_relations=1'>Посмотреть отношения</a>\" чтобы просмотреть и утвердить их.</span>")
 		return
 //[/INF]
 	for(var/mob/M in to_warn)
