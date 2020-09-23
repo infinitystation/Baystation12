@@ -14,13 +14,18 @@ var/global/datum/matchmaker/matchmaker = new()
 		var/datum/relation/R = T
 		relation_types[initial(R.name)] = T
 
-/datum/matchmaker/proc/do_matchmaking()
+/datum/matchmaker/proc/do_matchmaking(var/mob/char) //INF WAS /datum/matchmaker/proc/do_matchmaking()
 	var/list/to_warn = list()
 	for(var/datum/relation/R in relations)
 		if(!R.other)
 			R.find_match()
 		if(R.other && !R.finalized)
 			to_warn |= R.holder.current
+//[INF]
+	if(char)
+		to_chat(char,"<span class='warning'>Вы установили механические отношения с кем-то. Нажмите \"<a href='byond://?src=\ref[M];show_relations=1'>Посмотреть отношения</a>\" чтобы просмотреть и утвердить их.</span>")
+		return
+//[/INF]
 	for(var/mob/M in to_warn)
 		to_chat(M,"<span class='warning'>Вы установили механические отношения с кем-то. Нажмите \"<a href='byond://?src=\ref[M];show_relations=1'>Посмотреть отношения</a>\" чтобы просмотреть и утвердить их.</span>")
 
