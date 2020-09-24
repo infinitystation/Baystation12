@@ -208,6 +208,10 @@
 
 		for(var/obj/structure/cable/C in A)
 			powernets |= C.powernet
+//[INF]
+		for(var/obj/docking_port/enterence/E in A)
+			E.ship_setup()
+//[/INF]
 	if(logging_home_tag)
 		var/datum/shuttle_log/s_log = SSshuttle.shuttle_logs[src]
 		s_log.handle_move(current_location, destination)

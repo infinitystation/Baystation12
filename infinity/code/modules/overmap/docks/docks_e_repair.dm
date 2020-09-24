@@ -1,11 +1,11 @@
-/obj/docking_port/proc/repair(var/mob/user, var/obj/item/I)
-	if(!broke)
+/obj/docking_port/enterence/proc/repair(var/mob/user, var/obj/item/I)
+	if(!broken)
 		return TRUE
-	if(issilicon(user))
+	if(!issilicon(user))
 		if(!Adjacent(user))
 			return
 	if(!user.skill_check(SKILL_CONSTRUCTION, SKILL_EXPERT))
-		to_chat(user, SPAN_NOTICE("The dock looks too complicated. The damage is too high to be repaired with your construction skills."))
+		to_chat(user, SPAN_NOTICE("The damage is too complicated to be repaired with your construction skills."))
 		return
 	if(repair_busy)
 		return
@@ -166,6 +166,6 @@
 				repair_busy = FALSE
 				repair_step = 0
 				user.visible_message("[user] resecured \the [src]'s bolts. The docking port was repaired.", "You secured \the [src]'s bolts. The docking port was repaired.")
-				broke = FALSE
+				broken = FALSE
 				icon_state = "dock_contracted"
 				return

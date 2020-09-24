@@ -15343,7 +15343,6 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
 "zJ" = (
-/obj/structure/table/standard,
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
 	},
@@ -15356,7 +15355,8 @@
 /obj/effect/floor_decal/corner/green/bordercorner2{
 	dir = 10
 	},
-/obj/item/weapon/storage/box/donut/empty,
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
 /turf/simulated/floor/tiled,
 /area/command/dock)
 "zK" = (
@@ -16894,11 +16894,14 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/hallway/primary/thirddeck/center)
 "Cs" = (
-/obj/docking_port/south{
-	name = "NSV Sierra Telescopic Docking Port";
-	req_access = list("ACCESS_BRIDGE")
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/industrial/danger,
+/turf/simulated/floor/tiled,
 /area/command/dock)
 "Ct" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
@@ -17331,10 +17334,6 @@
 	dir = 4;
 	pixel_x = -23
 	},
-/obj/structure/extinguisher_cabinet{
-	dir = 8;
-	pixel_y = -22
-	},
 /obj/structure/reagent_dispensers/water_cooler{
 	dir = 4
 	},
@@ -17344,16 +17343,21 @@
 /obj/effect/floor_decal/corner/green/border{
 	dir = 10
 	},
-/obj/effect/floor_decal/borderfloor/corner2{
-	dir = 9
-	},
-/obj/effect/floor_decal/corner/green/bordercorner2{
-	dir = 9
-	},
 /turf/simulated/floor/tiled,
 /area/command/dock)
 "Dg" = (
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/industrial/danger,
+/turf/simulated/floor/tiled,
 /area/command/dock)
 "Dh" = (
 /obj/structure/reagent_dispensers/fueltank,
@@ -17745,12 +17749,10 @@
 /turf/simulated/floor/plating,
 /area/command/dock)
 "DN" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+/obj/docking_port/enterence/south{
+	name = "NSV Sierra Telescopic Docking Port"
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/command/dock)
 "DO" = (
 /obj/machinery/alarm{
@@ -18192,16 +18194,10 @@
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
 "Ez" = (
-/obj/machinery/power/apc{
-	dir = 4;
-	name = "east bump";
-	pixel_x = 24
+/obj/docking_port/control{
+	req_access = list("ACCESS_BRIDGE")
 	},
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/command/dock)
 "EA" = (
 /obj/structure/cable/green{
@@ -21209,10 +21205,21 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/exploration_shuttle/cargo)
 "Jt" = (
-/obj/structure/sign/nanotrasen{
-	dir = 1
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/green/border,
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 9
 	},
-/turf/simulated/wall/r_wall/hull,
+/obj/effect/floor_decal/corner/green/bordercorner2{
+	dir = 9
+	},
+/obj/structure/table/standard,
+/obj/item/weapon/storage/box/donut/empty,
+/obj/structure/extinguisher_cabinet{
+	dir = 8;
+	pixel_y = -22
+	},
+/turf/simulated/floor/tiled,
 /area/command/dock)
 "Ju" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
@@ -21945,6 +21952,11 @@
 /obj/random/maintenance,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/thirddeck/port)
+"KH" = (
+/obj/effect/wallframe_spawn/reinforced/hull,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/plating,
+/area/command/dock)
 "KI" = (
 /obj/machinery/light_construct{
 	dir = 1
@@ -22385,6 +22397,12 @@
 /obj/machinery/navbeacon/sierra/TD_fore3_port,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
+"LA" = (
+/obj/structure/sign/warning/docking_area{
+	dir = 8
+	},
+/turf/simulated/wall/r_wall/hull,
+/area/command/dock)
 "LB" = (
 /obj/structure/lattice,
 /turf/space,
@@ -39126,11 +39144,11 @@ AC
 AG
 Cp
 Jw
-wZ
-wZ
+Jt
 AD
 AD
 AD
+Ow
 Is
 Is
 Is
@@ -39328,11 +39346,11 @@ AH
 Cq
 DM
 Cc
-DN
 Cs
-Jt
-AD
-AD
+DN
+KH
+Ow
+Ow
 Is
 Is
 Is
@@ -39530,11 +39548,11 @@ AF
 AM
 wZ
 BC
-Ez
 Dg
-AD
-AD
-AD
+Ez
+KH
+Ow
+Ow
 Is
 Is
 Is
@@ -39736,7 +39754,7 @@ uM
 uM
 AD
 AD
-AD
+LA
 Is
 Is
 Is
