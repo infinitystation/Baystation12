@@ -1,3 +1,12 @@
+/obj/effect/overmap/visitable/ship
+	var/distress = 0
+
+/obj/effect/overmap/visitable/ship/Process()
+	. = ..()
+	if(distress)
+		animate(src, transform = matrix()*1.4, color = "#ff2222", time = 5)
+		animate(src, transform = matrix(), color = initial(color), time = 10)
+
 /obj/effect/overmap/visitable/Move(var/newloc,var/dir)
 	. = ..()
 	break_docks()
@@ -11,3 +20,4 @@
 			if(dock.current_connected)
 				dock.current_connected.dock_break()
 			dock.dock_break()
+
