@@ -293,6 +293,12 @@
 		qdel(pockets)
 	pockets = new/obj/item/weapon/storage/internal/pouch(src, slots*BASE_STORAGE_COST(ITEM_SIZE_SMALL))
 
+/obj/item/clothing/suit/storage/hooded/polychromic/equipped()
+	. = ..()
+	if(hood)
+		hood.color = color
+		update_icon()
+
 /obj/item/clothing/suit/storage/hooded/polychromic/verb/change_color()
 	set name = "Change Cloak Color"
 	set category = "Object"
