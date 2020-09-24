@@ -3598,6 +3598,7 @@
 #include "infinity\code\modules\organs\internal\species\resomi.dm"
 #include "infinity\code\modules\organs\internal\species\unathi.dm"
 #include "infinity\code\modules\organs\internal\species\xenophage.dm"
+#include "infinity\code\modules\overmap\ships\ship.dm"
 #include "infinity\code\modules\overmap\ships\engines\gas_thruster.dm"
 #include "infinity\code\modules\overmap\ships\engines\ion_thruster.dm"
 #include "infinity\code\modules\paperwork\paper.dm"
