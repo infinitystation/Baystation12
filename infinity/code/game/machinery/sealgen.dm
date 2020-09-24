@@ -205,6 +205,7 @@ var/const/SEALGEN_WIRE_POWER = 4
 	var/deploy_time = 2 SECONDS
 
 /obj/item/sealgen_case/attack_self(var/mob/user)
+	. = ..()
 	to_chat(user,SPAN_NOTICE("You start deploying \the [src]."))
 	user.visible_message(SPAN_NOTICE("[user] starts deploying \the [src]."))
 	if(do_after(user, deploy_time, src))
