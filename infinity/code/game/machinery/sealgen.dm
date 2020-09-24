@@ -213,7 +213,7 @@ var/const/SEALGEN_WIRE_POWER = 4
 		G.dir = user.dir
 
 /obj/machinery/sealgen/MouseDrop(over_object, src_location, over_location)
-	..()
+	. = ..()
 	if(locked && Adjacent(usr))
 		to_chat(usr,SPAN_WARNING("You can't fold [src], it's locked!"))
 		return
