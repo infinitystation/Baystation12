@@ -41,6 +41,7 @@
 		overlays += initial(icon_state)+"-hatch"
 
 /obj/machinery/sealgen/Process()
+	. = ..()
 	if((stat & NOPOWER) && current_field)
 		off()
 	update_icon()
