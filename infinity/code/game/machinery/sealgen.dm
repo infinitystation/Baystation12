@@ -216,16 +216,17 @@ var/const/SEALGEN_WIRE_POWER = 4
 
 /obj/machinery/sealgen/MouseDrop(over_object, src_location, over_location)
 	. = ..()
-	if(Adjacent(usr))
+	var/mob/user = usr
+	if(istype(user) && Adjacent(user))
 		if(locked)
-			to_chat(usr,SPAN_WARNING("You can't fold [src], it's locked!"))
+			to_chat(user,SPAN_WARNING("You can't fold [src], it's locked!"))
 			return
-		if(over_object == usr)
-			to_chat(usr,SPAN_NOTICE("You start folding \the [src]."))
-			usr.visible_message(SPAN_NOTICE("[usr] starts folding \the [src]."))
-			if(do_after(usr, fold_time, src))
-				usr.visible_message(SPAN_NOTICE("[usr] folds \the [src]."),SPAN_INFO("You fold \the [src]."))
-				fold(usr)
+		if(over_object == user)
+			to_chat(user,SPAN_NOTICE("You start folding \the [src]."))
+			user.visible_message(SPAN_NOTICE("[user] starts folding \the [src]."))
+			if(do_after(user, fold_time, src))
+				user.visible_message(SPAN_NOTICE("[user] folds \the [src]."),SPAN_INFO("You fold \the [src]."))
+				fold(user)
 
 /obj/machinery/sealgen/proc/fold(var/mob/user)
 	if(current_field)
