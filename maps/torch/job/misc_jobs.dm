@@ -48,7 +48,7 @@ Civilian
 		/datum/mil_rank/civ/contractor
 	)
 
-/datum/job/submap/merchant
+/datum/job/merchant
 	title = "Merchant"
 	department = "Civilian"
 	department_flag = CIV
