@@ -1,3 +1,20 @@
+#define WEBHOOK_SUBMAP_LOADED_LIBERIA "webhook_submap_liberia"
+
+// Submap datum and archetype.
+/decl/webhook/submap_loaded/liberia
+	id = WEBHOOK_SUBMAP_LOADED_LIBERIA
+
+/decl/submap_archetype/liberia
+	descriptor = "merchant ship"
+	map = "Liberia - merchant ship"
+	blacklisted_species = null
+	whitelisted_species = null
+	crew_jobs = list(
+		/datum/job/submap/merchant,
+		/datum/job/submap/merchant_trainee
+		)
+	call_webhook = WEBHOOK_SUBMAP_LOADED_LIBERIA
+
 /datum/job/submap/merchant
 	title = "Merchant"
 	department = "Civilian"
@@ -10,7 +27,7 @@
 	ideal_character_age = 30
 	minimal_player_age = 7
 	create_record = 0
-	outfit_type = /decl/hierarchy/outfit/job/sierra/merchant/leader
+	outfit_type = /decl/hierarchy/outfit/job/liberia/merchant/leader
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/civ)
 	latejoin_at_spawnpoints = 1
@@ -45,8 +62,8 @@
 	minimal_player_age = 0
 	create_record = 0
 	alt_titles = list(
-		"Merchant Security" = /decl/hierarchy/outfit/job/sierra/merchant/security)
-	outfit_type = /decl/hierarchy/outfit/job/sierra/merchant
+		"Merchant Security" = /decl/hierarchy/outfit/job/liberia/merchant/security)
+	outfit_type = /decl/hierarchy/outfit/job/liberia/merchant
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/civ)
 	latejoin_at_spawnpoints = 1
@@ -60,3 +77,43 @@
 	give_psionic_implant_on_join = FALSE
 
 	skill_points = 24
+
+// Spawn points.
+/obj/effect/submap_landmark/spawnpoint/liberia
+	name = "Merchant"
+	movable_flags = MOVABLE_FLAG_EFFECTMOVE
+
+/obj/effect/submap_landmark/spawnpoint/liberia/trainee
+	name = "Merchant Assistant"
+
+/decl/hierarchy/outfit/job/liberia/merchant
+	name = OUTFIT_JOB_NAME("Merchant Assistant")
+	uniform = /obj/item/clothing/under/suit_jacket/tan
+	l_ear = null
+	shoes = /obj/item/clothing/shoes/brown
+//	pda_type = /obj/item/modular_computer/pda
+	id_type = /obj/item/weapon/card/id/liberia/merchant
+
+/decl/hierarchy/outfit/job/liberia/merchant/security
+	name = OUTFIT_JOB_NAME("Merchant Security")
+	uniform = /obj/item/clothing/under/syndicate/tacticool
+	suit = /obj/item/clothing/suit/armor/pcarrier/light
+	shoes = /obj/item/clothing/shoes/jackboots
+
+/decl/hierarchy/outfit/job/liberia/merchant/leader
+	name = OUTFIT_JOB_NAME("Merchant Leader - liberia")
+	uniform = /obj/item/clothing/under/suit_jacket/charcoal
+	shoes = /obj/item/clothing/shoes/laceup
+	id_type = /obj/item/weapon/card/id/liberia/merchant/leader
+
+/obj/item/weapon/card/id/liberia/merchant
+	desc = "An identification card issued to Merchants."
+	job_access_type = /datum/job/submap/merchant_trainee
+	color = COLOR_OFF_WHITE
+	detail_color = COLOR_BEIGE
+
+/obj/item/weapon/card/id/liberia/merchant/leader
+	desc = "An identification card issued to Merchant Leaders, indicating their right to sell and buy goods."
+	job_access_type = /datum/job/submap/merchant
+
+#undef WEBHOOK_SUBMAP_LOADED_LIBERIA

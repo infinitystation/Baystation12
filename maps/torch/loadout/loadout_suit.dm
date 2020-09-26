@@ -9,7 +9,7 @@
 
 /datum/gear/suit/trenchcoat
 	allowed_roles = null //INF, оригинал ниже ~bear1ake
-	/* allowed_roles = list(/datum/job/assistant, /datum/job/bartender, /datum/job/detective, /datum/job/submap/merchant, /datum/job/submap/bearcat_captain, /datum/job/submap/bearcat_crewman, /datum/job/submap/unishi_crew, /datum/job/submap/unishi_researcher, /datum/job/submap/colonist, /datum/job/submap/pod)
+	/* allowed_roles = list(/datum/job/assistant, /datum/job/bartender, /datum/job/detective, /datum/job/merchant, /datum/job/submap/bearcat_captain, /datum/job/submap/bearcat_crewman, /datum/job/submap/unishi_crew, /datum/job/submap/unishi_researcher, /datum/job/submap/colonist, /datum/job/submap/pod)
 	allowed_branches = CIVILIAN_BRANCHES */
 
 /datum/gear/suit/poncho
@@ -18,15 +18,15 @@
 	allowed_branches = CIVILIAN_BRANCHES */
 
 /datum/gear/suit/security_poncho
-	allowed_roles = list(/datum/job/submap/merchant, /datum/job/detective)
+	allowed_roles = list(/datum/job/merchant, /datum/job/detective)
 	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/suit/medical_poncho
-	allowed_roles = list(/datum/job/senior_doctor, /datum/job/junior_doctor, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/submap/merchant, /datum/job/chemist)
+	allowed_roles = list(/datum/job/senior_doctor, /datum/job/junior_doctor, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/merchant, /datum/job/chemist)
 	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/suit/engineering_poncho
-	allowed_roles = list(/datum/job/engineer, /datum/job/roboticist, /datum/job/submap/merchant)
+	allowed_roles = list(/datum/job/engineer, /datum/job/roboticist, /datum/job/merchant)
 	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/suit/science_poncho
@@ -34,11 +34,11 @@
 	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/suit/nanotrasen_poncho
-	allowed_roles = list(/datum/job/scientist, /datum/job/scientist_assistant, /datum/job/senior_scientist, /datum/job/submap/merchant)
+	allowed_roles = list(/datum/job/scientist, /datum/job/scientist_assistant, /datum/job/senior_scientist, /datum/job/merchant)
 	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/suit/cargo_poncho
-	allowed_roles = list(/datum/job/cargo_tech, /datum/job/submap/merchant)
+	allowed_roles = list(/datum/job/cargo_tech, /datum/job/merchant)
 	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/suit/suit_jacket

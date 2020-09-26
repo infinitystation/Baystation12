@@ -44,7 +44,7 @@
 						/datum/job/senior_scientist, /datum/job/scientist, /datum/job/roboticist, /datum/job/scientist_assistant,
 						/datum/job/ai, /datum/job/cyborg,
 						/datum/job/assistant,
-						/datum/job/submap/merchant, /datum/job/submap/merchant_trainee, /*/datum/job/stowaway*/
+						/*/datum/job/submap/merchant, /datum/job/submap/merchant_trainee, /datum/job/stowaway*/
 						)
 
 	access_modify_region = list(

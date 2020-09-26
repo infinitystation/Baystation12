@@ -30,3 +30,7 @@
 	initial_restricted_waypoints = list(
 		"Mule" = list("nav_mule_start")
 	)
+
+/obj/effect/submap_landmark/joinable_submap/liberia
+	name = "Liberia"
+	archetype = /decl/submap_archetype/liberia

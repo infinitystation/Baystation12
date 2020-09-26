@@ -209,6 +209,6 @@
 //Merchant
 /obj/item/weapon/card/id/torch/merchant
 	desc = "An identification card issued to Merchants, indicating their right to sell and buy goods."
-	job_access_type = /datum/job/submap/merchant
+	job_access_type = /datum/job/merchant
 	color = COLOR_OFF_WHITE
 	detail_color = COLOR_BEIGE

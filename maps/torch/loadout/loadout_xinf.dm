@@ -84,13 +84,13 @@
 // Vox clothing
 
 /datum/gear/mask/gas/vox
-	allowed_roles = list(/datum/job/submap/merchant)
+	allowed_roles = list(/datum/job/merchant)
 
 /datum/gear/gloves/vox
-	allowed_roles = list(/datum/job/submap/merchant)
+	allowed_roles = list(/datum/job/merchant)
 
 /datum/gear/uniform/vox_cloth
-	allowed_roles = list(/datum/job/submap/merchant)
+	allowed_roles = list(/datum/job/merchant)
 
 /datum/gear/uniform/vox_robe
-	allowed_roles = list(/datum/job/submap/merchant)
+	allowed_roles = list(/datum/job/merchant)
