@@ -185,6 +185,7 @@
 		/decl/emote/audible/synth/buzz,
 		/decl/emote/audible/synth/confirm,
 		/decl/emote/audible/synth/deny,
+		/decl/emote/audible/synth/scream,
 		/decl/emote/audible/synth/security,
 		/decl/emote/audible/synth/security/halt
 		)
