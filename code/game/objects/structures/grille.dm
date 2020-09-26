@@ -210,6 +210,12 @@
 	if(!in_range(src, user))//To prevent TK and exosuit users from getting shocked
 		return 0
 	var/turf/T = get_turf(src)
+//[INF]
+	for(var/atom/A in T.contents)
+		if(istype(A,/obj/structure/wall_frame) || A == src) continue
+		if(A.density)
+			return 0
+//[/INF]
 	var/obj/structure/cable/C = T.get_cable_node()
 	if(C)
 		if(electrocute_mob(user, C, src))
