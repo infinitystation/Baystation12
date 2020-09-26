@@ -13,7 +13,8 @@
 	suffixes = list("liberia/liberia.dmm") //Суффикс
 	cost = 0.5 //Шанса появления
 	spawn_weight = 50 //HABITABLE SHIPS SPAWN
-	shuttles_to_initialise = list( //Инициализация шаттлов
+	//Инициализация шаттлов
+	shuttles_to_initialise = list(
 		/datum/shuttle/autodock/overmap/mule
 	)
 

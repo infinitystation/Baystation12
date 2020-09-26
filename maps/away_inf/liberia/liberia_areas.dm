@@ -1,101 +1,103 @@
 /area/liberia/
+	req_access = list(access_merchant)
 
-/area/liberia/DockingHall
+/area/liberia/dockinghall
 	name = "Docking Hall"
 	icon_state = "entry_1"
 
-/area/liberia/GuestRoom1
+/area/liberia/guestroom1
 	name = "Guest Room 1"
 	icon_state = "green"
 
-/area/liberia/GuestRoom2
+/area/liberia/guestroom2
 	name = "Guest Room 2"
 	icon_state = "red"
 
-/area/liberia/Library
+/area/liberia/library
 	name = "Library"
 	icon_state = "library"
 
-/area/liberia/HallWay
+/area/liberia/hallway
 	name = "HallWay"
 	icon_state = "hallC1"
 
-/area/liberia/MerchantStorage
+/area/liberia/merchantstorage
 	name = "Merchant Storage"
 	icon_state = "storage"
 
-/area/liberia/EngineeringLobby
+/area/liberia/engineeringlobby
 	name = "Engineering Lobby"
 	icon_state = "primarystorage"
 
-/area/liberia/EngineeringStorage
+/area/liberia/engineeringstorage
 	name = "Engineering Storage"
 	icon_state = "emergencystorage"
 
-/area/liberia/EngineeringReactor
+/area/liberia/engineeringreactor
 	name = "Engineering Reactor"
 	icon_state = "engineering_workshop"
 
-/area/liberia/EngineeringEngines
+/area/liberia/engineeringengines
 	name = "Engineering Engines"
 	icon_state = "engine"
 
-/area/liberia/PersonellRoom1
+/area/liberia/personellroom1
 	name = "Personell Room 1"
 	icon_state = "dk_yellow"
 
-/area/liberia/PersonellRoom2
+/area/liberia/personellroom2
 	name = "Personell Room 2"
 	icon_state = "purple"
 
-/area/liberia/TraidingRoom
+/area/liberia/traidingroom
 	name = "Traiding Room"
 	icon_state = "purple"
 
-/area/liberia/Bridge
+/area/liberia/bridge
 	name = "Bridge"
 	icon_state = "bridge"
 
-/area/liberia/Cryo
+/area/liberia/cryo
 	name = "Cryo"
 	icon_state = "crew_quarters"
 
-/area/liberia/Medbay
+/area/liberia/medbay
 	name = "Medbay"
 	icon_state = "medbay"
 
-/area/liberia/OfficeRoom
+/area/liberia/officeroom
 	name = "Office Room"
 	icon_state = "observatory"
 
-/area/liberia/ToiletRoom1
+/area/liberia/toiletroom1
 	name = "Shower"
 	icon_state = "showroom"
 
-/area/liberia/ToiletRoom2
+/area/liberia/toiletroom2
 	name = "Toilet"
 	icon_state = "toilet"
 
-/area/liberia/Bar
+/area/liberia/bar
 	name = "Bar"
 	icon_state = "bar"
 
-/area/liberia/Captain
+/area/liberia/captain
 	name = "Captain Office"
 	icon_state = "blue-red"
+	req_access = list(access_merchant_leader)
 
-/area/liberia/Atmos
+/area/liberia/atmos
 	name = "Atmos Chamber"
 	icon_state = "atmos"
 
-/area/liberia/Solar1
+/area/liberia/solar1
 	name = "Solar1"
 	icon_state = "away1"
 
-/area/liberia/Solar2
+/area/liberia/solar2
 	name = "Solar2"
 	icon_state = "away2"
 
-/area/liberia/Mule
+/area/liberia/mule
 	name = "Mule"
 	icon_state = "shuttle"

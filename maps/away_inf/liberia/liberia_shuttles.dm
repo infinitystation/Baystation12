@@ -28,7 +28,7 @@
 	current_location = "nav_mule_start"
 	range = 2
 	dock_target = "mule_port_shuttle_dock"
-	shuttle_area = list(/area/liberia/Mule)
+	shuttle_area = list(/area/liberia/mule)
 	defer_initialisation = TRUE
 	flags = SHUTTLE_FLAGS_PROCESS
 	skill_needed = SKILL_BASIC
