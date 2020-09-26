@@ -233,6 +233,15 @@ var/list/_client_preferences_by_type
 	description = "Show End Titles"
 	key = "SHOW_CREDITS"
 
+/datum/client_preference/show_ckey_credits
+	description = "Show Ckey in End Credits/Special Role List"
+	key = "SHOW_CKEY_CREDITS"
+	options = list(GLOB.PREF_HIDE, GLOB.PREF_SHOW)
+
+/datum/client_preference/play_instruments
+	description ="Play instruments"
+	key = "SOUND_INSTRUMENTS"
+
 /datum/client_preference/give_personal_goals
 	description = "Give Personal Goals"
 	key = "PERSONAL_GOALS"

@@ -6,7 +6,6 @@
 	if(!module_sprites.len)
 		to_chat(src, FONT_LARGE(SPAN_BOLD("Что-то пошло не так в системе выбора вашего корпуса. Сообщите разработчикам об этом приложив информацию о выбранном вами модуле.")))
 		CRASH("Can't setup cyborg's icon for [src] ([src.client]). Module: [module?.name]")
-		return
 
 	if(module_sprites.len == 1 || !client)
 		if(!(icontype in module_sprites))

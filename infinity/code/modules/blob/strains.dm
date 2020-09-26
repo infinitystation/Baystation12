@@ -115,6 +115,8 @@
 	item.throw_at(victim, 3, 3)
 
 /datum/blob_strain/debris/killed(var/obj/effect/biomass/blob)
+	if(blob.core.contents.len == 0)
+		return
 	for(var/count = 1 to rand(1, 3))
 		var/obj/item/item = pick(blob.core.contents)
 		item.forceMove(get_turf(blob))

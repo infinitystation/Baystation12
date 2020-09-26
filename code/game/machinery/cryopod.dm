@@ -148,15 +148,14 @@
 
 	var/base_icon_state = "body_scanner_0"
 	var/occupied_icon_state = "body_scanner_1"
-	var/on_store_message = "погружается в криосон."
+	var/on_store_message = "погружается в хранилище долговременного крилстазиса." //inf, was: 	var/on_store_message = "has entered long-term storage."
 	var/on_store_name = "Cryogenic Oversight"
-	var/on_enter_occupant_message = "Вы чувствуете, как прохладный воздух окружает Вас. \
-	Тело постепенно немеете, пока чувства затупляются..."
+	var/on_enter_occupant_message = "Вы чувствуете, как прохладный воздух окружает вас. Тело постепенно немеете, пока чувства затупляются..." //inf, was: 	var/on_enter_occupant_message = "You feel cool air surround you. You go numb as your senses turn inward."
 	var/allow_occupant_types = list(/mob/living/carbon/human)
 	var/disallow_occupant_types = list()
 
 	var/mob/occupant = null       // Person waiting to be despawned.
-	var/time_till_despawn = 5 MINUTES  // Down to 5 minutes  // Down to 15 minutes //30 minutes-ish is too long
+	var/time_till_despawn = 5 MINUTES //inf, was: var/time_till_despawn = 9000 // Down to 15 minutes //30 minutes-ish is too long
 	var/time_entered = 0          // Used to keep track of the safe period.
 	var/obj/item/device/radio/intercom/announce //
 
@@ -193,7 +192,7 @@
 	on_enter_occupant_message = "Хранилище передает Вам сигнал отключения. \
 	Ваши системы начинают постепенно отключаться, переходя в режим пониженного энергопотребления..."
 	allow_occupant_types = list(/mob/living/silicon/robot)
-//	disallow_occupant_types = list(/mob/living/silicon/robot/drone)
+	disallow_occupant_types = list(/mob/living/silicon/robot/drone)
 	applies_stasis = 0
 
 /obj/machinery/cryopod/lifepod
@@ -309,10 +308,10 @@
 
 		//Allow a ten minute gap between entering the pod and actually despawning.
 		// Only provide the gap if the occupant hasn't ghosted
-		if ((world.time - time_entered < time_till_despawn) && (occupant.ckey))
+		if(world.time - time_till_despawn < time_entered) //inf, was: if ((world.time - time_entered < time_till_despawn) && (occupant.ckey))
 			return
 
-		if(!occupant.client && occupant.stat<2) //Occupant is living and has no client.
+		if(!occupant.stat<2) //inf, was: if(!occupant.client && occupant.stat<2) //Occupant is living and has no client.
 			if(!control_computer)
 				if(!find_control_computer(urgent=1))
 					return
@@ -423,6 +422,11 @@
 	if(loc.z in GLOB.using_map.station_levels) //INF
 		announce.autosay("[occupant.real_name], [role_alt_title], [on_store_message]", "[on_store_name]")
 	visible_message("<span class='notice'>\The [initial(name)] hums and hisses as it moves [occupant.real_name] into storage.</span>", range = 3)
+
+//[INF]
+	if(occupant.client)
+		occupant.client.send_to_lobby()
+//[/INF]
 
 	//This should guarantee that ghosts don't spawn.
 	occupant.ckey = null

@@ -80,3 +80,10 @@
 	contains = list(/obj/item/weapon/grenade/light = 8)
 	cost = 20
 	containername = "illumination grenade crate"
+	
+/decl/hierarchy/supply_pack/science/space_bike
+	name = "Exploration - Space-bike"
+	contains = list(/obj/vehicle/bike/thermal)
+	cost = 90
+	containertype = /obj/structure/largecrate
+	containername = "space-bike crate"

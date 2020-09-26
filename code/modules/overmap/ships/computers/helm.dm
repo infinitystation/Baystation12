@@ -87,6 +87,8 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 		data["canburn"] = linked.can_burn()
 		data["accellimit"] = accellimit*1000
 
+		data["distress"] = linked ? linked.distress : 0 //INF
+
 		var/speed = round(linked.get_speed()*1000, 0.01)
 		if(linked.get_speed() < SHIP_SPEED_SLOW)
 			speed = "<span class='good'>[speed]</span>"
@@ -202,6 +204,11 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 
 	if (href_list["manual"])
 		viewing_overmap(user) ? unlook(user) : look(user)
+
+//[INF]
+	if (href_list["distress"] && linked)
+		linked.distress = !linked.distress
+//[/INF]
 
 	add_fingerprint(user)
 	updateUsrDialog()

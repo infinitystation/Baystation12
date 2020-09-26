@@ -12,7 +12,7 @@
 	prefix = "maps/away_inf/"
 	suffixes = list("skrellscoutship/skrellscoutship-1.dmm", "skrellscoutship/skrellscoutship-2.dmm")
 	spawn_weight = 50 //INF, HABITABLE SHIPS SPAWN
-	cost = 2
+	cost = 2000
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/skrellscoutship, /datum/shuttle/autodock/overmap/skrellscoutshuttle)
 	apc_test_exempt_areas = list(
 		/area/ship/skrellscoutshuttle =                NO_SCRUBBER|NO_VENT|NO_APC,

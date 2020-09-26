@@ -4,6 +4,7 @@
 	#include "torch_antagonism.dm"
 	#include "torch_areas.dm"
 	#include "torch_elevator.dm"
+	#include "torch_events.dm"
 	#include "torch_holodecks.dm"
 	#include "torch_lobby.dm"
 	#include "torch_machinery.dm"
@@ -133,6 +134,7 @@
 	#include "loadout/loadout_gloves.dm"
 	#include "loadout/loadout_head.dm"
 	#include "loadout/loadout_shoes.dm"
+	#include "loadout/loadout_storage.dm"
 	#include "loadout/loadout_suit.dm"
 	#include "loadout/loadout_uniform.dm"
 	#include "loadout/loadout_xeno.dm"
@@ -167,6 +169,8 @@
 	#include "../away/unishi/unishi.dm"
 	#include "../away/voxship/voxship.dm"
 	#include "../away/skrellscoutship/skrellscoutship.dm"
+	#include "../away/meatstation/meatstation.dm"
+	#include "../away/miningstation/miningstation.dm"
 
 	#include "../../code/datums/music_tracks/chasing_time.dm"
 	#include "torch_inf.dm" //for lower conflicts list, its placed here

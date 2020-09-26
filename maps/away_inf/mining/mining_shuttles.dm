@@ -1,3 +1,6 @@
+/datum/map_template/ruin/away_site/mining_asteroid
+	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/data_capsule)
+
 /obj/effect/shuttle_landmark/mining/nav_hiden
 	name = "Mining Asteroid ???"
 	landmark_tag = "nav_mining_hiden"

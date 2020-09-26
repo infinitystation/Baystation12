@@ -402,10 +402,10 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 5
 	},
-/obj/item/robot_rack/roller,
-/obj/item/robot_rack/roller,
 /obj/item/weapon/cane,
 /obj/item/bodybag/rescue/loaded,
+/obj/item/roller,
+/obj/item/roller,
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/medical)
 "bc" = (
@@ -23804,8 +23804,7 @@
 /area/maintenance/thirddeck/aft)
 "OP" = (
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/ship_munition/disperser_charge/explosive,
@@ -24074,8 +24073,7 @@
 /obj/random/maintenance,
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aft)
@@ -24106,8 +24104,7 @@
 /area/maintenance/thirddeck/aft)
 "Pu" = (
 /obj/structure/railing/mapped{
-	dir = 8;
-	tag = "icon-railing0 (EAST)"
+	dir = 8
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/firealarm{

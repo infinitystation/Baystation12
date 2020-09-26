@@ -497,3 +497,9 @@
 
 /datum/job/proc/handle_variant_join(var/mob/living/carbon/human/H, var/alt_title)
 	return
+
+/datum/job/proc/get_min_skill(decl/hierarchy/skill/S)
+	if(min_skill)
+		. = min_skill[S.type]
+	if(!.)
+		. = SKILL_MIN

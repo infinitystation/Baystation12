@@ -31,7 +31,7 @@
 	for(var/client/target in GLOB.clients)
 		if(target.holder)
 			if(only_xenos(C))	continue	// INF
-			receive_communication(C, target, "<span class='ooc'><span class='aooc'>[create_text_tag("aooc", "Antag-OOC:", target)] <EM>[target.get_options_bar(C, 0, 1, 1)]:</EM> <span class='message'>[message]</span></span></span>")
+			receive_communication(C, target, "<span class='ooc'><span class='aooc'>[create_text_tag("aooc", "Antag-OOC:", target)] <EM>[get_options_bar(C, 0, 1, 1)]:</EM> <span class='message'>[message]</span></span></span>")
 		else if(target.mob && target.mob.mind && target.mob.mind.special_role)
 			var/display_name = C.key
 			var/player_display = holder ? "[display_name]([usr.client.holder.rank])" : display_name

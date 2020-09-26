@@ -5,23 +5,42 @@
 	var/deploy_path = null
 	var/inflatable_health
 
-	atmos_canpass = CANPASS_DENSITY
-
-/obj/item/inflatable/attack_self(mob/user)
+/obj/item/inflatable/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	if(!deploy_path)
 		return
-	user.visible_message("[user] starts inflating \the [src].", "You start inflating \the [src].")
-	if(!do_after(user, 1 SECOND, src))
+	if (loc != user)
 		return
+	var/turf/T = get_turf(target)
+	if (!user.TurfAdjacent(T))
+		return
+	var/obstruction = T.get_obstruction()
+	if (obstruction)
+		to_chat(user, SPAN_WARNING("\The [english_list(obstruction)] is blocking that spot."))
+		return
+	user.visible_message(
+		SPAN_ITALIC("\The [user] starts inflating \an [src]."),
+		SPAN_ITALIC("You start inflating \the [src]."),
+		SPAN_ITALIC("You can hear rushing air."),
+		range = 5
+	)
+	if (!do_after(user, 1 SECOND))
+		return
+	obstruction = T.get_obstruction()
+	if (obstruction)
+		to_chat(user, SPAN_WARNING("\The [english_list(obstruction)] is blocking that spot."))
+		return
+	user.visible_message(
+		SPAN_ITALIC("\The [user] finishes inflating \an [src]."),
+		SPAN_NOTICE("You inflate \the [src]."),
+		range = 5
+	)
 	playsound(loc, 'sound/items/zip.ogg', 75, 1)
-	user.visible_message(SPAN_NOTICE("[user] inflates \the [src]."), SPAN_NOTICE("You inflate \the [src]."))
-	var/obj/structure/inflatable/R = new deploy_path(user.loc)
+	var/obj/structure/inflatable/R = new deploy_path(T)
 	transfer_fingerprints_to(R)
 	R.add_fingerprint(user)
 	if(inflatable_health)
 		R.health = inflatable_health
 	qdel(src)
-
 
 /obj/item/inflatable/wall
 	name = "inflatable wall"
@@ -44,6 +63,7 @@
 	opacity = 0
 	icon = 'icons/obj/inflatable.dmi'
 	icon_state = "wall"
+	atmos_canpass = CANPASS_DENSITY
 
 	var/undeploy_path = null
 	var/health = 10
@@ -55,6 +75,7 @@
 /obj/structure/inflatable/wall
 	name = "inflatable wall"
 	undeploy_path = /obj/item/inflatable/wall
+	atmos_canpass = CANPASS_NEVER
 
 /obj/structure/inflatable/New(location)
 	..()
@@ -264,6 +285,13 @@
 	isSwitchingStates = 0
 
 /obj/structure/inflatable/door/proc/Close()
+	// If the inflatable is blocked, don't close
+	for(var/turf/A in locs)
+		var/turf/T = A
+		var/obstruction = T.get_obstruction()
+		if (obstruction)
+			return
+
 	isSwitchingStates = 1
 	flick("door_closing",src)
 	set_density(1)

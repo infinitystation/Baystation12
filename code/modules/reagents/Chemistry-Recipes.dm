@@ -2714,25 +2714,59 @@
 	result_amount = 3
 	minimum_temperature = 50 CELSIUS
 	maximum_temperature = (70 CELSIUS) + 100
-	mix_message = "The tea turns a bitter black"
+	mix_message = "The tea turns a bitter black."
 
 /datum/chemical_reaction/mumbaksting
 	name = "Mumbak Sting"
 	result = /datum/reagent/drink/alien/mumbaksting
 	required_reagents = list(/datum/reagent/drink/alien/unathijuice = 2, /datum/reagent/toxin = 1)
 	result_amount = 3
-	mix_message = "The toxins mix with the juice to create a dark red substance"
+	mix_message = "The toxins mix with the juice to create a dark red substance."
 
 /datum/chemical_reaction/wasgaelhi
 	name = "Wasgaelhi"
 	result = /datum/reagent/ethanol/alien/wasgaelhi
 	required_reagents = list(/datum/reagent/drink/alien/unathijuice = 2, /datum/reagent/ethanol/wine = 1)
 	result_amount = 3
-	mix_message = "The mixture turns a dark green"
+	mix_message = "The mixture turns a dull purple."
 
 /datum/chemical_reaction/kzkzaa
 	name = "Kzkzaa"
 	result = /datum/reagent/drink/alien/kzkzaa
 	required_reagents = list(/datum/reagent/drink/alien/unathijuice = 2, /datum/reagent/nutriment/protein = 1)
 	result_amount = 3
-	mix_message = "The mixture turns a dark green"
+	mix_message = "The mixture turns a deep orange."
+
+//Fruit Expansion
+
+/datum/chemical_reaction/qokkhrona
+	name = "Qokk'Hrona"
+	result = /datum/reagent/ethanol/alien/qokkhrona
+	required_reagents = list(/datum/reagent/ethanol/alien/qokkloa = 2, /datum/reagent/ethanol/wine = 1)
+	catalysts = list(/datum/reagent/enzyme = 5)
+	result_amount = 3
+	mix_message = "The mixture turns a soft red, bubbling faintly"
+
+/datum/chemical_reaction/coconutmilk
+	name = "Coconut Milk"
+	result = /datum/reagent/drink/coconut/milk
+	required_reagents = list(/datum/reagent/drink/coconut = 2, /datum/reagent/nutriment = 1)
+	result_amount = 3
+	minimum_temperature = 50 CELSIUS
+	maximum_temperature = (50 CELSIUS) + 100
+	catalysts = list(/datum/reagent/enzyme = 5)
+	mix_message = "The water dilutes into delicious looking milk"
+
+/datum/chemical_reaction/pinacolada
+	name = "Pino Colada"
+	result = /datum/reagent/ethanol/pinacolada
+	required_reagents = list(/datum/reagent/drink/coconut/milk = 1, /datum/reagent/ethanol/rum = 2, /datum/reagent/drink/juice/pineapple = 1)
+	result_amount = 4
+	mix_message = "The cocktail turns a vibrant orange"
+
+/datum/chemical_reaction/horchata
+	name = "Horchata"
+	result = /datum/reagent/ethanol/horchata
+	required_reagents = list(/datum/reagent/ethanol/rum = 2, /datum/reagent/drink/milk/cream = 1, /datum/reagent/cinnamon = 1, /datum/reagent/drink/syrup_vanilla = 1)
+	result_amount = 5
+	mix_message = "The liquid froths up into a rich, cool mixture"
