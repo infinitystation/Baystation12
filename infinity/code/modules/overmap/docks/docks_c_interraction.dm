@@ -1,4 +1,7 @@
 /obj/docking_port/control/attack_hand(var/mob/user)
+	if(!user.IsAdvancedToolUser())
+		to_chat(user, SPAN_WARNING("You don't have the dexterity to do this!"))
+		return
 	if(!my_enterence)
 		find_enterence(user)
 //	if(repair_step >= 1)

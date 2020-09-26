@@ -1,4 +1,4 @@
-/obj/effect/docking_pipe
+/obj/docking_port/pipe
 	name = "modular telescopic pipe"
 	desc = "A a segment of a telescopic docking port, as well known as \"bridge\". It does wiggle-doodle when the ship tries to move."
 	icon = 'infinity/icons/obj/overmap/docking_port.dmi'

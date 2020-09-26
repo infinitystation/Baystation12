@@ -1,7 +1,5 @@
 /obj/docking_port/enterence/proc/cross_dock(var/mob/target)
-	if(broken)
-		to_chat(usr, SPAN_WARNING("[src] is broken."))
-		return
+	if(!check_for_integrity(usr)) return
 	if(!current_connected)
 		to_chat(usr, SPAN_WARNING("[src] is not connected to anything."))
 		return
@@ -90,25 +88,14 @@
 	return dock_name_assoc[dock_name_picked]
 
 /obj/docking_port/enterence/proc/pick_entity_connect_disconnect(var/mob/user)
-	if(!user.IsAdvancedToolUser())
-		to_chat(user, SPAN_WARNING("You don't have the dexterity to do this!"))
-		return
-	if(broken)
-		to_chat(user, SPAN_WARNING("[src] is broken!"))
-		return
-	if(control_panel?.req_access.len)
-		if(!check_access(user, control_panel.req_access))
-			to_chat(user, SPAN_WARNING("Access Denied"))
-			return
 	if(locked)
 		to_chat(user, SPAN_WARNING("[src]'s lockdown protoctol disallows any docking procedures. Turn off the protocol firstly."))
-		return
-	if(docking_cooldown + TDP_DOCKING_DELAY > world.time)
-		to_chat(user, SPAN_WARNING("[src]'s systems are recalibrating since last docking procedure. Please, wait."))
 		return
 	if(busy_bridge)
 		to_chat(user, SPAN_NOTICE("The docking bridge's extending in progress. Please, wait."))
 		return
+	if(!check_for_docking_cooldown(user)) return
+
 	if(current_connected)
 		disconnect(user)
 	else
@@ -139,7 +126,7 @@
 		return
 	broken = TRUE
 	remove_bridge()
-	icon_state = "enter_b"
+//	icon_state = "enter_b" no icon
 	if(break_type)
 		visible_message(SPAN_WARNING("[src] collapses from explosion wave!"))
 	else
@@ -156,25 +143,29 @@
 	var/confirm = alert(user, "Are you sure you want to disconnect from [current_connected.name]?", , "No", "Yes")
 	if(confirm != "Yes")
 		return
-	if(!current_connected) //Already disconnected. Stop spamming
-		return
+
+	if(!current_connected) return //Already disconnected. Stop spamming
+	if(!check_for_docking_cooldown(user)) return //I SAID STOP
 	if(!Adjacent(user) && !issilicon(user))
 		to_chat(user, SPAN_WARNING("You have to stay close to the dock while working with with panel."))
 		return
-	try_to_announce("Внимание. Производится отстыковка от [current_connected].")
-	current_connected.try_to_announce("Внимание. Получен запрос на отстыковку от [src]. Процедура выполняется.")
-	current_connected.remove_bridge(FALSE)
-	remove_bridge(FALSE)
+
 	docking_cooldown = world.time
 	current_connected.movement_cooldown = world.time
+	remove_bridge()
+	current_connected.remove_bridge()
+	try_to_announce("Внимание. Производится отстыковка от [current_connected.our_ship].")
+	current_connected.try_to_announce("Внимание. Получен запрос на отстыковку от [our_ship]. Процедура выполняется.")
+	if(control_panel)
+		control_panel.update_icon()
+	if(current_connected.control_panel)
+		current_connected.control_panel.update_icon()
 	current_connected.current_connected = null
 	current_connected = null
 
 /obj/docking_port/enterence/proc/connect(var/obj/effect/overmap/visitable/connect_to, var/mob/user, var/random_connect = 0)
 	var/obj/docking_port/enterence/dock //This will be the dock we connect to.
-	if(current_connected)
-		to_chat(user, SPAN_WARNING("You have to disconnect firstly."))
-		return
+	if(!check_for_connection(user)) return
 	if(random_connect)
 		dock = pick(get_all_docks(connect_to))
 	else
@@ -182,6 +173,7 @@
 		if(isnull(dock))
 			to_chat(user, SPAN_NOTICE("Connection point selection cancelled."))
 			return
+
 	if(!Adjacent(user) && !issilicon(user))
 		to_chat(user, SPAN_WARNING("You have to stay close to the dock while working with with panel."))
 		return
@@ -192,67 +184,61 @@
 		to_chat(user, SPAN_WARNING("[dock]'s lockdown protocol is activated. Connection request denied."))
 		return
 	if(busy_bridge || dock.busy_bridge)
-		to_chat(user, SPAN_NOTICE("The docking bridge's extending in progress. Please, wait."))
+		to_chat(user, SPAN_WARNING("The docking bridge's extending in progress. Please, wait."))
 		return
+	if(!check_for_docking_cooldown(user)) return
+
 	if(dock)
 		docking_cooldown = world.time
 		dock.docking_cooldown = world.time
-		try_to_announce("Внимание. Производится соединение стыковочных портов с [dock]. Подготовка стыковочного оборудования.")
-		dock.try_to_announce("Внимание. Получен запрос на стыковку от [src]. Подготовка стыковочного оборудования.")
+		try_to_announce("Внимание. Производится соединение стыковочных портов с [dock.our_ship]. Подготовка стыковочного оборудования.")
+		dock.try_to_announce("Внимание. Получен запрос на стыковку от [our_ship]. Подготовка стыковочного оборудования.")
 		if(!build_bridge() || !dock.build_bridge())
 			try_to_announce("Внимание. Стыковка прервана. На пути стыковочного моста обнаружено более [TDP_MAX_CROSSED_WALLS] стен.")
 			dock.try_to_announce("Внимание. Стыковка прервана. На пути стыковочного моста обнаружено более [TDP_MAX_CROSSED_WALLS] стен.")
+			if(control_panel)
+				control_panel.update_icon(TRUE)
+			if(current_connected.control_panel)
+				current_connected.control_panel.update_icon(TRUE)
 			return
 		try_to_announce("Стыковка успешно завершена.")
 		dock.try_to_announce("Стыковка успешно завершена.")
 		current_connected = dock
 		dock.current_connected = src
+		if(control_panel)
+			control_panel.update_icon()
+		if(dock.control_panel)
+			dock.control_panel.update_icon()
 	else
-		visible_message(SPAN_NOTICE("\icon[src] <b>[src]</b> объявляет: \"Не обнаружено подходящих стыковочных портов.\""))
+		visible_message(SPAN_NOTICE("<b>[src]</b> объявляет: \"Не обнаружено подходящих стыковочных портов.\""))
 
 //switch
 
 /obj/docking_port/enterence/proc/announce_turn(var/mob/user)
-	if(broken)
-		to_chat(user, SPAN_WARNING("It's broken."))
-		return
-	if(control_panel?.req_access.len)
-		if(!check_access(user, control_panel.req_access))
-			to_chat(user, SPAN_WARNING("Access Denied"))
-			return
-	if(current_connected)
-		to_chat(user, SPAN_WARNING("You have to disconnect the dock before working with protocols."))
-		return
 	if(!issilicon(user))
 		user.visible_message(SPAN_NOTICE("[user] does something with [src]\'s control panel."), "You are turning [announce ? "off" : "on"] [src]\'s announce protocol.")
 		if(!do_after(user, TDP_PANEL_INTERRACT_DELAY, src))
 			return
 		if(!src.Adjacent(user))
 			return
+		if(!check_for_docking_cooldown(user)) return //tried to do in docking process, scum
 		user.visible_message(SPAN_NOTICE("[user] turned [announce ? "off" : "on"] [src]\'s announce protocol."))
 	else
+		if(!check_for_docking_cooldown(user)) return //tried to do in docking process, scum
 		to_chat(user, SPAN_NOTICE("You turned [announce ? "off" : "on"] [src]\'s announce protocol."))
 	announce = !announce
 
 /obj/docking_port/enterence/proc/lock_dock(var/mob/user)
-	if(broken)
-		to_chat(user, SPAN_WARNING("It's broken."))
-		return
-	if(control_panel?.req_access.len)
-		if(!check_access(user, control_panel.req_access))
-			to_chat(user, SPAN_WARNING("Access Denied"))
-			return
-	if(current_connected)
-		to_chat(user, SPAN_WARNING("You have to disconnect the dock before working with protocols."))
-		return
 	if(!issilicon(user))
 		user.visible_message(SPAN_NOTICE("[user] does something with [src]\'s control panel."), "You are turning [locked ? "off" : "on"] [src]\'s lockdown protocol.")
 		if(!do_after(user, TDP_PANEL_INTERRACT_DELAY, src))
 			return
 		if(!Adjacent(user))
 			return
+		if(!check_for_docking_cooldown(user)) return //tried to do in docking process, scum
 		user.visible_message(SPAN_NOTICE("[user] turned [locked ? "off" : "on"] [src]\'s lockdown protocol."))
 	else
+		if(!check_for_docking_cooldown(user)) return
 		to_chat(user, SPAN_NOTICE("You turned [locked ? "off" : "on"] [src]\'s lockdown protocol."))
 	locked = !locked
 
@@ -260,6 +246,8 @@
 
 /obj/docking_port/enterence/proc/build_bridge()
 	busy_bridge = TRUE
+	if(control_panel)
+		control_panel.update_icon()
 	var/lenght = 0
 	var/lenght_done = 0
 	var/walls_crossed = 0
@@ -271,12 +259,7 @@
 	visible_message(SPAN_NOTICE("[src] hums as its bridge deploys."))
 	playsound(src.loc, 'sound/effects/lift_heavy_start.ogg', 80, 1)
 	while(lenght)
-		var/obj/effect/docking_pipe/P =  new /obj/effect/docking_pipe(get_step(src.loc, dir))
-		if(istype(P.loc, /turf/simulated/wall)) //lame check
-			walls_crossed++
-			if(walls_crossed >= TDP_MAX_CROSSED_WALLS)
-				busy_bridge = FALSE
-				return FALSE
+		var/obj/docking_port/pipe/P = new /obj/docking_port/pipe(get_step(src.loc, dir))
 		switch(dir)
 			if(NORTH) P.y += lenght_done
 			if(SOUTH) P.y -= lenght_done
@@ -286,15 +269,21 @@
 		pipes += P
 		lenght--
 		lenght_done++
+		if(P.loc.density)
+			walls_crossed++
+			if(walls_crossed >= TDP_MAX_CROSSED_WALLS)
+				busy_bridge = FALSE
+				remove_bridge()
+				return FALSE
 		if(!(lenght_done > 10)) //far enough, stop wasting time you sh-
 			flick("pipe_a", P)
 			sleep(3.5)
 	playsound(src.loc, 'sound/effects/lift_heavy_stop.ogg', 80, 1)
 	busy_bridge = FALSE
-	return 1
+	return TRUE
 
 /obj/docking_port/enterence/proc/remove_bridge(var/forced = FALSE)
-	for(var/obj/effect/docking_pipe/P in pipes)
+	for(var/obj/docking_port/pipe/P in pipes)
 		pipes -= P
 		qdel(P)
 /*

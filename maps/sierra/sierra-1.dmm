@@ -17343,6 +17343,10 @@
 /obj/effect/floor_decal/corner/green/border{
 	dir = 10
 	},
+/obj/structure/extinguisher_cabinet{
+	dir = 8;
+	pixel_y = -22
+	},
 /turf/simulated/floor/tiled,
 /area/command/dock)
 "Dg" = (
@@ -17752,6 +17756,7 @@
 /obj/docking_port/enterence/south{
 	name = "NSV Sierra Telescopic Docking Port"
 	},
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/command/dock)
 "DO" = (
@@ -18194,10 +18199,17 @@
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
 "Ez" = (
-/obj/docking_port/control{
-	req_access = list("ACCESS_BRIDGE")
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/green/border,
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 9
 	},
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/effect/floor_decal/corner/green/bordercorner2{
+	dir = 9
+	},
+/obj/structure/table/standard,
+/obj/item/weapon/storage/box/donut/empty,
+/turf/simulated/floor/tiled,
 /area/command/dock)
 "EA" = (
 /obj/structure/cable/green{
@@ -21205,21 +21217,13 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/exploration_shuttle/cargo)
 "Jt" = (
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/green/border,
-/obj/effect/floor_decal/borderfloor/corner2{
-	dir = 9
+/obj/docking_port/control{
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = 12;
+	req_access = list("ACCESS_BRIDGE")
 	},
-/obj/effect/floor_decal/corner/green/bordercorner2{
-	dir = 9
-	},
-/obj/structure/table/standard,
-/obj/item/weapon/storage/box/donut/empty,
-/obj/structure/extinguisher_cabinet{
-	dir = 8;
-	pixel_y = -22
-	},
-/turf/simulated/floor/tiled,
+/turf/simulated/wall/r_wall/hull,
 /area/command/dock)
 "Ju" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
@@ -22538,6 +22542,14 @@
 	},
 /turf/simulated/floor/plating,
 /area/quartermaster/hangar)
+"LR" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/closet/emcloset{
+	anchored = 1;
+	name = "anchored emergency closet"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/command/dock)
 "LS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
@@ -39144,8 +39156,8 @@ AC
 AG
 Cp
 Jw
+Ez
 Jt
-AD
 AD
 AD
 Ow
@@ -39549,7 +39561,7 @@ AM
 wZ
 BC
 Dg
-Ez
+LR
 KH
 Ow
 Ow

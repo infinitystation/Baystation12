@@ -5,18 +5,18 @@
 	if(!usr.IsAdvancedToolUser())
 		to_chat(usr, SPAN_WARNING("You don't have the dexterity to do this!"))
 		return
-	if(req_access.len)
-		if(!check_access(user, req_access))
-			to_chat(user, SPAN_WARNING("Access Denied"))
-			return
-	if(my_enterence.broken)
-		to_chat(user, SPAN_WARNING("The dock is broken."))
-		return
+	if(!my_enterence.check_for_integrity(user)) return
+	if(!my_enterence.check_for_access(user)) return
+
 	var/list/choices_panel = list("Cancel","Docking", "Lockdown", "Announce")
 	var/pick_choice = input(user, "Select a module you want to interract with.", "Dock Control Panel", "Cancel") in choices_panel
+
 	if(!Adjacent(user) && !issilicon(user))
 		to_chat(user, SPAN_WARNING("You have to stay close to the dock while working with with panel."))
 		return
+	if(!my_enterence.check_for_integrity(user)) return
+	if(!my_enterence.check_for_access(user)) return
+
 	switch(pick_choice)
 		if("Docking")
 			my_enterence.pick_entity_connect_disconnect(user)

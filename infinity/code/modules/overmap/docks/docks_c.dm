@@ -1,10 +1,13 @@
 /obj/docking_port/control
 	name = "TDP control panel"
 	desc = "A structure, also known as telescopic bridge (telebridge) with integrated life support module. Allows create \"safe\" way to other space objects with same speed. It has pretty small moving area inside, so you cannot transfer objects like exosuits through it. (ƒоступно описание на русском в кодексе)"
-	icon_state = "control"
+	icon = 'icons/obj/airlock_machines.dmi'
+	icon_state = "airlock_control_off"
+
+	layer = ABOVE_WINDOW_LAYER
+	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE
 
 	var/obj/docking_port/enterence/my_enterence
-
 	var/repair_step = 0
 
 	var/repair_busy   = FALSE
@@ -32,6 +35,7 @@
 /obj/docking_port/control/Process()
 	if(isnull(my_enterence))
 		find_enterence()
+		update_icon()
 		STOP_PROCESSING(SSobj, src)
 
 /obj/docking_port/control/examine(mob/user)
@@ -58,6 +62,21 @@
 		to_chat(user, SPAN_NOTICE("You need to get closer if you want to check the status panel."))
 		return
 
+/obj/docking_port/control/on_update_icon(var/after_failure = 0)
+	. = ..()
+	overlays.Cut()
+	if(broken)
+		return FALSE
+	var/screen = "screen_standby"
+	if(my_enterence && !after_failure)
+		if(my_enterence.broken)
+			screen = "screen_drain"
+		else if(my_enterence.current_connected)
+			screen = "screen_docked"
+		else if(my_enterence.docking_cooldown + TDP_DOCKING_DELAY > world.time)
+			screen = "screen_fill"
+	overlays += screen
+	return TRUE
 /*
 /obj/docking_port/control/ex_act(severity)
 	if(my_enterence.current_connected)

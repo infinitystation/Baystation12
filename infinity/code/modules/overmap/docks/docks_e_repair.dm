@@ -167,5 +167,5 @@
 				repair_step = 0
 				user.visible_message("[user] resecured \the [src]'s bolts. The docking port was repaired.", "You secured \the [src]'s bolts. The docking port was repaired.")
 				broken = FALSE
-				icon_state = "dock_contracted"
+				icon_state = "enter"
 				return

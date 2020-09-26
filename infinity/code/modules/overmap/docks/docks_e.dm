@@ -42,6 +42,8 @@
 	remove_bridge()
 	if(is_processing)
 		STOP_PROCESSING(SSobj, src)
+	if(our_ship)
+		our_ship.connectors -= src
 
 /obj/docking_port/enterence/Process()
 	if(isnull(our_ship))

@@ -2,6 +2,7 @@
 /* todo:
 make it machinery
 add wires
+make checks less lame
 */
 
 #define TDP_CROSS_DELAY 3 SECONDS
@@ -11,7 +12,7 @@ add wires
 #define TDP_BREAK_TYPE_MOVEMENT 0
 #define TDP_MAX_CROSSED_WALLS 3
 
-/obj/docking_port //it's useless. Just to keep things in one subtype
+/obj/docking_port //it's useless. Just to keep things in one type
 	name = "TDP master object"
 	desc = "Чувак, ты не должен был видеть это."
 	icon = 'infinity/icons/obj/overmap/docking_port.dmi'
