@@ -68,12 +68,10 @@
 	current_field.dir = NORTH //was dir
 	current_field.generator = src
 	colorize(field_color)
-	START_PROCESSING_MACHINE(src, MACHINERY_PROCESS_SELF)
 
 /obj/machinery/sealgen/proc/off()
 	qdel(current_field)
 	current_field = null
-	STOP_PROCESSING_MACHINE(src, MACHINERY_PROCESS_SELF)
 
 /obj/machinery/sealgen/proc/colorize()
 	if(!current_field) return
