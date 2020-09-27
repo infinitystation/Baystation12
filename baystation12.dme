@@ -3589,6 +3589,7 @@
 #include "infinity\code\modules\music_player\_music_tape.dm"
 #include "infinity\code\modules\music_player\subtypes_player.dm"
 #include "infinity\code\modules\music_player\subtypes_tape.dm"
+#include "infinity\code\modules\nano\fix.dm"
 #include "infinity\code\modules\nano\nanoexternal.dm"
 #include "infinity\code\modules\organs\robolimbs.dm"
 #include "infinity\code\modules\organs\external\_external.dm"
