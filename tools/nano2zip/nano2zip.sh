@@ -1,1 +1,1 @@
-zip nano.zip ../../nano/*
+zip ../../nano.zip ../../nano/*
