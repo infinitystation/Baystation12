@@ -4,5 +4,6 @@
 	desc = "Warrant Authorization"
 	region = ACCESS_REGION_SECURITY
 
-/datum/computer_file/program/digitalwarrant
+/datum/computer_file/program/digitalwarrant/New()
+	. = ..()
 	confirm_access = access_digwar
