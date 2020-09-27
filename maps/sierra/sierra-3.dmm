@@ -30702,6 +30702,10 @@
 "aYV" = (
 /obj/structure/closet/emcloset,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/sign/warning/airlock{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled,
 /area/security/sierra/hallway/port)
 "aYW" = (

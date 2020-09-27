@@ -127,24 +127,6 @@
 	requires_power = 0
 	req_access = list(access_cent_storage)
 
-/area/turret_protected/ai_cyborg_station
-	name = "Second Deck - Cyborg Station"
-	icon_state = "ai_cyborg"
-	sound_env = SMALL_ENCLOSED
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
-
-/area/turret_protected/ai_upload
-	name = "Second Deck - AI Upload"
-	icon_state = "ai_upload"
-
-/area/turret_protected/ai_upload_foyer
-	name = "Second Deck - AI Upload Access"
-	icon_state = "ai_foyer"
-	sound_env = SMALL_ENCLOSED
-
-/area/ai_abadoned
-	name = "Abadoned Chamber"
-
 // Merchant
 /area/merchant_station
 	name = "Merchant Station"

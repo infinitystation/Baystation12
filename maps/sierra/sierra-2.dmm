@@ -102,6 +102,12 @@
 "aan" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/hatch/maintenance,
+/obj/effect/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/bluespace)
 "aao" = (
@@ -357,7 +363,8 @@
 /area/hydroponics/storage)
 "aaM" = (
 /obj/machinery/door/airlock/engineering{
-	name = "SMES Maintenance"
+	name = "SMES Maintenance";
+	req_access = newlist()
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/power/sensor{
@@ -827,18 +834,6 @@
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/space)
-"abN" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/engineering{
-	name = "Second Deck Substation"
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/maintenance/seconddeck/aftstarboard)
 "abO" = (
 /obj/machinery/power/port_gen/pacman{
 	sheets = 25
@@ -1020,10 +1015,6 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
-/obj/structure/cable/cyan{
-	d2 = 4;
-	icon_state = "0-4"
-	},
 /obj/machinery/power/apc/high/inactive{
 	pixel_y = -24
 	},
@@ -1074,11 +1065,6 @@
 /obj/effect/floor_decal/techfloor/corner,
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 8
-	},
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /obj/item/weapon/material/shard/phoron,
 /turf/simulated/floor/plating,
@@ -1151,11 +1137,6 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/item/weapon/material/shard/phoron,
 /turf/simulated/floor/blackgrid,
 /area/ai_abadoned)
@@ -1183,11 +1164,6 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/techfloor,
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/blackgrid,
 /area/ai_abadoned)
 "acw" = (
@@ -1204,11 +1180,6 @@
 "acy" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 9
-	},
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /obj/random/trash,
 /obj/item/weapon/material/shard/phoron,
@@ -1240,11 +1211,6 @@
 "acC" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 5
-	},
-/obj/structure/cable/cyan{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
 	},
 /turf/simulated/floor/blackgrid,
 /area/ai_abadoned)
@@ -1561,11 +1527,6 @@
 "add" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 4
-	},
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
 	},
 /obj/random/trash,
 /turf/simulated/floor/plating,
@@ -2093,11 +2054,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/effect/floor_decal/techfloor{
 	dir = 6
 	},
@@ -2229,6 +2185,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
+/obj/structure/catwalk,
 /obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
@@ -2239,14 +2196,6 @@
 "aeg" = (
 /turf/simulated/wall/prepainted,
 /area/engineering/engine_smes)
-"aeh" = (
-/obj/machinery/power/terminal,
-/obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/seconddeck/aftstarboard)
 "aei" = (
 /obj/effect/floor_decal/industrial/warning/corner,
 /obj/effect/floor_decal/steeldecal/steel_decals6{
@@ -2303,6 +2252,7 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/substation/seconddeck)
 "aen" = (
@@ -2323,6 +2273,7 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
+/obj/structure/catwalk,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating,
 /area/maintenance/substation/seconddeck)
@@ -2718,6 +2669,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/catwalk,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -2803,11 +2755,6 @@
 /area/maintenance/seconddeck/aftstarboard)
 "afa" = (
 /obj/machinery/door/firedoor,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/random/junk,
@@ -3184,6 +3131,9 @@
 /obj/structure/table/steel,
 /obj/item/weapon/paper_bin,
 /obj/item/weapon/pen,
+/obj/effect/floor_decal/techfloor{
+	dir = 9
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/bluespace)
 "afH" = (
@@ -3308,14 +3258,6 @@
 /obj/structure/sign/warning/radioactive,
 /turf/simulated/wall/r_wall/hull,
 /area/space)
-"afV" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/seconddeck/aftstarboard)
 "afW" = (
 /obj/structure/bookcase/manuals/engineering,
 /turf/simulated/floor/wood/walnut,
@@ -3352,7 +3294,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/engineering{
-	name = "Second Deck Substation"
+	name = "Second Deck Substation";
+	req_access = newlist()
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -3362,11 +3305,6 @@
 	dir = 8
 	},
 /obj/random/junk,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /turf/simulated/floor/wood/walnut,
 /area/maintenance/abandoned_compartment)
 "agb" = (
@@ -3387,6 +3325,12 @@
 /area/holocontrol)
 "agd" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
+/obj/effect/floor_decal/corner_techfloor_grid{
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/bluespace)
 "age" = (
@@ -3661,7 +3605,10 @@
 /obj/structure/table/steel,
 /obj/item/weapon/folder/yellow,
 /obj/item/weapon/paper/sierra/bsd,
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/effect/floor_decal/techfloor{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
 /area/engineering/bluespace)
 "agy" = (
 /obj/machinery/computer/modular/preset/engineering{
@@ -3683,6 +3630,9 @@
 	pixel_x = -23;
 	pixel_y = -8;
 	req_access = list("ACCESS_ENGINE_EQUIP")
+	},
+/obj/effect/floor_decal/techfloor{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/bluespace)
@@ -3820,15 +3770,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
+/obj/structure/catwalk,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
@@ -3855,6 +3801,7 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
+/obj/structure/catwalk,
 /obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
@@ -4222,6 +4169,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
 "ahk" = (
@@ -4262,6 +4210,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/industrial/warning,
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
 "ahn" = (
@@ -4289,6 +4238,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
 "ahp" = (
@@ -4362,6 +4312,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
 "ahv" = (
@@ -4377,6 +4328,7 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
 "ahx" = (
@@ -4631,6 +4583,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
 "ahX" = (
@@ -4645,6 +4598,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
 "ahY" = (
@@ -4724,13 +4678,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/engine_monitoring)
-"aif" = (
-/obj/effect/floor_decal/techfloor{
-	dir = 1
-	},
-/obj/effect/floor_decal/techfloor,
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai_upload)
 "aig" = (
 /obj/structure/railing/mapped,
 /obj/structure/table/rack,
@@ -4847,19 +4794,9 @@
 /turf/simulated/wall/prepainted,
 /area/holocontrol)
 "ait" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled/techmaint,
 /area/maintenance/compactor)
 "aiu" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
@@ -5552,13 +5489,13 @@
 /turf/simulated/wall/prepainted,
 /area/maintenance/seconddeck/port)
 "ajG" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/industrial/danger,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/maintenance/compactor)
 "ajH" = (
@@ -5959,6 +5896,10 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/engineering{
+	name = "Second Deck Substation";
+	req_access = newlist()
+	},
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -6244,23 +6185,18 @@
 /obj/machinery/power/smes/buildable/preset/sierra/substation_full{
 	RCon_tag = "Substation - Bluespace Engine"
 	},
+/obj/effect/floor_decal/techfloor{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/bluespace)
 "akT" = (
 /obj/structure/cable/green{
-	d1 = 2;
+	d1 = 4;
 	d2 = 8;
-	icon_state = "2-8"
+	icon_state = "4-8"
 	},
-/obj/machinery/power/sensor{
-	name = "Powernet Sensor - Second Deck Subgrid";
-	name_tag = "Second Deck Subgrid"
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor,
 /area/maintenance/seconddeck/aftstarboard)
 "akU" = (
 /obj/machinery/computer/ship/sensors{
@@ -6402,6 +6338,15 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/hallway/primary/seconddeck/aft)
 "alh" = (
+/obj/effect/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_techfloor_grid{
+	dir = 1
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/bluespace)
 "ali" = (
@@ -6945,7 +6890,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 5
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/turf/simulated/floor/tiled/techfloor,
 /area/engineering/bluespace)
 "ame" = (
 /obj/structure/cable/cyan{
@@ -7136,6 +7081,11 @@
 	icon_state = "1-4"
 	},
 /obj/structure/catwalk,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/open,
 /area/maintenance/seconddeck/aftstarboard)
 "amx" = (
@@ -7297,6 +7247,8 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
+/obj/effect/floor_decal/corner_techfloor_grid,
+/obj/effect/floor_decal/techfloor/corner,
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/bluespace)
 "amI" = (
@@ -7747,11 +7699,14 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/floor_decal/corner_techfloor_grid{
+	dir = 6
+	},
+/obj/effect/floor_decal/techfloor/corner,
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 4
 	},
-/obj/effect/floor_decal/techfloor/corner,
-/turf/simulated/floor/tiled/techfloor/grid,
+/turf/simulated/floor/tiled/techfloor,
 /area/engineering/bluespace)
 "anv" = (
 /obj/random/closet,
@@ -9759,10 +9714,10 @@
 "aqR" = (
 /obj/machinery/ai_status_display,
 /turf/simulated/wall/r_wall/prepainted,
-/area/turret_protected/ai_upload)
+/area/engineering/gravitaional_generator)
 "aqS" = (
 /turf/simulated/wall/r_wall/prepainted,
-/area/turret_protected/ai_upload)
+/area/engineering/gravitaional_generator)
 "aqT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -9891,8 +9846,12 @@
 	dir = 1;
 	pixel_y = -29
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/turret_protected/ai_upload)
+/obj/effect/floor_decal/techfloor,
+/obj/effect/floor_decal/techfloor{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/gravitaional_generator)
 "arb" = (
 /obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "cap_windows"
@@ -10299,17 +10258,17 @@
 /area/space)
 "arK" = (
 /obj/effect/floor_decal/techfloor{
-	dir = 6
+	dir = 9
 	},
-/obj/effect/floor_decal/techfloor/corner{
-	dir = 1
+/obj/effect/floor_decal/techfloor/orange/corner,
+/obj/structure/window/phoronreinforced{
+	dir = 8
 	},
 /obj/structure/window/phoronreinforced{
-	dir = 4
+	dir = 1
 	},
-/obj/structure/window/phoronreinforced,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/turret_protected/ai_upload)
+/area/engineering/gravitaional_generator)
 "arM" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -10650,6 +10609,9 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
 /obj/machinery/camera/network/engineering{
 	c_tag = "Substation - Second Deck";
 	dir = 8
@@ -10657,12 +10619,9 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
+/obj/structure/cable,
+/obj/structure/catwalk,
 /obj/structure/disposalpipe/segment,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/plating,
 /area/maintenance/substation/seconddeck)
 "ass" = (
@@ -10809,36 +10768,41 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/fore)
 "asF" = (
-/obj/structure/window/phoronreinforced{
-	dir = 1
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 9
 	},
-/turf/simulated/floor/bluegrid/airless,
-/area/turret_protected/ai_upload)
-"asG" = (
-/obj/effect/floor_decal/techfloor/corner{
-	dir = 8
-	},
-/obj/effect/floor_decal/techfloor{
-	dir = 5
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/turret_protected/ai_upload)
+/turf/simulated/floor/greengrid,
+/area/engineering/gravitaional_generator)
 "asH" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/effect/floor_decal/techfloor{
 	dir = 9
 	},
-/obj/structure/sign/warning/lethal_turrets{
-	pixel_y = 32
+/obj/structure/table/steel_reinforced,
+/obj/item/weapon/book/manual/gravitygenerator,
+/obj/structure/sign/warning/radioactive{
+	dir = 4;
+	pixel_x = -32
 	},
-/obj/machinery/computer/gravity_control_computer,
 /obj/structure/cable/green{
-	d1 = 2;
 	d2 = 4;
-	icon_state = "2-4"
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/high{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 24
+	},
+/obj/machinery/button/blast_door{
+	desc = "A remote control-switch for engine core.";
+	id_tag = "gravgen-antirad-shielding";
+	name = "Gravitational Generator Radiation Shielding Control";
+	pixel_x = -21;
+	dir = 4;
+	pixel_y = 10
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/turret_protected/ai_upload)
+/area/engineering/gravitaional_generator)
 "asI" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -10860,7 +10824,7 @@
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/turret_protected/ai_upload)
+/area/engineering/gravitaional_generator)
 "asJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -10894,18 +10858,24 @@
 /turf/simulated/floor/carpet,
 /area/crew_quarters/mess)
 "asL" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8
-	},
-/obj/structure/disposalpipe/segment,
-/obj/machinery/alarm{
-	dir = 8;
-	pixel_x = 25
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/catwalk,
+/obj/structure/disposalpipe/segment,
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 25
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/substation/seconddeck)
@@ -11047,10 +11017,12 @@
 	name = "north bump";
 	pixel_y = 24
 	},
+/obj/structure/table/steel_reinforced,
 /obj/structure/cable/green{
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/substation/seconddeck)
 "asY" = (
@@ -11096,11 +11068,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
-	},
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 9
@@ -11466,8 +11433,8 @@
 /area/engineering/engine_room)
 "atC" = (
 /obj/machinery/door/airlock/highsecurity{
-	name = "AI Upload Access";
-	req_access = newlist()
+	dir = 4;
+	name = "Gravitational Generator Access"
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -11481,8 +11448,12 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/techfloor,
-/area/turret_protected/ai_upload)
+/obj/effect/floor_decal/techfloor,
+/obj/effect/floor_decal/techfloor{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/gravitaional_generator)
 "atD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/junk,
@@ -11598,19 +11569,10 @@
 /obj/structure/table/woodentable/mahogany,
 /turf/simulated/floor/carpet/red,
 /area/crew_quarters/mess)
-"atS" = (
-/obj/effect/floor_decal/techfloor{
-	dir = 8
-	},
-/obj/effect/floor_decal/techfloor{
-	dir = 4
-	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai_upload)
 "atT" = (
-/obj/machinery/gravity_generator,
-/turf/simulated/floor/bluegrid/airless,
-/area/turret_protected/ai_upload)
+/obj/machinery/gravity_generator/main/station,
+/turf/simulated/floor/greengrid,
+/area/engineering/gravitaional_generator)
 "atU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -11620,12 +11582,6 @@
 /obj/machinery/portable_atmospherics/canister/hydrogen,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
-"atV" = (
-/obj/structure/window/phoronreinforced{
-	dir = 4
-	},
-/turf/simulated/floor/bluegrid/airless,
-/area/turret_protected/ai_upload)
 "atW" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/effect/floor_decal/borderfloor{
@@ -11643,10 +11599,6 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/hallway/primary/seconddeck/aft)
 "atX" = (
-/obj/machinery/flasher{
-	pixel_x = -24;
-	pixel_y = 32
-	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
 	},
@@ -11658,13 +11610,8 @@
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 8
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/turret_protected/ai_upload)
+/area/engineering/gravitaional_generator)
 "atY" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -11688,7 +11635,7 @@
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/turret_protected/ai_upload)
+/area/engineering/gravitaional_generator)
 "atZ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -11701,9 +11648,6 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/cafe)
 "aua" = (
-/obj/machinery/flasher{
-	pixel_y = 26
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -11719,8 +11663,12 @@
 	c_tag = "AI Upload - Access"
 	},
 /obj/machinery/light/small,
-/turf/simulated/floor/tiled/techfloor,
-/area/turret_protected/ai_upload)
+/obj/effect/floor_decal/techfloor,
+/obj/effect/floor_decal/techfloor{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/gravitaional_generator)
 "aub" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -11736,8 +11684,12 @@
 /obj/machinery/firealarm{
 	pixel_y = 24
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/turret_protected/ai_upload)
+/obj/effect/floor_decal/techfloor,
+/obj/effect/floor_decal/techfloor{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/gravitaional_generator)
 "auc" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/green{
@@ -11858,16 +11810,6 @@
 "auj" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 5
-	},
-/obj/structure/cable/cyan{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /obj/structure/window/phoronreinforced{
 	dir = 4
@@ -12660,11 +12602,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/bridge/meeting_room)
 "avq" = (
-/obj/machinery/turretid/stun{
-	control_area = list(/area/turret_protected/ai_upload);
-	name = "AI Upload turret control";
-	pixel_x = -32
-	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
@@ -12682,9 +12619,12 @@
 /obj/structure/closet/radiation,
 /obj/item/clothing/glasses/meson,
 /obj/item/clothing/glasses/meson,
-/obj/item/weapon/book/manual/gravitygenerator,
+/obj/structure/sign/warning/internals_required{
+	dir = 4;
+	pixel_x = -32
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/turret_protected/ai_upload)
+/area/engineering/gravitaional_generator)
 "avr" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -12701,7 +12641,7 @@
 	},
 /obj/structure/cable/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/turret_protected/ai_upload)
+/area/engineering/gravitaional_generator)
 "avs" = (
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/techfloor,
@@ -12860,12 +12800,6 @@
 "avF" = (
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/lime/border,
-/obj/effect/floor_decal/borderfloor/corner2{
-	dir = 9
-	},
-/obj/effect/floor_decal/corner/lime/bordercorner2{
-	dir = 9
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
@@ -12875,10 +12809,15 @@
 /obj/machinery/atmospherics/valve/shutoff{
 	dir = 4
 	},
-/obj/effect/floor_decal/steeldecal/steel_decals_central6,
-/obj/effect/floor_decal/steeldecal/steel_decals6{
-	dir = 8
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/lime/border,
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 9
 	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 9
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals_central6,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "avH" = (
@@ -12969,11 +12908,6 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 8
 	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/constructable_frame/machine_frame/deconstruct,
 /turf/simulated/floor/plating,
 /area/ai_abadoned)
@@ -12990,13 +12924,11 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/engine_room)
 "avS" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/wall/r_wall/prepainted,
-/area/ai_abadoned)
+/obj/structure/table/rack,
+/obj/structure/railing/mapped,
+/obj/random/maintenance,
+/turf/simulated/floor/plating,
+/area/maintenance/seconddeck/aftstarboard)
 "avT" = (
 /obj/random/pottedplant,
 /turf/simulated/floor/wood/walnut,
@@ -13192,11 +13124,6 @@
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /turf/simulated/floor/wood/walnut,
 /area/maintenance/abandoned_compartment)
@@ -13396,42 +13323,47 @@
 /area/space)
 "awC" = (
 /obj/machinery/door/airlock/highsecurity{
-	name = "AI Upload";
-	req_access = newlist()
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
+	dir = 4;
+	name = "Gravitational Generator"
 	},
 /obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/techfloor,
-/area/turret_protected/ai_upload)
+/obj/effect/floor_decal/techfloor,
+/obj/effect/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/machinery/door/blast/regular{
+	dir = 4;
+	id_tag = "gravgen-antirad-shielding";
+	name = "Gravitational Generator Shielding"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/gravitaional_generator)
 "awD" = (
 /obj/effect/floor_decal/techfloor/corner,
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 4
 	},
-/obj/effect/floor_decal/techfloor{
+/obj/effect/floor_decal/techfloor/orange{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/turret_protected/ai_upload)
+/area/engineering/gravitaional_generator)
 "awE" = (
-/obj/effect/floor_decal/techfloor/corner{
-	dir = 1
-	},
 /obj/effect/floor_decal/techfloor{
-	dir = 6
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 8
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 26
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/turret_protected/ai_upload)
+/area/engineering/gravitaional_generator)
 "awF" = (
 /obj/structure/bed/sofa/brown{
 	dir = 1
@@ -13938,8 +13870,8 @@
 /area/engineering/engine_eva)
 "axr" = (
 /obj/machinery/door/airlock/highsecurity{
-	name = "AI Upload Access";
-	req_access = newlist()
+	dir = 4;
+	name = "Gravitational Generator Access"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -13953,8 +13885,12 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/techfloor,
-/area/turret_protected/ai_upload)
+/obj/effect/floor_decal/techfloor,
+/obj/effect/floor_decal/techfloor{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/gravitaional_generator)
 "axs" = (
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment,
@@ -14270,6 +14206,10 @@
 /obj/effect/floor_decal/steeldecal/steel_decals10{
 	dir = 8
 	},
+/obj/structure/sign/warning/radioactive{
+	dir = 4;
+	pixel_x = -32
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/fore)
 "axO" = (
@@ -14366,6 +14306,7 @@
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
 	},
+/obj/structure/catwalk,
 /obj/structure/disposalpipe/segment{
 	dir = 1;
 	icon_state = "pipe-c"
@@ -14451,6 +14392,14 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/materials_storage)
 "ayk" = (
+/obj/machinery/power/smes/buildable/preset/sierra/substation{
+	RCon_tag = "Substation - Second Deck"
+	},
+/obj/structure/cable/green,
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
 /obj/machinery/light/small{
 	dir = 8
 	},
@@ -14648,7 +14597,7 @@
 "ayz" = (
 /obj/machinery/status_display,
 /turf/simulated/wall/r_wall/prepainted,
-/area/turret_protected/ai_upload)
+/area/engineering/gravitaional_generator)
 "ayA" = (
 /obj/machinery/door/firedoor,
 /obj/structure/cable/cyan{
@@ -14662,13 +14611,11 @@
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "ayB" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/maintenance/abandoned_compartment)
+/obj/structure/table/rack,
+/obj/structure/railing/mapped,
+/obj/random/maintenance,
+/turf/simulated/floor/tiled/techfloor,
+/area/maintenance/seconddeck/aftstarboard)
 "ayC" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass/civilian,
@@ -15363,7 +15310,7 @@
 /obj/effect/floor_decal/corner/blue/bordercorner{
 	dir = 8
 	},
-/obj/effect/floor_decal/corner/blue/bordercorner{
+/obj/effect/floor_decal/corner/blue/border{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
@@ -15494,14 +15441,17 @@
 /turf/simulated/floor/carpet/green,
 /area/crew_quarters/sleep/bunk)
 "azP" = (
-/obj/effect/floor_decal/techfloor/corner{
+/obj/effect/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/techfloor/orange{
 	dir = 4
 	},
-/obj/effect/floor_decal/techfloor{
-	dir = 10
+/obj/structure/window/phoronreinforced{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/turret_protected/ai_upload)
+/area/engineering/gravitaional_generator)
 "azQ" = (
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/heads/captain/office_anteroom)
@@ -15787,6 +15737,11 @@
 "aAo" = (
 /obj/structure/closet/crate/trashcart,
 /obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/compactor)
 "aAp" = (
@@ -16496,6 +16451,9 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/hallway/primary/seconddeck/aft)
 "aBD" = (
+/obj/machinery/power/breakerbox/activated{
+	RCon_tag = "Second Deck Substation Bypass"
+	},
 /obj/structure/railing/mapped{
 	dir = 4
 	},
@@ -18229,6 +18187,11 @@
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/industrial/danger,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/maintenance/compactor)
 "aEI" = (
@@ -18564,6 +18527,10 @@
 	dir = 4;
 	icon_state = "pipe-c"
 	},
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 8
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals6,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "aFr" = (
@@ -19035,11 +19002,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head)
 "aGl" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
+/obj/structure/largecrate,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
 "aGm" = (
@@ -19057,6 +19020,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/substation/seconddeck)
 "aGp" = (
@@ -20673,6 +20637,7 @@
 /turf/simulated/floor/reinforced/airless,
 /area/space)
 "aJl" = (
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/substation/seconddeck)
 "aJm" = (
@@ -21692,11 +21657,6 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/random/trash,
 /obj/item/weapon/material/shard/phoron,
 /turf/simulated/floor/plating,
@@ -22311,6 +22271,9 @@
 	id_tag = "BSDrive";
 	name = "Bluespace Drive status indicator";
 	pixel_x = -24
+	},
+/obj/effect/floor_decal/techfloor{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/bluespace)
@@ -23368,24 +23331,17 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/seconddeck/aftport)
 "aOb" = (
-/obj/machinery/power/smes/buildable/preset/sierra/substation{
-	RCon_tag = "Substation - Second Deck"
+/obj/structure/railing/mapped{
+	dir = 1
 	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
+/obj/structure/railing/mapped{
+	dir = 4
 	},
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor,
 /area/maintenance/seconddeck/aftstarboard)
 "aOc" = (
-/obj/machinery/power/breakerbox/activated{
-	RCon_tag = "Second Deck Substation Bypass"
-	},
-/turf/simulated/floor/plating,
+/obj/machinery/field_generator,
+/turf/simulated/floor/tiled/techfloor,
 /area/maintenance/seconddeck/aftstarboard)
 "aOd" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -24527,11 +24483,6 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "aQp" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -24632,16 +24583,16 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/storage/tech)
 "aQx" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/maintenance/compactor)
@@ -25426,11 +25377,6 @@
 /area/storage/tech)
 "aSb" = (
 /obj/effect/floor_decal/techfloor,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -26943,11 +26889,6 @@
 /area/rnd/xenobiology/level1)
 "aUJ" = (
 /obj/effect/floor_decal/techfloor,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
 	},
@@ -27280,11 +27221,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/structure/window/phoronreinforced{
 	dir = 4
 	},
@@ -27451,11 +27387,6 @@
 /area/rnd/xenobiology/level1)
 "aVz" = (
 /obj/effect/floor_decal/techfloor,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central6,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -27520,11 +27451,14 @@
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology/level1)
 "aVI" = (
-/obj/effect/floor_decal/steeldecal/steel_decals6,
 /obj/structure/disposalpipe/segment{
 	dir = 8;
 	icon_state = "pipe-c"
 	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/lime/border,
+/obj/effect/floor_decal/borderfloor/corner2,
+/obj/effect/floor_decal/corner/lime/bordercorner2,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "aVJ" = (
@@ -27588,11 +27522,6 @@
 "aVO" = (
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 8
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
 	},
 /obj/effect/floor_decal/techfloor,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
@@ -27726,13 +27655,14 @@
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology/level1)
 "aWe" = (
+/obj/structure/catwalk,
 /obj/structure/cable/green{
-	d1 = 4;
+	d1 = 1;
 	d2 = 8;
-	icon_state = "4-8"
+	icon_state = "1-8"
 	},
-/turf/simulated/wall/r_wall/prepainted,
-/area/maintenance/abandoned_compartment)
+/turf/simulated/floor/plating,
+/area/maintenance/seconddeck/aftstarboard)
 "aWf" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 4
@@ -27832,24 +27762,24 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/atmos)
 "aWm" = (
-/obj/effect/decal/cleanable/generic,
+/obj/structure/catwalk,
+/obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
-/turf/simulated/floor/wood/walnut,
-/area/maintenance/abandoned_compartment)
-"aWn" = (
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/turf/simulated/floor/plating,
+/area/maintenance/seconddeck/aftstarboard)
+"aWn" = (
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 8
 	},
-/obj/structure/cable/green,
 /obj/random/trash,
 /turf/simulated/floor/plating,
 /area/ai_abadoned)
@@ -27901,11 +27831,6 @@
 /obj/effect/floor_decal/steeldecal/steel_decals_central6{
 	dir = 1
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/seconddeck/starboard)
 "aWs" = (
@@ -27916,11 +27841,6 @@
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/seconddeck/aftstarboard)
@@ -28256,12 +28176,14 @@
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology/level1)
 "aWX" = (
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/lime/border,
-/obj/effect/floor_decal/borderfloor/corner2,
-/obj/effect/floor_decal/corner/lime/bordercorner2,
-/turf/simulated/floor/tiled,
-/area/hallway/primary/seconddeck/center)
+/obj/structure/catwalk,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/seconddeck/aftstarboard)
 "aWY" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
@@ -28561,11 +28483,12 @@
 /area/maintenance/abandoned_hydroponics)
 "aXA" = (
 /obj/effect/floor_decal/techfloor,
-/obj/effect/floor_decal/techfloor{
+/obj/effect/floor_decal/techfloor/orange{
 	dir = 1
 	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai_upload)
+/obj/structure/window/phoronreinforced,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/gravitaional_generator)
 "aXB" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -28579,6 +28502,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/seconddeck/aftstarboard)
@@ -28651,7 +28579,14 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/engine_eva)
 "aXG" = (
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /obj/effect/floor_decal/industrial/warning,
+/obj/structure/catwalk,
+/obj/structure/table/steel_reinforced,
 /turf/simulated/floor/plating,
 /area/maintenance/substation/seconddeck)
 "aXH" = (
@@ -28720,9 +28655,12 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/structure/catwalk,
+/obj/structure/table/steel_reinforced,
 /turf/simulated/floor/plating,
 /area/maintenance/substation/seconddeck)
 "aXM" = (
+/obj/structure/catwalk,
 /obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
@@ -28745,19 +28683,36 @@
 	dir = 8
 	},
 /obj/structure/railing/mapped,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
 "aXO" = (
+/obj/structure/catwalk,
 /obj/structure/disposalpipe/segment,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
 "aXP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/catwalk,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
@@ -28772,11 +28727,17 @@
 /turf/simulated/floor/plating,
 /area/space)
 "aXR" = (
+/obj/structure/catwalk,
 /obj/structure/disposalpipe/segment,
-/obj/structure/cable{
-	d1 = 4;
+/obj/structure/cable/green{
+	d1 = 2;
 	d2 = 8;
-	icon_state = "4-8"
+	icon_state = "2-8"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
@@ -28976,6 +28937,8 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/structure/catwalk,
+/obj/structure/table/steel_reinforced,
 /turf/simulated/floor/plating,
 /area/maintenance/substation/seconddeck)
 "aYu" = (
@@ -29021,15 +28984,9 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
 "aYy" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 9
 	},
-/obj/structure/cable/green,
 /turf/simulated/floor/plating,
 /area/ai_abadoned)
 "aYz" = (
@@ -29071,9 +29028,15 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/maintenance/compactor)
 "aYE" = (
+/obj/structure/catwalk,
 /obj/structure/disposalpipe/segment{
 	dir = 8;
 	icon_state = "pipe-c"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
@@ -29606,6 +29569,7 @@
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology/level1)
 "aZB" = (
+/obj/structure/catwalk,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
@@ -29896,11 +29860,6 @@
 /area/space)
 "aZZ" = (
 /obj/machinery/door/firedoor,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/airlock/hatch/maintenance/bolted,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -29954,26 +29913,15 @@
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/lounge)
 "bai" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/effect/floor_decal/techfloor/corner,
 /obj/random/trash,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ai_abadoned)
 "baj" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 10
 	},
-/obj/structure/cable/green,
 /turf/simulated/floor/plating,
 /area/ai_abadoned)
 "bak" = (
@@ -30271,11 +30219,6 @@
 /turf/simulated/floor/plating,
 /area/ai_abadoned)
 "baS" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/floor_decal/techfloor{
 	dir = 4
@@ -30336,11 +30279,6 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central6{
 	dir = 4
 	},
@@ -30360,10 +30298,16 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/fore)
 "bbc" = (
+/obj/structure/catwalk,
 /obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -30390,13 +30334,16 @@
 /turf/simulated/wall/walnut,
 /area/crew_quarters/sauna)
 "bbf" = (
+/obj/structure/railing/mapped,
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/industrial/danger,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/wall/r_wall/prepainted,
-/area/ai_abadoned)
+/turf/simulated/floor/tiled/techmaint,
+/area/maintenance/compactor)
 "bbg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/floor_decal/techfloor{
@@ -30659,6 +30606,9 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
 	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bbF" = (
@@ -30668,9 +30618,11 @@
 	name = "Bridge Window Blast Doors";
 	pixel_x = 28
 	},
-/obj/effect/floor_decal/corner/blue/bordercorner,
 /obj/effect/floor_decal/corner/blue/bordercorner{
 	dir = 1
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
@@ -32199,8 +32151,8 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/blue/diagonal{
-	dir = 4
+/obj/effect/floor_decal/corner/blue{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
@@ -32587,7 +32539,9 @@
 "bfD" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/floor_decal/corner/blue/border,
-/obj/effect/floor_decal/corner/blue/diagonal,
+/obj/effect/floor_decal/corner/blue{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bfE" = (
@@ -33347,7 +33301,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 6
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/turf/simulated/floor/tiled/techfloor,
 /area/engineering/bluespace)
 "bgV" = (
 /obj/machinery/door/firedoor,
@@ -33373,7 +33327,14 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/effect/floor_decal/corner_techfloor_grid{
+	dir = 10
+	},
+/obj/effect/floor_decal/techfloor/corner,
+/obj/effect/floor_decal/techfloor/corner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
 /area/engineering/bluespace)
 "bgX" = (
 /turf/simulated/wall/prepainted,
@@ -33422,7 +33383,6 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/engineering_monitoring)
 "bha" = (
-/obj/structure/catwalk,
 /obj/machinery/power/terminal{
 	dir = 1
 	},
@@ -33433,7 +33393,10 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/techfloor{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor,
 /area/engineering/bluespace)
 "bhb" = (
 /obj/machinery/alarm{
@@ -33504,7 +33467,7 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/turf/simulated/floor/tiled/techfloor,
 /area/engineering/bluespace)
 "bhg" = (
 /obj/structure/cable/green{
@@ -33547,7 +33510,7 @@
 	},
 /obj/structure/flora/pottedplant/dead,
 /obj/effect/floor_decal/techfloor{
-	dir = 1
+	dir = 6
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/bluespace)
@@ -33573,7 +33536,7 @@
 /obj/structure/bed/chair/padded/yellow{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/turf/simulated/floor/tiled/techfloor,
 /area/engineering/bluespace)
 "bhs" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -33592,7 +33555,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/turf/simulated/floor/tiled/techfloor,
 /area/engineering/bluespace)
 "bht" = (
 /obj/machinery/light{
@@ -34722,31 +34685,14 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
 "bLa" = (
-/obj/structure/cable{
+/obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
-"bLm" = (
-/obj/effect/floor_decal/techfloor{
-	dir = 9
-	},
-/obj/effect/floor_decal/techfloor/corner,
-/obj/structure/window/phoronreinforced{
-	dir = 8
-	},
-/obj/structure/window/phoronreinforced{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/turret_protected/ai_upload)
 "bLp" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -34763,6 +34709,12 @@
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/plating,
 /area/space)
+"bWc" = (
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 5
+	},
+/turf/simulated/floor/greengrid,
+/area/engineering/gravitaional_generator)
 "bZK" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -34803,6 +34755,19 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
+"cFw" = (
+/obj/effect/floor_decal/techfloor{
+	dir = 6
+	},
+/obj/effect/floor_decal/techfloor/orange/corner{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/gravitaional_generator)
 "cGx" = (
 /obj/machinery/porta_turret{
 	dir = 8
@@ -34877,6 +34842,19 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/space)
+"dwu" = (
+/obj/machinery/alarm{
+	pixel_y = 30
+	},
+/obj/effect/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/techfloor/orange,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/gravitaional_generator)
 "dUJ" = (
 /obj/machinery/scrap/stacking_machine,
 /obj/effect/floor_decal/techfloor/orange{
@@ -35206,6 +35184,18 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
+"iew" = (
+/obj/effect/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/gravitaional_generator)
 "itg" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -35409,6 +35399,18 @@
 /obj/effect/floor_decal/techfloor/corner,
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
+"lbv" = (
+/obj/effect/floor_decal/techfloor,
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -23
+	},
+/obj/structure/window/phoronreinforced,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/gravitaional_generator)
 "ldg" = (
 /obj/machinery/door/airlock/civilian{
 	dir = 8
@@ -35657,15 +35659,12 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo/south)
 "ngY" = (
-/obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/engineering{
-	name = "SMES Maintenance"
-	},
-/obj/structure/cable{
+/obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/seconddeck/aftstarboard)
 "nhH" = (
@@ -36005,21 +36004,18 @@
 	},
 /turf/simulated/floor/plating,
 /area/space)
-"qyO" = (
-/obj/effect/floor_decal/techfloor{
-	dir = 5
-	},
-/obj/effect/floor_decal/techfloor/corner{
-	dir = 8
-	},
-/obj/structure/window/phoronreinforced{
-	dir = 1
-	},
-/obj/structure/window/phoronreinforced{
+"qlP" = (
+/obj/effect/floor_decal/techfloor/orange{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/turret_protected/ai_upload)
+/turf/simulated/floor/greengrid,
+/area/engineering/gravitaional_generator)
+"qyO" = (
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 10
+	},
+/turf/simulated/floor/greengrid,
+/area/engineering/gravitaional_generator)
 "qAp" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 4
@@ -36062,12 +36058,15 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo/south)
 "rhY" = (
-/obj/effect/floor_decal/techfloor/corner,
 /obj/effect/floor_decal/techfloor{
-	dir = 9
+	dir = 1
+	},
+/obj/effect/floor_decal/techfloor/orange,
+/obj/structure/window/phoronreinforced{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/turret_protected/ai_upload)
+/area/engineering/gravitaional_generator)
 "rjL" = (
 /obj/structure/bed/chair/padded/black,
 /obj/effect/landmark/start,
@@ -36092,6 +36091,21 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor,
 /area/space)
+"rLq" = (
+/obj/effect/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 4
+	},
+/obj/machinery/light/xenon{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/gravitaional_generator)
 "rMp" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 8
@@ -36206,6 +36220,12 @@
 	can_open = 1
 	},
 /area/crew_quarters/safe_room/seconddeck)
+"sKC" = (
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 1
+	},
+/turf/simulated/floor/greengrid,
+/area/engineering/gravitaional_generator)
 "sXW" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -36300,9 +36320,9 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo/south)
 "tMp" = (
-/obj/structure/window/phoronreinforced,
-/turf/simulated/floor/bluegrid/airless,
-/area/turret_protected/ai_upload)
+/obj/effect/floor_decal/techfloor/orange,
+/turf/simulated/floor/greengrid,
+/area/engineering/gravitaional_generator)
 "udk" = (
 /obj/machinery/pointdefense{
 	initial_id_tag = "sierra_main_pd"
@@ -36312,22 +36332,37 @@
 /area/space)
 "ujP" = (
 /obj/effect/floor_decal/techfloor{
-	dir = 10
+	dir = 5
 	},
-/obj/effect/floor_decal/techfloor/corner{
-	dir = 4
-	},
-/obj/structure/window/phoronreinforced{
+/obj/effect/floor_decal/techfloor/orange/corner{
 	dir = 8
 	},
-/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/turret_protected/ai_upload)
+/area/engineering/gravitaional_generator)
 "uuJ" = (
 /obj/structure/lattice,
 /obj/machinery/light/navigation/delay3,
 /turf/space,
 /area/space)
+"uxA" = (
+/obj/effect/floor_decal/techfloor{
+	dir = 10
+	},
+/obj/effect/floor_decal/techfloor/orange/corner{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/gravitaional_generator)
 "uLL" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -36401,11 +36436,11 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
 "uXF" = (
-/obj/structure/window/phoronreinforced{
+/obj/effect/floor_decal/techfloor/orange{
 	dir = 8
 	},
-/turf/simulated/floor/bluegrid/airless,
-/area/turret_protected/ai_upload)
+/turf/simulated/floor/greengrid,
+/area/engineering/gravitaional_generator)
 "uYf" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -36473,6 +36508,12 @@
 /obj/effect/floor_decal/industrial/danger,
 /turf/simulated/floor/tiled/techmaint,
 /area/space)
+"vwM" = (
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 6
+	},
+/turf/simulated/floor/greengrid,
+/area/engineering/gravitaional_generator)
 "vxg" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -36517,16 +36558,6 @@
 	},
 /turf/simulated/floor/bluegrid,
 /area/space)
-"vIu" = (
-/obj/machinery/door/firedoor,
-/obj/structure/disposalpipe/segment,
-/obj/machinery/door/airlock/maintenance{
-	req_access = newlist()
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/maintenance/seconddeck/aftstarboard)
 "vLz" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -47666,11 +47697,11 @@ akV
 amp
 atQ
 aqS
-aqS
-rhY
-atS
+arK
 azP
-aqS
+rLq
+azP
+uxA
 aqS
 azL
 aCs
@@ -47869,10 +47900,10 @@ aqd
 aqT
 aqS
 rhY
-arK
+asF
 uXF
 qyO
-azP
+aXA
 aqS
 ayM
 azN
@@ -48070,11 +48101,11 @@ agw
 alb
 alF
 aqS
-aif
-asF
+dwu
+sKC
 atT
 tMp
-aXA
+lbv
 aqS
 ayN
 aCt
@@ -48272,11 +48303,11 @@ bfR
 abD
 anM
 aqS
-asG
-ujP
-atV
-bLm
-awE
+rhY
+bWc
+qlP
+vwM
+aXA
 aqS
 aNu
 aCM
@@ -48474,11 +48505,11 @@ bhD
 akH
 bhe
 aqS
-aqS
-asG
-awD
+ujP
 awE
-aqS
+awD
+iew
+cFw
 aqS
 aAY
 aHD
@@ -53931,7 +53962,7 @@ amq
 amq
 aLz
 acJ
-aWX
+axQ
 awU
 aBZ
 aGV
@@ -59363,8 +59394,8 @@ aVO
 aYy
 aWn
 baj
-bbf
-bbf
+aZJ
+aZJ
 aWs
 afq
 afl
@@ -59963,7 +59994,7 @@ aaa
 aaa
 aaa
 aZJ
-avS
+aZJ
 aZJ
 aZJ
 aZJ
@@ -60165,7 +60196,7 @@ aar
 awY
 awY
 awY
-aWe
+awY
 awY
 awY
 awY
@@ -60366,8 +60397,8 @@ aar
 aar
 abA
 aga
-ayB
-aWm
+abA
+aeA
 aZp
 baM
 baN
@@ -60379,12 +60410,12 @@ aWO
 aZL
 aYM
 aYM
-abN
+ngY
 aYM
 afd
 aiu
 ajR
-aPd
+bbf
 acX
 acW
 afz
@@ -60580,7 +60611,7 @@ bbr
 htB
 hXc
 aYM
-acZ
+avS
 akT
 aGl
 afd
@@ -60782,8 +60813,8 @@ aWF
 aWP
 bao
 aYM
-acZ
-aeh
+avS
+bLa
 aOb
 afd
 aae
@@ -60984,7 +61015,7 @@ aWF
 baK
 bap
 aYM
-acZ
+ayB
 bLa
 aOc
 aao
@@ -61390,7 +61421,7 @@ aXM
 aZB
 aXO
 aXR
-aXO
+aWm
 akv
 aem
 aen
@@ -61587,12 +61618,12 @@ aot
 aKk
 amw
 aXB
-vIu
+afh
 aYE
 bbc
 aXP
 agG
-afV
+bLa
 aLH
 aJl
 aXL
@@ -61792,7 +61823,7 @@ aXK
 aYM
 baA
 aXN
-acZ
+aWe
 agI
 aeU
 afZ
@@ -61994,9 +62025,9 @@ aRs
 aYM
 aee
 apZ
-acZ
+aNS
 ahj
-afV
+aWX
 aao
 aao
 aao
@@ -62198,7 +62229,7 @@ aYM
 aGG
 aaj
 aho
-afV
+bLa
 aol
 bit
 akP
@@ -62398,7 +62429,7 @@ aYM
 aYM
 aiK
 acZ
-acZ
+aNS
 aef
 ahu
 ahW

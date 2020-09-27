@@ -7,8 +7,3 @@
 	name = T_BOARD("telecommunications traffic control console")
 	build_path = /obj/machinery/computer/telecomms/traffic
 	origin_tech = list(TECH_DATA = 3)
-
-/obj/item/weapon/stock_parts/circuitboard/comm_traffic
-	name = T_BOARD("gravitational generator control console")
-	build_path = /obj/machinery/computer/gravity_control_computer
-	origin_tech = list(TECH_DATA = 3)

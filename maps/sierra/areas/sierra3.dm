@@ -206,9 +206,10 @@
 	name = "AI Chamber"
 	icon_state = "ai_chamber"
 
-/area/turret_protected/ai/airlock
-	name = "AI Chamber Outer Maintance"
-	icon_state = "ai_foyer"
+/area/turret_protected/ai_upload
+	name = "First Deck - AI Upload"
+	icon_state = "ai_upload"
+
 
 /* RND AREAS
  * =========
@@ -227,12 +228,6 @@
 /area/rnd/storage
 	name = "First Deck - RND - Storage"
 	icon_state = "toxstorage"
-	req_access = list(access_tox_storage)
-
-/area/rnd/canister
-	name = "Third Deck - Hangar - Canister Storage"
-	icon_state = "toxstorage"
-	sound_env = SMALL_ENCLOSED
 	req_access = list(access_tox_storage)
 
 /area/rnd/development

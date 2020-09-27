@@ -194,6 +194,11 @@
  	icon_state = "atmos"
  	sound_env = LARGE_ENCLOSED
  	req_access = list(access_atmospherics)
+/area/engineering/gravitaional_generator
+	name = "Second Deck - Gravitational Generator"
+	icon_state = "engine_monitoring"
+	req_access = list(list(access_engine_equip, access_heads), list(access_seneng, access_engine_equip))
+	sound_env = SMALL_ENCLOSED
 
 /area/engineering/bluespace
 	name = "Second Deck - Engineering - BlueSpace Drive"
@@ -356,3 +361,12 @@
 	name = "Second Deck - Infirmary - Lower Storage"
 	icon_state = "medbay4"
 	req_access = list(access_medical_equip)
+
+/area/turret_protected/ai_cyborg_station
+	name = "Second Deck - Cyborg Station"
+	icon_state = "ai_cyborg"
+	sound_env = SMALL_ENCLOSED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
+
+/area/ai_abadoned
+	name = "Abadoned Chamber"
