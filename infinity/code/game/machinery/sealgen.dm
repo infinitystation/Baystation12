@@ -41,16 +41,13 @@
 		overlays += initial(icon_state)+"-hatch"
 
 /obj/machinery/sealgen/Process()
-	. = ..()
-	if((stat & NOPOWER) && current_field)
+	if(stat & NOPOWER)
 		off()
 	update_icon()
 	change_power_consumption(field_density ? initial(active_power_usage)*3 : initial(active_power_usage), use_power_mode = POWER_USE_ACTIVE)
 	update_use_power(current_field ? POWER_USE_ACTIVE : POWER_USE_IDLE)
 	if(current_field)
 		current_field.density = field_density
-		animate(current_field,alpha = 200,time = 2)
-		animate(current_field,alpha = initial(alpha),time = 2)
 
 /obj/machinery/sealgen/Destroy()
 	off()
