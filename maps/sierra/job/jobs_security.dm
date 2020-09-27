@@ -103,7 +103,7 @@
 
 	access = list(access_seceva, access_guard, access_security, access_brig, access_maint_tunnels,
 						access_external_airlocks, access_emergency_storage,
-			            access_eva, access_sec_doors, access_hangar, access_digwar)
+			            access_eva, access_sec_doors, access_hangar)
 
 	minimal_access = list()
 
