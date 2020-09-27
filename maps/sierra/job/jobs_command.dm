@@ -234,7 +234,7 @@
 			            access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 			            access_teleporter, access_eva, access_bridge, access_heads,
 			            access_hos, access_RC_announce, access_keycard_auth, access_sec_doors,
-			            access_hangar, access_gun, access_warden)
+			            access_hangar, access_gun, access_warden, access_digwar)
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -261,7 +261,7 @@
 	skill_points = 20
 
 	access = list(		access_security, access_sec_doors, access_medical, access_iaa, access_research, access_xenoarch, access_heads, access_bridge,
-						access_hangar, access_petrov, access_commissary, access_maint_tunnels)
+						access_hangar, access_petrov, access_commissary, access_maint_tunnels, access_digwar)
 
 	minimal_access = list()
 

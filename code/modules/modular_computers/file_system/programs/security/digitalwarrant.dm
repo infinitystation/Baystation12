@@ -16,6 +16,8 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 	nanomodule_path = /datum/nano_module/digitalwarrant/
 	category = PROG_SEC
 
+	var/confirm_access = access_change_ids //INF
+
 /datum/nano_module/digitalwarrant/
 	name = "Warrant Assistant"
 	var/datum/computer_file/data/warrant/activewarrant
@@ -184,7 +186,7 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 		// access-granting is only available for arrest warrants
 		if(activewarrant.fields["arrestsearch"] == "search")
 			return
-		if(!(access_change_ids in I.access))
+		if(!(confirm_access I.access)) //INF, was if(!(access_change_ids in I.access))
 			to_chat(user, "Authentication error: Unable to locate ID with appropriate access to allow this operation.")
 			return
 
