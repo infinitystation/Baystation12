@@ -1,0 +1,8 @@
+{
+  "ckey" :            "Vindean",
+  "character_name" :  "Randal Bone",
+  "item_name" :       "PG-5",
+  "item_desc" :       "Civilian Gas Mask, Model 5. It went out of production a good hundred years ago, but you can still find it in the old warehouses of Terra",
+  "item_icon_state" : "PG-5",
+  "item_path" :       "/obj/item/clothing/mask/gas/budget"
+  }

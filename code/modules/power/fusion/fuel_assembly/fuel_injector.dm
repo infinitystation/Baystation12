@@ -45,7 +45,7 @@
 
 	if(isMultitool(W))
 		var/datum/extension/local_network_member/lanm = get_extension(src, /datum/extension/local_network_member)
-		lanm.set_tag(null, initial_id_tag)
+		lanm.get_new_tag(user) //inf, was: 		lanm.set_tag(null, initial_id_tag)
 		return
 
 	if(istype(W, /obj/item/weapon/fuel_assembly))
