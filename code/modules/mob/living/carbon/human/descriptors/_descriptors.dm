@@ -29,7 +29,7 @@
 
 /datum/mob_descriptor/New()
 	if(!chargen_label)
-		chargen_label = name
+		chargen_label = examine_name //INF, WAS name
 	if(!chargen_value_descriptors)
 		chargen_value_descriptors = list()
 		for(var/i = 1 to LAZYLEN(standalone_value_descriptors))
@@ -38,10 +38,10 @@
 	..()
 
 /datum/mob_descriptor/proc/get_third_person_message_start(var/datum/gender/my_gender)
-	return "[my_gender.He] [my_gender.is]"
+	return "Имеет"
 
 /datum/mob_descriptor/proc/get_first_person_message_start()
-	return "You are"
+	return "У вас"
 
 /datum/mob_descriptor/proc/get_standalone_value_descriptor(var/check_value)
 	if(isnull(check_value))
@@ -51,12 +51,14 @@
 
 // Build a species-specific descriptor string.
 /datum/mob_descriptor/proc/get_initial_comparison_component(var/mob/me, var/datum/gender/my_gender, var/datum/gender/other_gender, var/my_value)
+/*[ORIG]
 	var/species_text
 	if(ishuman(me) && !skip_species_mention)
 		var/mob/living/carbon/human/H = me
 		var/use_name = "\improper [H.species.name]"
-		species_text = " for \a [use_name]"
-	. = "[get_third_person_message_start(my_gender)] [get_standalone_value_descriptor(my_value)][species_text]"
+		species_text = " для своей расы"
+[/ORIG]*/
+	. = "[get_third_person_message_start(my_gender)] [get_standalone_value_descriptor(my_value)] по меркам расы"
 
 /datum/mob_descriptor/proc/get_secondary_comparison_component(var/datum/gender/my_gender, var/datum/gender/other_gender, var/my_value, var/comparing_value)
 	var/raw_value = my_value

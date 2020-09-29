@@ -14,6 +14,7 @@
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/kick, /datum/unarmed_attack/stomp)
 	rarity_value = 2
 	strength = STR_HIGH
+	ambiguous_genders = FALSE //INF. It's a machine
 
 	min_age = 1
 	max_age = 90

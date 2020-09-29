@@ -3,11 +3,11 @@
 	chargen_label = "neck markings (rank)"
 	skip_species_mention = TRUE
 	standalone_value_descriptors = list(
-		"very simplistic",
-		"rather simple",
-		"complex",
-		"moderately complex",
-		"bewilderingly complex"
+		"очень простые",
+		"довольно простые",
+		"сложные",
+		"довольно сложные",
+		"невообразимо сложные"
 		)
 	chargen_value_descriptors = list(
 		"servitor"  =     1,
@@ -16,20 +16,20 @@
 		"raider" =        4,
 		"leader" =        5
 		)
-	comparative_value_descriptor_equivalent = "around the same importance as yours"
+	comparative_value_descriptor_equivalent = "той же важности, что и вы"
 	comparative_value_descriptors_smaller = list(
-		"slightly less important than yours",
-		"much less important than yours",
-		"insignificant and beneath your notice"
+		"чуть менее важные, чем ваши",
+		"куда менее важные, чем ваши",
+		"недойтосные вашего внимания"
 		)
 	comparative_value_descriptors_larger = list(
-		"slightly more important than yours",
-		"much more important than yours",
-		"commanding your unquestioning obedience and respect"
+		"чуть важнее ваших",
+		"куда важнее ваших",
+		"внушающшие вам бесприкословное подчинение и уважение"
 		)
 
 /datum/mob_descriptor/vox_markings/get_first_person_message_start()
-	. = "Your neck markings are"
+	. = "Ваши узоры на шее"
 
 /datum/mob_descriptor/vox_markings/get_third_person_message_start(var/datum/gender/my_gender)
-	. = "[my_gender.His] neck markings are"
+	. = "Узоры на шее"

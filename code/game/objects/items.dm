@@ -826,7 +826,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		. = "\icon[src] \a [src]"
 	var/ID = GetIdCard()
 	if(ID)
-		. += "  <a href='?src=\ref[ID];look_at_id=1'>\[Look at ID\]</a>"
+		. += "  <a href='?src=\ref[ID];look_at_id=1'>\[Осмотреть\]</a>"
 
 /obj/item/proc/on_active_hand()
 

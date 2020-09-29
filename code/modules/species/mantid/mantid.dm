@@ -2,7 +2,7 @@
 
 	name =                   SPECIES_MANTID_ALATE
 	name_plural =            "Kharmaan Alates"
-	show_ssd =               "quiescent"
+	show_ssd =               "Склонило лапы в покое"
 
 	description = "When human explorers finally arrived at the outer reaches of Skrellian space, they hoped to find \
 	new frontiers and new planets to exploit. They were largely not expecting to have entire expeditions lost \

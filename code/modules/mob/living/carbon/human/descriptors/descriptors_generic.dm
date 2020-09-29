@@ -1,45 +1,47 @@
 /datum/mob_descriptor/height
 	name = "height"
+	examine_name = "рост" //INF
 	standalone_value_descriptors = list(
-		"very short",
-		"short",
-		"of average height",
-		"tall",
-		"very tall"
+		"очень низкий рост",
+		"низкий роста",
+		"средний рост",
+		"высокий роста",
+		"очень выскокий роста"
 		)
-	comparative_value_descriptor_equivalent = "around the same height as you"
+	comparative_value_descriptor_equivalent = "практически одного с вами"
 	comparative_value_descriptors_smaller = list(
-		"slightly shorter than you",
-		"shorter than you",
-		"much shorter than you",
-		"tiny and insignificant next to you"
+		"чуть ниже вашего",
+		"ниже вашего",
+		"куда ниже вашего",
+		"крошечного роста - в полтора раза ниже вашего"
 		)
 	comparative_value_descriptors_larger = list(
-		"slightly taller than you",
-		"taller than you",
-		"much taller than you",
-		"towering over you"
+		"чуть выше вашего",
+		"выше вашего",
+		"куда выше вашего",
+		"возвышается над вами - в полтора раза выше вас"
 		)
 
 /datum/mob_descriptor/build
 	name = "build"
-	comparative_value_descriptor_equivalent = "around the same build as you"
+	examine_name = "телосложение" //INF
+	comparative_value_descriptor_equivalent = "практически одного с вами"
 	standalone_value_descriptors = list(
-		"rail thin",
-		"thin",
-		"of average build",
-		"well-built",
-		"heavily built"
+		"худое телосложение",
+		"стройное телосложение",
+		"среднее телосложение",
+		"подтянутое телосложение",
+		"крепкое телосложение"
 		)
 	comparative_value_descriptors_smaller = list(
-		"a bit smaller in build than you",
-		"smaller in build than you",
-		"much smaller in build than you",
-		"dwarfed by your bulk"
+		"чуть меньше вашего",
+		"меньше вашего",
+		"куда меньше вашего",
+		"тумбочка со шкафом на вашем фоне"
 		)
 	comparative_value_descriptors_larger = list(
-		"slightly larger than you in build",
-		"built larger than you",
-		"built much larger than you",
-		"dwarfing you"
+		"чуть крепче вашего",
+		"крупнее вашего",
+		"куда крупнее вашего",
+		"шкаф по сравнению с вами"
 		)

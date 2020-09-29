@@ -17,6 +17,7 @@ var/datum/species/shapeshifter/promethean/prometheans
 
 	blood_color = "#05ff9b"
 	flesh_color = "#05fffb"
+	ambiguous_genders = FALSE //INF. It's a slime
 
 	hunger_factor =    DEFAULT_HUNGER_FACTOR //todo
 	reagent_tag =      IS_SLIME

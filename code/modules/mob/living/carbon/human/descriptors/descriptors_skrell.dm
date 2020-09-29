@@ -3,25 +3,25 @@
 	chargen_label = "headtails (gender)"
 	skip_species_mention = TRUE
 	standalone_value_descriptors = list(
-		"short",
-		"long"
+		"короткие хвосты",
+		"длинные хвосты"
 		)
 	chargen_value_descriptors = list(
-		"short (male)" =  1,
-		"long (female)" = 2
+		"короткий (мужчина)" =  1,
+		"длинный (женщина)" = 2
 		)
 
 /datum/mob_descriptor/headtail_length/get_first_person_message_start()
-	. = "Your headtails are"
+	. = "У вас"
 
 /datum/mob_descriptor/headtail_length/get_third_person_message_start(var/datum/gender/my_gender)
-	. = "[my_gender.His] headtails are"
+	. = "Имеет"
 
 /datum/mob_descriptor/headtail_length/get_comparative_value_string_equivalent(var/my_value, var/datum/gender/my_gender, var/datum/gender/other_gender)
-	. = "indicating [other_gender.he] [other_gender.is] [my_value == 1 ? "male" : "female"] like you"
+	. = "показывая, что это [my_value == 1 ? "мужчина" : "женщина"]"
 
 /datum/mob_descriptor/headtail_length/get_comparative_value_string_smaller(var/value, var/datum/gender/my_gender, var/datum/gender/other_gender)
-	. = "indicating [other_gender.he] [other_gender.is] male"
+	. = "показывая, что это мужчина"
 
 /datum/mob_descriptor/headtail_length/get_comparative_value_string_larger(var/value, var/datum/gender/my_gender, var/datum/gender/other_gender)
-	. = "indicating [other_gender.he] [other_gender.is] female"
+	. = "показывая, что это женщина"

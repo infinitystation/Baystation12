@@ -116,7 +116,7 @@
 
 /datum/species/human/get_ssd(var/mob/living/carbon/human/H)
 	if(H.stat == CONSCIOUS)
-		return "staring blankly, not reacting to your presence"
+		return "Смотрит в пустоту, не реагируя на Ваше присутствие"
 	return ..()
 
 /datum/species/skrell
@@ -322,13 +322,14 @@
 	rarity_value = 3
 	hud_type = /datum/hud_data/diona
 	siemens_coefficient = 0.3
-	show_ssd = "completely quiescent"
+	show_ssd = "Выглядит абсолютно спокойно"
 	strength = STR_VHIGH
 	assisted_langs = list(LANGUAGE_NABBER)
 	spawns_with_stack = 0
 	health_hud_intensity = 2
 	hunger_factor = 3
 	thirst_factor = 0.01
+	ambiguous_genders = FALSE //INF. It's a vegetable
 
 	min_age = 1
 	max_age = 300

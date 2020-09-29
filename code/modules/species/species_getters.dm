@@ -44,7 +44,7 @@
 	return ((H && H.isSynthetic()) ? "gives one shrill beep before falling lifeless." : death_message)
 
 /datum/species/proc/get_ssd(var/mob/living/carbon/human/H)
-	return ((H && H.isSynthetic()) ? "flashing a 'system offline' glyph on their monitor" : show_ssd)
+	return ((H && H.isSynthetic()) ? "Мигает сообщением 'система обновляется' на своём визоре" : show_ssd)
 
 /datum/species/proc/get_blood_colour(var/mob/living/carbon/human/H)
 	return ((H && H.isSynthetic()) ? SYNTH_BLOOD_COLOUR : blood_color)
