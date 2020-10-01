@@ -3255,6 +3255,7 @@
 #include "infinity\code\_helpers\animations.dm"
 #include "infinity\code\_helpers\client.dm"
 #include "infinity\code\_helpers\gauss.dm"
+#include "infinity\code\_helpers\lists.dm"
 #include "infinity\code\_helpers\unsorted.dm"
 #include "infinity\code\_onclick\hud\alien_larva.dm"
 #include "infinity\code\_onclick\hud\radial.dm"
