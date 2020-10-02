@@ -96,9 +96,9 @@
 		string: /"[^"]+"/ | /'[^']+'/
 */
 
-/proc/sdql3(q)
+/proc/sdql3(q, client/user)
 	try
-		var/datum/sdql3/S = new(q)
+		var/datum/sdql3/S = new(q, user)
 		return S.execute()
 	catch(var/exception/e)
 		if(istext(e))
@@ -151,9 +151,11 @@ GLOBAL_LIST_INIT(sdql3_keyword_list, list(
 	var/q
 	var/list/tokens
 	var/list/tree
+	var/client/user
 
-/datum/sdql3/New(query)
+/datum/sdql3/New(query, client/u)
 		..()
+		user = u
 		q = query
 		tokenise()
 		parse()
@@ -530,22 +532,27 @@ GLOBAL_LIST_INIT(sdql3_keyword_list, list(
 			throw "attempt to [length(ident) == 1 ? "set" : "get"] nonexistent variable '[ident[1]]' on [D == world ? "world" : D.type]"
 
 /datum/sdql3/proc/set_global(list/vname, value)
+	if(user && !check_rights(R_PERMISSIONS, user))
+		throw "Error: No access."
 	if(!(vname[1] in global.vars))
 		throw "attempt to [length(vname) == 1 ? "set" : "get"] nonexistent global variable '[vname[1]]'"
 
 	if(length(vname) == 1)
-		global.vars[vname[1]] = value // TODO access check
+		global.vars[vname[1]] = value
 	else
-		return set_datumvar(vname.Copy(2), value, global.vars[vname[1]]) // TODO access check
+		return set_datumvar(vname.Copy(2), value, global.vars[vname[1]])
 
 /datum/sdql3/proc/set_datumvar(list/vname, value, datum/D)
 	if(!(vname[1] in D.vars))
 		throw "attempt to [length(vname) == 1 ? "set" : "get"] nonexistent variable '[vname[1]]' on [D == world ? "world" : D.type]"
 
+	if(user && !D.may_edit_var(user, vname[1]))
+		throw "Error: No access."
+
 	if(length(vname) == 1)
-		D.vars[vname[1]] = value // TODO access check
+		D.vars[vname[1]] = value
 	else
-		set_datumvar(vname.Copy(2), value, D.vars[vname[1]]) // TODO access check
+		set_datumvar(vname.Copy(2), value, D.vars[vname[1]])
 
 /datum/sdql3/proc/get_var(list/ident, datum/D)
 	switch(ident[1])
@@ -566,13 +573,15 @@ GLOBAL_LIST_INIT(sdql3_keyword_list, list(
 			throw "attempt to get nonexistent variable '[ident[1]]' on [D == world ? "world" : D.type]"
 
 /datum/sdql3/proc/get_global(list/vname)
+	if(user && !check_rights(R_PERMISSIONS, user))
+		throw "Error: No access."
 	if(!(vname[1] in global.vars))
 		throw "attempt to get nonexistent global variable '[vname[1]]'"
 
 	if(length(vname) == 1)
-		return global.vars[vname[1]] // TODO access check
+		return global.vars[vname[1]]
 	else
-		return get_datumvar(vname.Copy(2), global.vars[vname[1]]) // TODO access check
+		return get_datumvar(vname.Copy(2), global.vars[vname[1]])
 
 /datum/sdql3/proc/get_datumvar(list/vname, datum/D)
 	if(!(vname[1] in D.vars))
@@ -765,7 +774,7 @@ GLOBAL_LIST_INIT(sdql3_keyword_list, list(
 					things -= thing
 
 		for(var/thing in things)
-			del thing // TODO: qdel
+			qdel(thing)
 
 		return length(things)
 
