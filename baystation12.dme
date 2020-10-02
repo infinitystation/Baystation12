@@ -3536,7 +3536,6 @@
 #include "infinity\code\modules\materials\definitions\materials_other.dm"
 #include "infinity\code\modules\mechs\armour.dm"
 #include "infinity\code\modules\mechs\guns.dm"
-#include "infinity\code\modules\mechs\mech_interaction.dm"
 #include "infinity\code\modules\mechs\premade\combat.dm"
 #include "infinity\code\modules\mob\animations.dm"
 #include "infinity\code\modules\mob\holder.dm"
