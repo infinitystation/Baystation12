@@ -45,11 +45,11 @@
 		if(jobban_isbanned(preference_mob(), antag.id) || (antag.id == MODE_MALFUNCTION && jobban_isbanned(preference_mob(), "ИИ")))
 			. += "<span class='danger'>\[БАН\]</span><br>"
 		else if(antag.id in pref.be_special_role)
-			. += "<span class='linkOn'>Высокий</span> <a href='?src=\ref[src];add_maybe=[antag.id]'>Возможно</a> <a href='?src=\ref[src];del_special=[antag.id]'>Никогда</a></br>"
+			. += "<span class='linkOn'>Антагонист</span> <a href='?src=\ref[src];add_maybe=[antag.id]'>Цель</a> <a href='?src=\ref[src];del_special=[antag.id]'>Никогда</a></br>"
 		else if(antag.id in pref.may_be_special_role)
-			. += "<a href='?src=\ref[src];add_special=[antag.id]'>Высокий</a> <span class='linkOn'>Возможно</span> <a href='?src=\ref[src];del_special=[antag.id]'>Никогда</a></br>"
+			. += "<a href='?src=\ref[src];add_special=[antag.id]'>Антагонист</a> <span class='linkOn'>Цель</span> <a href='?src=\ref[src];del_special=[antag.id]'>Никогда</a></br>"
 		else
-			. += "<a href='?src=\ref[src];add_special=[antag.id]'>Высокий</a> <a href='?src=\ref[src];add_maybe=[antag.id]'>Возможно</a> <span class='linkOn'>Никогда</span></br>"
+			. += "<a href='?src=\ref[src];add_special=[antag.id]'>Антагонист</a> <a href='?src=\ref[src];add_maybe=[antag.id]'>Цель</a> <span class='linkOn'>Никогда</span></br>"
 
 		. += "</td></tr>"
 	. += "</table>"
