@@ -152,7 +152,7 @@
 
 /obj/structure/changeling_cocoon/proc/absorb_victim(mob/nvictim)
 	if(!QDELETED(victim) && istype(nvictim))
-		nvictim.forceMove(coc)
+		nvictim.forceMove(src)
 		victim = nvictim
 		background()
 		to_chat(victim, SPAN_DANGER("Вас окутывает странная тёплая жидкость, ваше сознание угасает..."))
@@ -182,16 +182,22 @@ I don't know how to fix it, tried two days, sorry.
 	if(!victim.client)
 		return
 	victim.revive()
-	addtimer(CALLBACK(GLOB.changelings, .proc/add_antagonist, victim.mind, 1), 4 SECONDS)
-	addtimer(CALLBACK(GLOB.changelings, .proc/prepare_changeling), 7 SECONDS)
+	addtimer(CALLBACK(src, .proc/add_changeling), 4 SECONDS)
+	addtimer(CALLBACK(src, .proc/prepare_changeling), 7 SECONDS)
 
 	STOP_PROCESSING(SSobj, src)
-/obj/structure/changeling_cocoon/proc/prepare_changeling(v = victim)
-	if(v.mind.changeling) //just to don't fuck up with runtimes further
-		v.mind.changeling.chem_storage = 30
-		v.mind.changeling.chem_charges = 30
-		v.mind.changeling.geneticpoints = 5
-		to_chat(victim, SPAN_LING(FONT_LARGE("Мы чувствуем себя по иному... Кажется пора покинуть наше временное пристанище...")))
+
+/obj/structure/changeling_cocoon/proc/add_changeling(datum/mind/victimmind = victim?.mind)
+	if(victimmind)
+		GLOB.changelings.add_antagonist(victimmind, 1)
+
+/obj/structure/changeling_cocoon/proc/prepare_changeling(mob/living/carbon/human/v = victim)
+	if(v?.mind)
+		if(v.mind.changeling) //just to don't fuck up with runtimes further
+			v.mind.changeling.chem_storage = 30
+			v.mind.changeling.chem_charges = 30
+			v.mind.changeling.geneticpoints = 5
+			to_chat(victim, SPAN_LING(FONT_LARGE("Мы чувствуем себя по иному... Кажется пора покинуть наше временное пристанище...")))
 
 /*
 /obj/structure/changeling_cocoon/proc/convert(mob/user)

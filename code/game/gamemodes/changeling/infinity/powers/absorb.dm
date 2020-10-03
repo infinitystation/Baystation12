@@ -265,6 +265,6 @@ cocoon-army, unused */
 	var/obj/structure/changeling_cocoon/coc = new /obj/structure/changeling_cocoon(T.loc)
 	for(G in contents) //G - it's grab. Mentioned before
 		qdel(G)
-	absorb_victim(T)
+	coc.absorb_victim(T)
 	return 1
 #undef CHANGELING_DRAIN_DIE_MSG
