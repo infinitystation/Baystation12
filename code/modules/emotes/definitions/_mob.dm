@@ -165,7 +165,10 @@
 		/decl/emote/visible/rshoulder,
 		/decl/emote/visible/squint,
 		/decl/emote/visible/tfist,
-		/decl/emote/visible/tilt
+		/decl/emote/visible/tilt,
+//[INF]
+		/decl/emote/audible/finger_snap
+//[/INF]
 	)
 
 /mob/living/silicon/robot
