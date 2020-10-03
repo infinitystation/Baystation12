@@ -21,11 +21,22 @@ var/global/list/all_objectives = list()
 	all_objectives -= src
 	..()
 
-/datum/objective/proc/find_target()
+/datum/objective/proc/find_target(override = 0) //inf, was: /datum/objective/proc/find_target()
 	var/list/possible_targets = list()
 	for(var/datum/mind/possible_target in SSticker.minds)
-		if(possible_target != owner && ishuman(possible_target.current) && (possible_target.current.stat != DEAD))
-			possible_targets += possible_target
+		if(possible_target != owner && ishuman(possible_target.current) && (possible_target.current.stat != DEAD) \
+//[INF]
+		&& possible_target.current.client.wishes_to_be_role(lowertext(owner.special_role)))
+			if(owner)
+				var/is_target = 0
+				for(var/datum/objective/O in owner.objectives)
+					if(possible_target == O.target)
+						is_target = 1
+						break
+				if(!is_target)
+					possible_targets += possible_target
+//[/INF]
+//INF			possible_targets += possible_target
 	if(possible_targets.len > 0)
 		target = pick(possible_targets)
 
@@ -39,12 +50,17 @@ var/global/list/all_objectives = list()
 
 // Assassinate //
 
-/datum/objective/assassinate/find_target()
+/datum/objective/assassinate/find_target(override = 0) //inf, was: /datum/objective/assassinate/find_target()
 	..()
 	if(target && target.current)
 		explanation_text = "Убить [target.current.real_name], [target.assigned_role]."
 	else
-		explanation_text = "Свободная Цель"
+//[INF]
+		if(override)
+			return 0
+		else
+//[/INF]
+			explanation_text = "Свободная Цель"
 	return target
 
 /datum/objective/assassinate/find_target_by_role(role, role_type = 0)
@@ -57,7 +73,7 @@ var/global/list/all_objectives = list()
 
 // Execute //
 
-/datum/objective/anti_revolution/execute/find_target()
+/datum/objective/anti_revolution/execute/find_target(override = 0) //inf, was: /datum/objective/anti_revolution/execute/find_target()
 	..()
 	if(target && target.current)
 		explanation_text = "[target.current.real_name], the [target.assigned_role] has extracted confidential information above their clearance. Execute \him[target.current]."
@@ -78,7 +94,7 @@ var/global/list/all_objectives = list()
 /datum/objective/anti_revolution/brig
 	var/already_completed = 0
 
-/datum/objective/anti_revolution/brig/find_target()
+/datum/objective/anti_revolution/brig/find_target(override = 0) //inf, was: /datum/objective/anti_revolution/brig/find_target()
 	..()
 	if(target && target.current)
 		explanation_text = "Brig [target.current.real_name], the [target.assigned_role] for 20 minutes to set an example."
@@ -96,7 +112,7 @@ var/global/list/all_objectives = list()
 
 // Demote //
 
-/datum/objective/anti_revolution/demote/find_target()
+/datum/objective/anti_revolution/demote/find_target(override = 0) //inf, was: /datum/objective/anti_revolution/demote/find_target()
 	..()
 	if(target && target.current)
 		explanation_text = "[target.current.real_name], the [target.assigned_role]  has been classified as harmful to [GLOB.using_map.company_name]'s goals. Demote \him[target.current] to assistant."
@@ -114,12 +130,17 @@ var/global/list/all_objectives = list()
 
 // Debrain //
 
-/datum/objective/debrain/find_target()
+/datum/objective/debrain/find_target(override = 0) //inf, was: /datum/objective/debrain/find_target()
 	..()
 	if(target && target.current)
 		explanation_text = "Украсть мозг [target.current.real_name]."
 	else
-		explanation_text = "Свободная Цель"
+//[INF]
+		if(override)
+			return 0
+		else
+//[/INF]
+			explanation_text = "Свободная Цель"
 	return target
 
 /datum/objective/debrain/find_target_by_role(role, role_type = 0)
@@ -132,7 +153,7 @@ var/global/list/all_objectives = list()
 
 // Protection, The opposite of killing a dude. //
 
-/datum/objective/protect/find_target()
+/datum/objective/protect/find_target(override = 0) //inf, was: /datum/objective/protect/find_target()
 	..()
 	if(target && target.current)
 		explanation_text = "Защитить [target.current.real_name], the [target.assigned_role]."
@@ -169,12 +190,17 @@ var/global/list/all_objectives = list()
 /datum/objective/brig
 	var/already_completed = 0
 
-/datum/objective/brig/find_target()
+/datum/objective/brig/find_target(override = 0)//inf, was:/datum/objective/brig/find_target()
 	..()
 	if(target && target.current)
 		explanation_text = "Задержать [target.current.real_name], [target.assigned_role] в камере брига на 10 минут и более."
 	else
-		explanation_text = "Свободная Цель"
+//[INF]
+		if(override)
+			return 0
+		else
+//[/INF]
+			explanation_text = "Свободная Цель"
 	return target
 
 /datum/objective/brig/find_target_by_role(role, role_type = 0)
@@ -190,12 +216,17 @@ var/global/list/all_objectives = list()
 /datum/objective/harm
 	var/already_completed = 0
 
-/datum/objective/harm/find_target()
+/datum/objective/harm/find_target(override = 0) //inf, was: /datum/objective/harm/find_target()
 	..()
 	if(target && target.current)
 		explanation_text = "Преподать урок [target.current.real_name], [target.assigned_role]. Переломать кости, отрезать конечность или изуродовать лицо. Убедиться, что цель это переживет."
 	else
-		explanation_text = "Свободная Цель"
+//[INF]
+		if(override)
+			return 0
+		else
+//[/INF]
+			explanation_text = "Свободная Цель"
 	return target
 
 /datum/objective/harm/find_target_by_role(role, role_type = 0)
@@ -289,7 +320,7 @@ var/global/list/all_objectives = list()
 	return steal_target
 
 
-/datum/objective/steal/find_target()
+/datum/objective/steal/find_target(override = 0) //inf, was: /datum/objective/steal/find_target()
 	return set_target(pick(possible_items))
 
 
@@ -361,7 +392,11 @@ var/global/list/all_objectives = list()
 	for(var/datum/mind/possible_target in SSticker.minds)
 		if(possible_target != owner && ishuman(possible_target.current) && (possible_target.current.stat != DEAD) && (!possible_target.special_role))
 			possible_targets += possible_target
-			for(var/datum/job/role in SSjobs.get_by_path(roles))
+//ORIG			for(var/datum/job/role in SSjobs.get_by_path(roles))
+//[INF]
+			for(var/job_type in roles)
+				var/datum/job/role = SSjobs.get_by_path(job_type)
+//[/INF]
 				if(possible_target.assigned_role == role.title)
 					priority_targets += possible_target
 					continue
@@ -471,17 +506,18 @@ var/global/list/all_objectives = list()
 /datum/objective/cult/sacrifice
 	explanation_text = "Провести ритуал жертвоприношения во славу Нар-Си."
 
-/datum/objective/cult/sacrifice/find_target()
+/datum/objective/cult/sacrifice/find_target(override = 0) //inf, was: /datum/objective/cult/sacrifice/find_target()
 	var/list/possible_targets = list()
 	if(!possible_targets.len)
 		for(var/mob/living/carbon/human/player in GLOB.player_list)
-			if(player.mind && !(player.mind in GLOB.cult.current_antagonists))
+			if(player.mind && !(player.mind in GLOB.cult.current_antagonists) \
+			&& player.client.wishes_to_be_role(GLOB.cult.id)) //INF
 				possible_targets += player.mind
 	if(possible_targets.len > 0)
 		target = pick(possible_targets)
 	if(target) explanation_text = "Принести в жертву [target.name], [target.assigned_role]. Необходима руна жертвоприношения и три акколита для совершения ритуала."
 
-/datum/objective/rev/find_target()
+/datum/objective/rev/find_target(override = 0) //inf, was: /datum/objective/rev/find_target()
 	..()
 	if(target && target.current)
 		explanation_text = "Убить, пленить или завербовать [target.current.real_name], [target.assigned_role]."

@@ -1,5 +1,6 @@
 /datum/job
 	var/required_role = null //a role which necessery to join as the job. For an example, explorers cannot be without EL
+	var/good_genome_prob = 10
 
 /datum/job/proc/is_required_roles_filled()
 	if(!required_role) return 1

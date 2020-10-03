@@ -53,9 +53,9 @@
 /*
 	SDQL3
 
-	[ ] - zero or one of the following
-	{ } - zero or more of the following
-	/.../ - regex
+[ ] - zero or one of the following
+{ } - zero or more of the following
+/.../ - regex
 
 	Query formats:
 

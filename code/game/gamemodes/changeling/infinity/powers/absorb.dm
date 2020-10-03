@@ -177,19 +177,19 @@ cocoon-army, unused */
 */
 
 	if(islesserform(T)) //monkey consume
-		to_chat(src, SPAN_LING("Мы не получили дополнительных химикатов или очков эволюции из-за низшей формы еды."))
-	else if(T.good_DNA || player_is_antag(T.mind))
+		to_chat(src, SPAN_LING("Ничего нового или что можно использовать..."))
+	else if(T.check_compatable_genome() || player_is_antag(T.mind))
 		changeling.chem_storage += 10
 		changeling.geneticpoints += 5
-		to_chat(src, SPAN_LING("Мы увеличили наш запас химикатов за счет успешного поглощения и получили новые геномы."))
+		to_chat(src, SPAN_LING("Наконец-то что новое..."))
 	else
-		to_chat(src, SPAN_LING("Мы не получили дополнительных химикатов или очков эволюции из-за отсутствия полезных геномов у жертвы."))
-		log_and_message_admins("поглотил [key_name(T)]. Жертва не была ролью и не хотела поглощения.")
+		to_chat(src, SPAN_LING("Ничего нового..."))
+		log_and_message_admins("поглотил [key_name(T)]. Жертва не имела полезного генома.")
 
 	if(changeling.lost_chem_storage >= 10)
 		changeling.chem_storage += 10
 		changeling.lost_chem_storage -= 10
-		to_chat(src, SPAN_LING("Мы восстановили 10 потерянных после стазиса ечеек химикатов."))
+		to_chat(src, SPAN_LING("Наконец-то мы востановили потери после прошлого перерождения..."))
 	changeling.chem_charges = changeling.chem_storage
 
 	//Steal all of their languages!
@@ -247,10 +247,10 @@ cocoon-army, unused */
 		if(player_is_antag(T.mind))
 			T.Drain() //effective execution for changelings and no magical hive
 			if(T.mind.changeling)
-				to_chat(T.client, SPAN_DANGER("Мы были поглощены сородичем. Это конец..."))
+				to_chat(T, SPAN_DANGER("Мы были поглощены..."))
 			else
-				to_chat(T.client, SPAN_DANGER("Вы были поглощены генокрадом. Однако, из-за того, что \
-				вы уже были антагонистом, ваша роль заканчивается здесь."))
+#define CHANGELING_DRAIN_DIE_MSG "Вы чувствуете сухость по всему телу... В конце концов, вы чувствуете как теряете остатки своего прошлого, уходя в пустоту..."
+				to_chat(T, SPAN_DANGER(CHANGELING_DRAIN_DIE_MSG))
 			return
 
 	if(islesserform(T)) //monkey consume
@@ -258,25 +258,13 @@ cocoon-army, unused */
 		return 1 //no monkey-cocoon-army
 
 	if(jobban_isbanned(T, MODE_CHANGELING))
-		to_chat(T.client, SPAN_WARNING("Вы были поглощены генокрадом, однако, он оставил кокон, \
-		в котором Ваш персонаж станет одним из Них. Однако, у вас бан на роль генокрада - \
-		кокона не будет."))
+		to_chat(T, SPAN_WARNING(CHANGELING_DRAIN_DIE_MSG))
 		T.Drain()
 		return 1
 
 	var/obj/structure/changeling_cocoon/coc = new /obj/structure/changeling_cocoon(T.loc)
 	for(G in contents) //G - it's grab. Mentioned before
 		qdel(G)
-	T.forceMove(coc)
-	coc.victim = T
-	coc.background()
-	to_chat(T.client, SPAN_DANGER("Вы были поглощены генокрадом, однако, он оставил кокон, \
-	в котором Ваш персонаж станет одним из Них. Если вы выйдете или станете призраком, то \
-	<b>кокон оставит ваше тело в покое через минуту.</b>"))
-/*
-	spawn(6 SECONDS)
-		for(var/mob/observer/ghost/O in GLOB.ghost_mob_list)
-			to_chat(O, FONT_LARGE(SPAN_LING(
-			"Появился кокон генокрада! Нажмите на него, чтобы стать одним из них. ([ghost_follow_link(coc, O)])")))
-*/
+	absorb_victim(T)
 	return 1
+#undef CHANGELING_DRAIN_DIE_MSG
