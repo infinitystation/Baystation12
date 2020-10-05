@@ -74,12 +74,23 @@
 		for(var/law_set_type in all_lawsets)
 			var/datum/ai_laws/ai_laws = law_set_type
 			var/ai_law_name = initial(ai_laws.name)
-			if(initial(ai_laws.shackles)) // Now this is one terribly snowflaky var
+			if(initial(ai_laws.shackles) && initial(ai_laws.selectable)) //INF, was if(initial(ai_laws.shackles))
 				ADD_SORTED(valid_lawsets, ai_law_name, /proc/cmp_text_asc)
 				valid_lawsets[ai_law_name] = law_set_type
 
+		valid_lawsets += "Custom" //INF
+
 		// Post selection
 		var/chosen_lawset = input(user, "Choose a law set:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.laws)  as null|anything in valid_lawsets
+//[INF]
+		if(chosen_lawset == "Custom")
+			pref.laws.Cut()
+			var/lawcount = input(user, "How many laws do you want?", CHARACTER_PREFERENCE_INPUT_TITLE) as anything in list(1,2,3,4,5,6)
+			for(var/I in 1 to lawcount)
+				var/inputlaw = input(user, "Enter [I]\th law:", CHARACTER_PREFERENCE_INPUT_TITLE) as text
+				pref.laws += sanitize_text(inputlaw, default="ERROR.")
+			return TOPIC_REFRESH
+//[/INF]
 		if(chosen_lawset)
 			var/path = valid_lawsets[chosen_lawset]
 			var/datum/ai_laws/lawset = new path()

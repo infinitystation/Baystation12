@@ -3262,6 +3262,7 @@
 #include "infinity\code\controllers\configuration.dm"
 #include "infinity\code\controllers\subsystems\ticker.dm"
 #include "infinity\code\datums\mutable_appearance.dm"
+#include "infinity\code\datums\shackle_law_sets.dm"
 #include "infinity\code\datums\outfits\infinity.dm"
 #include "infinity\code\datums\skybox_data\_datum_skybox_data.dm"
 #include "infinity\code\datums\skybox_data\beidge_nebula.dm"
