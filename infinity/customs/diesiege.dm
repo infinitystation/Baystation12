@@ -74,10 +74,6 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 	item_flags = ITEM_FLAG_THICKMATERIAL
 	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB)
-	armor = list(
-		bio = ARMOR_BIO_MINOR,
-		melee = ARMOR_MELEE_SMALL
-		)
 	allowed = list(
 		/obj/item/weapon/pen,/obj/item/weapon/paper,
 		/obj/item/weapon/storage/fancy/cigarettes,
