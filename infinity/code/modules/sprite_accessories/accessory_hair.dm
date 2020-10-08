@@ -277,7 +277,7 @@
 	name = "Long Wide"
 	icon_state = "hair_longwide"
 
-/datum/sprite_accessory/hair/infinity/longwide
+/datum/sprite_accessory/hair/infinity/mancut
 	name = "Mancut"
 	icon_state = "hair_mancut"
 //[/AURORA]
