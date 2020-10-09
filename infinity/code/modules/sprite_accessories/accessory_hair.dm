@@ -262,15 +262,15 @@
 	icon_state = "hair_messy_rightcut"
 
 /datum/sprite_accessory/hair/infinity/widowmaker
-	name = "Widowmaker"
+	name = "Ponytail Widow"
 	icon_state = "hair_widowmaker"
 
 /datum/sprite_accessory/hair/infinity/widowmaker_alt
-	name = "Widowmaker Alt"
+	name = "Ponytail Widow Alt"
 	icon_state = "hair_widowmaker_alt"
 
 /datum/sprite_accessory/hair/infinity/widowmaker_short
-	name = "Widowmaker Short"
+	name = "Ponytail Widow Short"
 	icon_state = "hair_widowmaker_short"
 
 /datum/sprite_accessory/hair/infinity/longwide
