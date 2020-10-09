@@ -274,7 +274,7 @@
 	icon_state = "hair_widowmaker_short"
 
 /datum/sprite_accessory/hair/infinity/longwide
-	name = "Long Wide"
+	name = "Long Wide Fridge"
 	icon_state = "hair_longwide"
 
 /datum/sprite_accessory/hair/infinity/mancut
