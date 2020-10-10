@@ -1,0 +1,9 @@
+{
+	"ckey"            : "forrya",
+	"character_name"  : "Niyarkszherch Kchrashchjrj",
+	"item_name"       : "plastic scabbard",
+	"item_desc"       : "Black plastic scabbard that looks old and battered with a convenient attachment to the leg or belt.",
+	"item_icon_state" : "bayonet-holster",
+	"item_path"       : "/obj/item/clothing/accessory/storage/holster/machete"
+}
+
