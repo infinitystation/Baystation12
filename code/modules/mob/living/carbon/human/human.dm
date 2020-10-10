@@ -7,7 +7,6 @@
 //[INF]
 	throw_range = 3 //NO, TILSON
 	throw_speed = 0.5
-	var/good_DNA = 0 //for changelings
 //[/INF]
 	var/list/hud_list[10]
 	var/embedded_flag	  //To check if we've need to roll for damage on movement while an item is imbedded in us.
@@ -68,7 +67,6 @@ GLOBAL_LIST_EMPTY(compatable_genomes_owners)
 /mob/living/carbon/human/proc/give_compatable_genome()
 	if(mind)
 		if(prob(mind.assigned_job ? (mind.assigned_job.good_genome_prob ? clamp(mind.assigned_job.good_genome_prob,0,100) : 30) : 30) && !(src in GLOB.compatable_genomes_owners))
-			good_DNA = 1
 			GLOB.compatable_genomes_owners |= src
 //[/INF]
 
