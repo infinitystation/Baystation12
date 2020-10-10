@@ -34,17 +34,17 @@
 			visible_message(SPAN_WARNING("Раны на \icon[src] [src] медленно затягиваются."))
 		health++
 	progress++
+	if(birth_time / 5 <= progress && !(progress%10))
+		to_chat(victim, SPAN_LING("Вы чувствуете слабость, кажется время пришло..."))
 	if(progress >= birth_time)
 		birth()
 	on_update_icon()
-	if(birth_time / 5 >= progress && !(progress%10))
-		to_chat(victim, SPAN_LING("Вы чувствуете слабость, кажется время пришло..."))
 	if(world.time >= last_sound_time + 20 SECONDS)
 		last_sound_time = world.time
 		playsound(get_turf(src), 'infinity/sound/effects/lingextends.ogg', 15, 1, -4.5)
 		visible_message(pick(
 			SPAN_WARNING("\icon[src] [src] учащённо пульсирует..."),
-			SPAN_WARNING("\icon[src] [src] внутри что-то есть, кажется оно двигается вокруг чего-то...")))
+			SPAN_WARNING("\icon[src] [src] внутри что-то двигается...")))
 
 /obj/structure/changeling_cocoon/Destroy()
 	drop_victim()
@@ -151,11 +151,10 @@
 		victim = null
 
 /obj/structure/changeling_cocoon/proc/absorb_victim(mob/nvictim)
-	if(!QDELETED(victim) && istype(nvictim))
-		nvictim.forceMove(src)
-		victim = nvictim
-		background()
-		to_chat(victim, SPAN_DANGER("Вас окутывает странная тёплая жидкость, ваше сознание угасает..."))
+	nvictim.forceMove(src)
+	victim = nvictim
+	background()
+	to_chat(victim, SPAN_DANGER("Вас окутывает странная тёплая жидкость, ваше сознание угасает..."))
 
 /obj/structure/changeling_cocoon/proc/background()
 	if(!victim?.client)
