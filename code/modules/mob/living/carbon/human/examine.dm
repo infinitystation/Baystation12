@@ -351,7 +351,7 @@
 
 	if(user.mind.changeling)
 		if(user == src)
-			msg += SPAN_LING("Пыпытка скопировать нас.\n")
+			msg += SPAN_LING("Мы.\n")
 		else if(isSynthetic())
 			msg += SPAN_LING("Бесполезный набор железа и кремния.\n")
 		else if(MUTATION_HUSK in mutations)
