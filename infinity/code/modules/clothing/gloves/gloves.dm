@@ -49,5 +49,5 @@
 	item_state = "watch_gold"
 
 /obj/item/clothing/gloves/wristwatch/examine(mob/user)
-	desc = initial(desc) + " It displays " + stationtime2text()
 	. = ..()
+	to_chat(user, "It displays " + stationtime2text())
