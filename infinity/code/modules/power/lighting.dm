@@ -2,6 +2,19 @@
 	var/special_broken_chance = 0
 	var/sound_id
 	var/datum/sound_token/sound_token
+	var/_init_bulb_color
+
+/obj/machinery/light/Initialize(mapload, obj/machinery/light_construct/construct)
+	. = ..()
+	if(istext(_init_bulb_color) && lightbulb)
+		lightbulb.set_bulb_color(_init_bulb_color)
+
+
+/obj/item/weapon/light/proc/set_bulb_color(value)
+	b_colour = value
+	if(istype(loc, /atom/movable))
+		loc.update_icon()
+	update_icon()
 
 /obj/machinery/light/get_power_usage()
 	. = ..()
@@ -38,10 +51,15 @@ UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/remove_bulb())
 	power_usage_multiplier = 0.5
 
 /obj/machinery/light/xenon
-	light_type = /obj/item/weapon/light/tube/xenon
+	light_type = /obj/item/weapon/light/xenon
 
-/obj/item/weapon/light/tube/xenon
+/obj/item/weapon/light/xenon
 	name = "xenon light tube"
+	desc = "A xenon light, really, it's very bright."
+	icon_state = "ltube"
+	base_state = "ltube"
+	item_state = "c_tube"
+	matter = list(MATERIAL_GLASS = 100, MATERIAL_ALUMINIUM = 20)
 	color = LIGHT_COLOR_XENON
 	b_colour = LIGHT_COLOR_XENON
 	b_max_bright = 0.95
@@ -57,3 +75,59 @@ UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/remove_bulb())
 
 /obj/machinery/light/outer/powered()
 	return TRUE
+
+/obj/item/weapon/light/led_neon
+	matter = list(MATERIAL_GLASS = 100, MATERIAL_ALUMINIUM = 20)
+	icon = 'infinity/icons/obj/machinery/neon.dmi'
+	icon_state = "big_tape"
+	base_state = "big_tape"
+	item_state = null
+
+	b_inner_range = 1
+	b_outer_range = 2
+	b_colour = LIGHT_DEFAULT_LED_NEON
+
+/obj/item/weapon/light/led_neon/attackby(obj/item/I, mob/user)
+	. = ..()
+	if(user)
+		if(isMultitool(I))
+			var/c = input("You are changing diode frequency.", "Input", b_colour) as color|null
+			if(c)
+				set_bulb_color(c)
+/obj/item/weapon/light/led_neon/large
+	base_state = "big_tape"
+	icon_state = "big_tape_preset"
+	b_inner_range = 2
+	b_outer_range = 4
+
+/obj/item/weapon/light/led_neon/small
+	base_state = "small_tape"
+	icon_state = "small_tape_preset"
+
+/obj/item/weapon/light/led_neon/small/attackby(obj/item/I, mob/user)
+	. = ..()
+	if(istype(I, type))
+		var/turf/T = get_turf(user)
+		if(isturf(T))
+			user.drop_from_inventory(src, T)
+			user.drop_from_inventory(I, T)
+			qdel(I)
+			qdel(src)
+			user.put_in_any_hand_if_possible(new /obj/item/weapon/light/led_neon/large(T))
+
+/obj/machinery/light/led
+	name = "neon tube"
+	desc = "A tape of LEDs. Not actually neon, but THIS is FUTURE."
+	light_type = /obj/item/weapon/light/led_neon/large
+	icon = 'infinity/icons/obj/machinery/neon.dmi'
+	icon_state = "tube_maped"
+	layer = BELOW_DOOR_LAYER
+
+/obj/machinery/light/led/update_pixels()
+	return
+
+/obj/machinery/light/led/small
+	name = "small neon tube"
+	base_state = "tube_border"
+	icon_state = "tube_border_maped"
+	light_type = /obj/item/weapon/light/led_neon/small
