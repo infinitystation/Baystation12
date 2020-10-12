@@ -34,6 +34,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
+	good_genome_prob = 20
 
 /datum/job/doctor
 	title = "Doctor"

@@ -31,6 +31,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management,
 							 /datum/computer_file/program/reports)
+	good_genome_prob = 30
 
 /datum/job/exploration_leader/get_description_blurb()
 	return "Вы - Экспедиционный Лидер. В ваши обязанности входит организация и участие в миссиях на удаленные объекты. \

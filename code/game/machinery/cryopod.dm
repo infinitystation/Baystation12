@@ -148,7 +148,7 @@
 
 	var/base_icon_state = "body_scanner_0"
 	var/occupied_icon_state = "body_scanner_1"
-	var/on_store_message = "погружается в хранилище долговременного крилстазиса." //inf, was: 	var/on_store_message = "has entered long-term storage."
+	var/on_store_message = "погружается в хранилище долговременного криостазиса." //inf, was: 	var/on_store_message = "has entered long-term storage."
 	var/on_store_name = "Cryogenic Oversight"
 	var/on_enter_occupant_message = "Вы чувствуете, как прохладный воздух окружает вас. Тело постепенно немеете, пока чувства затупляются..." //inf, was: 	var/on_enter_occupant_message = "You feel cool air surround you. You go numb as your senses turn inward."
 	var/allow_occupant_types = list(/mob/living/carbon/human)
