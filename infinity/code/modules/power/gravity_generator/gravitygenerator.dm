@@ -319,7 +319,7 @@ GLOBAL_VAR(station_gravity_generator)
 	return ..()
 
 // Interaction
-/obj/machinery/gravity_generator/main/ui_interact(mob/user, ui_key, datum/nanoui/ui, force_open, datum/nano_ui/master_ui, datum/topic_state/state)
+/obj/machinery/gravity_generator/main/ui_interact(mob/user, ui_key, datum/nanoui/ui, force_open, datum/nanoui/master_ui, datum/topic_state/state)
 	var/data = list()
 
 	data["enabled"] = enabled
@@ -526,7 +526,7 @@ GLOBAL_VAR(station_gravity_generator)
 		A.gravitychange(enabled ? TRUE : FALSE)
 
 /obj/machinery/gravity_generator/main/proc/add_areas()
-	var/list/areas = area_repository.get_areas_by_z_level(GetConnectedZlevels(z))
+	var/list/areas = area_repository.get_areas_by_z_level()
 	for(var/i in areas)
 		var/area/A = areas[i]
 		if(is_station_area(A))
