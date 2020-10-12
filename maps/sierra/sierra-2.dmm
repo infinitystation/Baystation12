@@ -5859,10 +5859,10 @@
 	dir = 4
 	},
 /obj/machinery/light/led/small{
-	dir = 4
+	dir = 8
 	},
 /obj/machinery/light/led/small{
-	dir = 8
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/mess)
@@ -6008,7 +6008,7 @@
 	req_access = list("ACCESS_BAR")
 	},
 /obj/machinery/light/led/small{
-	dir = 1
+	dir = 9
 	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/mess)
@@ -9193,11 +9193,13 @@
 	dir = 8;
 	pixel_x = -24
 	},
-/obj/machinery/light/led/small,
-/obj/machinery/light/led/small{
-	dir = 4
-	},
 /obj/machinery/hologram/holopad,
+/obj/machinery/light/led/small{
+	dir = 8
+	},
+/obj/machinery/light/led/small{
+	dir = 6
+	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/mess)
 "apU" = (
@@ -10938,7 +10940,7 @@
 	req_access = list("ACCESS_BAR")
 	},
 /obj/machinery/light/led/small{
-	dir = 1
+	dir = 5
 	},
 /obj/structure/bed/sofa/black/right,
 /turf/simulated/floor/tiled/dark,
@@ -12705,8 +12707,9 @@
 	c_tag = "Bar - Main";
 	dir = 1
 	},
-/obj/machinery/light/led/small,
 /obj/structure/table/glass,
+/obj/machinery/light/led,
+/obj/machinery/light/led/small,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/mess)
 "avI" = (
@@ -13170,10 +13173,13 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/bridge/hall/level_one)
 "awz" = (
+/obj/structure/table/glass,
+/obj/machinery/light/led{
+	dir = 4
+	},
 /obj/machinery/light/led/small{
 	dir = 8
 	},
-/obj/structure/table/glass,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/mess)
 "awA" = (
@@ -13544,10 +13550,11 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/structure/table/glass,
+/obj/machinery/light/led,
 /obj/machinery/light/led/small{
 	dir = 1
 	},
-/obj/structure/table/glass,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/mess)
 "axg" = (
@@ -15885,11 +15892,11 @@
 	dir = 1;
 	pixel_y = -23
 	},
-/obj/machinery/light/led/small{
-	dir = 1
-	},
 /obj/structure/bed/chair/comfy/purple{
 	dir = 8
+	},
+/obj/machinery/light/led/small{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/mess)
@@ -20762,6 +20769,9 @@
 "aJH" = (
 /obj/machinery/light/led/small{
 	dir = 4
+	},
+/obj/machinery/light/led/small{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/mess)
@@ -34686,6 +34696,16 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/gravitaional_generator)
+"dEr" = (
+/obj/structure/table/glass,
+/obj/machinery/light/led{
+	dir = 4
+	},
+/obj/machinery/light/led/small{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/crew_quarters/mess)
 "dJC" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
@@ -34827,6 +34847,9 @@
 /area/crew_quarters/mess)
 "fWd" = (
 /obj/structure/table/glass,
+/obj/machinery/light/led{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/mess)
 "fZe" = (
@@ -34842,12 +34865,12 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
-/obj/machinery/light/led/small{
-	dir = 9
-	},
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
 	dir = 1
+	},
+/obj/machinery/light/led/small{
+	dir = 9
 	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/mess)
@@ -35698,7 +35721,9 @@
 /turf/simulated/floor/airless,
 /area/space)
 "ujy" = (
-/obj/machinery/light/led/small,
+/obj/machinery/light/led/small{
+	dir = 6
+	},
 /obj/structure/bed/sofa/black/right{
 	dir = 1
 	},
@@ -55040,7 +55065,7 @@ ape
 alE
 arU
 asZ
-fWd
+dEr
 ujy
 aIb
 aAL
