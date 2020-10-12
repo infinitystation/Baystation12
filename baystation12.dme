@@ -3543,8 +3543,6 @@
 #include "infinity\code\modules\mob\logout.dm"
 #include "infinity\code\modules\mob\mob_defines.dm"
 #include "infinity\code\modules\mob\mob_helpers.dm"
-#include "infinity\code\modules\mob\language\_languages.dm"
-#include "infinity\code\modules\mob\language\language.dm"
 #include "infinity\code\modules\mob\language\alien\resomi.dm"
 #include "infinity\code\modules\mob\language\alien\tajaran.dm"
 #include "infinity\code\modules\mob\language\human\alain.dm"
