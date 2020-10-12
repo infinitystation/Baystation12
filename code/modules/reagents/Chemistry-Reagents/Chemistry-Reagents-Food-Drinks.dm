@@ -587,11 +587,11 @@
 
 	glass_name = "carrot juice"
 	glass_desc = "It is just like a carrot but without crunching."
-
+/*[inf.exclude]
 /datum/reagent/drink/juice/carrot/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
 	M.reagents.add_reagent(/datum/reagent/imidazoline, removed * 0.2)
-
+[/inf.exclude]*/
 /datum/reagent/drink/juice/grape
 	name = "Grape Juice"
 	description = "It's grrrrrape!"

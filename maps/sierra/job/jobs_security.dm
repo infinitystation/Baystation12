@@ -34,6 +34,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
+	good_genome_prob = 40
 
 /datum/job/detective
 	title = "Detective"
@@ -73,6 +74,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
+	good_genome_prob = 25
 
 /datum/job/officer
 	title = "Security Guard"
@@ -109,6 +111,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
+	good_genome_prob = 15
 
 /datum/job/security_assistant
 	title = "Security Cadet"
@@ -141,4 +144,3 @@
 			            access_eva, access_sec_doors, access_hangar)
 
 	minimal_access = list()
-

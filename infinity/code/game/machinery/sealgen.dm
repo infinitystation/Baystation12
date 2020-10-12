@@ -41,16 +41,13 @@
 		overlays += initial(icon_state)+"-hatch"
 
 /obj/machinery/sealgen/Process()
-	. = ..()
-	if((stat & NOPOWER) && current_field)
+	if(stat & NOPOWER)
 		off()
 	update_icon()
 	change_power_consumption(field_density ? initial(active_power_usage)*3 : initial(active_power_usage), use_power_mode = POWER_USE_ACTIVE)
 	update_use_power(current_field ? POWER_USE_ACTIVE : POWER_USE_IDLE)
 	if(current_field)
 		current_field.density = field_density
-		animate(current_field,alpha = 200,time = 2)
-		animate(current_field,alpha = initial(alpha),time = 2)
 
 /obj/machinery/sealgen/Destroy()
 	off()
@@ -157,6 +154,9 @@
 	. = ..()
 
 //Wires
+#define SEALGEN_WIRE_LOCK		1
+#define SEALGEN_WIRE_DENSITY	2
+#define SEALGEN_WIRE_POWER		4
 
 /datum/wires/sealgen
 	holder_type = /obj/machinery/sealgen
@@ -167,10 +167,6 @@
 		new /datum/wire_description(SEALGEN_WIRE_DENSITY, "This wire is connected to field density setting.",SKILL_ADEPT),
 		new /datum/wire_description(SEALGEN_WIRE_POWER, "This wire seems to be carrying a heavy current.",SKILL_ADEPT)
 	)
-
-var/const/SEALGEN_WIRE_LOCK = 1
-var/const/SEALGEN_WIRE_DENSITY = 2
-var/const/SEALGEN_WIRE_POWER = 4
 
 /datum/wires/sealgen/UpdateCut(var/index, var/mended)
 	var/obj/machinery/sealgen/S = holder
@@ -183,6 +179,10 @@ var/const/SEALGEN_WIRE_POWER = 4
 			if(!S.current_field) return
 			S.off()
 			S.shock(usr, 100)
+
+#undef SEALGEN_WIRE_LOCK
+#undef SEALGEN_WIRE_DENSITY
+#undef SEALGEN_WIRE_POWER
 
 /datum/wires/sealgen/GetInteractWindow(mob/user)
 	var/obj/machinery/sealgen/S = holder
