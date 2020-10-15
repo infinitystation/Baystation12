@@ -70,7 +70,7 @@
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "siegecoat"
 	min_cold_protection_temperature = ARMOR_MIN_COLD_PROTECTION_TEMPERATURE
-	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	item_flags = ITEM_FLAG_THICKMATERIAL
 	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB)
 	allowed = list(
