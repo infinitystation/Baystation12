@@ -1,4 +1,4 @@
-#define BP_STACK "neural stack"
+#define BP_NSTACK "neural stack"
 
 //Species-related stuff.
 
@@ -20,7 +20,7 @@
 	icon_state = "neural-stack-adv"
 
 	parent_organ = BP_HEAD
-	organ_tag = BP_STACK
+	organ_tag = BP_NSTACK
 	status = ORGAN_ROBOTIC
 	relative_size = 10
 	vital = TRUE
@@ -154,7 +154,7 @@
 //Stack creation
 
 /mob/living/carbon/human/proc/create_stack()
-	internal_organs_by_name[BP_STACK] = new /obj/item/organ/internal/stack(src, 1)
+	internal_organs_by_name[BP_NSTACK] = new /obj/item/organ/internal/stack(src, 1)
 	to_chat(src, SPAN_NOTICE("Вы чувствуете небольшое головокружение от ощущения того, как нейроузел облегает ваш мозг."))
 
 /mob/new_player/create_character()
