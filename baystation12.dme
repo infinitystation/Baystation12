@@ -3595,6 +3595,7 @@
 #include "infinity\code\modules\organs\external\_external.dm"
 #include "infinity\code\modules\organs\external\species\resomi.dm"
 #include "infinity\code\modules\organs\external\species\xenophage.dm"
+#include "infinity\code\modules\organs\internal\stack.dm"
 #include "infinity\code\modules\organs\internal\zombie.dm"
 #include "infinity\code\modules\organs\internal\species\abductors.dm"
 #include "infinity\code\modules\organs\internal\species\resomi.dm"
