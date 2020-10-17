@@ -108,13 +108,12 @@
 	icon_state = "holyshield"
 	light_color = "#85dfff"
 	light_outer_range = 2
-	density = 0
 
 /obj/effect/forcefield/holy/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if(isliving(mover))
 		var/mob/living/L = mover
-		if(iscultist(L))
-			return 0
+		if(!iscultist(L))
+			return 1
 	. = ..()
 
 /spell/targeted/ethereal_jaunt/holy_shift
@@ -468,7 +467,7 @@
 
 /spell/targeted/projectile/dumbfire/gauntlet_holy
 	name = "Gauntlet Blast"
-	desc = "Empower your gauntlet with eldritch force and shoot it towards your target!"
+	desc = "Empower your gauntlet with holy force and shoot it towards your target!"
 	feedback = "GB"
 	proj_type = /obj/item/projectile/spell_projectile/gauntlet_holy
 
