@@ -311,7 +311,7 @@
 		if(world.time - time_till_despawn < time_entered) //inf, was: if ((world.time - time_entered < time_till_despawn) && (occupant.ckey))
 			return
 
-		if(!occupant.client && occupant.stat != DEAD) //inf, was: if(!occupant.client && occupant.stat<2) //Occupant is living and has no client.
+		if(occupant.stat != DEAD) //inf, was: if(!occupant.client && occupant.stat<2) //Occupant is living
 			if(!control_computer)
 				if(!find_control_computer(urgent=1))
 					return
