@@ -574,8 +574,7 @@
 	if(occupant.client)
 		if(!silent)
 			to_chat(occupant, "<span class='notice'>[on_enter_occupant_message]</span>")
-			to_chat(occupant, "<span class='notice'><b>Если Вы выйдете из тела (OOC > Ghost) или закроете игру, \
-			то через некоторое время Ваш персонаж будет убран из раунда в крио-сон.</b></span>")
+			to_chat(occupant, "<span class='notice'><b>Через некоторое время Ваш персонаж будет убран из раунда в крио-сон.</b></span>")
 		occupant.client.perspective = EYE_PERSPECTIVE
 		occupant.client.eye = src
 	occupant.forceMove(src)
