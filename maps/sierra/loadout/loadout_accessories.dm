@@ -63,3 +63,10 @@
 /datum/gear/accessory/ftupin
 	allowed_roles = list(/datum/job/merchant, /datum/job/merchant_trainee, /datum/job/assistant)
 	allowed_branches = list(/datum/mil_branch/civilian)
+
+/datum/gear/passport
+	display_name = "passports selection"
+	description = "A selection of passports."
+	path = /obj/item/weapon/passport
+	flags = GEAR_HAS_SUBTYPE_SELECTION
+	custom_setup_proc = /obj/item/weapon/passport/proc/set_info
