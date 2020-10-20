@@ -154,6 +154,9 @@
 	. = ..()
 
 //Wires
+#define SEALGEN_WIRE_LOCK		1
+#define SEALGEN_WIRE_DENSITY	2
+#define SEALGEN_WIRE_POWER		4
 
 /datum/wires/sealgen
 	holder_type = /obj/machinery/sealgen
@@ -164,10 +167,6 @@
 		new /datum/wire_description(SEALGEN_WIRE_DENSITY, "This wire is connected to field density setting.",SKILL_ADEPT),
 		new /datum/wire_description(SEALGEN_WIRE_POWER, "This wire seems to be carrying a heavy current.",SKILL_ADEPT)
 	)
-
-var/const/SEALGEN_WIRE_LOCK = 1
-var/const/SEALGEN_WIRE_DENSITY = 2
-var/const/SEALGEN_WIRE_POWER = 4
 
 /datum/wires/sealgen/UpdateCut(var/index, var/mended)
 	var/obj/machinery/sealgen/S = holder
@@ -180,6 +179,10 @@ var/const/SEALGEN_WIRE_POWER = 4
 			if(!S.current_field) return
 			S.off()
 			S.shock(usr, 100)
+
+#undef SEALGEN_WIRE_LOCK
+#undef SEALGEN_WIRE_DENSITY
+#undef SEALGEN_WIRE_POWER
 
 /datum/wires/sealgen/GetInteractWindow(mob/user)
 	var/obj/machinery/sealgen/S = holder

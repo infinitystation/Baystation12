@@ -1,5 +1,4 @@
 /mob
-	var/obj/screen/fixeye = null
 	var/obj/screen/holster = null
 	var/obj/screen/ling_sting = null
 	var/obj/screen/ling_chem = null
