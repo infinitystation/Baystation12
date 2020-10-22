@@ -292,7 +292,7 @@
 	name = "Curse Of Mirrors"
 	desc = "Victim will hear everybody as himself. Lasts 5 minutes."
 
-	requirments = list(/obj/effect/decal/cleanable/blood = 1,
+	requirments = list(/obj/effect/decal/cleanable/blood = 0,
 					   /obj/item/weapon/material/shard = 3)
 
 	ritual_flags = NEEDS_KNIFE | RITUAL_BLOODY
@@ -300,30 +300,28 @@
 	required_cultists = 1
 	ritual_radius = 1
 
-/datum/ritual/curse_pain/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
+/datum/ritual/curse_mirrors/cast(var/obj/effect/rune/ritual_rune, var/mob/living/user)
 	. = ..()
 
 	if(!.)
 		return
 
-	var/obj/item/cursed
+	var/obj/effect/decal/cleanable/blood/blood = locate() in get_turf(ritual_rune)
 
-	for(var/obj/item/curse in get_turf(ritual_rune))
-		if(!(curse.type in requirments))
-			cursed = curse
-			break
+	if(length(blood.blood_DNA) == 0)
+		ritual_rune.visible_message(SPAN_WARNING("[ritual_rune] starts glowing red, but fails to activate without a sample of victim's blood."))
+		performing = FALSE
+		return
 
 	var/mob/living/carbon/human/cursing = null
 
-	for(var/mob/living/carbon/human/try_to_curse in cursed.fingerprintsmob)
-		if(iscultist(try_to_curse) || try_to_curse.stat == DEAD || !istype(try_to_curse))
-			continue
-
-		cursing = try_to_curse
-		break
+	for(var/mob/living/carbon/human/H in GLOB.player_list)
+		if(md5(H.real_name) == blood.blood_DNA[length(blood.blood_DNA)]) //Checks last blood sample
+			cursing = H
+			break
 
 	if(!cursing)
-		ritual_rune.visible_message(SPAN_WARNING("[ritual_rune] starts glowing red, but fails to activate without an item that victim touched."))
+		ritual_rune.visible_message(SPAN_WARNING("[ritual_rune] starts glowing red, but fails to activate without a sample of victim's blood."))
 		performing = FALSE
 		return
 

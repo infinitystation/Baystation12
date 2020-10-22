@@ -257,7 +257,7 @@ var/list/TierNarNarRunes = list(
 /obj/effect/rune/examine(mob/user)
 	. = ..()
 	if(iscultist(user))
-		to_chat(user, "This is \a [cultname] rune.")
+		to_chat(user, "<span class = 'cult italic'>This is \a [cultname] rune.</span>")
 		to_chat(user, "<span class = 'cult italic'>[ritual.desc]</span>")
 
 /obj/effect/rune/attackby(var/obj/item/I, var/mob/living/user)
@@ -272,7 +272,7 @@ var/list/TierNarNarRunes = list(
 		if(GLOB.cult.powerless)
 			to_chat(user, "You read the words, but nothing happens.")
 			return fizzle(user)
-		cast(user)
+		cast_self(user)
 	else if(istype(I, /obj/item/weapon/nullrod))
 		user.visible_message("<span class='notice'>[user] hits \the [src] with \the [I], and it disappears, fizzling.</span>", "<span class='notice'>You disrupt the vile magic with the deadening field of \the [I].</span>", "You hear a fizzle.")
 		qdel(src)
@@ -288,7 +288,7 @@ var/list/TierNarNarRunes = list(
 	if(GLOB.cult.powerless)
 		to_chat(user, "You read the words, but nothing happens.")
 		return fizzle(user)
-	cast(user)
+	cast_self(user)
 
 /obj/effect/rune/attack_ai(var/mob/living/user) // Cult borgs!
 	if(Adjacent(user))
@@ -297,12 +297,11 @@ var/list/TierNarNarRunes = list(
 /obj/effect/rune/attack_generic(var/mob/living/user) // Cult constructs/slimes/whatnot!
 	attack_hand(user)
 
-/obj/effect/rune/proc/cast(var/mob/living/user)
+/obj/effect/rune/proc/cast_self(var/mob/living/user)
 	if(!ritual)
 		fizzle(user)
 		return
 	ritual.cast(src, user)
-	qdel(src)
 
 /obj/effect/rune/proc/fizzle(var/mob/living/user)
 	visible_message("<span class='warning'>The markings pulse with a small burst of light, then fall dark.</span>", "You hear a fizzle.")
