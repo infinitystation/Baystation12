@@ -8,17 +8,14 @@
 
 	trade_blacklisted = TRUE
 
-/obj/item/clothing/head/helmet/ronin_helmet
-	name = "skull-shaped helmet"
-	desc = "A full helmet bent and painted to resemble a cow's skull - a grim representation of it's owner's cruelty. The engraving on the back reads 'R O N I N'."
-	icon = CUSTOM_ITEM_OBJ
-	icon_state = "roninhelmet"
-	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
-	body_parts_covered = FACE|EYES|HEAD
-	item_icons = list(
-		slot_head_str = CUSTOM_ITEM_MOB
-	)
-	item_state_slots = list(
-		slot_head_str = "ronin_helmet"
-	)
-	trade_blacklisted = TRUE
+/datum/robolimb/custom_he11d1ver
+	company = "combat prothestic limb"
+	desc = "Some kind of sleek and useful Mars Military Industries 'Dominus' arm design, you wouldn't call it militaristic at all."
+	icon = 'infinity/icons/customs/cyberlimbs/combat_limb.dmi'
+	allowed_ckeys = list("he11diver")
+	applies_to_part = list(BP_L_ARM, BP_L_HAND)
+	unavailable_at_fab = 1
+
+	brute_mod = 0.7
+	burn_mod = 0.7
+	speed_mod = 0.18

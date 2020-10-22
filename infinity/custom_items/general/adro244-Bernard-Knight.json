@@ -1,0 +1,9 @@
+{
+  "ckey" :            "adro244",
+  "character_name" :  "Bernard Elderich",
+  "item_name" :       "Knight armor",
+  "item_desc" :       "Personal metall armor with parts of hydraulic mechanism inside, they make this armor easier to wear and support their owner in all situations.",
+  "item_icon_state" : "adro_knight",
+  "item_path" :       "/obj/item/device/kit/suit",
+  "req_access" :      [ "ACCESS_GUARD" ]
+  }

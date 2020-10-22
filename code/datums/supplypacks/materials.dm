@@ -130,7 +130,7 @@
 /decl/hierarchy/supply_pack/materials/maple50
 	name = "50 maple planks"
 	contains = list(/obj/item/stack/material/wood/maple/twentyfive = 2)
-	cost = 10
+	cost = 30 //INF, WAS 10. It will cost 55, which is 100% of its cost (crate+stamp+wood)
 	containername = "maple planks crate"
 
 /decl/hierarchy/supply_pack/materials/walnut25

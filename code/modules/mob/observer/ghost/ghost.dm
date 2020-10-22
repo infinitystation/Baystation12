@@ -177,6 +177,11 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 				if(!src.client)
 					return
 				src.client.admin_ghost()
+//[INF]
+		else if(config.deny_notdead_observer_becoming && stat != DEAD)
+			to_chat(src, SPAN_WARNING("Вы не можете покинуть своё тело пока оно живо."))
+			return
+//[/INF]
 		else if(config.respawn_delay)
 			response = alert(src, "Are you -sure- you want to ghost?\n(You are alive. If you ghost, you won't be able to play this round for another [config.respawn_delay] minute\s! You can't change your mind so choose wisely!)", "Are you sure you want to ghost?", "Ghost", "Stay in body")
 		else
@@ -185,9 +190,13 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			return
 		resting = 1
 		log_and_message_admins("has ghosted.")
-		var/mob/observer/ghost/ghost = ghostize(0)	//0 parameter is so we can never re-enter our body, "Charlie, you can never come baaaack~" :3
-		ghost.timeofdeath = world.time // Because the living mob won't have a time of death and we want the respawn timer to work properly.
-		announce_ghost_joinleave(ghost)
+//[INF]
+		become_ghost()
+/mob/living/proc/become_ghost()
+//[/INF]
+	var/mob/observer/ghost/ghost = ghostize(0)	//0 parameter is so we can never re-enter our body, "Charlie, you can never come baaaack~" :3
+	ghost.timeofdeath = world.time // Because the living mob won't have a time of death and we want the respawn timer to work properly.
+	announce_ghost_joinleave(ghost)
 
 /mob/observer/ghost/can_use_hands()	return 0
 /mob/observer/ghost/is_active()		return 0

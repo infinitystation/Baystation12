@@ -86,7 +86,7 @@ var/list/limb_icon_cache = list()
 	else if (BP_IS_ROBOTIC(src))
 		icon = 'icons/mob/human_races/cyberlimbs/robotic.dmi'
 	else if (!dna)
-		icon = 'icons/mob/human_races/species/human/body.dmi'
+		icon = 'infinity/icons/mob/human_races/species/human/body.dmi' //inf, was: icon = 'icons/mob/human_races/species/human/body.dmi'
 	else if (status & ORGAN_MUTATED)
 		icon = species.deform
 	else if (owner && (MUTATION_SKELETON in owner.mutations))

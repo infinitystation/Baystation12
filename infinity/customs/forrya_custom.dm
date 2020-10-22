@@ -231,6 +231,35 @@
 	master.disrupt(0)
 	. = ..()
 
+/obj/item/clothing/accessory/badge/dog_tags/tajamc
+	name = "titanium amulet"
+	desc = "A technological titanium amulet, also know as Soul Deliverance Device.\
+	Various information about its owner engraved on sides. Looks pretty durable and has a strange glowing crystal inside."
+	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
+	icon_state = "cls"
+	var/open = 0
+
+/obj/item/clothing/accessory/badge/dog_tags/tajamc/verb/verb_opam()
+	set src in usr
+	set category = "Object"
+	set name = "Use yor paws on amulet"
+	(open == 1 )?( open = 0) : (open = 1)
+	update_icon()
+
+/obj/item/clothing/accessory/badge/dog_tags/tajamc/on_update_icon()
+	if(open)
+		icon_state = "opn"
+		set_light(0.2, 0.1, 1.5, 2, light_color)
+	else
+		icon_state = "cls"
+		set_light(0)
+
+/obj/item/clothing/accessory/inf_pin/ccapin
+	name = "CCA patch"
+	desc = "A small patch, decorated with a CCA symbol pattern embroidered with titanium threads. It looks minimalistic, beautiful and strict. "
+	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
+	icon_state = "ccapatch"
+
 /obj/item/clothing/accessory/cloak/custom_forrya_cam
 	name = "winter camouflage cloak"
 	desc = "Simple winter camouflaging cloak."
@@ -268,13 +297,13 @@
 		/obj/item/clothing/accessory/cloak/custom_forrya_cam,
 		/obj/item/clothing/suit/storage/hooded/wintercoat/custom_forrya,
 		/obj/item/clothing/shoes/workboots/custom_forrya_winter,
-		/obj/item/clothing/accessory/badge/tajamc,
+		/obj/item/clothing/accessory/badge/dog_tags/tajamc,
 		/obj/item/clothing/accessory/inf_pin/ccapin)
 	can_hold = list(
 		/obj/item/clothing/accessory/cloak/custom_forrya_cam,
 		/obj/item/clothing/suit/storage/hooded/wintercoat/custom_forrya,
 		/obj/item/clothing/shoes/workboots/custom_forrya_winter,
-		/obj/item/clothing/accessory/badge/tajamc,
+		/obj/item/clothing/accessory/badge/dog_tags/tajamc,
 		/obj/item/clothing/accessory/inf_pin/ccapin,
 		/obj/item/music_player/csplayer)
 
@@ -394,11 +423,6 @@
 	desc = "The amulet of Tajara, which looks old enough, as if it has passed through the ages. The runes on the amulet are etched with acid, it is also covered with silvery metal and seems even covered with frost. It looks very cold, and it seems that touching it can burn with frost."
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "forrya_amulet"
-
-/*
- * THERMOSUIT
- * ==========
- */
 
 /obj/item/clothing/under/thermal/heat/thermosuit
 	name = "modified uniform"

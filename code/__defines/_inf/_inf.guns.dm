@@ -1,5 +1,3 @@
-#define CALIBER_TV			  	    "8.77mm"
-
 #define GUN_BULK_PISTOL       1
 #define GUN_BULK_REVOLVER     2
 #define GUN_BULK_SMG          3

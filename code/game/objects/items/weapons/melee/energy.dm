@@ -128,6 +128,7 @@
 /obj/item/weapon/melee/energy/sword
 	name = "energy sword"
 	desc = "May the force be within you."
+	icon = 'infinity/icons/obj/weapons.dmi' //inf
 	icon_state = "sword0"
 	active_force = 30
 	active_throwforce = 20

@@ -13,6 +13,16 @@
 	mob_swap_flags = MONKEY|SLIME|SIMPLE_ANIMAL
 	mob_push_flags = MONKEY|SLIME|SIMPLE_ANIMAL
 
+	//[inf]
+	speech_sounds = list(
+		'infinity/sound/voice/robot_talk_light_1.ogg',
+		'infinity/sound/voice/robot_talk_light_2.ogg',
+		'infinity/sound/voice/robot_talk_light_3.ogg',
+		'infinity/sound/voice/robot_talk_light_4.ogg',
+		'infinity/sound/voice/robot_talk_light_5.ogg'
+	)
+	//[/inf]
+
 /mob/living/silicon/robot/flying/initialize_components()
 	components["actuator"] =       new/datum/robot_component/actuator(src)
 	components["radio"] =          new/datum/robot_component/radio(src)

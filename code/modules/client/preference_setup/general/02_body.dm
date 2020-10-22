@@ -644,8 +644,10 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 						continue
 					if(M.allowed_bodytypes && !(tmp_species in M.allowed_bodytypes))
 						continue
-					if(M.allowed_ckeys.len && !(user.client.ckey in M.allowed_ckeys))
+//[INF]
+					if(M.allowed_ckeys.len && !(user.ckey in M.allowed_ckeys))
 						continue
+//[/INF]
 					usable_manufacturers[company] = M
 				if(!usable_manufacturers.len)
 					return

@@ -25,6 +25,7 @@
 							 /datum/computer_file/program/card_mod,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
+	good_genome_prob = 60
 
 /datum/job/hop
 	title = "Head of Personnel"
@@ -66,6 +67,7 @@
 							 /datum/computer_file/program/card_mod,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
+	good_genome_prob = 60
 
 /datum/job/rd
 	title = "Research Director"
@@ -107,6 +109,7 @@
 							 /datum/computer_file/program/aidiag,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
+	good_genome_prob = 75
 
 /datum/job/cmo
 	title = "Chief Medical Officer"
@@ -148,6 +151,7 @@
 							 /datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
+	good_genome_prob = 55
 
 /datum/job/chief_engineer
 	title = "Chief Engineer"
@@ -197,6 +201,7 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/shields_monitor,
 							 /datum/computer_file/program/reports)
+	good_genome_prob = 65
 
 /datum/job/chief_engineer/get_description_blurb()
 	return "Главный инженер - руководитель и администратор инженерного отдела, \
@@ -241,6 +246,7 @@
 							 /datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
+	good_genome_prob = 80
 
 /datum/job/iaa
 	title = "Internal Affairs Agent"
@@ -266,6 +272,7 @@
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/reports)
+	good_genome_prob = 85
 
 /datum/job/adjutant
 	title = "Adjutant"
@@ -305,6 +312,7 @@
 							 /datum/computer_file/program/shields_monitor,
 							 /datum/computer_file/program/reports,
 							 /datum/computer_file/program/deck_management)
+	good_genome_prob = 45
 
 /datum/job/adjutant/get_description_blurb()
 	return "You are an Adjutant. You do not give orders of your own. You are subordinate to all of command. You handle matters on the bridge and report directly to the Captain and Head of Personnel. You take the sierra's helm. You monitor bridge computer programs and communications and report relevant information to command. Sometimes you can also give support for vessel's departments - you have radio keys in bridge's storage for that purpose."

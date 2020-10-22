@@ -62,6 +62,16 @@ var/list/mob_hat_cache = list()
 
 	holder_type = /obj/item/weapon/holder/drone
 
+	//[inf]
+	speech_sounds = list(
+		'infinity/sound/voice/robot_talk_light_1.ogg',
+		'infinity/sound/voice/robot_talk_light_2.ogg',
+		'infinity/sound/voice/robot_talk_light_3.ogg',
+		'infinity/sound/voice/robot_talk_light_4.ogg',
+		'infinity/sound/voice/robot_talk_light_5.ogg'
+	)
+	//[/inf]
+
 /mob/living/silicon/robot/drone/Initialize()
 	. = ..()
 

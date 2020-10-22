@@ -313,6 +313,7 @@
 /obj/item/clothing/suit/storage/hooded/polychromic/on_update_icon()
 	..()
 	update_clothing_icon()
+	hood.color = color
 	hood.update_clothing_icon()
 
 /obj/item/clothing/suit/storage/hooded/polychromic/emp_act()

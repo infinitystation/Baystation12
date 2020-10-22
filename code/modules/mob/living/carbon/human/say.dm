@@ -248,9 +248,5 @@
 		var/datum/language/L = language_keys[language_prefix]
 		if (can_speak(L))
 			return L
-		else if(L.primitive_version) //inf, for primitive version of xeno langs
-			L = all_languages[L.primitive_version]
-			if(can_speak(L))
-				return L
 
 	return null
