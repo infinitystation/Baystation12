@@ -24,9 +24,11 @@
 	var/pulsing = 1
 
 	var/obj/effect/biomass/core/core
+	var/obj/effect/biomass/core/old_core
 	var/refund_value = 2
 
 	var/faction = "blob"
+	var/old_faction = "blob"
 
 /obj/effect/biomass/proc/readapt()
 	blob_color = core.blob_color
@@ -43,6 +45,9 @@
 	health = maxHealth
 	update_icon()
 	START_PROCESSING(SSobj, src)
+	findBlob(list(src))
+	for(var/obj/effect/biomass/blobby in range(get_turf(src), 1))
+		blobby.findBlob(list(blobby))
 	. = ..()
 
 /obj/effect/biomass/on_update_icon()
@@ -65,6 +70,50 @@
 
 	return 0
 
+/obj/effect/biomass/proc/recover(var/obj/effect/biomass/core/core2)
+	core = core2
+	faction = core2.faction
+	readapt()
+
+	for(var/obj/effect/biomass/blobby in range(get_turf(src), 1))
+		if(blobby.faction == "broken_blob")
+			blobby.recover(core2)
+
+/obj/effect/biomass/proc/findBlob(var/list/history)
+
+	if(locate(/obj/effect/biomass/core) in range(get_turf(src), 1))
+		var/obj/effect/biomass/core/core2 = locate(/obj/effect/biomass/core) in range(get_turf(src), 1)
+		if(!core || faction == "broken_blob")
+			recover(core2)
+
+		return list(core2, history)
+
+	for(var/obj/effect/biomass/blobby in range(get_turf(src), 1))
+		if(blobby in history)
+			continue
+		history.Add(blobby)
+		var/list/recieved = blobby.findBlob(history)
+		var/obj/effect/biomass/core/core2 = recieved[1]
+		for(var/elem in recieved[2])
+			history |= elem
+
+		if(core2 && istype(core2))
+			if(!core || faction == "broken_blob")
+				recover(core2)
+			return list(core2, history)
+
+	if(core && faction != "broken_blob")
+		old_core = core
+		core = null
+		color = "#ffffff"
+		blob_color = "#ffffff"
+		old_faction = faction
+		faction = "broken_blob"
+
+	return list(null, history)
+
+
+
 /obj/effect/biomass/ex_act(var/severity)
 	switch(severity)
 		if(1)
@@ -81,11 +130,15 @@
 	health -= damage
 	playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 	if(health < 0)
-		if(core)
+		if(core && core.strain)
 			core.strain.killed(src)
+
 		qdel(src)
+		for(var/obj/effect/biomass/blobby in range(get_turf(src), 1))
+			blobby.findBlob(list(blobby))
 	else
 		update_icon()
+
 
 /obj/effect/biomass/proc/regen()
 	health = min(health + regen_rate, maxHealth)
@@ -172,7 +225,8 @@
 	if(!pulsing && !manual)
 		return
 
-	T = core.strain.pre_expanded(T, src)
+	if(core && core.strain)
+		T = core.strain.pre_expanded(T, src)
 
 	if(locate(/obj/effect/biomass) in get_turf(T))
 		return
@@ -202,7 +256,10 @@
 	var/obj/effect/biomass/new_blob = new(T)
 	new_blob.color = color
 	new_blob.core = core
-	core.strain.expanded(src, new_blob)
+	for(var/obj/effect/biomass/blobby in range(get_turf(src), 1))
+		blobby.findBlob(list(blobby))
+	if(core && core.strain)
+		core.strain.expanded(src, new_blob)
 
 /obj/effect/biomass/proc/attack_blob(var/obj/effect/biomass/L)
 	if(!L)
@@ -211,7 +268,8 @@
 		return
 	L.visible_message(SPAN_DANGER("A tendril flies out from \the [src] and smashes into \the [L]!"))
 	playsound(loc, 'sound/effects/attackblob.ogg', 50, 1)
-	core.strain.attack(src, L)
+	if(core && core.strain)
+		core.strain.attack(src, L)
 	for(var/blob_damage in tendril_damage_types)
 		switch(tendril_damages[blob_damage])
 			if("fire")
@@ -228,9 +286,12 @@
 		L.apply_damage(tendril_damages[blob_damage], blob_damage, used_weapon = "blob tendril")
 
 /obj/effect/biomass/emp_act(var/severity)
-	core.strain.empd(src, severity)
+	if(core && core.strain)
+		core.strain.empd(src, severity)
 
 /obj/effect/biomass/proc/pulse(var/forceLeft, var/list/dirs)
+	if(!core)
+		return
 	sleep(2)
 	if(!pulsing)
 		core.resources += core.resource_gain
@@ -300,7 +361,8 @@
 	if(!Proj)
 		return
 
-	core.strain.damaged(src, Proj.firer, 1)
+	if(core && core.strain)
+		core.strain.damaged(src, Proj.firer, 1)
 
 	switch(Proj.damage_type)
 		if(BRUTE)
@@ -325,7 +387,7 @@
 
 	take_damage(damage)
 
-	if(core)
+	if(core && core.strain)
 		core.strain.damaged(src, user)
 
 	return
@@ -353,12 +415,16 @@
 
 	var/list/blob_mobs = list()
 
+/obj/effect/biomass/core/findBlob(var/list/history)
+	return src
+
 /obj/effect/biomass/core/take_damage(var/damage)
 	health -= damage
 	playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 	if(health < 0)
 		visible_message(SPAN_DANGER("[src] blows up in splat of blob!"))
-		core.strain.killed(src)
+		if(core && core.strain)
+			core.strain.killed(src)
 		if(strain.can_core == 1)
 			var/obj/item/blob_core/blob_core = new(get_turf(src))
 			blob_core.color = color
@@ -389,7 +455,8 @@
 	bomb_resist = strain.bomb_resist
 	pulsing = strain.pulsing
 	resource_gain = strain.resource_gain
-	faction = blobHolder.ckey
+	if(blobHolder)
+		faction = blobHolder.ckey
 
 /obj/effect/biomass/core/Process()
 	if(world.time >= reroll_time)
@@ -486,7 +553,8 @@
 	health -= damage
 	playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 	if(health < 0)
-		core.strain.killed(src)
+		if(core && core.strain)
+			core.strain.killed(src)
 		for(var/mob/living/mob in blob_mobs)
 			mob.death()
 		qdel(src)

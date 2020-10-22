@@ -7,9 +7,9 @@
 		to_chat(src, "There is no blob on this tile!")
 		return
 
-	for(var/obj/effect/biomass/factory/blob in range(get_turf(eye), 4))
+	for(var/obj/effect/biomass/factory/blob in range(get_turf(eye), 2))
 		if(istype(blob))
-			to_chat(src, "You need to place it at least 4 tiles far from [blob]!")
+			to_chat(src, "You need to place it at least 3 tiles far from [blob]!")
 			return
 
 	if(locate(/obj/effect/biomass/core) in get_turf(eye) || locate(/obj/effect/biomass/node) in get_turf(eye) || locate(/obj/effect/biomass/factory) in get_turf(eye) || locate(/obj/effect/biomass/spore) in get_turf(eye))
@@ -38,9 +38,9 @@
 		to_chat(src, "There is no blob on this tile!")
 		return
 
-	for(var/obj/effect/biomass/node/blob in range(get_turf(eye), 5))
+	for(var/obj/effect/biomass/node/blob in range(get_turf(eye), 2))
 		if(istype(blob))
-			to_chat(src, "You need to place it at least 5 tiles far from [blob]!")
+			to_chat(src, "You need to place it at least 3 tiles far from [blob]!")
 			return
 
 	if(locate(/obj/effect/biomass/core) in get_turf(eye) || locate(/obj/effect/biomass/node) in get_turf(eye) || locate(/obj/effect/biomass/factory) in get_turf(eye) || locate(/obj/effect/biomass/spore) in get_turf(eye))
@@ -71,9 +71,9 @@
 		to_chat(src, "You need normal blob to place on!")
 		return
 
-	for(var/obj/effect/biomass/spore/blob in range(get_turf(eye), 6))
+	for(var/obj/effect/biomass/spore/blob in range(get_turf(eye), 3))
 		if(istype(blob))
-			to_chat(src, "You need to place it at least 6 tiles far from [blob]!")
+			to_chat(src, "You need to place it at least 4 tiles far from [blob]!")
 			return
 
 	if(core.resources >= 60)
@@ -91,6 +91,9 @@
 	set category = "Blob"
 	set name = "Reroll Strain(40)"
 	set desc="Choose your new strain from 4 random to rapidly change your strategy."
+
+	if(!core)
+		return
 
 	if(core.resources >= 40 || core.free_reroll > 0)
 		if(core.free_reroll == 0)
