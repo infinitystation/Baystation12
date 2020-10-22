@@ -61,7 +61,7 @@ var/list/TierNarNarRunes = list(
 		to_chat(src, "<span class='warning'>You can't manage to slise open your finger without anything sharp!</span>")
 		return
 
-	else if(tome_required && mob_needs_tome())
+	else if(tome_required && mob_needs_tome() && !has_tome)
 		to_chat(src, "<span class='warning'>This rune is too complex to draw by memory, you need to have a tome in your hand to draw it.</span>")
 		return
 

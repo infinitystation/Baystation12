@@ -73,7 +73,7 @@
 
 	mass_incantation(ritual_rune, "Da gla'rar nao'reda!")
 
-	if(istype(user.get_active_hand(), /obj/item/weapon/material/knife) || istype(user.get_inactive_hand(), /obj/item/weapon/material/knife))
+	if(istype(user.get_active_hand(), /obj/item/weapon/material/knife) || istype(user.get_inactive_hand(), /obj/item/weapon/material/knife) || istype(user.get_active_hand(), /obj/item/weapon/melee/cultblade/dagger) || istype(user.get_inactive_hand(), /obj/item/weapon/melee/cultblade/dagger))
 		has_knife = 1
 
 	if(istype(user.get_active_hand(), /obj/item/weapon/book/tome) || istype(user.get_inactive_hand(), /obj/item/weapon/book/tome))

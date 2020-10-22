@@ -262,8 +262,7 @@
 	name = "Construct"
 	real_name = "Construct"
 	desc = ""
-	speak = list("Hsssssssszsht.", "Hsssssssss...", "Tcshsssssssszht!")
-	speak_emote = list("hisses")
+	speak_emote = list("rumbles", "screeches")
 	emote_hear = list("wails","screeches")
 	response_help  = "thinks better of touching"
 	response_disarm = "flailed at"

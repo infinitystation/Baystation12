@@ -367,7 +367,7 @@
 
 		for(var/datum/mind/M in GLOB.cult.current_antagonists)
 			if(M.current && !M.current.stat)
-				to_chat(M.current, FONT_LARGE("<span class='cult'>[H.real_name], as [H.mind.assigned_job]</span>"))
+				to_chat(M.current, FONT_LARGE("<span class='cult'>[H.real_name], as [H.mind.assigned_role]</span>"))
 	performing = FALSE
 
 /datum/ritual/wall
