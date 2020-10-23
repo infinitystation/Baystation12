@@ -109,6 +109,11 @@
 
 	for(var/mob/living/carbon/human/bonded in bonds)
 		var/datum/active_effect/blood_bond/bond = new()
+
+		if(length(bonds) >= 4)
+			qdel(bond)
+			bond = new /datum/active_effect/blood_bond/no_painy()
+
 		bond.add_to_human(bonded)
 		bond.blood_bonded = bonds
 		for (var/o in bonded.organs)
@@ -116,7 +121,7 @@
 			organ.vital = 0
 			if (!BP_IS_ROBOTIC(organ))
 				organ.rejuvenate(1)
-				organ.max_damage *= 1.5
+				organ.max_damage *= 1 + length(bonds) * 0.1
 				organ.min_broken_damage = Floor(organ.max_damage * 0.75)
 
 	performing = FALSE

@@ -59,6 +59,9 @@
 	infinite = TRUE
 
 /datum/active_effect/blood_bond/no_pain()
+	return 0
+
+/datum/active_effect/blood_bond/no_painy/no_pain()
 	return 1
 
 /datum/active_effect/blood_bond/handle_death()
