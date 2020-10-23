@@ -69,6 +69,8 @@
 
 	performing = TRUE
 
+	mass_incantation(ritual_rune, "Ba'haj glab'namra!")
+
 	sleep(15)
 
 	mass_incantation(ritual_rune, "Da gla'rar nao'reda!")
@@ -172,6 +174,10 @@
 			if(!check_cultists(ritual_rune))
 				performing = FALSE
 				return
+
+	sleep(15)
+
+	mass_incantation(ritual_rune, "Da'hamar ja'haba!")
 
 	sleep(15)
 
