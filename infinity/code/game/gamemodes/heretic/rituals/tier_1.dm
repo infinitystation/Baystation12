@@ -19,7 +19,7 @@
 		return
 
 	var/mob/living/carbon/target = null
-	for(var/mob/living/carbon/M in get_turf(src))
+	for(var/mob/living/carbon/M in get_turf(ritual_rune))
 		if(!iscultist(M) && M.stat != DEAD)
 			target = M
 			break
@@ -51,7 +51,7 @@
 			if(!GLOB.cult.can_become_antag(target.mind, 1))
 				to_chat(target, "<span class='danger'>Are you going insane?</span>")
 			else
-				new /obj/item/weapon/melee/cultblade/dagger(get_turf(src))
+				new /obj/item/weapon/melee/cultblade/dagger(get_turf(ritual_rune))
 
 			GLOB.cult.add_antagonist(target.mind, ignore_role = 1, do_not_equip = 1)
 	else
@@ -60,7 +60,7 @@
 		if(!GLOB.cult.can_become_antag(target.mind, 1))
 			to_chat(target, "<span class='danger'>Are you going insane?</span>")
 		else
-			new /obj/item/weapon/melee/cultblade/dagger(get_turf(src))
+			new /obj/item/weapon/melee/cultblade/dagger(get_turf(ritual_rune))
 
 		GLOB.cult.add_antagonist(target.mind, ignore_role = 1, do_not_equip = 1)
 
@@ -182,7 +182,7 @@
 		return
 
 	var/tmpkey = user.key
-	if(user.loc != get_turf(src))
+	if(user.loc != get_turf(ritual_rune))
 		performing = FALSE
 		return
 	speak_incantation(user, "Fwe'sh mah erl nyag r'ya!")

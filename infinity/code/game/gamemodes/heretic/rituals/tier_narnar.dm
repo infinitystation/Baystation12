@@ -17,7 +17,7 @@
 	. = ..()
 	var/mob/living/carbon/human/target = null
 
-	for(var/mob/living/carbon/human/M in get_turf(src))
+	for(var/mob/living/carbon/human/M in get_turf(ritual_rune))
 		if(M.stat == DEAD)
 			target = M
 			break
