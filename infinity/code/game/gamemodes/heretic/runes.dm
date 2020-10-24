@@ -327,6 +327,19 @@ var/list/TierNarNarRunes = list(
 
 	var/destination
 
+/obj/effect/rune/teleport/New()
+	..()
+	var/area/A = get_area(src)
+	destination = A.name
+	GLOB.cult.teleport_runes += src
+
+/obj/effect/rune/teleport/Destroy()
+	GLOB.cult.teleport_runes -= src
+	var/turf/T = get_turf(src)
+	for(var/atom/movable/A in contents)
+		A.forceMove(T)
+	return ..()
+
 /obj/effect/rune/astral
 	cultname = "astral journey"
 	strokes = 5
