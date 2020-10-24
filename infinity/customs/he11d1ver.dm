@@ -12,7 +12,7 @@
 	company = "combat prothestic limb"
 	desc = "Some kind of sleek and useful Mars Military Industries 'Dominus' arm design, you wouldn't call it militaristic at all."
 	icon = 'infinity/icons/customs/cyberlimbs/combat_limb.dmi'
-	allowed_ckeys = list("he11diver")
+	allowed_ckeys = list("he11d1ver")
 	applies_to_part = list(BP_L_ARM, BP_L_HAND)
 	unavailable_at_fab = 1
 
