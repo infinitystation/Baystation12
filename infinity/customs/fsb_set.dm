@@ -50,7 +50,7 @@
 	icon = CUSTOM_ITEM_OBJ
 	item_icons = list(slot_head_str = CUSTOM_ITEM_MOB)
 	icon_state = "fsb_helmet"
-	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEMASK|BLOCKHAIR
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 	item_flags = ITEM_FLAG_AIRTIGHT|ITEM_FLAG_THICKMATERIAL
 	body_parts_covered = FACE|EYES|HEAD
 	trade_blacklisted = TRUE
