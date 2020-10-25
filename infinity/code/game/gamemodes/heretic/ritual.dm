@@ -208,4 +208,4 @@
 				organ.rejuvenate(1)
 				organ.max_damage *= 0.5
 				organ.min_broken_damage = Floor(organ.max_damage * 0.75)
-	playsound(get_turf(ritual_rune), 'sound/hallucinations/wail.ogg', 20, 1)
+	playsound(get_turf(src), 'sound/hallucinations/wail.ogg', 20, 1)
