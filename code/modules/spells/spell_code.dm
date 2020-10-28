@@ -236,7 +236,7 @@ var/list/spells = typesof(/spell) //needed for the badmin verb for now
 	if((spell_flags & Z2NOCAST) && (user_turf.z in GLOB.using_map.admin_levels)) //Certain spells are not allowed on the centcomm zlevel
 		return 0
 
-	if(spell_flags & CONSTRUCT_CHECK)
+	if(spell_flags & CONSTRUCT_CHECK && !spell_flags & HOLY_CHECK) //INF, was (spell_flags & CONSTRUCT_CHECK)
 		for(var/turf/T in range(holder, 1))
 			if(findNullRod(T))
 				return 0

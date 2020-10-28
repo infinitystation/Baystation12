@@ -33,6 +33,8 @@ var/list/organ_cache = list()
 	var/can_be_printed = TRUE
 	var/print_cost
 
+	var/cultised = 0 //INF
+
 /obj/item/organ/Destroy()
 	owner = null
 	dna = null
@@ -324,7 +326,7 @@ var/list/organ_cache = list()
 	target.attackby(O, user)
 
 /obj/item/organ/proc/can_feel_pain()
-	return (!BP_IS_ROBOTIC(src) && (!species || !(species.species_flags & SPECIES_FLAG_NO_PAIN)))
+	return (!BP_IS_ROBOTIC(src) && (!species || !(species.species_flags & SPECIES_FLAG_NO_PAIN))) && cultised //INF, was return (!BP_IS_ROBOTIC(src) && (!species || !(species.species_flags & SPECIES_FLAG_NO_PAIN)))
 
 /obj/item/organ/proc/is_usable()
 	return !(status & (ORGAN_CUT_AWAY|ORGAN_MUTATED|ORGAN_DEAD))

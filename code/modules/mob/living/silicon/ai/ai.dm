@@ -193,10 +193,10 @@ var/list/ai_verbs_default = list(
 	hud_list[LIFE_HUD] 		  = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
 	hud_list[ID_HUD]          = new /image/hud_overlay(GLOB.using_map.id_hud_icons, src, "hudblank") //INF, was 'icons/mob/hud.dmi'
 	hud_list[WANTED_HUD]      = new /image/hud_overlay('infinity/icons/mob/hud.dmi', src, "hudblank") //INF, was 'icons/mob/hud.dmi'
-	hud_list[IMPLOYAL_HUD]    = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
+	hud_list[IMPLOYAL_HUD]    = new /image/hud_overlay('infinity/icons/mob/hud.dmi', src, "hudblank") //INF, was 'icons/mob/hud.dmi'
 	hud_list[IMPCHEM_HUD]     = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
 	hud_list[IMPTRACK_HUD]    = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
-	hud_list[SPECIALROLE_HUD] = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
+	hud_list[SPECIALROLE_HUD] = new /image/hud_overlay('infinity/icons/mob/hud.dmi', src, "hudblank") //INF, was 'icons/mob/hud.dmi'
 
 	ai_list += src
 	..()
