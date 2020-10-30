@@ -872,3 +872,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		set_icon_state(citem.item_icon_state)
 		item_state = null
 		icon_override = CUSTOM_ITEM_MOB
+//[INF]
+	if(citem.additional_data.Find("slot_flags"))
+		slot_flags = citem.additional_data["slot_flags"]
+//[/INF]
