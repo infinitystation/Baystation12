@@ -30,18 +30,11 @@
 	BITSET(hud_updateflag, HEALTH_HUD)
 	BITSET(hud_updateflag, STATUS_HUD)
 	BITSET(hud_updateflag, LIFE_HUD)
-
+	
 	//Handle species-specific deaths.
 	species.handle_death(src)
 
 	animate_tail_stop()
-
-	//[INF]
-
-	for(var/datum/active_effect/effect in active_effects)
-		effect.handle_death()
-
-	//[/INF]
 
 	//Handle brain slugs.
 	var/obj/item/organ/external/head = get_organ(BP_HEAD)

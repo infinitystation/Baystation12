@@ -17,13 +17,6 @@
 /obj/machinery/door/unpowered/simple/proc/TemperatureAct(temperature)
 	take_damage(100*material.combustion_effect(get_turf(src),temperature, 0.3))
 
-//[INF]
-
-/obj/machinery/door/unpowered/simple/allowed(mob/M)
-    return 1
-
-//[/INF]
-
 /obj/machinery/door/unpowered/simple/New(var/newloc, var/material_name, var/locked)
 	..()
 	if(!material_name)
@@ -191,14 +184,6 @@
 
 	if(lock && lock.isLocked())
 		to_chat(user, "\The [src] is locked!")
-
-    //[INF]
-
-	if(!allowed(user))
-		to_chat(user, SPAN_WARNING("You can't manage to open [src]"))
-		return
-
-    //[/INF]
 
 	if(operable())
 		if(src.density)

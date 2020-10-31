@@ -19,7 +19,7 @@
 /datum/hud/construct/FinalizeInstantiation()
 	var/constructtype
 
-	if(istype(mymob,/mob/living/simple_animal/construct/armoured)) //INF || istype(mymob,/mob/living/simple_animal/construct/behemoth))
+	if(istype(mymob,/mob/living/simple_animal/construct/armoured) || istype(mymob,/mob/living/simple_animal/construct/behemoth))
 		constructtype = "juggernaut"
 	else if(istype(mymob,/mob/living/simple_animal/construct/builder))
 		constructtype = "artificer"
