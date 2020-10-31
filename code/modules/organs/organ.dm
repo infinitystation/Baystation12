@@ -33,6 +33,8 @@ var/list/organ_cache = list()
 	var/can_be_printed = TRUE
 	var/print_cost
 
+	var/cultised = 0 //INF
+
 /obj/item/organ/Destroy()
 	owner = null
 	dna = null
@@ -68,7 +70,6 @@ var/list/organ_cache = list()
 
 	if(istype(holder))
 		owner = holder
-		w_class = max(w_class + mob_size_difference(holder.mob_size, MOB_MEDIUM), 1) //smaller mobs have smaller organs.
 		if(!given_dna && holder.dna)
 			given_dna = holder.dna
 		else
@@ -78,6 +79,7 @@ var/list/organ_cache = list()
 		set_dna(given_dna)
 	if (!species)
 		species = all_species[SPECIES_HUMAN]
+	species.resize_organ(src)
 
 	create_reagents(5 * (w_class-1)**2)
 	reagents.add_reagent(/datum/reagent/nutriment/protein, reagents.maximum_volume)
@@ -324,7 +326,7 @@ var/list/organ_cache = list()
 	target.attackby(O, user)
 
 /obj/item/organ/proc/can_feel_pain()
-	return (!BP_IS_ROBOTIC(src) && (!species || !(species.species_flags & SPECIES_FLAG_NO_PAIN)))
+	return (!BP_IS_ROBOTIC(src) && (!species || !(species.species_flags & SPECIES_FLAG_NO_PAIN))) && cultised //INF, was return (!BP_IS_ROBOTIC(src) && (!species || !(species.species_flags & SPECIES_FLAG_NO_PAIN)))
 
 /obj/item/organ/proc/is_usable()
 	return !(status & (ORGAN_CUT_AWAY|ORGAN_MUTATED|ORGAN_DEAD))

@@ -52,7 +52,12 @@
 						item_slowdown = item_slowdown / (size_mod + 1)
 					else
 						item_slowdown = item_slowdown - size_mod
-				total_item_slowdown += max(item_slowdown, 0)
+					//INF, was total_item_slowdown += max(item_slowdown, 0) //We need this shit to be able to work with negatives
+					//[INF]
+					total_item_slowdown += max(item_slowdown, 0)
+				else
+					total_item_slowdown += item_slowdown
+					//[/INF]
 		tally += total_item_slowdown
 
 		for(var/organ_name in list(BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT))
@@ -66,7 +71,7 @@
 
 	if(aiming && aiming.aiming_at) tally += 5 // Iron sights make you slower, it's a well-known fact.
 
-	if(facing_dir) 
+	if(facing_dir)
 		tally += 3 //Locking direction will slow you down.
 
 	if(MUTATION_FAT in src.mutations)
@@ -141,21 +146,8 @@
 /mob/living/carbon/human/Move()
 	. = ..()
 	if(.) //We moved
-		handle_exertion()
+		species.handle_exertion(src)
 		handle_leg_damage()
-
-/mob/living/carbon/human/proc/handle_exertion()
-	if(isSynthetic())
-		return
-	var/lac_chance =  10 * encumbrance()
-	if(lac_chance && prob(skill_fail_chance(SKILL_HAULING, lac_chance)))
-		make_reagent(1, /datum/reagent/lactate)
-		adjust_hydration(-DEFAULT_THIRST_FACTOR)
-		switch(rand(1,20))
-			if(1)
-				visible_message("<span class='notice'>\The [src] is sweating heavily!</span>", "<span class='notice'>You are sweating heavily!</span>")
-			if(2)
-				visible_message("<span class='notice'>\The [src] looks out of breath!</span>", "<span class='notice'>You are out of breath!</span>")
 
 /mob/living/carbon/human/proc/handle_leg_damage()
 	if(!can_feel_pain())

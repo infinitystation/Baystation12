@@ -7,7 +7,6 @@
 //[INF]
 	throw_range = 3 //NO, TILSON
 	throw_speed = 0.5
-	var/good_DNA = 0 //for changelings
 //[/INF]
 	var/list/hud_list[10]
 	var/embedded_flag	  //To check if we've need to roll for damage on movement while an item is imbedded in us.
@@ -43,10 +42,10 @@
 	hud_list[LIFE_HUD]	      = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudhealthy")
 	hud_list[ID_HUD]          = new /image/hud_overlay(GLOB.using_map.id_hud_icons, src, "hudunknown")
 	hud_list[WANTED_HUD]      = new /image/hud_overlay('infinity/icons/mob/hud.dmi', src, "hudblank") //INF, was 'icons/mob/hud.dmi'
-	hud_list[IMPLOYAL_HUD]    = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
+	hud_list[IMPLOYAL_HUD]    = new /image/hud_overlay('infinity/icons/mob/hud.dmi', src, "hudblank") //INF, was 'icons/mob/hud.dmi'
 	hud_list[IMPCHEM_HUD]     = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
 	hud_list[IMPTRACK_HUD]    = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
-	hud_list[SPECIALROLE_HUD] = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
+	hud_list[SPECIALROLE_HUD] = new /image/hud_overlay('infinity/icons/mob/hud.dmi', src, "hudblank") //INF, was 'icons/mob/hud.dmi'
 	hud_list[STATUS_HUD_OOC]  = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudhealthy")
 
 	GLOB.human_mob_list |= src
@@ -59,9 +58,16 @@
 		sync_organ_dna()
 	make_blood()
 //[INF]
-	spawn(2 SECONDS)
-		if(client?.wishes_to_be_role(GLOB.changelings.id) >= 1)
-			good_DNA = 1
+GLOBAL_LIST_EMPTY(compatable_genomes_owners)
+/mob/proc/check_compatable_genome()
+/mob/living/carbon/human/check_compatable_genome()
+	. = ..()
+	if(src in GLOB.compatable_genomes_owners)
+		. = TRUE
+/mob/living/carbon/human/proc/give_compatable_genome()
+	if(mind)
+		if(prob(mind.assigned_job ? (mind.assigned_job.good_genome_prob ? clamp(mind.assigned_job.good_genome_prob,0,100) : 30) : 30) && !(src in GLOB.compatable_genomes_owners))
+			GLOB.compatable_genomes_owners |= src
 //[/INF]
 
 /mob/living/carbon/human/Destroy()
@@ -291,7 +297,7 @@
 	else
 		return if_no_id
 
-//repurposed proc. Now it combines get_id_name() and get_face_name() to determine a mob's name variable. Made into a seperate proc as it'll be useful elsewhere
+//repurposed proc. Now it combines get_id_name() and get_face_name() to determine a mob's name variable. Made into a separate proc as it'll be useful elsewhere
 /mob/living/carbon/human/proc/get_visible_name()
 	var/face_name = get_face_name()
 	var/id_name = get_id_name("")
@@ -711,7 +717,7 @@
 	else if(!(locate(/mob) in contents))
 		nothing_to_puke = TRUE
 
-	stun_effect_act(0, 10, BP_GROIN, "stomach spasm") //INF
+	stun_effect_act(0, 5, BP_GROIN, "stomach spasm") //INF
 	if(nothing_to_puke)
 		custom_emote(1,"морщится.")
 		to_chat(src, SPAN_WARNING("Вас скручивает в спазме от попытки стошнить хоть что-то...")) //INF
@@ -729,9 +735,27 @@
 			if(species.gluttonous & GLUT_PROJECTILE_VOMIT)
 				M.throw_at(get_edge_target_turf(src,dir),7,7,src)
 
+	// vomit into a toilet
+	for(var/obj/structure/hygiene/toilet/T in range(1, src))
+		if(T.open)
+			visible_message(SPAN_DANGER("\The [src] throws up into the toilet!"),SPAN_DANGER("You throw up into the toilet!"))
+			playsound(loc, 'sound/effects/splat.ogg', 50, 1)
+			stomach.ingested.remove_any(15)
+			return
+
+	// check if you can vomit into a disposal unit
+	// see above comment for how vomit reagents are handled
+	for(var/obj/machinery/disposal/D in orange(1, src))
+		visible_message(SPAN_DANGER("\The [src] throws up into the disposal unit!"),SPAN_DANGER("You throw up into the disposal unit!"))
+		playsound(loc, 'sound/effects/splat.ogg', 50, 1)
+		if(stomach.ingested.total_volume)
+			stomach.ingested.trans_to_holder(D.reagents, 15)
+		return
+
+	var/turf/location = loc
+
 	visible_message(SPAN_DANGER("\The [src] стошнило!"),SPAN_DANGER("Вас стошнило!"))
 	playsound(loc, 'sound/effects/splat.ogg', 50, 1)
-	var/turf/location = loc
 	if(istype(location, /turf/simulated))
 		var/obj/effect/decal/cleanable/vomit/splat = new /obj/effect/decal/cleanable/vomit(location)
 		if(stomach.ingested.total_volume)
@@ -1350,17 +1374,15 @@
 		W.message = message
 		W.add_fingerprint(src)
 
-#define CAN_INJECT 1
-#define INJECTION_PORT 2
 /mob/living/carbon/human/can_inject(var/mob/user, var/target_zone)
 	var/obj/item/organ/external/affecting = get_organ(target_zone)
 
 	if(!affecting)
-		to_chat(user, "<span class='warning'>They are missing that limb.</span>")
+		to_chat(user, SPAN_WARNING("\The [src] is missing that limb."))
 		return 0
 
 	if(BP_IS_ROBOTIC(affecting))
-		to_chat(user, "<span class='warning'>That limb is robotic.</span>")
+		to_chat(user, SPAN_WARNING("You cannot inject a robotic limb."))
 		return 0
 
 	. = CAN_INJECT
@@ -1617,6 +1639,14 @@
 /mob/living/carbon/human/can_feel_pain(var/obj/item/organ/check_organ)
 	if(isSynthetic())
 		return 0
+
+    //[INF]
+
+	if(is_painless())
+		return 0
+
+    //[/INF]
+
 	if(check_organ)
 		if(!istype(check_organ))
 			return 0

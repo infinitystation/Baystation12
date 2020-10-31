@@ -4,8 +4,6 @@
 	the target as NanoTrasen Science Vessel, a property of NanoTrasen Corporation."
 	fore_dir = WEST
 	vessel_mass = 63000
-	start_x = 4
-	start_y = 5
 	base = TRUE
 	color = LIGHT_COLOR_PURPLE
 	icon = 'icons/obj/overmap_inf.dmi'

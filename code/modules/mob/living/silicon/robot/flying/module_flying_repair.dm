@@ -32,7 +32,10 @@
 		/obj/item/device/pipe_painter,
 		/obj/item/device/floor_painter,
 		/obj/item/weapon/inflatable_dispenser/robot,
+		/obj/item/weapon/reagent_containers/spray/cleaner/drone,
 		/obj/item/inducer/borg,
+		/obj/item/device/plunger/robot,
+		/obj/item/weapon/matter_decompiler,
 		/obj/item/stack/material/cyborg/steel,
 		/obj/item/stack/material/cyborg/aluminium,
 		/obj/item/stack/material/rods/cyborg,
@@ -41,14 +44,13 @@
 		/obj/item/stack/material/cyborg/glass/reinforced,
 		/obj/item/stack/cable_coil/cyborg,
 		/obj/item/stack/material/cyborg/plasteel,
-		/obj/item/device/plunger/robot,
-		/obj/item/weapon/rpd //INF
+		/obj/item/weapon/rpd//INF
 	)
 	synths = list(
 		/datum/matter_synth/metal = 	30000,
 		/datum/matter_synth/glass = 	20000,
 		/datum/matter_synth/plasteel = 	10000,
-		/datum/matter_synth/wire
+		/datum/matter_synth/wire = 		40
 	)
 	emag = /obj/item/weapon/melee/baton/robot/electrified_arm
 	skills = list(
@@ -65,6 +67,10 @@
 	var/datum/matter_synth/glass/glass =       locate() in synths
 	var/datum/matter_synth/plasteel/plasteel = locate() in synths
 	var/datum/matter_synth/wire/wire =         locate() in synths
+
+	var/obj/item/weapon/matter_decompiler/MD = locate() in equipment
+	MD.metal = metal
+	MD.glass = glass
 
 	for(var/thing in list(
 		 /obj/item/stack/material/cyborg/steel,

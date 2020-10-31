@@ -13,7 +13,7 @@
 /datum/gear/suit/resomicloak/polychromic
 	display_name = "(Resomi) polychromic cloak"
 	path = /obj/item/clothing/suit/storage/hooded/polychromic
-	flags = null
+	flags = GEAR_HAS_COLOR_SELECTION
 	cost = 2
 /*
 /datum/gear/suit/resomicloak/New()

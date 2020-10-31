@@ -88,6 +88,7 @@ var/list/admin_verbs_admin = list(
 	/client/proc/add_trader,
 	/client/proc/remove_trader,
 	/datum/admins/proc/sendFax,
+	/client/proc/check_fax_history
 )
 var/list/admin_verbs_ban = list(
 	/client/proc/unban_panel,
@@ -106,17 +107,17 @@ var/list/admin_verbs_fun = list(
 	/client/proc/cmd_admin_dress, //INF WAS /datum/admins/proc/cmd_admin_dress,
 	/client/proc/cmd_admin_gib_self,
 	/client/proc/drop_bomb,
-//INF unused	/client/proc/everyone_random,
+	/client/proc/everyone_random,
 	/client/proc/cinematic,
 	/datum/admins/proc/toggle_space_ninja,
 	/client/proc/cmd_admin_add_freeform_ai_law,
 	/client/proc/cmd_admin_add_random_ai_law,
 	/client/proc/toggle_random_events,
-//INF unused	/client/proc/editappear,
+	/client/proc/editappear,
 	/client/proc/roll_dices,
 	/datum/admins/proc/call_supply_drop,
 	/datum/admins/proc/call_drop_pod,
-//INF unused	/client/proc/create_dungeon,
+	/client/proc/create_dungeon,
 	/datum/admins/proc/ai_hologram_set,
 //[INF],
 	/datum/admins/proc/create_new_skybox_data,
@@ -137,15 +138,17 @@ var/list/admin_verbs_spawn = list(
 	/datum/admins/proc/check_custom_items,
 	/datum/admins/proc/spawn_plant,
 	/datum/admins/proc/spawn_atom,		// allows us to spawn instances,
-	/client/proc/game_panel, //INF,
 	/client/proc/respawn_character,
-	/client/proc/respawn_as_self, //INF,
 	/client/proc/spawn_chemdisp_cartridge,
-	/datum/admins/proc/mass_debug_closet_icons
+	/datum/admins/proc/mass_debug_closet_icons,
+//[INF],
+	/client/proc/game_panel,
+	/client/proc/cmd_offer_to_ghosts_to_be_somebody,
+	/client/proc/respawn_as_self,
+//[/INF],
 	)
 var/list/admin_verbs_server = list(
 	/datum/admins/proc/capture_map_part,
-	/client/proc/Set_Holiday,
 	/datum/admins/proc/startnow,
 	/datum/admins/proc/endnow,
 	/datum/admins/proc/restart,
@@ -199,6 +202,7 @@ var/list/admin_verbs_debug = list(
 	/client/proc/callproc_target,
 	/client/proc/SDQL_query,
 	/client/proc/SDQL2_query,
+	/client/proc/SDQL3_query,//INF,
 	/client/proc/Jump,
 	/client/proc/jumptomob,
 	/client/proc/jumptocoord,
@@ -284,7 +288,6 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/cmd_admin_create_centcom_report,
 	/client/proc/toggle_random_events,
 	/client/proc/cmd_admin_add_random_ai_law,
-	/client/proc/Set_Holiday,
 	/datum/admins/proc/startnow,
 	/datum/admins/proc/restart,
 	/datum/admins/proc/delay,
@@ -330,6 +333,8 @@ var/list/admin_verbs_mod = list(
 	/client/proc/cmd_admin_direct_narrate,
 	/client/proc/aooc,
 	/datum/admins/proc/sendFax,
+	/client/proc/check_fax_history,
+	/datum/admins/proc/paralyze_mob,
 	/datum/admins/proc/view_persistent_data
 )
 //[INF]

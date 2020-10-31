@@ -14,7 +14,7 @@
 	var/hidden_from_codex = TRUE
 
 	// Icon/appearance vars.
-	var/icobase =      'icons/mob/human_races/species/human/body.dmi'          // Normal icon set.
+	var/icobase =      'infinity/icons/mob/human_races/species/human/body.dmi'          // Normal icon set. //inf, was: var/icobase =      'icons/mob/human_races/species/human/body.dmi'          // Normal icon set.
 	var/deform =       'icons/mob/human_races/species/human/deformed_body.dmi' // Mutated icon set.
 	var/preview_icon = 'icons/mob/human_races/species/human/preview.dmi'
 	var/husk_icon =    'icons/mob/human_races/species/default_husk.dmi'
@@ -228,9 +228,8 @@
 	var/list/base_auras
 
 	var/sexybits_location	//organ tag where they are located if they can be kicked for increased pain
-
-	var/list/prone_overlay_offset = list(0, 0) // amount to shift overlays when lying
-	var/job_skill_buffs = list()				// A list containing jobs (/datum/job), with values the extra points that job recieves.
+	
+	var/job_skill_buffs = list()				// A list containing jobs (/datum/job), with values the extra points that job receives.
 
 	var/list/descriptors = list(
 		/datum/mob_descriptor/height = 0,
@@ -257,6 +256,17 @@
 		list(/decl/emote/audible/grunt, /decl/emote/audible/groan, /decl/emote/audible/moan) = 40,
 		list(/decl/emote/audible/grunt, /decl/emote/audible/groan) = 10,
 	)
+
+	
+	var/exertion_effect_chance = 0
+	var/exertion_hydration_scale = 0
+	var/exertion_nutrition_scale = 0
+	var/exertion_charge_scale = 0
+	var/exertion_reagent_scale = 0
+	var/exertion_reagent_path = null
+	var/list/exertion_emotes_biological = null
+	var/list/exertion_emotes_synthetic = null
+
 /*
 These are all the things that can be adjusted for equipping stuff and
 each one can be in the NORTH, SOUTH, EAST, and WEST direction. Specify
@@ -828,3 +838,27 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 			// This assumes that if a pain-level has been defined it also has a list of emotes to go with it
 			var/decl/emote/E = decls_repository.get_decl(pick(pain_emotes))
 			return E.key
+
+/datum/species/proc/handle_exertion(mob/living/carbon/human/H)
+	if (!exertion_effect_chance)
+		return
+	var/chance = exertion_effect_chance * H.encumbrance()
+	if (chance && prob(H.skill_fail_chance(SKILL_HAULING, chance)))
+		var/synthetic = H.isSynthetic()
+		if (synthetic)
+			if (exertion_charge_scale)
+				var/obj/item/organ/internal/cell/cell = locate() in H.internal_organs
+				if (cell)
+					cell.use(cell.get_power_drain() * exertion_charge_scale)
+		else
+			if (exertion_hydration_scale)
+				H.adjust_hydration(-DEFAULT_THIRST_FACTOR * exertion_hydration_scale)
+			if (exertion_nutrition_scale)
+				H.adjust_nutrition(-DEFAULT_HUNGER_FACTOR * exertion_nutrition_scale)
+			if (exertion_reagent_scale && !isnull(exertion_reagent_path))
+				H.make_reagent(REM * exertion_reagent_scale, exertion_reagent_path)
+		if (prob(10))
+			var/list/active_emotes = synthetic ? exertion_emotes_synthetic : exertion_emotes_biological
+			var/decl/emote/exertion_emote = decls_repository.get_decl(pick(active_emotes))
+			if (exertion_emote)
+				exertion_emote.do_emote(H)

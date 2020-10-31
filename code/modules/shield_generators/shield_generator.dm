@@ -9,35 +9,37 @@
 	wires = /datum/wires/shield_generator
 	uncreated_component_parts = null
 	stat_immune = 0
-	var/list/field_segments = list()	// List of all shield segments owned by this generator.
-	var/list/damaged_segments = list()	// List of shield segments that have failed and are currently regenerating.
-	var/shield_modes = 0				// Enabled shield mode flags
-	var/mitigation_em = 0				// Current EM mitigation
-	var/mitigation_physical = 0			// Current Physical mitigation
-	var/mitigation_heat = 0				// Current Burn mitigation
-	var/mitigation_max = 0				// Maximal mitigation reachable with this generator. Set by RefreshParts()
-	var/max_energy = 0					// Maximal stored energy. In joules. Depends on the type of used SMES coil when constructing this generator.
-	var/current_energy = 0				// Current stored energy.
-	var/field_radius = 1				// Current field radius.
+	var/list/field_segments = list()    // List of all shield segments owned by this generator.
+	var/list/damaged_segments = list()  // List of shield segments that have failed and are currently regenerating.
+	var/shield_modes = 0                // Enabled shield mode flags
+	var/mitigation_em = 0               // Current EM mitigation
+	var/mitigation_physical = 0         // Current Physical mitigation
+	var/mitigation_heat = 0             // Current Burn mitigation
+	var/mitigation_max = 0              // Maximal mitigation reachable with this generator. Set by RefreshParts()
+	var/max_energy = 0                  // Maximal stored energy. In joules. Depends on the type of used SMES coil when constructing this generator.
+	var/current_energy = 0              // Current stored energy.
+	var/field_radius = 1                // Current field radius.
 	var/target_radius = 1               // Desired field radius.
-	var/running = SHIELD_OFF			// Whether the generator is enabled or not.
-	var/input_cap = 1 MEGAWATTS			// Currently set input limit. Set to 0 to disable limits altogether. The shield will try to input this value per tick at most
-	var/upkeep_power_usage = 0			// Upkeep power usage last tick.
-	var/upkeep_multiplier = 1			// Multiplier of upkeep values.
-	var/power_usage = 0					// Total power usage last tick.
-	var/overloaded = 0					// Whether the field has overloaded and shut down to regenerate.
-	var/hacked = 0						// Whether the generator has been hacked by cutting the safety wire.
-	var/offline_for = 0					// The generator will be inoperable for this duration in ticks.
-	var/input_cut = 0					// Whether the input wire is cut.
-	var/mode_changes_locked = 0			// Whether the control wire is cut, locking out changes.
-	var/ai_control_disabled = 0			// Whether the AI control is disabled.
-	var/list/mode_list = null			// A list of shield_mode datums.
+	var/running = SHIELD_OFF            // Whether the generator is enabled or not.
+	var/input_cap = 1 MEGAWATTS         // Currently set input limit. Set to 0 to disable limits altogether. The shield will try to input this value per tick at most
+	var/upkeep_power_usage = 0          // Upkeep power usage last tick.
+	var/upkeep_multiplier = 1           // Multiplier of upkeep values.
+	var/power_usage = 0                 // Total power usage last tick.
+	var/overloaded = 0                  // Whether the field has overloaded and shut down to regenerate.
+	var/hacked = 0                      // Whether the generator has been hacked by cutting the safety wire.
+	var/offline_for = 0                 // The generator will be inoperable for this duration in ticks.
+	var/input_cut = 0                   // Whether the input wire is cut.
+	var/mode_changes_locked = 0         // Whether the control wire is cut, locking out changes.
+	var/ai_control_disabled = 0         // Whether the AI control is disabled.
+	var/list/mode_list = null           // A list of shield_mode datums.
 	var/full_shield_strength = 0        // The amount of power shields need to be at full operating strength.
 
 	var/idle_multiplier   = 1           // Trades off cost vs. spin-up time from idle to running
 	var/idle_valid_values = list(1, 2, 5, 10)
 	var/spinup_delay      = 20
 	var/spinup_counter    = 0
+
+	var/vessel_reverse_dir	= EAST		// INF Reverse dir our vessel
 
 /obj/machinery/power/shield_generator/on_update_icon()
 	if(running)
@@ -108,12 +110,22 @@
 		shielded_turfs = fieldtype_hull()
 	else
 		shielded_turfs = fieldtype_square()
-
+//[INF]
+	if(GLOB.using_map.use_overmap)
+		var/obj/effect/overmap/visitable/ship/sector = map_sectors["[src.z]"]
+		if(sector && istype(sector))
+			if(!sector.check_ownership(src))
+				for(var/obj/effect/overmap/visitable/ship/candidate in sector)
+					if(candidate.check_ownership(src))
+						sector = candidate
+			vessel_reverse_dir = GLOB.reverse_dir[sector.fore_dir]
+//[/INF]
 	for(var/turf/T in shielded_turfs)
 		var/obj/effect/shield/S = new(T)
 		S.gen = src
 		S.flags_updated()
 		field_segments |= S
+		if(check_flag(MODEFLAG_HULL))	S.set_dir(vessel_reverse_dir)	// INF
 	update_icon()
 
 
@@ -164,7 +176,7 @@
 		power_usage += round(energy_buffer)
 
 		if(energy_buffer < upkeep_power_usage)
-			current_energy -= round(upkeep_power_usage - energy_buffer)	// If we don't have enough energy from the grid, take it from the internal battery instead.
+			current_energy -= round(upkeep_power_usage - energy_buffer) // If we don't have enough energy from the grid, take it from the internal battery instead.
 
 		// Now try to recharge our internal energy.
 		var/energy_to_demand
@@ -176,7 +188,7 @@
 		power_usage += energy_buffer
 		current_energy += round(energy_buffer)
 	else
-		current_energy -= round(upkeep_power_usage)	// We are shutting down, or we lack external power connection. Use energy from internal source instead.
+		current_energy -= round(upkeep_power_usage) // We are shutting down, or we lack external power connection. Use energy from internal source instead.
 
 	if(current_energy <= 0)
 		energy_failure()
@@ -308,7 +320,7 @@
 		var/old_energy = current_energy
 		shutdown_field()
 		log_and_message_admins("has triggered \the [src]'s emergency shutdown!", user)
-		spawn()	
+		spawn()
 			empulse(src, old_energy / 60000000, old_energy / 32000000, 1) // If shields are charged at 450 MJ, the EMP will be 7.5, 14.0625. 90 MJ, 1.5, 2.8125
 		old_energy = 0
 
@@ -384,11 +396,12 @@
 		energy_failure()
 		return SHIELD_BREACHED_FAILURE
 
-	if(prob(10 - field_integrity()))
+	var/breachChance = rand(field_integrity(), field_integrity() + 100)
+	if(breachChance <= CRITICAL_BREACH_THRESHOLD)
 		return SHIELD_BREACHED_CRITICAL
-	if(prob(20 - field_integrity()))
+	else if(breachChance <= MAJOR_BREACH_THRESHOLD)
 		return SHIELD_BREACHED_MAJOR
-	if(prob(35 - field_integrity()))
+	else if(breachChance <= MINOR_BREACH_THRESHOLD)
 		return SHIELD_BREACHED_MINOR
 	return SHIELD_ABSORBED
 

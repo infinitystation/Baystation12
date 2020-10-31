@@ -253,7 +253,7 @@
 	color = "#777777"
 
 /obj/structure/girder/cult
-	icon= 'icons/obj/cult.dmi'
+	icon= 'infinity/icons/obj/cult.dmi' //INF, was icon= 'icons/obj/cult.dmi'
 	icon_state= "cultgirder"
 	health = 250
 	cover = 70

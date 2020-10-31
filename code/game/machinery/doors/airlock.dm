@@ -1105,17 +1105,12 @@ About the new airlock wires panel:
 				to_chat(user, "<span class='warning'>The panel is broken, and cannot be closed.</span>")
 			else
 				src.p_open = 0
+				user.visible_message(SPAN_NOTICE("[user.name] closes the maintenance panel on \the [src]."), SPAN_NOTICE("You close the maintenance panel on \the [src]."))
+				playsound(src.loc, "[GLOB.machinery_exposed_sound[2]]", 20)	// INF WAS	playsound(src.loc, "sound/items/Screwdriver.ogg", 20)
 		else
 			src.p_open = 1
-
-		//[INF]
-		user.visible_message(
-			"[user] [p_open ? "opened" : "closed"] the maintenance hatch of [src].",
-			SPAN_NOTICE("You [p_open ? "open" : "close"] the maintenance hatch of [src]."))
-		var/interact_sound = p_open ? GLOB.machinery_exposed_sound[1] : GLOB.machinery_exposed_sound[2]
-		playsound(src, pick(interact_sound), 50, 1, -6.5)
-		//[/INF]
-
+			user.visible_message(SPAN_NOTICE("[user.name] opens the maintenance panel on \the [src]."), SPAN_NOTICE("You open the maintenance panel on \the [src]."))
+			playsound(src.loc, "[GLOB.machinery_exposed_sound[1]]", 20)	// INF WAS	playsound(src.loc, "sound/items/Screwdriver.ogg", 20)
 		src.update_icon()
 	else if(isWirecutter(C))
 		return src.attack_hand(user)
@@ -1400,7 +1395,7 @@ About the new airlock wires panel:
 		brace = A
 		brace.airlock = src
 		brace.forceMove(src)
-		if(brace.electronics)
+		if(brace.electronics && !length(brace.req_access))
 			brace.electronics.set_access(src)
 			brace.update_access()
 		update_icon()

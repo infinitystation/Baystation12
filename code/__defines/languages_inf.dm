@@ -3,13 +3,10 @@
 #define LANGUAGE_RESOMI			"Schechi"
 #define LANGUAGE_XENOPHAGE      "Xenophage"
 #define LANGUAGE_XENOPHAGE_HIVE "Hivemind"
-#define LANGUAGE_PTAJ				"Primitive siik'maas"
-#define LANGUAGE_PRESOMI			"Primitive schechi"
-#define LANGUAGE_PUNATI			"Primitive sinta'unathi"
-#define LANGUAGE_PSKRELLIAN		"Primitive skrellian"
-#define LANGUAGE_ABDUCTORS      "Mindlink"
-#define LANGUAGE_HUMAN_LORRIMAN  "Lirris"
-#define LANGUAGE_HUMAN_AVALON    "Alain"
+
+#define LANGUAGE_ABDUCTORS			"Mindlink"
+#define LANGUAGE_HUMAN_LORRIMAN		"Lirris"
+#define LANGUAGE_HUMAN_AVALON		"Alain"
 
 
 #define ANTAG_LANGUAGES 			list(LANGUAGE_CULT, LANGUAGE_ALIUM, LANGUAGE_OCCULT)

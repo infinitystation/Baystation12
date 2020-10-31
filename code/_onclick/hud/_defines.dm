@@ -52,7 +52,6 @@
 #define ui_dropbutton "EAST-4:22,SOUTH:5"
 #define ui_drop_throw "EAST-1:28,SOUTH+1:7"
 #define ui_pull_resist "EAST-2:26,SOUTH+1:7"
-#define ui_fixeye "EAST-3:39, SOUTH+1:7"
 #define ui_holster "EAST-3:25, SOUTH+1:7"//inf
 #define ui_acti "EAST-2:26,SOUTH:5"
 #define ui_movi "EAST-3:24,SOUTH:5"
@@ -126,3 +125,11 @@
 
 #define ui_spell_master "EAST-1:16,NORTH-1:16"
 #define ui_genetic_master "EAST-1:16,NORTH-3:16"
+
+//pai
+#define ui_pai_software "NORTH,WEST:6"
+#define ui_pai_subsystems "NORTH,WEST+1:6"
+#define ui_pai_shell "NORTH,WEST+2:6"
+#define ui_pai_light "NORTH,WEST+3:6"
+#define ui_pai_rest "NORTH,WEST+4:6"
+

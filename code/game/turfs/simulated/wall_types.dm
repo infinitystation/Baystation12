@@ -15,6 +15,10 @@
 	name = "hull"
 	color = COLOR_HULL
 
+/turf/simulated/wall/r_wall/hull/vox
+	initial_gas = list("nitrogen" = 101.38)
+	color = COLOR_GREEN_GRAY
+
 /turf/simulated/wall/prepainted
 	paint_color = COLOR_WALL_GUNMETAL
 /turf/simulated/wall/r_wall/prepainted
@@ -142,6 +146,9 @@
 
 /turf/simulated/wall/voxshuttle/attackby()
 	return
+
+/turf/simulated/wall/growth/New(var/newloc)
+	..(newloc, MATERIAL_GROWTH)
 
 /turf/simulated/wall/concrete/New(var/newloc)
 	..(newloc,MATERIAL_CONCRETE)

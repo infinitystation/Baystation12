@@ -124,6 +124,7 @@
 	..()
 
 /obj/machinery/ntnet_relay/attackby(obj/item/P, mob/user)
+	. = ..() //inf
 	if (!istype(P,/obj/item/weapon/stock_parts/computer/hard_drive/portable))
 		return
 	else if (get_component_of_type(/obj/item/weapon/stock_parts/computer/hard_drive/portable))

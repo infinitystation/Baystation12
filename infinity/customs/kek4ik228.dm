@@ -1,6 +1,6 @@
 /obj/item/clothing/head/helmet/custom_kek4ik228
 	name = "\improper D.H.E.F helmet"
-	desc = "This is D.H.E.F helmet, it looks rather menacing with these green eye lenses, it's mouthpiece is retractible to provide additional defense for it's wearer."
+	desc = "This is D.H.E.F helmet, it looks really menacing with it's red lenses and military styled woodland cover. When you really need to look cool and stylish."
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "kek4ik228_helmet"
 	item_icons = list(

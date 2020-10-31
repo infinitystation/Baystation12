@@ -198,3 +198,11 @@
 	log_and_message_admins("[key_name_admin(usr)] toggled event status.")
 	world.update_status()
 //	SSstatistics.add_field_details("admin_verb","TES") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+/proc/only_xenos(var/client/C)
+	if(!C)
+		return
+	if(!istype(C))
+		C = C.get_client()
+	if(C.holder && (C.holder.rights == R_XENO))
+		return TRUE

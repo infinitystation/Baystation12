@@ -17,6 +17,7 @@
 
 /spell/aoe_turf/conjure/construct/lesser
 	charge_max = 1800
+	spell_flags = CONSTRUCT_CHECK //INF
 	summon_type = list(/obj/structure/constructshell/cult)
 	hud_state = "const_shell"
 	override_base = "const"
@@ -65,12 +66,12 @@
 	desc = "This spell reaches into Nar-Sie's realm, summoning one of the legendary fragments across time and space"
 
 	charge_max = 3000
-	spell_flags = 0
+	spell_flags = CONSTRUCT_CHECK //INF
 	invocation = "none"
 	invocation_type = SpI_NONE
 	range = 0
 
-	summon_type = list(/obj/item/device/soulstone)
+	summon_type = list(/obj/item/device/soulstone/heretic) //INF, was /obj/item/device/soulstone
 
 	hud_state = "const_stone"
 	override_base = "const"
@@ -115,8 +116,8 @@
 //Code for the Juggernaut construct's forcefield, that seemed like a good place to put it.
 /obj/effect/forcefield/cult
 	desc = "That eerie looking obstacle seems to have been pulled from another dimension through sheer force."
-	name = "Juggerwall"
-	icon = 'icons/effects/effects.dmi'
-	icon_state = "m_shield_cult"
+	name = "red shield" //INF, was "Juggerwall"
+	icon = 'infinity/icons/effects/cult.dmi' //INF, was 'icons/effects/effects.dmi'
+	icon_state = "cultshield"
 	light_color = "#b40000"
 	light_outer_range = 2

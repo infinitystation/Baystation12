@@ -163,24 +163,24 @@
 	..()
 	if(ishuman(M)) // Any location
 		if(iscultist(M))
+			//[INF]
+			var/mob/living/carbon/human/H = M
+			for(var/datum/active_effect/cult_tattoo/unholy/tattoo in H.active_effects)
+				if(istype(tattoo))
+					return
+			//[/INF]
 			if(prob(10))
 				GLOB.cult.offer_uncult(M)
 			if(prob(2))
 				var/obj/effect/spider/spiderling/S = new /obj/effect/spider/spiderling(M.loc)
 				M.visible_message("<span class='warning'>\The [M] coughs up \the [S]!</span>")
-		else if(M.mind && GLOB.godcult.is_antagonist(M.mind))
-			if(volume > 5)
-				M.adjustHalLoss(5)
-				M.adjustBruteLoss(1)
-				if(prob(10)) //Only annoy them a /bit/
-					to_chat(M,"<span class='danger'>You feel your insides curdle and burn!</span> \[<a href='?src=\ref[src];deconvert=\ref[M]'>Give Into Purity</a>\]")
 
 /datum/reagent/water/holywater/Topic(href, href_list)
 	. = ..()
 	if(!. && href_list["deconvert"])
 		var/mob/living/carbon/C = locate(href_list["deconvert"])
 		if(C.mind)
-			GLOB.godcult.remove_antagonist(C.mind,1)
+			GLOB.cult.remove_antagonist(C.mind,1) //INF, was GLOB.godcult.remove_antagonist(C.mind,1)
 
 /datum/reagent/water/holywater/touch_turf(var/turf/T)
 	if(volume >= 5)
@@ -509,3 +509,17 @@
 	description = "Ammonia Nitrate Fuel Oil, with aluminium powder, an explosive compound known for centuries. Safe to handle, can be set off with a small explosion."
 	color = "#ffe8e8"
 	boompower = 2
+
+/datum/reagent/dye
+	name = "Dye"
+	description = "Non-toxic artificial coloration used for food and drinks. When mixed with reagents, the compound will take on the dye's coloration."
+	color = "#ffffff"
+	color_weight = 40
+	color_transfer = TRUE
+	color_foods = TRUE
+	taste_mult = 0
+
+/datum/reagent/dye/strong
+	name = "Strong Dye"
+	description = "An extra-strength dye. Used for tinting food, but is especially effective with drinks and other fluids."
+	color_weight = 100

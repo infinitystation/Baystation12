@@ -21,7 +21,7 @@
 	icon_state = "hair_pais"
 
 /datum/sprite_accessory/hair/infinity/new_ponytail
-	name = "Ponytail 7"
+	name = "Ponytail 7 (alt)"
 	icon_state = "hair_ponytail"
 
 /datum/sprite_accessory/hair/infinity/shortflip
@@ -69,10 +69,6 @@
 /datum/sprite_accessory/hair/infinity/zone
 	name = "Zone"
 	icon_state = "hair_zone"
-
-/datum/sprite_accessory/hair/infinity/modern
-	name = "Modern"
-	icon_state = "hair_modern"
 
 /datum/sprite_accessory/hair/infinity/long
 	name = "Long hair 4"
@@ -153,10 +149,6 @@
 /datum/sprite_accessory/hair/infinity/terezi
 	name = "Terezi"
 	icon_state = "hair_terezi"
-
-/datum/sprite_accessory/hair/infinity/tressshoulder
-	name = "Tress Shoulder"
-	icon_state = "hair_tressshoulder"
 
 /datum/sprite_accessory/hair/infinity/vriska
 	name = "Vriska"
@@ -256,4 +248,36 @@
 /datum/sprite_accessory/hair/infinity/twincurls2
 	name = "Curls Twin"
 	icon_state = "hair_twincurls2"
+
+/datum/sprite_accessory/hair/infinity/travolta
+	name = "Travolta"
+	icon_state = "hair_travolta"
+
+/datum/sprite_accessory/hair/infinity/travolta_tied
+	name = "Travolta Tied"
+	icon_state = "hair_travolta_tied"
+
+/datum/sprite_accessory/hair/infinity/messy_rightcut
+	name = "Messy Right Side Cut"
+	icon_state = "hair_messy_rightcut"
+
+/datum/sprite_accessory/hair/infinity/widowmaker
+	name = "Ponytail Widow"
+	icon_state = "hair_widowmaker"
+
+/datum/sprite_accessory/hair/infinity/widowmaker_alt
+	name = "Ponytail Widow Alt"
+	icon_state = "hair_widowmaker_alt"
+
+/datum/sprite_accessory/hair/infinity/widowmaker_short
+	name = "Ponytail Widow Short"
+	icon_state = "hair_widowmaker_short"
+
+/datum/sprite_accessory/hair/infinity/longwide
+	name = "Long Wide Fringe"
+	icon_state = "hair_longwide"
+
+/datum/sprite_accessory/hair/infinity/mancut
+	name = "Mancut"
+	icon_state = "hair_mancut"
 //[/AURORA]

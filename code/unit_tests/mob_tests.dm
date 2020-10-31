@@ -552,10 +552,11 @@ datum/unit_test/mob_damage/resomi/halloss
 
 /datum/unit_test/robot_module_icons
 	name = "MOB: Robot module icon check"
-	var/icon_file = 'icons/mob/screen1_robot.dmi'
+	var/list/icon_files = list('icons/mob/screen1_robot.dmi', 'infinity/icons/mob/screen1_robot.dmi')	// INF WAS		var/icon_files = list('icons/mob/screen1_robot.dmi)
 
 /datum/unit_test/robot_module_icons/start_test()
 	var/failed = 0
+/*[ORIG]
 	if(!isicon(icon_file))
 		fail("[icon_file] is not a valid icon file.")
 		return 1
@@ -571,6 +572,27 @@ datum/unit_test/mob_damage/resomi/halloss
 		if(!(modname in valid_states))
 			log_unit_test("[bad_msg] does not contain a valid icon state in [icon_file][ascii_reset]")
 			failed=1
+[/ORIG]*/
+//[INF]
+	var/list/valid_states = list()
+	for(var/icon_file in icon_files)
+		if(!isicon(icon_file))
+			fail("[icon_file] is not a valid icon file.")
+			failed=1
+			continue
+
+		valid_states += icon_states(icon_file)
+
+	if(!valid_states.len)
+		return 1
+
+	for(var/i=1, i<=SSrobots.all_module_names.len, i++)
+		var/modname = lowertext(SSrobots.all_module_names[i])
+		var/bad_msg = "[ascii_red]--------------- [modname]"
+		if(!(modname in valid_states))
+			log_unit_test("[bad_msg] does not contain a valid icon state in icons[ascii_reset]")
+			failed=1
+//[/INF]
 
 	if(failed)
 		fail("Some icon states did not exist")
@@ -691,7 +713,7 @@ datum/unit_test/mob_damage/resomi/halloss
 
 	for(var/mobtype in subtypesof(/mob/living))
 
-		// Humans use species for their products and are 
+		// Humans use species for their products and are
 		// difficult to properly unit test because of this.
 		if(ispath(mobtype, /mob/living/carbon/human))
 			continue

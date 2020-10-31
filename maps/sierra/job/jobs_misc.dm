@@ -41,7 +41,7 @@
 /datum/job/merchant
 	title = "Merchant"
 	department = "Civilian"
-	department_flag = MSC
+	department_flag = CIV
 
 	total_positions = 1
 	spawn_positions = 1
@@ -63,9 +63,10 @@
 						SKILL_PILOT	  = SKILL_BASIC)
 	give_psionic_implant_on_join = FALSE
 	skill_points = 24
+	required_role = list("MegaMerchant") //temporary toogling off merchants while they won't become away map
 
 /datum/job/merchant/equip(var/mob/living/carbon/human/H)
-	to_chat(H, "Ваши свЯзи помогли вам узнать о словах, что помогут опознать местных... Особо заинтересованных покупателей:")
+	to_chat(H, "Ваши связи помогли вам узнать о словах, что помогут опознать местных... Особо заинтересованных покупателей:")
 	to_chat(H, "<b>Кодовые фразы</b>: <span class='danger'>[syndicate_code_phrase]</span>")
 	to_chat(H, "<b>Ответы на фразы</b>: <span class='danger'>[syndicate_code_response]</span>")
 	H.StoreMemory("<b>Кодовые Фразы</b>: [syndicate_code_phrase]", /decl/memory_options/system)
@@ -75,7 +76,7 @@
 /datum/job/merchant_trainee
 	title = "Merchant Assistant"
 	department = "Civilian"
-	department_flag = MSC
+	department_flag = CIV
 
 	total_positions = 2
 	spawn_positions = 2
@@ -104,7 +105,7 @@
 /datum/job/stowaway
 	title = "Stowaway"
 	department = "Civilian"
-	department_flag = MSC
+	department_flag = CIV
 
 	total_positions = 2
 	spawn_positions = 2

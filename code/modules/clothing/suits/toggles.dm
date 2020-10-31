@@ -5,6 +5,8 @@
 	var/hoodtype = null //so the chaplain hoodie or other hoodies can override this
 	var/suittoggled = 0
 
+	var/change_sprites = 1 //INF
+
 /obj/item/clothing/suit/storage/hooded/New()
 	MakeHood()
 	..()
@@ -52,8 +54,8 @@
 			else
 				H.equip_to_slot_if_possible(hood,slot_head,0,0,1)
 				suittoggled = 1
-				hood.icon_state = "[icon_state]_hood"
-//				hood.item_state = "[icon_state]_hood"
+				if(change_sprites) //INF
+					hood.icon_state = "[icon_state]_hood"
 				update_icon()
 				H.update_inv_wear_suit()
 	else
@@ -61,7 +63,8 @@
 
 /obj/item/clothing/suit/storage/hooded/on_update_icon()
 	if(suittoggled)
-		icon_state = "[initial(icon_state)]_t"
+		if(change_sprites) //INF
+			icon_state = "[initial(icon_state)]_t"
 	else
 		icon_state = "[initial(icon_state)]"
 
@@ -95,10 +98,10 @@
 	name = "captain's winter coat"
 	icon_state = "coatcaptain"
 	armor = list(
-		melee = ARMOR_MELEE_KNIVES, 
-		bullet = ARMOR_BALLISTIC_MINOR, 
-		laser = ARMOR_LASER_SMALL, 
-		energy = ARMOR_ENERGY_MINOR, 
+		melee = ARMOR_MELEE_KNIVES,
+		bullet = ARMOR_BALLISTIC_MINOR,
+		laser = ARMOR_LASER_SMALL,
+		energy = ARMOR_ENERGY_MINOR,
 		bomb = ARMOR_BOMB_MINOR
 		)
 
@@ -106,10 +109,10 @@
 	name = "security winter coat"
 	icon_state = "coatsecurity"
 	armor = list(
-		melee = ARMOR_MELEE_KNIVES, 
-		bullet = ARMOR_BALLISTIC_SMALL, 
-		laser = ARMOR_LASER_SMALL, 
-		energy = ARMOR_ENERGY_MINOR, 
+		melee = ARMOR_MELEE_KNIVES,
+		bullet = ARMOR_BALLISTIC_SMALL,
+		laser = ARMOR_LASER_SMALL,
+		energy = ARMOR_ENERGY_MINOR,
 		bomb = ARMOR_BOMB_MINOR
 		)
 
@@ -143,7 +146,7 @@
 	icon_state = "coat_dais"
 	siemens_coefficient = 0.5
 	armor = list(
-		melee = ARMOR_MELEE_SMALL, 
+		melee = ARMOR_MELEE_SMALL,
 		energy = ARMOR_ENERGY_MINOR
 		)
 	desc = "A hooded winter coat colored blue and white and bearing the logo of Deimos Advanced Information Systems."
@@ -173,7 +176,8 @@
 	hoodtype = /obj/item/clothing/head/hoodiehood
 	sprite_sheets = list(
 		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_suit_resomi.dmi',
-		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/suit.dmi'
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/infinity/onmob_suit.dmi', //inf, orig was SPECIES_UNATHI = 'icons/mob/onmob/Unathi/suit.dmi'
+		SPECIES_HUMAN  = 'icons/mob/onmob/infinity/onmob_suit.dmi',        //inf
 		)
 
 /obj/item/clothing/head/hoodiehood

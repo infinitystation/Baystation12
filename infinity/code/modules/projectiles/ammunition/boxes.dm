@@ -41,18 +41,37 @@
 	max_ammo = 15
 
 /obj/item/ammo_magazine/c12m
-	name = "magazine (12 gauge)"
+	name = "slug drum"
 	icon = 'infinity/icons/obj/ammo.dmi'
 	icon_state = "m12gb"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_STEEL = 525)
 	caliber = CALIBER_SHOTGUN
+	multiple_sprites = 1
 	max_ammo = 8
 
 /obj/item/ammo_magazine/c12m/empty
 	icon_state = "m12gb-0"
 	initial_ammo = 0
+
+/obj/item/ammo_magazine/c12m/shock
+	name = "shock drum"
+	icon_state = "m12gs"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun/stunshell
+	matter = list(MATERIAL_STEEL = 525)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 8
+
+/obj/item/ammo_magazine/c12m/buckshot
+	name = "buckshot drum"
+	icon_state = "m12gb"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+	matter = list(MATERIAL_STEEL = 525)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 8
 
 /obj/item/ammo_magazine/c12755
 	name = "magazine (12.7x55mm)"
@@ -154,34 +173,3 @@
 	matter = list(MATERIAL_STEEL = 525)
 	caliber = CALIBER_SHOTGUN
 	max_ammo = 5
-
-/obj/item/ammo_magazine/tv
-	name = "Large black magazine."
-	desc = "Black metal rifle magazine. Quite heavy."
-	icon = 'infinity/icons/obj/ammo.dmi'
-	icon_state = "tvm"
-	origin_tech = list(TECH_COMBAT = 2)
-	mag_type = MAGAZINE
-	caliber = CALIBER_TV
-	matter = list(MATERIAL_STEEL = 7000)
-	ammo_type = /obj/item/ammo_casing/rifle/tv
-	max_ammo = 26
-	multiple_sprites = 1
-
-/obj/item/ammo_magazine/tv/empty
-	icon = 'infinity/icons/obj/ammo.dmi'
-	icon_state = "tvms"
-	initial_ammo = 0
-
-/obj/item/ammo_magazine/tvtcink
-	name = "Tcink"
-	desc = "If someone accidentally drops all of it - will have to collect a very long time."
-	icon = 'infinity/icons/obj/ammo.dmi'
-	icon_state = "tcink"
-	w_class = ITEM_SIZE_NORMAL
-	origin_tech = list(TECH_COMBAT = 2)
-	mag_type = MAGAZINE
-	caliber = CALIBER_TV
-	matter = list(MATERIAL_STEEL = 20000)
-	ammo_type = /obj/item/ammo_casing/rifle/tv
-	max_ammo = 130

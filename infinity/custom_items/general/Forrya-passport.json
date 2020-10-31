@@ -1,0 +1,9 @@
+{
+	"ckey"				:	"Forrya",
+	"character_name"	:	"Niyarkszherch Kchrashchjrj",
+	"item_name"			:	"passport",
+	"item_desc"			:	"A foreign passport from the Confederate Commonwealth of Ahdomai.",
+	"item_icon_state"	:	"ccapassport",
+	"item_path"			:	"/obj/item/clothing/accessory/badge",
+	"additional_data"	:	{"stored_name":"Niyarkszherch Kchrashchjrj","badge_string":"The Citizen of Ahdomai"}
+}

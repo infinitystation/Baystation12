@@ -10,7 +10,7 @@
 	admin_levels = list(4,5)
 	empty_levels = list(6)
 	accessible_z_levels = list("1"=1,"2"=1,"3"=1,"6"=30)
-	overmap_size = 35
+	overmap_size = 40
 	overmap_event_areas = 34
 	usable_email_tlds = list("freemail.net")
 
@@ -38,11 +38,8 @@
 	recommended_players = 20
 //	minimum_players = 0 its already 0
 
-	away_site_budget = 3.5 /*
-							2 for ascents/vox shoal/skrellin patrol/bearcat
-							0.5 for two away sites but lower one
-							0.5 always wastes on mining asteroid
-							*/
+	away_site_budget = 3.5
+
 	id_hud_icons = 'maps/sierra/icons/assignment_hud.dmi'
 
 	available_cultural_info = list(

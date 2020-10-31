@@ -1,3 +1,5 @@
+#define HOLDER_LIST		list(SPECIES_FBP)
+
 /datum/admins/proc/xeno_whitelist_panel()
 	set name = "Xenos Whitelist Panel"
 	set desc = "Use this to edit players xenowhitelist. Yupi!"
@@ -38,7 +40,6 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 	var/alternate = FALSE	// 0 - current whitelist, 1 - not used whitelist
 	var/list/used = list()
 	var/list/noused = list()
-//	var/list/xenoname = list()
 	var/list/lowerxenoname = list()
 	var/sortkey = "ckey"
 	var/datum/nanoui/myui	// Shame on me
@@ -48,9 +49,10 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 	for(var/s in all_species)
 		var/datum/species/species = all_species[s]
 		if(species.spawn_flags & SPECIES_IS_WHITELISTED)
-			if(!(lowertext(species.get_bodytype()) in lowerxenoname))
-				lowerxenoname.Add("[lowertext(species.get_bodytype())]")
-//				xenoname.Add("[species.get_bodytype()]")
+			if(!(lowertext(species.whitelistName()) in lowerxenoname))
+				lowerxenoname.Add("[lowertext(species.whitelistName())]")
+	for(var/s2 in HOLDER_LIST)
+		lowerxenoname.Add("[lowertext(s2)]")
 	used = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(FALSE), lowerxenoname), sortkey)
 	noused = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), sortkey)
 
@@ -69,7 +71,6 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		data["SQL"] = data["SQL"] ? -1 : -2
 	data["disabled"] = !config.usealienwhitelist
 	data["currentlist"] = alternate ? noused : used
-//	data["allxenos"] = xenoname
 	data["lowerallxenos"] = lowerxenoname
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -100,9 +101,9 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 			. = TOPIC_NOACTION
 
 	else if (href_list["ckey"] && href_list["race"])
-		var/list/list = alternate ? noused : used
+		var/list/l = alternate ? noused : used
 		var/list/ckey
-		for(ckey in list)
+		for(ckey in l)
 			if(ckey["ckey"] == href_list["ckey"])
 				break
 		if(!ckey)
@@ -133,10 +134,10 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		. = TOPIC_REFRESH
 
 	else if (href_list["send"])
-		var/list/list = alternate ? noused : used
+		var/list/l = alternate ? noused : used
 		var/list/grant = list()
 		var/list/revoke = list()
-		for(var/list/ckey in list)
+		for(var/list/ckey in l)
 			var/list/local = ckey["GRANT"]
 			if(local && local.len)
 				grant["[ckey["ckey"]]"] += local
@@ -171,25 +172,25 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		else
 			to_chat(usr, "Ошибка синхронизации: неизвестные адреса синхронизации.")
 			return TOPIC_NOACTION
-		var/list/list
+		var/list/l
 		var/list/notlist
 		if(config.usealienwhitelistSQL)
 			if(href_list["synch"] == "CDB")
-				list = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), "ckey")
+				l = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), "ckey")
 				notlist = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(FALSE), lowerxenoname), "ckey")
 			else
-				list = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(FALSE), lowerxenoname), "ckey")
+				l = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(FALSE), lowerxenoname), "ckey")
 				notlist = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), "ckey")
 		else
 			if(href_list["synch"] == "CDB")
-				list = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(FALSE), lowerxenoname), "ckey")
+				l = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(FALSE), lowerxenoname), "ckey")
 				notlist = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), "ckey")
 			else
-				list = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), "ckey")
+				l = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), "ckey")
 				notlist = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(FALSE), lowerxenoname), "ckey")
 
 		var/list/grant1 = list()
-		for(var/list/ckey5 in list)
+		for(var/list/ckey5 in l)
 			var/list/local = ckey5["YES"]
 			if(local && local.len)
 				grant1[ckey5["ckey"]] = local
@@ -234,13 +235,13 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 			myui.update()
 		. = TOPIC_REFRESH
 
-/datum/nano_module/xenopanel/proc/inckeysearch(var/list/list, var/ckey)
+/datum/nano_module/xenopanel/proc/inckeysearch(var/list/l, var/ckey)
 	var/list/newckey = list()
 	var/list/insort = list()
 	var/list/notinsort = list()
 	var/create = TRUE
-	list = sortByKey(list, "ckey")
-	for(var/list/check in list)
+	l = sortByKey(l, "ckey")
+	for(var/list/check in l)
 		if(check["ckey"] == ckey)
 			create = FALSE
 			newckey[++newckey.len] = check
@@ -256,11 +257,11 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 			check["NO"] += list(race)
 		newckey[++newckey.len] = check
 
-	list.Cut()
-	list.Add(newckey)
-	list.Add(insort)
-	list.Add(notinsort)
-	return list
+	l.Cut()
+	l.Add(newckey)
+	l.Add(insort)
+	l.Add(notinsort)
+	return l
 
 /datum/nano_module/xenopanel/proc/upload_SQL(var/client/user, var/list/grant, var/list/revoke)
 	. = 1
@@ -303,32 +304,32 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 	if (!text)
 		log_misc("Failed to load config/alienwhitelist.txt")
 		return 0
-	var/list/list = splittext(text, "\n")
+	var/list/l = splittext(text, "\n")
 	// Empty line in the end
-	if(list[list.len] == "")
-		list -= list[list.len]
+	if(l[l.len] == "")
+		l -= l[l.len]
 	if(revoke && revoke.len)
 		for(var/ckey in revoke)
 			var/list/check = revoke[ckey]
 			for(var/race in check)
-				list -= "[lowertext(ckey)] - [lowertext(race)]"
+				l -= "[lowertext(ckey)] - [lowertext(race)]"
 			log_admin("Alien Whitelist REVOKED (CONFIG) by [user.ckey]. [lowertext(ckey)]: [jointext(check, ", ")]")
 			message_staff("Alien Whitelist REVOKED (CONFIG) by [user.ckey]. [lowertext(ckey)]: [jointext(check, ", ")]")
 	if(grant && grant.len)
 		for(var/ckey in grant)
 			var/list/check = grant[ckey]
 			for(var/race in check)
-				list += "[lowertext(ckey)] - [lowertext(race)]"
+				l += "[lowertext(ckey)] - [lowertext(race)]"
 			log_admin("Alien Whitelist GRANTED (CONFIG) by [user.ckey]. [lowertext(ckey)]: [jointext(check, ", ")]")
 			message_staff("Alien Whitelist GRANTED (CONFIG) by [user.ckey]. [lowertext(ckey)]: [jointext(check, ", ")]")
-	if(!list || !list.len)
+	if(!l || !l.len)
 		log_misc("Failed to load config/alienwhitelist.txt")
 		return 0
 	// Not working
 	if(sort)
 		var/ckeys = list()
 		var/list/racecheck = list()
-		for(var/check in list)
+		for(var/check in l)
 			var/list/unite = splittext(check, " - ")
 			var/list/a = list()
 			if(!unite[1] || !unite[2])
@@ -352,15 +353,15 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 			result += ckeys1
 			ckeys1.Cut()
 
-		list.Cut()
+		l.Cut()
 		for(var/ChEcK in result)
 			var/list/key = ChEcK
 			var/CKEY = key["ckey"]
 			var/RACE = key["race"]
 			var/unite = "[CKEY] - [RACE]"
-			list += unite
+			l += unite
 	SSwebhooks.send(WEBHOOK_XENO_WHITELIST, list("ckey" = user.ckey, "grant" = grant, "revoke" = revoke, "type" = "конфиг-файл"))
-	text = jointext(list, "\n")
+	text = jointext(l, "\n")
 	fdel("config/alienwhitelist.txt")
 	text2file(text, "config/alienwhitelist.txt")
 	if(!config.usealienwhitelistSQL)
@@ -393,21 +394,21 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 	return L
 
 //	Для того чтобы уи мог нормально читать дату, нам нужно наш общий список еще раз переделать. Да - говнокод, но зато какой! ~Laxesh
-/proc/ParseXenoWhitelist(var/list/list, var/list/allspecies)
+/proc/ParseXenoWhitelist(var/list/l, var/list/allspecies)
 	var/list/A = list()
-	if(!list.len)
+	if(!l.len)
 		return
-	A = splittext(pick(list), " - ")
+	A = splittext(pick(l), " - ")
 	if(A.len && (A.len >=2))
 		log_admin("Error: Alien Whitelist SQL usage has been turned on, but list wasn't reloaded.")
 		message_staff("Error: Alien Whitelist SQL usage has been turned on, but list wasn't reloaded.")
 		return
 	A.Cut()
-	for(var/string in list)
+	for(var/string in l)
 		var/list/unite = list()
 		unite["ckey"] = string
 		for(var/s in allspecies)
-			if(s in list[string])
+			if(s in l[string])
 				unite["YES"] += list(s)
 			else
 				unite["NO"] += list(s)
@@ -454,11 +455,11 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 	if(SQL ^ not_used_list)
 		return
 	var/list/secondary = list()
-	var/list/list = .
+	var/list/l = .
 	for(var/s in .)
 		var/list/A = splittext(s, " - ")
 		if((!A.len) || (A.len < 2))
-			if(list[list.len] == s)
+			if(l[l.len] == s)
 				break
 			log_admin("File alien_whitelist parsing error in line: [s]")
 			message_staff("File alien_whitelist parsing error in line: [s]")
@@ -498,3 +499,4 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		else if(!b[check])
 			result[check] = a[check]
 	return result
+#undef HOLDER_LIST

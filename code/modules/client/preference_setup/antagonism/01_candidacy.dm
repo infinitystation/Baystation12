@@ -1,5 +1,5 @@
 /datum/preferences
-	var/list/may_be_special_role
+//inf	var/list/may_be_special_role
 	var/list/be_special_role
 
 /datum/category_item/player_setup_item/antagonism/candidacy
@@ -8,28 +8,29 @@
 
 /datum/category_item/player_setup_item/antagonism/candidacy/load_character(var/savefile/S)
 	from_file(S["be_special"],           pref.be_special_role)
-	from_file(S["may_be_special"],     	 pref.may_be_special_role)
+//inf	from_file(S["may_be_special"],     	 pref.may_be_special_role)
 
 /datum/category_item/player_setup_item/antagonism/candidacy/save_character(var/savefile/S)
 	to_file(S["be_special"],             pref.be_special_role)
-	to_file(S["may_be_special"],       	 pref.may_be_special_role)
+//inf	to_file(S["may_be_special"],       	 pref.may_be_special_role)
 
 /datum/category_item/player_setup_item/antagonism/candidacy/sanitize_character()
 	if(!istype(pref.be_special_role))
 		pref.be_special_role = list()
+/*[inf.exclude]
 	if(!istype(pref.may_be_special_role))
 		pref.may_be_special_role = list()
-
+[/inf.exclude]*/
 	var/special_roles = valid_special_roles()
 	var/old_be_special_role = pref.be_special_role.Copy()
-	var/old_may_be_special_role = pref.may_be_special_role.Copy()
+//inf.exclude	var/old_may_be_special_role = pref.may_be_special_role.Copy()
 	for(var/role in old_be_special_role)
 		if(!(role in special_roles))
 			pref.be_special_role -= role
-	for(var/role in old_may_be_special_role)
+/*[inf.exclude]	for(var/role in old_may_be_special_role)
 		if(!(role in special_roles))
 			pref.may_be_special_role -= role
-
+[/inf.exclude]*/
 /datum/category_item/player_setup_item/antagonism/candidacy/content(var/mob/user)
 	. = list()
 	. += "<b>Легенда:</b><br>"
@@ -43,13 +44,15 @@
 		var/datum/antagonist/antag = all_antag_types[antag_type]
 		. += "<tr><td>[antag.role_text]: </td><td>"
 		if(jobban_isbanned(preference_mob(), antag.id) || (antag.id == MODE_MALFUNCTION && jobban_isbanned(preference_mob(), "ИИ")))
-			. += "<span class='danger'>\[БАН\]</span><br>"
+			. += "<span class='danger'>\[НЕДОСТУПНО\]</span><br>"
 		else if(antag.id in pref.be_special_role)
-			. += "<span class='linkOn'>Антагонист</span> <a href='?src=\ref[src];add_maybe=[antag.id]'>Цель</a> <a href='?src=\ref[src];del_special=[antag.id]'>Никогда</a></br>"
+			. += "<span class='linkOn'>Антагонист</span> <a href='?src=\ref[src];del_special=[antag.id]'>Нет</a></br>"
+/*[inf.exclude]
 		else if(antag.id in pref.may_be_special_role)
-			. += "<a href='?src=\ref[src];add_special=[antag.id]'>Антагонист</a> <span class='linkOn'>Цель</span> <a href='?src=\ref[src];del_special=[antag.id]'>Никогда</a></br>"
+			. += "<a href='?src=\ref[src];add_special=[antag.id]'>Антагонист</a> <span class='linkOn'>Цель</span> <a href='?src=\ref[src];del_special=[antag.id]'>Нет</a></br>"
+[/inf.exclude]*/
 		else
-			. += "<a href='?src=\ref[src];add_special=[antag.id]'>Антагонист</a> <a href='?src=\ref[src];add_maybe=[antag.id]'>Цель</a> <span class='linkOn'>Никогда</span></br>"
+			. += "<a href='?src=\ref[src];add_special=[antag.id]'>Антагонист</a> <span class='linkOn'>Нет</span></br>"
 
 		. += "</td></tr>"
 	. += "</table>"
@@ -65,14 +68,16 @@
 		if(banned_from_ghost_role(preference_mob(), ghost_trap))
 			. += "<span class='danger'>\[БАН\]</span><br>"
 		else if(ghost_trap.pref_check in pref.be_special_role)
-			. += "<span class='linkOn'>Высокий</span> <a href='?src=\ref[src];add_maybe=[ghost_trap.pref_check]'>Низкий</a> <a href='?src=\ref[src];del_special=[ghost_trap.pref_check]'>Никогда</a></br>"
+			. += "<span class='linkOn'>Высокий</span> <a href='?src=\ref[src];del_special=[ghost_trap.pref_check]'>Никогда</a></br>"
+/*[inf.exclude]
 		else if(ghost_trap.pref_check in pref.may_be_special_role)
 			. += "<a href='?src=\ref[src];add_special=[ghost_trap.pref_check]'>Высокий</a> <span class='linkOn'>Низкий</span> <a href='?src=\ref[src];del_special=[ghost_trap.pref_check]'>Никогда</a></br>"
+[/inf.exclude]*/
 		else
-			. += "<a href='?src=\ref[src];add_special=[ghost_trap.pref_check]'>Высокий</a> <a href='?src=\ref[src];add_maybe=[ghost_trap.pref_check]'>Низкий</a> <span class='linkOn'>Никогда</span></br>"
+			. += "<a href='?src=\ref[src];add_special=[ghost_trap.pref_check]'>Высокий</a> <span class='linkOn'>Никогда</span></br>"
 
 		. += "</td></tr>"
-	. += "<tr><td>Выбрать все: </td><td><a href='?src=\ref[src];select_all=2'>Высокий</a> <a href='?src=\ref[src];select_all=1'>Низкий</a> <a href='?src=\ref[src];select_all=0'>Никогда</a></td></tr>"
+	. += "<tr><td>Выбрать все: </td><td><a href='?src=\ref[src];select_all=2'>Высокий</a> <a href='?src=\ref[src];select_all=0'>Никогда</a></td></tr>"
 	. += "</table>"
 	. = jointext(.,null)
 
@@ -87,21 +92,21 @@
 		if(!(href_list["add_special"] in valid_special_roles(FALSE)))
 			return TOPIC_HANDLED
 		pref.be_special_role |= href_list["add_special"]
-		pref.may_be_special_role -= href_list["add_special"]
+//inf.exclude		pref.may_be_special_role -= href_list["add_special"]
 		return TOPIC_REFRESH
 
 	if(href_list["del_special"])
 		if(!(href_list["del_special"] in valid_special_roles(FALSE)))
 			return TOPIC_HANDLED
 		pref.be_special_role -= href_list["del_special"]
-		pref.may_be_special_role -= href_list["del_special"]
+//inf.exclude		pref.may_be_special_role -= href_list["del_special"]
 		return TOPIC_REFRESH
-
+/*[inf.exclude]
 	if(href_list["add_maybe"])
 		pref.be_special_role -= href_list["add_maybe"]
 		pref.may_be_special_role |= href_list["add_maybe"]
 		return TOPIC_REFRESH
-
+[/inf.exclude]*/
 	if(href_list["select_all"])
 		var/selection = text2num(href_list["select_all"])
 		var/list/roles = valid_special_roles(FALSE)
@@ -110,13 +115,13 @@
 			switch(selection)
 				if(0)
 					pref.be_special_role -= id
-					pref.may_be_special_role -= id
+//inf.exclude					pref.may_be_special_role -= id
 				if(1)
 					pref.be_special_role -= id
-					pref.may_be_special_role |= id
+//inf.exclude					pref.may_be_special_role |= id
 				if(2)
 					pref.be_special_role |= id
-					pref.may_be_special_role -= id
+//inf.exclude					pref.may_be_special_role -= id
 		return TOPIC_REFRESH
 
 	return ..()
@@ -150,6 +155,8 @@
 		return FALSE
 	if(role in prefs.be_special_role)
 		return 2
+/*[inf.exclude]
 	if(role in prefs.may_be_special_role)
 		return 1
+[/inf.exclude]*/
 	return FALSE	//Default to "never" if they don't opt-in.

@@ -89,3 +89,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	valid_accessory_slots = list(ACCESSORY_SLOT_MEDAL)
 	allowed = list(/obj/item/weapon/gun/energy, /obj/item/weapon/gun/projectile, /obj/item/weapon/melee/baton)
+
+/obj/item/clothing/suit/storage/toggle/agent_jacket/security
+	name = "private security jacket"
+	desc = "A black leather jacket with \"SECURITY\" inscription at back. Belonged to a guard in a warehouse."

@@ -38,6 +38,16 @@
 
 	var/mind_text = "В вас была введена эксперементальная гланда, что полностью изменила ваше тело и до неузнаваемости исказила ваш разум. Вы ни за что не хотите что бы ее удаляли."
 
+/obj/item/organ/internal/gland/proc/set_species(var/mob/living/carbon/human/mob, var/species)
+	for(var/obj/item/W in mob)
+		mob.drop_from_inventory(W)
+	mob.regenerate_icons()
+	src.forceMove(get_turf(mob))
+	mob.internal_organs.Remove(src)
+	mob.set_species(species)
+	src.forceMove(mob)
+	mob.internal_organs.Add(src)
+
 /obj/item/organ/internal/gland/proc/SetRandomIcon_State()
 	icon_state = "gland[rand(1,9)]"
 
@@ -173,9 +183,8 @@
 
 		if(prob(0.05))
 			to_chat(H, "<span class='danger'>Your flesh rapidly mutates!</span>")
-			H.set_species(SPECIES_PROMETHEAN)
+			set_species(SPECIES_PROMETHEAN, H)
 			H.shapeshifter_set_colour("#05ff9b")
-			H.verbs -= /mob/living/carbon/human/proc/shapeshifter_select_colour
 			effected = to_master
 
 
@@ -192,7 +201,7 @@
 		if(prob(0.5))
 			var/new_species = pick(SPECIES_HUMAN, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_YEOSA, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER, SPECIES_BOOSTER, SPECIES_TAJARA, SPECIES_RESOMI)
 			H.visible_message(SPAN_WARNING("[H]'s flesh rapidly mutates and he transforms into [lowertext(new_species)]!"))
-			H.set_species(new_species)
+			set_species(new_species, H)
 			effected++
 
 
@@ -296,7 +305,7 @@
 										/datum/reagent/dexalin, /datum/reagent/alkysine, /datum/reagent/hyperzine, /datum/reagent/tobacco, /datum/reagent/gold, /datum/reagent/silver,
 										/datum/reagent/uranium, /datum/reagent/thermite, /datum/reagent/space_cleaner, /datum/reagent/lube, /datum/reagent/glycerol, /datum/reagent/coolant,
 										/datum/reagent/toxin/carpotoxin, /datum/reagent/toxin/phoron, /datum/reagent/toxin/cyanide,  /datum/reagent/mutagen, /datum/reagent/space_drugs,
-										/datum/reagent/mindbreaker, /datum/reagent/slimetoxin)
+										/datum/reagent/mindbreaker)
 			H.reagents.add_reagent(random, 5)
 			effected++
 

@@ -18,7 +18,7 @@
 /datum/uplink_item/item/stealthy_weapons/concealed_cane
 	name = "Concealed Cane Sword"
 	desc = "A cane used by a true gentlemen, especially ones with sharp intentions."
-	item_cost = 8
+	item_cost = 18 //INF was 8
 	path = /obj/item/weapon/cane/concealed
 
 /datum/uplink_item/item/stealthy_weapons/random_toxin
