@@ -28,3 +28,17 @@
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
 	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/accessory/amulet
+	sort_category = "Xenowear"
+	display_name = "(Tajara) talisman selection"
+	path = /obj/item/clothing/accessory/amulet
+	whitelisted = list(SPECIES_TAJARA)
+
+/datum/gear/accessory/amulet/New()
+	..()
+	var/amuleten = list()
+	amuleten["amulet"]= /obj/item/clothing/accessory/amulet/medium
+	amuleten["averter"]= /obj/item/clothing/accessory/amulet/strong
+	amuleten["talisman"]= /obj/item/clothing/accessory/amulet
+	gear_tweaks += new/datum/gear_tweak/path(amuleten)
