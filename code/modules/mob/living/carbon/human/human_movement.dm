@@ -52,7 +52,12 @@
 						item_slowdown = item_slowdown / (size_mod + 1)
 					else
 						item_slowdown = item_slowdown - size_mod
-				total_item_slowdown += max(item_slowdown, 0)
+					//INF, was total_item_slowdown += max(item_slowdown, 0) //We need this shit to be able to work with negatives
+					//[INF]
+					total_item_slowdown += max(item_slowdown, 0)
+				else
+					total_item_slowdown += item_slowdown
+					//[/INF]
 		tally += total_item_slowdown
 
 		for(var/organ_name in list(BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT))
@@ -66,7 +71,7 @@
 
 	if(aiming && aiming.aiming_at) tally += 5 // Iron sights make you slower, it's a well-known fact.
 
-	if(facing_dir) 
+	if(facing_dir)
 		tally += 3 //Locking direction will slow you down.
 
 	if(MUTATION_FAT in src.mutations)

@@ -25,6 +25,7 @@
 	cultify_wall()
 
 /turf/simulated/floor/proc/cultify_floor()
+	new /obj/effect/temporary/cult_floor(src, 5, 'infinity/icons/effects/cult.dmi', "floor_glow")
 	set_flooring(decls_repository.get_decl(/decl/flooring/reinforced/cult))
 	GLOB.cult.add_cultiness(CULTINESS_PER_TURF)
 

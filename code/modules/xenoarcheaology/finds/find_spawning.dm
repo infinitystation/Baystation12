@@ -301,7 +301,7 @@
 
 /obj/item/weapon/archaeological_find/crystal/spawn_item()
 	if(prob(10))
-		new /obj/item/device/soulstone(loc)
+		new /obj/item/device/soulstone(loc) //INF, was new /obj/item/device/soulstone(loc)
 		return //inf
 	if(prob(20)) //inf
 		apply_image_decorations = 1
@@ -351,7 +351,7 @@
 /obj/item/weapon/archaeological_find/robes/spawn_item()
 	var/list/possible_spawns = list(/obj/item/clothing/head/culthood,
 	/obj/item/clothing/head/culthood/magus,
-	/obj/item/clothing/head/culthood/alt,
+	//INF /obj/item/clothing/head/culthood/alt,
 	/obj/item/clothing/head/helmet/space/cult)
 	var/new_type = pick(possible_spawns)
 	return new new_type(loc)

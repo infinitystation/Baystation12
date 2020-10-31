@@ -260,8 +260,10 @@
 	if(!MP)
 		return 0	//Sanity, this should never happen.
 
-	if(ispath(MP, /mob/living/simple_animal/construct/behemoth))
-		return 0 //I think this may have been an unfinished WiP or something. These constructs should really have their own class simple_animal/construct/subtype
+	/*[INF]
+    if(ispath(MP, /mob/living/simple_animal/construct/behemoth))
+        return 0 //I think this may have been an unfinished WiP or something. These constructs should really have their own class simple_animal/construct/subtype
+    [/INF]*/
 
 	if(ispath(MP, /mob/living/simple_animal/construct/armoured))
 		return 0 //Verbs do not appear for players. These constructs should really have their own class simple_animal/construct/subtype

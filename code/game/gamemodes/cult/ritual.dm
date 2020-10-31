@@ -315,7 +315,7 @@ var/list/Tier4Runes = list(
 	log_and_message_admins("used a communicate verb to say '[input]'")
 	for(var/datum/mind/H in GLOB.cult.current_antagonists)
 		if(H.current && !H.current.stat)
-			to_chat(H.current, "<span class='cult'>[input]</span>")
+			to_chat(H.current, "<span class='cult'>Acolyte [real_name]: [input]</span>") //INF, was "<span class='cult'>[input]</span>"
 
 /mob/living/carbon/cult_communicate()
 	if(incapacitated(INCAPACITATION_RESTRAINED))
@@ -327,7 +327,8 @@ var/list/Tier4Runes = list(
 	return
 
 /mob/living/carbon/human/message_cult_communicate()
-	visible_message("<span class='warning'>\The [src] cuts \his finger and starts drawing on the back of \his hand.</span>")
+	//INF visible_message("<span class='warning'>\The [src] cuts \his finger and starts drawing on the back of \his hand.</span>")
+	say("Yo'toke ra na'sure", wishpering = 1)
 
 /mob/proc/obscure()
 	set category = "Cult Magic"

@@ -19,6 +19,14 @@
 		whispering = TRUE
 
 	message = sanitize(message)
+
+	//[INF]
+
+	for(var/datum/active_effect/effect in active_effects)
+		message = effect.handle_speech(message)
+
+	//[/INF]
+
 	var/obj/item/organ/internal/voicebox/vox = locate() in internal_organs
 	var/snowflake_speak = (speaking && (speaking.flags & (NONVERBAL|SIGNLANG))) || (vox && vox.is_usable() && vox.assists_languages[speaking])
 	if(!isSynthetic() && need_breathe() && failed_last_breath && !snowflake_speak)

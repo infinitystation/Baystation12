@@ -163,6 +163,12 @@
 	..()
 	if(ishuman(M)) // Any location
 		if(iscultist(M))
+			//[INF]
+			var/mob/living/carbon/human/H = M
+			for(var/datum/active_effect/cult_tattoo/unholy/tattoo in H.active_effects)
+				if(istype(tattoo))
+					return
+			//[/INF]
 			if(prob(10))
 				GLOB.cult.offer_uncult(M)
 			if(prob(2))
@@ -174,7 +180,7 @@
 	if(!. && href_list["deconvert"])
 		var/mob/living/carbon/C = locate(href_list["deconvert"])
 		if(C.mind)
-			GLOB.godcult.remove_antagonist(C.mind,1)
+			GLOB.cult.remove_antagonist(C.mind,1) //INF, was GLOB.godcult.remove_antagonist(C.mind,1)
 
 /datum/reagent/water/holywater/touch_turf(var/turf/T)
 	if(volume >= 5)
