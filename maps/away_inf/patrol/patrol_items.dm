@@ -27,6 +27,9 @@
 /obj/item/clothing/under/solgov/utility/fleet/command/pilot/away_solpatrol
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/specialty/pilot, /obj/item/clothing/accessory/solgov/rank/fleet/officer/o2, /obj/item/clothing/accessory/solgov/fleet_patch/third)
 
+/obj/item/clothing/under/solgov/utility/fleet/command/pilot2/away_solpatrol
+	starting_accessories = list(/obj/item/clothing/accessory/solgov/specialty/pilot, /obj/item/clothing/accessory/solgov/rank/fleet/officer, /obj/item/clothing/accessory/solgov/fleet_patch/third)
+
 /obj/item/clothing/under/solgov/utility/fleet/engineering/away_solpatrol
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/engineering/fleet, /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e4, /obj/item/clothing/accessory/solgov/fleet_patch/third)
 

@@ -8,18 +8,22 @@
 	descriptor = "SCGF Patrol Ship"
 	map = "Patrol Ship"
 	crew_jobs = list(
-		/datum/job/submap/patrol,
 		/datum/job/submap/patrol/pilot,
+		/datum/job/submap/patrol,
+		/datum/job/submap/patrol/pilot2,
 		/datum/job/submap/patrol/corpsman,
 		/datum/job/submap/patrol/engineer
 	)
 	call_webhook = WEBHOOK_SUBMAP_LOADED_SOL
 
 /obj/effect/submap_landmark/spawnpoint/away_patrol
-	name = "Sailor"
+	name = "Rifleman"
 	movable_flags = MOVABLE_FLAG_EFFECTMOVE
 
 /obj/effect/submap_landmark/spawnpoint/away_patrol/pilot
+	name = "Sub-Lieutenant"
+
+/obj/effect/submap_landmark/spawnpoint/away_patrol/pilot2
 	name = "Pilot"
 
 /obj/effect/submap_landmark/spawnpoint/away_patrol/corpsman
@@ -59,7 +63,7 @@
  */
 
 /datum/job/submap/patrol
-	title = "Sailor"
+	title = "Rifleman"
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/patrol/crewman
 	supervisors = "пилот, ваш офицер"
@@ -78,10 +82,27 @@
 	access = list(access_away_patrol)
 
 /datum/job/submap/patrol/pilot
-	title = "Pilot"
+	title = "Sub-Lieutenant"
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/patrol/pilot
 	supervisors = "коммандование 3-го флота ЦПСС"
+	loadout_allowed = FALSE
+	info = "Вы просыпаетесь и выходите из криосна, ощущая прохладный воздух на своём лице, а также лёгкую тошноту. \
+	Являясь одним из членов экипажа патрульного шаттла 3 флота ЦПСС, ваша задача состоит в патруле и разведке данного сектора. \
+	По данным бортового компьютера, поступал неизвестный сигнал о нападении воксов в этом регионе - возможно, потребуется подробная \
+	разведка."
+	min_skill = list(SKILL_COMBAT  = SKILL_BASIC,
+					 SKILL_WEAPONS = SKILL_BASIC,
+					 SKILL_HAULING = SKILL_BASIC,
+					 SKILL_MEDICAL = SKILL_BASIC,
+					 SKILL_PILOT = SKILL_ADEPT,
+					 SKILL_EVA = SKILL_BASIC)
+
+/datum/job/submap/patrol/pilot2
+	title = "Pilot"
+	total_positions = 1
+	outfit_type = /decl/hierarchy/outfit/job/patrol/pilot2
+	supervisors = "пилот, ваш офицер"
 	loadout_allowed = FALSE
 	info = "Вы просыпаетесь и выходите из криосна, ощущая прохладный воздух на своём лице, а также лёгкую тошноту. \
 	Являясь одним из членов экипажа патрульного шаттла 3 флота ЦПСС, ваша задача состоит в патруле и разведке данного сектора. \
@@ -150,6 +171,7 @@
 	id_type = /obj/item/weapon/card/id/awaypatrol
 	id_slot = slot_wear_id
 	pda_type = null
+	belt = /obj/item/weapon/gun/projectile/pistol/military
 	back = /obj/item/weapon/storage/backpack/rucksack/navy
 	backpack_contents = list(/obj/random/mre)
 	flags = OUTFIT_EXTENDED_SURVIVAL
@@ -169,8 +191,13 @@
 
 
 /decl/hierarchy/outfit/job/patrol/pilot
-	name = PATROL_OUTFIT_JOB_NAME("Pilot")
+	name = PATROL_OUTFIT_JOB_NAME("Sub-Lieutenant")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/command/pilot/away_solpatrol
+	id_type = /obj/item/weapon/card/id/awaypatrol/captain
+
+/decl/hierarchy/outfit/job/patrol/pilot2
+	name = PATROL_OUTFIT_JOB_NAME("Pilot")
+	uniform = /obj/item/clothing/under/solgov/utility/fleet/command/pilot2/away_solpatrol
 	id_type = /obj/item/weapon/card/id/awaypatrol/captain
 
 #undef PATROL_OUTFIT_JOB_NAME
