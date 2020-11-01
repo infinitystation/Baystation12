@@ -42,10 +42,10 @@
 	hud_list[LIFE_HUD]	      = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudhealthy")
 	hud_list[ID_HUD]          = new /image/hud_overlay(GLOB.using_map.id_hud_icons, src, "hudunknown")
 	hud_list[WANTED_HUD]      = new /image/hud_overlay('infinity/icons/mob/hud.dmi', src, "hudblank") //INF, was 'icons/mob/hud.dmi'
-	hud_list[IMPLOYAL_HUD]    = new /image/hud_overlay('infinity/icons/mob/hud.dmi', src, "hudblank") //INF, was 'icons/mob/hud.dmi'
+	hud_list[IMPLOYAL_HUD]    = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
 	hud_list[IMPCHEM_HUD]     = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
 	hud_list[IMPTRACK_HUD]    = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
-	hud_list[SPECIALROLE_HUD] = new /image/hud_overlay('infinity/icons/mob/hud.dmi', src, "hudblank") //INF, was 'icons/mob/hud.dmi'
+	hud_list[SPECIALROLE_HUD] = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
 	hud_list[STATUS_HUD_OOC]  = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudhealthy")
 
 	GLOB.human_mob_list |= src
@@ -751,9 +751,9 @@ GLOBAL_LIST_EMPTY(compatable_genomes_owners)
 		if(stomach.ingested.total_volume)
 			stomach.ingested.trans_to_holder(D.reagents, 15)
 		return
-
+			
 	var/turf/location = loc
-
+	
 	visible_message(SPAN_DANGER("\The [src] стошнило!"),SPAN_DANGER("Вас стошнило!"))
 	playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 	if(istype(location, /turf/simulated))
@@ -1639,14 +1639,6 @@ GLOBAL_LIST_EMPTY(compatable_genomes_owners)
 /mob/living/carbon/human/can_feel_pain(var/obj/item/organ/check_organ)
 	if(isSynthetic())
 		return 0
-
-    //[INF]
-
-	if(is_painless())
-		return 0
-
-    //[/INF]
-
 	if(check_organ)
 		if(!istype(check_organ))
 			return 0

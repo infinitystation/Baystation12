@@ -16,14 +16,14 @@ meteor_act
 		//IFN
 
 	var/damage_mult = list(
-		BP_HEAD = 1,
-		BP_CHEST = 1,
-		BP_GROIN = 0.9,
-		BP_L_LEG = 0.7,
-		BP_R_LEG = 0.7,
-		BP_L_ARM = 0.7,
-		BP_R_ARM = 0.7,
-		BP_L_HAND = 0.3,
+		BP_HEAD = 1, 
+		BP_CHEST = 1, 
+		BP_GROIN = 0.9, 
+		BP_L_LEG = 0.7, 
+		BP_R_LEG = 0.7, 
+		BP_L_ARM = 0.7, 
+		BP_R_ARM = 0.7, 
+		BP_L_HAND = 0.3, 
 		BP_R_HAND = 0.3,
 		BP_L_FOOT = 0.3,
 		BP_R_FOOT = 0.3)
@@ -38,13 +38,6 @@ meteor_act
 		else
 			P.on_hit(src, 100, def_zone)
 			return 100
-
-	//[INF]
-
-	for(var/datum/active_effect/effect in active_effects)
-		effect.bullet_act(P, def_zone)
-
-	//[INF]
 
 	var/blocked = ..(P, def_zone)
 

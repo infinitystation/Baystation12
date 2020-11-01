@@ -20,13 +20,6 @@
 	if(istype(G) && G.Touch(A,1))
 		return
 
-	//[INF]
-
-	for(var/datum/active_effect/effect in active_effects)
-		effect.attack_hand(A)
-
-	//[/INF]
-
 	A.attack_hand(src)
 
 /atom/proc/attack_hand(mob/user as mob)

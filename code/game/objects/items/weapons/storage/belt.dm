@@ -429,13 +429,13 @@
 
 /obj/item/weapon/storage/belt/soulstone/full/New()
 	..()
-	new /obj/item/device/soulstone/heretic/shard(src) //INF, was new /obj/item/device/soulstone(src)
-	new /obj/item/device/soulstone/heretic/shard(src) //INF, was new /obj/item/device/soulstone(src)
-	new /obj/item/device/soulstone/heretic/shard(src) //INF, was new /obj/item/device/soulstone(src)
-	new /obj/item/device/soulstone/heretic/shard(src) //INF, was new /obj/item/device/soulstone(src)
-	new /obj/item/device/soulstone/heretic/shard(src) //INF, was new /obj/item/device/soulstone(src)
-	new /obj/item/device/soulstone/heretic/shard(src) //INF, was new /obj/item/device/soulstone(src)
-	new /obj/item/device/soulstone/heretic/shard(src) //INF, was new /obj/item/device/soulstone(src)
+	new /obj/item/device/soulstone(src)
+	new /obj/item/device/soulstone(src)
+	new /obj/item/device/soulstone(src)
+	new /obj/item/device/soulstone(src)
+	new /obj/item/device/soulstone(src)
+	new /obj/item/device/soulstone(src)
+	new /obj/item/device/soulstone(src)
 
 
 /obj/item/weapon/storage/belt/champion

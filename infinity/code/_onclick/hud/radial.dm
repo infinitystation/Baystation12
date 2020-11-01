@@ -256,15 +256,6 @@ GLOBAL_LIST_EMPTY(radial_menus)
 		current_page = Wrap(current_page + 1,1,pages+1)
 		update_screen_objects()
 
-/datum/radial_menu/proc/set_icons(var/icon)
-	close_button.icon = icon
-	close_button.update_icon()
-	for(var/obj/screen/element in elements)
-		element.icon = icon
-		element.update_icon()
-
-	update_screen_objects()
-
 /datum/radial_menu/proc/show_to(mob/M)
 	if(current_user)
 		hide()
@@ -301,7 +292,7 @@ GLOBAL_LIST_EMPTY(radial_menus)
 	Choices should be a list where list keys are movables or text used for element names and return value
 	and list values are movables/icons/images used for element icons
 */
-/proc/show_radial_menu(mob/user, atom/anchor, list/choices, uniqueid, radius, datum/callback/custom_check, require_near = FALSE, menu_icon = 'infinity/icons/mob/radial/menu.dmi')
+/proc/show_radial_menu(mob/user, atom/anchor, list/choices, uniqueid, radius, datum/callback/custom_check, require_near = FALSE)
 	if(!user || !anchor || !length(choices))
 		return
 	if(!uniqueid)
@@ -319,7 +310,6 @@ GLOBAL_LIST_EMPTY(radial_menus)
 	menu.anchor = anchor
 	menu.check_screen_border(user) //Do what's needed to make it look good near borders or on hud
 	menu.set_choices(choices)
-	menu.set_icons(menu_icon)
 	menu.show_to(user)
 	menu.wait(user, anchor, require_near)
 	var/answer = menu.selected_choice

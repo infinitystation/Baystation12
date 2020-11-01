@@ -1,6 +1,6 @@
 /obj/screen/movable/ability_master
 	name = "Abilities"
-	icon = 'infinity/icons/mob/screen_spells.dmi' //INF, was icon = 'icons/mob/screen_spells.dmi'
+	icon = 'icons/mob/screen_spells.dmi'
 	icon_state = "grey_spell_ready"
 	var/list/obj/screen/ability/ability_objects = list()
 	var/list/obj/screen/ability/spell_objects = list()
@@ -170,7 +170,7 @@
 //This is what you click to do things//
 ///////////////////////////////////////
 /obj/screen/ability
-	icon = 'infinity/icons/mob/screen_spells.dmi' //INF, was icon = 'icons/mob/screen_spells.dmi'
+	icon = 'icons/mob/screen_spells.dmi'
 	icon_state = "grey_spell_base"
 	maptext_x = 3
 	var/background_base_state = "grey"
@@ -341,13 +341,9 @@
 
 	if(!spell.override_base) //if it's not set, we do basic checks
 		if(spell.spell_flags & CONSTRUCT_CHECK)
-			if(spell.spell_flags & HOLY_CHECK) //INF
-				A.spell_base = "holy" //INF
-			else //INF
-				A.spell_base = "const" //construct spells
+			A.spell_base = "const" //construct spells
 		else
 			A.spell_base = "wiz" //wizard spells
-
 	else
 		A.spell_base = spell.override_base
 	A.update_charge(1)

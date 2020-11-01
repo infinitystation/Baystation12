@@ -45,10 +45,6 @@
 		return FALSE
 	if(H.reagents.has_reagent(/datum/reagent/mindbreaker))
 		brainwashing = 1
-    //[INF]
-	if(H.is_loyalty_implanted(H))
-		brainwashing = 0 //NOPE
-    //[/INF]
 	var/msg = get_instructions()
 	to_chat(M, msg)
 	if(M.mind)
@@ -107,7 +103,7 @@
 	. = ..()
 
 /obj/item/weapon/implant/imprinting/can_implant(mob/M, mob/user, target_zone)
-	var/mob/living/carbon/human/H = M
+	var/mob/living/carbon/human/H = M	
 	if(istype(H))
 		var/obj/item/organ/internal/B = H.internal_organs_by_name[BP_BRAIN]
 		if(!B || H.isSynthetic())

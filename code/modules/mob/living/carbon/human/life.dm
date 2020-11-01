@@ -86,7 +86,6 @@
 		if(!client && !mind)
 			species.handle_npc(src)
 
-		handle_effects() //INF
 
 	if(!handle_some_updates())
 		return											//We go ahead and process them 5 times for HUD images and other stuff though.
@@ -1123,19 +1122,6 @@
 
 	if(burn_temperature < 1)
 		return
-
-	//[INF]
-
-	var/effect_nofire = FALSE
-
-	for(var/datum/active_effect/effect in active_effects)
-		if(effect.handle_fire())
-			effect_nofire = TRUE
-
-	if(effect_nofire)
-		return 0
-
-	//[/INF]
 
 	for(var/obj/item/organ/external/E in organs)
 		if(!(E.body_part & protected_limbs) && prob(20))

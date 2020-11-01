@@ -972,7 +972,7 @@ var/global/list/common_tools = list(
 		. = TRUE
 	if(locate(/obj/structure/table, T))
 		. = TRUE
-	if(locate(/obj/effect/rune, T)) //INF, was if(locate(/obj/effect/rune/, T))
+	if(locate(/obj/effect/rune/, T))
 		. = TRUE
 
 	if(M == user)
