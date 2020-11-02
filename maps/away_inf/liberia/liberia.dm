@@ -42,3 +42,5 @@
 	_input_on = TRUE
 	_output_on = TRUE
 	_fully_charged = TRUE
+
+#undef WEBHOOK_SUBMAP_LOADED_LIBERIA

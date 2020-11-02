@@ -1,5 +1,3 @@
-#define WEBHOOK_SUBMAP_LOADED_LIBERIA "webhook_submap_liberia"
-
 // Submap datum and archetype.
 /decl/webhook/submap_loaded/liberia
 	id = WEBHOOK_SUBMAP_LOADED_LIBERIA
@@ -128,5 +126,3 @@
 /obj/item/weapon/card/id/liberia/merchant/leader
 	desc = "An identification card issued to Merchant Leaders, indicating their right to sell and buy goods."
 	job_access_type = /datum/job/submap/merchant
-
-#undef WEBHOOK_SUBMAP_LOADED_LIBERIA
