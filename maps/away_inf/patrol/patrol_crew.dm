@@ -9,8 +9,8 @@
 	map = "Patrol Ship"
 	crew_jobs = list(
 		/datum/job/submap/patrol/pilot,
-		/datum/job/submap/patrol,
 		/datum/job/submap/patrol/pilot2,
+		/datum/job/submap/patrol,
 		/datum/job/submap/patrol/corpsman,
 		/datum/job/submap/patrol/engineer
 	)

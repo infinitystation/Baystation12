@@ -185,7 +185,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/airless,
-/area/space)
+/area/ship/patrol/engine)
 "aw" = (
 /obj/machinery/door/airlock/glass/medical/mortus,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -204,10 +204,6 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/white/monotile,
 /area/ship/patrol/medbay)
-"ax" = (
-/obj/effect/paint/red,
-/turf/simulated/wall/r_titanium,
-/area/space)
 "ay" = (
 /obj/effect/paint/red,
 /turf/simulated/wall/r_titanium,
@@ -1076,7 +1072,7 @@
 	dir = 5
 	},
 /turf/simulated/floor,
-/area/ship/patrol/armory)
+/area/ship/patrol/storage)
 "cF" = (
 /obj/effect/floor_decal/techfloor{
 	icon_state = "techfloor_edges";
@@ -1195,7 +1191,7 @@
 	},
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/techfloor,
-/area/ship/patrol/armory)
+/area/ship/patrol/storage)
 "du" = (
 /obj/machinery/door/blast/regular/open,
 /obj/structure/cable/cyan{
@@ -1219,7 +1215,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/catwalk_plated/dark,
 /obj/effect/floor_decal/industrial/hatch/grey,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/patrol/hallway)
@@ -2043,7 +2038,6 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/effect/catwalk_plated/dark,
 /obj/effect/floor_decal/industrial/hatch/grey,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/patrol/cockpit)
@@ -2081,7 +2075,7 @@
 	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/ship/patrol/armory)
+/area/ship/patrol/storage)
 "if" = (
 /obj/effect/floor_decal/borderfloor{
 	icon_state = "borderfloor_white";
@@ -2686,7 +2680,6 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/effect/catwalk_plated/dark,
 /obj/machinery/door/firedoor/autoset,
 /obj/effect/floor_decal/industrial/hatch/grey,
 /obj/machinery/door/blast/regular/open{
@@ -2714,6 +2707,11 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/medbay)
+"wP" = (
+/obj/effect/landmark/map_data,
+/obj/effect/overmap/visitable/sector/scgpatrol,
+/turf/space,
+/area/space)
 "xy" = (
 /obj/effect/floor_decal/techfloor{
 	icon_state = "techfloor_edges";
@@ -21869,12 +21867,12 @@ ZK
 ZK
 ak
 av
-ax
+ay
 aa
 aa
 aa
-ax
-ax
+ay
+ay
 aJ
 bn
 bn
@@ -23087,11 +23085,11 @@ OA
 bA
 AQ
 SY
-Gd
+dE
 hQ
 cE
 dj
-Gd
+dE
 LS
 aa
 aa
@@ -27325,7 +27323,7 @@ aa
 aa
 HP
 aa
-aa
+wP
 aa
 MQ
 aa

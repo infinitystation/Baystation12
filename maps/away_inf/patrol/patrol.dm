@@ -13,7 +13,7 @@
 	description = "A saviours for crew."
 	prefix = "maps/away_inf/"
 	suffixes = list("patrol/patrol.dmm")
-	cost = 1000
+	cost = 0.5
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/scgpatrol)
 
 /obj/effect/overmap/visitable/sector/scgpatrol

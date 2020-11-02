@@ -8,13 +8,15 @@
 //	color = "#990000"
 	fore_dir = EAST
 	vessel_mass = 400
+	multiz = 1
 
 /datum/shuttle/autodock/overmap/scgpatrol
 	name = "Sol Patrol Shuttle"
 	warmup_time = 5
 	current_location = "nav_scgpatrol_start"
 	range = 2
-	shuttle_area = list(/area/ship/patrol/armory,
+	shuttle_area = list(/area/ship/patrol,
+						/area/ship/patrol/armory,
 						/area/ship/patrol/crew,
 						/area/ship/patrol/medbay,
 						/area/ship/patrol/engine,
