@@ -18,6 +18,7 @@
 /obj/item/music_player/radio/custom_tape/redknighthero/verb/open()
 	set name = "Toggle Open"
 	set category = "Object"
+	set src in view(1)
 
 	if(usr.incapacitated())
 		return
@@ -29,3 +30,10 @@
 			icon_state = "redknight_grammy_off"
 	else
 		icon_state = "redknight_grammy"
+
+/obj/item/music_player/radio/custom_tape/redknighthero/on_update_icon()
+	if(icon_state != "redknight_grammy")
+		if(tape && (mode == (1 || 2)))
+			icon_state = "redknight_grammy_on"
+		else
+			icon_state = "redknight_grammy_off"

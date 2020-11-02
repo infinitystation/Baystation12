@@ -44,26 +44,16 @@
 		)
 	trade_blacklisted = TRUE
 
-/obj/item/clothing/head/helmet/riot/fsb
+/obj/item/clothing/head/helmet/nt/fsb
 	name = "altyn"
-	desc = "Green military helmet with visor"
+	desc = "Head-covering airtight helmet. It appears that it is holded together by some magnetic mechanism."
 	icon = CUSTOM_ITEM_OBJ
 	item_icons = list(slot_head_str = CUSTOM_ITEM_MOB)
 	icon_state = "fsb_helmet"
-	body_parts_covered = HEAD
-	armor = list(
-		melee = ARMOR_MELEE_RESISTANT,
-		bullet = ARMOR_BALLISTIC_PISTOL,
-		laser = ARMOR_LASER_HANDGUNS,
-		energy = ARMOR_ENERGY_SMALL,
-		bomb = ARMOR_BOMB_PADDED
-		)
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
+	item_flags = ITEM_FLAG_AIRTIGHT|ITEM_FLAG_THICKMATERIAL
+	body_parts_covered = FACE|EYES|HEAD
 	trade_blacklisted = TRUE
-
-/obj/item/custkit/fsb_helmet_mod
-	name = "helmet customization kit"
-	input = /obj/item/clothing/head/helmet/nt
-	output = /obj/item/clothing/head/helmet/riot/fsb
 
 /obj/item/weapon/storage/backpack/baul
 	name = "baul"
@@ -82,6 +72,6 @@
 		/obj/item/clothing/suit/armor/pcarrier/fsb,
 		/obj/item/clothing/gloves/thick/fsb,
 		/obj/item/clothing/shoes/dutyboots,
-		/obj/item/custkit/fsb_helmet_mod
+		/obj/item/clothing/head/helmet/nt/fsb
 		)
 	trade_blacklisted = TRUE

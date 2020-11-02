@@ -67,6 +67,15 @@ var/list/ai_verbs_default = list(
 	var/holo_icon_malf = FALSE // for new hologram system
 	var/obj/item/device/multitool/aiMulti = null
 
+	//[inf]
+	speech_sounds = list(
+		'infinity/sound/voice/robot_talk_heavy_1.ogg',
+		'infinity/sound/voice/robot_talk_heavy_2.ogg',
+		'infinity/sound/voice/robot_talk_heavy_3.ogg',
+		'infinity/sound/voice/robot_talk_heavy_4.ogg'
+	)
+	//[/inf]
+
 	silicon_camera = /obj/item/device/camera/siliconcam/ai_camera
 	silicon_radio = /obj/item/device/radio/headset/heads/ai_integrated
 	var/obj/item/device/radio/headset/heads/ai_integrated/ai_radio

@@ -26,6 +26,15 @@
 	var/module_category = ROBOT_MODULE_TYPE_GROUNDED
 	var/dismantle_type = /obj/item/robot_parts/robot_suit
 
+	//[inf]
+	speech_sounds = list(
+		'infinity/sound/voice/robot_talk_heavy_1.ogg',
+		'infinity/sound/voice/robot_talk_heavy_2.ogg',
+		'infinity/sound/voice/robot_talk_heavy_3.ogg',
+		'infinity/sound/voice/robot_talk_heavy_4.ogg'
+	)
+	//[/inf]
+
 //Icon stuff
 
 	var/static/list/eye_overlays

@@ -228,6 +228,15 @@
 /obj/item/clothing/head/helmet/space/void/engineering/alt
 	name = "reinforced engineering voidsuit helmet"
 	desc = "A heavy, radiation-shielded voidsuit helmet with a surprisingly comfortable interior."
+//[INF]
+	sprite_sheets = list(
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi',
+		SPECIES_EROSAN = 'infinity/icons/mob/species/erosan/helmet.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi',
+		SPECIES_UNATHI = 'infinity/icons/mob/species/unathi/onmob_head_unathi.dmi',
+		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_head_skrell.dmi',
+		)
+//[/INF]
 	icon_state = "rig0-engineeringalt"
 	item_state = "engalt_helm"
 	armor = list(
@@ -243,6 +252,15 @@
 /obj/item/clothing/suit/space/void/engineering/alt
 	name = "reinforced engineering voidsuit"
 	desc = "A bulky industrial voidsuit. It's a few generations old, but a reliable design and radiation shielding make up for the lack of climate control."
+//[INF]
+	sprite_sheets = list(
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi',
+		SPECIES_EROSAN = 'infinity/icons/mob/species/erosan/suit.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_suit_resomi.dmi',
+		SPECIES_UNATHI = 'infinity/icons/mob/species/unathi/onmob_suit_unathi.dmi',
+		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_suit_skrell.dmi',
+		)
+//[/INF]
 	icon_state = "rig-engineeringalt"
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
@@ -317,6 +335,15 @@
 /obj/item/clothing/head/helmet/space/void/security/alt
 //INF	name = "riot security voidsuit helmet"
 	desc = "A somewhat tacky voidsuit helmet, a fact mitigated by heavy armor plating."
+//[INF]
+	sprite_sheets = list(
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi',
+		SPECIES_EROSAN = 'infinity/icons/mob/species/erosan/helmet.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi',
+		SPECIES_UNATHI = 'infinity/icons/mob/species/unathi/onmob_head_unathi.dmi',
+		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_head_skrell.dmi',
+		)
+//[/INF]
 	icon_state = "rig0-secalt"
 	item_state = "secalt_helm"
 	armor = list(
@@ -331,6 +358,15 @@
 //INF	name = "riot security voidsuit"
 	icon_state = "rig-secalt"
 	desc = "A heavily armored voidsuit, designed to intimidate people who find black intimidating. Surprisingly slimming."
+//[INF]
+	sprite_sheets = list(
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi',
+		SPECIES_EROSAN = 'infinity/icons/mob/species/erosan/suit.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_suit_resomi.dmi',
+		SPECIES_UNATHI = 'infinity/icons/mob/species/unathi/onmob_suit_unathi.dmi',
+		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_suit_skrell.dmi',
+		)
+//[/INF]
 	armor = list(
 		melee = ARMOR_MELEE_KNIVES, //INF WAS ARMOR_MELEE_VERY_HIGH
 		bullet = ARMOR_BALLISTIC_PISTOL, //INF WAS ARMOR_BALLISTIC_SMALL
@@ -348,6 +384,15 @@
 /obj/item/clothing/head/helmet/space/void/atmos/alt
 	name = "heavy duty atmospherics voidsuit helmet"
 	desc = "A voidsuit helmet plated with an expensive heat and radiation resistant ceramic."
+//[INF]
+	sprite_sheets = list(
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi',
+		SPECIES_EROSAN = 'infinity/icons/mob/species/erosan/helmet.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi',
+		SPECIES_UNATHI = 'infinity/icons/mob/species/unathi/onmob_head_unathi.dmi',
+		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_head_skrell.dmi',
+		)
+//[/INF]
 	icon_state = "rig0-atmosalt"
 	item_state = "atmosalt_helm"
 	light_overlay = "hardhat_light"
@@ -355,6 +400,15 @@
 /obj/item/clothing/suit/space/void/atmos/alt
 	name = "heavy duty atmos voidsuit"
 	desc = "An expensive voidsuit, rated to withstand extreme heat and even minor radiation without exceeding room temperature within."
+	//[INF]
+	sprite_sheets = list(
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi',
+		SPECIES_EROSAN = 'infinity/icons/mob/species/erosan/suit.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_suit_resomi.dmi',
+		SPECIES_UNATHI = 'infinity/icons/mob/species/unathi/onmob_suit_unathi.dmi',
+		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_suit_skrell.dmi',
+		)
+//[/INF]
 	icon_state = "rig-atmosalt"
 
 /obj/item/clothing/suit/space/void/atmos/alt/prepared

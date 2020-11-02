@@ -1,0 +1,9 @@
+{
+	"ckey"				:	"Asriel15",
+	"character_name"	:	"Reiko Mikuru",
+	"item_name"			:	"hand camera",
+	"item_icon_state"	:	"camcorder",
+	"item_desc"			:	"Somewhat advanced hand-held camera, with tag 'REIKO' embedded. Reminds of the old horror films. It appears to have a memory cartridge installed for keeping recordings.",
+	"item_path"			:	"/obj/item/device/camera/tvcamera",
+	"additional_data"	:	{"slot_flags":null}
+}

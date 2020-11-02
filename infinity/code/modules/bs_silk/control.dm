@@ -14,11 +14,10 @@ GLOBAL_LIST_EMPTY(hubs_id)
 
 	construct_state = /decl/machine_construction/default/panel_closed
 	uncreated_component_parts = null
-	var/tmp/list/audibleMSGqueue = list()
 
 /obj/machinery/bs_snare_hub/proc/set_id_tag(nId)
 	if(nId in GLOB.hubs_id)
-		try2audibleMSG(SPAN_WARNING("ERROR, unable to set on this bluespace highway another hub use this highway"))
+		audible_message(SPAN_WARNING("ERROR, unable to set on this bluespace highway another hub use \"[nId]\" highway."))
 		return
 	else
 		GLOB.hubs_id.Remove(id_tag)
@@ -27,7 +26,8 @@ GLOBAL_LIST_EMPTY(hubs_id)
 
 /obj/machinery/bs_snare_hub/attackby(obj/item/I, mob/user)
 	. = ..()
-	if(!(stat & (NOPOWER|BROKEN))) if(isMultitool(I)) set_id_tag(input("Enter HUB id", "HUB ID", id_tag))
+	if(!(stat & (NOPOWER|BROKEN)) && isMultitool(I))
+		set_id_tag(input("Enter HUB id", "HUB ID", id_tag))
 
 /obj/machinery/bs_snare_hub/proc/get_snaring()
 	. = list()
@@ -35,34 +35,16 @@ GLOBAL_LIST_EMPTY(hubs_id)
 		var/obj/item/clothing/U = M?.w_uniform
 		if(length(U?.accessories))
 			for(var/obj/item/clothing/accessory/bs_silk/snare in U.accessories)
-				if(snare?.id_tag == snare_id) . += M
+				if(snare?.id_tag == snare_id)
+					. += M
 
 /obj/machinery/bs_snare_hub/proc/teleport_mobs()
 	if(!(stat & (NOPOWER|BROKEN)))
 		var/list/mobs = get_snaring()
-		for(var/mob/living/carbon/human/M in mobs) spawn(0) teleport_back(M)
-
+		for(var/mob/living/carbon/human/M in mobs)
+			spawn(0)
+				animated_teleportation(M, get_turf(src))
 		return mobs
-
-/obj/machinery/bs_snare_hub/proc/try2audibleMSG(msg)
-	if(!audibleMSGqueue[msg])
-		audibleMSGqueue[msg] = TRUE
-		audible_message(get_turf(src), msg)
-		spawn(1 SECOND) audibleMSGqueue[msg] = null
-/obj/machinery/bs_snare_hub/proc/teleport_back(mob/target)
-	try2audibleMSG(SPAN_WARNING("\icon[src] [src] states \"Attention! Moving target to bluespace.\""))
-	to_chat(target, SPAN_WARNING("You feel like something pull you in bluespace."))
-	var/obj/effect/temporary/A = new(get_turf(target), 24.5, animation_icon, back_animation)
-	target.dir = 2
-	target.forceMove(A)
-	spawn(23)
-		try2audibleMSG(SPAN_WARNING("\icon[src] [src] states \"Target on the way.\""))
-		target.forceMove(src)
-		target.dir = SOUTH
-		new /obj/effect/temporary(get_turf(src), 26.5, animation_icon, onhub_animation)
-		spawn(24)
-			target.forceMove(loc)
-			try2audibleMSG(SPAN_WARNING("\icon[src] [src] states \"Target arrived.\""))
 
 /obj/machinery/computer/bs_snare_control
 	name = "bluespace snare control"
