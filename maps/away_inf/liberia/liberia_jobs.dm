@@ -20,6 +20,7 @@
 	department = "Civilian"
 	department_flag = CIV
 
+	info = "Вы свободные торговцы, которых в поисках выгоды занесло в неизведанные дали. Путешествуйте, торгуйте, make profit!"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "невидимой рукой рынка"
@@ -49,11 +50,23 @@
 	H.StoreMemory("<b>Ответы на фразы</b>: [syndicate_code_response]", /decl/memory_options/system)
 	return ..()
 
+/datum/job/submap/merchant_trainee/is_position_available()
+	. = ..()
+	if(. && requires_supervisor)
+		for(var/mob/M in GLOB.player_list)
+			if(!M.client || !M.mind || !M.mind.assigned_job || M.mind.assigned_job.title != requires_supervisor)
+				continue
+			var/datum/job/submap/merchant/merchant_job = M.mind.assigned_job
+			if(istype(merchant_job) && merchant_job.owner == owner)
+				return TRUE
+		return FALSE
+
 /datum/job/submap/merchant_trainee
 	title = "Merchant Assistant"
 	department = "Civilian"
 	department_flag = CIV
 
+	var/requires_supervisor = "Merchant"
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "Торговцем"

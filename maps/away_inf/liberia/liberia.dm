@@ -12,6 +12,7 @@
 	prefix = "maps/away_inf/" //Префикс
 	suffixes = list("liberia/liberia.dmm") //Суффикс
 	cost = 0.5 //Шанса появления
+	template_flags = TEMPLATE_FLAG_SPAWN_GUARANTEED
 	spawn_weight = 50 //HABITABLE SHIPS SPAWN
 	//Инициализация шаттлов
 	shuttles_to_initialise = list(
@@ -34,3 +35,10 @@
 /obj/effect/submap_landmark/joinable_submap/liberia
 	name = "Liberia"
 	archetype = /decl/submap_archetype/liberia
+
+/obj/machinery/power/smes/buildable/preset/liberia
+	_input_maxed = TRUE
+	_output_maxed = TRUE
+	_input_on = TRUE
+	_output_on = TRUE
+	_fully_charged = TRUE
