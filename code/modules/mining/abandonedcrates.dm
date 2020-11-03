@@ -101,7 +101,7 @@
 		if(89, 90)
 			new/obj/item/organ/internal/heart(src)
 		if(91)
-			new/obj/item/device/soulstone/heretic/shard(src) //INF, was new/obj/item/device/soulstone(src)
+			new/obj/item/device/soulstone(src)
 		if(92)
 			new/obj/item/weapon/material/sword/katana(src)
 		if(93)

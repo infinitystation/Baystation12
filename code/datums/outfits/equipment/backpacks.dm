@@ -39,6 +39,12 @@
 	name = "Pocketbook"
 	path = /obj/item/weapon/storage/backpack/satchel/pocketbook
 	flags = BACKPACK_HAS_TYPE_SELECTION
+//[INF]
+/decl/backpack_outfit/dufflebag
+	name = "Duffle Bag"
+	path = /obj/item/weapon/storage/backpack/dufflebag
+//[/INF]
+
 
 /* Code */
 /decl/backpack_outfit

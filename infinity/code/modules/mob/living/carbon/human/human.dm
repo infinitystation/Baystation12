@@ -197,15 +197,3 @@
 	var/obj/item/organ/internal/xeno/plasmavessel/P = internal_organs_by_name[BP_PLASMA]
 	if(P)
 		stat(null, "Phoron Stored: [P.stored_plasma]/[P.max_plasma]")
-
-/mob/living/carbon/human
-	var/list/active_effects = list()
-
-/mob/living/carbon/human/proc/handle_effects()
-	for(var/datum/active_effect/effect in active_effects)
-		effect.handle_effect()
-
-/mob/living/carbon/human/proc/is_painless()
-	. = 0
-	for(var/datum/active_effect/effect in active_effects)
-		. = . || effect.no_pain()
