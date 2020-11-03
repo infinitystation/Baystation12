@@ -236,21 +236,6 @@
 
 //Merchant
 
-/datum/shuttle/autodock/ferry/merchant
-	name = "Merchant"
-	shuttle_area = /area/shuttle/merchant/home
-	waypoint_station = "nav_merchant_start"
-	waypoint_offsite = "nav_merchant_out"
-	dock_target = "merchant_ship_dock"
-	ceiling_type = /turf/simulated/floor/shuttle_ceiling
-	warmup_time = 7
-	knockdown = 0
-
-/obj/effect/shuttle_landmark/merchant/start
-	name = "Merchant Base"
-	landmark_tag = "nav_merchant_start"
-	docking_controller = "merchant_station_dock"
-
 /obj/effect/shuttle_landmark/merchant/out
 	name = "Docking Bay"
 	landmark_tag = "nav_merchant_out"
