@@ -12779,6 +12779,14 @@
 	},
 /turf/simulated/floor/plating,
 /area/quartermaster/hangar)
+"vR" = (
+/obj/structure/sign/warning/docking_area{
+	dir = 1;
+	icon_state = "securearea";
+	pixel_y = 0
+	},
+/turf/simulated/wall/r_wall/hull,
+/area/hallway/primary/thirddeck/center)
 "vS" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
@@ -27122,6 +27130,14 @@
 	},
 /turf/simulated/floor/plating,
 /area/security/sierra/dockcheck)
+"WQ" = (
+/obj/structure/sign/warning/docking_area{
+	dir = 1;
+	icon_state = "securearea";
+	pixel_y = 0
+	},
+/turf/simulated/wall/r_wall/hull,
+/area/maintenance/thirddeck/forestarboard)
 "WR" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -40768,7 +40784,7 @@ Is
 Is
 Is
 Is
-Is
+ab
 Is
 Is
 Is
@@ -41576,7 +41592,7 @@ Is
 Is
 Is
 Is
-ab
+Is
 Is
 Is
 Is
@@ -41787,8 +41803,8 @@ Is
 Is
 Is
 Is
-aj
-ax
+Is
+WQ
 ax
 ax
 Tc
@@ -43603,8 +43619,8 @@ Is
 Is
 Is
 Is
-aj
-aW
+Is
+vR
 aW
 aW
 aW
@@ -45413,7 +45429,7 @@ Is
 Is
 Is
 Is
-ab
+Is
 Is
 Is
 Is
@@ -46222,7 +46238,7 @@ Is
 Is
 Is
 Is
-Is
+ab
 Is
 Is
 Is
