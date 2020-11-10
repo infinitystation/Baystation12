@@ -1,3 +1,11 @@
+/obj/effect/paint_stripe
+	icon = 'infinity/icons/effects/effects.dmi'
+	icon_state = "stripe"
+
+/obj/effect/paint
+	icon = 'infinity/icons/effects/effects.dmi'
+	icon_state = "paint"
+
 /obj/effect/paint/hull
 	color = COLOR_HULL
 
