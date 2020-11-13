@@ -39,9 +39,9 @@
 	if(istype(backup))
 		if(user.skill_check(SKILL_DEVICES, SKILL_ADEPT))
 			if(find_dead_player(ownerckey, 1)) //So if owner of stack is still here..
-				to_chat(user, SPAN_NOTICE("The light on [src] is glowing green. Everything is allright."))
+				to_chat(user, SPAN_NOTICE("The light on [src] is glowing green."))
 			else
-				to_chat(user, SPAN_WARNING("The light on [src] is glowing green. You've just noticed something odd about it.. It's better to wait a while before using it."))
+				to_chat(user, SPAN_WARNING("The light on [src] is blinking yellow."))
 		else
 			to_chat(user, "The light on [src] is glowing green.")
 	else
@@ -107,17 +107,17 @@
 	backup.transfer_to(owner)
 	if(default_language) owner.default_language = default_language
 	owner.languages = languages.Copy()
-	to_chat(owner, SPAN_NOTICE("Ваше сознание медленно возвращается к вам.."))
+	to_chat(owner, SPAN_NOTICE("Г‚Г ГёГҐ Г±Г®Г§Г­Г Г­ГЁГҐ Г¬ГҐГ¤Г«ГҐГ­Г­Г® ГўГ®Г§ГўГ°Г Г№Г ГҐГІГ±Гї ГЄ ГўГ Г¬.."))
 
 //Preferences
 
 /datum/category_group/player_setup_category/lace
-	name = "Нейроузел"
+	name = "ГЌГҐГ©Г°Г®ГіГ§ГҐГ«"
 	sort_order = 9
 	category_item_type = /datum/category_item/player_setup_item/lace
 
 /datum/category_item/player_setup_item/lace
-	name = "Нейронный узел (Neural Stack)"
+	name = "ГЌГҐГ©Г°Г®Г­Г­Г»Г© ГіГ§ГҐГ« (Neural Stack)"
 	sort_order = 1
 
 /datum/preferences
@@ -131,17 +131,17 @@
 
 /datum/category_item/player_setup_item/lace/content()
 	. = list()
-	. += "<b>Наличие нейроузла: </b>"
+	. += "<b>ГЌГ Г«ГЁГ·ГЁГҐ Г­ГҐГ©Г°Г®ГіГ§Г«Г : </b>"
 
 	if(!pref.laced)
-		. += "<span class='linkOn'>Отсутствует</span>"
-		. += "<a href='?src=\ref[src];toggle_lace=1'>Присутствует</a>"
-		. += "<br>Ваш персонаж не имеет нейроузла."
+		. += "<span class='linkOn'>ГЋГІГ±ГіГІГ±ГІГўГіГҐГІ</span>"
+		. += "<a href='?src=\ref[src];toggle_lace=1'>ГЏГ°ГЁГ±ГіГІГ±ГІГўГіГҐГІ</a>"
+		. += "<br>Г‚Г Гё ГЇГҐГ°Г±Г®Г­Г Г¦ Г­ГҐ ГЁГ¬ГҐГҐГІ Г­ГҐГ©Г°Г®ГіГ§Г«Г ."
 		. += "<hr>"
 	else
-		. += "<a href='?src=\ref[src];toggle_lace=1'>Отсутствует</a>"
-		. += "<span class='linkOn'>Присутствует</span>"
-		. += "<br>Ваш персонаж имеет активный нейроузел."
+		. += "<a href='?src=\ref[src];toggle_lace=1'>ГЋГІГ±ГіГІГ±ГІГўГіГҐГІ</a>"
+		. += "<span class='linkOn'>ГЏГ°ГЁГ±ГіГІГ±ГІГўГіГҐГІ</span>"
+		. += "<br>Г‚Г Гё ГЇГҐГ°Г±Г®Г­Г Г¦ ГЁГ¬ГҐГҐГІ Г ГЄГІГЁГўГ­Г»Г© Г­ГҐГ©Г°Г®ГіГ§ГҐГ«."
 		. += "<hr>"
 
 	. = jointext(.,null)
@@ -155,7 +155,7 @@
 
 /mob/living/carbon/human/proc/create_stack()
 	internal_organs_by_name[BP_NSTACK] = new /obj/item/organ/internal/stack(src, 1)
-	to_chat(src, SPAN_NOTICE("Вы чувствуете небольшое головокружение от ощущения того, как нейроузел облегает ваш мозг."))
+	to_chat(src, SPAN_NOTICE("Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ Г­ГҐГЎГ®Г«ГјГёГ®ГҐ ГЈГ®Г«Г®ГўГ®ГЄГ°ГіГ¦ГҐГ­ГЁГҐ Г®ГІ Г®Г№ГіГ№ГҐГ­ГЁГї ГІГ®ГЈГ®, ГЄГ ГЄ Г­ГҐГ©Г°Г®ГіГ§ГҐГ« Г®ГЎГ«ГҐГЈГ ГҐГІ ГўГ Гё Г¬Г®Г§ГЈ."))
 
 /mob/new_player/create_character()
 	. = ..()
