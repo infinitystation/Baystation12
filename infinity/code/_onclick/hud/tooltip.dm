@@ -2,7 +2,7 @@
 	var/obj/screen/tooltip/tooltip
 
 /obj/screen/tooltip
-	icon = 'tooltip.dmi'
+	icon = 'infinity/icons/tooltip.dmi'
 	icon_state = "transparent"
 	screen_loc = "TOP, CENTER - 3"
 //	screen_loc = "TOP + 1, CENTER - 3"
@@ -10,6 +10,7 @@
 	maptext_width = 256
 	maptext_x = -16
 	var/active = FALSE
+	var/maptext_style = "text-shadow: 1px 1px 2px black; font-family: 'Small Fonts';"
 
 /obj/screen/tooltip/proc/set_state(new_state, type)
 	switch(type)
@@ -40,7 +41,7 @@
 /client/MouseEntered(atom/object, location, control, params)
 	if(tooltip && tooltip.active && GAME_STATE > RUNLEVEL_SETUP)
 		screen |= tooltip
-		tooltip.maptext = "<center style=\"text-shadow: 1px 1px 2px black;\">[object.name]</center>"
+		tooltip.maptext = "<center style=\"[tooltip.maptext_style]\">[object.name]</center>"
 
 /datum/client_preference/tooltip
 	description = "Show Tooltip"
