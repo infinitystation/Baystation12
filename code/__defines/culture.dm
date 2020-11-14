@@ -4,10 +4,10 @@
 #define TAG_RELIGION  "religion"
 
 #define ALL_CULTURAL_TAGS list( \
-	TAG_CULTURE =   "Culture", \
-	TAG_HOMEWORLD = "Residence", \
-	TAG_FACTION =   "Faction", \
-	TAG_RELIGION =  "Beliefs" \
+	TAG_CULTURE =   "Культура", \
+	TAG_HOMEWORLD = "Место проживания", \
+	TAG_FACTION =   "Фракция", \
+	TAG_RELIGION =  "Верования" \
 	)
 
 // Cultural IDs.
@@ -24,6 +24,7 @@
 #define FACTION_DAIS           "Deimos Advanced Information Systems"
 #define FACTION_OTHER          "Other Faction"
 #define FACTION_TEST_SUBJECTS  "Test Subjects"
+#define FACTION_SPACECOPS  "Sol Federal Police"
 
 #define HOME_SYSTEM_EARTH      "Earth"
 #define HOME_SYSTEM_LUNA       "Luna"
@@ -152,6 +153,8 @@
 #define CULTURE_UNATHI              "Moghes Hegemony"
 
 #define HOME_SYSTEM_MOGHES          "Moghes"
+#define HOME_SYSTEM_OUERE			"Ouere"
+#define HOME_SYSTEM_OFFWORLD		"Off World"
 
 #define FACTION_UNATHI_POLAR        "Polar Clans"
 #define FACTION_UNATHI_DESERT       "Desert Clans"

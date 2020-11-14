@@ -42,14 +42,6 @@
 	caliber = CALIBER_ANTIMATERIAL_SMALL
 	matter = list(MATERIAL_STEEL = 500)
 
-/obj/item/ammo_casing/rifle/tv
-	desc = "A strange hight-caliber casing. You think its bigger than 7.62, but smaller than 12.7."
-	caliber = CALIBER_TV
-	projectile_type = /obj/item/projectile/bullet/rifle/tv
-	icon = 'infinity/icons/obj/ammo.dmi'
-	icon_state = "TVb"
-	spent_icon = "TVs"
-
 /obj/item/ammo_casing/uni46x30mm
 	desc = "A 46x30mm bullet casing."
 	caliber = CALIBER_PISTOL_FAST

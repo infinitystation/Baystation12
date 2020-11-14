@@ -1,4 +1,4 @@
-// используется в whitelist.dm при проверке на доступность расы
+// РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РІ whitelist.dm РїСЂРё РїСЂРѕРІРµСЂРєРµ РЅР° РґРѕСЃС‚СѓРїРЅРѕСЃС‚СЊ СЂР°СЃС‹
 /datum/species/proc/whitelistName(var/mob/living/carbon/human/H)
 	return get_bodytype(H)
 

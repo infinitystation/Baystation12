@@ -55,3 +55,6 @@ GLOBAL_LIST_INIT(trauma_sound, list(
 'infinity/sound/effects/gore/trauma2.ogg',
 'infinity/sound/effects/gore/trauma3.ogg'
 ))
+
+GLOBAL_LIST_INIT(switch_small_sound, list(
+'infinity/sound/effects/using/switch/small1.ogg','infinity/sound/effects/using/switch/small2.ogg'))

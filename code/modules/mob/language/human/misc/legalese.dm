@@ -1,9 +1,9 @@
 /datum/language/legal
 	name = LANGUAGE_LEGALESE
 	desc = "A cryptic language used by interstellar bureaucrats and lawyers."
-	speech_verb = "объ&#255;вл&#255;ет"
-	exclaim_verb = "возражает"
-	ask_verb = "запрашивает"
+	speech_verb = "РѕР±СЉСЏРІР»СЏРµС‚"
+	exclaim_verb = "РІРѕР·СЂР°Р¶Р°РµС‚"
+	ask_verb = "Р·Р°РїСЂР°С€РёРІР°РµС‚"
 	space_chance = 100
 	key = "u"
 	partial_understanding = list(

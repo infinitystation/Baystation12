@@ -1,7 +1,7 @@
 /datum/event/blob
 	announceWhen	= 12
 
-	var/obj/effect/blob/core/Blob
+	var/obj/effect/biomass/core/Blob //INF, was /obj/effect/blob/core
 
 /datum/event/blob/announce()
 //	level_seven_announcement()
@@ -15,7 +15,7 @@
 		return
 
 	log_and_message_admins("Blob spawned in \the [get_area(T)]", location = T)
-	Blob = new /obj/effect/blob/core(T)
+	Blob = new /obj/effect/biomass/core(T) //INF, was /obj/effect/blob/core
 	for(var/i = 1; i < rand(3, 4), i++)
 		Blob.Process()
 

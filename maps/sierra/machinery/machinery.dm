@@ -58,6 +58,7 @@
 	mask = /obj/item/clothing/mask/gas/half
 	req_access = list(access_explorer)
 	islocked = 1
+	mycolour = "#9966ff"
 
 /obj/machinery/suit_storage_unit/pilot
 	name = "Expeditionary Pilot Voidsuit Storage Unit"
@@ -68,6 +69,7 @@
 	mask = /obj/item/clothing/mask/breath
 	req_access = list(access_explorer, access_expedition_shuttle_helm)
 	islocked = 1
+	mycolour = "#990000"
 
 /obj/machinery/suit_storage_unit/standard_unit
 	islocked = 0

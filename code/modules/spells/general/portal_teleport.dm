@@ -18,6 +18,7 @@
 	cast_sound = 'sound/effects/teleport.ogg'
 
 	hud_state = "wiz_tele"
+	selection_type = "special"	//INF	Teleporting to areas that are far away from our VIEW
 
 /spell/portal_teleport/before_cast()
 	return

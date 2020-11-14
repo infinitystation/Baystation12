@@ -23,12 +23,12 @@ datum/event/viral_infection/announce()
 	if (severity == EVENT_LEVEL_MUNDANE)
 		return
 	else if (severity == EVENT_LEVEL_MODERATE)
-		level = pick("первого", "второго", "третьего", "четвёртого")
+		level = pick("РїРµСЂРІРѕРіРѕ", "РІС‚РѕСЂРѕРіРѕ", "С‚СЂРµС‚СЊРµРіРѕ", "С‡РµС‚РІС‘СЂС‚РѕРіРѕ")
 	else
-		level = "пятого"
+		level = "РїСЏС‚РѕРіРѕ"
 
 	if (severity == EVENT_LEVEL_MAJOR || prob(60))
-		command_announcement.Announce("Потверждена вспышка вирусной инфекции [level] уровня на борту станции [station_name()]. Весь персонал должен сдержать угрозу.", "Тревога: Вирусное заражение", new_sound = 'sound/AI/outbreak5.ogg')
+		command_announcement.Announce("РџРѕС‚РІРµСЂР¶РґРµРЅР° РІСЃРїС‹С€РєР° РІРёСЂСѓСЃРЅРѕР№ РёРЅС„РµРєС†РёРё [level] СѓСЂРѕРІРЅСЏ РЅР° Р±РѕСЂС‚Сѓ СЃС‚Р°РЅС†РёРё [station_name()]. Р’РµСЃСЊ РїРµСЂСЃРѕРЅР°Р» РґРѕР»Р¶РµРЅ СЃРґРµСЂР¶Р°С‚СЊ СѓРіСЂРѕР·Сѓ.", "РўСЂРµРІРѕРіР°: Р’РёСЂСѓСЃРЅРѕРµ Р·Р°СЂР°Р¶РµРЅРёРµ", new_sound = 'sound/AI/outbreak5.ogg')
 
 datum/event/viral_infection/start()
 	if(!viruses.len) return

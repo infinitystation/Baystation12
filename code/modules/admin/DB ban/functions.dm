@@ -113,7 +113,6 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 
 	var/reason_public = reason
 	reason = sql_sanitize_text(reason)
-	reason = sanitize_a0(reason)
 
 //[INF]
 	if(!computerid)
@@ -131,7 +130,7 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 		setter = key_name_admin(usr, 0)
 
 	//[INF]
-		if(bantype != (BANTYPE_JOB_TEMP || BANTYPE_JOB_PERMA))
+		if((bantype != BANTYPE_JOB_TEMP) && (bantype != BANTYPE_JOB_PERMA))
 			var/banned_key = ckey
 			if(ismob(banned_mob))
 				banned_key = LAST_CKEY(banned_mob)
@@ -241,7 +240,6 @@ datum/admins/proc/DB_ban_edit(var/banid = null, var/param = null)
 		if("reason")
 			if(!value)
 				value = sanitize(input("Insert the new reason for [pckey]'s ban", "New Reason", "[reason]", null) as null|text)
-				value = sanitize_a0(value)
 				value = sql_sanitize_text(value)
 				if(!value)
 					to_chat(usr, "Cancelled")
@@ -438,13 +436,13 @@ datum/admins/proc/DB_ban_unban_by_id(var/id)
 				if(playercid)
 					cidsearch  = "AND computerid = '[playercid]' "
 			else
-				if(adminckey && lentext(adminckey) >= 3)
+				if(adminckey && length(adminckey) >= 3)
 					adminsearch = "AND a_ckey LIKE '[adminckey]%' "
-				if(playerckey && lentext(playerckey) >= 3)
+				if(playerckey && length(playerckey) >= 3)
 					playersearch = "AND ckey LIKE '[playerckey]%' "
-				if(playerip && lentext(playerip) >= 3)
+				if(playerip && length(playerip) >= 3)
 					ipsearch  = "AND INET_NTOA(ip) LIKE '[playerip]%' "
-				if(playercid && lentext(playercid) >= 7)
+				if(playercid && length(playercid) >= 7)
 					cidsearch  = "AND computerid LIKE '[playercid]%' "
 
 			if(dbbantype)
@@ -540,4 +538,4 @@ datum/admins/proc/DB_ban_unban_by_id(var/id)
 
 			output += "</table></div>"
 
-	usr << browse(output,"window=lookupbans;size=900x700")
+	show_browser(usr, output,"window=lookupbans;size=900x700")

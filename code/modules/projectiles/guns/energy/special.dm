@@ -1,7 +1,7 @@
 /obj/item/weapon/gun/energy/ionrifle
 	name = "Mk60 ion rifle"
 	desc = "The NT Mk60 EW Halicon is a man portable anti-armor weapon designed to disable mechanical threats, produced by NT. Not the best of its type."
-	icon = 'icons/obj/guns/ion_rifle.dmi'
+	icon = 'infinity/icons/obj/guns/ion_rifle.dmi' //inf //was: icon = 'icons/obj/guns/ion_rifle.dmi'
 	icon_state = "ionrifle"
 	item_state = "ionrifle"
 	origin_tech = list(TECH_COMBAT = 2, TECH_MAGNET = 4)

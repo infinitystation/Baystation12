@@ -1,10 +1,11 @@
 # Модифицированный baystation12
-[![Build Status](https://travis-ci.org/infinitystation/Baystation12.svg?branch=master)](https://travis-ci.org/infinitystation/Baystation12)  
+[![Build Status](https://travis-ci.org/infinitystation/Baystation12.svg?branch=master)](https://travis-ci.org/infinitystation/Baystation12)
+[![CodeFactor](https://www.codefactor.io/repository/github/infinitystation/baystation12/badge)](https://www.codefactor.io/repository/github/infinitystation/baystation12)
 
-**Код**: https://github.com/infinitystation/Baystation12  
-**Сайт разработчика:** https://infinity-ss13.info/  
-**Discord**: https://discord.gg/N4atUkH  
-**Используемые карты:** Sierra, Модифицированный Bearcat 
+[**Код:**](https://github.com/infinitystation/Baystation12/) https://github.com/infinitystation/Baystation12
+[**Сайт разработчика:**](https://infinity-ss13.info/) https://infinity-ss13.info/
+[**Discord:**](https://discord.gg/N4atUkH/) https://discord.gg/N4atUkH
+**Используемые карты:** Sierra, Модифицированный Bearcat
 
 **Сайт оригинального разработчика:** https://baystation12.net  
 **Оригинальный код:** https://github.com/Baystation12/Baystation12  
@@ -14,16 +15,25 @@
 ## ЗАГРУЗКА
 
 Есть несколько способов скачать билд проекта.
-
-Вариант 1:  
-1. Скачать здесь в *.zip файле.  
-2. Кнопка в правой части экрана.
-
-Вариант 2:  
-1. Установить любой другой git-клиент.  
-SourceTree, Github for Windows, git-scm, TortoiseGit или любой другой.  
-2. Зайти в клиент и клонировать репозиторий по ссылке:  
-https://github.com/infinitystation/Baystation12.git
+<ul>
+<li>Вариант 1:
+<ul>
+<li>1. Скачать здесь в *.zip файле.  
+<li>2. Кнопка в правой части экрана.
+</ul>
+<li>Вариант 2:  
+<ul>
+<li>1. Установить любой другой git-клиент.  
+<a href="https://gitforwindows.org/">Git Bash</a>, SmartGit, Sourse Tree, git-scm, TortoiseGit или любой другой.
+<li>2<ul> 
+  <li>2.1. Зайти в клиент и клонировать репозиторий по ссылке: https://github.com/infinitystation/Baystation12.git. Обычно кнопка клонирования находится в левом-верхнем углу.
+  <li>2.2. (Для Git Bash)<ul>
+   <li>1. Нажмите ПКМ по папке в которой хотите создать папку с репозиторием и нажмите опцию "Git Bash Here"
+   <li>2. Введите в консоль команду `git clone https://github.com/infinitystation/Baystation12.git`
+  </ul>
+  </ul>
+</ul>
+</ul>
 
 ## УСТАНОВКА
 0. Убедитесь, что у вас есть BYOND. Скачать можно здесь: http://www.byond.com/.  

@@ -2,6 +2,7 @@
 /obj/item/weapon/melee/baton
 	name = "stunbaton"
 	desc = "A stun baton for incapacitating people with."
+	icon = 'infinity/icons/obj/item/weapons.dmi'//inf
 	icon_state = "stunbaton"
 	item_state = "baton"
 	slot_flags = SLOT_BELT
@@ -18,6 +19,12 @@
 	var/status = 0		//whether the thing is on or not
 	var/obj/item/weapon/cell/bcell
 	var/hitcost = 7
+//[INF]
+	item_icons = list(
+		slot_l_hand_str = 'infinity/icons/mob/onmob/items/lefthand.dmi',
+		slot_r_hand_str = 'infinity/icons/mob/onmob/items/righthand.dmi',
+		)
+//[/INF]
 
 /obj/item/weapon/melee/baton/loaded
 	bcell = /obj/item/weapon/cell/device/high
@@ -55,16 +62,20 @@
 
 /obj/item/weapon/melee/baton/on_update_icon()
 	if(status)
-		icon_state = "[initial(name)]_active"
+		icon_state = "[initial(icon_state)]_active"//inf //was: icon_state = "[initial(name)]_active"
+		item_state = "[initial(item_state)]_active"//inf
 	else if(!bcell)
-		icon_state = "[initial(name)]_nocell"
+		icon_state = "[initial(icon_state)]_nocell"//inf //was: icon_state = "[initial(name)]_nocell"
+		item_state = "[initial(item_state)]"//inf
 	else
-		icon_state = "[initial(name)]"
+		icon_state = "[initial(icon_state)]"//inf //was: icon_state = "[initial(name)]"
+		item_state = "[initial(item_state)]"//inf
 
-	if(icon_state == "[initial(name)]_active")
+	if(icon_state == "[initial(item_state)]_active")//inf //was: if(icon_state == "[initial(name)]_active")
 		set_light(0.4, 0.1, 1, 2, "#ff6a00")
 	else
 		set_light(0)
+	loc.update_icon()//inf
 
 /obj/item/weapon/melee/baton/examine(mob/user, distance)
 	. = ..()
@@ -233,6 +244,7 @@
 	name = "electrified arm"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "electrified_arm"
+	item_icons = null//inf
 
 /obj/item/weapon/melee/baton/robot/electrified_arm/on_update_icon()
 	if(status)
@@ -246,7 +258,8 @@
 /obj/item/weapon/melee/baton/cattleprod
 	name = "stunprod"
 	desc = "An improvised stun baton."
-	icon_state = "stunprod_nocell"
+	icon = 'icons/obj/weapons.dmi' //inf
+	icon_state = "stunprod"//inf, was icon_state = "stunprod_nocell"
 	item_state = "prod"
 	force = 3
 	throwforce = 5
@@ -255,3 +268,4 @@
 	hitcost = 25
 	attack_verb = list("poked")
 	slot_flags = null
+	item_icons = null//inf

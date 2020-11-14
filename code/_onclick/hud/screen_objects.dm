@@ -15,6 +15,7 @@
 	unacidable = 1
 	var/obj/master = null    //A reference to the object in the slot. Grabs or items, generally.
 	var/globalscreen = FALSE //Global screens are not qdeled when the holding mob is destroyed.
+	var/use_additional_colors = FALSE //inf
 
 /obj/screen/Destroy()
 	master = null
@@ -180,6 +181,7 @@
 	usr.a_intent = intent
 
 /obj/screen/intent/on_update_icon()
+	. = ..()//inf
 	icon_state = "intent_[intent]"
 
 /obj/screen/Click(location, control, params)
@@ -323,13 +325,6 @@
 				else
 					E.unholster(usr, TRUE)
 					return
-
-		if("fixeye")
-			usr.face_direction()
-			if(usr.facing_dir)
-				usr.fixeye.icon_state = "fixeye_on"
-			else
-				usr.fixeye.icon_state = "fixeye"
 //[/inf]
 		if("module")
 			if(isrobot(usr))

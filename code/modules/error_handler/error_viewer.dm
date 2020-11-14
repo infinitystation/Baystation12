@@ -193,6 +193,8 @@ GLOBAL_DATUM(error_cache, /datum/error_viewer/error_cache)
 		usr_ref = "\ref[usr]"
 		usr_loc = get_turf(usr)
 
+	SSwebhooks.send(WEBHOOK_SEND_RUNTIME, list("main_desc" = info_name, "additional_desc" = info))//inf
+
 /datum/error_viewer/error_entry/show_to(user, datum/error_viewer/back_to, linear)
 	if (!istype(back_to))
 		back_to = error_source

@@ -5,7 +5,7 @@
 	icon_state = "bookNTLaw"
 	author = "Employee Materials"
 	title = "Corporate Regulations"
-	url = "Корпоративные_законы"
+	url = "РљРѕСЂРїРѕСЂР°С‚РёРІРЅС‹Рµ_Р·Р°РєРѕРЅС‹"
 
 /obj/item/weapon/book/manual/hydroponics_pod_people
 	name = "The Diona Harvest - From Seed to Market"

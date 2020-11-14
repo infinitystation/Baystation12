@@ -9,9 +9,6 @@
 	)
 	sprites = list(
 		"Droid" = "droid-science",
-		"Drone" = "drone-science",
-		"Doot" = "eyebot-science",
-		"Ver 06" = "wer6-Research"
 	)
 	equipment = list(
 		/obj/item/device/flash,

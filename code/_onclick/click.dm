@@ -75,7 +75,7 @@
 		CtrlClickOn(A)
 		return 1
 
-	if(stat || paralysis || stunned || weakened)
+	if(stat || paralysis || stunned || weakened || sleeping)
 		return
 
 	// Do not allow player facing change in fixed chairs
@@ -300,8 +300,9 @@
 	Control+Alt click
 */
 /mob/proc/CtrlAltClickOn(var/atom/A)
-	A.CtrlAltClick(src)
-	return
+	if(A.CtrlAltClick(src))
+		return
+	pointed(A)
 
 /atom/proc/CtrlAltClick(var/mob/user)
 	if(user.client && user.client.eye == user)

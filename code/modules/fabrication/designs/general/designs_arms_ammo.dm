@@ -84,7 +84,7 @@
 	name = "ammunition (military rifle)"
 	path = /obj/item/ammo_magazine/mil_rifle
 
-/datum/fabricator_recipe/arms_ammo/hidden/shotgun
+/datum/fabricator_recipe/arms_ammo/hidden/shotgun_slug //inf, was shotgun
 	name = "ammunition (slug, shotgun)"
 	path = /obj/item/ammo_casing/shotgun
 
@@ -106,3 +106,7 @@
 /datum/fabricator_recipe/arms_ammo/hidden/skrellian_rifle_slug
 	name = "ammunition (skrellian rifle, slug)"
 	path = /obj/item/weapon/magnetic_ammo/skrell/slug
+
+/datum/fabricator_recipe/arms_ammo/hidden/stripperclip
+	name = "ammunition (stripper clip)"
+	path = /obj/item/ammo_magazine/speedloader/clip

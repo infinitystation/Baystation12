@@ -19,6 +19,7 @@
 		if(!(C.mob && C.mob.mind && C.mob.mind.special_role))
 			to_chat(C, "<span class='danger'>You must be an antag to use [name].</span>")
 			return FALSE
+	else if(only_xenos(C))	return FALSE	// INF
 
 /decl/communication_channel/aooc/do_communicate(var/client/C, var/message)
 	message = emoji_parse(message)
@@ -29,6 +30,7 @@
 
 	for(var/client/target in GLOB.clients)
 		if(target.holder)
+			if(only_xenos(C))	continue	// INF
 			receive_communication(C, target, "<span class='ooc'><span class='aooc'>[create_text_tag("aooc", "Antag-OOC:", target)] <EM>[get_options_bar(C, 0, 1, 1)]:</EM> <span class='message'>[message]</span></span></span>")
 		else if(target.mob && target.mob.mind && target.mob.mind.special_role)
 			var/display_name = C.key

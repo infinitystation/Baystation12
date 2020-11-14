@@ -69,9 +69,6 @@ Class Procs:
 
 	  Default definition does nothing.
 
-   assign_uid()			   'game/machinery/machine.dm'
-	  Called by machine to assign a value to the uid variable.
-
    Process()				  'game/machinery/machine.dm'
 	  Called by the 'master_controller' once per game tick for each machine that is listed in the 'machines' list.
 
@@ -208,8 +205,8 @@ Class Procs:
 /obj/machinery/proc/is_broken(var/additional_flags = 0)
 	return (stat & (BROKEN|additional_flags))
 
-/obj/machinery/proc/is_unpowered(var/additional_flags = 0)
-	return (stat & (NOPOWER|additional_flags))
+/obj/machinery/proc/is_powered(var/additional_flags = 0)
+	return !(stat & (NOPOWER|additional_flags))
 
 /obj/machinery/proc/operable(var/additional_flags = 0)
 	return !inoperable(additional_flags)
@@ -286,6 +283,15 @@ Class Procs:
 // If you don't call parent in this proc, you must make all appropriate checks yourself.
 // If you do, you must respect the return value.
 /obj/machinery/attack_hand(mob/user)
+
+	//[INF]
+
+	if(isxenomorph(user))
+		attack_generic(user, 15, pick("strikes", "tears", "rips appart"))
+		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+
+	//[/INF]
+
 	if((. = ..())) // Buckling, climbers; unlikely to return true.
 		return
 	if(!CanPhysicallyInteract(user))
@@ -338,10 +344,6 @@ Class Procs:
 	var/list/missing = missing_parts()
 	set_broken(!!missing, MACHINE_BROKEN_NO_PARTS)
 
-/obj/machinery/proc/assign_uid()
-	uid = gl_uid
-	gl_uid++
-
 /obj/machinery/proc/state(var/msg)
 	for(var/mob/O in hearers(src, null))
 		O.show_message("\icon[src] <span class = 'notice'>[msg]</span>", 2)
@@ -378,7 +380,10 @@ Class Procs:
 	var/obj/item/weapon/stock_parts/circuitboard/circuit = get_component_of_type(/obj/item/weapon/stock_parts/circuitboard)
 	if(circuit)
 		circuit.deconstruct(src)
-	new frame_type(get_turf(src), dir)
+	if(ispath(frame_type, /obj/item/pipe))
+		new frame_type(get_turf(src), src)
+	else
+		new frame_type(get_turf(src), dir)
 	for(var/I in component_parts)
 		uninstall_component(I, refresh_parts = FALSE)
 	while(LAZYLEN(uncreated_component_parts))

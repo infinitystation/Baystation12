@@ -12,6 +12,17 @@
 "aad" = (
 /turf/space,
 /area/shuttle/syndicate_elite/mothership)
+"aae" = (
+/obj/effect/floor_decal/corner/green{
+	dir = 5
+	},
+/obj/machinery/telecomms/allinone{
+	intercept = 1
+	},
+/turf/unsimulated/floor{
+	icon_state = "steel"
+	},
+/area/centcom/control)
 "aao" = (
 /turf/space,
 /area/shuttle/escape_pod1/centcom)
@@ -9876,9 +9887,8 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 2;
-	frequency = 1380;
 	id_tag = "merchant_ship_vent"
 	},
 /turf/simulated/floor/plating,
@@ -9948,7 +9958,6 @@
 	pixel_y = -28
 	},
 /obj/structure/bed/chair/shuttle{
-	tag = "icon-shuttle_chair_preview (WEST)";
 	icon_state = "shuttle_chair_preview";
 	dir = 8
 	},
@@ -10124,7 +10133,6 @@
 /area/shuttle/merchant/home)
 "aTB" = (
 /obj/structure/bed/chair/office/comfy/black{
-	tag = "icon-comfyofficechair_preview (EAST)";
 	icon_state = "comfyofficechair_preview";
 	dir = 4
 	},
@@ -10160,9 +10168,8 @@
 /turf/simulated/floor/tiled,
 /area/shuttle/merchant/home)
 "aTH" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1380;
 	id_tag = "merchant_ship_vent"
 	},
 /turf/simulated/floor/plating,
@@ -10424,9 +10431,8 @@
 /turf/simulated/floor/plating,
 /area/merchant_station)
 "aUx" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "merchant_station_vent"
 	},
 /turf/simulated/floor/plating,
@@ -23698,7 +23704,7 @@ avN
 avm
 avU
 awa
-awC
+aae
 awG
 awG
 axy

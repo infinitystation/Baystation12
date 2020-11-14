@@ -9,20 +9,36 @@ proc/create_new_xenomorph(var/alien_caste,var/target)
 
 /mob/living/carbon/human/xdrone/New(var/new_loc)
 	h_style = "Bald"
-	..(new_loc, "Xenophage Drone")
+	. = ..(new_loc, "Xenophage Drone")
 	GLOB.xenomorphs.add_antagonist(src.mind, 1)
 
 /mob/living/carbon/human/xsentinel/New(var/new_loc)
 	h_style = "Bald"
-	..(new_loc, "Xenophage Sentinel")
+	. = ..(new_loc, "Xenophage Sentinel")
 	GLOB.xenomorphs.add_antagonist(src.mind, 1)
 
 /mob/living/carbon/human/xhunter/New(var/new_loc)
 	h_style = "Bald"
-	..(new_loc, "Xenophage Hunter")
+	. = ..(new_loc, "Xenophage Hunter")
 	GLOB.xenomorphs.add_antagonist(src.mind, 1)
+
+/mob/living/carbon/human/xwarrior/New(var/new_loc)
+	h_style = "Bald"
+	. = ..(new_loc, "Xenophage Warrior")
+	GLOB.xenomorphs.add_antagonist(src.mind, 1)
+
 
 /mob/living/carbon/human/xqueen/New(var/new_loc)
 	h_style = "Bald"
-	..(new_loc, "Xenophage Queen")
+	. = ..(new_loc, "Xenophage Queen")
+	GLOB.xenomorphs.add_antagonist(src.mind, 1)
+
+/mob/living/carbon/human/xspitter/New(var/new_loc)
+	h_style = "Bald"
+	. = ..(new_loc, "Xenophage Spitter")
+	GLOB.xenomorphs.add_antagonist(src.mind, 1)
+
+/mob/living/carbon/human/xlord/New(var/new_loc)
+	h_style = "Bald"
+	. = ..(new_loc, "Xenophage Hivelord")
 	GLOB.xenomorphs.add_antagonist(src.mind, 1)

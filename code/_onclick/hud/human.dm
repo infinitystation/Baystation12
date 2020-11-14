@@ -22,6 +22,10 @@
 
 	stamina_bar = new
 	adding += stamina_bar
+//[INF]
+	changeling_chems = new
+	adding += changeling_chems
+//[INF]
 
 	// Draw the various inventory equipment slots.
 	var/has_hidden_gear
@@ -76,6 +80,8 @@
 		using.alpha = ui_alpha
 		src.adding += using
 		move_intent = using
+		var/obj/screen/movement/M = using//inf
+		M.owner = mymob//inf
 
 	if(hud_data.has_drop)
 		using = new /obj/screen()
@@ -248,21 +254,23 @@
 		mymob.hydration_icon.SetName("hydration")
 		mymob.hydration_icon.screen_loc = ui_nutrition_small
 		hud_elements |= mymob.hydration_icon
-//[inf]
-	mymob.fixeye = new /obj/screen()
-	mymob.fixeye.icon = 'icons/mob/screen/infinity.dmi'
-	mymob.fixeye.icon_state = "fixeye"
-	mymob.fixeye.name = "fixeye"
-	mymob.fixeye.screen_loc = ui_fixeye
-	hud_elements |= mymob.fixeye
 
+//[INF]
 	mymob.holster = new /obj/screen()
 	mymob.holster.icon = 'icons/mob/screen/infinity.dmi'
 	mymob.holster.icon_state = "holster"
 	mymob.holster.name = "holster"
 	mymob.holster.screen_loc = ui_holster
+	mymob.holster.use_additional_colors = TRUE
 	hud_elements |= mymob.holster
-//[/inf]
+
+	mymob.ling_sting = new /obj/screen/sting()
+	mymob.ling_sting.icon = 'infinity/icons/obj/action_buttons/changeling_new.dmi'
+	mymob.ling_sting.name = "selected sting"
+	mymob.ling_sting.screen_loc = ui_ling_sting
+	mymob.ling_sting.invisibility = 101
+	hud_elements |= mymob.ling_sting
+//[/INF]
 
 	mymob.pain = new /obj/screen/fullscreen/pain( null )
 	hud_elements |= mymob.pain
@@ -396,6 +404,29 @@
 		else
 			to_chat(usr, SPAN_DANGER("You cannot breathe!"))
 
+/obj/screen/movement
+	var/image/chached_fixeye
+	var/mob/living/owner
+
 /obj/screen/movement/Click(var/location, var/control, var/params)
 	if(istype(usr))
+	//[INF]
+		var/list/p = params2list(params)
+		if(p["ctrl"])
+			usr.face_direction()
+			update_icon()
+			return
+	//[/INF]
 		usr.set_next_usable_move_intent()
+
+//[INF]
+/obj/screen/movement/on_update_icon()
+	. = ..()
+	if(owner?.facing_dir && owner?.client && owner?.client?.prefs)
+		chached_fixeye = istype(chached_fixeye, /image) ? chached_fixeye : image('icons/mob/screen/infinity.dmi', "fixeye")
+		var/color_to_use = (owner.client.prefs.UI_style_color == "#ffffff") || !owner.client.prefs.UI_style_color  ? ui_style2additional_color(owner.client.prefs.UI_style) : owner.client.prefs.UI_style_color
+		chached_fixeye.color = color_to_use
+		overlays += chached_fixeye
+	else
+		overlays -= chached_fixeye
+//[/INF]

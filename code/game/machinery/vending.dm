@@ -592,14 +592,6 @@
 	icon_state = "fridge_dark"
 	icon_deny = "fridge_dark-deny"
 	products = list(/obj/item/weapon/reagent_containers/food/drinks/glass2/square = 10,
-					/obj/item/weapon/reagent_containers/food/drinks/glass2/rocks = 10,
-					/obj/item/weapon/reagent_containers/food/drinks/glass2/shake = 10,
-					/obj/item/weapon/reagent_containers/food/drinks/glass2/cocktail = 10,
-					/obj/item/weapon/reagent_containers/food/drinks/glass2/shot = 10,
-					/obj/item/weapon/reagent_containers/food/drinks/glass2/pint = 10,
-					/obj/item/weapon/reagent_containers/food/drinks/glass2/mug = 10,
-					/obj/item/weapon/reagent_containers/food/drinks/glass2/wine = 10,
-					/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/metal = 8,
 					/obj/item/weapon/reagent_containers/food/drinks/flask/barflask = 5,
 					/obj/item/weapon/reagent_containers/food/drinks/flask/vacuumflask = 5,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/gin = 5,
@@ -628,6 +620,7 @@
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/small/ale = 15,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/small/hellshenpa = 15,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/small/gingerbeer = 15,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/rootbeer = 15,
 					/obj/item/weapon/reagent_containers/food/drinks/cans/speer = 10,
 					/obj/item/weapon/reagent_containers/food/drinks/cans/ale = 10,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/cola = 5,
@@ -741,7 +734,6 @@
 					/obj/item/weapon/reagent_containers/food/snacks/sosjerky = 2,/obj/item/weapon/reagent_containers/food/snacks/no_raisin = 1,/obj/item/weapon/reagent_containers/food/snacks/spacetwinkie = 1,
 					/obj/item/weapon/reagent_containers/food/snacks/cheesiehonkers = 1, /obj/item/weapon/reagent_containers/food/snacks/tastybread = 2)
 	restockable = 0 //inf
-
 /obj/machinery/vending/cola
 	name = "Robust Softdrinks"
 	desc = "A softdrink vendor provided by Robust Industries, LLC."
@@ -764,6 +756,27 @@
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 	restockable = 0 //inf
 
+/obj/machinery/vending/soda
+	name = "Radical Renard"
+	desc = "A softdrink vendor promoted by Radical Renard."
+	icon_state = "Soda_Machine"
+	icon_vend = "Soda_Machine-vend"
+	icon_deny = "Soda_Machine-deny"
+	vend_delay = 11
+	base_type = /obj/machinery/vending/soda
+	product_slogans = "Not applicable!"
+	product_ads = "Not applicable."
+	products = list(/obj/item/weapon/reagent_containers/food/drinks/cans/cola_diet = 10,/obj/item/weapon/reagent_containers/food/drinks/cans/rootbeer = 10,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/cola_apple = 10,/obj/item/weapon/reagent_containers/food/drinks/cans/cola_orange = 10,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 10,/obj/item/weapon/reagent_containers/food/drinks/cans/cola_grape = 10,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/cola_lemonlime = 10, /obj/item/weapon/reagent_containers/food/drinks/cans/cola_strawberry = 10)
+	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/cans/cola_pork = 10)
+	prices = list(/obj/item/weapon/reagent_containers/food/drinks/cans/cola_diet = 1,/obj/item/weapon/reagent_containers/food/drinks/cans/rootbeer = 1,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/cola_apple = 1,/obj/item/weapon/reagent_containers/food/drinks/cans/cola_orange = 1,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 1,/obj/item/weapon/reagent_containers/food/drinks/cans/cola_grape = 1,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/cola_lemonlime = 1,/obj/item/weapon/reagent_containers/food/drinks/cans/cola_strawberry = 1)
+	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
+
 /obj/machinery/vending/fitness
 	name = "SweatMAX"
 	desc = "An exercise aid and nutrition supplement vendor that preys on your inadequacy."
@@ -779,10 +792,7 @@
 					/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 8,
 //INF					/obj/item/weapon/reagent_containers/food/drinks/glass2/fitnessflask/proteinshake = 8,
 					/obj/item/weapon/reagent_containers/food/drinks/glass2/fitnessflask = 8,
-					/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 8,
-					/obj/item/weapon/storage/mre/random = 8,
-					/obj/item/weapon/storage/mre/menu9 = 4,
-					/obj/item/weapon/storage/mre/menu10 = 4,
+					/obj/item/weapon/reagent_containers/food/snacks/proteinbar = 8,
 					/obj/item/weapon/reagent_containers/pill/diet = 8,
 					/obj/item/weapon/towel/random = 8)
 
@@ -791,10 +801,7 @@
 					/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 2,
 //INF					/obj/item/weapon/reagent_containers/food/drinks/glass2/fitnessflask/proteinshake = 20,
 					/obj/item/weapon/reagent_containers/food/drinks/glass2/fitnessflask = 5,
-					/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 5,
-					/obj/item/weapon/storage/mre/random = 50,
-					/obj/item/weapon/storage/mre/menu9 = 50,
-					/obj/item/weapon/storage/mre/menu10 = 50,
+					/obj/item/weapon/reagent_containers/food/snacks/proteinbar = 5,
 					/obj/item/weapon/reagent_containers/pill/diet = 25,
 					/obj/item/weapon/towel/random = 40)
 
@@ -917,7 +924,6 @@
 	products = list(/obj/item/weapon/reagent_containers/glass/bottle/antitoxin = 4,
 					/obj/item/weapon/reagent_containers/glass/bottle/inaprovaline = 4,
 					/obj/item/weapon/reagent_containers/glass/bottle/stoxin = 4,
-					/obj/item/weapon/reagent_containers/glass/bottle/hyronalin = 4,
 					/obj/item/weapon/reagent_containers/syringe/antiviral = 8,
 					/obj/item/weapon/reagent_containers/syringe = 12,
 					/obj/item/device/scanner/health = 5,
@@ -1353,14 +1359,25 @@
 	icon_state = "snix"
 	icon_vend = "snix-vend"
 	icon_deny = "snix-deny"
-	products = list(/obj/item/weapon/reagent_containers/food/snacks/semki = 7,
-					/obj/item/weapon/reagent_containers/food/snacks/canned/caviar = 7,
-					/obj/item/weapon/reagent_containers/food/snacks/squid = 7,
-					/obj/item/weapon/reagent_containers/food/snacks/croutons = 7,
-					/obj/item/weapon/reagent_containers/food/snacks/salo = 7,
-					/obj/item/weapon/reagent_containers/food/snacks/driedfish = 7,
-					/obj/item/weapon/reagent_containers/food/snacks/pistachios = 7,
+	products = list(/obj/item/weapon/reagent_containers/food/snacks/semki = 3,//inf, was: 7,
+					/obj/item/weapon/reagent_containers/food/snacks/canned/caviar = 3,//inf, was: 7,
+					/obj/item/weapon/reagent_containers/food/snacks/squid = 3,//inf, was: 7,
+					/obj/item/weapon/reagent_containers/food/snacks/croutons = 3,//inf, was: 7,
+					/obj/item/weapon/reagent_containers/food/snacks/salo = 3,//inf, was: 7,
+					/obj/item/weapon/reagent_containers/food/snacks/driedfish = 3,//inf, was: 7,
+					/obj/item/weapon/reagent_containers/food/snacks/pistachios = 3,//inf, was: 7,
 					)
+//[INF]
+	prices = list(/obj/item/weapon/reagent_containers/food/snacks/semki = 15,
+					/obj/item/weapon/reagent_containers/food/snacks/canned/caviar = 150,
+					/obj/item/weapon/reagent_containers/food/snacks/squid  = 20,
+					/obj/item/weapon/reagent_containers/food/snacks/croutons = 15,
+					/obj/item/weapon/reagent_containers/food/snacks/salo = 40,
+					/obj/item/weapon/reagent_containers/food/snacks/driedfish  = 50,
+					/obj/item/weapon/reagent_containers/food/snacks/pistachios = 50,
+					)
+//[/INF]
+
 
 	contraband = list(/obj/item/weapon/reagent_containers/food/snacks/canned/caviar/true = 1)
 	restockable = 0 //inf
@@ -1408,6 +1425,7 @@
 	desc = "A distressingly ethnic vending machine loaded with high sucrose low calorie for lack of better words snacks."
 	vend_delay = 30
 	product_slogans = "Konnichiwa gaijin senpai! ;Notice me senpai!; Kawaii-desu!"
+	vend_reply = "Arigato, gozaimasu!"//inf
 	icon_state = "weeb"
 	icon_vend = "weeb-vend"
 	icon_deny = "weeb-deny"
@@ -1453,3 +1471,33 @@
 	..()
 	if(!(stat & NOPOWER))
 		overlays += image(icon, "[initial(icon_state)]-heater")
+
+
+/obj/machinery/vending/mredispenser
+	name = "mre-dispenser"
+	desc = "A Vending machine filled with MRE's."
+	icon_state = "mrevend"
+	icon_deny = "mrevend-deny"
+	icon_vend = "mrevend-vend"
+	products = list(
+		/obj/item/weapon/storage/mre = 2,
+		/obj/item/weapon/storage/mre/menu2 = 2,
+		/obj/item/weapon/storage/mre/menu3 = 2,
+		/obj/item/weapon/storage/mre/menu4 = 2,
+		/obj/item/weapon/storage/mre/menu5 = 2,
+		/obj/item/weapon/storage/mre/menu6 = 2,
+		/obj/item/weapon/storage/mre/menu7 = 2,
+		/obj/item/weapon/storage/mre/menu8 = 2,
+		/obj/item/weapon/storage/mre/menu9 = 10,
+		/obj/item/weapon/storage/mre/menu10 = 10
+	)
+
+	contraband = list(
+		/obj/item/weapon/storage/mre/menu11 = 5,
+		/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 5
+	)
+	vend_delay = 15
+	idle_power_usage = 211
+	product_slogans = ";STARFIGHTER TESTED!, STARFIGHTER RECOMMENDED!, STARFIGHTER APPROVED!;YOU ARE NOT ALLOWED A JELLY DOUGHNUT!;YOU DONT WANT TO DIE HUNGRY SOLDIER!"
+	product_ads = "Everything the body needs!;Now transfat free;Vegan options are available.;Rated for all known species!"
+	base_type = /obj/machinery/vending/mredispenser

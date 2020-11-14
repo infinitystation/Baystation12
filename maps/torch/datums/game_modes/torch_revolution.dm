@@ -1,10 +1,14 @@
 /datum/game_mode/revolution
+	name = "Mutiny"
 	round_description = "Morale is shattered, and a mutiny is brewing! Use the 'Check Round Info' verb for more information!"
 	extended_round_description = "Time in space, away from home and loved ones, takes its toll on even the most grizzled space travellers. To make matters worse, the planned return trip to Sol \
 								for refitting, repairs and relaxation has been cancelled by the brass; instead, the SEV Torch is to, for the first time, enter a hibernative state. All crew will enter cryogenic stasis, \
 								and the shipbound AI system will complete a series of jumps that will take the ship lightyears further away from home. Outrage from friends and family of crew back \
 								on Mars, Luna and other various worlds has spawned primetime scandals that dominate the 24/7 news cycle. Videolink interviews with Torch crew reveal morale is at an \
 								all time low. Rumors are spreading of an impending mutiny."
+	config_tag = "mutiny"
+	required_enemies = 4
+	required_players = 10
 
 /datum/antagonist/revolutionary
 	role_text = "Head Mutineer"

@@ -3,7 +3,7 @@
 	icon_state ="bookEngineering2"
 	author = "Engineering Encyclopedia"
 	title = "Engineering Textbook"
-	url = "–ÛÍÓ‚Ó‰ÒÚ‚Ó_ËÌÊÂÌÂ‡"
+	url = "–†—É–∫–æ–≤–æ–¥—Å—Ç–≤–æ_–∏–Ω–∂–µ–Ω–µ—Ä–∞"
 
 /obj/item/weapon/book/manual/robotics_cyborgs
 	name = "Cyborgs for Dummies"
@@ -292,7 +292,7 @@
 	icon_state ="bookEngineering"
 	author = "Engineering Encyclopedia"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "Repairs and Construction"
-	url = "https://wiki.infinity-ss13.info/index.php?title=A?A?A?AÆA?AÆA§A±A?A?AÆ_A?AÆ_ASAÆA≠A±A?A∞A?A?A∞AÆA?A†A≠A?A?"
+	url = "–ö–æ–Ω—Å—Ç—Ä—É–∏—Ä–æ–≤–∞–Ω–∏–µ"
 
 /obj/item/weapon/book/manual/engineering_particle_accelerator
 	name = "Particle Accelerator User's Guide"
@@ -407,7 +407,7 @@
 	icon_state ="bookHacking"
 	author = "Engineering Encyclopedia"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "Hacking"
-	url = "https://wiki.infinity-ss13.info/index.php?title=√ê√≥√™√Æ√¢√Æ√§√±√≤√¢√Æ_√Ø√Æ_√Ç√ß√´√Æ√¨√≥"
+	url = "–í–∑–ª–æ–º"
 
 /obj/item/weapon/book/manual/engineering_singularity_safety
 	name = "Singularity Safety in Special Circumstances"

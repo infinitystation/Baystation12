@@ -28,7 +28,7 @@
 
 	var/hitchance_mod = 0
 	var/dispersion = 0.0
-	var/distance_falloff = 9  //multiplier, higher value means accuracy drops faster with distance //inf was 2
+	var/distance_falloff = 9  //multiplier, higher value means accuracy drops faster with distance //INF, WAS 2
 
 	var/damage = 10
 	var/damage_type = BRUTE //BRUTE, BURN, TOX, OXY, CLONE, ELECTROCUTE are the only things that should be in here, Try not to use PAIN as it doesn't go through stun_effect_act
@@ -446,7 +446,7 @@
 	xo = null
 	var/result = 0 //To pass the message back to the gun.
 
-/obj/item/projectile/test/Bump(atom/A as mob|obj|turf|area)
+/obj/item/projectile/test/Bump(atom/A as mob|obj|turf|area, forced=0)
 	if(A == firer || istype(A, /mob/living/exosuit) && get_turf(A) == get_turf(firer))
 		forceMove(A.loc)
 		return //cannot shoot yourself

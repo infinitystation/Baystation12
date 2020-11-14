@@ -21,7 +21,7 @@
 	var/glowing_eyes = FALSE
 	var/can_intake_reagents = 1
 	var/has_lips = 1
-	var/forehead_graffiti
+	var/forehead_graffiti = null
 	var/graffiti_style
 
 /obj/item/organ/external/head/proc/get_eye_overlay()

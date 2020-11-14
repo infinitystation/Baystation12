@@ -20,12 +20,12 @@
 	var/naming
 	switch(severity)
 		if(EVENT_LEVEL_MUNDANE)
-			naming = "Один сбойный дрон обнаружено"
+			naming = "РћРґРёРЅ СЃР±РѕР№РЅС‹Р№ РґСЂРѕРЅ РѕР±РЅР°СЂСѓР¶РµРЅ"
 		if(EVENT_LEVEL_MODERATE)
-			naming = "Четверо сбойных дронов обнаружено"
+			naming = "Р§РµС‚РІРµСЂРѕ СЃР±РѕР№РЅС‹С… РґСЂРѕРЅРѕРІ РѕР±РЅР°СЂСѓР¶РµРЅРѕ"
 		if(EVENT_LEVEL_MAJOR)
-			naming = "Шесть и более сбойных дронов обнаружено"
-	priority_announcement.Announce("[naming] в технических помещениях судна. Требуется устранение дронов силами Службы Безопасности.", "Станция Контроля Дронов", zlevels = affecting_z)
+			naming = "РЁРµСЃС‚СЊ Рё Р±РѕР»РµРµ СЃР±РѕР№РЅС‹С… РґСЂРѕРЅРѕРІ РѕР±РЅР°СЂСѓР¶РµРЅРѕ"
+	command_announcement.Announce("[naming] РІ С‚РµС…РЅРёС‡РµСЃРєРёС… РїРѕРјРµС‰РµРЅРёСЏС… СЃСѓРґРЅР°. РўСЂРµР±СѓРµС‚СЃСЏ СѓСЃС‚СЂР°РЅРµРЅРёРµ РґСЂРѕРЅРѕРІ СЃРёР»Р°РјРё РЎР»СѓР¶Р±С‹ Р‘РµР·РѕРїР°СЃРЅРѕСЃС‚Рё.", "РЎС‚Р°РЅС†РёСЏ РљРѕРЅС‚СЂРѕР»СЏ Р”СЂРѕРЅРѕРІ", zlevels = affecting_z)
 
 /datum/event/rogue_maint_drones/proc/get_infestation_turfs()
 	var/area/location = pick_area(list(/proc/is_not_space_area, /proc/is_station_area, /proc/is_maint_area))

@@ -52,6 +52,7 @@ var/list/escape_pods_by_name = list()
 	program = /datum/computer/file/embedded_program/docking/simple/escape_pod
 	var/datum/shuttle/autodock/ferry/escape_pod/pod
 	var/tag_pump
+	frequency = EXTERNAL_AIR_FREQ	 //INF
 
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
 	var/data[0]
@@ -75,11 +76,11 @@ var/list/escape_pods_by_name = list()
 		ui.set_auto_update(1)
 
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod/OnTopic(user, href_list)
-	if("manual_arm")
+	if(href_list["manual_arm"])
 		pod.arming_controller.arm()
 		return TOPIC_REFRESH
 
-	if("force_launch")
+	if(href_list["force_launch"])
 		if (pod.can_force())
 			pod.force_launch(src)
 		else if (evacuation_controller.has_evacuated() && pod.can_launch())	//allow players to manually launch ahead of time if the shuttle leaves
@@ -90,6 +91,7 @@ var/list/escape_pods_by_name = list()
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth
 	name = "escape pod berth controller"
 	program = /datum/computer/file/embedded_program/docking/simple/escape_pod_berth
+	frequency = EXTERNAL_AIR_FREQ	 //INF
 
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
 	var/data[0]

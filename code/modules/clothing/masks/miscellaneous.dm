@@ -18,8 +18,8 @@
 
 /obj/item/clothing/mask/muzzle/Initialize()
 	. = ..()
-	say_messages = list("Ììíô!", "Ìì! Ììô!", "Ìííô!")
-	say_verbs = list("ìû÷èò", "ãîâîğèò") //INF, WAS say_verbs = list("mumbles", "says")
+	say_messages = list("ĞœĞ¼Ğ½Ñ„!", "ĞœĞ¼! ĞœĞ¼Ñ„!", "ĞœĞ½Ğ½Ñ„!")
+	say_verbs = list("Ğ¼Ñ‹Ñ‡Ğ¸Ñ‚", "Ğ³Ğ¾Ğ²Ğ¾Ñ€Ğ¸Ñ‚") //INF, WAS say_verbs = list("mumbles", "says")
 
 // Clumsy folks can't take the mask off themselves.
 /obj/item/clothing/mask/muzzle/attack_hand(mob/user as mob)
@@ -32,7 +32,7 @@
 	desc = "A sterile mask designed to help prevent the spread of diseases."
 	icon_state = "sterile"
 	item_state = "sterile"
-	w_class = ITEM_SIZE_SMALL
+	w_class = ITEM_SIZE_TINY
 	body_parts_covered = FACE
 	item_flags = ITEM_FLAG_FLEXIBLEMATERIAL
 	gas_transfer_coefficient = 0.90

@@ -2,7 +2,7 @@
 	set name = "Who"
 	set category = "OOC"
 
-	var/msg = "<b>Список Игроков:</b>\n"
+	var/msg = "<meta charset='UTF-8'><b>РЎРїРёСЃРѕРє РРіСЂРѕРєРѕРІ:</b>\n"
 
 	var/list/Lines = list()
 
@@ -18,18 +18,18 @@
 		for(var/client/C in GLOB.clients)
 			var/entry = "\t[C.key]"
 			if(!C.mob) //If mob is null, print error and skip rest of info for client.
-				entry += " - <font color='red'><i>НЕ ИМЕЕТ ТЕЛА</i></font>"
+				entry += " - <font color='red'><i>РќР• РРњР•Р•Рў РўР•Р›Рђ</i></font>"
 				Lines += entry
 				continue
 
 			if(isghost(C.mob))
-				entry += " - <font color='gray'><b>Наблюдает</b></font> как <b>[C.mob.real_name]</b>"
+				entry += " - <font color='gray'><b>РќР°Р±Р»СЋРґР°РµС‚</b></font> РєР°Рє <b>[C.mob.real_name]</b>"
 			else if(isliving(C.mob))
-				entry += " - <font color='green'><b>Играет</b></font> как <b>[C.mob.real_name]</b>"
+				entry += " - <font color='green'><b>РРіСЂР°РµС‚</b></font> Р·Р° <b>[C.mob.real_name]</b>"
 
 			switch(C.mob.stat)
 				if(UNCONSCIOUS)
-					entry += " - <font color='#404040'><b>В отключке</b></font>"
+					entry += " - <font color='#404040'><b>Р’ РѕС‚РєР»СЋС‡РєРµ</b></font>"
 					living++
 				if(DEAD)
 					if(isghost(C.mob))
@@ -37,13 +37,13 @@
 						if(O.started_as_observer)
 							observers++
 						else
-							entry += " - <b>МЕРТВ</b>"
+							entry += " - <b>РњР•Р РўР’</b>"
 							dead++
 					else if(isnewplayer(C.mob))
-						entry += " - <font color='#006400'><b>В лобби</b></font>"
+						entry += " - <font color='#006400'><b>Р’ Р»РѕР±Р±Рё</b></font>"
 						lobby++
 					else
-						entry += " - <b>МЕРТВ</b>"
+						entry += " - <b>РњР•Р РўР’</b>"
 						dead++
 				else
 					living++
@@ -59,14 +59,14 @@
 				entry += " - [age]"
 
 			if(is_special_character(C.mob))
-				entry += " - <b><font color='red'>Антагонист</font></b>"
+				entry += " - <b><font color='red'>РђРЅС‚Р°РіРѕРЅРёСЃС‚</font></b>"
 				if(!C.mob.mind.current || C.mob.mind.current?.stat == DEAD)
 					dead_antags++
 				else
 					living_antags++
 
 			if(C.is_afk())
-				entry += " - <b>АФК: [C.inactivity2text()]</b>"
+				entry += " - <b>AFK: [C.inactivity2text()]</b>"
 			entry += " (<A HREF='?_src_=holder;adminmoreinfo=\ref[C.mob]'>?</A>)"
 			Lines += entry
 	else
@@ -78,13 +78,13 @@
 						if(isghost(C.mob))
 							var/mob/observer/ghost/O = C.mob
 							if(O.started_as_observer)
-								entry += " - <font color='gray'><b>Наблюдает</b></font>"
+								entry += " - <font color='gray'><b>РќР°Р±Р»СЋРґР°РµС‚</b></font>"
 							else
-								entry += " - <font color='green'><b>Играет</b></font>"
+								entry += " - <font color='green'><b>РРіСЂР°РµС‚</b></font>"
 						else if(isnewplayer(C.mob))
-							entry += " - <font color='#006400'><b>В лобби</b></font>"
+							entry += " - <font color='#006400'><b>Р’ Р»РѕР±Р±Рё</b></font>"
 					else
-						entry += " - <font color='green'><b>Играет</b></font>"*/
+						entry += " - <font color='green'><b>РРіСЂР°РµС‚</b></font>"*/
 
 				if(C.is_afk())
 					entry += " - <b>AFK: [C.inactivity2text()]</b>"
@@ -92,15 +92,15 @@
 				Lines += entry
 
 	if(get_preference_value(/datum/client_preference/window_who) == GLOB.PREF_YES)
-		msg = "<h2><b>Список Игроков:</b></h2>\n"
+		msg = "<h2><b>РЎРїРёСЃРѕРє РРіСЂРѕРєРѕРІ:</b></h2>\n"
 
 	for(var/line in sortList(Lines))
 		msg += "[line]\n"
 
 	if(check_rights(R_INVESTIGATE, 0))
-		msg += "<b><font color='green'>Живых: [living]</font> | Мертвых: [dead] | <font color='gray'>Наблюдателей: [observers]</font> | <font color='#006400'>Лоббистов: [lobby]</font> | <font color='#8100aa'>Живых Антагов: [living_antags]</font> | <font color='#9b0000'>Мертвых Антагов: [dead_antags]</font></b>\n"
+		msg += "<b><font color='green'>Р–РёРІС‹С…: [living]</font> | РњРµСЂС‚РІС‹С…: [dead] | <font color='gray'>РќР°Р±Р»СЋРґР°С‚РµР»РµР№: [observers]</font> | <font color='#006400'>Р›РѕР±Р±РёСЃС‚РѕРІ: [lobby]</font> | <font color='#8100aa'>Р–РёРІС‹С… РђРЅС‚Р°РіРѕРІ: [living_antags]</font> | <font color='#9b0000'>РњРµСЂС‚РІС‹С… РђРЅС‚Р°РіРѕРІ: [dead_antags]</font></b>\n"
 
-	msg += "<b>Всего Игроков: [length(Lines)]</b>"
+	msg += "<b>Р’СЃРµРіРѕ РРіСЂРѕРєРѕРІ: [length(Lines)]</b>"
 	if(get_preference_value(/datum/client_preference/window_who) == GLOB.PREF_YES)
 		msg = replacetext(msg, "\n", "<br>")
 		show_browser(usr, msg, "window=who;size=780x420;can_close=1")
@@ -108,7 +108,7 @@
 		to_chat(src, msg)
 
 /datum/client_preference/window_who
-	description ="Display content in a separate window"
+	description ="Who: Show in a separate window"
 	key = "WINDOW_WHO"
 	default_value = GLOB.PREF_NO
 
@@ -134,15 +134,15 @@
 			active_staff++
 		if(can_investigate)
 			if(C.is_afk())
-				line += " (АФК - [C.inactivity2text()])"
+				line += " (РђР¤Рљ - [C.inactivity2text()])"
 			if(isghost(C.mob))
-				line += " - Наблюдает"
+				line += " - РќР°Р±Р»СЋРґР°РµС‚"
 			else if(istype(C.mob,/mob/new_player))
-				line += " - В лобби"
+				line += " - Р’ Р»РѕР±Р±Рё"
 			else
-				line += " - Играет"
+				line += " - РРіСЂР°РµС‚"
 			if(C.is_stealthed())
-				line += " (Стелс)"
+				line += " (РЎС‚РµР»СЃ)"
 			if(C.get_preference_value(/datum/client_preference/show_ooc) == GLOB.PREF_HIDE)
 				line += " <font color='#002eb8'><b><s>(OOC)</s></b></font>"
 			if(C.get_preference_value(/datum/client_preference/show_looc) == GLOB.PREF_HIDE)
@@ -157,7 +157,7 @@
 		else
 			msg += line
 
-	to_chat(src, "<b>Сотрудники [active_staff]/[total_staff]:</b>")
+	to_chat(src, "<b>РЎРѕС‚СЂСѓРґРЅРёРєРё [active_staff]/[total_staff]:</b>")
 	to_chat(src, jointext(msg,"\n"))
 	if(config.admin_irc)
-		to_chat(src, "<span class='info'>Ваш запрос на помощь могут увидеть админы в дискорде. Если администрации нет на сервере, всё равно попробуйте написать, возможно вам ответ&#255;т оттуда.</span>")
+		to_chat(src, "<span class='info'>Р’Р°С€ Р·Р°РїСЂРѕСЃ РЅР° РїРѕРјРѕС‰СЊ РјРѕРіСѓС‚ СѓРІРёРґРµС‚СЊ Р°РґРјРёРЅС‹ РІ РґРёСЃРєРѕСЂРґРµ. Р•СЃР»Рё Р°РґРјРёРЅРёСЃС‚СЂР°С†РёРё РЅРµС‚ РЅР° СЃРµСЂРІРµСЂРµ, РІСЃС‘ СЂР°РІРЅРѕ РїРѕРїСЂРѕР±СѓР№С‚Рµ РЅР°РїРёСЃР°С‚СЊ, РІРѕР·РјРѕР¶РЅРѕ РІР°Рј РѕС‚РІРµС‚СЏС‚ РѕС‚С‚СѓРґР°.</span>")

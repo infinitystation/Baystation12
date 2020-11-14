@@ -10,24 +10,6 @@
 	var/list/areaType = list(/area/security/prison, /area/security/brig)	//Area types to include.
 	var/list/areaNotType = list()		//Area types to specifically exclude.
 
-/datum/event/prison_break/virology
-	eventDept = "Medical"
-	areaName = list("Virology")
-	areaType = list(/area/medical/virology, /area/medical/virologyaccess)
-
-/datum/event/prison_break/xenobiology
-	eventDept = "Science"
-	areaName = list("Xenobiology")
-	areaType = list(/area/rnd/xenobiology)
-	areaNotType = list(/area/rnd/xenobiology/xenoflora, /area/rnd/xenobiology/xenoflora_storage)
-
-/datum/event/prison_break/station
-	eventDept = "Local"
-	areaName = list("Brig","Virology","Xenobiology")
-	areaType = list(/area/security/prison, /area/security/brig, /area/medical/virology, /area/medical/virologyaccess, /area/rnd/xenobiology)
-	areaNotType = list(/area/rnd/xenobiology/xenoflora, /area/rnd/xenobiology/xenoflora_storage)
-
-
 /datum/event/prison_break/setup()
 	announceWhen = rand(75, 105)
 	releaseWhen = rand(60, 90)
@@ -37,7 +19,7 @@
 
 /datum/event/prison_break/announce()
 	if(areas && areas.len > 0)
-		command_announcement.Announce("[pick("Вирус С3Р49 80ЛH4","Троян")] обнаружен в системах [(eventDept == "Security")? "камер заключенных":"зон долговременного содержания"] судна [location_name()]. Требуется скорейший ремонт систем в указанных зонах. Помощь ИИ рекомендуется.", "[location_name()] Firewall Alert", zlevels = affecting_z)
+		command_announcement.Announce("[pick("Р’РёСЂСѓСЃ РЎ3Р 49 80Р›H4","РўСЂРѕСЏРЅ")] РѕР±РЅР°СЂСѓР¶РµРЅ РІ СЃРёСЃС‚РµРјР°С… [(eventDept == "Security")? "РєР°РјРµСЂ Р·Р°РєР»СЋС‡РµРЅРЅС‹С…":"Р·РѕРЅ РґРѕР»РіРѕРІСЂРµРјРµРЅРЅРѕРіРѕ СЃРѕРґРµСЂР¶Р°РЅРёСЏ"] СЃСѓРґРЅР° [location_name()]. РўСЂРµР±СѓРµС‚СЃСЏ СЃРєРѕСЂРµР№С€РёР№ СЂРµРјРѕРЅС‚ СЃРёСЃС‚РµРј РІ СѓРєР°Р·Р°РЅРЅС‹С… Р·РѕРЅР°С…. РџРѕРјРѕС‰СЊ РР СЂРµРєРѕРјРµРЅРґСѓРµС‚СЃСЏ.", "[location_name()] Firewall Alert", zlevels = affecting_z)
 
 
 /datum/event/prison_break/start()
@@ -55,7 +37,7 @@
 			to_chat(A, "<span class='danger'>Malicious program detected in the [english_list(areaName)] lighting and airlock control systems by [my_department].</span>")
 
 	else
-		world.log << "ERROR: Could not initate grey-tide. Unable to find suitable containment area."
+		to_world_log("ERROR: Could not initate grey-tide. Unable to find suitable containment area.")
 		kill()
 
 

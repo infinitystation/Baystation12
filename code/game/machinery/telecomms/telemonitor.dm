@@ -22,6 +22,10 @@
 	attack_hand(mob/user as mob)
 		if(..(user))
 			return
+	//[INF]
+		interact(user)
+	interact(mob/user as mob)
+	//[/INF]
 		if(stat & (BROKEN|NOPOWER))
 			return
 		user.set_machine(src)

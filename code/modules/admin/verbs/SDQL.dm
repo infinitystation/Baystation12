@@ -4,7 +4,7 @@
 //Note: For use in BS12, need text_starts_with proc, and to modify the action on select to use BS12's object edit command(s).
 
 /client/proc/SDQL_query(query_text as message)
-	set category = "Admin"
+	set category = "Debug"
 	if(!check_rights(R_DEBUG))  //Shouldn't happen... but just to be safe.
 		log_and_message_admins(" - Non-admin attempted to execute a SDQL query!")
 
@@ -325,7 +325,7 @@
 					text += "<a href='?src=\ref[t];SDQL_select=\ref[t]'>\ref[t]</a>: [t]<br>"
 
 				//text += "[t]<br>"
-			usr << browse(text, "window=sdql_result")
+			show_browser(usr, text, "window=sdql_result")
 
 /proc/SDQL_evaluate(datum/object, list/equation)
 	if(equation.len == 0)

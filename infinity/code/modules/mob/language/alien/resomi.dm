@@ -1,11 +1,9 @@
 /datum/language/resomi
-	primitive_version = LANGUAGE_PRESOMI //inf
-	native_speaker = list(SPECIES_RESOMI, SPECIES_IPC)
 	name = LANGUAGE_RESOMI
 	desc = "A trilling language spoken by the diminutive Resomi."
-	speech_verb = "щебечет"
-	ask_verb = "чирикает"
-	exclaim_verb = "верещит"
+	speech_verb = "С‰РµР±РµС‡РµС‚"
+	ask_verb = "С‡РёСЂРёРєР°РµС‚"
+	exclaim_verb = "РІРµСЂРµС‰РёС‚"
 	colour = "alien"
 	key = "e"
 	flags = WHITELISTED

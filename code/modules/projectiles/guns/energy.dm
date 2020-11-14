@@ -1,6 +1,3 @@
-GLOBAL_LIST_INIT(registered_weapons, list())
-GLOBAL_LIST_INIT(registered_cyborg_weapons, list())
-
 /obj/item/weapon/gun/energy
 	name = "energy gun"
 	desc = "A basic energy-based gun."
@@ -107,3 +104,4 @@ GLOBAL_LIST_INIT(registered_cyborg_weapons, list())
 			icon_state = "[modifystate][ratio]"
 		else
 			icon_state = "[initial(icon_state)][ratio]"
+		update_held_icon()

@@ -13,9 +13,11 @@
 	partial_understanding = list(
 		LANGUAGE_HUMAN_EURO = 5,
 		LANGUAGE_HUMAN_ARABIC = 5,
-		LANGUAGE_HUMAN_INDIAN = 5, 
+		LANGUAGE_HUMAN_INDIAN = 5,
 		LANGUAGE_HUMAN_SELENIAN = 10,
-		LANGUAGE_SPACER = 20
+		LANGUAGE_SPACER = 20,
+		LANGUAGE_HUMAN_AVALON = 5, //inf
+		LANGUAGE_HUMAN_LORRIMAN = 10 //inf
 	)
 	syllables = list(
 		"a", "ai", "an", "ang", "ao", "ba", "bai", "ban", "bang", "bao", "bei", "ben", "beng", "bi", "bian", "biao",

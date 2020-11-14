@@ -11,7 +11,7 @@
 
 //Returns a list in plain english as a string
 /proc/english_list(var/list/input, nothing_text = "nothing", and_text = " and ", comma_text = ", ", final_comma_text = "," )
-	switch(input.len)
+	switch(length(input))
 		if(0) return nothing_text
 		if(1) return "[input[1]]"
 		if(2) return "[input[1]][and_text][input[2]]"
@@ -393,7 +393,7 @@ Checks if a list has the same entries and values as an element of big.
 
 //Don't use this on lists larger than half a dozen or so
 /proc/insertion_sort_numeric_list_ascending(var/list/L)
-	//world.log << "ascending len input: [L.len]"
+	//to_world_log("ascending len input: [L.len]")
 	var/list/out = list(pop(L))
 	for(var/entry in L)
 		if(isnum(entry))
@@ -406,13 +406,13 @@ Checks if a list has the same entries and values as an element of big.
 			if(!success)
 				out.Add(entry)
 
-	//world.log << "	output: [out.len]"
+	//to_world_log("output: [out.len]")
 	return out
 
 /proc/insertion_sort_numeric_list_descending(var/list/L)
-	//world.log << "descending len input: [L.len]"
+	//to_world_log("descending len input: [L.len]")
 	var/list/out = insertion_sort_numeric_list_ascending(L)
-	//world.log << "	output: [out.len]"
+	//to_world_log("output: [out.len]")
 	return reverselist(out)
 
 
@@ -619,13 +619,13 @@ proc/dd_sortedTextList(list/incoming)
 	return "[src]"
 
 /obj/machinery/dd_SortValue()
-	return "[sanitize_old(name)]"
+	return "[name]"
 
 /obj/machinery/camera/dd_SortValue()
 	return "[c_tag]"
 
 /datum/alarm/dd_SortValue()
-	return "[sanitize_old(last_name)]"
+	return "[last_name]"
 
 //creates every subtype of prototype (excluding prototype) and adds it to list L.
 //if no list/L is provided, one is created.

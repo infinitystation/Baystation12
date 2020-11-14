@@ -4,7 +4,7 @@
 	department_flag = SEC
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Head of Security"
+	supervisors = "Главой Охраны"
 	economic_power = 8
 	minimal_player_age = 14
 	ideal_character_age = 35
@@ -34,6 +34,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
+	good_genome_prob = 40
 
 /datum/job/detective
 	title = "Detective"
@@ -73,6 +74,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
+	good_genome_prob = 25
 
 /datum/job/officer
 	title = "Security Guard"
@@ -80,12 +82,11 @@
 	department_flag = SEC
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "the Head of Security"
+	supervisors = "Главой Охраны и Смотрителем (сержантом)"
 	economic_power = 6
 	minimal_player_age = 10
 	ideal_character_age = 25
-	alt_titles = list(
-		"Junior Guard")
+	alt_titles = list()
 
 	skill_points = 20
 
@@ -110,3 +111,36 @@
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
+	good_genome_prob = 15
+
+/datum/job/security_assistant
+	title = "Security Cadet"
+	department = "Security"
+	department_flag = SEC
+
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "Главой Охраны и остальным охранным персоналом"
+	economic_power = 3
+	ideal_character_age = 21
+	selection_color = "#601c1c"
+	alt_titles = list("Junior Guard")
+
+	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_COMBAT      = SKILL_BASIC,
+	                    SKILL_HAULING     = SKILL_BASIC)
+	skill_points = 18
+
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/security/assist
+	allowed_branches = list(
+			/datum/mil_branch/employee
+		)
+	allowed_ranks = list(
+			/datum/mil_rank/civ/nt
+		)
+
+	access = list(access_seceva, access_security, access_brig, access_maint_tunnels,
+						access_external_airlocks, access_emergency_storage,
+			            access_eva, access_sec_doors, access_hangar)
+
+	minimal_access = list()

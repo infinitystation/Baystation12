@@ -3,6 +3,6 @@
 	"character_name"	:	"Geniffer Fon Livia",
 	"item_name"			:	"black machete",
 	"item_icon_state"	:	"machete_black_geniffer",
-	"item_path"			:	"/obj/item/weapon/material/hatchet/machete",
+	"item_path"			:	"/obj/item/weapon/material/hatchet/machete/unbreakable",
 	"req_access"		:	["ACCESS_EXPEDITION_SHUTTLE"]
 }

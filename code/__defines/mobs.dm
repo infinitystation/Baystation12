@@ -185,6 +185,8 @@
 #define BP_APPENDIX "appendix"
 #define BP_CELL     "cell"
 #define BP_HIVE     "hive node"
+#define BP_LARVA    "alien larva" //INF
+#define BP_MIMIC    "mimic sac" //INF
 #define BP_NUTRIENT "nutrient vessel"
 #define BP_ACID     "acid gland"
 #define BP_EGG      "egg sac"
@@ -196,6 +198,7 @@
 #define BP_ANCHOR   "anchoring ligament"
 #define BP_PHORON   "phoron filter"
 #define BP_ACETONE  "acetone reactor"
+#define BP_GLAND    "alien gland" //INF
 
 // Vox bits.
 #define BP_HINDTONGUE "hindtongue"
@@ -356,3 +359,8 @@
 
 #define MARKING_TARGET_SKIN 0 // Draw a datum/sprite_accessory/marking to the mob's body, eg. tattoos
 #define MARKING_TARGET_HAIR 1 // Draw a datum/sprite_accessory/marking to the mob's hair, eg. ears & horns
+
+// used in /mob/living/carbon/human/can_inject, and by various callers of that proc
+#define CAN_INJECT 1
+#define INJECTION_PORT 2
+#define INJECTION_PORT_DELAY 3 SECONDS // used by injectors to apply delay due to searching for a port on the injectee's suit

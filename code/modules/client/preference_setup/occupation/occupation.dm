@@ -86,7 +86,7 @@
 	. += "<style>.Points,a.Points{background: #cc5555;}</style>"
 	. += "<style>a.Points:hover{background: #55cc55;}</style>"
 	. += "<tt><center>"
-	. += "<font size=3><b>Select and configure your occupation preferences. Unavailable occupations are crossed out.</b></font>"
+	. += "<font size=3><b>Выберите и настройте желаемую должность. Недоступные будут перечеркнуты.</b></font>"
 	. += "<br>"
 
 	// Display everything.

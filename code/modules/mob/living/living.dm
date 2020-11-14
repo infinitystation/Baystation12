@@ -256,7 +256,7 @@ default behaviour is:
 /mob/living/proc/getToxLoss()
 	return 0
 
-/mob/living/proc/adjustToxLoss(var/amount, var/admin_healing = 0) //INF, WAS /mob/living/proc/adjustToxLoss(var/amount)
+/mob/living/proc/adjustToxLoss(var/amount)
 	adjustBruteLoss(amount * 0.5)
 
 /mob/living/proc/setToxLoss(var/amount)
@@ -361,7 +361,7 @@ default behaviour is:
 
 /mob/living/proc/get_organ_target()
 	var/mob/shooter = src
-	var/t = shooter:zone_sel.selecting
+	var/t = shooter.zone_sel?.selecting
 	if ((t in list( BP_EYES, BP_MOUTH )))
 		t = BP_HEAD
 	var/obj/item/organ/external/def_zone = ran_zone(t)
@@ -369,7 +369,7 @@ default behaviour is:
 
 
 // heal ONE external organ, organ gets randomly selected from damaged ones.
-/mob/living/proc/heal_organ_damage(var/brute, var/burn)
+/mob/living/proc/heal_organ_damage(var/brute, var/burn, var/affect_robo = 0)
 	adjustBruteLoss(-brute)
 	adjustFireLoss(-burn)
 	src.updatehealth()
@@ -568,7 +568,10 @@ default behaviour is:
 	if(!can_pull())
 		stop_pulling()
 		return
-	
+
+	if(pulling.loc == loc || pulling.loc == old_loc)
+		return
+
 	if (!isliving(pulling))
 		if(pulling.loc != loc && pulling.loc != old_loc) //inf
 			step(pulling, get_dir(pulling.loc, old_loc))
@@ -591,24 +594,25 @@ default behaviour is:
 				handle_dir_after_pull() //inf
 			if(t)
 				M.start_pulling(t)
+	handle_dir_after_pull()
 
-//[INF]
 /mob/living/proc/handle_dir_after_pull()
 	if(pulling)
 		if(isobj(pulling))
 			var/obj/O = pulling
+//[INF]
 			// hacky check to know if you can pass through the closet
 			if(istype(O, /obj/structure/closet) && !O.density)
 				return set_dir(get_dir(src, pulling))
+//[/INF]
 			if(O.w_class >= ITEM_SIZE_HUGE || O.density)
 				return set_dir(get_dir(src, pulling))
 		if(isliving(pulling))
 			var/mob/living/L = pulling
-			// if pulling mob is bigger than us we morelike will pull it hard
-			// I made additional check in case if someone want hand walk
+			// If pulled mob was bigger than us, we morelike will turn
+			// I made additional check in case if someone want a hand walk
 			if(L.mob_size > mob_size || L.lying || a_intent != I_HELP)
 				return set_dir(get_dir(src, pulling))
-//[/INF]
 
 /mob/living/proc/handle_pull_damage(mob/living/puller)
 	var/area/A = get_area(src)
@@ -714,7 +718,7 @@ default behaviour is:
 
 //called when the mob receives a bright flash
 /mob/living/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /obj/screen/fullscreen/flash)
-	if(override_blindness_check || !(disabilities & BLIND))
+	if(override_blindness_check || !(disabilities & BLINDED))
 		..()
 		overlay_fullscreen("flash", type)
 		spawn(25)
@@ -901,3 +905,6 @@ default behaviour is:
 
 /mob/living/proc/eyecheck()
 	return FLASH_PROTECTION_NONE
+
+/mob/living/proc/InStasis()
+	return FALSE

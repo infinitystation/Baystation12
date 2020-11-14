@@ -21,7 +21,9 @@
 	name = "Operations Funding"
 	item_cost = 8
 	path = /obj/item/weapon/storage/secure/briefcase/money
-	desc = "A briefcase with 10,000 untraceable thalers. Makes a great bribe if they're willing to take you up on your offer."
+/datum/uplink_item/item/tools/money/New()
+	. = ..()
+	desc = "A briefcase with 10,000 untraceable [GLOB.using_map.local_currency_name]. Makes a great bribe if they're willing to take you up on your offer."
 
 /datum/uplink_item/item/tools/clerical
 	name = "Morphic Clerical Kit"
@@ -32,8 +34,10 @@
 /datum/uplink_item/item/tools/plastique
 	name = "C-4"
 	desc = "Set this on a wall to put a hole exactly where you need it."
-	item_cost = 16
+	item_cost = 6 //INF was 16
 	path = /obj/item/weapon/plastique
+
+/*[INF]
 
 /datum/uplink_item/item/tools/heavy_armor
 	name = "Heavy Armor Vest and Helmet"
@@ -41,6 +45,8 @@
 	Suit up, and strap in, things are about to get hectic."
 	item_cost = 16
 	path = /obj/item/weapon/storage/backpack/dufflebag/syndie_kit/armor
+
+[/INF]*/
 
 /datum/uplink_item/item/tools/encryptionkey_radio
 	name = "Encrypted Radio Channel Key"
@@ -92,12 +98,17 @@
 			This device will be able to continuously reaccess the last 6 to 8  airlocks it was used on. \
 			Only people like you may activate it with screwdriver."
 //[/INF]
+
+/*[INF]
+
 /datum/uplink_item/item/tools/space_suit
 	name = "Voidsuit and Tactical Mask"
 	desc = "A satchel containing a non-regulation voidsuit, voidsuit helmet, tactical mask, and oxygen tank. \
 	Conceal your identity, while also not dying in space."
 	item_cost = 28
 	path = /obj/item/weapon/storage/backpack/dufflebag/syndie_kit/space
+
+[/INF]*/
 
 /datum/uplink_item/item/tools/thermal
 	name = "Thermal Imaging Glasses"
@@ -169,11 +180,10 @@
 	desc = "A remote-activated phoron-oxygen bomb assembly with built-in signaler. \
 			A flashing disclaimer begins with the warning 'SOME DISASSEMBLY/REASSEMBLY REQUIRED.'"
 
-//[INF]
-/datum/uplink_item/item/tools/holobomb
-	name = "Box of holobombs"
-	item_cost = 32
-	path = /obj/item/weapon/storage/box/holobombs
-	desc = "Contains 5 holobomb and instruction. \
-			A bomb that changes appearance, ànd can destroy some hands."
-//[/INF]
+/datum/uplink_item/item/tools/polychromic_dye_bottle
+	name = "Extra-Strength Polychromic Dye"
+	item_cost = 10
+	path = /obj/item/weapon/reagent_containers/glass/bottle/dye/polychromic/strong
+	desc = "15 units of a tasteless dye that causes chemical mixtures to take on the color of the dye itself. \
+			Very useful for disguising poisons to the untrained eye; even large amounts of reagents can be fully recolored with only a few drops of dye. \
+			Like the mundane variety of polychromic dye, you can use the bottle in your hand to change the dye's color to suit your needs."

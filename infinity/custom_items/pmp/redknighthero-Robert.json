@@ -1,5 +1,5 @@
 {
   "ckey" :            "redknighthero",
   "character_name" :  "Robert Witter",
-  "item_path" :       "/obj/item/music_player/custom_tape"
+  "item_path" :       "/obj/item/music_player/radio/custom_tape/redknighthero"
   }

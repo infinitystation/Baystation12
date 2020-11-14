@@ -12,12 +12,14 @@
 					scream_sound = pick('infinity/sound/voice/pain_male_1.ogg','infinity/sound/voice/pain_male_2.ogg','infinity/sound/voice/pain_male_3.ogg')
 				if(FEMALE)
 					scream_sound = pick('infinity/sound/voice/agony_female_1.ogg','infinity/sound/voice/agony_female_1.ogg','infinity/sound/voice/agony_female_1.ogg')
-			message = "кричит от боли!"
+			message = "РєСЂРёС‡РёС‚ РѕС‚ Р±РѕР»Рё!"
 		else
-			message = "издает громкое мычание!"
+			message = "РёР·РґР°РµС‚ РіСЂРѕРјРєРѕРµ РјС‹С‡Р°РЅРёРµ!"
 
 		if(scream_sound)
 			if(H.species.name in SOUNDED_SPECIES)
+				if(H.species.name == SPECIES_RESOMI)
+					scream_sound = 'infinity/sound/voice/resomisneeze.ogg'
 				playsound(src, scream_sound, 50, 0, 1)
 
 	if(message)
@@ -35,9 +37,9 @@
 			switch(gender)
 				if(MALE) moan_sound = pick('infinity/sound/voice/moan_male_1.ogg','infinity/sound/voice/moan_male_2.ogg','infinity/sound/voice/moan_male_3.ogg')
 				if(FEMALE) moan_sound = pick('infinity/sound/voice/moan_female_1.ogg','infinity/sound/voice/moan_female_2.ogg','infinity/sound/voice/moan_female_3.ogg')
-			message = "стонет от боли!"
+			message = "СЃС‚РѕРЅРµС‚ РѕС‚ Р±РѕР»Рё!"
 		else
-			message = "издает громкое мычание!"
+			message = "РёР·РґР°РµС‚ РіСЂРѕРјРєРѕРµ РјС‹С‡Р°РЅРёРµ!"
 
 		if(moan_sound)
 			if(H.species.name in SOUNDED_SPECIES)

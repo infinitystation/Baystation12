@@ -110,3 +110,22 @@
 	path = /obj/item/clothing/accessory/storage/drop_pouches/white
 	cost = 3
 	flags = GEAR_HAS_COLOR_SELECTION
+
+/datum/gear/accessory/scarf_inf
+	display_name = "special scarfs selection"
+	path = /obj/item/clothing/accessory/scarf/inf
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/cards_compact
+	display_name = "deck of cards (compact)"
+	path = /obj/item/weapon/deck/compact
+
+/datum/gear/gloves/wristwatch
+	display_name = "watch"
+	path = /obj/item/clothing/gloves/wristwatch
+	cost = 1
+
+/datum/gear/gloves/wristwatch/gold
+	display_name = "watch, gold"
+	path = /obj/item/clothing/gloves/wristwatch/gold
+	cost = 3

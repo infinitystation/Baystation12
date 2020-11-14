@@ -373,7 +373,8 @@
 	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
 	sprite_sheets = list(
 		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_suit_resomi.dmi',
-		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/suit.dmi'
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/infinity/onmob_suit.dmi', //inf, orig was SPECIES_UNATHI = 'icons/mob/onmob/Unathi/suit.dmi'
+		SPECIES_HUMAN  = 'icons/mob/onmob/infinity/onmob_suit.dmi',        //inf
 		)
 
 /obj/item/clothing/suit/storage/toggle/hoodie/cti

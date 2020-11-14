@@ -2,14 +2,14 @@
 	logo = "\[logo\]"
 
 /datum/computer_file/report/recipient/nt/proc/add_header()
-	add_field(/datum/report_field/simple_text, "Судно", "ИСН Сьерра")
-	add_field(/datum/report_field/date, "Дата")
-	add_field(/datum/report_field/time, "Врем&#255;")
-	add_field(/datum/report_field/simple_text, "Номер")
+	add_field(/datum/report_field/simple_text, "РЎСѓРґРЅРѕ", "РРЎРќ РЎСЊРµСЂСЂР°")
+	add_field(/datum/report_field/date, "Р”Р°С‚Р°")
+	add_field(/datum/report_field/time, "Р’СЂРµРјСЏ")
+	add_field(/datum/report_field/simple_text, "РќРѕРјРµСЂ")
 
 /datum/computer_file/report/recipient/nt/fire
 	form_name = "NT-0102"
-	title = "Форма прекращени&#255; трудового контракта NT"
+	title = "Р¤РѕСЂРјР° РїСЂРµРєСЂР°С‰РµРЅРёСЏ С‚СЂСѓРґРѕРІРѕРіРѕ РєРѕРЅС‚СЂР°РєС‚Р° NT"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/fire/New()
@@ -19,13 +19,13 @@
 /datum/computer_file/report/recipient/nt/fire/generate_fields()
 	..()
 	add_header()
-	add_field(/datum/report_field/text_label/header, "Запись о разрыве трудового контакта")
-	add_field(/datum/report_field/people/from_manifest, "Им&#255;")
-	add_field(/datum/report_field/number, "Возраст")
-	add_field(/datum/report_field/simple_text, "Должность")
-	add_field(/datum/report_field/pencode_text, "Причина увольнени&#255;")
-	add_field(/datum/report_field/signature, "Авторизовано")
-	add_field(/datum/report_field/text_label/instruction, "Пожалуйста, прикрепите личное дело сотрудника к этой записи о разрыве трудового контракта.")
+	add_field(/datum/report_field/text_label/header, "Р—Р°РїРёСЃСЊ Рѕ СЂР°Р·СЂС‹РІРµ С‚СЂСѓРґРѕРІРѕРіРѕ РєРѕРЅС‚Р°РєС‚Р°")
+	add_field(/datum/report_field/people/from_manifest, "РРјСЏ")
+	add_field(/datum/report_field/number, "Р’РѕР·СЂР°СЃС‚")
+	add_field(/datum/report_field/simple_text, "Р”РѕР»Р¶РЅРѕСЃС‚СЊ")
+	add_field(/datum/report_field/pencode_text, "РџСЂРёС‡РёРЅР° СѓРІРѕР»СЊРЅРµРЅРёСЏ")
+	add_field(/datum/report_field/signature, "РђРІС‚РѕСЂРёР·РѕРІР°РЅРѕ")
+	add_field(/datum/report_field/text_label/instruction, "РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РїСЂРёРєСЂРµРїРёС‚Рµ Р»РёС‡РЅРѕРµ РґРµР»Рѕ СЃРѕС‚СЂСѓРґРЅРёРєР° Рє СЌС‚РѕР№ Р·Р°РїРёСЃРё Рѕ СЂР°Р·СЂС‹РІРµ С‚СЂСѓРґРѕРІРѕРіРѕ РєРѕРЅС‚СЂР°РєС‚Р°.")
 
 /datum/computer_file/report/recipient/nt/incident/New()
 	..()
@@ -34,106 +34,106 @@
 /datum/computer_file/report/recipient/nt/incident/generate_fields()
 	..()
 	add_header()
-	add_field(/datum/report_field/pencode_text, "Резюме по инциденту")
-	add_field(/datum/report_field/pencode_text, "Подробности инцидента")
+	add_field(/datum/report_field/pencode_text, "Р РµР·СЋРјРµ РїРѕ РёРЅС†РёРґРµРЅС‚Сѓ")
+	add_field(/datum/report_field/pencode_text, "РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё РёРЅС†РёРґРµРЅС‚Р°")
 
 /datum/computer_file/report/recipient/nt/incident/proc/add_signatures()
-	add_field(/datum/report_field/signature, "Подпись официального лица")
-	add_field(/datum/report_field/signature, "Подпись свидетел&#255;")
-	add_field(/datum/report_field/options/yes_no, "Одобрено")
+	add_field(/datum/report_field/signature, "РџРѕРґРїРёСЃСЊ РѕС„РёС†РёР°Р»СЊРЅРѕРіРѕ Р»РёС†Р°")
+	add_field(/datum/report_field/signature, "РџРѕРґРїРёСЃСЊ СЃРІРёРґРµС‚РµР»СЏ")
+	add_field(/datum/report_field/options/yes_no, "РћРґРѕР±СЂРµРЅРѕ")
 
 /datum/computer_file/report/recipient/nt/incident/ship
 	form_name = "NT-3203"
-	title = "Доклад об инциденте на судне NanoTrasen"
+	title = "Р”РѕРєР»Р°Рґ РѕР± РёРЅС†РёРґРµРЅС‚Рµ РЅР° СЃСѓРґРЅРµ NanoTrasen"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/incident/ship/generate_fields()
 	..()
-	add_field(/datum/report_field/pencode_text, "Вовлеченные департаменты")
+	add_field(/datum/report_field/pencode_text, "Р’РѕРІР»РµС‡РµРЅРЅС‹Рµ РґРµРїР°СЂС‚Р°РјРµРЅС‚С‹")
 	add_signatures()
 
 
 /datum/computer_file/report/recipient/nt/incident/personnel
 	form_name = "NT-3205"
-	title = "Доклад об инциденте с персоналом NanoTrasen"
+	title = "Р”РѕРєР»Р°Рґ РѕР± РёРЅС†РёРґРµРЅС‚Рµ СЃ РїРµСЂСЃРѕРЅР°Р»РѕРј NanoTrasen"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/incident/personnel/generate_fields()
 	..()
-	add_field(/datum/report_field/people/list_from_manifest, "Вовлеченный персонал")
+	add_field(/datum/report_field/people/list_from_manifest, "Р’РѕРІР»РµС‡РµРЅРЅС‹Р№ РїРµСЂСЃРѕРЅР°Р»")
 	add_signatures()
 
 /datum/computer_file/report/recipient/nt/incident/asset
 	form_name = "NT-3201"
-	title = "Доклад об инциденте с активами NanoTrasen"
+	title = "Р”РѕРєР»Р°Рґ РѕР± РёРЅС†РёРґРµРЅС‚Рµ СЃ Р°РєС‚РёРІР°РјРё NanoTrasen"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/incident/asset/generate_fields()
 	..()
-	add_field(/datum/report_field/pencode_text, "Травмы сотрудников NanoTrasen")
-	add_field(/datum/report_field/pencode_text, "Потери активов NanoTrasen")
+	add_field(/datum/report_field/pencode_text, "РўСЂР°РІРјС‹ СЃРѕС‚СЂСѓРґРЅРёРєРѕРІ NanoTrasen")
+	add_field(/datum/report_field/pencode_text, "РџРѕС‚РµСЂРё Р°РєС‚РёРІРѕРІ NanoTrasen")
 	add_signatures()
 
 /datum/computer_file/report/recipient/nt/incident/xeno
 	form_name = "NT-3213"
-	title = "Доклад об инциденте с персоналом-не-людьми NanoTrasen"
+	title = "Р”РѕРєР»Р°Рґ РѕР± РёРЅС†РёРґРµРЅС‚Рµ СЃ РїРµСЂСЃРѕРЅР°Р»РѕРј-РЅРµ-Р»СЋРґСЊРјРё NanoTrasen"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/incident/xeno/generate_fields()
-	add_field(/datum/report_field/text_label/header, "Если у сотрудника не-человека отсутствует рабоча&#255; виза, используйте форму NT-3213A.")
+	add_field(/datum/report_field/text_label/header, "Р•СЃР»Рё Сѓ СЃРѕС‚СЂСѓРґРЅРёРєР° РЅРµ-С‡РµР»РѕРІРµРєР° РѕС‚СЃСѓС‚СЃС‚РІСѓРµС‚ СЂР°Р±РѕС‡Р°СЏ РІРёР·Р°, РёСЃРїРѕР»СЊР·СѓР№С‚Рµ С„РѕСЂРјСѓ NT-3213A.")
 	..()
-	add_field(/datum/report_field/people/list_from_manifest, "Вовлеченный персонал-не-люди")
+	add_field(/datum/report_field/people/list_from_manifest, "Р’РѕРІР»РµС‡РµРЅРЅС‹Р№ РїРµСЂСЃРѕРЅР°Р»-РЅРµ-Р»СЋРґРё")
 	add_signatures()
 
 /datum/computer_file/report/recipient/nt/incident/xeno_no_visa/
 	form_name = "NT-3213A"
-	title = "Доклад об инциденте с персоналом-не-людьми NanoTrasen: Отсутствие визы"
+	title = "Р”РѕРєР»Р°Рґ РѕР± РёРЅС†РёРґРµРЅС‚Рµ СЃ РїРµСЂСЃРѕРЅР°Р»РѕРј-РЅРµ-Р»СЋРґСЊРјРё NanoTrasen: РћС‚СЃСѓС‚СЃС‚РІРёРµ РІРёР·С‹"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/incident/xeno_no_visa/generate_fields()
-	add_field(/datum/report_field/text_label/header, "Если рабоча&#255; виза сотрудника не-человека валидна, используйте NT-3213.")
+	add_field(/datum/report_field/text_label/header, "Р•СЃР»Рё СЂР°Р±РѕС‡Р°СЏ РІРёР·Р° СЃРѕС‚СЂСѓРґРЅРёРєР° РЅРµ-С‡РµР»РѕРІРµРєР° РІР°Р»РёРґРЅР°, РёСЃРїРѕР»СЊР·СѓР№С‚Рµ NT-3213.")
 	..()
-	add_field(/datum/report_field/people/list_from_manifest, "Вовлеченный персонал-не-люди")
+	add_field(/datum/report_field/people/list_from_manifest, "Р’РѕРІР»РµС‡РµРЅРЅС‹Р№ РїРµСЂСЃРѕРЅР°Р»-РЅРµ-Р»СЋРґРё")
 	add_signatures()
 
 /datum/computer_file/report/recipient/nt/incident/synth
 	form_name = "NT-3213X"
-	title = "Доклад об инциденте с персоналом-синтетиками NanoTrasen"
+	title = "Р”РѕРєР»Р°Рґ РѕР± РёРЅС†РёРґРµРЅС‚Рµ СЃ РїРµСЂСЃРѕРЅР°Р»РѕРј-СЃРёРЅС‚РµС‚РёРєР°РјРё NanoTrasen"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/incident/synth/generate_fields()
 	..()
-	add_field(/datum/report_field/people/list_from_manifest, "Вовлеченный персонал-синтетики")
+	add_field(/datum/report_field/people/list_from_manifest, "Р’РѕРІР»РµС‡РµРЅРЅС‹Р№ РїРµСЂСЃРѕРЅР°Р»-СЃРёРЅС‚РµС‚РёРєРё")
 	add_signatures()
 
 /datum/computer_file/report/recipient/nt/incident/crew
 	form_name = "NT-3241"
-	title = "Доклад об инциденте с судном и персоналом NanoTrasen"
+	title = "Р”РѕРєР»Р°Рґ РѕР± РёРЅС†РёРґРµРЅС‚Рµ СЃ СЃСѓРґРЅРѕРј Рё РїРµСЂСЃРѕРЅР°Р»РѕРј NanoTrasen"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/incident/crew/generate_fields()
-	add_field(/datum/report_field/text_label/header, "Дл&#255; несколькосторонних инцидентов, включающих в себ&#255; и корабль, и персонал.")
+	add_field(/datum/report_field/text_label/header, "Р”Р»СЏ РЅРµСЃРєРѕР»СЊРєРѕСЃС‚РѕСЂРѕРЅРЅРёС… РёРЅС†РёРґРµРЅС‚РѕРІ, РІРєР»СЋС‡Р°СЋС‰РёС… РІ СЃРµР±СЏ Рё РєРѕСЂР°Р±Р»СЊ, Рё РїРµСЂСЃРѕРЅР°Р».")
 	..()
-	add_field(/datum/report_field/people/list_from_manifest, "Вовлеченный персонал")
+	add_field(/datum/report_field/people/list_from_manifest, "Р’РѕРІР»РµС‡РµРЅРЅС‹Р№ РїРµСЂСЃРѕРЅР°Р»")
 	add_signatures()
 
 /datum/computer_file/report/recipient/nt/volunteer
 	form_name = "NT-1443"
-	title = "Форма подопытного-волонтера NanoTrasen"
+	title = "Р¤РѕСЂРјР° РїРѕРґРѕРїС‹С‚РЅРѕРіРѕ-РІРѕР»РѕРЅС‚РµСЂР° NanoTrasen"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/volunteer/generate_fields()
 	..()
 	var/list/temp_fields = list()
 	add_header()
-	add_field(/datum/report_field/people/from_manifest, "Им&#255; волонтера")
-	add_field(/datum/report_field/simple_text, "Планируемые процедуры")
-	add_field(/datum/report_field/simple_text, "Компенсаци&#255; дл&#255; волонтера: (если есть)")
-	add_field(/datum/report_field/people/list_from_manifest, "Ответственные исследователи")
-	add_field(/datum/report_field/text_label/instruction, "Подписыва&#255; форму, \"Волонтер\" отказываетс&#255; от ответственности NanoTrasen и ее сотрудников за любые травмы, ранени&#255;, утрату собственности и прочие последстви&#255;, которые могут стать результатом назначенной процедуры. В случае подписани&#255; представителем NanoTrasen, таким как Директор Исследований, форма считаетс&#255; проверенной. Форма считаетс&#255; одобренной только после соответствующей записи.")
-	add_field(/datum/report_field/signature, "Подпись волонтера")
-	temp_fields += add_field(/datum/report_field/signature, "Подпись представител&#255; NanoTrasen")
-	temp_fields += add_field(/datum/report_field/options/yes_no, "Одобрено")
+	add_field(/datum/report_field/people/from_manifest, "РРјСЏ РІРѕР»РѕРЅС‚РµСЂР°")
+	add_field(/datum/report_field/simple_text, "РџР»Р°РЅРёСЂСѓРµРјС‹Рµ РїСЂРѕС†РµРґСѓСЂС‹")
+	add_field(/datum/report_field/simple_text, "РљРѕРјРїРµРЅСЃР°С†РёСЏ РґР»СЏ РІРѕР»РѕРЅС‚РµСЂР°: (РµСЃР»Рё РµСЃС‚СЊ)")
+	add_field(/datum/report_field/people/list_from_manifest, "РћС‚РІРµС‚СЃС‚РІРµРЅРЅС‹Рµ РёСЃСЃР»РµРґРѕРІР°С‚РµР»Рё")
+	add_field(/datum/report_field/text_label/instruction, "РџРѕРґРїРёСЃС‹РІР°СЏ С„РѕСЂРјСѓ, \"Р’РѕР»РѕРЅС‚РµСЂ\" РѕС‚РєР°Р·С‹РІР°РµС‚СЃСЏ РѕС‚ РѕС‚РІРµС‚СЃС‚РІРµРЅРЅРѕСЃС‚Рё NanoTrasen Рё РµРµ СЃРѕС‚СЂСѓРґРЅРёРєРѕРІ Р·Р° Р»СЋР±С‹Рµ С‚СЂР°РІРјС‹, СЂР°РЅРµРЅРёСЏ, СѓС‚СЂР°С‚Сѓ СЃРѕР±СЃС‚РІРµРЅРЅРѕСЃС‚Рё Рё РїСЂРѕС‡РёРµ РїРѕСЃР»РµРґСЃС‚РІРёСЏ, РєРѕС‚РѕСЂС‹Рµ РјРѕРіСѓС‚ СЃС‚Р°С‚СЊ СЂРµР·СѓР»СЊС‚Р°С‚РѕРј РЅР°Р·РЅР°С‡РµРЅРЅРѕР№ РїСЂРѕС†РµРґСѓСЂС‹. Р’ СЃР»СѓС‡Р°Рµ РїРѕРґРїРёСЃР°РЅРёСЏ РїСЂРµРґСЃС‚Р°РІРёС‚РµР»РµРј NanoTrasen, С‚Р°РєРёРј РєР°Рє Р”РёСЂРµРєС‚РѕСЂ РСЃСЃР»РµРґРѕРІР°РЅРёР№, С„РѕСЂРјР° СЃС‡РёС‚Р°РµС‚СЃСЏ РїСЂРѕРІРµСЂРµРЅРЅРѕР№. Р¤РѕСЂРјР° СЃС‡РёС‚Р°РµС‚СЃСЏ РѕРґРѕР±СЂРµРЅРЅРѕР№ С‚РѕР»СЊРєРѕ РїРѕСЃР»Рµ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РµР№ Р·Р°РїРёСЃРё.")
+	add_field(/datum/report_field/signature, "РџРѕРґРїРёСЃСЊ РІРѕР»РѕРЅС‚РµСЂР°")
+	temp_fields += add_field(/datum/report_field/signature, "РџРѕРґРїРёСЃСЊ РїСЂРµРґСЃС‚Р°РІРёС‚РµР»СЏ NanoTrasen")
+	temp_fields += add_field(/datum/report_field/options/yes_no, "РћРґРѕР±СЂРµРЅРѕ")
 	for(var/datum/report_field/temp_field in temp_fields)
 		temp_field.set_access(access_edit = access_iaa)
 
@@ -145,81 +145,81 @@
 /datum/computer_file/report/recipient/nt/deny/generate_fields()
 	..()
 	add_header()
-	add_field(/datum/report_field/text_label/instruction, "Уважаемый за&#255;витель, с сожалением сообщаем Вам, что Ваше за&#255;вление на волонтерство в качестве подопытного в корпорации NanoTrasen было отвергнуто. Мы благодарим Вас за интерес, про&#255;вленный к компании и научному прогрессу. В приложении Вы найдете оригинал Вашего за&#255;влени&#255;. С уважением,")
-	add_field(/datum/report_field/signature, "Подпись представител&#255; NanoTrasen")
-	add_field(/datum/report_field/people/from_manifest, "Им&#255; волонтера")
-	add_field(/datum/report_field/text_label/header, "Причина отказа")
-	add_field(/datum/report_field/options/yes_no, "Физическа&#255; непригодность")
-	add_field(/datum/report_field/options/yes_no, "Психологическа&#255; непригодность")
-	add_field(/datum/report_field/options/yes_no, "Отмена проекта")
-	add_field(/datum/report_field/simple_text, "Другое")
-	add_field(/datum/report_field/options/yes_no, "Отчет одобрен")
+	add_field(/datum/report_field/text_label/instruction, "РЈРІР°Р¶Р°РµРјС‹Р№ Р·Р°СЏРІРёС‚РµР»СЊ, СЃ СЃРѕР¶Р°Р»РµРЅРёРµРј СЃРѕРѕР±С‰Р°РµРј Р’Р°Рј, С‡С‚Рѕ Р’Р°С€Рµ Р·Р°СЏРІР»РµРЅРёРµ РЅР° РІРѕР»РѕРЅС‚РµСЂСЃС‚РІРѕ РІ РєР°С‡РµСЃС‚РІРµ РїРѕРґРѕРїС‹С‚РЅРѕРіРѕ РІ РєРѕСЂРїРѕСЂР°С†РёРё NanoTrasen Р±С‹Р»Рѕ РѕС‚РІРµСЂРіРЅСѓС‚Рѕ. РњС‹ Р±Р»Р°РіРѕРґР°СЂРёРј Р’Р°СЃ Р·Р° РёРЅС‚РµСЂРµСЃ, РїСЂРѕСЏРІР»РµРЅРЅС‹Р№ Рє РєРѕРјРїР°РЅРёРё Рё РЅР°СѓС‡РЅРѕРјСѓ РїСЂРѕРіСЂРµСЃСЃСѓ. Р’ РїСЂРёР»РѕР¶РµРЅРёРё Р’С‹ РЅР°Р№РґРµС‚Рµ РѕСЂРёРіРёРЅР°Р» Р’Р°С€РµРіРѕ Р·Р°СЏРІР»РµРЅРёСЏ. РЎ СѓРІР°Р¶РµРЅРёРµРј,")
+	add_field(/datum/report_field/signature, "РџРѕРґРїРёСЃСЊ РїСЂРµРґСЃС‚Р°РІРёС‚РµР»СЏ NanoTrasen")
+	add_field(/datum/report_field/people/from_manifest, "РРјСЏ РІРѕР»РѕРЅС‚РµСЂР°")
+	add_field(/datum/report_field/text_label/header, "РџСЂРёС‡РёРЅР° РѕС‚РєР°Р·Р°")
+	add_field(/datum/report_field/options/yes_no, "Р¤РёР·РёС‡РµСЃРєР°СЏ РЅРµРїСЂРёРіРѕРґРЅРѕСЃС‚СЊ")
+	add_field(/datum/report_field/options/yes_no, "РџСЃРёС…РѕР»РѕРіРёС‡РµСЃРєР°СЏ РЅРµРїСЂРёРіРѕРґРЅРѕСЃС‚СЊ")
+	add_field(/datum/report_field/options/yes_no, "РћС‚РјРµРЅР° РїСЂРѕРµРєС‚Р°")
+	add_field(/datum/report_field/simple_text, "Р”СЂСѓРіРѕРµ")
+	add_field(/datum/report_field/options/yes_no, "РћС‚С‡РµС‚ РѕРґРѕР±СЂРµРЅ")
 	set_access(access_edit = access_iaa)
 
 /datum/computer_file/report/recipient/nt/memo/generate_fields()
 	..()
 	add_header()
-	add_field(/datum/report_field/simple_text, "Тема")
-	add_field(/datum/report_field/pencode_text, "Текст")
-	add_field(/datum/report_field/signature, "Авторизовано")
-	add_field(/datum/report_field/options/yes_no, "Одобрено")
+	add_field(/datum/report_field/simple_text, "РўРµРјР°")
+	add_field(/datum/report_field/pencode_text, "РўРµРєСЃС‚")
+	add_field(/datum/report_field/signature, "РђРІС‚РѕСЂРёР·РѕРІР°РЅРѕ")
+	add_field(/datum/report_field/options/yes_no, "РћРґРѕР±СЂРµРЅРѕ")
 
 /datum/computer_file/report/recipient/nt/memo/internal
 	form_name = "NT-0003"
-	title = "Записка"
+	title = "Р—Р°РїРёСЃРєР°"
 	available_on_ntnet = 1
 
 //No access restrictions for easier use.
 /datum/computer_file/report/recipient/nt/sales
 	form_name = "NT-2192"
-	title = "Торговый контракт и квитанци&#255; NanoTrasen"
+	title = "РўРѕСЂРіРѕРІС‹Р№ РєРѕРЅС‚СЂР°РєС‚ Рё РєРІРёС‚Р°РЅС†РёСЏ NanoTrasen"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/sales/generate_fields()
 	..()
 	add_header()
-	add_field(/datum/report_field/text_label/header, "Информаци&#255; о продукте")
-	add_field(/datum/report_field/simple_text, "Название продукта")
-	add_field(/datum/report_field/simple_text, "Тип продукта")
-	add_field(/datum/report_field/number, "Стоимость одной единицы продукта (Т)")
-	add_field(/datum/report_field/number, "Запрошенное количество продукта")
-	add_field(/datum/report_field/number, "Обща&#255; стоимость (Т)")
-	add_field(/datum/report_field/text_label/header, "Информаци&#255; о продавце")
-	add_field(/datum/report_field/text_label/instruction, "Покупатель не имеет права на возврат купленных единиц продукта в обмен на компенсацию в талерах, но может обмен&#255;ть предмет на такой же предмет, или равную стоимость в предметах (не таллрах). Продавец соглашаетс&#255; сделать все от него завис&#255;щее дл&#255; ремонта или замены предметов, св&#255;занных с производственным браком или некорректной работой, но не урона, причиненного при использовании, с целью выполнени&#255; их предполагаемой задачи.")
-	add_field(/datum/report_field/people/from_manifest, "Им&#255;")
-	add_field(/datum/report_field/signature, "Подпись")
-	add_field(/datum/report_field/options/yes_no, "Одобрено")
+	add_field(/datum/report_field/text_label/header, "РРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїСЂРѕРґСѓРєС‚Рµ")
+	add_field(/datum/report_field/simple_text, "РќР°Р·РІР°РЅРёРµ РїСЂРѕРґСѓРєС‚Р°")
+	add_field(/datum/report_field/simple_text, "РўРёРї РїСЂРѕРґСѓРєС‚Р°")
+	add_field(/datum/report_field/number, "РЎС‚РѕРёРјРѕСЃС‚СЊ РѕРґРЅРѕР№ РµРґРёРЅРёС†С‹ РїСЂРѕРґСѓРєС‚Р° (Рў)")
+	add_field(/datum/report_field/number, "Р—Р°РїСЂРѕС€РµРЅРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РїСЂРѕРґСѓРєС‚Р°")
+	add_field(/datum/report_field/number, "РћР±С‰Р°СЏ СЃС‚РѕРёРјРѕСЃС‚СЊ (Рў)")
+	add_field(/datum/report_field/text_label/header, "РРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїСЂРѕРґР°РІС†Рµ")
+	add_field(/datum/report_field/text_label/instruction, "РџРѕРєСѓРїР°С‚РµР»СЊ РЅРµ РёРјРµРµС‚ РїСЂР°РІР° РЅР° РІРѕР·РІСЂР°С‚ РєСѓРїР»РµРЅРЅС‹С… РµРґРёРЅРёС† РїСЂРѕРґСѓРєС‚Р° РІ РѕР±РјРµРЅ РЅР° РєРѕРјРїРµРЅСЃР°С†РёСЋ РІ С‚Р°Р»РµСЂР°С…, РЅРѕ РјРѕР¶РµС‚ РѕР±РјРµРЅСЏС‚СЊ РїСЂРµРґРјРµС‚ РЅР° С‚Р°РєРѕР№ Р¶Рµ РїСЂРµРґРјРµС‚, РёР»Рё СЂР°РІРЅСѓСЋ СЃС‚РѕРёРјРѕСЃС‚СЊ РІ РїСЂРµРґРјРµС‚Р°С… (РЅРµ С‚Р°Р»Р»СЂР°С…). РџСЂРѕРґР°РІРµС† СЃРѕРіР»Р°С€Р°РµС‚СЃСЏ СЃРґРµР»Р°С‚СЊ РІСЃРµ РѕС‚ РЅРµРіРѕ Р·Р°РІРёСЃСЏС‰РµРµ РґР»СЏ СЂРµРјРѕРЅС‚Р° РёР»Рё Р·Р°РјРµРЅС‹ РїСЂРµРґРјРµС‚РѕРІ, СЃРІСЏР·Р°РЅРЅС‹С… СЃ РїСЂРѕРёР·РІРѕРґСЃС‚РІРµРЅРЅС‹Рј Р±СЂР°РєРѕРј РёР»Рё РЅРµРєРѕСЂСЂРµРєС‚РЅРѕР№ СЂР°Р±РѕС‚РѕР№, РЅРѕ РЅРµ СѓСЂРѕРЅР°, РїСЂРёС‡РёРЅРµРЅРЅРѕРіРѕ РїСЂРё РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРё, СЃ С†РµР»СЊСЋ РІС‹РїРѕР»РЅРµРЅРёСЏ РёС… РїСЂРµРґРїРѕР»Р°РіР°РµРјРѕР№ Р·Р°РґР°С‡Рё.")
+	add_field(/datum/report_field/people/from_manifest, "РРјСЏ")
+	add_field(/datum/report_field/signature, "РџРѕРґРїРёСЃСЊ")
+	add_field(/datum/report_field/options/yes_no, "РћРґРѕР±СЂРµРЅРѕ")
 
 /datum/computer_file/report/recipient/nt/payout
 	form_name = "NT-3310"
-	title = "Авторизаци&#255; выплаты ближайшему родственнику"
+	title = "РђРІС‚РѕСЂРёР·Р°С†РёСЏ РІС‹РїР»Р°С‚С‹ Р±Р»РёР¶Р°Р№С€РµРјСѓ СЂРѕРґСЃС‚РІРµРЅРЅРёРєСѓ"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/payout/generate_fields()
 	..()
 	add_header()
-	add_field(/datum/report_field/people/from_manifest, "Насто&#255;щий документ авторизует выплату оставшейс&#255; части зарплаты,")
-	add_field(/datum/report_field/pencode_text, "а также стоимость личного имущества: (имущество, количество талеров),")
-	add_field(/datum/report_field/pencode_text, "включа&#255; личные вещи")
-	add_field(/datum/report_field/text_label/instruction, "Отправить и доставить ближайшему родственнику сотрудника без задержек.")
-	add_field(/datum/report_field/signature, "Подпись")
-	add_field(/datum/report_field/options/yes_no, "Одобрено")
+	add_field(/datum/report_field/people/from_manifest, "РќР°СЃС‚РѕСЏС‰РёР№ РґРѕРєСѓРјРµРЅС‚ Р°РІС‚РѕСЂРёР·СѓРµС‚ РІС‹РїР»Р°С‚Сѓ РѕСЃС‚Р°РІС€РµР№СЃСЏ С‡Р°СЃС‚Рё Р·Р°СЂРїР»Р°С‚С‹,")
+	add_field(/datum/report_field/pencode_text, "Р° С‚Р°РєР¶Рµ СЃС‚РѕРёРјРѕСЃС‚СЊ Р»РёС‡РЅРѕРіРѕ РёРјСѓС‰РµСЃС‚РІР°: (РёРјСѓС‰РµСЃС‚РІРѕ, РєРѕР»РёС‡РµСЃС‚РІРѕ С‚Р°Р»РµСЂРѕРІ),")
+	add_field(/datum/report_field/pencode_text, "РІРєР»СЋС‡Р°СЏ Р»РёС‡РЅС‹Рµ РІРµС‰Рё")
+	add_field(/datum/report_field/text_label/instruction, "РћС‚РїСЂР°РІРёС‚СЊ Рё РґРѕСЃС‚Р°РІРёС‚СЊ Р±Р»РёР¶Р°Р№С€РµРјСѓ СЂРѕРґСЃС‚РІРµРЅРЅРёРєСѓ СЃРѕС‚СЂСѓРґРЅРёРєР° Р±РµР· Р·Р°РґРµСЂР¶РµРє.")
+	add_field(/datum/report_field/signature, "РџРѕРґРїРёСЃСЊ")
+	add_field(/datum/report_field/options/yes_no, "РћРґРѕР±СЂРµРЅРѕ")
 	set_access(access_edit = access_iaa)
 
 /datum/computer_file/report/recipient/nt/audit
 	form_name = "NT-IAA-12"
-	title = "Аудит департамента ИСН Сьерра"
+	title = "РђСѓРґРёС‚ РґРµРїР°СЂС‚Р°РјРµРЅС‚Р° РРЎРќ РЎСЊРµСЂСЂР°"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/audit/generate_fields()
-	add_field(/datum/report_field/date, "Дата")
-	add_field(/datum/report_field/time, "Врем&#255;")
-	add_field(/datum/report_field/simple_text, "Глава департамента")
-	add_field(/datum/report_field/pencode_text, "Положительные наблюдени&#255;")
-	add_field(/datum/report_field/pencode_text, "Отрицательные наблюдени&#255;")
-	add_field(/datum/report_field/pencode_text, "Прочие заметки")
-	add_field(/datum/report_field/signature, "Подпись")
-	add_field(/datum/report_field/options/yes_no, "Одобрено")
+	add_field(/datum/report_field/date, "Р”Р°С‚Р°")
+	add_field(/datum/report_field/time, "Р’СЂРµРјСЏ")
+	add_field(/datum/report_field/simple_text, "Р“Р»Р°РІР° РґРµРїР°СЂС‚Р°РјРµРЅС‚Р°")
+	add_field(/datum/report_field/pencode_text, "РџРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рµ РЅР°Р±Р»СЋРґРµРЅРёСЏ")
+	add_field(/datum/report_field/pencode_text, "РћС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Рµ РЅР°Р±Р»СЋРґРµРЅРёСЏ")
+	add_field(/datum/report_field/pencode_text, "РџСЂРѕС‡РёРµ Р·Р°РјРµС‚РєРё")
+	add_field(/datum/report_field/signature, "РџРѕРґРїРёСЃСЊ")
+	add_field(/datum/report_field/options/yes_no, "РћРґРѕР±СЂРµРЅРѕ")
 	set_access(access_edit = access_iaa)
 
 /datum/computer_file/report/recipient/nt/audit/New()

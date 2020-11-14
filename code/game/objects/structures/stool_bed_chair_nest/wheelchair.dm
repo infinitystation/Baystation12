@@ -3,13 +3,10 @@
 	desc = "Now we're getting somewhere."
 	icon_state = "wheelchair"
 	anchored = 0
-	buckle_movable = 1
-
+	movement_handlers = list(/datum/movement_handler/deny_multiz, /datum/movement_handler/delay = list(5), /datum/movement_handler/move_relay_self) //inf, was: movement_handlers = list(/datum/movement_handler/deny_multiz, /datum/movement_handler/delay = list(2), /datum/movement_handler/move_relay_self)
 	var/driving = 0
 	var/mob/living/pulling = null
 	var/bloodiness
-
-	movement_handlers = list(/datum/movement_handler/delay = list(6), /datum/movement_handler/move_relay_self)
 
 /obj/structure/bed/chair/wheelchair/on_update_icon()
 	return

@@ -192,8 +192,7 @@
 	},
 /obj/structure/railing/mapped{
 	dir = 4;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/item/device/radio/intercom{
 	dir = 4;
@@ -203,19 +202,16 @@
 /area/ship/scrap/cargo/lower)
 "ax" = (
 /obj/effect/floor_decal/corner/beige/three_quarters{
-	tag = "icon-corner_white_three_quarters (WEST)";
 	icon_state = "corner_white_three_quarters";
 	dir = 8
 	},
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (WEST)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/railing/mapped{
 	dir = 1;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (NORTH)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/tiled,
 /area/ship/scrap/shuttle/lift)
@@ -228,19 +224,16 @@
 /area/ship/scrap/shuttle/lift)
 "az" = (
 /obj/effect/floor_decal/corner/beige/three_quarters{
-	tag = "icon-corner_white_three_quarters (NORTH)";
 	icon_state = "corner_white_three_quarters";
 	dir = 1
 	},
 /obj/structure/railing/mapped{
 	dir = 4;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/railing/mapped{
 	dir = 1;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (NORTH)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/tiled,
 /area/ship/scrap/shuttle/lift)
@@ -266,8 +259,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (WEST)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/tiled,
 /area/ship/scrap/cargo/lower)
@@ -287,8 +279,7 @@
 	},
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (WEST)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/tiled,
 /area/ship/scrap/shuttle/lift)
@@ -306,8 +297,7 @@
 	},
 /obj/structure/railing/mapped{
 	dir = 4;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/tiled,
 /area/ship/scrap/shuttle/lift)
@@ -322,8 +312,7 @@
 	},
 /obj/structure/railing/mapped{
 	dir = 4;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/tiled,
 /area/ship/scrap/cargo/lower)
@@ -352,8 +341,7 @@
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (WEST)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/tiled,
 /area/ship/scrap/shuttle/lift)
@@ -367,15 +355,13 @@
 /area/ship/scrap/shuttle/lift)
 "aL" = (
 /obj/effect/floor_decal/corner/beige/three_quarters{
-	tag = "icon-corner_white_three_quarters (EAST)";
 	icon_state = "corner_white_three_quarters";
 	dir = 4
 	},
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
 	dir = 4;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/tiled,
 /area/ship/scrap/shuttle/lift)
@@ -400,8 +386,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (WEST)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/tiled,
 /area/ship/scrap/cargo/lower)
@@ -436,8 +421,7 @@
 	},
 /obj/structure/railing/mapped{
 	dir = 1;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (NORTH)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/tiled,
 /area/ship/scrap/cargo/lower)
@@ -449,8 +433,7 @@
 	},
 /obj/structure/railing/mapped{
 	dir = 1;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (NORTH)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/tiled,
 /area/ship/scrap/cargo/lower)
@@ -465,8 +448,7 @@
 /obj/structure/ore_box,
 /obj/structure/railing/mapped{
 	dir = 1;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (NORTH)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/ship/scrap/cargo/lower)
@@ -502,8 +484,7 @@
 "aV" = (
 /obj/structure/railing/mapped{
 	dir = 1;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (NORTH)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/plating,
 /area/ship/scrap/maintenance/lower)
@@ -528,9 +509,8 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/scrap/escape/starboard)
 "aX" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1379;
 	id_tag = "eva_pump"
 	},
 /obj/effect/floor_decal/industrial/warning{
@@ -576,8 +556,7 @@
 	},
 /obj/structure/railing/mapped{
 	dir = 4;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/tiled,
 /area/ship/scrap/cargo/lower)
@@ -672,7 +651,6 @@
 	opacity = 0
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden{
-	tag = "icon-map (NORTH)";
 	icon_state = "map";
 	dir = 8
 	},
@@ -984,7 +962,6 @@
 /area/ship/scrap/maintenance/lower)
 "bO" = (
 /obj/machinery/cryopod/lifepod{
-	tag = "icon-redpod0 (NORTH)";
 	icon_state = "redpod0";
 	dir = 1
 	},
@@ -1072,7 +1049,6 @@
 	icon_state = "bulb_map"
 	},
 /obj/effect/decal/cleanable/cobweb{
-	tag = "icon-cobweb1 (NORTH)";
 	icon_state = "cobweb1";
 	dir = 8
 	},
@@ -1082,8 +1058,7 @@
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (WEST)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/plating,
 /area/ship/scrap/maintenance/lower)
@@ -1948,7 +1923,6 @@
 /area/ship/scrap/maintenance/lower)
 "dR" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden{
-	tag = "icon-map (NORTH)";
 	icon_state = "map";
 	dir = 1
 	},
@@ -2327,7 +2301,6 @@
 /area/ship/scrap/maintenance/lower)
 "eD" = (
 /obj/machinery/cryopod/lifepod{
-	tag = "icon-redpod0 (NORTH)";
 	icon_state = "redpod0";
 	dir = 1
 	},
@@ -2550,12 +2523,10 @@
 /area/ship/scrap/other/eva)
 "fd" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden{
-	tag = "icon-map (NORTH)";
 	icon_state = "map";
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/warning{
-	tag = "icon-warning (NORTHWEST)";
 	icon_state = "warning";
 	dir = 9
 	},
@@ -2616,13 +2587,11 @@
 /area/ship/scrap/other/eva)
 "fh" = (
 /obj/effect/floor_decal/industrial/warning{
-	tag = "icon-warning (SOUTHEAST)";
 	icon_state = "warning";
 	dir = 6
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1379;
 	id_tag = "eva_pump"
 	},
 /obj/machinery/light/small,
@@ -2811,7 +2780,6 @@
 /area/ship/scrap/maintenance/lower)
 "fA" = (
 /obj/effect/decal/cleanable/cobweb{
-	tag = "icon-cobweb1 (NORTH)";
 	icon_state = "cobweb1";
 	dir = 1
 	},
@@ -2824,8 +2792,7 @@
 /obj/random/maintenance,
 /obj/structure/railing/mapped{
 	dir = 1;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (NORTH)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/plating,
 /area/ship/scrap/maintenance/lower)
@@ -3050,8 +3017,7 @@
 /turf/simulated/floor/carpet/blue2,
 /area/ship/scrap/crew/dorms)
 "ge" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1379;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	id_tag = "cargo_pump"
 	},
 /obj/structure/catwalk,
@@ -3379,13 +3345,11 @@
 /obj/random/maintenance,
 /obj/structure/railing/mapped{
 	dir = 1;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (NORTH)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (WEST)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/plating,
 /area/ship/scrap/maintenance/lower)
@@ -3442,8 +3406,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (WEST)"
+	icon_state = "railing0-1"
 	},
 /obj/machinery/power/apc{
 	dir = 4;
@@ -3482,8 +3445,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/ship/scrap/engineering/storage)
 "Pj" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1379;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	id_tag = "cargo_pump"
 	},
 /obj/machinery/light/small{

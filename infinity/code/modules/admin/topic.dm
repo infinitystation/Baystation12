@@ -66,7 +66,7 @@
 			return
 		if(query_noteedits.NextRow())
 			var/edit_log = query_noteedits.item[1]
-			usr << browse(edit_log,"window=noteedits")
+			show_browser(usr, edit_log,"window=noteedits")
 
 	else if(href_list["stickyban"])
 		stickyban(href_list["stickyban"],href_list)

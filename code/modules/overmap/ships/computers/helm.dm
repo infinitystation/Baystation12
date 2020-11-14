@@ -26,7 +26,6 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 			R.fields["x"] = S.x
 			R.fields["y"] = S.y
 			known_sectors[S.name] = R
-	..()
 
 /obj/machinery/computer/ship/helm/Process()
 	..()
@@ -87,6 +86,8 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 		data["manual_control"] = viewing_overmap(user)
 		data["canburn"] = linked.can_burn()
 		data["accellimit"] = accellimit*1000
+
+		data["distress"] = linked ? linked.distress : 0 //INF
 
 		var/speed = round(linked.get_speed()*1000, 0.01)
 		if(linked.get_speed() < SHIP_SPEED_SLOW)
@@ -203,6 +204,11 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 
 	if (href_list["manual"])
 		viewing_overmap(user) ? unlook(user) : look(user)
+
+//[INF]
+	if (href_list["distress"] && linked)
+		linked.distress = !linked.distress
+//[/INF]
 
 	add_fingerprint(user)
 	updateUsrDialog()

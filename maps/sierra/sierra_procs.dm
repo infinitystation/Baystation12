@@ -1,20 +1,20 @@
 /datum/map/make_maint_all_access(var/radstorm = 0)
 	maint_all_access = 1
 	if(radstorm)
-		priority_announcement.Announce("Требования к доступу у шлюзов в технические тоннели временнно отключены. Экранированные отсеки - технические тоннели, челноки, камеры заключения, дормиторий.", "Внимание!")
+		priority_announcement.Announce("РўСЂРµР±РѕРІР°РЅРёСЏ Рє РґРѕСЃС‚СѓРїСѓ Сѓ С€Р»СЋР·РѕРІ РІ С‚РµС…РЅРёС‡РµСЃРєРёРµ С‚РѕРЅРЅРµР»Рё РІСЂРµРјРµРЅРЅРЅРѕ РѕС‚РєР»СЋС‡РµРЅС‹. Р­РєСЂР°РЅРёСЂРѕРІР°РЅРЅС‹Рµ РѕС‚СЃРµРєРё - С‚РµС…РЅРёС‡РµСЃРєРёРµ С‚РѕРЅРЅРµР»Рё, С‡РµР»РЅРѕРєРё, РєР°РјРµСЂС‹ Р·Р°РєР»СЋС‡РµРЅРёСЏ, РґРѕСЂРјРёС‚РѕСЂРёР№.", "Р’РЅРёРјР°РЅРёРµ!")
 	else
-		priority_announcement.Announce("Требования к доступу у шлюзов в технические тоннели временнно отключены.", "Внимание!")
+		priority_announcement.Announce("РўСЂРµР±РѕРІР°РЅРёСЏ Рє РґРѕСЃС‚СѓРїСѓ Сѓ С€Р»СЋР·РѕРІ РІ С‚РµС…РЅРёС‡РµСЃРєРёРµ С‚РѕРЅРЅРµР»Рё РІСЂРµРјРµРЅРЅРЅРѕ РѕС‚РєР»СЋС‡РµРЅС‹.", "Р’РЅРёРјР°РЅРёРµ!")
 
 /datum/map/revoke_maint_all_access(var/radstorm = 0)
 	maint_all_access = 0
-	priority_announcement.Announce("Требования к доступу у шлюзов в технические тоннели восстановлены.", "Внимание!")
+	priority_announcement.Announce("РўСЂРµР±РѕРІР°РЅРёСЏ Рє РґРѕСЃС‚СѓРїСѓ Сѓ С€Р»СЋР·РѕРІ РІ С‚РµС…РЅРёС‡РµСЃРєРёРµ С‚РѕРЅРЅРµР»Рё РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅС‹.", "Р’РЅРёРјР°РЅРёРµ!")
 
 /datum/map/proc/toggle_crew_sensors(var/new_mode = 0, var/force = FALSE)
 	if(ntnet_global && ntnet_global.check_function(NTNET_SYSTEMCONTROL))	// No network - no remote control
 		var/tracked = crew_repository.scan()
 		for(var/obj/item/clothing/under/suit in tracked)
 			var/turf/pos = get_turf(suit)
-			if(pos && pos.z in GLOB.using_map.map_levels)
+			if(pos && (pos.z in GLOB.using_map.map_levels))
 				if(force || (suit.sensor_mode < new_mode))
 					suit.sensor_mode = new_mode
 

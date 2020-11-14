@@ -33,7 +33,7 @@ var/list/spells = typesof(/spell) //needed for the badmin verb for now
 	var/message = ""				//whatever it says to the guy affected by it
 	var/selection_type = "view"		//can be "range" or "view"
 	var/atom/movable/holder			//where the spell is. Normally the user, can be an item
-	var/duration = 0 //how long the spell lasts
+	var/duration = 0 				//how long the spell lasts
 
 	var/list/spell_levels = list(Sp_SPEED = 0, Sp_POWER = 0) //the current spell levels - total spell levels can be obtained by just adding the two values
 	var/list/level_max = list(Sp_TOTAL = 4, Sp_SPEED = 4, Sp_POWER = 0) //maximum possible levels in each category. Total does cover both.
@@ -106,10 +106,12 @@ var/list/spells = typesof(/spell) //needed for the badmin verb for now
 		holder = user //just in case
 	if(!cast_check(skipcharge, user))
 		return
+	to_chat(user, SPAN_NOTICE("You start casting [name]..."))
 	if(cast_delay && !spell_do_after(user, cast_delay))
 		return
 	var/list/targets = choose_targets(user)
 	if(!check_valid_targets(targets))
+		to_chat(user, SPAN_WARNING("[name] fizzles. There are no valid targets nearby."))
 		return
 	var/time = 0
 	admin_attacker_log(user, "attempted to cast the spell [name]")
@@ -121,8 +123,6 @@ var/list/spells = typesof(/spell) //needed for the badmin verb for now
 			if(!check_charge(skipcharge, user))
 				break
 			invocation(user, targets)
-			if(connected_god && !connected_god.take_charge(user, max(1, charge_max/10)))
-				break
 			take_charge(user, skipcharge)
 			before_cast(targets) //applies any overlays and effects
 			if(prob(critfailchance))
@@ -215,7 +215,7 @@ var/list/spells = typesof(/spell) //needed for the badmin verb for now
 /*Checkers, cost takers, message makers, etc*/
 
 /spell/proc/cast_check(skipcharge = 0,mob/user = usr, var/list/targets) //checks if the spell can be cast based on its settings; skipcharge is used when an additional cast_check is called inside the spell
-	
+
 	if(silenced > 0)
 		return 0
 
@@ -254,7 +254,7 @@ var/list/spells = typesof(/spell) //needed for the badmin verb for now
 		if(!(spell_flags & GHOSTCAST))
 			if(!(spell_flags & NO_SOMATIC))
 				var/mob/living/L = user
-				if(L.incapacitated(INCAPACITATION_STUNNED|INCAPACITATION_RESTRAINED|INCAPACITATION_BUCKLED_FULLY|INCAPACITATION_FORCELYING|INCAPACITATION_KNOCKOUT))
+				if(L.incapacitated(INCAPACITATION_KNOCKOUT)) //INF, was INCAPACITATION_STUNNED|INCAPACITATION_RESTRAINED|INCAPACITATION_BUCKLED_FULLY|INCAPACITATION_FORCELYING|INCAPACITATION_KNOCKOUT
 					to_chat(user, "<span class='warning'>You can't cast spells while incapacitated!</span>")
 					return 0
 
@@ -307,9 +307,11 @@ var/list/spells = typesof(/spell) //needed for the badmin verb for now
 	else if(!targets.len)
 		return 0
 
+	//INF If some spells does nothing, try to set their selection_type = "special"
+	if(selection_type == "special")	return 1	//INF	Teleport and construction uses remote area or type as targets, so we can't locate them in our range or view
 	var/list/valid_targets = view_or_range(range, holder, selection_type)
 	for(var/target in targets)
-		if(!target in valid_targets)
+		if(!(target in valid_targets))
 			return 0
 	return 1
 
@@ -397,7 +399,3 @@ var/list/spells = typesof(/spell) //needed for the badmin verb for now
 		incap_flags |= INCAPACITATION_KNOCKOUT
 
 	return do_after(user,delay, incapacitation_flags = incap_flags)
-
-/spell/proc/set_connected_god(var/mob/living/deity/god)
-	connected_god = god
-	return

@@ -45,10 +45,7 @@
 		"Bloodhound" = "bloodhound",
 		"Bloodhound - Treaded" = "secborg+tread",
 		"Tridroid" = "orb-security",
-		"Doot" = "eyebot-security",
-		"Drone" = "drone-sec",
 		"Motile" = "motile-sec",
-		"Ver 06" = "wer6-Security"
 	)
 	equipment = list(
 		/obj/item/device/flash,

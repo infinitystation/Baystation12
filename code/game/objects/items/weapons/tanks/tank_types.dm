@@ -1,5 +1,6 @@
 /* Types of tanks!
  * Contains:
+ *		Scrubber
  *		Oxygen
  *		Anesthetic
  *		Air
@@ -7,6 +8,15 @@
  *		Hydrogen
  *		Emergency Oxygen
  */
+
+
+/obj/item/weapon/tank/scrubber
+	name = "high capacity gas tank"
+	desc = "An unwieldy tank for lots of gas, although not lots of GAS."
+	icon_state = "scrubber"
+	w_class = ITEM_SIZE_HUGE
+	slot_flags = 0
+	volume = 450
 
 /*
  * Oxygen
@@ -22,11 +32,6 @@
 /obj/item/weapon/tank/oxygen/yellow
 	desc = "A tank of oxygen. This one is yellow."
 	icon_state = "oxygen_f"
-
-/obj/item/weapon/tank/oxygen/red
-	name = "self contained breathing apparatus"
-	desc = "A self contained breathing apparatus, well known as SCBA. Generally filled with oxygen."
-	icon_state = "oxygen_fr"
 
 /*
  * Anesthetic
@@ -109,6 +114,12 @@
 	volume = 90
 	w_class = ITEM_SIZE_NORMAL
 
+/obj/item/weapon/tank/emergency/oxygen/double/red	//firefighting tank, fits on belt, back or suitslot
+	name = "self contained breathing apparatus"
+	desc = "A self contained breathing apparatus, well known as SCBA. Generally filled with oxygen."
+	icon_state = "oxygen_fr"
+	slot_flags = SLOT_BELT | SLOT_BACK
+
 /obj/item/weapon/tank/emergency/nitrogen
 	name = "emergency nitrogen tank"
 	desc = "An emergency air tank hastily painted red and issued to Vox crewmembers."
@@ -120,7 +131,7 @@
 	name = "double emergency nitrogen tank"
 	icon_state = "emergency_double_nitrogen"
 	gauge_icon = "indicator_emergency_double"
-	volume = 60
+	volume = 90 //inf, was 60
 
 /*
  * Nitrogen

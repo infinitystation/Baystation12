@@ -1,6 +1,6 @@
 /obj/item/organ/internal/voicebox/nabber
 	name = "vocal synthesiser"
-	assists_languages = list(LANGUAGE_HUMAN_RUSSIAN, LANGUAGE_GUTTER, LANGUAGE_HUMAN_EURO, LANGUAGE_EAL)
+	assists_languages = list(LANGUAGE_HUMAN_RUSSIAN, LANGUAGE_GUTTER, LANGUAGE_HUMAN_EURO, LANGUAGE_EAL, LANGUAGE_CHANGELING_GLOBAL)
 
 /obj/item/organ/internal/voicebox/nabber/Initialize()
 	. = ..()
@@ -178,6 +178,8 @@
 
 	//Effects of bloodloss
 	switch(blood_volume)
+		if (BLOOD_VOLUME_FULL)
+			lowblood_tally = 0
 		if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
 			lowblood_tally = 2
 			if(prob(1))

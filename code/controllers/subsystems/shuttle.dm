@@ -67,7 +67,7 @@ SUBSYSTEM_DEF(shuttle)
 	sectors_to_initialize = null
 
 /datum/controller/subsystem/shuttle/proc/register_landmark(shuttle_landmark_tag, obj/effect/shuttle_landmark/shuttle_landmark)
-	if (registered_shuttle_landmarks[shuttle_landmark_tag] && shuttle_landmark.type != /obj/effect/shuttle_landmark/ship) //TODO-INF: Костыль.
+	if (registered_shuttle_landmarks[shuttle_landmark_tag] && shuttle_landmark.type != /obj/effect/shuttle_landmark/ship) //TODO-INF: РљРѕСЃС‚С‹Р»СЊ.
 		CRASH("Attempted to register shuttle landmark with tag [shuttle_landmark_tag], but it is already registered!")
 	if (istype(shuttle_landmark))
 		registered_shuttle_landmarks[shuttle_landmark_tag] = shuttle_landmark
@@ -142,6 +142,18 @@ SUBSYSTEM_DEF(shuttle)
 	for(var/ship in ships)
 		var/obj/effect/overmap/visitable/ship/ship_effect = ship
 		overmap_halted ? ship_effect.halt() : ship_effect.unhalt()
+
+/datum/controller/subsystem/shuttle/proc/ship_by_name(name)
+	for (var/obj/effect/overmap/visitable/ship/ship in ships)
+		if (ship.name == name)
+			return ship
+	return null
+
+/datum/controller/subsystem/shuttle/proc/ship_by_type(type)
+	for (var/obj/effect/overmap/visitable/ship/ship in ships)
+		if (ship.type == type)
+			return ship
+	return null
 
 /datum/controller/subsystem/shuttle/stat_entry()
 	..("Shuttles:[shuttles.len], Ships:[ships.len], L:[registered_shuttle_landmarks.len][overmap_halted ? ", HALT" : ""]")

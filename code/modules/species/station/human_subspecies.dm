@@ -49,6 +49,12 @@
 		)
 
 	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_TONE_SPCR | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR
+	species_flags = SPECIES_FLAG_LOW_GRAV_ADAPTED
+
+	hazard_high_pressure = HAZARD_HIGH_PRESSURE * 0.8            // Dangerously high pressure.
+	warning_high_pressure = WARNING_HIGH_PRESSURE * 0.8          // High pressure warning.
+	warning_low_pressure = WARNING_LOW_PRESSURE * 0.8            // Low pressure warning.
+	hazard_low_pressure = HAZARD_LOW_PRESSURE * 0.8              // Dangerously low pressure.
 
 /datum/species/human/vatgrown
 	name = SPECIES_VATGROWN
@@ -65,8 +71,8 @@
 	with darker skin better display the dull, greenish hue resulting from their artificial growth. \
 	Vat-grown humans have no appendix and fewer inherited genetic disabilities but have a weakened \
 	metabolism."
-	icobase =     'icons/mob/human_races/species/human/subspecies/vatgrown_body.dmi'
-	preview_icon= 'icons/mob/human_races/species/human/subspecies/vatgrown_preview.dmi'
+	icobase = 'infinity/icons/mob/human_races/species/human/subspecies/vatgrown_body.dmi' //inf, was: 	icobase =     'icons/mob/human_races/species/human/subspecies/vatgrown_body.dmi'
+	preview_icon = 'infinity/icons/mob/human_races/species/human/subspecies/vatgrown_preview.dmi' //inf, was: 	preview_icon= 'icons/mob/human_races/species/human/subspecies/vatgrown_preview.dmi'
 
 	toxins_mod =   1.1
 	has_organ = list(
@@ -149,6 +155,7 @@
 	but is certainly both unique and remarkable in its ability to cope with the extremes that the \
 	Universe can throw at it."
 	var/list/mods = list()
+
 
 #define MOD_BASE     0.85
 #define MOD_VARIANCE 0.35

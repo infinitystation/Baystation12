@@ -35,9 +35,10 @@
 
 /obj/machinery/ntnet_relay/on_update_icon()
 	if(operable())
-		icon_state = "bus"
+		icon_state = "[initial(icon_state)]"//inf//was: icon_state = "bus"
+	else if(dos_failure) icon_state = "[initial(icon_state)]_ddosed"//inf
 	else
-		icon_state = "bus_off"
+		icon_state = "[initial(icon_state)]_off"//inf//was: icon_state = "bus_off"
 
 /obj/machinery/ntnet_relay/Process()
 	if(operable())
@@ -50,6 +51,7 @@
 
 	// If DoS traffic exceeded capacity, crash.
 	if((dos_overload > dos_capacity) && !dos_failure)
+		playsound(src, 'infinity/sound/SS2/effects/critical.wav', 100) //inf
 		dos_failure = 1
 		update_icon()
 		ntnet_global.add_log("Quantum relay switched from normal operation mode to overload recovery mode.")
@@ -81,11 +83,13 @@
 /obj/machinery/ntnet_relay/Topic(href, href_list)
 	if(..())
 		return 1
+	playsound(src, 'infinity/sound/SS2/effects/buttons/bhac.wav', 50) //inf
 	if(href_list["restart"])
 		dos_overload = 0
 		dos_failure = 0
 		update_icon()
 		ntnet_global.add_log("Quantum relay manually restarted from overload recovery mode to normal operation mode.")
+		playsound(src, 'infinity/sound/SS2/effects/simcomp.wav', 50) //inf
 		return 1
 	else if(href_list["toggle"])
 		enabled = !enabled
@@ -95,6 +99,7 @@
 	else if(href_list["purge"])
 		ntnet_global.banned_nids.Cut()
 		ntnet_global.add_log("Manual override: Network blacklist cleared.")
+		playsound(src, 'infinity/sound/SS2/effects/mempurge.wav', 50) //inf
 		return 1
 	else if(href_list["eject_drive"] && uninstall_component(/obj/item/weapon/stock_parts/computer/hard_drive/portable))
 		visible_message("\icon[src] [src] beeps and ejects its portable disk.")
@@ -119,6 +124,7 @@
 	..()
 
 /obj/machinery/ntnet_relay/attackby(obj/item/P, mob/user)
+	. = ..() //inf
 	if (!istype(P,/obj/item/weapon/stock_parts/computer/hard_drive/portable))
 		return
 	else if (get_component_of_type(/obj/item/weapon/stock_parts/computer/hard_drive/portable))

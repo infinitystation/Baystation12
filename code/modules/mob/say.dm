@@ -6,9 +6,6 @@
 	set category = "IC"
 	return
 
-	if(typing_indicator)
-		qdel(typing_indicator)
-
 /mob/verb/say_verb(message as text)
 	set name = "Say"
 	set category = "IC"
@@ -67,13 +64,13 @@
 		return speaking.get_spoken_verb(ending)
 
 	var/verb = pick(speak_emote)
-	if(verb == "ãîâîðèò") //a little bit of a hack, but we can't let speak_emote default to an empty list without breaking other things
+	if(verb == "Ð³Ð¾Ð²Ð¾Ñ€Ð¸Ñ‚") //a little bit of a hack, but we can't let speak_emote default to an empty list without breaking other things
 		if(ending == "!!")
-			verb = "êðè÷èò"
+			verb = "ÐºÑ€Ð¸Ñ‡Ð¸Ñ‚"
 		else if(copytext(ending, length(ending)) == "!")
-			verb = pick("âîñêëèöàåò")
+			verb = pick("Ð²Ð¾ÑÐºÐ»Ð¸Ñ†Ð°ÐµÑ‚")
 		else if(copytext(ending, length(ending)) == "?")
-			verb = "ñïðàøèâàåò"
+			verb = "ÑÐ¿Ñ€Ð°ÑˆÐ¸Ð²Ð°ÐµÑ‚"
 	return verb
 
 /mob/proc/get_ear()
@@ -96,11 +93,11 @@
 //returns the message mode string or null for no message mode.
 //standard mode is the mode returned for the special ';' radio code.
 /mob/proc/parse_message_mode(var/message, var/standard_mode="headset")
-	if(length(message) >= 1 && copytext(message,1,2) == get_prefix_key(/decl/prefix/radio_main_channel))
+	if(length(message) >= 1 && copytext_char(message,1,2) == get_prefix_key(/decl/prefix/radio_main_channel))
 		return standard_mode
 
 	if(length(message) >= 2)
-		var/channel_prefix = copytext(message, 1 ,3)
+		var/channel_prefix = copytext_char(message, 1 ,3)
 		return department_radio_keys[channel_prefix]
 
 	return null
@@ -108,12 +105,12 @@
 //parses the language code (e.g. :j) from text, such as that supplied to say.
 //returns the language object only if the code corresponds to a language that src can speak, otherwise null.
 /mob/proc/parse_language(var/message)
-	var/prefix = copytext(message,1,2)
+	var/prefix = copytext_char(message,1,2)
 	if(length(message) >= 1 && prefix == get_prefix_key(/decl/prefix/audible_emote))
 		return all_languages["Noise"]
 
 	if(length(message) >= 2 && is_language_prefix(prefix))
-		var/language_prefix = lowertext(copytext(message, 2 ,3))
+		var/language_prefix = lowertext(copytext_char(message, 2 ,3))
 		var/datum/language/L = language_keys[language_prefix]
 		if (can_speak(L))
 			return L

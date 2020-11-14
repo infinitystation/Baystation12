@@ -24,17 +24,21 @@ SUBSYSTEM_DEF(ticker)
 	var/restart_timeout = 1 MINUTE
 
 	var/scheduled_map_change = 0
-	var/update_server //inf
-	var/client/updater
 	var/force_ending = 0            //Overriding this variable will force game end. Can be used for build update or adminbuse.
 
 	var/list/minds = list()         //Minds of everyone in the game.
 	var/list/antag_pool = list()
 	var/looking_for_antags = 0
 
+//[INF]
+	var/update_server
+	var/client/updater
+	var/respawn_cooldown = 0
+//[/INF]
+
 /datum/controller/subsystem/ticker/Initialize()
-	to_world("<B><FONT color='blue'>Добро пожаловать в лобби!</FONT></B>")
-	to_world("Настройте своего персонажа и нажмите \"Ready\" дл&#255; вступлению в игру с начала раунда через [round(pregame_timeleft/10)] секунд.")
+	to_world("<B><FONT color='blue'>Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РІ Р»РѕР±Р±Рё!</FONT></B>")
+	to_world("РќР°СЃС‚СЂРѕР№С‚Рµ СЃРІРѕРµРіРѕ РїРµСЂСЃРѕРЅР°Р¶Р° Рё РЅР°Р¶РјРёС‚Рµ \"Ready\" РґР»СЏ РІСЃС‚СѓРїР»РµРЅРёСЋ РІ РёРіСЂСѓ СЃ РЅР°С‡Р°Р»Р° СЂР°СѓРЅРґР° С‡РµСЂРµР· [round(pregame_timeleft/10)] СЃРµРєСѓРЅРґ.")
 	return ..()
 
 /datum/controller/subsystem/ticker/fire(resumed = 0)
@@ -69,18 +73,18 @@ SUBSYSTEM_DEF(ticker)
 		if(CHOOSE_GAMEMODE_RETRY)
 			pregame_timeleft = 60 SECONDS
 			Master.SetRunLevel(RUNLEVEL_LOBBY)
-			to_world("<B>Невозможно выбрать соответствующий настройкам игровой режим (недостаточно игроков со включенными рол&#255;ми).</B> Лобби перезапущено дл&#255; повторной попытки.")
+			to_world("<B>РќРµРІРѕР·РјРѕР¶РЅРѕ РІС‹Р±СЂР°С‚СЊ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РёР№ РЅР°СЃС‚СЂРѕР№РєР°Рј РёРіСЂРѕРІРѕР№ СЂРµР¶РёРј (РЅРµРґРѕСЃС‚Р°С‚РѕС‡РЅРѕ РёРіСЂРѕРєРѕРІ СЃРѕ РІРєР»СЋС‡РµРЅРЅС‹РјРё СЂРѕР»СЏРјРё).</B> Р›РѕР±Р±Рё РїРµСЂРµР·Р°РїСѓС‰РµРЅРѕ РґР»СЏ РїРѕРІС‚РѕСЂРЅРѕР№ РїРѕРїС‹С‚РєРё.")
 			return
 		if(CHOOSE_GAMEMODE_REVOTE)
 			revotes_allowed--
 			pregame_timeleft = initial(pregame_timeleft)
 			gamemode_vote_results = null
 			Master.SetRunLevel(RUNLEVEL_LOBBY)
-			to_world("<B>Невозможно выбрать соответствующий настройкам игровой режим (недостаточно игроков со включенными рол&#255;ми).</B> Лобби перезапущено дл&#255; повторного голосовани&#255;.")
+			to_world("<B>РќРµРІРѕР·РјРѕР¶РЅРѕ РІС‹Р±СЂР°С‚СЊ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РёР№ РЅР°СЃС‚СЂРѕР№РєР°Рј РёРіСЂРѕРІРѕР№ СЂРµР¶РёРј (РЅРµРґРѕСЃС‚Р°С‚РѕС‡РЅРѕ РёРіСЂРѕРєРѕРІ СЃРѕ РІРєР»СЋС‡РµРЅРЅС‹РјРё СЂРѕР»СЏРјРё).</B> Р›РѕР±Р±Рё РїРµСЂРµР·Р°РїСѓС‰РµРЅРѕ РґР»СЏ РїРѕРІС‚РѕСЂРЅРѕРіРѕ РіРѕР»РѕСЃРѕРІР°РЅРёСЏ.")
 			return
 		if(CHOOSE_GAMEMODE_RESTART) //inf, unused
-			to_world("<B>Невозможно выбрать соответствующий настройкам игровой режим.</B> Мир будет перезапущен.")
-			world.Reboot("Ошибка при выборе игрового режима. Были попытки запустить [english_list(bad_modes)].")
+			to_world("<B>РќРµРІРѕР·РјРѕР¶РЅРѕ РІС‹Р±СЂР°С‚СЊ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РёР№ РЅР°СЃС‚СЂРѕР№РєР°Рј РёРіСЂРѕРІРѕР№ СЂРµР¶РёРј.</B> РњРёСЂ Р±СѓРґРµС‚ РїРµСЂРµР·Р°РїСѓС‰РµРЅ.")
+			world.Reboot("РћС€РёР±РєР° РїСЂРё РІС‹Р±РѕСЂРµ РёРіСЂРѕРІРѕРіРѕ СЂРµР¶РёРјР°. Р‘С‹Р»Рё РїРѕРїС‹С‚РєРё Р·Р°РїСѓСЃС‚РёС‚СЊ [english_list(bad_modes)].")
 			return
 	// This means we succeeded in picking a game mode.
 	GLOB.using_map.setup_economy()
@@ -99,20 +103,17 @@ SUBSYSTEM_DEF(ticker)
 
 	spawn(0)//Forking here so we dont have to wait for this to finish
 		mode.post_setup() // Drafts antags who don't override jobs.
-		to_world("<FONT color='blue'><B>При&#255;тной игры!</B></FONT>")
-		send2maindiscord("Раунд с режимом [SSticker.master_mode] начался. Игроков: [GLOB.player_list.len].")
-		send2mainirc("Раунд с режимом [SSticker.master_mode] начался;. Игроков: [GLOB.player_list.len].")
+		to_world("<FONT color='blue'><B>РџСЂРёСЏС‚РЅРѕР№ РёРіСЂС‹!</B></FONT>")
+		send2maindiscord("Р Р°СѓРЅРґ СЃ СЂРµР¶РёРјРѕРј [SSticker.master_mode] РЅР°С‡Р°Р»СЃСЏ. РРіСЂРѕРєРѕРІ: [GLOB.player_list.len].")
+		send2mainirc("Р Р°СѓРЅРґ СЃ СЂРµР¶РёРјРѕРј [SSticker.master_mode] РЅР°С‡Р°Р»СЃСЏ;. РРіСЂРѕРєРѕРІ: [GLOB.player_list.len].")
 		sound_to(world, sound(GLOB.using_map.welcome_sound))
 
-		//Holiday Round-start stuff	~Carn
-		Holiday_Game_Start()
-
 	if(!length(GLOB.admins))
-		send2adminirc("Раунд началс&#255; без администраторов в игре!")
+		send2adminirc("Р Р°СѓРЅРґ РЅР°С‡Р°Р»СЃСЏ Р±РµР· Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂРѕРІ РІ РёРіСЂРµ!")
 
 	if(config.ooc_allowed && !config.ooc_during_round)
 		config.ooc_allowed = 0
-		to_world("<B>OOC чат отключен!</B>")
+		to_world("<B>OOC С‡Р°С‚ РѕС‚РєР»СЋС‡РµРЅ!</B>")
 
 /datum/controller/subsystem/ticker/proc/playing_tick()
 	mode.process()
@@ -121,7 +122,7 @@ SUBSYSTEM_DEF(ticker)
 	if(mode_finished && game_finished())
 		if(!config.ooc_allowed)
 			config.ooc_allowed = 1
-			to_world("<B>OOC чат включен!</B>")
+			to_world("<B>OOC С‡Р°С‚ РІРєР»СЋС‡РµРЅ!</B>")
 
 		INVOKE_ASYNC(src, .proc/declare_completion)
 		Master.SetRunLevel(RUNLEVEL_POSTGAME)
@@ -135,8 +136,12 @@ SUBSYSTEM_DEF(ticker)
 	else if(mode_finished && (end_game_state <= END_GAME_NOT_OVER))
 		end_game_state = END_GAME_MODE_FINISH_DONE
 		mode.cleanup()
-		log_and_message_admins(": Все антагонисты мертвы или игровой режим подошел к логическому завершению.") //Outputs as "Event: All antagonists are deceased or the gamemode has ended."
+		log_and_message_admins(": Р’СЃРµ Р°РЅС‚Р°РіРѕРЅРёСЃС‚С‹ РјРµСЂС‚РІС‹ РёР»Рё РёРіСЂРѕРІРѕР№ СЂРµР¶РёРј РїРѕРґРѕС€РµР» Рє Р»РѕРіРёС‡РµСЃРєРѕРјСѓ Р·Р°РІРµСЂС€РµРЅРёСЋ.") //Outputs as "Event: All antagonists are deceased or the gamemode has ended."
 		SSvote.initiate_vote(/datum/vote/transfer, automatic = 1)
+//[INF]
+	if(world.time % 600 == 0) //every 60 seconds
+		process_newscaster()
+//[/INF]
 
 /datum/controller/subsystem/ticker/proc/post_game_tick()
 	switch(end_game_state)
@@ -153,12 +158,12 @@ SUBSYSTEM_DEF(ticker)
 				else
 					SSstatistics.set_field_details("end_proper","universe destroyed")
 				if(!delay_end)
-					to_world("<span class='notice'><b>Перезапуск в следствии уничтожени&#255; [station_name()] через [restart_timeout/10] секунд.</b></span>")
+					to_world("<span class='notice'><b>РџРµСЂРµР·Р°РїСѓСЃРє РІ СЃР»РµРґСЃС‚РІРёРё СѓРЅРёС‡С‚РѕР¶РµРЅРёСЏ [station_name()] С‡РµСЂРµР· [restart_timeout/10] СЃРµРєСѓРЅРґ.</b></span>")
 
 			else
 				SSstatistics.set_field_details("end_proper","proper completion")
 				if(!delay_end)
-					to_world("<span class='notice'><b>Перезапуск через [restart_timeout/10] секунд.</b></span>")
+					to_world("<span class='notice'><b>РџРµСЂРµР·Р°РїСѓСЃРє С‡РµСЂРµР· [restart_timeout/10] СЃРµРєСѓРЅРґ.</b></span>")
 			handle_tickets()
 		if(END_GAME_ENDING)
 			restart_timeout -= (world.time - last_fire)
@@ -284,13 +289,16 @@ Helpers
 	mode = mode_datum
 	master_mode = mode_to_try
 	if(mode_to_try == "secret")
-		to_world("<B>Текущий игровой режим - Секретный!</B>")
+		to_world("<B>РўРµРєСѓС‰РёР№ РёРіСЂРѕРІРѕР№ СЂРµР¶РёРј - РЎРµРєСЂРµС‚РЅС‹Р№!</B>")
 		var/list/mode_names = list()
 		for (var/mode_tag in base_runnable_modes)
 			var/datum/game_mode/M = gamemode_cache[mode_tag]
 			if(M)
 				mode_names += M.name
-		to_world("<B>Возможные режимы:</B> [english_list(mode_names)]")
+		if (config.secret_hide_possibilities)
+			message_admins("<B>Р’РѕР·РјРѕР¶РЅС‹Рµ СЂРµР¶РёРјС‹:</B> [english_list(mode_names)]")
+		else
+			to_world("<B>Р’РѕР·РјРѕР¶РЅС‹Рµ СЂРµР¶РёРјС‹:</B> [english_list(mode_names)]")
 	else
 		mode.announce()
 
@@ -305,8 +313,17 @@ Helpers
 			else
 				if(player.create_character())
 					qdel(player)
+//[INF]
 		else if(player && !player.ready)
 			player.new_player_panel()
+	set_respawn_cooldown(30 SECONDS)
+/datum/controller/subsystem/ticker/proc/set_respawn_cooldown(r_time = DEFAULT_RESPAWN_COOLDOWN) //setting time when next player can respawn
+	respawn_cooldown = world.time + r_time
+
+/datum/controller/subsystem/ticker/proc/check_respawn_cooldown() //check respawn cooldown status // true if you cooldowned (can respawn if true)
+	. = min(0, world.time - respawn_cooldown)
+
+//[/INF]
 
 /datum/controller/subsystem/ticker/proc/collect_minds()
 	for(var/mob/living/player in GLOB.player_list)
@@ -325,7 +342,7 @@ Helpers
 	if(captainless)
 		for(var/mob/M in GLOB.player_list)
 			if(!istype(M,/mob/new_player))
-				to_chat(M, "Эта смена проснулась без Капитана.")
+				to_chat(M, "Р­С‚Р° СЃРјРµРЅР° РїСЂРѕСЃРЅСѓР»Р°СЃСЊ Р±РµР· РљР°РїРёС‚Р°РЅР°.")
 
 /datum/controller/subsystem/ticker/proc/attempt_late_antag_spawn(var/list/antag_choices)
 	var/datum/antagonist/antag = antag_choices[1]
@@ -388,22 +405,22 @@ Helpers
 
 /datum/controller/subsystem/ticker/proc/notify_delay()
 	if(!delay_notified)
-		to_world("<span class='notice'><b>Администраци&#255; приостановила конец раунда.</b></span>")
+		to_world("<span class='notice'><b>РђРґРјРёРЅРёСЃС‚СЂР°С†РёСЏ РїСЂРёРѕСЃС‚Р°РЅРѕРІРёР»Р° РєРѕРЅРµС† СЂР°СѓРЅРґР°.</b></span>")
 	delay_notified = 1
 
 /datum/controller/subsystem/ticker/proc/handle_tickets()
 	for(var/datum/ticket/ticket in tickets)
 		if(ticket.is_active())
 			if(!delay_notified)
-				message_staff("<span class='warning'><b>Рестарт автоматичски приостановлен из-за активных тикетов администраторов.</b></span>")
+				message_staff("<span class='warning'><b>Р РµСЃС‚Р°СЂС‚ Р°РІС‚РѕРјР°С‚РёС‡СЃРєРё РїСЂРёРѕСЃС‚Р°РЅРѕРІР»РµРЅ РёР·-Р·Р° Р°РєС‚РёРІРЅС‹С… С‚РёРєРµС‚РѕРІ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂРѕРІ.</b></span>")
 			notify_delay()
 			end_game_state = END_GAME_AWAITING_TICKETS
 			return
-	message_staff("<span class='warning'><b>Активных тикетов не осталось, рестарт через [restart_timeout/10] секунд если администраторы не приостанов&#255;т его.</b></span>")
+	message_staff("<span class='warning'><b>РђРєС‚РёРІРЅС‹С… С‚РёРєРµС‚РѕРІ РЅРµ РѕСЃС‚Р°Р»РѕСЃСЊ, СЂРµСЃС‚Р°СЂС‚ С‡РµСЂРµР· [restart_timeout/10] СЃРµРєСѓРЅРґ РµСЃР»Рё Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂС‹ РЅРµ РїСЂРёРѕСЃС‚Р°РЅРѕРІСЏС‚ РµРіРѕ.</b></span>")
 	end_game_state = END_GAME_ENDING
 
 /datum/controller/subsystem/ticker/proc/declare_completion()
-	to_world("<br><br><br><H1>Раунд с режимом [mode.name] завершен!</H1>")
+	to_world("<br><br><br><H1>Р Р°СѓРЅРґ СЃ СЂРµР¶РёРјРѕРј [mode.name] Р·Р°РІРµСЂС€РµРЅ!</H1>")
 	for(var/client/C)
 		if(!C.credits)
 			C.RollCredits()
@@ -413,37 +430,36 @@ Helpers
 				var/turf/playerTurf = get_turf(Player)
 				if(evacuation_controller.round_over() && evacuation_controller.emergency_evacuation)
 					if(isNotAdminLevel(playerTurf.z))
-						to_chat(Player, "<font color='blue'><b>Вам удалось выжить, но вы были брошены на [station_name()], [Player.real_name]...</b></font>")
+						to_chat(Player, "<font color='blue'><b>Р’Р°Рј СѓРґР°Р»РѕСЃСЊ РІС‹Р¶РёС‚СЊ, РЅРѕ РІС‹ Р±С‹Р»Рё Р±СЂРѕС€РµРЅС‹ РЅР° [station_name()], [Player.real_name]...</b></font>")
 					else
-						to_chat(Player, "<font color='green'><b>Вам удалось пережить событи&#255; на [station_name()], [Player.real_name]!</b></font>")
+						to_chat(Player, "<font color='green'><b>Р’Р°Рј СѓРґР°Р»РѕСЃСЊ РїРµСЂРµР¶РёС‚СЊ СЃРѕР±С‹С‚РёСЏ РЅР° [station_name()], [Player.real_name]!</b></font>")
 				else if(isAdminLevel(playerTurf.z))
-					to_chat(Player, "<font color='green'><b>Вы успешно избежали событий на [station_name()], [Player.real_name].</b></font>")
+					to_chat(Player, "<font color='green'><b>Р’С‹ СѓСЃРїРµС€РЅРѕ РёР·Р±РµР¶Р°Р»Рё СЃРѕР±С‹С‚РёР№ РЅР° [station_name()], [Player.real_name].</b></font>")
 				else if(issilicon(Player))
-					to_chat(Player, "<font color='green'><b>Ваши системы сохранили свою функциональность после событий на [station_name()], [Player.real_name].</b></font>")
+					to_chat(Player, "<font color='green'><b>Р’Р°С€Рё СЃРёСЃС‚РµРјС‹ СЃРѕС…СЂР°РЅРёР»Рё СЃРІРѕСЋ С„СѓРЅРєС†РёРѕРЅР°Р»СЊРЅРѕСЃС‚СЊ РїРѕСЃР»Рµ СЃРѕР±С‹С‚РёР№ РЅР° [station_name()], [Player.real_name].</b></font>")
 				else
-					to_chat(Player, "<font color='blue'><b>Вы пережили очередную смену на [station_name()], [Player.real_name].</b></font>")
+					to_chat(Player, "<font color='blue'><b>Р’С‹ РїРµСЂРµР¶РёР»Рё РѕС‡РµСЂРµРґРЅСѓСЋ СЃРјРµРЅСѓ РЅР° [station_name()], [Player.real_name].</b></font>")
 			else
 				if(isghost(Player))
 					var/mob/observer/ghost/O = Player
 					if(!O.started_as_observer)
-						to_chat(Player, "<font color='red'><b>Вы не пережили событи&#255; на [station_name()]...</b></font>")
+						to_chat(Player, "<font color='red'><b>Р’С‹ РЅРµ РїРµСЂРµР¶РёР»Рё СЃРѕР±С‹С‚РёСЏ РЅР° [station_name()]...</b></font>")
 				else
-					to_chat(Player, "<font color='red'><b>Вы не пережили событи&#255; на [station_name()]...</b></font>")
+					to_chat(Player, "<font color='red'><b>Р’С‹ РЅРµ РїРµСЂРµР¶РёР»Рё СЃРѕР±С‹С‚РёСЏ РЅР° [station_name()]...</b></font>")
 	to_world("<br>")
 
-	for (var/mob/living/silicon/ai/aiPlayer in SSmobs.mob_list)
-		if (aiPlayer.stat != 2)
-			to_world("<b>[aiPlayer.name] (Игрок: [aiPlayer.key]), его законы были следующими:</b>")
-
+	for(var/mob/living/silicon/ai/aiPlayer in SSmobs.mob_list)
+		if(aiPlayer.stat != 2)
+			to_world("<b>[aiPlayer.name] [(aiPlayer.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW) ? "(Played by: [aiPlayer.key])\'s" : ""], РµРіРѕ Р·Р°РєРѕРЅС‹ Р±С‹Р»Рё СЃР»РµРґСѓСЋС‰РёРјРё:</b>")
 		else
-			to_world("<b>[aiPlayer.name] (Игрок: [aiPlayer.key]), его законы перед уничтожением были следующими:</b>")
+			to_world("<b>[aiPlayer.name] [(aiPlayer.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW) ? "(Played by: [aiPlayer.key])\'s" : ""], РµРіРѕ Р·Р°РєРѕРЅС‹ РїРµСЂРµРґ СѓРЅРёС‡С‚РѕР¶РµРЅРёРµРј Р±С‹Р»Рё СЃР»РµРґСѓСЋС‰РёРјРё:</b>")
 
 		aiPlayer.show_laws(1)
 
 		if (aiPlayer.connected_robots.len)
-			var/robolist = "<b>Ло&#255;льными роботами ИИ были:</b> "
+			var/robolist = "<b>Р›РѕСЏР»СЊРЅС‹РјРё СЂРѕР±РѕС‚Р°РјРё РР Р±С‹Р»Рё:</b> "
 			for(var/mob/living/silicon/robot/robo in aiPlayer.connected_robots)
-				robolist += "[robo.name][robo.stat?" (Deactivated) (Played by: [robo.key]), ":" (Played by: [robo.key]), "]"
+				robolist += "[robo.name][robo.stat ? " (Deactivated)" : ""] [(robo.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW) ? "(Played by: [robo.key])" : ""],"
 			to_world("[robolist]")
 
 	var/dronecount = 0
@@ -456,17 +472,17 @@ Helpers
 
 		if (!robo.connected_ai)
 			if (robo.stat != 2)
-				to_world("<b>[robo.name] (Игрок: [robo.key]) пережил событи&#255; без ИИ-хоз&#255;ина! Его законы:</b>")
+				to_world("<b>[robo.name] [(robo.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW) ? "(Played by: [robo.key])" : ""] РїРµСЂРµР¶РёР» СЃРѕР±С‹С‚РёСЏ Р±РµР· РР-С…РѕР·СЏРёРЅР°! Р•РіРѕ Р·Р°РєРѕРЅС‹:</b>")
 
 			else
-				to_world("<b>[robo.name] (Игрок: [robo.key]) не смог пережить т&#255;готы быти&#255; синтетика без ИИ-хоз&#255;ина. Его законы:</b>")
+				to_world("<b>[robo.name] [(robo.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW) ? "(Played by: [robo.key])" : ""] РЅРµ СЃРјРѕРі РїРµСЂРµР¶РёС‚СЊ С‚СЏРіРѕС‚С‹ Р±С‹С‚РёСЏ СЃРёРЅС‚РµС‚РёРєР° Р±РµР· РР-С…РѕР·СЏРёРЅР°. Р•РіРѕ Р·Р°РєРѕРЅС‹:</b>")
 
 
 			if(robo) //How the hell do we lose robo between here and the world messages directly above this?
 				robo.laws.show_laws(world)
 
 	if(dronecount)
-		to_world("<b>[dronecount>1 ? "Было [dronecount] индустриальных дронов к концу раунда" : "Был всего 1 индустриальный дрон к концу раунда"].</b>")
+		to_world("<b>[dronecount>1 ? "Р‘С‹Р»Рѕ [dronecount] РёРЅРґСѓСЃС‚СЂРёР°Р»СЊРЅС‹С… РґСЂРѕРЅРѕРІ Рє РєРѕРЅС†Сѓ СЂР°СѓРЅРґР°" : "Р‘С‹Р» РІСЃРµРіРѕ 1 РёРЅРґСѓСЃС‚СЂРёР°Р»СЊРЅС‹Р№ РґСЂРѕРЅ Рє РєРѕРЅС†Сѓ СЂР°СѓРЅРґР°"].</b>")
 
 	if(all_money_accounts.len)
 		var/datum/money_account/max_profit = all_money_accounts[1]
@@ -479,8 +495,8 @@ Helpers
 				max_profit = D
 			if(saldo <= max_loss.get_balance())
 				max_loss = D
-		to_world("<b>Счёт [max_profit.owner_name]</b> достиг наибольшей <font color='green'><B>ВЫГОДЫ</B></font>, закончив смену с прибылью в размере <b>[max_profit.get_balance()] таллеров</b>.")
-		to_world("Но с другой стороны, счёт <b>[max_loss.owner_name]</b> понёс наибольшие <font color='red'><B>УБЫТКИ</B></font>, что составили <b>[max_loss.get_balance()] таллеров</b>.")
+		to_world("<b>РЎС‡С‘С‚ [max_profit.owner_name]</b> РґРѕСЃС‚РёРі РЅР°РёР±РѕР»СЊС€РµР№ <font color='green'><B>Р’Р«Р“РћР”Р«</B></font>, Р·Р°РєРѕРЅС‡РёРІ СЃРјРµРЅСѓ СЃ РїСЂРёР±С‹Р»СЊСЋ РІ СЂР°Р·РјРµСЂРµ <b>[GLOB.using_map.local_currency_name_short][max_profit.get_balance()]</b>.")
+		to_world("РќРѕ СЃ РґСЂСѓРіРѕР№ СЃС‚РѕСЂРѕРЅС‹, СЃС‡С‘С‚ <b>[max_loss.owner_name]</b> РїРѕРЅС‘СЃ РЅР°РёР±РѕР»СЊС€РёРµ <font color='red'><B>РЈР‘Р«РўРљР</B></font>, С‡С‚Рѕ СЃРѕСЃС‚Р°РІРёР»Рё <b>[GLOB.using_map.local_currency_name_short][max_loss.get_balance()]</b>.")
 
 	mode.declare_completion()//To declare normal completion.
 

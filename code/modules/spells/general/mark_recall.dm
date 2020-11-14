@@ -17,6 +17,7 @@
 	cast_sound = 'sound/effects/teleport.ogg'
 	hud_state = "wiz_mark"
 	var/mark = null
+	selection_type = "special"	//INF	We don't care where our mark is. Possibly not in our VIEW
 
 /spell/mark_recall/choose_targets()
 	if(!mark)

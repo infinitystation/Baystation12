@@ -18,6 +18,7 @@
 	var/targetted_emote                // Whether or not this emote needs a target.
 	var/check_restraints               // Can this emote be used while restrained?
 	var/conscious = 1				   // Do we need to be awake to emote this?
+	var/emote_range = 0                // If >0, restricts emote visibility to viewers within range.
 
 /decl/emote/proc/get_emote_message_1p(var/atom/user, var/atom/target, var/extra_params)
 	if(target)
@@ -78,19 +79,23 @@
 		use_3p = replacetext(use_3p, "USER", "<b>\the [user]</b>")
 		use_3p = capitalize(use_3p)
 
+	var/use_range = emote_range
+	if (!use_range)
+		use_range = world.view
 
-	if(message_type == AUDIBLE_MESSAGE)
-		if(isliving(user))
-			var/mob/living/L = user
-			if(!L.silent)
-				do_extra(user, target)
-				user.audible_message(message = use_3p, self_message = use_1p, deaf_message = emote_message_impaired, checkghosts = /datum/client_preference/ghost_sight)
-			else
-				user.visible_message(message = "[user] noiselessly opens mouth!", self_message = "You you cannot say anything!", blind_message = emote_message_impaired, checkghosts = /datum/client_preference/ghost_sight)
-	else
-		do_extra(user, target)
-		user.visible_message(message = use_3p, self_message = use_1p, blind_message = emote_message_impaired, checkghosts = /datum/client_preference/ghost_sight)
+	if(ismob(user))
+		var/mob/M = user
+		if(message_type == AUDIBLE_MESSAGE)
+			M.audible_message(message = use_3p, self_message = use_1p, deaf_message = emote_message_impaired, hearing_distance = use_range, checkghosts = /datum/client_preference/ghost_sight)
+		else
+			M.visible_message(message = use_3p, self_message = use_1p, blind_message = emote_message_impaired, range = use_range, checkghosts = /datum/client_preference/ghost_sight)
 
+	do_extra(user, target)
+//[INF]
+	if(ismob(user))
+		var/mob/U = user
+		log_emote("[U.real_name]/[U.key] : [use_3p]")
+//[/INF]
 /decl/emote/proc/do_extra(var/atom/user, var/atom/target)
 	return
 

@@ -7,7 +7,7 @@
 
 	layer = SIDE_WINDOW_LAYER
 	anchored = 1.0
-	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CHECKS_BORDER
+	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE
 	obj_flags = OBJ_FLAG_ROTATABLE
 	alpha = 180
 	var/material/reinf_material
@@ -604,7 +604,7 @@
 			to_chat(user, "<span class='notice'>There is already a window there.</span>")
 			return
 	to_chat(user, "<span class='notice'>You start placing the window.</span>")
-	if(do_after(user,20,src))
+	if(do_after(user,20))
 		for(var/obj/structure/window/WINDOW in loc)
 			if(WINDOW.dir == dir_to_set)//checking this for a 2nd time to check if a window was made while we were waiting.
 				to_chat(user, "<span class='notice'>There is already a window facing this way there.</span>")

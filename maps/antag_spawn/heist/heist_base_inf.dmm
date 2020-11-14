@@ -991,11 +991,10 @@
 /area/map_template/skipjack_station/start)
 "cV" = (
 /obj/machinery/door/airlock/hatch{
-	frequency = 1331;
+	frequency = 1380;
 	icon_state = "closed";
 	id_tag = "vox_northwest_lock";
-	locked = 0;
-	req_access = newlist()
+	locked = 0
 	},
 /obj/machinery/shield_diffuser,
 /turf/simulated/floor/plating,
@@ -1003,7 +1002,7 @@
 "cW" = (
 /obj/machinery/access_button{
 	command = "cycle_exterior";
-	frequency = 1331;
+	frequency = 1380;
 	master_tag = "vox_west_control";
 	req_access = list("ACCESS_SYNDICATE")
 	},
@@ -1024,28 +1023,25 @@
 /turf/simulated/floor/plating,
 /area/map_template/skipjack_station/start)
 "cY" = (
-/obj/machinery/door/airlock/external{
-	density = 1;
+/obj/machinery/shield_diffuser,
+/obj/machinery/door/airlock/external/bolted/cycling{
 	frequency = 1380;
 	id_tag = "skipjack_shuttle_outer";
-	name = "Ship External Access";
-	req_access = newlist()
+	name = "Ship External Access"
 	},
-/obj/machinery/shield_diffuser,
 /turf/simulated/floor/plating,
 /area/map_template/skipjack_station/start)
 "cZ" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1331;
-	id_tag = "vox_west_vent"
-	},
 /obj/random/junk,
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	id_tag = "vox_west_vent"
+	},
 /turf/simulated/floor/plating,
 /area/map_template/skipjack_station/start)
 "da" = (
 /obj/machinery/airlock_sensor{
-	frequency = 1331;
+	frequency = 1380;
 	id_tag = "vox_west_sensor";
 	pixel_x = 25
 	},
@@ -1085,12 +1081,10 @@
 /turf/simulated/floor/plating,
 /area/map_template/skipjack_station/start)
 "dh" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 2;
-	frequency = 1380;
-	id_tag = "merc_shuttle_pump"
-	},
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	id_tag = "skipjack_shuttle_pump"
+	},
 /turf/simulated/floor/plating,
 /area/map_template/skipjack_station/start)
 "di" = (
@@ -1103,22 +1097,21 @@
 /area/map_template/skipjack_station/start)
 "dj" = (
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
-	tag_airpump = "vox_west_vent";
-	tag_exterior_door = "vox_northwest_lock";
-	frequency = 1331;
+	frequency = 1380;
 	id_tag = "vox_west_control";
-	tag_interior_door = "vox_southwest_lock";
 	pixel_x = 24;
 	req_access = list("ACCESS_SYNDICATE");
-	tag_chamber_sensor = "vox_west_sensor"
-	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 8;
-	frequency = 1331;
-	id_tag = "vox_west_vent"
+	tag_airpump = "vox_west_vent";
+	tag_chamber_sensor = "vox_west_sensor";
+	tag_exterior_door = "vox_northwest_lock";
+	tag_interior_door = "vox_southwest_lock"
 	},
 /obj/machinery/light/small,
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	dir = 8;
+	id_tag = "vox_west_vent"
+	},
 /turf/simulated/floor/plating,
 /area/map_template/skipjack_station/start)
 "dk" = (
@@ -1182,12 +1175,11 @@
 	pixel_y = 8;
 	req_access = list("ACCESS_SYNDICATE")
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "skipjack_shuttle_pump"
 	},
-/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/map_template/skipjack_station/start)
 "dq" = (
@@ -1200,11 +1192,10 @@
 /area/map_template/skipjack_station/start)
 "dr" = (
 /obj/machinery/door/airlock/hatch{
-	frequency = 1331;
+	frequency = 1380;
 	icon_state = "closed";
 	id_tag = "vox_southwest_lock";
-	locked = 0;
-	req_access = newlist()
+	locked = 0
 	},
 /obj/machinery/atmospherics/pipe/simple/visible,
 /turf/simulated/floor/plating,
@@ -1239,11 +1230,10 @@
 /area/map_template/skipjack_station/start)
 "dy" = (
 /obj/machinery/atmospherics/pipe/simple/visible,
-/obj/machinery/door/airlock/external{
+/obj/machinery/door/airlock/external/bolted/cycling{
 	frequency = 1380;
 	id_tag = "skipjack_shuttle_inner";
-	name = "Ship External Access";
-	req_access = newlist()
+	name = "Ship External Access"
 	},
 /turf/simulated/floor/plating,
 /area/map_template/skipjack_station/start)
@@ -1251,7 +1241,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible,
 /obj/machinery/access_button{
 	command = "cycle_interior";
-	frequency = 1331;
+	frequency = 1380;
 	master_tag = "vox_west_control";
 	pixel_x = -22;
 	req_access = list("ACCESS_SYNDICATE")

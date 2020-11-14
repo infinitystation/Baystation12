@@ -1,5 +1,6 @@
 /mob/living/exosuit
 	movement_handlers = list(
+		/datum/movement_handler/deny_multiz,
 		/datum/movement_handler/mob/space/exosuit,
 		/datum/movement_handler/mob/exosuit
 	)
@@ -70,7 +71,7 @@
 	if(failed)
 		moving_dir = pick(GLOB.cardinal - exosuit.dir)
 
-	exosuit.get_cell().use(exosuit.legs.power_use * CELLRATE)
+	exosuit.get_cell()?.use(exosuit.legs.power_use * CELLRATE)
 	if(exosuit.dir != moving_dir)
 		playsound(exosuit.loc, exosuit.mech_turn_sound, 40,1)
 		exosuit.set_dir(moving_dir)

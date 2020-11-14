@@ -2723,9 +2723,8 @@
 /turf/simulated/floor/shuttle/black,
 /area/map_template/rescue_base/start)
 "eQ" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 4;
-	frequency = 1331;
 	id_tag = "rescue_shuttle_pump"
 	},
 /obj/machinery/airlock_sensor{
@@ -2750,9 +2749,8 @@
 /turf/simulated/floor/shuttle/red,
 /area/map_template/rescue_base/start)
 "eS" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 8;
-	frequency = 1331;
 	id_tag = "rescue_shuttle_pump"
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
@@ -2791,9 +2789,8 @@
 /turf/simulated/floor/shuttle/black,
 /area/map_template/rescue_base/start)
 "eW" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 4;
-	frequency = 1331;
 	id_tag = "rescue_shuttle_pump"
 	},
 /obj/structure/bed/chair/shuttle/red{
@@ -2823,9 +2820,8 @@
 	pixel_y = -4;
 	req_access = list("ACCESS_CENT_CREED")
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 8;
-	frequency = 1331;
 	id_tag = "rescue_shuttle_pump"
 	},
 /obj/structure/bed/chair/shuttle/red{
@@ -2854,9 +2850,8 @@
 	dir = 8;
 	pixel_x = 22
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 8;
-	frequency = 1331;
 	id_tag = "rescue_shuttle_pump"
 	},
 /obj/structure/bed/chair/shuttle/red{
@@ -2882,9 +2877,8 @@
 /turf/simulated/floor/shuttle/black,
 /area/map_template/rescue_base/start)
 "fg" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 4;
-	frequency = 1331;
 	id_tag = "rescue_shuttle_pump"
 	},
 /obj/machinery/light{
@@ -2906,9 +2900,8 @@
 /turf/simulated/floor/shuttle/red,
 /area/map_template/rescue_base/start)
 "fj" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 8;
-	frequency = 1331;
 	id_tag = "rescue_shuttle_pump"
 	},
 /obj/machinery/light{
@@ -3690,6 +3683,10 @@
 	icon_state = "asteroidfloor"
 	},
 /area/map_template/rescue_base/base)
+"hj" = (
+/obj/machinery/telecomms/allinone/ert,
+/turf/simulated/floor/shuttle/darkred,
+/area/map_template/rescue_base/start)
 
 (1,1,1) = {"
 aa
@@ -4996,7 +4993,7 @@ eH
 eH
 eH
 eH
-fA
+hj
 fA
 gI
 eH

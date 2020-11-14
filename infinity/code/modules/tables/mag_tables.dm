@@ -40,7 +40,7 @@
 		toggle_lock()
 	..()
 
-/obj/structure/table/mag/break_to_parts()
+/obj/structure/table/mag/break_to_parts(full_return = 0)
 	if(locked)
 		toggle_lock()
 	..()

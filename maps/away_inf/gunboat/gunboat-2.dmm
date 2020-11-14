@@ -834,8 +834,7 @@
 	},
 /obj/effect/floor_decal/industrial/warning/half{
 	dir = 4;
-	icon_state = "warninghalf";
-	tag = ""
+	icon_state = "warninghalf"
 	},
 /turf/simulated/floor/tiled,
 /area/ship/gunboat/hallway)
@@ -852,8 +851,7 @@
 "bA" = (
 /obj/effect/floor_decal/industrial/warning/half{
 	dir = 4;
-	icon_state = "warninghalf";
-	tag = ""
+	icon_state = "warninghalf"
 	},
 /turf/simulated/floor/tiled,
 /area/ship/gunboat/hallway)
@@ -1061,8 +1059,7 @@
 	dir = 8;
 	frequency = 1700;
 	icon_state = "map_vent_in";
-	id_tag = "air_out";
-	tag = "icon-map_vent_in (WEST)"
+	id_tag = "air_out"
 	},
 /turf/simulated/floor/reinforced/airmix,
 /area/ship/gunboat/engine/upper)

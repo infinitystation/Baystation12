@@ -111,7 +111,7 @@
 					if(M.client)
 						attack_self(M)
 	else
-		show_browser(usr, null, "window=radio")
+		close_browser(usr, "window=radio")
 		return
 	return
 

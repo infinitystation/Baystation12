@@ -1,3 +1,4 @@
+//inf//It would be nice to translate it into a list, but it is too large then it would be better to send it to Bey
 var/global/datum/ntnet/ntnet_global = new()
 
 
@@ -97,6 +98,7 @@ var/global/datum/ntnet/ntnet_global = new()
 	return FALSE
 
 // Checks whether NTNet operates. If parameter is passed checks whether specific function is enabled.
+//inf//todo: relocate settings in relay
 /datum/ntnet/proc/check_function(var/specific_action = 0)
 	if(!relays || !relays.len) // No relays found. NTNet is down
 		return 0
@@ -250,7 +252,7 @@ var/global/datum/ntnet/ntnet_global = new()
 			my_client.stored_login = new_login
 
 //Used for initial email generation.
-/datum/ntnet/proc/create_email(mob/user, desired_name, domain, assignment)
+/datum/ntnet/proc/create_email(mob/user, desired_name, domain, assignment, desired_password)
 	desired_name = sanitize_for_email(desired_name)
 	var/login = "[desired_name]@[domain]"
 	// It is VERY unlikely that we'll have two players, in the same round, with the same name and branch, but still, this is here.
@@ -263,11 +265,11 @@ var/global/datum/ntnet/ntnet_global = new()
 		user.StoreMemory("You were not assigned an email address.", /decl/memory_options/system)
 	else
 		var/datum/computer_file/data/email_account/EA = new/datum/computer_file/data/email_account(login, user.real_name, assignment)
-		EA.password = GenerateKey()
+		EA.password = desired_password ? desired_password : GenerateKey()
 		if(user.mind)
 			user.mind.initial_email_login["login"] = EA.login
 			user.mind.initial_email_login["password"] = EA.password
-			user.StoreMemory("Your email account address is [EA.login] and the password is [EA.password].", /decl/memory_options/system)
+			user.StoreMemory("Адрес Вашего почтового аккаунта <b>[EA.login]</b>, а его пароль <b>[EA.password]</b>.<br>", /decl/memory_options/system)
 		if(issilicon(user))
 			var/mob/living/silicon/S = user
 			var/datum/nano_module/email_client/my_client = S.get_subsystem_from_path(/datum/nano_module/email_client)

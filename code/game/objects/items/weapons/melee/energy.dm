@@ -128,6 +128,7 @@
 /obj/item/weapon/melee/energy/sword
 	name = "energy sword"
 	desc = "May the force be within you."
+	icon = 'infinity/icons/obj/weapons.dmi' //inf
 	icon_state = "sword0"
 	active_force = 30
 	active_throwforce = 20
@@ -142,6 +143,7 @@
 	edge = 1
 	base_parry_chance = 50
 	active_attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	hitsound = 'sound/weapons/blade1.ogg'
 	var/blade_color
 
 /obj/item/weapon/melee/energy/sword/Initialize()
@@ -198,19 +200,19 @@
 	icon_state = "blade"
 	active_icon = "blade"	//It's all energy, so it should always be visible.
 	lighting_color = COLOR_SABER_GREEN
-	force = 40 //Normal attacks deal very high damage - about the same as wielded fire axe
-	active_force = 30 //inf
+	active_force = 40 //Normal attacks deal very high damage - about the same as wielded fire axe
 	active = 1
 	armor_penetration = 100
 	sharp = 1
 	edge = 1
 	anchored = 1    // Never spawned outside of inventory, should be fine.
-	throwforce = 1  //Throwing or dropping the item deletes it.
+	active_throwforce = 1  //Throwing or dropping the item deletes it.
 	throw_speed = 1
 	throw_range = 1
 	w_class = ITEM_SIZE_TINY //technically it's just energy or something, I dunno
 	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_NO_BLOOD
 	active_attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	hitsound = 'sound/weapons/blade1.ogg'
 	var/mob/living/creator
 	var/datum/effect/effect/system/spark_spread/spark_system
 
@@ -266,3 +268,4 @@
 	w_class = ITEM_SIZE_SMALL
 	origin_tech = list(TECH_MAGNET = 3)
 	active_attack_verb = list("attacked", "chopped", "cleaved", "torn", "cut")
+	hitsound = 'sound/weapons/blade1.ogg'

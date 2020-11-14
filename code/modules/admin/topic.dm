@@ -125,7 +125,7 @@
 				log_admin("[key_name(usr)] removed [adm_ckey] from the admins list")
 				log_admin_rank_modification(adm_ckey, "Removed")
 
-				send2adminirc("[get_key(usr)] удалил ранг у игрока: \"[adm_ckey]\"") //inf
+				send2adminirc("[get_key(usr)] СѓРґР°Р»РёР» СЂР°РЅРі Сѓ РёРіСЂРѕРєР°: \"[adm_ckey]\"") //inf
 
 		else if(task == "rank")
 			var/new_rank
@@ -173,7 +173,7 @@
 			log_admin_rank_modification(adm_ckey, new_rank)
 
 			log_permissions("[key_name(usr)] edited the admin rank of [adm_ckey] to [new_rank]") //inf
-			send2adminirc("[get_key(usr)] изменил ранг игрока: \"[adm_ckey]\" на \"[new_rank]\"") //inf
+			send2adminirc("[get_key(usr)] РёР·РјРµРЅРёР» СЂР°РЅРі РёРіСЂРѕРєР°: \"[adm_ckey]\" РЅР° \"[new_rank]\"") //inf
 
 		else if(task == "permissions")
 			if(!D)	return
@@ -191,7 +191,7 @@
 			log_admin_permission_modification(adm_ckey, permissionlist[new_permission])
 
 			log_permissions("[key_name(usr)] toggled the [new_permission] permission of [adm_ckey]") //inf
-			send2adminirc("[get_key(usr)] переключил флаг: \"[new_permission]\" игроку: \"[adm_ckey]\"") //inf
+			send2adminirc("[get_key(usr)] РїРµСЂРµРєР»СЋС‡РёР» С„Р»Р°Рі: \"[new_permission]\" РёРіСЂРѕРєСѓ: \"[adm_ckey]\"") //inf
 
 		edit_admin_permissions()
 
@@ -241,7 +241,6 @@
 
 		switch(href_list["simplemake"])
 			if("observer")			M.change_mob_type( /mob/observer/ghost , null, null, delmob )
-			if("larva")				M.change_mob_type( /mob/living/carbon/alien/larva , null, null, delmob )
 			if("nymph")				M.change_mob_type( /mob/living/carbon/alien/diona , null, null, delmob )
 			if("human")				M.change_mob_type( /mob/living/carbon/human , null, null, delmob, href_list["species"])
 			if("slime")				M.change_mob_type( /mob/living/carbon/slime , null, null, delmob )
@@ -308,13 +307,11 @@
 				minutes = CMinutes + mins
 				duration = GetExp(minutes)
 				reason = sanitize(input(usr,"Reason?","reason",reason2) as text|null)
-				reason = sanitize_a0(reason) //inf
 				if(!reason)	return
 			if("No")
 				temp = 0
 				duration = "Perma"
 				reason = sanitize(input(usr,"Reason?","reason",reason2) as text|null)
-				reason = sanitize_a0(reason) //inf
 				if(!reason)	return
 
 		ban_unban_log_save("[key_name(usr)] edited [banned_key]'s ban. Reason: [reason] Duration: [duration]")
@@ -646,7 +643,7 @@
 	// Finalize and display.
 		body = "<body>[jobs]</body>"
 		dat = "<tt>[header][body]</tt>"
-		usr << browse(dat, "window=jobban2;size=800x490")
+		show_browser(usr, dat, "window=jobban2;size=800x490")
 		return
 
 	//JOBBAN'S INNARDS
@@ -772,7 +769,6 @@
 						to_chat(usr, "<span class='warning'> Moderators can only job tempban up to [config.mod_job_tempban_max] minutes!</span>")
 						return
 					var/reason = sanitize(input(usr,"Reason?","Please State Reason","") as text|null)
-					reason = sanitize_a0(reason) //inf
 					if(!reason)
 						return
 
@@ -863,7 +859,6 @@
 			if(!check_if_greater_rights_than(M.client))
 				return
 			var/reason = sanitize(input("Please enter reason"))
-			reason = sanitize_a0(reason) //inf
 			if(!reason)
 				to_chat(M, "<span class='warning'>You have been kicked from the server</span>")
 			else
@@ -898,6 +893,11 @@
 		var/mob/M = locate(href_list["newban"])
 		if(!ismob(M)) return
 
+		if(alert("Р’РќРРњРђРќРР•!\n \
+		Р”Р°РЅРЅС‹Р№ С‚РёРї Р±Р»РѕРєРёСЂРѕРІРєРё РїРѕРґСЂР°Р·СѓРјРµРІР°РµС‚ РїРѕР»РЅРѕРµ РѕС‚Р»СѓС‡РµРЅРёРµ РёРіСЂРѕРєР° РѕС‚ СЃРµСЂРІРµСЂР° Рё РѕРЅ РїСЂРёРјРµРЅРёРј РІ СЃР»СѓС‡Р°Рµ СЌРєСЃС‚СЂРµРЅРЅРѕР№ СЃРёС‚СѓР°С†РёРё (РЅР°СЂСѓС€РµРЅРёРµ РЈРљР Р¤, РѕР±С…РѕРґ Р±Р»РѕРєРёСЂРѕРІРѕРє РёР»Рё СЌРєСЃРїР»РѕР№С‚С‹).\n \
+		Р•СЃР»Рё СЃР»СѓС‡Р°Р№ РЅРµ РїРѕРґС…РѕРґРёС‚ РїРѕРґ РєСЂРёС‚РµСЂРёР№ \"СЃРµСЂСЊС‘Р·РЅРѕ\" С‚Рѕ РёСЃРїРѕР»СЊР·СѓР№С‚Рµ softban.",,"Continue", "Cancel") == "Cancel")
+			return
+
 		if(M.client && M.client.holder)	return	//admins cannot be banned. Even if they could, the ban doesn't affect them anyway
 
 		var/given_key = href_list["last_key"]
@@ -914,8 +914,7 @@
 					to_chat(usr, "<span class='warning'>Moderators can only job tempban up to [config.mod_tempban_max] minutes!</span>")
 					return
 				if(mins >= 525600) mins = 525599
-				var/reason = sanitize(input(usr,"Reason?","reason","Griefer") as text|null)
-				reason = sanitize_a0(reason) //inf
+				var/reason = sanitize(input(usr,"Reason?","reason","Ultra-Griefer") as text|null)
 				if(!reason)
 					return
 				var/mob_key = LAST_CKEY(M)
@@ -928,13 +927,13 @@
 				add_note(mob_key,"[usr.client.ckey] has hard banned [mob_key]. - Reason: [reason] - This will be removed in [mins] minutes.", null, usr.ckey, 0)
 				//to_chat(M, "<span class='danger'>You have been banned by [usr.client.ckey].\nReason: [reason].</span>")
 				//to_chat(M, "<span class='warning'>This is a temporary ban, it will be removed in [mins] minutes.</span>")
-				to_chat(M, "<span class='danger'><BIG>Вы были забанены администратором [usr.client.key].\nПричина: [reason]</BIG></span>") //inf
-				to_chat(M, "<span class='warning'>Это временный бан, он истечет через [mins] минут.</span>") //inf
+				to_chat(M, "<span class='danger'><BIG>Р’С‹ Р±С‹Р»Рё Р·Р°Р±Р°РЅРµРЅС‹ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂРѕРј [usr.client.key].\nРџСЂРёС‡РёРЅР°: [reason]</BIG></span>") //inf
+				to_chat(M, "<span class='warning'>Р­С‚Рѕ РІСЂРµРјРµРЅРЅС‹Р№ Р±Р°РЅ, РѕРЅ РёСЃС‚РµС‡РµС‚ С‡РµСЂРµР· [mins] РјРёРЅСѓС‚.</span>") //inf
 				SSstatistics.add_field("ban_tmp",1)
 				DB_ban_record(BANTYPE_TEMP, M, mins, reason)
 				SSstatistics.add_field("ban_tmp_mins",mins)
 				if(config.banappeals)
-					to_chat(M, "<span class='warning'>Чтобы оспорить решение администратора, перейдите сюда: [config.banappeals]</span>")
+					to_chat(M, "<span class='warning'>Р В§РЎвЂљР С•Р В±РЎвЂ№ Р С•РЎРѓР С—Р С•РЎР‚Р С‘РЎвЂљРЎРЉ РЎР‚Р ВµРЎв‚¬Р ВµР Р…Р С‘Р Вµ Р В°Р Т‘Р СР С‘Р Р…Р С‘РЎРѓРЎвЂљРЎР‚Р В°РЎвЂљР С•РЎР‚Р В°, Р С—Р ВµРЎР‚Р ВµР в„–Р Т‘Р С‘РЎвЂљР Вµ РЎРѓРЎР‹Р Т‘Р В°: [config.banappeals]</span>")
 				else
 					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
 				log_and_message_admins("has banned [mob_key].\nReason: [reason]\nThis will be removed in [mins] minutes.")
@@ -944,7 +943,6 @@
 			if("No")
 				if(!check_rights(R_BAN))   return
 				var/reason = sanitize(input(usr,"Reason?","reason","Griefer") as text|null)
-				reason = sanitize_a0(reason) //inf
 				if(!reason)
 					return
 				var/mob_key = LAST_CKEY(M)
@@ -960,11 +958,11 @@
 						AddBan(mob_key, M.computer_id, reason, usr.ckey, 0, 0)
 			//	to_chat(M, "<span class='danger'>You have been banned by [usr.client.ckey].\nReason: [reason].</span>")
 			//	to_chat(M, "<span class='warning'>This is a ban until appeal.</span>")
-				to_chat(M, "<span class='danger'><BIG>Вы были ЖЕСТКО забанены администратором [usr.client.key].\nПричина: [reason]</BIG></span>") //inf
-				to_chat(M, "<span class='warning'>Это перманентный бан.</span>") //inf
+				to_chat(M, "<span class='danger'><BIG>Р’С‹ Р±С‹Р»Рё Р–Р•РЎРўРљРћ Р·Р°Р±Р°РЅРµРЅС‹ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂРѕРј [usr.client.key].\nРџСЂРёС‡РёРЅР°: [reason]</BIG></span>") //inf
+				to_chat(M, "<span class='warning'>Р­С‚Рѕ РїРµСЂРјР°РЅРµРЅС‚РЅС‹Р№ Р±Р°РЅ.</span>") //inf
 				if(config.banappeals)
 				//	to_chat(M, "<span class='warning'>To try to resolve this matter head to [config.banappeals]</span>")
-					to_chat(M, "<span class='warning'>Чтобы оспорить решение администратора, перейдите сюда: [config.banappeals]</span>") //inf
+					to_chat(M, "<span class='warning'>Р§С‚РѕР±С‹ РѕСЃРїРѕСЂРёС‚СЊ СЂРµС€РµРЅРёРµ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР°, РїРµСЂРµР№РґРёС‚Рµ СЃСЋРґР°: [config.banappeals]</span>") //inf
 				else
 					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
 				ban_unban_log_save("[usr.client.ckey] has permabanned [mob_key]. - Reason: [reason] - This is a ban until appeal.")
@@ -1003,7 +1001,7 @@
 		dat += {"<A href='?src=\ref[src];c_mode2=secret'>Secret</A><br>"}
 		dat += {"<A href='?src=\ref[src];c_mode2=random'>Random</A><br>"}
 		dat += {"Now: [SSticker.master_mode]"}
-		usr << browse(dat, "window=c_mode")
+		show_browser(usr, dat, "window=c_mode")
 
 	else if(href_list["f_secret"])
 		if(!check_rights(R_ADMIN))	return
@@ -1017,7 +1015,7 @@
 			dat += {"<A href='?src=\ref[src];f_secret2=[mode]'>[config.mode_names[mode]]</A><br>"}
 		dat += {"<A href='?src=\ref[src];f_secret2=secret'>Random (default)</A><br>"}
 		dat += {"Now: [secret_force_mode]"}
-		usr << browse(dat, "window=f_secret")
+		show_browser(usr, dat, "window=f_secret")
 
 	else if(href_list["c_mode2"])
 		if(!check_rights(R_ADMIN|R_SERVER))	return
@@ -1078,6 +1076,23 @@
 		M.say(speech)
 		speech = sanitize(speech) // Nah, we don't trust them
 		log_and_message_admins("forced [key_name_admin(M)] to say: [speech]")
+
+	else if (href_list["reloadsave"])
+		if(!check_rights(R_DEBUG))	return
+		var/mob/M = locate(href_list["reloadsave"])
+		if (!ismob(M))
+			return
+		if (!M.client)
+			return
+		var/client/C = M.client
+		to_chat(usr, SPAN_NOTICE("Attempting to reload save for [C.key] <A HREF='?src=\ref[src];reloadsaveshow=\ref[C.prefs]'>View Prefs Datum</A>"))
+		C.prefs.setup()
+
+	else if (href_list["reloadsaveshow"])
+		if(!check_rights(R_DEBUG))	return
+		var/datum/preferences/prefs = locate(href_list["reloadsaveshow"])
+		if (prefs)
+			usr.client.debug_variables(prefs)
 
 	else if(href_list["sendtoprison"])
 		if(!check_rights(R_ADMIN))	return
@@ -1319,7 +1334,7 @@
 		var/mob/observer/ghost/G = C.mob
 		if(istype(G))
 			sleep(2)
-			G.ManualFollow(M)
+			G.start_following(M)
 
 	else if(href_list["check_antagonist"])
 		check_antagonists()
@@ -1531,9 +1546,9 @@
 
 			for (var/page = 1, page <= B.pages.len, page++)
 				var/obj/pageobj = B.pages[page]
-				data += "<A href='?src=\ref[src];AdminFaxViewPage=[page];paper_bundle=\ref[B]'>Page [page] - [pageobj.name]</A><BR>"
+				data += "<meta charset=\"UTF-8\"><A href='?src=\ref[src];AdminFaxViewPage=[page];paper_bundle=\ref[B]'>Page [page] - [pageobj.name]</A><BR>"
 
-			usr << browse(data, "window=[B.name]")
+			show_browser(usr, data, "window=[B.name]")
 		else
 			to_chat(usr, "<span class='warning'>The faxed item is not viewable. This is probably a bug, and should be reported on the tracker: [fax.type]</span>")
 	else if (href_list["AdminFaxViewPage"])
@@ -1747,6 +1762,9 @@
 									M.real_name = obj_name
 
 		log_and_message_admins("created [number] [english_list(paths)]")
+
+		send2adminirc("[get_key(usr)] СЃРѕР·РґР°Р» [number] [english_list(paths)] РїРѕ РєРѕРѕСЂРґРёРЅР°С‚Р°Рј \[X: [target.x], Y: [target.y], Z: [target.z]\]") //inf
+
 		return
 
 	else if(href_list["admin_secrets_panel"])
@@ -2021,7 +2039,7 @@
 			if("Yes")
 				var/last_ckey = LAST_CKEY(M)
 				var/reason = sanitize(input(usr,"Staff warn message","Staff Warn","Problem Player") as text|null)
-				reason = sanitize_a0(reason) //inf
+//				reason = sanitize_a0(reason) //inf
 				if (!reason || reason == "")
 					return
 			//	notes_add(last_ckey,"\[AUTO\] Staff warn enabled: [reason]",usr)

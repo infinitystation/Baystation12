@@ -31,7 +31,14 @@
 	lying = FALSE // Fuck off, carp.
 	handle_vision()
 
+/mob/living/exosuit/handle_mutations_and_radiation()
+	radiation = Clamp(radiation,0,500) //Dont let exosuits accumulate radiation
+
+	if(radiation)
+		radiation--
+	
 /mob/living/exosuit/get_cell()
+	RETURN_TYPE(/obj/item/weapon/cell)
 	return body ? body.cell : null
 
 /mob/living/exosuit/proc/calc_power_draw()

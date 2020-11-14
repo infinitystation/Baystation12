@@ -44,7 +44,7 @@
 		else
 			return
 
-	if(!stat)
+	if(!stat && !(status_flags & FAKEDEATH))
 		if(rand(1,100) <= 20)
 			if(!eye_close_stat)
 				create_eye_blink()

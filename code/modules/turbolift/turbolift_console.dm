@@ -70,6 +70,7 @@
 /obj/structure/lift/button/interact(var/mob/user)
 	if(!..())
 		return
+	playsound(src, 'infinity/sound/SS2/effects/buttons/butelev.wav', 50)//inf
 	light_up()
 	pressed(user)
 	if(floor == lift.current_floor)
@@ -133,6 +134,7 @@
 /obj/structure/lift/panel/OnTopic(user, href_list)
 	if(href_list["move_to_floor"])
 		lift.queue_move_to(locate(href_list["move_to_floor"]))
+		playsound(src, 'infinity/sound/SS2/effects/buttons/butelev.wav', 50)//inf
 		. = TOPIC_REFRESH
 	if(href_list["open_doors"])
 		lift.open_doors()

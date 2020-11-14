@@ -166,7 +166,6 @@
 /area/ship/scrap/crew/cryo)
 "as" = (
 /obj/machinery/cryopod/lifepod{
-	tag = "icon-redpod0 (NORTH)";
 	icon_state = "redpod0";
 	dir = 1
 	},
@@ -350,9 +349,8 @@
 	pixel_y = 0
 	},
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1379;
 	id_tag = "dock_port_pump"
 	},
 /obj/machinery/light/small,
@@ -1111,7 +1109,6 @@
 /area/ship/scrap/engineering/nacelles)
 "bW" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
-	tag = "icon-intact (NORTHWEST)";
 	icon_state = "intact";
 	dir = 9
 	},
@@ -1202,9 +1199,8 @@
 	},
 /obj/structure/catwalk,
 /obj/machinery/light/small,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1379;
 	id_tag = "dock_star_pump"
 	},
 /turf/simulated/floor,
@@ -1393,7 +1389,6 @@
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden{
-	tag = "icon-map (NORTH)";
 	icon_state = "map";
 	dir = 8
 	},
@@ -1685,7 +1680,6 @@
 /area/ship/scrap/hallway/starboard)
 "cW" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -1698,7 +1692,6 @@
 "cX" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -1718,8 +1711,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (WEST)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/catwalk,
 /turf/simulated/open,
@@ -1828,7 +1820,6 @@
 /area/ship/scrap/engineering/nacelles)
 "dj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -1920,8 +1911,7 @@
 	},
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (WEST)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/airless,
 /area/space)
@@ -2392,8 +2382,7 @@
 	},
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (WEST)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/catwalk,
 /turf/simulated/open,
@@ -2442,8 +2431,7 @@
 	},
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (WEST)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/catwalk,
 /obj/structure/sign/deck/second{
@@ -2872,7 +2860,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (SOUTHWEST)";
 	icon_state = "intact";
 	dir = 10
 	},
@@ -2881,7 +2868,6 @@
 /area/ship/scrap/hallway/port)
 "fl" = (
 /obj/machinery/body_scanconsole{
-	tag = "icon-body_scannerconsole (NORTH)";
 	icon_state = "body_scannerconsole";
 	dir = 1
 	},
@@ -3071,8 +3057,7 @@
 	},
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (WEST)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/catwalk,
 /turf/simulated/open,
@@ -3103,8 +3088,7 @@
 	},
 /obj/structure/railing/mapped{
 	dir = 1;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (NORTH)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/catwalk,
 /turf/simulated/open,
@@ -3173,7 +3157,6 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (NORTHEAST)";
 	icon_state = "intact";
 	dir = 5
 	},
@@ -3192,7 +3175,6 @@
 /area/ship/scrap/hallway/aft)
 "fJ" = (
 /obj/structure/bed/chair/office/light{
-	tag = "icon-officechair_white_preview (EAST)";
 	icon_state = "officechair_white_preview";
 	dir = 4
 	},
@@ -3275,7 +3257,6 @@
 	icon_state = "4-10"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -3399,7 +3380,6 @@
 /area/ship/scrap/hallway/starboard)
 "ga" = (
 /obj/machinery/sleeper{
-	tag = "icon-sleeper_0 (EAST)";
 	icon_state = "sleeper_0";
 	dir = 4
 	},
@@ -3463,8 +3443,7 @@
 /turf/simulated/floor/wood/walnut,
 /area/ship/scrap/command/captain)
 "gg" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1379;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	id_tag = "bearcat_shuttle_pump"
 	},
 /obj/structure/window/reinforced{
@@ -3501,7 +3480,6 @@
 /area/ship/scrap/crew/kitchen)
 "gj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -3528,9 +3506,7 @@
 /obj/structure/hygiene/sink{
 	dir = 4;
 	icon_state = "sink";
-	pixel_x = 17;
-	pixel_y = 0;
-	tag = "icon-sink (EAST)"
+	pixel_x = 17
 	},
 /obj/item/weapon/stool/padded,
 /obj/effect/landmark/start{
@@ -3558,7 +3534,6 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -3600,7 +3575,6 @@
 	icon_state = "6-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -3624,7 +3598,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (SOUTHWEST)";
 	icon_state = "intact";
 	dir = 10
 	},
@@ -3676,7 +3649,6 @@
 	icon_state = "2-9"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (NORTHEAST)";
 	icon_state = "intact";
 	dir = 5
 	},
@@ -3689,7 +3661,6 @@
 /area/ship/scrap/other/lounge)
 "gx" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -3832,7 +3803,6 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -3872,7 +3842,6 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (SOUTHEAST)";
 	icon_state = "intact";
 	dir = 6
 	},
@@ -3901,7 +3870,6 @@
 	pixel_y = 0
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -3947,7 +3915,6 @@
 /area/ship/scrap/crew/cryo)
 "gT" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/fuel{
-	tag = "icon-map (WEST)";
 	icon_state = "map";
 	dir = 8
 	},
@@ -3961,7 +3928,6 @@
 /area/ship/scrap/engineering/nacelles/port)
 "gU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (SOUTHWEST)";
 	icon_state = "intact";
 	dir = 10
 	},
@@ -4070,7 +4036,6 @@
 /area/ship/scrap/other/lounge)
 "hi" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (SOUTHEAST)";
 	icon_state = "intact";
 	dir = 6
 	},
@@ -4108,7 +4073,6 @@
 	dir = 2
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -4161,7 +4125,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -4375,8 +4338,7 @@
 	},
 /obj/structure/railing/mapped{
 	dir = 1;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (NORTH)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
@@ -4632,7 +4594,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -4685,7 +4646,6 @@
 	pixel_y = 24
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -4720,7 +4680,6 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -4761,7 +4720,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -4776,7 +4734,6 @@
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (NORTHWEST)";
 	icon_state = "intact";
 	dir = 9
 	},
@@ -4802,7 +4759,6 @@
 	},
 /obj/structure/ladder/updown,
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -4846,7 +4802,6 @@
 	pixel_x = 0
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (SOUTHEAST)";
 	icon_state = "intact";
 	dir = 6
 	},
@@ -4950,7 +4905,6 @@
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (NORTHWEST)";
 	icon_state = "intact";
 	dir = 9
 	},
@@ -5014,7 +4968,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -5061,8 +5014,7 @@
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/structure/railing/mapped{
 	dir = 1;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (NORTH)"
+	icon_state = "railing0-1"
 	},
 /obj/machinery/light/small{
 	dir = 4;
@@ -5220,7 +5172,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (SOUTHEAST)";
 	icon_state = "intact";
 	dir = 6
 	},
@@ -5245,7 +5196,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -5408,19 +5358,9 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	icon_state = "map_vent_in";
+/obj/machinery/atmospherics/unary/vent_pump/siphon/on/atmos/tank{
 	dir = 4;
-	use_power = 1;
-	id_tag = "air_out";
-	pump_direction = 0;
-	external_pressure_bound = 0;
-	internal_pressure_bound = 2000;
-	pressure_checks = 2;
-	external_pressure_bound_default = 0;
-	internal_pressure_bound_default = 2000;
-	pressure_checks_default = 2;
-	frequency = 1443
+	id_tag = "air_out"
 	},
 /turf/simulated/floor/reinforced/oxygen,
 /area/ship/scrap/engineering/atmos)
@@ -5903,19 +5843,9 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	icon_state = "map_vent_in";
+/obj/machinery/atmospherics/unary/vent_pump/siphon/on/atmos/tank{
 	dir = 4;
-	use_power = 1;
-	id_tag = "air_out";
-	pump_direction = 0;
-	external_pressure_bound = 0;
-	internal_pressure_bound = 2000;
-	pressure_checks = 2;
-	external_pressure_bound_default = 0;
-	internal_pressure_bound_default = 2000;
-	pressure_checks_default = 2;
-	frequency = 1443
+	id_tag = "air_out"
 	},
 /turf/simulated/floor/reinforced/airmix,
 /area/ship/scrap/engineering/atmos)
@@ -5967,12 +5897,10 @@
 /obj/machinery/atmospherics/pipe/zpipe/down/scrubbers,
 /obj/machinery/atmospherics/pipe/zpipe/down/supply,
 /obj/machinery/atmospherics/pipe/zpipe/up/scrubbers{
-	tag = "icon-up-scrubbers (NORTH)";
 	icon_state = "up-scrubbers";
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/zpipe/up/supply{
-	tag = "icon-up-supply (NORTH)";
 	icon_state = "up-supply";
 	dir = 1
 	},
@@ -6104,19 +6032,9 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	icon_state = "map_vent_in";
+/obj/machinery/atmospherics/unary/vent_pump/siphon/on/atmos/tank{
 	dir = 4;
-	use_power = 1;
 	id_tag = "air_out";
-	pump_direction = 0;
-	external_pressure_bound = 0;
-	internal_pressure_bound = 2000;
-	pressure_checks = 2;
-	external_pressure_bound_default = 0;
-	internal_pressure_bound_default = 2000;
-	pressure_checks_default = 2;
-	frequency = 1443
 	},
 /turf/simulated/floor/reinforced/nitrogen,
 /area/ship/scrap/engineering/atmos)
@@ -6242,7 +6160,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -6291,7 +6208,6 @@
 /area/space)
 "kY" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -6336,7 +6252,6 @@
 "la" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (NORTHWEST)";
 	icon_state = "intact";
 	dir = 9
 	},
@@ -6356,9 +6271,7 @@
 /obj/structure/hygiene/sink{
 	dir = 4;
 	icon_state = "sink";
-	pixel_x = 17;
-	pixel_y = 0;
-	tag = "icon-sink (EAST)"
+	pixel_x = 17
 	},
 /turf/simulated/floor/tiled,
 /area/ship/scrap/crew/garden)
@@ -6503,7 +6416,6 @@
 /area/ship/scrap/other/requisition)
 "lo" = (
 /obj/effect/floor_decal/corner/grey_alt{
-	tag = "icon-corner_white (EAST)";
 	icon_state = "corner_white";
 	dir = 4
 	},
@@ -6514,7 +6426,6 @@
 /area/ship/scrap/other/requisition)
 "lq" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
-	tag = "icon-intact (NORTHEAST)";
 	icon_state = "intact";
 	dir = 5
 	},
@@ -6556,7 +6467,6 @@
 "lv" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
-	tag = "icon-intact (SOUTHWEST)";
 	icon_state = "intact";
 	dir = 10
 	},
@@ -6598,7 +6508,6 @@
 /obj/structure/window/reinforced,
 /obj/effect/floor_decal/industrial/warning,
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
-	tag = "icon-intact (SOUTHEAST)";
 	icon_state = "intact";
 	dir = 6
 	},
@@ -6670,7 +6579,6 @@
 /area/ship/scrap/other/requisition)
 "lI" = (
 /obj/structure/bed/chair/office/dark{
-	tag = "icon-officechair_dark_preview (EAST)";
 	icon_state = "officechair_dark_preview";
 	dir = 4
 	},
@@ -6757,7 +6665,6 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/fuel{
-	tag = "icon-map (EAST)";
 	icon_state = "map";
 	dir = 4
 	},
@@ -6766,7 +6673,6 @@
 /area/ship/scrap/engineering/nacelles/port)
 "lN" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/fuel{
-	tag = "icon-map (EAST)";
 	icon_state = "map";
 	dir = 4
 	},
@@ -6811,7 +6717,6 @@
 /area/ship/scrap/engineering/nacelles/port)
 "lS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -6836,7 +6741,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/fuel{
-	tag = "icon-map (WEST)";
 	icon_state = "map";
 	dir = 8
 	},
@@ -6854,7 +6758,6 @@
 /area/ship/scrap/engineering/nacelles/starboard)
 "lX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (NORTHWEST)";
 	icon_state = "intact";
 	dir = 9
 	},
@@ -6930,7 +6833,6 @@
 /area/ship/scrap/medbay)
 "mf" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -6983,7 +6885,6 @@
 /area/ship/scrap/engineering/nacelles/starboard)
 "mm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	tag = "icon-intact (NORTHEAST)";
 	icon_state = "intact";
 	dir = 5
 	},
@@ -7041,8 +6942,7 @@
 "po" = (
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (WEST)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/airless,
@@ -7232,8 +7132,7 @@
 "Ic" = (
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (WEST)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/airless,
 /area/space)
@@ -7442,8 +7341,7 @@
 "Yy" = (
 /obj/structure/railing/mapped{
 	dir = 4;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/airless,
 /area/space)

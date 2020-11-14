@@ -39,7 +39,7 @@
 
 	cold_level_1 = 80
 	cold_level_2 = 50
-	cold_level_3 = 0
+	cold_level_3 = -1
 	
 	min_age = 1
 	max_age = 100
@@ -104,6 +104,21 @@
 		TAG_RELIGION =  list(
 			RELIGION_VOX
 		)
+	)
+
+	exertion_effect_chance = 10
+	exertion_hydration_scale = 1
+	exertion_charge_scale = 1
+	exertion_reagent_scale = 5
+	exertion_reagent_path = /datum/reagent/lactate
+	exertion_emotes_biological = list(
+		/decl/emote/exertion/biological,
+		/decl/emote/exertion/biological/breath,
+		/decl/emote/exertion/biological/pant
+	)
+	exertion_emotes_synthetic = list(
+		/decl/emote/exertion/synthetic,
+		/decl/emote/exertion/synthetic/creak
 	)
 
 /datum/species/vox/equip_survival_gear(var/mob/living/carbon/human/H)

@@ -19,15 +19,15 @@
 /obj/machinery/suit_storage_unit
 	name = "Suit Storage Unit"
 	desc = "An industrial U-Stor-It Storage unit designed to accomodate all kinds of space suits. Its on-board equipment also allows the user to decontaminate the contents through a UV-ray purging cycle. There's a warning label dangling from the control pad, reading \"STRICTLY NO BIOLOGICALS IN THE CONFINES OF THE UNIT\"."
-	icon = 'icons/obj/suitstorage.dmi'
-	icon_state = "close"
+	icon = 'infinity/icons/obj/suitstorage.dmi'
+	icon_state = "base" //inf, was: "close"
 	anchored = 1
 	density = 1
 	idle_power_usage = 50
 	active_power_usage = 200
 	interact_offline = 1
 	req_access = list()
-
+	var/mycolour//inf
 	var/mob/living/carbon/human/occupant = null
 	var/obj/item/clothing/suit/space/suit = null
 	var/obj/item/clothing/head/helmet/space/helmet = null
@@ -62,19 +62,28 @@
 
 /obj/machinery/suit_storage_unit/on_update_icon()
 	overlays.Cut()
+	if(mycolour)
+		var/image/i = image(icon, "color_overlay_colorable")
+		i.color = mycolour
+		overlays += i//inf
+	if(stat & (NOPOWER|BROKEN)) overlays += ("nopower")//inf
 	if(panelopen)
 		overlays += ("panel")
 	if(isUV)
+		overlays += ("closed")//inf
 		if(issuperUV)
 			overlays += ("super")
+		/*[BAY]
 		else if(occupant)
 			overlays += ("uvhuman")
+		[/BAY]*/
 		else
 			overlays += ("uv")
-	else if(isopen)
+	if(isopen)
 		if(is_broken())
 			overlays += ("broken")
 		else
+			if(stat & (NOPOWER|BROKEN)) overlays += ("nopower_body")//inf
 			overlays += ("open")
 			if(suit)
 				overlays += ("suit")
@@ -82,8 +91,14 @@
 				overlays += ("helm")
 			if(boots || tank || mask)
 				overlays += ("storage")
-	else if(occupant)
-		overlays += ("human")
+	//[INF]
+	else
+		overlays += ("closed")
+		if(islocked) overlays += ("locked")
+	//[/INF]
+		else if(occupant)
+			overlays += ("human")
+
 
 /obj/machinery/suit_storage_unit/get_req_access()
 	if(!islocked)
@@ -171,7 +186,7 @@
 	data["superuv"] = issuperUV
 	data["safeties"] = safetieson
 	data["helmet"] = helmet
-	data["suit"] = suit 
+	data["suit"] = suit
 	data["boots"] = boots
 	data["tank"] = tank
 	data["mask"] = mask
@@ -273,7 +288,7 @@
 		to_chat(user, SPAN_NOTICE("You push the button. The coloured LED next to it [safetieson ? "turns green" : "turns red"]."))
 
 /obj/machinery/suit_storage_unit/proc/toggle_open(var/mob/user)
-	if(is_unpowered())
+	if(!is_powered())
 		to_chat(user, SPAN_NOTICE("The unit is offline."))
 		return
 	if(islocked || isUV)
@@ -282,11 +297,11 @@
 	if(occupant)
 		eject_occupant(user)
 		return  // eject_occupant opens the door, so we need to return
+//	flick("anim_[isopen ? "anim_open" : "anim_close"]", door_overlay) //inf
 	isopen = !isopen
 	playsound(src, 'sound/machines/suitstorage_cycledoor.ogg', 50, 0)
-
 /obj/machinery/suit_storage_unit/proc/toggle_lock(var/mob/user)
-	if(is_unpowered())
+	if(!is_powered())
 		to_chat(user, SPAN_NOTICE("The unit is offline."))
 		return
 	if(!allowed(user))
@@ -299,11 +314,12 @@
 		return
 	islocked = !islocked
 	playsound(src, 'sound/machines/suitstorage_lockdoor.ogg', 50, 0)
+	update_icon() //inf
 
 /obj/machinery/suit_storage_unit/proc/start_UV(var/mob/user)
 	if(isUV || isopen)
 		return
-	if(is_unpowered())
+	if(!is_powered())
 		to_chat(user, SPAN_NOTICE("The unit is offline."))
 		return
 	if(occupant && safetieson)

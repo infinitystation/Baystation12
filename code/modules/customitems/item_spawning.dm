@@ -38,10 +38,10 @@
 
 /datum/custom_item/proc/is_valid(var/checker)
 	if(!item_path)
-		to_chat(checker, SPAN_WARNING("Путь к предмету ([item_path_as_string]) прописан неверно или не существует. Об&#255;зательно сообщите Отделу Разработки!"))
+		to_chat(checker, SPAN_WARNING("РџСѓС‚СЊ Рє РїСЂРµРґРјРµС‚Сѓ ([item_path_as_string]) РїСЂРѕРїРёСЃР°РЅ РЅРµРІРµСЂРЅРѕ РёР»Рё РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚. РћР±СЏР·Р°С‚РµР»СЊРЅРѕ СЃРѕРѕР±С‰РёС‚Рµ РћС‚РґРµР»Сѓ Р Р°Р·СЂР°Р±РѕС‚РєРё!"))
 		return FALSE
 	if(item_icon && !(item_icon in icon_states(CUSTOM_ITEM_OBJ)))
-		to_chat(checker, SPAN_WARNING("Иконка кастомного предмета ([item_icon]) прописана неверно или не существует. Об&#255;зательно сообщите Отделу Разработки!"))
+		to_chat(checker, SPAN_WARNING("РРєРѕРЅРєР° РєР°СЃС‚РѕРјРЅРѕРіРѕ РїСЂРµРґРјРµС‚Р° ([item_icon]) РїСЂРѕРїРёСЃР°РЅР° РЅРµРІРµСЂРЅРѕ РёР»Рё РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚. РћР±СЏР·Р°С‚РµР»СЊРЅРѕ СЃРѕРѕР±С‰РёС‚Рµ РћС‚РґРµР»Сѓ Р Р°Р·СЂР°Р±РѕС‚РєРё!"))
 		return FALSE
 	return TRUE
 
@@ -246,7 +246,7 @@
 		else
 			place_custom_item(M,citem)
 
-		// Бумагу вперед! ~bear1ake
+		// Р‘СѓРјР°РіСѓ РІРїРµСЂРµРґ! ~bear1ake
 		if(citem.assoc_paper_info || citem.assoc_paper_title || citem.assoc_paper_stamp_type)
 			var/obj/item/weapon/paper/AP = new(text = citem.assoc_paper_info, title = citem.assoc_paper_title)
 			if(citem.assoc_paper_stamp_type)

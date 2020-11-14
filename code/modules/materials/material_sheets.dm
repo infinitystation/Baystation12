@@ -370,18 +370,6 @@
 /obj/item/stack/material/plasteel/fifty
 	amount = 50
 
-/obj/item/stack/material/scrap
-	name = "scrap"
-	icon = 'icons/obj/scrap/refine.dmi'
-	icon_state = "refined"
-	default_type = "scrap"
-
-/obj/item/stack/material/refined_scrap
-	name = "refined scrap"
-	icon = 'icons/obj/scrap/refine.dmi'
-	icon_state = "refined"
-	default_type = "refscrap"
-
 /obj/item/stack/material/wood
 	name = "wooden plank"
 	icon_state = "sheet-wood"

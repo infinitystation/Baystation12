@@ -1,6 +1,6 @@
 /obj/machinery/ai_slipper
 	name = "\improper AI Liquid Dispenser"
-	icon = 'icons/obj/device.dmi'
+	icon = 'infinity/icons/obj/machinery/ai_slipper.dmi'//inf, was: icon = 'icons/obj/device.dmi'
 	icon_state = "motion0"
 	anchored = 1.0
 	idle_power_usage = 10
@@ -41,7 +41,7 @@
 			if (locked)
 				if (user.machine==src)
 					user.unset_machine()
-					user << browse(null, "window=ai_slipper")
+					close_browser(user, "window=ai_slipper")
 			else
 				if (user.machine==src)
 					interact(user)
@@ -54,7 +54,7 @@
 
 /obj/machinery/ai_slipper/interact(mob/user)
 	var/area/area = get_area(src)
-	if(!area || isturf(loc))
+	if(!area || !isturf(loc))
 		return
 	var/t = "<TT><B>AI Liquid Dispenser</B> ([area.name])<HR>"
 
@@ -64,7 +64,7 @@
 		t += text("Dispenser [] - <A href='?src=\ref[];toggleOn=1'>[]?</a><br>\n", src.disabled?"deactivated":"activated", src, src.disabled?"Enable":"Disable")
 		t += text("Uses Left: [uses]. <A href='?src=\ref[src];toggleUse=1'>Activate the dispenser?</A><br>\n")
 
-	user << browse(t, "window=computer;size=575x450")
+	show_browser(user, t, "window=computer;size=575x450")
 	onclose(user, "computer")
 
 /obj/machinery/ai_slipper/CanUseTopic(user)

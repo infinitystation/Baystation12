@@ -110,6 +110,7 @@ var/global/floorIsLava = 0
 
 	if(M.client)
 		body += "| <A HREF='?src=\ref[src];sendtoprison=\ref[M]'>Prison</A> | "
+		body += "<A HREF='?src=\ref[src];reloadsave=\ref[M]'>Reload Save</A> | "
 		var/muted = M.client.prefs.muted
 		body += {"<br><b>Mute: </b>
 			\[<A href='?src=\ref[src];mute=\ref[M];mute_type=[MUTE_IC]'><font color='[(muted & MUTE_IC)?"red":"blue"]'>IC</font></a> |
@@ -280,7 +281,7 @@ var/global/floorIsLava = 0
 		</body></html>
 	"}
 
-	usr << browse(body, "window=adminplayeropts;size=550x515")
+	show_browser(usr, body, "window=adminplayeropts;size=550x515")
 	SSstatistics.add_field_details("admin_verb","SPP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 
@@ -526,7 +527,7 @@ var/global/floorIsLava = 0
 						i++
 						dat+="-[MESSAGE.body] <BR>"
 						if(MESSAGE.img)
-							usr << browse_rsc(MESSAGE.img, "tmp_photo[i].png")
+							send_rsc(usr, MESSAGE.img, "tmp_photo[i].png")
 							dat+="<img src='tmp_photo[i].png' width = '180'><BR><BR>"
 						dat+="<FONT SIZE=1>\[Story by <FONT COLOR='maroon'>[MESSAGE.author]</FONT>\]</FONT><BR>"
 			dat+={"
@@ -639,7 +640,7 @@ var/global/floorIsLava = 0
 				<B>Photo:</B>:
 			"}
 			if(news_network.wanted_issue.img)
-				usr << browse_rsc(news_network.wanted_issue.img, "tmp_photow.png")
+				send_rsc(usr, news_network.wanted_issue.img, "tmp_photow.png")
 				dat+="<BR><img src='tmp_photow.png' width = '180'>"
 			else
 				dat+="None"
@@ -655,7 +656,7 @@ var/global/floorIsLava = 0
 //	log_debug("Channelname: [src.admincaster_feed_channel.channel_name] [src.admincaster_feed_channel.author]")
 //	log_debug("Msg: [src.admincaster_feed_message.author] [src.admincaster_feed_message.body]")
 
-	usr << browse(dat, "window=admincaster_main;size=400x600")
+	show_browser(usr, dat, "window=admincaster_main;size=400x600")
 	onclose(usr, "admincaster_main")
 
 
@@ -670,7 +671,7 @@ var/global/floorIsLava = 0
 			r = copytext( r, 1, findtext(r,"##") )//removes the description
 		dat += text("<tr><td>[t] (<A href='?src=\ref[src];removejobban=[r]'>unban</A>)</td></tr>")
 	dat += "</table>"
-	usr << browse(dat, "window=ban;size=400x400")
+	show_browser(usr, dat, "window=ban;size=400x400")
 
 /datum/admins/proc/Game()
 	if(!check_rights(0))	return
@@ -693,7 +694,7 @@ var/global/floorIsLava = 0
 		<A href='?src=\ref[src];vsc=default'>Choose a default ZAS setting</A><br>
 		"}
 
-	usr << browse(dat, "window=admin2;size=210x280")
+	show_browser(usr, dat, "window=admin2;size=210x280")
 	return
 
 /datum/admins/proc/Secrets(var/datum/admin_secret_category/active_category = null)
@@ -770,9 +771,9 @@ var/global/floorIsLava = 0
 
 	config.ooc_allowed = !(config.ooc_allowed)
 	if (config.ooc_allowed)
-		to_world("<B>OOC чат включен!</B>")
+		to_world("<B>OOC С‡Р°С‚ РІРєР»СЋС‡РµРЅ!</B>")
 	else
-		to_world("<B>OOC чат отключён!</B>")
+		to_world("<B>OOC С‡Р°С‚ РѕС‚РєР»СЋС‡С‘РЅ!</B>")
 	log_and_message_admins("toggled OOC.")
 	SSstatistics.add_field_details("admin_verb","TOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -786,9 +787,9 @@ var/global/floorIsLava = 0
 
 	config.aooc_allowed = !(config.aooc_allowed)
 	if (config.aooc_allowed)
-		to_world("<B>AOOC чат включён!</B>")
+		to_world("<B>AOOC С‡Р°С‚ РІРєР»СЋС‡С‘РЅ!</B>")
 	else
-		to_world("<B>AOOC чат отключён!</B>")
+		to_world("<B>AOOC С‡Р°С‚ РѕС‚РєР»СЋС‡С‘РЅ!</B>")
 	log_and_message_admins("toggled AOOC.")
 	SSstatistics.add_field_details("admin_verb","TAOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -802,9 +803,9 @@ var/global/floorIsLava = 0
 
 	config.looc_allowed = !(config.looc_allowed)
 	if (config.looc_allowed)
-		to_world("<B>LOOC чат включён!</B>")
+		to_world("<B>LOOC С‡Р°С‚ РІРєР»СЋС‡С‘РЅ!</B>")
 	else
-		to_world("<B>LOOC чат отключён!</B>")
+		to_world("<B>LOOC С‡Р°С‚ РѕС‚РєР»СЋС‡С‘РЅ!</B>")
 	log_and_message_admins("toggled LOOC.")
 	SSstatistics.add_field_details("admin_verb","TLOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -819,9 +820,9 @@ var/global/floorIsLava = 0
 
 	config.dsay_allowed = !(config.dsay_allowed)
 	if (config.dsay_allowed)
-		to_world("<B>Чат мертвых включён!</B>")
+		to_world("<B>Р§Р°С‚ РјРµСЂС‚РІС‹С… РІРєР»СЋС‡С‘РЅ!</B>")
 	else
-		to_world("<B>Чат мертвых отключён!</B>")
+		to_world("<B>Р§Р°С‚ РјРµСЂС‚РІС‹С… РѕС‚РєР»СЋС‡С‘РЅ!</B>")
 	log_and_message_admins("toggled deadchat.")
 	SSstatistics.add_field_details("admin_verb","TDSAY") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc
 
@@ -835,9 +836,9 @@ var/global/floorIsLava = 0
 
 	config.dooc_allowed = !( config.dooc_allowed )
 	if(config.dooc_allowed)
-		to_world("<B>Мертвые снова могут писать в OOC чат!</B>")
+		to_world("<B>РњРµСЂС‚РІС‹Рµ СЃРЅРѕРІР° РјРѕРіСѓС‚ РїРёСЃР°С‚СЊ РІ OOC С‡Р°С‚!</B>")
 	else
-		to_world("<B>Мертвые больше не могут писать в OOC чат!</B>")
+		to_world("<B>РњРµСЂС‚РІС‹Рµ Р±РѕР»СЊС€Рµ РЅРµ РјРѕРіСѓС‚ РїРёСЃР°С‚СЊ РІ OOC С‡Р°С‚!</B>")
 	log_admin("[key_name(usr)] toggled Dead OOC.")
 	message_admins("[key_name_admin(usr)] toggled Dead OOC.", 1)
 	SSstatistics.add_field_details("admin_verb","TDOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -899,8 +900,8 @@ var/global/floorIsLava = 0
 
 	var/confirm = alert("End the game round?", "Game Ending", "Yes", "Cancel")
 	if(confirm == "Yes")
-		log_admin("[key_name(usr)] инициировал завершение раунда.")
-		to_world("<span class='danger'>Раунд завершен!</span> <span class='notice'>Инициировано [usr.key].</span>")
+		log_admin("[key_name(usr)] РёРЅРёС†РёРёСЂРѕРІР°Р» Р·Р°РІРµСЂС€РµРЅРёРµ СЂР°СѓРЅРґР°.")
+		to_world("<span class='danger'>Р Р°СѓРЅРґ Р·Р°РІРµСЂС€РµРЅ!</span> <span class='notice'>РРЅРёС†РёРёСЂРѕРІР°РЅРѕ [usr.key].</span>")
 		SSstatistics.add_field("admin_verb","ER") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 		SSticker.force_ending = 1
 
@@ -1187,6 +1188,7 @@ var/global/floorIsLava = 0
 	log_and_message_admins("spawned [chosen] at ([usr.x],[usr.y],[usr.z])")
 	SSstatistics.add_field_details("admin_verb","SA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
+	send2adminirc("[key_name(src)] СЃРѕР·РґР°Р» [chosen] ([usr.x],[usr.y],[usr.z])") //INF
 
 /datum/admins/proc/show_traitor_panel(var/mob/M in SSmobs.mob_list)
 	set category = "Admin"
@@ -1273,7 +1275,7 @@ var/global/floorIsLava = 0
 		out += " None."
 	out += " <a href='?src=\ref[SSticker.mode];add_antag_type=1'>\[+\]</a><br/>"
 
-	usr << browse(out, "window=edit_mode[src]")
+	show_browser(usr, out, "window=edit_mode[src]")
 	SSstatistics.add_field_details("admin_verb","SGM")
 
 
@@ -1355,21 +1357,6 @@ var/global/floorIsLava = 0
 	if(istype(H))
 		H.regenerate_icons()
 
-
-/*
-	helper proc to test if someone is a mentor or not.  Got tired of writing this same check all over the place.
-*/
-/proc/is_mentor(client/C)
-
-	if(!istype(C))
-		return 0
-	if(!C.holder)
-		return 0
-
-	if(C.holder.rights == R_MENTOR)
-		return 1
-	return 0
-
 /proc/get_options_bar(whom, detail = 2, name = 0, link = 1, highlight_special = 1, var/datum/ticket/ticket = null)
 	if(!whom)
 		return "<b>(*null*)</b>"
@@ -1392,15 +1379,15 @@ var/global/floorIsLava = 0
 
 		if(2)	//Admins
 			var/ref_mob = "\ref[M]"
-			return "<b>[key_name(C, link, name, highlight_special, ticket)](<A HREF='?_src_=holder;adminmoreinfo=[ref_mob]'>?</A>) (<A HREF='?_src_=holder;adminplayeropts=[ref_mob]'>PP</A>) (<A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A>) (<A HREF='?_src_=holder;narrateto=[ref_mob]'>DN</A>) ([admin_jump_link(M, src)]) (<A HREF='?_src_=holder;check_antagonist=1'>CA</A>)</b>"
+			return "<b>[key_name(C, link, name, highlight_special, ticket)](<A HREF='?_src_=holder;adminmoreinfo=[ref_mob]'>?</A>) (<A HREF='?_src_=holder;adminplayeropts=[ref_mob]'>PP</A>) (<A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A>) (<A HREF='?_src_=holder;narrateto=[ref_mob]'>DN</A>) ([admin_jump_link(M)]) (<A HREF='?_src_=holder;check_antagonist=1'>CA</A>)</b>"
 
 		if(3)	//Devs
 			var/ref_mob = "\ref[M]"
-			return "<b>[key_name(C, link, name, highlight_special, ticket)](<A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A>)([admin_jump_link(M, src)])</b>"
+			return "<b>[key_name(C, link, name, highlight_special, ticket)](<A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A>)([admin_jump_link(M)])</b>"
 
 		if(4)	//Mentors
 			var/ref_mob = "\ref[M]"
-			return "<b>[key_name(C, link, name, highlight_special, ticket)] (<A HREF='?_src_=holder;adminmoreinfo=\ref[M]'>?</A>) (<A HREF='?_src_=holder;adminplayeropts=[ref_mob]'>PP</A>) (<A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A>) ([admin_jump_link(M, src)])</b>"
+			return "<b>[key_name(C, link, name, highlight_special, ticket)] (<A HREF='?_src_=holder;adminmoreinfo=\ref[M]'>?</A>) (<A HREF='?_src_=holder;adminplayeropts=[ref_mob]'>PP</A>) (<A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A>) ([admin_jump_link(M)])</b>"
 
 /proc/ishost(var/client/C)
 	return check_rights(R_HOST, 0, C)
@@ -1532,6 +1519,20 @@ var/global/floorIsLava = 0
 
 			P.adminbrowse()
 
+
+/client/proc/check_fax_history()
+	set category = "Special Verbs"
+	set name = "Check Fax History"
+	set desc = "Look up the faxes sent this round."
+
+	var/data = "<center><b>Fax History:</b></center><br>"
+
+	if(GLOB.adminfaxes)
+		for(var/obj/item/item in GLOB.adminfaxes)
+			data += "[item.name] - <a href='?_src_=holder;AdminFaxView=\ref[item]'>view message</a><br>"
+	else
+		data += "<center>No faxes yet.</center>"
+	show_browser(usr, "<HTML><HEAD><TITLE>Fax History</TITLE></HEAD><BODY>[data]</BODY></HTML>", "window=FaxHistory;size=450x400")
 
 datum/admins/var/obj/item/weapon/paper/admin/faxreply // var to hold fax replies in
 

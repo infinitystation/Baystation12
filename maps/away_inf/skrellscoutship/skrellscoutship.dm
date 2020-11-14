@@ -4,24 +4,27 @@
 #include "skrellscoutship_jobs.dm"
 #include "skrellscoutship_shuttles.dm"
 
+#undef WEBHOOK_SUBMAP_LOADED_SKRELL
 /datum/map_template/ruin/away_site/skrellscoutship
 	name = "Skrellian Scout Ship"
 	id = "awaysite_skrell_scout"
 	description = "A Skrellian SDTF scouting vessel."
 	prefix = "maps/away_inf/"
 	suffixes = list("skrellscoutship/skrellscoutship-1.dmm", "skrellscoutship/skrellscoutship-2.dmm")
-	cost = 0.5
+	spawn_weight = 50 //INF, HABITABLE SHIPS SPAWN
+	cost = 2000
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/skrellscoutship, /datum/shuttle/autodock/overmap/skrellscoutshuttle)
 	apc_test_exempt_areas = list(
-		/area/ship/skrellscoutshuttle =                NO_SCRUBBER|NO_APC,
+		/area/ship/skrellscoutshuttle =                NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/ship/skrellscoutship/crew/toilets =      NO_SCRUBBER|NO_VENT,
-		/area/ship/skrellscoutship/maintenance/power = NO_SCRUBBER,
+		/area/ship/skrellscoutship/maintenance/power = NO_SCRUBBER|NO_VENT,
 		/area/ship/skrellscoutship/solars =            NO_SCRUBBER|NO_VENT|NO_APC
 	)
 
 /obj/effect/overmap/visitable/sector/skrellscoutspace
 	name = "strange ion cloud"
 	desc = "Slight traces of a cloaking device are present. Unable to determine exact location."
+	hide_from_reports = TRUE
 	in_space = 1
 	icon_state = "ion1"
 

@@ -10,7 +10,7 @@
 		text += get_special_objective_text(P)
 		var/datum/goal/ambition = SSgoals.ambitions[P]
 		if(ambition)
-			text += "<br>Цель как антагониста:" //INF, WAS text += "<br>Their goals for today were..."
+			text += "<br>Р¦РµР»СЊ РєР°Рє Р°РЅС‚Р°РіРѕРЅРёСЃС‚Р°:" //INF, WAS text += "<br>Their goals for today were..."
 			text += "<span class='notice'>[ambition.summarize()]</span>" //ING, WAS text += "<span class='notice'><br>[ambition.summarize()]</span>"
 		if(!global_objectives.len && P.objectives && P.objectives.len)
 			var/num = 1
@@ -19,7 +19,7 @@
 				num++
 
 	if(global_objectives && global_objectives.len)
-		text += "<BR><FONT size = 2>Их целью было:</FONT>" //INF, WAS text += "<BR><FONT size = 2>Their objectives were:</FONT>"
+		text += "<BR><FONT size = 2>РС… С†РµР»СЊСЋ Р±С‹Р»Рѕ:</FONT>" //INF, WAS text += "<BR><FONT size = 2>Their objectives were:</FONT>"
 		var/num = 1
 		for(var/datum/objective/O in global_objectives)
 			text += print_objective(O, num)
@@ -35,7 +35,7 @@
 
 /datum/antagonist/proc/print_player(var/datum/mind/ply)
 	var/role = ply.assigned_role ? "\improper[ply.assigned_role]" : (ply.special_role ? "\improper[ply.special_role]" : "unknown role")
-	var/text = "<br><b>[ply.name]</b> (<b>[ply.key]</b>) as \a <b>[role]</b> ("
+	var/text = "<br><b>[ply.name]</b> [(ply.current?.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW) ? "(<b>[ply.key]</b>)" : ""] as \a <b>[role]</b> ("
 	if(ply.current)
 		if(ply.current.stat == DEAD)
 			text += "died"

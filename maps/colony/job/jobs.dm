@@ -4,7 +4,7 @@
 										/datum/job/doctor_trainee, /datum/job/engineer_trainee, /datum/job/scientist_assistant),
 		/datum/species/nabber = list(/datum/job/ai, /datum/job/cyborg, /datum/job/janitor, /datum/job/scientist_assistant, /datum/job/chemist,
 									 /datum/job/roboticist, /datum/job/cargo_assistant, /datum/job/chef, /datum/job/engineer_trainee, /datum/job/doctor_trainee, /datum/job/bartender),
-		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/merchant_trainee)
+		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg, /datum/job/submap/merchant, /datum/job/submap/merchant_trainee)
 	)
 
 #define HUMAN_ONLY_JOBS /datum/job/captain, /datum/job/hos
@@ -31,7 +31,7 @@
 						/datum/job/senior_scientist, /datum/job/scientist, /datum/job/roboticist, /datum/job/scientist_assistant,
 						/datum/job/ai, /datum/job/cyborg,
 						/datum/job/assistant,
-						/datum/job/merchant, /datum/job/merchant_trainee, /datum/job/stowaway
+						/datum/job/submap/merchant, /datum/job/submap/merchant_trainee, /datum/job/stowaway
 						)
 
 	access_modify_region = list(

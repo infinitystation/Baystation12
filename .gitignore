@@ -15,14 +15,17 @@ stopserver
 reboot_called
 atupdate
 
+# sometimes something create backups of maps
+maps/*/backup/*.dmm
+
 # ignore config, but not subdirs
 !config/*/
 config/*
 sql/test_db
 
 # vscode
-.vscode/*
-.history
+.vscode/
+.history/
 
 # swap
 [._]*.s[a-v][a-z]
@@ -48,3 +51,6 @@ lib/*.so
 # python
 *.pyc
 __pycache__
+
+# linux
+.nohup

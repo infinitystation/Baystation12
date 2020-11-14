@@ -35,15 +35,13 @@
 /turf/simulated/floor/plating,
 /area/ship/scrap/escape_port)
 "aj" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1379;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	id_tag = "cargo_pump"
 	},
 /turf/simulated/floor/plating,
 /area/ship/scrap/cargo/lower)
 "ak" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1379;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	id_tag = "cargo_pump"
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
@@ -271,7 +269,6 @@
 "aR" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/handrai{
-	tag = "icon-handrail (EAST)";
 	icon_state = "handrail";
 	dir = 4
 	},
@@ -310,7 +307,6 @@
 /obj/random/accessory,
 /obj/item/weapon/reagent_containers/glass/paint/random,
 /obj/structure/handrai{
-	tag = "icon-handrail (WEST)";
 	icon_state = "handrail";
 	dir = 8
 	},
@@ -381,7 +377,6 @@
 	d2 = 2
 	},
 /obj/structure/handrai{
-	tag = "icon-handrail (EAST)";
 	icon_state = "handrail";
 	dir = 4
 	},
@@ -424,7 +419,6 @@
 	},
 /obj/random/closet,
 /obj/structure/handrai{
-	tag = "icon-handrail (WEST)";
 	icon_state = "handrail";
 	dir = 8
 	},
@@ -2037,9 +2031,8 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/scrap/maintenance/eva)
 "eH" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 8;
-	frequency = 1379;
 	id_tag = "eva_pump"
 	},
 /obj/effect/floor_decal/industrial/warning{
@@ -2434,6 +2427,7 @@
 /obj/structure/mopbucket,
 /obj/structure/table/rack{
 	dir = 8;
+	
 	},
 /obj/item/weapon/storage/toolbox/mechanical,
 /obj/item/device/multitool{
@@ -2481,7 +2475,6 @@
 /area/ship/scrap/escape_star)
 "ql" = (
 /obj/structure/handrai{
-	tag = "icon-handrail (NORTH)";
 	icon_state = "handrail";
 	dir = 1
 	},
@@ -2501,7 +2494,6 @@
 /area/ship/scrap/maintenance/techstorage)
 "rP" = (
 /obj/structure/handrai{
-	tag = "icon-handrail (EAST)";
 	icon_state = "handrail";
 	dir = 4
 	},
@@ -3054,7 +3046,6 @@
 /area/ship/scrap/maintenance/techstorage)
 "XF" = (
 /obj/structure/handrai{
-	tag = "icon-handrail (WEST)";
 	icon_state = "handrail";
 	dir = 8
 	},

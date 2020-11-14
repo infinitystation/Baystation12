@@ -136,3 +136,12 @@
 	icon_state = "saarecombat"
 	item_state = "saarecombat"
 	worn_state = "saarecombat"
+
+/obj/item/clothing/under/rank/security/cadet
+	name = "cadet's uniform"
+	desc = "A white uniform usually worn by NanoTrasen Security Cadets."
+	icon = 'infinity/icons/obj/clothing/obj_under.dmi'
+	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
+	icon_state = "cadet_standard"
+	item_state = "cadet_standard"
+	worn_state = "cadet_standard"

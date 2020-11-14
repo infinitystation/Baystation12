@@ -1,0 +1,38 @@
+name: Compile changelogs
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  Compile_Changelog:
+    runs-on: ubuntu-latest
+    if: github.repository == 'infinitystation/Baystation12'
+    steps:
+      - name: Get Repo
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 25
+      - name: Python Setup
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.x'
+      - name: Install of Requirements
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml bs4
+      - name: Changelog Compilation
+        run: python tools/GenerateChangelog/ss13_ru_genchangelog.py html/changelog_infinity.html html/changelogs_infinity
+      - name: Difference
+        run: git diff
+      - name: Commit
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Embodiment of Changelogs"
+          git pull origin master
+          git commit -m "Automatic Changelog Compilation" -a || true
+      - name: Push
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}

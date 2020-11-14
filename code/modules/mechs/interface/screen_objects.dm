@@ -10,7 +10,7 @@
 	icon_state = "radio"
 
 /obj/screen/movable/exosuit/radio/Click()
-	if(..()) 
+	if(..())
 		if(owner.radio)
 			owner.radio.attack_self(usr)
 		else
@@ -112,7 +112,7 @@
 				else
 					bar.color = "#ff0000"
 				GLOB.hardpoint_bar_cache += bar
-		for(var/i=i;i<=value;i++)
+		for(var/i=1;i<=value;i++)
 			new_overlays += GLOB.hardpoint_bar_cache[i]
 	overlays = new_overlays
 
@@ -124,6 +124,10 @@
 /obj/screen/movable/exosuit/hardpoint/Click(var/location, var/control, var/params)
 
 	if(!(..()))
+		return
+
+	if(!owner.hatch_closed)
+		to_chat(usr, SPAN_WARNING("Error: Hardpoint interface disabled while [owner.body.hatch_descriptor] is open."))
 		return
 
 	var/modifiers = params2list(params)
@@ -244,6 +248,6 @@
 		return
 	owner.head.active_sensors = ..()
 	to_chat(usr, SPAN_NOTICE("[owner.head.name] advanced sensor mode is [owner.head.active_sensors ? "now" : "no longer" ] active."))
-	
+
 
 #undef BAR_CAP

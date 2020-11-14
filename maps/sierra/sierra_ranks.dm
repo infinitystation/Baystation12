@@ -35,7 +35,6 @@
 			/datum/mil_branch/skrell_fleet),
 		/datum/species/adherent = list(
 			/datum/mil_branch/contractor,
-			/datum/mil_branch/employee,
 			/datum/mil_branch/alien,
 			/datum/mil_branch/skrell_fleet),
 		/datum/species/unathi   = list(
@@ -76,7 +75,8 @@
 		/datum/species/unathi     = list(/datum/mil_branch/civilian,
 										 /datum/mil_branch/employee,
 										 /datum/mil_branch/contractor),
-		/datum/species/adherent   = list(/datum/mil_branch/civilian),
+		/datum/species/adherent   = list(/datum/mil_branch/civilian,
+										 /datum/mil_branch/employee),
 		/datum/species/vox        = list(/datum/mil_branch/alien,
 										 /datum/mil_branch/civilian)
 	)
@@ -99,6 +99,7 @@
 	name = "Civilian"
 	name_short = "civ"
 	email_domain = "freemail.net"
+	allow_custom_email = TRUE
 
 	rank_types = list(
 		/datum/mil_rank/civ/civ,
@@ -118,6 +119,7 @@
 	name = "Contractor"
 	name_short = "contr"
 	email_domain = "freemail.net"
+	allow_custom_email = TRUE
 
 	rank_types = list(
 		/datum/mil_rank/civ/contractor,
@@ -135,7 +137,7 @@
 /datum/mil_branch/employee
 	name = "Employee"
 	name_short = "empl"
-	email_domain = "freemail.net"
+	email_domain = "mail.nanotrasen.net"
 
 	rank_types = list(
 		/datum/mil_rank/civ/nt,

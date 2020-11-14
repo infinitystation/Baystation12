@@ -1,7 +1,7 @@
 /datum/job/captain
 	title = "Captain"
 	department = "Command"
-	supervisors = "the NanoTrasen"
+	supervisors = "РєРѕСЂРїРѕСЂР°С†РёРµР№"
 	department_flag = COM
 	head_position = 1
 	minimal_player_age = 21
@@ -25,12 +25,13 @@
 							 /datum/computer_file/program/card_mod,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
+	good_genome_prob = 60
 
 /datum/job/hop
 	title = "Head of Personnel"
-	supervisors = "the Captain"
+	supervisors = "РљР°РїРёС‚Р°РЅРѕРј"
 	department = "Command"
-	department_flag = COM
+	department_flag = COM|SRV
 	head_position = 1
 	total_positions = 1
 	spawn_positions = 1
@@ -66,10 +67,11 @@
 							 /datum/computer_file/program/card_mod,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
+	good_genome_prob = 60
 
 /datum/job/rd
 	title = "Research Director"
-	supervisors = "NanoTrasen and the Captain"
+	supervisors = "РљР°РїРёС‚Р°РЅРѕРј"
 	department = "Science"
 	department_flag = SCI|COM
 	head_position = 1
@@ -107,10 +109,11 @@
 							 /datum/computer_file/program/aidiag,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
+	good_genome_prob = 75
 
 /datum/job/cmo
 	title = "Chief Medical Officer"
-	supervisors = "the Captain and the Head of Personnel"
+	supervisors = "РљР°РїРёС‚Р°РЅРѕРј"
 	head_position = 1
 	department = "Medical"
 	department_flag = MED|COM
@@ -148,10 +151,11 @@
 							 /datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
+	good_genome_prob = 55
 
 /datum/job/chief_engineer
 	title = "Chief Engineer"
-	supervisors = "the Captain and the Head of Personnel"
+	supervisors = "РљР°РїРёС‚Р°РЅРѕРј"
 	head_position = 1
 	department = "Engineering"
 	department_flag = ENG|COM
@@ -197,16 +201,17 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/shields_monitor,
 							 /datum/computer_file/program/reports)
+	good_genome_prob = 65
 
 /datum/job/chief_engineer/get_description_blurb()
-	return "Главный инженер - руководитель и администратор инженерного отдела, \
-	он командует инженерами, а также требует от них отчеты о проведенных работах. \
-	Отвечает за то, что реактор благополучно запустили, что щиты корабля правильно настроили, \
-	и что любые механические неисправности устраняются быстро и эффективно."
+	return "Р“Р»Р°РІРЅС‹Р№ РёРЅР¶РµРЅРµСЂ - СЂСѓРєРѕРІРѕРґРёС‚РµР»СЊ Рё Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ РёРЅР¶РµРЅРµСЂРЅРѕРіРѕ РѕС‚РґРµР»Р°, \
+	РѕРЅ РєРѕРјР°РЅРґСѓРµС‚ РёРЅР¶РµРЅРµСЂР°РјРё, Р° С‚Р°РєР¶Рµ С‚СЂРµР±СѓРµС‚ РѕС‚ РЅРёС… РѕС‚С‡РµС‚С‹ Рѕ РїСЂРѕРІРµРґРµРЅРЅС‹С… СЂР°Р±РѕС‚Р°С…. \
+	РћС‚РІРµС‡Р°РµС‚ Р·Р° С‚Рѕ, С‡С‚Рѕ СЂРµР°РєС‚РѕСЂ Р±Р»Р°РіРѕРїРѕР»СѓС‡РЅРѕ Р·Р°РїСѓСЃС‚РёР»Рё, С‡С‚Рѕ С‰РёС‚С‹ РєРѕСЂР°Р±Р»СЏ РїСЂР°РІРёР»СЊРЅРѕ РЅР°СЃС‚СЂРѕРёР»Рё, \
+	Рё С‡С‚Рѕ Р»СЋР±С‹Рµ РјРµС…Р°РЅРёС‡РµСЃРєРёРµ РЅРµРёСЃРїСЂР°РІРЅРѕСЃС‚Рё СѓСЃС‚СЂР°РЅСЏСЋС‚СЃСЏ Р±С‹СЃС‚СЂРѕ Рё СЌС„С„РµРєС‚РёРІРЅРѕ."
 
 /datum/job/hos
 	title = "Head of Security"
-	supervisors = "the Captain and the Head of Personnel"
+	supervisors = "РљР°РїРёС‚Р°РЅРѕРј"
 	head_position = 1
 	department = "Security"
 	department_flag = SEC|COM
@@ -241,6 +246,7 @@
 							 /datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
+	good_genome_prob = 80
 
 /datum/job/iaa
 	title = "Internal Affairs Agent"
@@ -248,7 +254,7 @@
 	department_flag = SPT
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "NanoTrasen and Corporate Regulations"
+	supervisors = "Р¦РµРЅС‚СЂР°Р»СЊРЅС‹Рј РљРѕРјР°РЅРґРѕРІР°РЅРёРµРј"
 	selection_color = "#2f2f7f"
 	economic_power = 15
 	minimal_player_age = 10
@@ -266,6 +272,7 @@
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/reports)
+	good_genome_prob = 85
 
 /datum/job/adjutant
 	title = "Adjutant"
@@ -273,7 +280,7 @@
 	department_flag = SPT
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Captain and heads of staff"
+	supervisors = "РљР°РїРёС‚Р°РЅРѕРј Рё РѕСЃС‚Р°Р»СЊРЅС‹РјРё РіР»Р°РІР°РјРё"
 	selection_color = "#2f2f7f"
 	minimal_player_age = 18
 	economic_power = 7
@@ -305,6 +312,7 @@
 							 /datum/computer_file/program/shields_monitor,
 							 /datum/computer_file/program/reports,
 							 /datum/computer_file/program/deck_management)
+	good_genome_prob = 45
 
 /datum/job/adjutant/get_description_blurb()
 	return "You are an Adjutant. You do not give orders of your own. You are subordinate to all of command. You handle matters on the bridge and report directly to the Captain and Head of Personnel. You take the sierra's helm. You monitor bridge computer programs and communications and report relevant information to command. Sometimes you can also give support for vessel's departments - you have radio keys in bridge's storage for that purpose."

@@ -350,7 +350,7 @@
 	name = "ballistic vest"
 	desc = "An armored vest with heavy plates to protect against ballistic projectiles."
 	icon = 'icons/obj/clothing/obj_suit_modular_armor.dmi'
-	item_icons = list(slot_wear_suit_str = 'icons/mob/onmob/onmob_modular_armor.dmi')
+	item_icons = list(slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_modular_armor.dmi')
 	icon_state = "ballistic"
 	valid_accessory_slots = list(ACCESSORY_SLOT_INSIGNIA, ACCESSORY_SLOT_ARMOR_A, ACCESSORY_SLOT_ARMOR_L)
 	restricted_accessory_slots = list(ACCESSORY_SLOT_INSIGNIA, ACCESSORY_SLOT_ARMOR_A, ACCESSORY_SLOT_ARMOR_L)
@@ -450,8 +450,3 @@
 	desc = "Pukish armor."
 	icon_state = "tdgreen"
 	siemens_coefficient = 1
-
-/obj/item/clothing/suit/storage/vest/tactical/mirania
-	name = "bundeforz armored vest"
-	desc = "A heavy armored vest in a light grey urban camo. It is surprisingly flexible and light, even with the extra webbing and advanced ceramic plates."
-	icon_state = "m_vest"

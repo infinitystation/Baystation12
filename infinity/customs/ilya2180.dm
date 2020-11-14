@@ -6,3 +6,4 @@
 	inscription from Diola Andromeda Ellering."
 	icon_state = "bs_patch"
 	icon = CUSTOM_ITEM_OBJ
+	trade_blacklisted = TRUE

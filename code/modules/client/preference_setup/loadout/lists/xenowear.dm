@@ -294,3 +294,24 @@
 	slot = slot_belt
 	cost = 4
 	whitelisted = list(SPECIES_ADHERENT)
+
+// Space-Adapted Human clothing
+/datum/gear/accessory/space_adapted
+	sort_category = "Xenowear"
+	category = /datum/gear/accessory/space_adapted
+	whitelisted = list(SPECIES_SPACER)
+
+/datum/gear/accessory/space_adapted/venter
+	display_name = "venter assembly"
+	path = /obj/item/clothing/accessory/space_adapted/venter
+	flags = GEAR_HAS_COLOR_SELECTION
+
+/datum/gear/accessory/space_adapted/legbrace
+	display_name = "legbrace"
+	path = /obj/item/clothing/accessory/space_adapted/bracer
+	flags = GEAR_HAS_COLOR_SELECTION
+
+/datum/gear/accessory/space_adapted/neckbrace
+	display_name = "neckbrace"
+	path = /obj/item/clothing/accessory/space_adapted/bracer/neckbrace
+	flags = GEAR_HAS_COLOR_SELECTION

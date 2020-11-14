@@ -28,7 +28,7 @@
 
 /material/resin
 	name = MATERIAL_RESIN
-	icon_colour = "#e85dd8"
+	icon_colour = "#35343a"
 	dooropen_noise = 'sound/effects/attackblob.ogg'
 	door_icon_base = "resin"
 	melting_point = T0C+300
@@ -43,6 +43,30 @@
 	if(locate(/obj/item/organ/internal/xeno/hivenode) in M?.internal_organs)
 		return 1
 	return 0
+
+/material/alien
+	name = MATERIAL_ALIEN
+	lore_text = "A strange kind of crystal-looking alloy. It should be very tough."
+	stack_type = /obj/item/stack/material/alien
+	integrity = 800
+	flags = MATERIAL_UNMELTABLE
+	cut_delay = 60
+	icon_colour = COLOR_DIAMOND
+	shard_type = SHARD_SHARD
+	tableslam_noise = 'sound/effects/Glasshit.ogg'
+	hardness = MATERIAL_VERY_HARD + 20
+	brute_armor = 45
+	burn_armor = 50
+	table_icon_base = "alien"
+	stack_origin_tech = list(TECH_MATERIAL = 7)
+	conductive = 0
+	construction_difficulty = MATERIAL_VERY_HARD_DIY
+	xarch_source_mineral = GAS_NITROGEN
+	ore_icon_overlay = "gems"
+	sale_price = 5
+	sheet_singular_name = "sheet"
+	sheet_plural_name = "sheets"
+	value = 70
 
 /material/concrete
 	name = MATERIAL_CONCRETE

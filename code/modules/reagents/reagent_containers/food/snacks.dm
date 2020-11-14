@@ -155,6 +155,14 @@
 			else
 				reagents.trans_to_obj(U, min(reagents.total_volume,1))
 				if (reagents.total_volume <= 0)
+//[INF]
+					user.update_personal_goal(/datum/goal/achievement/specific_object/food, type)
+					if(trash)
+						if(ispath(trash,/obj/item))
+							var/obj/item/TrashItem = new trash(get_turf(src))
+							TrashItem.pixel_x = src.pixel_x
+							TrashItem.pixel_y = src.pixel_y
+//[/INF]
 					qdel(src)
 			return
 
@@ -1113,6 +1121,10 @@
 	reagents.add_reagent(/datum/reagent/sodiumchloride, 1)
 	reagents.add_reagent(/datum/reagent/blackpepper, 1)
 
+/obj/item/weapon/reagent_containers/food/snacks/meatsteak/synthetic
+	name = "meaty steak"
+	desc = "A piece of hot spicy pseudo-meat."
+
 /obj/item/weapon/reagent_containers/food/snacks/loadedsteak
 	name = "loaded steak"
 	desc = "A steak slathered in sauce with sauteed onions and mushrooms."
@@ -1349,7 +1361,7 @@
 	icon_state = "coldchili"
 	filling_color = "#2b00ff"
 	center_of_mass = "x=15;y=9"
-	nutriment_desc = list("ice peppers" = 3)
+	nutriment_desc = list("chilly peppers" = 3)
 	nutriment_amt = 3
 	trash = /obj/item/trash/snack_bowl
 	bitesize = 5
@@ -1617,7 +1629,7 @@
 	.=..()
 	reagents.add_reagent(/datum/reagent/nutriment/protein, 4)
 	reagents.add_reagent(/datum/reagent/drink/juice/tomato, 5)
-	reagents.add_reagent(/datum/reagent/imidazoline, 5)
+//inf.exclude	reagents.add_reagent(/datum/reagent/imidazoline, 5)
 	reagents.add_reagent(/datum/reagent/water, 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/jelliedtoast
@@ -1803,10 +1815,11 @@
 	nutriment_desc = list("carrot" = 3, "salt" = 1)
 	nutriment_amt = 3
 	bitesize = 2
+/*[inf.exclude]
 /obj/item/weapon/reagent_containers/food/snacks/carrotfries/Initialize()
 	.=..()
 	reagents.add_reagent(/datum/reagent/imidazoline, 3)
-
+[/inf.exclude]*/
 /obj/item/weapon/reagent_containers/food/snacks/superbiteburger
 	name = "super bite burger"
 	desc = "This is a mountain of a burger. FOOD!"
@@ -2169,10 +2182,11 @@
 	nutriment_desc = list("cake" = 10, "sweetness" = 10, "carrot" = 15)
 	nutriment_amt = 25
 	bitesize = 2
+/*[inf.exclude]
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/carrotcake/Initialize()
 	.=..()
 	reagents.add_reagent(/datum/reagent/imidazoline, 10)
-
+[/inf.exclude]*/
 /obj/item/weapon/reagent_containers/food/snacks/slice/carrotcake
 	name = "carrot cake slice"
 	desc = "Carrotty slice of carrot cake, carrots are good for your eyes! Also not a lie."
@@ -2635,7 +2649,7 @@
 	.=..()
 	reagents.add_reagent(/datum/reagent/nutriment/protein, 5)
 	reagents.add_reagent(/datum/reagent/drink/juice/tomato, 6)
-	reagents.add_reagent(/datum/reagent/imidazoline, 12)
+//inf.exclude	reagents.add_reagent(/datum/reagent/imidazoline, 12)
 
 /obj/item/weapon/reagent_containers/food/snacks/slice/vegetablepizza
 	name = "vegetable pizza slice"
@@ -3419,18 +3433,6 @@
 	.=..()
 	reagents.add_reagent(/datum/reagent/sugar, 3)
 
-/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar
-	name = "protein bar"
-	desc = "SwoleMAX brand protein bars, guaranteed to get you feeling perfectly overconfident."
-	icon_state = "proteinbar"
-	trash = /obj/item/trash/candy/proteinbar
-	bitesize = 6
-/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar/Initialize()
-	.=..()
-	reagents.add_reagent(/datum/reagent/nutriment, 9)
-	reagents.add_reagent(/datum/reagent/nutriment/protein, 4)
-	reagents.add_reagent(/datum/reagent/sugar, 4)
-
 /obj/item/weapon/reagent_containers/food/snacks/candy/donor
 	name = "donor candy"
 	desc = "A little treat for blood donors."
@@ -3441,6 +3443,26 @@
 	.=..()
 	reagents.add_reagent(/datum/reagent/nutriment, 10)
 	reagents.add_reagent(/datum/reagent/sugar, 3)
+
+/obj/item/weapon/reagent_containers/food/snacks/proteinbar
+	name = "protein bar"
+	desc = "SwoleMAX brand protein bars, guaranteed to get you feeling perfectly overconfident."
+	icon_state = "proteinbar"
+	trash = /obj/item/trash/proteinbar
+	bitesize = 6
+/obj/item/weapon/reagent_containers/food/snacks/proteinbar/Initialize()
+	.=..()
+	reagents.add_reagent(/datum/reagent/nutriment, 9)
+	reagents.add_reagent(/datum/reagent/nutriment/protein, 4)
+	var/flavor = pick(GLOB.proteinbar_flavors)
+	var/flavor_type = GLOB.proteinbar_flavors[flavor]
+	var/count = length(flavor_type)
+	if (count)
+		for (var/type in flavor_type)
+			reagents.add_reagent(type, round(4 / count, 0.1))
+	else
+		reagents.add_reagent(flavor_type, 4)
+	name = "[flavor] [name]"
 
 /obj/item/weapon/reagent_containers/food/snacks/candy_corn
 	name = "candy corn"
@@ -3729,7 +3751,7 @@ obj/item/weapon/reagent_containers/food/snacks/oort
 //weebo vend! So japanese it hurts
 
 obj/item/weapon/reagent_containers/food/snacks/ricecake
-	name = "rice cake"
+	name = "おにぎり"//inf, was: "rice cake"
 	icon_state = "ricecake"
 	desc = "Ancient earth snack food made from balled up rice."
 	nutriment_desc = list("rice" = 4, "sweet?" = 1)

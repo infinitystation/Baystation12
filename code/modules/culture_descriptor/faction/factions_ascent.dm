@@ -1,35 +1,35 @@
 /decl/cultural_info/faction/ascent_serpentid
 	name =        FACTION_ASCENT_SERPENTID
 	language =    LANGUAGE_MANTID_NONVOCAL
-	description = "Members of the Ascent tend to be organized along the natural lines of their respective species. \
-	For Kharmaani, this is oriented around individual gynes and their power structures. Monarch Serpentids have a slightly less \
-	manipulative approach, as well as more numerous and less self-absorbed queens. They tend to cluster in broad social groups, \
-	usually within the designated oxygen-rich 'mezzanines' each fortress-nest happily allocates to them. As mild as they are by \
-	comparison to their fellows, Monarch Serpentid political and social culture is still factional and often vicious."
+	description = "Представители Восхождения, как правило, организованы по родословной материнской гиины их \
+	соответствующих видов. Для Кхармаани это ориентировано на индивидуальных гиин и их властные структуры. У \
+	Серпентидов-монархов же есть немного менее манипулятивный подход, а также более многочисленные и менее \
+	самозабвенные королевы. Они имеют тенденцию группироваться в широкие социальные группы, обычно в пределах \
+	определенных «мезонинов», богатых кислородом, которые им с радостью выделяет каждое гнездо-крепость. Как бы \
+	они ни были мягки по сравнению со своими собратьями, политическая и социальная культура Серпентидов-монархов \
+	по-прежнему фракционна и часто порочна."
 	hidden = TRUE
 
 /decl/cultural_info/faction/ascent_alate
 	name =        FACTION_ASCENT_ALATE
 	language =    LANGUAGE_MANTID_NONVOCAL
-	description = "The life of an alate is a difficult and frequently short one. Those who survive \
-	to maturity have had the violent and uncompromising culture of the Ascent beaten into them with \
-	bladed forelimbs for their entire lives. There is no formal schooling within the Kharmaani \
-	populations of the Ascent, as alates are so numerous and short-lived that it is something of a \
-	waste of resources. However, as they mature, a smart and capable alate will amass an education \
-	in practical and theoretical disciplines like piloting, engineering, farming or any number of \
-	fields. A particularly lucky (or non-lethally gelded) alate can aspire to a position within the \
-	retinue of their mother-gyne, where they will receive directed specialist training and an \
-	important role under the careful supervision of the gyne's AI control minds."
+	description = "Жизнь алата трудна и часто коротка. Те, кто дожил до зрелости, живут насильственной и \
+	бескомпромиссной культурой Восхождения, пользуясь своими передними конечностями с лезвиями. Среди Кхармании \
+	нет формального школьного образования, поскольку алаты настолько многочисленны и недолговечны, что это пустая \
+	трата ресурсов. Тем не менее, по мере взросления, умный и способный специалист получит образование по \
+	практическим и теоретическим дисциплинам, таким как пилотирование, машиностроение, сельское хозяйство или \
+	любое другое количество областей. Особенно удачливый (или нелетально кастрированный) алат может стремиться к \
+	положению в свите своей гиины, где он получит направленную подготовку специалиста и важную роль под тщательным \
+	наблюдением контролирующего разума гиины."
 	hidden = TRUE
 
 /decl/cultural_info/faction/ascent_gyne
 	name =        FACTION_ASCENT_GYNE
 	language =    LANGUAGE_MANTID_NONVOCAL
-	description = "By the time a gyne has survived her 'childhood' and shed the exoskeleton of an \
-	alate during a breeding frenzy, she has obtained a master class education in murdering and eating \
-	her rivals at the first opportunity, as well as a sideline in a technical or practical field. The \
-	rapid growth of her body and brain, and the responsibilities of her position, require every gyne to \
-	supplement this with intensive training in management, logistics, military command, sociology, politics \
-	and any number of the other critical fields tied into managing a fortress-nest of tens of thousands of \
-	individual citizens."
+	description = "К тому времени, когда гиина пережила свое «детство» и избавилась от экзоскелета алата во \
+	время безумного размножения, она получилает образование мастер-класс по убийствам и поеданию своих соперников \
+	при первой возможности, а также побочные эффекты в техническом или практическом плане. Быстрый рост ее тела и \
+	мозга и обязанности ее положения требуют от каждой гиины дополнения к этому интенсивное обучение в области \
+	управления, логистики, военного командования, социологии, политики и любых других областей, связанных с \
+	управлением гнездом-крепостью из десятков тысяч отдельных граждан."
 	hidden = TRUE

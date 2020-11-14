@@ -322,7 +322,7 @@
 	name = "floor"
 	icon = 'icons/turf/shuttle.dmi'
 	build_type = null
-	flags = TURF_ACID_IMMUNE | TURF_CAN_BREAK | TURF_REMOVE_WRENCH
+	flags = TURF_ACID_IMMUNE | TURF_CAN_BREAK | TURF_REMOVE_CROWBAR
 	can_paint = 1
 	can_engrave = FALSE
 
@@ -372,3 +372,13 @@
 	build_type = null
 	flags = TURF_ACID_IMMUNE | TURF_CAN_BREAK | TURF_REMOVE_CROWBAR
 	color = "#00ffe1"
+
+/decl/flooring/flesh
+	name = "flesh"
+	icon = 'icons/turf/flooring/flesh.dmi'
+	icon_base = "flesh"
+	has_base_range = 3
+	damage_temperature = T0C + 100
+	build_type = null
+	flags = TURF_ACID_IMMUNE | TURF_REMOVE_CROWBAR
+	can_engrave = FALSE

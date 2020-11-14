@@ -1,11 +1,9 @@
 /datum/language/tajaran
-	primitive_version = LANGUAGE_PTAJ //inf
-	native_speaker = list(SPECIES_TAJARA, SPECIES_IPC)
 	name = LANGUAGE_SIIK_MAAS
 	desc = "The traditionally employed tongue of Ahdomai, composed of expressive yowls and chirps. Native to the Tajaran."
-	speech_verb = "мурчит"
-	ask_verb = "мурчит"
-	exclaim_verb = "воет"
+	speech_verb = "РјСѓСЂС‡РёС‚"
+	ask_verb = "РјСѓСЂС‡РёС‚"
+	exclaim_verb = "РІРѕРµС‚"
 	colour = "tajaran"
 	key = "v"
 	flags = WHITELISTED
@@ -27,7 +25,7 @@
 /datum/language/tajsign
 	name = LANGUAGE_SIIK_TAJR
 	desc = "A type of sign language mostly based on tail movements that was used during the Tajaran rebellion."
-	signlang_verb = list("делает пасы хвостом", "жестикулирует хвостом", "искусно жестикулирует хвостом")
+	signlang_verb = list("РґРµР»Р°РµС‚ РїР°СЃС‹ С…РІРѕСЃС‚РѕРј", "Р¶РµСЃС‚РёРєСѓР»РёСЂСѓРµС‚ С…РІРѕСЃС‚РѕРј", "РёСЃРєСѓСЃРЅРѕ Р¶РµСЃС‚РёРєСѓР»РёСЂСѓРµС‚ С…РІРѕСЃС‚РѕРј")
 	colour = "tajaran"
 	key = "l"
 	flags = WHITELISTED | SIGNLANG | NO_STUTTER | NONVERBAL

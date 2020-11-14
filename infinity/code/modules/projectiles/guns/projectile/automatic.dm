@@ -20,6 +20,7 @@
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/n10mm
 	allowed_magazines = /obj/item/ammo_magazine/n10mm
+	screen_shake = 0.5 //SMG
 
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=1, burst_accuracy=null, dispersion=null),
@@ -154,53 +155,6 @@
 	else
 		icon_state = "pdw-empty"
 	return
-
-/obj/item/weapon/gun/projectile/automatic/tv3
-	name = "TV-3S carabine"
-	desc = "The TV-3S carabine is the one of traditional carabines of CCA."
-	icon = 'infinity/icons/obj/guns.dmi'
-	icon_state = "TV-3Sm"
-	item_state = null
-	force = 10
-	caliber = CALIBER_TV
-	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
-	ammo_type = /obj/item/ammo_casing/rifle/tv
-	slot_flags = SLOT_BELT | SLOT_BACK
-	load_method = MAGAZINE
-	magazine_type = /obj/item/ammo_magazine/tv
-	allowed_magazines = /obj/item/ammo_magazine/tv
-	auto_eject = 1
-	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-	burst_delay = 3
-	wielded_item_state = "arifle-wielded"
-	mag_insert_sound = 'sound/weapons/guns/interaction/batrifle_magin.ogg'
-	mag_remove_sound = 'sound/weapons/guns/interaction/batrifle_magout.ogg'
-
-	firemodes = list(
-		list(mode_name="semi auto",       burst=1, fire_delay=null,    move_delay=null, one_hand_penalty=8, burst_accuracy=null, dispersion=null),
-		list(mode_name="2-round bursts", burst=2, fire_delay=null, move_delay=2,    one_hand_penalty=9, burst_accuracy=null, dispersion=null),
-		)
-
-	accuracy = 1
-	accuracy_power = 7
-	bulk = GUN_BULK_RIFLE
-	w_class = ITEM_SIZE_LARGE
-	one_hand_penalty = 5
-
-/obj/item/weapon/gun/projectile/automatic/tv3/on_update_icon()
-	..()
-	if(ammo_magazine)
-		icon_state = "TV-3Sm"
-	else
-		icon_state = "TV-3S"
-
-/obj/item/weapon/gun/projectile/automatic/tv3/special_check(user)
-	if(istype(user,/mob/living/carbon/human))
-		var/mob/living/carbon/human/H = user
-		if(H.species?.get_bodytype(H) != SPECIES_TAJARA)
-			to_chat(user, "<span class='warning'>\The [src] trigger because of the anatomical structure of your hand is not pressed!</span>")
-			return 0
-	return ..()
 
 /obj/item/weapon/gun/projectile/automatic/nt41/armory
 	starts_loaded = 0

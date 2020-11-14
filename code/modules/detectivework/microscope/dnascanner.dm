@@ -2,7 +2,7 @@
 /obj/machinery/dnaforensics
 	name = "DNA analyzer"
 	desc = "A high tech machine that is designed to read DNA samples properly."
-	icon = 'icons/obj/forensics.dmi'
+	icon = 'infinity/icons/obj/forensics.dmi' //INF WAS 'icons/obj/forensics.dmi'
 	icon_state = "dnaopen"
 	anchored = 1
 	density = 1

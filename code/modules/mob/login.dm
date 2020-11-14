@@ -64,12 +64,12 @@
 
 	maybe_send_staffwarns("joined the round")
 
-	client.images = null				//remove the images such as AIs being unable to see runes
-	client.screen = list()				//remove hud items just in case
-	InitializeHud()
+//INF	client.images = null				//remove the images such as AIs being unable to see runes
+//INF	client.screen = list()				//remove hud items just in case
+//INF	InitializeHud()
 
 	next_move = 1
-	set_sight(sight|SEE_SELF)
+//INF	set_sight(sight|SEE_SELF)
 	..()
 
 	my_client = client
@@ -84,18 +84,21 @@
 	if(eyeobj)
 		eyeobj.possess(src)
 
-	l_plane = new()
-	l_general = new()
-	client.screen += l_plane
-	client.screen += l_general
+//INF	l_plane = new()
+//INF	l_general = new()
+//INF	client.screen += l_plane
+//INF	client.screen += l_general
 
-	refresh_client_images()
-	reload_fullscreen() // Reload any fullscreen overlays this mob has.
+//INF	refresh_client_images()
+//INF	reload_fullscreen() // Reload any fullscreen overlays this mob has.
 	add_click_catcher()
-	update_action_buttons()
-
+//INF	update_action_buttons()
+//[INF]
+	remake_Hud()
+	ability_master.open_ability_master()
+//[/INF]
 	//set macro to normal incase it was overriden (like cyborg currently does)
-	winset(src, null, "mainwindow.macro=macro hotkey_toggle.is-checked=false input.focus=true input.background-color=#d3b5b5")
+//INF	winset(src, null, "mainwindow.macro=macro hotkey_toggle.is-checked=false input.focus=true input.background-color=#d3b5b5")
 
 /mob/living/carbon/Login()
 	. = ..()

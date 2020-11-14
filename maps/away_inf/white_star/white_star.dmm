@@ -442,7 +442,6 @@
 /area/white_star/section2)
 "aP" = (
 /obj/machinery/sleeper/survival_pod{
-	tag = "icon-stasis_0 (NORTH)";
 	icon_state = "stasis_0";
 	dir = 1
 	},
@@ -536,8 +535,7 @@
 	icon_state = "map_vent_in";
 	id_tag = "fuel_engines";
 	internal_pressure_bound = 1200;
-	internal_pressure_bound_default = 1200;
-	tag = "icon-map_vent_in (WEST)"
+	internal_pressure_bound_default = 1200
 	},
 /turf/simulated/floor/reinforced/hydrogen,
 /area/white_star/section3)
@@ -690,7 +688,6 @@
 /area/white_star/section3)
 "bm" = (
 /obj/machinery/sleeper/survival_pod{
-	tag = "icon-stasis_0 (NORTH)";
 	icon_state = "stasis_0";
 	dir = 1
 	},

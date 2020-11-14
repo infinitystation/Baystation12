@@ -77,7 +77,11 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	power_environ = 0
 	has_gravity = 0
 	area_flags = AREA_FLAG_EXTERNAL | AREA_FLAG_IS_NOT_PERSISTENT
-	ambience = list('sound/ambience/ambispace.ogg','sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg','sound/music/title2.ogg','sound/music/space.ogg','sound/music/main.ogg','sound/music/traitor.ogg')
+/*[ORIG]
+	ambience = list('sound/ambience/ambispace.ogg','sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg','sound/music/title2.ogg','sound/music/space.ogg','sound/music/main.ogg','sound/music/traitor.ogg',\
+		'sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg', 'sound/ambience/ambispace.ogg')//inf
+[/ORIG]*/
+	ambience = list() //in deep space, no one will hear your scream //inf
 	secure = FALSE
 
 /area/space/atmosalert()
@@ -123,16 +127,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/medical
 	req_access = list(access_medical)
 
-/area/medical/virology
-	name = "\improper Virology"
-	icon_state = "virology"
-	req_access = list(access_virology)
-
-/area/medical/virologyaccess
-	name = "\improper Virology Access"
-	icon_state = "virology"
-	req_access = list() // This is like the lobby, needs low access to allow passing through in a different direction.
-
 /area/security
 	req_access = list(access_sec_doors)
 
@@ -152,7 +146,8 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = TUNNEL_ENCLOSED
 //	turf_initializer = /decl/turf_initializer/maintenance
-	forced_ambience = list('sound/ambience/maintambience.ogg')
+	forced_ambience = list('sound/ambience/maintambience.ogg',\
+																'infinity/sound/SS2/ambience/ambmaintence.wav')//inf
 	req_access = list(access_maint_tunnels)
 
 /area/rnd

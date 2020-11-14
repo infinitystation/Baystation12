@@ -1,33 +1,39 @@
 language: generic
-sudo: false
+os: linux
 dist: xenial
 jdk: openjdk8
 
 env:
   global:
-    BYOND_MAJOR="512"
-    BYOND_MINOR="1485"
+    BYOND_MAJOR="513"
+    BYOND_MINOR="1511"
 
 # ALL MAPS MUST BE PRESENT HERE
 # IF THEY ARE NOT, YOUR BUILD WILL FAIL
-matrix:
+jobs:
     include:
+    - name: "DreamChecker"
+      env: SPACEMAN_DMM_VERSION=suite-1.4
+      cache:
+        directories: $HOME/spaceman_dmm/$SPACEMAN_DMM_VERSION
+      install:
+        - ./scripts/install-spaceman-dmm.sh dreamchecker
+      script:
+        - ~/dreamchecker
     - name: "Code"
       env: TEST=CODE
     - name: "Map - Example"
       env: TEST=MAP MAP_PATH=example
-#   - name: "Map - Colony Infinity"
-#     env: TEST=MAP MAP_PATH=colony
+#    - name: "Map - Colony Infinity"
+#      env: TEST=MAP MAP_PATH=colony
     - name: "Map - Sierra"
       env: TEST=MAP MAP_PATH=sierra
-
 #    - name: "Map - Torch"
 #      env: TEST=MAP MAP_PATH=torch
-
-#   - name: "Map - Torch Infinity"
-#     env: TEST=MAP MAP_PATH=torchinf
-#   - name: "Map - Bearcat"
-#     env: TEST=MAP MAP_PATH=bearcat
+#    - name: "Map - Torch Infinity"
+#      env: TEST=MAP MAP_PATH=torchinf
+#    - name: "Map - Bearcat"
+#      env: TEST=MAP MAP_PATH=bearcat
     - name: "Map - Bearcat Infinity"
       env: TEST=MAP MAP_PATH=bearcat_inf
     - name: "Map - Away Sites"

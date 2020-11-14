@@ -55,7 +55,11 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 
 	faction = "cult"
 	ambitious = 0 //INF
-
+//[INF]
+/datum/antagonist/cultist/create_objectives(var/datum/mind/cultist, override = 1)
+	if(!..())
+		return
+//[/INF]
 /datum/antagonist/cultist/create_global_objectives()
 
 	if(!..())

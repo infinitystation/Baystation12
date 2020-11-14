@@ -508,8 +508,7 @@
 "bG" = (
 /obj/machinery/cryopod/lifepod{
 	dir = 8;
-	icon_state = "redpod0";
-	tag = "icon-redpod0 (NORTH)"
+	icon_state = "redpod0"
 	},
 /obj/machinery/door/window/southright{
 	dir = 4
@@ -615,8 +614,7 @@
 "bR" = (
 /obj/machinery/cryopod/lifepod{
 	dir = 4;
-	icon_state = "redpod0";
-	tag = "icon-redpod0 (NORTH)"
+	icon_state = "redpod0"
 	},
 /obj/machinery/door/window/southright{
 	dir = 8
@@ -686,8 +684,7 @@
 /obj/structure/catwalk,
 /obj/structure/railing/mapped{
 	dir = 1;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (NORTH)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/open,
 /area/ship/scrap/hallway/port/upper)
@@ -797,7 +794,6 @@
 	icon_state = "2-5"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	tag = "icon-map-scrubbers (NORTH)";
 	icon_state = "map-scrubbers";
 	dir = 1
 	},
@@ -871,8 +867,7 @@
 /obj/structure/catwalk,
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (WEST)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/open,
 /area/ship/scrap/hallway/port/upper)
@@ -880,8 +875,7 @@
 /obj/structure/catwalk,
 /obj/structure/railing/mapped{
 	dir = 4;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/open,
 /area/ship/scrap/hallway/port/upper)
@@ -965,12 +959,10 @@
 	},
 /obj/structure/lattice,
 /obj/machinery/atmospherics/pipe/zpipe/down/scrubbers{
-	tag = "icon-down-scrubbers (NORTH)";
 	icon_state = "down-scrubbers";
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/zpipe/down/supply{
-	tag = "icon-down-supply (NORTH)";
 	icon_state = "down-supply";
 	dir = 1
 	},
@@ -1122,7 +1114,6 @@
 /area/ship/scrap/other/robotics)
 "cP" = (
 /obj/machinery/light_construct{
-	tag = "icon-tube-construct-stage1 (WEST)";
 	icon_state = "tube-construct-stage1";
 	dir = 8
 	},
@@ -1497,7 +1488,6 @@
 	},
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	tag = "icon-map-scrubbers (NORTH)";
 	icon_state = "map-scrubbers";
 	dir = 1
 	},
@@ -1638,7 +1628,6 @@
 /obj/random/tank,
 /obj/random/medical/lite,
 /obj/effect/decal/cleanable/cobweb2{
-	tag = "icon-cobweb2 (WEST)";
 	icon_state = "cobweb2";
 	dir = 8
 	},
@@ -1840,9 +1829,8 @@
 	pixel_x = 0;
 	pixel_y = -35
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "solar_pump"
 	},
 /obj/structure/cable/yellow{
@@ -1870,7 +1858,6 @@
 /area/ship/scrap/engineering/solars)
 "ee" = (
 /obj/machinery/power/terminal{
-	tag = "icon-term (NORTH)";
 	icon_state = "term";
 	dir = 1
 	},
@@ -2179,8 +2166,7 @@
 /obj/random/trash/space,
 /obj/structure/railing/mapped{
 	dir = 4;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/space)
@@ -2381,8 +2367,7 @@
 "IM" = (
 /obj/structure/railing/mapped{
 	dir = 4;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/space)

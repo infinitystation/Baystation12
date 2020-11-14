@@ -51,6 +51,7 @@
 /obj/item/clothing/suit/space/void/skrell
 	name = "Skrellian voidsuit"
 	desc = "Seems like a wetsuit with reinforced plating seamlessly attached to it. Very chic."
+	icon = 'infinity/icons/obj/clothing/species/skrell/obj_suit_skrell.dmi' //INF
 	armor = list(
 		melee = ARMOR_MELEE_KNIVES,
 		bullet = ARMOR_BALLISTIC_PISTOL,
@@ -64,23 +65,17 @@
 	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = SPACE_SUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	species_restricted = list(SPECIES_SKRELL,SPECIES_HUMAN)
-
-/obj/item/clothing/suit/space/void/skrell/white
-	icon = 'infinity/icons/obj/clothing/species/skrell/obj_suit_skrell.dmi'//inf
-	//inf
+//[INF]
 	item_icons = list(
-		slot_suit_str = 'infinity/icons/mob/species/skrell/onmob_suit_skrell.dmi',
+		slot_wear_suit_str = 'infinity/icons/mob/species/skrell/onmob_suit_skrell.dmi',
 		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_spacesuits.dmi',
 		slot_r_hand_str = 'icons/mob/onmob/items/righthand_spacesuits.dmi'
 		)
+	sprite_sheets_obj = null //the same sprite for humans and skrells
+//[/INF]
+
+/obj/item/clothing/suit/space/void/skrell/white
 	icon_state = "skrell_suit_white"
 
 /obj/item/clothing/suit/space/void/skrell/black
-	icon = 'infinity/icons/obj/clothing/species/skrell/obj_suit_skrell.dmi'//inf
-	//inf
-	item_icons = list(
-		slot_suit_str = 'infinity/icons/mob/species/skrell/onmob_suit_skrell.dmi',
-		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_spacesuits.dmi',
-		slot_r_hand_str = 'icons/mob/onmob/items/righthand_spacesuits.dmi'
-		)
 	icon_state = "skrell_suit_black"

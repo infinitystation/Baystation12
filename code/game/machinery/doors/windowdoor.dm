@@ -83,7 +83,7 @@
 	var/mob/M = AM // we've returned by here if M is not a mob
 	if (src.operating)
 		return
-	if (src.density && (!issmall(M) || ishuman(M)) && src.allowed(AM))
+	if (src.density && (!issmall(M) || ishuman(M) || issilicon(M)) && src.allowed(AM))
 		open()
 		if(src.check_access(null))
 			sleep(50)
@@ -95,7 +95,7 @@
 /obj/machinery/door/window/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if(istype(mover) && mover.checkpass(PASS_FLAG_GLASS))
 		return 1
-	if(get_dir(loc, target) == dir) //Make sure looking at appropriate border
+	if(get_dir(loc, target) & dir) //Make sure looking at appropriate border
 		if(air_group) return 0
 		return !density
 	else
@@ -115,6 +115,7 @@
 	if (!src.operating) //in case of emag
 		src.operating = 1
 
+	icon_state = "[src.base_state]open";
 	flick("[src.base_state]opening", src)
 	playsound(src.loc, 'sound/machines/windowdoor.ogg', 100, 1)
 	sleep(10)
@@ -180,7 +181,7 @@
 	..()
 
 /obj/machinery/door/window/CanFluidPass(var/coming_from)
-	return ((dir in GLOB.cardinal) && coming_from != dir)
+	return !density || ((dir in GLOB.cardinal) && coming_from != dir)
 
 /obj/machinery/door/window/attackby(obj/item/weapon/I as obj, mob/user as mob)
 

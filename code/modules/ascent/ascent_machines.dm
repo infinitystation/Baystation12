@@ -38,6 +38,11 @@ MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 	. = ..()
 	scrubbing_gas -= GAS_METHYL_BROMIDE
 
+/obj/machinery/atmospherics/unary/vent_scrubber/on/ascent/shuttle
+	stock_part_presets = list(
+		/decl/stock_part_preset/radio/receiver/vent_scrubber/shuttle = 1,
+		/decl/stock_part_preset/radio/event_transmitter/vent_scrubber/shuttle = 1
+	)
 /obj/machinery/recharge_station/ascent
 	name = "mantid recharging dock"
 	desc = "An oddly organic aperture stuffed with power connectors."
@@ -91,7 +96,8 @@ MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 	req_access = list(access_ascent)
 
 /obj/effect/catwalk_plated/ascent
-	color = COLOR_GRAY40
+//ORIG	color = COLOR_GRAY40
+	plating_type = /decl/flooring/tiling_ascent //INF
 
 /obj/machinery/door/airlock/ascent
 	desc = "Some kind of strange alien door technology."
@@ -184,6 +190,7 @@ MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 	var/on = TRUE
 	var/output_power = 9000 KILOWATTS
 	var/image/field_image
+	var/field_color = COLOR_CYAN //INF
 
 /obj/machinery/power/ascent_reactor/attack_hand(mob/user)
 	. = ..()
@@ -206,7 +213,7 @@ MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 
 	if(!field_image)
 		field_image = image(icon = 'icons/obj/machines/power/fusion.dmi', icon_state = "emfield_s1")
-		field_image.color = COLOR_CYAN
+		field_image.color = field_color//INF, WAS COLOR_CYAN
 		field_image.alpha = 50
 		field_image.layer = SINGULARITY_LAYER
 		field_image.appearance_flags |= RESET_COLOR

@@ -69,7 +69,7 @@
 		to_chat(src, "Some accounts did not have proper ages set in their clients.  This function requires database to be present")
 
 	if(msg != "")
-		src << browse(msg, "window=Player_age_check")
+		show_browser(src, msg, "window=Player_age_check")
 	else
 		to_chat(src, "No matches for that age range found.")
 
@@ -650,7 +650,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 
 	dat += "</center></body></html>"
 
-	src << browse(jointext(dat, null), "window=freeslots;size=300x640;can_close=1")
+	show_browser(src, jointext(dat, null), "window=freeslots;size=300x640;can_close=1")
 	SSstatistics.add_field_details("admin_verb","LFS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_explosion(atom/O as obj|mob|turf in range(world.view))

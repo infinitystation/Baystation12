@@ -1,21 +1,21 @@
 /decl/webhook/roundend/get_message(var/list/data)
 	. = ..()
-	var/desc = "Смена с режимом **[SSticker.mode ? SSticker.mode.name : "Unknown"]** только что закончилась\n\n"
+	var/desc = "РЎРјРµРЅР° СЃ СЂРµР¶РёРјРѕРј **[SSticker.mode ? SSticker.mode.name : "Unknown"]** С‚РѕР»СЊРєРѕ С‡С‚Рѕ Р·Р°РєРѕРЅС‡РёР»Р°СЃСЊ\n\n"
 	if(data)
-		var/s_escaped =  "Эвакуированных"
+		var/s_escaped =  "Р­РІР°РєСѓРёСЂРѕРІР°РЅРЅС‹С…"
 		if(!evacuation_controller.emergency_evacuation)
-			s_escaped = "Транспортированных"
+			s_escaped = "РўСЂР°РЅСЃРїРѕСЂС‚РёСЂРѕРІР°РЅРЅС‹С…"
 		if(data["survivors"] > 0)
-			desc += "Выживших: **[data["survivors"]]**\n"
+			desc += "Р’С‹Р¶РёРІС€РёС…: **[data["survivors"]]**\n"
 			desc += "[s_escaped]: **[data["escaped"]]**\n"
 		else
-			desc += "**Никто не пережил эту смену**\n"
-		desc += "Призраков: **[data["ghosts"]]**\n"
-		desc += "Игроков: **[GLOB.clients.len]**\n"
-		desc += "Продолжительность: **[roundduration2text()]**"
+			desc += "**РќРёРєС‚Рѕ РЅРµ РїРµСЂРµР¶РёР» СЌС‚Сѓ СЃРјРµРЅСѓ**\n"
+		desc += "РџСЂРёР·СЂР°РєРѕРІ: **[data["ghosts"]]**\n"
+		desc += "РРіСЂРѕРєРѕРІ: **[LAZYLEN(GLOB.clients)]**\n"
+		desc += "РџСЂРѕРґРѕР»Р¶РёС‚РµР»СЊРЅРѕСЃС‚СЊ: **[roundduration2text()]**"
 
 	.["embeds"] = list(list(
-		"title" = "Смена под номером [game_id] окончена",
+		"title" = "РЎРјРµРЅР° РїРѕРґ РЅРѕРјРµСЂРѕРј [game_id] РѕРєРѕРЅС‡РµРЅР°",
 		"description" = desc,
 		"color" = COLOR_WEBHOOK_DEFAULT
 	))

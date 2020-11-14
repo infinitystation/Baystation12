@@ -150,13 +150,13 @@
 	var/datum/money_account/M = create_account("[H.real_name]'s account", H.real_name, money_amount)
 	if(H.mind)
 		var/remembered_info = ""
-		remembered_info += "<b>Your account number is:</b> #[M.account_number]<br>"
-		remembered_info += "<b>Your account pin is:</b> [M.remote_access_pin]<br>"
-		remembered_info += "<b>Your account funds are:</b> T[M.money]<br>"
+		remembered_info += "<b>Номер Вашего аккаунта:</b> #[M.account_number]<br>"
+		remembered_info += "<b>Пин-код:</b> [M.remote_access_pin]<br>"
+		remembered_info += "<b>Сумма на счету:</b> [GLOB.using_map.local_currency_name_short][M.money]<br>"
 
 		if(M.transaction_log.len)
 			var/datum/transaction/T = M.transaction_log[1]
-			remembered_info += "<b>Your account was created:</b> [T.time], [T.date] at [T.get_source_name()]<br>"
+			remembered_info += "<b>Создан:</b> [T.time], [T.date] в [T.get_source_name()]<br>"
 		H.StoreMemory(remembered_info, /decl/memory_options/system)
 		H.mind.initial_account = M
 
@@ -220,20 +220,20 @@
 	if(LAZYACCESS(minimum_character_age, S.get_bodytype()) && (prefs.age < minimum_character_age[S.get_bodytype()]))
 		to_chat(feedback, "<span class='boldannounce'>Not old enough. Minimum character age is [minimum_character_age[S.get_bodytype()]].</span>")
 		return TRUE
-	
+
 	if(!S.check_background(src, prefs))
 		to_chat(feedback, "<span class='boldannounce'>Incompatible background for [title].</span>")
 		return TRUE
 
 	return FALSE
 
-/datum/job/proc/get_join_link(var/client/caller, var/href_string, var/show_invalid_jobs)
+/datum/job/proc/get_join_link(var/client/caller, var/href_string, var/show_invalid_jobs, var/bald)	// INF BALd
 	if(is_available(caller))
 		if(is_restricted(caller.prefs))
 			if(show_invalid_jobs)
-				return "<tr><td><a style='text-decoration: line-through' href='[href_string]'>[title]</a></td><td>[current_positions]</td><td>(Active: [get_active_count()])</td></tr>"
+				return "<tr><td><a [bald ? "class = 'commandPosition' " : ""]style='text-decoration: line-through' href='[href_string]'>[title]</a></td><td>[current_positions]</td><td>(Active: [get_active_count()])</td></tr>"
 		else
-			return "<tr><td><a href='[href_string]'>[title]</a></td><td>[current_positions]</td><td>(Active: [get_active_count()])</td></tr>"
+			return "<tr><td><a [bald ? "class = 'commandPosition' " : ""]href='[href_string]'>[title]</a></td><td>[current_positions]</td><td>(Active: [get_active_count()])</td></tr>"
 	return ""
 
 // Only players with the job assigned and AFK for less than 10 minutes count as active
@@ -361,23 +361,23 @@
 /datum/job/proc/get_unavailable_reasons(var/client/caller)
 	var/list/reasons = list()
 	if(jobban_isbanned(caller, title))
-		reasons["You are jobbanned."] = TRUE
+		reasons["У Вас имеются джоббаны."] = TRUE
 	if(is_semi_antagonist && jobban_isbanned(caller, MODE_MISC_AGITATOR))
-		reasons["You are semi-antagonist banned."] = TRUE
+		reasons["У Вас джоббан на роль полу-антагониста."] = TRUE
 	if(!player_old_enough(caller))
-		reasons["Your player age is too low."] = TRUE
+		reasons["С Вашего первого захода прошло мало времени."] = TRUE
 	if(!is_position_available())
-		reasons["There are no positions left."] = TRUE
+		reasons["Не осталось доступных ролей."] = TRUE
 	if(!isnull(allowed_branches) && (!caller.prefs.branches[title] || !is_branch_allowed(caller.prefs.branches[title])))
-		reasons["Your branch of service does not allow it."] = TRUE
+		reasons["Ваша служебная ветка имеет ограничения."] = TRUE
 	else if(!isnull(allowed_ranks) && (!caller.prefs.ranks[title] || !is_rank_allowed(caller.prefs.branches[title], caller.prefs.ranks[title])))
-		reasons["Your rank choice does not allow it."] = TRUE
+		reasons["Ваш служебный ранг имеет ограничения."] = TRUE
 	var/datum/species/S = all_species[caller.prefs.species]
 	if(S)
 		if(!is_species_allowed(S))
-			reasons["Your species choice does not allow it."] = TRUE
+			reasons["Ваша раса имеет ограничения."] = TRUE
 		if(!S.check_background(src, caller.prefs))
-			reasons["Your background choices do not allow it."] = TRUE
+			reasons["Предыстория Вашего персонажа имеет ограничения."] = TRUE
 	if(LAZYLEN(reasons))
 		. = reasons
 
@@ -400,15 +400,38 @@
 	total_positions++
 
 /datum/job/proc/get_roundstart_spawnpoint()
+/*[ORIGINAL]
 	var/list/loc_list = list()
 	for(var/obj/effect/landmark/start/sloc in landmarks_list)
 		if(sloc.name != title)	continue
 		if(locate(/mob/living) in sloc.loc)	continue
 		loc_list += sloc
+
 	if(loc_list.len)
 		return pick(loc_list)
+[/ORIGINAL]*/
+//[INF]
+	var/spawnpoint_loc = get_job_spawnpoints()
+	if(spawnpoint_loc)
+		return spawnpoint_loc
+//[/INF]
 	else
-		return locate("start*[title]") // use old stype
+//[INF]
+		var/list/L = list()
+		for(var/turf/i in GLOB.newplayer_start)
+			if(locate(/mob/living) in get_turf(i))	continue
+			L += i
+		return pick(L)
+
+/datum/job/proc/get_job_spawnpoints()
+	var/list/loc_list = list()
+	for(var/obj/effect/landmark/start/sloc in landmarks_list)
+		if(sloc.name != title)	continue
+		if(locate(/mob/living) in sloc.loc)	continue
+		loc_list += sloc
+	return length(loc_list) ? pick(loc_list) : null
+//[/INF]
+//inf		return locate("start*[title]") // use old stype
 
 /**
  *  Return appropriate /datum/spawnpoint for given client
@@ -437,23 +460,25 @@
 		else
 			spawnpos = spawntypes()[spawnpoint]
 
-	if(spawnpos && !spawnpos.check_job_spawning(title))
-		if(H)
+	if(spawnpos && !spawnpos.can_spawn_here(H, src))//inf, was: if(spawnpos && !spawnpos.check_job_spawning(title))
+/*[ORIGINAL]		if(H)
 			to_chat(H, "<span class='warning'>Your chosen spawnpoint ([spawnpos.display_name]) is unavailable for your chosen job ([title]). Spawning you at another spawn point instead.</span>")
+[/ORIGINAL]*/
 		spawnpos = null
 
 	if(!spawnpos)
 		// Step through all spawnpoints and pick first appropriate for job
 		for(var/spawntype in GLOB.using_map.allowed_spawns)
 			var/datum/spawnpoint/candidate = spawntypes()[spawntype]
-			if(candidate.check_job_spawning(title))
+			if(spawnpos.can_spawn_here(H, src))//inf, was: if(candidate.check_job_spawning(title))
 				spawnpos = candidate
 				break
 
 	if(!spawnpos)
 		// Pick at random from all the (wrong) spawnpoints, just so we have one
 		warning("Could not find an appropriate spawnpoint for job [title].")
-		spawnpos = spawntypes()[pick(GLOB.using_map.allowed_spawns)]
+		var/list/spawntyps = spawntypes()
+		spawnpos = spawntyps[pick(GLOB.using_map.allowed_spawns)]//inf, was: spawnpos = spawntypes()[pick(GLOB.using_map.allowed_spawns)]
 
 	return spawnpos
 
@@ -472,3 +497,9 @@
 
 /datum/job/proc/handle_variant_join(var/mob/living/carbon/human/H, var/alt_title)
 	return
+
+/datum/job/proc/get_min_skill(decl/hierarchy/skill/S)
+	if(min_skill)
+		. = min_skill[S.type]
+	if(!.)
+		. = SKILL_MIN

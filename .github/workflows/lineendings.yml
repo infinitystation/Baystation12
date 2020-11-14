@@ -1,0 +1,34 @@
+name: Add Empty Lines to Code
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  Add_empty_lineendings:
+    runs-on: ubuntu-latest
+    if: github.repository == 'infinitystation/Baystation12'
+    steps:
+      - name: Get Repo
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 25
+      - name: Python Setup
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.x'
+      - name: Empty Empty Lines Adding
+        run: python tools/simpleutilites/lineendings.py
+      - name: Difference
+        run: git diff
+      - name: Commit
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Lineender"
+          git pull origin master
+          git commit -m "Автоматическая починка пустых строк в конце файлов" -a || true
+      - name: Push
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}

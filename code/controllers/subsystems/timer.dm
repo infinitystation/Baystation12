@@ -7,8 +7,7 @@ SUBSYSTEM_DEF(timer)
 	name = "Timer"
 	wait = 1 //SS_TICKER subsystem, so wait is in ticks
 	priority = SS_PRIORITY_TIMER
-
-	flags = SS_TICKER|SS_NO_INIT
+	flags = SS_NO_INIT | SS_TICKER
 
 	var/list/datum/timedevent/second_queue = list() //awe, yes, you've had first queue, but what about second queue?
 	var/list/hashes = list()
@@ -159,7 +158,7 @@ SUBSYSTEM_DEF(timer)
 
 			if (timer.timeToRun < head_offset)
 				bucket_resolution = null //force bucket recreation
-				CRASH("[i] Invalid timer state: Timer in long run queue with a time to run less then head_offset. [get_timer_debug_string(timer)] world.time: [world.time], head_offset: [head_offset], practical_offset: [practical_offset]")
+				crash_with("[i] Invalid timer state: Timer in long run queue with a time to run less then head_offset. [get_timer_debug_string(timer)] world.time: [world.time], head_offset: [head_offset], practical_offset: [practical_offset]")
 
 				if (timer.callBack && !timer.spent)
 					timer.callBack.InvokeAsync()
@@ -171,7 +170,7 @@ SUBSYSTEM_DEF(timer)
 
 			if (timer.timeToRun < head_offset + TICKS2DS(practical_offset-1))
 				bucket_resolution = null //force bucket recreation
-				CRASH("[i] Invalid timer state: Timer in long run queue that would require a backtrack to transfer to short run queue. [get_timer_debug_string(timer)] world.time: [world.time], head_offset: [head_offset], practical_offset: [practical_offset]")
+				crash_with("[i] Invalid timer state: Timer in long run queue that would require a backtrack to transfer to short run queue. [get_timer_debug_string(timer)] world.time: [world.time], head_offset: [head_offset], practical_offset: [practical_offset]")
 				if (timer.callBack && !timer.spent)
 					timer.callBack.InvokeAsync()
 					spent += timer

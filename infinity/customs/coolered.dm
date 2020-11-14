@@ -10,3 +10,9 @@
 		slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi',
 		)
 	rolled_sleeves = -1
+	trade_blacklisted = TRUE
+
+/datum/robolimb/wardtakahashi/running/special_old_prototype
+	company = "Ward-Takahashi Special Running Prototype"
+	icon = 'infinity/icons/customs/cyberlimbs/oldtackahashi.dmi'
+	allowed_ckeys = list("coolered")

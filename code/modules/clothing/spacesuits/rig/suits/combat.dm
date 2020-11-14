@@ -71,10 +71,10 @@
 	icon_state = "military_rig"
 	suit_type = "military hardsuit"
 	armor = list(
-		melee = ARMOR_MELEE_VERY_HIGH,
-		bullet = ARMOR_BALLISTIC_AP,
-		laser = ARMOR_LASER_RIFLES,
-		energy = ARMOR_ENERGY_MINOR,
+		melee = ARMOR_MELEE_MAJOR, //INF WAS ARMOR_MELEE_VERY_HIGH
+		bullet = ARMOR_BALLISTIC_RIFLE, //INF WAS ARMOR_BALLISTIC_AP
+		laser = ARMOR_LASER_HANDGUNS, //INF WAS ARMOR_LASER_RIFLES
+		energy = ARMOR_ENERGY_SMALL, //INF WAS ARMOR_ENERGY_MINOR
 		bomb = ARMOR_BOMB_RESISTANT,
 		bio = ARMOR_BIO_SHIELDED,
 		rad = ARMOR_RAD_MINOR
@@ -94,25 +94,49 @@
 
 /obj/item/clothing/head/helmet/space/rig/military
 	light_overlay = "helmet_light_dual_green"
+//[INF]
+	icon = 'infinity/icons/obj/clothing/obj_head.dmi'
+	item_icons = list(
+		slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi'
+	)
+//[/INF]
 	species_restricted = list(SPECIES_HUMAN)
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_head_helmet_unathi.dmi'
 		)
 
 /obj/item/clothing/suit/space/rig/military
+//[INF]
+	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(
+		slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi'
+	)
+//[/INF]
 	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_UNATHI)
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_suit_unathi.dmi'
 		)
 
 /obj/item/clothing/shoes/magboots/rig/military
+//[INF]
+	icon = 'infinity/icons/obj/clothing/obj_feet.dmi'
+	item_icons = list(
+		slot_shoes_str = 'infinity/icons/mob/onmob/onmob_feet.dmi'
+	)
+//[/INF]
 	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_UNATHI)
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_feet_unathi.dmi'
 		)
 
 /obj/item/clothing/gloves/rig/military
-	item_flags = ITEM_FLAG_THICKMATERIAL | ITEM_FLAG_NOCUFFS
+//[INF]
+	icon = 'infinity/icons/obj/clothing/obj_hands.dmi'
+	item_icons = list(
+		slot_gloves_str = 'infinity/icons/mob/onmob/onmob_hands.dmi'
+	)
+//[/INF]
+	item_flags = ITEM_FLAG_THICKMATERIAL //INF WAS ITEM_FLAG_THICKMATERIAL | ITEM_FLAG_NOCUFFS
 	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_UNATHI)
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_hands_unathi.dmi'
@@ -121,12 +145,12 @@
 /obj/item/weapon/rig/military/equipped
 	initial_modules = list(
 		/obj/item/rig_module/mounted/egun,
-		/obj/item/rig_module/vision/multi,
-		/obj/item/rig_module/grenade_launcher,
-		/obj/item/rig_module/ai_container,
+		//INF /obj/item/rig_module/vision/multi,
+		//INF /obj/item/rig_module/grenade_launcher,
+		//INF /obj/item/rig_module/ai_container,
 		/obj/item/rig_module/power_sink,
-		/obj/item/rig_module/electrowarfare_suite,
-		/obj/item/rig_module/chem_dispenser/combat,
+		//INF /obj/item/rig_module/electrowarfare_suite,
+		//INF /obj/item/rig_module/chem_dispenser/combat,
 		/obj/item/rig_module/cooling_unit,
-		/obj/item/rig_module/device/healthscanner
+		//INF /obj/item/rig_module/device/healthscanner
 		)

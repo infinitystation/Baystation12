@@ -10,7 +10,7 @@
 /area/ship/scrap/shuttle/outgoing)
 "ac" = (
 /obj/machinery/airlock_sensor{
-	frequency = 1383;
+	frequency = 1380;
 	id_tag = "bearcat_shuttle_sensor";
 	pixel_y = -24
 	},
@@ -20,9 +20,8 @@
 	icon_state = "4-8";
 	pixel_y = 0
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1383;
 	id_tag = "bearcat_shuttle_pump_out_internal"
 	},
 /turf/simulated/floor/plating,
@@ -228,7 +227,6 @@
 /obj/structure/closet/walllocker/emerglocker/north,
 /obj/machinery/floodlight,
 /obj/structure/handrai{
-	tag = "icon-handrail (EAST)";
 	icon_state = "handrail";
 	dir = 4
 	},
@@ -307,7 +305,6 @@
 	dir = 9
 	},
 /obj/structure/handrai{
-	tag = "icon-handrail (EAST)";
 	icon_state = "handrail";
 	dir = 4
 	},
@@ -526,9 +523,8 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/scrap/dock)
 "bZ" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 8;
-	frequency = 1379;
 	id_tag = "dock_star_pump"
 	},
 /obj/structure/cable{
@@ -656,7 +652,6 @@
 	pixel_y = 0
 	},
 /obj/structure/handrai{
-	tag = "icon-handrail (EAST)";
 	icon_state = "handrail";
 	dir = 4
 	},
@@ -707,7 +702,6 @@
 	dir = 5
 	},
 /obj/structure/handrai{
-	tag = "icon-handrail (EAST)";
 	icon_state = "handrail";
 	dir = 4
 	},
@@ -977,7 +971,6 @@
 	dir = 8
 	},
 /obj/structure/handrai{
-	tag = "icon-handrail (EAST)";
 	icon_state = "handrail";
 	dir = 4
 	},
@@ -1094,7 +1087,6 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	tag = "icon-map-scrubbers (NORTH)";
 	icon_state = "map-scrubbers";
 	dir = 1
 	},
@@ -1227,7 +1219,6 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	tag = "icon-map-scrubbers (NORTH)";
 	icon_state = "map-scrubbers";
 	dir = 1
 	},
@@ -1575,7 +1566,6 @@
 	},
 /obj/structure/closet/walllocker/emerglocker/west,
 /obj/structure/handrai{
-	tag = "icon-handrail (EAST)";
 	icon_state = "handrail";
 	dir = 4
 	},
@@ -1676,7 +1666,6 @@
 	pixel_x = -24
 	},
 /obj/structure/handrai{
-	tag = "icon-handrail (EAST)";
 	icon_state = "handrail";
 	dir = 4
 	},
@@ -1718,7 +1707,6 @@
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/handrai{
-	tag = "icon-handrail (WEST)";
 	icon_state = "handrail";
 	dir = 8
 	},
@@ -1765,7 +1753,6 @@
 /obj/item/weapon/storage/pill_bottle/antitox,
 /obj/item/weapon/storage/pill_bottle/kelotane,
 /obj/structure/handrai{
-	tag = "icon-handrail (WEST)";
 	icon_state = "handrail";
 	dir = 8
 	},
@@ -2076,7 +2063,6 @@
 "fs" = (
 /obj/structure/catwalk,
 /obj/structure/handrai{
-	tag = "icon-handrail (WEST)";
 	icon_state = "handrail";
 	dir = 8
 	},
@@ -2170,7 +2156,6 @@
 	dir = 6
 	},
 /obj/structure/handrai{
-	tag = "icon-handrail (EAST)";
 	icon_state = "handrail";
 	dir = 4
 	},
@@ -2188,7 +2173,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel,
 /obj/structure/lattice,
 /obj/structure/handrai{
-	tag = "icon-handrail (EAST)";
 	icon_state = "handrail";
 	dir = 4
 	},
@@ -2211,7 +2195,6 @@
 "fK" = (
 /obj/structure/catwalk,
 /obj/machinery/light/spot{
-	tag = "icon-tube_map (EAST)";
 	icon_state = "tube_map";
 	dir = 4
 	},
@@ -2221,7 +2204,6 @@
 /obj/structure/lattice,
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel,
 /obj/structure/handrai{
-	tag = "icon-handrail (WEST)";
 	icon_state = "handrail";
 	dir = 8
 	},
@@ -2246,7 +2228,6 @@
 	dir = 10
 	},
 /obj/structure/handrai{
-	tag = "icon-handrail (WEST)";
 	icon_state = "handrail";
 	dir = 8
 	},
@@ -2340,7 +2321,6 @@
 	dir = 8
 	},
 /obj/structure/railing/mapped{
-	tag = "icon-railing0 (WEST)";
 	icon_state = "railing0";
 	dir = 8
 	},
@@ -2514,7 +2494,6 @@
 	pixel_x = 28
 	},
 /obj/structure/handrai{
-	tag = "icon-handrail (WEST)";
 	icon_state = "handrail";
 	dir = 8
 	},
@@ -2549,12 +2528,10 @@
 	dir = 8
 	},
 /obj/structure/handrai{
-	tag = "icon-handrail (WEST)";
 	icon_state = "handrail";
 	dir = 8
 	},
 /obj/structure/railing/mapped{
-	tag = "icon-railing0 (WEST)";
 	icon_state = "railing0";
 	dir = 8
 	},
@@ -2674,7 +2651,6 @@
 	pixel_x = 32
 	},
 /obj/structure/railing/mapped{
-	tag = "icon-railing0 (WEST)";
 	icon_state = "railing0";
 	dir = 8
 	},
@@ -2765,7 +2741,6 @@
 	dir = 1
 	},
 /obj/structure/railing/mapped{
-	tag = "icon-railing0 (NORTH)";
 	icon_state = "railing0";
 	dir = 1
 	},
@@ -2961,7 +2936,6 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	tag = "icon-map-scrubbers (NORTH)";
 	icon_state = "map-scrubbers";
 	dir = 1
 	},
@@ -3557,8 +3531,7 @@
 	pressure_checks = 2;
 	external_pressure_bound_default = 0;
 	internal_pressure_bound_default = 2000;
-	pressure_checks_default = 2;
-	frequency = 1443
+	pressure_checks_default = 2
 	},
 /turf/simulated/floor/reinforced/oxygen,
 /area/ship/scrap/maintenance/atmos)
@@ -3856,11 +3829,11 @@
 /area/ship/scrap/crew/saloon)
 "jc" = (
 /obj/machinery/door/airlock/external/bolted/cycling{
-	frequency = 1383;
+	frequency = 1380;
 	id_tag = "bearcat_shuttle_out"
 	},
 /obj/machinery/access_button/airlock_exterior{
-	frequency = 1383;
+	frequency = 1380;
 	master_tag = "bearcat_shuttle";
 	pixel_x = 18;
 	pixel_y = -20
@@ -3991,8 +3964,7 @@
 	pressure_checks = 2;
 	external_pressure_bound_default = 0;
 	internal_pressure_bound_default = 2000;
-	pressure_checks_default = 2;
-	frequency = 1443
+	pressure_checks_default = 2
 	},
 /turf/simulated/floor/reinforced/airmix,
 /area/ship/scrap/maintenance/atmos)
@@ -4137,8 +4109,7 @@
 	pressure_checks = 2;
 	external_pressure_bound_default = 0;
 	internal_pressure_bound_default = 2000;
-	pressure_checks_default = 2;
-	frequency = 1443
+	pressure_checks_default = 2
 	},
 /turf/simulated/floor/reinforced/nitrogen,
 /area/ship/scrap/maintenance/atmos)
@@ -4640,13 +4611,13 @@
 /area/ship/scrap/command/bridge)
 "lc" = (
 /obj/machinery/access_button/airlock_exterior{
-	frequency = 1383;
+	frequency = 1380;
 	master_tag = "bearcat_dock_port";
 	pixel_x = -18;
 	pixel_y = 20
 	},
 /obj/machinery/door/airlock/external/bolted/cycling{
-	frequency = 1383;
+	frequency = 1380;
 	id_tag = "dock_port_out"
 	},
 /obj/machinery/shield_diffuser,
@@ -4704,9 +4675,8 @@
 /turf/simulated/wall,
 /area/ship/scrap/garden)
 "nc" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1383;
 	id_tag = "dock_port_pump"
 	},
 /obj/structure/cable{
@@ -4796,12 +4766,12 @@
 	dir = 1
 	},
 /obj/machinery/airlock_sensor{
-	frequency = 1383;
+	frequency = 1380;
 	id_tag = "dock_port_sensor";
 	pixel_y = 36
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1383;
+	frequency = 1380;
 	id_tag = "bearcat_dock_port";
 	pixel_y = 25;
 	tag_airpump = "dock_port_pump";
@@ -4856,7 +4826,7 @@
 	opacity = 0
 	},
 /obj/machinery/access_button/airlock_interior{
-	frequency = 1383;
+	frequency = 1380;
 	master_tag = "bearcat_dock_port";
 	pixel_x = 12;
 	pixel_y = 20
@@ -4866,7 +4836,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/external/bolted/cycling{
-	frequency = 1383;
+	frequency = 1380;
 	id_tag = "dock_port_in"
 	},
 /obj/structure/cable{
@@ -5091,7 +5061,6 @@
 /obj/structure/catwalk,
 /obj/structure/railing/mapped,
 /obj/machinery/light/spot{
-	tag = "icon-tube_map (WEST)";
 	icon_state = "tube_map";
 	dir = 8
 	},
@@ -5364,13 +5333,11 @@
 /turf/simulated/floor/plating,
 /area/ship/scrap/hidden)
 "zb" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1383;
 	id_tag = "bearcat_shuttle_pump_out_external"
 	},
 /obj/structure/handrai{
-	tag = "icon-handrail (EAST)";
 	icon_state = "handrail";
 	dir = 4
 	},
@@ -5821,12 +5788,10 @@
 /area/ship/scrap/crew/medbay)
 "HO" = (
 /obj/structure/handrai{
-	tag = "icon-handrail (EAST)";
 	icon_state = "handrail";
 	dir = 4
 	},
 /obj/structure/handrai{
-	tag = "icon-handrail (WEST)";
 	icon_state = "handrail";
 	dir = 8
 	},
@@ -5866,7 +5831,6 @@
 /area/ship/scrap/command/bridge)
 "Is" = (
 /obj/structure/handrai{
-	tag = "icon-handrail (EAST)";
 	icon_state = "handrail";
 	dir = 4
 	},
@@ -5933,7 +5897,6 @@
 /obj/random/voidsuit,
 /obj/random/voidsuit,
 /obj/structure/handrai{
-	tag = "icon-handrail (WEST)";
 	icon_state = "handrail";
 	dir = 8
 	},
@@ -6008,7 +5971,6 @@
 	},
 /obj/structure/catwalk,
 /obj/structure/handrai{
-	tag = "icon-handrail (EAST)";
 	icon_state = "handrail";
 	dir = 4
 	},
@@ -6102,7 +6064,6 @@
 /area/ship/scrap/comms)
 "Lx" = (
 /obj/structure/handrai{
-	tag = "icon-handrail (WEST)";
 	icon_state = "handrail";
 	dir = 8
 	},
@@ -6525,7 +6486,6 @@
 	icon_state = "intact"
 	},
 /obj/structure/handrai{
-	tag = "icon-handrail (WEST)";
 	icon_state = "handrail";
 	dir = 8
 	},
@@ -6623,7 +6583,6 @@
 	pixel_x = -22
 	},
 /obj/structure/handrai{
-	tag = "icon-handrail (EAST)";
 	icon_state = "handrail";
 	dir = 4
 	},
@@ -6656,7 +6615,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/structure/handrai{
-	tag = "icon-handrail (WEST)";
 	icon_state = "handrail";
 	dir = 8
 	},
@@ -6762,14 +6720,14 @@
 /area/ship/scrap/cargo)
 "Yb" = (
 /obj/machinery/door/airlock/external/bolted/cycling{
-	frequency = 1383;
+	frequency = 1380;
 	id_tag = "bearcat_shuttle_in"
 	},
 /obj/structure/cable{
 	icon_state = "4-10"
 	},
 /obj/machinery/access_button/airlock_interior{
-	frequency = 1383;
+	frequency = 1380;
 	master_tag = "bearcat_shuttle";
 	pixel_x = -12;
 	pixel_y = 20
@@ -6828,13 +6786,12 @@
 /turf/simulated/floor/plating,
 /area/ship/scrap/maintenance/power)
 "Zb" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1383;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	id_tag = "bearcat_shuttle_pump"
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	cycle_to_external_air = 1;
-	frequency = 1383;
+	frequency = 1380;
 	id_tag = "bearcat_shuttle";
 	pixel_x = 0;
 	pixel_y = -24;
@@ -6870,7 +6827,6 @@
 "Zv" = (
 /obj/structure/lattice,
 /obj/structure/handrai{
-	tag = "icon-handrail (EAST)";
 	icon_state = "handrail";
 	dir = 4
 	},

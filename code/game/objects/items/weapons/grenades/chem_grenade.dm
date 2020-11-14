@@ -159,7 +159,12 @@
 
 		for(var/obj/item/weapon/reagent_containers/glass/G in beakers)
 			G.reagents.trans_to_obj(src, G.reagents.total_volume)
-
+//[INF]
+		if(istype(loc, /mob/living/carbon))		//drop dat grenade if it goes off in your hand
+			var/mob/living/carbon/C = loc
+			C.drop_from_inventory(src)
+			C.throw_mode_off()
+//[/INF]
 		if(src.reagents.total_volume) //The possible reactions didnt use up all reagents.
 			var/datum/effect/effect/system/steam_spread/steam = new /datum/effect/effect/system/steam_spread()
 			steam.set_up(10, 0, get_turf(src))
@@ -169,12 +174,12 @@
 			for(var/atom/A in view(affected_area, src.loc))
 				if( A == src ) continue
 				src.reagents.touch(A)
-
+/* INF
 		if(istype(loc, /mob/living/carbon))		//drop dat grenade if it goes off in your hand
 			var/mob/living/carbon/C = loc
 			C.drop_from_inventory(src)
 			C.throw_mode_off()
-
+/INF */
 		set_invisibility(INVISIBILITY_MAXIMUM) //Why am i doing this?
 		spawn(50)		   //To make sure all reagents can work
 			qdel(src)	   //correctly before deleting the grenade.

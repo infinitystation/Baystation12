@@ -1,0 +1,58 @@
+"a" = (/turf/space,/area/space)
+"b" = (/turf/unsimulated/wall/alien{icon_state = "abductor_add2_dr"},/area/map_template/abductors_station)
+"c" = (/obj/machinery/abductor_tele,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"d" = (/obj/effect/landmark{name = "AbductorShip"},/obj/machinery/abductor_hub,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"e" = (/obj/effect/landmark{name = "abductor_sci"},/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"f" = (/obj/effect/landmark{name = "abductor_agent"},/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"g" = (/turf/unsimulated/wall/alien{icon_state = "abductor_right_up"},/area/map_template/abductors_station)
+"h" = (/obj/machinery/abductor_disguise,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"i" = (/turf/unsimulated/wall/alien{icon_state = "abductor_left_up"},/area/map_template/abductors_station)
+"j" = (/obj/machinery/computer/abductor/camera,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"k" = (/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"l" = (/obj/structure/closet/abductor,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"m" = (/obj/structure/closet/experimention_machine,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"n" = (/obj/structure/table/alien,/obj/item/weapon/surgicaldrill/abductor,/obj/item/weapon/scalpel/abductor,/obj/item/weapon/retractor/abductor,/obj/item/weapon/hemostat/abductor,/obj/item/weapon/circular_saw/abductor,/obj/item/weapon/bonegel,/obj/item/weapon/bonesetter/bone_mender,/obj/item/weapon/cautery/abductor,/obj/item/weapon/FixOVein/clot,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"p" = (/obj/machinery/vending/abductor,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"q" = (/obj/machinery/optable/abductor,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"r" = (/obj/structure/table/alien,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"s" = (/turf/unsimulated/wall/alien{icon_state = "abductor_up_left"},/area/map_template/abductors_station)
+"t" = (/turf/unsimulated/wall/alien{icon_state = "abductor_mid_left"},/area/map_template/abductors_station)
+"u" = (/turf/unsimulated/wall/alien{icon_state = "abductor_bot_left"},/area/map_template/abductors_station)
+"v" = (/turf/unsimulated/wall/alien{icon_state = "abductor_up_right"},/area/map_template/abductors_station)
+"w" = (/turf/unsimulated/wall/alien{icon_state = "abductor_mid_right"},/area/map_template/abductors_station)
+"x" = (/turf/unsimulated/wall/alien{icon_state = "abductor_bot_right"},/area/map_template/abductors_station)
+"y" = (/turf/unsimulated/wall/alien{icon_state = "abductor_mid_up"},/area/map_template/abductors_station)
+"z" = (/turf/unsimulated/wall/alien{icon_state = "abductor_mid_down"},/area/map_template/abductors_station)
+"A" = (/turf/unsimulated/wall/alien{icon_state = "abductor_ul"},/area/map_template/abductors_station)
+"B" = (/turf/unsimulated/wall/alien{icon_state = "abductor_ur"},/area/map_template/abductors_station)
+"C" = (/turf/unsimulated/wall/alien{icon_state = "abductor_dl"},/area/map_template/abductors_station)
+"D" = (/turf/unsimulated/wall/alien{icon_state = "abductor_dr"},/area/map_template/abductors_station)
+"E" = (/turf/unsimulated/wall/alien{icon_state = "abductor_add_ur"},/area/map_template/abductors_station)
+"F" = (/turf/unsimulated/wall/alien{icon_state = "abductor_add2_ur"},/area/map_template/abductors_station)
+"G" = (/turf/unsimulated/wall/alien{icon_state = "abductor_add_ul"},/area/map_template/abductors_station)
+"H" = (/turf/unsimulated/wall/alien{icon_state = "abductor_add2_ul"},/area/map_template/abductors_station)
+"I" = (/turf/unsimulated/wall/alien{icon_state = "abductor_add_dr"},/area/map_template/abductors_station)
+"J" = (/turf/unsimulated/wall/alien{icon_state = "abductor_add2_dl"},/area/map_template/abductors_station)
+"K" = (/turf/unsimulated/wall/alien{icon_state = "abductor_add_dl"},/area/map_template/abductors_station)
+"L" = (/turf/unsimulated/wall/alien{icon_state = "abductor_right_down"},/area/map_template/abductors_station)
+"M" = (/turf/unsimulated/wall/alien{icon_state = "abductor_left_down"},/area/map_template/abductors_station)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaa
+aaaaaaGgyiEaaaaaa
+aaaaaHAhcdBFaaaaa
+aaaaasjekfmvaaaaa
+aaaaatlkkkrwaaaaa
+aaaaaurkkkkxaaaaa
+aaaaaJCpqnDbaaaaa
+aaaaaaKLzMIaaaaaa
+aaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaa
+"}

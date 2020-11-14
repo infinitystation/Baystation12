@@ -115,6 +115,7 @@
 							/obj/item/weapon/card/data/disk,
 							/obj/item/weapon/card/id,
 						) //Should be enough of a selection for most purposes
+	var/list/emag_sounds = list('infinity/sound/SS2/effects/emag_act.wav') //inf
 
 var/const/NO_EMAG_ACT = -50
 /obj/item/weapon/card/emag/resolve_attackby(atom/A, mob/user)
@@ -126,6 +127,7 @@ var/const/NO_EMAG_ACT = -50
 	A.add_fingerprint(user)
 	if(used_uses)
 		log_and_message_admins("emagged \an [A].")
+		playsound(get_turf(A), pick(emag_sounds), 40, extrarange = -3) //inf
 
 	if(uses<1)
 		user.visible_message("<span class='warning'>\The [src] fizzles and sparks - it seems it's been used once too often, and is now spent.</span>")
@@ -241,8 +243,8 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/weapon/card/id/proc/show(mob/user as mob)
 	if(front && side)
-		user << browse_rsc(front, "front.png")
-		user << browse_rsc(side, "side.png")
+		send_rsc(user, front, "front.png")
+		send_rsc(user, side, "side.png")
 	var/datum/browser/popup = new(user, "idcard", name, 600, 250)
 	popup.set_content(dat())
 	popup.set_title_image(usr.browse_rsc_icon(src.icon, src.icon_state))
@@ -563,7 +565,7 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/weapon/card/id/civilian
 	name = "identification card"
 	desc = "A card issued to civilian staff."
-	job_access_type = /datum/job/assistant
+	job_access_type = DEFAULT_JOB_TYPE
 	detail_color = COLOR_CIVIE_GREEN
 
 /obj/item/weapon/card/id/civilian/bartender

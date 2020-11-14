@@ -146,7 +146,7 @@
 		if(!(lying || resting))
 			if(limb_pain)
 				emote("scream")
-			custom_emote(VISIBLE_MESSAGE, "collapses!")
+			custom_emote(VISIBLE_MESSAGE, "падает!")
 		Weaken(3) //can't emote while weakened, apparently.
 
 /mob/living/carbon/human/proc/handle_grasp()
@@ -257,7 +257,7 @@
 	if(isSynthetic())
 		var/obj/item/organ/internal/cell/C = internal_organs_by_name[BP_CELL]
 		if(istype(C))
-			if(!C.is_usable())
+			if(!C.is_usable() || !C.percent())
 				return TRUE
 	else if(should_have_organ(BP_HEART))
 		var/obj/item/organ/internal/heart/heart = internal_organs_by_name[BP_HEART]

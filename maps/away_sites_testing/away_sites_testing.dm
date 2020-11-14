@@ -3,6 +3,9 @@
 
 	#include "away_sites_testing_define.dm"
 
+	//[INF]	Customs-require	looking in example dir
+	#include "../example/compile_required_snatch.dm"
+	//[/INF]
 	#include "blank.dmm"
 
 	#include "../away/empty.dmm"
@@ -22,6 +25,8 @@
 //INF	#include "../away/skrellscoutship/skrellscoutship.dm"
 	#include "../away/unishi/unishi.dm"
 	#include "../away/ascent/ascent.dm"
+	#include "../away/meatstation/meatstation.dm"
+	#include "../away/miningstation/miningstation.dm"
 
 	#include "../away/voxship/voxship.dm"
 
@@ -40,6 +45,7 @@
 	#include "../away_inf/yacht/yacht.dm"
 	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
 //	#include "../away_inf/patrol/patrol.dm"
+	#include "../away_inf/ascent/ascent.dm"
 //[/INF]
 
 	#define using_map_DATUM /datum/map/away_sites_testing

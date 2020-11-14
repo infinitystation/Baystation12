@@ -20,9 +20,11 @@
 /decl/surgery_step/implant_removal_ghetto/assess_bodypart(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = ..()
 	if(affected)
-		for(var/obj/O in affected.implants)
-			if(!istype(O, /obj/item/organ/internal))
-				return affected
+		if(!affected.wounds)
+			return FALSE
+	for(var/datum/wound/wound in affected.wounds)
+		if(LAZYLEN(wound.embedded_objects))
+			return affected
 	return FALSE
 
 /decl/surgery_step/implant_removal_ghetto/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool)

@@ -1,9 +1,29 @@
 /decl/cultural_info/location/moghes
 	name = HOME_SYSTEM_MOGHES
-	description = "A dead world full of strange, monstrous creatures and mysterious and dangerous landscapes; \
-	this is the home of the Unathi. Unathi believe this world was once lush and full of life, but due to the \
-	decisions of the Precursors, it was killed and left to rot. For the Unathi, it is their duty to bring it \
-	back to life, or to become strong enough that they don't have to."
-	ruling_body = "Clan Hegemony"
-	distance = "20 light years"
-	language = LANGUAGE_UNATHI_SINTA //inf
+	description = "Могес - мертвый мир, полный странных, чудовищных существ и таинственных  ландшафтов, является \
+	домом для Унати. Они считают, что этот мир когда-то был пышным и полным жизни, но из-за \
+	решения Предтечей, он был разрушен и оставлен гнить. Главная цель всех Унати - возродить \
+	былое величие или стать достаточно сильными, чтобы обеспечить себе светлое будущее."
+	ruling_body = "Клановый Гегемон"
+	distance = "20 световых лет"
+	language = LANGUAGE_UNATHI_SINTA	// INF
+
+/decl/cultural_info/location/ouere
+	name = HOME_SYSTEM_OUERE
+	description = "Недавно обнаруженная система Врат Предшественников, соединяющих Могес с его младшей сестрой \
+	планетой Оуэр, видела множество кланов и небольших групп, шагающих через нее в этот новый мир. Всё ещё \
+	нет четкого консенсуса относительно того, каково будет отношение к этому новому миру - либо как к логическому продолжению Могеса, совершенно новой сущности, \
+	или просто как к ресурсной базе для улучшения родной планеты. Многие колонисты, охотники за артефактами и подвергшиеся остракизму группы \
+	стекались на планету, и число последователей Маркешских общин росло довольно быстро, по сравнению с другими частями Могеса."
+	ruling_body = "Клановая Гегемония"
+	distance = "20 световых лет"
+	language = LANGUAGE_UNATHI_SINTA	// INF
+
+/decl/cultural_info/location/offworld
+	name = HOME_SYSTEM_OFFWORLD
+	description = "То ли из-за несчастных обстоятельств, то ли по собственной воле Вы оставили Могес в поисках своей собственной цели.\
+	Вы один из многих Унати, что бросили вызов опасностям и покинули свою собственную планету, чтобы вершить свою собственную судьбу, будь то в \
+	обжигающем жаре Цину, тропических раях Кингстона или шумных верфях Цереры."
+	ruling_body = "Варьируется"
+	distance = "Варьируется"
+

@@ -410,17 +410,15 @@
 	pixel_y = 0;
 	tag_exterior_sensor = "blueriver_shuttle_sensor_external"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1331;
 	id_tag = "blueriver_shuttle_pump"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/bluespaceriver/ship/airlock)
 "aE" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1331;
 	id_tag = "blueriver_shuttle_pump"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -432,9 +430,8 @@
 	pixel_x = 24;
 	pixel_y = 0
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1331;
 	id_tag = "blueriver_shuttle_pump"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -453,9 +450,8 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 2;
-	frequency = 1331;
 	id_tag = "blueriver_shuttle_pump_out_internal"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -749,8 +745,7 @@
 /obj/item/device/spaceflare,
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -954,18 +949,16 @@
 /turf/simulated/wall/titanium,
 /area/bluespaceriver/ship/restroom)
 "bq" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 2;
-	frequency = 1331;
 	id_tag = "blueriver_shuttle_pump_out_internal"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/bluespaceriver/ship/airlock)
 "br" = (
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1331;
 	id_tag = "blueriver_shuttle_pump_out_external"
 	},
 /turf/simulated/floor/plating,
@@ -1052,8 +1045,7 @@
 /obj/item/weapon/storage/box/glowsticks,
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/railing/mapped,
 /obj/effect/floor_decal/industrial/outline/grey,
@@ -1107,9 +1099,8 @@
 	dir = 4;
 	icon_state = "bulb_map"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 2;
-	frequency = 1331;
 	id_tag = "blueriver_shuttle_pump_out_internal"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -2090,9 +2081,8 @@
 	},
 /area/bluespaceriver/ground)
 "fy" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1331;
 	id_tag = "blueriver_shuttle_pump_out_external"
 	},
 /obj/structure/catwalk,

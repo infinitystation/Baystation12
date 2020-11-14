@@ -61,20 +61,20 @@
 	path = /obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup
 	flags = GEAR_HAS_TYPE_SELECTION
 
-/datum/gear/knife
-	display_name = "folding knife"
-	path = /obj/item/weapon/material/knife/folding
-	cost = 3
+/datum/gear/knives
+	display_name = "knives selection"
+	description = "A selection of knives."
+	path = /obj/item/weapon/material/knife
 
-/datum/gear/knife_wood
-	display_name = "peasant knife"
-	path = /obj/item/weapon/material/knife/folding/wood
-	cost = 3
-
-/datum/gear/knife_tacticool
-	display_name = "tactical folding knife"
-	path = /obj/item/weapon/material/knife/folding/tacticool
-	cost = 3
+/datum/gear/knives/New()
+	..()
+	var/knives = list()
+	knives["Folding knife"] = /obj/item/weapon/material/knife/folding
+	knives["peasant folding knife"] = /obj/item/weapon/material/knife/folding/wood
+	knives["tactical folding knife"] = /obj/item/weapon/material/knife/folding/tacticool
+	knives["utility knife"] = /obj/item/weapon/material/knife/utility
+	knives["lightweight utility knife"] = /obj/item/weapon/material/knife/utility/lightweight
+	gear_tweaks += new/datum/gear_tweak/path(knives)
 
 /datum/gear/lunchbox
 	display_name = "lunchbox"
@@ -124,8 +124,14 @@
 	display_name = "work visa"
 	description = "A work visa issued by the Sol Central Government for the purpose of work."
 	path = /obj/item/weapon/paper/workvisa
+
+/datum/gear/travelvisa
+	display_name = "travel visa"
+	description = "A travel visa issued by the Sol Central Government for the purpose of recreation."
+	path = /obj/item/weapon/paper/travelvisa
 */
-/datum/gear/mirror
+
+/datum/gear/mirror/
 	display_name = "handheld mirror"
 	sort_category = "Cosmetics"
 	path = /obj/item/weapon/mirror
@@ -202,6 +208,11 @@
 /datum/gear/ashtray
 	display_name = "ashtray, plastic"
 	path = /obj/item/weapon/material/ashtray/plastic
+
+/datum/gear/cigscase
+	display_name = "fancy cigarette case"
+	path = /obj/item/weapon/storage/fancy/cigarettes/case
+	cost = 2
 
 /datum/gear/cigars
 	display_name = "fancy cigar case"

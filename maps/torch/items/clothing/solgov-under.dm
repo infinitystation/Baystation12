@@ -161,6 +161,37 @@
 /obj/item/clothing/under/solgov/utility/fleet/exploration
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/exploration/fleet)
 
+/obj/item/clothing/under/solgov/utility/fleet/polopants
+	name = "fleet polo and pants"
+	desc = "An alternative utility uniform of the SCG Fleet, specially designed for engineering staff. The pants sports some yellow reflective stripes, and have knee pads."
+	icon_state = "navypolopants"
+	worn_state = "navypolopants"
+
+/obj/item/clothing/under/solgov/utility/fleet/polopants/command
+	desc = "An alternative utility uniform of the SCG Fleet. The pants have knee pads."
+	icon_state = "navypolopantsnostripe"
+	worn_state = "navypolopantscom"
+
+/obj/item/clothing/under/solgov/utility/fleet/polopants/security
+	desc = "An alternative utility uniform of the SCG Fleet. The pants have knee pads."
+	icon_state = "navypolopantsnostripe"
+	worn_state = "navypolopantssec"
+
+/obj/item/clothing/under/solgov/utility/fleet/polopants/medical
+	desc = "An alternative utility uniform of the SCG Fleet, specially designed for medics and doctors. The pants have knee pads."
+	icon_state = "navypolopantsnostripe"
+	worn_state = "navypolopantsmed"
+
+/obj/item/clothing/under/solgov/utility/fleet/polopants/supply
+	desc = "An alternative utility uniform of the SCG Fleet. The pants have knee pads."
+	icon_state = "navypolopantsnostripe"
+	worn_state = "navypolopantssup"
+
+/obj/item/clothing/under/solgov/utility/fleet/polopants/service
+	desc = "An alternative utility uniform of the SCG Fleet. The pants have knee pads."
+	icon_state = "navypolopantsnostripe"
+	worn_state = "navypolopantssrv"
+
 /obj/item/clothing/under/solgov/utility/fleet/combat
 	name = "fleet fatigues"
 	desc = "Alternative utility uniform of the SCG Fleet, for when coveralls are impractical."
@@ -204,7 +235,7 @@
 	item_state = "jensensuit"
 	worn_state = "greenutility"
 
-//obj/item/clothing/under/solgov/utility/army/command
+/obj/item/clothing/under/solgov/utility/army/command
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/command/army)
 
 /obj/item/clothing/under/solgov/utility/army/engineering

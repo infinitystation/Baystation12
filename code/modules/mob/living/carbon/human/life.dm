@@ -49,7 +49,7 @@
 
 	fire_alert = 0 //Reset this here, because both breathe() and handle_environment() have a chance to set it.
 
-	//TODO: seperate this out
+	//TODO: separate this out
 	// update the current life tick, can be used to e.g. only do something every 4 ticks
 	life_tick++
 
@@ -68,7 +68,9 @@
 	if(stat != DEAD && !InStasis())
 		//Updates the number of stored chemicals for powers
 		handle_changeling()
-
+//[INF]
+		if(status_flags & FAKEDEATH) return //act like a dead mob - even if its broken by itself...
+//[/INF]
 		//Organs and blood
 		handle_organs()
 		stabilize_body_temperature() //Body temperature adjusts itself (self-regulation)
@@ -138,7 +140,7 @@
 
 // Calculate how vulnerable the human is to the current pressure.
 // Returns 0 (equals 0 %) if sealed in an undamaged suit that's rated for the pressure, 1 if unprotected (equals 100%).
-// Suitdamage can modifiy this in 10% steps.
+// Suitdamage can modify this in 10% steps.
 /mob/living/carbon/human/proc/get_pressure_weakness(pressure)
 
 	var/pressure_adjustment_coefficient = 0
@@ -148,7 +150,7 @@
 		var/list/covers = get_covering_equipped_items(zone)
 		var/zone_exposure = 1
 		for(var/obj/item/clothing/C in covers)
-			zone_exposure = min(zone_exposure, C.get_pressure_weakness(pressure))
+			zone_exposure = min(zone_exposure, C.get_pressure_weakness(pressure,zone))
 		if(zone_exposure >= 1)
 			return 1
 		pressure_adjustment_coefficient = max(pressure_adjustment_coefficient, zone_exposure)
@@ -156,7 +158,7 @@
 
 	return pressure_adjustment_coefficient
 
-// Calculate how much of the enviroment pressure-difference affects the human.
+// Calculate how much of the environment pressure-difference affects the human.
 /mob/living/carbon/human/calculate_affecting_pressure(var/pressure)
 	var/pressure_difference
 
@@ -200,7 +202,7 @@
 		eye_blurry = 1
 	else
 		//blindness
-		if(!(sdisabilities & BLIND))
+		if(!(sdisabilities & BLINDED))
 			if(equipment_tint_total >= TINT_BLIND)	// Covered eyes, heal faster
 				eye_blurry = max(eye_blurry-2, 0)
 
@@ -286,7 +288,7 @@
 		damage = Floor(damage * species.get_radiation_mod(src))
 		if(damage)
 			adjustToxLoss(damage * RADIATION_SPEED_COEFFICIENT)
-			immunity = max(0, immunity - damage * 15 * RADIATION_SPEED_COEFFICIENT) 
+			immunity = max(0, immunity - damage * 15 * RADIATION_SPEED_COEFFICIENT)
 			updatehealth()
 			if(!isSynthetic() && organs.len)
 				var/obj/item/organ/external/O = pick(organs)
@@ -561,7 +563,7 @@
 
 	// Trace chemicals
 	for(var/T in chem_doses)
-		if(bloodstr.has_reagent(T) || ingested.has_reagent(T) || touching.has_reagent(T))
+		if(bloodstr?.has_reagent(T) || ingested?.has_reagent(T) || touching?.has_reagent(T))
 			continue
 		var/datum/reagent/R = T
 		chem_doses[T] -= initial(R.metabolism)*2
@@ -885,11 +887,23 @@
 		to_chat(src,"<span class='notice'>You feel like you're [pick("moving","flying","floating","falling","hovering")].</span>")
 
 /mob/living/carbon/human/proc/handle_changeling()
+/*original
 	if(mind && mind.changeling)
 		mind.changeling.regenerate()
+/original*/
+//[INF]
+	if(!client) return
+	if(mind?.changeling)
+		mind.changeling.regenerate()
+		if(hud_used?.changeling_chems)
+			var/datum/changeling/changeling = mind.changeling
+			hud_used.changeling_chems.invisibility = 0
+			hud_used.changeling_chems.maptext = "<div align='center' valign='middle' style='position:relative; top:0px; left:6px'><font color='#dd66dd'>[round(changeling.chem_charges)]</font></div>"
+	else
+		hud_used.changeling_chems.invisibility = INVISIBILITY_ABSTRACT
+//[/INF]
 
 /mob/living/carbon/human/proc/handle_shock()
-	..()
 	if(status_flags & GODMODE)	return 0	//godmode
 	if(!can_feel_pain())
 		shock_stage = 0
@@ -1008,9 +1022,14 @@
 		if(wear_id)
 			var/obj/item/weapon/card/id/I = wear_id.GetIdCard()
 			if(I)
-				var/datum/job/J = SSjobs.get_by_title(I.GetJobName())
-				if(J)
-					holder.icon_state = J.hud_icon
+				//[INF]		There is no job "Centcom"
+				if(I.GetJobName() == "Centcom")
+					holder.icon_state = "hudcentcom"
+				else
+				//[/INF]
+					var/datum/job/J = SSjobs.get_by_title(I.GetJobName())
+					if(J)
+						holder.icon_state = J.hud_icon
 
 		hud_list[ID_HUD] = holder
 
@@ -1114,6 +1133,7 @@
 	shock_stage = 0
 	..()
 	adjust_stamina(100)
+	UpdateAppearance()
 
 /mob/living/carbon/human/reset_view(atom/A)
 	..()

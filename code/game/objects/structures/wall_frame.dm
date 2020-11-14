@@ -194,3 +194,6 @@
 
 /obj/structure/wall_frame/hull
 	paint_color = COLOR_HULL
+
+/obj/structure/wall_frame/hull/vox
+	paint_color = COLOR_GREEN_GRAY

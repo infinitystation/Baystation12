@@ -6,7 +6,10 @@
 	next_stages = list(/decl/crafting_stage/welding/secbot)
 
 /decl/crafting_stage/secbot_signaller/can_begin_with(var/obj/item/thing)
+/*ORIGINAL
 	. = istype(thing) && thing.type == begins_with_object_type
+/ORIGINAL*/
+	. = istype(thing) && (thing in typesof(begins_with_object_type)) //INF
 
 /decl/crafting_stage/welding/secbot
 	progress_message = "You weld a hole into the front of the assembly."

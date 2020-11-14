@@ -6,9 +6,11 @@
 	anchored = 0
 
 	use_power = POWER_USE_IDLE
-	idle_power_usage = 100 //Watts, I hope.  Just enough to do the computer and display things.
+	idle_power_usage = 100 //Watts, W hope.  Just enough to do the computer and display things.
 
-	var/max_power = 500000
+	var/integrity = 100 //INF
+
+	var/max_power = 3 MEGAWATTS //INF, WAS 500000
 	var/thermal_efficiency = 0.65
 
 	var/obj/machinery/atmospherics/binary/circulator/circ1
@@ -128,12 +130,18 @@
 	if(circ2.network2)
 		circ2.network2.update = 1
 
+	stat = integrity ? stat : BROKEN //INF
+
 	//Exceeding maximum power leads to some power loss
 	if(effective_gen > max_power && prob(5))
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 		s.set_up(3, 1, src)
 		s.start()
 		stored_energy *= 0.5
+		if (powernet)
+			powernet.apcs_overload(0, 2, 5)
+
+		integrity = clamp(integrity - ((effective_gen - max_power) / 1e6) ** 3, 0, integrity) //INF
 
 	//Power
 	last_circ1_gen = circ1.return_stored_energy()
@@ -152,7 +160,7 @@
 		update_icon()
 	add_avail(effective_gen)
 
-/obj/machinery/power/generator/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/machinery/power/generator/attackby(obj/item/W as obj, mob/user as mob) //INF, was: /obj/machinery/power/generator/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(isWrench(W))
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
 		anchored = !anchored
@@ -165,6 +173,22 @@
 		else
 			disconnect_from_network()
 		reconnect()
+	//[INF]
+	if(istype(W, /obj/item/stack/nanopaste))
+		var/obj/item/stack/nanopaste/S = W
+		if(effective_gen < (max_power * 0.1))
+			if((integrity > initial(integrity) / 4) && (integrity < 100))
+				user.visible_message("[user.name] starts to applying [S] on [src].", \
+						"You start to apply [S] on [src].")
+				if(do_after(user, 5 SECOND, src))
+					if(S.use(1))
+						integrity = clamp(integrity + initial(integrity) / 10, 0, initial(integrity))
+						to_chat(user, "\icon[src] [src] has successfully repaired.")
+			else
+				to_chat(user, "\icon[src] [src] can not be repaired!")
+		else
+			to_chat(user, "\icon[src] [src] must be stoped first!")
+	//[/INF]
 	else
 		..()
 
@@ -186,6 +210,7 @@
 		vertical = 1
 
 	var/data[0]
+	data["integrity"] = integrity //INF
 	data["totalOutput"] = effective_gen/1000
 	data["maxTotalOutput"] = max_power/1000
 	data["thermalOutput"] = last_thermal_gen/1000

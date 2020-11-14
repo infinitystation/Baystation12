@@ -30,7 +30,8 @@
 		SPECIES_VOX = 'icons/mob/species/vox/onmob_head_vox.dmi',
 		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_head_unathi.dmi',
-		SPECIES_EROSAN = 'infinity/icons/mob/species/erosan/mask.dmi',
+		SPECIES_EROSAN = 'infinity/icons/mob/species/erosan/mask.dmi', //INF,
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi' //INF
 		)
 
 /obj/item/clothing/head/helmet/nt
@@ -85,13 +86,14 @@
 	siemens_coefficient = 0.7
 	action_button_name = "Toggle Visor"
 
-/obj/item/clothing/head/helmet/riot/attack_self(mob/user as mob)
-	if(src.icon_state == initial(icon_state))
-		src.icon_state = "[icon_state]_up"
-		to_chat(user, "You raise the visor on the [src].")
-	else
-		src.icon_state = initial(icon_state)
-		to_chat(user, "You lower the visor on the [src].")
+/obj/item/clothing/head/helmet/riot/attack_self(mob/user)
+	body_parts_covered ^= EYES|FACE
+	icon_state = initial(icon_state)
+	var/action = "lowers"
+	if (~body_parts_covered & EYES)
+		icon_state += "_up"
+		action = "raises"
+	visible_message(SPAN_ITALIC("\The [user] [action] the visor on \the [src]."), range = 3)
 	update_clothing_icon()
 
 /obj/item/clothing/head/helmet/ablative
@@ -216,11 +218,6 @@
 	name = "asset protection medical helmet"
 	desc = "An in-atmosphere helmet worn by many corporate and private asset protection forces. Has red and white highlights."
 	icon_state = "erthelmet_med"
-
-/obj/item/clothing/head/helmet/tactical/mirania
-	name = "bundeforz tactical helmet"
-	desc = "A light grey helmet made from advanced ceramic. Comfortable and robust."
-	icon_state = "m_helmet"
 
 /obj/item/clothing/head/helmet/nt/pilot
 	name = "corporate pilot's helmet"

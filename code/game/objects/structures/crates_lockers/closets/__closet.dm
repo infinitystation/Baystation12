@@ -331,12 +331,12 @@
 		if(isMultimeter(W))
 			var/obj/item/device/multitool/multimeter/O = W
 			if(O.mode != METER_CHECKING)
-				to_chat(user, "<span class='notice'>Переключите мультиметр.</span>")
+				to_chat(user, "<span class='notice'>РџРµСЂРµРєР»СЋС‡РёС‚Рµ РјСѓР»СЊС‚РёРјРµС‚СЂ.</span>")
 			else
 				if (user.skill_check(SKILL_ELECTRICAL, SKILL_ADEPT))
 					src.interact(usr)
 				else
-					to_chat(user, "<span class='notice'>Вы не умеете работать с этим замком.</span>")
+					to_chat(user, "<span class='notice'>Р’С‹ РЅРµ СѓРјРµРµС‚Рµ СЂР°Р±РѕС‚Р°С‚СЊ СЃ СЌС‚РёРј Р·Р°РјРєРѕРј.</span>")
 		else
 			src.togglelock(user, W)
 	else
@@ -538,6 +538,7 @@
 
 /obj/structure/closet/CtrlAltClick(var/mob/user)
 	verb_toggleopen()
+	return 1
 
 /obj/structure/closet/emp_act(severity)
 	for(var/obj/O in src)
@@ -584,7 +585,7 @@
 /obj/structure/closet/interact(mob/user)
 	src.add_fingerprint(user)
 	var/dat = ""
-	dat += "<a href='?src=\ref[src];check=1'>Проверить замок</a><hr>"
+	dat += "<a href='?src=\ref[src];check=1'>РџСЂРѕРІРµСЂРёС‚СЊ Р·Р°РјРѕРє</a><hr>"
 	for(var/i = 1 to codelen)
 		dat += "<a href='?src=\ref[src];inc=[i]'>+</a>"
 	dat += "<br>"
@@ -615,18 +616,18 @@
 		validate = 0
 
 		if(W.mode != METER_CHECKING)
-			to_chat(usr, "<span class='notice'>Переключите мультиметр.</span>")
+			to_chat(usr, "<span class='notice'>РџРµСЂРµРєР»СЋС‡РёС‚Рµ РјСѓР»СЊС‚РёРјРµС‚СЂ.</span>")
 			return
 
-		to_chat(usr, "<span class='notice'>Провер&#255;ем замок...</span>")
+		to_chat(usr, "<span class='notice'>РџСЂРѕРІРµСЂСЏРµРј Р·Р°РјРѕРє...</span>")
 		for(var/i = 1 to codelen)
 			if(do_after(user, 10, src))
 				if(code2[i] == code1[i])
 					validate++
-					to_chat(usr, "<span class='notice'>Ключ подходит.</span>")
+					to_chat(usr, "<span class='notice'>РљР»СЋС‡ РїРѕРґС…РѕРґРёС‚.</span>")
 					playsound(W.loc, 'infinity/sound/machines/mbeep.ogg', 30, 1, frequency = rand(50000, 55000))
 				else
-					to_chat(usr, "<span class='notice'>Ключ не подходит.</span>")
+					to_chat(usr, "<span class='notice'>РљР»СЋС‡ РЅРµ РїРѕРґС…РѕРґРёС‚.</span>")
 		W.in_use = FALSE
 
 		if(validate < codelen)

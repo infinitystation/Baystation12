@@ -19,17 +19,14 @@
 		"Antique" = "engineerrobot",
 		"Landmate" = "landmate",
 		"Landmate - Treaded" = "engiborg+tread",
-		"Doot" = "eyebot-engineering",
-		"Drone" = "drone-engineer",
-		"Ver 06" = "wer6-Engineering",
-		"Motile" = "motile-eng"
+		"Motile" = "motile-eng"//inf
 	)
 	no_slip = 1
 	equipment = list(
 		/obj/item/device/flash,
 		/obj/item/borg/sight/meson,
 		/obj/item/weapon/extinguisher,
-		/obj/item/weapon/weldingtool/largetank,
+		/obj/item/weapon/weldingtool/hugetank,
 		/obj/item/weapon/screwdriver,
 		/obj/item/weapon/wrench,
 		/obj/item/weapon/crowbar,
@@ -41,11 +38,13 @@
 		/obj/item/taperoll/engineering,
 		/obj/item/taperoll/atmos,
 		/obj/item/weapon/gripper,
+		/obj/item/weapon/gripper,
 		/obj/item/weapon/gripper/no_use/loader,
 		/obj/item/device/lightreplacer,
 		/obj/item/device/pipe_painter,
 		/obj/item/device/floor_painter,
 		/obj/item/weapon/inflatable_dispenser/robot,
+		/obj/item/weapon/reagent_containers/spray/cleaner/drone,
 		/obj/item/inducer/borg,
 		/obj/item/device/plunger/robot,
 		/obj/item/weapon/matter_decompiler,
@@ -53,6 +52,8 @@
 		/obj/item/stack/material/cyborg/aluminium,
 		/obj/item/stack/material/rods/cyborg,
 		/obj/item/stack/tile/floor/cyborg,
+		/obj/item/stack/material/cyborg/wood,
+		/obj/item/stack/tile/wood/cyborg,
 		/obj/item/stack/material/cyborg/glass,
 		/obj/item/stack/material/cyborg/glass/reinforced,
 		/obj/item/stack/cable_coil/cyborg,
@@ -62,8 +63,9 @@
 	synths = list(
 		/datum/matter_synth/metal =    60000,
 		/datum/matter_synth/glass =    40000,
+		/datum/matter_synth/wood =     30000,
 		/datum/matter_synth/plasteel = 20000,
-		/datum/matter_synth/wire
+		/datum/matter_synth/wire =     50
 	)
 	emag = /obj/item/weapon/melee/baton/robot/electrified_arm
 	skills = list(
@@ -79,12 +81,14 @@
 
 	var/datum/matter_synth/metal/metal =       locate() in synths
 	var/datum/matter_synth/glass/glass =       locate() in synths
+	var/datum/matter_synth/wood/wood =         locate() in synths
 	var/datum/matter_synth/plasteel/plasteel = locate() in synths
 	var/datum/matter_synth/wire/wire =         locate() in synths
 
 	var/obj/item/weapon/matter_decompiler/MD = locate() in equipment
 	MD.metal = metal
 	MD.glass = glass
+	MD.wood = wood
 
 	for(var/thing in list(
 		 /obj/item/stack/material/cyborg/steel,
@@ -102,6 +106,13 @@
 		))
 		var/obj/item/stack/stack = locate(thing) in equipment
 		LAZYDISTINCTADD(stack.synths, glass)
+
+	for(var/thing in list(
+		 /obj/item/stack/tile/wood/cyborg,
+		 /obj/item/stack/material/cyborg/wood
+		))
+		var/obj/item/stack/stack = locate(thing) in equipment
+		LAZYDISTINCTADD(stack.synths, wood)
 
 	var/obj/item/stack/cable_coil/cyborg/C = locate() in equipment
 	C.synths = list(wire)

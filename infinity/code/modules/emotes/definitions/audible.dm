@@ -115,9 +115,14 @@
 
 /decl/emote/audible/cat_purr
 	key = "purr"
-	emote_message_3p = "USER ������."
+	emote_message_3p = "USER мурчит."
 	emote_sound = 'infinity/sound/voice/cat_purr.ogg'
 
 /decl/emote/audible/cat_purr/long
 	key = "purrl"
 	emote_sound = 'infinity/sound/voice/cat_purr_long.ogg'
+
+/decl/emote/audible/finger_snap
+	key = "snap"
+	emote_message_3p = "USER щёлкает пальцами."
+	emote_sound = 'infinity/sound/voice/fingersnap.ogg'

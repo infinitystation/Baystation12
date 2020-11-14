@@ -5,6 +5,7 @@
 /obj/item/weapon/clothingbag/forryaniyar/Initialize()
 	. = ..()
 	new /obj/item/weapon/storage/backpack/satchel/custom_forrya(src)
+	new /obj/item/clothing/under/thermal/heat/thermosuit(src)
 
 /obj/item/clothing/shoes/workboots/custom_forrya_winter
 	name = "small winter boots"
@@ -33,8 +34,8 @@
 		/obj/item/weapon/crowbar/custom_multishowel,
 		/obj/item/clothing/accessory/storage/drop_pouches/custom_forrya,
 		/obj/item/clothing/mask/gas/alt/custom_forrya,
-		/obj/item/clothing/glasses/meson/prescription/tajvisor/hybrid/custom,
-		/obj/item/clothing/accessory/amulet/stronk/frost)
+		/obj/item/clothing/glasses/meson/prescription/tajvisor/hybrid/custom
+	)
 	item_icons = list(
 		slot_back_str = CUSTOM_ITEM_MOB)
 
@@ -230,6 +231,35 @@
 	master.disrupt(0)
 	. = ..()
 
+/obj/item/clothing/accessory/badge/dog_tags/tajamc
+	name = "titanium amulet"
+	desc = "A technological titanium amulet, also know as Soul Deliverance Device.\
+	Various information about its owner engraved on sides. Looks pretty durable and has a strange glowing crystal inside."
+	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
+	icon_state = "cls"
+	var/open = 0
+
+/obj/item/clothing/accessory/badge/dog_tags/tajamc/verb/verb_opam()
+	set src in usr
+	set category = "Object"
+	set name = "Use yor paws on amulet"
+	(open == 1 )?( open = 0) : (open = 1)
+	update_icon()
+
+/obj/item/clothing/accessory/badge/dog_tags/tajamc/on_update_icon()
+	if(open)
+		icon_state = "opn"
+		set_light(0.2, 0.1, 1.5, 2, light_color)
+	else
+		icon_state = "cls"
+		set_light(0)
+
+/obj/item/clothing/accessory/inf_pin/ccapin
+	name = "CCA patch"
+	desc = "A small patch, decorated with a CCA symbol pattern embroidered with titanium threads. It looks minimalistic, beautiful and strict. "
+	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
+	icon_state = "ccapatch"
+
 /obj/item/clothing/accessory/cloak/custom_forrya_cam
 	name = "winter camouflage cloak"
 	desc = "Simple winter camouflaging cloak."
@@ -267,13 +297,13 @@
 		/obj/item/clothing/accessory/cloak/custom_forrya_cam,
 		/obj/item/clothing/suit/storage/hooded/wintercoat/custom_forrya,
 		/obj/item/clothing/shoes/workboots/custom_forrya_winter,
-		/obj/item/clothing/accessory/badge/tajamc,
+		/obj/item/clothing/accessory/badge/dog_tags/tajamc,
 		/obj/item/clothing/accessory/inf_pin/ccapin)
 	can_hold = list(
 		/obj/item/clothing/accessory/cloak/custom_forrya_cam,
 		/obj/item/clothing/suit/storage/hooded/wintercoat/custom_forrya,
 		/obj/item/clothing/shoes/workboots/custom_forrya_winter,
-		/obj/item/clothing/accessory/badge/tajamc,
+		/obj/item/clothing/accessory/badge/dog_tags/tajamc,
 		/obj/item/clothing/accessory/inf_pin/ccapin,
 		/obj/item/music_player/csplayer)
 
@@ -388,14 +418,29 @@
 	light. This one has installed as the mesons, and the add-on advanced shielding module."
 	flash_protection = FLASH_PROTECTION_MODERATE
 
-/obj/item/clothing/glasses/meson/prescription/tajvisor/hybrid/custom/disrupts_psionics()
-	return src
+/obj/item/clothing/under/thermal/heat/thermosuit
+	name = "modified uniform"
+	desc = "Comfortable work uniform with a layer of fabric inside. It looks quite soft and comfortable. The decorative belt has a pair of invisible buttons and switches."
+	icon_state = "thermosuit"
+	worn_state = "thermosuit"
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(
+		slot_w_uniform_str = CUSTOM_ITEM_MOB,
+		)
 
-/obj/item/clothing/accessory/amulet/stronk/frost
-	name = "frosty averter"
-	desc = "The amulet of Tajara, which looks old enough, as if it has passed through the ages. The runes on the amulet are etched with acid, it is also covered with silvery metal and seems even covered with frost. It looks very cold, and it seems that touching it can burn with frost."
-	icon_state = "amuletf"
+/obj/item/clothing/under/thermal/heat/thermosuit/attack_self(mob/user as mob)
+	. = ..()
+	var/input = input(user, "Установите поддерживаемую температуру", "Термостат", 20) as num
+	input = clamp(input, 5, 55)
+	thermostat = T0C + input
+	to_chat(user, "<span class='notice'>Ты повернул термостат костюма на отметку в [input] градусов.</span>")
 
-/obj/item/clothing/accessory/amulet/stronk/frost/disrupts_psionics()
-	playsound(src.loc, 'sound/items/geiger.ogg', 2, 1, -4)
-	return src
+/obj/item/clothing/under/thermal/heat/thermosuit/examine(mob/user)
+	. = ..()
+	to_chat(user, "<span class='notice'>Термостат стоит на отметке [thermostat] градусов.</span>")
+
+/obj/item/clothing/under/thermal/heat/thermosuit/verb/set_temp()
+	set name = "Roll Thermostat"
+	set category = "Object"
+	set src in usr
+	attack_self(usr)

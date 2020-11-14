@@ -221,8 +221,6 @@
 			return 1
 	return 0
 
-	. = ..()
-
 /obj/structure/hygiene/urinal
 	name = "urinal"
 	desc = "The HU-452, an experimental urinal."
@@ -430,8 +428,10 @@
 		var/mob/living/carbon/human/H = user
 		var/obj/item/organ/external/temp = H.organs_by_name[BP_R_HAND]
 		var/target_zone = H.zone_sel.selecting
-		if((target_zone == BP_HEAD) && (H.organs_by_name[BP_HEAD]) && (H.organs_by_name[BP_HEAD].forehead_graffiti))
-			graffiti = 1
+		if((target_zone == BP_HEAD) && (H.organs_by_name[BP_HEAD]))
+			var/obj/item/organ/external/head/HD = H.organs_by_name[BP_HEAD]
+			if(HD.forehead_graffiti)
+				graffiti = 1
 		if (user.hand)
 			temp = H.organs_by_name[BP_L_HAND]
 		if(temp && !temp.is_usable())
@@ -557,3 +557,63 @@
 	icon_state = "puddle-splash"
 	..()
 	icon_state = "puddle"
+
+//toilet paper interaction for clogging toilets and other facilities
+
+/obj/structure/hygiene/attackby(obj/item/I, mob/user)
+	if (!istype(I, /obj/item/taperoll/bog))
+		..()
+		return
+	if (clogged == -1)
+		to_chat(user, SPAN_WARNING("Try as you might, you can not clog \the [src] with \the [I]."))
+		return
+	if (clogged)
+		to_chat(user, SPAN_WARNING("\The [src] is already clogged."))
+		return
+	if (!do_after(user, 3 SECONDS, src))
+		to_chat(user, SPAN_WARNING("You must stay still to clog \the [src]."))
+		return
+	if (clogged || QDELETED(I) || !user.unEquip(I))
+		return
+	to_chat(user, SPAN_NOTICE("You unceremoniously jam \the [src] with \the [I]. What a rebel."))
+	clog(1)
+	qdel(I)
+
+/obj/item/taperoll/bog
+	name = "toilet paper roll"
+	icon = 'icons/obj/watercloset.dmi'
+	desc = "A unbranded roll of standard issue two ply toilet paper. Refined from carefully rendered down sea shells due to SolGov's 'Abuse Of The Trees Act'."
+	tape_type = /obj/item/tape/bog
+	icon_state = "bogroll"
+	item_state = "mummy_poor"
+	slot_flags = SLOT_HEAD | SLOT_OCLOTHING
+	var/sheets = 30
+
+/obj/item/tape/bog
+	name = "toilet paper"
+	desc = "A length of toilet paper. Seems like custodia is marking their territory again."
+	icon_base = "stripetape"
+	color = COLOR_WHITE
+	detail_overlay = "stripes"
+	detail_color = COLOR_WHITE
+
+/obj/item/taperoll/bog/verb/tear_sheet()
+	set category = "Object"
+	set name = "Tear Sheet"
+	set desc = "Tear a sheet of toilet paper."
+	if (usr.incapacitated())
+		return
+	if(sheets > 0)
+		visible_message("\The [usr] tears a sheet from \the [src].", "You tear a sheet from \the [src].")
+		var/obj/item/weapon/paper/crumpled/bog/C =  new(loc)
+		usr.put_in_hands(C)
+		sheets--
+	if (sheets < 1)
+		to_chat(usr, "\The [src] is depleted.")
+		qdel(src)
+
+/obj/item/weapon/paper/crumpled/bog
+	name = "sheet of toilet paper"
+	desc = "A single sheet of toilet paper. Two ply."
+	icon = 'icons/obj/watercloset.dmi'
+	icon_state = "bogroll_sheet"

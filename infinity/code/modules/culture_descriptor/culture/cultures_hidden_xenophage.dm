@@ -17,6 +17,18 @@
 	name = CULTURE_XENOPHAGE_S
 	caste_name = "sentinel"
 
+/decl/cultural_info/culture/hidden/xenophage/warrior
+	name = CULTURE_XENOPHAGE_W
+	caste_name = "warrior"
+
+/decl/cultural_info/culture/hidden/xenophage/hivelord
+	name = CULTURE_XENOPHAGE_L
+	caste_name = "hivelord"
+
+/decl/cultural_info/culture/hidden/xenophage/spitter
+	name = CULTURE_XENOPHAGE_P
+	caste_name = "spitter"
+
 /decl/cultural_info/culture/hidden/xenophage/queen
 	name = CULTURE_XENOPHAGE_Q
 	caste_name = "queen"

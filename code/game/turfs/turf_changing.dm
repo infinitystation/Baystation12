@@ -1,6 +1,9 @@
 /turf/proc/ReplaceWithLattice(var/material)
-	src.ChangeTurf(get_base_turf_by_area(src))
-	new /obj/structure/lattice( locate(src.x, src.y, src.z), material )
+	var base_turf = get_base_turf_by_area(src);
+	if(type != base_turf)
+		src.ChangeTurf(get_base_turf_by_area(src))
+	if(!locate(/obj/structure/lattice) in src)
+		new /obj/structure/lattice(src, material)
 
 // Removes all signs of lattice on the pos of the turf -Donkieyo
 /turf/proc/RemoveLattice()
@@ -10,9 +13,8 @@
 // Called after turf replaces old one
 /turf/proc/post_change()
 	levelupdate()
-	var/turf/simulated/open/T = GetAbove(src)
-	if(istype(T))
-		T.update_icon()
+	if (above)
+		above.update_mimic()
 
 //Creates a new turf
 /turf/proc/ChangeTurf(var/turf/N, var/tell_universe = TRUE, var/force_lighting_update = FALSE, var/keep_air = FALSE)
@@ -48,16 +50,19 @@
 		//the zone will only really do heavy lifting once.
 		var/turf/simulated/S = src
 		if(S.zone) S.zone.rebuild()
+	if(isopenspace(src)) keep_air = TRUE //INF
 
 	// Run the Destroy() chain.
 	qdel(src)
 
+	var/old_opaque_counter = opaque_counter 
 	var/turf/simulated/W = new N(src)
 
 	if (permit_ao)
 		regenerate_ao()
 
-	W.opaque_counter = opaque_counter
+	W.opaque_counter = old_opaque_counter
+	W.RecalculateOpacity()
 
 	if (keep_air)
 		W.air = old_air

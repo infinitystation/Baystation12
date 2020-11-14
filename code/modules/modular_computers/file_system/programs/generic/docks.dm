@@ -70,14 +70,14 @@
 /datum/nano_module/docking/Topic(href, href_list, state)
 	if(..())
 		return 1
-
+//[INF]
 	if(href_list["rand_codes"])
 		for(var/docktag in docking_controllers)
-			var/datum/computer/file/embedded_program/docking/P = locate(docktag)
+			var/datum/computer/file/embedded_program/docking/P = SSshuttle.docking_registry[docktag]
 			if(P)
-				var/r_newcode = num2text(round(rand(1000, 9999))) + " " + num2text(round(rand(1000, 9999))) + " " + num2text(round(rand(1000, 9999))) + " " + num2text(round(rand(1000, 9999)))
-				P.docking_codes = r_newcode
-
+				P.docking_codes = num2text(round(rand(1000, 9999))) + " " + num2text(round(rand(1000, 9999))) + " " + num2text(round(rand(1000, 9999))) + " " + num2text(round(rand(1000, 9999)))
+		return 1
+//[/INF]
 	if(istext(href_list["edit_code"]))
 		var/datum/computer/file/embedded_program/docking/P = SSshuttle.docking_registry[href_list["edit_code"]]
 		if(P)

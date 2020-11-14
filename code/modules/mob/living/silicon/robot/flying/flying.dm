@@ -1,6 +1,6 @@
 /mob/living/silicon/robot/flying
 	desc = "A utility robot with an anti-gravity hover unit and a lightweight frame."
-	icon = 'icons/mob/robots_flying.dmi'
+	icon = 'infinity/icons/mob/robots_flying.dmi' //INF, WAS 'icons/mob/robots_flying.dmi'
 	icon_state = "drone-standard"
 	module_category = ROBOT_MODULE_TYPE_FLYING
 	dismantle_type = /obj/item/robot_parts/robot_suit/flyer
@@ -12,6 +12,16 @@
 	mob_bump_flag =  SIMPLE_ANIMAL
 	mob_swap_flags = MONKEY|SLIME|SIMPLE_ANIMAL
 	mob_push_flags = MONKEY|SLIME|SIMPLE_ANIMAL
+
+	//[inf]
+	speech_sounds = list(
+		'infinity/sound/voice/robot_talk_light_1.ogg',
+		'infinity/sound/voice/robot_talk_light_2.ogg',
+		'infinity/sound/voice/robot_talk_light_3.ogg',
+		'infinity/sound/voice/robot_talk_light_4.ogg',
+		'infinity/sound/voice/robot_talk_light_5.ogg'
+	)
+	//[/inf]
 
 /mob/living/silicon/robot/flying/initialize_components()
 	components["actuator"] =       new/datum/robot_component/actuator(src)

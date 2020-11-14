@@ -70,7 +70,7 @@ Right Click       - List/Create Area
 	user.client.images -= vision_images
 	vision_images = list()
 
-	var/list/used_colors = 0
+	var/used_colors = 0
 	var/list/max_colors = length(distinct_colors)
 	var/list/vision_colors = list()
 	for (var/turf/T in range(user.client.view, user))
@@ -82,6 +82,8 @@ Right Click       - List/Create Area
 			else
 				vision_colors[ref] = distinct_colors[used_colors]
 		I.color = vision_colors[ref]
+		I.plane = EFFECTS_ABOVE_LIGHTING_PLANE
+		I.appearance_flags = RESET_COLOR|RESET_ALPHA|RESET_TRANSFORM|NO_CLIENT_COLOR|KEEP_APART
 		vision_images.Add(I)
 	user.client.images += vision_images
 

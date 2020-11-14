@@ -24,6 +24,13 @@
 	. = ..()
 	color = COLOR_GUNMETAL // They're not painted!
 
+/obj/structure/railing/mapped/no_density
+	density = 0
+
+/obj/structure/railing/mapped/no_density/Initialize()
+	. = ..()
+	update_icon()
+
 /obj/structure/railing/New(var/newloc, var/material_key = DEFAULT_FURNITURE_MATERIAL)
 	material = material_key // Converted to datum in initialize().
 	..(newloc)
@@ -274,7 +281,7 @@
 /obj/structure/railing/ex_act(severity)
 	qdel(src)
 
-/obj/structure/railing/can_climb(var/mob/living/user, post_climb_check=0)
+/obj/structure/railing/can_climb(var/mob/living/user, post_climb_check=FALSE, check_silicon=TRUE)
 	. = ..()
 	if(. && get_turf(user) == get_turf(src))
 		var/turf/T = get_step(src, src.dir)

@@ -41,8 +41,30 @@
 			CULTURE_HUMAN_SPACER,
 			CULTURE_HUMAN_SPAFRO,
 			CULTURE_HUMAN_CONFED,
-			CULTURE_HUMAN_OTHER
+			CULTURE_HUMAN_OTHER,
+			CULTURE_HUMAN_AVACOMMON, //inf
+			CULTURE_HUMAN_AVANOBLE, //inf
+			CULTURE_HUMAN_LORRIMAN, //inf
+			CULTURE_HUMAN_LORDUP, //inf
+			CULTURE_HUMAN_LORDLOW, //inf
+			CULTURE_HUMAN_MIRANIAN, //inf
+			CULTURE_HUMAN_NYXIAN //inf
 		)
+	)
+
+	exertion_effect_chance = 10
+	exertion_hydration_scale = 1
+	exertion_charge_scale = 1
+	exertion_reagent_scale = 5
+	exertion_reagent_path = /datum/reagent/lactate
+	exertion_emotes_biological = list(
+		/decl/emote/exertion/biological,
+		/decl/emote/exertion/biological/breath,
+		/decl/emote/exertion/biological/pant
+	)
+	exertion_emotes_synthetic = list(
+		/decl/emote/exertion/synthetic,
+		/decl/emote/exertion/synthetic/creak
 	)
 
 /datum/species/human/get_bodytype(var/mob/living/carbon/human/H)
@@ -264,6 +286,21 @@
 		BP_BRAIN =    /obj/item/organ/internal/brain,
 		BP_EYES =     /obj/item/organ/internal/eyes/skrell
 		)
+
+	exertion_effect_chance = 10
+	exertion_hydration_scale = 1
+	exertion_charge_scale = 1
+	exertion_reagent_scale = 5
+	exertion_reagent_path = /datum/reagent/lactate
+	exertion_emotes_biological = list(
+		/decl/emote/exertion/biological,
+		/decl/emote/exertion/biological/breath,
+		/decl/emote/exertion/biological/pant
+	)
+	exertion_emotes_synthetic = list(
+		/decl/emote/exertion/synthetic,
+		/decl/emote/exertion/synthetic/creak
+	)
 
 /datum/species/skrell/get_sex(var/mob/living/carbon/human/H)
 	return istype(H) && (H.descriptors["headtail length"] == 1 ? MALE : FEMALE)

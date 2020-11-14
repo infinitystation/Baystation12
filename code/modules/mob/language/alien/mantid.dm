@@ -42,7 +42,7 @@
 	message = replacetext(message, ":",    "")
 	message = replacetext(message, ".",    "...")
 	message = replacetext(message, "&#39", "'")
-	message = replacetext(message, "&#255", "È‡") //inf. 1) Can't speak propertly 2) Still don't find out a fix of ya
+	message = replacetext(message, "&#255", "–π–∞") //inf. 1) Can't speak propertly 2) Still don't find out a fix of ya
 	return message
 
 /datum/language/mantid/broadcast(var/mob/living/speaker,var/message,var/speaker_mask)
@@ -56,7 +56,7 @@
 	speech_verb = "flashes"
 	ask_verb = "gleams"
 	exclaim_verb = "flares"
-	flags = RESTRICTED | NO_STUTTER | NONVERBAL
+	flags = RESTRICTED | NO_STUTTER | SIGNLANG
 	shorthand = "KNV"
 
 #define MANTID_SCRAMBLE_CACHE_LEN 20

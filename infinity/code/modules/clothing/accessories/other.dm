@@ -13,12 +13,28 @@
 	item_icons = list(slot_wear_mask_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi')
 	icon_state = "talisman-4"
 
-/obj/item/clothing/accessory/scarf/red
+/obj/item/clothing/accessory/scarf/inf
 	name = "red striped scarf"
-	icon = 'infinity/icons/obj/clothing/TG_copy/neck.dmi'
+	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
 	icon_state = "stripedredscarf"
 	accessory_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi')
 	item_icons = list(slot_wear_mask_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi')
+
+/obj/item/clothing/accessory/scarf/inf/green
+	name = "green striped scarf"
+	icon_state = "stripedgreenscarf"
+
+/obj/item/clothing/accessory/scarf/inf/blue
+	name = "blue striped scarf"
+	icon_state = "stripedbluescarf"
+
+/obj/item/clothing/accessory/scarf/inf/zebra
+	name = "zebra scarf"
+	icon_state = "zebrascarf"
+
+/obj/item/clothing/accessory/scarf/inf/christmas
+	name = "christmas scarf"
+	icon_state = "christmasscarf"
 
 /obj/item/clothing/accessory/scarf/tajaran
 	name = "tua-tari scarf"
@@ -47,38 +63,46 @@
 /obj/item/clothing/accessory/amulet
 	name = "talisman"
 	desc = "A simple metal amulet with runes, according to the primitive beliefs of Tajara, able to protect them from evil spirits."
-	icon_state = "amulet"
-	icon = CUSTOM_ITEM_OBJ
+	icon_state = "taj_amulet"
+	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
 	w_class = ITEM_SIZE_SMALL
 	slot_flags = SLOT_MASK | SLOT_TIE
 
+/* todo
+Сделать, чтобы блокировало мелкое воздействие - чтение мыслей, слабое лечение. Сейчас оно высасывае псионику \
+со своего тайла - можно контрить псиоников, удерживая.
 /obj/item/clothing/accessory/amulet/disrupts_psionics()
 	visible_message("<span class='rose'>The [src] protect his owner but explodes.</span>")
 	playsound(src.loc, 'sound/effects/glass_step.ogg', 100, 1, -4)
 	QDEL_IN(src, 0)
 	return src
+*/
 
 /obj/item/clothing/accessory/amulet/medium
 	name = "amulet"
 	desc = "An expensive-looking amulet, interspersed with unknown crystals and runes, according to the primitive beliefs of Tajara, able to protect them from evil spirits."
-	icon_state = "amulet2"
+	icon_state = "taj_amulet_2"
 
+/* todo
 /obj/item/clothing/accessory/amulet/medium/disrupts_psionics()
 	if(prob(20))
 		visible_message("<span class='rose'>The [src] protect his owner but explodes.</span>")
 		playsound(src.loc, 'sound/effects/glass_step.ogg', 100, 1, -4)
 		QDEL_IN(src, 0)
 	return src
+*/
 
-/obj/item/clothing/accessory/amulet/stronk
+/obj/item/clothing/accessory/amulet/strong
 	name = "averter"
 	desc = "Amulet of Tajara, created from the primordial stone according to their belief, able to protect according to their primitive religion from evil spirits and their servants. The runes on the amulet are etched with acid."
-	icon_state = "amulet3"
+	icon_state = "taj_amulet_3"
 
-/obj/item/clothing/accessory/amulet/stronk/disrupts_psionics()
+/* todo
+/obj/item/clothing/accessory/amulet/strong/disrupts_psionics()
 	visible_message("<span class='rose'>The [src] radiated faint waves of heat and light, protecting the wearer from psionic influence...</span>")
 	if(prob(0.01))
 		visible_message("<span class='rose'>The [src] protect his owner but explodes.</span>")
 		playsound(src.loc, 'sound/effects/glass_step.ogg', 100, 1, -4)
 		QDEL_IN(src, 0)
 	return src
+*/

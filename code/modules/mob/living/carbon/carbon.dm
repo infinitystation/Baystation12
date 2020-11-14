@@ -424,7 +424,7 @@
 	<BR><A href='?src=\ref[user];refresh=1'>Refresh</A>
 	<BR><A href='?src=\ref[user];mach_close=mob[name]'>Close</A>
 	<BR>"}
-	user << browse(dat, text("window=mob[];size=325x500", name))
+	show_browser(user, dat, text("window=mob[];size=325x500", name))
 	onclose(user, "mob[name]")
 	return
 
@@ -463,7 +463,7 @@
 		return
 	stasis_sources[source] = factor
 
-/mob/living/carbon/proc/InStasis()
+/mob/living/carbon/InStasis()
 	if(!stasis_value)
 		return FALSE
 	return life_tick % stasis_value
@@ -512,10 +512,3 @@
 		to_chat(src, "<span class='warning'>You are no longer running on internals.</span>")
 	if(internals)
 		internals.icon_state = "internal[!!internal]"
-//[inf]
-/mob/living/carbon/proc/has_fake_brain()
-	var/obj/item/organ/internal/brain/brain = internal_organs_by_name[BP_BRAIN]
-	if(istype(brain) && brain.fake_brain)
-		return 1
-	return 0
-//[/inf]

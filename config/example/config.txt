@@ -100,6 +100,9 @@ PROBABILITY CHANGELING 1
 PROBABILITY CULT 1
 PROBABILITY EXTEND-A-TRAITORMONGOUS 6
 
+## if possible round types will be hidden from players for secret rounds
+#SECRET_HIDE_POSSIBILITIES
+
 ## Hash out to disable random events during the round.
 ALLOW_RANDOM_EVENTS
 
@@ -218,11 +221,8 @@ GUEST_BAN
 ## The intention is to make adminPMs more visible. (although I fnd popups annoying so this defaults to off)
 #POPUP_ADMIN_PM
 
-## Remove the # to allow special 'Easter-egg' events on special holidays such as seasonal holidays and stuff like 'Talk Like a Pirate Day' :3 YAARRR
-ALLOW_HOLIDAYS
-
-##Defines the ticklag for the world.  0.9 is the normal one, 0.5 is smoother.
-TICKLAG 0.7
+##Defines the ticklag for the world. 0.5 is smooth, 0.7 is less smooth.
+TICKLAG 0.5
 
 ##Defines world FPS. Defaults to 20.
 # FPS 20
@@ -423,6 +423,10 @@ RADIATION_LOWER_LIMIT 0.15
 
 ## Clients will be unable to connect unless their build is equal to or higher than this (a number, e.g. 1000)
 #MINIMUM_BYOND_BUILD
+
+## Prevents matching messages from being sent on any communication channel
+## The provided example forbids byond:// and http/https:// unless followed by a permitted domain.
+#FORBIDDEN_MESSAGE_REGEX /((https?)|(byond)):\/\/(?!(.*\.)?baystation12\.net)/i
 
 ## Direct clients to preload the server resource file from a URL pointing to a .rsc file. NOTE: At this time (byond 512),
 ## the client/resource_rsc var does not function as one would expect. See client_defines.dm, the "preload_rsc" var's

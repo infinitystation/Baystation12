@@ -10,7 +10,7 @@
 	endWhen = startWhen + rand(30,90) + rand(30,90) //2-6 minute duration
 
 /datum/event/solar_storm/announce()
-	priority_announcement.Announce("Обнаружено усиление солнечного ветра звезды [system_name()]. Настоятельно рекомендуется прекратить всю деятельность на обшивке и вернуться внутрь.", "Сенсоры [location_name()]", zlevels = affecting_z)
+	priority_announcement.Announce("РћР±РЅР°СЂСѓР¶РµРЅРѕ СѓСЃРёР»РµРЅРёРµ СЃРѕР»РЅРµС‡РЅРѕРіРѕ РІРµС‚СЂР° Р·РІРµР·РґС‹ [system_name()]. РќР°СЃС‚РѕСЏС‚РµР»СЊРЅРѕ СЂРµРєРѕРјРµРЅРґСѓРµС‚СЃСЏ РїСЂРµРєСЂР°С‚РёС‚СЊ РІСЃСЋ РґРµСЏС‚РµР»СЊРЅРѕСЃС‚СЊ РЅР° РѕР±С€РёРІРєРµ Рё РІРµСЂРЅСѓС‚СЊСЃСЏ РІРЅСѓС‚СЂСЊ.", "РЎРµРЅСЃРѕСЂС‹ [location_name()]", zlevels = affecting_z)
 	adjust_solar_output(1.5)
 
 /datum/event/solar_storm/proc/adjust_solar_output(var/mult = 1)
@@ -18,7 +18,7 @@
 	solar_gen_rate = mult * base_solar_gen_rate
 
 /datum/event/solar_storm/start()
-	priority_announcement.Announce("Угроза солнечного ветра подтверждена - космическое пространство [location_name()] находится в зоне поражения. Настоятельно рекомендуется воздержаться от любой деятельности на обшивке до спада активности.", "Сенсоры [location_name()]", zlevels = affecting_z)
+	command_announcement.Announce("РЈРіСЂРѕР·Р° СЃРѕР»РЅРµС‡РЅРѕРіРѕ РІРµС‚СЂР° РїРѕРґС‚РІРµСЂР¶РґРµРЅР° - РєРѕСЃРјРёС‡РµСЃРєРѕРµ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ [location_name()] РЅР°С…РѕРґРёС‚СЃСЏ РІ Р·РѕРЅРµ РїРѕСЂР°Р¶РµРЅРёСЏ. РќР°СЃС‚РѕСЏС‚РµР»СЊРЅРѕ СЂРµРєРѕРјРµРЅРґСѓРµС‚СЃСЏ РІРѕР·РґРµСЂР¶Р°С‚СЊСЃСЏ РѕС‚ Р»СЋР±РѕР№ РґРµСЏС‚РµР»СЊРЅРѕСЃС‚Рё РЅР° РѕР±С€РёРІРєРµ РґРѕ СЃРїР°РґР° Р°РєС‚РёРІРЅРѕСЃС‚Рё.", "РЎРµРЅСЃРѕСЂС‹ [location_name()]", zlevels = affecting_z)
 	adjust_solar_output(5)
 
 /datum/event/solar_storm/tick()
@@ -43,7 +43,7 @@
 
 
 /datum/event/solar_storm/end()
-	priority_announcement.Announce("Сила солнечный ветер звезды [system_name()] вернулась к безопасному значению. Работа на обшивке может быть возобновлена.", "Сенсоры [location_name()]", zlevels = affecting_z)
+	priority_announcement.Announce("РЎРёР»Р° СЃРѕР»РЅРµС‡РЅС‹Р№ РІРµС‚РµСЂ Р·РІРµР·РґС‹ [system_name()] РІРµСЂРЅСѓР»Р°СЃСЊ Рє Р±РµР·РѕРїР°СЃРЅРѕРјСѓ Р·РЅР°С‡РµРЅРёСЋ. Р Р°Р±РѕС‚Р° РЅР° РѕР±С€РёРІРєРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РІРѕР·РѕР±РЅРѕРІР»РµРЅР°.", "РЎРµРЅСЃРѕСЂС‹ [location_name()]", zlevels = affecting_z)
 	adjust_solar_output()
 
 //For a false alarm scenario.

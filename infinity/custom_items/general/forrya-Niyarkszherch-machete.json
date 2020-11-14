@@ -1,0 +1,9 @@
+{
+	"ckey"            : "forrya",
+	"character_name"  : "Niyarkszherch Kchrashchjrj",
+	"item_name"       : "bayonet-knife",
+	"item_desc"       : "Bayonet-a knife made of titanium similar to a machete, with a black matte finish. It seems very balanced and not too heavy.",
+	"item_icon_state" : "bayonet-knife",
+	"item_path"       : "/obj/item/weapon/material/hatchet/machete/unbreakable"
+}
+

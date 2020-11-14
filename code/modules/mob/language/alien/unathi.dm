@@ -1,15 +1,16 @@
 /datum/language/unathi
-	primitive_version = LANGUAGE_PUNATI //inf
-	native_speaker = list(SPECIES_YEOSA, SPECIES_UNATHI, SPECIES_EROSAN, SPECIES_IPC)
 	name = LANGUAGE_UNATHI_SINTA
 	desc = "The common language of Moghes, composed of sibilant hisses and rattles. Spoken natively by Unathi."
-	speech_verb = "шипит"
-	ask_verb = "шипит"
-	exclaim_verb = "громко шипит"
+	speech_verb = "С€РёРїРёС‚"
+	ask_verb = "С€РёРїРёС‚"
+	exclaim_verb = "РіСЂРѕРјРєРѕ С€РёРїРёС‚"
 	colour = "soghun"
 	key = "o"
 	flags = WHITELISTED
 	space_chance = 40
+	partial_understanding = list(
+		LANGUAGE_UNATHI_YEOSA = 20
+	)
 	syllables = list(
 		"za", "az", "ze", "ez", "zi", "iz", "zo", "oz", "zu", "uz", "zs", "sz",
 		"ha", "ah", "he", "eh", "hi", "ih", "ho", "oh", "hu", "uh", "hs", "sh",
@@ -24,13 +25,16 @@
 /datum/language/yeosa
 	name = LANGUAGE_UNATHI_YEOSA
 	desc = "A language of Moghes consisting of a combination of spoken word and gesticulation. While it is uncommonly spoken in the drier regions, it enjoys popular usage as the official tongue of the Yeosa clans."
-	speech_verb = "шипит"
-	ask_verb = "трещит"
-	exclaim_verb = "р&#255;вкает"
+	speech_verb = "С€РёРїРёС‚"
+	ask_verb = "С‚СЂРµС‰РёС‚"
+	exclaim_verb = "СЂСЏРІРєР°РµС‚"
 	colour = "yeosa"
 	key = "h"
 	flags = WHITELISTED
 	space_chance = 40
+	partial_understanding = list(
+		LANGUAGE_UNATHI_SINTA = 20
+	)
 	syllables = list(
 		"azs","zis","zau","azua","skiu","zuakz","izo","aei","ki","kut","zo",
 		"za", "az", "ze", "ez", "zi", "iz", "zo", "oz", "zu", "uz", "zs", "sz",

@@ -64,8 +64,10 @@
 
 	return match
 
-#define RECOMMENDED_VERSION 512
+//inf("Already defined") #define RECOMMENDED_VERSION 512
 /world/New()
+
+	enable_debugger()
 	//set window title
 	name = "[server_name] - [GLOB.using_map.full_name]"
 
@@ -89,7 +91,7 @@
 		log = runtime_log // Note that, as you can see, this is misnamed: this simply moves world.log into the runtime log file.
 
 	if(byond_version < RECOMMENDED_VERSION)
-		world.log << "Your server's byond version does not meet the recommended requirements for this server. Please update BYOND"
+		to_world_log("Your server's byond version does not meet the recommended requirements for this server. Please update BYOND")
 
 	callHook("startup")
 	//Emergency Fix
@@ -104,13 +106,18 @@
 #endif
 	Master.Initialize(10, FALSE)
 
-#undef RECOMMENDED_VERSION
+//inf("Already defined") #undef RECOMMENDED_VERSION
 
 var/world_topic_spam_protect_ip = "0.0.0.0"
 var/world_topic_spam_protect_time = world.timeofday
 
 /world/Topic(T, addr, master, key)
 	diary << "TOPIC: \"[T]\", from:[addr], master:[master], key:[key][log_end]"
+
+	/* * * * * * * *
+	* Public Topic Calls
+	* The following topic calls are available without a comms secret.
+	* * * * * * * */
 
 	if (T == "ping")
 		var/x = 1
@@ -186,7 +193,9 @@ var/world_topic_spam_protect_time = world.timeofday
 		var/list/L = list()
 		L["gameid"] = game_id
 		L["dm_version"] = DM_VERSION // DreamMaker version compiled in
+		L["dm_build"] = DM_BUILD // DreamMaker build compiled in
 		L["dd_version"] = world.byond_version // DreamDaemon version running on
+		L["dd_build"] = world.byond_build // DreamDaemon build running on
 
 		if(revdata.revision)
 			L["revision"] = revdata.revision
@@ -196,6 +205,51 @@ var/world_topic_spam_protect_time = world.timeofday
 			L["revision"] = "unknown"
 
 		return list2params(L)
+
+	/* * * * * * * *
+	* Admin Topic Calls
+	* The following topic calls are only available if a ban comms secret has been defined, supplied, and is correct.
+	* * * * * * * */
+
+	if(copytext(T,1,14) == "placepermaban")
+		var/input[] = params2list(T)
+		if(!config.ban_comms_password)
+			return "Not enabled"
+		if(input["bankey"] != config.ban_comms_password)
+			if(world_topic_spam_protect_ip == addr && abs(world_topic_spam_protect_time - world.time) < 50)
+				spawn(50)
+					world_topic_spam_protect_time = world.time
+					return "Bad Key (Throttled)"
+
+			world_topic_spam_protect_time = world.time
+			world_topic_spam_protect_ip = addr
+			return "Bad Key"
+
+		var/target = ckey(input["target"])
+
+		var/client/C
+		for(var/client/K in GLOB.clients)
+			if(K.ckey == target)
+				C = K
+				break
+		if(!C)
+			return "No client with that name found on server"
+		if(!C.mob)
+			return "Client missing mob"
+
+		if(!_DB_ban_record(input["id"], "0", "127.0.0.1", 1, C.mob, -1, input["reason"]))
+			return "Save failed"
+		ban_unban_log_save("[input["id"]] has permabanned [C.ckey]. - Reason: [input["reason"]] - This is a ban until appeal.")
+		notes_add(target,"[input["id"]] has permabanned [C.ckey]. - Reason: [input["reason"]] - This is a ban until appeal.",input["id"])
+		qdel(C)
+
+	/* * * * * * * *
+	* Secure Topic Calls
+	* The following topic calls are only available if a comms secret has been defined, supplied, and is correct.
+	* * * * * * * */
+
+	if (!config.comms_password)
+		return "Not enabled"
 
 	else if(copytext(T,1,5) == "laws")
 		if(!config.comms_password)
@@ -415,39 +469,6 @@ var/world_topic_spam_protect_time = world.timeofday
 		else
 			return "Database connection failed or not set up"
 
-	else if(copytext(T,1,14) == "placepermaban")
-		if(!config.ban_comms_password)
-			return "Not enabled"
-		var/input[] = params2list(T)
-		if(input["bankey"] != config.ban_comms_password)
-			if(world_topic_spam_protect_ip == addr && abs(world_topic_spam_protect_time - world.time) < 50)
-				spawn(50)
-					world_topic_spam_protect_time = world.time
-					return "Bad Key (Throttled)"
-
-			world_topic_spam_protect_time = world.time
-			world_topic_spam_protect_ip = addr
-			return "Bad Key"
-
-		var/target = ckey(input["target"])
-
-		var/client/C
-		for(var/client/K in GLOB.clients)
-			if(K.ckey == target)
-				C = K
-				break
-		if(!C)
-			return "No client with that name found on server"
-		if(!C.mob)
-			return "Client missing mob"
-
-		if(!_DB_ban_record(input["id"], "0", "127.0.0.1", 1, C.mob, -1, input["reason"]))
-			return "Save failed"
-		ban_unban_log_save("[input["id"]] has permabanned [C.ckey]. - Reason: [input["reason"]] - This is a ban until appeal.")
-		notes_add(target,"[input["id"]] has permabanned [C.ckey]. - Reason: [input["reason"]] - This is a ban until appeal.",input["id"])
-		send2adminirc("[input["id"]] has permabanned [C.ckey]. - Reason: [input["reason"]] - This is a ban until appeal.")
-		qdel(C)
-
 	else if(copytext(T,1,19) == "prometheus_metrics")
 		if(!config.comms_password)
 			return "Not enabled"
@@ -513,13 +534,15 @@ var/world_topic_spam_protect_time = world.timeofday
 	return 1
 
 /world/proc/load_motd()
-	join_motd = sanitize_a0(file2text("config/motd.txt"))
+	join_motd = file2text("config/motd.txt")
 
 
 /proc/load_configuration()
 	config = new /datum/configuration()
 	config.load("config/config.txt")
 	config.load("config/game_options.txt","game_options")
+	if (GLOB.using_map?.config_path)
+		config.load(GLOB.using_map.config_path, "using_map")
 	config.loadsql("config/dbconfig.txt")
 	config.load_event("config/custom_event.txt")
 
@@ -639,9 +662,9 @@ var/failed_old_db_connections = 0
 
 /hook/startup/proc/connectDB()
 	if(!setup_database_connection())
-		world.log << "Your server failed to establish a connection with the feedback database."
+		to_world_log("Your server failed to establish a connection with the feedback database.")
 	else
-		world.log << "Feedback database connection established."
+		to_world_log("Feedback database connection established.")
 	return 1
 
 proc/setup_database_connection()
@@ -661,11 +684,15 @@ proc/setup_database_connection()
 	dbcon.Connect("dbi:mysql:[db]:[address]:[port]","[user]","[pass]")
 	. = dbcon.IsConnected()
 	if ( . )
+		var/DBQuery/unicode_query = dbcon.NewQuery("SET NAMES utf8mb4 COLLATE utf8mb4_general_ci")	// Установка кодировки и сравнения (4-байтный UTF-8) для сервера БД ~bear1ake
+		if(!unicode_query.Execute())					// Не понимаю, каким образом это может произойти, но...
+			failed_db_connections++						// ... постараемся запомнить этот факт ...
+			to_world_log(unicode_query.ErrorMsg())		// ... оповестим сервер об этом ...
+			return										// ... и прекратим подключение ~bear1ake
 		failed_db_connections = 0	//If this connection succeeded, reset the failed connections counter.
 	else
 		failed_db_connections++		//If it failed, increase the failed connections counter.
-		world.log << dbcon.ErrorMsg()
-
+		to_world_log(dbcon.ErrorMsg())
 	return .
 
 //This proc ensures that the connection to the feedback database (global variable dbcon) is established
@@ -678,14 +705,14 @@ proc/establish_db_connection()
 	else
 		return 1
 
-
+/* [original] Два подключения к одному серверу и одной базе? Пожалуй нет. ~bear1ake
 /hook/startup/proc/connectOldDB()
 	if(!setup_old_database_connection())
-		world.log << "Your server failed to establish a connection with the SQL database."
+		to_world_log("Your server failed to establish a connection with the SQL database.")
 	else
-		world.log << "SQL database connection established."
+		to_world_log("SQL database connection established.")
 	return 1
-
+[/original] */
 //These two procs are for the old database, while it's being phased out. See the tgstation.sql file in the SQL folder for more information.
 proc/setup_old_database_connection()
 
@@ -704,10 +731,15 @@ proc/setup_old_database_connection()
 	dbcon_old.Connect("dbi:mysql:[db]:[address]:[port]","[user]","[pass]")
 	. = dbcon_old.IsConnected()
 	if ( . )
+		var/DBQuery/unicode_query = dbcon_old.NewQuery("SET NAMES utf8mb4 COLLATE utf8mb4_general_ci")	// Установка кодировки и сравнения (4-байтный UTF-8) для сервера БД ~bear1ake
+		if(!unicode_query.Execute())					// Не понимаю, каким образом это может произойти, но...
+			failed_db_connections++						// ... постараемся запомнить этот факт ...
+			to_world_log(unicode_query.ErrorMsg())		// ... оповестим сервер об этом ...
+			return										// ... и прекратим подключение ~bear1ake
 		failed_old_db_connections = 0	//If this connection succeeded, reset the failed connections counter.
 	else
 		failed_old_db_connections++		//If it failed, increase the failed connections counter.
-		world.log << dbcon.ErrorMsg()
+		to_world_log(dbcon.ErrorMsg())
 
 	return .
 
@@ -722,3 +754,8 @@ proc/establish_old_db_connection()
 		return 1
 
 #undef FAILED_DB_CONNECTION_CUTOFF
+
+/world/proc/enable_debugger()
+	var/dll = world.GetConfig("env", "EXTOOLS_DLL")
+	if (dll)
+		call(dll, "debug_initialize")()

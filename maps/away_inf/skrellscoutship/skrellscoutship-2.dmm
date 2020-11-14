@@ -36,18 +36,16 @@
 /turf/simulated/floor/tiled/skrell,
 /area/ship/skrellscoutship/crew/fit)
 "af" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1289;
 	id_tag = "xil_dock_pump"
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/ship/skrellscoutship/dock)
 "ag" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1289;
 	id_tag = "xil_dock_pump"
 	},
 /obj/machinery/airlock_sensor{
@@ -63,8 +61,7 @@
 /turf/simulated/wall/r_wall,
 /area/ship/skrellscoutship/crew/hallway/d1)
 "ai" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1289;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	id_tag = "xil_dock_pump"
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
@@ -78,8 +75,7 @@
 /turf/simulated/floor/plating,
 /area/ship/skrellscoutship/dock)
 "aj" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1289;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	id_tag = "xil_dock_pump"
 	},
 /obj/structure/catwalk,
@@ -869,8 +865,7 @@
 "bQ" = (
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -1306,9 +1301,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light/small,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1291;
 	id_tag = "xil_solar_pump"
 	},
 /obj/machinery/airlock_sensor{
@@ -1625,9 +1619,8 @@
 /turf/simulated/open,
 /area/space)
 "dh" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	frequency = 1290;
 	id_tag = "xil_air_pump"
 	},
 /obj/machinery/airlock_sensor{
@@ -1699,8 +1692,7 @@
 "dm" = (
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /turf/space,
 /area/space)

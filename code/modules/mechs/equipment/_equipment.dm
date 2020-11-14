@@ -7,7 +7,7 @@
 	matter = list(MATERIAL_STEEL = 10000, MATERIAL_PLASTIC = 5000, MATERIAL_OSMIUM = 500)
 	force = 10
 
-	var/restricted_hardpoints
+	var/list/restricted_hardpoints
 	var/mob/living/exosuit/owner
 	var/list/restricted_software
 	var/equipment_delay = 0
@@ -27,7 +27,7 @@
 		if(target in owner.contents)
 			return 0
 
-		if(!(owner.get_cell() && owner.get_cell().check_charge(active_power_use * CELLRATE)))
+		if(!(owner.get_cell()?.check_charge(active_power_use * CELLRATE)))
 			to_chat(user, SPAN_WARNING("The power indicator flashes briefly as you attempt to use \the [src]"))
 			return 0	
 		return 1
@@ -36,12 +36,20 @@
 
 /obj/item/mech_equipment/attack_self(var/mob/user)
 	if (owner && loc == owner && ((user in owner.pilots) || user == owner))
-		if(!(owner.get_cell() && owner.get_cell().check_charge(active_power_use * CELLRATE)))
+		if(!(owner.get_cell()?.check_charge(active_power_use * CELLRATE)))
 			to_chat(user, SPAN_WARNING("The power indicator flashes briefly as you attempt to use \the [src]"))
 			return 0	
 		return 1
 	else 
 		return 0
+
+/obj/item/mech_equipment/examine(mob/user, distance)
+	. = ..()
+	if(user.skill_check(SKILL_DEVICES, SKILL_BASIC))
+		if(length(restricted_software))
+			to_chat(user, SPAN_SUBTLE("It seems it would require [english_list(restricted_software)] to be used."))
+		if(length(restricted_hardpoints))
+			to_chat(user, SPAN_SUBTLE("You figure it could be mounted in the [english_list(restricted_hardpoints)]."))
 
 /obj/item/mech_equipment/proc/installed(var/mob/living/exosuit/_owner)
 	owner = _owner

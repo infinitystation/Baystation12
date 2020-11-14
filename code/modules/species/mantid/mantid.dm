@@ -37,10 +37,9 @@
 
 	min_age =                 1
 	max_age =                20
-//INF	slowdown =               -1
+//ORIG	slowdown =               -1
 	rarity_value =            3
 	gluttonous =              2
-	siemens_coefficient =     0
 	body_temperature =        null
 
 	breath_type =             GAS_METHYL_BROMIDE
@@ -112,6 +111,16 @@
 			list(/decl/emote/visible/ascent_flicker, /decl/emote/visible/ascent_glint) = 20,
 		)
 
+	exertion_effect_chance = 10
+	exertion_hydration_scale = 1
+	exertion_reagent_scale = 5
+	exertion_reagent_path = /datum/reagent/lactate
+	exertion_emotes_biological = list(
+		/decl/emote/exertion/biological,
+		/decl/emote/exertion/biological/breath,
+		/decl/emote/exertion/biological/pant
+	)
+
 /datum/species/mantid/handle_sleeping(var/mob/living/carbon/human/H)
 	return
 
@@ -143,6 +152,8 @@
 	max_age =               500
 	blood_volume =         1200
 	spawns_with_stack =       0
+
+	spawn_flags =             SPECIES_IS_RESTRICTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_FBP_CHARGEN | SPECIES_IS_WHITELISTED//INF
 
 	pixel_offset_x =        -4
 	antaghud_offset_y =      18
@@ -234,3 +245,4 @@
 /datum/species/nabber/monarch/queen
 	name = SPECIES_MONARCH_QUEEN
 	name_plural = "Monarch Serpentid Queens"
+	spawn_flags =             SPECIES_IS_RESTRICTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_FBP_CHARGEN | SPECIES_IS_WHITELISTED//INF

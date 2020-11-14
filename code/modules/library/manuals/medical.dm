@@ -96,7 +96,7 @@
 	icon_state = "bookMedical"
 	author = "Medical Department"
 	title = "Medical Diagnostics Manual"
-	url = "Руководство_по_медицине"
+	url = "Р СѓРєРѕРІРѕРґСЃС‚РІРѕ_РїРѕ_РјРµРґРёС†РёРЅРµ"
 
 /obj/item/weapon/book/manual/medical_diagnostics_manual/New()
 	..()

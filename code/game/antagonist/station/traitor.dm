@@ -5,21 +5,21 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 	id = MODE_TRAITOR
 	antaghud_indicator = "hud_traitor"
 	blacklisted_jobs = list(/datum/job/submap)
-	welcome_text = "<hr><u>Ваша роль подразумевает скрытную или (полу-скрытную) игру.</u> В первую очередь, \
-	вам требуетс&#255; определить, кто вы. Возможны, Вы шпион, наемный убийца \
-	(не рекомендуетс&#255;), амбициозный вор, поставщик оружи&#255;, террорист или даже кто-то иной - главное, \
-	чтобы этот кто-то был противником дл&#255; безопасности корабл&#255; или экипажа.<br>После определени&#255; со своим прошлым, \
-	вам следует придумать себе задани&#255;. Шпион работает на кого-то другого, \
-	и веро&#255;тно, его заинтересуют важные документы в центральном шкафчике в кабинете Агента Внутренних Дел, а \
-	также чертежи корабл&#255; .Убийце нужно убить кого-то важного, или даже лучше - вызвать эвакуацию на корабле \
-	и вз&#255;в цель в заложники, улетев на отдельной капсуле вместе с ней. Вор может решить \
-	украсть личный телепорт, карту капитана или другой важный предмет. Поставщик оружи&#255; через НТнет может, \
-	продавать вещи из аплинка. Террорист занимаетс&#255; подрывом (не полным уничтожением) важных \
-	частей корабл&#255; (лучше всего спросить администрацию, можно ли подрывать тот или иной отсек или объект - \
-	последстви&#255; дл&#255; экипажа могут быть слишком плачевными, что вызовет только негодование)...<br>Но помните, \
-	что это - лишь примеры того, как Вы можете отыгрывать. Не делайте того, что было бы скучно и даже неприт&#255;тно \
-	Вам самим по отношению к экипажу. \
-	<b>Придумайте что-нибудь интересно дл&#255; себ&#255; и других - про&#255;вите фантазию!</b>"
+	welcome_text = "<hr><u>Р’Р°С€Р° СЂРѕР»СЊ РїРѕРґСЂР°Р·СѓРјРµРІР°РµС‚ СЃРєСЂС‹С‚РЅСѓСЋ РёР»Рё (РїРѕР»Сѓ-СЃРєСЂС‹С‚РЅСѓСЋ) РёРіСЂСѓ.</u> Р’ РїРµСЂРІСѓСЋ РѕС‡РµСЂРµРґСЊ, \
+	РІР°Рј С‚СЂРµР±СѓРµС‚СЃСЏ РѕРїСЂРµРґРµР»РёС‚СЊ, РєС‚Рѕ РІС‹. Р’РѕР·РјРѕР¶РЅС‹, Р’С‹ С€РїРёРѕРЅ, РЅР°РµРјРЅС‹Р№ СѓР±РёР№С†Р° \
+	(РЅРµ СЂРµРєРѕРјРµРЅРґСѓРµС‚СЃСЏ), Р°РјР±РёС†РёРѕР·РЅС‹Р№ РІРѕСЂ, РїРѕСЃС‚Р°РІС‰РёРє РѕСЂСѓР¶РёСЏ, С‚РµСЂСЂРѕСЂРёСЃС‚ РёР»Рё РґР°Р¶Рµ РєС‚Рѕ-С‚Рѕ РёРЅРѕР№ - РіР»Р°РІРЅРѕРµ, \
+	С‡С‚РѕР±С‹ СЌС‚РѕС‚ РєС‚Рѕ-С‚Рѕ Р±С‹Р» РїСЂРѕС‚РёРІРЅРёРєРѕРј РґР»СЏ Р±РµР·РѕРїР°СЃРЅРѕСЃС‚Рё РєРѕСЂР°Р±Р»СЏ РёР»Рё СЌРєРёРїР°Р¶Р°.<br>РџРѕСЃР»Рµ РѕРїСЂРµРґРµР»РµРЅРёСЏ СЃРѕ СЃРІРѕРёРј РїСЂРѕС€Р»С‹Рј, \
+	РІР°Рј СЃР»РµРґСѓРµС‚ РїСЂРёРґСѓРјР°С‚СЊ СЃРµР±Рµ Р·Р°РґР°РЅРёСЏ. РЁРїРёРѕРЅ СЂР°Р±РѕС‚Р°РµС‚ РЅР° РєРѕРіРѕ-С‚Рѕ РґСЂСѓРіРѕРіРѕ, \
+	Рё РІРµСЂРѕСЏС‚РЅРѕ, РµРіРѕ Р·Р°РёРЅС‚РµСЂРµСЃСѓСЋС‚ РІР°Р¶РЅС‹Рµ РґРѕРєСѓРјРµРЅС‚С‹ РІ С†РµРЅС‚СЂР°Р»СЊРЅРѕРј С€РєР°С„С‡РёРєРµ РІ РєР°Р±РёРЅРµС‚Рµ РђРіРµРЅС‚Р° Р’РЅСѓС‚СЂРµРЅРЅРёС… Р”РµР», Р° \
+	С‚Р°РєР¶Рµ С‡РµСЂС‚РµР¶Рё РєРѕСЂР°Р±Р»СЏ .РЈР±РёР№С†Рµ РЅСѓР¶РЅРѕ СѓР±РёС‚СЊ РєРѕРіРѕ-С‚Рѕ РІР°Р¶РЅРѕРіРѕ, РёР»Рё РґР°Р¶Рµ Р»СѓС‡С€Рµ - РІС‹Р·РІР°С‚СЊ СЌРІР°РєСѓР°С†РёСЋ РЅР° РєРѕСЂР°Р±Р»Рµ \
+	Рё РІР·СЏРІ С†РµР»СЊ РІ Р·Р°Р»РѕР¶РЅРёРєРё, СѓР»РµС‚РµРІ РЅР° РѕС‚РґРµР»СЊРЅРѕР№ РєР°РїСЃСѓР»Рµ РІРјРµСЃС‚Рµ СЃ РЅРµР№. Р’РѕСЂ РјРѕР¶РµС‚ СЂРµС€РёС‚СЊ \
+	СѓРєСЂР°СЃС‚СЊ Р»РёС‡РЅС‹Р№ С‚РµР»РµРїРѕСЂС‚, РєР°СЂС‚Сѓ РєР°РїРёС‚Р°РЅР° РёР»Рё РґСЂСѓРіРѕР№ РІР°Р¶РЅС‹Р№ РїСЂРµРґРјРµС‚. РџРѕСЃС‚Р°РІС‰РёРє РѕСЂСѓР¶РёСЏ С‡РµСЂРµР· РќРўРЅРµС‚ РјРѕР¶РµС‚, \
+	РїСЂРѕРґР°РІР°С‚СЊ РІРµС‰Рё РёР· Р°РїР»РёРЅРєР°. РўРµСЂСЂРѕСЂРёСЃС‚ Р·Р°РЅРёРјР°РµС‚СЃСЏ РїРѕРґСЂС‹РІРѕРј (РЅРµ РїРѕР»РЅС‹Рј СѓРЅРёС‡С‚РѕР¶РµРЅРёРµРј) РІР°Р¶РЅС‹С… \
+	С‡Р°СЃС‚РµР№ РєРѕСЂР°Р±Р»СЏ (Р»СѓС‡С€Рµ РІСЃРµРіРѕ СЃРїСЂРѕСЃРёС‚СЊ Р°РґРјРёРЅРёСЃС‚СЂР°С†РёСЋ, РјРѕР¶РЅРѕ Р»Рё РїРѕРґСЂС‹РІР°С‚СЊ С‚РѕС‚ РёР»Рё РёРЅРѕР№ РѕС‚СЃРµРє РёР»Рё РѕР±СЉРµРєС‚ - \
+	РїРѕСЃР»РµРґСЃС‚РІРёСЏ РґР»СЏ СЌРєРёРїР°Р¶Р° РјРѕРіСѓС‚ Р±С‹С‚СЊ СЃР»РёС€РєРѕРј РїР»Р°С‡РµРІРЅС‹РјРё, С‡С‚Рѕ РІС‹Р·РѕРІРµС‚ С‚РѕР»СЊРєРѕ РЅРµРіРѕРґРѕРІР°РЅРёРµ)...<br>РќРѕ РїРѕРјРЅРёС‚Рµ, \
+	С‡С‚Рѕ СЌС‚Рѕ - Р»РёС€СЊ РїСЂРёРјРµСЂС‹ С‚РѕРіРѕ, РєР°Рє Р’С‹ РјРѕР¶РµС‚Рµ РѕС‚С‹РіСЂС‹РІР°С‚СЊ. РќРµ РґРµР»Р°Р№С‚Рµ С‚РѕРіРѕ, С‡С‚Рѕ Р±С‹Р»Рѕ Р±С‹ СЃРєСѓС‡РЅРѕ Рё РґР°Р¶Рµ РЅРµРїСЂРёС‚СЏС‚РЅРѕ \
+	Р’Р°Рј СЃР°РјРёРј РїРѕ РѕС‚РЅРѕС€РµРЅРёСЋ Рє СЌРєРёРїР°Р¶Сѓ. \
+	<b>РџСЂРёРґСѓРјР°Р№С‚Рµ С‡С‚Рѕ-РЅРёР±СѓРґСЊ РёРЅС‚РµСЂРµСЃРЅРѕ РґР»СЏ СЃРµР±СЏ Рё РґСЂСѓРіРёС… - РїСЂРѕСЏРІРёС‚Рµ С„Р°РЅС‚Р°Р·РёСЋ!</b>"
 	protected_jobs = list(/datum/job/officer, /datum/job/warden, /datum/job/detective, /datum/job/captain, /datum/job/lawyer, /datum/job/hos)
 	flags = ANTAG_SUSPICIOUS | ANTAG_RANDSPAWN | ANTAG_VOTABLE
 	skill_setter = /datum/antag_skill_setter/station
@@ -33,7 +33,7 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 	if(href_list["spawn_uplink"])
 		spawn_uplink(locate(href_list["spawn_uplink"]))
 		return 1
-
+/* original
 /datum/antagonist/traitor/create_objectives(var/datum/mind/traitor)
 	if(!..())
 		return
@@ -82,7 +82,7 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 					survive_objective.owner = traitor
 					traitor.objectives += survive_objective
 	return
-
+/original */
 /datum/antagonist/traitor/equip(var/mob/living/carbon/human/traitor_mob)
 	if(istype(traitor_mob, /mob/living/silicon)) // this needs to be here because ..() returns false if the mob isn't human
 		add_law_zero(traitor_mob)
@@ -101,22 +101,7 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 	give_intel(traitor_mob)
 
 /datum/antagonist/traitor/proc/give_intel(mob/living/traitor_mob)
-	give_collaborators(traitor_mob)
 	give_codewords(traitor_mob)
-
-/datum/antagonist/traitor/proc/give_collaborators(mob/living/traitor_mob)
-	var/list/dudes = list()
-	for(var/mob/living/carbon/human/man in GLOB.player_list)
-		if(man.client)
-			var/decl/cultural_info/culture = man.get_cultural_value(TAG_FACTION)
-			if(culture && prob(culture.subversive_potential))
-				dudes += man
-		dudes -= traitor_mob
-	if(LAZYLEN(dudes))
-		var/mob/living/carbon/human/M = pick(dudes)
-		to_chat(traitor_mob, "We have received credible reports that [M.real_name] might be willing to help our cause. If you need assistance, consider contacting them.")
-		traitor_mob.StoreMemory("<b>Potential Collaborator</b>: [M.real_name]", /decl/memory_options/system)
-		to_chat(M, "<span class='warning'>The subversive potential of your faction has been noticed, and you may be contacted for assistance soon...</span>")
 
 /datum/antagonist/traitor/proc/give_codewords(mob/living/traitor_mob)
 	to_chat(traitor_mob, "<u><b>Your employers provided you with the following information on how to identify possible allies:</b></u>")

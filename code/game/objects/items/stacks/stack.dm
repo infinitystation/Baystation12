@@ -42,7 +42,7 @@
 	if(uses_charge)
 		return 1
 	if (src && usr && usr.machine == src)
-		usr << browse(null, "window=stack")
+		close_browser(usr, "window=stack")
 	return ..()
 
 /obj/item/stack/examine(mob/user, distance)
@@ -60,7 +60,7 @@
 	if (!recipes)
 		return
 	if (!src || get_amount() <= 0)
-		user << browse(null, "window=stack")
+		close_browser(user, "window=stack")
 	user.set_machine(src) //for correct work of onclose
 	var/list/recipe_list = recipes
 	if (recipes_sublist && recipe_list[recipes_sublist] && istype(recipe_list[recipes_sublist], /datum/stack_recipe_list))
@@ -109,7 +109,7 @@
 					t1 += " <A href='?src=\ref[src];make=[i];multiplier=[max_multiplier]'>[max_multiplier*R.res_amount]x</A>"
 
 	t1 += "</TT></body></HTML>"
-	user << browse(JOINTEXT(t1), "window=stack")
+	show_browser(user, JOINTEXT(t1), "window=stack")
 	onclose(user, "stack")
 
 /obj/item/stack/proc/produce_recipe(datum/stack_recipe/recipe, var/quantity, mob/user)
@@ -193,7 +193,6 @@
 			var/datum/matter_synth/S = synths[i]
 			S.use_charge(charge_costs[i] * used) // Doesn't need to be deleted
 		return 1
-	return 0
 
 /obj/item/stack/proc/add(var/extra)
 	if(!uses_charge)
@@ -236,17 +235,19 @@
 	return 0
 
 //creates a new stack with the specified amount
-/obj/item/stack/proc/split(var/tamount, var/force=FALSE)
+/obj/item/stack/proc/split(var/tamount)
 	if (!amount)
-		return null
-	if(uses_charge && !force)
 		return null
 
 	var/transfer = max(min(tamount, src.amount, initial(max_amount)), 0)
 
 	var/orig_amount = src.amount
 	if (transfer && src.use(transfer))
-		var/obj/item/stack/newstack = new src.type(loc, transfer)
+		var/obj/item/stack/newstack
+		if(uses_charge)
+			newstack = new src.stacktype(loc, transfer)
+		else
+			newstack = new src.type(loc, transfer)
 		newstack.copy_from(src)
 		if (prob(transfer/orig_amount * 100))
 			transfer_fingerprints_to(newstack)

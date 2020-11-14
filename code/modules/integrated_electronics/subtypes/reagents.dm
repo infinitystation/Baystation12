@@ -40,7 +40,8 @@
 	activators = list(
 		"create smoke" = IC_PINTYPE_PULSE_IN,
 		"on smoked" = IC_PINTYPE_PULSE_OUT,
-		"push ref" = IC_PINTYPE_PULSE_IN
+		"push ref" = IC_PINTYPE_PULSE_IN,
+		"on push ref" = IC_PINTYPE_PULSE_OUT //INF
 		)
 	spawn_flags = IC_SPAWN_RESEARCH
 	power_draw_per_use = 20
@@ -68,6 +69,7 @@
 			activate_pin(2)
 		if(3)
 			set_pin_data(IC_OUTPUT, 2, weakref(src))
+			activate_pin(4) //INF
 			push_data()
 
 /obj/item/integrated_circuit/reagent/injector
@@ -97,8 +99,8 @@
 		"inject" = IC_PINTYPE_PULSE_IN,
 		"on injected" = IC_PINTYPE_PULSE_OUT,
 		"on fail" = IC_PINTYPE_PULSE_OUT,
-		"push ref" = IC_PINTYPE_PULSE_IN
-
+		"push ref" = IC_PINTYPE_PULSE_IN,
+		"on push ref" = IC_PINTYPE_PULSE_OUT //INF
 		)
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 	power_draw_per_use = 15
@@ -127,6 +129,7 @@
 			inject()
 		if(4)
 			set_pin_data(IC_OUTPUT, 2, weakref(src))
+			activate_pin(5) //INF
 			push_data()
 
 /obj/item/integrated_circuit/reagent/injector/proc/target_nearby(var/weakref/target)
@@ -185,6 +188,9 @@
 			var/mob/living/L = AM
 			var/injection_status = L.can_inject(null, BP_CHEST)
 			log_world("Injection status? [injection_status]")
+			var/injection_delay = 3 SECONDS
+			if(injection_status == INJECTION_PORT)
+				injection_delay += INJECTION_PORT_DELAY
 			if(!injection_status)
 				activate_pin(3)
 				return
@@ -193,7 +199,7 @@
 			L.visible_message("<span class='danger'>\The [acting_object] is trying to inject [L]!</span>", \
 								"<span class='danger'>\The [acting_object] is trying to inject you!</span>")
 			busy = TRUE
-			addtimer(CALLBACK(src, .proc/inject_after, weakref(L)), injection_status * 3 SECONDS)
+			addtimer(CALLBACK(src, .proc/inject_after, weakref(L)), injection_delay)
 			return
 		else
 			if(!AM.is_open_container())
@@ -203,7 +209,7 @@
 
 			reagents.trans_to(AM, transfer_amount)
 
-	if(direction_mode == IC_REAGENTS_DRAW)
+	else if(direction_mode == IC_REAGENTS_DRAW)
 		if(reagents.total_volume >= reagents.maximum_volume)
 			acting_object.visible_message("\The [acting_object] tries to draw from [AM], but the injector is full.")
 			activate_pin(3)
@@ -214,13 +220,16 @@
 		if(istype(AM, /mob/living/carbon))
 			var/mob/living/carbon/C = AM
 			var/injection_status = C.can_inject(null, BP_CHEST)
+			var/injection_delay = 3 SECONDS
+			if(injection_status == INJECTION_PORT)
+				injection_delay += INJECTION_PORT_DELAY
 			if(istype(C, /mob/living/carbon/slime) || !C.dna || !injection_status)
 				activate_pin(3)
 				return
 			C.visible_message("<span class='danger'>\The [acting_object] is trying to take a blood sample from [C]!</span>", \
 								"<span class='danger'>\The [acting_object] is trying to take a blood sample from you!</span>")
 			busy = TRUE
-			addtimer(CALLBACK(src, .proc/draw_after, weakref(C), tramount), injection_status * 3 SECONDS)
+			addtimer(CALLBACK(src, .proc/draw_after, weakref(C), tramount), injection_delay)
 			return
 
 		else
@@ -306,13 +315,14 @@
 		"volume used" = IC_PINTYPE_NUMBER,
 		"self reference" = IC_PINTYPE_REF
 		)
-	activators = list("push ref" = IC_PINTYPE_PULSE_IN)
+	activators = list("push ref" = IC_PINTYPE_PULSE_IN, "on push ref" = IC_PINTYPE_PULSE_OUT) //INF
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 
 
 
 /obj/item/integrated_circuit/reagent/storage/do_work()
 	set_pin_data(IC_OUTPUT, 2, weakref(src))
+	activate_pin(2) //INF
 	push_data()
 
 /obj/item/integrated_circuit/reagent/storage/on_reagent_change(changetype)
@@ -354,7 +364,8 @@
 		"grind" = IC_PINTYPE_PULSE_IN,
 		"on grind" = IC_PINTYPE_PULSE_OUT,
 		"on fail" = IC_PINTYPE_PULSE_OUT,
-		"push ref" = IC_PINTYPE_PULSE_IN
+		"push ref" = IC_PINTYPE_PULSE_IN,
+		"on push ref" = IC_PINTYPE_PULSE_OUT //INF
 		)
 	volume = 100
 	power_draw_per_use = 150
@@ -368,6 +379,7 @@
 			grind()
 		if(4)
 			set_pin_data(IC_OUTPUT, 2, weakref(src))
+			activate_pin(5) //INF
 			push_data()
 
 /obj/item/integrated_circuit/reagent/storage/grinder/proc/grind()
@@ -382,7 +394,7 @@
 	if(!I.reagents || !I.reagents.total_volume)
 		activate_pin(3)
 		return FALSE
-	
+
 	I.reagents.trans_to(src,I.reagents.total_volume)
 	if(!I.reagents.total_volume)
 		qdel(I)
@@ -406,7 +418,8 @@
 		)
 	activators = list(
 		"scan" = IC_PINTYPE_PULSE_IN,
-		"push ref" = IC_PINTYPE_PULSE_IN
+		"push ref" = IC_PINTYPE_PULSE_IN,
+		"on push ref" = IC_PINTYPE_PULSE_OUT //INF
 		)
 	spawn_flags = IC_SPAWN_RESEARCH
 
@@ -420,6 +433,7 @@
 			push_data()
 		if(2)
 			set_pin_data(IC_OUTPUT, 2, weakref(src))
+			activate_pin(3) //INF
 			push_data()
 
 /obj/item/integrated_circuit/reagent/filter
@@ -540,7 +554,8 @@
 	activators = list(
 		"toggle" = IC_PINTYPE_PULSE_IN,
 		"on toggle" = IC_PINTYPE_PULSE_OUT,
-		"push ref" = IC_PINTYPE_PULSE_IN
+		"push ref" = IC_PINTYPE_PULSE_IN,
+		"on push ref" = IC_PINTYPE_PULSE_OUT //INF
 	)
 
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
@@ -584,6 +599,7 @@
 				QUEUE_TEMPERATURE_ATOMS(src)
 		if(3)
 			set_pin_data(IC_OUTPUT, 4, weakref(src))
+			activate_pin(4) //INF
 			push_data()
 
 /obj/item/integrated_circuit/reagent/temp/on_reagent_change()
@@ -608,7 +624,7 @@
 		if(!check_power())
 			power_fail()
 			return ..()
-	
+
 		set_pin_data(IC_OUTPUT, 2, temperature - T0C)
 		push_data()
 

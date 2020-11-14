@@ -211,6 +211,12 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	shoes = /obj/item/clothing/shoes/jackboots
 	id_type = /obj/item/weapon/card/id/sierra/crew/security
 
+/decl/hierarchy/outfit/job/sierra/crew/security/assist
+	name = OUTFIT_JOB_NAME("Cadet - Sierra")
+	uniform = /obj/item/clothing/under/rank/security/cadet
+	shoes = /obj/item/clothing/shoes/jackboots
+	id_type = /obj/item/weapon/card/id/sierra/crew/security/cadet
+
 	///////////
 	//MEDICAL//
 	///////////
@@ -462,10 +468,6 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	id_type = /obj/item/weapon/card/id/sierra/crew/research/roboticist
 //	pda_type = /obj/item/modular_computer/pda/roboticist
 
-/decl/hierarchy/outfit/job/sierra/crew/research/scientist/psych
-	name = OUTFIT_JOB_NAME("Psychologist - Sierra")
-	uniform = /obj/item/clothing/under/rank/psych
-
 /decl/hierarchy/outfit/job/sierra/crew/research/assist
 	name = OUTFIT_JOB_NAME("Research Assistant - Sierra")
 	uniform = /obj/item/clothing/under/rank/scientist/nanotrasen
@@ -496,7 +498,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	/////////
 	//OTHER//
 	/////////
-
+/*
 /decl/hierarchy/outfit/job/sierra/merchant
 	name = OUTFIT_JOB_NAME("Merchant Assistant")
 	uniform = /obj/item/clothing/under/suit_jacket/tan
@@ -516,7 +518,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	uniform = /obj/item/clothing/under/suit_jacket/charcoal
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/weapon/card/id/sierra/merchant/leader
-/*
+
 /decl/hierarchy/outfit/job/sierra/stowaway
 	name = OUTFIT_JOB_NAME("Stowaway - Sierra")
 	id_type = null

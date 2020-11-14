@@ -897,7 +897,6 @@
 	dir = 10
 	},
 /obj/machinery/air_sensor{
-	frequency = 7664;
 	id_tag = "c1"
 	},
 /turf/simulated/floor/reinforced/nitrogen,
@@ -964,7 +963,6 @@
 	dir = 10
 	},
 /obj/machinery/air_sensor{
-	frequency = 7663;
 	id_tag = "c2"
 	},
 /turf/simulated/floor/reinforced/oxygen,
@@ -988,7 +986,6 @@
 	dir = 10
 	},
 /obj/machinery/air_sensor{
-	frequency = 7662;
 	id_tag = "c3"
 	},
 /turf/simulated/floor/reinforced/carbon_dioxide,
@@ -1050,7 +1047,7 @@
 "ce" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging,
 /obj/machinery/atmospherics/unary/outlet_injector{
-	frequency = 7664;
+	frequency = 1441;
 	id = "cn2n"
 	},
 /turf/simulated/floor/reinforced/nitrogen,
@@ -1081,8 +1078,7 @@
 	icon_state = "intact";
 	dir = 9
 	},
-/obj/machinery/atmospherics/unary/vent_pump/siphon/on/atmos{
-	frequency = 7664;
+/obj/machinery/atmospherics/unary/vent_pump/siphon/on/atmos/tank{
 	id_tag = "cn2o"
 	},
 /turf/simulated/floor/reinforced/nitrogen,
@@ -1249,8 +1245,7 @@
 	dir = 5;
 	icon_state = "intact"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/siphon/on/atmos{
-	frequency = 7663;
+/obj/machinery/atmospherics/unary/vent_pump/siphon/on/atmos/tank{
 	id_tag = "co2o"
 	},
 /turf/simulated/floor/reinforced/oxygen,
@@ -1299,7 +1294,7 @@
 	dir = 9
 	},
 /obj/machinery/atmospherics/unary/outlet_injector{
-	frequency = 7663;
+	frequency = 1441;
 	id = "co2n"
 	},
 /turf/simulated/floor/reinforced/oxygen,
@@ -1316,7 +1311,7 @@
 	icon_state = "intact"
 	},
 /obj/machinery/atmospherics/unary/outlet_injector{
-	frequency = 7662;
+	frequency = 1441;
 	id = "cco2n"
 	},
 /turf/simulated/floor/reinforced/carbon_dioxide,
@@ -1475,8 +1470,7 @@
 	icon_state = "intact";
 	dir = 9
 	},
-/obj/machinery/atmospherics/unary/vent_pump/siphon/on/atmos{
-	frequency = 7662;
+/obj/machinery/atmospherics/unary/vent_pump/siphon/on/atmos/tank{
 	id_tag = "cco2o"
 	},
 /turf/simulated/floor/reinforced/carbon_dioxide,
@@ -1922,7 +1916,7 @@
 	dir = 1
 	},
 /obj/machinery/computer/air_control{
-	frequency = 7664;
+	frequency = 1441;
 	input_tag = "cn2n";
 	name = "Nitrogen Supply Control";
 	output_tag = "cn2o";
@@ -2737,7 +2731,7 @@
 	dir = 1
 	},
 /obj/machinery/computer/air_control{
-	frequency = 7663;
+	frequency = 1441;
 	input_tag = "co2n";
 	name = "Oxygen Supply Control";
 	output_tag = "co2o";
@@ -2826,7 +2820,7 @@
 	dir = 1
 	},
 /obj/machinery/computer/air_control{
-	frequency = 7662;
+	frequency = 1441;
 	input_tag = "cco2n";
 	name = "Carbon Dioxide Tank Control";
 	output_tag = "cco2o";
@@ -3814,8 +3808,7 @@
 	},
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/railing/mapped{
 	dir = 1;
@@ -3826,16 +3819,13 @@
 /area/map_template/colony/airlock)
 "gR" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 2;
-	frequency = 2222;
-	id_tag = "playablecolonymain_pump_out_external";
-	tag = "playablecolonymain_pump"
+	id_tag = "playablecolonymain_pump_out_external"
 	},
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/railing/mapped,
 /obj/effect/floor_decal/industrial/hatch/orange,
@@ -4108,8 +4098,7 @@
 	},
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/template_noop)
@@ -6375,8 +6364,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/map_template/colony/mineralprocessing)
@@ -6406,7 +6394,7 @@
 	icon_state = "intact"
 	},
 /obj/machinery/atmospherics/unary/outlet_injector{
-	frequency = 7664;
+	frequency = 1441;
 	id = "cn2n"
 	},
 /turf/simulated/floor/reinforced/nitrogen,
@@ -6457,7 +6445,7 @@
 /area/map_template/colony/jail)
 "lh" = (
 /obj/machinery/door/airlock/external{
-	frequency = 2222;
+	frequency = 1439;
 	id_tag = "playablecolonymain_exterior_door";
 	locked = 1
 	},
@@ -6470,8 +6458,7 @@
 "li" = (
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/machinery/conveyor_switch{
 	id = "colonymine"
@@ -6631,8 +6618,7 @@
 "lz" = (
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/machinery/computer/mining,
 /obj/structure/table/steel_reinforced,
@@ -6761,10 +6747,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
 	cycle_to_external_air = 1;
-	frequency = 2222;
+	frequency = 1439;
 	id_tag = "playablecolonymain";
 	pixel_y = 28;
-	tag = "playablecolonymain";
 	tag_airpump = "playablecolonymain_pump";
 	tag_chamber_sensor = "playablecolonymain_sensor_chamber";
 	tag_exterior_door = "playablecolonymain_exterior_door";
@@ -6772,12 +6757,10 @@
 	tag_interior_door = "playablecolonymain_interior_door";
 	tag_interior_sensor = "playablecolonymain_sensor_interior"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 2;
-	frequency = 2222;
 	id_tag = "playablecolonymain_pump";
 	power_rating = 25000;
-	tag = "playablecolonymain_pump"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/colony/airlock)
@@ -6799,7 +6782,7 @@
 /area/map_template/colony/atmospherics)
 "lM" = (
 /obj/machinery/airlock_sensor{
-	frequency = 2222;
+	frequency = 1439;
 	id_tag = "playablecolonymain_sensor_chamber";
 	pixel_x = 22
 	},
@@ -6807,12 +6790,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 2;
-	frequency = 2222;
 	id_tag = "playablecolonymain_pump";
-	power_rating = 25000;
-	tag = "playablecolonymain_pump"
+	power_rating = 25000
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/colony/airlock)
@@ -6854,7 +6835,7 @@
 /obj/machinery/portable_atmospherics/canister/air/airlock,
 /obj/machinery/atmospherics/portables_connector,
 /obj/machinery/access_button/airlock_interior{
-	frequency = 2222;
+	frequency = 1439;
 	master_tag = "playablecolonymain";
 	pixel_x = -22;
 	pixel_y = 5
@@ -6864,7 +6845,7 @@
 	dir = 5
 	},
 /obj/machinery/airlock_sensor/airlock_interior{
-	frequency = 2222;
+	frequency = 1439;
 	id_tag = "playablecolonymain_sensor_interior";
 	pixel_x = -22
 	},
@@ -6989,12 +6970,12 @@
 /area/map_template/colony/mineralprocessing)
 "ma" = (
 /obj/machinery/airlock_sensor/airlock_exterior{
-	frequency = 2222;
+	frequency = 1439;
 	id_tag = "playablecolonymain_sensor_external";
 	pixel_x = 22
 	},
 /obj/machinery/access_button/airlock_exterior{
-	frequency = 2222;
+	frequency = 1439;
 	master_tag = "playablecolonymain";
 	pixel_x = 19;
 	pixel_y = 5
@@ -7091,7 +7072,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/external{
-	frequency = 2222;
+	frequency = 1439;
 	id_tag = "playablecolonymain_interior_door"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -7121,8 +7102,7 @@
 "mk" = (
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/exoplanet/concrete,
@@ -7150,13 +7130,11 @@
 "mn" = (
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/railing/mapped{
 	dir = 4;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -7496,8 +7474,7 @@
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/machinery/recharge_station,
 /turf/simulated/floor/exoplanet/concrete,
@@ -8082,12 +8059,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 2222;
 	id_tag = "playablecolonymain_pump_out_internal";
-	power_rating = 25000;
-	tag = "playablecolonymain_pump"
+	power_rating = 25000
 	},
 /obj/item/device/radio/intercom{
 	dir = 4;
@@ -8150,12 +8125,10 @@
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 2222;
 	id_tag = "playablecolonymain_pump";
-	power_rating = 25000;
-	tag = "playablecolonymain_pump"
+	power_rating = 25000
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/colony/airlock)
@@ -8177,12 +8150,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 2222;
 	id_tag = "playablecolonymain_pump";
-	power_rating = 25000;
-	tag = "playablecolonymain_pump"
+	power_rating = 25000
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/colony/airlock)
@@ -8390,8 +8361,7 @@
 "ol" = (
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -8429,8 +8399,7 @@
 "on" = (
 /obj/structure/railing/mapped{
 	dir = 4;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -8559,12 +8528,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 2222;
 	id_tag = "playablecolonymain_pump_out_internal";
-	power_rating = 25000;
-	tag = "playablecolonymain_pump"
+	power_rating = 25000
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/colony/airlock)
@@ -8741,8 +8708,7 @@
 "vk" = (
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -8859,8 +8825,7 @@
 "JN" = (
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -8939,8 +8904,7 @@
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	tag = "icon-railing0 (EAST)"
+	icon_state = "railing0-1"
 	},
 /obj/structure/railing/mapped,
 /turf/simulated/floor/exoplanet/concrete,

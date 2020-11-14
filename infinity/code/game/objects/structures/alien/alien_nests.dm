@@ -12,6 +12,11 @@
 /obj/structure/bed/nest/on_update_icon()
 	return
 
+/obj/structure/bed/nest/proc/unbuckle_mob_from_nest(var/mob/user, var/mob/buckled)
+	if(user?.buckled == src)
+		buckled.overlays -= image(icon, "nestoverlay")
+		unbuckle_mob()
+
 /obj/structure/bed/nest/user_unbuckle_mob(mob/user as mob)
 	if(buckled_mob)
 		if(buckled_mob.buckled == src)
@@ -20,6 +25,7 @@
 					"<span class='notice'>[user.name] pulls [buckled_mob.name] free from the sticky nest!</span>",\
 					"<span class='notice'>[user.name] pulls you free from the gelatinous resin.</span>",\
 					"<span class='notice'>You hear squelching...</span>")
+				buckled_mob.overlays -= image(icon, "nestoverlay")
 				unbuckle_mob()
 			else
 				if(world.time <= buckled_mob.last_special+NEST_RESIST_TIME)
@@ -29,10 +35,8 @@
 					"<span class='warning'>[buckled_mob.name] struggles to break free of the gelatinous resin...</span>",\
 					"<span class='warning'>You struggle to break free from the gelatinous resin...</span>",\
 					"<span class='notice'>You hear squelching...</span>")
-				spawn(NEST_RESIST_TIME)
-					if(user?.buckled == src)
-						buckled_mob.last_special = world.time
-						unbuckle_mob()
+				addtimer(CALLBACK(src, .proc/unbuckle_mob_from_nest, user, buckled_mob), NEST_RESIST_TIME)
+				buckled_mob.last_special = world.time
 			src.add_fingerprint(user)
 	return
 
@@ -59,6 +63,7 @@
 			"<span class='warning'>[user.name] drenches you in a foul-smelling resin, trapping you in the [src]!</span>",
 			"<span class='notice'>You hear squelching...</span>")
 	buckle_mob(M)
+	M.overlays += image(icon, "nestoverlay")
 	src.add_fingerprint(user)
 	return
 

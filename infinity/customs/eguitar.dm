@@ -13,3 +13,4 @@
 		slot_l_hand_str = 'icons/mob/onmob/guns/guns_l.dmi',
 		slot_r_hand_str = 'icons/mob/onmob/guns/guns_r.dmi',
 		)
+	trade_blacklisted = TRUE

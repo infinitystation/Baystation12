@@ -67,7 +67,6 @@
 			else		to_chat(src, "<span class='warning'>Error: Private-Message: Client not found. They may have lost connection, so try using an adminhelp!</span>")
 			return
 
-	msg = sanitize_a0(msg)
 
 	var/datum/client_lite/receiver_lite = client_repository.get_lite_client(C)
 	var/datum/client_lite/sender_lite = client_repository.get_lite_client(src)
@@ -112,7 +111,7 @@
 			spawn(0)	//so we don't hold the caller proc up
 				var/sender = src
 				var/sendername = key
-				var/reply = sanitize_a0(input(C, msg,"[recieve_pm_type] PM from [sendername]", "") as text|null)		//show message and await a reply
+				var/reply = input(C, msg,"[recieve_pm_type] PM from [sendername]", "") as text|null		//show message and await a reply
 				if(C && reply)
 					if(sender)
 						C.cmd_admin_pm(sender,reply)										//sender is still about, let's reply to them
@@ -138,7 +137,7 @@
 	receiver_message += "</span></span>"
 	to_chat(C, receiver_message)
 
-	//play the recieving admin the adminhelp sound (if they have them enabled)
+	//play the receiving admin the adminhelp sound (if they have them enabled)
 	//non-admins shouldn't be able to disable this
 	if(C.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)
 		sound_to(C, 'sound/effects/adminhelp.ogg')
@@ -148,6 +147,11 @@
 	admin_pm_repository.store_pm(src, C, msg)
 
 	ticket.msgs += new /datum/ticket_msg(src.ckey, C.ckey, msg)
+	if(establish_db_connection())
+		var/sql_text = "[src.ckey] -> [C.ckey]: [sanitizeSQL(msg)]\n"
+		var/DBQuery/ticket_text = dbcon.NewQuery("UPDATE erro_admin_tickets SET text = CONCAT(COALESCE(text,''), '[sql_text]') WHERE round = '[game_id]' AND inround_id = '[ticket.id]';")
+		ticket_text.Execute()
+
 	update_ticket_panels()
 
 	//we don't use message_admins here because the sender/receiver might get it too
@@ -169,7 +173,7 @@
 		return
 
 	// Handled on Bot32's end, unsure about other bots
-//	if(length(msg) > 400) // TODO: if message length is over 400, divide it up into seperate messages, the message length restriction is based on IRC limitations.  Probably easier to do this on the bots ends.
+//	if(length(msg) > 400) // TODO: if message length is over 400, divide it up into separate messages, the message length restriction is based on IRC limitations.  Probably easier to do this on the bots ends.
 //		to_chat(src, "<span class='warning'>Your message was not sent because it was more then 400 characters find your message below for ease of copy/pasting</span>")
 //		to_chat(src, "<span class='notice'>[msg]</span>")
 //		return

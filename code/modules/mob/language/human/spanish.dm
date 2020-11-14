@@ -14,7 +14,9 @@
 	partial_understanding = list(
 		LANGUAGE_HUMAN_EURO = 30,
 		LANGUAGE_HUMAN_SELENIAN = 15,
-		LANGUAGE_SPACER = 20
+		LANGUAGE_SPACER = 20,
+		LANGUAGE_HUMAN_AVALON = 25, //inf
+		LANGUAGE_HUMAN_LORRIMAN = 10 //inf
 	)
 	syllables = list(
 		"ad", "al", "an", "ar", "as", "ci", "co", "de", "do", "el", "en", "er", "es",

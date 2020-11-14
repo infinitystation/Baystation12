@@ -39,23 +39,21 @@
 		NME.error = ""
 		NME.check_for_new_messages(1)
 
-/datum/computer_file/program/email_client/proc/new_mail_notify()
-	//computer.visible_notification("You got mail!")//inf
-
-	computer.get_physical_host().visible_message("\The [computer.holder] beeps softly, indicating a new email has been received.", 1)
-	playsound(computer.get_physical_host(), 'sound/machines/twobeep.ogg', 50, 1)
+/datum/computer_file/program/email_client/proc/new_mail_notify(var/notification_sound)
+	computer.visible_notification(notification_sound)
+	computer.audible_notification("sound/machines/ping.ogg")
 
 /datum/computer_file/program/email_client/process_tick()
 	..()
 	var/datum/nano_module/email_client/NME = NM
 	if(!istype(NME))
 		return
-	NME.relayed_process(ntnet_speed)
+	NME.relayed_process(get_signal())//inf//was: NME.relayed_process(ntnet_speed)
 
 	var/check_count = NME.check_for_new_messages()
 	if(check_count)
-		if(check_count == 2)
-			new_mail_notify()
+		if(check_count == 2 && !NME.current_account.notification_mute)
+			new_mail_notify(NME.current_account.notification_sound)
 		ui_header = "ntnrc_new.gif"
 	else
 		ui_header = "ntnrc_idle.gif"
@@ -98,9 +96,9 @@
 		var/list/msg = list()
 		msg += "*--*\n"
 		msg += "<span class='notice'>New mail received from [received_message.source]:</span>\n"
-		msg += "<b>Subject:</b> [sanitize_u2a(received_message.title)]\n<b>Message:</b>\n[sanitize_u2a(pencode2html(received_message.stored_data))]\n"
+		msg += "<b>Subject:</b> [received_message.title]\n<b>Message:</b>\n[pencode2html(received_message.stored_data)]\n"
 		if(received_message.attachment)
-			msg += "<b>Attachment:</b> [sanitize_u2a(received_message.attachment.filename)].[received_message.attachment.filetype] ([received_message.attachment.size]GQ)\n"
+			msg += "<b>Attachment:</b> [received_message.attachment.filename].[received_message.attachment.filetype] ([received_message.attachment.size]GQ)\n"
 		msg += "<a href='?src=\ref[src];open;reply=[received_message.uid]'>Reply</a>\n"
 		msg += "*--*"
 		to_chat(L, jointext(msg, null))
@@ -206,6 +204,7 @@
 
 	else if(istype(current_account))
 		data["current_account"] = current_account.login
+		data["notification_mute"] = current_account.notification_mute
 		if(addressbook)
 			var/list/all_accounts = list()
 			for(var/datum/computer_file/data/email_account/account in ntnet_global.email_accounts)
@@ -488,6 +487,16 @@
 		current_account.password = newpassword1
 		stored_password = newpassword1
 		error = "Your password has been successfully changed!"
+		return 1
+
+	if(href_list["set_notification"])
+		var/new_notification = sanitize(input(user, "Enter your desired notification sound:", "Set Notification", current_account.notification_sound) as text|null)
+		if(new_notification)
+			current_account.notification_sound = new_notification
+		return 1
+
+	if(href_list["mute"])
+		current_account.notification_mute = !current_account.notification_mute
 		return 1
 
 	// The following entries are Modular Computer framework only, and therefore won't do anything in other cases (like AI View)

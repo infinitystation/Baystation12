@@ -4,12 +4,12 @@
 var/const/CHARACTER_PREFERENCE_INPUT_TITLE = "Character Preference"
 
 /datum/category_group/player_setup_category/physical_preferences
-	name = "Physical"
+	name = "Внешность"
 	sort_order = 1
 	category_item_type = /datum/category_item/player_setup_item/physical
 
 /datum/category_group/player_setup_category/background_preferences
-	name = "Background"
+	name = "Предыстория"
 	sort_order = 2
 	category_item_type = /datum/category_item/player_setup_item/background
 
@@ -19,32 +19,32 @@ var/const/CHARACTER_PREFERENCE_INPUT_TITLE = "Character Preference"
 		. += "[PI.content(user)]<br>"
 
 /datum/category_group/player_setup_category/occupation_preferences
-	name = "Occupation"
+	name = "Должность"
 	sort_order = 3
 	category_item_type = /datum/category_item/player_setup_item/occupation
 
 /datum/category_group/player_setup_category/appearance_preferences
-	name = "Roles"
+	name = "Роли"
 	sort_order = 4
 	category_item_type = /datum/category_item/player_setup_item/antagonism
 
 /datum/category_group/player_setup_category/relations_preferences
-	name = "Matchmaking"
+	name = "Взаимоотношения"
 	sort_order = 5
 	category_item_type = /datum/category_item/player_setup_item/relations
 
 /datum/category_group/player_setup_category/loadout_preferences
-	name = "Loadout"
+	name = "Личные вещи"
 	sort_order = 6
 	category_item_type = /datum/category_item/player_setup_item/loadout
 
 /datum/category_group/player_setup_category/global_preferences
-	name = "Global"
+	name = "Общее"
 	sort_order = 7
 	category_item_type = /datum/category_item/player_setup_item/player_global
 
 /datum/category_group/player_setup_category/law_pref
-	name = "Laws"
+	name = "Законы"
 	sort_order = 8
 	category_item_type = /datum/category_item/player_setup_item/law_pref
 
@@ -113,7 +113,7 @@ var/const/CHARACTER_PREFERENCE_INPUT_TITLE = "Character Preference"
 
 	if(href_list["category"])
 		var/category = locate(href_list["category"])
-		if(category && category in categories)
+		if(category && (category in categories))
 			selected_category = category
 		. = 1
 

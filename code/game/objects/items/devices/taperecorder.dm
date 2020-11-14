@@ -269,7 +269,7 @@
 	update_icon()
 	to_chat(user, "<span class='notice'>Audio playback started.</span>")
 	playsound(src, 'sound/machines/click.ogg', 10, 1)
-	for(var/i=1 , i < mytape.max_capacity , i++)
+	for(var/i=1 , i < mytape?.max_capacity , i++)
 		if(!mytape || !playing)
 			break
 		if(mytape.storedinfo.len < i)
@@ -348,7 +348,7 @@
 		if (findtextEx(printedmessage,"*",1,2)) //replace action sounds
 			printedmessage = "\[[time2text(mytape.timestamp[i]*10,"mm:ss")]\] (Unrecognized sound)"
 		t1 += "[printedmessage]<BR>"
-	P.info = sanitize_a2u(t1)
+	P.info = t1
 	P.SetName("Transcript")
 	canprint = 0
 	sleep(300)

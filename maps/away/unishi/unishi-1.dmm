@@ -5,9 +5,6 @@
 "ab" = (
 /turf/simulated/wall/titanium,
 /area/space)
-"ac" = (
-/turf/simulated/wall,
-/area/space)
 "ad" = (
 /obj/machinery/power/port_gen/pacman/super/potato,
 /obj/structure/cable/yellow{
@@ -55,7 +52,8 @@
 /turf/simulated/floor/reinforced/airmix,
 /area/unishi/engineering)
 "ai" = (
-/turf/simulated/wall,
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor,
 /area/unishi/engineering)
 "aj" = (
 /obj/machinery/power/port_gen/pacman/super/potato,
@@ -120,7 +118,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/wall,
+/turf/simulated/wall/r_wall,
 /area/unishi/engineering)
 "ar" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/universal{
@@ -135,9 +133,6 @@
 	dir = 8
 	},
 /turf/space,
-/area/unishi/engineering)
-"at" = (
-/turf/simulated/wall/ocp_wall,
 /area/unishi/engineering)
 "au" = (
 /obj/structure/cable/yellow{
@@ -188,7 +183,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
 	},
-/turf/simulated/wall,
+/turf/simulated/floor,
 /area/unishi/engineering)
 "aC" = (
 /obj/machinery/atmospherics/portables_connector{
@@ -204,7 +199,8 @@
 	dir = 10
 	},
 /obj/structure/sign/warning/airlock,
-/turf/simulated/wall,
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor,
 /area/unishi/engineering)
 "aE" = (
 /obj/machinery/airlock_sensor{
@@ -261,9 +257,8 @@
 /turf/simulated/floor,
 /area/unishi/engineering)
 "aM" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 8;
-	frequency = 1379;
 	id_tag = "unishi_vent"
 	},
 /turf/simulated/floor,
@@ -343,7 +338,7 @@
 	icon_state = "shock";
 	dir = 4
 	},
-/turf/simulated/wall,
+/turf/simulated/wall/r_wall,
 /area/unishi/engineroom)
 "aU" = (
 /turf/simulated/floor,
@@ -363,10 +358,6 @@
 	pixel_x = 28
 	},
 /turf/simulated/floor,
-/area/unishi/engineering)
-"aY" = (
-/obj/structure/sign/warning/airlock,
-/turf/simulated/wall/titanium,
 /area/unishi/engineering)
 "aZ" = (
 /obj/machinery/access_button/airlock_exterior{
@@ -488,7 +479,7 @@
 /turf/simulated/wall/ocp_wall,
 /area/unishi/engineroom)
 "bq" = (
-/obj/machinery/suit_storage_unit/engineering,
+/obj/machinery/suit_storage_unit/engineering/unishi,
 /obj/structure/sign/warning/fire{
 	dir = 4;
 	pixel_x = -32
@@ -514,19 +505,19 @@
 "bt" = (
 /obj/machinery/atmospherics/unary/outlet_injector{
 	dir = 1;
-	frequency = 2001;
+	frequency = 1438;
 	icon_state = "map_injector";
 	id = "unishi_fuel_in";
 	use_power = 1
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/reinforced/airless,
 /area/unishi/engineroom)
 "bu" = (
 /obj/effect/wallframe_spawn/reinforced_phoron,
 /turf/simulated/floor,
 /area/unishi/engineroom)
 "bv" = (
-/obj/machinery/suit_storage_unit/engineering,
+/obj/machinery/suit_storage_unit/engineering/unishi,
 /turf/simulated/floor,
 /area/unishi/engineroom)
 "bw" = (
@@ -562,7 +553,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/machinery/suit_storage_unit/engineering,
+/obj/machinery/suit_storage_unit/engineering/unishi,
 /turf/simulated/floor,
 /area/unishi/engineroom)
 "bA" = (
@@ -609,7 +600,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/wall,
+/turf/simulated/wall/r_wall,
 /area/unishi/engineroom)
 "bE" = (
 /obj/structure/cable/yellow{
@@ -636,7 +627,7 @@
 "bG" = (
 /obj/machinery/computer/air_control{
 	dir = 4;
-	frequency = 2001;
+	frequency = 1438;
 	input_tag = "unishi_fuel_in";
 	name = "Fuel Supply Control";
 	output_tag = "unishi_fuel_out";
@@ -656,7 +647,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
-/turf/simulated/wall,
+/turf/simulated/wall/r_wall,
 /area/unishi/engineroom)
 "bJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -683,14 +674,13 @@
 	id_tag = "unishi";
 	pixel_x = -20
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/reinforced/airless,
 /area/unishi/engineroom)
 "bM" = (
 /obj/machinery/atmospherics/unary/vent_pump/engine{
 	dir = 4;
 	external_pressure_bound = 100;
 	external_pressure_bound_default = 0;
-	frequency = 2001;
 	icon_state = "map_vent_in";
 	id_tag = "unishi_fuel_out";
 	initialize_directions = 1;
@@ -699,7 +689,7 @@
 	pump_direction = 0;
 	use_power = 1
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/reinforced/airless,
 /area/unishi/engineroom)
 "bN" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
@@ -726,9 +716,6 @@
 	},
 /turf/simulated/floor,
 /area/unishi/engineroom)
-"bR" = (
-/turf/simulated/wall,
-/area/unishi/engineroom)
 "bS" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 6
@@ -754,8 +741,7 @@
 "bV" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 4;
-	icon_state = "intact";
-	tag = "icon-intact (WEST)"
+	icon_state = "intact"
 	},
 /turf/simulated/floor,
 /area/unishi/engineroom)
@@ -768,7 +754,7 @@
 /area/unishi/engineroom)
 "bX" = (
 /obj/structure/closet/hydrant,
-/turf/simulated/wall,
+/turf/simulated/wall/r_wall,
 /area/unishi/engineroom)
 "bY" = (
 /obj/structure/table/standard,
@@ -824,10 +810,6 @@
 	},
 /turf/simulated/floor/airless,
 /area/unishi/engineroom)
-"ch" = (
-/obj/structure/sign/warning/vent_port,
-/turf/simulated/wall/titanium,
-/area/space)
 "ci" = (
 /obj/structure/lattice,
 /turf/space,
@@ -836,17 +818,24 @@
 /obj/effect/shuttle_landmark/nav_unishi/nav3,
 /turf/space,
 /area/space)
+"qF" = (
+/obj/machinery/light/small,
+/turf/simulated/floor,
+/area/unishi/engineering)
 "FR" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
 /turf/simulated/floor,
 /area/unishi/engineroom)
+"HK" = (
+/turf/simulated/floor/reinforced/airless,
+/area/unishi/engineroom)
 "Ic" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
-/turf/simulated/wall,
+/turf/simulated/floor,
 /area/unishi/engineering)
 
 (1,1,1) = {"
@@ -5259,10 +5248,10 @@ aa
 aa
 ab
 ab
-aG
-aG
-aG
-aG
+bZ
+bZ
+bZ
+bZ
 aG
 aG
 aG
@@ -5360,15 +5349,15 @@ ab
 ab
 ab
 ab
-at
-aG
+ag
+bg
 aO
 ba
 bi
 bo
 bt
-aU
-aU
+HK
+HK
 bL
 bS
 ca
@@ -5457,20 +5446,20 @@ aa
 aa
 ab
 ab
-ac
-ac
-ac
-ac
-ac
-at
-aG
+ag
+ag
+ag
+ag
+ag
+ag
+bg
 aP
 bb
 bj
 aG
-aU
-aU
-aU
+HK
+HK
+HK
 bM
 bT
 cb
@@ -5559,13 +5548,13 @@ aa
 aa
 ab
 ab
-ab
+ag
 ad
 aj
 aj
-at
-at
-aG
+ag
+ag
+bg
 aP
 bb
 bk
@@ -5661,13 +5650,13 @@ aa
 aa
 ab
 ab
-ab
+ag
 ae
 ak
 ak
-at
-at
-aG
+ag
+ag
+bg
 aQ
 bc
 bd
@@ -5763,7 +5752,7 @@ aa
 aa
 ab
 ab
-ab
+ag
 af
 al
 an
@@ -5865,13 +5854,13 @@ aa
 aa
 ab
 ab
-ab
 ag
 ag
 ag
-at
-at
-at
+ag
+ag
+ag
+ag
 aS
 be
 bm
@@ -5967,13 +5956,13 @@ aa
 aa
 ab
 ab
-ab
+ag
 ah
 ah
 ao
 av
 Ic
-aH
+ag
 aT
 bc
 bc
@@ -6069,11 +6058,11 @@ aa
 aa
 ab
 ab
-ab
+ag
 ah
 ah
 ao
-aw
+aH
 aA
 aw
 aU
@@ -6171,7 +6160,7 @@ aa
 aa
 ab
 ab
-ab
+ag
 ah
 am
 ap
@@ -6185,7 +6174,7 @@ bs
 bx
 bD
 bI
-bR
+bg
 bX
 cc
 ce
@@ -6273,12 +6262,12 @@ aa
 aa
 ab
 ab
-ac
-ai
-ai
+ag
+ag
+ag
 aq
-ai
-ai
+ag
+ag
 aJ
 aW
 bg
@@ -6484,18 +6473,18 @@ as
 ay
 aD
 aL
-aY
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ch
+ay
+ay
+ay
+ay
+ay
+bZ
+bZ
+bZ
+bZ
+bZ
+bZ
+cf
 aa
 aa
 aa
@@ -6687,7 +6676,7 @@ aa
 aa
 ay
 aF
-aw
+qF
 ay
 aa
 aa

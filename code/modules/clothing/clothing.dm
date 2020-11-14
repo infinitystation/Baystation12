@@ -278,7 +278,6 @@ BLIND     // can't see anything
 		return item_state_slots[slot]
 	else
 		return icon_state
-	return ..()
 
 /obj/item/clothing/glasses/update_clothing_icon()
 	if (ismob(src.loc))
@@ -670,7 +669,6 @@ BLIND     // can't see anything
 	else
 		add_hidden(I, user)
 		return
-	..()
 
 /obj/item/clothing/shoes/proc/add_cuffs(var/obj/item/weapon/handcuffs/cuffs, var/mob/user)
 	if (!can_add_cuffs)
@@ -723,7 +721,7 @@ BLIND     // can't see anything
 	if (I.w_class > hidden_item_max_w_class)
 		to_chat(user, SPAN_WARNING("\The [I] is too large to fit in the [src]."))
 		return
-	if (do_after(user, 2 SECONDS, src)) //INF, WAS	if (do_after(user, 2 SECONDS))
+	if (do_after(user, 1 SECONDS, src)) //INF, WAS	if (do_after(user, 1 SECONDS))
 		if(!user.unEquip(I, src))
 			return
 		user.visible_message(SPAN_ITALIC("\The [user] shoves \the [I] into \the [src]."), range = 1)
@@ -836,7 +834,7 @@ BLIND     // can't see anything
 	w_class = ITEM_SIZE_NORMAL
 	force = 0
 	var/has_sensor = SUIT_HAS_SENSORS //For the crew computer 2 = unable to change mode
-	var/sensor_mode = 0
+	var/sensor_mode = SUIT_SENSOR_OFF
 		/*
 		1 = Report living/dead
 		2 = Report detailed damages
@@ -977,13 +975,13 @@ BLIND     // can't see anything
 /obj/item/clothing/under/examine(mob/user)
 	. = ..()
 	switch(src.sensor_mode)
-		if(0)
+		if(SUIT_SENSOR_OFF)
 			to_chat(user, "Its sensors appear to be disabled.")
-		if(1)
+		if(SUIT_SENSOR_BINARY)
 			to_chat(user, "Its binary life sensors appear to be enabled.")
-		if(2)
+		if(SUIT_SENSOR_VITAL)
 			to_chat(user, "Its vital tracker appears to be enabled.")
-		if(3)
+		if(SUIT_SENSOR_TRACKING)
 			to_chat(user, "Its vital tracker and tracking beacon appear to be enabled.")
 
 /obj/item/clothing/under/proc/set_sensors(mob/user as mob)
@@ -997,26 +995,27 @@ BLIND     // can't see anything
 		to_chat(user, "This suit does not have any sensors.")
 		return 0
 
-	var/list/modes = list("Off", "Binary sensors", "Vitals tracker", "Tracking beacon")
-	var/switchMode = input("Select a sensor mode:", "Suit Sensor Mode", modes[sensor_mode + 1]) in modes
+	var/switchMode = input("Select a sensor mode:", "Suit Sensor Mode", get_key_by_index(SUIT_SENSOR_MODES, sensor_mode + 1)) as null | anything in SUIT_SENSOR_MODES
+	if(!switchMode)
+		return
 	if(get_dist(user, src) > 1)
 		to_chat(user, "You have moved too far away.")
 		return
-	sensor_mode = modes.Find(switchMode) - 1
+	sensor_mode = SUIT_SENSOR_MODES[switchMode]
 
 	if (src.loc == user)
 		switch(sensor_mode)
-			if(0)
+			if(SUIT_SENSOR_OFF)
 				user.visible_message("[user] adjusts the tracking sensor on \his [src.name].", "You disable your suit's remote sensing equipment.")
-			if(1)
+			if(SUIT_SENSOR_BINARY)
 				user.visible_message("[user] adjusts the tracking sensor on \his [src.name].", "Your suit will now report whether you are live or dead.")
-			if(2)
+			if(SUIT_SENSOR_VITAL)
 				user.visible_message("[user] adjusts the tracking sensor on \his [src.name].", "Your suit will now report your vital lifesigns.")
-			if(3)
+			if(SUIT_SENSOR_TRACKING)
 				user.visible_message("[user] adjusts the tracking sensor on \his [src.name].", "Your suit will now report your vital lifesigns as well as your coordinate position.")
 
 	else if (ismob(src.loc))
-		if(sensor_mode == 0)
+		if(sensor_mode == SUIT_SENSOR_OFF)
 			user.visible_message("<span class='warning'>[user] disables [src.loc]'s remote sensing equipment.</span>", "You disable [src.loc]'s remote sensing equipment.")
 		else
 			user.visible_message("[user] adjusts the tracking sensor on [src.loc]'s [src.name].", "You adjust [src.loc]'s sensors.")
@@ -1041,7 +1040,6 @@ BLIND     // can't see anything
 	set category = "Object"
 	set src in usr
 	set_sensors(usr)
-	..()
 
 /obj/item/clothing/under/verb/rollsuit()
 	set name = "Roll Down Jumpsuit"
@@ -1093,7 +1091,7 @@ BLIND     // can't see anything
 	update_clothing_icon()
 
 /obj/item/clothing/under/rank/New()
-	sensor_mode = pick(0,1,2,3)
+	sensor_mode = pick(list_values(SUIT_SENSOR_MODES))
 	..()
 
 /obj/item/clothing/under/AltClick(var/mob/user)
@@ -1111,3 +1109,9 @@ BLIND     // can't see anything
 	gender = NEUTER
 	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_DIONA)
 	var/undergloves = 1
+
+
+/obj/item/clothing/get_pressure_weakness(pressure,zone)
+	. = ..()
+	for(var/obj/item/clothing/accessory/A in accessories)
+		. = min(., A.get_pressure_weakness(pressure,zone))

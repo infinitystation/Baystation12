@@ -15,8 +15,7 @@
 /obj/machinery/door/blast/regular{
 	dir = 8;
 	icon_state = "pdoor1";
-	id_tag = "mc_chamber_vent";
-	tag = "icon-pdoor1 (WEST)"
+	id_tag = "mc_chamber_vent"
 	},
 /turf/simulated/floor,
 /area/space)
@@ -58,7 +57,6 @@
 /area/space)
 "al" = (
 /obj/machinery/compressor{
-	tag = "icon-compressor (NORTH)";
 	icon_state = "compressor";
 	dir = 1
 	},
@@ -71,8 +69,7 @@
 	icon_state = "pdoor0";
 	id_tag = "mc_laser";
 	name = "Protective Shutters";
-	opacity = 0;
-	tag = "icon-pdoor0"
+	opacity = 0
 	},
 /turf/simulated/floor,
 /area/space)
@@ -106,8 +103,7 @@
 	icon_state = "pdoor0";
 	id_tag = "mc_bridge";
 	name = "Reinforsed Secret Wall";
-	opacity = 0;
-	tag = "icon-pdoor0 (WEST)";
+	opacity = 0
 	wifi_receiver = 1
 	},
 /turf/simulated/floor/plating,
@@ -128,7 +124,6 @@
 "at" = (
 /obj/machinery/power/turbine,
 /obj/structure/cable{
-	tag = "icon-0-1 (NORTH)";
 	icon_state = "0-1";
 	dir = 1
 	},
@@ -155,14 +150,12 @@
 	icon_state = "shutter0";
 	id_tag = "mc_trade";
 	name = "Trade Zone Shutters";
-	tag = "icon-shutter1"
 	},
 /turf/simulated/floor,
 /area/space)
 "ay" = (
 /obj/structure/stairs/north,
 /obj/structure/railing{
-	tag = "icon-railing0 (EAST)";
 	icon_state = "railing0";
 	dir = 4
 	},
@@ -193,7 +186,6 @@
 /area/space)
 "aD" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
-	tag = "icon-intact (SOUTHEAST)";
 	icon_state = "intact";
 	dir = 6
 	},
@@ -206,7 +198,6 @@
 /area/space)
 "aE" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -215,7 +206,6 @@
 /area/space)
 "aF" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
-	tag = "icon-intact (SOUTHWEST)";
 	icon_state = "intact";
 	dir = 10
 	},
@@ -223,13 +213,10 @@
 /area/space)
 "aG" = (
 /obj/machinery/door/blast/regular/open{
-	density = 0;
 	dir = 2;
 	icon_state = "pdoor0";
 	id_tag = "mc_bridge";
 	name = "Protective Shutters";
-	opacity = 0;
-	tag = "icon-pdoor0";
 	wifi_receiver = 2
 	},
 /obj/effect/wallframe_spawn/reinforced,
@@ -241,13 +228,10 @@
 /area/space)
 "aI" = (
 /obj/machinery/door/blast/regular/open{
-	density = 0;
 	dir = 8;
 	icon_state = "pdoor0";
 	id_tag = "mc_bridge";
 	name = "Emergency Blast Door";
-	opacity = 0;
-	tag = "icon-pdoor0 (WEST)";
 	wifi_receiver = 1
 	},
 /turf/simulated/floor,
@@ -313,7 +297,6 @@
 /area/space)
 "aQ" = (
 /obj/structure/railing{
-	tag = "icon-railing0 (EAST)";
 	icon_state = "railing0";
 	dir = 4
 	},
@@ -361,7 +344,6 @@
 /area/space)
 "aW" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{
-	tag = "icon-intact (NORTH)";
 	icon_state = "intact";
 	dir = 1
 	},
@@ -378,7 +360,6 @@
 /area/space)
 "aY" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{
-	tag = "icon-intact (NORTH)";
 	icon_state = "intact";
 	dir = 1
 	},
@@ -403,8 +384,7 @@
 	dir = 2;
 	icon_state = "extinguisher_closed";
 	pixel_x = 23;
-	pixel_x = 0;
-	tag = "icon-extinguisher_closed (WEST)"
+	pixel_x = 0
 	},
 /turf/simulated/floor/tiled,
 /area/space)
@@ -487,7 +467,6 @@
 /area/space)
 "bm" = (
 /obj/machinery/button/blast_door{
-	tag = "icon-blastctrl (EAST)";
 	name = "Emergency Blast Door contol";
 	icon_state = "blastctrl";
 	dir = 4;
@@ -529,7 +508,6 @@
 /area/space)
 "br" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
-	tag = "icon-intact (NORTH)";
 	icon_state = "intact";
 	dir = 1
 	},
@@ -545,7 +523,6 @@
 /area/space)
 "bt" = (
 /obj/structure/bed/chair/shuttle{
-	tag = "icon-bschair_preview (WEST)";
 	icon_state = "bschair_preview";
 	dir = 8
 	},
@@ -732,7 +709,6 @@
 /area/space)
 "bJ" = (
 /obj/machinery/atmospherics/portables_connector{
-	tag = "icon-map_connector (NORTH)";
 	icon_state = "map_connector";
 	dir = 1
 	},
@@ -740,7 +716,6 @@
 /area/space)
 "bK" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
-	tag = "icon-intact (NORTHEAST)";
 	icon_state = "intact";
 	dir = 5
 	},
@@ -748,7 +723,6 @@
 /area/space)
 "bL" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -756,7 +730,6 @@
 /area/space)
 "bM" = (
 /obj/machinery/atmospherics/binary/passive_gate{
-	tag = "icon-map_off (EAST)";
 	icon_state = "map_off";
 	dir = 4
 	},
@@ -768,7 +741,6 @@
 /area/space)
 "bN" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -783,7 +755,6 @@
 /area/space)
 "bO" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
-	tag = "icon-intact (NORTHWEST)";
 	icon_state = "intact";
 	dir = 9
 	},
@@ -800,7 +771,6 @@
 /area/space)
 "bQ" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/fuel{
-	tag = "icon-map (WEST)";
 	icon_state = "map";
 	dir = 8
 	},
@@ -821,7 +791,6 @@
 /area/space)
 "bR" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/fuel{
-	tag = "icon-map (NORTH)";
 	icon_state = "map";
 	dir = 1
 	},
@@ -830,7 +799,6 @@
 /area/space)
 "bS" = (
 /obj/machinery/atmospherics/unary/engine{
-	tag = "icon-nozzle (WEST)";
 	icon_state = "nozzle";
 	dir = 8
 	},
@@ -843,7 +811,6 @@
 "bU" = (
 /obj/structure/table/steel,
 /obj/structure/window/reinforced{
-	tag = "icon-rwindow (WEST)";
 	icon_state = "rwindow";
 	dir = 8
 	},
@@ -897,7 +864,6 @@
 /area/space)
 "bX" = (
 /obj/structure/cable{
-	tag = "icon-1-2 (WEST)";
 	icon_state = "1-2";
 	dir = 8;
 	d1 = 1;
@@ -998,7 +964,6 @@
 /area/space)
 "cl" = (
 /obj/structure/cable{
-	tag = "icon-1-8 (WEST)";
 	icon_state = "1-8";
 	dir = 8;
 	d1 = 1;
@@ -1011,7 +976,6 @@
 /area/space)
 "cm" = (
 /obj/structure/cable{
-	tag = "icon-1-2 (WEST)";
 	icon_state = "1-2";
 	dir = 8;
 	d1 = 1;
@@ -1028,13 +992,11 @@
 	id_tag = "mc_bridge";
 	name = "Emergency Blast Door";
 	opacity = 0;
-	tag = "icon-pdoor0 (WEST)"
 	},
 /turf/simulated/floor,
 /area/space)
 "co" = (
 /obj/structure/cable{
-	tag = "icon-1-2 (WEST)";
 	icon_state = "1-2";
 	dir = 8;
 	d1 = 1;
@@ -1056,7 +1018,6 @@
 /area/space)
 "cr" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/fuel{
-	tag = "icon-map (WEST)";
 	icon_state = "map";
 	dir = 8
 	},
@@ -1070,7 +1031,6 @@
 	dir = 2;
 	icon_state = "blastctrl";
 	name = "Emergency Blast Door contol";
-	tag = "icon-blastctrl (EAST)";
 	wifi_sender = 1
 	},
 /turf/simulated/wall/r_wall,
@@ -1078,7 +1038,6 @@
 "cu" = (
 /obj/structure/window/reinforced,
 /obj/structure/cable{
-	tag = "icon-0-1 (NORTH)";
 	icon_state = "0-1";
 	dir = 1
 	},
@@ -1116,7 +1075,6 @@
 /area/space)
 "cA" = (
 /obj/machinery/atmospherics/binary/passive_gate/on{
-	tag = "icon-map_on (NORTH)";
 	icon_state = "map_on";
 	dir = 1
 	},
@@ -1145,7 +1103,6 @@
 	id_tag = "mc_bridge";
 	name = "Reinforsed Secret Wall";
 	opacity = 0;
-	tag = "icon-pdoor0 (WEST)";
 	wifi_receiver = 1
 	},
 /turf/simulated/floor,
@@ -1169,8 +1126,7 @@
 	icon_state = "pdoor0";
 	id_tag = "mc_bridge";
 	name = "Emergency Blast Door";
-	opacity = 0;
-	tag = "icon-pdoor0 (WEST)"
+	opacity = 0
 	},
 /turf/simulated/floor,
 /area/space)
@@ -1180,7 +1136,6 @@
 /area/space)
 "cF" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
-	tag = "icon-intact (SOUTHEAST)";
 	icon_state = "intact";
 	dir = 6
 	},
@@ -1188,7 +1143,6 @@
 /area/space)
 "cG" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -1200,7 +1154,6 @@
 /area/space)
 "cI" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -1217,7 +1170,6 @@
 /area/space)
 "cL" = (
 /obj/structure/closet/walllocker/emerglocker{
-	tag = "icon-emerg (EAST)";
 	icon_state = "emerg";
 	dir = 4;
 	pixel_x = 31
@@ -1262,7 +1214,6 @@
 /area/space)
 "cQ" = (
 /obj/structure/noticeboard{
-	tag = "icon-nboard00 (WEST)";
 	icon_state = "nboard00";
 	dir = 8
 	},
@@ -1270,12 +1221,10 @@
 /area/space)
 "cS" = (
 /obj/machinery/atmospherics/unary/tank/air{
-	tag = "icon-air_map (EAST)";
 	icon_state = "air_map";
 	dir = 4
 	},
 /obj/structure/window/reinforced{
-	tag = "icon-rwindow (NORTH)";
 	icon_state = "rwindow";
 	dir = 1
 	},
@@ -1283,12 +1232,10 @@
 /area/space)
 "cT" = (
 /obj/machinery/atmospherics/valve{
-	tag = "icon-map_valve0 (EAST)";
 	icon_state = "map_valve0";
 	dir = 4
 	},
 /obj/structure/window/reinforced{
-	tag = "icon-rwindow (NORTH)";
 	icon_state = "rwindow";
 	dir = 1
 	},
@@ -1300,12 +1247,10 @@
 /area/space)
 "cV" = (
 /obj/machinery/atmospherics/unary/tank/air{
-	tag = "icon-air_map (WEST)";
 	icon_state = "air_map";
 	dir = 8
 	},
 /obj/structure/window/reinforced{
-	tag = "icon-rwindow (NORTH)";
 	icon_state = "rwindow";
 	dir = 1
 	},
@@ -1313,7 +1258,6 @@
 /area/space)
 "da" = (
 /obj/machinery/atmospherics/pipe/simple/visible/black{
-	tag = "icon-intact (NORTHEAST)";
 	icon_state = "intact";
 	dir = 5
 	},
@@ -1321,7 +1265,6 @@
 /area/space)
 "db" = (
 /obj/machinery/atmospherics/pipe/simple/visible/black{
-	tag = "icon-intact (EAST)";
 	icon_state = "intact";
 	dir = 4
 	},
@@ -1329,7 +1272,6 @@
 /area/space)
 "dc" = (
 /obj/machinery/atmospherics/pipe/simple/visible/black{
-	tag = "icon-intact (SOUTHWEST)";
 	icon_state = "intact";
 	dir = 10
 	},
@@ -1358,7 +1300,6 @@
 /area/space)
 "dl" = (
 /obj/machinery/atmospherics/unary/tank/air{
-	tag = "icon-air_map (EAST)";
 	icon_state = "air_map";
 	dir = 4
 	},
@@ -1366,7 +1307,6 @@
 /area/space)
 "dm" = (
 /obj/machinery/atmospherics/valve{
-	tag = "icon-map_valve0 (EAST)";
 	icon_state = "map_valve0";
 	dir = 4
 	},
@@ -1379,7 +1319,6 @@
 /area/space)
 "do" = (
 /obj/machinery/atmospherics/valve/open{
-	tag = "icon-map_valve1 (EAST)";
 	icon_state = "map_valve1";
 	dir = 4
 	},
@@ -1387,7 +1326,6 @@
 /area/space)
 "dp" = (
 /obj/machinery/atmospherics/unary/tank/air{
-	tag = "icon-air_map (WEST)";
 	icon_state = "air_map";
 	dir = 8
 	},
@@ -1398,7 +1336,6 @@
 /area/space)
 "dr" = (
 /obj/machinery/atmospherics/unary/outlet_injector{
-	tag = "icon-map_injector (NORTH)";
 	icon_state = "map_injector";
 	dir = 1
 	},
@@ -1406,7 +1343,6 @@
 /area/space)
 "ds" = (
 /obj/machinery/atmospherics/unary/vent_pump/siphon/on{
-	tag = "icon-map_vent_in (NORTH)";
 	icon_state = "map_vent_in";
 	dir = 1
 	},
@@ -1418,7 +1354,6 @@
 /area/space)
 "du" = (
 /obj/machinery/atmospherics/unary/outlet_injector{
-	tag = "icon-map_injector (NORTH)";
 	icon_state = "map_injector";
 	dir = 1
 	},
@@ -1426,7 +1361,6 @@
 /area/space)
 "dv" = (
 /obj/machinery/atmospherics/unary/vent_pump/siphon/on{
-	tag = "icon-map_vent_in (NORTH)";
 	icon_state = "map_vent_in";
 	dir = 1
 	},
@@ -1449,7 +1383,6 @@
 	id_tag = "mc_sensors";
 	name = "Protective Shutters";
 	opacity = 0;
-	tag = "icon-pdoor0";
 	wifi_receiver = 3
 	},
 /turf/simulated/floor,
@@ -1588,7 +1521,6 @@
 /area/space)
 "dM" = (
 /obj/machinery/button/blast_door{
-	tag = "icon-blastctrl (EAST)";
 	name = "Emergency Blast Door contol";
 	icon_state = "blastctrl";
 	dir = 4;
@@ -1608,7 +1540,6 @@
 /area/space)
 "dQ" = (
 /obj/machinery/atmospherics/unary/vent_pump{
-	tag = "icon-map_vent (NORTH)";
 	icon_state = "map_vent";
 	dir = 1
 	},

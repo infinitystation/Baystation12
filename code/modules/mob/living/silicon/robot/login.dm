@@ -8,7 +8,7 @@
 	winset(src, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=false input.focus=true input.background-color=#d3b5b5")
 
 	// Forces synths to select an icon relevant to their module
-	if(!icon_selected)
+	if(!icon_selected && module)//inf //was: if(!icon_selected)
 		choose_icon(icon_selection_tries, module_sprites)
 
 	if(hands)

@@ -82,6 +82,9 @@
 		O["is_bruised"] = I.is_bruised()
 		O["is_damaged"] = I.is_damaged()
 		O["scan_results"] = I.get_scan_results(tag)
+		if (istype(I, /obj/item/organ/internal/appendix))
+			var/obj/item/organ/internal/appendix/A = I
+			O["inflamed"] = A.inflamed
 
 		scan["internal_organs"] += list(O)
 
@@ -90,7 +93,7 @@
 	for(var/organ_name in H.species.has_organ)
 		if(!locate(H.species.has_organ[organ_name]) in H.internal_organs)
 			scan["missing_organs"] += organ_name
-	if(H.sdisabilities & BLIND)
+	if(H.sdisabilities & BLINDED)
 		scan["blind"] = TRUE
 	if(H.sdisabilities & NEARSIGHTED)
 		scan["nearsight"] = TRUE
@@ -342,7 +345,8 @@
 		dat += "<tr><th colspan='3'><center>Internal Organs</center></th></tr>"
 		for(var/list/I in scan["internal_organs"])
 			var/row = list()
-			row += "<tr><td>[I["name"]]</td>"
+			var/inflamed = I["inflamed"] || FALSE
+			row += "<tr><td><span[inflamed ? " class='bad'" : ""]>[I["name"]]</span></td>"
 			if(I["is_broken"])
 				row += "<td><span class='bad'>Severe</span></td>"
 			else if(I["is_bruised"])

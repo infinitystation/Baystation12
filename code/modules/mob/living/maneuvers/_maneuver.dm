@@ -28,6 +28,12 @@
 		if(!silent)
 			to_chat(user, SPAN_WARNING("You are too exhausted to maneuver right now."))
 		return FALSE
+//[INF]
+	if(get_z(user) != get_z(target))
+		if(!silent)
+			to_chat(user, SPAN_WARNING("You cannot jump highter than your head!"))
+		return FALSE
+//[/INF]
 	return TRUE
 
 /decl/maneuver/proc/show_initial_message(var/mob/user, var/atom/target)

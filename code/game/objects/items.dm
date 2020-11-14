@@ -111,12 +111,16 @@
 		m.drop_from_inventory(src)
 	var/obj/item/weapon/storage/storage = loc
 	if(istype(storage))
-		storage.on_item_deletion()
-	return ..()
+		// some ui cleanup needs to be done
+		storage.on_item_pre_deletion(src) // must be done before deletion
+		. = ..()
+		storage.on_item_post_deletion(src) // must be done after deletion
+	else
+		return ..()
 
 /obj/item/crush_act()
 	playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
-	for(var/i in 1, i < w_class, i++)
+	for(var/i in 1 to w_class)
 		new /obj/item/weapon/scrap_lump(loc)
 	for(var/obj/item/I in contents)
 		I.forceMove(loc)
@@ -835,7 +839,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 /obj/item/proc/has_embedded()
 	return
 
-/obj/item/proc/get_pressure_weakness(pressure)
+/obj/item/proc/get_pressure_weakness(pressure,zone)
 	. = 1
 	if(pressure > ONE_ATMOSPHERE)
 		if(max_pressure_protection != null)
@@ -868,3 +872,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		set_icon_state(citem.item_icon_state)
 		item_state = null
 		icon_override = CUSTOM_ITEM_MOB
+//[INF]
+	if(citem.additional_data.Find("slot_flags"))
+		slot_flags = citem.additional_data["slot_flags"]
+//[/INF]

@@ -76,8 +76,6 @@
 			dismantle_wall()
 			return 1
 
-	if(..()) return 1
-
 	if(!can_open)
 		to_chat(user, "<span class='notice'>You push \the [src], but nothing happens.</span>")
 		playsound(src, 'sound/weapons/thudswoosh.ogg', 25, 1)
@@ -99,7 +97,28 @@
 			fail_smash(user)
 			return 1
 
-	try_touch(user, rotting)
+	if(iscarbon(user))
+		var/mob/living/carbon/M = user
+		switch(M.a_intent)
+			if(I_HELP)
+				return
+			if(I_DISARM, I_GRAB)
+				try_touch(M, rotting)
+			if(I_HURT)
+				if (!(M.organs_by_name[M.hand ? BP_L_HAND : BP_R_HAND].is_usable()))
+					to_chat(user, SPAN_WARNING("You can't use that hand."))
+					return
+				if(rotting && !reinf_material)
+					M.visible_message(SPAN_DANGER("[M.name] punches \the [src] and it crumbles!"), SPAN_DANGER("You punch \the [src] and it crumbles!"))
+					dismantle_wall()
+					playsound(src, pick(GLOB.punch_sound), 20)
+				else
+					M.visible_message(SPAN_DANGER("[M.name] punches \the [src]!"), SPAN_DANGER("You punch \the [src]!"))
+					M.apply_damage(3, BRUTE, M.hand ? BP_L_HAND : BP_R_HAND)
+					playsound(src, pick(GLOB.punch_sound), 40)
+
+	else
+		try_touch(user, rotting)
 
 /turf/simulated/wall/attack_generic(var/mob/user, var/damage, var/attack_message, var/wallbreaker)
 

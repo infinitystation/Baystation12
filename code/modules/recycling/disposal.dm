@@ -31,6 +31,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	idle_power_usage = 100
 	atom_flags = ATOM_FLAG_CLIMBABLE
 	var/turn = DISPOSAL_FLIP_NONE
+	throwpass = TRUE
 
 /obj/machinery/disposal/small
 	icon = 'icons/obj/pipes/disposal_small.dmi'
@@ -42,6 +43,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 
 // create a new disposal
 // find the attached trunk (if present) and init gas resvr.
+// initializes the reagents datum for storing vomit reagents
 /obj/machinery/disposal/Initialize()
 	. = ..()
 	spawn(5)
@@ -54,6 +56,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 
 		air_contents = new/datum/gas_mixture(PRESSURE_TANK_VOLUME)
 		update_icon()
+	src.create_reagents(500)
 
 /obj/machinery/disposal/Destroy()
 	eject()
@@ -195,7 +198,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	if(AM == user)
 		user.visible_message("<span class='danger'>[user] climbs into [src].</span>", \
 							 "<span class='notice'>You climb into [src].</span>")
-		log_and_message_admins("has stuffed themselves into [src].", AM)		 
+		log_and_message_admins("has stuffed themselves into [src].", AM)
 	else
 		user.visible_message("<span class='[is_dangerous ? "danger" : "notice"]'>[user] stuffs [AM] into [src][is_dangerous ? "!" : "."]</span>", \
 							 "<span class='notice'>You stuff [AM] into [src].</span>")
@@ -228,7 +231,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	return
 
 /obj/machinery/disposal/DefaultTopicState()
-	return GLOB.outside_state	
+	return GLOB.outside_state
 
 // human interact with machine
 /obj/machinery/disposal/physical_attack_hand(mob/user)
@@ -274,7 +277,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 
 
 	user.set_machine(src)
-	user << browse(dat, "window=disposal;size=360x170")
+	show_browser(user, dat, "window=disposal;size=360x170")
 	onclose(user, "disposal")
 
 // handle machine interaction
@@ -322,6 +325,14 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	for(var/atom/movable/AM in (contents - component_parts))
 		AM.forceMove(src.loc)
 		AM.pipe_eject(0)
+	if(reagents.total_volume)
+		visible_message(SPAN_DANGER("Vomit spews out of the disposal unit!"))
+		playsound(loc, 'sound/effects/splat.ogg', 50, 1)
+		if(istype(src.loc, /turf/simulated))
+			var/obj/effect/decal/cleanable/vomit/splat = new /obj/effect/decal/cleanable/vomit(src.loc)
+			reagents.trans_to_obj(splat, reagents.total_volume)
+			splat.update_icon()
+	reagents.clear_reagents()
 	update_icon()
 
 // update the icon & overlays to reflect mode & status
@@ -340,9 +351,9 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	if(stat & NOPOWER || mode == -1)
 		return
 
-	// 	check for items in disposal - occupied light
-	if(contents.len > LAZYLEN(component_parts))
-		overlays += image(icon, "dispover-full")
+	// 	check for items/vomit in disposal - occupied light
+	if(contents.len > LAZYLEN(component_parts) || reagents.total_volume)
+		overlays += image('icons/obj/pipes/disposal.dmi', "dispover-full")
 
 	// charging and ready light
 	if(mode == 1)
@@ -359,7 +370,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 
 	flush_count++
 	if( flush_count >= flush_every_ticks )
-		if( contents.len > LAZYLEN(component_parts))
+		if( contents.len > LAZYLEN(component_parts) || reagents.total_volume)
 			if(mode == 2)
 				spawn(0)
 					SSstatistics.add_field("disposal_auto_flush",1)
@@ -404,6 +415,11 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	var/wrapcheck = 0
 	var/obj/structure/disposalholder/H = new()	// virtual holder object which actually
 												// travels through the pipes.
+
+	// handle vomit transportation
+	// flush the vomit out and put vomit into the disposalholder
+	reagents.trans_to_holder(H.create_reagents(500), reagents.total_volume)
+
 	var/list/stuff = contents - component_parts
 	//Hacky test to get drones to mail themselves through disposals.
 	for(var/mob/living/silicon/robot/drone/D in stuff)
@@ -479,6 +495,8 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 			return
 		if(prob(75))
 			I.forceMove(src)
+			var/datum/thrownthing/TT = I.throwing	// INF stop flying pls
+			TT.finalize(TRUE)						// INF
 			visible_message("\The [I] lands in \the [src].")
 		else
 			visible_message("\The [I] bounces off of \the [src]'s rim!")
@@ -587,6 +605,14 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 /obj/structure/disposaloutlet/proc/expel(var/obj/structure/disposalholder/H)
 	animate_expel()
 	if(H)
+		if(H.reagents?.total_volume)
+			visible_message(SPAN_DANGER("Vomit seeps out of the disposal outlet!"))
+			playsound(loc, 'sound/effects/splat.ogg', 50, 1)
+			if(istype(src.loc, /turf/simulated))
+				var/obj/effect/decal/cleanable/vomit/splat = new /obj/effect/decal/cleanable/vomit(src.loc)
+				H.reagents.trans_to_obj(splat, H.reagents.total_volume)
+				splat.update_icon()
+
 		for(var/atom/movable/AM in H)
 			AM.forceMove(src.loc)
 			AM.pipe_eject(dir)
@@ -628,7 +654,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 				if(!src || !W.isOn()) return
 				to_chat(user, "You sliced the floorweld off the disposal outlet.")
 				var/obj/structure/disposalconstruct/machine/outlet/C = new (loc, src)
-				src.transfer_fingerprints_to(C)								
+				src.transfer_fingerprints_to(C)
 				C.anchored = 1
 				C.set_density(1)
 				C.update()

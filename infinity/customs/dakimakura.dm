@@ -4,6 +4,7 @@
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "dakimakura_0"
 	var/state = 0
+	trade_blacklisted = TRUE
 
 	proc/swap_state()
 		state = !state

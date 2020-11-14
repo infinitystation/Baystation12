@@ -81,7 +81,8 @@
 	name = "Water"
 	description = "A ubiquitous chemical substance composed of hydrogen and oxygen."
 	reagent_state = LIQUID
-	color = "#0064c877"
+	color = "#3073b6"
+	alpha = 120
 	scannable = 1
 	metabolism = REM * 10
 	taste_description = "water"
@@ -138,6 +139,14 @@
 			cube.Expand()
 
 /datum/reagent/water/touch_mob(var/mob/living/L, var/amount)
+	var/mob/living/carbon/human/H = L
+	if(istype(H))
+		var/obj/item/clothing/mask/smokable/S = H.wear_mask
+		if (istype(S) && S.lit)
+			var/obj/item/clothing/C = H.head
+			if (!istype(C) || !(C.body_parts_covered & FACE))
+				S.extinguish()
+
 	if(istype(L))
 		var/needed = L.fire_stacks * 10
 		if(amount > needed)

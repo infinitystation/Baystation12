@@ -128,10 +128,17 @@ var/const/MED_I_FREQ = 1485
 var/const/SEC_I_FREQ = 1475
 
 // Device signal frequencies
+var/const/ATMOS_ENGINE_FREQ = 1438 // Used by atmos monitoring in the engine.
+var/const/PUMP_FREQ         = 1439 // Used by air alarms and their progeny.
 var/const/FUEL_FREQ         = 1447 // Used by fuel atmos stuff, and currently default for digital valves
+var/const/ATMOS_TANK_FREQ   = 1441 // Used for gas tank sensors and monitoring.
+var/const/ATMOS_DIST_FREQ   = 1443 // Alternative atmos frequency.
 var/const/BUTTON_FREQ       = 1301 // Used by generic buttons controlling stuff
 var/const/BLAST_DOORS_FREQ  = 1303 // Used by blast doors, buttons controlling them, and mass drivers.
 var/const/AIRLOCK_FREQ      = 1305 // Used by airlocks and buttons controlling them.
+var/const/SHUTTLE_AIR_FREQ  = 1331 // Used by shuttles and shuttle-related atmos systems.
+var/const/AIRLOCK_AIR_FREQ  = 1379 // Used by some airlocks for atmos devices.
+var/const/EXTERNAL_AIR_FREQ = 1380 // Used by some external airlocks.
 
 var/list/radiochannels = list(
 	"Common"		= PUB_FREQ,
@@ -149,25 +156,31 @@ var/list/radiochannels = list(
 	"Service" 		= SRV_FREQ,
 	"AI Private"	= AI_FREQ,
 	"Entertainment" = ENT_FREQ,
-	"Medical(I)"	= MED_I_FREQ,
-	"Security(I)"	= SEC_I_FREQ,
-	"Recon"			= SKRELL_FREQ,
-	"CCA EC"        = TAJSCISHIP_FREQ
+	"CCA EC"        = TAJSCISHIP_FREQ,	// INF
+	"Medical (I)"	= MED_I_FREQ,
+	"Security (I)"	= SEC_I_FREQ,
+	"Recon"			= SKRELL_FREQ
 )
 
 var/list/channel_color_presets = list(
-	"Global Green" = COMMS_COLOR_COMMON,
-	"Phenomenal Purple" = COMMS_COLOR_SCIENCE,
+	"Bemoaning Brown" = COMMS_COLOR_SUPPLY,
 	"Bitchin' Blue" = COMMS_COLOR_COMMAND,
+	"Bold Brass" = COMMS_COLOR_EXPLORER,
+	"Gastric Green" = COMMS_COLOR_SERVICE,
+	"Global Green" = COMMS_COLOR_COMMON,
 	"Menacing Maroon" = COMMS_COLOR_SYNDICATE,
-	"Pretty Periwinkle" = COMMS_COLOR_CENTCOMM,
-	"Painful Pink" = COMMS_COLOR_AI,
-	"Raging Red" = COMMS_COLOR_SECURITY,
 	"Operational Orange" = COMMS_COLOR_ENGINEER,
+	"Painful Pink" = COMMS_COLOR_AI,
+	"Phenomenal Purple" = COMMS_COLOR_SCIENCE,
+	"Pretty Periwinkle" = COMMS_COLOR_CENTCOMM,
+	"Raging Red" = COMMS_COLOR_SECURITY,
+	"Spectacular Silver" = COMMS_COLOR_ENTERTAIN,
 	"Tantalizing Turquoise" = COMMS_COLOR_MEDICAL,
+//[INF]
 	"Bemoaning Brown" = COMMS_COLOR_SUPPLY,
 	"Gastric Green" = COMMS_COLOR_SERVICE,
 	"Bold Brass" = COMMS_COLOR_EXPLORER,
+//[/INF]
 	"Viewable Violet" = COMMS_COLOR_SKRELL
 )
 
@@ -178,7 +191,7 @@ var/list/CENT_FREQS = list(ERT_FREQ, DTH_FREQ)
 var/list/ANTAG_FREQS = list(SYND_FREQ, RAID_FREQ)
 
 //Department channels, arranged lexically
-var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, SEC_FREQ, SCI_FREQ, SRV_FREQ, SUP_FREQ, EXP_FREQ, ENT_FREQ)
+var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, SEC_FREQ, SCI_FREQ, SRV_FREQ, SUP_FREQ, EXP_FREQ, ENT_FREQ, MED_I_FREQ, SEC_I_FREQ)
 
 #define TRANSMISSION_WIRE	0
 #define TRANSMISSION_RADIO	1
@@ -213,6 +226,10 @@ var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, SEC_FREQ, SCI
 		return "srvradio"
 	if(frequency == ENT_FREQ) //entertainment
 		return "entradio"
+	if(frequency == MED_I_FREQ) // Medical intercom
+		return "mediradio"
+	if(frequency == SEC_I_FREQ) // Security intercom
+		return "seciradio"
 	if(frequency in DEPT_FREQS)
 		return "deptradio"
 

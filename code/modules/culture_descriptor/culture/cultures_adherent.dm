@@ -1,15 +1,14 @@
 /decl/cultural_info/culture/adherent
 	name = CULTURE_ADHERENT
-	description = "The Vigil is a relatively loose association of machine-servitors, adherents, built by a now-extinct culture. \
-	They are devoted to the memory of their long-dead creators, destroyed by the Scream, a solar flare which wiped out the vast \
-	majority of records of the creators and scrambled many sensor systems and minds, leaving the surviving adherents confused \
-	and disoriented for hundreds of years following. Now in contact with humanity, the Vigil is tentatively making inroads on \
-	a place in the wider galactic culture."
+	description = "Часовые - это относительно свободное сообщество полуорганических машин-слуг - адхерантов, \
+	созданных ныне вымершей цивилизацией. Они чтят память своих давно погибших создателей, уничтоженных Криком - \
+	солнечной вспышкой, стершей большую часть записей о создателях и повредившей многие сенсорные и управляющие \
+	системы, ошеломив и дезориентировав выживших адхерантов на сотни лет. Теперь, наладив контакт с человечеством, \
+	Часовые неуверенно делают первые шаги к месту в широком галактическом сообществе."
 	hidden_from_codex = TRUE
 	language = LANGUAGE_ADHERENT
 	secondary_langs = list(
 		LANGUAGE_HUMAN_EURO,
-		LANGUAGE_GUTTER,
 		LANGUAGE_SPACER
 	)
 
