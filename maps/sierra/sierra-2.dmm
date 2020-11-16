@@ -300,11 +300,13 @@
 /area/hallway/primary/seconddeck/center)
 "aaG" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/structure/hygiene/toilet{
-	dir = 4
-	},
 /obj/machinery/light/small{
 	dir = 8
+	},
+/obj/structure/hygiene/toilet,
+/obj/item/taperoll/bog{
+	pixel_x = -12;
+	pixel_y = -10
 	},
 /obj/effect/landmark/start,
 /turf/simulated/floor/tiled/freezer,
@@ -334,11 +336,13 @@
 /area/crew_quarters/head)
 "aaJ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/structure/hygiene/toilet{
-	dir = 8
-	},
 /obj/machinery/light/small{
 	dir = 4
+	},
+/obj/structure/hygiene/toilet,
+/obj/item/taperoll/bog{
+	pixel_x = -12;
+	pixel_y = -10
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head)
@@ -3932,12 +3936,11 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
 "agH" = (
-/obj/structure/hygiene/shower,
-/obj/structure/curtain/open/shower,
-/obj/item/weapon/bikehorn/rubberducky,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/structure/table/standard,
+/obj/item/weapon/towel/random,
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/heads/captain/beach)
 "agI" = (
@@ -5336,11 +5339,10 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/storage/tech)
 "ajb" = (
-/obj/structure/hygiene/toilet{
-	dir = 4;
-	name = "captain's throne"
-	},
 /obj/structure/curtain/open/shower,
+/obj/structure/hygiene/toilet{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/heads/captain/beach)
 "ajc" = (
@@ -5891,10 +5893,6 @@
 /turf/simulated/floor/wood/walnut,
 /area/maintenance/abandoned_compartment)
 "akg" = (
-/obj/structure/table/standard,
-/obj/item/weapon/towel/random,
-/obj/item/weapon/towel/random,
-/obj/item/weapon/soap,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
@@ -5904,6 +5902,16 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/curtain/open/shower{
+	icon_state = "closed";
+	opacity = 1
+	},
+/obj/item/weapon/bikehorn/rubberducky,
+/obj/structure/hygiene/shower{
+	dir = 8;
+	pixel_x = 10
+	},
+/obj/item/weapon/soap,
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/heads/captain/beach)
 "akh" = (
@@ -7255,6 +7263,7 @@
 	dir = 1;
 	pixel_y = -29
 	},
+/obj/item/taperoll/bog,
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/heads/captain/beach)
 "amx" = (
