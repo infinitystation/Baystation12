@@ -131,3 +131,8 @@ UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/remove_bulb())
 	base_state = "tube_border"
 	icon_state = "tube_border_maped"
 	light_type = /obj/item/weapon/light/led_neon/small
+
+#define INIT_COLOR_PREFAB_OF_LEDNEON(n, colour) /obj/machinery/light/led/##n/_init_bulb_color = colour; /obj/machinery/light/led/small/##n/_init_bulb_color = colour;
+INIT_COLOR_PREFAB_OF_LEDNEON(cyan, "#00ffff")
+INIT_COLOR_PREFAB_OF_LEDNEON(green, "#00ff00")
+INIT_COLOR_PREFAB_OF_LEDNEON(red, "#ff0000")

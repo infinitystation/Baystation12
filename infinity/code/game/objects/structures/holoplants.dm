@@ -9,7 +9,7 @@ GLOBAL_LIST_INIT(recomended_holoplants_colors, list(COLOR_LIGHTING_RED_BRIGHT,CO
 	var/emagged = FALSE
 	var/interference = FALSE
 
-	var/brightness_on = 4
+	var/brightness_on = 2
 
 	var/icon/plant = null
 	var/plant_color

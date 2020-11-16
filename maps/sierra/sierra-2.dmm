@@ -1678,11 +1678,11 @@
 	pixel_x = -22
 	},
 /obj/structure/table/steel_reinforced,
-/obj/machinery/light/led/small{
-	dir = 9
-	},
 /obj/machinery/chemical_dispenser/bar_coffee/full{
 	pixel_y = 8
+	},
+/obj/machinery/light/led/small/cyan{
+	dir = 9
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/crew_quarters/bar)
@@ -2656,15 +2656,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hydroponics)
 "aeQ" = (
-/obj/effect/floor_decal/spline/fancy/wood{
-	dir = 1
-	},
 /obj/machinery/vending/boozeomat,
 /obj/structure/disposalpipe/segment{
 	dir = 2;
 	icon_state = "pipe-c"
 	},
-/obj/machinery/light/led/small{
+/obj/machinery/light/led/small/cyan{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -2699,19 +2696,16 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
 "aeT" = (
-/obj/effect/floor_decal/spline/fancy/wood{
-	dir = 1
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4;
 	icon_state = "pipe-c"
 	},
 /obj/structure/table/steel_reinforced,
-/obj/machinery/light/led/small{
-	dir = 1
-	},
 /obj/machinery/chemical_dispenser/bar_soft/full{
 	pixel_y = 8
+	},
+/obj/machinery/light/led/small/cyan{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/crew_quarters/bar)
@@ -2892,11 +2886,11 @@
 	dir = 4
 	},
 /obj/structure/table/steel_reinforced,
-/obj/machinery/light/led/small{
-	dir = 1
-	},
 /obj/machinery/chemical_dispenser/bar_alc/full{
 	pixel_y = 8
+	},
+/obj/machinery/light/led/small/cyan{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/crew_quarters/bar)
@@ -3419,8 +3413,7 @@
 	name = "Hydroponics Shutters Control";
 	pixel_x = -24
 	},
-/obj/machinery/light/led/small{
-	_init_bulb_color = "#ff00cc";
+/obj/machinery/light/led/small/cyan{
 	dir = 10
 	},
 /turf/simulated/floor/tiled/dark,
@@ -3842,7 +3835,7 @@
 /obj/structure/sign/monkey_painting{
 	pixel_y = 28
 	},
-/obj/machinery/light/led/small{
+/obj/machinery/light/led/small/cyan{
 	dir = 5
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -4010,7 +4003,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/structure/table/steel_reinforced,
 /obj/item/weapon/paper/sierra,
-/obj/machinery/light/led/small{
+/obj/machinery/light/led/small/cyan{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -4158,10 +4151,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/light/led/small{
-	_init_bulb_color = "#ff00cc";
-	dir = 6
-	},
+/obj/machinery/light/led/small/cyan,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/bar)
 "agX" = (
@@ -4295,6 +4285,10 @@
 	dir = 4;
 	name = "Canteen maintenance"
 	},
+/obj/machinery/light/led/small/cyan,
+/obj/machinery/light/led/small/cyan{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/bar)
 "ahh" = (
@@ -4318,9 +4312,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/obj/machinery/light/led/small{
-	dir = 8
-	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/bar)
 "ahj" = (
@@ -4893,6 +4884,10 @@
 	name = "Canteen hub";
 	req_access = list(list("ACCESS_BAR","ACCESS_KITCHEN"))
 	},
+/obj/machinery/light/led/small/cyan{
+	dir = 1
+	},
+/obj/machinery/light/led/small/cyan,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/galley)
 "aik" = (
@@ -5929,8 +5924,7 @@
 	pixel_x = 21
 	},
 /obj/structure/table/steel_reinforced,
-/obj/machinery/light/led/small{
-	_init_bulb_color = "#00ffff";
+/obj/machinery/light/led/small/cyan{
 	dir = 10
 	},
 /turf/simulated/floor/tiled/dark,
@@ -6017,10 +6011,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
-/obj/machinery/light/led/small{
+/obj/machinery/media/jukebox/old/futuristic,
+/obj/machinery/light/led/small/cyan{
 	dir = 4
 	},
-/obj/machinery/media/jukebox/old/futuristic,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/bar)
 "akr" = (
@@ -6087,7 +6081,7 @@
 	name = "Bar";
 	sort_type = "Bar"
 	},
-/obj/machinery/light/led/small,
+/obj/machinery/light/led/small/cyan,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/bar)
 "akx" = (
@@ -6095,7 +6089,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/gym)
 "aky" = (
-/obj/machinery/light/led/small,
+/obj/machinery/light/led/small/cyan,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/bar)
 "akz" = (
@@ -6171,7 +6165,7 @@
 	dir = 1;
 	icon_state = "pipe-c"
 	},
-/obj/machinery/light/led/small{
+/obj/machinery/light/led/small/cyan{
 	dir = 6
 	},
 /turf/simulated/floor/tiled/dark,
@@ -7011,6 +7005,10 @@
 	id_tag = "bar_room_two";
 	name = "Private Room Two"
 	},
+/obj/machinery/light/led/small/cyan{
+	dir = 1
+	},
+/obj/machinery/light/led/small/cyan,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/crew_quarters/mess)
 "alY" = (
@@ -7951,8 +7949,7 @@
 /obj/structure/bed/sofa/black/left{
 	dir = 10
 	},
-/obj/machinery/light/led/small{
-	_init_bulb_color = "#00ffff";
+/obj/machinery/light/led/small/cyan{
 	dir = 5
 	},
 /turf/simulated/floor/tiled/dark,
@@ -11048,8 +11045,7 @@
 	dir = 8
 	},
 /obj/effect/landmark/start,
-/obj/machinery/light/led/small{
-	_init_bulb_color = "#00ffff";
+/obj/machinery/light/led/small/cyan{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
@@ -12633,6 +12629,10 @@
 	id_tag = "bar_room_one";
 	name = "Private Room One"
 	},
+/obj/machinery/light/led/small/green,
+/obj/machinery/light/led/small/green{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/crew_quarters/mess)
 "avj" = (
@@ -12926,7 +12926,6 @@
 /area/engineering/engine_room)
 "avJ" = (
 /obj/machinery/light/led/small{
-	_init_bulb_color = "#ff00cc";
 	dir = 6
 	},
 /obj/structure/bed/sofa/left{
@@ -22179,8 +22178,7 @@
 	pixel_y = 30
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/machinery/light/led/small{
-	_init_bulb_color = "#00ffff";
+/obj/machinery/light/led/small/cyan{
 	dir = 9
 	},
 /turf/simulated/floor/tiled/dark,
@@ -32820,19 +32818,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/actor)
-"bfy" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 1
-	},
-/obj/machinery/light/led/small{
-	_init_bulb_color = "#00ffff";
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/crew_quarters/mess)
 "bfz" = (
 /obj/structure/bed/sofa/black/left{
 	dir = 8
@@ -32840,8 +32825,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
-/obj/machinery/light/led/small{
-	_init_bulb_color = "#00ff00";
+/obj/machinery/light/led/small/green{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
@@ -32864,8 +32848,7 @@
 	pixel_x = 21
 	},
 /obj/structure/table/steel_reinforced,
-/obj/machinery/light/led/small{
-	_init_bulb_color = "#00ff00";
+/obj/machinery/light/led/small/green{
 	dir = 10
 	},
 /turf/simulated/floor/tiled/dark,
@@ -32880,8 +32863,7 @@
 	dir = 8
 	},
 /obj/structure/table/steel_reinforced,
-/obj/machinery/light/led/small{
-	_init_bulb_color = "#00ffff";
+/obj/machinery/light/led/small/cyan{
 	dir = 6
 	},
 /turf/simulated/floor/tiled/dark,
@@ -35256,10 +35238,6 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
 	},
-/obj/machinery/light/led/small{
-	_init_bulb_color = "#00ff00";
-	dir = 8
-	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/crew_quarters/mess)
 "dOF" = (
@@ -35272,8 +35250,7 @@
 	dir = 8
 	},
 /obj/structure/table/steel_reinforced,
-/obj/machinery/light/led/small{
-	_init_bulb_color = "#00ff00";
+/obj/machinery/light/led/small/green{
 	dir = 6
 	},
 /turf/simulated/floor/tiled/dark,
@@ -35306,8 +35283,7 @@
 	pixel_y = 30
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/machinery/light/led/small{
-	_init_bulb_color = "#00ff00";
+/obj/machinery/light/led/small/green{
 	dir = 9
 	},
 /turf/simulated/floor/tiled/dark,
@@ -36567,7 +36543,6 @@
 /area/engineering/gravitaional_generator)
 "vzV" = (
 /obj/machinery/light/led/small{
-	_init_bulb_color = "#ff00cc";
 	dir = 10
 	},
 /obj/structure/bed/sofa{
@@ -36594,8 +36569,7 @@
 /obj/structure/bed/sofa/black/left{
 	dir = 10
 	},
-/obj/machinery/light/led/small{
-	_init_bulb_color = "#00ff00";
+/obj/machinery/light/led/small/green{
 	dir = 5
 	},
 /turf/simulated/floor/tiled/dark,
@@ -56157,7 +56131,7 @@ ajo
 als
 aiE
 aLE
-bfy
+dJC
 akh
 aiE
 eAE
