@@ -6,10 +6,10 @@ datum/gear/utility/modular_scanner/chemical
 datum/gear/utility/modular_scanner/atmos
 	allowed_roles = TECHNICAL_ROLES
 
-datum/gear/utility/modular_scanner/medical
+/datum/gear/utility/modular_scanner/medical
 	allowed_roles = STERILE_ROLES
 
-datum/gear/utility/pda
+/datum/gear/utility/pda
 	display_name = "PDA selection"
 	path = /obj/item/modular_computer/pda
 	cost = 2
