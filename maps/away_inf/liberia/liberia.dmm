@@ -20,6 +20,11 @@
 	name = "Station Exterior"
 	},
 /obj/machinery/shield_diffuser,
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/liberia/dockinghall)
 "ad" = (
@@ -28,7 +33,7 @@
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /obj/effect/submap_landmark/joinable_submap/liberia,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/liberia/bridge)
 "ae" = (
 /obj/item/device/scanner/health,
@@ -279,6 +284,11 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
+/obj/structure/table/standard,
+/obj/item/weapon/storage/toolbox/electrical{
+	pixel_x = 7;
+	pixel_y = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/liberia/engineeringengines)
 "aF" = (
@@ -355,12 +365,21 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 9
 	},
+/obj/structure/closet/emcloset{
+	anchored = 1;
+	name = "anchored emergency closet"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/liberia/engineeringengines)
 "aN" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 5
 	},
+/obj/structure/table/standard,
+/obj/item/weapon/rcd,
+/obj/item/weapon/rcd_ammo/large,
+/obj/item/weapon/rcd_ammo/large,
+/obj/item/weapon/rcd_ammo/large,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/liberia/engineeringengines)
 "aO" = (
@@ -1759,7 +1778,6 @@
 	dir = 4;
 	icon_state = "railing0-1"
 	},
-/obj/machinery/suit_cycler,
 /obj/structure/cable/blue{
 	d1 = 4;
 	d2 = 8;
@@ -1767,6 +1785,9 @@
 	},
 /obj/machinery/firealarm{
 	pixel_y = 24
+	},
+/obj/machinery/suit_cycler/engineering{
+	req_access = list()
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/liberia/engineeringstorage)
@@ -1995,7 +2016,7 @@
 /obj/machinery/hologram/holopad/longrange,
 /obj/effect/floor_decal/corner/blue/mono,
 /obj/effect/overmap/visitable/ship/liberia,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/liberia/bridge)
 "dw" = (
 /obj/structure/closet/secure_closet/engineering_electrical/bearcat,
@@ -2996,6 +3017,9 @@
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 1
+	},
+/obj/machinery/computer/cryopod{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/liberia/cryo)
@@ -4662,6 +4686,9 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 8
 	},
+/obj/structure/table/standard,
+/obj/item/device/flashlight,
+/obj/random/tool,
 /turf/simulated/floor/tiled/techfloor,
 /area/liberia/engineeringengines)
 "ic" = (
@@ -5003,7 +5030,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/blue/mono,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/liberia/bridge)
 "iO" = (
 /obj/machinery/computer/ship/helm{
@@ -6209,7 +6236,9 @@
 	dir = 8;
 	icon_state = "railing0-1"
 	},
-/obj/machinery/suit_storage_unit/engineering/salvage,
+/obj/machinery/suit_storage_unit/engineering/salvage{
+	req_access = list()
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/liberia/engineeringstorage)
 "lf" = (
@@ -6335,8 +6364,8 @@
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/visible{
-	icon_state = "intact";
-	dir = 6
+	dir = 6;
+	icon_state = "intact"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/liberia/atmos)
@@ -6576,7 +6605,7 @@
 	pixel_x = -26
 	},
 /obj/effect/floor_decal/corner/blue/mono,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/liberia/bridge)
 "lR" = (
 /obj/machinery/vending/wallmed1{
@@ -7475,6 +7504,10 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 6
 	},
+/obj/structure/table/standard,
+/obj/machinery/cell_charger,
+/obj/random/tech_supply,
+/obj/random/tech_supply,
 /turf/simulated/floor/tiled/techfloor,
 /area/liberia/engineeringengines)
 "yL" = (
@@ -7725,7 +7758,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/suit_storage_unit/atmos,
+/obj/machinery/suit_storage_unit/atmos{
+	req_access = list()
+	},
 /obj/machinery/alarm/merchant{
 	pixel_y = 24
 	},
@@ -7774,6 +7809,8 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 8
 	},
+/obj/structure/table/standard,
+/obj/random/coin,
 /turf/simulated/floor/tiled/techfloor,
 /area/liberia/engineeringengines)
 "EG" = (
@@ -8079,7 +8116,7 @@
 /area/liberia/hallway)
 "Jf" = (
 /obj/effect/floor_decal/corner/blue/mono,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/liberia/bridge)
 "JE" = (
 /obj/machinery/door/airlock/external{
@@ -8188,6 +8225,7 @@
 	dir = 1;
 	pixel_y = -24
 	},
+/obj/structure/closet/firecloset,
 /turf/simulated/floor/tiled/techfloor,
 /area/liberia/engineeringengines)
 "Lk" = (
