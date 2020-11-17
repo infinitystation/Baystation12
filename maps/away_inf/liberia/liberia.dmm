@@ -114,8 +114,7 @@
 /area/liberia/engineeringreactor)
 "al" = (
 /obj/structure/closet/secure_closet{
-	name = "merchant's locker";
-	req_access = list("ACCESS_MERCHANT")
+	name = "merchant's locker"
 	},
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -589,8 +588,7 @@
 	id_tag = "merchantwarehouse";
 	name = "Warehouse Shutters";
 	pixel_x = 9;
-	pixel_y = 27;
-	req_access = list("ACCESS_MERCHANT")
+	pixel_y = 27
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
@@ -2031,7 +2029,9 @@
 	name = "Liberia - Bridge"
 	})
 "dw" = (
-/obj/structure/closet/secure_closet/engineering_electrical/bearcat,
+/obj/structure/closet/secure_closet/engineering_electrical/bearcat{
+	req_access = list()
+	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/alarm/merchant{
 	pixel_y = 24
