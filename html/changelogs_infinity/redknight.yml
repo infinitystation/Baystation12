@@ -1,0 +1,6 @@
+author: RedKnight
+delete-after: True
+changes:
+  - maptweak: "Ремонт системы питания Мула от Либерии."
+  - maptweak: "Фикс доступа к хранилищам скафандров Либерии."
+  - maptweak: "Пустая комната Либерии заполнена."
