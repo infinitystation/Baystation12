@@ -9810,6 +9810,11 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/door/blast/shutters/open{
+	dir = 4;
+	id_tag = "infimary_window_lockdown";
+	name = "Infirmary Window Shutters"
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/infirmary)
 "aqS" = (
@@ -40598,24 +40603,24 @@
 	dir = 1;
 	id_tag = "MedbayER";
 	name = "Treatment Center Control";
-	pixel_x = 6;
-	pixel_y = -24
+	pixel_x = 5;
+	pixel_y = -20
 	},
 /obj/machinery/button/alternate/door{
 	dir = 1;
 	id_tag = "infimary_staging";
 	name = "Infirmary Staging Control";
 	pixel_x = -6;
-	pixel_y = -24
+	pixel_y = -20
 	},
-/obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/button/alternate/door{
 	dir = 1;
 	id_tag = "MedbayER2";
 	name = "Infirmary Staging way to Treatment";
-	pixel_x = -24;
-	pixel_y = -24
+	pixel_x = -17;
+	pixel_y = -20
 	},
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white,
 /area/medical/infirmreception)
 "qhT" = (
