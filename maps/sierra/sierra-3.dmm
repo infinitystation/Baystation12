@@ -4930,17 +4930,10 @@
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 1
 	},
-/obj/item/weapon/reagent_containers/spray/cleaner{
-	pixel_x = 7;
-	pixel_y = 8
-	},
-/obj/item/weapon/reagent_containers/dropper{
-	pixel_x = -4;
-	pixel_y = 8
-	},
 /obj/structure/noticeboard{
 	pixel_y = 32
 	},
+/obj/machinery/reagent_temperature/cooler,
 /turf/simulated/floor/tiled/white,
 /area/medical/chemistry)
 "ajo" = (
@@ -7147,6 +7140,8 @@
 /obj/effect/floor_decal/corner/beige/bordercorner2{
 	dir = 9
 	},
+/obj/machinery/hologram/holopad,
+/obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/tiled/white,
 /area/medical/chemistry)
 "amz" = (
@@ -7154,7 +7149,6 @@
 	dir = 2;
 	icon_state = "pipe-c"
 	},
-/obj/structure/bed/chair/office/light,
 /obj/structure/cable/cyan{
 	d1 = 1;
 	d2 = 2;
@@ -7169,10 +7163,8 @@
 	name = "Chemistry Windows Lockdown";
 	pixel_y = -20
 	},
-/obj/structure/table/reinforced,
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/beige/border,
-/obj/machinery/reagent_temperature/cooler,
 /obj/effect/floor_decal/borderfloorwhite/corner2,
 /obj/effect/floor_decal/corner/beige/bordercorner2,
 /turf/simulated/floor/tiled/white,
@@ -7193,7 +7185,14 @@
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 6
 	},
-/obj/machinery/reagent_temperature,
+/obj/item/weapon/reagent_containers/dropper{
+	pixel_x = -4;
+	pixel_y = 8
+	},
+/obj/item/weapon/reagent_containers/spray/cleaner{
+	pixel_x = 7;
+	pixel_y = 8
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/chemistry)
 "amC" = (
@@ -38571,14 +38570,14 @@
 /turf/simulated/floor/tiled,
 /area/crew_quarters/dungeon_master_lounge)
 "hvk" = (
-/obj/machinery/hologram/holopad,
-/obj/effect/floor_decal/industrial/outline/blue,
 /obj/structure/cable/cyan{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/tiled/white/monotile,
+/obj/structure/table/reinforced,
+/obj/machinery/reagent_temperature,
+/turf/simulated/floor/tiled/white,
 /area/medical/chemistry)
 "hvP" = (
 /obj/machinery/pointdefense{
@@ -40543,7 +40542,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/medical/morgue)
 "pQb" = (
-/obj/structure/bed/chair/office/light{
+/obj/structure/bed/chair/office/comfy/blue{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
