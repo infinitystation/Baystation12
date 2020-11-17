@@ -34,7 +34,9 @@
 /obj/effect/floor_decal/corner/blue/mono,
 /obj/effect/submap_landmark/joinable_submap/liberia,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "ae" = (
 /obj/item/device/scanner/health,
 /obj/item/device/serial,
@@ -657,7 +659,9 @@
 	},
 /obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "bn" = (
 /obj/structure/bed/chair/wood/walnut,
 /obj/effect/floor_decal/borderfloor{
@@ -1767,7 +1771,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "dc" = (
 /obj/structure/cable/blue{
 	d1 = 2;
@@ -1837,7 +1843,9 @@
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "di" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
@@ -2011,13 +2019,17 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "dv" = (
 /obj/machinery/hologram/holopad/longrange,
 /obj/effect/floor_decal/corner/blue/mono,
 /obj/effect/overmap/visitable/ship/liberia,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "dw" = (
 /obj/structure/closet/secure_closet/engineering_electrical/bearcat,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -2180,7 +2192,9 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "dI" = (
 /obj/machinery/computer/modular/preset/security{
 	dir = 8
@@ -2193,7 +2207,9 @@
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "dJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -2224,7 +2240,9 @@
 /obj/item/weapon/folder/blue,
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "dM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -2513,7 +2531,9 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "ee" = (
 /obj/structure/closet/crate/freezer,
 /obj/random/snack,
@@ -2626,7 +2646,9 @@
 	icon_state = "corner_white"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "ep" = (
 /obj/structure/table/mag,
 /turf/simulated/floor/tiled/steel_grid,
@@ -3451,7 +3473,9 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "fK" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
@@ -3495,7 +3519,9 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "fN" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 5
@@ -4896,7 +4922,9 @@
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "iA" = (
 /obj/structure/cable/yellow{
 	d1 = 2;
@@ -5024,21 +5052,27 @@
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "iN" = (
 /obj/structure/bed/chair/comfy/blue{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "iO" = (
 /obj/machinery/computer/ship/helm{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "iP" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -5182,7 +5216,9 @@
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "iZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -5370,7 +5406,9 @@
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "jy" = (
 /obj/structure/closet,
 /obj/random/shoes,
@@ -5385,7 +5423,9 @@
 /obj/item/weapon/pen,
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "jA" = (
 /obj/structure/closet/crate,
 /obj/random/loot,
@@ -5402,7 +5442,9 @@
 /obj/structure/window/reinforced,
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "jC" = (
 /obj/machinery/computer/ship/navigation{
 	dir = 8
@@ -5413,7 +5455,9 @@
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "jD" = (
 /obj/structure/table/glass,
 /obj/machinery/photocopier/faxmachine{
@@ -5423,7 +5467,9 @@
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "jE" = (
 /obj/random/action_figure,
 /obj/random/plushie,
@@ -5544,7 +5590,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "jT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -5557,7 +5605,9 @@
 /obj/structure/cable/blue,
 /obj/effect/floor_decal/corner/blue/three_quarters,
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "jU" = (
 /obj/structure/bed/chair/wood/walnut,
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -6606,7 +6656,9 @@
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "lR" = (
 /obj/machinery/vending/wallmed1{
 	pixel_x = 7;
@@ -6853,7 +6905,9 @@
 	},
 /obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "pB" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -7372,7 +7426,9 @@
 	icon_state = "corner_white"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "vv" = (
 /turf/space,
 /area/liberia/solar1)
@@ -7422,7 +7478,9 @@
 	icon_state = "corner_white"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "wM" = (
 /obj/machinery/floodlight,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -7572,14 +7630,18 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "zn" = (
 /obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/liberia/officeroom)
 "zq" = (
 /turf/simulated/wall/r_wall/prepainted,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "zt" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
@@ -7712,7 +7774,9 @@
 	},
 /obj/effect/floor_decal/corner/blue/full,
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "DL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -8054,7 +8118,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "HV" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/liberia/merchantstorage)
@@ -8117,7 +8183,9 @@
 "Jf" = (
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "JE" = (
 /obj/machinery/door/airlock/external{
 	autoset_access = 0;
@@ -8239,7 +8307,9 @@
 /area/liberia/solar2)
 "Lm" = (
 /turf/simulated/wall/prepainted,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "Lz" = (
 /turf/simulated/wall/prepainted,
 /area/liberia/toiletroom2)
@@ -8459,7 +8529,9 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "Qj" = (
 /obj/structure/cable/blue{
 	d1 = 4;
@@ -8543,7 +8615,9 @@
 /area/liberia/guestroom2)
 "Ro" = (
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "Rw" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/liberia/guestroom2)
@@ -8736,7 +8810,9 @@
 "Uc" = (
 /obj/effect/floor_decal/corner/blue,
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "Ue" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -8761,7 +8837,9 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "Ut" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 5
@@ -9040,7 +9118,9 @@
 	},
 /obj/effect/floor_decal/corner/blue/full,
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge)
+/area/liberia/bridge{
+	name = "Liberia - Bridge"
+	})
 "ZN" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
