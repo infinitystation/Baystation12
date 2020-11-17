@@ -77,6 +77,8 @@ UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/remove_bulb())
 	return TRUE
 
 /obj/item/weapon/light/led_neon
+	name = "neon tube"
+	desc = "A LED neon tape."
 	matter = list(MATERIAL_GLASS = 100, MATERIAL_ALUMINIUM = 20)
 	icon = 'infinity/icons/obj/machinery/neon.dmi'
 	icon_state = "big_tape"
@@ -94,6 +96,7 @@ UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/remove_bulb())
 			var/c = input("You are changing diode frequency.", "Input", b_colour) as color|null
 			if(c)
 				set_bulb_color(c)
+
 /obj/item/weapon/light/led_neon/large
 	base_state = "big_tape"
 	icon_state = "big_tape_preset"
