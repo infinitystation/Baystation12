@@ -1,4 +1,4 @@
-/area/ship/patrol
+/area/ship/patrol/operations_center
 	name = "\improper SP - Operations Center"
 	icon_state = "shuttle2"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
