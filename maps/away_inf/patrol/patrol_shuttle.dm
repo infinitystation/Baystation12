@@ -15,14 +15,16 @@
 	warmup_time = 5
 	current_location = "nav_scgpatrol_start"
 	range = 2
-	shuttle_area = list(/area/ship/patrol,
-						/area/ship/patrol/armory,
-						/area/ship/patrol/crew,
-						/area/ship/patrol/medbay,
-						/area/ship/patrol/engine,
-						/area/ship/patrol/storage,
-						/area/ship/patrol/cockpit,
-						/area/ship/patrol/hallway)
+	shuttle_area = list(
+		/area/ship/patrol/center,
+		/area/ship/patrol/armory,
+		/area/ship/patrol/crew,
+		/area/ship/patrol/medbay,
+		/area/ship/patrol/engine,
+		/area/ship/patrol/storage,
+		/area/ship/patrol/cockpit,
+		/area/ship/patrol/hallway
+	)
 	defer_initialisation = TRUE
 	flags = SHUTTLE_FLAGS_PROCESS
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling/hull
@@ -33,7 +35,7 @@
 	shuttle_tag = "Sol Patrol Shuttle"
 
 /obj/effect/shuttle_landmark/scgpatrol
-	name = "Uncharted Space"
+	name = "Sol Patrol Ship"
 	landmark_tag = "nav_scgpatrol_start"
 
 /turf/simulated/floor/shuttle_ceiling/hull
