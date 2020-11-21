@@ -243,9 +243,9 @@
 	name = "First Deck - RND - Locker Room"
 	icon_state = "locker"
 
-/area/rnd/blanks
-	name = "First Deck - RND - Aux Custodial Supplies"
-	icon_state = "decontamination"
+/area/rnd/servers
+	name = "First Deck - RND - Servers"
+	icon_state = "tcomsatcham"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = SMALL_ENCLOSED
 	req_access = list(access_rd)
