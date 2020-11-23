@@ -79,6 +79,10 @@
 	icon_state = "hair_elize"
 	gender = FEMALE
 
+/datum/sprite_accessory/hair/infinity/protagonist
+   name = "Protagonist"
+   icon_state = "hair_protagonist"
+
 /datum/sprite_accessory/hair/infinity/amicia
 	name = "Amicia"
 	icon_state = "hair_amicia"
