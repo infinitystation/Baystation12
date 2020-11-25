@@ -44,7 +44,7 @@
 	departments = SUP|COM
 
 	hat = list(\
-		/obj/item/clothing/head/soft/yellow, /obj/item/clothing/head/beret/infinity/cargo_qm)
+		/obj/item/clothing/head/soft/yellow, /obj/item/clothing/head/beret/infinity/cargo)
 	under = list(\
 		/obj/item/clothing/under/rank/cargo)
 
@@ -75,7 +75,7 @@
 
 	hat = list(\
 		/obj/item/clothing/head/beret/sec/corporate/hos, /obj/item/clothing/head/HoS, \
-		/obj/item/clothing/head/beret/infinity/hos, /obj/item/clothing/head/beret/sec/navy/hos)
+		/obj/item/clothing/head/beret/sec/navy/hos)
 	under = list(\
 		/obj/item/clothing/under/rank/head_of_security, /obj/item/clothing/under/rank/head_of_security/jensen, \
 		/obj/item/clothing/under/rank/head_of_security/navyblue, /obj/item/clothing/under/rank/head_of_security/navyblue/alt, \
@@ -152,10 +152,20 @@
 	departments = SCI|COM
 
 	hat = list(\
-		/obj/item/clothing/head/beret/infinity/science, /obj/item/clothing/head/beret/infinity/science_rd)
+		/obj/item/clothing/head/beret/infinity/science)
 	under = list(\
 		/obj/item/clothing/under/rank/research_director, /obj/item/clothing/under/rank/research_director/dress_rd, \
 		/obj/item/clothing/under/rank/research_director/rdalt)
+
+/* EXPLORATION
+ * ========
+ */
+/decl/hierarchy/mil_uniform/civilian/exp
+	name = "Civilian Exploration"
+	departments = EXP
+
+	hat = list(\
+		/obj/item/clothing/head/beret/infinity/exploration)
 
 /* COMMAND
  * =======
