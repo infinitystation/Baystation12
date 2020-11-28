@@ -43,10 +43,12 @@
 	name = "Civilian Supply Head"
 	departments = SUP|COM
 
-	hat = list(\
-		/obj/item/clothing/head/soft/yellow, /obj/item/clothing/head/beret/infinity/cargo)
-	under = list(\
-		/obj/item/clothing/under/rank/cargo)
+	hat = list(
+		/obj/item/clothing/head/soft/yellow, /obj/item/clothing/head/beret/infinity/cargo
+		)
+	under = list(
+		/obj/item/clothing/under/rank/cargo
+		)
 
 /* SECURITY
  * ========
@@ -151,11 +153,14 @@
 	name = "Civilian Research Head"
 	departments = SCI|COM
 
-	hat = list(\
-		/obj/item/clothing/head/beret/infinity/science)
-	under = list(\
-		/obj/item/clothing/under/rank/research_director, /obj/item/clothing/under/rank/research_director/dress_rd, \
-		/obj/item/clothing/under/rank/research_director/rdalt)
+	hat = list(
+		/obj/item/clothing/head/beret/infinity/science
+		)
+	under = list(
+		/obj/item/clothing/under/rank/research_director,
+		/obj/item/clothing/under/rank/research_director/dress_rd,
+		/obj/item/clothing/under/rank/research_director/rdalt
+		)
 
 /* EXPLORATION
  * ========
@@ -164,8 +169,9 @@
 	name = "Civilian Exploration"
 	departments = EXP
 
-	hat = list(\
-		/obj/item/clothing/head/beret/infinity/exploration)
+	hat = list(
+		/obj/item/clothing/head/beret/infinity/exploration
+		)
 
 /* COMMAND
  * =======
