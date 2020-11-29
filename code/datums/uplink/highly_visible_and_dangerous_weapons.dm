@@ -139,7 +139,6 @@
 	desc = "A high rate of fire weapon in a smaller form factor, able to sling standard ammunition almost as quick as a submachine gun."
 	item_cost = 55
 	path = /obj/item/weapon/gun/projectile/automatic/machine_pistol
-	antag_roles = list(MODE_MERCENARY) //inf
 
 /datum/uplink_item/item/visible_weapons/combat_shotgun
 	name = "Combat Shotgun"
@@ -213,7 +212,6 @@
 			Most of these blasters were swiftly bought back and destroyed - but not this one."
 	item_cost = 40
 	path = /obj/item/weapon/gun/energy/incendiary_laser
-	antag_roles = list(MODE_MERCENARY) //inf
 
 /datum/uplink_item/item/visible_weapons/boltaction
 	name = "Bolt Action Rifle"
