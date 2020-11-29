@@ -175,11 +175,9 @@
 /datum/uplink_item/item/visible_weapons/pulserifle
 	name = "Pulse Rifle"
 	desc = "A triple burst, heavy laser rifle, with a large battery compacity."
-	item_cost = 85
-	antag_costs = list(MODE_MERCENARY = 68)
+	item_cost = 68
 	path = /obj/item/weapon/gun/energy/pulse_rifle
- 	antag_roles = list(MODE_MERCENARY) //inf
-
+	antag_roles = list(MODE_MERCENARY) //inf
 
 /datum/uplink_item/item/visible_weapons/flechetterifle
 	name = "Flechette Rifle"
