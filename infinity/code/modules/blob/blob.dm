@@ -45,9 +45,9 @@
 	health = maxHealth
 	update_icon()
 	START_PROCESSING(SSobj, src)
-	findBlob(list(src))
+	findBlob(src)
 	for(var/obj/effect/biomass/blobby in range(get_turf(src), 1))
-		blobby.findBlob(list(blobby))
+		blobby.findBlob(blobby)
 	. = ..()
 
 /obj/effect/biomass/on_update_icon()
@@ -79,7 +79,14 @@
 		if(blobby.faction == "broken_blob")
 			blobby.recover(core2)
 
-/obj/effect/biomass/proc/findBlob(var/list/history)
+/obj/effect/biomass/proc/findBlob(var/history_input)
+
+	var/list/history
+
+	if(istype(history_input, /obj/effect/biomass))
+		history = list(history_input)
+	else
+		history = history_input
 
 	if(locate(/obj/effect/biomass/core) in range(get_turf(src), 1))
 		var/obj/effect/biomass/core/core2 = locate(/obj/effect/biomass/core) in range(get_turf(src), 1)
@@ -135,7 +142,7 @@
 
 		qdel(src)
 		for(var/obj/effect/biomass/blobby in range(get_turf(src), 1))
-			blobby.findBlob(list(blobby))
+			blobby.findBlob(blobby)
 	else
 		update_icon()
 
@@ -257,7 +264,7 @@
 	new_blob.color = color
 	new_blob.core = core
 	for(var/obj/effect/biomass/blobby in range(get_turf(src), 1))
-		blobby.findBlob(list(blobby))
+		blobby.findBlob(blobby)
 	if(core && core.strain)
 		core.strain.expanded(src, new_blob)
 
@@ -415,7 +422,7 @@
 
 	var/list/blob_mobs = list()
 
-/obj/effect/biomass/core/findBlob(var/list/history)
+/obj/effect/biomass/core/findBlob(var/history)
 	return src
 
 /obj/effect/biomass/core/take_damage(var/damage)

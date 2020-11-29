@@ -219,13 +219,13 @@
 			var/turf/T2 = get_turf(core)
 			biomass.forceMove(T2)
 			core.forceMove(T)
-			biomass.findBlob(list(biomass))
-			core.findBlob(list(core))
+			biomass.findBlob(biomass)
+			core.findBlob(core)
 			return T2
 	else
 		var/turf/T2 = get_turf(biomass)
 		biomass.forceMove(T)
-		biomass.findBlob(list(biomass))
+		biomass.findBlob(biomass)
 		return T2
 	return T
 
@@ -341,8 +341,8 @@
 	var/turf/T = get_turf(swap)
 	swap.forceMove(get_turf(blob))
 	blob.forceMove(get_turf(T))
-	swap.findBlob(list(swap))
-	blob.findBlob(list(blob))
+	swap.findBlob(swap)
+	blob.findBlob(blob)
 
 
 
