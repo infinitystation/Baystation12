@@ -7,9 +7,9 @@
 		to_chat(src, "There is no blob on this tile!")
 		return
 
-	for(var/obj/effect/biomass/factory/blob in range(get_turf(eye), 2))
-		if(istype(blob))
-			to_chat(src, "You need to place it at least 3 tiles far from [blob]!")
+	for(var/obj/effect/biomass/factory/blob in range(get_turf(eye), 3))
+		if(blob.faction == faction)
+			to_chat(src, "You need to place it at least 4 tiles far from [blob]!")
 			return
 
 	if(locate(/obj/effect/biomass/core) in get_turf(eye) || locate(/obj/effect/biomass/node) in get_turf(eye) || locate(/obj/effect/biomass/factory) in get_turf(eye) || locate(/obj/effect/biomass/spore) in get_turf(eye))
@@ -39,7 +39,7 @@
 		return
 
 	for(var/obj/effect/biomass/node/blob in range(get_turf(eye), 2))
-		if(istype(blob))
+		if(blob.faction == faction)
 			to_chat(src, "You need to place it at least 3 tiles far from [blob]!")
 			return
 
@@ -72,7 +72,7 @@
 		return
 
 	for(var/obj/effect/biomass/spore/blob in range(get_turf(eye), 3))
-		if(istype(blob))
+		if(blob.faction == faction)
 			to_chat(src, "You need to place it at least 4 tiles far from [blob]!")
 			return
 
