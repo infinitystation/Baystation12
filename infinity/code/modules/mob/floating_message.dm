@@ -21,7 +21,7 @@ GLOBAL_LIST_EMPTY(floating_chat_colors)
 		message = "[copytext_char(message, 1, limit)]..."
 
 	if(!GLOB.floating_chat_colors[name])
-		GLOB.floating_chat_colors[name] = get_random_colour(0,160,230)
+		GLOB.floating_chat_colors[name] = get_random_colour(0, 160, 230)
 	style += "color: [GLOB.floating_chat_colors[name]];"
 
 	// create 2 messages, one that appears if you know the language, and one that appears when you don't know the language
@@ -37,13 +37,13 @@ GLOBAL_LIST_EMPTY(floating_chat_colors)
 
 /proc/generate_floating_text(atom/movable/holder, message, style, size, duration, show_to)
 	var/image/I = image(null, holder)
-	I.layer=FLY_LAYER
+	I.layer = FLY_LAYER
 	I.alpha = 0
 	I.maptext_width = 80
 	I.maptext_height = 64
 	I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
 	I.plane = EFFECTS_ABOVE_LIGHTING_PLANE
-	I.pixel_x = -round(I.maptext_width/2) + 16
+	I.pixel_x = -round(I.maptext_width / 2) + 16
 
 	style = "font-family: 'Small Fonts'; -dm-text-outline: 1 black; font-size: [size]px; [style]"
 	I.maptext = "<center><span style=\"[style]\">[message]</span></center>"
