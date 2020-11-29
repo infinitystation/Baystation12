@@ -130,7 +130,7 @@
 
 /datum/uplink_item/item/visible_weapons/psi_amp
 	name = "Cerebroenergetic Psionic Amplifier"
-	item_cost = 60   //inf, was 50
+	item_cost = 90   //inf
 	path = /obj/item/clothing/head/helmet/space/psi_amp/lesser
 	desc = "A powerful, illegal psi-amp. Boosts latent psi-faculties to extremely high levels."
 
@@ -139,6 +139,7 @@
 	desc = "A high rate of fire weapon in a smaller form factor, able to sling standard ammunition almost as quick as a submachine gun."
 	item_cost = 55
 	path = /obj/item/weapon/gun/projectile/automatic/machine_pistol
+	antag_roles = list(MODE_MERCENARY) //inf
 
 /datum/uplink_item/item/visible_weapons/combat_shotgun
 	name = "Combat Shotgun"
@@ -177,6 +178,7 @@
 	item_cost = 85
 	antag_costs = list(MODE_MERCENARY = 68)
 	path = /obj/item/weapon/gun/energy/pulse_rifle
+ 	antag_roles = list(MODE_MERCENARY) //inf
 
 
 /datum/uplink_item/item/visible_weapons/flechetterifle
@@ -213,6 +215,7 @@
 			Most of these blasters were swiftly bought back and destroyed - but not this one."
 	item_cost = 40
 	path = /obj/item/weapon/gun/energy/incendiary_laser
+	antag_roles = list(MODE_MERCENARY) //inf
 
 /datum/uplink_item/item/visible_weapons/boltaction
 	name = "Bolt Action Rifle"
