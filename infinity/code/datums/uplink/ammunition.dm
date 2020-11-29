@@ -16,3 +16,9 @@
 	desc = "Buckshot drum for AS-53 shotgun. Contains 8 bullets."
 	item_cost = 10
 	path = /obj/item/ammo_magazine/c12m/buckshot
+
+/datum/uplink_item/item/ammo/sniperammo/soporific
+	name = "Ammobox os Chloral Hydrate rounds"
+	desc = "A box with 7 sniper rounds filled with chloral hydrate."
+	item_cost = 10
+	path = /obj/item/weapon/storage/box/ammo/sniperammo/soporific

@@ -3612,7 +3612,6 @@
 #include "infinity\code\modules\projectiles\ammunition\boxes.dm"
 #include "infinity\code\modules\projectiles\ammunition\bullets.dm"
 #include "infinity\code\modules\projectiles\ammunition\special.dm"
-#include "infinity\code\modules\projectiles\ammunition\special_boxes.dm"
 #include "infinity\code\modules\projectiles\guns\energy\laser.dm"
 #include "infinity\code\modules\projectiles\guns\energy\laser_handmade.dm"
 #include "infinity\code\modules\projectiles\guns\energy\secure.dm"
