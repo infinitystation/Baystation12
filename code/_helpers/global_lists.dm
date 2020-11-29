@@ -151,6 +151,13 @@ var/global/list/string_slot_flags = list(
 		var/datum/grab/G = all_grabstates[grabstate_name]
 		G.refresh_updown()
 
+//[INF]
+	//medical side effects
+	paths = subtypesof(/datum/medical_effect)
+	for(var/T in paths)
+		var/datum/medical_effect/M = new T
+		GLOB.all_medical_side_effects += M.name
+//[/INF]
 	return 1
 
 //*** params cache

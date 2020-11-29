@@ -33,7 +33,7 @@
 	spawn_positions = 3
 	supervisors = "your laws"
 
-/datum/job/merchant
+/datum/job/submap/merchant
 	title = "Merchant"
 	department = "Civilian"
 	department_flag = CIV
@@ -58,7 +58,7 @@
 						SKILL_PILOT	  = SKILL_BASIC)
 	skill_points = 24
 
-/datum/job/merchant_trainee
+/datum/job/submap/merchant_trainee
 	title = "Merchant Assistant"
 	department = "Civilian"
 	department_flag = CIV

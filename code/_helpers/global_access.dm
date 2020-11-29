@@ -21,8 +21,6 @@
 			return global.Failsafe;
 		if("GLOB")
 			return global.GLOB;
-		if("Holiday")
-			return global.Holiday;
 		if("IClog")
 			return global.IClog;
 		if("LIGHTING_CORNER_DIAGONAL")
@@ -193,10 +191,10 @@
 			return global.admin_verbs_fun;
 		if("admin_verbs_hideable")
 			return global.admin_verbs_hideable;
-		if("admin_verbs_judge")
-			return global.admin_verbs_judge;
-		if("admin_verbs_mentor")
-			return global.admin_verbs_mentor;
+		if("admin_verbs_judge")						//INF WAS 	if("admin_verbs_possess")
+			return global.admin_verbs_judge;		//INF WAS 		return global.admin_verbs_possess;
+		if("admin_verbs_xeno")						//INF
+			return global.admin_verbs_xeno;			//INF
 		if("admin_verbs_mod")
 			return global.admin_verbs_mod;
 		if("admin_verbs_paranoid_debug")
@@ -487,8 +485,6 @@
 			return global.gzn_check;
 		if("hadevent")
 			return global.hadevent;
-		if("hazard_overlays")
-			return global.hazard_overlays;
 		if("hivemind_bank")
 			return global.hivemind_bank;
 		if("holder_mob_icon_cache")
@@ -923,7 +919,7 @@
 			return global.z_levels;
 		if("zone_blocked")
 			return global.zone_blocked;
-		
+
 /proc/writeglobal(which, newval)
 	switch(which)
 		if("ANTAG_FREQS")
@@ -946,8 +942,6 @@
 			global.Failsafe=newval;
 		if("GLOB")
 			global.GLOB=newval;
-		if("Holiday")
-			global.Holiday=newval;
 		if("IClog")
 			global.IClog=newval;
 		if("LIGHTING_CORNER_DIAGONAL")
@@ -1118,10 +1112,10 @@
 			global.admin_verbs_fun=newval;
 		if("admin_verbs_hideable")
 			global.admin_verbs_hideable=newval;
-		if("admin_verbs_judge")
-			global.admin_verbs_judge=newval;
-		if("admin_verbs_mentor")
-			global.admin_verbs_mentor=newval;
+		if("admin_verbs_judge")					//INF WAS 	if("admin_verbs_possess")
+			global.admin_verbs_judge=newval;	//INF WAS		global.admin_verbs_possess=newval;
+		if("admin_verbs_xeno")					//INF
+			global.admin_verbs_xeno=newval;		//INF
 		if("admin_verbs_mod")
 			global.admin_verbs_mod=newval;
 		if("admin_verbs_paranoid_debug")
@@ -1412,8 +1406,6 @@
 			global.gzn_check=newval;
 		if("hadevent")
 			global.hadevent=newval;
-		if("hazard_overlays")
-			global.hazard_overlays=newval;
 		if("hivemind_bank")
 			global.hivemind_bank=newval;
 		if("holder_mob_icon_cache")
@@ -1848,7 +1840,7 @@
 			global.z_levels=newval;
 		if("zone_blocked")
 			global.zone_blocked=newval;
-		
+
 /var/list/_all_globals=list(
 	"ANTAG_FREQS",
 	"BSACooldown",
@@ -1860,7 +1852,6 @@
 	"Debug2",
 	"Failsafe",
 	"GLOB",
-	"Holiday",
 	"IClog",
 	"LIGHTING_CORNER_DIAGONAL",
 	"Master",
@@ -2093,7 +2084,6 @@
 	"gravity_is_on",
 	"gzn_check",
 	"hadevent",
-	"hazard_overlays",
 	"hivemind_bank",
 	"holder_mob_icon_cache",
 	"host",

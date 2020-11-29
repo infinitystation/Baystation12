@@ -63,3 +63,38 @@
 	temp_field.set_access(access_edit = list(access_security, access_armory))
 	temp_field = add_field(/datum/report_field/signature, "Подпись детектива")
 	temp_field.set_access(access_edit = list(access_security, access_forensics_lockers))
+
+/datum/computer_file/report/recipient/weapon
+	form_name = "NT-SEC-15"
+	title = "Регистрация хранения и ношения личного оружия"
+	available_on_ntnet = 1
+	logo = "\[logo\]"
+
+/datum/computer_file/report/recipient/weapon/generate_fields()
+	..()
+	var/datum/report_field/temp_field
+	add_field(/datum/report_field/text_label/header, "Оружие")
+	add_field(/datum/report_field/simple_text, "Наименование")
+	add_field(/datum/report_field/simple_text, "Тип")
+	add_field(/datum/report_field/simple_text, "Калибр")
+	add_field(/datum/report_field/simple_text, "Тип ствола")
+	add_field(/datum/report_field/simple_text, "Комплектация")
+	add_field(/datum/report_field/simple_text, "Производство")
+	temp_field = add_field(/datum/report_field/simple_text, "Серийный номер")
+	temp_field.set_access(access = access_security, access_edit = access_security)
+	temp_field.set_access(access_heads, override = 0)
+	temp_field = add_field(/datum/report_field/pencode_text, "Дополнительно")
+	temp_field.set_access(access = access_security, access_edit = access_security)
+	temp_field.set_access(access_heads, override = 0)
+	add_field(/datum/report_field/text_label/header, "Носитель")
+	add_field(/datum/report_field/people/from_manifest, "Имя и должность")
+	temp_field = add_field(/datum/report_field/simple_text, "ДНК")
+	temp_field.required = TRUE
+	temp_field = add_field(/datum/report_field/simple_text, "Дактилоскопический слепок")
+	temp_field.required = TRUE
+	add_field(/datum/report_field/text_label/instruction, "Место для подписей")
+	add_field(/datum/report_field/signature, "Подпись заявителя")
+	temp_field = add_field(/datum/report_field/signature, "Подпись ревизора")
+	temp_field.set_access(access_edit = access_security)
+	temp_field.required = TRUE
+

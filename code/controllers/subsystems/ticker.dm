@@ -24,13 +24,17 @@ SUBSYSTEM_DEF(ticker)
 	var/restart_timeout = 1 MINUTE
 
 	var/scheduled_map_change = 0
-	var/update_server //inf
-	var/client/updater
 	var/force_ending = 0            //Overriding this variable will force game end. Can be used for build update or adminbuse.
 
 	var/list/minds = list()         //Minds of everyone in the game.
 	var/list/antag_pool = list()
 	var/looking_for_antags = 0
+
+//[INF]
+	var/update_server
+	var/client/updater
+	var/respawn_cooldown = 0
+//[/INF]
 
 /datum/controller/subsystem/ticker/Initialize()
 	to_world("<B><FONT color='blue'>Добро пожаловать в лобби!</FONT></B>")
@@ -103,9 +107,6 @@ SUBSYSTEM_DEF(ticker)
 		send2maindiscord("Раунд с режимом [SSticker.master_mode] начался. Игроков: [GLOB.player_list.len].")
 		send2mainirc("Раунд с режимом [SSticker.master_mode] начался;. Игроков: [GLOB.player_list.len].")
 		sound_to(world, sound(GLOB.using_map.welcome_sound))
-
-		//Holiday Round-start stuff	~Carn
-		Holiday_Game_Start()
 
 	if(!length(GLOB.admins))
 		send2adminirc("Раунд начался без администраторов в игре!")
@@ -294,7 +295,10 @@ Helpers
 			var/datum/game_mode/M = gamemode_cache[mode_tag]
 			if(M)
 				mode_names += M.name
-		to_world("<B>Возможные режимы:</B> [english_list(mode_names)]")
+		if (config.secret_hide_possibilities)
+			message_admins("<B>Возможные режимы:</B> [english_list(mode_names)]")
+		else
+			to_world("<B>Возможные режимы:</B> [english_list(mode_names)]")
 	else
 		mode.announce()
 
@@ -309,8 +313,17 @@ Helpers
 			else
 				if(player.create_character())
 					qdel(player)
+//[INF]
 		else if(player && !player.ready)
 			player.new_player_panel()
+	set_respawn_cooldown(30 SECONDS)
+/datum/controller/subsystem/ticker/proc/set_respawn_cooldown(r_time = DEFAULT_RESPAWN_COOLDOWN) //setting time when next player can respawn
+	respawn_cooldown = world.time + r_time
+
+/datum/controller/subsystem/ticker/proc/check_respawn_cooldown() //check respawn cooldown status // true if you cooldowned (can respawn if true)
+	. = min(0, world.time - respawn_cooldown)
+
+//[/INF]
 
 /datum/controller/subsystem/ticker/proc/collect_minds()
 	for(var/mob/living/player in GLOB.player_list)
@@ -435,19 +448,18 @@ Helpers
 					to_chat(Player, "<font color='red'><b>Вы не пережили события на [station_name()]...</b></font>")
 	to_world("<br>")
 
-	for (var/mob/living/silicon/ai/aiPlayer in SSmobs.mob_list)
-		if (aiPlayer.stat != 2)
-			to_world("<b>[aiPlayer.name] (Игрок: [aiPlayer.key]), его законы были следующими:</b>")
-
+	for(var/mob/living/silicon/ai/aiPlayer in SSmobs.mob_list)
+		if(aiPlayer.stat != 2)
+			to_world("<b>[aiPlayer.name] [(aiPlayer.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW) ? "(Played by: [aiPlayer.key])\'s" : ""], его законы были следующими:</b>")
 		else
-			to_world("<b>[aiPlayer.name] (Игрок: [aiPlayer.key]), его законы перед уничтожением были следующими:</b>")
+			to_world("<b>[aiPlayer.name] [(aiPlayer.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW) ? "(Played by: [aiPlayer.key])\'s" : ""], его законы перед уничтожением были следующими:</b>")
 
 		aiPlayer.show_laws(1)
 
 		if (aiPlayer.connected_robots.len)
 			var/robolist = "<b>Лояльными роботами ИИ были:</b> "
 			for(var/mob/living/silicon/robot/robo in aiPlayer.connected_robots)
-				robolist += "[robo.name][robo.stat?" (Deactivated) (Played by: [robo.key]), ":" (Played by: [robo.key]), "]"
+				robolist += "[robo.name][robo.stat ? " (Deactivated)" : ""] [(robo.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW) ? "(Played by: [robo.key])" : ""],"
 			to_world("[robolist]")
 
 	var/dronecount = 0
@@ -460,10 +472,10 @@ Helpers
 
 		if (!robo.connected_ai)
 			if (robo.stat != 2)
-				to_world("<b>[robo.name] (Игрок: [robo.key]) пережил события без ИИ-хозяина! Его законы:</b>")
+				to_world("<b>[robo.name] [(robo.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW) ? "(Played by: [robo.key])" : ""] пережил события без ИИ-хозяина! Его законы:</b>")
 
 			else
-				to_world("<b>[robo.name] (Игрок: [robo.key]) не смог пережить тяготы бытия синтетика без ИИ-хозяина. Его законы:</b>")
+				to_world("<b>[robo.name] [(robo.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW) ? "(Played by: [robo.key])" : ""] не смог пережить тяготы бытия синтетика без ИИ-хозяина. Его законы:</b>")
 
 
 			if(robo) //How the hell do we lose robo between here and the world messages directly above this?

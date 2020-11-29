@@ -9,7 +9,7 @@
 	adding += new /obj/screen/ai_button{screen_loc = ui_ai_cam_light;			name = "Toggle Camera Lights";	icon_state = "camera_light";	ai_verb = /mob/living/silicon/ai/proc/toggle_camera_light}()
 	adding += new /obj/screen/ai_button{screen_loc = ui_ai_cam_change_network;	name = "Jump to Network";		icon_state = "camera";			ai_verb = /mob/living/silicon/ai/proc/ai_network_change;	input_procs = list(/mob/living/silicon/ai/proc/get_camera_network_list = (AI_BUTTON_PROC_BELONGS_TO_CALLER|AI_BUTTON_INPUT_REQUIRES_SELECTION))}()
 	adding += new /obj/screen/ai_button{screen_loc = ui_ai_sensor;				name = "Set Sensor Mode";		icon_state = "ai_sensor";		ai_verb = /mob/living/silicon/ai/proc/sensor_mode}()
-	adding += new /obj/screen/ai_button{screen_loc = ui_ai_crew_manifest;		name = "Show Crew Manifest";	icon_state = "manifest";		ai_verb = /mob/living/silicon/ai/proc/ai_roster}()
+//	adding += new /obj/screen/ai_button{screen_loc = ui_ai_crew_manifest;		name = "Show Crew Manifest";	icon_state = "manifest";		ai_verb = /mob/living/silicon/ai/proc/ai_roster}()
 	adding += new /obj/screen/ai_button{screen_loc = ui_ai_take_image;			name = "Toggle Camera Mode";	icon_state = "take_picture";	ai_verb = /mob/living/silicon/ai/proc/ai_take_image}()
 	adding += new /obj/screen/ai_button{screen_loc = ui_ai_view_images;			name = "View Images";			icon_state = "view_images";		ai_verb = /mob/living/silicon/ai/proc/ai_view_images}()
 	adding += new /obj/screen/ai_button{screen_loc = ui_ai_state_laws;			name = "State Laws";			icon_state = "state_laws";		ai_verb = /mob/living/silicon/ai/proc/ai_checklaws}()

@@ -4,11 +4,8 @@
 //	ambience = list('sound/ambience/ambimine.ogg', 'sound/ambience/song_game.ogg')
 	ambience = list('sound/ambience/spookyspace1.ogg', 'sound/ambience/spookyspace2.ogg')
 	sound_env = ASTEROID
-<<<<<<< HEAD
 	has_gravity = TRUE
-=======
 	base_turf = /turf/simulated/floor/asteroid
->>>>>>> 16c756835217b6eba12b7cc593eb63eb26b5b08f
 
 /area/mine/explored
 	name = "Mine"

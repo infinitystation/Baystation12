@@ -44,6 +44,17 @@
 		)
 	trade_blacklisted = TRUE
 
+/obj/item/clothing/head/helmet/nt/fsb
+	name = "altyn"
+	desc = "Head-covering airtight helmet. It appears that it is holded together by some magnetic mechanism."
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(slot_head_str = CUSTOM_ITEM_MOB)
+	icon_state = "fsb_helmet"
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
+	item_flags = ITEM_FLAG_AIRTIGHT|ITEM_FLAG_THICKMATERIAL
+	body_parts_covered = FACE|EYES|HEAD
+	trade_blacklisted = TRUE
+
 /obj/item/weapon/storage/backpack/baul
 	name = "baul"
 	desc = "Comfortable bag and pouches to it, fixed straps."
@@ -60,6 +71,7 @@
 		/obj/item/clothing/under/rank/security/fsb,
 		/obj/item/clothing/suit/armor/pcarrier/fsb,
 		/obj/item/clothing/gloves/thick/fsb,
-		/obj/item/clothing/shoes/dutyboots
+		/obj/item/clothing/shoes/dutyboots,
+		/obj/item/clothing/head/helmet/nt/fsb
 		)
 	trade_blacklisted = TRUE

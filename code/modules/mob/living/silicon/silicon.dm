@@ -26,6 +26,7 @@
 	var/pose //Yes, now AIs can pose too.
 	var/obj/item/device/camera/siliconcam/silicon_camera = null //photography
 	var/local_transmit //If set, can only speak to others of the same type within a short range.
+	var/speech_sounds //Inf
 
 	var/sensor_mode = 0 //Determines the current HUD.
 
@@ -167,15 +168,6 @@
 		show_system_integrity()
 		show_malf_ai()
 	. = ..()
-
-// this function displays the stations manifest in a separate window
-/mob/living/silicon/proc/show_station_manifest()
-	var/dat
-	dat += "<h4>Crew Manifest</h4>"
-	dat += html_crew_manifest(1) // make it monochrome
-	dat += "<br>"
-	show_browser(src, dat, "window=airoster")
-	onclose(src, "airoster")
 
 //can't inject synths
 /mob/living/silicon/can_inject(var/mob/user, var/target_zone)

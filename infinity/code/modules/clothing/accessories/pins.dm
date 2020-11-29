@@ -20,10 +20,3 @@
 	name = "CSG pin"
 	desc = "A small CSG flag."
 	icon_state = "csg"
-
-/obj/item/clothing/accessory/inf_pin/ccapin
-	name = "CCA patch"
-	desc = "A small patch, decorated with a CCA symbol pattern embroidered with titanium threads. It looks minimalistic, beautiful and strict. "
-	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
-	icon_state = "ccapatch"
-

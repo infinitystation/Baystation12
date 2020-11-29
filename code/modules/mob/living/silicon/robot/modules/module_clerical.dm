@@ -12,7 +12,6 @@
 		LANGUAGE_HUMAN_SELENIAN   = TRUE,
 		LANGUAGE_UNATHI_SINTA     = TRUE,
 		LANGUAGE_SKRELLIAN        = TRUE,
-		LANGUAGE_GUTTER           = TRUE,
 		LANGUAGE_SPACER           = TRUE
 		)
 	skills = list(
@@ -33,10 +32,6 @@
 		"Bro" = "Brobot",
 		"Rich" = "maximillion",
 		"Default" = "Service2",
-		"Drone - Service" = "drone-service",
-		"Drone - Hydro" = "drone-hydro",
-		"Doot" = "eyebot-standard",
-//cuz flying		"Ver 06" = "wer6-Service"//inf
 	)
 	equipment = list(
 		/obj/item/device/flash,
@@ -101,9 +96,6 @@
 		"Bro" =      "Brobot",
 		"Rich" =     "maximillion",
 		"Default" =  "Service2",
-		"Doot" =     "eyebot-standard",
-		"Ver 06" = "wer6-Clerical",//inf
-		"Default" =  "Service2"
 	)
 	equipment = list(
 		/obj/item/device/flash,

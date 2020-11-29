@@ -88,6 +88,7 @@ var/list/admin_verbs_admin = list(
 	/client/proc/add_trader,
 	/client/proc/remove_trader,
 	/datum/admins/proc/sendFax,
+	/client/proc/check_fax_history
 )
 var/list/admin_verbs_ban = list(
 	/client/proc/unban_panel,
@@ -106,19 +107,21 @@ var/list/admin_verbs_fun = list(
 	/client/proc/cmd_admin_dress, //INF WAS /datum/admins/proc/cmd_admin_dress,
 	/client/proc/cmd_admin_gib_self,
 	/client/proc/drop_bomb,
-//INF unused	/client/proc/everyone_random,
+	/client/proc/everyone_random,
 	/client/proc/cinematic,
 	/datum/admins/proc/toggle_space_ninja,
 	/client/proc/cmd_admin_add_freeform_ai_law,
 	/client/proc/cmd_admin_add_random_ai_law,
 	/client/proc/toggle_random_events,
-//INF unused	/client/proc/editappear,
+	/client/proc/editappear,
 	/client/proc/roll_dices,
 	/datum/admins/proc/call_supply_drop,
 	/datum/admins/proc/call_drop_pod,
-//INF unused	/client/proc/create_dungeon,
+	/client/proc/create_dungeon,
 	/datum/admins/proc/ai_hologram_set,
 //[INF],
+	/datum/admins/proc/create_new_skybox_data,
+	/datum/admins/proc/select_and_apply_skybox_data,
 	/datum/admins/proc/intercom,		//send a fake intercom message, like an arrivals announcement,
 	/datum/admins/proc/intercom_convo,	//send a fake intercom conversation, like an ATC exchange,
 	/datum/admins/proc/mp_panel,
@@ -135,15 +138,17 @@ var/list/admin_verbs_spawn = list(
 	/datum/admins/proc/check_custom_items,
 	/datum/admins/proc/spawn_plant,
 	/datum/admins/proc/spawn_atom,		// allows us to spawn instances,
-	/client/proc/game_panel, //INF,
 	/client/proc/respawn_character,
-	/client/proc/respawn_as_self, //INF,
 	/client/proc/spawn_chemdisp_cartridge,
-	/datum/admins/proc/mass_debug_closet_icons
+	/datum/admins/proc/mass_debug_closet_icons,
+//[INF],
+	/client/proc/game_panel,
+	/client/proc/cmd_offer_to_ghosts_to_be_somebody,
+	/client/proc/respawn_as_self,
+//[/INF],
 	)
 var/list/admin_verbs_server = list(
 	/datum/admins/proc/capture_map_part,
-	/client/proc/Set_Holiday,
 	/datum/admins/proc/startnow,
 	/datum/admins/proc/endnow,
 	/datum/admins/proc/restart,
@@ -197,6 +202,7 @@ var/list/admin_verbs_debug = list(
 	/client/proc/callproc_target,
 	/client/proc/SDQL_query,
 	/client/proc/SDQL2_query,
+	/client/proc/SDQL3_query,//INF,
 	/client/proc/Jump,
 	/client/proc/jumptomob,
 	/client/proc/jumptocoord,
@@ -282,7 +288,6 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/cmd_admin_create_centcom_report,
 	/client/proc/toggle_random_events,
 	/client/proc/cmd_admin_add_random_ai_law,
-	/client/proc/Set_Holiday,
 	/datum/admins/proc/startnow,
 	/datum/admins/proc/restart,
 	/datum/admins/proc/delay,
@@ -328,17 +333,20 @@ var/list/admin_verbs_mod = list(
 	/client/proc/cmd_admin_direct_narrate,
 	/client/proc/aooc,
 	/datum/admins/proc/sendFax,
+	/client/proc/check_fax_history,
+	/datum/admins/proc/paralyze_mob,
 	/datum/admins/proc/view_persistent_data
 )
-
-var/list/admin_verbs_mentor = list(
-	/client/proc/cmd_admin_pm_context,
-	/client/proc/cmd_admin_pm_panel,
+//[INF]
+var/list/admin_verbs_xeno = list(
+//	/client/proc/cmd_admin_pm_context,
+//	/client/proc/cmd_admin_pm_panel,
+//	/client/proc/admin_ghost,
+//	/datum/admins/proc/show_player_info,
 	/datum/admins/proc/PlayerNotes,
-	/client/proc/admin_ghost,
-//INF	/datum/admins/proc/show_player_info
+	/datum/admins/proc/xeno_whitelist_panel
 )
-
+//[/INF]
 /client/proc/add_admin_verbs()
 	if(holder)
 		verbs += admin_verbs_default
@@ -351,14 +359,14 @@ var/list/admin_verbs_mentor = list(
 			verbs += admin_verbs_debug
 			if(config.debugparanoid && !(holder.rights & R_ADMIN))
 				verbs.Remove(admin_verbs_paranoid_debug)			//Right now it's just callproc but we can easily add others later on.
-		if(holder.rights & R_JUDGE)	     	verbs += admin_verbs_judge
+		if(holder.rights & R_JUDGE)	     	verbs += admin_verbs_judge		//INF WAS	if(holder.rights & R_POSSESS)	     	verbs += admin_verbs_possess
 		if(holder.rights & R_PERMISSIONS)	verbs += admin_verbs_permissions
 		if(holder.rights & R_STEALTH)		verbs += /client/proc/stealth
 		if(holder.rights & R_REJUVINATE)	verbs += admin_verbs_rejuv
 		if(holder.rights & R_SOUNDS)		verbs += admin_verbs_sounds
 		if(holder.rights & R_SPAWN)			verbs += admin_verbs_spawn
 		if(holder.rights & R_MOD)			verbs += admin_verbs_mod
-		if(holder.rights & R_MENTOR)		verbs += admin_verbs_mentor
+		if(holder.rights & R_XENO)			verbs += admin_verbs_xeno		//INF
 
 /client/proc/remove_admin_verbs()
 	verbs.Remove(
@@ -421,14 +429,9 @@ var/list/admin_verbs_mentor = list(
 	if(!holder)	return
 	if(isghost(mob))
 		var/mob/observer/ghost/ghost = mob
-		if(!is_mentor(usr.client))
-			ghost.can_reenter_corpse = 1
-		if(ghost.can_reenter_corpse)
-			ghost.reenter_corpse()
-			SSstatistics.add_field_details("admin_verb","P") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-		else
-			to_chat(ghost, "<font color='red'>Error:  Aghost:  Can't reenter corpse, mentors that use adminHUD while aghosting are not permitted to enter their corpse again</font>")
-			return
+		ghost.reenter_corpse()
+		SSstatistics.add_field_details("admin_verb","P") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
 	else if(istype(mob,/mob/new_player))
 		to_chat(src, "<font color='red'>Error: Aghost: Can't admin-ghost whilst in the lobby. Join or Observe first.</font>")
 	else

@@ -498,7 +498,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	/////////
 	//OTHER//
 	/////////
-
+/*
 /decl/hierarchy/outfit/job/sierra/merchant
 	name = OUTFIT_JOB_NAME("Merchant Assistant")
 	uniform = /obj/item/clothing/under/suit_jacket/tan
@@ -518,7 +518,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	uniform = /obj/item/clothing/under/suit_jacket/charcoal
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/weapon/card/id/sierra/merchant/leader
-/*
+
 /decl/hierarchy/outfit/job/sierra/stowaway
 	name = OUTFIT_JOB_NAME("Stowaway - Sierra")
 	id_type = null

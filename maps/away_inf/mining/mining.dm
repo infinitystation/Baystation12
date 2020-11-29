@@ -22,8 +22,6 @@
 		"nav_mining_9"
 	)
 	known = 1
-	start_x = 4
-	start_y = 5
 
 /obj/effect/overmap/visitable/sector/mining_asteroid/generate_skybox()
 	return overlay_image('icons/skybox/rockbox.dmi', "rockbox", COLOR_ASTEROID_ROCK, RESET_COLOR)
@@ -39,7 +37,6 @@
 	description = "A medium-sized asteroid full of minerals. Old mining facility detected at one of sides, owner - NanoTrasen."
 	prefix = "maps/away_inf/"
 	suffixes = list("mining/mining-asteroid.dmm")
-	spawn_weight = 200 //Always
 	cost = 0.5
 	accessibility_weight = 10
 	generate_mining_by_z = 1

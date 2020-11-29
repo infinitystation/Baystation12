@@ -867,6 +867,8 @@
 	to_chat(M, "<span class='warning'>You feel a chill and your skin feels lighter..</span>")
 	remove_self(volume)
 
+/* [INF]
+
 /datum/reagent/toxin/zombie
 	name = "Liquid Corruption"
 	description = "A filthy, oily substance which slowly churns of its own accord."
@@ -895,6 +897,8 @@
 			H.zombify()
 		else if (prob(10))
 			to_chat(H, "<span class='warning'>You feel terribly ill!</span>")
+
+[/INF]*/
 
 /datum/reagent/toxin/bromide
 	name = "Bromide"

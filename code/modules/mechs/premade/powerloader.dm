@@ -16,8 +16,6 @@
 		body = new /obj/item/mech_component/chassis/powerloader(src)
 		body.color = "#ffdc37"
 
-	body.armour = new /obj/item/robot_parts/robot_component/armour/exosuit(src)
-
 	. = ..()
 
 /mob/living/exosuit/premade/powerloader/spawn_mech_equipment()
@@ -62,10 +60,11 @@
 	desc = "A Xion industrial brand roll cage. Technically OSHA compliant. Technically."
 	max_damage = 100
 	power_use = 0
+	climb_time = 6
 
 /obj/item/mech_component/chassis/powerloader/prebuild()
 	. = ..()
-	armour = new /obj/item/robot_parts/robot_component/armour/exosuit(src)
+	m_armour = new /obj/item/robot_parts/robot_component/armour/exosuit(src)
 
 /obj/item/mech_component/chassis/powerloader/Initialize()
 	pilot_positions = list(

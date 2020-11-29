@@ -7,7 +7,7 @@
 	layer = ABOVE_WINDOW_LAYER
 	density = 1
 	var/mob/living/carbon/human/victim = null
-	var/birth_time = 60*2 //seconds
+	var/birth_time = 120 //seconds
 	var/idle_time = 0
 	var/idle_time_max = 60 //seconds
 	var/progress = 0 //in seconds
@@ -31,24 +31,20 @@
 		return
 	if(health < max_health)
 		if(prob(4))
-			src.visible_message(SPAN_WARNING("\icon[src] [src] slowly restores damaged sections with biomass..."))
+			visible_message(SPAN_WARNING("Раны на \icon[src] [src] медленно затягиваются."))
 		health++
 	progress++
+	if(birth_time / 5 <= progress && !(progress%10))
+		to_chat(victim, SPAN_LING("Вы чувствуете слабость, кажется время пришло..."))
 	if(progress >= birth_time)
 		birth()
 	on_update_icon()
-	if(progress % 10 == 0) //every 10 seconds
-		var/time = birth_time - progress
-		if(time > 0)
-			to_chat(victim, SPAN_LING("До вылупления осталось [time] секунд."))
 	if(world.time >= last_sound_time + 20 SECONDS)
 		last_sound_time = world.time
 		playsound(get_turf(src), 'infinity/sound/effects/lingextends.ogg', 15, 1, -4.5)
-		src.visible_message(pick(
-			SPAN_WARNING("\icon[src] [src] pulses and faintly moves..."),
-			SPAN_WARNING("\icon[src] [src]... breaths?"),
-			SPAN_WARNING("\icon[src] [src] exchanges faint breath."),
-			SPAN_WARNING("\icon[src] [src] has something under biomass - it moves around the victim...")))
+		visible_message(pick(
+			SPAN_WARNING("\icon[src] [src] учащённо пульсирует..."),
+			SPAN_WARNING("\icon[src] [src] внутри что-то двигается...")))
 
 /obj/structure/changeling_cocoon/Destroy()
 	drop_victim()
@@ -76,7 +72,7 @@
 		take_damage(damage)
 		user.visible_message(SPAN_WARNING("[user] [pick(I.attack_verb)]s [src]!"), SPAN_WARNING("You [pick(I.attack_verb)] [src]!"))
 	else
-		user.visible_message(SPAN_WARNING("[user] pokes [src] with [I]."), SPAN_WARNING("You poke [src] with [I]."))
+		user.visible_message(SPAN_WARNING("[user] тыкает [src] [I]."), SPAN_WARNING("Вы тыкаете в \icon[src] [src] \icon[I] [I]."))
 
 /obj/structure/changeling_cocoon/attack_generic(var/mob/user, var/damage, var/attack_verb)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -88,28 +84,28 @@
 	if(M.a_intent == I_HURT)
 		if(M in contents)
 			M.setClickCooldown(DEFAULT_ATTACK_COOLDOWN * 2) //double cooldown
-			M.visible_message(SPAN_DANGER("Something rips [src] from inside!"), SPAN_WARNING("We bite and tear [src]!"))
+			M.visible_message(SPAN_DANGER("Что-то вырывается изнутри [src]!"), SPAN_WARNING("Мы пытаемя вырваться из [src]!"))
 			playsound(get_turf(src), 'sound/weapons/bite.ogg', 20, 1)
 			take_damage(20) //todo: update with species attack state, bite one (or not?)
 		else
 			M.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 			M.do_attack_animation(src)
-			M.visible_message(SPAN_WARNING("[M] kicks [src]!"), SPAN_WARNING("You kick [src]!"))
+			M.visible_message(SPAN_WARNING("[M] пинает [src]!"), SPAN_WARNING("Вы пинаете [src]!"))
 			playsound(get_turf(src), pick(('sound/weapons/genhit1.ogg'), ('sound/weapons/genhit2.ogg'), pick('sound/weapons/genhit3.ogg')), 50, 1)
 			take_damage(3) //todo: update with species attack states
 	else
 		M.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		if(M in contents)
-			to_chat(M, "You touch [src]. It feels slimy and warm - you can see everything around it.")
+			to_chat(M, "Вы касаетесь внутренней оболочки [src]. Оно кажется склизким и тёплым, через неё можно увидеть смутные образы того что вокруг.")
 		else
-			M.visible_message(SPAN_WARNING("[M] touches [src]..."), "You touch [src]. It feels slimy and warm.")
+			M.visible_message(SPAN_WARNING("[M] трогает [src]..."), "Вы касаетесь [src]. Оно кажется склизким и тёплым.")
 
 /obj/structure/changeling_cocoon/bullet_act(var/obj/item/projectile/Proj)
 	if(!(Proj.damage_type == BRUTE || Proj.damage_type == BURN))
 		return
 	switch(Proj.damage_type)
-		if(BRUTE) visible_message(SPAN_WARNING("[src] tears appart!"))
-		if(BURN) visible_message(SPAN_WARNING("[src] melts!"))
+		if(BRUTE) visible_message(SPAN_WARNING("[src] разрывается!"))
+		if(BURN) visible_message(SPAN_WARNING("[src] тает на глазах!"))
 	take_damage(Proj.damage)
 	..()
 
@@ -130,19 +126,18 @@
 /obj/structure/changeling_cocoon/take_damage(var/amount)
 	health -= amount
 	if(health < max_health / 4 && victim)
-		visible_message(SPAN_WARNING("\icon[src] [src] breaks appart and a goo flows from it!"))
+		visible_message(SPAN_WARNING("\icon[src] [src] разрывается и странная слизь вытекает из него!"))
 		new /obj/effect/decal/cleanable/filth(src)
 		drop_victim()
 		icon_state = "cocoon_opened"
 	if(health < 0)
-		visible_message(SPAN_WARNING("\icon[src] [src] breaks appart!"))
+		visible_message(SPAN_WARNING("\icon[src] [src] разрывается!"))
 		qdel(src)
 
 /obj/structure/changeling_cocoon/examine(mob/user)
 	. = ..()
-	spawn(1 SECOND)
-		if(Adjacent(user) && victim)
-			to_chat(user, SPAN_DANGER("[src] has faint pulse!"))
+	if(Adjacent(user) && victim)
+		to_chat(user, SPAN_DANGER("[src] слабо пульсирует."))
 /*
 /obj/structure/changeling_cocoon/attack_ghost(var/mob/observer/ghost/user)
 	if(convert(user))
@@ -151,15 +146,21 @@
 */
 /obj/structure/changeling_cocoon/proc/drop_victim()
 	if(victim)
-		visible_message(SPAN_DANGER("[victim] dropped from [src]!"))
+		visible_message(SPAN_DANGER("[victim] падает на пол из [src]!"))
 		victim.dropInto(loc)
 		victim = null
+
+/obj/structure/changeling_cocoon/proc/absorb_victim(mob/nvictim)
+	nvictim.forceMove(src)
+	victim = nvictim
+	background()
+	to_chat(victim, SPAN_DANGER("Вас окутывает странная тёплая жидкость, ваше сознание угасает..."))
 
 /obj/structure/changeling_cocoon/proc/background()
 	if(!victim?.client)
 		return
-	to_chat(victim, SPAN_LING("Кокон изменяет тело и сознание.<br>\
-	Скорее всего, тело умрет до вылупления. Но затем, <i>мы</i> возрадимся.<br>\
+	to_chat(victim, SPAN_LING("\"Кокон изменяет тело и сознание.<br>\
+	Скорее всего, тело умрет до вылупления. Но затем, <i>мы</i> возродимся.<br>\
 	Мы будем частью общности - одним из сородичей, что будем работать на её благо и ставить её интересы \
 	выше собственных, в том числе и жизни. Мы должны взять под контроль корабль, поглотив его экипаж и превратив \
 	этим в себе подобных. Пока экипаж не станет слишком малочисленен и слаб, чтобы можно было охотиться без опаски \
@@ -167,7 +168,7 @@
 	Если наш кокон никто не потревожит, то вскоро <i>мы</i> проснемся и прогрызете себе путь на свободу, включившись в охоту. \
 	Наше тело требует новые геномы, чтобы жить и развиваться. Не стоит поглощать или убивать сородичей \
 	- мы все практически родственники.<br>\
-	Сегодня экипаж станет нашим ужином. Удачной охоты."))
+	Сегодня экипаж станет нашим ужином. Удачной охоты.\""))
 
 /*
 Revive in the next proc causes runtimes like
@@ -180,17 +181,23 @@ I don't know how to fix it, tried two days, sorry.
 	if(!victim.client)
 		return
 	victim.revive()
-	spawn(4 SECONDS)
-		GLOB.changelings.add_antagonist(victim.mind, 1)
-	spawn(7 SECONDS)
-		if(victim.mind.changeling) //just to don't fuck up with runtimes further
-			victim.mind.changeling.chem_storage = 30
-			victim.mind.changeling.chem_charges = 30
-			victim.mind.changeling.geneticpoints = 5
-	spawn(10 SECONDS)
-		to_chat(victim, SPAN_LING(FONT_LARGE("Отныне, <b><i>мы едины!</b></i> Нужно разорвать наш кокон, чтобы выбраться!")))
-		to_chat(victim, SPAN_NOTICE("(Атакуйте кокон)"))
+	addtimer(CALLBACK(src, .proc/add_changeling), 4 SECONDS)
+	addtimer(CALLBACK(src, .proc/prepare_changeling), 7 SECONDS)
+
 	STOP_PROCESSING(SSobj, src)
+
+/obj/structure/changeling_cocoon/proc/add_changeling(datum/mind/victimmind = victim?.mind)
+	if(victimmind)
+		GLOB.changelings.add_antagonist(victimmind, 1)
+
+/obj/structure/changeling_cocoon/proc/prepare_changeling(mob/living/carbon/human/v = victim)
+	if(v?.mind)
+		if(v.mind.changeling) //just to don't fuck up with runtimes further
+			v.mind.changeling.chem_storage = 30
+			v.mind.changeling.chem_charges = 30
+			v.mind.changeling.geneticpoints = 5
+			to_chat(victim, SPAN_LING(FONT_LARGE("Мы чувствуем себя по иному... Кажется пора покинуть наше временное пристанище...")))
+
 /*
 /obj/structure/changeling_cocoon/proc/convert(mob/user)
 	if(!victim)

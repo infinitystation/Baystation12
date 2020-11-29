@@ -33,3 +33,21 @@
 	icon_state = "black"
 	item_state = "bgloves"
 	armor = list(melee = 20, bullet = 20, laser = 30,energy = 25, bomb = 20, bio = 0, rad = 0)
+
+/obj/item/clothing/gloves/wristwatch
+	name = "watch"
+	desc = "A wristwatch. This one is silver and EMP-resistance."
+	icon = 'infinity/icons/obj/clothing/obj_hands.dmi'
+	item_icons = list(slot_gloves_str = 'infinity/icons/mob/onmob/onmob_hands.dmi')
+	icon_state = "watch_black"
+	item_state = "watch_black"
+
+/obj/item/clothing/gloves/wristwatch/gold
+	name = "gold watch"
+	desc = "A wristwatch. This one is golden and in makes you feel like a boss."
+	icon_state = "watch_gold"
+	item_state = "watch_gold"
+
+/obj/item/clothing/gloves/wristwatch/examine(mob/user)
+	. = ..()
+	to_chat(user, "It displays " + stationtime2text())

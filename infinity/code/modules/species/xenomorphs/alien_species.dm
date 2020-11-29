@@ -3,7 +3,7 @@
 	name = SPECIES_XENO
 	name_plural = "Xenophages"
 
-	unarmed_types = list(/datum/unarmed_attack/claws/strong, /datum/unarmed_attack/bite/strong)
+	unarmed_types = list(/datum/unarmed_attack/claws/strong/xeno, /datum/unarmed_attack/bite/strong/xeno)
 	hud_type = /datum/hud_data/alien
 	rarity_value = 3
 	health_hud_intensity = 1
@@ -154,7 +154,8 @@
 		/mob/living/carbon/human/proc/evolve_drone,
 		/mob/living/carbon/human/proc/resin,
 		/mob/living/carbon/human/proc/corrosive_acid,
-		/mob/living/carbon/proc/devour
+		/mob/living/carbon/proc/devour,
+		/mob/living/carbon/human/proc/create_hugger
 		)
 /*
 /datum/species/xenos/drone/handle_post_spawn(var/mob/living/carbon/human/H)
@@ -239,7 +240,8 @@
 		/mob/living/carbon/human/proc/transfer_plasma,
 		/mob/living/carbon/human/proc/moderate_corrosive_acid,
 		/mob/living/carbon/human/proc/neurotoxin,
-		/mob/living/carbon/proc/devour
+		/mob/living/carbon/proc/devour,
+		/mob/living/carbon/human/proc/create_hugger
 		)
 
 	force_cultural_info = list(
@@ -286,7 +288,8 @@
 		/mob/living/carbon/human/proc/neurotoxin,
 		/mob/living/carbon/human/proc/resin,
 		/mob/living/carbon/human/proc/xeno_infest,
-		/mob/living/carbon/proc/devour
+		/mob/living/carbon/proc/devour,
+		/mob/living/carbon/human/proc/create_hugger
 		)
 
 	genders = list(FEMALE)
@@ -315,7 +318,7 @@
 
 	natural_armour_values = list(melee = 15, bullet = 10, laser = 10, energy = 0, bomb = 0, bio = 100, rad = 100)
 
-	unarmed_types = list(/datum/unarmed_attack/claws/strong/warrior, /datum/unarmed_attack/bite/strong/warrior)
+	unarmed_types = list(/datum/unarmed_attack/claws/strong/xeno/warrior, /datum/unarmed_attack/bite/strong/xeno/warrior)
 
 	has_organ = list(
 		BP_EYES =     /obj/item/organ/internal/eyes/xeno,
@@ -381,7 +384,8 @@
 		/mob/living/carbon/human/proc/neurotoxin,
 		/mob/living/carbon/human/proc/spit_acid,
 		/mob/living/carbon/human/proc/tackle,
-		/mob/living/carbon/proc/devour
+		/mob/living/carbon/proc/devour,
+		/mob/living/carbon/human/proc/create_hugger
 		)
 
 	force_cultural_info = list(
@@ -420,7 +424,8 @@
 		/mob/living/carbon/human/proc/resin,
 		/mob/living/carbon/human/proc/neurotoxin,
 		/mob/living/carbon/human/proc/evolve_hivelord,
-		/mob/living/carbon/proc/devour
+		/mob/living/carbon/proc/devour,
+		/mob/living/carbon/human/proc/create_hugger
 		)
 
 	force_cultural_info = list(

@@ -9,6 +9,7 @@ var/const/SRV               =(1<<7)
 var/const/SUP               =(1<<8)
 var/const/SPT               =(1<<9)
 var/const/EXP               =(1<<10)
+var/const/ROB               =(1<<11)
 
 SUBSYSTEM_DEF(jobs)
 	name = "Jobs"
@@ -476,18 +477,30 @@ SUBSYSTEM_DEF(jobs)
 		// EMAIL GENERATION
 		if(rank != "Robot" && rank != "AI")		//These guys get their emails later.
 			var/domain
+			var/addr = H.real_name
+			var/pass
 			if(H.char_branch)
 				if(H.char_branch.email_domain)
 					domain = H.char_branch.email_domain
+				if (H.char_branch.allow_custom_email && H.client.prefs.email_addr)
+					addr = H.client.prefs.email_addr
 			else
 				domain = "freemail.net"
+			if (H.client.prefs.email_pass)
+				pass = H.client.prefs.email_pass
 			if(domain)
-				ntnet_global.create_email(H, H.real_name, domain, rank)
+				ntnet_global.create_email(H, addr, domain, rank, pass)
 		// END EMAIL GENERATION
 
 		job.equip(H, H.mind ? H.mind.role_alt_title : "", H.char_branch, H.char_rank)
 		job.apply_fingerprints(H)
 		spawn_in_storage = equip_custom_loadout(H, job)
+
+		var/obj/item/clothing/under/uniform = H.w_uniform
+		if(istype(uniform) && uniform.has_sensor)
+			uniform.sensor_mode = SUIT_SENSOR_MODES[H.client.prefs.sensor_setting]
+			if(H.client.prefs.sensors_locked)
+				uniform.has_sensor = SUIT_LOCKED_SENSORS
 	else
 		to_chat(H, "Your job is [rank] and the game just can't handle it! Please report this bug to an administrator.")
 
@@ -495,9 +508,19 @@ SUBSYSTEM_DEF(jobs)
 
 	if(!joined_late || job.latejoin_at_spawnpoints)
 		var/obj/S = job.get_roundstart_spawnpoint()
-
-		if(istype(S, /obj/effect/landmark/start) && istype(S.loc, /turf))
+		/*[ORIGINAL]
+		if(istype(S, /obj/effect/landmark/start) && istype(S.loc, /turf)
 			H.forceMove(S.loc)
+		[/ORIGINAL]*/
+		//[INF]
+		var/turf/truf = get_turf(S)
+		if((istype(S, /obj/effect/landmark/start) && isturf(truf)) || isturf(S))
+			H.forceMove(truf)
+			var/obj/structure/bed/b = locate(/obj/structure/bed) in truf
+			if(istype(b) && !joined_late)
+				H.Sleeping(15)
+				b.buckle_mob(H)
+		//[/INF]
 		else
 			var/datum/spawnpoint/spawnpoint = job.get_spawnpoint(H.client)
 			H.forceMove(pick(spawnpoint.turfs))

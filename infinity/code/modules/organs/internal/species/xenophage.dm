@@ -4,6 +4,7 @@
 	icon = 'infinity/icons/mob/alien.dmi'
 	icon_state = "chitin"
 	damage_reduction = 0 //they cannot take damage. F to species mechanic
+	max_damage = 120
 
 /obj/item/organ/internal/brain/xeno/take_internal_damage(var/damage, var/silent)
 	set waitfor = 0
@@ -21,6 +22,7 @@
 	icon = 'icons/effects/blood.dmi'
 	var/associated_power = /mob/living/carbon/human/proc/resin
 	damage_reduction = 0
+	max_damage = 120
 
 /obj/item/organ/internal/xeno/replaced(var/mob/living/carbon/human/target,var/obj/item/organ/external/affected)
 	. = ..()

@@ -47,8 +47,7 @@
 "ah" = (
 /obj/machinery/optable,
 /obj/machinery/body_scan_display{
-	pixel_y = 24;
-	tag = "xilvu_or_display"
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/skrell/white,
 /area/ship/skrellscoutship/crew/medbay)
@@ -370,7 +369,6 @@
 /area/ship/skrellscoutship/crew/medbay)
 "aZ" = (
 /obj/structure/bed/chair/shuttle{
-	tag = "icon-shuttle_chair_preview (NORTH)";
 	icon_state = "shuttle_chair_preview";
 	dir = 1
 	},
@@ -507,7 +505,6 @@
 /area/ship/skrellscoutship/crew/medbay)
 "bq" = (
 /obj/structure/bed/chair/shuttle{
-	tag = "icon-shuttle_chair_preview (NORTH)";
 	icon_state = "shuttle_chair_preview";
 	dir = 1
 	},
@@ -537,7 +534,6 @@
 	req_access = list("ACCESS_SKRELLSCOUT")
 	},
 /obj/structure/bed/chair/shuttle{
-	tag = "icon-shuttle_chair_preview (NORTH)";
 	icon_state = "shuttle_chair_preview";
 	dir = 1
 	},
@@ -797,7 +793,6 @@
 /area/ship/skrellscoutship/crew/quarters)
 "bT" = (
 /obj/structure/bed/chair/shuttle{
-	tag = "icon-shuttle_chair_preview (WEST)";
 	icon_state = "shuttle_chair_preview";
 	dir = 8
 	},

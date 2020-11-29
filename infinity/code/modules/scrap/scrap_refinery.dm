@@ -105,7 +105,6 @@ var/const/SAFETY_COOLDOWN = 100
 		new /obj/item/stack/material/refined_scrap(loc)
 	qdel(I)
 
-
 /obj/machinery/recycler/proc/stop(mob/living/L)
 	set waitfor = 0
 	playsound(src.loc, 'sound/machines/buzz-sigh.ogg', 50, 0)

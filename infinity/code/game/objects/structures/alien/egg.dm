@@ -33,7 +33,7 @@
 	else if(progress < MAX_PROGRESS)
 		progress++
 
-	if(progress >= MAX_PROGRESS)
+	/*if(progress >= MAX_PROGRESS)
 		for(var/mob/living/carbon/human/H in range(3, get_turf(src)))
 			if(istype(H) && !isxenomorph(H))
 				flick("egg_opening",src)
@@ -43,7 +43,7 @@
 				hugger.icon_state = "facehugger_thrown"
 				hugger.throw_at(H,3,1)
 				update_icon()
-				return
+				return*/
 
 /obj/structure/alien/egg/on_update_icon()
 	if(progress == -1)
@@ -53,7 +53,7 @@
 	else
 		icon_state = "egg"
 
-/obj/structure/alien/egg/attack_hand(mob/user)
+/*/obj/structure/alien/egg/attack_hand(mob/user)
 	if(progress == -1)
 		return
 	if(progress < MAX_PROGRESS)
@@ -83,7 +83,7 @@
 		hugger.icon_state = "facehugger_thrown"
 		hugger.throw_at(user,3,1)
 	update_icon()
-	return 1
+	return 1*/
 
 /obj/item/clothing/mask/facehugger
 	name = "facehugger"
@@ -91,7 +91,7 @@
 	icon = 'infinity/icons/mob/alien.dmi'
 	icon_state = "facehugger"
 	item_state = "facehugger"
-	tint = 3
+	tint = 7
 	throw_range = 5
 	w_class = ITEM_SIZE_SMALL
 	var/dead = 0
@@ -157,9 +157,9 @@
 			H.visible_message(SPAN_DANGER("[src] jumps onto [H]!"), SPAN_DANGER("[src] jumps onto you!"))
 		src.pickup(H)
 		var/obj/item/organ/affecting = H.get_organ(BP_CHEST)
-		var/obj/item/organ/internal/xeno/larva/larva = new(affecting)
+		//var/obj/item/organ/internal/xeno/larva/larva = new(affecting)
 		H.apply_damage(90, PAIN, affecting)
-		larva.replaced(H, affecting)
+		//larva.replaced(H, affecting)
 		H.Weaken(8)
 		H.Stun(3)
 		addtimer(CALLBACK(src, .proc/detach), live_time)
@@ -185,7 +185,6 @@
 	H.visible_message(SPAN_DANGER("[src] falls after violating [H]'s face!"), SPAN_DANGER("[src] falls after violating your face!"))
 	icon_state = "facehugger_impregnated"
 
-/*  //WE HAVE FACEHEGGERS NOW
 /obj/structure/alien/egg/attack_ghost(var/mob/observer/ghost/user)
 	if(progress == -1) //Egg has been hatched.
 		return
@@ -235,6 +234,6 @@
 	// Turn us into a hatched egg.
 	name = "hatched alien egg"
 	desc += " This one has hatched."
-	update_icon()*/
+	update_icon()
 
 #undef MAX_PROGRESS

@@ -71,8 +71,8 @@
 	with darker skin better display the dull, greenish hue resulting from their artificial growth. \
 	Vat-grown humans have no appendix and fewer inherited genetic disabilities but have a weakened \
 	metabolism."
-	icobase =     'icons/mob/human_races/species/human/subspecies/vatgrown_body.dmi'
-	preview_icon= 'icons/mob/human_races/species/human/subspecies/vatgrown_preview.dmi'
+	icobase = 'infinity/icons/mob/human_races/species/human/subspecies/vatgrown_body.dmi' //inf, was: 	icobase =     'icons/mob/human_races/species/human/subspecies/vatgrown_body.dmi'
+	preview_icon = 'infinity/icons/mob/human_races/species/human/subspecies/vatgrown_preview.dmi' //inf, was: 	preview_icon= 'icons/mob/human_races/species/human/subspecies/vatgrown_preview.dmi'
 
 	toxins_mod =   1.1
 	has_organ = list(
@@ -155,6 +155,7 @@
 	but is certainly both unique and remarkable in its ability to cope with the extremes that the \
 	Universe can throw at it."
 	var/list/mods = list()
+
 
 #define MOD_BASE     0.85
 #define MOD_VARIANCE 0.35

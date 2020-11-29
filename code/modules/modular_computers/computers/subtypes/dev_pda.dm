@@ -18,7 +18,13 @@
 
 /obj/item/modular_computer/pda/Initialize()
 	. = ..()
-//	enable_computer()
+	enable_computer()
+
+obj/item/modular_computer/pda/CtrlClick(mob/user)
+	if(!isturf(loc)) ///If we are dragging the PDA across the ground we don't want to remove the pen
+		remove_pen(user)
+	else
+		. = ..()
 
 /obj/item/modular_computer/pda/AltClick(var/mob/user)
 	if(!CanPhysicallyInteract(user))
