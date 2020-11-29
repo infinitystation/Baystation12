@@ -38,5 +38,5 @@
 	startswith = list(/obj/item/weapon/grenade/anti_photon/shell = 6)
 
 /obj/item/weapon/storage/box/ammo/sniperammo/soporific
-	name = "box of soporific sniper shells"
+	name = "box of chloral hydrate sniper shells"
 	startswith = list(/obj/item/ammo_casing/shell/soporific = 7)
