@@ -30,6 +30,34 @@
 /obj/item/weapon/storage/firstaid/combat/special,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/medbay)
+"ad" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9;
+	icon_state = "intact-supply"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10;
+	icon_state = "intact-scrubbers"
+	},
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	dir = 8
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	dir = 1
+	},
+/obj/machinery/hologram/holopad/longrange,
+/turf/simulated/floor/tiled/techfloor,
+/area/ship/patrol/cockpit)
 "af" = (
 /obj/effect/paint/hull,
 /turf/simulated/wall/r_titanium,
@@ -2843,33 +2871,6 @@
 /obj/effect/paint/hull,
 /turf/simulated/wall/r_titanium,
 /area/ship/patrol/center)
-"DF" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9;
-	icon_state = "intact-supply"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10;
-	icon_state = "intact-scrubbers"
-	},
-/obj/structure/cable/cyan{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/floor_decal/techfloor/corner{
-	dir = 8
-	},
-/obj/effect/floor_decal/techfloor/corner{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/ship/patrol/cockpit)
 "DN" = (
 /obj/machinery/computer/telecomms/monitor,
 /obj/effect/floor_decal/techfloor{
@@ -26233,7 +26234,7 @@ YX
 af
 af
 km
-DF
+ad
 Lk
 af
 af
