@@ -1,0 +1,4 @@
+author: Filiae
+delete-after: True
+changes:
+  - bugfix: "Была исправлена причёска Angel. Теперь, её виды по бокам соответствуют логике."
