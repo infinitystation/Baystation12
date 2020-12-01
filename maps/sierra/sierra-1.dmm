@@ -5359,6 +5359,18 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/thirddeck/aft)
+"jT" = (
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/cable/cyan,
+/obj/machinery/power/smes/buildable/preset/sierra/shuttle{
+	RCon_tag = "Shuttle - Guppy"
+	},
+/obj/machinery/light,
+/obj/structure/fuel_port{
+	pixel_x = 34
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/guppy_hangar/start)
 "jU" = (
 /obj/structure/table/rack,
 /obj/item/weapon/storage/box/lights/mixed,
@@ -7098,6 +7110,20 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/fore)
+"mD" = (
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/machinery/power/port_gen/pacman{
+	sheets = 5
+	},
+/obj/structure/fuel_port{
+	pixel_y = -30
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/exploration_shuttle/power)
 "mE" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
@@ -13141,12 +13167,6 @@
 /obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d3port)
-"ww" = (
-/obj/effect/paint_stripe/nt_red,
-/obj/structure/fuel_port,
-/obj/effect/paint/nt_white,
-/turf/simulated/wall/titanium,
-/area/exploration_shuttle/power)
 "wx" = (
 /obj/machinery/conveyor{
 	dir = 4;
@@ -15723,12 +15743,6 @@
 	heat_capacity = 412500
 	},
 /area/thruster/d3starboard)
-"AT" = (
-/obj/structure/fuel_port,
-/obj/effect/paint_stripe/red,
-/obj/effect/paint/nt_white,
-/turf/simulated/wall/titanium,
-/area/guppy_hangar/start)
 "AU" = (
 /obj/structure/shuttle/engine/propulsion{
 	dir = 1
@@ -18296,17 +18310,6 @@
 /obj/item/stack/tile/carpet/ten,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/storage)
-"Fo" = (
-/obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/effect/floor_decal/industrial/outline/grey,
-/obj/machinery/power/port_gen/pacman{
-	sheets = 5
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/exploration_shuttle/power)
 "Fp" = (
 /obj/effect/paint/nt_white,
 /obj/effect/paint_stripe/nt_red,
@@ -21381,15 +21384,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/hallway/primary/thirddeck/center)
-"Kl" = (
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/structure/cable/cyan,
-/obj/machinery/power/smes/buildable/preset/sierra/shuttle{
-	RCon_tag = "Shuttle - Guppy"
-	},
-/obj/machinery/light,
-/turf/simulated/floor/tiled/monotile,
-/area/guppy_hangar/start)
 "Km" = (
 /obj/machinery/door/airlock/external{
 	frequency = 1331;
@@ -50914,9 +50908,9 @@ Ai
 AA
 Af
 Ey
-Fo
+mD
 AA
-ww
+ii
 sp
 Ql
 aM
@@ -51135,7 +51129,7 @@ QX
 MW
 SK
 JI
-Kl
+jT
 Ji
 sp
 LQ
@@ -51328,7 +51322,7 @@ oD
 BE
 oC
 Fs
-AT
+zg
 Ji
 Ji
 DE
