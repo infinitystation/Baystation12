@@ -1,6 +1,0 @@
-author: quardbreak
-
-delete-after: True
-
-changes:
-  - bugfix: "Починил автоматический подгон полноэкранного режима при заходе на сервер."
