@@ -59,7 +59,12 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/patrol/cockpit)
 "ae" = (
-/obj/machinery/vending/medical/patrol,
+/obj/machinery/vending/medical/patrol{
+	dir = 1;
+	icon_state = "med"
+	},
+/obj/effect/floor_decal/borderfloorwhite,
+/obj/effect/floor_decal/corner/paleblue/border,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/medbay)
 "af" = (
