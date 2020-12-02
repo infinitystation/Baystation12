@@ -285,3 +285,8 @@
 	name = "Mancut"
 	icon_state = "hair_mancut"
 //[/AURORA]
+
+/datum/sprite_accessory/hair/infinity/spikytail
+	name = "Ponytail Spiky"
+	icon_state = "hair_ponytail_spiky"
+//[/AURORA]
