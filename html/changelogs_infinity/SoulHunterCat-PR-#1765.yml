@@ -1,0 +1,4 @@
+author: SoulHunterCat
+delete-after: True
+changes:
+  - bugfix: "Три нательные метки для Таяр теперь правильно отображаются на теле. (Lynx уши, щеки и сережки)"
