@@ -29,33 +29,64 @@
 			to_chat(user, "<span class='notice'>There is no list to pick from!</span>")
 		return IC_TOPIC_REFRESH
 
-/obj/item/integrated_circuit/input/image_recognition
-	name = "image recognition scanner"
-	desc = "A scanner that is able to help you recognize a certain object and their current state."
-	extended_desc = "(Returns an icon_state of the target.)"
+/obj/item/integrated_circuit/input/image_comparse
+	name = "image comparse scanner"
+	desc = "A circuit with an attached miniature camera on it. Allows to compare objects between themselves."
+	extended_desc = "On pulsing 'store' activator, circuit would remember the selected target, \
+	on 'check' it will compare stored object with the selected target, trying to include into comparsion every detail on them.\
+	When both objects are almost completely identical, both outputs will be ones. \
+	(matching form - type check, match of details - icon_state check)."
 	icon_state = "video_camera"
 	complexity = 5
 	inputs = list(
 		"target" = IC_PINTYPE_REF
 		)
 	outputs = list(
-		"state" = IC_PINTYPE_STRING,
+		"stored object" = IC_PINTYPE_STRING,
+		"matching form" = IC_PINTYPE_BOOLEAN,
+		"match of details" = IC_PINTYPE_BOOLEAN
 		)
 	activators = list(
-		"scan" = IC_PINTYPE_PULSE_IN,
-		"on scanned" = IC_PINTYPE_PULSE_OUT,
-		"not scanned" = IC_PINTYPE_PULSE_OUT
+		"store" = IC_PINTYPE_PULSE_IN,
+		"check" = IC_PINTYPE_PULSE_IN,
+		"on checked" = IC_PINTYPE_PULSE_OUT,
+		"on failure" = IC_PINTYPE_PULSE_OUT
 		)
 	spawn_flags = IC_SPAWN_RESEARCH
 	power_draw_per_use = 80
+	var/obj_type
+	var/state
 
-/obj/item/integrated_circuit/input/image_recognition/do_work()
-	var/atom/H = get_pin_data_as_type(IC_INPUT, 1, /atom)
-	var/turf/T = get_turf(src)
+/obj/item/integrated_circuit/input/image_comparse/do_work(ord)
+	switch(ord)
+		if(1)
+			var/atom/object = get_pin_data_as_type(IC_INPUT, 1, /atom)
+			if(object)
+				obj_type = object.type
+				state = object.icon_state
+				set_pin_data(IC_OUTPUT, 1, object.name)
+				push_data()
+		else
+			var/atom/H = get_pin_data_as_type(IC_INPUT, 1, /atom)
+			var/turf/T = get_turf(src)
 
-	if(!istype(H) || !(H in view(T)))
-		activate_pin(3)
-	else
-		set_pin_data(IC_OUTPUT, 1, H.icon_state)
-		push_data()
-		activate_pin(2)
+			if(!istype(H) || !(H in view(T)))
+				activate_pin(4)
+			else
+				if(!H || !obj_type)
+					return
+
+				if(H.type == obj_type)
+					set_pin_data(IC_OUTPUT, 2, 1)
+
+					if(H.icon_state == state)
+						set_pin_data(IC_OUTPUT, 3, 1)
+					else
+						set_pin_data(IC_OUTPUT, 3, 0)
+
+				else
+					set_pin_data(IC_OUTPUT, 2, 0)
+					set_pin_data(IC_OUTPUT, 3, 0)
+
+				push_data()
+				activate_pin(3)
