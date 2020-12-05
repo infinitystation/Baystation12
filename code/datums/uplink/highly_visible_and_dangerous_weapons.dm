@@ -139,6 +139,7 @@
 	desc = "A high rate of fire weapon in a smaller form factor, able to sling standard ammunition almost as quick as a submachine gun."
 	item_cost = 55
 	path = /obj/item/weapon/gun/projectile/automatic/machine_pistol
+	antag_roles = list(MODE_MERCENARY) //inf
 
 /datum/uplink_item/item/visible_weapons/combat_shotgun
 	name = "Combat Shotgun"
@@ -174,9 +175,8 @@
 /datum/uplink_item/item/visible_weapons/pulserifle
 	name = "Pulse Rifle"
 	desc = "A triple burst, heavy laser rifle, with a large battery compacity."
-	item_cost = 68
+	item_cost = 70
 	path = /obj/item/weapon/gun/energy/pulse_rifle
-	antag_roles = list(MODE_MERCENARY) //inf
 
 /datum/uplink_item/item/visible_weapons/flechetterifle
 	name = "Flechette Rifle"
