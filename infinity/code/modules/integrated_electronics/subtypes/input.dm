@@ -1,5 +1,5 @@
-/obj/item/integrated_circuit/input/list_picker
-	name = "list picker"
+/obj/item/integrated_circuit/input/list_pick
+	name = "list pick"
 	desc = "A touch screen with all the data you need to pick."
 	icon_state = "screen"
 	complexity = 3
@@ -9,19 +9,22 @@
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 	power_draw_per_use = 5
 
-/obj/item/integrated_circuit/input/list_picker/get_topic_data(mob/user)
+/obj/item/integrated_circuit/input/list_pick/get_topic_data(mob/user)
 	return list("Press" = "list_pick=1")
 
-/obj/item/integrated_circuit/input/list_picker/OnICTopic(href_list, user)
+/obj/item/integrated_circuit/input/list_pick/OnICTopic(href_list, user)
 	if(href_list["list_pick"])
 		activate_pin(1)
 		var/list/input_list = get_pin_data(IC_INPUT, 1)
 		if(input_list.len)
 			var/pick_element = input("Choose an element.") in input_list
 			if(pick_element)
-				set_pin_data(IC_OUTPUT, 1, pick_element)
-				push_data()
-				activate_pin(2)
+				if(get_dist(src, user) <= 1)
+					set_pin_data(IC_OUTPUT, 1, pick_element)
+					push_data()
+					activate_pin(2)
+				else
+					to_chat(user, "<span class='notice'>You are not close enough for that!</span>")
 		else
 			to_chat(user, "<span class='notice'>There is no list to pick from!</span>")
 		return IC_TOPIC_REFRESH
