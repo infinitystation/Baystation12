@@ -58,6 +58,15 @@
 /obj/machinery/hologram/holopad/longrange,
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/patrol/cockpit)
+"ae" = (
+/obj/machinery/vending/medical/patrol{
+	dir = 1;
+	icon_state = "med"
+	},
+/obj/effect/floor_decal/borderfloorwhite,
+/obj/effect/floor_decal/corner/paleblue/border,
+/turf/simulated/floor/tiled/white,
+/area/ship/patrol/medbay)
 "af" = (
 /obj/effect/paint/hull,
 /turf/simulated/wall/r_titanium,
@@ -2933,15 +2942,6 @@
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/paleblue/border,
 /obj/item/weapon/bedsheet/medical,
-/turf/simulated/floor/tiled/white,
-/area/ship/patrol/medbay)
-"Fx" = (
-/obj/machinery/vending/medical/torch{
-	dir = 1;
-	icon_state = "med"
-	},
-/obj/effect/floor_decal/borderfloorwhite,
-/obj/effect/floor_decal/corner/paleblue/border,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/medbay)
 "Gd" = (
@@ -22391,7 +22391,7 @@ qW
 tt
 WH
 NK
-Fx
+ae
 au
 ap
 aB

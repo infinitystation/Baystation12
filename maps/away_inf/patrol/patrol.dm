@@ -2,6 +2,7 @@
 #include "patrol_areas.dm"
 #include "patrol_items.dm"
 #include "patrol_shuttle.dm"
+#include "patrol_machinery.dm"
 
 /* OVERMAP
  * =======
