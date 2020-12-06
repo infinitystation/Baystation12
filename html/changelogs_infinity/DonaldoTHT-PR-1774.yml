@@ -1,0 +1,4 @@
+author: DonaldoTHT
+delete-after: True
+changes:
+  - tweak: "Плата реле теллекомов теперь доступно в карго"
