@@ -31,7 +31,7 @@
 
 /obj/item/integrated_circuit/input/image_comparse
 	name = "image comparse scanner"
-	desc = "A circuit with an attached miniature camera on it. Allows to compare objects between themselves."
+	desc = "A circuit with miniature camera attached to it."
 	extended_desc = "On pulsing 'store' activator, circuit would remember the selected target, \
 	on 'check' it will compare stored object with the selected target, trying to include into comparsion every detail on them.\
 	When both objects are almost completely identical, both outputs will be ones. \
