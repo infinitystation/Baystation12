@@ -16,3 +16,4 @@
 	if(!fexists(sourceOfData))
 		return
 	data = json_decode(file2text(sourceOfData))
+	. = data

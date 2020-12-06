@@ -8,15 +8,16 @@
 
 /client/proc/update_ooc_color()
 	var/getter = holder ? holder.rank : null
-	var/list/donatorskey_rank = SSexdata.get_data_by_key(DATASTORE_DONATORS, key)
-	if(islist(donatorskey_rank) && length(donatorskey_rank))
-		getter ? null : (getter = donatorskey_rank.Find("rank") ? donatorskey_rank["rank"] : null)
-	if(getter)
-		var/cbr = SSexdata.get_data_by_key(DATASTORE_RANKS_OOC_COLORS, getter)
-		if(istext(cbr) && prefs)
-			prefs.ooccolor = "#" + cbr
+	var/ooc_color_by_holder
+	if(istext(getter))
+		ooc_color_by_holder = SSexdata.GetDataByKey(DATASTORE_RANKS_OOC_COLORS, getter)
+	if(DonateData?.ooc_color || ooc_color_by_holder)
+		var/nooc_color = (ooc_color_by_holder ? ooc_color_by_holder : DonateData.ooc_color)
+		if(istext(nooc_color) && prefs)
+			prefs.ooccolor = "#" + nooc_color
 
 /client/proc/on_exdata_load()
+	DonateData.Update()
 	update_ooc_color()
 
 /datum/preferences/load_preferences()

@@ -8,22 +8,22 @@ SUBSYSTEM_DEF(exdata)
 
 /datum/controller/subsystem/exdata/Initialize()
 	. = ..()
-	reloadDataStores()
+	ReloadDataStores()
 
-/datum/controller/subsystem/exdata/proc/reloadDataStores()
+/datum/controller/subsystem/exdata/proc/ReloadDataStores()
 	stores = list()
 	for(var/i in typesof(/datum/external_datastore))
 		var/datum/external_datastore/path = i
 		if(!ispath(path, /datum/external_datastore))
 			continue
 		if(fexists(initial(path.sourceOfData)) && initial(path.name))
-			var/datum/external_datastore/newi = new path()
-			stores[newi.name] = newi
+			var/datum/external_datastore/new_ds = new path()
+			stores[new_ds.name] = new_ds
 
 	for(var/client/c in GLOB.clients)
 		c.on_exdata_load()
 
-/datum/controller/subsystem/exdata/proc/get_ds(dsname)
+/datum/controller/subsystem/exdata/proc/GetDS(dsname)
 	if(islist(stores) && length(stores))
 		if(stores.Find(dsname))
 			. = stores[dsname]
@@ -33,9 +33,9 @@ SUBSYSTEM_DEF(exdata)
 			else
 				. = null
 
-/datum/controller/subsystem/exdata/proc/get_data_by_key(dsname, key)
+/datum/controller/subsystem/exdata/proc/GetDataByKey(dsname, key)
 	if(!key)
 		return
-	var/list/ds = get_ds(dsname)
+	var/list/ds = GetDS(dsname)
 	if(ds?.Find(key))
 		. = ds[key]
