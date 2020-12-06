@@ -204,7 +204,6 @@ var/list/ai_verbs_default = list(
 	ai_radio.myAi = src
 
 /mob/living/silicon/ai/proc/on_mob_init()
-	set waitfor = FALSE //inf, used for alert() check below
 	to_chat(src, "<B>Вы играете за Искусстенный Интеллект объекта [station_name()]. ИИ не может перемещаться сам по себе, но можно взаимодействовать со множеством электронных объектов в момент, когда они находятся его зоне видимости (через камеры).</B>")
 	to_chat(src, "<B>Чтобы увидеть другие зоны, нажмите на себя для выведения списка доступных камер.</B>")
 	to_chat(src, "<B>В момент просмотра через камеры, вы можете использовать подключенные к системе энергоснабжения объекты. Например компьютеры, АПС, шлюзы, интеркомы, системы контроля атмосферы и т.п.</B>")
@@ -234,15 +233,6 @@ var/list/ai_verbs_default = list(
 	job = "AI"
 	setup_icon()
 	eyeobj.possess(src)
-
-	var/obj/inactive_core
-	isturf(loc) ? (inactive_core = locate(/obj/structure/AIcore) in loc) : null
-	inactive_core ? qdel(inactive_core) : null
-
-	if(alert(src, "Announce your presence?", "AI Presense","Yes", "No") == "Yes")
-		switch(input(src, "Announce your presence?", "Presence.") in list("Torch Voice Announcement", "TG Voice Announcement"))
-			if("Torch Voice Announcement")	announcement.Announce("Новый ИИ загружен в ядро.", new_sound = 'sound/AI/newAI.ogg')
-			if("TG Voice Announcement")	announcement.Announce("Новый ИИ загружен в ядро.", new_sound = 'infinity/sound/AI/TG/newai.ogg')
 
 /mob/living/silicon/ai/Destroy()
 	for(var/robot in connected_robots)
