@@ -43,10 +43,12 @@
 	name = "Employee Supply Head"
 	departments = SUP|COM
 
-	hat = list(\
-		/obj/item/clothing/head/soft/yellow, /obj/item/clothing/head/beret/infinity/cargo)
-	under = list(\
-		/obj/item/clothing/under/rank/cargo)
+	hat = list(
+		/obj/item/clothing/head/soft/yellow, /obj/item/clothing/head/beret/infinity/cargo
+		)
+	under = list(
+		/obj/item/clothing/under/rank/cargo
+		)
 
 /* SECURITY
  * ========
@@ -73,9 +75,11 @@
 	name = "Employee Security Head"
 	departments = SEC|COM
 
-	hat = list(\
-		/obj/item/clothing/head/beret/sec/corporate/hos, /obj/item/clothing/head/HoS, \
-		/obj/item/clothing/head/beret/sec/navy/hos)
+	hat = list(
+		/obj/item/clothing/head/beret/sec/corporate/hos,
+		/obj/item/clothing/head/HoS,
+		/obj/item/clothing/head/beret/sec/navy/hos
+		)
 	under = list(\
 		/obj/item/clothing/under/rank/head_of_security, /obj/item/clothing/under/rank/head_of_security/jensen, \
 		/obj/item/clothing/under/rank/head_of_security/navyblue, /obj/item/clothing/under/rank/head_of_security/navyblue/alt, \
@@ -151,11 +155,12 @@
 	name = "Employee Research Head"
 	departments = SCI|COM
 
-	hat = list(\
+	hat = list(
 		/obj/item/clothing/head/beret/infinity/science)
-	under = list(\
+	under = list(
 		/obj/item/clothing/under/rank/research_director, /obj/item/clothing/under/rank/research_director/dress_rd, \
-		/obj/item/clothing/under/rank/research_director/rdalt)
+		/obj/item/clothing/under/rank/research_director/rdalt
+		)
 
 /* EXPLORATION
  * ========

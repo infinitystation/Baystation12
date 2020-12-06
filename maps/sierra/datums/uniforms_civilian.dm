@@ -44,7 +44,8 @@
 	departments = SUP|COM
 
 	hat = list(
-		/obj/item/clothing/head/soft/yellow, /obj/item/clothing/head/beret/infinity/cargo
+		/obj/item/clothing/head/soft/yellow,
+		/obj/item/clothing/head/beret/infinity/cargo
 		)
 	under = list(
 		/obj/item/clothing/under/rank/cargo
@@ -75,9 +76,11 @@
 	name = "Civilian Security Head"
 	departments = SEC|COM
 
-	hat = list(\
-		/obj/item/clothing/head/beret/sec/corporate/hos, /obj/item/clothing/head/HoS, \
-		/obj/item/clothing/head/beret/sec/navy/hos)
+	hat = list(
+		/obj/item/clothing/head/beret/sec/corporate/hos,
+		/obj/item/clothing/head/HoS,
+		/obj/item/clothing/head/beret/sec/navy/hos
+		)
 	under = list(\
 		/obj/item/clothing/under/rank/head_of_security, /obj/item/clothing/under/rank/head_of_security/jensen, \
 		/obj/item/clothing/under/rank/head_of_security/navyblue, /obj/item/clothing/under/rank/head_of_security/navyblue/alt, \
