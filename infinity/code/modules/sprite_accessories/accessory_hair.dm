@@ -284,7 +284,6 @@
 /datum/sprite_accessory/hair/infinity/mancut
 	name = "Mancut"
 	icon_state = "hair_mancut"
-//[/AURORA]
 
 /datum/sprite_accessory/hair/infinity/spiky
 	name = "Spiky Ponytail"
