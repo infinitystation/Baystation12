@@ -164,8 +164,9 @@
 	name = "Employee Exploration"
 	departments = EXP
 
-	hat = list(\
-		/obj/item/clothing/head/beret/infinity/exploration)
+	hat = list(
+		/obj/item/clothing/head/beret/infinity/exploration
+		)
 
 /* COMMAND
  * =======
