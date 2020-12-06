@@ -156,9 +156,11 @@
 	departments = SCI|COM
 
 	hat = list(
-		/obj/item/clothing/head/beret/infinity/science)
+		/obj/item/clothing/head/beret/infinity/science
+		)
 	under = list(
-		/obj/item/clothing/under/rank/research_director, /obj/item/clothing/under/rank/research_director/dress_rd, \
+		/obj/item/clothing/under/rank/research_director,
+		/obj/item/clothing/under/rank/research_director/dress_rd,
 		/obj/item/clothing/under/rank/research_director/rdalt
 		)
 
