@@ -58,6 +58,15 @@
 /obj/machinery/hologram/holopad/longrange,
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/patrol/cockpit)
+"ae" = (
+/obj/machinery/vending/medical/patrol{
+	dir = 1;
+	icon_state = "med"
+	},
+/obj/effect/floor_decal/borderfloorwhite,
+/obj/effect/floor_decal/corner/paleblue/border,
+/turf/simulated/floor/tiled/white,
+/area/ship/patrol/medbay)
 "af" = (
 /obj/effect/paint/hull,
 /turf/simulated/wall/r_titanium,
@@ -70,6 +79,15 @@
 	},
 /turf/simulated/wall/r_titanium,
 /area/ship/patrol/medbay)
+"ah" = (
+/obj/structure/lattice,
+/turf/simulated/floor/reinforced/airless,
+/area/ship/patrol/cockpit)
+"ai" = (
+/obj/structure/lattice,
+/obj/machinery/light/navigation/delay2,
+/turf/simulated/floor/reinforced/airless,
+/area/ship/patrol/cockpit)
 "ak" = (
 /obj/effect/paint/red,
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
@@ -2935,15 +2953,6 @@
 /obj/item/weapon/bedsheet/medical,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/medbay)
-"Fx" = (
-/obj/machinery/vending/medical/torch{
-	dir = 1;
-	icon_state = "med"
-	},
-/obj/effect/floor_decal/borderfloorwhite,
-/obj/effect/floor_decal/corner/paleblue/border,
-/turf/simulated/floor/tiled/white,
-/area/ship/patrol/medbay)
 "Gd" = (
 /obj/effect/paint/hull,
 /turf/simulated/wall/r_titanium,
@@ -2987,10 +2996,6 @@
 /obj/effect/floor_decal/corner/paleblue/border,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/medbay)
-"HP" = (
-/obj/structure/lattice,
-/turf/space,
-/area/ship/patrol/cockpit)
 "JC" = (
 /obj/effect/floor_decal/techfloor,
 /turf/simulated/floor/tiled/techfloor,
@@ -3101,11 +3106,6 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/center)
-"MQ" = (
-/obj/structure/lattice,
-/obj/machinery/light/navigation/delay2,
-/turf/space,
-/area/ship/patrol/cockpit)
 "Nc" = (
 /obj/structure/catwalk,
 /obj/structure/cable/cyan{
@@ -22391,7 +22391,7 @@ qW
 tt
 WH
 NK
-Fx
+ae
 au
 ap
 aB
@@ -27040,11 +27040,11 @@ aa
 aa
 aa
 Ql
-HP
+ah
 aa
 aa
 aa
-HP
+ah
 Ql
 aa
 aa
@@ -27242,11 +27242,11 @@ aa
 aa
 aa
 aa
-HP
+ah
 aa
 wP
 aa
-MQ
+ai
 aa
 aa
 aa
@@ -27444,7 +27444,7 @@ aa
 aa
 aa
 aa
-MQ
+ai
 aa
 aa
 aa
