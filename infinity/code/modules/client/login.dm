@@ -7,6 +7,8 @@
 	update_ooc_color()
 
 /client/proc/update_ooc_color()
+	if(DonateData)
+		DonateData.Update()
 	var/getter = holder ? holder.rank : null
 	var/ooc_color_by_holder
 	if(istext(getter))

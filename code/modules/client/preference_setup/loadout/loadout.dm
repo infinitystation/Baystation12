@@ -162,23 +162,41 @@ var/list/gear_datums = list()
 	. += "</b></center></td></tr>"
 
 	var/datum/loadout_category/LC = loadout_categories[current_tab]
+/*[BAY]
 	. += "<tr><td colspan=3><hr></td></tr>"
 	. += "<tr><td colspan=3><b><center>[LC.category]</center></b></td></tr>"
 	. += "<tr><td colspan=3><hr></td></tr>"
+[/BAY]*/
+//[INF]
+	. += "<tr><td colspan=5><hr></td></tr>"
+	. += "<tr><td colspan=5><b><center>[LC.category]</center></b></td></tr>"
+	. += "<tr><td colspan=5><hr></td></tr>"
+	. += "<tr><th>Name<th>Slots' Cost<th>Description<th>Premium Cost<th>Premium Level"
+//[/INF]
 	var/jobs = list()
 	for(var/job_title in (pref.job_medium|pref.job_low|pref.job_high))
 		var/datum/job/J = SSjobs.get_by_title(job_title)
 		if(J)
 			dd_insertObjectList(jobs, J)
-	var/list/valid_gear_list = valid_gear_choices() //INF
 	for(var/gear_name in LC.gear)
-		if(!(gear_name in valid_gear_list)) //INF, WAS if(!(gear_name in valid_gear_choices()))
+		if(!(gear_name in valid_gear_choices()))
 			continue
 		var/list/entry = list()
 		var/datum/gear/G = LC.gear[gear_name]
 		var/ticked = (G.display_name in pref.gear_list[pref.gear_slot])
-		entry += "<tr style='vertical-align:top;'><td width=25%><a style='white-space:normal;' [ticked ? "class='linkOn'" : ""] href='?src=\ref[src];toggle_gear=\ref[G]'>[G.display_name]</a></td>"//inf, was: entry += "<tr style='vertical-align:top;'><td width=25%><a style='white-space:normal;' [ticked ? "class='linkOn' " : ""]href='?src=\ref[src];toggle_gear=\ref[G]'>[G.display_name]</a></td>"
-		entry += "<td width = 10% style='vertical-align:top'>[G.cost]</td>"
+		//[INF]
+
+		var/list/gear_link_class = list()
+		if(ticked)
+			gear_link_class.Add("linkOn")
+		if(G.price > 0 || G.required_donate_level > 0)
+			gear_link_class.Add("donate")
+		gear_link_class = jointext(gear_link_class, " ")
+
+		var/text_style = "vertical-align:top;text-align:center;"
+		//[/INF]
+		entry += "<tr style='vertical-align:top;'><td><a style='white-space:normal;' class='[gear_link_class]' href='?src=\ref[src];toggle_gear=\ref[G]'>[G.display_name]</a></td>" //inf, was: entry += "<tr style='vertical-align:top;'><td width=25%><a style='white-space:normal;' [ticked ? "class='linkOn' " : ""]href='?src=\ref[src];toggle_gear=\ref[G]'>[G.display_name]</a></td>"
+		entry += "<td style='[text_style]'>[G.cost]</td>"//inf, was: entry += "<td width = 10% style='vertical-align:top'>[G.cost]</td>"
 		entry += "<td><font size=2>[G.get_description(get_gear_metadata(G,1))]</font>"
 		var/allowed = 1
 		if(allowed && G.allowed_roles)
@@ -237,7 +255,10 @@ var/list/gear_datums = list()
 				skill_checks += skill_entry
 
 			entry += "[english_list(skill_checks)]</i>"
-
+		//[INF]
+		entry += "<td style='[text_style]'>[G.price]"
+		entry += "<td style='[text_style]'>[G.required_donate_level]"
+		//[/INF]
 		entry += "</tr>"
 		if(ticked)
 			entry += "<tr><td colspan=3>"
@@ -275,14 +296,14 @@ var/list/gear_datums = list()
 		var/datum/gear/TG = locate(href_list["toggle_gear"])
 		if(!istype(TG) || gear_datums[TG.display_name] != TG)
 			return TOPIC_REFRESH
-		if(TG.display_name in pref.gear_list[pref.gear_slot])
+		if((TG.display_name in pref.gear_list[pref.gear_slot]) || !gear_allowed_to_equip(TG, user)) //inf, was: if(TG.display_name in pref.gear_list[pref.gear_slot])
 			pref.gear_list[pref.gear_slot] -= TG.display_name
 		else
 			var/total_cost = 0
 			for(var/gear_name in pref.gear_list[pref.gear_slot])
 				var/datum/gear/G = gear_datums[gear_name]
 				if(istype(G)) total_cost += G.cost
-			if((total_cost+TG.cost) <= config.max_gear_cost)
+			if(((total_cost + TG.cost) <= config.max_gear_cost) && gear_allowed_to_equip(TG, user)) //inf, was: if((total_cost+TG.cost) <= config.max_gear_cost)
 				pref.gear_list[pref.gear_slot] += TG.display_name
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 	if(href_list["gear"] && href_list["tweak"])

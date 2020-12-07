@@ -3452,6 +3452,7 @@
 #include "infinity\code\modules\client\interface_mode.dm"
 #include "infinity\code\modules\client\login.dm"
 #include "infinity\code\modules\client\saves_fix.dm"
+#include "infinity\code\modules\client\preference_setup\loadout\gear.dm"
 #include "infinity\code\modules\client\preference_setup\loadout\lists\armor.dm"
 #include "infinity\code\modules\client\preference_setup\loadout\lists\cloaks.dm"
 #include "infinity\code\modules\client\preference_setup\loadout\lists\infinity.dm"

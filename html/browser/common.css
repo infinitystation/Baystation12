@@ -321,3 +321,26 @@ div.notice
 	padding: 4px;
 	margin: 3px 0;
 }
+
+/* [INF] */
+a.donate, a.donate:link, a.donate:visited, a.donate:active
+{
+	color: #40628a;
+	border-color: #40628a;
+	background: #000000;
+}
+
+a.donate:hover
+{
+
+	color: #00aaee;
+	background: #002266;
+	border-color: #00aaee;
+}
+
+.donate.linkOn
+{
+	color: #00aa88 !important;
+	border-color: #00aa88 !important;
+}
+/* [/INF] */

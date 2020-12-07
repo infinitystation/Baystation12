@@ -53,7 +53,7 @@
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/accessory/ntaward
-	display_name = "NanoTrasen award selection"
+	display_name = "NT award selection" //inf, was: display_name = "NanoTrasen award selection"
 	description = "A medal or ribbon awarded to NanoTrasen personnel for significant accomplishments."
 	path = /obj/item/clothing/accessory/medal
 	cost = 8
@@ -66,7 +66,7 @@
 	gear_tweaks += new/datum/gear_tweak/path(ntawards)
 
 /datum/gear/accessory/ntaward_sci
-	display_name = "NanoTrasen science award"
+	display_name = "NT science award" //inf, was: display_name = "NanoTrasen science award"
 	path = /obj/item/clothing/accessory/medal/bronze/nanotrasen
 	cost = 8
 
