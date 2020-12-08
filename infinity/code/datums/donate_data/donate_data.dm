@@ -51,18 +51,12 @@ GLOBAL_LIST_EMPTY(donators_data)
 		for(var/datum/gear/gear2check in donate_loadout)
 			prices[gear2check.price] = gear2check
 		var/list/sortedprices = insertion_sort_numeric_list_descending(prices)
-		var/testcheck = 0 //shoulbe removed
 		while(available_points < 0)
 			var/price_for_gear = sortedprices[length(sortedprices)]
 			var/gear_to_remove = prices[price_for_gear]
 			donate_loadout.Remove(gear_to_remove)
 			sortedprices.Remove(gear_to_remove)
 			available_points += price_for_gear
-#ifdef DEBUG
-			world.log << "Bruh"
-			testcheck += 1
-			ASSERT(testcheck < 20)
-#endif
 
 /datum/donator_data/proc/GetAvailablePoints()
 	. = points

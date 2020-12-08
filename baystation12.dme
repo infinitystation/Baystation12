@@ -3263,6 +3263,7 @@
 #include "infinity\code\controllers\subsystems\ticker.dm"
 #include "infinity\code\controllers\subsystems\initialization\external_datastore.dm"
 #include "infinity\code\datums\mutable_appearance.dm"
+#include "infinity\code\datums\donate_data\client_verb.dm"
 #include "infinity\code\datums\donate_data\donate_data.dm"
 #include "infinity\code\datums\outfits\infinity.dm"
 #include "infinity\code\datums\skybox_data\_datum_skybox_data.dm"
