@@ -24,6 +24,12 @@
 /datum/gear/tactical/bloodpatch
 	allowed_roles = ARMED_ROLES
 
+/datum/gear/tactical/security_belt
+	display_name = "security belt"
+	path = /obj/item/weapon/storage/belt/security
+	slot = slot_belt
+	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/security_assistant)
+
 /datum/gear/tactical/holster
 	allowed_roles = ARMED_ROLES
 /*
