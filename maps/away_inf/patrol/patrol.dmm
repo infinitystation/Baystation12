@@ -2834,7 +2834,6 @@
 /turf/simulated/wall/r_titanium,
 /area/ship/patrol/hallway)
 "Cj" = (
-/obj/structure/battle_data_server,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
@@ -2842,6 +2841,12 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/techfloor,
+/obj/machinery/media/music_writer{
+	pixel_y = 24
+	},
+/obj/structure/table/steel_reinforced,
+/obj/item/music_tape/custom,
+/obj/item/music_tape/custom,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/patrol/center)
 "CU" = (
@@ -3012,6 +3017,11 @@
 	},
 /turf/simulated/floor/airless,
 /area/ship/patrol/medbay)
+"Kr" = (
+/obj/effect/paint/hull,
+/obj/item/device/boombox,
+/turf/simulated/wall/r_titanium,
+/area/ship/patrol/storage)
 "KD" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 8;
@@ -3446,6 +3456,9 @@
 	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
+	},
+/obj/machinery/computer/cryopod{
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/crew)
@@ -24011,7 +24024,7 @@ LD
 au
 dE
 dE
-dE
+Kr
 Vp
 dE
 dE
