@@ -131,7 +131,9 @@
 	icon_state = "srv_cypherkey"
 	channels = list("Supply" = 1)
 
+//[INF]
 /obj/item/device/encryptionkey/away_scg_patrol
 	name = "SCG Patrol radio encryption key"
 	icon_state = "nt_cypherkey"
 	channels = list("SCG Patrol" = 1)
+//[/INF]
