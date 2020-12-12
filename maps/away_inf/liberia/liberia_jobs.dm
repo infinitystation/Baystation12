@@ -10,13 +10,11 @@
 	crew_jobs = list(
 		/datum/job/submap/merchant,
 		/datum/job/submap/merchant_trainee
-		)
+	)
 	call_webhook = WEBHOOK_SUBMAP_LOADED_LIBERIA
 
 /datum/job/submap/merchant
 	title = "Merchant"
-	department = "Civilian"
-	department_flag = CIV
 
 	info = "Вы свободные торговцы, которых в поисках выгоды занесло в неизведанные дали. Путешествуйте, торгуйте, make profit!"
 	total_positions = 1
@@ -27,21 +25,32 @@
 	minimal_player_age = 7
 	create_record = 0
 	outfit_type = /decl/hierarchy/outfit/job/liberia/merchant/leader
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/civ)
+	allowed_branches = list(
+		/datum/mil_branch/civilian
+	)
+	allowed_ranks = list(
+		/datum/mil_rank/civ/civ
+	)
 	latejoin_at_spawnpoints = 1
 
-	access = list(access_merchant, access_merchant_leader)
+	access = list(
+		access_merchant,
+		access_merchant_leader
+	)
 	minimal_access = list()
 
 	announced = FALSE
-	min_skill = list(	SKILL_FINANCE = SKILL_ADEPT,
-						SKILL_PILOT	  = SKILL_BASIC)
+	min_skill = list(
+		SKILL_FINANCE = SKILL_ADEPT,
+		SKILL_PILOT	  = SKILL_BASIC
+	)
 	give_psionic_implant_on_join = FALSE
 	skill_points = 24
 
+	account_allowed = TRUE
+
 /datum/job/submap/merchant/equip(var/mob/living/carbon/human/H)
-	to_chat(H, "Ваши связи помогли вам узнать о словах, что помогут опознать местных... Особо заинтересованных покупателей:")
+	to_chat(H, "Ваши связи помогли вам узнать о кодовых фразах, что помогут опознать местных... 'Особо заинтересованных' покупателей:")
 	to_chat(H, "<b>Кодовые фразы</b>: <span class='danger'>[syndicate_code_phrase]</span>")
 	to_chat(H, "<b>Ответы на фразы</b>: <span class='danger'>[syndicate_code_response]</span>")
 	H.StoreMemory("<b>Кодовые Фразы</b>: [syndicate_code_phrase]", /decl/memory_options/system)
@@ -61,8 +70,6 @@
 
 /datum/job/submap/merchant_trainee
 	title = "Merchant Assistant"
-	department = "Civilian"
-	department_flag = CIV
 
 	var/requires_supervisor = "Merchant"
 	total_positions = 2
@@ -73,29 +80,52 @@
 	minimal_player_age = 0
 	create_record = 0
 	alt_titles = list(
-		"Merchant Security" = /decl/hierarchy/outfit/job/liberia/merchant/security)
+		"Merchant Security" = /decl/hierarchy/outfit/job/liberia/merchant/security
+	)
 	outfit_type = /decl/hierarchy/outfit/job/liberia/merchant
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/civ)
+	allowed_branches = list(
+		/datum/mil_branch/civilian
+	)
+	allowed_ranks = list(
+		/datum/mil_rank/civ/civ
+	)
 	latejoin_at_spawnpoints = 1
-	access = list(access_merchant)
+	access = list(
+		access_merchant
+	)
 	announced = FALSE
-	min_skill = list(   SKILL_FINANCE = SKILL_BASIC)
+	min_skill = list(
+		SKILL_FINANCE = SKILL_BASIC
+	)
 
-	max_skill = list(   SKILL_COMBAT  = SKILL_MAX,
-	                    SKILL_WEAPONS = SKILL_MAX)
-	required_role = list("Merchant")
+	max_skill = list(
+		SKILL_COMBAT  = SKILL_MAX,
+	    SKILL_WEAPONS = SKILL_MAX
+	)
+	required_role = list(
+		"Merchant"
+	)
 	give_psionic_implant_on_join = FALSE
 
 	skill_points = 24
 
+	account_allowed = TRUE
+
 // Spawn points.
 /obj/effect/submap_landmark/spawnpoint/liberia
 	name = "Merchant"
-	movable_flags = MOVABLE_FLAG_EFFECTMOVE
 
 /obj/effect/submap_landmark/spawnpoint/liberia/trainee
 	name = "Merchant Assistant"
+
+// /obj/effect/submap_landmark/spawnpoint/liberia/security
+// 	name = "Merchant Security"
+
+// /obj/effect/submap_landmark/spawnpoint/liberia/engineer
+// 	name = "Merchant Engineer"
+
+// /obj/effect/submap_landmark/spawnpoint/liberia/doctor
+// 	name = "Merchant Medical"
 
 /decl/hierarchy/outfit/job/liberia/merchant
 	name = OUTFIT_JOB_NAME("Merchant Assistant")
