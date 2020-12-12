@@ -102,9 +102,11 @@
 		SKILL_COMBAT  = SKILL_MAX,
 	    SKILL_WEAPONS = SKILL_MAX
 	)
+/* Broken cuz abstract submap jobs is not writing to SStrade.primary_job_datums, need another way to check availability of job
 	required_role = list(
 		"Merchant"
 	)
+*/
 	give_psionic_implant_on_join = FALSE
 
 	skill_points = 24
