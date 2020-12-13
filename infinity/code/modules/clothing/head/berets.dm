@@ -27,12 +27,12 @@
 
 /obj/item/clothing/head/beret/infinity/cargo_qm
 	name = "quartermaster's beret"
-	desc = "A dark brown beret of local cargo department head. The baron of crates, denied orders and contraband."
+	desc = "A brown beret of local cargo department head. The baron of crates, denied orders and contraband."
 	icon_state = "qm_beret"
 
 /obj/item/clothing/head/beret/infinity/engineer_ce
 	name = "chief engineer's beret"
-	desc = "A light orange beret for chief engineer. Looks like its designer didn't saw the chief's hard hat..."
+	desc = "A white beret for chief engineer. Looks like its designer didn't saw the chief's hard hat..."
 	icon_state = "ce_beret"
 
 /obj/item/clothing/head/beret/infinity/science
@@ -40,20 +40,15 @@
 	desc = "A white beret, emblazoned with purple insignia. Someone surely may well themself smarter while mixing gases in chamber with it on the head."
 	icon_state = "science_beret"
 
-/obj/item/clothing/head/beret/infinity/science_rd
-	name = "research director's beret"
-	desc = "A purple beret with golden insignia. Belongs to the head of research department. The jokes are over - get back to destructor."
-	icon_state = "rd_beret"
-
 /obj/item/clothing/head/beret/infinity/captain
 	name = "captain's beret"
 	desc = "A blue beret of the captain - colors are even more command than at HOP's beret. Stars and rank of navy fleet were removed by corporative machine."
 	icon_state = "captain_beret"
 
-/obj/item/clothing/head/beret/infinity/hos
-	name = "head of security's beret"
-	desc = "A dark red beret of a head of corporative asset protection. Yeap, a head - not the head. They don't live too long."
-	icon_state = "hos_beret"
+/obj/item/clothing/head/beret/infinity/exploration
+	name = "exploration beret"
+	desc = "A black beret with purple insignia on it. Doesn't exactly look like what you need to go into space."
+	icon_state = "exploration_beret"
 
 /obj/item/clothing/head/HoS/dermal/beret
 	name = "commander's beret"
