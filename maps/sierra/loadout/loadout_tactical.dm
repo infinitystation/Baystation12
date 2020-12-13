@@ -28,7 +28,7 @@
 	display_name = "security belt"
 	path = /obj/item/weapon/storage/belt/security
 	slot = slot_belt
-	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/security_assistant)
+	allowed_roles = ARMED_ROLES
 
 /datum/gear/tactical/holster
 	allowed_roles = ARMED_ROLES
