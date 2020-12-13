@@ -80,7 +80,7 @@
 /obj/item/device/encryptionkey/heads/rd
 	name = "chief science officer's encryption key"
 	icon_state = "rd_cypherkey"
-	channels = list("Science" = 1, "Command" = 1, "Exploration" = 1)
+	channels = list("Science" = 1, "Command" = 1, "Exploration" = 1) //inf, was: channels = list("Science" = 1, "Command" = 1)
 
 /obj/item/device/encryptionkey/heads/hos
 	name = "head of security's encryption key"
