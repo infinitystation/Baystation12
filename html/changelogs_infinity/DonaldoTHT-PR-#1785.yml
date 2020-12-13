@@ -1,0 +1,4 @@
+author: DonaldoTHT
+delete-after: True
+changes:
+  - bugfix: "Плата реле теллекомов теперь доступно в карго"
