@@ -157,11 +157,13 @@ var/list/radiochannels = list(
 	"Service" 		= SRV_FREQ,
 	"AI Private"	= AI_FREQ,
 	"Entertainment" = ENT_FREQ,
-	"CCA EC"        = TAJSCISHIP_FREQ,	// INF
+//[INF]
+	"CCA EC"        = TAJSCISHIP_FREQ,
+	"SCG Patrol"	= SCG_FREQ,
+//[/INF]
 	"Medical (I)"	= MED_I_FREQ,
 	"Security (I)"	= SEC_I_FREQ,
-	"Recon"			= SKRELL_FREQ,
-	"SCG Patrol"	= SCG_FREQ //INF
+	"Recon"			= SKRELL_FREQ
 )
 
 var/list/channel_color_presets = list(
