@@ -104,8 +104,10 @@ var/const/RADIO_HIGH_FREQ	= 1600
 
 var/const/BOT_FREQ	= 1447
 var/const/SKRELL_FREQ = 1598
-var/const/SCG_FREQ	= 1599 //INF
+//[INF]
+var/const/SCG_FREQ	= 1599
 var/const/TAJSCISHIP_FREQ = 1377
+//[/INF]
 var/const/COMM_FREQ = 1353
 var/const/ERT_FREQ	= 1345
 var/const/AI_FREQ	= 1343
