@@ -79,6 +79,10 @@
 	icon_state = "hair_elize"
 	gender = FEMALE
 
+/datum/sprite_accessory/hair/infinity/protagonist
+   name = "Protagonist"
+   icon_state = "hair_protagonist"
+
 /datum/sprite_accessory/hair/infinity/amicia
 	name = "Amicia"
 	icon_state = "hair_amicia"
@@ -280,4 +284,8 @@
 /datum/sprite_accessory/hair/infinity/mancut
 	name = "Mancut"
 	icon_state = "hair_mancut"
+
+/datum/sprite_accessory/hair/infinity/spiky
+	name = "Spiky Ponytail"
+	icon_state = "hair_ponytail_spiky"
 //[/AURORA]

@@ -1,6 +1,6 @@
 /obj/structure/sign/solgov
 	name = "\improper SolGov Seal"
-	desc = "A sign which signifies who this vessel belongs to."
+	desc = "Центральное Правительство Солнечной системы, обычно именуемое ЦПСС, является федеративной республикой, состоящей из многочисленных человеческих государств во многих звездных системах."
 	icon = 'maps/torch/icons/obj/solgov-decals.dmi'
 	icon_state = "solgovseal"
 
