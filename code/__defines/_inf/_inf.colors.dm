@@ -23,7 +23,7 @@
 #define LIGHT_COLOR_TUNGSTEN	"#fae1af"	//Extremely diluted yellow, close to skin color (for some reason).
 #define LIGHT_COLOR_EMERGENCY	"#ff3232"	//Red color used by emergency lighting.
 #define LIGHT_COLOR_XENON		"#aaddff"
-#define LIGHT_DEFAULT_LED_NEON	"#ff00cc"
+#define LIGHT_DEFAULT_LED_NEON	"#ffffff"
 
 #define COLOR_LIGHTING_RED_BRIGHT		"#aa2733"
 #define COLOR_LIGHTING_GREEN_BRIGHT		"#8aa88a"
