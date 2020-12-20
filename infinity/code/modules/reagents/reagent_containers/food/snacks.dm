@@ -2,6 +2,18 @@
 	name = "lizard cube"
 	monkey_type = /mob/living/simple_animal/lizard
 
+/obj/item/weapon/reagent_containers/food/snacks/monkeycube/mouse
+	name = "mouse cube"
+	monkey_type = /mob/living/simple_animal/mouse
+
+/obj/item/weapon/reagent_containers/food/snacks/monkeycube/corgi
+	name = "corgi cube"
+	monkey_type = /mob/living/simple_animal/corgi
+
+/obj/item/weapon/reagent_containers/food/snacks/monkeycube/cat
+	name = "cat cube"
+	monkey_type = /mob/living/simple_animal/cat
+
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/ryebread
 	name = "rye bread"
 	icon_state = "Some plain old Earthen bread. Made of a rye."
