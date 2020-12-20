@@ -10,7 +10,6 @@
 	. = ..()
 	set_see_invisible(INVISIBILITY_EYE - 2)
 
-
 /mob/living/blobHolder
 	name = "blob"
 	see_in_dark = 7

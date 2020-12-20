@@ -219,10 +219,13 @@
 			var/turf/T2 = get_turf(core)
 			biomass.forceMove(T2)
 			core.forceMove(T)
+			biomass.findBlob(biomass)
+			core.findBlob(core)
 			return T2
 	else
 		var/turf/T2 = get_turf(biomass)
 		biomass.forceMove(T)
+		biomass.findBlob(biomass)
 		return T2
 	return T
 
@@ -338,6 +341,8 @@
 	var/turf/T = get_turf(swap)
 	swap.forceMove(get_turf(blob))
 	blob.forceMove(get_turf(T))
+	swap.findBlob(swap)
+	blob.findBlob(blob)
 
 
 
@@ -365,7 +370,7 @@
 	tendril_damages = list(BRUTE = 10, TOX = 10)
 
 /datum/blob_strain/fungal/spore_death(var/mob/living/simple_animal/hostile/blobspore/spore)
-	if(prob(10) && !locate(/obj/effect/biomass) in get_turf(spore))
+	if(prob(5) && !locate(/obj/effect/biomass) in get_turf(spore))
 		var/obj/effect/biomass/node/node = new(get_turf(spore))
 		node.core = spore.core
 
