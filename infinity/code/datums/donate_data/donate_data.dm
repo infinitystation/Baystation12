@@ -44,20 +44,6 @@ GLOBAL_LIST_EMPTY(donators_data)
 			if(length(rank_color))
 				ooc_color = rank_color
 
-/datum/donator_data/proc/SanitizeLoadout()
-	var/available_points = GetAvailablePoints()
-	if(available_points < 0)
-		var/list/prices = list()
-		for(var/datum/gear/gear2check in donate_loadout)
-			prices[gear2check.price] = gear2check
-		var/list/sortedprices = insertion_sort_numeric_list_descending(prices)
-		while(available_points < 0)
-			var/price_for_gear = sortedprices[length(sortedprices)]
-			var/gear_to_remove = prices[price_for_gear]
-			donate_loadout.Remove(gear_to_remove)
-			sortedprices.Remove(gear_to_remove)
-			available_points += price_for_gear
-
 /datum/donator_data/proc/GetAvailablePoints()
 	. = points
 	for(var/datum/gear/g in donate_loadout)
@@ -65,10 +51,5 @@ GLOBAL_LIST_EMPTY(donators_data)
 
 /datum/donator_data/proc/CheckGear(datum/gear/gear2check)
 	if(gear2check)
-		SanitizeLoadout()
 		if((GetAvailablePoints() >= gear2check.price) && (level >= gear2check.required_donate_level))
 			return TRUE
-
-/datum/donator_data/proc/TryAddGear(datum/gear/gear2add)
-	if(CheckGear(gear2add))
-		donate_loadout.Add(gear2add)
