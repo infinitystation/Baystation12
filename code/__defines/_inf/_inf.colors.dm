@@ -25,6 +25,14 @@
 #define LIGHT_COLOR_XENON		"#aaddff"
 #define LIGHT_DEFAULT_LED_NEON	"#ffffff"
 
+#define TINSEL_COLOR_CYAN "#80e1ff"
+#define TINSEL_COLOR_GREEN "#56f25f"
+#define TINSEL_COLOR_PURPLE "#e37dff"
+#define TINSEL_COLOR_LORANGE "#ffef63"
+#define TINSEL_COLOR_GOLD "#ffff00"
+#define TINSEL_COLOR_BLUE "#5662ff"
+#define TINSEL_COLOR_TIN "#cccccc"
+
 #define COLOR_LIGHTING_RED_BRIGHT		"#aa2733"
 #define COLOR_LIGHTING_GREEN_BRIGHT		"#8aa88a"
 #define COLOR_LIGHTING_BLUE_BRIGHT		"#8a95a8"
