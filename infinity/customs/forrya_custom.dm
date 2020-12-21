@@ -34,8 +34,8 @@
 		/obj/item/weapon/crowbar/custom_multishowel,
 		/obj/item/clothing/accessory/storage/drop_pouches/custom_forrya,
 		/obj/item/clothing/mask/gas/alt/custom_forrya,
-		/obj/item/clothing/glasses/meson/prescription/tajvisor/hybrid/custom,
-		/obj/item/clothing/accessory/amulet/strong/frost)
+		/obj/item/clothing/glasses/meson/prescription/tajvisor/hybrid/custom
+	)
 	item_icons = list(
 		slot_back_str = CUSTOM_ITEM_MOB)
 
@@ -417,12 +417,6 @@
 	It looks like a standard model, but has an unusual lens coating that seems to slightly absorb  \
 	light. This one has installed as the mesons, and the add-on advanced shielding module."
 	flash_protection = FLASH_PROTECTION_MODERATE
-
-/obj/item/clothing/accessory/amulet/strong/frost
-	name = "frosty averter"
-	desc = "The amulet of Tajara, which looks old enough, as if it has passed through the ages. The runes on the amulet are etched with acid, it is also covered with silvery metal and seems even covered with frost. It looks very cold, and it seems that touching it can burn with frost."
-	icon = CUSTOM_ITEM_OBJ
-	icon_state = "forrya_amulet"
 
 /obj/item/clothing/under/thermal/heat/thermosuit
 	name = "modified uniform"

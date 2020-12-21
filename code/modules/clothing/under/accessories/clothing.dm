@@ -158,6 +158,7 @@
 /obj/item/clothing/accessory/toggleable/vest
 	name = "vest"
 	desc = "A slick suit vest."
+	accessory_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi') //inf
 	icon_state = "det_vest"
 
 /obj/item/clothing/accessory/toggleable/vest/black

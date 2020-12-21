@@ -148,9 +148,9 @@
 
 	var/base_icon_state = "body_scanner_0"
 	var/occupied_icon_state = "body_scanner_1"
-	var/on_store_message = "погружается в хранилище долговременного крилстазиса." //inf, was: 	var/on_store_message = "has entered long-term storage."
+	var/on_store_message = "погружается в хранилище долговременного криостазиса." //inf, was: 	var/on_store_message = "has entered long-term storage."
 	var/on_store_name = "Cryogenic Oversight"
-	var/on_enter_occupant_message = "Вы чувствуете, как прохладный воздух окружает вас. Тело постепенно немеете, пока чувства затупляются..." //inf, was: 	var/on_enter_occupant_message = "You feel cool air surround you. You go numb as your senses turn inward."
+	var/on_enter_occupant_message = "Вы чувствуете, как прохладный воздух окружает вас. Тело постепенно немеет, пока чувства затупляются..." //inf, was: 	var/on_enter_occupant_message = "You feel cool air surround you. You go numb as your senses turn inward."
 	var/allow_occupant_types = list(/mob/living/carbon/human)
 	var/disallow_occupant_types = list()
 
@@ -311,7 +311,7 @@
 		if(world.time - time_till_despawn < time_entered) //inf, was: if ((world.time - time_entered < time_till_despawn) && (occupant.ckey))
 			return
 
-		if(!occupant.stat<2) //inf, was: if(!occupant.client && occupant.stat<2) //Occupant is living and has no client.
+		if(occupant.stat != DEAD) //inf, was: if(!occupant.client && occupant.stat<2) //Occupant is living
 			if(!control_computer)
 				if(!find_control_computer(urgent=1))
 					return
@@ -574,8 +574,7 @@
 	if(occupant.client)
 		if(!silent)
 			to_chat(occupant, "<span class='notice'>[on_enter_occupant_message]</span>")
-			to_chat(occupant, "<span class='notice'><b>Если Вы выйдете из тела или закроете игру, \
-			то Ваш персонаж будет немедленно убран из раунда в крио-сон.</b></span>")
+			to_chat(occupant, "<span class='notice'><b>Через некоторое время Ваш персонаж будет убран из раунда в крио-сон.</b></span>")
 		occupant.client.perspective = EYE_PERSPECTIVE
 		occupant.client.eye = src
 	occupant.forceMove(src)

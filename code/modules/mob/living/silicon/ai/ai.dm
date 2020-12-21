@@ -67,6 +67,15 @@ var/list/ai_verbs_default = list(
 	var/holo_icon_malf = FALSE // for new hologram system
 	var/obj/item/device/multitool/aiMulti = null
 
+	//[inf]
+	speech_sounds = list(
+		'infinity/sound/voice/robot_talk_heavy_1.ogg',
+		'infinity/sound/voice/robot_talk_heavy_2.ogg',
+		'infinity/sound/voice/robot_talk_heavy_3.ogg',
+		'infinity/sound/voice/robot_talk_heavy_4.ogg'
+	)
+	//[/inf]
+
 	silicon_camera = /obj/item/device/camera/siliconcam/ai_camera
 	silicon_radio = /obj/item/device/radio/headset/heads/ai_integrated
 	var/obj/item/device/radio/headset/heads/ai_integrated/ai_radio
@@ -224,15 +233,6 @@ var/list/ai_verbs_default = list(
 	job = "AI"
 	setup_icon()
 	eyeobj.possess(src)
-
-	var/obj/inactive_core
-	isturf(loc) ? (inactive_core = locate(/obj/structure/AIcore) in loc) : null
-	inactive_core ? qdel(inactive_core) : null
-
-	if(alert(src, "Announce your presence?", "AI Presense","Yes", "No") == "Yes")
-		switch(input(src, "Announce your presence?", "Presence.") in list("Torch Voice Announcement", "TG Voice Announcement"))
-			if("Torch Voice Announcement")	announcement.Announce("Новый ИИ загружен в ядро.", new_sound = 'sound/AI/newAI.ogg')
-			if("TG Voice Announcement")	announcement.Announce("Новый ИИ загружен в ядро.", new_sound = 'infinity/sound/AI/TG/newai.ogg')
 
 /mob/living/silicon/ai/Destroy()
 	for(var/robot in connected_robots)

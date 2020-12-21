@@ -11,6 +11,11 @@
 /decl/emote/audible/synth/do_extra(var/atom/user)
 	if(emote_sound)
 		playsound(user.loc, emote_sound, 50, 0)
+
+/decl/emote/audible/synth/scream
+	key = "scream"
+	emote_message_3p = "USER screams."
+	emote_sound = 'infinity/sound/voice/scream_robot.ogg'
 //[/INF]
 /decl/emote/audible/synth/ping
 	key = "ping"

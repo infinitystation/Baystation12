@@ -51,6 +51,7 @@ lib/*.so
 # python
 *.pyc
 __pycache__
-
+#inf
 # linux
-.nohup
+nohup.out
+#/inf

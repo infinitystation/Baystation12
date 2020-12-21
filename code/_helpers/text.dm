@@ -478,8 +478,6 @@ var/list/alphabet = list("a","b","c","d","e","f","g","h","i","j","k","l","m","n"
 	t = replacetext(t, "\[sfplogo\]", "<img src = sfplogo.png>")
 	t = replacetext(t, "\[ccalogo\]", "<img src = ccalogo.png>")//inf
 	t = replacetext(t, "\[editorbr\]", "")
-	t = replacetext(t, "\[img\]","<img src=\"")
-	t = replacetext(t, "\[/img\]", "\" />")
 	return t
 
 //pencode translation to html for tags exclusive to digital files (currently email, nanoword, report editor fields,

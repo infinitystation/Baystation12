@@ -1,0 +1,19 @@
+#   bugfix
+#   balance
+#   wip (For works in progress)
+#   tweak
+#   soundadd
+#   sounddel
+#   rscadd (general adding of nice things)
+#   rscdel (general deleting of nice things)
+#   imageadd
+#   imagedel
+#   maptweak
+#   spellcheck (typo fixes)
+#   experiment
+#   admin
+author: AlexMorgan3817/_Elar_
+delete-after: True
+changes:
+  - maptweak: "Медбей переработан."
+  - tweak: "Детектив больше не детектив, а криминалист."

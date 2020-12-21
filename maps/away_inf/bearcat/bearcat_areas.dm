@@ -170,3 +170,10 @@
   name = "Cargo Lift"
   icon_state = "shuttle3"
   base_turf = /turf/simulated/open
+
+//shuttles
+
+/area/ship/scrap/shuttle/outgoing
+	name = "\improper Exploration Shuttle"
+	icon_state = "tcomsatcham"
+	area_flags = AREA_FLAG_RAD_SHIELDED

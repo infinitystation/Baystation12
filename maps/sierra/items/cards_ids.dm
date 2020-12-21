@@ -195,13 +195,13 @@
 //Merchant
 /obj/item/weapon/card/id/sierra/merchant
 	desc = "An identification card issued to Merchants."
-	job_access_type = /datum/job/merchant_trainee
+	job_access_type = /datum/job/submap/merchant_trainee
 	color = COLOR_OFF_WHITE
 	detail_color = COLOR_BEIGE
 
 /obj/item/weapon/card/id/sierra/merchant/leader
 	desc = "An identification card issued to Merchant Leaders, indicating their right to sell and buy goods."
-	job_access_type = /datum/job/merchant
+	job_access_type = /datum/job/submap/merchant
 
 //Stowaway
 /*

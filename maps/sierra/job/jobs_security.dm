@@ -28,15 +28,17 @@
 
 	access = list(access_seceva, access_guard, access_security, access_brig, access_armory, access_forensics_lockers,
 			            access_maint_tunnels, access_external_airlocks, access_emergency_storage,
-			            access_eva, access_sec_doors, access_gun, access_hangar, access_warden)
+			            access_eva, access_sec_doors, access_gun, access_hangar, access_warden
+			            )
 
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
+	good_genome_prob = 40
 
 /datum/job/detective
-	title = "Detective"
+	title = "Criminal Investigator"
 	department = "Security"
 	department_flag = SEC
 	total_positions = 2
@@ -47,7 +49,6 @@
 	ideal_character_age = 35
 	skill_points = 14
 	alt_titles = list(
-		"Criminal Investigator",
 		"Forensic Technician"
 		)
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/security/detective
@@ -73,6 +74,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
+	good_genome_prob = 25
 
 /datum/job/officer
 	title = "Security Guard"
@@ -109,6 +111,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
+	good_genome_prob = 15
 
 /datum/job/security_assistant
 	title = "Security Cadet"
@@ -141,4 +144,3 @@
 			            access_eva, access_sec_doors, access_hangar)
 
 	minimal_access = list()
-

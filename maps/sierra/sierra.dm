@@ -20,8 +20,6 @@
 
 	#include "sierra_snatch.dm"
 
-	#include "datums/programs.dm"
-
 	#include "datums/uniforms.dm"
 	#include "datums/uniforms_civilian.dm"
 	#include "datums/uniforms_contractor.dm"
@@ -134,6 +132,7 @@
 	#include "../away_inf/patrol/patrol.dm"
 	#include "../away_inf/bearcat/bearcat.dm"
 //	#include "../away_inf/ascent/ascent.dm"
+	#include "../away_inf/liberia/liberia.dm"
 
 	#include "../away/ascent/ascent.dm"
 	#include "../away/derelict/derelict.dm"
