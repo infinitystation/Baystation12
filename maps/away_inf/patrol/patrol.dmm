@@ -3017,11 +3017,6 @@
 	},
 /turf/simulated/floor/airless,
 /area/ship/patrol/medbay)
-"Kr" = (
-/obj/effect/paint/hull,
-/obj/item/device/boombox,
-/turf/simulated/wall/r_titanium,
-/area/ship/patrol/storage)
 "KD" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 8;
@@ -24024,7 +24019,7 @@ LD
 au
 dE
 dE
-Kr
+dE
 Vp
 dE
 dE
