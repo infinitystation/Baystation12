@@ -63,6 +63,17 @@
 	icon_state = "firingrange"
 	req_access = list(access_gun)
 
+/area/command/dock
+	name = "Third Deck - Command - Telescopic Docking Port"
+	icon = 'infinity/icons/turf/areas.dmi'
+	icon_state = "docking_port"
+	req_access = list(access_bridge)
+
+/area/command/dock_control
+	name = "Third Deck - Command - Primary Docking Port Control"
+	icon_state = "bridge"
+	req_access = list(access_bridge)
+
 /* ENGINEERING AREAS
  * =================
  */
