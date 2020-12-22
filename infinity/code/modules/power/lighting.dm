@@ -15,13 +15,13 @@
 	if(istype(loc, /atom/movable))
 		loc.update_icon()
 	update_icon()
-
+/*TODO
 /obj/machinery/light/get_power_usage()
 	. = ..()
-	if(use_power == POWER_USE_ACTIVE && istype(lightbulb))
+	if(use_power == POWER_USE_ACTIVE && istype(lightbulb) && (. > 0))
 		. *= lightbulb.power_usage_multiplier
 		. *= max1(log(lightbulb.b_outer_range)) * max1(log(2, lightbulb.b_inner_range)) * max1(log(10, lightbulb.b_max_bright * 100))
-
+*/
 
 #define UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(lproc) ##lproc{. = ..(); update_enviroment_sound();}
 UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/Initialize(mapload, obj/machinery/light_construct/construct))
