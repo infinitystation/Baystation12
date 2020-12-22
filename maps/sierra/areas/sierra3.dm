@@ -105,7 +105,7 @@
  * =================
  */
 
- /area/engineering/auxpower
+/area/engineering/auxpower
 	name = "First Deck - Engineering - Auxiliary Power Storage"
 	icon_state = "engine_smes"
 	sound_env = SMALL_ENCLOSED

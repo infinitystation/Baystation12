@@ -1,7 +1,7 @@
 /* COMMAND AREAS
  * =============
  */
- 
+
 	//first deck
 /area/crew_quarters/heads/captain/secret_room/level_two
 	name = "First Deck - Captain's bathroom"
@@ -45,7 +45,7 @@
 	icon_state = "xeno_lab"
 
 	//second deck
- /area/rnd/xenobiology/entry2
+/area/rnd/xenobiology/entry2
 	name = "Xenobiology Access"
 	icon_state = "xeno_lab"
 
