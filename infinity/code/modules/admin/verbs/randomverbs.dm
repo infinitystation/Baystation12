@@ -39,19 +39,15 @@
 	log_and_message_admins(" - GlobalNarrate [result[2]]/[result[3]] in \[[gnarrate_type]\]: [result[4]]")
 	SSstatistics.add_field_details("admin_verb","GLN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-//For SDQL2
-/atom/proc/ChangeName(NewName_text)
-	name = NewName_text
+/client/proc/cmd_set_station_date()
+	set category = "Server"
+	set name = "Set Station Date"
 
-/atom/proc/ChangeDesc(NewDesc_text)
-	desc = NewDesc_text
+	if(!check_rights(R_ADMIN | R_SERVER | R_PERMISSIONS))
+		return
 
-/atom/proc/ChangeIcon(NewIcon_file)
-	icon = NewIcon_file
-
-/atom/proc/ChangeIconState(NewIcon_state)
-	icon_state = NewIcon_state
-
-/atom/proc/ChangeIcon_and_icon_state(NewIcon_file, NewIcon_state)
-	icon = NewIcon_file
-	icon_state = NewIcon_state
+	var/admin_input = input(usr, "Enter new station date. \[YEAR]-\[MONTH]-\[DAY] (Year should be from 4 numbers, or like 0906, Month 2, Day too 2)", "Station Date")
+	if(length(admin_input))
+		var/regex/sanitize_regex = regex("\[0-9]{4}-\[0-9]{2}-\[0-9]{2}")
+		if(sanitize_regex.Find(admin_input))
+			station_date = admin_input
