@@ -246,7 +246,6 @@
 "aaA" = (
 /obj/machinery/smartfridge,
 /obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/plating,
 /area/crew_quarters/galley)
 "aaB" = (
@@ -3352,7 +3351,6 @@
 /obj/effect/floor_decal/corner/green/bordercorner2{
 	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/monotile,
 /area/hydroponics/storage)
 "agu" = (
@@ -4888,7 +4886,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/galley/backroom)
 "ajn" = (
@@ -4989,12 +4986,14 @@
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /obj/structure/table/marble,
 /obj/item/weapon/material/kitchen/rollingpin,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/galley)
 "ajx" = (
@@ -5443,7 +5442,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/item/weapon/reagent_containers/food/condiment/enzyme,
 /turf/simulated/floor/tiled/freezer,
@@ -34464,15 +34462,6 @@
 /obj/random/date_based/christmas/xmaslights,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/sleep/cryo)
-"gck" = (
-/obj/effect/floor_decal/corner/grey/diagonal{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
-	},
-/turf/simulated/floor/tiled/white,
-/area/crew_quarters/galley)
 "gjS" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/railing/mapped/no_density{
@@ -37235,15 +37224,6 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/reinforced/airless,
 /area/space)
-"xaw" = (
-/obj/effect/floor_decal/corner/grey/diagonal{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
-	},
-/turf/simulated/floor/tiled/white,
-/area/crew_quarters/galley)
 "xbY" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/firedoor,
@@ -53673,8 +53653,8 @@ acH
 aeE
 agt
 aaA
-alv
-xaw
+agR
+agR
 hOm
 akA
 aSw
@@ -53876,7 +53856,7 @@ aaz
 abW
 abW
 aTu
-gck
+agR
 ajw
 alv
 aiN
