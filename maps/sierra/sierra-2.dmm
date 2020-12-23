@@ -27179,11 +27179,11 @@
 	id_tag = "grove_shielding";
 	pixel_x = -24
 	},
+/obj/random/date_based/christmas/xmaslights,
 /obj/machinery/camera/network/second_deck{
 	c_tag = "Grove Theta - West";
 	dir = 4
 	},
-/obj/random/date_based/christmas/xmaslights,
 /turf/simulated/floor/wood/bamboo,
 /area/ai_abadoned)
 "aWN" = (
@@ -29020,8 +29020,7 @@
 /area/ai_abadoned)
 "baj" = (
 /obj/machinery/light/spot{
-	dir = 1;
-	pixel_x = -4
+	dir = 1
 	},
 /obj/structure/flora/ausbushes/fernybush,
 /turf/simulated/floor/grass,
@@ -33780,6 +33779,10 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/sleep/cryo)
+"boQ" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
+/turf/simulated/floor/tiled/freezer,
+/area/crew_quarters/galley/backroom)
 "bss" = (
 /obj/structure/bed/sofa/brown,
 /turf/simulated/floor/carpet/red,
@@ -34084,6 +34087,15 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/gravitaional_generator)
+"dyy" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/crew_quarters/galley/backroom)
 "dDi" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 8
@@ -35578,17 +35590,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/gym)
-"nqw" = (
-/obj/effect/floor_decal/corner/grey/diagonal{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/white,
-/area/crew_quarters/galley)
 "nva" = (
 /obj/random/date_based/christmas/xmaslights,
 /turf/simulated/floor/tiled/dark,
@@ -36132,6 +36133,12 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/crew_quarters/mess)
+"qhI" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/crew_quarters/galley/backroom)
 "qjD" = (
 /obj/effect/floor_decal/borderfloor/corner,
 /obj/effect/floor_decal/industrial/danger/corner,
@@ -36173,21 +36180,23 @@
 /obj/structure/closet/emcloset/full,
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
+"qNk" = (
+/obj/effect/floor_decal/corner/grey/diagonal{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white,
+/area/crew_quarters/galley)
 "qNA" = (
 /obj/machinery/light/spot{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
-"qNF" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/freezer,
-/area/crew_quarters/galley/backroom)
 "qUo" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -36580,10 +36589,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/fore)
-"tys" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
-/turf/simulated/floor/tiled/freezer,
-/area/crew_quarters/galley/backroom)
 "tyE" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -36871,6 +36876,15 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
+"uCM" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/airless,
+/area/space)
 "uJL" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/railing/mapped/no_density{
@@ -36982,6 +36996,15 @@
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/cafe)
+"vkG" = (
+/obj/structure/catwalk,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/airless,
+/area/space)
 "vkN" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -37006,12 +37029,6 @@
 /obj/effect/floor_decal/techfloor,
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo/south)
-"vwk" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/freezer,
-/area/crew_quarters/galley/backroom)
 "vwM" = (
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 6
@@ -52042,9 +52059,9 @@ aeD
 aRk
 ady
 aio
-tys
-qNF
-vwk
+boQ
+dyy
+qhI
 ady
 amU
 anD
@@ -53454,8 +53471,8 @@ acG
 aaL
 adH
 aeO
-nqw
-nqw
+qNk
+qNk
 bhH
 agX
 aSw
@@ -56273,8 +56290,8 @@ aam
 aam
 aam
 aam
-aam
-bfp
+vkG
+aQT
 aba
 abq
 abU
@@ -56473,10 +56490,10 @@ aam
 aam
 aam
 aam
-aam
-aam
-aMh
-aQT
+alQ
+bfj
+uCM
+aaK
 aba
 aba
 aba
@@ -56675,9 +56692,9 @@ aam
 aam
 aam
 aam
-aZE
-bfj
-aQT
+aam
+aam
+aaK
 aYL
 aYL
 aYL
