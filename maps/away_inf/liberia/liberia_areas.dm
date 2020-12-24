@@ -101,3 +101,4 @@
 /area/liberia/mule
 	name = "Mule"
 	icon_state = "shuttle"
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED

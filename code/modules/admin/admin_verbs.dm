@@ -171,6 +171,7 @@ var/list/admin_verbs_server = list(
 	/client/proc/cmd_toggle_admin_help,
 	/client/proc/observe_delay,
 	/datum/admins/proc/toggleevent,
+	/client/proc/cmd_set_station_date,
 //[/INF],
 	)
 var/list/admin_verbs_debug = list(
