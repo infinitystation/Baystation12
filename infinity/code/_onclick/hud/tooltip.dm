@@ -20,17 +20,13 @@
 	switch(type)
 		if(GLOB.PREF_SHOW)
 			icon_state = "transparent"
-/*
-		if(GLOB.PREF_FANCY)
-			icon_state = "bar"
-*/
 	if(new_state == state)
 		return
 	state = new_state
 	set_invisibility(state ? initial(invisibility) : INVISIBILITY_MAXIMUM)
 
 /client/New(TopicData)
-	..()
+	. = ..()
 	tooltip = new /obj/screen/tooltip()
 	if(mob)
 		var/value = mob.get_preference_value(/datum/client_preference/tooltip)
