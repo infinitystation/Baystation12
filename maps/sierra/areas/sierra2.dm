@@ -258,13 +258,22 @@
 /area/crew_quarters/bar
 	name = "Second Deck - Service - Bar"
 	icon_state = "bar"
-	sound_env = LARGE_SOFTFLOOR
+	sound_env = SMALL_ENCLOSED
 	req_access = list(access_bar)
+
+/area/crew_quarters/mess
+	name = "Second Deck - Living - Bar"
+	icon_state = "cafeteria"
+	sound_env = SMALL_ENCLOSED
 
 /area/crew_quarters/sauna
 	name = "Second Deck - Living - Sauna"
 	icon_state = "sauna"
 	sound_env = SMALL_ENCLOSED
+
+/area/grove/theta// /area/ai_abadoned
+	name = "Second Deck - Grove - Theta"
+	sound_env = LARGE_SOFTFLOOR
 
 /area/crew_quarters/head
 	name = "Second Deck - Living - Restroom"
@@ -279,11 +288,6 @@
 /area/crew_quarters/gym
 	name = "Second Deck - Living - Gym"
 	icon_state = "fitness"
-
-/area/crew_quarters/mess
-	name = "Second Deck - Living - Canteen"
-	icon_state = "cafeteria"
-	sound_env = LARGE_SOFTFLOOR
 
 /area/crew_quarters/cafe
 	name = "Second Deck - Living - Cafe"
@@ -367,6 +371,3 @@
 	icon_state = "ai_cyborg"
 	sound_env = SMALL_ENCLOSED
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
-
-/area/ai_abadoned
-	name = "Abadoned Chamber"

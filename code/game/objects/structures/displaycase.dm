@@ -14,6 +14,11 @@
 
 /obj/structure/displaycase/Initialize()
 	. = ..()
+//[INF]
+	update_icon()
+	if(destroyed)
+		return
+//[/INF]
 	var/turf/T = get_turf(src)
 	for(var/atom/movable/AM in T)
 		if(AM.simulated && !AM.anchored)

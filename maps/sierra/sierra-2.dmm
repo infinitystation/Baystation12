@@ -1,7 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aaa" = (
 /turf/simulated/wall/r_wall/hull,
-/area/ai_abadoned)
+/area/grove/theta)
 "aab" = (
 /obj/effect/landmark{
 	name = "carpspawn"
@@ -341,7 +341,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/bamboo,
-/area/ai_abadoned)
+/area/grove/theta)
 "aaJ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/machinery/light/small{
@@ -1007,7 +1007,7 @@
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
-/area/ai_abadoned)
+/area/grove/theta)
 "ace" = (
 /obj/structure/table/rack{
 	dir = 8
@@ -1156,14 +1156,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/bridge/hall/level_one)
-"acC" = (
-/obj/machinery/button/blast_door{
-	dir = 8;
-	id_tag = "grove_shielding";
-	pixel_x = 24
-	},
-/turf/simulated/floor/wood/bamboo,
-/area/ai_abadoned)
 "acD" = (
 /obj/machinery/seed_storage/garden,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -1406,7 +1398,7 @@
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
-/area/ai_abadoned)
+/area/grove/theta)
 "adb" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -1437,20 +1429,6 @@
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment,
-/obj/machinery/fabricator/micro/bartender{
-	pixel_x = 4
-	},
-/obj/item/stack/material/glass/ten{
-	pixel_x = 4;
-	pixel_y = -4
-	},
-/obj/item/stack/material/aluminium/ten{
-	pixel_y = -4
-	},
-/obj/item/stack/material/plastic/ten{
-	pixel_x = -4;
-	pixel_y = -4
-	},
 /obj/random/date_based/christmas/xmaslights{
 	dir = 1
 	},
@@ -1502,7 +1480,7 @@
 "adm" = (
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -21
+	pixel_x = -20
 	},
 /obj/structure/closet/secure_closet/freezer/kitchen,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -1827,8 +1805,12 @@
 /obj/random/date_based/christmas/xmaslights{
 	dir = 1
 	},
+/obj/item/device/radio/intercom{
+	dir = 8;
+	pixel_x = 20
+	},
 /turf/simulated/floor/wood/bamboo,
-/area/ai_abadoned)
+/area/grove/theta)
 "adQ" = (
 /obj/random/trash,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -1856,7 +1838,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 21
+	pixel_x = 20
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head)
@@ -1881,15 +1863,26 @@
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
-/obj/machinery/microwave{
-	pixel_y = 4
-	},
 /obj/machinery/camera/network/second_deck{
 	c_tag = "Mess Hall - Galley - Aft";
 	dir = 8
 	},
 /obj/random/date_based/christmas/xmaslights{
 	dir = 1
+	},
+/obj/machinery/fabricator/micro/bartender{
+	pixel_x = 4
+	},
+/obj/item/stack/material/glass/ten{
+	pixel_x = 4;
+	pixel_y = -4
+	},
+/obj/item/stack/material/aluminium/ten{
+	pixel_y = -4
+	},
+/obj/item/stack/material/plastic/ten{
+	pixel_x = -4;
+	pixel_y = -4
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/galley)
@@ -1934,7 +1927,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 6
@@ -1950,7 +1943,7 @@
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/white,
-/area/ai_abadoned)
+/area/grove/theta)
 "adZ" = (
 /obj/effect/floor_decal/borderfloor/corner{
 	dir = 8
@@ -1999,7 +1992,7 @@
 /area/hydroponics)
 "aed" = (
 /turf/simulated/floor/wood/bamboo,
-/area/ai_abadoned)
+/area/grove/theta)
 "aee" = (
 /obj/random/closet,
 /turf/simulated/floor/plating,
@@ -2038,18 +2031,18 @@
 /turf/simulated/floor/beach/sand/desert,
 /area/crew_quarters/heads/captain/beach)
 "aek" = (
-/obj/structure/flora/ausbushes/leafybush,
 /obj/machinery/camera/network/second_deck{
 	c_tag = "Grove Theta - East";
 	dir = 8
 	},
 /obj/structure/railing/mapped/no_density,
+/obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "ael" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "aem" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -2237,7 +2230,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /turf/simulated/floor/tiled,
 /area/hydroponics/storage)
@@ -2357,7 +2350,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -29
+	pixel_y = -28
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -2420,7 +2413,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/bamboo,
-/area/ai_abadoned)
+/area/grove/theta)
 "aeS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -2533,7 +2526,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "afb" = (
 /obj/random/junk,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -2638,7 +2631,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/bamboo,
-/area/ai_abadoned)
+/area/grove/theta)
 "afj" = (
 /obj/machinery/light{
 	dir = 4
@@ -2741,10 +2734,11 @@
 /obj/machinery/button/blast_door{
 	dir = 1;
 	id_tag = "grove_shielding";
+	name = "Grove Shutter Control";
 	pixel_y = -20
 	},
 /turf/simulated/floor/wood/bamboo,
-/area/ai_abadoned)
+/area/grove/theta)
 "afs" = (
 /turf/simulated/open,
 /area/hallway/primary/seconddeck/central_stairwell)
@@ -3054,7 +3048,7 @@
 "afP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/white,
-/area/ai_abadoned)
+/area/grove/theta)
 "afR" = (
 /turf/simulated/wall/r_wall/hull,
 /area/maintenance/abandoned_hydroponics)
@@ -3756,12 +3750,9 @@
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
-/obj/structure/hygiene/sink{
-	dir = 4;
-	pixel_x = 22
-	},
-/obj/item/weapon/storage/mirror{
-	pixel_x = 32
+/obj/structure/table/marble,
+/obj/machinery/microwave{
+	pixel_y = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/galley)
@@ -3798,8 +3789,8 @@
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
-/obj/machinery/reagentgrinder/juicer{
-	pixel_y = 8
+/obj/machinery/microwave{
+	pixel_y = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/galley)
@@ -4295,7 +4286,7 @@
 "aid" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "aie" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -4463,6 +4454,9 @@
 	},
 /obj/structure/table/marble,
 /obj/structure/disposalpipe/segment,
+/obj/machinery/reagentgrinder/juicer{
+	pixel_y = 8
+	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/galley)
 "aiy" = (
@@ -4842,11 +4836,7 @@
 "aje" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/wood/bamboo,
-/area/ai_abadoned)
-"ajf" = (
-/obj/structure/flora/ausbushes/fernybush,
-/turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "ajg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -5503,12 +5493,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/centralstarboard)
 "akx" = (
-/obj/structure/cable,
-/obj/structure/cable{
-	d1 = 16;
-	d2 = 0;
-	icon_state = "16-0"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
@@ -5516,6 +5500,11 @@
 	dir = 5
 	},
 /obj/machinery/light/small,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralstarboard)
 "aky" = (
@@ -5576,6 +5565,10 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
+/obj/item/device/radio/intercom{
+	dir = 4;
+	pixel_x = -20
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "akD" = (
@@ -5699,7 +5692,7 @@
 "akO" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/wood/bamboo,
-/area/ai_abadoned)
+/area/grove/theta)
 "akP" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -6001,7 +5994,7 @@
 "alp" = (
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/machinery/light{
 	dir = 4
@@ -6054,6 +6047,15 @@
 	},
 /obj/machinery/atmospherics/pipe/zpipe/up/supply{
 	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 16;
+	d2 = 0;
+	icon_state = "16-0"
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralstarboard)
@@ -6466,7 +6468,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -29
+	pixel_y = -28
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/lime/border,
@@ -6613,7 +6615,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -29
+	pixel_y = -28
 	},
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -6730,6 +6732,10 @@
 "amG" = (
 /obj/structure/holoplant,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/camera/network/second_deck{
+	c_tag = "Cafe";
+	dir = 4
+	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/cafe)
 "amH" = (
@@ -6954,6 +6960,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/table/woodentable_reinforced/walnut,
+/obj/item/device/radio/intercom{
+	dir = 8;
+	pixel_x = 20
+	},
 /turf/simulated/floor/carpet/red,
 /area/crew_quarters/cafe)
 "and" = (
@@ -6979,7 +6989,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /turf/simulated/floor/tiled/dark,
 /area/holocontrol)
@@ -7186,6 +7196,10 @@
 /obj/random/date_based/christmas/xmaslights{
 	dir = 4
 	},
+/obj/item/device/radio/intercom{
+	dir = 1;
+	pixel_y = -28
+	},
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/cafe)
 "anz" = (
@@ -7252,9 +7266,6 @@
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
 	pixel_y = 29
-	},
-/obj/machinery/camera/network/second_deck{
-	c_tag = "Cafe"
 	},
 /obj/structure/cable/green{
 	d1 = 2;
@@ -7720,7 +7731,7 @@
 "aoB" = (
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -8028,7 +8039,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 21
+	pixel_x = 20
 	},
 /obj/structure/window/reinforced/tinted{
 	dir = 1;
@@ -8783,7 +8794,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/seconddeck/fore)
@@ -9069,6 +9080,8 @@
 /turf/simulated/floor/carpet/blue,
 /area/crew_quarters/heads/cobed)
 "aqP" = (
+/obj/effect/paint/red,
+/obj/effect/paint_stripe/white,
 /turf/simulated/wall/r_wall,
 /area/maintenance/compactor)
 "aqQ" = (
@@ -9361,7 +9374,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/structure/closet/emcloset,
 /obj/effect/floor_decal/borderfloor,
@@ -9606,7 +9619,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -21
+	pixel_x = -20
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/fore)
@@ -9649,7 +9662,6 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
 	},
-/obj/effect/floor_decal/borderfloor/corner2,
 /obj/item/weapon/wrench,
 /obj/item/stack/medical/bruise_pack,
 /turf/simulated/floor/tiled,
@@ -9708,6 +9720,8 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 1
 	},
+/obj/machinery/atmospherics/portables_connector,
+/obj/machinery/portable_atmospherics/powered/pump/filled,
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/hallway)
 "ase" = (
@@ -9747,7 +9761,8 @@
 /obj/effect/floor_decal/corner/yellow/bordercorner2{
 	dir = 5
 	},
-/obj/structure/holoplant,
+/obj/machinery/atmospherics/portables_connector,
+/obj/machinery/portable_atmospherics/powered/pump/filled,
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/hallway)
 "asg" = (
@@ -9933,10 +9948,11 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
-/obj/structure/sign/poster{
-	pixel_x = -32
-	},
 /obj/structure/table/woodentable_reinforced/ebony,
+/obj/item/device/radio/intercom{
+	dir = 4;
+	pixel_x = -20
+	},
 /turf/simulated/floor/carpet/green,
 /area/crew_quarters/cafe)
 "asB" = (
@@ -10238,7 +10254,7 @@
 "atc" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "atd" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -10677,7 +10693,7 @@
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	dir = 5
 	},
-/turf/simulated/floor/tiled/dark/monotile,
+/turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "atG" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -10744,7 +10760,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/fore)
@@ -10966,7 +10982,7 @@
 "auj" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "auk" = (
 /obj/machinery/alarm{
 	pixel_y = 24
@@ -11700,7 +11716,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/obj/effect/catwalk_plated,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -11709,6 +11724,10 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
+	dir = 6
+	},
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/engineering/hallway)
 "avj" = (
@@ -11808,7 +11827,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 6
@@ -11862,10 +11881,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/effect/catwalk_plated,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/manifold4w/hidden/cyan,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/engineering/hallway)
 "avw" = (
@@ -11971,7 +11991,7 @@
 	dir = 1;
 	id_tag = "bar_room_one";
 	name = "Lock";
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -12056,7 +12076,7 @@
 "avP" = (
 /obj/structure/flora/ausbushes/leafybush,
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "avR" = (
 /obj/effect/floor_decal/corner_techfloor_grid,
 /obj/effect/floor_decal/techfloor/orange/corner,
@@ -12088,6 +12108,9 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -12188,7 +12211,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/effect/floor_decal/borderfloor/corner{
 	dir = 8
@@ -12214,13 +12237,14 @@
 /obj/machinery/button/blast_door{
 	dir = 4;
 	id_tag = "grove_shielding";
-	pixel_x = -24
+	name = "Grove Shutter Control";
+	pixel_x = -22
 	},
 /obj/structure/bed/chair/pew{
 	dir = 1
 	},
 /turf/simulated/floor/wood/bamboo,
-/area/ai_abadoned)
+/area/grove/theta)
 "awi" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/portable_atmospherics/powered/scrubber,
@@ -12669,7 +12693,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -29
+	pixel_y = -28
 	},
 /obj/structure/sign/deck/second{
 	dir = 4;
@@ -12812,7 +12836,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/yellow/border,
@@ -13080,7 +13104,7 @@
 "axC" = (
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/yellow/border,
@@ -13334,23 +13358,22 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/hallway)
 "ayf" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
-	dir = 6
-	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/yellow/border,
 /obj/effect/floor_decal/borderfloor/corner2,
 /obj/effect/floor_decal/corner/yellow/bordercorner2,
 /obj/random/date_based/christmas/xmaslights,
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/obj/machinery/portable_atmospherics/powered/pump/filled,
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/hallway)
 "ayg" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 8
-	},
 /obj/machinery/portable_atmospherics/powered/pump/filled,
 /obj/machinery/alarm{
 	dir = 8;
@@ -13369,6 +13392,9 @@
 	dir = 6
 	},
 /obj/random/date_based/christmas/xmaslights,
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/hallway)
 "ayh" = (
@@ -13773,6 +13799,9 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
+	dir = 5
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/atmos)
 "ayM" = (
@@ -13826,7 +13855,9 @@
 "ayP" = (
 /obj/effect/wallframe_spawn/reinforced/no_grille,
 /obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
+	dir = 10
+	},
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "ayQ" = (
@@ -14076,6 +14107,9 @@
 /obj/structure/bed/sofa/brown/left{
 	dir = 1
 	},
+/obj/structure/sign/poster{
+	pixel_x = -32
+	},
 /turf/simulated/floor/carpet/green,
 /area/crew_quarters/cafe)
 "azi" = (
@@ -14166,7 +14200,7 @@
 "azq" = (
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -29
+	pixel_y = -28
 	},
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan,
 /obj/effect/floor_decal/techfloor,
@@ -14520,10 +14554,6 @@
 /obj/machinery/newscaster{
 	pixel_y = 30
 	},
-/obj/item/device/radio/off,
-/obj/item/device/radio/off,
-/obj/item/device/radio/off,
-/obj/item/device/radio/off,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
@@ -14536,6 +14566,11 @@
 /obj/effect/floor_decal/corner/yellow/bordercorner2{
 	dir = 1
 	},
+/obj/item/weapon/storage/box/lights/xenon,
+/obj/item/device/radio/off,
+/obj/item/device/radio/off,
+/obj/item/device/radio/off,
+/obj/item/device/radio/off,
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/locker_room)
 "azS" = (
@@ -14553,7 +14588,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/blue/border,
@@ -15481,7 +15516,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -29
+	pixel_y = -28
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/yellow/border,
@@ -15707,7 +15742,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/bamboo,
-/area/ai_abadoned)
+/area/grove/theta)
 "aCa" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/black,
 /obj/structure/sign/warning/compressed_gas{
@@ -15963,7 +15998,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/green/border,
@@ -15983,7 +16018,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9
@@ -16012,7 +16047,7 @@
 "aCw" = (
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -29
+	pixel_y = -28
 	},
 /obj/structure/bed/padded,
 /obj/effect/landmark/start,
@@ -16145,9 +16180,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/light/small{
 	dir = 4
-	},
-/obj/random/date_based/christmas/tinsel/green{
-	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/sleep/bunk)
@@ -16634,7 +16666,7 @@
 "aDw" = (
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -29
+	pixel_y = -28
 	},
 /obj/structure/bed/padded,
 /obj/effect/landmark/start,
@@ -16650,12 +16682,6 @@
 	},
 /obj/structure/sign/poster/humpost/hum_21{
 	pixel_x = 32
-	},
-/obj/random/date_based/christmas/tinsel/green{
-	dir = 4
-	},
-/obj/random/date_based/christmas/tinsel/green{
-	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/sleep/bunk)
@@ -17520,13 +17546,7 @@
 /obj/random/date_based/christmas/xmaslights{
 	dir = 4
 	},
-/obj/random/date_based/christmas/tinsel/green{
-	dir = 4
-	},
 /obj/random/date_based/christmas/xmaslights{
-	dir = 8
-	},
-/obj/random/date_based/christmas/tinsel/green{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
@@ -18003,7 +18023,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 21
+	pixel_x = 20
 	},
 /obj/structure/closet/walllocker{
 	pixel_x = -23;
@@ -18252,7 +18272,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "aGy" = (
 /obj/machinery/atmospherics/omni/filter{
 	tag_east = 2;
@@ -18470,7 +18490,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/lime/border,
@@ -18579,7 +18599,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -29
+	pixel_y = -28
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
@@ -18840,7 +18860,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/railing/mapped{
@@ -18977,7 +18997,7 @@
 "aHR" = (
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/structure/bed/sofa/brown/right{
 	dir = 1
@@ -19229,7 +19249,7 @@
 /obj/item/clothing/mask/smokable/cigarette/cigar/havana,
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -19363,9 +19383,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/light/small{
 	dir = 8
-	},
-/obj/random/date_based/christmas/tinsel/green{
-	dir = 4
 	},
 /obj/machinery/firealarm{
 	dir = 4;
@@ -19882,7 +19899,7 @@
 /obj/structure/sign/poster{
 	pixel_y = 32
 	},
-/turf/simulated/floor/lino,
+/turf/simulated/floor/wood/walnut,
 /area/crew_quarters/lounge)
 "aJv" = (
 /obj/machinery/door/firedoor,
@@ -19970,7 +19987,7 @@
 /area/crew_quarters/laundry)
 "aJB" = (
 /obj/structure/stairs/east,
-/turf/simulated/floor/lino,
+/turf/simulated/floor/wood/walnut,
 /area/crew_quarters/lounge)
 "aJC" = (
 /obj/effect/wallframe_spawn/reinforced/polarized/no_grille{
@@ -20331,8 +20348,15 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/atmos)
 "aKo" = (
-/turf/simulated/floor/grass,
-/area/ai_abadoned)
+/obj/structure/closet/crate/hydroponics/beekeeping,
+/obj/machinery/button/blast_door{
+	dir = 8;
+	id_tag = "grove_shielding";
+	name = "Grove Shutter Control";
+	pixel_x = 22
+	},
+/turf/simulated/floor/wood/bamboo,
+/area/grove/theta)
 "aKp" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 6
@@ -20475,12 +20499,6 @@
 /obj/structure/sign/warning/nosmoking_1{
 	dir = 8;
 	pixel_x = 32
-	},
-/obj/random/date_based/christmas/tinsel/green{
-	dir = 8
-	},
-/obj/random/date_based/christmas/tinsel/green{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/sleep/bunk)
@@ -20765,7 +20783,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/bamboo,
-/area/ai_abadoned)
+/area/grove/theta)
 "aKX" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -21034,9 +21052,9 @@
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/heads/captain/office_anteroom)
 "aLw" = (
-/obj/structure/flora/ausbushes/stalkybush,
+/obj/structure/flora/ausbushes/fernybush,
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "aLx" = (
 /obj/structure/catwalk,
 /obj/structure/ladder,
@@ -21241,7 +21259,7 @@
 /obj/effect/floor_decal/corner/lime/border,
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
@@ -21403,12 +21421,6 @@
 "aMi" = (
 /obj/structure/holoplant{
 	plant = "P-Alien Plant"
-	},
-/obj/random/date_based/christmas/tinsel/green{
-	dir = 8
-	},
-/obj/random/date_based/christmas/tinsel/green{
-	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/sleep/bunk)
@@ -21578,9 +21590,6 @@
 	dir = 8
 	},
 /obj/structure/closet/wardrobe/pjs,
-/obj/random/date_based/christmas/tinsel/green{
-	dir = 1
-	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/crew_quarters/sleep/bunk)
 "aMC" = (
@@ -21842,7 +21851,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -29
+	pixel_y = -28
 	},
 /obj/effect/floor_decal/techfloor,
 /obj/effect/floor_decal/techfloor/corner{
@@ -22103,9 +22112,6 @@
 /area/crew_quarters/laundry)
 "aNq" = (
 /obj/structure/closet/athletic_mixed,
-/obj/random/date_based/christmas/tinsel/green{
-	dir = 1
-	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/crew_quarters/sleep/bunk)
 "aNr" = (
@@ -22328,12 +22334,6 @@
 "aNK" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/structure/undies_wardrobe,
-/obj/random/date_based/christmas/tinsel/green{
-	dir = 1
-	},
-/obj/random/date_based/christmas/tinsel/green{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/crew_quarters/sleep/bunk)
 "aNL" = (
@@ -22524,9 +22524,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/obj/random/date_based/christmas/tinsel/green{
-	dir = 8
-	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/sleep/bunk)
 "aOh" = (
@@ -22570,7 +22567,7 @@
 /obj/structure/closet/l3closet/scientist,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -21
+	pixel_x = -20
 	},
 /obj/structure/sign/warning/biohazard{
 	pixel_y = -24
@@ -22920,7 +22917,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/random/date_based/christmas/tinsel/green,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/sleep/bunk)
 "aOS" = (
@@ -23460,7 +23456,7 @@
 /obj/structure/table/standard,
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 22
+	pixel_x = 20
 	},
 /obj/machinery/alarm{
 	pixel_y = 24
@@ -23662,7 +23658,7 @@
 /obj/machinery/washing_machine,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -21
+	pixel_x = -20
 	},
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -23694,7 +23690,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/storage/tech)
@@ -23918,7 +23914,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/bamboo,
-/area/ai_abadoned)
+/area/grove/theta)
 "aQX" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
@@ -24051,7 +24047,7 @@
 "aRo" = (
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/structure/closet/emcloset{
 	anchored = 1;
@@ -24064,7 +24060,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/bamboo,
-/area/ai_abadoned)
+/area/grove/theta)
 "aRp" = (
 /obj/structure/bed/chair/comfy/brown{
 	dir = 8
@@ -24220,7 +24216,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	dir = 10
@@ -24452,8 +24448,12 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
+/obj/item/device/radio/intercom{
+	dir = 8;
+	pixel_x = 20
+	},
 /turf/simulated/floor/wood/bamboo,
-/area/ai_abadoned)
+/area/grove/theta)
 "aSc" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/table/rack,
@@ -24494,7 +24494,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -29
+	pixel_y = -28
 	},
 /obj/effect/landmark/start,
 /turf/simulated/floor/carpet,
@@ -25060,7 +25060,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/wood/walnut,
+/turf/simulated/floor/plating,
 /area/vacant/gambling)
 "aTj" = (
 /obj/structure/cable{
@@ -25085,6 +25085,10 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/camera/network/second_deck{
+	c_tag = "Second Deck Hallway - Grove Entrance";
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
@@ -25320,7 +25324,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/bamboo,
-/area/ai_abadoned)
+/area/grove/theta)
 "aTF" = (
 /obj/machinery/atmospherics/binary/pump/on{
 	name = "gas supply pump";
@@ -25341,7 +25345,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/wood/walnut,
 /area/vacant/gambling)
 "aTH" = (
 /obj/structure/table/rack,
@@ -26028,7 +26032,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/bamboo,
-/area/ai_abadoned)
+/area/grove/theta)
 "aUK" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 4
@@ -26176,7 +26180,7 @@
 /obj/structure/table/standard,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -21
+	pixel_x = -20
 	},
 /obj/item/weapon/paper_bin,
 /obj/item/weapon/pen,
@@ -26498,7 +26502,7 @@
 /area/rnd/xenobiology/level1)
 "aVz" = (
 /turf/simulated/wall/walnut,
-/area/ai_abadoned)
+/area/grove/theta)
 "aVA" = (
 /obj/structure/bed/chair/pew/down{
 	dir = 4;
@@ -26777,7 +26781,7 @@
 "aWf" = (
 /obj/effect/wallframe_spawn/reinforced/wood,
 /turf/simulated/floor/plating,
-/area/ai_abadoned)
+/area/grove/theta)
 "aWg" = (
 /obj/machinery/door/window/southleft{
 	dir = 1;
@@ -27028,7 +27032,7 @@
 "aWA" = (
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 21
+	pixel_x = 20
 	},
 /obj/structure/closet/cabinet,
 /turf/simulated/floor/wood/walnut,
@@ -27172,18 +27176,17 @@
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/level1)
 "aWM" = (
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "grove_shielding";
-	pixel_x = -24
-	},
 /obj/random/date_based/christmas/xmaslights,
 /obj/machinery/camera/network/second_deck{
 	c_tag = "Grove Theta - West";
 	dir = 4
 	},
+/obj/item/device/radio/intercom{
+	dir = 4;
+	pixel_x = -20
+	},
 /turf/simulated/floor/wood/bamboo,
-/area/ai_abadoned)
+/area/grove/theta)
 "aWN" = (
 /obj/random/closet,
 /obj/effect/floor_decal/techfloor{
@@ -27501,7 +27504,7 @@
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white,
-/area/ai_abadoned)
+/area/grove/theta)
 "aXo" = (
 /obj/machinery/alarm{
 	dir = 8;
@@ -27574,7 +27577,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 22
+	pixel_x = 20
 	},
 /turf/simulated/floor/crystal,
 /area/crew_quarters/adherent)
@@ -27832,7 +27835,7 @@
 /obj/structure/table/woodentable_reinforced/walnut,
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/item/weapon/storage/box/donut,
-/turf/simulated/floor/lino,
+/turf/simulated/floor/wood/walnut,
 /area/crew_quarters/lounge)
 "aXU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -27917,7 +27920,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/ai_abadoned)
+/area/grove/theta)
 "aYd" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -28076,7 +28079,7 @@
 /mob/living/simple_animal/aquatic/fish/grump,
 /obj/effect/fluid_mapped,
 /turf/simulated/floor/aquarium,
-/area/ai_abadoned)
+/area/grove/theta)
 "aYA" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -28085,7 +28088,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/item/weapon/paper_bin,
 /obj/item/weapon/pen,
-/turf/simulated/floor/lino,
+/turf/simulated/floor/wood/walnut,
 /area/crew_quarters/lounge)
 "aYB" = (
 /obj/structure/table/standard,
@@ -28156,7 +28159,7 @@
 	pixel_x = -22
 	},
 /turf/simulated/floor/tiled/white,
-/area/ai_abadoned)
+/area/grove/theta)
 "aYJ" = (
 /turf/simulated/wall/r_wall/hull,
 /area/medical/maintenance_equipstorage)
@@ -28322,7 +28325,7 @@
 /obj/effect/fluid_mapped,
 /obj/structure/flora/ausbushes/reedbush,
 /turf/simulated/floor/aquarium,
-/area/ai_abadoned)
+/area/grove/theta)
 "aYY" = (
 /obj/structure/table/rack,
 /obj/item/weapon/storage/box/bodybags,
@@ -28340,18 +28343,23 @@
 /mob/living/simple_animal/aquatic/fish/grump,
 /obj/effect/fluid_mapped,
 /turf/simulated/floor/aquarium,
-/area/ai_abadoned)
+/area/grove/theta)
 "aZa" = (
 /obj/structure/flora/seaweed/large,
 /obj/effect/fluid_mapped,
+/mob/living/simple_animal/aquatic/fish/judge{
+	name = "Tilusnau"
+	},
 /turf/simulated/floor/aquarium,
-/area/ai_abadoned)
+/area/grove/theta)
 "aZb" = (
-/obj/structure/flora/seaweed/glow,
-/mob/living/simple_animal/aquatic/fish/judge,
+/obj/structure/flora/seaweed,
 /obj/effect/fluid_mapped,
+/mob/living/simple_animal/aquatic/fish{
+	name = "Marry"
+	},
 /turf/simulated/floor/aquarium,
-/area/ai_abadoned)
+/area/grove/theta)
 "aZc" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -28452,7 +28460,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
-/area/ai_abadoned)
+/area/grove/theta)
 "aZn" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -28782,7 +28790,7 @@
 /area/maintenance/seconddeck/aftstarboard)
 "aZJ" = (
 /turf/simulated/wall/r_wall/prepainted,
-/area/ai_abadoned)
+/area/grove/theta)
 "aZK" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -28951,7 +28959,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/ai_abadoned)
+/area/grove/theta)
 "baa" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/bed/chair/office/light,
@@ -29015,14 +29023,14 @@
 "bai" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/white,
-/area/ai_abadoned)
+/area/grove/theta)
 "baj" = (
 /obj/machinery/light/spot{
 	dir = 1
 	},
 /obj/structure/flora/ausbushes/fernybush,
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "bak" = (
 /obj/structure/cable{
 	d1 = 16;
@@ -29127,7 +29135,7 @@
 /obj/structure/flora/seaweed,
 /obj/effect/fluid_mapped,
 /turf/simulated/floor/aquarium,
-/area/ai_abadoned)
+/area/grove/theta)
 "bau" = (
 /obj/structure/closet/crate,
 /obj/random/maintenance,
@@ -29295,7 +29303,7 @@
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/white,
-/area/ai_abadoned)
+/area/grove/theta)
 "baT" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/maintenance{
@@ -29314,7 +29322,7 @@
 /obj/structure/flora/seaweed/mid,
 /obj/effect/fluid_mapped,
 /turf/simulated/floor/aquarium,
-/area/ai_abadoned)
+/area/grove/theta)
 "baV" = (
 /obj/machinery/light/navigation/delay5,
 /obj/structure/lattice,
@@ -29356,7 +29364,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
-/area/ai_abadoned)
+/area/grove/theta)
 "bba" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 4
@@ -29367,7 +29375,7 @@
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white,
-/area/ai_abadoned)
+/area/grove/theta)
 "bbb" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
@@ -29423,7 +29431,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
-/area/ai_abadoned)
+/area/grove/theta)
 "bbh" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -29950,7 +29958,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -29
+	pixel_y = -28
 	},
 /turf/simulated/floor/wood/ebony,
 /area/crew_quarters/sauna)
@@ -30305,7 +30313,7 @@
 /obj/structure/flora/seaweed/glow,
 /obj/effect/fluid_mapped,
 /turf/simulated/floor/aquarium,
-/area/ai_abadoned)
+/area/grove/theta)
 "bcS" = (
 /obj/machinery/atmospherics/pipe/simple/visible/black,
 /obj/machinery/door/blast/regular/open{
@@ -30855,7 +30863,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/structure/table/woodentable/mahogany,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -30964,7 +30972,7 @@
 /obj/item/weapon/reagent_containers/food/snacks/grown/poppy,
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 21
+	pixel_x = 20
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
@@ -31111,7 +31119,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 21
+	pixel_x = 20
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
@@ -31607,7 +31615,7 @@
 /obj/structure/table/rack,
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 1;
@@ -32599,7 +32607,7 @@
 "bhj" = (
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 6
@@ -33470,7 +33478,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -33914,15 +33922,15 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
 "crk" = (
-/obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/railing/mapped/no_density{
 	dir = 4
 	},
 /obj/structure/railing/mapped/no_density{
 	dir = 1
 	},
+/obj/machinery/portable_atmospherics/hydroponics/soil,
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "crL" = (
 /obj/structure/table/glass,
 /obj/machinery/light/led/small,
@@ -33944,7 +33952,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/ai_abadoned)
+/area/grove/theta)
 "czO" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 10
@@ -34064,11 +34072,11 @@
 /obj/structure/flora/ausbushes/reedbush,
 /obj/effect/fluid_mapped,
 /turf/simulated/floor/aquarium,
-/area/ai_abadoned)
+/area/grove/theta)
 "dsd" = (
 /obj/random/date_based/christmas/tree,
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "dvE" = (
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/locker_room)
@@ -34174,15 +34182,15 @@
 "egu" = (
 /obj/random/date_based/christmas/xmaslights,
 /turf/simulated/floor/wood/bamboo,
-/area/ai_abadoned)
+/area/grove/theta)
 "eoE" = (
-/obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/railing/mapped/no_density,
 /obj/structure/railing/mapped/no_density{
 	dir = 8
 	},
+/obj/structure/flora/ausbushes/leafybush,
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "etm" = (
 /obj/machinery/door/airlock/glass/atmos{
 	dir = 4;
@@ -34374,16 +34382,6 @@
 /obj/machinery/light/led/small,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/mess)
-"ftl" = (
-/obj/effect/fluid_mapped,
-/obj/structure/flora/seaweed/large,
-/turf/simulated/floor/aquarium,
-/area/ai_abadoned)
-"fxS" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/plating,
-/area/vacant/gambling)
 "fDc" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -34405,11 +34403,9 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/maintenance_equipstorage)
 "fHK" = (
-/obj/structure/flora/seaweed/glow,
-/obj/effect/fluid_mapped,
-/obj/machinery/light/spot,
-/turf/simulated/floor/aquarium,
-/area/ai_abadoned)
+/obj/structure/flora/ausbushes/stalkybush,
+/turf/simulated/floor/grass,
+/area/grove/theta)
 "fKz" = (
 /obj/machinery/alarm{
 	dir = 8;
@@ -34435,7 +34431,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 21
+	pixel_x = 20
 	},
 /obj/machinery/light/small{
 	dir = 8
@@ -34452,6 +34448,10 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/seconddeck/foreport)
+"fXl" = (
+/obj/machinery/light/spot,
+/turf/simulated/floor/wood/bamboo,
+/area/grove/theta)
 "fZe" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 10
@@ -34462,13 +34462,6 @@
 /obj/random/date_based/christmas/xmaslights,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/sleep/cryo)
-"gjS" = (
-/obj/structure/flora/ausbushes/ppflowers,
-/obj/structure/railing/mapped/no_density{
-	dir = 1
-	},
-/turf/simulated/floor/grass,
-/area/ai_abadoned)
 "gwl" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -34525,18 +34518,13 @@
 /turf/simulated/floor/plating,
 /area/hallway/primary/seconddeck/center)
 "gQq" = (
-/obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/railing/mapped/no_density{
 	dir = 8
 	},
 /obj/structure/railing/mapped/no_density,
+/obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
-"gUg" = (
-/obj/effect/fluid_mapped,
-/obj/structure/flora/seaweed/mid,
-/turf/simulated/floor/aquarium,
-/area/ai_abadoned)
+/area/grove/theta)
 "gYd" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -34550,13 +34538,10 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "hcl" = (
-/obj/structure/flora/seaweed,
-/obj/effect/fluid_mapped,
-/obj/machinery/light/spot{
-	dir = 4
-	},
-/turf/simulated/floor/aquarium,
-/area/ai_abadoned)
+/obj/structure/railing/mapped/no_density,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/simulated/floor/grass,
+/area/grove/theta)
 "hdV" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
@@ -34651,6 +34636,11 @@
 /obj/random/date_based/christmas/xmaslights,
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
+"hzF" = (
+/obj/random/date_based/christmas/xmaslights,
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/wood/bamboo,
+/area/grove/theta)
 "hEA" = (
 /obj/random/obstruction,
 /obj/structure/largecrate,
@@ -34768,6 +34758,10 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/item/device/radio/intercom{
+	dir = 1;
+	pixel_y = -28
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
@@ -34994,6 +34988,19 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/cafe)
+"jUs" = (
+/obj/effect/floor_decal/corner/grey/diagonal{
+	dir = 4
+	},
+/obj/structure/hygiene/sink{
+	dir = 4;
+	pixel_x = 22
+	},
+/obj/item/weapon/storage/mirror{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/white,
+/area/crew_quarters/galley)
 "jVF" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/table/woodentable/walnut,
@@ -35219,12 +35226,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
-"lHk" = (
-/obj/structure/flora/ausbushes/stalkybush,
-/obj/structure/railing/mapped/no_density,
-/turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "lMC" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -35270,6 +35272,9 @@
 /obj/structure/bed/sofa/black/right,
 /obj/random/date_based/christmas/xmaslights{
 	dir = 4
+	},
+/obj/item/device/radio/intercom{
+	pixel_y = 26
 	},
 /turf/simulated/floor/carpet/purple,
 /area/crew_quarters/cafe)
@@ -35353,6 +35358,10 @@
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
 	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -20
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "mCp" = (
@@ -35385,6 +35394,9 @@
 /obj/machinery/light/led/small{
 	dir = 1
 	},
+/obj/item/weapon/storage/box/lights/led_neon,
+/obj/item/weapon/storage/box/lights/led_neon,
+/obj/item/weapon/storage/box/lights/led_neon,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/bar)
 "mFm" = (
@@ -35437,7 +35449,7 @@
 /obj/item/weapon/reagent_containers/food/snacks/mint,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -21
+	pixel_x = -20
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/galley/backroom)
@@ -35517,7 +35529,7 @@
 /obj/item/weapon/storage/box/cups,
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 21
+	pixel_x = 20
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/gym)
@@ -35529,6 +35541,11 @@
 /obj/random/date_based/christmas/xmaslights,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/sleep/cryo)
+"ndC" = (
+/obj/structure/railing/mapped/no_density,
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/simulated/floor/grass,
+/area/grove/theta)
 "ngY" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -35587,10 +35604,14 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/railing/mapped/no_density,
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "nLf" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/engineering/materials_storage)
+"nLg" = (
+/obj/machinery/beehive,
+/turf/simulated/floor/grass,
+/area/grove/theta)
 "nLQ" = (
 /obj/item/weapon/stool/bar/padded,
 /obj/machinery/light/led/small{
@@ -35648,7 +35669,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -35676,7 +35697,7 @@
 	},
 /obj/effect/fluid_mapped,
 /turf/simulated/floor/aquarium,
-/area/ai_abadoned)
+/area/grove/theta)
 "ond" = (
 /obj/random/date_based/christmas/xmaslights,
 /turf/simulated/floor/lino,
@@ -35742,6 +35763,13 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo/south)
+"oEe" = (
+/obj/machinery/camera/network/second_deck{
+	c_tag = "Second Deck Hallway - Grove Hallway";
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/seconddeck/center)
 "oGf" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 4
@@ -35771,7 +35799,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/ai_abadoned)
+/area/grove/theta)
 "oIG" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/wood/walnut,
@@ -35794,7 +35822,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "oQM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -35853,6 +35881,14 @@
 /obj/effect/floor_decal/corner/lightgrey/bordercorner2{
 	dir = 6
 	},
+/obj/machinery/camera/network/second_deck{
+	c_tag = "Second Deck Hallway - Bar";
+	dir = 8
+	},
+/obj/item/device/radio/intercom{
+	dir = 8;
+	pixel_x = 20
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "pbO" = (
@@ -35898,7 +35934,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "pmM" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -35922,6 +35958,16 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/sleep/cryo)
+"puY" = (
+/obj/machinery/button/blast_door{
+	dir = 1;
+	id_tag = "grove_shielding";
+	name = "Grove Shutter Control";
+	pixel_y = -20
+	},
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/wood/bamboo,
+/area/grove/theta)
 "pxC" = (
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment{
@@ -35953,13 +35999,8 @@
 /turf/simulated/floor/tiled,
 /area/bridge/hall/level_one)
 "pyG" = (
-/obj/effect/fluid_mapped,
-/obj/structure/flora/seaweed,
-/mob/living/simple_animal/aquatic/fish{
-	name = "Marry"
-	},
-/turf/simulated/floor/aquarium,
-/area/ai_abadoned)
+/turf/simulated/floor/plating,
+/area/grove/theta)
 "pCm" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -35997,7 +36038,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/bamboo,
-/area/ai_abadoned)
+/area/grove/theta)
 "pHb" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -36035,7 +36076,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "pPH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/landmark{
@@ -36132,6 +36173,10 @@
 /obj/effect/floor_decal/borderfloor/corner,
 /obj/effect/floor_decal/industrial/danger/corner,
 /obj/random/date_based/christmas/xmaslights,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -20
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "qlP" = (
@@ -36237,14 +36282,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/locker_room)
-"rbb" = (
-/obj/structure/flora/seaweed/glow,
-/mob/living/simple_animal/aquatic/fish/judge{
-	name = "Tilusnau"
-	},
-/obj/effect/fluid_mapped,
-/turf/simulated/floor/aquarium,
-/area/ai_abadoned)
 "rcZ" = (
 /obj/machinery/firealarm{
 	pixel_y = 24
@@ -36377,7 +36414,7 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/railing/mapped/no_density,
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "sgI" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/door/blast/shutters{
@@ -36414,7 +36451,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "sEX" = (
 /obj/structure/bed/chair/comfy/brown{
 	dir = 1
@@ -36518,13 +36555,13 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
 "tbR" = (
-/obj/structure/flora/ausbushes/ywflowers,
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 24
 	},
+/obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "tdE" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/catwalk_plated,
@@ -36547,13 +36584,13 @@
 	name = "Titus"
 	},
 /turf/simulated/floor/aquarium,
-/area/ai_abadoned)
+/area/grove/theta)
 "tnG" = (
 /obj/structure/railing/mapped/no_density{
 	dir = 1
 	},
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "tnZ" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 4
@@ -36748,7 +36785,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "upd" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -36826,10 +36863,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/bridge/hall/level_one)
 "usO" = (
-/obj/structure/flora/ausbushes/sunnybush,
 /obj/structure/railing/mapped/no_density,
+/obj/machinery/portable_atmospherics/hydroponics/soil,
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "uuJ" = (
 /obj/structure/lattice,
 /obj/machinery/light/navigation/delay3,
@@ -36880,7 +36917,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "uLL" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -36974,7 +37011,7 @@
 "vio" = (
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/machinery/alarm{
 	dir = 4;
@@ -37069,6 +37106,18 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
+"vJG" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/borderfloor/corner2,
+/turf/simulated/floor/tiled,
+/area/crew_quarters/gym)
 "vKY" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /obj/structure/railing/mapped/no_density{
@@ -37078,7 +37127,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "vLz" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -37104,14 +37153,28 @@
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/gym)
+"vXS" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/item/device/radio/intercom{
+	pixel_y = 26
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/seconddeck/center)
 "vYV" = (
-/obj/structure/flora/ausbushes/grassybush,
 /obj/structure/railing/mapped/no_density,
 /obj/structure/railing/mapped/no_density{
 	dir = 4
 	},
+/obj/machinery/portable_atmospherics/hydroponics/soil,
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "wbe" = (
 /obj/structure/table/steel_reinforced,
 /obj/structure/sign/monkey_painting{
@@ -37180,7 +37243,7 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/railing/mapped/no_density,
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 "wTP" = (
 /obj/machinery/door/airlock/multi_tile/maintenance{
 	dir = 8
@@ -37242,7 +37305,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/bamboo,
-/area/ai_abadoned)
+/area/grove/theta)
 "xek" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4;
@@ -37261,7 +37324,7 @@
 	pixel_x = -9
 	},
 /turf/simulated/floor/tiled/white,
-/area/ai_abadoned)
+/area/grove/theta)
 "xiq" = (
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced/polarized/no_grille/regular{
@@ -37402,12 +37465,12 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/thirddeck/starboard)
 "yaN" = (
-/obj/structure/flora/ausbushes/leafybush,
 /obj/structure/railing/mapped/no_density{
 	dir = 1
 	},
+/obj/machinery/portable_atmospherics/hydroponics/soil,
 /turf/simulated/floor/grass,
-/area/ai_abadoned)
+/area/grove/theta)
 
 (1,1,1) = {"
 aam
@@ -54464,7 +54527,7 @@ agA
 adT
 ahc
 agZ
-agR
+jUs
 aln
 oSR
 bss
@@ -57287,9 +57350,9 @@ aYV
 aYV
 aYV
 aYV
-aYK
+vXS
 aJR
-aMI
+oEe
 ajn
 ale
 ale
@@ -57885,7 +57948,7 @@ xcA
 xcA
 aWM
 aWf
-bat
+aZb
 bcP
 aYV
 aZn
@@ -58085,7 +58148,7 @@ pGR
 afi
 aeR
 afi
-egu
+hzF
 aWf
 baU
 tmS
@@ -58108,7 +58171,7 @@ amQ
 amR
 amW
 oQM
-oQM
+vJG
 ayI
 atg
 agk
@@ -58287,10 +58350,10 @@ unL
 pPl
 peJ
 eoE
-egu
+fXl
 aWf
 aYX
-fHK
+bcP
 aYV
 aZr
 aRf
@@ -58488,7 +58551,7 @@ aaa
 baj
 avP
 ael
-lHk
+hcl
 egu
 aWf
 aYZ
@@ -59293,8 +59356,8 @@ aaK
 acd
 aBZ
 aQW
-gjS
-ael
+yaN
+avP
 ael
 usO
 akO
@@ -59497,8 +59560,8 @@ aBZ
 aKW
 yaN
 aLw
-ajf
-sdp
+fHK
+usO
 aje
 aUJ
 aZZ
@@ -59903,7 +59966,7 @@ aed
 aed
 aed
 aed
-afr
+puY
 aVz
 aZJ
 aZJ
@@ -60100,7 +60163,7 @@ aam
 aaK
 acd
 adP
-acC
+aKo
 vKY
 oQr
 afa
@@ -60109,8 +60172,8 @@ egu
 aWf
 aZa
 bat
-rbb
-gUg
+aZJ
+pyG
 aZJ
 aWs
 afq
@@ -60303,16 +60366,16 @@ aaK
 aaa
 aaa
 aaa
-atc
 auj
-aid
-nKd
+nLg
+nLg
+ndC
 egu
 aWf
 baU
 aYz
-bat
-ftl
+aZJ
+pyG
 aZJ
 aWN
 fiG
@@ -60505,15 +60568,15 @@ aaK
 aaa
 aaa
 aaa
-aKo
+aid
 tbR
 aGw
 aek
 egu
 aWf
-aZb
-hcl
-aZa
+bcP
+bat
+aZJ
 pyG
 aZJ
 aYS
@@ -64188,7 +64251,7 @@ aRt
 aRD
 jVF
 aTG
-fxS
+aYi
 aYi
 baH
 bal

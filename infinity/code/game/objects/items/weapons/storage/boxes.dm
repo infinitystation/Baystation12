@@ -37,7 +37,11 @@
 	icon_state = "flashbang"
 	startswith = list(/obj/item/weapon/grenade/anti_photon/shell = 6)
 
-/obj/item/weapon/storage/box/led_neon
-	name = "box of neon"
+/obj/item/weapon/storage/box/lights/led_neon
+	name = "box of neon leds"
 	desc = "A box full of soda cans."
 	startswith = list(/obj/item/weapon/light/led_neon/small = 7)
+
+/obj/item/weapon/storage/box/lights/xenon
+	name = "box of replacement xenon"
+	startswith = list(/obj/item/weapon/light/xenon = 4)
