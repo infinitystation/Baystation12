@@ -13,7 +13,8 @@
 	var/maptext_style = "font-family: 'Small Fonts';"
 
 /obj/screen/tooltip/proc/SetMapText(newValue, forcedFontColor = "#ffffff")
-	maptext = "<center style=\"color:[forcedFontColor];text-shadow: 0 2px 2px [invertHTML(forcedFontColor)];[maptext_style];\">[newValue]</center>"
+	var/style = "color:[forcedFontColor];text-shadow: 0 2px 2px [invertHTML(forcedFontColor)];[maptext_style];"
+	maptext = "<center><span style=\"[style]\">[newValue]</span></center>"
 
 /obj/screen/tooltip/proc/set_state(new_state, type)
 	switch(type)
