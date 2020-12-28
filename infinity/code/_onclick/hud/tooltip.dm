@@ -5,52 +5,52 @@
 	icon = 'infinity/icons/tooltip.dmi'
 	icon_state = "transparent"
 	screen_loc = "TOP, CENTER - 3"
-//	screen_loc = "TOP + 1, CENTER - 3"
-	plane = FULLSCREEN_PLANE
+	plane = HUD_PLANE
+	layer = UNDER_HUD_LAYER
 	maptext_width = 256
 	maptext_x = -16
-	var/active = FALSE
-	var/maptext_style = "text-shadow: 1px 1px 2px black; font-family: 'Small Fonts';"
+	var/state = TRUE
+	var/maptext_style = "font-family: 'Small Fonts';"
+
+/obj/screen/tooltip/proc/SetMapText(newValue, forcedFontColor = "#ffffff")
+	maptext = "<center style=\"color:[forcedFontColor];text-shadow: 0 2px 2px [invertHTML(forcedFontColor)];[maptext_style];\">[newValue]</center>"
 
 /obj/screen/tooltip/proc/set_state(new_state, type)
 	switch(type)
 		if(GLOB.PREF_SHOW)
 			icon_state = "transparent"
+/*
 		if(GLOB.PREF_FANCY)
 			icon_state = "bar"
-
-	if(new_state == active) return
-	active = new_state
-	set_invisibility(active ? initial(invisibility) : INVISIBILITY_MAXIMUM)
-
-/*
-	addtimer(CALLBACK(src, /atom/proc/set_invisibility, active ? initial(invisibility) : INVISIBILITY_MAXIMUM), active ? 0 : 10)
-	var/matrix/M = matrix(transform)
-	M.Translate(0, active ? -32 : 32)
-	animate(src, transform = M, time = 10, easing = ELASTIC_EASING | active ? EASE_IN : EASE_OUT)
 */
+	if(new_state == state)
+		return
+	state = new_state
+	set_invisibility(state ? initial(invisibility) : INVISIBILITY_MAXIMUM)
 
 /client/New(TopicData)
 	..()
 	tooltip = new /obj/screen/tooltip()
 	if(mob)
 		var/value = mob.get_preference_value(/datum/client_preference/tooltip)
-		if(value == GLOB.PREF_SHOW || value == GLOB.PREF_FANCY)
+		if(value == GLOB.PREF_SHOW)
 			tooltip.set_state(1, value)
 
-/client/MouseEntered(atom/object, location, control, params)
-	if(tooltip && tooltip.active && GAME_STATE > RUNLEVEL_SETUP)
+/client/MouseEntered(atom/hoverOn, location, control, params)
+	if(tooltip?.state && GAME_STATE > RUNLEVEL_SETUP)
+		var/text_in_tooltip = hoverOn.name
+
 		screen |= tooltip
-		tooltip.maptext = "<center style=\"[tooltip.maptext_style]\">[object.name]</center>"
+		tooltip.SetMapText(text_in_tooltip/*, istext(hoverOn.color) ? hoverOn.color : null*/)
 
 /datum/client_preference/tooltip
 	description = "Show Tooltip"
 	key = "SHOW_TOOLTIP"
-	options = list(GLOB.PREF_SHOW, GLOB.PREF_FANCY, GLOB.PREF_HIDE)
+	options = list(GLOB.PREF_SHOW, GLOB.PREF_HIDE)
 
 /datum/client_preference/tooltip/changed(mob/preference_mob, new_value)
 	var/client/C = preference_mob.client
-	if(new_value == GLOB.PREF_SHOW || new_value == GLOB.PREF_FANCY)
+	if(new_value == GLOB.PREF_SHOW)
 		C.tooltip.set_state(1, new_value)
 	else
 		C.tooltip.set_state(0)
