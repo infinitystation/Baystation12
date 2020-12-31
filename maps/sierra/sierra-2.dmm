@@ -33938,6 +33938,10 @@
 	pixel_x = 4;
 	pixel_y = -4
 	},
+/obj/machinery/camera/network/second_deck{
+	c_tag = "Second Deck - Bar";
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/mess)
 "czH" = (
@@ -37203,6 +37207,10 @@
 	},
 /obj/machinery/light/led/small{
 	dir = 4
+	},
+/obj/machinery/camera/network/second_deck{
+	c_tag = "Second Deck - Bartenders'";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/bar)
