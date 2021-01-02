@@ -31,10 +31,7 @@
 		else
 			set_species()
 
-//[INF]
-	if(species.species_use_vision_cone)
-		use_vision_cone = TRUE
-//[/INF]
+	use_vision_cone = species.species_use_vision_cone//inf
 
 	var/decl/cultural_info/culture = SSculture.get_culture(cultural_info[TAG_CULTURE])
 	if(culture)
