@@ -7,7 +7,7 @@
   <br>
 </h1>
 
-<h4 align="center">Русскоязычная сборка игры Space Station 13 на основе англоязычной сборки <a href="https://github.com/Baystation12/Baystation12/" target="_blank">Baystation12</a>.</h4>
+<h4 align="center">Сборка игры Space Station 13 на основе сборки <a href="https://github.com/Baystation12/Baystation12">Baystation12</a>.</h4>
 
 <p align="center">
   <a href="https://travis-ci.org/infinitystation/Baystation12">
