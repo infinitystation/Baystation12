@@ -44,7 +44,6 @@
   <a href="#лицензия">Лицензия</a>
 </p>
 
-![screenshot](http://wiki.infinity-ss13.info/images/a/a0/DolgaFotkat.png)
 
 ---
 
