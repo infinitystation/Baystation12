@@ -74,7 +74,6 @@
 <ul>
 1. Проверьте наличие, и установите в случае отсутствия, приложение git-клиента для ПК: <br>
   <ul>
-официальное приложение <a href="https://desktop.github.com/">GitHub Desktop</a>, 
 <a href="https://gitforwindows.org/">Git Bash</a>, 
 <a href="https://www.syntevo.com/smartgit/">SmartGit</a>, 
 <a href="https://www.sourcetreeapp.com/">Sourse Tree</a>, 
