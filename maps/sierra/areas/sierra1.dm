@@ -79,6 +79,10 @@
 	name = "Third Deck - Supply - Auxillary Warehouse"
 	icon_state = "auxstorage"
 	req_access = list(access_cargo)
+/area/storage/airlock_canisters
+	name = "Third Deck - Supply - Central Airlock's Canisters"
+	req_access = list(list(access_cargo, access_engine))
+
 	//thusters
 /area/thruster/d3port
 	name = "Third Deck - Nacelle - Port"
