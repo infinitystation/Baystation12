@@ -9,7 +9,7 @@
 	hardware_flag   = PROGRAM_PDA
 	modifiable      = FALSE
 
-	w_class    = ITEM_SIZE_TINY
+	w_class    = ITEM_SIZE_SMALL
 	slot_flags = SLOT_BELT
 	matter     = list(MATERIAL_ALUMINIUM = 250, MATERIAL_PLASTIC = 250, MATERIAL_GLASS = 500)
 
