@@ -117,14 +117,12 @@
 	#include "loadout/loadout_xeno.dm"
 	#include "loadout/~defines.dm"
 
-	/*Removed while empty and Bay refactor of antags spawns
 	#include "colony1-peak.dmm"
 	#include "colony2-surface.dmm"
 	#include "colony3-ground.dmm"
-	#include "colony4-underground.dmm"
-	#include "z5-admin.dmm"
-	#include "z6-transit.dmm"
-	#include "../away/empty.dmm"*/
+	#include "z1_admin.dmm"
+	#include "z2_transit.dmm"
+	#include "../away/empty.dmm"
 
 	#include "../away_inf/yacht/yacht.dm"
 	#include "../away_inf/mining/mining.dm"

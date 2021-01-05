@@ -68,7 +68,6 @@
 		/area/map_template/hydrobase = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/map_template/hydrobase/station = NO_SCRUBBER,
 		/area/map_template/marooned = NO_SCRUBBER|NO_VENT|NO_APC,
-		/area/map_template/colony/mineralprocessing = NO_SCRUBBER|NO_VENT,
 		/area/map_template/datacapsule = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/outpost/mining/solar = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/outpost/mining/maints = NO_SCRUBBER|NO_VENT,
@@ -167,4 +166,4 @@ datum/unit_test/zas_area_test/supply_centcomm
 
 datum/unit_test/zas_area_test/virology
 	name = "ZAS: Virology"
-	area_path = /area/medical/virology
+

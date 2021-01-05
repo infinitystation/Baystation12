@@ -37,8 +37,6 @@
 			if(bearing < 0)
 				bearing += 360
 			location_desc = ", по азимуту [bearing]."
-		if(O.has_distress_beacon)
-			LAZYADD(distress_calls, "[O.has_distress_beacon][location_desc]")
 		welcome_text += "<li>\A <b>[O.name]</b>[location_desc]</li>"
 
 	if(LAZYLEN(distress_calls))

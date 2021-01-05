@@ -74,7 +74,7 @@
 		/obj/item/clothing/glasses/hud/janitor,
 		/obj/item/weapon/storage/belt/janitor,
 		/obj/item/clothing/mask/plunger,
-		/obj/item/weapon/soap/nanotrasen
+		/obj/item/weapon/soap
 	)
 
 /obj/structure/closet/secure_closet/bar_colony

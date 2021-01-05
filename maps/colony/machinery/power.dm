@@ -6,7 +6,6 @@
 
 /obj/machinery/power/apc/bsa
 	cell_type = /obj/item/weapon/cell/high
-	chargelevel = 0.1 //1% per second (10w)
 
 //
 // SMES units
@@ -46,15 +45,17 @@
 	_output_on = TRUE
 	_fully_charged = TRUE
 
-// Charon's smes - Coltrane97@inf-dev
 /obj/machinery/power/smes/buildable/preset/colony/shuttle/charon
-	component_parts += new /obj/item/weapon/stock_parts/smes_coil/super_io(src)
-	component_parts += new /obj/item/weapon/stock_parts/smes_coil/super_capacity(src)
 	_input_maxed = TRUE
 	_output_maxed = TRUE
 	_input_on = TRUE
 	_output_on = TRUE
 	_fully_charged = TRUE
+
+/obj/machinery/power/smes/buildable/preset/colony/shuttle/charon/Initialize()
+	component_parts += new /obj/item/weapon/stock_parts/smes_coil/super_io(src)
+	component_parts += new /obj/item/weapon/stock_parts/smes_coil/super_capacity(src)
+
 
 // Hangar SMES. Charges the shuttles so needs a pretty big throughput.
 /obj/machinery/power/smes/buildable/preset/colony/hangar
