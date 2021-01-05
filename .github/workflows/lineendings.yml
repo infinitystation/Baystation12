@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: '3.x'
       - name: Empty Empty Lines Adding
-        run: python tools/simpleutilites/lineendings.py
+        run: python tools/simpleutilites/lineendings.py --targetDir="infinity/"
       - name: Difference
         run: git diff
       - name: Commit
