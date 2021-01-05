@@ -61,7 +61,7 @@
 /decl/crafting_stage/ed209_taser
 	progress_message = "You add the taser to the frame."
 	next_stages = list(/decl/crafting_stage/screwdriver/ed209)
-	completion_trigger_type = /obj/item/weapon/gun/energy/taser //INF, WAS /obj/item/weapon/gun/energy/gun(that way isn't working)
+	completion_trigger_type = /obj/item/weapon/gun/energy/taser
 	item_icon_state = "ed209_7"
 
 /decl/crafting_stage/screwdriver/ed209
