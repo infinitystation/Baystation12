@@ -1213,43 +1213,39 @@
 
 // Holodecks
 /area/holodeck
-	name = "Holodeck"
+	name = "\improper Holodeck"
 	icon_state = "Holodeck"
 	dynamic_lighting = 0
 	sound_env = LARGE_ENCLOSED
 
-/area/holocontrol
-	name = "Holodeck Control"
-	icon_state = "Holodeck"
-
 /area/holodeck/alphadeck
-	name = "Holodeck Alpha"
+	name = "\improper Holodeck Alpha"
 
 /area/holodeck/source_plating
-	name = "Holodeck - Off"
+	name = "\improper Holodeck - Off"
 
 /area/holodeck/source_emptycourt
-	name = "Holodeck - Empty Court"
+	name = "\improper Holodeck - Empty Court"
 	sound_env = ARENA
 
 /area/holodeck/source_boxingcourt
-	name = "Holodeck - Boxing Court"
+	name = "\improper Holodeck - Boxing Court"
 	sound_env = ARENA
 
 /area/holodeck/source_basketball
-	name = "Holodeck - Basketball Court"
+	name = "\improper Holodeck - Basketball Court"
 	sound_env = ARENA
 
 /area/holodeck/source_thunderdomecourt
-	name = "Holodeck - Thunderdome Court"
+	name = "\improper Holodeck - Thunderdome Court"
 	sound_env = ARENA
 
 /area/holodeck/source_courtroom
-	name = "Holodeck - Courtroom"
+	name = "\improper Holodeck - Courtroom"
 	sound_env = AUDITORIUM
 
 /area/holodeck/source_beach
-	name = "Holodeck - Beach"
+	name = "\improper Holodeck - Beach"
 	sound_env = PLAIN
 
 /area/holodeck/source_wildlife
@@ -1260,37 +1256,45 @@
 	sound_env = AUDITORIUM
 
 /area/holodeck/source_meetinghall
-	name = "Holodeck - Meeting Hall"
+	name = "\improper Holodeck - Meeting Hall"
 	sound_env = AUDITORIUM
 
 /area/holodeck/source_theatre
-	name = "Holodeck - Theatre"
+	name = "\improper Holodeck - Theatre"
 	sound_env = CONCERT_HALL
 
 /area/holodeck/source_picnicarea
-	name = "Holodeck - Picnic Area"
+	name = "\improper Holodeck - Picnic Area"
 	sound_env = PLAIN
 
 /area/holodeck/source_snowfield
-	name = "Holodeck - Snow Field"
+	name = "\improper Holodeck - Snow Field"
 	sound_env = FOREST
 
 /area/holodeck/source_desert
-	name = "Holodeck - Desert"
+	name = "\improper Holodeck - Desert"
 	sound_env = PLAIN
 
 /area/holodeck/source_space
-	name = "Holodeck - Space"
+	name = "\improper Holodeck - Space"
 	has_gravity = 0
 	sound_env = SPACE
 
 /area/holodeck/source_cafe
-	name = "Holodeck - Cafe"
+	name = "\improper Holodeck - Cafe"
 	sound_env = PLAIN
 
 /area/holodeck/source_volleyball
-	name = "Holodeck - Volleyball"
+	name = "\improper Holodeck - Volleyball"
 	sound_env = PLAIN
+
+/area/holodeck/source_temple
+	name = "\improper Holodeck - Temple"
+	sound_env = SMALL_ENCLOSED
+
+/area/holodeck/source_plaza
+	name = "\improper Holodeck - Plaza"
+	sound_env = SMALL_ENCLOSED
 
 // Shuttles
 /area/shuttle/administration/centcom
@@ -1429,3 +1433,8 @@
 
 /area/tdome/testing/engineering/unpowered
 	requires_power = 1
+
+/area/prison/solitary
+	name = "Solitary Confinement"
+	icon_state = "brig"
+	req_access = list(access_brig)

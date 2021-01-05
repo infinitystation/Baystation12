@@ -41,6 +41,7 @@
 	#include "items/papers.dm"
 	#include "items/manuals.dm"
 	#include "items/rigs.dm"
+	#include "items/stamps.dm"
 
 	#include "items/clothing/clothing.dm"
 	#include "items/clothing/exploration.dm"
@@ -117,11 +118,9 @@
 	#include "loadout/loadout_xeno.dm"
 	#include "loadout/~defines.dm"
 
-	#include "colony1-peak.dmm"
+	#include "colony1-underground.dmm"
 	#include "colony2-surface.dmm"
-	#include "colony3-ground.dmm"
-	#include "z1_admin.dmm"
-	#include "z2_transit.dmm"
+	#include "colony3-peak.dmm"
 	#include "../away/empty.dmm"
 
 	#include "../away_inf/yacht/yacht.dm"

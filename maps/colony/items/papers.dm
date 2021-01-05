@@ -10,7 +10,7 @@
 	icon = 'maps/colony/icons/obj/uniques.dmi'
 	icon_state = "paper_words"
 
-/obj/item/weapon/paper/medical_blood
+/obj/item/weapon/paper/colony/medical_blood
 	name = "blood problem"
 	info = "<tt><center><b><large>NSV Colony</large></b></center><center>Донорство крови</center><hr>В условиях полугодовой экспедиции без дозаправки и искючительной дороговизны нанокрови, в целях снижения затрат медицинский персонал должен использовать кровь <b>первой группы отрицательного резус-фактора</b>, собираемую с доноров среди персонала. Награда за данную процедуру не предусмотрена регуляциями, из-за чего придумывание поощрения всецело лежит на Медицинском департаменте. <br>Помните, что из-за дороговизны нанокрови, её использование допускается лишь в экстренных ситуациях. <br></tt><i>Была предложена возможность снижения срок заключения в бриге с помощью донорства крови. Рекомендуется обсуждение со старшим сотрудником Охранного департамента</i><tt><hr><i>2 упаковки с нанокровью хранятся на складе.<br><small>NT Support Division</small><br></tt>This paper has been stamped with the stamp of Central Command.</i>"
 	icon = 'maps/colony/icons/obj/uniques.dmi'
@@ -22,12 +22,16 @@
 	icon = 'maps/colony/icons/obj/uniques.dmi'
 	icon_state = "paper_words"
 
-/obj/item/weapon/paper/important //just a placeholder for massages from Central Command
+/obj/item/weapon/paper/important //just a placeholder for messages from Central Command
 	icon = 'maps/colony/icons/obj/uniques.dmi'
 	icon_state = "paper_words"
 
-/obj/item/weapon/paper/engineering_comms
+/obj/item/weapon/paper/colony/engineering_comms
 	name = "telecommunications"
 	info = "<tt><center><b><large>NSV Colony</large></b></center><center>Телекоммуникации</center><hr>Телекоммуникационная станция в носу корабля обеспечивает радиосвязь на судне. Kappa Communication с помощью своих пограничных спутников поддерживает удаленную связь с судном через квантовое реле (Emergency Bluespace Relay). Таким образом, Центральное Комадование может получать сообщения от судна до тех пор, пока реле сохраняет свою работоспособность <hr><center><large>Эксплуатация</large></center>Инженерная команда настроила оборудование перед вылетом, из-за чего действующему технику настоятельно НЕ рекомендуется проводить какие-либо манипуляции с настройками во избежание коллапса системы связи.<hr><center><large>Техническая информация</large></center><li>В случае повреждения серверов или иного оборудования, требуется провести ремонт с помощью размещенных на складе плат. Возможен дозаказ с помощью отделов Исследований или Снабжения.<li><b>Запасная плата от квантового передатчика находится на защищенном складе.</b> В случае уничтожения телекоммуникаций, передатчик должен быть установлен в защищенном месте в пределах судна с последующим уведомлением ЦК о ЧП.<hr><i><small>NT Support Division</small><br></tt>This paper has been stamped with the stamp of Central Command.</i>"
 	icon = 'maps/colony/icons/obj/uniques.dmi'
 	icon_state = "paper_words"
+
+/obj/item/weapon/paper/colony/compactor
+	name = "compactor"
+	info = "<I>Обслуживание гидравлического пресса <br>Краткая инструкция по эксплуатации: <br>1) Не помещайте крупные объекты в камеру - поршни выйдут из строя. <br>2) В случае поломки одного из поршей (лампочка будет гореть красным) - пройдите в секцию обслуживания поршней, отверткой открутите панель на неисправном поршне, с помощью гаечного ключа выпустите давление из главной камеры. Не забудьте поставить всё на место по завершению процедуры. <br>3) Оденьте рабочие перчатки и противогаз при обслуживании поршня - возможна утечка горячего воздуха.</i>"

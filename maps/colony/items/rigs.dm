@@ -215,6 +215,50 @@
 		/obj/item/rig_module/grenade_launcher/light,
 		/obj/item/rig_module/cooling_unit)
 
+/obj/item/weapon/rig/exploration
+	name = "heavy exploration HCM"
+	suit_type = "heavy exploration hardsuit"
+	desc = "Expeditionary Corps' Exoplanet Exploration Armored Unit, A-Unit for short. Built for more hostile (and hungry) environments, it features additional armor and powered exoskeleton."
+	icon_state = "command_exp_rig"
+	armor = list(
+		melee = ARMOR_MELEE_MAJOR,
+		bullet = ARMOR_BALLISTIC_SMALL,
+		laser = ARMOR_LASER_SMALL,
+		energy = ARMOR_ENERGY_RESISTANT,
+		bomb = ARMOR_BOMB_MINOR,
+		bio = ARMOR_BIO_SHIELDED,
+		rad = ARMOR_RAD_SHIELDED
+		)
+
+	chest_type = /obj/item/clothing/suit/space/rig/command
+	helm_type = /obj/item/clothing/head/helmet/space/rig/command/exploration
+	boot_type = /obj/item/clothing/shoes/magboots/rig/command
+	glove_type = /obj/item/clothing/gloves/rig/command
+
+	allowed = list(/obj/item/weapon/gun,
+				   /obj/item/ammo_magazine,
+				   /obj/item/device/flashlight,
+				   /obj/item/weapon/tank,
+				   /obj/item/device/suit_cooling_unit)
+
+	online_slowdown = 0.50
+	offline_slowdown = 4
+	offline_vision_restriction = TINT_BLIND
+
+/obj/item/clothing/head/helmet/space/rig/command/exploration
+	camera = /obj/machinery/camera/network/expedition
+	icon_state = "command_exp_rig"
+	light_overlay = "yellow_double_light"
+	brightness_on = 0.8
+
+/obj/item/weapon/rig/exploration/equipped
+	initial_modules = list(
+		/obj/item/rig_module/maneuvering_jets,
+		/obj/item/rig_module/device/flash,
+		/obj/item/rig_module/device/anomaly_scanner,
+		/obj/item/rig_module/grenade_launcher/light,
+		/obj/item/rig_module/cooling_unit)
+
 /*
  * Overrides
  */
