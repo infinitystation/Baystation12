@@ -2894,6 +2894,9 @@
 	},
 /obj/structure/iv_drip,
 /obj/effect/floor_decal/techfloor,
+/obj/effect/floor_decal/techfloor{
+	dir = 1
+	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/medical/backstorage)
@@ -2906,6 +2909,9 @@
 	dir = 6
 	},
 /obj/effect/floor_decal/techfloor,
+/obj/effect/floor_decal/techfloor{
+	dir = 1
+	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/medical/backstorage)
@@ -3458,6 +3464,9 @@
 /obj/structure/closet/emcloset,
 /obj/effect/floor_decal/techfloor{
 	dir = 8
+	},
+/obj/effect/floor_decal/techfloor{
+	dir = 4
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -4280,6 +4289,9 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 8
 	},
+/obj/effect/floor_decal/techfloor{
+	dir = 4
+	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/medical/backstorage)
@@ -4291,6 +4303,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
+/obj/effect/floor_decal/techfloor,
 /obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/medical/backstorage)
@@ -4302,6 +4315,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
+/obj/effect/floor_decal/techfloor,
 /obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/medical/backstorage)
@@ -8311,6 +8325,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
+/obj/effect/floor_decal/techfloor,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/medical/backstorage)
@@ -8507,6 +8522,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
+/obj/effect/floor_decal/techfloor,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/medical/backstorage)
@@ -8682,6 +8698,9 @@
 /obj/item/weapon/mop,
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 1
+	},
+/obj/effect/floor_decal/techfloor{
+	dir = 6
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -31828,6 +31847,17 @@
 /obj/machinery/light,
 /obj/structure/table/steel,
 /obj/machinery/cell_charger,
+/obj/item/weapon/cell/high{
+	pixel_x = -8;
+	pixel_y = 10
+	},
+/obj/item/weapon/cell/high{
+	pixel_x = 6;
+	pixel_y = 10
+	},
+/obj/item/weapon/cell/high{
+	pixel_x = 1
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/tcommsat/computer)
 "aYm" = (
@@ -38321,6 +38351,9 @@
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 6
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	dir = 1
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
