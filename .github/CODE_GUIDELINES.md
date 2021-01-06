@@ -1,0 +1,279 @@
+# Рекомендации по оформлению кода
+Учтите, эти правила не применимы к коду оригинального разработчика, мы не можем полноценно редактировать их код, из-за конфликтов при слиянии.
+
+***
+
+Мы используем табуляцию с помощью TAB.
+
+***
+
+Методы и классы должны объявляться и применяться через полный путь, это не распространяется на переменные, единственное требование к ним это не разделять их `var/TYPE/NAMEOFVARIABLE` на части. 
+
+***Правильно:***
+```
+/datum/proc/foo()
+
+/datum/proc/foo2()
+/datum/proc/foo3()
+
+/datum/Object
+	var/list/name_pool = "Object"
+	var/list/dictionary = list()
+/datum/Object3/New()
+	. = ..()
+	foo()
+```
+***Плохо:***
+
+```
+/datum
+	proc/foo()
+	proc
+		foo2()
+		foo3()
+	Object/var/list
+		name_pool = "Object"
+		dictionary = list()
+	Object3
+		New()
+			. = ..()
+			foo()
+```
+Мы делаем так чтобы код был читабелен и его можно было легко найти среди файлов, так как классы DM позволяют схожие имена, то искать среди таких растабулированных методов и классов будет достаточно сложно.
+***
+`if`, `else`, `for` не должны оформляться в строчном виде, даже если они нужны ради вызова всего одной функции.
+
+***Правильно:***
+```
+var/condition2 = FALSE
+if(condition)
+	foo()
+	condition2 = condition
+
+
+for(var/object in objects)
+	foo(object)
+	if(condition2)
+		break
+```
+***Плохо:***
+```
+if(condition) foo()
+
+for(var/object in objects){foo(object);if(condition2) break}
+```
+***
+
+Пробелы между аргументами функций (и в объявлении и в применении), математическими операторами и оператором присвоения обязательны. Исключением являются унарные операции (`A--`, `A++`, `!A` и так далее). Пробелы не обязательны у скобок, но если это требуется для читабельности выражения, можете спокойно их ставить (никто не хочет тысячу лет разбирать выражение с более чем тремя не организованными парами скобок, например `(A || (B && C) && (B || ((A && C) || D)))`).
+
+***Правильно:***
+```
+/datum/fire(var/user, var/target)
+	if(CanFire() && target)
+		fuel--
+		var/corpse = target
+```
+***Плохо:***
+```
+/datum/fire(var/user,var/target)
+	if ( CanFire()&&target )
+		fuel --
+		var/corpset=target
+```
+***
+
+Не оставляйте в конце методов бесполезные `return`, в это входят пустые `return` и значения которые не имеют смысла. 
+
+***Правильно:***
+```
+/proc/do_thing()
+	<do_thing>
+	return <result_of_doing_thing>
+	
+/proc/do_thing()
+	<do_thing>
+	. = <result_of_doing_thing>
+	
+/proc/do_thing()
+	<do_thing>
+	<do_other_thing>
+```
+***Плохо:***
+```
+/proc/do_thing()
+	<do_thing>
+	. = <result_of_doing_thing>
+	return
+
+/proc/do_thing()
+	<do_thing>
+	. = <result_of_doing_thing>
+	return .
+
+/proc/do_thing()
+	<do_thing>
+	<do_other_thing>
+	return
+```
+***
+
+Булевые переменные и константы должны быть оформлены через `TRUE` и `FALSE`, не через 1 и 0.
+***Правильно:***
+```
+/obj/item/pistol/
+	var/broken = FALSE
+
+/obj/item/pistol/proc/can_fire()
+	return TRUE
+```
+***Плохо:***
+```
+/obj/item/pistol/
+	var/broken = 0
+
+/obj/item/pistol/proc/can_fire()
+	return 1
+```
+***
+
+Использование двоеточия (:) для доступа к свойствам объекта и процедурам обычно не рекомендуется.
+
+***Правильно:***
+```
+var/obj = new obj()
+var/count = obj.count
+```
+***Плохо:***
+```
+var/obj = new obj()
+if(hasvar(obj, "count"))
+	var/count = obj:count
+```
+***
+
+"Сырое" использование `<<` и `>>` запрещено, вместо этого используйте макросы/функции на подобии `to_chat`, вместо использования \green, то есть встроенных текстовых макросов оформления используйте HTML, желательно макросы серии SPAN_SOMETHING().
+
+***Правильно:***
+```
+to_chat(player, SPAN_NOTICE("Everything is OK."))
+to_chat(player, SPAN_WARNING("There's something wrong..."))
+to_chat(player, SPAN_DANGER("Everything is fucked up!"))
+```
+***Плохо:***
+```
+player << "\blue Everything is OK."
+to_chat(player, "<span class="notice">There's something wrong...</span>")
+player << "\red \bold Everything is fucked up!"
+```
+***
+
+del() не рекомендуется, используйте qdel() если требуется.
+
+***Правильно:***
+```
+qdel(src)
+```
+***Плохо:***
+```
+del(src)
+```
+***
+
+# Названия
+Избегайте сокращённых имен переменных и функций класса.
+В методах их можно использовать, но не желательно.
+
+***Правильно:***
+```
+/obj/proximity_sensor/update_sprites()
+var/count = 0
+```
+***Плохо:***
+```
+/obj/prox_sensor/upd_sprites()
+var/c = 1
+```
+***
+
+Не используйте `src.` и не приводите метод в состояние в котором он требует этого, то есть не называйте аргументы и переменные метода одинаковыми именами с переменными класса, для уверенности можно использовать \_<!--, но правило ниже решит эту проблему в корне (если не считать Бейские переменные)-->. 
+
+***Правильно:***
+```
+/obj/SetName(var/newName)
+	name = newName
+	
+/obj/SetName(var/_name)
+	name = _name
+```
+***Плохо:***
+```
+/obj/SetName(var/name)
+	name = name
+	
+/obj/SetName(var/name)
+	src.name = name
+```
+***
+
+Итак мы перешли к оформлению названий переменных, классов и методов.
+<ul>
+	<li>Переменные классов (кроме /tmp/), методы, классы должны быть оформлены в "PascalCase".
+	<li>Временные переменные (/tmp/) и переменные объявлённые внутри метода должны быть оформлены в "snake_case".
+	<li>Итераторы и аргументы функций должны оформляться в "camalCase".
+	<li>ВСЕ названия дефайнов и макросов должны быть в верхнем регистре.
+</ul>
+
+***Правильно:***
+```
+/datum/IconManager/proc/RedrawIcons()
+/datum/IconManager
+	var/list/IconsDictionary
+	var/tmp/icon_of_holo
+#define PLUS +
+```
+***Плохо:***
+```
+/datum/IconManager/proc/redrawIcons()
+/datum/IconManager
+	var/list/icons_Dictionary
+	var/tmp/IconOf_holo
+#define PLUS +
+```
+***
+
+# Редактирование оригинального кода
+
+INF среди оригинала, вне папки infinity/
+```
+    (наш однострочный код) //inf
+//[INF]
+    (наш многострочный код)
+//[/INF]
+```
+
+Замена чего либо в строчке:
+```
+/*
+   if(rule == 1) заменить на if(rules == 2 && !cas)
+Коментируем оригинал ПОЛНОСТЬЮ вместе со всей табуляцией, коментариями и т.п..
+*/
+    if(rules == 2 && !cas) //inf, was:    if(rule == 1)
+```
+Отключаем оригинальный код.
+```
+//inf.exclude    (однострочный код)
+/*[inf.exclude]
+    (Многострочный код Бея)
+[/inf.exclude]*/
+```
+
+# Коментирование
+В коментариях запрещено
+<ul>
+	<li>Использование юникодных хитростей, в том числе русский язык, символов-обманок и стэков символов с эротическим содержанием.
+	<li>Мат в любом проявлении, слово "сука" хоть и литературное, но в коментариях расценивается как мат.  
+	<li>Оскорбление игроков и коллег.
+	<li>Оставлять бессмысленные, не читабельные коментарии.
+	<li>Перенос стро<br>
+		ки в середине слов.
+</ul>
