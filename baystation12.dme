@@ -3311,6 +3311,7 @@
 #include "infinity\code\game\machinery\disk_writer.dm"
 #include "infinity\code\game\machinery\jukebox.dm"
 #include "infinity\code\game\machinery\lightswich.dm"
+#include "infinity\code\game\machinery\newscaster.dm"
 #include "infinity\code\game\machinery\nuclear_bomb.dm"
 #include "infinity\code\game\machinery\sealgen.dm"
 #include "infinity\code\game\machinery\security_scanner.dm"
