@@ -10,6 +10,7 @@ GLOBAL_LIST_INIT(recomended_holoplants_colors, list(COLOR_LIGHTING_RED_BRIGHT,CO
 	var/interference = FALSE
 
 	var/brightness_on = 2
+	var/enabled = TRUE
 
 	var/icon/plant = null
 	var/plant_color
@@ -50,7 +51,8 @@ GLOBAL_LIST_INIT(recomended_holoplants_colors, list(COLOR_LIGHTING_RED_BRIGHT,CO
 		change_plant(plant)
 	change_color(plant_color)
 
-	overlays += plant
+	if(enabled)
+		overlays += plant
 	SET_L_RPC(brightness_on, 1, plant_color)
 
 /obj/structure/holoplant/proc/change_plant(var/state)
@@ -78,8 +80,17 @@ GLOBAL_LIST_INIT(recomended_holoplants_colors, list(COLOR_LIGHTING_RED_BRIGHT,CO
 
 	set_light(l_color=ncolor)
 
+/obj/structure/holoplant/Click(var/atom/A, var/control, var/list/params)
+	. = ..()
+	var/list/L = params2list(params)
+	if(L["alt"])
+		enabled = !enabled
+		brightness_on = brightness_on ? 0 : initial(brightness_on)
+		update_icon()
+		to_chat(usr, SPAN_NOTICE("You turn [enabled ? "on": "off"] the [src]"))
+
 /obj/structure/holoplant/attack_hand(var/mob/user, params)
-	if(!interference)
+	if(!interference && enabled)
 		switch(alert("What do you want?",,"Color", "Cancel", "Hologram"))
 			if("Color")
 				change_color(input("Select New color", "Color", plant_color) as color)
@@ -131,7 +142,7 @@ GLOBAL_LIST_INIT(recomended_holoplants_colors, list(COLOR_LIGHTING_RED_BRIGHT,CO
 	interference = FALSE
 
 /obj/structure/holoplant/proc/doInterference()
-	if(!interference)
+	if(!interference && enabled)
 		addtimer(CALLBACK(src, .proc/Interference), 0, TIMER_STOPPABLE)
 
 /obj/structure/holoplant/Crossed(var/mob/living/L)
