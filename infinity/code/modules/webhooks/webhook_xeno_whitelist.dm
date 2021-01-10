@@ -62,7 +62,12 @@
 		B.Cut()
 	revoke = A.Copy()
 
-	var/list/unite = grant + revoke
+	var/list/unite
+	for(var/ckey in grant)
+		unite[ckey] = grant[ckey]
+	for(var/ckey in revoke)
+		unite[ckey] += revoke[ckey]
+
 	if(!unite || !unite.len)
 		.["content"] = "Сюда пришло изменение вайтлиста, но мы потеряли список."
 		return
