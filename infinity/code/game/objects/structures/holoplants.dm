@@ -83,7 +83,7 @@ GLOBAL_LIST_INIT(recomended_holoplants_colors, list(COLOR_LIGHTING_RED_BRIGHT,CO
 /obj/structure/holoplant/Click(var/atom/A, var/control, var/list/params)
 	. = ..()
 	var/list/L = params2list(params)
-	if(L["alt"])
+	if(L["alt"] && isliving(usr))
 		enabled = !enabled
 		brightness_on = brightness_on ? 0 : initial(brightness_on)
 		update_icon()
