@@ -1034,6 +1034,7 @@ I said no!
 /datum/recipe/pelmeni
 	items = list(
 		/obj/item/weapon/reagent_containers/food/snacks/doughslice,
+		/obj/item/weapon/reagent_containers/food/snacks/doughslice,
 		/obj/item/weapon/reagent_containers/food/snacks/rawmeatball
 	)
 	result = /obj/item/weapon/reagent_containers/food/snacks/dumpling
