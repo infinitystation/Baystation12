@@ -162,20 +162,6 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		. = TOPIC_REFRESH
 
 	else if (href_list["synch"])
-		var/nullification = FALSE
-		if(check_rights(R_SERVER))
-			if(alert("Удалить старые данные, перед тем как заменить их новыми?", "ERASE WARNING", "Удалить и записать новое", "Нет, только добавить") == "Удалить и записать новое")
-				nullification = TRUE
-				message_staff("ВНИМАНИЕ: [usr.ckey] готовится сбросить ксеновайтлист в [href_list["synch"] == "CDB" ? "БД" : "конфиг-файле"]!!!")
-		if(href_list["synch"] == "CDB")
-			if(alert("Вы уверены что хотите скопировать данные из конфига в БД?\nВсе изменения ниже будут отменены!", "Synch", "Да", "Отмена") == "Отмена")
-				return TOPIC_NOACTION
-		else if(href_list["synch"] == "DBC")
-			if(alert("Вы уверены что хотите скопировать данные из БД в конфиг?\nВсе изменения ниже будут отменены!", "Synch", "Да", "Отмена") == "Отмена")
-				return TOPIC_NOACTION
-		else
-			to_chat(usr, "Ошибка синхронизации: неизвестные адреса синхронизации.")
-			return TOPIC_NOACTION
 		var/list/l
 		var/list/notlist
 		if(config.usealienwhitelistSQL)
@@ -192,6 +178,21 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 			else
 				l = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), "ckey")
 				notlist = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(FALSE), lowerxenoname), "ckey")
+
+		var/nullification = FALSE
+		if(check_rights(R_SERVER) && (notlist && notlist.len))
+			if(alert("Удалить старые данные, перед тем как заменить их новыми?", "ERASE WARNING", "Удалить и записать новое", "Нет, только добавить") == "Удалить и записать новое")
+				nullification = TRUE
+				message_staff("ВНИМАНИЕ: [usr.ckey] готовится сбросить ксеновайтлист в [href_list["synch"] == "CDB" ? "БД" : "конфиг-файле"]!!!")
+		if(href_list["synch"] == "CDB")
+			if(alert("Вы уверены что хотите скопировать данные из конфига в БД?\nВсе изменения ниже будут отменены!", "Synch", "Да", "Отмена") == "Отмена")
+				return TOPIC_NOACTION
+		else if(href_list["synch"] == "DBC")
+			if(alert("Вы уверены что хотите скопировать данные из БД в конфиг?\nВсе изменения ниже будут отменены!", "Synch", "Да", "Отмена") == "Отмена")
+				return TOPIC_NOACTION
+		else
+			to_chat(usr, "Ошибка синхронизации: неизвестные адреса синхронизации.")
+			return TOPIC_NOACTION
 
 		var/list/grant1 = list()
 		var/list/grant2 = list()
