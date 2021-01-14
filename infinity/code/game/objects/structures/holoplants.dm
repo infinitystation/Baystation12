@@ -89,7 +89,7 @@ GLOBAL_LIST_INIT(recomended_holoplants_colors, list(COLOR_LIGHTING_RED_BRIGHT,CO
 		update_icon()
 		to_chat(usr, SPAN_NOTICE("You turn [enabled ? "on": "off"] the [src]"))
 
-/obj/structure/holoplant/attack_hand(var/mob/user, params)
+/obj/structure/holoplant/attack_hand(mob/user)
 	if(!interference && enabled)
 		switch(alert("What do you want?",,"Color", "Cancel", "Hologram"))
 			if("Color")
