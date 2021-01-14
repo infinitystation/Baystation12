@@ -32,6 +32,7 @@
 /obj/item/weapon/reagent_containers/food/snacks/dumpling
 	name = "\improper meat dumplings"
 	desc = "Raw meat appetizer, native to Terra."
+	icon = 'infinity/icons/obj/food.dmi'
 	icon_state = "pelmeni"
 	filling_color = "#db0000"
 	center_of_mass = "x=16;y=16"
@@ -43,6 +44,7 @@
 obj/item/weapon/reagent_containers/food/snacks/boileddumplings
 	name = "\improper boiled dumplings"
 	desc = "A dish consisting of boiled pieces of meat wrapped in dough. Delicious!"
+	icon = 'infinity/icons/obj/food.dmi'
 	icon_state = "pelmeni_boiled"
 	filling_color = "#db0000"
 	center_of_mass = "x=16;y=16"
