@@ -15,7 +15,7 @@ datum/gear/utility/modular_scanner/medical
 	display_name = "Scanner module, medical"
 	path = /obj/item/weapon/stock_parts/computer/scanner/medical
 
-/* SIERRA ONLY!!! TORCH HAS THEIR OWN FORCESPAWNABLE PDA
+/* SIERRA ONLY!!! TORCH HAS THEIR OWN FORCESPAWNABLE PDA */
 datum/gear/utility/pda
 	display_name = "PDA selection"
 	path = /obj/item/modular_computer/pda
@@ -24,7 +24,7 @@ datum/gear/utility/pda
 /datum/gear/utility/pda/New()
 	..()
 	var/pdas = list()
-	slot = slot_wear_id
+	slot = slot_in_backpack
 	pdas["grey"]                    = /obj/item/modular_computer/pda
 	pdas["grey-red (sec)"]          = /obj/item/modular_computer/pda/security
 	pdas["lightgrey-brown (sup)"]   = /obj/item/modular_computer/pda/cargo
@@ -43,16 +43,6 @@ datum/gear/utility/pda
 	pdas["black (mercs)"]           = /obj/item/modular_computer/pda/syndicate
 	gear_tweaks += new/datum/gear_tweak/path(pdas)
 
-/datum/gear/utility/pda/spawn_on_mob(var/mob/living/carbon/human/H, var/metadata)
-	var/obj/item/modular_computer/pda/item = spawn_item(H, metadata)
-	var/obj/item/weapon/card/id = H.GetIdCard()
-	if(id)
-		item.attackby(id, H)
-	if(item.tesla_link && !istype(H, /mob/living/carbon/human/dummy))	//PDA in loadout shouldn't work
-		item.turn_on()
-	if(H.equip_to_slot_if_possible(item, slot, del_on_fail = 1))
-		. = item
-
 /datum/gear/utility/wrist_computer
 	display_name = "Wrist computer selection"
 	path = /obj/item/modular_computer/pda/wrist
@@ -61,7 +51,7 @@ datum/gear/utility/pda
 /datum/gear/utility/wrist_computer/New()
 	..()
 	var/wcomp = list()
-	slot = slot_wear_id
+	slot = slot_in_backpack
 	wcomp["black"]                   = /obj/item/modular_computer/pda/wrist/
 	wcomp["lightgrey"]               = /obj/item/modular_computer/pda/wrist/grey
 	wcomp["black-red (sec)"]         = /obj/item/modular_computer/pda/wrist/security
@@ -82,14 +72,3 @@ datum/gear/utility/pda
 	wcomp["short (lightgrey)"]       = /obj/item/modular_computer/pda/wrist/lila
 	wcomp["short (black)"]           = /obj/item/modular_computer/pda/wrist/lila/black
 	gear_tweaks += new/datum/gear_tweak/path(wcomp)
-
-/datum/gear/utility/wrist_computer/spawn_on_mob(var/mob/living/carbon/human/H, var/metadata)
-	var/obj/item/modular_computer/pda/wrist/item = spawn_item(H, metadata)
-	var/obj/item/weapon/card/id = H.GetIdCard()
-	if(id)
-		item.attackby(id, H)
-	if(item.tesla_link && !istype(H, /mob/living/carbon/human/dummy))	//PDA in loadout shouldn't work
-		item.turn_on()
-	if(H.equip_to_slot_if_possible(item, slot, del_on_fail = 1))
-		. = item
-*/
