@@ -43,15 +43,15 @@ datum/gear/utility/pda
 	pdas["black (mercs)"]           = /obj/item/modular_computer/pda/syndicate
 	gear_tweaks += new/datum/gear_tweak/path(pdas)
 
-/datum/gear/utility/pda/spawn_on_mob(var/mob/living/carbon/human/H, var/metadata)	
-	var/obj/item/modular_computer/pda/item = spawn_item(H, metadata)	
-	var/obj/item/weapon/card/id = H.GetIdCard()	
-	if(id)	
-		item.attackby(id, H)	
-	if(item.tesla_link && !istype(H, /mob/living/carbon/human/dummy))	//PDA in loadout shouldn't work	
-		item.turn_on()	
-	if(H.equip_to_slot_if_possible(item, slot, del_on_fail = 1))	
-		. = item	
+/datum/gear/utility/pda/spawn_on_mob(var/mob/living/carbon/human/H, var/metadata)
+	var/obj/item/modular_computer/pda/item = spawn_item(H, metadata)
+	var/obj/item/weapon/card/id = H.GetIdCard()
+	if(id)
+		item.attackby(id, H)
+	if(item.tesla_link && !istype(H, /mob/living/carbon/human/dummy))	//PDA in loadout shouldn't work
+		item.turn_on()
+	if(H.equip_to_slot_if_possible(item, slot, del_on_fail = 1))
+		. = item
 
 /datum/gear/utility/wrist_computer
 	display_name = "Wrist computer selection"
@@ -83,13 +83,13 @@ datum/gear/utility/pda
 	wcomp["short (black)"]           = /obj/item/modular_computer/pda/wrist/lila/black
 	gear_tweaks += new/datum/gear_tweak/path(wcomp)
 
-/datum/gear/utility/wrist_computer/spawn_on_mob(var/mob/living/carbon/human/H, var/metadata)	
-	var/obj/item/modular_computer/pda/wrist/item = spawn_item(H, metadata)	
-	var/obj/item/weapon/card/id = H.GetIdCard()	
-	if(id)	
-		item.attackby(id, H)	
-	if(item.tesla_link && !istype(H, /mob/living/carbon/human/dummy))	//PDA in loadout shouldn't work	
-		item.turn_on()	
-	if(H.equip_to_slot_if_possible(item, slot, del_on_fail = 1))	
-		. = item	
+/datum/gear/utility/wrist_computer/spawn_on_mob(var/mob/living/carbon/human/H, var/metadata)
+	var/obj/item/modular_computer/pda/wrist/item = spawn_item(H, metadata)
+	var/obj/item/weapon/card/id = H.GetIdCard()
+	if(id)
+		item.attackby(id, H)
+	if(item.tesla_link && !istype(H, /mob/living/carbon/human/dummy))	//PDA in loadout shouldn't work
+		item.turn_on()
+	if(H.equip_to_slot_if_possible(item, slot, del_on_fail = 1))
+		. = item
 */
