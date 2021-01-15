@@ -39,7 +39,7 @@
 	bitesize = 2
 /obj/item/weapon/reagent_containers/food/snacks/dumpling/Initialize()
 	.=..()
-	reagents.add_reagent(/datum/reagent/nutriment/protein, 1)
+	reagents.add_reagent(/datum/reagent/nutriment/protein, 5)
 
 obj/item/weapon/reagent_containers/food/snacks/boileddumplings
 	name = "\improper boiled dumplings"
