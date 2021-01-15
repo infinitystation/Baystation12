@@ -80,22 +80,13 @@ GLOBAL_LIST_INIT(recomended_holoplants_colors, list(COLOR_LIGHTING_RED_BRIGHT,CO
 
 	set_light(l_color=ncolor)
 
-/obj/structure/holoplant/Click(var/atom/A, var/control, var/list/params)
-	. = ..()
-	var/list/L = params2list(params)
-	if(L["alt"] && isliving(usr))
-		enabled = !enabled
-		brightness_on = brightness_on ? 0 : initial(brightness_on)
-		update_icon()
-		to_chat(usr, SPAN_NOTICE("You turn [enabled ? "on": "off"] the [src]"))
-
-/obj/structure/holoplant/attack_hand(var/mob/user, params)
-	if(!interference && enabled)
+/obj/structure/holoplant/attack_hand(mob/user)
+	if(!interference)
 		switch(alert("What do you want?",,"Color", "Cancel", "Hologram"))
 			if("Color")
 				change_color(input("Select New color", "Color", plant_color) as color)
 			if("Hologram")
-				change_plant(input("Select Hologram", "Hologram") in (emagged ? emagged_states : possible_states))
+				change_plant(input("Select Hologram", "Hologram") in (emagged ? emagged_states : possible_states))		
 		update_icon()
 
 /obj/structure/holoplant/attackby(obj/item/I, mob/user, click_params)
@@ -105,6 +96,11 @@ GLOBAL_LIST_INIT(recomended_holoplants_colors, list(COLOR_LIGHTING_RED_BRIGHT,CO
 			emag_act()
 		else
 			rollback()
+	if(isScrewdriver(I))
+		enabled = !enabled
+		brightness_on = brightness_on ? 0 : initial(brightness_on)
+		to_chat(usr, SPAN_NOTICE("You switch [enabled ? "on" : "off"] the [src]"))
+		update_icon()
 
 /obj/structure/holoplant/proc/rollback()
 	emagged = FALSE
