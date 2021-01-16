@@ -403,6 +403,17 @@
 			to_chat(usr, SPAN_NOTICE("You are breathing easy."))
 		else
 			to_chat(usr, SPAN_DANGER("You cannot breathe!"))
+//[INF]
+/obj/screen/movement/on_update_icon()
+	. = ..()
+	if(owner?.facing_dir && owner?.client && owner?.client?.prefs)
+		chached_fixeye = istype(chached_fixeye, /image) ? chached_fixeye : image('icons/mob/screen/infinity.dmi', "fixeye")
+		var/color_to_use = (owner.client.prefs.UI_style_color == "#ffffff") || !owner.client.prefs.UI_style_color  ? ui_style2additional_color(owner.client.prefs.UI_style) : owner.client.prefs.UI_style_color
+		chached_fixeye.color = color_to_use
+		overlays += chached_fixeye
+	else
+		overlays -= chached_fixeye
+//[/INF]
 
 /obj/screen/movement
 	var/image/chached_fixeye
@@ -418,15 +429,3 @@
 			return
 	//[/INF]
 		usr.set_next_usable_move_intent()
-
-//[INF]
-/obj/screen/movement/on_update_icon()
-	. = ..()
-	if(owner?.facing_dir && owner?.client && owner?.client?.prefs)
-		chached_fixeye = istype(chached_fixeye, /image) ? chached_fixeye : image('icons/mob/screen/infinity.dmi', "fixeye")
-		var/color_to_use = (owner.client.prefs.UI_style_color == "#ffffff") || !owner.client.prefs.UI_style_color  ? ui_style2additional_color(owner.client.prefs.UI_style) : owner.client.prefs.UI_style_color
-		chached_fixeye.color = color_to_use
-		overlays += chached_fixeye
-	else
-		overlays -= chached_fixeye
-//[/INF]
