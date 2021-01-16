@@ -84,5 +84,5 @@
 			"value" = "```[jointext(text, "\n")]```"
 		)
 	if(fields && fields.len)
-		desc["fields"] = list(fields)
+		desc["fields"] = fields
 	.["embeds"] = list(desc)
