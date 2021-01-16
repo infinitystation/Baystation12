@@ -907,8 +907,7 @@
 	},
 /obj/machinery/door/airlock/civilian{
 	dir = 4;
-	name = "Janitor Closet";
-	req_access = newlist()
+	name = "Canister Storage"
 	},
 /obj/effect/floor_decal/techfloor,
 /obj/effect/floor_decal/techfloor{
@@ -21530,9 +21529,6 @@
 /turf/simulated/floor/plating,
 /area/quartermaster/hangar)
 "Ik" = (
-/obj/machinery/camera/network/hangar{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
 	},
@@ -21558,6 +21554,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/catwalk_plated,
+/obj/machinery/camera/network/hangar{
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/quartermaster/hangar)
 "Im" = (

@@ -259,19 +259,28 @@
 	name = "Second Deck - Service - Bar"
 	icon_state = "bar"
 	sound_env = SMALL_ENCLOSED
-	req_access = list(access_bar)
+	req_access = list(list(access_bar, access_kitchen))
 
-/area/crew_quarters/mess
-	name = "Second Deck - Living - Bar"
+/area/crew_quarters/galley
+	name = "Second Deck - Service - Galley"
+	icon_state = "kitchen"
+	req_access = list(list(access_kitchen, access_bar))
+
+/area/crew_quarters/galley/backroom
+	name = "Second Deck - Service - Galley Cold Storage"
+	icon_state = "kitchen"
+	req_access = list(list(access_kitchen, access_bar, access_maint_tunnels))
+
+/area/crew_quarters/cafe
+	name = "Second Deck - Living - Cafe"
 	icon_state = "cafeteria"
-	sound_env = SMALL_ENCLOSED
 
 /area/crew_quarters/sauna
 	name = "Second Deck - Living - Sauna"
 	icon_state = "sauna"
 	sound_env = SMALL_ENCLOSED
 
-/area/grove/theta// /area/ai_abadoned
+/area/grove/theta // /area/ai_abadoned
 	name = "Second Deck - Grove - Theta"
 	sound_env = LARGE_SOFTFLOOR
 
@@ -289,18 +298,7 @@
 	name = "Second Deck - Living - Gym"
 	icon_state = "fitness"
 
-/area/crew_quarters/cafe
-	name = "Second Deck - Living - Cafe"
-	icon_state = "cafeteria"
 
-/area/crew_quarters/galley
-	name = "Second Deck - Service - Galley"
-	icon_state = "kitchen"
-	req_access = list(access_kitchen)
-
-/area/crew_quarters/galley/backroom
-	name = "Second Deck - Service - Galley Cold Storage"
-	icon_state = "kitchen"
 
 /area/crew_quarters/actor
 	name = "Second Deck - Service - Actor"

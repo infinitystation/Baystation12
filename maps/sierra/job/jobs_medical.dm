@@ -42,7 +42,7 @@
 		access_maint_tunnels, access_emergency_storage, access_crematorium,
 		access_surgery, access_eva, access_external_airlocks,
 		access_medical_equip, access_senmed, access_hangar,
-		access_chemistry
+//		access_chemistry
 	)
 
 	minimal_access = list()
