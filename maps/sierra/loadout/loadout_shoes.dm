@@ -10,3 +10,7 @@
 /datum/gear/shoes/dress
 	display_name = "dress shoes"
 	path = /obj/item/clothing/shoes/dress
+	
+/datum/gear/shoes/lowworkboots
+	display_name = "low workboots"
+	path = /obj/item/clothing/shoes/workboots/alt
