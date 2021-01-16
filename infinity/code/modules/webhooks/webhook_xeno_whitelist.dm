@@ -62,7 +62,12 @@
 		B.Cut()
 	revoke = A.Copy()
 
-	var/list/unite = grant + revoke
+	var/list/unite = list()
+	for(var/ckey in grant)
+		unite[ckey] = grant[ckey]
+	for(var/ckey in revoke)
+		unite[ckey] += revoke[ckey]
+
 	if(!unite || !unite.len)
 		.["content"] = "Сюда пришло изменение вайтлиста, но мы потеряли список."
 		return
@@ -74,10 +79,10 @@
 		var/list/text = list("diff")
 		for(var/race in check)
 			text += race
-		fields.Add(list(
+		fields[++fields.len] = list(
 			"name" = ckey2,
 			"value" = "```[jointext(text, "\n")]```"
-		))
+		)
 	if(fields && fields.len)
 		desc["fields"] = list(fields)
 	.["embeds"] = list(desc)
