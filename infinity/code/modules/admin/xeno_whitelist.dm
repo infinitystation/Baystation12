@@ -7,10 +7,6 @@
 
 	if(!usr.client) return
 
-	if(istype(usr,/mob/new_player))
-		to_chat(usr, "НаноУИ не работают в лобби. Когда нибудь я пойму почему. Пожалуйста зайди в раунд или обзерв.\n(с) Laxesh")
-		return
-
 	if(!istype(src,/datum/admins))
 		src = usr.client.holder
 	if(!istype(src,/datum/admins))
@@ -24,7 +20,10 @@
 		log_admin("[key_name(usr)] access xeno whitelist via debug.")
 		message_staff("[key_name_admin(usr)] currently debugging xeno whitelist.")
 
-	var/datum/nano_module/xenopanel/NM = new /datum/nano_module/xenopanel(usr)
+	var/datum/nano_module/xenopanel/NM = locate("xenoui_[usr.ckey]")
+	if(!NM)
+		NM = new /datum/nano_module/xenopanel(usr)
+		NM.tag = "xenoui_[usr.ckey]"
 	NM.ui_interact(usr)
 
 /*
@@ -163,15 +162,6 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 		. = TOPIC_REFRESH
 
 	else if (href_list["synch"])
-		if(href_list["synch"] == "CDB")
-			if(alert("Вы уверены что хотите скопировать данные из конфига в БД?\nВсе изменения ниже будут отменены!", "Synch", "Да", "Отмена") == "Отмена")
-				return TOPIC_NOACTION
-		else if(href_list["synch"] == "DBC")
-			if(alert("Вы уверены что хотите скопировать данные из БД в конфиг?\nВсе изменения ниже будут отменены!", "Synch", "Да", "Отмена") == "Отмена")
-				return TOPIC_NOACTION
-		else
-			to_chat(usr, "Ошибка синхронизации: неизвестные адреса синхронизации.")
-			return TOPIC_NOACTION
 		var/list/l
 		var/list/notlist
 		if(config.usealienwhitelistSQL)
@@ -189,29 +179,58 @@ GLOBAL_DATUM_INIT(xeno_state, /datum/topic_state/admin_state/xeno, new)
 				l = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(TRUE), lowerxenoname), "ckey")
 				notlist = SortByRace(ParseXenoWhitelist(GetXenoWhitelist(FALSE), lowerxenoname), "ckey")
 
+		var/nullification = FALSE
+		if(check_rights(R_SERVER) && (notlist && notlist.len))
+			if(alert("Удалить старые данные, перед тем как заменить их новыми?", "ERASE WARNING", "Удалить и записать новое", "Нет, только добавить") == "Удалить и записать новое")
+				nullification = TRUE
+				message_staff("ВНИМАНИЕ: [usr.ckey] готовится сбросить ксеновайтлист в [href_list["synch"] == "CDB" ? "БД" : "конфиг-файле"]!!!")
+		if(href_list["synch"] == "CDB")
+			if(alert("Вы уверены что хотите скопировать данные из конфига в БД?\nВсе изменения ниже будут отменены!", "Synch", "Да", "Отмена") == "Отмена")
+				return TOPIC_NOACTION
+		else if(href_list["synch"] == "DBC")
+			if(alert("Вы уверены что хотите скопировать данные из БД в конфиг?\nВсе изменения ниже будут отменены!", "Synch", "Да", "Отмена") == "Отмена")
+				return TOPIC_NOACTION
+		else
+			to_chat(usr, "Ошибка синхронизации: неизвестные адреса синхронизации.")
+			return TOPIC_NOACTION
+
 		var/list/grant1 = list()
+		var/list/grant2 = list()
+		var/list/notgrant = list()
 		for(var/list/ckey5 in l)
 			var/list/local = ckey5["YES"]
 			if(local && local.len)
 				grant1[ckey5["ckey"]] = local
 
-		if(TRUE)		// HARD RESET not need this. But we not need HReset now.
-			var/list/notgrant = list()
+		if(nullification == FALSE)		// HARD RESET not need this.
 			for(var/list/ckey6 in notlist)
 				var/list/local = ckey6["YES"]
 				if(local && local.len)
 					notgrant[ckey6["ckey"]] = local
 
-			grant1 = xeno_diff_list(grant1, notgrant)
+			grant2 = xeno_diff_list(grant1, notgrant)
+		else	// HARD RESET
+			log_admin("XENOWHITELIST RESET! Type: [href_list["synch"] == "CDB" ? "SQL" : "CONFIG"]. Administrator: [usr.ckey]")
+			if(href_list["synch"] == "CDB")
+				var/sql = "DELETE FROM `whitelist` WHERE race IS NOT NULL"
+				establish_db_connection()
+				if(!dbcon.IsConnected())
+					to_chat(usr, "Обнуление неудалось.")
+					return TOPIC_NOACTION
+				var/DBQuery/query_insert = dbcon.NewQuery(sql)
+				query_insert.Execute()
+			else
+				fdel("config/alienwhitelist.txt")
+				text2file("\n", "config/alienwhitelist.txt")
 
-		if(!grant1 || !grant1.len)
+		if(!grant2 || !grant2.len)
 			to_chat(usr, "Нечего переносить.")
 			return TOPIC_NOACTION
 		var/success
 		if(href_list["synch"] == "CDB")
-			success = upload_SQL(usr, grant1, null)
+			success = upload_SQL(usr, grant2, null)
 		else
-			success = upload_CONFIG(usr, grant1, null)
+			success = upload_CONFIG(usr, grant2, null)
 		if(!success)
 			to_chat(usr, "Загрузка неудалась.")
 		. = TOPIC_REFRESH
