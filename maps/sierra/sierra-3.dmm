@@ -17160,8 +17160,7 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/effect/catwalk_plated,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "aDE" = (
 /obj/structure/cable/green{
@@ -38320,8 +38319,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
-/obj/effect/catwalk_plated,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "enY" = (
 /turf/simulated/wall/r_wall/prepainted,
