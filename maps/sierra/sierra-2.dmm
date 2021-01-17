@@ -124,9 +124,6 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/aft)
 "aaq" = (
-/obj/machinery/door/airlock/glass/civilian{
-	name = "Kitchen"
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -137,6 +134,9 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/civilian{
+	name = "Kitchen Cold Storage"
+	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/galley)
 "aar" = (
@@ -221,10 +221,6 @@
 /area/bridge/lobby)
 "aaz" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/glass/civilian{
-	dir = 4;
-	name = "Galley Cold Storage"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -242,6 +238,9 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/random/date_based/christmas/doorwreath{
 	dir = 8
+	},
+/obj/machinery/door/airlock/civilian{
+	name = "Kitchen Cold Storage"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/galley/backroom)
@@ -843,6 +842,9 @@
 /obj/structure/closet/shipping_wall/filled{
 	pixel_x = -32;
 	pixel_y = 32
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
 	},
 /turf/simulated/floor/tiled,
 /area/hydroponics)
@@ -1745,15 +1747,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 1
-	},
-/turf/simulated/floor/tiled,
-/area/hydroponics)
-"adL" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
 /turf/simulated/floor/tiled,
 /area/hydroponics)
 "adM" = (
@@ -3721,10 +3715,6 @@
 /turf/simulated/floor/carpet/blue,
 /area/crew_quarters/heads/cobed)
 "ahb" = (
-/obj/machinery/door/airlock/civilian{
-	autoset_access = 0;
-	name = "Hydroponics"
-	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -3737,6 +3727,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/random/date_based/christmas/doorwreath{
 	dir = 1
+	},
+/obj/machinery/door/airlock/glass/civilian{
+	name = "Hydroponics"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/hydroponics)
@@ -4474,12 +4467,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 1;
-	icon_state = "pipe-c"
-	},
-/obj/effect/catwalk_plated,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "aiC" = (
 /obj/machinery/door/firedoor,
@@ -10730,7 +10718,6 @@
 /obj/structure/bed/sofa/black/right{
 	dir = 8
 	},
-/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/carpet/red,
 /area/crew_quarters/cafe)
 "aui" = (
@@ -11628,16 +11615,15 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/crew_quarters/bar)
 "avu" = (
-/obj/machinery/alarm{
-	dir = 4;
-	pixel_x = -24
-	},
 /obj/structure/disposalpipe/segment,
 /obj/structure/bed/sofa/black/right{
 	dir = 4
 	},
 /obj/effect/landmark/start,
 /obj/random/date_based/christmas/xmaslights,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/carpet/red,
 /area/crew_quarters/cafe)
 "avv" = (
@@ -12979,10 +12965,6 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/fore)
 "axO" = (
-/obj/structure/disposalpipe/segment{
-	dir = 2;
-	icon_state = "pipe-c"
-	},
 /obj/structure/closet/hydrant{
 	pixel_y = 32
 	},
@@ -13038,7 +13020,6 @@
 	dir = 8
 	},
 /obj/random/date_based/christmas/xmaslights,
-/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/carpet/red,
 /area/crew_quarters/cafe)
 "aya" = (
@@ -20804,6 +20785,7 @@
 	dir = 1;
 	pixel_y = 24
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "aLA" = (
@@ -23200,14 +23182,15 @@
 /area/rnd/xenobiology/atmos)
 "aQe" = (
 /obj/structure/table/woodentable/walnut,
-/obj/item/clothing/mask/gas/sexymime,
-/obj/item/clothing/mask/gas/sexyclown,
 /obj/machinery/light/small{
 	dir = 4
 	},
 /obj/machinery/newscaster{
 	pixel_y = 30
 	},
+/obj/item/weapon/storage/fancy/crayons,
+/obj/item/clothing/mask/gas/sexymime,
+/obj/item/clothing/mask/gas/sexyclown,
 /turf/simulated/floor/wood/ebony,
 /area/crew_quarters/actor)
 "aQf" = (
@@ -23823,8 +23806,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/effect/catwalk_plated,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "aRs" = (
 /obj/structure/closet/emcloset,
@@ -30233,15 +30215,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/maintenance/abandoned_hydroponics)
 "bdg" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/hydroponics)
 "bdh" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 8
-	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled,
 /area/hydroponics)
 "bdi" = (
@@ -30352,7 +30332,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/maintenance/abandoned_hydroponics)
 "bdx" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/table/standard,
 /obj/item/weapon/reagent_containers/glass/beaker{
 	pixel_x = 5
@@ -30373,17 +30352,17 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 8
+	},
 /turf/simulated/floor/tiled,
 /area/hydroponics)
 "bdA" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 8
-	},
-/turf/simulated/floor/tiled,
+/obj/effect/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/hydroponics)
 "bdB" = (
 /obj/structure/disposalpipe/segment{
@@ -33680,14 +33659,13 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo/south)
 "cnl" = (
-/obj/structure/disposalpipe/segment{
-	dir = 2;
-	icon_state = "pipe-c"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /turf/simulated/floor/wood/walnut,
@@ -34029,7 +34007,9 @@
 /turf/simulated/floor/carpet/blue3,
 /area/crew_quarters/cafe)
 "ewO" = (
-/obj/machinery/smartfridge,
+/obj/machinery/smartfridge{
+	opacity = 1
+	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
@@ -34191,6 +34171,7 @@
 "fop" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/cafe)
 "fDc" = (
@@ -34755,6 +34736,10 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
+	},
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/cafe)
 "jiM" = (
@@ -34795,6 +34780,13 @@
 /obj/structure/flora/ausbushes/leafybush,
 /turf/simulated/floor/grass,
 /area/bridge/lobby)
+"jnf" = (
+/obj/effect/wallframe_spawn/reinforced/polarized/no_grille/regular{
+	id = "cafe_windows"
+	},
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/plating,
+/area/hallway/primary/seconddeck/center)
 "jny" = (
 /obj/effect/wallframe_spawn/reinforced/polarized/no_grille/regular{
 	id = "private_cafe_windows_1"
@@ -34834,9 +34826,10 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/locker_room)
 "jsV" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4;
-	icon_state = "pipe-c"
+/obj/structure/holoplant,
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -20
 	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/cafe)
@@ -35019,10 +35012,6 @@
 /obj/random/date_based/christmas/xmaslights{
 	dir = 1;
 	pixel_y = 24
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 1;
-	icon_state = "pipe-c"
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1
@@ -36049,6 +36038,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/random/date_based/christmas/doorwreath{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/hydroponics/storage)
 "pXq" = (
@@ -36232,12 +36224,12 @@
 /turf/simulated/floor/carpet/purple,
 /area/crew_quarters/cafe)
 "qWx" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8;
-	icon_state = "pipe-c"
+/obj/machinery/door/firedoor,
+/obj/effect/wallframe_spawn/reinforced/polarized/no_grille/regular{
+	id = "cafe_windows"
 	},
-/turf/simulated/floor/wood/walnut,
-/area/crew_quarters/cafe)
+/turf/simulated/floor/plating,
+/area/hallway/primary/seconddeck/center)
 "qXK" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 5
@@ -36310,10 +36302,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/disposalpipe/junction{
+/obj/structure/disposalpipe/junction/yjunction{
 	dir = 4
 	},
-/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/seconddeck/center)
 "rjL" = (
@@ -36537,6 +36528,7 @@
 "sNc" = (
 /obj/structure/synthesized_instrument/synthesizer/piano,
 /obj/random/date_based/christmas/xmaslights,
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/carpet/blue,
 /area/crew_quarters/cafe)
 "sRN" = (
@@ -36770,6 +36762,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/carpet/blue,
 /area/crew_quarters/cafe)
 "tPU" = (
@@ -54277,7 +54270,7 @@ bfp
 aba
 abn
 abC
-abY
+bdh
 adK
 acR
 fiV
@@ -54290,10 +54283,10 @@ aVY
 mez
 mez
 ark
-jsV
+auo
 auh
 axY
-xiq
+qWx
 kub
 arG
 aFq
@@ -54492,9 +54485,9 @@ auo
 auo
 auo
 cnl
-qWx
 auo
-llw
+auo
+jsV
 ajn
 axO
 aiB
@@ -54680,7 +54673,7 @@ aam
 bfp
 abb
 abo
-bdh
+abY
 abZ
 bdA
 aeK
@@ -54697,7 +54690,7 @@ iYT
 fop
 tPP
 sNc
-mXt
+jnf
 aLz
 rjd
 dRn
@@ -54884,7 +54877,7 @@ abb
 abo
 abY
 acD
-adL
+bdA
 bfr
 aik
 akR
@@ -55086,7 +55079,7 @@ abb
 abo
 abY
 acL
-adL
+bdA
 acI
 aik
 aeT
@@ -55288,7 +55281,7 @@ aba
 abp
 abY
 acL
-adL
+bdA
 aeL
 aik
 aff
@@ -55490,7 +55483,7 @@ abb
 abo
 abY
 acL
-adL
+bdA
 aeN
 aix
 tnZ
@@ -55692,7 +55685,7 @@ abb
 abo
 abY
 acM
-adL
+bdA
 aeM
 abW
 akw
