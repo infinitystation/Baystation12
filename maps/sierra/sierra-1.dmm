@@ -25452,7 +25452,7 @@
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/techfloor,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/thirddeck/aft)
 "OV" = (
 /obj/structure/bed/chair/shuttle/green,
@@ -26139,7 +26139,7 @@
 "Qb" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/field_generator,
-/turf/simulated/floor/tiled/techfloor,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/thirddeck/aft)
 "Qc" = (
 /obj/machinery/alarm{
@@ -26780,14 +26780,14 @@
 "QY" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/portable_atmospherics/canister/air,
-/turf/simulated/floor/tiled/techfloor,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/thirddeck/aft)
 "QZ" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/power/port_gen/pacman{
 	sheets = 25
 	},
-/turf/simulated/floor/tiled/techfloor,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/thirddeck/aft)
 "Ra" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
