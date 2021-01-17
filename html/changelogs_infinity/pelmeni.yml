@@ -1,0 +1,4 @@
+author: IvanDonFon
+delete-after: True
+changes:
+  - rscadd: "Теперь можно приготовить пельмени."
