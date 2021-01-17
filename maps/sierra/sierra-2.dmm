@@ -2003,12 +2003,7 @@
 /turf/simulated/floor/beach/sand/desert,
 /area/crew_quarters/heads/captain/beach)
 "aek" = (
-/obj/machinery/camera/network/second_deck{
-	c_tag = "Grove Theta - East";
-	dir = 8
-	},
-/obj/structure/railing/mapped/no_density,
-/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/sunnybush,
 /turf/simulated/floor/grass,
 /area/grove/theta)
 "ael" = (
@@ -5500,6 +5495,10 @@
 	req_access = list("ACCESS_ENGINEERING")
 	},
 /obj/structure/closet/secure_closet/hydroponics_sierra,
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/tiled,
 /area/hydroponics/storage)
 "akD" = (
@@ -15976,14 +15975,10 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/table/rack,
-/obj/structure/railing/mapped{
-	dir = 8
-	},
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/random/maintenance,
+/obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/starboard)
 "aCJ" = (
@@ -16236,18 +16231,13 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftport)
 "aDd" = (
-/obj/structure/table/rack,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/railing/mapped{
-	dir = 8
-	},
 /obj/structure/railing/mapped,
-/obj/random/maintenance,
-/obj/random/maintenance,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/starboard)
 "aDe" = (
@@ -18025,10 +18015,11 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/engineering/atmos)
 "aGw" = (
-/obj/structure/flora/ausbushes/grassybush,
-/obj/machinery/light/spot{
-	dir = 4
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 24
 	},
+/obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/grass,
 /area/grove/theta)
 "aGy" = (
@@ -27924,8 +27915,12 @@
 /turf/simulated/floor/tiled/white,
 /area/grove/theta)
 "aYJ" = (
-/turf/simulated/wall/r_wall/hull,
-/area/medical/maintenance_equipstorage)
+/obj/machinery/light/spot{
+	dir = 4
+	},
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/simulated/floor/grass,
+/area/grove/theta)
 "aYK" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -34046,6 +34041,7 @@
 /area/crew_quarters/cafe)
 "ewO" = (
 /obj/machinery/smartfridge,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/crew_quarters/galley/backroom)
 "eEJ" = (
@@ -34300,6 +34296,9 @@
 /obj/random/date_based/christmas/xmaslights,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/sleep/cryo)
+"geq" = (
+/turf/simulated/wall/r_wall/prepainted,
+/area/janitor)
 "glL" = (
 /obj/machinery/seed_storage/garden{
 	dir = 1
@@ -35964,6 +35963,11 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 8
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled,
 /area/hydroponics/storage)
 "pGR" = (
@@ -36612,11 +36616,12 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
 "tbR" = (
-/obj/machinery/alarm{
-	dir = 8;
-	pixel_x = 24
+/obj/machinery/camera/network/second_deck{
+	c_tag = "Grove Theta - East";
+	dir = 8
 	},
-/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/railing/mapped/no_density,
+/obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/grass,
 /area/grove/theta)
 "tdE" = (
@@ -56490,7 +56495,7 @@ aam
 alQ
 bfj
 uCM
-aai
+aba
 aba
 abW
 abW
@@ -56693,7 +56698,7 @@ aam
 aam
 aaK
 aYL
-aYL
+geq
 dEI
 ulz
 sWn
@@ -56893,9 +56898,9 @@ aam
 aam
 aam
 aam
-aaK
 aYL
 aYL
+geq
 spq
 vLm
 qnM
@@ -57094,10 +57099,10 @@ aam
 aam
 aam
 aam
-aam
-aaK
 aYL
 aYL
+aYL
+geq
 kaX
 sFP
 cHT
@@ -57295,11 +57300,11 @@ aam
 aam
 aam
 aaK
-aaK
-aaK
 aaa
-aYJ
-aYJ
+aaa
+aaa
+aYV
+aYV
 aYV
 aYV
 aYV
@@ -57500,7 +57505,7 @@ aaa
 aaa
 aaa
 aaa
-aYJ
+aYV
 aWR
 aZC
 aZF
@@ -57702,7 +57707,7 @@ aaa
 aaa
 aaa
 aaa
-aYJ
+aYV
 aYO
 aYQ
 ach
@@ -60523,9 +60528,9 @@ aaa
 aaa
 aaa
 aid
-tbR
-aGw
-aek
+atc
+ael
+hcl
 egu
 aWf
 bcP
@@ -60724,11 +60729,11 @@ aam
 aaK
 aaa
 aaa
-aZJ
-aZJ
-aZJ
-aZJ
-aZJ
+aek
+aGw
+aYJ
+tbR
+aed
 aZJ
 aZJ
 aZJ
