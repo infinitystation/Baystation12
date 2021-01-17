@@ -5389,6 +5389,10 @@
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/smartfridge/drying_rack,
+/obj/machinery/camera/network/second_deck{
+	c_tag = "Hydroponics - Storage";
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/hydroponics/storage)
 "akx" = (
