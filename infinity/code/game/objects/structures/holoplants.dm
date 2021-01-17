@@ -90,17 +90,20 @@ GLOBAL_LIST_INIT(recomended_holoplants_colors, list(COLOR_LIGHTING_RED_BRIGHT,CO
 		update_icon()
 
 /obj/structure/holoplant/attackby(obj/item/I, mob/user, click_params)
-	. = ..()
 	if(istype(I, /obj/item/weapon/card/id))
 		if(!emagged)
 			emag_act()
 		else
 			rollback()
+		. = TRUE
 	if(isScrewdriver(I))
 		enabled = !enabled
 		brightness_on = brightness_on ? 0 : initial(brightness_on)
 		to_chat(usr, SPAN_NOTICE("You switch [enabled ? "on" : "off"] the [src]"))
 		update_icon()
+		. = TRUE
+	if(!.)
+		. = ..()
 
 /obj/structure/holoplant/proc/rollback()
 	emagged = FALSE
