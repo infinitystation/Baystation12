@@ -67,6 +67,10 @@
 		if(H.faction == faction && !attack_same && !H.attack_same)
 			return FALSE
 	if(istype(M))
+//[INF]
+		if(!M.simulated)
+			return FALSE
+//[/INF]
 		if(M.faction == faction)
 			return FALSE
 		if(weakref(M) in friends)
