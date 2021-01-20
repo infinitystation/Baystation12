@@ -208,7 +208,6 @@
 	icon = 'infinity/icons/obj/lighting_inf.dmi' // inf
 	base_state = "spot" // inf
 	icon_state = "spot_map" // inf
-	item_state = "spot-construct-item" //inf
 	light_type = /obj/item/weapon/light/tube/large
 	construct_type = /obj/machinery/light_construct/spot
 
