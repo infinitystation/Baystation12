@@ -6785,6 +6785,7 @@
 /obj/effect/wallframe_spawn/reinforced/polarized/no_grille/regular{
 	id = "private_cafe_windows_2"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/crew_quarters/cafe)
 "ana" = (
@@ -11595,13 +11596,11 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/gravitaional_generator)
 "avs" = (
-/obj/machinery/door/firedoor,
-/obj/machinery/door/firedoor,
-/obj/effect/wallframe_spawn/reinforced/polarized/no_grille/regular{
-	id = "cafe_windows"
-	},
-/turf/simulated/floor/plating,
-/area/hallway/primary/seconddeck/center)
+/obj/structure/flora/seaweed/mid,
+/obj/effect/fluid_mapped,
+/mob/living/simple_animal/aquatic/fish/grump,
+/turf/simulated/floor/aquarium,
+/area/grove/theta)
 "avt" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/industrial/hatch/grey,
@@ -12387,13 +12386,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/engineering/engineering_monitoring)
 "awU" = (
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/lime/border,
-/obj/effect/floor_decal/borderfloor/corner2{
-	dir = 9
-	},
-/obj/effect/floor_decal/corner/lime/bordercorner2{
-	dir = 9
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -20
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
@@ -21050,12 +21045,11 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/engineering/locker_room)
 "aMb" = (
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -20
-	},
-/turf/simulated/floor/tiled,
-/area/hallway/primary/seconddeck/center)
+/obj/structure/flora/seaweed/glow,
+/obj/effect/fluid_mapped,
+/mob/living/simple_animal/aquatic/fish,
+/turf/simulated/floor/aquarium,
+/area/grove/theta)
 "aMc" = (
 /obj/structure/bed/chair/comfy/brown{
 	dir = 1
@@ -33594,6 +33588,12 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/janitor)
+"bFH" = (
+/obj/structure/flora/seaweed/mid,
+/obj/effect/fluid_mapped,
+/mob/living/simple_animal/aquatic/fish,
+/turf/simulated/floor/aquarium,
+/area/grove/theta)
 "bIE" = (
 /obj/structure/ladder,
 /obj/structure/catwalk,
@@ -34118,12 +34118,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
-"fmj" = (
-/obj/structure/flora/seaweed/large,
-/obj/effect/fluid_mapped,
-/mob/living/simple_animal/aquatic/fish/judge,
-/turf/simulated/floor/aquarium,
-/area/grove/theta)
 "fnW" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -34369,6 +34363,11 @@
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/cafe)
+"hjw" = (
+/obj/effect/wallframe_spawn/no_grille,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/plating,
+/area/crew_quarters/cafe)
 "hjL" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
@@ -34534,12 +34533,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
-"hUH" = (
-/obj/structure/flora/seaweed/mid,
-/obj/effect/fluid_mapped,
-/mob/living/simple_animal/aquatic/fish,
-/turf/simulated/floor/aquarium,
-/area/grove/theta)
 "hWx" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
@@ -34778,12 +34771,14 @@
 	id = "cafe_windows"
 	},
 /obj/structure/disposalpipe/segment,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/hallway/primary/seconddeck/center)
 "jny" = (
 /obj/effect/wallframe_spawn/reinforced/polarized/no_grille/regular{
 	id = "private_cafe_windows_1"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/crew_quarters/cafe)
 "jqe" = (
@@ -34861,6 +34856,21 @@
 /obj/effect/fluid_mapped,
 /turf/simulated/floor/aquarium,
 /area/crew_quarters/cafe)
+"jJn" = (
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/lime/border,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -20
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 9
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 9
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/seconddeck/center)
 "jRQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
@@ -35267,12 +35277,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
-"mAk" = (
-/obj/structure/flora/seaweed,
-/obj/effect/fluid_mapped,
-/mob/living/simple_animal/aquatic/fish/grump,
-/turf/simulated/floor/aquarium,
-/area/grove/theta)
 "mCp" = (
 /obj/structure/flora/pottedplant/deskferntrim{
 	pixel_x = 5
@@ -35413,6 +35417,7 @@
 /obj/effect/wallframe_spawn/reinforced/polarized/no_grille/regular{
 	id = "cafe_windows"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/hallway/primary/seconddeck/center)
 "mYW" = (
@@ -35672,12 +35677,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/grove/theta)
-"oIE" = (
-/obj/structure/flora/seaweed/mid,
-/obj/effect/fluid_mapped,
-/mob/living/simple_animal/aquatic/fish/grump,
-/turf/simulated/floor/aquarium,
-/area/grove/theta)
 "oIG" = (
 /turf/simulated/floor/carpet/orange,
 /area/crew_quarters/cafe)
@@ -35741,6 +35740,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/carpet/orange,
 /area/crew_quarters/cafe)
+"oWm" = (
+/obj/structure/flora/seaweed/large,
+/obj/effect/fluid_mapped,
+/mob/living/simple_animal/aquatic/fish/judge,
+/turf/simulated/floor/aquarium,
+/area/grove/theta)
 "oZz" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
@@ -36402,12 +36407,6 @@
 /obj/effect/floor_decal/industrial/outline/red,
 /turf/simulated/floor/tiled/techfloor,
 /area/rnd/xenobiology/atmos)
-"sui" = (
-/obj/structure/flora/seaweed,
-/obj/effect/fluid_mapped,
-/mob/living/simple_animal/aquatic/fish,
-/turf/simulated/floor/aquarium,
-/area/grove/theta)
 "svT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -36721,15 +36720,11 @@
 /turf/simulated/floor/carpet/purple,
 /area/crew_quarters/cafe)
 "udk" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
-	},
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/lime/border,
-/obj/effect/floor_decal/borderfloor/corner2,
-/obj/effect/floor_decal/corner/lime/bordercorner2,
-/turf/simulated/floor/tiled,
-/area/hallway/primary/seconddeck/center)
+/obj/structure/flora/seaweed,
+/obj/effect/fluid_mapped,
+/mob/living/simple_animal/aquatic/fish,
+/turf/simulated/floor/aquarium,
+/area/grove/theta)
 "ujh" = (
 /turf/simulated/wall/prepainted,
 /area/janitor)
@@ -36772,12 +36767,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/janitor)
-"umz" = (
-/obj/structure/flora/seaweed/glow,
-/obj/effect/fluid_mapped,
-/mob/living/simple_animal/aquatic/fish,
-/turf/simulated/floor/aquarium,
-/area/grove/theta)
 "unL" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/random/date_based/christmas/xmaslights{
@@ -37093,6 +37082,12 @@
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/gym)
+"vQr" = (
+/obj/structure/flora/seaweed,
+/obj/effect/fluid_mapped,
+/mob/living/simple_animal/aquatic/fish/grump,
+/turf/simulated/floor/aquarium,
+/area/grove/theta)
 "vXS" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -52816,7 +52811,7 @@ amq
 avL
 aMI
 avD
-aLT
+jJn
 awP
 aXV
 aBW
@@ -53220,7 +53215,7 @@ aKC
 aFD
 aRz
 aSh
-aMb
+ios
 aYh
 sIr
 psR
@@ -53422,7 +53417,7 @@ auZ
 aHs
 aMI
 aJQ
-udk
+avK
 aYh
 boD
 aAc
@@ -54025,7 +54020,7 @@ oWa
 hdV
 aId
 kmC
-avs
+qWx
 auf
 aRr
 avG
@@ -55235,8 +55230,8 @@ auo
 auo
 auo
 deW
-anC
-anC
+hjw
+hjw
 ajn
 azt
 acJ
@@ -55437,7 +55432,7 @@ fKz
 cnl
 aAL
 deW
-anC
+hjw
 iRf
 ajn
 baw
@@ -55639,7 +55634,7 @@ euq
 cnl
 aqh
 deW
-anC
+hjw
 llw
 ajn
 lOx
@@ -55841,7 +55836,7 @@ eKR
 jrb
 sgI
 xwq
-anC
+hjw
 jHb
 ajn
 aMI
@@ -58043,8 +58038,8 @@ aeR
 afi
 hzF
 aWf
-oIE
-sui
+avs
+udk
 aYV
 aZq
 acV
@@ -60266,7 +60261,7 @@ ndC
 egu
 aWf
 baU
-fmj
+oWm
 okY
 trt
 aZJ
@@ -60467,9 +60462,9 @@ ael
 hcl
 egu
 aWf
-umz
-mAk
-hUH
+aMb
+vQr
+bFH
 baU
 aZJ
 aYS
