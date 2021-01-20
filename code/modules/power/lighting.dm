@@ -152,9 +152,16 @@
 /obj/machinery/light_construct/spot
 	name = "large light fixture frame"
 	desc = "A large light fixture under construction."
-	icon = 'icons/obj/lighting.dmi'
+	icon = 'infinity/icons/obj/lighting_inf.dmi' // inf
+	icon_state = "spot-construct-stage1" // inf
 	fixture_type = /obj/machinery/light/spot
 	sheets_refunded = 3
+
+/obj/machinery/light_construct/spot/on_update_icon()
+	switch(stage)
+		if(LIGHT_STAGE_EMPTY) icon_state = "spot-construct-stage1"
+		if(LIGHT_STAGE_WIRED) icon_state = "spot-construct-stage2"
+		if(LIGHT_STAGE_COMPLETE) icon_state = "spot_empty"
 
 // the standard tube light fixture
 /obj/machinery/light
@@ -198,6 +205,10 @@
 /obj/machinery/light/spot
 	name = "spotlight"
 	desc = "A more robust socket for light tubes that demand more power."
+	icon = 'infinity/icons/obj/lighting_inf.dmi' // inf
+	base_state = "spot" // inf
+	icon_state = "spot_map" // inf
+	item_state = "spot-construct-item" //inf
 	light_type = /obj/item/weapon/light/tube/large
 	construct_type = /obj/machinery/light_construct/spot
 
@@ -632,10 +643,16 @@
 /obj/item/weapon/light/tube/large
 	w_class = ITEM_SIZE_SMALL
 	name = "large light tube"
+	icon = 'infinity/icons/obj/lighting_inf.dmi' // inf
+	base_state = "lspot" // inf
+	icon_state = "lspot" // inf
+	matter = list(MATERIAL_GLASS = 200, MATERIAL_ALUMINIUM = 40) // inf
+
 	b_max_bright = 0.95
 	b_inner_range = 2
 	b_outer_range = 8
 	b_curve = 2.5
+	b_colour = "#fffee0"
 
 /obj/item/weapon/light/tube/large/party/Initialize() //Randomly colored light tubes. Mostly for testing, but maybe someone will find a use for them.
 	. = ..()
