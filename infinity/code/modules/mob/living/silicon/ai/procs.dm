@@ -21,5 +21,5 @@
 	set name = "MOOD: Change Floor"
 
 	var/n_color = input("Choose your color, dark colors are not recommended!") as color
-	ChangeFloorInArea(n_color)
+	ChangeFloorColorInArea(n_color)
 	to_chat(src, "Proccessing strata color was changed to <font color='[n_color]'>color</font>.")
