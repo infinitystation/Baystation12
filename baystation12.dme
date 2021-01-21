@@ -3258,6 +3258,7 @@
 #include "infinity\code\_onclick\hud\ai_hud.dm"
 #include "infinity\code\_onclick\hud\ai_screen_object.dm"
 #include "infinity\code\_onclick\hud\alien_larva.dm"
+#include "infinity\code\_onclick\hud\grains.dm"
 #include "infinity\code\_onclick\hud\radial.dm"
 #include "infinity\code\controllers\configuration.dm"
 #include "infinity\code\controllers\subsystems\ticker.dm"
