@@ -1,9 +1,8 @@
 name: Compile changelogs
 
 on:
-  push:
-    branches:
-    - master
+  schedule:
+    - cron: "0 0 * * *" 
 
 jobs:
   Compile_Changelog:
