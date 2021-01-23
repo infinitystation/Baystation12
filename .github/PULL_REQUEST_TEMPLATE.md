@@ -14,3 +14,20 @@ You'll find a README and example file in .\html\changelogs\ for further instruct
 
 You can also find a template for adding your changelog directly to the PR description here: https://github.com/Baystation12/Baystation12/wiki/Automatic-changelog-generation
 -->
+
+## Changelog
+:cl:
+admin: messed with admin stuff
+balance: rebalanced something
+bugfix: fixed a few things
+wip: something work in progress
+imageadd: added some icons and images
+imagedel: deleted some icons and images
+refactor: refactored some code
+rscadd: Added new things
+rscdel: Removed old things
+soundadd: added a new sound thingy
+sounddel: removed an old sound thingy
+spellcheck: fixed a few typos
+tweak: tweaked a few things
+/:cl:
