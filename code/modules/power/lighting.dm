@@ -149,6 +149,7 @@
 		if(LIGHT_STAGE_WIRED) icon_state = "bulb-construct-stage2"
 		if(LIGHT_STAGE_COMPLETE) icon_state = "bulb-empty"
 
+
 /obj/machinery/light_construct/spot
 	name = "large light fixture frame"
 	desc = "A large light fixture under construction."
@@ -205,6 +206,9 @@
 /obj/machinery/light/spot
 	name = "spotlight"
 	desc = "A more robust socket for light tubes that demand more power."
+	icon = 'infinity/icons/obj/lighting_inf.dmi' // inf|
+	base_state = "spot" // inf
+	item_state = "spot-construct-item" //inf
 	light_type = /obj/item/weapon/light/tube/large
 	construct_type = /obj/machinery/light_construct/spot
 
