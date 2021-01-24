@@ -153,8 +153,10 @@
 /obj/machinery/light_construct/spot
 	name = "large light fixture frame"
 	desc = "A large light fixture under construction."
-	icon = 'infinity/icons/obj/lighting_inf.dmi' // inf
-	icon_state = "spot-construct-stage1" // inf
+	//[INF]
+	icon = 'infinity/icons/obj/lighting_inf.dmi'
+	icon_state = "spot-construct-stage1"
+	//[/INF]
 	fixture_type = /obj/machinery/light/spot
 	sheets_refunded = 3
 
