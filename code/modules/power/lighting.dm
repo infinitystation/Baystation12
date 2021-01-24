@@ -652,7 +652,6 @@
 	b_inner_range = 2
 	b_outer_range = 8
 	b_curve = 2.5
-	b_colour = "#fffee0"
 
 /obj/item/weapon/light/tube/large/party/Initialize() //Randomly colored light tubes. Mostly for testing, but maybe someone will find a use for them.
 	. = ..()
