@@ -31,7 +31,9 @@
 	if(mob)
 		var/value = mob.get_preference_value(/datum/client_preference/tooltip)
 		if(value == GLOB.PREF_SHOW)
-			tooltip.set_state(1, value)
+			tooltip.set_state(TRUE, value)
+		else
+			tooltip.set_state(FALSE, value)
 
 /client/MouseEntered(atom/hoverOn, location, control, params)
 	if(tooltip?.state && GAME_STATE > RUNLEVEL_SETUP)
