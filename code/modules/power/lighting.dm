@@ -149,7 +149,6 @@
 		if(LIGHT_STAGE_WIRED) icon_state = "bulb-construct-stage2"
 		if(LIGHT_STAGE_COMPLETE) icon_state = "bulb-empty"
 
-
 /obj/machinery/light_construct/spot
 	name = "large light fixture frame"
 	desc = "A large light fixture under construction."
