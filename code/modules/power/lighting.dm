@@ -162,9 +162,12 @@
 
 /obj/machinery/light_construct/spot/on_update_icon()
 	switch(stage)
-		if(LIGHT_STAGE_EMPTY) icon_state = "spot-construct-stage1"
-		if(LIGHT_STAGE_WIRED) icon_state = "spot-construct-stage2"
-		if(LIGHT_STAGE_COMPLETE) icon_state = "spot_empty"
+		if(LIGHT_STAGE_EMPTY)
+			icon_state = "spot-construct-stage1"
+		if(LIGHT_STAGE_WIRED)
+			icon_state = "spot-construct-stage2"
+		if(LIGHT_STAGE_COMPLETE)
+			icon_state = "spot_empty"
 
 // the standard tube light fixture
 /obj/machinery/light
