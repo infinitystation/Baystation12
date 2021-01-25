@@ -649,10 +649,12 @@
 /obj/item/weapon/light/tube/large
 	w_class = ITEM_SIZE_SMALL
 	name = "large light tube"
-	icon = 'infinity/icons/obj/lighting_inf.dmi' // inf
-	base_state = "lspot" // inf
-	icon_state = "lspot" // inf
-	matter = list(MATERIAL_GLASS = 200, MATERIAL_ALUMINIUM = 40) // inf
+//[INF]
+	icon = 'infinity/icons/obj/lighting_inf.dmi'
+	base_state = "lspot"
+	icon_state = "lspot"
+	matter = list(MATERIAL_GLASS = 200, MATERIAL_ALUMINIUM = 40)
+//[/INF]
 
 	b_max_bright = 0.95
 	b_inner_range = 2
