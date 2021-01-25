@@ -153,12 +153,11 @@
 /obj/machinery/light_construct/spot
 	name = "large light fixture frame"
 	desc = "A large light fixture under construction."
-	//[INF]
-	icon = 'infinity/icons/obj/lighting_inf.dmi'
-	icon_state = "spot-construct-stage1"
-	//[/INF]
 	fixture_type = /obj/machinery/light/spot
 	sheets_refunded = 3
+//[INF]
+	icon = 'infinity/icons/obj/lighting_inf.dmi'
+	icon_state = "spot-construct-stage1"
 
 /obj/machinery/light_construct/spot/on_update_icon()
 	switch(stage)
@@ -168,7 +167,7 @@
 			icon_state = "spot-construct-stage2"
 		if(LIGHT_STAGE_COMPLETE)
 			icon_state = "spot_empty"
-
+//[/INF]
 // the standard tube light fixture
 /obj/machinery/light
 	name = "light fixture"
