@@ -3,7 +3,6 @@
 #define EVAC_OPT_CANCEL_ABANDON_SHIP "cancel_abandon_ship"
 #define EVAC_OPT_CANCEL_BLUESPACE_JUMP "cancel_bluespace_jump"
 #define EVAC_OPT_CONFIRM_ABANDON "confirm_abandon"
-#define ISEVAC_STARSHIP_FAST_CONTROLER istype(evacuation_controller, /datum/evacuation_controller/starship/fast)
 
 // Apparently, emergency_evacuation --> "abandon ship" and !emergency_evacuation --> "bluespace jump"
 // That stuff should be moved to the evacuation option datums but someone can do that later
