@@ -20,8 +20,6 @@
 
 	#include "sierra_snatch.dm"
 
-	#include "datums/programs.dm"
-
 	#include "datums/uniforms.dm"
 	#include "datums/uniforms_civilian.dm"
 	#include "datums/uniforms_contractor.dm"

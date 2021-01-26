@@ -81,7 +81,7 @@
 /obj/effect/landmark/start{
 	name = "Mercenary"
 	},
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 1
 	},
@@ -264,7 +264,7 @@
 /obj/effect/landmark/start{
 	name = "Mercenary"
 	},
-/obj/machinery/light/halogen,
+/obj/machinery/light,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/syndicate_mothership)
 "aF" = (
@@ -573,7 +573,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/merc_shuttle)
 "bu" = (
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 8
 	},
@@ -639,7 +639,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/merc_shuttle)
 "bD" = (
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 4
 	},
@@ -730,7 +730,7 @@
 /area/map_template/merc_shuttle)
 "bL" = (
 /obj/effect/floor_decal/techfloor,
-/obj/machinery/light/halogen,
+/obj/machinery/light,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/merc_shuttle)
 "bM" = (
@@ -975,7 +975,7 @@
 	icon_state = "shuttle_chair_preview";
 	dir = 4
 	},
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 8
 	},
@@ -990,7 +990,7 @@
 /obj/random/mre,
 /obj/random/mre,
 /obj/random/mre,
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 4
 	},
@@ -1466,7 +1466,7 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/syndicate_mothership)
 "dg" = (
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 8
 	},
@@ -1492,7 +1492,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/merc_shuttle)
 "di" = (
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 4
 	},
@@ -1725,7 +1725,7 @@
 	pixel_x = 3;
 	pixel_y = 9
 	},
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 8
 	},
@@ -1805,7 +1805,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/merc_shuttle)
 "dG" = (
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 4
 	},
@@ -1989,7 +1989,7 @@
 /obj/structure/table/standard,
 /obj/item/weapon/storage/backpack/dufflebag/syndie/med,
 /obj/item/weapon/storage/firstaid/combat,
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 8
 	},
@@ -2049,7 +2049,7 @@
 /area/map_template/merc_shuttle)
 "ef" = (
 /obj/machinery/atmospherics/unary/cryo_cell,
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 4
 	},
@@ -2057,7 +2057,7 @@
 /turf/simulated/floor/tiled/white,
 /area/map_template/merc_shuttle)
 "eg" = (
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 8
 	},
@@ -2068,7 +2068,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/merc_shuttle)
 "eh" = (
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 4
 	},
@@ -2079,7 +2079,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/merc_shuttle)
 "ei" = (
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 8
 	},
@@ -2140,7 +2140,7 @@
 /area/map_template/merc_shuttle)
 "em" = (
 /obj/machinery/vending/assist/antag,
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 4
 	},
@@ -2436,7 +2436,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/merc_shuttle)
 "eQ" = (
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 8
 	},
@@ -2503,7 +2503,7 @@
 /obj/machinery/body_scanconsole{
 	dir = 1
 	},
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 8
 	},
