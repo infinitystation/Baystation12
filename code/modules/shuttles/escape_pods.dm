@@ -202,6 +202,7 @@ var/list/escape_pods_by_name = list()
 	if (!emagged)
 		to_chat(user, "<span class='notice'>You emag the [src], arming the escape pod!</span>")
 		emagged = 1
+		state("Ошибка центрального контролера! Обнаружена аварийная ситуация! Взведение капсулы... Примерное время подготовки: 1 минута.")	// inf
 		GLOB.global_announcer.autosay("<b>Несанкционированный доступ</b> к контролеру эвакуации. Потеряно управление от <b><i>[src]</i></b>. Службе безопасности рекомендуется проследовать к этой капсуле.", "Автоматическая Система Безопасности", "Security", z)	// inf
 		if (istype(program, /datum/computer/file/embedded_program/docking/simple/escape_pod_berth))
 			var/datum/computer/file/embedded_program/docking/simple/escape_pod_berth/P = program
