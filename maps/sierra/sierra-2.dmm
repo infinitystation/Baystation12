@@ -28590,10 +28590,6 @@
 /obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled/white,
 /area/vacant/gambling)
-"aZP" = (
-/obj/machinery/shield_diffuser,
-/turf/simulated/floor/reinforced,
-/area/space)
 "aZQ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
@@ -28741,9 +28737,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/maintenance_equipstorage)
-"bag" = (
-/turf/simulated/floor/reinforced,
-/area/space)
 "bah" = (
 /obj/machinery/newscaster{
 	pixel_x = 26;
@@ -63736,7 +63729,7 @@ aTy
 aUy
 aXx
 aXy
-aZP
+atE
 aam
 aam
 aam
@@ -63938,7 +63931,7 @@ aUB
 aVx
 aVE
 aXy
-aZP
+atE
 aam
 aam
 aam
@@ -64140,7 +64133,7 @@ aVo
 aUI
 aVt
 aXy
-aZP
+atE
 aam
 aam
 aam
@@ -64544,7 +64537,7 @@ bdR
 aPV
 aPV
 aPV
-bag
+aaK
 aam
 aam
 aam
@@ -64745,7 +64738,7 @@ bdQ
 bdO
 aPV
 aPV
-bag
+aaK
 aam
 aam
 aam
@@ -64946,8 +64939,8 @@ aPV
 bes
 aPV
 aPV
-bag
-bag
+aaK
+aaK
 aam
 aam
 aam
@@ -65147,9 +65140,9 @@ bbt
 aPV
 aPV
 aPV
-bag
-bag
-bag
+aaK
+aaK
+aaK
 aam
 aam
 aam
@@ -65348,10 +65341,10 @@ bem
 aPV
 aPV
 aPV
-bag
-bag
-bag
-bag
+aaK
+aaK
+aaK
+aaK
 aam
 aam
 aam
@@ -65549,9 +65542,9 @@ bay
 aPV
 aPV
 aPV
-bag
-bag
-bag
+aaK
+aaK
+aaK
 aam
 aam
 aam
@@ -65750,9 +65743,9 @@ aPV
 aPV
 aPV
 aPV
-bag
-bag
-bag
+aaK
+aaK
+aaK
 aam
 aam
 aam
@@ -65951,9 +65944,9 @@ aPV
 aPV
 aPV
 aPV
-bag
-bag
-bag
+aaK
+aaK
+aaK
 aam
 aam
 aam
@@ -66146,15 +66139,15 @@ aai
 aai
 aah
 aah
-bag
-bag
-bag
-bag
-bag
-bag
-bag
-bag
-bag
+aaK
+aaK
+aaK
+aaK
+aaK
+aaK
+aaK
+aaK
+aaK
 aah
 aam
 aam
