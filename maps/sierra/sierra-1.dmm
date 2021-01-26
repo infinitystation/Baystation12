@@ -345,7 +345,7 @@
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod/escape_pod2/station)
 "aU" = (
-/obj/machinery/door/blast/regular/evacshield,
+/obj/machinery/door/blast/regular/escape_pod,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/forestarboard)
 "aV" = (
@@ -541,7 +541,7 @@
 /turf/simulated/floor/tiled,
 /area/command/bsa)
 "bt" = (
-/obj/machinery/door/blast/regular/evacshield,
+/obj/machinery/door/blast/regular/escape_pod,
 /turf/simulated/floor/plating,
 /area/vacant/monitoring)
 "bu" = (
@@ -26175,7 +26175,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/hallway/primary/thirddeck/center)
 "Tb" = (
-/obj/machinery/door/blast/regular/evacshield,
+/obj/machinery/door/blast/regular/escape_pod,
 /turf/simulated/floor/reinforced,
 /area/maintenance/thirddeck/foreport)
 "Tc" = (
@@ -26253,7 +26253,7 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/vacant/monitoring)
 "Tk" = (
-/obj/machinery/door/blast/regular/evacshield,
+/obj/machinery/door/blast/regular/escape_pod,
 /turf/simulated/floor/reinforced,
 /area/maintenance/thirddeck/port)
 "Tl" = (
@@ -27082,7 +27082,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/security/sierra/dockcheck)
 "WD" = (
-/obj/machinery/door/blast/regular/evacshield,
+/obj/machinery/door/blast/regular/escape_pod,
 /turf/simulated/floor/reinforced/airless,
 /area/maintenance/thirddeck/forestarboard)
 "WI" = (

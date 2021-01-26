@@ -3,6 +3,7 @@
 #define EVAC_OPT_CANCEL_ABANDON_SHIP "cancel_abandon_ship"
 #define EVAC_OPT_CANCEL_BLUESPACE_JUMP "cancel_bluespace_jump"
 #define EVAC_OPT_CONFIRM_ABANDON "confirm_abandon"
+#define ISEVAC_STARSHIP_FAST_CONTROLER istype(evacuation_controller, /datum/evacuation_controller/starship/fast)
 
 // Apparently, emergency_evacuation --> "abandon ship" and !emergency_evacuation --> "bluespace jump"
 // That stuff should be moved to the evacuation option datums but someone can do that later
@@ -15,32 +16,34 @@
 	name = "escape pod controller"
 
 	evac_prep_delay    = 0 MINUTES
-	evac_launch_delay  = 3 MINUTES
+	evac_launch_delay  = 5 MINUTES
 	evac_transit_delay = 2 MINUTES
 
 	transfer_prep_additional_delay     = 20 MINUTES
 	autotransfer_prep_additional_delay = 10 MINUTES
-	emergency_prep_additional_delay    = 5 MINUTES
+	emergency_prep_additional_delay    = 3 MINUTES
 
 	evacuation_options = list(
 		EVAC_OPT_CONFIRM_ABANDON =  new /datum/evacuation_option/confirm_abandon(),
 		EVAC_OPT_ABANDON_SHIP = new /datum/evacuation_option/abandon_ship/fast(),
-		EVAC_OPT_BLUESPACE_JUMP = new /datum/evacuation_option/bluespace_jump(),
-		EVAC_OPT_CANCEL_ABANDON_SHIP = new /datum/evacuation_option/cancel_abandon_ship/fast(),
+		EVAC_OPT_BLUESPACE_JUMP = new /datum/evacuation_option/bluespace_jump/fast(),
+		EVAC_OPT_CANCEL_ABANDON_SHIP = new /datum/evacuation_option/cancel_abandon_ship(),
 		EVAC_OPT_CANCEL_BLUESPACE_JUMP = new /datum/evacuation_option/cancel_bluespace_jump()
 	)
 
 /datum/evacuation_controller/starship/fast/cancel_evacuation()
 	var/emerg = emergency_evacuation
 	. = ..()
+
+	for(var/obj/machinery/bluespacedrive/M in SSmachines.machinery)
+		M.discharge()
+
 	if(emerg)
 		// Close the pods (space shields)
-		for(var/obj/machinery/door/blast/regular/evacshield/ES in world)
-			ES.force_close()
+		for(var/obj/machinery/door/blast/regular/escape_pod/ES in world)
+			INVOKE_ASYNC(ES, /obj/machinery/door/blast/proc/force_close)
 		for (var/datum/shuttle/autodock/ferry/escape_pod/pod in escape_pods) // Unarm the pods!
-			if (pod.arming_controller && pod.arming_controller.armed)
-				var/datum/computer/file/embedded_program/docking/simple/escape_pod_berth/prog = pod.arming_controller
-				prog.empty_unarm()
+			pod.set_self_unarm()
 
 /datum/evacuation_controller/starship/fast/can_cancel()
 	// Are we evacuating?
@@ -55,14 +58,24 @@
 	return 1
 
 /datum/evacuation_controller/starship/fast/make_prepared()
+	var/time_diff = evac_ready_time - world.time
 	evac_ready_time = world.time
-	evac_launch_time -= evac_ready_time	//(evac_ready_time - evac_called_at)
-	evac_arrival_time -= evac_ready_time
-	evac_no_return -= evac_ready_time
+	evac_launch_time -= time_diff
+	evac_arrival_time -= time_diff
+	evac_no_return -= time_diff
 
 /datum/evacuation_controller/starship/fast/call_evacuation(var/mob/user, var/_emergency_evac, var/forced, var/skip_announce, var/autotransfer)
+	if((user && isAI(user)) || forced)
+		if(state == 1)
+			make_prepared()
+			return 1
+		emergency_prep_additional_delay = 0 MINUTES
+		confirmed = "confirmed"
+		skip_announce = TRUE
+
+
 	. = ..(user, _emergency_evac, forced, skip_announce, autotransfer)
-	evacuation_controller.emergency_prep_additional_delay = initial(evacuation_controller.emergency_prep_additional_delay)	// Reseting time shortcut
+	emergency_prep_additional_delay = initial(emergency_prep_additional_delay)	// Reseting time shortcut
 	if(.)
 		evac_no_return = evac_ready_time + round(evac_launch_delay/2)
 
@@ -143,11 +156,31 @@
 				evacuation_controller.confirmed = H.get_id_name() == "confirmed" ? "Unknown" : H.get_id_name()	// If someone set ID name "confirmed"
 		log_and_message_admins("[user? key_name(user) : "Autotransfer"] has initiated abandonment of the spacecraft.")
 
-/datum/evacuation_option/cancel_abandon_ship/fast
+/datum/evacuation_option/cancel_abandon_ship
 	option_text = "Отменить эвакуацию"
 
-/datum/evacuation_option/bluespace_jump
+/datum/evacuation_option/bluespace_jump/fast
 	option_text = "Инициализировать блюспейс прыжок"
+
+/datum/evacuation_option/bluespace_jump/fast/execute(mob/user)
+	if (!evacuation_controller)
+		return
+	if (evacuation_controller.deny)
+		to_chat(user, "Невозможно иницировать подготовку прыжка.")
+		return
+	if (evacuation_controller.is_on_cooldown())
+		to_chat(user, evacuation_controller.get_cooldown_message())
+		return
+	if (evacuation_controller.is_evacuating())
+		to_chat(user, "Процедуры подготовки прыжка уже зайдествованы.")
+		return
+	if(!is_bsd_fine())
+		to_chat(user, "ОШИБКА: БСД не обнаружено\\не откалибровано\\не запитано. Отмена операции.")
+		return 0
+	if (evacuation_controller.call_evacuation(user, 0))
+		log_and_message_admins("[user? key_name(user) : "Autotransfer"] has initiated bluespace jump preparation.")
+		for(var/obj/machinery/bluespacedrive/M in SSmachines.machinery)
+			M.charge()
 
 /datum/evacuation_option/cancel_bluespace_jump
 	option_text = "Отменить блюспейс прыжок"

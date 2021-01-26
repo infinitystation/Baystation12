@@ -1,10 +1,13 @@
 var/list/escape_pods = list()
 var/list/escape_pods_by_name = list()
 
+#define evac_chair(varName) var/obj/structure/bed/chair/shuttle/##varName
+
 /datum/shuttle/autodock/ferry/escape_pod
 	var/datum/computer/file/embedded_program/docking/simple/escape_pod_berth/arming_controller
 	category = /datum/shuttle/autodock/ferry/escape_pod
 	move_time = 100
+	var/need_people	= 0// inf
 
 /datum/shuttle/autodock/ferry/escape_pod/New()
 	if(name in escape_pods_by_name)
@@ -28,17 +31,59 @@ var/list/escape_pods_by_name = list()
 	if(!istype(controller_master))
 		CRASH("Escape pod \"[name]\" could not find it's controller master!")
 
-	GLOB.exited_event.register(shuttle_area[1], arming_controller, /datum/computer/file/embedded_program/docking/simple/escape_pod_berth/proc/empty_unarm)	// inf
-
 	controller_master.pod = src
+// [INF]
+	evac_chair(temp)
+	for(temp in shuttle_area[1])
+		++need_people
+
+/datum/shuttle/autodock/ferry/escape_pod/proc/set_self_unarm()
+	if(arming_controller.armed)
+		if(evacuation_controller.is_idle() || evacuation_controller.is_on_cooldown())
+			var/check = TRUE
+			for(var/mob/user in shuttle_area[1])
+				if(isliving(user))
+					check = FALSE
+					break
+			if(check)
+				arming_controller.unarm()
+				return
+		GLOB.exited_event.register(shuttle_area[1], arming_controller, /datum/computer/file/embedded_program/docking/simple/escape_pod_berth/proc/check_unarm)
+
+/datum/shuttle/autodock/ferry/escape_pod/proc/check_load()
+	var/list/counted = list()
+	var/i = 0
+	evac_chair(temp)
+	for(temp in shuttle_area[1])
+		if(temp.buckled_mob)
+			counted += temp.buckled_mob
+			if(counted.len >= need_people)
+				return TRUE
+		i++
+	if(i < need_people)	// someone broke a chair
+		for(var/mob/living/M in shuttle_area[1])
+			if(M in counted)
+				continue
+			counted += M
+			if(counted.len >= need_people)
+				return TRUE
+	return FALSE
+// [/INF]
 
 /datum/shuttle/autodock/ferry/escape_pod/can_launch()
 // [INF]
-	if(!istype(evacuation_controller, /datum/evacuation_controller/starship/fast) && evacuation_controller.has_evacuated())
+#ifdef ISEVAC_STARSHIP_FAST_CONTROLER
+	if(!ISEVAC_STARSHIP_FAST_CONTROLER && !evacuation_controller.has_evacuated())
 		return 0
-	if(istype(evacuation_controller, /datum/evacuation_controller/starship/fast))
-		if(world.time < evacuation_controller.evac_no_return)
+	if(ISEVAC_STARSHIP_FAST_CONTROLER)
+		if(isnull(evacuation_controller.evac_no_return))
 			return 0
+		if(!check_load() && (world.time < evacuation_controller.evac_no_return))
+			return 0
+#else
+	if(!evacuation_controller.has_evacuated())
+		return 0
+#endif
 // [/INF]
 	if(arming_controller && !arming_controller.armed)	//must be armed
 		return 0
@@ -47,7 +92,9 @@ var/list/escape_pods_by_name = list()
 	return ..()
 
 /datum/shuttle/autodock/ferry/escape_pod/can_force()
-	if (!arming_controller.emagged && (arming_controller.eject_time && world.time < arming_controller.eject_time + 50))
+	if (arming_controller.master.emagged)	// inf
+		return ..()	// inf
+	if (arming_controller.eject_time && world.time < arming_controller.eject_time + 50)
 		return 0	//dont allow force launching until 5 seconds after the arming controller has reached it's countdown
 	return ..()
 
@@ -125,13 +172,26 @@ var/list/escape_pods_by_name = list()
 		ui.open()
 		ui.set_auto_update(1)
 
+// [INF]
+/obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth/attackby(var/obj/item/T, var/mob/living/carbon/human/user)
+	if(emagged && isMultitool(T) && user.skill_check(SKILL_ELECTRICAL, SKILL_ADEPT))
+		to_chat(user, "<span class='notice'>Ты начал сбрасывать настройки [src], чтобы починить его.</span>")
+		if(do_after(user, 100, src))
+			emagged = 0
+			if (istype(program, /datum/computer/file/embedded_program/docking/simple/escape_pod_berth))
+				var/datum/computer/file/embedded_program/docking/simple/escape_pod_berth/P = program
+				if (P.armed)
+					P.unarm()
+			return
+	. = ..()
+// [/INF]
+
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth/emag_act(var/remaining_charges, var/mob/user)
 	if (!emagged)
 		to_chat(user, "<span class='notice'>You emag the [src], arming the escape pod!</span>")
 		emagged = 1
 		if (istype(program, /datum/computer/file/embedded_program/docking/simple/escape_pod_berth))
 			var/datum/computer/file/embedded_program/docking/simple/escape_pod_berth/P = program
-			P.emagged = TRUE	// inf
 			if (!P.armed)
 				P.arm()
 		return 1
@@ -142,7 +202,6 @@ var/list/escape_pods_by_name = list()
 	var/eject_delay = 10	//give latecomers some time to get out of the way if they don't make it onto the pod
 	var/eject_time = null
 	var/closing = 0
-	var/emagged = FALSE // inf
 
 /datum/computer/file/embedded_program/docking/simple/escape_pod_berth/proc/arm()
 	if(!armed)
@@ -153,8 +212,9 @@ var/list/escape_pods_by_name = list()
 	if(armed)
 		armed = 0
 		close_door()
+
 // [INF]
-/datum/computer/file/embedded_program/docking/simple/escape_pod_berth/proc/empty_unarm(var/mob/living/user, var/area)
+/datum/computer/file/embedded_program/docking/simple/escape_pod_berth/proc/check_unarm(var/area/area, var/mob/living/user)
 	if(armed && isliving(user))
 		if(evacuation_controller.is_idle() || evacuation_controller.is_on_cooldown())
 			var/check = TRUE
@@ -164,6 +224,8 @@ var/list/escape_pods_by_name = list()
 					break
 			if(check)
 				unarm()
+	else if(!armed)
+		GLOB.exited_event.unregister(area, src, /datum/computer/file/embedded_program/docking/simple/escape_pod_berth/proc/check_unarm)
 // [/INF]
 
 /datum/computer/file/embedded_program/docking/simple/escape_pod_berth/receive_user_command(command)
@@ -211,3 +273,5 @@ var/list/escape_pods_by_name = list()
 		"set_external_pressure" = ONE_ATMOSPHERE
 	)
 	post_signal(signal)
+
+#undef evac_chair

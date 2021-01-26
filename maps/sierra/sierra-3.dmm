@@ -663,7 +663,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/centralstarboard)
 "abw" = (
-/obj/machinery/door/blast/regular/evacshield,
+/obj/machinery/door/blast/regular/escape_pod,
 /turf/simulated/floor/reinforced/airless,
 /area/maintenance/exterior)
 "abx" = (
@@ -33417,8 +33417,8 @@
 /turf/simulated/wall/r_wall/hull,
 /area/thruster/d1port)
 "bbg" = (
-/obj/machinery/door/blast/regular/evacshield{
-	dir = 8
+/obj/machinery/door/blast/regular/escape_pod{
+	dir = 4
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/maintenance/firstdeck/centralport)
