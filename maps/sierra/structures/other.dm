@@ -10,5 +10,3 @@
 		new /obj/item/weapon/book/manual/nt_tc(src)
 		new /obj/item/weapon/book/manual/military_law(src)
 		update_icon()
-
-/obj/machinery/keycard_auth/sierra //remove in further map changes

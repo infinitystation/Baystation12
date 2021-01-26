@@ -3262,6 +3262,7 @@
 #include "infinity\code\_onclick\hud\radial.dm"
 #include "infinity\code\_onclick\hud\tooltip.dm"
 #include "infinity\code\controllers\configuration.dm"
+#include "infinity\code\controllers\evacuation\evacuation_pods.dm"
 #include "infinity\code\controllers\subsystems\ticker.dm"
 #include "infinity\code\datums\mutable_appearance.dm"
 #include "infinity\code\datums\outfits\infinity.dm"

@@ -6,17 +6,15 @@
 	post_round_safe_areas = list (
 		/area/centcom,
 		/area/shuttle/escape/centcom,
-		/area/shuttle/escape_pod6/station,
-		/area/shuttle/escape_pod7/station,
-		/area/shuttle/escape_pod8/station,
-		/area/shuttle/escape_pod9/station,
-		/area/shuttle/escape_pod10/station,
-		/area/shuttle/escape_pod12/station,
-		/area/shuttle/escape_pod13/station,
-		/area/shuttle/escape_pod14/station,
-		/area/shuttle/escape_pod15/station,
-		/area/shuttle/escape_pod16/station,
-		/area/shuttle/escape_pod17/station,
+		/area/shuttle/escape_pod/escape_pod1/station,
+		/area/shuttle/escape_pod/escape_pod2/station,
+		/area/shuttle/escape_pod/escape_pod3/station,
+		/area/shuttle/escape_pod/escape_pod4/station,
+		/area/shuttle/escape_pod/escape_pod5/station,
+//		/area/shuttle/escape_pod/escape_pod6/station,
+		/area/shuttle/escape_pod/escape_pod7/station,
+		/area/shuttle/escape_pod/escape_pod8/station,
+		/area/shuttle/escape_pod/escape_pod9/station,
 		/area/shuttle/transport1/centcom,
 		/area/shuttle/administration/centcom,
 		/area/shuttle/specops/centcom,
@@ -247,64 +245,40 @@
  * ==========
  */
 
-/area/shuttle/escape_pod6/station
+/area/shuttle/escape_pod
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	icon_state = "exit"
+
+/area/shuttle/escape_pod/escape_pod1/station
 	name = "Shuttle - Escape - Pod One"
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
-	icon_state = "exit"
 
-/area/shuttle/escape_pod7/station
+/area/shuttle/escape_pod/escape_pod2/station
 	name = "Shuttle - Escape - Pod Two"
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
-	icon_state = "exit"
 
-/area/shuttle/escape_pod8/station
+/area/shuttle/escape_pod/escape_pod3/station
 	name = "Shuttle - Escape - Pod Three"
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
-	icon_state = "exit"
 
-/area/shuttle/escape_pod9/station
+/area/shuttle/escape_pod/escape_pod4/station
 	name = "Shuttle - Escape - Pod Four"
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
-	icon_state = "exit"
 
-/area/shuttle/escape_pod10/station
+/area/shuttle/escape_pod/escape_pod5/station
 	name = "Shuttle - Escape - Pod Five"
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
-	icon_state = "exit"
 
 /* SMALL PODS
  * ==========
  */
-
-/area/shuttle/escape_pod12/station
+/*
+/area/shuttle/escape_pod/escape_pod6/station
+	name = "Shuttle - Escape - Small Pod Six"
+*/
+/area/shuttle/escape_pod/escape_pod7/station
 	name = "Shuttle - Escape - Small Pod Seven"
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
-	icon_state = "exit"
 
-/area/shuttle/escape_pod13/station
+/area/shuttle/escape_pod/escape_pod8/station
 	name = "Shuttle - Escape - Small Pod Eight"
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
-	icon_state = "exit"
 
-/area/shuttle/escape_pod14/station
+/area/shuttle/escape_pod/escape_pod9/station
 	name = "Shuttle - Escape - Small Pod Nine"
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
-	icon_state = "exit"
-
-/area/shuttle/escape_pod15/station
-	name = "Shuttle - Escape - Small Pod Ten"
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
-	icon_state = "exit"
-
-/area/shuttle/escape_pod16/station
-	name = "Shuttle - Escape - Small Pod Eleven"
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
-	icon_state = "exit"
-
-/area/shuttle/escape_pod17/station
-	name = "Shuttle - Escape - Small Pod Twelve"
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
-	icon_state = "exit"
 
 /* VESSEL'S SHUTTLES
  * =================

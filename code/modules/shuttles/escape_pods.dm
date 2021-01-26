@@ -28,9 +28,18 @@ var/list/escape_pods_by_name = list()
 	if(!istype(controller_master))
 		CRASH("Escape pod \"[name]\" could not find it's controller master!")
 
+	GLOB.exited_event.register(shuttle_area[1], arming_controller, /datum/computer/file/embedded_program/docking/simple/escape_pod_berth/proc/empty_unarm)	// inf
+
 	controller_master.pod = src
 
 /datum/shuttle/autodock/ferry/escape_pod/can_launch()
+// [INF]
+	if(!istype(evacuation_controller, /datum/evacuation_controller/starship/fast) && evacuation_controller.has_evacuated())
+		return 0
+	if(istype(evacuation_controller, /datum/evacuation_controller/starship/fast))
+		if(world.time < evacuation_controller.evac_no_return)
+			return 0
+// [/INF]
 	if(arming_controller && !arming_controller.armed)	//must be armed
 		return 0
 	if(location)
@@ -38,7 +47,7 @@ var/list/escape_pods_by_name = list()
 	return ..()
 
 /datum/shuttle/autodock/ferry/escape_pod/can_force()
-	if (arming_controller.eject_time && world.time < arming_controller.eject_time + 50)
+	if (!arming_controller.emagged && (arming_controller.eject_time && world.time < arming_controller.eject_time + 50))
 		return 0	//dont allow force launching until 5 seconds after the arming controller has reached it's countdown
 	return ..()
 
@@ -63,7 +72,7 @@ var/list/escape_pods_by_name = list()
 		"override_enabled" = docking_program.override_enabled,
 		"door_state" = 	docking_program.memory["door_status"]["state"],
 		"door_lock" = 	docking_program.memory["door_status"]["lock"],
-		"can_force" = pod.can_force() || (evacuation_controller.has_evacuated() && pod.can_launch()),	//allow players to manually launch ahead of time if the shuttle leaves
+		"can_force" = pod.can_force() || pod.can_launch(),	// inf, was "can_force" = pod.can_force() || (evacuation_controller.has_evacuated() && pod.can_launch()),	//allow players to manually launch ahead of time if the shuttle leaves
 		"is_armed" = pod.arming_controller.armed,
 	)
 
@@ -83,7 +92,7 @@ var/list/escape_pods_by_name = list()
 	if(href_list["force_launch"])
 		if (pod.can_force())
 			pod.force_launch(src)
-		else if (evacuation_controller.has_evacuated() && pod.can_launch())	//allow players to manually launch ahead of time if the shuttle leaves
+		else if (pod.can_launch())	// inf was	else if (evacuation_controller.has_evacuated() && pod.can_launch())	//allow players to manually launch ahead of time if the shuttle leaves
 			pod.launch(src)
 		return TOPIC_REFRESH
 
@@ -122,6 +131,7 @@ var/list/escape_pods_by_name = list()
 		emagged = 1
 		if (istype(program, /datum/computer/file/embedded_program/docking/simple/escape_pod_berth))
 			var/datum/computer/file/embedded_program/docking/simple/escape_pod_berth/P = program
+			P.emagged = TRUE	// inf
 			if (!P.armed)
 				P.arm()
 		return 1
@@ -132,16 +142,29 @@ var/list/escape_pods_by_name = list()
 	var/eject_delay = 10	//give latecomers some time to get out of the way if they don't make it onto the pod
 	var/eject_time = null
 	var/closing = 0
+	var/emagged = FALSE // inf
 
 /datum/computer/file/embedded_program/docking/simple/escape_pod_berth/proc/arm()
 	if(!armed)
 		armed = 1
 		open_door()
 
-datum/computer/file/embedded_program/docking/simple/escape_pod_berth/proc/unarm()
+/datum/computer/file/embedded_program/docking/simple/escape_pod_berth/proc/unarm()
 	if(armed)
 		armed = 0
 		close_door()
+// [INF]
+/datum/computer/file/embedded_program/docking/simple/escape_pod_berth/proc/empty_unarm(var/mob/living/user, var/area)
+	if(armed && isliving(user))
+		if(evacuation_controller.is_idle() || evacuation_controller.is_on_cooldown())
+			var/check = TRUE
+			for(user in area)
+				if(isliving(user))
+					check = FALSE
+					break
+			if(check)
+				unarm()
+// [/INF]
 
 /datum/computer/file/embedded_program/docking/simple/escape_pod_berth/receive_user_command(command)
 	if (!armed)
