@@ -628,7 +628,7 @@
 	},
 /obj/structure/table/steel_reinforced,
 /obj/machinery/newscaster{
-	pixel_y = 30
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/heads/captain/secret_room/level_two)
@@ -10873,7 +10873,7 @@
 	dir = 8
 	},
 /obj/machinery/newscaster{
-	pixel_y = 30
+	pixel_y = 32
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 5
@@ -11930,10 +11930,6 @@
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	dir = 4
 	},
-/obj/machinery/newscaster{
-	pixel_x = 10;
-	pixel_y = 32
-	},
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 24
@@ -12485,6 +12481,9 @@
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/red/border,
 /obj/structure/closet/secure_closet/security/sierra/cadet,
+/obj/machinery/newscaster{
+	pixel_y = -28
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/range)
 "awL" = (
@@ -13336,15 +13335,14 @@
 /obj/structure/table/reinforced,
 /obj/item/weapon/paper_bin,
 /obj/item/weapon/pen,
-/obj/machinery/newscaster{
-	pixel_x = -26;
-	pixel_y = 2
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 10
 	},
 /obj/effect/floor_decal/corner/lightgrey/border{
 	dir = 10
+	},
+/obj/machinery/newscaster{
+	pixel_x = -28
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/fore_stairwell)
@@ -15580,7 +15578,7 @@
 /area/hallway/primary/firstdeck/aft)
 "aBM" = (
 /obj/machinery/newscaster{
-	pixel_y = 30
+	pixel_y = 32
 	},
 /obj/effect/floor_decal/borderfloor/corner{
 	dir = 4
@@ -19883,8 +19881,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/newscaster{
-	pixel_x = -26;
-	pixel_y = 2
+	pixel_x = -28
 	},
 /turf/simulated/floor/plating,
 /area/security/sierra/hallway/port)
@@ -20598,7 +20595,7 @@
 	c_tag = "RD - Office"
 	},
 /obj/machinery/newscaster{
-	pixel_y = 30
+	pixel_y = 32
 	},
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 1
@@ -23312,10 +23309,6 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 10
 	},
-/obj/machinery/newscaster{
-	pixel_x = -26;
-	pixel_y = 2
-	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 8
 	},
@@ -23323,6 +23316,9 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/newscaster{
+	pixel_x = -28
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/fore)
 "aMs" = (
@@ -23666,13 +23662,12 @@
 	},
 /obj/item/weapon/paper_bin,
 /obj/item/weapon/pen,
-/obj/machinery/newscaster{
-	pixel_x = 26;
-	pixel_y = 2
-	},
 /obj/item/device/radio/intercom{
 	dir = 1;
 	pixel_y = -28
+	},
+/obj/machinery/newscaster{
+	pixel_x = 28
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/central_stairwell)
@@ -29434,10 +29429,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/aftport)
 "aUA" = (
-/obj/machinery/newscaster{
-	pixel_x = -26;
-	pixel_y = 2
-	},
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
 	},
@@ -29454,6 +29445,9 @@
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/steeldecal/steel_decals6{
 	dir = 10
+	},
+/obj/machinery/newscaster{
+	pixel_x = -28
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/research)
@@ -30043,10 +30037,6 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
-/obj/machinery/newscaster{
-	pixel_x = 26;
-	pixel_y = 2
-	},
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_y = -24
@@ -30060,6 +30050,9 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2,
 /obj/effect/floor_decal/corner/green/bordercorner2,
+/obj/machinery/newscaster{
+	pixel_x = 28
+	},
 /turf/simulated/floor/tiled,
 /area/security/prison)
 "aVr" = (
@@ -30302,15 +30295,14 @@
 	dir = 9
 	},
 /obj/effect/floor_decal/techfloor/corner,
-/obj/machinery/newscaster{
-	pixel_x = 26;
-	pixel_y = 2
-	},
 /obj/effect/floor_decal/techfloor{
 	dir = 6
 	},
 /obj/effect/floor_decal/techfloor/orange/corner{
 	dir = 1
+	},
+/obj/machinery/newscaster{
+	pixel_x = 28
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/tcommsat/computer)
@@ -33115,7 +33107,7 @@
 /area/crew_quarters/lounge/upper)
 "baq" = (
 /obj/machinery/newscaster{
-	pixel_y = 30
+	pixel_y = 32
 	},
 /obj/machinery/libraryscanner,
 /obj/machinery/button/blast_door{

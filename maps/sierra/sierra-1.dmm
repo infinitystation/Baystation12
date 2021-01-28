@@ -2299,10 +2299,8 @@
 /obj/machinery/pager/cargo{
 	dir = 8;
 	name = "Call Cargoworkers button";
-	pixel_x = -20
-	},
-/obj/machinery/newscaster{
-	pixel_x = -30
+	pixel_x = -20;
+	pixel_y = 16
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
@@ -2322,6 +2320,9 @@
 	},
 /obj/effect/floor_decal/corner/yellow/bordercorner2{
 	dir = 10
+	},
+/obj/machinery/newscaster{
+	pixel_x = -28
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/central_stairwell)
@@ -4695,14 +4696,13 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
 	},
-/obj/machinery/newscaster{
-	pixel_x = -26;
-	pixel_y = 2
-	},
 /obj/random/maintenance,
 /obj/random/drinkbottle,
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 8
+	},
+/obj/machinery/newscaster{
+	pixel_x = -28
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/commissary)
@@ -11027,9 +11027,6 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
-/obj/machinery/newscaster{
-	pixel_y = 30
-	},
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -20
@@ -11040,6 +11037,9 @@
 /obj/effect/landmark{
 	name = "xeno_spawn";
 	pixel_x = -1
+	},
+/obj/machinery/newscaster{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/command/bsa)
@@ -20514,16 +20514,15 @@
 	department = "Exploration Leader"
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/newscaster{
-	pixel_x = -26;
-	pixel_y = 2
-	},
 /obj/machinery/light,
 /obj/effect/floor_decal/borderfloor{
 	dir = 10
 	},
 /obj/effect/floor_decal/corner/mauve/border{
 	dir = 10
+	},
+/obj/machinery/newscaster{
+	pixel_x = -28
 	},
 /turf/simulated/floor/tiled,
 /area/command/exploration_leader)
