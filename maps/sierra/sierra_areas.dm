@@ -19,8 +19,10 @@
 		/area/shuttle/administration/centcom,
 		/area/shuttle/specops/centcom,
 	)
+
 /area/medical
 	icon_state = "medbay"
+
 /area/maintenance/substation
 	name = "Substation"
 	icon_state = "substation"
@@ -49,6 +51,7 @@
 /area/thruster
 	icon_state = "thruster"
 	req_access = list(access_engine)
+
 #include "areas/multideck.dm"
 #include "areas/shuttles.dm"
 #include "areas/sierra1.dm"

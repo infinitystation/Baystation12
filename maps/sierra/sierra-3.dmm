@@ -2855,6 +2855,12 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 8
 	},
+/obj/effect/floor_decal/borderfloorwhite/corner2{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner2{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/locker)
 "afF" = (
@@ -2975,6 +2981,9 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
 	dir = 5
 	},
 /turf/simulated/floor/tiled/white,
@@ -6305,16 +6314,15 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/substation/firstdeck)
 "alh" = (
-/obj/structure/cable{
-	d1 = 32;
-	d2 = 2;
-	icon_state = "32-2"
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/maintenance/firstdeck/centralstarboard)
+/obj/effect/floor_decal/steeldecal/steel_decals4,
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/white,
+/area/medical/locker)
 "ali" = (
 /turf/simulated/wall/prepainted,
 /area/medical/office)
@@ -6965,31 +6973,16 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 6
-	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralstarboard)
 "amj" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable{
-	d1 = 1;
+	d1 = 2;
 	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
+	icon_state = "2-8"
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
@@ -8694,13 +8687,20 @@
 /turf/simulated/wall/prepainted,
 /area/storage/eva)
 "aoS" = (
-/obj/machinery/door/airlock/maintenance{
-	name = "EVA Maintenance";
-	req_access = newlist()
+/obj/structure/ladder,
+/obj/machinery/atmospherics/pipe/zpipe/down/scrubbers{
+	dir = 1
 	},
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/storage/eva)
+/obj/machinery/atmospherics/pipe/zpipe/down/supply{
+	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 32;
+	icon_state = "32-1"
+	},
+/obj/structure/catwalk,
+/turf/simulated/open,
+/area/maintenance/firstdeck/centralstarboard)
 "aoT" = (
 /obj/structure/mopbucket,
 /obj/item/weapon/mop,
@@ -9726,7 +9726,17 @@
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai_upload)
 "aqu" = (
-/obj/effect/floor_decal/industrial/hatch/grey,
+/obj/structure/table/rack,
+/obj/item/weapon/storage/toolbox/mechanical{
+	pixel_x = -2;
+	pixel_y = -1
+	},
+/obj/item/clothing/head/welding,
+/obj/item/weapon/storage/belt/utility,
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/sign/poster/tjpost/tj_12{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/storage/eva)
 "aqv" = (
@@ -34609,17 +34619,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
 "bcU" = (
-/obj/structure/table/rack,
-/obj/item/weapon/storage/toolbox/mechanical{
-	pixel_x = -2;
-	pixel_y = -1
-	},
-/obj/item/clothing/head/welding,
-/obj/item/weapon/storage/belt/utility,
-/obj/effect/floor_decal/industrial/outline/grey,
-/obj/structure/sign/poster/tjpost/tj_12{
-	pixel_y = 32
-	},
+/obj/effect/floor_decal/industrial/hatch/grey,
 /turf/simulated/floor/tiled/techfloor,
 /area/storage/eva)
 "bcV" = (
@@ -38822,20 +38822,13 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/medical/morgue)
 "gEK" = (
-/obj/structure/ladder,
-/obj/machinery/atmospherics/pipe/zpipe/down/scrubbers{
-	dir = 1
+/obj/machinery/door/airlock/maintenance{
+	name = "EVA Maintenance";
+	req_access = newlist()
 	},
-/obj/machinery/atmospherics/pipe/zpipe/down/supply{
-	dir = 1
-	},
-/obj/structure/cable{
-	d1 = 32;
-	icon_state = "32-1"
-	},
-/obj/structure/catwalk,
-/turf/simulated/open,
-/area/maintenance/firstdeck/centralstarboard)
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/storage/eva)
 "gHs" = (
 /obj/machinery/hologram/holopad,
 /obj/structure/disposalpipe/segment,
@@ -61666,8 +61659,8 @@ aiW
 akc
 ahz
 ami
+ahz
 gEK
-aoR
 bcU
 arG
 atk
@@ -61866,10 +61859,10 @@ agy
 ahO
 aiX
 akd
-alh
+aoK
 amj
-ahz
 aoS
+aoR
 aqu
 arH
 atl
@@ -62069,8 +62062,8 @@ agy
 agy
 agy
 agy
-amk
 ahz
+amk
 aoR
 bea
 arI
@@ -64286,7 +64279,7 @@ acw
 adS
 enY
 amm
-sqo
+alh
 agl
 afK
 hFe

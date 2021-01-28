@@ -52,7 +52,9 @@
 		/area/shuttle/escape/centcom,
 		/area/shuttle/escape,
 		/area/security/prison,
+		/area/syndicate_elite_squad,
 		/area/shuttle/syndicate_elite/station,
+		/area/shuttle/syndicate_elite/mothership,
 		/area/shuttle/escape/centcom,
 		/area/rnd/xenobiology/xenoflora_storage,
 		/area/turbolift,
@@ -60,6 +62,7 @@
 		/area/turbolift/firstdeck,
 		/area/turbolift/seconddeck,
 		/area/turbolift/thirddeck,
+		/area/beach,
 		/area/template_noop
 	)
 

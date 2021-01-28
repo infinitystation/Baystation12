@@ -11676,12 +11676,6 @@
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "ss" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 24;
-	req_access = list("ACCESS_ENGINEERING")
-	},
 /obj/structure/cable/green{
 	d2 = 8;
 	icon_state = "0-8"
@@ -11697,6 +11691,11 @@
 	},
 /obj/random/date_based/christmas/xmaslights{
 	dir = 4
+	},
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/sierra/dockcheck)

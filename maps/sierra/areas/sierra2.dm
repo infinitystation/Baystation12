@@ -22,6 +22,10 @@
 	name = "Second Deck - Maintenance"
 	icon_state = "maintcentral"
 
+/area/maintenance/seconddeck/emergency
+	name = "Second Deck - Emergency Storage"
+	icon_state = "emergencystorage"
+
 /area/maintenance/seconddeck/foreport
 	name = "Second Deck - Maintenance - Fore-Port "
 	icon_state = "fpmaint"
@@ -223,11 +227,11 @@
 /* VACANT AREAS
  * ============
  */
-
+/*
 /area/vacant/mess
 	name = "Second Deck - Abandoned - Officer's Mess"
 	icon_state = "bar"
-
+*/
 /area/vacant/gambling
 	name = "Second Deck - Gambling Room"
 	icon_state = "restrooms"
@@ -282,18 +286,19 @@
 
 /area/grove/theta // /area/ai_abadoned
 	name = "Second Deck - Grove - Theta"
+	icon_state = "garden"
 	sound_env = LARGE_SOFTFLOOR
 
 /area/crew_quarters/head
 	name = "Second Deck - Living - Restroom"
 	icon_state = "toilet"
 	sound_env = SMALL_ENCLOSED
-
+/*
 /area/crew_quarters/showers
 	name = "Second Deck - Living - Private Showers"
 	icon_state = "toilet"
 	sound_env = SMALL_ENCLOSED
-
+*/
 /area/crew_quarters/gym
 	name = "Second Deck - Living - Gym"
 	icon_state = "fitness"
@@ -350,7 +355,7 @@
 /* MEDBAY AREAS
  * ============
  */
-
+/*
 /area/medical/virology
 	name = "Second Deck - Abandoned - Virology"
 	req_access = list()
@@ -358,7 +363,7 @@
 /area/medical/virologyaccess
 	name = "Second Deck - Abandoned - Virology Access"
 	req_access = list()
-
+*/
 /area/medical/maintenance_equipstorage
 	name = "Second Deck - Infirmary - Lower Storage"
 	icon_state = "medbay4"
