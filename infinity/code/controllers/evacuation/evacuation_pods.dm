@@ -174,7 +174,7 @@
 		to_chat(user, "Процедуры подготовки прыжка уже зайдествованы.")
 		return
 	if(!is_bsd_fine())
-		to_chat(user, "ОШИБКА: БСД не обнаружено\\не откалибровано\\не запитано. Отмена операции.")
+		to_chat(user, "ОШИБКА: БСД не обнаружено/не откалибровано/не запитано. Отмена операции.")
 		return 0
 	if (evacuation_controller.call_evacuation(user, 0))
 		log_and_message_admins("[user? key_name(user) : "Autotransfer"] has initiated bluespace jump preparation.")
