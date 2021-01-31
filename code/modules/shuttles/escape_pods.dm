@@ -42,7 +42,7 @@ var/list/escape_pods_by_name = list()
 	if(arming_controller.armed)
 		if(evacuation_controller.is_idle() || evacuation_controller.is_on_cooldown())
 			var/check = TRUE
-			for(var/mob/user in shuttle_area[1])
+			for(var/mob/living/user in shuttle_area[1])
 				if(isliving(user))
 					check = FALSE
 					break
