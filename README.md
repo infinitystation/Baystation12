@@ -1,7 +1,8 @@
 
 <h1 align="center">
   <br>
-  <a href="http://wiki.infinity-ss13.info"><img src="https://user-images.githubusercontent.com/46600554/106483353-03da7600-64e1-11eb-9723-7a1765815a7d.png" width="200"></a>
+  <a href="https://wiki.infinity-ss13.info"><img src="https://user-images.githubusercontent.com/46600554/106483353-03da7600-64e1-11eb-9723-7a1765815a7d.png" width="200"></a>
+
 
 
   <br>
