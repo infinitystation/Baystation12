@@ -721,10 +721,6 @@
 /turf/simulated/floor/tiled,
 /area/hydroponics)
 "abq" = (
-/obj/machinery/alarm{
-	dir = 8;
-	pixel_x = 24
-	},
 /obj/structure/closet/emcloset,
 /obj/effect/floor_decal/borderfloor{
 	dir = 5
@@ -735,6 +731,10 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/light/spot{
 	dir = 1
+	},
+/obj/machinery/camera/network/second_deck{
+	c_tag = "Hydroponics - Aft";
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/hydroponics)
@@ -944,7 +944,7 @@
 /area/crew_quarters/galley/backroom)
 "abS" = (
 /obj/machinery/camera/network/second_deck{
-	c_tag = "Hydroponics - Storage"
+	c_tag = "Mess Hall - Kitchen - Freezer"
 	},
 /obj/structure/closet/secure_closet/freezer/fridge,
 /turf/simulated/floor/tiled/freezer,
@@ -1946,6 +1946,10 @@
 	},
 /obj/effect/floor_decal/corner/green/border{
 	dir = 4
+	},
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled,
 /area/hydroponics)
@@ -19645,10 +19649,6 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
-/obj/machinery/camera/network/second_deck{
-	c_tag = "Hydroponics - Aft";
-	dir = 8
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
 	},
@@ -35745,21 +35745,6 @@
 /mob/living/simple_animal/aquatic/fish/judge,
 /turf/simulated/floor/aquarium,
 /area/grove/theta)
-"oZz" = (
-/obj/effect/floor_decal/corner/grey/diagonal{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/camera/network/second_deck{
-	c_tag = "Mess Hall - Galley - Cafe";
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white,
-/area/crew_quarters/galley)
 "pbO" = (
 /obj/machinery/floodlight,
 /obj/effect/floor_decal/techfloor{
@@ -52992,7 +52977,7 @@ aku
 aaS
 ajt
 akQ
-oZz
+aku
 akD
 aia
 anA
