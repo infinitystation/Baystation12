@@ -38,7 +38,7 @@
 	desc = "Modified pair of jackboots, particularly comfortable for those species whose toes hold claws."
 	item_state = "digiboots"
 	icon_state = "digiboots"
-	species_restricted = list("exclude", SPECIES_RESOMI)
+	species_restricted = null
 
 /obj/item/clothing/shoes/workboots
 	name = "workboots"
@@ -63,4 +63,4 @@
 	name = "toe-less workboots"
 	desc = "A pair of toeless work boots designed for use in industrial settings. Modified for species whose toes have claws."
 	icon_state = "workbootstoeless"
-	species_restricted = list("exclude", SPECIES_RESOMI)
+	species_restricted = null

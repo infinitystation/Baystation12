@@ -15,7 +15,6 @@
 		/datum/species/skrell  		 = list(HUMAN_ONLY_JOBS),
 		/datum/species/tajaran 		 = list(HUMAN_ONLY_JOBS),
 		/datum/species/machine 		 = list(HUMAN_ONLY_JOBS),
-		/datum/species/resomi  		 = list(HUMAN_ONLY_JOBS, /datum/job/officer, /datum/job/exploration_leader, /datum/job/warden, /datum/job/chief_engineer, /datum/job/rd, /datum/job/iaa),
 		/datum/species/diona   		 = list(HUMAN_ONLY_JOBS, /datum/job/officer, /datum/job/exploration_leader, /datum/job/warden, /datum/job/iaa),
 	)
 #undef HUMAN_ONLY_JOBS

@@ -172,9 +172,8 @@
 	action_button_name = "Toggle Hood"
 	hoodtype = /obj/item/clothing/head/hoodiehood
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_suit_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/infinity/onmob_suit.dmi', //inf, orig was SPECIES_UNATHI = 'icons/mob/onmob/Unathi/suit.dmi'
-		SPECIES_HUMAN  = 'icons/mob/onmob/infinity/onmob_suit.dmi',        //inf
+		SPECIES_HUMAN  = 'icons/mob/onmob/infinity/onmob_suit.dmi'        //inf
 		)
 
 /obj/item/clothing/head/hoodiehood

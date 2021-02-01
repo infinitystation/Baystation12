@@ -109,11 +109,6 @@
 	strength = 4
 	metabolism = REM
 
-/datum/reagent/toxin/batrachotoxin/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	if(alien == IS_RESOMI)
-		return
-	..()
-
 /datum/reagent/toxin/phoron
 	name = "Phoron"
 	description = "Phoron in its liquid form."

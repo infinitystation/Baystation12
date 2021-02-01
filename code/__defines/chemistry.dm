@@ -27,9 +27,8 @@
 #define IS_MANTID  7
 //inf ahead
 #define IS_TAJARA  8
-#define IS_RESOMI  9
-#define IS_EROSAN  10
-#define IS_XENOS   11
+#define IS_EROSAN  9
+#define IS_XENOS   10
 //inf end
 #define CE_STABLE        "stable"       // Inaprovaline
 #define CE_ANTIBIOTIC    "antibiotic"   // Spaceacilin

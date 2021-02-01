@@ -11,8 +11,7 @@
 		slot_wear_mask_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi')
 
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/misc.dmi',
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/misc.dmi'
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/misc.dmi'
 		)
 
 /obj/item/clothing/accessory/necklace/collar/gold

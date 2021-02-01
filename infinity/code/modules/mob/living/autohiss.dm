@@ -30,14 +30,3 @@
 			"р" = list("рр", "ррр", "рррр")
 		)
 	autohiss_exempt = list(LANGUAGE_SIIK_MAAS)
-
-/datum/species/resomi
-	autohiss_basic_map = list(
-			"з" = list("с")
-		)
-	autohiss_extra_map = list(
-			"ч" = list("щ"),
-
-			"ж" = list("ш")
-		)
-	autohiss_exempt = list(LANGUAGE_RESOMI)

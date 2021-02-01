@@ -51,8 +51,6 @@
 	var/nut_removed = removed
 	var/hyd_removed = removed
 	switch(alien)//inf
-		if(IS_RESOMI)//inf
-			removed *= 0.8 // Resomi get a bit more nutrition from meat, a bit less from other stuff to compensate //inf
 		if(IS_UNATHI)
 			removed *= 0.1 // Unathi get most of their nutrition from meat.
 	if(nutriment_factor)
@@ -81,7 +79,6 @@
 
 /datum/reagent/nutriment/protein/adjust_nutrition(var/mob/living/carbon/M, var/alien, var/removed)
 	switch(alien)
-		if(IS_RESOMI) removed *= 1.25
 		if(IS_UNATHI) removed *= 2.25
 	M.adjust_nutrition(nutriment_factor * removed)
 

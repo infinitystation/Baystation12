@@ -31,7 +31,7 @@
 
 	log_say("[key_name(src)] commanded to [key_name(M)]: [text]")
 
-	to_chat(M, "<span class='danger'>Вы внезапно чувствуете очень явный и требовательный приказ: <i>[text]</i>. Вы понимаете, что должны выполнить его любой ценой.</span>")
+	to_chat(M, "<span class='danger'>пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: <i>[text]</i>. пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.</span>")
 	if(istype(M,/mob/living/carbon/human))
 		to_chat(src, "<span class='warning'>Your nose begins to bleed...</span>")
 		src.drip(5)
@@ -212,12 +212,12 @@
 /mob/living/carbon/human/proc/mutate_species()
 	set category = "Abilities"
 	set name = "Change Species"
-	set desc = "Change your species. From human to resomi."
+	set desc = "Change your species. From human to anyone!"
 
 	if(last_special < world.time)
 		return
 
-	var/new_species = input("Select new species!", "Switch species", null, null) as null|anything in list(SPECIES_HUMAN, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_PROMETHEAN, SPECIES_YEOSA, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER, SPECIES_BOOSTER, SPECIES_TAJARA, SPECIES_RESOMI)
+	var/new_species = input("Select new species!", "Switch species", null, null) as null|anything in list(SPECIES_HUMAN, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_PROMETHEAN, SPECIES_YEOSA, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER, SPECIES_BOOSTER, SPECIES_TAJARA)
 	src.visible_message(SPAN_WARNING("[src]'s flesh rapidly mutates and he transforms into [lowertext(new_species)]!"))
 	src.set_species(new_species)
 	last_special = world.time + (120 SECONDS)

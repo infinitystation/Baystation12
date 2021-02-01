@@ -499,7 +499,7 @@
 	if(alien == IS_DIONA)
 		return
 //inf ahead
-	if(alien == (IS_TAJARA || IS_RESOMI))  //tajs and resoms are too fast
+	if(alien == (IS_TAJARA))  //tajs are too fast
 		if(prob(5))
 			to_chat(M, pick(SPAN_NOTICE("The head aches from sounds..."), SPAN_NOTICE("My ears are plugged up...")))
 			M.stun_effect_act(0, 10, BP_HEAD, "headache")

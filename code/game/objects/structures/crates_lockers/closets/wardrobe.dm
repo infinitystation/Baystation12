@@ -105,8 +105,6 @@
 	new /obj/item/clothing/shoes/sandal(src)
 	new /obj/item/clothing/shoes/sandal(src)
 	new /obj/item/clothing/shoes/sandal(src)
-	new /obj/item/clothing/under/resomi(src)
-	new /obj/item/clothing/under/resomi/white(src)
 
 /obj/structure/closet/wardrobe/orange
 	name = "prison wardrobe"

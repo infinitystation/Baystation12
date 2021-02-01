@@ -28,7 +28,6 @@
 	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_ADHERENT)
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/species/vox/onmob_head_vox.dmi',
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_head_unathi.dmi',
 		SPECIES_EROSAN = 'infinity/icons/mob/species/erosan/mask.dmi', //INF,
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi' //INF

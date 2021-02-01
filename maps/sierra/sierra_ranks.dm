@@ -54,9 +54,6 @@
 		/datum/species/tajaran  = list(
 			/datum/mil_branch/alien,
 			/datum/mil_branch/skrell_fleet),
-		/datum/species/resomi   = list(
-			/datum/mil_branch/alien,
-			/datum/mil_branch/skrell_fleet),
 		/datum/species/vox      = list(
 			/datum/mil_branch/contractor,
 			/datum/mil_branch/employee,

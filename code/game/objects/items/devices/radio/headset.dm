@@ -20,7 +20,6 @@
 	var/ks2type = null
 
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_ears_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/ears.dmi'
 		)
 

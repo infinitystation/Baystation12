@@ -99,7 +99,6 @@
 		var/cover = "hair"
 		switch(H.get_species())
 			if(SPECIES_VOX)          cover = "quills"
-			if(SPECIES_RESOMI)       cover = "feathers"
 			if(SPECIES_TAJARA)       cover = "fur"
 			if(SPECIES_UNATHI)       cover = "scale"
 			if(SPECIES_SKRELL)       cover = "skin"

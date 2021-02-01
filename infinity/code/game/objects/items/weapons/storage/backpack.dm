@@ -26,7 +26,6 @@
 /obj/item/weapon/storage/backpack
 	max_w_class = ITEM_SIZE_NORMAL
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_back_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/back.dmi'
 		)
 
@@ -44,9 +43,6 @@
 
 /obj/item/weapon/storage/backpack/rucksack
 	max_storage_space = DEFAULT_BACKPACK_STORAGE + 8
-	sprite_sheets = list(
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_back_resomi.dmi'
-		)
 
 /obj/item/weapon/storage/backpack/dufflebag
 	max_w_class = ITEM_SIZE_LARGE
@@ -64,15 +60,6 @@
 
 /obj/item/weapon/storage/backpack/messenger
 	max_w_class = ITEM_SIZE_NORMAL
-
-/obj/item/weapon/storage/backpack/explorer_resomi
-	name = "exploratory backpack"
-	desc = "A large backpack in which there are a lot of pockets. Too small for tall humanoids."
-	icon = CUSTOM_ITEM_OBJ
-	item_icons = list(slot_back_str = CUSTOM_ITEM_MOB)
-	icon_state = "explorer_backpack"
-	item_state = "explorer_backpack"
-	sprite_sheets = list(SPECIES_RESOMI = CUSTOM_ITEM_MOB)
 
 /obj/item/weapon/storage/backpack/satchel/pocketbook/navy
 	name = "navy pocketbook"

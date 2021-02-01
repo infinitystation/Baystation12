@@ -19,7 +19,6 @@
 	var/cuff_sound = 'sound/weapons/handcuffs.ogg'
 	var/cuff_type = "handcuffs"
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/misc.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/misc.dmi'
 		)
 

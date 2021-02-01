@@ -99,19 +99,3 @@
 	desc = "Unati thermal suit. This one is white."
 	icon_state = "thermouna_2"
 	item_state = "thermouna_2"
-
-/obj/item/clothing/under/thermal/resomi
-	name = "small thermal suit"
-	desc = "Looks like very small suit. For children or resomi? This thermal suit is black."
-	icon_state = "thermores_1"
-	item_state = "thermores_1"
-	thermostat = T0C
-	species_restricted = list(SPECIES_RESOMI)
-	sprite_sheets = list(
-		SPECIES_RESOMI = 'infinity/icons/mob/onmob/onmob_under.dmi',
-		)
-
-/obj/item/clothing/under/thermal/resomi/white
-	desc = "Looks like very small suit. For children or resomi? This thermal suit is white. "
-	icon_state = "thermores_2"
-	item_state = "thermores_2"

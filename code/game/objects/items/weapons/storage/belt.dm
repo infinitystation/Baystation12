@@ -14,7 +14,6 @@
 	var/overlay_flags
 	attack_verb = list("whipped", "lashed", "disciplined")
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_belt_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/belt.dmi'
 		)
 

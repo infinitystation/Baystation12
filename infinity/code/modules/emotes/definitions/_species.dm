@@ -11,14 +11,6 @@
 		/decl/emote/audible/cat_purr/long
 		)
 
-/datum/species/resomi
-	default_emotes = list(
-		/decl/emote/audible/chuckle/resomi,
-		/decl/emote/audible/cough/resomi,
-		/decl/emote/audible/laugh/resomi,
-		/decl/emote/audible/scream/resomi,
-		)
-
 /datum/species/monkey
 	default_emotes = list(
 		/decl/emote/audible/scream/monkey

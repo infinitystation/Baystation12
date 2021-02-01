@@ -199,7 +199,7 @@
 		var/mob/living/carbon/human/H = mob
 
 		if(prob(0.5))
-			var/new_species = pick(SPECIES_HUMAN, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_YEOSA, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER, SPECIES_BOOSTER, SPECIES_TAJARA, SPECIES_RESOMI)
+			var/new_species = pick(SPECIES_HUMAN, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_YEOSA, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER, SPECIES_BOOSTER, SPECIES_TAJARA)
 			H.visible_message(SPAN_WARNING("[H]'s flesh rapidly mutates and he transforms into [lowertext(new_species)]!"))
 			set_species(new_species, H)
 			effected++

@@ -57,7 +57,6 @@ obj/item/weapon/reagent_containers/food/drinks/sillycup
 	w_class = ITEM_SIZE_TINY
 	body_parts_covered = HEAD
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'infinity/icons/mob/human_races/species/resomi/ears.dmi',
 		SPECIES_TAJARA = 'infinity/icons/mob/human_races/species/tajara/ears.dmi',
 		SPECIES_HUMAN ='infinity/icons/mob/onmob/onmob_ears.dmi',
 		SPECIES_IPC = 'infinity/icons/mob/onmob/onmob_ears.dmi'

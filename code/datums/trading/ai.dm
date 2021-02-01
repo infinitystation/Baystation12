@@ -118,8 +118,3 @@ They sell generic supplies and ask for generic supplies.
 								/obj/structure/sign/goldenplaque    = TRADER_BLACKLIST_ALL,
 								/obj/structure/sign/poster          = TRADER_BLACKLIST
 								)
-//[INF]
-/datum/trader/trading_beacon/New()
-	..()
-	speech[TRADER_HAIL_START + SPECIES_RESOMI] = "Greetings, I am MERCHANT, Artifical Intelligence onboard ORIGIN. We wish to trade with you, no more."
-//[/INF]
