@@ -1,8 +1,0 @@
-{
-  "ckey" :            "kosteg",
-  "character_name" :  "Valkyr",
-  "item_name" :       "modified hypospray",
-  "item_desc" :       "A modified version of standart DeForest Medical Corporation hypospray. It's handle is inscribed with words: \"A gift from S. Hughes to Valkyr. Don't you dare to forget me, you, tin can\".",
-  "item_icon_state" : "hypospray_valkyr",
-  "item_path" :       "/obj/item/weapon/reagent_containers/hypospray"
-  }

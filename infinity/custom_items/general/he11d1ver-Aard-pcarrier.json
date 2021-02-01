@@ -1,9 +1,0 @@
-{
-  "ckey" :            "he11d1ver",
-  "character_name" :  "Aard Barnes",
-  "item_path" :       "/obj/item/clothing/suit/armor/pcarrier",
-  "item_name" :       "green tactical vest",
-  "item_desc" :       "Green-colored plate carrier replete with pouches to help you carry mags, trophies, awful teammates and crippling PTSD.",
-  "item_icon_state" : "helldiver_pcarrier",
-  "req_access" :      [ "ACCESS_SECURITY" ]
-  }

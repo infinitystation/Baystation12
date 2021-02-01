@@ -1,8 +1,0 @@
-{
-	"ckey"				:	"filiae",
-	"character_name"	:	"E03",
-	"item_name"			:	"white engineering beret",
-	"item_desc"			:	"White beret with the emblem of a red lightning bolt on a black background, owned by Einstein Industries engineers, who have proven their advanced qualifications.",
-	"item_icon_state"	:	"E03_beret",
-	"item_path"			:	"/obj/item/clothing/head/beret"
-}

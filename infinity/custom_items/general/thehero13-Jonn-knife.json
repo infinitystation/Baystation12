@@ -1,8 +1,0 @@
-{
-  "ckey" :            "thehero13",
-  "character_name" :  "Jonn Corsac",
-  "item_name" :       "karambit",
-  "item_desc" :       "A small curved knife.",
-  "item_icon_state" : "karambit2",
-  "item_path" :       "/obj/item/weapon/material/knife"
-  }
