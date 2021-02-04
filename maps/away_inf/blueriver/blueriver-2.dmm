@@ -809,7 +809,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
-/obj/machinery/light/halogen,
+/obj/machinery/light,
 /turf/simulated/floor/tiled/white,
 /area/bluespaceriver/ship/medical)
 "bh" = (

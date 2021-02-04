@@ -22,6 +22,7 @@
 
 	min_gas = list()
 	max_gas = list()
+	minbodytemp = 0
 
 	var/mob/living/carbon/human/infested = null
 	var/can_infest = FALSE
@@ -31,7 +32,7 @@
 
 /mob/living/simple_animal/hostile/blobspore/death()
 	. = ..()
-	if(core)
+	if(core && core.strain)
 		core.strain.spore_death(src)
 	var/datum/effect/effect/system/smoke_spread/bad/BS = new
 	var/turf/T = get_turf(src)
@@ -62,7 +63,7 @@
 
 /mob/living/simple_animal/hostile/blobspore/on_update_icon()
 	. = ..()
-	if(core)
+	if(core && core.strain)
 		color = core.strain.blob_color
 		set_light(3, 5, color)
 	else
@@ -74,7 +75,7 @@
 		icon = infested.icon
 		overlays = infested.overlays
 		var/mutable_appearance/blob_head_overlay = mutable_appearance('infinity/icons/mob/blob.dmi', "blob_head")
-		if(core)
+		if(core && core.strain)
 			blob_head_overlay.color = core.strain.blob_color
 		color = initial(color)//looks better.
 		overlays += blob_head_overlay

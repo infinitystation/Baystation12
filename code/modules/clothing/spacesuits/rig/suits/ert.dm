@@ -39,28 +39,28 @@
 /obj/item/clothing/head/helmet/space/rig/ert
 	light_overlay = "helmet_light_dual"
 	camera = /obj/machinery/camera/network/ert
-	species_restricted = list(SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_UNATHI, SPECIES_TAJARA)
+	species_restricted = list(SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_UNATHI, SPECIES_TAJARA,SPECIES_IPC)
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/head.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi'
 		)
 
 /obj/item/clothing/suit/space/rig/ert
-	species_restricted = list(SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_UNATHI, SPECIES_TAJARA)
+	species_restricted = list(SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_UNATHI, SPECIES_TAJARA,SPECIES_IPC)
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/suit.dmi',
 //		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi'
 		)
 
 /obj/item/clothing/shoes/magboots/rig/ert
-	species_restricted = list(SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_UNATHI, SPECIES_TAJARA)
+	species_restricted = list(SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_UNATHI, SPECIES_TAJARA,SPECIES_IPC)
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/feet.dmi'
 		)
 
 /obj/item/clothing/gloves/rig/ert
 	item_flags = ITEM_FLAG_THICKMATERIAL | ITEM_FLAG_NOCUFFS
-	species_restricted = list(SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_UNATHI, SPECIES_TAJARA)
+	species_restricted = list(SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_UNATHI, SPECIES_TAJARA,SPECIES_IPC)
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/hands.dmi'
 		)

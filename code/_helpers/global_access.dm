@@ -479,8 +479,10 @@
 			return global.global_message_listener;
 		if("global_vars_")
 			return global.global_vars_;
+/*[inf.exclude]
 		if("gravity_is_on")
 			return global.gravity_is_on;
+[/inf.exclude]*/
 		if("gzn_check")
 			return global.gzn_check;
 		if("hadevent")
@@ -1400,8 +1402,10 @@
 			global.global_message_listener=newval;
 		if("global_vars_")
 			global.global_vars_=newval;
+/*[inf.exclude]
 		if("gravity_is_on")
 			global.gravity_is_on=newval;
+[/inf.exclude]*/
 		if("gzn_check")
 			global.gzn_check=newval;
 		if("hadevent")
@@ -2081,7 +2085,7 @@
 	"ghost_traps",
 	"global_message_listener",
 	"global_vars_",
-	"gravity_is_on",
+//inf.exclude	"gravity_is_on",
 	"gzn_check",
 	"hadevent",
 	"hivemind_bank",

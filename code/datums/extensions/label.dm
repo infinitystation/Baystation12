@@ -36,7 +36,7 @@
 		atom_holder.verbs -= /atom/proc/RemoveLabel
 
 	var/full_label = " ([label])"
-	var/index = findtextEx(atom_holder.name, full_label)
+	var/index = findtextEx_char(atom_holder.name, full_label)//inf, was: var/index = findtextEx(atom_holder.name, full_label)
 	if(!index) // Playing it safe, something might not have set the name properly
 		return
 
@@ -45,7 +45,13 @@
 
 	var/old_name = atom_holder.name
 	// We find and replace the first instance, since that's the one we removed from the list
-	atom_holder.name = replacetext(atom_holder.name, full_label, "", index, index + length(full_label))
+//[INF]
+	var/end = index + length_char(full_label) + 1
+	if(end > length(atom_holder.name))
+		end = 0
+	atom_holder.name = replacetext_char(atom_holder.name, full_label, "", index, end)
+//[/INF]
+//inf.exclude	atom_holder.name = replacetext(atom_holder.name, full_label, "", index, index + length(full_label))
 	GLOB.name_set_event.raise_event(src, old_name, atom_holder.name)
 
 // We may have to do something more complex here

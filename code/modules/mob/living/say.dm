@@ -17,6 +17,7 @@ var/list/department_radio_keys = list(
 	  ":p" = "AI Private",	".p" = "AI Private",
 	  ":z" = "Entertainment",".z" = "Entertainment",
 	  ":y" = "Exploration",		".y" = "Exploration",
+	  ":f" = "SCG Patrol",	".f" = "SCG Patrol", //INF
 	  ":k" = "Recon",		".k" = "Recon",	//Skrell Recon ship
 
 	  ":R" = "right ear",	".R" = "right ear",
@@ -36,6 +37,7 @@ var/list/department_radio_keys = list(
 	  ":P" = "AI Private",	".P" = "AI Private",
 	  ":Z" = "Entertainment",".Z" = "Entertainment",
 	  ":Y" = "Exploration",		".Y" = "Exploration",
+	  ":F" = "SCG Patrol",	".F" = "SCG Patrol", //INF
 	  ":K" = "Recon",		".K" = "Recon",	//Skrell Recon ship
 
 	  //localized radio keys by ~KareTa
@@ -55,6 +57,7 @@ var/list/department_radio_keys = list(
 	  ":з" = "AI Private",	".з" = "AI Private",
 	  ":я" = "Entertainment",".я" = "Entertainment",
 	  ":н" = "Exploration",		".н" = "Exploration",
+	  ":а" = "SCG Patrol",	".а" = "SCG Patrol", //INF
 	  ":л" = "Recon",		".л" = "Recon",	//Skrell Recon ship
 
 	  ":К" = "right ear",	".К" = "right ear",
@@ -73,6 +76,7 @@ var/list/department_radio_keys = list(
 	  ":З" = "AI Private",	".З" = "AI Private",
 	  ":Я" = "Entertainment",".Я" = "Entertainment",
 	  ":Н" = "Exploration",		".Н" = "Exploration",
+	  ":А" = "SCG Patrol",	".А" = "SCG Patrol", //INF
 	  ":Л" = "Recon",		".Л" = "Recon",	//Skrell Recon ship
 
 	  /*
@@ -372,7 +376,10 @@ proc/get_radio_key_from_channel(var/channel)
 					O.hear_talk(src, stars(message), verb, speaking)
 
 //	flick_overlay(speech_bubble, speech_bubble_recipients, 30) inf-dev
+	//[INF]
 	INVOKE_ASYNC(GLOBAL_PROC, /.proc/animate_speech_bubble, speech_bubble, speech_bubble_recipients, 30)
+	INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, message, speaking, italics, speech_bubble_recipients, 30)
+	//[/INF]
 
 	if(whispering)
 		log_whisper("[name]/[key] : [message]")

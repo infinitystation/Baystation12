@@ -4,7 +4,7 @@
 /datum/gear/tactical/ubac
 	display_name = "UBAC shirt selection"
 	path = /obj/item/clothing/accessory/ubac
-	allowed_roles = list(/datum/job/exploration_leader, /datum/job/explorer, /datum/job/explorer_pilot, /datum/job/explorer_medic, /datum/job/explorer_engineer, /datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer) //camo + tactical
+	allowed_roles = list(/datum/job/exploration_leader, /datum/job/explorer, /datum/job/explorer_pilot, /datum/job/explorer_medic, /datum/job/explorer_engineer, /datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/security_assistant) //camo + tactical
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/tactical/armor_deco
@@ -22,6 +22,12 @@
 /datum/gear/tactical/tacticool
 
 /datum/gear/tactical/bloodpatch
+	allowed_roles = ARMED_ROLES
+
+/datum/gear/tactical/security_belt
+	display_name = "security belt"
+	path = /obj/item/weapon/storage/belt/security
+	slot = slot_belt
 	allowed_roles = ARMED_ROLES
 
 /datum/gear/tactical/holster

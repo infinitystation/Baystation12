@@ -222,9 +222,6 @@
 		t = replacetext(t, "\[cell\]", "")
 		t = replacetext(t, "\[logo\]", "")
 
-	if(!istype(src, /obj/item/weapon/paper/nano))
-		t = replacetext(t, "\[img\]", "")
-
 	if(iscrayon)
 		t = "<font face=\"[crayonfont]\" color=[P ? P.colour : "black"]><b>[t]</b></font>"
 	else if(isfancy)
@@ -315,10 +312,6 @@
 			return
 
 		log += "<br />\[[time_stamp()]] [key_name(usr)] added: [t]"
-
-		if(istype(src, /obj/item/weapon/paper/nano))
-			if(findtext(t,"\[img]"))
-				message_admins("[key_name_admin(usr)] added an image to <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>[src]</a>.")
 
 		var/last_fields_value = fields
 
@@ -484,10 +477,6 @@
 	t = replacetext(t, "\[sign\]", "<font face=\"[signfont]\"><i>")
 	t = replacetext(t, "\[/sign\]", "</i></font>")
 	return t
-
-/obj/item/weapon/paper/nano
-	name = "nano paper"
-	color = "#ccffff"
 
 /obj/item/weapon/paper/proc/can_bundle()
 	return TRUE

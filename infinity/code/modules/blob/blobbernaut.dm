@@ -21,6 +21,7 @@
 
 	min_gas = list()
 	max_gas = list()
+	minbodytemp = 0
 
 	var/obj/effect/biomass/core/core
 

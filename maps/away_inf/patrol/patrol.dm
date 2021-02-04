@@ -2,6 +2,7 @@
 #include "patrol_areas.dm"
 #include "patrol_items.dm"
 #include "patrol_shuttle.dm"
+#include "patrol_machinery.dm"
 
 /* OVERMAP
  * =======
@@ -27,7 +28,7 @@
  */
 
 /obj/machinery/telecomms/allinone/away_scg_patrol
-	listening_freqs = list(ERT_FREQ)
+	listening_freqs = list(SCG_FREQ)
 	channel_color = COMMS_COLOR_CENTCOMM
 	channel_name = "SCG Patrol"
 	circuitboard = /obj/item/weapon/stock_parts/circuitboard/telecomms/allinone/away_scg_patrol
@@ -42,12 +43,12 @@
 
 /obj/item/device/radio/headset/away_scg_patrol/Initialize()
 	. = ..()
-	set_frequency(ERT_FREQ)	//Not going to be random or just set to the common frequency, but can be set later.
+	set_frequency(SCG_FREQ)	//Not going to be random or just set to the common frequency, but can be set later.
 
 /obj/item/device/encryptionkey/away_scg_patrol
 	name = "SCG Patrol radio encryption key"
 	icon_state = "nt_cypherkey"
-	channels = list("Response Team" = 1)
+	channels = list("SCG Patrol" = 1)
 
 /* SMES
  * ====

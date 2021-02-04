@@ -42,7 +42,7 @@
 						/datum/job/cargo_assistant, /datum/job/mining, /datum/job/janitor, /datum/job/scientist_assistant, /datum/job/submap/merchant, /datum/job/submap/merchant_trainee)
 
 /datum/gear/storage/black_vest
-	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/submap/merchant, /datum/job/submap/merchant_trainee)
+	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/submap/merchant, /datum/job/submap/merchant_trainee, /datum/job/security_assistant)
 
 /datum/gear/storage/white_vest
 	allowed_roles = list(/datum/job/cmo, /datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee, /datum/job/explorer_medic, /datum/job/roboticist, /datum/job/submap/merchant, /datum/job/submap/merchant_trainee)
@@ -52,7 +52,7 @@
 						/datum/job/cargo_assistant, /datum/job/mining, /datum/job/janitor, /datum/job/scientist_assistant, /datum/job/submap/merchant)
 
 /datum/gear/storage/black_drop_pouches
-	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/submap/merchant)
+	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/submap/merchant, /datum/job/security_assistant)
 
 /datum/gear/storage/white_drop_pouches
 	allowed_roles = list(/datum/job/cmo, /datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee, /datum/job/explorer_medic, /datum/job/roboticist, /datum/job/submap/merchant, /datum/job/submap/merchant_trainee, /datum/job/chemist)
@@ -63,3 +63,10 @@
 /datum/gear/accessory/ftupin
 	allowed_roles = list(/datum/job/submap/merchant, /datum/job/submap/merchant_trainee, /datum/job/assistant)
 	allowed_branches = list(/datum/mil_branch/civilian)
+
+/datum/gear/passport
+	display_name = "passports selection"
+	description = "A selection of passports."
+	path = /obj/item/weapon/passport
+	flags = GEAR_HAS_SUBTYPE_SELECTION
+	custom_setup_proc = /obj/item/weapon/passport/proc/set_info
