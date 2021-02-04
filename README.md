@@ -13,8 +13,8 @@
 <h4 align="center">Сборка игры Space Station 13 на основе сборки <a href="https://github.com/Baystation12/Baystation12">Baystation12</a>.</h4>
 
 <p align="center">
-  <a href="https://travis-ci.org/infinitystation/Baystation12">
-    <img src="https://travis-ci.org/infinitystation/Baystation12.svg?branch=master"
+  <a href="https://github.com/infinitystation/Baystation12/actions">
+    <img src="https://github.com/infinitystation/Baystation12/workflows/Run%20Tests/badge.svg"
          alt="Build Status">
   </a>
   <a href="https://www.codefactor.io/repository/github/infinitystation/baystation12">
