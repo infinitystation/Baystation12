@@ -5,7 +5,7 @@
 	name = "High Pulse Electricity Outage Tool"
 	item_cost = 24
 	path = /obj/item/device/blackout
-	desc = "A device wich can create power virus in terminal, spread it in power network and temporally creating blackout."
+	desc = "A device which can create power surge in terminal, spread it in power network and temporally creating blackout."
 
 /obj/item/device/blackout
 	name = "high pulse electricity outage tool"

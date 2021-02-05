@@ -28,3 +28,8 @@
 #define USE_FAIL_IS_SILICON 7
 
 #define DEFAULT_RESPAWN_COOLDOWN config.default_latejoin_cooldown
+
+//Area gravity flags
+#define AREA_GRAVITY_NEVER  -1 // No gravity, never
+#define AREA_GRAVITY_NORMAL 1 // Gravity in area will act like always
+#define AREA_GRAVITY_ALWAYS 2 // No matter what, gravity always would be
