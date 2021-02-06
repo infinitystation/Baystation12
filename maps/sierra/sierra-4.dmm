@@ -1,10 +1,102 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aaa" = (
+/obj/effect/paint/brown,
+/obj/effect/paint_stripe/nt_red,
+/turf/simulated/wall/titanium,
+/area/space)
 "aab" = (
 /turf/space,
+/area/space)
+"aac" = (
+/obj/structure/shuttle/engine/propulsion{
+	dir = 1
+	},
+/obj/structure/shuttle/engine/heater{
+	dir = 1;
+	pixel_y = -32
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"aad" = (
+/obj/effect/paint/brown,
+/obj/effect/paint_stripe/nt_red,
+/turf/simulated/wall/r_titanium,
+/area/space)
+"aae" = (
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"aaf" = (
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/techmaint,
 /area/space)
 "aag" = (
 /turf/unsimulated/wall,
 /area/centcom)
+"aah" = (
+/obj/machinery/door/blast/shutters{
+	dir = 4;
+	id_tag = "supply_shuttle";
+	name = "Supply Drone Shutters"
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "supply_shuttle";
+	name = "Supply Drone Shutter Control";
+	pixel_y = 26;
+	req_access = list("ACCESS_CARGO")
+	},
+/obj/effect/floor_decal/industrial/hatch/grey,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"aai" = (
+/obj/machinery/door/blast/shutters{
+	dir = 4;
+	id_tag = "supply_shuttle";
+	name = "Supply Drone Shutters"
+	},
+/obj/effect/floor_decal/industrial/hatch/grey,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"aaj" = (
+/obj/effect/shuttle_landmark/supply/centcom,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"aak" = (
+/obj/machinery/door/blast/shutters{
+	dir = 4;
+	id_tag = "supply_shuttle";
+	name = "Supply Drone Shutters"
+	},
+/obj/effect/floor_decal/industrial/hatch/grey,
+/obj/machinery/button/blast_door{
+	dir = 1;
+	id_tag = "supply_shuttle";
+	name = "Supply Drone Shutter Control";
+	pixel_y = -20;
+	req_access = list("ACCESS_CARGO")
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"aal" = (
+/obj/machinery/door/blast/shutters{
+	dir = 4;
+	id_tag = "supply_shuttle";
+	name = "Supply Drone Shutters"
+	},
+/obj/machinery/button/blast_door{
+	dir = 1;
+	id_tag = "supply_shuttle";
+	name = "Supply Drone Shutter Control";
+	pixel_y = -20;
+	req_access = list("ACCESS_CARGO")
+	},
+/obj/effect/floor_decal/industrial/hatch/grey,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
 "aam" = (
 /turf/unsimulated/wall{
 	desc = "That looks like it doesn't open easily.";
@@ -16,6 +108,39 @@
 "aan" = (
 /turf/unsimulated/floor/plating,
 /area/centcom)
+"aao" = (
+/obj/structure/sign/nanotrasen{
+	dir = 8
+	},
+/obj/effect/paint/brown,
+/obj/effect/paint_stripe/nt_red,
+/turf/simulated/wall/r_titanium,
+/area/space)
+"aap" = (
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"aaq" = (
+/obj/structure/sign/nanotrasen{
+	dir = 4
+	},
+/obj/effect/paint/brown,
+/obj/effect/paint_stripe/nt_red,
+/turf/simulated/wall/r_titanium,
+/area/space)
+"aar" = (
+/obj/structure/window/reinforced{
+	dir = 1;
+	health = null
+	},
+/obj/structure/showcase{
+	desc = "A self-contained autopilot that controls supply drones.";
+	icon_state = "comm_server";
+	name = "Supply Drone Virtual Intelligence"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
 "aas" = (
 /obj/effect/paint/hull,
 /turf/simulated/wall/r_titanium,
@@ -3739,11 +3864,6 @@
 	name = "linoleum"
 	},
 /area/centcom/creed)
-"asm" = (
-/obj/effect/paint/brown,
-/obj/effect/paint_stripe/nt_red,
-/turf/simulated/wall/titanium,
-/area/supply/dock)
 "asn" = (
 /obj/structure/handrai{
 	dir = 4
@@ -5313,18 +5433,6 @@
 "awu" = (
 /turf/unsimulated/wall,
 /area/tdome/tdomeobserve)
-"awv" = (
-/obj/structure/window/reinforced{
-	dir = 1;
-	health = null
-	},
-/obj/structure/showcase{
-	desc = "A self-contained autopilot that controls supply drones.";
-	icon_state = "comm_server";
-	name = "Supply Drone Virtual Intelligence"
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/supply/dock)
 "aww" = (
 /obj/effect/floor_decal/corner/b_green/diagonal,
 /turf/unsimulated/floor{
@@ -5902,16 +6010,6 @@
 	icon_state = "beachcorner"
 	},
 /area/holodeck/source_beach)
-"azf" = (
-/obj/structure/shuttle/engine/propulsion{
-	dir = 1
-	},
-/obj/structure/shuttle/engine/heater{
-	dir = 1;
-	pixel_y = -32
-	},
-/turf/simulated/floor/plating,
-/area/supply/dock)
 "azj" = (
 /obj/item/weapon/pickaxe,
 /turf/unsimulated/floor{
@@ -5924,11 +6022,6 @@
 	icon_state = "dark"
 	},
 /area/tdome/tdome2)
-"azo" = (
-/obj/effect/paint/brown,
-/obj/effect/paint_stripe/nt_red,
-/turf/simulated/wall/r_titanium,
-/area/supply/dock)
 "azp" = (
 /obj/effect/landmark{
 	name = "tdome1"
@@ -5982,14 +6075,6 @@
 	opacity = 0
 	},
 /area/tdome)
-"azx" = (
-/obj/structure/sign/nanotrasen{
-	dir = 8
-	},
-/obj/effect/paint/brown,
-/obj/effect/paint_stripe/nt_red,
-/turf/simulated/wall/r_titanium,
-/area/supply/dock)
 "azy" = (
 /obj/effect/landmark{
 	name = "tdome1"
@@ -5998,27 +6083,12 @@
 	icon_state = "dark"
 	},
 /area/tdome/tdome1)
-"azz" = (
-/obj/structure/sign/nanotrasen{
-	dir = 4
-	},
-/obj/effect/paint/brown,
-/obj/effect/paint_stripe/nt_red,
-/turf/simulated/wall/r_titanium,
-/area/supply/dock)
 "azB" = (
 /obj/effect/floor_decal/industrial/outline/red,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
 /area/tdome/tdome1)
-"azD" = (
-/obj/effect/floor_decal/industrial/outline/grey,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/supply/dock)
 "azF" = (
 /obj/effect/landmark{
 	name = "tdome1"
@@ -6828,10 +6898,6 @@
 /obj/structure/window/reinforced/crescent,
 /turf/unsimulated/wall,
 /area/space)
-"aQm" = (
-/obj/effect/floor_decal/industrial/outline/grey,
-/turf/simulated/floor/tiled/techmaint,
-/area/supply/dock)
 "aQu" = (
 /obj/structure/table/holotable,
 /obj/item/toy/ringbell{
@@ -6911,26 +6977,6 @@
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/holodeck/source_military)
-"aRx" = (
-/obj/effect/shuttle_landmark/supply/centcom,
-/obj/effect/floor_decal/industrial/outline/grey,
-/turf/simulated/floor/tiled/techmaint,
-/area/supply/dock)
-"aRy" = (
-/obj/machinery/door/blast/shutters{
-	dir = 4;
-	id_tag = "supply_shuttle";
-	name = "Supply Drone Shutters"
-	},
-/obj/machinery/button/blast_door{
-	id_tag = "supply_shuttle";
-	name = "Supply Drone Shutter Control";
-	pixel_y = 26;
-	req_access = list("ACCESS_CARGO")
-	},
-/obj/effect/floor_decal/industrial/hatch/grey,
-/turf/simulated/floor/tiled/techmaint,
-/area/supply/dock)
 "aRG" = (
 /obj/effect/floor_decal/spline/plain/grey{
 	dir = 8
@@ -6946,20 +6992,6 @@
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/holodeck/source_military)
-"aRS" = (
-/obj/machinery/door/blast/shutters{
-	dir = 4;
-	id_tag = "supply_shuttle";
-	name = "Supply Drone Shutters"
-	},
-/obj/effect/floor_decal/industrial/hatch/grey,
-/turf/simulated/floor/tiled/techmaint,
-/area/supply/dock)
-"aRT" = (
-/obj/effect/floor_decal/industrial/outline/grey,
-/obj/machinery/light/small,
-/turf/simulated/floor/tiled/techmaint,
-/area/supply/dock)
 "aRV" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Medical Special Operations";
@@ -6970,43 +7002,11 @@
 	icon_state = "vault"
 	},
 /area/centcom/specops)
-"aRY" = (
-/obj/machinery/door/blast/shutters{
-	dir = 4;
-	id_tag = "supply_shuttle";
-	name = "Supply Drone Shutters"
-	},
-/obj/effect/floor_decal/industrial/hatch/grey,
-/obj/machinery/button/blast_door{
-	dir = 1;
-	id_tag = "supply_shuttle";
-	name = "Supply Drone Shutter Control";
-	pixel_y = -20;
-	req_access = list("ACCESS_CARGO")
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/supply/dock)
 "aSi" = (
 /obj/structure/table/holo_woodentable,
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/holofloor/wood,
 /area/holodeck/source_meetinghall)
-"aSq" = (
-/obj/machinery/door/blast/shutters{
-	dir = 4;
-	id_tag = "supply_shuttle";
-	name = "Supply Drone Shutters"
-	},
-/obj/machinery/button/blast_door{
-	dir = 1;
-	id_tag = "supply_shuttle";
-	name = "Supply Drone Shutter Control";
-	pixel_y = -20;
-	req_access = list("ACCESS_CARGO")
-	},
-/obj/effect/floor_decal/industrial/hatch/grey,
-/turf/simulated/floor/tiled/techmaint,
-/area/supply/dock)
 "aSt" = (
 /obj/effect/floor_decal/spline/plain/grey{
 	dir = 9
@@ -32087,13 +32087,13 @@ aab
 aab
 ape
 aab
-azo
-azo
-aRy
-aRS
-aRY
-azx
-azo
+aad
+aad
+aah
+aai
+aak
+aao
+aad
 aab
 ape
 aab
@@ -32288,15 +32288,15 @@ aab
 aab
 aab
 ape
-asm
-azo
-azD
-aQm
-aQm
-aQm
-aRT
-azo
-azo
+aaa
+aad
+aae
+aaf
+aaf
+aaf
+aap
+aad
+aad
 ape
 aab
 aab
@@ -32490,15 +32490,15 @@ aab
 aab
 aab
 ape
-azf
-azo
-aQm
-aQm
-aQm
-aQm
-aQm
-azo
-azo
+aac
+aad
+aaf
+aaf
+aaf
+aaf
+aaf
+aad
+aad
 ape
 aab
 aab
@@ -32692,15 +32692,15 @@ aab
 aab
 aab
 ape
-azf
-azo
-aQm
-aQm
-aRx
-aQm
-aQm
-awv
-azo
+aac
+aad
+aaf
+aaf
+aaj
+aaf
+aaf
+aar
+aad
 ape
 aab
 aab
@@ -32894,15 +32894,15 @@ aab
 aab
 aab
 ape
-asm
-azo
-azD
-aQm
-aQm
-aQm
-aRT
-azo
-azo
+aaa
+aad
+aae
+aaf
+aaf
+aaf
+aap
+aad
+aad
 ape
 aab
 aab
@@ -33097,13 +33097,13 @@ aab
 aab
 ape
 aab
-azo
-azo
-aRy
-aRS
-aSq
-azz
-azo
+aad
+aad
+aah
+aai
+aal
+aaq
+aad
 aab
 ape
 aab
