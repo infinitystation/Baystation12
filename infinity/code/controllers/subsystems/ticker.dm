@@ -1,20 +1,15 @@
-/datum/controller/subsystem/ticker/proc/RegisterUpdateServer(client/newUpdater)
-	update_server = newUpdater
-	to_world(SPAN_NOTICE(FONT_LARGE("<b><br>Сервер уйдет на обновление в конце раунда!</b><br>Инициировано [update_server].<br>")))
-	game_log("SERVER", "[key_name(update_server)] подготовил обновление сервера. ")
-	SSticker.update_server = update_server
+/datum/controller/subsystem/ticker
+	var/server_update_client = null
+	var/server_update = FALSE
+	var/respawn_cooldown = 0
 
 /datum/controller/subsystem/ticker/proc/UpdateServer()
 	end_game_state = END_GAME_AWAITING_UPDATE
 	to_world(SPAN_NOTICE(FONT_LARGE("<b><br>Сервер уходит на обновление!<br>Запуск через одну минуту (или меньше).<br></b>")))
-//	sleep(10 SECONDS)
-//	if(end_game_state == END_GAME_AWAITING_UPDATE)
 	ForceUpdate()
 
-/datum/controller/subsystem/ticker/proc/ForceUpdate(client/newUpdater)
-	if(istype(newUpdater))
-		update_server = newUpdater
-	var/a = istype(update_server) ? " Инициировано [update_server.ckey]." : ""
+/datum/controller/subsystem/ticker/proc/ForceUpdate()
+	var/a = server_update_client ? " Инициировано [server_update_client]." : ""
 
 	send2mainirc("Производится обновление сервера.")
 	send2admindiscord("Происходит обновление.[a]")
