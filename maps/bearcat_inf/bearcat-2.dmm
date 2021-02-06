@@ -3411,7 +3411,7 @@
 /obj/structure/table/standard,
 /obj/item/device/scanner/health,
 /obj/item/stack/nanopaste,
-/obj/machinery/light/halogen{
+/obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 4
 	},

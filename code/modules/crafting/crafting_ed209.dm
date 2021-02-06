@@ -1,5 +1,5 @@
 /decl/crafting_stage/material/ed209_start
-	stack_consume_amount = 5
+	stack_consume_amount = 1
 	stack_material = MATERIAL_STEEL
 	begins_with_object_type = /obj/item/robot_parts/robot_suit
 	next_stages = list(/decl/crafting_stage/ed209_legs)
@@ -44,7 +44,7 @@
 	item_icon_state = "ed209_5"
 //[INF]
 /decl/crafting_stage/ed209_helmet/is_appropriate_tool(var/obj/item/thing)
-	. = istype(thing) && (thing in typesof(completion_trigger_type))
+	. = istype(thing) && thing.type == completion_trigger_type
 //[/INF]
 
 /decl/crafting_stage/ed209_proximity
@@ -61,7 +61,7 @@
 /decl/crafting_stage/ed209_taser
 	progress_message = "You add the taser to the frame."
 	next_stages = list(/decl/crafting_stage/screwdriver/ed209)
-	completion_trigger_type = /obj/item/weapon/gun/energy/gun //INF, WAS /obj/item/weapon/gun/energy/taser
+	completion_trigger_type = /obj/item/weapon/gun/energy/taser
 	item_icon_state = "ed209_7"
 
 /decl/crafting_stage/screwdriver/ed209

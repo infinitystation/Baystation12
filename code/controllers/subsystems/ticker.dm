@@ -31,8 +31,7 @@ SUBSYSTEM_DEF(ticker)
 	var/looking_for_antags = 0
 
 //[INF]
-	var/update_server
-	var/client/updater
+	var/client/update_server
 	var/respawn_cooldown = 0
 //[/INF]
 
@@ -168,8 +167,10 @@ SUBSYSTEM_DEF(ticker)
 		if(END_GAME_ENDING)
 			restart_timeout -= (world.time - last_fire)
 			if(restart_timeout <= 0)
+//[INF]
 				if(update_server)
-					update_server()
+					UpdateServer()
+//[INF]
 				else if(scheduled_map_change)
 					shell("compile_and_run.bat")
 				else

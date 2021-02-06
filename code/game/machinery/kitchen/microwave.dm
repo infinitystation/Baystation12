@@ -198,8 +198,8 @@
 
 	else if(isWrench(O))
 		user.visible_message( \
-			"<span class='notice'>\The [user] begins [anchored ? "securing" : "unsecuring"] the microwave.</span>", \
-			"<span class='notice'>You attempt to [anchored ? "secure" : "unsecure"] the microwave.</span>"
+			"<span class='notice'>\The [user] begins [anchored ? "unsecures" : "secures"] the microwave.</span>", \
+			"<span class='notice'>You attempt to [anchored ? "unsecures" : "secures"] the microwave.</span>"
 			)
 		if (do_after(user,20, src))
 			anchored = !anchored

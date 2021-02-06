@@ -8,7 +8,7 @@
 /decl/crafting_stage/material/crossbow_rods
 	begins_with_object_type = /obj/item/weapon/crossbowframe
 	completion_trigger_type = /obj/item/stack/material/rods
-	stack_consume_amount = 3
+	stack_consume_amount = 1
 	item_icon_state = "crossbowframe1"
 	progress_message = "You assemble a backbone of rods around the wooden stock."
 	next_stages = list(/decl/crafting_stage/welding/crossbow_rods)
@@ -28,7 +28,7 @@
 
 /decl/crafting_stage/material/crossbow_plastic
 	completion_trigger_type = /obj/item/stack/material
-	stack_consume_amount  = 3
+	stack_consume_amount  = 1
 	item_icon_state = "crossbowframe4"
 	item_desc = "It is a half-built crossbow with a steel backbone and a cell mount installed."
 	progress_message = "You assemble and install a heavy plastic lath onto the crossbow."

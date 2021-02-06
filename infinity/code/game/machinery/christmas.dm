@@ -116,35 +116,26 @@
 	icon_state = "tinsel1"
 	mouse_opacity = 0
 	layer = BLOB_SHIELD_LAYER
-	color = "#5662ff" //blue
 
-/obj/structure/sign/tinsel/red
-	color = COLOR_RED_LIGHT
-
-/obj/structure/sign/tinsel/cyan
-	color = "#80e1ff"
-
-/obj/structure/sign/tinsel/green
-	color = "#56f25f"
-
-/obj/structure/sign/tinsel/yellow
-	color = COLOR_YELLOW
-
-/obj/structure/sign/tinsel/purple
-	color = "#e37dff"
-
-/obj/structure/sign/tinsel/lorange
-	color = "#ffef63"
-
-/obj/structure/sign/tinsel/gold
-	color = "#ffff00"
-
-/obj/structure/sign/tinsel/random
-	color = null
-
-/obj/structure/sign/tinsel/random/New()
+/obj/structure/sign/tinsel/New()
 	..()
-	color = pick(COLOR_YELLOW, "#56f25f", COLOR_RED_LIGHT, "#5662ff", "#e37dff", "#80e1ff", "#ffef63", "#ffff00")
+	if(!color)
+		color = pick(COLOR_RED_LIGHT, COLOR_YELLOW, TINSEL_COLOR_TIN, TINSEL_COLOR_GREEN, TINSEL_COLOR_BLUE, TINSEL_COLOR_PURPLE, TINSEL_COLOR_CYAN, TINSEL_COLOR_LORANGE, TINSEL_COLOR_GOLD)
+
+#define CREATE_TINSEL_PREFAB(p_name, p_color)\
+/obj/structure/sign/tinsel/##p_name/color = p_color;\
+/obj/random/date_based/christmas/tinsel/##p_name/name = #p_name + " xmas tinsel";\
+/obj/random/date_based/christmas/tinsel/##p_name/spawn_choices() return list(/obj/structure/sign/tinsel/##p_name)
+
+CREATE_TINSEL_PREFAB(red, COLOR_RED_LIGHT)
+CREATE_TINSEL_PREFAB(cyan, TINSEL_COLOR_CYAN)
+CREATE_TINSEL_PREFAB(green, TINSEL_COLOR_GREEN)
+CREATE_TINSEL_PREFAB(yellow, COLOR_YELLOW)
+CREATE_TINSEL_PREFAB(purple, TINSEL_COLOR_PURPLE)
+CREATE_TINSEL_PREFAB(lorange, TINSEL_COLOR_LORANGE)
+CREATE_TINSEL_PREFAB(gold, TINSEL_COLOR_GOLD)
+CREATE_TINSEL_PREFAB(blue, TINSEL_COLOR_BLUE)
+CREATE_TINSEL_PREFAB(tin, TINSEL_COLOR_TIN)
 
 /obj/structure/sign/tinsel/New()
 	..()

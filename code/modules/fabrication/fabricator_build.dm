@@ -12,7 +12,8 @@
 	if(ispath(currently_building.target_recipe.path, /obj/item/stack))
 		new currently_building.target_recipe.path(get_turf(src), amount = currently_building.multiplier)
 	else
-		new currently_building.target_recipe.path(get_turf(src))
+		var/atom/A = new currently_building.target_recipe.path(get_turf(src)) //inf, was: new currently_building.target_recipe.path(get_turf(src))
+		A.Created()//inf
 	QDEL_NULL(currently_building)
 	get_next_build()
 	update_icon()

@@ -8,6 +8,8 @@
 	invisibility = INVISIBILITY_SYSTEM
 //	see_invisible = SEE_INVISIBLE_LIVING
 
+	simulated = FALSE
+
 /mob/AiHolder/New(nlocation)
 	. = ..()
 	holder = nlocation

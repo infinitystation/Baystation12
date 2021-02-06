@@ -289,6 +289,10 @@ inf*/
 			sound_to(L, sound(null, channel = GLOB.environment_sound_channel))
 //[/INF]
 /area/proc/gravitychange(var/gravitystate = 0)
+//[INF]
+	if(gravstat in list(AREA_GRAVITY_NEVER, AREA_GRAVITY_ALWAYS))
+		return
+//[/INF]
 	has_gravity = gravitystate
 
 	for(var/mob/M in src)
@@ -329,14 +333,14 @@ inf*/
 
 /area/space/has_gravity()
 	return 0
-
+//inf.overriden in infinity/code/modules/power/gravity_generator/areas.dm
 /proc/has_gravity(atom/AT, turf/T)
 	if(!T)
 		T = get_turf(AT)
 	var/area/A = get_area(T)
 	if(istype(T, /turf/space)) //because space
 		return 0
-	else if(A && A.has_gravity)
+	else if(istype(A) && A?.has_gravity())//inf, was: else if(A && A.has_gravity)
 		return 1
 	else
 		if(T)
