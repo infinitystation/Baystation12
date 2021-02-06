@@ -1,5 +1,5 @@
 /decl/crafting_stage/empty_storage/floorbot
-	stack_consume_amount = 10
+	stack_consume_amount = 1
 	begins_with_object_type = /obj/item/weapon/storage/toolbox
 	completion_trigger_type = /obj/item/stack/tile
 	progress_message = "You dump a bunch of floor tiles into the empty toolbox."
@@ -21,4 +21,4 @@
 		var/mob/living/bot/floorbot/bot = .
 		var/obj/item/weapon/storage/toolbox/box = locate() in work
 		bot.boxtype = box.icon_state
-		bot.update_icon()		
+		bot.update_icon()
