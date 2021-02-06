@@ -30,11 +30,6 @@ SUBSYSTEM_DEF(ticker)
 	var/list/antag_pool = list()
 	var/looking_for_antags = 0
 
-//[INF]
-	var/client/update_server
-	var/respawn_cooldown = 0
-//[/INF]
-
 /datum/controller/subsystem/ticker/Initialize()
 	to_world("<B><FONT color='blue'>Добро пожаловать в лобби!</FONT></B>")
 	to_world("Настройте своего персонажа и нажмите \"Ready\" для вступлению в игру с начала раунда через [round(pregame_timeleft/10)] секунд.")
@@ -125,7 +120,7 @@ SUBSYSTEM_DEF(ticker)
 
 		INVOKE_ASYNC(src, .proc/declare_completion)
 		Master.SetRunLevel(RUNLEVEL_POSTGAME)
-		if(!update_server && config.allow_map_switching && config.auto_map_vote && GLOB.playable_maps.len > 1)
+		if(!server_update && config.allow_map_switching && config.auto_map_vote && GLOB.playable_maps.len > 1)
 			end_game_state = END_GAME_AWAITING_MAP
 			spawn(2 SECONDS)
 				SSvote.initiate_vote(/datum/vote/map, automatic = 1)
@@ -168,7 +163,7 @@ SUBSYSTEM_DEF(ticker)
 			restart_timeout -= (world.time - last_fire)
 			if(restart_timeout <= 0)
 //[INF]
-				if(update_server)
+				if(server_update)
 					UpdateServer()
 //[INF]
 				else if(scheduled_map_change)
