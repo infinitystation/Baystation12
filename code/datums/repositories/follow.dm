@@ -225,7 +225,7 @@
 
 /datum/follow_holder/blob
 	sort_order = 9
-	followed_type = /obj/effect/biomass/core
+	followed_type = /obj/effect/blob/core
 	suffix = "Blob"
 
 /datum/follow_holder/supermatter
