@@ -1964,6 +1964,9 @@
 /obj/effect/floor_decal/corner/purple/bordercorner2{
 	dir = 1
 	},
+/obj/structure/handrai{
+	pixel_y = 5
+	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "dP" = (
@@ -2132,6 +2135,9 @@
 	},
 /obj/machinery/computer/ship/navigation/telescreen{
 	pixel_y = 26
+	},
+/obj/structure/handrai{
+	pixel_y = 5
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo)
@@ -3214,6 +3220,9 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/paleblue/border,
+/obj/structure/handrai{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
 "fQ" = (
@@ -5275,6 +5284,9 @@
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 8
 	},
+/obj/structure/handrai{
+	pixel_y = 5
+	},
 /turf/simulated/floor/plating,
 /area/shuttle/petrov/ship)
 "jg" = (
@@ -5284,6 +5296,9 @@
 /obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 4
+	},
+/obj/structure/handrai{
+	pixel_y = 5
 	},
 /turf/simulated/floor/plating,
 /area/shuttle/petrov/ship)
@@ -5452,6 +5467,9 @@
 "jx" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
+	},
+/obj/structure/handrai{
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo)
@@ -5876,6 +5894,9 @@
 	},
 /obj/effect/floor_decal/corner/purple/bordercorner2{
 	dir = 9
+	},
+/obj/structure/handrai{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
@@ -7132,6 +7153,9 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 1
 	},
+/obj/structure/handrai{
+	pixel_y = 5
+	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "lJ" = (
@@ -7537,6 +7561,9 @@
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
+	},
+/obj/structure/handrai{
+	pixel_y = 5
 	},
 /turf/simulated/floor/plating,
 /area/shuttle/petrov/ship)
@@ -10026,6 +10053,9 @@
 	dir = 4
 	},
 /obj/structure/cable/cyan,
+/obj/structure/handrai{
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/shuttle/petrov/ship)
 "pT" = (
@@ -12843,6 +12873,9 @@
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 8
 	},
+/obj/structure/handrai{
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/shuttle/petrov/ship)
 "ui" = (
@@ -12853,6 +12886,9 @@
 /obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 4
+	},
+/obj/structure/handrai{
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/shuttle/petrov/ship)
@@ -13626,6 +13662,9 @@
 	},
 /obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/warning/half,
+/obj/structure/handrai{
+	pixel_y = 5
+	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/airlock)
 "vz" = (
@@ -17566,6 +17605,9 @@
 /obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 1
+	},
+/obj/structure/handrai{
+	pixel_y = 5
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/guppy_hangar/start)
@@ -22546,6 +22588,9 @@
 	},
 /obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/warning/half,
+/obj/structure/handrai{
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/airlock)
 "JR" = (
@@ -23101,6 +23146,9 @@
 	},
 /obj/effect/floor_decal/industrial/danger{
 	dir = 1
+	},
+/obj/structure/handrai{
+	pixel_y = 5
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
@@ -26254,6 +26302,9 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/outline/red,
+/obj/structure/handrai{
+	pixel_y = 5
+	},
 /turf/simulated/floor/tiled,
 /area/guppy_hangar/start)
 "Ql" = (
@@ -28573,6 +28624,20 @@
 /obj/machinery/door/airlock/hatch/maintenance,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/office)
+"UP" = (
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/danger,
+/obj/effect/floor_decal/industrial/danger{
+	dir = 1
+	},
+/obj/structure/handrai{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/quartermaster/hangar)
 "UT" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/quartermaster/expedition/storage)
@@ -29418,6 +29483,18 @@
 /obj/random/date_based/christmas/xmaslights,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/aft)
+"Xr" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 1
+	},
+/obj/structure/handrai{
+	pixel_y = 5
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/quartermaster/hangar)
 "Xs" = (
 /obj/machinery/door/blast/shutters{
 	dir = 4;
@@ -51790,7 +51867,7 @@ CX
 EQ
 Es
 hN
-VF
+Xr
 Yr
 Ra
 ze
@@ -52800,7 +52877,7 @@ PD
 xW
 Fx
 ii
-VF
+Xr
 Yr
 Xh
 YD
@@ -53816,7 +53893,7 @@ ZD
 oD
 BE
 oC
-Fs
+UP
 AT
 Ji
 uH
