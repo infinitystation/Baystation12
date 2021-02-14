@@ -2129,7 +2129,7 @@
 "aeB" = (
 /obj/structure/table/woodentable/walnut,
 /obj/item/device/flashlight/lamp/green,
-/obj/machinery/keycard_auth{
+/obj/machinery/keycard_auth/sierra{
 	pixel_x = 7;
 	pixel_y = 24
 	},
@@ -8047,7 +8047,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/seconddeck/aftstarboard)
 "apq" = (
-/obj/machinery/keycard_auth{
+/obj/machinery/keycard_auth/sierra{
 	pixel_x = 24
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -8181,7 +8181,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/atmos)
 "apC" = (
-/obj/machinery/keycard_auth{
+/obj/machinery/keycard_auth/sierra{
 	pixel_x = -24
 	},
 /obj/machinery/light_switch{
@@ -14747,7 +14747,7 @@
 /area/crew_quarters/cafe)
 "aAM" = (
 /obj/structure/table/glass,
-/obj/machinery/keycard_auth,
+/obj/machinery/keycard_auth/sierra,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
 	},
@@ -19074,7 +19074,7 @@
 	pixel_y = -21;
 	req_access = list("ACCESS_CAPTAIN")
 	},
-/obj/machinery/keycard_auth{
+/obj/machinery/keycard_auth/sierra{
 	pixel_x = 7;
 	pixel_y = -21
 	},
@@ -30276,7 +30276,7 @@
 /area/maintenance/abandoned_hydroponics)
 "bdv" = (
 /obj/structure/table/glass,
-/obj/machinery/keycard_auth,
+/obj/machinery/keycard_auth/sierra,
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled/dark,

@@ -3133,7 +3133,7 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/security/nuke_storage)
 "age" = (
-/obj/machinery/keycard_auth{
+/obj/machinery/keycard_auth/sierra{
 	pixel_y = -21
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -3204,7 +3204,7 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/security/nuke_storage)
 "agi" = (
-/obj/machinery/keycard_auth{
+/obj/machinery/keycard_auth/sierra{
 	pixel_y = -21
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -18705,7 +18705,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 5
 	},
-/obj/machinery/keycard_auth{
+/obj/machinery/keycard_auth/sierra{
 	pixel_x = 24
 	},
 /obj/machinery/button/blast_door{
@@ -23965,7 +23965,7 @@
 	pixel_y = -21;
 	req_access = list("ACCESS_RESEARCH_DIRECTOR")
 	},
-/obj/machinery/keycard_auth{
+/obj/machinery/keycard_auth/sierra{
 	pixel_x = 3;
 	pixel_y = -21
 	},
@@ -26776,7 +26776,7 @@
 /obj/machinery/computer/modular/preset/command{
 	dir = 1
 	},
-/obj/machinery/keycard_auth{
+/obj/machinery/keycard_auth/sierra{
 	pixel_x = 6;
 	pixel_y = -21
 	},
@@ -40342,7 +40342,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/keycard_auth{
+/obj/machinery/keycard_auth/sierra{
 	pixel_x = 2;
 	pixel_y = -20
 	},
