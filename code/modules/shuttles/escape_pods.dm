@@ -38,6 +38,14 @@ var/list/escape_pods_by_name = list()
 	for(temp in shuttle_area[1])
 		++need_people
 
+/datum/shuttle/autodock/ferry/escape_pod/proc/toggle_bds(var/CLOSE = FALSE)
+	for(var/obj/machinery/door/blast/regular/escape_pod/ES in world)
+		if(ES.id_tag == controller_master.id_tag)
+			if(CLOSE)
+				INVOKE_ASYNC(ES, /obj/machinery/door/blast/proc/force_close)
+			else
+				INVOKE_ASYNC(ES, /obj/machinery/door/blast/proc/force_open)
+
 /datum/shuttle/autodock/ferry/escape_pod/proc/set_self_unarm()
 	if(arming_controller.armed)
 		if(evacuation_controller.is_idle() || evacuation_controller.is_on_cooldown())
@@ -149,8 +157,10 @@ var/list/escape_pods_by_name = list()
 
 		if(command == "force_launch")
 			if (pod.can_launch())
+				pod.toggle_bds()
 				pod.launch(src)
 			else if (pod.can_force())
+				pod.toggle_bds()
 				pod.force_launch(src)
 			return TOPIC_REFRESH
 // [/INF]
@@ -190,10 +200,15 @@ var/list/escape_pods_by_name = list()
 		to_chat(user, "<span class='notice'>Ты начал сбрасывать настройки [src], чтобы починить его.</span>")
 		if(do_after(user, 100, src))
 			emagged = 0
+			state("Сброс до заводских настроек завершен! Поиск центрального контролера... Найдено! Первичная настройка капсулы... Успешно!")
 			if (istype(program, /datum/computer/file/embedded_program/docking/simple/escape_pod_berth))
 				var/datum/computer/file/embedded_program/docking/simple/escape_pod_berth/P = program
 				if (P.armed)
 					P.unarm()
+				for(var/pod in escape_pods)
+					if(pod.arming_controller == P)
+						pod.toggle_bds(TRUE)
+						break
 			return
 	. = ..()
 // [/INF]
@@ -202,12 +217,12 @@ var/list/escape_pods_by_name = list()
 	if (!emagged)
 		to_chat(user, "<span class='notice'>You emag the [src], arming the escape pod!</span>")
 		emagged = 1
-		state("Ошибка центрального контролера! Обнаружена аварийная ситуация! Взведение капсулы... Примерное время подготовки: 1 минута.")	// inf
-		GLOB.global_announcer.autosay("<b>Несанкционированный доступ</b> к контролеру эвакуации. Потеряно управление от <b><i>[src]</i></b>. Службе безопасности рекомендуется проследовать к этой капсуле.", "Автоматическая Система Безопасности", "Security", z)	// inf
+		state("Ошибка центрального контролера! Обнаружена аварийная ситуация! Взведение капсулы... Ошибка стыковочных зажимов! Отключение зажимов... Примерное время подготовки: 5 минут.")	// inf
+		GLOB.global_announcer.autosay("<b>Несанкционированный доступ</b> к контролеру эвакуации. Потеряно управление от <b><i>[src]</i></b>. Службе безопасности рекомендуется проследовать к этой капсуле. Местоположение капсулы: [get_area(src)]", "Автоматическая Система Безопасности", "Security", z)	// inf
 		if (istype(program, /datum/computer/file/embedded_program/docking/simple/escape_pod_berth))
 			var/datum/computer/file/embedded_program/docking/simple/escape_pod_berth/P = program
 			if (!P.armed)
-				addtimer(CALLBACK(P, /datum/computer/file/embedded_program/docking/simple/escape_pod_berth/proc/arm), 1 MINUTE)	// inf was P.arm()
+				addtimer(CALLBACK(P, /datum/computer/file/embedded_program/docking/simple/escape_pod_berth/proc/arm), 5 MINUTES)	// inf was P.arm()
 		return 1
 
 //A docking controller program for a simple door based docking port
