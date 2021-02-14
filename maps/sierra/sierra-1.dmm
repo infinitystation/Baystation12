@@ -358,10 +358,6 @@
 /obj/effect/paint_stripe/nt_red,
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod/escape_pod2/station)
-"aU" = (
-/obj/machinery/door/blast/regular/escape_pod,
-/turf/simulated/floor/plating,
-/area/maintenance/thirddeck/forestarboard)
 "aV" = (
 /obj/effect/paint_stripe/mauve,
 /obj/effect/paint/dark_gunmetal,
@@ -572,8 +568,10 @@
 /turf/simulated/floor/tiled,
 /area/command/bsa)
 "bt" = (
-/obj/machinery/door/blast/regular/escape_pod,
-/turf/simulated/floor/plating,
+/obj/machinery/door/blast/regular/escape_pod{
+	id_tag = "escape_pod_2"
+	},
+/turf/simulated/floor/reinforced,
 /area/vacant/monitoring)
 "bu" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{
@@ -27992,7 +27990,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/hallway/primary/thirddeck/center)
 "Tb" = (
-/obj/machinery/door/blast/regular/escape_pod,
+/obj/machinery/door/blast/regular/escape_pod{
+	id_tag = "escape_pod_3"
+	},
 /turf/simulated/floor/reinforced,
 /area/maintenance/thirddeck/foreport)
 "Tc" = (
@@ -28079,7 +28079,9 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/vacant/monitoring)
 "Tk" = (
-/obj/machinery/door/blast/regular/escape_pod,
+/obj/machinery/door/blast/regular/escape_pod{
+	id_tag = "escape_pod_4"
+	},
 /turf/simulated/floor/reinforced,
 /area/maintenance/thirddeck/port)
 "Tl" = (
@@ -29225,8 +29227,10 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/sierra/dockcheck)
 "WD" = (
-/obj/machinery/door/blast/regular/escape_pod,
-/turf/simulated/floor/reinforced/airless,
+/obj/machinery/door/blast/regular/escape_pod{
+	id_tag = "escape_pod_1"
+	},
+/turf/simulated/floor/reinforced,
 /area/maintenance/thirddeck/forestarboard)
 "WE" = (
 /obj/structure/shuttle/engine/propulsion{
@@ -44595,7 +44599,7 @@ Is
 Is
 Is
 Is
-aU
+WD
 To
 MK
 Rs
@@ -44797,7 +44801,7 @@ Is
 Is
 Is
 Is
-aU
+WD
 eT
 eT
 Rs
@@ -44999,7 +45003,7 @@ Is
 Is
 Is
 Is
-aU
+WD
 eT
 eT
 Rs
@@ -45201,7 +45205,7 @@ Is
 Is
 Is
 Is
-aU
+WD
 eT
 eT
 Rs

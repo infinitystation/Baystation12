@@ -48,7 +48,7 @@
 		return
 
 // [INF]
-	if(ISEVAC_STARSHIP_FAST_CONTROLER && evacuation_controller.confirmed == "confirmed")
+	if(istype(evacuation_controller, /datum/evacuation_controller/starship/fast) && evacuation_controller.confirmed == "confirmed")
 		to_chat(user, "Протокол эвакуации подтвержден органиками, система отвергает твои попытки повлиять на нее.")
 		return
 // [/INF]

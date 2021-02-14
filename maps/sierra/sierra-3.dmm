@@ -687,7 +687,9 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/centralstarboard)
 "abw" = (
-/obj/machinery/door/blast/regular/escape_pod,
+/obj/machinery/door/blast/regular/escape_pod{
+	id_tag = "escape_pod_7"
+	},
 /turf/simulated/floor/reinforced/airless,
 /area/maintenance/exterior)
 "abx" = (
@@ -33567,7 +33569,8 @@
 /area/thruster/d1port)
 "bbg" = (
 /obj/machinery/door/blast/regular/escape_pod{
-	dir = 8
+	dir = 8;
+	id_tag = "escape_pod_5"
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/maintenance/firstdeck/centralport)
@@ -39944,6 +39947,12 @@
 	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
+"lBT" = (
+/obj/machinery/door/blast/regular/escape_pod{
+	id_tag = "escape_pod_8"
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/maintenance/exterior)
 "lFn" = (
 /obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "cadetwindow"
@@ -41426,6 +41435,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/staging)
+"ssY" = (
+/obj/machinery/door/blast/regular/escape_pod{
+	id_tag = "escape_pod_9"
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/maintenance/exterior)
 "sug" = (
 /obj/machinery/space_heater,
 /turf/simulated/floor/plating,
@@ -59619,7 +59634,7 @@ aaa
 aaa
 aaa
 aaa
-abw
+lBT
 aci
 aci
 aci
@@ -59821,7 +59836,7 @@ aaa
 aaa
 aaa
 aaa
-abw
+lBT
 acj
 acV
 adI
@@ -60023,7 +60038,7 @@ aaa
 aaa
 aaa
 aaa
-abw
+lBT
 aci
 aci
 aci
@@ -60427,7 +60442,7 @@ aaa
 aaa
 aaa
 aaa
-abw
+ssY
 ack
 ack
 ack
@@ -60629,7 +60644,7 @@ aaa
 aaa
 aaa
 aaa
-abw
+ssY
 acl
 acW
 adJ
@@ -60831,7 +60846,7 @@ aaa
 aaa
 aaa
 aaa
-abw
+ssY
 ack
 ack
 ack

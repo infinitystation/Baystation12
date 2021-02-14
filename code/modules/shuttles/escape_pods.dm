@@ -40,7 +40,8 @@ var/list/escape_pods_by_name = list()
 
 /datum/shuttle/autodock/ferry/escape_pod/proc/toggle_bds(var/CLOSE = FALSE)
 	for(var/obj/machinery/door/blast/regular/escape_pod/ES in world)
-		if(ES.id_tag == controller_master.id_tag)
+		var/tag = ES.id_tag + "_berth"
+		if(tag == arming_controller.id_tag)
 			if(CLOSE)
 				INVOKE_ASYNC(ES, /obj/machinery/door/blast/proc/force_close)
 			else
@@ -161,6 +162,7 @@ var/list/escape_pods_by_name = list()
 				pod.launch(src)
 			else if (pod.can_force())
 				pod.toggle_bds()
+				GLOB.global_announcer.autosay("Несанкционированный запуск капсулы с ID: <b>[id_tag]</b>! Возможна разгерметизация!", "Эвакуационный Контроллер",, z)
 				pod.force_launch(src)
 			return TOPIC_REFRESH
 // [/INF]
@@ -205,7 +207,7 @@ var/list/escape_pods_by_name = list()
 				var/datum/computer/file/embedded_program/docking/simple/escape_pod_berth/P = program
 				if (P.armed)
 					P.unarm()
-				for(var/pod in escape_pods)
+				for(var/datum/shuttle/autodock/ferry/escape_pod/pod in escape_pods)
 					if(pod.arming_controller == P)
 						pod.toggle_bds(TRUE)
 						break
