@@ -202,15 +202,23 @@ var/list/escape_pods_by_name = list()
 		to_chat(user, "<span class='notice'>Ты начал сбрасывать настройки [src], чтобы починить его.</span>")
 		if(do_after(user, 100, src))
 			emagged = 0
-			state("Сброс до заводских настроек завершен! Поиск центрального контролера... Найдено! Первичная настройка капсулы... Успешно!")
+			state("Сброс до заводских настроек завершен!")
+			sleep(5)
+			state("Поиск центрального контролера...")
+			sleep(10)
+			state("Найдено!")
+			sleep(10)
+			state("Первичная настройка капсулы...")
+			sleep(20)
+			state("Успешно!")
 			if (istype(program, /datum/computer/file/embedded_program/docking/simple/escape_pod_berth))
 				var/datum/computer/file/embedded_program/docking/simple/escape_pod_berth/P = program
-				if (P.armed)
-					P.unarm()
 				for(var/datum/shuttle/autodock/ferry/escape_pod/pod in escape_pods)
 					if(pod.arming_controller == P)
 						pod.toggle_bds(TRUE)
 						break
+				if (P.armed)
+					P.unarm()
 			return
 	. = ..()
 // [/INF]
@@ -219,8 +227,20 @@ var/list/escape_pods_by_name = list()
 	if (!emagged)
 		to_chat(user, "<span class='notice'>You emag the [src], arming the escape pod!</span>")
 		emagged = 1
-		state("Ошибка центрального контролера! Обнаружена аварийная ситуация! Взведение капсулы... Ошибка стыковочных зажимов! Отключение зажимов... Примерное время подготовки: 5 минут.")	// inf
-		GLOB.global_announcer.autosay("<b>Несанкционированный доступ</b> к контролеру эвакуации. Потеряно управление от <b><i>[src]</i></b>. Службе безопасности рекомендуется проследовать к этой капсуле. Местоположение капсулы: [get_area(src)]", "Автоматическая Система Безопасности", "Security", z)	// inf
+		// [INF]
+		GLOB.global_announcer.autosay("<b>Несанкционированный доступ</b> к контролеру эвакуации. Потеряно управление от <b><i>[src]</i></b>. Службе безопасности рекомендуется проследовать к этой капсуле. Местоположение капсулы: [get_area(src)]", "Автоматическая Система Безопасности", "Security", z)
+		state("Ошибка центрального контролера!")
+		sleep(5)
+		state("Обнаружена аварийная ситуация!")
+		sleep(3)
+		state("Взведение капсулы...")
+		sleep(10)
+		state("Ошибка стыковочных зажимов!")
+		sleep(5)
+		state("Отключение зажимов...")
+		sleep(20)
+		state("Примерное время подготовки: 5 минут.")
+		// [/INF]
 		if (istype(program, /datum/computer/file/embedded_program/docking/simple/escape_pod_berth))
 			var/datum/computer/file/embedded_program/docking/simple/escape_pod_berth/P = program
 			if (!P.armed)
