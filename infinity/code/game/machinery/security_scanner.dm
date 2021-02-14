@@ -46,6 +46,7 @@
 		check_items = TRUE
 		check_records = TRUE
 		check_arrests = TRUE
+		report_scans = TRUE
 	. = ..()
 
 /obj/machinery/security_scanner/power_change()
