@@ -5675,6 +5675,7 @@
 	power_rating = 25000
 	},
 /obj/structure/catwalk,
+/obj/structure/handrai,
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/airlock)
 "jM" = (
@@ -19087,6 +19088,7 @@
 	id_tag = "calypso_shuttle_pump";
 	power_rating = 25000
 	},
+/obj/structure/handrai,
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/airlock)
 "Eq" = (
@@ -20498,6 +20500,9 @@
 	},
 /obj/effect/floor_decal/techfloor/orange,
 /obj/effect/floor_decal/techfloor/hole/right,
+/obj/structure/handrai{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/guppy_hangar/start)
 "GI" = (
@@ -22580,6 +22585,9 @@
 	power_rating = 25000
 	},
 /obj/structure/catwalk,
+/obj/structure/handrai{
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/airlock)
 "JQ" = (
@@ -22633,6 +22641,9 @@
 	dir = 1;
 	id_tag = "calypso_shuttle_pump";
 	power_rating = 25000
+	},
+/obj/structure/handrai{
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/airlock)
@@ -23149,9 +23160,6 @@
 	},
 /obj/effect/floor_decal/industrial/danger{
 	dir = 1
-	},
-/obj/structure/handrai{
-	pixel_y = 5
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
@@ -28631,20 +28639,6 @@
 /obj/machinery/door/airlock/hatch/maintenance,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/office)
-"UP" = (
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/borderfloor{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial/danger,
-/obj/effect/floor_decal/industrial/danger{
-	dir = 1
-	},
-/obj/structure/handrai{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/quartermaster/hangar)
 "UT" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/quartermaster/expedition/storage)
@@ -29501,18 +29495,6 @@
 /obj/random/date_based/christmas/xmaslights,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/aft)
-"Xr" = (
-/obj/effect/floor_decal/borderfloor{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial/danger{
-	dir = 1
-	},
-/obj/structure/handrai{
-	pixel_y = 5
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/quartermaster/hangar)
 "Xs" = (
 /obj/machinery/door/blast/shutters{
 	dir = 4;
@@ -51894,7 +51876,7 @@ CX
 EQ
 Es
 hN
-Xr
+VF
 Yr
 Ra
 ze
@@ -52904,7 +52886,7 @@ PD
 xW
 Fx
 ii
-Xr
+VF
 Yr
 Xh
 YD
@@ -53920,7 +53902,7 @@ ZD
 oD
 BE
 oC
-UP
+Fs
 AT
 Ji
 uH
