@@ -273,7 +273,7 @@
 /area/crew_quarters/galley/backroom
 	name = "Second Deck - Service - Galley Cold Storage"
 	icon_state = "kitchen"
-	req_access = list(list(access_kitchen, access_bar, access_maint_tunnels))
+	req_access = list(list(access_kitchen, access_bar))
 
 /area/crew_quarters/cafe
 	name = "Second Deck - Living - Cafe"

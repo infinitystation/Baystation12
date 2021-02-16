@@ -10661,16 +10661,16 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/multi_tile/engineering{
-	name = "Engineering Hard Storage";
-	req_access = newlist()
-	},
 /obj/effect/floor_decal/techfloor{
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/random/date_based/christmas/doorwreath{
 	dir = 1
+	},
+/obj/machinery/door/airlock/multi_tile/engineering{
+	name = "Engineering Hard Storage";
+	req_access = newlist()
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/hardstorage)
@@ -10822,6 +10822,11 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/random/date_based/christmas/doorwreath{
 	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/hardstorage)
