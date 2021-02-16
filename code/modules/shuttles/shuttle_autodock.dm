@@ -154,9 +154,7 @@
 	in_use = user	//obtain an exclusive lock on the shuttle
 
 	process_state = WAIT_LAUNCH
-	spawn(0)
-		undock() //close the doors
-		force_undock() //force launch the pods
+	undock()
 
 /datum/shuttle/autodock/proc/force_launch(var/user)
 	if (!can_force()) return

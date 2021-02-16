@@ -38,10 +38,15 @@ var/list/escape_pods_by_name = list()
 	for(temp in shuttle_area[1])
 		++need_people
 
+/datum/shuttle/autodock/ferry/escape_pod/force_launch(user)
+	. = ..()
+	shuttle_docking_controller.finish_undocking()
+	var/datum/computer/file/embedded_program/docking/simple/prog = shuttle_docking_controller
+	prog.close_door()
+
 /datum/shuttle/autodock/ferry/escape_pod/proc/toggle_bds(var/CLOSE = FALSE)
 	for(var/obj/machinery/door/blast/regular/escape_pod/ES in world)
-		var/tag = ES.id_tag + "_berth"
-		if(tag == arming_controller.id_tag)
+		if(ES.id_tag == shuttle_docking_controller.id_tag)
 			if(CLOSE)
 				INVOKE_ASYNC(ES, /obj/machinery/door/blast/proc/force_close)
 			else
@@ -97,8 +102,8 @@ var/list/escape_pods_by_name = list()
 	return ..()
 
 /datum/shuttle/autodock/ferry/escape_pod/can_force()
-	if (arming_controller.master.emagged)	// inf
-		return (next_location && next_location.is_valid(src) && !current_location.cannot_depart(src) && moving_status == SHUTTLE_IDLE)	// inf
+	if (arming_controller && arming_controller.master.emagged)	// inf
+		return (next_location && next_location.is_valid(src) && !current_location.cannot_depart(src) && moving_status == SHUTTLE_IDLE && !location && arming_controller && arming_controller.armed)	// inf
 	if (arming_controller.eject_time && world.time < arming_controller.eject_time + 50)
 		return 0	//dont allow force launching until 5 seconds after the arming controller has reached it's countdown
 	return ..()
@@ -162,7 +167,7 @@ var/list/escape_pods_by_name = list()
 				pod.launch(src)
 			else if (pod.can_force())
 				pod.toggle_bds()
-				GLOB.global_announcer.autosay("Несанкционированный запуск капсулы с ID: <b>[id_tag]</b>! Возможна разгерметизация!", "Эвакуационный Контроллер",, z)
+				GLOB.global_announcer.autosay("Несанкционированный запуск капсулы <b>[pod]</b>! Возможна разгерметизация!", "Эвакуационный Контроллер",, z)
 				pod.force_launch(src)
 			return TOPIC_REFRESH
 // [/INF]
@@ -254,6 +259,7 @@ var/list/escape_pods_by_name = list()
 	var/eject_time = null
 	var/closing = 0
 
+
 /datum/computer/file/embedded_program/docking/simple/escape_pod_berth/proc/arm()
 	if(!armed)
 		armed = 1
@@ -283,13 +289,13 @@ var/list/escape_pods_by_name = list()
 	if (!armed)
 		return TRUE // Eat all commands.
 	return ..(command)
-
+/* [BAY]
 /datum/computer/file/embedded_program/docking/simple/escape_pod_berth/process()
 	..()
 	if (eject_time && world.time >= eject_time && !closing)
 		close_door()
 		closing = 1
-
+[BAY] */
 /datum/computer/file/embedded_program/docking/simple/escape_pod_berth/prepare_for_docking()
 	return
 
@@ -301,10 +307,23 @@ var/list/escape_pods_by_name = list()
 
 /datum/computer/file/embedded_program/docking/simple/escape_pod_berth/prepare_for_undocking()
 	eject_time = world.time + eject_delay*10
+	..()	// inf
 
 // The program for the escape pod controller.
 /datum/computer/file/embedded_program/docking/simple/escape_pod
 	var/tag_pump
+// [INF]
+	var/undock_begin
+
+// No answer recieved from vessel controller? Evacing in any case
+/datum/computer/file/embedded_program/docking/simple/escape_pod/ready_for_undocking()
+	. = ..()
+	if(!undock_begin)
+		undock_begin = world.time
+	if (. && (world.time > undock_begin + 10 SECONDS))
+		finish_undocking()
+		reset()
+// [/INF]
 
 /datum/computer/file/embedded_program/docking/simple/escape_pod/New(var/obj/machinery/embedded_controller/M)
 	..(M)
@@ -314,13 +333,15 @@ var/list/escape_pods_by_name = list()
 
 /datum/computer/file/embedded_program/docking/simple/escape_pod/finish_undocking()
 	. = ..()
+	undock_begin = null	// inf
 	// Send a signal to the vent pumps to repressurize the pod.
 	var/datum/signal/signal = new
 	signal.data = list(
 		"tag" = tag_pump,
 		"sigtype" = "command",
-		"power" = 1,
-		"direction" = 1,
+		"set_power" = 1,	// inf, was	"power" = 1,
+		"set_direction" = "release",	// inf, was	"direction" = 1,
+		"status" = TRUE,	// inf,
 		"set_external_pressure" = ONE_ATMOSPHERE
 	)
 	post_signal(signal)
