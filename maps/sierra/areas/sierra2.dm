@@ -118,6 +118,12 @@
 	name = "Second Deck - Command - CE's Office"
 	req_access = list(access_ce)
 
+
+/area/crew_quarters/heads/bedroom/adjutant
+	name = "Command Quarters"
+	icon_state = "bridge"
+	req_access = list(access_bridge)
+
 /area/bridge
 	name = "Second Deck - Bridge"
 	icon_state = "bridge"
@@ -135,7 +141,9 @@
 
 /area/bridge/lobby
 	name = "Bridge - Lobby"
-	req_access = list()
+
+/area/bridge/showers
+	name = "Second Deck - Command - Showers"
 
 /area/teleporter
 	name = "Second Deck - Teleporter"
@@ -251,6 +259,7 @@
 /area/hydroponics
 	name = "Second Deck - Service - Hydroponics"
 	icon_state = "hydro"
+	req_access = list(access_kitchen)
 
 /area/hydroponics/storage
 	name = "Second Deck - Service - Hydroponics Storage"
@@ -278,11 +287,14 @@
 /area/crew_quarters/sauna
 	name = "Second Deck - Living - Sauna"
 	icon_state = "sauna"
+	req_access = list(access_bridge)
 	sound_env = SMALL_ENCLOSED
 
-/area/grove/theta // /area/ai_abadoned
-	name = "Second Deck - Grove - Theta"
-	sound_env = LARGE_SOFTFLOOR
+/area/maintenance/ai_abadoned
+	name = "Second Deck - Abandoned - AI core"
+	icon_state = "unknown"
+	req_access = list(access_bridge)
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
 /area/crew_quarters/head
 	name = "Second Deck - Living - Restroom"
@@ -297,8 +309,6 @@
 /area/crew_quarters/gym
 	name = "Second Deck - Living - Gym"
 	icon_state = "fitness"
-
-
 
 /area/crew_quarters/actor
 	name = "Second Deck - Service - Actor"

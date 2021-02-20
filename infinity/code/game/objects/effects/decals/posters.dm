@@ -18,6 +18,15 @@
 	icon_state = "tposter_1"
 	poster_type = /decl/poster/tjpost/tj_1
 */
+
+/obj/structure/sign/poster/event/epost_1
+	icon_state = "eventpost1"
+	poster_type = /decl/poster/event/epost_1
+	
+/obj/structure/sign/poster/event/epost_2
+	icon_state = "eventpost2"
+	poster_type = /decl/poster/event/epost_2
+
 /obj/structure/sign/poster/tjpost/tj_2
 	icon_state = "tposter_2"
 	poster_type = /decl/poster/tjpost/tj_2
@@ -454,3 +463,13 @@
 	desc = "An another one poster about some pornsite with potential new sexual xeno species... \
 	Who the fuck forget it at the space vessel? May be we haven't enought time with families, but we aren't so mad... \
 	Or we are?"
+	
+/decl/poster/event/epost_1
+	icon_state = "eventpost1"
+	name = "Watch Your Xeno"
+	desc = "Плакат, велящий следить за ксеносами на судне, ведь они, подобно диким зверям, могут напасть в любой момент."
+	
+/decl/poster/event/epost_2
+	icon_state = "eventpost2"
+	name = "Donos"
+	desc = "Плакат, обещающий различные премии, в том числе, ввиде пищи тем, кто будет доносить на неугодных судну членов экипажа."

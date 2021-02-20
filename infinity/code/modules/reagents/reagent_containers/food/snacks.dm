@@ -52,3 +52,16 @@ obj/item/weapon/reagent_containers/food/snacks/boileddumplings
 /obj/item/weapon/reagent_containers/food/snacks/dumpling/Initialize()
 	.=..()
 	reagents.add_reagent(/datum/reagent/nutriment/protein, 30)
+
+/obj/item/weapon/reagent_containers/food/snacks/biomass
+	name = "\improper nutriment cube"
+	desc = "Contains nutriments in solid form that liquefy on contact with stomach acid"
+	icon = 'infinity/icons/obj/food.dmi'
+	icon_state = "nutriment_cube"
+	filling_color = "#ffffff"
+	trash = /obj/item/trash/cubewrapper
+	center_of_mass = "x=16;y=16"
+	bitesize = 10
+/obj/item/weapon/reagent_containers/food/snacks/biomass/Initialize()
+	.=..()
+	reagents.add_reagent(/datum/reagent/nutriment, 10)
