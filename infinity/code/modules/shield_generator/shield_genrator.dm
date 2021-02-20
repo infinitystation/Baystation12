@@ -16,7 +16,12 @@
 	if(check_flag(MODEFLAG_OVERCHARGE))
 		to_chat(usr, "<span class='warning'>Щиты перегружены, им не до декоративный покраски!</span>")
 
-	var/new_color = input(user, "Enter a color, please.", "Color", COLOR_DEEP_SKY_BLUE) as color|null
+/*	для лулзов и если будут абузить перекраску
+	if(prob(10))
+		var/mob/living/mob = usr
+		mob.electrocute_act(31, src)
+*/
+	var/new_color = input(usr, "Enter a color, please.", "Color", COLOR_DEEP_SKY_BLUE) as color|null
 	if(new_color)
 		for(var/obj/effect/shield/S in field_segments)
 			S.color = new_color
