@@ -3827,3 +3827,4 @@
 #include "maps\~unit_tests\unit_testing.dm"
 #include "~code\global_init.dm"
 // END_INCLUDE
+#include "infinity\code\modules\client\preference_setup\loadout\lists\drinks.dm"
