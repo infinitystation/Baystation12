@@ -67,8 +67,8 @@ UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/remove_bulb())
 	b_outer_range = 8
 	power_usage_multiplier = 3
 
-	enviroment_sound_range = 4
-	enviroment_sound = 'infinity/sound/ambience/external/1/neon_hum.ogg'
+	// enviroment_sound_range = 4
+	// enviroment_sound = 'infinity/sound/ambience/external/1/neon_hum.ogg'
 
 /obj/machinery/light/outer //works without power sources in area
 	on = TRUE
