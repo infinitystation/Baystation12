@@ -1,0 +1,5 @@
+author: SidVeld
+delete-after: True
+changes:
+  - rscadd: "В лодаут добавили пивка для рывка."
+  - rscdel: "Ксеноновые лампы перестали гудеть как Скреллы."
