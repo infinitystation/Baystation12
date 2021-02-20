@@ -2197,6 +2197,7 @@
 /obj/item/weapon/reagent_containers/food/condiment/salt,
 /obj/item/weapon/reagent_containers/food/condiment/salt,
 /obj/item/weapon/reagent_containers/food/condiment/salt,
+/obj/item/weapon/paper/salt,
 /turf/simulated/floor/tiled/steel_grid,
 /area/ship/patrol/storage)
 "km" = (
@@ -2207,6 +2208,10 @@
 /obj/machinery/computer/ship/engines,
 /obj/effect/floor_decal/techfloor{
 	dir = 9
+	},
+/obj/structure/closet/walllocker/emerglocker/suit{
+	pixel_x = -16;
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/patrol/cockpit)
