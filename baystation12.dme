@@ -1233,6 +1233,7 @@
 #include "code\game\objects\structures\plasticflaps.dm"
 #include "code\game\objects\structures\railing.dm"
 #include "code\game\objects\structures\rubble.dm"
+#include "infinity\code\game\objects\structures\portrait.dm"
 #include "code\game\objects\structures\safe.dm"
 #include "code\game\objects\structures\seaweed.dm"
 #include "code\game\objects\structures\shotgun_rack.dm"
