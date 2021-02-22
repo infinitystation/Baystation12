@@ -31726,6 +31726,9 @@
 /obj/item/device/radio/intercom{
 	pixel_y = 26
 	},
+/obj/effect/landmark/start{
+	name = "Stowaway"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
 "bgm" = (

@@ -979,6 +979,9 @@
 /obj/structure/bed/chair/office/dark{
 	dir = 1
 	},
+/obj/effect/landmark/start{
+	name = "Stowaway"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/vacant/monitoring)
 "cc" = (
@@ -1584,6 +1587,9 @@
 "dh" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 8
+	},
+/obj/effect/landmark/start{
+	name = "Stowaway"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/vacant/monitoring)
