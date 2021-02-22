@@ -204,7 +204,7 @@
 	job_access_type = /datum/job/submap/merchant
 
 //Stowaway
-/*
+
 /obj/item/weapon/card/id/sierra/stowaway
 	desc = "An identification card issued to personnel aboard the NSV Sierra. Looks like the photo fell off this one."
 	job_access_type = /datum/job/stowaway
@@ -225,4 +225,3 @@
 	fingerprint_hash = md5(registered_name)
 	dna_hash = md5(fingerprint_hash)
 	blood_type = RANDOM_BLOOD_TYPE
-*/
