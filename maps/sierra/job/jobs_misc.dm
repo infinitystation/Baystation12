@@ -38,7 +38,6 @@
 	spawn_positions = 3
 	supervisors = "установленными Вам законами"
 
-/*
 /datum/job/stowaway
 	title = "Stowaway"
 	department = "Civilian"
@@ -59,4 +58,4 @@
 
 	access = list(access_maint_tunnels, access_emergency_storage)
 	minimal_access = list()
-*/
+	supervisors = "собственной рассудительностью"
