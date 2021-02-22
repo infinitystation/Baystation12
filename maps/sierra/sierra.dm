@@ -76,6 +76,7 @@
 
 	#include "machinery/alarm.dm"
 	#include "machinery/doors.dm"
+	#include "machinery/keycard authentication.dm"
 	#include "machinery/machinery.dm"
 	#include "machinery/navbeacons.dm"
 	#include "machinery/power.dm"

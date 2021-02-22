@@ -27,7 +27,7 @@
 
 	map_admin_faxes = list("NanoTrasen Central Office")
 
-	evac_controller_type = /datum/evacuation_controller/starship
+	evac_controller_type = /datum/evacuation_controller/starship/fast
 
 	default_law_type = /datum/ai_laws/nanotrasen
 	use_overmap = 1

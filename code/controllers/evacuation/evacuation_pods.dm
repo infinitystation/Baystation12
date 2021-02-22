@@ -37,8 +37,8 @@
 
 	if (emergency_evacuation)
 		// Open the pods (space shields)
-		for(var/obj/machinery/door/blast/regular/evacshield/ES in world)
-			ES.evacuation()
+		for(var/obj/machinery/door/blast/regular/escape_pod/ES in world)
+			INVOKE_ASYNC(ES, /obj/machinery/door/blast/proc/force_open)
 
 		// Abondon Ship
 		for (var/datum/shuttle/autodock/ferry/escape_pod/pod in escape_pods) // Launch the pods!
@@ -110,17 +110,8 @@
 	if (evacuation_controller.is_evacuating())
 		to_chat(user, "Jump preparation already in progress.")
 		return
-//[INF]
-	if(!is_bsd_fine())
-		to_chat(user, "The bluespace drive is not located, unpowered or wasn't recalibrated. Aborting.")
-		return 0
-//[/INF]
 	if (evacuation_controller.call_evacuation(user, 0))
 		log_and_message_admins("[user? key_name(user) : "Autotransfer"] has initiated bluespace jump preparation.")
-//[INF]
-		for(var/obj/machinery/bluespacedrive/M in SSmachines.machinery)
-			M.charge()
-//[/INF]
 
 /datum/evacuation_option/cancel_abandon_ship
 	option_text = "Cancel abandonment"

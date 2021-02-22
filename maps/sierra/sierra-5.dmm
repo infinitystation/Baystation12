@@ -95,11 +95,11 @@
 /turf/space/transit/north,
 /area/space)
 "ak" = (
-/obj/effect/shuttle_landmark/escape_pod/transit/pod6,
+/obj/effect/shuttle_landmark/escape_pod/transit/pod1,
 /turf/space/transit/north,
 /area/space)
 "al" = (
-/obj/effect/shuttle_landmark/escape_pod/transit/pod7,
+/obj/effect/shuttle_landmark/escape_pod/transit/pod2,
 /turf/space/transit/north,
 /area/space)
 "am" = (
@@ -141,15 +141,15 @@
 /turf/space/transit/north,
 /area/space)
 "ao" = (
-/obj/effect/shuttle_landmark/escape_pod/transit/pod12,
+/obj/effect/shuttle_landmark/escape_pod/transit/pod7,
 /turf/space/transit/north,
 /area/space)
 "ap" = (
-/obj/effect/shuttle_landmark/escape_pod/transit/pod13,
+/obj/effect/shuttle_landmark/escape_pod/transit/pod8,
 /turf/space/transit/north,
 /area/space)
 "aq" = (
-/obj/effect/shuttle_landmark/escape_pod/transit/pod14,
+/obj/effect/shuttle_landmark/escape_pod/transit/pod9,
 /turf/space/transit/north,
 /area/space)
 "ar" = (
@@ -240,11 +240,11 @@
 /turf/space/transit/north,
 /area/space)
 "aH" = (
-/obj/effect/shuttle_landmark/escape_pod/transit/pod8,
+/obj/effect/shuttle_landmark/escape_pod/transit/pod3,
 /turf/space/transit/north,
 /area/space)
 "aI" = (
-/obj/effect/shuttle_landmark/escape_pod/transit/pod9,
+/obj/effect/shuttle_landmark/escape_pod/transit/pod4,
 /turf/space/transit/north,
 /area/space)
 "aJ" = (
@@ -278,42 +278,30 @@
 /turf/space/transit/north,
 /area/space)
 "aP" = (
-/obj/effect/shuttle_landmark/escape_pod/transit/pod10,
+/obj/effect/shuttle_landmark/escape_pod/transit/pod5,
 /turf/space/transit/east,
 /area/space)
 "aR" = (
-/obj/effect/shuttle_landmark/escape_pod/out/pod6,
-/turf/space,
-/area/space)
-"aS" = (
-/obj/effect/shuttle_landmark/escape_pod/out/pod7,
+/obj/effect/shuttle_landmark/escape_pod/out/pod1,
 /turf/space,
 /area/space)
 "aT" = (
-/obj/effect/shuttle_landmark/escape_pod/out/pod12,
-/turf/space,
-/area/space)
-"aU" = (
-/obj/effect/shuttle_landmark/escape_pod/out/pod13,
-/turf/space,
-/area/space)
-"aV" = (
-/obj/effect/shuttle_landmark/escape_pod/out/pod14,
+/obj/effect/shuttle_landmark/escape_pod/out/pod2,
 /turf/space,
 /area/space)
 "aX" = (
-/obj/effect/shuttle_landmark/escape_pod/out/pod10,
+/obj/effect/shuttle_landmark/escape_pod/out/pod5,
 /turf/space,
 /area/space)
 "ba" = (
 /turf/space,
 /area/space)
 "bb" = (
-/obj/effect/shuttle_landmark/escape_pod/out/pod8,
+/obj/effect/shuttle_landmark/escape_pod/out/pod3,
 /turf/space,
 /area/space)
 "bc" = (
-/obj/effect/shuttle_landmark/escape_pod/out/pod9,
+/obj/effect/shuttle_landmark/escape_pod/out/pod4,
 /turf/space,
 /area/space)
 
@@ -5763,7 +5751,7 @@ ba
 ba
 ba
 ba
-bb
+ba
 ba
 ba
 ba
@@ -8158,7 +8146,6 @@ ba
 ba
 ba
 ba
-aS
 ba
 ba
 ba
@@ -8187,7 +8174,8 @@ ba
 ba
 ba
 ba
-bc
+ba
+ba
 ba
 ba
 ba
@@ -12001,7 +11989,7 @@ ba
 ba
 ba
 ba
-aU
+bb
 ba
 ba
 ba
@@ -13617,7 +13605,7 @@ ba
 ba
 ba
 ba
-aV
+bc
 ba
 ba
 ba
