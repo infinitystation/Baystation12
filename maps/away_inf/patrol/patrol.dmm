@@ -804,11 +804,6 @@
 	req_access = list("ACCESS_AWAYPATROL_CAPTAIN")
 	},
 /obj/item/weapon/gun/projectile/automatic/bullpup_rifle,
-/obj/item/weapon/gun/projectile/automatic/bullpup_rifle,
-/obj/item/weapon/gun/projectile/automatic/bullpup_rifle,
-/obj/item/weapon/grenade/frag/shell,
-/obj/item/weapon/grenade/frag/shell,
-/obj/item/weapon/grenade/frag/shell,
 /obj/item/weapon/grenade/frag/shell,
 /obj/item/weapon/grenade/frag/shell,
 /obj/item/weapon/grenade/frag/shell,
@@ -816,6 +811,8 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/techfloor,
+/obj/item/weapon/gun/projectile/automatic/bp15,
+/obj/item/weapon/gun/projectile/automatic/bp15,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/patrol/armory)
 "by" = (
@@ -1167,6 +1164,7 @@
 /obj/effect/floor_decal/corner/yellow{
 	dir = 4
 	},
+/obj/item/weapon/reagent_containers/food/condiment/small/peppermill,
 /turf/simulated/floor/tiled/steel_grid,
 /area/ship/patrol/storage)
 "du" = (
@@ -1760,10 +1758,8 @@
 /area/ship/patrol/hallway)
 "fq" = (
 /obj/structure/table/rack/dark,
-/obj/item/stack/material/steel/ten,
 /obj/item/stack/material/titanium/ten,
 /obj/item/stack/material/rods/ten,
-/obj/item/stack/material/plasteel/ten,
 /obj/item/stack/material/plastic/ten,
 /obj/item/stack/material/glass/reinforced/ten,
 /obj/item/stack/material/glass/fifty,
@@ -1784,6 +1780,8 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
+/obj/item/stack/material/steel/fifty,
+/obj/item/stack/material/steel/fifty,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/patrol/armory)
 "fr" = (
@@ -2195,6 +2193,11 @@
 /obj/effect/floor_decal/corner/yellow{
 	dir = 1
 	},
+/obj/item/weapon/reagent_containers/food/condiment/salt,
+/obj/item/weapon/reagent_containers/food/condiment/salt,
+/obj/item/weapon/reagent_containers/food/condiment/salt,
+/obj/item/weapon/reagent_containers/food/condiment/salt,
+/obj/item/weapon/paper/salt,
 /turf/simulated/floor/tiled/steel_grid,
 /area/ship/patrol/storage)
 "km" = (
@@ -2205,6 +2208,10 @@
 /obj/machinery/computer/ship/engines,
 /obj/effect/floor_decal/techfloor{
 	dir = 9
+	},
+/obj/structure/closet/walllocker/emerglocker/suit{
+	pixel_x = -16;
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/patrol/cockpit)
@@ -3239,15 +3246,27 @@
 "QT" = (
 /obj/machinery/light,
 /obj/structure/closet/secure_closet/guncabinet{
+	name = "ammo cabinet";
 	req_access = list("ACCESS_AWAYPATROL_CAPTAIN")
 	},
-/obj/item/weapon/gun/energy/ionrifle,
-/obj/item/weapon/gun/energy/ionrifle,
-/obj/item/weapon/gun/energy/ionrifle,
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
 /obj/effect/floor_decal/techfloor,
+/obj/item/ammo_magazine/mc57,
+/obj/item/ammo_magazine/mc57,
+/obj/item/ammo_magazine/mc57,
+/obj/item/ammo_magazine/mc57,
+/obj/item/ammo_magazine/mc57,
+/obj/item/ammo_magazine/mc57,
+/obj/item/ammo_magazine/mc57,
+/obj/item/ammo_magazine/mc57,
+/obj/item/ammo_magazine/mil_rifle/extended,
+/obj/item/ammo_magazine/mil_rifle/extended,
+/obj/item/ammo_magazine/mil_rifle,
+/obj/item/ammo_magazine/mil_rifle,
+/obj/item/ammo_magazine/mil_rifle/practice,
+/obj/item/ammo_magazine/mil_rifle/practice,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/patrol/armory)
 "QV" = (
@@ -3468,6 +3487,7 @@
 /obj/effect/floor_decal/corner/yellow{
 	dir = 5
 	},
+/obj/item/weapon/reagent_containers/food/condiment/small/saltshaker,
 /turf/simulated/floor/tiled/steel_grid,
 /area/ship/patrol/storage)
 "Vp" = (

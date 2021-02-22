@@ -44,3 +44,12 @@
 	new /obj/item/weapon/gun/projectile/pistol/military(src)
 	new /obj/item/ammo_magazine/pistol/double(src)
 	new /obj/item/ammo_magazine/pistol/double(src)
+
+/obj/structure/closet/walllocker/emerglocker/suit
+	spawnitems = list(/obj/item/weapon/tank/emergency/oxygen,/obj/item/clothing/mask/breath,/obj/item/clothing/suit/space/emergency,/obj/item/clothing/head/helmet/space/emergency)
+	amount = 1 // spawns each items X times.
+
+/obj/item/weapon/paper/salt
+	name = "QM's note"
+	info = "Короче уебки, ваши рационы ушли на оплату лечения моей ноги. В замен я насыпал вам немного соли чтобы было с чем жрать ну вы сами поняли что."
+
