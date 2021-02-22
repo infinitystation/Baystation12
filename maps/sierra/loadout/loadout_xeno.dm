@@ -57,13 +57,13 @@
 // Vox clothing
 
 /datum/gear/mask/gas/vox
-	allowed_roles = list(/datum/job/submap/merchant, /datum/job/submap/merchant_trainee, /*/datum/job/stowaway*/)
+	allowed_roles = list(/datum/job/submap/merchant, /datum/job/submap/merchant_trainee, /datum/job/stowaway)
 
 /datum/gear/gloves/vox
-	allowed_roles = list(/datum/job/submap/merchant, /datum/job/submap/merchant_trainee, /*/datum/job/stowaway*/)
+	allowed_roles = list(/datum/job/submap/merchant, /datum/job/submap/merchant_trainee, /datum/job/stowaway)
 
 /datum/gear/uniform/vox_cloth
-	allowed_roles = list(/datum/job/submap/merchant, /datum/job/submap/merchant_trainee, /*/datum/job/stowaway*/)
+	allowed_roles = list(/datum/job/submap/merchant, /datum/job/submap/merchant_trainee, /datum/job/stowaway)
 
 /datum/gear/uniform/vox_robe
-	allowed_roles = list(/datum/job/submap/merchant, /datum/job/submap/merchant_trainee, /*/datum/job/stowaway*/)
+	allowed_roles = list(/datum/job/submap/merchant, /datum/job/submap/merchant_trainee, /datum/job/stowaway)
