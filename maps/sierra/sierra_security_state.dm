@@ -25,7 +25,7 @@
 	icon = 'maps/sierra/icons/security_state.dmi'
 
 /decl/security_level/default/sierradept/code_green
-	name = "code green"
+	name = "код зелёный"
 	icon = 'icons/misc/security_state.dmi'
 
 	light_max_bright = 0.25
@@ -48,7 +48,7 @@
 	GLOB.using_map.unlock_high_secure_areas()
 
 /decl/security_level/default/sierradept/code_violet
-	name = "code violet"
+	name = "код фиолетовый"
 
 	light_max_bright = 0.25
 	light_inner_range = 1
@@ -78,7 +78,7 @@
 	GLOB.using_map.toggle_crew_sensors(2)
 
 /decl/security_level/default/sierradept/code_orange
-	name = "code orange"
+	name = "код оранжевый"
 
 	light_max_bright = 0.25
 	light_inner_range = 1
@@ -110,7 +110,7 @@
 	GLOB.using_map.toggle_crew_sensors(1)
 
 /decl/security_level/default/sierradept/code_blue
-	name = "code blue"
+	name = "код синий"
 	icon = 'icons/misc/security_state.dmi'
 
 	light_max_bright = 0.5
@@ -137,7 +137,7 @@
 	GLOB.using_map.unlock_secure_areas()
 
 /decl/security_level/default/sierradept/code_red
-	name = "code red"
+	name = "код красный"
 	icon = 'icons/misc/security_state.dmi'
 
 	light_max_bright = 0.5
@@ -173,7 +173,7 @@
 	GLOB.using_map.lock_high_secure_areas()
 
 /decl/security_level/default/sierradept/code_delta
-	name = "code delta"
+	name = "код дельта"
 
 	light_max_bright = 0.7
 	light_inner_range = 1
