@@ -26,7 +26,7 @@
 //Added in an additional check to alert players if input is too long
 /proc/sanitize(var/input, var/max_length = MAX_MESSAGE_LEN, var/encode = 1, var/trim = 1, var/extra = 1)
 	// [INF]
-	toLongHere
+	toLongHere:
 	// [/INF]
 	if(!input)
 		return
