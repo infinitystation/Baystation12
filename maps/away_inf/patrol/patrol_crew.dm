@@ -24,7 +24,7 @@
 	name = "Sub-Lieutenant"
 
 /obj/effect/submap_landmark/spawnpoint/away_patrol/pilot2
-	name = "Pilot"
+	name = "Ensign"
 
 /obj/effect/submap_landmark/spawnpoint/away_patrol/corpsman
 	name = "Corpsman"
@@ -68,6 +68,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/patrol/crewman
 	supervisors = "пилот, ваш офицер"
 	loadout_allowed = FALSE
+	is_semi_antagonist = TRUE
 	info = "Вы просыпаетесь и выходите из криосна, ощущая прохладный воздух на своём лице, а также лёгкую тошноту. \
 	Являясь одним из членов экипажа патрульного шаттла 3 флота ЦПСС, ваша задача состоит в патруле и разведке данного сектора. \
 	По данным бортового компьютера, поступал неизвестный сигнал о нападении воксов в этом регионе - возможно, потребуется подробная \
@@ -83,6 +84,7 @@
 					 SKILL_MEDICAL = SKILL_BASIC,
 					 SKILL_EVA = SKILL_BASIC)
 	access = list(access_away_patrol)
+	required_role = list("Sub-Lieutenant", "Ensign")
 
 /datum/job/submap/patrol/pilot
 	title = "Sub-Lieutenant"
@@ -103,9 +105,10 @@
 					 SKILL_MEDICAL = SKILL_BASIC,
 					 SKILL_PILOT = SKILL_ADEPT,
 					 SKILL_EVA = SKILL_BASIC)
+	required_role = null
 
 /datum/job/submap/patrol/pilot2
-	title = "Pilot"
+	title = "Ensign"
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/patrol/pilot2
 	supervisors = "ваш офицер"
@@ -123,6 +126,7 @@
 					 SKILL_MEDICAL = SKILL_BASIC,
 					 SKILL_PILOT = SKILL_ADEPT,
 					 SKILL_EVA = SKILL_BASIC)
+	required_role = null
 
 /datum/job/submap/patrol/corpsman
 	title = "Corpsman"
@@ -211,7 +215,7 @@
 	id_type = /obj/item/weapon/card/id/awaypatrol/captain
 
 /decl/hierarchy/outfit/job/patrol/pilot2
-	name = PATROL_OUTFIT_JOB_NAME("Pilot")
+	name = PATROL_OUTFIT_JOB_NAME("Ensign")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/command/pilot2/away_solpatrol
 	id_type = /obj/item/weapon/card/id/awaypatrol/captain
 

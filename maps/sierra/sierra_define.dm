@@ -38,7 +38,7 @@
 	recommended_players = 20
 //	minimum_players = 0 its already 0
 
-	away_site_budget = 3.5
+	away_site_budget = 5
 
 	id_hud_icons = 'maps/sierra/icons/assignment_hud.dmi'
 

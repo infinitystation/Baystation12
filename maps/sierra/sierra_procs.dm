@@ -22,6 +22,7 @@
 /datum/map
 	var/list/high_secure_areas
 	var/list/secure_areas
+	var/lockdown = FALSE
 
 /datum/map/sierra
 	high_secure_areas = list(
@@ -76,3 +77,28 @@
 	if(high_secure_areas)
 		for(var/area in high_secure_areas)
 			area_unlock(area)
+
+/datum/map/proc/lockdown(var/force)
+	lockdown = !lockdown
+	if(force && force == "close")
+		lockdown = TRUE
+	else if(force && force == "open")
+		lockdown = FALSE
+
+	if(!lockdown)
+		for(var/obj/machinery/door/blast/regular/lockdown/door in SSmachines.machinery)
+			door.autoclose = FALSE
+			INVOKE_ASYNC(door, /obj/machinery/door/proc/open)
+	else
+		for(var/obj/machinery/door/blast/regular/lockdown/door in SSmachines.machinery)
+			door.autoclose = TRUE
+			INVOKE_ASYNC(door, /obj/machinery/door/blast/proc/delayed_close)
+
+/mob/living/silicon/ai/verb/lockdown()
+	set category = "Silicon Commands"
+	set name = "Vessel's Lockdown"
+	set desc = "Toggles local Lockdowns Blastdoors"
+
+	GLOB.using_map.lockdown()
+	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
+	priority_announcement.Announce("[GLOB.using_map.lockdown ? "Сохраняйте спокойствие и оставайтесь на своих местах. Если есть раненые [src.name] поможет отвести их к медбею." : "Возвращайтесь к работе. Текущий уровень угрозы: <b>[security_state.current_security_level.name]</b>"]", "[GLOB.using_map.lockdown ? "Активирован карантин!" : "Отмена карантина!"]")

@@ -151,6 +151,7 @@
 	name = "First Deck - Bridge - Storage"
 	icon_state = "bridge"
 	sound_env = SMALL_ENCLOSED
+	req_access = list(access_bridge)
 
 	// Tcomm
 /area/tcommsat/

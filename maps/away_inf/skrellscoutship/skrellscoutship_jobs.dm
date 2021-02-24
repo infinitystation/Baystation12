@@ -56,7 +56,11 @@
 	total_positions = 5
 	whitelisted_species = list("Skrell")
 	outfit_type = /decl/hierarchy/outfit/job/skrellscoutship
-	info = "Your vessel is scouting through unknown space, working to map out any potential dangers, as well as potential allies."
+	info = "Ваше судно получило приказ разведать данный сектор, отметив на нем точки интереса, возможных врагов и возможных союзников. \
+	\
+	Ваше присутсвие должно оставаться в секрете, однако устранение свидетелей запрещено, т.к. может повлечь дипламатические конфликты. \
+	В случае контакта с патрульными судами других государств рекомендуется выйти на связь для избежания конфликта, не раскрывая свою истинную миссию. \
+	Вы не являетесь спасателями и не должны реагировать на любые запросы о помощи."
 	branch = /datum/mil_branch/skrell_fleet
 	rank = /datum/mil_rank/skrell_fleet
 	allowed_branches = list(/datum/mil_branch/skrell_fleet)
@@ -69,12 +73,13 @@
 					SKILL_WEAPONS = SKILL_ADEPT,
 					SKILL_MEDICAL = SKILL_BASIC)
 
+	required_role = list("Qrri-Vuxix")
+
 /datum/job/submap/skrellscoutship_crew/leader
 	title = "Qrri-Vuxix"
 	supervisors = "your SDTF"
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/skrellscoutship/leader
-	info = "Your vessel is scouting through unknown space, working to map out any potential dangers, as well as potential allies."
 	is_semi_antagonist = TRUE
 	min_skill = list(SKILL_EVA = SKILL_ADEPT,
 					SKILL_PILOT = SKILL_ADEPT,
@@ -82,6 +87,8 @@
 					SKILL_COMBAT = SKILL_ADEPT,
 					SKILL_WEAPONS = SKILL_ADEPT,
 					SKILL_MEDICAL = SKILL_BASIC)
+
+	required_role = null
 
 /datum/job/submap/skrellscoutship_crew/equip(var/mob/living/carbon/human/H, var/alt_title, var/datum/mil_branch/branch, var/datum/mil_rank/grade)
 	. = ..(H, alt_title, branch, grade)	//passing through arguments
