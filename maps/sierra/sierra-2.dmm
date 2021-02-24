@@ -28622,9 +28622,12 @@
 /turf/simulated/floor/tiled/white,
 /area/vacant/gambling)
 "aZP" = (
-/obj/machinery/shield_diffuser,
-/turf/simulated/floor/reinforced,
-/area/space)
+/obj/machinery/door/firedoor,
+/obj/machinery/security_scanner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/maintenance/seconddeck/forestarboard)
 "aZQ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
@@ -28773,8 +28776,17 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/maintenance_equipstorage)
 "bag" = (
-/turf/simulated/floor/reinforced,
-/area/space)
+/obj/machinery/door/firedoor,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/door/blast/regular/lockdown{
+	dir = 4;
+	id_tag = "lockdown2_3"
+	},
+/obj/machinery/security_scanner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/hallway/primary/seconddeck/center)
 "bah" = (
 /obj/machinery/newscaster{
 	pixel_x = 26;
@@ -33625,6 +33637,17 @@
 /mob/living/simple_animal/aquatic/fish,
 /turf/simulated/floor/aquarium,
 /area/grove/theta)
+"bFU" = (
+/obj/machinery/door/firedoor,
+/obj/effect/floor_decal/techfloor,
+/obj/effect/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/machinery/security_scanner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/maintenance/seconddeck/foreport)
 "bIE" = (
 /obj/structure/ladder,
 /obj/structure/disposalpipe/down{
@@ -34468,17 +34491,6 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/cafe)
-"gPf" = (
-/obj/machinery/door/firedoor,
-/obj/effect/floor_decal/techfloor,
-/obj/effect/floor_decal/techfloor{
-	dir = 1
-	},
-/obj/machinery/security_scanner{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/maintenance/seconddeck/foreport)
 "gPF" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -34989,13 +35001,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/cafe)
-"juQ" = (
-/obj/machinery/door/firedoor,
-/obj/machinery/security_scanner{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/maintenance/seconddeck/forestarboard)
 "jDB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -37505,18 +37510,6 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/cafe)
-"vIT" = (
-/obj/machinery/door/firedoor,
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/door/blast/regular/lockdown{
-	dir = 4;
-	id_tag = "lockdown2_3"
-	},
-/obj/machinery/security_scanner{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/hallway/primary/seconddeck/center)
 "vJG" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -49922,7 +49915,7 @@ ahQ
 axv
 ahQ
 ahQ
-juQ
+aZP
 adz
 adz
 agw
@@ -50762,7 +50755,7 @@ aFa
 aJm
 aKj
 aKj
-gPf
+bFU
 aEc
 aEc
 aEc
@@ -56806,7 +56799,7 @@ tdE
 amq
 avB
 aus
-vIT
+bag
 awV
 awV
 awV
@@ -64307,7 +64300,7 @@ aTy
 aUy
 aXx
 aXy
-aZP
+atE
 aam
 aam
 aam
@@ -64509,7 +64502,7 @@ aUB
 aVx
 aVE
 aXy
-aZP
+atE
 aam
 aam
 aam
@@ -64711,7 +64704,7 @@ aVo
 aUI
 aVt
 aXy
-aZP
+atE
 aam
 aam
 aam
@@ -65115,7 +65108,7 @@ bdR
 aPV
 aPV
 aPV
-bag
+aaK
 aam
 aam
 aam
@@ -65316,7 +65309,7 @@ bdQ
 bdO
 aPV
 aPV
-bag
+aaK
 aam
 aam
 aam
@@ -65517,8 +65510,8 @@ aPV
 bes
 aPV
 aPV
-bag
-bag
+aaK
+aaK
 aam
 aam
 aam
@@ -65718,9 +65711,9 @@ bbt
 aPV
 aPV
 aPV
-bag
-bag
-bag
+aaK
+aaK
+aaK
 aam
 aam
 aam
@@ -65919,10 +65912,10 @@ bem
 aPV
 aPV
 aPV
-bag
-bag
-bag
-bag
+aaK
+aaK
+aaK
+aaK
 aam
 aam
 aam
@@ -66120,9 +66113,9 @@ bay
 aPV
 aPV
 aPV
-bag
-bag
-bag
+aaK
+aaK
+aaK
 aam
 aam
 aam
@@ -66321,9 +66314,9 @@ aPV
 aPV
 aPV
 aPV
-bag
-bag
-bag
+aaK
+aaK
+aaK
 aam
 aam
 aam
@@ -66522,9 +66515,9 @@ aPV
 aPV
 aPV
 aPV
-bag
-bag
-bag
+aaK
+aaK
+aaK
 aam
 aam
 aam
@@ -66717,15 +66710,15 @@ aai
 aai
 aah
 aah
-bag
-bag
-bag
-bag
-bag
-bag
-bag
-bag
-bag
+aaK
+aaK
+aaK
+aaK
+aaK
+aaK
+aaK
+aaK
+aaK
 aah
 aam
 aam
