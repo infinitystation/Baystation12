@@ -101,14 +101,12 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	dir = 4;
-	icon_state = "0-2"
-	},
 /obj/effect/floor_decal/techfloor{
 	dir = 9
+	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/liberia/engineeringreactor)
@@ -2650,7 +2648,18 @@
 	name = "Liberia - Bridge"
 	})
 "ep" = (
-/obj/structure/table/mag,
+/obj/machinery/atm{
+	pixel_y = -30
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/door/window/northleft{
+	autoclose = 1;
+	autoset_access = 0;
+	name = "ATM Private"
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/liberia/mule)
 "eq" = (
@@ -4517,6 +4526,7 @@
 /mob/living/simple_animal/tindalos{
 	name = "Eddy"
 	},
+/obj/item/weapon/crowbar/prybar,
 /turf/simulated/floor/carpet/red,
 /area/liberia/captain)
 "hE" = (
@@ -4547,6 +4557,7 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
 	},
+/obj/item/weapon/crowbar/prybar,
 /turf/simulated/floor/carpet,
 /area/liberia/personellroom2)
 "hH" = (
@@ -5461,8 +5472,7 @@
 "jD" = (
 /obj/structure/table/glass,
 /obj/machinery/photocopier/faxmachine{
-	department = "Merchant Outpost";
-	req_access = list("ACCESS_MERCHANT");
+	department = "FTU Ship Liberia";
 	send_access = list("ACCESS_MERCHANT")
 	},
 /obj/effect/floor_decal/corner/blue/mono,
@@ -6544,7 +6554,9 @@
 /turf/simulated/floor/plating,
 /area/liberia/bar)
 "lv" = (
-/obj/machinery/vending/medical/sierra,
+/obj/machinery/vending/medical/sierra{
+	req_access = list("ACCESS_MERCHANT")
+	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white,
 /area/liberia/medbay)
@@ -8892,6 +8904,22 @@
 /obj/effect/floor_decal/corner/green/three_quarters,
 /turf/simulated/floor/tiled,
 /area/liberia/traidingroom)
+"VS" = (
+/obj/machinery/atm{
+	pixel_y = -30
+	},
+/obj/structure/window/reinforced{
+	dir = 8;
+	health = null
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/door/window/northright{
+	autoclose = 1;
+	autoset_access = 0;
+	name = "ATM Private"
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/liberia/mule)
 "VX" = (
 /obj/effect/floor_decal/solarpanel,
 /obj/machinery/power/solar{
@@ -26025,7 +26053,7 @@ bA
 bX
 cx
 cW
-ep
+VS
 ex
 aa
 aa

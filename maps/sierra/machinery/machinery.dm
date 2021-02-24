@@ -206,24 +206,24 @@
 		if(allowed(user))
 			for(var/obj/machinery/door/blast/regular/lockdown/door in SSmachines.machinery)
 				if(door.id_tag == id_tag)
-					door.open()
+					INVOKE_ASYNC(door, /obj/machinery/door/proc/open)
 		return
 
 /obj/machinery/door/blast/regular/lockdown/attack_ai()
 	for(var/obj/machinery/door/blast/regular/lockdown/door in SSmachines.machinery)
 		if(door.id_tag == id_tag)
 			if(door.density)
-				door.open()
+				INVOKE_ASYNC(door, /obj/machinery/door/proc/open)
 			else
-				door.close()
+				INVOKE_ASYNC(door, /obj/machinery/door/proc/close)
 
 /turf/simulated/AIMiddleClick(var/mob/AI)
 	. = ..()
-	for(/obj/machinery/door/blast/regular/lockdown/door in content)
+	for(var/obj/machinery/door/blast/regular/lockdown/door in contents)
 		door.attack_ai(AI)
 
 /obj/structure/window/AIMiddleClick(var/mob/AI)
 	. = ..()
 	var/turf/turf = get_turf(src)
-	for(/obj/machinery/door/blast/regular/lockdown/door in turf.content)
+	for(var/obj/machinery/door/blast/regular/lockdown/door in turf.contents)
 		door.attack_ai(AI)

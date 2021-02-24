@@ -485,7 +485,7 @@
 /area/maintenance/thirddeck/aft)
 "bi" = (
 /obj/machinery/camera/network/third_deck{
-	c_tag = "Third Deck - Janitorial Closet"
+	c_tag = "Third Deck - Fore Dock Air Storage"
 	},
 /obj/machinery/atmospherics/portables_connector,
 /obj/machinery/portable_atmospherics/canister/air/airlock,
@@ -542,7 +542,7 @@
 "bo" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/machinery/camera/network/command{
-	c_tag = "Command - BSA"
+	c_tag = "Command - OFD"
 	},
 /turf/simulated/floor/tiled,
 /area/command/bsa)
@@ -830,7 +830,7 @@
 	id_tag = "hangar_atmos_storage";
 	name = "Storage Door Control";
 	pixel_x = 24;
-	req_access = list(list("ACCESS_MINING","ACCESS_XENOARCH","ACCESS_EXPLORER","ACCESS_ENGINE_EQUIP"))
+	req_access = list(list("ACCESS_HANGAR","ACCESS_ENGINE_EQUIP"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
@@ -1332,7 +1332,7 @@
 	id_tag = "hangar_atmos_storage";
 	name = "Storage Door Control";
 	pixel_x = -24;
-	req_access = list(list("ACCESS_MINING","ACCESS_XENOARCH","ACCESS_EL","ACCESS_ENGINE_EQUIP"))
+	req_access = list(list("ACCESS_HANGAR","ACCESS_ENGINE_EQUIP"))
 	},
 /obj/machinery/portable_atmospherics/powered/scrubber,
 /obj/machinery/atmospherics/portables_connector,
@@ -2987,6 +2987,7 @@
 	dir = 4;
 	pixel_x = -32
 	},
+/obj/machinery/security_scanner,
 /turf/simulated/floor/plating,
 /area/quartermaster/office)
 "fz" = (
@@ -3876,7 +3877,7 @@
 	pixel_y = -24
 	},
 /obj/machinery/camera/network/command{
-	c_tag = "Pathfinder - Office";
+	c_tag = "Exploration Leader - Office";
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloor,
@@ -6610,10 +6611,12 @@
 /area/maintenance/thirddeck/aft)
 "kZ" = (
 /obj/machinery/door/airlock/external{
+	autoset_access = 0;
 	dir = 4;
 	frequency = 1331;
 	id_tag = "guppy_shuttle_outer";
-	name = "Guppy External Access"
+	name = "Guppy External Access";
+	req_access = list("ACCESS_GUPPY")
 	},
 /obj/machinery/shield_diffuser,
 /obj/structure/cable/cyan{
@@ -14175,10 +14178,11 @@
 /area/exploration_shuttle/cockpit)
 "wg" = (
 /obj/machinery/door/airlock/external{
+	autoset_access = 0;
 	frequency = 1331;
 	id_tag = "calypso_shuttle_outer";
 	name = "Charon External Access";
-	req_access = newlist()
+	req_access = list("ACCESS_EXPEDITION_SHUTTLE")
 	},
 /obj/machinery/shield_diffuser,
 /obj/machinery/atmospherics/pipe/simple/hidden{
@@ -16124,10 +16128,11 @@
 /area/thruster/d3port)
 "zk" = (
 /obj/machinery/door/airlock/external{
+	autoset_access = 0;
 	frequency = 1331;
 	id_tag = "calypso_shuttle_inner";
 	name = "Charon External Access";
-	req_access = newlist()
+	req_access = list("ACCESS_EXPEDITION_SHUTTLE")
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
@@ -17272,10 +17277,6 @@
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled,
 /area/quartermaster/hangar)
-"Bm" = (
-/obj/structure/catwalk,
-/turf/space,
-/area/space)
 "Bn" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
@@ -22956,9 +22957,11 @@
 /area/guppy_hangar/start)
 "Km" = (
 /obj/machinery/door/airlock/external{
+	autoset_access = 0;
 	frequency = 1331;
 	id_tag = "guppy_shuttle_inner";
-	name = "Guppy External Access"
+	name = "Guppy External Access";
+	req_access = list("ACCESS_GUPPY")
 	},
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -23546,10 +23549,12 @@
 /area/shuttle/petrov/ship)
 "Lr" = (
 /obj/machinery/door/airlock/external{
+	autoset_access = 0;
 	dir = 4;
 	frequency = 1331;
 	id_tag = "guppy_shuttle_outer";
-	name = "Guppy External Access"
+	name = "Guppy External Access";
+	req_access = list("ACCESS_GUPPY")
 	},
 /obj/machinery/shield_diffuser,
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -43731,7 +43736,7 @@ Is
 Is
 Is
 Is
-Bm
+Is
 fB
 kp
 KJ

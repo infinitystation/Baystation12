@@ -88,7 +88,7 @@
 	if(!lockdown)
 		for(var/obj/machinery/door/blast/regular/lockdown/door in SSmachines.machinery)
 			door.autoclose = FALSE
-			INVOKE_ASYNC(door, /obj/machinery/door/blast/proc/open)
+			INVOKE_ASYNC(door, /obj/machinery/door/proc/open)
 	else
 		for(var/obj/machinery/door/blast/regular/lockdown/door in SSmachines.machinery)
 			door.autoclose = TRUE
@@ -96,7 +96,9 @@
 
 /mob/living/silicon/ai/verb/lockdown()
 	set category = "Silicon Commands"
-	set name = "[GLOB.using_map.name]'s Lockdown"
-	set desc = "Toggles [GLOB.using_map.name]'s Lockdowns Blastdoors"
+	set name = "Vessel's Lockdown"
+	set desc = "Toggles local Lockdowns Blastdoors"
 
 	GLOB.using_map.lockdown()
+	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
+	priority_announcement.Announce("[GLOB.using_map.lockdown ? "Сохраняйте спокойствие и оставайтесь на своих местах. Если есть раненые [src.name] поможет отвести их к медбею." : "Возвращайтесь к работе. Текущий уровень угрозы: <b>[security_state.current_security_level.name]</b>"]", "[GLOB.using_map.lockdown ? "Активирован карантин!" : "Отмена карантина!"]")

@@ -4590,6 +4590,10 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/machinery/porta_turret{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/turret_protected/ai_upload)
 "aiF" = (
@@ -4633,6 +4637,9 @@
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 5
+	},
+/obj/machinery/camera/network/engineering{
+	c_tag = "Shield Generator - First Deck"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/shield/firstdeck)
@@ -4848,6 +4855,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/sleeper)
 "ajf" = (
@@ -5984,6 +5992,7 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/staging)
 "akD" = (
@@ -6036,6 +6045,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/staging)
 "akH" = (
@@ -8548,6 +8558,10 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/machinery/porta_turret{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/turret_protected/ai_upload)
 "aoE" = (
@@ -9519,7 +9533,7 @@
 	},
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/camera/network/second_deck{
-	c_tag = "Second Deck - Drone Station";
+	c_tag = "First Deck - Drone Station";
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -10908,6 +10922,9 @@
 	dir = 9
 	},
 /obj/structure/bed/chair/padded/red,
+/obj/machinery/status_display{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled,
 /area/security/sierra/interrogation)
 "asJ" = (
@@ -10951,6 +10968,11 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/tiled,
 /area/security/sierra/interrogation)
 "asL" = (
@@ -10972,6 +10994,21 @@
 	},
 /obj/machinery/camera/network/security{
 	c_tag = "Security - Interrogation"
+	},
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "interrogation_shutters";
+	name = "Interrogation Shutters Control";
+	pixel_x = 6;
+	pixel_y = 27
 	},
 /turf/simulated/floor/tiled,
 /area/security/sierra/interrogation)
@@ -11510,6 +11547,7 @@
 /area/security/sierra/interrogation)
 "aud" = (
 /obj/machinery/hologram/holopad,
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/security/sierra/interrogation)
 "aue" = (
@@ -11525,9 +11563,6 @@
 /turf/simulated/floor/plating,
 /area/security/sierra/interrogation)
 "auf" = (
-/obj/machinery/status_display{
-	pixel_x = 32
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
@@ -11537,17 +11572,6 @@
 /obj/structure/filingcabinet/filingcabinet,
 /turf/simulated/floor/tiled,
 /area/security/sierra/interrogation)
-"aug" = (
-/obj/machinery/recharger,
-/obj/structure/table/reinforced,
-/obj/effect/floor_decal/borderfloor{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/lightgrey/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled,
-/area/hallway/primary/firstdeck/fore_stairwell)
 "auj" = (
 /obj/structure/railing/mapped,
 /obj/effect/floor_decal/borderfloor,
@@ -12151,26 +12175,17 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/disposalpipe/segment,
+/obj/effect/catwalk_plated,
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/structure/disposalpipe/segment,
-/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/security/sierra/interrogation)
 "avG" = (
 /obj/structure/table/standard,
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/machinery/power/apc{
-	dir = 4;
-	name = "east bump";
-	pixel_x = 24
-	},
 /obj/item/weapon/storage/box/evidence,
 /obj/item/weapon/hand_labeler,
 /obj/item/device/camera,
@@ -12180,18 +12195,21 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled,
 /area/security/sierra/interrogation)
 "avH" = (
-/obj/machinery/recharge_station,
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/lightgrey/border{
+	dir = 8
+	},
+/obj/structure/bed/chair/padded/red{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
@@ -15763,14 +15781,16 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "aBY" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/item/device/radio/intercom{
+	pixel_y = 26
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/hologram/holopad,
+/obj/effect/floor_decal/borderfloor{
+	dir = 9
+	},
+/obj/effect/floor_decal/corner/lightgrey/border{
+	dir = 9
+	},
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/fore_stairwell)
 "aBZ" = (
@@ -19299,6 +19319,7 @@
 	opacity = 0
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/assembly/robotics)
 "aGH" = (
@@ -19541,6 +19562,7 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 8
 	},
+/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white,
 /area/assembly/robotics)
 "aHb" = (
@@ -21942,6 +21964,9 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white,
 /area/assembly/robotics)
 "aKt" = (
@@ -22860,6 +22885,9 @@
 /obj/effect/floor_decal/techfloor,
 /obj/effect/floor_decal/techfloor{
 	dir = 1
+	},
+/obj/machinery/security_scanner{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/development)
@@ -23829,6 +23857,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
+/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/research)
 "aMW" = (
@@ -24047,6 +24076,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/research)
 "aNg" = (
@@ -27041,6 +27071,9 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/locker)
 "aRs" = (
@@ -33521,6 +33554,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white,
 /area/rnd/misc_lab)
 "baW" = (
@@ -35224,6 +35258,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/floor_decal/industrial/hatch/grey,
+/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/research)
 "bdX" = (
@@ -35248,6 +35283,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 8
 	},
+/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/xenobiology/xenoflora)
 "bdZ" = (
@@ -38393,6 +38429,26 @@
 /obj/machinery/ai_status_display,
 /turf/simulated/wall/r_wall/prepainted,
 /area/crew_quarters/heads/office/cmo)
+"eGc" = (
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
+	id = "processwindow"
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
+	},
+/obj/machinery/door/blast/shutters/open{
+	dir = 4;
+	id_tag = "interrogation_shutters";
+	name = "Interrogation Shutters"
+	},
+/turf/simulated/floor/plating,
+/area/security/sierra/interrogation)
 "eLa" = (
 /obj/machinery/fabricator{
 	fab_status_flags = 1
@@ -38536,6 +38592,7 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 1
 	},
+/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/infirmary)
 "fpQ" = (
@@ -40188,6 +40245,28 @@
 "mgp" = (
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/fore_stairwell)
+"mrm" = (
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
+	id = "processwindow"
+	},
+/obj/structure/cable/green,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
+	},
+/obj/machinery/door/blast/shutters/open{
+	dir = 4;
+	id_tag = "interrogation_shutters";
+	name = "Interrogation Shutters"
+	},
+/turf/simulated/floor/plating,
+/area/security/sierra/interrogation)
 "msU" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -40622,6 +40701,10 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
+"nyT" = (
+/obj/machinery/porta_turret,
+/turf/simulated/wall/r_wall/hull,
+/area/turret_protected/ai)
 "nEh" = (
 /obj/effect/wallframe_spawn/reinforced/hull,
 /obj/machinery/door/firedoor,
@@ -40722,13 +40805,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/heads/office/hop)
 "oht" = (
-/obj/item/device/radio/intercom{
-	pixel_y = 26
-	},
-/obj/effect/floor_decal/borderfloor{
+/obj/effect/floor_decal/borderfloor/corner{
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/lightgrey/border{
+/obj/effect/floor_decal/corner/lightgrey/bordercorner{
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
@@ -40819,12 +40899,16 @@
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "oHe" = (
-/obj/structure/table/reinforced,
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
 	},
 /obj/effect/floor_decal/corner/lightgrey/border{
 	dir = 9
+	},
+/obj/machinery/recharge_station,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/light{
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/fore_stairwell)
@@ -40867,12 +40951,17 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/turret_protected/ai_upload)
 "oYd" = (
-/turf/simulated/wall/r_wall/hull,
-/area/turret_protected/ai_upload)
-"oYB" = (
-/obj/structure/bed/chair/padded/light{
+/obj/effect/floor_decal/borderfloor{
 	dir = 8
 	},
+/obj/effect/floor_decal/corner/lightgrey/border{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/fore_stairwell)
+"oYB" = (
 /obj/effect/floor_decal/borderfloor/corner,
 /obj/effect/floor_decal/industrial/danger/corner,
 /turf/simulated/floor/tiled,
@@ -41302,6 +41391,11 @@
 "rwo" = (
 /turf/simulated/floor/tiled/dark,
 /area/medical/morgue)
+"rxI" = (
+/obj/machinery/hologram/holopad,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/fore_stairwell)
 "rBR" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/medical/staging)
@@ -41895,6 +41989,7 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 1
 	},
+/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/infirmary)
 "tYh" = (
@@ -42059,6 +42154,10 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/security/sierra/evidence)
+"uSS" = (
+/obj/machinery/porta_turret,
+/turf/simulated/wall/r_wall/prepainted,
+/area/turret_protected/ai)
 "uUu" = (
 /obj/machinery/chemical_dispenser/full,
 /obj/effect/floor_decal/borderfloorwhite{
@@ -42452,6 +42551,12 @@
 /obj/random/maintenance,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
+"xDP" = (
+/obj/structure/bed/chair/padded/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/fore_stairwell)
 "xFB" = (
 /obj/structure/bookcase/manuals/medical,
 /turf/simulated/floor/wood/walnut,
@@ -46970,15 +47075,15 @@ aps
 aps
 aiw
 avc
+nyT
 avc
+nyT
 avc
+nyT
 avc
+nyT
 avc
-avc
-avc
-avc
-avc
-avc
+nyT
 avc
 aLX
 aLX
@@ -47979,7 +48084,7 @@ apx
 arb
 are
 akJ
-aKz
+uSS
 aKy
 bkn
 aKy
@@ -47989,7 +48094,7 @@ aKy
 aKy
 ixK
 aKy
-aKz
+uSS
 aLY
 aNo
 aOI
@@ -48989,7 +49094,7 @@ apB
 arf
 aso
 akJ
-aKz
+uSS
 aKy
 aKy
 aKy
@@ -48999,7 +49104,7 @@ krA
 aKy
 aKy
 aKy
-aKz
+uSS
 aLY
 aML
 aON
@@ -55048,8 +55153,8 @@ vRO
 vaV
 akS
 asM
-asM
-asM
+eGc
+mrm
 asM
 asM
 azM
@@ -55250,7 +55355,7 @@ sjO
 vvZ
 vvZ
 oHe
-aug
+avH
 avH
 axc
 aym
@@ -55440,7 +55545,7 @@ aaA
 aaA
 aaA
 abs
-oYd
+sjO
 oTc
 bhc
 aiE
@@ -55449,8 +55554,8 @@ bvf
 sjO
 sjO
 sjO
-vvZ
-vvZ
+aBY
+oYd
 oht
 oYB
 avI
@@ -55642,7 +55747,7 @@ aaa
 aaA
 aaA
 aaA
-oYd
+sjO
 bLh
 aqt
 aoC
@@ -55651,9 +55756,9 @@ biq
 sjO
 sjO
 sjO
-vvZ
-vvZ
 lOA
+xDP
+mgp
 auj
 avJ
 axe
@@ -55844,7 +55949,7 @@ aaa
 aaA
 aaA
 aaA
-oYd
+sjO
 pDi
 vBv
 ljr
@@ -55855,7 +55960,7 @@ qnG
 fWJ
 bil
 mgp
-mgp
+rxI
 auj
 avJ
 axe
@@ -56046,7 +56151,7 @@ aaa
 aaa
 aaB
 aaB
-oYd
+sjO
 rMC
 wsT
 kuA
@@ -56057,7 +56162,7 @@ njs
 sjO
 kwU
 ieW
-aBY
+ieW
 auk
 avK
 axf
@@ -56248,7 +56353,7 @@ aaa
 aaa
 aaB
 aaB
-oYd
+sjO
 ybl
 asP
 aoD
@@ -56450,8 +56555,8 @@ aaa
 aaa
 aaB
 aaB
-oYd
-oYd
+sjO
+sjO
 sjO
 sjO
 sjO
