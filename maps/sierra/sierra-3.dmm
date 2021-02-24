@@ -1936,6 +1936,9 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/techfloor,
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/aftstarboard)
 "adU" = (
@@ -13481,6 +13484,12 @@
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/black/border,
 /obj/effect/floor_decal/industrial/outline/green,
+/obj/item/weapon/folder,
+/obj/item/weapon/folder,
+/obj/item/weapon/folder,
+/obj/item/weapon/folder,
+/obj/item/weapon/folder,
+/obj/item/weapon/folder,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/heads/office/iaa)
 "ayy" = (
@@ -13505,6 +13514,11 @@
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/black/border,
 /obj/effect/floor_decal/industrial/outline/green,
+/obj/item/weapon/folder,
+/obj/item/weapon/folder,
+/obj/item/weapon/folder,
+/obj/item/weapon/folder,
+/obj/item/weapon/folder,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/heads/office/iaa)
 "ayA" = (
@@ -15167,6 +15181,13 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 4
 	},
+/obj/machinery/door/blast/regular/lockdown{
+	dir = 4;
+	id_tag = "lockdown1_2"
+	},
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/center)
 "aBd" = (
@@ -16482,6 +16503,10 @@
 	dir = 4
 	},
 /obj/effect/wallframe_spawn/no_grille,
+/obj/machinery/door/blast/regular/lockdown{
+	dir = 4;
+	id_tag = "lockdown1_2"
+	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/center)
 "aCV" = (
@@ -17033,6 +17058,10 @@
 	dir = 4
 	},
 /obj/effect/wallframe_spawn/no_grille,
+/obj/machinery/door/blast/regular/lockdown{
+	dir = 4;
+	id_tag = "lockdown1_1"
+	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/center)
 "aDx" = (
@@ -17852,6 +17881,13 @@
 	dir = 8
 	},
 /obj/random/date_based/christmas/doorwreath{
+	dir = 4
+	},
+/obj/machinery/door/blast/regular/lockdown{
+	dir = 4;
+	id_tag = "lockdown1_2"
+	},
+/obj/machinery/security_scanner{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -23794,7 +23830,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/rnd/entry)
+/area/rnd/research)
 "aMW" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -24012,7 +24048,7 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/white/monotile,
-/area/rnd/entry)
+/area/rnd/research)
 "aNg" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/hologram/holopad,
@@ -24876,9 +24912,6 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/white,
 /area/rnd/development)
-"aOp" = (
-/turf/simulated/wall/r_wall/prepainted,
-/area/rnd/entry)
 "aOq" = (
 /obj/structure/closet/secure_closet/hydroponics_sierra,
 /obj/effect/floor_decal/borderfloorwhite{
@@ -31181,6 +31214,13 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 4
 	},
+/obj/machinery/door/blast/regular/lockdown{
+	dir = 4;
+	id_tag = "lockdown1_1"
+	},
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/center)
 "aXa" = (
@@ -35790,6 +35830,9 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/techfloor,
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/aftport)
 "beZ" = (
@@ -63906,7 +63949,7 @@ aIv
 aKc
 aLy
 aMD
-aOp
+bdV
 aPp
 aRA
 aTo
@@ -64512,7 +64555,7 @@ aIy
 aIX
 aLB
 aMY
-aOp
+bdV
 aPW
 aPM
 aTp

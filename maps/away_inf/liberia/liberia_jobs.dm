@@ -16,7 +16,9 @@
 /datum/job/submap/merchant
 	title = "Merchant"
 
-	info = "Вы свободные торговцы, которых в поисках выгоды занесло в неизведанные дали. Путешествуйте, торгуйте, make profit!"
+	info = "Вы свободные торговцы, которых в поисках выгоды занесло в неизведанные дали. Путешествуйте, торгуйте, make profit! \
+	\
+	Посещать неизведанные обьекты крайне небезопасно. Вы торговцы, а не мусорщики, ваша смерть не принесет прибыли, не лезьте куда не надо."
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "невидимой рукой рынка"
@@ -102,11 +104,10 @@
 		SKILL_COMBAT  = SKILL_MAX,
 	    SKILL_WEAPONS = SKILL_MAX
 	)
-/* Broken cuz abstract submap jobs is not writing to SStrade.primary_job_datums, need another way to check availability of job
 	required_role = list(
 		"Merchant"
 	)
-*/
+
 	give_psionic_implant_on_join = FALSE
 
 	skill_points = 24

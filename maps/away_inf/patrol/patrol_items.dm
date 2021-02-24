@@ -34,10 +34,10 @@
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/engineering/fleet, /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e4, /obj/item/clothing/accessory/solgov/fleet_patch/third)
 
 /obj/item/clothing/under/solgov/utility/fleet/medical/away_solpatrol
-	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/medical/fleet, /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e4, /obj/item/clothing/accessory/solgov/fleet_patch/third)
+	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/medical/fleet, /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e5, /obj/item/clothing/accessory/solgov/fleet_patch/third)
 
 /obj/item/clothing/under/solgov/utility/fleet/away_solpatrol
-	starting_accessories = list(/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e3, /obj/item/clothing/accessory/solgov/fleet_patch/third)
+	starting_accessories = list(/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e4, /obj/item/clothing/accessory/solgov/fleet_patch/third)
 
 /obj/item/weapon/storage/belt/holster/security/away_patrol/New()
 	..()

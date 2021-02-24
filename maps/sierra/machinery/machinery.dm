@@ -192,3 +192,38 @@
 	check_weapons = 1	//checks if it can shoot people that have a weapon they aren't authorized to have
 	check_access = 1	//if this is active, the turret shoots everything that does not meet the access requirements
 	req_access = list(access_bridge)
+
+// lockdown b_doors
+/obj/machinery/door/blast/regular/lockdown
+	name = "Security Lockdown"
+	req_access = list(access_sec_doors)
+	begins_closed = FALSE
+	icon_state = "pdoor0"
+
+/obj/machinery/door/blast/regular/lockdown/attackby(obj/item/weapon/C as obj, mob/user as mob)
+	. = ..(C, user)
+	if(isid(C) || istype(C, /obj/item/modular_computer/pda))
+		if(allowed(user))
+			for(var/obj/machinery/door/blast/regular/lockdown/door in SSmachines.machinery)
+				if(door.id_tag == id_tag)
+					door.open()
+		return
+
+/obj/machinery/door/blast/regular/lockdown/attack_ai()
+	for(var/obj/machinery/door/blast/regular/lockdown/door in SSmachines.machinery)
+		if(door.id_tag == id_tag)
+			if(door.density)
+				door.open()
+			else
+				door.close()
+
+/turf/simulated/AIMiddleClick(var/mob/AI)
+	. = ..()
+	for(/obj/machinery/door/blast/regular/lockdown/door in content)
+		door.attack_ai(AI)
+
+/obj/structure/window/AIMiddleClick(var/mob/AI)
+	. = ..()
+	var/turf/turf = get_turf(src)
+	for(/obj/machinery/door/blast/regular/lockdown/door in turf.content)
+		door.attack_ai(AI)

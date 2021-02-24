@@ -22,6 +22,7 @@
 /datum/map
 	var/list/high_secure_areas
 	var/list/secure_areas
+	var/lockdown = FALSE
 
 /datum/map/sierra
 	high_secure_areas = list(
@@ -76,3 +77,26 @@
 	if(high_secure_areas)
 		for(var/area in high_secure_areas)
 			area_unlock(area)
+
+/datum/map/proc/lockdown(var/force)
+	lockdown = !lockdown
+	if(force && force == "close")
+		lockdown = TRUE
+	else if(force && force == "open")
+		lockdown = FALSE
+
+	if(!lockdown)
+		for(var/obj/machinery/door/blast/regular/lockdown/door in SSmachines.machinery)
+			door.autoclose = FALSE
+			INVOKE_ASYNC(door, /obj/machinery/door/blast/proc/open)
+	else
+		for(var/obj/machinery/door/blast/regular/lockdown/door in SSmachines.machinery)
+			door.autoclose = TRUE
+			INVOKE_ASYNC(door, /obj/machinery/door/blast/proc/delayed_close)
+
+/mob/living/silicon/ai/verb/lockdown()
+	set category = "Silicon Commands"
+	set name = "[GLOB.using_map.name]'s Lockdown"
+	set desc = "Toggles [GLOB.using_map.name]'s Lockdowns Blastdoors"
+
+	GLOB.using_map.lockdown()

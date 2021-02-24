@@ -6125,6 +6125,12 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 8
 	},
+/obj/machinery/door/blast/regular/lockdown{
+	dir = 4
+	},
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/bridge/lobby)
 "alL" = (
@@ -10006,6 +10012,13 @@
 /obj/machinery/door/airlock/glass/civilian{
 	dir = 4
 	},
+/obj/machinery/door/blast/regular/lockdown{
+	dir = 4;
+	id_tag = "lockdown2_2"
+	},
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/seconddeck/center)
 "atf" = (
@@ -10847,6 +10860,13 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/door/blast/regular/lockdown{
+	dir = 4;
+	id_tag = "lockdown2_3"
+	},
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/seconddeck/center)
 "aut" = (
@@ -11622,6 +11642,13 @@
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/navbeacon/sierra/SD_centralhallway2,
+/obj/machinery/door/blast/regular/lockdown{
+	dir = 4;
+	id_tag = "lockdown2_3"
+	},
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/seconddeck/center)
 "avD" = (
@@ -12077,6 +12104,11 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 4
 	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	id_tag = "bridge_ent";
+	name = "Bridge Lockdown"
+	},
 /turf/simulated/floor/tiled,
 /area/bridge/hall/level_one)
 "awA" = (
@@ -12404,6 +12436,10 @@
 	dir = 4
 	},
 /obj/effect/wallframe_spawn/no_grille,
+/obj/machinery/door/blast/regular/lockdown{
+	dir = 4;
+	id_tag = "lockdown2_2"
+	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/seconddeck/center)
 "axd" = (
@@ -13337,6 +13373,13 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 8
 	},
+/obj/machinery/door/blast/regular/lockdown{
+	dir = 4;
+	id_tag = "lockdown2_1"
+	},
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/bridge/lobby)
 "ayD" = (
@@ -14101,6 +14144,7 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 1
 	},
+/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
 "azJ" = (
@@ -15024,6 +15068,11 @@
 "aBr" = (
 /obj/effect/wallframe_spawn/reinforced/no_grille,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	id_tag = "bridge_ent";
+	name = "Bridge Lockdown"
+	},
 /turf/simulated/floor/plating,
 /area/bridge/hall/level_one)
 "aBs" = (
@@ -21450,6 +21499,9 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/vacant/gambling)
 "aMX" = (
@@ -22067,6 +22119,9 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/hatch/maintenance,
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/seconddeck/aftport)
 "aOb" = (
@@ -22745,6 +22800,9 @@
 	},
 /obj/structure/railing/mapped{
 	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/zpipe/down{
+	dir = 1
 	},
 /turf/simulated/open,
 /area/maintenance/seconddeck/aftport)
@@ -23785,6 +23843,7 @@
 	dir = 1;
 	pixel_y = 24
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /turf/simulated/floor/wood/walnut,
 /area/vacant/gambling)
 "aRz" = (
@@ -23828,6 +23887,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /turf/simulated/floor/plating,
 /area/vacant/gambling)
 "aRF" = (
@@ -24580,6 +24640,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/machinery/embedded_controller/radio/airlock/access_controller{
+	id_tag = "xeno_airlock";
+	name = "Xenobiology Access Console";
+	pixel_y = 24;
+	req_access = list("ACCESS_XENOBIO")
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/xenobiology/atmos)
 "aSW" = (
@@ -24703,6 +24769,9 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/vacant/gambling)
@@ -24989,6 +25058,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 4
 	},
 /turf/simulated/floor/wood/walnut,
 /area/vacant/gambling)
@@ -25922,6 +25994,9 @@
 	icon_state = "1-8"
 	},
 /obj/random/snack,
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 9
+	},
 /turf/simulated/floor/wood/walnut,
 /area/vacant/gambling)
 "aVb" = (
@@ -29406,6 +29481,12 @@
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	dir = 10
 	},
+/obj/machinery/button/blast_door{
+	dir = 8;
+	id_tag = "bridge_ent";
+	name = "Bridge Entarence Blast Doors";
+	pixel_x = 37
+	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "bbG" = (
@@ -30002,6 +30083,9 @@
 "bcO" = (
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/no_grille,
+/obj/machinery/door/blast/regular/lockdown{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/bridge/lobby)
 "bcP" = (
@@ -33668,6 +33752,15 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
+"cFg" = (
+/obj/machinery/door/firedoor,
+/obj/effect/wallframe_spawn/reinforced_phoron,
+/obj/machinery/meter,
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/engineering/atmos)
 "cFw" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 6
@@ -34205,6 +34298,12 @@
 	},
 /turf/simulated/floor/carpet/orange,
 /area/crew_quarters/cafe)
+"fFs" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 5
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/engineering/atmos)
 "fGt" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -34600,6 +34699,16 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
+"hSR" = (
+/obj/machinery/door/firedoor,
+/obj/effect/wallframe_spawn/reinforced_phoron,
+/obj/machinery/meter,
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+/turf/simulated/floor/plating,
+/area/engineering/atmos)
 "hWx" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
@@ -34919,6 +35028,24 @@
 /obj/effect/floor_decal/corner/lime/bordercorner2,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
+"jNy" = (
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 6
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/seconddeck/aftport)
 "jRQ" = (
 /obj/machinery/light/small,
 /obj/effect/floor_decal/industrial/warning/fulltile,
@@ -35086,6 +35213,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/engineering/engineering_monitoring)
+"kua" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 4
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/engineering/atmos)
 "kub" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
@@ -35125,6 +35258,10 @@
 /obj/effect/landmark/start,
 /turf/simulated/floor/tiled,
 /area/crew_quarters/gym)
+"kUU" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+/turf/simulated/wall/r_wall/prepainted,
+/area/engineering/engine_room)
 "kVL" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -35344,6 +35481,16 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
+"lYR" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/wallframe_spawn/reinforced_phoron,
+/obj/machinery/meter,
+/obj/machinery/atmospherics/valve/shutoff,
+/turf/simulated/floor/plating,
+/area/engineering/atmos)
 "lYY" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8
@@ -35693,6 +35840,17 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
+"nJZ" = (
+/obj/machinery/door/firedoor,
+/obj/effect/floor_decal/techfloor,
+/obj/effect/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/machinery/security_scanner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/maintenance/seconddeck/foreport)
 "nKd" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/railing/mapped/no_density,
@@ -36094,6 +36252,11 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 4
 	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	id_tag = "bridge_ent";
+	name = "Bridge Lockdown"
+	},
 /turf/simulated/floor/tiled,
 /area/bridge/hall/level_one)
 "pCm" = (
@@ -36313,6 +36476,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/techfloor,
 /area/janitor)
+"qsC" = (
+/turf/simulated/wall/r_wall/prepainted,
+/area/bridge/nano)
 "qyO" = (
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 10
@@ -36389,6 +36555,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/hydroponics/storage)
+"qOY" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/security_scanner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/maintenance/seconddeck/forestarboard)
 "qUo" = (
 /obj/item/weapon/paper/sierra,
 /obj/structure/table/woodentable_reinforced/walnut,
@@ -36442,6 +36615,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/locker_room)
+"qZs" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+/turf/simulated/wall/r_wall/prepainted,
+/area/engineering/engine_room)
 "qZF" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4;
@@ -36504,6 +36684,12 @@
 /obj/effect/landmark/start,
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
+"rok" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 10
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/engineering/engine_room)
 "rws" = (
 /obj/effect/wallframe_spawn/reinforced/hull,
 /obj/machinery/door/firedoor,
@@ -37124,8 +37310,13 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 4
 	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	id_tag = "bridge_ent";
+	name = "Bridge Lockdown"
+	},
 /turf/simulated/floor/tiled/dark,
-/area/bridge/hall/level_one)
+/area/bridge/nano)
 "usO" = (
 /obj/structure/flora/ausbushes/leafybush,
 /obj/structure/railing/mapped/no_density,
@@ -37492,6 +37683,30 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/cafe)
+"wWL" = (
+/obj/machinery/atmospherics/valve/digital/open{
+	name = "CO2 to Hangar Supply"
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/engineering/atmos)
+"wYK" = (
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/seconddeck/aftport)
 "wZL" = (
 /obj/structure/lattice,
 /obj/machinery/light/navigation/delay2,
@@ -37667,6 +37882,18 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo/south)
+"xYh" = (
+/obj/machinery/door/firedoor,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/door/blast/regular/lockdown{
+	dir = 4;
+	id_tag = "lockdown2_3"
+	},
+/obj/machinery/security_scanner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/hallway/primary/seconddeck/center)
 "xYX" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -44248,19 +44475,19 @@ aam
 aam
 aaD
 aaD
-abJ
-abJ
-abJ
-abJ
+qsC
+qsC
+qsC
+qsC
 usx
-abJ
-abJ
-abJ
+qsC
+qsC
+qsC
 usx
-abJ
-abJ
-abJ
-abJ
+qsC
+qsC
+qsC
+qsC
 aaD
 aaD
 aam
@@ -49693,7 +49920,7 @@ ahQ
 axv
 ahQ
 ahQ
-abE
+qOY
 adz
 adz
 agw
@@ -50533,7 +50760,7 @@ aFa
 aJm
 aKj
 aKj
-aPP
+nJZ
 aEc
 aEc
 aEc
@@ -56577,7 +56804,7 @@ tdE
 amq
 avB
 aus
-aLG
+xYh
 awV
 awV
 awV
@@ -63056,7 +63283,7 @@ aNg
 aNA
 aNA
 aSX
-aIL
+jNy
 aPr
 aVh
 aVq
@@ -63258,7 +63485,7 @@ aNh
 aNB
 aWl
 aSX
-aIL
+wYK
 aBp
 aVh
 aJY
@@ -63460,7 +63687,7 @@ aNh
 aNC
 aNC
 aSX
-aIL
+wYK
 aPu
 aVh
 aSO
@@ -63662,7 +63889,7 @@ aNi
 aND
 aWD
 aSX
-aIL
+wYK
 aUr
 aVh
 aKb
@@ -63864,7 +64091,7 @@ aNj
 aNE
 aNE
 aSX
-aIL
+wYK
 aPw
 aVh
 aKc
@@ -64257,11 +64484,11 @@ aWw
 asn
 aUd
 auQ
-aAy
-aSX
-auQ
-aAy
-aSX
+cFg
+wWL
+hSR
+lYR
+fFs
 auQ
 aAy
 aNl
@@ -64463,7 +64690,7 @@ aCi
 aSX
 aET
 aHf
-aSX
+kua
 aLA
 aMT
 aNm
@@ -64665,10 +64892,10 @@ aUd
 aUd
 aUd
 aUd
-aUd
-aUd
-aUd
-afy
+rok
+kUU
+kUU
+qZs
 aRy
 aRE
 aRE

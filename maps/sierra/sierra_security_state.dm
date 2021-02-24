@@ -46,6 +46,7 @@
 	notify_station()
 	GLOB.using_map.unlock_secure_areas()
 	GLOB.using_map.unlock_high_secure_areas()
+	GLOB.using_map.lockdown("open")
 
 /decl/security_level/default/sierradept/code_violet
 	name = "код фиолетовый"
@@ -76,6 +77,7 @@
 	GLOB.using_map.unlock_high_secure_areas()
 	GLOB.using_map.unlock_secure_areas()
 	GLOB.using_map.toggle_crew_sensors(2)
+	GLOB.using_map.lockdown("open")
 
 /decl/security_level/default/sierradept/code_orange
 	name = "код оранжевый"
@@ -108,6 +110,7 @@
 	GLOB.using_map.lock_high_secure_areas()
 	GLOB.using_map.unlock_secure_areas()
 	GLOB.using_map.toggle_crew_sensors(1)
+	GLOB.using_map.lockdown("open")
 
 /decl/security_level/default/sierradept/code_blue
 	name = "код синий"
@@ -128,6 +131,7 @@
 	разрешено обыскивать сотрудников и отсеки, а так же держать оружие на виду.", "Внимание! Синий код")
 	notify_station()
 	GLOB.using_map.lock_high_secure_areas()
+	GLOB.using_map.lockdown("close")
 
 /decl/security_level/default/sierradept/code_blue/switching_down_to()
 	security_announcement_down.Announce("Потенциальная угроза для экипажа. \
@@ -135,6 +139,7 @@
 	разрешено обыскивать сотрудников и отсеки, а так же держать оружие на виду.", "Внимание! Код угрозы понижен до Синего")
 	notify_station()
 	GLOB.using_map.unlock_secure_areas()
+	GLOB.using_map.lockdown("close")
 
 /decl/security_level/default/sierradept/code_red
 	name = "код красный"
@@ -162,6 +167,7 @@
 	GLOB.using_map.lock_secure_areas()
 	GLOB.using_map.lock_high_secure_areas()
 	GLOB.using_map.toggle_crew_sensors(3)
+	GLOB.using_map.lockdown("close")
 
 /decl/security_level/default/sierradept/code_red/switching_down_to()
 	security_announcement_red.Announce("Взрывное устройство было обезврежено. \
@@ -171,6 +177,7 @@
 	notify_station()
 	GLOB.using_map.lock_secure_areas()
 	GLOB.using_map.lock_high_secure_areas()
+	GLOB.using_map.lockdown("close")
 
 /decl/security_level/default/sierradept/code_delta
 	name = "код дельта"
@@ -196,6 +203,7 @@
 	GLOB.using_map.unlock_secure_areas()
 	GLOB.using_map.unlock_high_secure_areas()
 	GLOB.using_map.toggle_crew_sensors(3)
+	GLOB.using_map.lockdown("open")
 
 #undef PSI_IMPLANT_AUTOMATIC
 #undef PSI_IMPLANT_SHOCK
