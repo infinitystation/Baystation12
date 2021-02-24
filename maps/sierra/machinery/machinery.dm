@@ -196,6 +196,8 @@
 // lockdown b_doors
 /obj/machinery/door/blast/regular/lockdown
 	name = "Security Lockdown"
+	desc = "That looks like it doesn't open easily. \
+	But that one has NFC sign. May be my ID can help?"
 	req_access = list(access_sec_doors)
 	begins_closed = FALSE
 	icon_state = "pdoor0"

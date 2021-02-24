@@ -4638,9 +4638,6 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 5
 	},
-/obj/machinery/camera/network/engineering{
-	c_tag = "Shield Generator - First Deck"
-	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/shield/firstdeck)
 "aiI" = (
@@ -38125,6 +38122,26 @@
 	},
 /turf/simulated/wall/r_wall/hull,
 /area/maintenance/firstdeck/centralport)
+"csl" = (
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
+	id = "processwindow"
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
+	},
+/obj/machinery/door/blast/shutters/open{
+	dir = 4;
+	id_tag = "interrogation_shutters";
+	name = "Interrogation Shutters"
+	},
+/turf/simulated/floor/plating,
+/area/security/sierra/interrogation)
 "cyK" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -38429,26 +38446,6 @@
 /obj/machinery/ai_status_display,
 /turf/simulated/wall/r_wall/prepainted,
 /area/crew_quarters/heads/office/cmo)
-"eGc" = (
-/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
-	id = "processwindow"
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/machinery/door/blast/regular/open{
-	dir = 4;
-	id_tag = "security_lockdown";
-	name = "Security Department Lockdown"
-	},
-/obj/machinery/door/blast/shutters/open{
-	dir = 4;
-	id_tag = "interrogation_shutters";
-	name = "Interrogation Shutters"
-	},
-/turf/simulated/floor/plating,
-/area/security/sierra/interrogation)
 "eLa" = (
 /obj/machinery/fabricator{
 	fab_status_flags = 1
@@ -38960,6 +38957,28 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/forestarboard)
+"gMN" = (
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
+	id = "processwindow"
+	},
+/obj/structure/cable/green,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	id_tag = "security_lockdown";
+	name = "Security Department Lockdown"
+	},
+/obj/machinery/door/blast/shutters/open{
+	dir = 4;
+	id_tag = "interrogation_shutters";
+	name = "Interrogation Shutters"
+	},
+/turf/simulated/floor/plating,
+/area/security/sierra/interrogation)
 "gQw" = (
 /obj/structure/bed/chair/office/comfy/teal{
 	dir = 4
@@ -39405,6 +39424,11 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/chemistry)
+"iJK" = (
+/obj/machinery/hologram/holopad,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/fore_stairwell)
 "iOs" = (
 /obj/effect/floor_decal/borderfloor/corner{
 	dir = 4
@@ -39627,6 +39651,10 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white,
 /area/assembly/robotics)
+"jVD" = (
+/obj/machinery/porta_turret,
+/turf/simulated/wall/r_wall/prepainted,
+/area/turret_protected/ai)
 "kkg" = (
 /obj/effect/floor_decal/corner/paleblue/mono,
 /obj/structure/cable/cyan{
@@ -40245,28 +40273,6 @@
 "mgp" = (
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/fore_stairwell)
-"mrm" = (
-/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
-	id = "processwindow"
-	},
-/obj/structure/cable/green,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/machinery/door/blast/regular/open{
-	dir = 4;
-	id_tag = "security_lockdown";
-	name = "Security Department Lockdown"
-	},
-/obj/machinery/door/blast/shutters/open{
-	dir = 4;
-	id_tag = "interrogation_shutters";
-	name = "Interrogation Shutters"
-	},
-/turf/simulated/floor/plating,
-/area/security/sierra/interrogation)
 "msU" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -40701,10 +40707,6 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
-"nyT" = (
-/obj/machinery/porta_turret,
-/turf/simulated/wall/r_wall/hull,
-/area/turret_protected/ai)
 "nEh" = (
 /obj/effect/wallframe_spawn/reinforced/hull,
 /obj/machinery/door/firedoor,
@@ -41391,11 +41393,6 @@
 "rwo" = (
 /turf/simulated/floor/tiled/dark,
 /area/medical/morgue)
-"rxI" = (
-/obj/machinery/hologram/holopad,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled,
-/area/hallway/primary/firstdeck/fore_stairwell)
 "rBR" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/medical/staging)
@@ -42154,10 +42151,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/security/sierra/evidence)
-"uSS" = (
-/obj/machinery/porta_turret,
-/turf/simulated/wall/r_wall/prepainted,
-/area/turret_protected/ai)
 "uUu" = (
 /obj/machinery/chemical_dispenser/full,
 /obj/effect/floor_decal/borderfloorwhite{
@@ -42298,6 +42291,10 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
+"vLE" = (
+/obj/machinery/porta_turret,
+/turf/simulated/wall/r_wall/hull,
+/area/turret_protected/ai)
 "vNh" = (
 /obj/structure/catwalk,
 /obj/structure/cable/green{
@@ -42551,12 +42548,6 @@
 /obj/random/maintenance,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
-"xDP" = (
-/obj/structure/bed/chair/padded/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled,
-/area/hallway/primary/firstdeck/fore_stairwell)
 "xFB" = (
 /obj/structure/bookcase/manuals/medical,
 /turf/simulated/floor/wood/walnut,
@@ -42660,6 +42651,12 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/office/cmo)
+"xYw" = (
+/obj/structure/bed/chair/padded/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/fore_stairwell)
 "ybl" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 5
@@ -47075,15 +47072,15 @@ aps
 aps
 aiw
 avc
-nyT
+vLE
 avc
-nyT
+vLE
 avc
-nyT
+vLE
 avc
-nyT
+vLE
 avc
-nyT
+vLE
 avc
 aLX
 aLX
@@ -48084,7 +48081,7 @@ apx
 arb
 are
 akJ
-uSS
+jVD
 aKy
 bkn
 aKy
@@ -48094,7 +48091,7 @@ aKy
 aKy
 ixK
 aKy
-uSS
+jVD
 aLY
 aNo
 aOI
@@ -49094,7 +49091,7 @@ apB
 arf
 aso
 akJ
-uSS
+jVD
 aKy
 aKy
 aKy
@@ -49104,7 +49101,7 @@ krA
 aKy
 aKy
 aKy
-uSS
+jVD
 aLY
 aML
 aON
@@ -55153,8 +55150,8 @@ vRO
 vaV
 akS
 asM
-eGc
-mrm
+csl
+gMN
 asM
 asM
 azM
@@ -55757,7 +55754,7 @@ sjO
 sjO
 sjO
 lOA
-xDP
+xYw
 mgp
 auj
 avJ
@@ -55960,7 +55957,7 @@ qnG
 fWJ
 bil
 mgp
-rxI
+iJK
 auj
 avJ
 axe
