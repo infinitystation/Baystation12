@@ -20,6 +20,8 @@
 		/datum/shuttle/autodock/overmap/mule
 	)
 
+	area_usage_test_exempted_root_areas = list(/area/liberia)
+
 // Overmap objects.
 /obj/effect/overmap/visitable/ship/liberia //Объект в Системе
 	name = "Liberia" //Название

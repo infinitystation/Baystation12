@@ -53,7 +53,7 @@
 		else
 			environment.remove_by_flag(XGM_GAS_OXIDIZER, gas_consumption)
 			environment.adjust_gas(GAS_CO2, 0.5*gas_consumption,0)
-			environment.adjust_gas(GAS_CO, 0.5*gas_consumption)
+	// inf not filterable		environment.adjust_gas(GAS_CO, 0.5*gas_consumption)
 
 /obj/item/clothing/mask/smokable/Process()
 	var/turf/location = get_turf(src)

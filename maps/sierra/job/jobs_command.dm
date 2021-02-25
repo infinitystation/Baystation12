@@ -393,7 +393,7 @@
 
 
 	access = list(
-		access_security, access_medical, access_engine, access_maint_tunnels, access_emergency_storage,
+		access_sec_doors, access_security, access_medical, access_engine, access_maint_tunnels, access_emergency_storage,
 		access_heads, access_bridge, access_janitor, access_kitchen, access_actor, access_cargo,
 		access_RC_announce, access_keycard_auth, access_guppy, access_guppy_helm,
 		access_external_airlocks, access_expedition_shuttle, access_eva, access_hangar,

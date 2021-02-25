@@ -22,16 +22,3 @@
 
 /obj/machinery/door/blast/regular/admin/take_damage()
 	return
-
-/obj/machinery/door/blast/regular/evacshield
-
-/obj/machinery/door/blast/regular/evacshield/proc/evacuation() //Literally shitcode of force_open but without sleep(8)
-	src.operating = 1
-	playsound(src.loc, open_sound, 100, 1)
-	flick(icon_state_opening, src)
-	src.set_density(0)
-	update_nearby_tiles()
-	src.update_icon()
-	src.set_opacity(0)
-	src.layer = open_layer
-	src.operating = 0
