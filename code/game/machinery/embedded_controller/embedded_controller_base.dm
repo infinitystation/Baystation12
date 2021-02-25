@@ -66,6 +66,14 @@ obj/machinery/embedded_controller/radio/Destroy()
 	overlays.Cut()
 	if(!on || !istype(program))
 		return
+// [INF]
+	if(emagged)
+		overlays += image(icon, "screen_drain")
+		overlays += image(icon, "indicator_active")
+		overlays += image(icon, "indicator_forced")
+		overlays += image(icon, "indicator_done")
+		return
+// /[INF]
 	if(!program.memory["processing"])
 		overlays += image(icon, "screen_standby")
 		overlays += image(icon, "indicator_done")

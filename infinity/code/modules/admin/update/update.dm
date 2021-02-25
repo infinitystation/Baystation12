@@ -2,6 +2,7 @@
 	set name = "Update Server"
 	set desc="Synchronize with the master branch."
 	set category = "Server"
+
 	if(!check_rights(R_SERVER))
 		return
 
@@ -11,5 +12,6 @@
 	else
 		if(alert("Отменить обновление сервера в конце раунда?", "Cancel Update", "Да", "Нет") == "Да")
 			to_world(SPAN_NOTICE(FONT_LARGE("<b>\nОбновление сервера в конце раунда было отменено.</b> \n")))
-			game_log("SERVER", "[key_name(src)] отменил обновление сервера.")
-			SSticker.update_server = null
+			game_log("SERVER", "[ckey] отменил обновление сервера.")
+			SSticker.server_update_client = null
+			SSticker.server_update = FALSE

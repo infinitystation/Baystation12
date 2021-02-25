@@ -141,6 +141,14 @@
 			to_chat(user, "** Self destructing now **")
 		timer--
 
+// [INF]
+// Compleating TODO with locating local nuke and using it instead AI
+	var/obj/machinery/nuclearbomb/station/station_nuke = locate() in SSmachines.machinery
+	if(station_nuke)
+		SetUniversalState(/datum/universal_state/nuclear_explosion/malf, arguments=list(station_nuke))
+		return
+// [/INF]
+
 	SetUniversalState(/datum/universal_state/nuclear_explosion/malf, arguments=list(user)) //TODO: find the station nuclear device and use that
 
 

@@ -25,6 +25,9 @@
 //Used for preprocessing entered text
 //Added in an additional check to alert players if input is too long
 /proc/sanitize(var/input, var/max_length = MAX_MESSAGE_LEN, var/encode = 1, var/trim = 1, var/extra = 1)
+	// [INF]
+	toLongHere:
+	// [/INF]
 	if(!input)
 		return
 
@@ -33,6 +36,11 @@
 		if(length(input) >= max_length)
 			var/overflow = ((length(input)+1) - max_length)
 			to_chat(usr, "<span class='warning'>Your message is too long by [overflow] character\s.</span>")
+// [INF]
+			input = input(usr, "Your message is too long by [overflow] character\s.", "Too long!", input) as text|null
+			if(input)
+				goto toLongHere
+// [/INF]
 			return
 		input = copytext(input,1,max_length)
 
@@ -40,7 +48,7 @@
 		input = replace_characters(input, list("\n"=" ","\t"=" "))
 
 	if(encode)
-		// The below \ escapes have a space inserted to attempt to enable Travis auto-checking of span class usage. Please do not remove the space.
+		// The below \ escapes have a space inserted to attempt to enable unit test auto-checking of span class usage. Please do not remove the space.
 		//In addition to processing html, html_encode removes byond formatting codes like "\ red", "\ i" and other.
 		//It is important to avoid double-encode text, it can "break" quotes and some other characters.
 		//Also, keep in mind that escaped characters don't work in the interface (window titles, lower left corner of the main window, etc.)
@@ -485,8 +493,8 @@ var/list/alphabet = list("a","b","c","d","e","f","g","h","i","j","k","l","m","n"
 /proc/digitalPencode2html(var/text)
 	text = replacetext(text, "\[pre\]", "<pre>")
 	text = replacetext(text, "\[/pre\]", "</pre>")
-	text = replacetext(text, "\[fontred\]", "<font color=\"red\">") //</font> to pass travis html tag integrity check
-	text = replacetext(text, "\[fontblue\]", "<font color=\"blue\">")//</font> to pass travis html tag integrity check
+	text = replacetext(text, "\[fontred\]", "<font color=\"red\">") //</font> to pass unit test html tag integrity check
+	text = replacetext(text, "\[fontblue\]", "<font color=\"blue\">")//</font> to pass unit test html tag integrity check
 	text = replacetext(text, "\[fontgreen\]", "<font color=\"green\">")
 	text = replacetext(text, "\[/font\]", "</font>")
 	text = replacetext(text, "\[redacted\]", "<span class=\"redacted\">R E D A C T E D</span>")
@@ -496,8 +504,8 @@ var/list/alphabet = list("a","b","c","d","e","f","g","h","i","j","k","l","m","n"
 /proc/html2pencode(t)
 	t = replacetext(t, "<pre>", "\[pre\]")
 	t = replacetext(t, "</pre>", "\[/pre\]")
-	t = replacetext(t, "<font color=\"red\">", "\[fontred\]")//</font> to pass travis html tag integrity check
-	t = replacetext(t, "<font color=\"blue\">", "\[fontblue\]")//</font> to pass travis html tag integrity check
+	t = replacetext(t, "<font color=\"red\">", "\[fontred\]")//</font> to pass unit test html tag integrity check
+	t = replacetext(t, "<font color=\"blue\">", "\[fontblue\]")//</font> to pass unit test html tag integrity check
 	t = replacetext(t, "<font color=\"green\">", "\[fontgreen\]")
 	t = replacetext(t, "</font>", "\[/font\]")
 	t = replacetext(t, "<BR>", "\[br\]")

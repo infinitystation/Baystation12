@@ -38,7 +38,11 @@
 		icon_state = "[initial(icon_state)]"
 
 /obj/machinery/reagentgrinder/attackby(var/obj/item/O as obj, var/mob/user as mob)
-
+	//[INF]
+	. = ..()
+	if(.)
+		return
+	//[/INF]
 	if (istype(O,/obj/item/weapon/reagent_containers/glass) || \
 		istype(O,/obj/item/weapon/reagent_containers/food/drinks/glass2) || \
 		istype(O,/obj/item/weapon/reagent_containers/food/drinks/shaker))
@@ -108,7 +112,7 @@
 		return
 	holdingitems += O
 	src.updateUsrDialog()
-	return 0
+//inf.exclude	return 0
 
 /obj/machinery/reagentgrinder/interface_interact(mob/user)
 	interact(user)

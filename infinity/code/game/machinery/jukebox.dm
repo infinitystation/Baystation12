@@ -1,3 +1,8 @@
+/obj/machinery/media/jukebox/old/futuristic
+	icon = 'infinity/icons/obj/jukebox.dmi'
+	icon_state = "jukeboxfut-nopower"
+	state_base = "jukeboxfut"
+
 /obj/machinery/media/jukebox
 	var/obj/item/music_tape/tape
 
