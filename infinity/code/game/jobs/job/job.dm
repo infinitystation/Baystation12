@@ -8,5 +8,5 @@
 		if(J.title in required_role)
 			if(J.current_positions || !J.total_positions)
 				return 1
-			else
-				return
+//			else
+//				return
