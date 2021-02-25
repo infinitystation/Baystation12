@@ -13,5 +13,4 @@
 		if(alert("Отменить обновление сервера в конце раунда?", "Cancel Update", "Да", "Нет") == "Да")
 			to_world(SPAN_NOTICE(FONT_LARGE("<b>\nОбновление сервера в конце раунда было отменено.</b> \n")))
 			game_log("SERVER", "[ckey] отменил обновление сервера.")
-			SSticker.server_update_client = null
-			SSticker.server_update = FALSE
+			SSticker.update_server = null

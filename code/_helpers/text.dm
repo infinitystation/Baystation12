@@ -33,15 +33,19 @@
 
 	if(max_length)
 		//testing shows that just looking for > max_length alone will actually cut off the final character if message is precisely max_length, so >= instead
+/* [BAY]
 		if(length(input) >= max_length)
 			var/overflow = ((length(input)+1) - max_length)
 			to_chat(usr, "<span class='warning'>Your message is too long by [overflow] character\s.</span>")
-// [INF]
-			input = input(usr, "Your message is too long by [overflow] character\s.", "Too long!", input) as text|null
-			if(input)
-				goto toLongHere
-// [/INF]
 			return
+[/BAY]*/
+// [INF]
+		while(length(input) >= max_length)	// inf
+			if(!input)
+				return
+			var/overflow = ((length(input)+1) - max_length)
+			input = input(usr, "Your message is too long by [overflow] character\s.", "Too long!", input) as message|null
+// [/INF]
 		input = copytext(input,1,max_length)
 
 	if(extra)

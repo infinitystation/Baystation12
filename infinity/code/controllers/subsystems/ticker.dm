@@ -27,7 +27,6 @@
 	if(!(world.system_type in list(UNIX, MS_WINDOWS)))
 		message_staff("## ERROR: What? What system your host using? What [world.system_type] is? Message it to your devs, this feature is not supported for this OS.")
 		CRASH("Error, trying to update server using unknown OS([world.system_type]).")
-		return
 
 	send2mainirc("Производится обновление сервера.")
 	send2admindiscord("Происходит обновление.[update_server ? " Инициировано [update_server]." : ""]")
