@@ -33,6 +33,8 @@
 	minimal_player_age = 7
 	create_record = 0
 	outfit_type = /decl/hierarchy/outfit/job/liberia/merchant/leader
+	whitelisted_species = null
+	blacklisted_species = list(SPECIES_ALIEN, SPECIES_GOLEM, SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_MONARCH_WORKER, SPECIES_MONARCH_QUEEN, SPECIES_XENO)
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)
@@ -87,6 +89,8 @@
 	ideal_character_age = 20
 	minimal_player_age = 0
 	create_record = 0
+	whitelisted_species = null
+	blacklisted_species = list(SPECIES_ALIEN, SPECIES_GOLEM, SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_MONARCH_WORKER, SPECIES_MONARCH_QUEEN, SPECIES_XENO)
 	alt_titles = list(
 		"Merchant Security" = /decl/hierarchy/outfit/job/liberia/merchant/security
 	)

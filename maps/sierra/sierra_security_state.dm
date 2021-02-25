@@ -131,7 +131,6 @@
 	разрешено обыскивать сотрудников и отсеки, а так же держать оружие на виду.", "Внимание! Синий код")
 	notify_station()
 	GLOB.using_map.lock_high_secure_areas()
-	GLOB.using_map.lockdown("close")
 
 /decl/security_level/default/sierradept/code_blue/switching_down_to()
 	security_announcement_down.Announce("Потенциальная угроза для экипажа. \
@@ -139,7 +138,7 @@
 	разрешено обыскивать сотрудников и отсеки, а так же держать оружие на виду.", "Внимание! Код угрозы понижен до Синего")
 	notify_station()
 	GLOB.using_map.unlock_secure_areas()
-	GLOB.using_map.lockdown("close")
+	GLOB.using_map.lockdown("open")
 
 /decl/security_level/default/sierradept/code_red
 	name = "код красный"
