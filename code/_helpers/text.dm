@@ -25,9 +25,6 @@
 //Used for preprocessing entered text
 //Added in an additional check to alert players if input is too long
 /proc/sanitize(var/input, var/max_length = MAX_MESSAGE_LEN, var/encode = 1, var/trim = 1, var/extra = 1)
-	// [INF]
-	toLongHere:
-	// [/INF]
 	if(!input)
 		return
 
@@ -37,15 +34,12 @@
 		if(length(input) >= max_length)
 			var/overflow = ((length(input)+1) - max_length)
 			to_chat(usr, "<span class='warning'>Your message is too long by [overflow] character\s.</span>")
-// [INF]
-			input = input(usr, "Your message is too long by [overflow] character\s.", "Too long!", input) as text|null
-			if(input)
-				goto toLongHere
-// [/INF]
 			return
 [/BAY]*/
 // [INF]
 		while(length(input) >= max_length)	// inf
+			if(!usr)
+				break
 			if(!input)
 				return
 			var/overflow = ((length(input)+1) - max_length)
