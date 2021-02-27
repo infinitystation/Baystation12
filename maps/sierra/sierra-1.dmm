@@ -350,8 +350,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/cyan{
 	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable/cyan{
+	d1 = 2;
 	d2 = 4;
-	icon_state = "1-4"
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/medical)
@@ -914,22 +919,15 @@
 /turf/simulated/wall/r_titanium,
 /area/shuttle/escape_pod/escape_pod2/station)
 "aFL" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
-	},
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
 	},
 /obj/structure/cable/cyan{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/medical)
 "aHt" = (
@@ -1138,6 +1136,9 @@
 	icon_state = "0-8"
 	},
 /obj/structure/handrai,
+/obj/structure/bed/chair/shuttle/green{
+	dir = 8
+	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/airlock)
 "aPQ" = (
@@ -1674,6 +1675,11 @@
 	c_tag = "Charon - External Airlock";
 	dir = 4
 	},
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/medical)
 "bhr" = (
@@ -1801,9 +1807,7 @@
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/exploration_shuttle/cargo{
-	name = "Shuttle - Charon - Cargo Bay-1"
-	})
+/area/exploration_shuttle/airlock)
 "blm" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
@@ -1937,9 +1941,7 @@
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/exploration_shuttle/cargo{
-	name = "Shuttle - Charon - Cargo Bay-1"
-	})
+/area/exploration_shuttle/airlock)
 "bqA" = (
 /obj/machinery/portable_atmospherics/canister/empty,
 /obj/machinery/power/apc{
@@ -1952,14 +1954,11 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/hangar_atmos)
 "bue" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/machinery/sleeper/survival_pod{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/medical)
@@ -2227,9 +2226,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/plating,
-/area/exploration_shuttle/cargo{
-	name = "Shuttle - Charon - Cargo Bay-1"
-	})
+/area/exploration_shuttle/airlock)
 "bDF" = (
 /obj/machinery/door/firedoor,
 /obj/structure/cable/green{
@@ -2367,6 +2364,20 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 6
+	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/airlock)
 "bIH" = (
@@ -2390,6 +2401,7 @@
 	},
 /obj/machinery/hologram/holopad/longrange,
 /obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/effect/overmap/visitable/ship/landable/exploration_shuttle,
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
 "bJa" = (
@@ -2692,9 +2704,7 @@
 	id = "calypso_cargo"
 	},
 /turf/simulated/floor/plating,
-/area/exploration_shuttle/cargo{
-	name = "Shuttle - Charon - Cargo Bay-1"
-	})
+/area/exploration_shuttle/airlock)
 "bRo" = (
 /obj/item/device/radio/intercom{
 	dir = 1;
@@ -2725,8 +2735,7 @@
 	frequency = 1331;
 	id_tag = "calypso_shuttle_interior_sensor";
 	master_tag = "calypso_shuttle";
-	pixel_x = -28;
-	pixel_y = 1;
+	pixel_x = -25;
 	req_access = list("ACCESS_EXPEDITION_SHUTTLE")
 	},
 /turf/simulated/floor/tiled,
@@ -3215,6 +3224,10 @@
 	pixel_x = -20
 	},
 /obj/structure/catwalk,
+/obj/machinery/power/smes/buildable/preset/sierra/shuttle/charon,
+/obj/structure/cable/cyan{
+	dir = 8
+	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
 "cha" = (
@@ -3367,6 +3380,20 @@
 /area/quartermaster/hangar)
 "cqo" = (
 /obj/structure/catwalk,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/alarm{
+	pixel_y = 24
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 6
+	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
 "crg" = (
@@ -3479,19 +3506,34 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/canister)
 "cxE" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 4
-	},
 /obj/item/device/radio/beacon/anchored{
 	level = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/structure/cable/cyan{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	dir = 4;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
@@ -3517,15 +3559,7 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/expedition)
 "czC" = (
-/obj/machinery/alarm{
-	pixel_y = 24
-	},
 /obj/structure/catwalk,
-/obj/structure/cable/orange{
-	d1 = 4;
-	d2 = 8;
-	dir = 4
-	},
 /obj/machinery/power/port_gen/pacman{
 	sheets = 5
 	},
@@ -3542,6 +3576,15 @@
 	},
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc/charon{
+	dir = 1;
+	name = "west bump";
+	pixel_y = 18
 	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
@@ -3654,18 +3697,9 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/airlock)
 "cGb" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
-	},
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 9
-	},
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
@@ -3942,21 +3976,16 @@
 /area/quartermaster/hangar)
 "cNe" = (
 /obj/structure/catwalk,
-/obj/structure/cable/orange{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
-	},
-/obj/structure/cable/cyan{
+/obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
+	dir = 4;
 	icon_state = "1-2"
 	},
-/obj/machinery/power/terminal{
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
 	},
 /turf/simulated/floor/plating,
@@ -5473,14 +5502,20 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/security/sierra/dockcheck)
 "dJH" = (
-/obj/machinery/alarm{
-	dir = 8;
-	pixel_x = 24;
-	req_access = list(list("ACCESS_ATMOS","ACCESS_ENGINE_EQUIP","ACCESS_GUPPY"))
-	},
 /obj/machinery/light,
-/obj/structure/bed/chair/shuttle/green{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/airlock)
@@ -5711,6 +5746,10 @@
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
 	dir = 4
+	},
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/airlock)
@@ -6228,6 +6267,11 @@
 	pixel_y = 28
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
 "ekx" = (
@@ -6485,22 +6529,21 @@
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "esd" = (
-/obj/machinery/power/apc/charon{
-	dir = 8;
-	name = "west bump";
-	pixel_x = -25
-	},
-/obj/structure/table/steel_reinforced,
-/obj/machinery/cell_charger,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/structure/cable/cyan{
-	dir = 8
+	d2 = 2;
+	dir = 4;
+	icon_state = "0-2"
 	},
-/obj/structure/catwalk,
-/turf/simulated/floor/tiled/techfloor,
-/area/exploration_shuttle/power)
+/obj/machinery/door/blast/regular/open{
+	density = 0;
+	dir = 4;
+	id_tag = "calypso_shutters";
+	name = "Protective Shutters";
+	opacity = 0
+	},
+/turf/simulated/floor/plating,
+/area/exploration_shuttle/cockpit)
 "esJ" = (
 /obj/machinery/door/airlock/multi_tile/research{
 	dir = 8;
@@ -6668,19 +6711,8 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/airlock)
 "eyJ" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
+/obj/structure/bed/chair/shuttle/green{
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/airlock)
@@ -6765,16 +6797,8 @@
 /area/maintenance/thirddeck/aft)
 "eAt" = (
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 9
-	},
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
@@ -7103,7 +7127,6 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/suit_cycler/pilot,
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/techfloor,
 /area/exploration_shuttle/power)
 "eQl" = (
@@ -7712,22 +7735,8 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
 "fpX" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable/cyan{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
@@ -8231,12 +8240,6 @@
 /obj/effect/floor_decal/industrial/warning/half,
 /obj/structure/handrai{
 	dir = 1
-	},
-/obj/machinery/airlock_sensor{
-	frequency = 1331;
-	id_tag = "calypso_shuttle_sensor";
-	master_tag = "calypso_shuttle";
-	pixel_x = 24
 	},
 /obj/machinery/camera/network/exploration_shuttle{
 	c_tag = "Charon - External Airlock";
@@ -9778,9 +9781,6 @@
 /obj/random/powercell,
 /obj/random/toolbox,
 /obj/item/weapon/tape_roll,
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1
-	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "gWM" = (
@@ -10323,14 +10323,8 @@
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "hFy" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
@@ -10769,9 +10763,9 @@
 /area/shuttle/petrov/ship)
 "hVF" = (
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 4
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
 	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
@@ -12067,13 +12061,13 @@
 "iVr" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/machinery/door/airlock/hatch{
+	name = "Cockpit";
+	req_access = newlist()
+	},
+/obj/machinery/door/firedoor,
 /obj/structure/cable/cyan{
 	d1 = 2;
 	d2 = 8;
@@ -12151,9 +12145,6 @@
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
 	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 9
 	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
@@ -12433,12 +12424,20 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/thirddeck/aft)
 "jgL" = (
-/obj/machinery/sleeper/survival_pod{
-	dir = 1
-	},
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -20
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/medical)
@@ -12684,12 +12683,6 @@
 	name = "Shuttle - Charon - Cargo Bay-1"
 	})
 "jqt" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
-	},
 /obj/structure/cable/cyan{
 	d1 = 1;
 	d2 = 4;
@@ -12700,9 +12693,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 6
-	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/airlock)
 "jrW" = (
@@ -13680,13 +13672,21 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/shuttle/petrov/ship)
 "keX" = (
-/obj/machinery/power/smes/buildable/preset/sierra/shuttle/charon,
+/obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/structure/cable/cyan{
 	d2 = 2;
+	dir = 8;
 	icon_state = "0-2"
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/exploration_shuttle/power)
+/obj/machinery/door/blast/regular/open{
+	density = 0;
+	dir = 4;
+	id_tag = "calypso_shutters";
+	name = "Protective Shutters";
+	opacity = 0
+	},
+/turf/simulated/floor/plating,
+/area/exploration_shuttle/cockpit)
 "kfe" = (
 /obj/structure/bed/chair/shuttle/white{
 	dir = 8
@@ -14269,7 +14269,11 @@
 	name = "Cockpit";
 	req_access = newlist()
 	},
+/obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -14280,12 +14284,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
 "kHN" = (
@@ -14458,7 +14456,17 @@
 /area/quartermaster/expedition)
 "kPB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/medical)
 "kQM" = (
@@ -14636,6 +14644,11 @@
 	pixel_y = 22
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
 "lbZ" = (
@@ -15610,12 +15623,11 @@
 /turf/simulated/wall/prepainted,
 /area/quartermaster/storage)
 "lUc" = (
-/obj/machinery/door/airlock/hatch{
-	dir = 4;
-	name = "Cockpit";
-	req_access = newlist()
-	},
+/obj/machinery/light,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -15630,10 +15642,6 @@
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
-	},
-/obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
@@ -16385,12 +16393,6 @@
 	dir = 1
 	},
 /obj/effect/shuttle_landmark/sierra/hangar/exploration_shuttle,
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 1
-	},
 /obj/structure/cable/cyan{
 	d1 = 1;
 	d2 = 2;
@@ -16406,7 +16408,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden{
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -16414,7 +16416,7 @@
 "mHW" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
+	dir = 9
 	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
@@ -17187,6 +17189,27 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/expedition/eva)
+"nvA" = (
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -20
+	},
+/obj/machinery/camera/network/exploration_shuttle{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/exploration_shuttle/cockpit)
 "nwl" = (
 /obj/structure/flora/seaweed,
 /obj/effect/fluid_mapped,
@@ -17338,20 +17361,20 @@
 	dir = 8;
 	pixel_y = 5
 	},
-/obj/machinery/embedded_controller/radio/airlock/docking_port{
-	dir = 8;
-	display_name = "Port Dock A";
-	frequency = 1331;
-	id_tag = "skipjack_shuttle_dock_airlock";
-	pixel_x = 20;
-	req_access = list("ACCESS_EXTERNAL")
-	},
 /obj/structure/cable/cyan{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/machinery/embedded_controller/radio/airlock/docking_port{
+	cycle_to_external_air = 1;
+	dir = 8;
+	frequency = 1331;
+	id_tag = "calypso_shuttle";
+	pixel_x = 24;
+	req_access = list("ACCESS_EXPEDITION_SHUTTLE")
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/airlock)
 "nDu" = (
@@ -17894,16 +17917,9 @@
 	sensor_name = "Charon Out";
 	sensor_tag = "calypso_out"
 	},
-/obj/machinery/camera/network/exploration_shuttle{
-	dir = 1
-	},
 /obj/item/device/radio/intercom{
 	dir = 8;
 	pixel_x = 20
-	},
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -20
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
@@ -19467,13 +19483,17 @@
 /obj/machinery/computer/ship/engines{
 	dir = 4
 	},
-/obj/machinery/light,
 /obj/machinery/power/apc/charon{
 	dir = 8;
 	name = "west bump";
 	pixel_x = -25
 	},
 /obj/structure/cable/cyan,
+/obj/structure/cable/cyan{
+	d2 = 8;
+	dir = 4;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
 "pkm" = (
@@ -19559,6 +19579,11 @@
 	dir = 4;
 	name = "west bump";
 	pixel_x = 24
+	},
+/obj/structure/cable/cyan{
+	d2 = 2;
+	dir = 8;
+	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/medical)
@@ -19964,10 +19989,6 @@
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/fore)
 "pCo" = (
-/obj/machinery/door/airlock/hatch{
-	name = "Cockpit";
-	req_access = newlist()
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/cyan{
@@ -19975,8 +19996,25 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 10
+	},
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
 "pCs" = (
@@ -20059,8 +20097,18 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/machinery/door/blast/regular/open{
+	density = 0;
+	dir = 4;
+	id_tag = "calypso_shutters";
+	name = "Protective Shutters";
+	opacity = 0
+	},
 /turf/simulated/floor/plating,
-/area/exploration_shuttle/cockpit)
+/area/exploration_shuttle{
+	base_turf = /turf/simulated/floor/plating;
+	name = "Shuttle - Charon-Sitroom"
+	})
 "pFk" = (
 /obj/random/closet,
 /obj/random/maintenance,
@@ -20996,6 +21044,26 @@
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/hallway/primary/thirddeck/center)
+"qpq" = (
+/obj/machinery/door/airlock/hatch{
+	dir = 4;
+	name = "Cockpit";
+	req_access = newlist()
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/exploration_shuttle/cockpit)
 "qqp" = (
 /obj/machinery/alarm{
 	dir = 8;
@@ -24173,9 +24241,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
 "sTe" = (
@@ -24923,7 +24988,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/airlock)
 "tFs" = (
@@ -27295,6 +27361,16 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
 "vCD" = (
@@ -28645,14 +28721,10 @@
 /area/hallway/primary/thirddeck/fore)
 "wRd" = (
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/cyan{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
 	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
@@ -28792,6 +28864,12 @@
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
+	},
+/obj/machinery/airlock_sensor{
+	frequency = 1331;
+	id_tag = "calypso_shuttle_sensor";
+	master_tag = "calypso_shuttle";
+	pixel_x = 25
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/airlock)
@@ -29620,7 +29698,9 @@
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled,
-/area/exploration_shuttle/medical)
+/area/exploration_shuttle/cargo{
+	name = "Shuttle - Charon - Cargo Bay-2"
+	})
 "xGD" = (
 /obj/structure/table/rack,
 /obj/structure/window/reinforced{
@@ -30323,6 +30403,8 @@
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	id_tag = "calypso_shuttle_pump_out_external"
 	},
+/obj/structure/catwalk,
+/obj/effect/floor_decal/industrial/warning/full,
 /obj/machinery/airlock_sensor/airlock_exterior{
 	frequency = 1331;
 	id_tag = "calypso_shuttle_exterior_sensor";
@@ -30331,8 +30413,6 @@
 	pixel_y = 27;
 	req_access = list("ACCESS_EXPEDITION_SHUTTLE")
 	},
-/obj/structure/catwalk,
-/obj/effect/floor_decal/industrial/warning/full,
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/airlock)
 "ymf" = (
@@ -51031,7 +51111,7 @@ xIF
 xIF
 xIF
 xIF
-xIF
+ymf
 blf
 bqk
 bDj
@@ -52041,11 +52121,11 @@ xIF
 rDP
 eLi
 jKA
+yec
+esd
 nCO
-pFg
-lUc
 nCO
-nCO
+kHG
 uxb
 ceZ
 xAE
@@ -52243,12 +52323,12 @@ xIF
 nPW
 wjA
 uta
-nCO
+yec
 ekf
 fpX
 piP
-nCO
-esd
+lUc
+uxb
 cqo
 mHW
 rrc
@@ -52647,12 +52727,12 @@ xwe
 viW
 wjA
 uta
-nCO
+yec
 lbJ
 hFy
 oaK
-nCO
-keX
+nvA
+uxb
 cNe
 eAt
 bZY
@@ -52850,10 +52930,10 @@ xBH
 jkO
 vMk
 yec
-pFg
-kHG
+keX
 nCO
-uFO
+nCO
+qpq
 uxb
 czC
 uxe
@@ -53050,7 +53130,7 @@ kiZ
 xwe
 xwe
 uPh
-uFO
+xwe
 uFO
 fjY
 bue
@@ -53656,7 +53736,7 @@ tlD
 bcU
 beb
 bgm
-uFO
+xwe
 uFO
 uFO
 uFO
@@ -53858,7 +53938,7 @@ tNB
 xwe
 xwe
 xwe
-yec
+xwe
 yec
 blK
 bBK
