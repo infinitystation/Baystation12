@@ -373,6 +373,7 @@
 /obj/structure/handrai{
 	dir = 8
 	},
+/obj/structure/stasis_cage,
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cargo_r)
 "aoo" = (
@@ -1556,6 +1557,7 @@
 /obj/effect/floor_decal/corner/b_green/border{
 	dir = 4
 	},
+/obj/item/weapon/folder/nt,
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_r)
 "bem" = (
@@ -1625,6 +1627,9 @@
 /obj/effect/floor_decal/corner/b_green/border{
 	dir = 6
 	},
+/obj/item/weapon/paper_bin,
+/obj/item/weapon/pen,
+/obj/item/sticky_pad/random,
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_r)
 "bgq" = (
@@ -2164,6 +2169,9 @@
 	c_tag = "Charon - Right Side Space";
 	dir = 4
 	},
+/obj/structure/handrai{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/medical)
 "bCa" = (
@@ -2426,22 +2434,10 @@
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aft)
 "bJX" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/disposalpipe/segment,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/maintenance/thirddeck/aft)
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/anomaly_container,
+/turf/simulated/floor/tiled/monotile,
+/area/exploration_shuttle/cargo_r)
 "bKl" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -2627,23 +2623,6 @@
 /obj/machinery/portable_atmospherics/powered/pump/filled,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/thirddeck/aft)
-"bPp" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
-	dir = 1;
-	id_tag = "calypso_shuttle_pump_out_internal";
-	power_rating = 25000
-	},
-/obj/structure/catwalk,
-/obj/effect/floor_decal/industrial/warning/half,
-/obj/structure/handrai{
-	dir = 1
-	},
-/obj/machinery/camera/network/exploration_shuttle{
-	c_tag = "Charon - External Airlock";
-	dir = 8
-	},
-/turf/simulated/floor/plating,
-/area/exploration_shuttle/airlock)
 "bQf" = (
 /obj/item/device/radio/intercom/department/medbay{
 	dir = 4;
@@ -3250,6 +3229,7 @@
 /obj/structure/handrai{
 	dir = 4
 	},
+/obj/structure/anomaly_container,
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cargo_r)
 "cha" = (
@@ -4402,6 +4382,7 @@
 	icon_state = "0-8"
 	},
 /obj/item/weapon/storage/box/autoinjectors,
+/obj/item/device/scanner/health,
 /turf/simulated/floor/tiled/white,
 /area/vacant/infirmary)
 "dcr" = (
@@ -10387,6 +10368,9 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 4
 	},
+/obj/item/toy/figure/ninja{
+	name = "Exploration Team Hero action figure"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
 "hGa" = (
@@ -11120,6 +11104,15 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/hallway/primary/thirddeck/center)
+"ikN" = (
+/obj/effect/catwalk_plated/white,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/plating,
+/area/vacant/infirmary)
 "ikZ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -11428,6 +11421,14 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/petrov/ship)
+"iyk" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/vacant/infirmary)
 "iyA" = (
 /obj/machinery/door/airlock/external/bolted{
 	dir = 4;
@@ -14392,7 +14393,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
 "kLb" = (
-/obj/machinery/reagentgrinder,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/plating,
 /area/vacant/infirmary)
 "kLg" = (
@@ -23440,6 +23445,14 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/petrov/cell1)
+"sjM" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/plating,
+/area/vacant/infirmary)
 "sjT" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -23926,6 +23939,7 @@
 /obj/machinery/light,
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/b_green/border,
+/obj/item/toy/plushie/nymph,
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_l)
 "sDi" = (
@@ -24016,6 +24030,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/catwalk_plated/white,
+/obj/machinery/reagentgrinder,
 /turf/simulated/floor/plating,
 /area/vacant/infirmary)
 "sFP" = (
@@ -24408,15 +24423,22 @@
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/level2)
 "sUa" = (
-/obj/machinery/door/firedoor,
-/obj/random/obstruction,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
+	dir = 1;
+	id_tag = "calypso_shuttle_pump_out_internal";
+	power_rating = 25000
+	},
+/obj/structure/catwalk,
+/obj/effect/floor_decal/industrial/warning/half,
+/obj/structure/handrai{
+	dir = 1
+	},
+/obj/machinery/camera/network/exploration_shuttle{
+	c_tag = "Charon - External Airlock";
+	dir = 8
 	},
 /turf/simulated/floor/plating,
-/area/vacant/infirmary)
+/area/exploration_shuttle/airlock)
 "sUt" = (
 /obj/machinery/door/blast/regular/open{
 	density = 0;
@@ -27100,6 +27122,16 @@
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/seats_place)
+"vlo" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/wall/r_wall{
+	can_open = 1
+	},
+/area/vacant/infirmary)
 "vmB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/effect/floor_decal/borderfloorblack{
@@ -52162,7 +52194,7 @@ dJH
 cbq
 tLZ
 wig
-bPp
+sUa
 syC
 wKp
 cxv
@@ -53157,7 +53189,7 @@ pCs
 jDY
 nuv
 oTQ
-mrj
+bJX
 ceZ
 mrj
 oTQ
@@ -55806,7 +55838,7 @@ ipv
 tLA
 tLA
 jyD
-bJX
+tLA
 ljS
 tLA
 tLA
@@ -56008,9 +56040,9 @@ fag
 lDB
 lDB
 lDB
-sUa
-jAj
 lDB
+jAj
+vlo
 lDB
 lDB
 fag
@@ -56412,9 +56444,9 @@ fag
 lDB
 bjp
 cVC
-sFM
-slq
-slq
+ikN
+iyk
+sjM
 slq
 lDB
 eAs
