@@ -2513,9 +2513,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
-"bMk" = (
-/turf/simulated/wall/r_titanium,
-/area/exploration_shuttle/cargo_r)
 "bNk" = (
 /obj/structure/table/rack,
 /obj/random/tech_supply,
@@ -3575,22 +3572,6 @@
 /obj/effect/paint_stripe/nt_red,
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod/escape_pod4/station)
-"cDO" = (
-/obj/machinery/door/blast/regular/open{
-	density = 0;
-	id_tag = "calypso_shutters";
-	name = "Protective Shutters";
-	opacity = 0
-	},
-/obj/machinery/door/firedoor,
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/structure/cable/cyan{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/effect/paint/dark_gunmetal,
-/turf/simulated/floor/plating,
-/area/exploration_shuttle/cargo_r)
 "cDQ" = (
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	dir = 5
@@ -8539,6 +8520,15 @@
 /obj/random/coin,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/forestarboard)
+"gbg" = (
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled,
+/area/exploration_shuttle/cargo_r)
 "gbq" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/crate,
@@ -10213,11 +10203,6 @@
 /obj/effect/floor_decal/industrial/danger,
 /turf/simulated/floor/reinforced,
 /area/shuttle/petrov/cell3)
-"hEU" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/plating,
-/area/exploration_shuttle/cargo_r)
 "hFo" = (
 /obj/structure/bed/chair/office/light{
 	dir = 4
@@ -15908,6 +15893,10 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/reinforced,
 /area/thruster/d3starboard)
+"mrj" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled,
+/area/exploration_shuttle/cargo_r)
 "mru" = (
 /obj/structure/bed/chair/office/brown{
 	dir = 4
@@ -17032,15 +17021,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aft)
-"nrT" = (
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled,
-/area/exploration_shuttle/cargo_r)
 "nrZ" = (
 /obj/machinery/shield_diffuser,
 /obj/machinery/door/airlock/external/glass/bolted/cycling{
@@ -17117,6 +17097,9 @@
 "nxx" = (
 /turf/simulated/wall/prepainted,
 /area/maintenance/thirddeck/foreport)
+"nyH" = (
+/turf/simulated/wall/r_titanium,
+/area/exploration_shuttle/seats_place)
 "nyS" = (
 /obj/effect/floor_decal/borderfloor/corner,
 /obj/effect/floor_decal/industrial/danger/corner,
@@ -17234,10 +17217,6 @@
 /turf/simulated/floor/tiled/steel_ridged,
 /area/shuttle/escape_pod/escape_pod2/station)
 "nDi" = (
-/obj/structure/handrai{
-	dir = 8;
-	pixel_y = 5
-	},
 /obj/structure/cable/cyan{
 	d1 = 1;
 	d2 = 2;
@@ -17953,24 +17932,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/commissary)
-"oeZ" = (
-/obj/machinery/door/blast/regular/open{
-	density = 0;
-	dir = 4;
-	id_tag = "calypso_shutters";
-	name = "Protective Shutters";
-	opacity = 0
-	},
-/obj/machinery/door/firedoor,
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/structure/cable/cyan{
-	d2 = 4;
-	dir = 4;
-	icon_state = "0-4"
-	},
-/obj/effect/paint/dark_gunmetal,
-/turf/simulated/floor/plating,
-/area/exploration_shuttle/cargo_r)
 "ogc" = (
 /obj/machinery/conveyor{
 	id = "calypso_cargo"
@@ -18678,6 +18639,22 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
+"oCs" = (
+/obj/machinery/door/blast/regular/open{
+	density = 0;
+	id_tag = "calypso_shutters";
+	name = "Protective Shutters";
+	opacity = 0
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/structure/cable/cyan{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/effect/paint/dark_gunmetal,
+/turf/simulated/floor/plating,
+/area/exploration_shuttle/cargo_r)
 "oDo" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -19005,6 +18982,9 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
+"oTQ" = (
+/turf/simulated/wall/r_titanium,
+/area/exploration_shuttle/cargo_r)
 "oUb" = (
 /obj/effect/fluid_mapped,
 /obj/item/clothing/under/shorts/blue,
@@ -19165,10 +19145,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/hallway/primary/thirddeck/center)
-"oZR" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled,
-/area/exploration_shuttle/cargo_r)
 "oZT" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -22170,15 +22146,6 @@
 	},
 /turf/simulated/wall/r_wall/prepainted,
 /area/maintenance/thirddeck/aft)
-"rvV" = (
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled,
-/area/exploration_shuttle/cargo_r)
 "rwe" = (
 /obj/machinery/door/airlock/external/bolted{
 	dir = 4;
@@ -24912,9 +24879,6 @@
 /obj/effect/paint_stripe/nt_red,
 /turf/simulated/floor/plating,
 /area/shuttle/petrov/ship)
-"tHz" = (
-/turf/simulated/wall/r_titanium,
-/area/exploration_shuttle/seats_place)
 "tHE" = (
 /turf/simulated/floor/reinforced,
 /area/shuttle/petrov/cell1)
@@ -25188,6 +25152,11 @@
 /obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/fore)
+"tRH" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/plating,
+/area/exploration_shuttle/cargo_r)
 "tSN" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -25327,6 +25296,24 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/white/monotile,
 /area/shuttle/petrov/ship)
+"tZu" = (
+/obj/machinery/door/blast/regular/open{
+	density = 0;
+	dir = 4;
+	id_tag = "calypso_shutters";
+	name = "Protective Shutters";
+	opacity = 0
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/structure/cable/cyan{
+	d2 = 4;
+	dir = 4;
+	icon_state = "0-4"
+	},
+/obj/effect/paint/dark_gunmetal,
+/turf/simulated/floor/plating,
+/area/exploration_shuttle/cargo_r)
 "tZB" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -29502,6 +29489,15 @@
 /obj/effect/floor_decal/corner/lime/bordercorner2,
 /turf/simulated/floor/tiled,
 /area/crew_quarters/commissary)
+"xEy" = (
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled,
+/area/exploration_shuttle/cargo_r)
 "xEA" = (
 /obj/structure/bed/chair/shuttle/green{
 	dir = 8
@@ -51946,7 +51942,7 @@ yec
 rDP
 eLi
 jKA
-tHz
+nyH
 esd
 nCO
 nCO
@@ -52148,7 +52144,7 @@ yec
 nPW
 wjA
 uta
-tHz
+nyH
 ekf
 fpX
 piP
@@ -52544,15 +52540,15 @@ pCs
 pCs
 cjU
 nuv
-bMk
-bMk
-bMk
-hEU
-bMk
+oTQ
+oTQ
+oTQ
+tRH
+oTQ
 viW
 wjA
 uta
-tHz
+nyH
 lbJ
 hFy
 oaK
@@ -52746,15 +52742,15 @@ pCs
 pCs
 jDY
 nuv
-bMk
-oZR
+oTQ
+mrj
 ceZ
-oZR
-bMk
+mrj
+oTQ
 xBH
 jkO
 vMk
-tHz
+nyH
 keX
 nCO
 nCO
@@ -52949,13 +52945,13 @@ pCs
 oOP
 nuv
 aQL
-oZR
-oZR
+mrj
+mrj
 kiZ
-bMk
-bMk
+oTQ
+oTQ
 uPh
-bMk
+oTQ
 uFO
 fjY
 bue
@@ -53151,9 +53147,9 @@ pCs
 jDY
 nuv
 aiA
-nrT
+gbg
 eTd
-nrT
+gbg
 aWF
 rpt
 jgS
@@ -53352,14 +53348,14 @@ pCs
 pCs
 aQq
 pNE
-cDO
-oZR
-rvV
-oZR
+oCs
+mrj
+xEy
+mrj
 aZK
 cHL
 chc
-bMk
+oTQ
 plq
 uuC
 nTi
@@ -53554,14 +53550,14 @@ pCs
 pCs
 xHt
 nuv
-bMk
+oTQ
 anL
-rvV
-oZR
+xEy
+mrj
 bcU
 beb
 bgm
-bMk
+oTQ
 uFO
 uFO
 uFO
@@ -53756,14 +53752,14 @@ uma
 fag
 rRq
 nuv
-bMk
-bMk
+oTQ
+oTQ
 avT
-oeZ
-bMk
-bMk
-bMk
-bMk
+tZu
+oTQ
+oTQ
+oTQ
+oTQ
 uFO
 blK
 bBK
