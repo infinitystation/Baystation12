@@ -3010,6 +3010,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/universal{
 	dir = 4
 	},
+/obj/machinery/portable_atmospherics/powered/pump/filled,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "cak" = (
@@ -4409,7 +4410,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
 	},
-/obj/structure/closet/radiation,
+/obj/machinery/power/port_gen/pacman{
+	sheets = 5
+	},
+/obj/structure/cable/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "ddA" = (
@@ -4867,7 +4871,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
 "drL" = (
-/obj/machinery/portable_atmospherics/powered/pump/filled,
+/obj/structure/table/steel_reinforced,
+/obj/machinery/cell_charger,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "drP" = (
@@ -6985,7 +6990,6 @@
 	dir = 1
 	},
 /obj/effect/paint/red,
-/obj/machinery/atmospherics/pipe/manifold4w/visible/fuel,
 /turf/simulated/wall/r_titanium,
 /area/exploration_shuttle/airlock)
 "eHC" = (
@@ -9803,12 +9807,10 @@
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "gWe" = (
-/obj/machinery/power/port_gen/pacman{
-	sheets = 5
-	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
+/obj/structure/closet/radiation,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "gWM" = (
@@ -13085,6 +13087,7 @@
 /obj/structure/table/steel_reinforced,
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/b_green/border,
+/obj/machinery/cell_charger,
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/seats_place)
 "jHS" = (
@@ -26166,16 +26169,16 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
