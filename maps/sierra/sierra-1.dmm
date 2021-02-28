@@ -1908,7 +1908,7 @@
 	dir = 8
 	},
 /obj/machinery/camera/network/exploration_shuttle{
-	c_tag = "Charon - External Airlock";
+	c_tag = "Charon - Left Side Space";
 	dir = 8
 	},
 /obj/structure/catwalk,
@@ -2161,7 +2161,7 @@
 "bBK" = (
 /obj/structure/catwalk,
 /obj/machinery/camera/network/exploration_shuttle{
-	c_tag = "Charon - External Airlock";
+	c_tag = "Charon - Right Side Space";
 	dir = 4
 	},
 /turf/simulated/floor/plating,
@@ -2627,6 +2627,23 @@
 /obj/machinery/portable_atmospherics/powered/pump/filled,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/thirddeck/aft)
+"bPp" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
+	dir = 1;
+	id_tag = "calypso_shuttle_pump_out_internal";
+	power_rating = 25000
+	},
+/obj/structure/catwalk,
+/obj/effect/floor_decal/industrial/warning/half,
+/obj/structure/handrai{
+	dir = 1
+	},
+/obj/machinery/camera/network/exploration_shuttle{
+	c_tag = "Charon - External Airlock";
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/exploration_shuttle/airlock)
 "bQf" = (
 /obj/item/device/radio/intercom/department/medbay{
 	dir = 4;
@@ -5740,6 +5757,7 @@
 /obj/structure/table/rack,
 /obj/item/weapon/storage/belt/utility/full,
 /obj/item/weapon/material/hatchet,
+/obj/item/device/multitool,
 /obj/item/weapon/storage/box/glowsticks,
 /obj/machinery/camera/network/exploration_shuttle{
 	c_tag = "Charon - Hallway";
@@ -17234,6 +17252,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/structure/handrai{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
 "nwl" = (
@@ -24550,23 +24571,6 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_l)
-"tbw" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
-	dir = 1;
-	id_tag = "calypso_shuttle_pump_out_internal";
-	power_rating = 25000
-	},
-/obj/structure/catwalk,
-/obj/effect/floor_decal/industrial/warning/half,
-/obj/structure/handrai{
-	dir = 1
-	},
-/obj/machinery/camera/network/exploration_shuttle{
-	c_tag = "Charon - External Airlock";
-	dir = 8
-	},
-/turf/simulated/floor/plating,
-/area/exploration_shuttle/airlock)
 "tcn" = (
 /obj/item/rolled_towel,
 /obj/item/rolled_towel/black,
@@ -52158,7 +52162,7 @@ dJH
 cbq
 tLZ
 wig
-tbw
+bPp
 syC
 wKp
 cxv
