@@ -724,7 +724,7 @@
 /area/maintenance/thirddeck/foreport)
 "aBr" = (
 /obj/machinery/camera/network/exploration_shuttle{
-	c_tag = "Charon - External Airlock";
+	c_tag = "Charon - Cargo Bay Left";
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -1468,7 +1468,7 @@
 /area/shuttle/escape_pod/escape_pod4/station)
 "bcU" = (
 /obj/machinery/camera/network/exploration_shuttle{
-	c_tag = "Charon - External Airlock";
+	c_tag = "Charon - Cargo Bay Right";
 	dir = 8
 	},
 /obj/structure/table/steel_reinforced,
@@ -1649,7 +1649,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/camera/network/exploration_shuttle{
-	c_tag = "Charon - External Airlock";
+	c_tag = "Charon - Medical Compartment";
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -1894,7 +1894,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/camera/network/exploration_shuttle{
-	c_tag = "Charon - External Airlock";
+	c_tag = "Charon - Hallway";
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
@@ -3973,6 +3973,9 @@
 /obj/structure/cable/cyan{
 	d2 = 8;
 	icon_state = "0-8"
+	},
+/obj/machinery/camera/network/exploration_shuttle{
+	c_tag = Power Compartment
 	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
@@ -7771,6 +7774,10 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 8
 	},
+/obj/machinery/camera/network/exploration_shuttle{
+	c_tag = "Charon - Cockpit";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
 "fqe" = (
@@ -8273,10 +8280,6 @@
 /obj/effect/floor_decal/industrial/warning/half,
 /obj/structure/handrai{
 	dir = 1
-	},
-/obj/machinery/camera/network/exploration_shuttle{
-	c_tag = "Charon - External Airlock";
-	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/airlock)
@@ -17220,9 +17223,6 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/expedition/eva)
 "nvA" = (
-/obj/machinery/camera/network/exploration_shuttle{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -24550,6 +24550,23 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_l)
+"tbw" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
+	dir = 1;
+	id_tag = "calypso_shuttle_pump_out_internal";
+	power_rating = 25000
+	},
+/obj/structure/catwalk,
+/obj/effect/floor_decal/industrial/warning/half,
+/obj/structure/handrai{
+	dir = 1
+	},
+/obj/machinery/camera/network/exploration_shuttle{
+	c_tag = "Charon - External Airlock";
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/exploration_shuttle/airlock)
 "tcn" = (
 /obj/item/rolled_towel,
 /obj/item/rolled_towel/black,
@@ -27751,7 +27768,7 @@
 	pixel_y = -24
 	},
 /obj/machinery/camera/network/exploration_shuttle{
-	c_tag = "Charon - External Airlock";
+	c_tag = "Charon - Seats Place Compartment";
 	dir = 8
 	},
 /obj/structure/cable/cyan,
@@ -52141,7 +52158,7 @@ dJH
 cbq
 tLZ
 wig
-fKH
+tbw
 syC
 wKp
 cxv
