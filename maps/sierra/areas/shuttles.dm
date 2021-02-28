@@ -70,8 +70,6 @@
 	name = "Shuttle - Charon - Cargo Bay Right"
 /area/exploration_shuttle/airlock
 	name = "Shuttle - Charon - Airlock Compartment"
-/area/exploration_shuttle/sensor
-	name = "Shuttle - Charon - Sensor Compartment"
 
 /area/guppy_hangar/start
 	name = "Shuttle - Guppy"
