@@ -1930,6 +1930,14 @@
 /obj/effect/floor_decal/industrial/outline/red,
 /turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/hangar_atmos)
+"bqX" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/vacant/infirmary)
 "bue" = (
 /obj/machinery/sleeper/survival_pod{
 	dir = 1
@@ -3007,6 +3015,7 @@
 	dir = 4
 	},
 /obj/machinery/portable_atmospherics/powered/pump/filled,
+/obj/effect/floor_decal/techfloor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "cak" = (
@@ -3386,7 +3395,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
 "cqo" = (
-/obj/structure/catwalk,
 /obj/machinery/atmospherics/portables_connector{
 	dir = 4
 	},
@@ -3403,7 +3411,10 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/techfloor{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "crg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
@@ -3563,14 +3574,18 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/structure/catwalk,
 /obj/structure/cable/yellow{
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/obj/machinery/atmospherics/portables_connector,
+/obj/machinery/atmospherics/portables_connector{
+	dir = 8
+	},
 /obj/machinery/portable_atmospherics/canister/empty,
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/techfloor{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "czG" = (
 /obj/structure/cable/green{
@@ -3690,6 +3705,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/universal{
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
@@ -3959,20 +3977,19 @@
 /area/quartermaster/hangar)
 "cNe" = (
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
 /obj/machinery/power/smes/buildable/preset/sierra/shuttle/charon,
-/obj/structure/cable/cyan{
-	d2 = 2;
-	icon_state = "0-2"
-	},
 /obj/structure/cable/cyan{
 	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/machinery/camera/network/exploration_shuttle{
-	c_tag = Power Compartment
+	c_tag = "Charon - Power Compartment"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/universal{
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor{
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
@@ -4415,6 +4432,7 @@
 	sheets = 5
 	},
 /obj/structure/cable/yellow,
+/obj/effect/floor_decal/techfloor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "ddA" = (
@@ -4874,6 +4892,9 @@
 "drL" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/cell_charger,
+/obj/effect/floor_decal/techfloor{
+	dir = 6
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "drP" = (
@@ -7165,7 +7186,10 @@
 	dir = 1
 	},
 /obj/machinery/suit_cycler/pilot,
-/turf/simulated/floor/tiled/techfloor,
+/obj/effect/floor_decal/techfloor{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "eQl" = (
 /turf/simulated/floor/tiled/techfloor,
@@ -9813,6 +9837,7 @@
 	dir = 1
 	},
 /obj/structure/closet/radiation,
+/obj/effect/floor_decal/techfloor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "gWM" = (
@@ -10786,13 +10811,15 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
 "hVc" = (
-/obj/structure/catwalk,
 /obj/machinery/alarm{
 	pixel_y = 24
 	},
 /obj/machinery/atmospherics/portables_connector,
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide/engine_setup,
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/techfloor{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "hVj" = (
 /obj/structure/closet/bombcloset,
@@ -11104,15 +11131,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/hallway/primary/thirddeck/center)
-"ikN" = (
-/obj/effect/catwalk_plated/white,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/plating,
-/area/vacant/infirmary)
 "ikZ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -11250,7 +11268,10 @@
 /area/hallway/primary/thirddeck/fore)
 "iqT" = (
 /obj/machinery/recharge_station,
-/turf/simulated/floor/tiled/techfloor,
+/obj/effect/floor_decal/techfloor{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "irw" = (
 /obj/effect/floor_decal/techfloor{
@@ -11421,14 +11442,6 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/petrov/ship)
-"iyk" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/plating,
-/area/vacant/infirmary)
 "iyA" = (
 /obj/machinery/door/airlock/external/bolted{
 	dir = 4;
@@ -13110,6 +13123,12 @@
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/b_green/border,
 /obj/machinery/cell_charger,
+/obj/random/single{
+	icon = 'icons/obj/playing_cards.dmi';
+	icon_state = "deck";
+	name = "randomly spawned deck of cards";
+	spawn_object = /obj/item/weapon/deck
+	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/seats_place)
 "jHS" = (
@@ -15205,6 +15224,15 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
+"lyU" = (
+/obj/effect/catwalk_plated/white,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/plating,
+/area/vacant/infirmary)
 "lzM" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 9
@@ -15871,6 +15899,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
+/obj/effect/floor_decal/techfloor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "meW" = (
@@ -16465,7 +16494,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
 "mHW" = (
-/obj/structure/catwalk,
 /obj/item/device/radio/intercom{
 	dir = 4;
 	pixel_x = -20
@@ -16474,7 +16502,10 @@
 	dir = 4
 	},
 /obj/machinery/portable_atmospherics/canister/air,
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/techfloor{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "mId" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
@@ -19828,6 +19859,7 @@
 "poF" = (
 /obj/structure/closet/radiation,
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel,
+/obj/effect/floor_decal/techfloor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "poI" = (
@@ -21291,6 +21323,16 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
+"qsK" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/wall/r_wall{
+	can_open = 1
+	},
+/area/vacant/infirmary)
 "qsY" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
 	dir = 10
@@ -22300,6 +22342,9 @@
 "rrc" = (
 /obj/machinery/atmospherics/unary/tank/air{
 	dir = 1
+	},
+/obj/effect/floor_decal/techfloor{
+	dir = 10
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
@@ -23445,14 +23490,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/petrov/cell1)
-"sjM" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/plating,
-/area/vacant/infirmary)
 "sjT" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -25427,6 +25464,7 @@
 /obj/machinery/space_heater,
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/manifold/hidden/cyan,
+/obj/effect/floor_decal/techfloor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "tQX" = (
@@ -26516,6 +26554,14 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
+"uMr" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/plating,
+/area/vacant/infirmary)
 "uNo" = (
 /obj/structure/closet/secure_closet/crew/research,
 /obj/random/maintenance/clean,
@@ -27122,16 +27168,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/seats_place)
-"vlo" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/wall/r_wall{
-	can_open = 1
-	},
-/area/vacant/infirmary)
 "vmB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/effect/floor_decal/borderfloorblack{
@@ -56042,7 +56078,7 @@ lDB
 lDB
 lDB
 jAj
-vlo
+qsK
 lDB
 lDB
 fag
@@ -56444,9 +56480,9 @@ fag
 lDB
 bjp
 cVC
-ikN
-iyk
-sjM
+lyU
+bqX
+uMr
 slq
 lDB
 eAs
