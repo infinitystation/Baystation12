@@ -58,12 +58,20 @@
 	name = "Shuttle - Charon - Atmos Compartment"
 /area/exploration_shuttle/power
 	name = "Shuttle - Charon - Power Compartment"
+/area/exploration_shuttle/seats_place
+	name = "Shuttle - Charon - Seats Place Compartment"
 /area/exploration_shuttle/medical
 	name = "Shuttle - Charon - Medical Compartment"
 /area/exploration_shuttle/cargo
 	name = "Shuttle - Charon - Cargo Bay"
+/area/exploration_shuttle/cargo_l
+	name = "Shuttle - Charon - Cargo Bay Left"
+/area/exploration_shuttle/cargo_r
+	name = "Shuttle - Charon - Cargo Bay Right"
 /area/exploration_shuttle/airlock
 	name = "Shuttle - Charon - Airlock Compartment"
+/area/exploration_shuttle/sensor
+	name = "Shuttle - Charon - Sensor Compartment"
 
 /area/guppy_hangar/start
 	name = "Shuttle - Guppy"
