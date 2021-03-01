@@ -37690,6 +37690,7 @@
 /obj/machinery/atmospherics/binary/passive_gate{
 	name = "CO2 to Hangar";
 	pipe_color = "#ffcc00";
+	set_flow_rate = 25;
 	target_pressure = 2500;
 	unlocked = 1
 	},
