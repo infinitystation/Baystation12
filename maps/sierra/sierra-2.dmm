@@ -19894,6 +19894,7 @@
 /obj/machinery/camera/network/research{
 	c_tag = "Xenobio - aqua chamber"
 	},
+/obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology/water_cell)
 "aKc" = (
@@ -19902,6 +19903,7 @@
 	name = "Xenobiology Aqua Xenopen";
 	pixel_y = 29
 	},
+/obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology/water_cell)
 "aKd" = (
@@ -20829,13 +20831,15 @@
 /turf/simulated/floor/tiled/steel_ridged,
 /area/storage/tech)
 "aLL" = (
-/obj/structure/catwalk,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/open,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced,
 /area/rnd/xenobiology/water_cell)
 "aLM" = (
 /obj/structure/bed/chair/comfy/brown{
@@ -24520,10 +24524,13 @@
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology/water_cell)
 "aSO" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8
-	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 10
+	},
+/obj/structure/sign/warning/fall{
+	pixel_y = 32
+	},
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology/water_cell)
 "aSP" = (
@@ -33571,6 +33578,17 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/galley)
+"bqu" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 6
+	},
+/turf/simulated/floor/reinforced,
+/area/rnd/xenobiology/water_cell)
 "bss" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2;
@@ -37691,8 +37709,11 @@
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/cafe)
 "wWL" = (
-/obj/machinery/atmospherics/valve/digital/open{
-	name = "CO2 to Hangar Supply"
+/obj/machinery/atmospherics/binary/passive_gate{
+	name = "CO2 to Hangar";
+	pipe_color = "#ffcc00";
+	target_pressure = 3500;
+	unlocked = 1
 	},
 /turf/simulated/wall/r_wall/prepainted,
 /area/engineering/atmos)
@@ -63081,7 +63102,7 @@ aPq
 aVh
 aXk
 aLL
-aLL
+bqu
 aSU
 aSM
 aOv
