@@ -568,11 +568,6 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/structure/cable/cyan{
-	d2 = 4;
-	dir = 1;
-	icon_state = "0-4"
-	},
 /obj/effect/paint/dark_gunmetal,
 /obj/structure/cable/cyan{
 	d1 = 2;
@@ -1131,11 +1126,6 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/structure/cable/cyan{
-	d2 = 2;
-	dir = 4;
-	icon_state = "0-2"
-	},
 /obj/effect/paint/dark_gunmetal,
 /obj/effect/paint/dark_gunmetal,
 /turf/simulated/floor/plating,
@@ -1307,7 +1297,7 @@
 	},
 /obj/effect/paint/dark_gunmetal,
 /turf/simulated/floor/plating,
-/area/exploration_shuttle/seats_place)
+/area/exploration_shuttle/cockpit)
 "aVK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
@@ -1650,11 +1640,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/camera/network/exploration_shuttle{
-	c_tag = "Charon - Medical Compartment";
-	dir = 4;
-	pixel_y = 11
-	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
 	},
@@ -1940,16 +1925,17 @@
 /obj/machinery/sleeper/survival_pod{
 	dir = 1
 	},
-/obj/machinery/alarm{
-	dir = 4;
-	pixel_x = -24
-	},
 /obj/effect/floor_decal/borderfloor{
 	color = null;
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
+	},
+/obj/machinery/camera/network/exploration_shuttle{
+	c_tag = "Charon - Medical Compartment";
+	dir = 4;
+	pixel_y = 11
 	},
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/medical)
@@ -2702,11 +2688,6 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/structure/cable/cyan{
-	d2 = 4;
-	dir = 1;
-	icon_state = "0-4"
-	},
 /obj/effect/paint/dark_gunmetal,
 /obj/effect/paint/dark_gunmetal,
 /turf/simulated/floor/plating,
@@ -4163,7 +4144,7 @@
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/plating,
-/area/exploration_shuttle/seats_place)
+/area/exploration_shuttle/cockpit)
 "cVC" = (
 /turf/simulated/floor/tiled/white,
 /area/vacant/infirmary)
@@ -6148,7 +6129,7 @@
 	dir = 1
 	},
 /obj/machinery/light,
-/obj/effect/decal/warning_stripes,
+/obj/effect/floor_decal/industrial/warning/full,
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_l)
 "ege" = (
@@ -6376,22 +6357,10 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
 "enb" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/disposalpipe/segment,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/catwalk,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/thirddeck/aft)
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/space_heater,
+/turf/simulated/floor/tiled/monotile,
+/area/exploration_shuttle/cargo_r)
 "enJ" = (
 /obj/structure/cable/cyan{
 	d1 = 2;
@@ -6608,23 +6577,6 @@
 /obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
-"esd" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/structure/cable/cyan{
-	d2 = 2;
-	dir = 4;
-	icon_state = "0-2"
-	},
-/obj/machinery/door/blast/regular/open{
-	density = 0;
-	dir = 4;
-	id_tag = "cockpit_shutters";
-	name = "Protective Shutters";
-	opacity = 0
-	},
-/obj/effect/paint/dark_gunmetal,
-/turf/simulated/floor/plating,
-/area/exploration_shuttle/cockpit)
 "esJ" = (
 /obj/machinery/door/airlock/multi_tile/research{
 	dir = 8;
@@ -13490,7 +13442,7 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/effect/decal/warning_stripes,
+/obj/effect/floor_decal/industrial/warning/full,
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_l)
 "jQQ" = (
@@ -13784,11 +13736,6 @@
 /area/shuttle/petrov/ship)
 "keX" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/structure/cable/cyan{
-	d2 = 2;
-	dir = 8;
-	icon_state = "0-2"
-	},
 /obj/machinery/door/blast/regular/open{
 	density = 0;
 	dir = 4;
@@ -14750,20 +14697,22 @@
 /turf/simulated/floor/tiled,
 /area/storage/primary)
 "lbm" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/machinery/door/firedoor,
-/obj/random/obstruction,
+/obj/structure/catwalk,
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/plating,
-/area/vacant/infirmary)
+/area/maintenance/thirddeck/aft)
 "lbF" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -15919,6 +15868,21 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/green,
 /turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d3port)
+"mcl" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor,
+/obj/random/obstruction,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/vacant/infirmary)
 "mdk" = (
 /obj/machinery/atmospherics/valve/shutoff,
 /obj/effect/floor_decal/borderfloor/corner{
@@ -18118,9 +18082,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/forestarboard)
 "obD" = (
-/turf/simulated/wall/r_wall/hull{
-	can_open = 1
-	},
+/turf/space,
 /area/vacant/cargo)
 "obQ" = (
 /obj/machinery/conveyor{
@@ -19807,6 +19769,10 @@
 /obj/effect/floor_decal/corner/paleblue/bordercorner2{
 	dir = 4
 	},
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 24
+	},
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/medical)
 "plF" = (
@@ -20694,7 +20660,7 @@
 	id_tag = "sensor_shutters"
 	},
 /turf/simulated/floor/plating,
-/area/exploration_shuttle/seats_place)
+/area/exploration_shuttle/cockpit)
 "pVm" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -24523,11 +24489,6 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/structure/cable/cyan{
-	d2 = 4;
-	dir = 1;
-	icon_state = "0-4"
-	},
 /obj/effect/paint/dark_gunmetal,
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -25339,7 +25300,7 @@
 	dir = 8;
 	frequency = 1331;
 	id_tag = "calypso_shuttle";
-	pixel_x = 24;
+	pixel_x = 20;
 	req_access = list("ACCESS_EXPEDITION_SHUTTLE")
 	},
 /turf/simulated/floor/plating,
@@ -25412,11 +25373,6 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/structure/cable/cyan{
-	d2 = 4;
-	dir = 4;
-	icon_state = "0-4"
-	},
 /obj/effect/paint/dark_gunmetal,
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/cargo_l)
@@ -25495,9 +25451,8 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/hallway/primary/thirddeck/fore)
 "tQS" = (
-/obj/machinery/meter,
-/obj/machinery/space_heater,
 /obj/machinery/atmospherics/pipe/manifold/hidden/cyan,
+/obj/machinery/meter,
 /obj/effect/floor_decal/techfloor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
@@ -25704,11 +25659,6 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/structure/cable/cyan{
-	d2 = 4;
-	dir = 4;
-	icon_state = "0-4"
-	},
 /obj/effect/paint/dark_gunmetal,
 /obj/effect/paint/dark_gunmetal,
 /turf/simulated/floor/plating,
@@ -52461,7 +52411,7 @@ rDP
 eLi
 jKA
 nyH
-esd
+keX
 nCO
 nCO
 kHG
@@ -53463,7 +53413,7 @@ pCs
 oOP
 nuv
 aQL
-mrj
+enb
 mrj
 kiZ
 oTQ
@@ -54268,7 +54218,7 @@ bZw
 lsg
 uma
 fag
-rRq
+xHt
 nuv
 oTQ
 oTQ
@@ -55910,7 +55860,7 @@ ipv
 tLA
 tLA
 jyD
-enb
+lbm
 ljS
 tLA
 tLA
@@ -56112,7 +56062,7 @@ fag
 lDB
 lDB
 lDB
-lbm
+mcl
 jAj
 lDB
 lDB
