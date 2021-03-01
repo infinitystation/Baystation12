@@ -363,7 +363,6 @@
 /obj/machinery/camera/network/hangar{
 	dir = 8
 	},
-/obj/item/weapon/storage/toolbox/mechanical,
 /obj/structure/sign/warning/nosmoking_1{
 	dir = 8;
 	pixel_x = 32
@@ -1033,9 +1032,6 @@
 /area/shuttle/petrov/ship)
 "cg" = (
 /obj/structure/table/rack,
-/obj/item/device/radio,
-/obj/item/device/radio,
-/obj/item/device/radio,
 /obj/machinery/alarm{
 	pixel_y = 24
 	},
@@ -1052,6 +1048,8 @@
 /obj/effect/floor_decal/corner/b_green/border{
 	dir = 5
 	},
+/obj/item/device/flashlight/lamp/floodlamp/green,
+/obj/item/device/flashlight/lamp/floodlamp/green,
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/airlock)
 "ch" = (
@@ -1981,9 +1979,6 @@
 /obj/effect/floor_decal/corner/purple/bordercorner2{
 	dir = 1
 	},
-/obj/structure/handrai{
-	pixel_y = 5
-	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "dP" = (
@@ -2152,9 +2147,6 @@
 	},
 /obj/machinery/computer/ship/navigation/telescreen{
 	pixel_y = 26
-	},
-/obj/structure/handrai{
-	pixel_y = 5
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo)
@@ -3235,15 +3227,15 @@
 "fP" = (
 /obj/structure/cable/cyan,
 /obj/machinery/hologram/holopad/longrange,
-/obj/machinery/power/apc/charon{
-	name = "south bump";
-	pixel_y = -24
-	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/paleblue/border,
 /obj/structure/handrai{
 	dir = 1
+	},
+/obj/machinery/power/apc/charon{
+	name = "south bump";
+	pixel_y = -24
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
@@ -3910,8 +3902,6 @@
 /area/shuttle/petrov/ship)
 "gW" = (
 /obj/structure/table/rack,
-/obj/item/device/spaceflare,
-/obj/item/device/spaceflare,
 /obj/structure/cable/cyan{
 	d1 = 4;
 	d2 = 8;
@@ -4053,9 +4043,6 @@
 /area/shuttle/petrov/ship)
 "hi" = (
 /obj/structure/table/rack,
-/obj/item/weapon/storage/belt/utility/full,
-/obj/item/weapon/material/hatchet,
-/obj/item/weapon/storage/box/glowsticks,
 /obj/machinery/camera/network/exploration_shuttle{
 	c_tag = "Charon - Hallway";
 	dir = 8
@@ -5305,9 +5292,6 @@
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 8
 	},
-/obj/structure/handrai{
-	pixel_y = 5
-	},
 /turf/simulated/floor/plating,
 /area/shuttle/petrov/ship)
 "jg" = (
@@ -5317,9 +5301,6 @@
 /obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 4
-	},
-/obj/structure/handrai{
-	pixel_y = 5
 	},
 /turf/simulated/floor/plating,
 /area/shuttle/petrov/ship)
@@ -5987,8 +5968,6 @@
 /area/shuttle/petrov/ship)
 "kh" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/device/flashlight/lamp/floodlamp/green,
-/obj/item/device/flashlight/lamp/floodlamp/green,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
@@ -7191,9 +7170,6 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 1
 	},
-/obj/structure/handrai{
-	pixel_y = 5
-	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "lJ" = (
@@ -7599,9 +7575,6 @@
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
-	},
-/obj/structure/handrai{
-	pixel_y = 5
 	},
 /turf/simulated/floor/plating,
 /area/shuttle/petrov/ship)
@@ -8260,8 +8233,6 @@
 "nh" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/table/rack,
-/obj/item/weapon/gun/launcher/net,
-/obj/item/clothing/accessory/storage/bandolier/safari,
 /obj/structure/railing/mapped{
 	dir = 1
 	},
@@ -9236,13 +9207,16 @@
 /area/exploration_shuttle/medical)
 "oC" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/closet/crate,
-/obj/random/maintenance,
+/obj/machinery/mining/brace{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/hangar)
 "oD" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/ore_box,
+/obj/machinery/mining/brace{
+	dir = 8
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/hangar)
 "oE" = (
@@ -10374,6 +10348,9 @@
 	dir = 6
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/item/device/spaceflare,
+/obj/item/device/radio,
+/obj/item/weapon/storage/belt/utility/full,
 /turf/simulated/floor/tiled,
 /area/quartermaster/expedition)
 "qq" = (
@@ -12736,7 +12713,6 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/aft)
 "tR" = (
-/obj/structure/closet/crate/freezer/nanoblood/small,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -12752,6 +12728,9 @@
 /obj/effect/floor_decal/corner/paleblue/bordercorner2{
 	dir = 10
 	},
+/obj/item/weapon/reagent_containers/ivbag/blood/APlus,
+/obj/item/weapon/reagent_containers/ivbag/blood/BPlus,
+/obj/structure/closet/crate/freezer,
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/medical)
 "tS" = (
@@ -12850,7 +12829,7 @@
 	dir = 1
 	},
 /obj/machinery/vending/medical/sierra{
-	req_access = list("ACCESS_EXPEDITION_SHUTTLE_HELM")
+	req_access = list("ACCESS_EXPEDITION_SHUTTLE")
 	},
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/medical)
@@ -13630,7 +13609,6 @@
 /area/quartermaster/hangar)
 "vq" = (
 /obj/structure/table/reinforced,
-/obj/machinery/cell_charger,
 /obj/item/weapon/defibrillator/loaded,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/item/auto_cpr,
@@ -13727,9 +13705,7 @@
 	},
 /obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/warning/half,
-/obj/structure/handrai{
-	pixel_y = 5
-	},
+/obj/structure/handrai,
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/airlock)
 "vz" = (
@@ -14184,14 +14160,6 @@
 	},
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 8
-	},
-/obj/item/stack/nanopaste{
-	pixel_x = -6;
-	pixel_y = 2
-	},
-/obj/item/device/radio/off{
-	pixel_x = 6;
-	pixel_y = 2
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
@@ -15712,10 +15680,6 @@
 "yA" = (
 /obj/structure/bed/roller,
 /obj/structure/cable/cyan,
-/obj/machinery/power/apc/charon{
-	name = "south bump";
-	pixel_y = -24
-	},
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 10
 	},
@@ -15729,6 +15693,10 @@
 	dir = 8
 	},
 /obj/structure/iv_drip,
+/obj/machinery/power/apc/charon{
+	name = "south bump";
+	pixel_y = -24
+	},
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/medical)
 "yB" = (
@@ -15895,7 +15863,6 @@
 /obj/structure/table/steel,
 /obj/item/clothing/glasses/science,
 /obj/item/clothing/glasses/science,
-/obj/item/clothing/glasses/science,
 /obj/machinery/recharger,
 /obj/machinery/firealarm{
 	dir = 1;
@@ -15912,6 +15879,7 @@
 /obj/random/date_based/christmas/xmaslights{
 	dir = 4
 	},
+/obj/item/clothing/glasses/science,
 /turf/simulated/floor/tiled,
 /area/quartermaster/exploration)
 "yO" = (
@@ -17469,6 +17437,7 @@
 /area/quartermaster/storage)
 "BE" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/ore_box,
 /turf/simulated/floor/tiled,
 /area/quartermaster/hangar)
 "BF" = (
@@ -17689,9 +17658,6 @@
 /obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 1
-	},
-/obj/structure/handrai{
-	pixel_y = 5
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/guppy_hangar/start)
@@ -19683,13 +19649,13 @@
 	dir = 1
 	},
 /obj/structure/cable/cyan,
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/b_green/border,
+/obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/power/apc/charon{
 	name = "south bump";
 	pixel_y = -24
 	},
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/b_green/border,
-/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/airlock)
 "Fl" = (
@@ -20346,6 +20312,7 @@
 /obj/random/date_based/christmas/xmaslights{
 	dir = 4
 	},
+/obj/item/weapon/storage/belt/utility/full,
 /turf/simulated/floor/tiled,
 /area/quartermaster/exploration)
 "Gr" = (
@@ -20381,6 +20348,9 @@
 /obj/random/date_based/christmas/xmaslights{
 	dir = 4
 	},
+/obj/item/weapon/storage/box/glowsticks,
+/obj/item/device/spaceflare,
+/obj/item/device/spaceflare,
 /turf/simulated/floor/tiled,
 /area/quartermaster/exploration)
 "Gt" = (
@@ -20500,6 +20470,8 @@
 /obj/random/date_based/christmas/xmaslights{
 	dir = 4
 	},
+/obj/item/weapon/material/hatchet,
+/obj/item/weapon/material/hatchet,
 /turf/simulated/floor/tiled,
 /area/quartermaster/exploration)
 "GC" = (
@@ -20533,13 +20505,13 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/effect/floor_decal/corner/b_green/border,
+/obj/effect/floor_decal/borderfloor/corner2,
+/obj/effect/floor_decal/corner/b_green/bordercorner2,
 /obj/machinery/power/apc/charon{
 	name = "south bump";
 	pixel_y = -24
 	},
-/obj/effect/floor_decal/corner/b_green/border,
-/obj/effect/floor_decal/borderfloor/corner2,
-/obj/effect/floor_decal/corner/b_green/bordercorner2,
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo)
 "GF" = (
@@ -22370,12 +22342,10 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/storage)
 "Js" = (
-/obj/machinery/floodlight{
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/monotile,
-/area/exploration_shuttle/cargo)
+/obj/machinery/mining/drill,
+/turf/simulated/floor/tiled,
+/area/quartermaster/hangar)
 "Jt" = (
 /obj/effect/floor_decal/techfloor,
 /turf/simulated/floor/tiled/techfloor,
@@ -23152,7 +23122,6 @@
 /area/shuttle/petrov/ship)
 "KD" = (
 /obj/machinery/light,
-/obj/machinery/portable_atmospherics/canister/carbon_dioxide/engine_setup,
 /obj/machinery/atmospherics/portables_connector{
 	dir = 8
 	},
@@ -23184,6 +23153,9 @@
 /obj/effect/floor_decal/corner/brown/bordercorner2,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/random/date_based/christmas/xmaslights,
+/obj/item/device/spaceflare,
+/obj/item/device/radio,
+/obj/item/weapon/storage/belt/utility/full,
 /turf/simulated/floor/tiled,
 /area/quartermaster/expedition)
 "KG" = (
@@ -24315,6 +24287,7 @@
 /obj/effect/floor_decal/corner/purple/bordercorner2{
 	dir = 4
 	},
+/obj/structure/anomaly_container,
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology/storage)
 "MG" = (
@@ -24354,9 +24327,6 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/center)
 "MJ" = (
-/obj/structure/table/rack,
-/obj/item/clothing/accessory/storage/bandolier/safari,
-/obj/item/weapon/gun/launcher/net,
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
 	},
@@ -24364,6 +24334,11 @@
 	dir = 9
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/table/rack,
+/obj/item/clothing/accessory/storage/bandolier/safari,
+/obj/item/weapon/gun/launcher/net,
+/obj/item/clothing/accessory/storage/bandolier/safari,
+/obj/item/weapon/gun/launcher/net,
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology/storage)
 "MK" = (
@@ -26410,9 +26385,6 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/outline/red,
-/obj/structure/handrai{
-	pixel_y = 5
-	},
 /turf/simulated/floor/tiled,
 /area/guppy_hangar/start)
 "Ql" = (
@@ -28023,11 +27995,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/security/sierra/dockcheck)
-"SV" = (
-/obj/machinery/portable_atmospherics/powered/pump/filled,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/monotile,
-/area/exploration_shuttle/cargo)
 "SW" = (
 /obj/structure/closet/secure_closet/explorer/engineer,
 /obj/effect/floor_decal/borderfloor{
@@ -28039,11 +28006,6 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/quartermaster/exploration)
-"SX" = (
-/obj/machinery/space_heater,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/monotile,
-/area/exploration_shuttle/cargo)
 "SY" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
@@ -28305,9 +28267,7 @@
 /area/quartermaster/storage)
 "Tz" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/mining/brace{
-	dir = 4
-	},
+/obj/machinery/portable_atmospherics/powered/pump/filled,
 /turf/simulated/floor/tiled,
 /area/quartermaster/hangar)
 "TA" = (
@@ -28533,7 +28493,8 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
-/obj/structure/closet/crate/internals/fuel,
+/obj/structure/table/steel,
+/obj/item/weapon/wrench,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/shuttlefuel)
 "TY" = (
@@ -29684,7 +29645,7 @@
 /area/quartermaster/hangar)
 "XC" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/mining/drill,
+/obj/machinery/space_heater,
 /turf/simulated/floor/tiled,
 /area/quartermaster/hangar)
 "XD" = (
@@ -30162,9 +30123,6 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/item/device/radio,
-/obj/item/device/radio,
-/obj/item/device/spaceflare,
 /obj/machinery/cell_charger,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/effect/paint/dark_gunmetal,
@@ -30392,13 +30350,6 @@
 /obj/effect/floor_decal/industrial/danger,
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
-"ZG" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/mining/brace{
-	dir = 8
-	},
-/turf/simulated/floor/tiled,
-/area/quartermaster/hangar)
 "ZH" = (
 /obj/machinery/power/apc{
 	name = "south bump";
@@ -30491,16 +30442,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aft)
-"ZV" = (
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/anomaly_container,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/monotile,
-/area/exploration_shuttle/cargo)
 "ZW" = (
 /obj/effect/floor_decal/borderfloor/corner{
 	dir = 4
@@ -52223,8 +52164,8 @@ yV
 JU
 gU
 ed
-SV
-ZV
+IJ
+IV
 jx
 xC
 xC
@@ -52425,11 +52366,11 @@ zk
 HP
 gU
 Iw
-SX
+IJ
 IV
 Jj
-Js
-Js
+IJ
+IJ
 Jz
 nl
 Fu
@@ -53649,8 +53590,8 @@ ww
 VF
 Ql
 ZD
+Js
 GQ
-ZG
 GQ
 Fs
 ZX
@@ -54055,7 +53996,7 @@ Yr
 ZD
 oD
 BE
-oC
+GQ
 Fs
 AT
 Ji

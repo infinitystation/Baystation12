@@ -352,10 +352,12 @@ SIERRA_ESCAPE_POD(9)
 	for(var/area/A in shuttle_area)
 		for(var/obj/machinery/alarm/alarm in A)
 			if(alarm.req_access)
-				alarm.req_access = list(list(access_engine_equip, access_expedition_shuttle, access_atmospherics), access_engine)	//(Engine equip OR Charon OR Atmos) + Engineering
+			// alarm.req_access = list(list(access_engine_equip, access_expedition_shuttle, access_atmospherics), access_engine)	//(Engine equip OR Charon OR Atmos) + Engineering
+				alarm.req_access = list(list(access_expedition_shuttle, access_atmospherics, access_engine))	//(Charon OR Atmos OR Engineering)
 		for(var/obj/machinery/power/apc/apc in A)
 			if(apc.req_access)
-				apc.req_access = list(list(access_engine_equip, access_expedition_shuttle), access_engine)	//(Engine equip OR Charon) + Engineering
+				// apc.req_access = list(list(access_engine_equip, access_expedition_shuttle), access_engine)	//(Engine equip OR Charon) + Engineering
+				apc.req_access = list(list(access_expedition_shuttle, access_engine))	//(Charon OR Engineering)
 
 /obj/effect/shuttle_landmark/sierra/hangar/exploration_shuttle
 	name = "Charon Hangar"
