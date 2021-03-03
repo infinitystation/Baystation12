@@ -39,9 +39,13 @@
 //	var/last_perp = 0
 //	var/last_contraband = 0
 
+/obj/machinery/security_scanner/unwrenched
+	anchored = 0
+
 /obj/machinery/security_scanner/Initialize(mapload)
 	if(mapload)
-		on = TRUE
+		if(anchored)
+			on = TRUE
 		bypass_filter = TRUE
 		check_items = TRUE
 		check_records = TRUE
@@ -156,13 +160,14 @@
 
 /obj/machinery/security_scanner/Crossed(atom/movable/A)
 	if(anchored && on && !stat)
-		if(isbot(A))		// Ignore that small shit
+		if(isbot(A) || isanimal(A))		// Ignore that small shit
 			trigger(FALSE)
 			return ..()
 		else if(isliving(A))
 			do_scan(A)
-		else if(istype(A, /mob/observer/ghost))
-			//Ghost triggers feature here
+		else if(isobserver(A))
+			if(emagged)
+				trigger(TRUE)
 		else if(check_items && isobj(A))
 			var/list/items = do_scan_item(A)
 			if(items && items.len)
