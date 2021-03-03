@@ -796,6 +796,7 @@
 /obj/machinery/disperser/front{
 	dir = 8
 	},
+/obj/machinery/shield_diffuser,
 /turf/simulated/floor/reinforced/airless,
 /area/command/bsa)
 "bN" = (
@@ -878,7 +879,6 @@
 	req_access = newlist()
 	},
 /obj/structure/disposalpipe/segment,
-/obj/machinery/security_scanner,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/random/date_based/christmas/doorwreath{
 	dir = 1
@@ -2987,7 +2987,6 @@
 	dir = 4;
 	pixel_x = -32
 	},
-/obj/machinery/security_scanner,
 /turf/simulated/floor/plating,
 /area/quartermaster/office)
 "fz" = (
@@ -5754,13 +5753,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/thirddeck/aft)
-"jT" = (
-/obj/effect/floor_decal/industrial/warning/fulltile,
-/obj/machinery/atmospherics/pipe/vent{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/quartermaster/office)
 "jU" = (
 /obj/structure/table/rack,
 /obj/item/weapon/storage/box/lights/mixed,
@@ -6084,7 +6076,6 @@
 	autoset_access = 0;
 	name = "Comissary"
 	},
-/obj/machinery/security_scanner,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/random/date_based/christmas/doorwreath{
 	dir = 1
@@ -7778,6 +7769,9 @@
 	dir = 4;
 	id_tag = "lockdown3_1"
 	},
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/aft)
 "mB" = (
@@ -8215,7 +8209,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden,
-/obj/machinery/security_scanner,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/random/date_based/christmas/doorwreath{
 	dir = 1
@@ -8236,7 +8229,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/security_scanner,
 /obj/effect/floor_decal/techfloor{
 	dir = 8
 	},
@@ -9468,9 +9460,6 @@
 	frequency = 1380;
 	id_tag = "nuke_shuttle_dock_airlock_inner";
 	name = "Docking Port Airlock"
-	},
-/obj/machinery/security_scanner{
-	dir = 4
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 1
@@ -15093,10 +15082,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/binary/pump/on{
-	dir = 4;
-	name = "Excess Pressure to Scrubber"
-	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "xE" = (
@@ -18081,10 +18066,6 @@
 /obj/structure/railing/mapped,
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/industrial/danger,
-/obj/machinery/atmospherics/binary/passive_gate/on{
-	dir = 1;
-	regulate_mode = 1
-	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "CH" = (
@@ -18106,7 +18087,6 @@
 /area/quartermaster/office)
 "CI" = (
 /obj/effect/floor_decal/industrial/warning/fulltile,
-/obj/machinery/atmospherics/pipe/simple/hidden/red,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/quartermaster/office)
 "CJ" = (
@@ -20412,7 +20392,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden,
-/obj/machinery/security_scanner,
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
 	},
@@ -22998,7 +22977,9 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "Kp" = (
@@ -23380,9 +23361,6 @@
 	icon_state = "4-8"
 	},
 /obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/simple/hidden/red{
-	dir = 6
-	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "Lc" = (
@@ -24400,9 +24378,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/red{
-	dir = 10
-	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "MP" = (
@@ -25367,7 +25342,6 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/universal,
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/office)
 "Oz" = (
@@ -26187,10 +26161,6 @@
 /obj/effect/paint/nt_white,
 /turf/simulated/floor/plating,
 /area/shuttle/petrov/ship)
-"PQ" = (
-/obj/machinery/shield_diffuser,
-/turf/simulated/floor/reinforced/airless,
-/area/space)
 "PR" = (
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/thirddeck/aft)
@@ -29005,9 +28975,6 @@
 	dir = 4;
 	id_tag = "lockdown3_2"
 	},
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/center)
 "VQ" = (
@@ -29764,9 +29731,6 @@
 /obj/machinery/door/blast/regular/lockdown{
 	dir = 4;
 	id_tag = "lockdown3_2"
-	},
-/obj/machinery/security_scanner{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/center)
@@ -48180,7 +48144,7 @@ Hc
 Lb
 CG
 CI
-jT
+CI
 Dw
 Dn
 hS
@@ -51378,8 +51342,8 @@ Is
 Is
 Is
 Is
-PQ
-co
+Is
+Is
 co
 OS
 PL
@@ -51582,7 +51546,7 @@ Is
 co
 bM
 co
-OS
+co
 OS
 qO
 OS

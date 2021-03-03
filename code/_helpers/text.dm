@@ -38,6 +38,8 @@
 [/BAY]*/
 // [INF]
 		while(length(input) >= max_length)	// inf
+			if(!usr)
+				break
 			if(!input)
 				return
 			var/overflow = ((length(input)+1) - max_length)
