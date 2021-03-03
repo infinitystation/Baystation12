@@ -723,10 +723,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 5
 	},
-/obj/machinery/camera/network/engineering{
-	c_tag = "Solar Control - Starboard";
-	dir = 1
-	},
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -742,6 +738,10 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/camera/network/engineering{
+	c_tag = "Solar Control - Starboard";
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/solar/starboard)
@@ -1936,9 +1936,6 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/techfloor,
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/aftstarboard)
 "adU" = (
@@ -4549,11 +4546,11 @@
 	req_access = list("ACCESS_VAULT")
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/security_scanner,
 /obj/machinery/door/blast/regular/open{
 	id_tag = "security_lockdown";
 	name = "Security Department Lockdown"
 	},
+/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/security/nuke_storage)
 "aiB" = (
@@ -4852,7 +4849,6 @@
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/sleeper)
 "ajf" = (
@@ -5989,7 +5985,6 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/staging)
 "akD" = (
@@ -6042,7 +6037,6 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/staging)
 "akH" = (
@@ -6146,9 +6140,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -6206,6 +6197,7 @@
 	id_tag = "security_lockdown";
 	name = "Security Department Lockdown"
 	},
+/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/sierra/evidence)
 "akU" = (
@@ -14557,9 +14549,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "security_lockdown";
@@ -14576,6 +14565,9 @@
 	dir = 8
 	},
 /obj/random/date_based/christmas/doorwreath{
+	dir = 4
+	},
+/obj/machinery/security_scanner{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -14963,9 +14955,6 @@
 	dir = 10
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
@@ -15041,6 +15030,9 @@
 /obj/effect/floor_decal/steeldecal/steel_decals6,
 /obj/random/date_based/christmas/xmaslights{
 	dir = 1
+	},
+/obj/machinery/security_scanner{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/sierra/hallway/aft)
@@ -15199,9 +15191,6 @@
 /obj/machinery/door/blast/regular/lockdown{
 	dir = 4;
 	id_tag = "lockdown1_2"
-	},
-/obj/machinery/security_scanner{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/center)
@@ -15984,9 +15973,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "security_lockdown";
@@ -15999,6 +15985,9 @@
 	dir = 8
 	},
 /obj/random/date_based/christmas/doorwreath{
+	dir = 4
+	},
+/obj/machinery/security_scanner{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -16332,9 +16321,6 @@
 	req_access = newlist()
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/red/border,
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -16408,6 +16394,9 @@
 	dir = 4
 	},
 /obj/random/date_based/christmas/xmaslights,
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/sierra/hallway/aft)
 "aCP" = (
@@ -17904,9 +17893,6 @@
 	dir = 4;
 	id_tag = "lockdown1_2"
 	},
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/center)
 "aEE" = (
@@ -19316,7 +19302,6 @@
 	opacity = 0
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/assembly/robotics)
 "aGH" = (
@@ -19464,6 +19449,7 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/entry)
 "aGV" = (
@@ -19475,6 +19461,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/entry)
 "aGW" = (
@@ -19559,7 +19546,6 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 8
 	},
-/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white,
 /area/assembly/robotics)
 "aHb" = (
@@ -21961,9 +21947,6 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/white,
 /area/assembly/robotics)
 "aKt" = (
@@ -22882,9 +22865,6 @@
 /obj/effect/floor_decal/techfloor,
 /obj/effect/floor_decal/techfloor{
 	dir = 1
-	},
-/obj/machinery/security_scanner{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/development)
@@ -23854,7 +23834,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/research)
 "aMW" = (
@@ -24073,7 +24052,6 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/research)
 "aNg" = (
@@ -24129,7 +24107,10 @@
 "aNl" = (
 /obj/structure/closet,
 /obj/random/maintenance,
-/obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/machinery/atmospherics/binary/pump/on{
+	dir = 1;
+	target_pressure = 200
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
 "aNm" = (
@@ -26592,6 +26573,7 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 1
 	},
+/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/sierra/hosbed)
 "aQF" = (
@@ -27068,9 +27050,6 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/locker)
 "aRs" = (
@@ -27853,6 +27832,9 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/random/date_based/christmas/doorwreath{
 	dir = 8
+	},
+/obj/machinery/security_scanner{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/brig)
@@ -31248,9 +31230,6 @@
 	dir = 4;
 	id_tag = "lockdown1_1"
 	},
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/center)
 "aXa" = (
@@ -33551,7 +33530,6 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white,
 /area/rnd/misc_lab)
 "baW" = (
@@ -35255,7 +35233,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/floor_decal/industrial/hatch/grey,
-/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/research)
 "bdX" = (
@@ -35280,7 +35257,6 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 8
 	},
-/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/xenobiology/xenoflora)
 "bdZ" = (
@@ -35863,9 +35839,6 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/techfloor,
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/aftport)
 "beZ" = (
@@ -36759,9 +36732,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/camera/network/engineering{
-	c_tag = "Solar Control - Port"
-	},
 /turf/simulated/floor/plating,
 /area/maintenance/solar)
 "bgV" = (
@@ -36772,6 +36742,9 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/camera/network/engineering{
+	c_tag = "Solar Control - Port"
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/solar)
@@ -37721,6 +37694,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
+/obj/machinery/porta_turret,
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "bkm" = (
@@ -38163,6 +38137,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "cKN" = (
@@ -38395,6 +38372,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
+/obj/machinery/porta_turret,
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "ehv" = (
@@ -38631,6 +38609,7 @@
 	id_tag = "security_lockdown";
 	name = "Security Department Lockdown"
 	},
+/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/range)
 "fwZ" = (
@@ -38843,6 +38822,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
+/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/turret_protected/ai_upload)
 "fYt" = (
@@ -39407,11 +39387,17 @@
 /area/turret_protected/ai)
 "izy" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/deployable/barrier,
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 24
 	},
+/obj/machinery/security_scanner/unwrenched,
+/obj/machinery/security_scanner/unwrenched,
+/obj/machinery/security_scanner/unwrenched,
+/obj/machinery/security_scanner/unwrenched,
+/obj/machinery/security_scanner/unwrenched,
+/obj/machinery/security_scanner/unwrenched,
+/obj/machinery/security_scanner/unwrenched,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/firstdeck/forestarboard)
 "iEb" = (
@@ -39651,10 +39637,6 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white,
 /area/assembly/robotics)
-"jVD" = (
-/obj/machinery/porta_turret,
-/turf/simulated/wall/r_wall/prepainted,
-/area/turret_protected/ai)
 "kkg" = (
 /obj/effect/floor_decal/corner/paleblue/mono,
 /obj/structure/cable/cyan{
@@ -39706,6 +39688,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "ksn" = (
@@ -39728,6 +39713,7 @@
 	dir = 4;
 	pixel_x = -24
 	},
+/obj/machinery/porta_turret,
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "kwU" = (
@@ -39904,6 +39890,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/porta_turret,
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "lhO" = (
@@ -40073,6 +40060,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/machinery/porta_turret,
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "lBT" = (
@@ -40254,7 +40242,13 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 9
 	},
-/obj/machinery/security_scanner,
+/obj/machinery/security_scanner/unwrenched,
+/obj/machinery/security_scanner/unwrenched,
+/obj/machinery/security_scanner/unwrenched,
+/obj/machinery/security_scanner/unwrenched,
+/obj/machinery/security_scanner/unwrenched,
+/obj/machinery/security_scanner/unwrenched,
+/obj/machinery/security_scanner/unwrenched,
 /turf/simulated/floor/tiled/techfloor,
 /area/security/sierra/armory)
 "mew" = (
@@ -41707,7 +41701,6 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/porta_turret,
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "tha" = (
@@ -42291,10 +42284,6 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
-"vLE" = (
-/obj/machinery/porta_turret,
-/turf/simulated/wall/r_wall/hull,
-/area/turret_protected/ai)
 "vNh" = (
 /obj/structure/catwalk,
 /obj/structure/cable/green{
@@ -42682,6 +42671,7 @@
 	dir = 4;
 	pixel_x = -24
 	},
+/obj/machinery/porta_turret,
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "ybT" = (
@@ -47072,15 +47062,15 @@ aps
 aps
 aiw
 avc
-vLE
 avc
-vLE
 avc
-vLE
 avc
-vLE
 avc
-vLE
+avc
+avc
+avc
+avc
+avc
 avc
 aLX
 aLX
@@ -48081,7 +48071,7 @@ apx
 arb
 are
 akJ
-jVD
+aKz
 aKy
 bkn
 aKy
@@ -48091,7 +48081,7 @@ aKy
 aKy
 ixK
 aKy
-jVD
+aKz
 aLY
 aNo
 aOI
@@ -49091,7 +49081,7 @@ apB
 arf
 aso
 akJ
-jVD
+aKz
 aKy
 aKy
 aKy
@@ -49101,7 +49091,7 @@ krA
 aKy
 aKy
 aKy
-jVD
+aKz
 aLY
 aML
 aON
