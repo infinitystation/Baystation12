@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # This is the entrypoint to the testing system, written for Baystation12 and
 # inspired by Rust's configure system
 #
@@ -64,19 +63,17 @@
 #
 # Good luck!
 # - xales
-
 # Global counter of failed tests
 FAILED=0
 # List of names of failed tests
 FAILED_BYNAME=()
 # Global counter of passed tests
 PASSED=0
-
 # Version of Node to install for tgui
 NODE_VERSION=4
-
+PATH=$PATH:/c/Games/BYOND/bin
 function msg {
-    echo -e "\t\e[34mtest\e[0m: $*"
+echo -e "\t\e[34mtest\e[0m: $*"
 }
 
 function msg_bad {
@@ -177,6 +174,7 @@ function find_byond_deps {
     [[ "$CI" != "true" ]] && need_cmd DreamDaemon
 }
 
+
 function find_code {
     if [[ -z ${CODEPATH+x} ]]; then
         if [[ -d ./code ]]
@@ -232,7 +230,7 @@ function run_byond_tests {
     run_test "check globals unchanged" "md5sum -c - <<< '61cc7f34d345283ae9b0a7a018341353 *code/_helpers/global_access.dm'"
     run_test "build map unit tests" "scripts/dm.sh -DUNIT_TEST -M$MAP_PATH baystation12.dme"
     run_test "check no warnings in build" "grep ', 0 warnings' build_log.txt"
-    run_test "run unit tests" "DreamDaemon baystation12.dmb -invisible -trusted -core 2>&1 | tee log.txt"
+    run_test "run unit tests" "DreamDaemon baystation12.dmb -invisible -trusted 2>&1 | tee log.txt"
     run_test "check tests passed" "grep 'All Unit Tests Passed' log.txt"
     run_test "check no runtimes" "grep 'Caught 0 Runtimes' log.txt"
     run_test_fail "check no runtimes 2" "grep 'runtime error:' log.txt"
@@ -269,5 +267,9 @@ function run_configured_tests {
 }
 
 find_code
+
+TEST=MAP
+MAP_PATH=sierra
+#sierra-1.dmm
 run_configured_tests
 check_fail

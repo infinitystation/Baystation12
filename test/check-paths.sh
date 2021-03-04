@@ -3,7 +3,7 @@ set -eo pipefail
 
 FAILED=0
 shopt -s globstar
-
+PATH=$PATH:/c/Games/BYOND/CODE_Infinity/Baystation12
 exactly() { # exactly N name search [mode] [filter]
 	count="$1"
 	name="$2"

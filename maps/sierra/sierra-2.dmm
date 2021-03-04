@@ -6088,9 +6088,6 @@
 /obj/structure/table/wallf/steel{
 	dir = 4
 	},
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /turf/simulated/floor/plating,
 /area/engineering/engineering_monitoring)
 "alJ" = (
@@ -6128,12 +6125,12 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 8
 	},
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /obj/machinery/door/blast/regular/lockdown{
 	dir = 4;
 	id_tag = "lockdown2_7"
-	},
-/obj/machinery/security_scanner{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/bridge/lobby)
@@ -10020,6 +10017,9 @@
 	dir = 4;
 	id_tag = "lockdown2_2"
 	},
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/seconddeck/center)
 "atf" = (
@@ -10865,6 +10865,9 @@
 	dir = 4;
 	id_tag = "lockdown2_3"
 	},
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/seconddeck/center)
 "aut" = (
@@ -11644,6 +11647,9 @@
 	dir = 4;
 	id_tag = "lockdown2_3"
 	},
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/seconddeck/center)
 "avD" = (
@@ -12342,9 +12348,6 @@
 	},
 /obj/random/date_based/christmas/doorwreath{
 	dir = 8
-	},
-/obj/machinery/security_scanner{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/engineering/engineering_monitoring)
@@ -13370,12 +13373,12 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 8
 	},
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /obj/machinery/door/blast/regular/lockdown{
 	dir = 4;
 	id_tag = "lockdown2_7"
-	},
-/obj/machinery/security_scanner{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/bridge/lobby)
@@ -14141,6 +14144,7 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 1
 	},
+/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
 "azJ" = (
@@ -22114,6 +22118,9 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/hatch/maintenance,
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/seconddeck/aftport)
 "aOb" = (
@@ -28614,6 +28621,13 @@
 /obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled/white,
 /area/vacant/gambling)
+"aZP" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/security_scanner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/maintenance/seconddeck/forestarboard)
 "aZQ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
@@ -28767,6 +28781,9 @@
 /obj/machinery/door/blast/regular/lockdown{
 	dir = 4;
 	id_tag = "lockdown2_3"
+	},
+/obj/machinery/security_scanner{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/seconddeck/center)
@@ -33620,6 +33637,17 @@
 /mob/living/simple_animal/aquatic/fish,
 /turf/simulated/floor/aquarium,
 /area/grove/theta)
+"bFU" = (
+/obj/machinery/door/firedoor,
+/obj/effect/floor_decal/techfloor,
+/obj/effect/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/machinery/security_scanner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/maintenance/seconddeck/foreport)
 "bIE" = (
 /obj/structure/ladder,
 /obj/structure/disposalpipe/down{
@@ -37290,6 +37318,9 @@
 	dir = 4;
 	id_tag = "bridge_ent";
 	name = "Bridge Lockdown"
+	},
+/obj/machinery/security_scanner{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
@@ -49884,7 +49915,7 @@ ahQ
 axv
 ahQ
 ahQ
-abE
+aZP
 adz
 adz
 agw
@@ -50724,7 +50755,7 @@ aFa
 aJm
 aKj
 aKj
-aPP
+bFU
 aEc
 aEc
 aEc
