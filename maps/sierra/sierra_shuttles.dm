@@ -336,7 +336,7 @@ SIERRA_ESCAPE_POD(9)
 /datum/shuttle/autodock/overmap/exploration_shuttle
 	name = "Charon"
 	move_time = 90
-	shuttle_area = list(/area/exploration_shuttle/seats_place, /area/exploration_shuttle/cockpit, /area/exploration_shuttle/atmos, /area/exploration_shuttle/medical, /area/exploration_shuttle/power, /area/exploration_shuttle/cargo_l, /area/exploration_shuttle/cargo_r, /area/exploration_shuttle/airlock)
+	shuttle_area = list(/area/exploration_shuttle/seats_place, /area/exploration_shuttle/cockpit, /area/exploration_shuttle/medical, /area/exploration_shuttle/power, /area/exploration_shuttle/cargo_l, /area/exploration_shuttle/cargo_r, /area/exploration_shuttle/airlock)
 	dock_target = "calypso_shuttle"
 	current_location = "nav_hangar_calypso"
 	landmark_transition = "nav_transit_calypso"

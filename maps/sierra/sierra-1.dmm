@@ -1297,7 +1297,7 @@
 	},
 /obj/effect/paint/dark_gunmetal,
 /turf/simulated/floor/plating,
-/area/exploration_shuttle/cockpit)
+/area/exploration_shuttle/seats_place)
 "aVK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
@@ -2648,7 +2648,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/white,
-/area/exploration_shuttle/cargo_r)
+/area/exploration_shuttle/medical)
 "bQj" = (
 /obj/machinery/computer/modular/preset/cardslot/command{
 	dir = 8
@@ -2690,6 +2690,10 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/effect/paint/dark_gunmetal,
 /obj/effect/paint/dark_gunmetal,
+/obj/structure/cable/cyan{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/medical)
 "bQM" = (
@@ -3707,9 +3711,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/universal{
-	dir = 4
-	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
 "cHk" = (
@@ -4140,11 +4141,11 @@
 	},
 /obj/structure/cable/cyan{
 	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/plating,
-/area/exploration_shuttle/cockpit)
+/area/exploration_shuttle/seats_place)
 "cVC" = (
 /turf/simulated/floor/tiled/white,
 /area/vacant/infirmary)
@@ -4747,10 +4748,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/binary/pump,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
 "don" = (
@@ -4891,11 +4889,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
 "drL" = (
-/obj/structure/table/steel_reinforced,
-/obj/machinery/cell_charger,
 /obj/effect/floor_decal/techfloor{
 	dir = 6
 	},
+/obj/structure/closet/radiation,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "drP" = (
@@ -5760,9 +5757,6 @@
 /obj/item/weapon/storage/belt/utility/full,
 /obj/item/weapon/material/hatchet,
 /obj/item/weapon/storage/box/glowsticks,
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4
-	},
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
 	dir = 4
@@ -9824,11 +9818,10 @@
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "gWe" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
-	},
-/obj/structure/closet/radiation,
 /obj/effect/floor_decal/techfloor,
+/obj/machinery/atmospherics/binary/pump{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "gWM" = (
@@ -10807,11 +10800,11 @@
 /obj/machinery/alarm{
 	pixel_y = 24
 	},
-/obj/machinery/atmospherics/portables_connector,
-/obj/machinery/portable_atmospherics/canister/carbon_dioxide/engine_setup,
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
+/obj/structure/closet/radiation,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "hVj" = (
@@ -10824,8 +10817,10 @@
 /area/shuttle/petrov/ship)
 "hVF" = (
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 8
+	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
 "hVJ" = (
@@ -11280,6 +11275,9 @@
 /obj/machinery/recharge_station,
 /obj/effect/floor_decal/techfloor{
 	dir = 1
+	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
@@ -14521,7 +14519,6 @@
 /turf/simulated/floor/plating,
 /area/vacant/infirmary)
 "kPB" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
 	},
@@ -15876,11 +15873,6 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/random/obstruction,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/plating,
 /area/vacant/infirmary)
 "mdk" = (
@@ -15926,10 +15918,10 @@
 /obj/random/powercell,
 /obj/random/toolbox,
 /obj/item/weapon/tape_roll,
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1
-	},
 /obj/effect/floor_decal/techfloor,
+/obj/machinery/atmospherics/pipe/simple/visible/fuel{
+	dir = 10
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "meW" = (
@@ -18872,7 +18864,9 @@
 "ozV" = (
 /obj/effect/paint/red,
 /obj/effect/paint_stripe/white,
-/obj/machinery/atmospherics/pipe/manifold/visible/fuel,
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
+	dir = 4
+	},
 /turf/simulated/wall/r_titanium,
 /area/exploration_shuttle/airlock)
 "oAe" = (
@@ -19884,9 +19878,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/deckofficer)
 "poF" = (
-/obj/structure/closet/radiation,
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel,
 /obj/effect/floor_decal/techfloor,
+/obj/machinery/atmospherics/portables_connector{
+	dir = 4
+	},
+/obj/machinery/portable_atmospherics/canister/carbon_dioxide/engine_setup,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "poI" = (
@@ -20179,18 +20176,10 @@
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/fore)
 "pCo" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/cyan{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 10
@@ -20205,6 +20194,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
 "pCs" = (
@@ -20332,11 +20323,11 @@
 /turf/simulated/wall/r_titanium,
 /area/shuttle/escape_pod/escape_pod4/station)
 "pGq" = (
-/obj/machinery/atmospherics/pipe/simple/visible/fuel{
-	dir = 10
-	},
 /obj/effect/paint/red,
 /obj/effect/paint_stripe/white,
+/obj/machinery/atmospherics/pipe/manifold/visible/fuel{
+	dir = 4
+	},
 /turf/simulated/wall/r_titanium,
 /area/exploration_shuttle/airlock)
 "pHh" = (
@@ -20660,7 +20651,7 @@
 	id_tag = "sensor_shutters"
 	},
 /turf/simulated/floor/plating,
-/area/exploration_shuttle/cockpit)
+/area/exploration_shuttle/seats_place)
 "pVm" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -22342,11 +22333,11 @@
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/port)
 "rrc" = (
-/obj/machinery/atmospherics/unary/tank/air{
-	dir = 1
-	},
 /obj/effect/floor_decal/techfloor{
 	dir = 10
+	},
+/obj/machinery/atmospherics/unary/tank/air{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
@@ -24077,11 +24068,6 @@
 	icon_state = "4-8"
 	},
 /obj/effect/catwalk_plated/white,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/plating,
 /area/vacant/infirmary)
 "sFP" = (
@@ -24448,9 +24434,6 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
 	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
@@ -27232,6 +27215,9 @@
 	dir = 4;
 	pixel_x = -24
 	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/airlock)
 "vpQ" = (
@@ -27614,11 +27600,6 @@
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
-	},
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
@@ -28989,10 +28970,12 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
 "wRl" = (

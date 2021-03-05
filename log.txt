@@ -1,0 +1,482 @@
+Logging in...connected
+Logged in as Zhuzhila.
+Fri Mar 05 02:04:48 2021
+World opened on network port 5221.
+Welcome BYOND! (5.0 Public Version 513.1542)
+376 global variables
+376 global init procs
+Running revision:
+Zhuzhila_mapping
+2021-03-04
+c476c9f998f88817d7051f41ce46cf2bafb12868
+
+Your server failed to establish a connection with the feedback database.
+## UNIT_TEST ##: Unit Tests Enabled. This will destroy the world when testing is complete.
+Initializing subsystems...
+Unable to locate HTTP POST lib at lib/byhttp.dll, webhooks will not function on this run.
+Initialized Webhooks subsystem within 0 seconds!
+Initialized Chemistry subsystem within 0 seconds!
+Initialized Materials subsystem within 0 seconds!
+Initialized Plants subsystem within 0.1 seconds!
+Initialized Antags subsystem within 0 seconds!
+Initialized Culture subsystem within 0 seconds!
+Initialized Early Initialization subsystem within 0 seconds!
+Initialized Robots subsystem within 0 seconds!
+Initialized Space skybox subsystem within 0 seconds!
+
+Webclient users can visit this address to play:
+http://www.byond.com/play/77.47.170.221:5221 
+
+Fri Mar 05 02:05:50 2021
+
+Or this code can be embedded:
+<iframe src="http://www.byond.com/play/embed/77.47.170.221:5221" width=640 height=480></iframe>
+
+Unit testing, so not loading away sites
+Initialized Mapping subsystem within 6 seconds!
+Initialized Jobs subsystem within 0.2 seconds!
+Initialized Character Setup subsystem within 0 seconds!
+Initialized Circuit subsystem within 0 seconds!
+## TESTING: Building overmap...
+## TESTING: Putting overmap on 9
+## TESTING: Overmap build complete.
+## TESTING: Located sector "Guppy" at 22,11, containing Z 8
+## TESTING: Located sector "Charon" at 2,10, containing Z 10
+
+BYOND hub reports port 5221 cannot be reached by players.
+
+A firewall or router may be interfering with your connection. For information on hosting worlds through a firewall or router, please visit BYOND Help or portforward.com.
+
+## TESTING: Located sector "NSV Sierra" at 27,31, containing Z 2, 1, and 3
+Initialized 330125 atoms
+Late initialized 2754 atoms
+Initialized Atoms subsystem within 121.3 seconds!
+Initializing atmos machinery
+Initializing pipe networks
+Initialized Machines subsystem within 3.3 seconds!
+Initialized Icon Updates subsystem within 1.1 seconds!
+Initialized Psychics subsystem within 0 seconds!
+Initialized Evacuation subsystem within 0 seconds!
+Initialized Event Manager subsystem within 8.7 seconds!
+Initialized Graphs (Update) subsystem within 0 seconds!
+Initialized Supply subsystem within 0.8 seconds!
+Initialized Trade subsystem within 0 seconds!
+Initialized Voting subsystem within 0 seconds!
+Processing Geometry...
+Total Simulated Turfs: 19711
+Total Zones: 519
+Total Edges: 103
+Total Active Edges: 1
+Total Unsimulated Turfs: 380289
+
+Geometry processing completed in 4.5 seconds!
+Settling air...
+Air settling completed in 0.6 seconds!
+Initialized Air subsystem within 5.1 seconds!
+## TESTING: Located sector "Sealis-Phi, a chlorine exoplanet" at 15,17, containing Z 11
+Ruin "Fountain of Youth" placed at (34, 47, 11)
+Initialized 21 atoms
+Initializing atmos machinery
+Initializing pipe networks
+Ruin "tar anomaly" placed at (95, 27, 11)
+Initialized 97 atoms
+Initializing atmos machinery
+Initializing pipe networks
+Ruin "Monolith Ring" placed at (72, 27, 11)
+Initialized 62 atoms
+Initializing atmos machinery
+Initializing pipe networks
+Initialized Late Initialization subsystem within 32.8 seconds!
+Initialized Cuisine subsystem within 0 seconds!
+Loaded 197 custom items from 1 directory.
+Initialized Custom Items subsystem within 0.3 seconds!
+Initialized Fabrication subsystem within 0.2 seconds!
+Initialized Persistence subsystem within 0.1 seconds!
+Initialized Codex subsystem within 1 second!
+Initialized Alarm subsystem within 0 seconds!
+Initialized Goals subsystem within 0 seconds!
+Initialized Shuttle subsystem within 0.3 seconds!
+Initialized Lighting subsystem within 23.5 seconds!
+Initialized Z-Copy subsystem within 0.1 seconds!
+Initialized Sticky Ban subsystem within 0 seconds!
+Initialized Xenoarch subsystem within 0.2 seconds!
+Initialized Ticker subsystem within 0 seconds!
+## UNIT_TEST ##: Initializing Unit Testing
+## UNIT_TEST ##: Loading template 'random datapod contents #1 (chem vials)' (/datum/map_template/ejected_datapod_contents) at space (/turf/space) ([0x107047b]) (100,100,12) (/area/space)
+Initialized 14 atoms
+Initializing atmos machinery
+Initializing pipe networks
+## UNIT_TEST ##: Loading template 'random datapod contents #2 (spiders)' (/datum/map_template/ejected_datapod_contents/type3) at space (/turf/space) ([0x107a0bb]) (100,100,13) (/area/space)
+Initialized 15 atoms
+Initializing atmos machinery
+Initializing pipe networks
+## UNIT_TEST ##: Loading template 'random datapod contents #2 (servers)' (/datum/map_template/ejected_datapod_contents/type2) at space (/turf/space) ([0x1083cfb]) (100,100,14) (/area/space)
+Initialized 18 atoms
+Initializing atmos machinery
+Initializing pipe networks
+## UNIT_TEST ##: Loading template 'Multi-ZAS Test' (/datum/map_template/ruin/space/multi_zas_test) at Z-level 15 with a tallness of 3
+Initialized 57 atoms
+Initializing atmos machinery
+Initializing pipe networks
+## UNIT_TEST ##: Loading template 'tar anomaly' (/datum/map_template/ruin/exoplanet/tar_anomaly) at space (/turf/space) ([0x10aadfb]) (100,100,18) (/area/space)
+Initialized 182 atoms
+Initializing atmos machinery
+Initializing pipe networks
+## UNIT_TEST ##: Loading template 'spider nest' (/datum/map_template/ruin/exoplanet/spider_nest) at space (/turf/space) ([0x10b4a3b]) (100,100,19) (/area/space)
+Initialized 266 atoms
+Late initialized 3 atoms
+Initializing atmos machinery
+Initializing pipe networks
+## UNIT_TEST ##: Loading template 'radshrine' (/datum/map_template/ruin/exoplanet/radshrine) at space (/turf/space) ([0x10be67b]) (100,100,20) (/area/space)
+Initialized 116 atoms
+Initializing atmos machinery
+Initializing pipe networks
+## UNIT_TEST ##: Loading template 'old pod' (/datum/map_template/ruin/exoplanet/oldpod) at space (/turf/space) ([0x10c82bb]) (100,100,21) (/area/space)
+Initialized 442 atoms
+Late initialized 7 atoms
+Initializing atmos machinery
+Initializing pipe networks
+## UNIT_TEST ##: Loading template 'Old Lab' (/datum/map_template/ruin/exoplanet/oldlab) at space (/turf/space) ([0x10d1efb]) (100,100,22) (/area/space)
+Initialized 3990 atoms
+Late initialized 68 atoms
+Initializing atmos machinery
+Initializing pipe networks
+## UNIT_TEST ##: Loading template 'oasis 1' (/datum/map_template/ruin/exoplanet/oasis) at space (/turf/space) ([0x10dbb3b]) (100,100,23) (/area/space)
+Initialized 90 atoms
+Initializing atmos machinery
+Initializing pipe networks
+## UNIT_TEST ##: Loading template 'oasis 3' (/datum/map_template/ruin/exoplanet/oasis/oasis3) at space (/turf/space) ([0x10e577b]) (100,100,24) (/area/space)
+Initialized 10 atoms
+Initializing atmos machinery
+Initializing pipe networks
+## UNIT_TEST ##: Loading template 'oasis 2' (/datum/map_template/ruin/exoplanet/oasis/oasis2) at space (/turf/space) ([0x10ef3bb]) (100,100,25) (/area/space)
+Initialized 152 atoms
+Initializing atmos machinery
+Initializing pipe networks
+## UNIT_TEST ##: Loading template 'Monolith Ring' (/datum/map_template/ruin/exoplanet/monolith) at space (/turf/space) ([0x10f8ffb]) (100,100,26) (/area/space)
+Initialized 67 atoms
+Initializing atmos machinery
+Initializing pipe networks
+## UNIT_TEST ##: Loading template 'Marooned' (/datum/map_template/ruin/exoplanet/marooned) at space (/turf/space) ([0x1102c3b]) (100,100,27) (/area/space)
+Initialized 537 atoms
+Late initialized 45 atoms
+Initializing atmos machinery
+Initializing pipe networks
+## UNIT_TEST ##: Loading template 'lodge' (/datum/map_template/ruin/exoplanet/lodge) at space (/turf/space) ([0x110c87b]) (100,100,28) (/area/space)
+Initialized 342 atoms
+Late initialized 13 atoms
+Initializing atmos machinery
+Initializing pipe networks
+## UNIT_TEST ##: Loading template 'hydroponics base' (/datum/map_template/ruin/exoplanet/hydrobase) at space (/turf/space) ([0x11164bb]) (100,100,29) (/area/space)
+Initialized 3105 atoms
+Late initialized 173 atoms
+Initializing atmos machinery
+Initializing pipe networks
+## UNIT_TEST ##: Loading template 'hut' (/datum/map_template/ruin/exoplanet/hut) at space (/turf/space) ([0x11200fb]) (100,100,30) (/area/space)
+Initialized 137 atoms
+Late initialized 1 atom
+Initializing atmos machinery
+Initializing pipe networks
+## UNIT_TEST ##: Loading template 'Fountain of Youth' (/datum/map_template/ruin/exoplanet/fountain) at space (/turf/space) ([0x1129d3b]) (100,100,31) (/area/space)
+Initialized 41 atoms
+Initializing atmos machinery
+Initializing pipe networks
+## UNIT_TEST ##: Loading template 'drill site' (/datum/map_template/ruin/exoplanet/drill_site) at space (/turf/space) ([0x113397b]) (100,100,32) (/area/space)
+Initialized 63 atoms
+Initializing atmos machinery
+Initializing pipe networks
+## UNIT_TEST ##: Loading template 'deserted lab' (/datum/map_template/ruin/exoplanet/deserted_lab) at space (/turf/space) ([0x113d5bb]) (100,100,33) (/area/space)
+Initialized 355 atoms
+Late initialized 12 atoms
+Initializing atmos machinery
+Initializing pipe networks
+## UNIT_TEST ##: Loading template 'ejected data capsule' (/datum/map_template/ruin/exoplanet/datacapsule) at space (/turf/space) ([0x11471fb]) (100,100,34) (/area/space)
+Initialized 155 atoms
+Late initialized 37 atoms
+Initializing atmos machinery
+Initializing pipe networks
+Initialized 15 atoms
+Initializing atmos machinery
+Initializing pipe networks
+## UNIT_TEST ##: Loading template 'crashed survival pod' (/datum/map_template/ruin/exoplanet/crashed_pod) at space (/turf/space) ([0x1150e3b]) (100,100,35) (/area/space)
+## TESTING: Starting submap setup - 'FTUV Sanddragon', /decl/submap_archetype/crashed_pod, 35z.
+Initialized 884 atoms
+Late initialized 26 atoms
+Initializing atmos machinery
+Initializing pipe networks
+Skipping template 'Mining Station' (/datum/map_template/ruin/away_site/miningstation): Is an Away Site
+Skipping template 'Meatstation' (/datum/map_template/ruin/away_site/meatstation): Is an Away Site
+Skipping template 'Vox Scavenger Ship' (/datum/map_template/ruin/away_site/scavship): Is an Away Site
+Skipping template 'Vox Base' (/datum/map_template/ruin/away_site/voxship): Is an Away Site
+Skipping template 'Slavers' Base' (/datum/map_template/ruin/away_site/slavers): Is an Away Site
+Skipping template 'University Ship' (/datum/map_template/ruin/away_site/unishi): Is an Away Site
+Skipping template 'Skrellian Scout Ship' (/datum/map_template/ruin/away_site/skrellscoutship): Is an Away Site
+Skipping template 'Lar Maria' (/datum/map_template/ruin/away_site/lar_maria): Is an Away Site
+Skipping template 'Errant Pisces' (/datum/map_template/ruin/away_site/errant_pisces): Is an Away Site
+Skipping template 'Casino' (/datum/map_template/ruin/away_site/casino): Is an Away Site
+Skipping template 'Magshield' (/datum/map_template/ruin/away_site/magshield): Is an Away Site
+Skipping template 'Derelict Station' (/datum/map_template/ruin/away_site/derelict): Is an Away Site
+Skipping template 'Ascent seedship' (/datum/map_template/ruin/away_site/ascent_seedship): Is an Away Site
+Skipping template 'Liberia' (/datum/map_template/ruin/away_site/liberia): Is an Away Site
+Skipping template 'Bearcat Wreck' (/datum/map_template/ruin/away_site/bearcat_wreck): Is an Away Site
+Skipping template 'Sol Patrol Shuttle' (/datum/map_template/ruin/away_site/patrol): Is an Away Site
+Skipping template 'Smugglers' Base Infinity' (/datum/map_template/ruin/away_site/smugglers_inf): Is an Away Site
+Skipping template 'Bluespace River' (/datum/map_template/ruin/away_site/blueriver): Is an Away Site
+Skipping template 'Mining - Asteroid Base' (/datum/map_template/ruin/away_site/mining_asteroid): Is an Away Site
+Skipping template 'Yacht' (/datum/map_template/ruin/away_site/yacht): Is an Away Site
+## UNIT_TEST ##: Map Templates Loaded
+## UNIT_TEST ##: 210 unit tests loaded.
+Initialized Unit Tests subsystem within 96.3 seconds!
+Initializations complete within 301.6 seconds!
+Initializations complete within 301.6 seconds!
+MC: Runlevel changed from NULL to 1
+Master starting processing
+MC: Runlevel changed from 1 to 2
+## UNIT_TEST ##: Game start has been requested.
+MC: Runlevel changed from 2 to 3
+## UNIT_TEST ##: The game is now in progress.
+## UNIT_TEST ##: Testing Started.
+## UNIT_TEST ##: *** SUCCESS *** [ZAS: Xenobiology]: Checked 1 zones
+## UNIT_TEST ##: *** SUCCESS *** [ZAS: Supply Shuttle (CentComm)]: Checked 3 zones
+## UNIT_TEST ##: *** SUCCESS *** [ZAS: Cargo Bay]: Checked 1 zones
+## UNIT_TEST ##: *** SUCCESS *** [ZAS: AI Chamber]: Checked 6 zones
+## UNIT_TEST ##: *** SUCCESS *** [VIRTUAL - Helper Test - Check Hosts in View Range - With Mob Inside Object]: /proc/hosts_in_view_range returned the expected mobs.
+## UNIT_TEST ##: *** SUCCESS *** [VIRTUAL - Helper Test - Check Mobs In Viewing Range]: /proc/hosts_in_view_range returned the expected mobs.
+## UNIT_TEST ##: *** SUCCESS *** [VIRTUAL - Helper Test - Check All Viewers]: /proc/all_viewers returned the expected mobs.
+## UNIT_TEST ##: *** SUCCESS *** [VIRTUAL - Helper Test - Check All Hearers]: /proc/all_hearers returned the expected mobs.
+## UNIT_TEST ##: *** SUCCESS *** [VIRTUAL - Helper Test - Check Viewers In Range]: /proc/viewers_in_range returned the expected mobs.
+## UNIT_TEST ##: *** SUCCESS *** [VIRTUAL - Helper Test - Check Hearers In Range - With Mob Inside Storage]: /proc/hearers_in_range returned the expected mobs.
+## UNIT_TEST ##: *** SUCCESS *** [VIRTUAL - Helper Test - Check Hearers In Range]: /proc/hearers_in_range returned the expected mobs.
+## UNIT_TEST ##: *** SUCCESS *** [VIEW VARIABLES: No Special VV Handlers Shall Have Overlapping Handling]: No special VV handlers had overlapping handling.
+## UNIT_TEST ##: *** SUCCESS *** [VIEW VARIABLES: All Special VV Handlers Shall Be Valid]: All special VV handlers are valid.
+## UNIT_TEST ##: *** SUCCESS *** [UPLINK: All uplink items shall be valid.]: All uplink items were valid.
+## UNIT_TEST ##: *** SUCCESS *** [UNIQUENESS: Space Suit Modifiers Shall Have Unique Names]: All space suit modifiers have unique names.
+## UNIT_TEST ##: *** SUCCESS *** [UNIQUENESS: Outfit Backpacks Shall Have Unique Names]: All outfit backpacks have unique names.
+## UNIT_TEST ##: *** SUCCESS *** [UNIQUENESS: Languages Shall Have No or Unique Keys]: All languages datums have unique keys.
+## UNIT_TEST ##: *** SUCCESS *** [UNIQUENESS: Languages Shall Have Unique Names]: All languages datums have unique names.
+## UNIT_TEST ##: *** SUCCESS *** [UNIQUENESS: Outfit Datums Shall Have Unique Names]: All outfit datums have unique names.
+## UNIT_TEST ##: *** SUCCESS *** [UNIQUENESS: Access Datums Shall Be Unique]: All access datums are unique.
+## UNIT_TEST ##: *** SUCCESS *** [UNIQUENESS: Player Preferences Shall Be Unique]: All player preferences have unique keys.
+## UNIT_TEST ##: *** SUCCESS *** [UNIQUENESS: Research Designs Shall Be Unique]: All research designs are unique.
+## UNIT_TEST ##: *** SUCCESS *** [UNIQUENESS: Cable Colors Shall Be Unique]: All cable colors are unique.
+## UNIT_TEST ##: *** SUCCESS *** [Shall not validate range that exlude 6th of June - Start after End]: Did not validate
+## UNIT_TEST ##: *** SUCCESS *** [Shall not validate range that exlude 6th of June - Start before End]: Did not validate
+## UNIT_TEST ##: *** SUCCESS *** [Shall be able to validate range that include 6th of June - Start after End]: Validation succeeded
+## UNIT_TEST ##: *** SUCCESS *** [Shall be able to validate range that include 6th of June - Start before End]: Validation succeeded
+## UNIT_TEST ##: *** SUCCESS *** [Shall not validate not-6th of June]: Did not validate
+## UNIT_TEST ##: *** SUCCESS *** [Shall validate 6th of June]: Validation succeeded
+## UNIT_TEST ##: *** SUCCESS *** [SUBSYSTEM - ATOMS: All atoms shall be initialized.]: All atoms were initialized
+## UNIT_TEST ##: *** SUCCESS *** [SUBSYSTEM - INIT: Subsystems shall be initalized]: All susbsystems have initialized properly
+## UNIT_TEST ##: *** SUCCESS *** [SUBSYSTEM - ATOMS: Shall have no bad init calls]: Atoms had no bad initialization calls.
+## UNIT_TEST ##: *** SUCCESS *** [SUBMAPS: Archetypes shall have a valid, unique descriptor.]: All submap archetypes had unique descriptors.
+## UNIT_TEST ##: *** SUCCESS *** [SHUTTLE: Generic shuttle landmarks shall not appear in the restricted landmark list.]: All sector landmark lists were configured properly.
+## UNIT_TEST ##: *** SUCCESS *** [SEED: Seed types should have at least one sprite]: All seed icons were found.
+## UNIT_TEST ##: *** SUCCESS *** [REAGENTS: Reagents must have valid colors without alpha in color value]: All reagents have valid colors.
+## UNIT_TEST ##: *** SUCCESS *** [POWER: All areas must have accurate power use values.]: All areas had accurate power use values.
+## UNIT_TEST ##: *** SUCCESS *** [POWER: Each area should have at most one APC.]: No areas with duplicated APCs have been found.
+## UNIT_TEST ##: *** SUCCESS *** [POWER: Roundstart Cables that are Connected Share Powernets]: All connected roundstart cables have matching powernets.
+## UNIT_TEST ##: *** SUCCESS *** [OVERMAP: Shall have non-white color]: All /obj/effect/overmap types have a valid color
+## UNIT_TEST ##: *** SUCCESS *** [ORGAN: Species Mob Organ Lists Update when Organs are Removed and Replaced.]: All organs were removed and replaced correctly.
+## UNIT_TEST ##: *** SUCCESS *** [ORGAN: Species Organs are Created Correctly]: All species mobs were created with valid organ configuration.
+## UNIT_TEST ##: *** SUCCESS *** [ORGAN: Max Damage Is Setup]: All organs have a correctly setup max damage
+## UNIT_TEST ##: *** SUCCESS *** [OBSERVATION: Sanity - Event listeners shall not leave null entries when destroyed]: The event source listener list does not contain a null entry.
+## UNIT_TEST ##: *** SUCCESS *** [OBSERVATION: Sanity - Event sources shall not leave null entries when destroyed]: The event source list does not contain a null entry.
+## UNIT_TEST ##: *** SUCCESS *** [OBSERVATION: Sanity - Global listeners shall not leave null entries when destroyed]: The global listener list does not contain a null entry.
+## UNIT_TEST ##: *** SUCCESS *** [OBSERVATION: Moved - Shall Not Unregister Recursively - Two]: Observer two is still following observer one.
+## UNIT_TEST ##: *** SUCCESS *** [OBSERVATION: Moved - Shall Not Unregister Recursively - One]: Observer three is still following observer two.
+## UNIT_TEST ##: *** SUCCESS *** [OBSERVATION: Moved - Shall Register Recursively with Existing Listener]: Recursive moved registration succesful.
+## UNIT_TEST ##: *** SUCCESS *** [OBSERVATION: Moved - Shall Register Recursively on New Listener]: Recursive moved registration succesful.
+## UNIT_TEST ##: *** SUCCESS *** [OBSERVATION: Moved - Shall Not Register on Enter Without Listeners]: The mob did not register to the closet's moved event.
+## UNIT_TEST ##: *** SUCCESS *** [OBSERVATION: Moved - Observer Shall Unregister on NoFollow]: The observer is no longer following the mob.
+## UNIT_TEST ##: *** SUCCESS *** [OBSERVATION: Moved - Observer Shall Register on Follow]: The observer is now following the mob.
+## UNIT_TEST ##: *** SUCCESS *** [OBSERVATION: Global listeners shall receive events]: Received the expected move event.
+## UNIT_TEST ##: *** SUCCESS *** [MUSIC TRACK: Validate Jukebox Tracks]: All jukeboxes had valid tracks.
+## UNIT_TEST ##: *** SUCCESS *** [MUSIC TRACK: Validate Music Tracks]: All music tracks are correctly setup.
+## UNIT_TEST ##: *** SUCCESS *** [MOVEMENT - Force Move Shall Trigger Entered]: The target was entered 1 time.
+## UNIT_TEST ##: *** SUCCESS *** [MOVEMENT - Force Move Shall Trigger Crossed When Entering Turf]: The target was crossed 1 time.
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Internal organs fit inside external organs.]: All mob organs fit.
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Species base skin presence]: All species had correct skin colour setups.
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Robot module icon check]: All modules had valid icon states
+## UNIT_TEST ##: *** SUCCESS *** [MOB: IPC Halloss Damage Check]: Damage taken: 0 out of 4 || expected: To take no damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: IPC Clone Damage Check]: Damage taken: 0 out of 4 || expected: To take no damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: IPC Oxygen Damage Check]: Damage taken: 0 out of 4 || expected: To take no damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: IPC Toxins Damage Check]: Damage taken: 0 out of 4 || expected: To take no damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: IPC Fire Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: IPC Brute Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: GAS Halloss Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: GAS Clone Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: GAS Oxygen Damage Check]: Damage taken: 2 out of 4 || expected: To take less damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: GAS Toxins Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: GAS Fire Damage Check]: Damage taken: 5.4 out of 4 || expected: To take extra damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: GAS Brute Damage Check]: Damage taken: 0.3 out of 4 || expected: To take less damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Diona Halloss Damage Check]: Damage taken: 0 out of 4 || expected: To take no damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Diona Clone Damage Check]: Damage taken: 0 out of 4 || expected: To take no damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Diona Oxygen Damage Check]: Damage taken: 0 out of 4 || expected: To take no damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Diona Toxins Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Diona Fire Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Diona Brute Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Vox Halloss Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Vox Clone Damage Check]: Damage taken: 0 out of 4 || expected: To take no damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Vox Oxygen Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Vox Toxins Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Vox Fire Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Vox Brute Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Skrell Halloss Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Skrell Clone Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Skrell Oxygen Damage Check]: Damage taken: 5.2 out of 4 || expected: To take extra damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Skrell Toxins Damage Check]: Damage taken: 3.2 out of 4 || expected: To take less damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Skrell Fire Damage Check]: Damage taken: 3.6 out of 4 || expected: To take less damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Skrell Brute Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Resomi Halloss Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:150 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Resomi Clone Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:150 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Resomi Oxygen Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:150 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Resomi Toxins Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:150 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Resomi Fire Damage Check]: Damage taken: 5.4 out of 4 || expected: To take extra damage [Overall Health:150 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Resomi Brute Damage Check]: Damage taken: 5.4 out of 4 || expected: To take extra damage [Overall Health:150 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Tajaran Halloss Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Tajaran Clone Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Tajaran Oxygen Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Tajaran Toxins Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Tajaran Fire Damage Check]: Damage taken: 4.6 out of 4 || expected: To take extra damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Tajaran Brute Damage Check]: Damage taken: 4.6 out of 4 || expected: To take extra damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Unathi Halloss Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Unathi Clone Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Unathi Oxygen Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Unathi Toxins Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Unathi Fire Damage Check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Unathi Brute Damage Check]: Damage taken: 3.2 out of 4 || expected: To take less damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Human Halloss damage check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Human Clone damage check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Human Oxygen damage check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Human Toxin damage check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Human Fire damage check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Human Brute damage check]: Damage taken: 4 out of 4 || expected: to take standard damage [Overall Health:200 (Initial: 100]
+## UNIT_TEST ##: *** SUCCESS *** [MAP: every obj shall have valid access strings in req_access]: All mapped objs have correctly set req_access.
+## UNIT_TEST ##: *** SUCCESS *** [MAP: Station wires shall be connected]: All station wires are properly connected.
+## UNIT_TEST ##: *** SUCCESS *** [MAP: Station power terminals shall be wired]: All station power terminals are wired.
+## UNIT_TEST ##: *** SUCCESS *** [MAP: Station pipes shall not leak]: No station pipes are leaking
+## UNIT_TEST ##: *** SUCCESS *** [MAP: Shutoff valves shall connect to two different pipe networks]: All shutoff valves connect to two different pipe networks.
+## UNIT_TEST ##: *** SUCCESS *** [MAP: Simple pipes shall not face north or west]: All simple pipes faced an appropriate direction.
+## UNIT_TEST ##: *** SUCCESS *** [MAP: Disposal segments shall connect with other disposal pipes]: All disposal segments connect with other disposal pipes.
+## UNIT_TEST ##: *** SUCCESS *** [MAP: Camera unique c_tag check]: 276 cameras have a unique c_tag.
+## UNIT_TEST ##: *** SUCCESS *** [MAP: Camera nil c_tag check]: Have cameras have the c_tag set.
+## UNIT_TEST ##: *** SUCCESS *** [MAP: Cryopod Validity Check]: All cryopods have their respective control computers.
+## UNIT_TEST ##: ---  DEBUG  --- [MAP: Landmark Check]: Space landmark found: The space_turf (/obj/effect/landmark/test/space_turf) ([0x20000ea]) (space) (2,2,1) (/turf/space)
+## UNIT_TEST ##: ---  DEBUG  --- [MAP: Landmark Check]: Safe landmark found: The safe_turf (/obj/effect/landmark/test/safe_turf) ([0x20011f9]) (the deck) (110,100,1) (/turf/simulated/floor/tiled/monotile)
+## UNIT_TEST ##: *** SUCCESS *** [MAP: Landmark Check]: Exactly one safe landmark, and exactly one space landmark found.
+## UNIT_TEST ##: *** SUCCESS *** [MAP: Ladder Check]: All ladders are correctly setup.
+## UNIT_TEST ##: *** SUCCESS *** [MAP: Map Check]: Map size met minimum requirements.
+## UNIT_TEST ##: *** SUCCESS *** [MAP: All allowed_spawns entries should have spawnpoints on map.]: All entries in allowed_spawns have spawnpoints.
+## UNIT_TEST ##: *** SUCCESS *** [MAP: All map levels shall have a corresponding map image.]: All map levels had a corresponding image.
+## UNIT_TEST ##: *** SUCCESS *** [MAP: On Map Storage Item Capacity Test Player Z levels]: All on-map storage items were able to hold their initial contents.
+## UNIT_TEST ##: *** SUCCESS *** [MAP: Closet Containment Test Player Z levels]: No closets with inconsistent pre/post-open contents found.
+## UNIT_TEST ##: *** SUCCESS *** [MAP: Closet Capacity Test Player Z levels]: No overflowing closets found.
+## UNIT_TEST ##: *** SUCCESS *** [MAP: Cable Dir And Icon State Test]: All wires had their expected icon state.
+## UNIT_TEST ##: *** SUCCESS *** [MAP: Cable Overlap Test]: All [5079] wires had no overlapping cables going the same direction.
+## UNIT_TEST ##: [MAP: Area Test APC / Scrubbers / Vents]: --------------- Shuttle - Charon - Medical Compartment(/area/exploration_shuttle/medical) lacks an APC.
+## UNIT_TEST ##: [MAP: Area Test APC / Scrubbers / Vents]: --------------- Shuttle - Charon - Medical Compartment(/area/exploration_shuttle/medical) lacks an air scrubber.
+## UNIT_TEST ##: [MAP: Area Test APC / Scrubbers / Vents]: --------------- Shuttle - Charon - Medical Compartment(/area/exploration_shuttle/medical) lacks an air vent.
+## UNIT_TEST ##: !!! FAILURE !!! [MAP: Area Test APC / Scrubbers / Vents]: [1/220]Some areas did not have the expected APC/vent/scrubber setup.
+## UNIT_TEST ##: *** SUCCESS *** [MACHINE: All fabricators will be able to produce all of their recipes]: All fabricators could produce their associated recipes.
+## UNIT_TEST ##: *** SUCCESS *** [MACHINE: All mapped machines with construct states shall meet state requirements.]: All machines had valid construction states.
+## UNIT_TEST ##: *** SUCCESS *** [MACHINE: All mapped machines with corresponding circuits shall use construct states.]: All machines with circuits had construction states.
+## UNIT_TEST ##: *** SUCCESS *** [MACHINE: All mapped machines shall respect their own maximum component limit.]: All machines respected component limits.
+## UNIT_TEST ##: *** SUCCESS *** [LOADOUT: Custom setup tweaks shall have valid procs]: Succesfully called all custom setup procs without runtimes
+## UNIT_TEST ##: *** SUCCESS *** [LOADOUT: Gear path tweaks shall have unique keys]: All /datum/gear_tweak/path definitions had unique names.
+## UNIT_TEST ##: *** SUCCESS *** [LOADOUT: Gear path tweaks shall be of gear path.]: All /datum/gear_tweak/paths had valid paths.
+## UNIT_TEST ##: *** SUCCESS *** [LOADOUT: Entries shall have valid icon states]: All /datum/gear definitions had correct icon states.
+## UNIT_TEST ##: *** SUCCESS *** [LOADOUT: Entries shall have name, cost, and path definitions]: All /datum/gear definitions had correct settings.
+## UNIT_TEST ##: *** SUCCESS *** [JOBS: All Job Datums Shall Have A Unique Title]: All jobs have a unique title.
+## UNIT_TEST ##: *** SUCCESS *** [JOBS: Shall have a HUD icon]: All jobs have a HUD icon.
+## UNIT_TEST ##: *** SUCCESS *** [JOBS: Shall have a valid outfit type]: All jobs had outfit types.
+## UNIT_TEST ##: *** SUCCESS *** [INTEGRATED CIRCUITS - INPUT/OUTPUT - Demultiplexer - Medium]: The circuit /obj/item/integrated_circuit/transfer/demultiplexer/medium met all expectations.
+## UNIT_TEST ##: *** SUCCESS *** [INTEGRATED CIRCUITS - INPUT/OUTPUT - Multiplexer - Medium]: The circuit /obj/item/integrated_circuit/transfer/multiplexer/medium met all expectations.
+## UNIT_TEST ##: *** SUCCESS *** [INTEGRATED CIRCUITS - Prefabs Shall Not Fail To Create]: All integrated circuit prefabs are within complexity and size limits.
+## UNIT_TEST ##: *** SUCCESS *** [INTEGRATED CIRCUITS - Prefabs Are Valid]: All integrated circuit prefabs are within complexity and size limits.
+## UNIT_TEST ##: *** SUCCESS *** [INTEGRATED CIRCUITS - Circuits must have unique names]: All circuits have unique names.
+## UNIT_TEST ##: *** SUCCESS *** [ICON STATE - Random Spawners Shall Have Icon States]: All /obj/random types have valid icon states.
+## UNIT_TEST ##: *** SUCCESS *** [ICON STATE - Item Modifiers Shall Have Icon Sates]: All item modifiers have valid icon states.
+## UNIT_TEST ##: *** SUCCESS *** [ICON STATE - Posters Shall Have Icon States]: All /decl/poster subtypes have valid icon states.
+## UNIT_TEST ##: *** SUCCESS *** [ICON STATE - Sprite accessories shall have existing icon states]: All sprite accessories were valid.
+## UNIT_TEST ##: *** SUCCESS *** [ICON STATE - Robot shall have eyes for each icon state]: All related eye icon states exists.
+## UNIT_TEST ##: *** SUCCESS *** [FUSION: All Devices With Initial IDs Shall Have A Valid Network]: All fusion devices with IDs have a valid network.
+## UNIT_TEST ##: *** SUCCESS *** [FOUNDATION: step() shall return true on success]: step() returned true.
+## UNIT_TEST ##: *** SUCCESS *** [FOOD: Each slice origin item should cut into the appropriate slice]: All slice types defined correctly.
+## UNIT_TEST ##: *** SUCCESS *** [EQUIPMENT: Storage items should be able to actually hold their initial contents]: All storage item types were able to hold their default initial contents.
+## UNIT_TEST ##: *** SUCCESS *** [CULTURE - All Species Cultural Values Shall Be Of Valid Types And Length]: All cultural values are valid.
+## UNIT_TEST ##: *** SUCCESS *** [CLOSETS: All Closet Appearances Shall Have Sane Values]: All closet appearances are sane.
+## UNIT_TEST ##: *** SUCCESS *** [CARGO: Supply packs shall have sufficient cost]: All supply packs cost sufficiently.
+## UNIT_TEST ##: *** SUCCESS *** [CARGO: Supply crates containment]: No  cargo supply packs with inconsistent pre/post-open contents found.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: all mapped atmos machinery shall not have more than one connection of each type per dir.]: All pipes were mapped properly.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: all pipes shall belong to a unique pipeline]: All pipes belonged to a unique pipeline.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: mix_gas() Conserves Moles]: uphill: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: mix_gas() Conserves Moles]: downhill: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: mix_gas() Conserves Moles]: flat: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: mix_gas() Conserves Moles]: vacuum_sink: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: mix_gas() Conserves Moles]: vacuum_source: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: filter_gas_multi() Conserves Moles]: uphill: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: filter_gas_multi() Conserves Moles]: downhill: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: filter_gas_multi() Conserves Moles]: flat: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: filter_gas_multi() Conserves Moles]: vacuum_sink: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: filter_gas_multi() Conserves Moles]: vacuum_source: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: filter_gas() Conserves Moles]: uphill: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: filter_gas() Conserves Moles]: downhill: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: filter_gas() Conserves Moles]: flat: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: filter_gas() Conserves Moles]: vacuum_sink: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: filter_gas() Conserves Moles]: vacuum_source: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: scrub_gas() Conserves Moles]: uphill: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: scrub_gas() Conserves Moles]: downhill: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: scrub_gas() Conserves Moles]: flat: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: scrub_gas() Conserves Moles]: vacuum_sink: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: scrub_gas() Conserves Moles]: vacuum_source: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: pump_gas_passive() Conserves Moles]: uphill: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: pump_gas_passive() Conserves Moles]: downhill: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: pump_gas_passive() Conserves Moles]: flat: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: pump_gas_passive() Conserves Moles]: vacuum_sink: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: pump_gas_passive() Conserves Moles]: vacuum_source: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: pump_gas() Conserves Moles]: uphill: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: pump_gas() Conserves Moles]: downhill: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: pump_gas() Conserves Moles]: flat: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: pump_gas() Conserves Moles]: vacuum_sink: conserved moles of each gas ID.
+## UNIT_TEST ##: *** SUCCESS *** [ATMOS MACHINERY: pump_gas() Conserves Moles]: vacuum_source: conserved moles of each gas ID.
+## UNIT_TEST ##: ---  DEBUG  --- [AREA: Areas shall be used]: Unknown (/area/shuttle/syndicate_elite) ([0x4000124]) (0,0,0) is unused.
+## UNIT_TEST ##: --- SKIPPED --- [AREA: Areas shall be used]: Found 1 unused area.
+## UNIT_TEST ##: *** SUCCESS *** [AREA: Areas shall be pure]: All areas are pure.
+## UNIT_TEST ##: *** SUCCESS *** [AREA: Areas shall be coherent]: All areas are coherent.
+## UNIT_TEST ##: *** SUCCESS *** [ALT APPEARANCE: Cardborg shall have unique backpack types]: All backpack types are unique.
+## UNIT_TEST ##: *** SUCCESS *** [ALT APPEARANCE: Cardborg shall have base backpack variant]: All references to icon states exists.
+## UNIT_TEST ##: *** SUCCESS *** [ALT APPEARANCE: Cardborg shall have base backpack variant]: Found a cardborg appearance using the base /obj/item/weapon/storage/backpack backpack.
+## UNIT_TEST ##: *** SUCCESS *** [OVERRIDE - /datum/atom_creator/weighted shall spawn heaviest - Recursive]: /datum/atom_creator/weighted (/datum/atom_creator/weighted) ([0x21032461]) successfully created the heaviest object.
+## UNIT_TEST ##: *** SUCCESS *** [OVERRIDE - /datum/atom_creator/weighted shall spawn heaviest]: /datum/atom_creator/weighted (/datum/atom_creator/weighted) ([0x2102cefb]) successfully created the heaviest object.
+## UNIT_TEST ##: *** SUCCESS *** [OVERRIDE - /datum/atom_creator/simple shall always spawn]: /datum/atom_creator/simple (/datum/atom_creator/simple) ([0x2102cf5b]) successfully created its object.
+## UNIT_TEST ##: *** SUCCESS *** [OVERRIDE - obj/random shall spawn heaviest item]: The random object (/obj/random/unit_test) ([0x2031f4d]) (NULL) (0,0,0) (NULL) created an object of the expected type.
+## UNIT_TEST ##: *** SUCCESS *** [EXTENSIONS - get_or_create() with arguments shall initialize as expected]: All assertions passed.
+## UNIT_TEST ##: *** SUCCESS *** [EXTENSIONS - get_or_create() shall initialize as expected]: All assertions passed.
+## UNIT_TEST ##: *** SUCCESS *** [EXTENSIONS - Immediate extension shall be provided arguments as expected]: All assertions passed.
+## UNIT_TEST ##: *** SUCCESS *** [EXTENSIONS - Extension shall be provided arguments as expected]: All assertions passed.
+## UNIT_TEST ##: *** SUCCESS *** [EXTENSIONS - Shall acquire extension subtype as expected]: All assertions passed.
+## UNIT_TEST ##: *** SUCCESS *** [EXTENSIONS - Basic immediate extension shall initialize as expected]: All assertions passed.
+## UNIT_TEST ##: *** SUCCESS *** [EXTENSIONS - Basic extension shall lazy initialize as expected]: All assertions passed.
+## UNIT_TEST ##: *** SUCCESS *** [GRAPH: Shall be able to merge simple graphs]: Encountered no issues
+## UNIT_TEST ##: *** SUCCESS *** [GRAPH: Shall be able to split a simple graph]: Encountered no issues
+## UNIT_TEST ##: *** SUCCESS *** [GRAPH: Shall be able to handle node deletion]: Encountered no issues
+## UNIT_TEST ##: *** SUCCESS *** [GRAPH: Shall be able to connect to self]: Encountered no issues
+## UNIT_TEST ##: *** SUCCESS *** [GRAPH: Shall be able to handle a partial disconnect]: Encountered no issues
+## UNIT_TEST ##: *** SUCCESS *** [GRAPH: Shall be able to handle a full disconnect]: Encountered no issues
+## UNIT_TEST ##: *** SUCCESS *** [GRAPH: Shall be able to handle a full disconnect in a connected graph]: Encountered no issues
+## UNIT_TEST ##: *** SUCCESS *** [GRAPH: Shall be able to handle a partial disconnect in a connected graph]: Encountered no issues
+## UNIT_TEST ##: *** SUCCESS *** [GRAPH: Shall be able to handle adjacent disconnects]: Encountered no issues
+## UNIT_TEST ##: *** SUCCESS *** [GRAPH: Shall be able to handle multiple disconnects]: Encountered no issues
+## TESTING: Supply Drone moving to Hangar (106,90). Areas are Supply Shuttle
+## TESTING: Moving Supply Shuttle
+## UNIT_TEST ##: *** SUCCESS *** [EQUIPMENT: NVG see_invis]: Mob See invisible is 15
+## UNIT_TEST ##: *** SUCCESS *** [EQUIPMENT: Mesons see_invis]: Mob See invisible is 15
+## UNIT_TEST ##: *** SUCCESS *** [EQUIPMENT: Plain glasses. see_invis]: Mob See invisible is 25
+## UNIT_TEST ##: *** SUCCESS *** [MAP: Air alarms shall receive updates.]: All atmos devices updated their area's air alarms successfully.
+## UNIT_TEST ##: *** SUCCESS *** [MAP: Networked disposals shall deliver tagged packages]: All packages delivered.
+## UNIT_TEST ##: *** SUCCESS *** [MOB: All Living Mobs Shall Have Valid Products When Butchery Values Are Set]: All living mobs with butchery values produce valid products.
+## UNIT_TEST ##: *** SUCCESS *** [ZAS: Supply Shuttle (When Moved)]: Checked 3 zones
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Breathing Species Suffocate in Space]: All breathing species mobs suffocated in space.
+## UNIT_TEST ##: *** SUCCESS *** [MOB: Mob in nullspace shall not cause runtimes]: Mob nullspace test concluded.
+## UNIT_TEST ##: **** [1\210] Unit Tests Failed | [1\210] Unit Tests Skipped ****
+## UNIT_TEST ##: Caught 0 Runtimes.
