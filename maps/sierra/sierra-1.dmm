@@ -574,6 +574,10 @@
 	icon_state = "2-8"
 	},
 /obj/effect/paint/dark_gunmetal,
+/obj/structure/cable/cyan{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/cargo_r)
 "awf" = (
@@ -1127,6 +1131,10 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/effect/paint/dark_gunmetal,
 /obj/effect/paint/dark_gunmetal,
+/obj/structure/cable/cyan{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/cargo_r)
 "aQM" = (
@@ -13733,6 +13741,10 @@
 	opacity = 0
 	},
 /obj/effect/paint/dark_gunmetal,
+/obj/structure/cable/cyan{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/cockpit)
 "kfe" = (
@@ -24452,6 +24464,10 @@
 	icon_state = "4-8"
 	},
 /obj/effect/paint/dark_gunmetal,
+/obj/structure/cable/cyan{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
 "sVm" = (
@@ -24486,6 +24502,22 @@
 "sVM" = (
 /turf/simulated/floor/tiled,
 /area/command/bsa)
+"sWD" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/regular/open{
+	density = 0;
+	dir = 4;
+	id_tag = "cockpit_shutters";
+	name = "Protective Shutters";
+	opacity = 0
+	},
+/obj/effect/paint/dark_gunmetal,
+/obj/structure/cable/cyan{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/plating,
+/area/exploration_shuttle/cockpit)
 "sXl" = (
 /obj/machinery/conveyor_switch/oneway{
 	id = "mining_internal";
@@ -25330,6 +25362,7 @@
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/effect/paint/dark_gunmetal,
+/obj/structure/cable/cyan,
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/cargo_l)
 "tOa" = (
@@ -25617,6 +25650,7 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/effect/paint/dark_gunmetal,
 /obj/effect/paint/dark_gunmetal,
+/obj/structure/cable/cyan,
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/cargo_r)
 "tZB" = (
@@ -53167,7 +53201,7 @@ xBH
 jkO
 vMk
 nyH
-keX
+sWD
 nCO
 nCO
 qpq
