@@ -1,0 +1,4 @@
+author: Archemagus (aka Laxesh)
+delete-after: True
+changes:
+  - admin: "Переработан апдейтер, для компила без остановки сервера и ловли ошибок. Надеюсь оно будет работать."
