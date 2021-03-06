@@ -1,6 +1,5 @@
 #include "sentinel_areas.dm"
 #include "sentinel_crew.dm"
-#include "sentinel_datums.dm"
 #include "sentinel_items.dm"
 #include "sentinel_presets.dm"
 #include "sentinel_shuttle.dm"
@@ -12,28 +11,29 @@
 	///////////
 
 /obj/effect/overmap/visitable/ship/patrol
-	name = "Cobra-Class Craft"
+	name = "Multipurpose Patrol Craft"
+	desc = "Nagashino-class Multipurpose Patrol Craft. Fine example of human fleet brilliant technologies with 5th Fleet designation and massive heat footprint."
 	color = "#990000"
 	fore_dir = WEST
-	vessel_mass = 100
-	default_delay = 30 SECONDS
-	start_x = 2
-	start_y = 2
+	vessel_mass = 500
+	vessel_size = SHIP_SIZE_SMALL
+	start_x = 1
+	start_y = 1
 
 	initial_generic_waypoints = list(
 		"nav_patrol_1",
 		"nav_patrol_2",
 		"nav_patrol_3",
 		"nav_patrol_4",
-		"nav_hangar_albatross"
+		"nav_hangar_reaper"
 		)
 
 	initial_restricted_waypoints = list(
-	"Albatross" = list("nav_hangar_albatross")
+	"Reaper" = list("nav_hangar_reaper")
 		)
 
 /obj/effect/overmap/visitable/ship/patrol/New()
-	name = "SPC [pick("Sentinel","Swordfish","Rescuer","Cavalry","Anchor","Scarabaeus","Purposeful","Helios")], \a [name]"
+	name = "SFV [pick("Sentinel","Cavalry","Scarabaeus","Helios","Heretic","Apocalypse","Calamatious","Terror","Pandemonium","Anubis","Hound","Stalker","Avatar","Ultimatum","Goliath","Tyrant","Nemesis","Hydra","Stormhawk","Manticore","Basilisk")], \a [name]"
 	for(var/area/ship/patrol/A)
 		A.name = "\improper [name] - [A.name]"
 		GLOB.using_map.area_purity_test_exempt_areas += A.type
@@ -41,13 +41,13 @@
 
 
 /datum/map_template/ruin/away_site/patrol
-	name = "Sol Patrol Ship (ERT)"
+	name = "Sol Patrol Ship (MPC)"
 	id = "awaysite_patrol_ship"
-	description = "A saviour for souls of SEV Torch's crew."
+	description = "Nagashino-class Multipurpose Patrol Craft."
 	prefix = "maps/away_inf/"
 	suffixes = list("sentinel/sentinel-1.dmm", "sentinel/sentinel-2.dmm")
-	cost = 1000
-	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/albatross)
+	cost = 2
+	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/reaper)
 
 
 /obj/effect/shuttle_landmark/nav_patrol/nav1
@@ -66,16 +66,42 @@
 	name = "Patrol Ship Starboard"
 	landmark_tag = "nav_patrol_4"
 
-/obj/machinery/door/airlock/autoname/command
-	req_access = list(access_heads)
+/obj/effect/submap_landmark/joinable_submap/patrol
+	name = "Sol Patrol Ship"
+	archetype = /decl/submap_archetype/away_scg_patrol
 
-/obj/machinery/door/airlock/autoname/engineering
-	req_access = list(access_engine)
+//obj/machinery/door/airlock/autoname/command
+	//req_access = list(access_heads)
 
-/obj/machinery/door/airlock/autoname/marine
-	req_access = list(access_security)
+//obj/machinery/door/airlock/autoname/engineering
+	//req_access = list(access_engine)
 
-/obj/machinery/computer/shuttle_control/explore/albatross
-	name = "albatross control console"
-	shuttle_tag = "Albatross"
-	req_access = list(access_albatross)
+//obj/machinery/door/airlock/autoname/marine
+	//req_access = list(access_security)
+
+/* TCOMMS
+ * ======
+ */
+
+/obj/machinery/telecomms/allinone/away_scg_patrol
+	listening_freqs = list(SCG_FREQ)
+	channel_color = COMMS_COLOR_CENTCOMM
+	channel_name = "SCG Patrol"
+	circuitboard = /obj/item/weapon/stock_parts/circuitboard/telecomms/allinone/away_scg_patrol
+
+/obj/item/weapon/stock_parts/circuitboard/telecomms/allinone/away_scg_patrol
+	build_path = /obj/machinery/telecomms/allinone/away_scg_patrol
+
+/obj/item/device/radio/headset/away_scg_patrol
+	name = "SCG Patrol headset"
+	icon_state = "nt_headset"
+	ks1type = /obj/item/device/encryptionkey/away_scg_patrol
+
+/obj/item/device/radio/headset/away_scg_patrol/Initialize()
+	. = ..()
+	set_frequency(SCG_FREQ)	//Not going to be random or just set to the common frequency, but can be set later.
+
+/obj/item/device/encryptionkey/away_scg_patrol
+	name = "SCG Patrol radio encryption key"
+	icon_state = "nt_cypherkey"
+	channels = list("SCG Patrol" = 1)
