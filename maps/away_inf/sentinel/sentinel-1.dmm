@@ -7466,18 +7466,17 @@
 	pixel_x = -24;
 	pixel_y = 5
 	},
-/obj/machinery/button/windowtint{
-	id_tag = null;
-	pixel_x = -24;
-	pixel_y = -5;
-	tag = "surgery_windows_patrol"
-	},
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25
 	},
 /obj/item/stack/nanopaste,
 /obj/item/stack/nanopaste,
+/obj/machinery/button/windowtint{
+	id_tag = "surgery_windows_patrol";
+	pixel_x = -24;
+	pixel_y = -5
+	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/medbay)
 "nV" = (
