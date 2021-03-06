@@ -1,6 +1,6 @@
 #define UPD_LOG_FILE	"update_log.out"
 #define UPD_EXE_FILE	"updater"	// Without .sh or .bat
-#define UPSTREAM_PREFIX	"upstream-"	// To find or create remotes
+#define UPSTREAM_PREFIX	""	// To find or create remotes
 
 /datum/controller/subsystem/ticker
 	var/RunExe = ""	// Command to run exe file
@@ -8,16 +8,16 @@
 	var/respawn_cooldown = 0
 
 
-/datum/controller/subsystem/ticker/proc/ForceUpdate(var/branch)
-	if(usr && !check_rights(R_SERVER))	// No manual call please (if you have not enough access)
+/datum/controller/subsystem/ticker/proc/ForceUpdate(var/branch, var/user = usr)
+	if(user && !check_rights(R_SERVER, 1, user))	// No manual call please (if you have not enough access)
 		return
 
 	if(update_server)
-		if(usr)
+		if(user)
 			if(alert("Подтвердите перезапуск сервера для обновления", "Reboot for update?", "Да", "Нет") != "Да")
-				to_chat(usr, SPAN_WARNING("Используй 'Server' --> 'Update Server' чтобы отменить обновление в конце раунда."))
+				to_chat(user, SPAN_WARNING("Используй 'Server' --> 'Update Server' чтобы отменить обновление в конце раунда."))
 				return
-		game_log("SERVER", "[usr ? "[key_name(get_client(usr))]" : "СЕРВЕР"] подтвердил рестарт сервера для обновлений от [update_server]")
+		game_log("SERVER", "[user ? "[key_name(user)]" : "СЕРВЕР"] подтвердил рестарт сервера для обновлений от [update_server]")
 		shell(RunExe)
 		return
 
@@ -32,14 +32,15 @@
 	send2admindiscord("Происходит обновление.[update_server ? " Инициировано [update_server]." : ""]")
 	SSwebhooks.send(WEBHOOK_SERVER_UPDATE)
 
-	game_log("SERVER", "[key_name(get_client(usr))] начал обновление сервера.[branch ? " На ветку '[branch]'" : ""]")
+	game_log("SERVER", "[key_name(user)] начал обновление сервера.[branch ? " На ветку '[branch]'" : ""]")
 	to_world(SPAN_NOTICE(FONT_LARGE("<b><br>Сервер начинает обновление!</b>")))
-	to_world(SPAN_NOTICE(FONT_LARGE("<br>Оно было инцировано [key_name(get_client(usr))]")))
+	to_world(SPAN_NOTICE(FONT_LARGE("<br>Оно было инцировано [key_name(user)]")))
 
 	var/exeEND = ".txt"			// .sh or .bat
 	var/DMpref = "dm"			// DreamMaker for Unix
-	var/upd_log	// We using it to get feedback from executing commands
+	var/upd_log					// We using it to get feedback from executing commands
 	var/command = ""			// Current command for exe file
+	var/DMB_name				// If null using [init(world.name)].dmb for compile cmd \ otherwise - [DMB_name].dmb
 	var/Try_Compile_Between_Rounds_If_Fails = TRUE
 	var/Between_Rounds_Compile_Code
 
@@ -50,16 +51,16 @@
 			DMpref = "DreamMaker"
 			Between_Rounds_Compile_Code = {"
 				killall DreamDaemon;
-				DreamMaker baystation12.dme;
-				sudo nohup nice -n -20 DreamDaemon baystation12.dmb 7777 -trusted -logself -public &
+				DreamMaker [DMB_NAME ? "[DMB_NAME]" : "[init(world.name)].dme;
+				sudo nohup nice -n -20 DreamDaemon [DMB_NAME ? "[DMB_NAME]" : "[init(world.name)]"].dmb [world.port] -trusted -logself -public &
 			"}
 		if(MS_WINDOWS)
 			RunExe = "[UPD_EXE_FILE].bat"
 			exeEND = ".bat"
 			Between_Rounds_Compile_Code = {"
 				taskkill /f /im DreamDaemon.exe
-				dm baystation12.dme
-				dreamdaemon baystation12.dmb 7777 -trusted -logself -public
+				dm [DMB_NAME ? "[DMB_NAME]" : "[init(world.name)].dme
+				dreamdaemon [DMB_NAME ? "[DMB_NAME]" : "[init(world.name)]"].dmb [world.port] -trusted -logself -public
 			"}
 		else
 			message_staff("UPDATER: Non supported OS '[world.system_type]'. Unable to UPD.")
@@ -88,9 +89,8 @@
 		command = "git fetch"
 		text2file(command, "[UPD_EXE_FILE][exeEND]")
 		if(shell("[RunExe] > [UPD_LOG_FILE]") != 0)
-			message_staff("UPDATER: git fetch failure. Command was '[command]'. Error message:")
 			upd_log = file2text(UPD_LOG_FILE)
-			message_staff("UPDATER: [upd_log]")
+			message_staff("UPDATER: git fetch failure. Command was '[command]'. Error message:\n[upd_log]")
 			to_world(SPAN_NOTICE(FONT_LARGE("<b><br>Обновление отменено из-за ошибки.</b>")))
 			SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("failure" = TRUE))
 			fdel("[UPD_EXE_FILE][exeEND]")
@@ -104,18 +104,16 @@
 		text2file(command, "[UPD_EXE_FILE][exeEND]")
 		while(shell("[RunExe] > [UPD_LOG_FILE]") != 0)
 			upd_log = file2text(UPD_LOG_FILE)
-			message_staff("UPDATER: git checkout failure [checkNewBranch ? "#2" : "#1"]. Command was '[command]'. Error message:")
-			message_staff("UPDATER: [upd_log]")
+			message_staff("UPDATER: git checkout failure [checkNewBranch ? "#2" : "#1"]. Command was '[command]'. Error message:\n[upd_log]")
 			if(!checkNewBranch)
 				message_staff("UPDATER: Setting up remote branch...")
 				fdel("[UPD_EXE_FILE][exeEND]")
-				command = "git branch [UPSTREAM_PREFIX][branch] -t upstream/[branch]"
+				command = "git branch [UPSTREAM_PREFIX][branch] -t origin/[branch]"
 				text2file(command, "[UPD_EXE_FILE][exeEND]")
 				checkNewBranch = TRUE
 				if(shell("[RunExe] > [UPD_LOG_FILE]") != 0)
 					upd_log = file2text(UPD_LOG_FILE)
-					message_staff("UPDATER: git branch failure. Command was '[command]'. Error message:")
-					message_staff("UPDATER: [upd_log]")
+					message_staff("UPDATER: git branch failure. Command was '[command]'. Error message:\n[upd_log]")
 					to_world(SPAN_NOTICE(FONT_LARGE("<b><br>Обновление отменено из-за ошибки.</b>")))
 					SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("failure" = TRUE))
 					fdel("[UPD_EXE_FILE][exeEND]")
@@ -137,10 +135,8 @@
 	command = "git pull --ff-only"
 	text2file(command, "[UPD_EXE_FILE][exeEND]")
 	if(shell("[RunExe] > [UPD_LOG_FILE]") != 0)
-		upd_log = file2list(UPD_LOG_FILE)
-		message_staff("UPDATER: pulling data failure. Command was '[command]'. Error message:")
 		upd_log = file2text(UPD_LOG_FILE)
-		message_staff("UPDATER: [upd_log]")
+		message_staff("UPDATER: pulling data failure. Command was '[command]'. Error message:\n[upd_log]")
 		to_world(SPAN_NOTICE(FONT_LARGE("<b><br>Обновление отменено из-за ошибки.</b>")))
 		SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("failure" = TRUE))
 		fdel("[UPD_EXE_FILE][exeEND]")
@@ -151,18 +147,17 @@
 
 	// Files updated. Compile time
 	to_world(SPAN_NOTICE(FONT_LARGE("<br>Файлы обновления получены. Начало компиляции.")))
-	command = "[DMpref] -clean -max_errors 10 baystation12.dme"
+	command = "[DMpref] -clean -max_errors 10 [DMB_NAME ? "[DMB_NAME]" : "[init(world.name)].dme"
 	text2file(command, "[UPD_EXE_FILE][exeEND]")
 
 	if(shell("[RunExe] > [UPD_LOG_FILE]") != 0)
-		message_staff("UPDATER: compilation failure. Command was '[command]'. Error message:")
 		upd_log = file2text(UPD_LOG_FILE)
-		message_staff("UPDATER: [upd_log]")
+		message_staff("UPDATER: compilation failure. Command was '[command]'. Error message:\n[upd_log]")
 		if(Try_Compile_Between_Rounds_If_Fails)
 			fdel("[UPD_EXE_FILE][exeEND]")
 			command = Between_Rounds_Compile_Code
 			text2file(command, "[UPD_EXE_FILE][exeEND]")
-			update_server = key_name(get_client(usr))
+			update_server = key_name(user)
 			to_world(SPAN_NOTICE(FONT_LARGE("<br>Компиляция неудачна. Отложено на конец раунда.")))
 			game_log("SERVER", "Обновление отложено на конец раунда.")
 			return
@@ -171,6 +166,7 @@
 		fdel("[UPD_EXE_FILE][exeEND]")
 		game_log("SERVER", "Обновление неудачно.")
 		return
+	message_staff("UPDATER: '[command]' success")
 	fdel("[UPD_EXE_FILE][exeEND]")
 	fdel(UPD_LOG_FILE)
 	to_world(SPAN_NOTICE(FONT_LARGE("<br>Обновление прошло успешно.")))

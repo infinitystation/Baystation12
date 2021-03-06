@@ -8,7 +8,7 @@
 
 	if(!SSticker.update_server)
 		if(alert("Обновить сервер?", "Run Update", "Да", "Нет") == "Да")
-			SSticker.ForceUpdate()
+			SSticker.ForceUpdate(null, src)
 	else
 		if(alert("Отменить обновление сервера в конце раунда?", "Cancel Update", "Да", "Нет") == "Да")
 			to_world(SPAN_NOTICE(FONT_LARGE("<b>\nОбновление сервера в конце раунда было отменено.</b> \n")))
