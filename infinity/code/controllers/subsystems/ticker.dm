@@ -51,7 +51,7 @@
 			DMpref = "DreamMaker"
 			Between_Rounds_Compile_Code = {"
 				killall DreamDaemon;
-				DreamMaker [DMB_NAME ? "[DMB_NAME]" : "[init(world.name)].dme;
+				DreamMaker [DMB_NAME ? "[DMB_NAME]" : "[init(world.name)]"].dme;
 				sudo nohup nice -n -20 DreamDaemon [DMB_NAME ? "[DMB_NAME]" : "[init(world.name)]"].dmb [world.port] -trusted -logself -public &
 			"}
 		if(MS_WINDOWS)
@@ -59,7 +59,7 @@
 			exeEND = ".bat"
 			Between_Rounds_Compile_Code = {"
 				taskkill /f /im DreamDaemon.exe
-				dm [DMB_NAME ? "[DMB_NAME]" : "[init(world.name)].dme
+				dm [DMB_NAME ? "[DMB_NAME]" : "[init(world.name)]"].dme
 				dreamdaemon [DMB_NAME ? "[DMB_NAME]" : "[init(world.name)]"].dmb [world.port] -trusted -logself -public
 			"}
 		else
