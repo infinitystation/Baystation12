@@ -43,7 +43,7 @@
 						#warn A map has already been included, ignoring map rotates.\n\
 					#endif",
 		 "maps/~mapsystem/map_in_use.dm")
-		if(!SSticker.server_update)
+		if(!SSticker.update_server)
 			SSvote.reset()
 			SSticker.update_map(M.full_name)
 		else

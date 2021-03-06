@@ -120,7 +120,7 @@ SUBSYSTEM_DEF(ticker)
 
 		INVOKE_ASYNC(src, .proc/declare_completion)
 		Master.SetRunLevel(RUNLEVEL_POSTGAME)
-		if(!server_update && config.allow_map_switching && config.auto_map_vote && GLOB.playable_maps.len > 1)
+		if(!update_server && config.allow_map_switching && config.auto_map_vote && GLOB.playable_maps.len > 1)
 			end_game_state = END_GAME_AWAITING_MAP
 			spawn(2 SECONDS)
 				SSvote.initiate_vote(/datum/vote/map, automatic = 1)
@@ -163,8 +163,8 @@ SUBSYSTEM_DEF(ticker)
 			restart_timeout -= (world.time - last_fire)
 			if(restart_timeout <= 0)
 //[INF]
-				if(server_update)
-					UpdateServer()
+				if(update_server)
+					ForceUpdate()
 //[INF]
 				else if(scheduled_map_change)
 					shell("compile_and_run.bat")
