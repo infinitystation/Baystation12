@@ -14,3 +14,4 @@
 			to_world(SPAN_NOTICE(FONT_LARGE("<b>\nОбновление сервера в конце раунда было отменено.</b> \n")))
 			game_log("SERVER", "[ckey] отменил обновление сервера.")
 			SSticker.update_server = null
+			SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("status" = "canceled", "ckey" = key_name(src)))

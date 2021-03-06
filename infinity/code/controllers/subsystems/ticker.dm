@@ -1,25 +1,31 @@
-#define UPD_LOG_FILE	"update_log.out"
-#define UPD_EXE_FILE	"updater"	// Without .sh or .bat
-#define UPSTREAM_PREFIX	""	// To find or create remotes
+#define UPD_LOG_FILE	"update_log.out"	// Log file for shell() output
+#define UPD_EXE_FILE	"updater"			// Without .sh or .bat
+#define UPSTREAM_PREFIX	""					// To find or create remotes
 
 /datum/controller/subsystem/ticker
-	var/RunExe = ""	// Command to run exe file
-	var/update_server
-	var/respawn_cooldown = 0
+	var/RunExe = ""				// Command to run exe file
+	var/update_server			// Who requested update (if we delay it to round end)
+	var/updating = FALSE		// DO NOT SPAM WITH UPDATE!!!
+	var/respawn_cooldown = 0	// Unknown (for me) variable ~Laxesh
 
-
+// Possible exit codes: null forbidden, 0 success, 1 error, 2 error but try to reboot after round, 3 rebooting (nothing can do after this point)
 /datum/controller/subsystem/ticker/proc/ForceUpdate(var/branch, var/user = usr)
 	if(user && !check_rights(R_SERVER, 1, user))	// No manual call please (if you have not enough access)
+		return
+
+	if(updating)
+		to_chat(user, SPAN_WARNING(FONT_LARGE("Обновлялка уже занята. Не выключайте консоль если видите этот значок.")))
 		return
 
 	if(update_server)
 		if(user)
 			if(alert("Подтвердите перезапуск сервера для обновления", "Reboot for update?", "Да", "Нет") != "Да")
 				to_chat(user, SPAN_WARNING("Используй 'Server' --> 'Update Server' чтобы отменить обновление в конце раунда."))
-				return
+				return 1
 		game_log("SERVER", "[user ? "[key_name(user)]" : "СЕРВЕР"] подтвердил рестарт сервера для обновлений от [update_server]")
+		SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("status" = "reboot", "ckey" = key_name(user)))
 		shell(RunExe)
-		return
+		return 3
 
 	if(!fexists(UPD_LOG_FILE))
 		message_staff("UPDATER: no log file found. Creating a new one: [UPD_LOG_FILE]")
@@ -28,18 +34,20 @@
 		message_staff("## ERROR: What? What system your host using? What [world.system_type] is? Message it to your devs, this feature is not supported for this OS.")
 		CRASH("Error, trying to update server using unknown OS([world.system_type]).")
 
+	updating = TRUE
+
 	send2mainirc("Производится обновление сервера.")
 	send2admindiscord("Происходит обновление.[update_server ? " Инициировано [update_server]." : ""]")
-	SSwebhooks.send(WEBHOOK_SERVER_UPDATE)
+	SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("status" = "requested", "ckey" = key_name(user)))
 
 	game_log("SERVER", "[key_name(user)] начал обновление сервера.[branch ? " На ветку '[branch]'" : ""]")
 	to_world(SPAN_NOTICE(FONT_LARGE("<b><br>Сервер начинает обновление!</b>")))
 	to_world(SPAN_NOTICE(FONT_LARGE("<br>Оно было инцировано [key_name(user)]")))
 
-	var/exeEND = ".txt"			// .sh or .bat
-	var/DMpref = "dm"			// DreamMaker for Unix
-	var/upd_log					// We using it to get feedback from executing commands
-	var/command = ""			// Current command for exe file
+	var/exeEND = ".txt"				// .sh or .bat
+	var/DMpref = "dm"				// DreamMaker for Unix
+	var/upd_log						// We using it to get feedback from executing commands
+	var/command = ""				// Current command for exe file
 	var/DMB_NAME = "baystation12"	// If null using [initial(world.name)].dmb for compile cmd \ otherwise - [DMB_NAME].dmb
 	var/Try_Compile_Between_Rounds_If_Fails = FALSE
 	var/Between_Rounds_Compile_Code
@@ -65,7 +73,7 @@
 		else
 			message_staff("UPDATER: Non supported OS '[world.system_type]'. Unable to UPD.")
 			to_world(SPAN_NOTICE(FONT_LARGE("<b><br>Обновление отменено из-за ошибки.</b>")))
-			SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("failure" = TRUE))
+			SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("status" = "failure"))
 			game_log("SERVER", "Обновление неудачно.")
 			return
 	if(fexists("[UPD_EXE_FILE][exeEND]"))
@@ -80,9 +88,10 @@
 		if(!branch)
 			message_staff("UPDATER: incorrect branch entered. It's name was deleted by sanitize.")
 			to_world(SPAN_NOTICE(FONT_LARGE("<b><br>Обновление отменено из-за ошибки.</b>")))
-			SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("failure" = TRUE))
+			SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("status" = "failure"))
 			game_log("SERVER", "Обновление неудачно.")
-			return
+			updating = FALSE
+			return 1
 
 		message_staff("UPDATER: branch '[branch]' entered. Checking out that branch")
 
@@ -92,10 +101,11 @@
 			upd_log = file2text(UPD_LOG_FILE)
 			message_staff("UPDATER: git fetch failure. Command was '[command]'. Error message:\n[upd_log]")
 			to_world(SPAN_NOTICE(FONT_LARGE("<b><br>Обновление отменено из-за ошибки.</b>")))
-			SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("failure" = TRUE))
+			SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("status" = "failure"))
 			fdel("[UPD_EXE_FILE][exeEND]")
 			game_log("SERVER", "Обновление неудачно.")
-			return
+			updating = FALSE
+			return 1
 		message_staff("UPDATER: '[command]' success")
 		fdel("[UPD_EXE_FILE][exeEND]")
 
@@ -115,19 +125,21 @@
 					upd_log = file2text(UPD_LOG_FILE)
 					message_staff("UPDATER: git branch failure. Command was '[command]'. Error message:\n[upd_log]")
 					to_world(SPAN_NOTICE(FONT_LARGE("<b><br>Обновление отменено из-за ошибки.</b>")))
-					SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("failure" = TRUE))
+					SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("status" = "failure"))
 					fdel("[UPD_EXE_FILE][exeEND]")
 					game_log("SERVER", "Обновление неудачно.")
-					return
+					updating = FALSE
+					return 1
 				fdel("[UPD_EXE_FILE][exeEND]")
 				command = "git checkout [UPSTREAM_PREFIX][branch]"
 				text2file(command, "[UPD_EXE_FILE][exeEND]")
 			else
 				to_world(SPAN_NOTICE(FONT_LARGE("<b><br>Обновление отменено из-за ошибки.</b>")))
-				SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("failure" = TRUE))
+				SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("status" = "failure"))
 				fdel("[UPD_EXE_FILE][exeEND]")
 				game_log("SERVER", "Обновление неудачно.")
-				return
+				updating = FALSE
+				return 1
 		message_staff("UPDATER: '[command]' success")
 		fdel("[UPD_EXE_FILE][exeEND]")
 
@@ -138,10 +150,11 @@
 		upd_log = file2text(UPD_LOG_FILE)
 		message_staff("UPDATER: pulling data failure. Command was '[command]'. Error message:\n[upd_log]")
 		to_world(SPAN_NOTICE(FONT_LARGE("<b><br>Обновление отменено из-за ошибки.</b>")))
-		SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("failure" = TRUE))
+		SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("status" = "failure"))
 		fdel("[UPD_EXE_FILE][exeEND]")
 		game_log("SERVER", "Обновление неудачно.")
-		return
+		updating = FALSE
+		return 1
 	message_staff("UPDATER: '[command]' success")
 	fdel("[UPD_EXE_FILE][exeEND]")
 
@@ -160,17 +173,23 @@
 			update_server = key_name(user)
 			to_world(SPAN_NOTICE(FONT_LARGE("<br>Компиляция неудачна. Отложено на конец раунда.")))
 			game_log("SERVER", "Обновление отложено на конец раунда.")
-			return
+			SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("status" = "delay"))
+			updating = FALSE
+			return 2
 		to_world(SPAN_NOTICE(FONT_LARGE("<b><br>Обновление отменено из-за ошибки.</b>")))
-		SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("failure" = TRUE))
+		SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("status" = "failure"))
 		fdel("[UPD_EXE_FILE][exeEND]")
 		game_log("SERVER", "Обновление неудачно.")
-		return
+		updating = FALSE
+		return 1
 	message_staff("UPDATER: '[command]' success")
 	fdel("[UPD_EXE_FILE][exeEND]")
 	fdel(UPD_LOG_FILE)
 	to_world(SPAN_NOTICE(FONT_LARGE("<br>Обновление прошло успешно.")))
 	game_log("SERVER", "Обновление успешно.")
+	updating = FALSE
+	SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("status" = "success"))
+	return 0
 
 #undef UPD_LOG_FILE
 #undef UPD_EXE_FILE
