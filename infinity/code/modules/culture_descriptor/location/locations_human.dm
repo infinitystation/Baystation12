@@ -22,7 +22,7 @@
 	ruling_body = "Демократическая олигархия"
 	distance = "22 световых года"
 	economic_power = 0.9
-	secondary_langs = list(LANGUAGE_SPACER, LANGUAGE_SIGN)
+	secondary_langs = list(LANGUAGE_SPACER, LANGUAGE_SIGN, LANGUAGE_HUMAN_MIRANIAN)
 
 /decl/cultural_info/location/brinkburn
 	name = HOME_SYSTEM_NYX_BRINKBURN
