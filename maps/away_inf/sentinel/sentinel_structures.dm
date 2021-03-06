@@ -202,8 +202,8 @@
 
 
 /obj/structure/closet/wardrobe/patrol
-    name = "military attire closet"
-    closet_appearance = /decl/closet_appearance/tactical
+	name = "military attire closet"
+	closet_appearance = /decl/closet_appearance/tactical
 
 
 /obj/structure/closet/wardrobe/patrol/desert
