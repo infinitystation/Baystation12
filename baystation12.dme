@@ -3558,6 +3558,7 @@
 #include "infinity\code\modules\mob\language\alien\resomi.dm"
 #include "infinity\code\modules\mob\language\alien\tajaran.dm"
 #include "infinity\code\modules\mob\language\human\alain.dm"
+#include "infinity\code\modules\mob\language\human\german.dm"
 #include "infinity\code\modules\mob\language\human\lirris.dm"
 #include "infinity\code\modules\mob\living\autohiss.dm"
 #include "infinity\code\modules\mob\living\autohiss_xeno.dm"
