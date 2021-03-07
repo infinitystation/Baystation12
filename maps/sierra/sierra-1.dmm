@@ -1299,10 +1299,6 @@
 	name = "Protective Shutters";
 	opacity = 0
 	},
-/obj/structure/cable/cyan{
-	d2 = 2;
-	icon_state = "0-2"
-	},
 /obj/effect/paint/dark_gunmetal,
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/seats_place)
@@ -2399,6 +2395,7 @@
 	dir = 2;
 	req_access = list("ACCESS_EXPEDITION_SHUTTLE_HELM")
 	},
+/obj/effect/overmap/visitable/ship/landable/exploration_shuttle,
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
 "bJa" = (
@@ -4130,12 +4127,6 @@
 /area/quartermaster/exploration)
 "cUN" = (
 /obj/machinery/shipsensors/weak,
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/catwalk,
 /obj/structure/cable/cyan{
 	d1 = 2;
 	d2 = 4;
@@ -13142,7 +13133,6 @@
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/b_green/border,
 /obj/machinery/cell_charger,
-/obj/effect/overmap/visitable/ship/landable/exploration_shuttle,
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/seats_place)
 "jHS" = (
@@ -14336,7 +14326,7 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
 	name = "Cockpit";
-	req_access = newlist()
+	req_access = list("ACCESS_EXPEDITION_SHUTTLE")
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -16526,6 +16516,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
+/obj/effect/shuttle_landmark/sierra/hangar/exploration_shuttle,
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
 "mHW" = (
@@ -20649,10 +20640,6 @@
 /obj/structure/handrai{
 	dir = 4
 	},
-/obj/structure/cable/cyan{
-	d2 = 2;
-	icon_state = "0-2"
-	},
 /obj/machinery/door/blast/regular{
 	id_tag = "sensor_shutters"
 	},
@@ -21220,7 +21207,7 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
 	name = "Cockpit";
-	req_access = newlist()
+	req_access = list("ACCESS_EXPEDITION_SHUTTLE")
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -25338,7 +25325,6 @@
 	pixel_y = -6
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/effect/shuttle_landmark/sierra/hangar/exploration_shuttle,
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/seats_place)
 "tNb" = (
