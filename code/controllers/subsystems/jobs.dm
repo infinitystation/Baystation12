@@ -162,7 +162,7 @@ SUBSYSTEM_DEF(jobs)
 		return FALSE
 //[INF]
 	if(!job.is_required_roles_filled())
-		to_chat(joining, SPAN_WARNING("For joining as <b>\a [job.title]</b> there should be <b>\a [job.required_role]</b> in crew."))
+		to_chat(joining, SPAN_WARNING("For joining as <b>\a [job.title]</b> there should be <b>\a [jointext(job.required_role, ", ")]</b> in crew."))
 		return FALSE
 //[/INF]
 	return TRUE

@@ -21,13 +21,13 @@
 /area/maintenance/firstdeck/forestarboard
 	name = "First Deck - Maintenance - Fore-Starboard"
 	icon_state = "fsmaint"
-
+/*
 /area/maintenance/firstdeck/fore
-	name = "First Deck - Maintenance - Fore-Port"
-	icon_state = "fpmaint"
-
-/area/maintenance/firstdeck/foreport
 	name = "First Deck - Maintenance - Fore"
+	icon_state = "fmaint"
+*/
+/area/maintenance/firstdeck/foreport
+	name = "First Deck - Maintenance - Fore-Port"
 	icon_state = "fpmaint"
 
 /area/maintenance/firstdeck/centralstarboard
@@ -57,13 +57,14 @@
 /area/hallway/primary/firstdeck/fore_stairwell
 	name = "First Deck - Stairwell - Fore"
 	icon_state = "hallC2"
-
+/*
 /area/crew_quarters/safe_room/firstdeck
 	name = "First Deck - Safe Room"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
-
+*/
 /area/maintenance/substation/firstdeck
 	name = "First Deck - Substation"
+
 /* COMMAND AREAS
  * =============
  */
@@ -150,6 +151,7 @@
 	name = "First Deck - Bridge - Storage"
 	icon_state = "bridge"
 	sound_env = SMALL_ENCLOSED
+	req_access = list(access_bridge)
 
 	// Tcomm
 /area/tcommsat/
@@ -182,13 +184,14 @@
 	name = "First Deck - Nacelle - Starboard"
 
 // AI
+/*
 /area/maintenance/battle_data_servers
 	name = "First Deck - Battle Data Servers"
 	req_access = list(access_maint_tunnels)
 
 /area/ai_monitored
 	name = "AI Monitored Area"
-
+*/
 /area/storage/eva
 	name = "First Deck - EVA"
 	icon_state = "eva"
@@ -280,10 +283,10 @@
 
 /area/crew_quarters/lounge/upper
 	name = "First Deck - Living - Library"
-
+/*
 /area/crew_quarters/sleep/cryo/first_deck
 	name = "First Deck - Cryogenic Storage"
-
+*/
 /* SECURITY AREAS
  *
  */
@@ -365,11 +368,11 @@
 /area/medical/infirmary
 	name = "First Deck - Infirmary - Hallway"
 	icon_state = "medbay"
-
+/*
 /area/medical/starboard_hallway
 	name = "First Deck - Infirmary - Hallway - Starboard"
 	icon_state = "medbay2"
-
+*/
 /area/medical/infirmreception
 	name = "First Deck - Infirmary - Reception"
 	icon_state = "medbay2"
@@ -378,11 +381,11 @@
 	name = "First Deck - Infirmary - Locker Room"
 	icon_state = "locker"
 	req_access = list(access_medical_equip)
-
+/*
 /area/medical/subacute
 	name = "First Deck - Infirmary - Sub-Acute Ward"
 	icon_state = "patients"
-
+*/
 /area/medical/mentalhealth
 	name = "First Deck - Infirmary - Mental Health"
 	icon_state = "medbay3"

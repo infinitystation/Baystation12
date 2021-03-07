@@ -105,10 +105,6 @@ var/datum/evacuation_controller/evacuation_controller
 
 	if(!can_cancel())
 		return 0
-//[INF]
-	for(var/obj/machinery/bluespacedrive/M in SSmachines.machinery)
-		M.discharge()
-//[/INF]
 
 	evac_cooldown_time = world.time + (world.time - evac_called_at)
 	state = EVAC_COOLDOWN
