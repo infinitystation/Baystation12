@@ -10803,7 +10803,6 @@
 /area/shuttle/petrov/ship)
 "hVF" = (
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 8
 	},
@@ -17781,10 +17780,6 @@
 /area/storage/auxillary/port)
 "nPW" = (
 /obj/structure/bed/chair/shuttle/green,
-/obj/structure/extinguisher_cabinet{
-	dir = 4;
-	pixel_y = 29
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
@@ -27119,6 +27114,10 @@
 /obj/effect/floor_decal/corner/b_green/border{
 	dir = 1
 	},
+/obj/structure/extinguisher_cabinet{
+	dir = 4;
+	pixel_y = 29
+	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/seats_place)
 "vmB" = (
@@ -27203,6 +27202,10 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
+	},
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/airlock)
@@ -29924,10 +29927,6 @@
 	},
 /obj/effect/floor_decal/corner/b_green/bordercorner2{
 	dir = 5
-	},
-/obj/machinery/alarm{
-	dir = 8;
-	pixel_x = 24
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/airlock)
