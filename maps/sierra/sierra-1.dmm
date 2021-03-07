@@ -976,9 +976,6 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/alarm{
-	pixel_y = 24
-	},
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 1
 	},
@@ -1073,7 +1070,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(list("ACCESS_EXPEDITION_SHUTTLE", "ACCESS_EXPEDITION_SHUTTLE_HELM","ACCESS_ENGINEERING"))
+	req_access = list(list("ACCESS_EXPLORER", "ACCESS_ENGINEERING"))
 	},
 /obj/structure/cable/cyan{
 	d2 = 8;
@@ -1649,8 +1646,7 @@
 	},
 /obj/machinery/alarm{
 	dir = 4;
-	pixel_x = -24;
-	req_access = list(list("ACCESS_EXPEDITION_SHUTTLE", "ACCESS_ATMOS","ACCESS_ENGINE_EQUIP"))
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/medical)
@@ -1997,9 +1993,6 @@
 "bwU" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
-	},
-/obj/machinery/alarm{
-	pixel_y = 24
 	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
@@ -2395,7 +2388,7 @@
 /obj/machinery/door/window/brigdoor/westleft{
 	autoset_access = 0;
 	dir = 2;
-	req_access = newlist()
+	req_access = list("ACCESS_EXPEDITION_SHUTTLE_HELM")
 	},
 /obj/effect/overmap/visitable/ship/landable/exploration_shuttle,
 /turf/simulated/floor/tiled/monotile,
@@ -2905,7 +2898,7 @@
 /obj/machinery/power/apc/charon{
 	name = "south bump";
 	pixel_y = -24;
-	req_access = list(list("ACCESS_EXPEDITION_SHUTTLE", "ACCESS_EXPEDITION_SHUTTLE_HELM","ACCESS_ENGINEERING"))
+	req_access = list(list("ACCESS_EXPLORER", "ACCESS_ENGINEERING"))
 	},
 /obj/effect/floor_decal/borderfloor{
 	color = null;
@@ -3189,7 +3182,8 @@
 /area/maintenance/thirddeck/aft)
 "cdD" = (
 /obj/machinery/door/airlock/hatch{
-	req_access = list(list("ACCESS_EXPEDITION_SHUTTLE", "ACCESS_EXPEDITION_SHUTTLE_HELM","ACCESS_ENGINEERING"))
+	autoset_access = 0;
+	req_access = list("ACCESS_EXPEDITION_SHUTTLE")
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -3261,7 +3255,7 @@
 /obj/machinery/power/apc/charon{
 	name = "south bump";
 	pixel_y = -24;
-	req_access = list(list("ACCESS_EXPEDITION_SHUTTLE", "ACCESS_EXPEDITION_SHUTTLE_HELM","ACCESS_ENGINEERING"))
+	req_access = list(list("ACCESS_EXPLORER", "ACCESS_ENGINEERING"))
 	},
 /obj/structure/bed/chair/shuttle/green{
 	dir = 1
@@ -3409,12 +3403,6 @@
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/machinery/light/small{
 	dir = 8
-	},
-/obj/machinery/power/apc/charon{
-	dir = 1;
-	name = "west bump";
-	pixel_y = 18;
-	req_access = list(list("ACCESS_EXPEDITION_SHUTTLE", "ACCESS_EXPEDITION_SHUTTLE_HELM","ACCESS_ENGINEERING"))
 	},
 /obj/structure/cable/cyan{
 	d2 = 4;
@@ -3993,6 +3981,12 @@
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 1
+	},
+/obj/machinery/power/apc/charon{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 24;
+	req_access = list(list("ACCESS_EXPLORER", "ACCESS_ENGINEERING"))
 	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
@@ -5314,12 +5308,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
-"dGE" = (
-/obj/structure/fuel_port,
-/obj/effect/paint/red,
-/obj/effect/paint_stripe/white,
-/turf/simulated/wall/titanium,
-/area/exploration_shuttle/power)
 "dGH" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -5342,8 +5330,7 @@
 	},
 /obj/machinery/alarm{
 	dir = 1;
-	pixel_y = -20;
-	req_access = list(list("ACCESS_EXPEDITION_SHUTTLE", "ACCESS_ATMOS","ACCESS_ENGINE_EQUIP"))
+	pixel_y = -20
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_l)
@@ -10365,11 +10352,6 @@
 	dir = 9
 	},
 /obj/structure/table/steel_reinforced,
-/obj/machinery/alarm{
-	dir = 8;
-	pixel_x = 24;
-	req_access = list(list("ACCESS_EXPEDITION_SHUTTLE", "ACCESS_ATMOS","ACCESS_ENGINE_EQUIP","ACCESS_GUPPY"))
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
@@ -10379,6 +10361,10 @@
 /obj/item/toy/figure/ninja{
 	desc = "A \"Space Life\" brand Exploration Team action figure.";
 	name = "Exploration Team Hero action figure"
+	},
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
@@ -10796,15 +10782,14 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
 "hVc" = (
-/obj/machinery/alarm{
-	pixel_y = 24;
-	req_access = list(list("ACCESS_EXPEDITION_SHUTTLE", "ACCESS_ATMOS","ACCESS_ENGINE_EQUIP"))
-	},
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
+	},
+/obj/machinery/alarm{
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
@@ -11340,11 +11325,6 @@
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology/storage)
 "isZ" = (
-/obj/machinery/alarm{
-	dir = 8;
-	pixel_x = 24;
-	req_access = list(list("ACCESS_ATMOS","ACCESS_ENGINE_EQUIP","ACCESS_GUPPY"))
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 9
 	},
@@ -12143,8 +12123,9 @@
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/door/airlock/hatch{
+	autoset_access = 0;
 	name = "Cockpit";
-	req_access = list(list("ACCESS_EXPEDITION_SHUTTLE", "ACCESS_EXPEDITION_SHUTTLE_HELM","ACCESS_ENGINEERING"))
+	req_access = list("ACCESS_EXPEDITION_SHUTTLE")
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/cable/cyan{
@@ -13301,6 +13282,10 @@
 /obj/effect/floor_decal/corner/b_green/bordercorner2{
 	dir = 8
 	},
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -20
+	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/seats_place)
 "jKL" = (
@@ -14328,9 +14313,10 @@
 /area/shuttle/escape_pod/escape_pod1/station)
 "kHG" = (
 /obj/machinery/door/airlock/hatch{
+	autoset_access = 0;
 	dir = 4;
 	name = "Cockpit";
-	req_access = list(list("ACCESS_EXPEDITION_SHUTTLE"))
+	req_access = list("ACCESS_EXPLORER")
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -15237,9 +15223,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/thirddeck/port)
 "lyN" = (
-/obj/machinery/alarm{
-	pixel_y = 24
-	},
 /obj/machinery/camera/network/petrov{
 	c_tag = "Petrov - Equipment Room"
 	},
@@ -15813,9 +15796,6 @@
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/center)
 "lZs" = (
-/obj/machinery/alarm{
-	pixel_y = 24
-	},
 /obj/structure/holoplant,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -16685,9 +16665,6 @@
 	},
 /obj/machinery/camera/network/engineering{
 	c_tag = "Third Deck - Starbound Necelle - Far"
-	},
-/obj/machinery/alarm{
-	pixel_y = 24
 	},
 /turf/simulated/floor/reinforced,
 /area/thruster/d3starboard)
@@ -18882,6 +18859,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
 	dir = 4
 	},
+/obj/structure/fuel_port,
 /turf/simulated/wall/r_titanium,
 /area/exploration_shuttle/power)
 "oAe" = (
@@ -19648,11 +19626,6 @@
 /obj/machinery/computer/ship/engines{
 	dir = 4
 	},
-/obj/machinery/power/apc/charon{
-	dir = 8;
-	name = "west bump";
-	pixel_x = -25
-	},
 /obj/structure/cable/cyan{
 	d2 = 4;
 	icon_state = "0-4"
@@ -19670,6 +19643,12 @@
 	dir = 9
 	},
 /obj/structure/window/reinforced/polarized,
+/obj/machinery/power/apc/charon{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -25;
+	req_access = list(list("ACCESS_EXPLORER", "ACCESS_ENGINEERING"))
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
 "pkm" = (
@@ -22296,16 +22275,15 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/alarm{
-	dir = 4;
-	pixel_x = -24;
-	req_access = list(list("ACCESS_EXPEDITION_SHUTTLE", "ACCESS_ATMOS","ACCESS_ENGINE_EQUIP"))
-	},
 /obj/structure/handrai{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
+	},
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_r)
@@ -22353,9 +22331,6 @@
 /obj/item/device/radio,
 /obj/item/device/radio,
 /obj/item/device/radio,
-/obj/machinery/alarm{
-	pixel_y = 24
-	},
 /obj/structure/railing/mapped{
 	dir = 4
 	},
@@ -22399,7 +22374,7 @@
 	dir = 4;
 	name = "west bump";
 	pixel_x = 24;
-	req_access = list(list("ACCESS_EXPEDITION_SHUTTLE", "ACCESS_EXPEDITION_SHUTTLE_HELM","ACCESS_ENGINEERING"))
+	req_access = list(list("ACCESS_EXPLORER", "ACCESS_ENGINEERING"))
 	},
 /obj/structure/cable/cyan{
 	d2 = 8;
@@ -22632,11 +22607,6 @@
 	pixel_y = 26
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/machinery/alarm{
-	dir = 4;
-	pixel_x = -24;
-	req_access = list(list("ACCESS_EXPEDITION_SHUTTLE", "ACCESS_ATMOS","ACCESS_ENGINE_EQUIP"))
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
 	},
@@ -25297,7 +25267,13 @@
 	frequency = 1331;
 	id_tag = "calypso_shuttle";
 	pixel_x = 20;
-	req_access = list("ACCESS_EXPEDITION_SHUTTLE")
+	req_access = list("ACCESS_EXPEDITION_SHUTTLE");
+	tag_airpump = "calypso_shuttle_pump_out_internal";
+	tag_chamber_sensor = "calypso_shuttle_sensor";
+	tag_exterior_door = "calypso_shuttle_outer";
+	tag_exterior_sensor = "calypso_shuttle_exterior_sensor";
+	tag_interior_door = "calypso_shuttle_inner";
+	tag_interior_sensor = "calypso_shuttle_interior_sensor"
 	},
 /obj/effect/floor_decal/industrial/warning/full,
 /turf/simulated/floor/plating,
@@ -26202,7 +26178,7 @@
 "uuC" = (
 /obj/machinery/vending/medical/sierra{
 	dir = 8;
-	req_access = list("ACCESS_EXPEDITION_SHUTTLE_HELM")
+	req_access = list("ACCESS_EXPEDITION_SHUTTLE")
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
@@ -26451,9 +26427,6 @@
 /turf/simulated/floor/plating,
 /area/shuttle/petrov/ship)
 "uGV" = (
-/obj/machinery/alarm{
-	pixel_y = 24
-	},
 /obj/structure/anomaly_container,
 /obj/machinery/light{
 	dir = 1
@@ -27228,11 +27201,6 @@
 /obj/effect/floor_decal/corner/b_green/border{
 	dir = 8
 	},
-/obj/machinery/alarm{
-	dir = 4;
-	pixel_x = -24;
-	req_access = list(list("ACCESS_EXPEDITION_SHUTTLE","ACCESS_ATMOS","ACCESS_ENGINE_EQUIP"))
-	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
@@ -27819,7 +27787,7 @@
 /obj/machinery/power/apc/charon{
 	name = "south bump";
 	pixel_y = -24;
-	req_access = list(list("ACCESS_EXPEDITION_SHUTTLE", "ACCESS_EXPEDITION_SHUTTLE_HELM","ACCESS_ENGINEERING"))
+	req_access = list(list("ACCESS_EXPLORER", "ACCESS_ENGINEERING"))
 	},
 /obj/machinery/camera/network/exploration_shuttle{
 	c_tag = "Charon - Seats Place Compartment";
@@ -29956,6 +29924,10 @@
 	},
 /obj/effect/floor_decal/corner/b_green/bordercorner2{
 	dir = 5
+	},
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/airlock)
@@ -54039,7 +54011,7 @@ eQa
 iYn
 drL
 apx
-dGE
+wKp
 cxv
 aAr
 nuv
