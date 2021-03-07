@@ -20636,7 +20636,6 @@
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/foreport)
 "pUS" = (
-/obj/structure/catwalk,
 /obj/structure/handrai{
 	dir = 4
 	},
