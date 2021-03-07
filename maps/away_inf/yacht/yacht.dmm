@@ -70,8 +70,8 @@
 /obj/structure/table/woodentable/walnut,
 /obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup,
 /obj/effect/floor_decal/spline/fancy/wood/corner{
-	icon_state = "spline_fancy_corner";
-	dir = 1
+	dir = 1;
+	icon_state = "spline_fancy_corner"
 	},
 /turf/simulated/floor/wood/walnut,
 /area/yacht/bridge)
@@ -100,8 +100,8 @@
 /area/yacht/bridge)
 "as" = (
 /obj/effect/floor_decal/spline/fancy/wood/corner{
-	icon_state = "spline_fancy_corner";
-	dir = 4
+	dir = 4;
+	icon_state = "spline_fancy_corner"
 	},
 /obj/structure/bed/chair/comfy/brown,
 /turf/simulated/floor/wood/walnut,
@@ -166,8 +166,8 @@
 	pixel_y = -21
 	},
 /obj/structure/bed/chair/comfy/brown{
-	icon_state = "comfychair_preview";
-	dir = 4
+	dir = 4;
+	icon_state = "comfychair_preview"
 	},
 /turf/simulated/floor/wood/walnut,
 /area/yacht/bridge)
@@ -277,8 +277,8 @@
 /area/yacht/living)
 "aK" = (
 /obj/effect/floor_decal/spline/plain/brown{
-	icon_state = "spline_plain";
-	dir = 4
+	dir = 4;
+	icon_state = "spline_plain"
 	},
 /obj/structure/flora/pottedplant/large,
 /obj/machinery/media/music_writer{
@@ -361,8 +361,8 @@
 /area/yacht/living)
 "aT" = (
 /obj/effect/floor_decal/spline/plain/brown{
-	icon_state = "spline_plain";
-	dir = 4
+	dir = 4;
+	icon_state = "spline_plain"
 	},
 /turf/simulated/floor/wood/walnut,
 /area/yacht/living)
@@ -382,8 +382,8 @@
 "aY" = (
 /obj/item/weapon/stool/bar/padded,
 /obj/effect/floor_decal/spline/plain/brown{
-	icon_state = "spline_plain";
-	dir = 4
+	dir = 4;
+	icon_state = "spline_plain"
 	},
 /turf/simulated/floor/wood/walnut,
 /area/yacht/living)
@@ -397,8 +397,8 @@
 /area/yacht/living)
 "bb" = (
 /obj/machinery/chemical_dispenser/bar_alc/full{
-	icon_state = "booze_dispenser";
-	dir = 8
+	dir = 8;
+	icon_state = "booze_dispenser"
 	},
 /obj/structure/table/woodentable_reinforced/walnut,
 /turf/simulated/floor/wood/walnut,
@@ -479,8 +479,8 @@
 /area/yacht/living)
 "bk" = (
 /obj/machinery/chemical_dispenser/bar_soft/full{
-	icon_state = "soda_dispenser";
-	dir = 8
+	dir = 8;
+	icon_state = "soda_dispenser"
 	},
 /obj/structure/table/woodentable_reinforced/walnut,
 /turf/simulated/floor/wood/walnut,
@@ -528,8 +528,8 @@
 /area/yacht/living)
 "bp" = (
 /obj/effect/floor_decal/spline/plain/brown{
-	icon_state = "spline_plain";
-	dir = 4
+	dir = 4;
+	icon_state = "spline_plain"
 	},
 /obj/item/weapon/stool/bar/padded,
 /turf/simulated/floor/wood/walnut,
@@ -550,8 +550,8 @@
 "br" = (
 /obj/machinery/disposal/small,
 /obj/structure/disposalpipe/trunk{
-	icon_state = "pipe-t";
-	dir = 1
+	dir = 1;
+	icon_state = "pipe-t"
 	},
 /turf/simulated/floor/carpet/red,
 /area/yacht/living)
@@ -561,8 +561,8 @@
 	icon_state = "tube_map"
 	},
 /obj/machinery/chemical_dispenser/bar_coffee/full{
-	icon_state = "coffee_dispenser";
-	dir = 8
+	dir = 8;
+	icon_state = "coffee_dispenser"
 	},
 /obj/structure/table/woodentable_reinforced/walnut,
 /turf/simulated/floor/wood/walnut,
@@ -592,8 +592,8 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced/tinted/frosted{
-	icon_state = "rwindow";
-	dir = 1
+	dir = 1;
+	icon_state = "rwindow"
 	},
 /obj/structure/reagent_dispensers/beerkeg,
 /turf/simulated/floor/wood/walnut,
@@ -662,8 +662,8 @@
 /obj/item/weapon/book/manual/engineering_hacking,
 /obj/item/weapon/book/manual/evaguide,
 /obj/machinery/light/small{
-	icon_state = "bulb1";
-	dir = 4
+	dir = 4;
+	icon_state = "bulb1"
 	},
 /turf/simulated/floor/wood/walnut,
 /area/yacht/living)
@@ -720,8 +720,8 @@
 /area/yacht/living)
 "bL" = (
 /obj/structure/bed/sofa/black/right{
-	icon_state = "couchblack_right";
-	dir = 8
+	dir = 8;
+	icon_state = "couchblack_right"
 	},
 /turf/simulated/floor/carpet/purple,
 /area/yacht/living)
@@ -833,8 +833,8 @@
 	dir = 8
 	},
 /obj/structure/bed/sofa/black/left{
-	icon_state = "couchblack_left";
-	dir = 8
+	dir = 8;
+	icon_state = "couchblack_left"
 	},
 /obj/effect/submap_landmark/spawnpoint/yachtman_spawn,
 /turf/simulated/floor/carpet/purple,
@@ -874,8 +874,8 @@
 	icon_state = "bulb_map"
 	},
 /obj/machinery/cryopod{
-	icon_state = "body_scanner_0";
-	dir = 1
+	dir = 1;
+	icon_state = "body_scanner_0"
 	},
 /obj/machinery/computer/cryopod{
 	pixel_y = -32
@@ -982,8 +982,8 @@
 /area/yacht/living)
 "ck" = (
 /obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /obj/machinery/power/smes/buildable/preset/yacht,
 /obj/effect/decal/cleanable/dirt,
@@ -1043,8 +1043,8 @@
 /area/yacht/engine)
 "cq" = (
 /obj/machinery/light/small{
-	icon_state = "bulb1";
-	dir = 4
+	dir = 4;
+	icon_state = "bulb1"
 	},
 /obj/machinery/portable_atmospherics/canister/air/airlock,
 /obj/machinery/atmospherics/portables_connector{
@@ -1101,8 +1101,8 @@
 /area/yacht/engine)
 "cz" = (
 /obj/machinery/power/terminal{
-	icon_state = "term";
-	dir = 1
+	dir = 1;
+	icon_state = "term"
 	},
 /obj/structure/cable{
 	d2 = 2;
@@ -1390,8 +1390,8 @@
 	},
 /obj/structure/closet/firecloset,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
-	icon_state = "map_scrubber_on";
-	dir = 1
+	dir = 1;
+	icon_state = "map_scrubber_on"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
@@ -1582,8 +1582,8 @@
 	pixel_y = -32
 	},
 /obj/structure/window/reinforced/tinted{
-	icon_state = "rwindow";
-	dir = 1
+	dir = 1;
+	icon_state = "rwindow"
 	},
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 9
@@ -1597,16 +1597,16 @@
 "dp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/window/reinforced/tinted{
-	icon_state = "rwindow";
-	dir = 1
+	dir = 1;
+	icon_state = "rwindow"
 	},
 /obj/effect/floor_decal/borderfloorwhite{
-	icon_state = "borderfloor_white";
-	dir = 1
+	dir = 1;
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/paleblue/border{
-	icon_state = "bordercolor";
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /obj/structure/closet/crate/medical,
 /obj/item/weapon/storage/firstaid/regular,
@@ -1626,16 +1626,16 @@
 /obj/item/weapon/storage/box/syringes,
 /obj/item/weapon/storage/box/syringes,
 /obj/structure/window/reinforced/tinted{
-	icon_state = "rwindow";
-	dir = 1
+	dir = 1;
+	icon_state = "rwindow"
 	},
 /obj/effect/floor_decal/borderfloorwhite{
-	icon_state = "borderfloor_white";
-	dir = 1
+	dir = 1;
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/paleblue/border{
-	icon_state = "bordercolor";
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /obj/effect/floor_decal/borderfloorwhite/corner2{
 	dir = 1
@@ -1649,8 +1649,8 @@
 /obj/effect/floor_decal/borderfloorwhite/corner,
 /obj/effect/floor_decal/corner/paleblue/bordercorner,
 /obj/effect/floor_decal/industrial/firstaid{
-	icon_state = "stripe";
-	dir = 1
+	dir = 1;
+	icon_state = "stripe"
 	},
 /turf/simulated/floor/tiled/white,
 /area/yacht/living)
@@ -1694,8 +1694,8 @@
 /area/yacht/living)
 "dx" = (
 /obj/effect/floor_decal/borderfloorwhite{
-	icon_state = "borderfloor_white";
-	dir = 4
+	dir = 4;
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 4
@@ -1812,8 +1812,8 @@
 "dL" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/binary/pump/on{
-	icon_state = "map_on";
-	dir = 1
+	dir = 1;
+	icon_state = "map_on"
 	},
 /turf/simulated/floor/plating,
 /area/yacht/engine)
@@ -1842,8 +1842,8 @@
 /area/yacht/living)
 "dO" = (
 /obj/effect/floor_decal/borderfloorwhite{
-	icon_state = "borderfloor_white";
-	dir = 6
+	dir = 6;
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 6
@@ -1891,8 +1891,8 @@
 /area/yacht/engine)
 "dT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/universal{
-	icon_state = "map_universal";
-	dir = 4
+	dir = 4;
+	icon_state = "map_universal"
 	},
 /obj/structure/catwalk,
 /obj/effect/submap_landmark/spawnpoint/yachtman_spawn,
@@ -1949,8 +1949,8 @@
 	},
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/binary/pump/on{
-	icon_state = "map_on";
-	dir = 4
+	dir = 4;
+	icon_state = "map_on"
 	},
 /turf/simulated/floor/plating,
 /area/yacht/engine)
@@ -1981,8 +1981,8 @@
 	},
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/machinery/atmospherics/binary/pump/on{
-	icon_state = "map_on";
-	dir = 4
+	dir = 4;
+	icon_state = "map_on"
 	},
 /turf/simulated/floor/plating,
 /area/yacht/engine)
@@ -2112,8 +2112,8 @@
 "eq" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/manifold/visible/black{
-	icon_state = "map";
-	dir = 1
+	dir = 1;
+	icon_state = "map"
 	},
 /turf/simulated/floor/plating,
 /area/yacht/engine)
@@ -2129,8 +2129,8 @@
 "es" = (
 /obj/machinery/atmospherics/pipe/simple/visible/black,
 /obj/machinery/light/small{
-	icon_state = "bulb1";
-	dir = 4
+	dir = 4;
+	icon_state = "bulb1"
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
@@ -2176,12 +2176,12 @@
 /obj/item/stack/material/tritium/ten,
 /obj/item/stack/material/tritium/ten,
 /obj/machinery/light/small{
-	icon_state = "bulb1";
-	dir = 4
+	dir = 4;
+	icon_state = "bulb1"
 	},
 /obj/effect/floor_decal/industrial/warning{
-	icon_state = "stripe";
-	dir = 8
+	dir = 8;
+	icon_state = "stripe"
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/black{
 	dir = 10
@@ -2221,8 +2221,8 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden,
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
 /obj/structure/railing/mapped{
-	icon_state = "railing0-1";
-	dir = 8
+	dir = 8;
+	icon_state = "railing0-1"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -2236,8 +2236,8 @@
 	},
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
 /obj/structure/railing/mapped{
-	icon_state = "railing0-1";
-	dir = 4
+	dir = 4;
+	icon_state = "railing0-1"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -2250,8 +2250,8 @@
 	dir = 5
 	},
 /obj/structure/railing/mapped{
-	icon_state = "railing0-1";
-	dir = 8
+	dir = 8;
+	icon_state = "railing0-1"
 	},
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/effect/floor_decal/industrial/warning{
@@ -2269,8 +2269,8 @@
 	},
 /obj/machinery/portable_atmospherics/powered/scrubber,
 /obj/structure/railing/mapped{
-	icon_state = "railing0-1";
-	dir = 4
+	dir = 4;
+	icon_state = "railing0-1"
 	},
 /obj/structure/railing/mapped,
 /turf/simulated/floor/plating,
@@ -2279,8 +2279,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/solar,
 /obj/effect/floor_decal/industrial/warning{
-	icon_state = "stripe";
-	dir = 8
+	dir = 8;
+	icon_state = "stripe"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/black,
 /turf/simulated/floor/plating,
@@ -2406,15 +2406,15 @@
 "of" = (
 /obj/effect/paint/sun,
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
-	icon_state = "intact";
-	dir = 9
+	dir = 9;
+	icon_state = "intact"
 	},
 /turf/simulated/wall/r_titanium,
 /area/yacht/engine)
 "oi" = (
 /obj/machinery/vending/dinnerware{
-	icon_state = "dinnerware";
-	dir = 1
+	dir = 1;
+	icon_state = "dinnerware"
 	},
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
@@ -2432,8 +2432,8 @@
 /area/yacht/engine)
 "sg" = (
 /obj/structure/railing/mapped{
-	icon_state = "railing0-1";
-	dir = 4
+	dir = 4;
+	icon_state = "railing0-1"
 	},
 /obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/plating,
@@ -2476,8 +2476,8 @@
 	pixel_y = -22
 	},
 /obj/machinery/sleeper{
-	icon_state = "sleeper_0";
-	dir = 1
+	dir = 1;
+	icon_state = "sleeper_0"
 	},
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/paleblue/border,
@@ -2571,8 +2571,8 @@
 /area/yacht/living)
 "Hx" = (
 /obj/structure/railing/mapped{
-	icon_state = "railing0-1";
-	dir = 8
+	dir = 8;
+	icon_state = "railing0-1"
 	},
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/plating,
@@ -2634,12 +2634,12 @@
 /area/yacht/living)
 "Ol" = (
 /obj/machinery/door/blast/regular{
-	name = "Meteor Shielding";
-	icon_state = "pdoor0";
-	dir = 8;
-	opacity = 0;
 	density = 0;
-	id_tag = "yachtlock"
+	dir = 8;
+	icon_state = "pdoor0";
+	id_tag = "yachtlock";
+	name = "Meteor Shielding";
+	opacity = 0
 	},
 /obj/structure/lattice,
 /obj/structure/catwalk,
@@ -9454,16 +9454,16 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
 dB
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -9534,17 +9534,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
 ae
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
