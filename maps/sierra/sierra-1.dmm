@@ -27,6 +27,11 @@
 	icon_state = "pipe-c"
 	},
 /obj/effect/catwalk_plated,
+/obj/effect/floor_decal/industrial/danger/corner,
+/obj/machinery/camera/network/hangar{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor/corner,
 /turf/simulated/floor/plating,
 /area/quartermaster/hangar)
 "aby" = (
@@ -981,6 +986,9 @@
 	},
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 1
+	},
+/obj/machinery/alarm{
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
@@ -2002,6 +2010,9 @@
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	dir = 4
+	},
+/obj/machinery/alarm{
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
@@ -6974,12 +6985,17 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/fore)
 "eHl" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/fuel{
-	dir = 1
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
 	},
-/obj/effect/paint/red,
-/turf/simulated/wall/r_titanium,
-/area/exploration_shuttle/power)
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/obj/machinery/floodlight{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/quartermaster/hangar)
 "eHC" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -8569,6 +8585,18 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/central_stairwell)
+"fWw" = (
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/catwalk_plated,
+/obj/machinery/light/spot{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/quartermaster/hangar)
 "fWJ" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/glass/civilian{
@@ -11329,6 +11357,11 @@
 	},
 /obj/machinery/sleeper/survival_pod{
 	dir = 8
+	},
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 24;
+	req_access = list(list("ACCESS_ATMOS","ACCESS_ENGINE_EQUIP","ACCESS_GUPPY"))
 	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/guppy_hangar/start)
@@ -15233,6 +15266,9 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/alarm{
+	pixel_y = 24
+	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "lzM" = (
@@ -15804,6 +15840,9 @@
 	},
 /obj/effect/floor_decal/borderfloorblack/corner2{
 	dir = 10
+	},
+/obj/machinery/alarm{
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/petrov/ship)
@@ -16664,6 +16703,9 @@
 	},
 /obj/machinery/camera/network/engineering{
 	c_tag = "Third Deck - Starbound Necelle - Far"
+	},
+/obj/machinery/alarm{
+	pixel_y = 24
 	},
 /turf/simulated/floor/reinforced,
 /area/thruster/d3starboard)
@@ -21141,6 +21183,18 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/hallway/primary/thirddeck/fore)
+"qnk" = (
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/catwalk_plated,
+/obj/machinery/camera/network/hangar{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/quartermaster/hangar)
 "qno" = (
 /obj/random/closet,
 /obj/random/maintenance,
@@ -21495,6 +21549,24 @@
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/thirddeck/aft)
+"qDi" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/catwalk_plated,
+/obj/machinery/button/blast_door{
+	dir = 8;
+	id_tag = "hangar_atmos_storage";
+	name = "Storage Door Control";
+	pixel_x = 24;
+	req_access = list(list("ACCESS_HANGAR","ACCESS_ENGINE_EQUIP"))
+	},
+/turf/simulated/floor/plating,
+/area/quartermaster/hangar)
 "qDG" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -25071,6 +25143,14 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aft)
+"tyq" = (
+/obj/effect/catwalk_plated,
+/obj/item/device/radio/intercom{
+	dir = 8;
+	pixel_x = 20
+	},
+/turf/simulated/floor/plating,
+/area/quartermaster/hangar)
 "tzG" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/door/airlock/external/bolted/cycling{
@@ -25199,9 +25279,19 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/hallway/primary/thirddeck/center)
 "tHU" = (
-/obj/machinery/shield_diffuser,
-/turf/simulated/floor/reinforced/airless,
-/area/space)
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/catwalk_plated,
+/obj/machinery/light/spot{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/quartermaster/hangar)
 "tJq" = (
 /obj/item/device/radio/intercom{
 	pixel_y = 26
@@ -26428,6 +26518,9 @@
 	},
 /obj/effect/floor_decal/corner/purple/mono,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/alarm{
+	pixel_y = 24
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/shuttle/petrov/ship)
 "uHH" = (
@@ -29096,11 +29189,11 @@
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 1
 	},
-/obj/effect/floor_decal/techfloor/corner{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/manifold/hidden{
 	dir = 8
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/airlock)
@@ -51559,8 +51652,8 @@ fRj
 fRj
 fRj
 fRj
-tHU
-biQ
+fRj
+fRj
 biQ
 pCs
 jty
@@ -51763,7 +51856,7 @@ fRj
 biQ
 bFK
 biQ
-pCs
+biQ
 pCs
 xNM
 pCs
@@ -52595,7 +52688,7 @@ uxb
 cqo
 mHW
 rrc
-eHl
+iZs
 xnB
 cxv
 aAr
@@ -54396,9 +54489,9 @@ ffH
 fag
 rRq
 nDS
-hAR
-hAR
-hAR
+eHl
+eHl
+eHl
 hAR
 hAR
 hAR
@@ -54598,23 +54691,23 @@ eQl
 dzD
 afk
 qCF
+tHU
 qCF
-qCF
-qCF
+qDi
 qCF
 sDY
 vnv
 vnv
+fWw
 vnv
 vnv
 vnv
 vnv
+qnk
 vnv
-vnv
-vnv
-vnv
+fWw
 cMZ
-kTt
+tyq
 kTt
 eUI
 dOW
