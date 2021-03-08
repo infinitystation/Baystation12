@@ -624,7 +624,7 @@
 			if(game_id)
 				stat("Round ID:", game_id)
 			var/server_status_info
-			if(SSticker.server_update)
+			if(SSticker.update_server)
 				server_status_info = "Server Update"
 			else if(SSticker.scheduled_map_change)
 				server_status_info = "Map Change"
