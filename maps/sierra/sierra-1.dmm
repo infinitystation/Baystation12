@@ -10,6 +10,24 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/thruster/d3starboard)
+"aap" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/catwalk_plated,
+/obj/machinery/button/blast_door{
+	dir = 8;
+	id_tag = "hangar_atmos_storage";
+	name = "Storage Door Control";
+	pixel_x = 24;
+	req_access = list(list("ACCESS_HANGAR","ACCESS_ENGINE_EQUIP"))
+	},
+/turf/simulated/floor/plating,
+/area/quartermaster/hangar)
 "aay" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
@@ -836,7 +854,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden,
-/obj/machinery/security_scanner,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/random/date_based/christmas/doorwreath{
 	dir = 1
@@ -4509,9 +4526,6 @@
 	icon_state = "4-8"
 	},
 /obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/simple/hidden/red{
-	dir = 6
-	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "dht" = (
@@ -7372,6 +7386,18 @@
 "eWE" = (
 /turf/simulated/wall/prepainted,
 /area/hallway/primary/thirddeck/central_stairwell)
+"eXh" = (
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/catwalk_plated,
+/obj/machinery/light/spot{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/quartermaster/hangar)
 "eXo" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -8585,18 +8611,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/central_stairwell)
-"fWw" = (
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/catwalk_plated,
-/obj/machinery/light/spot{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/quartermaster/hangar)
 "fWJ" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/glass/civilian{
@@ -8631,11 +8645,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
-"fXH" = (
-/obj/effect/floor_decal/industrial/warning/fulltile,
-/obj/machinery/atmospherics/pipe/simple/hidden/red,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/quartermaster/office)
 "fZM" = (
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/no_grille,
@@ -11199,7 +11208,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden,
-/obj/machinery/security_scanner,
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
 	},
@@ -11628,9 +11636,6 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/red{
-	dir = 10
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
@@ -14838,7 +14843,6 @@
 	dir = 4;
 	pixel_x = -32
 	},
-/obj/machinery/security_scanner,
 /turf/simulated/floor/plating,
 /area/quartermaster/office)
 "lfB" = (
@@ -15761,6 +15765,18 @@
 /obj/machinery/air_sensor/nacelle/first/co2,
 /turf/simulated/floor/reinforced/carbon_dioxide,
 /area/thruster/d3starboard)
+"lVc" = (
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/catwalk_plated,
+/obj/machinery/camera/network/hangar{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/quartermaster/hangar)
 "lVs" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -19084,6 +19100,14 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/quartermaster/expedition/eva)
+"oJF" = (
+/obj/effect/catwalk_plated,
+/obj/item/device/radio/intercom{
+	dir = 8;
+	pixel_x = 20
+	},
+/turf/simulated/floor/plating,
+/area/quartermaster/hangar)
 "oJW" = (
 /obj/item/weapon/flame/lighter/random,
 /obj/item/weapon/crowbar,
@@ -19697,7 +19721,9 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "pkJ" = (
@@ -20073,10 +20099,6 @@
 /obj/structure/railing/mapped,
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/industrial/danger,
-/obj/machinery/atmospherics/binary/passive_gate/on{
-	dir = 1;
-	regulate_mode = 1
-	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "pwk" = (
@@ -21183,18 +21205,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/hallway/primary/thirddeck/fore)
-"qnk" = (
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/catwalk_plated,
-/obj/machinery/camera/network/hangar{
-	dir = 8
-	},
-/turf/simulated/floor/plating,
-/area/quartermaster/hangar)
 "qno" = (
 /obj/random/closet,
 /obj/random/maintenance,
@@ -21549,24 +21559,6 @@
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/thirddeck/aft)
-"qDi" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/catwalk_plated,
-/obj/machinery/button/blast_door{
-	dir = 8;
-	id_tag = "hangar_atmos_storage";
-	name = "Storage Door Control";
-	pixel_x = 24;
-	req_access = list(list("ACCESS_HANGAR","ACCESS_ENGINE_EQUIP"))
-	},
-/turf/simulated/floor/plating,
-/area/quartermaster/hangar)
 "qDG" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -24598,9 +24590,6 @@
 /area/shuttle/petrov/ship)
 "sZW" = (
 /obj/effect/floor_decal/industrial/warning/fulltile,
-/obj/machinery/atmospherics/pipe/vent{
-	dir = 1
-	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/quartermaster/office)
 "tab" = (
@@ -24639,7 +24628,6 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/universal,
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/office)
 "tbj" = (
@@ -25093,7 +25081,6 @@
 	req_access = newlist()
 	},
 /obj/structure/disposalpipe/segment,
-/obj/machinery/security_scanner,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/random/date_based/christmas/doorwreath{
 	dir = 1
@@ -25143,14 +25130,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aft)
-"tyq" = (
-/obj/effect/catwalk_plated,
-/obj/item/device/radio/intercom{
-	dir = 8;
-	pixel_x = 20
-	},
-/turf/simulated/floor/plating,
-/area/quartermaster/hangar)
 "tzG" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/door/airlock/external/bolted/cycling{
@@ -26840,7 +26819,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/security_scanner,
 /obj/effect/floor_decal/techfloor{
 	dir = 8
 	},
@@ -27508,10 +27486,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/binary/pump/on{
-	dir = 4;
-	name = "Excess Pressure to Scrubber"
-	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "vuI" = (
@@ -28018,7 +27992,6 @@
 	autoset_access = 0;
 	name = "Comissary"
 	},
-/obj/machinery/security_scanner,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/random/date_based/christmas/doorwreath{
 	dir = 1
@@ -48453,7 +48426,7 @@ iFQ
 pFE
 dfZ
 puv
-fXH
+sZW
 sZW
 mOL
 mwa
@@ -54693,21 +54666,21 @@ afk
 qCF
 tHU
 qCF
-qDi
+aap
 qCF
 sDY
 vnv
 vnv
-fWw
+eXh
 vnv
 vnv
 vnv
 vnv
-qnk
+lVc
 vnv
-fWw
+eXh
 cMZ
-tyq
+oJF
 kTt
 eUI
 dOW
