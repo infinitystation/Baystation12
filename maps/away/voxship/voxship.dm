@@ -9,7 +9,7 @@
 	description = "Vox ship and base."
 	suffixes = list("voxship/voxship-1.dmm")
 	spawn_weight = 50 //INF, HABITABLE SHIPS SPAWN
-	cost = 9999 //INF, WAS 0.5
+	spawn_cost = 9999 //INF, WAS 0.5
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/vox_shuttle)
 	area_usage_test_exempted_root_areas = list(/area/voxship)
 	ban_ruins = list(/datum/map_template/ruin/away_site/scavship)
@@ -94,7 +94,8 @@
 	id = "awaysite_voxship2"
 	description = "Vox Scavenger Ship."
 	suffixes = list("voxship/voxship-2.dmm")
-	cost = 0.5
+	spawn_cost = 0.5
+	player_cost = 5 // INF, было player_cost = 4 | Нынешнее значение основано на количестве игроков в авейке ~bear1ake
 	spawn_weight = 0.67 //INF
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/vox_ship, /datum/shuttle/autodock/overmap/vox_lander)
 	ban_ruins = list(/datum/map_template/ruin/away_site/voxship)

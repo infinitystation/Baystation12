@@ -3,7 +3,8 @@
 	id = "playablecolony"
 	description = "a fully functional colony on the frontier of settled space"
 	suffixes = list("playablecolony/colony.dmm")
-	cost = 2
+	spawn_cost = 2
+	player_cost = 6 // INF, было player_cost = 4 | Нынешнее значение основано на количестве игроков в авейке ~bear1ake
 	template_flags = TEMPLATE_FLAG_CLEAR_CONTENTS | TEMPLATE_FLAG_NO_RUINS | TEMPLATE_FLAG_NO_RADS
 	ruin_tags = RUIN_HUMAN|RUIN_HABITAT
 	apc_test_exempt_areas = list(
