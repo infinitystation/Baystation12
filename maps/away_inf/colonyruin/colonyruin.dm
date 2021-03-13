@@ -6,22 +6,15 @@
 	desc = "A large, warm planet with a galloping relief. A weak SOS signal comes from the northern part of the planet. Debris field discovered in its orbit."
 	in_space = 0
 	icon_state = "globe"
+	
 	initial_generic_waypoints = list(
 		"nav_colonyruin_1"
 	)
 	initial_restricted_waypoints = list(
-		"Guppy" = list("nav_colonyruin_guppy")
+		"Guppy" = list("nav_colonyruin_2"),
 	)
 
-/obj/effect/shuttle_landmark/nav_colonyruin/nav1
-	name = "Piscium-Alpha 372 Landing Point #1"
-	landmark_tag = "nav_colonyruin_1"
-
-/obj/effect/shuttle_landmark/nav_colonyruin/nav2
-	name = "Piscium-Alpha 372 SEG Landing Point #2"
-	landmark_tag = "nav_colonyruin_guppy"
-
-/datum/map_template/ruin/away_site/blueriver
+/datum/map_template/ruin/away_site/colonyruin
 	name = "Colony Ruin"
 	id = "awaysite_colonyruin"
 	description = "Away site with ruins of colony"
@@ -30,3 +23,17 @@
 	prefix = "maps/away_inf/"
 	suffixes = list("colonyruin/colony.dmm")
 	area_usage_test_exempted_root_areas = list(/area/colonyruin)
+
+
+/obj/effect/shuttle_landmark/nav_colonyruin
+	base_area = /area/colonyruin/outside
+	base_turf = /turf/simulated/floor/exoplanet/grass
+
+/obj/effect/shuttle_landmark/nav_colonyruin/nav1
+	name = "Planet Landing Point #1"
+	landmark_tag = "nav_colonyruin_1"
+
+/obj/effect/shuttle_landmark/nav_colonyruin/nav2
+	name = "Planet Landing Point #2"
+	landmark_tag = "nav_colonyruin_2"
+
