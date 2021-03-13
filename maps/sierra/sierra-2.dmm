@@ -298,7 +298,6 @@
 	pixel_x = -12;
 	pixel_y = -10
 	},
-/obj/effect/landmark/start,
 /obj/machinery/newscaster{
 	dir = 4;
 	pixel_x = 26;
@@ -2819,9 +2818,6 @@
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
-	},
-/obj/effect/landmark/start{
-	name = "Captain"
 	},
 /turf/simulated/floor/carpet/blue,
 /area/crew_quarters/heads/cobed)
@@ -6961,6 +6957,7 @@
 /obj/structure/bed/chair/wood/walnut{
 	dir = 4
 	},
+/obj/effect/landmark/start,
 /turf/simulated/floor/carpet/green,
 /area/crew_quarters/sleep/bunk)
 "ant" = (
@@ -7752,6 +7749,9 @@
 	},
 /obj/effect/landmark/start{
 	name = "Captain"
+	},
+/obj/effect/landmark/start{
+	name = "Adjutant"
 	},
 /turf/simulated/floor/carpet/blue,
 /area/crew_quarters/heads/cobed)
@@ -10642,7 +10642,6 @@
 /obj/structure/bed/chair/padded/blue{
 	dir = 4
 	},
-/obj/effect/landmark/start,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/fore)
 "aue" = (
@@ -11567,7 +11566,6 @@
 /obj/structure/bed/sofa/black/right{
 	dir = 4
 	},
-/obj/effect/landmark/start,
 /obj/random/date_based/christmas/xmaslights,
 /obj/machinery/light{
 	dir = 8
@@ -11719,7 +11717,6 @@
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 9
 	},
-/obj/machinery/vending/games,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -11729,6 +11726,7 @@
 /obj/effect/floor_decal/corner/lime/bordercorner2{
 	dir = 10
 	},
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/seconddeck/center)
 "avM" = (
@@ -12813,8 +12811,8 @@
 /area/crew_quarters/heads/office/captain)
 "axH" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/machinery/vending/cola,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/fore)
 "axI" = (
@@ -13686,9 +13684,6 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
 	},
-/obj/machinery/vending/sol{
-	dir = 4
-	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 8
 	},
@@ -13698,12 +13693,10 @@
 /obj/random/date_based/christmas/xmaslights{
 	dir = 8
 	},
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
 "azd" = (
-/obj/machinery/vending/cola{
-	dir = 8
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
@@ -13719,6 +13712,7 @@
 /obj/random/date_based/christmas/xmaslights{
 	dir = 4
 	},
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
 "aze" = (
@@ -15755,8 +15749,8 @@
 	pixel_y = -28
 	},
 /obj/structure/bed/padded,
-/obj/effect/landmark/start,
 /obj/item/weapon/bedsheet/green,
+/obj/effect/landmark/start,
 /turf/simulated/floor/carpet/green,
 /area/crew_quarters/sleep/bunk)
 "aCx" = (
@@ -16290,13 +16284,13 @@
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 1
 	},
-/obj/machinery/vending/snack,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/lime/bordercorner2{
 	dir = 1
 	},
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/seconddeck/center)
 "aDq" = (
@@ -16356,8 +16350,8 @@
 	pixel_y = -28
 	},
 /obj/structure/bed/padded,
-/obj/effect/landmark/start,
 /obj/item/weapon/bedsheet/purple,
+/obj/effect/landmark/start,
 /turf/simulated/floor/carpet/purple,
 /area/crew_quarters/sleep/bunk)
 "aDx" = (
@@ -16565,9 +16559,6 @@
 	c_tag = "Second Deck - Conference Room";
 	dir = 1
 	},
-/obj/effect/landmark/start{
-	name = "Captain"
-	},
 /turf/simulated/floor/lino,
 /area/bridge/meeting_room)
 "aDP" = (
@@ -16770,9 +16761,6 @@
 	dir = 8
 	},
 /obj/structure/disposalpipe/segment,
-/obj/machinery/vending/coffee{
-	dir = 4
-	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 10
 	},
@@ -16782,6 +16770,7 @@
 /obj/random/date_based/christmas/xmaslights{
 	dir = 8
 	},
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
 "aEk" = (
@@ -16850,6 +16839,7 @@
 /obj/structure/sign/poster{
 	pixel_x = -32
 	},
+/obj/effect/landmark/start,
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/sleep/bunk)
 "aEu" = (
@@ -17179,9 +17169,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/seconddeck/foreport)
 "aEX" = (
-/obj/machinery/vending/snack{
-	dir = 8
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
@@ -17198,6 +17185,7 @@
 /obj/random/date_based/christmas/xmaslights{
 	dir = 4
 	},
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
 "aEZ" = (
@@ -17253,6 +17241,7 @@
 /obj/item/device/radio/intercom{
 	pixel_y = 26
 	},
+/obj/effect/landmark/start,
 /obj/effect/landmark/start,
 /turf/simulated/floor/carpet/red,
 /area/crew_quarters/sleep/bunk)
@@ -18195,7 +18184,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
-/obj/machinery/vending/coffee,
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
 "aGU" = (
@@ -19019,11 +19008,11 @@
 /obj/structure/bed/chair/wood/walnut{
 	dir = 4
 	},
-/obj/effect/landmark/start,
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -20
 	},
+/obj/effect/landmark/start,
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/sleep/bunk)
 "aIy" = (
@@ -19182,8 +19171,8 @@
 /area/maintenance/seconddeck/aftport)
 "aIM" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/machinery/vending/coffee,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/fore)
 "aIN" = (
@@ -23171,9 +23160,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/maintenance/compactor)
 "aQg" = (
-/obj/machinery/vending/tool/adherent{
-	dir = 8
-	},
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/crystal,
 /area/crew_quarters/adherent)
 "aQh" = (
@@ -24202,6 +24189,7 @@
 "aSg" = (
 /obj/structure/bed/padded,
 /obj/item/weapon/bedsheet/brown,
+/obj/effect/landmark/start,
 /turf/simulated/floor/carpet,
 /area/crew_quarters/sleep/bunk)
 "aSh" = (
@@ -24243,24 +24231,6 @@
 /obj/structure/table/rack,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
-"aSm" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/vending/fashionvend{
-	dir = 1
-	},
-/obj/effect/floor_decal/techfloor,
-/turf/simulated/floor/tiled/techfloor,
-/area/crew_quarters/sleep/cryo/south)
 "aSn" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -24555,9 +24525,6 @@
 	},
 /obj/machinery/light{
 	dir = 1
-	},
-/obj/effect/landmark/start{
-	name = "Research Director"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/xenobiology/entry)
@@ -27574,6 +27541,7 @@
 /obj/structure/bed/chair/wood/walnut{
 	dir = 8
 	},
+/obj/effect/landmark/start,
 /turf/simulated/floor/carpet/purple,
 /area/crew_quarters/sleep/bunk)
 "aXW" = (
@@ -28732,9 +28700,6 @@
 /obj/structure/bed/chair/office/comfy/beige{
 	dir = 4
 	},
-/obj/effect/landmark/start{
-	name = "Captain"
-	},
 /turf/simulated/floor/carpet/red,
 /area/crew_quarters/heads/office/captain)
 "bae" = (
@@ -29444,9 +29409,6 @@
 "bbE" = (
 /obj/structure/bed/chair/comfy/captain{
 	dir = 8
-	},
-/obj/effect/landmark/start{
-	name = "Captain"
 	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8
@@ -30867,14 +30829,12 @@
 /turf/simulated/floor/aquarium,
 /area/bridge/meeting_room)
 "bew" = (
-/obj/machinery/vending/coffee{
-	dir = 1
-	},
 /obj/effect/floor_decal/spline/fancy/wood/three_quarters,
 /obj/machinery/camera/network/second_deck{
 	c_tag = "Lounge - Lower";
 	dir = 8
 	},
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/lino,
 /area/crew_quarters/lounge)
 "bez" = (
@@ -33193,7 +33153,6 @@
 /obj/structure/bed/chair/padded/green{
 	dir = 1
 	},
-/obj/effect/landmark/start,
 /obj/structure/railing/mapped{
 	dir = 8
 	},
@@ -34973,24 +34932,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/cafe)
-"jDB" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/vending/cola{
-	dir = 1
-	},
-/obj/effect/floor_decal/techfloor,
-/turf/simulated/floor/tiled/techfloor,
-/area/crew_quarters/sleep/cryo/south)
 "jGl" = (
 /obj/structure/flora/pottedplant/deskleaf{
 	pixel_x = 6
@@ -35248,11 +35189,6 @@
 /obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hydroponics/storage)
-"kRQ" = (
-/obj/structure/towel/fitness,
-/obj/effect/landmark/start,
-/turf/simulated/floor/tiled,
-/area/crew_quarters/gym)
 "kUU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /turf/simulated/wall/r_wall/prepainted,
@@ -35607,7 +35543,6 @@
 	dir = 4
 	},
 /obj/structure/bed/sofa/brown/right,
-/obj/effect/landmark/start,
 /obj/item/device/radio/intercom{
 	pixel_y = 26
 	},
@@ -36059,9 +35994,6 @@
 /obj/structure/bed/chair/comfy/beige{
 	dir = 4
 	},
-/obj/effect/landmark/start{
-	name = "Captain"
-	},
 /obj/random/date_based/christmas/xmaslights{
 	dir = 1;
 	pixel_y = 24
@@ -36290,7 +36222,6 @@
 	dir = 1;
 	pixel_y = 24
 	},
-/obj/effect/landmark/start,
 /turf/simulated/floor/wood/bamboo,
 /area/grove/theta)
 "pHb" = (
@@ -36655,11 +36586,6 @@
 /obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/seconddeck/center)
-"rjL" = (
-/obj/structure/bed/chair/padded/black,
-/obj/effect/landmark/start,
-/turf/simulated/floor/tiled/dark,
-/area/chapel/main)
 "rok" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
 	dir = 10
@@ -36849,14 +36775,6 @@
 	},
 /turf/simulated/floor/grass,
 /area/grove/theta)
-"sEX" = (
-/obj/structure/bed/chair/comfy/brown{
-	dir = 1
-	},
-/obj/effect/landmark/start,
-/obj/random/date_based/christmas/xmaslights,
-/turf/simulated/floor/carpet,
-/area/crew_quarters/lounge)
 "sFP" = (
 /obj/structure/closet/jcloset/sierra,
 /obj/machinery/power/apc{
@@ -37455,10 +37373,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/random/vendor{
-	dir = 1
-	},
 /obj/effect/floor_decal/techfloor,
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo/south)
 "vwM" = (
@@ -37849,13 +37765,11 @@
 /turf/simulated/floor/plating,
 /area/bridge/meeting_room)
 "xXl" = (
-/obj/machinery/uniform_vendor{
-	icon_state = "robotics"
-	},
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/outline/grey,
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo/south)
 "xYX" = (
@@ -54358,7 +54272,7 @@ lGf
 eSw
 bLp
 tEg
-aSm
+vth
 aTp
 aTp
 aTp
@@ -54560,7 +54474,7 @@ lGf
 vaq
 tEg
 tEg
-jDB
+vth
 aGY
 aWH
 eOh
@@ -54969,7 +54883,7 @@ aGY
 aXq
 aLs
 aZU
-sEX
+aMc
 aKz
 aaK
 aam
@@ -56185,7 +56099,7 @@ aRN
 bez
 beC
 bhM
-rjL
+bhM
 bdM
 aam
 aam
@@ -58377,7 +58291,7 @@ bbR
 akN
 aDo
 awl
-kRQ
+aDo
 amV
 aDo
 nqe

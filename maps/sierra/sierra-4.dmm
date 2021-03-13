@@ -3743,7 +3743,7 @@
 /obj/effect/paint/brown,
 /obj/effect/paint_stripe/nt_red,
 /turf/simulated/wall/titanium,
-/area/supply/dock)
+/area/space)
 "asn" = (
 /obj/structure/handrai{
 	dir = 4
@@ -5324,7 +5324,7 @@
 	name = "Supply Drone Virtual Intelligence"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/supply/dock)
+/area/space)
 "aww" = (
 /obj/effect/floor_decal/corner/b_green/diagonal,
 /turf/unsimulated/floor{
@@ -5911,7 +5911,7 @@
 	pixel_y = -32
 	},
 /turf/simulated/floor/plating,
-/area/supply/dock)
+/area/space)
 "azj" = (
 /obj/item/weapon/pickaxe,
 /turf/unsimulated/floor{
@@ -5928,7 +5928,7 @@
 /obj/effect/paint/brown,
 /obj/effect/paint_stripe/nt_red,
 /turf/simulated/wall/r_titanium,
-/area/supply/dock)
+/area/space)
 "azp" = (
 /obj/effect/landmark{
 	name = "tdome1"
@@ -5989,7 +5989,7 @@
 /obj/effect/paint/brown,
 /obj/effect/paint_stripe/nt_red,
 /turf/simulated/wall/r_titanium,
-/area/supply/dock)
+/area/space)
 "azy" = (
 /obj/effect/landmark{
 	name = "tdome1"
@@ -6005,7 +6005,7 @@
 /obj/effect/paint/brown,
 /obj/effect/paint_stripe/nt_red,
 /turf/simulated/wall/r_titanium,
-/area/supply/dock)
+/area/space)
 "azB" = (
 /obj/effect/floor_decal/industrial/outline/red,
 /turf/unsimulated/floor{
@@ -6018,7 +6018,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/supply/dock)
+/area/space)
 "azF" = (
 /obj/effect/landmark{
 	name = "tdome1"
@@ -6831,7 +6831,7 @@
 "aQm" = (
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techmaint,
-/area/supply/dock)
+/area/space)
 "aQu" = (
 /obj/structure/table/holotable,
 /obj/item/toy/ringbell{
@@ -6915,7 +6915,7 @@
 /obj/effect/shuttle_landmark/supply/centcom,
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techmaint,
-/area/supply/dock)
+/area/space)
 "aRy" = (
 /obj/machinery/door/blast/shutters{
 	dir = 4;
@@ -6930,7 +6930,7 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/grey,
 /turf/simulated/floor/tiled/techmaint,
-/area/supply/dock)
+/area/space)
 "aRG" = (
 /obj/effect/floor_decal/spline/plain/grey{
 	dir = 8
@@ -6954,12 +6954,12 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/grey,
 /turf/simulated/floor/tiled/techmaint,
-/area/supply/dock)
+/area/space)
 "aRT" = (
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/techmaint,
-/area/supply/dock)
+/area/space)
 "aRV" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Medical Special Operations";
@@ -6985,7 +6985,7 @@
 	req_access = list("ACCESS_CARGO")
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/supply/dock)
+/area/space)
 "aSi" = (
 /obj/structure/table/holo_woodentable,
 /obj/effect/floor_decal/spline/fancy/wood,
@@ -7006,7 +7006,7 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/grey,
 /turf/simulated/floor/tiled/techmaint,
-/area/supply/dock)
+/area/space)
 "aSt" = (
 /obj/effect/floor_decal/spline/plain/grey{
 	dir = 9

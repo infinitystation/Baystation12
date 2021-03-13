@@ -134,6 +134,7 @@
 	#include "../away_inf/bearcat/bearcat.dm"
 //	#include "../away_inf/ascent/ascent.dm"
 	#include "../away_inf/liberia/liberia.dm"
+	#include "../away_inf/colonyruin/colonyruin.dm"
 
 	#include "../away/ascent/ascent.dm"
 	#include "../away/derelict/derelict.dm"

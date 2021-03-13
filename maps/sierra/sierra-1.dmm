@@ -769,13 +769,13 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/expedition/storage)
 "bJ" = (
-/obj/machinery/vending/parts/public,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 1
 	},
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled,
 /area/storage/primary)
 "bL" = (
@@ -2165,6 +2165,7 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/outline/grey,
+/obj/effect/landmark/explosion/light,
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/petrov/ship)
 "eg" = (
@@ -2919,6 +2920,7 @@
 /obj/machinery/disperser/middle{
 	dir = 8
 	},
+/obj/effect/landmark/explosion/light,
 /turf/simulated/floor/reinforced/airless,
 /area/command/bsa)
 "ft" = (
@@ -11192,7 +11194,6 @@
 /turf/simulated/floor/plating,
 /area/storage/primary)
 "rG" = (
-/obj/machinery/vending/tool,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
@@ -11205,6 +11206,7 @@
 /obj/effect/floor_decal/corner/beige/bordercorner2{
 	dir = 4
 	},
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled,
 /area/storage/primary)
 "rH" = (
@@ -13159,11 +13161,9 @@
 /turf/simulated/wall/r_titanium,
 /area/guppy_hangar/start)
 "uI" = (
-/obj/machinery/vending/assist{
-	dir = 1
-	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/beige/border,
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled,
 /area/storage/primary)
 "uJ" = (
@@ -13207,15 +13207,13 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
 "uN" = (
-/obj/machinery/lapvend{
-	dir = 1
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
 	},
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 6
 	},
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled,
 /area/storage/primary)
 "uO" = (
@@ -15472,13 +15470,13 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/vending/paimod,
 /obj/effect/floor_decal/borderfloor{
 	dir = 5
 	},
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 5
 	},
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled,
 /area/storage/primary)
 "yp" = (
@@ -28640,6 +28638,10 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/port)
+"Uz" = (
+/obj/effect/landmark/explosion/light,
+/turf/space,
+/area/space)
 "UA" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 8
@@ -28948,6 +28950,14 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/security/sierra/dockcheck)
+"VM" = (
+/obj/structure/sign/warning/hot_exhaust{
+	dir = 4;
+	pixel_x = -32
+	},
+/obj/effect/landmark/explosion/light,
+/turf/space,
+/area/space)
 "VO" = (
 /obj/structure/sign/warning/hot_exhaust{
 	dir = 1
@@ -39661,7 +39671,7 @@ LB
 cK
 cK
 cK
-Is
+Uz
 Is
 Is
 Is
@@ -40248,7 +40258,7 @@ Is
 Is
 Is
 Is
-Is
+Uz
 cJ
 cJ
 cJ
@@ -41284,7 +41294,7 @@ AB
 AB
 AB
 AB
-Is
+Uz
 Is
 Is
 Is
@@ -43873,7 +43883,7 @@ Is
 Is
 Is
 Is
-Is
+Uz
 ax
 ax
 ax
@@ -43916,7 +43926,7 @@ AL
 AL
 AL
 AL
-Is
+Uz
 Is
 Is
 Is
@@ -46498,7 +46508,7 @@ Is
 Is
 Is
 Is
-Is
+Uz
 bt
 Ks
 SD
@@ -46544,7 +46554,7 @@ UC
 Sn
 yW
 Tk
-Is
+Uz
 Is
 Is
 Is
@@ -47957,7 +47967,7 @@ Ex
 Tr
 Pa
 Pa
-Is
+Uz
 Is
 Is
 Is
@@ -49976,7 +49986,7 @@ UC
 Hu
 Pa
 Pa
-Is
+Uz
 Is
 Is
 Is
@@ -50990,7 +51000,7 @@ Mc
 Mc
 Mc
 Mc
-Is
+Uz
 Is
 Is
 Is
@@ -51803,7 +51813,7 @@ Ns
 Ns
 Ns
 Ns
-Is
+Uz
 Is
 Is
 Is
@@ -53157,7 +53167,7 @@ Is
 Is
 Is
 Is
-Is
+Uz
 co
 co
 OQ
@@ -53217,7 +53227,7 @@ Rz
 Ov
 Ib
 Ib
-Is
+Uz
 Is
 Is
 Is
@@ -56448,7 +56458,7 @@ Nv
 RL
 Lf
 Or
-Is
+Uz
 Is
 Is
 Is
@@ -57237,7 +57247,7 @@ Is
 Is
 Is
 Is
-Is
+Uz
 ah
 ah
 YS
@@ -59069,7 +59079,7 @@ ER
 yL
 do
 Ay
-Is
+Uz
 Is
 Is
 Is
@@ -59429,11 +59439,11 @@ Is
 Is
 zr
 Is
-Is
+Uz
 Is
 zr
 Is
-Is
+Uz
 Is
 zr
 Is
@@ -59467,7 +59477,7 @@ zr
 Is
 Is
 Is
-zr
+VM
 Is
 Is
 Is
@@ -62068,6 +62078,7 @@ Is
 Is
 Is
 Is
+Uz
 Is
 Is
 Is
@@ -62081,8 +62092,7 @@ Is
 Is
 Is
 Is
-Is
-Is
+Uz
 Is
 Is
 Is
