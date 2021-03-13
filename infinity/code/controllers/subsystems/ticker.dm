@@ -22,8 +22,8 @@
 			if(alert("Подтвердите перезапуск сервера для обновления", "Reboot for update?", "Да", "Нет") != "Да")
 				to_chat(user, SPAN_WARNING("Используй 'Server' --> 'Update Server' чтобы отменить обновление в конце раунда."))
 				return 1
-		game_log("SERVER", "[user ? "[key_name(user)]" : "СЕРВЕР"] подтвердил рестарт сервера для обновлений от [update_server]")
-		SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("status" = "reboot", "ckey" = key_name(user)))
+		game_log("SERVER", "[user ? "[get_key(user)]" : "СЕРВЕР"] подтвердил рестарт сервера для обновлений от [update_server]")
+		SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("status" = "reboot", "ckey" = get_key(user)))
 		shell(RunExe)
 		return 3
 
@@ -38,11 +38,11 @@
 
 	send2mainirc("Производится обновление сервера.")
 	send2admindiscord("Происходит обновление.[update_server ? " Инициировано [update_server]." : ""]")
-	SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("status" = "requested", "ckey" = key_name(user)))
+	SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("status" = "requested", "ckey" = get_key(user)))
 
-	game_log("SERVER", "[key_name(user)] начал обновление сервера.[branch ? " На ветку '[branch]'" : ""]")
+	game_log("SERVER", "[get_key(user)] начал обновление сервера.[branch ? " На ветку '[branch]'" : ""]")
 	to_world(SPAN_NOTICE(FONT_LARGE("<b><br>Сервер начинает обновление!</b>")))
-	to_world(SPAN_NOTICE(FONT_LARGE("<br>Оно было инцировано [key_name(user)]")))
+	to_world(SPAN_NOTICE(FONT_LARGE("<br>Оно было инцировано [get_key(user)]")))
 
 	var/exeEND = ".txt"				// .sh or .bat
 	var/DMpref = "dm"				// DreamMaker for Unix
@@ -170,7 +170,7 @@
 			fdel("[UPD_EXE_FILE][exeEND]")
 			command = Between_Rounds_Compile_Code
 			text2file(command, "[UPD_EXE_FILE][exeEND]")
-			update_server = key_name(user)
+			update_server = get_key(user)
 			to_world(SPAN_NOTICE(FONT_LARGE("<br>Компиляция неудачна. Отложено на конец раунда.")))
 			game_log("SERVER", "Обновление отложено на конец раунда.")
 			SSwebhooks.send(WEBHOOK_SERVER_UPDATE, list("status" = "delay"))
