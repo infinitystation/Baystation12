@@ -906,6 +906,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/overmap/visitable/sector/colonyruin,
 /turf/simulated/floor/exoplanet/concrete,
 /area/colonyruin/exterier)
 "gF" = (
@@ -1232,8 +1233,8 @@
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 8
 	},
-/turf/simulated/floor/exoplanet/concrete,
-/area/colonyruin/exterier)
+/turf/simulated/floor/exoplanet/grass,
+/area/colonyruin/outside)
 "iQ" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
@@ -1303,12 +1304,6 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden{
 	dir = 1;
 	icon_state = "map"
-	},
-/turf/simulated/floor/exoplanet/concrete,
-/area/colonyruin/exterier)
-"jv" = (
-/obj/effect/floor_decal/industrial/warning/dust{
-	dir = 5
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/colonyruin/exterier)
@@ -1905,8 +1900,8 @@
 /area/colonyruin/atmos)
 "mN" = (
 /obj/effect/floor_decal/industrial/warning/dust,
-/turf/simulated/floor/exoplanet/concrete,
-/area/colonyruin/exterier)
+/turf/simulated/floor/exoplanet/grass,
+/area/colonyruin/outside)
 "mO" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 4;
@@ -1946,12 +1941,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/colonyruin/bridge)
-"nc" = (
-/obj/effect/floor_decal/industrial/warning/dust{
-	dir = 1
-	},
-/turf/simulated/floor/exoplanet/concrete,
-/area/colonyruin/exterier)
 "nd" = (
 /obj/structure/closet/crate,
 /obj/item/stack/material/glass/fifty,
@@ -2988,8 +2977,8 @@
 /turf/simulated/floor/plating,
 /area/colonyruin/bridge)
 "uT" = (
-/obj/effect/shuttle_landmark/nav_colonyruin/nav1,
-/turf/simulated/floor/exoplanet/grass,
+/obj/effect/shuttle_landmark/nav_colonyruin/nav2,
+/turf/simulated/floor/exoplanet/concrete,
 /area/colonyruin/outside)
 "uX" = (
 /obj/structure/cable{
@@ -3280,8 +3269,8 @@
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 4
 	},
-/turf/simulated/floor/exoplanet/concrete,
-/area/colonyruin/exterier)
+/turf/simulated/floor/exoplanet/grass,
+/area/colonyruin/outside)
 "xq" = (
 /obj/machinery/alarm{
 	locked = 0;
@@ -4534,8 +4523,8 @@
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 6
 	},
-/turf/simulated/floor/exoplanet/concrete,
-/area/colonyruin/exterier)
+/turf/simulated/floor/exoplanet/grass,
+/area/colonyruin/outside)
 "EW" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
@@ -4666,9 +4655,9 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/colonyruin/airlock)
 "FE" = (
-/obj/effect/shuttle_landmark/nav_colonyruin/nav2,
-/turf/simulated/floor/exoplanet/concrete,
-/area/colonyruin/exterier)
+/obj/effect/shuttle_landmark/nav_colonyruin/nav1,
+/turf/simulated/floor/exoplanet/grass,
+/area/colonyruin/outside)
 "FF" = (
 /obj/structure/bed{
 	material = (material/steel)
@@ -6168,11 +6157,8 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/colonyruin/airlock)
 "St" = (
-/obj/effect/floor_decal/industrial/warning/dust{
-	dir = 9
-	},
 /turf/simulated/floor/exoplanet/concrete,
-/area/colonyruin/exterier)
+/area/colonyruin/outside)
 "SC" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/manifold/visible/red{
@@ -6824,8 +6810,8 @@
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 10
 	},
-/turf/simulated/floor/exoplanet/concrete,
-/area/colonyruin/exterier)
+/turf/simulated/floor/exoplanet/grass,
+/area/colonyruin/outside)
 "Yz" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
@@ -7433,10 +7419,10 @@ CW
 CW
 CW
 CW
-CW
-CW
-CW
-CW
+rU
+rU
+rU
+rU
 CW
 CW
 CW
@@ -7506,16 +7492,16 @@ CW
 CW
 CW
 CW
-CW
-CW
-CW
-CW
-CW
-CW
-CW
-CW
-CW
-CW
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
 CW
 CW
 CW
@@ -7581,19 +7567,19 @@ CW
 CW
 rU
 CW
-CW
-CW
-CW
-CW
-CW
-CW
-CW
-CW
-CW
-CW
-CW
-CW
-CW
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
 CW
 CW
 CW
@@ -7658,20 +7644,20 @@ wt
 rU
 rU
 rU
-CW
-CW
-CW
-CW
-CW
-CW
-CW
 rU
-CW
-CW
-CW
-CW
-CW
-CW
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
 CW
 CW
 CW
@@ -7745,11 +7731,11 @@ rU
 rU
 rU
 rU
-CW
-CW
-CW
-CW
-CW
+rU
+rU
+rU
+rU
+rU
 CW
 CW
 CW
@@ -7823,11 +7809,11 @@ rU
 wt
 rU
 rU
-CW
-CW
-CW
-CW
-CW
+rU
+rU
+rU
+rU
+rU
 CW
 CW
 CW
@@ -8137,7 +8123,7 @@ rU
 rU
 rU
 rU
-CW
+rU
 CW
 CW
 CW
@@ -8214,7 +8200,7 @@ rU
 rU
 rU
 rU
-CW
+rU
 CW
 CW
 CW
@@ -8501,16 +8487,16 @@ go
 go
 go
 St
-iP
-iP
-iP
-iP
-iP
-iP
-iP
-iP
-iP
-iP
+St
+St
+St
+St
+St
+St
+St
+St
+St
+St
 iP
 iP
 iP
@@ -8577,27 +8563,27 @@ cy
 cy
 Zd
 go
-nc
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
+St
+St
+St
+St
+St
+St
+St
+St
+St
+St
+St
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
 mN
 CW
 CW
@@ -8654,27 +8640,27 @@ FL
 tM
 gu
 go
-nc
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
+St
+St
+St
+St
+St
+St
+St
+St
+St
+St
+St
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
 mN
 CW
 CW
@@ -8731,27 +8717,27 @@ Ty
 FL
 gu
 go
-nc
-nF
-nF
-nF
-nF
-nF
-FE
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
+St
+St
+St
+St
+St
+St
+uT
+St
+St
+St
+St
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
 mN
 CW
 CW
@@ -8808,27 +8794,27 @@ oK
 tM
 gu
 go
-nc
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
-nF
+St
+St
+St
+St
+St
+St
+St
+St
+St
+St
+St
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
 mN
 CW
 CW
@@ -8885,17 +8871,17 @@ eM
 eM
 RX
 go
-jv
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
+St
+St
+St
+St
+St
+St
+St
+St
+St
+St
+St
 xg
 xg
 xg
@@ -10903,7 +10889,7 @@ rU
 rU
 rU
 rU
-uT
+rU
 rU
 rU
 rU
@@ -10984,7 +10970,7 @@ rU
 rU
 rU
 rU
-rU
+FE
 rU
 rU
 rU
