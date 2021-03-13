@@ -27,7 +27,8 @@
 	icon_colour = COLOR_GOLD
 	weight = 25
 	hardness = MATERIAL_FLEXIBLE + 5
-	integrity = 100
+	integrity = 80
+	brute_armor = 3
 	stack_origin_tech = list(TECH_MATERIAL = 4)
 	sheet_singular_name = "ingot"
 	sheet_plural_name = "ingots"
@@ -110,12 +111,13 @@
 	lore_text = "A strong, flexible alloy of iron and carbon. Probably the single most fundamentally useful and ubiquitous substance in human space."
 	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/steel
-	integrity = 150
-	brute_armor = 5
 	icon_base = "solid"
 	icon_reinf = "reinf_over"
 	icon_colour = COLOR_STEEL
 	hitsound = 'sound/weapons/smash.ogg'
+	integrity = 175
+	brute_armor = 6
+	burn_armor = 9
 	chem_products = list(
 				/datum/reagent/iron = 19.6,
 				/datum/reagent/carbon = 0.4
@@ -147,7 +149,8 @@
 	chem_products = list(
 				/datum/reagent/aluminium = 20
 				)
-	integrity = 125
+	integrity = 100
+	brute_armor = 4
 	weight = 18
 	icon_base = "solid"
 	icon_reinf = "reinf_over"
@@ -171,14 +174,14 @@
 	lore_text = "An alloy of steel and platinum. When regular high-tensile steel isn't tough enough to get the job done, the smart consumer turns to frankly absurd alloys of steel and platinum."
 	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/plasteel
-	integrity = 400
+	integrity = 450
+	brute_armor = 7
+	burn_armor = 10
 	melting_point = 6000
 	icon_base = "solid"
 	icon_reinf = "reinf_over"
 	icon_colour = "#a8a9b2"
 	explosion_resistance = 25
-	brute_armor = 6
-	burn_armor = 10
 	hardness = MATERIAL_VERY_HARD
 	weight = 23
 	stack_origin_tech = list(TECH_MATERIAL = 2)
@@ -194,8 +197,8 @@
 	name = MATERIAL_TITANIUM
 	lore_text = "A light, strong, corrosion-resistant metal. Perfect for cladding high-velocity ballistic supply pods."
 	brute_armor = 10
-	burn_armor = 8
-	integrity = 200
+	burn_armor = 12
+	integrity = 500
 	melting_point = 3000
 	weight = 18
 	stack_type = /obj/item/stack/material/titanium
