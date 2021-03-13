@@ -5,9 +5,8 @@
 /obj/structure/closet/secure_closet/freezer/kitchen/WillContain()
 	return list(
 		/obj/item/weapon/reagent_containers/food/condiment/salt = 1,
-		/obj/item/weapon/reagent_containers/food/condiment/flour = 7,
-		/obj/item/weapon/reagent_containers/food/condiment/sugar = 2,
-		/obj/item/weapon/reagent_containers/glass/bottle/dye/polychromic = 2
+		/obj/item/weapon/reagent_containers/food/condiment/flour = 3,
+		/obj/item/weapon/reagent_containers/food/condiment/sugar = 1
 	)
 
 /obj/structure/closet/secure_closet/freezer/kitchen/mining
@@ -20,8 +19,8 @@
 
 /obj/structure/closet/secure_closet/freezer/meat/WillContain()
 	return list(
-		/obj/item/weapon/reagent_containers/food/snacks/meat/beef = 8,
-		/obj/item/weapon/reagent_containers/food/snacks/fish = 4
+		/obj/item/weapon/reagent_containers/food/snacks/meat/beef = 2,
+		/obj/item/weapon/reagent_containers/food/snacks/fish = 1
 	)
 
 /obj/structure/closet/secure_closet/freezer/fridge
@@ -31,9 +30,9 @@
 
 /obj/structure/closet/secure_closet/freezer/fridge/WillContain()
 	return list(
-		/obj/item/weapon/reagent_containers/food/drinks/milk = 6,
-		/obj/item/weapon/reagent_containers/food/drinks/soymilk = 4,
-		/obj/item/weapon/storage/fancy/egg_box = 4
+		/obj/item/weapon/reagent_containers/food/drinks/milk = 2,
+		/obj/item/weapon/reagent_containers/food/drinks/soymilk = 1,
+		/obj/item/weapon/storage/fancy/egg_box = 1
 	)
 
 /obj/structure/closet/secure_closet/freezer/money
