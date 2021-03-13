@@ -9,5 +9,3 @@
 				. = L[y]
 		else
 			. = null
-	if(!.)
-		. = "#ffffff"

@@ -231,6 +231,10 @@
 /obj/machinery/light/on_update_icon(var/trigger = 1)
 	overlays.Cut()
 	icon_state = "[base_state]_empty" //Never use the initial state. That'll just reset it to the mapping icon.
+//[INF]
+	update_pixels()
+/obj/machinery/light/proc/update_pixels()
+//[/INF]
 	pixel_y = 0
 	pixel_x = 0
 	var/turf/T = get_step(get_turf(src), dir)
@@ -241,7 +245,10 @@
 			pixel_x = 10
 		else if(dir == WEST)
 			pixel_x = -10
-
+//[INF]
+/obj/machinery/light/on_update_icon(trigger = 1)
+	. = ..()
+//[/INF]
 	var/_state
 	switch(get_status())		// set icon_states
 		if(LIGHT_OK)

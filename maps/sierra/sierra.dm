@@ -20,8 +20,6 @@
 
 	#include "sierra_snatch.dm"
 
-	#include "datums/programs.dm"
-
 	#include "datums/uniforms.dm"
 	#include "datums/uniforms_civilian.dm"
 	#include "datums/uniforms_contractor.dm"
@@ -78,6 +76,7 @@
 
 	#include "machinery/alarm.dm"
 	#include "machinery/doors.dm"
+	#include "machinery/keycard authentication.dm"
 	#include "machinery/machinery.dm"
 	#include "machinery/navbeacons.dm"
 	#include "machinery/power.dm"
@@ -131,7 +130,7 @@
 	#include "../away_inf/blueriver/blueriver.dm"
 	#include "../away_inf/smugglers/smugglers.dm"
 //	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
-	#include "../away_inf/patrol/patrol.dm"
+	#include "../away_inf/sentinel/sentinel.dm"
 	#include "../away_inf/bearcat/bearcat.dm"
 //	#include "../away_inf/ascent/ascent.dm"
 	#include "../away_inf/liberia/liberia.dm"

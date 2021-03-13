@@ -30,12 +30,6 @@ SUBSYSTEM_DEF(ticker)
 	var/list/antag_pool = list()
 	var/looking_for_antags = 0
 
-//[INF]
-	var/update_server
-	var/client/updater
-	var/respawn_cooldown = 0
-//[/INF]
-
 /datum/controller/subsystem/ticker/Initialize()
 	to_world("<B><FONT color='blue'>Добро пожаловать в лобби!</FONT></B>")
 	to_world("Настройте своего персонажа и нажмите \"Ready\" для вступлению в игру с начала раунда через [round(pregame_timeleft/10)] секунд.")
@@ -168,8 +162,10 @@ SUBSYSTEM_DEF(ticker)
 		if(END_GAME_ENDING)
 			restart_timeout -= (world.time - last_fire)
 			if(restart_timeout <= 0)
+//[INF]
 				if(update_server)
-					update_server()
+					ForceUpdate()
+//[INF]
 				else if(scheduled_map_change)
 					shell("compile_and_run.bat")
 				else

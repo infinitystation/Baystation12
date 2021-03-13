@@ -57,6 +57,8 @@
 	icon = 'infinity/icons/obj/objects.dmi'
 	icon_state = "hellstone"
 	item_state = "electronic"
+	suitable_cell = null
+	activation_sound = null
 
 /obj/item/clothing/glasses/tacgoggles/cult
 	name = "hell goggles"

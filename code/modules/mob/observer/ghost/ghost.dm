@@ -178,7 +178,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 					return
 				src.client.admin_ghost()
 //[INF]
-		else if(config.deny_notdead_observer_becoming && stat != DEAD)
+		else if(config.deny_notdead_observer_becoming && !istype(loc, /obj/machinery/cryopod) && stat != DEAD)
 			to_chat(src, SPAN_WARNING("Вы не можете покинуть своё тело пока оно живо."))
 			return
 //[/INF]
