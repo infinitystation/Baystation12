@@ -1229,12 +1229,6 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/freezer,
 /area/colonyruin/medical)
-"iP" = (
-/obj/effect/floor_decal/industrial/warning/dust{
-	dir = 8
-	},
-/turf/simulated/floor/exoplanet/grass,
-/area/colonyruin/outside)
 "iQ" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
@@ -1898,10 +1892,6 @@
 /obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/colonyruin/atmos)
-"mN" = (
-/obj/effect/floor_decal/industrial/warning/dust,
-/turf/simulated/floor/exoplanet/grass,
-/area/colonyruin/outside)
 "mO" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 4;
@@ -2978,7 +2968,7 @@
 /area/colonyruin/bridge)
 "uT" = (
 /obj/effect/shuttle_landmark/nav_colonyruin/nav2,
-/turf/simulated/floor/exoplanet/concrete,
+/turf/simulated/floor/exoplanet/grass,
 /area/colonyruin/outside)
 "uX" = (
 /obj/structure/cable{
@@ -3265,12 +3255,6 @@
 /obj/structure/curtain/medical,
 /turf/simulated/floor/tiled/white,
 /area/colonyruin/medical)
-"xg" = (
-/obj/effect/floor_decal/industrial/warning/dust{
-	dir = 4
-	},
-/turf/simulated/floor/exoplanet/grass,
-/area/colonyruin/outside)
 "xq" = (
 /obj/machinery/alarm{
 	locked = 0;
@@ -4519,12 +4503,6 @@
 /obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/tiled/techfloor,
 /area/colonyruin/atmos)
-"ET" = (
-/obj/effect/floor_decal/industrial/warning/dust{
-	dir = 6
-	},
-/turf/simulated/floor/exoplanet/grass,
-/area/colonyruin/outside)
 "EW" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
@@ -6156,9 +6134,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/colonyruin/airlock)
-"St" = (
-/turf/simulated/floor/exoplanet/concrete,
-/area/colonyruin/outside)
 "SC" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/manifold/visible/red{
@@ -6806,12 +6781,6 @@
 /obj/effect/floor_decal/corner/grey/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/colonyruin/canteen)
-"Yu" = (
-/obj/effect/floor_decal/industrial/warning/dust{
-	dir = 10
-	},
-/turf/simulated/floor/exoplanet/grass,
-/area/colonyruin/outside)
 "Yz" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
@@ -8486,28 +8455,28 @@ go
 go
 go
 go
-St
-St
-St
-St
-St
-St
-St
-St
-St
-St
-St
-iP
-iP
-iP
-iP
-iP
-iP
-iP
-iP
-iP
-iP
-Yu
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
 CW
 CW
 CW
@@ -8563,17 +8532,6 @@ cy
 cy
 Zd
 go
-St
-St
-St
-St
-St
-St
-St
-St
-St
-St
-St
 rU
 rU
 rU
@@ -8584,7 +8542,18 @@ rU
 rU
 rU
 rU
-mN
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
 CW
 CW
 CW
@@ -8640,17 +8609,6 @@ FL
 tM
 gu
 go
-St
-St
-St
-St
-St
-St
-St
-St
-St
-St
-St
 rU
 rU
 rU
@@ -8661,7 +8619,18 @@ rU
 rU
 rU
 rU
-mN
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
 CW
 CW
 CW
@@ -8717,17 +8686,13 @@ Ty
 FL
 gu
 go
-St
-St
-St
-St
-St
-St
+rU
+rU
+rU
+rU
+rU
+rU
 uT
-St
-St
-St
-St
 rU
 rU
 rU
@@ -8738,7 +8703,11 @@ rU
 rU
 rU
 rU
-mN
+rU
+rU
+rU
+rU
+rU
 CW
 CW
 CW
@@ -8794,17 +8763,6 @@ oK
 tM
 gu
 go
-St
-St
-St
-St
-St
-St
-St
-St
-St
-St
-St
 rU
 rU
 rU
@@ -8815,7 +8773,18 @@ rU
 rU
 rU
 rU
-mN
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
 CW
 CW
 CW
@@ -8871,28 +8840,28 @@ eM
 eM
 RX
 go
-St
-St
-St
-St
-St
-St
-St
-St
-St
-St
-St
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-ET
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
+rU
 CW
 CW
 CW
