@@ -979,11 +979,6 @@
 "abY" = (
 /turf/simulated/floor/tiled,
 /area/hydroponics)
-"abZ" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/seed_storage/garden,
-/turf/simulated/floor/tiled/monotile,
-/area/hydroponics)
 "acc" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/floor_decal/industrial/outline/grey,
@@ -1234,8 +1229,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hydroponics)
 "acM" = (
-/obj/machinery/vending/hydronutrients,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled/monotile,
 /area/hydroponics)
 "acN" = (
@@ -4563,13 +4558,13 @@
 /obj/structure/window/basic{
 	dir = 1
 	},
-/obj/machinery/vending/fitness,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 4
 	},
 /obj/machinery/light/spot{
 	dir = 4
 	},
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled,
 /area/crew_quarters/gym)
 "aiJ" = (
@@ -7704,7 +7699,6 @@
 /turf/simulated/floor/plating,
 /area/engineering/engine_room)
 "aoM" = (
-/obj/item/weapon/storage/box/donut,
 /obj/structure/table/woodentable/walnut,
 /obj/random/date_based/christmas/xmaslights{
 	dir = 1;
@@ -7746,12 +7740,6 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 24
-	},
-/obj/effect/landmark/start{
-	name = "Captain"
-	},
-/obj/effect/landmark/start{
-	name = "Adjutant"
 	},
 /turf/simulated/floor/carpet/blue,
 /area/crew_quarters/heads/cobed)
@@ -11544,11 +11532,10 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/gravitaional_generator)
 "avs" = (
-/obj/structure/flora/seaweed/mid,
-/obj/effect/fluid_mapped,
-/mob/living/simple_animal/aquatic/fish/grump,
-/turf/simulated/floor/aquarium,
-/area/grove/theta)
+/obj/structure/girder,
+/obj/effect/landmark/explosion/light,
+/turf/simulated/floor/reinforced/airless,
+/area/space)
 "avt" = (
 /obj/effect/floor_decal/industrial/hatch/grey,
 /obj/structure/table/steel_reinforced,
@@ -15269,7 +15256,6 @@
 /area/maintenance/seconddeck/aftport)
 "aBI" = (
 /obj/structure/table/glass,
-/obj/item/weapon/storage/box/donut,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 9
 	},
@@ -17242,7 +17228,6 @@
 	pixel_y = 26
 	},
 /obj/effect/landmark/start,
-/obj/effect/landmark/start,
 /turf/simulated/floor/carpet/red,
 /area/crew_quarters/sleep/bunk)
 "aFh" = (
@@ -18532,6 +18517,7 @@
 "aHy" = (
 /obj/machinery/shield_diffuser,
 /obj/effect/floor_decal/industrial/warning/fulltile,
+/obj/effect/landmark/explosion/light,
 /turf/simulated/floor/reinforced/airless,
 /area/space)
 "aHz" = (
@@ -19551,6 +19537,7 @@
 /obj/structure/bed/chair/wood/walnut{
 	dir = 8
 	},
+/obj/effect/landmark/start,
 /turf/simulated/floor/carpet/red,
 /area/crew_quarters/sleep/bunk)
 "aJu" = (
@@ -20988,11 +20975,10 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/engineering/locker_room)
 "aMb" = (
-/obj/structure/flora/seaweed/glow,
-/obj/effect/fluid_mapped,
-/mob/living/simple_animal/aquatic/fish,
-/turf/simulated/floor/aquarium,
-/area/grove/theta)
+/obj/structure/catwalk,
+/obj/effect/landmark/explosion/light,
+/turf/simulated/open,
+/area/maintenance/seconddeck/aftstarboard)
 "aMc" = (
 /obj/structure/bed/chair/comfy/brown{
 	dir = 1
@@ -24183,13 +24169,11 @@
 	dir = 1;
 	pixel_y = -28
 	},
-/obj/effect/landmark/start,
 /turf/simulated/floor/carpet,
 /area/crew_quarters/sleep/bunk)
 "aSg" = (
 /obj/structure/bed/padded,
 /obj/item/weapon/bedsheet/brown,
-/obj/effect/landmark/start,
 /turf/simulated/floor/carpet,
 /area/crew_quarters/sleep/bunk)
 "aSh" = (
@@ -27520,7 +27504,6 @@
 	},
 /obj/structure/table/woodentable_reinforced/walnut,
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/item/weapon/storage/box/donut,
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/lounge)
 "aXU" = (
@@ -28027,7 +28010,6 @@
 /obj/structure/flora/seaweed/large,
 /obj/effect/fluid_mapped,
 /obj/structure/flora/ausbushes/reedbush,
-/mob/living/simple_animal/aquatic/fish,
 /turf/simulated/floor/aquarium,
 /area/grove/theta)
 "aYY" = (
@@ -29716,7 +29698,7 @@
 /turf/simulated/floor/wood/ebony,
 /area/crew_quarters/sauna)
 "bcf" = (
-/obj/machinery/seed_storage/garden,
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled,
 /area/maintenance/abandoned_hydroponics)
 "bcg" = (
@@ -30819,13 +30801,6 @@
 /obj/effect/fluid_mapped,
 /obj/structure/flora/seaweed,
 /obj/structure/flora/seaweed/large,
-/mob/living/simple_animal/aquatic/fish,
-/turf/simulated/floor/aquarium,
-/area/bridge/meeting_room)
-"bev" = (
-/obj/structure/flora/seaweed/glow,
-/mob/living/simple_animal/aquatic/fish/grump,
-/obj/effect/fluid_mapped,
 /turf/simulated/floor/aquarium,
 /area/bridge/meeting_room)
 "bew" = (
@@ -30899,14 +30874,12 @@
 /area/chapel/main)
 "beF" = (
 /obj/structure/flora/seaweed/glow,
-/mob/living/simple_animal/aquatic/fish/judge,
 /obj/effect/fluid_mapped,
 /turf/simulated/floor/aquarium,
 /area/bridge/meeting_room)
 "beG" = (
 /obj/effect/fluid_mapped,
 /obj/structure/flora/seaweed,
-/mob/living/simple_animal/aquatic/fish,
 /turf/simulated/floor/aquarium,
 /area/bridge/meeting_room)
 "beH" = (
@@ -33574,11 +33547,17 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/janitor)
 "bFH" = (
-/obj/structure/flora/seaweed/mid,
-/obj/effect/fluid_mapped,
-/mob/living/simple_animal/aquatic/fish,
-/turf/simulated/floor/aquarium,
-/area/grove/theta)
+/obj/effect/wallframe_spawn/reinforced/hull,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/blast/regular/open{
+	density = 0;
+	id_tag = "hydroponics_space";
+	name = "Space Shutters";
+	opacity = 0
+	},
+/obj/effect/landmark/explosion/medium,
+/turf/simulated/floor/plating,
+/area/hydroponics)
 "bIE" = (
 /obj/structure/ladder,
 /obj/structure/disposalpipe/down{
@@ -34830,9 +34809,6 @@
 "iRf" = (
 /obj/structure/flora/seaweed,
 /obj/structure/flora/seaweed/large,
-/mob/living/simple_animal/aquatic/fish/grump{
-	name = "Titus"
-	},
 /obj/effect/fluid_mapped,
 /turf/simulated/floor/aquarium,
 /area/crew_quarters/cafe)
@@ -34947,9 +34923,6 @@
 /area/crew_quarters/cafe)
 "jHb" = (
 /obj/structure/flora/seaweed/glow,
-/mob/living/simple_animal/aquatic/fish{
-	name = "Marry"
-	},
 /obj/effect/fluid_mapped,
 /turf/simulated/floor/aquarium,
 /area/crew_quarters/cafe)
@@ -36050,11 +36023,11 @@
 /turf/simulated/floor/carpet/orange,
 /area/crew_quarters/cafe)
 "oWm" = (
-/obj/structure/flora/seaweed/large,
-/obj/effect/fluid_mapped,
-/mob/living/simple_animal/aquatic/fish/judge,
-/turf/simulated/floor/aquarium,
-/area/grove/theta)
+/obj/machinery/door/firedoor,
+/obj/effect/wallframe_spawn/reinforced/hull,
+/obj/effect/landmark/explosion/light,
+/turf/simulated/floor/plating,
+/area/maintenance/seconddeck/foreport)
 "pbO" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 10
@@ -37083,11 +37056,10 @@
 /turf/simulated/floor/carpet/purple,
 /area/crew_quarters/cafe)
 "udk" = (
-/obj/structure/flora/seaweed,
-/obj/effect/fluid_mapped,
-/mob/living/simple_animal/aquatic/fish,
-/turf/simulated/floor/aquarium,
-/area/grove/theta)
+/obj/structure/lattice,
+/obj/effect/landmark/explosion/medium,
+/turf/space,
+/area/space)
 "ujh" = (
 /turf/simulated/wall/prepainted,
 /area/janitor)
@@ -37451,12 +37423,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/gym)
-"vQr" = (
-/obj/structure/flora/seaweed,
-/obj/effect/fluid_mapped,
-/mob/living/simple_animal/aquatic/fish/grump,
-/turf/simulated/floor/aquarium,
-/area/grove/theta)
 "vWj" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 4
@@ -45786,7 +45752,7 @@ aoj
 aFv
 aEc
 axg
-axg
+oWm
 aEc
 aEc
 aEc
@@ -46389,7 +46355,7 @@ aPT
 bgI
 aPJ
 bdE
-bev
+beF
 aKj
 bgq
 bgh
@@ -55047,7 +55013,7 @@ bfp
 abb
 abo
 abY
-abZ
+acM
 bdA
 aeK
 wQu
@@ -55246,7 +55212,7 @@ aam
 aam
 aam
 bfp
-abb
+bFH
 abo
 abY
 acD
@@ -58475,8 +58441,8 @@ aeR
 afi
 hzF
 aWf
-avs
-udk
+baU
+tmS
 aYV
 aZq
 acV
@@ -60698,7 +60664,7 @@ ndC
 egu
 aWf
 baU
-oWm
+okY
 okY
 trt
 aZJ
@@ -60899,9 +60865,9 @@ nLg
 hcl
 egu
 aWf
-aMb
-vQr
-bFH
+bcP
+tmS
+baU
 baU
 aZJ
 aYS
@@ -62103,7 +62069,7 @@ aam
 aam
 aam
 aaK
-aep
+avs
 adc
 ahP
 bgD
@@ -62717,7 +62683,7 @@ agY
 ajJ
 afh
 afu
-aWk
+aMb
 aWk
 aKk
 aWk
@@ -66592,7 +66558,7 @@ aai
 aai
 aai
 aah
-aah
+udk
 aaK
 aaK
 aaK

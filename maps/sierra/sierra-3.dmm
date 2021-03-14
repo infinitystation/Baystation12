@@ -7880,6 +7880,7 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
+/obj/effect/landmark/explosion/light,
 /turf/simulated/floor/plating,
 /area/maintenance/substation/firstdeck)
 "anA" = (
@@ -37281,6 +37282,7 @@
 /obj/machinery/power/tracker,
 /obj/structure/cable/yellow,
 /obj/effect/floor_decal/solarpanel,
+/obj/effect/landmark/explosion/medium,
 /turf/simulated/floor/airless,
 /area/solar/port)
 "bid" = (
@@ -42450,6 +42452,10 @@
 "wWx" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/medical/morgue)
+"xfH" = (
+/obj/effect/landmark/explosion/medium,
+/turf/simulated/floor/reinforced/airless,
+/area/space)
 "xhz" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -64654,7 +64660,7 @@ bhO
 aam
 aam
 aam
-aam
+xfH
 aam
 aam
 aae

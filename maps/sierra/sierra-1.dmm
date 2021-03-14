@@ -30051,6 +30051,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
+"YI" = (
+/obj/effect/landmark/explosion/medium,
+/turf/space,
+/area/space)
 "YJ" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/borderfloor{
@@ -59443,7 +59447,7 @@ Uz
 Is
 zr
 Is
-Uz
+YI
 Is
 zr
 Is
@@ -62085,7 +62089,7 @@ Is
 Is
 Is
 Is
-Is
+YI
 Is
 Is
 Is
