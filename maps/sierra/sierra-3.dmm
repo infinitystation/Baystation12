@@ -32,6 +32,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/effect/landmark/explosion/light,
 /turf/simulated/floor/airless,
 /area/solar/starboard)
 "aah" = (
@@ -3822,6 +3823,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/effect/landmark/explosion/light,
 /turf/simulated/floor/reinforced/airless,
 /area/space)
 "ahl" = (
@@ -7496,7 +7498,6 @@
 /obj/item/clothing/suit/armor/riot,
 /obj/item/clothing/head/helmet/riot,
 /obj/item/clothing/head/helmet/riot,
-/obj/item/clothing/head/helmet/riot,
 /turf/simulated/floor/tiled/techfloor,
 /area/security/sierra/armory)
 "amX" = (
@@ -8409,10 +8410,6 @@
 /obj/item/clothing/accessory/armguards,
 /obj/item/clothing/accessory/armguards,
 /obj/item/clothing/accessory/armguards,
-/obj/item/clothing/accessory/armguards,
-/obj/item/clothing/accessory/legguards,
-/obj/item/clothing/accessory/legguards,
-/obj/item/clothing/accessory/legguards,
 /obj/item/clothing/accessory/legguards,
 /obj/machinery/recharger/wallcharger{
 	dir = 8;
@@ -8446,9 +8443,6 @@
 	},
 /obj/structure/bed/chair/padded/light{
 	dir = 1
-	},
-/obj/effect/landmark/start{
-	name = "Detective"
 	},
 /turf/simulated/floor/tiled/white,
 /area/security/sierra/forensic/lab)
@@ -9306,8 +9300,6 @@
 /area/security/range)
 "apJ" = (
 /obj/structure/table/rack,
-/obj/item/weapon/storage/box/trackimp,
-/obj/item/weapon/storage/box/handcuffs,
 /obj/effect/floor_decal/techfloor{
 	dir = 8
 	},
@@ -9319,9 +9311,6 @@
 "apK" = (
 /obj/structure/table/rack,
 /obj/item/clothing/suit/armor/pcarrier/medium,
-/obj/item/clothing/suit/armor/pcarrier/medium,
-/obj/item/clothing/head/helmet,
-/obj/item/clothing/head/helmet,
 /obj/structure/railing/mapped{
 	dir = 1
 	},
@@ -9378,8 +9367,6 @@
 	dir = 4
 	},
 /obj/structure/table/rack,
-/obj/item/weapon/shield/riot,
-/obj/item/weapon/shield/riot,
 /obj/item/weapon/shield/riot,
 /turf/simulated/floor/tiled/techfloor,
 /area/security/sierra/armory)
@@ -10727,12 +10714,6 @@
 	dir = 10
 	},
 /obj/structure/table/rack,
-/obj/item/clothing/suit/armor/bulletproof,
-/obj/item/clothing/suit/armor/bulletproof,
-/obj/item/clothing/suit/armor/bulletproof,
-/obj/item/clothing/head/helmet/ballistic,
-/obj/item/clothing/head/helmet/ballistic,
-/obj/item/clothing/head/helmet/ballistic,
 /turf/simulated/floor/tiled/techfloor,
 /area/security/sierra/armory)
 "asw" = (
@@ -10745,16 +10726,6 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/item/clothing/suit/armor/laserproof{
-	pixel_x = -2;
-	pixel_y = -2
-	},
-/obj/item/clothing/suit/armor/laserproof{
-	pixel_x = -2;
-	pixel_y = -2
-	},
-/obj/item/clothing/head/helmet/ablative,
-/obj/item/clothing/head/helmet/ablative,
 /turf/simulated/floor/tiled/techfloor,
 /area/security/sierra/armory)
 "asx" = (
@@ -11487,9 +11458,6 @@
 /area/security/sierra/forensic)
 "atY" = (
 /obj/structure/bed/chair/office/comfy/red,
-/obj/effect/landmark/start{
-	name = "Detective"
-	},
 /turf/simulated/floor/tiled,
 /area/security/sierra/forensic)
 "atZ" = (
@@ -12150,9 +12118,6 @@
 "avE" = (
 /obj/structure/bed/chair/padded/red{
 	dir = 8
-	},
-/obj/effect/landmark/start{
-	name = "Detective"
 	},
 /turf/simulated/floor/tiled,
 /area/security/sierra/interrogation)
@@ -13768,7 +13733,6 @@
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 9
 	},
-/obj/machinery/vending/coffee,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 10
 	},
@@ -13776,10 +13740,10 @@
 	dir = 10
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled,
 /area/crew_quarters/dungeon_master_lounge)
 "azi" = (
-/obj/random/vendor,
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
 	},
@@ -13787,6 +13751,7 @@
 	dir = 9
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled,
 /area/crew_quarters/dungeon_master_lounge)
 "azj" = (
@@ -18533,9 +18498,6 @@
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 10
 	},
-/obj/machinery/vending/cola{
-	dir = 1
-	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 8
 	},
@@ -18543,6 +18505,7 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled,
 /area/crew_quarters/dungeon_master_lounge)
 "aFL" = (
@@ -19021,7 +18984,6 @@
 /obj/structure/bed/chair/padded/red{
 	dir = 4
 	},
-/obj/effect/landmark/start,
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
 	},
@@ -19794,9 +19756,6 @@
 	req_access = list("ACCESS_HEAD_OF_SECURITY")
 	},
 /obj/structure/bed/chair/office/comfy/red,
-/obj/effect/landmark/start{
-	name = "Head of Security"
-	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/heads/office/hos)
 "aHv" = (
@@ -21037,9 +20996,6 @@
 "aJi" = (
 /obj/structure/bed/padded,
 /obj/item/weapon/bedsheet/hop,
-/obj/effect/landmark/start{
-	name = "Head of Personnel"
-	},
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/heads/office/hop/cobed)
 "aJj" = (
@@ -21753,9 +21709,6 @@
 /obj/effect/floor_decal/ntlogo{
 	dir = 8
 	},
-/obj/effect/landmark/start{
-	name = "Research Director"
-	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/entry)
 "aKf" = (
@@ -22414,9 +22367,6 @@
 /area/crew_quarters/heads/office/hop)
 "aKX" = (
 /obj/structure/bed/chair/office/comfy/blue,
-/obj/effect/landmark/start{
-	name = "Head of Personnel"
-	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/crew_quarters/heads/office/hop)
 "aKY" = (
@@ -22613,15 +22563,13 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/fore)
 "aLh" = (
-/obj/machinery/vending/fitness{
-	dir = 1
-	},
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 10
 	},
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo/upper)
 "aLi" = (
@@ -22948,9 +22896,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/hologram/holopad,
-/obj/effect/landmark/start{
-	name = "Research Director"
-	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white/monotile,
 /area/crew_quarters/heads/office/rd)
@@ -22984,9 +22929,6 @@
 	},
 /obj/structure/bed/chair/office/comfy/purple{
 	dir = 1
-	},
-/obj/effect/landmark/start{
-	name = "Research Director"
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/office/rd)
@@ -23551,18 +23493,9 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/entry)
-"aME" = (
-/obj/machinery/vending/paimod{
-	dir = 1
-	},
-/obj/effect/floor_decal/techfloor,
-/turf/simulated/floor/tiled/techfloor,
-/area/crew_quarters/sleep/cryo/upper)
 "aMF" = (
-/obj/machinery/vending/lavatory{
-	dir = 1
-	},
 /obj/effect/floor_decal/techfloor,
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo/upper)
 "aMG" = (
@@ -25305,9 +25238,6 @@
 /obj/item/weapon/storage/secure/safe{
 	pixel_x = 32
 	},
-/obj/effect/landmark/start{
-	name = "Head of Security"
-	},
 /turf/simulated/floor/carpet,
 /area/security/sierra/hosbed)
 "aOV" = (
@@ -25360,9 +25290,6 @@
 "aOZ" = (
 /obj/structure/bed/chair/armchair/beige{
 	dir = 4
-	},
-/obj/effect/landmark/start{
-	name = "Detective"
 	},
 /obj/effect/floor_decal/borderfloorblack,
 /obj/random/date_based/christmas/xmaslights,
@@ -26032,9 +25959,6 @@
 	},
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 1
-	},
-/obj/effect/landmark/start{
-	name = "Research Director"
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/research)
@@ -30753,9 +30677,6 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/effect/landmark/start{
-	name = "Research Director"
-	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/misc_lab)
 "aWp" = (
@@ -31993,12 +31914,10 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/firstdeck/aftport)
 "aYp" = (
-/obj/machinery/vending/parts/research{
-	dir = 4
-	},
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/storage)
 "aYq" = (
@@ -33174,7 +33093,6 @@
 /obj/structure/bed/chair/comfy/brown{
 	dir = 8
 	},
-/obj/effect/landmark/start,
 /obj/random/date_based/christmas/xmaslights,
 /turf/simulated/floor/carpet,
 /area/crew_quarters/lounge/upper)
@@ -37492,6 +37410,20 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
+"bjf" = (
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/landmark/explosion/light,
+/turf/simulated/floor/reinforced/airless,
+/area/space)
 "bjh" = (
 /obj/machinery/light/spot{
 	dir = 1
@@ -38078,7 +38010,6 @@
 /obj/structure/bed/chair/comfy/beige{
 	dir = 4
 	},
-/obj/effect/landmark/start,
 /obj/machinery/newscaster{
 	pixel_y = 32
 	},
@@ -38208,6 +38139,11 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/infirmary)
+"dvp" = (
+/obj/structure/lattice,
+/obj/effect/landmark/explosion/light,
+/turf/space,
+/area/space)
 "dxt" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -38401,6 +38337,10 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/medical/mentalhealth)
+"epS" = (
+/obj/effect/landmark/explosion/light,
+/turf/space,
+/area/space)
 "esL" = (
 /obj/machinery/door/airlock/medical{
 	dir = 4;
@@ -38431,6 +38371,14 @@
 /obj/item/stack/material/steel/fifty,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/sierra/armory)
+"eMZ" = (
+/obj/machinery/pointdefense{
+	initial_id_tag = "sierra_main_pd"
+	},
+/obj/structure/cable/green,
+/obj/effect/landmark/explosion/light,
+/turf/simulated/floor/reinforced/airless,
+/area/space)
 "eNQ" = (
 /obj/structure/bed/chair/office/teal{
 	dir = 4
@@ -38861,6 +38809,14 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/fore_stairwell)
+"gdw" = (
+/obj/structure/sign/warning/hot_exhaust{
+	dir = 4;
+	pixel_x = -32
+	},
+/obj/effect/landmark/explosion/light,
+/turf/space,
+/area/space)
 "gjn" = (
 /obj/machinery/door/blast/shutters/open{
 	id_tag = "s_chem_window";
@@ -39068,6 +39024,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/effect/landmark/explosion/light,
 /turf/simulated/floor/reinforced/airless,
 /area/space)
 "hFe" = (
@@ -39552,9 +39509,6 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/sierra/hallway/aft)
 "jsp" = (
-/obj/random/vendor{
-	dir = 1
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 10
 	},
@@ -39562,6 +39516,7 @@
 	dir = 10
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled,
 /area/crew_quarters/dungeon_master_lounge)
 "jvi" = (
@@ -40343,6 +40298,10 @@
 /obj/effect/floor_decal/corner/pink/bordercorner,
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
+"mKu" = (
+/obj/effect/landmark/explosion/light,
+/turf/simulated/floor/reinforced/airless,
+/area/space)
 "mKw" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -41035,6 +40994,16 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/office/cmo)
+"plI" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/obj/effect/landmark/explosion/light,
+/turf/simulated/floor/airless,
+/area/space)
 "pnQ" = (
 /obj/structure/disposaloutlet,
 /obj/machinery/shield_diffuser,
@@ -41447,6 +41416,19 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/tcommsat/chamber)
+"rWl" = (
+/obj/effect/floor_decal/solarpanel,
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/power/solar{
+	id = "auxsolarstarboard";
+	name = "Aft Starboard Solar Array"
+	},
+/obj/effect/landmark/explosion/light,
+/turf/simulated/floor/airless,
+/area/solar/starboard)
 "sbb" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -42624,6 +42606,7 @@
 	pixel_x = -10;
 	pixel_y = -24
 	},
+/obj/effect/landmark/explosion/light,
 /turf/simulated/floor/greengrid,
 /area/turret_protected/ai)
 "xRm" = (
@@ -46664,7 +46647,7 @@ aae
 avc
 avc
 avc
-aae
+dvp
 avc
 aaa
 aaa
@@ -47279,7 +47262,7 @@ aLX
 aLX
 qIS
 vRC
-aZX
+eMZ
 aaa
 aaa
 aaa
@@ -49707,7 +49690,7 @@ aTB
 aUY
 aWu
 aXK
-avb
+plI
 aZX
 aaa
 aaa
@@ -50687,7 +50670,7 @@ aaa
 aaa
 aaa
 aam
-aam
+mKu
 mLZ
 nEh
 nsH
@@ -51328,7 +51311,7 @@ aXL
 aaa
 aaa
 aaa
-aaa
+epS
 aaa
 aaa
 aaa
@@ -53706,7 +53689,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+epS
 aaA
 aaA
 aaA
@@ -55730,7 +55713,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+epS
 aaA
 aaA
 aaA
@@ -57748,7 +57731,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+epS
 aaB
 aaB
 aaB
@@ -59970,7 +59953,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+epS
 lBT
 acj
 acV
@@ -60202,7 +60185,7 @@ aGI
 aIf
 aJN
 aLl
-aME
+aMF
 aOk
 aPB
 aRk
@@ -62597,7 +62580,7 @@ aaa
 aaa
 aae
 aae
-aam
+mKu
 aaB
 aaB
 adN
@@ -63597,7 +63580,7 @@ aae
 aak
 aak
 aak
-aak
+rWl
 aak
 aak
 aak
@@ -67439,7 +67422,7 @@ aaa
 aam
 aam
 aam
-aam
+mKu
 aam
 aaq
 aam
@@ -69048,7 +69031,7 @@ aaa
 aaa
 aad
 aaa
-aae
+dvp
 aaa
 aae
 aaa
@@ -71690,7 +71673,7 @@ abk
 aaa
 aaa
 aaa
-abk
+gdw
 aaa
 aaa
 aaa
@@ -75339,7 +75322,7 @@ bjl
 bjl
 bjl
 bjl
-bjQ
+bjf
 bjV
 aaa
 aaa
