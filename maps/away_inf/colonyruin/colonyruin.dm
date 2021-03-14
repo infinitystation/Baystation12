@@ -8,7 +8,8 @@
 	icon_state = "globe"
 	
 	initial_generic_waypoints = list(
-		"nav_colonyruin_1"
+		"nav_colonyruin_1",
+		"nav_colonyruin_3"
 	)
 	initial_restricted_waypoints = list(
 		"Guppy" = list("nav_colonyruin_2"),
@@ -34,6 +35,9 @@
 	landmark_tag = "nav_colonyruin_1"
 
 /obj/effect/shuttle_landmark/nav_colonyruin/nav2
-	name = "Planet Landing Point #2"
+	name = "Planet Landing Pad"
 	landmark_tag = "nav_colonyruin_2"
-
+	
+/obj/effect/shuttle_landmark/nav_colonyruin/nav3
+	name = "Planet Landing Point #3"
+	landmark_tag = "nav_colonyruin_3"
