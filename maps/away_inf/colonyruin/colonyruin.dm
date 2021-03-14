@@ -37,7 +37,9 @@
 /obj/effect/shuttle_landmark/nav_colonyruin/nav2
 	name = "Planet Landing Pad"
 	landmark_tag = "nav_colonyruin_2"
+	base_turf = /turf/simulated/floor/plating
 	
 /obj/effect/shuttle_landmark/nav_colonyruin/nav3
 	name = "Planet Landing Point #3"
 	landmark_tag = "nav_colonyruin_3"
+
