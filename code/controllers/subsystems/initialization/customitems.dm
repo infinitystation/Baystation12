@@ -6,11 +6,13 @@ SUBSYSTEM_DEF(customitems)
 	var/list/custom_items_by_ckey = list()
 	var/list/item_states = list()
 	var/list/mob_states =  list()
+	var/list/gun_states =  list()	// INF
 
 /datum/controller/subsystem/customitems/Initialize()
 
 	item_states = icon_states(CUSTOM_ITEM_OBJ)
 	mob_states =  icon_states(CUSTOM_ITEM_MOB)
+	gun_states =  icon_states(CUSTOM_GUN_ICONS)	// INF
 
 	if(!fexists(CUSTOM_ITEM_CONFIG))
 		report_progress("Custom item directory [CUSTOM_ITEM_CONFIG] does not exist, no custom items will be loaded.")
@@ -73,6 +75,17 @@ SUBSYSTEM_DEF(customitems)
 			if(!has_access(current_id.access, citem.req_access))
 				if(!has_access(citem.req_access, current_id.access))
 					continue
+
+		// Бумагу вперед! ~bear1ake
+		if(length(citem.assoc_paper_info) || length(citem.assoc_paper_title) || ispath(citem.assoc_paper_stamp_type) || ispath(citem.item_path, /obj/item/weapon/paper))
+			var/obj/item/weapon/paper/AP = new(text = citem.assoc_paper_info, title = citem.assoc_paper_title)
+			if(citem.assoc_paper_stamp_type)
+				AP.preStampPaper(citem.assoc_paper_stamp_type)
+			AP.loc = M
+			M.equip_to_storage(AP)
+			if(ispath(citem.item_path, /obj/item/weapon/paper))	// А вдруг бумага и есть кастомный предмет?
+				AP.inherit_custom_item_data(src)				// Применяем остальные свойства к бумаге
+				continue										// Чистый лист нам не нужен
 //[/INF]
 		// Check for required job title.
 		if(length(citem.req_titles))
@@ -99,6 +112,9 @@ SUBSYSTEM_DEF(customitems)
 	var/list/req_access
 	var/list/req_titles
 	var/list/additional_data
+	var/assoc_paper_title // А вдруг кому надо приложить бумажку с предметом?
+	var/assoc_paper_info
+	var/assoc_paper_stamp_type
 
 /datum/custom_item/New(var/list/data)
 	ckey                 = ckey(data["ckey"])
@@ -111,6 +127,9 @@ SUBSYSTEM_DEF(customitems)
 	req_titles           = data["req_titles"]                      || list()
 	additional_data      = data["additional_data"]                 || list()
 	apply_to_target_type = text2path(data["apply_to_target_type"]) || data["apply_to_target_type"]
+	assoc_paper_title    = data["paper_title"]    	
+	assoc_paper_info     = data["paper_info"]    
+	assoc_paper_stamp_type = data["paper_stamp_type"]    
 
 /datum/custom_item/proc/validate()
 	if(!ispath(item_path, /obj/item))
@@ -124,6 +143,12 @@ SUBSYSTEM_DEF(customitems)
 					return SPAN_WARNING("The given item icon [state] does not exist.")
 				if(!(state in SScustomitems.mob_states))
 					return SPAN_WARNING("The given mob icon [state] does not exist.")
+// [INF]
+		else if(ispath(item_path, /obj/item/device/kit/egun) || ispath(item_path, /obj/item/device/kit/gun))
+			for(var/state in list(item_icon_state))
+				if(!(state in SScustomitems.gun_states))
+					return SPAN_WARNING("The given gun icon [state] does not exist.")
+// [/INF]
 		else
 			for(var/state in list(item_icon_state))
 				if(!(state in SScustomitems.item_states))

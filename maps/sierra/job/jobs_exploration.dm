@@ -150,7 +150,6 @@
 	access = list(	access_explorer, access_eva, access_emergency_storage, access_medical,
 					access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar)
 
-
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
