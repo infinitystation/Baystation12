@@ -214,7 +214,7 @@
 /obj/machinery/door/blast/regular/lockdown/attack_ai()
 	for(var/obj/machinery/door/blast/regular/lockdown/door in SSmachines.machinery)
 		if(door.id_tag == id_tag)
-			if(door.density)s
+			if(door.density)
 				INVOKE_ASYNC(door, /obj/machinery/door/proc/open)
 			else
 				INVOKE_ASYNC(door, /obj/machinery/door/proc/close)
