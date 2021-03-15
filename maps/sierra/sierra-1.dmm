@@ -358,6 +358,17 @@
 /obj/effect/paint_stripe/nt_red,
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod/escape_pod2/station)
+"aU" = (
+/obj/structure/table/steel,
+/obj/machinery/camera/network/hangar{
+	dir = 8
+	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 8;
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/quartermaster/shuttlefuel)
 "aV" = (
 /obj/effect/paint_stripe/mauve,
 /obj/effect/paint/dark_gunmetal,
@@ -14916,6 +14927,19 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled,
 /area/storage/primary)
+"xp" = (
+/obj/structure/sign/warning/compressed_gas{
+	dir = 8;
+	pixel_x = 32
+	},
+/obj/effect/floor_decal/techfloor,
+/obj/effect/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/structure/table/steel,
+/obj/item/weapon/wrench,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/quartermaster/shuttlefuel)
 "xq" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled,
@@ -21522,10 +21546,6 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/structure/sign/warning/nosmoking_1{
-	dir = 8;
-	pixel_x = 32
-	},
 /obj/machinery/portable_atmospherics/canister/hydrogen,
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -23981,13 +24001,8 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod/escape_pod3/station)
 "Mj" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/flora/seaweed,
-/obj/effect/fluid_mapped,
-/turf/simulated/floor/aquarium,
-/area/rnd/xenobiology/level2)
+/turf/simulated/wall/prepainted,
+/area/quartermaster/shuttlefuel)
 "Mk" = (
 /obj/machinery/firealarm{
 	dir = 1;
@@ -25938,9 +25953,6 @@
 /turf/simulated/floor/reinforced,
 /area/command/bsa)
 "PC" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
@@ -25950,8 +25962,11 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/shuttlefuel)
@@ -26312,16 +26327,12 @@
 /turf/simulated/wall/prepainted,
 /area/quartermaster/storage)
 "Qh" = (
-/obj/structure/sign/warning/compressed_gas{
-	dir = 8;
-	pixel_x = 32
-	},
-/obj/effect/floor_decal/techfloor,
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 8
+/obj/effect/floor_decal/techfloor,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/shuttlefuel)
@@ -26914,10 +26925,12 @@
 /turf/simulated/wall/r_titanium,
 /area/guppy_hangar/start)
 "Rd" = (
-/obj/structure/table/steel,
-/obj/machinery/firealarm{
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 1
+	},
+/obj/machinery/alarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/shuttlefuel)
@@ -27712,15 +27725,13 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/thirddeck/aft)
 "Sy" = (
-/obj/machinery/alarm{
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
+	},
+/obj/machinery/firealarm{
 	dir = 1;
 	pixel_y = -20
 	},
-/obj/machinery/camera/network/hangar{
-	dir = 8
-	},
-/obj/structure/table/steel,
-/obj/item/weapon/storage/toolbox/mechanical,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/shuttlefuel)
 "Sz" = (
@@ -28685,6 +28696,13 @@
 /obj/effect/floor_decal/corner/lightgrey/bordercorner2,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
+"UV" = (
+/obj/effect/fluid_mapped,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/aquarium,
+/area/rnd/xenobiology/level2)
 "UZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -55376,9 +55394,9 @@ DJ
 DJ
 ZT
 LM
-Nv
-Nv
-Nv
+Mj
+xp
+aU
 Nv
 Nv
 Nv
@@ -55580,8 +55598,8 @@ EY
 Ip
 Nv
 Nv
-Gl
-Mj
+Nv
+Nv
 GN
 MH
 NA
@@ -55783,7 +55801,7 @@ IA
 Nv
 zR
 GN
-Gl
+UV
 Ma
 MH
 NB
