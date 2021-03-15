@@ -1852,7 +1852,7 @@
 	},
 /turf/simulated/floor/plating,
 /area/ship/patrol/maintenance/atmos)
-"ds" = (
+"dr" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/portable_atmospherics/canister/helium,
 /turf/simulated/floor/plating,
@@ -7808,10 +7808,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/engineering/fussion/control)
-"oH" = (
-/obj/effect/paint/dark_gunmetal,
-/turf/simulated/wall/r_wall,
-/area/space)
 "oI" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/structure/closet/crate/radiation,
@@ -8478,6 +8474,12 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/ship/patrol/crew/cargo)
+"vd" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
+/turf/simulated/wall/ocp_wall,
+/area/ship/patrol/engineering/fussion/control)
 "wa" = (
 /obj/effect/paint/dark_gunmetal,
 /turf/simulated/wall/r_wall,
@@ -8487,6 +8489,15 @@
 /obj/effect/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/patrol/command/ofd)
+"wk" = (
+/obj/machinery/atmospherics/unary/outlet_injector{
+	frequency = 1442;
+	icon_state = "map_injector";
+	id = "patrol_rust";
+	use_power = 1
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/ship/patrol/engineering/fussion/control)
 "wN" = (
 /obj/effect/paint/dark_gunmetal,
 /turf/simulated/wall/r_wall,
@@ -8538,12 +8549,6 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/ship/patrol/maintenance/atmos)
-"zT" = (
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
-	},
-/turf/simulated/wall/ocp_wall,
-/area/ship/patrol/engineering/fussion/control)
 "zW" = (
 /obj/effect/paint/dark_gunmetal,
 /obj/structure/cable{
@@ -8674,10 +8679,24 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/medbay)
+"DY" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/portable_atmospherics/canister/helium,
+/turf/simulated/floor/plating,
+/area/ship/patrol/engineering/fussion/control)
 "Ex" = (
 /obj/effect/paint/meatstation/lab,
 /turf/simulated/wall/r_wall,
 /area/ship/patrol/barracks)
+"Fo" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 9
+	},
+/turf/simulated/wall/ocp_wall,
+/area/ship/patrol/engineering/fussion/control)
 "FA" = (
 /obj/effect/paint/meatstation/lab,
 /obj/structure/cable{
@@ -8722,22 +8741,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/patrol/command/ofd)
-"GK" = (
-/obj/effect/paint/dark_gunmetal,
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
-	},
-/turf/simulated/wall/r_wall,
-/area/ship/patrol/engineering/fussion/control)
-"GM" = (
-/obj/machinery/atmospherics/unary/outlet_injector{
-	frequency = 1442;
-	icon_state = "map_injector";
-	id = "patrol_rust";
-	use_power = 1
-	},
-/turf/simulated/floor/reinforced/airless,
-/area/ship/patrol/engineering/fussion/control)
 "GP" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/machinery/sleeper{
@@ -8773,19 +8776,6 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/ship/patrol/command/eva)
-"IY" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/turf/simulated/floor/plating,
-/area/ship/patrol/engineering/fussion/control)
-"Jg" = (
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 9
-	},
-/turf/simulated/wall/ocp_wall,
-/area/ship/patrol/engineering/fussion/control)
 "Jl" = (
 /obj/machinery/door/firedoor,
 /obj/structure/cable,
@@ -8837,14 +8827,6 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/ship/patrol/maintenance/engine/starboard)
-"KV" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/portable_atmospherics/canister/helium,
-/turf/simulated/floor/plating,
-/area/ship/patrol/engineering/fussion/control)
 "Lm" = (
 /obj/effect/paint/red,
 /turf/simulated/wall/r_titanium,
@@ -8853,6 +8835,13 @@
 /obj/effect/paint/red,
 /turf/simulated/wall/r_wall,
 /area/ship/patrol/maintenance/engine/port)
+"LN" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/plating,
+/area/ship/patrol/engineering/fussion/control)
 "LP" = (
 /obj/effect/paint/meatstation/lab,
 /obj/structure/cable{
@@ -8883,6 +8872,10 @@
 /obj/effect/paint/dark_gunmetal,
 /turf/simulated/wall/r_wall,
 /area/ship/patrol/command/hangar)
+"Nm" = (
+/obj/effect/paint/dark_gunmetal,
+/turf/simulated/wall/r_wall,
+/area/space)
 "No" = (
 /obj/machinery/hologram/holopad/longrange,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -9235,6 +9228,13 @@
 "Zn" = (
 /obj/effect/paint/meatstation/lab,
 /obj/structure/sign/warning/hot_exhaust,
+/turf/simulated/wall/r_wall,
+/area/ship/patrol/engineering/fussion/control)
+"ZG" = (
+/obj/effect/paint/dark_gunmetal,
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
 /turf/simulated/wall/r_wall,
 /area/ship/patrol/engineering/fussion/control)
 "ZX" = (
@@ -17870,14 +17870,14 @@ kI
 li
 lH
 kF
-oH
+Nm
 ne
 nL
 om
 oJ
 pf
 pA
-KV
+DY
 md
 tb
 aa
@@ -17999,7 +17999,7 @@ on
 oK
 pg
 pB
-IY
+LN
 md
 tb
 aa
@@ -18121,7 +18121,7 @@ oo
 nN
 nN
 pC
-GK
+ZG
 md
 tb
 aa
@@ -18243,7 +18243,7 @@ nh
 nh
 nh
 me
-zT
+vd
 tb
 tb
 aa
@@ -18364,8 +18364,8 @@ mL
 mL
 mL
 mL
-GM
-Jg
+wk
+Fo
 tb
 aa
 aa
@@ -18462,7 +18462,7 @@ ba
 bx
 ca
 cK
-ds
+dr
 dH
 ei
 Uk
@@ -18584,7 +18584,7 @@ bb
 by
 cb
 cL
-ds
+dr
 dI
 ej
 Uk
