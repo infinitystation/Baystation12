@@ -108,6 +108,8 @@
 #define CUSTOM_ITEM_SYNTH 'infinity/icons/customs/infinity_custom_synthetic.dmi'
 #endif
 
+#define CUSTOM_GUN_ICONS 'infinity/icons/customs/infinity_custom_guns.dmi'	// INF
+
 #define WALL_CAN_OPEN 1
 #define WALL_OPENING 2
 

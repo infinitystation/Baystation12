@@ -124,6 +124,7 @@ h1.alert, h2.alert		{color: #000000;}
 .lirris					{color: #023638;}
 .alain					{color: #6a1b9a;}
 .interface				{color: #330033;}
+.german					{color: #4d5d53;}
 
 .good                   {color: #4f7529; font-weight: bold;}
 .bad                    {color: #ee0000; font-weight: bold;}
