@@ -1,0 +1,9 @@
+{
+  "ckey" :            "mixanovr64",
+  "character_name" :  "Andrew Novak",
+  "item_name" :       "ARS-Val",
+  "item_desc" :       "Hephaestus replica of old-Earth special forces qA rifle, adapted to submachine gun rounds.",
+  "item_icon_state" : "mixant41",
+  "item_path" :       "/obj/item/device/kit/gun",
+  "req_access" :      [ "ACCESS_GUARD" ]
+  }
