@@ -1,0 +1,10 @@
+{
+  "ckey" :            "LordSpring",
+  "character_name" :  "Frank Miller",
+  "item_name" :       "Frank's coat",
+  "item_desc" :       "Old but still stylish black coat, have a tag: From Henry.",
+  "item_icon_state" : "frankcoat",
+  "item_path" :       "/obj/item/device/kit/clothing",
+  "req_titles" :      [ "Head of Security" ],
+  "additional_data"	:	{"apply_kit_to":"/obj/item/clothing/suit/armor/hos"}
+  }

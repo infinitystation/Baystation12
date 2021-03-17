@@ -9463,8 +9463,6 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 1
 	},
-/obj/machinery/atmospherics/portables_connector,
-/obj/machinery/portable_atmospherics/powered/pump/filled,
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/hallway)
 "ase" = (
@@ -9504,8 +9502,6 @@
 /obj/effect/floor_decal/corner/yellow/bordercorner2{
 	dir = 5
 	},
-/obj/machinery/atmospherics/portables_connector,
-/obj/machinery/portable_atmospherics/powered/pump/filled,
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/hallway)
 "asg" = (
@@ -11436,9 +11432,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
-	dir = 6
-	},
 /obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/engineering/hallway)
@@ -11589,7 +11582,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold4w/hidden/cyan,
 /obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/engineering/hallway)
@@ -11790,9 +11782,6 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/danger{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -13005,7 +12994,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	dir = 5
 	},
@@ -13020,10 +13008,9 @@
 /obj/effect/floor_decal/borderfloor/corner2,
 /obj/effect/floor_decal/corner/yellow/bordercorner2,
 /obj/random/date_based/christmas/xmaslights,
-/obj/machinery/atmospherics/portables_connector{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
+	dir = 6
 	},
-/obj/machinery/portable_atmospherics/powered/pump/filled,
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/hallway)
 "ayg" = (
@@ -13046,7 +13033,7 @@
 	},
 /obj/random/date_based/christmas/xmaslights,
 /obj/machinery/atmospherics/portables_connector{
-	dir = 1
+	dir = 8
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/hallway)
@@ -13479,9 +13466,6 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
-	dir = 5
-	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/atmos)
 "ayM" = (
@@ -13535,9 +13519,7 @@
 "ayP" = (
 /obj/effect/wallframe_spawn/reinforced/no_grille,
 /obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
-	dir = 10
-	},
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "ayQ" = (
@@ -19020,10 +19002,6 @@
 	dir = 4
 	},
 /obj/effect/landmark/start,
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -20
-	},
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/sleep/bunk)
 "aIy" = (
@@ -37660,8 +37638,12 @@
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/cafe)
 "wWL" = (
-/obj/machinery/atmospherics/valve/digital/open{
-	name = "CO2 to Hangar Supply"
+/obj/machinery/atmospherics/binary/passive_gate{
+	name = "CO2 to Hangar";
+	pipe_color = "#ffcc00";
+	set_flow_rate = 25;
+	target_pressure = 2500;
+	unlocked = 1
 	},
 /turf/simulated/wall/r_wall/prepainted,
 /area/engineering/atmos)
