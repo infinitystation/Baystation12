@@ -55,11 +55,11 @@
 
 /obj/item/device/radio/headset/exploration/medic
 	name = "field medic's headset"
-	ks2type = /obj/item/device/encryptionkey/headset_med
+	// ks2type = /obj/item/device/encryptionkey/headset_med
 
 /obj/item/device/radio/headset/exploration/engineer
 	name = "field engineer's headset"
-	ks2type = /obj/item/device/encryptionkey/headset_eng
+	// ks2type = /obj/item/device/encryptionkey/headset_eng
 
 /obj/item/device/radio/headset/exploration/alt
 	name = "exploration bowman headset"
