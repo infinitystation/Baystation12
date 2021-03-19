@@ -18085,6 +18085,9 @@
 	dir = 4;
 	level = 2
 	},
+/obj/structure/hygiene/shower{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/airlock)
 "CY" = (
