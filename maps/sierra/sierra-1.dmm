@@ -27,12 +27,11 @@
 /turf/simulated/wall/r_wall/hull,
 /area/quartermaster/expedition/storage)
 "ag" = (
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/camera/network/exploration_shuttle{
+	c_tag = "Charon - Cargo Bay Left";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cargo_l)
 "ah" = (
@@ -357,12 +356,13 @@
 /turf/simulated/wall/r_wall/hull,
 /area/hallway/primary/thirddeck/center)
 "aX" = (
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/camera/network/exploration_shuttle{
+	c_tag = "Charon - Cargo Bay Right";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/monotile,
-/area/exploration_shuttle/cargo_l)
+/area/exploration_shuttle/cargo_r)
 "aY" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5
@@ -1003,13 +1003,13 @@
 /obj/machinery/shipsensors/weak,
 /obj/structure/cable/cyan{
 	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /obj/structure/cable/cyan{
 	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
+	d2 = 4;
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/reinforced,
 /area/exploration_shuttle/seats_place)
@@ -1020,20 +1020,17 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/shuttle/petrov/ship)
 "cg" = (
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/handrai{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
 /obj/machinery/alarm{
 	dir = 4;
 	pixel_x = -24
+	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_r)
@@ -1235,6 +1232,7 @@
 "cx" = (
 /obj/machinery/door/blast/regular/open{
 	density = 0;
+	dir = 4;
 	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
@@ -1242,17 +1240,34 @@
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	d2 = 4;
+	icon_state = "0-4"
 	},
+/obj/effect/paint/dark_gunmetal,
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/plating,
+/area/exploration_shuttle/cargo_l)
+"cy" = (
+/obj/effect/paint/dark_gunmetal,
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/regular/open{
+	density = 0;
+	dir = 4;
+	id_tag = "calypso_shutters";
+	name = "Protective Shutters";
+	opacity = 0
+	},
+/obj/machinery/door/firedoor,
 /obj/structure/cable/cyan{
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/effect/paint/dark_gunmetal,
-/turf/simulated/floor/plating,
-/area/exploration_shuttle/cargo_l)
+/turf/simulated/wall/r_titanium,
+/area/exploration_shuttle/cargo_r)
 "cz" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -1629,6 +1644,23 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/quartermaster/exploration)
+"dm" = (
+/obj/effect/paint/dark_gunmetal,
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/regular/open{
+	density = 0;
+	dir = 4;
+	id_tag = "calypso_shutters";
+	name = "Protective Shutters";
+	opacity = 0
+	},
+/obj/machinery/door/firedoor,
+/obj/structure/cable/cyan{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/wall/r_titanium,
+/area/exploration_shuttle/cargo_r)
 "dn" = (
 /obj/structure/table/steel,
 /obj/item/device/radio/intercom{
@@ -2515,8 +2547,16 @@
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/effect/paint/dark_gunmetal,
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /obj/effect/paint/dark_gunmetal,
-/obj/structure/cable/cyan,
+/obj/structure/cable/cyan{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/cargo_r)
 "eJ" = (
@@ -2734,10 +2774,6 @@
 "fc" = (
 /obj/effect/floor_decal/industrial/loading{
 	dir = 1
-	},
-/obj/structure/extinguisher_cabinet{
-	dir = 1;
-	pixel_x = -22
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_l)
@@ -3251,6 +3287,11 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4;
 	icon_state = "pipe-c"
+	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_l)
@@ -3955,19 +3996,14 @@
 	dir = 1
 	},
 /obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/cable/cyan{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_r)
@@ -5746,17 +5782,9 @@
 /area/quartermaster/hangar_atmos)
 "jL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/cable/cyan{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /obj/item/device/radio/intercom{
 	dir = 8;
 	pixel_x = 20
-	},
-/obj/structure/handrai{
-	dir = 8
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -5771,6 +5799,11 @@
 	dir = 5
 	},
 /obj/structure/disposalpipe/segment,
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_l)
 "jM" = (
@@ -8800,9 +8833,7 @@
 	pixel_y = 27;
 	req_access = list("ACCESS_EXPEDITION_SHUTTLE")
 	},
-/obj/structure/handrai{
-	pixel_y = 5
-	},
+/obj/structure/handrai,
 /turf/simulated/floor/reinforced,
 /area/exploration_shuttle/airlock)
 "nS" = (
@@ -11796,22 +11827,15 @@
 "sv" = (
 /obj/machinery/door/blast/regular/open{
 	density = 0;
+	dir = 4;
 	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/structure/cable/cyan{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/structure/cable/cyan{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /obj/effect/paint/dark_gunmetal,
+/obj/structure/cable/cyan,
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/cargo_l)
 "sw" = (
@@ -11961,6 +11985,7 @@
 "sF" = (
 /obj/machinery/door/blast/regular/open{
 	density = 0;
+	dir = 4;
 	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
@@ -11969,10 +11994,7 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/effect/paint/dark_gunmetal,
 /obj/effect/paint/dark_gunmetal,
-/obj/structure/cable/cyan{
-	d2 = 4;
-	icon_state = "0-4"
-	},
+/obj/structure/cable/cyan,
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/cargo_r)
 "sG" = (
@@ -12018,11 +12040,6 @@
 "sI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
-	},
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_l)
@@ -12745,22 +12762,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/plating,
 /area/quartermaster/hangar)
-"tY" = (
-/obj/machinery/door/blast/regular/open{
-	density = 0;
-	id_tag = "calypso_shutters";
-	name = "Protective Shutters";
-	opacity = 0
-	},
-/obj/machinery/door/firedoor,
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/structure/cable/cyan{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/effect/paint/dark_gunmetal,
-/turf/simulated/floor/plating,
-/area/exploration_shuttle/cargo_l)
 "tZ" = (
 /obj/machinery/atmospherics/portables_connector,
 /obj/machinery/portable_atmospherics/canister/air/airlock,
@@ -12988,13 +12989,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/central_stairwell)
-"ux" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/handrai{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/exploration_shuttle/cargo_r)
 "uy" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/green,
 /obj/effect/floor_decal/corner/blue{
@@ -13515,33 +13509,6 @@
 /obj/machinery/light/spot,
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
-"vo" = (
-/obj/machinery/door/blast/regular/open{
-	density = 0;
-	id_tag = "calypso_shutters";
-	name = "Protective Shutters";
-	opacity = 0
-	},
-/obj/machinery/door/firedoor,
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/dark_gunmetal,
-/obj/structure/cable/cyan{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/cable/cyan{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/cyan{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/effect/paint/dark_gunmetal,
-/turf/simulated/floor/plating,
-/area/exploration_shuttle/cargo_r)
 "vp" = (
 /obj/machinery/light/spot{
 	dir = 4
@@ -13999,12 +13966,10 @@
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/center)
 "wd" = (
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cargo_l)
 "we" = (
@@ -14029,19 +13994,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/storage/primary)
-"wf" = (
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/cyan{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/tiled,
-/area/exploration_shuttle/cargo_l)
 "wg" = (
 /obj/machinery/conveyor_switch/oneway{
 	id = "calypso_cargo";
@@ -14236,23 +14188,6 @@
 /obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d3port)
-"ww" = (
-/obj/machinery/door/blast/regular/open{
-	density = 0;
-	id_tag = "calypso_shutters";
-	name = "Protective Shutters";
-	opacity = 0
-	},
-/obj/machinery/door/firedoor,
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/structure/cable/cyan{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/effect/paint/dark_gunmetal,
-/obj/effect/paint/dark_gunmetal,
-/turf/simulated/floor/plating,
-/area/exploration_shuttle/cargo_r)
 "wx" = (
 /obj/machinery/conveyor{
 	dir = 4;
@@ -14303,9 +14238,6 @@
 /turf/simulated/floor/reinforced,
 /area/thruster/d3starboard)
 "wF" = (
-/obj/structure/handrai{
-	dir = 4
-	},
 /obj/machinery/door/blast/regular{
 	id_tag = "sensor_shutters"
 	},
@@ -14830,13 +14762,6 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/reinforced,
 /area/thruster/d3port)
-"xw" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/handrai{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/exploration_shuttle/cargo_r)
 "xx" = (
 /obj/machinery/status_display,
 /turf/simulated/wall/prepainted,
@@ -15544,22 +15469,6 @@
 /obj/effect/floor_decal/corner/lightgrey/bordercorner2,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
-"yA" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/firedoor,
-/obj/machinery/door/blast/regular/open{
-	density = 0;
-	id_tag = "calypso_shutters";
-	name = "Protective Shutters";
-	opacity = 0
-	},
-/obj/structure/cable/cyan{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/effect/paint/dark_gunmetal,
-/turf/simulated/floor/plating,
-/area/exploration_shuttle/cargo_l)
 "yB" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -15981,14 +15890,21 @@
 "zl" = (
 /turf/simulated/floor/tiled/white,
 /area/vacant/infirmary)
+"zm" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/exploration_shuttle/cargo_l)
 "zn" = (
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 4
-	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
 "zo" = (
@@ -16518,7 +16434,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -16830,6 +16746,15 @@
 "AL" = (
 /turf/simulated/wall/r_wall/hull,
 /area/maintenance/thirddeck/foreport)
+"AM" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/exploration_shuttle/cargo_r)
 "AN" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 6
@@ -18748,10 +18673,11 @@
 	icon_state = "4-8"
 	},
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+/obj/machinery/atmospherics/binary/pump,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /turf/simulated/floor/plating,
@@ -18789,14 +18715,14 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
 /obj/item/device/radio/beacon/anchored{
 	level = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
@@ -19183,9 +19109,6 @@
 	id_tag = "calypso_shuttle_pump_out_internal";
 	power_rating = 25000
 	},
-/obj/structure/handrai{
-	dir = 1
-	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/airlock)
 "EK" = (
@@ -19225,9 +19148,6 @@
 	id_tag = "calypso_shuttle_pump_out_internal";
 	power_rating = 25000
 	},
-/obj/structure/handrai{
-	dir = 1
-	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/airlock)
 "EP" = (
@@ -19247,9 +19167,6 @@
 	dir = 1;
 	id_tag = "calypso_shuttle_pump_out_internal";
 	power_rating = 25000
-	},
-/obj/structure/handrai{
-	dir = 1
 	},
 /obj/machinery/camera/network/exploration_shuttle{
 	c_tag = "Charon - External Airlock";
@@ -19488,8 +19405,8 @@
 /area/quartermaster/office)
 "Fl" = (
 /obj/effect/floor_decal/techfloor,
-/obj/machinery/atmospherics/binary/pump{
-	dir = 4
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
@@ -19530,11 +19447,35 @@
 /obj/random/toolbox,
 /obj/item/weapon/tape_roll,
 /obj/effect/floor_decal/techfloor,
-/obj/machinery/atmospherics/pipe/simple/visible/fuel{
-	dir = 10
-	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
+"Fp" = (
+/obj/effect/paint/dark_gunmetal,
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/regular/open{
+	density = 0;
+	dir = 4;
+	id_tag = "calypso_shutters";
+	name = "Protective Shutters";
+	opacity = 0
+	},
+/obj/machinery/door/firedoor,
+/obj/structure/cable/cyan{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/wall/r_titanium,
+/area/exploration_shuttle/cargo_l)
 "Fq" = (
 /obj/machinery/alarm{
 	dir = 4;
@@ -19616,10 +19557,8 @@
 "Fy" = (
 /obj/effect/paint/red,
 /obj/effect/paint_stripe/white,
-/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	dir = 4
-	},
 /obj/structure/fuel_port,
+/obj/machinery/atmospherics/pipe/manifold/visible/fuel,
 /turf/simulated/wall/r_titanium,
 /area/exploration_shuttle/power)
 "Fz" = (
@@ -20165,20 +20104,6 @@
 "Gu" = (
 /turf/simulated/wall/prepainted,
 /area/quartermaster/storage)
-"Gv" = (
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/cyan{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/monotile,
-/area/exploration_shuttle/cargo_r)
 "Gw" = (
 /obj/structure/closet/firecloset,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -20217,12 +20142,10 @@
 /turf/simulated/floor/tiled,
 /area/guppy_hangar/start)
 "Gz" = (
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cargo_r)
 "GA" = (
@@ -20290,10 +20213,6 @@
 	icon_state = "1-4"
 	},
 /obj/random_multi/single_item/space_rabbit,
-/obj/structure/handrai{
-	dir = 1;
-	pixel_y = -6
-	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/seats_place)
@@ -20719,22 +20638,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/vacant/monitoring)
-"Hh" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/firedoor,
-/obj/machinery/door/blast/regular/open{
-	density = 0;
-	id_tag = "calypso_shutters";
-	name = "Protective Shutters";
-	opacity = 0
-	},
-/obj/structure/cable/cyan{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/effect/paint/dark_gunmetal,
-/turf/simulated/floor/plating,
-/area/exploration_shuttle/cargo_r)
 "Hi" = (
 /obj/structure/catwalk,
 /obj/structure/cable/green{
@@ -20783,15 +20686,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/thruster/d3port)
-"Hl" = (
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/monotile,
-/area/exploration_shuttle/cargo_r)
 "Hm" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/vacant/cargo)
@@ -20815,6 +20709,16 @@
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment,
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_l)
 "Ho" = (
@@ -22127,18 +22031,13 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/handrai{
-	dir = 1
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cockpit)
 "Jn" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/fuel,
-/obj/effect/floor_decal/techfloor,
-/obj/machinery/atmospherics/portables_connector{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/visible/fuel{
+	level = 1
 	},
-/obj/machinery/portable_atmospherics/canister/carbon_dioxide/engine_setup,
+/obj/effect/floor_decal/techfloor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "Jo" = (
@@ -22168,11 +22067,6 @@
 /area/quartermaster/storage)
 "Jq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_l)
 "Jr" = (
@@ -22400,12 +22294,11 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 4
-	},
 /obj/machinery/alarm{
 	pixel_y = 24
 	},
+/obj/machinery/atmospherics/portables_connector,
+/obj/machinery/portable_atmospherics/canister/carbon_dioxide/engine_setup,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "JN" = (
@@ -25670,16 +25563,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aft)
-"Ps" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/handrai{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/exploration_shuttle/cargo_r)
 "Pt" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/space_heater,
@@ -25751,9 +25634,6 @@
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aft)
 "PA" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 23
-	},
 /obj/structure/table/steel_reinforced,
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
@@ -25766,6 +25646,10 @@
 /obj/item/sticky_pad/random,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
+	},
+/obj/item/device/radio/intercom{
+	dir = 1;
+	pixel_y = -28
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_r)
@@ -28183,20 +28067,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aft)
-"TH" = (
-/obj/machinery/door/blast/regular/open{
-	density = 0;
-	dir = 4;
-	id_tag = "calypso_shutters";
-	name = "Protective Shutters";
-	opacity = 0
-	},
-/obj/machinery/door/firedoor,
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/dark_gunmetal,
-/obj/structure/cable/cyan,
-/turf/simulated/floor/plating,
-/area/exploration_shuttle/cargo_l)
 "TI" = (
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
@@ -28342,6 +28212,23 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/sierra/dockcheck)
+"Ud" = (
+/obj/effect/paint/dark_gunmetal,
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/regular/open{
+	density = 0;
+	dir = 4;
+	id_tag = "calypso_shutters";
+	name = "Protective Shutters";
+	opacity = 0
+	},
+/obj/machinery/door/firedoor,
+/obj/structure/cable/cyan{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/wall/r_titanium,
+/area/exploration_shuttle/cargo_l)
 "Ue" = (
 /obj/effect/paint/dark_gunmetal,
 /obj/structure/sign/nanotrasen{
@@ -28369,11 +28256,12 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "Uh" = (
-/obj/machinery/camera/network/exploration_shuttle{
-	c_tag = "Charon - Cargo Bay Left";
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cargo_l)
 "Ui" = (
@@ -28543,10 +28431,6 @@
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/port)
 "UD" = (
-/obj/machinery/camera/network/exploration_shuttle{
-	c_tag = "Charon - Cargo Bay Right";
-	dir = 8
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
@@ -28560,6 +28444,11 @@
 	dir = 6
 	},
 /obj/structure/bed/chair/shuttle/green,
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_r)
 "UE" = (
@@ -28646,7 +28535,9 @@
 	},
 /turf/simulated/floor/aquarium,
 /area/rnd/xenobiology/level2)
-"UY" = (
+"UX" = (
+/obj/effect/paint/dark_gunmetal,
+/obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
 	density = 0;
 	dir = 4;
@@ -28655,19 +28546,21 @@
 	opacity = 0
 	},
 /obj/machinery/door/firedoor,
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/dark_gunmetal,
+/obj/structure/cable/cyan{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /obj/structure/cable/cyan{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/effect/paint/dark_gunmetal,
-/obj/structure/cable/cyan{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/simulated/floor/plating,
+/turf/simulated/wall/r_titanium,
 /area/exploration_shuttle/cargo_r)
 "UZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -28830,10 +28723,6 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
 "Vo" = (
-/obj/item/device/radio/intercom{
-	dir = 8;
-	pixel_x = 20
-	},
 /obj/structure/table/steel_reinforced,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
@@ -28942,12 +28831,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/quartermaster/shuttlefuel)
-"VC" = (
-/obj/structure/handrai{
-	dir = 4
-	},
-/turf/simulated/floor/reinforced,
-/area/exploration_shuttle/medical)
 "VE" = (
 /obj/machinery/atmospherics/valve/shutoff,
 /turf/simulated/floor/plating,
@@ -29354,9 +29237,6 @@
 /area/exploration_shuttle/airlock)
 "Ww" = (
 /obj/structure/catwalk,
-/obj/structure/handrai{
-	dir = 8
-	},
 /obj/structure/sign/warning/moving_parts{
 	dir = 8;
 	pixel_x = 34
@@ -29436,28 +29316,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
-"WK" = (
-/obj/machinery/door/blast/regular/open{
-	density = 0;
-	dir = 4;
-	id_tag = "calypso_shutters";
-	name = "Protective Shutters";
-	opacity = 0
-	},
-/obj/machinery/door/firedoor,
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/structure/cable/cyan{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/effect/paint/dark_gunmetal,
-/obj/structure/cable/cyan{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/plating,
-/area/exploration_shuttle/cargo_l)
 "WM" = (
 /obj/effect/paint_stripe/red,
 /obj/effect/paint/red,
@@ -29766,6 +29624,23 @@
 /obj/effect/floor_decal/techfloor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/expedition/storage)
+"Xt" = (
+/obj/effect/paint/dark_gunmetal,
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/regular/open{
+	density = 0;
+	dir = 4;
+	id_tag = "calypso_shutters";
+	name = "Protective Shutters";
+	opacity = 0
+	},
+/obj/machinery/door/firedoor,
+/obj/structure/cable/cyan{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/wall/r_titanium,
+/area/exploration_shuttle/cargo_l)
 "Xu" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -29936,6 +29811,14 @@
 /obj/random/blood_packs,
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/medical)
+"XK" = (
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled,
+/area/exploration_shuttle/cargo_l)
 "XL" = (
 /obj/machinery/light/spot{
 	dir = 8
@@ -30296,6 +30179,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/fore)
 "YA" = (
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_r)
 "YD" = (
@@ -30383,13 +30271,18 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d3port)
 "YT" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /obj/structure/cable/cyan{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
-	},
-/obj/machinery/light{
-	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_r)
@@ -30653,6 +30546,9 @@
 	id_tag = "calypso_out"
 	},
 /obj/effect/floor_decal/industrial/warning/full,
+/obj/structure/handrai{
+	dir = 1
+	},
 /turf/simulated/floor/reinforced,
 /area/exploration_shuttle/airlock)
 "ZD" = (
@@ -30663,8 +30559,8 @@
 "ZF" = (
 /obj/effect/paint/red,
 /obj/effect/paint_stripe/white,
-/obj/machinery/atmospherics/pipe/manifold/visible/fuel{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/visible/fuel{
+	dir = 10
 	},
 /turf/simulated/wall/r_titanium,
 /area/exploration_shuttle/power)
@@ -30800,14 +30696,9 @@
 "ZV" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_l)
@@ -51515,10 +51406,10 @@ al
 ZD
 JQ
 FW
-WK
-TH
 JQ
 JQ
+cx
+sv
 JQ
 Yi
 Vt
@@ -51716,9 +51607,9 @@ OS
 an
 bd
 JQ
-aX
-wd
 sY
+wd
+ag
 Uh
 fc
 gt
@@ -51917,9 +51808,9 @@ OS
 OS
 ao
 ZD
-sv
-ag
-wf
+Xt
+sY
+nc
 sI
 ZV
 Jq
@@ -52119,9 +52010,9 @@ OS
 OS
 ao
 ZD
-cx
-sY
-nc
+Fp
+zm
+XK
 fP
 Hn
 jL
@@ -52321,7 +52212,7 @@ OS
 OS
 ap
 ZD
-tY
+Ud
 ta
 nc
 GG
@@ -52728,7 +52619,7 @@ ZD
 JQ
 JQ
 JQ
-yA
+Xt
 Ho
 Hx
 GW
@@ -53132,7 +53023,7 @@ ZD
 KO
 KO
 KO
-Hh
+cy
 Ho
 HD
 GW
@@ -53333,7 +53224,7 @@ aq
 ZD
 KO
 Wz
-xw
+Wz
 Wz
 Ho
 yx
@@ -53533,10 +53424,10 @@ OS
 OS
 OI
 ZD
-sF
+dm
 vI
 Wz
-ux
+Wz
 KO
 KO
 HN
@@ -53735,10 +53626,10 @@ OS
 OS
 aq
 ZD
-vo
-Hl
-Gv
-Hl
+UX
+AM
+AM
+AM
 YT
 cg
 gW
@@ -53937,9 +53828,9 @@ OS
 OS
 ar
 be
-ww
+cy
 Wz
-Gz
+Wz
 Wz
 YA
 cz
@@ -54140,9 +54031,9 @@ OS
 as
 ZD
 KO
-Ps
-Gz
 Wz
+Gz
+aX
 UD
 Vo
 PA
@@ -54343,17 +54234,17 @@ as
 ZD
 KO
 YR
-UY
+KO
+KO
 eI
-KO
-KO
+sF
 KO
 Yd
 UG
 UF
-VC
 US
-VC
+US
+US
 Ju
 Ju
 mW
