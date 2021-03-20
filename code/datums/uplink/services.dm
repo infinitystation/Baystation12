@@ -38,6 +38,8 @@
 	path = /obj/item/device/uplink_service/jamming
 
 /datum/uplink_item/item/services/fake_update_annoncement
+	name = "Strange deivce"
+	desc = "Fuck you leatherman"
 	item_cost = 40
 	path = /obj/item/device/uplink_service/fake_update_announcement
 
