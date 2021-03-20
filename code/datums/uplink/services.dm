@@ -38,8 +38,8 @@
 	path = /obj/item/device/uplink_service/jamming
 
 /datum/uplink_item/item/services/fake_update_annoncement
-	name = "Strange deivce"
-	desc = "Fuck you leatherman"
+	name = "Fake Update Annoncement"
+	desc = "A single-use device, that when activated, throws a fake announcement to station."
 	item_cost = 40
 	path = /obj/item/device/uplink_service/fake_update_announcement
 
