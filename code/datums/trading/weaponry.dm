@@ -20,23 +20,17 @@
 
 	possible_trading_items = list(/obj/item/weapon/gun/projectile/pistol/holdout    = TRADER_ALL,
 								/obj/item/weapon/gun/projectile/pistol/military/alt    = TRADER_ALL,
-								/obj/item/weapon/gun/projectile/pistol/magnum_pistol= TRADER_ALL,
 								/obj/item/weapon/gun/projectile/pistol/sec         = TRADER_ALL,
 								/obj/item/weapon/gun/projectile/heavysniper/boltaction	= TRADER_ALL,
+								/obj/item/weapon/gun/projectile/automatic/sec_smg	= TRADER_ALL,
+								/obj/item/weapon/gun/projectile/automatic/merc_smg	= TRADER_ALL,
+								/obj/item/weapon/gun/projectile/pistol/throwback	= TRADER_ALL,
+								/obj/item/weapon/silencer	= TRADER_ALL,
+								/obj/item/weapon/gun/projectile/revolver/medium	= TRADER_ALL,
+								/obj/item/weapon/gun/projectile/revolver/holdout	= TRADER_ALL,
+								/obj/item/weapon/gun/projectile/revolver/shotgun	= TRADER_ALL,
 								/obj/item/weapon/gun/projectile/pistol/sec/MK      = TRADER_BLACKLIST,
-								/obj/item/weapon/gun/projectile/shotgun/pump= TRADER_SUBTYPES_ONLY,
-								/obj/item/ammo_magazine                     = TRADER_SUBTYPES_ONLY,
-								/obj/item/ammo_magazine/pistol/empty         = TRADER_BLACKLIST,
-								/obj/item/ammo_magazine/mil_rifle/empty          = TRADER_BLACKLIST,
-								/obj/item/ammo_magazine/gyrojet/empty           = TRADER_BLACKLIST,
-								/obj/item/ammo_magazine/pistol/small/empty         = TRADER_BLACKLIST,
-								/obj/item/ammo_magazine/pistol/empty         = TRADER_BLACKLIST,
-								/obj/item/ammo_magazine/box/pistol/empty       = TRADER_BLACKLIST,
-								/obj/item/ammo_magazine/box/machinegun/empty      = TRADER_BLACKLIST,
-								/obj/item/ammo_magazine/machine_pistol/empty        = TRADER_BLACKLIST,
-								/obj/item/ammo_magazine/smg_top/empty        = TRADER_BLACKLIST,
-								/obj/item/ammo_magazine/magnum/empty           = TRADER_BLACKLIST,
-								/obj/item/clothing/accessory/storage/holster        = TRADER_ALL)
+								/obj/item/weapon/gun/projectile/shotgun/pump= TRADER_SUBTYPES_ONLY)
 
 /datum/trader/ship/egunshop
 	name = "Energy Gun Shop Employee"
@@ -62,13 +56,10 @@
 								/obj/item/weapon/gun/energy/stunrevolver                 = TRADER_THIS_TYPE,
 								/obj/item/weapon/gun/energy/xray                         = TRADER_THIS_TYPE,
 								/obj/item/weapon/gun/energy/laser                        = TRADER_THIS_TYPE,
-								/obj/item/weapon/gun/energy/gun                          = TRADER_THIS_TYPE,
-								/obj/item/weapon/cell                                    = TRADER_THIS_TYPE,
-								/obj/item/weapon/cell/crap                               = TRADER_THIS_TYPE,
-								/obj/item/weapon/cell/high                               = TRADER_THIS_TYPE,
-								/obj/item/weapon/cell/super                              = TRADER_THIS_TYPE,
-								/obj/item/weapon/cell/hyper                              = TRADER_THIS_TYPE,
-								/obj/item/clothing/accessory/storage/holster                     = TRADER_ALL)
+								/obj/item/weapon/gun/energy/pulse_rifle/pistol                        = TRADER_THIS_TYPE,
+								/obj/item/weapon/gun/energy/taser/carbine                        = TRADER_THIS_TYPE,
+								/obj/item/weapon/gun/energy/stunrevolver/rifle                       = TRADER_THIS_TYPE,
+								/obj/item/weapon/gun/energy/gun                          = TRADER_THIS_TYPE)
 
 /datum/trader/dogan
 	name = "Dogan"
@@ -94,5 +85,4 @@
 								/obj/item/weapon/gun/projectile/pistol/sec/MK                  = TRADER_THIS_TYPE,
 								/obj/item/weapon/gun/projectile/heavysniper/ant         = TRADER_THIS_TYPE,
 								/obj/item/weapon/gun/energy/laser/dogan                 = TRADER_THIS_TYPE,
-								/obj/item/weapon/gun/projectile/automatic/machine_pistol/usi  = TRADER_THIS_TYPE,
-								/obj/item/clothing/accessory/storage/holster                    = TRADER_ALL)
+								/obj/item/weapon/gun/projectile/automatic/machine_pistol/usi  = TRADER_THIS_TYPE)
