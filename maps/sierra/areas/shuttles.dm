@@ -48,7 +48,6 @@
  */
 /area/exploration_shuttle
 	name = "Shuttle - Charon"
-	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "shuttlered"
 	base_turf = /turf/simulated/floor/plating
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED

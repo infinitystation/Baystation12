@@ -1266,7 +1266,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/turf/simulated/wall/r_titanium,
+/turf/simulated/floor/plating,
 /area/exploration_shuttle/cargo_r)
 "cz" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -1659,7 +1659,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/turf/simulated/wall/r_titanium,
+/turf/simulated/floor/plating,
 /area/exploration_shuttle/cargo_r)
 "dn" = (
 /obj/structure/table/steel,
@@ -19474,7 +19474,7 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/turf/simulated/wall/r_titanium,
+/turf/simulated/floor/plating,
 /area/exploration_shuttle/cargo_l)
 "Fq" = (
 /obj/machinery/alarm{
@@ -28227,7 +28227,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/turf/simulated/wall/r_titanium,
+/turf/simulated/floor/plating,
 /area/exploration_shuttle/cargo_l)
 "Ue" = (
 /obj/effect/paint/dark_gunmetal,
@@ -28560,7 +28560,7 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/turf/simulated/wall/r_titanium,
+/turf/simulated/floor/plating,
 /area/exploration_shuttle/cargo_r)
 "UZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -29639,7 +29639,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/turf/simulated/wall/r_titanium,
+/turf/simulated/floor/plating,
 /area/exploration_shuttle/cargo_l)
 "Xu" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -53223,7 +53223,7 @@ OS
 aq
 ZD
 KO
-Wz
+vI
 Wz
 Wz
 Ho
@@ -53425,7 +53425,7 @@ OS
 OI
 ZD
 dm
-vI
+Wz
 Wz
 Wz
 KO
