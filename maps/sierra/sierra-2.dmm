@@ -2957,7 +2957,6 @@
 /obj/item/device/radio/intercom{
 	pixel_y = 26
 	},
-/obj/effect/floor_decal/industrial/defective/corner,
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
 "afJ" = (
@@ -3324,8 +3323,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/railing/mapped,
-/obj/effect/floor_decal/industrial/defective,
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
 "agv" = (
@@ -3411,8 +3408,6 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/structure/railing/mapped,
-/obj/effect/floor_decal/industrial/defective,
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
 "agA" = (
@@ -3454,7 +3449,6 @@
 /obj/machinery/camera/network/second_deck{
 	c_tag = "Second Deck Bridge Hallway Two"
 	},
-/obj/effect/floor_decal/industrial/defective,
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
 "agC" = (
@@ -8948,12 +8942,10 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/railing/mapped,
 /obj/random/date_based/christmas/xmaslights{
 	dir = 1;
 	pixel_y = 24
 	},
-/obj/effect/floor_decal/industrial/defective,
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
 "aqY" = (
@@ -11078,9 +11070,6 @@
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	dir = 1
-	},
-/obj/effect/floor_decal/industrial/defective/corner{
-	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
@@ -18693,12 +18682,6 @@
 	plant = "P-Apple Bush";
 	plant_color = "#66ff66"
 	},
-/obj/structure/railing/mapped{
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial/defective{
-	dir = 4
-	},
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
 "aHX" = (
@@ -23210,12 +23193,6 @@
 /obj/structure/table/standard,
 /obj/random/snack,
 /obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle,
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial/defective{
-	dir = 8
-	},
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
 "aQm" = (
@@ -32998,12 +32975,6 @@
 /obj/structure/bed/chair/padded/green{
 	dir = 8
 	},
-/obj/structure/railing/mapped{
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial/defective{
-	dir = 4
-	},
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
 "biU" = (
@@ -33021,6 +32992,9 @@
 /area/bridge/meeting_room)
 "biX" = (
 /obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
 /turf/simulated/floor/grass,
 /area/bridge/lobby)
 "bja" = (
@@ -33069,12 +33043,6 @@
 /area/bridge/nano)
 "bjx" = (
 /obj/structure/bed/chair/padded/green,
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial/defective{
-	dir = 8
-	},
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
 "bjy" = (
@@ -33114,6 +33082,12 @@
 /area/bridge/lobby)
 "bjN" = (
 /obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 8
+	},
 /turf/simulated/floor/grass,
 /area/bridge/lobby)
 "bjO" = (
@@ -33157,14 +33131,21 @@
 /area/bridge/lobby)
 "bkh" = (
 /obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
 /turf/simulated/floor/grass,
 /area/bridge/lobby)
 "bkq" = (
 /obj/structure/flora/ausbushes/brflowers,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
 /turf/simulated/floor/grass,
 /area/bridge/lobby)
 "bkr" = (
 /obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/grass,
 /area/bridge/lobby)
 "bks" = (
@@ -33172,12 +33153,6 @@
 	dir = 1
 	},
 /obj/effect/landmark/start,
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial/defective{
-	dir = 8
-	},
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
 "bkt" = (
@@ -33265,9 +33240,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/effect/floor_decal/industrial/defective/corner{
-	dir = 4
-	},
 /obj/effect/floor_decal/steeldecal/steel_decals6,
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
@@ -33289,14 +33261,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/railing/mapped{
-	dir = 1
-	},
 /obj/effect/floor_decal/borderfloor/corner2,
 /obj/effect/floor_decal/corner/blue/bordercorner2,
-/obj/effect/floor_decal/industrial/defective{
-	dir = 1
-	},
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
 "bkD" = (
@@ -33314,32 +33280,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/seconddeck/fore)
-"bkE" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/blue/border,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/random/date_based/christmas/xmaslights,
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial/defective{
-	dir = 1
-	},
-/turf/simulated/floor/tiled,
-/area/bridge/lobby)
 "bkH" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -33360,12 +33300,6 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
-	},
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial/defective{
-	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
@@ -33406,9 +33340,6 @@
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	dir = 9
-	},
-/obj/effect/floor_decal/industrial/defective/corner{
-	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
@@ -34898,6 +34829,12 @@
 /area/crew_quarters/cafe)
 "jne" = (
 /obj/structure/flora/ausbushes/leafybush,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 4
+	},
 /turf/simulated/floor/grass,
 /area/bridge/lobby)
 "jnf" = (
@@ -35226,6 +35163,13 @@
 /obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hydroponics/storage)
+"kNJ" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/grass,
+/area/bridge/lobby)
 "kRQ" = (
 /obj/structure/towel/fitness,
 /obj/effect/landmark/start,
@@ -35326,32 +35270,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
-"llh" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/blue/border,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/random/date_based/christmas/xmaslights,
-/obj/effect/floor_decal/industrial/defective{
-	dir = 1
-	},
-/turf/simulated/floor/tiled,
-/area/bridge/lobby)
 "llw" = (
 /obj/structure/flora/seaweed/mid,
 /obj/effect/fluid_mapped,
@@ -35440,9 +35358,6 @@
 	icon_state = "4-8"
 	},
 /obj/random/date_based/christmas/xmaslights,
-/obj/effect/floor_decal/industrial/defective{
-	dir = 1
-	},
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
 "lST" = (
@@ -36101,6 +36016,14 @@
 /mob/living/simple_animal/aquatic/fish/judge,
 /turf/simulated/floor/aquarium,
 /area/grove/theta)
+"oWn" = (
+/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/grass,
+/area/bridge/lobby)
 "pbO" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 10
@@ -36320,6 +36243,11 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
+"pVD" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/railing/mapped,
+/turf/simulated/floor/grass,
+/area/bridge/lobby)
 "pWk" = (
 /obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/cable{
@@ -36659,6 +36587,11 @@
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/cafe)
+"rDI" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/railing/mapped,
+/turf/simulated/floor/grass,
+/area/bridge/lobby)
 "rLq" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 8
@@ -37016,6 +36949,14 @@
 /obj/effect/fluid_mapped,
 /turf/simulated/floor/aquarium,
 /area/grove/theta)
+"tsO" = (
+/obj/structure/flora/ausbushes/leafybush,
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/turf/simulated/floor/grass,
+/area/bridge/lobby)
 "txV" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -37076,6 +37017,12 @@
 /area/crew_quarters/sleep/cryo/south)
 "tHv" = (
 /obj/structure/flora/ausbushes/grassybush,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 8
+	},
 /turf/simulated/floor/grass,
 /area/bridge/lobby)
 "tMp" = (
@@ -46246,7 +46193,7 @@ aJr
 agu
 tHv
 bjN
-jne
+tsO
 bkC
 aoj
 aEe
@@ -46448,8 +46395,8 @@ aJr
 agz
 biX
 bjK
-bkh
-bkE
+pVD
+lPA
 xWS
 aEn
 aRm
@@ -46650,7 +46597,7 @@ auP
 agB
 bkq
 bjL
-bkq
+rDI
 lPA
 xWS
 aLi
@@ -46853,7 +46800,7 @@ aqX
 bkh
 llI
 bkr
-llh
+lPA
 xWS
 aMk
 bgs
@@ -47053,8 +47000,8 @@ aop
 aZk
 aqX
 jne
-bjN
-tHv
+kNJ
+oWn
 bkH
 aoj
 aOi
