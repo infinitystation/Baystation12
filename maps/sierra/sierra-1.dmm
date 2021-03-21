@@ -8276,7 +8276,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/universal{
 	dir = 4
 	},
-/obj/machinery/portable_atmospherics/powered/pump/filled,
 /obj/effect/floor_decal/techfloor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
@@ -12988,13 +12987,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/central_stairwell)
-"ux" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/handrai{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/exploration_shuttle/cargo_r)
 "uy" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/green,
 /obj/effect/floor_decal/corner/blue{
@@ -13749,11 +13741,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/hallway/primary/thirddeck/fore)
-"vI" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/space_heater,
-/turf/simulated/floor/tiled/monotile,
-/area/exploration_shuttle/cargo_r)
 "vJ" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -14303,9 +14290,6 @@
 /turf/simulated/floor/reinforced,
 /area/thruster/d3starboard)
 "wF" = (
-/obj/structure/handrai{
-	dir = 4
-	},
 /obj/machinery/door/blast/regular{
 	id_tag = "sensor_shutters"
 	},
@@ -14830,13 +14814,6 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/reinforced,
 /area/thruster/d3port)
-"xw" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/handrai{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/exploration_shuttle/cargo_r)
 "xx" = (
 /obj/machinery/status_display,
 /turf/simulated/wall/prepainted,
@@ -14875,9 +14852,6 @@
 /area/hallway/primary/thirddeck/fore)
 "xB" = (
 /obj/structure/table/rack,
-/obj/item/device/radio,
-/obj/item/device/radio,
-/obj/item/device/radio,
 /obj/structure/railing/mapped{
 	dir = 4
 	},
@@ -15123,8 +15097,6 @@
 /area/shuttle/petrov/ship)
 "xY" = (
 /obj/structure/table/rack,
-/obj/item/device/spaceflare,
-/obj/item/device/spaceflare,
 /obj/structure/cable/cyan{
 	d1 = 4;
 	d2 = 8;
@@ -15497,7 +15469,6 @@
 /obj/machinery/computer/guestpass{
 	pixel_y = 30
 	},
-/obj/machinery/recharger,
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/effect/floor_decal/borderfloor{
 	dir = 5
@@ -21442,7 +21413,6 @@
 	icon_state = "0-2"
 	},
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/machinery/portable_atmospherics/canister/carbon_dioxide/engine_setup,
 /obj/machinery/atmospherics/portables_connector{
 	dir = 8
 	},
@@ -21705,8 +21675,6 @@
 /area/guppy_hangar/start)
 "IG" = (
 /obj/structure/table/rack,
-/obj/item/weapon/material/hatchet,
-/obj/item/weapon/storage/box/glowsticks,
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
 	dir = 4
@@ -22135,7 +22103,9 @@
 /obj/machinery/atmospherics/portables_connector{
 	dir = 4
 	},
-/obj/machinery/portable_atmospherics/canister/carbon_dioxide/engine_setup,
+/obj/machinery/portable_atmospherics/canister/carbon_dioxide{
+	start_pressure = 0
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "Jo" = (
@@ -23481,6 +23451,9 @@
 	},
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/machinery/portable_atmospherics/canister/carbon_dioxide{
+	start_pressure = 0
 	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/guppy_hangar/start)
@@ -25672,9 +25645,6 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/handrai{
-	dir = 8
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cargo_r)
 "Pt" = (
@@ -28573,18 +28543,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/fore)
-"UF" = (
-/obj/machinery/constructable_frame/machine_frame/deconstruct{
-	name = "NTNet relay"
-	},
-/turf/simulated/floor/reinforced,
-/area/exploration_shuttle/medical)
-"UG" = (
-/obj/machinery/constructable_frame/machine_frame/deconstruct{
-	name = "T-Comm relay"
-	},
-/turf/simulated/floor/reinforced,
-/area/exploration_shuttle/medical)
 "UH" = (
 /obj/machinery/firealarm{
 	pixel_y = 24
@@ -53330,7 +53288,7 @@ aq
 ZD
 KO
 Wz
-xw
+Wz
 Wz
 Ho
 yx
@@ -53531,9 +53489,9 @@ OS
 OI
 ZD
 sF
-vI
 Wz
-ux
+Wz
+Wz
 KO
 KO
 HN
@@ -54346,8 +54304,8 @@ KO
 KO
 KO
 Yd
-UG
-UF
+VC
+US
 VC
 US
 VC
