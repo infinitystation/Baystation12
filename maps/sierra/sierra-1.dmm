@@ -4641,7 +4641,7 @@
 	id = "calypso_cargo"
 	},
 /turf/simulated/floor/reinforced,
-/area/exploration_shuttle/cargo_l)
+/area/exploration_shuttle/airlock)
 "ih" = (
 /obj/structure/table/rack,
 /obj/structure/window/reinforced,
@@ -28803,7 +28803,7 @@
 	},
 /obj/effect/floor_decal/industrial/warning/full,
 /turf/simulated/floor/reinforced,
-/area/exploration_shuttle/cargo_l)
+/area/exploration_shuttle/airlock)
 "Vw" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/structure/cable/cyan{
@@ -29289,7 +29289,7 @@
 	},
 /obj/structure/railing/mapped,
 /turf/simulated/floor/reinforced,
-/area/exploration_shuttle/cargo_l)
+/area/exploration_shuttle/airlock)
 "Wy" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/storage/primary)
@@ -29985,7 +29985,7 @@
 /obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/warning/full,
 /turf/simulated/floor/plating,
-/area/exploration_shuttle/cargo_l)
+/area/exploration_shuttle/airlock)
 "Ya" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -30247,7 +30247,7 @@
 	id = "calypso_cargo"
 	},
 /turf/simulated/floor/reinforced,
-/area/exploration_shuttle/cargo_l)
+/area/exploration_shuttle/airlock)
 "YJ" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/borderfloor{
