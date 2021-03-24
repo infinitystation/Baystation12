@@ -78,20 +78,35 @@
 // Нужно для кастомки ~bear1ake
 /mob/living/simple_animal/hostile/retaliate/poison/snake/imprinted
 	name = "snake"
-	desc = "A slithery snake. These legless reptiles are the bane of mice and adventurers alike. Seems to be neutral for everyone"
+	desc = "A slithery snake. These legless reptiles are the bane of mice and adventurers alike. Seems to be neutral for everyone."
 	faction = "neutral"
 
+/mob/living/simple_animal/hostile/retaliate/poison/snake/imprinted/safe
+	name = "snake"
+	desc = "A slithery snake. These legless reptiles are the bane of mice and adventurers alike. Seems to be neutral for everyone and it would be safe."
+	faction = "neutral"
+	poison_per_bite = 0
+	poison_type = null
+
 /obj/item/weapon/holder/snake
+	name = "snake"
+	icon = 'infinity/icons/mob/mobs.dmi'
+	icon_state = "snake"
+	desc = "A slithery snake. These legless reptiles are the bane of mice and adventurers alike."
 	origin_tech = list(TECH_BIO = 3)
 
 /obj/item/weapon/holder/snake/prepared
 	name = "snake"
-	icon = 'infinity/icons/mob/mobs.dmi'
-	icon_state = "snake"
-	desc = "A slithery snake. These legless reptiles are the bane of mice and adventurers alike. Seems to be neutral for everyone"
+	desc = "A slithery snake. These legless reptiles are the bane of mice and adventurers alike. Seems to be neutral for everyone."
+	var/prepared_type = /mob/living/simple_animal/hostile/retaliate/poison/snake/imprinted
 
 /obj/item/weapon/holder/snake/prepared/New()
 	..()
 
-	var/mob/living/simple_animal/hostile/retaliate/poison/snake/imprinted/S = new(loc)
+	var/mob/living/simple_animal/hostile/retaliate/poison/snake/S = new prepared_type(loc)
 	contents |= S
+
+/obj/item/weapon/holder/snake/prepared/safe
+	name = "snake"
+	desc = "A slithery snake. These legless reptiles are the bane of mice and adventurers alike. Seems to be neutral for everyone and it would be safe."
+	prepared_type = /mob/living/simple_animal/hostile/retaliate/poison/snake/imprinted/safe
