@@ -1,61 +1,77 @@
 #define COLOR_DARKDREAM_BACKGROUND "#202020"
 #define COLOR_DARKDREAM_DARKBACKGROUND "#171717"
 #define COLOR_DARKDREAM_TEXT "#a4bad6"
-#define COLOR_DARKDREAM_CHAT "#ececec"
+#define COLOR_DARKDREAM_CHAT COLOR_DARKDREAM_BACKGROUND
 
 #define COLOR_LIGHTDREAM_BACKGROUND "#ffffff"
 #define COLOR_LIGHTDREAM_TEXT "#000000"
 
-/*#define COLOR_INFINITYDREAM_DARKBACK "#170033"
+/*
+#define COLOR_INFINITYDREAM_DARKBACK "#170033"
 #define COLOR_INFINITYDREAM_BACK "#220065"
 #define COLOR_INFINITYDREAM_FORE "#d6b5fd"
-#define COLOR_INFINITYDREAM_CHAT "#b690ff"*/
+#define COLOR_INFINITYDREAM_CHAT "#b690ff"
+*/
+/datum/interface_theme // 界面 的 类
+	var/ForegroundColor //颜色 的 文本
+	var/BackgroundColor // 颜色 的 背景
+	var/AdditionalBackgroundColor // 颜色 的 额外的 背景
+	var/ChatColor // 颜色 的 背景聊天
+	var/ChatForeColor // 颜色 的 聊天
+	New( // 界面 的 类 构造器
+		foreground_color,
+		background_color,
+		additional_background_color = background_color,
+		chat_color = background_color,
+		chat_fore_color = foreground_color
+	)
+		ForegroundColor				=	foreground_color
+		BackgroundColor				=	background_color
+		AdditionalBackgroundColor	=	additional_background_color
+		ChatColor					=	chat_color
+		ChatForeColor				=	chat_fore_color
 
+GLOBAL_LIST_INIT(InterfaceThemes, list(\
+	"浅色 梦" = new/datum/interface_theme(COLOR_LIGHTDREAM_TEXT, COLOR_LIGHTDREAM_BACKGROUND),\
+	"黑暗的 梦" = new/datum/interface_theme(COLOR_DARKDREAM_TEXT, COLOR_DARKDREAM_BACKGROUND, COLOR_DARKDREAM_DARKBACKGROUND)\
+	)\
+)
 
-/client/proc/change_theme(var/foreground_color, var/background_color, var/additional_background_color = background_color, var/chat_color = background_color, var/chat_fore_color = foreground_color)
+/client/proc/change_theme(datum/interface_theme/theme)
 	//infowindow.info
-	winset(src, "infowindow.info", "text-color = [foreground_color]; background-color = [additional_background_color]")
-	winset(src, "infowindow.info", "tab-text-color = [foreground_color]; tab-background-color = [background_color]")
+	winset(src, "infowindow.info", "text-color = [theme.ForegroundColor]; background-color = [theme.AdditionalBackgroundColor]")
+	winset(src, "infowindow.info", "tab-text-color = [theme.ForegroundColor]; tab-background-color = [theme.BackgroundColor]")
 
 	//rpane
-	winset(src, "rpane", "background-color = [background_color]")
-	winset(src, "rpane.rpanewindow", "background-color = [background_color]")
+	winset(src, "rpane", "background-color = [theme.BackgroundColor]")
+	winset(src, "rpane.rpanewindow", "background-color = [theme.BackgroundColor]")
 		//buttons
-	winset(src, "rpane.github", "text-color = [foreground_color]; background-color = [background_color]")
-	winset(src, "rpane.BugReport", "text-color = [foreground_color]; background-color = [background_color]")
-	winset(src, "rpane.rulesb", "text-color = [foreground_color]; background-color = [background_color]")
-	winset(src, "rpane.changelog", "text-color = [foreground_color]; background-color = [background_color]")
-	winset(src, "rpane.changelog_infinity", "text-color = [foreground_color]; background-color = [background_color]")
-	winset(src, "rpane.forumb", "text-color = [foreground_color]; background-color = [background_color]")
-	winset(src, "rpane.wikib", "text-color = [foreground_color]; background-color = [background_color]")
-	winset(src, "rpane.textb", "text-color = [foreground_color]; background-color = [background_color]")
-	winset(src, "rpane.infob", "text-color = [foreground_color]; background-color = [background_color]")
+	winset(src, "rpane.github", "text-color = [theme.ForegroundColor]; background-color = [theme.BackgroundColor]")
+	winset(src, "rpane.BugReport", "text-color = [theme.ForegroundColor]; background-color = [theme.BackgroundColor]")
+	winset(src, "rpane.rulesb", "text-color = [theme.ForegroundColor]; background-color = [theme.BackgroundColor]")
+	winset(src, "rpane.changelog", "text-color = [theme.ForegroundColor]; background-color = [theme.BackgroundColor]")
+	winset(src, "rpane.changelog_infinity", "text-color = [theme.ForegroundColor]; background-color = [theme.BackgroundColor]")
+	winset(src, "rpane.forumb", "text-color = [theme.ForegroundColor]; background-color = [theme.BackgroundColor]")
+	winset(src, "rpane.wikib", "text-color = [theme.ForegroundColor]; background-color = [theme.BackgroundColor]")
+	winset(src, "rpane.textb", "text-color = [theme.ForegroundColor]; background-color = [theme.BackgroundColor]")
+	winset(src, "rpane.infob", "text-color = [theme.ForegroundColor]; background-color = [theme.BackgroundColor]")
 
 	//mainwindow
-	winset(src, "mainwindow", "background-color = [additional_background_color]")
-	//winset(src, "mainwindow.input", "text-color = [foreground_color]; background-color = [additional_background_color]")
-	winset(src, "mainwindow.saybutton", "text-color = [foreground_color]; background-color = [background_color]")
-	winset(src, "mainwindow.hotkey_toggle", "text-color = [foreground_color]; background-color = [background_color]")
-	winset(src, "mainwindow.mainvsplit", "background-color = [background_color]")
+	winset(src, "mainwindow", "background-color = [theme.AdditionalBackgroundColor]")
+	//winset(src, "mainwindow.input", "text-color = [theme.ForegroundColor]; background-color = [theme.AdditionalBackgroundColor]")
+	winset(src, "mainwindow.saybutton", "text-color = [theme.ForegroundColor]; background-color = [theme.BackgroundColor]")
+	winset(src, "mainwindow.hotkey_toggle", "text-color = [theme.ForegroundColor]; background-color = [theme.BackgroundColor]")
+	winset(src, "mainwindow.mainvsplit", "background-color = [theme.BackgroundColor]")
 
 	//outputwindow
-	winset(src, "outputwindow.output", "text-color = [chat_fore_color]; background-color = [chat_color]")
+	winset(src, "outputwindow.output", "text-color = [theme.ChatForeColor]; background-color = [theme.ChatColor]")
 
 /client/verb/switch_interface_theme()
 	set name = "Change interface Theme"
 	set category = "OOC"
 
-	switch(alert("Choose interface theme.", "Interface of your Dream", "Light Dream", "Dark Dream"))//, "Infinity Dream"))
-		if("Light Dream")
-			change_theme(COLOR_LIGHTDREAM_TEXT, COLOR_LIGHTDREAM_BACKGROUND)
-			to_chat(src, SPAN_NOTICE("Your dream's interface successfully switched to Light Dream theme."))
-			return 1
-		if("Dark Dream")
-			change_theme(COLOR_DARKDREAM_TEXT, COLOR_DARKDREAM_BACKGROUND, COLOR_DARKDREAM_DARKBACKGROUND, COLOR_DARKDREAM_CHAT, COLOR_LIGHTDREAM_TEXT)
-			to_chat(src, SPAN_NOTICE("Your dream's interface successfully switched to Dark Dream theme."))
-			return 2
-		/*if("Infinity Dream")
-			change_theme(COLOR_INFINITYDREAM_FORE, COLOR_INFINITYDREAM_BACK, COLOR_INFINITYDREAM_DARKBACK, COLOR_INFINITYDREAM_CHAT, COLOR_LIGHTDREAM_TEXT)
-			to_chat(src, SPAN_NOTICE("Your dream's interface successfully switched to Infinity Dream theme."))
-			return 3*/
-	return 0
+	var/input_theme = input(usr, "Choose Dream's theme", "Style of your Dream") in GLOB.InterfaceThemes
+	var/datum/interface_theme/_theme = GLOB.InterfaceThemes[input_theme]
+	if(istype(_theme))
+		change_theme(_theme)
+		return _theme
