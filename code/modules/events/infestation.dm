@@ -103,3 +103,4 @@
 #undef VERM_MICE
 #undef VERM_LIZARDS
 #undef VERM_SPIDERS
+#undef VERM_SNAKES
