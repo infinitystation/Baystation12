@@ -178,8 +178,9 @@ var/list/gear_datums = list()
 		var/datum/job/J = SSjobs.get_by_title(job_title)
 		if(J)
 			dd_insertObjectList(jobs, J)
+	var/list/valid_gear_list = valid_gear_choices() //INF
 	for(var/gear_name in LC.gear)
-		if(!(gear_name in valid_gear_choices()))
+		if(!valid_gear_list.Find(gear_name))//inf, was: if(!(gear_name in valid_gear_choices()))
 			continue
 		var/list/entry = list()
 		var/datum/gear/G = LC.gear[gear_name]
