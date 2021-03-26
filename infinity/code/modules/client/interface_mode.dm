@@ -12,13 +12,13 @@
 #define COLOR_INFINITYDREAM_FORE "#d6b5fd"
 #define COLOR_INFINITYDREAM_CHAT "#b690ff"
 */
-/datum/interface_theme // 界面 的 类
-	var/ForegroundColor //颜色 的 文本
-	var/BackgroundColor // 颜色 的 背景
-	var/AdditionalBackgroundColor // 颜色 的 额外的 背景
-	var/ChatColor // 颜色 的 背景聊天
-	var/ChatForeColor // 颜色 的 聊天
-	New( // 界面 的 类 构造器
+/datum/interface_theme
+	var/ForegroundColor
+	var/BackgroundColor
+	var/AdditionalBackgroundColor
+	var/ChatColor
+	var/ChatForeColor
+	New(
 		foreground_color,
 		background_color,
 		additional_background_color = background_color,
@@ -32,8 +32,8 @@
 		ChatForeColor				=	chat_fore_color
 
 GLOBAL_LIST_INIT(InterfaceThemes, list(\
-	"浅色 梦" = new/datum/interface_theme(COLOR_LIGHTDREAM_TEXT, COLOR_LIGHTDREAM_BACKGROUND),\
-	"黑暗的 梦" = new/datum/interface_theme(COLOR_DARKDREAM_TEXT, COLOR_DARKDREAM_BACKGROUND, COLOR_DARKDREAM_DARKBACKGROUND)\
+	"Light Dream" = new/datum/interface_theme(COLOR_LIGHTDREAM_TEXT, COLOR_LIGHTDREAM_BACKGROUND),\
+	"Dark Dream" = new/datum/interface_theme(COLOR_DARKDREAM_TEXT, COLOR_DARKDREAM_BACKGROUND, COLOR_DARKDREAM_DARKBACKGROUND)\
 	)\
 )
 
