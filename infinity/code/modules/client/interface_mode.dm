@@ -18,7 +18,8 @@
 	var/AdditionalBackgroundColor
 	var/ChatColor
 	var/ChatForeColor
-	New(
+
+/datum/interface_theme/New(
 		foreground_color,
 		background_color,
 		additional_background_color = background_color,
