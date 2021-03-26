@@ -165,7 +165,10 @@
 		/decl/emote/visible/rshoulder,
 		/decl/emote/visible/squint,
 		/decl/emote/visible/tfist,
-		/decl/emote/visible/tilt
+		/decl/emote/visible/tilt,
+//[INF],
+		/decl/emote/audible/finger_snap,
+//[/INF],
 	)
 
 /mob/living/silicon/robot
@@ -185,6 +188,7 @@
 		/decl/emote/audible/synth/buzz,
 		/decl/emote/audible/synth/confirm,
 		/decl/emote/audible/synth/deny,
+		/decl/emote/audible/synth/scream,//inf,
 		/decl/emote/audible/synth/security,
 		/decl/emote/audible/synth/security/halt
 		)

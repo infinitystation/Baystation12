@@ -51,7 +51,10 @@
 	if(istype(H))
 		var/datum/absorbed_dna/newDNA = new(H.real_name, H.dna, H.species.name, H.languages)
 		absorbDNA(newDNA)
-
+//[INF]
+	for(var/mob/living/carbon/human/i in GLOB.human_mob_list)
+		i.give_compatable_genome()
+//[/INF]
 	return 1
 
 //removes our changeling verbs

@@ -1,6 +1,4 @@
 /datum/language/unathi
-	primitive_version = LANGUAGE_PUNATI //inf
-	native_speaker = list(SPECIES_YEOSA, SPECIES_UNATHI, SPECIES_EROSAN, SPECIES_IPC)
 	name = LANGUAGE_UNATHI_SINTA
 	desc = "The common language of Moghes, composed of sibilant hisses and rattles. Spoken natively by Unathi."
 	speech_verb = "шипит"

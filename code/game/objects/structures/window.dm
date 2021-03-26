@@ -7,7 +7,7 @@
 
 	layer = SIDE_WINDOW_LAYER
 	anchored = 1.0
-	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CHECKS_BORDER //inf, was atom_flags = ATOM_FLAG_NO_TEMP_CHANGE
+	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE
 	obj_flags = OBJ_FLAG_ROTATABLE
 	alpha = 180
 	var/material/reinf_material
@@ -24,7 +24,7 @@
 	var/reinf_basestate = "rwindow"
 	rad_resistance_modifier = 0.5
 	blend_objects = list(/obj/machinery/door, /turf/simulated/wall) // Objects which to blend with
-	noblend_objects = list(/obj/machinery/door/window, /obj/machinery/door/blast/regular/evacshield, /obj/machinery/door/firedoor/border_only) //INF, WAS: /obj/machinery/door/window
+	noblend_objects = list(/obj/machinery/door/window, /obj/machinery/door/blast/regular/escape_pod, /obj/machinery/door/firedoor/border_only) //INF, WAS: /obj/machinery/door/window
 	atmos_canpass = CANPASS_PROC
 
 /obj/structure/window/get_material()

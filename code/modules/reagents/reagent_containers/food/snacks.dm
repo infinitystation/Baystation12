@@ -1629,7 +1629,7 @@
 	.=..()
 	reagents.add_reagent(/datum/reagent/nutriment/protein, 4)
 	reagents.add_reagent(/datum/reagent/drink/juice/tomato, 5)
-	reagents.add_reagent(/datum/reagent/imidazoline, 5)
+//inf.exclude	reagents.add_reagent(/datum/reagent/imidazoline, 5)
 	reagents.add_reagent(/datum/reagent/water, 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/jelliedtoast
@@ -1815,10 +1815,11 @@
 	nutriment_desc = list("carrot" = 3, "salt" = 1)
 	nutriment_amt = 3
 	bitesize = 2
+/*[inf.exclude]
 /obj/item/weapon/reagent_containers/food/snacks/carrotfries/Initialize()
 	.=..()
 	reagents.add_reagent(/datum/reagent/imidazoline, 3)
-
+[/inf.exclude]*/
 /obj/item/weapon/reagent_containers/food/snacks/superbiteburger
 	name = "super bite burger"
 	desc = "This is a mountain of a burger. FOOD!"
@@ -2181,10 +2182,11 @@
 	nutriment_desc = list("cake" = 10, "sweetness" = 10, "carrot" = 15)
 	nutriment_amt = 25
 	bitesize = 2
+/*[inf.exclude]
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/carrotcake/Initialize()
 	.=..()
 	reagents.add_reagent(/datum/reagent/imidazoline, 10)
-
+[/inf.exclude]*/
 /obj/item/weapon/reagent_containers/food/snacks/slice/carrotcake
 	name = "carrot cake slice"
 	desc = "Carrotty slice of carrot cake, carrots are good for your eyes! Also not a lie."
@@ -2647,7 +2649,7 @@
 	.=..()
 	reagents.add_reagent(/datum/reagent/nutriment/protein, 5)
 	reagents.add_reagent(/datum/reagent/drink/juice/tomato, 6)
-	reagents.add_reagent(/datum/reagent/imidazoline, 12)
+//inf.exclude	reagents.add_reagent(/datum/reagent/imidazoline, 12)
 
 /obj/item/weapon/reagent_containers/food/snacks/slice/vegetablepizza
 	name = "vegetable pizza slice"

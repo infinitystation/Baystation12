@@ -3,6 +3,14 @@
 
 var/list/ai_list = list()
 var/list/ai_verbs_default = list(
+	//[inf],
+	/mob/living/silicon/ai/proc/ai_view_images,
+	/mob/living/silicon/ai/proc/ai_take_image,
+	/mob/living/silicon/ai/proc/change_floor,
+	/mob/living/silicon/ai/proc/show_crew_monitor,
+	/mob/living/silicon/ai/proc/show_crew_records,
+	/mob/living/silicon/ai/proc/show_crew_manifest,
+	//[/inf],
 	/mob/living/silicon/ai/proc/ai_announcement,
 	/mob/living/silicon/ai/proc/ai_call_shuttle,
 	/mob/living/silicon/ai/proc/ai_emergency_message,
@@ -26,13 +34,6 @@ var/list/ai_verbs_default = list(
 	/mob/living/silicon/ai/proc/toggle_hologram_movement,
 	/mob/living/silicon/ai/proc/ai_power_override,
 	/mob/living/silicon/ai/proc/ai_shutdown,
-	//[inf],
-	/mob/living/silicon/ai/proc/ai_view_images,
-	/mob/living/silicon/ai/proc/ai_take_image,
-	/mob/living/silicon/ai/proc/change_floor,
-	/mob/living/silicon/ai/proc/show_crew_monitor,
-	/mob/living/silicon/ai/proc/show_crew_records,
-	//[/inf],
 	/mob/living/silicon/ai/proc/ai_reset_radio_keys
 )
 
@@ -66,6 +67,15 @@ var/list/ai_verbs_default = list(
 	var/icon/holo_icon_longrange //Yellow hologram.
 	var/holo_icon_malf = FALSE // for new hologram system
 	var/obj/item/device/multitool/aiMulti = null
+
+	//[inf]
+	speech_sounds = list(
+		'infinity/sound/voice/robot_talk_heavy_1.ogg',
+		'infinity/sound/voice/robot_talk_heavy_2.ogg',
+		'infinity/sound/voice/robot_talk_heavy_3.ogg',
+		'infinity/sound/voice/robot_talk_heavy_4.ogg'
+	)
+	//[/inf]
 
 	silicon_camera = /obj/item/device/camera/siliconcam/ai_camera
 	silicon_radio = /obj/item/device/radio/headset/heads/ai_integrated
@@ -224,15 +234,6 @@ var/list/ai_verbs_default = list(
 	job = "AI"
 	setup_icon()
 	eyeobj.possess(src)
-
-	var/obj/inactive_core
-	isturf(loc) ? (inactive_core = locate(/obj/structure/AIcore) in loc) : null
-	inactive_core ? qdel(inactive_core) : null
-
-	if(alert(src, "Announce your presence?", "AI Presense","Yes", "No") == "Yes")
-		switch(input(src, "Announce your presence?", "Presence.") in list("Torch Voice Announcement", "TG Voice Announcement"))
-			if("Torch Voice Announcement")	announcement.Announce("Новый ИИ загружен в ядро.", new_sound = 'sound/AI/newAI.ogg')
-			if("TG Voice Announcement")	announcement.Announce("Новый ИИ загружен в ядро.", new_sound = 'infinity/sound/AI/TG/newai.ogg')
 
 /mob/living/silicon/ai/Destroy()
 	for(var/robot in connected_robots)

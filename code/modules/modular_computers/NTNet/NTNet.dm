@@ -276,6 +276,7 @@ var/global/datum/ntnet/ntnet_global = new()
 			if(my_client)
 				my_client.stored_login = EA.login
 				my_client.stored_password = EA.password
+				my_client.log_in()	// INF
 
 /mob/proc/create_or_rename_email(newname, domain)
 	if(!mind)

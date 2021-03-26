@@ -15,14 +15,14 @@
 
 /turf/simulated/wall/concrete
 	icon_state = "titanium"
-	noblend_objects = list(/obj/machinery/door/window, /obj/machinery/door/blast/regular/evacshield)
+	noblend_objects = list(/obj/machinery/door/window, /obj/machinery/door/blast/regular/escape_pod)
 
 /turf/simulated/wall/concrete/New(var/newloc)
 	..(newloc,MATERIAL_CONCRETE)
 
 /turf/simulated/wall/r_concrete
 	icon_state = "r_titanium"
-	noblend_objects = list(/obj/machinery/door/window, /obj/machinery/door/blast/regular/evacshield)
+	noblend_objects = list(/obj/machinery/door/window, /obj/machinery/door/blast/regular/escape_pod)
 
 /turf/simulated/wall/r_concrete/New(var/newloc)
 	..(newloc, MATERIAL_CONCRETE,MATERIAL_CONCRETE)

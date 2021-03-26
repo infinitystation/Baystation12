@@ -7,6 +7,7 @@
 	space_chance = 100
 	partial_understanding = list(
 		LANGUAGE_HUMAN_EURO = 35,
+		LANGUAGE_HUMAN_MIRANIAN = 20,
 		LANGUAGE_HUMAN_CHINESE = 5,
 		LANGUAGE_HUMAN_ARABIC = 10,
 		LANGUAGE_HUMAN_INDIAN = 15,

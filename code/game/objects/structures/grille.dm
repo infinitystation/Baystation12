@@ -15,7 +15,7 @@
 	var/destroyed = 0
 
 	blend_objects = list(/obj/machinery/door, /turf/simulated/wall) // Objects which to blend with
-	noblend_objects = list(/obj/machinery/door/window, /obj/machinery/door/firedoor/border_only, /obj/machinery/door/blast/regular/evacshield) //INF, WAS: /obj/machinery/door/window
+	noblend_objects = list(/obj/machinery/door/window, /obj/machinery/door/firedoor/border_only, /obj/machinery/door/blast/regular/escape_pod) //INF, WAS: /obj/machinery/door/window
 
 /obj/structure/grille/get_material()
 	return material
@@ -210,6 +210,12 @@
 	if(!in_range(src, user))//To prevent TK and exosuit users from getting shocked
 		return 0
 	var/turf/T = get_turf(src)
+//[INF]
+	for(var/atom/A in T.contents)
+		if(istype(A,/obj/structure/wall_frame) || A == src) continue
+		if(A.density)
+			return 0
+//[/INF]
 	var/obj/structure/cable/C = T.get_cable_node()
 	if(C)
 		if(electrocute_mob(user, C, src))

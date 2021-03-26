@@ -41,6 +41,7 @@
 			SKILL_CHEMISTRY		=	SKILL_MAX
 		)
 	skill_points = 30
+	good_genome_prob = 40
 
 /datum/job/scientist
 	title = "Scientist"

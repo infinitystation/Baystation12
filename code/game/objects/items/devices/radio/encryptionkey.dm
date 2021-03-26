@@ -80,7 +80,7 @@
 /obj/item/device/encryptionkey/heads/rd
 	name = "chief science officer's encryption key"
 	icon_state = "rd_cypherkey"
-	channels = list("Science" = 1, "Command" = 1)
+	channels = list("Science" = 1, "Command" = 1, "Exploration" = 1) //inf, was: channels = list("Science" = 1, "Command" = 1)
 
 /obj/item/device/encryptionkey/heads/hos
 	name = "head of security's encryption key"
@@ -130,3 +130,10 @@
 	name = "prospector radio encryption key"
 	icon_state = "srv_cypherkey"
 	channels = list("Supply" = 1)
+
+//[INF]
+/obj/item/device/encryptionkey/away_scg_patrol
+	name = "SCG Patrol radio encryption key"
+	icon_state = "nt_cypherkey"
+	channels = list("SCG Patrol" = 1)
+//[/INF]

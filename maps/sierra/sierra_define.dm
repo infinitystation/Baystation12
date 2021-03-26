@@ -27,7 +27,7 @@
 
 	map_admin_faxes = list("NanoTrasen Central Office")
 
-	evac_controller_type = /datum/evacuation_controller/starship
+	evac_controller_type = /datum/evacuation_controller/starship/fast
 
 	default_law_type = /datum/ai_laws/nanotrasen
 	use_overmap = 1
@@ -38,7 +38,7 @@
 	recommended_players = 20
 //	minimum_players = 0 its already 0
 
-	away_site_budget = 3.5
+	away_site_budget = 5
 
 	id_hud_icons = 'maps/sierra/icons/assignment_hud.dmi'
 

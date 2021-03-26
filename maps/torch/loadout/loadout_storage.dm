@@ -8,8 +8,4 @@
 	display_name = "drop pouches, black"
 	path = /obj/item/clothing/accessory/storage/drop_pouches/black
 	cost = 3
-<<<<<<< HEAD
 	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/bodyguard)
-=======
-	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/bodyguard)
->>>>>>> master

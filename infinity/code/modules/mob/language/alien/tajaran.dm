@@ -1,6 +1,4 @@
 /datum/language/tajaran
-	primitive_version = LANGUAGE_PTAJ //inf
-	native_speaker = list(SPECIES_TAJARA, SPECIES_IPC)
 	name = LANGUAGE_SIIK_MAAS
 	desc = "The traditionally employed tongue of Ahdomai, composed of expressive yowls and chirps. Native to the Tajaran."
 	speech_verb = "мурчит"

@@ -37,5 +37,4 @@
 \[fontred\] - \[/font\] : Makes the text red.<br>
 \[fontblue\] - \[/font\] : Makes the text blue.<br>
 \[fontgreen\] - \[/font\] : Makes the text green.<br>
-\[redacted\] : Adds R E D A C T E D in black font on a black background.<br>
-\[img\]http://url\[/img\] : Add an image.<br><br>"}	// INF
+\[redacted\] : Adds R E D A C T E D in black font on a black background."}

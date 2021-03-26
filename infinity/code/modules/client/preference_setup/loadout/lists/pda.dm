@@ -15,6 +15,7 @@ datum/gear/utility/modular_scanner/medical
 	display_name = "Scanner module, medical"
 	path = /obj/item/weapon/stock_parts/computer/scanner/medical
 
+/* SIERRA ONLY!!! TORCH HAS THEIR OWN FORCESPAWNABLE PDA
 datum/gear/utility/pda
 	display_name = "PDA selection"
 	path = /obj/item/modular_computer/pda
@@ -91,3 +92,4 @@ datum/gear/utility/pda
 		item.turn_on()
 	if(H.equip_to_slot_if_possible(item, slot, del_on_fail = 1))
 		. = item
+*/

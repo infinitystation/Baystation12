@@ -27,26 +27,26 @@
 
 /obj/item/clothing/head/helmet/space/rig/combat
 	light_overlay = "helmet_light_dual_green"
-	species_restricted = list(SPECIES_HUMAN, SPECIES_UNATHI)
+	species_restricted = list(SPECIES_HUMAN, SPECIES_UNATHI,SPECIES_IPC)
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_head_unathi.dmi'
 		)
 
 /obj/item/clothing/suit/space/rig/combat
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_UNATHI)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_UNATHI,SPECIES_IPC)
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_suit_unathi.dmi'
 		)
 
 /obj/item/clothing/shoes/magboots/rig/combat
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_UNATHI)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_UNATHI,SPECIES_IPC)
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_feet_unathi.dmi'
 		)
 
 /obj/item/clothing/gloves/rig/combat
 	item_flags = ITEM_FLAG_THICKMATERIAL | ITEM_FLAG_NOCUFFS
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_UNATHI)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_UNATHI,SPECIES_IPC)
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_hands_unathi.dmi'
 		)
@@ -100,7 +100,7 @@
 		slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi'
 	)
 //[/INF]
-	species_restricted = list(SPECIES_HUMAN)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_head_helmet_unathi.dmi'
 		)
@@ -112,7 +112,7 @@
 		slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi'
 	)
 //[/INF]
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_UNATHI)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_UNATHI,SPECIES_IPC)
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_suit_unathi.dmi'
 		)
@@ -124,7 +124,7 @@
 		slot_shoes_str = 'infinity/icons/mob/onmob/onmob_feet.dmi'
 	)
 //[/INF]
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_UNATHI)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_UNATHI,SPECIES_IPC)
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_feet_unathi.dmi'
 		)
@@ -137,7 +137,7 @@
 	)
 //[/INF]
 	item_flags = ITEM_FLAG_THICKMATERIAL //INF WAS ITEM_FLAG_THICKMATERIAL | ITEM_FLAG_NOCUFFS
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_UNATHI)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_UNATHI,SPECIES_IPC)
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_hands_unathi.dmi'
 		)

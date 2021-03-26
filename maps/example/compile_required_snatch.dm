@@ -3,3 +3,4 @@
 //	TORCH
 #include "..\torch\items\clothing\solgov-accessory.dm"
 #include "..\torch\items\clothing\solgov-head.dm"
+#include "..\torch\items\clothing\solgov-suit.dm"

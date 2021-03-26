@@ -25,12 +25,13 @@
 						SKILL_WEAPONS     = SKILL_EXPERT)
 	skill_points = 22
 
-	access = list(access_el, access_explorer, access_eva, access_maint_tunnels, access_bridge, access_heads, access_emergency_storage, access_tech_storage, access_guppy_helm, access_expedition_shuttle, access_expedition_shuttle_helm, access_guppy, access_hangar)
+	access = list(access_el, access_explorer, access_eva, access_bridge, access_heads, access_emergency_storage, access_tech_storage, access_guppy_helm, access_expedition_shuttle, access_expedition_shuttle_helm, access_guppy, access_hangar)
 
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management,
 							 /datum/computer_file/program/reports)
+	good_genome_prob = 30
 
 /datum/job/exploration_leader/get_description_blurb()
 	return "Вы - Экспедиционный Лидер. В ваши обязанности входит организация и участие в миссиях на удаленные объекты. \
@@ -61,9 +62,9 @@
 	max_skill = list(	SKILL_SCIENCE = SKILL_MAX,
 						SKILL_COMBAT  = SKILL_EXPERT,
 						SKILL_WEAPONS = SKILL_EXPERT)
-//	required_role = list("Exploration Leader", "Expeditionary Pilot")
+	required_role = list("Exploration Leader", "Expeditionary Pilot")
 
-	access = list(access_explorer, access_maint_tunnels, access_eva, access_emergency_storage, access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar, access_cent_creed)
+	access = list(access_explorer, access_eva, access_emergency_storage, access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar)
 
 	minimal_access = list()
 
@@ -101,7 +102,7 @@
 						SKILL_COMBAT  = SKILL_EXPERT,
 						SKILL_WEAPONS = SKILL_EXPERT)
 
-	access = list(	access_explorer, access_maint_tunnels, access_eva, access_emergency_storage, access_guppy_helm,
+	access = list(	access_explorer, access_eva, access_emergency_storage, access_guppy_helm,
 					access_expedition_shuttle, access_guppy, access_hangar, access_expedition_shuttle_helm)
 
 	minimal_access = list()
@@ -144,11 +145,10 @@
 						SKILL_SCIENCE = SKILL_MAX,
 						SKILL_COMBAT  = SKILL_EXPERT,
 						SKILL_WEAPONS = SKILL_EXPERT)
-//	required_role = list("Exploration Leader", "Expeditionary Pilot")
+	required_role = list("Exploration Leader", "Expeditionary Pilot")
 
-	access = list(	access_explorer, access_maint_tunnels, access_eva, access_emergency_storage,
-					access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar,
-					access_medical)
+	access = list(	access_explorer, access_eva, access_emergency_storage, access_medical,
+					access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar)
 
 	minimal_access = list()
 
@@ -194,10 +194,10 @@
 						SKILL_SCIENCE      = SKILL_MAX,
 						SKILL_COMBAT       = SKILL_EXPERT,
 						SKILL_WEAPONS      = SKILL_EXPERT)
-//	required_role = list("Exploration Leader", "Expeditionary Pilot")
+	required_role = list("Exploration Leader", "Expeditionary Pilot")
 
-	access = list(	access_explorer, access_maint_tunnels, access_eva, access_emergency_storage,
-	 				access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar, access_engine)
+	access = list(	access_explorer, access_eva, access_emergency_storage, access_engine,
+	 				access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar)
 
 	minimal_access = list()
 
