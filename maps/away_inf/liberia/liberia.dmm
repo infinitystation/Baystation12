@@ -1141,6 +1141,7 @@
 	frequency = 1380;
 	id_tag = "mule_port_shuttle_dock";
 	pixel_x = 20;
+	req_access = list("ACCESS_MERCHANT");
 	tag_airpump = "merchant_ship_vent";
 	tag_chamber_sensor = "merchant_ship_sensor";
 	tag_exterior_door = "merchant_ship_exterior";
