@@ -3766,6 +3766,7 @@
 #include "infinity\customs\moghes.dm"
 #include "infinity\customs\moodyblues1606.dm"
 #include "infinity\customs\moonmen.dm"
+#include "infinity\customs\nicroz.dm"
 #include "infinity\customs\os_uniform.dm"
 #include "infinity\customs\pink_guitar.dm"
 #include "infinity\customs\quiet.dm"
