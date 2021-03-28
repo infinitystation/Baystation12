@@ -2518,6 +2518,10 @@
 	dir = 1;
 	pixel_x = -22
 	},
+/obj/machinery/camera/network/exploration_shuttle{
+	c_tag = "Charon - Cargo Bay Left";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cargo_l)
 "eJ" = (
@@ -9117,6 +9121,14 @@
 	},
 /turf/simulated/floor/plating,
 /area/quartermaster/deckofficer)
+"or" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/camera/network/exploration_shuttle{
+	c_tag = "Charon - Cargo Bay Right";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/exploration_shuttle/cargo_r)
 "os" = (
 /obj/structure/closet/secure_closet/explorer/pilot,
 /obj/machinery/light{
@@ -28333,10 +28345,6 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "Uh" = (
-/obj/machinery/camera/network/exploration_shuttle{
-	c_tag = "Charon - Cargo Bay Left";
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -28512,10 +28520,6 @@
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/port)
 "UD" = (
-/obj/machinery/camera/network/exploration_shuttle{
-	c_tag = "Charon - Cargo Bay Right";
-	dir = 8
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
@@ -54057,7 +54061,7 @@ ZD
 KO
 Ps
 Wz
-Wz
+or
 UD
 Vo
 PA
