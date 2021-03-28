@@ -11,7 +11,7 @@
 		/datum/species/human/mule	= list(/datum/job/ai, /datum/job/cyborg, /datum/job/submap/merchant, /datum/job/submap/merchant_trainee)
 	)
 
-#define HUMAN_ONLY_JOBS /datum/job/captain, /datum/job/hos
+#define HUMAN_ONLY_JOBS /datum/job/captain, /datum/job/hos, /datum/job/psychiatrist
 	species_to_job_blacklist = list(
 		/datum/species/unathi  		 = list(HUMAN_ONLY_JOBS, /datum/job/iaa),
 		/datum/species/unathi/yeosa  = list(HUMAN_ONLY_JOBS, /datum/job/iaa),
