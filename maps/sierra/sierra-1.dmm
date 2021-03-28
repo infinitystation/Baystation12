@@ -14306,7 +14306,7 @@
 /obj/machinery/door/blast/regular{
 	id_tag = "sensor_shutters"
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/reinforced,
 /area/exploration_shuttle/seats_place)
 "wG" = (
 /obj/machinery/atmospherics/portables_connector{
@@ -15533,6 +15533,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular/open{
 	density = 0;
+	dir = 4;
 	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
@@ -16527,10 +16528,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
 "Ai" = (
-/obj/machinery/vending/medical/sierra{
-	dir = 8;
-	req_access = list("ACCESS_EXPEDITION_SHUTTLE")
-	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
@@ -16541,6 +16538,12 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
 	},
+/obj/structure/closet/medical_wall/filled/shuttle{
+	pixel_x = 24
+	},
+/obj/structure/table/reinforced,
+/obj/random/blood_packs,
+/obj/random/blood_packs,
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/medical)
 "Aj" = (
@@ -20716,6 +20719,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular/open{
 	density = 0;
+	dir = 4;
 	id_tag = "calypso_shutters";
 	name = "Protective Shutters";
 	opacity = 0
@@ -29824,10 +29828,6 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/closet/medical_wall/filled/shuttle{
-	pixel_x = 24
-	},
-/obj/structure/table/reinforced,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
@@ -29845,8 +29845,10 @@
 /obj/effect/floor_decal/corner/paleblue/bordercorner2{
 	dir = 4
 	},
-/obj/random/blood_packs,
-/obj/random/blood_packs,
+/obj/machinery/vending/medical/sierra{
+	dir = 8;
+	req_access = list("ACCESS_EXPEDITION_SHUTTLE")
+	},
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/medical)
 "XL" = (
