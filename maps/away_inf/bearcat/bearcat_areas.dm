@@ -178,3 +178,4 @@
 	name = "\improper Exploration Shuttle"
 	icon_state = "tcomsatcham"
 	area_flags = AREA_FLAG_RAD_SHIELDED
+	req_access = list(access_bearcat)
