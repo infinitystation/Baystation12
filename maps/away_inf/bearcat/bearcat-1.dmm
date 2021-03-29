@@ -150,8 +150,8 @@
 "av" = (
 /obj/structure/ladder/up,
 /obj/machinery/light/small{
-	icon_state = "bulb1";
-	dir = 8
+	dir = 8;
+	icon_state = "bulb1"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/usedup,
@@ -182,15 +182,15 @@
 /area/ship/scrap/escape_star)
 "az" = (
 /obj/machinery/light/small/red{
-	icon_state = "bulb1";
-	dir = 8
+	dir = 8;
+	icon_state = "bulb1"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/loading{
-	icon_state = "loadingarea";
-	dir = 1
+	dir = 1;
+	icon_state = "loadingarea"
 	},
 /obj/machinery/alarm{
 	dir = 4;
@@ -205,29 +205,30 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/loading{
-	icon_state = "loadingarea";
-	dir = 1
+	dir = 1;
+	icon_state = "loadingarea"
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/escape_port)
 "aB" = (
 /obj/machinery/light/small/red{
-	icon_state = "bulb1";
-	dir = 4
+	dir = 4;
+	icon_state = "bulb1"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/loading{
-	icon_state = "loadingarea";
-	dir = 1
-	},
-/obj/machinery/power/apc/derelict{
-	dir = 4
+	dir = 1;
+	icon_state = "loadingarea"
 	},
 /obj/structure/cable{
-	icon_state = "0-2";
-	d2 = 2
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/derelict/bearcat{
+	dir = 4;
+	name = "area power controller"
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/escape_port)
@@ -275,22 +276,23 @@
 /area/ship/scrap/cargo/lower)
 "aH" = (
 /obj/machinery/light/small/red{
-	icon_state = "bulb1";
-	dir = 8
+	dir = 8;
+	icon_state = "bulb1"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/loading{
-	icon_state = "loadingarea";
-	dir = 1
-	},
-/obj/machinery/power/apc/derelict{
-	dir = 8
+	dir = 1;
+	icon_state = "loadingarea"
 	},
 /obj/structure/cable{
-	icon_state = "0-2";
-	d2 = 2
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/derelict/bearcat{
+	dir = 8;
+	name = "area power controller"
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/escape_star)
@@ -299,22 +301,22 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/loading{
-	icon_state = "loadingarea";
-	dir = 1
+	dir = 1;
+	icon_state = "loadingarea"
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/escape_star)
 "aJ" = (
 /obj/machinery/light/small/red{
-	icon_state = "bulb1";
-	dir = 4
+	dir = 4;
+	icon_state = "bulb1"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/loading{
-	icon_state = "loadingarea";
-	dir = 1
+	dir = 1;
+	icon_state = "loadingarea"
 	},
 /obj/machinery/alarm{
 	dir = 8;
@@ -343,8 +345,8 @@
 "aN" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/pipe/simple/hidden{
-	icon_state = "intact";
-	dir = 5
+	dir = 5;
+	icon_state = "intact"
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/cargo/lower)
@@ -361,8 +363,8 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
-	icon_state = "intact";
-	dir = 9
+	dir = 9;
+	icon_state = "intact"
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/cargo/lower)
@@ -372,8 +374,8 @@
 "aR" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 6
+	dir = 6;
+	icon_state = "corner_white"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/plastic,
@@ -406,23 +408,24 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/structure/holostool,
 /obj/machinery/light/small{
-	icon_state = "bulb1";
-	dir = 1
+	dir = 1;
+	icon_state = "bulb1"
 	},
 /obj/item/weapon/hand/missing_card,
 /turf/simulated/floor/usedup,
 /area/ship/scrap/gambling)
 "aX" = (
 /obj/structure/cable{
+	d2 = 2;
 	icon_state = "0-2";
-	pixel_y = 1;
-	d2 = 2
+	pixel_y = 1
 	},
 /obj/machinery/light_switch{
 	pixel_x = 24
 	},
-/obj/machinery/power/apc/derelict{
-	dir = 1
+/obj/machinery/power/apc/derelict/bearcat{
+	dir = 1;
+	name = "area power controller"
 	},
 /turf/simulated/floor/usedup,
 /area/ship/scrap/gambling)
@@ -441,21 +444,22 @@
 /area/ship/scrap/maintenance/lower)
 "aZ" = (
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 9
-	},
-/obj/machinery/power/apc/derelict{
-	dir = 8
+	dir = 9;
+	icon_state = "corner_white"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/light/small{
-	icon_state = "bulb1";
-	dir = 8
+	dir = 8;
+	icon_state = "bulb1"
 	},
 /obj/structure/cable{
+	d2 = 2;
 	icon_state = "0-2";
-	pixel_y = 1;
-	d2 = 2
+	pixel_y = 1
+	},
+/obj/machinery/power/apc/derelict/bearcat{
+	dir = 8;
+	name = "area power controller"
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/cargo/lower)
@@ -479,8 +483,8 @@
 /area/ship/scrap/cargo/lower)
 "bd" = (
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 6
+	dir = 6;
+	icon_state = "corner_white"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/light/small{
@@ -491,8 +495,8 @@
 /area/ship/scrap/cargo/lower)
 "be" = (
 /obj/machinery/light/small{
-	icon_state = "bulb1";
-	dir = 4
+	dir = 4;
+	icon_state = "bulb1"
 	},
 /obj/structure/ladder/up,
 /obj/effect/decal/cleanable/cobweb,
@@ -508,37 +512,38 @@
 /turf/simulated/floor/usedup,
 /area/ship/scrap/maintenance/lower)
 "bf" = (
-/obj/machinery/power/apc/derelict{
-	dir = 1
-	},
 /obj/structure/cable{
+	d2 = 2;
 	icon_state = "0-2";
-	pixel_y = 1;
-	d2 = 2
+	pixel_y = 1
 	},
 /obj/machinery/light_switch{
 	pixel_x = -24
 	},
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 5
+	dir = 5;
+	icon_state = "corner_white"
 	},
 /obj/structure/closet,
 /obj/random/gloves,
 /obj/random/clothing,
 /obj/random/clothing,
+/obj/machinery/power/apc/derelict/bearcat{
+	dir = 1;
+	name = "area power controller"
+	},
 /turf/simulated/floor/tiled/dark/airless,
 /area/ship/scrap/crew/dorms1)
 "bg" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 5
+	dir = 5;
+	icon_state = "corner_white"
 	},
 /obj/structure/holostool,
 /obj/machinery/light/small{
-	icon_state = "bulb1";
-	dir = 1
+	dir = 1;
+	icon_state = "bulb1"
 	},
 /obj/structure/sign/poster{
 	pixel_y = 32
@@ -547,8 +552,8 @@
 /area/ship/scrap/crew/dorms1)
 "bh" = (
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 5
+	dir = 5;
+	icon_state = "corner_white"
 	},
 /obj/structure/curtain/open/bed,
 /obj/structure/bed/padded,
@@ -641,8 +646,8 @@
 /area/ship/scrap/cargo/lower)
 "bp" = (
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 9
+	dir = 9;
+	icon_state = "corner_white"
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -679,8 +684,8 @@
 /area/ship/scrap/cargo/lower)
 "bu" = (
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 6
+	dir = 6;
+	icon_state = "corner_white"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -842,8 +847,8 @@
 /area/ship/scrap/cargo/lower)
 "bJ" = (
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 6
+	dir = 6;
+	icon_state = "corner_white"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -886,13 +891,13 @@
 /area/ship/scrap/crew/dorms1)
 "bO" = (
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 9
+	dir = 9;
+	icon_state = "corner_white"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/light/small{
-	icon_state = "bulb1";
-	dir = 8
+	dir = 8;
+	icon_state = "bulb1"
 	},
 /obj/effect/floor_decal/industrial/warning/corner,
 /obj/machinery/mining/brace,
@@ -930,12 +935,12 @@
 /area/ship/scrap/cargo/lower)
 "bT" = (
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 6
+	dir = 6;
+	icon_state = "corner_white"
 	},
 /obj/effect/floor_decal/industrial/warning/corner{
-	icon_state = "warningcorner";
-	dir = 8
+	dir = 8;
+	icon_state = "warningcorner"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/cable{
@@ -967,9 +972,9 @@
 	icon_state = "16-0"
 	},
 /obj/structure/cable{
+	d2 = 2;
 	icon_state = "0-2";
-	pixel_y = 1;
-	d2 = 2
+	pixel_y = 1
 	},
 /turf/simulated/floor/usedup,
 /area/ship/scrap/maintenance/lower)
@@ -983,22 +988,23 @@
 "bX" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/machinery/light_construct/small{
-	icon_state = "bulb-construct-stage1";
-	dir = 1
+	dir = 1;
+	icon_state = "bulb-construct-stage1"
 	},
 /turf/simulated/floor/usedup,
 /area/ship/scrap/broken2)
 "bY" = (
 /obj/structure/cable{
+	d2 = 2;
 	icon_state = "0-2";
-	pixel_y = 1;
-	d2 = 2
+	pixel_y = 1
 	},
 /obj/machinery/light_switch{
 	pixel_x = 24
 	},
-/obj/machinery/power/apc/derelict{
-	dir = 1
+/obj/machinery/power/apc/derelict/bearcat{
+	dir = 1;
+	name = "area power controller"
 	},
 /turf/simulated/floor/usedup,
 /area/ship/scrap/broken2)
@@ -1023,12 +1029,12 @@
 /area/ship/scrap/maintenance/lower)
 "cb" = (
 /obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 4
+	dir = 4;
+	icon_state = "warning"
 	},
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 9
+	dir = 9;
+	icon_state = "corner_white"
 	},
 /obj/item/device/radio/intercom{
 	pixel_x = -32
@@ -1037,41 +1043,41 @@
 /area/ship/scrap/cargo/lower)
 "cc" = (
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 9
+	dir = 9;
+	icon_state = "corner_white"
 	},
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 5
+	dir = 5;
+	icon_state = "corner_white"
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/shuttle/lift)
 "cd" = (
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 5
+	dir = 5;
+	icon_state = "corner_white"
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/shuttle/lift)
 "ce" = (
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 5
+	dir = 5;
+	icon_state = "corner_white"
 	},
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 6
+	dir = 6;
+	icon_state = "corner_white"
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/shuttle/lift)
 "cf" = (
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 6
+	dir = 6;
+	icon_state = "corner_white"
 	},
 /obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 8
+	dir = 8;
+	icon_state = "warning"
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -1084,8 +1090,8 @@
 /area/ship/scrap/cargo/lower)
 "cg" = (
 /obj/machinery/light/small{
-	icon_state = "bulb1";
-	dir = 4
+	dir = 4;
+	icon_state = "bulb1"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -1102,23 +1108,24 @@
 /area/ship/scrap/crew/dorms2)
 "ci" = (
 /obj/structure/cable{
+	d2 = 2;
 	icon_state = "0-2";
-	pixel_y = 1;
-	d2 = 2
+	pixel_y = 1
 	},
 /obj/machinery/light_switch{
 	pixel_x = -24
 	},
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 5
+	dir = 5;
+	icon_state = "corner_white"
 	},
 /obj/structure/closet,
 /obj/random/clothing,
 /obj/random/clothing,
 /obj/effect/decal/cleanable/cobweb,
-/obj/machinery/power/apc/derelict{
-	dir = 1
+/obj/machinery/power/apc/derelict/bearcat{
+	dir = 1;
+	name = "area power controller"
 	},
 /turf/simulated/floor/tiled/dark/airless,
 /area/ship/scrap/crew/dorms2)
@@ -1126,12 +1133,12 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/structure/holostool,
 /obj/machinery/light/small{
-	icon_state = "bulb1";
-	dir = 1
+	dir = 1;
+	icon_state = "bulb1"
 	},
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 5
+	dir = 5;
+	icon_state = "corner_white"
 	},
 /turf/simulated/floor/tiled/dark/airless,
 /area/ship/scrap/crew/dorms2)
@@ -1139,8 +1146,8 @@
 /obj/structure/curtain/open/bed,
 /obj/structure/bed/padded,
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 5
+	dir = 5;
+	icon_state = "corner_white"
 	},
 /obj/item/weapon/bedsheet/ce,
 /turf/simulated/floor/tiled/dark/airless,
@@ -1225,20 +1232,20 @@
 /area/ship/scrap/maintenance/lower)
 "cs" = (
 /obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 4
+	dir = 4;
+	icon_state = "warning"
 	},
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 9
+	dir = 9;
+	icon_state = "corner_white"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/cargo/lower)
 "ct" = (
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 9
+	dir = 9;
+	icon_state = "corner_white"
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/shuttle/lift)
@@ -1251,8 +1258,8 @@
 /area/ship/scrap/shuttle/lift)
 "cw" = (
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 6
+	dir = 6;
+	icon_state = "corner_white"
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/shuttle/lift)
@@ -1355,12 +1362,12 @@
 /area/ship/scrap/broken2)
 "cG" = (
 /obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 4
+	dir = 4;
+	icon_state = "warning"
 	},
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 9
+	dir = 9;
+	icon_state = "corner_white"
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/cargo/lower)
@@ -1415,57 +1422,57 @@
 /area/ship/scrap/maintenance/lower)
 "cP" = (
 /obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 4
+	dir = 4;
+	icon_state = "warning"
 	},
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 9
+	dir = 9;
+	icon_state = "corner_white"
 	},
 /obj/machinery/light/small{
-	icon_state = "bulb1";
-	dir = 8
+	dir = 8;
+	icon_state = "bulb1"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/cargo/lower)
 "cQ" = (
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 9
+	dir = 9;
+	icon_state = "corner_white"
 	},
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 10
+	dir = 10;
+	icon_state = "corner_white"
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/shuttle/lift)
 "cR" = (
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 10
+	dir = 10;
+	icon_state = "corner_white"
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/shuttle/lift)
 "cS" = (
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 6
+	dir = 6;
+	icon_state = "corner_white"
 	},
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 10
+	dir = 10;
+	icon_state = "corner_white"
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/shuttle/lift)
 "cT" = (
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 6
+	dir = 6;
+	icon_state = "corner_white"
 	},
 /obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 8
+	dir = 8;
+	icon_state = "warning"
 	},
 /obj/machinery/light/small{
 	dir = 4
@@ -1495,19 +1502,17 @@
 /area/ship/scrap/broken1)
 "cX" = (
 /obj/structure/cable{
+	d2 = 2;
 	icon_state = "0-2";
-	pixel_y = 1;
-	d2 = 2
+	pixel_y = 1
 	},
 /obj/machinery/light_switch{
 	pixel_x = 24
 	},
-/obj/machinery/power/apc/derelict{
-	dir = 1
-	},
 /obj/machinery/organ_printer/robot/mapped,
-/obj/item/device/radio/intercom{
-	pixel_y = 22
+/obj/machinery/power/apc/derelict/bearcat{
+	dir = 1;
+	name = "area power controller"
 	},
 /turf/simulated/floor/usedup,
 /area/ship/scrap/broken1)
@@ -1530,12 +1535,12 @@
 /area/ship/scrap/maintenance/lower)
 "da" = (
 /obj/effect/floor_decal/industrial/warning/corner{
-	icon_state = "warningcorner";
-	dir = 4
+	dir = 4;
+	icon_state = "warningcorner"
 	},
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 9
+	dir = 9;
+	icon_state = "corner_white"
 	},
 /obj/structure/sign/deck/second{
 	pixel_x = -32
@@ -1544,39 +1549,39 @@
 /area/ship/scrap/cargo/lower)
 "db" = (
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 9
+	dir = 9;
+	icon_state = "corner_white"
 	},
 /obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 1
+	dir = 1;
+	icon_state = "warning"
 	},
 /obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 1
+	dir = 1;
+	icon_state = "warning"
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/cargo/lower)
 "dc" = (
 /obj/structure/stairs/east,
 /obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 1
+	dir = 1;
+	icon_state = "warning"
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/cargo/lower)
 "dd" = (
 /obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 1
+	dir = 1;
+	icon_state = "warning"
 	},
 /obj/structure/ore_box,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/cargo/lower)
 "de" = (
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 6
+	dir = 6;
+	icon_state = "corner_white"
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -1586,8 +1591,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/floor_decal/industrial/warning/corner{
-	icon_state = "warningcorner";
-	dir = 1
+	dir = 1;
+	icon_state = "warningcorner"
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/cargo/lower)
@@ -1610,43 +1615,44 @@
 /area/ship/scrap/crew/dorms3)
 "dh" = (
 /obj/structure/cable{
+	d2 = 2;
 	icon_state = "0-2";
-	pixel_y = 1;
-	d2 = 2
+	pixel_y = 1
 	},
 /obj/machinery/light_switch{
 	pixel_x = -24
 	},
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 5
+	dir = 5;
+	icon_state = "corner_white"
 	},
 /obj/structure/closet,
 /obj/random/gloves,
 /obj/random/clothing,
 /obj/random/clothing,
-/obj/machinery/power/apc/derelict{
-	dir = 1
+/obj/machinery/power/apc/derelict/bearcat{
+	dir = 1;
+	name = "area power controller"
 	},
 /turf/simulated/floor/tiled/dark/airless,
 /area/ship/scrap/crew/dorms3)
 "di" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 5
+	dir = 5;
+	icon_state = "corner_white"
 	},
 /obj/structure/holostool,
 /obj/machinery/light/small{
-	icon_state = "bulb1";
-	dir = 1
+	dir = 1;
+	icon_state = "bulb1"
 	},
 /turf/simulated/floor/tiled/dark/airless,
 /area/ship/scrap/crew/dorms3)
 "dj" = (
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 5
+	dir = 5;
+	icon_state = "corner_white"
 	},
 /obj/structure/curtain/open/bed,
 /obj/structure/bed/padded,
@@ -1712,8 +1718,8 @@
 /area/ship/scrap/broken1)
 "do" = (
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 9
+	dir = 9;
+	icon_state = "corner_white"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/usedup,
@@ -1729,8 +1735,8 @@
 /area/ship/scrap/cargo/lower)
 "dr" = (
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 6
+	dir = 6;
+	icon_state = "corner_white"
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -1879,8 +1885,8 @@
 /area/ship/scrap/crew/dorms3)
 "dG" = (
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 10
+	dir = 10;
+	icon_state = "corner_white"
 	},
 /obj/structure/curtain/open/bed,
 /obj/structure/bed/padded,
@@ -1893,6 +1899,10 @@
 /area/ship/scrap/broken1)
 "dI" = (
 /obj/item/weapon/stool/padded,
+/obj/item/device/radio/intercom{
+	dir = 1;
+	pixel_y = -30
+	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/broken1)
 "dJ" = (
@@ -1957,8 +1967,8 @@
 /area/ship/scrap/maintenance/lower)
 "dN" = (
 /obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/derelict,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -1977,8 +1987,8 @@
 /area/ship/scrap/maintenance/lower)
 "dO" = (
 /obj/machinery/light/small{
-	icon_state = "bulb1";
-	dir = 1
+	dir = 1;
+	icon_state = "bulb1"
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -2003,8 +2013,8 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	icon_state = "map-scrubbers";
-	dir = 1
+	dir = 1;
+	icon_state = "map-scrubbers"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
@@ -2103,8 +2113,8 @@
 /obj/item/weapon/stock_parts/circuitboard/shield_generator,
 /obj/structure/table/rack,
 /obj/effect/floor_decal/corner/yellow{
-	icon_state = "corner_white";
-	dir = 5
+	dir = 5;
+	icon_state = "corner_white"
 	},
 /obj/item/device/integrated_circuit_printer,
 /turf/simulated/floor/tiled/usedup,
@@ -2114,8 +2124,8 @@
 /obj/item/weapon/stock_parts/circuitboard/unary_atmos/cooler,
 /obj/structure/table/rack,
 /obj/effect/floor_decal/corner/yellow{
-	icon_state = "corner_white";
-	dir = 5
+	dir = 5;
+	icon_state = "corner_white"
 	},
 /obj/machinery/alarm{
 	pixel_y = 32;
@@ -2129,8 +2139,8 @@
 /obj/item/weapon/stock_parts/circuitboard/unary_atmos/heater,
 /obj/structure/table/rack,
 /obj/effect/floor_decal/corner/yellow{
-	icon_state = "corner_white";
-	dir = 5
+	dir = 5;
+	icon_state = "corner_white"
 	},
 /obj/item/weapon/stock_parts/circuitboard/oxyregenerator,
 /turf/simulated/floor/tiled/usedup,
@@ -2152,8 +2162,8 @@
 	pixel_x = -24
 	},
 /obj/effect/floor_decal/corner/yellow{
-	icon_state = "corner_white";
-	dir = 9
+	dir = 9;
+	icon_state = "corner_white"
 	},
 /obj/item/weapon/airalarm_electronics,
 /obj/item/weapon/airlock_electronics,
@@ -2186,8 +2196,8 @@
 /area/ship/scrap/maintenance/storage)
 "eh" = (
 /obj/machinery/light/small{
-	icon_state = "bulb1";
-	dir = 1
+	dir = 1;
+	icon_state = "bulb1"
 	},
 /obj/structure/ladder/up,
 /obj/effect/decal/cleanable/dirt,
@@ -2221,8 +2231,8 @@
 "ek" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
-	icon_state = "bulb1";
-	dir = 1
+	dir = 1;
+	icon_state = "bulb1"
 	},
 /obj/structure/table/rack,
 /obj/item/weapon/tank/jetpack/oxygen,
@@ -2230,20 +2240,21 @@
 /turf/simulated/floor/usedup,
 /area/ship/scrap/maintenance/eva)
 "el" = (
-/obj/machinery/power/apc/derelict{
-	dir = 1
-	},
 /obj/effect/floor_decal/corner/yellow{
-	icon_state = "corner_white";
-	dir = 6
+	dir = 6;
+	icon_state = "corner_white"
 	},
 /obj/structure/cable{
+	d2 = 2;
 	icon_state = "0-2";
-	pixel_y = 1;
-	d2 = 2
+	pixel_y = 1
 	},
 /obj/machinery/atmospherics/portables_connector,
 /obj/machinery/portable_atmospherics/canister/air,
+/obj/machinery/power/apc/derelict/bearcat{
+	dir = 1;
+	name = "area power controller"
+	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/maintenance/eva)
 "em" = (
@@ -2304,8 +2315,8 @@
 /area/ship/scrap/maintenance/techstorage)
 "er" = (
 /obj/effect/floor_decal/corner/yellow{
-	icon_state = "corner_white";
-	dir = 9
+	dir = 9;
+	icon_state = "corner_white"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -2325,8 +2336,8 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	icon_state = "map-scrubbers";
-	dir = 1
+	dir = 1;
+	icon_state = "map-scrubbers"
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/maintenance/storage)
@@ -2398,8 +2409,8 @@
 /area/ship/scrap/maintenance/eva)
 "ez" = (
 /obj/effect/floor_decal/corner/yellow{
-	icon_state = "corner_white";
-	dir = 6
+	dir = 6;
+	icon_state = "corner_white"
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -2407,19 +2418,19 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
-	icon_state = "intact";
-	dir = 5
+	dir = 5;
+	icon_state = "intact"
 	},
 /obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 4
+	dir = 4;
+	icon_state = "warning"
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/maintenance/eva)
 "eA" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
-	icon_state = "intact";
-	dir = 4
+	dir = 4;
+	icon_state = "intact"
 	},
 /obj/machinery/door/airlock/external/bolted/cycling{
 	id_tag = "eva_in"
@@ -2441,16 +2452,16 @@
 /area/ship/scrap/maintenance/eva)
 "eB" = (
 /obj/machinery/light/small{
-	icon_state = "bulb1";
-	dir = 1
+	dir = 1;
+	icon_state = "bulb1"
 	},
 /obj/machinery/airlock_sensor{
 	id_tag = "eva_sensor";
 	pixel_y = 40
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
-	icon_state = "intact";
-	dir = 4
+	dir = 4;
+	icon_state = "intact"
 	},
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
 	id_tag = "eva";
@@ -2501,8 +2512,8 @@
 /obj/item/weapon/stock_parts/scanning_module/adv,
 /obj/structure/table/rack,
 /obj/effect/floor_decal/corner/yellow{
-	icon_state = "corner_white";
-	dir = 10
+	dir = 10;
+	icon_state = "corner_white"
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/maintenance/techstorage)
@@ -2515,16 +2526,12 @@
 /obj/item/weapon/stock_parts/micro_laser,
 /obj/item/weapon/stock_parts/micro_laser/ultra,
 /obj/structure/table/rack,
-/obj/machinery/power/apc/derelict{
-	dir = 2;
-	name = "south bump";
-	pixel_y = -24
-	},
 /obj/structure/cable,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
 	level = 2
 	},
+/obj/machinery/power/apc/derelict/bearcat,
 /turf/simulated/floor/usedup,
 /area/ship/scrap/maintenance/techstorage)
 "eG" = (
@@ -2546,8 +2553,8 @@
 /obj/item/clothing/head/welding,
 /obj/item/device/scanner/gas,
 /obj/effect/floor_decal/corner/yellow{
-	icon_state = "corner_white";
-	dir = 9
+	dir = 9;
+	icon_state = "corner_white"
 	},
 /obj/structure/table/rack,
 /obj/structure/cable{
@@ -2619,8 +2626,8 @@
 /area/ship/scrap/maintenance/eva)
 "eO" = (
 /obj/effect/floor_decal/corner/yellow{
-	icon_state = "corner_white";
-	dir = 6
+	dir = 6;
+	icon_state = "corner_white"
 	},
 /obj/structure/sign/warning/vacuum{
 	pixel_x = 35
@@ -2638,14 +2645,14 @@
 /obj/item/weapon/storage/box/lights/bulbs,
 /obj/item/weapon/storage/box/lights/mixed,
 /obj/structure/cable,
-/obj/machinery/power/apc/derelict{
-	name = "Tools Storage APC"
-	},
 /obj/effect/floor_decal/corner/yellow{
-	icon_state = "corner_white";
-	dir = 9
+	dir = 9;
+	icon_state = "corner_white"
 	},
 /obj/item/taperoll/engineering,
+/obj/machinery/power/apc/derelict/bearcat{
+	name = "Tools Storage APC"
+	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/maintenance/storage)
 "eR" = (
@@ -2723,8 +2730,8 @@
 /obj/structure/curtain/open/bed,
 /obj/structure/bed/padded,
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 10
+	dir = 10;
+	icon_state = "corner_white"
 	},
 /obj/item/weapon/bedsheet/red,
 /turf/simulated/floor/tiled/dark/airless,
@@ -2753,8 +2760,8 @@
 /area/ship/scrap/broken1)
 "vU" = (
 /obj/effect/floor_decal/corner/beige{
-	icon_state = "corner_white";
-	dir = 10
+	dir = 10;
+	icon_state = "corner_white"
 	},
 /obj/structure/curtain/open/bed,
 /obj/structure/bed/padded,
