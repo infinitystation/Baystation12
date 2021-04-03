@@ -3252,7 +3252,6 @@
 	dir = 4;
 	icon_state = "pipe-c"
 	},
-/obj/structure/table/steel,
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_l)
 "fQ" = (
@@ -3636,9 +3635,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/airlock)
 "gt" = (
-/obj/machinery/disposal/deliveryChute{
-	dir = 1
-	},
 /obj/structure/disposalpipe/trunk,
 /obj/structure/disposaloutlet{
 	dir = 1
@@ -4642,7 +4638,8 @@
 "ig" = (
 /obj/machinery/conveyor{
 	dir = 1;
-	id = "calypso_cargo"
+	id = "charon_cargo_in";
+	name = "charon external conveyor belt"
 	},
 /turf/simulated/floor/reinforced,
 /area/exploration_shuttle/airlock)
@@ -9353,6 +9350,9 @@
 /obj/structure/railing/mapped,
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/industrial/danger,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "oN" = (
@@ -12168,15 +12168,17 @@
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_l)
 "tb" = (
-/obj/machinery/conveyor{
-	id = "calypso_cargo"
-	},
 /obj/structure/sign/warning/moving_parts{
 	dir = 8;
 	pixel_x = 34
 	},
 /obj/effect/floor_decal/industrial/warning/half{
 	dir = 8
+	},
+/obj/machinery/conveyor{
+	dir = 2;
+	id = "charon_cargo_out";
+	name = "charon interior conveyor belt"
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_l)
@@ -14038,10 +14040,6 @@
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_l)
 "wg" = (
-/obj/machinery/conveyor_switch/oneway{
-	id = "calypso_cargo";
-	name = "cargo tube"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
@@ -17400,9 +17398,6 @@
 	name = "Deck Officer";
 	sort_type = "Deck Officer"
 	},
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	dir = 4
 	},
@@ -20331,14 +20326,12 @@
 /obj/machinery/light,
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/b_green/border,
-/obj/item/toy/plushie/nymph,
-/obj/random/single{
-	icon = 'icons/obj/playing_cards.dmi';
-	icon_state = "deck";
-	name = "randomly spawned deck of cards";
-	spawn_object = /obj/item/weapon/deck
+/obj/machinery/conveyor_switch/oneway{
+	id = "charon_cargo_out";
+	name = "charon interior conveyor switch";
+	pixel_x = 10;
+	pixel_y = 15
 	},
-/obj/structure/table/steel,
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_l)
 "GH" = (
@@ -20428,14 +20421,16 @@
 /turf/simulated/floor/tiled,
 /area/command/exploration_leader)
 "GP" = (
-/obj/machinery/conveyor{
-	id = "calypso_cargo"
-	},
 /obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning/half{
 	dir = 8
+	},
+/obj/machinery/conveyor{
+	dir = 2;
+	id = "charon_cargo_out";
+	name = "charon interior conveyor belt"
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_l)
@@ -20804,7 +20799,6 @@
 	dir = 8;
 	pixel_x = 20
 	},
-/obj/structure/table/steel,
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_l)
 "Ho" = (
@@ -23214,6 +23208,9 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/status_display/supply_display{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "Lj" = (
@@ -25035,10 +25032,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
-"Oo" = (
-/obj/machinery/status_display/supply_display,
-/turf/simulated/wall/r_wall/hull,
-/area/quartermaster/deckofficer)
 "Op" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/floor_decal/borderfloorwhite{
@@ -29296,6 +29289,12 @@
 	pixel_x = 34
 	},
 /obj/structure/railing/mapped,
+/obj/machinery/conveyor_switch/oneway{
+	id = "charon_cargo_in";
+	name = "charon external conveyor switch";
+	pixel_x = 10;
+	pixel_y = 15
+	},
 /turf/simulated/floor/reinforced,
 /area/exploration_shuttle/airlock)
 "Wy" = (
@@ -30250,7 +30249,8 @@
 	},
 /obj/machinery/conveyor{
 	dir = 1;
-	id = "calypso_cargo"
+	id = "charon_cargo_in";
+	name = "charon external conveyor belt"
 	},
 /turf/simulated/floor/reinforced,
 /area/exploration_shuttle/airlock)
@@ -47824,7 +47824,7 @@ uZ
 vb
 oq
 oq
-Oo
+zY
 BK
 BK
 BK

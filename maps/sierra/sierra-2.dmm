@@ -4746,6 +4746,7 @@
 	dir = 8;
 	pixel_x = -24
 	},
+/obj/item/device/integrated_circuit_printer,
 /turf/simulated/floor/tiled/techmaint,
 /area/storage/tech)
 "ajb" = (
