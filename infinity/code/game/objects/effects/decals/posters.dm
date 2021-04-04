@@ -321,10 +321,6 @@
 	icon_state = "humposter_19"
 	poster_type = /decl/poster/humpost/hum_19
 
-/obj/structure/sign/poster/humpost/hum_20
-	icon_state = "humposter_20"
-	poster_type = /decl/poster/humpost/hum_20
-
 /obj/structure/sign/poster/humpost/hum_21
 	icon_state = "humposter_21"
 	poster_type = /decl/poster/humpost/hum_21
@@ -435,14 +431,6 @@
 
 /decl/poster/humpost/hum_19
 	icon_state = "humposter_19"
-	name = "Sedutive Resomi"
-	desc = "The poster, which shows very lustly resomi lying on the bed and looking straight into your soul. \
-	Oh, it's hot, very hot. On the edge of the poster with small letters printed: \
-	\"Adaptive miracle, a great sensation in the porn industry! Test a variety \
-	of ways of penetration! Read more in our magazine page #5.\""
-
-/decl/poster/humpost/hum_20
-	icon_state = "humposter_20"
 	name = "Explorer"
 	desc = "You see a very pumped-up guy with a huge machete. He has good muscle and a face of a real man. \
 	You can also read a text at bottom: \"Join the ranks of the Expeditionary Corps - see the start, \
