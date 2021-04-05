@@ -202,7 +202,6 @@
 	name = "dark matter pellet"
 	icon_state = "dark_pellet"
 	fire_sound = 'sound/weapons/eLuger.ogg'
-	damage = 15 //INF, WAS 10
-	armor_penetration = 60 //INF, WAS 35
+	damage = 10
+	armor_penetration = 35
 	damage_type = BRUTE
-	step_delay = 0.5 //INF, WAS NOTHING (1)
