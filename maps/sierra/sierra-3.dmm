@@ -4976,6 +4976,11 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters/open{
+	dir = 2;
+	id_tag = "infimary_window_lockdown";
+	name = "Infirmary Window Shutters"
+	},
 /turf/simulated/floor/plating,
 /area/crew_quarters/heads/office/cmo)
 "ajm" = (
@@ -6655,6 +6660,9 @@
 /obj/random/date_based/christmas/xmaslights{
 	dir = 1
 	},
+/obj/item/weapon/pen{
+	pixel_y = 4
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/office)
 "alE" = (
@@ -7965,9 +7973,6 @@
 /obj/item/weapon/storage/box/syringes,
 /obj/structure/table/rack,
 /obj/item/weapon/defibrillator/compact/loaded,
-/obj/item/bodybag/rescue/loaded,
-/obj/item/bodybag/rescue/loaded,
-/obj/item/bodybag/rescue/loaded,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 1
 	},
@@ -13086,6 +13091,9 @@
 "axR" = (
 /obj/effect/floor_decal/corner/paleblue/mono,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/item/weapon/storage/secure/safe{
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/crew_quarters/heads/office/cmo)
 "axT" = (
@@ -14423,6 +14431,11 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters/open{
+	dir = 2;
+	id_tag = "infimary_window_lockdown";
+	name = "Infirmary Window Shutters"
+	},
 /turf/simulated/floor/plating,
 /area/crew_quarters/heads/office/cmo)
 "aAo" = (
@@ -21087,6 +21100,9 @@
 /area/security/sierra/suits)
 "aJl" = (
 /obj/structure/closet/secure_closet/hop2,
+/obj/item/weapon/storage/secure/safe{
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/heads/office/hop/cobed)
 "aJm" = (
@@ -38289,6 +38305,8 @@
 	c_tag = "Infirmary - Mental Health";
 	dir = 4
 	},
+/obj/item/weapon/paper_bin,
+/obj/item/weapon/pen,
 /turf/simulated/floor/carpet/green,
 /area/medical/mentalhealth)
 "dLC" = (
@@ -39489,6 +39507,19 @@
 /obj/item/weapon/mop,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/servers)
+"iTT" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 1
+	},
+/obj/machinery/pager/medical{
+	name = "Call Medics button";
+	pixel_y = 27
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/aft)
 "iUE" = (
 /obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "infimary_staging"
@@ -41953,6 +41984,7 @@
 	dir = 4
 	},
 /obj/random/date_based/christmas/xmaslights,
+/obj/item/weapon/pen,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/office/cmo)
 "tQx" = (
@@ -42162,6 +42194,10 @@
 /obj/item/device/radio/intercom/department/medbay{
 	dir = 1;
 	pixel_y = -28
+	},
+/obj/item/weapon/pen{
+	pixel_x = -4;
+	pixel_y = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/medical/morgue)
@@ -65483,7 +65519,7 @@ xoT
 xoT
 muZ
 ibv
-aBF
+iTT
 aDH
 aFr
 aGY
