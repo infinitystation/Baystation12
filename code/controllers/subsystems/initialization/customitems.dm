@@ -6,11 +6,13 @@ SUBSYSTEM_DEF(customitems)
 	var/list/custom_items_by_ckey = list()
 	var/list/item_states = list()
 	var/list/mob_states =  list()
+	var/list/gun_states =  list()	// INF
 
 /datum/controller/subsystem/customitems/Initialize()
 
 	item_states = icon_states(CUSTOM_ITEM_OBJ)
 	mob_states =  icon_states(CUSTOM_ITEM_MOB)
+	gun_states =  icon_states(CUSTOM_GUN_ICONS)	// INF
 
 	if(!fexists(CUSTOM_ITEM_CONFIG))
 		report_progress("Custom item directory [CUSTOM_ITEM_CONFIG] does not exist, no custom items will be loaded.")
@@ -141,6 +143,12 @@ SUBSYSTEM_DEF(customitems)
 					return SPAN_WARNING("The given item icon [state] does not exist.")
 				if(!(state in SScustomitems.mob_states))
 					return SPAN_WARNING("The given mob icon [state] does not exist.")
+// [INF]
+		else if(ispath(item_path, /obj/item/device/kit/egun) || ispath(item_path, /obj/item/device/kit/gun))
+			for(var/state in list(item_icon_state))
+				if(!(state in SScustomitems.gun_states))
+					return SPAN_WARNING("The given gun icon [state] does not exist.")
+// [/INF]
 		else
 			for(var/state in list(item_icon_state))
 				if(!(state in SScustomitems.item_states))
