@@ -3351,6 +3351,7 @@
 #include "infinity\code\game\objects\items\paintkit.dm"
 #include "infinity\code\game\objects\items\toys.dm"
 #include "infinity\code\game\objects\items\devices\blackout.dm"
+#include "infinity\code\game\objects\items\devices\constrictor_harness.dm"
 #include "infinity\code\game\objects\items\devices\devices.dm"
 #include "infinity\code\game\objects\items\devices\flashlight.dm"
 #include "infinity\code\game\objects\items\devices\hacktool.dm"
