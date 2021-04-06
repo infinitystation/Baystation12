@@ -320,7 +320,11 @@
 /obj/structure/sign/poster/humpost/hum_19
 	icon_state = "humposter_19"
 	poster_type = /decl/poster/humpost/hum_19
-
+/*
+/obj/structure/sign/poster/humpost/hum_20
+	icon_state = "humposter_20"
+	poster_type = /decl/poster/humpost/hum_20
+*/
 /obj/structure/sign/poster/humpost/hum_21
 	icon_state = "humposter_21"
 	poster_type = /decl/poster/humpost/hum_21
@@ -435,7 +439,12 @@
 	desc = "You see a very pumped-up guy with a huge machete. He has good muscle and a face of a real man. \
 	You can also read a text at bottom: \"Join the ranks of the Expeditionary Corps - see the start, \
 	explore the university!\"... And die far away from home at god-forgotten planet for low payment, yeah."
-
+/*
+/decl/poster/humpost/hum_20
+	icon_state = "humposter_20"
+	name = "Free poster slot"
+	desc = "Your desc here"
+*/
 /decl/poster/humpost/hum_21
 	icon_state = "humposter_21"
 	name = "Lusty Xeno Specie"
