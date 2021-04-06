@@ -28813,7 +28813,6 @@
 	},
 /obj/machinery/door/blast/regular/open{
 	density = 0;
-	dir = 4;
 	id_tag = "cockpit_shutters";
 	name = "Protective Shutters";
 	opacity = 0
