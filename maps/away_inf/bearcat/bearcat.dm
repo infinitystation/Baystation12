@@ -38,8 +38,7 @@
 	description = "A wrecked light freighter."
 	prefix = "maps/away_inf/"
 	suffixes = list("bearcat/bearcat-1.dmm", "bearcat/bearcat-2.dmm")
-	spawn_weight = 50 //INF, HABITABLE SHIPS SPAWN
-	cost = 2 //INF, WAS 1
+	cost = 0.5 //INF, WAS 1
 	shuttles_to_initialise = list(/datum/shuttle/autodock/ferry/lift, /datum/shuttle/autodock/overmap/exploration)
 	area_usage_test_exempted_root_areas = list(/area/ship)
 	apc_test_exempt_areas = list(
