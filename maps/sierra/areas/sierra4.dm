@@ -1,4 +1,5 @@
-//MERCHANT AREAS
+// MERCHANT AREAS
+/* LIBERIA - OUR CHOICE!
 /area/shuttle/merchant/home
 	name = "Merchant Vessel"
 	icon_state = "shuttlegrn"
@@ -6,6 +7,13 @@
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 	req_access = list(access_merchant)
+
+/area/merchant_station
+	name = "Merchant Station"
+	icon_state = "LP"
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	req_access = list(access_merchant)
+*/
 
 // CentCom
 /area/centcom/control
@@ -15,9 +23,6 @@
 	name = "Creed's Office"
 	req_access = list(access_cent_creed)
 
-/area/centcom/evac
-	name = "Centcom Emergency Shuttle"
-
 /area/centcom/ferry
 	name = "Centcom Transport Shuttle"
 
@@ -25,17 +30,22 @@
 	name = "Centcom Living Quarters"
 	req_access = list(access_cent_living)
 
-/area/centcom/suppy
-	name = "Centcom Supply Shuttle"
-
 /area/centcom/test
 	name = "Centcom Testing Facility"
+/*
+/area/centcom/evac
+	name = "Centcom Emergency Shuttle"
+
+/area/centcom/suppy
+	name = "Centcom Supply Shuttle"
 
 /area/admin_prison
 	name = "Admin Prison"
 	dynamic_lighting = 1
 	requires_power = 0
 	icon_state = "blue-red-d"
+*/
+// HOLODECK
 
 /area/holodeck/alphadeck
 	name = "Holodeck Alpha"
@@ -127,20 +137,14 @@
 	requires_power = 0
 	req_access = list(access_cent_storage)
 
-// Merchant
-/area/merchant_station
-	name = "Merchant Station"
-	icon_state = "LP"
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
-	req_access = list(access_merchant)
-
 // Syndicate
+/*
 /area/syndicate_mothership/raider_base
 	name = "Raider Base"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 	req_access = list(access_syndicate)
 	turf_initializer = /decl/turf_initializer/maintenance/heavy
-
+*/
 // ACTORS GUILD
 /area/acting
 	name = "Centcom Acting Guild"

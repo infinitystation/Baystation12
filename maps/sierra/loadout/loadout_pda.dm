@@ -37,7 +37,7 @@ datum/gear/utility/modular_scanner/atmos
 	gear_tweaks += new/datum/gear_tweak/path(pdas)
 
 /datum/gear/utility/pda/spawn_on_mob(var/mob/living/carbon/human/H, var/metadata)
-	var/obj/item/modular_computer/pda/item = spawn_item(H, metadata)
+	var/obj/item/modular_computer/pda/item = spawn_item(H, H, metadata)
 	var/obj/item/weapon/card/id = H.GetIdCard()
 	if(id)
 		item.attackby(id, H)
@@ -81,7 +81,7 @@ datum/gear/utility/modular_scanner/atmos
 	gear_tweaks += new/datum/gear_tweak/path(wcomp)
 
 /datum/gear/utility/wrist_computer/spawn_on_mob(var/mob/living/carbon/human/H, var/metadata)
-	var/obj/item/modular_computer/pda/wrist/item = spawn_item(H, metadata)
+	var/obj/item/modular_computer/pda/wrist/item = spawn_item(H, H, metadata)
 	var/obj/item/weapon/card/id = H.GetIdCard()
 	if(id)
 		item.attackby(id, H)

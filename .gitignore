@@ -44,6 +44,11 @@ Session.vim
 tags
 baystation12.code-workspace
 
+# updater
+updater.bat
+updater.sh
+update_log.out
+
 # ignore built libs
 lib/*.dll
 lib/*.so

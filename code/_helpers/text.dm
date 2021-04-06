@@ -29,12 +29,29 @@
 		return
 
 	if(max_length)
+		// Здесь должна быть защита от Zalgo-текста, но синтаксис regex'а в DM понять непросто ~bear1ake
+		if(length(input) >= max_length * 3)	// Кто-то попытается ввести тяжелый текст? Не более 3-х байт на символ, пожалуйста
+			to_chat(usr, "<span class='warning'>Не вводите текст с большим количеством комбинированных символов.</span>")
+			return
 		//testing shows that just looking for > max_length alone will actually cut off the final character if message is precisely max_length, so >= instead
-		if(length(input) >= max_length)
+		if(length_char(input) >= max_length)
+/* [BAY]
 			var/overflow = ((length(input)+1) - max_length)
 			to_chat(usr, "<span class='warning'>Your message is too long by [overflow] character\s.</span>")
 			return
-		input = copytext(input,1,max_length)
+[/BAY]*/
+// [INF]
+			if(usr)
+				while(length_char(input) >= max_length)
+					if(!input)
+						return
+					var/overflow = ((length(input)+1) - max_length)
+					input = input(usr, "Your message is too long by [overflow] character\s.", "Too long!", input) as message|null
+			else
+				// Enter debug msg here
+				return
+// [/INF]
+		input = copytext_char(input,1,max_length)
 
 	if(extra)
 		input = replace_characters(input, list("\n"=" ","\t"=" "))
@@ -65,14 +82,14 @@
 
 //Filters out undesirable characters from names
 /proc/sanitizeName(var/input, var/max_length = MAX_NAME_LEN, var/allow_numbers = 0, var/force_first_letter_uppercase = TRUE)
-	if(!input || length(input) > max_length)
+	if(!input || length_char(input) > max_length)
 		return //Rejects the input if it is null or if it is longer then the max length allowed
 
 	var/number_of_alphanumeric	= 0
 	var/last_char_group			= 0
 	var/output = ""
 
-	for(var/i=1, i<=length(input), i++)
+	for(var/i=1, i<=length_char(input), i++)
 		var/ascii_char = text2ascii(input,i)
 		switch(ascii_char)
 			// A  .. Z
@@ -122,7 +139,7 @@
 	if(number_of_alphanumeric < 2)	return		//protects against tiny names like "A" and also names like "' ' ' ' ' ' ' '"
 
 	if(last_char_group == 1)
-		output = copytext(output,1,length(output))	//removes the last character (in this case a space)
+		output = copytext_char(output,1,length(output))	//removes the last character (in this case a space)
 
 	for(var/bad_name in list("space","floor","wall","r-wall","monkey","unknown","inactive ai","plating"))	//prevents these common metagamey names
 		if(cmptext(output,bad_name))	return	//(not case sensitive)

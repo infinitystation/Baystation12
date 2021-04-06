@@ -7,165 +7,48 @@
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling/sierra
 	warmup_time = 2
 
-/datum/shuttle/autodock/ferry/escape_pod/sierrapod/New()
-	name = "Escape Pod [number]"
-	dock_target = "escape_pod_[number]"
-	arming_controller = "escape_pod_[number]_berth"
-	waypoint_station = "escape_pod_[number]_start"
-	landmark_transition = "escape_pod_[number]_internim"
-	waypoint_offsite = "escape_pod_[number]_out"
-	..()
-
-/obj/effect/shuttle_landmark/escape_pod/
-	var/number
-
 /obj/effect/shuttle_landmark/escape_pod/start
 	name = "Docked"
-
-/obj/effect/shuttle_landmark/escape_pod/start/New()
-	landmark_tag = "escape_pod_[number]_start"
-	docking_controller = "escape_pod_[number]_berth"
-	..()
+	base_turf = /turf/simulated/floor/reinforced/airless
 
 /obj/effect/shuttle_landmark/escape_pod/transit
 	name = "In transit"
 
-/obj/effect/shuttle_landmark/escape_pod/transit/New()
-	landmark_tag = "escape_pod_[number]_internim"
-	..()
-
 /obj/effect/shuttle_landmark/escape_pod/out
 	name = "Escaped"
 
-/obj/effect/shuttle_landmark/escape_pod/out/New()
-	landmark_tag = "escape_pod_[number]_out"
-	..()
-
 //Pods
+#define SIERRA_ESCAPE_POD(NUMBER) \
+/datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod##NUMBER { \
+	shuttle_area = /area/shuttle/escape_pod/escape_pod##NUMBER/station; \
+	name = "Escape Pod " + #NUMBER; \
+	dock_target = "escape_pod_" + #NUMBER; \
+	arming_controller = "escape_pod_"+ #NUMBER +"_berth"; \
+	waypoint_station = "escape_pod_"+ #NUMBER +"_start"; \
+	landmark_transition = "escape_pod_"+ #NUMBER +"_internim"; \
+	waypoint_offsite = "escape_pod_"+ #NUMBER +"_out"; \
+} \
+/obj/effect/shuttle_landmark/escape_pod/start/pod##NUMBER { \
+	landmark_tag = "escape_pod_"+ #NUMBER +"_start"; \
+	docking_controller = "escape_pod_"+ #NUMBER +"_berth"; \
+} \
+/obj/effect/shuttle_landmark/escape_pod/out/pod##NUMBER { \
+	landmark_tag = "escape_pod_"+ #NUMBER +"_internim"; \
+} \
+/obj/effect/shuttle_landmark/escape_pod/transit/pod##NUMBER { \
+	landmark_tag = "escape_pod_"+ #NUMBER +"_out"; \
+}
 
-/datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod6
-	shuttle_area = /area/shuttle/escape_pod6/station
-	number = 6
-/obj/effect/shuttle_landmark/escape_pod/start/pod6
-	base_turf = /turf/simulated/floor/reinforced/airless
-	number = 6
-/obj/effect/shuttle_landmark/escape_pod/out/pod6
-	number = 6
-/obj/effect/shuttle_landmark/escape_pod/transit/pod6
-	number = 6
+SIERRA_ESCAPE_POD(1)
+SIERRA_ESCAPE_POD(2)
+SIERRA_ESCAPE_POD(3)
+SIERRA_ESCAPE_POD(4)
+SIERRA_ESCAPE_POD(5)
+//SIERRA_ESCAPE_POD(6)
+SIERRA_ESCAPE_POD(7)
+SIERRA_ESCAPE_POD(8)
+SIERRA_ESCAPE_POD(9)
 
-/datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod7
-	shuttle_area = /area/shuttle/escape_pod7/station
-	number = 7
-/obj/effect/shuttle_landmark/escape_pod/start/pod7
-	base_turf = /turf/simulated/floor/reinforced/airless
-	number = 7
-/obj/effect/shuttle_landmark/escape_pod/out/pod7
-	number = 7
-/obj/effect/shuttle_landmark/escape_pod/transit/pod7
-	number = 7
-
-/datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod8
-	shuttle_area = /area/shuttle/escape_pod8/station
-	number = 8
-/obj/effect/shuttle_landmark/escape_pod/start/pod8
-	base_turf = /turf/simulated/floor/reinforced/airless
-	number = 8
-/obj/effect/shuttle_landmark/escape_pod/out/pod8
-	number = 8
-/obj/effect/shuttle_landmark/escape_pod/transit/pod8
-	number = 8
-
-/datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod9
-	shuttle_area = /area/shuttle/escape_pod9/station
-	number = 9
-/obj/effect/shuttle_landmark/escape_pod/start/pod9
-	base_turf = /turf/simulated/floor/reinforced/airless
-	number = 9
-/obj/effect/shuttle_landmark/escape_pod/out/pod9
-	number = 9
-/obj/effect/shuttle_landmark/escape_pod/transit/pod9
-	number = 9
-
-/datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod10
-	shuttle_area = /area/shuttle/escape_pod10/station
-	number = 10
-/obj/effect/shuttle_landmark/escape_pod/start/pod10
-	base_turf = /turf/simulated/floor/reinforced/airless
-	number = 10
-/obj/effect/shuttle_landmark/escape_pod/out/pod10
-	number = 10
-/obj/effect/shuttle_landmark/escape_pod/transit/pod10
-	number = 10
-
-//Smoll pods
-
-/datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod12
-	shuttle_area = /area/shuttle/escape_pod12/station
-	number = 12
-/obj/effect/shuttle_landmark/escape_pod/start/pod12
-	base_turf = /turf/simulated/floor/reinforced/airless
-	number = 12
-/obj/effect/shuttle_landmark/escape_pod/out/pod12
-	number = 12
-/obj/effect/shuttle_landmark/escape_pod/transit/pod12
-	number = 12
-
-/datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod13
-	shuttle_area = /area/shuttle/escape_pod13/station
-	number = 13
-/obj/effect/shuttle_landmark/escape_pod/start/pod13
-	base_turf = /turf/simulated/floor/reinforced/airless
-	number = 13
-/obj/effect/shuttle_landmark/escape_pod/out/pod13
-	number = 13
-/obj/effect/shuttle_landmark/escape_pod/transit/pod13
-	number = 13
-
-/datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod14
-	shuttle_area = /area/shuttle/escape_pod14/station
-	number = 14
-/obj/effect/shuttle_landmark/escape_pod/start/pod14
-	base_turf = /turf/simulated/floor/reinforced/airless
-	number = 14
-/obj/effect/shuttle_landmark/escape_pod/out/pod14
-	number = 14
-/obj/effect/shuttle_landmark/escape_pod/transit/pod14
-	number = 14
-/*
-/datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod15
-	shuttle_area = /area/shuttle/escape_pod15/station
-	number = 15
-/obj/effect/shuttle_landmark/escape_pod/start/pod15
-	base_turf = /turf/simulated/floor/reinforced/airless
-	number = 15
-/obj/effect/shuttle_landmark/escape_pod/out/pod15
-	number = 15
-/obj/effect/shuttle_landmark/escape_pod/transit/pod15
-	number = 15
-
-/datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod116
-	shuttle_area = /area/shuttle/escape_pod16/station
-	number = 16
-/obj/effect/shuttle_landmark/escape_pod/start/pod16
-	base_turf = /turf/simulated/floor/reinforced/airless
-	number = 16
-/obj/effect/shuttle_landmark/escape_pod/out/pod16
-	number = 16
-/obj/effect/shuttle_landmark/escape_pod/transit/pod16
-	number = 16
-
-/datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod17
-	shuttle_area = /area/shuttle/escape_pod17/station
-	number = 17
-/obj/effect/shuttle_landmark/escape_pod/start/pod17
-	base_turf = /turf/simulated/floor/reinforced/airless
-	number = 17
-/obj/effect/shuttle_landmark/escape_pod/out/pod17
-	number = 17
-/obj/effect/shuttle_landmark/escape_pod/transit/pod17
-	number = 17
-*/
 //Petrov
 
 /datum/shuttle/autodock/ferry/petrov
@@ -453,7 +336,7 @@
 /datum/shuttle/autodock/overmap/exploration_shuttle
 	name = "Charon"
 	move_time = 90
-	shuttle_area = list(/area/exploration_shuttle/cockpit, /area/exploration_shuttle/atmos, /area/exploration_shuttle/medical, /area/exploration_shuttle/power, /area/exploration_shuttle/cargo, /area/exploration_shuttle/airlock)
+	shuttle_area = list(/area/exploration_shuttle/seats_place, /area/exploration_shuttle/cockpit, /area/exploration_shuttle/medical, /area/exploration_shuttle/power, /area/exploration_shuttle/cargo_l, /area/exploration_shuttle/cargo_r, /area/exploration_shuttle/airlock)
 	dock_target = "calypso_shuttle"
 	current_location = "nav_hangar_calypso"
 	landmark_transition = "nav_transit_calypso"

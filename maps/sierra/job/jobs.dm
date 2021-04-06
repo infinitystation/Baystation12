@@ -2,7 +2,7 @@
 	species_to_job_whitelist = list(
 		/datum/species/adherent = list(/datum/job/ai, /datum/job/cyborg, /datum/job/assistant, /datum/job/janitor,\
 									   /datum/job/chef, /datum/job/cargo_assistant, /datum/job/scientist_assistant,\
-									   /datum/job/doctor_trainee, /datum/job/engineer_trainee, /datum/job/mining,
+									   /datum/job/doctor_trainee, /datum/job/engineer_trainee, /datum/job/engineer, /datum/job/mining,
 									   /datum/job/roboticist, /datum/job/chemist, /datum/job/bartender),
 		/datum/species/nabber = list(/datum/job/ai, /datum/job/cyborg, /datum/job/janitor, /datum/job/scientist_assistant,\
 									 /datum/job/chemist, /datum/job/roboticist, /datum/job/cargo_assistant, /datum/job/chef,\
@@ -11,7 +11,7 @@
 		/datum/species/human/mule	= list(/datum/job/ai, /datum/job/cyborg, /datum/job/submap/merchant, /datum/job/submap/merchant_trainee)
 	)
 
-#define HUMAN_ONLY_JOBS /datum/job/captain, /datum/job/hos
+#define HUMAN_ONLY_JOBS /datum/job/captain, /datum/job/hos, /datum/job/psychiatrist
 	species_to_job_blacklist = list(
 		/datum/species/unathi  		 = list(HUMAN_ONLY_JOBS, /datum/job/iaa),
 		/datum/species/unathi/yeosa  = list(HUMAN_ONLY_JOBS, /datum/job/iaa),
