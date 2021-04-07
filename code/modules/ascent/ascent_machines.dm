@@ -239,9 +239,17 @@ MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 	if(on)
 		add_avail(output_power)
 
-/obj/machinery/power/smes/buildable/power_shuttle/ascent
+/obj/machinery/power/smes/buildable/preset/ascent
 	name = "mantid battery"
 	desc = "Some kind of strange alien SMES technology."
-	icon = 'icons/obj/machines/power/mantid_smes.dmi'	
+	icon = 'icons/obj/machines/power/mantid_smes.dmi'
 	overlay_icon = 'icons/obj/machines/power/mantid_smes.dmi'
 	construct_state = /decl/machine_construction/default/no_deconstruct
+	uncreated_component_parts = list(
+		/obj/item/weapon/stock_parts/smes_coil/super_io = 2,
+		/obj/item/weapon/stock_parts/smes_coil = 1)
+	_input_maxed = TRUE
+	_output_maxed = TRUE
+	_input_on = TRUE
+	_output_on = TRUE
+	_fully_charged = TRUE
