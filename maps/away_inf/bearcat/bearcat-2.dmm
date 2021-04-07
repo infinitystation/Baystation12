@@ -94,7 +94,9 @@
 /turf/simulated/floor/tiled/dark/usedup,
 /area/ship/scrap/command/bridge)
 "al" = (
-/obj/machinery/computer/shuttle_control/explore/bearcat,
+/obj/machinery/computer/shuttle_control/explore/bearcat{
+	req_access = list("ACCESS_BEARCAT")
+	},
 /turf/simulated/floor/tiled/airless,
 /area/ship/scrap/shuttle/outgoing)
 "am" = (
@@ -209,9 +211,7 @@
 	},
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
-	pixel_x = 24;
-	req_access = newlist()
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/dark/usedup,
 /area/ship/scrap/command/bridge)
@@ -492,9 +492,7 @@
 	},
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
-	pixel_x = 24;
-	req_access = newlist()
+	pixel_x = 24
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
@@ -605,9 +603,7 @@
 	},
 /obj/machinery/alarm{
 	dir = 4;
-	icon_state = "alarm0";
-	pixel_x = -24;
-	req_access = newlist()
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/dock)
@@ -1051,9 +1047,7 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
-	pixel_x = 24;
-	req_access = newlist()
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/dock)
@@ -1074,9 +1068,7 @@
 	},
 /obj/machinery/alarm{
 	dir = 4;
-	icon_state = "alarm0";
-	pixel_x = -24;
-	req_access = newlist()
+	pixel_x = -24
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/usedup,
@@ -1191,9 +1183,7 @@
 /obj/item/device/radio,
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
-	pixel_x = 24;
-	req_access = newlist()
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/airless,
 /area/ship/scrap/shuttle/outgoing)
@@ -1258,9 +1248,7 @@
 /obj/machinery/vending/snack,
 /obj/machinery/alarm{
 	dir = 4;
-	icon_state = "alarm0";
-	pixel_x = -24;
-	req_access = newlist()
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/crew/saloon)
@@ -1549,9 +1537,7 @@
 /obj/machinery/cryopod,
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
-	pixel_x = 24;
-	req_access = newlist()
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/scrap/crew/cryo)
@@ -2154,9 +2140,7 @@
 /obj/item/clothing/accessory/stethoscope,
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
-	pixel_x = 24;
-	req_access = newlist()
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/scrap/crew/medbay)
@@ -2238,9 +2222,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/alarm{
 	dir = 4;
-	icon_state = "alarm0";
-	pixel_x = -24;
-	req_access = newlist()
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/cargo)
@@ -2719,9 +2701,7 @@
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/alarm{
 	dir = 4;
-	icon_state = "alarm0";
-	pixel_x = -24;
-	req_access = newlist()
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/crew/kitchen)
@@ -3043,9 +3023,7 @@
 	},
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
-	pixel_x = 24;
-	req_access = newlist()
+	pixel_x = 24
 	},
 /turf/simulated/open,
 /area/ship/scrap/crew/hallway/starboard)
@@ -3099,9 +3077,7 @@
 "fo" = (
 /obj/machinery/alarm{
 	dir = 4;
-	icon_state = "alarm0";
-	pixel_x = -24;
-	req_access = newlist()
+	pixel_x = -24
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
 	dir = 6;
@@ -3964,9 +3940,7 @@
 /obj/structure/reagent_dispensers,
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
-	pixel_x = 24;
-	req_access = newlist()
+	pixel_x = 24
 	},
 /obj/machinery/power/apc/derelict/bearcat{
 	name = "Hydroponic APC"
@@ -3990,9 +3964,7 @@
 	},
 /obj/machinery/alarm{
 	dir = 4;
-	icon_state = "alarm0";
-	pixel_x = -24;
-	req_access = newlist()
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/maintenance/hallway)
@@ -4131,10 +4103,7 @@
 	},
 /obj/machinery/alarm{
 	dir = 1;
-	icon_state = "alarm0";
-	pixel_x = 0;
-	pixel_y = -32;
-	req_access = newlist()
+	pixel_y = -32
 	},
 /turf/simulated/floor/usedup,
 /area/ship/scrap/maintenance/hallway)
@@ -4857,9 +4826,7 @@
 	},
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
-	pixel_x = 24;
-	req_access = newlist()
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/maintenance/engineering)
@@ -4870,9 +4837,7 @@
 	},
 /obj/machinery/alarm{
 	dir = 4;
-	icon_state = "alarm0";
-	pixel_x = -24;
-	req_access = newlist()
+	pixel_x = -24
 	},
 /mob/living/simple_animal/hostile/carp,
 /turf/simulated/floor/usedup,
@@ -5320,9 +5285,7 @@
 	},
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
-	pixel_x = 24;
-	req_access = newlist()
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/airless,
 /area/ship/scrap/maintenance/atmos)
@@ -5330,9 +5293,7 @@
 /obj/machinery/atmospherics/valve/shutoff,
 /obj/machinery/alarm{
 	dir = 4;
-	icon_state = "alarm0";
-	pixel_x = -24;
-	req_access = newlist()
+	pixel_x = -24
 	},
 /turf/simulated/floor/airless,
 /area/ship/scrap/maintenance/engine/aft)
@@ -5804,9 +5765,7 @@
 	},
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
-	pixel_x = 24;
-	req_access = newlist()
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/airless,
 /area/ship/scrap/shuttle/outgoing)
@@ -5844,9 +5803,7 @@
 /obj/effect/floor_decal/corner/white/diagonal,
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
-	pixel_x = 24;
-	req_access = newlist()
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/crew/toilets)
@@ -6426,9 +6383,7 @@
 /obj/item/weapon/cell/high,
 /obj/machinery/alarm{
 	dir = 4;
-	icon_state = "alarm0";
-	pixel_x = -24;
-	req_access = newlist()
+	pixel_x = -24
 	},
 /turf/simulated/floor/usedup,
 /area/ship/scrap/hidden)

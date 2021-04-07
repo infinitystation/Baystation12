@@ -10,6 +10,7 @@
 	desc = "FTU Captain"
 	region = ACCESS_REGION_NONE
 
+
 /obj/item/weapon/card/id/bearcat
 	access = list(access_bearcat)
 
@@ -20,13 +21,10 @@
 	req_access = list(access_bearcat)
 
 /obj/machinery/door/airlock/autoname/bearcat
-	req_access = list(access_bearcat)
 
 /obj/machinery/door/airlock/autoname/engineering/bearcat
-	req_access = list(access_bearcat)
 
 /obj/machinery/door/airlock/autoname/command/bearcat
-	req_access = list(access_bearcat)
 
 /obj/structure/closet/secure_closet/engineering_electrical/bearcat
 	req_access = list(access_bearcat)
