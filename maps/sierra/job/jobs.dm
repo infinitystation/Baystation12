@@ -11,30 +11,16 @@
 		/datum/species/human/mule	= list(/datum/job/ai, /datum/job/cyborg, /datum/job/submap/merchant, /datum/job/submap/merchant_trainee)
 	)
 
-#define HUMAN_ONLY_JOBS /datum/job/captain, /datum/job/hos, /datum/job/psychiatrist.
+#define HUMAN_ONLY_JOBS /datum/job/captain, /datum/job/hos, /datum/job/psychiatrist
 	species_to_job_blacklist = list(
-		/datum/species/unathi  		 = list(HUMAN_ONLY_JOBS, /datum/job/iaa, /datum/job/captain, /datum/job/hop,
-									 /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos,
-									/datum/job/iaa, /datum/job/adjutant, /datum/job/exploration_leader),
-		/datum/species/unathi/yeosa  = list(HUMAN_ONLY_JOBS, /datum/job/iaa, /datum/job/captain, /datum/job/hop,
-									 /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos,
-									/datum/job/iaa, /datum/job/adjutant, /datum/job/exploration_leader),
-		/datum/species/unathi/erosan = list(HUMAN_ONLY_JOBS, /datum/job/iaa, /datum/job/captain, /datum/job/hop,
-									 /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos,
-									/datum/job/iaa, /datum/job/adjutant, /datum/job/exploration_leader),
-		/datum/species/skrell  		 = list(HUMAN_ONLY_JOBS, /datum/job/iaa, /datum/job/captain, /datum/job/hop,
-									 /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos,
-									/datum/job/iaa, /datum/job/adjutant, /datum/job/exploration_leader),
-		/datum/species/tajaran 		 = list(HUMAN_ONLY_JOBS, /datum/job/iaa, /datum/job/captain, /datum/job/hop,
-									 /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos,
-									/datum/job/iaa, /datum/job/adjutant, /datum/job/exploration_leader),
-		/datum/species/machine 		 = list(HUMAN_ONLY_JOBS, /datum/job/iaa, /datum/job/captain, /datum/job/hop,
-									 /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos,
-									/datum/job/iaa, /datum/job/adjutant, /datum/job/exploration_leader, /datum/job/security_assistant, /datum/job/psychiatrist),
-		/datum/species/resomi  		 = list(HUMAN_ONLY_JOBS, /datum/job/hop,
-									 /datum/job/rd, /datum/job/cmo,
-									 /datum/job/officer, /datum/job/exploration_leader,\
-									 /datum/job/warden, /datum/job/chief_engineer, /datum/job/rd, /datum/job/iaa, /datum/job/security_assistant),
+		/datum/species/unathi  		 = list(HUMAN_ONLY_JOBS, /datum/job/iaa),
+		/datum/species/unathi/yeosa  = list(HUMAN_ONLY_JOBS, /datum/job/iaa),
+		/datum/species/unathi/erosan = list(HUMAN_ONLY_JOBS, /datum/job/iaa),
+		/datum/species/skrell  		 = list(HUMAN_ONLY_JOBS),
+		/datum/species/tajaran 		 = list(HUMAN_ONLY_JOBS),
+		/datum/species/machine 		 = list(HUMAN_ONLY_JOBS, /datum/job/security_assistant, /datum/job/psychiatrist),
+		/datum/species/resomi  		 = list(HUMAN_ONLY_JOBS, /datum/job/officer, /datum/job/exploration_leader,\
+									/datum/job/warden, /datum/job/chief_engineer, /datum/job/rd, /datum/job/iaa, /datum/job/security_assistant),
 		/datum/species/diona   		 = list(HUMAN_ONLY_JOBS, /datum/job/exploration_leader, /datum/job/explorer_pilot,\
 									/datum/job/officer, /datum/job/warden, /datum/job/detective, /datum/job/iaa,\
 									/datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer,/datum/job/qm,\
