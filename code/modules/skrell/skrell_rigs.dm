@@ -2,28 +2,38 @@
 
 //Define Rig Clothing
 /obj/item/clothing/suit/space/rig/ert/skrell
-	name = "skrellian recon hardsuit chestpiece"
+	name = "chestpiece"
 	desc = "A powerful recon hardsuit with integrated power supply and atmosphere. It's impressive design perfectly tailors to the user's body."
 	species_restricted = list(SPECIES_SKRELL)
+	sprite_sheets = list(
+		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_chest_rig_skrell.dmi'
+	)
 
 /obj/item/clothing/head/helmet/space/rig/ert/skrell
-	name = "skrellian recon hardsuit helmet"
+	name = "helmet"
 	desc = "A powerful recon hardsuit with integrated power supply and atmosphere. It's impressive design perfectly tailors to the user's body."
 	light_overlay = "helmet_light_dual"
 	species_restricted = list(SPECIES_SKRELL)
 	sprite_sheets = list(
-		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_head_skrell.dmi'
+		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_head_rig_skrell.dmi'
 	)
 
 /obj/item/clothing/shoes/magboots/rig/ert/skrell
-	name = "skrellian recon hardsuit boots"
+	name = "boots"
 	desc = "A powerful recon hardsuit with integrated power supply and atmosphere. It's impressive design perfectly tailors to the user's body."
 	species_restricted = list(SPECIES_SKRELL)
+	sprite_sheets = list(
+		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_feet_rig_skrell.dmi'
+	)
 
 /obj/item/clothing/gloves/rig/ert/skrell
-	name = "skrellian recon hardsuit gloves"
+	name = "gloves"
 	desc = "A powerful recon hardsuit with integrated power supply and atmosphere. It's impressive design perfectly tailors to the user's body."
+	siemens_coefficient = 0
 	species_restricted = list(SPECIES_SKRELL)
+	sprite_sheets = list(
+		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_hands_rig_skrell.dmi'
+	)
 
 
 
@@ -31,9 +41,9 @@
 /obj/item/weapon/rig/skrell
 	name = "skrellian recon hardsuit"
 	desc = "A powerful recon hardsuit with integrated power supply and atmosphere. It's impressive design perfectly tailors to the user's body."
-	icon_state = "hazard_rig"
+	icon_state = "skrell_standard_rig"
 	item_state = null
-	suit_type = "recon hardsuit"
+	suit_type = "skrellian recon hardsuit"
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
 		bullet = ARMOR_BALLISTIC_PISTOL,
@@ -60,6 +70,9 @@
 		/obj/item/device/suit_cooling_unit
 	)
 	update_visible_name = TRUE
+	sprite_sheets = list(
+		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_back_rig_skrell.dmi'
+	)
 	initial_modules = list(
 		/obj/item/rig_module/vision/nvg,
 		/obj/item/rig_module/chem_dispenser/skrell,
@@ -72,7 +85,7 @@
 /obj/item/weapon/rig/skrell/eng
 	name = "skrellian engineering hardsuit"
 	desc = "A powerful engineering hardsuit with integrated power supply and atmosphere. It's impressive design perfectly tailors to the user's body."
-	icon_state = "ert_engineer_rig"
+	icon_state = "skrell_eng_rig"
 	initial_modules = list(
 		/obj/item/rig_module/vision/nvg,
 		/obj/item/rig_module/chem_dispenser/skrell,
@@ -88,7 +101,7 @@
 /obj/item/weapon/rig/skrell/med
 	name = "skrellian medical hardsuit"
 	desc = "A powerful medical hardsuit with integrated power supply and atmosphere. It's impressive design perfectly tailors to the user's body."
-	icon_state = "ert_medical_rig"
+	icon_state = "skrell_med_rig"
 	initial_modules = list(
 		/obj/item/rig_module/vision/nvg,
 		/obj/item/rig_module/chem_dispenser/skrell,
@@ -103,7 +116,7 @@
 /obj/item/weapon/rig/skrell/sec
 	name = "skrellian combat hardsuit"
 	desc = "A powerful combat hardsuit with integrated power supply and atmosphere. It's impressive design perfectly tailors to the user's body."
-	icon_state = "ert_security_rig"
+	icon_state = "skrell_standard_rig"
 	armor = list(
 		melee = ARMOR_MELEE_MAJOR,
 		bullet = ARMOR_BALLISTIC_RESISTANT,
@@ -125,7 +138,7 @@
 /obj/item/weapon/rig/skrell/cmd
 	name = "skrellian command hardsuit"
 	desc = "A powerful command hardsuit with integrated power supply and atmosphere. It's impressive design perfectly tailors to the user's body."
-	icon_state = "ert_commander_rig"
+	icon_state = "skrell_com_rig"
 	armor = list(
 		melee = ARMOR_MELEE_MAJOR,
 		bullet = ARMOR_BALLISTIC_RESISTANT,
@@ -210,6 +223,8 @@
 	name = "skrellian welding arm"
 	desc = "An electrical cutting torch of Skrell design."
 	interface_desc = "An electrical cutting torch of Skrell design."
+
+//Skrellian teleporter (identical to ninja teleporter, with only increased energy cost and module cooldown)
 
 // Self-charging power cell.
 /obj/item/weapon/cell/skrell
