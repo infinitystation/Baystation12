@@ -194,7 +194,8 @@
 	},
 /obj/machinery/alarm{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -24;
+	req_access = list("ACCESS_BEARCAT")
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/escape_port)
@@ -318,7 +319,8 @@
 	},
 /obj/machinery/alarm{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 24;
+	req_access = list("ACCESS_BEARCAT")
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/escape_star)
@@ -778,7 +780,8 @@
 "bD" = (
 /obj/machinery/alarm{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 24;
+	req_access = list("ACCESS_BEARCAT")
 	},
 /obj/item/weapon/hand/missing_card,
 /obj/item/weapon/hand/missing_card,
@@ -799,7 +802,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/alarm{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -24;
+	req_access = list("ACCESS_BEARCAT")
 	},
 /obj/structure/closet/crate,
 /obj/random/soap,
@@ -863,7 +867,8 @@
 "bL" = (
 /obj/machinery/alarm{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -24;
+	req_access = list("ACCESS_BEARCAT")
 	},
 /obj/structure/closet,
 /obj/random/clothing,
@@ -1343,7 +1348,8 @@
 "cF" = (
 /obj/machinery/alarm{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 24;
+	req_access = list("ACCESS_BEARCAT")
 	},
 /obj/item/stack/cable_coil/random,
 /turf/simulated/floor/usedup,
@@ -1814,7 +1820,8 @@
 "dz" = (
 /obj/machinery/alarm{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 24;
+	req_access = list("ACCESS_BEARCAT")
 	},
 /obj/machinery/recharge_station,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -1850,7 +1857,8 @@
 "dE" = (
 /obj/machinery/alarm{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -24;
+	req_access = list("ACCESS_BEARCAT")
 	},
 /obj/structure/closet,
 /obj/random/clothing,
@@ -2110,7 +2118,8 @@
 	icon_state = "corner_white"
 	},
 /obj/machinery/alarm{
-	pixel_y = 32
+	pixel_y = 32;
+	req_access = list("ACCESS_BEARCAT")
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/usedup,
@@ -2135,7 +2144,8 @@
 /obj/item/device/t_scanner,
 /obj/item/weapon/cell/high,
 /obj/machinery/alarm{
-	pixel_y = 32
+	pixel_y = 32;
+	req_access = list("ACCESS_BEARCAT")
 	},
 /obj/item/weapon/tape_roll,
 /obj/machinery/light_switch{
@@ -2687,7 +2697,8 @@
 /obj/machinery/suit_storage_unit/engineering/salvage/bearcat,
 /obj/machinery/alarm{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 24;
+	req_access = list("ACCESS_BEARCAT")
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/maintenance/eva)

@@ -10,7 +10,6 @@
 	desc = "FTU Captain"
 	region = ACCESS_REGION_NONE
 
-
 /obj/item/weapon/card/id/bearcat
 	access = list(access_bearcat)
 
