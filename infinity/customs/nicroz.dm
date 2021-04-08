@@ -56,9 +56,9 @@
 /obj/item/weapon/paper/psi_briefcase
 	var/user = "\[ДАННЫЕ УДАЛЕНЫ\]"
 	var/freqcode
-	var/rank = "4-Бета"
+	var/rank = "\[ДАННЫЕ УДАЛЕНЫ\]"
 	var/schools = ""
-	var/job = "Менталист"
+	var/job = "\[ДАННЫЕ УДАЛЕНЫ\]"
 	var/obj/item/weapon/storage/briefcase/psi/brief
 	var/textform = @"[br][center]<img src = foundlogo.png>[/center][br][center][large][b]Разрешение на работу сотрудника Фонда Кучулейн[/b][/large][/center][br][hr][br][br][br][list][br][*][b]Полное имя сотрудника:[/b] %USER%[br][br][*][b]Псионический ранг:[/b] %RANK%[br][br][*][b]Псионические способности:[/b] %SCHOOL%[br][br][*][b]Способы котроля:[/b] Имплант отслеживания. Имплант пси-контроля. Взрывной имплант '[i][u]Для активации: частота %CODE%[/u][/i]' [br][small][b][u]Использовать только в случае крайней необходимости или с разрешения агентов Фонда[/u][/b][/small][br][br][/list][br][hr][br][list][br][br][*][b]Текущая должность:[/b] %JOB%[br][br][*][b]Разрешенное оборудование:[/b] Импланты: отслеживания, взрыва, пси-контроля. Оборудование для работы с имплантами. B-PVP.[br][br][*][b]Расширение разрешенных процедур:[/b] Развитие псионических способностей у перспективных кандидатов.[br][br][*][b]Дата составления:[/b] 2309.01.24[br][br][*][b]Срок действия:[/b] 2310.01.23[br][hr][br][br][br][/list][br][br][br][br][u]Место для печатей:[/u]"
 	icon = 'icons/obj/card.dmi'
@@ -82,22 +82,45 @@
 	if(!istype(case))
 		return
 	freqcode = "[format_frequency(case.freq)] код [case.code]"
-	for(var/psi in case.psi_ranks)
-		var/psiru = "Тайн"
-		switch(psi)
-			if(PSI_REDACTION)		psiru = "Восстановления"
-			if(PSI_COERCION)		psiru = "Принуждения"
-			if(PSI_PSYCHOKINESIS)	psiru = "Психокинетики"
-			if(PSI_ENERGISTICS)		psiru = "Энергий"
-		schools += "Адепт школы [psiru]; "
 	if(case.targetckey)
 		var/mob/living/H = get_mob_by_key(case.targetckey)
 		if(H)
+			var/datum/psi_complexus/psionicus = H.psi
+			switch(psionicus.rating)
+				if(1)	rank = "1-Эпсилон"
+				if(2)	rank = "2-Гамма"
+				if(3)	rank = "3-Дельта"
+				if(4)	rank = "4-Бета"
+				if(5)	rank = "5-Альфа"
+			for(var/psi in psionicus.ranks)
+				var/psiru = "Тайн"
+				var/psirank = "Неизвестный"
+				switch(psi)
+					if(PSI_REDACTION)		psiru = "Восстановления"
+					if(PSI_COERCION)		psiru = "Принуждения"
+					if(PSI_PSYCHOKINESIS)	psiru = "Психокинетики"
+					if(PSI_ENERGISTICS)		psiru = "Энергий"
+				switch(psionicus.ranks[psi])
+					if(PSI_RANK_LATENT)			psirank = "Склонность"
+					if(PSI_RANK_OPERANT)		psirank = "Оператор"
+					if(PSI_RANK_MASTER)			psirank = "Мастер"
+					if(PSI_RANK_GRANDMASTER)	psirank = "Грандмастер"
+					if(PSI_RANK_PARAMOUNT)		psirank = "Внеуровневый"
+				schools += "[psirank] школы [psiru]; "
 			var/datum/job/myjob = H.mind.assigned_job
 			H.mind.StoreMemory("Бум-имплант в моей голове от ребят из Кучулейна: [freqcode]")
 			if(myjob)
 				job = myjob.get_alt_title_for(H.client)
 			user = H.name
+	else
+		for(var/psi in case.psi_ranks)
+			var/psiru = "Тайн"
+			switch(psi)
+				if(PSI_REDACTION)		psiru = "Восстановления"
+				if(PSI_COERCION)		psiru = "Принуждения"
+				if(PSI_PSYCHOKINESIS)	psiru = "Психокинетики"
+				if(PSI_ENERGISTICS)		psiru = "Энергий"
+			schools += "Адепт школы [psiru]; "
 	textform = replacetext(textform, "%JOB%", job)
 	textform = replacetext(textform, "%CODE%", freqcode)
 	textform = replacetext(textform, "%SCHOOL%", schools)
