@@ -1,0 +1,5 @@
+author: Zhuzhila
+delete-after: true
+changes:
+  - bugfix: fixed APCs access on bearcat, available only for crewmans and first mate
+  - maptweak: AirAlarm available only for crewmans and first mate
