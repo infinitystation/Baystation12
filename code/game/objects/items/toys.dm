@@ -232,7 +232,7 @@
 				if (O.client)	O.show_message(text("<span class='danger'>\The [] casually lines up a shot with []'s head, pulls the trigger, then realizes they are out of ammo and drops to the floor in search of some!</span>", user, M), 1, "<span class='warning'>You hear someone fall</span>", 2)
 			user.Weaken(5)
 		return
-		
+
 /obj/item/toy/crossbow/examine(mob/user, distance)
 	. = ..()
 	if(distance <= 2 && bullets)
@@ -919,26 +919,26 @@
 	w_class = ITEM_SIZE_TINY
 
 	var/static/list/possible_answers = list(
-		"It is certain",
-		"It is decidedly so",
-		"Without a doubt",
-		"Yes, definitely",
-		"You may rely on it",
-		"As I see it, yes",
-		"Most likely",
-		"Outlook good",
-		"Yes",
-		"Signs point to yes",
-		"Reply hazy, try again",
-		"Ask again later",
-		"Better not tell you now",
-		"Cannot predict now",
-		"Concentrate and ask again",
-		"Don't count on it",
-		"My reply is no",
-		"My sources say no",
-		"Outlook not so good",
-		"Very doubtful")
+	    "Бесспорно",
+        "Предрешено",
+        "Никаких сомнений",
+        "Определённо да",
+        "Можешь быть уверен в том",
+        "Мне кажется - да",
+        "Вероятнее всего",
+        "Хорошие перспективы",
+        "Да",
+        "Знаки говорят - да",
+        "Пока не ясно, попробуй снова",
+        "Спроси позже",
+        "Лучше не рассказывать",
+        "Сейчас нельзя предсказать",
+        "Сконцентрируйся и спроси снова",
+        "Даже не думай",
+        "Мой ответ - нет",
+        "По моим данным - нет",
+        "Перспективы не очень хорошие",
+        "Весьма сомнительно")
 
 /obj/item/toy/eightball/attack_self(mob/user)
 	user.visible_message("<span class='notice'>\The [user] shakes \the [src] for a moment, and it says, \"[pick(possible_answers) ].\"</span>")
