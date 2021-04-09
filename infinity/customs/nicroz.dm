@@ -48,8 +48,7 @@
 		code = citem.additional_data["code"]
 
 	for(var/obj/item/weapon/paper/psi_briefcase/P in contents)
-		P.set_info(src)
-		P.brief = null
+		addtimer(CALLBACK(P, /obj/item/weapon/paper/psi_briefcase/proc/set_info, src), 0, TIMER_UNIQUE)
 	used = FALSE
 	silenced = TRUE
 
@@ -67,7 +66,6 @@
 /obj/item/weapon/paper/psi_briefcase/show_content(mob/user, forceshow)
 	if(brief)
 		set_info(brief)
-		brief = null
 	. = ..(user, forceshow)
 
 /obj/item/weapon/paper/psi_briefcase/on_update_icon()
@@ -127,6 +125,7 @@
 	textform = replacetext(textform, "%RANK%", rank)
 	textform = replacetext(textform, "%USER%", user)
 	set_content(textform, "Foundation License")
+	brief = null
 
 /obj/item/weapon/storage/briefcase/psi/New()
 	if(freq)
