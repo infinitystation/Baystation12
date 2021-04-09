@@ -5,5 +5,4 @@
 /datum/sprite_accessory/marking/skrell/tears
 	name = "Tear stains (Skrell)"
 	icon_state = "skr_tearstains"
-	species_allowed = list(SPECIES_SKRELL)
 	body_parts = list(BP_HEAD)
