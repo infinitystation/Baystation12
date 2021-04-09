@@ -8,11 +8,11 @@
 	var/mins = minutes % 60
 	minutes = (minutes-mins) / 60
 	if(minutes == 0)
-		return mins
+		return "[mins][delimeter]0[delimeter]0"
 	var/hours = minutes % 24
 	minutes = (minutes-hours) / 24
 	if(minutes == 0)
-		return "[mins][delimeter][hours]"
+		return "[mins][delimeter][hours][delimeter]0"
 	return "[mins][delimeter][hours][delimeter][minutes]"
 
 /proc/DDHHMMtoText(var/line, var/delimeter = "-")
@@ -25,16 +25,16 @@
 			var/ending
 			switch(time)
 				if(1)
-					if(date[time] == 1)	ending = "Минута"
-					else if(date[time] in list(2,3,4))	ending = "Минуты"
+					if((date[time] % 10) == 1)	ending = "Минута"
+					else if((date[time] % 10) in list(2,3,4))	ending = "Минуты"
 					else ending = "Минут"
 				if(2)
-					if(date[time] == 1)	ending = "Час"
-					else if(date[time] in list(2,3,4))	ending = "Часа"
+					if((date[time] % 10) == 1)	ending = "Час"
+					else if((date[time] % 10) in list(2,3,4))	ending = "Часа"
 					else ending = "Часов"
 				if(3)
-					if(date[time] == 1)	ending = "День"
-					else if(date[time] in list(2,3,4))	ending = "Дня"
+					if((date[time] % 10) == 1)	ending = "День"
+					else if((date[time] % 10) in list(2,3,4))	ending = "Дня"
 					else ending = "Дней"
 			output += "[length(output) ? ", " : ""][date[time]] [ending]"
 	return output
@@ -162,8 +162,7 @@
 				var/notfrom = DDHHMMtoText(minutesTOdays(dur[2]))
 				var/oldduration = list(
 					"name" = "Старая длительность",
-					"value" = "[from]",
-					"inline" = 1
+					"value" = "[from]"
 				)
 				var/duration = list(
 					"name" = "Новая длительность",
@@ -178,7 +177,7 @@
 					)
 				))
 			else if(data["reason"] != "ДАННЫЕ УДАЛЕНЫ")
-				var/list/reas = splittext(data["duration"], "@#*$#@")
+				var/list/reas = splittext(data["reason"], "@#*$#@")
 				if(length(reas) != 2)
 					.["content"] = "Спецсимволы в измененном банризоне. Зачем?"
 					return
