@@ -773,7 +773,6 @@
 /turf/simulated/floor/plating,
 /area/ship/patrol/maintenance/atmos)
 "by" = (
-/obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /turf/simulated/floor/plating,
 /area/ship/patrol/maintenance/atmos)
@@ -7815,6 +7814,9 @@
 /obj/item/stack/material/deuterium/fifty,
 /obj/item/stack/material/uranium/ten,
 /obj/item/stack/material/deuterium/fifty,
+/obj/item/stack/material/tritium/fifty,
+/obj/item/stack/material/tritium/fifty,
+/obj/item/stack/material/tritium/fifty,
 /turf/simulated/floor/plating,
 /area/ship/patrol/engineering/fussion/control)
 "oJ" = (
@@ -7958,6 +7960,13 @@
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
+	},
+/obj/machinery/computer/air_control{
+	dir = 4;
+	frequency = 1442;
+	input_tag = null;
+	name = "RUST Injector Control Console";
+	output_tag = "patrol_rust"
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/engineering/fussion/control)
@@ -8261,7 +8270,7 @@
 	dir = 1;
 	pixel_y = -24
 	},
-/obj/machinery/portable_atmospherics/canister/hydrogen,
+/obj/machinery/portable_atmospherics/canister/hydrogen/engine_setup,
 /turf/simulated/floor,
 /area/ship/patrol/engineering/fussion/control)
 "pD" = (
@@ -8684,7 +8693,6 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/portable_atmospherics/canister/helium,
 /turf/simulated/floor/plating,
 /area/ship/patrol/engineering/fussion/control)
 "Ex" = (
