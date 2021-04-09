@@ -30826,12 +30826,11 @@
 /obj/machinery/vending/coffee{
 	dir = 1
 	},
-/obj/effect/floor_decal/spline/fancy/wood/three_quarters,
 /obj/machinery/camera/network/second_deck{
 	c_tag = "Lounge - Lower";
 	dir = 8
 	},
-/turf/simulated/floor/lino,
+/turf/simulated/floor/wood/walnut,
 /area/crew_quarters/lounge)
 "bez" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{

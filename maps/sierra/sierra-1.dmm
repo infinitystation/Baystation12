@@ -21760,7 +21760,7 @@
 /obj/item/device/toner,
 /obj/item/device/taperecorder,
 /obj/structure/closet/crate,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/storage)
 "IM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
