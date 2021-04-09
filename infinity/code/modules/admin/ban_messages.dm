@@ -4,7 +4,7 @@
 	var/reason_public = reason
 	reason = sql_sanitize_text(reason)
 //	reason = sanitize_a0(reason)
-
+//	Разбан юзера идет через bantype = "UNBAN" изменеие = bantype = "EDIT" мы не выводим это на сервере, но отправляем весточку вебхуком
 	SSwebhooks.send(WEBHOOK_SEND_BAN, list("bantype" = bantype, "setter" = setter, "banned" = banned, "reason" = reason, "duration" = duration, "banned_jobs" = banned_jobs))
 	switch(bantype)
 		if(BANTYPE_PERMA)

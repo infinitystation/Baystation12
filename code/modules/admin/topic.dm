@@ -87,6 +87,10 @@
 			message_admins("Ban process: A mob matching [playermob.ckey] was found at location [playermob.x], [playermob.y], [playermob.z]. Custom ip and computer id fields replaced with the ip and computer id from the located mob")
 	//	notes_add(banckey,banreason,usr)
 		add_note(banckey,banreason, null, usr.ckey, 0) //inf
+//[INF]
+		if(bantype == BANTYPE_JOB_PERMA || bantype == BANTYPE_JOB_TEMP)
+			to_world_ban(bantype, get_key(usr), banckey, banreason, banduration, banned_jobs = banjob)
+//[/INF]
 
 		DB_ban_record(bantype, playermob, banduration, banreason, banjob, null, banckey, banip, bancid )
 
@@ -849,6 +853,7 @@
 			if(msg)
 				message_admins("[key_name_admin(usr)] unbanned [key_name_admin(M)] from [msg]", 1)
 				to_chat(M, "<span class='danger'>You have been un-jobbanned by [usr.client.ckey] from [msg].</span>")
+				to_world_ban("UNBAN", get_key(usr), ckey(M.ckey), banned_jobs = msg)	// INF
 				href_list["jobban2"] = 1 // lets it fall through and refresh
 			return 1
 		return 0 //we didn't do anything!
@@ -880,6 +885,7 @@
 				var/key = t_split[1]
 				var/job = t_split[2]
 				DB_ban_unban(ckey(key), BANTYPE_JOB_PERMA, job)
+				to_world_ban("UNBAN", get_key(usr), ckey(key), banned_jobs = job)	// INF
 
 	else if(href_list["newban"])
 		if(!check_rights(R_MOD,0) && !check_rights(R_BAN, 0))
