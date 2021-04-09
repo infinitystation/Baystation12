@@ -37,14 +37,12 @@
 		to_chat(H, SPAN_WARNING("You feel your body stiffen. It's getting harder to move around."))
 
 	else
-
 		H.visible_message(SPAN_WARNING("[H] started to turn off \the [src]"))
 
 		if(!do_after(H, 30, src))
 			return
 
 		disable_suit(H)
-
 		to_chat(H, SPAN_NOTICE("Nothing squeezes your chest. What a relief."))
 
 
@@ -59,3 +57,22 @@
 
 /obj/item/clothing/suit/constrictor_harness/dropped(mob/living/carbon/human/H)
 	disable_suit(H)
+
+/obj/item/clothing/suit/constrictor_harness/emp_act(severity)
+	var/mob/living/carbon/human/H = src.loc
+	if(H.wear_suit != src)
+		return
+	else
+		H.losebreath = 20
+		to_chat(H, SPAN_DANGER("[src] is squeezing your body too hard! It becomes impossible to breathe!"))
+
+		if(prob(40))
+			H.electrocute_act(rand(15,25), src)
+			to_chat(H, SPAN_DANGER("[src] shocked you!"))
+
+		if(suit_toggled)
+			if(prob(80))
+				H.electrocute_act(rand(30,50), src)
+				to_chat(H, SPAN_DANGER("[src] shocked you!"))
+			
+			disable_suit(H)
