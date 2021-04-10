@@ -5,6 +5,8 @@
 	body_parts_covered = UPPER_TORSO
 	action_button_name = "Toggle constrictor"
 	w_class = ITEM_SIZE_SMALL
+	canremove = 1
+	origin_tech = list(TECH_ENGINEERING = 2, TECH_ESOTERIC = 2)
 
 	var/suit_toggled = 0
 
@@ -13,6 +15,7 @@
 	if(suit_toggled)
 		suit_toggled = 0
 		slowdown_general = 0
+		canremove = 1
 		L.verbs -= /mob/living/proc/ventcrawl
 
 
@@ -30,7 +33,8 @@
 			return
 
 		suit_toggled = 1
-		slowdown_general = 10
+		slowdown_general = 9
+		canremove = 0
 
 		H.verbs += /mob/living/proc/ventcrawl
 
@@ -51,8 +55,13 @@
 
 
 /obj/item/clothing/suit/constrictor_harness/equipped(mob/living/carbon/human/H, slot)
-	if(slot != slot_wear_suit)
-		disable_suit(H)
+	if(istype(H) && (H.wear_suit == src))
+		H.visible_message(SPAN_NOTICE("[H] starts putting on \the [src]..."), SPAN_NOTICE("You start putting on \the [src]..."))
+		if(!do_after(H, 20, src))
+			if(H && H.wear_suit == src)
+				if(!H.unEquip(src))
+					return
+			return
 
 
 /obj/item/clothing/suit/constrictor_harness/dropped(mob/living/carbon/human/H)
