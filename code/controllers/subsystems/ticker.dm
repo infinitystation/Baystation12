@@ -480,10 +480,10 @@ Helpers
 	if(dronecount)
 		to_world("<b>[dronecount>1 ? "Было [dronecount] индустриальных дронов к концу раунда" : "Был всего 1 индустриальный дрон к концу раунда"].</b>")
 
-	if(all_money_accounts.len)
-		var/datum/money_account/max_profit = all_money_accounts[1]
-		var/datum/money_account/max_loss = all_money_accounts[1]
-		for(var/datum/money_account/D in all_money_accounts)
+	if(main_map_money_accounts.len)
+		var/datum/money_account/max_profit = main_map_money_accounts[1]
+		var/datum/money_account/max_loss = main_map_money_accounts[1]
+		for(var/datum/money_account/D in main_map_money_accounts)
 			if(D == vendor_account) //yes we know you get lots of money
 				continue
 			var/saldo = D.get_balance()

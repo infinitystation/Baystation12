@@ -7,8 +7,8 @@
 
 /datum/event/money_hacker/setup()
 	end_time = world.time + 6000
-	if(all_money_accounts.len)
-		affected_account = pick(all_money_accounts)
+	if(main_map_money_accounts.len)
+		affected_account = pick(main_map_money_accounts)
 
 		account_hack_attempted = 1
 	else

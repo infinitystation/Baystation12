@@ -239,8 +239,10 @@
 			return global.all_grabstates;
 		if("all_languages")
 			return global.all_languages;
-		if("all_money_accounts")
-			return global.all_money_accounts;
+		if("main_map_money_accounts")
+			return global.main_map_money_accounts;
+		if("away_map_money_accounts")
+			return global.away_map_money_accounts;
 		if("all_objectives")
 			return global.all_objectives;
 		if("all_robolimbs")
@@ -1162,8 +1164,10 @@
 			global.all_grabstates=newval;
 		if("all_languages")
 			global.all_languages=newval;
-		if("all_money_accounts")
-			global.all_money_accounts=newval;
+		if("main_map_money_accounts")
+			global.main_map_money_accounts=newval;
+		if("away_map_money_accounts")
+			global.away_map_money_accounts=newval;
 		if("all_objectives")
 			global.all_objectives=newval;
 		if("all_robolimbs")
@@ -1965,7 +1969,8 @@
 	"all_grabobjects",
 	"all_grabstates",
 	"all_languages",
-	"all_money_accounts",
+	"away_map_money_accounts",
+	"main_map_money_accounts",
 	"all_objectives",
 	"all_robolimbs",
 	"all_solved_wires",
