@@ -82,8 +82,8 @@
 			data["transactions"] = trx
 
 	var/list/accounts[0]
-	for(var/i=1, i<=all_money_accounts.len, i++)
-		var/datum/money_account/D = all_money_accounts[i]
+	for(var/i=1, i<=main_map_money_accounts.len, i++)
+		var/datum/money_account/D = main_map_money_accounts[i]
 		accounts.Add(list(list(\
 			"account_number"=D.account_number,\
 			"owner_name"=D.owner_name,\
@@ -151,8 +151,8 @@
 
 			if("view_account_detail")
 				var/index = text2num(href_list["account_index"])
-				if(index && index <= all_money_accounts.len)
-					detailed_account_view = all_money_accounts[index]
+				if(index && index <= main_map_money_accounts.len)
+					detailed_account_view = main_map_money_accounts[index]
 
 			if("view_accounts_list")
 				detailed_account_view = null
@@ -221,8 +221,8 @@
 							<tbody>
 					"}
 
-					for(var/i=1, i<=all_money_accounts.len, i++)
-						var/datum/money_account/D = all_money_accounts[i]
+					for(var/i=1, i<=main_map_money_accounts.len, i++)
+						var/datum/money_account/D = main_map_money_accounts[i]
 						text += {"
 								<tr>
 									<td>#[D.account_number]</td>
