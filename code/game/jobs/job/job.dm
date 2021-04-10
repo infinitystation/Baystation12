@@ -54,8 +54,8 @@
 	var/give_psionic_implant_on_join = TRUE // If psionic, will be implanted for control.
 
 	var/required_language
-	main_or_away_account = 1				//means that this mob from main map
-	
+	var/main_or_away_account = 1				//means that this mob from main map
+
 /datum/job/New()
 
 	if(prob(100-availablity_chance))	//Close positions, blah blah.
