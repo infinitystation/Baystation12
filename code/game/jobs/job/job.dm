@@ -54,7 +54,6 @@
 	var/give_psionic_implant_on_join = TRUE // If psionic, will be implanted for control.
 
 	var/required_language
-	var/main_or_away_account = 1				//means that this mob from main map
 
 /datum/job/New()
 
@@ -120,7 +119,7 @@
 	. = . || outfit_type
 	. = outfit_by_type(.)
 
-/datum/job/proc/setup_account(var/mob/living/carbon/human/H)
+/datum/job/proc/setup_account(var/mob/living/carbon/human/H, var/main_or_away_account = 1)
 	if(!account_allowed || (H.mind && H.mind.initial_account))
 		return
 

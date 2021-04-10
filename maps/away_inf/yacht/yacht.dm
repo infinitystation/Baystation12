@@ -59,6 +59,7 @@
 	title = "Yachtman"
 	info = "Ты, устав от богатой жизни, с друзьями путешествуешь по бескрайнему космосу, в поисках интересной жизни."
 	total_positions = 2
+	economic_power = 12
 	outfit_type = /decl/hierarchy/outfit/job/yachtman
 
 /decl/hierarchy/outfit/job/yachtman
@@ -67,7 +68,7 @@
 	pda_type = null
 
 /datum/job/submap/yachtman/equip(var/mob/living/carbon/human/H)
-	setup_submap_account(H)
+	setup_account(H, AWAY_MAP_ACC)
 	return ..()
 	
 /obj/effect/submap_landmark/spawnpoint/yachtman_spawn

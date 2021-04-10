@@ -39,8 +39,9 @@
 	return T.perform()
 
 
-/proc/create_account(var/account_name = "Default account name", var/owner_name, var/starting_funds = 0, var/account_type = ACCOUNT_TYPE_PERSONAL, var/obj/machinery/computer/account_database/source_db)
-
+/proc/create_account(var/account_name = "Default account name", var/owner_name, var/starting_funds = 0, var/main_or_away_account, var/account_type = ACCOUNT_TYPE_PERSONAL, var/obj/machinery/computer/account_database/source_db)
+		//main_or_away_account = 1, if account for mob on main map
+		//main_or_away_account = 0, if account for mob on away map
 	//create a new account
 	var/datum/money_account/M = new()
 	M.account_name = account_name
@@ -87,7 +88,10 @@
 
 	//add the account
 	T.perform()
-	all_money_accounts.Add(M)
+	if (main_or_away_account)
+		main_map_money_accounts.Add(M)
+	else
+		away_map_money_accounts.Add(M)
 
 	return M
 
@@ -98,6 +102,6 @@
 		return D
 
 /proc/get_account(var/account_number)
-	for(var/datum/money_account/D in all_money_accounts)
+	for(var/datum/money_account/D in main_map_money_accounts + away_map_money_accounts)
 		if(D.account_number == account_number)
 			return D

@@ -426,7 +426,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		weighted_mundaneevent_locations[D] = D.viable_mundane_events.len
 
 	if(!station_account)
-		station_account = create_account("[station_name()] Primary Account", "[station_name()]", starting_money, ACCOUNT_TYPE_DEPARTMENT)
+		station_account = create_account("[station_name()] Primary Account", "[station_name()]", starting_money, MAIN_MAP_ACC, ACCOUNT_TYPE_DEPARTMENT)
 
 	for(var/job in allowed_jobs)
 		var/datum/job/J = job
@@ -435,9 +435,9 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 			station_departments |= dept
 
 	for(var/department in station_departments)
-		department_accounts[department] = create_account("[department] Account", "[department]", department_money, ACCOUNT_TYPE_DEPARTMENT)
+		department_accounts[department] = create_account("[department] Account", "[department]", department_money, MAIN_MAP_ACC, ACCOUNT_TYPE_DEPARTMENT)
 
-	department_accounts["Vendor"] = create_account("Vendor Account", "Vendor", 0, ACCOUNT_TYPE_DEPARTMENT)
+	department_accounts["Vendor"] = create_account("Vendor Account", "Vendor", 0, MAIN_MAP_ACC, ACCOUNT_TYPE_DEPARTMENT)
 	vendor_account = department_accounts["Vendor"]
 
 /datum/map/proc/map_info(var/client/victim)

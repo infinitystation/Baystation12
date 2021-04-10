@@ -82,8 +82,8 @@
 			data["transactions"] = trx
 
 	var/list/accounts[0]
-	for(var/i=1, i<=all_money_accounts.len, i++)
-		var/datum/money_account/D = all_money_accounts[i]
+	for(var/i=1, i<=main_map_money_accounts.len, i++)
+		var/datum/money_account/D = main_map_money_accounts[i]
 		accounts.Add(list(list(\
 			"account_number"=D.account_number,\
 			"owner_name"=D.owner_name,\
@@ -122,7 +122,7 @@
 				starting_funds = Clamp(starting_funds, 0, station_account.money)	// Not authorized to put the station in debt.
 				starting_funds = min(starting_funds, fund_cap)						// Not authorized to give more than the fund cap.
 
-				var/datum/money_account/new_account = create_account("[account_name]'s Personal Account", account_name, starting_funds, ACCOUNT_TYPE_PERSONAL, src)
+				var/datum/money_account/new_account = create_account("[account_name]'s Personal Account", account_name, starting_funds, MAIN_MAP_ACC, ACCOUNT_TYPE_PERSONAL, src)
 				if(starting_funds > 0)
 					//subtract the money
 					station_account.money -= starting_funds
@@ -151,8 +151,8 @@
 
 			if("view_account_detail")
 				var/index = text2num(href_list["account_index"])
-				if(index && index <= all_money_accounts.len)
-					detailed_account_view = all_money_accounts[index]
+				if(index && index <= main_map_money_accounts.len)
+					detailed_account_view = main_map_money_accounts[index]
 
 			if("view_accounts_list")
 				detailed_account_view = null
@@ -221,8 +221,8 @@
 							<tbody>
 					"}
 
-					for(var/i=1, i<=all_money_accounts.len, i++)
-						var/datum/money_account/D = all_money_accounts[i]
+					for(var/i=1, i<=main_map_money_accounts.len, i++)
+						var/datum/money_account/D = main_map_money_accounts[i]
 						text += {"
 								<tr>
 									<td>#[D.account_number]</td>

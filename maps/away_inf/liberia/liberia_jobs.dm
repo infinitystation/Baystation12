@@ -1,5 +1,4 @@
 // Submap datum and archetype.
-var/AWAY_MAP_MOB = 0
 
 /decl/webhook/submap_loaded/liberia
 	id = WEBHOOK_SUBMAP_LOADED_LIBERIA
@@ -67,7 +66,7 @@ var/AWAY_MAP_MOB = 0
 	to_chat(H, "<b>Ответы на фразы</b>: <span class='danger'>[syndicate_code_response]</span>")
 	H.StoreMemory("<b>Кодовые Фразы</b>: [syndicate_code_phrase]", /decl/memory_options/system)
 	H.StoreMemory("<b>Ответы на фразы</b>: [syndicate_code_response]", /decl/memory_options/system)
-	setup_submap_account(H)
+	setup_account(H, AWAY_MAP_ACC)
 	return ..()
 
 /datum/job/submap/merchant_trainee/is_position_available()
@@ -129,7 +128,7 @@ var/AWAY_MAP_MOB = 0
 	account_allowed = TRUE
 
 /datum/job/submap/merchant_trainee/equip(var/mob/living/carbon/human/H)
-	setup_submap_account(H)
+	setup_account(H, AWAY_MAP_ACC)
 	return ..()
 	
 // Spawn points.

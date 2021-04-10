@@ -22,7 +22,7 @@
 
 
 /datum/job/submap/bearcat/equip(var/mob/living/carbon/human/H)
-	setup_submap_account(H)
+	setup_account(H, AWAY_MAP_ACC)
 	return ..()
 
 #define BEARCAT_OUTFIT_JOB_NAME(job_name) ("Bearcat - Job - " + job_name)
