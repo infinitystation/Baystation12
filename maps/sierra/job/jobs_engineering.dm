@@ -166,9 +166,6 @@
 	ideal_character_age = 24
 	economic_power = 6
 
-/datum/job/infsys/get_description_blurb()
-	return "Вы когда-нибудь хотели стать человеком, который сутками сидит на попе смирно и начинает проявлять признаки бурной деятельности, когда всё идёт коту под хвост?\
-	Поздравляю, Вы приняты на должность информационного техника. Сидите на попе смирно, серфите NTNet, истерите, когда связь внезапно обрывается, становитесь главным Hackerman-ом этой смены."
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/tcomms
 	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
 	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor)
