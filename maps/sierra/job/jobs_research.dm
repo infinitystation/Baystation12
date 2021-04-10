@@ -181,11 +181,6 @@
 			SKILL_SCIENCE		=	SKILL_MAX,
 			SKILL_CHEMISTRY		=	SKILL_MAX
 		)
-
-/datum/job/scientist_assistant/get_description_blurb()
-	return "Научный ассистент служит, в основном, для того, чтобы помогать ученым любыми способами, которые им нужны,\
-	и, благодаря этому, служит отличной отправной точкой для новых игроков, желающих узнать больше об исследованиях."
-
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/assist
 	allowed_branches = list(
 			/datum/mil_branch/employee,
@@ -203,3 +198,6 @@
 		)
 
 	minimal_access = list()
+	/datum/job/scientist_assistant/get_description_blurb()
+	return "Научный ассистент служит, в основном, для того, чтобы помогать ученым любыми способами, которые им нужны,\
+	и, благодаря этому, служит отличной отправной точкой для новых игроков, желающих узнать больше об исследованиях."
