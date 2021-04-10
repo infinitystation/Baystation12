@@ -81,6 +81,8 @@
 	name = "mantid flechette rifle"
 	desc = "A viciously pronged rifle-like weapon."
 	has_safety = FALSE
+	initial_cell_type = /obj/item/weapon/cell/mantid
+	initial_capacitor_type = /obj/item/weapon/stock_parts/capacitor/super
 	one_hand_penalty = 6
 	var/charge_per_shot = 10
 
