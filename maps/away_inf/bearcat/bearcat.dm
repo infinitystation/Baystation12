@@ -10,8 +10,8 @@
 	descriptor = "derelict cargo vessel"
 	map = "Bearcat Wreck"
 	crew_jobs = list(
-		/datum/job/submap/bearcat_captain,
-		/datum/job/submap/bearcat_crewman
+		/datum/job/submap/bearcat/bearcat_captain,
+		/datum/job/submap/bearcat/bearcat_crewman
 	)
 
 /obj/effect/overmap/visitable/ship/bearcat

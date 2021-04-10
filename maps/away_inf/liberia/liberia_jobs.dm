@@ -34,7 +34,7 @@ var/AWAY_MAP_MOB = 0
 	ideal_character_age = 30
 	minimal_player_age = 7
 	create_record = 0
-	economic_power = 15
+	economic_power = 12
 	outfit_type = /decl/hierarchy/outfit/job/liberia/merchant/leader
 	whitelisted_species = null
 	blacklisted_species = list(SPECIES_ALIEN, SPECIES_GOLEM, SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_MONARCH_WORKER, SPECIES_MONARCH_QUEEN, SPECIES_XENO)
@@ -67,28 +67,7 @@ var/AWAY_MAP_MOB = 0
 	to_chat(H, "<b>Ответы на фразы</b>: <span class='danger'>[syndicate_code_response]</span>")
 	H.StoreMemory("<b>Кодовые Фразы</b>: [syndicate_code_phrase]", /decl/memory_options/system)
 	H.StoreMemory("<b>Ответы на фразы</b>: [syndicate_code_response]", /decl/memory_options/system)
-
-	//MONEY AMOUNT GENERATION
-	var/money_amount = 4 * rand(75, 100) * economic_power
-	money_amount *= GLOB.using_map.salary_modifier
-	money_amount *= 1 + 2 * H.get_skill_value(SKILL_FINANCE)/(SKILL_MAX - SKILL_MIN)
-	money_amount = round(money_amount)
-
-	//ACCOUNT CREATION STARTED
-	var/datum/money_account/M = create_account("[H.real_name]'s account", H.real_name, money_amount, AWAY_MAP_MOB)
-	if(H.mind)
-		var/remembered_info = ""
-		remembered_info += "<b>Номер Вашего аккаунта:</b> #[M.account_number]<br>"
-		remembered_info += "<b>Пин-код:</b> [M.remote_access_pin]<br>"
-		remembered_info += "<b>Сумма на счету:</b> [GLOB.using_map.local_currency_name_short][M.money]<br>"
-
-		if(M.transaction_log.len)
-			var/datum/transaction/T = M.transaction_log[1]
-			remembered_info += "<b>Создан:</b> [T.time], [T.date] в [T.get_source_name()]<br>"
-		H.StoreMemory(remembered_info, /decl/memory_options/system)
-		H.mind.initial_account = M
-	//ACCOUNT CREATION FINISHED
-	
+	setup_submap_account(H)
 	return ..()
 
 /datum/job/submap/merchant_trainee/is_position_available()
@@ -113,7 +92,7 @@ var/AWAY_MAP_MOB = 0
 	ideal_character_age = 20
 	minimal_player_age = 0
 	create_record = 0
-	economic_power = 10
+	economic_power = 6
 	whitelisted_species = null
 	blacklisted_species = list(SPECIES_ALIEN, SPECIES_GOLEM, SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_MONARCH_WORKER, SPECIES_MONARCH_QUEEN, SPECIES_XENO)
 	alt_titles = list(
@@ -149,6 +128,10 @@ var/AWAY_MAP_MOB = 0
 
 	account_allowed = TRUE
 
+/datum/job/submap/merchant_trainee/equip(var/mob/living/carbon/human/H)
+	setup_submap_account(H)
+	return ..()
+	
 // Spawn points.
 /obj/effect/submap_landmark/spawnpoint/liberia
 	name = "Merchant"

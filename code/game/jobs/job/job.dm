@@ -54,7 +54,8 @@
 	var/give_psionic_implant_on_join = TRUE // If psionic, will be implanted for control.
 
 	var/required_language
-
+	main_or_away_account = 1				//means that this mob from main map
+	
 /datum/job/New()
 
 	if(prob(100-availablity_chance))	//Close positions, blah blah.
@@ -147,7 +148,7 @@
 		return // You are too poor for an account.
 
 	//give them an account in the station database
-	var/datum/money_account/M = create_account("[H.real_name]'s account", H.real_name, money_amount)
+	var/datum/money_account/M = create_account("[H.real_name]'s account", H.real_name, money_amount, main_or_away_account)
 	if(H.mind)
 		var/remembered_info = ""
 		remembered_info += "<b>Номер Вашего аккаунта:</b> #[M.account_number]<br>"

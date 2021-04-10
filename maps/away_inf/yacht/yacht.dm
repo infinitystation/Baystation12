@@ -66,6 +66,10 @@
 	id_type = null
 	pda_type = null
 
+/datum/job/submap/yachtman/equip(var/mob/living/carbon/human/H)
+	setup_submap_account(H)
+	return ..()
+	
 /obj/effect/submap_landmark/spawnpoint/yachtman_spawn
 	name = "Yachtman"
 

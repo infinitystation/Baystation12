@@ -1,6 +1,7 @@
-/datum/job/submap/bearcat_captain
+/datum/job/submap/bearcat/bearcat_captain
 	title = "Independant First Mate"
 	total_positions = 1
+	economic_power = 10
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/captain
 	supervisors = "собственным здравым смыслом"
 	info = "Ваш корабль получил катастрофические повреждения, что перебили свет и обрекли его на медленную смерть от астероидов \
@@ -8,15 +9,21 @@
 	что осталось от вашего экипажа, и возможно, вам удастся продержаться достаточно долго, чтобы спастись или даже вернуться в порт."
 	required_language = LANGUAGE_SPACER
 
-/datum/job/submap/bearcat_crewman
+/datum/job/submap/bearcat/bearcat_crewman
 	title = "Independant Crewman"
 	supervisors = "Капитаном"
 	total_positions = 3
+	economic_power = 6
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/crew
 	info = "Ваш корабль получил катастрофические повреждения, что перебили свет и обрекли его на медленную смерть от астероидов \
 	в глубинах неисследованного космоса. Работайте сообща с Первым Помощником и оставшимся экипажем, и возможно, \
 	вам удастся продержаться достаточно долго, чтобы спастись или даже вернуться в порт."
 	required_language = LANGUAGE_SPACER
+
+
+/datum/job/submap/bearcat/equip(var/mob/living/carbon/human/H)
+	setup_submap_account(H)
+	return ..()
 
 #define BEARCAT_OUTFIT_JOB_NAME(job_name) ("Bearcat - Job - " + job_name)
 
