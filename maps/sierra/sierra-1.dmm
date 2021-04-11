@@ -19594,7 +19594,6 @@
 "Fy" = (
 /obj/effect/paint/red,
 /obj/effect/paint_stripe/white,
-/obj/structure/fuel_port,
 /obj/machinery/atmospherics/pipe/manifold/hidden/fuel,
 /turf/simulated/wall/r_titanium,
 /area/exploration_shuttle/power)
@@ -29373,6 +29372,12 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
+"WL" = (
+/obj/effect/paint/red,
+/obj/effect/paint_stripe/white,
+/obj/structure/fuel_port,
+/turf/simulated/wall/titanium,
+/area/exploration_shuttle/power)
 "WM" = (
 /obj/effect/paint_stripe/red,
 /obj/effect/paint/red,
@@ -54077,7 +54082,7 @@ VX
 kK
 iu
 WO
-hN
+WL
 VF
 Yr
 ZD
