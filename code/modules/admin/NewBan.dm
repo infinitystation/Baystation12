@@ -146,6 +146,7 @@ var/savefile/Banlist
 		send2adminirc("[key_name_admin(usr)] unbanned: [key]")//inf
 		SSstatistics.add_field("ban_unban",1)
 		usr.client.holder.DB_ban_unban( ckey(key), BANTYPE_ANY_FULLBAN)
+		to_world_ban("UNBAN", get_key(usr), ckey(key))	// INF
 	for (var/A in Banlist.dir)
 		Banlist.cd = "/base/[A]"
 		if (key == Banlist["key"] /*|| id == Banlist["id"]*/)
