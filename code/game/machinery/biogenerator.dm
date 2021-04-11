@@ -50,6 +50,7 @@
 			/obj/item/clothing/suit/storage/toggle/bomber = 500,
 			/obj/item/clothing/suit/storage/hooded/wintercoat = 500),
 		"Cloth" = list(
+			/obj/item/weapon/bedsheet = 30, //inf
 			/obj/item/stack/tile/carpet/ten = 30,
 			/obj/item/stack/tile/carpetblue/ten = 30,
 			/obj/item/stack/tile/carpetblue2/ten = 30,
@@ -237,4 +238,4 @@
 /obj/machinery/biogenerator/RefreshParts()
 	..()
 	build_eff = Clamp(total_component_rating_of_type(/obj/item/weapon/stock_parts/manipulator), 1, 10)
-	eat_eff = Clamp(total_component_rating_of_type(/obj/item/weapon/stock_parts/matter_bin), 1, 10)
+	eat_
