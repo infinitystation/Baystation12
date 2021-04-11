@@ -5,7 +5,6 @@
 	body_parts_covered = UPPER_TORSO
 	action_button_name = "Toggle constrictor"
 	w_class = ITEM_SIZE_SMALL
-	canremove = 1
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_ESOTERIC = 2)
 
 	var/toggled = 0
@@ -26,6 +25,7 @@
 
 /obj/item/clothing/suit/constrictor_harness/proc/toggle_suit()
 	var/mob/living/carbon/human/H = src.loc
+
 	if(broken)
 		to_chat(H, SPAN_DANGER("Oh no, [src] is broken!"))
 		return
@@ -43,17 +43,13 @@
 		toggled = 1
 		slowdown_general = 9
 		canremove = 0
-
 		H.verbs += /mob/living/proc/ventcrawl
-
 		to_chat(H, SPAN_WARNING("You feel your body stiffen. It's getting harder to move around."))
 
 	else
 		H.visible_message(SPAN_WARNING("[H] started to turn off \the [src]"))
-
 		if(!do_after(H, 30, src))
 			return
-
 		disable_suit(H)
 		to_chat(H, SPAN_NOTICE("Nothing squeezes your chest. What a relief."))
 
