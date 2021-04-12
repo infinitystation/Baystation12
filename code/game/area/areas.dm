@@ -324,9 +324,9 @@ inf*/
 		for(var/obj/machinery/power/apc/temp_apc in src)
 			temp_apc.overload_lighting(70)
 		for(var/obj/machinery/door/airlock/temp_airlock in src)
-			temp_airlock.prison_open()
+			INVOKE_ASYNC(temp_airlock, /obj/machinery/door/airlock/proc/prison_open)	// INF was	temp_airlock.prison_open()
 		for(var/obj/machinery/door/window/temp_windoor in src)
-			temp_windoor.open()
+			INVOKE_ASYNC(temp_windoor, /obj/machinery/door/proc/open)	// INF was	temp_windoor.open()
 
 /area/proc/has_gravity()
 	return has_gravity
