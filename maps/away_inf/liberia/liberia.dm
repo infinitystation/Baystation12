@@ -12,9 +12,8 @@
 	description = "A Merchant ship." //Описание
 	prefix = "maps/away_inf/" //Префикс
 	suffixes = list("liberia/liberia.dmm") //Суффикс
-	cost = 0.5 //Шанса появления
+	cost = 0 //Шанса появления
 	template_flags = TEMPLATE_FLAG_SPAWN_GUARANTEED
-	spawn_weight = 50 //HABITABLE SHIPS SPAWN
 	//Инициализация шаттлов
 	shuttles_to_initialise = list(
 		/datum/shuttle/autodock/overmap/mule

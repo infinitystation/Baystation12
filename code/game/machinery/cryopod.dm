@@ -338,6 +338,8 @@
 /obj/machinery/cryopod/proc/despawn_occupant()
 	//Drop all items into the pod.
 	for(var/obj/item/W in occupant)
+		if(istype(W, /obj/item/weapon/holder))	// Не надо ронять животных ~bear1ake
+			continue
 		occupant.drop_from_inventory(W)
 		W.forceMove(src)
 
@@ -346,6 +348,13 @@
 				if(istype(O,/obj/item/weapon/storage/internal)) //Stop eating pockets, you fuck!
 					continue
 				O.forceMove(src)
+	
+	// Надо их просто удалить
+	for(var/obj/item/weapon/holder/H in occupant)
+		H.destroy_all()
+	
+	for(var/obj/item/weapon/holder/H in src.contents)
+		H.destroy_all()
 
 	//Delete all items not on the preservation list.
 	var/list/items = src.contents.Copy()

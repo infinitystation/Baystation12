@@ -1,0 +1,7 @@
+{
+  "ckey" :            "Nicroz",
+  "character_name" :  "Seneca Sybilla",
+  "item_path" :       "/obj/item/weapon/storage/briefcase/psi",
+  "req_titles" :      [ "Mentalist" ],
+  "additional_data": {"psi_ranks":{"redaction":5}}
+  }

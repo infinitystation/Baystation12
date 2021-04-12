@@ -9,7 +9,7 @@
 	description = "Vox ship and base."
 	suffixes = list("voxship/voxship-1.dmm")
 	spawn_weight = 50 //INF, HABITABLE SHIPS SPAWN
-	cost = 2 //INF, WAS 0.5
+	cost = 1000 //INF, WAS 0.5
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/vox_shuttle)
 	area_usage_test_exempted_root_areas = list(/area/voxship)
 	ban_ruins = list(/datum/map_template/ruin/away_site/scavship)
