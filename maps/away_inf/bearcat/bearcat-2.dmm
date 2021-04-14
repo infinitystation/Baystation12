@@ -6207,7 +6207,7 @@
 	pixel_y = 0
 	},
 /obj/effect/shuttle_landmark/bearcat_shuttle,
-/obj/structure/inflatable,
+/obj/structure/inflatable/wall,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/scrap/shuttle/outgoing)
 "kG" = (
