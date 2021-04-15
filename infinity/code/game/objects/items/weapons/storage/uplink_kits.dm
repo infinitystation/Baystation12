@@ -135,6 +135,14 @@
 /obj/item/weapon/storage/box/syndie_kit/imp_emp
 	startswith = list(/obj/item/weapon/implanter/emp)
 
+/obj/item/weapon/storage/box/syndie_kit/imp_chem
+	startswith = list(
+		/obj/item/weapon/implantcase/chem,
+		/obj/item/weapon/implanter,
+		/obj/item/weapon/implantpad,
+		/obj/item/weapon/reagent_containers/syringe,
+		)
+
 /obj/item/weapon/storage/backpack/dufflebag/syndie_kit/space/heavy
 	startswith = list(
 		/obj/item/clothing/suit/space/void/merc/heavy/prepared,
