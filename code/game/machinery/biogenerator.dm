@@ -56,7 +56,8 @@
 			/obj/item/stack/tile/carpetpurple/ten = 30,
 			/obj/item/stack/tile/carpetorange/ten = 30,
 			/obj/item/stack/tile/carpetgreen/ten = 30,
-			/obj/item/stack/tile/carpetred/ten = 30))
+			/obj/item/stack/tile/carpetred/ten = 30,
+			/obj/item/weapon/bedsheet = 30))  // inf
 
 /obj/machinery/biogenerator/New()
 	..()
