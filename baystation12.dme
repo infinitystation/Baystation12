@@ -3512,6 +3512,7 @@
 #include "infinity\code\modules\culture_descriptor\culture\cultures_abductors.dm"
 #include "infinity\code\modules\culture_descriptor\culture\cultures_hidden_xenophage.dm"
 #include "infinity\code\modules\culture_descriptor\culture\cultures_human.dm"
+#include "infinity\code\modules\culture_descriptor\culture\cultures_ipc.dm"
 #include "infinity\code\modules\culture_descriptor\culture\cultures_resomi.dm"
 #include "infinity\code\modules\culture_descriptor\culture\cultures_tajaran.dm"
 #include "infinity\code\modules\culture_descriptor\faction\factions_abductor.dm"

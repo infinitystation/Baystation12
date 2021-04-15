@@ -96,3 +96,10 @@
 #define HOME_SYSTEM_NYX_ROANOK           	"Roanok"
 #define HOME_SYSTEM_NYX_YUKLIT           	"Yuklit"
 #define HOME_SYSTEM_NYX_CASSER           	"Casser"
+
+// IPC cultures
+#define CULTURE_POSITRONICS_WARD       "Ward-Takahashi"
+#define CULTURE_POSITRONICS_BISHOP     "Bishop"
+#define CULTURE_POSITRONICS_HEPHAESTUS "Hephaestus"
+#define CULTURE_POSITRONICS_MORPHEUS   "Morpheus Cyberkynetics"
+#define CULTURE_POSITRONICS_XION       "Xion Manufacturing"
