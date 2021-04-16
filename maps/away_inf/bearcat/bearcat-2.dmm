@@ -1366,6 +1366,8 @@
 	},
 /obj/item/trash/tray,
 /obj/item/weapon/circular_saw,
+/obj/item/weapon/material/kitchen/utensil/fork,
+/obj/item/weapon/material/kitchen/utensil/fork,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/crew/saloon)
 "cz" = (
@@ -1476,6 +1478,8 @@
 /obj/item/weapon/board,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/item/weapon/material/kitchen/utensil/spoon,
+/obj/item/weapon/material/kitchen/utensil/spoon,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/crew/saloon)
 "cL" = (
@@ -1583,6 +1587,8 @@
 	opacity = 1
 	},
 /obj/effect/floor_decal/corner/white/diagonal,
+/obj/item/weapon/material/kitchen/utensil/fork,
+/obj/item/weapon/material/kitchen/utensil/fork,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/crew/toilets)
 "cT" = (
@@ -2178,6 +2184,8 @@
 	},
 /obj/item/weapon/reagent_containers/food/condiment/enzyme,
 /obj/item/weapon/reagent_containers/glass/rag,
+/obj/machinery/reagent_temperature/cooler,
+/obj/item/weapon/material/kitchen/utensil/spoon,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/crew/kitchen)
 "dU" = (
@@ -2356,6 +2364,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/reagent_temperature,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/crew/kitchen)
 "ek" = (
@@ -2833,6 +2842,7 @@
 /obj/machinery/power/apc/derelict/bearcat{
 	name = "Medbay APC"
 	},
+/obj/item/weapon/hemostat,
 /turf/simulated/floor/tiled/white,
 /area/ship/scrap/crew/medbay)
 "eP" = (
@@ -3481,6 +3491,7 @@
 	dir = 5;
 	icon_state = "intact"
 	},
+/obj/item/weapon/material/kitchen/utensil/spoon,
 /turf/simulated/floor/usedup,
 /area/ship/scrap/unused)
 "fT" = (
@@ -3585,12 +3596,11 @@
 /turf/simulated/floor/usedup,
 /area/ship/scrap/unused)
 "gc" = (
-/obj/machinery/power/apc/derelict{
-	cell_type = /obj/item/weapon/cell;
-	name = "Medical Bay APC"
-	},
 /obj/structure/cable,
 /obj/machinery/icecream_vat,
+/obj/machinery/power/apc/derelict/bearcat{
+	name = "Medbay APC"
+	},
 /turf/simulated/floor/usedup,
 /area/ship/scrap/unused)
 "gd" = (
@@ -6197,7 +6207,7 @@
 	pixel_y = 0
 	},
 /obj/effect/shuttle_landmark/bearcat_shuttle,
-/obj/structure/inflatable,
+/obj/structure/inflatable/wall,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/scrap/shuttle/outgoing)
 "kG" = (
