@@ -3782,6 +3782,7 @@
 #include "infinity\customs\sivuha.dm"
 #include "infinity\customs\sprites_kits.dm"
 #include "infinity\customs\stange_pill.dm"
+#include "infinity\customs\taushai.dm"
 #include "infinity\customs\thehero13.dm"
 #include "infinity\customs\tools.dm"
 #include "infinity\customs\true_gentleman.dm"
