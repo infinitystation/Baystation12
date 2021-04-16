@@ -1368,7 +1368,8 @@
 "cH" = (
 /obj/machinery/alarm{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -24;
+	req_access = list("ACCESS_BEARCAT")
 	},
 /obj/structure/closet,
 /obj/random/gloves,
