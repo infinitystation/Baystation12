@@ -65,7 +65,7 @@
 	uses = 2
 	new_icon_file = CUSTOM_ITEM_OBJ
 	new_mob_icon_file = CUSTOM_ITEM_MOB
-	new_name = "Field engineer voidsuit"
+	new_name = "Field engineer"
 	new_desc = "An older protective voidsuit used for field work."
 	new_icon = "taushai_taj_field_engineer"
 	trade_blacklisted = TRUE
