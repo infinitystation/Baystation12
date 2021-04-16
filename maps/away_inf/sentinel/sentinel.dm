@@ -46,7 +46,7 @@
 	description = "Nagashino-class Multipurpose Patrol Craft."
 	prefix = "maps/away_inf/"
 	suffixes = list("sentinel/sentinel-1.dmm", "sentinel/sentinel-2.dmm")
-	cost = 1
+	cost = 2
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/reaper)
 
 
