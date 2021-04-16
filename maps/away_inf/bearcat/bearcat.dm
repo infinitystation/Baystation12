@@ -88,7 +88,7 @@
 	base_area = /area/ship/scrap/cargo/lower
 	base_turf = /turf/simulated/floor
 
-/obj/machinery/power/apc/derelict
+/obj/machinery/power/apc/derelict/bearcat
 	cell_type = /obj/item/weapon/cell/crap/empty
 	lighting = 0
 	equipment = 0
