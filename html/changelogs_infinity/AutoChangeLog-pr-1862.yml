@@ -1,0 +1,4 @@
+author: AlexMorgan3817
+delete-after: true
+changes:
+  - tweak: Переработан код для изменения темы интерфейса.
