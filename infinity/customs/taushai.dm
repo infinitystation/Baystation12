@@ -59,28 +59,6 @@
 	trade_blacklisted = TRUE
 
 
-/obj/item/clothing/head/helmet/space/void/exploration/taushai
-	name = "Field engineer voidsuit helmet"
-	desc = "An older helmet design for hazardous field work, used by Tajara."
-	icon = CUSTOM_ITEM_OBJ
-	item_icons = list(slot_head_str = CUSTOM_ITEM_MOB)
-	icon_state = "taushai_taj_field_engineer_helmet"
-	item_state = "taushai_taj_field_engineer_helmet"
-	trade_blacklisted = TRUE
-
-
-/obj/item/clothing/suit/space/void/exploration/taushai
-	name = "Field engineer voidsuit"
-	desc = "An older protective voidsuit used for field work."
-	icon = CUSTOM_ITEM_OBJ
-	icon_state = "taushai_taj_field_engineer_suit"
-	item_state = "taushai_taj_field_engineer_suit"
-	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB)
-	trade_blacklisted = TRUE
-
-	helmet = /obj/item/clothing/head/helmet/space/void/exploration/taushai
-
-
 /obj/item/device/kit/suit/taushai
 	name = "Rajirra's voidsuit modification kit"
 	desc = "A kit for modifying a voidsuit."
