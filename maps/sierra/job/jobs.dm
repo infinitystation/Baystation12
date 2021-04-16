@@ -1,8 +1,8 @@
 /datum/map/sierra
 	species_to_job_whitelist = list(
 		/datum/species/adherent = list(/datum/job/ai, /datum/job/cyborg, /datum/job/assistant, /datum/job/janitor,\
-									   /datum/job/chef, /datum/job/cargo_tech, /datum/job/scientist,\
-									   /datum/job/doctor, /datum/job/engineer, /datum/job/mining,\
+									   /datum/job/chef, /datum/job/cargo_tech, /datum/job/scientist_assistant,\
+									   /datum/job/doctor_trainee, /datum/job/engineer, /datum/job/mining,\
 									   /datum/job/roboticist, /datum/job/chemist, /datum/job/bartender, /datum/job/explorer_engineer),
 		/datum/species/nabber = list(/datum/job/ai, /datum/job/cyborg, /datum/job/janitor, /datum/job/scientist_assistant,\
 									 /datum/job/chemist, /datum/job/roboticist, /datum/job/cargo_assistant, /datum/job/chef,\
