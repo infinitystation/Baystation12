@@ -72,3 +72,9 @@
 	item_cost = 18
 	path = /obj/item/device/scanner/health/syndie
 	desc = "A tiny microlaser, hidden in health analyzer, that can irradiate your targets."
+
+/datum/uplink_item/item/tools/constrictor_harness
+	name = "Constrictor Harness"
+	desc = "The Constrictor Harness will compress your torso upon activation, allowing you to enter narrow spaces. Using the Constrictor Harness prevents you from moving properly. Carefully look into which pipe you climb!"
+	item_cost = 60
+	path = /obj/item/weapon/storage/backpack/satchel/syndie_kit/constrictor_harness

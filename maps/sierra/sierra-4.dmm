@@ -5892,7 +5892,6 @@
 /area/tdome)
 "azd" = (
 /turf/simulated/floor/holofloor/beach/sand{
-	dir = 10;
 	icon_state = "beachcorner"
 	},
 /area/holodeck/source_beach)
