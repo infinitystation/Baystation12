@@ -1,45 +1,6 @@
-/datum/money_account
-	var/account_name = ""
-	var/owner_name = ""
-	var/account_number = 0
-	var/remote_access_pin = 0
-	var/money = 0
-	var/list/transaction_log = list()
-	var/suspended = 0
-	var/security_level = 0	//0 - auto-identify from worn ID, require only account number
-							//1 - require manual login / account number and pin
-							//2 - require card and manual login
-	var/account_type = ACCOUNT_TYPE_PERSONAL
+GLOBAL_LIST_EMPTY(away_money_accounts)
 
-/datum/money_account/New(var/account_type)
-	account_type = account_type ? account_type : ACCOUNT_TYPE_PERSONAL
-
-// is_source inverts the amount.
-/datum/money_account/proc/add_transaction(var/datum/transaction/T, is_source = FALSE)
-	money = max(is_source ? money - T.amount : money + T.amount, 0)
-	transaction_log += T
-
-/datum/money_account/proc/get_balance()
-	return money
-
-/datum/money_account/proc/log_msg(msg, machine_id)
-	var/datum/transaction/log/T = new(src, msg, machine_id)
-	return T.perform()
-
-/datum/money_account/proc/deposit(amount, purpose, machine_id)
-	var/datum/transaction/singular/T = new(src, machine_id, amount, purpose)
-	return T.perform()
-
-/datum/money_account/proc/withdraw(amount, purpose, machine_id)
-	var/datum/transaction/singular/T = new(src, machine_id, -amount, purpose)
-	return T.perform()
-
-/datum/money_account/proc/transfer(to_account, amount, purpose)
-	var/datum/transaction/T = new(src, to_account, amount, purpose)
-	return T.perform()
-
-
-/proc/create_account(var/account_name = "Default account name", var/owner_name, var/starting_funds = 0, var/account_type = ACCOUNT_TYPE_PERSONAL, var/obj/machinery/computer/account_database/source_db)
+/proc/create_away_account(var/account_name = "Default account name", var/owner_name, var/starting_funds = 0, var/account_type = ACCOUNT_TYPE_PERSONAL, var/obj/machinery/computer/account_database/source_db)
 
 	//create a new account
 	var/datum/money_account/M = new()
@@ -87,17 +48,40 @@
 
 	//add the account
 	T.perform()
-	all_money_accounts.Add(M)
+	away_money_accounts.Add(M)
 
 	return M
 
-//this returns the first account datum that matches the supplied accnum/pin combination, it returns null if the combination did not match any account
-/proc/attempt_account_access(var/attempt_account_number, var/attempt_pin_number, var/security_level_passed = 0)
-	var/datum/money_account/D = get_account(attempt_account_number)
-	if(D && D.security_level <= security_level_passed && (!D.security_level || D.remote_access_pin == attempt_pin_number) )
-		return D
+/datum/job/proc/setup_away_account(var/mob/living/carbon/human/H)
+	var/money_amount = 4 * rand(75, 100) * economic_power
 
-/proc/get_account(var/account_number)
-	for(var/datum/money_account/D in all_money_accounts+away_money_accounts)
-		if(D.account_number == account_number)
-			return D
+	// Get an average economic power for our cultures.
+	var/culture_mod =   0
+	var/culture_count = 0
+	for(var/token in H.cultural_info)
+		var/decl/cultural_info/culture = H.get_cultural_value(token)
+		if(culture && !isnull(culture.economic_power))
+			culture_count++
+			culture_mod += culture.economic_power
+	if(culture_count)
+		culture_mod /= culture_count
+	money_amount *= culture_mod
+
+	// Apply other mods.
+	money_amount *= GLOB.using_map.salary_modifier
+	money_amount *= 1 + 2 * H.get_skill_value(SKILL_FINANCE)/(SKILL_MAX - SKILL_MIN)
+	money_amount = round(money_amount)
+	//ACCOUNT CREATION STARTED
+	var/datum/money_account/M = create_away_account("[H.real_name]'s account", H.real_name, money_amount)
+	if(H.mind)
+		var/remembered_info = ""
+		remembered_info += "<b>Номер Вашего аккаунта:</b> #[M.account_number]<br>"
+		remembered_info += "<b>Пин-код:</b> [M.remote_access_pin]<br>"
+		remembered_info += "<b>Сумма на счету:</b> [GLOB.using_map.local_currency_name_short][M.money]<br>"
+
+		if(M.transaction_log.len)
+			var/datum/transaction/T = M.transaction_log[1]
+			remembered_info += "<b>Создан:</b> [T.time], [T.date] в [T.get_source_name()]<br>"
+		H.StoreMemory(remembered_info, /decl/memory_options/system)
+		H.mind.initial_account = M
+
