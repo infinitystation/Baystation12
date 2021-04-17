@@ -82,7 +82,7 @@
 				playsound(loc, 'sound/items/Deconstruct.ogg', 75, TRUE)
 				qdel(src)
 				return
-			
+
 			if (LIGHT_STAGE_WIRED)
 				to_chat(user, SPAN_WARNING("You have to remove the wires first."))
 				return
@@ -155,7 +155,19 @@
 	icon = 'icons/obj/lighting.dmi'
 	fixture_type = /obj/machinery/light/spot
 	sheets_refunded = 3
+//[INF]
+	icon = 'infinity/icons/obj/lighting_inf.dmi'
+	icon_state = "spot-construct-stage1"
 
+/obj/machinery/light_construct/spot/on_update_icon()
+	switch(stage)
+		if(LIGHT_STAGE_EMPTY)
+			icon_state = "spot-construct-stage1"
+		if(LIGHT_STAGE_WIRED)
+			icon_state = "spot-construct-stage2"
+		if(LIGHT_STAGE_COMPLETE)
+			icon_state = "spot_empty"
+//[/INF]
 // the standard tube light fixture
 /obj/machinery/light
 	name = "light fixture"
@@ -198,6 +210,11 @@
 /obj/machinery/light/spot
 	name = "spotlight"
 	desc = "A more robust socket for light tubes that demand more power."
+	//[INF]
+	icon = 'infinity/icons/obj/lighting_inf.dmi'
+	base_state = "spot"
+	item_state = "spot-construct-item"
+	//[/INF]
 	light_type = /obj/item/weapon/light/tube/large
 	construct_type = /obj/machinery/light_construct/spot
 
@@ -639,6 +656,13 @@
 /obj/item/weapon/light/tube/large
 	w_class = ITEM_SIZE_SMALL
 	name = "large light tube"
+//[INF]
+	icon = 'infinity/icons/obj/lighting_inf.dmi'
+	base_state = "lspot"
+	icon_state = "lspot"
+	matter = list(MATERIAL_GLASS = 200, MATERIAL_ALUMINIUM = 40)
+//[/INF]
+
 	b_max_bright = 0.95
 	b_inner_range = 2
 	b_outer_range = 8

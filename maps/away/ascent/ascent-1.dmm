@@ -6,7 +6,7 @@
 /turf/simulated/wall/r_wall/ascent,
 /area/ship/ascent/shuttle_starboard)
 "ad" = (
-/obj/effect/wallframe_spawn/reinforced_phoron/hull,
+/obj/effect/wallframe_spawn/reinforced_phoron/ascent_inf,
 /turf/simulated/floor/ascent,
 /area/ship/ascent/shuttle_starboard)
 "ae" = (
@@ -819,6 +819,7 @@
 "cn" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on/ascent,
 /obj/machinery/access_button/airlock_interior{
+	frequency = 1331;
 	master_tag = "ascent_seedship_fore_dock_controller";
 	pixel_x = -4;
 	pixel_y = 24
@@ -1019,10 +1020,10 @@
 /turf/simulated/floor/tiled/ascent,
 /area/ship/ascent/wing_starboard)
 "cH" = (
-/obj/effect/wallframe_spawn/reinforced_phoron/hull,
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
+/obj/effect/wallframe_spawn/reinforced_phoron/ascent_inf,
 /turf/simulated/floor/ascent,
 /area/ship/ascent/fore_starboard_prow)
 "cI" = (
@@ -1059,7 +1060,7 @@
 /turf/simulated/floor/ascent,
 /area/ship/ascent/wing_starboard)
 "cL" = (
-/obj/effect/wallframe_spawn/reinforced_phoron/hull,
+/obj/effect/wallframe_spawn/reinforced_phoron/ascent_inf,
 /turf/simulated/floor/ascent,
 /area/ship/ascent/fore_starboard_prow)
 "cN" = (
@@ -1096,11 +1097,11 @@
 /turf/simulated/floor/ascent,
 /area/ship/ascent/shuttle_starboard)
 "cU" = (
-/obj/effect/wallframe_spawn/phoron,
+/obj/effect/wallframe_spawn/reinforced_phoron/ascent_inf,
 /turf/simulated/floor/ascent,
 /area/ship/ascent/bridge)
 "cV" = (
-/obj/effect/wallframe_spawn/phoron,
+/obj/effect/wallframe_spawn/reinforced_phoron/ascent_inf,
 /turf/simulated/floor/ascent,
 /area/ship/ascent/engineering)
 "cW" = (
@@ -1364,11 +1365,10 @@
 	id_tag = "ascent_seedship_fore_external"
 	},
 /obj/effect/catwalk_plated/ascent,
-/obj/machinery/access_button/airlock_interior{
-	command = "cycle_exterior";
+/obj/machinery/access_button/airlock_exterior{
 	frequency = 1331;
 	master_tag = "ascent_seedship_fore_dock_controller";
-	pixel_x = -4;
+	pixel_x = -5;
 	pixel_y = 24
 	},
 /turf/simulated/floor/ascent,
@@ -1478,11 +1478,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
-/obj/machinery/access_button/airlock_interior,
 /turf/simulated/floor/ascent,
 /area/ship/ascent/habitation)
 "dQ" = (
-/obj/effect/wallframe_spawn/phoron,
+/obj/effect/wallframe_spawn/reinforced_phoron/ascent_inf,
 /turf/simulated/floor/ascent,
 /area/ship/ascent/wing_port)
 "dR" = (
@@ -1499,15 +1498,11 @@
 /turf/simulated/floor/ascent,
 /area/ship/ascent/hydroponics_starboard)
 "dT" = (
-/obj/effect/wallframe_spawn/reinforced_phoron/hull,
+/obj/effect/wallframe_spawn/reinforced_phoron/ascent_inf,
 /turf/simulated/floor/ascent,
 /area/ship/ascent/fore_port_prow)
-"dU" = (
-/obj/effect/wallframe_spawn/reinforced_phoron/hull,
-/turf/simulated/floor/ascent,
-/area/ship/ascent/wing_port)
 "dV" = (
-/obj/effect/wallframe_spawn/reinforced_phoron/hull,
+/obj/effect/wallframe_spawn/reinforced_phoron/ascent_inf,
 /turf/simulated/floor/ascent,
 /area/ship/ascent/shuttle_port)
 "dW" = (
@@ -1591,10 +1586,10 @@
 /turf/simulated/floor/ascent,
 /area/ship/ascent/engineering)
 "ee" = (
-/obj/effect/wallframe_spawn/reinforced_phoron/hull,
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
+/obj/effect/wallframe_spawn/reinforced_phoron/ascent_inf,
 /turf/simulated/floor/ascent,
 /area/ship/ascent/fore_port_prow)
 "ef" = (
@@ -1659,7 +1654,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/effect/wallframe_spawn/reinforced_phoron/hull,
+/obj/effect/wallframe_spawn/reinforced_phoron/ascent_inf,
 /turf/simulated/floor/ascent,
 /area/ship/ascent/shuttle_port)
 "ek" = (
@@ -1833,6 +1828,7 @@
 /obj/machinery/airlock_sensor{
 	frequency = 1331;
 	id_tag = "ascent_seedship_fore_dock_sensor";
+	master_tag = "ascent_seedship_fore_dock_controller";
 	pixel_y = 24
 	},
 /turf/simulated/floor/ascent,
@@ -2046,10 +2042,10 @@
 /turf/simulated/floor/tiled/ascent,
 /area/ship/ascent/shuttle_port)
 "eV" = (
+/obj/structure/cable/cyan,
 /obj/machinery/power/smes/buildable/power_shuttle/ascent{
 	charge = 5e+006
 	},
-/obj/structure/cable/cyan,
 /turf/simulated/floor/ascent,
 /area/ship/ascent/shuttle_starboard)
 "fa" = (
@@ -2968,7 +2964,7 @@
 /turf/simulated/floor/ascent,
 /area/ship/ascent/hydroponics_starboard)
 "gQ" = (
-/obj/effect/wallframe_spawn/phoron,
+/obj/effect/wallframe_spawn/reinforced_phoron/ascent_inf,
 /turf/simulated/floor/ascent,
 /area/ship/ascent/wing_starboard)
 "gR" = (
@@ -3029,10 +3025,10 @@
 /turf/simulated/floor/ascent,
 /area/ship/ascent/engineering)
 "gY" = (
-/obj/effect/wallframe_spawn/phoron,
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
+/obj/effect/wallframe_spawn/reinforced_phoron/ascent_inf,
 /turf/simulated/floor/ascent,
 /area/ship/ascent/hydroponics_starboard)
 "gZ" = (
@@ -3090,10 +3086,10 @@
 /turf/simulated/floor/ascent,
 /area/ship/ascent/hydroponics_port)
 "hg" = (
-/obj/effect/wallframe_spawn/phoron,
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
+/obj/effect/wallframe_spawn/reinforced_phoron/ascent_inf,
 /turf/simulated/floor/ascent,
 /area/ship/ascent/hydroponics_port)
 "hh" = (
@@ -3130,7 +3126,7 @@
 	},
 /area/ship/ascent/engineering)
 "hm" = (
-/obj/effect/wallframe_spawn/phoron,
+/obj/effect/wallframe_spawn/reinforced_phoron/ascent_inf,
 /turf/simulated/floor/ascent,
 /area/ship/ascent/habitation)
 "hn" = (
@@ -3702,10 +3698,10 @@
 /turf/simulated/floor/ascent,
 /area/ship/ascent/shuttle_port)
 "iO" = (
-/obj/effect/wallframe_spawn/reinforced_phoron/hull,
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
+/obj/effect/wallframe_spawn/reinforced_phoron/ascent_inf,
 /turf/simulated/floor/ascent,
 /area/ship/ascent/shuttle_port)
 "iP" = (
@@ -4146,7 +4142,6 @@
 /turf/simulated/floor/ascent,
 /area/ship/ascent/shuttle_port)
 "jQ" = (
-/obj/machinery/light/ascent,
 /obj/structure/cable/cyan{
 	d1 = 1;
 	d2 = 4;
@@ -4216,6 +4211,7 @@
 /obj/item/weapon/tank/jetpack/ascent,
 /obj/item/weapon/tank/jetpack/ascent,
 /obj/item/weapon/tank/jetpack/ascent,
+/obj/item/clustertool,
 /turf/simulated/floor/ascent,
 /area/ship/ascent/habitation)
 "lJ" = (
@@ -4367,7 +4363,7 @@
 /turf/simulated/floor/ascent,
 /area/ship/ascent/habitation)
 "pr" = (
-/obj/effect/wallframe_spawn/reinforced_phoron/hull,
+/obj/effect/wallframe_spawn/reinforced_phoron/ascent_inf,
 /turf/simulated/floor/ascent,
 /area/ship/ascent/fore_starboard_jut)
 "py" = (
@@ -4671,6 +4667,18 @@
 /obj/machinery/portable_atmospherics/canister/methyl_bromide,
 /turf/simulated/floor/ascent,
 /area/ship/ascent/aft_starboard_jut)
+"DF" = (
+/obj/machinery/light/ascent{
+	dir = 8
+	},
+/turf/simulated/floor/ascent,
+/area/ship/ascent/fore_port_spike)
+"DR" = (
+/obj/machinery/light/ascent{
+	dir = 8
+	},
+/turf/simulated/floor/ascent,
+/area/ship/ascent/fore_starboard_spike)
 "Ek" = (
 /obj/machinery/atmospherics/portables_connector,
 /obj/machinery/portable_atmospherics/canister/methyl_bromide,
@@ -4784,11 +4792,11 @@
 /turf/simulated/floor/ascent,
 /area/ship/ascent/aft_starboard_jut)
 "IQ" = (
-/obj/effect/wallframe_spawn/reinforced_phoron/hull,
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	icon_state = "intact";
 	dir = 4
 	},
+/obj/effect/wallframe_spawn/reinforced_phoron/ascent_inf,
 /turf/simulated/floor/ascent,
 /area/ship/ascent/shuttle_starboard)
 "IZ" = (
@@ -5200,7 +5208,7 @@
 /turf/simulated/floor/ascent,
 /area/ship/ascent/shuttle_port)
 "XG" = (
-/obj/effect/wallframe_spawn/reinforced_phoron/hull,
+/obj/effect/wallframe_spawn/reinforced_phoron/ascent_inf,
 /turf/simulated/floor/ascent,
 /area/ship/ascent/aft_starboard_jut)
 "XM" = (
@@ -8369,7 +8377,7 @@ aa
 aa
 aa
 al
-aL
+DR
 al
 aa
 aa
@@ -8381,7 +8389,7 @@ aa
 aa
 aa
 fQ
-hs
+DF
 fQ
 aa
 aa
@@ -13386,7 +13394,7 @@ fD
 aN
 jG
 bQ
-dU
+dQ
 aa
 ik
 iP
@@ -13508,7 +13516,7 @@ jo
 az
 jI
 jH
-dU
+dQ
 aa
 ik
 Qm
@@ -13630,7 +13638,7 @@ il
 az
 gI
 bQ
-dU
+dQ
 aa
 ik
 oU
@@ -14118,7 +14126,7 @@ hR
 jx
 gI
 kp
-dU
+dQ
 aa
 ik
 WI
@@ -14240,7 +14248,7 @@ cd
 da
 gI
 jK
-dU
+dQ
 aa
 ik
 WI
