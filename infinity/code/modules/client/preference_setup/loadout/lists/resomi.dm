@@ -113,3 +113,11 @@
 	flags = GEAR_HAS_COLOR_SELECTION
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_RESOMI)
+
+/datum/gear/passport/resomi
+	display_name = "(Resomi) registration document"
+	path = /obj/item/weapon/passport/xeno/resomi
+	sort_category = "Xenowear"
+	whitelisted = list(SPECIES_RESOMI)
+	custom_setup_proc = /obj/item/weapon/passport/proc/set_info
+	cost = 0
