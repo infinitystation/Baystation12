@@ -138,7 +138,6 @@ Passports
 
 /obj/item/weapon/passport/scg/pluto
 	name = "\improper Plutonian passport"
-	icon_state = "passport_scg2"
 	desc = "A passport from Pluto, within Sol Central Government space."
 
 /obj/item/weapon/passport/scg/tiamat
