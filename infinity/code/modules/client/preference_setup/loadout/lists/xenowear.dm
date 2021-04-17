@@ -28,11 +28,3 @@
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
 	flags = GEAR_HAS_TYPE_SELECTION
-
-/datum/gear/passport/tajara
-	display_name = "(Tajara) passport"
-	path = /obj/item/weapon/passport/xeno/tajara
-	whitelisted = list(SPECIES_TAJARA)
-	sort_category = "Xenowear"
-	custom_setup_proc = /obj/item/weapon/passport/proc/set_info
-	cost = 0
