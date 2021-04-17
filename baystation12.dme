@@ -3730,6 +3730,7 @@
 #include "infinity\code\procs\announce.dm"
 #include "infinity\code\procs\light_type.dm"
 #include "infinity\customs\_custkit.dm"
+#include "infinity\customs\adro.dm"
 #include "infinity\customs\adro244.dm"
 #include "infinity\customs\agrevol.dm"
 #include "infinity\customs\arhod.dm"
