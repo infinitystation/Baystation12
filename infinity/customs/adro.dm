@@ -27,7 +27,7 @@
 	raised = !raised
 	if(raised)
 		icon_state = "[icon_state]_up"
-		body_parts_covered |= EYES|FACE
+		body_parts_covered &= ~EYES|FACE
 	else
 		icon_state = initial(icon_state)
 		body_parts_covered = initial(body_parts_covered)
