@@ -154,7 +154,9 @@ Checks if a list has the same entries and values as an element of big.
 			L[item] = 1
 		total += L[item]
 
+	var/high = total	// INF
 	total = rand(1, total)
+	total = Clamp(total, total, high)	// INF
 	for (item in L)
 		total -=L [item]
 		if (total <= 0)
