@@ -1,4 +1,4 @@
-var/global/list/away_money_accounts = list()
+GLOBAL_LIST_EMPTY(away_money_accounts)
 
 /proc/create_away_account(var/account_name = "Default account name", var/owner_name, var/starting_funds = 0, var/account_type = ACCOUNT_TYPE_PERSONAL, var/obj/machinery/computer/account_database/source_db)
 
@@ -48,7 +48,7 @@ var/global/list/away_money_accounts = list()
 
 	//add the account
 	T.perform()
-	away_money_accounts.Add(M)
+	GLOB.away_money_accounts.Add(M)
 
 	return M
 
