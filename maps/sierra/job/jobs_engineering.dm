@@ -181,4 +181,7 @@
 	access = list(	access_maint_tunnels, access_network,
 			       	access_tech_storage, access_emergency_storage, access_tcomsat)
 	minimal_access = list()
-
+	
+/datum/job/infsys/get_description_blurb()
+	return "Вы когда-нибудь хотели стать человеком, который сутками сидит на попе смирно и начинает проявлять признаки бурной деятельности, когда всё идёт коту под хвост?\
+	Поздравляю, Вы приняты на должность информационного техника. Сидите на попе смирно, серфите NTNet, истерите, когда связь внезапно обрывается, становитесь главным Hackerman-ом этой смены."

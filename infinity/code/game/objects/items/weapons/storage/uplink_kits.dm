@@ -179,3 +179,10 @@
 	name = "box of gluon grenades"
 	desc = "A box containing 5 gluon grenades."
 	startswith = list(/obj/item/weapon/grenade/chem_grenade/gluon = 5)
+
+/obj/item/weapon/storage/backpack/satchel/syndie_kit/constrictor_harness
+	startswith = list(
+		/obj/item/clothing/suit/constrictor_harness,
+		/obj/item/weapon/tank/emergency/oxygen,
+		/obj/item/clothing/mask/gas/half
+	)

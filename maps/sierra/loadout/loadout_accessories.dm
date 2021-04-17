@@ -70,3 +70,4 @@
 	path = /obj/item/weapon/passport
 	flags = GEAR_HAS_SUBTYPE_SELECTION
 	custom_setup_proc = /obj/item/weapon/passport/proc/set_info
+	cost = 0
