@@ -494,6 +494,7 @@ var/list/alphabet = list("a","b","c","d","e","f","g","h","i","j","k","l","m","n"
 	t = replacetext(t, "\[fleetlogo\]", "<img src = fleetlogo.png>")
 	t = replacetext(t, "\[sfplogo\]", "<img src = sfplogo.png>")
 	t = replacetext(t, "\[ccalogo\]", "<img src = ccalogo.png>")//inf
+	t = replacetext(t, "\[sierralogo\]", "<img src = sierralogo.png>")//inf
 	t = replacetext(t, "\[editorbr\]", "")
 	return t
 
@@ -551,6 +552,7 @@ var/list/alphabet = list("a","b","c","d","e","f","g","h","i","j","k","l","m","n"
 	t = replacetext(t, "<img src = xynlogo.png>", "\[xynlogo\]")
 	t = replacetext(t, "<img src = sfplogo.png>", "\[sfplogo\]")
 	t = replacetext(t, "<img src = ccalogo.png>", "\[ccalogo\]")//inf
+	t = replacetext(t, "<img src = sierralogo.png>", "\[sierralogo\]")//inf
 	t = replacetext(t, "<span class=\"paper_field\"></span>", "\[field\]")
 	t = replacetext(t, "<span class=\"redacted\">R E D A C T E D</span>", "\[redacted\]")
 	t = strip_html_properly(t)
