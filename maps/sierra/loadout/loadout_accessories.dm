@@ -80,7 +80,7 @@
 	custom_setup_proc = /obj/item/weapon/passport/proc/set_info
 	cost = 0
 
-/datum/gear/passport/independent
+/datum/gear/passport
 	display_name = "passports selection - independent"
 	description = "A selection of independent regions passports."
 	path = /obj/item/weapon/passport/independent
