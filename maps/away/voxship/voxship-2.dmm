@@ -124,7 +124,7 @@
 "ct" = (/obj/machinery/atmospherics/unary/vent_scrubber/on,/obj/machinery/computer/shuttle_control/explore/vox_ship,/turf/simulated/floor/tiled/techmaint/vox,/area/voxship/fore)
 "cu" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/effect/decal/cleanable/filth,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/techmaint/vox,/area/voxship/fore)
 "cv" = (/obj/random/junk,/obj/machinery/power/apc{dir = 1; name = "north bump"; pixel_x = 0; pixel_y = 24; req_access = newlist()},/obj/structure/cable{d2 = 2; icon_state = "0-2"; pixel_y = 0},/turf/simulated/floor/tiled/techmaint/vox,/area/voxship/fore)
-"cw" = (/obj/machinery/light/small{icon_state = "bulb1"; dir = 4},/turf/simulated/floor/tiled/techmaint/vox,/area/voxship/fore)
+"cw" = (/obj/machinery/light/small{icon_state = "bulb1"; dir = 4},/obj/machinery/hologram/holopad/longrange/remoteship,/turf/simulated/floor/tiled/techmaint/vox,/area/voxship/fore)
 "cx" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/wall/prepainted,/area/voxship/fore)
 "cy" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/door/airlock/hatch/voxship,/turf/simulated/floor/tiled/techmaint/vox,/area/voxship/fore)
 "cz" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 8},/obj/item/weapon/storage/toolbox/electrical,/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/structure/catwalk,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 6},/turf/simulated/floor/plating/vox,/area/voxship/scavship)
@@ -330,6 +330,7 @@
 "gr" = (/obj/machinery/atmospherics/unary/vent_scrubber/on,/obj/structure/table/rack,/obj/item/weapon/gun/projectile/dartgun/vox/raider,/obj/item/ammo_magazine/chemdart,/obj/item/ammo_magazine/chemdart,/obj/item/ammo_magazine/chemdart,/obj/item/ammo_magazine/chemdart,/obj/item/weapon/reagent_containers/glass/bottle/chloralhydrate,/obj/item/weapon/reagent_containers/glass/bottle/chloralhydrate,/turf/simulated/floor/tiled/techmaint/vox,/area/voxship/fore)
 "gs" = (/obj/random/loot,/turf/simulated/floor/airless,/area/space)
 "gt" = (/obj/structure/ore_box,/turf/simulated/floor/tiled/techmaint/vox,/area/voxship/scavship)
+"gu" = (/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/machinery/hologram/holopad/longrange/remoteship,/turf/simulated/floor/tiled/techmaint/vox,/area/voxship/shuttle)
 "gx" = (/obj/machinery/atmospherics/pipe/simple/hidden/universal{icon_state = "map_universal"; dir = 4},/turf/simulated/wall/r_wall/hull/vox,/area/voxship/shuttle)
 "gy" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 10},/turf/simulated/wall/r_wall/hull/vox,/area/voxship/shuttle)
 "gz" = (/turf/simulated/wall/r_wall/hull/vox,/area/voxship/shuttle)
@@ -348,7 +349,6 @@
 "gM" = (/obj/structure/bed/chair/shuttle/black{icon_state = "shuttle_chair_preview"; dir = 8},/turf/simulated/floor/tiled/techmaint/vox,/area/voxship/shuttle)
 "gN" = (/turf/simulated/floor/tiled/techmaint/vox,/area/voxship/shuttle)
 "gO" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{icon_state = "map_scrubber_on"; dir = 1},/turf/simulated/floor/tiled/techmaint/vox,/area/voxship/shuttle)
-"gP" = (/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/turf/simulated/floor/tiled/techmaint/vox,/area/voxship/shuttle)
 "gQ" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_y = 0},/obj/effect/decal/cleanable/filth,/turf/simulated/floor/tiled/techmaint/vox,/area/voxship/shuttle)
 "gR" = (/obj/machinery/power/terminal{icon_state = "term"; dir = 1},/obj/structure/cable{d2 = 8; icon_state = "0-8"},/turf/simulated/floor/tiled/techmaint/vox,/area/voxship/shuttle)
 "gS" = (/obj/random/junk,/turf/simulated/floor/tiled/techmaint/vox,/area/voxship/shuttle)
@@ -426,7 +426,7 @@ fXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXatatatarfM
 fXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXatatatatatataafXfXfXfXfXfXfXfDgBfDfXfXfXfXfXfXacacgcacacabbEaffXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfX
 fXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXatfXatfXatfXfXfXfXgggxgygzgzgAgzgzgzgzgzfXfXfXacacacfXfXababfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfX
 fXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXatfXfXfXfXfXfXgzgzgCgDgEgFgGgHgIgJgKfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfX
-fXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfGfGfGfGfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXatfXfXfXfXfXfXgzgLgMgNgOgPgQgRgSgTgKfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfX
+fXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfGfGfGfGfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXatfXfXfXfXfXfXgzgLgMgNgOgugQgRgSgTgKfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfX
 fXfXfXfXfXfXfXfXfXfXfXfXfXfXfGfGfGfGfGfGfGfXfXfXfGfGfGfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXgzgUgMgVgWgXgYgNgNgZgKfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfX
 fXfXfXfXfXfXfXfXfXfXfXfXfXfGfGfGfGfGfGfGfGfGfXfGfGfGfGfGfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXgzgzhahbhchdhehghhhigKfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfX
 fXfXfXfXfXfXfXfXfXfXfXfXfXfGfGfGfGfGfGfGfGfGfGfGfGfGfGfGfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXhfgzgzgzgzgzgzgzgzgzgzfXfXfXfXfXfXfXfXfXfXfXfGfGfGfGfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfXfX
