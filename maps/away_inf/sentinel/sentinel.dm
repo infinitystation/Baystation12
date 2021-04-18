@@ -46,7 +46,7 @@
 	description = "Nagashino-class Multipurpose Patrol Craft."
 	prefix = "maps/away_inf/"
 	suffixes = list("sentinel/sentinel-1.dmm", "sentinel/sentinel-2.dmm")
-	cost = 0.2
+	cost = 0.3
 	spawn_weight = 0.1 //INF
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/reaper)
 
