@@ -28,8 +28,8 @@
 	description = "Tiny movable ship with ~spiders~ riches."
 	prefix = "maps/away_inf/"
 	suffixes = list("yacht/yacht.dmm")
-	cost = 0.5
-	spawn_weight = 0.67 //INF
+	cost = 0.3
+	spawn_weight = 0.1 //INF
 	area_usage_test_exempted_root_areas = list(/area/yacht)
 
 /obj/effect/shuttle_landmark/nav_yacht/nav1

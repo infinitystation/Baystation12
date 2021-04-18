@@ -94,8 +94,8 @@
 	id = "awaysite_voxship2"
 	description = "Vox Scavenger Ship."
 	suffixes = list("voxship/voxship-2.dmm")
-	cost = 0.5
-	spawn_weight = 0.67 //INF
+	cost = 0.3
+	spawn_weight = 0.2 //INF
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/vox_ship, /datum/shuttle/autodock/overmap/vox_lander)
 	ban_ruins = list(/datum/map_template/ruin/away_site/voxship)
 
