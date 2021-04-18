@@ -146,17 +146,13 @@
 /obj/structure/bed/Move()
 	. = ..()
 	if(buckled_mob)
-		GLOB.moved_event.unregister(buckled_mob, src, /obj/proc/unbuckle_mob)	// INF
 		buckled_mob.forceMove(src.loc)
-		GLOB.moved_event.register(buckled_mob, src, /obj/proc/unbuckle_mob)	// INF
 
 /obj/structure/bed/forceMove()
 	. = ..()
 	if(buckled_mob)
 		if(isturf(src.loc))
-			GLOB.moved_event.unregister(buckled_mob, src, /obj/proc/unbuckle_mob)	// INF
 			buckled_mob.forceMove(src.loc)
-			GLOB.moved_event.register(buckled_mob, src, /obj/proc/unbuckle_mob)	// INF
 		else
 			unbuckle_mob()
 

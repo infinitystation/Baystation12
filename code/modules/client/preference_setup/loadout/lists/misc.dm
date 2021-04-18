@@ -217,6 +217,7 @@
 /datum/gear/cigars
 	display_name = "fancy cigar case"
 	path = /obj/item/weapon/storage/fancy/cigar
+	cost = 2
 
 /datum/gear/cigar
 	display_name = "fancy cigar"

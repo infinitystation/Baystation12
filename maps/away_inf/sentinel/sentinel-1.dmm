@@ -773,7 +773,6 @@
 /turf/simulated/floor/plating,
 /area/ship/patrol/maintenance/atmos)
 "by" = (
-/obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /turf/simulated/floor/plating,
 /area/ship/patrol/maintenance/atmos)
@@ -5143,11 +5142,6 @@
 /area/ship/patrol/engineering/shield)
 "jF" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
 	},
@@ -5165,9 +5159,9 @@
 /area/ship/patrol/engineering/shield)
 "jG" = (
 /obj/machinery/power/shield_generator,
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/plating,
 /area/ship/patrol/engineering/shield)
@@ -6739,6 +6733,11 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/plating,
 /area/ship/patrol/engineering/fussion/control)
 "mG" = (
@@ -7243,6 +7242,15 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/barracks)
+"nF" = (
+/obj/effect/paint/dark_gunmetal,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/wall/r_wall,
+/area/ship/patrol/command/hangar)
 "nG" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -7815,6 +7823,9 @@
 /obj/item/stack/material/deuterium/fifty,
 /obj/item/stack/material/uranium/ten,
 /obj/item/stack/material/deuterium/fifty,
+/obj/item/stack/material/tritium/fifty,
+/obj/item/stack/material/tritium/fifty,
+/obj/item/stack/material/tritium/fifty,
 /turf/simulated/floor/plating,
 /area/ship/patrol/engineering/fussion/control)
 "oJ" = (
@@ -7954,10 +7965,12 @@
 /obj/structure/sign/warning/high_voltage{
 	pixel_x = -32
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+/obj/machinery/computer/air_control{
+	dir = 4;
+	frequency = 1442;
+	input_tag = "patrol_rust";
+	name = "RUST Injector Control Console";
+	output_tag = null
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/engineering/fussion/control)
@@ -7975,11 +7988,6 @@
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/engineering/fussion/control)
@@ -8261,7 +8269,7 @@
 	dir = 1;
 	pixel_y = -24
 	},
-/obj/machinery/portable_atmospherics/canister/hydrogen,
+/obj/machinery/portable_atmospherics/canister/hydrogen/engine_setup,
 /turf/simulated/floor,
 /area/ship/patrol/engineering/fussion/control)
 "pD" = (
@@ -8684,7 +8692,6 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/portable_atmospherics/canister/helium,
 /turf/simulated/floor/plating,
 /area/ship/patrol/engineering/fussion/control)
 "Ex" = (
@@ -8880,6 +8887,15 @@
 /obj/machinery/hologram/holopad/longrange,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/reaper)
+"Nt" = (
+/obj/effect/paint/dark_gunmetal,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/wall/r_wall,
+/area/ship/patrol/command/hangar)
 "NY" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
@@ -8913,6 +8929,15 @@
 	},
 /turf/simulated/floor/plating,
 /area/ship/reaper)
+"Pn" = (
+/obj/effect/paint/dark_gunmetal,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/wall/r_wall,
+/area/ship/patrol/engineering/fussion/control)
 "PD" = (
 /obj/effect/paint/dark_gunmetal,
 /obj/structure/cable{
@@ -17986,12 +18011,12 @@ fa
 hB
 is
 fa
-Ne
-Ne
-Ne
-Ne
-Ne
-md
+Nt
+nF
+nF
+nF
+nF
+Pn
 mF
 nf
 nM

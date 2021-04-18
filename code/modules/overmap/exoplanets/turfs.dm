@@ -240,6 +240,7 @@
 	var/obj/effect/overlay/O = new(src)
 	O.mouse_opacity = 2
 	O.name = "distant terrain"
+	O.anchored = 1	// INF прикручиваем гвоздями, чтоб не пиздили телесалом
 	O.desc = "You need to come over there to take a better look."
 
 /turf/simulated/planet_edge/Bumped(atom/movable/A)

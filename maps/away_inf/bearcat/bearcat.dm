@@ -38,8 +38,8 @@
 	description = "A wrecked light freighter."
 	prefix = "maps/away_inf/"
 	suffixes = list("bearcat/bearcat-1.dmm", "bearcat/bearcat-2.dmm")
-	spawn_weight = 50 //INF, HABITABLE SHIPS SPAWN
-	cost = 2 //INF, WAS 1
+	cost = 0.5 //INF, WAS 1
+	spawn_weight = 0.67 //INF
 	shuttles_to_initialise = list(/datum/shuttle/autodock/ferry/lift, /datum/shuttle/autodock/overmap/exploration)
 	area_usage_test_exempted_root_areas = list(/area/ship)
 	apc_test_exempt_areas = list(
@@ -88,13 +88,13 @@
 	base_area = /area/ship/scrap/cargo/lower
 	base_turf = /turf/simulated/floor
 
-/obj/machinery/power/apc/derelict
+/obj/machinery/power/apc/derelict/bearcat
 	cell_type = /obj/item/weapon/cell/crap/empty
 	lighting = 0
 	equipment = 0
 	environ = 0
-	locked = 0
-	coverlocked = 0
+	locked = 1
+	coverlocked = 1
 
 /obj/machinery/door/airlock/autoname/command
 	door_color = COLOR_COMMAND_BLUE

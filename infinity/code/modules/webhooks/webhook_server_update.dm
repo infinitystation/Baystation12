@@ -14,7 +14,7 @@
 		return
 	else if(data["status"] == "requested")
 		var/ckey = data["ckey"]
-		desc += "[ckey ? "[ckey] запросил" : "Запрошено"] обновление сервера\n"
+		desc += "[ckey ? "**[ckey]** запросил" : "Запрошено"] обновление сервера\n"
 		desc += "Мы пытаемся обновиться не прерывая игру"
 	else if(data["status"] == "failure")
 		desc += "Обновление не удалось\n"
@@ -25,11 +25,11 @@
 		desc += "Сервер может быть недоступен дольше чем обычно"
 		var/ckey = data["ckey"]
 		if(ckey)
-			desc += "\n\nДосрочный рестарт подтвержден [ckey]"
+			desc += "\n\nДосрочный рестарт подтвержден **[ckey]**"
 			color = COLOR_WEBHOOK_BAN
 	else if(data["status"] == "canceled")
 		var/ckey = data["ckey"]
-		desc += "Обновление в конце раунда отменено[ckey ? " [ckey]" : ""]."
+		desc += "Обновление в конце раунда отменено[ckey ? " **[ckey]**" : ""]."
 		color = COLOR_WEBHOOK_XENO
 	else if(data["status"] == "delay")
 		desc += "Обновление отложено на конец раунда"
