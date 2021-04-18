@@ -358,6 +358,9 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 
 	while (budget > 0 && length(available))
 		var/datum/map_template/ruin/away_site/site = pickweight(available)
+		if (!site)	// Имеются некоторые проблемы с авейками, надо проверять, есть ли авейка ~bear1ake
+			report_progress("Some away site is gone!")
+			continue
 		if (site.cost > budget)
 			unavailable += site
 			available -= site
