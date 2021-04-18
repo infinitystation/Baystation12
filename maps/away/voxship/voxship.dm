@@ -8,7 +8,7 @@
 	id = "awaysite_voxship"
 	description = "Vox ship and base."
 	suffixes = list("voxship/voxship-1.dmm")
-	spawn_weight = 0 //INF, HABITABLE SHIPS SPAWN | Зачем пытаться его брать, если стоимость много раз более бюджета? ~bear1ake
+	spawn_weight = 50 //INF, HABITABLE SHIPS SPAWN
 	cost = 9999 //INF, WAS 0.5
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/vox_shuttle)
 	area_usage_test_exempted_root_areas = list(/area/voxship)
