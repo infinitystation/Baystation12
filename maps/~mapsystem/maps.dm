@@ -347,9 +347,13 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		if (site.template_flags & TEMPLATE_FLAG_SPAWN_GUARANTEED)
 			guaranteed += site
 			if ((site.template_flags & TEMPLATE_FLAG_ALLOW_DUPLICATES) && !(site.template_flags & TEMPLATE_FLAG_RUIN_STARTS_DISALLOWED))
-				available[site] = site.spawn_weight
+				/* Не знаю, кому в голову пришло запихивать всякие дробные числа, когда rand их не может поддерживать,
+				* но давайте мы улучшим ситуацию, умножив "массу" каждой авейки на 100 и округлив её до целых.
+				* Так мы сможем адекватнее подбирать и балансировать авейки и не ломать pickweight. 
+				* А ещё не нужно делать стоимость в 0. Иначе просто ничего не выберется ~bear1ake */
+				available[site] = round(site.spawn_weight * 100) // INF, было available[site] = site.spawn_weight
 		else if (!(site.template_flags & TEMPLATE_FLAG_RUIN_STARTS_DISALLOWED))
-			available[site] = site.spawn_weight
+			available[site] = round(site.spawn_weight * 100) // INF, было available[site] = site.spawn_weight
 		by_type[site.type] = site
 
 	var/budget = away_site_budget
