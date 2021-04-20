@@ -2,7 +2,7 @@
 
 /obj/item/device/hailer/roer
 	name = "Voice Helper"
-	desc = "This is a kind of modification of the standard heielr."
+	desc = "This is a kind of modification of the standard hailer."
 
 	use_message = "I need a medic!"
 	action_button_name = "Use Voice Helper"
