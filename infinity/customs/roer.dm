@@ -7,12 +7,11 @@
 	use_message = "I need a medic!"
 	action_button_name = "Use Voice Helper"
 
-	var/voicelines = list(
+	var/list/voicelines = list(
 		'infinity/sound/customs/roer_voice_helper/voice_helper_one.ogg',
 		'infinity/sound/customs/roer_voice_helper/voice_helper_two.ogg',
 		'infinity/sound/customs/roer_voice_helper/voice_helper_three.ogg',
 	)
-	var/time_used
 
 
 /obj/item/device/hailer/roer/set_message()
@@ -33,28 +32,31 @@
 	to_chat(usr, "You configure the hailer to shout \"[use_message]\".")
 
 
+/obj/item/device/hailer/roer/proc/reset_spamcheck()
+	spamcheck = 0
+
+
 /obj/item/device/hailer/roer/attack_self(mob/living/carbon/user as mob)
-	if (!(world.time > time_used + 3 SECONDS))
+	if (spamcheck)
 		return
 
 	if(isnull(insults))
-		time_used = world.time
 		if(prob(5))
 			playsound(get_turf(src), 'infinity/sound/customs/roer_voice_helper/voice_helper_four.ogg', 60, 1, vary = 0)
 		else
 			playsound(get_turf(src), pick(voicelines), 70, 1, vary = 0)
 		user.audible_message("<span class='warning'>[user]'s [name] rasps, \"[use_message]\"</span>", null, "<span class='warning'>\The [user] holds up \the [name].</span>")
-		
-		/*
-		// Don't uncomment this. This thing adds "talk bubble" after activating hailer.
+
 		if(user)
 			var/list/observers = list()
 			for(var/mob/M in viewers(user, null))
 				if ((M.client && !( M.blinded )))
 					observers.Add(M.client)
-			var/image/I = image('infinity/icons/mob/talk.dmi', user, "call_medic", MOB_LAYER + 1)
+			var/image/I = image('infinity/icons/customs/infinity_custom_items_effects.dmi', user, "roer_voice_helper_call", MOB_LAYER + 1)
 			animate_speech_bubble(I, observers, 30)
-		*/
-	
+
+		spamcheck = 1
+		addtimer(CALLBACK(src, .proc/reset_spamcheck), 3 SECOND)
+
 	else
 		to_chat(user, SPAN_DANGER("*BZZZZZZZZT*"))
