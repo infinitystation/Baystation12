@@ -5,7 +5,7 @@ GLOBAL_LIST_INIT(crashed_pod_areas, new)
 	id = "crashed_pod"
 	description = "A crashed survival pod from a destroyed ship."
 	suffixes = list("crashed_pod/crashed_pod.dmm")
-	cost = 2
+	spawn_cost = 2
 	player_cost = 1 // INF, было player_cost = 4 | Нынешнее значение основано на количестве игроков в авейке ~bear1ake
 	template_flags = TEMPLATE_FLAG_CLEAR_CONTENTS | TEMPLATE_FLAG_NO_RUINS | TEMPLATE_FLAG_NO_RADS
 	ruin_tags = RUIN_HUMAN|RUIN_WRECK

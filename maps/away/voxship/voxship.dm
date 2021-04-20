@@ -96,7 +96,7 @@
 	suffixes = list("voxship/voxship-2.dmm")
 	spawn_cost = 0.5
 	player_cost = 5 // INF, было player_cost = 4 | Нынешнее значение основано на количестве игроков в авейке ~bear1ake
-	spawn_weight = 0.67 //INF
+	spawn_weight = 1 // INF, spawn_weight = 0.67
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/vox_ship, /datum/shuttle/autodock/overmap/vox_lander)
 	ban_ruins = list(/datum/map_template/ruin/away_site/voxship)
 

@@ -12,7 +12,7 @@
 	suffixes = list("ascent/ascent-1.dmm")
 	spawn_cost = 0.5
 	player_cost = 7 // INF, было player_cost = 4 | Нынешнее значение основано на количестве игроков в авейке ~bear1ake
-	spawn_weight = 0.67
+	spawn_weight = 1 // INF, spawn_weight = 0.67
 	shuttles_to_initialise = list(
 		/datum/shuttle/autodock/overmap/ascent,
 		/datum/shuttle/autodock/overmap/ascent/two

@@ -125,7 +125,7 @@
 	id = "awaysite_mining_signal"
 	description = "A mineral-rich, formerly-volcanic site on a planetoid."
 	suffixes = list("mining/mining-signal.dmm")
-	cost = 1
+	spawn_cost = 1
 	base_turf_for_zs = /turf/simulated/floor/asteroid
 
 /obj/effect/shuttle_landmark/away
