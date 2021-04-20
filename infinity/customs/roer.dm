@@ -12,6 +12,7 @@
 		'infinity/sound/customs/roer_voice_helper/voice_helper_two.ogg',
 		'infinity/sound/customs/roer_voice_helper/voice_helper_three.ogg',
 	)
+	var/time_used
 
 
 /obj/item/device/hailer/roer/set_message()
@@ -33,18 +34,27 @@
 
 
 /obj/item/device/hailer/roer/attack_self(mob/living/carbon/user as mob)
-	if (spamcheck)
+	if (!(world.time > time_used + 3 SECONDS))
 		return
 
 	if(isnull(insults))
+		time_used = world.time
 		if(prob(5))
 			playsound(get_turf(src), 'infinity/sound/customs/roer_voice_helper/voice_helper_four.ogg', 60, 1, vary = 0)
 		else
 			playsound(get_turf(src), pick(voicelines), 70, 1, vary = 0)
 		user.audible_message("<span class='warning'>[user]'s [name] rasps, \"[use_message]\"</span>", null, "<span class='warning'>\The [user] holds up \the [name].</span>")
+		
+		/*
+		// Don't uncomment this. This thing adds "talk bubble" after activating hailer.
+		if(user)
+			var/list/observers = list()
+			for(var/mob/M in viewers(user, null))
+				if ((M.client && !( M.blinded )))
+					observers.Add(M.client)
+			var/image/I = image('infinity/icons/mob/talk.dmi', user, "call_medic", MOB_LAYER + 1)
+			animate_speech_bubble(I, observers, 30)
+		*/
+	
 	else
 		to_chat(user, SPAN_DANGER("*BZZZZZZZZT*"))
-
-	spamcheck = 1
-	spawn(35)
-		spamcheck = 0
