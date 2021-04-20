@@ -3778,6 +3778,7 @@
 #include "infinity\customs\quiet.dm"
 #include "infinity\customs\redknighthero.dm"
 #include "infinity\customs\rockcoats.dm"
+#include "infinity\customs\roer.dm"
 #include "infinity\customs\sallyvadordomold.dm"
 #include "infinity\customs\sarov.dm"
 #include "infinity\customs\sivuha.dm"
