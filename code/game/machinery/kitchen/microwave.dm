@@ -24,8 +24,12 @@
 
 	var/list/ingredients = list()
 
+
+// [INF] For Cargo Supplypacks
 /obj/machinery/microwave/unsecured
 	anchored = 0
+	base_type = /obj/machinery/microwave
+// [/INF]
 
 
 // see code/modules/food/recipes_microwave.dm for recipes
