@@ -30,6 +30,13 @@
 		EVAC_OPT_CANCEL_BLUESPACE_JUMP = new /datum/evacuation_option/cancel_bluespace_jump()
 	)
 
+/datum/evacuation_controller/starship/fast/launch_evacuation()
+	if(emergency_evacuation)
+		SSwebhooks.send(WEBHOOK_NEAR_END, list("reason" = "Получен аварийный сигнал с борта **[GLOB.using_map.name]**! Это эвакуация?"))	// INF
+	else
+		SSwebhooks.send(WEBHOOK_NEAR_END, list("reason" = "Потерян контакт с **[GLOB.using_map.name]**. К счастью, это всего лишь на время БлюСпейс прыжка."))	// INF
+	. = ..()
+
 /datum/evacuation_controller/starship/fast/cancel_evacuation()
 	var/emerg = emergency_evacuation
 	. = ..()
