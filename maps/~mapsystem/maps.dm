@@ -366,6 +366,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	var/players = -min_offmap_players
 	for (var/client/C)
 		++players
+	var/players_budget = players // INF, для логирования ~bear1ake
 
 	for (var/datum/map_template/ruin/away_site/site in guaranteed)
 		var/list/costs = resolve_site_selection(site, selected, available, unavailable, by_type)
@@ -382,7 +383,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		points -= costs[1]
 		players -= costs[2]
 
-	report_progress("Finished selecting away sites ([english_list(selected)]) for [away_site_budget - points] cost of [away_site_budget] budget.")
+	report_progress("Finished selecting away sites ([english_list(selected)]) for [away_site_budget - points] cost of [away_site_budget] spawn and [players_budget] players budget.") // INF, было report_progress("Finished selecting away sites ([english_list(selected)]) for [away_site_budget - points] cost of [away_site_budget] budget.") 
 
 	for (var/datum/map_template/template in selected)
 		if (template.load_new_z())
