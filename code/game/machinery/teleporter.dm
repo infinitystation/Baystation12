@@ -268,17 +268,15 @@
 	overlays.Cut()
 	overlays += image('icons/obj/stationobjs.dmi', icon_state = "controller-wires")
 
-/obj/machinery/teleport/station/attackby(var/obj/item/weapon/W, var/mob/user)
-	attack_hand(user)
 
 /obj/machinery/teleport/station/interface_interact(var/mob/user)
 	if(!CanInteract(user, DefaultTopicState()))
-		return FALSE
+		return ..()
 	if(engaged)
 		disengage()
 	else
 		engage()
-	return TRUE
+	return ..()
 
 /obj/machinery/teleport/station/proc/engage()
 	if(stat & (BROKEN|NOPOWER))
@@ -331,3 +329,5 @@
 		icon_state = "controller-p"
 	else
 		icon_state = "controller"
+
+
