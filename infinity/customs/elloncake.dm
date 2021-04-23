@@ -7,6 +7,6 @@
 	new_icon_file = CUSTOM_ITEM_OBJ
 	new_mob_icon_file = CUSTOM_ITEM_MOB
 	new_name = "skrellian exosuit operator"
-	new_desc = "An older protective voidsuit used for field work."
+	new_desc = "Commonly used by exosuit operators in skrellian space, this voidsuit is cheap but reliable."
 	new_icon = "elloncake_skrell_explorerer"
 	trade_blacklisted = TRUE
