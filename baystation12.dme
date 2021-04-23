@@ -3748,6 +3748,7 @@
 #include "infinity\customs\deadlizard.dm"
 #include "infinity\customs\diesiege.dm"
 #include "infinity\customs\eguitar.dm"
+#include "infinity\customs\elloncake.dm"
 #include "infinity\customs\eugen00751.dm"
 #include "infinity\customs\explorer.dm"
 #include "infinity\customs\exporation_voids.dm"
