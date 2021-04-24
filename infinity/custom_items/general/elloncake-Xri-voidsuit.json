@@ -1,0 +1,6 @@
+{
+	"ckey" :            "elloncake",
+	"character_name" :  "Xri'luz Ziquamx",
+	"req_access" :      [ "ACCESS_EXPLORER" ],
+	"item_path" :       "/obj/item/device/kit/suit/elloncake"
+	}
