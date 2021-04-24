@@ -18,3 +18,5 @@
 	var/ambience_delay = 2 MINUTE
 
 	var/deny_notdead_observer_becoming = FALSE
+
+	var/donaters_only_emoji = FALSE
