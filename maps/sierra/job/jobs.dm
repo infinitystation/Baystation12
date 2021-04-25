@@ -6,7 +6,7 @@
 									   /datum/job/roboticist, /datum/job/chemist, /datum/job/bartender, /datum/job/explorer_engineer),
 		/datum/species/nabber = list(/datum/job/ai, /datum/job/cyborg, /datum/job/janitor, /datum/job/scientist_assistant,\
 									 /datum/job/chemist, /datum/job/roboticist, /datum/job/cargo_assistant, /datum/job/chef,\
-									 /datum/job/engineer_trainee, /datum/job/doctor_trainee, /datum/job/bartender),
+									 /datum/job/engineer_trainee, /datum/job/doctor_trainee, /datum/job/bartender, /datum/job/cargo_tech),
 		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg),
 		/datum/species/human/mule	= list(/datum/job/ai, /datum/job/cyborg, /datum/job/submap/merchant, /datum/job/submap/merchant_trainee)
 	)
@@ -73,15 +73,63 @@
 				species_blacklist |= job.type
 */
 
-// Some jobs for nabber grades defined here due to map-specific job datums.
-/decl/cultural_info/culture/nabber/New()
-	LAZYADD(valid_jobs, list(/datum/job/scientist_assistant, /datum/job/cargo_assistant))
-	..()
 
-// Нет сервисным должностям с пометкой минус
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ GAS JOBS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// GRADE C
+/decl/cultural_info/culture/nabber/New()
+	valid_jobs = list(/datum/job/janitor)  // THIS IS GRADE C- TRUST ME ~ SidVeld
+
+
+/decl/cultural_info/culture/nabber/c/New()
+	valid_jobs = list(/datum/job/janitor, /datum/job/cargo_assistant)
+
+
+/decl/cultural_info/culture/nabber/c/plus/New()
+	valid_jobs = list(/datum/job/janitor,    /datum/job/cargo_assistant,
+					  /datum/job/cargo_tech, /datum/job/scientist_assistant)
+
+
+// GRADE B
 /decl/cultural_info/culture/nabber/b/minus/New()
-	valid_jobs = list()
-	..()
+	valid_jobs = list(/datum/job/janitor)
+
+
+/decl/cultural_info/culture/nabber/b/New()
+	valid_jobs = list(/datum/job/janitor,    /datum/job/cargo_assistant,
+					  /datum/job/cargo_tech, /datum/job/scientist_assistant,
+					  /datum/job/bartender,  /datum/job/chef)
+
+
+/decl/cultural_info/culture/nabber/b/plus/New()
+	valid_jobs = list(/datum/job/janitor,    /datum/job/cargo_assistant,
+					  /datum/job/cargo_tech, /datum/job/scientist_assistant,
+					  /datum/job/bartender,  /datum/job/chef)
+
+
+// GRADE A
+/decl/cultural_info/culture/nabber/a/minus/New()
+	valid_jobs = list(/datum/job/janitor, /datum/job/scientist_assistant)
+
+
+/decl/cultural_info/culture/nabber/a/New()
+	valid_jobs = list(/datum/job/janitor,    /datum/job/cargo_assistant,
+					  /datum/job/cargo_tech, /datum/job/scientist_assistant,
+					  /datum/job/bartender,  /datum/job/chef,
+					  /datum/job/chemist,    /datum/job/doctor_trainee,
+					  /datum/job/roboticist, /datum/job/engineer_trainee)
+
+
+/decl/cultural_info/culture/nabber/a/plus/New()
+	valid_jobs = list(/datum/job/janitor,    /datum/job/cargo_assistant,
+					  /datum/job/cargo_tech, /datum/job/scientist_assistant,
+					  /datum/job/bartender,  /datum/job/chef,
+					  /datum/job/chemist,    /datum/job/doctor_trainee,
+					  /datum/job/roboticist, /datum/job/engineer_trainee)
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 /datum/job
 	allowed_branches = list(
