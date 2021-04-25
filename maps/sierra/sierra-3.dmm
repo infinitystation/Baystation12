@@ -30703,7 +30703,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/holoplant,
 /obj/structure/window/reinforced,
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/white,
@@ -38975,6 +38974,7 @@
 	c_tag = "Research - Miscellaneous Laboratory";
 	dir = 1
 	},
+/obj/structure/holoplant,
 /turf/simulated/floor/tiled/white,
 /area/rnd/misc_lab)
 "hLb" = (

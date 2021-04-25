@@ -17517,16 +17517,9 @@
 	autoset_access = 0;
 	dir = 4;
 	frequency = null;
+	id_tag = "xeno_airlock_maintenance";
 	name = "Xenobiology Access";
 	req_access = list("ACCESS_RESEARCH")
-	},
-/obj/machinery/door/blast/regular{
-	density = 0;
-	dir = 4;
-	icon_state = "pdoor0";
-	id_tag = "Biohazard";
-	name = "Biohazard Shutter";
-	opacity = 0
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -17553,6 +17546,10 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/door/blast/regular{
+	dir = 4;
+	id_tag = "xeno_biohazard"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/xenobiology/entry)
 "aFG" = (
@@ -18340,6 +18337,14 @@
 /obj/structure/disposalpipe/segment{
 	dir = 2;
 	icon_state = "pipe-c"
+	},
+/obj/machinery/button/blast_door{
+	dir = 1;
+	id_tag = "xeno_biohazard";
+	name = "Biohazard Shutter Control";
+	pixel_x = -6;
+	pixel_y = 26;
+	req_access = list("ACCESS_RESEARCH")
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/entry)
@@ -35387,11 +35392,10 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "lan" = (
-/obj/structure/table/rack,
-/obj/random/maintenance,
 /obj/structure/railing/mapped{
 	dir = 1
 	},
+/obj/random/closet,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/port)
 "lbv" = (
@@ -37561,6 +37565,13 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/airless,
 /area/space)
+"uDZ" = (
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/random/obstruction,
+/turf/simulated/floor/plating,
+/area/maintenance/seconddeck/port)
 "uJL" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/railing/mapped/no_density{
@@ -59290,7 +59301,7 @@ ajB
 ajB
 ais
 aCU
-aIw
+uDZ
 aVj
 aVX
 aQd
