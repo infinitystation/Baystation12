@@ -79,37 +79,44 @@
 // GRADE C
 /decl/cultural_info/culture/nabber/New()
 	valid_jobs = list(/datum/job/janitor)  // THIS IS GRADE C- TRUST ME ~ SidVeld
+	..()
 
 
 /decl/cultural_info/culture/nabber/c/New()
 	valid_jobs = list(/datum/job/janitor, /datum/job/cargo_assistant)
+	..()
 
 
 /decl/cultural_info/culture/nabber/c/plus/New()
 	valid_jobs = list(/datum/job/janitor,    /datum/job/cargo_assistant,
 					  /datum/job/scientist_assistant)
+	..()
 
 
 // GRADE B
 /decl/cultural_info/culture/nabber/b/minus/New()
 	valid_jobs = list(/datum/job/janitor)
+	..()
 
 
 /decl/cultural_info/culture/nabber/b/New()
 	valid_jobs = list(/datum/job/janitor,    /datum/job/cargo_assistant,
 					  /datum/job/bartender,  /datum/job/chef,
 					  /datum/job/scientist_assistant)
+	..()
 
 
 /decl/cultural_info/culture/nabber/b/plus/New()
 	valid_jobs = list(/datum/job/janitor,    /datum/job/cargo_assistant,
 					  /datum/job/bartender,  /datum/job/chef,
 					  /datum/job/scientist_assistant)
+	..()
 
 
 // GRADE A
 /decl/cultural_info/culture/nabber/a/minus/New()
 	valid_jobs = list(/datum/job/janitor, /datum/job/scientist_assistant)
+	..()
 
 
 /decl/cultural_info/culture/nabber/a/New()
@@ -118,6 +125,7 @@
 					  /datum/job/chemist,    /datum/job/doctor_trainee,
 					  /datum/job/roboticist, /datum/job/engineer_trainee,
 					  /datum/job/scientist_assistant)
+	..()
 
 
 
@@ -127,6 +135,7 @@
 					  /datum/job/chemist,    /datum/job/doctor_trainee,
 					  /datum/job/roboticist, /datum/job/engineer_trainee,
 					  /datum/job/scientist_assistant)
+	..()
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
