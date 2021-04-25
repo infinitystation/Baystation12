@@ -77,65 +77,56 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ GAS JOBS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // GRADE C
-/decl/cultural_info/culture/nabber/New()
+/decl/cultural_info/culture/nabber
 	valid_jobs = list(/datum/job/janitor)  // THIS IS GRADE C- TRUST ME ~ SidVeld
-	..()
 
 
-/decl/cultural_info/culture/nabber/c/New()
+/decl/cultural_info/culture/nabber/c
 	valid_jobs = list(/datum/job/janitor, /datum/job/cargo_assistant)
-	..()
 
 
-/decl/cultural_info/culture/nabber/c/plus/New()
+/decl/cultural_info/culture/nabber/c/plus
 	valid_jobs = list(/datum/job/janitor,    /datum/job/cargo_assistant,
 					  /datum/job/scientist_assistant)
-	..()
 
 
 // GRADE B
-/decl/cultural_info/culture/nabber/b/minus/New()
+/decl/cultural_info/culture/nabber/b/minus
 	valid_jobs = list(/datum/job/janitor)
-	..()
 
 
-/decl/cultural_info/culture/nabber/b/New()
+/decl/cultural_info/culture/nabber/b/New
 	valid_jobs = list(/datum/job/janitor,    /datum/job/cargo_assistant,
 					  /datum/job/bartender,  /datum/job/chef,
 					  /datum/job/scientist_assistant)
-	..()
 
 
-/decl/cultural_info/culture/nabber/b/plus/New()
+/decl/cultural_info/culture/nabber/b/plus
 	valid_jobs = list(/datum/job/janitor,    /datum/job/cargo_assistant,
 					  /datum/job/bartender,  /datum/job/chef,
 					  /datum/job/scientist_assistant)
-	..()
 
 
 // GRADE A
-/decl/cultural_info/culture/nabber/a/minus/New()
+/decl/cultural_info/culture/nabber/a/minus
 	valid_jobs = list(/datum/job/janitor, /datum/job/scientist_assistant)
-	..()
 
 
-/decl/cultural_info/culture/nabber/a/New()
+/decl/cultural_info/culture/nabber/a
 	valid_jobs = list(/datum/job/janitor,    /datum/job/cargo_assistant,
 					  /datum/job/bartender,  /datum/job/chef,
 					  /datum/job/chemist,    /datum/job/doctor_trainee,
 					  /datum/job/roboticist, /datum/job/engineer_trainee,
 					  /datum/job/scientist_assistant)
-	..()
 
 
 
-/decl/cultural_info/culture/nabber/a/plus/New()
+/decl/cultural_info/culture/nabber/a/plus
 	valid_jobs = list(/datum/job/janitor,    /datum/job/cargo_assistant,
 					  /datum/job/bartender,  /datum/job/chef,
 					  /datum/job/chemist,    /datum/job/doctor_trainee,
 					  /datum/job/roboticist, /datum/job/engineer_trainee,
 					  /datum/job/scientist_assistant)
-	..()
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
