@@ -22168,7 +22168,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
-/area/rnd/xenobiology/storage)
+/area/rnd/xenobiology/storage_two)
 "aOe" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -22261,7 +22261,7 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/l3closet/scientist,
 /turf/simulated/floor/tiled/white,
-/area/rnd/xenobiology/storage)
+/area/rnd/xenobiology/storage_two)
 "aOl" = (
 /obj/machinery/papershredder,
 /turf/simulated/floor/lino,
@@ -24562,9 +24562,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 1
 	},
@@ -24577,7 +24574,7 @@
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/white/monotile,
-/area/rnd/xenobiology/storage)
+/area/rnd/xenobiology/storage_two)
 "aSQ" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -24585,7 +24582,7 @@
 	},
 /obj/structure/closet/crate/secure/biohazard,
 /turf/simulated/floor/tiled/white/monotile,
-/area/rnd/xenobiology/storage)
+/area/rnd/xenobiology/storage_two)
 "aSR" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -24661,7 +24658,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/rnd/xenobiology/storage)
+/area/rnd/xenobiology/storage_two)
 "aSW" = (
 /obj/structure/catwalk,
 /obj/structure/cable/green{
@@ -24732,7 +24729,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/white,
-/area/rnd/xenobiology/storage)
+/area/rnd/xenobiology/storage_two)
 "aTf" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -24894,7 +24891,7 @@
 	pixel_x = 23
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/rnd/xenobiology/storage)
+/area/rnd/xenobiology/storage_two)
 "aTt" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -25159,7 +25156,7 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/l3closet/scientist,
 /turf/simulated/floor/tiled/white,
-/area/rnd/xenobiology/storage)
+/area/rnd/xenobiology/storage_two)
 "aTL" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -25328,7 +25325,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
-/area/rnd/xenobiology/storage)
+/area/rnd/xenobiology/storage_two)
 "aUb" = (
 /obj/machinery/atmospherics/binary/pump,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -25351,7 +25348,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/rnd/xenobiology/storage)
+/area/rnd/xenobiology/storage_two)
 "aUd" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/engineering/engine_room)
@@ -25499,7 +25496,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/white,
-/area/rnd/xenobiology/storage)
+/area/rnd/xenobiology/storage_two)
 "aUo" = (
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced/hull,
@@ -25767,7 +25764,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
-/area/rnd/xenobiology/storage)
+/area/rnd/xenobiology/storage_two)
 "aUH" = (
 /obj/machinery/atmospherics/binary/pump{
 	dir = 8
@@ -25893,7 +25890,7 @@
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/white/monotile,
-/area/rnd/xenobiology/storage)
+/area/rnd/xenobiology/storage_two)
 "aUQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
@@ -26374,7 +26371,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
-/area/rnd/xenobiology/storage)
+/area/rnd/xenobiology/storage_two)
 "aVK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
@@ -26386,7 +26383,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/white,
-/area/rnd/xenobiology/storage)
+/area/rnd/xenobiology/storage_two)
 "aVL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -26919,7 +26916,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
-/area/rnd/xenobiology/storage)
+/area/rnd/xenobiology/storage_two)
 "aWK" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -27254,7 +27251,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
-/area/rnd/xenobiology/storage)
+/area/rnd/xenobiology/storage_two)
 "aXm" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -30103,7 +30100,7 @@
 	},
 /obj/structure/closet/crate/secure/biohazard,
 /turf/simulated/floor/tiled/white,
-/area/rnd/xenobiology/storage)
+/area/rnd/xenobiology/storage_two)
 "bcL" = (
 /obj/machinery/door/airlock{
 	door_color = "#78523b";
@@ -31124,7 +31121,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
-/area/rnd/xenobiology/storage)
+/area/rnd/xenobiology/storage_two)
 "beV" = (
 /obj/structure/bed/chair/wood/walnut{
 	dir = 4
@@ -33582,7 +33579,7 @@
 /area/grove/theta)
 "bHz" = (
 /turf/simulated/wall/r_wall/prepainted,
-/area/rnd/xenobiology/storage)
+/area/rnd/xenobiology/storage_two)
 "bIE" = (
 /obj/structure/ladder,
 /obj/structure/disposalpipe/down{

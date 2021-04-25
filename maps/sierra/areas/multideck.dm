@@ -40,8 +40,8 @@
 	name = "Xenobiology - Atmos Hub"
 	icon_state = "xeno_lab"
 
-/area/rnd/xenobiology/storage
-	name = "Xenobiology - Storage"
+/area/rnd/xenobiology/storage_two
+	name = "Xenobiology - Storage Level Two"
 	icon_state = "xeno_lab"
 
 /area/rnd/xenobiology/water_cell
@@ -57,6 +57,6 @@
 	name = "Xenobiology Level Two"
 	icon_state = "xeno_lab"
 
-/area/rnd/xenobiology/storage
-	name = "Xenobiology - Storage"
+/area/rnd/xenobiology/storage_hangar
+	name = "Xenobiology - Storage Hangar"
 	icon_state = "xeno_lab"
