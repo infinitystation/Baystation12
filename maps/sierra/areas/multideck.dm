@@ -40,6 +40,10 @@
 	name = "Xenobiology - Atmos Hub"
 	icon_state = "xeno_lab"
 
+/area/rnd/xenobiology/storage
+	name = "Xenobiology - Storage"
+	icon_state = "xeno_lab"
+
 /area/rnd/xenobiology/water_cell
 	name = "Xenobiology - Water Cell"
 	icon_state = "xeno_lab"
