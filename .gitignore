@@ -32,6 +32,7 @@ sql/test_db
 [._]*.sw[a-p]
 [._]s[a-v][a-z]
 [._]sw[a-p]
+.Zhuzhila.bat
 
 # session
 Session.vim
