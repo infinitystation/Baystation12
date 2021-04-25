@@ -95,7 +95,7 @@
 	valid_jobs = list(/datum/job/janitor)
 
 
-/decl/cultural_info/culture/nabber/b/New
+/decl/cultural_info/culture/nabber/b
 	valid_jobs = list(/datum/job/janitor,    /datum/job/cargo_assistant,
 					  /datum/job/bartender,  /datum/job/chef,
 					  /datum/job/scientist_assistant)
