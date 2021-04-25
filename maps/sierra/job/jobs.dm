@@ -6,7 +6,7 @@
 									   /datum/job/roboticist, /datum/job/chemist, /datum/job/bartender, /datum/job/explorer_engineer),
 		/datum/species/nabber = list(/datum/job/ai, /datum/job/cyborg, /datum/job/janitor, /datum/job/scientist_assistant,\
 									 /datum/job/chemist, /datum/job/roboticist, /datum/job/cargo_assistant, /datum/job/chef,\
-									 /datum/job/engineer_trainee, /datum/job/doctor_trainee, /datum/job/bartender, /datum/job/cargo_tech),
+									 /datum/job/engineer_trainee, /datum/job/doctor_trainee, /datum/job/bartender),
 		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg),
 		/datum/species/human/mule	= list(/datum/job/ai, /datum/job/cyborg, /datum/job/submap/merchant, /datum/job/submap/merchant_trainee)
 	)
@@ -87,7 +87,7 @@
 
 /decl/cultural_info/culture/nabber/c/plus/New()
 	valid_jobs = list(/datum/job/janitor,    /datum/job/cargo_assistant,
-					  /datum/job/cargo_tech, /datum/job/scientist_assistant)
+					  /datum/job/scientist_assistant)
 
 
 // GRADE B
@@ -97,14 +97,14 @@
 
 /decl/cultural_info/culture/nabber/b/New()
 	valid_jobs = list(/datum/job/janitor,    /datum/job/cargo_assistant,
-					  /datum/job/cargo_tech, /datum/job/scientist_assistant,
-					  /datum/job/bartender,  /datum/job/chef)
+					  /datum/job/bartender,  /datum/job/chef,
+					  /datum/job/scientist_assistant)
 
 
 /decl/cultural_info/culture/nabber/b/plus/New()
 	valid_jobs = list(/datum/job/janitor,    /datum/job/cargo_assistant,
-					  /datum/job/cargo_tech, /datum/job/scientist_assistant,
-					  /datum/job/bartender,  /datum/job/chef)
+					  /datum/job/bartender,  /datum/job/chef,
+					  /datum/job/scientist_assistant)
 
 
 // GRADE A
@@ -114,18 +114,19 @@
 
 /decl/cultural_info/culture/nabber/a/New()
 	valid_jobs = list(/datum/job/janitor,    /datum/job/cargo_assistant,
-					  /datum/job/cargo_tech, /datum/job/scientist_assistant,
 					  /datum/job/bartender,  /datum/job/chef,
 					  /datum/job/chemist,    /datum/job/doctor_trainee,
-					  /datum/job/roboticist, /datum/job/engineer_trainee)
+					  /datum/job/roboticist, /datum/job/engineer_trainee,
+					  /datum/job/scientist_assistant)
+
 
 
 /decl/cultural_info/culture/nabber/a/plus/New()
 	valid_jobs = list(/datum/job/janitor,    /datum/job/cargo_assistant,
-					  /datum/job/cargo_tech, /datum/job/scientist_assistant,
 					  /datum/job/bartender,  /datum/job/chef,
 					  /datum/job/chemist,    /datum/job/doctor_trainee,
-					  /datum/job/roboticist, /datum/job/engineer_trainee)
+					  /datum/job/roboticist, /datum/job/engineer_trainee,
+					  /datum/job/scientist_assistant)
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
