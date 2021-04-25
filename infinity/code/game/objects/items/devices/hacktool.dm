@@ -9,8 +9,8 @@
 	rand_hack_time = 3 SECONDS
 	in_hack_mode = 1
 
-//We aren't adding this to hidden version of device, because it would be useless - no one traitor\
-would waste points on hacking for it.
+// We aren't adding this to hidden version of device, because it would be useless - no one traitor
+// would waste points on hacking for it.
 
 /obj/item/device/multitool/hacktool/unhidden/attempt_hack(var/mob/user, var/atom/target)
 	if(!user.skill_check(SKILL_ELECTRICAL, SKILL_ADEPT))

@@ -708,10 +708,10 @@ INF */
 	if((. = ..())) // Further interactions are low priority attack stuff.
 		return
 
-	if(opened != 2 && hp <= 5) //INF, was (((stat & BROKEN) || (hacker && !hacker.hacked_apcs_hidden)) \
-			//INF, was && !opened \
-			//INF, was && W.force >= 5 \
-			//INF, was && W.w_class >= 3.0 \
+	if(opened != 2 && hp <= 5)  //INF, was (((stat & BROKEN) || (hacker && !hacker.hacked_apcs_hidden)) 
+			//INF, was && !opened 
+			//INF, was && W.force >= 5 
+			//INF, was && W.w_class >= 3.0 
 			//INF, was && prob(20) )
 		opened = 2
 		user.visible_message("<span class='danger'>The APC cover was knocked down with the [W.name] by [user.name]!</span>", \
@@ -728,10 +728,11 @@ INF */
 			to_chat(user, SPAN_NOTICE("[src] is already destroyed...")) //yeah, they may continue bash
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 //[/INF]
-
-//INF		user.visible_message("<span class='danger'>The [src.name] has been hit with the [W.name] by [user.name]!</span>", \
-			"<span class='danger'>You hit the [src.name] with your [W.name]!</span>", \
+/*[inf.exclude]
+		user.visible_message("<span class='danger'>The [src.name] has been hit with the [W.name] by [user.name]!</span>",
+			"<span class='danger'>You hit the [src.name] with your [W.name]!</span>",
 			"You hear a bang")
+[/inf.exclude]*/
 		if(W.force >= 5 && W.w_class >= ITEM_SIZE_NORMAL) //INF, was f(W.force >= 5 && W.w_class >= ITEM_SIZE_NORMAL && prob(W.force))
 			if(hp > 0) //INF
 				hp -= W.force //INF, was var/roulette = rand(1,100)
