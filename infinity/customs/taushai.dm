@@ -1,6 +1,6 @@
 // Field Engineer
 /obj/item/clothing/shoes/sandal/xeno/caligae/taushai
-	name = "Tajaran workboots"
+	name = "tajaran workboots"
 	desc = "Just workboots, seems this for Tajara."
 	icon = CUSTOM_ITEM_OBJ
 	item_icons = list(
@@ -14,7 +14,7 @@
 
 
 /obj/item/clothing/suit/storage/hooded/taushai
-	name = "Common cloak"
+	name = "common cloak"
 	desc = "Tajar cloak, in the inner side there are small pockets for carrying small things, fashionable, but nothing special."
 	icon = CUSTOM_ITEM_OBJ
 	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB)
@@ -27,7 +27,7 @@
 
 
 /obj/item/clothing/head/taushai
-	name = "Cloak hood"
+	name = "cloak hood"
 	desc = "A hood attached to cloak."
 	icon = CUSTOM_ITEM_OBJ
 	item_icons = list(slot_head_str = CUSTOM_ITEM_MOB)
@@ -49,7 +49,7 @@
 		)
 
 
-/obj/item/weapon/storage/backpack/taushai
+/obj/item/weapon/storage/backpack/industrial/taushai
 	name = "field backpack"
 	desc = "It's a tough backpack for the daily grind of field work."
 	icon = CUSTOM_ITEM_OBJ
@@ -72,7 +72,7 @@
 
 
 /obj/item/weapon/clothingbag/taushai
-	name = "Clothing bag"
+	name = "clothing bag"
 	desc = "Rajirra's property"
 	trade_blacklisted = TRUE
 
@@ -81,5 +81,5 @@
 	..()
 	new /obj/item/clothing/shoes/sandal/xeno/caligae/taushai(src)
 	new /obj/item/clothing/suit/storage/hooded/taushai(src)
-	new /obj/item/weapon/storage/backpack/taushai(src)
+	new /obj/item/weapon/storage/backpack/industrial/taushai(src)
 	new /obj/item/device/kit/suit/taushai(src)
