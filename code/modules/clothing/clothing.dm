@@ -364,7 +364,7 @@ BLIND     // can't see anything
 
 /obj/item/clothing/gloves/mob_can_equip(mob/user)
 	var/mob/living/carbon/human/H = user
-
+/* INF
 	if(istype(H.gloves, /obj/item/clothing/ring))
 		ring = H.gloves
 		if(!ring.undergloves)
@@ -385,6 +385,28 @@ BLIND     // can't see anything
 		to_chat(user, "You slip \the [src] on over \the [ring].")
 	wearer = H //TODO clean this when magboots are cleaned
 	return 1
+*/
+	if(istype(H.gloves, /obj/item/clothing/ring) || istype(H.gloves, /obj/item/clothing/accessory_hand))
+		ring = H.gloves
+		if(!ring.undergloves)
+			to_chat(user, "You are unable to wear \the [src] as \the [H.gloves] are in the way.")
+			ring = null
+			return 0
+		if(!H.unEquip(ring, src))//Remove the ring (or other under-glove item in the hand slot?) so you can put on the gloves.
+			ring = null
+			return 0
+
+	if(!..())
+		if(ring) //Put the ring back on if the check fails.
+			if(H.equip_to_slot_if_possible(ring, slot_gloves))
+				src.ring = null
+		return 0
+
+	if (ring)
+		to_chat(user, "You slip \the [src] on over \the [ring].")
+	wearer = H //TODO clean this when magboots are cleaned
+	return 1
+
 
 /obj/item/clothing/gloves/dropped()
 	..()

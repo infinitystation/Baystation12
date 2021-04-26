@@ -119,7 +119,7 @@
 /datum/gear/cards_compact
 	display_name = "deck of cards (compact)"
 	path = /obj/item/weapon/deck/compact
-
+/*
 /datum/gear/gloves/wristwatch
 	display_name = "watch"
 	path = /obj/item/clothing/gloves/wristwatch
@@ -129,3 +129,4 @@
 	display_name = "watch, gold"
 	path = /obj/item/clothing/gloves/wristwatch/gold
 	cost = 3
+*/
