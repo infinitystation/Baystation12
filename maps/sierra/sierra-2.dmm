@@ -27432,7 +27432,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/research{
 	dir = 4;
-	id_tag = null;
+	id_tag = "xeno_office";
 	name = "Report desk";
 	req_access = newlist()
 	},

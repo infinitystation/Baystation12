@@ -33336,7 +33336,6 @@
 	locked = 1;
 	name = "Xenobiology Access";
 	req_access = list("ACCESS_RESEARCH");
-	tag = null
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white,
