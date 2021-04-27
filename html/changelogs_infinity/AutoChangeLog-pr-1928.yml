@@ -1,0 +1,5 @@
+author: AlexMorgan3817
+delete-after: true
+changes:
+  - rscadd: Теперь можно легко сделать кастомный РИГ не трогая код, лишь залив спрайты
+      и расписав JSON-префаб.
