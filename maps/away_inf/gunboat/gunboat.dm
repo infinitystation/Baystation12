@@ -28,7 +28,7 @@
 	description = "Property of SCG - carrier of torpedos, one laser and a small crew."
 	prefix = "maps/away_inf/"
 	suffixes = list("gunboat/gunboat-1.dmm", "gunboat/gunboat-2.dmm")
-	cost = 1000
+	spawn_cost = 1000
 
 /obj/effect/shuttle_landmark/nav_gunboat/nav1
 	name = "Gunboat Navpoint #1"

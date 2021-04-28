@@ -40,7 +40,7 @@
 	description = "A broken, drifting ship. They had a mission to save SEV Torch's crew."
 	prefix = "maps/away_inf/"
 	suffixes = list("marksman/marksman-1.dmm", "marksman/marksman-2.dmm")
-	cost = 1000
+	spawn_cost = 1000
 
 /obj/effect/shuttle_landmark/marksman/nav1
 	name = "Drifting Ship Fore"

@@ -18,7 +18,7 @@
 	description = "There is faint \"S.O.S.\" signal incoming from the water surface. Decyphering codes are very old."
 	prefix = "maps/away_inf/"
 	suffixes = list("adherent_base/adherent_base_1.dmm", "adherent_base/adherent_base_2.dmm", "adherent_base/adherent_base_3.dmm")
-	cost = 1000	//event only
+	spawn_cost = 1000	//event only
 
 /obj/effect/shuttle_landmark/adherent_base/nav1
 	name = "Aquatic Planet - Island Landing Area"
