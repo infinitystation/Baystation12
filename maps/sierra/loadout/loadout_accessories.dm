@@ -68,6 +68,7 @@
 	display_name = "passports selection - SCG"
 	description = "A selection of SCG passports."
 	path = /obj/item/weapon/passport/scg
+	flags = GEAR_HAS_TYPE_SELECTION
 	custom_setup_proc = /obj/item/weapon/passport/proc/set_info
 	cost = 0
 
@@ -75,6 +76,7 @@
 	display_name = "passports selection - ICCG"
 	description = "A selection of ICCG passports."
 	path = /obj/item/weapon/passport/iccg
+	flags = GEAR_HAS_TYPE_SELECTION
 	custom_setup_proc = /obj/item/weapon/passport/proc/set_info
 	cost = 0
 

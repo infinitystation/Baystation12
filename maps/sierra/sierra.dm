@@ -148,6 +148,8 @@
 	#include "../away/meatstation/meatstation.dm"
 	#include "../away/miningstation/miningstation.dm"
 
+	#include "../random_ruins/exoplanet_ruins/playablecolony_inf/playablecolony.dm"
+
 	#define using_map_DATUM /datum/map/sierra
 
 #elif !defined(MAP_OVERRIDE)

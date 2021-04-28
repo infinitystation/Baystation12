@@ -294,8 +294,12 @@
 
 					if(seal_delay && !instant && !do_after(wearer,seal_delay,src,needhand=0))
 						failed_to_seal = 1
-
-					piece.icon_state = "[initial(icon_state)][!seal_target ? "_sealed" : ""]"
+//[INF]
+					var/basestate = base_icon_state
+					if(piece_icon_state_overrides.Find(msg_type))
+						basestate = piece_icon_state_overrides[msg_type]
+//[/INF]
+					piece.icon_state = "[basestate][!seal_target ? "_sealed" : ""]"//inf, was: piece.icon_state = "[initial(icon_state)][!seal_target ? "_sealed" : ""]"
 					switch(msg_type)
 						if("boots")
 							to_chat(wearer, "<font color='blue'>\The [piece] [!seal_target ? "seal around your feet" : "relax their grip on your legs"].</font>")
@@ -327,9 +331,18 @@
 	sealing = null
 
 	if(failed_to_seal)
-		for(var/obj/item/piece in list(helmet,boots,gloves,chest))
+		for(var/variable in list("helmet","boots","gloves","chest"))//inf, was: for(var/obj/item/piece in list(helmet,boots,gloves,chest))
+			if(!vars.Find(variable))
+				log_error("[variable] not a variable of [type].")
+				continue
+			var/obj/item/piece = vars[variable]
 			if(!piece) continue
-			piece.icon_state = "[initial(icon_state)][!seal_target ? "" : "_sealed"]"
+//[INF]
+			var/basestate = base_icon_state
+			if(piece_icon_state_overrides.Find(variable))
+				basestate = piece_icon_state_overrides[variable]
+//[/INF]
+			piece.icon_state = "[basestate][!seal_target ? "" : "_sealed"]"//inf, was: piece.icon_state = "[initial(icon_state)][!seal_target ? "" : "_sealed"]"
 		canremove = !seal_target
 		if(airtight)
 			update_component_sealed()
