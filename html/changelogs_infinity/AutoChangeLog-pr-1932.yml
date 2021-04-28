@@ -1,0 +1,4 @@
+author: AlexMorgan3817
+delete-after: true
+changes:
+  - bugfix: Фикс рантайма не дававшего разложить обычные РИГи.
