@@ -20,7 +20,7 @@
 	description = "Yarr."
 	prefix = "maps/away_inf/"
 	suffixes = list("smugglers/smugglers.dmm")
-	spawn_cost = 1 //WAS 0.5
+	spawn_cost = 1 // WAS 0.5
 	generate_mining_by_z = 1
 	area_usage_test_exempted_root_areas = list(/area/smugglers)
 	apc_test_exempt_areas = list(

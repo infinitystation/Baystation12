@@ -38,7 +38,7 @@
 	description = "A wrecked light freighter."
 	prefix = "maps/away_inf/"
 	suffixes = list("bearcat/bearcat-1.dmm", "bearcat/bearcat-2.dmm")
-	spawn_cost = 0.5 //INF, WAS 1
+	spawn_cost = 0.5 // INF, WAS 1
 	player_cost = 4 // Нынешнее значение основано на количестве игроков в авейке ~bear1ake
 	spawn_weight = 1 // INF, spawn_weight = 0.67
 	shuttles_to_initialise = list(/datum/shuttle/autodock/ferry/lift, /datum/shuttle/autodock/overmap/exploration)

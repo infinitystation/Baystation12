@@ -30,7 +30,7 @@
 	id = "awaysite_unishi"
 	description = "CTI research ship.."
 	suffixes = list("unishi/unishi-1.dmm", "unishi/unishi-2.dmm", "unishi/unishi-3.dmm")
-	spawn_cost = 2000 //inf, was 2, we aren't using it
+	spawn_cost = 2000 // INF, was 2, we aren't using it
 	area_usage_test_exempted_root_areas = list(/area/unishi)
 
 

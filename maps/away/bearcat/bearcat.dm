@@ -34,7 +34,7 @@
 	id = "awaysite_bearcat_wreck"
 	description = "A wrecked light freighter."
 	suffixes = list("bearcat/bearcat-1.dmm", "bearcat/bearcat-2.dmm")
-	spawn_cost = 0.5 //INF, WAS 1
+	spawn_cost = 0.5 // INF, WAS 1
 	player_cost = 4
 	spawn_weight = 1 // INF, spawn_weight = 0.67
 	shuttles_to_initialise = list(/datum/shuttle/autodock/ferry/lift)

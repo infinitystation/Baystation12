@@ -383,7 +383,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		points -= costs[1]
 		players -= costs[2]
 
-	report_progress("Finished selecting away sites ([english_list(selected)]) for [away_site_budget - points] cost of [away_site_budget] spawn and [players_budget] players budget.") // INF, было report_progress("Finished selecting away sites ([english_list(selected)]) for [away_site_budget - points] cost of [away_site_budget] budget.") 
+	report_progress("Finished selecting away sites ([english_list(selected)]) for [away_site_budget - points] cost of [away_site_budget] spawn and [players] of [players_budget] players budget.") // INF, было report_progress("Finished selecting away sites ([english_list(selected)]) for [away_site_budget - points] cost of [away_site_budget] budget.") 
 
 	for (var/datum/map_template/template in selected)
 		if (template.load_new_z())

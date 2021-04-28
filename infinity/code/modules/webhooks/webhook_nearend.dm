@@ -11,7 +11,7 @@
 	if(!loretext || loretext == "")
 		loretext = "Телеметрия нестабильна! Данные были повреждены!"
 	.["embeds"] = list(list(
-		"title" = "**Конец раунда неминуем! *Авейтеры* собирайтесь!**",
+		"title" = "**Конец раунда неминуем! *Авейтеры собирайтесь!***",
 		"description" = loretext,
 		"color" = COLOR_WEBHOOK_XENO
 	))
