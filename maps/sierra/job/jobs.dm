@@ -73,15 +73,64 @@
 				species_blacklist |= job.type
 */
 
-// Some jobs for nabber grades defined here due to map-specific job datums.
-/decl/cultural_info/culture/nabber/New()
-	LAZYADD(valid_jobs, list(/datum/job/scientist_assistant, /datum/job/cargo_assistant))
-	..()
 
-// Нет сервисным должностям с пометкой минус
-/decl/cultural_info/culture/nabber/b/minus/New()
-	valid_jobs = list()
-	..()
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ GAS JOBS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// GRADE C
+/decl/cultural_info/culture/nabber
+	valid_jobs = list(/datum/job/janitor)  // THIS IS GRADE C- TRUST ME ~ SidVeld
+
+
+/decl/cultural_info/culture/nabber/c
+	valid_jobs = list(/datum/job/janitor, /datum/job/cargo_assistant)
+
+
+/decl/cultural_info/culture/nabber/c/plus
+	valid_jobs = list(/datum/job/janitor,    /datum/job/cargo_assistant,
+					  /datum/job/scientist_assistant)
+
+
+// GRADE B
+/decl/cultural_info/culture/nabber/b/minus
+	valid_jobs = list(/datum/job/janitor)
+
+
+/decl/cultural_info/culture/nabber/b
+	valid_jobs = list(/datum/job/janitor,    /datum/job/cargo_assistant,
+					  /datum/job/bartender,  /datum/job/chef,
+					  /datum/job/scientist_assistant)
+
+
+/decl/cultural_info/culture/nabber/b/plus
+	valid_jobs = list(/datum/job/janitor,    /datum/job/cargo_assistant,
+					  /datum/job/bartender,  /datum/job/chef,
+					  /datum/job/scientist_assistant)
+
+
+// GRADE A
+/decl/cultural_info/culture/nabber/a/minus
+	valid_jobs = list(/datum/job/scientist_assistant)
+
+
+/decl/cultural_info/culture/nabber/a
+	valid_jobs = list(/datum/job/cargo_assistant,
+					  /datum/job/bartender,  /datum/job/chef,
+					  /datum/job/chemist,    /datum/job/doctor_trainee,
+					  /datum/job/roboticist, /datum/job/engineer_trainee,
+					  /datum/job/scientist_assistant)
+
+
+
+/decl/cultural_info/culture/nabber/a/plus
+	valid_jobs = list(/datum/job/cargo_assistant,
+					  /datum/job/bartender,  /datum/job/chef,
+					  /datum/job/chemist,    /datum/job/doctor_trainee,
+					  /datum/job/roboticist, /datum/job/engineer_trainee,
+					  /datum/job/scientist_assistant)
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 /datum/job
 	allowed_branches = list(
