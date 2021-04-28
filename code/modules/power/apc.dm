@@ -728,11 +728,11 @@ INF */
 			to_chat(user, SPAN_NOTICE("[src] is already destroyed...")) //yeah, they may continue bash
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 //[/INF]
-/*[inf.exclude]
+/*[ORIG]
 		user.visible_message("<span class='danger'>The [src.name] has been hit with the [W.name] by [user.name]!</span>",
 			"<span class='danger'>You hit the [src.name] with your [W.name]!</span>",
 			"You hear a bang")
-[/inf.exclude]*/
+[/ORIG]*/
 		if(W.force >= 5 && W.w_class >= ITEM_SIZE_NORMAL) //INF, was f(W.force >= 5 && W.w_class >= ITEM_SIZE_NORMAL && prob(W.force))
 			if(hp > 0) //INF
 				hp -= W.force //INF, was var/roulette = rand(1,100)
