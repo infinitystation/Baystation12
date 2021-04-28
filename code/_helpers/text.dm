@@ -493,8 +493,9 @@ var/list/alphabet = list("a","b","c","d","e","f","g","h","i","j","k","l","m","n"
 	t = replacetext(t, "\[xynlogo\]", "<img src = xynlogo.png>")
 	t = replacetext(t, "\[fleetlogo\]", "<img src = fleetlogo.png>")
 	t = replacetext(t, "\[sfplogo\]", "<img src = sfplogo.png>")
-	t = replacetext(t, "\[ccalogo\]", "<img src = ccalogo.png>")//inf
-	t = replacetext(t, "\[sierralogo\]", "<img src = sierralogo.png>")//inf
+	t = replacetext(t, "\[ccalogo\]", "<img src = ccalogo.png>")// INF
+	t = replacetext(t, "\[foundlogo\]", "<img src = foundlogo.png>")// INF
+	t = replacetext(t, "\[sierralogo\]", "<img src = sierralogo.png>")// INF
 	t = replacetext(t, "\[editorbr\]", "")
 	return t
 
@@ -551,8 +552,9 @@ var/list/alphabet = list("a","b","c","d","e","f","g","h","i","j","k","l","m","n"
 	t = replacetext(t, "<img src = daislogo.png>", "\[daislogo\]")
 	t = replacetext(t, "<img src = xynlogo.png>", "\[xynlogo\]")
 	t = replacetext(t, "<img src = sfplogo.png>", "\[sfplogo\]")
-	t = replacetext(t, "<img src = ccalogo.png>", "\[ccalogo\]")//inf
-	t = replacetext(t, "<img src = sierralogo.png>", "\[sierralogo\]")//inf
+	t = replacetext(t, "<img src = ccalogo.png>", "\[ccalogo\]")// INF
+	t = replacetext(t, "<img src = foundlogo.png>", "\[foundlogo\]")// INF
+	t = replacetext(t, "<img src = sierralogo.png>", "\[sierralogo\]")// INF
 	t = replacetext(t, "<span class=\"paper_field\"></span>", "\[field\]")
 	t = replacetext(t, "<span class=\"redacted\">R E D A C T E D</span>", "\[redacted\]")
 	t = strip_html_properly(t)
