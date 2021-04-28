@@ -866,26 +866,13 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	if(citem.item_desc)
 		desc = citem.item_desc
 	if(citem.item_icon_state)
-/*[inf.exclude]
 		item_state_slots = null
 		item_icons = null
 		icon = CUSTOM_ITEM_OBJ
 		set_icon_state(citem.item_icon_state)
 		item_state = null
 		icon_override = CUSTOM_ITEM_MOB
-[/inf.exclude]*/
-		//[INF]
-		init_custom_icon_file()
-		set_icon_state(citem.item_icon_state)
-		//[/INF]
-
 //[INF]
 	if(citem.additional_data.Find("slot_flags"))
 		slot_flags = citem.additional_data["slot_flags"]
-/obj/item/proc/init_custom_icon_file()
-	item_state_slots = null
-	item_icons = null
-	item_state = null
-	icon = CUSTOM_ITEM_OBJ
-	icon_override = CUSTOM_ITEM_MOB
 //[/INF]
