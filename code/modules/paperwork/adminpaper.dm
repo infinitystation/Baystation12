@@ -17,7 +17,7 @@
 	var/footerOn = FALSE
 
 	var/logo_list = list("sollogo.png","eclogo.png","fleetlogo.png","exologo.png","ntlogo.png","daislogo.png","xynlogo.png","terralogo.png", "sfplogo.png",\
-																																							"ocielogo.png", "ccalogo.png", "foundlogo.png", "sierralogo.png") // INFF/inf
+																																							"ocielogo.png", "ccalogo.png", "foundlogo.png", "sierralogo.png") // INF
 	var/logo = ""
 
 /obj/item/weapon/paper/admin/New()
