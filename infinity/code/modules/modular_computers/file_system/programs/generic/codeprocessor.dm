@@ -83,6 +83,7 @@
 		\[bluelogo\] - Inserts the blue NT logo.
 		\[solcrest\] - Inserts the SCG crest.
 		\[eclogo\] - Inserts the Expeditionary Corps logo.
+		\[foundlogo\] - Inserts the Cuchulain Foundation logo.
 		\[daislogo\] - Inserts the Deimos Advanced Information Systems logo.
 		\[xynlogo\] - Inserts the Xynergy logo.
 		\[iccgseal\] - Inserts the ICCG seal
