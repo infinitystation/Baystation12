@@ -72,6 +72,10 @@
 		bomb = ARMOR_BOMB_PADDED
 		)
 	siemens_coefficient = 0.5
+// [INF]
+	icon = 'infinity/icons/obj/clothing/obj_head.dmi'
+	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
+// [/INF]
 
 /obj/item/clothing/head/helmet/riot
 	name = "riot helmet"
