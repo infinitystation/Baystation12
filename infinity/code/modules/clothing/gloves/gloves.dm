@@ -34,7 +34,6 @@
 	item_state = "bgloves"
 	armor = list(melee = 20, bullet = 20, laser = 30,energy = 25, bomb = 20, bio = 0, rad = 0)
 
-
 /obj/item/clothing/gloves/wristwatch
 	name = "watch"
 	desc = "A wristwatch. This one is silver and EMP-resistance."
