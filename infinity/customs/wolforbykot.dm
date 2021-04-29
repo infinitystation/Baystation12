@@ -15,7 +15,7 @@
 	trade_blacklisted = TRUE
 
 
-/obj/item/clothing/head/helmet/ballistic/wolforbykot
+/obj/item/clothing/head/helmet/wolforbykot
 	name = "GSFH-2"
 	desc = "Closed helmet harking back to times of bloody war, a fearful visage of foreign special forces. \
 			Contains an IFF-enabled HUD, but an obvious shot mark on the right side of the plating has long \
@@ -34,7 +34,7 @@
 	trade_blacklisted = TRUE
 
 
-/obj/item/weapon/storage/backpack/wolforbykot
+/obj/item/weapon/storage/backpack/rucksack/wolforbykot
 	name = "CAB"
 	desc = "A waist-slung Gaian shocktroop bag. Compact and roomy."
 	icon = CUSTOM_ITEM_OBJ
@@ -65,7 +65,7 @@
 
 /obj/item/weapon/clothingbag/wolforbykot/New()
 	..()
-	new /obj/item/clothing/head/helmet/ballistic/wolforbykot(src)
+	new /obj/item/clothing/head/helmet/wolforbykot(src)
 	new /obj/item/clothing/suit/armor/pcarrier/medium/nt/wolforbykot(src)
 	new /obj/item/clothing/gloves/thick/duty/wolforbykot(src)
-	new /obj/item/weapon/storage/backpack/wolforbykot(src)
+	new /obj/item/weapon/storage/backpack/rucksack/wolforbykot(src)
