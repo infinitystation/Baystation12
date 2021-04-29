@@ -29,3 +29,30 @@
 	for(var/mob/victim in src.contents)
 		if(victim.mob_size >= user.mob_size)
 			user.drop_from_inventory(src)
+
+// Для нужд лоадаута и не только ~bear1ake | TODO: Спрайты...
+/mob/living/simple_animal/crab
+	holder_type = /obj/item/weapon/holder/crab
+
+/obj/item/weapon/holder/crab
+	slot_flags = null
+
+/mob/living/simple_animal/crow
+	holder_type = /obj/item/weapon/holder/crow
+
+/obj/item/weapon/holder/crow
+	slot_flags = SLOT_HEAD // У нас нет плеч, так что пусть сидит на голове
+	w_class = ITEM_SIZE_LARGE // Большая ворона
+
+/mob/living/simple_animal/rabbit
+	holder_type = /obj/item/weapon/holder/rabbit
+
+/obj/item/weapon/holder/rabbit
+	slot_flags = null
+
+/mob/living/simple_animal/fox
+	holder_type = /obj/item/weapon/holder/fox
+
+/obj/item/weapon/holder/fox
+	slot_flags = null
+	w_class = ITEM_SIZE_LARGE // Лису в рюкзак? Неее...
