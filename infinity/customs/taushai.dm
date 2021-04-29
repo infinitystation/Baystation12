@@ -5,8 +5,8 @@
 	icon = CUSTOM_ITEM_OBJ
 	item_icons = list(
 		slot_shoes_str = CUSTOM_ITEM_MOB,
-		slot_r_hand_str = 'infinity/icons/customs/infinity_custom_guns_slot_r_hand.dmi',
-		slot_l_hand_str = 'infinity/icons/customs/infinity_custom_guns_slot_l_hand.dmi',
+		slot_r_hand_str = CUSTOM_ITEM_INHANDS_RIGHT,
+		slot_l_hand_str = CUSTOM_ITEM_INHANDS_LEFT,
 	)
 	icon_state = "taushai_taj_boots"
 	item_state = "taushai_taj_boots"

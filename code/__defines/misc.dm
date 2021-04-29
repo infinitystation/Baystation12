@@ -108,7 +108,12 @@
 #define CUSTOM_ITEM_SYNTH 'infinity/icons/customs/infinity_custom_synthetic.dmi'
 #endif
 
-#define CUSTOM_GUN_ICONS 'infinity/icons/customs/infinity_custom_guns.dmi'	// INF
+#define CUSTOM_GUN_ICONS 			'infinity/icons/customs/infinity_custom_guns.dmi'					 // INF ~ custom GUN sprites
+#define CUSTOM_GUN_INHANDS_RIGHT	'infinity/icons/customs/infinity_custom_guns_slot_r_hand.dmi'		 // INF ~ righthand custom GUN sprites
+#define CUSTOM_GUN_INHANDS_LEFT		'infinity/icons/customs/infinity_custom_guns_slot_l_hand.dmi'		 // INF ~ lefthand custom GUN sprites
+#define CUSTOM_ITEM_INHANDS_RIGHT 	'infinity/icons/customs/infinity_custom_items_inhands_righthand.dmi' // INF ~ righthand custom ITEM sprites
+#define CUSTOM_ITEM_INHANDS_LEFT 	'infinity/icons/customs/infinity_custom_items_inhands_lefthand.dmi'  // INF ~ lefthand custom ITEM sprites
+#define CUSTOM_ITEM_EFFECT		 	'infinity/icons/customs/infinity_custom_guns.dmi'					 // INF ~ custom ITEM effects
 
 #define WALL_CAN_OPEN 1
 #define WALL_OPENING 2
