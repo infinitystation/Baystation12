@@ -65,3 +65,79 @@
 	required_donate_level = 5
 	price = 25 // Не входит в стандартный набор и является так-то убийственной штукой
 	cost = 0
+
+/datum/gear/bikehorn
+	display_name = "bike horn"
+	description = "for real aesthetes"
+	path = /obj/item/weapon/bikehorn
+	required_donate_level = 1
+
+/datum/gear/bikehorn/rubberducky
+	display_name = "rubber duck"
+	description = "QUACK"
+	path = /obj/item/weapon/bikehorn/rubberducky
+	required_donate_level = 1
+
+/datum/gear/premium_alcohol
+	display_name = "expensive alcohol"
+	description = "sometimes it turns out that the bar is closed, but you want a drink."
+	path = /obj/item/weapon/reagent_containers/food/drinks/bottle/premiumvodka
+	required_donate_level = 1
+
+/datum/gear/premium_alcohol/New()
+	. = ..()
+	var/list/premium_alcohol_list = list(
+		"Vodka" = /obj/item/weapon/reagent_containers/food/drinks/bottle/premiumvodka,
+		"VIne" = /obj/item/weapon/reagent_containers/food/drinks/bottle/premiumwine,
+		"Whiskey" = /obj/item/weapon/reagent_containers/food/drinks/bottle/specialwhiskey,
+		"Nothing" = /obj/item/weapon/reagent_containers/food/drinks/bottle/bottleofnothing,
+		"Vermouth" = /obj/item/weapon/reagent_containers/food/drinks/bottle/vermouth,
+	)
+	gear_tweaks += new /datum/gear_tweak/path(premium_alcohol_list)
+
+/datum/gear/pizzabox
+	display_name = "pizza box"
+	description = "pizza time"
+	path = /obj/item/pizzabox/margherita
+	required_donate_level = 1
+
+/datum/gear/pizzabox/New()
+	. = ..()
+	var/list/pizza_box_list = list(
+		"Margherita" = /obj/item/pizzabox/margherita ,
+		"Mushroom" = /obj/item/pizzabox/mushroom,
+		"Meat" = /obj/item/pizzabox/meat,
+		"Vegetable" = /obj/item/pizzabox/vegetable,
+	)
+	gear_tweaks += new /datum/gear_tweak/path(pizza_box_list)
+
+/datum/gear/musical_instruments
+	display_name = "musical instruments"
+	description = "let's DOOT"
+	path = /obj/item/device/synthesized_instrument/synthesizer
+	required_donate_level = 1
+
+/datum/gear/musical_instruments/New()
+	. = ..()
+	var/list/musical_instruments_list = list(
+		"Synthesizer" = /obj/item/device/synthesized_instrument/synthesizer,
+		"Polyguitar" = /obj/item/device/synthesized_instrument/guitar/multi,
+		"Guitar" = /obj/item/device/synthesized_instrument/guitar,
+		"Trumpet" = /obj/item/device/synthesized_instrument/trumpet,
+	)
+	gear_tweaks += new /datum/gear_tweak/path(musical_instruments_list)
+
+/datum/gear/costume_bags
+	display_name = "Costume bags"
+	description = "time for some fashion"
+	path = /obj/item/weapon/clothingbag/costume/chaplain
+	required_donate_level = 1
+
+/datum/gear/costume_bags/New()
+	. = ..()
+	var/list/costume_bags_list = list(
+		"Clown" = /obj/item/weapon/clothingbag/costume/clown,
+		"Witch" = /obj/item/weapon/clothingbag/costume/witch,
+		"Chaplain" = /obj/item/weapon/clothingbag/costume/chaplain,
+	)
+	gear_tweaks += new /datum/gear_tweak/path(costume_bags_list)
