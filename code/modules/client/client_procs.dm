@@ -406,6 +406,7 @@
 		'html/images/eclogo.png',
 		'html/images/fleetlogo.png',
 		'html/images/sfplogo.png',
+		'html/images/sierralogo.png',//inf
 		'html/images/foundlogo.png',//inf
 		'html/images/ccalogo.png'//inf
 		)

@@ -77,16 +77,18 @@
 		\[grid\] - \[/grid\] : Table without visible borders, for layouts.
 		\[row\] - New table row.
 		\[cell\] - New table cell.
-		\[logo\] - Inserts EXO logo image.
-		\[ntlogo\] - Inserts the NT logo image.
-		\[bluelogo\] - Inserts blue NT logo image.
-		\[solcrest\] - Inserts SCG crest image.
+		\[logo\] - Inserts EXO logo.
+		\[sierralogo\] - Inserts the NSV Sierra logo.
+		\[ntlogo\] - Inserts the NT logo.
+		\[bluelogo\] - Inserts the blue NT logo.
+		\[solcrest\] - Inserts the SCG crest.
 		\[eclogo\] - Inserts the Expeditionary Corps logo.
+		\[foundlogo\] - Inserts the Cuchulain Foundation logo.
 		\[daislogo\] - Inserts the Deimos Advanced Information Systems logo.
-		\[xynlogo\] - Inserts the Xyngergy logo.
-		\[iccgseal\] - Inserts ICCG seal
-		\[fleetlogo\] - Inserts the logo of the SCG Fleet
-		\[ocielogo\] - Inserts the logo of the Office of Civil Investigation and Enforcement"}
+		\[xynlogo\] - Inserts the Xynergy logo.
+		\[iccgseal\] - Inserts the ICCG seal
+		\[fleetlogo\] - Inserts the SCG Fleet logo.
+		\[ocielogo\] - Inserts the Office of Civil Investigation and Enforcement logo."}
 
 		to_chat(usr, help)
 		return 1

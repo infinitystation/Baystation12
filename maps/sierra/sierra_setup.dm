@@ -12,7 +12,7 @@
 	to_chat(victim, "<br><span class='danger'>Внимание!</span> На данный момент существует баг, из-за которого слоты с персонажами могут не загрузиться. Если он произошел - зайдите во вкладку OOC и нажмите 'Fix characters load'.")
 
 /datum/map/sierra/send_welcome()
-	var/welcome_text = "<center><img src = ntlogo.png /><br /><font size = 3><b>NSV Sierra</b> Показания Сенсоров:</font><hr />"
+	var/welcome_text = "<center><img src = sierralogo.png /><br /><font size = 3><b>NSV Sierra</b> Показания Сенсоров:</font><hr />"
 	welcome_text += "Отчет сгенерирован [stationdate2text()] в [stationtime2text()]</center><br /><br />"
 	welcome_text += "Текущая система: <b>[system_name()]</b><br />"
 	welcome_text += "Следующая система для прыжка: <b>[generate_system_name()]</b><br />"

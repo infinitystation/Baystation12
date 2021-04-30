@@ -23,7 +23,7 @@ GLOBAL_LIST_EMPTY(banned_ruin_ids)
 		var/datum/map_template/ruin/ruin = null
 		if(ruins && ruins.len)
 			ruin = pick(ruins)
-			if(ruin.cost > budget)
+			if(ruin.spawn_cost > budget)
 				ruins -= ruin
 				continue //Too expensive, get rid of it and try again
 		else
@@ -60,8 +60,8 @@ GLOBAL_LIST_EMPTY(banned_ruin_ids)
 
 			load_ruin(T, ruin)
 			spawned_ruins += ruin
-			if(ruin.cost >= 0)
-				budget -= ruin.cost
+			if(ruin.spawn_cost >= 0)
+				budget -= ruin.spawn_cost
 			if(!(ruin.template_flags & TEMPLATE_FLAG_ALLOW_DUPLICATES))
 				for(var/other_ruin_datum in ruins)
 					var/datum/map_template/ruin/other_ruin = other_ruin_datum
