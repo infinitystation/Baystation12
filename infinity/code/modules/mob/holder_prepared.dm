@@ -9,9 +9,9 @@
 		contents |= S
 
 /obj/item/weapon/holder/crab/prepared
-    name = "crab"
-    desc = "A hard-shelled crustacean. Seems quite content to lounge around all the time."
-    prepared_type = /mob/living/simple_animal/crab
+	name = "crab"
+	desc = "A hard-shelled crustacean. Seems quite content to lounge around all the time."
+	prepared_type = /mob/living/simple_animal/crab
 
 /obj/item/weapon/holder/crow/prepared
 	name = "crow"
