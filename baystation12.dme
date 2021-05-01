@@ -3367,6 +3367,7 @@
 #include "infinity\code\game\objects\items\devices\serial.dm"
 #include "infinity\code\game\objects\items\devices\syndietele.dm"
 #include "infinity\code\game\objects\items\devices\radio\headset.dm"
+#include "infinity\code\game\objects\items\donate\costume_bags.dm"
 #include "infinity\code\game\objects\items\stacks\tiles\tile_types.dm"
 #include "infinity\code\game\objects\items\weapons\cards_Id.dm"
 #include "infinity\code\game\objects\items\weapons\explosives.dm"
