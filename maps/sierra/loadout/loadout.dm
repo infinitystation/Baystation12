@@ -71,18 +71,24 @@
 	description = "for real aesthetes"
 	path = /obj/item/weapon/bikehorn
 	required_donate_level = 1
+	cost = 0
+	price = 1
 
 /datum/gear/bikehorn/rubberducky
 	display_name = "rubber duck"
 	description = "QUACK"
 	path = /obj/item/weapon/bikehorn/rubberducky
 	required_donate_level = 1
+	cost = 0
+	price = 1
 
 /datum/gear/premium_alcohol
 	display_name = "expensive alcohol"
 	description = "sometimes it turns out that the bar is closed, but you want a drink."
 	path = /obj/item/weapon/reagent_containers/food/drinks/bottle/premiumvodka
 	required_donate_level = 1
+	cost = 0
+	price = 5
 
 /datum/gear/premium_alcohol/New()
 	. = ..()
@@ -100,6 +106,8 @@
 	description = "pizza time"
 	path = /obj/item/pizzabox/margherita
 	required_donate_level = 1
+	cost = 0
+	price = 5
 
 /datum/gear/pizzabox/New()
 	. = ..()
@@ -116,6 +124,8 @@
 	description = "let's DOOT"
 	path = /obj/item/device/synthesized_instrument/synthesizer
 	required_donate_level = 1
+	cost = 0
+	price = 5
 
 /datum/gear/musical_instruments/New()
 	. = ..()
@@ -132,6 +142,8 @@
 	description = "time for some fashion"
 	path = /obj/item/weapon/clothingbag/costume/chaplain
 	required_donate_level = 1
+	cost = 0
+	price = 10
 
 /datum/gear/costume_bags/New()
 	. = ..()
