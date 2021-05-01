@@ -24,18 +24,18 @@
 	build_path = /obj/item/organ/internal/augment/boost/anatomy
 	materials = list(DEFAULT_WALL_MATERIAL = 750, "glass" = 750, "silver" = 100)
 	req_tech = list(TECH_MATERIAL = 5, TECH_ENGINEERING = 4, TECH_BIO = 5)
-	id = "augment_booster_gunnery"
+	id = "augment_booster_anatomy"
 	
 /datum/design/item/mechfab/augment/medical
 	name = "Medical booster"
 	build_path = /obj/item/organ/internal/augment/boost/medical
 	materials = list(DEFAULT_WALL_MATERIAL = 750, "glass" = 750, "silver" = 100)
 	req_tech = list(TECH_MATERIAL = 5, TECH_ENGINEERING = 4, TECH_BIO = 5)
-	id = "augment_booster_gunnery"
+	id = "augment_booster_medical"
 
 /datum/design/item/mechfab/augment/pilot
 	name = "Pilot booster"
 	build_path = /obj/item/organ/internal/augment/boost/pilot
 	materials = list(DEFAULT_WALL_MATERIAL = 750, "glass" = 750, "silver" = 100)
 	req_tech = list(TECH_MATERIAL = 5, TECH_ENGINEERING = 6, TECH_BIO = 4)
-	id = "augment_booster_gunnery"
+	id = "augment_booster_pilot"
