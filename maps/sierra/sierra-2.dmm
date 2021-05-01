@@ -15804,11 +15804,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
@@ -33715,15 +33710,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo/south)
-"cbC" = (
-/obj/structure/catwalk,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/seconddeck/foreport)
 "ccJ" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -33759,15 +33745,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
-"cnD" = (
-/obj/structure/catwalk,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/seconddeck/foreport)
 "crk" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/railing/mapped/no_density{
@@ -34176,15 +34153,6 @@
 /obj/structure/railing/mapped/no_density,
 /turf/simulated/floor/grass,
 /area/grove/theta)
-"esx" = (
-/obj/structure/catwalk,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/seconddeck/foreport)
 "etm" = (
 /obj/machinery/door/airlock/glass/atmos{
 	dir = 4;
@@ -34636,6 +34604,15 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/level1)
+"gJT" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/seconddeck/foreport)
 "gKA" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -34810,6 +34787,15 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/wood/bamboo,
 /area/grove/theta)
+"hAn" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/seconddeck/foreport)
 "hEA" = (
 /obj/random/obstruction,
 /obj/structure/largecrate,
@@ -35753,6 +35739,15 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
+"mnB" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/seconddeck/foreport)
 "mqK" = (
 /obj/machinery/camera/network/second_deck{
 	c_tag = "Cafe - Rooms"
@@ -50245,7 +50240,7 @@ aRB
 aPB
 aJi
 aHY
-cnD
+mnB
 aFs
 aFs
 aFs
@@ -50447,7 +50442,7 @@ aEu
 aEI
 aOQ
 aOV
-cnD
+mnB
 aFs
 aFs
 aPE
@@ -50647,9 +50642,9 @@ aRB
 aRB
 aRB
 uFP
-cbC
-cbC
-esx
+hAn
+hAn
+gJT
 aFs
 bgk
 aKj
