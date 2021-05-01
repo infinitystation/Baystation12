@@ -138,7 +138,7 @@
 	gear_tweaks += new /datum/gear_tweak/path(musical_instruments_list)
 
 /datum/gear/costume_bags
-	display_name = "Costume bags"
+	display_name = "costume bags"
 	description = "time for some fashion"
 	path = /obj/item/weapon/clothingbag/costume/chaplain
 	required_donate_level = 1
@@ -148,8 +148,24 @@
 /datum/gear/costume_bags/New()
 	. = ..()
 	var/list/costume_bags_list = list(
-		"Clown" = /obj/item/weapon/clothingbag/costume/clown,
 		"Witch" = /obj/item/weapon/clothingbag/costume/witch,
 		"Chaplain" = /obj/item/weapon/clothingbag/costume/chaplain,
 	)
 	gear_tweaks += new /datum/gear_tweak/path(costume_bags_list)
+
+/datum/gear/costume_clown
+	display_name = "clown costume"
+	description = "Admit it, you invested so much money just for one clown costume."
+	path = /obj/item/weapon/clothingbag/costume/clown
+	required_donate_level = 5
+	cost = 0
+	price = 25  // I don't want to see clown parade ~ SidVeld
+
+/datum/gear/head/kittyears/donate
+	display_name = "kitty ears"
+	path = /obj/item/clothing/head/kitty/fake
+	sort_category = "Earwear"
+	allowed_roles = null
+	required_donate_level = 1
+	cost = 0
+	price = 1
