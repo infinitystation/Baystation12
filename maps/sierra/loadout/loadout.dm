@@ -18,7 +18,7 @@
 /datum/gear/pet_holder
 	display_name = "exotic pet"
 	description = "Not common pet"
-	path = /obj/item/weapon/holder/crab/prepared
+	path = /obj/item/weapon/holder
 	required_donate_level = 5
 	price = 20 // Не входит в стандартный набор, так что пусть стоит кое-чего
 	cost = 0
@@ -45,7 +45,7 @@
 /datum/gear/pmp_w_tape
 	display_name = "music player"
 	description = "With custom tape"
-	path = /obj/item/music_player/radio/custom_tape
+	path = /obj/item/music_player
 	required_donate_level = 3
 	cost = 0
 
@@ -85,7 +85,7 @@
 /datum/gear/premium_alcohol
 	display_name = "expensive alcohol"
 	description = "sometimes it turns out that the bar is closed, but you want a drink."
-	path = /obj/item/weapon/reagent_containers/food/drinks/bottle/premiumvodka
+	path = /obj/item/weapon/reagent_containers/food/drinks/bottle
 	required_donate_level = 1
 	cost = 0
 	price = 5
@@ -94,7 +94,7 @@
 	. = ..()
 	var/list/premium_alcohol_list = list(
 		"Vodka" = /obj/item/weapon/reagent_containers/food/drinks/bottle/premiumvodka,
-		"VIne" = /obj/item/weapon/reagent_containers/food/drinks/bottle/premiumwine,
+		"Vine" = /obj/item/weapon/reagent_containers/food/drinks/bottle/premiumwine,
 		"Whiskey" = /obj/item/weapon/reagent_containers/food/drinks/bottle/specialwhiskey,
 		"Nothing" = /obj/item/weapon/reagent_containers/food/drinks/bottle/bottleofnothing,
 		"Vermouth" = /obj/item/weapon/reagent_containers/food/drinks/bottle/vermouth,
@@ -104,7 +104,7 @@
 /datum/gear/pizzabox
 	display_name = "pizza box"
 	description = "pizza time"
-	path = /obj/item/pizzabox/margherita
+	path = /obj/item/pizzabox
 	required_donate_level = 1
 	cost = 0
 	price = 5
@@ -112,7 +112,7 @@
 /datum/gear/pizzabox/New()
 	. = ..()
 	var/list/pizza_box_list = list(
-		"Margherita" = /obj/item/pizzabox/margherita ,
+		"Margherita" = /obj/item/pizzabox/margherita,
 		"Mushroom" = /obj/item/pizzabox/mushroom,
 		"Meat" = /obj/item/pizzabox/meat,
 		"Vegetable" = /obj/item/pizzabox/vegetable,
@@ -122,7 +122,7 @@
 /datum/gear/musical_instruments
 	display_name = "musical instruments"
 	description = "let's DOOT"
-	path = /obj/item/device/synthesized_instrument/synthesizer
+	path = /obj/item/device/synthesized_instrument
 	required_donate_level = 1
 	cost = 0
 	price = 5
@@ -140,7 +140,7 @@
 /datum/gear/costume_bags
 	display_name = "costume bags"
 	description = "time for some fashion"
-	path = /obj/item/weapon/clothingbag/costume/chaplain
+	path = /obj/item/weapon/clothingbag/costume
 	required_donate_level = 1
 	cost = 0
 	price = 10
