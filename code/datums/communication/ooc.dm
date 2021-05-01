@@ -22,7 +22,7 @@
 			log_and_message_admins("has attempted to advertise in [name]: [message]")
 			return FALSE
 	if(name == "OOC" && !config.ooc_allowed && !check_rights(R_PERMISSIONS, 0, C))
-		to_chat(C, SPAN_DANGER("У кого то не хватает прав чтобы пользоваться отключенным OOC."))
+		to_chat(C, SPAN_DANGER("Вы не можете использовать отключённый канал."))
 		return FALSE
 //[/INF]
 
@@ -47,8 +47,8 @@
 		if(target.is_key_ignored(C.key)) // If we're ignored by this person, then do nothing.
 			continue
 		var/sent_message = "[create_text_tag("ooc", "OOC:", target)] <EM>" + "[holder_rank]" + "[C.key]:</EM> <span class='message'>[message]</span>"
-		sent_message = emoji_parse(sent_message)
-		if(!is_stealthed && C.prefs.ooccolor != initial(C.prefs.ooccolor) && C.holder || C.deadmin_holder)
+		sent_message = emoji_parse_by_user(sent_message, C)//inf
+		if(!is_stealthed && C.prefs.ooccolor != initial(C.prefs.ooccolor))
 			receive_communication(C, target, "<font color='[C.prefs.ooccolor]'><span class='ooc'>[sent_message]</font></span>")
 		else
 			receive_communication(C, target, "<span class='ooc'><span class='[ooc_style]'>[sent_message]</span></span>")
