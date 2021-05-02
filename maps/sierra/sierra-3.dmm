@@ -3443,7 +3443,7 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/medical/equipstorage)
 "agI" = (
 /obj/effect/floor_decal/floordetail/edgedrain{
 	dir = 8
@@ -4843,7 +4843,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/medical/equipstorage)
 "aje" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/door/airlock/medical{
@@ -5721,7 +5721,7 @@
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/medical/equipstorage)
 "akn" = (
 /obj/structure/table/rack,
 /obj/item/weapon/storage/firstaid/adv{
@@ -6437,7 +6437,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "alp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -8902,7 +8902,7 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/grey,
 /turf/simulated/floor/tiled/white/monotile,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "apc" = (
 /obj/effect/floor_decal/floordetail/edgedrain,
 /obj/structure/cable/cyan{
@@ -8927,7 +8927,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "ape" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/cyan{
@@ -8947,7 +8947,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "apf" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -8970,7 +8970,7 @@
 	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "apg" = (
 /obj/machinery/power/apc{
 	dir = 1;
@@ -8993,7 +8993,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "aph" = (
 /obj/item/device/radio/intercom{
 	pixel_y = 26
@@ -9018,7 +9018,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "api" = (
 /obj/structure/iv_drip,
 /obj/structure/hygiene/sink{
@@ -9039,7 +9039,7 @@
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/medical/equipstorage)
 "apj" = (
 /obj/effect/floor_decal/floordetail/edgedrain{
 	dir = 1
@@ -9914,7 +9914,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "aqJ" = (
 /obj/effect/floor_decal/borderfloorwhite/corner{
 	dir = 8
@@ -9932,7 +9932,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "aqL" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -9948,7 +9948,7 @@
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "aqP" = (
 /obj/machinery/door/airlock/medical{
 	dir = 4;
@@ -9970,7 +9970,7 @@
 	name = "Infirmary Window Shutters"
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/medical/infirmary)
+/area/medical/equipstorage)
 "aqS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -9979,7 +9979,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/medical/equipstorage)
 "aqX" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -10509,7 +10509,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "arW" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -10524,7 +10524,7 @@
 	plant = "P-Alien Plant"
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "arX" = (
 /obj/structure/disposalpipe/junction,
 /obj/effect/floor_decal/borderfloorwhite/corner{
@@ -10537,7 +10537,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "arY" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/borderfloor{
@@ -10555,7 +10555,7 @@
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/paleblue/border,
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "asa" = (
 /obj/machinery/camera/network/medbay{
 	c_tag = "Infirmary - Hallway";
@@ -10564,7 +10564,7 @@
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/paleblue/border,
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "asb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -10577,7 +10577,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "asc" = (
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
@@ -10600,7 +10600,7 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/random/date_based/christmas/xmaslights,
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "asd" = (
 /obj/effect/wallframe_spawn/no_grille,
 /obj/machinery/door/blast/shutters/open{
@@ -10612,7 +10612,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/medical/infirmary)
+/area/medical/equipstorage)
 "ase" = (
 /obj/structure/closet/emcloset{
 	anchored = 1;
@@ -10632,7 +10632,7 @@
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/medical/equipstorage)
 "asi" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{
 	dir = 4
@@ -11385,7 +11385,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "atO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -25763,7 +25763,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "aPz" = (
 /turf/simulated/wall/prepainted,
 /area/tcommsat/computer)
@@ -38002,7 +38002,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "bLh" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 1
@@ -38219,7 +38219,7 @@
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/medical/equipstorage)
 "dbS" = (
 /obj/structure/filingcabinet,
 /obj/item/weapon/folder/white,
@@ -38248,7 +38248,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "dxt" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -38289,7 +38289,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "dGl" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -38317,7 +38317,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/medical/equipstorage)
 "dMT" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/white/monotile,
@@ -38532,7 +38532,7 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/medical/equipstorage)
 "fgU" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 8
@@ -38612,7 +38612,7 @@
 	},
 /obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "fpQ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -38746,7 +38746,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "fJs" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -39067,7 +39067,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "hnp" = (
 /obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "cadetwindow"
@@ -39197,7 +39197,7 @@
 "hRe" = (
 /obj/machinery/status_display,
 /turf/simulated/wall/r_wall/prepainted,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "hSE" = (
 /obj/structure/bed/chair/comfy/beige{
 	dir = 8
@@ -39294,7 +39294,7 @@
 /area/medical/morgue)
 "ibv" = (
 /turf/simulated/wall/r_wall/prepainted,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "icB" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -39317,7 +39317,7 @@
 	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "iez" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -39673,7 +39673,7 @@
 	pixel_x = 22
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "jJC" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/dark,
@@ -39714,7 +39714,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "knM" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 9
@@ -40022,7 +40022,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "lnn" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -40206,7 +40206,7 @@
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "lLZ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -40360,7 +40360,7 @@
 /obj/effect/floor_decal/corner/paleblue/mono,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/white/monotile,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "mvJ" = (
 /obj/structure/table/woodentable/walnut,
 /obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup,
@@ -40461,7 +40461,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "mPQ" = (
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/purple/border,
@@ -40698,7 +40698,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "nqx" = (
 /obj/structure/catwalk,
 /obj/structure/cable/green{
@@ -41655,7 +41655,7 @@
 	pixel_x = 20
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "syy" = (
 /obj/item/device/radio/intercom{
 	dir = 8;
@@ -41852,7 +41852,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "trm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -41895,7 +41895,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "tDy" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -41928,7 +41928,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "tFf" = (
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced{
@@ -41996,7 +41996,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "tQT" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -42049,7 +42049,7 @@
 	},
 /obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "tYh" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 10
@@ -42103,7 +42103,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "ucH" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/borderfloor/corner{
@@ -42348,7 +42348,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "vKO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -42472,7 +42472,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "wLX" = (
 /obj/structure/cable/cyan{
 	d1 = 2;
@@ -42570,7 +42570,7 @@
 "xoT" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white/monotile,
-/area/medical/infirmary)
+/area/hallway/infirmary)
 "xtO" = (
 /obj/structure/catwalk,
 /obj/structure/cable/green{

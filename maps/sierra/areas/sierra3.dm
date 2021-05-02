@@ -365,7 +365,7 @@
 	name = "First Deck - Infirmary - Storage"
 	icon_state = "medbay4"
 
-/area/medical/infirmary
+/area/hallway/infirmary
 	name = "First Deck - Infirmary - Hallway"
 	icon_state = "medbay"
 /*
