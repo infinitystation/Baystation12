@@ -40316,7 +40316,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/security/sierra/hallway)
->>>>>>> rnd_remap
 "lLZ" = (
 /obj/structure/cable/green{
 	d1 = 4;
