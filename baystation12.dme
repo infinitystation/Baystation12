@@ -93,6 +93,7 @@
 #include "code\__defines\_inf\_inf.misc.dm"
 #include "code\__defines\_inf\_inf.mobs.dm"
 #include "code\__defines\_inf\_inf.modulars.dm"
+#include "code\__defines\_inf\_inf_customs.dm"
 #include "code\_global_vars\configuration.dm"
 #include "code\_global_vars\edible.dm"
 #include "code\_global_vars\logging.dm"
