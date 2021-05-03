@@ -60,7 +60,7 @@
 
 /obj/item/weapon/clothingbag/wolforbykot
 	name = "clothing bag"
-	desc = "Rajirra's property"
+	desc = "Roar's property"
 	trade_blacklisted = TRUE
 
 /obj/item/weapon/clothingbag/wolforbykot/New()
