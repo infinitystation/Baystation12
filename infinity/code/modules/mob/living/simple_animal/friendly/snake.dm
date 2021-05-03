@@ -102,7 +102,13 @@
 /obj/item/weapon/holder/snake/prepared
 	name = "snake"
 	desc = "A slithery snake. These legless reptiles are the bane of mice and adventurers alike. Seems to be neutral for everyone."
-	prepared_type = /mob/living/simple_animal/hostile/retaliate/poison/snake/imprinted
+	var/prepared_type = /mob/living/simple_animal/hostile/retaliate/poison/snake/imprinted
+
+/obj/item/weapon/holder/snake/prepared/New()
+	..()
+
+	var/mob/living/simple_animal/hostile/retaliate/poison/snake/S = new prepared_type(loc)
+	contents |= S
 
 /obj/item/weapon/holder/snake/prepared/update_state()	
 	for(var/mob/M in contents)

@@ -63,9 +63,6 @@
 	throw_range = 10
 	force = 10
 
-/obj/item/music_player/boombox/custom_tape
-	tape = /obj/item/music_tape/custom
-
 // This one for debug pruporses
 // I'll yell on you if you will use it in game without good reason >:(
 /obj/item/music_player/debug

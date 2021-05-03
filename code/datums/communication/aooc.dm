@@ -22,9 +22,11 @@
 	else if(only_xenos(C))	return FALSE	// INF
 
 /decl/communication_channel/aooc/do_communicate(var/client/C, var/message)
-	message = emoji_parse_by_user(message, C)//inf
-
+	message = emoji_parse(message)
 	var/datum/admins/holder = C.holder
+
+//	if(holder)
+//		message = emoji_parse(message)
 
 	for(var/client/target in GLOB.clients)
 		if(target.holder)
