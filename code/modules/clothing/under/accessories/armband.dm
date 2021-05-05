@@ -39,8 +39,8 @@
 
 /obj/item/clothing/accessory/armband/whitered
 	name = "\improper corporate armband"
-	desc = "An armband, worn by the crew to display which department they're assigned to. This one is green and white."
-	icon_state = "corpsec_armband"
+	desc = "An armband, worn by the crew to display which department they're assigned to. This one is red and white." ///INF, WAS: This one is green and white.
+	icon_state = "whitered" ///INF, WAS: corpsec_armband
 
 /obj/item/clothing/accessory/armband/bluegold
 	name = "peacekeeper armband"

@@ -20,10 +20,16 @@
 /datum/gear/suit/cargo_poncho
 	allowed_roles = list(/datum/job/qm, /datum/job/cargo_tech, /datum/job/cargo_assistant, /datum/job/submap/merchant, /datum/job/submap/merchant_trainee)
 
-/datum/gear/suit/wintercoat/engineering
-	display_name = "expeditionary winter coat"
-	path = /obj/item/clothing/suit/storage/hooded/wintercoat/solgov
-	allowed_roles = EXPLORATION_ROLES
+	display_name = "captain winter coat"
+	path = /obj/item/clothing/suit/storage/hooded/wintercoat/captain
+	allowed_roles = list(/datum/job/captain)
+/datum/gear/suit/wintercoat/hydroponics
+	display_name = "hydroponics winter coat"
+	path = /obj/item/clothing/suit/storage/hooded/wintercoat/hydro
+
+//	display_name = "expeditionary winter coat"
+//	path = /obj/item/clothing/suit/storage/hooded/wintercoat/solgov
+//	allowed_roles = EXPLORATION_ROLES
 
 /datum/gear/suit/wintercoat/engineering
 	display_name = "engineering winter coat"
