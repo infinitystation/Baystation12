@@ -23,7 +23,7 @@
 	id = "awaysite_merchant"
 	description = "Small vessel with merchpad."
 	suffixes = list("merchant/merchant-1.dmm", "merchant/merchant-2.dmm")
-	cost = 1000 //Event?
+	spawn_cost = 1000 //Event?
 */
 /obj/effect/shuttle_landmark/nav_merchant/nav1
 	name = "Merchant Navpoint #1"

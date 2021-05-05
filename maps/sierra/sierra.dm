@@ -104,6 +104,7 @@
 	#include "structures/closets/exploration.dm"
 
 	#include "loadout/_defines.dm"
+	#include "loadout/loadout.dm"
 	#include "loadout/loadout_accessories.dm"
 	#include "loadout/loadout_ec_skillbages.dm"
 	#include "loadout/loadout_eyes.dm"
@@ -147,6 +148,8 @@
 	#include "../away/voxship/voxship.dm"
 	#include "../away/meatstation/meatstation.dm"
 	#include "../away/miningstation/miningstation.dm"
+
+	#include "../random_ruins/exoplanet_ruins/playablecolony_inf/playablecolony.dm"
 
 	#define using_map_DATUM /datum/map/sierra
 

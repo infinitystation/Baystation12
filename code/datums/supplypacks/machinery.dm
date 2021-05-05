@@ -12,7 +12,7 @@
 
 /decl/hierarchy/supply_pack/machinery/microwave
 	name = "Machinery - Microwave crate"
-	contains = list(/obj/machinery/microwave/unsecured = 1)
+	contains = list(/obj/machinery/microwave{anchored = 0} = 1)
 	cost = 15
 	containername = "microwave crate"
 

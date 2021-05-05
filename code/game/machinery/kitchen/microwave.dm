@@ -24,9 +24,6 @@
 
 	var/list/ingredients = list()
 
-/obj/machinery/microwave/unsecured
-	anchored = 0
-
 
 // see code/modules/food/recipes_microwave.dm for recipes
 
