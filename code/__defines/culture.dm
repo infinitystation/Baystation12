@@ -5,7 +5,7 @@
 
 #define ALL_CULTURAL_TAGS list( \
 	TAG_CULTURE =   "Культура", \
-	TAG_HOMEWORLD = "Место проживания", \
+	TAG_HOMEWORLD = "Место рождения", \
 	TAG_FACTION =   "Фракция", \
 	TAG_RELIGION =  "Верования" \
 	)
@@ -160,12 +160,12 @@
 #define CULTURE_UNATHI_SALT_SWAMP     "Salt Swamp Clans"
 #define CULTURE_UNATHI_SPACE          "Space-Faring Clans"
 #define CULTURE_UNATHI_TERSTEN        "Tersten Clans"
- 
+
 #define HOME_SYSTEM_MOGHES          "Moghes"
 #define HOME_SYSTEM_OUERE           "Ouere"
 #define HOME_SYSTEM_UNATHI_TERSTEN  "Tersten - Unathi Clans"
 #define HOME_SYSTEM_OFFWORLD        "Off-world"
- 
+
 #define FACTION_UNATHI_HEGEMONY          "Moghes Hegemony"
 #define FACTION_UNATHI_TERSTEN_HEGEMONY  "Tersten Hegemony"
 #define FACTION_UNATHI_SSEN_UUMA         "Ssen-Uuma Convent"
@@ -174,7 +174,7 @@
 #define FACTION_UNATHI_GRESIS            "Gresis Krukzuz"
 #define FACTION_UNATHI_RAH_ZAKEH         "Rah'Zakeh League"
 #define FACTION_UNATHI_KHARZA            "Kharza Fleet"
- 
+
 #define RELIGION_UNATHI_STRATAGEM    "Grand Stratagem"
 #define RELIGION_UNATHI_PRECURSOR    "Precursor"
 #define RELIGION_UNATHI_VINE         "Hand of the Vine"
