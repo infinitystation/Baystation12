@@ -95,9 +95,11 @@
 	name = "Door Hacking Tool"
 	item_cost = 24
 	path = /obj/item/device/multitool/hacktool
-//INF	desc = "Appears and functions as a standard multitool until a screwdriver is used to toggle it. \
-//			While in hacking mode, this device will grant full access to any airlock in 20 to 40 seconds. \
-//			This device will be able to continuously reaccess the last 6 to 8  airlocks it was used on.
+/* INF
+	desc = "Appears and functions as a standard multitool until a screwdriver is used to toggle it. \
+			While in hacking mode, this device will grant full access to any airlock in 20 to 40 seconds. \
+			This device will be able to continuously reaccess the last 6 to 8  airlocks it was used on.
+*/
 //[INF]
 	desc = "Appears and functions as a standard multitool until >a screwdriver is used to toggle it<. \
 			While in hacking mode, this device will grant full access to any airlock in 8 to 12 seconds. \
