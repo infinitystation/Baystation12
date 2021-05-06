@@ -16,6 +16,7 @@
 	desc = "This chem sprayer is filled with mix, that will melt, mutate and irradiate everything."
 
 /obj/item/reagent_containers/spray/chemsprayer/bioterror/Initialize()
+	. = ..()
 	reagents.add_reagent(/datum/reagent/space_drugs, volume / 10)
 	reagents.add_reagent(/datum/reagent/mindbreaker, volume / 10)
 	reagents.add_reagent(/datum/reagent/toxin/carpotoxin, volume / 10)

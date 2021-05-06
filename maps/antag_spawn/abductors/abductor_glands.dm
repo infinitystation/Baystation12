@@ -5,6 +5,7 @@
 	icon_state = "gland"
 
 /obj/item/random_gland/Initialize()
+	. = ..()
 	var/gland_type = pick(subtypesof(/obj/item/organ/internal/gland))
 	new gland_type(get_turf(src))
 	qdel(src)
@@ -214,6 +215,7 @@
 	w_class = ITEM_SIZE_SMALL
 
 /obj/item/reagent_containers/food/snacks/egg/alien/Initialize()
+	. = ..()
 	var/datum/reagent/random = pick(
 									/datum/reagent/blood, /datum/reagent/water, /datum/reagent/acetone, /datum/reagent/aluminium, /datum/reagent/ammonia, /datum/reagent/carbon,
 									/datum/reagent/copper, /datum/reagent/ethanol, /datum/reagent/hydrazine, /datum/reagent/iron, /datum/reagent/lithium, /datum/reagent/mercury,

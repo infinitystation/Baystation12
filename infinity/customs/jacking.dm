@@ -136,6 +136,7 @@
 	output = /obj/item/gun/projectile/automatic/nt41/jacking
 
 /obj/item/clothingbag/custom_army/Initialize()
+	. = ..()
 	new /obj/item/clothing/under/custom_army_uniform(src)
 	new /obj/item/clothing/glasses/sunglasses/sechud/custom_ballistic(src)
 	new /obj/item/clothing/accessory/armor/helmcover/custom_army(src)
@@ -183,6 +184,7 @@
 	output = /obj/item/gun/energy/laser/secure/jacking
 
 /obj/item/clothingbag/custom_zpci_knight/Initialize()
+	. = ..()
 	new /obj/item/clothing/head/helmet/custom_zpci_knight(src)
 	new /obj/item/clothing/suit/armor/pcarrier/custom_zpci_knight(src)
 	new /obj/item/custkit/custom_zpci_knight(src)
@@ -295,6 +297,7 @@
 	trade_blacklisted = TRUE
 
 /obj/item/clothingbag/custom_saare/Initialize()
+	. = ..()
 	new /obj/item/clothing/under/custom_saare_uniform(src)
 	new /obj/item/clothing/glasses/sunglasses/sechud/custom_ballistic/orange(src)
 	new /obj/item/clothing/accessory/armor/helmcover/custom_saare(src)

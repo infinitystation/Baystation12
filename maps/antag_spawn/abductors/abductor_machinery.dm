@@ -68,6 +68,7 @@
 	var/mob/living/carbon/human/marked
 
 /obj/machinery/abductor_tele/Initialize()
+	. = ..()
 	hub = locate(/obj/machinery/abductor_hub)
 
 
@@ -122,6 +123,7 @@
 	var/obj/item/clothing/suit/armor/abductor/vest
 
 /obj/machinery/abductor_disguise/Initialize()
+	. = ..()
 	if(locate(/obj/item/clothing/suit/armor/abductor))
 		vest = locate(/obj/item/clothing/suit/armor/abductor)
 

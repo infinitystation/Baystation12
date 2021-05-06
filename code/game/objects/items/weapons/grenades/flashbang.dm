@@ -194,6 +194,7 @@
 	det_time = 20
 
 /obj/item/grenade/flashbang/clusterbang/segment/Initialize()
+	. = ..()
 	var/throwdir = rand(1, 8)
 	throw_at(get_edge_target_turf(src, throwdir),rand(1, 4), 0)
 	activate()
@@ -207,6 +208,7 @@
 	return
 
 /obj/item/grenade/flashbang/cluster/Initialize()
+	. = ..()
 	var/throwdir = rand(1, 8)
 	throw_at(get_edge_target_turf(src, throwdir),rand(1, 4), 0)
 	det_time = 10

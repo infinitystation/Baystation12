@@ -134,6 +134,7 @@
 	var/obj/machinery/abductor_disguise/dis_console
 
 /obj/item/scitool/Initialize()
+	. = ..()
 	console = locate(/obj/machinery/abductor_tele)
 	dis_console = locate(/obj/machinery/abductor_disguise)
 
