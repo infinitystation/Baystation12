@@ -80,7 +80,7 @@
 	agony = 10
 
 /obj/item/projectile/bullet/shotgun/beanbag/net/on_hit(var/atom/target, var/blocked = 0, var/def_zone = null)
-	var/obj/item/weapon/energy_net/safari/net = new(loc)
+	var/obj/item/energy_net/safari/net = new(loc)
 	net.throw_impact(target)
 	return TRUE
 

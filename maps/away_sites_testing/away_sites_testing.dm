@@ -19,15 +19,13 @@
 	#include "../away/slavers/slavers_base.dm"
 //INF	#include "../away/blueriver/blueriver.dm"
 	#include "../away/mobius_rift/mobius_rift.dm"
-//	#include "../away/icarus/icarus.dm" temporarily removed while we investigate unit test failures
 	#include "../away/errant_pisces/errant_pisces.dm"
 	#include "../away/lar_maria/lar_maria.dm"
 //INF	#include "../away/skrellscoutship/skrellscoutship.dm"
-	#include "../away/unishi/unishi.dm"
-	#include "../away/ascent/ascent.dm"
+	#include "../away/verne/verne.dm"
 	#include "../away/meatstation/meatstation.dm"
 	#include "../away/miningstation/miningstation.dm"
-
+	#include "../away/scavver/scavver_gantry.dm"
 	#include "../away/voxship/voxship.dm"
 
 //[INF]

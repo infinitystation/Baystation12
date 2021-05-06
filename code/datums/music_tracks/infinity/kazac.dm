@@ -1,6 +1,6 @@
-/music_track/kazac
-	artist = "Christmas"
+/decl/audio/track/kazac
+	author = "Christmas"
 	title = "Cossack song"
-	album = "Placeholder"
-	song = 'infinity/sound/music/newyear/rojdestov_kozachiapesnia.ogg'
+	collection =  "Placeholder"
+	source = 'infinity/sound/music/newyear/rojdestov_kozachiapesnia.ogg'
 	license =  /decl/license/grandfathered

@@ -124,20 +124,20 @@
 "aq" = (
 /obj/structure/closet,
 /obj/item/device/radio/off,
-/obj/item/weapon/card/id/sierra/merchant/salvage{
+/obj/item/card/id/sierra/merchant/salvage{
 	access = list(3074)
 	},
 /obj/item/device/flashlight,
 /obj/item/device/eftpos,
-/obj/item/weapon/card/id/sierra/merchant/salvage{
+/obj/item/card/id/sierra/merchant/salvage{
 	access = list(3074)
 	},
 /turf/simulated/floor/wood/walnut,
 /area/salvage/captain)
 "ar" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /obj/effect/floor_decal/spline/fancy/wood/corner,
 /turf/simulated/floor/wood/walnut,
 /area/salvage/captain)
@@ -166,8 +166,8 @@
 /area/salvage/bridge)
 "aw" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /turf/simulated/floor/plating,
 /area/salvage/bridge)
 "ax" = (
@@ -409,7 +409,7 @@
 /area/salvage/captain)
 "aO" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet,
+/obj/item/bedsheet,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
@@ -925,7 +925,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/table/standard,
-/obj/item/weapon/storage/firstaid/regular{
+/obj/item/storage/firstaid/regular{
 	pixel_x = -2;
 	pixel_y = 4
 	},
@@ -1034,7 +1034,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
-/obj/structure/handrai,
+/obj/structure/handrail,
 /turf/simulated/floor/tiled/techmaint,
 /area/salvage/shuttle)
 "bU" = (
@@ -1096,7 +1096,7 @@
 	icon_state = "bordercolor";
 	dir = 9
 	},
-/obj/structure/handrai,
+/obj/structure/handrail,
 /turf/simulated/floor/tiled,
 /area/salvage/shuttle)
 "bX" = (
@@ -1122,7 +1122,7 @@
 	icon_state = "bordercolor";
 	dir = 5
 	},
-/obj/structure/handrai,
+/obj/structure/handrail,
 /turf/simulated/floor/tiled,
 /area/salvage/shuttle)
 "bZ" = (
@@ -1392,7 +1392,7 @@
 	req_access = list(3074)
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/structure/handrai{
+/obj/structure/handrail{
 	icon_state = "handrail";
 	dir = 8
 	},
@@ -1404,8 +1404,8 @@
 /area/salvage/shuttle)
 "cw" = (
 /obj/structure/table/standard,
-/obj/item/weapon/reagent_containers/glass/beaker/large,
-/obj/item/weapon/material/knife,
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/item/material/knife,
 /obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 8
@@ -1465,19 +1465,19 @@
 	},
 /obj/structure/table/standard,
 /obj/item/bodybag/cryobag,
-/obj/item/weapon/storage/firstaid/regular{
+/obj/item/storage/firstaid/regular{
 	pixel_x = -2;
 	pixel_y = 4
 	},
-/obj/item/weapon/storage/firstaid/adv{
+/obj/item/storage/firstaid/adv{
 	pixel_x = -2
 	},
-/obj/item/weapon/storage/firstaid/toxin,
-/obj/item/weapon/storage/firstaid/fire{
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/fire{
 	pixel_x = 2;
 	pixel_y = 3
 	},
-/obj/item/weapon/storage/firstaid/o2{
+/obj/item/storage/firstaid/o2{
 	pixel_x = 4;
 	pixel_y = 6
 	},
@@ -1730,8 +1730,8 @@
 /area/salvage/shuttle)
 "cO" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /turf/simulated/floor/tiled/techmaint,
 /area/salvage/shuttle)
 "cP" = (
@@ -1980,7 +1980,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
-/obj/structure/handrai{
+/obj/structure/handrail{
 	icon_state = "handrail";
 	dir = 8
 	},
@@ -2174,7 +2174,7 @@
 	dir = 5;
 	icon_state = "intact"
 	},
-/obj/structure/handrai{
+/obj/structure/handrail{
 	icon_state = "handrail";
 	dir = 1
 	},
@@ -2206,7 +2206,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 9
 	},
-/obj/structure/handrai{
+/obj/structure/handrail{
 	icon_state = "handrail";
 	dir = 1
 	},
@@ -2236,7 +2236,7 @@
 /area/salvage/storage)
 "dD" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet,
+/obj/item/bedsheet,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
@@ -2264,7 +2264,7 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/random/medical,
 /obj/random/medical,
-/obj/item/weapon/storage/firstaid/regular{
+/obj/item/storage/firstaid/regular{
 	pixel_x = -2;
 	pixel_y = 4
 	},
@@ -2433,7 +2433,7 @@
 	},
 /obj/random/drinkbottle,
 /obj/random/drinkbottle,
-/obj/item/weapon/rig/eva/equipped{
+/obj/item/rig/eva/equipped{
 	req_access = newlist()
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -2483,16 +2483,16 @@
 /area/salvage/storage)
 "dZ" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/pen,
-/obj/item/weapon/paper_bin,
+/obj/item/pen,
+/obj/item/paper_bin,
 /obj/structure/window/reinforced,
-/obj/item/weapon/spacecash/bundle/c1000{
+/obj/item/spacecash/bundle/c1000{
 	desc = "It's worth 13000 Thalers. Who the fuck made it?";
 	name = "13000 Thaler";
 	worth = 13000
 	},
 /obj/effect/floor_decal/corner/yellow/mono,
-/obj/item/weapon/material/clipboard/steel,
+/obj/item/material/clipboard/steel,
 /turf/simulated/floor/tiled/monotile,
 /area/salvage/storage)
 "ea" = (
@@ -2570,7 +2570,7 @@
 /area/salvage/storage)
 "ej" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet,
+/obj/item/bedsheet,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
@@ -2603,7 +2603,7 @@
 /obj/random/tech_supply,
 /obj/random/tech_supply,
 /obj/random/toolbox,
-/obj/item/weapon/tape_roll,
+/obj/item/tape_roll,
 /turf/simulated/floor/tiled/techmaint,
 /area/salvage/storage)
 "en" = (
@@ -2756,17 +2756,17 @@
 /area/salvage/storage)
 "ez" = (
 /obj/structure/closet/crate,
-/obj/item/weapon/cell/standard,
+/obj/item/cell/standard,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/random/contraband,
 /obj/random/handgun,
 /obj/random/handgun,
-/obj/item/weapon/gun/energy/taser,
+/obj/item/gun/energy/taser,
 /turf/simulated/floor/tiled/techmaint,
 /area/salvage/storage)
 "eA" = (
 /obj/structure/table/rack,
-/obj/item/weapon/pickaxe,
+/obj/item/pickaxe,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/random/tool,
 /turf/simulated/floor/tiled/techmaint,
@@ -2897,8 +2897,8 @@
 	pixel_x = -25
 	},
 /obj/structure/table/standard,
-/obj/item/weapon/reagent_containers/spray/cleaner,
-/obj/item/weapon/soap,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/item/soap,
 /turf/simulated/floor/tiled/freezer,
 /area/salvage/storage)
 "eO" = (
@@ -2906,7 +2906,7 @@
 	dir = 1;
 	pixel_y = 27
 	},
-/obj/item/weapon/storage/mirror{
+/obj/item/storage/mirror{
 	dir = 4;
 	icon_state = "mirror";
 	pixel_x = -1;
@@ -2915,7 +2915,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
-/obj/item/weapon/stool/padded/red,
+/obj/item/stool/padded/red,
 /turf/simulated/floor/tiled/freezer,
 /area/salvage/storage)
 "eP" = (
@@ -3159,7 +3159,7 @@
 	icon_state = "railing0-1"
 	},
 /obj/item/device/multitool/multimeter,
-/obj/item/weapon/storage/toolbox/electrical,
+/obj/item/storage/toolbox/electrical,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/item/clothing/gloves/insulated,
 /obj/item/clothing/gloves/insulated,
@@ -3167,7 +3167,7 @@
 /area/salvage/engineering)
 "fm" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/mechanical,
 /obj/machinery/light/small{
 	icon_state = "bulb_map";
 	dir = 1
@@ -3208,8 +3208,8 @@
 /area/salvage/engineering)
 "fp" = (
 /obj/structure/reagent_dispensers/fueltank,
-/obj/item/weapon/weldingtool/largetank,
-/obj/item/weapon/welder_tank/large,
+/obj/item/weldingtool/largetank,
+/obj/item/welder_tank/large,
 /obj/machinery/firealarm{
 	pixel_y = 25
 	},
@@ -3222,7 +3222,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/tank/air,
+/obj/item/tank/air,
 /turf/simulated/floor/plating,
 /area/salvage/engineering)
 "fr" = (
@@ -3295,7 +3295,7 @@
 /turf/simulated/floor/plating,
 /area/salvage/engineering)
 "fy" = (
-/obj/item/weapon/crowbar,
+/obj/item/crowbar,
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/salvage/engineering)
@@ -3340,7 +3340,7 @@
 /turf/simulated/floor/plating,
 /area/salvage/engineering)
 "fE" = (
-/obj/item/weapon/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/mechanical,
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -3361,7 +3361,7 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/item/weapon/paper/salvage_pacman,
+/obj/item/paper/salvage_pacman,
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/salvage/engineering)
@@ -3576,9 +3576,9 @@
 "gc" = (
 /obj/machinery/cell_charger,
 /obj/structure/table/reinforced,
-/obj/item/weapon/cell,
-/obj/item/weapon/cell,
-/obj/item/weapon/cell/device/standard,
+/obj/item/cell,
+/obj/item/cell,
+/obj/item/cell/device/standard,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/railing/mapped{
 	dir = 8;
@@ -3589,10 +3589,10 @@
 /area/salvage/engineering)
 "gd" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/tank/jetpack/oxygen,
-/obj/item/weapon/tank/jetpack/oxygen,
-/obj/item/weapon/tank/jetpack/oxygen,
-/obj/item/weapon/tank/jetpack/oxygen,
+/obj/item/tank/jetpack/oxygen,
+/obj/item/tank/jetpack/oxygen,
+/obj/item/tank/jetpack/oxygen,
+/obj/item/tank/jetpack/oxygen,
 /obj/machinery/light,
 /obj/structure/table/rack,
 /turf/simulated/floor/plating,

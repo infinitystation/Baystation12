@@ -7,8 +7,8 @@
 	var/age = 0
 	var/list/random_icon_states
 	var/image/hud_overlay/hud_overlay
-	anchored = 1
-	density = 0
+	anchored = TRUE
+	density = FALSE
 
 	var/cleanable_scent
 	var/scent_intensity = /decl/scent_intensity/normal

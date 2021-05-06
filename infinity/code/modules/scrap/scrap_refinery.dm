@@ -6,8 +6,8 @@ var/const/SAFETY_COOLDOWN = 100
 	icon = 'icons/obj/recycling.dmi'
 	icon_state = "grinder-b0"
 	layer = MOB_LAYER+1 // Overhead
-	anchored = 1
-	density = 1
+	anchored = TRUE
+	density = TRUE
 	var/safety_mode = 0 // Temporality stops the machine if it detects a mob
 	var/grinding = 0
 	var/icon_name = "grinder-b"
@@ -23,7 +23,7 @@ var/const/SAFETY_COOLDOWN = 100
 	update_icon()
 
 /obj/machinery/recycler/RefreshParts()
-	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
 		chance_to_recycle = 25 * M.rating //% of materials salvaged
 	chance_to_recycle = min(100, chance_to_recycle)
 
@@ -40,7 +40,7 @@ var/const/SAFETY_COOLDOWN = 100
 
 /obj/machinery/recycler/attackby(obj/item/I, mob/user, params)
 	add_fingerprint(user)
-	if (istype(I, /obj/item/weapon/card/emag))
+	if (istype(I, /obj/item/card/emag))
 		emag_act(user)
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		return
@@ -99,7 +99,7 @@ var/const/SAFETY_COOLDOWN = 100
 	if(sound)
 		playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
 	var/chance_mod = 1
-	if(!istype(I, /obj/item/weapon/scrap_lump))
+	if(!istype(I, /obj/item/scrap_lump))
 		chance_mod = 5
 	if(prob(chance_to_recycle / chance_mod))
 		new /obj/item/stack/material/refined_scrap(loc)
@@ -144,7 +144,7 @@ var/const/SAFETY_COOLDOWN = 100
 
 	// Instantly lie down, also go unconscious from the pain, before you die.
 	L.Paralyse(5)
-	L.anchored = 1
+	L.anchored = TRUE
 	// For admin fun, var edit emagged to 2.
 	if(gib || emagged == 2)
 		L.gib()
@@ -153,4 +153,4 @@ var/const/SAFETY_COOLDOWN = 100
 		for(var/i = 1 to 3)
 			sleep(10)
 			L.adjustBruteLoss(80)
-	L.anchored = 0
+	L.anchored = FALSE

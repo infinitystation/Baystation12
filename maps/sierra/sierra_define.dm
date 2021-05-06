@@ -34,8 +34,6 @@
 	num_exoplanets = 1
 	planet_size = list(129,129)
 
-	playable = 1
-	recommended_players = 20
 //	minimum_players = 0 its already 0
 
 	away_site_budget = 7.5 // Было 5, увеличили на 50% вместе с уменьешением цены для одноуровневых авеек ~bear1ake

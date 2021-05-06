@@ -1,14 +1,14 @@
 //~Elar desu
 GLOBAL_LIST_INIT(customizable_parts_of_rig, list("helmet", "chest", "gloves", "boots"))
 /* Take care that this strings equal to names of
-/obj/item/weapon/rig/var/obj/item/clothing/shoes/boots
-/obj/item/weapon/rig/var/obj/item/clothing/shoes/gloves
-/obj/item/weapon/rig/var/obj/item/clothing/shoes/chest
-/obj/item/weapon/rig/var/obj/item/clothing/shoes/helmet
+/obj/item/rig/var/obj/item/clothing/shoes/boots
+/obj/item/rig/var/obj/item/clothing/shoes/gloves
+/obj/item/rig/var/obj/item/clothing/shoes/chest
+/obj/item/rig/var/obj/item/clothing/shoes/helmet
 */
-/obj/item/weapon/rig
+/obj/item/rig
 	var/list/piece_icon_state_overrides //Example: list("helmet" = "dude_junior_helmet")
-/obj/item/weapon/rig/inherit_custom_item_data(var/datum/custom_item/citem)
+/obj/item/rig/inherit_custom_item_data(var/datum/custom_item/citem)
 	. = ..()
 	if(length(citem.additional_data))
 		if(citem.additional_data.Find("piece_icon_state_overrides"))

@@ -311,7 +311,7 @@
 /turf/simulated/floor/tiled,
 /area/space)
 "aS" = (
-/obj/item/weapon/stool,
+/obj/item/stool,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -588,7 +588,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/teleport/station,
+/obj/machinery/tele_projector,
 /obj/machinery/door/window/eastleft,
 /obj/structure/window/reinforced,
 /obj/machinery/light{
@@ -880,7 +880,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/teleport/hub,
+ /obj/machinery/tele_pad,
 /turf/simulated/floor/tiled/steel_grid,
 /area/space)
 "bZ" = (

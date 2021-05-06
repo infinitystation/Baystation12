@@ -64,8 +64,7 @@
 				if (101 == AM.invisibility)
 					continue
 
-				spawn (0)
-					AM.singularity_pull(src, src.current_size)
+				addtimer(CALLBACK(AM, /atom/proc/singularity_pull, src, current_size), 0)
 
 
 /mob
@@ -84,8 +83,7 @@
 		riftimage.pixel_x = new_x
 		riftimage.pixel_y = new_y
 		riftimage.loc = T_mob
-
-		src << riftimage
+		image_to(src, riftimage)
 
 	else
 		QDEL_NULL(riftimage)

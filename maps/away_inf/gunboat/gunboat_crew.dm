@@ -20,9 +20,9 @@
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/solgov/utility/fleet(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/dutyboots(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/device/radio/off(H), slot_l_store)
-	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel/leather/navy(H), slot_back)
+	H.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel/leather/navy(H), slot_back)
 
-	var/obj/item/weapon/card/id/torch/crew/bridgeofficer/W = new(H)
+	var/obj/item/card/id/torch/crew/bridgeofficer/W = new(H)
 	if(!W) return
 	H.set_id_info(W)
 	W.desc = "An identification card issued to SolGov crewmembers aboard the Gunboat."
@@ -49,9 +49,9 @@
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/solgov/utility/fleet/engineering(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/dutyboots(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/device/radio/off(H), slot_l_store)
-	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel/leather/navy(H), slot_back)
+	H.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel/leather/navy(H), slot_back)
 
-	var/obj/item/weapon/card/id/torch/crew/engineering/W = new(H)
+	var/obj/item/card/id/torch/crew/engineering/W = new(H)
 	if(!W) return
 	H.set_id_info(W)
 	W.desc = "An identification card issued to SolGov crewmembers aboard the Patrol Craft."
@@ -79,9 +79,9 @@
 	H.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/toggle/labcoat(H), slot_wear_suit)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/dutyboots(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/device/radio/off(H), slot_l_store)
-	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel/leather/navy(H), slot_back)
+	H.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel/leather/navy(H), slot_back)
 
-	var/obj/item/weapon/card/id/torch/crew/medical/W = new(H)
+	var/obj/item/card/id/torch/crew/medical/W = new(H)
 	if(!W) return
 	H.set_id_info(W)
 	W.desc = "An identification card issued to SolGov crewmembers aboard the Gunboat."
@@ -109,10 +109,10 @@
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/solgov/utility/fleet/command(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/dutyboots(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/device/radio/off(H), slot_l_store)
-	H.equip_to_slot_or_del(new /obj/item/weapon/gun/energy/gun(H), slot_belt)
-	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel/leather/navy(H), slot_back)
+	H.equip_to_slot_or_del(new /obj/item/gun/energy/gun(H), slot_belt)
+	H.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel/leather/navy(H), slot_back)
 
-	var/obj/item/weapon/card/id/torch/crew/bridgeofficer/W = new(H)
+	var/obj/item/card/id/torch/crew/bridgeofficer/W = new(H)
 	if(!W) return
 	H.set_id_info(W)
 	W.desc = "An identification card issued to SolGov crewmembers aboard the Gunboat."

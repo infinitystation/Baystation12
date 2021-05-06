@@ -1,10 +1,10 @@
 // Light rigs are not space-capable, but don't suffer excessive slowdown or sight issues when depowered.
-/obj/item/weapon/rig/light
+/obj/item/rig/light
 	name = "light suit control module"
 	desc = "A lighter, less armoured rig suit."
 	icon_state = "ninja_rig"
 	suit_type = "light suit"
-	allowed = list(/obj/item/weapon/gun,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/handcuffs,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit,/obj/item/weapon/cell)
+	allowed = list(/obj/item/gun,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/melee/baton,/obj/item/handcuffs,/obj/item/tank,/obj/item/device/suit_cooling_unit,/obj/item/cell)
 	armor = list(
 		melee = ARMOR_MELEE_KNIVES,
 		bullet = ARMOR_BALLISTIC_PISTOL,
@@ -37,12 +37,15 @@
 		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_suit_resomi.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi'
 		)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
 
 /obj/item/clothing/gloves/rig/light
 	name = "gloves"
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
 
 /obj/item/clothing/shoes/magboots/rig/light
 	name = "shoes"
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
 
 	stealth_step = TRUE
 
@@ -52,6 +55,7 @@
 
 /obj/item/clothing/head/helmet/space/rig/light
 	name = "hood"
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
 
 	sprite_sheets = list(
 		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi',
@@ -60,7 +64,7 @@
 	)
 	tint = 1 //INF, WAS NOTHING
 
-/obj/item/weapon/rig/light/hacker
+/obj/item/rig/light/hacker
 	name = "cybersuit control module"
 	suit_type = "cyber"
 	desc = "An advanced powered armour suit with many cyberwarfare enhancements. Comes with built-in insulated gloves for safely tampering with electronics."
@@ -107,7 +111,7 @@
 	item_flags = ITEM_FLAG_THICKMATERIAL | ITEM_FLAG_NOCUFFS
 
 
-/obj/item/weapon/rig/light/ninja
+/obj/item/rig/light/ninja
 	name = "ominous suit control module"
 	desc = "A unique, vaccum-proof suit of nano-enhanced armor designed specifically for assassins."
 	suit_type = "ominous"
@@ -115,18 +119,18 @@
 	armor = list(
 		melee = ARMOR_MELEE_KNIVES,
 		bullet = ARMOR_BALLISTIC_PISTOL,
-		laser = ARMOR_LASER_HANDGUNS,
+		laser = ARMOR_LASER_SMALL,
 		energy = ARMOR_ENERGY_MINOR,
 		bomb = ARMOR_BOMB_PADDED,
 		bio = ARMOR_BIO_SHIELDED
 		)
 	siemens_coefficient = 0.2 //heavy hardsuit level shock protection
-	emp_protection = 40 //change this to 30 if too high.
+	emp_protection = 20
 	online_slowdown = 0
 	aimove_power_usage = 50
 	chest_type = /obj/item/clothing/suit/space/rig/light/ninja
 	glove_type = /obj/item/clothing/gloves/rig/light/ninja
-	cell_type =  /obj/item/weapon/cell/hyper
+	cell_type =  /obj/item/cell/hyper
 
 	req_access = list(access_syndicate)
 
@@ -151,7 +155,7 @@
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
 		)
 
-/obj/item/weapon/rig/light/ninja/verb/rename_suit()
+/obj/item/rig/light/ninja/verb/rename_suit()
 	set name = "Name Ninja Suit"
 	set desc = "Rename your black voidsuit."
 	set category = "Object"
@@ -164,11 +168,11 @@
 			input = "\improper [input]"
 		SetName(input)
 		to_chat(M, "Suit naming successful!")
-		verbs -= /obj/item/weapon/rig/light/ninja/verb/rename_suit
+		verbs -= /obj/item/rig/light/ninja/verb/rename_suit
 		return 1
 
 
-/obj/item/weapon/rig/light/ninja/verb/rewrite_suit_desc()
+/obj/item/rig/light/ninja/verb/rewrite_suit_desc()
 	set name = "Describe Ninja suit"
 	set desc = "Give your voidsuit a custom description."
 	set category = "Object"
@@ -179,13 +183,13 @@
 	if(src && input && !M.incapacitated() && in_range(M,src))
 		desc = input
 		to_chat(M, "Suit description successful!")
-		verbs -= /obj/item/weapon/rig/light/ninja/verb/rename_suit
+		verbs -= /obj/item/rig/light/ninja/verb/rename_suit
 		return 1
 
 /obj/item/clothing/gloves/rig/light/ninja
 	name = "insulated gloves"
 	siemens_coefficient = 0
-	item_flags = ITEM_FLAG_THICKMATERIAL | ITEM_FLAG_NOCUFFS
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
 
 	sprite_sheets = list(
 		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_hands_resomi.dmi'
@@ -193,8 +197,9 @@
 
 /obj/item/clothing/suit/space/rig/light/ninja
 	breach_threshold = 38 //comparable to regular hardsuits
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
 
-/obj/item/weapon/rig/light/stealth
+/obj/item/rig/light/stealth
 	name = "stealth suit control module"
 	suit_type = "stealth"
 	desc = "A highly advanced and expensive suit designed for covert operations."

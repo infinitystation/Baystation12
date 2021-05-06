@@ -1,6 +1,6 @@
-/music_track/hydrogen
-	artist = "M.O.O.N."
+/decl/audio/track/hydrogen
+	author = "M.O.O.N."
 	title = "Hydrogen"
-	album = "Placeholder"
-	song = 'infinity/sound/music/newyear/moon_hydrogen.ogg'
+	collection =  "Placeholder"
+	source = 'infinity/sound/music/newyear/moon_hydrogen.ogg'
 	license =  /decl/license/grandfathered

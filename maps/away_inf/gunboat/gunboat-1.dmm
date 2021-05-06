@@ -253,12 +253,12 @@
 /area/ship/gunboat/command/gun)
 "aF" = (
 /obj/structure/closet/crate/freezer/rations,
-/obj/item/weapon/reagent_containers/food/snacks/can/two,
-/obj/item/weapon/reagent_containers/food/snacks/can,
-/obj/item/weapon/reagent_containers/food/snacks/can,
-/obj/item/weapon/reagent_containers/food/snacks/can,
-/obj/item/weapon/reagent_containers/food/snacks/can,
-/obj/item/weapon/material/canknife,
+/obj/item/reagent_containers/food/snacks/can/two,
+/obj/item/reagent_containers/food/snacks/can,
+/obj/item/reagent_containers/food/snacks/can,
+/obj/item/reagent_containers/food/snacks/can,
+/obj/item/reagent_containers/food/snacks/can,
+/obj/item/material/canknife,
 /turf/simulated/floor/plating,
 /area/ship/gunboat/hallway/lower)
 "aG" = (
@@ -419,8 +419,8 @@
 	pixel_x = -6;
 	pixel_y = -23
 	},
-/obj/item/weapon/stool,
-/obj/item/weapon/newspaper,
+/obj/item/stool,
+/obj/item/newspaper,
 /turf/simulated/floor/tiled/dark,
 /area/ship/gunboat/command/gun)
 "aZ" = (
@@ -851,8 +851,8 @@
 	},
 /obj/structure/cable,
 /obj/structure/table/rack,
-/obj/item/weapon/storage/toolbox/electrical,
-/obj/item/weapon/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/electrical,
+/obj/item/storage/toolbox/mechanical,
 /obj/machinery/power/apc/high/critical{
 	dir = 8;
 	name = "west";
@@ -1210,29 +1210,29 @@
 	dir = 5
 	},
 /obj/structure/closet/secure_closet/freezer/fridge,
-/obj/item/weapon/reagent_containers/food/snacks/beetsoup,
-/obj/item/weapon/reagent_containers/food/snacks/beetsoup,
-/obj/item/weapon/reagent_containers/food/snacks/beetsoup,
-/obj/item/weapon/reagent_containers/food/snacks/boiledspagetti,
-/obj/item/weapon/reagent_containers/food/snacks/boiledspagetti,
-/obj/item/weapon/reagent_containers/food/snacks/boiledspagetti,
-/obj/item/weapon/reagent_containers/food/snacks/cheesewedge,
-/obj/item/weapon/reagent_containers/food/snacks/cheesewedge,
-/obj/item/weapon/reagent_containers/food/snacks/chocolatebar,
-/obj/item/weapon/reagent_containers/food/snacks/fries,
-/obj/item/weapon/reagent_containers/food/snacks/meatsteak,
-/obj/item/weapon/reagent_containers/food/snacks/meatsteak,
-/obj/item/weapon/reagent_containers/food/snacks/omelette,
-/obj/item/weapon/reagent_containers/food/snacks/omelette,
+/obj/item/reagent_containers/food/snacks/beetsoup,
+/obj/item/reagent_containers/food/snacks/beetsoup,
+/obj/item/reagent_containers/food/snacks/beetsoup,
+/obj/item/reagent_containers/food/snacks/boiledspagetti,
+/obj/item/reagent_containers/food/snacks/boiledspagetti,
+/obj/item/reagent_containers/food/snacks/boiledspagetti,
+/obj/item/reagent_containers/food/snacks/cheesewedge,
+/obj/item/reagent_containers/food/snacks/cheesewedge,
+/obj/item/reagent_containers/food/snacks/chocolatebar,
+/obj/item/reagent_containers/food/snacks/fries,
+/obj/item/reagent_containers/food/snacks/meatsteak,
+/obj/item/reagent_containers/food/snacks/meatsteak,
+/obj/item/reagent_containers/food/snacks/omelette,
+/obj/item/reagent_containers/food/snacks/omelette,
 /obj/random/snack,
 /obj/random/snack,
 /obj/random/snack,
 /obj/random/snack,
 /obj/random/drinkbottle,
-/obj/item/weapon/material/kitchen/utensil/spoon,
-/obj/item/weapon/material/kitchen/utensil/spoon,
-/obj/item/weapon/material/kitchen/utensil/fork,
-/obj/item/weapon/material/kitchen/utensil/fork,
+/obj/item/material/kitchen/utensil/spoon,
+/obj/item/material/kitchen/utensil/spoon,
+/obj/item/material/kitchen/utensil/fork,
+/obj/item/material/kitchen/utensil/fork,
 /turf/simulated/floor/tiled,
 /area/ship/gunboat/living)
 "cb" = (
@@ -1244,11 +1244,11 @@
 	pixel_y = 24
 	},
 /obj/structure/table/reinforced,
-/obj/item/weapon/material/kitchen/utensil/knife{
+/obj/item/material/kitchen/utensil/knife{
 	pixel_x = -3;
 	pixel_y = 4
 	},
-/obj/item/weapon/material/kitchen/rollingpin,
+/obj/item/material/kitchen/rollingpin,
 /turf/simulated/floor/tiled,
 /area/ship/gunboat/living)
 "cc" = (
@@ -1359,7 +1359,7 @@
 /turf/simulated/wall/r_wall,
 /area/ship/gunboat/engine)
 "cj" = (
-/obj/item/weapon/stool,
+/obj/item/stool,
 /obj/machinery/alarm{
 	alarm_id = "misc_research";
 	dir = 8;
@@ -1416,7 +1416,7 @@
 	pixel_x = -12;
 	pixel_y = 0
 	},
-/obj/item/weapon/storage/mirror{
+/obj/item/storage/mirror{
 	pixel_x = -28
 	},
 /obj/effect/floor_decal/corner/green{
@@ -1462,12 +1462,12 @@
 	dir = 6
 	},
 /obj/structure/closet/cabinet,
-/obj/item/weapon/soap,
-/obj/item/weapon/towel,
-/obj/item/weapon/towel,
-/obj/item/weapon/towel,
-/obj/item/weapon/towel,
-/obj/item/weapon/material/stick,
+/obj/item/soap,
+/obj/item/towel,
+/obj/item/towel,
+/obj/item/towel,
+/obj/item/towel,
+/obj/item/material/stick,
 /turf/simulated/floor/tiled,
 /area/ship/gunboat/living)
 "cs" = (
@@ -1542,13 +1542,13 @@
 	pixel_x = -6;
 	pixel_y = 24
 	},
-/obj/item/weapon/stool,
+/obj/item/stool,
 /turf/simulated/floor/tiled/dark,
 /area/ship/gunboat/command/gun)
 "cz" = (
 /obj/structure/table/reinforced,
 /obj/machinery/cell_charger,
-/obj/item/weapon/defibrillator/loaded,
+/obj/item/defibrillator/loaded,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white,
 /area/ship/gunboat/medical)
@@ -1589,7 +1589,7 @@
 	pixel_y = 24
 	},
 /obj/structure/closet/secure_closet/medical1_minimal,
-/obj/item/clothing/accessory/storage/drop_pouches/white,
+/obj/item/clothing/accessory/storage/white_drop,
 /obj/item/clothing/accessory/storage/white_vest,
 /obj/item/clothing/glasses/hud/health/prescription,
 /obj/item/clothing/accessory/stethoscope,
@@ -1783,12 +1783,12 @@
 "cV" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/paper_bin{
+/obj/item/paper_bin{
 	pixel_x = -4;
 	pixel_y = 5
 	},
-/obj/item/weapon/folder/white,
-/obj/item/weapon/pen,
+/obj/item/folder/white,
+/obj/item/pen,
 /turf/simulated/floor/tiled/white,
 /area/ship/gunboat/medical)
 "cW" = (
@@ -1861,7 +1861,7 @@
 	icon_state = "corner_white";
 	dir = 6
 	},
-/obj/item/weapon/deck/cards,
+/obj/item/deck/cards,
 /turf/simulated/floor/tiled,
 /area/ship/gunboat/living)
 "dd" = (
@@ -1931,7 +1931,7 @@
 /area/ship/gunboat/medical)
 "dj" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/storage/firstaid/surgery,
+/obj/item/storage/firstaid/surgery,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/power/apc{
 	dir = 8;
@@ -1953,7 +1953,7 @@
 	icon_state = "corner_white";
 	dir = 10
 	},
-/obj/item/weapon/stool,
+/obj/item/stool,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9;
 	pixel_y = 0
@@ -1971,9 +1971,9 @@
 	name = "Blood Cabinet";
 	pixel_x = 24
 	},
-/obj/item/weapon/reagent_containers/ivbag/nanoblood,
-/obj/item/weapon/reagent_containers/ivbag/nanoblood,
-/obj/item/weapon/reagent_containers/ivbag/nanoblood,
+/obj/item/reagent_containers/ivbag/nanoblood,
+/obj/item/reagent_containers/ivbag/nanoblood,
+/obj/item/reagent_containers/ivbag/nanoblood,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white,
 /area/ship/gunboat/medical)
@@ -2036,12 +2036,12 @@
 /area/ship/gunboat/living)
 "ds" = (
 /obj/structure/table/standard,
-/obj/item/weapon/board,
+/obj/item/board,
 /obj/effect/floor_decal/corner/green{
 	icon_state = "corner_white";
 	dir = 6
 	},
-/obj/item/weapon/storage/box/checkers,
+/obj/item/storage/box/checkers,
 /turf/simulated/floor/tiled,
 /area/ship/gunboat/living)
 "dt" = (
@@ -2226,7 +2226,7 @@
 /area/ship/gunboat/living)
 "dH" = (
 /obj/structure/table/standard,
-/obj/item/weapon/storage/box/cups,
+/obj/item/storage/box/cups,
 /obj/machinery/vending/coffee/small{
 	pixel_x = 32
 	},

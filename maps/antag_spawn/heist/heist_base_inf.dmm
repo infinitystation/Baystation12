@@ -60,7 +60,7 @@
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
 	prices = list();
-	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	products = list(/obj/item/storage/fancy/cigarettes = 10, /obj/item/storage/box/matches = 10, /obj/item/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/syndicate_mothership/raider_base)
@@ -152,7 +152,7 @@
 /turf/simulated/floor/plating,
 /area/map_template/syndicate_mothership/raider_base)
 "ay" = (
-/obj/item/weapon/tray{
+/obj/item/tray{
 	pixel_y = 5
 	},
 /turf/simulated/floor/tiled/white,
@@ -228,7 +228,7 @@
 /obj/structure/hygiene/urinal{
 	pixel_y = 32
 	},
-/obj/item/weapon/soap,
+/obj/item/soap,
 /turf/simulated/floor/tiled/freezer,
 /area/map_template/syndicate_mothership/raider_base)
 "aN" = (
@@ -266,11 +266,11 @@
 "aS" = (
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/closet/crate/freezer,
-/obj/item/weapon/reagent_containers/food/snacks/meat/beef,
-/obj/item/weapon/reagent_containers/food/snacks/meat/beef,
-/obj/item/weapon/reagent_containers/food/snacks/meat/beef,
-/obj/item/weapon/reagent_containers/food/snacks/meat/chicken,
-/obj/item/weapon/reagent_containers/food/snacks/meat/corgi,
+/obj/item/reagent_containers/food/snacks/meat/beef,
+/obj/item/reagent_containers/food/snacks/meat/beef,
+/obj/item/reagent_containers/food/snacks/meat/beef,
+/obj/item/reagent_containers/food/snacks/meat/chicken,
+/obj/item/reagent_containers/food/snacks/meat/corgi,
 /obj/random/snack,
 /obj/random/snack,
 /obj/random/snack,
@@ -287,9 +287,9 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/item/weapon/storage/backpack/satchel,
-/obj/item/weapon/storage/backpack/satchel,
-/obj/item/weapon/storage/backpack/satchel,
+/obj/item/storage/backpack/satchel,
+/obj/item/storage/backpack/satchel,
+/obj/item/storage/backpack/satchel,
 /obj/item/clothing/accessory/storage/black_vest,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/syndicate_mothership/raider_base)
@@ -362,10 +362,10 @@
 "bg" = (
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/table/rack,
-/obj/item/weapon/storage/backpack/dufflebag,
-/obj/item/weapon/storage/backpack/dufflebag,
-/obj/item/weapon/storage/backpack/dufflebag,
-/obj/item/clothing/accessory/storage/drop_pouches/black,
+/obj/item/storage/backpack/dufflebag,
+/obj/item/storage/backpack/dufflebag,
+/obj/item/storage/backpack/dufflebag,
+/obj/item/clothing/accessory/storage/black_drop,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/syndicate_mothership/raider_base)
 "bh" = (
@@ -424,7 +424,7 @@
 /turf/simulated/floor/asteroid/aired,
 /area/map_template/syndicate_mothership/raider_base)
 "bp" = (
-/obj/item/weapon/storage/mirror{
+/obj/item/storage/mirror{
 	dir = 2;
 	pixel_x = -32
 	},
@@ -469,9 +469,9 @@
 "bv" = (
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/table/rack,
-/obj/item/weapon/storage/backpack,
-/obj/item/weapon/storage/backpack,
-/obj/item/weapon/storage/backpack,
+/obj/item/storage/backpack,
+/obj/item/storage/backpack,
+/obj/item/storage/backpack,
 /obj/item/clothing/accessory/storage/webbing,
 /obj/structure/sign/poster/tjpost/tj_3{
 	pixel_x = 32
@@ -495,12 +495,12 @@
 /turf/simulated/floor/tiled/dark,
 /area/map_template/syndicate_mothership/raider_base)
 "by" = (
-/obj/item/weapon/weldingtool,
+/obj/item/weldingtool,
 /turf/simulated/floor/plating,
 /area/map_template/syndicate_mothership/raider_base)
 "bz" = (
-/obj/item/weapon/storage/toolbox/mechanical,
-/obj/item/weapon/wrench,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/wrench,
 /turf/simulated/floor/plating,
 /area/map_template/syndicate_mothership/raider_base)
 "bA" = (
@@ -508,7 +508,7 @@
 /turf/simulated/floor/asteroid/aired,
 /area/map_template/syndicate_mothership/raider_base)
 "bB" = (
-/obj/item/weapon/storage/mirror/raider{
+/obj/item/storage/mirror/raider{
 	pixel_x = -32
 	},
 /obj/structure/hygiene/sink{
@@ -535,10 +535,10 @@
 "bE" = (
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/table/rack,
-/obj/item/weapon/storage/belt/holster,
-/obj/item/weapon/storage/belt/holster/security,
-/obj/item/weapon/storage/belt/medical/emt/combat,
-/obj/item/weapon/storage/belt/utility/full_buy{
+/obj/item/storage/belt/holster,
+/obj/item/storage/belt/holster/security,
+/obj/item/storage/belt/medical/emt/combat,
+/obj/item/storage/belt/utility/full_buy{
 	icon_state = "gearbelt";
 	item_state = "gearbelt"
 	},
@@ -547,7 +547,7 @@
 /area/map_template/syndicate_mothership/raider_base)
 "bF" = (
 /obj/structure/wall_frame/standard,
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /turf/simulated/floor/plating,
 /area/map_template/syndicate_mothership/raider_base)
 "bG" = (
@@ -577,7 +577,7 @@
 /turf/simulated/floor/plating,
 /area/map_template/syndicate_mothership/raider_base)
 "bJ" = (
-/obj/item/weapon/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/plating,
 /area/map_template/syndicate_mothership/raider_base)
 "bK" = (
@@ -617,7 +617,7 @@
 /obj/item/clothing/head/helmet/space/vox/carapace,
 /obj/item/clothing/shoes/magboots/vox,
 /obj/item/clothing/gloves/vox,
-/obj/item/weapon/gun/launcher/alien/spikethrower,
+/obj/item/gun/launcher/alien/spikethrower,
 /obj/item/clothing/under/vox/vox_casual,
 /turf/simulated/floor/asteroidplate,
 /area/map_template/syndicate_mothership/raider_base)
@@ -627,7 +627,7 @@
 /obj/item/clothing/head/helmet/space/vox/carapace,
 /obj/item/clothing/shoes/magboots/vox,
 /obj/item/clothing/gloves/vox,
-/obj/item/weapon/gun/launcher/alien/spikethrower,
+/obj/item/gun/launcher/alien/spikethrower,
 /obj/item/clothing/under/vox/vox_robes,
 /turf/simulated/floor/asteroidplate,
 /area/map_template/syndicate_mothership/raider_base)
@@ -708,7 +708,7 @@
 /obj/item/clothing/shoes/magboots/vox,
 /obj/item/clothing/gloves/vox,
 /obj/item/clothing/under/vox/vox_robes,
-/obj/item/weapon/gun/projectile/dartgun/vox/raider,
+/obj/item/gun/projectile/dartgun/vox/raider,
 /obj/machinery/light/small{
 	dir = 4;
 	pixel_y = 8
@@ -721,7 +721,7 @@
 /obj/item/clothing/head/helmet/space/vox/carapace,
 /obj/item/clothing/shoes/magboots/vox,
 /obj/item/clothing/gloves/vox,
-/obj/item/weapon/gun/launcher/alien/spikethrower,
+/obj/item/gun/launcher/alien/spikethrower,
 /obj/item/clothing/under/vox/vox_casual,
 /obj/machinery/light/small{
 	dir = 8;
@@ -738,11 +738,11 @@
 /area/map_template/syndicate_mothership/raider_base)
 "cg" = (
 /obj/effect/decal/cleanable/generic,
-/obj/item/weapon/stool/bar/padded,
+/obj/item/stool/bar/padded,
 /turf/simulated/floor/wood/walnut,
 /area/map_template/syndicate_mothership/raider_base)
 "ch" = (
-/obj/item/weapon/stool/bar/padded,
+/obj/item/stool/bar/padded,
 /turf/simulated/floor/wood/walnut,
 /area/map_template/syndicate_mothership/raider_base)
 "ci" = (
@@ -759,7 +759,7 @@
 /obj/item/clothing/shoes/magboots/vox,
 /obj/item/clothing/gloves/vox,
 /obj/item/clothing/under/vox/vox_casual,
-/obj/item/weapon/gun/projectile/dartgun/vox/raider,
+/obj/item/gun/projectile/dartgun/vox/raider,
 /turf/simulated/floor/asteroidplate,
 /area/map_template/syndicate_mothership/raider_base)
 "ck" = (
@@ -770,7 +770,7 @@
 /obj/item/clothing/gloves/vox,
 /obj/item/clothing/glasses/thermal/plain/monocle,
 /obj/item/clothing/under/vox/vox_robes,
-/obj/item/weapon/gun/projectile/dartgun/vox/medical,
+/obj/item/gun/projectile/dartgun/vox/medical,
 /turf/simulated/floor/asteroidplate,
 /area/map_template/syndicate_mothership/raider_base)
 "cl" = (
@@ -780,13 +780,13 @@
 /turf/simulated/floor/tiled/dark,
 /area/map_template/syndicate_mothership/raider_base)
 "cm" = (
-/obj/item/weapon/material/ashtray/bronze,
-/obj/item/weapon/stool/bar/padded,
+/obj/item/material/ashtray/bronze,
+/obj/item/stool/bar/padded,
 /turf/simulated/floor/wood/walnut,
 /area/map_template/syndicate_mothership/raider_base)
 "cn" = (
 /obj/structure/table/woodentable_reinforced/walnut,
-/obj/item/weapon/material/ashtray/bronze,
+/obj/item/material/ashtray/bronze,
 /turf/simulated/floor/wood/walnut,
 /area/map_template/syndicate_mothership/raider_base)
 "co" = (
@@ -803,11 +803,11 @@
 /turf/simulated/floor/wood/walnut,
 /area/map_template/syndicate_mothership/raider_base)
 "cq" = (
-/obj/item/weapon/tank/nitrogen,
+/obj/item/tank/nitrogen,
 /turf/simulated/floor/asteroidplate,
 /area/map_template/syndicate_mothership/raider_base)
 "cr" = (
-/obj/item/weapon/storage/backpack,
+/obj/item/storage/backpack,
 /turf/simulated/floor/asteroidplate,
 /area/map_template/syndicate_mothership/raider_base)
 "cs" = (
@@ -817,7 +817,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/map_template/syndicate_mothership/raider_base)
 "ct" = (
-/obj/item/weapon/reagent_containers/glass/rag,
+/obj/item/reagent_containers/glass/rag,
 /turf/simulated/floor/wood/walnut,
 /area/map_template/syndicate_mothership/raider_base)
 "cu" = (
@@ -873,7 +873,7 @@
 /area/map_template/syndicate_mothership/raider_base)
 "cD" = (
 /obj/structure/table/woodentable_reinforced/walnut,
-/obj/item/weapon/storage/box/glasses/shot,
+/obj/item/storage/box/glasses/shot,
 /turf/simulated/floor/wood/walnut,
 /area/map_template/syndicate_mothership/raider_base)
 "cE" = (
@@ -903,12 +903,12 @@
 /area/map_template/syndicate_mothership/raider_base)
 "cH" = (
 /obj/structure/closet/crate,
-/obj/item/weapon/tank/nitrogen,
-/obj/item/weapon/tank/nitrogen,
-/obj/item/weapon/tank/nitrogen,
-/obj/item/weapon/tank/nitrogen,
-/obj/item/weapon/tank/nitrogen,
-/obj/item/weapon/tank/nitrogen,
+/obj/item/tank/nitrogen,
+/obj/item/tank/nitrogen,
+/obj/item/tank/nitrogen,
+/obj/item/tank/nitrogen,
+/obj/item/tank/nitrogen,
+/obj/item/tank/nitrogen,
 /obj/item/clothing/mask/gas/swat/vox,
 /obj/item/clothing/mask/gas/swat/vox,
 /obj/item/clothing/mask/gas/swat/vox,
@@ -1253,10 +1253,10 @@
 /obj/structure/table/rack,
 /obj/random/maintenance,
 /obj/item/clothing/shoes/magboots,
-/obj/item/weapon/tank/oxygen,
+/obj/item/tank/oxygen,
 /obj/random/voidsuit,
 /obj/random/voidhelmet,
-/obj/item/weapon/material/harpoon,
+/obj/item/material/harpoon,
 /obj/random/energy,
 /obj/random/hat,
 /obj/item/device/flash,
@@ -1278,19 +1278,19 @@
 /obj/item/seeds/potatoseed,
 /obj/item/seeds/potatoseed,
 /obj/item/seeds/ambrosiavulgarisseed,
-/obj/item/weapon/material/minihoe,
-/obj/item/weapon/beartrap,
+/obj/item/material/minihoe,
+/obj/item/beartrap,
 /obj/structure/table/steel,
-/obj/item/weapon/beartrap,
-/obj/item/weapon/beartrap,
+/obj/item/beartrap,
+/obj/item/beartrap,
 /turf/simulated/floor/plating,
 /area/map_template/skipjack_station/start)
 "dE" = (
 /obj/structure/table/rack,
-/obj/item/weapon/melee/energy/sword/pirate,
+/obj/item/melee/energy/sword/pirate,
 /obj/item/clothing/suit/space/pirate,
 /obj/item/clothing/suit/space/pirate,
-/obj/item/weapon/tank/oxygen,
+/obj/item/tank/oxygen,
 /obj/item/clothing/shoes/magboots,
 /obj/random/voidsuit,
 /obj/random/voidhelmet,
@@ -1303,10 +1303,10 @@
 /area/map_template/skipjack_station/start)
 "dF" = (
 /obj/structure/table/rack,
-/obj/item/weapon/melee/energy/sword/pirate,
+/obj/item/melee/energy/sword/pirate,
 /obj/item/clothing/suit/space/pirate,
 /obj/item/clothing/suit/space/pirate,
-/obj/item/weapon/tank/oxygen,
+/obj/item/tank/oxygen,
 /obj/item/clothing/shoes/magboots,
 /obj/random/voidsuit,
 /obj/random/voidhelmet,
@@ -1319,18 +1319,18 @@
 /area/map_template/skipjack_station/start)
 "dG" = (
 /obj/structure/table/rack,
-/obj/item/weapon/storage/belt/utility/full,
-/obj/item/weapon/storage/belt/utility/full,
+/obj/item/storage/belt/utility/full,
+/obj/item/storage/belt/utility/full,
 /obj/item/device/multitool,
 /obj/item/device/multitool,
 /obj/item/clothing/shoes/magboots,
 /obj/random/maintenance,
-/obj/item/weapon/tank/oxygen,
+/obj/item/tank/oxygen,
 /obj/random/voidsuit,
 /obj/random/voidhelmet,
 /obj/random/maintenance,
 /obj/random/hat,
-/obj/item/weapon/storage/belt/utility,
+/obj/item/storage/belt/utility,
 /turf/simulated/floor/plating,
 /area/map_template/skipjack_station/start)
 "dH" = (
@@ -1341,8 +1341,8 @@
 /area/map_template/skipjack_station/start)
 "dI" = (
 /obj/structure/table/standard,
-/obj/item/weapon/storage/fancy/cigarettes,
-/obj/item/weapon/flame/lighter/zippo,
+/obj/item/storage/fancy/cigarettes,
+/obj/item/flame/lighter/zippo,
 /obj/item/clothing/gloves/insulated,
 /obj/item/stack/material/steel{
 	amount = 50
@@ -1350,7 +1350,7 @@
 /obj/item/stack/material/glass{
 	amount = 50
 	},
-/obj/item/weapon/card/emag,
+/obj/item/card/emag,
 /obj/item/device/flash,
 /turf/simulated/floor/plating,
 /area/map_template/skipjack_station/start)
@@ -1358,13 +1358,13 @@
 /obj/structure/table/rack,
 /obj/random/maintenance,
 /obj/item/clothing/shoes/magboots,
-/obj/item/weapon/tank/oxygen,
+/obj/item/tank/oxygen,
 /obj/random/voidsuit,
 /obj/random/voidhelmet,
 /obj/random/energy,
 /obj/random/gloves,
-/obj/item/weapon/barrier,
-/obj/item/weapon/barrier,
+/obj/item/barrier,
+/obj/item/barrier,
 /obj/machinery/light/small{
 	icon_state = "bulb_map";
 	dir = 1
@@ -1421,11 +1421,11 @@
 /obj/structure/table/rack,
 /obj/random/maintenance,
 /obj/item/clothing/shoes/magboots,
-/obj/item/weapon/tank/oxygen,
+/obj/item/tank/oxygen,
 /obj/random/voidsuit,
 /obj/random/voidhelmet,
 /obj/random/projectile,
-/obj/item/weapon/tape_roll,
+/obj/item/tape_roll,
 /turf/simulated/floor/plating,
 /area/map_template/skipjack_station/start)
 "dS" = (
@@ -1495,26 +1495,26 @@
 /area/map_template/skipjack_station/start)
 "ed" = (
 /obj/structure/table/rack,
-/obj/item/weapon/gun/launcher/crossbow,
+/obj/item/gun/launcher/crossbow,
 /obj/item/stack/material/rods{
 	amount = 10
 	},
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/item/weapon/beartrap,
-/obj/item/weapon/beartrap,
-/obj/item/weapon/beartrap,
-/obj/item/weapon/beartrap,
-/obj/item/weapon/beartrap,
-/obj/item/weapon/beartrap,
+/obj/item/beartrap,
+/obj/item/beartrap,
+/obj/item/beartrap,
+/obj/item/beartrap,
+/obj/item/beartrap,
+/obj/item/beartrap,
 /turf/simulated/floor/shuttle/red,
 /area/map_template/skipjack_station/start)
 "ee" = (
 /obj/structure/table/rack,
-/obj/item/weapon/grenade/empgrenade,
-/obj/item/weapon/grenade/flashbang,
-/obj/item/weapon/grenade/spawnergrenade/manhacks,
+/obj/item/grenade/empgrenade,
+/obj/item/grenade/flashbang,
+/obj/item/grenade/spawnergrenade/manhacks,
 /obj/random/energy,
 /turf/simulated/floor/shuttle/red,
 /area/map_template/skipjack_station/start)
@@ -1582,13 +1582,13 @@
 /turf/simulated/floor/plating,
 /area/map_template/skipjack_station/start)
 "ep" = (
-/obj/item/weapon/wrench,
-/obj/item/weapon/mop,
+/obj/item/wrench,
+/obj/item/mop,
 /turf/simulated/floor/plating,
 /area/map_template/skipjack_station/start)
 "eq" = (
 /obj/machinery/atmospherics/pipe/simple/visible,
-/obj/item/weapon/crowbar,
+/obj/item/crowbar,
 /turf/simulated/floor/plating,
 /area/map_template/skipjack_station/start)
 "er" = (
@@ -1601,12 +1601,12 @@
 "es" = (
 /obj/structure/closet/crate/freezer/rations,
 /obj/item/clothing/mask/gas/cyborg,
-/obj/item/weapon/storage/box/donkpockets{
+/obj/item/storage/box/donkpockets{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/weapon/reagent_containers/food/snacks/tastybread,
-/obj/item/weapon/reagent_containers/food/snacks/tastybread,
+/obj/item/reagent_containers/food/snacks/tastybread,
+/obj/item/reagent_containers/food/snacks/tastybread,
 /obj/machinery/light/small,
 /turf/simulated/floor/plating,
 /area/map_template/skipjack_station/start)
@@ -1641,7 +1641,7 @@
 /turf/simulated/floor/shuttle/red,
 /area/map_template/skipjack_station/start)
 "ex" = (
-/obj/item/weapon/deck/cards,
+/obj/item/deck/cards,
 /obj/structure/table/steel,
 /obj/random/projectile,
 /turf/simulated/floor/shuttle/red,
@@ -1649,7 +1649,7 @@
 "ey" = (
 /obj/structure/table/steel,
 /obj/random/loot,
-/obj/item/weapon/gun/energy/ionrifle/small,
+/obj/item/gun/energy/ionrifle/small,
 /turf/simulated/floor/shuttle/red,
 /area/map_template/skipjack_station/start)
 "ez" = (
@@ -1675,16 +1675,16 @@
 /area/map_template/skipjack_station/start)
 "eC" = (
 /obj/structure/table/standard,
-/obj/item/weapon/reagent_containers/glass/bottle/stoxin,
-/obj/item/weapon/reagent_containers/glass/bottle/stoxin,
-/obj/item/weapon/reagent_containers/glass/beaker/vial/random/toxin,
-/obj/item/weapon/reagent_containers/syringe,
+/obj/item/reagent_containers/glass/bottle/stoxin,
+/obj/item/reagent_containers/glass/bottle/stoxin,
+/obj/item/reagent_containers/glass/beaker/vial/random/toxin,
+/obj/item/reagent_containers/syringe,
 /turf/simulated/floor/plating,
 /area/map_template/skipjack_station/start)
 "eD" = (
 /obj/structure/table/standard,
-/obj/item/weapon/storage/box/syringegun,
-/obj/item/weapon/gun/launcher/syringe/rapid,
+/obj/item/storage/box/syringegun,
+/obj/item/gun/launcher/syringe/rapid,
 /obj/machinery/light/small,
 /turf/simulated/floor/plating,
 /area/map_template/skipjack_station/start)
@@ -1746,12 +1746,12 @@
 /area/map_template/skipjack_station/start)
 "eP" = (
 /obj/structure/table/standard,
-/obj/item/weapon/storage/firstaid/surgery,
+/obj/item/storage/firstaid/surgery,
 /turf/simulated/floor/shuttle/white,
 /area/map_template/skipjack_station/start)
 "eQ" = (
 /obj/machinery/portable_atmospherics/canister/nitrogen,
-/obj/item/weapon/tank/nitrogen,
+/obj/item/tank/nitrogen,
 /obj/machinery/light/small{
 	dir = 8;
 	icon_state = "bulb_map"
@@ -1760,7 +1760,7 @@
 /area/map_template/skipjack_station/start)
 "eR" = (
 /obj/structure/bed,
-/obj/item/weapon/bedsheet,
+/obj/item/bedsheet,
 /turf/simulated/floor/shuttle/black,
 /area/map_template/skipjack_station/start)
 "eS" = (
@@ -1776,9 +1776,9 @@
 /area/map_template/skipjack_station/start)
 "eV" = (
 /obj/structure/table/standard,
-/obj/item/weapon/reagent_containers/syringe/antiviral,
-/obj/item/weapon/reagent_containers/syringe/antiviral,
-/obj/item/weapon/reagent_containers/syringe/antiviral,
+/obj/item/reagent_containers/syringe/antiviral,
+/obj/item/reagent_containers/syringe/antiviral,
+/obj/item/reagent_containers/syringe/antiviral,
 /turf/simulated/floor/shuttle/white,
 /area/map_template/skipjack_station/start)
 "eW" = (
@@ -1797,39 +1797,39 @@
 /area/map_template/skipjack_station/start)
 "eZ" = (
 /obj/structure/table/standard,
-/obj/item/weapon/storage/firstaid/fire{
+/obj/item/storage/firstaid/fire{
 	pixel_x = 1
 	},
-/obj/item/weapon/storage/firstaid/o2,
-/obj/item/weapon/storage/belt/medical/emt,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/belt/medical/emt,
 /obj/item/device/scanner/health,
 /turf/simulated/floor/shuttle/white,
 /area/map_template/skipjack_station/start)
 "fa" = (
 /obj/structure/table/standard,
-/obj/item/weapon/storage/firstaid/adv{
+/obj/item/storage/firstaid/adv{
 	pixel_x = 1
 	},
-/obj/item/weapon/storage/firstaid/toxin{
+/obj/item/storage/firstaid/toxin{
 	pixel_x = 3;
 	pixel_y = 3
 	},
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/item/weapon/melee/baton/cattleprod,
-/obj/item/weapon/defibrillator/compact/combat/loaded,
+/obj/item/melee/baton/cattleprod,
+/obj/item/defibrillator/compact/combat/loaded,
 /turf/simulated/floor/shuttle/white,
 /area/map_template/skipjack_station/start)
 "fb" = (
 /obj/structure/bed,
-/obj/item/weapon/bedsheet,
+/obj/item/bedsheet,
 /obj/machinery/light/small,
 /turf/simulated/floor/shuttle/black,
 /area/map_template/skipjack_station/start)
 "fc" = (
 /obj/structure/table/steel,
-/obj/item/weapon/deck/cards,
+/obj/item/deck/cards,
 /obj/machinery/light/small,
 /turf/simulated/floor/shuttle/black,
 /area/map_template/skipjack_station/start)

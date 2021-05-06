@@ -240,9 +240,9 @@
 	uniform = /obj/item/clothing/under/hazard
 	suit = /obj/item/clothing/suit/storage/hazardvest
 	shoes = /obj/item/clothing/shoes/workboots
-	id_type = /obj/item/weapon/card/id/sierra/merchant/salvage/eng
+	id_types = list(/obj/item/card/id/sierra/merchant/salvage/eng)
 	r_pocket = /obj/item/device/radio/off
-	belt = /obj/item/weapon/storage/belt/utility/full
+	belt = /obj/item/storage/belt/utility/full
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 
 /decl/hierarchy/outfit/job/sierra/salvage_sec
@@ -250,32 +250,32 @@
 	uniform = /obj/item/clothing/under/syndicate/tacticool
 	suit = /obj/item/clothing/suit/armor/pcarrier/light
 	shoes = /obj/item/clothing/shoes/jackboots
-	id_type = /obj/item/weapon/card/id/sierra/merchant/salvage/sec
+	id_types = list(/obj/item/card/id/sierra/merchant/salvage/sec)
 	r_pocket = /obj/item/device/radio/off
-	belt = /obj/item/weapon/storage/belt/holster/general/
+	belt = /obj/item/storage/belt/holster/general/
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 
 /decl/hierarchy/outfit/job/sierra/salvage_capt
 	name = OUTFIT_JOB_NAME("Salvage vessel - Captain - sierra")
 	uniform = /obj/item/clothing/under/suit_jacket/charcoal
 	shoes = /obj/item/clothing/shoes/laceup
-	id_type = /obj/item/weapon/card/id/sierra/merchant/salvage/leader
+	id_types = list(/obj/item/card/id/sierra/merchant/salvage/leader)
 	r_pocket = /obj/item/device/radio/off
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 
-/obj/item/weapon/card/id/sierra/merchant/salvage/eng
+/obj/item/card/id/sierra/merchant/salvage/eng
 	desc = "An identification card issued to Merchants-salvagers. This one have orange stripe."
 	icon_state = "trader"
 	job_access_type = /datum/job/submap/salvage_eng
 	access = access_salvage
 
-/obj/item/weapon/card/id/sierra/merchant/salvage/sec
+/obj/item/card/id/sierra/merchant/salvage/sec
 	desc = "An identification card issued to Merchants-salvagers. This one have red stripe."
 	icon_state = "trader"
 	job_access_type = /datum/job/submap/salvage_sec
 	access = access_salvage
 
-/obj/item/weapon/card/id/sierra/merchant/salvage/leader
+/obj/item/card/id/sierra/merchant/salvage/leader
 	desc = "An identification card issued to Merchant-Salvagers Leaders, this one have blue stripe, indicating their right to salvage, sell and buy goods."
 	icon_state = "trader"
 	job_access_type = /datum/job/submap/salvage_capt
@@ -289,6 +289,6 @@
 	hard_drive.store_file(new/datum/computer_file/program/merchant/salvage())
 	hard_drive.store_file(new/datum/computer_file/program/wordprocessor())
 
-/obj/item/weapon/paper/salvage_pacman
+/obj/item/paper/salvage_pacman
 	name = "note"
 	info = "П.А.К.М.А.Н. включать на второю мощность. Хватает для питания корабля, и не выделяет радиацию."

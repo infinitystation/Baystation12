@@ -3,7 +3,7 @@
 	desc = "A machine which rewrites musical disks."
 	icon = 'infinity/icons/obj/machinery/disk_writer.dmi'
 	icon_state = "writer_off"
-	density = 0
+	density = FALSE
 	power_channel = EQUIP
 	use_power = 1
 	idle_power_usage = 10
@@ -45,7 +45,7 @@
 		customer = M
 		writing = TRUE
 		update_icon()
-
+/* merge 02 05 2021
 /obj/machinery/media/music_writer/attackby(obj/O, mob/user)
 	if(istype(O, /obj/item/music_tape))
 		var/obj/item/music_tape/D = O
@@ -168,4 +168,4 @@
 /obj/machinery/media/music_writer/proc/eject(mob/user)
 	playsound(src, 'infinity/sound/machines/console/console3.ogg', 40, 1)
 	user.put_in_hands(disk)
-	disk = null
+	disk = null */

@@ -226,7 +226,7 @@
 	hierarchy_type = /decl/hierarchy/outfit/job/bearcat
 	pda_type = null
 	pda_slot = slot_l_store
-	l_pocket = /obj/item/weapon/storage/wallet/poly
+	l_pocket = /obj/item/storage/wallet/poly
 	l_ear = null
 	r_ear = null
 
@@ -236,7 +236,7 @@
 	shoes = /obj/item/clothing/shoes/black
 	pda_type = /obj/item/modular_computer/pda/captain
 	r_pocket = /obj/item/device/radio
-	id_type = /obj/item/weapon/card/id/gold
+	id_types = list(/obj/item/card/id/gold)
 
 /decl/hierarchy/outfit/job/bearcat/captain/post_equip(var/mob/living/carbon/human/H)
 	..()
@@ -258,8 +258,8 @@
 	pda_type = /obj/item/modular_computer/pda/heads/ce
 	l_hand = /obj/item/device/radio
 	r_hand = null
-	belt = /obj/item/weapon/storage/belt/utility/full
-	id_type = /obj/item/weapon/card/id/engineering/head
+	belt = /obj/item/storage/belt/utility/full
+	id_types = list(/obj/item/card/id/engineering/head)
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 
 /decl/hierarchy/outfit/job/bearcat/chief_engineer/New()
@@ -271,7 +271,7 @@
 	head = /obj/item/clothing/head/hardhat
 	uniform = /obj/item/clothing/under/hazard
 	r_pocket = /obj/item/device/t_scanner
-	belt = /obj/item/weapon/storage/belt/utility/full
+	belt = /obj/item/storage/belt/utility/full
 	l_ear = null
 	l_hand = /obj/item/device/radio
 
@@ -285,16 +285,16 @@
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	glasses = /obj/item/clothing/glasses/hud/health
 	shoes = /obj/item/clothing/shoes/laceup
-	id_type = /obj/item/weapon/card/id/medical
+	id_types = list(/obj/item/card/id/medical)
 
 /decl/hierarchy/outfit/job/bearcat/mate
 	name = BEARCAT_OUTFIT_JOB_NAME("First Mate")
 	uniform = /obj/item/clothing/under/suit_jacket/checkered
 	shoes = /obj/item/clothing/shoes/laceup
-	id_type = /obj/item/weapon/card/id/silver
+	id_types = list(/obj/item/card/id/silver)
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 	r_hand = null
-	l_hand = /obj/item/weapon/material/clipboard
+	l_hand = /obj/item/material/clipboard
 
 /decl/hierarchy/outfit/job/bearcat/roboticist
 	name = BEARCAT_OUTFIT_JOB_NAME("Roboticist")
@@ -302,7 +302,7 @@
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	shoes = /obj/item/clothing/shoes/black
 	glasses = /obj/item/clothing/glasses/welding
-	belt = /obj/item/weapon/storage/belt/utility
+	belt = /obj/item/storage/belt/utility
 
 /decl/hierarchy/outfit/job/bearcat/roboticist/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -316,18 +316,18 @@
 	uniform = /obj/item/clothing/under/rank/cargo
 	shoes = /obj/item/clothing/shoes/brown
 	glasses = /obj/item/clothing/glasses/sunglasses
-	l_hand = /obj/item/weapon/material/clipboard
+	l_hand = /obj/item/material/clipboard
 	r_hand = null
-	id_type = /obj/item/weapon/card/id/cargo/head
+	id_types = list(/obj/item/card/id/cargo/head)
 
 /decl/hierarchy/outfit/job/bearcat/security
 	name = BEARCAT_OUTFIT_JOB_NAME("Security")
 	uniform = /obj/item/clothing/under/syndicate
 	shoes = /obj/item/clothing/shoes/jackboots
 	glasses = /obj/item/clothing/glasses/sunglasses/big
-	belt = /obj/item/weapon/melee/baton/loaded
+	belt = /obj/item/melee/baton/loaded
 	head = /obj/item/clothing/head/warden
-	id_type = /obj/item/weapon/card/id/security
+	id_types = list(/obj/item/card/id/security)
 	r_hand = /obj/item/device/radio
 	l_hand = null
 	suit = /obj/item/clothing/suit/armor/pcarrier/medium
@@ -337,7 +337,7 @@
 	name = BEARCAT_OUTFIT_JOB_NAME("Bartender")
 	uniform = /obj/item/clothing/under/rank/bartender
 	shoes = /obj/item/clothing/shoes/black
-	id_type = /obj/item/weapon/card/id/civilian/bartender
+	id_types = list(/obj/item/card/id/civilian/bartender)
 	r_pocket = /obj/item/device/radio
 
 /decl/hierarchy/outfit/job/bearcat/hand
@@ -356,7 +356,7 @@
 	name = BEARCAT_OUTFIT_JOB_NAME("Digger")
 	uniform = /obj/item/clothing/under/rank/miner
 	r_pocket = /obj/item/device/flashlight/lantern
-	belt = /obj/item/weapon/pickaxe
+	belt = /obj/item/pickaxe
 
 /decl/hierarchy/outfit/job/bearcat/hand/engine
 	name = BEARCAT_OUTFIT_JOB_NAME("Junior Engineer")

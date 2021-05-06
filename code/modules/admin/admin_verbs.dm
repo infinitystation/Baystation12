@@ -11,7 +11,7 @@ var/list/admin_verbs_default = list(
 var/list/admin_verbs_admin = list(
 	/datum/admins/proc/show_player_panel,	//shows an interface for individual players, with various links (links require additional flags,
 //INF unused	/client/proc/player_panel,
-	/client/proc/player_panel_new,		//shows an interface for all players, with links to various panels,
+//INF	/client/proc/player_panel_new,		//shows an interface for all players, with links to various panels,
 	/client/proc/invisimin,				//allows our mob to go invisible/visible,
 	/datum/admins/proc/show_game_mode,  //Configuration window for the current game mode.,
 	/datum/admins/proc/force_mode_latespawn, //Force the mode to try a latespawn proc,
@@ -39,6 +39,7 @@ var/list/admin_verbs_admin = list(
 	/client/proc/jumptoturf,			//allows us to jump to a specific turf,
 	/client/proc/admin_call_shuttle,	//allows us to call the emergency shuttle,
 	/client/proc/admin_cancel_shuttle,	//allows us to cancel the emergency shuttle, sending it back to centcomm,
+	/client/proc/cmd_admin_narrate,
 	/client/proc/cmd_admin_direct_narrate,	//send text directly to a player with no padding. Useful for narratives and fluff-text,
 	/client/proc/cmd_admin_visible_narrate,
 	/client/proc/cmd_admin_audible_narrate,
@@ -67,7 +68,7 @@ var/list/admin_verbs_admin = list(
 //INF	/client/proc/cmd_admin_rejuvenate,
 	/client/proc/toggleghostwriters,
 	/client/proc/toggledrones,
-	/datum/admins/proc/show_skills,
+	/datum/admins/proc/show_skills, //Right click skill menu,
 	/client/proc/man_up,
 	/client/proc/global_man_up,
 	/client/proc/response_team, // Response Teams admin verb,
@@ -88,7 +89,8 @@ var/list/admin_verbs_admin = list(
 	/client/proc/add_trader,
 	/client/proc/remove_trader,
 	/datum/admins/proc/sendFax,
-	/client/proc/check_fax_history
+	/client/proc/check_fax_history,
+	/client/proc/cmd_admin_notarget
 )
 var/list/admin_verbs_ban = list(
 	/client/proc/unban_panel,
@@ -107,9 +109,8 @@ var/list/admin_verbs_fun = list(
 	/client/proc/cmd_admin_dress, //INF WAS /datum/admins/proc/cmd_admin_dress,
 	/client/proc/cmd_admin_gib_self,
 	/client/proc/drop_bomb,
-	/client/proc/everyone_random,
 	/client/proc/cinematic,
-	/datum/admins/proc/toggle_space_ninja,
+//INF	/datum/admins/proc/toggle_space_ninja,
 	/client/proc/cmd_admin_add_freeform_ai_law,
 	/client/proc/cmd_admin_add_random_ai_law,
 	/client/proc/toggle_random_events,
@@ -138,7 +139,7 @@ var/list/admin_verbs_spawn = list(
 	/datum/admins/proc/check_custom_items,
 	/datum/admins/proc/spawn_plant,
 	/datum/admins/proc/spawn_atom,		// allows us to spawn instances,
-	/client/proc/respawn_character,
+	/datum/admins/proc/spawn_artifact,
 	/client/proc/spawn_chemdisp_cartridge,
 	/datum/admins/proc/mass_debug_closet_icons,
 //[INF],
@@ -156,21 +157,19 @@ var/list/admin_verbs_server = list(
 	/datum/admins/proc/toggleaban,
 	/client/proc/toggle_log_hrefs,
 	/datum/admins/proc/immreboot,
-	/client/proc/everyone_random,
-	/datum/admins/proc/toggleAI,
 	/client/proc/cmd_admin_delete,		// delete an instance/object/mob/etc,
 	/client/proc/cmd_debug_del_all,
 	/datum/admins/proc/adrev,
 	/datum/admins/proc/adspawn,
 	/datum/admins/proc/adjump,
-	/datum/admins/proc/toggle_space_ninja,
+//INF	/datum/admins/proc/toggle_space_ninja,
 	/client/proc/toggle_random_events,
 	/client/proc/nanomapgen_DumpImage,
 //[INF],
 	// /client/proc/check_customitem_activity,
 	/client/proc/update_server,
 	/client/proc/cmd_toggle_admin_help,
-	/client/proc/observe_delay,
+//INF	/client/proc/observe_delay, // merge 02 05 2021 ~bear1ake
 	/datum/admins/proc/toggleevent,
 	/client/proc/cmd_set_station_date,
 //[/INF],
@@ -179,7 +178,6 @@ var/list/admin_verbs_debug = list(
 	/datum/admins/proc/jump_to_fluid_source,
 	/datum/admins/proc/jump_to_fluid_active,
 	/client/proc/cmd_admin_list_open_jobs,
-	/client/proc/Debug2,
 	/client/proc/ZASSettings,
 	/client/proc/cmd_debug_make_powernets,
 	/client/proc/debug_controller,
@@ -246,7 +244,7 @@ var/list/admin_verbs_permissions = list(
 	/client/proc/edit_admin_permissions,
 	)
 var/list/admin_verbs_rejuv = list(
-	/client/proc/respawn_character,
+//INF	/client/proc/respawn_character,
 	/client/proc/cmd_admin_rejuvenate, //INF,
 	)
 //[INF]
@@ -272,6 +270,7 @@ var/list/admin_verbs_hideable = list(
 	/datum/admins/proc/access_news_network,
 	/client/proc/admin_call_shuttle,
 	/client/proc/admin_cancel_shuttle,
+	/client/proc/cmd_admin_narrate,
 	/client/proc/cmd_admin_direct_narrate,
 	/client/proc/cmd_admin_visible_narrate,
 	/client/proc/cmd_admin_audible_narrate,
@@ -283,7 +282,7 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/object_talk,
 	/client/proc/cmd_admin_gib_self,
 	/client/proc/cinematic,
-	/datum/admins/proc/toggle_space_ninja,
+//INF	/datum/admins/proc/toggle_space_ninja,
 	/client/proc/cmd_admin_add_freeform_ai_law,
 	/client/proc/cmd_admin_add_random_ai_law,
 	/client/proc/cmd_admin_create_centcom_report,
@@ -295,8 +294,6 @@ var/list/admin_verbs_hideable = list(
 	/datum/admins/proc/toggleaban,
 	/client/proc/toggle_log_hrefs,
 	/datum/admins/proc/immreboot,
-	/client/proc/everyone_random,
-	/datum/admins/proc/toggleAI,
 	/datum/admins/proc/adrev,
 	/datum/admins/proc/adspawn,
 	/datum/admins/proc/adjump,
@@ -304,7 +301,6 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/cmd_admin_list_open_jobs,
 	/client/proc/callproc,
 	/client/proc/callproc_target,
-	/client/proc/Debug2,
 	/client/proc/reload_admins,
 	/client/proc/cmd_debug_make_powernets,
 	/client/proc/debug_controller,
@@ -326,17 +322,20 @@ var/list/admin_verbs_mod = list(
 	/datum/admins/proc/PlayerNotes,
 	/client/proc/admin_ghost,
 //inf	/datum/admins/proc/show_player_info,
-	/client/proc/player_panel_new,
+//INF	/client/proc/player_panel_new,
+	/client/proc/admin_ghost,			// allows us to ghost/reenter body at will,
+//INF	/client/proc/cmd_mod_say,
+	/datum/admins/proc/show_player_info,
 	/client/proc/dsay,
-	/datum/admins/proc/show_skills,
-	/datum/admins/proc/show_player_panel,
+	/datum/admins/proc/show_skills,	// Right-click skill menu,
+	/datum/admins/proc/show_player_panel,// right-click player panel,
 	/client/proc/check_antagonists,
+	/client/proc/cmd_admin_narrate,
 	/client/proc/cmd_admin_direct_narrate,
 	/client/proc/aooc,
 	/datum/admins/proc/sendFax,
 	/client/proc/check_fax_history,
-	/datum/admins/proc/paralyze_mob,
-	/datum/admins/proc/view_persistent_data
+	/datum/admins/proc/paralyze_mob // right-click paralyze ,
 )
 //[INF]
 var/list/admin_verbs_xeno = list(
@@ -439,6 +438,9 @@ var/list/admin_verbs_xeno = list(
 		//ghostize
 		var/mob/body = mob
 		var/mob/observer/ghost/ghost = body.ghostize(1)
+		if (!ghost)
+			to_chat(src, FONT_COLORED("red", "You are already admin-ghosted."))
+			return
 		ghost.admin_ghosted = 1
 		log_admin("[key_name(usr)] used aghost.")
 		if(body)
@@ -467,17 +469,7 @@ var/list/admin_verbs_xeno = list(
 	set name = "Player Panel"
 	set category = "Admin"
 	if(holder)
-		holder.player_panel_old()
-		log_admin("[key_name(usr)] opened old player panel.")
-	SSstatistics.add_field_details("admin_verb","PP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-	return
-
-/client/proc/player_panel_new()
-	set name = "Player Panel New"
-	set category = "Admin"
-	if(holder)
-		holder.player_panel_new()
-		log_admin("[key_name(usr)] opened player panel.")
+		holder.player_panel()
 	SSstatistics.add_field_details("admin_verb","PPN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 
@@ -578,13 +570,14 @@ var/list/admin_verbs_xeno = list(
 		return
 
 	if(++D.warns >= MAX_WARNS)					//uh ohhhh...you'reee iiiiin trouuuubble O:)
-		ban_unban_log_save("[ckey] warned [warned_ckey], resulting in a [AUTOBANTIME] minute autoban.")
+		var/mins_readable = minutes_to_readable(AUTOBANTIME)
+		ban_unban_log_save("[ckey] warned [warned_ckey], resulting in a [mins_readable] autoban.")
 		if(C)
-			log_and_message_admins("has warned [key_name_admin(C)] resulting in a [AUTOBANTIME] minute ban.")
-			to_chat(C, "<font color='red'><BIG><B>You have been autobanned due to a warning by [ckey].</B></BIG><br>This is a temporary ban, it will be removed in [AUTOBANTIME] minutes.</font>")
+			message_admins("[key_name_admin(src)] has warned [key_name_admin(C)] resulting in a [mins_readable] ban.")
+			to_chat(C, "<font color='red'><BIG><B>You have been autobanned due to a warning by [ckey].</B></BIG><br>This is a temporary ban, it will be removed in [mins_readable].</font>")
 			qdel(C)
 		else
-			log_and_message_admins("has warned [warned_ckey] resulting in a [AUTOBANTIME] minute ban.")
+			message_admins("[key_name_admin(src)] has warned [warned_ckey] resulting in a [mins_readable] ban.")
 		AddBan(warned_ckey, D.last_id, "Autobanning due to too many formal warnings", ckey, 1, AUTOBANTIME)
 		SSstatistics.add_field("ban_warn",1)
 	else
@@ -608,10 +601,10 @@ var/list/admin_verbs_xeno = list(
 
 	var/turf/epicenter = mob.loc
 	var/list/choices = list("Small Bomb", "Medium Bomb", "Big Bomb", "Custom Bomb")
-	var/choice = input("What size explosion would you like to produce?") in choices
+	var/choice = input("What size explosion would you like to produce?") as null | anything in choices
 	switch(choice)
-		if(null)
-			return 0
+		if (null)
+			return
 		if("Small Bomb")
 			explosion(epicenter, 1, 2, 3, 3)
 		if("Medium Bomb")
@@ -619,10 +612,18 @@ var/list/admin_verbs_xeno = list(
 		if("Big Bomb")
 			explosion(epicenter, 3, 5, 7, 5)
 		if("Custom Bomb")
-			var/devastation_range = input("Devastation range (in tiles):") as num
-			var/heavy_impact_range = input("Heavy impact range (in tiles):") as num
-			var/light_impact_range = input("Light impact range (in tiles):") as num
-			var/flash_range = input("Flash range (in tiles):") as num
+			var/devastation_range = input("Devastation range (in tiles):") as num|null
+			if (isnull(devastation_range))
+				return
+			var/heavy_impact_range = input("Heavy impact range (in tiles):") as num|null
+			if (isnull(heavy_impact_range))
+				return
+			var/light_impact_range = input("Light impact range (in tiles):") as num|null
+			if (isnull(light_impact_range))
+				return
+			var/flash_range = input("Flash range (in tiles):") as num|null
+			if (isnull(flash_range))
+				return
 			explosion(epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range)
 	log_and_message_admins("created an admin explosion at [epicenter.loc].")
 	SSstatistics.add_field_details("admin_verb","DB") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -734,7 +735,7 @@ var/list/admin_verbs_xeno = list(
 	if(!H) return
 
 	log_and_message_admins("is altering the appearance of [H].")
-	H.change_appearance(APPEARANCE_ALL, usr, usr, check_species_whitelist = 0, state = GLOB.admin_state)
+	H.change_appearance(APPEARANCE_ALL, FALSE, usr, state = GLOB.admin_state)
 	SSstatistics.add_field_details("admin_verb","CHAA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/change_human_appearance_self()
@@ -754,10 +755,10 @@ var/list/admin_verbs_xeno = list(
 	switch(alert("Do you wish for [H] to be allowed to select non-whitelisted races?","Alter Mob Appearance","Yes","No","Cancel"))
 		if("Yes")
 			log_and_message_admins("has allowed [H] to change \his appearance, including races that requires whitelisting")
-			H.change_appearance(APPEARANCE_ALL, H.loc, check_species_whitelist = 0)
+			H.change_appearance(APPEARANCE_COMMON, FALSE)
 		if("No")
 			log_and_message_admins("has allowed [H] to change \his appearance, excluding races that requires whitelisting.")
-			H.change_appearance(APPEARANCE_ALL, H.loc, check_species_whitelist = 1)
+			H.change_appearance(APPEARANCE_COMMON, TRUE)
 	SSstatistics.add_field_details("admin_verb","CMAS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/change_security_level()
@@ -925,6 +926,7 @@ var/list/admin_verbs_xeno = list(
 			log_and_message_admins("has enabled maint drones.")
 
 /client/proc/man_up(mob/T as mob in SSmobs.mob_list)
+	set popup_menu = FALSE
 	set category = "Fun"
 	set name = "Man Up"
 	set desc = "Tells mob to man up and deal with it."

@@ -8,20 +8,20 @@
 	mask = /obj/item/clothing/mask/gas/half
 	l_ear = /obj/item/device/radio/headset/specops
 	suit = /obj/item/clothing/suit/armor/pcarrier/troops/heavy
-	suit_store = /obj/item/weapon/gun/projectile/automatic/sec_smg/lethal
+	suit_store = /obj/item/gun/projectile/automatic/sec_smg/lethal
 	gloves = /obj/item/clothing/gloves/thick/combat/marine
-	belt = /obj/item/weapon/storage/belt/holster/security/tactical/troops
+	belt = /obj/item/storage/belt/holster/security/tactical/troops
 	uniform = /obj/item/clothing/under/solgov/utility/army/urban
 	l_pocket = /obj/item/device/flashlight/maglight
 	shoes = /obj/item/clothing/shoes/combat/marine
 	id_slot = slot_wear_id
 	id_desc = "An ID of SCG marine trooper."
-	id_type = /obj/item/weapon/card/id/security
+	id_types = list(/obj/item/card/id/security)
 
-	back = /obj/item/weapon/storage/backpack/satchel/leather/black
+	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(
-		/obj/item/weapon/storage/box/survival/troops = 1,
-		/obj/item/weapon/storage/firstaid/individual/military/troops =1)
+		/obj/item/storage/box/survival/troops = 1,
+		/obj/item/storage/firstaid/individual/military/troops =1)
 	flags = OUTFIT_HAS_BACKPACK
 
 /decl/hierarchy/outfit/scg/troops/post_equip(var/mob/living/carbon/human/H)
@@ -54,13 +54,13 @@
 	name = "Inf - SCG Marine Combat Engineer"
 	glasses = /obj/item/clothing/glasses/welding
 	gloves = /obj/item/clothing/gloves/insulated/combat
-	back = /obj/item/weapon/storage/backpack/satchel/eng
-	belt = /obj/item/weapon/storage/belt/utility/full_buy
+	back = /obj/item/storage/backpack/satchel/eng
+	belt = /obj/item/storage/belt/utility/full_buy
 	id_pda_assignment = "Marine Combat Engineer"
 	backpack_contents = list(
-		/obj/item/weapon/storage/box/survival/troops = 1,
-		/obj/item/weapon/storage/firstaid/individual/military/troops =1,
-		/obj/item/weapon/plastique = 3)
+		/obj/item/storage/box/survival/troops = 1,
+		/obj/item/storage/firstaid/individual/military/troops =1,
+		/obj/item/plastique = 3)
 
 /decl/hierarchy/outfit/scg/troops/engineer/New()
 	..()
@@ -79,16 +79,16 @@
 /decl/hierarchy/outfit/scg/troops/medic
 	name = "Inf - SCG Marine Corpsman"
 	glasses = /obj/item/clothing/glasses/hud/health
-	back = /obj/item/weapon/storage/backpack/satchel/med
+	back = /obj/item/storage/backpack/satchel/med
 	suit = /obj/item/clothing/suit/armor/pcarrier/troops
-	belt = /obj/item/weapon/storage/belt/medical/emt/combat
+	belt = /obj/item/storage/belt/medical/emt/combat
 	id_pda_assignment = "Marine Corpsman"
 	backpack_contents = list(
-		/obj/item/weapon/storage/box/survival/troops = 1,
-		/obj/item/weapon/storage/firstaid/combat = 1,
-		/obj/item/weapon/storage/firstaid/adv = 1,
-		/obj/item/weapon/storage/firstaid/regular = 1,
-		/obj/item/weapon/storage/firstaid/surgery = 1)
+		/obj/item/storage/box/survival/troops = 1,
+		/obj/item/storage/firstaid/combat = 1,
+		/obj/item/storage/firstaid/adv = 1,
+		/obj/item/storage/firstaid/regular = 1,
+		/obj/item/storage/firstaid/surgery = 1)
 
 /decl/hierarchy/outfit/scg/troops/medic/New()
 	..()
@@ -106,12 +106,12 @@
 
 /decl/hierarchy/outfit/scg/troops/sergeant
 	name = "Inf - SCG Marine Sergeant"
-	back = /obj/item/weapon/storage/backpack/security
-	id_type = /obj/item/weapon/card/id/security/head
+	back = /obj/item/storage/backpack/security
+	id_types = list(/obj/item/card/id/security/head)
 	id_pda_assignment = "Marine Squad Leader"
 	backpack_contents = list(
-		/obj/item/weapon/storage/box/survival/troops = 1,
-		/obj/item/weapon/storage/firstaid/individual/military/troops =1)
+		/obj/item/storage/box/survival/troops = 1,
+		/obj/item/storage/firstaid/individual/military/troops =1)
 
 /decl/hierarchy/outfit/scg/troops/sergeant/New()
 	..()
@@ -133,10 +133,10 @@
 	uniform = /obj/item/clothing/under/rank/security/navyblue
 	suit = /obj/item/clothing/suit/armor/pcarrier/light/sol
 	l_ear = /obj/item/device/radio/headset/headset_sec
-	belt = /obj/item/weapon/storage/belt/holster/security/ocei
+	belt = /obj/item/storage/belt/holster/security/ocei
 	r_hand = /obj/item/clothing/accessory/badge/tracker
-	l_hand = /obj/item/weapon/gun/energy/taser
+	l_hand = /obj/item/gun/energy/taser
 	id_slot = slot_wear_id
-	id_type = /obj/item/weapon/card/id/security
+	id_types = list(/obj/item/card/id/security)
 	id_desc = "An ID of SCG OCEI tracker."
 	id_pda_assignment = "OCEI tracker"

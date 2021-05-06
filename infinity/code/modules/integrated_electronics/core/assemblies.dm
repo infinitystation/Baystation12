@@ -1,12 +1,12 @@
 /obj/item/device/electronic_assembly/proc/loading(var/obj/item/I, var/mob/living/user)
 	var/list/icomponents = list()
 	var/list/ircomponents = list()
-	if(istype(I, /obj/item/weapon/gun/energy/))
+	if(istype(I, /obj/item/gun/energy/))
 		for (var/obj/item/integrated_circuit/manipulation/weapon_firing/P in assembly_components)
 			if(!P.installed_gun)
 				icomponents+=P.displayed_name
 				ircomponents+=P
-	else if(istype(I, /obj/item/weapon/grenade/))
+	else if(istype(I, /obj/item/grenade/))
 		for (var/obj/item/integrated_circuit/manipulation/grenade/P in assembly_components)
 			if(!P.attached_grenade)
 				icomponents+=P.displayed_name

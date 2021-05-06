@@ -1,5 +1,5 @@
-/obj/item/weapon/reagent_containers/food/snacks/grown/harebell
+/obj/item/reagent_containers/food/snacks/grown/harebell
 	plantname = "harebells"
 
-/obj/item/weapon/reagent_containers/food/snacks/grown/poppy
+/obj/item/reagent_containers/food/snacks/grown/poppy
 	plantname = "poppies"

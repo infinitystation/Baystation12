@@ -1,6 +1,6 @@
 /obj/item/device/flashlight
-	var/suitable_cell = /obj/item/weapon/cell/device
-	var/obj/item/weapon/cell/cell
+	var/suitable_cell = /obj/item/cell/device
+	var/obj/item/cell/cell
 	var/power_cost = 0.2
 
 /obj/item/device/flashlight/lamp/floodlamp
@@ -11,11 +11,11 @@
 	on = 1
 
 /obj/item/device/flashlight/upgraded
-	cell = /obj/item/weapon/cell/device/high
+	cell = /obj/item/cell/device/high
 /obj/item/device/flashlight/maglight
-	cell = /obj/item/weapon/cell/device/high
+	cell = /obj/item/cell/device/high
 /obj/item/device/flashlight/lantern
-	cell = /obj/item/weapon/cell/device/high//inf
+	cell = /obj/item/cell/device/high//inf
 /obj/item/device/flashlight/drone
 	suitable_cell = null
 
@@ -38,7 +38,7 @@
 
 /obj/item/device/flashlight/Process()
 	if(on && suitable_cell)
-		var/obj/item/weapon/cell/C = get_cell()
+		var/obj/item/cell/C = get_cell()
 		if(!C || !C.checked_use(get_power_cost()))
 			if(ismob(loc))
 				to_chat(loc, SPAN_WARNING("\The [src] dies. You are alone now."))
@@ -47,7 +47,7 @@
 			apply_power_deficiency()
 
 /obj/item/device/flashlight/proc/apply_power_deficiency()
-	var/obj/item/weapon/cell/C = get_cell()
+	var/obj/item/cell/C = get_cell()
 	if(!C)
 		return
 	if(flashlight_max_bright > 0)

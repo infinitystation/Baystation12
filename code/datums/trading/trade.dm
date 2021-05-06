@@ -178,7 +178,7 @@
 		if(blacklisted_trade_items && blacklisted_trade_items.len && is_type_in_list(offer,blacklisted_trade_items))
 			return make_response(TRADER_NO_BLACKLISTED, "I refuse to take one of those items.", 0, FALSE)
 
-		if(istype(offer,/obj/item/weapon/spacecash))
+		if(istype(offer,/obj/item/spacecash))
 			if(!(trade_flags & TRADER_MONEY))
 				return make_response(TRADER_NO_MONEY, "I don't take money.", 0, FALSE)
 		else
@@ -237,13 +237,13 @@
 	return make_response(TRADER_COMPLEMENT_SUCCESS, "Thank you!", 0, TRUE)
 
 /datum/trader/proc/trade(var/list/offers, var/num, var/turf/location)
-	if(offers && offers.len)
-		for(var/offer in offers)
-			if(istype(offer,/mob))
-				var/text = mob_transfer_message
-				to_chat(offer, replacetext(text, "ORIGIN", origin))
-			qdel(offer)
+	for(var/offer in offers)
+		if(istype(offer,/mob))
+			var/text = mob_transfer_message
+			to_chat(offer, replacetext(text, "ORIGIN", origin))
+		qdel(offer)
 
+	num = Clamp(num, 1, trading_items.len)
 	var/type = trading_items[num]
 
 	var/atom/movable/M = new type(location)
@@ -254,6 +254,7 @@
 	return M
 
 /datum/trader/proc/how_much_do_you_want(var/num, skill = SKILL_MAX)
+	num = Clamp(num, 1, trading_items.len)
 	var/atom/movable/M = trading_items[num]
 	var/datum/trade_response/tr = make_response(TRADER_HOW_MUCH, "Hmm.... how about VALUE CURRENCY?", 0, FALSE)
 	tr.text = replacetext(replacetext(tr.text, "ITEM", initial(M.name)), "VALUE", get_item_value(num, skill))

@@ -11,8 +11,8 @@
 	desc = "A machine which allows you see ghosts."
 	icon = 'infinity/icons/obj/machines/bluespace_drive.dmi'
 	icon_state = "bsd"
-	anchored = 1
-	density = 1
+	anchored = TRUE
+	density = TRUE
 	idle_power_usage = 2500
 	construct_state = /decl/machine_construction/tcomms/panel_closed/cannot_print
 	var/setup_state = 0
@@ -21,7 +21,7 @@
 	var/hallucination_power_minimal = 2
 	var/produces_heat = 0
 
-	maximum_component_parts = list(/obj/item/weapon/stock_parts = 15)
+	maximum_component_parts = list(/obj/item/stock_parts = 15)
 
 
 /obj/machinery/bluespacedrive/Initialize()
@@ -34,7 +34,7 @@
 		minor_announcement.Announce(message = "Внимание! Обнаружен сбой в работе БСД. Аварийное прекращение работы БСД.")
 	. = ..()
 
-/obj/machinery/bluespacedrive/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
+/obj/machinery/bluespacedrive/attackby(var/obj/item/W as obj, var/mob/user as mob)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if(busy)
 		return

@@ -42,7 +42,7 @@
 /obj/item/device/serial,
 /obj/item/device/scanner/gas,
 /obj/item/device/scanner/mining,
-/obj/item/weapon/autopsy_scanner,
+/obj/item/autopsy_scanner,
 /obj/item/device/scanner/plant,
 /obj/item/device/scanner/price,
 /obj/item/device/scanner/xenobio,
@@ -59,8 +59,8 @@
 /area/liberia/merchantstorage)
 "af" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/rd,
-/obj/item/weapon/storage/secure/safe{
+/obj/item/bedsheet/rd,
+/obj/item/storage/secure/safe{
 	pixel_x = 34
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -69,7 +69,7 @@
 /area/liberia/captain)
 "ag" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/brown,
+/obj/item/bedsheet/brown,
 /obj/item/device/radio/intercom{
 	dir = 8;
 	pixel_x = 22
@@ -82,7 +82,7 @@
 /area/liberia/personellroom2)
 "ah" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/brown,
+/obj/item/bedsheet/brown,
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_y = -24
@@ -284,7 +284,7 @@
 	dir = 1
 	},
 /obj/structure/table/standard,
-/obj/item/weapon/storage/toolbox/electrical{
+/obj/item/storage/toolbox/electrical{
 	pixel_x = 7;
 	pixel_y = 4
 	},
@@ -330,7 +330,7 @@
 	name = "Radiation shields";
 	pixel_x = 24
 	},
-/obj/item/weapon/caution/cone,
+/obj/item/caution/cone,
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
@@ -375,10 +375,10 @@
 	dir = 5
 	},
 /obj/structure/table/standard,
-/obj/item/weapon/rcd,
-/obj/item/weapon/rcd_ammo/large,
-/obj/item/weapon/rcd_ammo/large,
-/obj/item/weapon/rcd_ammo/large,
+/obj/item/rcd,
+/obj/item/rcd_ammo/large,
+/obj/item/rcd_ammo/large,
+/obj/item/rcd_ammo/large,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/liberia/engineeringengines)
 "aO" = (
@@ -620,10 +620,10 @@
 /area/liberia/traidingroom)
 "bk" = (
 /obj/structure/table/steel,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /obj/random/cash,
-/obj/item/weapon/spacecash/bundle/c1000{
+/obj/item/spacecash/bundle/c1000{
 	desc = "It's worth 13000 Thalers. Who the fuck made it?";
 	name = "13000 Thaler";
 	worth = 13000
@@ -639,7 +639,7 @@
 /area/liberia/traidingroom)
 "bl" = (
 /obj/structure/table/rack,
-/obj/item/weapon/storage/bag/cash,
+/obj/item/storage/bag/cash,
 /obj/effect/floor_decal/borderfloor{
 	dir = 5
 	},
@@ -708,14 +708,14 @@
 	req_access = list("ACCESS_MERCHANT")
 	},
 /obj/effect/floor_decal/corner/brown/half,
-/obj/item/weapon/storage/pill_bottle/methylphenidate,
-/obj/item/weapon/storage/pill_bottle/three_eye,
-/obj/item/weapon/plastique,
-/obj/item/weapon/plastique,
-/obj/item/weapon/beartrap,
-/obj/item/weapon/beartrap,
-/obj/item/weapon/grenade/smokebomb,
-/obj/item/weapon/silencer,
+/obj/item/storage/pill_bottle/methylphenidate,
+/obj/item/storage/pill_bottle/three_eye,
+/obj/item/plastique,
+/obj/item/plastique,
+/obj/item/beartrap,
+/obj/item/beartrap,
+/obj/item/grenade/smokebomb,
+/obj/item/silencer,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/liberia/mule)
 "bs" = (
@@ -724,7 +724,7 @@
 	req_access = list("ACCESS_MERCHANT")
 	},
 /obj/effect/floor_decal/corner/brown/half,
-/obj/item/weapon/storage/belt/holster/security/tactical,
+/obj/item/storage/belt/holster/security/tactical,
 /obj/item/clothing/accessory/armorplate/tactical,
 /obj/item/clothing/mask/balaclava,
 /obj/item/clothing/mask/balaclava,
@@ -762,15 +762,15 @@
 /obj/machinery/door/window/brigdoor/southright{
 	req_access = newlist()
 	},
-/obj/item/weapon/storage/secure/briefcase,
-/obj/item/weapon/contraband/poster,
-/obj/item/weapon/contraband/poster,
-/obj/item/weapon/contraband/poster,
-/obj/item/weapon/contraband/poster,
-/obj/item/weapon/contraband/poster,
-/obj/item/weapon/contraband/poster,
-/obj/item/weapon/material/knife/folding/combat/balisong,
-/obj/item/weapon/material/knife/folding/combat/balisong,
+/obj/item/storage/secure/briefcase,
+/obj/item/contraband/poster,
+/obj/item/contraband/poster,
+/obj/item/contraband/poster,
+/obj/item/contraband/poster,
+/obj/item/contraband/poster,
+/obj/item/contraband/poster,
+/obj/item/material/knife/folding/combat/balisong,
+/obj/item/material/knife/folding/combat/balisong,
 /turf/simulated/floor/tiled/steel_grid,
 /area/liberia/mule)
 "bv" = (
@@ -790,19 +790,19 @@
 /obj/machinery/door/window/brigdoor/southright{
 	req_access = newlist()
 	},
-/obj/item/weapon/storage/firstaid/combat/special,
-/obj/item/weapon/storage/firstaid/surgery,
+/obj/item/storage/firstaid/combat/special,
+/obj/item/storage/firstaid/surgery,
 /obj/item/stack/nanopaste,
 /obj/item/stack/nanopaste,
 /obj/item/auto_cpr,
 /obj/item/bodybag/rescue/loaded,
 /obj/item/bodybag/rescue/loaded,
-/obj/item/weapon/defibrillator/compact/combat/loaded,
-/obj/item/weapon/FixOVein/clot,
-/obj/item/weapon/bonesetter/bone_mender,
-/obj/item/weapon/circular_saw/plasmasaw,
-/obj/item/weapon/hemostat/pico,
-/obj/item/weapon/scalpel/laser1,
+/obj/item/defibrillator/compact/combat/loaded,
+/obj/item/FixOVein/clot,
+/obj/item/bonesetter/bone_mender,
+/obj/item/circular_saw/plasmasaw,
+/obj/item/hemostat/pico,
+/obj/item/scalpel/laser1,
 /turf/simulated/floor/tiled/steel_grid,
 /area/liberia/mule)
 "bw" = (
@@ -997,7 +997,7 @@
 	pixel_x = -7;
 	pixel_y = 32
 	},
-/obj/item/weapon/storage/secure/safe{
+/obj/item/storage/secure/safe{
 	pixel_x = 30
 	},
 /obj/machinery/power/smes/buildable{
@@ -1367,7 +1367,7 @@
 	dir = 4
 	},
 /obj/structure/table/mag,
-/obj/item/weapon/gun/projectile/pistol/holdout,
+/obj/item/gun/projectile/pistol/holdout,
 /obj/random/handgun,
 /obj/random/handgun,
 /obj/random/projectile,
@@ -1468,13 +1468,13 @@
 /area/liberia/mule)
 "cB" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /turf/simulated/floor/carpet/blue2,
 /area/liberia/mule)
 "cC" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/paper/sierrau/merchant,
+/obj/item/paper/sierrau/merchant,
 /turf/simulated/floor/carpet/blue2,
 /area/liberia/mule)
 "cD" = (
@@ -2161,8 +2161,8 @@
 	pixel_y = 24
 	},
 /obj/structure/table/steel,
-/obj/item/weapon/storage/box/lights/mixed,
-/obj/item/weapon/reagent_containers/spray/cleaner,
+/obj/item/storage/box/lights/mixed,
+/obj/item/reagent_containers/spray/cleaner,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
@@ -2236,7 +2236,7 @@
 /area/liberia/atmos)
 "dL" = (
 /obj/structure/table/glass,
-/obj/item/weapon/folder/blue,
+/obj/item/folder/blue,
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/liberia/bridge{
@@ -2373,8 +2373,8 @@
 	dir = 1
 	},
 /obj/structure/table/steel_reinforced,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /obj/machinery/button/blast_door{
 	dir = 1;
 	id_tag = "merchantdesk";
@@ -2385,11 +2385,11 @@
 /obj/structure/filingcabinet/wallcabinet{
 	pixel_x = 28
 	},
-/obj/item/weapon/folder,
-/obj/item/weapon/folder,
-/obj/item/weapon/folder/blue,
-/obj/item/weapon/folder/red,
-/obj/item/weapon/hand_labeler,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder/blue,
+/obj/item/folder/red,
+/obj/item/hand_labeler,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/liberia/mule)
 "dV" = (
@@ -2565,10 +2565,10 @@
 /area/liberia/mule)
 "eg" = (
 /obj/structure/table/mag,
-/obj/item/weapon/wirecutters/power,
-/obj/item/weapon/wrench/power,
+/obj/item/wirecutters/power,
+/obj/item/wrench/power,
 /obj/item/device/flashlight/upgraded,
-/obj/item/weapon/marshalling_wand,
+/obj/item/marshalling_wand,
 /obj/effect/floor_decal/corner/brown{
 	dir = 10
 	},
@@ -2689,17 +2689,17 @@
 "et" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/item/weapon/card/id{
+/obj/item/card/id{
 	access = list("ACCESS_MERCHANT");
 	desc = "A visitor's access card, this one is for the Merchant's Station.";
 	name = "Visitor's Card - Merchant's Station"
 	},
-/obj/item/weapon/card/id{
+/obj/item/card/id{
 	access = list("ACCESS_MERCHANT");
 	desc = "A visitor's access card, this one is for the Merchant's Station.";
 	name = "Visitor's Card - Merchant's Station"
 	},
-/obj/item/weapon/card/id{
+/obj/item/card/id{
 	access = list("ACCESS_MERCHANT");
 	desc = "A visitor's access card, this one is for the Merchant's Station.";
 	name = "Visitor's Card - Merchant's Station"
@@ -2865,7 +2865,7 @@
 	dir = 4;
 	pixel_y = 8
 	},
-/obj/item/weapon/tank/emergency/oxygen/double,
+/obj/item/tank/emergency/oxygen/double,
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
@@ -2876,7 +2876,7 @@
 /area/liberia/atmos)
 "eG" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
-/obj/item/weapon/reagent_containers/glass/beaker/cryoxadone{
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
 	pixel_x = 7;
 	pixel_y = 1
 	},
@@ -2931,7 +2931,6 @@
 /obj/item/stack/material/steel{
 	amount = 10
 	},
-/obj/item/device/floor_painter,
 /obj/item/clothing/gloves/insulated/black,
 /obj/item/device/suit_cooling_unit,
 /obj/item/stack/material/aluminium/ten,
@@ -3321,13 +3320,13 @@
 	pixel_x = 24;
 	pixel_y = 4
 	},
-/obj/item/weapon/reagent_containers/ivbag/blood/OPlus,
-/obj/item/weapon/reagent_containers/ivbag/blood/OPlus,
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
-/obj/item/weapon/reagent_containers/food/snacks/candy/donor,
-/obj/item/weapon/reagent_containers/food/snacks/candy/donor,
-/obj/item/weapon/reagent_containers/food/snacks/candy/donor,
+/obj/item/reagent_containers/ivbag/blood/OPlus,
+/obj/item/reagent_containers/ivbag/blood/OPlus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/food/snacks/candy/donor,
+/obj/item/reagent_containers/food/snacks/candy/donor,
+/obj/item/reagent_containers/food/snacks/candy/donor,
 /obj/effect/floor_decal/corner/blue{
 	dir = 6
 	},
@@ -3353,8 +3352,8 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /turf/simulated/floor/tiled/techfloor,
 /area/liberia/cryo)
 "fx" = (
@@ -3415,7 +3414,7 @@
 "fB" = (
 /obj/machinery/light/small,
 /obj/machinery/portable_atmospherics/canister/nitrogen,
-/obj/item/weapon/tank/nitrogen,
+/obj/item/tank/nitrogen,
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/yellow{
 	dir = 5;
@@ -3494,8 +3493,8 @@
 	pixel_y = 24
 	},
 /obj/structure/table/reinforced,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 10
 	},
@@ -3509,8 +3508,8 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced,
-/obj/item/weapon/folder,
-/obj/item/weapon/folder,
+/obj/item/folder,
+/obj/item/folder,
 /turf/simulated/floor/tiled/monotile,
 /area/liberia/officeroom)
 "fM" = (
@@ -3785,7 +3784,7 @@
 /area/liberia/bar)
 "gl" = (
 /obj/structure/table/woodentable/walnut,
-/obj/item/weapon/storage/box/glasses/pint,
+/obj/item/storage/box/glasses/pint,
 /turf/simulated/floor/wood/ebony,
 /area/liberia/bar)
 "gm" = (
@@ -3940,7 +3939,7 @@
 /area/liberia/bar)
 "gy" = (
 /obj/structure/table/woodentable/walnut,
-/obj/item/weapon/material/ashtray/bronze,
+/obj/item/material/ashtray/bronze,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -3952,7 +3951,7 @@
 /area/liberia/bar)
 "gz" = (
 /obj/structure/table/woodentable/walnut,
-/obj/item/weapon/reagent_containers/glass/rag,
+/obj/item/reagent_containers/glass/rag,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -4009,7 +4008,7 @@
 /area/liberia/hallway)
 "gE" = (
 /obj/structure/table/standard,
-/obj/item/weapon/towel/random,
+/obj/item/towel/random,
 /obj/machinery/power/apc/liberia{
 	dir = 8;
 	name = "west bump";
@@ -4043,7 +4042,7 @@
 	dir = 1;
 	pixel_y = 16
 	},
-/obj/item/weapon/storage/mirror{
+/obj/item/storage/mirror{
 	dir = 4;
 	pixel_x = -1;
 	pixel_y = 30
@@ -4058,7 +4057,7 @@
 	dir = 1;
 	pixel_y = 16
 	},
-/obj/item/weapon/storage/mirror{
+/obj/item/storage/mirror{
 	dir = 4;
 	pixel_x = -1;
 	pixel_y = 30
@@ -4071,8 +4070,8 @@
 /area/liberia/toiletroom1)
 "gI" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /obj/effect/floor_decal/borderfloor{
 	dir = 10
 	},
@@ -4089,7 +4088,7 @@
 	eftpos_name = "Merchant EFTPOS scanner"
 	},
 /obj/item/stack/package_wrap/twenty_five,
-/obj/item/weapon/hand_labeler,
+/obj/item/hand_labeler,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
@@ -4120,7 +4119,7 @@
 /obj/item/clothing/under/lawyer/black,
 /obj/item/clothing/under/suit_jacket/navy,
 /obj/random/handgun,
-/obj/item/weapon/reagent_containers/food/drinks/bottle/premiumwine,
+/obj/item/reagent_containers/food/drinks/bottle/premiumwine,
 /turf/simulated/floor/wood/ebony,
 /area/liberia/captain)
 "gN" = (
@@ -4256,19 +4255,19 @@
 /turf/simulated/floor/wood/walnut,
 /area/liberia/bar)
 "gX" = (
-/obj/item/weapon/stool/padded/red,
+/obj/item/stool/padded/red,
 /obj/effect/floor_decal/spline/plain/brown{
 	dir = 10
 	},
 /turf/simulated/floor/wood/ebony,
 /area/liberia/bar)
 "gY" = (
-/obj/item/weapon/stool/padded/red,
+/obj/item/stool/padded/red,
 /obj/effect/floor_decal/spline/plain/brown,
 /turf/simulated/floor/wood/ebony,
 /area/liberia/bar)
 "gZ" = (
-/obj/item/weapon/stool/padded/red,
+/obj/item/stool/padded/red,
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/spline/plain/brown,
 /turf/simulated/floor/wood/ebony,
@@ -4336,8 +4335,8 @@
 	name = "merchant's locker";
 	req_access = list("ACCESS_MERCHANT")
 	},
-/obj/item/weapon/folder,
-/obj/item/weapon/book/manual/nt_sop,
+/obj/item/folder,
+/obj/item/book/manual/nt_sop,
 /turf/simulated/floor/wood/ebony,
 /area/liberia/captain)
 "hh" = (
@@ -4460,8 +4459,8 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/clothing/suit/chef/classic,
-/obj/item/weapon/material/kitchen/rollingpin,
-/obj/item/weapon/material/knife/kitchen,
+/obj/item/material/kitchen/rollingpin,
+/obj/item/material/knife/kitchen,
 /turf/simulated/floor/tiled/freezer,
 /area/liberia/bar)
 "hw" = (
@@ -4495,7 +4494,7 @@
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
 	prices = list();
-	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	products = list(/obj/item/storage/fancy/cigarettes = 10, /obj/item/storage/box/matches = 10, /obj/item/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
 /turf/simulated/floor/wood/walnut,
 /area/liberia/bar)
@@ -4517,8 +4516,8 @@
 /area/liberia/engineeringreactor)
 "hC" = (
 /obj/structure/table/woodentable/walnut,
-/obj/item/weapon/material/ashtray,
-/obj/item/weapon/storage/box/matches,
+/obj/item/material/ashtray,
+/obj/item/storage/box/matches,
 /obj/random/smokes,
 /turf/simulated/floor/carpet/red,
 /area/liberia/captain)
@@ -4527,7 +4526,7 @@
 /mob/living/simple_animal/tindalos{
 	name = "Eddy"
 	},
-/obj/item/weapon/crowbar/prybar,
+/obj/item/crowbar/prybar,
 /turf/simulated/floor/carpet/red,
 /area/liberia/captain)
 "hE" = (
@@ -4558,7 +4557,7 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
 	},
-/obj/item/weapon/crowbar/prybar,
+/obj/item/crowbar/prybar,
 /turf/simulated/floor/carpet,
 /area/liberia/personellroom2)
 "hH" = (
@@ -4602,7 +4601,7 @@
 /area/liberia/bar)
 "hL" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -4612,10 +4611,10 @@
 /turf/simulated/floor/tiled/freezer,
 /area/liberia/bar)
 "hM" = (
-/obj/item/weapon/stock_parts/computer/tesla_link,
-/obj/item/weapon/stock_parts/computer/tesla_link,
-/obj/item/weapon/stock_parts/computer/tesla_link,
-/obj/item/weapon/stock_parts/computer/tesla_link,
+/obj/item/stock_parts/computer/tesla_link,
+/obj/item/stock_parts/computer/tesla_link,
+/obj/item/stock_parts/computer/tesla_link,
+/obj/item/stock_parts/computer/tesla_link,
 /obj/structure/table/rack/dark,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/alarm/merchant{
@@ -4659,7 +4658,7 @@
 "hS" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/food/condiment/enzyme,
 /turf/simulated/floor/tiled/freezer,
 /area/liberia/bar)
 "hT" = (
@@ -4860,14 +4859,14 @@
 /area/liberia/engineeringengines)
 "in" = (
 /obj/structure/table/standard,
-/obj/item/weapon/defibrillator/compact/loaded,
+/obj/item/defibrillator/compact/loaded,
 /obj/item/device/flashlight,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/liberia/engineeringreactor)
 "io" = (
 /obj/structure/table/standard,
 /obj/machinery/cell_charger,
-/obj/item/weapon/storage/toolbox/electrical{
+/obj/item/storage/toolbox/electrical{
 	pixel_x = 7;
 	pixel_y = 4
 	},
@@ -5431,8 +5430,8 @@
 /area/liberia/merchantstorage)
 "jz" = (
 /obj/structure/table/glass,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/liberia/bridge{
@@ -5514,7 +5513,7 @@
 /area/liberia/guestroom1)
 "jH" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/green,
+/obj/item/bedsheet/green,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 5
 	},
@@ -5522,7 +5521,7 @@
 /area/liberia/guestroom1)
 "jI" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/rd,
+/obj/item/bedsheet/rd,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 9
 	},
@@ -5723,7 +5722,7 @@
 /area/liberia/library)
 "kc" = (
 /obj/structure/table/woodentable/walnut,
-/obj/item/weapon/storage/box/donut,
+/obj/item/storage/box/donut,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 6
 	},
@@ -5985,8 +5984,8 @@
 /area/liberia/library)
 "kz" = (
 /obj/structure/table/woodentable/walnut,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -6012,8 +6011,8 @@
 /area/liberia/dockinghall)
 "kC" = (
 /obj/structure/table/steel,
-/obj/item/weapon/storage/toolbox/mechanical,
-/obj/item/weapon/storage/belt/utility/full,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/belt/utility/full,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -6462,7 +6461,7 @@
 /area/liberia/atmos)
 "lo" = (
 /obj/structure/table/standard,
-/obj/item/weapon/defibrillator/loaded,
+/obj/item/defibrillator/loaded,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -6470,19 +6469,19 @@
 	dir = 8;
 	pixel_x = 32
 	},
-/obj/item/weapon/storage/firstaid/regular{
+/obj/item/storage/firstaid/regular{
 	pixel_x = -2;
 	pixel_y = 4
 	},
-/obj/item/weapon/storage/firstaid/adv{
+/obj/item/storage/firstaid/adv{
 	pixel_x = -2
 	},
-/obj/item/weapon/storage/firstaid/fire{
+/obj/item/storage/firstaid/fire{
 	pixel_x = 2;
 	pixel_y = 3
 	},
-/obj/item/weapon/storage/firstaid/o2,
-/obj/item/weapon/storage/firstaid/toxin,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/toxin,
 /obj/effect/floor_decal/corner/blue{
 	dir = 6
 	},
@@ -6524,11 +6523,11 @@
 /area/liberia/medbay)
 "ls" = (
 /obj/structure/table/standard,
-/obj/item/weapon/storage/firstaid/surgery{
+/obj/item/storage/firstaid/surgery{
 	pixel_y = 6
 	},
 /obj/item/stack/medical/advanced/bruise_pack,
-/obj/item/weapon/reagent_containers/spray/sterilizine,
+/obj/item/reagent_containers/spray/sterilizine,
 /obj/structure/hygiene/sink{
 	dir = 4;
 	pixel_x = 22
@@ -6748,13 +6747,13 @@
 /area/liberia/engineeringreactor)
 "mO" = (
 /obj/structure/closet/crate/med_crate,
-/obj/item/weapon/storage/firstaid/fire,
-/obj/item/weapon/storage/firstaid/o2,
-/obj/item/weapon/storage/firstaid/regular,
-/obj/item/weapon/storage/firstaid/surgery,
-/obj/item/weapon/storage/firstaid/toxin,
-/obj/item/weapon/storage/firstaid/trauma,
-/obj/item/weapon/defibrillator,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/surgery,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/trauma,
+/obj/item/defibrillator,
 /obj/item/bodybag/cryobag,
 /obj/item/bodybag/cryobag,
 /obj/item/bodybag/rescue/loaded,
@@ -6762,7 +6761,7 @@
 /obj/item/roller,
 /obj/item/roller,
 /obj/item/auto_cpr,
-/obj/item/weapon/storage/box/freezer,
+/obj/item/storage/box/freezer,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -6854,7 +6853,7 @@
 "oD" = (
 /obj/effect/floor_decal/techfloor,
 /obj/structure/table/standard,
-/obj/item/weapon/folder,
+/obj/item/folder,
 /turf/simulated/floor/tiled/techfloor,
 /area/liberia/cryo)
 "oF" = (
@@ -7100,7 +7099,7 @@
 	},
 /obj/item/device/radio,
 /obj/item/device/flashlight,
-/obj/item/weapon/crowbar/prybar,
+/obj/item/crowbar/prybar,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/liberia/engineeringlobby)
@@ -7845,12 +7844,12 @@
 /area/liberia/engineeringstorage)
 "Ep" = (
 /obj/structure/table/rack/dark,
-/obj/item/weapon/storage/box/gloves,
-/obj/item/weapon/storage/box/bloodpacks,
-/obj/item/weapon/storage/box/beakers,
-/obj/item/weapon/storage/box/masks,
-/obj/item/weapon/storage/box/syringes,
-/obj/item/weapon/storage/box/bodybags,
+/obj/item/storage/box/gloves,
+/obj/item/storage/box/bloodpacks,
+/obj/item/storage/box/beakers,
+/obj/item/storage/box/masks,
+/obj/item/storage/box/syringes,
+/obj/item/storage/box/bodybags,
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/liberia/merchantstorage)
@@ -8010,7 +8009,7 @@
 /area/liberia/atmos)
 "GV" = (
 /obj/structure/janitorialcart,
-/obj/item/weapon/mop,
+/obj/item/mop,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/power/apc/liberia{
 	dir = 1;
@@ -8105,7 +8104,7 @@
 	dir = 9
 	},
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/ce,
+/obj/item/bedsheet/ce,
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = -24
@@ -8359,7 +8358,7 @@
 /area/liberia/officeroom)
 "Ml" = (
 /obj/structure/table/woodentable/walnut,
-/obj/item/weapon/material/ashtray/glass,
+/obj/item/material/ashtray/glass,
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
 	},
@@ -9030,7 +9029,7 @@
 	dir = 5
 	},
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/hos,
+/obj/item/bedsheet/hos,
 /turf/simulated/floor/carpet/blue,
 /area/liberia/personellroom1)
 "Xe" = (

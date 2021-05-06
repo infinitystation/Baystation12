@@ -61,7 +61,7 @@
 /obj/structure/table/woodentable/walnut,
 /obj/random/maintenance,
 /obj/random/maintenance,
-/obj/item/weapon/reagent_containers/food/drinks/jar,
+/obj/item/reagent_containers/food/drinks/jar,
 /turf/simulated/floor/wood/walnut,
 /area/ship/scrap)
 "an" = (
@@ -74,7 +74,7 @@
 /area/ship/scrap)
 "ao" = (
 /obj/structure/table/woodentable/walnut,
-/obj/item/weapon/storage/pill_bottle/dice,
+/obj/item/storage/pill_bottle/dice,
 /turf/simulated/floor/wood/walnut,
 /area/ship/scrap)
 "aq" = (
@@ -94,7 +94,7 @@
 	pixel_y = 0
 	},
 /obj/structure/table/woodentable/walnut,
-/obj/item/weapon/reagent_containers/glass/rag,
+/obj/item/reagent_containers/glass/rag,
 /obj/random/drinkbottle,
 /turf/simulated/floor/wood/walnut,
 /area/ship/scrap)
@@ -202,7 +202,7 @@
 	dir = 4;
 	pixel_x = -22
 	},
-/obj/item/weapon/stool/bar/padded,
+/obj/item/stool/bar/padded,
 /turf/simulated/floor/wood/walnut,
 /area/ship/scrap)
 "aO" = (
@@ -216,7 +216,7 @@
 	icon_state = "alarm0";
 	pixel_x = 24
 	},
-/obj/item/weapon/stool/bar/padded,
+/obj/item/stool/bar/padded,
 /turf/simulated/floor/wood/walnut,
 /area/ship/scrap)
 "aP" = (
@@ -421,7 +421,7 @@
 /area/ship/scrap)
 "bw" = (
 /obj/structure/table/woodentable/walnut,
-/obj/item/weapon/deck/cards,
+/obj/item/deck/cards,
 /turf/simulated/floor/carpet,
 /area/ship/scrap)
 "by" = (
@@ -1065,7 +1065,7 @@
 	icon_state = "bulb_map"
 	},
 /obj/structure/catwalk,
-/obj/item/weapon/stool/padded,
+/obj/item/stool/padded,
 /turf/simulated/floor/plating,
 /area/ship/scrap/hallway/aft/upper)
 "cJ" = (
@@ -1282,7 +1282,7 @@
 	amount = 20
 	},
 /obj/item/stack/material/steel/fifty,
-/obj/item/weapon/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/mechanical,
 /obj/item/clothing/head/welding,
 /obj/item/stack/cable_coil,
 /obj/item/stack/cable_coil,
@@ -1321,7 +1321,7 @@
 	dir = 4
 	},
 /obj/structure/catwalk,
-/obj/item/weapon/stool/padded,
+/obj/item/stool/padded,
 /turf/simulated/floor/plating,
 /area/ship/scrap/hallway/aft/upper)
 "dg" = (
@@ -1426,14 +1426,14 @@
 /area/ship/scrap/other/robotics)
 "dp" = (
 /obj/structure/table/steel,
-/obj/item/weapon/storage/firstaid/empty,
+/obj/item/storage/firstaid/empty,
 /turf/simulated/floor/plating,
 /area/ship/scrap/other/robotics)
 "dq" = (
 /obj/structure/table/standard,
 /obj/item/stack/cable_coil/random,
 /obj/item/stack/cable_coil/random,
-/obj/item/weapon/flame/lighter/random,
+/obj/item/flame/lighter/random,
 /turf/simulated/floor/tiled,
 /area/ship/scrap/other/research)
 "dr" = (
@@ -1442,8 +1442,8 @@
 /area/ship/scrap/other/research)
 "ds" = (
 /obj/structure/table/standard,
-/obj/item/weapon/reagent_containers/glass/beaker/vial,
-/obj/item/weapon/reagent_containers/glass/beaker/vial,
+/obj/item/reagent_containers/glass/beaker/vial,
+/obj/item/reagent_containers/glass/beaker/vial,
 /turf/simulated/floor/tiled,
 /area/ship/scrap/other/research)
 "dt" = (
@@ -1590,7 +1590,7 @@
 	},
 /obj/item/stack/nanopaste,
 /obj/random/tech_supply,
-/obj/item/weapon/tape_roll,
+/obj/item/tape_roll,
 /turf/simulated/floor/tiled,
 /area/ship/scrap/other/robotics)
 "dC" = (
@@ -1663,10 +1663,10 @@
 /obj/structure/table/rack{
 	dir = 8;
 	},
-/obj/item/weapon/handcuffs/cable/yellow,
+/obj/item/handcuffs/cable/yellow,
 /obj/item/device/flash/synthetic,
 /obj/item/device/flash/synthetic,
-/obj/item/weapon/weldpack,
+/obj/item/weldpack,
 /obj/random/technology_scanner,
 /turf/simulated/floor/plating,
 /area/ship/scrap/other/robotics)
@@ -1677,7 +1677,7 @@
 	pixel_y = -29
 	},
 /obj/structure/plushie/beepsky,
-/obj/item/weapon/bedsheet/mime,
+/obj/item/bedsheet/mime,
 /turf/simulated/floor/tiled,
 /area/ship/scrap/other/robotics)
 "dO" = (
@@ -1978,8 +1978,8 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/solar,
-/obj/item/weapon/material/shard,
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
+/obj/item/material/shard,
 /turf/simulated/floor/plating,
 /area/ship/scrap/engineering/solars/array)
 "ep" = (
@@ -1997,7 +1997,7 @@
 	icon_state = "0-2"
 	},
 /obj/item/solar_assembly,
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /turf/simulated/floor/plating,
 /area/ship/scrap/engineering/solars/array)
 "er" = (
@@ -2007,8 +2007,8 @@
 	icon_state = "0-2"
 	},
 /obj/item/solar_assembly,
-/obj/item/weapon/material/shard,
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
+/obj/item/material/shard,
 /turf/simulated/floor/plating,
 /area/ship/scrap/engineering/solars/array)
 "es" = (
@@ -2138,15 +2138,15 @@
 /obj/effect/floor_decal/solarpanel,
 /obj/structure/cable/yellow,
 /obj/item/solar_assembly,
-/obj/item/weapon/material/shard,
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
+/obj/item/material/shard,
 /turf/simulated/floor/plating,
 /area/ship/scrap/engineering/solars/array)
 "eC" = (
 /obj/effect/floor_decal/solarpanel,
 /obj/structure/cable/yellow,
 /obj/item/solar_assembly,
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /turf/simulated/floor/plating,
 /area/ship/scrap/engineering/solars/array)
 "eL" = (
@@ -2298,7 +2298,7 @@
 /turf/simulated/wall/r_wall/hull,
 /area/ship/scrap/escape/starboard/upper)
 "AI" = (
-/obj/item/weapon/stool/padded,
+/obj/item/stool/padded,
 /turf/simulated/floor/tiled,
 /area/ship/scrap/other/robotics)
 "AU" = (
@@ -2355,7 +2355,7 @@
 /turf/simulated/floor/carpet,
 /area/ship/scrap)
 "Hk" = (
-/obj/item/weapon/stool/bar/padded,
+/obj/item/stool/bar/padded,
 /turf/simulated/floor/wood/walnut,
 /area/ship/scrap)
 "Iz" = (

@@ -10,3 +10,6 @@
 	t = replacetext(t, "~", "\\~")
 	t = replacetext(t, "_", "\\_")
 	. = t
+
+/proc/system_name()
+	return GLOB.using_map.system_name ? GLOB.using_map.system_name : generate_system_name()

@@ -27,7 +27,6 @@ GLOBAL_LIST_INIT(crashed_pod_areas, new)
 
 /decl/hierarchy/outfit/job/survivor
 	name = OUTFIT_JOB_NAME("Survivor")
-	id_type = null
 	pda_type = null
 
 /datum/job/submap/pod/New(var/datum/submap/_owner, var/abstract_job = FALSE)

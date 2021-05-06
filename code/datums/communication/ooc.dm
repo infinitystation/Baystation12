@@ -46,9 +46,15 @@
 	for(var/client/target in GLOB.clients)
 		if(target.is_key_ignored(C.key)) // If we're ignored by this person, then do nothing.
 			continue
+// INF <<<<<<< HEAD | Неизвестно, какая версия может работать ~bear1ake
 		var/sent_message = "[create_text_tag("ooc", "OOC:", target)] <EM>" + "[holder_rank]" + "[C.key]:</EM> <span class='message'>[message]</span>"
 		sent_message = emoji_parse_by_user(sent_message, C)//inf
 		if(!is_stealthed && C.prefs.ooccolor != initial(C.prefs.ooccolor))
 			receive_communication(C, target, "<font color='[C.prefs.ooccolor]'><span class='ooc'>[sent_message]</font></span>")
+/* =======
+		var/sent_message = "[create_text_tag("ooc", "OOC:", target)] <EM>[C.key]:</EM> <span class='message linkify'>[message]</span>"
+		if(can_badmin)
+			receive_communication(C, target, "<font color='[ooc_color]'><span class='ooc'>[sent_message]</font></span>")
+* /INF >>>>>>> merge 02 05 2021 */
 		else
 			receive_communication(C, target, "<span class='ooc'><span class='[ooc_style]'>[sent_message]</span></span>")

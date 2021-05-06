@@ -14,10 +14,10 @@
 	can_escape = 1
 
 	harm_intent_damage = 8
-	melee_damage_lower = 30
-	melee_damage_upper = 35
-	attacktext = "evisceratds"
-	attack_sound = 'sound/weapons/slash.ogg'
+//	melee_damage_lower = 30 // Нужно /obj/item/natural_weapon ~bear1ake
+//	melee_damage_upper = 35
+//	attacktext = "evisceratds"
+//	attack_sound = 'sound/weapons/slash.ogg'
 	var/attack_mode = FALSE
 
 	var/transformation_delay_min = 4

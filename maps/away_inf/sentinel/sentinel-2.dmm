@@ -285,7 +285,7 @@
 /area/ship/patrol/maintenance/upper)
 "aD" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/yellow,
+/obj/item/bedsheet/yellow,
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
 "aE" = (
@@ -295,7 +295,7 @@
 /area/ship/patrol/crew/hallway/upper/starboard)
 "aF" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/blue,
+/obj/item/bedsheet/blue,
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
 "aG" = (
@@ -361,7 +361,7 @@
 "aM" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/mechanical,
 /obj/random/junk,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/patrol/maintenance/upper/aft)
@@ -370,7 +370,7 @@
 	dir = 1;
 	pixel_y = -24
 	},
-/obj/item/weapon/stool,
+/obj/item/stool,
 /turf/simulated/floor/plating,
 /area/ship/patrol/maintenance/upper/starboard)
 "aO" = (
@@ -473,7 +473,7 @@
 	dir = 5
 	},
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/orange,
+/obj/item/bedsheet/orange,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig)
 "ba" = (
@@ -1581,12 +1581,12 @@
 /area/ship/patrol/crew/brig/emergency_armory)
 "de" = (
 /obj/structure/closet/crate/medical,
-/obj/item/weapon/storage/firstaid/individual/military,
-/obj/item/weapon/storage/firstaid/individual/military,
-/obj/item/weapon/storage/firstaid/individual/military,
-/obj/item/weapon/storage/firstaid/individual/military,
-/obj/item/weapon/storage/firstaid/individual/military,
-/obj/item/weapon/storage/firstaid/individual/military,
+/obj/item/storage/firstaid/individual/military,
+/obj/item/storage/firstaid/individual/military,
+/obj/item/storage/firstaid/individual/military,
+/obj/item/storage/firstaid/individual/military,
+/obj/item/storage/firstaid/individual/military,
+/obj/item/storage/firstaid/individual/military,
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/ship/patrol/crew/brig/emergency_armory)
@@ -1635,7 +1635,7 @@
 /turf/simulated/floor/plating,
 /area/ship/patrol/maintenance/upper)
 "dl" = (
-/obj/item/weapon/stool,
+/obj/item/stool,
 /turf/simulated/floor/wood,
 /area/ship/patrol/maintenance/upper)
 "dm" = (
@@ -1700,11 +1700,11 @@
 /area/ship/patrol/crew/comms)
 "du" = (
 /obj/structure/table/standard,
-/obj/item/weapon/paper_bin{
+/obj/item/paper_bin{
 	pixel_x = -3;
 	pixel_y = 7
 	},
-/obj/item/weapon/pen{
+/obj/item/pen{
 	pixel_x = 4;
 	pixel_y = 4
 	},
@@ -1921,8 +1921,8 @@
 /area/ship/patrol/crew/comms)
 "dU" = (
 /obj/structure/table/standard,
-/obj/item/weapon/folder/red,
-/obj/item/weapon/folder/red,
+/obj/item/folder/red,
+/obj/item/folder/red,
 /obj/effect/floor_decal/corner/red{
 	dir = 9
 	},
@@ -1961,15 +1961,15 @@
 /area/ship/patrol/crew/brig/office)
 "dX" = (
 /obj/structure/table/steel,
-/obj/item/weapon/paper_bin{
+/obj/item/paper_bin{
 	pixel_x = -3;
 	pixel_y = 7
 	},
-/obj/item/weapon/pen{
+/obj/item/pen{
 	pixel_x = 4;
 	pixel_y = 4
 	},
-/obj/item/weapon/stamp,
+/obj/item/stamp,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -2172,10 +2172,10 @@
 /area/ship/patrol/crew/hallway/upper)
 "en" = (
 /obj/structure/bookcase,
-/obj/item/weapon/book/manual/solgov_law,
-/obj/item/weapon/book/manual/sol_sop,
-/obj/item/weapon/book/manual/military_law,
-/obj/item/weapon/book/manual/chef_recipes,
+/obj/item/book/manual/solgov_law,
+/obj/item/book/manual/sol_sop,
+/obj/item/book/manual/military_law,
+/obj/item/book/manual/chef_recipes,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 10
 	},
@@ -2377,11 +2377,11 @@
 "eJ" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/table/rack,
-/obj/item/weapon/crowbar/brace_jack,
-/obj/item/weapon/airlock_brace,
-/obj/item/weapon/airlock_brace,
-/obj/item/weapon/airlock_brace,
-/obj/item/weapon/airlock_brace,
+/obj/item/crowbar/brace_jack,
+/obj/item/airlock_brace,
+/obj/item/airlock_brace,
+/obj/item/airlock_brace,
+/obj/item/airlock_brace,
 /turf/simulated/floor/tiled/monotile,
 /area/ship/patrol/crew/brig/office)
 "eK" = (
@@ -2392,12 +2392,12 @@
 /obj/structure/cable,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/table/rack,
-/obj/item/weapon/barrier,
-/obj/item/weapon/barrier,
-/obj/item/weapon/barrier,
-/obj/item/weapon/barrier,
-/obj/item/weapon/barrier,
-/obj/item/weapon/barrier,
+/obj/item/barrier,
+/obj/item/barrier,
+/obj/item/barrier,
+/obj/item/barrier,
+/obj/item/barrier,
+/obj/item/barrier,
 /turf/simulated/floor/tiled/monotile,
 /area/ship/patrol/crew/brig/office)
 "eL" = (
@@ -2436,11 +2436,11 @@
 	},
 /obj/structure/cable,
 /obj/structure/table/steel,
-/obj/item/weapon/melee/telebaton,
-/obj/item/weapon/melee/telebaton,
-/obj/item/weapon/melee/telebaton,
+/obj/item/melee/telebaton,
+/obj/item/melee/telebaton,
+/obj/item/melee/telebaton,
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/item/weapon/melee/telebaton,
+/obj/item/melee/telebaton,
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/crew/brig/emergency_armory)
 "eO" = (
@@ -2448,10 +2448,10 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/item/weapon/gun/energy/gun,
-/obj/item/weapon/gun/energy/gun,
-/obj/item/weapon/gun/energy/gun,
-/obj/item/weapon/gun/energy/gun,
+/obj/item/gun/energy/gun,
+/obj/item/gun/energy/gun,
+/obj/item/gun/energy/gun,
+/obj/item/gun/energy/gun,
 /obj/structure/closet/secure_closet/guncabinet{
 	req_access = list("ACCESS_CAVALRY")
 	},
@@ -2459,8 +2459,8 @@
 /area/ship/patrol/crew/brig/emergency_armory)
 "eP" = (
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/item/weapon/gun/energy/ionrifle,
-/obj/item/weapon/gun/energy/ionrifle,
+/obj/item/gun/energy/ionrifle,
+/obj/item/gun/energy/ionrifle,
 /obj/structure/closet/secure_closet/guncabinet{
 	req_access = list("ACCESS_CAVALRY")
 	},
@@ -2468,10 +2468,10 @@
 /area/ship/patrol/crew/brig/emergency_armory)
 "eQ" = (
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/item/weapon/gun/energy/stunrevolver/rifle,
-/obj/item/weapon/gun/energy/stunrevolver/rifle,
-/obj/item/weapon/gun/energy/stunrevolver/rifle,
-/obj/item/weapon/gun/energy/stunrevolver/rifle,
+/obj/item/gun/energy/stunrevolver/rifle,
+/obj/item/gun/energy/stunrevolver/rifle,
+/obj/item/gun/energy/stunrevolver/rifle,
+/obj/item/gun/energy/stunrevolver/rifle,
 /obj/structure/closet/secure_closet/guncabinet{
 	req_access = list("ACCESS_CAVALRY")
 	},
@@ -2911,7 +2911,7 @@
 	dir = 8;
 	pixel_x = -15
 	},
-/obj/item/weapon/storage/mirror{
+/obj/item/storage/mirror{
 	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/freezer,
@@ -3106,8 +3106,8 @@
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
-/obj/item/weapon/material/kitchen/rollingpin,
-/obj/item/weapon/material/canknife,
+/obj/item/material/kitchen/rollingpin,
+/obj/item/material/canknife,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
 "fW" = (
@@ -3115,10 +3115,10 @@
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
-/obj/item/weapon/reagent_containers/food/condiment/small/peppermill{
+/obj/item/reagent_containers/food/condiment/small/peppermill{
 	pixel_x = 3
 	},
-/obj/item/weapon/reagent_containers/food/condiment/small/saltshaker{
+/obj/item/reagent_containers/food/condiment/small/saltshaker{
 	pixel_x = -3
 	},
 /turf/simulated/floor/tiled/white,
@@ -3139,7 +3139,7 @@
 	dir = 8;
 	pixel_x = -15
 	},
-/obj/item/weapon/storage/mirror{
+/obj/item/storage/mirror{
 	pixel_x = -32
 	},
 /obj/machinery/alarm{
@@ -3263,9 +3263,9 @@
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
-/obj/item/weapon/reagent_containers/food/snacks/can/four,
-/obj/item/weapon/material/canknife,
-/obj/item/weapon/material/kitchen/utensil/spoon{
+/obj/item/reagent_containers/food/snacks/can/four,
+/obj/item/material/canknife,
+/obj/item/material/kitchen/utensil/spoon{
 	pixel_x = -3;
 	pixel_y = 2
 	},
@@ -3371,7 +3371,7 @@
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
-/obj/item/weapon/reagent_containers/food/snacks/liquidfood,
+/obj/item/reagent_containers/food/snacks/liquidfood,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
 "gz" = (
@@ -3399,7 +3399,7 @@
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
-/obj/item/weapon/reagent_containers/food/snacks/mint,
+/obj/item/reagent_containers/food/snacks/mint,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
 "gC" = (
@@ -3407,7 +3407,7 @@
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
-/obj/item/weapon/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/food/condiment/enzyme,
 /obj/item/stack/package_wrap/twenty_five,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
@@ -3558,8 +3558,8 @@
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
-/obj/item/weapon/reagent_containers/glass/rag,
-/obj/item/weapon/reagent_containers/spray/cleaner,
+/obj/item/reagent_containers/glass/rag,
+/obj/item/reagent_containers/spray/cleaner,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
 "gT" = (
@@ -3572,19 +3572,19 @@
 	dir = 6
 	},
 /obj/structure/closet/crate/freezer,
-/obj/item/weapon/reagent_containers/food/snacks/can/three,
-/obj/item/weapon/reagent_containers/food/snacks/can/three,
-/obj/item/weapon/reagent_containers/food/snacks/can/three,
-/obj/item/weapon/reagent_containers/food/snacks/can,
-/obj/item/weapon/reagent_containers/food/snacks/can,
-/obj/item/weapon/reagent_containers/food/snacks/can,
-/obj/item/weapon/reagent_containers/food/snacks/can,
-/obj/item/weapon/reagent_containers/food/snacks/can,
-/obj/item/weapon/reagent_containers/food/snacks/can,
-/obj/item/weapon/reagent_containers/food/snacks/can,
-/obj/item/weapon/reagent_containers/food/snacks/can,
-/obj/item/weapon/material/canknife,
-/obj/item/weapon/material/canknife,
+/obj/item/reagent_containers/food/snacks/can/three,
+/obj/item/reagent_containers/food/snacks/can/three,
+/obj/item/reagent_containers/food/snacks/can/three,
+/obj/item/reagent_containers/food/snacks/can,
+/obj/item/reagent_containers/food/snacks/can,
+/obj/item/reagent_containers/food/snacks/can,
+/obj/item/reagent_containers/food/snacks/can,
+/obj/item/reagent_containers/food/snacks/can,
+/obj/item/reagent_containers/food/snacks/can,
+/obj/item/reagent_containers/food/snacks/can,
+/obj/item/reagent_containers/food/snacks/can,
+/obj/item/material/canknife,
+/obj/item/material/canknife,
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/kitchen)
 "gU" = (
@@ -3781,12 +3781,12 @@
 	dir = 4
 	},
 /obj/structure/bookcase,
-/obj/item/weapon/book/manual/sol_sop,
-/obj/item/weapon/book/manual/solgov_law,
-/obj/item/weapon/book/manual/military_law,
-/obj/item/weapon/book/manual/nt_regs,
-/obj/item/weapon/book/manual/chef_recipes,
-/obj/item/weapon/book/manual/barman_recipes,
+/obj/item/book/manual/sol_sop,
+/obj/item/book/manual/solgov_law,
+/obj/item/book/manual/military_law,
+/obj/item/book/manual/nt_regs,
+/obj/item/book/manual/chef_recipes,
+/obj/item/book/manual/barman_recipes,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
 "hp" = (
@@ -3794,28 +3794,28 @@
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
-/obj/item/weapon/tray,
-/obj/item/weapon/material/kitchen/utensil/fork{
+/obj/item/tray,
+/obj/item/material/kitchen/utensil/fork{
 	pixel_x = 4;
 	pixel_y = 2
 	},
-/obj/item/weapon/material/kitchen/utensil/fork{
+/obj/item/material/kitchen/utensil/fork{
 	pixel_x = 4;
 	pixel_y = 2
 	},
-/obj/item/weapon/material/kitchen/utensil/fork{
+/obj/item/material/kitchen/utensil/fork{
 	pixel_x = 4;
 	pixel_y = 2
 	},
-/obj/item/weapon/material/kitchen/utensil/spoon{
+/obj/item/material/kitchen/utensil/spoon{
 	pixel_x = -3;
 	pixel_y = 2
 	},
-/obj/item/weapon/material/kitchen/utensil/spoon{
+/obj/item/material/kitchen/utensil/spoon{
 	pixel_x = -3;
 	pixel_y = 2
 	},
-/obj/item/weapon/material/kitchen/utensil/spoon{
+/obj/item/material/kitchen/utensil/spoon{
 	pixel_x = -3;
 	pixel_y = 2
 	},
@@ -3824,10 +3824,10 @@
 	pixel_y = -25
 	},
 /obj/structure/cable,
-/obj/item/weapon/material/kitchen/utensil/spoon{
+/obj/item/material/kitchen/utensil/spoon{
 	pixel_x = -4
 	},
-/obj/item/weapon/material/kitchen/utensil/fork{
+/obj/item/material/kitchen/utensil/fork{
 	pixel_x = 4;
 	pixel_y = 2
 	},
@@ -3852,7 +3852,7 @@
 	pixel_y = -25
 	},
 /obj/structure/table/standard,
-/obj/item/weapon/storage/box/cups,
+/obj/item/storage/box/cups,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
 "hs" = (
@@ -3914,7 +3914,7 @@
 	dir = 4
 	},
 /obj/machinery/reagentgrinder,
-/obj/item/weapon/reagent_containers/glass/beaker{
+/obj/item/reagent_containers/glass/beaker{
 	pixel_x = 5
 	},
 /turf/simulated/floor/tiled/white,
@@ -4228,7 +4228,7 @@
 /area/ship/patrol/maintenance/upper/starboard)
 "ou" = (
 /obj/structure/table/woodentable,
-/obj/item/weapon/material/ashtray/plastic,
+/obj/item/material/ashtray/plastic,
 /turf/simulated/floor/wood,
 /area/ship/patrol/maintenance/upper)
 "oA" = (
@@ -4242,7 +4242,7 @@
 /area/ship/patrol/maintenance/upper/starboard)
 "oL" = (
 /obj/structure/table/woodentable,
-/obj/item/weapon/reagent_containers/glass/rag,
+/obj/item/reagent_containers/glass/rag,
 /turf/simulated/floor/plating,
 /area/ship/patrol/maintenance/upper)
 "oM" = (
@@ -4317,7 +4317,7 @@
 	dir = 1
 	},
 /obj/random/coin,
-/obj/item/weapon/shovel/custom_multishowel,
+/obj/item/shovel/custom_multishowel,
 /obj/item/clothing/head/beret/solgov/diplomatic,
 /turf/simulated/floor/plating,
 /area/ship/patrol/maintenance/upper/starboard)
@@ -4387,7 +4387,7 @@
 /area/ship/patrol/maintenance/upper)
 "rZ" = (
 /obj/structure/table/woodentable,
-/obj/item/weapon/reagent_containers/food/drinks/shaker,
+/obj/item/reagent_containers/food/drinks/shaker,
 /turf/simulated/floor/wood,
 /area/ship/patrol/maintenance/upper)
 "ss" = (
@@ -4487,9 +4487,9 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/item/weapon/storage/fancy/cigarettes/dromedaryco,
-/obj/item/weapon/storage/fancy/cigarettes/dromedaryco,
-/obj/item/weapon/storage/fancy/cigarettes/dromedaryco,
+/obj/item/storage/fancy/cigarettes/dromedaryco,
+/obj/item/storage/fancy/cigarettes/dromedaryco,
+/obj/item/storage/fancy/cigarettes/dromedaryco,
 /turf/simulated/floor/plating,
 /area/ship/patrol/maintenance/upper/starboard)
 "ul" = (
@@ -4501,7 +4501,7 @@
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
-/obj/item/weapon/material/canknife,
+/obj/item/material/canknife,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
 "uV" = (
@@ -4580,9 +4580,9 @@
 	},
 /obj/structure/railing/mapped,
 /obj/random/contraband,
-/obj/item/weapon/storage/fancy/cigarettes/dromedaryco,
-/obj/item/weapon/storage/fancy/cigarettes/dromedaryco,
-/obj/item/weapon/storage/fancy/cigarettes/dromedaryco,
+/obj/item/storage/fancy/cigarettes/dromedaryco,
+/obj/item/storage/fancy/cigarettes/dromedaryco,
+/obj/item/storage/fancy/cigarettes/dromedaryco,
 /turf/simulated/floor/plating,
 /area/ship/patrol/maintenance/upper/port)
 "xs" = (
@@ -4854,11 +4854,11 @@
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
-/obj/item/weapon/paper_bin{
+/obj/item/paper_bin{
 	pixel_x = -3;
 	pixel_y = 7
 	},
-/obj/item/weapon/pen,
+/obj/item/pen,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
 "Fk" = (
@@ -5138,9 +5138,9 @@
 "LU" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/toolcloset,
-/obj/item/weapon/tape_roll,
+/obj/item/tape_roll,
 /obj/random/tech_supply,
-/obj/item/weapon/storage/toolbox/syndicate,
+/obj/item/storage/toolbox/syndicate,
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = -24
@@ -5609,7 +5609,7 @@
 /turf/space,
 /area/space)
 "Zf" = (
-/obj/item/weapon/stool/bar/padded,
+/obj/item/stool/bar/padded,
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;

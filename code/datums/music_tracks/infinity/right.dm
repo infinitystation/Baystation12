@@ -1,6 +1,6 @@
-/music_track/right
-	artist = "Unknown"
+/decl/audio/track/right
+	author = "Unknown"
 	title = "Make this Right"
-	album = "Right Deals"
-	song = 'infinity/sound/music/TheToxicAvenger_MakeThisRight.ogg'
+	collection =  "Right Deals"
+	source = 'infinity/sound/music/TheToxicAvenger_MakeThisRight.ogg'
 	license =  /decl/license/grandfathered

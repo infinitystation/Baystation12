@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/shotgun/pump
+/obj/item/gun/projectile/shotgun/pump
 	name = "shotgun"
 	desc = "The mass-produced W-T Remmington 29x shotgun is a favourite of police and security forces on many worlds. Useful for sweeping alleys."
 	icon = 'icons/obj/guns/shotguns.dmi'
@@ -22,24 +22,24 @@
 
 	is_serial = 1
 	s_gun = "WT-29"
-/obj/item/weapon/gun/projectile/shotgun/on_update_icon()
+/obj/item/gun/projectile/shotgun/on_update_icon()
 	..()
 	if(length(loaded))
 		icon_state = initial(icon_state)
 	else
 		icon_state = "[initial(icon_state)]-empty"
 
-/obj/item/weapon/gun/projectile/shotgun/pump/consume_next_projectile()
+/obj/item/gun/projectile/shotgun/pump/consume_next_projectile()
 	if(chambered)
 		return chambered.BB
 	return null
 
-/obj/item/weapon/gun/projectile/shotgun/pump/attack_self(mob/living/user as mob)
+/obj/item/gun/projectile/shotgun/pump/attack_self(mob/living/user as mob)
 	if(world.time >= recentpump + 10)
 		pump(user)
 		recentpump = world.time
 
-/obj/item/weapon/gun/projectile/shotgun/pump/proc/pump(mob/M as mob)
+/obj/item/gun/projectile/shotgun/pump/proc/pump(mob/M as mob)
 	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1)
 
 	if(chambered)//We have a shell in the chamber
@@ -55,7 +55,7 @@
 
 	update_icon()
 
-/obj/item/weapon/gun/projectile/shotgun/pump/combat
+/obj/item/gun/projectile/shotgun/pump/combat
 	name = "combat shotgun"
 	desc = "Built for close quarters combat, the Hephaestus Industries KS-40 is widely regarded as a weapon of choice for repelling boarders."
 	icon_state = "cshotgun"
@@ -69,7 +69,7 @@
 
 	s_gun = "KS-40"
 
-/obj/item/weapon/gun/projectile/shotgun/pump/combat/on_update_icon()
+/obj/item/gun/projectile/shotgun/pump/combat/on_update_icon()
 	..()
 	if(length(loaded) > 3)
 		for(var/i = 0 to length(loaded) - 4)
@@ -77,7 +77,7 @@
 			I.pixel_x = i * 2
 			overlays += I
 
-/obj/item/weapon/gun/projectile/shotgun/doublebarrel
+/obj/item/gun/projectile/shotgun/doublebarrel
 	name = "double-barreled shotgun"
 	desc = "A true classic."
 	icon = 'icons/obj/guns/shotguns.dmi'
@@ -107,22 +107,22 @@
 	w_class = ITEM_SIZE_HUGE
 	one_hand_penalty = 2
 
-/obj/item/weapon/gun/projectile/shotgun/doublebarrel/pellet
+/obj/item/gun/projectile/shotgun/doublebarrel/pellet
 	ammo_type = /obj/item/ammo_casing/shotgun/pellet
 
-/obj/item/weapon/gun/projectile/shotgun/doublebarrel/flare
+/obj/item/gun/projectile/shotgun/doublebarrel/flare
 	name = "signal shotgun"
 	desc = "A double-barreled shotgun meant to fire signal flash shells."
 	ammo_type = /obj/item/ammo_casing/shotgun/flash
 
-/obj/item/weapon/gun/projectile/shotgun/doublebarrel/unload_ammo(user, allow_dump)
+/obj/item/gun/projectile/shotgun/doublebarrel/unload_ammo(user, allow_dump)
 	..(user, allow_dump=1)
 
 //this is largely hacky and bad :(	-Pete
-/obj/item/weapon/gun/projectile/shotgun/doublebarrel/attackby(var/obj/item/A as obj, mob/user as mob)
-	if(w_class > 3 && (istype(A, /obj/item/weapon/circular_saw) || istype(A, /obj/item/weapon/melee/energy) || istype(A, /obj/item/weapon/gun/energy/plasmacutter)))
-		if(istype(A, /obj/item/weapon/gun/energy/plasmacutter))
-			var/obj/item/weapon/gun/energy/plasmacutter/cutter = A
+/obj/item/gun/projectile/shotgun/doublebarrel/attackby(var/obj/item/A as obj, mob/user as mob)
+	if(w_class > 3 && (istype(A, /obj/item/circular_saw) || istype(A, /obj/item/melee/energy) || istype(A, /obj/item/gun/energy/plasmacutter)))
+		if(istype(A, /obj/item/gun/energy/plasmacutter))
+			var/obj/item/gun/energy/plasmacutter/cutter = A
 			if(!cutter.slice(user))
 				return ..()
 		to_chat(user, "<span class='notice'>You begin to shorten the barrel of \the [src].</span>")
@@ -133,14 +133,14 @@
 			return
 		if(do_after(user, 30, src))	//SHIT IS STEALTHY EYYYYY
 			user.unEquip(src)
-			var/obj/item/weapon/gun/projectile/shotgun/doublebarrel/sawn/empty/buddy = new(loc)
+			var/obj/item/gun/projectile/shotgun/doublebarrel/sawn/empty/buddy = new(loc)
 			transfer_fingerprints_to(buddy)
 			qdel(src)
 			to_chat(user, "<span class='warning'>You shorten the barrel of \the [src]!</span>")
 	else
 		..()
 
-/obj/item/weapon/gun/projectile/shotgun/doublebarrel/sawn
+/obj/item/gun/projectile/shotgun/doublebarrel/sawn
 	name = "sawn-off shotgun"
 	desc = "Omar's coming!"
 	icon_state = "sawnshotgun"
@@ -153,5 +153,5 @@
 	one_hand_penalty = 4
 	bulk = GUN_BULK_SMG //inf //was: 2
 
-/obj/item/weapon/gun/projectile/shotgun/doublebarrel/sawn/empty
+/obj/item/gun/projectile/shotgun/doublebarrel/sawn/empty
 	starts_loaded = FALSE

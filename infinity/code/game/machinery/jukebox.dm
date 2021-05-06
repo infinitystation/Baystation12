@@ -1,7 +1,7 @@
 /obj/machinery/media/jukebox/old/futuristic
 	icon = 'infinity/icons/obj/jukebox.dmi'
 	icon_state = "jukeboxfut-nopower"
-	state_base = "jukeboxfut"
+/*	state_base = "jukeboxfut"
 
 /obj/machinery/media/jukebox
 	var/obj/item/music_tape/tape
@@ -26,4 +26,4 @@
 
 		tape = null
 		visible_message(SPAN_NOTICE("[usr] eject \a [tape] from \the [src]."))
-		verbs -= /obj/machinery/media/jukebox/verb/eject
+		verbs -= /obj/machinery/media/jukebox/verb/eject */

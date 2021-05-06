@@ -1,24 +1,24 @@
 /datum/gear/pet_cube
 	display_name = "PetCube X"
 	description = "Just add a water!"
-	path = /obj/item/weapon/reagent_containers/food/snacks/monkeycube
+	path = /obj/item/reagent_containers/food/snacks/monkeycube
 	required_donate_level = 4
 	cost = 0 // Управлением решено убрать обычную цену с донатерских вещей ~bear1ake
 
 /datum/gear/pet_cube/New()
 	. = ..()
 	var/cubes = list(
-		"Cat PetCube" = /obj/item/weapon/reagent_containers/food/snacks/monkeycube/cat,
-		"Corgi PetCube" = /obj/item/weapon/reagent_containers/food/snacks/monkeycube/corgi,
-		"Lizard PetCube" = /obj/item/weapon/reagent_containers/food/snacks/monkeycube/lizard,
-		"Mouse PetCube" = /obj/item/weapon/reagent_containers/food/snacks/monkeycube/mouse,
+		"Cat PetCube" = /obj/item/reagent_containers/food/snacks/monkeycube/cat,
+		"Corgi PetCube" = /obj/item/reagent_containers/food/snacks/monkeycube/corgi,
+		"Lizard PetCube" = /obj/item/reagent_containers/food/snacks/monkeycube/lizard,
+		"Mouse PetCube" = /obj/item/reagent_containers/food/snacks/monkeycube/mouse,
 	)
 	gear_tweaks += new /datum/gear_tweak/path(cubes)
 
 /datum/gear/pet_holder
 	display_name = "exotic pet"
 	description = "Not common pet"
-	path = /obj/item/weapon/holder
+	path = /obj/item/holder
 	required_donate_level = 5
 	price = 20 // Не входит в стандартный набор, так что пусть стоит кое-чего
 	cost = 0
@@ -26,11 +26,11 @@
 /datum/gear/pet_holder/New()
 	. = ..()
 	var/pets = list(
-		"Crab" = /obj/item/weapon/holder/crab/prepared,
-		"Crow" = /obj/item/weapon/holder/crow/prepared,
-		"Fox" = /obj/item/weapon/holder/fox/prepared,
-		"Rabbit" = /obj/item/weapon/holder/rabbit/prepared,
-		"Snake" = /obj/item/weapon/holder/snake/prepared/safe,
+		"Crab" = /obj/item/holder/crab/prepared,
+		"Crow" = /obj/item/holder/crow/prepared,
+		"Fox" = /obj/item/holder/fox/prepared,
+		"Rabbit" = /obj/item/holder/rabbit/prepared,
+		"Snake" = /obj/item/holder/snake/prepared/safe,
 	)
 	gear_tweaks += new /datum/gear_tweak/path(pets)
 
@@ -69,7 +69,7 @@
 /datum/gear/bikehorn
 	display_name = "bike horn"
 	description = "for real aesthetes"
-	path = /obj/item/weapon/bikehorn
+	path = /obj/item/bikehorn
 	required_donate_level = 1
 	cost = 0
 	price = 1
@@ -77,7 +77,7 @@
 /datum/gear/bikehorn/rubberducky
 	display_name = "rubber duck"
 	description = "QUACK"
-	path = /obj/item/weapon/bikehorn/rubberducky
+	path = /obj/item/bikehorn/rubberducky
 	required_donate_level = 1
 	cost = 0
 	price = 1
@@ -85,7 +85,7 @@
 /datum/gear/premium_alcohol
 	display_name = "expensive alcohol"
 	description = "sometimes it turns out that the bar is closed, but you want a drink."
-	path = /obj/item/weapon/reagent_containers/food/drinks/bottle
+	path = /obj/item/reagent_containers/food/drinks/bottle
 	required_donate_level = 1
 	cost = 0
 	price = 5
@@ -93,11 +93,11 @@
 /datum/gear/premium_alcohol/New()
 	. = ..()
 	var/list/premium_alcohol_list = list(
-		"Vodka" = /obj/item/weapon/reagent_containers/food/drinks/bottle/premiumvodka,
-		"Vine" = /obj/item/weapon/reagent_containers/food/drinks/bottle/premiumwine,
-		"Whiskey" = /obj/item/weapon/reagent_containers/food/drinks/bottle/specialwhiskey,
-		"Nothing" = /obj/item/weapon/reagent_containers/food/drinks/bottle/bottleofnothing,
-		"Vermouth" = /obj/item/weapon/reagent_containers/food/drinks/bottle/vermouth,
+		"Vodka" = /obj/item/reagent_containers/food/drinks/bottle/premiumvodka,
+		"Vine" = /obj/item/reagent_containers/food/drinks/bottle/premiumwine,
+		"Whiskey" = /obj/item/reagent_containers/food/drinks/bottle/specialwhiskey,
+		"Nothing" = /obj/item/reagent_containers/food/drinks/bottle/bottleofnothing,
+		"Vermouth" = /obj/item/reagent_containers/food/drinks/bottle/vermouth,
 	)
 	gear_tweaks += new /datum/gear_tweak/path(premium_alcohol_list)
 
@@ -140,7 +140,7 @@
 /datum/gear/costume_bags
 	display_name = "costume bags"
 	description = "time for some fashion"
-	path = /obj/item/weapon/clothingbag/costume
+	path = /obj/item/clothingbag/costume
 	required_donate_level = 1
 	cost = 0
 	price = 10
@@ -148,15 +148,15 @@
 /datum/gear/costume_bags/New()
 	. = ..()
 	var/list/costume_bags_list = list(
-		"Witch" = /obj/item/weapon/clothingbag/costume/witch,
-		"Chaplain" = /obj/item/weapon/clothingbag/costume/chaplain,
+		"Witch" = /obj/item/clothingbag/costume/witch,
+		"Chaplain" = /obj/item/clothingbag/costume/chaplain,
 	)
 	gear_tweaks += new /datum/gear_tweak/path(costume_bags_list)
 
 /datum/gear/costume_clown
 	display_name = "clown costume"
 	description = "Admit it, you invested so much money just for one clown costume."
-	path = /obj/item/weapon/clothingbag/costume/clown
+	path = /obj/item/clothingbag/costume/clown
 	required_donate_level = 5
 	cost = 0
 	price = 25  // I don't want to see clown parade ~ SidVeld

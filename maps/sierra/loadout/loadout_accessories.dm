@@ -67,23 +67,23 @@
 /datum/gear/passport/scg
 	display_name = "passports selection - SCG"
 	description = "A selection of SCG passports."
-	path = /obj/item/weapon/passport/scg
+	path = /obj/item/passport/scg
 	flags = GEAR_HAS_TYPE_SELECTION
-	custom_setup_proc = /obj/item/weapon/passport/proc/set_info
+	custom_setup_proc = /obj/item/passport/proc/set_info
 	cost = 0
 
 /datum/gear/passport/iccg
 	display_name = "passports selection - ICCG"
 	description = "A selection of ICCG passports."
-	path = /obj/item/weapon/passport/iccg
+	path = /obj/item/passport/iccg
 	flags = GEAR_HAS_TYPE_SELECTION
-	custom_setup_proc = /obj/item/weapon/passport/proc/set_info
+	custom_setup_proc = /obj/item/passport/proc/set_info
 	cost = 0
 
 /datum/gear/passport
 	display_name = "passports selection - independent"
 	description = "A selection of independent regions passports."
-	path = /obj/item/weapon/passport/independent
+	path = /obj/item/passport/independent
 	flags = GEAR_HAS_SUBTYPE_SELECTION
-	custom_setup_proc = /obj/item/weapon/passport/proc/set_info
+	custom_setup_proc = /obj/item/passport/proc/set_info
 	cost = 0

@@ -199,7 +199,7 @@
 		var/mob/living/carbon/human/H = mob
 
 		if(prob(0.5))
-			var/new_species = pick(SPECIES_HUMAN, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_YEOSA, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER, SPECIES_BOOSTER, SPECIES_TAJARA, SPECIES_RESOMI)
+			var/new_species = pick(SPECIES_HUMAN, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_YEOSA, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER, SPECIES_TAJARA, SPECIES_RESOMI)
 			H.visible_message(SPAN_WARNING("[H]'s flesh rapidly mutates and he transforms into [lowertext(new_species)]!"))
 			set_species(new_species, H)
 			effected++
@@ -207,13 +207,13 @@
 
 
 
-/obj/item/weapon/reagent_containers/food/snacks/egg/alien
+/obj/item/reagent_containers/food/snacks/egg/alien
 	name = "alien egg"
 	desc = "Strange, a bit glowing egg with a thick shell."
 	icon_state = "lizard_egg"
 	w_class = ITEM_SIZE_SMALL
 
-/obj/item/weapon/reagent_containers/food/snacks/egg/alien/Initialize()
+/obj/item/reagent_containers/food/snacks/egg/alien/Initialize()
 	var/datum/reagent/random = pick(
 									/datum/reagent/blood, /datum/reagent/water, /datum/reagent/acetone, /datum/reagent/aluminium, /datum/reagent/ammonia, /datum/reagent/carbon,
 									/datum/reagent/copper, /datum/reagent/ethanol, /datum/reagent/hydrazine, /datum/reagent/iron, /datum/reagent/lithium, /datum/reagent/mercury,
@@ -221,7 +221,7 @@
 									/datum/reagent/sulfur, /datum/reagent/lipozine, /datum/reagent/sodiumchloride, /datum/reagent/frostoil, /datum/reagent/capsaicin/condensed,
 									/datum/reagent/inaprovaline, /datum/reagent/bicaridine, /datum/reagent/kelotane, /datum/reagent/dermaline, /datum/reagent/dylovene,
 									/datum/reagent/dexalin, /datum/reagent/alkysine, /datum/reagent/hyperzine, /datum/reagent/tobacco, /datum/reagent/gold, /datum/reagent/silver,
-									/datum/reagent/uranium, /datum/reagent/thermite, /datum/reagent/space_cleaner, /datum/reagent/lube, /datum/reagent/glycerol, /datum/reagent/coolant,
+									/datum/reagent/uranium, /datum/reagent/thermite, /datum/reagent/space_cleaner, /datum/reagent/glycerol, /datum/reagent/coolant,
 									/datum/reagent/toxin/carpotoxin, /datum/reagent/toxin/phoron, /datum/reagent/toxin/cyanide, /datum/reagent/toxin/zombiepowder, /datum/reagent/mutagen,
 									/datum/reagent/soporific, /datum/reagent/chloralhydrate, /datum/reagent/space_drugs, /datum/reagent/mindbreaker, /datum/reagent/slimetoxin)
 	src.reagents.add_reagent(random, 15)
@@ -238,7 +238,7 @@
 		var/mob/living/carbon/human/H = mob
 
 		if(prob(0.5))
-			new /obj/item/weapon/reagent_containers/food/snacks/egg/alien(get_turf(H))
+			new /obj/item/reagent_containers/food/snacks/egg/alien(get_turf(H))
 			H.visible_message(SPAN_WARNING("[H] vomits a strange egg!"))
 			new /obj/effect/decal/cleanable/vomit(get_turf(H))
 			playsound(H.loc, 'sound/effects/splat.ogg', 50, 1)
@@ -303,7 +303,7 @@
 										/datum/reagent/sulfur, /datum/reagent/lipozine, /datum/reagent/sodiumchloride, /datum/reagent/frostoil, /datum/reagent/capsaicin/condensed,
 										/datum/reagent/inaprovaline, /datum/reagent/bicaridine, /datum/reagent/kelotane, /datum/reagent/dermaline, /datum/reagent/dylovene,
 										/datum/reagent/dexalin, /datum/reagent/alkysine, /datum/reagent/hyperzine, /datum/reagent/tobacco, /datum/reagent/gold, /datum/reagent/silver,
-										/datum/reagent/uranium, /datum/reagent/thermite, /datum/reagent/space_cleaner, /datum/reagent/lube, /datum/reagent/glycerol, /datum/reagent/coolant,
+										/datum/reagent/uranium, /datum/reagent/thermite, /datum/reagent/space_cleaner, /datum/reagent/glycerol, /datum/reagent/coolant,
 										/datum/reagent/toxin/carpotoxin, /datum/reagent/toxin/phoron, /datum/reagent/toxin/cyanide,  /datum/reagent/mutagen, /datum/reagent/space_drugs,
 										/datum/reagent/mindbreaker)
 			H.reagents.add_reagent(random, 5)

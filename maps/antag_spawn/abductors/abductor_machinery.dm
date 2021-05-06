@@ -13,7 +13,7 @@
 /obj/machinery/chemical_dispenser/full/abductor
 	icon = 'infinity/icons/obj/abductor.dmi'
 	icon_state = "chem_dispenser"
-	anchored = 0
+	anchored = FALSE
 
 /obj/machinery/computer/abductor/camera
 	name = "human observation console"
@@ -32,27 +32,27 @@
 /obj/machinery/computer/abductor/camera/attack_hand(mob/user)
 	if(istype(user, /mob/living/carbon/human))
 		var/mob/living/carbon/human/H = user
-		if(locate(/obj/item/weapon/implant/abductors) in H.contents)
-			var/obj/item/weapon/implant/abductors/implant = locate(/obj/item/weapon/implant/abductors) in H.contents
+		if(locate(/obj/item/implant/abductors) in H.contents)
+			var/obj/item/implant/abductors/implant = locate(/obj/item/implant/abductors) in H.contents
 			implant.console = src
-			implant.verbs += /obj/item/weapon/implant/abductors/proc/deconsole
-			implant.verbs += /obj/item/weapon/implant/abductors/proc/teleport_self_pos
-			implant.verbs += /obj/item/weapon/implant/abductors/proc/flip_vest
-			implant.verbs += /obj/item/weapon/implant/abductors/proc/pull_marked
-			implant.verbs += /obj/item/weapon/implant/abductors/proc/push_marked
+			implant.verbs += /obj/item/implant/abductors/proc/deconsole
+			implant.verbs += /obj/item/implant/abductors/proc/teleport_self_pos
+			implant.verbs += /obj/item/implant/abductors/proc/flip_vest
+			implant.verbs += /obj/item/implant/abductors/proc/pull_marked
+			implant.verbs += /obj/item/implant/abductors/proc/push_marked
 			eye.possess(user)
 			to_chat(eye.owner, "<span class='notice'>You feel disorented for a moment as your mind connects to the camera network.</span>")
 			eye.forceMove(get_turf(locate("landmark*Observer-Start")))
 
 /obj/machinery/computer/abductor/camera/proc/deactivate(mob/user)
 	if(user == eye.owner)
-		var/obj/item/weapon/implant/abductors/implant = locate(/obj/item/weapon/implant/abductors)
+		var/obj/item/implant/abductors/implant = locate(/obj/item/implant/abductors)
 		implant.console = null
-		implant.verbs -= /obj/item/weapon/implant/abductors/proc/deconsole
-		implant.verbs -= /obj/item/weapon/implant/abductors/proc/teleport_self_pos
-		implant.verbs -= /obj/item/weapon/implant/abductors/proc/flip_vest
-		implant.verbs -= /obj/item/weapon/implant/abductors/proc/pull_marked
-		implant.verbs -= /obj/item/weapon/implant/abductors/proc/push_marked
+		implant.verbs -= /obj/item/implant/abductors/proc/deconsole
+		implant.verbs -= /obj/item/implant/abductors/proc/teleport_self_pos
+		implant.verbs -= /obj/item/implant/abductors/proc/flip_vest
+		implant.verbs -= /obj/item/implant/abductors/proc/pull_marked
+		implant.verbs -= /obj/item/implant/abductors/proc/push_marked
 		to_chat(eye.owner, "<span class='notice'>You feel disorented for a moment as your mind disconnects from the camera network.</span>")
 		eye.release(eye.owner)
 		eye.forceMove(src)
@@ -62,7 +62,7 @@
 	desc = "An alien console, purposed to control a telepad"
 	icon = 'infinity/icons/obj/abductor.dmi'
 	icon_state = "console"
-	density = 1
+	density = TRUE
 
 	var/obj/machinery/abductor_hub/hub
 	var/mob/living/carbon/human/marked
@@ -106,7 +106,7 @@
 	desc = "An alien telepad, capable of teleportation directly to targets."
 	icon = 'infinity/icons/obj/abductor.dmi'
 	icon_state = "tele0"
-	density = 0
+	density = FALSE
 
 /obj/machinery/optable/abductor
 	icon = 'infinity/icons/obj/abductor.dmi'
@@ -116,7 +116,7 @@
 	desc = "An alien console, purposed to control a disguise of alien vest"
 	icon = 'infinity/icons/obj/abductor.dmi'
 	icon_state = "console-c"
-	density = 1
+	density = TRUE
 
 	var/appearances = list()
 	var/obj/item/clothing/suit/armor/abductor/vest

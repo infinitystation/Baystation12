@@ -10,7 +10,7 @@
 		lightbulb.set_bulb_color(_init_bulb_color)
 
 
-/obj/item/weapon/light/proc/set_bulb_color(value)
+/obj/item/light/proc/set_bulb_color(value)
 	b_colour = value
 	if(istype(loc, /atom/movable))
 		loc.update_icon()
@@ -28,7 +28,7 @@ UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/Initialize(mapload,
 UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/seton(state))
 UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/broken())
 UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/fix())
-UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/insert_bulb(obj/item/weapon/light/L))
+UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/insert_bulb(obj/item/light/L))
 UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/remove_bulb())
 #undef UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER
 
@@ -40,20 +40,20 @@ UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/remove_bulb())
 	else
 		QDEL_NULL(sound_token)
 
-/obj/item/weapon/light
+/obj/item/light
 	var/enviroment_sound
 	var/enviroment_sound_range = 3
 	var/enviroment_sound_volume = 30
 
 	var/power_usage_multiplier = 1
 
-/obj/item/weapon/light/bulb
+/obj/item/light/bulb
 	power_usage_multiplier = 0.5
 
 /obj/machinery/light/xenon
-	light_type = /obj/item/weapon/light/xenon
+	light_type = /obj/item/light/xenon
 
-/obj/item/weapon/light/xenon
+/obj/item/light/xenon
 	name = "xenon light tube"
 	desc = "A xenon light, really, it's very bright."
 	icon_state = "ltube"
@@ -76,7 +76,7 @@ UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/remove_bulb())
 /obj/machinery/light/outer/powered()
 	return TRUE
 
-/obj/item/weapon/light/led_neon
+/obj/item/light/led_neon
 	name = "neon tube"
 	desc = "A LED neon tape."
 	matter = list(MATERIAL_GLASS = 100, MATERIAL_ALUMINIUM = 20)
@@ -89,7 +89,7 @@ UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/remove_bulb())
 	b_outer_range = 2
 	b_colour = LIGHT_DEFAULT_LED_NEON
 
-/obj/item/weapon/light/led_neon/attackby(obj/item/I, mob/user)
+/obj/item/light/led_neon/attackby(obj/item/I, mob/user)
 	. = ..()
 	if(user)
 		if(isMultitool(I))
@@ -97,17 +97,17 @@ UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/remove_bulb())
 			if(c)
 				set_bulb_color(c)
 
-/obj/item/weapon/light/led_neon/large
+/obj/item/light/led_neon/large
 	base_state = "big_tape"
 	icon_state = "big_tape_preset"
 	b_inner_range = 2
 	b_outer_range = 4
 
-/obj/item/weapon/light/led_neon/small
+/obj/item/light/led_neon/small
 	base_state = "small_tape"
 	icon_state = "small_tape_preset"
 
-/obj/item/weapon/light/led_neon/small/attackby(obj/item/I, mob/user)
+/obj/item/light/led_neon/small/attackby(obj/item/I, mob/user)
 	. = ..()
 	if(istype(I, type))
 		var/turf/T = get_turf(user)
@@ -116,12 +116,12 @@ UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/remove_bulb())
 			user.drop_from_inventory(I, T)
 			qdel(I)
 			qdel(src)
-			user.put_in_any_hand_if_possible(new /obj/item/weapon/light/led_neon/large(T))
+			user.put_in_any_hand_if_possible(new /obj/item/light/led_neon/large(T))
 
 /obj/machinery/light/led
 	name = "neon tube"
 	desc = "A tape of LEDs. Not actually neon, but THIS is FUTURE."
-	light_type = /obj/item/weapon/light/led_neon/large
+	light_type = /obj/item/light/led_neon/large
 	icon = 'infinity/icons/obj/machinery/neon.dmi'
 	icon_state = "tube_maped"
 	layer = BELOW_DOOR_LAYER
@@ -133,7 +133,7 @@ UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/remove_bulb())
 	name = "small neon tube"
 	base_state = "tube_border"
 	icon_state = "tube_border_maped"
-	light_type = /obj/item/weapon/light/led_neon/small
+	light_type = /obj/item/light/led_neon/small
 
 #define INIT_COLOR_PREFAB_OF_LEDNEON(n, colour) /obj/machinery/light/led/##n/_init_bulb_color = colour; /obj/machinery/light/led/small/##n/_init_bulb_color = colour;
 INIT_COLOR_PREFAB_OF_LEDNEON(cyan, "#00ffff")

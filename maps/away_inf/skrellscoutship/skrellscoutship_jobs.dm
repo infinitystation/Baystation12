@@ -36,12 +36,12 @@
 	desc = "SSV Captain"
 	region = ACCESS_REGION_NONE
 
-/obj/item/weapon/card/id/skrellscoutship
+/obj/item/card/id/skrellscoutship
 	color = COLOR_GRAY40
 	detail_color = "#7331c4"
 	access = list(access_skrellscoutship)
 
-/obj/item/weapon/card/id/skrellscoutship/captain
+/obj/item/card/id/skrellscoutship/captain
 	access = list(access_skrellscoutship, access_skrellscoutship_captain)
 	extra_details = list("goldstripe")
 
@@ -113,7 +113,7 @@
 	var/skrellcaste = input(H, "What is your Skrell's Caste?", "SDTF Rank") as null|anything in skrellscoutcastes
 	if(skrellcaste)
 		var/skrellsubcaste = input(H, "What is your Skrell's Subcaste?", "SDTF Rank") as null|anything in skrellscoutcastes[skrellcaste]
-		var/obj/item/weapon/card/id/C = H.wear_id
+		var/obj/item/card/id/C = H.wear_id
 		if(istype(C))
 			C.assignment = skrellsubcaste
 
@@ -139,10 +139,10 @@
 	pda_type = /obj/item/modular_computer/pda
 	pda_slot = slot_l_store
 	l_ear = /obj/item/device/radio/headset/skrellian
-	id_type = /obj/item/weapon/card/id/skrellscoutship
+	id_types = list(/obj/item/card/id/skrellscoutship)
 	l_pocket = /obj/item/clothing/accessory/badge/tags/skrell
 
 /decl/hierarchy/outfit/job/skrellscoutship/leader
 	name = "Xilvuxix Captain"
-	id_type = /obj/item/weapon/card/id/skrellscoutship/captain
+	id_types = list(/obj/item/card/id/skrellscoutship/captain)
 

@@ -85,7 +85,7 @@ Class Procs:
 	var/stat = 0
 	var/reason_broken = 0
 	var/stat_immune = NOSCREEN | NOINPUT // The machine will never set stat to these flags.
-	var/emagged = 0
+	var/emagged = FALSE
 	var/malf_upgraded = 0
 	var/datum/wires/wires //wire datum, if any. If you place a type path, it will be autoinitialized.
 	var/use_power = POWER_USE_IDLE
@@ -96,23 +96,28 @@ Class Procs:
 	var/active_power_usage = 0
 	var/power_channel = EQUIP //EQUIP, ENVIRON or LIGHT
 	var/power_init_complete = FALSE // Helps with bookkeeping when initializing atoms. Don't modify.
-	var/list/component_parts           //List of component instances. Expected type: /obj/item/weapon/stock_parts
-	var/list/uncreated_component_parts = list(/obj/item/weapon/stock_parts/power/apc) //List of component paths which have delayed init. Indeces = number of components.
-	var/list/maximum_component_parts = list(/obj/item/weapon/stock_parts = 10)         //null - no max. list(type part = number max).
+	var/list/component_parts           //List of component instances. Expected type: /obj/item/stock_parts
+	var/list/uncreated_component_parts = list(/obj/item/stock_parts/power/apc) //List of component paths which have delayed init. Indeces = number of components.
+	var/list/maximum_component_parts = list(/obj/item/stock_parts = 10)         //null - no max. list(type part = number max).
 	var/uid
 	var/panel_open = 0
 	var/global/gl_uid = 1
 	var/interact_offline = 0 // Can the machine be interacted with while de-powered.
 	var/clicksound			// sound played on succesful interface use by a carbon lifeform
 	var/clickvol = 40		// sound played on succesful interface use
+	var/next_clicksound = 0 // value to compare with world.time for whether to play clicksound according to CLICKSOUND_INTERVAL
 	var/core_skill = SKILL_DEVICES //The skill used for skill checks for this machine (mostly so subtypes can use different skills).
 	var/operator_skill      // Machines often do all operations on Process(). This caches the user's skill while the operations are running.
 	var/base_type           // For mapped buildable types, set this to be the base type actually buildable.
 	var/id_tag              // This generic variable is to be used by mappers to give related machines a string key. In principle used by radio stock parts.
 	var/frame_type = /obj/machinery/constructable_frame/machine_frame/deconstruct // what is created when the machine is dismantled.
 
-	var/list/processing_parts // Component parts queued for processing by the machine. Expected type: /obj/item/weapon/stock_parts
+	var/list/processing_parts // Component parts queued for processing by the machine. Expected type: /obj/item/stock_parts
 	var/processing_flags         // What is being processed
+	var/silicon_restriction = FALSE // FALSE or one of the STATUS_* flags. If set, will force the given status flag if a silicon tries to access the machine.
+
+	var/machine_name = null // The human-readable name of this machine, shown when examining circuit boards.
+	var/machine_desc = null // A simple description of what this machine does, shown on examine for circuit boards.
 
 /obj/machinery/Initialize(mapload, d=0, populate_parts = TRUE)
 	. = ..()
@@ -137,7 +142,7 @@ Class Procs:
 /obj/machinery/proc/ProcessAll(var/wait)
 	if(processing_flags & MACHINERY_PROCESS_COMPONENTS)
 		for(var/thing in processing_parts)
-			var/obj/item/weapon/stock_parts/part = thing
+			var/obj/item/stock_parts/part = thing
 			if(part.machine_process(src) == PROCESS_KILL)
 				part.stop_processing()
 
@@ -155,7 +160,7 @@ Class Procs:
 		pulse2.icon = 'icons/effects/effects.dmi'
 		pulse2.icon_state = "empdisable"
 		pulse2.SetName("emp sparks")
-		pulse2.anchored = 1
+		pulse2.anchored = TRUE
 		pulse2.set_dir(pick(GLOB.cardinal))
 
 		spawn(10)
@@ -222,6 +227,12 @@ Class Procs:
 		return STATUS_CLOSE
 
 	if(user.direct_machine_interface(src))
+		var/mob/living/silicon/silicon = user
+		if (silicon_restriction && ismachinerestricted(silicon))
+			if (silicon_restriction == STATUS_CLOSE)
+				to_chat(user, SPAN_WARNING("Remote AI systems detected. Firewall protections forbid remote AI access."))
+			return silicon_restriction
+
 		return ..()
 
 	if(stat & NOSCREEN)
@@ -294,6 +305,10 @@ Class Procs:
 
 	if((. = ..())) // Buckling, climbers; unlikely to return true.
 		return
+	if(MUTATION_FERAL in user.mutations)
+		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*2)
+		attack_generic(user, 10, "smashes")
+		return TRUE
 	if(!CanPhysicallyInteract(user))
 		return FALSE // The interactions below all assume physical access to the machine. If this is not the case, we let the machine take further action.
 //inf ahead
@@ -310,10 +325,10 @@ Class Procs:
 		var/mob/living/carbon/human/H = user
 		if(H.getBrainLoss() >= 55)
 			visible_message("<span class='warning'>[H] stares cluelessly at \the [src].</span>")
-			return 1
+			return TRUE
 		else if(prob(H.getBrainLoss()))
 			to_chat(user, "<span class='warning'>You momentarily forget how to use \the [src].</span>")
-			return 1
+			return TRUE
 	if((. = component_attack_hand(user)))
 		return
 	if(wires && (. = wires.Interact(user)))
@@ -339,14 +354,14 @@ Class Procs:
 	set_noinput(TRUE)
 	set_noscreen(TRUE)
 	for(var/thing in component_parts)
-		var/obj/item/weapon/stock_parts/part = thing
+		var/obj/item/stock_parts/part = thing
 		part.on_refresh(src)
 	var/list/missing = missing_parts()
 	set_broken(!!missing, MACHINE_BROKEN_NO_PARTS)
 
 /obj/machinery/proc/state(var/msg)
 	for(var/mob/O in hearers(src, null))
-		O.show_message("\icon[src] <span class = 'notice'>[msg]</span>", 2)
+		O.show_message("[icon2html(src, O)] <span class = 'notice'>[msg]</span>", 2)
 
 /obj/machinery/proc/ping(text=null)
 	if (!text)
@@ -377,7 +392,7 @@ Class Procs:
 
 /obj/machinery/proc/dismantle()
 	playsound(loc, 'sound/items/Crowbar.ogg', 50, 1)
-	var/obj/item/weapon/stock_parts/circuitboard/circuit = get_component_of_type(/obj/item/weapon/stock_parts/circuitboard)
+	var/obj/item/stock_parts/circuitboard/circuit = get_component_of_type(/obj/item/stock_parts/circuitboard)
 	if(circuit)
 		circuit.deconstruct(src)
 	if(ispath(frame_type, /obj/item/pipe))
@@ -409,7 +424,8 @@ Class Procs:
 
 /obj/machinery/CouldUseTopic(var/mob/user)
 	..()
-	if(clicksound && istype(user, /mob/living/carbon))
+	if(clicksound && world.time > next_clicksound && istype(user, /mob/living/carbon))
+		next_clicksound = world.time + CLICKSOUND_INTERVAL
 		playsound(src, clicksound, clickvol)
 
 /obj/machinery/proc/display_parts(mob/user)
@@ -422,6 +438,8 @@ Class Procs:
 
 /obj/machinery/examine(mob/user)
 	. = ..()
+	if (panel_open)
+		to_chat(user, "The service panel is open.")
 	if(component_parts && hasHUD(user, HUD_SCIENCE))
 		display_parts(user)
 	if(stat & NOSCREEN)
@@ -439,6 +457,8 @@ Class Procs:
 			var/obj/item/fake_thing = type
 			parts += "[num2text(missing[type])] [initial(fake_thing.name)]"
 		to_chat(user, "\The [src] is missing [english_list(parts)], rendering it inoperable.")
+	if (user.skill_check(SKILL_CONSTRUCTION, SKILL_BASIC) || isobserver(user))
+		to_chat(user, SPAN_NOTICE(machine_desc))
 
 // This is really pretty crap and should be overridden for specific machines.
 /obj/machinery/water_act(var/depth)
@@ -452,6 +472,6 @@ Class Procs:
 		fluid_update()
 
 /obj/machinery/get_cell()
-	var/obj/item/weapon/stock_parts/power/battery/battery = get_component_of_type(/obj/item/weapon/stock_parts/power/battery)
+	var/obj/item/stock_parts/power/battery/battery = get_component_of_type(/obj/item/stock_parts/power/battery)
 	if(battery)
 		return battery.get_cell()

@@ -4,7 +4,7 @@ obj/structure/adh_base/broken_cryo
 	icon = 'maps/away/icarus/icarus_sprites.dmi'
 	icon_state = "broken_cryo"
 	anchored = 1
-	density = 1
+	density = TRUE
 	var/closed = 1
 	var/busy = 0
 

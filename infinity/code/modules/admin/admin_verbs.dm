@@ -26,7 +26,7 @@
 	message_admins("[key_name_admin(src)] has turned admin help [config.ahelp_allowed ? "on" : "off"].", 0)
 	SSstatistics.add_field_details("admin_verb","TAH") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/client/proc/observe_delay()
+/*/client/proc/observe_delay() // Задержка обсерверов ~bear1ake
 	set name = "Change Roundstart Observe Delay"
 	set category = "Server"
 	if(!check_rights(R_SERVER))
@@ -41,7 +41,7 @@
 
 	config.observe_delay = newtime
 	SSstatistics.add_field_details("admin_verb","CROD") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
+*/
 /datum/admins/proc/intercom()
 	set category = "Fun"
 	set name = "Intercom Msg"

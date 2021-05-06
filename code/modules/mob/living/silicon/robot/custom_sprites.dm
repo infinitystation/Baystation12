@@ -23,15 +23,14 @@ var/list/robot_custom_icons
 	return 1
 
 /mob/living/silicon/robot/proc/set_custom_sprite()
-	for (var/rname in robot_custom_icons[ckey])
-		if(rname && rname == real_name)
-			custom_sprite = 1
-			icon = CUSTOM_ITEM_SYNTH
-			var/list/valid_states = icon_states(icon)
-			if(icon_state == "robot")
-				if("[real_name]-Standard" in valid_states)
-					icon_state = "[real_name]-Standard"
-				else
-					to_chat(src, "<span class='warning'>Could not locate [real_name]-Standard sprite.</span>")
-					icon =  'icons/mob/robots.dmi'
-			break
+	var/rname = robot_custom_icons[ckey]
+	if(rname && rname == real_name)
+		custom_sprite = TRUE
+		icon = CUSTOM_ITEM_SYNTH
+		var/list/valid_states = icon_states(icon)
+		if(icon_state == "robot")
+			if("[ckey]-Standard" in valid_states)
+				icon_state = "[ckey]-Standard"
+			else
+				to_chat(src, "<span class='warning'>Could not locate [ckey]-Standard sprite.</span>")
+				icon =  'icons/mob/robots.dmi'

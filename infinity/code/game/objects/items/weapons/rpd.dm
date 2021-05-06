@@ -1,13 +1,13 @@
 //Contains the rapid pipe dispencer.
 
-/obj/item/weapon/rpd
+/obj/item/rpd
 	name = "rapid pipe dispencer"
 	icon = 'infinity/icons/obj/items.dmi'
 	icon_state = "rpd"
 	item_state = "rpd"
 	opacity = 0
-	density = 0
-	anchored = 0.0
+	density = FALSE
+	anchored = FALSE
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	force = 10.0
@@ -20,7 +20,7 @@
 	var/wait = 0
 	var/pipe_color = "white"
 
-/obj/item/weapon/rpd/proc/get_console_data(var/list/pipe_categories, var/color_options = FALSE)
+/obj/item/rpd/proc/get_console_data(var/list/pipe_categories, var/color_options = FALSE)
 	. = list()
 	. += "<table>"
 	if(color_options)
@@ -34,11 +34,11 @@
 	.+= "</table>"
 	. = JOINTEXT(.)
 
-/obj/item/weapon/rpd/proc/build_quantity(var/datum/pipe/P, var/quantity)
+/obj/item/rpd/proc/build_quantity(var/datum/pipe/P, var/quantity)
 	for(var/I = quantity;I > 0;I -= 1)
 		P.Build(P, usr.loc, pipe_color)
 
-/obj/item/weapon/rpd/Topic(href, href_list, state = GLOB.physical_state)
+/obj/item/rpd/Topic(href, href_list, state = GLOB.physical_state)
 	if((. = ..()))
 		return
 
@@ -73,12 +73,12 @@
 		pipe_color = choice
 		updateUsrDialog()
 
-/obj/item/weapon/rpd/attack_self(user as mob)
+/obj/item/rpd/attack_self(user as mob)
 	var/datum/browser/popup = new (user, "Pipe List", "[src] Control Panel")
 	popup.set_content(get_console_data(GLOB.all_pipe_datums_by_category, TRUE))
 	popup.open()
 
-/obj/item/weapon/rpd/attackby(var/obj/item/W as obj, var/mob/user as mob)
+/obj/item/rpd/attackby(var/obj/item/W as obj, var/mob/user as mob)
 	if (istype(W, /obj/item/pipe) || istype(W, /obj/item/pipe_meter))
 		to_chat(usr, "<span class='notice'>You put \the [W] back into \the [src].</span>")
 		user.drop_item()

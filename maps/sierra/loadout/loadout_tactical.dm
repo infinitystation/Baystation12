@@ -26,7 +26,7 @@
 
 /datum/gear/tactical/security_belt
 	display_name = "security belt"
-	path = /obj/item/weapon/storage/belt/security
+	path = /obj/item/storage/belt/security
 	slot = slot_belt
 	allowed_roles = ARMED_ROLES
 

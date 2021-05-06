@@ -2,15 +2,15 @@
 	name = "mounted plasma rifle"
 	desc = "A very deadly mounted plasma rifle, capable of destroying everything."
 	icon_state = "mech_ionrifle"
-	holding_type = /obj/item/weapon/gun/energy/pulse_rifle/mounted/mech
+	holding_type = /obj/item/gun/energy/pulse_rifle/mounted/mech
 
-/obj/item/weapon/gun/energy/pulse_rifle/mounted/mech
+/obj/item/gun/energy/pulse_rifle/mounted/mech
 	self_recharge = TRUE
 	use_external_power = TRUE
 	has_safety = FALSE
 	one_hand_penalty= 0
 
-/obj/item/weapon/gun/energy/machingegun/mounted/mech
+/obj/item/gun/energy/machingegun/mounted/mech
 	name = "mech machingegun"
 	desc = "You shouldn't see this!"
 	icon = 'icons/obj/guns/saw.dmi'
@@ -38,4 +38,4 @@
 	name = "mounted machinegun"
 	desc = "An exosuit-mounted machinegun. Handle with care."
 	icon_state = "mech_taser"
-	holding_type = /obj/item/weapon/gun/energy/machingegun/mounted/mech
+	holding_type = /obj/item/gun/energy/machingegun/mounted/mech

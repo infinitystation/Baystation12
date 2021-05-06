@@ -8,7 +8,7 @@
 	var/pass_flags = 0
 	var/throwpass = 0
 	var/germ_level = GERM_LEVEL_AMBIENT // The higher the germ level, the more germ on the atom.
-	var/simulated = 1 //filter for actions - used by lighting overlays
+	var/simulated = TRUE //filter for actions - used by lighting overlays
 	var/fluorescent // Shows up under a UV light.
 	var/datum/reagents/reagents // chemical contents.
 	var/list/climbers
@@ -46,6 +46,9 @@
 //Must return an Initialize hint. Defined in __DEFINES/subsystems.dm
 
 /atom/proc/Initialize(mapload, ...)
+	SHOULD_CALL_PARENT(TRUE)
+	SHOULD_NOT_SLEEP(TRUE)
+
 	if(atom_flags & ATOM_FLAG_INITIALIZED)
 		crash_with("Warning: [src]([type]) initialized multiple times!")
 	atom_flags |= ATOM_FLAG_INITIALIZED
@@ -71,6 +74,9 @@
 
 /atom/proc/reveal_blood()
 	return
+	
+/atom/proc/MayZoom()
+	return TRUE
 
 /atom/proc/assume_air(datum/gas_mixture/giver)
 	return null
@@ -259,7 +265,7 @@ its easier to just keep the beam vertical.
 			f_name = "a "
 		f_name += "<font color ='[blood_color]'>stained</font> [name][infix]!"
 
-	to_chat(user, "\icon[src] That's [f_name] [suffix]")
+	to_chat(user, "[icon2html(src, user)] That's [f_name] [suffix]")
 	to_chat(user, desc)
 	return TRUE
 
@@ -347,13 +353,14 @@ its easier to just keep the beam vertical.
 		return 1
 
 /atom/proc/get_global_map_pos()
-	if(!islist(GLOB.global_map) || isemptylist(GLOB.global_map)) return
+	if (!islist(GLOB.global_map) || !length(GLOB.global_map))
+		return
 	var/cur_x = null
 	var/cur_y = null
 	var/list/y_arr = null
 	for(cur_x=1,cur_x<=GLOB.global_map.len,cur_x++)
 		y_arr = GLOB.global_map[cur_x]
-		cur_y = y_arr.Find(src.z)
+		cur_y = list_find(y_arr, src.z)
 		if(cur_y)
 			break
 //	log_debug("X = [cur_x]; Y = [cur_y]")
@@ -378,6 +385,7 @@ its easier to just keep the beam vertical.
 // message is output to anyone who can see, e.g. "The [src] does something!"
 // blind_message (optional) is what blind people will hear e.g. "You hear something!"
 /atom/proc/visible_message(message, blind_message, range = world.view, checkghosts = null, list/exclude_objs = null, list/exclude_mobs = null)
+	set waitfor = FALSE
 	var/turf/T = get_turf(src)
 	var/list/mobs = list()
 	var/list/objs = list()
@@ -583,7 +591,10 @@ its easier to just keep the beam vertical.
 		return ..()
 
 /atom/proc/get_color()
-	return color
+	return isnull(color) ? COLOR_WHITE : color
+
+/atom/proc/set_color(var/color)
+	src.color = color
 
 /atom/proc/get_cell()
 	return

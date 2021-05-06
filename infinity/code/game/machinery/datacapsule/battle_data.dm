@@ -4,8 +4,8 @@
 	icon = 'icons/obj/machines/research.dmi'
 	icon_state = "server"
 	var/disk_looted
-	var/obj/item/weapon/stock_parts/computer/hard_drive/cluster/drive
-	density = 1
+	var/obj/item/stock_parts/computer/hard_drive/cluster/drive
+	density = TRUE
 
 /obj/structure/battle_data_server/Initialize()
 	. = ..()

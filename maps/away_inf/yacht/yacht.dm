@@ -65,7 +65,6 @@
 
 /decl/hierarchy/outfit/job/yachtman
 	name = OUTFIT_JOB_NAME("Yachtman")
-	id_type = null
 	pda_type = null
 
 /obj/effect/submap_landmark/spawnpoint/yachtman_spawn
@@ -77,8 +76,8 @@
 
 /obj/machinery/power/smes/buildable/preset/yacht
 	uncreated_component_parts = list(
-		/obj/item/weapon/stock_parts/smes_coil/super_io = 2,
-		/obj/item/weapon/stock_parts/smes_coil/super_capacity = 2)
+		/obj/item/stock_parts/smes_coil/super_io = 2,
+		/obj/item/stock_parts/smes_coil/super_capacity = 2)
 	_input_maxed = TRUE
 	_output_maxed = TRUE
 	_input_on = TRUE

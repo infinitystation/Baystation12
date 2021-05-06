@@ -27,10 +27,10 @@
 	health = 20
 	maxHealth = 20
 
-	attacktext = "bitten"
-	attack_sound = 'sound/weapons/bite.ogg'
-	melee_damage_lower = 5
-	melee_damage_upper = 6
+//	attacktext = "bitten" // Нужно /obj/item/natural_weapon ~bear1ake
+//	attack_sound = 'sound/weapons/bite.ogg'
+//	melee_damage_lower = 5
+//	melee_damage_upper = 6
 
 	response_help = "pets"
 	response_disarm = "shoos"
@@ -42,7 +42,7 @@
 	mob_size = MOB_SMALL
 	can_pry = FALSE
 	destroy_surroundings = FALSE
-	holder_type = /obj/item/weapon/holder/snake
+	holder_type = /obj/item/holder/snake
 	var/list/target_types = list(/mob/living/simple_animal/mouse, /mob/living/carbon/alien/diona)
 	var/list/consumable_types = list(/mob/living/simple_animal/mouse)
 
@@ -92,19 +92,19 @@
 	poison_per_bite = 0
 	poison_types = null
 
-/obj/item/weapon/holder/snake
+/obj/item/holder/snake
 	name = "snake"
 	icon = 'infinity/icons/mob/mobs.dmi'
 	icon_state = "snake"
 	desc = "A slithery snake. These legless reptiles are the bane of mice and adventurers alike."
 	origin_tech = list(TECH_BIO = 3)
 
-/obj/item/weapon/holder/snake/prepared
+/obj/item/holder/snake/prepared
 	name = "snake"
 	desc = "A slithery snake. These legless reptiles are the bane of mice and adventurers alike. Seems to be neutral for everyone."
 	prepared_type = /mob/living/simple_animal/hostile/retaliate/poison/snake/imprinted
 
-/obj/item/weapon/holder/snake/prepared/update_state()	
+/obj/item/holder/snake/prepared/update_state()	
 	for(var/mob/M in contents)
 		if(M.name != "snake")
 			M.SetName(name)
@@ -112,7 +112,7 @@
 	
 	..()
 
-/obj/item/weapon/holder/snake/prepared/safe
+/obj/item/holder/snake/prepared/safe
 	name = "snake"
 	desc = "A slithery snake. These legless reptiles are the bane of mice and adventurers alike. Seems to be neutral for everyone and it would be safe."
 	prepared_type = /mob/living/simple_animal/hostile/retaliate/poison/snake/imprinted/safe

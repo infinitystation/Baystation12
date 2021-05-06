@@ -120,15 +120,6 @@
 	pipe_class = PIPE_CLASS_BINARY
 	rotate_class = PIPE_ROTATE_TWODIR
 
-/datum/pipe/pipe_dispenser/device/autoshutoff
-	name = "automatic shutoff valve"
-	desc = "a valve that can automatically shut itself off"
-	build_path = /obj/item/pipe
-	build_icon_state = "svalve"
-	constructed_path = /obj/machinery/atmospherics/valve/shutoff
-	pipe_class = PIPE_CLASS_BINARY
-	rotate_class = PIPE_ROTATE_TWODIR
-
 /datum/pipe/pipe_dispenser/device/mtvalve
 	name = "manual t-valve"
 	desc = "a three-way valve. T-shaped."
@@ -197,6 +188,18 @@
 	colorable = FALSE
 	pipe_color = null
 	constructed_path = /obj/structure/hygiene/drain
+	pipe_class = PIPE_CLASS_OTHER
+
+/datum/pipe/pipe_dispenser/device/drain/bath
+	name = "sealable gutter"
+	desc = "You probably can't get sucked down the plughole. Specially not when it's closed!"
+	build_icon = 'icons/obj/drain.dmi'
+	build_icon_state = "drain_bath"
+	build_path = /obj/item/drain/bath
+	connect_types = null
+	colorable = FALSE
+	pipe_color = null
+	constructed_path = /obj/structure/hygiene/drain/bath
 	pipe_class = PIPE_CLASS_OTHER
 
 /datum/pipe/pipe_dispenser/device/tank

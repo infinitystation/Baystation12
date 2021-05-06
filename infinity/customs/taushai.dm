@@ -49,7 +49,7 @@
 		)
 
 
-/obj/item/weapon/storage/backpack/industrial/taushai
+/obj/item/storage/backpack/industrial/taushai
 	name = "field backpack"
 	desc = "It's a tough backpack for the daily grind of field work."
 	icon = CUSTOM_ITEM_OBJ
@@ -71,15 +71,15 @@
 	trade_blacklisted = TRUE
 
 
-/obj/item/weapon/clothingbag/taushai
+/obj/item/clothingbag/taushai
 	name = "clothing bag"
 	desc = "Rajirra's property"
 	trade_blacklisted = TRUE
 
 
-/obj/item/weapon/clothingbag/taushai/New()
+/obj/item/clothingbag/taushai/New()
 	..()
 	new /obj/item/clothing/shoes/sandal/xeno/caligae/taushai(src)
 	new /obj/item/clothing/suit/storage/hooded/taushai(src)
-	new /obj/item/weapon/storage/backpack/industrial/taushai(src)
+	new /obj/item/storage/backpack/industrial/taushai(src)
 	new /obj/item/device/kit/suit/taushai(src)

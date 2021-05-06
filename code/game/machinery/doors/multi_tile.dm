@@ -17,7 +17,7 @@
 	emag_file = 'icons/obj/doors/double/emag.dmi'
 	width = 2
 	appearance_flags = 0
-	opacity = 1
+	opacity = TRUE
 	assembly_type = /obj/structure/door_assembly/multi_tile
 
 /obj/machinery/door/airlock/multi_tile/New()
@@ -173,6 +173,7 @@
 /obj/machinery/door/airlock/multi_tile/glass
 	name = "Glass Airlock"
 	opacity = 0
+	hitsound = 'sound/effects/Glasshit.ogg'
 	glass = 1
 
 /obj/machinery/door/airlock/multi_tile/glass/command

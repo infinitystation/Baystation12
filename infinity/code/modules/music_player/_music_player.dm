@@ -42,7 +42,7 @@ GLOBAL_LIST_EMPTY(music_players)
 	var/broken
 	var/panel = PANEL_CLOSED
 
-	var/obj/item/weapon/cell/device/cell = /obj/item/weapon/cell/device
+	var/obj/item/cell/device/cell = /obj/item/cell/device
 	var/power_usage = 250
 	var/obj/item/music_tape/tape = null
 
@@ -162,8 +162,8 @@ GLOBAL_LIST_EMPTY(music_players)
 		update_icon()
 		return
 
-	if(istype(I, /obj/item/weapon/cell/device))
-		var/obj/item/weapon/cell/device/C = I
+	if(istype(I, /obj/item/cell/device))
+		var/obj/item/cell/device/C = I
 		if(panel == PANEL_OPENED)
 			if(cell)
 				to_chat(user, SPAN_NOTICE("[src] already has \a [cell] installed."))
@@ -412,7 +412,7 @@ GLOBAL_LIST_EMPTY(music_players)
 	if(!tape.CanPlay())
 		return
 
-	if(mode == PLAYER_STATE_PAUSE && sound_token)
+/*	if(mode == PLAYER_STATE_PAUSE && sound_token) // jukebox merge 02 05 2021 ~bear1ake
 		sound_token.Unpause()
 	else
 		QDEL_NULL(sound_token)
@@ -420,7 +420,7 @@ GLOBAL_LIST_EMPTY(music_players)
 
 	mode = PLAYER_STATE_PLAY
 	START_PROCESSING(SSobj, src)
-	log_and_message_admins("launched [src] <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> with the song \"[tape.track.title]\".")
+	log_and_message_admins("launched [src] <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> with the song \"[tape.track.title]\".")*/
 
 	if(prob(break_chance))
 		break_act()

@@ -56,7 +56,7 @@
 	icon_state = "chowny_black_bracelet"
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/clothingbag/chowny_clothing/New()
+/obj/item/clothingbag/chowny_clothing/New()
 	new /obj/item/clothing/shoes/jackboots/chowny(src)
 	new /obj/item/clothing/ears/earmuffs/headphones/chowny(src)
 	new /obj/item/clothing/accessory/wcoat/chowny(src)

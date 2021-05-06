@@ -1,37 +1,37 @@
-/obj/item/weapon/flame/lighter/zippo/infinity
+/obj/item/flame/lighter/zippo/infinity
 	name = "engraved zippo"
 	icon = 'infinity/icons/obj/lighters.dmi'
 	icon_state = "engraved"
 
-/obj/item/weapon/flame/lighter/zippo/infinity/gold
+/obj/item/flame/lighter/zippo/infinity/gold
 	name = "golden zippo"
 	icon_state = "gold"
 
-/obj/item/weapon/flame/lighter/zippo/infinity/station
+/obj/item/flame/lighter/zippo/infinity/station
 	name = "13'th zippo "
 	icon_state = "13"
 
-/obj/item/weapon/flame/lighter/zippo/infinity/black
+/obj/item/flame/lighter/zippo/infinity/black
 	name = "cross zippo"
 	icon_state = "black"
 
-/obj/item/weapon/flame/lighter/zippo/infinity/blue
+/obj/item/flame/lighter/zippo/infinity/blue
 	name = "blue zippo"
 	icon_state = "bluezippo"
 
-/obj/item/weapon/flame/lighter/zippo/infinity/red
+/obj/item/flame/lighter/zippo/infinity/red
 	name = "red-white zippo"
 	icon_state = "redzippo"
 
-/obj/item/weapon/flame/lighter/zippo/infinity/butterfly
+/obj/item/flame/lighter/zippo/infinity/butterfly
 	name = "butterfly zippo"
 	icon_state = "butterzippo"
 
-/obj/item/weapon/flame/lighter/zippo/infinity/fancy
+/obj/item/flame/lighter/zippo/infinity/fancy
 	name = "flower zippo"
 	icon_state = "fancyzippo"
 
-/obj/item/weapon/flame/lighter/zippo/infinity/on_update_icon()
+/obj/item/flame/lighter/zippo/infinity/on_update_icon()
 	var/datum/extension/base_icon_state/bis = get_extension(src, /datum/extension/base_icon_state)
 
 	if(lit)

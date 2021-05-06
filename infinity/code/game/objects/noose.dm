@@ -1,4 +1,4 @@
-GLOBAL_LIST_INIT(standing_objects, list(/obj/item/weapon/stool, /obj/structure/hygiene/toilet, /obj/structure/table, /obj/structure/bed))
+GLOBAL_LIST_INIT(standing_objects, list(/obj/item/stool, /obj/structure/hygiene/toilet, /obj/structure/table, /obj/structure/bed))
 
 /proc/is_standing_on_object(x)
 	if(!x) return FALSE
@@ -38,7 +38,7 @@ GLOBAL_LIST_INIT(standing_objects, list(/obj/item/weapon/stool, /obj/structure/h
 		to_chat(H, SPAN_WARNING("You need at least 25 lengths to make a noose!"))
 		return
 
-	if(!do_mob(H, current_turf, 3 SECONDS))
+	if(!do_after(H, 3 SECONDS, current_turf))
 		return
 
 	if(!H.unEquip(src))
@@ -132,7 +132,7 @@ GLOBAL_LIST_INIT(standing_objects, list(/obj/item/weapon/stool, /obj/structure/h
 			user.visible_message(\
 				SPAN_NOTICE("[user] begins to untie the noose over [M]'s neck..."),\
 				SPAN_NOTICE("You begin to untie the noose over [M]'s neck..."))
-			if(do_mob(user, M, 10 SECONDS))
+			if(do_after(user, 10 SECONDS, M))
 				user.visible_message(\
 				SPAN_NOTICE("[user] unties the noose over [M]'s neck!"),\
 				SPAN_NOTICE("You untie the noose over [M]'s neck!"))

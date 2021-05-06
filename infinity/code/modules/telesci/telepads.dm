@@ -4,7 +4,7 @@
 	desc = "A bluespace telepad used for teleporting objects to and from a location."
 	icon = 'icons/obj/telescience.dmi'
 	icon_state = "pad-idle"
-	anchored = 1
+	anchored = TRUE
 	use_power = 1
 	idle_power_usage = 200
 	active_power_usage = 5000
@@ -17,17 +17,17 @@
 /obj/machinery/telepad/New()
 	..()
 	component_parts = list(
-	new /obj/item/weapon/stock_parts/circuitboard/telesci_pad,
+	new /obj/item/stock_parts/circuitboard/telesci_pad,
 	new /obj/item/bluespace_crystal/artificial,
 	new /obj/item/bluespace_crystal/artificial,
-	new /obj/item/weapon/stock_parts/capacitor,
-	new /obj/item/weapon/stock_parts/console_screen
+	new /obj/item/stock_parts/capacitor,
+	new /obj/item/stock_parts/console_screen
 	)
 	RefreshParts()
 
 /obj/machinery/telepad/RefreshParts()
 	var/E
-	for(var/obj/item/weapon/stock_parts/capacitor/C in component_parts)
+	for(var/obj/item/stock_parts/capacitor/C in component_parts)
 		E += C.rating
 	efficiency = E
 

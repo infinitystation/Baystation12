@@ -17,7 +17,6 @@
 			choices -= M
 			break
 		display_choices[M] = capitalize(M.full_name)
-		additional_text[M] ="<td align = 'center'>~[M.recommended_players]</td>"
 	choices += "extend"
 	display_choices["extend"] = "Продлить эту карту"
 

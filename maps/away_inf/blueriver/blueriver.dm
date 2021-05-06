@@ -56,7 +56,7 @@
 	desc = "You feel a sense of dread from just looking at this wall. Its surface seems to be constantly moving, as if it were breathing."
 	icon = 'riverturfs.dmi'
 	icon_state = "evilwall_1"
-	opacity = 1
+	opacity = TRUE
 	density = 1
 	temperature = 233
 

@@ -13,17 +13,17 @@
 	desc = "A large cabinet with drawers."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "filingcabinet"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
 	obj_flags = OBJ_FLAG_ANCHORABLE
 	var/list/can_hold = list(
-		/obj/item/weapon/paper,
-		/obj/item/weapon/folder,
-		/obj/item/weapon/photo,
-		/obj/item/weapon/paper_bundle,
-		/obj/item/weapon/sample,
-		/obj/item/weapon/card)
+		/obj/item/paper,
+		/obj/item/folder,
+		/obj/item/photo,
+		/obj/item/paper_bundle,
+		/obj/item/sample,
+		/obj/item/card)
 
 /obj/structure/filingcabinet/chestdrawer
 	name = "chest drawer"
@@ -33,7 +33,7 @@
 	name = "wall-mounted filing cabinet"
 	desc = "A filing cabinet installed into a cavity in the wall to save space. Wow!"
 	icon_state = "wallcabinet"
-	density = 0
+	density = FALSE
 	obj_flags = 0
 
 

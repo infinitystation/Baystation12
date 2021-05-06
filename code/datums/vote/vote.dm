@@ -49,15 +49,14 @@
 
 /datum/vote/proc/start_vote()
 	start_time = world.time
-	time_set = (time_set ? time_set : config.vote_period) SECONDS
-	time_remaining = time_set
 	status = VOTE_STATUS_ACTIVE
+	time_remaining = round(config.vote_period/10)
 
 	var/text = get_start_text()
 
 	log_vote(text)
-	to_world("<font color='purple'><b>[text]</b>\nType <b>vote</b> or click <a href='?src=\ref[SSvote];vote_panel=1'>here</a> to place your votes.\nYou have [time_set/10] seconds to vote.</font>")
-	to_world(sound('sound/ambience/alarm4.ogg', repeat = 0, wait = 0, volume = 50, channel = GLOB.vote_sound_channel))
+	to_world("<font color='purple'><b>[text]</b>\nType <b>vote</b> or click <a href='?src=\ref[SSvote];vote_panel=1'>here</a> to place your votes.\nYou have [config.vote_period/10] seconds to vote.</font>")
+	sound_to(world, sound('sound/ambience/alarm4.ogg', repeat = 0, wait = 0, volume = 50, channel = GLOB.vote_sound_channel))
 
 /datum/vote/proc/get_start_text()
 	return "[capitalize(name)] vote started by [initiator]."
@@ -91,7 +90,7 @@
 			
 // Remove candidate from choice_list and any votes for it from vote_list, transfering first choices to second
 /datum/vote/proc/remove_candidate(list/choice_list, list/vote_list, candidate)
-	var/candidate_index = choices.Find(candidate) // use choices instead of choice_list because we need the original indexing
+	var/candidate_index = list_find(choices, candidate) // use choices instead of choice_list because we need the original indexing
 	choice_list -= candidate
 	for(var/ckey in vote_list)
 		if(length(votes[ckey]) && vote_list[ckey][1] == candidate_index && length(vote_list[ckey]) > 1)
@@ -200,7 +199,7 @@
 		. += "<td style='text-align: center;'>"
 		if(voted_for)
 			var/list/vote = votes[user.ckey]
-			. += "[vote.Find(i)]"
+			. += "[list_find(vote, i)]"
 		. += "</td>"
 
 		if (additional_text[choice])

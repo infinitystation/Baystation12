@@ -1,4 +1,4 @@
-/obj/item/weapon/material/knife/folding/custom_vashuara
+/obj/item/material/knife/folding/custom_vashuara
 	name = "Aikuti knife"
 	desc = "A custom knife with wooden scabbard and handle. The handle and scabbard are inlaid with brass inserts. \
 	The Damascus steel blade is engraved and looks quite sharp."

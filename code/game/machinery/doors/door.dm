@@ -10,9 +10,9 @@
 	desc = "It opens and closes."
 	icon = 'icons/obj/doors/Doorint.dmi'
 	icon_state = "door1"
-	anchored = 1
-	opacity = 1
-	density = 1
+	anchored = TRUE
+	opacity = TRUE
+	density = TRUE
 	layer = CLOSED_DOOR_LAYER
 
 	var/open_layer = OPEN_DOOR_LAYER
@@ -57,6 +57,9 @@
 /obj/machinery/door/attack_generic(var/mob/user, var/damage, var/attack_verb, var/environment_smash)
 	if(environment_smash >= 1)
 		damage = max(damage, 10)
+
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*2)
+	playsound(loc, hitsound, 50, 1)
 
 	if(damage >= 10)
 		visible_message("<span class='danger'>\The [user] [attack_verb] into \the [src]!</span>")
@@ -258,11 +261,14 @@
 			to_chat(user, "<span class='warning'>\The [src] must be closed before you can repair it.</span>")
 			return
 
-		var/obj/item/weapon/weldingtool/welder = I
+		var/obj/item/weldingtool/welder = I
 		if(welder.remove_fuel(0,user))
 			to_chat(user, "<span class='notice'>You start to fix dents and weld \the [repairing] into place.</span>")
 			playsound(src, 'sound/items/Welder.ogg', 100, 1)
 			if(do_after(user, 5 * repairing.amount, src) && welder && welder.isOn())
+				if (!repairing)
+					return //the materials in the door have been removed before welding was finished.
+
 				to_chat(user, "<span class='notice'>You finish repairing the damage to \the [src].</span>")
 				health = between(health, health + repairing.amount*DOOR_REPAIR_AMOUNT, maxhealth)
 				update_icon()
@@ -277,7 +283,8 @@
 		repairing = null
 		return
 
-	check_force(I, user)
+	if (check_force(I, user))
+		return
 
 	if(src.operating > 0 || isrobot(user))	return //borgs can't attack doors open because it conflicts with their AI-like interaction with them.
 
@@ -302,27 +309,30 @@
 /*[ORIGINAL]
 		sleep(6)
 		open()
-		operating = -1
+		set_broken(TRUE)
 [/ORIGINAL]*/
 		return 1
 //[INF]
 /obj/machinery/door/proc/emag_open()
 	open()
-	operating = -1
+	set_broken(TRUE)
 //[/INF]
 //psa to whoever coded this, there are plenty of objects that need to call attack() on doors without bludgeoning them.
-/obj/machinery/door/proc/check_force(obj/item/I as obj, mob/user as mob)
-	if(src.density && istype(I, /obj/item/weapon) && user.a_intent == I_HURT && !istype(I, /obj/item/weapon/card))
-		var/obj/item/weapon/W = I
-		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-		if(W.damtype == BRUTE || W.damtype == BURN)
-			user.do_attack_animation(src)
-			if(W.force < min_force)
-				user.visible_message("<span class='danger'>\The [user] hits \the [src] with \the [W] with no visible effect.</span>")
-			else
-				user.visible_message("<span class='danger'>\The [user] forcefully strikes \the [src] with \the [W]!</span>")
-				playsound(src.loc, hitsound, 100, 1)
-				take_damage(W.force)
+/obj/machinery/door/proc/check_force(obj/item/I, mob/user)
+	if (!density || user.a_intent != I_HURT)
+		return FALSE
+	if (I.damtype != BRUTE && I.damtype != BURN)
+		return FALSE
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.do_attack_animation(src)
+	if (I.force < min_force)
+		visible_message(SPAN_WARNING("\The [user] hits \the [src] with \an [I] to no effect."))
+	else
+		visible_message(SPAN_DANGER("\The [user] hits \the [src] with \an [I], causing damage!"))
+		playsound(src, hitsound, 100, 1)
+		take_damage(I.force)
+	return TRUE
+
 
 /obj/machinery/door/proc/take_damage(var/damage)
 	var/initialhealth = src.health
@@ -349,6 +359,9 @@
 		to_chat(user, "\The [src] looks seriously damaged!")
 	else if(src.health < src.maxhealth * 3/4)
 		to_chat(user, "\The [src] shows signs of damage!")
+
+	if (emagged && ishuman(user) && user.skill_check(SKILL_COMPUTER, SKILL_ADEPT))
+		to_chat(user, SPAN_WARNING("\The [src]'s control panel looks fried."))
 
 
 /obj/machinery/door/set_broken(new_state)
@@ -377,14 +390,7 @@
 
 
 /obj/machinery/door/on_update_icon()
-	if(connections in list(NORTH, SOUTH, NORTH|SOUTH))
-		if(connections in list(WEST, EAST, EAST|WEST))
-			set_dir(SOUTH)
-		else
-			set_dir(EAST)
-	else
-		set_dir(SOUTH)
-
+	update_dir()
 	if(density)
 		icon_state = "door1"
 	else
@@ -392,6 +398,14 @@
 	SSradiation.resistance_cache.Remove(get_turf(src))
 	return
 
+/obj/machinery/door/proc/update_dir()
+	if(connections in list(NORTH, SOUTH, NORTH|SOUTH))
+		if(connections in list(WEST, EAST, EAST|WEST))
+			set_dir(SOUTH)
+		else
+			set_dir(EAST)
+	else
+		set_dir(SOUTH)
 
 /obj/machinery/door/proc/do_animate(animation)
 	switch(animation)
@@ -411,11 +425,14 @@
 		if("deny")
 			if(density && !(stat & (NOPOWER|BROKEN)))
 				flick("door_deny", src)
-				playsound(src.loc, 'sound/machines/buzz-two.ogg', 50, 0)
+				if (world.time > next_clicksound)
+					next_clicksound = world.time + CLICKSOUND_INTERVAL
+					playsound(src.loc, 'sound/machines/buzz-two.ogg', 50, 0)
 	return
 
 
 /obj/machinery/door/proc/open(var/forced = 0)
+	set waitfor = FALSE
 	if(!can_open(forced))
 		return
 	operating = 1
@@ -441,6 +458,7 @@
 	return world.time + (normalspeed ? 150 : 5)
 
 /obj/machinery/door/proc/close(var/forced = 0)
+	set waitfor = FALSE
 	if(!can_close(forced))
 		return
 	operating = 1
@@ -555,8 +573,8 @@
 // Most doors will never be deconstructed over the course of a round,
 // so as an optimization defer the creation of electronics until
 // the airlock is deconstructed
-/obj/machinery/door/proc/create_electronics(var/electronics_type = /obj/item/weapon/airlock_electronics)
-	var/obj/item/weapon/airlock_electronics/electronics = new electronics_type(loc)
+/obj/machinery/door/proc/create_electronics(var/electronics_type = /obj/item/airlock_electronics)
+	var/obj/item/airlock_electronics/electronics = new electronics_type(loc)
 	electronics.set_access(src)
 	electronics.autoset = autoset_access
 	return electronics

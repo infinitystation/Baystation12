@@ -15,7 +15,7 @@
 	var/ruined = 0
 	var/rewrites_left = 2
 
-	var/datum/track/track // Make list @eckff But not now... ~bear1ake
+//	var/datum/track/track // Динамическая музыка под угрозой ~bear1ake
 	var/uploader_ckey
 
 /obj/item/music_tape/Initialize()
@@ -30,8 +30,8 @@
 
 /obj/item/music_tape/examine(mob/user)
 	. = ..(user)
-	if(track?.title)
-		to_chat(user, SPAN_NOTICE("It's labeled as \"[track.title]\"."))
+/*	if(track?.title) // track merge 02 05 2021
+		to_chat(user, SPAN_NOTICE("It's labeled as \"[track.title]\"."))*/
 
 /obj/item/music_tape/attack_self(mob/user)
 	if(!ruined)
@@ -39,14 +39,14 @@
 		ruin()
 
 /obj/item/music_tape/attackby(obj/item/I, mob/user, params)
-	if(ruined && (isScrewdriver(I) || istype(I, /obj/item/weapon/pen)))
+	if(ruined && (isScrewdriver(I) || istype(I, /obj/item/pen)))
 		to_chat(user, SPAN_NOTICE("You start winding \the [src] back in..."))
 		if(do_after(user, 120, target = src))
 			to_chat(user, SPAN_NOTICE("You wound \the [src] back in."))
 			fix()
 		return
 
-	if(istype(I, /obj/item/weapon/pen))
+	if(istype(I, /obj/item/pen))
 		if(loc == user && !user.incapacitated())
 			var/new_name = input(user, "What would you like to label \the [src]?", "\improper [src] labeling", name) as null|text
 			if(isnull(new_name) || new_name == name) return
@@ -55,11 +55,11 @@
 
 			if(new_name)
 				to_chat(user, SPAN_NOTICE("You label \the [src] '[new_name]'."))
-				track.title = "tape - \"[new_name]\""
+//				track.title = "tape - \"[new_name]\""
 				SetName("tape - \"[new_name]\"")
 			else
 				to_chat(user, SPAN_NOTICE("You scratch off the label."))
-				track.title = "unknown"
+//				track.title = "unknown"
 				SetName("tape")
 		return
 	..()
@@ -68,8 +68,8 @@
 	ruin()
 
 /obj/item/music_tape/proc/CanPlay()
-	if(!track)
-		return FALSE
+/*	if(!track)
+		return FALSE */
 
 	if(ruined)
 		return FALSE

@@ -9,7 +9,7 @@
 
 	var/mob/living/M = src
 
-	var/obj/item/weapon/shield/riot/changeling/shield = M
+	var/obj/item/shield/riot/changeling/shield = M
 	for(shield in M.contents)
 		M.drop_from_inventory(shield)
 		return

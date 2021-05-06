@@ -69,7 +69,7 @@
 /datum/heretic_word/cuff/affect(var/atom/A, var/power = 1, var/mob/living/caster, var/mass = 0)
 	if(istype(A, /mob/living/carbon))
 		var/mob/living/carbon/C = A
-		var/obj/item/weapon/handcuffs/wizard/shadow/cuffs = new(get_turf(C))
+		var/obj/item/handcuffs/wizard/shadow/cuffs = new(get_turf(C))
 		cuffs.place_handcuffs(C, caster, mass)
 
 /datum/heretic_word/pain
@@ -312,14 +312,14 @@
 		if(H.l_hand && H.r_hand)
 			to_chat(H, SPAN_WARNING("Your hands are full."))
 			return targets
-		var/obj/item/weapon/spellhand/spell = new(H)
+		var/obj/item/spellhand/spell = new(H)
 		H.put_in_hands(spell)
 		spell.spellphrase = spellphrase
 	return targets
 
 
 
-/obj/item/weapon/spellhand
+/obj/item/spellhand
 	name = "burning hand"
 	desc = "A burning hand, which is used to cast bloody spells..."
 
@@ -332,7 +332,7 @@
 		)
 
 	canremove = 0
-	anchored = 1
+	anchored = TRUE
 	throwforce = 0 //Just to be on the safe side
 	throw_range = 0
 	throw_speed = 0
@@ -340,14 +340,14 @@
 
 	var/spellphrase = ""
 
-/obj/item/weapon/spellhand/afterattack(atom/target, mob/user, proximity)
+/obj/item/spellhand/afterattack(atom/target, mob/user, proximity)
 	. = ..()
 	if(!proximity)
 		return
 	cast_spell(target, user)
 	qdel(src)
 
-/obj/item/weapon/spellhand/proc/cast_spell(atom/target, mob/user)
+/obj/item/spellhand/proc/cast_spell(atom/target, mob/user)
 	var/multiplier = 1
 	var/pain_mod = 1
 	var/additional_affects = list()
