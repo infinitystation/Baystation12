@@ -84,7 +84,7 @@
 
 /obj/machinery/pile_ripper/emag_act(mob/user)
 	if(!emagged)
-		emagged = 1
+		emagged = TRUE
 		if(safety_mode)
 			safety_mode = 0
 			update_icon()

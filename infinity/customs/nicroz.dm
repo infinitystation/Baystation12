@@ -63,10 +63,10 @@
 	icon = 'icons/obj/card.dmi'
 	icon_state = "warrantcard"
 
-/obj/item/paper/psi_briefcase/show_content(mob/user, forceshow)
+/obj/item/paper/psi_briefcase/show_content(mob/user, forceshow, editable)
 	if(brief)
 		set_info(brief)
-	. = ..(user, forceshow)
+	. = ..(user, forceshow, editable)
 
 /obj/item/paper/psi_briefcase/on_update_icon()
 	return

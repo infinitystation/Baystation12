@@ -30,9 +30,13 @@
 
 /obj/machinery/bluespacedrive/Destroy()
 	if(evacuation_controller.state != 0)
-		evacuation_controller.cancel_evacuation()
-		minor_announcement.Announce(message = "Внимание! Обнаружен сбой в работе БСД. Аварийное прекращение работы БСД.")
+		// Не вызывать функции со sleep() напрямую в Destroy() ~bear1ake
+		addtimer(CALLBACK(evacuation_controller, /datum/evacuation_controller/proc/cancel_evacuation), 1 SECONDS)
+		addtimer(CALLBACK(src, /obj/machinery/bluespacedrive/proc/lastAnnounce), 10 SECONDS)
 	. = ..()
+
+/obj/machinery/bluespacedrive/proc/lastAnnounce()
+	minor_announcement.Announce(message = "Внимание! Обнаружен сбой в работе БСД. Аварийное прекращение работы БСД.")
 
 /obj/machinery/bluespacedrive/attackby(var/obj/item/W as obj, var/mob/user as mob)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)

@@ -1299,7 +1299,7 @@
 	req_access = list(list(access_atmospherics,access_engine_equip))
 	products = list(/obj/item/device/flashlight = 3,/obj/item/device/multitool = 3,/obj/item/device/multitool/multimeter = 3,
 	/obj/item/device/geiger = 3,/obj/item/device/scanner/gas = 3,/obj/item/device/t_scanner = 3,
-	/obj/item/device/cable_painter = 2,/*/obj/item/device/floor_painter = 2,/obj/item/device/pipe_painter = 2*/, /obj/item/rpd = 2,
+	/obj/item/device/cable_painter = 2,/*/obj/item/device/floor_painter = 2,/obj/item/device/pipe_painter = 2,*/ /obj/item/rpd = 2,
 	/obj/item/clamp = 4, /obj/item/tape_roll = 6)
 	contraband = list(/obj/item/beartrap = 2,/obj/item/rcd = 1,/obj/item/rcd_ammo = 5)
 	premium = list(/obj/item/combitool = 1,/obj/item/wrench/power = 1,/obj/item/wirecutters/power = 1)

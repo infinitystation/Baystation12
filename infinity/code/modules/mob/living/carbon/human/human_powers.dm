@@ -17,7 +17,7 @@
 		to_chat(src, "<span class='warning'>You are for all intents and purposes currently deaf!</span>")
 		return
 	to_chat(src, "<span class='notice'>You take a moment to listen in to your environment...</span>")
-	if(do_after(src, delay = 5, needhand = 0, progress = 1))
+	if(do_after(src, delay = 5, do_flags = DO_DEFAULT & ~DO_USER_SAME_HAND))
 		var/heard_something = FALSE
 		for(var/mob/living/L in range(client.view, src))
 			var/turf/T = get_turf(L)

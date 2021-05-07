@@ -16,6 +16,7 @@
 
 /obj/item/clothing/suit/space/void/engineering/alt/inf/Destroy()
 	STOP_PROCESSING(SSobj, src)
+	. = ..()
 
 /obj/item/clothing/suit/space/void/engineering/alt/inf/Process()
 	update_icon()

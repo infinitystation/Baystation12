@@ -3,7 +3,7 @@ obj/structure/adh_base/broken_cryo
 	desc = "A mangled cryo sleeper with evidence that someone was inside when it was crushed. It looks like you could pry it open with a crowbar."
 	icon = 'maps/away/icarus/icarus_sprites.dmi'
 	icon_state = "broken_cryo"
-	anchored = 1
+	anchored = TRUE
 	density = TRUE
 	var/closed = 1
 	var/busy = 0

@@ -857,14 +857,9 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-<<<<<<< HEAD
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4
-=======
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/light/spot{
 	dir = 8
->>>>>>> ac6d1565f0b2fd14961d20602c6737a9a816ec5a
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/merc_shuttle)
@@ -1292,20 +1287,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-<<<<<<< HEAD
-/turf/simulated/wall/titanium,
-/area/map_template/merc_shuttle/rear)
-"ch" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4
-=======
 /turf/simulated/floor/tiled/steel_ridged,
 /area/map_template/merc_spawn)
 "nI" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 4;
 	icon_state = "techfloor_edges"
->>>>>>> ac6d1565f0b2fd14961d20602c6737a9a816ec5a
 	},
 /turf/simulated/floor/tiled/dark,
 /area/map_template/merc_shuttle)

@@ -191,7 +191,7 @@
 	name = "alien helmet"
 	desc = "A UFO-like looking alien helmet with two antennas."
 	canremove = 0
-	anchored = 1
+	anchored = TRUE
 	icon = 'infinity/icons/obj/abductor.dmi'
 	icon_state = "alienhelmet"
 	item_icons = list(

@@ -57,7 +57,7 @@
 	icon = 'riverturfs.dmi'
 	icon_state = "evilwall_1"
 	opacity = TRUE
-	density = 1
+	density = TRUE
 	temperature = 233
 
 /turf/unsimulated/wall/away/blueriver/livingwall/Initialize()

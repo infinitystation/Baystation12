@@ -183,11 +183,7 @@ var/global/list/newscaster_standard_feeds = list(/datum/news_announcement/bluesp
 proc/process_newscaster()
 	if(SSticker.mode.newscaster_announcements) //INF
 		check_for_newscaster_updates(SSticker.mode.newscaster_announcements)
-//[INF]
-	for(var/datum/feed_channel/galaxy_channel in news_network.network_channels)
-		if(galaxy_channel.is_admin_channel)
-			galaxy_channel.views += rand(4000,12000)
-//[/INF]
+
 var/global/tmp/announced_news_types = list()
 /*ORIGINAL
 proc/check_for_newscaster_updates(type)
@@ -230,6 +226,12 @@ proc/announce_newscaster_news(datum/news_announcement/news, list/zlevels)
 		sendto.locked = 1
 		sendto.is_admin_channel = 1
 		network.network_channels += sendto
-
+	
+	// [INF]
+	for(var/datum/feed_channel/galaxy_channel in network.network_channels)
+		if(galaxy_channel.is_admin_channel)
+			galaxy_channel.views += rand(4000,12000)
+	// [/INF]
+	
 	var/author = news.author ? news.author : sendto.author
 	network.SubmitArticle(news.message, author, news.channel_name, null, !news.can_be_redacted, news.message_type)

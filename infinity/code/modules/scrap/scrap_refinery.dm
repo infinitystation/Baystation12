@@ -48,7 +48,7 @@ var/const/SAFETY_COOLDOWN = 100
 
 /obj/machinery/recycler/emag_act(mob/user)
 	if(!emagged)
-		emagged = 1
+		emagged = TRUE
 		if(safety_mode)
 			safety_mode = 0
 			update_icon()

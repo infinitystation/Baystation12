@@ -26,7 +26,7 @@
 
 	if(!ismob(usr)) return
 	var/mob/user = usr
-	if(do_after(user, 3 SECONDS, src, can_move = 1))
+	if(do_after(user, 3 SECONDS, src, do_flags = DO_DEFAULT | DO_USER_CAN_MOVE))
 		var/obj/item/weaponparts/core_part/base = new/obj/item/weaponparts/core_part/heavysniper(get_turf(src))
 		var/atom/movable/scope = new/obj/item/weaponparts/stock/scope/heavysniper(get_turf(src))
 		var/atom/movable/barel = new/obj/item/weaponparts/stock/barrel/heavysniper(get_turf(src))

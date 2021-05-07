@@ -71,7 +71,7 @@
 						linenum++
 		if ("show_song_editor")
 			if (!src.song_editor)
-				src.song_editor = new (host = src.owner, source = src.player.song)
+				src.song_editor = new (host = src.owner, song = src.player.song)
 			src.song_editor.ui_interact(usr)
 
 		if ("show_usage")
