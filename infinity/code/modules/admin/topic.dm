@@ -214,8 +214,7 @@
 						to_chat(H, SPAN_DANGER("The gods have punished you for your sins!"))
 						playsound(H, 'infinity/sound/effects/lightningbolt.ogg', 50)
 					if("Brain damage")
-						H.adjustBrainLoss(29.5) //*2. Gives 59 - a little slowdows and pain messages.\
-						Would be healed with inaprovaline
+						H.adjustBrainLoss(29.5) //*2. Gives 59 - a little slowdows and pain messages. Would be healed with inaprovaline
 						to_chat(H, SPAN_DANGER("The gods have punished you for your sins!"))
 						H.playsound_local(null, 'infinity/sound/effects/rings.ogg', 100)
 //					if("Gib")
