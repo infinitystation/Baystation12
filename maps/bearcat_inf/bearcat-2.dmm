@@ -1504,7 +1504,7 @@
 	dir = 4;
 	icon_state = "rwindow"
 	},
-/obj/machinery/atmospherics/pipe/simple/visible/fuel,
+/obj/machinery/atmospherics/pipe/simple/hidden/universal,
 /turf/simulated/floor/plating,
 /area/ship/scrap/engineering/nacelles)
 "cE" = (
@@ -3665,9 +3665,8 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	dir = 4;
-	icon_state = "intact"
+/obj/machinery/atmospherics/pipe/simple/hidden/universal{
+	dir = 4
 	},
 /turf/simulated/floor,
 /area/ship/scrap/other/lounge)
@@ -5879,7 +5878,6 @@
 	icon_state = "bulb_map"
 	},
 /obj/machinery/meter,
-/obj/machinery/atmospherics/pipe/simple/hidden/black,
 /turf/simulated/floor/plating,
 /area/ship/scrap/engineering/nacelles)
 "ko" = (
@@ -5914,6 +5912,10 @@
 /obj/structure/cable,
 /obj/structure/window/reinforced{
 	dir = 4
+	},
+/obj/machinery/door/window/westright{
+	dir = 4;
+	icon_state = "right"
 	},
 /turf/simulated/open,
 /area/ship/scrap/hallway/starboard)
@@ -6223,7 +6225,7 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
+/obj/machinery/atmospherics/pipe/simple/hidden/black{
 	dir = 4;
 	icon_state = "intact"
 	},
@@ -9638,7 +9640,7 @@ Ic
 bw
 Ic
 Ic
-Pp
+KQ
 Ic
 Ic
 Ic
