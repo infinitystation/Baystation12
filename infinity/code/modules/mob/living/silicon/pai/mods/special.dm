@@ -32,7 +32,7 @@
 /obj/item/paimod/holoskins/on_recalculate(var/mob/living/silicon/pai/P)
 	. = ..()
 	var/is_chasises_in_possible = 0
-	for(var/i in holochasises) is_chasises_in_possible = P.possible_chassis.Find(i)
+	for(var/i in holochasises) is_chasises_in_possible = list_find(P.possible_chassis, i)
 	if(length(holochasises) && !is_chasises_in_possible) P.possible_chassis.Add(holochasises)
 
 /obj/item/paimod/holoskins/paiwoman

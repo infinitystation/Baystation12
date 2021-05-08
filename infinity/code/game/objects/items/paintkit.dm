@@ -9,7 +9,7 @@
 /obj/item/device/kit/egun/inherit_custom_item_data(var/datum/custom_item/citem)
 	. = ..()
 	new_icon_file = CUSTOM_GUN_ICONS
-	if(citem.additional_data.Find("gun_mob_icon"))
+	if(list_find(citem.additional_data, "gun_mob_icon"))
 		var/mob_icon_override = citem.additional_data["gun_mob_icon"]
 		for(var/side in list(slot_r_hand_str, slot_l_hand_str))
 			var/true_mob_icon_override = "[mob_icon_override]_[side].dmi"

@@ -20,6 +20,6 @@
 					icomponents+=P.displayed_name
 					ircomponents+=P
 	var/component_choice = input("Please choose a component to insert the [I].","[src]") as null|anything in icomponents
-	var/obj/item/integrated_circuit/circuit = ircomponents[icomponents.Find(component_choice)]
+	var/obj/item/integrated_circuit/circuit = ircomponents[list_find(icomponents, component_choice)]
 	if(in_range(user, circuit) && get_dist(I, user) < 1)
 		circuit.attackby(I, user)

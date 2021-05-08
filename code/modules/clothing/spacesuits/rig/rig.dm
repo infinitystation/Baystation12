@@ -301,7 +301,7 @@
 						failed_to_seal = 1
 //[INF]
 					var/basestate = base_icon_state
-					if(piece_icon_state_overrides && length(piece_icon_state_overrides) && piece_icon_state_overrides.Find(msg_type))
+					if(piece_icon_state_overrides && length(piece_icon_state_overrides) && list_find(piece_icon_state_overrides, msg_type))
 						basestate = piece_icon_state_overrides[msg_type]
 //[/INF]
 					piece.icon_state = "[basestate][!seal_target ? "_sealed" : ""]"//inf, was: piece.icon_state = "[initial(icon_state)][!seal_target ? "_sealed" : ""]"
@@ -337,14 +337,14 @@
 
 	if(failed_to_seal)
 		for(var/variable in list("helmet","boots","gloves","chest"))//inf, was: for(var/obj/item/piece in list(helmet,boots,gloves,chest))
-			if(!vars.Find(variable))
+			if(!list_find(vars, variable))
 				log_error("[variable] not a variable of [type].")
 				continue
 			var/obj/item/piece = vars[variable]
 			if(!piece) continue
 //[INF]
 			var/basestate = base_icon_state
-			if(piece_icon_state_overrides.Find(variable))
+			if(list_find(piece_icon_state_overrides, variable))
 				basestate = piece_icon_state_overrides[variable]
 //[/INF]
 			piece.icon_state = "[basestate][!seal_target ? "" : "_sealed"]"//inf, was: piece.icon_state = "[initial(icon_state)][!seal_target ? "" : "_sealed"]"

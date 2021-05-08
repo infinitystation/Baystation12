@@ -278,7 +278,7 @@
 			if(assoc)
 				L[assoc_key] = new_var
 			else
-				L[L.Find(variable)] = new_var
+				L[list_find(L, variable)] = new_var
 
 		if("num")
 			new_var = input("Enter new number:","Num") as num

@@ -68,7 +68,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        map_path: [example, sierra, bearcat_inf, away_sites_testing]
+        map_path: [example, sierra, torch, bearcat_inf, away_sites_testing]
     steps:
       - uses: actions/checkout@v2
       - name: Setup Cache

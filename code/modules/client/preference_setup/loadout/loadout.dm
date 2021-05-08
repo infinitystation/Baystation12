@@ -180,7 +180,7 @@ var/list/gear_datums = list()
 			dd_insertObjectList(jobs, J)
 	var/list/valid_gear_list = valid_gear_choices() //INF
 	for(var/gear_name in LC.gear)
-		if(!valid_gear_list.Find(gear_name))//inf, was: if(!(gear_name in valid_gear_choices()))
+		if(!list_find(valid_gear_list, gear_name))//inf, was: if(!(gear_name in valid_gear_choices())) 
 			continue
 		var/list/entry = list()
 		var/datum/gear/G = LC.gear[gear_name]

@@ -16,9 +16,9 @@
 //[INF]
 /obj/item/clothing/accessory/badge/inherit_custom_item_data(datum/custom_item/citem)
 	. = ..()
-	if(citem.additional_data.Find("badge_string"))
+	if(list_find(citem.additional_data, "badge_string"))
 		badge_string = citem.additional_data["badge_string"]
-	if(citem.additional_data.Find("stored_name"))
+	if(list_find(citem.additional_data, "stored_name"))
 		stored_name = citem.additional_data["stored_name"]
 //[/INF]
 /obj/item/clothing/accessory/badge/get_lore_info()

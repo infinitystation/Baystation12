@@ -7167,7 +7167,6 @@
 	},
 /obj/item/stock_parts/computer/scanner/atmos,
 /obj/item/stock_parts/computer/scanner/atmos,
-/obj/item/device/pipe_painter,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/monotile,
 /area/ship/scrap/engineering/atmos)

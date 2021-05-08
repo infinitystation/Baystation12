@@ -200,7 +200,7 @@
 
 /obj/item/deck/MouseDrop(atom/over)
 //[INF]
-	if(over == usr && !usr.restrained() && !usr.stat && (usr.contents.Find(src) || in_range(src, usr)))
+	if(over == usr && !usr.restrained() && !usr.stat && (list_find(usr.contents, src) || in_range(src, usr)))
 		if(ishuman(over))
 			if(!usr.get_active_hand())		//if active hand is empty
 				var/mob/living/carbon/human/H = over

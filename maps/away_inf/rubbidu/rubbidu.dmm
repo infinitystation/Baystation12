@@ -2153,7 +2153,6 @@
 /obj/structure/table/rack{
 	dir = 8
 	},
-/obj/item/device/pipe_painter,
 /turf/simulated/floor/plating,
 /area/rubbidu/engineering)
 "eq" = (

@@ -31,6 +31,7 @@
 		/area/rnd,
 		/area/rnd/xenobiology,
 		/area/rnd/xenobiology/xenoflora,
+		/area/rnd/xenobiology/xenoflora_storage,
 		/area/security,
 		/area/security/prison,
 		/area/security/brig,
@@ -55,3 +56,5 @@
 	)
 
 	var/list/area_purity_test_exempt_areas = list()
+
+/area/ship

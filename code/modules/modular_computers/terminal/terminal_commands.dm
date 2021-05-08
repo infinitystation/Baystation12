@@ -577,8 +577,8 @@ INF*/
 
 			var/regex/RegexHTML = new("<\[^<>]*>", "g")
 			var/regex/RegexFileHTML = new("\\\[\[^\\\[\\\]]*\\\]", "g")
-			code = RegexHTML.Replace(code)
-			code = RegexFileHTML.Replace(code)
+			code = regex_replace(RegexHTML, code)
+			code = regex_replace(RegexFileHTML, code)
 			code = replacetext_char(code, "\n", "")
 
 			var/list/code_list = splittext(code, "; ")

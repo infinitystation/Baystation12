@@ -906,7 +906,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		//[/INF]
 
 //[INF]
-	if(citem.additional_data.Find("slot_flags"))
+	if(list_find(citem.additional_data, "slot_flags"))
 		slot_flags = citem.additional_data["slot_flags"]
 /obj/item/proc/init_custom_icon_file()
 	item_state_slots = null
