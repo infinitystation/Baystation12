@@ -412,15 +412,15 @@ GLOBAL_LIST_EMPTY(music_players)
 	if(!tape.CanPlay())
 		return
 
-/*	if(mode == PLAYER_STATE_PAUSE && sound_token) // jukebox merge 02 05 2021 ~bear1ake
+	if(mode == PLAYER_STATE_PAUSE && sound_token)
 		sound_token.Unpause()
 	else
 		QDEL_NULL(sound_token)
-		sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, tape.track.GetTrack(), volume = volume, frequency = frequency, range = 7, falloff = 4, prefer_mute = TRUE, preference = src.preference, streaming = TRUE)
+		sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, tape.track.source, volume = volume, frequency = frequency, range = 7, falloff = 4, prefer_mute = TRUE, preference = src.preference, streaming = TRUE)
 
 	mode = PLAYER_STATE_PLAY
 	START_PROCESSING(SSobj, src)
-	log_and_message_admins("launched [src] <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> with the song \"[tape.track.title]\".")*/
+	log_and_message_admins("launched [src] <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> with the song \"[tape.track.title]\".")
 
 	if(prob(break_chance))
 		break_act()
