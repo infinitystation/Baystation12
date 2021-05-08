@@ -1504,7 +1504,7 @@
 	dir = 4;
 	icon_state = "rwindow"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/universal,
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /turf/simulated/floor/plating,
 /area/ship/scrap/engineering/nacelles)
 "cE" = (
@@ -3580,6 +3580,9 @@
 /obj/machinery/light_switch{
 	pixel_y = 29
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/universal{
+	dir = 4
+	},
 /turf/simulated/floor,
 /area/ship/scrap/other/lounge)
 "gq" = (
@@ -3596,7 +3599,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
+/obj/machinery/atmospherics/pipe/simple/hidden/black{
 	dir = 10;
 	icon_state = "intact"
 	},
@@ -3647,14 +3650,13 @@
 	d2 = 9;
 	icon_state = "2-9"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	dir = 5;
-	icon_state = "intact"
-	},
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 9;
 	icon_state = "4-9"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/black{
+	dir = 5
 	},
 /turf/simulated/floor,
 /area/ship/scrap/other/lounge)
@@ -3665,8 +3667,9 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/universal{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/hidden/black{
+	dir = 4;
+	icon_state = "intact"
 	},
 /turf/simulated/floor,
 /area/ship/scrap/other/lounge)
@@ -5878,6 +5881,7 @@
 	icon_state = "bulb_map"
 	},
 /obj/machinery/meter,
+/obj/machinery/atmospherics/pipe/simple/hidden/black,
 /turf/simulated/floor/plating,
 /area/ship/scrap/engineering/nacelles)
 "ko" = (
@@ -5912,10 +5916,6 @@
 /obj/structure/cable,
 /obj/structure/window/reinforced{
 	dir = 4
-	},
-/obj/machinery/door/window/westright{
-	dir = 4;
-	icon_state = "right"
 	},
 /turf/simulated/open,
 /area/ship/scrap/hallway/starboard)
@@ -7223,15 +7223,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/ship/scrap/hallway/port)
-"Pp" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_x = 0
-	},
-/turf/simulated/floor/airless,
-/area/space)
 "Qq" = (
 /obj/machinery/door/blast/regular,
 /turf/simulated/floor/tiled/techfloor/grid,
