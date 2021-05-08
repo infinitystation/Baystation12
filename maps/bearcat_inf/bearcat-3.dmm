@@ -346,15 +346,15 @@
 /area/space)
 "bl" = (
 /obj/structure/bed/chair/wood/walnut{
-	icon_state = "wooden_chair_preview";
-	dir = 4
+	dir = 4;
+	icon_state = "wooden_chair_preview"
 	},
 /turf/simulated/floor/carpet,
 /area/ship/scrap)
 "bm" = (
 /obj/structure/bed/chair/wood/walnut{
-	icon_state = "wooden_chair_preview";
-	dir = 8
+	dir = 8;
+	icon_state = "wooden_chair_preview"
 	},
 /turf/simulated/floor/carpet,
 /area/ship/scrap)
@@ -414,8 +414,8 @@
 "bv" = (
 /obj/structure/flora/pottedplant/subterranean,
 /obj/effect/decal/cleanable/cobweb2{
-	icon_state = "cobweb2";
-	dir = 1
+	dir = 1;
+	icon_state = "cobweb2"
 	},
 /turf/simulated/floor/wood/walnut,
 /area/ship/scrap)
@@ -528,8 +528,8 @@
 	pixel_y = 32
 	},
 /obj/structure/cable{
-	icon_state = "0-2";
-	d2 = 2
+	d2 = 2;
+	icon_state = "0-2"
 	},
 /obj/machinery/power/apc{
 	dir = 4;
@@ -537,8 +537,8 @@
 	pixel_x = 24
 	},
 /obj/effect/floor_decal/industrial/danger{
-	icon_state = "danger";
-	dir = 8
+	dir = 8;
+	icon_state = "danger"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/scrap/escape/port/upper)
@@ -594,8 +594,8 @@
 /area/ship/scrap/hallway/starboard/upper)
 "bQ" = (
 /obj/structure/cable{
-	icon_state = "0-2";
-	d2 = 2
+	d2 = 2;
+	icon_state = "0-2"
 	},
 /obj/machinery/computer/cryopod{
 	pixel_y = 32
@@ -606,8 +606,8 @@
 	pixel_x = -24
 	},
 /obj/effect/floor_decal/industrial/danger{
-	icon_state = "danger";
-	dir = 4
+	dir = 4;
+	icon_state = "danger"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/scrap/escape/starboard/upper)
@@ -631,8 +631,8 @@
 	icon_state = "1-4"
 	},
 /obj/effect/floor_decal/industrial/danger{
-	icon_state = "danger";
-	dir = 8
+	dir = 8;
+	icon_state = "danger"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/scrap/escape/port/upper)
@@ -715,8 +715,8 @@
 	icon_state = "1-8"
 	},
 /obj/effect/floor_decal/industrial/danger{
-	icon_state = "danger";
-	dir = 4
+	dir = 4;
+	icon_state = "danger"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/scrap/escape/starboard/upper)
@@ -728,8 +728,8 @@
 	},
 /obj/machinery/light/small/red,
 /obj/effect/floor_decal/industrial/danger{
-	icon_state = "danger";
-	dir = 8
+	dir = 8;
+	icon_state = "danger"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/scrap/escape/port/upper)
@@ -794,8 +794,8 @@
 	icon_state = "2-5"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	icon_state = "map-scrubbers";
-	dir = 1
+	dir = 1;
+	icon_state = "map-scrubbers"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
@@ -823,8 +823,8 @@
 	},
 /obj/machinery/light/small/red,
 /obj/effect/floor_decal/industrial/danger{
-	icon_state = "danger";
-	dir = 4
+	dir = 4;
+	icon_state = "danger"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/scrap/escape/starboard/upper)
@@ -847,9 +847,9 @@
 	pixel_y = 0
 	},
 /obj/structure/cable{
+	d2 = 2;
 	icon_state = "0-2";
-	pixel_y = 1;
-	d2 = 2
+	pixel_y = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -891,15 +891,18 @@
 	dir = 8
 	},
 /obj/structure/cable{
+	d2 = 2;
 	icon_state = "0-2";
-	pixel_y = 1;
-	d2 = 2
+	pixel_y = 1
 	},
 /obj/structure/catwalk,
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "west bump";
 	pixel_x = -24
+	},
+/obj/machinery/door/window/westright{
+	dir = 2
 	},
 /turf/simulated/floor/plating,
 /area/ship/scrap/hallway/starboard/upper)
@@ -959,18 +962,14 @@
 	},
 /obj/structure/lattice,
 /obj/machinery/atmospherics/pipe/zpipe/down/scrubbers{
-	icon_state = "down-scrubbers";
-	dir = 1
+	dir = 1;
+	icon_state = "down-scrubbers"
 	},
 /obj/machinery/atmospherics/pipe/zpipe/down/supply{
-	icon_state = "down-supply";
-	dir = 1
+	dir = 1;
+	icon_state = "down-supply"
 	},
 /obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/machinery/door/window/westright{
-	icon_state = "right";
 	dir = 4
 	},
 /turf/simulated/open,
@@ -1045,9 +1044,9 @@
 /area/ship/scrap/other/research)
 "cH" = (
 /obj/structure/cable{
+	d2 = 2;
 	icon_state = "0-2";
-	pixel_y = 1;
-	d2 = 2
+	pixel_y = 1
 	},
 /turf/simulated/floor/tiled,
 /area/ship/scrap/other/research)
@@ -1114,8 +1113,8 @@
 /area/ship/scrap/other/robotics)
 "cP" = (
 /obj/machinery/light_construct{
-	icon_state = "tube-construct-stage1";
-	dir = 8
+	dir = 8;
+	icon_state = "tube-construct-stage1"
 	},
 /obj/structure/girder,
 /turf/simulated/floor/plating,
@@ -1276,7 +1275,7 @@
 /area/ship/scrap/other/robotics)
 "db" = (
 /obj/structure/table/rack{
-	dir = 8;
+	dir = 8
 	},
 /obj/item/stack/material/glass/ten{
 	amount = 20
@@ -1488,8 +1487,8 @@
 	},
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	icon_state = "map-scrubbers";
-	dir = 1
+	dir = 1;
+	icon_state = "map-scrubbers"
 	},
 /turf/simulated/floor/plating,
 /area/ship/scrap/hallway/aft/upper)
@@ -1583,7 +1582,7 @@
 /obj/random/technology_scanner,
 /obj/random/tech_supply,
 /obj/structure/table/rack{
-	dir = 8;
+	dir = 8
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -1628,8 +1627,8 @@
 /obj/random/tank,
 /obj/random/medical/lite,
 /obj/effect/decal/cleanable/cobweb2{
-	icon_state = "cobweb2";
-	dir = 8
+	dir = 8;
+	icon_state = "cobweb2"
 	},
 /turf/simulated/floor/plating,
 /area/ship/scrap/other/research)
@@ -1661,7 +1660,7 @@
 /area/ship/scrap/hallway/aft/upper)
 "dM" = (
 /obj/structure/table/rack{
-	dir = 8;
+	dir = 8
 	},
 /obj/item/handcuffs/cable/yellow,
 /obj/item/device/flash/synthetic,
@@ -1713,8 +1712,8 @@
 "dS" = (
 /obj/machinery/power/smes/buildable,
 /obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /obj/structure/sign/warning/airlock{
 	dir = 4;
@@ -1858,8 +1857,8 @@
 /area/ship/scrap/engineering/solars)
 "ee" = (
 /obj/machinery/power/terminal{
-	icon_state = "term";
-	dir = 1
+	dir = 1;
+	icon_state = "term"
 	},
 /obj/machinery/access_button{
 	command = "cycle_interior";
@@ -2377,8 +2376,8 @@
 "Je" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden{
-	icon_state = "intact";
-	dir = 9
+	dir = 9;
+	icon_state = "intact"
 	},
 /turf/simulated/floor/plating,
 /area/ship/scrap/hallway/aft/upper)
