@@ -513,8 +513,9 @@
 /obj/structure/window/reinforced,
 /obj/structure/catwalk,
 /obj/random/tool,
-/obj/machinery/atmospherics/pipe/manifold/hidden/black{
-	dir = 1
+/obj/machinery/atmospherics/pipe/manifold/hidden/fuel{
+	dir = 1;
+	icon_state = "map"
 	},
 /turf/simulated/floor/airless,
 /area/ship/scrap/engineering/nacelles/port)
@@ -1824,7 +1825,7 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/black{
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
 	dir = 4;
 	icon_state = "intact"
 	},
@@ -3463,7 +3464,7 @@
 /obj/structure/catwalk,
 /obj/item/storage/pill_bottle/happy,
 /obj/random/contraband,
-/obj/machinery/atmospherics/pipe/manifold4w/hidden/black,
+/obj/machinery/atmospherics/pipe/manifold4w/hidden/fuel,
 /turf/simulated/floor/airless,
 /area/ship/scrap/engineering/nacelles/port)
 "gi" = (
@@ -3647,8 +3648,9 @@
 	d2 = 9;
 	icon_state = "4-9"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/universal{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
+	dir = 4;
+	icon_state = "intact"
 	},
 /turf/simulated/floor,
 /area/ship/scrap/other/lounge)
@@ -3659,7 +3661,7 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/black{
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
 	dir = 4;
 	icon_state = "intact"
 	},
@@ -3717,15 +3719,14 @@
 /turf/simulated/floor,
 /area/ship/scrap/shuttle/outgoing)
 "gD" = (
-/obj/machinery/atmospherics/valve/shutoff{
-	dir = 4;
-	icon_state = "map_vclamp0"
-	},
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8";
 	pixel_x = 0
+	},
+/obj/machinery/atmospherics/valve/shutoff/fuel{
+	dir = 4
 	},
 /turf/simulated/floor,
 /area/ship/scrap/other/lounge)
@@ -3916,8 +3917,13 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/black{
-	dir = 8
+/obj/machinery/atmospherics/pipe/manifold/hidden/fuel{
+	dir = 8;
+	icon_state = "map"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
+	dir = 10;
+	icon_state = "intact"
 	},
 /turf/simulated/floor/airless,
 /area/ship/scrap/engineering/nacelles/port)
@@ -3932,7 +3938,7 @@
 	icon_state = "0-2"
 	},
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/simple/hidden/black{
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
 	dir = 10;
 	icon_state = "intact"
 	},
@@ -3962,7 +3968,7 @@
 	dir = 1
 	},
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/manifold/hidden/black,
+/obj/machinery/atmospherics/pipe/manifold/hidden/fuel,
 /turf/simulated/floor/airless,
 /area/ship/scrap/engineering/nacelles/port)
 "gY" = (
@@ -6221,7 +6227,7 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/black{
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
 	dir = 4;
 	icon_state = "intact"
 	},
@@ -6234,10 +6240,6 @@
 /obj/effect/floor_decal/corner/yellow{
 	dir = 8
 	},
-/obj/machinery/atmospherics/valve/shutoff{
-	dir = 4;
-	icon_state = "map_vclamp0"
-	},
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -6245,6 +6247,9 @@
 	pixel_x = 0
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central7,
+/obj/machinery/atmospherics/valve/shutoff/fuel{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/ship/scrap/crew/garden)
 "la" = (
@@ -6664,8 +6669,9 @@
 	dir = 8
 	},
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/manifold/hidden/black{
-	dir = 4
+/obj/machinery/atmospherics/pipe/manifold/hidden/fuel{
+	dir = 4;
+	icon_state = "map"
 	},
 /turf/simulated/floor/airless,
 /area/ship/scrap/engineering/nacelles/port)
@@ -6760,6 +6766,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
 	dir = 9
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
+	dir = 9;
+	icon_state = "intact"
+	},
 /turf/simulated/floor/airless,
 /area/ship/scrap/engineering/nacelles/port)
 "lY" = (
@@ -6768,14 +6778,15 @@
 	dir = 8
 	},
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/manifold4w/hidden/black,
+/obj/machinery/atmospherics/pipe/manifold4w/hidden/fuel,
 /turf/simulated/floor/airless,
 /area/ship/scrap/engineering/nacelles/port)
 "lZ" = (
 /obj/structure/window/reinforced,
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/manifold/hidden/black{
-	dir = 1
+/obj/machinery/atmospherics/pipe/manifold/hidden/fuel{
+	dir = 1;
+	icon_state = "map"
 	},
 /turf/simulated/floor/airless,
 /area/ship/scrap/engineering/nacelles/port)
@@ -7146,7 +7157,7 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/black{
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
 	dir = 4;
 	icon_state = "intact"
 	},
@@ -7219,6 +7230,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/ship/scrap/hallway/port)
+"Pp" = (
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
+/turf/simulated/wall/r_wall/prepainted,
+/area/ship/scrap/maintenance/hidden)
 "Qq" = (
 /obj/machinery/door/blast/regular,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -11106,7 +11121,7 @@ gN
 hg
 hg
 hE
-hE
+Pp
 ic
 hE
 hE
