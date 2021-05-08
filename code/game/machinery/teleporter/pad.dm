@@ -10,6 +10,7 @@
 	light_color = "#02d1c7"
 
 	var/obj/machinery/computer/teleporter/computer
+	construct_state = /decl/machine_construction/default/panel_closed //inf
 
 
 /obj/machinery/tele_pad/Destroy()

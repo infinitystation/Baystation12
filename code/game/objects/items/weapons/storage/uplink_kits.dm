@@ -37,7 +37,7 @@
 		)
 
 // Space suit uplink kit
-/obj/item/storage/backpack/satchel/syndie_kit/space
+/obj/item/storage/backpack/dufflebag/syndie_kit/space
 	//name = "\improper EVA gear pack"
 	startswith = list(
 		/obj/item/clothing/suit/space/void/merc/prepared,

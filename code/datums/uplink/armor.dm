@@ -2,10 +2,10 @@
 * Armor and Space Suits *
 * Может быть воспользуемся когда-нибудь ~bear1ake
 ********************/
-/*/datum/uplink_item/item/armor
+/datum/uplink_item/item/armor
 	category = /datum/uplink_category/armor
 
-/datum/uplink_item/item/armor/heavy_armor
+/* /datum/uplink_item/item/armor/heavy_armor
 	name = "Heavy Armor Vest and Helmet"
 	item_cost = 30
 	antag_costs = list(MODE_MERCENARY = 20)
