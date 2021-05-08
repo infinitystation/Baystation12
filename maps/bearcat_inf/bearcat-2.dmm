@@ -1326,7 +1326,6 @@
 /turf/simulated/floor/reinforced/airless,
 /area/ship/scrap/engineering/nacelles)
 "cp" = (
-/obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /obj/machinery/power/apc/high{
 	dir = 8;
 	name = "west bump";
@@ -3572,10 +3571,6 @@
 	d1 = 6;
 	d2 = 8;
 	icon_state = "6-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	dir = 4;
-	icon_state = "intact"
 	},
 /obj/machinery/light_switch{
 	pixel_y = 29
@@ -6225,7 +6220,7 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/black{
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
 	dir = 4;
 	icon_state = "intact"
 	},
@@ -7223,6 +7218,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/ship/scrap/hallway/port)
+"Pp" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/floor/airless,
+/area/space)
 "Qq" = (
 /obj/machinery/door/blast/regular,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -9631,7 +9635,7 @@ Ic
 bw
 Ic
 Ic
-KQ
+Pp
 Ic
 Ic
 Ic
