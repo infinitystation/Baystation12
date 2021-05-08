@@ -1,3 +1,5 @@
+#include "../away/ascent_caulship/_ascent_caulship.dm"
+
 //		Non-Torch files, that requires Torch. Shame on you...
 #include "items\clothing\solgov-infinity.dm"
 
