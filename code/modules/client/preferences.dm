@@ -95,8 +95,8 @@ datum/preferences
 
 /datum/preferences/proc/migrate_legacy_preferences()
 	// We make some assumptions here:
-	// - all relevant savefiles were version 17, which covers anything saved from 2018+
-	// - legacy saves were only made on the "torch" map
+	// - all relevant savefiles were version 17, which covers anything saved from 2018+ 
+	// - legacy saves were only made on the "torch" map ~mloc | В нашем случае не только "Факел" ~bear1ake
 	// - a maximum of 40 slots were used
 
 	var/legacy_pref_path = get_path(client.ckey, "preferences", "sav")
@@ -113,15 +113,15 @@ datum/preferences
 	player_setup.load_preferences(savefile_reader)
 	var/orig_slot = default_slot
 
-	S.cd = "/torch"
+	S.cd = "/[GLOB.using_map.path]" // INF, было S.cd = "/torch" | Мигрировать сохранения будем с текущей карты ~bear1ake
 	for(var/slot = 1 to 40)
 		if(!list_find(S.dir, "character[slot]"))
 			continue
-		S.cd = "/torch/character[slot]"
+		S.cd = "/[GLOB.using_map.path]/character[slot]" // INF, было S.cd = "/torch/character[slot]"
 		default_slot = slot
 		player_setup.load_character(savefile_reader)
-		save_character(override_key="character_torch_[slot]")
-		S.cd = "/torch"
+		save_character(override_key="character_[GLOB.using_map.path]_[slot]")  // INF, было save_character(override_key="character_torch_[slot]")
+		S.cd = "/[GLOB.using_map.path]"  // INF, было S.cd = "/torch"
 	S.cd = "/"
 
 	default_slot = orig_slot
