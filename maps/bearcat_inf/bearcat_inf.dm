@@ -33,7 +33,7 @@
 //	#include "../away/unishi/unishi.dm"
 	#include "../away/slavers/slavers_base.dm"
 	#include "../away/voxship/voxship.dm"
-
+	#include "../away/verne/verne.dm"
 	#define using_map_DATUM /datum/map/bearcat
 
 #elif !defined(MAP_OVERRIDE)

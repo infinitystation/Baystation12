@@ -150,6 +150,7 @@
 
 	#include "../random_ruins/exoplanet_ruins/playablecolony_inf/playablecolony.dm"
 
+	#include "../away/verne/verne.dm"
 	#define using_map_DATUM /datum/map/sierra
 
 #elif !defined(MAP_OVERRIDE)

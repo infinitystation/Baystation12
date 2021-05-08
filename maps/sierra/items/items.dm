@@ -177,6 +177,7 @@ Passports
 // xeno passports
 /obj/item/passport/xeno/tajara
 	name = "\improper Tajaran passport"
+	icon = 'infinity/icons/obj/passports.dmi'
 	icon_state = "passport_taj"
 	desc = "A passport that apparently belongs to the Tajara."
 
