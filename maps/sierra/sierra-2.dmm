@@ -5921,7 +5921,6 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/engineering_monitoring)
 "alt" = (
-/obj/machinery/atmospherics/valve/shutoff,
 /obj/structure/railing/mapped{
 	dir = 4
 	},
@@ -5931,6 +5930,7 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
+/obj/machinery/atmospherics/valve/shutoff/supply,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/forestarboard)
 "alu" = (
@@ -11660,9 +11660,6 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "avG" = (
-/obj/machinery/atmospherics/valve/shutoff{
-	dir = 4
-	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/lime/border,
 /obj/effect/floor_decal/borderfloor/corner2{
@@ -11672,6 +11669,9 @@
 	dir = 9
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central6,
+/obj/machinery/atmospherics/valve/shutoff/supply{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "avI" = (
@@ -15070,8 +15070,8 @@
 /area/hallway/primary/seconddeck/aft)
 "aBu" = (
 /obj/machinery/atmospherics/binary/pump/high_power/on{
-	target_pressure = 10000;
-	dir = 8
+	dir = 8;
+	target_pressure = 10000
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/red,
 /obj/effect/floor_decal/techfloor{
@@ -15188,9 +15188,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/sleep/bunk)
 "aBC" = (
-/obj/machinery/atmospherics/valve/shutoff{
-	dir = 4
-	},
 /obj/item/device/radio/intercom{
 	dir = 1;
 	pixel_y = -28
@@ -15198,6 +15195,9 @@
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/yellow/border,
 /obj/effect/floor_decal/steeldecal/steel_decals_central6,
+/obj/machinery/atmospherics/valve/shutoff/supply{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/aft)
 "aBD" = (
@@ -15315,7 +15315,6 @@
 /turf/simulated/floor/plating,
 /area/vacant/gambling)
 "aBQ" = (
- /obj/machinery/tele_pad,
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 1
 	},
@@ -18352,7 +18351,6 @@
 /turf/simulated/floor/plating,
 /area/maintenance/abandoned_hydroponics)
 "aHm" = (
-/obj/machinery/atmospherics/valve/shutoff,
 /obj/effect/floor_decal/corner_techfloor_grid{
 	dir = 8
 	},
@@ -18362,6 +18360,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals_central6{
 	dir = 8
 	},
+/obj/machinery/atmospherics/valve/shutoff/supply,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/seconddeck/port)
 "aHn" = (
@@ -22551,13 +22550,13 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/chapel/main)
 "aOT" = (
-/obj/machinery/atmospherics/valve/shutoff,
 /obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/structure/railing/mapped{
 	dir = 1
 	},
+/obj/machinery/atmospherics/valve/shutoff/supply,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftport)
 "aOU" = (
@@ -26578,9 +26577,6 @@
 /area/hallway/primary/seconddeck/center)
 "aWr" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/valve/shutoff{
-	dir = 4
-	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central6{
 	dir = 1
 	},
@@ -26590,6 +26586,9 @@
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 4
+	},
+/obj/machinery/atmospherics/valve/shutoff/supply{
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
@@ -33398,10 +33397,10 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/fore_stairwell)
 "bkZ" = (
-/obj/machinery/atmospherics/valve/shutoff{
+/obj/effect/floor_decal/steeldecal/steel_decals_central6,
+/obj/machinery/atmospherics/valve/shutoff/supply{
 	dir = 4
 	},
-/obj/effect/floor_decal/steeldecal/steel_decals_central6,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/fore)
 "bla" = (
