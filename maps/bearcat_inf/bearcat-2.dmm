@@ -3921,10 +3921,6 @@
 	dir = 8;
 	icon_state = "map"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	dir = 10;
-	icon_state = "intact"
-	},
 /turf/simulated/floor/airless,
 /area/ship/scrap/engineering/nacelles/port)
 "gU" = (
