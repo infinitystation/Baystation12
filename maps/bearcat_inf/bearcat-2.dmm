@@ -1123,11 +1123,11 @@
 	icon_state = "alarm0";
 	pixel_x = -24
 	},
-/obj/machinery/atmospherics/valve/shutoff,
 /obj/structure/window/phoronreinforced{
 	dir = 4;
 	icon_state = "rwindow"
 	},
+/obj/machinery/atmospherics/valve/shutoff/fuel,
 /turf/simulated/floor/plating,
 /area/ship/scrap/engineering/nacelles)
 "bZ" = (
@@ -1332,7 +1332,7 @@
 	pixel_x = -24
 	},
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/simple/hidden/universal,
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /turf/simulated/floor/plating,
 /area/ship/scrap/engineering/nacelles)
 "cq" = (
@@ -5877,7 +5877,7 @@
 	icon_state = "bulb_map"
 	},
 /obj/machinery/meter,
-/obj/machinery/atmospherics/pipe/simple/hidden/black,
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /turf/simulated/floor/plating,
 /area/ship/scrap/engineering/nacelles)
 "ko" = (
