@@ -1333,6 +1333,7 @@
 	pixel_x = -24
 	},
 /obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/hidden/universal,
 /turf/simulated/floor/plating,
 /area/ship/scrap/engineering/nacelles)
 "cq" = (
@@ -1503,7 +1504,7 @@
 	dir = 4;
 	icon_state = "rwindow"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/universal,
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /turf/simulated/floor/plating,
 /area/ship/scrap/engineering/nacelles)
 "cE" = (
@@ -3664,8 +3665,9 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/universal{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
+	dir = 4;
+	icon_state = "intact"
 	},
 /turf/simulated/floor,
 /area/ship/scrap/other/lounge)
@@ -5872,12 +5874,12 @@
 /turf/simulated/floor/tiled,
 /area/ship/scrap/engineering/atmos)
 "kn" = (
-/obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /obj/machinery/light/small{
 	dir = 8;
 	icon_state = "bulb_map"
 	},
 /obj/machinery/meter,
+/obj/machinery/atmospherics/pipe/simple/hidden/black,
 /turf/simulated/floor/plating,
 /area/ship/scrap/engineering/nacelles)
 "ko" = (
@@ -5912,10 +5914,6 @@
 /obj/structure/cable,
 /obj/structure/window/reinforced{
 	dir = 4
-	},
-/obj/machinery/door/window/westright{
-	dir = 4;
-	icon_state = "right"
 	},
 /turf/simulated/open,
 /area/ship/scrap/hallway/starboard)
@@ -6225,7 +6223,7 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/black{
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
 	dir = 4;
 	icon_state = "intact"
 	},
@@ -7223,6 +7221,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/ship/scrap/hallway/port)
+"Pp" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/floor/airless,
+/area/space)
 "Qq" = (
 /obj/machinery/door/blast/regular,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -9631,7 +9638,7 @@ Ic
 bw
 Ic
 Ic
-KQ
+Pp
 Ic
 Ic
 Ic
