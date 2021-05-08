@@ -1499,12 +1499,11 @@
 /turf/simulated/floor/plating,
 /area/ship/scrap/engineering/nacelles)
 "cD" = (
-/obj/machinery/meter,
 /obj/structure/window/phoronreinforced{
 	dir = 4;
 	icon_state = "rwindow"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/black,
+/obj/machinery/atmospherics/pipe/simple/hidden/universal,
 /turf/simulated/floor/plating,
 /area/ship/scrap/engineering/nacelles)
 "cE" = (
@@ -5878,6 +5877,7 @@
 	dir = 8;
 	icon_state = "bulb_map"
 	},
+/obj/machinery/meter,
 /turf/simulated/floor/plating,
 /area/ship/scrap/engineering/nacelles)
 "ko" = (
@@ -6431,6 +6431,7 @@
 	dir = 5;
 	icon_state = "intact"
 	},
+/obj/machinery/meter,
 /turf/simulated/floor/plating,
 /area/ship/scrap/engineering/nacelles)
 "lr" = (
