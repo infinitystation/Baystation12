@@ -46,10 +46,40 @@
 	filename = "SPACE Magazine vol. 5"
 	server_file_path = 'news_articles/space_magazine_5.html'
 	cover = "issue5.png"
-	archived = 0
+	archived = 1
 
 /datum/computer_file/data/news_article/space/vol_six
 	filename = "SPACE Magazine vol. 6"
 	server_file_path = 'news_articles/space_magazine_6.html'
 	cover = "issue6.png"
+	archived = 1
+
+/datum/computer_file/data/news_article/infinity_1
+	filename = "БЕСКОНЕЧНОСТЬ изд.1 - Факел Догорел!"
+	server_file_path = 'news_articles/infinity_1.html'
+	cover = "infinity1.bmp"
+	archived = 0
+
+/datum/computer_file/data/news_article/olympietz
+	filename = "Новостные газеты: Олимпиец"
+	server_file_path = 'news_articles/olympietz.html'
+	cover = ""
+	archived = 0
+
+/datum/computer_file/data/news_article/fringe
+	filename = "Новостные газеты: Фринж"
+	server_file_path = 'news_articles/fringe.html'
+	cover = ""
+	archived = 0
+
+/datum/computer_file/data/news_article/valley_express
+	filename = "Новостные газеты: Вали Экспресс"
+	server_file_path = 'news_articles/valley_express.html'
+	cover = ""
+	archived = 0
+
+/datum/computer_file/data/news_article/tau_ceti_tribune
+	filename = "Новостные газеты: Трибуна Тау Кита"
+	server_file_path = 'news_articles/tau_ceti_tribune.html'
+	cover = ""
 	archived = 0
