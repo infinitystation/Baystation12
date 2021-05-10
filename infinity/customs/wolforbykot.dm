@@ -34,7 +34,7 @@
 	trade_blacklisted = TRUE
 
 
-/obj/item/weapon/storage/backpack/rucksack/wolforbykot
+/obj/item/weapon/storage/backpack/wolforbykot
 	name = "CAB"
 	desc = "A waist-slung Gaian shocktroop bag. Compact and roomy."
 	icon = CUSTOM_ITEM_OBJ
@@ -45,6 +45,9 @@
 							slot_r_hand_str = "keganbackpack",)
 	icon_state = "keganbackpack"
 	item_state = "keganbackpack"
+	// This is INF rucksack storage. I add this bcs I heard that everyone can take it from loadout
+	// If you think that I'm faggot - check infinity\code\game\objects\items\weapons\storage\backpack.dm
+	max_storage_space = DEFAULT_BACKPACK_STORAGE + 8
 	trade_blacklisted = TRUE
 
 
@@ -68,4 +71,4 @@
 	new /obj/item/clothing/head/helmet/wolforbykot(src)
 	new /obj/item/clothing/suit/armor/pcarrier/medium/nt/wolforbykot(src)
 	new /obj/item/clothing/gloves/thick/duty/wolforbykot(src)
-	new /obj/item/weapon/storage/backpack/rucksack/wolforbykot(src)
+	new /obj/item/weapon/storage/backpack/wolforbykot(src)
