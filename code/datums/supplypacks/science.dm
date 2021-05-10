@@ -87,3 +87,10 @@
 	cost = 90
 	containertype = /obj/structure/largecrate
 	containername = "space-bike crate"
+
+/decl/hierarchy/supply_pack/science/anomaly_crate
+	name = "Equipment - Anomaly Container"
+	cost = 20
+	contains = list(/obj/structure/anomaly_container)
+	containertype = /obj/structure/largecrate
+	containername = "anomaly container crate"
