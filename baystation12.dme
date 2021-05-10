@@ -3408,6 +3408,7 @@
 #include "infinity\code\game\objects\items\weapons\storage\storage.dm"
 #include "infinity\code\game\objects\items\weapons\storage\uplink_kits.dm"
 #include "infinity\code\game\objects\items\weapons\storage\wall_mirror.dm"
+#include "infinity\code\game\objects\items\weapons\storage\weapon_case.dm"
 #include "infinity\code\game\objects\items\weapons\tools\combi_tool.dm"
 #include "infinity\code\game\objects\items\weapons\tools\crowbar.dm"
 #include "infinity\code\game\objects\items\weapons\tools\screwdriver.dm"
