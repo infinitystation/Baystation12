@@ -157,7 +157,7 @@ datum/preferences
 /datum/preferences/proc/open_setup_window(mob/user)
 	if (!SScharacter_setup.initialized)
 		return
-	var/datum/browser/popup = new(user, "Настройка Персонажа", "Настройка Персонажа", 1200, 800, src)
+	var/datum/browser/popup = new(user, "preferences_browser", "Настройка Персонажа", 1200, 800, src)
 	var/content = {"
 	<script type='text/javascript'>
 		function update_content(data){
