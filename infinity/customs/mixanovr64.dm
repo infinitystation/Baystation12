@@ -32,10 +32,37 @@
 		icon_state = "mach_fold"
 		w_class = ITEM_SIZE_SMALL
 		update_icon()
-	
+
 	if(istype(user,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = user
 		H.update_inv_l_hand()
 		H.update_inv_r_hand()
 	add_fingerprint(user)
 	return
+
+// Pulse pistol "Venger"
+/obj/item/weapon/gun/energy/pulse_rifle/pistol/mixa
+	name = "Pulse pistol \"Venger\""
+	desc = "The Hel-Tec PS-03 pulse pistol, highly rare personal defence weapon."
+	icon = CUSTOM_GUN_ICONS
+	item_icons = list(
+		slot_r_hand_str = CUSTOM_GUN_INHANDS_RIGHT,
+		slot_l_hand_str = CUSTOM_GUN_INHANDS_LEFT,
+		)
+	icon_state = "mixanov_pulse_pistol"
+	item_state = "mixanov_pulse_pistol"
+	trade_blacklisted = TRUE
+
+/obj/item/weapon_case/custom/mixa
+	owner = "Micheal White"
+	holding_weapon = /obj/item/weapon/gun/energy/pulse_rifle/pistol/mixa
+
+/obj/item/weapon/clothingbag/mixa
+	name = "clothing bag"
+	desc = "Michael White's property"
+	trade_blacklisted = TRUE
+
+/obj/item/weapon/clothingbag/mixa/Initialize()
+	. = ..()
+	new /obj/item/weapon_case/custom/mixa(src)
+	new /obj/item/clothing/accessory/storage/holster/hip(src)
