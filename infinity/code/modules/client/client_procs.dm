@@ -5,9 +5,10 @@
 	/*
 	if(client.get_preference_value(/datum/client_preference/chat_position) == GLOB.PREF_YES)
 		client.update_chat_position(TRUE) */
-	if(client.get_preference_value(/datum/client_preference/fullscreen_mode) != GLOB.PREF_OFF)
-		client.toggle_fullscreen(client.get_preference_value(/datum/client_preference/fullscreen_mode))
-
+	if(client.get_preference_value(/datum/client_preference/fullscreen_mode) == GLOB.PREF_FULL)
+		client.toggle_fullscreen()
+	if(client.get_preference_value(/datum/client_preference/goonchat) == GLOB.PREF_YES)
+		client.chatOutput.start()
 /*
 /client/proc/update_chat_position(use_alternative)
 	var/input_height = 0

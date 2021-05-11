@@ -247,8 +247,8 @@
 		src.control_freak = 0 //Devs need 0 for profiler access
 
 //[INF]
-	if(!istype(mob, world.mob))
-		prefs?.apply_post_login_preferences()
+	// if(!istype(mob, world.mob)) // Префы и так загружены. Зачем? ~bear1ake
+	prefs?.apply_post_login_preferences()
 //[/INF]
 
 	//////////////

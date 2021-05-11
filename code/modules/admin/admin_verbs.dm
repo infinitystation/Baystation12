@@ -170,7 +170,7 @@ var/list/admin_verbs_server = list(
 	/client/proc/update_server,
 	/client/proc/cmd_toggle_admin_help,
 //merge 02 05 2021 ~bear1ake
-//INF	/client/proc/observe_delay, 
+	/client/proc/observe_delay, 
 	/datum/admins/proc/toggleevent,
 	/client/proc/cmd_set_station_date,
 //[/INF],

@@ -164,12 +164,12 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 	if(stat == DEAD)
 		announce_ghost_joinleave(ghostize(1))
-/*	else // INF, задержка обсерверов ~bear1ake
+	else // INF, задержка обсерверов ~bear1ake
 		if(!check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
 			if((world.time - round_start_time < (config.observe_delay MINUTES)))
 				to_chat(src, SPAN_WARNING("Извините, вам следует подождать [config.observe_delay] минут со старта раунда чтобы перейти в режим наблюдателя."))
 				to_chat(src, SPAN_NOTICE("Проверьте таймер \"Round Duration\" во вкладке Status чтобы узнать сколько времени прошло."))
-				return */
+				return
 
 		var/response
 		if(src.client && src.client.holder)

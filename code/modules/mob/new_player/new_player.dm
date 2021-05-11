@@ -127,10 +127,10 @@
 				to_chat(src, SPAN_WARNING("Вы не можете зайти в раунд за призрака, поскольку это было запрещено настройками сервера."))
 				return
 
-/*			if((world.time - round_start_time < (config.observe_delay MINUTES))) // INF, задержка обсерверов ~bear1ake
+			if((world.time - round_start_time < (config.observe_delay MINUTES))) // INF, задержка обсерверов ~bear1ake
 				to_chat(src, SPAN_WARNING("Извините, вам следует подождать [config.observe_delay] минут со старта раунда чтобы перейти в режим наблюдателя."))
 				to_chat(src, SPAN_NOTICE("Проверьте таймер \"Round Duration\" во вкладке Status чтобы узнать сколько прошло времени."))
-				return */
+				return
 
 		if(!config.respawn_delay || client.holder || alert(src,"Вы уверены, что хотите наблюдать? Вам придется ждать [OBSERV_SPAWN_DELAY] минут прежде чем получить возможность респавна.","Player Setup","Да","Нет") == "Да")
 			if(!client) return 1
@@ -141,10 +141,10 @@
 					to_chat(src, SPAN_WARNING("Вы не можете зайти в раунд за призрака, поскольку это было запрещено настройками сервера."))
 					return 1
 
-/*				if((world.time - round_start_time < (config.observe_delay MINUTES))) // INF, задержка обсерверов ~bear1ake
+				if((world.time - round_start_time < (config.observe_delay MINUTES))) // INF, задержка обсерверов ~bear1ake
 					to_chat(src, SPAN_WARNING("Извините, вам следует подождать [config.observe_delay] минут со старта раунда чтобы перейти в режим наблюдателя."))
 					to_chat(src, SPAN_NOTICE("Проверьте таймер \"Round Duration\" во вкладке Status чтобы узнать сколько прошло времени."))
-					return 1 */
+					return 1
 
 			var/mob/observer/ghost/observer = new()
 
