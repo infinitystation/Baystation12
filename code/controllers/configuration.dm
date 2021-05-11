@@ -59,6 +59,7 @@ var/list/gamemode_cache = list()
 	var/hostedby = null
 	var/respawn_delay = 30 //An observer must wait this many minutes before being able to return to the main menu
 	var/respawn_menu_delay = 0 //An observer that has returned to the main menu must wait this many minutes before rejoining
+	var/observe_delay = 0
 	var/guest_jobban = 1
 	var/usewhitelist = 0
 	var/kick_inactive = 0				//force disconnect for inactive players after this many minutes, if non-0
@@ -424,6 +425,10 @@ var/list/gamemode_cache = list()
 				if ("respawn_menu_delay")
 					config.respawn_menu_delay = text2num(value)
 					config.respawn_menu_delay = config.respawn_menu_delay > 0 ? config.respawn_menu_delay : 0
+
+				if ("observer_delay")
+					config.observe_delay = text2num(value)
+					config.observe_delay = config.observe_delay > 0 ? config.observe_delay : 0
 
 				if ("servername")
 					config.server_name = value

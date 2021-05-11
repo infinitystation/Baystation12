@@ -10,7 +10,6 @@
 
 	var/start_time
 	var/time_remaining
-	var/time_set
 	var/status = VOTE_STATUS_PREVOTE
 
 	var/list/result                // The results; format is list(choice = votes).
@@ -21,9 +20,7 @@
 	var/win_x = 450
 	var/win_y = 740                // Vote window size.
 
-	var/show_leading = 0
 	var/manual_allowed = 1         // Whether humans can start it.
-	var/percent_votes = FALSE      // Total votes in current choose. If FALSE - shows total num of voted people for this choose.
 
 //Expected to be run immediately after creation; a false return means that the vote could not be run and the datum will be deleted.
 /datum/vote/proc/setup(mob/creator, automatic)
@@ -108,7 +105,7 @@
 
 	var/text = get_result_announcement()
 	log_vote(text)
-	to_world("<font color='purple'>[text]</font>")
+	to_world("<font color='purple'>[text]</font>")	
 
 	if(!(result[result[1]] > 0))
 		return 1
@@ -167,7 +164,7 @@
 /datum/vote/Process()
 	if(status == VOTE_STATUS_ACTIVE)
 		if(time_remaining > 0)
-			time_remaining = round((start_time + time_set - world.time)/10)
+			time_remaining = round((start_time + config.vote_period - world.time)/10)
 			return VOTE_PROCESS_ONGOING
 		else
 			status = VOTE_STATUS_COMPLETE
@@ -205,7 +202,7 @@
 		if (additional_text[choice])
 			. += "[additional_text[choice]]" //Note lack of cell wrapper, to allow for dynamic formatting.
 		. += "</tr>"
-	. += "</table></div><hr>"
+	. += "</table><hr>"
 
 /datum/vote/Topic(href, href_list, hsrc)
 	var/mob/user = usr

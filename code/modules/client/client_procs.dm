@@ -247,8 +247,8 @@
 		src.control_freak = 0 //Devs need 0 for profiler access
 
 //[INF]
-	if(!istype(mob, world.mob))
-		prefs?.apply_post_login_preferences()
+	// if(!istype(mob, world.mob)) // Префы и так загружены. Зачем? ~bear1ake
+	prefs?.apply_post_login_preferences()
 //[/INF]
 
 	//////////////
@@ -433,7 +433,7 @@ client/verb/character_setup()
 	set name = "Character Setup"
 	set category = "OOC"
 	if(prefs)
-		prefs.ShowChoices(usr)
+		prefs.open_setup_window(usr)
 
 /client/proc/apply_fps(var/client_fps)
 	if(world.byond_version >= 511 && byond_version >= 511 && client_fps >= CLIENT_MIN_FPS && client_fps <= CLIENT_MAX_FPS)
