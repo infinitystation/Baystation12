@@ -1,12 +1,12 @@
-/obj/machinery/media/jukebox/old/futuristic
+/obj/machinery/jukebox/old/futuristic
 	icon = 'infinity/icons/obj/jukebox.dmi'
 	icon_state = "jukeboxfut-nopower"
 /*	state_base = "jukeboxfut"
 
-/obj/machinery/media/jukebox
+/obj/machinery/jukebox
 	var/obj/item/music_tape/tape
 
-/obj/machinery/media/jukebox/verb/eject()
+/obj/machinery/jukebox/verb/eject()
 	set name = "Eject"
 	set category = "Object"
 	set src in oview(1)
@@ -26,4 +26,4 @@
 
 		tape = null
 		visible_message(SPAN_NOTICE("[usr] eject \a [tape] from \the [src]."))
-		verbs -= /obj/machinery/media/jukebox/verb/eject */
+		verbs -= /obj/machinery/jukebox/verb/eject */

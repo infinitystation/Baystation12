@@ -80,7 +80,7 @@
 			D.forceMove(src)
 			tape = D
 			tracks += tape.track
-			verbs += /obj/machinery/media/jukebox/verb/eject
+			verbs += /obj/machinery/jukebox/verb/eject
 		return */
 	// INF@CODE - END 
 

@@ -69,7 +69,7 @@
 	dir = 1;
 	icon_state = "bulb_map"
 	},
-/obj/machinery/media/jukebox/old,
+/obj/machinery/jukebox/old,
 /turf/simulated/floor/wood/walnut,
 /area/ship/scrap)
 "ao" = (

@@ -918,7 +918,7 @@
 /turf/simulated/floor/tiled/skrell,
 /area/ship/skrellscoutship/crew/rec)
 "ce" = (
-/obj/machinery/media/jukebox{
+/obj/machinery/jukebox{
 	pixel_x = -8;
 	pixel_y = 8
 	},

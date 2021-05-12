@@ -43,7 +43,7 @@
 			target_amount = 1
 			loot = "a captain's revolver"
 		if(2)
-			target = /obj/machinery/media/jukebox
+			target = /obj/machinery/jukebox
 			target_amount = 1
 			loot = "a mediatronic jukebox"
 		if(3)

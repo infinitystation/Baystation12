@@ -6298,7 +6298,7 @@
 	},
 /area/tdome/tdomeadmin)
 "aBx" = (
-/obj/machinery/media/jukebox/old,
+/obj/machinery/jukebox/old,
 /turf/unsimulated/floor{
 	dir = 8;
 	icon_state = "wood"

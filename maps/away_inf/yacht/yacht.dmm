@@ -288,7 +288,7 @@
 /area/yacht/living)
 "aL" = (
 /obj/structure/table/marble,
-/obj/machinery/media/jukebox,
+/obj/machinery/jukebox,
 /turf/simulated/floor/wood/walnut,
 /area/yacht/living)
 "aM" = (
