@@ -212,6 +212,7 @@ datum/preferences
 
 		if (href_list["details"])
 			return 1
+		open_setup_window(usr) // INF, у нас имеются некоторые проблемы с браузером. Без костыля не обойтись ~bear1ake
 	else if(href_list["resetslot"])
 		if(real_name != input("Это действие удалит содержимое слота - персонажа. Введите имя персонажа, чтобы подтвердить."))
 			return 0
