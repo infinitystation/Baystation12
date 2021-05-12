@@ -42,7 +42,7 @@ GLOBAL_LIST_EMPTY(music_players)
 	var/broken
 	var/panel = PANEL_CLOSED
 
-	var/obj/item/cell/device/cell = /obj/item/cell/device
+	var/obj/item/cell/device/cell = /obj/item/cell/device/high
 	var/power_usage = 250
 	var/obj/item/music_tape/tape = null
 
