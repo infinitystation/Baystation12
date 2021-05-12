@@ -3321,6 +3321,7 @@
 #include "infinity\code\game\machinery\datacapsule\battle_data.dm"
 #include "infinity\code\game\machinery\doors\airlocks.dm"
 #include "infinity\code\game\machinery\doors\blast.dm"
+#include "infinity\code\game\machinery\doors\doors_and_milti_tile.dm"
 #include "infinity\code\game\machinery\doors\firedoor_assembly.dm"
 #include "infinity\code\game\machinery\doors\firedoor_border.dm"
 #include "infinity\code\game\machinery\doors\simple.dm"

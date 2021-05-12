@@ -10,8 +10,7 @@ var/list/admin_verbs_default = list(
 
 var/list/admin_verbs_admin = list(
 	/datum/admins/proc/show_player_panel,	//shows an interface for individual players, with various links (links require additional flags,
-//INF unused	/client/proc/player_panel,
-//INF	/client/proc/player_panel_new,		//shows an interface for all players, with links to various panels,
+	/client/proc/player_panel,
 	/client/proc/invisimin,				//allows our mob to go invisible/visible,
 	/datum/admins/proc/show_game_mode,  //Configuration window for the current game mode.,
 	/datum/admins/proc/force_mode_latespawn, //Force the mode to try a latespawn proc,
@@ -169,7 +168,6 @@ var/list/admin_verbs_server = list(
 	// /client/proc/check_customitem_activity,
 	/client/proc/update_server,
 	/client/proc/cmd_toggle_admin_help,
-//merge 02 05 2021 ~bear1ake
 	/client/proc/observe_delay, 
 	/datum/admins/proc/toggleevent,
 	/client/proc/cmd_set_station_date,
