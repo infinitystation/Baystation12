@@ -34,9 +34,9 @@
 		client.playtitlemusic()
 		client.prefs?.apply_post_login_preferences() //inf
 		maybe_send_staffwarns("connected as new player")
-		if(client.get_preference_value(/datum/client_preference/goonchat) == GLOB.PREF_YES)
+/* inf-dev		if(client.get_preference_value(/datum/client_preference/goonchat) == GLOB.PREF_YES)
 			client.chatOutput.start()
-/* inf-dev
+
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
 	var/decl/security_level/SL = security_state.current_security_level
 	var/alert_desc = ""
