@@ -10,8 +10,7 @@
 	maxHealth = 500
 	health = 500
 	harm_intent_damage = 5
-//	melee_damage_lower = 40 // Нужно /obj/item/natural_weapon ~bear1ake
-//	melee_damage_upper = 60
+	natural_weapon = /obj/item/natural_weapon/bite/strong
 	turns_per_move = 2
 	move_to_delay = 2
 	attack_same = 1
@@ -21,6 +20,9 @@
 	mob_size = MOB_LARGE
 	break_stuff_probability = 50
 	meat_type = /obj/item/reagent_containers/food/snacks/fish/carp
+
+/obj/item/natural_weapon/bite/megacarp
+	force = 50
 
 /mob/living/simple_animal/hostile/aquatic/deathsquid
 	name = "giant squid"
@@ -35,8 +37,7 @@
 	maxHealth = 1500
 	health = 1500
 	harm_intent_damage = 5
-//	melee_damage_lower = 40 // Нужно /obj/item/natural_weapon ~bear1ake
-//	melee_damage_upper = 80
+	natural_weapon = /obj/item/natural_weapon/bite/deathsquid
 	turns_per_move = 3
 	move_to_delay = 1
 	attack_same = 0
@@ -45,3 +46,6 @@
 	pixel_y = -32
 	mob_size = MOB_LARGE
 	break_stuff_probability = 80
+
+/obj/item/natural_weapon/bite/deathsquid
+	force = 60

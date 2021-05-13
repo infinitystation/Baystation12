@@ -27,10 +27,7 @@
 	health = 20
 	maxHealth = 20
 
-//	attacktext = "bitten" // Нужно /obj/item/natural_weapon ~bear1ake
-//	attack_sound = 'sound/weapons/bite.ogg'
-//	melee_damage_lower = 5
-//	melee_damage_upper = 6
+	natural_weapon = /obj/item/natural_weapon/bite/snake
 
 	response_help = "pets"
 	response_disarm = "shoos"
@@ -46,9 +43,13 @@
 	var/list/target_types = list(/mob/living/simple_animal/mouse, /mob/living/carbon/alien/diona)
 	var/list/consumable_types = list(/mob/living/simple_animal/mouse)
 
+/obj/item/natural_weapon/bite/snake
+	force = 5
+	hitsound = 'sound/weapons/bite.ogg'
+
 /mob/living/simple_animal/hostile/retaliate/poison/snake/Initialize()
 	. = ..()
-	
+
 	verbs |= /mob/living/proc/ventcrawl
 	verbs |= /mob/living/proc/hide
 
@@ -73,7 +74,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/poison/snake/AttackingTarget()
 	if(is_type_in_list(target_mob, consumable_types))
-		visible_message("<span class='notice'>[name] consumes [target_mob] in a single gulp!</span>", "<span class='notice'>You consume [target_mob] in a single gulp!</span>")
+		visible_message(SPAN_NOTICE("[name] consumes [target_mob] in a single gulp!"), SPAN_NOTICE("You consume [target_mob] in a single gulp!"))
 		adjustBruteLoss(-2 * target_mob.mob_size)
 		QDEL_NULL(target_mob)
 	else
@@ -104,12 +105,12 @@
 	desc = "A slithery snake. These legless reptiles are the bane of mice and adventurers alike. Seems to be neutral for everyone."
 	prepared_type = /mob/living/simple_animal/hostile/retaliate/poison/snake/imprinted
 
-/obj/item/holder/snake/prepared/update_state()	
+/obj/item/holder/snake/prepared/update_state()
 	for(var/mob/M in contents)
 		if(M.name != "snake")
 			M.SetName(name)
 			M.real_name = name
-	
+
 	..()
 
 /obj/item/holder/snake/prepared/safe
