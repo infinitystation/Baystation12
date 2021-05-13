@@ -1,7 +1,6 @@
 /obj/machinery/jukebox/old/futuristic
 	icon = 'infinity/icons/obj/jukebox.dmi'
-	icon_state = "jukeboxfut-nopower"
-/*	state_base = "jukeboxfut"
+	icon_state = "jukeboxfut"
 
 /obj/machinery/jukebox
 	var/obj/item/music_tape/tape
@@ -15,15 +14,16 @@
 		return
 
 	if(tape)
-		StopPlaying()
-		current_track = null
-		for(var/datum/track/T in tracks)
+		jukebox.Stop()
+		for(var/jukebox_track/T in jukebox.tracks)
 			if(T == tape.track)
-				tracks -= T
+				jukebox.tracks -= T
+				jukebox.Last()
 
 		if(!usr.put_in_hands(tape))
 			tape.dropInto(loc)
 
 		tape = null
 		visible_message(SPAN_NOTICE("[usr] eject \a [tape] from \the [src]."))
-		verbs -= /obj/machinery/jukebox/verb/eject */
+		verbs -= /obj/machinery/jukebox/verb/eject
+		jukebox.ui_interact(usr)

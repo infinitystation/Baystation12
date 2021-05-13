@@ -21,6 +21,7 @@
 	queue_icon_update()
 
 /obj/machinery/jukebox/Destroy()
+	tape?.dropInto(loc) // INF, негоже лишаться дорогой для игрока кассеты ~bear1ake
 	QDEL_NULL(jukebox)
 	. = ..()
 
@@ -65,7 +66,7 @@
 		return
 
 	// INF@CODE - START
-/*	if(istype(I, /obj/item/music_tape))
+	if(istype(I, /obj/item/music_tape))
 		var/obj/item/music_tape/D = I
 		if(tape)
 			to_chat(user, "<span class='notice'>There is already \a [tape] inside.</span>")
@@ -79,9 +80,9 @@
 			visible_message("<span class='notice'>[usr] insert \a [tape] into \the [src].</span>")
 			D.forceMove(src)
 			tape = D
-			tracks += tape.track
+			jukebox.tracks += tape.track
 			verbs += /obj/machinery/jukebox/verb/eject
-		return */
+		return
 	// INF@CODE - END 
 
 	return ..()
