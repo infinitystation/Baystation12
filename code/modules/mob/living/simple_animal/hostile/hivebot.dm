@@ -7,7 +7,7 @@
 	icon_dead = "basic"
 	health = 55
 	maxHealth = 55
-	natural_weapon = /obj/item/natural_weapon/drone_slicer
+	natural_weapon = /obj/item/natural_weapon/hivebot
 	projectiletype = /obj/item/projectile/beam/smalllaser
 	faction = "hivebot"
 	min_gas = null
@@ -26,6 +26,15 @@
 	skin_material = null
 	skin_amount =   0
 
+/obj/item/natural_weapon/hivebot
+	name = "sharpened leg"
+	gender = NEUTER
+	attack_verb = list("sliced")
+	force = 5
+	damtype = BRUTE
+	edge = TRUE
+	show_in_message = TRUE
+
 //[inf]
 /mob/living/simple_animal/hostile/hivebot/emp_act(severity)
 	health -= rand(10,25) * (severity + 1)
@@ -37,8 +46,6 @@
 	icon_state = "smallbot"
 	icon_living = "smallbot"
 	icon_dead = "smallbot"
-//	melee_damage_lower = 3 // Нужно /obj/item/natural_weapon ~bear1ake
-//	melee_damage_upper = 5
 	ranged = 1
 	speed = 7
 	attack_delay = 6 //inf
@@ -47,8 +54,6 @@
 	icon_state = "smallbot"
 	icon_living = "smallbot"
 	icon_dead = "smallbot"
-//	melee_damage_lower = 3 // Нужно /obj/item/natural_weapon ~bear1ake
-//	melee_damage_upper = 5
 	ranged = 1
 	rapid = 1
 	attack_delay = 6
@@ -59,10 +64,9 @@
 	icon_state = "bigbot"
 	icon_living = "bigbot"
 	icon_dead = "bigbot"
+	natural_weapon = /obj/item/natural_weapon/hivebot/strong
 	health = 150
 	maxHealth = 150
-//	melee_damage_lower = 20 // Нужно /obj/item/natural_weapon ~bear1ake
-//	melee_damage_upper = 25
 	ranged = 1
 	can_escape = 1
 	natural_armor = list(
@@ -74,6 +78,9 @@
 	speed = 3
 //	var/resources = 0
 //	var/max_resources = 10
+
+/obj/item/natural_weapon/hivebot/strong
+	force = 15
 
 /mob/living/simple_animal/hostile/hivebot/CanPass(atom/movable/O)
 	if(istype(O, projectiletype))//Allows for swarmers to fight as a group without wasting their shots hitting each other
@@ -208,7 +215,7 @@ The megabot
 /obj/item/natural_weapon/circular_saw
 	name = "giant circular saw"
 	attack_verb = list("sawed", "ripped")
-	force = 15
+	force = 30
 	sharp = TRUE
 	edge = TRUE
 
