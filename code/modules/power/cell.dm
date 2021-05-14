@@ -146,7 +146,7 @@
 
 /obj/item/cell/device/standard
 	name = "standard device power cell"
-	maxcharge = 25
+	maxcharge = 100 //inf, was: maxcharge = 25
 
 /obj/item/cell/device/high
 	name = "advanced device power cell"

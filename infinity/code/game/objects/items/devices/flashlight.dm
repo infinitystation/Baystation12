@@ -1,5 +1,5 @@
 /obj/item/device/flashlight
-	var/suitable_cell = /obj/item/cell/device
+	var/suitable_cell = /obj/item/cell/device/standard
 	var/obj/item/cell/cell
 	var/power_cost = 0.2
 
