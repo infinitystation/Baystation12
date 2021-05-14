@@ -211,6 +211,12 @@
 			if(!whitelist_lookup(SPECIES_FBP, client.ckey) && client.prefs.species != SPECIES_IPC)
 				to_chat(usr, "Нельзя зайти за ППТ без вайтлиста.")
 				return 0
+		
+		for(var/M in client.prefs.body_markings)
+			var/datum/sprite_accessory/SA = GLOB.body_marking_styles_list[M]
+			if(istype(SA, /datum/sprite_accessory/marking/booster) && (client.DonateData?.level < 4))
+				to_chat(usr, "Нельзя зайти за бустера без соответствующего уровня доната.")
+				return 0
 //[/INF]
 
 		AttemptLateSpawn(job, client.prefs.spawnpoint)
@@ -527,6 +533,14 @@
 			to_chat(src, "Нельзя зайти за ППТ без вайтлиста.")
 			spawning = 0
 			return null
+
+	for(var/M in client.prefs.body_markings)
+		var/datum/sprite_accessory/S = GLOB.body_marking_styles_list[M]
+		if(istype(S, /datum/sprite_accessory/marking/booster) && (client.DonateData?.level < 4))
+			to_chat(src, "Нельзя зайти за бустера без соответствующего уровня доната.")
+			spawning = 0
+			return null
+
 	spawn(1)
 		if(!spawning)
 			new_player_panel()
