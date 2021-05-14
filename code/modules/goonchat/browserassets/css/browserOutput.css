@@ -286,7 +286,11 @@ em						{font-style: normal;	font-weight: bold;}
 /* Admin: Channels */
 .mod_channel			{color: #735638;	font-weight: bold;}
 .mod_channel .admin		{color: #b82e00;	font-weight: bold;}
-.admin_channel			{color: #9611d4;	font-weight: bold;}
+.admin_channel			{color: #ff5097;	font-weight: bold;}
+
+.staff_channel			{color: #a66300;	font-weight: bold;}
+.staff_channel .admin	{color: #b82e00;	font-weight: bold;}
+.staff_channel .developer {color: #1b521f;	font-weight: bold;}
 
 /* Radio: Misc */
 .deadsay				{color: #e2c1ff}
@@ -340,6 +344,10 @@ h1.alert, h2.alert		{color: #a4bad6;}
 .alium					{color: #00ff00;}
 .cult					{color: #aa1c1c;}
 
+.cultannounce			{color: #800080; font-style: italic; font-size: 175%;}
+.mfauna					{color: #884422; font-weight: bold; font-size: 125%;}
+.antagdesc				{color: #ff0033}
+
 /* Languages */
 .alien					{color: #855d85;}
 .changeling				{color: #059223;	font-style: italic;}
@@ -363,6 +371,8 @@ h1.alert, h2.alert		{color: #a4bad6;}
 .iberian				{color: #be4ac9;}
 
 .interface				{color: #750e75;}
+
+.german					{color: #4d5d53;}
 
 .good                   {color: #4f7529; font-weight: bold;}
 .bad                    {color: #ee0000; font-weight: bold;}
