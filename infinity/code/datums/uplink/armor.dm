@@ -7,13 +7,13 @@
 
 /datum/uplink_item/item/armor
 	category = /datum/uplink_category/armor
-
-/* /datum/uplink_item/item/armor/heavy_armor
+/* 
+/datum/uplink_item/item/armor/heavy_armor
 	name = "Heavy Armor Vest and Helmet"
 	item_cost = 30
 	antag_costs = list(MODE_MERCENARY = 20)
 	path = /obj/item/storage/backpack/dufflebag/syndie_kit/armor
-
+ */
 /datum/uplink_item/item/armor/space_suit
 	name = "Space Combat Suit"
 	item_cost = 50
@@ -30,7 +30,7 @@
 	name = "Crimson heavy combat RIG"
 	item_cost = 200
 	antag_roles = list(MODE_MERCENARY)
-	path = /obj/item/rig/merc/heavy/empty*/
+	path = /obj/item/rig/merc/heavy/empty
 
 /datum/uplink_item/item/armor/cheap_space
 	name = "Cheap Space Suit"

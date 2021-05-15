@@ -19,8 +19,7 @@
 	maxHealth = 750
 	health = 750
 	harm_intent_damage = 0
-//	melee_damage_lower = 20 // Нужно /obj/item/natural_weapon ~bear1ake
-//	melee_damage_upper = 30
+	natural_weapon = /obj/item/natural_weapon/claws/strong
 	mob_size = 25
 	environment_smash = 2
 	break_stuff_probability = 85

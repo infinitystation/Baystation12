@@ -211,6 +211,12 @@
 			if(!whitelist_lookup(SPECIES_FBP, client.ckey) && client.prefs.species != SPECIES_IPC)
 				to_chat(usr, "Нельзя зайти за ППТ без вайтлиста.")
 				return 0
+		
+		for(var/M in client.prefs.body_markings)
+			var/datum/sprite_accessory/SA = GLOB.body_marking_styles_list[M]
+			if(istype(SA, /datum/sprite_accessory/marking/booster) && (client.DonateData?.level < 4))
+				to_chat(usr, "Нельзя зайти за бустера без соответствующего уровня доната.")
+				return 0
 //[/INF]
 
 		AttemptLateSpawn(job, client.prefs.spawnpoint)
@@ -219,6 +225,10 @@
 	if(!ready && href_list["preference"])
 		if(client)
 			client.prefs.process_link(src, href_list)
+
+	if(href_list["invalid_jobs"])
+		show_invalid_jobs = !show_invalid_jobs
+		LateChoices()
 
 	else if(!href_list["late_join"])
 		if(client)
@@ -523,6 +533,14 @@
 			to_chat(src, "Нельзя зайти за ППТ без вайтлиста.")
 			spawning = 0
 			return null
+
+	for(var/M in client.prefs.body_markings)
+		var/datum/sprite_accessory/S = GLOB.body_marking_styles_list[M]
+		if(istype(S, /datum/sprite_accessory/marking/booster) && (client.DonateData?.level < 4))
+			to_chat(src, "Нельзя зайти за бустера без соответствующего уровня доната.")
+			spawning = 0
+			return null
+
 	spawn(1)
 		if(!spawning)
 			new_player_panel()
@@ -587,10 +605,7 @@
 	new_character.regenerate_icons()
 
 	new_character.key = key		//Manually transfer the key to log them in
-//[INF]
-	if(GAME_STATE == (RUNLEVEL_LOBBY || RUNLEVEL_SETUP))
-		new_character.Sleeping(15) //should be enough to remove I SAW NAKED MEN!
-//[/INF]
+
 	return new_character
 
 /mob/new_player/proc/ViewManifest()

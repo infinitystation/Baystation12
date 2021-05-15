@@ -14,14 +14,18 @@
 	can_escape = 1
 
 	harm_intent_damage = 8
-//	melee_damage_lower = 30 // Нужно /obj/item/natural_weapon ~bear1ake
-//	melee_damage_upper = 35
-//	attacktext = "evisceratds"
-//	attack_sound = 'sound/weapons/slash.ogg'
+	natural_weapon = /obj/item/natural_weapon/hive_alien_defender
+
 	var/attack_mode = FALSE
 
 	var/transformation_delay_min = 4
 	var/transformation_delay_max = 8
+
+/obj/item/natural_weapon/hive_alien_defender
+	force = 35  // this is hive defender. Him must to be dangerous ~ SidVeld
+	hitsound = 'sound/weapons/slash.ogg'
+	attack_verb = list("sliced", "cutted", "slashed")
+	show_in_message = TRUE
 
 /mob/living/simple_animal/hostile/hive_alien/defender/proc/mode_movement() //Slightly broken, but it's alien and unpredictable so w/e
 	set waitfor = 0

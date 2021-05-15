@@ -901,7 +901,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/salvage/canteen)
 "bH" = (
-/obj/machinery/media/jukebox/old,
+/obj/machinery/jukebox/old,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
 	},

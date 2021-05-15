@@ -119,6 +119,11 @@
 		"volume" = volume,
 		"tracks" = data_tracks
 	)
+	// [INF] Кнопка извлечения
+	if(istype(owner, /obj/machinery/jukebox))
+		var/obj/machinery/jukebox/J = owner
+		data["tape"] = J.tape
+	// [/INF]
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
 		ui = new (user, src, ui_key, template, ui_title, ui_width, ui_height, state = state)
@@ -134,6 +139,12 @@
 		if ("play") Play()
 		if ("volume") Volume("[href_list["dat"]]")
 		if ("track") Track("[href_list["dat"]]")
+		//[INF]
+		if ("eject")
+			if(istype(owner, /obj/machinery/jukebox))
+				var/obj/machinery/jukebox/J = owner
+				J.eject()
+		//[/INF]
 	return TOPIC_REFRESH
 
 

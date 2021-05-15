@@ -2574,7 +2574,7 @@
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
-/obj/machinery/media/jukebox/old/futuristic,
+/obj/machinery/jukebox/old/futuristic,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
 "fe" = (

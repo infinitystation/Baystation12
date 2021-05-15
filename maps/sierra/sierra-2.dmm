@@ -3720,7 +3720,7 @@
 	pixel_y = -5;
 	req_access = list("ACCESS_BAR")
 	},
-/obj/machinery/media/jukebox/old,
+/obj/machinery/jukebox/old,
 /obj/random/date_based/christmas/xmaslights,
 /obj/machinery/light/led/small,
 /obj/structure/disposalpipe/segment,
@@ -15322,6 +15322,7 @@
 	dir = 6
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/tele_pad,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/teleporter/seconddeck)
 "aBR" = (
