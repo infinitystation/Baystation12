@@ -247,7 +247,7 @@
 		src.control_freak = 0 //Devs need 0 for profiler access
 
 //[INF]
-	if(get_preference_value(/datum/client_preference/goonchat) == GLOB.PREF_YES) // На случай перезахода ~bear1ake
+	if( (get_preference_value(/datum/client_preference/goonchat) == GLOB.PREF_YES) && (!istype(mob, /mob/new_player)) ) // На случай перезахода ~bear1ake
 		chatOutput.start()
 
 	if(!istype(mob, world.mob))
