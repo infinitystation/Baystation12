@@ -1,8 +1,10 @@
 Маппинг:
-  - any['./**/*.dmm']
+  - "**/*.dmm"
 
 Спрайты:
-  - any['./**/*.dmi', './**/*.png']
+  - "**/*.dmi"
+  - "**/*.png"
 
 Кастомка:
-  - any['infinity/custom_items/**/*', 'infinity/customs/**/*']
+  - "infinity/custom_items/**/*"
+  - "infinity/customs/**/*"
