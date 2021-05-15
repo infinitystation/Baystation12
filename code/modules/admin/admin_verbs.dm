@@ -522,7 +522,7 @@ var/list/admin_verbs_xeno = list(
 /client/proc/colorooc()
 	set category = "Fun"
 	set name = "OOC Text Color"
-	if(!check_rights(R_FUN))
+	if(!can_select_ooc_color(src)) // INF, was	if(!check_rights(R_FUN))
 		return
 
 	var/client/C
