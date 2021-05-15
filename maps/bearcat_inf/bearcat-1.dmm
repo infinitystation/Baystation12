@@ -16,7 +16,6 @@
 "ad" = (
 /obj/structure/cable{
 	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
