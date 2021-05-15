@@ -1,0 +1,8 @@
+Маппинг:
+  - *.dmm
+
+Спрайты:
+  - any['*.dmi', '*.png']
+
+Кастомка:
+  - any['infinity/custom_items/*', 'infinity/customs/*']
