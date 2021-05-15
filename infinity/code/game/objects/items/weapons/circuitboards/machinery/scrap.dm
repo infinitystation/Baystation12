@@ -5,7 +5,7 @@
 /obj/item/stock_parts/circuitboard/crusher
 	name = T_BOARD("crusher")
 	board_type = "machine"
-	origin_tech = list(TECH_ENGINEERING = 3, TECH_MATERIALS = 3)
+	origin_tech = list(TECH_ENGINEERING = 3, TECH_MATERIAL = 3)
 	build_path = /obj/machinery/crusher_base
 	req_components = list(
 		/obj/item/stock_parts/matter_bin = 3,
