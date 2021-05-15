@@ -386,6 +386,7 @@ BLIND     // can't see anything
 	wearer = H //TODO clean this when magboots are cleaned
 	return 1
 */
+// [INF]
 	if(istype(H.gloves, /obj/item/clothing/ring) || istype(H.gloves, /obj/item/clothing/accessory_hand))
 		ring = H.gloves
 		if(!ring.undergloves)
@@ -406,7 +407,7 @@ BLIND     // can't see anything
 		to_chat(user, "You slip \the [src] on over \the [ring].")
 	wearer = H //TODO clean this when magboots are cleaned
 	return 1
-
+// [/INF]
 
 /obj/item/clothing/gloves/dropped()
 	..()
