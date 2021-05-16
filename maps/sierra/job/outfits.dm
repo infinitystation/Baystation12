@@ -99,7 +99,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	id_types = list(/obj/item/card/id/sierra/silver/engineering)
 //	pda_type = /obj/item/modular_computer/pda/heads/ce
 	pda_slot = slot_l_store
-	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
+	flags = OUTFIT_FLAGS_JOB_DEFAULT | OUTFIT_EXTENDED_SURVIVAL
 
 /decl/hierarchy/outfit/job/sierra/crew/command/chief_engineer/New()
 	..()
@@ -143,7 +143,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	l_ear = /obj/item/device/radio/headset/headset_eng
 //	pda_type = /obj/item/modular_computer/pda/engineering
 	pda_slot = slot_l_store
-	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
+	flags = OUTFIT_FLAGS_JOB_DEFAULT | OUTFIT_EXTENDED_SURVIVAL
 
 /decl/hierarchy/outfit/job/sierra/crew/engineering/New()
 	..()
@@ -265,7 +265,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_hand = /obj/item/storage/firstaid/adv
 	belt = /obj/item/storage/belt/medical/emt
-	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
+	flags = OUTFIT_FLAGS_JOB_DEFAULT | OUTFIT_EXTENDED_SURVIVAL
 
 /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/nurse
 	name = OUTFIT_JOB_NAME("Nurse - Sierra")
@@ -345,7 +345,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	shoes = /obj/item/clothing/shoes/workboots/alt
 	id_types = list(/obj/item/card/id/sierra/crew/supply/mining)
 	l_ear = /obj/item/device/radio/headset/headset_mining
-	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
+	flags = OUTFIT_FLAGS_JOB_DEFAULT | OUTFIT_EXTENDED_SURVIVAL
 
 /decl/hierarchy/outfit/job/sierra/crew/supply/assistant
 	name = OUTFIT_JOB_NAME("Cargo Assistant")

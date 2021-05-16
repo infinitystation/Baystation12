@@ -260,7 +260,7 @@
 	r_hand = null
 	belt = /obj/item/storage/belt/utility/full
 	id_types = list(/obj/item/card/id/engineering/head)
-	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
+	flags = OUTFIT_FLAGS_JOB_DEFAULT | OUTFIT_EXTENDED_SURVIVAL
 
 /decl/hierarchy/outfit/job/bearcat/chief_engineer/New()
 	..()
@@ -361,7 +361,7 @@
 /decl/hierarchy/outfit/job/bearcat/hand/engine
 	name = BEARCAT_OUTFIT_JOB_NAME("Junior Engineer")
 	head = /obj/item/clothing/head/hardhat
-	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
+	flags = OUTFIT_FLAGS_JOB_DEFAULT | OUTFIT_EXTENDED_SURVIVAL
 
 /decl/hierarchy/outfit/job/bearcat/hand/engine/pre_equip(mob/living/carbon/human/H)
 	..()
