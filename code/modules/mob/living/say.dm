@@ -389,9 +389,9 @@ proc/get_radio_key_from_channel(var/channel)
 //	flick_overlay(speech_bubble, speech_bubble_recipients, 30) inf-dev
 	//[INF]
 	INVOKE_ASYNC(GLOBAL_PROC, .proc/animate_speech_bubble, speech_bubble, speech_bubble_recipients | eavesdroppers, 30)
-	INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, message, speaking, italics, speech_bubble_recipients, 30)
+	INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, message, speaking, italics, speech_bubble_recipients)
 	if(length(eavesdroppers))
-		INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, stars(message), speaking, italics, eavesdroppers, 30)
+		INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, stars(message), speaking, italics, eavesdroppers)
 	//[/INF]
 
 	if(whispering)
