@@ -323,13 +323,6 @@
 	starting_accessories = list(/obj/item/clothing/accessory/armorplate/tactical, /obj/item/clothing/accessory/storage/pouches/large/tan)
 
 /obj/item/clothing/suit/armor/pcarrier/merc
-// [INF]
-	name = "heavy plate carrier"
-	desc = "A heavy red and black plate carrier. It can be equipped with armor plates, but provides no protection of its own."
-	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
-	item_icons = list(slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi')
-	icon_state = "pcarrier_merc"
-// [/INF]
 	starting_accessories = list(/obj/item/clothing/accessory/armorplate/merc, /obj/item/clothing/accessory/armguards/merc, /obj/item/clothing/accessory/legguards/merc, /obj/item/clothing/accessory/storage/pouches)
 
 

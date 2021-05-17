@@ -152,12 +152,6 @@
 		energy = ARMOR_ENERGY_RESISTANT,
 		bomb = ARMOR_BOMB_PADDED
 		)
-// [INF]
-	icon_override = 'infinity/icons/mob/onmob/onmob_modular_armor.dmi'
-	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
-	accessory_icons = list(slot_tie_str = 'infinity/icons/mob/onmob/onmob_modular_armor.dmi',
-						   slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_modular_armor.dmi')
-// [/INF]
 
 /obj/item/clothing/accessory/armguards/riot
 	name = "riot arm guards"
@@ -244,12 +238,6 @@
 		energy = ARMOR_ENERGY_RESISTANT,
 		bomb = ARMOR_BOMB_PADDED
 		)
-// [INF]
-	icon_override = 'infinity/icons/mob/onmob/onmob_modular_armor.dmi'
-	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
-	accessory_icons = list(slot_tie_str = 'infinity/icons/mob/onmob/onmob_modular_armor.dmi',
-						   slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_modular_armor.dmi')
-// [/INF]
 
 /obj/item/clothing/accessory/legguards/riot
 	name = "riot leg guards"

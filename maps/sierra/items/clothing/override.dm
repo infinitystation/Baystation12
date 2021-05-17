@@ -29,6 +29,10 @@
  * =====
  */
 
+// I disable this bcs new helmet override in infinity\code\modules\clothing\head\helmet.dm
+// ~ SidVeld
+/*
 /obj/item/clothing/head/helmet/tactical
 	desc = "Reinforced headgear. Protects the head from impacts."
 	icon_state = "helmet"
+*/

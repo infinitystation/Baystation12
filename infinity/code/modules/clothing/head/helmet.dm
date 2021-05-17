@@ -47,3 +47,34 @@
 		slot_r_hand_str = 'icons/mob/onmob/items/righthand_hats.dmi'
 		)
 
+/obj/item/clothing/head/helmet/merc
+	name = "combat helmet"
+	desc = "A heavily reinforced helmet painted with red markings. Feels like it could take a lot of punishment."
+	icon_state = "helmet_merc"
+	icon = INF_SPRITE_OBJ_CLOTHING_HEAD
+	item_icons = list(slot_head_str = INF_SPRITE_ONMOB_CLOTHING_HEAD)
+	armor = list(
+		melee = ARMOR_MELEE_VERY_HIGH,
+		bullet = ARMOR_BALLISTIC_RIFLE,
+		laser = ARMOR_LASER_HANDGUNS,
+		energy = ARMOR_ENERGY_RESISTANT,
+		bomb = ARMOR_BOMB_PADDED
+		)
+	siemens_coefficient = 0.5
+	body_parts_covered = HEAD | FACE
+
+/obj/item/clothing/head/helmet/tactical
+	name = "tactical helmet"
+	desc = "A tan helmet made from advanced ceramic. Comfortable and robust."
+	icon_state = "helmet_tac"
+	icon = INF_SPRITE_OBJ_CLOTHING_HEAD
+	item_icons = list(slot_head_str = INF_SPRITE_ONMOB_CLOTHING_HEAD)
+	armor = list(
+		melee = ARMOR_MELEE_MAJOR,
+		bullet = ARMOR_BALLISTIC_RIFLE,
+		laser = ARMOR_LASER_HANDGUNS,
+		energy = ARMOR_ENERGY_RESISTANT,
+		bomb = ARMOR_BOMB_PADDED
+		)
+	siemens_coefficient = 0.6
+	body_parts_covered = HEAD | FACE
