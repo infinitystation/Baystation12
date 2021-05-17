@@ -64,7 +64,7 @@
 /datum/design/circuit/scrap_crusher
 	name = "crusher"
 	id = "crusher"
-	req_tech = list(TECH_ENGINEERING = 3, TECH_MATERIALS = 3, TECH_DATA = 3)
+	req_tech = list(TECH_ENGINEERING = 3, TECH_MATERIAL = 3, TECH_DATA = 3)
 	build_path = /obj/item/stock_parts/circuitboard/crusher
 	sort_string = "KCASA"
 
