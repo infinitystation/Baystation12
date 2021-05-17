@@ -1493,10 +1493,6 @@
 /area/maintenance/firstdeck/aftstarboard)
 "adk" = (
 /obj/structure/lattice,
-/obj/structure/cable{
-	d1 = 32;
-	icon_state = "32-1"
-	},
 /obj/structure/railing/mapped{
 	dir = 4
 	},
@@ -1504,6 +1500,7 @@
 	dir = 8
 	},
 /obj/structure/railing/mapped,
+/obj/structure/cable,
 /turf/simulated/open,
 /area/maintenance/firstdeck/aftstarboard)
 "adl" = (

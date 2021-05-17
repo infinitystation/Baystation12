@@ -26678,11 +26678,6 @@
 /area/rnd/xenobiology/level1)
 "aWz" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable/green{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
@@ -28746,11 +28741,6 @@
 /turf/simulated/floor/grass,
 /area/grove/theta)
 "bak" = (
-/obj/structure/cable{
-	d1 = 16;
-	d2 = 0;
-	icon_state = "16-0"
-	},
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
 	dir = 4
@@ -31210,20 +31200,6 @@
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/space)
-"bfn" = (
-/obj/effect/wallframe_spawn/reinforced/hull,
-/obj/machinery/door/firedoor,
-/obj/machinery/door/blast/regular{
-	dir = 4;
-	id_tag = "bridge_windows"
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating,
-/area/bridge/nano)
 "bfp" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -42557,7 +42533,7 @@ aam
 aam
 bjf
 rws
-bfn
+rws
 rws
 bjf
 aam
