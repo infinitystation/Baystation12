@@ -2466,9 +2466,7 @@
 	name = "Meteor Shielding";
 	opacity = 0
 	},
-/obj/structure/lattice,
-/obj/structure/catwalk,
-/turf/space,
+/turf/simulated/floor/airless,
 /area/yacht/bridge)
 "xT" = (
 /obj/structure/extinguisher_cabinet{
@@ -2641,9 +2639,7 @@
 	name = "Meteor Shielding";
 	opacity = 0
 	},
-/obj/structure/lattice,
-/obj/structure/catwalk,
-/turf/space,
+/turf/simulated/floor/airless,
 /area/yacht/living)
 "PY" = (
 /obj/machinery/pipedispenser,
