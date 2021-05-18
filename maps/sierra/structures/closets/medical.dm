@@ -16,6 +16,7 @@
 		/obj/item/device/radio/headset/heads/cmo,
 		/obj/item/device/radio/headset/heads/cmo/alt,
 		/obj/item/device/flash,
+		/obj/item/device/scanner/health,
 		/obj/item/clothing/suit/armor/pcarrier/light,
 		/obj/item/device/megaphone,
 		/obj/item/reagent_containers/hypospray/vial,
