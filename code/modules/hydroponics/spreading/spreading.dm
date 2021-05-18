@@ -23,9 +23,9 @@
 		log_and_message_admins("<span class='notice'>Event: Spacevines failed to find a viable turf.</span>")
 
 /obj/effect/dead_plant
-	anchored = 1
+	anchored = TRUE
 	opacity = 0
-	density = 0
+	density = FALSE
 	color = DEAD_PLANT_COLOUR
 
 /obj/effect/dead_plant/attack_hand()
@@ -37,7 +37,7 @@
 
 /obj/effect/vine
 	name = "vine"
-	anchored = 1
+	anchored = TRUE
 	icon = 'icons/obj/hydroponics_growing.dmi'
 	icon_state = ""
 	pass_flags = PASS_FLAG_TABLE
@@ -208,7 +208,7 @@
 	floor = 1
 	return 1
 
-/obj/effect/vine/attackby(var/obj/item/weapon/W, var/mob/user)
+/obj/effect/vine/attackby(var/obj/item/W, var/mob/user)
 	START_PROCESSING(SSvines, src)
 
 	if(W.edge && W.w_class < ITEM_SIZE_NORMAL && user.a_intent != I_HURT)
@@ -242,7 +242,7 @@
 		var/chop_time = (health/W.force) * 0.5 SECONDS
 		if(user.skill_check(SKILL_BOTANY, SKILL_ADEPT))
 			chop_time *= 0.5
-		if(do_after(user, chop_time, src, TRUE))
+		if(do_after(user, chop_time, src))
 			visible_message(SPAN_NOTICE("[user] chops down \the [src]."))
 			playsound(get_turf(src), W.hitsound, 100, 1)
 			die_off()

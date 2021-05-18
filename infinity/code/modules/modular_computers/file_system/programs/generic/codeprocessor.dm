@@ -34,7 +34,7 @@
 		F = create_file(filename, loaded_data, /datum/computer_file/data/text)
 		return !isnull(F)
 	var/datum/computer_file/data/backup = F.clone()
-	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = computer.get_component(PART_HDD)
+	var/obj/item/stock_parts/computer/hard_drive/HDD = computer.get_component(PART_HDD)
 	if(!HDD)
 		return
 	HDD.remove_file(F)
@@ -182,7 +182,7 @@
 
 	if(href_list["PRG_printfile"])
 		. = 1
-		var/obj/item/weapon/stock_parts/computer/nano_printer/P = computer.get_component(PART_PRINTER)
+		var/obj/item/stock_parts/computer/nano_printer/P = computer.get_component(PART_PRINTER)
 		if(!P)
 			error = "Missing Hardware: Your computer does not have the required hardware to complete this operation."
 			return 1
@@ -198,8 +198,8 @@
 	var/datum/computer_file/program/codeprocessor/PRG
 	PRG = program
 
-	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD
-	var/obj/item/weapon/stock_parts/computer/hard_drive/portable/RHDD
+	var/obj/item/stock_parts/computer/hard_drive/HDD
+	var/obj/item/stock_parts/computer/hard_drive/portable/RHDD
 	if(PRG.error)
 		data["error"] = PRG.error
 	if(PRG.browsing)

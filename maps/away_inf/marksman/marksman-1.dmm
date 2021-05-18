@@ -2480,7 +2480,7 @@
 	dir = 5
 	},
 /obj/structure/table/standard,
-/obj/item/weapon/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/mechanical,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 25
 	},
@@ -3026,7 +3026,7 @@
 /turf/simulated/floor,
 /area/ship/marksman/command/hangar)
 "fC" = (
-/obj/item/weapon/caution/cone,
+/obj/item/caution/cone,
 /turf/simulated/floor,
 /area/ship/marksman/command/hangar)
 "fD" = (
@@ -3041,7 +3041,7 @@
 /turf/simulated/wall/titanium,
 /area/albatros_hangar/start)
 "fG" = (
-/obj/item/weapon/caution/cone,
+/obj/item/caution/cone,
 /turf/simulated/floor,
 /area/albatros_hangar/start)
 "fH" = (
@@ -4755,8 +4755,8 @@
 	pixel_y = 32
 	},
 /obj/structure/table/standard,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/alarm{
 	dir = 8;
@@ -4906,7 +4906,7 @@
 	icon_state = "intact";
 	dir = 5
 	},
-/obj/item/weapon/storage/box/masks,
+/obj/item/storage/box/masks,
 /turf/simulated/floor/tiled/white,
 /area/ship/marksman/medbay)
 "jR" = (
@@ -5029,7 +5029,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/item/weapon/folder/red,
+/obj/item/folder/red,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/power/apc/critical{
 	dir = 4;
@@ -5086,7 +5086,7 @@
 	dir = 10
 	},
 /obj/machinery/cell_charger,
-/obj/item/weapon/reagent_containers/glass/beaker/cryoxadone,
+/obj/item/reagent_containers/glass/beaker/cryoxadone,
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1";
@@ -5253,8 +5253,8 @@
 "kG" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/table/rack,
-/obj/item/weapon/storage/toolbox/electrical,
-/obj/item/weapon/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/electrical,
+/obj/item/storage/toolbox/mechanical,
 /obj/machinery/power/apc/critical{
 	dir = 8;
 	name = "west bump";
@@ -5272,9 +5272,9 @@
 "kH" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/table/rack,
-/obj/item/weapon/inflatable_dispenser,
-/obj/item/weapon/storage/briefcase/inflatable,
-/obj/item/weapon/storage/briefcase/inflatable,
+/obj/item/inflatable_dispenser,
+/obj/item/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
 /obj/machinery/firealarm{
 	dir = 2;
 	pixel_y = 24
@@ -5313,7 +5313,7 @@
 /area/ship/marksman/command/hangar)
 "kM" = (
 /obj/structure/bed,
-/obj/item/weapon/bedsheet/medical,
+/obj/item/bedsheet/medical,
 /obj/structure/curtain/medical,
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
@@ -5863,7 +5863,7 @@
 /area/ship/marksman/medbay)
 "lP" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/defibrillator/loaded,
+/obj/item/defibrillator/loaded,
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
 	dir = 9
@@ -6075,11 +6075,11 @@
 /area/ship/marksman/maintenance/engine/port)
 "mk" = (
 /obj/structure/table/standard,
-/obj/item/weapon/storage/firstaid/toxin{
+/obj/item/storage/firstaid/toxin{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/weapon/storage/firstaid/adv,
+/obj/item/storage/firstaid/adv,
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
@@ -6305,7 +6305,7 @@
 /area/ship/marksman/barracks)
 "mA" = (
 /obj/structure/table/standard,
-/obj/item/weapon/storage/box/cups,
+/obj/item/storage/box/cups,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/ship/marksman/barracks)
@@ -6445,11 +6445,11 @@
 /area/ship/marksman/maintenance/engine/port)
 "mN" = (
 /obj/structure/table/standard,
-/obj/item/weapon/storage/firstaid/o2{
+/obj/item/storage/firstaid/o2{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/weapon/storage/firstaid/fire,
+/obj/item/storage/firstaid/fire,
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
@@ -6459,11 +6459,11 @@
 /area/ship/marksman/medbay)
 "mO" = (
 /obj/structure/table/standard,
-/obj/item/weapon/storage/firstaid/regular{
+/obj/item/storage/firstaid/regular{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/weapon/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
@@ -6757,11 +6757,11 @@
 	dir = 9
 	},
 /obj/effect/floor_decal/corner/paleblue,
-/obj/item/weapon/reagent_containers/spray/cleaner{
+/obj/item/reagent_containers/spray/cleaner{
 	pixel_x = -5;
 	pixel_y = 4
 	},
-/obj/item/weapon/reagent_containers/spray/sterilizine{
+/obj/item/reagent_containers/spray/sterilizine{
 	pixel_x = 2;
 	pixel_y = 4
 	},
@@ -6797,10 +6797,10 @@
 /obj/structure/closet/secure_closet/medical_wall{
 	pixel_x = 26
 	},
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
 /obj/effect/floor_decal/floordetail/edgedrain{
 	icon_state = "edge";
 	dir = 5
@@ -6890,7 +6890,7 @@
 /obj/structure/table/standard,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/random/smokes,
-/obj/item/weapon/flame/lighter,
+/obj/item/flame/lighter,
 /turf/simulated/floor/tiled,
 /area/ship/marksman/barracks)
 "nG" = (
@@ -7122,7 +7122,7 @@
 /area/ship/marksman/maintenance/engine/port)
 "nU" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/storage/firstaid/adv,
+/obj/item/storage/firstaid/adv,
 /obj/effect/floor_decal/floordetail/edgedrain{
 	icon_state = "edge";
 	dir = 10
@@ -7155,10 +7155,10 @@
 	dir = 5
 	},
 /obj/structure/table/reinforced,
-/obj/item/weapon/storage/firstaid/surgery{
+/obj/item/storage/firstaid/surgery{
 	pixel_y = 6
 	},
-/obj/item/weapon/reagent_containers/syringe{
+/obj/item/reagent_containers/syringe{
 	pixel_y = -2
 	},
 /obj/machinery/light,

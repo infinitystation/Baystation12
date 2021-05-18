@@ -71,7 +71,7 @@
 
 /mob/living/carbon/human/monkey/New(var/new_loc)
 	gender = pick(MALE, FEMALE)
-	..(new_loc, "Monkey")
+	..(new_loc, SPECIES_MONKEY)
 
 /mob/living/carbon/human/farwa/New(var/new_loc)
 	..(new_loc, "Farwa")

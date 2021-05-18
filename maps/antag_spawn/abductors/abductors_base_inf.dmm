@@ -11,7 +11,7 @@
 "k" = (/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
 "l" = (/obj/structure/closet/abductor,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
 "m" = (/obj/structure/closet/experimention_machine,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
-"n" = (/obj/structure/table/alien,/obj/item/weapon/surgicaldrill/abductor,/obj/item/weapon/scalpel/abductor,/obj/item/weapon/retractor/abductor,/obj/item/weapon/hemostat/abductor,/obj/item/weapon/circular_saw/abductor,/obj/item/weapon/bonegel,/obj/item/weapon/bonesetter/bone_mender,/obj/item/weapon/cautery/abductor,/obj/item/weapon/FixOVein/clot,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
+"n" = (/obj/structure/table/alien,/obj/item/surgicaldrill/abductor,/obj/item/scalpel/abductor,/obj/item/retractor/abductor,/obj/item/hemostat/abductor,/obj/item/circular_saw/abductor,/obj/item/bonegel,/obj/item/bonesetter/bone_mender,/obj/item/cautery/abductor,/obj/item/FixOVein/clot,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
 "p" = (/obj/machinery/vending/abductor,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
 "q" = (/obj/machinery/optable/abductor,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)
 "r" = (/obj/structure/table/alien,/turf/unsimulated/floor/alien,/area/map_template/abductors_station)

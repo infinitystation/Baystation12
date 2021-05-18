@@ -24,6 +24,12 @@ var/list/nuke_disks = list()
 		"summary_nukefail"
 	)
 
+//checks if L has a nuke disk on their person
+/datum/game_mode/nuclear/proc/check_mob(mob/living/L)
+	for(var/obj/item/disk/nuclear/N in nuke_disks)
+		if(N.storage_depth(L) >= 0)
+			return TRUE
+	return FALSE
 
 /datum/game_mode/nuclear/declare_completion()
 	var/datum/antagonist/merc = GLOB.all_antag_types_[MODE_MERCENARY]
@@ -31,7 +37,7 @@ var/list/nuke_disks = list()
 		..()
 		return
 	var/disk_rescued = TRUE
-	for(var/obj/item/weapon/disk/nuclear/D in nuke_disks)
+	for(var/obj/item/disk/nuclear/D in world)
 		var/disk_area = get_area(D)
 		if(!is_type_in_list(disk_area, GLOB.using_map.post_round_safe_areas) || GLOB.mercs.antags_are_dead())
 			disk_rescued = FALSE

@@ -109,7 +109,7 @@ GLOBAL_DATUM_INIT(temp_reagents_holder, /obj, new)
 
 			if(my_atom)
 				if(replace_message)
-					my_atom.visible_message("<span class='notice'>\icon[my_atom] [replace_message]</span>")
+					my_atom.visible_message("<span class='notice'>[icon2html(my_atom, viewers(get_turf(my_atom)))] [replace_message]</span>")
 				if(replace_sound)
 					playsound(my_atom, replace_sound, 80, 1)
 
@@ -472,6 +472,12 @@ GLOBAL_DATUM_INIT(temp_reagents_holder, /obj, new)
 		return
 
 	return trans_to_holder(target.reagents, amount, multiplier, copy)
+
+/datum/reagents/proc/should_admin_log()
+	for (var/datum/reagent/R in reagent_list)
+		if (R.should_admin_log)
+			return TRUE
+	return FALSE
 
 /* Atom reagent creation - use it all the time */
 

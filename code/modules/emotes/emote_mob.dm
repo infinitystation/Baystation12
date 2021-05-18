@@ -56,7 +56,7 @@
 	else
 		use_emote.do_emote(src, message)
 
-	for (var/obj/item/weapon/implant/I in src)
+	for (var/obj/item/implant/I in src)
 		if (I.implanted)
 			I.trigger(act, src)
 
@@ -134,7 +134,7 @@
 		message = format_emote(src, message)
 	else
 		return
-
+	message = process_chat_markup(message)
 	if (message)
 		log_emote("[name]/[key] : [message]")
 	//do not show NPC animal emotes to ghosts, it turns into hellscape

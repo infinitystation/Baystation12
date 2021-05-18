@@ -1,11 +1,11 @@
-/obj/item/weapon/book/manual/solgov_law
+/obj/item/book/manual/solgov_law
 	name = "Sol Central Government Law"
 	desc = "A brief overview of SolGov Law."
 	icon_state = "bookSolGovLaw"
 	author = "The Sol Central Government"
 	title = "Sol Central Government Law"
 
-/obj/item/weapon/book/manual/solgov_law/Initialize()
+/obj/item/book/manual/solgov_law/Initialize()
 	. = ..()
 	dat = {"
 
@@ -21,14 +21,14 @@
 		"}
 
 
-/obj/item/weapon/book/manual/military_law
+/obj/item/book/manual/military_law
 	name = "The Sol Code of Military Justice"
 	desc = "A brief overview of military law."
 	icon_state = "bookSolGovLaw"
 	author = "The Sol Central Government"
 	title = "The Sol Code of Military Justice"
 
-/obj/item/weapon/book/manual/military_law/Initialize()
+/obj/item/book/manual/military_law/Initialize()
 	. = ..()
 	dat = {"
 
@@ -43,14 +43,14 @@
 
 		"}
 
-/obj/item/weapon/book/manual/sol_sop
+/obj/item/book/manual/sol_sop
 	name = "Standard Operating Procedures"
 	desc = "SOP aboard the NES Sierra."
 	icon_state = "booksolregs"
 	author = "The Sol Central Government"
 	title = "Standard Operating Procedure"
 
-/obj/item/weapon/book/manual/sol_sop/Initialize()
+/obj/item/book/manual/sol_sop/Initialize()
 	. = ..()
 	dat = {"
 
@@ -65,7 +65,7 @@
 
 		"}
 
-/obj/item/weapon/book/manual/nt_sop
+/obj/item/book/manual/nt_sop
 	name = "NT Standard Operating Procedures"
 	desc = "SOP aboard the NSV Sierra."
 	icon = 'infinity/icons/obj/library.dmi'
@@ -73,7 +73,7 @@
 	author = "Employee Materials"
 	title = "Standard Operating Procedure"
 
-/obj/item/weapon/book/manual/nt_sop/Initialize()
+/obj/item/book/manual/nt_sop/Initialize()
 	. = ..()
 	dat = {"
 
@@ -88,7 +88,7 @@
 
 		"}
 
-/obj/item/weapon/book/manual/nt_tc
+/obj/item/book/manual/nt_tc
 	name = "NT Threat Codes"
 	desc = "TC aboard the NSV Sierra."
 	icon = 'infinity/icons/obj/library.dmi'
@@ -96,7 +96,7 @@
 	author = "Ship Rule Materials"
 	title = "Threat Codes"
 
-/obj/item/weapon/book/manual/nt_tc/Initialize()
+/obj/item/book/manual/nt_tc/Initialize()
 	. = ..()
 	dat = {"
 
@@ -111,16 +111,16 @@
 
 		"}
 
-/obj/item/weapon/folder/nt/rd
+/obj/item/folder/nt/rd
 
-/obj/item/weapon/folder/envelope/blanks
+/obj/item/folder/envelope/blanks
 	desc = "A thick envelope. The NT logo is stamped in the corner, along with 'CONFIDENTIAL'."
 
-/obj/item/weapon/folder/envelope/blanks/Initialize()
+/obj/item/folder/envelope/blanks/Initialize()
 	. = ..()
-	new/obj/item/weapon/paper/sierra/blanks(src)
+	new/obj/item/paper/sierra/blanks(src)
 
-/obj/item/weapon/paper/sierra/blanks
+/obj/item/paper/sierra/blanks
 	name = "RE: Regarding testing supplies"
 	info = {"
 	<tt><center><b><font color='red'>КОНФИДЕЦИАЛЬНО</font></b>
@@ -140,10 +140,10 @@
 	<font face="Verdana" color=black><font face="Times New Roman"><i>Swadian Barwuds</i></font></font></tt>
 	"}
 
-/obj/item/weapon/folder/envelope/captain
+/obj/item/folder/envelope/captain
 	desc = "A thick envelope. The NT logo is stamped in the corner, along with 'TOP SECRET - SIERRA UMBRA'."
 
-/obj/item/weapon/folder/envelope/captain/Initialize()
+/obj/item/folder/envelope/captain/Initialize()
 	. = ..()
 	var/memo = {"
 	<tt><center><b><font color='red'>СЕКРЕТНО<br>КОДОВОЕ СЛОВО: СИЕРРА</font></b>
@@ -175,18 +175,18 @@
 	<font face="Verdana" color=black><font face="Times New Roman"><i>Swadian Barwuds</i></font></font></tt><br>
 	<i>This paper has been stamped with the stamp of Central Command.</i>
 	"}
-	new/obj/item/weapon/paper/important(src, memo, "Standing Orders")
+	new/obj/item/paper/important(src, memo, "Standing Orders")
 
-	new/obj/item/weapon/paper/sierra/umbra(src)
+	new/obj/item/paper/sierra/umbra(src)
 
-/obj/item/weapon/folder/envelope/rep
+/obj/item/folder/envelope/rep
 	desc = "A thick envelope. The NT logo is stamped in the corner, along with 'TOP SECRET - SIERRA UMBRA'."
 
-/obj/item/weapon/folder/envelope/rep/Initialize()
+/obj/item/folder/envelope/rep/Initialize()
 	. = ..()
-	new/obj/item/weapon/paper/sierra/umbra(src)
+	new/obj/item/paper/sierra/umbra(src)
 
-/obj/item/weapon/paper/sierra/umbra
+/obj/item/paper/sierra/umbra
 	name = "UMBRA Protocol"
 	icon = 'maps/sierra/icons/obj/uniques.dmi'
 	icon_state = "paper_words"

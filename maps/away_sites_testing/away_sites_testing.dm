@@ -19,15 +19,13 @@
 	#include "../away/slavers/slavers_base.dm"
 //INF	#include "../away/blueriver/blueriver.dm"
 	#include "../away/mobius_rift/mobius_rift.dm"
-//	#include "../away/icarus/icarus.dm" temporarily removed while we investigate unit test failures
 	#include "../away/errant_pisces/errant_pisces.dm"
 	#include "../away/lar_maria/lar_maria.dm"
 //INF	#include "../away/skrellscoutship/skrellscoutship.dm"
-	#include "../away/unishi/unishi.dm"
-	#include "../away/ascent/ascent.dm"
+	#include "../away/verne/verne.dm"
 	#include "../away/meatstation/meatstation.dm"
 	#include "../away/miningstation/miningstation.dm"
-
+	#include "../away/scavver/scavver_gantry.dm"
 	#include "../away/voxship/voxship.dm"
 
 //[INF]
@@ -35,7 +33,7 @@
 	#include "../away_inf/blueriver/blueriver.dm"
 //	#include "../away_inf/gunboat/gunboat.dm" - TORCH, doesn't maintenance (someone want to change it?)
 //	#include "../away_inf/marksman/marksman.dm" - TORCH, doesn't maintenance (someone want to change it?)
-//	#include "../away_inf/sentinel/sentinel.dm" - TORCH, doesn't maintenance (someone want to change it?)
+//	#include "../away_inf/sentinel/sentinel.dm" - Не тестируется
 //	#include "../away_inf/merchant/merchant.dm" - WIP, doesn't maintenance (someone want to change it?)
 //	#include "../away_inf/rubidu/rubidu.dm" - WIP, doesn't maintenance (someone want to change it?)
 //	#include "../away_inf/salvagers/salvagers.dm" - WIP
@@ -44,8 +42,9 @@
 	#include "../away_inf/smugglers/smugglers.dm"
 	#include "../away_inf/yacht/yacht.dm"
 	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
+//	#include "../away_inf/liberia/liberia.dm" - Не тестируется
 //	#include "../away_inf/patrol/patrol.dm"
-	#include "../away_inf/ascent/ascent.dm"
+//	#include "../away_inf/ascent/ascent.dm" - Нужно доработать
 //[/INF]
 
 	#define using_map_DATUM /datum/map/away_sites_testing

@@ -259,7 +259,7 @@
 		GetFunction(name)
 			var/scope/S = curScope
 			while(S)
-				if(S.functions.Find(name))
+				if(list_find(S.functions, name))
 					return S.functions[name]
 				S = S.parent
 			RaiseError(new/runtimeError/UndefinedFunction(name))
@@ -271,7 +271,7 @@
 		GetVariable(name)
 			var/scope/S = curScope
 			while(S)
-				if(S.variables.Find(name))
+				if(list_find(S.variables, name))
 					return S.variables[name]
 				S = S.parent
 			RaiseError(new/runtimeError/UndefinedVariable(name))
@@ -279,7 +279,7 @@
 		GetVariableScope(name) //needed for when you reassign a variable in a higher scope
 			var/scope/S = curScope
 			while(S)
-				if(S.variables.Find(name))
+				if(list_find(S.variables, name))
 					return S
 				S = S.parent
 
@@ -287,7 +287,7 @@
 		IsVariableAccessible(name)
 			var/scope/S = curScope
 			while(S)
-				if(S.variables.Find(name))
+				if(list_find(S.variables, name))
 					return TRUE
 				S = S.parent
 			return FALSE

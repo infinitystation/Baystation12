@@ -31,6 +31,9 @@
 /obj/structure/proc/take_damage(var/damage)
 	return
 
+/obj/structure/proc/repair_damage(amount)
+	return
+
 /obj/structure/Destroy()
 	reset_mobs_offset()
 	var/turf/T = get_turf(src)
@@ -59,9 +62,22 @@
 	if(. && !CanFluidPass())
 		fluid_update()
 
+/obj/structure/attackby(obj/item/O, mob/user)
+	if(user.a_intent != I_HELP && istype(O, /obj/item/natural_weapon))
+		//Bit dirty, but the entire attackby chain seems kinda wrong to begin with
+		//Things should probably be parent first and return true if something handled it already, not child first
+		src.add_fingerprint(user)
+		attack_generic(user, O.force, pick(O.attack_verb))
+		return
+	. = ..()
 
 /obj/structure/attack_hand(mob/user)
 	..()
+	if(MUTATION_FERAL in user.mutations)
+		attack_generic(user,10,"smashes")
+		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*2)
+		attack_animation(user)
+		playsound(loc, 'sound/weapons/tablehit1.ogg', 40, 1)
 	if(breakable)
 		if(MUTATION_HULK in user.mutations)
 			user.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ))
@@ -88,7 +104,7 @@
 		else
 			playsound(loc, 'sound/weapons/tablehit1.ogg', 50, 1)
 		var/list/L = take_damage(rand(1,5))
-		for(var/obj/item/weapon/material/shard/S in L)
+		for(var/obj/item/material/shard/S in L)
 			if(S.sharp && prob(50))
 				G.affecting.visible_message("<span class='danger'>\The [S] slices into [G.affecting]'s face!</span>", "<span class='danger'>\The [S] slices into your face!</span>")
 				G.affecting.standard_weapon_hit_effects(S, G.assailant, S.force*2, BP_HEAD)
@@ -103,18 +119,6 @@
 		visible_message("<span class='danger'>[G.assailant] puts [G.affecting] on \the [src].</span>")
 		qdel(G)
 		return TRUE
-
-/obj/structure/ex_act(severity)
-	switch(severity)
-		if(1.0)
-			qdel(src)
-			return
-		if(2.0)
-			if(prob(50))
-				qdel(src)
-				return
-		if(3.0)
-			return
 
 /obj/structure/proc/can_visually_connect()
 	return anchored
@@ -164,7 +168,7 @@
 					if(istype(O, b_type))
 						success = 1
 						for(var/obj/structure/S in T)
-							if(istype(S, src))
+							if(can_visually_connect_to(S))
 								success = 0
 						for(var/nb_type in noblend_objects)
 							if(istype(O, nb_type))

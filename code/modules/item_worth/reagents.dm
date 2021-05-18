@@ -492,9 +492,6 @@
 /datum/reagent/space_cleaner
 	value = 0.7
 
-/datum/reagent/lube
-	value = 0.6
-
 /datum/reagent/glycerol
 	value = 0.5
 

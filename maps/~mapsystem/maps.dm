@@ -1,3 +1,5 @@
+#define DEFAULT_GAME_YEAR_OFFSET 288
+
 GLOBAL_DATUM_INIT(using_map, /datum/map, new using_map_DATUM)
 GLOBAL_LIST_EMPTY(all_maps)
 GLOBAL_LIST_EMPTY(playable_maps)
@@ -17,8 +19,6 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 			log_error("Map '[M]' ([type]) does not have a defined path, not adding to map list!")
 		else
 			GLOB.all_maps[M.path] = M
-		if(M.playable && M != GLOB.using_map)
-			GLOB.playable_maps |= M
 
 	return 1
 
@@ -35,6 +35,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	var/list/player_levels = list()  // Z-levels a character can typically reach
 	var/list/sealed_levels = list()  // Z-levels that don't allow random transit at edge
 	var/list/empty_levels = null     // Empty Z-levels that may be used for various things (currently used by bluespace jump)
+	var/list/escape_levels = list()  // Z-levels that when a player is in, are considered to have 'escaped' after evacuations.
 
 	var/list/map_levels              // Z-levels available to various consoles, such as the crew monitor. Defaults to station_levels if unset.
 
@@ -92,8 +93,8 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 
 	var/list/lobby_screens = list('icons/default_lobby.png')    // The list of lobby screen images to pick() from.
 	var/current_lobby_screen
-	var/music_track/lobby_track                     // The track that will play in the lobby screen.
-	var/list/lobby_tracks = list()                  // The list of lobby tracks to pick() from. If left unset will randomly select among all available /music_track subtypes.
+	var/decl/audio/track/lobby_track                     // The track that will play in the lobby screen.
+	var/list/lobby_tracks = list()                  // The list of lobby tracks to pick() from. If left unset will randomly select among all available decl/audio/track subtypes.
 	var/welcome_sound = 'sound/AI/welcome.ogg'		// Sound played on roundstart
 
 	var/default_law_type = /datum/ai_laws/nanotrasen  // The default lawset use by synth units, if not overriden by their laws var.
@@ -105,9 +106,6 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	var/list/planet_size  //dimensions of planet zlevel, defaults to world size. Due to how maps are generated, must be (2^n+1) e.g. 17,33,65,129 etc. Map will just round up to those if set to anything other.
 	var/away_site_budget = 0
 	var/min_offmap_players = 0
-
-	var/playable = 0
-	var/recommended_players
 
 	var/list/loadout_blacklist	//list of types of loadout items that will not be pickable
 
@@ -122,6 +120,8 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	var/local_currency_name = "thalers"
 	var/local_currency_name_singular = "thaler"
 	var/local_currency_name_short = "T"
+
+	var/game_year
 
 	var/list/available_cultural_info = list(
 		TAG_HOMEWORLD = list(
@@ -156,6 +156,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 			FACTION_EXPEDITIONARY,
 			FACTION_FLEET,
 			FACTION_PCRC,
+			FACTION_SAARE,
 			FACTION_OTHER
 		),
 		TAG_CULTURE = list(
@@ -236,14 +237,24 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	if(!LAZYLEN(planet_size))
 		planet_size = list(world.maxx, world.maxy)
 	current_lobby_screen = pick(lobby_screens)
+	game_year = text2num(time2text(world.timeofday, "YYYY")) + DEFAULT_GAME_YEAR_OFFSET
 
-/datum/map/proc/get_lobby_track(var/exclude)
-	var/lobby_track_type
-	if(lobby_tracks.len)
-		lobby_track_type = pickweight(lobby_tracks - exclude)
+
+/datum/map/proc/get_lobby_track(banned)
+	var/path = /decl/audio/track/absconditus
+	var/count = length(lobby_tracks)
+	if (count != 1)
+		var/allowed
+		if (count > 1)
+			allowed = lobby_tracks - banned
+		if (!length(allowed))
+			allowed = subtypesof(/decl/audio/track) - banned
+		if (length(allowed))
+			path = pickweight(allowed)
 	else
-		lobby_track_type = pick(subtypesof(/music_track) - exclude)
-	return decls_repository.get_decl(lobby_track_type)
+		path = lobby_tracks[1]
+	return decls_repository.get_decl(path)
+
 
 /datum/map/proc/setup_config(name, value, filename)
 	switch (name)
@@ -275,6 +286,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		if ("local_currency_name") local_currency_name = value
 		if ("local_currency_name_singular") local_currency_name_singular = value
 		if ("local_currency_name_short") local_currency_name_short = value
+		if ("game_year_offset") game_year = text2num(time2text(world.timeofday, "YYYY")) + text2num_or_default(value, DEFAULT_GAME_YEAR_OFFSET)
 		if ("min_offmap_players") min_offmap_players = text2num_or_default(value, min_offmap_players)
 		else log_misc("Unknown setting [name] in [filename].")
 
@@ -429,15 +441,16 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 
 /datum/map/proc/get_empty_zlevel()
 	if(empty_levels == null)
-		world.maxz++
+		INCREMENT_WORLD_Z_SIZE
 		empty_levels = list(world.maxz)
 	return pick(empty_levels)
 
 
 /datum/map/proc/setup_economy()
-	news_network.CreateFeedChannel("Nyx Daily", "SolGov Minister of Information", 1, 1)
-	news_network.CreateFeedChannel("The Gibson Gazette", "Editor Mike Hammers", 1, 1)
-	news_network.CreateFeedChannel("Sol Central Gazette", "Chief Enlisted Manager Malbro Endson", 1, 1) //INF
+	for (var/datum/feed_network/N in news_network)
+		N.CreateFeedChannel("Nyx Daily", "SolGov Minister of Information", 1, 1)
+		N.CreateFeedChannel("The Gibson Gazette", "Editor Mike Hammers", 1, 1)
+		N.CreateFeedChannel("Sol Central Gazette", "Chief Enlisted Manager Malbro Endson", 1, 1) //INF
 
 	for(var/loc_type in typesof(/datum/trade_destination) - /datum/trade_destination)
 		var/datum/trade_destination/D = new loc_type
@@ -497,6 +510,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		num2text(SCI_FREQ)   = list(access_tox,access_robotics,access_xenobiology),
 		num2text(SUP_FREQ)   = list(access_cargo),
 		num2text(SRV_FREQ)   = list(access_janitor, access_hydroponics),
+		num2text(HAIL_FREQ)  = list(),
 	)
 
 /datum/map/proc/show_titlescreen(client/C)
@@ -509,3 +523,97 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	if(C.mob) // Check if the client is still connected to something
 		// Hide title screen, allowing player to see the map
 		winset(C, "lobbybrowser", "is-disabled=true;is-visible=false")
+
+/datum/map/proc/roundend_player_status()
+	for(var/mob/Player in GLOB.player_list)
+		if(Player.mind && !isnewplayer(Player))
+			if(Player.stat != DEAD)
+				var/turf/playerTurf = get_turf(Player)
+				if(evacuation_controller.round_over() && evacuation_controller.emergency_evacuation)
+					if(isStationLevel(playerTurf.z))
+						to_chat(Player, "<span class='info'><b>You managed to survive, but were left behind on [station_name()] as [Player.real_name]...</b></span>")
+					else if (isEscapeLevel(playerTurf.z))
+						to_chat(Player, "<font color='green'><b>You managed to survive the events on [station_name()] as [Player.real_name].</b></font>")
+					else
+						to_chat(Player, "<span class='info'><b>You managed to survive, but were lost far from [station_name()] as [Player.real_name]...</b></span>")
+				else if(isAdminLevel(playerTurf.z))
+					to_chat(Player, "<font color='green'><b>You successfully underwent crew transfer after events on [station_name()] as [Player.real_name].</b></font>")
+				else if(issilicon(Player))
+					to_chat(Player, "<font color='green'><b>You remain operational after the events on [station_name()] as [Player.real_name].</b></font>")
+				else if (isNotStationLevel(playerTurf.z))
+					to_chat(Player, "<span class='info'><b>You managed to survive, but were lost far from [station_name()] as [Player.real_name]...</b></span>")
+				else
+					to_chat(Player, "<span class='info'><b>You got through just another workday on [station_name()] as [Player.real_name].</b></span>")
+			else
+				if(isghost(Player))
+					var/mob/observer/ghost/O = Player
+					if(!O.started_as_observer)
+						to_chat(Player, "<font color='red'><b>You did not survive the events on [station_name()]...</b></font>")
+				else
+					to_chat(Player, "<font color='red'><b>You did not survive the events on [station_name()]...</b></font>")
+
+/datum/map/proc/roundend_statistics()
+	var/data = list()
+	data["clients"] = 0
+	data["surviving_humans"] = 0
+	data["surviving_total"] = 0 //required field for roundend webhook!
+	data["ghosts"] = 0 //required field for roundend webhook!
+	data["escaped_humans"] = 0
+	data["escaped_total"] = 0
+	data["left_behind_total"] = 0 //players who didnt escape and aren't on the station.
+	data["offship_players"] = 0
+
+	for(var/mob/M in GLOB.player_list)
+		if(M.client)
+			data["clients"]++
+			if(M.stat != DEAD)
+				if (get_crewmember_record(M.real_name || M.name))
+					data["surviving_total"]++
+					if(ishuman(M))
+						data["surviving_humans"]++
+					var/area/A = get_area(M)
+					if(A && (istype(A, /area/shuttle) && isEscapeLevel(A.z)))
+						data["escaped_total"]++
+						if(ishuman(M))
+							data["escaped_humans"]++
+					if (evacuation_controller.emergency_evacuation && !isEscapeLevel(A.z)) //left behind after evac
+						data["left_behind_total"]++
+					if (!evacuation_controller.emergency_evacuation && isNotStationLevel(A.z))
+						data["left_behind_total"]++
+				else
+					data["offship_players"]++
+			else if(isghost(M))
+				data["ghosts"]++
+
+	if(data["clients"] > 0)
+		SSstatistics.set_field("round_end_clients",data["clients"])
+	if(data["ghosts"] > 0)
+		SSstatistics.set_field("round_end_ghosts",data["ghosts"])
+	if(data["surviving_humans"] > 0)
+		SSstatistics.set_field("survived_human",data["surviving_humans"])
+	if(data["surviving_total"] > 0)
+		SSstatistics.set_field("survived_total",data["surviving_total"])
+	if(data["escaped_humans"] > 0)
+		SSstatistics.set_field("escaped_human",data["escaped_humans"])
+	if(data["escaped_total"] > 0)
+		SSstatistics.set_field("escaped_total",data["escaped_total"])
+
+	return data
+
+/datum/map/proc/roundend_summary(list/data)
+	var/desc
+	if(data["surviving_total"] > 0)
+		var/survivors = data["surviving_total"]
+		var/escaped_total = data["escaped_total"]
+		var/ghosts = data["ghosts"]
+		var/offship_players = data["offship_players"]
+
+		desc += "There [survivors>1 ? "were <b>[survivors] survivors</b>" : "was <b>one survivor</b>"]"
+		desc += " (<b>[escaped_total>0 ? escaped_total : "none"] escaped</b>), <b>[offship_players] off-ship player(s)."
+		data += " and <b>[ghosts] ghosts</b>.</b><br>"
+	else
+		desc += "There were <b>no survivors</b>, <b>[data["offship_players"]] off-ship player(s)</b>, (<b>[data["ghosts"]] ghosts</b>)."
+
+	return desc
+
+#undef DEFAULT_GAME_YEAR_OFFSET

@@ -20,7 +20,7 @@
 	color = COLOR_BRASS
 	random_icon_states = list("fchampagne1", "fchampagne2", "fchampagne3", "fchampagne4")
 
-/obj/item/weapon/reagent_containers/food/drinks/bottle/champagne
+/obj/item/reagent_containers/food/drinks/bottle/champagne
 	name = "Champagne bottle"
 	desc = "Sparkling wine made from exquisite grape varieties by the method of secondary fermentation in a bottle. Bubbling."
 	icon = 'infinity/icons/obj/food.dmi'
@@ -30,11 +30,11 @@
 	atom_flags = 0 //starts closed
 	var/opening
 
-/obj/item/weapon/reagent_containers/food/drinks/bottle/champagne/New()
+/obj/item/reagent_containers/food/drinks/bottle/champagne/New()
 	..()
 	reagents.add_reagent(/datum/reagent/ethanol/champagne, 100)
 
-/obj/item/weapon/reagent_containers/food/drinks/bottle/champagne/open(mob/user)
+/obj/item/reagent_containers/food/drinks/bottle/champagne/open(mob/user)
 	if(is_open_container())
 		to_chat(user, SPAN_NOTICE("[src] is already open."))
 		return

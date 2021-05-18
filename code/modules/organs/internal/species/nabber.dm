@@ -2,6 +2,10 @@
 	name = "vocal synthesiser"
 	assists_languages = list(LANGUAGE_HUMAN_RUSSIAN, LANGUAGE_GUTTER, LANGUAGE_HUMAN_EURO, LANGUAGE_EAL, LANGUAGE_CHANGELING_GLOBAL)
 
+/obj/item/organ/internal/voicebox/nabber/ascent
+	name = "mantid vocal synthesiser"
+	assists_languages = list(LANGUAGE_SKRELLIAN, LANGUAGE_HUMAN_RUSSIAN, LANGUAGE_GUTTER, LANGUAGE_HUMAN_EURO, LANGUAGE_EAL)
+
 /obj/item/organ/internal/voicebox/nabber/Initialize()
 	. = ..()
 	robotize()
@@ -13,6 +17,10 @@
 	action_button_name = "Toggle Eye Shields"
 	eye_icon = 'icons/mob/human_races/species/nabber/eyes.dmi'
 	var/eyes_shielded
+
+/obj/item/organ/internal/eyes/insectoid/msq
+	name = "compound eyes"
+	eye_icon = 'icons/mob/human_races/species/nabber/msq/eyes.dmi'
 
 /obj/item/organ/internal/eyes/insectoid/nabber/get_special_overlay()
 	var/icon/I = get_onhead_icon()

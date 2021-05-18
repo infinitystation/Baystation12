@@ -6,4 +6,4 @@
 	color = null
 	set_broken(TRUE)
 	if(prob(15))
-		new /obj/item/weapon/material/shard(loc)
+		new /obj/item/material/shard(loc)

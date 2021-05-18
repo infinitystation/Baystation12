@@ -1,4 +1,4 @@
-/obj/item/weapon/material/hatchet/machete/deluxe/mixa
+/obj/item/material/hatchet/machete/deluxe/mixa
 	name = "Energy deluxe machete"
 	desc = "Black handle with button on bottom"
 	icon = CUSTOM_ITEM_OBJ
@@ -14,11 +14,11 @@
 	applies_material_name = FALSE
 	var/active = TRUE
 
-/obj/item/weapon/material/hatchet/machete/deluxe/mixa/Initialize()
+/obj/item/material/hatchet/machete/deluxe/mixa/Initialize()
 	. = ..()
 	icon_state = "mach_active"
 
-/obj/item/weapon/material/hatchet/machete/deluxe/mixa/attack_self(mob/living/user as mob)
+/obj/item/material/hatchet/machete/deluxe/mixa/attack_self(mob/living/user as mob)
 	active = !active
 
 	if(active)

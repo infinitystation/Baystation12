@@ -6,13 +6,13 @@
 	name = "Candidacy"
 	sort_order = 1
 
-/datum/category_item/player_setup_item/antagonism/candidacy/load_character(var/savefile/S)
-	from_file(S["be_special"],           pref.be_special_role)
-//inf	from_file(S["may_be_special"],     	 pref.may_be_special_role)
+/datum/category_item/player_setup_item/antagonism/candidacy/load_character(datum/pref_record_reader/R)
+	pref.be_special_role = R.read("be_special")
+//inf	pref.may_be_special_role = R.read("may_be_special")
 
-/datum/category_item/player_setup_item/antagonism/candidacy/save_character(var/savefile/S)
-	to_file(S["be_special"],             pref.be_special_role)
-//inf	to_file(S["may_be_special"],       	 pref.may_be_special_role)
+/datum/category_item/player_setup_item/antagonism/candidacy/save_character(datum/pref_record_writer/W)
+	W.write("be_special", pref.be_special_role)
+//inf	W.write("may_be_special", pref.may_be_special_role)
 
 /datum/category_item/player_setup_item/antagonism/candidacy/sanitize_character()
 	if(!istype(pref.be_special_role))
@@ -67,6 +67,9 @@
 		. += "<tr><td>[(ghost_trap.ghost_trap_role)]: </td><td>"
 		if(banned_from_ghost_role(preference_mob(), ghost_trap))
 			. += "<span class='danger'>\[БАН\]</span><br>"
+		else if (!ghost_trap.assess_whitelist(user))
+			var/datum/species/S = new ghost_trap.species_whitelist()
+			. += "[SPAN_DANGER("\[WHITELIST RESTRICTED - [S]\]")]<br />"
 		else if(ghost_trap.pref_check in pref.be_special_role)
 			. += "<span class='linkOn'>Высокий</span> <a href='?src=\ref[src];del_special=[ghost_trap.pref_check]'>Никогда</a></br>"
 /*[inf.exclude]

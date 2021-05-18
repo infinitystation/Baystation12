@@ -90,7 +90,7 @@ GLOBAL_LIST_INIT(recomended_holoplants_colors, list(COLOR_LIGHTING_RED_BRIGHT,CO
 		update_icon()
 
 /obj/structure/holoplant/attackby(obj/item/I, mob/user, click_params)
-	if(istype(I, /obj/item/weapon/card/id))
+	if(istype(I, /obj/item/card/id))
 		if(!emagged)
 			emag_act()
 		else

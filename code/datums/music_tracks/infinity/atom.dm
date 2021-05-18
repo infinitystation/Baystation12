@@ -1,6 +1,6 @@
-/music_track/atom
-	artist = "The Five Stars"
+/decl/audio/track/atom
+	author = "The Five Stars"
 	title = "Atom Bomb Baby"
-	album = "Placeholder"
-	song = 'infinity/sound/music/newyear/thefivestars_atombombbaby.ogg'
+	collection =  "Placeholder"
+	source = 'infinity/sound/music/newyear/thefivestars_atombombbaby.ogg'
 	license =  /decl/license/grandfathered

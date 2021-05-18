@@ -1,4 +1,4 @@
-/obj/item/weapon/melee/arm_blade
+/obj/item/melee/arm_blade
 	name = "armblade"
 	desc = "A grotesque blade made out of bone and flesh that cleaves through people as a hot knife through butter."
 	icon = 'infinity/icons/obj/changeling.dmi'
@@ -18,20 +18,20 @@
 	canremove = 0
 	sharp = 1
 	edge = 1
-	anchored = 1
+	anchored = TRUE
 	throwforce = 0 //Just to be on the safe side
 	throw_range = 0
 	throw_speed = 0
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	var/mob/living/creator
 
-/obj/item/weapon/melee/arm_blade/dropped(var/mob/living/user)
+/obj/item/melee/arm_blade/dropped(var/mob/living/user)
 	visible_message(SPAN_DANGER("With a sickening crunch, [user] reforms their armblade into an arm!"),
 	SPAN_WARNING("You hear organic matter ripping and tearing!"))
 	playsound(loc, 'sound/effects/blobattack.ogg', 30, 1)
 	QDEL_IN(src, 1)
 
-/obj/item/weapon/melee/arm_blade/Process()
+/obj/item/melee/arm_blade/Process()
 	if(!creator || loc != creator || (creator.l_hand != src && creator.r_hand != src))
 		// Tidy up a bit.
 		if(istype(loc,/mob/living))
@@ -46,7 +46,7 @@
 			host.drop_from_inventory(src)
 		QDEL_IN(src, 1)
 
-/obj/item/weapon/melee/arm_blade/afterattack(atom/target, mob/user, proximity)
+/obj/item/melee/arm_blade/afterattack(atom/target, mob/user, proximity)
 	if(!proximity)
 		return
 

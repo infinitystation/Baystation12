@@ -71,6 +71,10 @@
 	title = "white floor tile"
 	result_type = /obj/item/stack/tile/floor_white
 
+/datum/stack_recipe/tile/light/mono
+	title = "white mono floor tile"
+	result_type = /obj/item/stack/tile/mono/white
+
 /datum/stack_recipe/tile/light/freezer
 	title = "freezer floor tile"
 	result_type = /obj/item/stack/tile/floor_freezer
@@ -94,3 +98,7 @@
 /datum/stack_recipe/tile/walnut
 	title = "walnut floor tile"
 	result_type = /obj/item/stack/tile/walnut
+
+/datum/stack_recipe/tile/metal/pool
+	title = "pool floot tile"
+	result_type = /obj/item/stack/tile/pool

@@ -2,6 +2,7 @@
 
 /mob/new_player
 	var/ready = 0
+	var/respawned_time = 0
 	var/spawning = 0//Referenced when you want to delete the new_player later on in the code.
 	var/totalPlayers = 0		 //Player counts for the Lobby tab
 	var/totalPlayersReady = 0
@@ -11,11 +12,11 @@
 
 	invisibility = 101
 
-	density = 0
+	density = FALSE
 	stat = DEAD
 
 	movement_handlers = list()
-	anchored = 1	//  don't get pushed around
+	anchored = TRUE	//  don't get pushed around
 
 	virtual_mob = null // Hear no evil, speak no evil
 
@@ -70,7 +71,9 @@
 			stat("Game Mode:", PUBLIC_GAME_MODE)
 
 		var/extra_antags = list2params(additional_antag_types)
-		if(extra_antags) stat("Added Antagonists:", extra_antags) // ? extra_antags : "None")
+		stat("Added Antagonists:", extra_antags ? extra_antags : "None")
+		stat("Initial Continue Vote:", "[round(config.vote_autotransfer_initial / 600, 1)] minutes")
+		stat("Additional Vote Every:", "[round(config.vote_autotransfer_interval / 600, 1)] minutes")
 
 		if(GAME_STATE <= RUNLEVEL_LOBBY)
 			stat("Time To Start:", "[round(SSticker.pregame_timeleft/10)][SSticker.round_progressing ? "" : " (DELAYED)"]")
@@ -82,11 +85,16 @@
 				if(player.is_stealthed() && !we_are_admin)
 					continue
 				var/highjob
-				if(player.client && player.client.prefs && player.client.prefs.job_high)
-					highjob = " as [player.client.prefs.job_high]"
-				stat("[player.key]", (player.ready)?("(Playing[highjob])"):(null))
+				if (player.client)
+					var/show_ready = player.client.get_preference_value(/datum/client_preference/show_ready) == GLOB.PREF_SHOW
+					if (player.client.prefs?.job_high)
+						highjob = " as [player.client.prefs.job_high]"
+					if (!player.is_stealthed())
+						stat("[player.key]", (player.ready && show_ready)?("(Playing[highjob])"):(null))
 				totalPlayers++
 				if(player.ready)totalPlayersReady++
+		else
+			stat("Next Continue Vote:", "[max(round(transfer_controller.time_till_transfer_vote() / 600, 1), 0)] minutes")
 
 /mob/new_player/Topic(href, href_list) // This is a full override; does not call parent.
 	if(usr != src)
@@ -95,7 +103,7 @@
 		return TOPIC_NOACTION
 
 	if(href_list["show_preferences"])
-		client.prefs.ShowChoices(src)
+		client.prefs.open_setup_window(src)
 		return 1
 
 	if(href_list["ready"])
@@ -119,7 +127,7 @@
 				to_chat(src, SPAN_WARNING("Вы не можете зайти в раунд за призрака, поскольку это было запрещено настройками сервера."))
 				return
 
-			if((world.time - round_start_time < (config.observe_delay MINUTES)))
+			if((world.time - round_start_time < (config.observe_delay MINUTES))) // INF, задержка обсерверов ~bear1ake
 				to_chat(src, SPAN_WARNING("Извините, вам следует подождать [config.observe_delay] минут со старта раунда чтобы перейти в режим наблюдателя."))
 				to_chat(src, SPAN_NOTICE("Проверьте таймер \"Round Duration\" во вкладке Status чтобы узнать сколько прошло времени."))
 				return
@@ -133,7 +141,7 @@
 					to_chat(src, SPAN_WARNING("Вы не можете зайти в раунд за призрака, поскольку это было запрещено настройками сервера."))
 					return 1
 
-				if((world.time - round_start_time < (config.observe_delay MINUTES)))
+				if((world.time - round_start_time < (config.observe_delay MINUTES))) // INF, задержка обсерверов ~bear1ake
 					to_chat(src, SPAN_WARNING("Извините, вам следует подождать [config.observe_delay] минут со старта раунда чтобы перейти в режим наблюдателя."))
 					to_chat(src, SPAN_NOTICE("Проверьте таймер \"Round Duration\" во вкладке Status чтобы узнать сколько прошло времени."))
 					return 1
@@ -154,7 +162,9 @@
 				to_chat(src, "<span class='danger'>Не удалость обнаружить точку спавна наблюдателей. Используйте кнопку Teleport чтобы переместить к карте.</span>")
 			observer.timeofdeath = world.time // Set the time of death so that the respawn timer works correctly.
 
-			if(isnull(client.holder))
+			var/should_announce = client.get_preference_value(/datum/client_preference/announce_ghost_join) == GLOB.PREF_YES
+
+			if(isnull(client.holder) && should_announce)
 				announce_ghost_joinleave(src)
 
 			var/mob/living/carbon/human/dummy/mannequin = new()
@@ -175,8 +185,13 @@
 
 	if(href_list["late_join"])
 		if(GAME_STATE != RUNLEVEL_GAME)
-			to_chat(usr, "<span class='warning'>Раунд или не начался или уже закончился...</span>")
+			to_chat(usr, SPAN_WARNING("Раунд или не начался или уже закончился..."))
 			return
+		if (!client.holder)
+			var/dsdiff = config.respawn_menu_delay MINUTES - (world.time - respawned_time)
+			if (dsdiff > 0)
+				to_chat(usr, SPAN_WARNING("You must wait [time2text(dsdiff, "mm:ss")] before rejoining."))
+				return
 		LateChoices() //show the latejoin job selection menu
 
 	if(href_list["manifest"])
@@ -196,114 +211,28 @@
 			if(!whitelist_lookup(SPECIES_FBP, client.ckey) && client.prefs.species != SPECIES_IPC)
 				to_chat(usr, "Нельзя зайти за ППТ без вайтлиста.")
 				return 0
+		
+		for(var/M in client.prefs.body_markings)
+			var/datum/sprite_accessory/SA = GLOB.body_marking_styles_list[M]
+			if(istype(SA, /datum/sprite_accessory/marking/booster) && (client.DonateData?.level < 4))
+				to_chat(usr, "Нельзя зайти за бустера без соответствующего уровня доната.")
+				return 0
 //[/INF]
 
 		AttemptLateSpawn(job, client.prefs.spawnpoint)
 		return
 
-	if(href_list["privacy_poll"])
-		establish_db_connection()
-		if(!dbcon.IsConnected())
-			return
-		var/voted = 0
-
-		//First check if the person has not voted yet.
-		var/DBQuery/query = dbcon.NewQuery("SELECT * FROM erro_privacy WHERE ckey='[ckey]'")
-		query.Execute()
-		while(query.NextRow())
-			voted = 1
-			break
-
-		//This is a safety switch, so only valid options pass through
-		var/option = "UNKNOWN"
-		switch(href_list["privacy_poll"])
-			if("signed")
-				option = "SIGNED"
-			if("anonymous")
-				option = "ANONYMOUS"
-			if("nostats")
-				option = "NOSTATS"
-			if("later")
-				close_browser(usr,"window=privacypoll")
-				return
-			if("abstain")
-				option = "ABSTAIN"
-
-		if(option == "UNKNOWN")
-			return
-
-		if(!voted)
-			var/sql = "INSERT INTO erro_privacy VALUES (null, Now(), '[ckey]', '[option]')"
-			var/DBQuery/query_insert = dbcon.NewQuery(sql)
-			query_insert.Execute()
-			to_chat(usr, "<b>Thank you for your vote!</b>")
-			close_browser(usr,"window=privacypoll")
-
 	if(!ready && href_list["preference"])
 		if(client)
 			client.prefs.process_link(src, href_list)
-	else if(!href_list["late_join"])
-		if(client)
-			new_player_panel()
-
-	if(href_list["showpoll"])
-
-		handle_player_polling()
-		return
-
-	if(href_list["pollid"])
-
-		var/pollid = href_list["pollid"]
-		if(istext(pollid))
-			pollid = text2num(pollid)
-		if(isnum(pollid))
-			poll_player(pollid)
-		return
 
 	if(href_list["invalid_jobs"])
 		show_invalid_jobs = !show_invalid_jobs
 		LateChoices()
 
-	if(href_list["votepollid"] && href_list["votetype"])
-		var/pollid = text2num(href_list["votepollid"])
-		var/votetype = href_list["votetype"]
-		switch(votetype)
-			if("OPTION")
-				var/optionid = text2num(href_list["voteoptionid"])
-				vote_on_poll(pollid, optionid)
-			if("TEXT")
-				var/replytext = href_list["replytext"]
-				log_text_poll_reply(pollid, replytext)
-			if("NUMVAL")
-				var/id_min = text2num(href_list["minid"])
-				var/id_max = text2num(href_list["maxid"])
-
-				if( (id_max - id_min) > 100 )	//Basic exploit prevention
-					to_chat(usr, "The option ID difference is too big. Please contact administration or the database admin.")
-					return
-
-				for(var/optionid = id_min; optionid <= id_max; optionid++)
-					if(!isnull(href_list["o[optionid]"]))	//Test if this optionid was replied to
-						var/rating
-						if(href_list["o[optionid]"] == "abstain")
-							rating = null
-						else
-							rating = text2num(href_list["o[optionid]"])
-							if(!isnum(rating))
-								return
-
-						vote_on_numval_poll(pollid, optionid, rating)
-			if("MULTICHOICE")
-				var/id_min = text2num(href_list["minoptionid"])
-				var/id_max = text2num(href_list["maxoptionid"])
-
-				if( (id_max - id_min) > 100 )	//Basic exploit prevention
-					to_chat(usr, "The option ID difference is too big. Please contact administration or the database admin.")
-					return
-
-				for(var/optionid = id_min; optionid <= id_max; optionid++)
-					if(!isnull(href_list["option_[optionid]"]))	//Test if this optionid was selected
-						vote_on_poll(pollid, optionid, 1)
+	else if(!href_list["late_join"])
+		if(client)
+			new_player_panel()
 
 /mob/new_player/proc/AttemptLateSpawn(var/datum/job/job, var/spawning_at)
 
@@ -381,7 +310,6 @@
 			AnnounceArrival(character, job, spawnpoint.msg)
 		else
 			AnnounceCyborg(character, job, spawnpoint.msg)
-		matchmaker.do_matchmaking()
 	log_and_message_admins("has joined the round as [character.mind.assigned_role].", character)
 
 	if(character.needs_wheelchair())
@@ -605,6 +533,14 @@
 			to_chat(src, "Нельзя зайти за ППТ без вайтлиста.")
 			spawning = 0
 			return null
+
+	for(var/M in client.prefs.body_markings)
+		var/datum/sprite_accessory/S = GLOB.body_marking_styles_list[M]
+		if(istype(S, /datum/sprite_accessory/marking/booster) && (client.DonateData?.level < 4))
+			to_chat(src, "Нельзя зайти за бустера без соответствующего уровня доната.")
+			spawning = 0
+			return null
+
 	spawn(1)
 		if(!spawning)
 			new_player_panel()
@@ -644,10 +580,6 @@
 
 	new_character.lastarea = get_area(spawn_turf)
 
-	if(GLOB.random_players)
-		client.prefs.gender = pick(MALE, FEMALE)
-		client.prefs.real_name = random_name(new_character.gender)
-		client.prefs.randomize_appearance_and_body_for(new_character)
 	client.prefs.copy_to(new_character)
 
 	sound_to(src, sound(null, repeat = 0, wait = 0, volume = 85, channel = GLOB.lobby_sound_channel))// MAD JAMS cant last forever yo
@@ -657,18 +589,6 @@
 		mind.original = new_character
 		if(client.prefs.memory)
 			mind.StoreMemory(client.prefs.memory)
-		if(client.prefs.relations.len)
-			for(var/T in client.prefs.relations)
-				var/TT = matchmaker.relation_types[T]
-				//[INF]	Nonexistent relation. Delete it.
-				if(!TT)
-					client.prefs.relations -= T
-					continue
-				//[/INF]
-				var/datum/relation/R = new TT
-				R.holder = mind
-				R.info = client.prefs.relations_info[T]
-			mind.gen_relations_info = client.prefs.relations_info["general"]
 		mind.transfer_to(new_character)					//won't transfer key since the mind is not active
 
 	new_character.dna.ready_dna(new_character)
@@ -685,10 +605,7 @@
 	new_character.regenerate_icons()
 
 	new_character.key = key		//Manually transfer the key to log them in
-//[INF]
-	if(GAME_STATE == (RUNLEVEL_LOBBY || RUNLEVEL_SETUP))
-		new_character.Sleeping(15) //should be enough to remove I SAW NAKED MEN!
-//[/INF]
+
 	return new_character
 
 /mob/new_player/proc/ViewManifest()
@@ -758,5 +675,6 @@ mob/new_player/MayRespawn()
 
 	if(get_preference_value(/datum/client_preference/play_lobby_music) == GLOB.PREF_NO)
 		return
-	var/music_track/new_track = GLOB.using_map.get_lobby_track(GLOB.using_map.lobby_track.type)
-	new_track.play_to(src)
+	var/decl/audio/track/track = GLOB.using_map.get_lobby_track(GLOB.using_map.lobby_track.type)
+	sound_to(src, track.get_sound())
+	to_chat(src, track.get_info())

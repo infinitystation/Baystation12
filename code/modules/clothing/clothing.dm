@@ -8,7 +8,6 @@
 		SPECIES_NABBER,
 		SPECIES_MANTID_ALATE,
 		SPECIES_MANTID_GYNE,
-		SPECIES_MONARCH_WORKER,
 		SPECIES_MONARCH_QUEEN
 	) //everyone except for these species can wear this kit.
 
@@ -149,14 +148,35 @@
 
 /obj/item/clothing/get_examine_line()
 	. = ..()
-	var/list/ties = list()
-	for(var/obj/item/clothing/accessory/accessory in accessories)
-		if(accessory.high_visibility)
-			ties += "\a [accessory.get_examine_line()]"
-	if(ties.len)
-		.+= " with [english_list(ties)] attached"
-	if(accessories.len > ties.len)
-		.+= ". <a href='?src=\ref[src];list_ungabunga=1'>\[See accessories\]</a>"
+	var/list/visible = get_visible_accessories()
+	if (length(visible))
+		var/list/display = list()
+		for (var/obj/item/clothing/accessory/A in visible)
+			if (A.high_visibility)
+				display += "[icon2html(A, usr)] \a [A]" // INF, было display += "\icon[A] \a [A]"
+		if (length(display))
+			. += " with [english_list(display)] attached"
+		if (length(visible) > length(display))
+			. += ". <a href='?src=\ref[src];list_ungabunga=1'>\[See accessories\]</a>"
+
+/obj/item/clothing/proc/get_visible_accessories()
+	var/list/result = list()
+	if (length(accessories))
+		var/covered = 0
+		if (ishuman(loc))
+			var/mob/living/carbon/human/H = loc
+			if (src == H.w_uniform)
+				if (H.wear_suit)
+					covered |= H.wear_suit.body_parts_covered
+		for (var/obj/item/clothing/accessory/A in accessories)
+			if (!(covered & A.body_location))
+				result += A
+	return result
+
+/obj/item/clothing/proc/get_bulky_coverage()
+	. = HAS_FLAGS(flags_inv, CLOTHING_BULKY) ? body_parts_covered : 0
+	for (var/obj/item/clothing/accessory/A in accessories)
+		. |= HAS_FLAGS(A.flags_inv, CLOTHING_BULKY) ? A.body_parts_covered : 0
 
 /obj/item/clothing/examine(mob/user)
 	. = ..()
@@ -170,16 +190,17 @@
 
 /obj/item/clothing/OnTopic(var/user, var/list/href_list, var/datum/topic_state/state)
 	if(href_list["list_ungabunga"])
-		if(accessories.len)
-			var/list/ties = list()
-			for(var/accessory in accessories)
-				ties += "\icon[accessory] \a [accessory]"
-			to_chat(user, "Attached to \the [src] are [english_list(ties)].")
+		var/list/visible = get_visible_accessories()
+		if (length(visible))
+			var/list/display = list()
+			for (var/obj/item/clothing/accessory/A in visible)
+				display += "[icon2html(A, user)] \a [A]"
+			to_chat(user, "Attached to \the [src] are [english_list(display)].")
 		return TOPIC_HANDLED
 	if(href_list["list_armor_damage"])
 		var/datum/extension/armor/ablative/armor_datum = get_extension(src, /datum/extension/armor/ablative)
 		var/list/damages = armor_datum.get_visible_damage()
-		to_chat(user, "\The [src] \icon[src] has some damage:")
+		to_chat(user, "\The [src] [icon2html(src, user)] has some damage:")
 		for(var/key in damages)
 			to_chat(user, "<li><b>[capitalize(damages[key])]</b> damage to the <b>[key]</b> armor.")
 		return TOPIC_HANDLED
@@ -293,18 +314,20 @@ BLIND     // can't see anything
 	icon = 'icons/obj/clothing/obj_hands.dmi'
 	siemens_coefficient = 0.75
 	var/wired = 0
-	var/obj/item/weapon/cell/cell = 0
+	var/obj/item/cell/cell = 0
 	var/clipped = 0
 	var/obj/item/clothing/ring/ring = null		//Covered ring
 	var/mob/living/carbon/human/wearer = null	//Used for covered rings when dropping
+	var/pickpocket = FALSE  //Indicates these gloves are pickpocketing gloves.
 	body_parts_covered = HANDS
 	slot_flags = SLOT_GLOVES
 	attack_verb = list("challenged")
-	species_restricted = list("exclude",SPECIES_NABBER, SPECIES_UNATHI,SPECIES_VOX, SPECIES_VOX_ARMALIS)
+	species_restricted = list("exclude",SPECIES_NABBER, SPECIES_MONARCH_QUEEN, SPECIES_UNATHI, SPECIES_VOX, SPECIES_VOX_ARMALIS)
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/species/vox/onmob_hands_vox.dmi',
 		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_hands_vox_armalis.dmi',
 		SPECIES_NABBER = 'icons/mob/species/nabber/onmob_hands_gas.dmi',
+		SPECIES_MONARCH_QUEEN = 'icons/mob/species/nabber/msq/onmob_hands_msq.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_hands_unathi.dmi',
 		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_hands_resomi.dmi',
 		)
@@ -336,8 +359,8 @@ BLIND     // can't see anything
 /obj/item/clothing/gloves/proc/Touch(var/atom/A, var/proximity)
 	return 0 // return 1 to cancel attack_hand()
 
-/obj/item/clothing/gloves/attackby(obj/item/weapon/W, mob/user)
-	if(istype(W, /obj/item/weapon/wirecutters) || istype(W, /obj/item/weapon/scalpel))
+/obj/item/clothing/gloves/attackby(obj/item/W, mob/user)
+	if(istype(W, /obj/item/wirecutters) || istype(W, /obj/item/scalpel))
 		if (clipped)
 			to_chat(user, "<span class='notice'>\The [src] have already been modified!</span>")
 			update_icon()
@@ -474,8 +497,8 @@ BLIND     // can't see anything
 	if(!mob_wear_hat(user))
 		return ..()
 
-/obj/item/clothing/head/attack_generic(var/mob/user)
-	if(!istype(user) || !mob_wear_hat(user))
+/obj/item/clothing/head/attack_animal(var/mob/user)
+	if(!mob_wear_hat(user))
 		return ..()
 
 /obj/item/clothing/head/proc/mob_wear_hat(var/mob/user)
@@ -631,7 +654,7 @@ BLIND     // can't see anything
 	blood_overlay_type = "shoeblood"
 	var/overshoes = 0
 	var/can_add_cuffs = TRUE
-	var/obj/item/weapon/handcuffs/attached_cuffs = null
+	var/obj/item/handcuffs/attached_cuffs = null
 	var/can_add_hidden_item = TRUE
 	var/hidden_item_max_w_class = ITEM_SIZE_NORMAL //INF, WAS ITEM_SIZE_SMALL
 	var/obj/item/hidden_item = null
@@ -663,14 +686,14 @@ BLIND     // can't see anything
 	..()
 
 /obj/item/clothing/shoes/attackby(var/obj/item/I, var/mob/user)
-	if (istype(I, /obj/item/weapon/handcuffs))
+	if (istype(I, /obj/item/handcuffs))
 		add_cuffs(I, user)
 		return
 	else
 		add_hidden(I, user)
 		return
 
-/obj/item/clothing/shoes/proc/add_cuffs(var/obj/item/weapon/handcuffs/cuffs, var/mob/user)
+/obj/item/clothing/shoes/proc/add_cuffs(var/obj/item/handcuffs/cuffs, var/mob/user)
 	if (!can_add_cuffs)
 		to_chat(user, SPAN_WARNING("\The [cuffs] can't be attached to \the [src]."))
 		return
@@ -776,7 +799,7 @@ BLIND     // can't see anything
 	name = "suit"
 	var/fire_resist = T0C+100
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	allowed = list(/obj/item/weapon/tank/emergency)
+	allowed = list(/obj/item/tank/emergency)
 	slot_flags = SLOT_OCLOTHING
 	blood_overlay_type = "suit"
 	siemens_coefficient = 0.9
@@ -847,6 +870,7 @@ BLIND     // can't see anything
 		SPECIES_VOX = 'icons/mob/species/vox/onmob_under_vox.dmi',
 		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_under_vox_armalis.dmi',
 		SPECIES_NABBER = 'icons/mob/species/nabber/onmob_under_gas.dmi',
+		SPECIES_MONARCH_QUEEN = 'icons/mob/species/nabber/msq/onmob_under_msq.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_under_unathi.dmi',
 		SPECIES_MANTID_ALATE = 'icons/mob/species/mantid/onmob_under_alate.dmi',
 		SPECIES_MANTID_GYNE = 'icons/mob/species/mantid/onmob_under_gyne.dmi',
@@ -894,7 +918,7 @@ BLIND     // can't see anything
 	else
 		. = icon_state
 	if(!findtext(.,"_s", -2)) // If we don't already have our suffix
-		if((icon_state + "_f_s") in icon_states(default_onmob_icons[slot_w_uniform_str]))
+		if((icon_state + "_f_s") in icon_states(GLOB.default_onmob_icons[slot_w_uniform_str]))
 			. +=  get_gender_suffix()
 		else
 			. += "_s"
@@ -916,7 +940,7 @@ BLIND     // can't see anything
 		worn_state = icon_state
 	//autodetect rollability
 	if(rolled_down < 0)
-		if(("[worn_state]_d_s") in icon_states(default_onmob_icons[slot_w_uniform_str]))
+		if(("[worn_state]_d_s") in icon_states(GLOB.default_onmob_icons[slot_w_uniform_str]))
 			rolled_down = 0
 
 /obj/item/clothing/under/proc/update_rolldown_status()
@@ -932,7 +956,7 @@ BLIND     // can't see anything
 	else if(item_icons && item_icons[slot_w_uniform_str])
 		under_icon = item_icons[slot_w_uniform_str]
 	else
-		under_icon = default_onmob_icons[slot_w_uniform_str]
+		under_icon = GLOB.default_onmob_icons[slot_w_uniform_str]
 
 	// The _s is because the icon update procs append it.
 	if(("[worn_state]_d_s") in icon_states(under_icon))
@@ -955,7 +979,7 @@ BLIND     // can't see anything
 	else if(item_icons && item_icons[slot_w_uniform_str])
 		under_icon = item_icons[slot_w_uniform_str]
 	else
-		under_icon = default_onmob_icons[slot_w_uniform_str]
+		under_icon = GLOB.default_onmob_icons[slot_w_uniform_str]
 
 	// The _s is because the icon update procs append it.
 	if(("[worn_state]_r_s") in icon_states(under_icon))
@@ -1107,7 +1131,7 @@ BLIND     // can't see anything
 	icon = 'icons/obj/clothing/obj_hands_ring.dmi'
 	slot_flags = SLOT_GLOVES
 	gender = NEUTER
-	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_DIONA)
+	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_DIONA, SPECIES_MONARCH_QUEEN)
 	var/undergloves = 1
 
 

@@ -55,7 +55,7 @@
 	body_parts_covered = FACE|EYES|HEAD
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/storage/backpack/baul
+/obj/item/storage/backpack/baul
 	name = "baul"
 	desc = "Comfortable bag and pouches to it, fixed straps."
 	icon = CUSTOM_ITEM_OBJ

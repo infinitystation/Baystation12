@@ -18,10 +18,10 @@
 	return list(
 		/obj/item/clothing/head/soft/mime,
 		/obj/item/device/radio/headset/headset_service,
-		/obj/item/weapon/storage/box/mousetraps = 2,
+		/obj/item/storage/box/mousetraps = 2,
 		/obj/item/clothing/under/rank/chef,
 		/obj/item/clothing/gloves/latex,
-		/obj/item/weapon/reagent_containers/spray/cleaner,
+		/obj/item/reagent_containers/spray/cleaner,
 		/obj/item/clothing/head/chefhat,
 		/obj/item/clothing/suit/chef/classic,
 		/obj/item/clothing/mask/surgical,
@@ -36,16 +36,16 @@
 /obj/structure/closet/secure_closet/hydroponics_sierra/WillContain()
 	return list(
 		/obj/item/clothing/head/soft/green,
-		/obj/item/weapon/storage/plants,
+		/obj/item/storage/plants,
 		/obj/item/device/scanner/plant,
-		/obj/item/weapon/material/minihoe,
+		/obj/item/material/minihoe,
 		/obj/item/clothing/gloves/thick/botany,
-		/obj/item/weapon/material/hatchet,
-		/obj/item/weapon/wirecutters/clippers,
-		/obj/item/weapon/reagent_containers/spray/plantbgone,
+		/obj/item/material/hatchet,
+		/obj/item/wirecutters/clippers,
+		/obj/item/reagent_containers/spray/plantbgone,
 		new /datum/atom_creator/weighted(list(/obj/item/clothing/suit/apron, /obj/item/clothing/suit/apron/overalls)),
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/hydroponics, /obj/item/weapon/storage/backpack/satchel/hyd)),
-		new /datum/atom_creator/simple(/obj/item/weapon/storage/backpack/messenger/hyd, 50)
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/hydroponics, /obj/item/storage/backpack/satchel/hyd)),
+		new /datum/atom_creator/simple(/obj/item/storage/backpack/messenger/hyd, 50)
 	)
 
 /obj/structure/closet/jcloset/sierra
@@ -64,19 +64,19 @@
 		/obj/item/clothing/suit/storage/janjacket,
 		/obj/item/clothing/gloves/thick,
 		/obj/item/device/flashlight/upgraded,
-		/obj/item/weapon/caution = 4,
+		/obj/item/caution = 4,
 		/obj/item/device/lightreplacer,
-		/obj/item/weapon/storage/bag/trash,
+		/obj/item/storage/bag/trash,
 		/obj/item/clothing/shoes/dutyboots,
-		/obj/item/weapon/grenade/chem_grenade/cleaner = 2,
-		/obj/item/weapon/reagent_containers/spray/cleaner,
+		/obj/item/grenade/chem_grenade/cleaner = 2,
+		/obj/item/reagent_containers/spray/cleaner,
 		/obj/item/clothing/shoes/galoshes,
-		/obj/item/weapon/storage/box/detergent,
+		/obj/item/storage/box/detergent,
 		/obj/item/holosign_creator,
 		/obj/item/clothing/glasses/hud/janitor,
-		/obj/item/weapon/storage/belt/janitor,
+		/obj/item/storage/belt/janitor,
 		/obj/item/clothing/mask/plunger,
-		/obj/item/weapon/soap,
+		/obj/item/soap,
 		/obj/item/clothing/head/beret/infinity
 	)
 
@@ -90,20 +90,20 @@
 	return list(
 		/obj/item/clothing/head/soft/black,
 		/obj/item/device/radio/headset/headset_service,
-		/obj/item/weapon/reagent_containers/food/drinks/shaker,
+		/obj/item/reagent_containers/food/drinks/shaker,
 		/obj/item/glass_jar,
-		/obj/item/weapon/book/manual/barman_recipes,
-		/obj/item/weapon/storage/box/ammo/flashshells,
+		/obj/item/book/manual/barman_recipes,
+		/obj/item/storage/box/ammo/flashshells,
 		/obj/item/clothing/under/rank/bartender,
 		/obj/item/clothing/gloves/thick,
 		/obj/item/clothing/gloves/white,
-		/obj/item/weapon/storage/box/lights/bulbs/bar,
+		/obj/item/storage/box/lights/bulbs/bar,
 		/obj/item/clothing/shoes/laceup,
-		/obj/item/weapon/storage/pill_bottle/dylovene,
-		/obj/item/weapon/reagent_containers/spray/cleaner,
-		/obj/item/weapon/reagent_containers/glass/rag,
-		/obj/item/weapon/paper/sierra/bar_permit,
-		/obj/item/weapon/gun/projectile/shotgun/doublebarrel/empty,
+		/obj/item/storage/pill_bottle/dylovene,
+		/obj/item/reagent_containers/spray/cleaner,
+		/obj/item/reagent_containers/glass/rag,
+		/obj/item/paper/sierra/bar_permit,
+		/obj/item/gun/projectile/shotgun/doublebarrel/empty,
 		/obj/item/clothing/head/beret/infinity
 	)
 
@@ -117,12 +117,12 @@
 		/obj/item/clothing/under/rank/chaplain,
 		/obj/item/clothing/shoes/black,
 		/obj/item/clothing/suit/chaplain_hoodie,
-		/obj/item/weapon/storage/candle_box = 3,
-		/obj/item/weapon/deck/tarot,
-		/obj/item/weapon/reagent_containers/food/drinks/bottle/holywater,
-		/obj/item/weapon/nullrod,
-		/obj/item/weapon/storage/bible,
-		/obj/item/weapon/storage/belt/general,
-		/obj/item/weapon/material/urn,
+		/obj/item/storage/candle_box = 3,
+		/obj/item/deck/tarot,
+		/obj/item/reagent_containers/food/drinks/bottle/holywater,
+		/obj/item/nullrod,
+		/obj/item/storage/bible,
+		/obj/item/storage/belt/general,
+		/obj/item/material/urn,
 		/obj/item/device/taperecorder
 	)

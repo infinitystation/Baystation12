@@ -17,7 +17,7 @@
 		to_chat(src, "<span class='warning'>You are for all intents and purposes currently deaf!</span>")
 		return
 	to_chat(src, "<span class='notice'>You take a moment to listen in to your environment...</span>")
-	if(do_after(src, delay = 5, needhand = 0, progress = 1))
+	if(do_after(src, delay = 5, do_flags = DO_DEFAULT & ~DO_USER_SAME_HAND))
 		var/heard_something = FALSE
 		for(var/mob/living/L in range(client.view, src))
 			var/turf/T = get_turf(L)
@@ -29,7 +29,7 @@
 			ping_image.layer = UNDER_HUD_LAYER
 			ping_image.pixel_x = (T.x - src.x) * WORLD_ICON_SIZE
 			ping_image.pixel_y = (T.y - src.y) * WORLD_ICON_SIZE
-			show_image(src, ping_image)
+			image_to(src, ping_image)
 			addtimer(CALLBACK(src, .proc/clear_sonar_effect, src.client, ping_image), 8)
 			var/feedback = list("<span class='notice'>There are noises of movement ")
 			var/direction = get_dir(src, L)

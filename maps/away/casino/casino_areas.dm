@@ -1,6 +1,5 @@
 area/casino
 	icon = 'maps/away/casino/casino_sprites.dmi'
-	turf_initializer = /decl/turf_initializer/maintenance
 
 area/casino/casino_mainfloor
 	name = "\improper Casino Hall"

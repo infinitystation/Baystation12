@@ -40,18 +40,17 @@ var/global/datum/ntnet/ntnet_global = new()
 		relays.Add(R)
 		R.NTNet = src
 	build_software_lists()
-	build_news_list()
 	build_emails_list()
 	build_reports_list()
 	airlock_override_key = GenerateCode()//inf
 	add_log("NTNet logging system activated.")
 
-/datum/ntnet/proc/add_log_with_ids_check(var/log_string, var/obj/item/weapon/stock_parts/computer/network_card/source = null)
+/datum/ntnet/proc/add_log_with_ids_check(var/log_string, var/obj/item/stock_parts/computer/network_card/source = null)
 	if(intrusion_detection_enabled)
 		add_log(log_string, source)
 
 // Simplified logging: Adds a log. log_string is mandatory parameter, source is optional.
-/datum/ntnet/proc/add_log(var/log_string, var/obj/item/weapon/stock_parts/computer/network_card/source = null)
+/datum/ntnet/proc/add_log(var/log_string, var/obj/item/stock_parts/computer/network_card/source = null)
 	var/log_text = "[stationtime2text()] - "
 	if(source)
 		log_text += "[source.get_network_tag()] - "
@@ -69,7 +68,7 @@ var/global/datum/ntnet/ntnet_global = new()
 				break
 
 	for(var/obj/machinery/ntnet_relay/R in ntnet_global.relays)
-		var/obj/item/weapon/stock_parts/computer/hard_drive/portable/P = R.get_component_of_type(/obj/item/weapon/stock_parts/computer/hard_drive/portable)
+		var/obj/item/stock_parts/computer/hard_drive/portable/P = R.get_component_of_type(/obj/item/stock_parts/computer/hard_drive/portable)
 		if(P)
 			var/datum/computer_file/data/logfile/file = P.find_file_by_name("ntnet_log")
 			if(!istype(file))
@@ -143,14 +142,6 @@ var/global/datum/ntnet/ntnet_global = new()
 			ADD_SORTED(category_list, prog, /proc/cmp_program)
 		if(prog.available_on_syndinet)
 			ADD_SORTED(available_antag_software, prog, /proc/cmp_program)
-
-// Builds lists that contain downloadable software.
-/datum/ntnet/proc/build_news_list()
-	available_news = list()
-	for(var/F in typesof(/datum/computer_file/data/news_article/))
-		var/datum/computer_file/data/news_article/news = new F(1)
-		if(news.stored_data)
-			available_news.Add(news)
 
 // Generates service email list. Currently only used by broadcaster service
 /datum/ntnet/proc/build_emails_list()

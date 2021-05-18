@@ -83,7 +83,7 @@
 	allowed_roles = TECHNICAL_ROLES
 
 /datum/gear/tactical/balaclava
-	allowed_roles = ARMORED_ROLES
+	allowed_roles = SECURITY_ROLES
 
 /datum/gear/head/fleetberet
 	display_name = "Fleet branch beret selection"
@@ -113,3 +113,6 @@
 	berets["field operation beret"] = /obj/item/clothing/head/beret/solgov/expedition/branch
 	berets["observatory beret"] = /obj/item/clothing/head/beret/solgov/expedition/branch/observatory
 	gear_tweaks += new/datum/gear_tweak/path(berets)
+
+/datum/gear/head/corporateberet
+	allowed_branches = CIVILIAN_BRANCHES

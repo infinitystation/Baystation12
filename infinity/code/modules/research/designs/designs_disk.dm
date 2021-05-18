@@ -4,5 +4,5 @@
 	id = "flora_disk"
 	req_tech = list(TECH_DATA = 1)
 	materials = list(MATERIAL_STEEL = 30, MATERIAL_GLASS = 10)
-	build_path = /obj/item/weapon/disk/botany
+	build_path = /obj/item/disk/botany
 	sort_string = "AAAAC"

@@ -5,7 +5,7 @@
 
 #define ALL_CULTURAL_TAGS list( \
 	TAG_CULTURE =   "Культура", \
-	TAG_HOMEWORLD = "Место проживания", \
+	TAG_HOMEWORLD = "Место рождения", \
 	TAG_FACTION =   "Фракция", \
 	TAG_RELIGION =  "Верования" \
 	)
@@ -20,6 +20,7 @@
 #define FACTION_FLEET          "SCG Fleet"
 #define FACTION_EXPEDITIONARY  "Expeditionary Corps"
 #define FACTION_PCRC           "Proxima Centauri Risk Control"
+#define FACTION_SAARE          "Strategic Assault and Asset Retention Enterprises"
 #define FACTION_CORPORATE       "Expeditionary Corps Organisation"
 #define FACTION_DAIS           "Deimos Advanced Information Systems"
 #define FACTION_OTHER          "Other Faction"
@@ -150,23 +151,37 @@
 #define HOME_SYSTEM_SERPENTIDS "Tau-Wilo"
 
 // Unathi cultures.
-#define CULTURE_UNATHI              "Moghes Hegemony"
+#define CULTURE_UNATHI_YEOSA_ABYSS    "Abyssal Yeosa Clans"
+#define CULTURE_UNATHI_YEOSA_LITTORAL "Littoral Yeosa Clans"
+#define CULTURE_UNATHI_DIAMOND_PEAKS  "Diamond Peak Clans"
+#define CULTURE_UNATHI_POLAR          "Polar Clans"
+#define CULTURE_UNATHI_DESERT         "Desert Clans"
+#define CULTURE_UNATHI_SAVANNAH       "Savannah Clans"
+#define CULTURE_UNATHI_SALT_SWAMP     "Salt Swamp Clans"
+#define CULTURE_UNATHI_SPACE          "Space-Faring Clans"
+#define CULTURE_UNATHI_TERSTEN        "Tersten Clans"
 
 #define HOME_SYSTEM_MOGHES          "Moghes"
-#define HOME_SYSTEM_OUERE			"Ouere"
-#define HOME_SYSTEM_OFFWORLD		"Off World"
+#define HOME_SYSTEM_OUERE           "Ouere"
+#define HOME_SYSTEM_UNATHI_TERSTEN  "Tersten - Unathi Clans"
+#define HOME_SYSTEM_OFFWORLD        "Off-world"
 
-#define FACTION_UNATHI_POLAR        "Polar Clans"
-#define FACTION_UNATHI_DESERT       "Desert Clans"
-#define FACTION_UNATHI_SAVANNAH     "Savannah Clans"
-#define FACTION_UNATHI_DIAMOND_PEAK "Diamond Peak Clans"
-#define FACTION_UNATHI_SALT_SWAMP   "Salt Swamp Clans"
-#define FACTION_UNATHI_YEOSA		"Yeosa Clans"
+#define FACTION_UNATHI_HEGEMONY          "Moghes Hegemony"
+#define FACTION_UNATHI_TERSTEN_HEGEMONY  "Tersten Hegemony"
+#define FACTION_UNATHI_SSEN_UUMA         "Ssen-Uuma Convent"
+#define FACTION_UNATHI_INDEPENDENT       "Independent Faction"
+#define FACTION_UNATHI_BAASK             "Ba'ask Krukzuz"
+#define FACTION_UNATHI_GRESIS            "Gresis Krukzuz"
+#define FACTION_UNATHI_RAH_ZAKEH         "Rah'Zakeh League"
+#define FACTION_UNATHI_KHARZA            "Kharza Fleet"
 
 #define RELIGION_UNATHI_STRATAGEM    "Grand Stratagem"
 #define RELIGION_UNATHI_PRECURSOR    "Precursor"
 #define RELIGION_UNATHI_VINE         "Hand of the Vine"
 #define RELIGION_UNATHI_LIGHTS       "The Fruitful Lights"
+#define RELIGION_UNATHI_MARKESHELI   "Cult of Markesh"
+#define RELIGION_UNATHI_ANCESTOR     "Ancestor Worship"
+#define RELIGION_UNATHI_AGA_EAKHE    "Aga-Eakhe"
 
 // Nabber grades.
 #define CULTURE_NABBER_CMINUS "Grade C-"

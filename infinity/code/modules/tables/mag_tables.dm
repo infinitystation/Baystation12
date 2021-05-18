@@ -54,10 +54,10 @@
 		I.anchored = locked
 	playsound(src, 'sound/effects/storage/briefcase.ogg', 100, 1)
 
-/obj/structure/table/mag/attackby(obj/item/weapon/W as obj, mob/user as mob, var/click_params)
+/obj/structure/table/mag/attackby(obj/item/W as obj, mob/user as mob, var/click_params)
 	if(isrobot(user))
 		return
-	if(istype(W, /obj/item/weapon/card/id) || istype(W, /obj/item/modular_computer))
+	if(istype(W, /obj/item/card/id) || istype(W, /obj/item/modular_computer))
 		if(allowed(usr))
 			toggle_lock()
 			visible_message(SPAN_NOTICE("[usr] [locked ? "" : "un"]locked [src]!"))

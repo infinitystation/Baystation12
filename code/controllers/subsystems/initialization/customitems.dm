@@ -63,7 +63,7 @@ SUBSYSTEM_DEF(customitems)
 		if(citem.ckey != M.ckey || lowertext(citem.character_name) != lowertext(M.real_name))
 			continue
 		// Check for required access.
-		var/obj/item/weapon/card/id/current_id = M.wear_id
+		var/obj/item/card/id/current_id = M.wear_id
 //INF		if(length(citem.req_access) && (!istype(current_id) || !has_access(citem.req_access, current_id.access)))
 //[INF]
 		if(length(citem.req_access))
@@ -77,13 +77,13 @@ SUBSYSTEM_DEF(customitems)
 					continue
 
 		// Бумагу вперед! ~bear1ake
-		if(length(citem.assoc_paper_info) || length(citem.assoc_paper_title) || ispath(citem.assoc_paper_stamp_type) || ispath(citem.item_path, /obj/item/weapon/paper))
-			var/obj/item/weapon/paper/AP = new(text = citem.assoc_paper_info, title = citem.assoc_paper_title)
+		if(length(citem.assoc_paper_info) || length(citem.assoc_paper_title) || ispath(citem.assoc_paper_stamp_type) || ispath(citem.item_path, /obj/item/paper))
+			var/obj/item/paper/AP = new(text = citem.assoc_paper_info, title = citem.assoc_paper_title)
 			if(citem.assoc_paper_stamp_type)
 				AP.preStampPaper(citem.assoc_paper_stamp_type)
 			AP.loc = M
 			M.equip_to_storage(AP)
-			if(ispath(citem.item_path, /obj/item/weapon/paper))	// А вдруг бумага и есть кастомный предмет?
+			if(ispath(citem.item_path, /obj/item/paper))	// А вдруг бумага и есть кастомный предмет?
 				AP.inherit_custom_item_data(src)				// Применяем остальные свойства к бумаге
 				continue										// Чистый лист нам не нужен
 //[/INF]

@@ -14,16 +14,16 @@
 			"memory"	=	6,
 			"special"	=	1,
 		)
-/obj/item/device/paicard/proc/check_for_free_place(var/obj/item/weapon/paimod/P)
+/obj/item/device/paicard/proc/check_for_free_place(var/obj/item/paimod/P)
 	var/list/mods = list()
-	for(var/obj/item/weapon/paimod/PM in contents)
+	for(var/obj/item/paimod/PM in contents)
 		mods.Add(PM)
 	var/T = P.special_limit_tag
 	if(mods.len > modlimits["common"]) return 0
 	else if(!T) return 1
 	else
 		var/mods_withT = 0
-		for(var/obj/item/weapon/paimod/PM in mods) if(PM.special_limit_tag == T) mods_withT += 1
+		for(var/obj/item/paimod/PM in mods) if(PM.special_limit_tag == T) mods_withT += 1
 		if(mods_withT > modlimits[T]) return 0
 		else return 1
 
@@ -37,7 +37,7 @@
 		is_hack_covered = initial(is_hack_covered)
 		is_advanced_holo = initial(is_advanced_holo)
 		hack_speed = initial(hack_speed)
-		for(var/obj/item/weapon/paimod/P in card.contents)
+		for(var/obj/item/paimod/P in card.contents)
 			if(card.check_for_free_place(P))
 				P.is_broken ? (P.on_brocken_recalculate(src)) : (P.on_recalculate(src))
 			else
@@ -45,11 +45,11 @@
 				card.visible_message(SPAN_NOTICE("[card] haven't enough place to hold [P] and [card] threw [P] out."))
 	update_verbs()
 
-/obj/item/device/paicard/attackby(obj/item/weapon/W, mob/user)
+/obj/item/device/paicard/attackby(obj/item/W, mob/user)
 	. = ..()
 	if(pai)
-		if(istype(W, /obj/item/weapon/paimod))
-			var/obj/item/weapon/paimod/PMOD = W
+		if(istype(W, /obj/item/paimod))
+			var/obj/item/paimod/PMOD = W
 			if(PMOD.is_broken) visible_message(SPAN_NOTICE("[user] tried to install [PMOD] in [src], but nothing happened."))
 			else if(check_for_free_place(PMOD))
 				user.drop_from_inventory(PMOD)
@@ -59,7 +59,7 @@
 
 
 // ========= Core =========
-/obj/item/weapon/paimod
+/obj/item/paimod
 	name = "unknown personal AI modification module"
 	desc = "This is unknown PAImod. You should not have this!"
 	icon = 'infinity/icons/obj/paimod.dmi'
@@ -69,28 +69,28 @@
 	var/mod_integrity = 100
 	var/special_limit_tag
 
-/obj/item/weapon/paimod/proc/on_install(var/mob/living/silicon/pai/P, var/mob/user)
+/obj/item/paimod/proc/on_install(var/mob/living/silicon/pai/P, var/mob/user)
 	P.visible_message(SPAN_NOTICE("[user] installed [src] in [P.name]."))
 
-/obj/item/weapon/paimod/proc/on_recalculate(var/mob/living/silicon/pai/P)
+/obj/item/paimod/proc/on_recalculate(var/mob/living/silicon/pai/P)
 
-/obj/item/weapon/paimod/proc/on_update_memory(var/mob/living/silicon/pai/P)
+/obj/item/paimod/proc/on_update_memory(var/mob/living/silicon/pai/P)
 
-/obj/item/weapon/paimod/proc/on_brocken_recalculate(var/mob/living/silicon/pai/P)
+/obj/item/paimod/proc/on_brocken_recalculate(var/mob/living/silicon/pai/P)
 	P.visible_message("\icon[P]" + SPAN_WARNING("\the [P] sparks."))
 
-/obj/item/weapon/paimod/proc/update_damage()
+/obj/item/paimod/proc/update_damage()
 	if(mod_integrity <= 0)
 		is_broken = 1
 		update_icon()
-/obj/item/weapon/paimod/on_update_icon()
+/obj/item/paimod/on_update_icon()
 	. = ..()
 	icon_state = initial(icon_state)
 	if(is_broken)
 		icon_state = "[icon_state]_dead"
 		desc += "<br><font color = '#f00'>It's broken.</font>"
 
-/obj/item/weapon/paimod/attackby(obj/item/weapon/W, mob/user)
+/obj/item/paimod/attackby(obj/item/W, mob/user)
 	. = ..()
 	if(W.force)
 		visible_message("<span class='danger'>[user.name] attacks [src.name] with [W]!</span>")

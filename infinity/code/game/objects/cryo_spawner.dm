@@ -4,8 +4,8 @@
 	desc = "A man-sized pod for entering suspended animation."
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "body_scanner_1"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 
 	var/use_left = 1
 	var/permissions
@@ -138,7 +138,7 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 	gloves = /obj/item/clothing/gloves/thick/combat
 	shoes = /obj/item/clothing/shoes/jackboots
-	back = /obj/item/weapon/gun/projectile/automatic/assault_rifle
+	back = /obj/item/gun/projectile/automatic/assault_rifle
 	r_pocket = /obj/item/ammo_magazine/rifle
 
 /decl/hierarchy/outfit/tournament_battle_gear/red

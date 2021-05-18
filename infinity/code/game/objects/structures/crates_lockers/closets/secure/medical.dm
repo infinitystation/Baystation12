@@ -6,16 +6,16 @@
 
 /obj/structure/closet/secure_closet/medical1_minimal/WillContain()
 	return list(
-		/obj/item/weapon/storage/box/autoinjectors,
-		/obj/item/weapon/storage/box/syringes,
-		/obj/item/weapon/reagent_containers/dropper = 1,
-		/obj/item/weapon/reagent_containers/glass/beaker = 1,
-		/obj/item/weapon/storage/firstaid/regular,
-		/obj/item/weapon/storage/firstaid/adv,
-		/obj/item/weapon/storage/firstaid/fire,
-		/obj/item/weapon/storage/firstaid/o2,
-		/obj/item/weapon/storage/firstaid/toxin,
-		/obj/item/weapon/storage/box/masks,
+		/obj/item/storage/box/autoinjectors,
+		/obj/item/storage/box/syringes,
+		/obj/item/reagent_containers/dropper = 1,
+		/obj/item/reagent_containers/glass/beaker = 1,
+		/obj/item/storage/firstaid/regular,
+		/obj/item/storage/firstaid/adv,
+		/obj/item/storage/firstaid/fire,
+		/obj/item/storage/firstaid/o2,
+		/obj/item/storage/firstaid/toxin,
+		/obj/item/storage/box/masks,
 		/obj/item/clothing/gloves/latex/nitrile,
 		/obj/item/clothing/accessory/stethoscope
 	)

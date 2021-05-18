@@ -150,7 +150,8 @@
 				"возможности провести выходные в походе вместе с популярным бывшим членом экспедиционного корпуса ЦПСС [random_name(pick(MALE,FEMALE))]")]. \
 				Nyx Daily также сообщает о скидке в 35% на второй билет - всё, ради возможности увидеть местные захватывающие пейзажи и варианты развлечений от различных корпораций."
 
-	news_network.SubmitArticle(body, author, channel, null, 1)
+	for (var/datum/feed_network/N in news_network)
+		N.SubmitArticle(body, author, channel, null, 1)
 
 /datum/event/trivial_news
 	endWhen = 10
@@ -245,5 +246,5 @@
 	"Если оловяные свистки делают из олова, то из чего сделаны крабовые палочки?",\
 	"Доказано, что гильгамешская водка вызывает духа-Славика."\
 	)
-
-	news_network.SubmitArticle(body, author, channel, null, 1)
+	for (var/datum/feed_network/N in news_network)
+		N.SubmitArticle(body, author, channel, null, 1)

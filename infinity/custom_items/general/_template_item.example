@@ -8,6 +8,6 @@
   "req_titles" :      [ "Janitor" ],
   "req_access" :      [ "ACCESS_CAVEMAN" ]
   "paper_title" :     "Paper's title",
-  "paper_stamp_type" :"/obj/item/weapon/stamp/real_stamp",
+  "paper_stamp_type" :"/obj/item/stamp/real_stamp",
   "paper_info" :      "Paper content, including [b]code[/b] and [sign]Sign[/sign]"
   }

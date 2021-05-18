@@ -132,11 +132,11 @@ Buildable meters
 		P.node4.build_network()
 	return 0
 
-/obj/item/pipe/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
+/obj/item/pipe/attackby(var/obj/item/W as obj, var/mob/user as mob)
 	..()
 
 	//[INF]
-	if(istype(W, /obj/item/weapon/rpd))
+	if(istype(W, /obj/item/rpd))
 		to_chat(usr, "<span class='notice'>You put \the [W] back into \the [src].</span>")
 		qdel(src)
 		return
@@ -163,6 +163,8 @@ Buildable meters
 	var/obj/machinery/atmospherics/P = new constructed_path(get_turf(src))
 
 	P.pipe_color = color
+	if (P.colorable)
+		P.color = color
 	P.set_dir(dir)
 	P.set_initial_level()
 
@@ -220,7 +222,7 @@ Buildable meters
 /obj/item/machine_chassis
 	var/build_type
 
-/obj/item/machine_chassis/attackby(var/obj/item/weapon/W, var/mob/user)
+/obj/item/machine_chassis/attackby(var/obj/item/W, var/mob/user)
 	if(!isWrench(W))
 		return ..()
 	var/obj/machinery/machine = new build_type(get_turf(src), dir, FALSE)
