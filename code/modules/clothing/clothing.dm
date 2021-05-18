@@ -153,7 +153,7 @@
 		var/list/display = list()
 		for (var/obj/item/clothing/accessory/A in visible)
 			if (A.high_visibility)
-				display += "\icon[A] \a [A]"
+				display += "[icon2html(A, usr)] \a [A]" // INF, было display += "\icon[A] \a [A]"
 		if (length(display))
 			. += " with [english_list(display)] attached"
 		if (length(visible) > length(display))

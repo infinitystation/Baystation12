@@ -198,7 +198,7 @@
 	if(display_message)
 		visible_message("<span class='warning'>\The [src] shatters!</span>")
 
-	var/debris_count = round(get_glass_cost() / rand(1, 4))
+	var/debris_count = max(round(get_glass_cost() / rand(1, 4)), 1) // INF, было var/debris_count = round(get_glass_cost() / rand(1, 4))
 	for(var/i = 1 to debris_count)
 		material.place_shard(loc)
 		if(reinf_material)
