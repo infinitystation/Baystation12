@@ -288,6 +288,9 @@
 	name = "Second Deck - Grove - Theta"
 	icon_state = "garden"
 	sound_env = LARGE_SOFTFLOOR
+	ambience = list(
+			'sound/ambience/jungle.ogg',
+		)
 
 /area/crew_quarters/head
 	name = "Second Deck - Living - Restroom"
