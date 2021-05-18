@@ -5,7 +5,7 @@
 	SyncWithDonatorData()
 
 /client/proc/SyncWithDonatorData()
-	if(GLOB.donators_data.Find(key))
+	if(list_find(GLOB.donators_data, key))
 		DonateData = GLOB.donators_data[key]
 	else
 		DonateData = new(key)
@@ -31,13 +31,13 @@ GLOBAL_LIST_EMPTY(donators_data)
 	if(key)
 		var/list/rank_and_points = SSexdata.GetDataByKey(DATASTORE_DONATORS, key)
 		if(islist(rank_and_points) && length(rank_and_points))
-			if(rank_and_points.Find("rank"))
+			if(list_find(rank_and_points, "rank"))
 				rank = rank_and_points["rank"]
-			if(rank_and_points.Find("points"))
+			if(list_find(rank_and_points, "points"))
 				points = rank_and_points["points"]
 		if(rank)
 			var/list/levels = SSexdata.GetDataByKey(DATASTORE_DONATORS_RANKS, rank)
-			if(islist(levels) && length(levels) && levels?.Find("level"))
+			if(levels && islist(levels) && length(levels) && list_find(levels, "level"))
 				level = levels["level"]
 
 			var/list/rank_color = SSexdata.GetDataByKey(DATASTORE_RANKS_OOC_COLORS, rank)

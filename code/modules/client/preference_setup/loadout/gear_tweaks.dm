@@ -59,13 +59,17 @@
 	var/list/duplicate_values = duplicates(list_values(valid_paths))
 	if(duplicate_values.len)
 		CRASH("Duplicate types found: [english_list(duplicate_values)]")
+	// valid_paths, but with names sanitized to remove \improper
+	var/list/valid_paths_san = list()
 	for(var/path_name in valid_paths)
 		if(!istext(path_name))
 			CRASH("Expected a text key, was [log_info_line(path_name)]")
 		var/selection_type = valid_paths[path_name]
 		if(!ispath(selection_type, /obj/item))
 			CRASH("Expected an /obj/item path, was [log_info_line(selection_type)]")
-	src.valid_paths = sortAssoc(valid_paths)
+		var/path_name_san = replacetext(path_name, "\improper", "")
+		valid_paths_san[path_name_san] = selection_type
+	src.valid_paths = sortAssoc(valid_paths_san)
 
 /datum/gear_tweak/path/type/New(var/type_path)
 	..(atomtype2nameassoclist(type_path))
@@ -111,7 +115,7 @@
 	..()
 
 /datum/gear_tweak/contents/get_contents(var/metadata)
-	return "Contents: [english_list(metadata, and_text = ", ")]"
+	return "Contents: [english_list(metadata, and_text = ", ", final_comma_text = "")]"
 
 /datum/gear_tweak/contents/get_default()
 	. = list()
@@ -145,7 +149,8 @@
 		if(path)
 			new path(I)
 		else
-			log_debug("Failed to tweak item: Index [i] in [json_encode(metadata)] did not result in a valid path. Valid contents: [json_encode(valid_contents)]")
+			log_debug("Failed to tweak item: Index [i] in [json_encode(metadata)] did not result in a valid path.")
+			to_chat(owner, SPAN_WARNING("Your loadout selection for \the [I] that includes \the [metadata[i]] could not spawn properly. This likely means a saved configuration is no longer available or is invalid. Contact a dev for help. This is likely a bug."))
 
 /*
 * Ragent adjustment
@@ -198,13 +203,13 @@
 */
 
 /datum/gear_tweak/tablet
-	var/list/ValidProcessors = list(/obj/item/weapon/stock_parts/computer/processor_unit/small)
-	var/list/ValidBatteries = list(/obj/item/weapon/stock_parts/computer/battery_module/nano, /obj/item/weapon/stock_parts/computer/battery_module/micro, /obj/item/weapon/stock_parts/computer/battery_module)
-	var/list/ValidHardDrives = list(/obj/item/weapon/stock_parts/computer/hard_drive/micro, /obj/item/weapon/stock_parts/computer/hard_drive/small, /obj/item/weapon/stock_parts/computer/hard_drive)
-	var/list/ValidNetworkCards = list(/obj/item/weapon/stock_parts/computer/network_card, /obj/item/weapon/stock_parts/computer/network_card/advanced)
-	var/list/ValidNanoPrinters = list(null, /obj/item/weapon/stock_parts/computer/nano_printer)
-	var/list/ValidCardSlots = list(null, /obj/item/weapon/stock_parts/computer/card_slot)
-	var/list/ValidTeslaLinks = list(null, /obj/item/weapon/stock_parts/computer/tesla_link)
+	var/list/ValidProcessors = list(/obj/item/stock_parts/computer/processor_unit/small)
+	var/list/ValidBatteries = list(/obj/item/stock_parts/computer/battery_module/nano, /obj/item/stock_parts/computer/battery_module/micro, /obj/item/stock_parts/computer/battery_module)
+	var/list/ValidHardDrives = list(/obj/item/stock_parts/computer/hard_drive/micro, /obj/item/stock_parts/computer/hard_drive/small, /obj/item/stock_parts/computer/hard_drive)
+	var/list/ValidNetworkCards = list(/obj/item/stock_parts/computer/network_card, /obj/item/stock_parts/computer/network_card/advanced)
+	var/list/ValidNanoPrinters = list(null, /obj/item/stock_parts/computer/nano_printer)
+	var/list/ValidCardSlots = list(null, /obj/item/stock_parts/computer/card_slot)
+	var/list/ValidTeslaLinks = list(null, /obj/item/stock_parts/computer/tesla_link)
 
 /datum/gear_tweak/tablet/get_contents(var/list/metadata)
 	var/list/names = list()

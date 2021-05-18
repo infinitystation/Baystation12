@@ -65,6 +65,14 @@
 	name = "TCV Tersten Tenacity - North-West"
 	landmark_tag = "nav_merc_4"
 
+/obj/effect/shuttle_landmark/merc/dock
+	name = "Docking Port"
+	landmark_tag = "nav_merc_dock"
+
+/obj/effect/shuttle_landmark/transit/merc
+	name = "In transit"
+	landmark_tag = "nav_transit_merc"
+
 //Areas
 
 /area/map_template/merc_spawn

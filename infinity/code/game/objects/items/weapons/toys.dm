@@ -3,7 +3,7 @@
 	desc = "Very suspicious red button. I really want to click on it."
 	icon = 'infinity/icons/obj/toy.dmi'
 	icon_state= "terminal"
-	anchored = 1
+	anchored = TRUE
 
 /obj/item/toy/ringbell/tajalarm/attack_hand(mob/user as mob)
 	if (user.a_intent == I_GRAB)

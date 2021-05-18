@@ -3,8 +3,8 @@
 	icon = 'icons/obj/curtain.dmi'
 	icon_state = "closed"
 	layer = ABOVE_WINDOW_LAYER
-	opacity = 1
-	density = 0
+	opacity = TRUE
+	density = FALSE
 	anchored = TRUE
 
 /obj/structure/curtain/Initialize()

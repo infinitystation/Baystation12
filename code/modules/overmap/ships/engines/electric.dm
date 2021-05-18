@@ -42,8 +42,8 @@
 	icon_state = "nozzle"
 	use_power = 1
 	idle_power_usage = 1500 // internal circuitry, friction losses and stuff
-	opacity = 1
-	density = 1
+	opacity = TRUE
+	density = TRUE
 
 	var/on = 1
 	var/datum/ship_engine/electric/controller

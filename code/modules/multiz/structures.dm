@@ -7,9 +7,9 @@
 	desc = "A ladder. You can climb it up and down."
 	icon_state = "ladder01"
 	icon = 'icons/obj/structures.dmi'
-	density = 0
+	density = FALSE
 	opacity = 0
-	anchored = 1
+	anchored = TRUE
 	obj_flags = OBJ_FLAG_NOFALL
 
 	var/allowed_directions = DOWN
@@ -213,9 +213,9 @@
 	name = "stairs"
 	desc = "Stairs leading to another deck.  Not too useful if the gravity goes out."
 	icon = 'icons/obj/stairs.dmi'
-	density = 0
+	density = FALSE
 	opacity = 0
-	anchored = 1
+	anchored = TRUE
 	layer = RUNE_LAYER
 
 /obj/structure/stairs/Initialize()
@@ -234,22 +234,25 @@
 	return ..()
 
 /obj/structure/stairs/Bumped(atom/movable/A)
-	var/turf/target = get_step(GetAbove(A), dir)
-	var/turf/source = A.loc
 	var/turf/above = GetAbove(A)
-	if(above.CanZPass(source, UP) && target.Enter(A, src))
-		A.forceMove(target)
-		if(isliving(A))
-			var/mob/living/L = A
-			if(L.pulling)
-				L.pulling.forceMove(target)
-		if(ishuman(A))
-			var/mob/living/carbon/human/H = A
-			if(H.has_footsteps())
-				playsound(source, 'sound/effects/stairs_step.ogg', 50)
-				playsound(target, 'sound/effects/stairs_step.ogg', 50)
+	if (above)
+		var/turf/target = get_step(above, dir)
+		var/turf/source = A.loc
+		if(above.CanZPass(source, UP) && target.Enter(A, src))
+			A.forceMove(target)
+			if(isliving(A))
+				var/mob/living/L = A
+				if(L.pulling)
+					L.pulling.forceMove(target)
+			if(ishuman(A))
+				var/mob/living/carbon/human/H = A
+				if(H.has_footsteps())
+					playsound(source, 'sound/effects/stairs_step.ogg', 50)
+					playsound(target, 'sound/effects/stairs_step.ogg', 50)
+		else
+			to_chat(A, "<span class='warning'>Something blocks the path.</span>")
 	else
-		to_chat(A, "<span class='warning'>Something blocks the path.</span>")
+		to_chat(A, SPAN_NOTICE("There is nothing of interest in this direction."))
 
 /obj/structure/stairs/proc/upperStep(var/turf/T)
 	return (T == loc)

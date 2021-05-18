@@ -1,4 +1,4 @@
-/obj/item/weapon/screwdriver/power
+/obj/item/screwdriver/power
 	name = "hand drill"
 	desc = "A simple powered hand drill. It's fitted with a screw bit."
 	icon = 'infinity/icons/obj/items.dmi'
@@ -18,14 +18,14 @@
 	hitsound = 'infinity/sound/items/drill_hit.ogg'
 	//usesound = 'sound/items/drill_use.ogg'
 
-/obj/item/weapon/screwdriver/power/attack_self(mob/user)
+/obj/item/screwdriver/power/attack_self(mob/user)
 	playsound(get_turf(user),'infinity/sound/items/change_drill.ogg',50,1)
-	var/obj/item/weapon/wrench/power/b_drill = new /obj/item/weapon/wrench/power
+	var/obj/item/wrench/power/b_drill = new /obj/item/wrench/power
 	to_chat(user, "<span class='notice'>You attach the bolt driver bit to [src].</span>")
 	qdel(src)
 	user.put_in_active_hand(b_drill)
 
-/obj/item/weapon/screwdriver/power/Initialize()
+/obj/item/screwdriver/power/Initialize()
 	. = ..()
 	icon_state = "drill_screw"
 	color = "#ffffff"

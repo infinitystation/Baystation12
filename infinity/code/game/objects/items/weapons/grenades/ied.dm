@@ -1,4 +1,4 @@
-/obj/item/weapon/grenade/frag/ied
+/obj/item/grenade/frag/ied
 	name = "pipe bomb"
 	desc = "An improvised explosive device, probably. It looks like in movies about Gilgamesh terrorists."
 	icon = 'infinity/icons/obj/grenades.dmi'
@@ -8,16 +8,16 @@
 	num_fragments = 70
 	explosion_size = 1
 
-/obj/item/weapon/reagent_containers/food/drinks/cans
+/obj/item/reagent_containers/food/drinks/cans
 	var/buildstate = 0
 
-/obj/item/weapon/reagent_containers/food/drinks/cans/on_update_icon()
+/obj/item/reagent_containers/food/drinks/cans/on_update_icon()
 	overlays.Cut()
 	. = ..()
 	if(buildstate)
 		overlays += image(icon = 'infinity/icons/obj/grenades.dmi', icon_state = "sied[buildstate]")
 
-/obj/item/weapon/reagent_containers/food/drinks/cans/attackby(obj/item/W as obj, mob/user as mob)
+/obj/item/reagent_containers/food/drinks/cans/attackby(obj/item/W as obj, mob/user as mob)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	add_fingerprint(user)
 	if(loc == user.loc)
@@ -50,9 +50,9 @@
 					buildstate++
 					qdel(W)
 			if(3)
-				if(istype(W, /obj/item/weapon/tape_roll))
+				if(istype(W, /obj/item/tape_roll))
 					to_chat(user, SPAN_NOTICE("You secure everything with [W]."))
-					new /obj/item/weapon/grenade/frag/ied(get_turf(src))
+					new /obj/item/grenade/frag/ied(get_turf(src))
 					qdel(src)
 				return
 		update_icon()

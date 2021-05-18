@@ -35,7 +35,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/yacht/bridge)
 "al" = (
-/obj/item/weapon/material/ashtray/bronze{
+/obj/item/material/ashtray/bronze{
 	pixel_y = 10
 	},
 /obj/machinery/button/blast_door{
@@ -66,9 +66,9 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/yacht/bridge)
 "ao" = (
-/obj/item/weapon/folder/blue,
+/obj/item/folder/blue,
 /obj/structure/table/woodentable/walnut,
-/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup,
+/obj/item/reagent_containers/food/drinks/glass2/coffeecup,
 /obj/effect/floor_decal/spline/fancy/wood/corner{
 	dir = 1;
 	icon_state = "spline_fancy_corner"
@@ -114,7 +114,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/item/weapon/reagent_containers/pill/cyanide,
+/obj/item/reagent_containers/pill/cyanide,
 /obj/structure/safe{
 	open = 1;
 	tumbler_1_open = 15;
@@ -123,12 +123,12 @@
 	tumbler_2_pos = 10
 	},
 /obj/random/cash,
-/obj/item/weapon/spacecash/bundle/c500,
-/obj/item/weapon/spacecash/bundle/c1000,
-/obj/item/weapon/spacecash/bundle/c1000,
-/obj/item/weapon/spacecash/bundle/c1000,
-/obj/item/weapon/spacecash/bundle/c1000,
-/obj/item/weapon/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c500,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
 /turf/simulated/floor/wood/walnut,
 /area/yacht/bridge)
 "av" = (
@@ -244,7 +244,7 @@
 	pixel_x = -22;
 	pixel_y = 0
 	},
-/obj/item/weapon/storage/mirror{
+/obj/item/storage/mirror{
 	dir = 1;
 	icon_state = "mirror";
 	pixel_x = -32
@@ -254,7 +254,7 @@
 "aI" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/structure/table/standard,
-/obj/item/weapon/towel/random,
+/obj/item/towel/random,
 /obj/machinery/light/small{
 	dir = 1;
 	icon_state = "bulb_map"
@@ -288,7 +288,7 @@
 /area/yacht/living)
 "aL" = (
 /obj/structure/table/marble,
-/obj/machinery/media/jukebox,
+/obj/machinery/jukebox,
 /turf/simulated/floor/wood/walnut,
 /area/yacht/living)
 "aM" = (
@@ -320,7 +320,7 @@
 	pixel_x = 5
 	},
 /obj/structure/curtain/open/shower,
-/obj/item/weapon/bikehorn/rubberducky,
+/obj/item/bikehorn/rubberducky,
 /turf/simulated/floor/tiled/freezer,
 /area/yacht/living)
 "aQ" = (
@@ -380,7 +380,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/yacht/living)
 "aY" = (
-/obj/item/weapon/stool/bar/padded,
+/obj/item/stool/bar/padded,
 /obj/effect/floor_decal/spline/plain/brown{
 	dir = 4;
 	icon_state = "spline_plain"
@@ -389,10 +389,10 @@
 /area/yacht/living)
 "aZ" = (
 /obj/structure/table/marble,
-/obj/item/weapon/deck/cards{
+/obj/item/deck/cards{
 	pixel_y = 4
 	},
-/obj/item/weapon/reagent_containers/glass/rag,
+/obj/item/reagent_containers/glass/rag,
 /turf/simulated/floor/wood/walnut,
 /area/yacht/living)
 "bb" = (
@@ -444,7 +444,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
-/obj/item/weapon/party_light,
+/obj/item/party_light,
 /turf/simulated/floor/carpet/blue2,
 /area/yacht/living)
 "bg" = (
@@ -467,11 +467,11 @@
 	pixel_x = -5;
 	pixel_y = 4
 	},
-/obj/item/weapon/paper_bin{
+/obj/item/paper_bin{
 	pixel_x = 8;
 	pixel_y = -5
 	},
-/obj/item/weapon/pen{
+/obj/item/pen{
 	pixel_x = 8;
 	pixel_y = -5
 	},
@@ -487,7 +487,7 @@
 /area/yacht/living)
 "bl" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/blue,
+/obj/item/bedsheet/blue,
 /obj/effect/submap_landmark/spawnpoint/yachtman_spawn,
 /turf/simulated/floor/carpet/blue2,
 /area/yacht/living)
@@ -505,7 +505,7 @@
 	pixel_x = 23
 	},
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/rd,
+/obj/item/bedsheet/rd,
 /obj/effect/submap_landmark/spawnpoint/yachtman_spawn,
 /turf/simulated/floor/carpet/blue2,
 /area/yacht/living)
@@ -531,12 +531,12 @@
 	dir = 4;
 	icon_state = "spline_plain"
 	},
-/obj/item/weapon/stool/bar/padded,
+/obj/item/stool/bar/padded,
 /turf/simulated/floor/wood/walnut,
 /area/yacht/living)
 "bq" = (
 /obj/structure/table/marble,
-/obj/item/weapon/material/ashtray/plastic{
+/obj/item/material/ashtray/plastic{
 	pixel_x = -6;
 	pixel_y = 8
 	},
@@ -639,28 +639,28 @@
 /area/yacht/living)
 "bD" = (
 /obj/structure/bookcase,
-/obj/item/weapon/book/manual/anomaly_spectroscopy,
-/obj/item/weapon/book/manual/barman_recipes,
-/obj/item/weapon/book/manual/engineering_construction,
-/obj/item/weapon/book/manual/engineering_particle_accelerator,
+/obj/item/book/manual/anomaly_spectroscopy,
+/obj/item/book/manual/barman_recipes,
+/obj/item/book/manual/engineering_construction,
+/obj/item/book/manual/engineering_particle_accelerator,
 /turf/simulated/floor/wood/walnut,
 /area/yacht/living)
 "bE" = (
 /obj/structure/bookcase,
-/obj/item/weapon/book/manual/anomaly_testing,
-/obj/item/weapon/book/manual/chef_recipes,
-/obj/item/weapon/book/manual/engineering_guide,
-/obj/item/weapon/book/manual/engineering_singularity_safety,
-/obj/item/weapon/book/manual/hydroponics_pod_people,
-/obj/item/weapon/book/manual/materials_chemistry_analysis,
+/obj/item/book/manual/anomaly_testing,
+/obj/item/book/manual/chef_recipes,
+/obj/item/book/manual/engineering_guide,
+/obj/item/book/manual/engineering_singularity_safety,
+/obj/item/book/manual/hydroponics_pod_people,
+/obj/item/book/manual/materials_chemistry_analysis,
 /turf/simulated/floor/wood/walnut,
 /area/yacht/living)
 "bF" = (
 /obj/structure/bookcase,
-/obj/item/weapon/book/manual/atmospipes,
-/obj/item/weapon/book/manual/detective,
-/obj/item/weapon/book/manual/engineering_hacking,
-/obj/item/weapon/book/manual/evaguide,
+/obj/item/book/manual/atmospipes,
+/obj/item/book/manual/detective,
+/obj/item/book/manual/engineering_hacking,
+/obj/item/book/manual/evaguide,
 /obj/machinery/light/small{
 	dir = 4;
 	icon_state = "bulb1"
@@ -700,7 +700,7 @@
 /obj/item/clothing/under/pj/blue,
 /obj/item/clothing/under/pj/red,
 /obj/item/clothing/shoes/slippers,
-/obj/item/weapon/gun/energy/gun,
+/obj/item/gun/energy/gun,
 /obj/item/clothing/shoes/slippers,
 /turf/simulated/floor/wood/walnut,
 /area/yacht/living)
@@ -753,7 +753,7 @@
 	pixel_x = 22;
 	pixel_y = 0
 	},
-/obj/item/weapon/storage/mirror{
+/obj/item/storage/mirror{
 	pixel_x = 32
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -893,8 +893,8 @@
 /turf/simulated/floor/carpet/purple,
 /area/yacht/living)
 "cb" = (
-/obj/item/weapon/storage/bible,
-/obj/item/weapon/pen/blue,
+/obj/item/storage/bible,
+/obj/item/pen/blue,
 /obj/structure/table/woodentable/walnut,
 /obj/item/device/flashlight/lamp/green{
 	on = 0
@@ -923,18 +923,18 @@
 	},
 /obj/item/pizzabox,
 /obj/item/pizzabox,
-/obj/item/weapon/reagent_containers/food/snacks/fish,
-/obj/item/weapon/reagent_containers/food/snacks/fish,
-/obj/item/weapon/reagent_containers/food/snacks/fish,
-/obj/item/weapon/reagent_containers/food/snacks/fish,
-/obj/item/weapon/reagent_containers/food/snacks/meat/beef,
-/obj/item/weapon/reagent_containers/food/snacks/meat/beef,
-/obj/item/weapon/reagent_containers/food/snacks/meat/beef,
-/obj/item/weapon/reagent_containers/food/snacks/meat/beef,
-/obj/item/weapon/reagent_containers/food/snacks/meat/beef,
-/obj/item/weapon/reagent_containers/food/snacks/meat/beef,
-/obj/item/weapon/reagent_containers/food/snacks/meat/beef,
-/obj/item/weapon/reagent_containers/food/snacks/meat/beef,
+/obj/item/reagent_containers/food/snacks/fish,
+/obj/item/reagent_containers/food/snacks/fish,
+/obj/item/reagent_containers/food/snacks/fish,
+/obj/item/reagent_containers/food/snacks/fish,
+/obj/item/reagent_containers/food/snacks/meat/beef,
+/obj/item/reagent_containers/food/snacks/meat/beef,
+/obj/item/reagent_containers/food/snacks/meat/beef,
+/obj/item/reagent_containers/food/snacks/meat/beef,
+/obj/item/reagent_containers/food/snacks/meat/beef,
+/obj/item/reagent_containers/food/snacks/meat/beef,
+/obj/item/reagent_containers/food/snacks/meat/beef,
+/obj/item/reagent_containers/food/snacks/meat/beef,
 /turf/simulated/floor/tiled/white,
 /area/yacht/living)
 "cf" = (
@@ -1010,10 +1010,10 @@
 /area/yacht/engine)
 "cm" = (
 /obj/structure/table/woodentable/walnut,
-/obj/item/weapon/shovel/spade,
-/obj/item/weapon/reagent_containers/glass/bucket,
-/obj/item/weapon/material/hatchet,
-/obj/item/weapon/storage/plants,
+/obj/item/shovel/spade,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/material/hatchet,
+/obj/item/storage/plants,
 /turf/simulated/floor/wood/walnut,
 /area/yacht/living)
 "cn" = (
@@ -1035,8 +1035,8 @@
 /turf/simulated/floor/plating,
 /area/yacht/engine)
 "cp" = (
-/obj/item/weapon/cell/hyper,
-/obj/item/weapon/book/manual/engineering_guide,
+/obj/item/cell/hyper,
+/obj/item/book/manual/engineering_guide,
 /obj/structure/table/steel,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
@@ -1367,7 +1367,7 @@
 	icon_state = "4-8"
 	},
 /obj/structure/catwalk,
-/obj/item/weapon/storage/toolbox/electrical,
+/obj/item/storage/toolbox/electrical,
 /turf/simulated/floor/plating,
 /area/yacht/engine)
 "cT" = (
@@ -1609,22 +1609,22 @@
 	icon_state = "bordercolor"
 	},
 /obj/structure/closet/crate/medical,
-/obj/item/weapon/storage/firstaid/regular,
-/obj/item/weapon/storage/firstaid/brute,
-/obj/item/weapon/storage/firstaid/o2,
-/obj/item/weapon/storage/firstaid/toxin,
-/obj/item/weapon/storage/firstaid/fire,
-/obj/item/weapon/storage/firstaid/adv,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/adv,
 /turf/simulated/floor/tiled/white,
 /area/yacht/living)
 "dq" = (
 /obj/structure/table/rack,
-/obj/item/weapon/storage/box/bodybags,
-/obj/item/weapon/storage/box/freezer,
-/obj/item/weapon/storage/box/masks,
-/obj/item/weapon/storage/box/masks,
-/obj/item/weapon/storage/box/syringes,
-/obj/item/weapon/storage/box/syringes,
+/obj/item/storage/box/bodybags,
+/obj/item/storage/box/freezer,
+/obj/item/storage/box/masks,
+/obj/item/storage/box/masks,
+/obj/item/storage/box/syringes,
+/obj/item/storage/box/syringes,
 /obj/structure/window/reinforced/tinted{
 	dir = 1;
 	icon_state = "rwindow"
@@ -1726,7 +1726,7 @@
 /obj/structure/table/rack{
 	dir = 8
 	},
-/obj/item/weapon/rig/zero,
+/obj/item/rig/zero,
 /obj/structure/window/reinforced{
 	dir = 8;
 	health = 1e+006
@@ -1829,12 +1829,12 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 10
 	},
-/obj/item/weapon/storage/firstaid/surgery{
+/obj/item/storage/firstaid/surgery{
 	pixel_y = 6
 	},
 /obj/item/stack/medical/advanced/bruise_pack,
-/obj/item/weapon/reagent_containers/spray/sterilizine,
-/obj/item/weapon/reagent_containers/spray/cleaner{
+/obj/item/reagent_containers/spray/sterilizine,
+/obj/item/reagent_containers/spray/cleaner{
 	pixel_x = -5;
 	pixel_y = 4
 	},
@@ -1853,12 +1853,12 @@
 	pixel_x = 32
 	},
 /obj/structure/closet/crate/freezer/blood/small,
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
-/obj/item/weapon/reagent_containers/food/snacks/candy/donor,
-/obj/item/weapon/reagent_containers/food/snacks/candy/donor,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/food/snacks/candy/donor,
+/obj/item/reagent_containers/food/snacks/candy/donor,
 /turf/simulated/floor/tiled/white,
 /area/yacht/living)
 "dP" = (
@@ -2037,7 +2037,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/item/weapon/wrench,
+/obj/item/wrench,
 /turf/simulated/floor/plating,
 /area/yacht/engine)
 "ej" = (
@@ -2084,9 +2084,9 @@
 /obj/item/device/radio,
 /obj/item/device/radio,
 /obj/item/device/radio,
-/obj/item/weapon/crowbar/prybar,
-/obj/item/weapon/crowbar/prybar,
-/obj/item/weapon/crowbar/prybar,
+/obj/item/crowbar/prybar,
+/obj/item/crowbar/prybar,
+/obj/item/crowbar/prybar,
 /obj/structure/fireaxecabinet{
 	pixel_x = -32
 	},
@@ -2097,7 +2097,7 @@
 	dir = 1
 	},
 /obj/structure/catwalk,
-/obj/item/weapon/caution/cone,
+/obj/item/caution/cone,
 /turf/simulated/floor/plating,
 /area/yacht/engine)
 "ep" = (
@@ -2106,7 +2106,7 @@
 	},
 /obj/structure/catwalk,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/weapon/wirecutters,
+/obj/item/wirecutters,
 /turf/simulated/floor/plating,
 /area/yacht/engine)
 "eq" = (
@@ -2330,7 +2330,7 @@
 	dir = 10
 	},
 /obj/structure/janitorialcart,
-/obj/item/weapon/mop,
+/obj/item/mop,
 /turf/simulated/floor/plating,
 /area/yacht/engine)
 "fj" = (
@@ -2488,16 +2488,16 @@
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
-/obj/item/weapon/material/kitchen/rollingpin,
-/obj/item/weapon/reagent_containers/food/condiment/enzyme,
-/obj/item/weapon/reagent_containers/food/condiment/small/saltshaker{
+/obj/item/material/kitchen/rollingpin,
+/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/food/condiment/small/saltshaker{
 	pixel_x = -3;
 	pixel_y = 0
 	},
-/obj/item/weapon/reagent_containers/food/condiment/small/peppermill{
+/obj/item/reagent_containers/food/condiment/small/peppermill{
 	pixel_x = 3
 	},
-/obj/item/weapon/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/flour,
 /turf/simulated/floor/tiled/white,
 /area/yacht/living)
 "zx" = (
@@ -2621,7 +2621,7 @@
 /obj/structure/table/glass,
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/paleblue/border,
-/obj/item/weapon/defibrillator/loaded,
+/obj/item/defibrillator/loaded,
 /turf/simulated/floor/tiled/white,
 /area/yacht/living)
 "Mn" = (

@@ -186,7 +186,7 @@
 "aF" = (
 /obj/effect/decal/cleanable/vomit,
 /obj/effect/decal/cleanable/blood,
-/obj/item/weapon/bedsheet,
+/obj/item/bedsheet,
 /obj/effect/decal/cleanable/greenglow,
 /turf/simulated/floor/plating,
 /area/adherent_base/surface)
@@ -267,7 +267,7 @@
 /turf/simulated/floor/beach/sand/desert,
 /area/adherent_base/surface)
 "aY" = (
-/obj/item/weapon/material/kitchen/utensil/knife/boot,
+/obj/item/material/kitchen/utensil/knife/boot,
 /turf/simulated/floor/beach/sand/desert,
 /area/adherent_base/surface)
 "aZ" = (
@@ -276,7 +276,7 @@
 /turf/simulated/floor/beach/sand/desert,
 /area/adherent_base/surface)
 "ba" = (
-/obj/item/weapon/ladder_mobile,
+/obj/item/ladder_mobile,
 /turf/simulated/floor/beach/sand/desert,
 /area/adherent_base/surface)
 "bb" = (

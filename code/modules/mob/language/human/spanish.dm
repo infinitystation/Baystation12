@@ -27,3 +27,4 @@
 		"sta", "una", "ion", "tra", "men", "ele", "nao", "uma", "ame", "dos", "uno", "mas",
 		"ndo", "nha", "ver", "voc", "uma"
 	)
+	has_written_form = TRUE

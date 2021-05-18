@@ -54,7 +54,7 @@ var/list/TierNarNarRunes = list(
 	var/has_robes = 0
 	var/cult_ground = 0
 	var/has_dagger = 0
-	if(istype(get_active_hand(), /obj/item/weapon/book/tome) || istype(get_inactive_hand(), /obj/item/weapon/book/tome))
+	if(istype(get_active_hand(), /obj/item/book/tome) || istype(get_inactive_hand(), /obj/item/book/tome))
 		has_tome = 1
 
 	if(!(get_active_hand().sharp || get_inactive_hand().sharp))
@@ -74,7 +74,7 @@ var/list/TierNarNarRunes = list(
 	if(!istype(T, /turf/simulated))
 		to_chat(src, "<span class='warning'>You need more space to draw a rune here.</span>")
 		return
-	if(istype(get_active_hand(), /obj/item/weapon/melee/cultblade/dagger) || istype(get_inactive_hand(), /obj/item/weapon/melee/cultblade/dagger))
+	if(istype(get_active_hand(), /obj/item/melee/cultblade/dagger) || istype(get_inactive_hand(), /obj/item/melee/cultblade/dagger))
 		has_dagger = 1
 	if(locate(/obj/effect/rune) in T)
 		to_chat(src, "<span class='warning'>There's already a rune here.</span>") // Don't cross the runes
@@ -201,10 +201,10 @@ var/list/TierNarNarRunes = list(
 /obj/effect/rune
 	name = "rune"
 	desc = "A strange collection of symbols drawn in ."
-	anchored = 1
+	anchored = TRUE
 	icon = 'infinity/icons/effects/uristrunes.dmi'
 	icon_state = "blank"
-	unacidable = 1
+	unacidable = TRUE
 	layer = RUNE_LAYER
 
 	var/blood
@@ -261,11 +261,11 @@ var/list/TierNarNarRunes = list(
 		to_chat(user, "<span class = 'cult italic'>[ritual.desc]</span>")
 
 /obj/effect/rune/attackby(var/obj/item/I, var/mob/living/user)
-	if(istype(I, /obj/item/weapon/book/tome) && iscultist(user))
+	if(istype(I, /obj/item/book/tome) && iscultist(user))
 		user.visible_message("<span class='notice'>[user] rubs \the [src] with \the [I], and \the [src] is absorbed by it.</span>", "You retrace your steps, carefully undoing the lines of \the [src].")
 		qdel(src)
 		return
-	else if((istype(I, /obj/item/weapon/melee/cultblade/dagger) || istype(I, /obj/item/weapon/material/knife)) && iscultist(user))
+	else if((istype(I, /obj/item/melee/cultblade/dagger) || istype(I, /obj/item/material/knife)) && iscultist(user))
 		if(user.is_muzzled())
 			to_chat(user, "You are unable to speak the words of the rune.")
 			return
@@ -273,7 +273,7 @@ var/list/TierNarNarRunes = list(
 			to_chat(user, "You read the words, but nothing happens.")
 			return fizzle(user)
 		cast_self(user)
-	else if(istype(I, /obj/item/weapon/nullrod))
+	else if(istype(I, /obj/item/nullrod))
 		user.visible_message("<span class='notice'>[user] hits \the [src] with \the [I], and it disappears, fizzling.</span>", "<span class='notice'>You disrupt the vile magic with the deadening field of \the [I].</span>", "You hear a fizzle.")
 		qdel(src)
 		return

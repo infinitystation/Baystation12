@@ -51,11 +51,11 @@
 	species_restricted = list(SPECIES_IPC)
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/clothingbag/rivalset
+/obj/item/clothingbag/rivalset
 	name = "outfit delivery package"
 	desc = "A utility bag stamped with a Hephaestus logo and a 'prototype' warning label."
 
-/obj/item/weapon/clothingbag/rivalset/New()
+/obj/item/clothingbag/rivalset/New()
 	..()
 	new /obj/item/clothing/mask/gas/half/rivalmask(src)
 	new /obj/item/clothing/suit/storage/rivalcoat(src)

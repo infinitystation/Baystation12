@@ -9,8 +9,8 @@
 	scrambledcodes = 1
 
 	laws = /datum/ai_laws/empty
-	module = /obj/item/weapon/robot_module/naris
-	idcard = /obj/item/weapon/card/id/engineering
+	module = /obj/item/robot_module/naris
+	idcard = /obj/item/card/id/engineering
 	silicon_radio = /obj/item/device/radio/borg/naris
 
 	var/obj/item/music_player/mounted/player

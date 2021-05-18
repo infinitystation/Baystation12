@@ -99,7 +99,7 @@ GLOBAL_LIST_INIT(scientist_ship_names, list("Alpha", "Beta", "Gamma"))
 	var/outfit_type = pick(/decl/hierarchy/outfit/alien_sci)
 	var/decl/hierarchy/outfit/abductor_outfit = outfit_by_type(outfit_type)
 	abductor_outfit.equip(abductor_mob)
-	var/obj/item/weapon/implant/abductors/imp = new
+	var/obj/item/implant/abductors/imp = new
 	imp.implant_in_mob(abductor_mob, BP_HEAD)
 
 	for(var/language in ALL_NON_ANTAG_LANGUAGES)

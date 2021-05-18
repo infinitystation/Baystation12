@@ -28,14 +28,14 @@
 	in_space = 1
 	icon_state = "ion1"
 
-/obj/item/weapon/stock_parts/circuitboard/telecomms/allinone/skrellscoutship
+/obj/item/stock_parts/circuitboard/telecomms/allinone/skrellscoutship
 	build_path = /obj/machinery/telecomms/allinone/skrellscoutship
 
 /obj/machinery/telecomms/allinone/skrellscoutship
 	listening_freqs = list(SKRELL_FREQ)
 	channel_color = COMMS_COLOR_SKRELL
 	channel_name = "Recon"
-	circuitboard = /obj/item/weapon/stock_parts/circuitboard/telecomms/allinone/skrellscoutship
+	circuitboard = /obj/item/stock_parts/circuitboard/telecomms/allinone/skrellscoutship
 
 /obj/item/device/radio/headset/skrellian
 	name = "recon headset"
@@ -51,15 +51,15 @@
 	icon_state = "medsci_cypherkey"
 	channels = list("Recon" = 1)
 
-/obj/item/weapon/reagent_containers/food/condiment/psilocybin
+/obj/item/reagent_containers/food/condiment/psilocybin
 	label_text = "Psilocybin"
 	starting_reagents = list(/datum/reagent/psilocybin = 50)
 
-/obj/item/weapon/reagent_containers/food/condiment/mindbreaker
+/obj/item/reagent_containers/food/condiment/mindbreaker
 	label_text = "Mindbreaker"
 	starting_reagents = list(/datum/reagent/mindbreaker = 50)
 
-/obj/item/weapon/reagent_containers/food/condiment/space_drugs
+/obj/item/reagent_containers/food/condiment/space_drugs
 	label_text = "Ambrosia"
 	starting_reagents = list(/datum/reagent/space_drugs = 50)
 
@@ -88,8 +88,8 @@
 
 /obj/machinery/power/smes/buildable/preset/skrell
 	uncreated_component_parts = list(
-		/obj/item/weapon/stock_parts/smes_coil/super_io = 2,
-		/obj/item/weapon/stock_parts/smes_coil/super_capacity = 2)
+		/obj/item/stock_parts/smes_coil/super_io = 2,
+		/obj/item/stock_parts/smes_coil/super_capacity = 2)
 	_input_maxed = TRUE
 	_output_maxed = TRUE
 	_input_on = TRUE
@@ -104,7 +104,7 @@
 	suit= /obj/item/clothing/suit/space/void/skrell/black
 	helmet = /obj/item/clothing/head/helmet/space/void/skrell/black
 	boots = /obj/item/clothing/shoes/magboots
-	tank = /obj/item/weapon/tank/oxygen
+	tank = /obj/item/tank/oxygen
 	mask = /obj/item/clothing/mask/gas/half
 	req_access = list(access_skrellscoutship)
 	islocked = 1

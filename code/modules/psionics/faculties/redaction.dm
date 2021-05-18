@@ -3,7 +3,7 @@
 	name = "Redaction"
 	associated_intent = I_HELP
 	armour_types = list("bio", "rad")
-	
+
 /decl/psionic_power/redaction
 	faculty = PSI_REDACTION
 	admin_log = FALSE
@@ -70,7 +70,11 @@
 			var/valid_objects = list()
 			for(var/thing in E.implants)
 				var/obj/imp = thing
-				if(imp.w_class >= removal_size && !istype(imp, /obj/item/weapon/implant))
+
+				if(!imp)
+					continue
+
+				if(imp.w_class >= removal_size && !istype(imp, /obj/item/implant))
 					valid_objects += imp
 			if(LAZYLEN(valid_objects))
 				var/removing = pick(valid_objects)
@@ -171,7 +175,7 @@
 			return TRUE
 
 		user.visible_message(SPAN_NOTICE("<i>\The [user] splays out their hands over \the [target]'s body...</i>"))
-		if(!do_after(user, 100, target, 0, 1))
+		if(!do_after(user, 100, target))
 			user.psi.backblast(rand(10,25))
 			return TRUE
 

@@ -30,7 +30,7 @@
 						A.forceMove(src.loc)
 					qdel(src)
 
-/obj/item/weapon/storage/box/bodybags
+/obj/item/storage/box/bodybags
 	name = "body bags"
 	desc = "This box contains body bags."
 	icon_state = "bodybags"
@@ -53,13 +53,13 @@
 	open_sound = 'sound/items/zip.ogg'
 	close_sound = 'sound/items/zip.ogg'
 	var/item_path = /obj/item/bodybag
-	density = 0
+	density = FALSE
 	storage_capacity = (MOB_MEDIUM * 2) - 1
 	var/contains_body = 0
 	var/has_label = FALSE
 
 /obj/structure/closet/body_bag/attackby(var/obj/item/W, mob/user as mob)
-	if (istype(W, /obj/item/weapon/pen))
+	if (istype(W, /obj/item/pen))
 		var/t = input(user, "What would you like the label to be?", text("[]", src.name), null)  as text
 		if (user.get_active_hand() != W)
 			return
@@ -102,16 +102,25 @@
 	return 0
 
 /obj/structure/closet/body_bag/proc/fold(var/user)
-	if(!(ishuman(user) || isrobot(user)))	return 0
-	if(opened)	return 0
-	if(contents.len)	return 0
+	if(!(ishuman(user) || isrobot(user)))
+		to_chat(user, SPAN_NOTICE("You lack the dexterity to close \the [name]."))
+		return FALSE
+
+	if(opened)
+		to_chat(user, SPAN_NOTICE("You must close \the [name] before it can be folded."))
+		return FALSE
+
+	if(contents.len)
+		to_chat(user, SPAN_NOTICE("You can't fold \the [name] while it has something inside it."))
+		return FALSE
+
 	visible_message("[user] folds up the [name]")
 	. = new item_path(get_turf(src))
 	qdel(src)
 
 /obj/structure/closet/body_bag/MouseDrop(over_object, src_location, over_location)
 	..()
-	if((over_object == usr && (in_range(src, usr) || usr.contents.Find(src))))
+	if((over_object == usr && (in_range(src, usr) || list_find(usr.contents, src))))
 		fold(usr)
 
 /obj/item/robot_rack/body_bag
@@ -122,5 +131,3 @@
 	object_type = /obj/item/bodybag
 	interact_type = /obj/structure/closet/body_bag
 	capacity = 3
-
-

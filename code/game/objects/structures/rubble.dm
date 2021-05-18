@@ -4,11 +4,11 @@
 	icon = 'infinity/icons/obj/rubble.dmi' // inf-dev
 	icon_state = "base"
 	appearance_flags = PIXEL_SCALE
-	opacity = 1
-	density = 1
-	anchored = 1
+	opacity = TRUE
+	density = TRUE
+	anchored = TRUE
 
-	var/list/loot = list(/obj/item/weapon/cell,/obj/item/stack/material/iron,/obj/item/stack/material/rods)
+	var/list/loot = list(/obj/item/cell,/obj/item/stack/material/iron,/obj/item/stack/material/rods)
 	var/lootleft = 1
 	var/emptyprob = 95
 	var/health = 40
@@ -63,14 +63,14 @@
 			lootleft--
 			update_icon()
 			to_chat(user, "<span class='notice'>You find \a [booty] and pull it carefully out of \the [src].</span>")
-			new /obj/item/weapon/scrap_lump(loc) // inf-dev
+			new /obj/item/scrap_lump(loc) // inf-dev
 		is_rummaging = 0
 	else
 		to_chat(user, "<span class='warning'>Someone is already rummaging here!</span>")
 
 /obj/structure/rubble/attackby(var/obj/item/I, var/mob/user)
-	if (istype(I, /obj/item/weapon/pickaxe))
-		var/obj/item/weapon/pickaxe/P = I
+	if (istype(I, /obj/item/pickaxe))
+		var/obj/item/pickaxe/P = I
 		visible_message("[user] starts clearing away \the [src].")
 		if(do_after(user,P.digspeed, src))
 			visible_message("[user] clears away \the [src].")
@@ -79,14 +79,14 @@
 				booty = new booty(loc)
 			qdel(src)
 	// infinity ahead
-	if (istype(I, /obj/item/weapon/shovel))
+	if (istype(I, /obj/item/shovel))
 		visible_message("[user] starts clearing away \the [src].")
 		if(do_after(user, 70, src))
 			visible_message("[user] clears away \the [src].")
 			if(lootleft && prob(1))
 				var/obj/item/booty = pick(loot)
 				booty = new booty(loc)
-			new /obj/item/weapon/scrap_lump(loc)
+			new /obj/item/scrap_lump(loc)
 			qdel(src)
 	// infinity end
 	else
@@ -94,41 +94,41 @@
 		health -= I.force
 		if(health < 1)
 			visible_message("[user] clears away \the [src].")
-			new /obj/item/weapon/scrap_lump(loc) // inf-dev
+			new /obj/item/scrap_lump(loc) // inf-dev
 			qdel(src)
 
 /obj/structure/rubble/house
-	loot = list(/obj/item/weapon/archaeological_find/bowl,
-	/obj/item/weapon/archaeological_find/remains,
-	/obj/item/weapon/archaeological_find/bowl/urn,
-	/obj/item/weapon/archaeological_find/cutlery,
-	/obj/item/weapon/archaeological_find/statuette,
-	/obj/item/weapon/archaeological_find/instrument,
-	/obj/item/weapon/archaeological_find/container,
-	/obj/item/weapon/archaeological_find/mask,
-	/obj/item/weapon/archaeological_find/coin,
-	/obj/item/weapon/archaeological_find,
-	/obj/item/weapon/archaeological_find/material = 5,
-	/obj/item/weapon/archaeological_find/material/exotic = 2,
-	/obj/item/weapon/archaeological_find/parts = 3
+	loot = list(/obj/item/archaeological_find/bowl,
+	/obj/item/archaeological_find/remains,
+	/obj/item/archaeological_find/bowl/urn,
+	/obj/item/archaeological_find/cutlery,
+	/obj/item/archaeological_find/statuette,
+	/obj/item/archaeological_find/instrument,
+	/obj/item/archaeological_find/container,
+	/obj/item/archaeological_find/mask,
+	/obj/item/archaeological_find/coin,
+	/obj/item/archaeological_find,
+	/obj/item/archaeological_find/material = 5,
+	/obj/item/archaeological_find/material/exotic = 2,
+	/obj/item/archaeological_find/parts = 3
 	)
 
 /obj/structure/rubble/lab
 	emptyprob = 30
 	loot = list(
-	/obj/item/weapon/archaeological_find/statuette,
-	/obj/item/weapon/archaeological_find/instrument,
-	/obj/item/weapon/archaeological_find/mask,
-	/obj/item/weapon/archaeological_find,
-	/obj/item/weapon/archaeological_find/material = 10,
-	/obj/item/weapon/archaeological_find/material/exotic = 10,
-	/obj/item/weapon/archaeological_find/parts = 10
+	/obj/item/archaeological_find/statuette,
+	/obj/item/archaeological_find/instrument,
+	/obj/item/archaeological_find/mask,
+	/obj/item/archaeological_find,
+	/obj/item/archaeological_find/material = 10,
+	/obj/item/archaeological_find/material/exotic = 10,
+	/obj/item/archaeological_find/parts = 10
 	)
 
 /obj/structure/rubble/war
 	emptyprob = 95 //can't have piles upon piles of guns
-	loot = list(/obj/item/weapon/archaeological_find/knife,
-	/obj/item/weapon/archaeological_find/gun,
-	/obj/item/weapon/archaeological_find/laser,
-	/obj/item/weapon/archaeological_find/sword,
-	/obj/item/weapon/archaeological_find/katana)
+	loot = list(/obj/item/archaeological_find/knife,
+	/obj/item/archaeological_find/gun,
+	/obj/item/archaeological_find/laser,
+	/obj/item/archaeological_find/sword,
+	/obj/item/archaeological_find/katana)

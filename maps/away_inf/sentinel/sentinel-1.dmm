@@ -395,8 +395,8 @@
 /obj/random/snack,
 /obj/random/snack,
 /obj/random/snack,
-/obj/item/weapon/storage/box/gloves,
-/obj/item/weapon/storage/box/gloves,
+/obj/item/storage/box/gloves,
+/obj/item/storage/box/gloves,
 /turf/simulated/floor/tiled/monotile,
 /area/ship/patrol/crew/cargo)
 "aM" = (
@@ -426,7 +426,7 @@
 /obj/random/firstaid,
 /obj/random/firstaid,
 /obj/random/drinkbottle,
-/obj/item/weapon/storage/firstaid/combat/special,
+/obj/item/storage/firstaid/combat/special,
 /turf/simulated/floor/tiled/monotile,
 /area/ship/patrol/crew/cargo)
 "aO" = (
@@ -1459,12 +1459,12 @@
 	pixel_x = -24;
 	pixel_y = -2
 	},
-/obj/item/weapon/storage/toolbox/mechanical,
-/obj/item/weapon/tape_roll,
-/obj/item/weapon/tank/jetpack/oxygen,
-/obj/item/weapon/tank/jetpack/oxygen,
-/obj/item/weapon/tank/jetpack/oxygen,
-/obj/item/weapon/tank/jetpack/oxygen,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/tape_roll,
+/obj/item/tank/jetpack/oxygen,
+/obj/item/tank/jetpack/oxygen,
+/obj/item/tank/jetpack/oxygen,
+/obj/item/tank/jetpack/oxygen,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/command/eva)
 "cS" = (
@@ -1519,12 +1519,12 @@
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/freezer,
-/obj/item/weapon/reagent_containers/chem_disp_cartridge/ethanol,
-/obj/item/weapon/reagent_containers/chem_disp_cartridge/sodium,
-/obj/item/weapon/reagent_containers/chem_disp_cartridge/potassium,
-/obj/item/weapon/reagent_containers/chem_disp_cartridge/ammonia,
-/obj/item/weapon/reagent_containers/chem_disp_cartridge/acetone,
-/obj/item/weapon/reagent_containers/chem_disp_cartridge/silicon,
+/obj/item/reagent_containers/chem_disp_cartridge/ethanol,
+/obj/item/reagent_containers/chem_disp_cartridge/sodium,
+/obj/item/reagent_containers/chem_disp_cartridge/potassium,
+/obj/item/reagent_containers/chem_disp_cartridge/ammonia,
+/obj/item/reagent_containers/chem_disp_cartridge/acetone,
+/obj/item/reagent_containers/chem_disp_cartridge/silicon,
 /turf/simulated/floor/tiled/monotile,
 /area/ship/patrol/crew/cargo)
 "cX" = (
@@ -2418,7 +2418,7 @@
 	dir = 5
 	},
 /obj/structure/table/standard,
-/obj/item/weapon/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/mechanical,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 25
 	},
@@ -2479,7 +2479,7 @@
 /area/ship/patrol/command/lasers)
 "eJ" = (
 /obj/machinery/light/small/red,
-/obj/item/weapon/stool/padded,
+/obj/item/stool/padded,
 /obj/random/cash,
 /turf/simulated/floor/plating,
 /area/ship/patrol/command/lasers)
@@ -2556,7 +2556,7 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/ship/patrol/command/bridge)
 "eR" = (
-/obj/item/weapon/storage/secure/safe{
+/obj/item/storage/secure/safe{
 	pixel_x = -24;
 	pixel_y = 24
 	},
@@ -2611,9 +2611,9 @@
 	pixel_y = 24
 	},
 /obj/structure/table/steel_reinforced,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
-/obj/item/weapon/pen/fancy{
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/item/pen/fancy{
 	pixel_x = 3;
 	pixel_y = -1
 	},
@@ -2980,7 +2980,7 @@
 /turf/simulated/floor/plating,
 /area/ship/patrol/command/hangar)
 "fC" = (
-/obj/item/weapon/caution/cone,
+/obj/item/caution/cone,
 /turf/simulated/floor/plating,
 /area/ship/patrol/command/hangar)
 "fD" = (
@@ -3197,15 +3197,15 @@
 /turf/simulated/floor/tiled/white,
 /area/ship/reaper)
 "gc" = (
-/obj/item/weapon/storage/firstaid/fire{
+/obj/item/storage/firstaid/fire{
 	pixel_x = 4;
 	pixel_y = 4
 	},
-/obj/item/weapon/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/structure/table/rack,
-/obj/item/weapon/storage/firstaid/toxin,
-/obj/item/weapon/storage/firstaid/o2{
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/o2{
 	pixel_x = 4;
 	pixel_y = 4
 	},
@@ -3394,7 +3394,7 @@
 	},
 /obj/structure/table/rack,
 /obj/item/sealgen_case,
-/obj/item/weapon/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
 /turf/simulated/floor,
 /area/ship/reaper)
 "gy" = (
@@ -3403,12 +3403,12 @@
 	pixel_y = 24
 	},
 /obj/structure/table/rack,
-/obj/item/weapon/barrier,
-/obj/item/weapon/barrier,
-/obj/item/weapon/barrier,
-/obj/item/weapon/barrier,
-/obj/item/weapon/barrier,
-/obj/item/weapon/barrier,
+/obj/item/barrier,
+/obj/item/barrier,
+/obj/item/barrier,
+/obj/item/barrier,
+/obj/item/barrier,
+/obj/item/barrier,
 /turf/simulated/floor,
 /area/ship/reaper)
 "gz" = (
@@ -3436,9 +3436,9 @@
 /obj/effect/floor_decal/corner/paleblue{
 	dir = 4
 	},
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
 /obj/structure/iv_drip,
 /turf/simulated/floor/tiled/white,
 /area/ship/reaper)
@@ -3678,7 +3678,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/patrol/command/ofd)
 "ha" = (
-/obj/item/weapon/stool,
+/obj/item/stool,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
@@ -4594,7 +4594,7 @@
 /turf/simulated/floor/plating,
 /area/ship/reaper)
 "iB" = (
-/obj/structure/handrai,
+/obj/structure/handrail,
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	id_tag = "patrol_shuttle_pump"
 	},
@@ -4621,7 +4621,7 @@
 	pixel_x = 25;
 	pixel_y = -5
 	},
-/obj/structure/handrai,
+/obj/structure/handrail,
 /obj/machinery/oxygen_pump{
 	pixel_y = 32
 	},
@@ -4998,7 +4998,7 @@
 "jr" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/corner/paleblue/diagonal,
-/obj/item/weapon/storage/box/beakers,
+/obj/item/storage/box/beakers,
 /obj/item/clothing/glasses/science,
 /obj/item/clothing/gloves/latex,
 /turf/simulated/floor/tiled/white,
@@ -5018,10 +5018,10 @@
 /obj/item/device/flashlight/upgraded,
 /obj/item/device/flashlight/upgraded,
 /obj/item/device/flashlight/upgraded,
-/obj/item/weapon/crowbar/prybar,
-/obj/item/weapon/crowbar/prybar,
-/obj/item/weapon/crowbar/prybar,
-/obj/item/weapon/crowbar/prybar,
+/obj/item/crowbar/prybar,
+/obj/item/crowbar/prybar,
+/obj/item/crowbar/prybar,
+/obj/item/crowbar/prybar,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/ship/patrol/command/equipment)
 "ju" = (
@@ -5068,8 +5068,8 @@
 	pixel_y = 32
 	},
 /obj/structure/table/standard,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 24
@@ -5220,8 +5220,8 @@
 /obj/machinery/power/terminal,
 /obj/structure/cable,
 /obj/structure/table/rack,
-/obj/item/weapon/storage/briefcase/inflatable,
-/obj/item/weapon/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
 /obj/item/device/spaceflare,
 /obj/item/device/spaceflare,
 /obj/item/clothing/head/helmet/solgov/pilot/fleet,
@@ -5257,9 +5257,9 @@
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 5
 	},
-/obj/item/weapon/storage/box/masks,
-/obj/item/weapon/storage/box/freezer,
-/obj/item/weapon/storage/box/gloves,
+/obj/item/storage/box/masks,
+/obj/item/storage/box/freezer,
+/obj/item/storage/box/gloves,
 /obj/machinery/vending/wallmed1{
 	dir = 4;
 	pixel_x = -24
@@ -5339,7 +5339,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
-/obj/item/weapon/stool/padded,
+/obj/item/stool/padded,
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/command/equipment)
@@ -5408,15 +5408,15 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/item/weapon/folder/red,
+/obj/item/folder/red,
 /obj/machinery/power/apc/critical{
 	dir = 4;
 	name = "east bump";
 	pixel_x = 24
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/folder/red,
-/obj/item/weapon/storage/photo_album,
+/obj/item/folder/red,
+/obj/item/storage/photo_album,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/ship/patrol/barracks)
 "kg" = (
@@ -5489,7 +5489,7 @@
 	icon_state = "warning"
 	},
 /obj/machinery/cell_charger,
-/obj/item/weapon/reagent_containers/glass/beaker/cryoxadone,
+/obj/item/reagent_containers/glass/beaker/cryoxadone,
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1"
@@ -5562,7 +5562,7 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/ship/patrol/command/equipment)
 "ku" = (
-/obj/item/weapon/stool/padded,
+/obj/item/stool/padded,
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/command/equipment)
@@ -5661,8 +5661,8 @@
 	dir = 8;
 	icon_state = "tube1"
 	},
-/obj/item/weapon/storage/toolbox/mechanical,
-/obj/item/weapon/storage/toolbox/electrical,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/electrical,
 /obj/structure/table/rack,
 /turf/simulated/floor/tiled/monotile,
 /area/ship/patrol/engineering/equipment)
@@ -5709,9 +5709,9 @@
 "kH" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/table/rack,
-/obj/item/weapon/inflatable_dispenser,
-/obj/item/weapon/storage/briefcase/inflatable,
-/obj/item/weapon/storage/briefcase/inflatable,
+/obj/item/inflatable_dispenser,
+/obj/item/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
 /obj/machinery/firealarm{
 	pixel_y = 24
 	},
@@ -5747,7 +5747,7 @@
 /area/ship/patrol/command/hangar)
 "kM" = (
 /obj/structure/bed,
-/obj/item/weapon/bedsheet/medical,
+/obj/item/bedsheet/medical,
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/structure/curtain/medical,
 /turf/simulated/floor/tiled/white,
@@ -5799,7 +5799,7 @@
 /area/ship/patrol/medbay)
 "kS" = (
 /obj/structure/table/rack,
-/obj/item/weapon/defibrillator/loaded,
+/obj/item/defibrillator/loaded,
 /obj/effect/floor_decal/corner/pink/mono,
 /turf/simulated/floor/tiled/white/monotile,
 /area/ship/patrol/medbay)
@@ -5809,7 +5809,7 @@
 	pixel_x = -22
 	},
 /obj/structure/table/standard,
-/obj/item/weapon/hand_labeler,
+/obj/item/hand_labeler,
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/command/equipment)
@@ -6520,11 +6520,11 @@
 /area/ship/patrol/maintenance/engine/port)
 "mk" = (
 /obj/structure/table/standard,
-/obj/item/weapon/storage/firstaid/toxin{
+/obj/item/storage/firstaid/toxin{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/weapon/storage/firstaid/adv,
+/obj/item/storage/firstaid/adv,
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
@@ -6580,7 +6580,7 @@
 /area/ship/patrol/command/equipment)
 "mq" = (
 /obj/machinery/light,
-/obj/item/weapon/stool/padded,
+/obj/item/stool/padded,
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/command/equipment)
@@ -6812,11 +6812,11 @@
 /area/ship/patrol/maintenance/engine/port)
 "mN" = (
 /obj/structure/table/standard,
-/obj/item/weapon/storage/firstaid/o2{
+/obj/item/storage/firstaid/o2{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/weapon/storage/firstaid/fire,
+/obj/item/storage/firstaid/fire,
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10;
@@ -6826,11 +6826,11 @@
 /area/ship/patrol/medbay)
 "mO" = (
 /obj/structure/table/standard,
-/obj/item/weapon/storage/firstaid/regular{
+/obj/item/storage/firstaid/regular{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/weapon/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 6;
@@ -6916,7 +6916,7 @@
 	},
 /obj/structure/table/standard,
 /obj/random/smokes,
-/obj/item/weapon/flame/lighter,
+/obj/item/flame/lighter,
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/barracks)
 "mW" = (
@@ -6949,7 +6949,7 @@
 	dir = 1
 	},
 /obj/structure/table/standard,
-/obj/item/weapon/storage/box/cups,
+/obj/item/storage/box/cups,
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/barracks)
 "na" = (
@@ -7102,11 +7102,11 @@
 	dir = 9
 	},
 /obj/effect/floor_decal/corner/paleblue,
-/obj/item/weapon/reagent_containers/spray/cleaner{
+/obj/item/reagent_containers/spray/cleaner{
 	pixel_x = -5;
 	pixel_y = 4
 	},
-/obj/item/weapon/reagent_containers/spray/sterilizine{
+/obj/item/reagent_containers/spray/sterilizine{
 	pixel_x = 2;
 	pixel_y = 4
 	},
@@ -7128,10 +7128,10 @@
 	pixel_x = 26;
 	req_access = list("ACCESS_CAVALRY")
 	},
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
 /obj/effect/floor_decal/floordetail/edgedrain{
 	dir = 5
 	},
@@ -7177,15 +7177,15 @@
 /obj/item/clothing/accessory/armor/tag/solgov,
 /obj/item/clothing/accessory/armor/tag/solgov,
 /obj/item/clothing/accessory/armor/tag/solgov,
-/obj/item/clothing/accessory/storage/drop_pouches/black,
-/obj/item/clothing/accessory/storage/drop_pouches/black,
-/obj/item/clothing/accessory/storage/drop_pouches/black,
-/obj/item/clothing/accessory/storage/drop_pouches/brown,
-/obj/item/clothing/accessory/storage/drop_pouches/brown,
-/obj/item/clothing/accessory/storage/drop_pouches/brown,
-/obj/item/clothing/accessory/storage/drop_pouches/white,
-/obj/item/clothing/accessory/storage/drop_pouches/white,
-/obj/item/clothing/accessory/storage/drop_pouches/white,
+/obj/item/clothing/accessory/storage/black_drop,
+/obj/item/clothing/accessory/storage/black_drop,
+/obj/item/clothing/accessory/storage/black_drop,
+/obj/item/clothing/accessory/storage/brown_drop,
+/obj/item/clothing/accessory/storage/brown_drop,
+/obj/item/clothing/accessory/storage/brown_drop,
+/obj/item/clothing/accessory/storage/white_drop,
+/obj/item/clothing/accessory/storage/white_drop,
+/obj/item/clothing/accessory/storage/white_drop,
 /obj/item/clothing/head/beret/solgov/orbital,
 /obj/item/clothing/head/beret/solgov/orbital,
 /obj/item/clothing/head/beret/solgov/orbital,
@@ -7422,7 +7422,7 @@
 /area/ship/patrol/maintenance/engine/port)
 "nU" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/storage/firstaid/adv,
+/obj/item/storage/firstaid/adv,
 /obj/effect/floor_decal/floordetail/edgedrain{
 	dir = 10
 	},
@@ -7453,11 +7453,11 @@
 	dir = 5
 	},
 /obj/structure/table/reinforced,
-/obj/item/weapon/reagent_containers/syringe{
+/obj/item/reagent_containers/syringe{
 	pixel_y = -2
 	},
 /obj/machinery/light,
-/obj/item/weapon/storage/firstaid/surgery/advanced,
+/obj/item/storage/firstaid/surgery/advanced,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/medbay)
 "nW" = (
@@ -7549,16 +7549,16 @@
 "of" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/table/rack,
-/obj/item/weapon/rig/military,
-/obj/item/weapon/rig/military,
-/obj/item/weapon/rig/military,
+/obj/item/rig/military,
+/obj/item/rig/military,
+/obj/item/rig/military,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/ship/patrol/barracks)
 "og" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/shield/riot/metal,
-/obj/item/weapon/shield/riot/metal,
+/obj/item/shield/riot/metal,
+/obj/item/shield/riot/metal,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/ship/patrol/barracks)
 "oh" = (
@@ -8161,12 +8161,12 @@
 "ps" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/table/rack,
-/obj/item/weapon/crowbar/prybar,
-/obj/item/weapon/crowbar/prybar,
-/obj/item/weapon/crowbar/prybar,
-/obj/item/weapon/wrench,
-/obj/item/weapon/wrench,
-/obj/item/weapon/wrench,
+/obj/item/crowbar/prybar,
+/obj/item/crowbar/prybar,
+/obj/item/crowbar/prybar,
+/obj/item/wrench,
+/obj/item/wrench,
+/obj/item/wrench,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/ship/patrol/barracks)
 "pt" = (
@@ -8742,7 +8742,7 @@
 "GD" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/structure/table/steel_reinforced,
-/obj/item/weapon/storage/bible,
+/obj/item/storage/bible,
 /obj/machinery/light{
 	dir = 1
 	},

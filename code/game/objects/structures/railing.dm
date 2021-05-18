@@ -2,13 +2,13 @@
 	name = "railing"
 	desc = "A simple bar railing designed to protect against careless trespass."
 	icon = 'icons/obj/railing.dmi'
-	icon_state = "railing0-1"
-	density = 1
+	icon_state = "railing_preview"
+	density = TRUE
 	throwpass = 1
 	layer = OBJ_LAYER
 	climb_speed_mult = 0.25
 	anchored = FALSE
-	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CHECKS_BORDER | ATOM_FLAG_CLIMBABLE
+	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CHECKS_BORDER | ATOM_FLAG_CLIMBABLE | ATOM_FLAG_CAN_BE_PAINTED
 	obj_flags = OBJ_FLAG_ROTATABLE
 
 	var/broken =    FALSE
@@ -25,7 +25,7 @@
 	color = COLOR_GUNMETAL // They're not painted!
 
 /obj/structure/railing/mapped/no_density
-	density = 0
+	density = FALSE
 
 /obj/structure/railing/mapped/no_density/Initialize()
 	. = ..()
@@ -61,8 +61,7 @@
 		obj_flags |= OBJ_FLAG_CONDUCTIBLE
 	else
 		obj_flags &= (~OBJ_FLAG_CONDUCTIBLE)
-	if(anchored)
-		update_icon(FALSE)
+	update_icon(FALSE)
 
 /obj/structure/railing/Destroy()
 	anchored = FALSE
@@ -140,14 +139,22 @@
 	overlays.Cut()
 	if (!neighbor_status || !anchored)
 		icon_state = "railing0-[density]"
+		if (density)//walking over a railing which is above you is really weird, do not do this if density is 0
+			overlays += image(icon, "_railing0-1", layer = ABOVE_HUMAN_LAYER)
 	else
 		icon_state = "railing1-[density]"
+		if (density)
+			overlays += image(icon, "_railing1-1", layer = ABOVE_HUMAN_LAYER)
 		if (neighbor_status & 32)
 			overlays += image(icon, "corneroverlay[density]")
 		if ((neighbor_status & 16) || !(neighbor_status & 32) || (neighbor_status & 64))
 			overlays += image(icon, "frontoverlay_l[density]")
+			if (density)
+				overlays += image(icon, "_frontoverlay_l1", layer = ABOVE_HUMAN_LAYER)
 		if (!(neighbor_status & 2) || (neighbor_status & 1) || (neighbor_status & 4))
 			overlays += image(icon, "frontoverlay_r[density]")
+			if (density)
+				overlays += image(icon, "_frontoverlay_r1", layer = ABOVE_HUMAN_LAYER)
 			if(neighbor_status & 4)
 				var/pix_offset_x = 0
 				var/pix_offset_y = 0
@@ -161,6 +168,8 @@
 					if(WEST)
 						pix_offset_y = 32
 				overlays += image(icon, "mcorneroverlay[density]", pixel_x = pix_offset_x, pixel_y = pix_offset_y)
+				if (density)
+					overlays += image(icon, "_mcorneroverlay1", pixel_x = pix_offset_x, pixel_y = pix_offset_y, layer = ABOVE_HUMAN_LAYER)
 
 
 /obj/structure/railing/verb/flip() // This will help push railing to remote places, such as open space turfs
@@ -237,15 +246,15 @@
 			playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
 			if(density)
 				user.visible_message("<span class='notice'>\The [user] wrenches \the [src] open.</span>", "<span class='notice'>You wrench \the [src] open.</span>")
-				density = 0
+				density = FALSE
 			else
 				user.visible_message("<span class='notice'>\The [user] wrenches \the [src] closed.</span>", "<span class='notice'>You wrench \the [src] closed.</span>")
-				density = 1
+				density = TRUE
 			update_icon()
 			return
 	// Repair
 	if(isWelder(W))
-		var/obj/item/weapon/weldingtool/F = W
+		var/obj/item/weldingtool/F = W
 		if(F.isOn())
 			if(health >= maxhealth)
 				to_chat(user, "<span class='warning'>\The [src] does not need repairs.</span>")
@@ -294,3 +303,9 @@
 	if(.)
 		if(!anchored || material.is_brittle())
 			take_damage(maxhealth) // Fatboy
+
+	user.jump_layer_shift()
+	addtimer(CALLBACK(user, /mob/living/proc/jump_layer_shift_end), 2)
+
+/obj/structure/railing/set_color(color)
+	src.color = color ? color : material.icon_colour

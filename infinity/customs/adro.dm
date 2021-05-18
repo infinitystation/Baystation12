@@ -45,7 +45,7 @@
 	armor = list() //no armor
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/clothingbag/adro
+/obj/item/clothingbag/adro
 	name = "uniform package"
 	desc = "An utility bag stamped with a PMC 'Volk' logo."
 	New()

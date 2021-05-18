@@ -14,7 +14,7 @@
 	var/mob/event_confirmed_by
 	//1 = select event
 	//2 = authenticate
-	anchored = 1.0
+	anchored = TRUE
 	idle_power_usage = 2
 	active_power_usage = 6
 	power_channel = ENVIRON
@@ -25,13 +25,13 @@
 	to_chat(user, "<span class='warning'>A firewall prevents you from interfacing with this device!</span>")
 	return
 
-/obj/machinery/keycard_auth/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/machinery/keycard_auth/attackby(obj/item/W as obj, mob/user as mob)
 	if(stat & (NOPOWER|BROKEN))
 		to_chat(user, "This device is not powered.")
 		return
-	if(istype(W,/obj/item/weapon/card/id) && last_activation + 2 SECONDS < world.time) //inf //was: if(istype(W,/obj/item/weapon/card/id))
+	if(istype(W,/obj/item/card/id) && last_activation + 2 SECONDS < world.time) //inf //was: if(istype(W,/obj/item/card/id))
 		last_activation = world.time//inf
-		var/obj/item/weapon/card/id/ID = W
+		var/obj/item/card/id/ID = W
 		if(access_keycard_auth in ID.access)
 			playsound(src, sound(isounds["card_swipe"]))//inf
 			if(active == 1)

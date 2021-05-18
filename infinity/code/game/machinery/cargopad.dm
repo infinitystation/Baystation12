@@ -6,26 +6,26 @@
 	var/pad_type = "cpad"
 	var/stage = 0
 	layer = 2
-	anchored = 1
+	anchored = TRUE
 	use_power = 1
 	idle_power_usage = 200
 	active_power_usage = 5000
 
-/obj/machinery/cargopad/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/weapon/wrench))
+/obj/machinery/cargopad/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W, /obj/item/wrench))
 		playsound(src, 'sound/items/Ratchet.ogg', 50, 1)
 		if(do_after(user, 20, src))
 			anchored = !anchored
 			to_chat(user, SPAN_NOTICE("The [src] is now [anchored == 1 ? "" : "un"]secured."))
 		return
 
-	if(istype(W, /obj/item/weapon/screwdriver))
+	if(istype(W, /obj/item/screwdriver))
 		playsound(src, 'sound/items/Screwdriver.ogg', 50, 1)
 		stage = !stage
 		to_chat(user, SPAN_NOTICE("You [stage == 1 ? "un" : ""]screw the telepad's tracking beacon."))
 		return
 
-	if(istype(W, /obj/item/weapon/weldingtool) && stage == 1)
+	if(istype(W, /obj/item/weldingtool) && stage == 1)
 		playsound(src, 'sound/items/Welder.ogg', 50, 1)
 		if(do_after(user, 50, src))
 			to_chat(user, SPAN_NOTICE("You disassemble the telepad."))
@@ -33,9 +33,9 @@
 			new /obj/item/stack/material/glass(get_turf(src))
 			qdel(src)
 
-/obj/machinery/cargopad/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/weapon/rcs))
-		var/obj/item/weapon/rcs/rcs = W
+/obj/machinery/cargopad/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W, /obj/item/rcs))
+		var/obj/item/rcs/rcs = W
 		if(isnull(rcs.pad) || rcs.emagged)
 			rcs.pad = src
 			playsound(W.loc, 'sound/machines/twobeep.ogg', 30, 1)
@@ -65,7 +65,7 @@
 
 ///HANDHELD TELEPAD USER///
 # define RPS_MAXCHARGE 100
-/obj/item/weapon/rcs
+/obj/item/rcs
 	name = "rapid-crate-sender (RCS)"
 	desc = "Use this to send crates and closets to cargo telepads."
 	icon = 'icons/obj/telescience.dmi'
@@ -84,23 +84,23 @@
 	var/emagged = FALSE
 	var/teleporting = FALSE
 
-/obj/item/weapon/rcs/Initialize()
+/obj/item/rcs/Initialize()
 	. = ..()
 	START_PROCESSING(SSobj, src)
 
-/obj/item/weapon/rcs/examine()
+/obj/item/rcs/examine()
 	..()
 	to_chat(usr, SPAN_NOTICE("There are [charge]% charges left."))
 
-/obj/item/weapon/rcs/Destroy()
+/obj/item/rcs/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
-/obj/item/weapon/rcs/Process()
+/obj/item/rcs/Process()
 	if(charge < RPS_MAXCHARGE)
 		charge += 0.25
 
-/obj/item/weapon/rcs/afterattack(var/obj/target as obj, mob/user as mob, proximity)
+/obj/item/rcs/afterattack(var/obj/target as obj, mob/user as mob, proximity)
 	if(!proximity)
 		return
 
@@ -143,7 +143,7 @@
 		teleporting = FALSE
 		return
 
-/obj/item/weapon/rcs/proc/send(var/obj/target as obj)
+/obj/item/rcs/proc/send(var/obj/target as obj)
 	if(target)
 		var/turf/T = get_turf(pad)
 		T.audible_message("<font color=Maroon><b>Cargo Pad System</b></font> says, \"Warning, incoming package detected.\"")
@@ -159,7 +159,7 @@
 		return 1
 	return 0
 
-/obj/item/weapon/rcs/attack_self(mob/user)
+/obj/item/rcs/attack_self(mob/user)
 	if(emagged)
 		if(mode == 0)
 			mode = 1
@@ -170,8 +170,8 @@
 			playsound(src.loc, 'sound/effects/pop.ogg', 50, 0)
 			to_chat(user, SPAN_NOTICE("You calibrate the telepad locator."))
 
-/obj/item/weapon/rcs/attackby(obj/item/W, mob/user)
-	if(istype(W,  /obj/item/weapon/card/emag) && emagged == 0)
+/obj/item/rcs/attackby(obj/item/W, mob/user)
+	if(istype(W,  /obj/item/card/emag) && emagged == 0)
 		emagged = TRUE
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 		s.set_up(5, 1, src)

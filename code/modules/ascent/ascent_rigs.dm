@@ -1,5 +1,5 @@
 // Rigs and gear themselves.
-/obj/item/weapon/rig/mantid
+/obj/item/rig/mantid
 	name = "alate combat exosuit"
 	desc = "A powerful combat exosuit with integrated power supply, weapon and atmosphere. It's closer to a mech than a rig."
 	icon_state = "kexosuit"
@@ -19,8 +19,8 @@
 	online_slowdown = 0
 	offline_slowdown = 1
 	equipment_overlay_icon = null
-	air_type =   /obj/item/weapon/tank/mantid/reactor
-	cell_type =  /obj/item/weapon/cell/mantid
+	air_type =   /obj/item/tank/mantid/reactor
+	cell_type =  /obj/item/cell/mantid
 	chest_type = /obj/item/clothing/suit/space/rig/mantid
 	helm_type =  /obj/item/clothing/head/helmet/space/rig/mantid
 	boot_type =  /obj/item/clothing/shoes/magboots/rig/mantid
@@ -28,9 +28,10 @@
 	update_visible_name = TRUE
 	icon_override = 'icons/mob/species/mantid/onmob_back_alate.dmi'
 	sprite_sheets = list(
-		SPECIES_MANTID_GYNE =  'icons/mob/species/mantid/onmob_back_gyne.dmi',
-		SPECIES_MANTID_ALATE = 'icons/mob/species/mantid/onmob_back_alate.dmi',
-		SPECIES_NABBER =       'icons/mob/species/nabber/onmob_back_gas.dmi'
+		SPECIES_MANTID_GYNE =    'icons/mob/species/mantid/onmob_back_gyne.dmi',
+		SPECIES_MANTID_ALATE =   'icons/mob/species/mantid/onmob_back_alate.dmi',
+		SPECIES_NABBER =         'icons/mob/species/nabber/onmob_back_gas.dmi',
+		SPECIES_MONARCH_QUEEN =  'icons/mob/species/nabber/msq/onmob_back_msq.dmi'
 		)
 	initial_modules = list(
 		/obj/item/rig_module/vision/thermal,
@@ -57,7 +58,7 @@
 	icon_state = "blade"
 	interface_name = "nanoblade"
 	usable = FALSE
-	gun = /obj/item/weapon/gun/energy/crossbow/ninja/mounted //inf, was null
+	gun = /obj/item/gun/energy/crossbow/ninja/mounted //inf, was null
 
 /obj/item/rig_module/mounted/flechette_rifle
 	name = "flechette rifle"
@@ -66,7 +67,7 @@
 	interface_desc = "A flechette nanofabricator and launch system of Ascent design."
 	icon = 'icons/obj/ascent.dmi'
 	icon_state = "rifle"
-	gun = /obj/item/weapon/gun/magnetic/railgun/flechette/ascent
+	gun = /obj/item/gun/magnetic/railgun/flechette/ascent
 
 /obj/item/rig_module/mounted/particle_rifle
 	name = "particle rifle"
@@ -75,7 +76,7 @@
 	interface_desc = "A mounted particle rifle of Ascent design."
 	icon = 'icons/obj/ascent.dmi'
 	icon_state = "rifle"
-	gun = /obj/item/weapon/gun/energy/particle
+	gun = /obj/item/gun/energy/particle
 
 /obj/item/rig_module/device/multitool
 	name = "mantid integrated multitool"
@@ -110,7 +111,7 @@
 	icon = 'icons/obj/ascent.dmi'
 	icon_state = "welder1"
 	engage_string = "Toggle Welder"
-	device = /obj/item/weapon/weldingtool/electric/mantid
+	device = /obj/item/weldingtool/electric/mantid
 	usable = TRUE
 	selectable = TRUE
 
@@ -139,43 +140,43 @@
 	return device && device.iscrowbar()
 
 // Atmosphere/jetpack filler.
-/obj/item/weapon/tank/mantid
+/obj/item/tank/mantid
 	name = "mantid gas tank"
 	icon_state = "bromomethane"
 	distribute_pressure = ONE_ATMOSPHERE*O2STANDARD
 	volume = 180
 
-/obj/item/weapon/tank/mantid/methyl_bromide
+/obj/item/tank/mantid/methyl_bromide
 	starting_pressure = list(GAS_METHYL_BROMIDE = 6 * ONE_ATMOSPHERE)
 
-/obj/item/weapon/tank/mantid/oxygen
+/obj/item/tank/mantid/oxygen
 	name = "mantid oxygen tank"
 	starting_pressure = list(OXYGEN = 6 * ONE_ATMOSPHERE)
 
 // Boilerplate due to hard typechecks in jetpack code. Todo: make it an extension.
-/obj/item/weapon/tank/jetpack/ascent
+/obj/item/tank/jetpack/ascent
 	name = "catalytic maneuvering pack"
 	desc = "An integrated Ascent gas processing plant and maneuvering pack that continuously synthesises 'breathable' atmosphere and propellant."
 	sprite_sheets = list(
 		SPECIES_MANTID_GYNE =  'icons/mob/species/mantid/onmob_back_gyne.dmi',
 		SPECIES_MANTID_ALATE = 'icons/mob/species/mantid/onmob_back_alate.dmi',
-		SPECIES_NABBER =       'icons/mob/species/nabber/onmob_back_gas.dmi'
+		SPECIES_NABBER = 	   'icons/mob/species/nabber/onmob_back_gas.dmi'
 	)
 	icon_state = "maneuvering_pack"
 	var/refill_gas_type = GAS_METHYL_BROMIDE
 	var/gas_regen_amount = 0.03
 	var/gas_regen_cap = 30
 
-/obj/item/weapon/tank/jetpack/ascent/Initialize()
+/obj/item/tank/jetpack/ascent/Initialize()
 	starting_pressure = list("[refill_gas_type]" = 6 * ONE_ATMOSPHERE)
 	. = ..()
 
-/obj/item/weapon/tank/jetpack/ascent/Process()
+/obj/item/tank/jetpack/ascent/Process()
 	..()
 	if(air_contents.total_moles < gas_regen_cap)
 		air_contents.adjust_gas(refill_gas_type, gas_regen_amount)
 
-/obj/item/weapon/tank/mantid/reactor
+/obj/item/tank/mantid/reactor
 	name = "mantid gas reactor"
 	desc = "A mantid gas processing plant that continuously synthesises 'breathable' atmosphere."
 	var/charge_cost = 12
@@ -183,18 +184,18 @@
 	var/gas_regen_amount = 0.05
 	var/gas_regen_cap = 50
 
-/obj/item/weapon/tank/mantid/reactor/Initialize()
+/obj/item/tank/mantid/reactor/Initialize()
 	starting_pressure = list("[refill_gas_type]" = 6 * ONE_ATMOSPHERE)
 	. = ..()
 
-/obj/item/weapon/tank/mantid/reactor/oxygen
+/obj/item/tank/mantid/reactor/oxygen
 	name = "serpentid gas reactor"
 	refill_gas_type = GAS_OXYGEN
 	distribute_pressure = 31
 
-/obj/item/weapon/tank/mantid/reactor/Process()
+/obj/item/tank/mantid/reactor/Process()
 	..()
-	var/obj/item/weapon/rig/holder = loc
+	var/obj/item/rig/holder = loc
 	if(air_contents.total_moles < gas_regen_cap && istype(holder) && holder.cell && holder.cell.use(charge_cost))
 		air_contents.adjust_gas(refill_gas_type, gas_regen_amount)
 
@@ -213,8 +214,23 @@
 		list("tramadol",            "tramadol",            /datum/reagent/tramadol,      20)
 	)
 
+/obj/item/rig_module/chem_dispenser/nabber
+	name = "serpentid chemical injector"
+	desc = "A compact chemical dispenser of mantid design."
+	interface_name = "serpentid chemical injector"
+	interface_desc = "A compact chemical dispenser of mantid design."
+	icon = 'icons/obj/ascent.dmi'
+	icon_state = "injector"
+	charges = list(
+		list("tramadol",            "tramadol",            /datum/reagent/tramadol,     	  20),
+		list("dexalin plus",        "dexalin plus",        /datum/reagent/dexalinp,     	  20),
+		list("inaprovaline",        "inaprovaline",        /datum/reagent/inaprovaline,  	  20),
+		list("spaceacillin",  		"spaceacillin",		   /datum/reagent/spaceacillin,       20),
+		list("glucose",             "glucose",             /datum/reagent/nutriment/glucose,  20)
+	)
+
 // Rig definitions.
-/obj/item/weapon/rig/mantid/gyne
+/obj/item/rig/mantid/gyne
 	name = "gyne combat exosuit"
 	armor = list(
 		melee = ARMOR_MELEE_VERY_HIGH,
@@ -224,6 +240,14 @@
 		bomb = ARMOR_BOMB_RESISTANT,
 		bio = ARMOR_BIO_SHIELDED,
 		rad = ARMOR_RAD_SHIELDED
+	)
+	allowed = list(
+		/obj/item/clustertool,
+		/obj/item/gun/energy/particle,
+		/obj/item/weldingtool/electric/mantid,
+		/obj/item/device/multitool/mantid,
+		/obj/item/stack/medical/resin,
+		/obj/item/reagent_containers/food/drinks/cans/waterbottle/ascent
 	)
 	icon_override = 'icons/mob/species/mantid/onmob_back_gyne.dmi'
 	mantid_caste = SPECIES_MANTID_GYNE
@@ -243,25 +267,35 @@
 		/obj/item/rig_module/maneuvering_jets
 	)
 
-/obj/item/weapon/rig/mantid/nabber
-	name = "serpentid support exosuit"
+/obj/item/rig/mantid/nabber
+	name = "serpentid combat exosuit"
 	icon_override = 'icons/mob/species/nabber/onmob_back_gas.dmi'
 	mantid_caste = SPECIES_NABBER
-	air_type =   /obj/item/weapon/tank/mantid/reactor/oxygen
+	air_type =   /obj/item/tank/mantid/reactor/oxygen
 	chest_type = /obj/item/clothing/suit/space/rig/mantid/serpentid
 	boot_type =  null
+	allowed = list(
+		/obj/item/clustertool,
+		/obj/item/gun/energy/particle,
+		/obj/item/weldingtool/electric/mantid,
+		/obj/item/device/multitool/mantid,
+		/obj/item/stack/medical/resin,
+		/obj/item/reagent_containers/food/drinks/cans/waterbottle/ascent
+	)
 
 /obj/item/clothing/suit/space/rig/mantid/serpentid
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS
+	species_restricted = list(SPECIES_NABBER, SPECIES_MONARCH_QUEEN)
 
-/obj/item/weapon/rig/mantid/nabber/queen
-	name = "small support exosuit"
+/obj/item/rig/mantid/nabber/queen
+	name = "small combat exosuit"
+	icon_override = 'icons/mob/species/nabber/msq/onmob_back_msq.dmi'
 	mantid_caste = SPECIES_MONARCH_QUEEN
 	initial_modules = list(
 		/obj/item/rig_module/vision/thermal,
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/electrowarfare_suite,
-		/obj/item/rig_module/chem_dispenser/mantid,
+		/obj/item/rig_module/chem_dispenser/nabber,
 		/obj/item/rig_module/mounted/energy_blade/mantid,
 		/obj/item/rig_module/mounted/flechette_rifle,
 		/obj/item/rig_module/mounted/particle_rifle,
@@ -272,8 +306,16 @@
 		/obj/item/rig_module/mounted/plasmacutter,
 		/obj/item/rig_module/maneuvering_jets
 	)
+	allowed = list(
+		/obj/item/clustertool,
+		/obj/item/gun/energy/particle/small,
+		/obj/item/weldingtool/electric/mantid,
+		/obj/item/device/multitool/mantid,
+		/obj/item/stack/medical/resin,
+		/obj/item/reagent_containers/food/drinks/cans/waterbottle/ascent
+	)
 
-/obj/item/weapon/rig/mantid/mob_can_equip(var/mob/M, var/slot)
+/obj/item/rig/mantid/mob_can_equip(var/mob/M, var/slot)
 	. = ..()
 	if(. && slot == slot_back)
 		var/mob/living/carbon/human/H = M
@@ -284,29 +326,31 @@
 /obj/item/clothing/head/helmet/space/rig/mantid
 	light_color = "#00ffff"
 	desc = "More like a torpedo casing than a helmet."
-	species_restricted = list(SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_NABBER)
+	species_restricted = list(SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_NABBER, SPECIES_MONARCH_QUEEN)
 	sprite_sheets = list(
-		SPECIES_MANTID_GYNE =  'icons/mob/species/mantid/onmob_head_gyne.dmi',
-		SPECIES_MANTID_ALATE = 'icons/mob/species/mantid/onmob_head_alate.dmi',
-		SPECIES_NABBER =       'icons/mob/species/nabber/onmob_head_gas.dmi'
+		SPECIES_MANTID_GYNE =    'icons/mob/species/mantid/onmob_head_gyne.dmi',
+		SPECIES_MANTID_ALATE =   'icons/mob/species/mantid/onmob_head_alate.dmi',
+		SPECIES_NABBER =         'icons/mob/species/nabber/onmob_head_gas.dmi',
+		SPECIES_MONARCH_QUEEN =  'icons/mob/species/nabber/msq/onmob_head_msq.dmi'
 		)
 	tint = 1 //INF, WAS NOTHING. High tech
 
 /obj/item/clothing/suit/space/rig/mantid
 	desc = "It's closer to a mech than a suit."
-	species_restricted = list(SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_NABBER)
+	species_restricted = list(SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE)
 	sprite_sheets = list(
-		SPECIES_MANTID_GYNE =  'icons/mob/species/mantid/onmob_suit_gyne.dmi',
-		SPECIES_MANTID_ALATE = 'icons/mob/species/mantid/onmob_suit_alate.dmi',
-		SPECIES_NABBER =       'icons/mob/species/nabber/onmob_suit_gas.dmi'
+		SPECIES_MANTID_GYNE =    'icons/mob/species/mantid/onmob_suit_gyne.dmi',
+		SPECIES_MANTID_ALATE =   'icons/mob/species/mantid/onmob_suit_alate.dmi',
+		SPECIES_NABBER =         'icons/mob/species/nabber/onmob_suit_gas.dmi',
+		SPECIES_MONARCH_QUEEN =  'icons/mob/species/nabber/msq/onmob_suit_msq.dmi'
 		)
 	allowed = list(
 		/obj/item/clustertool,
-		/obj/item/weapon/gun/energy/particle/small,
-		/obj/item/weapon/weldingtool/electric/mantid,
+		/obj/item/gun/energy/particle/small,
+		/obj/item/weldingtool/electric/mantid,
 		/obj/item/device/multitool/mantid,
 		/obj/item/stack/medical/resin,
-		/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle/ascent
+		/obj/item/reagent_containers/food/drinks/cans/waterbottle/ascent
 	)
 
 /obj/item/clothing/shoes/magboots/rig/mantid
@@ -319,17 +363,19 @@
 
 /obj/item/clothing/gloves/rig/mantid
 	desc = "They look like a cross between a can opener and a Swiss army knife the size of a shoebox."
-	species_restricted = list(SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_NABBER)
+	siemens_coefficient = 0
+	species_restricted = list(SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_NABBER, SPECIES_MONARCH_QUEEN)
 	sprite_sheets = list(
-		SPECIES_MANTID_GYNE =  'icons/mob/species/mantid/onmob_gloves_gyne.dmi',
-		SPECIES_MANTID_ALATE = 'icons/mob/species/mantid/onmob_gloves_alate.dmi',
-		SPECIES_NABBER =       'icons/mob/species/nabber/onmob_hands_gas.dmi'
+		SPECIES_MANTID_GYNE =            'icons/mob/species/mantid/onmob_gloves_gyne.dmi',
+		SPECIES_MANTID_ALATE =           'icons/mob/species/mantid/onmob_gloves_alate.dmi',
+		SPECIES_NABBER =                 'icons/mob/species/nabber/onmob_hands_gas.dmi',
+		SPECIES_MONARCH_QUEEN =          'icons/mob/species/nabber/msq/onmob_hands_msq.dmi'
 		)
 
-//Add SeedShip Specific Exosuits
+//Add Caulship Specific Exosuits
 
 // Rigs and gear themselves.
-/obj/item/weapon/rig/mantid/seed
+/obj/item/rig/mantid/seed
 	name = "alate support exosuit"
 	desc = "A powerful support exosuit with integrated power supply, weapon and atmosphere. It's closer to a mech than a rig."
 	armor = list(
@@ -354,7 +400,7 @@
 		/obj/item/rig_module/maneuvering_jets
 		)
 
-/obj/item/weapon/rig/mantid/gyne/seed
+/obj/item/rig/mantid/gyne/seed
 	name = "gyne support exosuit"
 	armor = list(
 		melee = ARMOR_MELEE_MAJOR,
@@ -377,7 +423,8 @@
 		/obj/item/rig_module/maneuvering_jets
 	)
 
-/obj/item/weapon/rig/mantid/nabber/queen/seed
+/obj/item/rig/mantid/nabber/queen/seed
+	name = "small support exosuit"
 	online_slowdown = 1
 	armor = list(
 		melee = ARMOR_MELEE_MAJOR,
@@ -391,7 +438,7 @@
 	initial_modules = list(
 		/obj/item/rig_module/vision/nvg,
 		/obj/item/rig_module/ai_container,
-		/obj/item/rig_module/chem_dispenser/mantid,
+		/obj/item/rig_module/chem_dispenser/nabber,
 		/obj/item/rig_module/device/multitool,
 		/obj/item/rig_module/device/cable_coil,
 		/obj/item/rig_module/device/welder,
@@ -400,7 +447,8 @@
 		/obj/item/rig_module/maneuvering_jets
 	)
 
-/obj/item/weapon/rig/mantid/nabber/seed
+/obj/item/rig/mantid/nabber/seed
+	name = "serpentid support exosuit"
 	online_slowdown = 1
 	armor = list(
 		melee = ARMOR_MELEE_MAJOR,
@@ -414,7 +462,7 @@
 	initial_modules = list(
 		/obj/item/rig_module/vision/nvg,
 		/obj/item/rig_module/ai_container,
-		/obj/item/rig_module/chem_dispenser/mantid,
+		/obj/item/rig_module/chem_dispenser/nabber,
 		/obj/item/rig_module/device/multitool,
 		/obj/item/rig_module/device/cable_coil,
 		/obj/item/rig_module/device/welder,

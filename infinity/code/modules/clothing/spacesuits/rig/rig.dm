@@ -1,4 +1,4 @@
-/obj/item/weapon/rig/military/equipped/comander
+/obj/item/rig/military/equipped/comander
 	armor = list(
 		melee = ARMOR_MELEE_MAJOR,
 		bullet = ARMOR_BALLISTIC_RESISTANT,
@@ -16,7 +16,7 @@
 		/obj/item/rig_module/chem_dispenser/combat
 		)
 
-/obj/item/weapon/rig/military/equipped/enlisted
+/obj/item/rig/military/equipped/enlisted
 	armor = list(
 		melee = ARMOR_MELEE_MAJOR,
 		bullet = ARMOR_BALLISTIC_RESISTANT,
@@ -32,7 +32,7 @@
 		/obj/item/rig_module/power_sink
 		)
 
-/obj/item/weapon/rig/military/equipped/engineer
+/obj/item/rig/military/equipped/engineer
 	armor = list(
 		melee = ARMOR_MELEE_MAJOR,
 		bullet = ARMOR_BALLISTIC_RESISTANT,
@@ -50,7 +50,7 @@
 		/obj/item/rig_module/device/healthscanner
 		)
 
-/obj/item/weapon/rig/military/equipped/corpsman
+/obj/item/rig/military/equipped/corpsman
 	armor = list(
 		melee = ARMOR_MELEE_MAJOR,
 		bullet = ARMOR_BALLISTIC_RESISTANT,

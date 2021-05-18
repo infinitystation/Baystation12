@@ -30,8 +30,10 @@ SUBSYSTEM_DEF(ticker)
 	var/list/antag_pool = list()
 	var/looking_for_antags = 0
 
+	var/secret_force_mode = "secret"
+
 /datum/controller/subsystem/ticker/Initialize()
-	to_world("<B><FONT color='blue'>Добро пожаловать в лобби!</FONT></B>")
+	to_world("<span class='info'><B>Добро пожаловать в лобби!</B></span>")
 	to_world("Настройте своего персонажа и нажмите \"Ready\" для вступлению в игру с начала раунда через [round(pregame_timeleft/10)] секунд.")
 	return ..()
 
@@ -97,10 +99,13 @@ SUBSYSTEM_DEF(ticker)
 
 	spawn(0)//Forking here so we dont have to wait for this to finish
 		mode.post_setup() // Drafts antags who don't override jobs.
-		to_world("<FONT color='blue'><B>Приятной игры!</B></FONT>")
+		to_world("<span class='info'><B>Приятной игры!</B></span>")
 		send2maindiscord("Раунд с режимом [SSticker.master_mode] начался. Игроков: [GLOB.player_list.len].")
 		send2mainirc("Раунд с режимом [SSticker.master_mode] начался;. Игроков: [GLOB.player_list.len].")
 		sound_to(world, sound(GLOB.using_map.welcome_sound))
+
+		for (var/mob/new_player/player in GLOB.player_list)
+			player.new_player_panel()
 
 	if(!length(GLOB.admins))
 		send2adminirc("Раунд начался без администраторов в игре!")
@@ -420,6 +425,7 @@ Helpers
 	for(var/client/C)
 		if(!C.credits)
 			C.RollCredits()
+// <<<<<<< HEAD ~bear1ake
 	for(var/mob/Player in GLOB.player_list)
 		if(Player.mind && !isnewplayer(Player))
 			if(Player.stat != DEAD)
@@ -454,9 +460,23 @@ Helpers
 
 		if (aiPlayer.connected_robots.len)
 			var/robolist = "<b>Лояльными роботами ИИ были:</b> "
+// ======= INF, рассмотреть возможность слияния ~bear1ake
+/*	GLOB.using_map.roundend_player_status()
+
+	to_world("<br>")
+
+	for(var/mob/living/silicon/ai/aiPlayer in SSmobs.mob_list)
+		var/show_ai_key = aiPlayer.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW
+		to_world("<b>[aiPlayer.name][show_ai_key ? " (played by [aiPlayer.key])" : ""]'s laws at the [aiPlayer.stat == 2 ? "time of their deactivation" : "end of round"] were:</b>")
+		aiPlayer.show_laws(1)
+
+		if (aiPlayer.connected_robots.len)
+			var/minions = "<b>[aiPlayer.name]'s loyal minions were:</b>" 
+* >>>>>>> merge 02 05 2021 */
 			for(var/mob/living/silicon/robot/robo in aiPlayer.connected_robots)
-				robolist += "[robo.name][robo.stat ? " (Deactivated)" : ""] [(robo.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW) ? "(Played by: [robo.key])" : ""],"
-			to_world("[robolist]")
+				var/show_robot_key = robo.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW
+				robolist += " [robo.name][show_robot_key ? "(played by: [robo.key])" : ""][robo.stat ? " (deactivated)" : ""]," // INF, было minions += ...
+			to_world(robolist) // INF, было to_world(minions)
 
 	var/dronecount = 0
 

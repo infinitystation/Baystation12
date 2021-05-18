@@ -1,7 +1,3 @@
-/client/New()
-	. = ..()
-	update_ooc_color()
-
 /client/proc/set_ooc_color(value)
 	prefs.ooccolor = value
 	update_ooc_color()
@@ -16,7 +12,7 @@
 	if(DonateData?.ooc_color || ooc_color_by_holder)
 		var/nooc_color = (ooc_color_by_holder ? ooc_color_by_holder : DonateData.ooc_color)
 		// Свободный выбор цветов у ведущих сотрудников пусть остается ~bear1ake
-		if(istext(nooc_color) && (prefs.ooccolor == initial(prefs.ooccolor)))
+		if( istext(nooc_color) && (prefs && (prefs.ooccolor == initial(prefs.ooccolor))) )
 			prefs.ooccolor = "#" + nooc_color
 
 /client/proc/on_exdata_load()
@@ -32,4 +28,3 @@
 	. = ..()
 	if(client)
 		client.update_ooc_color()
-

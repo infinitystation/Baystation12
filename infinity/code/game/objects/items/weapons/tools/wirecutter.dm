@@ -1,4 +1,4 @@
-/obj/item/weapon/wirecutters/power
+/obj/item/wirecutters/power
 	name = "jaws of life"
 	desc = "A set of jaws of life, compressed through the magic of science. It's fitted with a cutting head."
 	icon = 'infinity/icons/obj/items.dmi'
@@ -19,14 +19,14 @@
 	edge = 1
 	//usesound = 'sound/items/jaws_cut.ogg'
 
-/obj/item/weapon/wirecutters/power/attack_self(mob/user)
+/obj/item/wirecutters/power/attack_self(mob/user)
 	playsound(get_turf(user), 'infinity/sound/items/change_jaws.ogg', 50, 1)
-	var/obj/item/weapon/crowbar/power/pryjaws = new /obj/item/weapon/crowbar/power
+	var/obj/item/crowbar/power/pryjaws = new /obj/item/crowbar/power
 	to_chat(user, "<span class='notice'>You attach the pry jaws to [src].</span>")
 	qdel(src)
 	user.put_in_active_hand(pryjaws)
 
-/obj/item/weapon/wirecutters/power/Initialize()
+/obj/item/wirecutters/power/Initialize()
 	. = ..()
 	icon_state = "jaws_cutter"
 	color = "#ffffff"

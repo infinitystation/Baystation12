@@ -206,7 +206,7 @@ var/list/escape_pods_by_name = list()
 	if(emagged && isMultitool(T) && user.skill_check(SKILL_ELECTRICAL, SKILL_ADEPT))
 		to_chat(user, "<span class='notice'>Ты начал сбрасывать настройки [src], чтобы починить его.</span>")
 		if(do_after(user, 100, src))
-			emagged = 0
+			emagged = FALSE
 			state("Сброс до заводских настроек завершен!")
 			sleep(5)
 			state("Поиск центрального контроллера...")
@@ -231,7 +231,7 @@ var/list/escape_pods_by_name = list()
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth/emag_act(var/remaining_charges, var/mob/user)
 	if (!emagged)
 		to_chat(user, "<span class='notice'>You emag the [src], arming the escape pod!</span>")
-		emagged = 1
+		emagged = TRUE
 		// [INF]
 		GLOB.global_announcer.autosay("<b>Несанкционированный доступ</b> к контроллеру эвакуации. Потеряно управление от <b><i>[src]</i></b>. Службе безопасности рекомендуется проследовать к этой капсуле. Местоположение капсулы: [get_area(src)]", "Автоматическая Система Безопасности", "Security", z)
 		state("Ошибка центрального контроллера!")

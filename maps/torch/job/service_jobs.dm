@@ -6,7 +6,7 @@
 	spawn_positions = 1
 	minimum_character_age = list(SPECIES_HUMAN = 24)
 	ideal_character_age = 40
-	economic_power = 5
+	economic_power = 6
 	minimal_player_age = 0
 	supervisors = "the Executive Officer"
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/service/chaplain
@@ -20,7 +20,13 @@
 		/datum/mil_rank/fleet/o2,
 		/datum/mil_rank/ec/o1)
 	min_skill = list(SKILL_BUREAUCRACY = SKILL_BASIC)
-	access = list(access_morgue, access_chapel_office, access_crematorium, access_solgov_crew)
+
+	access = list(
+		access_morgue, access_chapel_office,
+		access_crematorium, access_solgov_crew,
+		access_radio_serv
+	)
+
 	minimal_access = list()
 
 /datum/job/janitor
@@ -49,9 +55,14 @@
 	)
 	min_skill = list(   SKILL_HAULING = SKILL_BASIC)
 
-	access = list(access_maint_tunnels, access_emergency_storage, access_janitor, access_solgov_crew)
+	access = list(
+		access_maint_tunnels, access_emergency_storage,
+		access_janitor, access_solgov_crew,
+		access_radio_serv
+	)
+
 	minimal_access = list()
-	
+
 /datum/job/chef
 	title = "Cook"
 	department = "Service"
@@ -80,7 +91,13 @@
 	min_skill = list(   SKILL_COOKING   = SKILL_ADEPT,
 	                    SKILL_BOTANY    = SKILL_BASIC,
 	                    SKILL_CHEMISTRY = SKILL_BASIC)
-	access = list(access_hydroponics, access_kitchen, access_solgov_crew, access_bar, access_commissary)
+
+	access = list(
+		access_hydroponics, access_kitchen,
+		access_solgov_crew, access_bar,
+		access_commissary, access_radio_serv
+	)
+
 	minimal_access = list()
 
 /datum/job/bartender
@@ -93,8 +110,14 @@
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/contractor)
 
-	access = list(access_hydroponics, access_bar, access_solgov_crew, access_kitchen, access_commissary)
+	access = list(
+		access_hydroponics, access_bar,
+		access_solgov_crew, access_kitchen,
+		access_commissary, access_radio_serv
+	)
+
 	minimal_access = list()
+
 	min_skill = list(   SKILL_COOKING   = SKILL_BASIC,
 	                    SKILL_BOTANY    = SKILL_BASIC,
 	                    SKILL_CHEMISTRY = SKILL_BASIC)
@@ -120,4 +143,7 @@
 		/datum/mil_rank/fleet/e4
 	)
 
-	access = list(access_maint_tunnels, access_emergency_storage, access_solgov_crew)
+	access = list(
+		access_maint_tunnels, access_emergency_storage,
+		access_solgov_crew, access_radio_serv
+	)

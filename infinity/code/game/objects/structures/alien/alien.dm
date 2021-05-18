@@ -3,7 +3,7 @@
 	desc = "There's something alien about this."
 	icon = 'infinity/icons/mob/alien.dmi'
 	layer = ABOVE_OBJ_LAYER
-	anchored = 1
+	anchored = TRUE
 	var/health = 50
 
 /obj/structure/alien/proc/healthcheck()
@@ -48,7 +48,7 @@
 /obj/structure/alien/attack_generic()
 	attack_hand(usr)
 
-/obj/structure/alien/attackby(var/obj/item/weapon/W, var/mob/user)
+/obj/structure/alien/attackby(var/obj/item/W, var/mob/user)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	attack_animation(user)
 	health = max(0, health - W.force)

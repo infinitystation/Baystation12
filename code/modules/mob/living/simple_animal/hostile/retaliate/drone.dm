@@ -39,6 +39,7 @@
 	var/hostile_drone = 0
 	//0 - retaliate, only attack enemies that attack it
 	//1 - hostile, attack everything that comes near
+	var/hostile_range = 10
 
 	var/turf/patrol_target
 	var/explode_chance = 1
@@ -68,15 +69,21 @@
 /mob/living/simple_animal/hostile/retaliate/malf_drone/proc/Haywire()
 	if(prob(disabled ? 0 : 1) && malfunctioning)
 		if(hostile_drone)
-			src.visible_message("<span class='notice'>\icon[src] [src] retracts several targetting vanes, and dulls it's running lights.</span>")
+			src.visible_message("<span class='notice'>[icon2html(src, viewers(get_turf(src)))] [src] retracts several targetting vanes, and dulls it's running lights.</span>")
 			hostile_drone = 0
 		else
-			src.visible_message("<span class='warning'>\icon[src] [src] suddenly lights up, and additional targetting vanes slide into place.</span>")
+			src.visible_message("<span class='warning'>[icon2html(src, viewers(get_turf(src)))] [src] suddenly lights up, and additional targetting vanes slide into place.</span>")
 			hostile_drone = 1
 
 /mob/living/simple_animal/hostile/retaliate/malf_drone/ListTargets()
 	if(hostile_drone)
-		return view(src, 10)
+		var/list/targets = list()
+		for (var/mob/M in view(src, hostile_range))
+			if (M == src || istype(M, /mob/living/simple_animal/hostile/retaliate/malf_drone))
+				continue
+			targets |= M
+
+		return targets
 	else
 		return ..()
 
@@ -98,7 +105,7 @@
 
 	//repair a bit of damage
 	if(prob(1))
-		src.visible_message("<span class='warning'>\icon[src] [src] shudders and shakes as some of it's damaged systems come back online.</span>")
+		src.visible_message("<span class='warning'>[icon2html(src, viewers(get_turf(src)))] [src] shudders and shakes as some of it's damaged systems come back online.</span>")
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 		s.set_up(3, 1, src)
 		s.start()
@@ -131,17 +138,17 @@
 		exploding = 0
 		if(!disabled)
 			if(prob(50))
-				src.visible_message("<span class='notice'>\icon[src] [src] suddenly shuts down!</span>")
+				src.visible_message("<span class='notice'>[icon2html(src, viewers(get_turf(src)))] [src] suddenly shuts down!</span>")
 			else
-				src.visible_message("<span class='notice'>\icon[src] [src] suddenly lies still and quiet.</span>")
+				src.visible_message("<span class='notice'>[icon2html(src, viewers(get_turf(src)))] [src] suddenly lies still and quiet.</span>")
 			disabled = rand(150, 600)
 			walk(src,0)
 
 	if(exploding && prob(20))
 		if(prob(50))
-			src.visible_message("<span class='warning'>\icon[src] [src] begins to spark and shake violenty!</span>")
+			src.visible_message("<span class='warning'>[icon2html(src, viewers(get_turf(src)))] [src] begins to spark and shake violenty!</span>")
 		else
-			src.visible_message("<span class='warning'>\icon[src] [src] sparks and shakes like it's about to explode!</span>")
+			src.visible_message("<span class='warning'>[icon2html(src, viewers(get_turf(src)))] [src] sparks and shakes like it's about to explode!</span>")
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 		s.set_up(3, 1, src)
 		s.start()
@@ -154,8 +161,8 @@
 		spawn(rand(50,150))
 			if(!disabled && exploding)
 				explosion(get_turf(src), 0, 1, 4, 7)
-				//proc/explosion(turf/epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range, adminlog = 1)
-//INF	..()
+				death()
+	..()
 
 //ion rifle!
 /mob/living/simple_animal/hostile/retaliate/malf_drone/emp_act(severity)
@@ -177,16 +184,16 @@
 		var/obj/O
 
 		//shards
-		O = new /obj/item/weapon/material/shard(src.loc)
+		O = new /obj/item/material/shard(src.loc)
 		step_to(O, get_turf(pick(view(7, src))))
 		if(prob(75))
-			O = new /obj/item/weapon/material/shard(src.loc)
+			O = new /obj/item/material/shard(src.loc)
 			step_to(O, get_turf(pick(view(7, src))))
 		if(prob(50))
-			O = new /obj/item/weapon/material/shard(src.loc)
+			O = new /obj/item/material/shard(src.loc)
 			step_to(O, get_turf(pick(view(7, src))))
 		if(prob(25))
-			O = new /obj/item/weapon/material/shard(src.loc)
+			O = new /obj/item/material/shard(src.loc)
 			step_to(O, get_turf(pick(view(7, src))))
 
 		//rods
@@ -216,7 +223,7 @@
 			step_to(O, get_turf(pick(view(7, src))))
 
 		//also drop dummy circuit boards deconstructable for research (loot)
-		var/obj/item/weapon/stock_parts/circuitboard/C
+		var/obj/item/stock_parts/circuitboard/C
 
 		//spawn 1-4 boards of a random type
 		var/spawnees = 0
@@ -224,7 +231,7 @@
 		var/list/options = list(1,2,4,8,16,32,64,128,256,512)
 		for(var/i=0, i<num_boards, i++)
 			var/chosen = pick(options)
-			options.Remove(options.Find(chosen))
+			options.Remove(list_find(options, chosen))
 			spawnees |= chosen
 
 		if(spawnees & 1)

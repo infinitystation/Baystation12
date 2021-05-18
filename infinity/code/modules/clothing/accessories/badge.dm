@@ -36,3 +36,7 @@
 	var/decl/cultural_info/culture = H.get_cultural_value(TAG_RELIGION)
 	var/religion = culture ? culture.name : "Unset"
 	desc = "[initial(desc)]\nName: [H.real_name] ([H.get_species()])\nReligion: [religion]\nBlood type: [H.b_type]"
+
+/obj/item/clothing/accessory/badge/dog_tags/proc/loadout_setup(mob/M)
+	set_name(M.real_name)
+	set_desc(M)

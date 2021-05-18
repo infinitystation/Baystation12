@@ -14,8 +14,7 @@
 	var/max_components = IC_MAX_SIZE_BASE
 	var/max_complexity = IC_COMPLEXITY_BASE
 	var/opened = TRUE
-	var/obj/item/weapon/cell/battery // Internal cell which most circuits need to work.
-	var/cell_type = /obj/item/weapon/cell
+	var/obj/item/cell/battery // Internal cell which most circuits need to work.
 	var/can_charge = TRUE //Can it be charged in a recharger?
 	var/circuit_flags = IC_FLAG_ANCHORABLE
 	var/charge_sections = 4
@@ -246,7 +245,7 @@
 
 			add_allowed_scanner(usr.ckey)
 
-			var/current_pos = assembly_components.Find(component)
+			var/current_pos = list_find(assembly_components, component)
 
 			if(href_list["remove"])
 				try_remove_component(component, usr)
@@ -411,7 +410,7 @@
 
 
 /obj/item/device/electronic_assembly/attackby(obj/item/I, mob/living/user)
-	if(istype(I, /obj/item/weapon/wrench))
+	if(istype(I, /obj/item/wrench))
 		if(istype(loc, /turf) && (IC_FLAG_ANCHORABLE & circuit_flags))
 			user.visible_message("\The [user] wrenches \the [src]'s anchoring bolts [anchored ? "back" : "into position"].")
 			playsound(get_turf(user), 'sound/items/Ratchet.ogg',50)
@@ -435,7 +434,7 @@
 			for(var/obj/item/integrated_circuit/input/S in assembly_components)
 				S.attackby_react(I,user,user.a_intent)
 			return ..()
-	else if(istype(I, /obj/item/weapon/cell))
+	else if(istype(I, /obj/item/cell))
 		if(!opened)
 			to_chat(user, "<span class='warning'>[src]'s hatch is closed, so you can't access \the [src]'s power supplier.</span>")
 			for(var/obj/item/integrated_circuit/input/S in assembly_components)
@@ -446,7 +445,7 @@
 			for(var/obj/item/integrated_circuit/input/S in assembly_components)
 				S.attackby_react(I,user,user.a_intent)
 			return ..()
-		var/obj/item/weapon/cell/cell = I
+		var/obj/item/cell/cell = I
 		if(user.unEquip(I,loc))
 			user.drop_from_inventory(I, loc)
 			cell.forceMove(src)
@@ -460,10 +459,10 @@
 		detail_color = D.detail_color
 		update_icon()
 //[INF]
-	else if(is_type_in_list(I, list(/obj/item/weapon/gun/energy/, /obj/item/weapon/grenade/, /obj/item/weapon/aicard, /obj/item/device/paicard, /obj/item/device/mmi, /obj/item/organ/internal/posibrain/)) && opened)
+	else if(is_type_in_list(I, list(/obj/item/gun/energy/, /obj/item/grenade/, /obj/item/aicard, /obj/item/device/paicard, /obj/item/device/mmi, /obj/item/organ/internal/posibrain/)) && opened)
 		loading(I,user)
 //[/INF]
-	else if(istype(I, /obj/item/weapon/screwdriver))
+	else if(istype(I, /obj/item/screwdriver))
 		var/hatch_locked = FALSE
 		for(var/obj/item/integrated_circuit/manipulation/hatchlock/H in assembly_components)
 			// If there's more than one hatch lock, only one needs to be enabled for the assembly to be locked
@@ -497,6 +496,11 @@
 
 /obj/item/device/electronic_assembly/bullet_act(var/obj/item/projectile/P)
 	take_damage(P.damage)
+
+/obj/item/device/electronic_assembly/attack_generic(mob/user, damage)
+	take_damage(damage)
+	user.visible_message(SPAN_WARNING("\The [user] smashes \the [src]!"), SPAN_WARNING("You smash \the [src]!"))
+	attack_animation(user)
 
 /obj/item/device/electronic_assembly/emp_act(severity)
 	. = ..()

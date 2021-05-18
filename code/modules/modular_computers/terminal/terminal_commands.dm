@@ -87,7 +87,7 @@ Subtypes
 	pattern = "^ifconfig$"
 
 /datum/terminal_command/ifconfig/proper_input_entered(text, mob/user, datum/terminal/terminal)
-	var/obj/item/weapon/stock_parts/computer/network_card/network_card = terminal.computer.get_component(PART_NETWORK)
+	var/obj/item/stock_parts/computer/network_card/network_card = terminal.computer.get_component(PART_NETWORK)
 	if(!istype(network_card))
 		return "No network adaptor found."
 	if(!network_card.check_functionality())
@@ -102,13 +102,13 @@ Subtypes
 /datum/terminal_command/hwinfo/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	if(text == "hwinfo")
 		. = list("Hardware Detected:")
-		for(var/obj/item/weapon/stock_parts/computer/ch in  terminal.computer.get_all_components())
+		for(var/obj/item/stock_parts/computer/ch in  terminal.computer.get_all_components())
 			. += ch.name
 		return
 	if(length(text) < 8)
 		return "hwinfo: Improper syntax. Use hwinfo \[name\]."
 	text = copytext(text, 8)
-	var/obj/item/weapon/stock_parts/computer/ch = terminal.computer.find_hardware_by_name(text)
+	var/obj/item/stock_parts/computer/ch = terminal.computer.find_hardware_by_name(text)
 	if(!ch)
 		return "hwinfo: No such hardware found."
 	. = list("Running diagnostic protocols...")
@@ -197,7 +197,7 @@ inf*/
 		var/time2back = 0
 		var/packet_lost = 0
 		var/list/nids = T.Copy(2)
-		var/obj/item/weapon/stock_parts/computer/network_card/mynetwork_card = terminal.computer.get_component(PART_NETWORK)
+		var/obj/item/stock_parts/computer/network_card/mynetwork_card = terminal.computer.get_component(PART_NETWORK)
 		nids.Insert(1, mynetwork_card.identification_id)
 		for(var/nid in nids)
 			var/datum/extension/interactive/ntos/osbynid = ntnet_global.get_os_by_nid(text2num(nid))
@@ -255,7 +255,7 @@ INF*/
 
 /datum/terminal_command/proxy/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/datum/extension/interactive/ntos/comp = terminal.computer
-	var/obj/item/weapon/stock_parts/computer/network_card/network_card = comp && comp.get_component(PART_NETWORK)
+	var/obj/item/stock_parts/computer/network_card/network_card = comp && comp.get_component(PART_NETWORK)
 	if(!comp || !network_card || !network_card.check_functionality())
 		return "proxy: Error; check networking hardware."
 	if(text == "proxy")
@@ -298,7 +298,7 @@ INF*/
 	skill_needed = SKILL_ADEPT
 
 /datum/terminal_command/ls/proper_input_entered(text, mob/user, datum/terminal/terminal)
-	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = terminal.computer.get_component(PART_HDD)
+	var/obj/item/stock_parts/computer/hard_drive/HDD = terminal.computer.get_component(PART_HDD)
 	if(!HDD)	return "[name]: no local storage found"
 	if(!HDD.check_functionality()) return "[name]: Access attempt to local storage failed. Check integrity of your hard drive"
 	for(var/datum/computer_file/F in HDD.stored_files)
@@ -340,7 +340,7 @@ INF*/
 /datum/terminal_command/session/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/datum/computer_file/program/PRG = /datum/computer_file/program
 	var/datum/extension/interactive/ntos/CT = terminal.computer
-	var/obj/item/weapon/stock_parts/computer/processor_unit/CPU = CT.get_component(PART_CPU)
+	var/obj/item/stock_parts/computer/processor_unit/CPU = CT.get_component(PART_CPU)
 	if(!CPU)
 		return "session: CPU is missed."
 	if(length(text) > 18 || length(text) < 6)
@@ -399,7 +399,7 @@ INF*/
 	var/list/T = splittext(text, " ")
 	T = T.Copy(2)
 
-	var/obj/item/weapon/stock_parts/computer/network_card/NC = CT.get_component(PART_NETWORK)
+	var/obj/item/stock_parts/computer/network_card/NC = CT.get_component(PART_NETWORK)
 	if(!NC)
 		return "[name]: unable to connect to the remote terminal"
 
@@ -414,7 +414,7 @@ INF*/
 	if(!comp || !comp.host_status() || !comp.get_ntnet_status()) return "[name]: No active device with this nid found."
 	if(comp.has_terminal(user)) return "[name]: A remote terminal to this device is already active."
 
-	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = comp.get_component(PART_HDD)
+	var/obj/item/stock_parts/computer/hard_drive/HDD = comp.get_component(PART_HDD)
 	if(!HDD) return "[name]: no local storage found"
 	if(!HDD.check_functionality()) return "[name]: Access attempt to local storage failed. Check integrity of your hard drive"
 	var/datum/computer_file/data/config/cfg_file = HDD.find_file_by_name("config")
@@ -447,7 +447,7 @@ INF*/
 	skill_needed = SKILL_ADEPT
 
 /datum/terminal_command/remove/proper_input_entered(text, mob/user, datum/terminal/terminal)
-	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = terminal.computer.get_component(PART_HDD)
+	var/obj/item/stock_parts/computer/hard_drive/HDD = terminal.computer.get_component(PART_HDD)
 	if(!HDD)
 		return "<font color='#ffa000'>[name]: hard drive is missed.</font>"
 	if(!HDD.check_functionality())
@@ -473,7 +473,7 @@ INF*/
 
 /datum/terminal_command/echo/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/option = copytext(text, 6, 8)
-	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = terminal.computer.get_component(PART_HDD)
+	var/obj/item/stock_parts/computer/hard_drive/HDD = terminal.computer.get_component(PART_HDD)
 	if(!HDD)
 		return "<font color='#ff0000'>[name]: hard drive is missed.</font>"
 	if(!HDD.check_functionality())
@@ -510,7 +510,7 @@ INF*/
 	pattern = "^probenet$"
 
 /datum/terminal_command/probenet/proper_input_entered(text, mob/user, datum/terminal/terminal)
-	var/obj/item/weapon/stock_parts/computer/network_card/NC = terminal.computer.get_component(PART_NETWORK)
+	var/obj/item/stock_parts/computer/network_card/NC = terminal.computer.get_component(PART_NETWORK)
 	if(!NC) return "<font color='#ffa000'>[name]: network card not found.</font>"
 	if(!NC.check_functionality()) return "<font color='#ff0000'>[name]: check network card interity.</font>"
 	if(!terminal.computer.get_ntnet_status()) return "[name]: network card can't connect to network."
@@ -519,7 +519,7 @@ INF*/
 	var/total = 0
 	for(var/datum/extension/interactive/ntos/comp in GLOB.CreatedOSes)
 		if(comp.get_ntnet_status() && comp.host_status())
-			var/obj/item/weapon/stock_parts/computer/network_card/comp_NC = comp.get_component(PART_NETWORK)
+			var/obj/item/stock_parts/computer/network_card/comp_NC = comp.get_component(PART_NETWORK)
 			if(!comp_NC)
 				continue
 			NIDS += "[comp_NC.identification_id]"
@@ -539,7 +539,7 @@ INF*/
 /datum/terminal_command/alias/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/option = copytext(text, 7, 10)
 
-	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = terminal.computer.get_component(PART_HDD)
+	var/obj/item/stock_parts/computer/hard_drive/HDD = terminal.computer.get_component(PART_HDD)
 	if(!HDD)
 		return "<font color='00ff00'>[name]: local storage is missed.</font>"
 	if(!HDD.check_functionality())
@@ -577,8 +577,8 @@ INF*/
 
 			var/regex/RegexHTML = new("<\[^<>]*>", "g")
 			var/regex/RegexFileHTML = new("\\\[\[^\\\[\\\]]*\\\]", "g")
-			code = RegexHTML.Replace(code)
-			code = RegexFileHTML.Replace(code)
+			code = regex_replace(RegexHTML, code)
+			code = regex_replace(RegexFileHTML, code)
 			code = replacetext_char(code, "\n", "")
 
 			var/list/code_list = splittext(code, "; ")
@@ -610,7 +610,7 @@ INF*/
 	var/override = 0
 	var/airlock_override_code = ""
 	var/decl/security_state/sec_code = decls_repository.get_decl(GLOB.using_map.security_state)
-	var/obj/item/weapon/stock_parts/computer/network_card/NC = terminal.computer.get_component(PART_NETWORK)
+	var/obj/item/stock_parts/computer/network_card/NC = terminal.computer.get_component(PART_NETWORK)
 	if(!NC) return "[name]: network card not found."
 	if(!NC.check_functionality()) return "[name]: check network card interity."
 

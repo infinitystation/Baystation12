@@ -92,7 +92,7 @@
 	return ..()
 
 // wrist box
-/obj/item/weapon/storage/box/wrist
+/obj/item/storage/box/wrist
 	name = "box of spare wrist computers"
 	desc = "A box of spare wrist microcomputers."
 	icon_state = "pda"
@@ -125,7 +125,7 @@
 	stripe_color = COLOR_BLUE_GRAY
 
 /obj/item/modular_computer/pda/wrist/heads/paperpusher
-	stored_pen = /obj/item/weapon/pen/fancy
+	stored_pen = /obj/item/pen/fancy
 
 /obj/item/modular_computer/pda/wrist/heads/hop
 	stripe_color = COLOR_SKY_BLUE

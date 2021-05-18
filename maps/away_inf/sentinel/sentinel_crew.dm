@@ -65,21 +65,21 @@
 	desc = "SPS Commander"
 	region = ACCESS_REGION_NONE
 
-/obj/item/weapon/card/id/awaycavalry/fleet
+/obj/item/card/id/awaycavalry/fleet
 	color = COLOR_GRAY40
 	detail_color = "#447ab1"
 	access = list(access_away_cavalry)
 
-/obj/item/weapon/card/id/awaycavalry/ops
+/obj/item/card/id/awaycavalry/ops
 	color = "#b10309c2"
 	detail_color = "#000000"
 	access = list(access_away_cavalry, access_away_cavalry_ops)
 
-/obj/item/weapon/card/id/awaycavalry/ops/captain
+/obj/item/card/id/awaycavalry/ops/captain
 	access = list(access_away_cavalry, access_away_cavalry_ops, access_away_cavalry_captain)
 	extra_details = list("goldstripe")
 
-/obj/item/weapon/card/id/awaycavalry/fleet/commander
+/obj/item/card/id/awaycavalry/fleet/commander
 	access = list(access_away_cavalry, access_away_cavalry_ops, access_away_cavalry_commander)
 	extra_details = list("goldstripe")
 
@@ -256,7 +256,7 @@
 	var/milbranch = input(H, "What was your branch before SOCOM?", "SCGDF Branch") as null|anything in milbranches
 	if(milbranch)
 		var/milsubbranch = input(H, "What is your assignment now?", "SCGDF Assignment") as null|anything in milbranches[milbranch]
-		var/obj/item/weapon/card/id/C = H.wear_id
+		var/obj/item/card/id/C = H.wear_id
 		if(istype(C))
 			C.assignment = milsubbranch
 */
@@ -273,9 +273,9 @@
 	shoes = /obj/item/clothing/shoes/dutyboots
 	l_ear = /obj/item/device/radio/headset/away_scg_patrol
 	l_pocket = /obj/item/device/radio
-	r_pocket = /obj/item/weapon/crowbar/prybar
-	suit_store = /obj/item/weapon/tank/oxygen
-	id_type = /obj/item/weapon/card/id/awaycavalry/fleet
+	r_pocket = /obj/item/crowbar/prybar
+	suit_store = /obj/item/tank/oxygen
+	id_types = list(/obj/item/card/id/awaycavalry/fleet)
 	id_slot = slot_wear_id
 	pda_type = null
 	belt = null
@@ -287,41 +287,41 @@
 	name = PATROL_OUTFIT_JOB_NAME("Ops")
 	head = /obj/item/clothing/head/solgov/utility/army/urban
 	uniform = /obj/item/clothing/under/solgov/utility/army/urban/away_solpatrol
-	id_type = /obj/item/weapon/card/id/awaycavalry/ops
+	id_types = list(/obj/item/card/id/awaycavalry/ops)
 	gloves = /obj/item/clothing/gloves/thick/combat/marine
 
 /decl/hierarchy/outfit/job/patrol/captain
 	name = PATROL_OUTFIT_JOB_NAME("Captain")
 	head = /obj/item/clothing/head/solgov/utility/army/urban
 	uniform = /obj/item/clothing/under/solgov/utility/army/urban/away_solpatrol/captain
-	id_type = /obj/item/weapon/card/id/awaycavalry/ops/captain
+	id_types = list(/obj/item/card/id/awaycavalry/ops/captain)
 	gloves = /obj/item/clothing/gloves/thick/combat/marine
 
 /decl/hierarchy/outfit/job/patrol/engineer
 	name = PATROL_OUTFIT_JOB_NAME("Technician")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/engineering/away_solpatrol
-	belt = /obj/item/weapon/storage/belt/holster/general/away_solpatrol
+	belt = /obj/item/storage/belt/holster/general/away_solpatrol
 	gloves = /obj/item/clothing/gloves/insulated/black
 
 /decl/hierarchy/outfit/job/patrol/surgeon
 	name = PATROL_OUTFIT_JOB_NAME("Doctor")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/medical/away_solpatrol
-	belt = /obj/item/weapon/storage/belt/holster/general/away_solpatrol
+	belt = /obj/item/storage/belt/holster/general/away_solpatrol
 	gloves = /obj/item/clothing/gloves/latex/nitrile
 
 /decl/hierarchy/outfit/job/patrol/commander
 	name = PATROL_OUTFIT_JOB_NAME("Lieutenant Commander")
 	head = /obj/item/clothing/head/beret/solgov/fleet/branch/fifth
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/officer/command/commander/away_solpatrol
-	belt = /obj/item/weapon/storage/belt/holster/general/away_solpatrol
-	id_type = /obj/item/weapon/card/id/awaycavalry/fleet/commander
+	belt = /obj/item/storage/belt/holster/general/away_solpatrol
+	id_types = list(/obj/item/card/id/awaycavalry/fleet/commander)
 	gloves = /obj/item/clothing/gloves/thick/duty/solgov/cmd
 
 /decl/hierarchy/outfit/job/patrol/pilot1
 	name = PATROL_OUTFIT_JOB_NAME("Ensign")
 	head = /obj/item/clothing/head/beret/solgov/fleet/branch/fifth
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/officer/pilot1/away_solpatrol
-	belt = /obj/item/weapon/storage/belt/holster/general/away_solpatrol
+	belt = /obj/item/storage/belt/holster/general/away_solpatrol
 	gloves = /obj/item/clothing/gloves/thick/duty/rivalgloves
 
 #undef PATROL_OUTFIT_JOB_NAME

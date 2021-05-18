@@ -39,11 +39,11 @@
 
 /datum/gear/passport/resomi
 	display_name = "(Resomi) registration document"
-	path = /obj/item/weapon/passport/xeno/resomi
+	path = /obj/item/passport/xeno/resomi
 	sort_category = "Xenowear"
 	flags = 0
 	whitelisted = list(SPECIES_RESOMI)
-	custom_setup_proc = /obj/item/weapon/passport/proc/set_info
+	custom_setup_proc = /obj/item/passport/proc/set_info
 	cost = 0
 
 // IPC clothing
@@ -56,11 +56,11 @@
 // Tajaran clothing
 /datum/gear/passport/tajara
 	display_name = "(Tajara) passport"
-	path = /obj/item/weapon/passport/xeno/tajara
+	path = /obj/item/passport/xeno/tajara
 	whitelisted = list(SPECIES_TAJARA)
 	flags = 0
 	sort_category = "Xenowear"
-	custom_setup_proc = /obj/item/weapon/passport/proc/set_info
+	custom_setup_proc = /obj/item/passport/proc/set_info
 	cost = 0
 
 // Pre-modified gloves

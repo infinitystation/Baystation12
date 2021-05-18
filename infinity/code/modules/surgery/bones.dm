@@ -1,7 +1,7 @@
 //////BONE MENDER/////////
 /datum/surgery_step/bone_mender
 	allowed_tools = list(
-		/obj/item/weapon/bonesetter/bone_mender = 100,
+		/obj/item/bonesetter/bone_mender = 100,
 		)
 
 	can_infect = 1

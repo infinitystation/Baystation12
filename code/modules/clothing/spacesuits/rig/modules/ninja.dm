@@ -38,10 +38,10 @@
 	var/mob/living/carbon/human/H = holder.wearer
 
 	// infinity ahead
-	if(istype(H.get_active_hand(), /obj/item/weapon/melee/energy/blade/))
+	if(istype(H.get_active_hand(), /obj/item/melee/energy/blade/))
 		H.drop_item()
 
-	if(istype(H.get_inactive_hand(), /obj/item/weapon/melee/energy/blade))
+	if(istype(H.get_inactive_hand(), /obj/item/melee/energy/blade))
 		H.swap_hand()
 		H.drop_item()
 	//infinity end
@@ -69,7 +69,7 @@
 	name = "teleportation module"
 	desc = "A complex, sleek-looking, hardsuit-integrated teleportation module."
 	icon_state = "teleporter"
-	use_power_cost = 25 KILOWATTS
+	use_power_cost = 400 KILOWATTS
 	redundant = 1
 	usable = 1
 	selectable = 1
@@ -151,8 +151,8 @@
 
 	engage_string = "Fabricate Net"
 
-	fabrication_type = /obj/item/weapon/energy_net
-	use_power_cost = 20 KILOWATTS
+	fabrication_type = /obj/item/energy_net
+	use_power_cost = 50 KILOWATTS
 	origin_tech = list(TECH_MATERIAL = 5, TECH_POWER = 6, TECH_MAGNET = 5, TECH_ESOTERIC = 4, TECH_ENGINEERING = 6)
 
 /obj/item/rig_module/fabricator/energy_net/engage(atom/target)

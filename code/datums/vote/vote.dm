@@ -10,7 +10,6 @@
 
 	var/start_time
 	var/time_remaining
-	var/time_set
 	var/status = VOTE_STATUS_PREVOTE
 
 	var/list/result                // The results; format is list(choice = votes).
@@ -21,9 +20,7 @@
 	var/win_x = 450
 	var/win_y = 740                // Vote window size.
 
-	var/show_leading = 0
 	var/manual_allowed = 1         // Whether humans can start it.
-	var/percent_votes = FALSE      // Total votes in current choose. If FALSE - shows total num of voted people for this choose.
 
 //Expected to be run immediately after creation; a false return means that the vote could not be run and the datum will be deleted.
 /datum/vote/proc/setup(mob/creator, automatic)
@@ -49,15 +46,14 @@
 
 /datum/vote/proc/start_vote()
 	start_time = world.time
-	time_set = (time_set ? time_set : config.vote_period) SECONDS
-	time_remaining = time_set
 	status = VOTE_STATUS_ACTIVE
+	time_remaining = round(config.vote_period/10)
 
 	var/text = get_start_text()
 
 	log_vote(text)
-	to_world("<font color='purple'><b>[text]</b>\nType <b>vote</b> or click <a href='?src=\ref[SSvote];vote_panel=1'>here</a> to place your votes.\nYou have [time_set/10] seconds to vote.</font>")
-	to_world(sound('sound/ambience/alarm4.ogg', repeat = 0, wait = 0, volume = 50, channel = GLOB.vote_sound_channel))
+	to_world("<font color='purple'><b>[text]</b>\nType <b>vote</b> or click <a href='?src=\ref[SSvote];vote_panel=1'>here</a> to place your votes.\nYou have [config.vote_period/10] seconds to vote.</font>")
+	sound_to(world, sound('sound/ambience/alarm4.ogg', repeat = 0, wait = 0, volume = 50, channel = GLOB.vote_sound_channel))
 
 /datum/vote/proc/get_start_text()
 	return "[capitalize(name)] vote started by [initiator]."
@@ -91,7 +87,7 @@
 			
 // Remove candidate from choice_list and any votes for it from vote_list, transfering first choices to second
 /datum/vote/proc/remove_candidate(list/choice_list, list/vote_list, candidate)
-	var/candidate_index = choices.Find(candidate) // use choices instead of choice_list because we need the original indexing
+	var/candidate_index = list_find(choices, candidate) // use choices instead of choice_list because we need the original indexing
 	choice_list -= candidate
 	for(var/ckey in vote_list)
 		if(length(votes[ckey]) && vote_list[ckey][1] == candidate_index && length(vote_list[ckey]) > 1)
@@ -109,7 +105,7 @@
 
 	var/text = get_result_announcement()
 	log_vote(text)
-	to_world("<font color='purple'>[text]</font>")
+	to_world("<font color='purple'>[text]</font>")	
 
 	if(!(result[result[1]] > 0))
 		return 1
@@ -168,7 +164,7 @@
 /datum/vote/Process()
 	if(status == VOTE_STATUS_ACTIVE)
 		if(time_remaining > 0)
-			time_remaining = round((start_time + time_set - world.time)/10)
+			time_remaining = round((start_time + config.vote_period - world.time)/10)
 			return VOTE_PROCESS_ONGOING
 		else
 			status = VOTE_STATUS_COMPLETE
@@ -200,13 +196,13 @@
 		. += "<td style='text-align: center;'>"
 		if(voted_for)
 			var/list/vote = votes[user.ckey]
-			. += "[vote.Find(i)]"
+			. += "[list_find(vote, i)]"
 		. += "</td>"
 
 		if (additional_text[choice])
 			. += "[additional_text[choice]]" //Note lack of cell wrapper, to allow for dynamic formatting.
 		. += "</tr>"
-	. += "</table></div><hr>"
+	. += "</table><hr>"
 
 /datum/vote/Topic(href, href_list, hsrc)
 	var/mob/user = usr

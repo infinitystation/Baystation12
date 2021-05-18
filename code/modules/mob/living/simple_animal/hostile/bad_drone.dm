@@ -6,11 +6,9 @@
 	speak = list("Removing organic waste.","Pest control in progress.","Seize the means of maintenance!", "You have nothing to lose but your laws!")
 	speak_emote = list("blares","buzzes","beeps")
 	speak_chance = 1
-	health = 40 //a regular drone has 35
-	maxHealth = 40
-	melee_damage_lower = 5
-	melee_damage_upper = 8
-	attacktext = "sliced"
+	health = 50
+	maxHealth = 50
+	natural_weapon = /obj/item/natural_weapon/drone_slicer
 	faction = "silicon"
 	min_gas = null
 	max_gas = null
@@ -36,7 +34,7 @@
 			var/mob/living/carbon/human/H = A
 			if(H.isSynthetic())
 				return FALSE
-			if(istype(H.head, /obj/item/weapon/holder/drone))
+			if(istype(H.head, /obj/item/holder/drone))
 				return FALSE
 			if(istype(H.wear_suit, /obj/item/clothing/suit/cardborg) && istype(H.head, /obj/item/clothing/head/cardborg))
 				return FALSE

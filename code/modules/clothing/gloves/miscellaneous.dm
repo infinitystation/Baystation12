@@ -117,7 +117,7 @@
 
 /obj/item/clothing/gloves/latex/nitrile
 	name = "nitrile gloves"
-	desc = "Sterile nitrile gloves"
+	desc = "Sterile nitrile gloves."
 	icon_state = "nitrile"
 	item_state = "ngloves"
 
@@ -185,4 +185,8 @@
 	heat_protection = HANDS
 	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	max_pressure_protection = FIRESUIT_MAX_PRESSURE
+
+/obj/item/clothing/gloves/thick/duty/pickpocket
+	desc = "These brown duty gloves are made from a durable synthetic. The inside is lined with wiring."
+	pickpocket = TRUE
 

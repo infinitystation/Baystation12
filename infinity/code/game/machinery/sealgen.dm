@@ -90,7 +90,7 @@
 
 	update_icon()
 
-/obj/machinery/sealgen/attackby(obj/item/weapon/W, mob/user)
+/obj/machinery/sealgen/attackby(obj/item/W, mob/user)
 
 	if(isMultitool(W) && !locked)
 		field_color = input(usr, "Choose field colour.", "Field color", initial(field_color)) as color|null

@@ -32,8 +32,8 @@
 	else
 		ling.key = M.key
 	var/atom/movable/overlay/effect = new /atom/movable/overlay(get_turf(M))
-	effect.density = 0
-	effect.anchored = 1
+	effect.density = FALSE
+	effect.anchored = TRUE
 	effect.icon = 'icons/effects/effects.dmi'
 	effect.layer = 3
 	flick("summoning",effect)

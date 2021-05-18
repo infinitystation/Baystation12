@@ -1,7 +1,7 @@
 /obj/structure/girder
 	icon_state = "girder"
-	anchored = 1
-	density = 1
+	anchored = TRUE
+	density = TRUE
 	layer = BELOW_OBJ_LAYER
 	w_class = ITEM_SIZE_NO_CONTAINER
 	color = "#666666"
@@ -17,22 +17,22 @@
 
 /obj/structure/girder/displaced
 	icon_state = "displaced"
-	anchored = 0
+	anchored = FALSE
 	health = 50
 	cover = 25
 
 /obj/structure/girder/attack_generic(var/mob/user, var/damage, var/attack_message = "smashes apart", var/wallbreaker)
-//inf	if(!damage || !wallbreaker)
+//inf	if(!damage)
 //inf		return 0
 	if(damage < 10)
 		return 0
 	health -= damage
 	attack_animation(user)
-	if(health <= 0)
-		user.visible_message("<span class='danger'>[user] [attack_message] \the [src] apart!</span>")
+	playsound(loc, 'sound/weapons/tablehit1.ogg', 40, 1)
+	visible_message(SPAN_DANGER("[user] [attack_message] [src]!"))
+	take_damage(damage)
+	if(wallbreaker)
 		spawn(1) dismantle()
-	else
-		user.visible_message("<span class='danger'>[user] [attack_message] \the [src]!</span>")
 	return 1
 
 /obj/structure/girder/bullet_act(var/obj/item/projectile/Proj)
@@ -60,7 +60,7 @@
 	return TRUE
 
 /obj/structure/girder/proc/reset_girder()
-	anchored = 1
+	anchored = TRUE
 	cover = initial(cover)
 	health = min(health,initial(health))
 	state = 0
@@ -85,9 +85,9 @@
 				to_chat(user, "<span class='notice'>You secured the girder!</span>")
 				reset_girder()
 
-	else if(istype(W, /obj/item/weapon/gun/energy/plasmacutter) || istype(W, /obj/item/psychic_power/psiblade/master/grand/paramount))
-		if(istype(W, /obj/item/weapon/gun/energy/plasmacutter))
-			var/obj/item/weapon/gun/energy/plasmacutter/cutter = W
+	else if(istype(W, /obj/item/gun/energy/plasmacutter) || istype(W, /obj/item/psychic_power/psiblade/master/grand/paramount))
+		if(istype(W, /obj/item/gun/energy/plasmacutter))
+			var/obj/item/gun/energy/plasmacutter/cutter = W
 			if(!cutter.slice(user))
 				return
 		playsound(src.loc, 'sound/items/Welder.ogg', 100, 1)
@@ -98,7 +98,7 @@
 				reinf_material.place_dismantled_product(get_turf(src))
 			dismantle()
 
-	else if(istype(W, /obj/item/weapon/pickaxe/diamonddrill))
+	else if(istype(W, /obj/item/pickaxe/diamonddrill))
 		playsound(src.loc, 'sound/weapons/Genhit.ogg', 100, 1)
 		if(do_after(user,reinf_material ? 60 : 40,src))
 			to_chat(user, "<span class='notice'>You drill through the girder!</span>")
@@ -136,7 +136,7 @@
 		if(do_after(user, 40,src))
 			to_chat(user, "<span class='notice'>You dislodged the girder!</span>")
 			icon_state = "displaced"
-			anchored = 0
+			anchored = FALSE
 			health = 50
 			cover = 25
 
@@ -270,9 +270,9 @@
 			to_chat(user, "<span class='notice'>You dissasembled the girder!</span>")
 			dismantle()
 
-	else if(istype(W, /obj/item/weapon/gun/energy/plasmacutter) || istype(W, /obj/item/psychic_power/psiblade/master/grand/paramount))
-		if(istype(W, /obj/item/weapon/gun/energy/plasmacutter))
-			var/obj/item/weapon/gun/energy/plasmacutter/cutter = W
+	else if(istype(W, /obj/item/gun/energy/plasmacutter) || istype(W, /obj/item/psychic_power/psiblade/master/grand/paramount))
+		if(istype(W, /obj/item/gun/energy/plasmacutter))
+			var/obj/item/gun/energy/plasmacutter/cutter = W
 			if(!cutter.slice(user))
 				return
 		playsound(src.loc, 'sound/items/Welder.ogg', 100, 1)
@@ -281,7 +281,7 @@
 			to_chat(user, "<span class='notice'>You slice apart the girder!</span>")
 			dismantle()
 
-	else if(istype(W, /obj/item/weapon/pickaxe/diamonddrill))
+	else if(istype(W, /obj/item/pickaxe/diamonddrill))
 		playsound(src.loc, 'sound/weapons/Genhit.ogg', 100, 1)
 		if(do_after(user,40,src))
 			to_chat(user, "<span class='notice'>You drill through the girder!</span>")
