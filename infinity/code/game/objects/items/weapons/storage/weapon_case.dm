@@ -26,7 +26,7 @@
 /obj/item/weapon_case/attack_hand( mob/user as mob )
 	if( open && gun )
 		user.put_in_hands( gun )
-		to_chat(user, SPAN_NOTICE("You take \icon[src.gun] \the [src.gun] out of \icon[src] \the [src]."))
+		to_chat(user, SPAN_NOTICE("You take \the [src.gun] out of \the [src]."))
 		src.gun = null
 		update_icon()
 		return
@@ -40,15 +40,15 @@
 	if( istype(I, /obj/item/weapon/gun) )
 		if( src.open )
 			if(gun)
-				to_chat(user, SPAN_NOTICE("\icon[src] \the [src] is already occuped by \icon[gun]  [gun]"))
+				to_chat(user, SPAN_NOTICE("\the [src] is already occuped by [gun]"))
 				return
 			if(!user.unEquip(I, src))
 				return
 			src.gun = I
 			update_icon()
-			to_chat(user, SPAN_NOTICE("You put \icon[I] \the [I] in \icon[src] \the [src]!"))
+			to_chat(user, SPAN_NOTICE("You put \the [I] in \the [src]!"))
 		else
-			to_chat(user, SPAN_NOTICE("You try to push \icon[I] \the [I] through the lid but it doesn't work!"))
+			to_chat(user, SPAN_NOTICE("You try to push \the [I] through the lid but it doesn't work!"))
 		return
 
 	..()
