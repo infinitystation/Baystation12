@@ -7,6 +7,13 @@ GLOBAL_LIST_EMPTY(floating_chat_colors)
 /atom/movable/proc/animate_chat(message, datum/language/language, small, list/show_to, duration)
 	set waitfor = FALSE
 
+	// Get rid of any URL schemes that might cause BYOND to automatically wrap something in an anchor tag
+	var/static/regex/url_scheme = new(@"[A-Za-z][A-Za-z0-9+-\.]*:\/\/", "g")
+	message = replacetext(message, url_scheme, "")
+
+	var/static/regex/html_metachars = new(@"&[A-Za-z]{1,7};", "g")
+	message = replacetext(message, html_metachars, "")
+
 	var/style	//additional style params for the message
 	var/fontsize = 6
 	if(small)
@@ -37,20 +44,20 @@ GLOBAL_LIST_EMPTY(floating_chat_colors)
 
 /proc/generate_floating_text(atom/movable/holder, message, style, size, duration, show_to)
 	var/image/I = image(null, holder)
-	I.layer = FLY_LAYER
+	I.plane = HUD_PLANE
+	I.layer = HUD_ABOVE_ITEM_LAYER
 	I.alpha = 0
 	I.maptext_width = 80
 	I.maptext_height = 64
 	I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
-	I.plane = EFFECTS_ABOVE_LIGHTING_PLANE
-	I.pixel_x = -round(I.maptext_width / 2) + 16
+	I.pixel_w = -round(I.maptext_width/2) + 16
 
 	style = "font-family: 'Small Fonts'; -dm-text-outline: 1 black; font-size: [size]px; [style]"
 	I.maptext = "<center><span style=\"[style]\">[message]</span></center>"
-	animate(I, 1, alpha = 255, pixel_y = 16)
+	animate(I, 1, alpha = 255, pixel_z = 16)
 
 	for(var/image/old in holder.stored_chat_text)
-		animate(old, 2, pixel_y = old.pixel_y + 8)
+		animate(old, 2, pixel_z = old.pixel_z + 8)
 	LAZYADD(holder.stored_chat_text, I)
 
 	addtimer(CALLBACK(GLOBAL_PROC, .proc/remove_floating_text, holder, I), duration)
@@ -59,5 +66,5 @@ GLOBAL_LIST_EMPTY(floating_chat_colors)
 	return I
 
 /proc/remove_floating_text(atom/movable/holder, image/I)
-	animate(I, 2, pixel_y = I.pixel_y + 10, alpha = 0)
+	animate(I, 2, pixel_z = I.pixel_z + 10, alpha = 0)
 	LAZYREMOVE(holder.stored_chat_text, I)

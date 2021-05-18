@@ -1,0 +1,10 @@
+Маппинг:
+  - "**/*.dmm"
+
+Спрайты:
+  - "**/*.dmi"
+  - "**/*.png"
+
+Кастомка:
+  - "infinity/custom_items/**/*"
+  - "infinity/customs/**/*"
