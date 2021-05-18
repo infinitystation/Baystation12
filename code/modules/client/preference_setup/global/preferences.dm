@@ -114,13 +114,13 @@ var/list/_client_preferences_by_type
 	key = "SOUND_INSTRUMENTS"
 
 /datum/client_preference/play_jukeboxes
-	description ="Play jukeboxes"
+	description ="Play jukeboxes and boomboxes"
 	key = "SOUND_JUKEBOXES"
-
+/*
 /datum/client_preference/play_boomboxes
 	description ="Play boomboxes"
 	key = "SOUND_BOOMBOXES"
-
+*/
 /datum/client_preference/play_pmps
 	description ="Play pmps"
 	key = "SOUND_PMPS"
