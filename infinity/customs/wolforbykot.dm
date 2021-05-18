@@ -34,7 +34,7 @@
 	trade_blacklisted = TRUE
 
 
-/obj/item/weapon/storage/backpack/wolforbykot
+/obj/item/storage/backpack/wolforbykot
 	name = "CAB"
 	desc = "A waist-slung Gaian shocktroop bag. Compact and roomy."
 	icon = CUSTOM_ITEM_OBJ
@@ -61,12 +61,12 @@
 	trade_blacklisted = TRUE
 
 
-/obj/item/weapon/clothingbag/wolforbykot
+/obj/item/clothingbag/wolforbykot
 	name = "clothing bag"
 	desc = "Roar's property"
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/clothingbag/wolforbykot/New()
+/obj/item/clothingbag/wolforbykot/New()
 	..()
 	new /obj/item/clothing/head/helmet/wolforbykot(src)
 	new /obj/item/clothing/suit/armor/pcarrier/medium/nt/wolforbykot(src)

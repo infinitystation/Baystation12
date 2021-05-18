@@ -57,12 +57,12 @@
 	owner = "Micheal White"
 	holding_weapon = /obj/item/weapon/gun/energy/pulse_rifle/pistol/mixa
 
-/obj/item/weapon/clothingbag/mixa
+/obj/item/clothingbag/mixa
 	name = "clothing bag"
 	desc = "Michael White's property"
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/clothingbag/mixa/Initialize()
+/obj/item/clothingbag/mixa/Initialize()
 	. = ..()
 	new /obj/item/weapon_case/custom/mixa(src)
 	new /obj/item/clothing/accessory/storage/holster/hip(src)
