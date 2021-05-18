@@ -62,15 +62,7 @@
 	desc = "Michael White's property"
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/paper/custom_weapon_license/mixa_pulse_pistol
-	info = "<i>This is just blunk text. Yep, it was shitspawned.</i>"
-	serial_weapon_type = "EW"
-	owner = "Michael White"
-	weapon_name = "именуемый \"Venger\""
-	weapon_type = "пульсового пистолета"
-
 /obj/item/weapon/clothingbag/mixa/Initialize()
 	. = ..()
 	new /obj/item/weapon_case/custom/mixa(src)
 	new /obj/item/clothing/accessory/storage/holster/hip(src)
-	new /obj/item/weapon/paper/custom_weapon_license/mixa_pulse_pistol(src)
