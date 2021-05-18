@@ -71,4 +71,4 @@
 	new /obj/item/clothing/head/helmet/wolforbykot(src)
 	new /obj/item/clothing/suit/armor/pcarrier/medium/nt/wolforbykot(src)
 	new /obj/item/clothing/gloves/thick/duty/wolforbykot(src)
-	new /obj/item/weapon/storage/backpack/wolforbykot(src)
+	new /obj/item/storage/backpack/wolforbykot(src)
