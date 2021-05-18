@@ -24,19 +24,19 @@
 		},
 		"chest":
 		{
-			"name": "Caelestium commander helmet",
+			"name": "Caelestium commander suit",
 			"icon_state": "caelestium_rig_chest",
 			"base_icon_state": "caelestium_rig_chest"
 		},
 		"gloves":
 		{
-			"name": "Caelestium commander helmet",
+			"name": "Caelestium commander gloves",
 			"icon_state": "caelestium_rig_gloves",
 			"base_icon_state": "caelestium_rig_gloves"
 		},
 		"boots":
 		{
-			"name": "Caelestium commander helmet",
+			"name": "Caelestium commander boots",
 			"icon_state": "caelestium_rig_boots",
 			"base_icon_state": "caelestium_rig_boots"
 		}
