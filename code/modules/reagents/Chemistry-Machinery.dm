@@ -24,7 +24,7 @@
 	var/obj/item/reagent_containers/beaker = null
 	var/obj/item/storage/pill_bottle/loaded_pill_bottle = null
 
-	var/to_beaker = FALSE // If TRUE, reagents will move from buffer -> beaker. If FALSE, reagents will be destroyed when moved from the buffer.
+	var/to_beaker = TRUE // If TRUE, reagents will move from buffer -> beaker. If FALSE, reagents will be destroyed when moved from the buffer.
 	var/useramount = 30 // Last used amount
 	var/pillamount = 10
 	var/max_pill_count = 20
