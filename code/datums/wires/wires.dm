@@ -76,6 +76,9 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 	all_solved_wires[holder_type] = SolveWires()//inf
 /datum/wires/proc/Interact(var/mob/living/user)
 
+	if (!user)
+		return
+
 	var/html = null
 	if(holder && CanUse(user))
 		html = GetInteractWindow(user)

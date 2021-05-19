@@ -110,7 +110,7 @@
 	name = "cult armour"
 	icon_state = "cult_armour"
 	desc = "A bulky suit of armour, bristling with spikes. It looks space proof."
-	allowed = list(/obj/item/weapon/book/tome,/obj/item/weapon/melee/cultblade,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit)
+	allowed = list(/obj/item/book/tome,/obj/item/melee/cultblade,/obj/item/tank,/obj/item/device/suit_cooling_unit)
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
 		bullet = ARMOR_BALLISTIC_RIFLE,
@@ -132,7 +132,7 @@
 	desc = "A set of durable robes worn by the followers of Nar-Sie."
 	icon_state = "cultrobesalt"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	allowed = list(/obj/item/weapon/book/tome,/obj/item/weapon/melee/cultblade)
+	allowed = list(/obj/item/book/tome,/obj/item/melee/cultblade)
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
 		bullet = ARMOR_BALLISTIC_PISTOL,
@@ -166,7 +166,7 @@
 	siemens_coefficient = 0.8 //That's a pretty cool opening in the hood. Also: Cloth making physical contact to the skull.
 
 /obj/item/clothing/shoes/cult/ghost
-	anchored = 1
+	anchored = TRUE
 	canremove = 0
 
 /obj/item/clothing/shoes/cult/ghost/dropped(mob/user)
@@ -174,7 +174,7 @@
 	qdel(src)
 
 /obj/item/clothing/under/color/black/ghost
-	anchored = 1
+	anchored = TRUE
 	canremove = 0
 
 /obj/item/clothing/under/color/black/ghost/dropped(mob/user)
@@ -182,7 +182,7 @@
 	qdel(src)
 
 /obj/item/clothing/suit/storage/hooded/cultrobes/ghost
-	anchored = 1
+	anchored = TRUE
 	canremove = 0
 
 /obj/item/clothing/suit/storage/hooded/cultrobes/ghost/dropped(mob/user)

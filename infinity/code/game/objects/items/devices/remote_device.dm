@@ -11,7 +11,7 @@
 	w_class = ITEM_SIZE_TINY
 	var/mode = REMOTE_OPEN
 	var/region_access = ACCESS_REGION_NONE
-	var/obj/item/weapon/card/id/ID
+	var/obj/item/card/id/ID
 	var/emagged = FALSE
 	var/disabled = FALSE
 	var/safety = TRUE
@@ -20,9 +20,9 @@
 	. = ..()
 	create_access()
 
-/obj/item/device/remote_device/proc/create_access(var/obj/item/weapon/card/id/user_id)
+/obj/item/device/remote_device/proc/create_access(var/obj/item/card/id/user_id)
 	QDEL_NULL(ID)
-	ID = new /obj/item/weapon/card/id
+	ID = new /obj/item/card/id
 	ID.access = list()
 
 	for(var/access in region_access)
@@ -36,8 +36,8 @@
 	return ..()
 
 /obj/item/device/remote_device/attackby(obj/item/I, mob/user)
-	if(istype(I, /obj/item/weapon/card/id))
-		var/obj/item/weapon/card/id/ID = I
+	if(istype(I, /obj/item/card/id))
+		var/obj/item/card/id/ID = I
 		if((ID.access && region_access) && (ID.access & region_access))
 			safety = !safety
 			to_chat(user, SPAN_NOTICE("You swipe your indefication card on \the [src]. The safety lock [safety ? "has been reset" : "off"]."))
@@ -48,7 +48,7 @@
 			playsound(src.loc, pick(beepsounds),15,1,10)
 			create_access(ID)
 
-	if(istype(I, /obj/item/weapon/card/emag) && !emagged)
+	if(istype(I, /obj/item/card/emag) && !emagged)
 		safety = FALSE
 		emagged = TRUE
 		to_chat(user, "This device now can electrify doors.")

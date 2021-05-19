@@ -3,8 +3,8 @@
 	desc = "An unknown cube-like structure made of clocks and music boxes. <span class='warning'>You feel uneasy standing near it.</span>"
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "grille"
-	density = 1
-	anchored = 0
+	density = TRUE
+	anchored = FALSE
 
 	var was_touched = 0
 	var touch_sound = 'sound/effects/clank_cube_touched.ogg'

@@ -31,9 +31,9 @@
 /area/white_star/section3)
 "af" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/towel/random,
-/obj/item/weapon/soap,
-/obj/item/weapon/towel/random,
+/obj/item/towel/random,
+/obj/item/soap,
+/obj/item/towel/random,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -59,25 +59,25 @@
 	pixel_x = 0;
 	pixel_y = 28
 	},
-/obj/item/weapon/reagent_containers/food/condiment/small/peppermill,
-/obj/item/weapon/reagent_containers/food/condiment/small/saltshaker,
-/obj/item/weapon/reagent_containers/food/drinks/glass2/square,
-/obj/item/weapon/reagent_containers/food/drinks/glass2/square,
-/obj/item/weapon/reagent_containers/food/drinks/glass2/square,
-/obj/item/weapon/material/kitchen/utensil/spoon,
-/obj/item/weapon/material/kitchen/utensil/spoon,
-/obj/item/weapon/material/kitchen/utensil/spoon,
-/obj/item/weapon/material/kitchen/utensil/fork,
-/obj/item/weapon/material/kitchen/utensil/fork,
-/obj/item/weapon/material/kitchen/utensil/fork,
-/obj/item/weapon/reagent_containers/food/drinks/pitcher,
+/obj/item/reagent_containers/food/condiment/small/peppermill,
+/obj/item/reagent_containers/food/condiment/small/saltshaker,
+/obj/item/reagent_containers/food/drinks/glass2/square,
+/obj/item/reagent_containers/food/drinks/glass2/square,
+/obj/item/reagent_containers/food/drinks/glass2/square,
+/obj/item/material/kitchen/utensil/spoon,
+/obj/item/material/kitchen/utensil/spoon,
+/obj/item/material/kitchen/utensil/spoon,
+/obj/item/material/kitchen/utensil/fork,
+/obj/item/material/kitchen/utensil/fork,
+/obj/item/material/kitchen/utensil/fork,
+/obj/item/reagent_containers/food/drinks/pitcher,
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1";
 	pixel_y = 0
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/item/weapon/material/kitchen/utensil/knife,
+/obj/item/material/kitchen/utensil/knife,
 /turf/simulated/floor/tiled/white,
 /area/white_star/section2)
 "ai" = (
@@ -231,7 +231,7 @@
 	dir = 10
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/item/weapon/storage/mirror{
+/obj/item/storage/mirror{
 	pixel_x = 28
 	},
 /obj/structure/hygiene/sink{
@@ -307,9 +307,9 @@
 /obj/structure/table/rack{
 	dir = 8
 	},
-/obj/item/weapon/gun/energy/gun,
-/obj/item/weapon/gun/energy/gun,
-/obj/item/weapon/gun/energy/gun,
+/obj/item/gun/energy/gun,
+/obj/item/gun/energy/gun,
+/obj/item/gun/energy/gun,
 /turf/simulated/floor/tiled/white,
 /area/white_star/section2)
 "aD" = (
@@ -523,9 +523,9 @@
 /obj/structure/closet/walllocker{
 	pixel_y = -28
 	},
-/obj/item/weapon/stool,
-/obj/item/weapon/stool,
-/obj/item/weapon/stool,
+/obj/item/stool,
+/obj/item/stool,
+/obj/item/stool,
 /turf/simulated/floor/tiled/white,
 /area/white_star/section2)
 "aY" = (
@@ -643,23 +643,23 @@
 /area/white_star/section2)
 "bj" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
-/obj/item/weapon/reagent_containers/food/snacks/liquidfood,
-/obj/item/weapon/reagent_containers/food/snacks/liquidfood,
-/obj/item/weapon/reagent_containers/food/snacks/liquidfood,
-/obj/item/weapon/reagent_containers/food/snacks/waffles,
-/obj/item/weapon/reagent_containers/food/snacks/variable/candybar,
-/obj/item/weapon/reagent_containers/food/snacks/variable/candybar,
-/obj/item/weapon/reagent_containers/food/snacks/variable/candybar,
-/obj/item/weapon/reagent_containers/food/snacks/tossedsalad,
-/obj/item/weapon/reagent_containers/food/snacks/tomatosoup,
-/obj/item/weapon/reagent_containers/food/snacks/tastybread,
-/obj/item/weapon/reagent_containers/food/snacks/tastybread,
-/obj/item/weapon/reagent_containers/food/snacks/tastybread,
-/obj/item/weapon/reagent_containers/food/snacks/omelette,
-/obj/item/weapon/reagent_containers/food/snacks/fatsausage,
-/obj/item/weapon/reagent_containers/food/drinks/milk,
-/obj/item/weapon/reagent_containers/food/drinks/milk,
-/obj/item/weapon/reagent_containers/food/snacks/variable/bread,
+/obj/item/reagent_containers/food/snacks/liquidfood,
+/obj/item/reagent_containers/food/snacks/liquidfood,
+/obj/item/reagent_containers/food/snacks/liquidfood,
+/obj/item/reagent_containers/food/snacks/waffles,
+/obj/item/reagent_containers/food/snacks/variable/candybar,
+/obj/item/reagent_containers/food/snacks/variable/candybar,
+/obj/item/reagent_containers/food/snacks/variable/candybar,
+/obj/item/reagent_containers/food/snacks/tossedsalad,
+/obj/item/reagent_containers/food/snacks/tomatosoup,
+/obj/item/reagent_containers/food/snacks/tastybread,
+/obj/item/reagent_containers/food/snacks/tastybread,
+/obj/item/reagent_containers/food/snacks/tastybread,
+/obj/item/reagent_containers/food/snacks/omelette,
+/obj/item/reagent_containers/food/snacks/fatsausage,
+/obj/item/reagent_containers/food/drinks/milk,
+/obj/item/reagent_containers/food/drinks/milk,
+/obj/item/reagent_containers/food/snacks/variable/bread,
 /obj/machinery/light/small{
 	dir = 8
 	},
@@ -783,22 +783,22 @@
 /turf/simulated/floor/reinforced/airless,
 /area/white_star/section1)
 "by" = (
-/obj/item/weapon/storage/firstaid/regular,
-/obj/item/weapon/reagent_containers/hypospray/autoinjector/combatpain,
-/obj/item/weapon/reagent_containers/hypospray/autoinjector/combatpain,
-/obj/item/weapon/reagent_containers/hypospray/autoinjector/combatpain,
-/obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/adrenaline,
-/obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/adrenaline,
-/obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/adrenaline,
-/obj/item/weapon/reagent_containers/syringe/steroid,
-/obj/item/weapon/reagent_containers/syringe/steroid,
-/obj/item/weapon/reagent_containers/syringe/steroid,
-/obj/item/weapon/storage/box/syringes,
-/obj/item/weapon/reagent_containers/glass/bottle/antitoxin,
-/obj/item/weapon/reagent_containers/glass/bottle/inaprovaline,
-/obj/item/weapon/reagent_containers/glass/bottle/hyronalin,
-/obj/item/weapon/reagent_containers/glass/bottle/peridaxon,
-/obj/item/weapon/reagent_containers/glass/bottle/tricordrazine,
+/obj/item/storage/firstaid/regular,
+/obj/item/reagent_containers/hypospray/autoinjector/combatpain,
+/obj/item/reagent_containers/hypospray/autoinjector/combatpain,
+/obj/item/reagent_containers/hypospray/autoinjector/combatpain,
+/obj/item/reagent_containers/hypospray/autoinjector/pouch_auto/adrenaline,
+/obj/item/reagent_containers/hypospray/autoinjector/pouch_auto/adrenaline,
+/obj/item/reagent_containers/hypospray/autoinjector/pouch_auto/adrenaline,
+/obj/item/reagent_containers/syringe/steroid,
+/obj/item/reagent_containers/syringe/steroid,
+/obj/item/reagent_containers/syringe/steroid,
+/obj/item/storage/box/syringes,
+/obj/item/reagent_containers/glass/bottle/antitoxin,
+/obj/item/reagent_containers/glass/bottle/inaprovaline,
+/obj/item/reagent_containers/glass/bottle/hyronalin,
+/obj/item/reagent_containers/glass/bottle/peridaxon,
+/obj/item/reagent_containers/glass/bottle/tricordrazine,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/table/steel{
@@ -816,7 +816,7 @@
 /turf/simulated/floor/reinforced,
 /area/white_star/section1)
 "bB" = (
-/obj/structure/handrai{
+/obj/structure/handrail{
 	icon_state = "handrail";
 	dir = 8
 	},
@@ -1560,7 +1560,7 @@
 	pixel_x = 0;
 	pixel_y = -24
 	},
-/obj/item/weapon/storage/toolbox/syndicate,
+/obj/item/storage/toolbox/syndicate,
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -1671,15 +1671,15 @@
 /obj/structure/closet/walllocker{
 	pixel_y = -28
 	},
-/obj/item/weapon/storage/briefcase/inflatable{
+/obj/item/storage/briefcase/inflatable{
 	pixel_x = 3;
 	pixel_y = 6
 	},
-/obj/item/weapon/inflatable_dispenser,
-/obj/item/weapon/grenade/chem_grenade/metalfoam,
-/obj/item/weapon/grenade/chem_grenade/metalfoam,
-/obj/item/weapon/grenade/chem_grenade/metalfoam,
-/obj/item/weapon/tank/emergency/oxygen/double,
+/obj/item/inflatable_dispenser,
+/obj/item/grenade/chem_grenade/metalfoam,
+/obj/item/grenade/chem_grenade/metalfoam,
+/obj/item/grenade/chem_grenade/metalfoam,
+/obj/item/tank/emergency/oxygen/double,
 /obj/item/device/scanner/gas,
 /turf/simulated/floor/tiled/techfloor,
 /area/white_star/section3)
@@ -1697,7 +1697,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/red,
 /obj/structure/reagent_dispensers/watertank,
-/obj/item/weapon/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled/techfloor,
 /area/white_star/section3)
 "cL" = (
@@ -1753,9 +1753,9 @@
 /obj/structure/closet/walllocker{
 	pixel_y = -28
 	},
-/obj/item/weapon/tank/jetpack,
-/obj/item/weapon/tank/jetpack,
-/obj/item/weapon/tank/jetpack,
+/obj/item/tank/jetpack,
+/obj/item/tank/jetpack,
+/obj/item/tank/jetpack,
 /turf/simulated/floor/tiled/white,
 /area/white_star/section2)
 "cQ" = (

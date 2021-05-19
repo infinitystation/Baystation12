@@ -7,7 +7,7 @@
 		slot_l_hand_str = "wiz_helm",
 		slot_r_hand_str = "wiz_helm",
 		)
-	unacidable = 1 //No longer shall our kind be foiled by lone chemists with spray bottles!
+	unacidable = TRUE
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
 		bullet = ARMOR_BALLISTIC_PISTOL,
@@ -19,7 +19,7 @@
 		)
 	siemens_coefficient = 0.7
 	sprite_sheets_obj = null
-	wizard_garb = 1
+	wizard_garb = TRUE
 	species_restricted = list(SPECIES_HUMAN, SPECIES_IPC, SPECIES_TAJARA)
 
 	sprite_sheets = list(
@@ -32,7 +32,7 @@
 	name = "gem-encrusted voidsuit"
 	desc = "A bizarre gem-encrusted suit that radiates magical energies."
 	w_class = ITEM_SIZE_LARGE //normally voidsuits are bulky but this one is magic I suppose
-	unacidable = 1
+	unacidable = TRUE
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
 		bullet = ARMOR_BALLISTIC_PISTOL,
@@ -44,7 +44,7 @@
 		)
 	siemens_coefficient = 0.7
 	sprite_sheets_obj = null
-	wizard_garb = 1
+	wizard_garb = TRUE
 	flags_inv = HIDESHOES|HIDEJUMPSUIT|HIDETAIL //For gloves.
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS
@@ -69,7 +69,7 @@
 	permeability_coefficient = 0.02
 	min_pressure_protection = 0 //inf
 	max_pressure_protection = VOIDSUIT_MAX_PRESSURE //inf
-	unacidable = 1
+	unacidable = TRUE
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
 		bullet = ARMOR_BALLISTIC_PISTOL,

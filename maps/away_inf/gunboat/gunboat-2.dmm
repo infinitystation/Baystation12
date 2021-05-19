@@ -127,7 +127,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/item/weapon/gun/energy/ionrifle/small,
+/obj/item/gun/energy/ionrifle/small,
 /turf/simulated/floor/tiled/dark,
 /area/ship/gunboat/command/armory)
 "ar" = (
@@ -195,9 +195,9 @@
 	pixel_y = -25;
 	
 	},
-/obj/item/weapon/gun/energy/gun,
-/obj/item/weapon/gun/energy/gun,
-/obj/item/weapon/gun/energy/gun,
+/obj/item/gun/energy/gun,
+/obj/item/gun/energy/gun,
+/obj/item/gun/energy/gun,
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -952,12 +952,12 @@
 /obj/effect/floor_decal/corner/red{
 	dir = 9
 	},
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /turf/simulated/floor/tiled,
 /area/ship/gunboat/command/brig)
 "bM" = (
-/obj/item/weapon/stool,
+/obj/item/stool,
 /turf/simulated/floor/tiled,
 /area/ship/gunboat/command/brig)
 "bN" = (
@@ -1089,8 +1089,8 @@
 "bY" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/red/three_quarters,
-/obj/item/weapon/folder/red,
-/obj/item/weapon/folder/red,
+/obj/item/folder/red,
+/obj/item/folder/red,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -1131,7 +1131,7 @@
 	pixel_x = 11;
 	pixel_y = 4
 	},
-/obj/item/weapon/storage/mirror{
+/obj/item/storage/mirror{
 	pixel_x = 28
 	},
 /obj/structure/cable{
@@ -1175,7 +1175,7 @@
 /area/ship/gunboat/engine/upper)
 "cj" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/mime,
+/obj/item/bedsheet/mime,
 /obj/effect/floor_decal/corner/red{
 	dir = 10
 	},

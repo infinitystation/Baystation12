@@ -5,7 +5,7 @@
 //inf //SolatK
 /datum/build_mode/callproc
 	name = "Call proc"
-	icon_state = "buildmode10"
+	icon_state = "buildmodecp"
 	var/client/C
 	var/proc_name
 	var/list/arguments

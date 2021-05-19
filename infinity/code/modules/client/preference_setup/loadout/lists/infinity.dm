@@ -39,7 +39,7 @@
 
 /datum/gear/zippo_decorated
 	display_name = "zippo (decorated)"
-	path = /obj/item/weapon/flame/lighter/zippo/infinity
+	path = /obj/item/flame/lighter/zippo/infinity
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/accessory/tags
@@ -103,11 +103,11 @@
 
 /datum/gear/utility/general_belt
 	display_name = "equipment belt"
-	path = /obj/item/weapon/storage/belt/general
+	path = /obj/item/storage/belt/general
 
 /datum/gear/storage/color_drop_pouches
 	display_name = "drop pouches, color selection"
-	path = /obj/item/clothing/accessory/storage/drop_pouches/white
+	path = /obj/item/clothing/accessory/storage/white_drop
 	cost = 3
 	flags = GEAR_HAS_COLOR_SELECTION
 
@@ -118,7 +118,8 @@
 
 /datum/gear/cards_compact
 	display_name = "deck of cards (compact)"
-	path = /obj/item/weapon/deck/compact
+	path = /obj/item/deck/compact
+
 /*
 /datum/gear/gloves/wristwatch
 	display_name = "watch"

@@ -1,19 +1,19 @@
-/obj/item/weapon/deck/attack_hand()
+/obj/item/deck/attack_hand()
 	if(!usr) return
 	draw_card(usr)
 
-/obj/item/weapon/deck/examine(mob/user)
+/obj/item/deck/examine(mob/user)
 	. = ..()
 	if(cards.len)
 		to_chat(user, "<br>There is still <b>[cards.len] card[cards.len > 1? "s" : ""]</b>.")
 	to_chat(user, SPAN_NOTICE("You can deal cards at a table with clicking at it with grab intent."))
 
-/obj/item/weapon/deck/compact
+/obj/item/deck/compact
 	name = "compact deck of cards"
 	desc = "A deck of playing cards. Looks like this one hasn't numbers from two to five, and jokers."
 	icon_state = "deck"
 
-/obj/item/weapon/deck/compact/New()
+/obj/item/deck/compact/New()
 	..()
 
 	var/datum/playingcard/P

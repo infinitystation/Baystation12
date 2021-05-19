@@ -1,7 +1,7 @@
-/obj/item/weapon/gun/projectile/automatic/sec_smg/lethal
+/obj/item/gun/projectile/automatic/sec_smg/lethal
 	magazine_type = /obj/item/ammo_magazine/smg_top
 
-/obj/item/weapon/gun/projectile/automatic/nt41
+/obj/item/gun/projectile/automatic/nt41
 	name = "NT41 submachine gun"
 	desc = "The NT41 Enforcer is a self-defense weapon made on bullpup system. Produced by NanoTrasen for it's Security Force. Looks cool and stylish, but sometimes too uncomfortably to run with it. Uses 5.7x28mm rounds."
 	icon_state = "nt41"
@@ -32,11 +32,11 @@
 	w_class = ITEM_SIZE_NORMAL
 	one_hand_penalty = 2
 
-/obj/item/weapon/gun/projectile/automatic/nt41/on_update_icon()
+/obj/item/gun/projectile/automatic/nt41/on_update_icon()
 	..()
 	icon_state = (ammo_magazine)? "nt41" : "nt41-e"
 
-/obj/item/weapon/gun/projectile/automatic/amrcarabine
+/obj/item/gun/projectile/automatic/amrcarabine
 	name = "LDC-542 carabine"
 	desc = "The sielent and deadly and manufactured by Aussec Armory, bullpup carabine LDC-542 is a common weapon for a long-medium ranged combat units in Private Military Companies. Uses 12.7x55mm rounds."
 	icon = 'infinity/icons/obj/guns.dmi'
@@ -61,12 +61,12 @@
 	w_class = ITEM_SIZE_HUGE
 	one_hand_penalty = 7
 
-/obj/item/weapon/gun/projectile/automatic/amrcarabine/on_update_icon()
+/obj/item/gun/projectile/automatic/amrcarabine/on_update_icon()
 	..()
 	icon_state = (ammo_magazine)? "amrcarabine" : "amrcarabine-e"
 
 
-/obj/item/weapon/gun/projectile/automatic/bp15
+/obj/item/gun/projectile/automatic/bp15
 	name = "BP-15 PDW"
 	desc = "The BP-15 'Moloh' is a  personal defense weapon, produced by Aussec Armory for use by police spec ops or solders. Uses 5.7x28 mm rounds."
 	icon = 'infinity/icons/event/guns.dmi'
@@ -95,11 +95,11 @@
 	w_class = ITEM_SIZE_NORMAL
 	one_hand_penalty = 3
 
-/obj/item/weapon/gun/projectile/automatic/bp15/on_update_icon()
+/obj/item/gun/projectile/automatic/bp15/on_update_icon()
 	icon_state = (ammo_magazine)? "pdw" : "pdw-empty"
 	..()
 
-/obj/item/weapon/gun/projectile/automatic/invider
+/obj/item/gun/projectile/automatic/invider
 	name = "Invider submachine gun"
 	desc = "The Invider is a Hi-tech and rapid firing SMG. Uses 4.6x30mm universal rounds."
 	icon = 'infinity/icons/event/guns.dmi'
@@ -126,12 +126,12 @@
 	one_hand_penalty = 3
 
 
-/obj/item/weapon/gun/projectile/automatic/invider/modify_projectile(obj/item/projectile/p, var/list/params = list())
+/obj/item/gun/projectile/automatic/invider/modify_projectile(obj/item/projectile/p, var/list/params = list())
 	if (params["Charged"] == 1 && loaded.len)
 		p = new /obj/item/projectile/bullet/smg/uni46x30mm_charged
 	return p
 
-/obj/item/weapon/gun/projectile/automatic/invider/CtrlAltClick(mob/user)
+/obj/item/gun/projectile/automatic/invider/CtrlAltClick(mob/user)
 	if(user.incapacitated())
 		to_chat(user, "<span class='warning'>You can't do that right now!</span>")
 		return
@@ -142,13 +142,13 @@
 			playsound(user, 'infinity/sound/weapons/selector.ogg', 50, 1)
 			to_chat(user, "<span class='notice'>You toggle the bullet penetration mode [projetcile_type ? "on":"off"].</span>")
 
-/obj/item/weapon/gun/projectile/automatic/invider/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, var/list/params = list())
+/obj/item/gun/projectile/automatic/invider/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, var/list/params = list())
 	if (projetcile_type == 1)
 		..(target, user, clickparams, pointblank, reflex, list("Charged" = 1))
 	else
 		..(target, user, clickparams, pointblank, reflex, list("Charged" = 0))
 
-/obj/item/weapon/gun/projectile/automatic/invider/on_update_icon()
+/obj/item/gun/projectile/automatic/invider/on_update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "pdw"
@@ -156,8 +156,8 @@
 		icon_state = "pdw-empty"
 	return
 
-/obj/item/weapon/gun/projectile/automatic/nt41/armory
+/obj/item/gun/projectile/automatic/nt41/armory
 	starts_loaded = 0
 
-/obj/item/weapon/gun/projectile/shotgun/pump/combat/armory
+/obj/item/gun/projectile/shotgun/pump/combat/armory
 	starts_loaded = 0

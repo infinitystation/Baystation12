@@ -115,20 +115,20 @@
 			line++
 			linepos=codepos
 
-		if(ignore.Find(char))
+		if(list_find(ignore, char))
 			continue
 		else if(char == "/")
 			ReadComment()
-		else if(end_stmt.Find(char))
+		else if(list_find(end_stmt, char))
 			tokens += new /token/end(char, line, COL)
-		else if(string_delim.Find(char))
+		else if(list_find(string_delim, char))
 			codepos++ //skip string delimiter
 			tokens += ReadString(char)
 		else if(options.CanStartID(char))
 			tokens += ReadWord()
 		else if(options.IsDigit(char))
 			tokens += ReadNumber()
-		else if(options.symbols.Find(char))
+		else if(list_find(options.symbols, char))
 			tokens += ReadSymbol()
 
 
@@ -181,11 +181,11 @@
 /n_Scanner/nS_Scanner/proc/ReadWord()
 	var/char = copytext(code, codepos, codepos+1)
 	var/buf
-	while(!delim.Find(char) && codepos <= length(code))
+	while(!list_find(delim, char) && codepos <= length(code))
 		buf += char
 		char=copytext(code, ++codepos, codepos+1)
 	codepos-- //allow main Scan() proc to read the delimiter
-	if(options.keywords.Find(buf))
+	if(list_find(options.keywords, buf))
 		return new /token/keyword(buf, line, COL)
 	else
 		return new /token/word(buf, line, COL)
@@ -198,7 +198,7 @@
 	var/char = copytext(code, codepos, codepos+1)
 	var/buf
 
-	while(options.symbols.Find(buf+char))
+	while(list_find(options.symbols, buf+char))
 		buf += char
 		if(++codepos>length(code)) break
 		char = copytext(code, codepos, codepos+1)

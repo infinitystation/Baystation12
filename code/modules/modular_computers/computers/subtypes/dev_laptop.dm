@@ -5,7 +5,7 @@
 	icon_state = "laptop-open"
 	icon_state_unpowered = "laptop-open"
 	var/icon_state_closed = "laptop-closed"
-	anchored = 0
+	anchored = FALSE
 	w_class = ITEM_SIZE_NORMAL
 	base_idle_power_usage = 5
 	base_active_power_usage = 50

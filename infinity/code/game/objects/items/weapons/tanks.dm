@@ -1,4 +1,4 @@
-/obj/item/weapon/tank/phoron/full
+/obj/item/tank/phoron/full
 	name = "phoron tank"
 	desc = "Contains dangerous phoron. Do not inhale. Warning: extremely flammable."
 	icon_state = "phoron"
@@ -8,7 +8,7 @@
 	starting_pressure = list(GAS_PHORON = 10 * ONE_ATMOSPHERE)
 
 
-/obj/item/weapon/tank/flammable
+/obj/item/tank/flammable
 	name = "flammable mix tank"
 	icon_state = "emergency_double"
 	gauge_icon = "indicator_emergency_double"

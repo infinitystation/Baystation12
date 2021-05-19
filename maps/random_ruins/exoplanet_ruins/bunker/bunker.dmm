@@ -230,7 +230,7 @@
 /area/bunker/maint/east)
 "aK" = (
 /obj/structure/table/steel,
-/obj/item/weapon/folder,
+/obj/item/folder,
 /turf/simulated/floor/tiled/dark,
 /area/bunker/command)
 "aL" = (
@@ -305,13 +305,13 @@
 /area/bunker/living/toilet)
 "aT" = (
 /obj/structure/table/steel,
-/obj/item/weapon/paper_bin,
+/obj/item/paper_bin,
 /obj/structure/filingcabinet/wallcabinet{
 	dir = 4;
 	icon_state = "wallcabinet";
 	pixel_x = -29
 	},
-/obj/item/weapon/pen,
+/obj/item/pen,
 /turf/simulated/floor/tiled/dark,
 /area/bunker/command)
 "aU" = (
@@ -494,7 +494,7 @@
 	pixel_x = -14;
 	pixel_y = 4
 	},
-/obj/item/weapon/storage/mirror{
+/obj/item/storage/mirror{
 	pixel_x = -26
 	},
 /turf/simulated/floor/tiled/freezer,
@@ -584,7 +584,7 @@
 /turf/simulated/floor/tiled,
 /area/bunker/living)
 "bA" = (
-/obj/item/weapon/stool,
+/obj/item/stool,
 /turf/simulated/floor/tiled,
 /area/bunker/living)
 "bC" = (
@@ -609,7 +609,7 @@
 /turf/simulated/floor/airless,
 /area/template_noop)
 "bI" = (
-/obj/item/weapon/stool,
+/obj/item/stool,
 /obj/structure/sign/warning/nosmoking_2{
 	pixel_x = 32
 	},
@@ -623,7 +623,7 @@
 /area/bunker/medical)
 "bJ" = (
 /obj/structure/table/standard,
-/obj/item/weapon/storage/firstaid/surgery,
+/obj/item/storage/firstaid/surgery,
 /turf/simulated/floor/tiled/white,
 /area/bunker/medical)
 "bK" = (
@@ -767,16 +767,16 @@
 /turf/simulated/floor/tiled/freezer,
 /area/bunker/living)
 "cd" = (
-/obj/item/weapon/board,
+/obj/item/board,
 /obj/structure/table/standard,
-/obj/item/weapon/storage/box/checkers,
-/obj/item/weapon/storage/box/checkers/chess,
-/obj/item/weapon/storage/box/checkers/chess/red,
+/obj/item/storage/box/checkers,
+/obj/item/storage/box/checkers/chess,
+/obj/item/storage/box/checkers/chess/red,
 /turf/simulated/floor/tiled,
 /area/bunker/living)
 "ce" = (
 /obj/structure/table/standard,
-/obj/item/weapon/deck/cards,
+/obj/item/deck/cards,
 /turf/simulated/floor/tiled,
 /area/bunker/living)
 "cf" = (
@@ -882,8 +882,8 @@
 /turf/simulated/floor/tiled,
 /area/bunker/engine)
 "cs" = (
-/obj/item/weapon/storage/toolbox/mechanical,
-/obj/item/weapon/storage/toolbox/electrical,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/electrical,
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/effect/floor_decal/industrial/warning{
@@ -913,7 +913,7 @@
 /turf/simulated/floor/tiled,
 /area/bunker/engine)
 "cw" = (
-/obj/item/weapon/stool,
+/obj/item/stool,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},

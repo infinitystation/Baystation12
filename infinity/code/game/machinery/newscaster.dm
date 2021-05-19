@@ -16,7 +16,7 @@
 			else if(stat & BROKEN)
 				overlays += "[icon_state]_crack3"
 		return
-	var/icon/screen = icon(icon,news_network?.wanted_issue ? "[icon_state]_screen_wanted" : "[icon_state]_screen")
+	var/icon/screen = icon(icon,connected_group?.wanted_issue ? "[icon_state]_screen_wanted" : "[icon_state]_screen")
 	screen.ColorTone(alert ? "#017237" : "#00ffff")
 	overlays += getHologramIcon(screen, TRUE, TRUE)
 	set_light(0.9, 0.1, 1, 2, alert ? "#017237" : "#00ffff")

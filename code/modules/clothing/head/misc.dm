@@ -143,11 +143,18 @@
 /obj/item/clothing/head/flatcap
 	name = "flat cap"
 	desc = "A working man's cap."
-	icon_state = "gentcap"
+	icon_state = "flatcap_white"
 	item_state_slots = list(
 		slot_l_hand_str = "det_hat",
 		slot_r_hand_str = "det_hat",
 		)
+	siemens_coefficient = 0.9
+
+
+/obj/item/clothing/head/mariner
+	name = "mariner's cap"
+	desc = "A cap loved by farmers, sailors and rabblerousers in the whole galaxy."
+	icon_state = "mariner_white"
 	siemens_coefficient = 0.9
 
 /obj/item/clothing/head/pirate
@@ -346,3 +353,13 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EYES
 	flash_protection = FLASH_PROTECTION_MAJOR
+
+/obj/item/clothing/head/beret/pcrc
+	name = "\improper PCRC beret"
+	desc = "A navy beret with the emblem of Proxima Centauri Risk Control, a private security firm. For agents that are more inclined towards style than safety."
+	icon_state = "beret_corporate_pcrc"
+
+/obj/item/clothing/head/beret/saare
+	name = "\improper SAARE beret"
+	desc = "A gray beret with the emblem of Strategic Assault and Asset Retention Enterprises, a private military corporation. For mercenaries that are more inclined towards style than safety."
+	icon_state = "beret_corporate_saare"

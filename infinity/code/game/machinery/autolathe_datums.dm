@@ -1,6 +1,6 @@
 /datum/fabricator_recipe/tape_roll
 	name = "tape roll"
-	path = /obj/item/weapon/tape_roll
+	path = /obj/item/tape_roll
 	category = "General"
 
 /datum/fabricator_recipe/binoculars
@@ -10,12 +10,12 @@
 
 /datum/fabricator_recipe/medical/autopsy_scanner
 	name = "autopsy scanner"
-	path = /obj/item/weapon/autopsy_scanner
+	path = /obj/item/autopsy_scanner
 	category = "Medical"
 
 /datum/fabricator_recipe/implant_pad
 	name = "implant pad"
-	path = /obj/item/weapon/implantpad
+	path = /obj/item/implantpad
 	category = "Medical"
 
 /datum/fabricator_recipe/device_component/sensor_voice

@@ -18,7 +18,7 @@
 	mechanics_text = "You can change it's color with a multitool."
 
 /datum/codex_entry/tape_roll
-	associated_paths = list(/obj/item/weapon/tape_roll)
+	associated_paths = list(/obj/item/tape_roll)
 	mechanics_text = "Вы можете сделать множество интересных вещей с помощью изоленты. \
 	Персонажи: при выборе рта, глаз, кистей или другой части тела, происходит заклеивание, \
 	связывание или ремонт скафандра. При взаимодействии с бумагой, последнюю можно закрепить на стене, \

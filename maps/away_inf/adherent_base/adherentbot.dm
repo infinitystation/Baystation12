@@ -3,7 +3,7 @@
 	desc = "It looks like a robot and you never saw anything the same before. Better don't mess with it."
 	icon = 'icons/mob/human_races/species/adherent/body.dmi'
 	icon_state = "full"
-	density = 1
+	density = TRUE
 	req_access = list(999)	//You should never unlock him.
 	botcard_access = list(999)
 	RequiresAccessToToggle = 1
@@ -91,7 +91,7 @@
 	desc = "It looks like a robot and you never saw anything the same before. Better don't mess with it."
 	icon = 'icons/mob/human_races/species/adherent/body.dmi'
 	icon_state = "full"
-	density = 1
+	density = TRUE
 	req_access = list(999)	//You should never unlock him.
 	botcard_access = list(999)
 	RequiresAccessToToggle = 1
@@ -133,7 +133,7 @@
 	desc = "Huge octopus-like robot with syringes, saws, scalpels and other horrible torture tools."
 	icon = 'icons/mob/human_races/species/adherent/body.dmi'
 	icon_state = "full"
-	density = 1
+	density = TRUE
 	req_access = list(999)	//You should not unlock him.
 	botcard_access = null
 	RequiresAccessToToggle = 1

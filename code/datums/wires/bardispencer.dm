@@ -31,7 +31,7 @@ var/const/BARTENDER_WIRE_SHOCK = 4
 		if(BARTENDER_WIRE_EXTRA_REAGENTS)
 			if(V.hidden_mode_flag==1)
 				V.hidden_mode_flag = 0
-				for(var/obj/item/weapon/stock_parts/manipulator/M in V.component_parts)
+				for(var/obj/item/stock_parts/manipulator/M in V.component_parts)
 					for(var/i=1, i<=M.rating, i++)
 						V.dispensable_reagents = sortList(V.dispensable_reagents | V.special_reagents[i])
 			else

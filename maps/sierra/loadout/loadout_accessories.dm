@@ -37,26 +37,6 @@
 /datum/gear/accessory/stethoscope
 	allowed_roles = STERILE_ROLES
 
-/datum/gear/storage/brown_vest
-	allowed_roles = list(/datum/job/chief_engineer, /datum/job/senior_engineer, /datum/job/engineer, /datum/job/engineer_trainee, /datum/job/explorer_engineer, /datum/job/roboticist, /datum/job/qm, /datum/job/cargo_tech,
-						/datum/job/cargo_assistant, /datum/job/mining, /datum/job/janitor, /datum/job/scientist_assistant, /datum/job/submap/merchant, /datum/job/submap/merchant_trainee)
-
-/datum/gear/storage/black_vest
-	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/submap/merchant, /datum/job/submap/merchant_trainee, /datum/job/security_assistant)
-
-/datum/gear/storage/white_vest
-	allowed_roles = list(/datum/job/cmo, /datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee, /datum/job/explorer_medic, /datum/job/roboticist, /datum/job/submap/merchant, /datum/job/submap/merchant_trainee)
-
-/datum/gear/storage/brown_drop_pouches
-	allowed_roles = list(/datum/job/chief_engineer, /datum/job/senior_engineer, /datum/job/engineer, /datum/job/engineer_trainee, /datum/job/roboticist, /datum/job/qm, /datum/job/cargo_tech,
-						/datum/job/cargo_assistant, /datum/job/mining, /datum/job/janitor, /datum/job/scientist_assistant, /datum/job/submap/merchant)
-
-/datum/gear/storage/black_drop_pouches
-	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/submap/merchant, /datum/job/security_assistant)
-
-/datum/gear/storage/white_drop_pouches
-	allowed_roles = list(/datum/job/cmo, /datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee, /datum/job/explorer_medic, /datum/job/roboticist, /datum/job/submap/merchant, /datum/job/submap/merchant_trainee, /datum/job/chemist)
-
 /datum/gear/head/kittyears
 	allowed_roles = RESTRICTED_ROLES
 
@@ -67,23 +47,23 @@
 /datum/gear/passport/scg
 	display_name = "passports selection - SCG"
 	description = "A selection of SCG passports."
-	path = /obj/item/weapon/passport/scg
+	path = /obj/item/passport/scg
 	flags = GEAR_HAS_TYPE_SELECTION
-	custom_setup_proc = /obj/item/weapon/passport/proc/set_info
+	custom_setup_proc = /obj/item/passport/proc/set_info
 	cost = 0
 
 /datum/gear/passport/iccg
 	display_name = "passports selection - ICCG"
 	description = "A selection of ICCG passports."
-	path = /obj/item/weapon/passport/iccg
+	path = /obj/item/passport/iccg
 	flags = GEAR_HAS_TYPE_SELECTION
-	custom_setup_proc = /obj/item/weapon/passport/proc/set_info
+	custom_setup_proc = /obj/item/passport/proc/set_info
 	cost = 0
 
 /datum/gear/passport
 	display_name = "passports selection - independent"
 	description = "A selection of independent regions passports."
-	path = /obj/item/weapon/passport/independent
+	path = /obj/item/passport/independent
 	flags = GEAR_HAS_SUBTYPE_SELECTION
-	custom_setup_proc = /obj/item/weapon/passport/proc/set_info
+	custom_setup_proc = /obj/item/passport/proc/set_info
 	cost = 0

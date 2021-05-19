@@ -5,7 +5,7 @@
 	icon = 'infinity/icons/customs/ic_belt_custom.dmi'
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/storage/belt/holster/ic
+/obj/item/storage/belt/holster/ic
 	name = "IC developer's belt"
 	desc = "It's a toolbelt, that have big pocket for portable circuit printer on right side and five smaller pockets for tools on left side."
 	icon = 'infinity/icons/customs/ic_belt_custom.dmi'
@@ -17,7 +17,7 @@
 		/obj/item/device/integrated_circuit_printer
 		)
 	can_hold = list(
-		/obj/item/weapon/screwdriver,
+		/obj/item/screwdriver,
 		/obj/item/device/integrated_electronics/analyzer,
 		/obj/item/device/integrated_electronics/debugger,
 		/obj/item/device/integrated_electronics/detailer,
@@ -25,7 +25,7 @@
 		)
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/storage/belt/holster/ic/on_update_icon()
+/obj/item/storage/belt/holster/ic/on_update_icon()
 	..()
 	for(var/obj/item/I in contents)
 		if(istype(I, /obj/item/device/integrated_electronics/wirer)) //better than 4 same icon for every icon_state
@@ -35,9 +35,9 @@
 		else if(istype(I, /obj/item/device))
 			overlays += image('infinity/icons/customs/ic_belt_custom.dmi', "[I.icon_state]")
 
-/obj/item/weapon/storage/belt/holster/ic/full/Initialize()
+/obj/item/storage/belt/holster/ic/full/Initialize()
 	.=..()
-	new /obj/item/weapon/screwdriver(src)
+	new /obj/item/screwdriver(src)
 	new /obj/item/device/integrated_electronics/analyzer(src)
 	new /obj/item/device/integrated_electronics/debugger(src)
 	new /obj/item/device/integrated_electronics/detailer(src)

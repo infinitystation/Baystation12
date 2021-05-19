@@ -1,7 +1,7 @@
-/music_track/nightcall
-	artist = "Kavinsky"
+/decl/audio/track/nightcall
+	author = "Kavinsky"
 	title = "Night Call"
-	album = "Drive"
-	song = 'infinity/sound/music/Kavinsky_Nightcall.ogg'
+	collection =  "Drive"
+	source = 'infinity/sound/music/Kavinsky_Nightcall.ogg'
 	license = /decl/license/cc_by_3_0
 	url = "https://soundcloud.com/recordmakers/11-kavinsky-nightcall-1"

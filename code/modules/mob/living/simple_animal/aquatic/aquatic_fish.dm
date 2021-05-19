@@ -16,6 +16,7 @@
 	mob_push_flags = 0
 	mob_always_swap = 1
 
+	density = FALSE
 
 	meat_amount = 1
 	bone_amount = 3

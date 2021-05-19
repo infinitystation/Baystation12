@@ -1,6 +1,6 @@
 /obj/item/custkit/sprite/white_card //M.Ceisler (mceisler), Vladimir Bloodenheart
 	name = "white ID customization kit"
-	input = /obj/item/weapon/card/id
+	input = /obj/item/card/id
 	output = "mimeGold"
 
 /obj/item/custkit/sprite/white_card/attackby(obj/item/I, mob/user, params)

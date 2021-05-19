@@ -1,13 +1,13 @@
-/obj/item/weapon/gun/projectile/revolver
+/obj/item/gun/projectile/revolver
 	name = "al-Maliki & Mosley \"Magnum Double Action\" revolver"
 
-/obj/item/weapon/gun/projectile/revolver/medium
+/obj/item/gun/projectile/revolver/medium
 	name = "Lumoco Arms' \"Solid\" revolver"
 
-/obj/item/weapon/gun/projectile/revolver/holdout
+/obj/item/gun/projectile/revolver/holdout
 	name = "al-Maliki & Mosley \"Partner\" holdout revolver"
 
-/obj/item/weapon/gun/projectile/revolver/lr22
+/obj/item/gun/projectile/revolver/lr22
 	name = ".22LR revolver"
 	desc = "A rugged revolver based on the Smith & Wesson 617 model, with modern improvements. Uses .22LR rounds."
 	icon = 'infinity/icons/obj/guns.dmi'
@@ -18,7 +18,7 @@
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	ammo_type = /obj/item/ammo_casing/a22lr
 
-/obj/item/weapon/gun/projectile/revolver/shotgun
+/obj/item/gun/projectile/revolver/shotgun
 	name = "RSH-12 shotgun-revolver"
 	desc = "The old RSH-12 revolder designer for spec ops. Useful for sweeping alleys. Uses 12G ammo"
 	icon = 'infinity/icons/obj/guns.dmi'
@@ -35,7 +35,7 @@
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	ammo_type = /obj/item/ammo_casing/shotgun
 
-/obj/item/weapon/gun/projectile/revolver/medium/captain
+/obj/item/gun/projectile/revolver/medium/captain
 	name = "\improper Final Argument"
 	icon = 'maps/torch/icons/obj/uniques.dmi'
 	icon_state = "mosley"

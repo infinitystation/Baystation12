@@ -4,6 +4,8 @@
 	icon_state = "beacon"
 	item_state = "signaler"
 	origin_tech = list(TECH_BLUESPACE = 1)
+	cell = null
+	power_usage = 0
 
 	var/code = "electronic"
 	var/functioning = TRUE
@@ -27,9 +29,9 @@
 	functioning = FALSE
 	visible_message(SPAN_WARNING("\The [src] pops and cracks, and a thin wisp of dark smoke rises from the vents."), range = 2)
 	update_icon()
-	for(var/obj/machinery/computer/teleporter/T in SSmachines.machinery)
-		if(T.locked == src)
-			T.target_lost()
+	for (var/obj/machinery/computer/teleporter/T in SSmachines.machinery)
+		if (T.target == src)
+			T.lost_target()
 
 /obj/item/device/radio/beacon/on_update_icon()
 	if(!functioning)

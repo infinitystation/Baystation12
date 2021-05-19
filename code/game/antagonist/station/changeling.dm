@@ -7,7 +7,7 @@ GLOBAL_DATUM_INIT(changelings, /datum/antagonist/changeling, new)
 	feedback_tag = "changeling_objective"
 	blacklisted_jobs = list(/datum/job/ai, /datum/job/cyborg, /datum/job/submap)
 	protected_jobs = list(/datum/job/officer, /datum/job/warden, /datum/job/detective, /datum/job/captain, /datum/job/hos)
-	welcome_text = "Используйте say \",g (сообщение)\", чтобы связаться с другими генокрадами.<br>\
+	welcome_text = "Используйте say \"%LANGUAGE_PREFIX%g (сообщение)\", чтобы связаться с другими генокрадами.<br>\
 	Мы являемся частью общности - одним из сородичей, что трудится на её благо и ставить её интересы \
 	выше собственных, в том числе и жизни. Вместе, члены общности должны ассимилировать полезный генетический материал \
 	и украсть определенные вещи, которые облегчат охоту в будущем. \
@@ -30,6 +30,9 @@ GLOBAL_DATUM_INIT(changelings, /datum/antagonist/changeling, new)
 	skill_setter = /datum/antag_skill_setter/station
 
 	faction = "changeling"
+
+/datum/antagonist/changeling/get_welcome_text(mob/recipient)
+	return replacetext(welcome_text, "%LANGUAGE_PREFIX%", recipient?.get_prefix_key(/decl/prefix/language) || ",")
 
 /datum/antagonist/changeling/get_special_objective_text(var/datum/mind/player)
 	return "<br><b>Позывной:</b> [player.changeling.changelingID].<br><b>Поглощено Геномов:</b> [player.changeling.absorbedcount]"

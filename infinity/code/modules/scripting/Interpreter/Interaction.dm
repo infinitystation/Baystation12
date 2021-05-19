@@ -87,14 +87,14 @@
 	Checks whether a global variable with the specified name exists.
 */
 		VarExists(name)
-			return globalScope.variables.Find(name) //convert to 1/0 first?
+			return list_find(globalScope.variables, name) //convert to 1/0 first?
 
 /*
 	Proc: ProcExists
 	Checks whether a global function with the specified name exists.
 */
 		ProcExists(name)
-			return globalScope.functions.Find(name)
+			return list_find(globalScope.functions, name)
 
 /*
 	Proc: GetVar

@@ -160,11 +160,12 @@ var/const/FALLOFF_SOUNDS = 0.5
 			var/area/A = get_area(src)
 			S.environment = A.sound_env
 
-	src << S
+	sound_to(src, S)
 
 /client/proc/playtitlemusic()
-	if(get_preference_value(/datum/client_preference/play_lobby_music) == GLOB.PREF_YES)
-		GLOB.using_map.lobby_track.play_to(src)
+	if (get_preference_value(/datum/client_preference/play_lobby_music) == GLOB.PREF_YES)
+		sound_to(src, GLOB.using_map.lobby_track.get_sound())
+		to_chat(src, GLOB.using_map.lobby_track.get_info())
 
 /proc/get_rand_frequency()
 	return rand(32000, 55000) //Frequency stuff only works with 45kbps oggs.
@@ -197,4 +198,10 @@ var/const/FALLOFF_SOUNDS = 0.5
 //[/INF]
 			if ("tray_hit") soundin = pick(GLOB.tray_hit_sound)
 	return soundin
+	
+/client/verb/stop_sounds()
+	set name = "Stop All Sounds"
+	set desc = "Stop all sounds that are currently playing on your client."
+	set category = "OOC"
 
+	sound_to(usr, sound(null))

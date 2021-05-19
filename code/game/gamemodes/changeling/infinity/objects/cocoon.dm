@@ -5,7 +5,7 @@
 	icon_state = "cocoon_progress"
 	w_class = ITEM_SIZE_NO_CONTAINER
 	layer = ABOVE_WINDOW_LAYER
-	density = 1
+	density = TRUE
 	var/mob/living/carbon/human/victim = null
 	var/birth_time = 120 //seconds
 	var/idle_time = 0

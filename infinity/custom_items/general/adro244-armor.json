@@ -1,6 +1,6 @@
 {
   "ckey" :            "adro244",
   "character_name" :  "Vladimir Blade",
-  "item_path" :       "/obj/item/weapon/clothingbag/adro",
+  "item_path" :       "/obj/item/clothingbag/adro",
   "req_titles" :      [ "Security Guard", "Warden", "Head of Security", "Criminal Investigator" ]
   }

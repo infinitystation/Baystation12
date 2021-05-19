@@ -146,7 +146,7 @@
 	l_ear = null
 	shoes = /obj/item/clothing/shoes/brown
 //	pda_type = /obj/item/modular_computer/pda
-	id_type = /obj/item/weapon/card/id/liberia/merchant
+	id_types = list(/obj/item/card/id/liberia/merchant)
 
 /decl/hierarchy/outfit/job/liberia/merchant/security
 	name = OUTFIT_JOB_NAME("Merchant Security")
@@ -158,14 +158,14 @@
 	name = OUTFIT_JOB_NAME("Merchant Leader - liberia")
 	uniform = /obj/item/clothing/under/suit_jacket/charcoal
 	shoes = /obj/item/clothing/shoes/laceup
-	id_type = /obj/item/weapon/card/id/liberia/merchant/leader
+	id_types = list(/obj/item/card/id/liberia/merchant/leader)
 
-/obj/item/weapon/card/id/liberia/merchant
+/obj/item/card/id/liberia/merchant
 	desc = "An identification card issued to Merchants."
 	job_access_type = /datum/job/submap/merchant_trainee
 	color = COLOR_OFF_WHITE
 	detail_color = COLOR_BEIGE
 
-/obj/item/weapon/card/id/liberia/merchant/leader
+/obj/item/card/id/liberia/merchant/leader
 	desc = "An identification card issued to Merchant Leaders, indicating their right to sell and buy goods."
 	job_access_type = /datum/job/submap/merchant

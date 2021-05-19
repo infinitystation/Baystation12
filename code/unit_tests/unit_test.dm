@@ -30,7 +30,7 @@ var/skipped_unit_tests = 0
 var/total_unit_tests = 0
 
 // For console out put in Linux/Bash makes the output green or red.
-// Should probably only be used for unit tests/unit test since some special folks use winders to host servers.
+// Should probably only be used for unit tests since some special folks use winders to host servers.
 // if you want plain output, use dm.sh -DUNIT_TEST -DUNIT_TEST_PLAIN baystation12.dme
 #ifdef UNIT_TEST_PLAIN
 var/ascii_esc = ""
@@ -111,7 +111,7 @@ var/ascii_reset = "[ascii_esc]\[0m"
 
 /proc/load_unit_test_changes()
 /*
-	//This takes about 60 seconds to run on unit test and is only used for the ZAS vacume check on The Asteroid.
+	//This takes about 60 seconds to run when unit testing and is only used for the ZAS vacume check on The Asteroid.
 	if(config.generate_map != 1)
 		log_unit_test("Overiding Configuration option for Asteroid Generation to ENABLED")
 		config.generate_map = 1	// The default map requires it, the example config doesn't have this enabled.
@@ -179,8 +179,8 @@ var/ascii_reset = "[ascii_esc]\[0m"
 
 /obj/effect/landmark/test/safe_turf
 	name = "safe_turf" // At creation, landmark tags are set to: "landmark*[name]"
-	desc = "A safe turf should be an as large block as possible of livable, passable turfs, preferably at least 3x3 with the marked turf as the center"
+	desc = "A safe turf should be an as large block as possible of livable, passable turfs, preferably at least 3x3 with the marked turf as the center."
 
 /obj/effect/landmark/test/space_turf
 	name = "space_turf"
-	desc = "A space turf should be an as large block as possible of space, preferably at least 3x3 with the marked turf as the center"
+	desc = "A space turf should be an as large block as possible of space, preferably at least 3x3 with the marked turf as the center."
