@@ -14,7 +14,6 @@
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	trade_blacklisted = TRUE
 
-
 /obj/item/clothing/head/helmet/wolforbykot
 	name = "GSFH-2"
 	desc = "Closed helmet harking back to times of bloody war, a fearful visage of foreign special forces. \
@@ -33,7 +32,6 @@
 	item_flags = ITEM_FLAG_AIRTIGHT
 	trade_blacklisted = TRUE
 
-
 /obj/item/storage/backpack/wolforbykot
 	name = "CAB"
 	desc = "A waist-slung Gaian shocktroop bag. Compact and roomy."
@@ -50,7 +48,6 @@
 	max_storage_space = DEFAULT_BACKPACK_STORAGE + 8
 	trade_blacklisted = TRUE
 
-
 /obj/item/clothing/gloves/thick/duty/wolforbykot
 	name = "fingerless gloves"
 	desc = "A pair of sturdy fingerless gloves. The hard knuckles bear many a stain."
@@ -59,7 +56,6 @@
 	icon_state = "kegangloves"
 	item_state = "kegangloves"
 	trade_blacklisted = TRUE
-
 
 /obj/item/clothingbag/wolforbykot
 	name = "clothing bag"

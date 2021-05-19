@@ -41,7 +41,7 @@
 	return
 
 // Pulse pistol "Venger"
-/obj/item/weapon/gun/energy/pulse_rifle/pistol/mixa
+/obj/item/gun/energy/pulse_rifle/pistol/mixa
 	name = "Pulse pistol \"Venger\""
 	desc = "The Hel-Tec PS-03 pulse pistol, highly rare personal defence weapon."
 	icon = CUSTOM_GUN_ICONS
@@ -55,7 +55,7 @@
 
 /obj/item/weapon_case/custom/mixa
 	owner = "Micheal White"
-	holding_weapon = /obj/item/weapon/gun/energy/pulse_rifle/pistol/mixa
+	holding_weapon = /obj/item/gun/energy/pulse_rifle/pistol/mixa
 
 /obj/item/clothingbag/mixa
 	name = "clothing bag"

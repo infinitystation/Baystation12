@@ -6,7 +6,7 @@
 	w_class = ITEM_SIZE_LARGE
 
 	var/open = FALSE // Is the box open?
-	var/obj/item/weapon/gun/gun
+	var/obj/item/gun/gun
 
 /obj/item/weapon_case/on_update_icon()
 
@@ -37,7 +37,7 @@
 	update_icon()
 
 /obj/item/weapon_case/attackby( obj/item/I as obj, mob/user as mob )
-	if( istype(I, /obj/item/weapon/gun) )
+	if( istype(I, /obj/item/gun) )
 		if( src.open )
 			if(gun)
 				to_chat(user, SPAN_NOTICE("\the [src] is already occuped by [gun]"))
@@ -58,7 +58,7 @@
 	desc = "A case suited for weapons."
 
 	var/owner = null
-	var/obj/item/weapon/gun/holding_weapon = null
+	var/obj/item/gun/holding_weapon = null
 
 /obj/item/weapon_case/custom/Initialize()
 	. = ..()
