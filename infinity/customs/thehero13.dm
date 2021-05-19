@@ -1,15 +1,29 @@
-/obj/item/clothing/head/helmet/marksman_helmet
+/obj/item/clothing/head/helmet/ballistic/marksman_helmet
 	name = "PCRC marksman helmet"
-	desc = "An imposing helmet designed for work in special operations. Property of Proxima Centauri Risk Control."
+	desc = "An imposing helmet designed for work in special operations. \
+			Property of Proxima Centauri Risk Control. \
+			This helmet can be connected to some kind of balloon \
+			and allows you to work in a vacuum. \
+			Oh, this helmet does not allow you to wear masks under it."
+
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "thehero13_helmet"
+	item_icons = list(slot_head_str = CUSTOM_ITEM_MOB)
+	item_state_slots = list(slot_head_str = "thehero13_helmet")
+
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEMASK|BLOCKHAIR
 	body_parts_covered = FACE|EYES|HEAD
-	item_icons = list(
-		slot_head_str = CUSTOM_ITEM_MOB
-	)
-	item_state_slots = list(
-		slot_head_str = "thehero13_helmet"
-	)
+
+	cold_protection = HEAD
+	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
+	min_pressure_protection = 0
+	max_pressure_protection = SPACE_SUIT_MAX_PRESSURE
+	item_flags = ITEM_FLAG_AIRTIGHT
 
 	trade_blacklisted = TRUE
+
+/obj/item/clothing/head/helmet/ballistic/marksman_helmet/mob_can_equip(mob/living/carbon/human/H, slot, disable_warning)
+	. = ..()
+	// A person cannot wear this helmet when there is something on their face. ~ SidVeld
+	if(H.wear_mask)
+		return 0
