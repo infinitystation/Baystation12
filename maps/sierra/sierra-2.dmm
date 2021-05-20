@@ -13601,8 +13601,7 @@
 	dir = 8
 	},
 /obj/structure/disposalpipe/junction{
-	dir = 4;
-	icon_state = "pipe-j2"
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
