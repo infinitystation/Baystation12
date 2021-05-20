@@ -2051,8 +2051,7 @@
 	dir = 4
 	},
 /obj/structure/disposalpipe/junction{
-	dir = 4;
-	icon_state = "pipe-j2"
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
@@ -33939,6 +33938,9 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hydroponics/storage)
+"daq" = (
+/turf/simulated/wall/walnut,
+/area/crew_quarters/sleep/bunk_big/room_two)
 "dec" = (
 /obj/item/paper/sierra,
 /obj/structure/table/woodentable_reinforced/walnut,
@@ -38729,9 +38731,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/lounge_big)
-"wRQ" = (
-/turf/simulated/wall/walnut,
-/area/crew_quarters/sleep/bunk_big/room_two)
 "wSK" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -60317,11 +60316,11 @@ aam
 aam
 aaa
 aaa
-wRQ
-wRQ
-wRQ
-wRQ
-wRQ
+daq
+daq
+daq
+daq
+daq
 sdp
 egu
 puY
@@ -60519,7 +60518,7 @@ aam
 aam
 aaa
 aaa
-wRQ
+daq
 cNC
 tnG
 oCE
@@ -60721,7 +60720,7 @@ aam
 aam
 aaa
 aaa
-wRQ
+daq
 aKW
 aix
 ymg
@@ -60923,11 +60922,11 @@ aZE
 bfj
 bfm
 aaa
-wRQ
+daq
 aYe
 yaN
 fHK
-wRQ
+daq
 usO
 akO
 aTE
@@ -61125,11 +61124,11 @@ aam
 aam
 bfp
 aaa
-wRQ
-wRQ
-wRQ
-wRQ
-wRQ
+daq
+daq
+daq
+daq
+daq
 qLu
 aje
 iMK
