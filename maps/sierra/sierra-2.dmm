@@ -1127,28 +1127,12 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/engine_monitoring)
-"acw" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/reinforced/airless,
-/area/crew_quarters/head_big)
 "acx" = (
 /obj/machinery/light/spot{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/bridge/hall/level_one)
-"acA" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/reinforced/airless,
-/area/crew_quarters/lounge_big)
 "acB" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/emcloset,
@@ -1371,14 +1355,6 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/techmaint,
 /area/maintenance/compactor)
-"adc" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/reinforced/airless,
-/area/crew_quarters/lounge_big)
 "ade" = (
 /obj/machinery/vending/boozeomat,
 /obj/random/date_based/christmas/xmaslights{
@@ -2205,7 +2181,7 @@
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/reinforced/airless,
-/area/crew_quarters/lounge_big)
+/area/space)
 "aeG" = (
 /obj/machinery/chem_master/condimaster{
 	name = "CondiMaster Neo"
@@ -2503,14 +2479,6 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/walnut,
-/area/crew_quarters/lounge_big)
-"afb" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/reinforced/airless,
 /area/crew_quarters/lounge_big)
 "afc" = (
 /obj/structure/disposalpipe/segment{
@@ -5293,10 +5261,6 @@
 	},
 /obj/effect/floor_decal/spline/fancy/black/corner{
 	dir = 4
-	},
-/obj/machinery/camera/network/second_deck{
-	c_tag = "Second Deck - Lounge - Restroom";
-	dir = 1
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head_big)
@@ -27750,10 +27714,6 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 9
 	},
-/obj/machinery/camera/network/second_deck{
-	c_tag = "Second Deck - Lounge";
-	dir = 4
-	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/lounge_big)
 "aYk" = (
@@ -29308,10 +29268,6 @@
 	},
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
-	},
-/obj/machinery/camera/network/second_deck{
-	c_tag = "Second Deck - Lounge";
-	dir = 4
 	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/lounge_big)
@@ -33755,6 +33711,10 @@
 	icon_state = "1-8"
 	},
 /obj/effect/floor_decal/spline/fancy/wood,
+/obj/machinery/camera/network/second_deck{
+	c_tag = "Second Deck - Lounge";
+	dir = 1
+	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/lounge_big)
 "bZK" = (
@@ -33850,11 +33810,6 @@
 /obj/machinery/door/firedoor,
 /obj/random/date_based/christmas/doorwreath{
 	dir = 1
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -34982,7 +34937,7 @@
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/green/border,
 /obj/machinery/camera/network/second_deck{
-	c_tag = "Second Deck - Lounge";
+	c_tag = "Second Deck - Lounge Dorms";
 	dir = 4
 	},
 /turf/simulated/floor/wood/walnut,
@@ -36877,7 +36832,7 @@
 	dir = 10
 	},
 /obj/machinery/camera/network/second_deck{
-	c_tag = "Second Deck - Lounge - Restroom";
+	c_tag = "Second Deck - Lounge - Restroom Back Entrance";
 	dir = 4
 	},
 /turf/simulated/floor/tiled/freezer,
@@ -38878,10 +38833,6 @@
 	},
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 5
-	},
-/obj/machinery/camera/network/second_deck{
-	c_tag = "Second Deck - Lounge";
-	dir = 8
 	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/lounge_big)
@@ -60910,7 +60861,7 @@ aam
 aam
 aZE
 bfj
-acA
+bfm
 aaa
 xek
 aYe
@@ -61112,7 +61063,7 @@ aam
 aam
 aam
 aam
-adc
+bfp
 aaa
 xek
 xek
@@ -61516,7 +61467,7 @@ aam
 aam
 aam
 aam
-adc
+bfp
 ahd
 adP
 aKo
@@ -61718,7 +61669,7 @@ aam
 aam
 aam
 aam
-adc
+bfp
 ahd
 adP
 aKo
@@ -61920,7 +61871,7 @@ aam
 aam
 aam
 aam
-adc
+bfp
 ahd
 adP
 bbk
@@ -62122,7 +62073,7 @@ aam
 aam
 aam
 aam
-adc
+bfp
 aaa
 baO
 baO
@@ -62324,7 +62275,7 @@ aam
 aam
 aam
 aam
-acw
+bfp
 aar
 aar
 aar
@@ -62526,7 +62477,7 @@ aam
 aam
 aZE
 bfj
-afb
+aQT
 aar
 aar
 aar
