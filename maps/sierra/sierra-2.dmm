@@ -23764,11 +23764,8 @@
 /turf/simulated/floor/plating,
 /area/hallway/primary/seconddeck/fore)
 "aRo" = (
-/obj/machinery/light/spot{
-	dir = 8
-	},
-/turf/simulated/floor/wood/walnut,
-/area/crew_quarters/lounge_big)
+/turf/simulated/wall/walnut,
+/area/crew_quarters/sleep/bunk_big/room_two)
 "aRp" = (
 /obj/structure/bed/chair/comfy/brown{
 	dir = 8
@@ -33938,9 +33935,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hydroponics/storage)
-"daq" = (
-/turf/simulated/wall/walnut,
-/area/crew_quarters/sleep/bunk_big/room_two)
 "dec" = (
 /obj/item/paper/sierra,
 /obj/structure/table/woodentable_reinforced/walnut,
@@ -34528,7 +34522,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/seconddeck/foreport)
 "fXl" = (
-/obj/machinery/light/spot,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
@@ -36653,7 +36646,7 @@
 /obj/machinery/door/airlock/multi_tile/civilian{
 	frequency = 1379;
 	id_tag = "lounge1";
-	locked = 1;
+	locked = 0;
 	name = "Lounge"
 	},
 /obj/machinery/door/firedoor,
@@ -60316,11 +60309,11 @@ aam
 aam
 aaa
 aaa
-daq
-daq
-daq
-daq
-daq
+aRo
+aRo
+aRo
+aRo
+aRo
 sdp
 egu
 puY
@@ -60518,7 +60511,7 @@ aam
 aam
 aaa
 aaa
-daq
+aRo
 cNC
 tnG
 oCE
@@ -60720,14 +60713,14 @@ aam
 aam
 aaa
 aaa
-daq
+aRo
 aKW
 aix
 ymg
 gcT
 nKd
 rUH
-aRo
+puY
 rvY
 baO
 baO
@@ -60922,11 +60915,11 @@ aZE
 bfj
 bfm
 aaa
-daq
+aRo
 aYe
 yaN
 fHK
-daq
+aRo
 usO
 akO
 aTE
@@ -61124,11 +61117,11 @@ aam
 aam
 bfp
 aaa
-daq
-daq
-daq
-daq
-daq
+aRo
+aRo
+aRo
+aRo
+aRo
 qLu
 aje
 iMK
