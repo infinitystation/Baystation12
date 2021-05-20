@@ -37588,6 +37588,11 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/bridge/nano)
+"slm" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/item/material/ashtray/bronze,
+/turf/simulated/floor/carpet/orange,
+/area/crew_quarters/lounge_big)
 "smN" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -61523,7 +61528,7 @@ ahd
 adP
 aKo
 bgF
-vKY
+slm
 afa
 puY
 puY
