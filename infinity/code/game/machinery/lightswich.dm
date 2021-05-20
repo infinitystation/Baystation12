@@ -38,7 +38,7 @@
 		return
 
 	set_state(!on)
-	visible_message("[src] в[on?"":"ы"]ключился как только [detected.name] [on?"вошел в":"покинул"] помещение.")
+	visible_message("Выключтель тихо щелкнул и в[on?"":"ы"]ключился как только [detected.name] [on?"вошел в":"покинул"] помещение.")
 
 /obj/machinery/light_switch/Initialize()
 	. = ..()
