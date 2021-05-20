@@ -2,8 +2,11 @@
 	icon_state = "light1"
 	on = 1
 
+#define LS_MODE_MANUAL		0
+#define LS_MODE_ONLY_OFF	1
+#define LS_MODE_FULL_AUTO	2
 /obj/machinery/light_switch
-	var/smart = 1
+	var/smart = LS_MODE_ONLY_OFF
 
 /obj/machinery/light_switch/examine(mob/user, distance)
 	. = ..()
@@ -21,10 +24,10 @@
 	if(!ishuman(detected))
 		return
 	// Regular manual lightswitch
-	if(smart == 0)
+	if(smart == LS_MODE_MANUAL)
 		return
 	// Smart 1 only turns off light. Turn on it manualy
-	if(smart == 1 && !on)
+	if(smart == LS_MODE_ONLY_OFF && !on)
 		return
 	var/anyoneElse = FALSE
 	if(locate(/mob/living/carbon/human) in connected_area)
@@ -42,6 +45,11 @@
 	if(connected_area)
 		GLOB.entered_event.register(connected_area, src, /obj/machinery/light_switch/proc/motion_detect)
 		GLOB.exited_event.register(connected_area, src, /obj/machinery/light_switch/proc/motion_detect)
+		
+/obj/machinery/light_switch/Destroy()
+	GLOB.entered_event.unregister(connected_area, src, /obj/machinery/light_switch/proc/motion_detect)
+	GLOB.exited_event.unregister(connected_area, src, /obj/machinery/light_switch/proc/motion_detect)
+	. = ..()
 
 /obj/machinery/light_switch/verb/configure_motion_detector()
 	set name = "Toggle motion sensor"
@@ -57,9 +65,13 @@
 		return
 	switch(selection)
 		if("Manual")
-			smart = 0
+			smart = LS_MODE_MANUAL
 		if("Only turn off")
-			smart = 1
+			smart = LS_MODE_ONLY_OFF
 		if("Full auto")
-			smart = 2
+			smart = LS_MODE_FULL_AUTO
 	sync_motionMode()
+
+#undef LS_MODE_FULL_AUTO
+#undef LS_MODE_ONLY_OFF
+#undef LS_MODE_MANUAL
