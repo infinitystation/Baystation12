@@ -28843,6 +28843,17 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
 	},
+/obj/machinery/button/windowtint{
+	dir = 8;
+	id = "privatedorm2.1";
+	pixel_x = 24;
+	pixel_y = -10
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 24;
+	pixel_y = 10
+	},
 /turf/simulated/floor/carpet/green,
 /area/crew_quarters/sleep/bunk_big)
 "bak" = (
@@ -30153,17 +30164,13 @@
 /turf/simulated/floor/plating,
 /area/bridge/lobby)
 "bcP" = (
-/obj/structure/table/woodentable_reinforced/walnut,
 /obj/machinery/light,
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_y = -20
 	},
-/obj/structure/flora/pottedplant/deskleaf{
-	pixel_x = -5;
-	pixel_y = 2
-	},
 /obj/effect/floor_decal/spline/fancy/wood,
+/obj/structure/closet/athletic_mixed,
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/lounge_big)
 "bcS" = (
@@ -34986,17 +34993,15 @@
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
 "hLJ" = (
-/obj/structure/table/woodentable_reinforced/walnut,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
-/obj/item/material/ashtray/bronze,
-/obj/random/smokes,
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -20
 	},
 /obj/effect/floor_decal/spline/fancy/wood,
+/obj/structure/closet/athletic_mixed,
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/lounge_big)
 "hLL" = (
@@ -37206,10 +37211,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/closet/athletic_mixed,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
 	},
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/random/smokes,
+/obj/item/material/ashtray/bronze,
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/lounge_big)
 "qMf" = (
@@ -37791,16 +37798,6 @@
 /obj/item/device/synthesized_instrument/guitar,
 /turf/simulated/floor/carpet/blue,
 /area/crew_quarters/cafe)
-"sOn" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/catwalk,
-/obj/machinery/pipedispenser,
-/turf/simulated/floor/plating,
-/area/maintenance/seconddeck/aftstarboard)
 "sPB" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -38268,12 +38265,16 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
 	},
-/obj/structure/closet/athletic_mixed,
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
+	},
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/structure/flora/pottedplant/deskleaf{
+	pixel_x = -5;
+	pixel_y = 2
 	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/lounge_big)
@@ -39001,6 +39002,17 @@
 	},
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
+	},
+/obj/machinery/button/windowtint{
+	dir = 8;
+	id = "privatedorm2.2";
+	pixel_x = 24;
+	pixel_y = -10
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 24;
+	pixel_y = 10
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/sleep/bunk_big/room_two)
@@ -62548,7 +62560,7 @@ baO
 aZJ
 aZJ
 aZJ
-sOn
+aWP
 aZK
 aeS
 aeS
