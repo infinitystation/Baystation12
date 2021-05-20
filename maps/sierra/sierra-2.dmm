@@ -28113,10 +28113,6 @@
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/effect/floor_decal/spline/plain/green,
-/obj/machinery/camera/network/second_deck{
-	c_tag = "Second Deck - Lounge";
-	dir = 1
-	},
 /turf/simulated/floor/grass,
 /area/crew_quarters/lounge_big)
 "aYY" = (
@@ -34646,10 +34642,6 @@
 	},
 /obj/random/date_based/christmas/xmaslights,
 /obj/effect/floor_decal/spline/fancy/wood,
-/obj/machinery/camera/network/second_deck{
-	c_tag = "Second Deck - Lounge";
-	dir = 1
-	},
 /turf/simulated/floor/carpet/purple,
 /area/crew_quarters/lounge_big)
 "glj" = (
@@ -35191,11 +35183,6 @@
 /obj/machinery/computer/prisoner{
 	dir = 1
 	},
-/obj/machinery/camera/network/command{
-	c_tag = "Command - Bridge 2";
-	dir = 1;
-	name = "Command - Bridge"
-	},
 /obj/effect/floor_decal/corner/blue/mono,
 /obj/random/date_based/christmas/xmaslights,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -35503,9 +35490,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftport)
-"jQa" = (
-/turf/simulated/wall/walnut,
-/area/crew_quarters/sleep/bunk_big/room_two)
 "jRQ" = (
 /obj/machinery/light/small,
 /obj/effect/floor_decal/industrial/warning/fulltile,
@@ -38745,6 +38729,9 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/lounge_big)
+"wRQ" = (
+/turf/simulated/wall/walnut,
+/area/crew_quarters/sleep/bunk_big/room_two)
 "wSK" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -60330,11 +60317,11 @@ aam
 aam
 aaa
 aaa
-jQa
-jQa
-jQa
-jQa
-jQa
+wRQ
+wRQ
+wRQ
+wRQ
+wRQ
 sdp
 egu
 puY
@@ -60532,7 +60519,7 @@ aam
 aam
 aaa
 aaa
-jQa
+wRQ
 cNC
 tnG
 oCE
@@ -60734,7 +60721,7 @@ aam
 aam
 aaa
 aaa
-jQa
+wRQ
 aKW
 aix
 ymg
@@ -60936,11 +60923,11 @@ aZE
 bfj
 bfm
 aaa
-jQa
+wRQ
 aYe
 yaN
 fHK
-jQa
+wRQ
 usO
 akO
 aTE
@@ -61138,11 +61125,11 @@ aam
 aam
 bfp
 aaa
-jQa
-jQa
-jQa
-jQa
-jQa
+wRQ
+wRQ
+wRQ
+wRQ
+wRQ
 qLu
 aje
 iMK
