@@ -164,7 +164,15 @@
 			trigger(FALSE)
 			return ..()
 		else if(isliving(A))
-			do_scan(A)
+			// Stop shouting on mechas
+			if(istype(A, /mob/living/exosuit))
+				var/mob/living/exosuit/exo = A
+				for(var/mob/living/L in exo.pilots)
+					// did you know, that ALL mobs can be in pilots? huh?
+					if(isliving(L))
+						do_scan(L)
+			else
+				do_scan(A)
 		else if(isobserver(A))
 			if(emagged)
 				trigger(TRUE)
