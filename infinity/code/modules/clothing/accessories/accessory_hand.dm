@@ -8,7 +8,7 @@
 
 	var/undergloves = TRUE 					// If TRUE, the item will be hidden under the gloves.
 
-
+// Wristwacth
 /obj/item/clothing/accessory_hand/wristwatch
 	name = "black watch"
 	desc = "A wristwatch. This one is silver and EMP-resistance."
@@ -21,39 +21,34 @@
 	species_restricted = list("exclude", SPECIES_NABBER)
 	gender = NEUTER
 
-	var/righthand = FALSE					// If TRUE, they are worn on the right hand
+	var/origin_sprite = "watch_black"		// We use this variable to store the original name of the sprite
 	var/can_wear_on_both_hands = TRUE		// If TRUE, we can use "switch hand" verb
-
 
 /obj/item/clothing/accessory_hand/wristwatch/Initialize()
 	. = ..()
 	if(!can_wear_on_both_hands)
 		src.verbs -= /obj/item/clothing/accessory_hand/wristwatch/verb/switch_hand
-
+	origin_sprite = item_state
 
 /obj/item/clothing/accessory_hand/wristwatch/examine(mob/user)
 	. = ..()
 	to_chat(user, "\the [src] displays [stationtime2text()].")
 
 
-/obj/item/clothing/accessory_hand/wristwatch/verb/switch_hand(mob/user)
+/obj/item/clothing/accessory_hand/wristwatch/verb/switch_hand()
 	set name = "Switch hand"
 	set category = "Object"
 
-	righthand = !righthand
-	if(righthand)
+	if(item_state == origin_sprite)
 		item_state = "[item_state]_righthand"
 	else
-		item_state = initial(item_state)
-	to_chat(user, SPAN_NOTICE("Now you need to take them off and put them back on."))
-
+		item_state = origin_sprite
 
 /obj/item/clothing/accessory_hand/wristwatch/gold
 	name = "gold watch"
 	desc = "A wristwatch. This one is golden and in makes you feel like a boss."
 	icon_state = "watch_gold"
 	item_state = "watch_gold"
-
 
 /obj/item/clothing/accessory_hand/wristwatch/saare
 	name = "SAARE \"Casio\" watch"
