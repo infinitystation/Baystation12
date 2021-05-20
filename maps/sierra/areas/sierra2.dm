@@ -333,10 +333,14 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
 /area/crew_quarters/sleep/bunk_big
-	name = "Second Deck - Living - Dormitory - Big"
+	name = "Second Deck - Living - Dormitory - Big One"
 	icon_state = "Sleep"
 	sound_env = SMALL_SOFTFLOOR
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
+
+/area/crew_quarters/sleep/bunk_big/room_two
+	name = "Second Deck - Living - Dormitory - Big Two"
+	icon_state = "Sleep"
 
 /area/crew_quarters/sleep/cryo
 	name = "Second Deck - Living - Cryogenic Storage"
