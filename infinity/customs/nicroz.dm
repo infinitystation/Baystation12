@@ -329,7 +329,3 @@
 	. = ..()
 	reagents.add_reagent(/datum/reagent/b_pvp, 26)
 	color = reagents.get_color()
-
-/obj/item/weapon_case/custom/nicroz
-	owner = "Judah Blessig"
-	holding_weapon = /obj/item/gun/energy/pulse_rifle/destroyer
