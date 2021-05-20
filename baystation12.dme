@@ -3753,6 +3753,7 @@
 #include "infinity\customs\eugen00751.dm"
 #include "infinity\customs\explorer.dm"
 #include "infinity\customs\exporation_voids.dm"
+#include "infinity\customs\farwa87.dm"
 #include "infinity\customs\forrya_custom.dm"
 #include "infinity\customs\fsb_set.dm"
 #include "infinity\customs\he11d1ver.dm"
