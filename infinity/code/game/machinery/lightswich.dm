@@ -21,7 +21,7 @@
 
 /obj/machinery/light_switch/proc/motion_detect(var/area/myarea, var/atom/movable/detected)
 	// Furniture, simple_animals - doesn't care
-	if(!ishuman(detected) || !istype(detected, /mob/living/exosuit))
+	if(!(ishuman(detected) || istype(detected, /mob/living/exosuit)))
 		return
 	// Regular manual lightswitch
 	if(smart == LS_MODE_MANUAL)
