@@ -21,7 +21,7 @@
 
 /obj/machinery/light_switch/proc/motion_detect(var/area/myarea, var/atom/movable/detected)
 	// Furniture, simple_animals - doesn't care
-	if(!ishuman(detected))
+	if(!ishuman(detected) || !istype(detected, /mob/living/exosuit))
 		return
 	// Regular manual lightswitch
 	if(smart == LS_MODE_MANUAL)
@@ -30,7 +30,7 @@
 	if(smart == LS_MODE_ONLY_OFF && !on)
 		return
 	var/anyoneElse = FALSE
-	if(locate(/mob/living/carbon/human) in connected_area)
+	if((locate(/mob/living/carbon/human) in connected_area) || (locate(/mob/living/exosuit) in connected_area))
 		anyoneElse = TRUE
 	
 	// We won't turn lights off if there other humans presented
