@@ -288,14 +288,17 @@
 	name = "Second Deck - Grove - Theta"
 	icon_state = "garden"
 	sound_env = LARGE_SOFTFLOOR
-	ambience = list(
-			'sound/ambience/jungle.ogg',
-		)
 
 /area/crew_quarters/head
 	name = "Second Deck - Living - Restroom"
 	icon_state = "toilet"
 	sound_env = SMALL_ENCLOSED
+
+/area/crew_quarters/head_big
+	name = "Second Deck - Living - Lounge - Restroom"
+	icon_state = "toilet"
+	sound_env = SMALL_ENCLOSED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 /*
 /area/crew_quarters/showers
 	name = "Second Deck - Living - Private Showers"
@@ -318,8 +321,19 @@
 	name = "Second Deck - Living - Lounge"
 	sound_env = MEDIUM_SOFTFLOOR
 
+/area/crew_quarters/lounge_big
+	name = "Second Deck - Living - Lounge - North"
+	icon_state = "Sleep"
+	sound_env = MEDIUM_SOFTFLOOR
+
 /area/crew_quarters/sleep/bunk
 	name = "Second Deck - Living - Dormitory"
+	icon_state = "Sleep"
+	sound_env = SMALL_SOFTFLOOR
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
+
+/area/crew_quarters/sleep/bunk_big
+	name = "Second Deck - Living - Dormitory - Big"
 	icon_state = "Sleep"
 	sound_env = SMALL_SOFTFLOOR
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
