@@ -387,6 +387,7 @@ BLIND     // can't see anything
 
 /obj/item/clothing/gloves/mob_can_equip(mob/user)
 	var/mob/living/carbon/human/H = user
+
 	if(istype(H.gloves, /obj/item/clothing/ring) || istype(H.gloves, /obj/item/clothing/accessory_hand))	// INF WAS	if(istype(H.gloves, /obj/item/clothing/ring))
 		ring = H.gloves
 		if(!ring.undergloves)
