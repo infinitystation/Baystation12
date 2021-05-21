@@ -3631,6 +3631,7 @@
 #include "infinity\code\modules\power\gravity_generator\gravitygenerator.dm"
 #include "infinity\code\modules\power\gravity_generator\mob.dm"
 #include "infinity\code\modules\power\gravity_generator\wires.dm"
+#include "infinity\code\modules\projectiles\ammunition.dm"
 #include "infinity\code\modules\projectiles\gun.dm"
 #include "infinity\code\modules\projectiles\ammunition\boxes.dm"
 #include "infinity\code\modules\projectiles\ammunition\bullets.dm"
