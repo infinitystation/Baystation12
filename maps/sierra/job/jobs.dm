@@ -16,8 +16,8 @@
 		/datum/species/unathi  		 = list(HUMAN_ONLY_JOBS/*, /datum/job/adjutant, /datum/job/senior_doctor, /datum/job/senior_scientist*/),
 		/datum/species/unathi/yeosa  = list(HUMAN_ONLY_JOBS/*, /datum/job/adjutant, /datum/job/senior_doctor, /datum/job/senior_scientist*/),
 		/datum/species/unathi/erosan = list(HUMAN_ONLY_JOBS/*, /datum/job/adjutant, /datum/job/senior_doctor, /datum/job/senior_scientist*/),
-		/datum/species/skrell  		 = list(/datum/job/captain, /datum/job/hos, /datum/job/hop, /*/datum/job/chief_engineer, /datum/job/rd, *//datum/job/cmo, /datum/job/iaa, /datum/job/psychiatrist),
-		/datum/species/tajaran 		 = list(HUMAN_ONLY_JOBS/*, /datum/job/senior_doctor*/),
+		/datum/species/skrell  		 = list(/datum/job/captain, /datum/job/hos, /datum/job/hop, /*/datum/job/chief_engineer, /datum/job/rd, /datum/job/cmo, *//datum/job/iaa, /datum/job/psychiatrist),
+		/datum/species/tajaran 		 = list(/datum/job/captain, /datum/job/hos, /datum/job/hop, /*/datum/job/chief_engineer, /datum/job/cmo, *//datum/job/rd, /datum/job/iaa, /datum/job/psychiatrist),
 		/datum/species/machine 		 = list(/datum/job/captain, /datum/job/hos, /datum/job/security_assistant, /datum/job/psychiatrist),
 		/datum/species/resomi  		 = list(HUMAN_ONLY_JOBS, /datum/job/officer, /datum/job/exploration_leader,\
 									/datum/job/warden, /datum/job/security_assistant),
