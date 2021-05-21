@@ -16,7 +16,7 @@
 	base_type = /obj/machinery/vending/assist
 	construct_state = /decl/machine_construction/default/panel_closed
 	uncreated_component_parts = null
-	
+
 	machine_name = "vending machine"
 	machine_desc = "Holds an internal stock of items that can be dispensed on-demand or when a charged ID card is swiped, depending on the brand."
 
@@ -592,7 +592,8 @@
 	desc = "A refrigerated vending unit for alcoholic beverages and alcoholic beverage accessories."
 	icon_state = "fridge_dark"
 	icon_deny = "fridge_dark-deny"
-/* INF <<<<<<<
+// I'm sorry, but I was too lazy to compare these lists and make comments on each item ~ SidVeld
+/* [ORIG]
 	products = list(/obj/item/reagent_containers/food/drinks/glass2/square = 10,
 					/obj/item/reagent_containers/food/drinks/flask/barflask = 5,
 					/obj/item/reagent_containers/food/drinks/flask/vacuumflask = 5,
@@ -648,7 +649,8 @@
 					/obj/item/reagent_containers/food/drinks/bottle/goldschlager = 5,
 					/obj/item/reagent_containers/food/drinks/bottle/lordaniawine = 5,
 					/obj/item/reagent_containers/food/drinks/bottle/brandy = 5)
-* ======= */
+[/ORIG] */
+// [INF]
 	products = list(/obj/item/reagent_containers/food/drinks/glass2/square = 10,
 					/obj/item/reagent_containers/food/drinks/flask/barflask = 5,
 					/obj/item/reagent_containers/food/drinks/flask/vacuumflask = 5,
@@ -714,7 +716,7 @@
 					/obj/item/reagent_containers/food/drinks/bottle/goldschlager = 5,
 					/obj/item/reagent_containers/food/drinks/bottle/lordaniawine = 5,
 					/obj/item/reagent_containers/food/drinks/bottle/brandy = 5)
-// >>>>>>>
+// [/INF]
 	vend_delay = 15
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 	product_slogans = "I hope nobody asks me for a bloody cup o' tea...;Alcohol is humanity's friend. Would you abandon a friend?;Quite delighted to serve you!;Is nobody thirsty on this station?"
