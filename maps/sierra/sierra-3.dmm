@@ -30684,6 +30684,8 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
+/obj/structure/mopbucket,
+/obj/item/mop,
 /turf/simulated/floor/tiled/techfloor,
 /area/rnd/storage)
 "aVP" = (
@@ -39846,8 +39848,6 @@
 	dir = 8;
 	pixel_x = 24
 	},
-/obj/structure/mopbucket,
-/obj/item/mop,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/servers)
 "iTT" = (
@@ -63543,13 +63543,13 @@ aaa
 aaa
 aaa
 aad
-aaa
 aae
-aaa
-aae
-aaa
-aae
-aaa
+aam
+aam
+aam
+aam
+aam
+aam
 aam
 aam
 aam
@@ -63745,7 +63745,7 @@ aaa
 aaa
 aaa
 aad
-aae
+aaa
 aai
 aai
 aai
@@ -63947,7 +63947,7 @@ aaa
 aaa
 aaa
 aad
-aaa
+aae
 aaj
 aal
 aal
@@ -64149,7 +64149,7 @@ aaa
 aaa
 aaa
 aad
-aae
+aaa
 aak
 aak
 aak
@@ -64351,10 +64351,10 @@ aaa
 aaa
 aaa
 aad
-aaa
 aae
-aaa
-aae
+aam
+aam
+aam
 aam
 aam
 aam
@@ -64553,7 +64553,7 @@ aaa
 aaa
 aaa
 aad
-aae
+aaa
 aai
 aai
 aai
@@ -64755,7 +64755,7 @@ aaa
 aaa
 aaa
 aad
-aaa
+aae
 aaj
 aal
 aal
@@ -64957,7 +64957,7 @@ aaa
 aaa
 aaa
 aad
-aae
+aaa
 aak
 aak
 aak
@@ -65159,10 +65159,10 @@ aaa
 aaa
 aaa
 aad
-aaa
 aae
-aaa
-aae
+aam
+aam
+aam
 aam
 aam
 aam
@@ -65361,7 +65361,7 @@ aaa
 aaa
 aaa
 aad
-aae
+aaa
 aai
 aai
 aai
@@ -65563,7 +65563,7 @@ aaa
 aaa
 aaa
 aad
-aaa
+aae
 aaj
 aal
 aal
@@ -65765,7 +65765,7 @@ aaa
 aaa
 aaa
 aad
-aae
+aaa
 aak
 aak
 aak
@@ -65967,10 +65967,10 @@ aaa
 aaa
 aaa
 aad
-aaa
 aae
-aaa
-aae
+aam
+aam
+aam
 aam
 aam
 aam
@@ -66169,7 +66169,7 @@ aaa
 aaa
 aaa
 aad
-aae
+aaa
 aai
 aai
 aai
@@ -66371,7 +66371,7 @@ aaa
 aaa
 aaa
 aad
-aaa
+aae
 aaj
 aal
 aal
@@ -66573,7 +66573,7 @@ aaa
 aad
 aad
 aad
-aae
+aaa
 aak
 aak
 aak
@@ -66775,11 +66775,11 @@ aaa
 aad
 aae
 aae
-aaa
 aae
-aaa
-aae
-aaa
+aam
+aam
+aam
+aam
 aam
 aam
 aam
@@ -67179,11 +67179,11 @@ aaa
 aad
 aae
 aae
-aaa
 aae
-aaa
-aae
-aaa
+aam
+aam
+aam
+aam
 aam
 aam
 aam
@@ -67381,7 +67381,7 @@ aaa
 aad
 aad
 aad
-aae
+aaa
 aai
 aai
 aai
@@ -67583,7 +67583,7 @@ aaa
 aaa
 aaa
 aad
-aaa
+aae
 aaj
 aal
 aal
@@ -67785,7 +67785,7 @@ aaa
 aaa
 aaa
 aad
-aae
+aaa
 aak
 aak
 aak
@@ -67987,11 +67987,11 @@ aaa
 aaa
 aaa
 aad
-aaa
 aae
-aaa
-aae
-aaa
+aam
+aam
+aam
+aam
 aam
 aam
 aam
@@ -68189,7 +68189,7 @@ aaa
 aaa
 aaa
 aad
-aae
+aaa
 aai
 aai
 aai
@@ -68391,7 +68391,7 @@ aaa
 aaa
 aaa
 aad
-aaa
+aae
 aaj
 aal
 aal
@@ -68593,7 +68593,7 @@ aaa
 aaa
 aaa
 aad
-aae
+aaa
 aak
 aak
 aak
@@ -68795,12 +68795,12 @@ aaa
 aaa
 aaa
 aad
-aaa
 aae
-aaa
-aae
-aaa
-aae
+aam
+aam
+aam
+aam
+aam
 aam
 aam
 aam
@@ -68997,7 +68997,7 @@ aaa
 aaa
 aaa
 aad
-aae
+aaa
 aai
 aai
 aai
@@ -69199,7 +69199,7 @@ aaa
 aaa
 aaa
 aad
-aaa
+aae
 aaj
 aal
 aal
@@ -69401,7 +69401,7 @@ aaa
 aaa
 aaa
 aad
-aae
+aaa
 aak
 aak
 aak
@@ -69603,15 +69603,15 @@ aaa
 aaa
 aaa
 aad
-aaa
 aae
-aaa
-aae
-aaa
-aae
-aaa
-aae
-aaa
+aam
+aam
+aam
+aam
+aam
+aam
+aam
+aam
 aam
 aam
 aam

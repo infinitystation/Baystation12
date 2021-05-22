@@ -24021,6 +24021,13 @@
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
 	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "Biohazard";
+	name = "Biohazard Shutter";
+	opacity = 0
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/xenobiology/entry2)
 "Mx" = (
@@ -24169,6 +24176,13 @@
 	},
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
+	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "Biohazard";
+	name = "Biohazard Shutter";
+	opacity = 0
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/xenobiology/entry2)
