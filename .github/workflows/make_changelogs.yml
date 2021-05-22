@@ -7,7 +7,7 @@ on:
     - master
 
 jobs:
-  MakeCL:
+  СозданиеЧЛ:
     runs-on: ubuntu-latest
     if: github.repository == 'infinitystation/Baystation12' # to prevent this running on forks
     steps:
