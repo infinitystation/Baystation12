@@ -9,7 +9,7 @@ name: Обновление лейблов
 on: [pull_request_target]
 
 jobs:
-  Этикирование:
+  Labels:
     runs-on: ubuntu-latest
     permissions:
       contents: read

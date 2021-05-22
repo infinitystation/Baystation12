@@ -6,7 +6,7 @@ on:
     - master
 
 jobs:
-  ДобавлениеЛайнЭндингов:
+  AddingLineEnding:
     runs-on: ubuntu-latest
     if: github.repository == 'infinitystation/Baystation12'
     steps:
