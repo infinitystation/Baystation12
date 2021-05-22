@@ -6,7 +6,7 @@
 #define LS_MODE_ONLY_OFF	1
 #define LS_MODE_FULL_AUTO	2
 /obj/machinery/light_switch
-	var/smart = LS_MODE_ONLY_OFF
+	var/smart = LS_MODE_FULL_AUTO
 
 /obj/machinery/light_switch/examine(mob/user, distance)
 	. = ..()
@@ -38,7 +38,7 @@
 		return
 
 	set_state(!on)
-	visible_message("Выключтель тихо щелкнул и в[on?"":"ы"]ключился как только [detected.name] [on?"вошел в":"покинул"] помещение.")
+	//visible_message("Выключатель тихо щелкнул и в[on?"":"ы"]ключился как только [detected.name] [on?"вошел в":"покидает"] помещение.")
 
 /obj/machinery/light_switch/Initialize()
 	. = ..()
