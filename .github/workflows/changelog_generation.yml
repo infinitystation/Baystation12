@@ -15,7 +15,6 @@ jobs:
         with:
           fetch-depth: 0 # Otherwise, we will fail to push refs
           ref: master
-          token: ${{ secrets.BOT_TOKEN }}
       - name: Настройка Python
         uses: actions/setup-python@v2.2.2
         with:
