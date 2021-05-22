@@ -28,4 +28,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_EMAIL: ${{ secrets.BOT_EMAIL }}
           GIT_NAME: ${{ secrets.BOT_NAME }} 
-        run: python tools/GenerateChangelog/generate_cl_ru.py
+        run: python tools/changelog/generate_cl_ru.py
