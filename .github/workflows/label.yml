@@ -6,10 +6,10 @@
 # https://github.com/actions/labeler
 
 name: Обновление лейблов
-on: [pull_request]
+on: [pull_request_target, workflow_dispatch]
 
 jobs:
-  label:
+  Labeling:
 
     runs-on: ubuntu-latest
     permissions:
@@ -17,7 +17,7 @@ jobs:
       pull-requests: write
 
     steps:
-    - uses: actions/labeler@v2
+    - uses: actions/labeler@v3
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
         sync-labels: true

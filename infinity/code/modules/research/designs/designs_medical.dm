@@ -1,11 +1,3 @@
-/datum/design/item/medical/plant_scanner
-	desc = "A hand-held botanical scanner used to analyze plants."
-	id = "plant_scanner"
-	req_tech = list(TECH_MAGNET = 2, TECH_BIO = 2)
-	materials = list(MATERIAL_STEEL = 150, MATERIAL_GLASS = 100)
-	build_path = /obj/item/device/scanner/plant //obj/item/device/scanner/plant
-	sort_string = "MACFD"
-
 /datum/design/item/medical/defib
 	name = "defibrillator"
 	desc = "A device that delivers powerful shocks via detachable paddles to resuscitate incapacitated patients."
