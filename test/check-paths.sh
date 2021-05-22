@@ -78,7 +78,7 @@ exactly 0 "simulated = 0/1" 'simulated\s*=\s*\d' -P
 #	FAILED=1
 #fi
 
-num=`find ./html/changelogs -not -name "*.yml" | wc -l`
+num=`find ./html/changelogs_infinity -not -name "*.yml" | wc -l`
 echo "$num non-yml files (expecting exactly 2)"
 [ $num -eq 2 ] || FAILED=1
 
