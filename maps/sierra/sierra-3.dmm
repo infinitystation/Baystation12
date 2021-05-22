@@ -1500,7 +1500,10 @@
 	dir = 8
 	},
 /obj/structure/railing/mapped,
-/obj/structure/cable,
+/obj/structure/cable{
+	d1 = 32;
+	icon_state = "32-1"
+	},
 /turf/simulated/open,
 /area/maintenance/firstdeck/aftstarboard)
 "adl" = (
