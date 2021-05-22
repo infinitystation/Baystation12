@@ -39,7 +39,7 @@
 		if(M != src && C.incapacitated())
 			return 0
 
-	GLOB.moved_event.register(M, src, /obj/proc/unbuckle_mob)	// INF
+	GLOB.moved_event.register(M, src, /obj/proc/check_for_unbuckle)	// INF
 	M.buckled = src
 	M.facing_dir = null
 	M.set_dir(buckle_dir ? buckle_dir : dir)
@@ -53,7 +53,7 @@
 /obj/proc/unbuckle_mob()
 	if(buckled_mob && buckled_mob.buckled == src)
 		. = buckled_mob
-		GLOB.moved_event.unregister(buckled_mob, src, /obj/proc/unbuckle_mob)	// INF
+		GLOB.moved_event.unregister(buckled_mob, src, /obj/proc/check_for_unbuckle)	// INF
 		buckled_mob.buckled = null
 		buckled_mob.anchored = initial(buckled_mob.anchored)
 		buckled_mob.UpdateLyingBuckledAndVerbStatus()
