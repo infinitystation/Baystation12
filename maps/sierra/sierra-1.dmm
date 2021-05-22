@@ -689,16 +689,16 @@
 	name = "south bump";
 	pixel_y = -24
 	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
 /obj/machinery/alarm{
 	dir = 4;
 	pixel_x = -24
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 10
+	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/shield/thirddeck)
@@ -709,17 +709,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/cable/green{
+/obj/structure/catwalk,
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/starboard)
 "bG" = (
@@ -1366,6 +1361,11 @@
 	},
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/forestarboard)
 "cN" = (
@@ -1495,6 +1495,11 @@
 /area/quartermaster/expedition/storage)
 "cZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/vacant/monitoring)
 "da" = (
@@ -1656,6 +1661,11 @@
 "dp" = (
 /obj/structure/catwalk,
 /obj/machinery/portable_atmospherics/powered/pump/filled,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/starboard)
 "dq" = (
@@ -2426,11 +2436,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/storage/auxillary/port)
 "eC" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/door/airlock/engineering{
 	name = "Third Deck Shield Generator";
 	req_access = newlist()
@@ -2441,6 +2446,11 @@
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/shield/thirddeck)
@@ -2562,31 +2572,31 @@
 /turf/simulated/floor/airless,
 /area/thruster/d3starboard)
 "eO" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
 /obj/machinery/atmospherics/valve/shutoff/supply,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/starboard)
 "eP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
 	},
 /obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/starboard)
 "eR" = (
@@ -3136,21 +3146,21 @@
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/petrov/ship)
 "fH" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/shield/thirddeck)
@@ -3226,6 +3236,11 @@
 	},
 /obj/effect/floor_decal/techfloor,
 /obj/machinery/door/airlock/hatch/maintenance,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/hallway/primary/thirddeck/center)
 "fO" = (
@@ -3494,6 +3509,11 @@
 "gi" = (
 /obj/machinery/portable_atmospherics/powered/scrubber,
 /obj/structure/catwalk,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/starboard)
 "gj" = (
@@ -3506,11 +3526,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/starboard)
@@ -3543,11 +3558,6 @@
 /area/shuttle/petrov/ship)
 "gn" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/effect/floor_decal/techfloor{
 	dir = 8
 	},
@@ -3556,6 +3566,11 @@
 	},
 /obj/machinery/door/airlock/hatch/maintenance,
 /obj/machinery/door/firedoor,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/thirddeck/starboard)
 "go" = (
@@ -3992,12 +4007,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/cable/green{
+/obj/structure/catwalk,
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/starboard)
 "ha" = (
@@ -4015,12 +4030,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
 	},
-/obj/structure/cable/green{
+/obj/structure/catwalk,
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/starboard)
 "hc" = (
@@ -4229,6 +4244,11 @@
 /area/space)
 "ht" = (
 /obj/structure/catwalk,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/starboard)
 "hu" = (
@@ -4544,11 +4564,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/expedition)
 "hX" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /obj/machinery/camera/network/engineering{
 	c_tag = "Shield Generator - Third Deck"
 	},
@@ -4557,6 +4572,11 @@
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 5
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/shield/thirddeck)
@@ -5527,6 +5547,15 @@
 "jv" = (
 /obj/structure/ladder/up,
 /obj/effect/floor_decal/industrial/warning/fulltile,
+/obj/structure/cable{
+	d1 = 16;
+	d2 = 0;
+	icon_state = "16-0"
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/thirddeck/forestarboard)
 "jw" = (
@@ -6241,6 +6270,11 @@
 /area/command/exploration_leader)
 "kx" = (
 /obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/forestarboard)
 "ky" = (
@@ -7836,6 +7870,16 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/fore)
+"mD" = (
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/forestarboard)
 "mE" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
@@ -12720,6 +12764,11 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/starboard)
 "tU" = (
@@ -13743,6 +13792,21 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/hallway/primary/thirddeck/fore)
+"vI" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
+	},
+/obj/structure/catwalk,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/starboard)
 "vJ" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -18816,6 +18880,21 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/petrov/ship)
+"Eg" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals_central6{
+	dir = 8
+	},
+/obj/machinery/atmospherics/valve/shutoff/supply,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/hallway/primary/thirddeck/center)
 "Eh" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
@@ -23942,6 +24021,13 @@
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
 	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "Biohazard";
+	name = "Biohazard Shutter";
+	opacity = 0
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/xenobiology/entry2)
 "Mx" = (
@@ -23951,6 +24037,11 @@
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/vacant/monitoring)
@@ -24085,6 +24176,13 @@
 	},
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
+	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "Biohazard";
+	name = "Biohazard Shutter";
+	opacity = 0
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/xenobiology/entry2)
@@ -24853,12 +24951,12 @@
 /area/rnd/xenobiology/entry2)
 "NX" = (
 /obj/machinery/power/shield_generator,
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
 /obj/effect/floor_decal/techfloor{
 	dir = 9
+	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/shield/thirddeck)
@@ -26854,6 +26952,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/forestarboard)
 "Rt" = (
@@ -27735,6 +27838,11 @@
 "SS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/hallway/primary/thirddeck/center)
 "ST" = (
@@ -27843,6 +27951,11 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/hatch/maintenance,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/thirddeck/forestarboard)
 "Td" = (
@@ -27891,6 +28004,11 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/hatch/maintenance,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/hallway/primary/thirddeck/center)
 "Tg" = (
@@ -27903,6 +28021,11 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/hatch/maintenance,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/vacant/monitoring)
 "Th" = (
@@ -28574,6 +28697,15 @@
 /obj/machinery/door/airlock/hatch/maintenance,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/office)
+"UR" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/forestarboard)
 "US" = (
 /turf/simulated/floor/reinforced,
 /area/exploration_shuttle/medical)
@@ -28599,6 +28731,21 @@
 	},
 /turf/simulated/floor/aquarium,
 /area/rnd/xenobiology/level2)
+"UW" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/catwalk,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/starboard)
 "UZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -28661,6 +28808,11 @@
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/forestarboard)
@@ -28982,6 +29134,11 @@
 /obj/machinery/atmospherics/binary/pump/on{
 	dir = 8;
 	target_pressure = 200
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/starboard)
@@ -29898,6 +30055,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/vacant/monitoring)
 "XS" = (
@@ -29949,15 +30111,20 @@
 /area/hallway/primary/thirddeck/fore)
 "XX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor/corner,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/vacant/monitoring)
 "XY" = (
@@ -30148,6 +30315,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/plating,
 /area/vacant/monitoring)
 "Yu" = (
@@ -30226,6 +30398,18 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
+"YE" = (
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/forestarboard)
 "YH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -30320,6 +30504,11 @@
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/universal{
 	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/starboard)
@@ -30537,6 +30726,11 @@
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 8
 	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/vacant/monitoring)
 "ZA" = (
@@ -30610,11 +30804,11 @@
 	name = "south bump";
 	pixel_y = -24
 	},
-/obj/structure/cable/green{
+/obj/effect/floor_decal/techfloor,
+/obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/effect/floor_decal/techfloor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/vacant/monitoring)
 "ZI" = (
@@ -44359,9 +44553,9 @@ ax
 ax
 ax
 kx
-kx
-Vd
-ZO
+UR
+YE
+mD
 cM
 ZO
 ZO
@@ -46176,7 +46370,7 @@ sN
 bv
 aB
 hM
-SP
+Eg
 SZ
 dz
 dz
@@ -49010,7 +49204,7 @@ Tj
 Tj
 XD
 eP
-hb
+vI
 tw
 dk
 KN
@@ -49614,7 +49808,7 @@ GI
 LO
 LO
 LO
-if
+UW
 ht
 dp
 Kg
