@@ -5,7 +5,7 @@ on:
       - master
 
 jobs:
-  Отмена:
+  Cancel:
     name: 'Отмена Ненужных Билдов'
     runs-on: ubuntu-latest
     timeout-minutes: 3
