@@ -454,7 +454,7 @@
 	closing = FALSE
 	return ..()
 
-/obj/machinery/door/firedoor/open(mob/user, var/forced = 0) //inf, was /obj/machinery/door/firedoor/open(var/forced = 0)
+/obj/machinery/door/firedoor/open(var/forced = 0)
 	if(hatch_open)
 		hatch_open = FALSE
 		visible_message(SPAN_NOTICE("\The [src]'s maintenance hatch falls shut as it moves."))
