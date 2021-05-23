@@ -425,29 +425,9 @@ Helpers
 	for(var/client/C)
 		if(!C.credits)
 			C.RollCredits()
-// <<<<<<< HEAD ~bear1ake
-	for(var/mob/Player in GLOB.player_list)
-		if(Player.mind && !isnewplayer(Player))
-			if(Player.stat != DEAD)
-				var/turf/playerTurf = get_turf(Player)
-				if(evacuation_controller.round_over() && evacuation_controller.emergency_evacuation)
-					if(isNotAdminLevel(playerTurf.z))
-						to_chat(Player, "<font color='blue'><b>Вам удалось выжить, но вы были брошены на [station_name()], [Player.real_name]...</b></font>")
-					else
-						to_chat(Player, "<font color='green'><b>Вам удалось пережить события на [station_name()], [Player.real_name]!</b></font>")
-				else if(isAdminLevel(playerTurf.z))
-					to_chat(Player, "<font color='green'><b>Вы успешно избежали событий на [station_name()], [Player.real_name].</b></font>")
-				else if(issilicon(Player))
-					to_chat(Player, "<font color='green'><b>Ваши системы сохранили свою функциональность после событий на [station_name()], [Player.real_name].</b></font>")
-				else
-					to_chat(Player, "<font color='blue'><b>Вы пережили очередную смену на [station_name()], [Player.real_name].</b></font>")
-			else
-				if(isghost(Player))
-					var/mob/observer/ghost/O = Player
-					if(!O.started_as_observer)
-						to_chat(Player, "<font color='red'><b>Вы не пережили события на [station_name()]...</b></font>")
-				else
-					to_chat(Player, "<font color='red'><b>Вы не пережили события на [station_name()]...</b></font>")
+
+	GLOB.using_map.roundend_player_status()
+
 	to_world("<br>")
 
 	for(var/mob/living/silicon/ai/aiPlayer in SSmobs.mob_list)
@@ -460,19 +440,6 @@ Helpers
 
 		if (aiPlayer.connected_robots.len)
 			var/robolist = "<b>Лояльными роботами ИИ были:</b> "
-// ======= INF, рассмотреть возможность слияния ~bear1ake
-/*	GLOB.using_map.roundend_player_status()
-
-	to_world("<br>")
-
-	for(var/mob/living/silicon/ai/aiPlayer in SSmobs.mob_list)
-		var/show_ai_key = aiPlayer.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW
-		to_world("<b>[aiPlayer.name][show_ai_key ? " (played by [aiPlayer.key])" : ""]'s laws at the [aiPlayer.stat == 2 ? "time of their deactivation" : "end of round"] were:</b>")
-		aiPlayer.show_laws(1)
-
-		if (aiPlayer.connected_robots.len)
-			var/minions = "<b>[aiPlayer.name]'s loyal minions were:</b>" 
-* >>>>>>> merge 02 05 2021 */
 			for(var/mob/living/silicon/robot/robo in aiPlayer.connected_robots)
 				var/show_robot_key = robo.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW
 				robolist += " [robo.name][show_robot_key ? "(played by: [robo.key])" : ""][robo.stat ? " (deactivated)" : ""]," // INF, было minions += ...

@@ -103,3 +103,27 @@
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
 	priority_announcement.Announce("[GLOB.using_map.lockdown ? "Сохраняйте спокойствие и оставайтесь на своих местах. Если есть раненые [src.name] поможет отвести их к медбею." : "Возвращайтесь к работе. Текущий уровень угрозы: [security_state.current_security_level.name]!"]", "[GLOB.using_map.lockdown ? "Активирован карантин!" : "Отмена карантина!"]")
 */
+
+/datum/map/sierra/roundend_player_status()
+	for(var/mob/Player in GLOB.player_list)
+		if(Player.mind && !isnewplayer(Player))
+			if(Player.stat != DEAD)
+				var/turf/playerTurf = get_turf(Player)
+				if(evacuation_controller.round_over() && evacuation_controller.emergency_evacuation)
+					if(isNotAdminLevel(playerTurf.z))
+						to_chat(Player, "<font color='blue'><b>Вам удалось выжить, но вы были брошены на [station_name()], [Player.real_name]...</b></font>")
+					else
+						to_chat(Player, "<font color='green'><b>Вам удалось пережить события на [station_name()], [Player.real_name]!</b></font>")
+				else if(isAdminLevel(playerTurf.z))
+					to_chat(Player, "<font color='green'><b>Вы успешно избежали событий на [station_name()], [Player.real_name].</b></font>")
+				else if(issilicon(Player))
+					to_chat(Player, "<font color='green'><b>Ваши системы сохранили свою функциональность после событий на [station_name()], [Player.real_name].</b></font>")
+				else
+					to_chat(Player, "<font color='blue'><b>Вы пережили очередную смену на [station_name()], [Player.real_name].</b></font>")
+			else
+				if(isghost(Player))
+					var/mob/observer/ghost/O = Player
+					if(!O.started_as_observer)
+						to_chat(Player, "<font color='red'><b>Вы не пережили события на [station_name()]...</b></font>")
+				else
+					to_chat(Player, "<font color='red'><b>Вы не пережили события на [station_name()]...</b></font>")
