@@ -57,30 +57,12 @@
 		playsound(get_turf(src), 'sound/effects/Glassbr3.ogg', 75, TRUE)
 		qdel(src)
 	else
-/* INF <<<<<<<
-		if(prob(damage * 2))
-			to_chat(user, "You pulverize what was left of the pylon!")
-			qdel(src)
-		else
-			to_chat(user, "You hit the pylon!")
-		playsound(get_turf(src), 'sound/effects/Glasshit.ogg', 75, 1)
-
-
-/obj/structure/cult/pylon/proc/repair(mob/user as mob)
-	if(isbroken)
-		to_chat(user, "You repair the pylon.")
-		isbroken = 0
-		set_density(1)
-		icon_state = "pylon"
-		set_light(light_max_bright, light_inner_range, light_outer_range, light_color)
-* ======= */
 		user.visible_message(
 			SPAN_DANGER("\The [user] hits \the [src]!"),
 			SPAN_DANGER("You hit \the [src]!"),
 			SPAN_WARNING("You hear thick glass being struck with something.")
 		)
 		playsound(get_turf(src), 'sound/effects/Glasshit.ogg', 75, TRUE)
-// >>>>>>> merge 02 05 2021
 
 /obj/structure/cult/tome
 	name = "Desk"

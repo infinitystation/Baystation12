@@ -7,7 +7,7 @@ on:
     - master
 
 jobs:
-  MakeCL:
+  CreateCL:
     runs-on: ubuntu-latest
     if: github.repository == 'infinitystation/Baystation12' # to prevent this running on forks
     steps:
@@ -28,4 +28,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_EMAIL: ${{ secrets.BOT_EMAIL }}
           GIT_NAME: ${{ secrets.BOT_NAME }} 
-        run: python tools/GenerateChangelog/generate_cl_ru.py
+        run: python tools/changelog/generate_cl_ru.py

@@ -8,14 +8,13 @@ on:
 jobs:
   CompileCL:
     runs-on: ubuntu-latest
-    if: github.repository == 'Baystation12/Baystation12' # to prevent this running on forks
+    if: github.repository == 'infinitystation/Baystation12' # to prevent this running on forks
     steps:
       - name: Загрузка локальной среды
         uses: actions/checkout@v2.3.4
         with:
           fetch-depth: 0 # Otherwise, we will fail to push refs
-          ref: dev
-          token: ${{ secrets.BOT_TOKEN }}
+          ref: master
       - name: Настройка Python
         uses: actions/setup-python@v2.2.2
         with:
@@ -26,7 +25,7 @@ jobs:
           pip install pyyaml bs4
       - name: Генерирование ЧЛ
         run: |
-          python tools/GenerateChangelog/ss13_ru_genchangelog.py html/changelog_infinity.html html/changelogs_infinity
+          python tools/changelog/ss13_ru_genchangelog.py html/changelog_infinity.html html/changelogs_infinity
       - name: Коммит и Пуш
         run: |
           git config --global user.email "${{ secrets.BOT_EMAIL }}"

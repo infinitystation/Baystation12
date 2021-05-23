@@ -6,11 +6,10 @@
 # https://github.com/actions/labeler
 
 name: Обновление лейблов
-on: [pull_request_target, workflow_dispatch]
+on: [pull_request_target]
 
 jobs:
-  Labeling:
-
+  Labels:
     runs-on: ubuntu-latest
     permissions:
       contents: read
