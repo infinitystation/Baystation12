@@ -56,7 +56,6 @@
 	)
 	give_psionic_implant_on_join = FALSE
 	skill_points = 24
-	economic_power = 15
 
 	account_allowed = TRUE
 
@@ -66,7 +65,6 @@
 	to_chat(H, "<b>Ответы на фразы</b>: <span class='danger'>[syndicate_code_response]</span>")
 	H.StoreMemory("<b>Кодовые Фразы</b>: [syndicate_code_phrase]", /decl/memory_options/system)
 	H.StoreMemory("<b>Ответы на фразы</b>: [syndicate_code_response]", /decl/memory_options/system)
-	setup_away_account(H)
 	return ..()
 
 /datum/job/submap/merchant_trainee/is_position_available()
