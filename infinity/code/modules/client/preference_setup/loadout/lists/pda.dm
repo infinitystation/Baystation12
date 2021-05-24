@@ -1,19 +1,19 @@
 datum/gear/utility/modular_scanner
 	display_name = "Scanner module, paper"
 	cost = 1
-	path = /obj/item/weapon/stock_parts/computer/scanner/paper
+	path = /obj/item/stock_parts/computer/scanner/paper
 
 datum/gear/utility/modular_scanner/chemical
 	display_name = "Scanner module, reagents"
-	path = /obj/item/weapon/stock_parts/computer/scanner/reagent
+	path = /obj/item/stock_parts/computer/scanner/reagent
 
 datum/gear/utility/modular_scanner/atmos
 	display_name = "Scanner module, atmos"
-	path = /obj/item/weapon/stock_parts/computer/scanner/atmos
+	path = /obj/item/stock_parts/computer/scanner/atmos
 
 datum/gear/utility/modular_scanner/medical
 	display_name = "Scanner module, medical"
-	path = /obj/item/weapon/stock_parts/computer/scanner/medical
+	path = /obj/item/stock_parts/computer/scanner/medical
 
 /* SIERRA ONLY!!! TORCH HAS THEIR OWN FORCESPAWNABLE PDA
 datum/gear/utility/pda
@@ -45,7 +45,7 @@ datum/gear/utility/pda
 
 /datum/gear/utility/pda/spawn_on_mob(var/mob/living/carbon/human/H, var/metadata)
 	var/obj/item/modular_computer/pda/item = spawn_item(H, metadata)
-	var/obj/item/weapon/card/id = H.GetIdCard()
+	var/obj/item/card/id = H.GetIdCard()
 	if(id)
 		item.attackby(id, H)
 	if(item.tesla_link && !istype(H, /mob/living/carbon/human/dummy))	//PDA in loadout shouldn't work
@@ -85,7 +85,7 @@ datum/gear/utility/pda
 
 /datum/gear/utility/wrist_computer/spawn_on_mob(var/mob/living/carbon/human/H, var/metadata)
 	var/obj/item/modular_computer/pda/wrist/item = spawn_item(H, metadata)
-	var/obj/item/weapon/card/id = H.GetIdCard()
+	var/obj/item/card/id = H.GetIdCard()
 	if(id)
 		item.attackby(id, H)
 	if(item.tesla_link && !istype(H, /mob/living/carbon/human/dummy))	//PDA in loadout shouldn't work

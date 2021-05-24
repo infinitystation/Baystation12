@@ -1,5 +1,10 @@
 /turf/simulated/floor/attackby(var/obj/item/C, var/mob/user)
 
+	var/area/A = get_area(src)
+	if (!A.can_modify_area())
+		visible_message("\The [src] cannot be dismantled or modified in any way!")
+		return
+
 	if(!C || !user)
 		return 0
 
@@ -10,7 +15,9 @@
 		return
 
 	if(flooring)
-		if(isCrowbar(C) && user.a_intent != I_HURT)
+		if(isCrowbar(C))
+			if(user.a_intent != I_HELP)
+				return
 			if(broken || burnt)
 				to_chat(user, "<span class='notice'>You remove the broken [flooring.descriptor].</span>")
 				make_plating()
@@ -18,11 +25,24 @@
 				to_chat(user, "<span class='danger'>You forcefully pry off the [flooring.descriptor], destroying them in the process.</span>")
 				make_plating()
 			else if(flooring.flags & TURF_REMOVE_CROWBAR)
-				if (user.do_skilled(0.5, SKILL_CONSTRUCTION , src, 10))
-					to_chat(user, "<span class='notice'>You lever off the [flooring.descriptor].</span>")
-					make_plating(1)
+				if (flooring.remove_timer)
+					user.visible_message(
+						SPAN_NOTICE("\The [user] begins prying up \the [flooring.descriptor] with \the [C]!"),
+						SPAN_NOTICE("You begin prying up \the [flooring.descriptor] with \the [C].")
+					)
+					playsound(src, 'sound/items/Crowbar.ogg', 80, 1)
+					if (do_after(user, flooring.remove_timer, src))
+						user.visible_message(
+							SPAN_NOTICE("\The [user] pries up \the [flooring.descriptor] with \the [C]!"),
+							SPAN_NOTICE("You pry up \the [flooring.descriptor] with \the [C].")
+						)
+						make_plating(TRUE)
+						playsound(src, 'sound/items/Crowbar.ogg', 80, 1)
+					return
 				else
-					return 0
+					// if (user.do_skilled(0.5, SKILL_CONSTRUCTION , src, 10)) // INF | Как бы это сюда разместить? ~bear1ake
+					to_chat(user, "<span class='notice'>You lever off the [flooring.descriptor].</span>")
+					make_plating(TRUE)
 			else
 				return
 			playsound(src, 'sound/items/Crowbar.ogg', 80, 1)
@@ -30,16 +50,46 @@
 		else if(isScrewdriver(C) && (flooring.flags & TURF_REMOVE_SCREWDRIVER))
 			if(broken || burnt)
 				return
-			to_chat(user, "<span class='notice'>You unscrew and remove the [flooring.descriptor].</span>")
-			make_plating(1)
-			playsound(src, 'sound/items/Screwdriver.ogg', 80, 1)
+			if (flooring.remove_timer)
+				user.visible_message(
+					SPAN_NOTICE("\The [user] begins unscrewing \the [flooring.descriptor] with \the [C]!"),
+					SPAN_NOTICE("You begin unscrewing \the [flooring.descriptor] with \the [C].")
+				)
+				playsound(src, 'sound/items/Screwdriver.ogg', 80, 1)
+				if (do_after(user, flooring.remove_timer, src))
+					user.visible_message(
+						SPAN_NOTICE("\The [user] unscrews \the [flooring.descriptor] with \the [C]!"),
+						SPAN_NOTICE("You unscrew \the [flooring.descriptor] with \the [C].")
+					)
+					make_plating(TRUE)
+					playsound(src, 'sound/items/Screwdriver.ogg', 80, 1)
+				return
+			else
+				to_chat(user, "<span class='notice'>You unscrew and remove the [flooring.descriptor].</span>")
+				make_plating(TRUE)
+				playsound(src, 'sound/items/Screwdriver.ogg', 80, 1)
 			return
 		else if(isWrench(C) && (flooring.flags & TURF_REMOVE_WRENCH))
-			to_chat(user, "<span class='notice'>You unwrench and remove the [flooring.descriptor].</span>")
-			make_plating(1)
-			playsound(src, 'sound/items/Ratchet.ogg', 80, 1)
+			if (flooring.remove_timer)
+				user.visible_message(
+					SPAN_NOTICE("\The [user] begins unwrenching \the [flooring.descriptor] with \the [C]!"),
+					SPAN_NOTICE("You begin unwrenching \the [flooring.descriptor] with \the [C].")
+				)
+				playsound(src, 'sound/items/Ratchet.ogg', 80, 1)
+				if (do_after(user, flooring.remove_timer, src))
+					user.visible_message(
+						SPAN_NOTICE("\The [user] unwrench \the [flooring.descriptor] with \the [C]!"),
+						SPAN_NOTICE("You unwrench \the [flooring.descriptor] with \the [C].")
+					)
+					make_plating(TRUE)
+					playsound(src, 'sound/items/Ratchet.ogg', 80, 1)
+				return
+			else
+				to_chat(user, "<span class='notice'>You unwrench and remove the [flooring.descriptor].</span>")
+				make_plating(TRUE)
+				playsound(src, 'sound/items/Ratchet.ogg', 80, 1)
 			return
-		else if(istype(C, /obj/item/weapon/shovel) && (flooring.flags & TURF_REMOVE_SHOVEL))
+		else if(istype(C, /obj/item/shovel) && (flooring.flags & TURF_REMOVE_SHOVEL))
 			to_chat(user, "<span class='notice'>You shovel off the [flooring.descriptor].</span>")
 			make_plating(1)
 			playsound(src, 'sound/items/Deconstruct.ogg', 80, 1)
@@ -97,7 +147,10 @@
 				if(T)
 					T.visible_message("<span class='warning'>The ceiling above looks as if it's being pried off.</span>")
 				if(do_after(user, 10 SECONDS))
-					is_prying = 0
+					if(!istype(src, /turf/simulated/floor))
+						return
+					if(!broken && !burnt || !(is_plating()))
+						return
 					visible_message("<span class='warning'>[user] has pried off the damaged plating.</span>")
 					new /obj/item/stack/tile/floor(src)
 					src.ReplaceWithLattice()
@@ -110,7 +163,7 @@
 				return
 			return
 		else if(isWelder(C))
-			var/obj/item/weapon/weldingtool/welder = C
+			var/obj/item/weldingtool/welder = C
 			if(welder.isOn() && (is_plating()))
 				if(broken || burnt)
 					if(welder.remove_fuel(0, user))
@@ -128,8 +181,8 @@
 							visible_message("<span class='warning'>[user] has melted the plating's reinforcements! It should be possible to pry it off.</span>")
 							playsound(src, 'sound/items/Welder.ogg', 80, 1)
 					return
-		else if(istype(C, /obj/item/weapon/gun/energy/plasmacutter) && (is_plating()) && !broken && !burnt)
-			var/obj/item/weapon/gun/energy/plasmacutter/cutter = C
+		else if(istype(C, /obj/item/gun/energy/plasmacutter) && (is_plating()) && !broken && !burnt)
+			var/obj/item/gun/energy/plasmacutter/cutter = C
 			if(!cutter.slice(user))
 				return ..()
 			playsound(src, 'sound/items/Welder.ogg', 80, 1)

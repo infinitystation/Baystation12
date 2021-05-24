@@ -21,3 +21,4 @@
 		"iam", "mim", "al", "ja", "non", "ha", "waw", "ya", "hem", "zah", "hml", "ks", "ini",
 		"da", "ks", "iga", "ih", "la", "ulf", "xe", "ayw", "'", "-"
 	)
+	has_written_form = TRUE

@@ -2,7 +2,7 @@ var/list/spells = typesof(/spell) //needed for the badmin verb for now
 
 /spell
 	var/name = "Spell"
-	var/desc = "A spell"
+	var/desc = "A spell."
 	var/feedback = "" //what gets sent if this spell gets chosen by the spellbook.
 	parent_type = /datum
 	var/panel = "Spells"//What panel the proc holder needs to go on.
@@ -106,7 +106,8 @@ var/list/spells = typesof(/spell) //needed for the badmin verb for now
 		holder = user //just in case
 	if(!cast_check(skipcharge, user))
 		return
-	to_chat(user, SPAN_NOTICE("You start casting [name]..."))
+	if (cast_delay > 1)
+		to_chat(user, SPAN_NOTICE("You start casting [name]..."))
 	if(cast_delay && !spell_do_after(user, cast_delay))
 		return
 	var/list/targets = choose_targets(user)
@@ -132,7 +133,7 @@ var/list/spells = typesof(/spell) //needed for the badmin verb for now
 			after_cast(targets) //generates the sparks, smoke, target messages etc.
 		else
 			break
-	while(time != number_of_channels && do_after(user, time_between_channels, incapacitation_flags = INCAPACITATION_KNOCKOUT|INCAPACITATION_FORCELYING|INCAPACITATION_STUNNED, same_direction=1))
+	while(time != number_of_channels && do_after(user, time_between_channels, do_flags = DO_DEFAULT & ~DO_USER_CAN_TURN, incapacitation_flags = INCAPACITATION_KNOCKOUT | INCAPACITATION_FORCELYING | INCAPACITATION_STUNNED))
 	after_spell(targets, user, time) //When we are done with the spell completely.
 
 
@@ -183,7 +184,7 @@ var/list/spells = typesof(/spell) //needed for the badmin verb for now
 			var/obj/effect/overlay/spell = new /obj/effect/overlay(location)
 			spell.icon = overlay_icon
 			spell.icon_state = overlay_icon_state
-			spell.anchored = 1
+			spell.anchored = TRUE
 			spell.set_density(0)
 			spawn(overlay_lifespan)
 				qdel(spell)
@@ -398,4 +399,4 @@ var/list/spells = typesof(/spell) //needed for the badmin verb for now
 	if(!(spell_flags & (GHOSTCAST)))
 		incap_flags |= INCAPACITATION_KNOCKOUT
 
-	return do_after(user,delay, incapacitation_flags = incap_flags)
+	return do_after(user, delay, incapacitation_flags = incap_flags)

@@ -54,7 +54,7 @@
 	suit = /obj/item/clothing/suit/space/void/exploration
 	helmet = /obj/item/clothing/head/helmet/space/void/exploration
 	boots = /obj/item/clothing/shoes/magboots
-	tank = /obj/item/weapon/tank/oxygen
+	tank = /obj/item/tank/oxygen
 	mask = /obj/item/clothing/mask/gas/half
 	req_access = list(access_explorer)
 	islocked = 1
@@ -65,7 +65,7 @@
 	suit = /obj/item/clothing/suit/space/void/pilot
 	helmet = /obj/item/clothing/head/helmet/space/void/pilot
 	boots = /obj/item/clothing/shoes/magboots
-	tank = /obj/item/weapon/tank/oxygen
+	tank = /obj/item/tank/oxygen
 	mask = /obj/item/clothing/mask/breath
 	req_access = list(access_explorer, access_expedition_shuttle_helm)
 	islocked = 1
@@ -149,7 +149,7 @@
 			if(sendto.department == destination)
 				exit = sendto
 		var/replyorigin = input(user, "Please specify who the fax is coming from", "Origin") as text|null
-		var/obj/item/weapon/paper/admin/P = new /obj/item/weapon/paper/admin(user) //hopefully the null loc won't cause trouble for us
+		var/obj/item/paper/admin/P = new /obj/item/paper/admin(user) //hopefully the null loc won't cause trouble for us
 		P.admindatum = user.client.holder
 		P.origin = replyorigin
 		P.destination = exit
@@ -165,7 +165,7 @@
 			scan = null
 		else
 			var/obj/item/I = user.get_active_hand()
-			if (istype(I, /obj/item/weapon/card/id) && user.unEquip(I, src))
+			if (istype(I, /obj/item/card/id) && user.unEquip(I, src))
 				scan = I
 		authenticated = 0
 
@@ -202,7 +202,7 @@
 	begins_closed = FALSE
 	icon_state = "pdoor0"
 
-/obj/machinery/door/blast/regular/lockdown/attackby(obj/item/weapon/C as obj, mob/user as mob)
+/obj/machinery/door/blast/regular/lockdown/attackby(obj/item/C as obj, mob/user as mob)
 	. = ..(C, user)
 	if(isid(C) || istype(C, /obj/item/modular_computer/pda))
 		if(allowed(user))

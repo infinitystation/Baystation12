@@ -31,7 +31,7 @@
 
 	log_say("[key_name(src)] commanded to [key_name(M)]: [text]")
 
-	to_chat(M, "<span class='danger'>Вы внезапно чувствуете очень явный и требовательный приказ: <i>[text]</i>. Вы понимаете, что должны выполнить его любой ценой.</span>")
+	to_chat(M, "<span class='danger'>пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: <i>[text]</i>. пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.</span>")
 	if(istype(M,/mob/living/carbon/human))
 		to_chat(src, "<span class='warning'>Your nose begins to bleed...</span>")
 		src.drip(5)
@@ -173,7 +173,7 @@
 										/datum/reagent/sulfur, /datum/reagent/lipozine, /datum/reagent/sodiumchloride, /datum/reagent/frostoil, /datum/reagent/capsaicin/condensed,
 										/datum/reagent/inaprovaline, /datum/reagent/bicaridine, /datum/reagent/kelotane, /datum/reagent/dermaline, /datum/reagent/dylovene,
 										/datum/reagent/dexalin, /datum/reagent/alkysine, /datum/reagent/hyperzine, /datum/reagent/tobacco, /datum/reagent/gold, /datum/reagent/silver,
-										/datum/reagent/uranium, /datum/reagent/thermite, /datum/reagent/space_cleaner, /datum/reagent/lube, /datum/reagent/glycerol, /datum/reagent/coolant,
+										/datum/reagent/uranium, /datum/reagent/thermite, /datum/reagent/space_cleaner, /datum/reagent/glycerol, /datum/reagent/coolant,
 										/datum/reagent/toxin/carpotoxin, /datum/reagent/toxin/phoron, /datum/reagent/toxin/cyanide, /datum/reagent/toxin/zombiepowder, /datum/reagent/mutagen,
 										/datum/reagent/soporific, /datum/reagent/chloralhydrate, /datum/reagent/space_drugs, /datum/reagent/mindbreaker, /datum/reagent/slimetoxin)
 	src.reagents.add_reagent(random, 5)
@@ -195,7 +195,7 @@
 										/datum/reagent/sulfur, /datum/reagent/lipozine, /datum/reagent/sodiumchloride, /datum/reagent/frostoil, /datum/reagent/capsaicin/condensed,
 										/datum/reagent/inaprovaline, /datum/reagent/bicaridine, /datum/reagent/kelotane, /datum/reagent/dermaline, /datum/reagent/dylovene,
 										/datum/reagent/dexalin, /datum/reagent/alkysine, /datum/reagent/hyperzine, /datum/reagent/tobacco, /datum/reagent/gold, /datum/reagent/silver,
-										/datum/reagent/uranium, /datum/reagent/thermite, /datum/reagent/space_cleaner, /datum/reagent/lube, /datum/reagent/glycerol, /datum/reagent/coolant,
+										/datum/reagent/uranium, /datum/reagent/thermite, /datum/reagent/space_cleaner, /datum/reagent/glycerol, /datum/reagent/coolant,
 										/datum/reagent/toxin/carpotoxin, /datum/reagent/toxin/phoron, /datum/reagent/toxin/cyanide, /datum/reagent/toxin/zombiepowder, /datum/reagent/mutagen,
 										/datum/reagent/soporific, /datum/reagent/chloralhydrate, /datum/reagent/space_drugs, /datum/reagent/mindbreaker, /datum/reagent/slimetoxin)
 	src.reagents.add_reagent(random, 45)
@@ -217,7 +217,7 @@
 	if(last_special < world.time)
 		return
 
-	var/new_species = input("Select new species!", "Switch species", null, null) as null|anything in list(SPECIES_HUMAN, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_PROMETHEAN, SPECIES_YEOSA, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER, SPECIES_BOOSTER, SPECIES_TAJARA, SPECIES_RESOMI)
+	var/new_species = input("Select new species!", "Switch species", null, null) as null|anything in list(SPECIES_HUMAN, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_PROMETHEAN, SPECIES_YEOSA, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER, SPECIES_TAJARA, SPECIES_RESOMI)
 	src.visible_message(SPAN_WARNING("[src]'s flesh rapidly mutates and he transforms into [lowertext(new_species)]!"))
 	src.set_species(new_species)
 	last_special = world.time + (120 SECONDS)
@@ -310,7 +310,7 @@
 	if(last_special < world.time)
 		return
 
-	new /obj/item/weapon/reagent_containers/food/snacks/egg/alien(get_turf(src))
+	new /obj/item/reagent_containers/food/snacks/egg/alien(get_turf(src))
 	src.visible_message(SPAN_WARNING("[src] vomits a strange egg!"))
 	new /obj/effect/decal/cleanable/vomit(get_turf(src))
 	playsound(src.loc, 'sound/effects/splat.ogg', 50, 1)

@@ -129,15 +129,15 @@
 		S.channel = 703
 		sound_to(usr, S)
 
-	if(href_list["wipe_tape_data"])
-		var/obj/item/music_tape/tape = locate(href_list["wipe_tape_data"])
+/*	if(href_list["wipe_tape_data"]) jukebox merge 02 05 2021 ~bear1ake
+		var/obj/item/music_tape/tape = locate(href  _list["wipe_tape_data"])
 		if(!tape.track)
 			to_chat(usr, "This [tape] have no data or already is wiped.")
 			return
 
 		if(alert("Wipe data written by [(tape.uploader_ckey) ? tape.uploader_ckey : "<b>*NULL*</b>"]?",,"Yes", "No") == "Yes")
-			if(istype(tape.loc, /obj/machinery/media/jukebox))
-				var/obj/machinery/media/jukebox/J = tape.loc
+			if(istype(tape.loc, /obj/machinery/jukebox))
+				var/obj/machinery/jukebox/J = tape.loc
 				if(J.current_track == tape.track)
 					J.StopPlaying()
 					J.current_track = null
@@ -149,7 +149,7 @@
 
 			qdel(tape.track)
 			tape.ruin()
-			tape.SetName("burned [initial(tape.name)]")
+			tape.SetName("burned [initial(tape.name)]") */
 
 	if(href_list["pray_options"])
 		if(!check_rights(R_ADMIN|R_FUN))
@@ -172,7 +172,7 @@
 
 		switch(response)
 			if("Give Cookie")
-				if(H.equip_to_slot_or_store_or_drop(new /obj/item/weapon/reagent_containers/food/snacks/cookie(H), slot_l_hand))
+				if(H.equip_to_slot_or_store_or_drop(new /obj/item/reagent_containers/food/snacks/cookie(H), slot_l_hand))
 					log_admin("[key_name(H)] got their cookie, spawned by [key_name(usr)]")
 					message_admins("[key_name(H)] got their cookie, spawned by [key_name(usr)]")
 					SSstatistics.add_field("admin_cookies_spawned",1)
@@ -180,7 +180,7 @@
 					H.playsound_local(null, 'infinity/sound/effects/pray.ogg', 50)
 
 			if("Give Cup of Coffee")
-				var/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/coffee = new(H)
+				var/obj/item/reagent_containers/food/drinks/glass2/coffeecup/coffee = new(H)
 				coffee.reagents.add_reagent(/datum/reagent/drink/coffee, 30)
 				if(H.equip_to_slot_or_store_or_drop(coffee, slot_l_hand))
 					log_admin("[key_name(H)] got their cup of coffee, spawned by [key_name(usr)]")
@@ -190,7 +190,7 @@
 					H.playsound_local(null, 'infinity/sound/effects/pray.ogg', 50)
 
 			if("Give Cup of Tea")
-				if(H.equip_to_slot_or_store_or_drop(new /obj/item/weapon/reagent_containers/food/drinks/tea/green(H), slot_l_hand))
+				if(H.equip_to_slot_or_store_or_drop(new /obj/item/reagent_containers/food/drinks/tea/green(H), slot_l_hand))
 					log_admin("[key_name(H)] got their cup of green tea, spawned by [key_name(usr)]")
 					message_admins("[key_name(H)] got their cup of green tea, spawned by [key_name(usr)]")
 					SSstatistics.add_field("admin_tea_spawned",1)
@@ -214,8 +214,7 @@
 						to_chat(H, SPAN_DANGER("The gods have punished you for your sins!"))
 						playsound(H, 'infinity/sound/effects/lightningbolt.ogg', 50)
 					if("Brain damage")
-						H.adjustBrainLoss(29.5) //*2. Gives 59 - a little slowdows and pain messages.\
-						Would be healed with inaprovaline
+						H.adjustBrainLoss(29.5) //*2. Gives 59 - a little slowdows and pain messages. Would be healed with inaprovaline
 						to_chat(H, SPAN_DANGER("The gods have punished you for your sins!"))
 						H.playsound_local(null, 'infinity/sound/effects/rings.ogg', 100)
 //					if("Gib")

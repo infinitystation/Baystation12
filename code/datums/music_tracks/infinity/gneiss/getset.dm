@@ -1,7 +1,7 @@
-/music_track/getset
-	artist = "Duke Gneiss"
+/decl/audio/track/getset
+	author = "Duke Gneiss"
 	title = "Get Set"
-	album = "Ascention"
-	song = 'infinity/sound/music/gneiss/Get Set.mp3'
+	collection =  "Ascention"
+	source = 'infinity/sound/music/gneiss/Get Set.mp3'
 	license =  /decl/license/cc_by_3_0
 	url = "https://soundcloud.com/dukegneiss/get-set"

@@ -77,7 +77,7 @@
 /datum/sprite_accessory/marking/resomi
 	icon = 'infinity/icons/mob/human_races/species/resomi/markings.dmi'
 	species_allowed = list(SPECIES_RESOMI)
-	do_colouration = 1
+	do_coloration = TRUE
 
 /datum/sprite_accessory/marking/resomi/resomi_fluff
 	name = "Resomi underfluff"

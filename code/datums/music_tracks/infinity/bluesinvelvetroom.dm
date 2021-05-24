@@ -1,6 +1,6 @@
-/music_track/bluesinvelvetroom
-	artist = "Shoji Meguro"
+/decl/audio/track/bluesinvelvetroom
+	author = "Shoji Meguro"
 	title = "Blues In Velvet Room"
-	album = "PERSONA 3 OST"
-	song = 'infinity/sound/music/blues_in_velvet_room.ogg'
+	collection =  "PERSONA 3 OST"
+	source = 'infinity/sound/music/blues_in_velvet_room.ogg'
 	license = /decl/license/grandfathered

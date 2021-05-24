@@ -94,7 +94,7 @@
 			if(istype(O, type)) return O		//O is already the desired type
 			if(istype(O, /token)) O=O:value //sets O to text
 			if(istext(O))										//sets O to path
-				if(L.Find(O)) O=L[O]
+				if(list_find(L, O)) O=L[O]
 				else return null
 			if(ispath(O))O=new O						//catches path from last check
 			else return null								//Unknown type
@@ -156,9 +156,9 @@
 		EndOfExpression(end[])
 			if(!curToken)
 				return 1
-			if(istype(curToken, /token/symbol) && end.Find(curToken.value))
+			if(istype(curToken, /token/symbol) && list_find(end, curToken.value))
 				return 1
-			if(istype(curToken, /token/end) && end.Find(/token/end))
+			if(istype(curToken, /token/end) && list_find(end, /token/end))
 				return 1
 			return 0
 
@@ -186,7 +186,7 @@
 			while(1)
 				if(EndOfExpression(end))
 					break
-				if(istype(curToken, /token/symbol) && ErrChars.Find(curToken.value))
+				if(istype(curToken, /token/symbol) && list_find(ErrChars, curToken.value))
 					errors+=new/scriptError/BadToken(curToken)
 					break
 

@@ -1,6 +1,7 @@
 #include "bearcat_areas.dm"
 #include "bearcat_jobs.dm"
 #include "bearcat_access.dm"
+#include "bearcat_radio.dm"
 
 /obj/effect/submap_landmark/joinable_submap/bearcat
 	name = "FTV Bearcat"
@@ -17,7 +18,7 @@
 /obj/effect/overmap/visitable/ship/bearcat
 	name = "light freighter"
 	color = "#00ffff"
-	vessel_mass = 60
+	vessel_mass = 20000
 	max_speed = 1/(10 SECONDS)
 	burn_delay = 10 SECONDS
 
@@ -34,7 +35,8 @@
 	id = "awaysite_bearcat_wreck"
 	description = "A wrecked light freighter."
 	suffixes = list("bearcat/bearcat-1.dmm", "bearcat/bearcat-2.dmm")
-	cost = 0.5 //INF, WAS 1
+	spawn_cost = 0.5 // INF, WAS 1
+	player_cost = 4
 	shuttles_to_initialise = list(/datum/shuttle/autodock/ferry/lift)
 	area_usage_test_exempted_root_areas = list(/area/ship)
 	apc_test_exempt_areas = list(
@@ -50,6 +52,7 @@
 		/area/ship/scrap/shuttle/lift = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/ship/scrap/command/hallway = NO_SCRUBBER|NO_VENT
 	)
+	spawn_weight = 0.67
 
 /datum/shuttle/autodock/ferry/lift
 	name = "Cargo Lift"
@@ -70,7 +73,7 @@
 	icon_state = "tiny"
 	icon_keyboard = "tiny_keyboard"
 	icon_screen = "lift"
-	density = 0
+	density = FALSE
 
 /obj/effect/shuttle_landmark/lift/top
 	name = "Top Deck"
@@ -84,10 +87,7 @@
 	base_turf = /turf/simulated/floor
 
 /obj/machinery/power/apc/derelict
-	cell_type = /obj/item/weapon/cell/crap/empty
-	lighting = 0
-	equipment = 0
-	environ = 0
+	cell_type = /obj/item/cell/crap/empty
 	locked = 0
 	coverlocked = 0
 
@@ -96,18 +96,6 @@
 
 /obj/machinery/door/airlock/autoname/engineering
 	door_color = COLOR_AMBER
-
-/turf/simulated/floor/usedup
-	initial_gas = list(GAS_CO2 = MOLES_O2STANDARD, GAS_NITROGEN = MOLES_N2STANDARD)
-
-/turf/simulated/floor/tiled/usedup
-	initial_gas = list(GAS_CO2 = MOLES_O2STANDARD, GAS_NITROGEN = MOLES_N2STANDARD)
-
-/turf/simulated/floor/tiled/dark/usedup
-	initial_gas = list(GAS_CO2 = MOLES_O2STANDARD, GAS_NITROGEN = MOLES_N2STANDARD)
-
-/turf/simulated/floor/tiled/white/usedup
-	initial_gas = list(GAS_CO2 = MOLES_O2STANDARD, GAS_NITROGEN = MOLES_N2STANDARD)
 
 /obj/effect/landmark/deadcap
 	name = "Dead Captain"
@@ -133,7 +121,7 @@
 	uniform = /obj/item/clothing/under/casual_pants/classicjeans
 	suit = /obj/item/clothing/suit/storage/hooded/wintercoat
 	shoes = /obj/item/clothing/shoes/black
-	r_pocket = /obj/item/device/radio
+	r_pocket = /obj/item/device/radio/map_preset/bearcat
 
 /decl/hierarchy/outfit/deadcap/post_equip(mob/living/carbon/human/H)
 	..()
@@ -144,5 +132,5 @@
 			uniform.attach_accessory(null, eyegore)
 		else
 			qdel(eyegore)
-	var/obj/item/weapon/cell/super/C = new()
+	var/obj/item/cell/super/C = new()
 	H.put_in_any_hand_if_possible(C)

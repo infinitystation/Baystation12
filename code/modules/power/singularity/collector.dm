@@ -6,10 +6,10 @@ var/global/list/rad_collectors = list()
 	desc = "A device which uses radiation and phoron to produce power."
 	icon = 'icons/obj/machines/rad_collector.dmi'
 	icon_state = "ca"
-	anchored = 0
-	density = 1
+	anchored = FALSE
+	density = TRUE
 	req_access = list(access_engine_equip)
-	var/obj/item/weapon/tank/phoron/P = null
+	var/obj/item/tank/phoron/P = null
 
 	var/health = 100
 	var/max_safe_temp = 1000 + T0C
@@ -35,19 +35,19 @@ var/global/list/rad_collectors = list()
 	. = ..()
 	rad_collectors += src
 /*	component_parts = list(
-		new /obj/item/weapon/stock_parts/circuitboard/rad_collector,
-		new /obj/item/weapon/stock_parts/manipulator,
-		new /obj/item/weapon/stock_parts/manipulator,
-		new /obj/item/weapon/stock_parts/capacitor,
-		new /obj/item/weapon/stock_parts/capacitor)*/
+		new /obj/item/stock_parts/circuitboard/rad_collector,
+		new /obj/item/stock_parts/manipulator,
+		new /obj/item/stock_parts/manipulator,
+		new /obj/item/stock_parts/capacitor,
+		new /obj/item/stock_parts/capacitor)*/
 	RefreshParts()
 
 /obj/machinery/power/rad_collector/RefreshParts()
 	drainratio = initial(drainratio)
 	recievepulse_mult = initial(recievepulse_mult)
-	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
 		drainratio -= M.rating * 0.1 - 0.1
-	for(var/obj/item/weapon/stock_parts/capacitor/C in component_parts)
+	for(var/obj/item/stock_parts/capacitor/C in component_parts)
 		recievepulse_mult += C.rating * 2.5
 
 /obj/machinery/power/rad_collector/Destroy()
@@ -76,7 +76,7 @@ var/global/list/rad_collectors = list()
 			if(last_rads > max_rads)
 				if(world.time > end_time)
 					end_time = world.time + alert_delay
-					visible_message("\icon[src] \the [src] beeps loudly as the radiation reaches dangerous levels, indicating imminent damage.")
+					visible_message("[icon2html(src, viewers(get_turf(src)))] \the [src] beeps loudly as the radiation reaches dangerous levels, indicating imminent damage.")
 					playsound(src, 'sound/effects/screech.ogg', 100, 1, 1)
 			receive_pulse(12.5*(last_rads/max_rads)/(0.3+(last_rads/max_rads)))
 
@@ -107,7 +107,7 @@ var/global/list/rad_collectors = list()
 		to_chat(user, "<span class='warning'>The controls are locked!</span>")
 
 /obj/machinery/power/rad_collector/attackby(obj/item/W, mob/user)
-	if(istype(W, /obj/item/weapon/tank/phoron))
+	if(istype(W, /obj/item/tank/phoron))
 		if(!anchored)
 			to_chat(user, "<span class='warning'>The [src] needs to be secured to the floor first.</span>")
 			return
@@ -148,9 +148,9 @@ var/global/list/rad_collectors = list()
 			connect_to_network()
 		else
 			disconnect_from_network()
-		return
-	if(istype(W, /obj/item/weapon/card/id)||istype(W, /obj/item/modular_computer) && allowed(user))
-		if(allowed(user))
+		return 1
+	else if(istype(W, /obj/item/card/id)||istype(W, /obj/item/modular_computer))
+		if (allowed(user))
 			if(active)
 				locked = !src.locked
 				to_chat(user, "The controls are now [locked ? "locked." : "unlocked."]")
@@ -203,7 +203,7 @@ var/global/list/rad_collectors = list()
 
 /obj/machinery/power/rad_collector/proc/eject()
 	locked = 0
-	var/obj/item/weapon/tank/phoron/Z = src.P
+	var/obj/item/tank/phoron/Z = src.P
 	if (!Z)
 		return
 	Z.dropInto(loc)

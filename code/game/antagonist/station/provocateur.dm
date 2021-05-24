@@ -2,6 +2,8 @@ GLOBAL_DATUM_INIT(provocateurs, /datum/antagonist/provocateur, new)
 
 /datum/antagonist/provocateur
 	id = MODE_MISC_AGITATOR
+// INF	role_text = "Deuteragonist"
+// INF	role_text_plural = "Deuteragonists"
 	role_text = "Provocateur"
 	role_text_plural = "Provocateurs"
 	antaghud_indicator = "hud_renegade" //INF, WAS hud_traitor
@@ -14,3 +16,12 @@ GLOBAL_DATUM_INIT(provocateurs, /datum/antagonist/provocateur, new)
 	денег, будьте заводилой в драках - действуйте как <b>мини-антагонист!</b>"
 	blacklisted_jobs = list()
 	skill_setter = null
+	min_player_age = 0
+
+	var/antag_text_updated
+
+/datum/antagonist/provocateur/get_antag_text(mob/recipient)
+	if (!antag_text_updated)
+		antag_text = replacetext(antag_text, "%WORLD_NAME%", station_name())
+		antag_text_updated = TRUE
+	return antag_text

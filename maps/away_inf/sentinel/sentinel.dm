@@ -46,7 +46,9 @@
 	description = "Nagashino-class Multipurpose Patrol Craft."
 	prefix = "maps/away_inf/"
 	suffixes = list("sentinel/sentinel-1.dmm", "sentinel/sentinel-2.dmm")
-	cost = 1
+	spawn_cost = 0.5
+	player_cost = 7 // Нынешнее значение основано на количестве игроков в авейке ~bear1ake
+	spawn_weight = 1 // INF, spawn_weight = 0.5
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/reaper)
 
 
@@ -87,9 +89,9 @@
 	listening_freqs = list(SCG_FREQ)
 	channel_color = COMMS_COLOR_CENTCOMM
 	channel_name = "SCG Patrol"
-	circuitboard = /obj/item/weapon/stock_parts/circuitboard/telecomms/allinone/away_scg_patrol
+	circuitboard = /obj/item/stock_parts/circuitboard/telecomms/allinone/away_scg_patrol
 
-/obj/item/weapon/stock_parts/circuitboard/telecomms/allinone/away_scg_patrol
+/obj/item/stock_parts/circuitboard/telecomms/allinone/away_scg_patrol
 	build_path = /obj/machinery/telecomms/allinone/away_scg_patrol
 
 /obj/item/device/radio/headset/away_scg_patrol

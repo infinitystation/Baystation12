@@ -1,10 +1,10 @@
-/obj/item/weapon/clothingbag/forryaniyar
+/obj/item/clothingbag/forryaniyar
 	name = "custom bag"
 	desc = "Large clothing bag wuth something inside"
 
-/obj/item/weapon/clothingbag/forryaniyar/Initialize()
+/obj/item/clothingbag/forryaniyar/Initialize()
 	. = ..()
-	new /obj/item/weapon/storage/backpack/satchel/custom_forrya(src)
+	new /obj/item/storage/backpack/satchel/custom_forrya(src)
 	new /obj/item/clothing/under/thermal/heat/thermosuit(src)
 
 /obj/item/clothing/shoes/workboots/custom_forrya_winter
@@ -23,16 +23,16 @@
 
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/storage/backpack/satchel/custom_forrya
+/obj/item/storage/backpack/satchel/custom_forrya
 	name = "winter satchel"
 	desc = "White satchel with winter camouflage."
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "satchel-winta"
 	item_state = "satchel-winta"
 	startswith = list(
-		/obj/item/weapon/storage/box/custom_forrya_whitebox,
-		/obj/item/weapon/crowbar/custom_multishowel,
-		/obj/item/clothing/accessory/storage/drop_pouches/custom_forrya,
+		/obj/item/storage/box/custom_forrya_whitebox,
+		/obj/item/crowbar/custom_multishowel,
+		/obj/item/clothing/accessory/storage/white_drop/custom_forrya,
 		/obj/item/clothing/mask/gas/alt/custom_forrya,
 		/obj/item/clothing/glasses/meson/prescription/tajvisor/hybrid/custom
 	)
@@ -63,15 +63,15 @@
 	min_cold_protection_temperature = T0C - 175
 	max_heat_protection_temperature = T0C + 55
 	allowed = list(
-		/obj/item/weapon/pen,/obj/item/weapon/paper,
-		/obj/item/weapon/storage/fancy/cigarettes,
-		/obj/item/weapon/storage/box/matches,
-		/obj/item/weapon/reagent_containers/food/drinks/flask,
+		/obj/item/pen,/obj/item/paper,
+		/obj/item/storage/fancy/cigarettes,
+		/obj/item/storage/box/matches,
+		/obj/item/reagent_containers/food/drinks/flask,
 		/obj/item/device/flashlight,
-		/obj/item/weapon/tank,
-		/obj/item/weapon/shovel/custom_multishowel,
-		/obj/item/weapon/pickaxe/silver/custom_multishowel,
-		/obj/item/weapon/crowbar/custom_multishowel)
+		/obj/item/tank,
+		/obj/item/shovel/custom_multishowel,
+		/obj/item/pickaxe/silver/custom_multishowel,
+		/obj/item/crowbar/custom_multishowel)
 	flags_inv = HIDEJUMPSUIT|HIDETAIL
 	valid_accessory_slots = list(
 		ACCESSORY_SLOT_UTILITY, ACCESSORY_SLOT_HOLSTER,
@@ -167,8 +167,8 @@
 /obj/effect/dummy/custom_forrya_cam
 	name = ""
 	desc = ""
-	density = 0
-	anchored = 1
+	density = FALSE
+	anchored = TRUE
 	var/can_move = 1
 	var/obj/item/device/chameleon/master = null
 
@@ -271,9 +271,9 @@
 	min_cold_protection_temperature = T0C - 175
 	flags_inv = HIDETAIL
 	allowed = list (
-		/obj/item/weapon/shovel/custom_multishowel,
-		/obj/item/weapon/pickaxe/silver/custom_multishowel,
-		/obj/item/weapon/crowbar/custom_multishowel)
+		/obj/item/shovel/custom_multishowel,
+		/obj/item/pickaxe/silver/custom_multishowel,
+		/obj/item/crowbar/custom_multishowel)
 	accessory_icons = list(
 		slot_w_uniform_str = CUSTOM_ITEM_MOB,
 		slot_tie_str = CUSTOM_ITEM_MOB,
@@ -285,7 +285,7 @@
 
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/storage/box/custom_forrya_whitebox
+/obj/item/storage/box/custom_forrya_whitebox
 	name = "white box"
 	icon = CUSTOM_ITEM_OBJ
 	max_w_class = ITEM_SIZE_NORMAL
@@ -309,7 +309,7 @@
 
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/shovel/custom_multishowel
+/obj/item/shovel/custom_multishowel
 	name = "trenching multitool"
 	desc = "Decades of evolution of trench tools have led \
 	to the appearance of this ideal thing - a foldable \
@@ -323,14 +323,14 @@
 
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/shovel/custom_multishowel/attack_self(mob/user)
+/obj/item/shovel/custom_multishowel/attack_self(mob/user)
 	playsound(get_turf(user),'infinity/sound/items/change_drill.ogg',50,1)
-	var/obj/item/weapon/shovel/custom_multishowel/shovel = new /obj/item/weapon/crowbar/custom_multishowel
+	var/obj/item/shovel/custom_multishowel/shovel = new /obj/item/crowbar/custom_multishowel
 	to_chat(user, "<span class='notice'> You put forward crowbar to [src].</span>")
 	qdel(src)
 	user.put_in_active_hand(shovel)
 
-/obj/item/weapon/pickaxe/silver/custom_multishowel
+/obj/item/pickaxe/silver/custom_multishowel
 	name = "trenching multitool"
 	desc = "Decades of evolution of trench tools have led \
 	to the appearance of this ideal thing - a foldable \
@@ -344,18 +344,18 @@
 
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/pickaxe/silver/custom_multishowel/attack_self(mob/user)
+/obj/item/pickaxe/silver/custom_multishowel/attack_self(mob/user)
 	playsound(get_turf(user),'infinity/sound/items/change_drill.ogg',50,1)
-	var/obj/item/weapon/pickaxe/silver/custom_multishowel/kilrka = new /obj/item/weapon/shovel/custom_multishowel
+	var/obj/item/pickaxe/silver/custom_multishowel/kilrka = new /obj/item/shovel/custom_multishowel
 	to_chat(user, "<span class='notice'>You collapsed your [src].</span>")
 	qdel(src)
 	user.put_in_active_hand(kilrka)
 
-/obj/item/weapon/pickaxe/silver/custom_multishowel/Initialize()
+/obj/item/pickaxe/silver/custom_multishowel/Initialize()
 	. = ..()
 	icon_state = "set-pickaxe"
 
-/obj/item/weapon/crowbar/custom_multishowel
+/obj/item/crowbar/custom_multishowel
 	name = "trenching multitool"
 	desc = "Decades of evolution of trench tools have led \
 	to the appearance of this ideal thing - a foldable \
@@ -369,9 +369,9 @@
 
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/crowbar/custom_multishowel/attack_self(mob/user)
+/obj/item/crowbar/custom_multishowel/attack_self(mob/user)
 	playsound(get_turf(user),'infinity/sound/items/change_drill.ogg',50,1)
-	var/obj/item/weapon/crowbar/custom_multishowel/lomos = new /obj/item/weapon/pickaxe/silver/custom_multishowel
+	var/obj/item/crowbar/custom_multishowel/lomos = new /obj/item/pickaxe/silver/custom_multishowel
 	to_chat(user, "<span class='notice'> You put forward pickaxe head to [src].</span>")
 	qdel(src)
 	user.put_in_active_hand(lomos)
@@ -381,7 +381,7 @@
  * ==========================
  */
 
-/obj/item/clothing/accessory/storage/drop_pouches/custom_forrya
+/obj/item/clothing/accessory/storage/white_drop/custom_forrya
 	name = "kahal'ket belt kit"
 	desc = "Small, strong, rough to the touch belt kit for storage of various things made from natural materials."
 	icon = CUSTOM_ITEM_OBJ
@@ -394,9 +394,9 @@
 
 	trade_blacklisted = TRUE
 
-/obj/item/clothing/accessory/storage/drop_pouches/custom_forrya/Initialize()
+/obj/item/clothing/accessory/storage/white_drop/custom_forrya/Initialize()
 	. = ..()
-	hold.max_w_class = ITEM_SIZE_NORMAL
+	max_w_class = ITEM_SIZE_NORMAL
 
 /obj/item/clothing/mask/gas/alt/custom_forrya
 	name = "gas mask"

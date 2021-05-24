@@ -3,7 +3,7 @@
 	desc = "A machine which rewrites musical disks."
 	icon = 'infinity/icons/obj/machinery/disk_writer.dmi'
 	icon_state = "writer_off"
-	density = 0
+	density = FALSE
 	power_channel = EQUIP
 	use_power = 1
 	idle_power_usage = 10
@@ -95,7 +95,7 @@
 		if(!writing && !customer && disk && cooldown == 0)
 			if(disk.rewrites_left > 0)
 				if(write_disk(usr))
-					message_admins("[customer.real_name]([customer.ckey]) uploaded new sound <A HREF='?_src_=holder;listensound=\ref[disk.track.track]'>(preview)</A> in <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>the cassette</a> named as \"[disk.track.title]\". <A HREF='?_src_=holder;wipedata=\ref[disk]'>Wipe</A> data.")
+					message_admins("[customer.real_name]([customer.ckey]) uploaded new sound <A HREF='?_src_=holder;listensound=\ref[disk.track.source]'>(preview)</A> in <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>the cassette</a> named as \"[disk.track.title]\". <A HREF='?_src_=holder;wipedata=\ref[disk]'>Wipe</A> data.")
 					cooldown += 3 MINUTES
 					sleep(4 SECONDS)
 
@@ -156,7 +156,7 @@
 		if(disk.track) //Removing old datum disk if there one
 			qdel(disk.track)
 
-		var/datum/track/T = new(new_name, new_sound_file)
+		var/jukebox_track/T = new(new_name, new_sound_file)
 
 		if(T)
 			disk.track = T

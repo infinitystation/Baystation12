@@ -1,5 +1,6 @@
 /datum/event/gravity
 	announceWhen = 5
+	var/list/gravity_status = list()
 
 /datum/event/gravity/setup()
 	endWhen = rand(15, 60)
@@ -9,10 +10,10 @@
 
 /*[inf.exclude]
 /datum/event/gravity/start()
-	gravity_is_on = 0
-	for(var/area/A in world)
-		if(A.z in affecting_z)
-			A.gravitychange(gravity_is_on)
+	for (var/area/A in world)
+		if (A.has_gravity() && (A.z in affecting_z))
+			gravity_status += A
+			A.gravitychange(FALSE)
 
 /datum/event/gravity/end()
 	if(!gravity_is_on)

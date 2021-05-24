@@ -30,9 +30,8 @@
 		if(!speech_method.can_receive(communicator, M))
 			continue
 		var/sent_message = speech_method.get_message(communicator, M, message)
-		sent_message = emoji_parse(sent_message)
-//		if(communicator.holder)
-//			sent_message = emoji_parse(sent_message)
+		sent_message = emoji_parse_by_user(sent_message, communicator)//inf
+
 		receive_communication(communicator, M, "<span class='deadsay'>" + create_text_tag("dead", "DEAD:", M.client) + " [sent_message]</span>")
 
 /decl/dsay_communication/proc/can_communicate(var/client/communicator, var/message)
@@ -77,6 +76,7 @@
 
 	var/lname
 	var/mob/observer/ghost/DM
+
 	if(isghost(C.mob))
 		DM = C.mob
 	var/anonsay_pref = (DM.client.get_preference_value(/datum/client_preference/anon_say) == GLOB.PREF_YES)
@@ -93,10 +93,10 @@
 
 /decl/dsay_communication/proc/get_message(var/client/C, var/mob/M, var/message)
 	var say_verb = pick("complains","moans","whines","laments","blubbers")
-	return "[get_name(C, M)] [say_verb], <span class='message'>\"[message]\"</span>"
+	return "[get_name(C, M)] [say_verb], <span class='message linkify'>\"[message]\"</span>"
 
 /decl/dsay_communication/emote/get_message(var/client/C, var/mob/M, var/message)
-	return "[get_name(C, M)] <span class='message'>[message]</span>"
+	return "[get_name(C, M)] <span class='message linkify'>[message]</span>"
 
 /decl/dsay_communication/proc/adjust_channel(var/decl/communication_channel/dsay)
 	dsay.flags |= COMMUNICATION_ADMIN_FOLLOW|COMMUNICATION_GHOST_FOLLOW // Add admin and ghost follow
@@ -119,7 +119,7 @@
 
 /decl/dsay_communication/admin/get_message(var/client/communicator, var/mob/M, var/message)
 	var/stafftype = uppertext(communicator.holder.rank)
-	return "<span class='name'>[stafftype]([communicator.key])</span> says, <span class='message'>\"[message]\"</span>"
+	return "<span class='name'>[stafftype]([communicator.key])</span> says, <span class='message linkify'>\"[message]\"</span>"
 
 /decl/dsay_communication/admin/adjust_channel(var/decl/communication_channel/dsay)
 	dsay.log_proc = /proc/log_say

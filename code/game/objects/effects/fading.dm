@@ -2,7 +2,7 @@
 	name = "strange silhouette"
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "energynet"
-	anchored = 0
+	anchored = FALSE
 	mouse_opacity = 0
 	var/duration = 50
 

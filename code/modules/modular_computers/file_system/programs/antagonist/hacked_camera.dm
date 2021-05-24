@@ -7,9 +7,9 @@
 	program_menu_icon = "zoomin"
 	extended_desc = "This very advanced piece of software uses adaptive programming and large database of cipherkeys to bypass most encryptions used on camera networks. Be warned that system administrator may notice this."
 	size = 73 // Very large, a price for bypassing ID checks completely.
-	available_on_ntnet = 0
-	available_on_syndinet = 1
-	is_illegal = 1
+	available_on_ntnet = FALSE
+	available_on_syndinet = TRUE
+	is_illegal = TRUE
 
 /datum/computer_file/program/camera_monitor/hacked/process_tick()
 	..()

@@ -1,0 +1,37 @@
+{
+	"ckey": "Dude",
+	"character_name": "Dude Junior",
+	"item_path": "/obj/item/rig",
+	"req_titles": ["Research Director"],
+	"item_icon_state": "dude_rig",
+	"additional_data":
+	{
+		"piece_icon_state_overrides":
+		{
+			"helmet": "dude_junior_helmet",
+			"chest": "dude_junior_chest",
+			"gloves": "dude_junior_gloves",
+			"boots": "dude_junior_boots"
+		},
+		"helmet":
+		{
+			"icon_state": "dude_junior_helmet",
+			"base_icon_state": "dude_junior_helmet"
+		},
+		"chest":
+		{
+			"icon_state": "dude_junior_chest",
+			"base_icon_state": "dude_junior_chest"
+		},
+		"gloves":
+		{
+			"icon_state": "dude_junior_gloves",
+			"base_icon_state": "dude_junior_gloves"
+		},
+		"boots":
+		{
+			"icon_state": "dude_junior_boots",
+			"base_icon_state": "dude_junior_boots"
+		}
+	}
+}

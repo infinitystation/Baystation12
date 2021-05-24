@@ -10,7 +10,7 @@
 		return FALSE
 	return TRUE
 
-/obj/item/weapon/gun/special_check(var/mob/living/carbon/human/user)
+/obj/item/gun/special_check(var/mob/living/carbon/human/user)
 	. = ..()
 	if(!QDELETED(src) && src.loc == user && has_extension(src, /datum/extension/voxform))
 		var/datum/extension/voxform/voxform = get_extension(src, /datum/extension/voxform)
@@ -19,7 +19,7 @@
 /*
  * Vox Darkmatter Cannon
  */
-/obj/item/weapon/gun/energy/darkmatter
+/obj/item/gun/energy/darkmatter
 	name = "flux cannon"
 	desc = "A vicious beam weapon that crushes targets with dark-matter gravity pulses. Parts of it twitch and writhe, as if alive."
 	icon = 'icons/obj/guns/darkcannon.dmi'
@@ -37,14 +37,14 @@
 	one_hand_penalty = 3
 	w_class = ITEM_SIZE_LARGE
 
-/obj/item/weapon/gun/energy/darkmatter/Initialize()
+/obj/item/gun/energy/darkmatter/Initialize()
 	. = ..()
 	set_extension(src, /datum/extension/voxform)
 
 /*
  * Vox Sonic Cannon
  */
-/obj/item/weapon/gun/energy/sonic
+/obj/item/gun/energy/sonic
 	name = "soundcannon"
 	desc = "A vicious sonic weapon of alien manufacture. Parts of it quiver gelatinously, as though the insectile-looking thing is alive."
 	icon = 'icons/obj/guns/noise.dmi'
@@ -63,6 +63,6 @@
 	w_class = ITEM_SIZE_LARGE
 	one_hand_penalty = 1
 
-/obj/item/weapon/gun/energy/sonic/Initialize()
+/obj/item/gun/energy/sonic/Initialize()
 	. = ..()
 	set_extension(src, /datum/extension/voxform)

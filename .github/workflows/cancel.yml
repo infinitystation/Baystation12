@@ -1,0 +1,16 @@
+name: Отмена предыдущих тестов
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  Cancel:
+    name: 'Отмена Ненужных Билдов'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: styfle/cancel-workflow-action@89f242ee29e10c53a841bfe71cc0ce7b2f065abc
+        with:
+          workflow_id: 9143745, 5560543
+          access_token: ${{ github.token }}

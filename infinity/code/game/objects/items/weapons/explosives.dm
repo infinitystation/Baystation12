@@ -1,11 +1,11 @@
-/obj/item/weapon/plastique/super
+/obj/item/plastique/super
 	name = "X-4 explosives"
 	desc = "Military version of plastique explosions."
 	icon = 'infinity/icons/obj/assemblies.dmi'
 	origin_tech = list(TECH_ESOTERIC = 4)
 	explosion_strengh = 1
 
-/obj/item/weapon/door_charge
+/obj/item/door_charge
 	name = "door charge"
 	desc = "This is a booby trap, planted on doors. When door opens, it will explode!."
 	gender = PLURAL
@@ -17,7 +17,7 @@
 	origin_tech = list(TECH_ESOTERIC = 4)
 	var/ready = 0
 
-/obj/item/weapon/door_charge/afterattack(atom/movable/target, mob/user, flag)
+/obj/item/door_charge/afterattack(atom/movable/target, mob/user, flag)
 	if (!flag)
 		return
 	if (ismob(target) || !istype(target, /obj/machinery/door/airlock))
@@ -37,7 +37,7 @@
 		GLOB.density_set_event.register(target, src, .proc/explode)
 
 
-/obj/item/weapon/door_charge/proc/explode(var/obj/machinery/door/airlock/airlock)
+/obj/item/door_charge/proc/explode(var/obj/machinery/door/airlock/airlock)
 	if(!airlock.density)
 		explosion(get_turf(airlock), -1, 1, 2, 3)
 		airlock.ex_act(1)

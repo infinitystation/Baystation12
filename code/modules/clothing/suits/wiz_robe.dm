@@ -9,7 +9,7 @@
 	//Not given any special protective value since the magic robes are full-body protection --NEO
 	siemens_coefficient = 0.8
 	body_parts_covered = 0
-	wizard_garb = 1
+	wizard_garb = TRUE
 
 /obj/item/clothing/head/wizard/red
 	name = "red wizard hat"
@@ -70,9 +70,9 @@
 		)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS//inf
 	flags_inv = HIDEJUMPSUIT//inf
-	allowed = list(/obj/item/weapon/teleportation_scroll)
+	allowed = list(/obj/item/teleportation_scroll)
 	siemens_coefficient = 0.8
-	wizard_garb = 1
+	wizard_garb = TRUE
 
 /obj/item/clothing/suit/wizrobe/red
 	name = "red wizard robe"

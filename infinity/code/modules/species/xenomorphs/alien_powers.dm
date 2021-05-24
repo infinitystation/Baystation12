@@ -83,10 +83,10 @@
 	set desc = "Lay an egg to produce huggers to impregnate prey with."
 	set category = "Abilities"
 
-	if(!config.alien_eggs_allowed)
+/*	if(!config.alien_eggs_allowed) // Нужен конфиг? ~bear1ake
 		to_chat(src, "You begin to lay an egg, but hesitate. You suspect it isn't allowed.")
 		verbs -= /mob/living/carbon/human/proc/lay_egg
-		return
+		return */
 
 	if(locate(/obj/structure/alien/egg) in get_turf(src))
 		to_chat(src, "There's already an egg here.")
@@ -107,7 +107,7 @@
 	if(A)
 		to_chat(src, "<span class='alium'>We can't plant here!</span>")
 		return
-	if(!do_mob(src, src, 100))
+	if(!do_after(src, 100))
 		return
 	if(check_alien_ability(350,1,BP_RESIN) && !is_ventcrawling)
 		visible_message("<span class='alium'><B>[src] has planted some alien weeds!</B></span>")
@@ -309,7 +309,7 @@ mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in ovi
 
 	src.visible_message(SPAN_DANGER("[src] встает перед [M], а затем, из её брюшка появляется полое, прозрачное жало!"))
 
-	if(!do_mob(src, M, 150))
+	if(!do_after(src, 150, M))
 		return
 
 	if(!M || !M.Adjacent(src))
@@ -347,7 +347,7 @@ mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in ovi
 
 	if(A.stat != NOPOWER)
 		playsound(A.loc, 'infinity/sound/effects/metal_creaking.ogg', 25, 1)
-		if(!do_mob(src,src,65))
+		if(!do_after(src, 65))
 			return
 
 	if(!A.density)

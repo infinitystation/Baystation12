@@ -3,7 +3,7 @@
 	desc = "A small button on this plastic branch and a label near it - ON/OFF."
 	icon = 'infinity/icons/obj/christmas.dmi'
 	icon_state = "xmaslights_off"
-	anchored = 1
+	anchored = TRUE
 	layer = BLOB_SHIELD_LAYER
 	use_power = 1
 	idle_power_usage = 1

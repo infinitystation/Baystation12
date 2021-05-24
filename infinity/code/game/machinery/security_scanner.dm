@@ -31,8 +31,8 @@
 	var/check_arrests = FALSE // check if we checking for arrests in record
 
 	// Banned items
-	var/list/banned_items = list(/obj/item/weapon/gun, /obj/item/weapon/melee, /obj/item/weapon/grenade)
-	var/list/storage_types = list(/obj/item/weapon/storage, /obj/item/clothing/suit/storage, /obj/structure/closet)
+	var/list/banned_items = list(/obj/item/gun, /obj/item/melee, /obj/item/grenade)
+	var/list/storage_types = list(/obj/item/storage, /obj/item/clothing/suit/storage, /obj/structure/closet)
 
 	var/report_scans = FALSE
 
@@ -40,7 +40,7 @@
 //	var/last_contraband = 0
 
 /obj/machinery/security_scanner/unwrenched
-	anchored = 0
+	anchored = FALSE
 
 /obj/machinery/security_scanner/Initialize(mapload)
 	if(mapload)
@@ -62,7 +62,7 @@
 		stat |= NOPOWER
 		update_icon()
 
-/obj/machinery/security_scanner/attackby(obj/item/weapon/W, mob/user)
+/obj/machinery/security_scanner/attackby(obj/item/W, mob/user)
 	if(emagged)
 		to_chat(user, SPAN_WARNING("ERROR"))
 		return
@@ -71,7 +71,7 @@
 		to_chat(user, SPAN_WARNING("It must be turned off first!"))
 		return
 
-	if(istype(W, /obj/item/weapon/card/id))
+	if(istype(W, /obj/item/card/id))
 		if(check_access(user, req_access))
 			locked = !locked
 			to_chat(user, SPAN_NOTICE("You [locked ? "lock" : "unlock"] \the [src] interface."))
@@ -79,7 +79,7 @@
 			to_chat(user, SPAN_WARNING("Access denied."))
 		return
 
-	if(istype(W, /obj/item/weapon/wrench))
+	if(istype(W, /obj/item/wrench))
 		visible_message(
 			SPAN_NOTICE("You begin [anchored ? "un" : ""]securing [src]..."),
 			SPAN_NOTICE("[user] begin [anchored ? "un" : ""]securing [src]..."))
@@ -92,7 +92,7 @@
 			playsound(src, 'sound/items/Deconstruct.ogg', 50, 1)
 		return
 
-	if(istype(W, /obj/item/weapon/card/emag))
+	if(istype(W, /obj/item/card/emag))
 		emag_act()
 		return
 
@@ -164,7 +164,15 @@
 			trigger(FALSE)
 			return ..()
 		else if(isliving(A))
-			do_scan(A)
+			// Stop shouting on mechas
+			if(istype(A, /mob/living/exosuit))
+				var/mob/living/exosuit/exo = A
+				for(var/mob/living/L in exo.pilots)
+					// did you know, that ALL mobs can be in pilots? huh?
+					if(isliving(L))
+						do_scan(L)
+			else
+				do_scan(A)
 		else if(isobserver(A))
 			if(emagged)
 				trigger(TRUE)
@@ -236,11 +244,11 @@
 		return
 
 	// Agent cards lower threatlevel.
-	var/obj/item/weapon/card/id/id = target.GetIdCard()
-	if(id && istype(id, /obj/item/weapon/card/id/syndicate))
+	var/obj/item/card/id/id = target.GetIdCard()
+	if(id && istype(id, /obj/item/card/id/syndicate))
 		.["level"] -= 2
 	// A proper CentCom id is hard currency.
-	else if(id && istype(id, /obj/item/weapon/card/id/centcom))
+	else if(id && istype(id, /obj/item/card/id/centcom))
 		.["level"] = SCANNER_THREAT_RESET
 		return
 

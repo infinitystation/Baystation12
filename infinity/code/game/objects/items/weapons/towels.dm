@@ -15,7 +15,7 @@
 	name = "big towel"
 	icon = 'infinity/icons/obj/towels.dmi'
 	icon_state = "beach_towel"
-	anchored = 0
+	anchored = FALSE
 	var/rolled_towel = /obj/item/rolled_towel
 
 /obj/structure/towel/attack_hand(mob/living/user as mob)
@@ -112,7 +112,7 @@
 	name = "big holographic towel"
 	icon = 'infinity/icons/obj/towels.dmi'
 	icon_state = "beach_towel"
-	anchored = 1
+	anchored = TRUE
 	rolled_towel = null
 
 /obj/structure/towel/holo/attack_hand(mob/living/user as mob)

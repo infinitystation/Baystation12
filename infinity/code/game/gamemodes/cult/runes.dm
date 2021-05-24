@@ -6,7 +6,7 @@
 
 /obj/effect/rune/imbue/wrath
 	cultname = "wrath burning imbue"
-	papertype = /obj/item/weapon/paper/talisman/wrath
+	papertype = /obj/item/paper/talisman/wrath
 
 /mob/proc/burn_imbue()
 	set category = "Cult Magic"
@@ -16,7 +16,7 @@
 
 /obj/effect/rune/imbue/burn
 	cultname = "burning imbue"
-	papertype = /obj/item/weapon/paper/talisman/burn
+	papertype = /obj/item/paper/talisman/burn
 
 /mob/proc/hellbucket_rune()
 	set category = "Cult Magic"
@@ -28,7 +28,7 @@
 	cultname = "summon hellwater"
 
 /obj/effect/rune/hellbucket/cast(var/mob/living/user)
-	new /obj/item/weapon/reagent_containers/glass/bucket/wood/cult(get_turf(src))
+	new /obj/item/reagent_containers/glass/bucket/wood/cult(get_turf(src))
 	speak_incantation(user, "N[pick("'","`")]ath chsz'rchesh tza'jink'tumakes!")
 	visible_message("<span class='notice'>\The [src] disappears with a flash of red light.</span>", "You hear a pop.")
 	qdel(src)
@@ -45,7 +45,7 @@
 /obj/effect/rune/hellhunter/cast(var/mob/living/user)
 	new /obj/item/device/flashlight/flashdark/stone(get_turf(src))
 	new /obj/item/clothing/glasses/tacgoggles/cult(get_turf(src))
-	new /obj/item/weapon/melee/cultblade/dagger(get_turf(src))
+	new /obj/item/melee/cultblade/dagger(get_turf(src))
 	speak_incantation(user, "N[pick("'","`")]ath chip'ayiayan auyana!")
 	visible_message("<span class='notice'>\The [src] disappears with a flash of red light.</span>", "You hear a pop.")
 	qdel(src)

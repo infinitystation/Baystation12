@@ -1,0 +1,6 @@
+{
+  "ckey" :            "asriel15",
+  "character_name" :  "Friedrich Zimmer",
+  "item_path" :       "/obj/item/clothingbag/asriel_rogue_set",
+  "req_titles" :      [ "Head of Security" ]
+}

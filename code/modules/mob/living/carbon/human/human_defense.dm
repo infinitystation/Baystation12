@@ -76,13 +76,14 @@ meteor_act
 	return ..()
 
 /mob/living/carbon/human/get_armors_by_zone(obj/item/organ/external/def_zone, damage_type, damage_flags)
-	. = ..()
 	if(!def_zone)
 		def_zone = ran_zone()
 	if(!istype(def_zone))
 		def_zone = get_organ(check_zone(def_zone))
 	if(!def_zone)
-		return
+		return ..()
+
+	. = list()
 	var/list/protective_gear = list(head, wear_mask, wear_suit, w_uniform, gloves, shoes)
 	for(var/obj/item/clothing/gear in protective_gear)
 		if(gear.accessories.len)
@@ -95,6 +96,9 @@ meteor_act
 			var/armor = get_extension(gear, /datum/extension/armor)
 			if(armor)
 				. += armor
+
+	// Add inherent armor to the end of list so that protective equipment is checked first
+	. += ..()
 
 //this proc returns the Siemens coefficient of electrical resistivity for a particular external organ.
 /mob/living/carbon/human/proc/get_siemens_coefficient_organ(var/obj/item/organ/external/def_zone)
@@ -178,9 +182,10 @@ meteor_act
 	if(!affecting)
 		return //should be prevented by attacked_with_item() but for sanity.
 
-	if(stat != DEAD) receive_damage() //infinity
-
-	visible_message("<span class='danger'>[src] has been [I.attack_verb.len? pick(I.attack_verb) : "attacked"] in the [affecting.name] with [I.name] by [user]!</span>")
+	var/weapon_mention
+	if(I.attack_message_name())
+		weapon_mention = " with [I.attack_message_name()]"
+	visible_message(SPAN_DANGER("\The [src] has been [I.attack_verb.len? pick(I.attack_verb) : "attacked"] in the [affecting.name][weapon_mention] by \the [user]!"))
 	return standard_weapon_hit_effects(I, user, effective_force, hit_zone)
 
 /mob/living/carbon/human/standard_weapon_hit_effects(obj/item/I, mob/living/user, var/effective_force, var/hit_zone)
@@ -188,10 +193,13 @@ meteor_act
 	if(!affecting)
 		return 0
 
-	var/blocked = get_blocked_ratio(hit_zone, I.damtype, I.damage_flags(), I.armor_penetration, I.force)
-	// Handle striking to cripple.
 	if(user.a_intent == I_DISARM)
 		effective_force *= 0.66 //reduced effective force...
+
+	var/blocked = get_blocked_ratio(hit_zone, I.damtype, I.damage_flags(), I.armor_penetration, effective_force)
+
+	// Handle striking to cripple.
+	if(user.a_intent == I_DISARM)
 		if(!..(I, user, effective_force, hit_zone))
 			return 0
 
@@ -201,21 +209,22 @@ meteor_act
 	else if(!..())
 		return 0
 
+	var/unimpeded_force = (1 - blocked) * effective_force
 	if(effective_force > 10 || effective_force >= 5 && prob(33))
 		forcesay(GLOB.hit_appends)	//forcesay checks stat already
 		radio_interrupt_cooldown = world.time + (RADIO_INTERRUPT_DEFAULT * 0.8) //getting beat on can briefly prevent radio use
-	if((I.damtype == BRUTE || I.damtype == PAIN) && prob(25 + (effective_force * 2)))
+	if((I.damtype == BRUTE || I.damtype == PAIN) && prob(25 + (unimpeded_force * 2)))
 		if(!stat)
 			if(headcheck(hit_zone))
 				//Harder to score a stun but if you do it lasts a bit longer
-				if(prob(effective_force))
-					apply_effect(20, PARALYZE, blocked)
+				if(prob(unimpeded_force))
+					apply_effect(20, PARALYZE, 100 * blocked)
 					if(lying)
 						visible_message("<span class='danger'>[src] [species.knockout_message]</span>")
 			else
 				//Easier to score a stun but lasts less time
-				if(prob(effective_force + 5))
-					apply_effect(3, WEAKEN, blocked)
+				if(prob(unimpeded_force + 5))
+					apply_effect(3, WEAKEN, 100 * blocked)
 					if(lying)
 						visible_message("<span class='danger'>[src] has been knocked down!</span>")
 
@@ -236,7 +245,7 @@ meteor_act
 		return //if the weapon itself didn't get bloodied than it makes little sense for the target to be bloodied either
 
 	//getting the weapon bloodied is easier than getting the target covered in blood, so run prob() again
-	if(prob(33 + W.sharp*10))
+	if(prob(33 + W.sharp ? 10 : 0))
 		var/turf/location = loc
 		if(istype(location, /turf/simulated))
 			location.add_blood(src)
@@ -341,6 +350,10 @@ meteor_act
 			return
 
 		var/obj/item/organ/external/affecting = get_organ(zone)
+		if (!affecting)
+			visible_message("<span class='notice'>\The [O] misses [src] narrowly!</span>")
+			return
+
 		var/hit_area = affecting.name
 		var/datum/wound/created_wound
 
@@ -393,7 +406,7 @@ meteor_act
 				if(T)
 					src.forceMove(T)
 					visible_message("<span class='warning'>[src] is pinned to the wall by [O]!</span>","<span class='warning'>You are pinned to the wall by [O]!</span>")
-					src.anchored = 1
+					src.anchored = TRUE
 					src.pinned += O
 	else
 		..()
@@ -431,8 +444,8 @@ meteor_act
 	if(damtype != BURN && damtype != BRUTE) return
 
 	// The rig might soak this hit, if we're wearing one.
-	if(back && istype(back,/obj/item/weapon/rig))
-		var/obj/item/weapon/rig/rig = back
+	if(back && istype(back,/obj/item/rig))
+		var/obj/item/rig/rig = back
 		rig.take_hit(damage)
 
 	// We may also be taking a suit breach.

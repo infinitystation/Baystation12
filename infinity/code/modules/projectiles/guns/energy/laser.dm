@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/energy/laser/alien
+/obj/item/gun/energy/laser/alien
 	name = "alien rifle"
 	desc = "An alien weapon never before seen by the likes of your species."
 	icon = 'infinity/icons/obj/guns.dmi'

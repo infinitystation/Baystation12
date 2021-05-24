@@ -80,7 +80,7 @@ cocoon-army, unused */
 				else
 					src.visible_message(SPAN_WARNING("[src]'s skin begins to shift and squirm! The tongue goes out and turns into gross proboscis!"))
 				T.stuttering += 40 // horror effect
-				if(!do_mob(src, T, 8 SECONDS))
+				if(!do_after(src, 8 SECONDS, T))
 					src.visible_message(SPAN_WARNING("[src]'s proboscis flashed back in mouth, as claws turned into fingers!"))
 					to_chat(src, SPAN_LING("Поглощение было прервано!"))
 					changeling.isabsorbing = 0
@@ -88,7 +88,7 @@ cocoon-army, unused */
 			if(2)
 				if(forced_absorbing)
 					while(T.getBruteLoss() <= 300 ) //mega damage
-						if(!do_mob(src, T, 3.7 SECONDS)) //46 seconds, usually
+						if(!do_after(src, 3.7 SECONDS, T)) //46 seconds, usually
 							src.visible_message(SPAN_WARNING("[src]'s proboscis flashed back in mouth, as claws turned into fingers!"))
 							to_chat(src, SPAN_LING("Поглощение было прервано!"))
 							changeling.isabsorbing = 0
@@ -112,7 +112,7 @@ cocoon-army, unused */
 					T.visible_message(SPAN_NOTICE("\the [T] quickly turns pale..."), SPAN_NOTICE("\the [src] sucks the life from me..."))
 					T.eye_blurry += 20
 				while(T.vessel.total_volume >= 50) //will su... absorb 93% of victim's fluids
-					if(!do_mob(src, T, 3.7 SECONDS))
+					if(!do_after(src, 3.7 SECONDS, T))
 						src.visible_message(SPAN_WARNING("[src]'s proboscis flashed back in mouth!"))
 						to_chat(src, SPAN_LING("Поглощение было прервано!"))
 						changeling.isabsorbing = 0
@@ -144,7 +144,7 @@ cocoon-army, unused */
 							if(3)*/
 					visible_message(SPAN_WARNING(message))
 					playsound(get_turf(src), 'infinity/sound/magic/demon_consume.ogg', 40, 1, -3.5)
-					if(!do_mob(src, T, 12 SECONDS))
+					if(!do_after(src, 12 SECONDS, T))
 						src.visible_message(SPAN_WARNING("[src]'s stops formin the cocoon!"))
 						to_chat(src, SPAN_LING("Создание кокона было прервано!"))
 						changeling.isabsorbing = 0

@@ -38,7 +38,9 @@
 	description = "A wrecked light freighter."
 	prefix = "maps/away_inf/"
 	suffixes = list("bearcat/bearcat-1.dmm", "bearcat/bearcat-2.dmm")
-	cost = 0.5 //INF, WAS 1
+	spawn_cost = 0.5 // INF, WAS 1
+	player_cost = 4 // Нынешнее значение основано на количестве игроков в авейке ~bear1ake
+	spawn_weight = 1 // INF, spawn_weight = 0.67
 	shuttles_to_initialise = list(/datum/shuttle/autodock/ferry/lift, /datum/shuttle/autodock/overmap/exploration)
 	area_usage_test_exempted_root_areas = list(/area/ship)
 	apc_test_exempt_areas = list(
@@ -74,7 +76,7 @@
 	icon_state = "tiny"
 	icon_keyboard = "tiny_keyboard"
 	icon_screen = "lift"
-	density = 0
+	density = FALSE
 
 /obj/effect/shuttle_landmark/lift/top
 	name = "Top Deck"
@@ -88,7 +90,7 @@
 	base_turf = /turf/simulated/floor
 
 /obj/machinery/power/apc/derelict/bearcat
-	cell_type = /obj/item/weapon/cell/crap/empty
+	cell_type = /obj/item/cell/crap/empty
 	lighting = 0
 	equipment = 0
 	environ = 0
@@ -148,7 +150,7 @@
 			uniform.attach_accessory(null, eyegore)
 		else
 			qdel(eyegore)
-	var/obj/item/weapon/cell/super/C = new()
+	var/obj/item/cell/super/C = new()
 	H.put_in_any_hand_if_possible(C)
 
 //Bearcat's exploration

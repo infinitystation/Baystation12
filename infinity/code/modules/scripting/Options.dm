@@ -76,4 +76,4 @@ n_scriptOptions/nS_Options
 /n_scriptOptions/nS_Options/New()
 	.=..()
 	for(var/O in assign_operators+binary_operators+unary_operators)
-		if(!symbols.Find(O)) symbols+=O
+		if(!list_find(symbols, O)) symbols+=O

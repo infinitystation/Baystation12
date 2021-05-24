@@ -10,7 +10,7 @@ would spawn and follow the beaker, even if it is carried or thrown.
 	name = "effect"
 	icon = 'icons/effects/effects.dmi'
 	mouse_opacity = 0
-	unacidable = 1//So effect are not targeted by alien acid.
+	unacidable = TRUE
 	pass_flags = PASS_FLAG_TABLE | PASS_FLAG_GRILLE
 
 /datum/effect/effect/system
@@ -55,7 +55,7 @@ steam.start() -- spawns the effect
 	name = "steam"
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "extinguish"
-	density = 0
+	density = FALSE
 
 /datum/effect/effect/system/steam_spread
 
@@ -98,7 +98,7 @@ steam.start() -- spawns the effect
 	icon_state = "sparks"
 	icon = 'icons/effects/effects.dmi'
 	var/amount = 6.0
-	anchored = 1.0
+	anchored = TRUE
 	mouse_opacity = 0
 
 /obj/effect/sparks/New()
@@ -155,6 +155,13 @@ steam.start() -- spawns the effect
 		sleep(5)
 		step(sparks,direction)
 
+//and to shortcut all that
+/proc/sparks(n = 3, c = 0, loca)
+	var/datum/effect/effect/system/spark_spread/S = new
+	S.set_up(n, c, loca)
+	S.start()
+	return S
+
 /////////////////////////////////////////////
 //// SMOKE SYSTEMS
 // direct can be optinally added when set_up, to make the smoke always travel in one direction
@@ -165,8 +172,8 @@ steam.start() -- spawns the effect
 /obj/effect/effect/smoke
 	name = "smoke"
 	icon_state = "smoke"
-	opacity = 1
-	anchored = 0.0
+	opacity = TRUE
+	anchored = FALSE
 	mouse_opacity = 0
 	var/amount = 6.0
 	var/time_to_live = 100
@@ -191,11 +198,15 @@ steam.start() -- spawns the effect
 /obj/effect/effect/smoke/proc/affect(var/mob/living/carbon/M)
 	if(!istype(M))
 		return 0
-	if(M.isSynthetic())
+	if (M.isSynthetic())
 		return 0
-	if(M.internal)
-		return 0
-	if(M.wear_mask && (M.wear_mask.item_flags & ITEM_FLAG_BLOCK_GAS_SMOKE_EFFECT))
+	if (M.internal != null)
+		if(M.wear_mask && (M.wear_mask.item_flags & ITEM_FLAG_AIRTIGHT))
+			return 0
+		if(istype(M,/mob/living/carbon/human))
+			var/mob/living/carbon/human/H = M
+			if(H.head && (H.head.item_flags & ITEM_FLAG_AIRTIGHT))
+				return 0
 		return 0
 	if(istype(M,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = M
@@ -241,8 +252,7 @@ steam.start() -- spawns the effect
 	if (M.coughedtime != 1)
 		M.coughedtime = 1
 		M.emote("cough")
-		spawn ( 20 )
-			M.coughedtime = 0
+		addtimer(CALLBACK(M, /mob/living/carbon/proc/clear_coughedtime), 2 SECONDS)
 
 /obj/effect/effect/smoke/bad/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if(air_group || (height==0)) return 1
@@ -270,8 +280,7 @@ steam.start() -- spawns the effect
 	if (M.coughedtime != 1)
 		M.coughedtime = 1
 		M.emote("cough")
-		spawn ( 20 )
-			M.coughedtime = 0
+		addtimer(CALLBACK(M, /mob/living/carbon/proc/clear_coughedtime), 2 SECONDS)
 /////////////////////////////////////////////
 // Mustard Gas
 /////////////////////////////////////////////
@@ -296,8 +305,7 @@ steam.start() -- spawns the effect
 	if (R.coughedtime != 1)
 		R.coughedtime = 1
 		R.emote("gasp")
-		spawn (20)
-			R.coughedtime = 0
+		addtimer(CALLBACK(R, /mob/living/carbon/proc/clear_coughedtime), 2 SECONDS)
 	R.updatehealth()
 	return
 
@@ -419,7 +427,7 @@ steam.start() -- spawns the effect
 /obj/effect/effect/ion_trails
 	name = "ion trails"
 	icon_state = "ion_trails"
-	anchored = 1.0
+	anchored = TRUE
 
 /datum/effect/effect/system/trail/ion
 	trail_type = /obj/effect/effect/ion_trails
@@ -434,7 +442,7 @@ steam.start() -- spawns the effect
 /obj/effect/effect/thermal_trail
 	name = "therman trail"
 	icon_state = "explosion_particle"
-	anchored = 1
+	anchored = TRUE
 
 /datum/effect/effect/system/trail/thermal
 	trail_type = /obj/effect/effect/thermal_trail
@@ -485,7 +493,7 @@ steam.start() -- spawns the effect
 			var/light = -1
 			var/flash = -1
 
-			// Clamp all values to fractions of GLOB.max_explosion_range, following the same pattern as for tank transfer bombs
+			// Clamp all values to fractions of config.max_explosion_range, following the same pattern as for tank transfer bombs
 			if (round(amount/12) > 0)
 				devst = devst + amount/12
 

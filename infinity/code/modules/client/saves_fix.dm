@@ -10,9 +10,7 @@ GLOBAL_LIST_EMPTY(prefs_fixed)
 
 	GLOB.prefs_fixed += ckey
 
-	prefs.load_path(ckey)
-	prefs.load_preferences()
-	prefs.load_and_update_character()
+	prefs.load_data()
 	prefs.sanitize_preferences()
 
 	return 0

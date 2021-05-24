@@ -39,11 +39,11 @@
 	var/loot = "an object"
 	switch(rand(1,8))
 		if(1)
-			target = /obj/item/weapon/gun/projectile/revolver/medium/captain
+			target = /obj/item/gun/projectile/revolver/medium/captain
 			target_amount = 1
 			loot = "a captain's revolver"
 		if(2)
-			target = /obj/machinery/media/jukebox
+			target = /obj/machinery/jukebox
 			target_amount = 1
 			loot = "a mediatronic jukebox"
 		if(3)
@@ -55,19 +55,19 @@
 			target_amount = 1
 			loot = "a nuclear bomb"
 		if(5)
-			target = /obj/item/weapon/gun
+			target = /obj/item/gun
 			target_amount = 6
 			loot = "six guns"
 		if(6)
-			target = /obj/item/weapon/gun/energy
+			target = /obj/item/gun/energy
 			target_amount = 4
 			loot = "four LAEP90 energy guns"
 		if(7)
-			target = /obj/item/weapon/gun/energy/laser
+			target = /obj/item/gun/energy/laser
 			target_amount = 2
 			loot = "two G40E lasers"
 		if(8)
-			target = /obj/item/weapon/gun/energy/ionrifle
+			target = /obj/item/gun/energy/ionrifle
 			target_amount = 1
 			loot = "an ion gun"
 

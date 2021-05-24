@@ -6,6 +6,9 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 	icon_screen = "helm"
 	light_color = "#7faaff"
 	core_skill = SKILL_PILOT
+	silicon_restriction = STATUS_UPDATE
+	machine_name = "helm control console"
+	machine_desc = "A navigation system used to control spacecraft big and small, allowing for configuration of heading and autopilot as well as providing navigational data."
 	var/autopilot = 0
 	var/list/known_sectors = list()
 	var/dx		//desitnation
@@ -21,11 +24,17 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 	var/area/overmap/map = locate() in world
 	for(var/obj/effect/overmap/visitable/sector/S in map)
 		if (S.known)
-			var/datum/computer_file/data/waypoint/R = new()
-			R.fields["name"] = S.name
-			R.fields["x"] = S.x
-			R.fields["y"] = S.y
-			known_sectors[S.name] = R
+			add_known_sector(S)
+
+/obj/machinery/computer/ship/helm/proc/add_known_sector(obj/effect/overmap/visitable/sector/S, notify = FALSE)
+	var/datum/computer_file/data/waypoint/R = new()
+	R.fields["name"] = S.name
+	R.fields["x"] = S.x
+	R.fields["y"] = S.y
+	known_sectors[S.name] = R
+
+	if (notify)
+		audible_message(SPAN_NOTICE("\The [src] pings with a new known sector: [S] at coordinates [S.x] by [S.y]."))
 
 /obj/machinery/computer/ship/helm/Process()
 	..()
@@ -35,9 +44,9 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 			if(linked.is_still())
 				autopilot = 0
 			else
-				linked.decelerate()
+				linked.decelerate(accellimit)
 		else
-			var/brake_path = linked.get_brake_path()
+			var/brake_path = linked.get_brake_path() / HALF_UNIT_DIAGONAL //get_dist is steps, not hypotenuse
 			var/direction = get_dir(linked.loc, T)
 			var/acceleration = min(linked.get_acceleration(), accellimit)
 			var/speed = linked.get_speed()
@@ -45,7 +54,7 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 
 			// Destination is current grid or speedlimit is exceeded
 			if ((get_dist(linked.loc, T) <= brake_path) || speed > speedlimit)
-				linked.decelerate()
+				linked.decelerate(accellimit)
 			// Heading does not match direction
 			else if (heading & ~direction)
 				linked.accelerate(turn(heading & ~direction, 180), accellimit)
@@ -71,6 +80,9 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 		var/turf/T = get_turf(linked)
 		var/obj/effect/overmap/visitable/sector/current_sector = locate() in T
 
+		var/mob/living/silicon/silicon = user
+		data["viewing_silicon"] = ismachinerestricted(silicon)
+
 		data["sector"] = current_sector ? current_sector.name : "Deep Space"
 		data["sector_info"] = current_sector ? current_sector.desc : "Not Available"
 		data["landed"] = linked.get_landed_info()
@@ -81,7 +93,7 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 		data["d_y"] = dy
 		data["speedlimit"] = speedlimit ? speedlimit*1000 : "Halted"
 		data["accel"] = min(round(linked.get_acceleration()*1000, 0.01),accellimit*1000)
-		data["heading"] = linked.get_heading() ? dir2angle(linked.get_heading()) : 0
+		data["heading"] = linked.get_heading_angle() ? linked.get_heading_angle() : 0
 		data["autopilot"] = autopilot
 		data["manual_control"] = viewing_overmap(user)
 		data["canburn"] = linked.can_burn()
@@ -182,13 +194,14 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 		dy = 0
 
 	if (href_list["speedlimit"])
-		var/newlimit = input("Input new speed limit for autopilot (0 to brake)", "Autopilot speed limit", speedlimit*1000) as num|null
-		if(newlimit)
-			speedlimit = Clamp(newlimit/1000, 0, 100)
+		var/newlimit = input("Autopilot Speed Limit (0 ~ [round(linked.max_autopilot * 1000, 0.1)])", "Autopilot speed limit", speedlimit * 1000) as num|null
+		if (!isnull(newlimit))
+			speedlimit = round(Clamp(newlimit, 0, linked.max_autopilot * 1000), 0.1) * 0.001
+
 	if (href_list["accellimit"])
-		var/newlimit = input("Input new acceleration limit", "Acceleration limit", accellimit*1000) as num|null
-		if(newlimit)
-			accellimit = max(newlimit/1000, 0)
+		var/newlimit = input("Input new acceleration limit (0 ~ 10)", "Acceleration limit", accellimit * 1000) as num|null
+		if (!isnull(newlimit))
+			accellimit = round(Clamp(newlimit, 0, 10)) * 0.001
 
 	if (href_list["move"])
 		var/ndir = text2num(href_list["move"])
@@ -197,7 +210,7 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 		linked.relaymove(user, ndir, accellimit)
 
 	if (href_list["brake"])
-		linked.decelerate()
+		linked.decelerate(accellimit)
 
 	if (href_list["apilot"])
 		autopilot = !autopilot
@@ -218,6 +231,9 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 	name = "navigation console"
 	icon_keyboard = "generic_key"
 	icon_screen = "helm"
+	silicon_restriction = STATUS_UPDATE
+	machine_name = "navigation console"
+	machine_desc = "Used to view a sensor-assisted readout of the current sector and its surrounding areas."
 
 /obj/machinery/computer/ship/navigation/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
 	if(!linked)
@@ -230,13 +246,16 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 	var/turf/T = get_turf(linked)
 	var/obj/effect/overmap/visitable/sector/current_sector = locate() in T
 
+	var/mob/living/silicon/silicon = user
+	data["viewing_silicon"] = ismachinerestricted(silicon)
+
 	data["sector"] = current_sector ? current_sector.name : "Deep Space"
 	data["sector_info"] = current_sector ? current_sector.desc : "Not Available"
 	data["s_x"] = linked.x
 	data["s_y"] = linked.y
 	data["speed"] = round(linked.get_speed()*1000, 0.01)
 	data["accel"] = round(linked.get_acceleration()*1000, 0.01)
-	data["heading"] = linked.get_heading() ? dir2angle(linked.get_heading()) : 0
+	data["heading"] = linked.get_heading_angle() ? linked.get_heading_angle() : 0
 	data["viewing"] = viewing_overmap(user)
 
 	if(linked.get_speed())
@@ -264,7 +283,9 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 
 /obj/machinery/computer/ship/navigation/telescreen	//little hacky but it's only used on one ship so it should be okay
 	icon_state = "tele_nav"
-	density = 0
+	density = FALSE
+	machine_name = "navigation telescreen"
+	machine_desc = "A compact, slimmed-down version of the navigation console."
 
 /obj/machinery/computer/ship/navigation/telescreen/on_update_icon()
 	if(reason_broken & MACHINE_BROKEN_NO_PARTS || stat & NOPOWER || stat & BROKEN)

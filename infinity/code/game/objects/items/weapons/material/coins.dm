@@ -2,11 +2,11 @@
 #define COIN_TAILS "tails-up"
 #define COIN_EDGE  "on the side"
 
-/obj/item/weapon/material/coin
+/obj/item/material/coin
 	var/side = COIN_HEADS
 	var/list/sides = list(COIN_HEADS, COIN_TAILS, COIN_EDGE)
 
-/obj/item/weapon/material/coin/proc/coinflip(var/mob/user, thrown, rigged = FALSE)
+/obj/item/material/coin/proc/coinflip(var/mob/user, thrown, rigged = FALSE)
 	var/matrix/flipit = matrix()
 	flipit.Scale(0.2, 1)
 	animate(src, transform = flipit, time = 2, easing = QUAD_EASING)
@@ -39,19 +39,19 @@
 		if(!throwing) //coin was thrown and is coming to rest
 			visible_message("<span class='notice'>[src] stops spinning, landing [side].</span>")
 
-/obj/item/weapon/material/coin/examine(var/mob/user)
+/obj/item/material/coin/examine(var/mob/user)
 	..()
 	to_chat(user, "<span class='notice'>[src] is [side].</span>")
 
-/obj/item/weapon/material/coin/equipped(var/mob/user)
+/obj/item/material/coin/equipped(var/mob/user)
 	..()
 	side = COIN_HEADS
 	transform = null
 
-/obj/item/weapon/material/coin/attack_self(var/mob/user)
+/obj/item/material/coin/attack_self(var/mob/user)
 	coinflip(user, 0)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 
-/obj/item/weapon/material/coin/throw_impact(atom/hit_atom, speed, user)
+/obj/item/material/coin/throw_impact(atom/hit_atom, speed, user)
 	..()
 	coinflip(user, 1)
