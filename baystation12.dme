@@ -3527,6 +3527,7 @@
 #include "infinity\code\modules\culture_descriptor\location\locations_unathi.dm"
 #include "infinity\code\modules\culture_descriptor\location\locations_vox.dm"
 #include "infinity\code\modules\culture_descriptor\religion\religion_resomi.dm"
+#include "infinity\code\modules\economy\Accounts.dm"
 #include "infinity\code\modules\emoji\emoji_parse.dm"
 #include "infinity\code\modules\emotes\emote_define.dm"
 #include "infinity\code\modules\emotes\definitions\_species.dm"

@@ -56,7 +56,8 @@
 	)
 	give_psionic_implant_on_join = FALSE
 	skill_points = 24
-
+	economic_power = 1
+	
 	account_allowed = TRUE
 
 /datum/job/submap/merchant/equip(var/mob/living/carbon/human/H)
@@ -65,6 +66,7 @@
 	to_chat(H, "<b>Ответы на фразы</b>: <span class='danger'>[syndicate_code_response]</span>")
 	H.StoreMemory("<b>Кодовые Фразы</b>: [syndicate_code_phrase]", /decl/memory_options/system)
 	H.StoreMemory("<b>Ответы на фразы</b>: [syndicate_code_response]", /decl/memory_options/system)
+	setup_away_account(H)
 	return ..()
 
 /datum/job/submap/merchant_trainee/is_position_available()
