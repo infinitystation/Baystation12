@@ -135,8 +135,9 @@
 	#include "../away_inf/bearcat/bearcat.dm"
 //	#include "../away_inf/ascent/ascent.dm"
 	#include "../away_inf/liberia/liberia.dm"
+	#include "../away_inf/ascent_caulship/_ascent_caulship.dm"
 
-	#include "../away/ascent_caulship/_ascent_caulship.dm"
+//	#include "../away/ascent_caulship/_ascent_caulship.dm"
 	#include "../away/derelict/derelict.dm"
 	#include "../away/magshield/magshield.dm"
 	#include "../away/casino/casino.dm"
