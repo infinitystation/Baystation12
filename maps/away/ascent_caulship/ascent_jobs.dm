@@ -216,7 +216,7 @@
 /datum/job/submap/ascent/msq
 	title = "Serpentid Queen"
 	supervisors = "the Gyne"
-	total_positions = 1
+	total_positions = 0
 	info = "You are a Monarch Serpentid Queen living on an independant Ascent vessel. Assist the Gyne in her duties and tend to your Workers."
 	outfit_type = /decl/hierarchy/outfit/job/ascent/queen
 	set_species_on_join = SPECIES_MONARCH_QUEEN
