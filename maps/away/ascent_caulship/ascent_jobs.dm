@@ -12,9 +12,7 @@
 	crew_jobs = list(
 		/datum/job/submap/ascent,
 		/datum/job/submap/ascent/alate,
-		/datum/job/submap/ascent/drone,
-		/datum/job/submap/ascent/msq,
-		/datum/job/submap/ascent/msw,
+		/datum/job/submap/ascent/drone
 	)
 	call_webhook = WEBHOOK_SUBMAP_LOADED_ASCENT
 
@@ -198,34 +196,6 @@
 	requires_supervisor = "Ascent Gyne"
 	use_species_whitelist = null
 
-/datum/job/submap/ascent/msw
-	title = "Serpentid Adjunct"
-	supervisors = "your Queen"
-	total_positions = 1
-	info = "You are a Monarch Serpentid Worker serving as an attendant to your Queen on this vessel. Serve her however she requires."
-	set_species_on_join = SPECIES_MONARCH_WORKER
-	outfit_type = /decl/hierarchy/outfit/job/ascent/worker
-	requires_supervisor = "Serpentid Queen"
-	min_skill = list(SKILL_EVA = SKILL_ADEPT,
-					SKILL_HAULING = SKILL_ADEPT,
-					SKILL_COMBAT = SKILL_ADEPT,
-					SKILL_WEAPONS = SKILL_ADEPT,
-					SKILL_SCIENCE = SKILL_ADEPT,
-					SKILL_MEDICAL = SKILL_BASIC)
-
-/datum/job/submap/ascent/msq
-	title = "Serpentid Queen"
-	supervisors = "the Gyne"
-	total_positions = 0
-	info = "You are a Monarch Serpentid Queen living on an independant Ascent vessel. Assist the Gyne in her duties and tend to your Workers."
-	outfit_type = /decl/hierarchy/outfit/job/ascent/queen
-	set_species_on_join = SPECIES_MONARCH_QUEEN
-	min_skill = list(SKILL_EVA = SKILL_ADEPT,
-					SKILL_HAULING = SKILL_ADEPT,
-					SKILL_COMBAT = SKILL_ADEPT,
-					SKILL_WEAPONS = SKILL_ADEPT,
-					SKILL_MEDICAL = SKILL_BASIC)
-
 // Spawn points.
 /obj/effect/submap_landmark/spawnpoint/ascent_caulship
 	name = "Ascent Gyne"
@@ -236,12 +206,5 @@
 
 /obj/effect/submap_landmark/spawnpoint/ascent_caulship/drone
 	name = "Ascent Drone"
-
-/obj/effect/submap_landmark/spawnpoint/ascent_caulship/adjunct
-	name = "Serpentid Adjunct"
-
-/obj/effect/submap_landmark/spawnpoint/ascent_caulship/queen
-	name = "Serpentid Queen"
-
 
 #undef WEBHOOK_SUBMAP_LOADED_ASCENT
