@@ -6,11 +6,8 @@ GLOBAL_DATUM_INIT(commandos, /datum/antagonist/deathsquad/mercenary, new)
 	role_text = "Syndicate Commando"
 	role_text_plural = "Commandos"
 	welcome_text = "You are in the employ of a criminal syndicate hostile to corporate interests."
-// INF <<<<<<<
-	id_type = /obj/item/card/id/syndicate_command
-/* =======
-	id_type = /obj/item/card/id/centcom/ERT
-* >>>>>>> */
+	id_type = /obj/item/card/id/syndicate_command  // INF was /obj/item/card/id/centcom/ERT
+
 	flags = ANTAG_RANDOM_EXCEPTED
 
 	hard_cap = 4
