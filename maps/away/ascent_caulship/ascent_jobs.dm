@@ -105,7 +105,7 @@
 	title = "Ascent Gyne"
 	total_positions = 1
 	supervisors = "nobody but yourself"
-	info = "Вы гиина, одного из независимых судов восхождения. Ваша колонизация, привела вас в этот отдаленный сектор, полный примитивов. Создайте новое гнездо, и прославьте свою родословную."
+	info = "You are a Gyne of the Ascent, fleeing the murderous Kharmaani political sphere after your first molt. Your search for safe harbour has brought you to this remote unsettled sector. Find a safe nest, and bring prosperity to your lineage."
 	outfit_type = /decl/hierarchy/outfit/job/ascent
 	blacklisted_species = null
 	whitelisted_species = null
