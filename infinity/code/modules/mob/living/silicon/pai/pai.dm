@@ -8,5 +8,5 @@
 		var/datum/pai_software/S = software[i]
 		if(S && (ram >= S.ram_cost))
 			ram -= S.ram_cost
-	for(var/obj/item/weapon/paimod/P in card.contents)
+	for(var/obj/item/paimod/P in card.contents)
 		P.on_update_memory(src)

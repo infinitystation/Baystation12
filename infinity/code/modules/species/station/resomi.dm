@@ -40,7 +40,7 @@
 	burn_mod =  1.35
 	metabolism_mod = 2.0
 	mob_size = MOB_SMALL
-	holder_type = /obj/item/weapon/holder/human
+	holder_type = /obj/item/holder/human
 	light_sensitive = 6
 	gluttonous = GLUT_TINY
 	blood_volume = 280

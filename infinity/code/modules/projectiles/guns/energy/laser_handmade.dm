@@ -2,7 +2,7 @@
  * =======
  */
 
-/obj/item/weapon/gun/energy/laser/craftable
+/obj/item/gun/energy/laser/craftable
 	name = "laser"
 	desc = "Very similar to a laser weapon. It is assembled qualitatively, with love, but with their own hands and from scrap materials, which is extremely noticeable, including sticks and no less well-known second component."
 	icon = 'infinity/icons/obj/guns/lkw.dmi'
@@ -46,17 +46,17 @@
  * ===========
  */
 
-/obj/item/weapon/laserframe
+/obj/item/laserframe
 	name = "laser stock"
 	desc = "It might be a laser, someday. Or emitter... Or projecror... Or flashlight... Or... Or something else."
 	icon = 'infinity/icons/obj/guns/lkw.dmi'
 	icon_state = "lkw0"
 	var/buildstate = 0
 
-/obj/item/weapon/laserframe/on_update_icon()
+/obj/item/laserframe/on_update_icon()
 	icon_state = "lkw[buildstate]"
 
-/obj/item/weapon/laserframe/examine(mob/user)
+/obj/item/laserframe/examine(mob/user)
 	. = ..(user)
 	switch(buildstate)
 		if(1) to_chat(user, "It has a pipe segment installed.")
@@ -98,7 +98,7 @@
 				if(16) to_chat(user, "Lenses should be calibrated. I don't know how to do that... RCD may help.")
 				if(17) to_chat(user, "A screwdriver should secure it all.")
 
-/obj/item/weapon/laserframe/attackby(obj/item/W as obj, mob/user as mob)
+/obj/item/laserframe/attackby(obj/item/W as obj, mob/user as mob)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	add_fingerprint(user)
 	if(loc == user.loc)
@@ -114,23 +114,23 @@
 				buildstate++
 				qdel(W)
 		if(1)
-			if(istype(W,/obj/item/weapon/tape_roll))
+			if(istype(W,/obj/item/tape_roll))
 				user.visible_message(
 					SPAN_NOTICE("[user] secures the pipe with [W]."),
 					SPAN_NOTICE("You secure the pipe with [W]."))
 				buildstate++
 		if(2)
-			if(istype(W,/obj/item/weapon/stock_parts/micro_laser))
+			if(istype(W,/obj/item/stock_parts/micro_laser))
 				to_chat(user, SPAN_NOTICE("You install [W]."))
 				buildstate++
 				qdel(W)
 		if(3)
-			if(istype(W,/obj/item/weapon/cell/high))
+			if(istype(W,/obj/item/cell/high))
 				to_chat(user, SPAN_NOTICE("You put [W] inside."))
 				buildstate++
 				qdel(W)
 		if(4)
-			if(istype(W,/obj/item/weapon/stock_parts/capacitor))
+			if(istype(W,/obj/item/stock_parts/capacitor))
 				to_chat(user, SPAN_NOTICE("You install [W]."))
 				buildstate++
 				qdel(W)
@@ -156,22 +156,22 @@
 				else
 					to_chat(user, SPAN_NOTICE("You need at least ten plastic sheets to complete this task."))
 		if(8)
-			if(istype(W,/obj/item/weapon/cell/device))
+			if(istype(W,/obj/item/cell/device))
 				to_chat(user, SPAN_NOTICE("You install [W]."))
 				buildstate++
 				qdel(W)
 		if(9)
-			if(istype(W,/obj/item/weapon/stock_parts/computer/processor_unit/small))
+			if(istype(W,/obj/item/stock_parts/computer/processor_unit/small))
 				to_chat(user, SPAN_NOTICE("You install [W]."))
 				buildstate++
 				qdel(W)
 		if(10)
-			if(istype(W,/obj/item/weapon/module/power_control))
+			if(istype(W,/obj/item/module/power_control))
 				to_chat(user, SPAN_NOTICE("You install [W]."))
 				buildstate++
 				qdel(W)
 		if(11)
-			if(istype(W,/obj/item/weapon/stock_parts/smes_coil))
+			if(istype(W,/obj/item/stock_parts/smes_coil))
 				to_chat(user, SPAN_NOTICE("You install [W]."))
 				buildstate++
 				qdel(W)
@@ -185,7 +185,7 @@
 					to_chat(user, SPAN_NOTICE("You need at least 30 segments of [W] to complete this task."))
 		if(13)
 			if(isWelder(W))
-				var/obj/item/weapon/weldingtool/T = W
+				var/obj/item/weldingtool/T = W
 				if(T.remove_fuel(0,user))
 					if(!src || !T.isOn()) return
 					playsound(src.loc, 'sound/items/Welder2.ogg', 100, 1)
@@ -204,13 +204,13 @@
 				else
 					to_chat(user, SPAN_NOTICE("You need at least five glass sheets to complete this task."))
 		if(16)
-			if(istype(W,/obj/item/weapon/rcd))
+			if(istype(W,/obj/item/rcd))
 				to_chat(user, SPAN_NOTICE("You processed the lens with [W], making it perfect."))
 				buildstate++
 		if(17)
 			if(isScrewdriver(W))
 				to_chat(user, SPAN_NOTICE("You secure everything with [W]."))
-				new /obj/item/weapon/gun/energy/laser/craftable(get_turf(src))
+				new /obj/item/gun/energy/laser/craftable(get_turf(src))
 				qdel(src)
 			return
 	update_icon()

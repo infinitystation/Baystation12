@@ -3,12 +3,14 @@
 	desc = "A heavy-duty shield generator and capacitor, capable of generating energy shields at large distances."
 	icon = 'infinity/icons/obj/machines/shielding.dmi'
 	icon_state = "generator0"
-	density = 1
+	density = TRUE
 	base_type = /obj/machinery/power/shield_generator
 	construct_state = /decl/machine_construction/default/panel_closed
 	wires = /datum/wires/shield_generator
 	uncreated_component_parts = null
 	stat_immune = 0
+	machine_name = "advanced shield generator"
+	machine_desc = "A powerful energy projector that uses huge amounts of power to form a large sheath of shielding force around an area."
 	var/list/field_segments = list()    // List of all shield segments owned by this generator.
 	var/list/damaged_segments = list()  // List of shield segments that have failed and are currently regenerating.
 	var/shield_modes = 0                // Enabled shield mode flags
@@ -33,13 +35,12 @@
 	var/ai_control_disabled = 0         // Whether the AI control is disabled.
 	var/list/mode_list = null           // A list of shield_mode datums.
 	var/full_shield_strength = 0        // The amount of power shields need to be at full operating strength.
+	var/vessel_reverse_dir	= EAST		// Reverse dir of our vessel
 
 	var/idle_multiplier   = 1           // Trades off cost vs. spin-up time from idle to running
 	var/idle_valid_values = list(1, 2, 5, 10)
 	var/spinup_delay      = 20
 	var/spinup_counter    = 0
-
-	var/vessel_reverse_dir	= EAST		// INF Reverse dir our vessel
 
 /obj/machinery/power/shield_generator/on_update_icon()
 	if(running)
@@ -69,12 +70,12 @@
 /obj/machinery/power/shield_generator/RefreshParts()
 	max_energy = 0
 	full_shield_strength = 0
-	for(var/obj/item/weapon/stock_parts/smes_coil/S in component_parts)
+	for(var/obj/item/stock_parts/smes_coil/S in component_parts)
 		full_shield_strength += (S.ChargeCapacity / CELLRATE) * 5
 	max_energy = full_shield_strength * 20
 	current_energy = between(0, current_energy, max_energy)
 
-	mitigation_max = MAX_MITIGATION_BASE + MAX_MITIGATION_RESEARCH * total_component_rating_of_type(/obj/item/weapon/stock_parts/capacitor)
+	mitigation_max = MAX_MITIGATION_BASE + MAX_MITIGATION_RESEARCH * total_component_rating_of_type(/obj/item/stock_parts/capacitor)
 	mitigation_em = between(0, mitigation_em, mitigation_max)
 	mitigation_physical = between(0, mitigation_physical, mitigation_max)
 	mitigation_heat = between(0, mitigation_heat, mitigation_max)
@@ -250,7 +251,7 @@
 	data["field_integrity"] = field_integrity()
 	data["max_energy"] = round(max_energy / 1000000, 0.1)
 	data["current_energy"] = round(current_energy / 1000000, 0.1)
-	data["percentage_energy"] = round(data["current_energy"] / data["max_energy"] * 100)
+	data["percentage_energy"] = max_energy ? round(data["current_energy"] / data["max_energy"] * 100) : 0
 	data["total_segments"] = field_segments ? field_segments.len : 0
 	data["functional_segments"] = damaged_segments ? data["total_segments"] - damaged_segments.len : data["total_segments"]
 	data["field_radius"] = field_radius

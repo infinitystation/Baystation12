@@ -1,9 +1,9 @@
 /datum/map/sierra
 	species_to_job_whitelist = list(
-		/datum/species/adherent = list(/datum/job/ai, /datum/job/cyborg, /datum/job/assistant, /datum/job/janitor,\
-									   /datum/job/chef, /datum/job/cargo_assistant, /datum/job/scientist_assistant,\
-									   /datum/job/doctor_trainee, /datum/job/engineer_trainee, /datum/job/engineer, /datum/job/mining,
-									   /datum/job/roboticist, /datum/job/chemist, /datum/job/bartender),
+		/datum/species/adherent = list(/datum/job/ai, /datum/job/cyborg, /datum/job/assistant, /datum/job/janitor, /datum/job/engineer_trainee,\
+									   /datum/job/chef, /datum/job/cargo_tech, /datum/job/scientist_assistant,\
+									   /datum/job/doctor_trainee, /datum/job/engineer, /datum/job/mining, /datum/job/cargo_assistant,\
+									   /datum/job/roboticist, /datum/job/chemist, /datum/job/bartender, /datum/job/explorer_engineer),
 		/datum/species/nabber = list(/datum/job/ai, /datum/job/cyborg, /datum/job/janitor, /datum/job/scientist_assistant,\
 									 /datum/job/chemist, /datum/job/roboticist, /datum/job/cargo_assistant, /datum/job/chef,\
 									 /datum/job/engineer_trainee, /datum/job/doctor_trainee, /datum/job/bartender),
@@ -26,10 +26,10 @@
 									/datum/job/qm,\
 									/datum/job/senior_engineer, /datum/job/senior_doctor,\
 									/*/datum/job/stowaway,*/ /datum/job/senior_scientist, /datum/job/security_assistant),
-		/datum/species/human/booster= list(HUMAN_ONLY_JOBS,\
+		/* /datum/species/human/booster= list(HUMAN_ONLY_JOBS,\
 									/datum/job/adjutant, /datum/job/exploration_leader, /datum/job/senior_engineer,\
 									/datum/job/warden, /datum/job/detective, /datum/job/officer,
-									/datum/job/qm, /datum/job/senior_scientist)
+									/datum/job/qm, /datum/job/senior_scientist) */
 	)
 #undef HUMAN_ONLY_JOBS
 
@@ -73,25 +73,64 @@
 				species_blacklist |= job.type
 */
 
-// Some jobs for nabber grades defined here due to map-specific job datums.
-/decl/cultural_info/culture/nabber/New()
-	LAZYADD(valid_jobs, list(/datum/job/scientist_assistant, /datum/job/cargo_assistant))
-	..()
 
-/decl/cultural_info/culture/nabber/b/New()
-	LAZYADD(valid_jobs, /datum/job/cargo_tech)
-	..()
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ GAS JOBS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-/decl/cultural_info/culture/nabber/a/New()
-	LAZYADD(valid_jobs, /datum/job/engineer)
-	..()
+// GRADE C
+/decl/cultural_info/culture/nabber
+	valid_jobs = list(/datum/job/janitor)  // THIS IS GRADE C- TRUST ME ~ SidVeld
 
-/decl/cultural_info/culture/nabber/a/plus/New()
-	LAZYADD(valid_jobs, /datum/job/doctor)
-	..()
 
-/datum/species/nabber/check_background(var/datum/job/job, var/datum/preferences/prefs) //overrides
-	. = TRUE
+/decl/cultural_info/culture/nabber/c
+	valid_jobs = list(/datum/job/janitor, /datum/job/cargo_assistant)
+
+
+/decl/cultural_info/culture/nabber/c/plus
+	valid_jobs = list(/datum/job/janitor,    /datum/job/cargo_assistant,
+					  /datum/job/scientist_assistant)
+
+
+// GRADE B
+/decl/cultural_info/culture/nabber/b/minus
+	valid_jobs = list(/datum/job/janitor)
+
+
+/decl/cultural_info/culture/nabber/b
+	valid_jobs = list(/datum/job/janitor,    /datum/job/cargo_assistant,
+					  /datum/job/bartender,  /datum/job/chef,
+					  /datum/job/scientist_assistant)
+
+
+/decl/cultural_info/culture/nabber/b/plus
+	valid_jobs = list(/datum/job/janitor,    /datum/job/cargo_assistant,
+					  /datum/job/bartender,  /datum/job/chef,
+					  /datum/job/scientist_assistant)
+
+
+// GRADE A
+/decl/cultural_info/culture/nabber/a/minus
+	valid_jobs = list(/datum/job/scientist_assistant)
+
+
+/decl/cultural_info/culture/nabber/a
+	valid_jobs = list(/datum/job/cargo_assistant,
+					  /datum/job/bartender,  /datum/job/chef,
+					  /datum/job/chemist,    /datum/job/doctor_trainee,
+					  /datum/job/roboticist, /datum/job/engineer_trainee,
+					  /datum/job/scientist_assistant)
+
+
+
+/decl/cultural_info/culture/nabber/a/plus
+	valid_jobs = list(/datum/job/cargo_assistant,
+					  /datum/job/bartender,  /datum/job/chef,
+					  /datum/job/chemist,    /datum/job/doctor_trainee,
+					  /datum/job/roboticist, /datum/job/engineer_trainee,
+					  /datum/job/scientist_assistant)
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 /datum/job
 	allowed_branches = list(

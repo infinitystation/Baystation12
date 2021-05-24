@@ -15,7 +15,7 @@
 		/obj/item/clothing/gloves/insulated,
 		/obj/item/device/radio/headset/heads/ce,
 		/obj/item/device/radio/headset/heads/ce/alt,
-		/obj/item/weapon/storage/belt/utility/full,
+		/obj/item/storage/belt/utility/full,
 		/obj/item/clothing/suit/storage/hazardvest,
 		/obj/item/clothing/mask/gas/alt,
 		/obj/item/device/multitool,
@@ -23,17 +23,17 @@
 		/obj/item/clothing/suit/armor/pcarrier/light,
 		/obj/item/taperoll/engineering,
 		/obj/item/device/megaphone,
-		/obj/item/weapon/crowbar/brace_jack,
+		/obj/item/crowbar/brace_jack,
 		/obj/item/device/remote_device/chief_engineer,
 		/obj/item/clothing/glasses/meson,
 		/obj/item/clothing/glasses/welding/superior,
-		/obj/item/weapon/material/clipboard,
+		/obj/item/material/clipboard,
 		/obj/item/device/flashlight/upgraded,
-		/obj/item/weapon/storage/box/armband/engine,
+		/obj/item/storage/box/armband/engine,
 		/obj/item/device/multitool/multimeter,
-		/obj/item/weapon/storage/box/secret_project_disks,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel/eng)),
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
+		/obj/item/storage/box/secret_project_disks,
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/industrial, /obj/item/storage/backpack/satchel/eng)),
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/dufflebag/eng, /obj/item/storage/backpack/messenger/engi))
 	)
 
 /obj/structure/closet/secure_closet/engineering_senior
@@ -48,7 +48,7 @@
 		/obj/item/device/radio/headset/headset_eng/alt,
 		/obj/item/clothing/suit/storage/hazardvest,
 		/obj/item/clothing/mask/gas/alt,
-		/obj/item/weapon/storage/belt/utility/full,
+		/obj/item/storage/belt/utility/full,
 		/obj/item/clothing/glasses/meson,
 		/obj/item/taperoll/engineering,
 		/obj/item/taperoll/atmos,
@@ -57,8 +57,8 @@
 		/obj/item/device/flashlight/upgraded,
 		/obj/item/device/megaphone,
 		/obj/item/clothing/gloves/insulated,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel/eng)),
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/industrial, /obj/item/storage/backpack/satchel/eng)),
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/dufflebag/eng, /obj/item/storage/backpack/messenger/engi))
 	)
 
 /obj/structure/closet/secure_closet/engineering_sierra
@@ -69,7 +69,7 @@
 /obj/structure/closet/secure_closet/engineering_sierra/WillContain()
 	return list(
 		/obj/item/clothing/accessory/storage/brown_vest,
-		/obj/item/weapon/storage/belt/utility/full,
+		/obj/item/storage/belt/utility/full,
 		/obj/item/device/radio/headset/headset_eng,
 		/obj/item/device/radio/headset/headset_eng/alt,
 		/obj/item/clothing/suit/storage/hazardvest,
@@ -79,8 +79,8 @@
 		/obj/item/device/flashlight/upgraded,
 		/obj/item/taperoll/atmos,
 		/obj/item/clothing/gloves/insulated,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel/eng)),
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/industrial, /obj/item/storage/backpack/satchel/eng)),
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/dufflebag/eng, /obj/item/storage/backpack/messenger/engi))
 	)
 
 /obj/structure/closet/secure_closet/atmos_sierra
@@ -93,13 +93,13 @@
 		/obj/item/clothing/suit/fire/firefighter,
 		/obj/item/clothing/head/hardhat/red,
 		/obj/item/device/flashlight/upgraded,
-		/obj/item/weapon/rpd,
+		/obj/item/rpd,
 		/obj/item/clothing/accessory/storage/brown_vest,
-		/obj/item/weapon/storage/belt/utility/full,
-		/obj/item/weapon/extinguisher,
+		/obj/item/storage/belt/utility/full,
+		/obj/item/extinguisher,
 		/obj/item/device/radio/headset/headset_eng,
 		/obj/item/device/radio/headset/headset_eng/alt,
-		/obj/item/weapon/tank/emergency/oxygen/double,
+		/obj/item/tank/emergency/oxygen/double,
 		/obj/item/clothing/mask/gas/alt,
 		/obj/item/taperoll/atmos,
 		/obj/item/device/scanner/gas

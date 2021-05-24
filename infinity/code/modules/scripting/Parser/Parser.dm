@@ -94,7 +94,7 @@
 					continue
 				if(ntok.value=="(")
 					ParseFunctionStatement()
-				else if(options.assign_operators.Find(ntok.value))
+				else if(list_find(options.assign_operators, ntok.value))
 					ParseAssignment()
 				else
 					errors+=new/scriptError/BadToken(ntok)

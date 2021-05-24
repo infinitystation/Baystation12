@@ -98,14 +98,14 @@
 /proc/prob_chance(var/chance)
 	return prob(chance)
 
-// Merge of list.Find() and findtext()
+// Merge of list_find() and findtext()
 /proc/smartfind(var/haystack, var/needle, var/start = 1, var/end = 0)
 	if(haystack && needle)
 		if(isobject(haystack))
 			if(istype(haystack, /list))
 				if(length(haystack) >= end && start > 0)
 					var/list/listhaystack = haystack
-					return listhaystack.Find(needle, start, end)
+					return list_find(listhaystack, needle, start, end)
 
 		else
 			if(istext(haystack))

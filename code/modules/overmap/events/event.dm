@@ -166,7 +166,7 @@
 	name = "event"
 	icon = 'icons/obj/overmap.dmi'
 	icon_state = "event"
-	opacity = 1
+	opacity = TRUE
 	color = "#880000"
 	var/list/events
 	var/list/event_icon_states
@@ -245,13 +245,22 @@
 	difficulty = EVENT_LEVEL_MAJOR
 	event_icon_states = list("carp3", "carp4")
 
+
+/obj/effect/overmap/event/gravity
+	name = "dark matter influx"
+	weaknesses = OVERMAP_WEAKNESS_EXPLOSIVE
+	events = list(/datum/event/gravity)
+	event_icon_states = list("grav1", "grav2", "grav3", "grav4")
+	opacity = 0
+	color = "#321945"
+
 //These now are basically only used to spawn hazards. Will be useful when we need to spawn group of moving hazards
 /datum/overmap_event
 	var/name = "map event"
 	var/radius = 2
 	var/count = 6
 	var/hazards
-	var/opacity = 1
+	var/opacity = TRUE
 	var/continuous = TRUE //if it should form continous blob, or can have gaps
 
 /datum/overmap_event/meteor
@@ -294,3 +303,10 @@
 	count = 5
 	radius = 4
 	hazards = /obj/effect/overmap/event/carp/major
+
+/datum/overmap_event/gravity
+	name = "dark matter influx"
+	count = 12
+	radius = 4
+	opacity = 0
+	hazards = /obj/effect/overmap/event/gravity

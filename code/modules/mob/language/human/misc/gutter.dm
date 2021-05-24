@@ -14,7 +14,7 @@
 		LANGUAGE_HUMAN_RUSSIAN = 30,
 		LANGUAGE_HUMAN_SELENIAN = 15,
 		LANGUAGE_SPACER = 35,
-		LANGUAGE_LEGALESE = 25,
+		// LANGUAGE_LEGALESE = 25, // merge 02 05 2021
 		LANGUAGE_HUMAN_AVALON = 20, //inf
 		LANGUAGE_HUMAN_MIRANIAN = 50, //inf
 		LANGUAGE_HUMAN_LORRIMAN = 5 //inf
@@ -23,3 +23,4 @@
 		"yayo", "aiya", "chiksa", "tikat", "bazar","oi", "yo", "meit", "grok", "ken", "berk", "cohon", "pendeo"
 	)
 	shorthand = "GT"
+	has_written_form = TRUE

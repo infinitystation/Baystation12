@@ -5,7 +5,7 @@
 	if(islist(.))
 		if(length(.))
 			var/list/L = .
-			if(L.Find(y))
+			if(list_find(L, y))
 				. = L[y]
 		else
 			. = null

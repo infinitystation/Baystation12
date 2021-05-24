@@ -39,7 +39,7 @@
 	if(!..())
 		return 0
 
-	newVars = list("maxHealth" = 20 + spell_levels[Sp_POWER]*5, "health" = 20 + spell_levels[Sp_POWER]*5, "melee_damage_lower" = 10 + spell_levels[Sp_POWER], "melee_damage_upper" = 10 + spell_levels[Sp_POWER]*2)
+	newVars = list("maxHealth" = 20 + spell_levels[Sp_POWER]*5, "health" = 20 + spell_levels[Sp_POWER]*5)
 
 	return "Your bats are now stronger."
 
@@ -61,8 +61,7 @@
 	summon_type = list(/mob/living/simple_animal/hostile/commanded/bear)
 	newVars = list("maxHealth" = 15,
 				"health" = 15,
-				"melee_damage_lower" = 10,
-				"melee_damage_upper" = 10,
+				"natural_weapon" = /obj/item/natural_weapon/claws/weak,
 				)
 
 	hud_state = "wiz_bear"
@@ -78,31 +77,27 @@
 		if(1)
 			newVars = list("maxHealth" = 30,
 						"health" = 30,
-						"melee_damage_lower" = 15,
-						"melee_damage_upper" = 15
+						"natural_weapon" = /obj/item/natural_weapon/claws,
 						)
 			return "Your bear has been upgraded from a cub to a whelp."
 		if(2)
 			newVars = list("maxHealth" = 45,
 						"health" = 45,
-						"melee_damage_lower" = 20,
-						"melee_damage_upper" = 20,
+						"natural_weapon" = /obj/item/natural_weapon/claws,
 						"color" = "#d9d9d9" //basically we want them to look different enough that people can recognize it.
 						)
 			return "Your bear has been upgraded from a whelp to an adult."
 		if(3)
 			newVars = list("maxHealth" = 60,
 						"health" = 60,
-						"melee_damage_lower" = 25,
-						"melee_damage_upper" = 25,
+						"natural_weapon" = /obj/item/natural_weapon/claws/strong,
 						"color" = "#8c8c8c"
 						)
 			return "Your bear has been upgraded from an adult to an alpha."
 		if(4)
 			newVars = list("maxHealth" = 75,
 						"health" = 75,
-						"melee_damage_lower" = 35,
-						"melee_damage_upper" = 35,
+						"natural_weapon" = /obj/item/natural_weapon/claws/strong,
 						"resistance" = 3,
 						"color" = "#0099ff"
 						)

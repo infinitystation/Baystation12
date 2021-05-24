@@ -5,7 +5,7 @@
 
 /obj/structure/closet/gimmick/ert/WillContain()
 	return list(
-		/obj/item/weapon/material/coin/silver =2,
+		/obj/item/material/coin/silver =2,
 		/obj/item/clothing/mask/balaclava = 2,
 		/obj/item/clothing/head/beret/centcom/officer = 2,
 		/obj/item/clothing/under/ert = 2,
@@ -18,7 +18,7 @@
 
 /obj/structure/closet/gimmick/ert/WillContain()
 	return list(
-		/obj/item/weapon/material/coin/silver =2,
+		/obj/item/material/coin/silver =2,
 		/obj/item/clothing/mask/balaclava = 2,
 		/obj/item/clothing/head/beret/centcom/officer = 2,
 		/obj/item/clothing/under/ert = 2,

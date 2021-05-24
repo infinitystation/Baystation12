@@ -5,7 +5,7 @@ GLOBAL_LIST_INIT(crashed_pod_areas, new)
 	id = "crashed_pod"
 	description = "A crashed survival pod from a destroyed ship."
 	suffixes = list("crashed_pod_inf/crashed_pod.dmm")
-	cost = 2
+	spawn_cost = 2
 	template_flags = TEMPLATE_FLAG_CLEAR_CONTENTS | TEMPLATE_FLAG_NO_RUINS | TEMPLATE_FLAG_NO_RADS
 
 /area/map_template/crashed_pod
@@ -27,7 +27,6 @@ GLOBAL_LIST_INIT(crashed_pod_areas, new)
 
 /decl/hierarchy/outfit/job/survivor
 	name = OUTFIT_JOB_NAME("Survivor")
-	id_type = null
 	pda_type = null
 
 /datum/job/submap/pod/New(var/datum/submap/_owner, var/abstract_job = FALSE)

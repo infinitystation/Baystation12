@@ -56,7 +56,12 @@ lib/*.so
 # python
 *.pyc
 __pycache__
+
+# flyway config
+flyway.conf
+
 #inf
 # linux
 nohup.out
 #/inf
+

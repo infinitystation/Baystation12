@@ -87,8 +87,8 @@
 	icon_state = "tube_map"
 	},
 /obj/structure/table/reinforced,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /turf/simulated/floor/tiled,
 /area/bluespaceriver/ship/cockpit)
 "ai" = (
@@ -107,8 +107,8 @@
 	pixel_x = 25
 	},
 /obj/structure/table/reinforced,
-/obj/item/weapon/folder,
-/obj/item/weapon/folder,
+/obj/item/folder,
+/obj/item/folder,
 /turf/simulated/floor/tiled,
 /area/bluespaceriver/ship/cockpit)
 "aj" = (
@@ -773,7 +773,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/item/weapon/stool,
+/obj/item/stool,
 /turf/simulated/floor/tiled/techfloor,
 /area/bluespaceriver/ship/storage)
 "be" = (
@@ -863,7 +863,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/bluespaceriver/ship/sec_storage)
 "bl" = (
-/obj/item/weapon/defibrillator/loaded,
+/obj/item/defibrillator/loaded,
 /obj/structure/table/reinforced,
 /obj/structure/closet/medical_wall/filled/shuttle{
 	pixel_x = 24;
@@ -1009,7 +1009,7 @@
 	},
 /obj/structure/table/rack,
 /obj/random/toolbox,
-/obj/item/weapon/module/power_control,
+/obj/item/module/power_control,
 /obj/random/tech_supply,
 /obj/random/tech_supply,
 /obj/random/tech_supply,
@@ -1017,7 +1017,7 @@
 /obj/random/tech_supply,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/light,
-/obj/item/weapon/wrench,
+/obj/item/wrench,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/bluespaceriver/ship/power)
 "bx" = (
@@ -1041,8 +1041,8 @@
 /area/bluespaceriver/ship/power)
 "by" = (
 /obj/structure/table/rack,
-/obj/item/weapon/storage/belt/utility/full,
-/obj/item/weapon/storage/box/glowsticks,
+/obj/item/storage/belt/utility/full,
+/obj/item/storage/box/glowsticks,
 /obj/structure/railing/mapped{
 	dir = 8;
 	icon_state = "railing0-1"
@@ -1278,7 +1278,7 @@
 	icon_state = "bordercolor";
 	dir = 1
 	},
-/obj/item/weapon/paper/blueriver/report,
+/obj/item/paper/blueriver/report,
 /turf/simulated/floor/tiled,
 /area/bluespaceriver/ship/cockpit)
 "bR" = (
@@ -1495,7 +1495,7 @@
 	},
 /area/bluespaceriver/ground)
 "ck" = (
-/obj/item/weapon/beartrap{
+/obj/item/beartrap{
 	anchored = 1;
 	deployed = 1;
 	icon_state = "beartrap1"
@@ -1507,18 +1507,18 @@
 	},
 /area/bluespaceriver/ground)
 "cl" = (
-/obj/item/weapon/beartrap{
+/obj/item/beartrap{
 	anchored = 1;
 	deployed = 1;
 	icon_state = "beartrap1"
 	},
-/obj/item/weapon/bedsheet,
+/obj/item/bedsheet,
 /turf/simulated/floor/exoplanet/snow{
 	temperature = 240
 	},
 /area/bluespaceriver/ground)
 "cm" = (
-/obj/item/weapon/bedsheet,
+/obj/item/bedsheet,
 /turf/simulated/floor/exoplanet/snow{
 	temperature = 240
 	},
@@ -1818,7 +1818,7 @@
 /area/bluespaceriver/ship/cockpit)
 "dd" = (
 /obj/structure/hygiene/sink,
-/obj/item/weapon/storage/mirror{
+/obj/item/storage/mirror{
 	dir = 8;
 	icon_state = "mirror";
 	pixel_x = -1;

@@ -1,4 +1,4 @@
-name: Run Tests
+name: Тестирование
 
 on:
   workflow_dispatch:
@@ -8,6 +8,7 @@ on:
   pull_request:
     branches:
       - master
+      - merge-02-05-2021
 env:
   BYOND_MAJOR: "513"
   BYOND_MINOR: "1542"
@@ -17,7 +18,7 @@ jobs:
   DreamChecker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
       - name: Setup Cache
         uses: actions/cache@v2
         with:
@@ -41,7 +42,7 @@ jobs:
   Code:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
       - name: Setup Cache
         uses: actions/cache@v2
         with:
@@ -68,9 +69,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        map_path: [example, sierra, bearcat_inf, away_sites_testing]
+        map_path: [example, sierra, torch, bearcat_inf, away_sites_testing]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
       - name: Setup Cache
         uses: actions/cache@v2
         with:

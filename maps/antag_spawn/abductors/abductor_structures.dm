@@ -3,7 +3,7 @@
 	icon = 'infinity/icons/obj/abductor.dmi'
 	icon_state = "closed_unlocked"
 	setup = 0
-	anchored = 1
+	anchored = TRUE
 	closet_appearance = null
 
 /obj/structure/table/alien
@@ -19,7 +19,7 @@
 	desc = "A strange alien machine, capable of teleporting people with glands back to their ship."
 	icon = 'infinity/icons/obj/abductor.dmi'
 	icon_state = "experiment"
-	anchored = 1
+	anchored = TRUE
 	closet_appearance = null
 	var/experiments = 0 //For rewards and other shit
 	var/rewards = 0
@@ -70,7 +70,7 @@
 /obj/structure/closet/experimention_machine/proc/reward()
 	if(experiments == 2 && rewards != 1)
 		rewards++
-		var/obj/item/weapon/mindtool/reward = new(get_turf(src))
+		var/obj/item/mindtool/reward = new(get_turf(src))
 		src.visible_message(SPAN_NOTICE("[src] suddenly buzzes and [reward] drops from small hole on it's side"))
 
 	if(experiments == 4 && rewards != 2)
@@ -80,7 +80,7 @@
 
 	if(experiments == 6 && rewards != 3)
 		rewards++
-		var/obj/item/weapon/gun/energy/ionrifle/small/abductor/reward = new(get_turf(src))
+		var/obj/item/gun/energy/ionrifle/small/abductor/reward = new(get_turf(src))
 		src.visible_message(SPAN_NOTICE("[src] suddenly buzzes and [reward] drops from small hole on it's side"))
 
 /obj/structure/closet/experimention_machine/on_update_icon()

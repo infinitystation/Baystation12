@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/spistol
+/obj/item/gun/projectile/spistol
 	name = "TH22 pistol"
 	desc = "The TH22. A small sidearm, with futuristic design. Uses .22LR rounds."
 	icon = 'infinity/icons/obj/guns.dmi'
@@ -20,7 +20,7 @@
 	bulk = GUN_BULK_PISTOL
 	w_class = ITEM_SIZE_SMALL
 
-/obj/item/weapon/gun/projectile/spistol/on_update_icon()
+/obj/item/gun/projectile/spistol/on_update_icon()
 	if(ammo_magazine)
 		icon_state = "pistol0"
 	else

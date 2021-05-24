@@ -3,7 +3,8 @@
 	id = "playablecolony"
 	description = "a fully functional colony on the frontier of settled space"
 	suffixes = list("playablecolony_inf/colony.dmm")
-	cost = 2000 //was 2, we aren't using it now
+	spawn_cost = 0.5 // было 1
+	player_cost = 6 // Нынешнее значение основано на количестве игроков в авейке
 	template_flags = TEMPLATE_FLAG_CLEAR_CONTENTS | TEMPLATE_FLAG_NO_RUINS | TEMPLATE_FLAG_NO_RADS
 	ruin_tags = RUIN_HUMAN|RUIN_HABITAT
 	apc_test_exempt_areas = list(
@@ -22,7 +23,6 @@
 
 /decl/hierarchy/outfit/job/colonist
 	name = OUTFIT_JOB_NAME("Colonist")
-	id_type = null
 	pda_type = null
 
 /obj/effect/submap_landmark/spawnpoint/colonist_spawn

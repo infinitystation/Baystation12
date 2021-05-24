@@ -37,4 +37,3 @@
 #undef CONTRACT_ROLES
 
 #undef CIVILIAN_ROLES
-

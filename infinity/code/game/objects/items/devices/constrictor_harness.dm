@@ -98,12 +98,12 @@
 /decl/surgery_step/constrictor_harness
 	name = "Remove constrictor_harness"
 	allowed_tools = list(
-		/obj/item/weapon/wrench = 75,
-		/obj/item/weapon/screwdriver = 75,
+		/obj/item/wrench = 75,
+		/obj/item/screwdriver = 75,
 		/obj/item/psychic_power/psiblade/master/grand/paramount = 100,
 		/obj/item/psychic_power/psiblade = 100,
-		/obj/item/weapon/weldingtool = 100,
-		/obj/item/weapon/circular_saw = 100,
+		/obj/item/weldingtool = 100,
+		/obj/item/circular_saw = 100,
 	)
 	can_infect = 0
 	blood_level = 0
@@ -127,7 +127,7 @@
 	if(!istype(target))
 		return FALSE
 	if(isWelder(tool))
-		var/obj/item/weapon/weldingtool/welder = tool
+		var/obj/item/weldingtool/welder = tool
 		if(!welder.isOn() || !welder.remove_fuel(1,user))
 			return FALSE
 	return (target_zone == BP_CHEST) && istype(target.wear_suit, /obj/item/clothing/suit/constrictor_harness) && !(target.wear_suit.canremove)

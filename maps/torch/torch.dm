@@ -61,6 +61,7 @@
 	#include "items/solbanner.dm"
 	#include "items/explo_shotgun.dm"
 	#include "items/mecha.dm"
+	#include "items/memos.dm"
 
 	#include "items/clothing/ec_skillbadges.dm"
 	#include "items/clothing/solgov-accessory.dm"
@@ -109,6 +110,7 @@
 	#include "language/human/misc/spacer.dm"
 
 	#include "machinery/apc_shuttle.dm"
+	#include "machinery/faxmachine.dm"
 	#include "machinery/keycard authentication.dm"
 	#include "machinery/suit_storage.dm"
 
@@ -134,7 +136,6 @@
 	#include "loadout/loadout_gloves.dm"
 	#include "loadout/loadout_head.dm"
 	#include "loadout/loadout_shoes.dm"
-	#include "loadout/loadout_storage.dm"
 	#include "loadout/loadout_suit.dm"
 	#include "loadout/loadout_uniform.dm"
 	#include "loadout/loadout_xeno.dm"
@@ -151,7 +152,6 @@
 	#include "z2_transit.dmm"
 
 	#include "../away/empty.dmm"
-	#include "../away/ascent/ascent.dm"
 	#include "../away/mining/mining.dm"
 	#include "../away/derelict/derelict.dm"
 	#include "../away/bearcat/bearcat.dm"
@@ -163,17 +163,19 @@
 	#include "../away/blueriver/blueriver.dm"
 	#include "../away/slavers/slavers_base.dm"
 	#include "../away/mobius_rift/mobius_rift.dm"
-	#include "../away/icarus/icarus.dm"
 	#include "../away/errant_pisces/errant_pisces.dm"
 	#include "../away/lar_maria/lar_maria.dm"
-	#include "../away/unishi/unishi.dm"
 	#include "../away/voxship/voxship.dm"
 	#include "../away/skrellscoutship/skrellscoutship.dm"
 	#include "../away/meatstation/meatstation.dm"
 	#include "../away/miningstation/miningstation.dm"
 
-	#include "../../code/datums/music_tracks/chasing_time.dm"
+//	#include "../../code/datums/decl/audio/tracks/chasing_time.dm"
 	#include "torch_inf.dm" //for lower conflicts list, its placed here
+	#include "../away/mininghome/mininghome.dm"
+	#include "../away/scavver/scavver_gantry.dm"
+	#include "../away/verne/verne.dm"
+//	#include "../away/ascent_caulship/_ascent_caulship.dm"
 
 	#define using_map_DATUM /datum/map/torch
 

@@ -61,8 +61,8 @@ GLOBAL_LIST_EMPTY(CreatedOSes)
 	on = FALSE
 	for(var/datum/computer_file/program/P in running_programs)
 		kill_program(P, 1)
-
-	var/obj/item/weapon/stock_parts/computer/network_card/network_card = get_component(PART_NETWORK)
+	
+	var/obj/item/stock_parts/computer/network_card/network_card = get_component(PART_NETWORK)
 	if(network_card)
 		ntnet_global.unregister(network_card.identification_id)
 
@@ -70,7 +70,7 @@ GLOBAL_LIST_EMPTY(CreatedOSes)
 		updating = FALSE
 		updates = 0
 		update_progress = 0
-		var/obj/item/weapon/stock_parts/computer/hard_drive/hard_drive = get_component(PART_HDD)
+		var/obj/item/stock_parts/computer/hard_drive/hard_drive = get_component(PART_HDD)
 		if(hard_drive)
 			if(prob(10))
 				hard_drive.visible_message("<span class='warning'>[src] emits some ominous clicks.</span>")
@@ -85,7 +85,7 @@ GLOBAL_LIST_EMPTY(CreatedOSes)
 	var/datum/computer_file/data/autorun = get_file("autorun")
 	if(istype(autorun))
 		run_program(autorun.stored_data)
-	var/obj/item/weapon/stock_parts/computer/network_card/network_card = get_component(PART_NETWORK)
+	var/obj/item/stock_parts/computer/network_card/network_card = get_component(PART_NETWORK)
 	if(network_card)
 		ntnet_global.register(network_card.identification_id, src)
 	update_host_icon()
@@ -110,6 +110,10 @@ GLOBAL_LIST_EMPTY(CreatedOSes)
 		return
 
 	if(!P.is_supported_by_hardware(get_hardware_flag(), user, TRUE))
+		return
+
+	if(P.requires_ntnet && !get_ntnet_status())
+		to_chat(user, SPAN_WARNING("Unable to establish a working network connection. Please try again later. If problem persists, please contact your system administrator."))
 		return
 
 	minimize_program(user)

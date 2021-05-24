@@ -10,9 +10,9 @@
 	var/health = null
 	var/burn_point = null
 	var/burning = null
-	var/hitsound = null
+	var/hitsound = "swing_hit"
 	var/slot_flags = 0		//This is used to determine on which slots an item can fit.
-	var/no_attack_log = 0			//If it's an item we don't want to log attack_logs with, set this to 1
+	var/no_attack_log = FALSE			//If it's an item we don't want to log attack_logs with, set this to 1
 	pass_flags = PASS_FLAG_TABLE
 //	causeerrorheresoifixthis
 	var/obj/item/master = null
@@ -87,8 +87,9 @@
 	// Works similarly to worn sprite_sheets, except the alternate sprites are used when the clothing/refit_for_species() proc is called.
 	var/list/sprite_sheets_obj = list()
 
-	var/safely = 0 //Cant harm with != Hurt intent
-	var/undress_do_affter_needed = 0 //if 0: bypass doafter on unequiping //inf
+	var/safely = FALSE //Cant harm with != Hurt intent
+	var/undress_do_affter_needed = FALSE //if 0: bypass doafter on unequiping //inf
+	var/attack_ignore_harm_check = FALSE
 
 /obj/item/New()
 	..()
@@ -109,7 +110,7 @@
 	if(ismob(loc))
 		var/mob/m = loc
 		m.drop_from_inventory(src)
-	var/obj/item/weapon/storage/storage = loc
+	var/obj/item/storage/storage = loc
 	if(istype(storage))
 		// some ui cleanup needs to be done
 		storage.on_item_pre_deletion(src) // must be done before deletion
@@ -121,7 +122,7 @@
 /obj/item/crush_act()
 	playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
 	for(var/i in 1 to w_class)
-		new /obj/item/weapon/scrap_lump(loc)
+		new /obj/item/scrap_lump(loc)
 	for(var/obj/item/I in contents)
 		I.forceMove(loc)
 		I.crush_act()
@@ -144,7 +145,7 @@
 
 /obj/item/proc/is_held_twohanded(mob/living/M)
 
-	if(istype(loc, /obj/item/rig_module) || istype(loc, /obj/item/weapon/rig))
+	if(istype(loc, /obj/item/rig_module) || istype(loc, /obj/item/rig))
 		return TRUE
 
 	var/check_hand
@@ -223,6 +224,8 @@
 		var/obj/item/organ/external/temp = H.organs_by_name[BP_R_HAND]
 		if (user.hand)
 			temp = H.organs_by_name[BP_L_HAND]
+		if(MUTATION_FERAL in user.mutations)
+			return
 		if(temp && !temp.is_usable())
 			to_chat(user, "<span class='notice'>You try to move your [temp.name], but cannot!</span>")
 			return
@@ -233,8 +236,8 @@
 	var/old_loc = loc
 
 	pickup(user)
-	if (istype(loc, /obj/item/weapon/storage))
-		var/obj/item/weapon/storage/S = loc
+	if (istype(loc, /obj/item/storage))
+		var/obj/item/storage/S = loc
 		S.remove_from_storage(src)
 
 	if(!QDELETED(throwing))
@@ -263,7 +266,7 @@
 			pixel_y = 0
 
 /obj/item/attack_ai(mob/user as mob)
-	if (istype(src.loc, /obj/item/weapon/robot_module))
+	if (istype(src.loc, /obj/item/robot_module))
 		//If the item is part of a cyborg module, equip it
 		if(!isrobot(user))
 			return
@@ -271,18 +274,23 @@
 		R.activate_module(src)
 		R.hud_used.update_robot_modules_display()
 
-/obj/item/attackby(obj/item/weapon/W, mob/user)
+/obj/item/attackby(obj/item/W, mob/user)
 	if((. = SSfabrication.try_craft_with(src, W, user)))
 		return
 
-	if(istype(W, /obj/item/weapon/storage))
-		var/obj/item/weapon/storage/S = W
+	if(istype(W, /obj/item/storage))
+		var/obj/item/storage/S = W
 		if(S.use_to_pickup)
 			if(S.collection_mode) //Mode is set to collect all items
 				if(isturf(src.loc))
 					S.gather_all(src.loc, user)
 			else if(S.can_be_inserted(src, user))
 				S.handle_item_insertion(src)
+
+/obj/item/can_embed()
+	if (!canremove)
+		return FALSE
+	return ..()
 
 /obj/item/proc/talk_into(mob/M as mob, text)
 	return
@@ -307,11 +315,11 @@
 	return
 
 // called when this item is removed from a storage item, which is passed on as S. The loc variable is already set to the new destination before this is called.
-/obj/item/proc/on_exit_storage(obj/item/weapon/storage/S as obj)
+/obj/item/proc/on_exit_storage(obj/item/storage/S as obj)
 	return
 
 // called when this item is added into a storage item, which is passed on as S. The loc variable is already set to the storage item.
-/obj/item/proc/on_enter_storage(obj/item/weapon/storage/S as obj)
+/obj/item/proc/on_enter_storage(obj/item/storage/S as obj)
 	return
 
 // called when "found" in pockets and storage items. Returns 1 if the search should end.
@@ -389,6 +397,17 @@ var/list/global/slot_flags_enumeration = list(
 		if(!H.slot_is_accessible(slot, src, _user))
 			return 0
 
+
+	if (!force && istype(src, /obj/item/clothing))
+		var/obj/item/clothing/SC = src
+		var/bulky = SC.get_bulky_coverage() //disallow bulky things from covering one another
+		if (bulky)
+			for (var/obj/item/clothing/C in H.get_equipped_items())
+				if (C.get_bulky_coverage() & bulky)
+					if (!disable_warning)
+						to_chat(H, SPAN_WARNING("\The [SC] is too bulky to wear with \the [C]."))
+					return FALSE
+
 	//Lastly, check special rules for the desired slot.
 	switch(slot)
 		if(slot_l_ear, slot_r_ear)
@@ -424,15 +443,15 @@ var/list/global/slot_flags_enumeration = list(
 				if(!disable_warning)
 					to_chat(usr, "<span class='warning'>You somehow have a suit with no defined allowed items for suit storage, stop that.</span>")
 				return 0
-			if( !(istype(src, /obj/item/modular_computer/pda) || istype(src, /obj/item/weapon/pen) || is_type_in_list(src, H.wear_suit.allowed)) )
+			if( !(istype(src, /obj/item/modular_computer/pda) || istype(src, /obj/item/pen) || is_type_in_list(src, H.wear_suit.allowed)) )
 				return 0
 		if(slot_handcuffed)
-			if(!istype(src, /obj/item/weapon/handcuffs))
+			if(!istype(src, /obj/item/handcuffs))
 				return 0
 		if(slot_in_backpack) //used entirely for equipping spawned mobs or at round start
 			var/allow = 0
-			if(H.back && istype(H.back, /obj/item/weapon/storage/backpack))
-				var/obj/item/weapon/storage/backpack/B = H.back
+			if(H.back && istype(H.back, /obj/item/storage/backpack))
+				var/obj/item/storage/backpack/B = H.back
 				if(B.can_be_inserted(src,M,1))
 					allow = 1
 			if(!allow)
@@ -444,16 +463,12 @@ var/list/global/slot_flags_enumeration = list(
 				return 0
 			if(H.w_uniform && (slot_w_uniform in mob_equip))
 				var/obj/item/clothing/under/uniform = H.w_uniform
-				if(uniform && !uniform.can_attach_accessory(src))
-					if (!disable_warning)
-						to_chat(H, "<span class='warning'>You cannot equip \the [src] to \the [uniform].</span>")
+				if(uniform && !uniform.can_attach_accessory(src, disable_warning ? null : H))
 					return 0
 				else return 1
 			if(H.wear_suit && (slot_wear_suit in mob_equip))
 				var/obj/item/clothing/suit/suit = H.wear_suit
-				if(suit && !suit.can_attach_accessory(src))
-					if (!disable_warning)
-						to_chat(H, "<span class='warning'>You cannot equip \the [src] to \the [suit].</span>")
+				if(suit && !suit.can_attach_accessory(src, disable_warning ? null : H))
 					return 0
 
 	return 1
@@ -553,6 +568,8 @@ var/list/global/slot_flags_enumeration = list(
 	return loc
 
 /obj/item/proc/eyestab(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
+	if (user.a_intent == I_HELP)
+		return FALSE
 
 	var/mob/living/carbon/human/H = M
 	if(istype(H))
@@ -607,7 +624,7 @@ var/list/global/slot_flags_enumeration = list(
 		var/obj/item/organ/external/affecting = H.get_organ(eyes.parent_organ)
 		affecting.take_external_damage(7)
 	else
-		M.take_organ_damage(7)
+		M.take_organ_damage(7, 0)
 	M.eye_blurry += rand(3,4)
 	return
 
@@ -631,7 +648,7 @@ var/list/global/slot_flags_enumeration = list(
 	if (!..())
 		return 0
 
-	if(istype(src, /obj/item/weapon/melee/energy))
+	if(istype(src, /obj/item/melee/energy))
 		return
 
 	//if we haven't made our blood_overlay already
@@ -689,6 +706,9 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	if(zoom)
 		return
 
+	if(!user.loc?.MayZoom())
+		return
+
 	var/devicename = zoomdevicename || name
 
 	var/mob/living/carbon/human/H = user
@@ -705,6 +725,8 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	if(user.hud_used.hud_shown)
 		user.toggle_zoom_hud()	// If the user has already limited their HUD this avoids them having a HUD when they zoom in
 	user.client.view = viewsize
+	if(istype(H))
+		H.handle_vision()
 	zoom = 1
 
 	var/viewoffset = WORLD_ICON_SIZE * tileoffset
@@ -759,6 +781,10 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 	user.client.pixel_x = 0
 	user.client.pixel_y = 0
+
+	var/mob/living/carbon/human/H = user
+	if(istype(H))
+		H.handle_vision()
 	user.visible_message("[zoomdevicename ? "\The [user] looks up from [src]" : "\The [user] lowers [src]"].")
 
 /obj/item/proc/pwr_drain()
@@ -813,7 +839,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	else if(item_icons && item_icons[slot])
 		mob_icon = item_icons[slot]
 	else
-		mob_icon = default_onmob_icons[slot]
+		mob_icon = GLOB.default_onmob_icons[slot]
 
 	if(user_human)
 		return user_human.species.get_offset_overlay_image(spritesheet, mob_icon, mob_state, color, slot)
@@ -821,14 +847,14 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 /obj/item/proc/get_examine_line()
 	if(blood_color)
-		. = SPAN_WARNING("\icon[src] [gender==PLURAL?"some":"a"] <font color='[blood_color]'>stained</font> [src]")
+		. = SPAN_WARNING("[icon2html(src, viewers(get_turf(src)))] [gender==PLURAL?"some":"a"] <font color='[blood_color]'>stained</font> [src]")
 	else
-		. = "\icon[src] \a [src]"
+		. = "[icon2html(src, viewers(get_turf(src)))] \a [src]"
 	var/ID = GetIdCard()
 	if(ID)
 		. += "  <a href='?src=\ref[ID];look_at_id=1'>\[Look at ID\]</a>"
 
-/obj/item/proc/on_active_hand()
+/obj/item/proc/on_active_hand(mob/M)
 
 /obj/item/is_burnable()
 	return simulated
@@ -866,13 +892,29 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	if(citem.item_desc)
 		desc = citem.item_desc
 	if(citem.item_icon_state)
+/*[inf.exclude]
 		item_state_slots = null
 		item_icons = null
 		icon = CUSTOM_ITEM_OBJ
 		set_icon_state(citem.item_icon_state)
 		item_state = null
 		icon_override = CUSTOM_ITEM_MOB
+[/inf.exclude]*/
+		//[INF]
+		init_custom_icon_file()
+		set_icon_state(citem.item_icon_state)
+		//[/INF]
+
 //[INF]
-	if(citem.additional_data.Find("slot_flags"))
+	if(list_find(citem.additional_data, "slot_flags"))
 		slot_flags = citem.additional_data["slot_flags"]
+/obj/item/proc/init_custom_icon_file()
+	item_state_slots = null
+	item_icons = null
+	item_state = null
+	icon = CUSTOM_ITEM_OBJ
+	icon_override = CUSTOM_ITEM_MOB
 //[/INF]
+
+/obj/item/proc/attack_message_name()
+	return "\a [src]"

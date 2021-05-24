@@ -27,7 +27,7 @@
 	icon_closed = "resomi_labcoat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	species_restricted = list(SPECIES_RESOMI)
-	allowed = list(/obj/item/device/scanner/gas,/obj/item/stack/medical,/obj/item/weapon/reagent_containers/dropper,/obj/item/weapon/reagent_containers/syringe,/obj/item/weapon/reagent_containers/hypospray,/obj/item/device/scanner/health,/obj/item/device/flashlight/pen,/obj/item/weapon/reagent_containers/glass/bottle,/obj/item/weapon/reagent_containers/glass/beaker,/obj/item/weapon/reagent_containers/pill,/obj/item/weapon/storage/pill_bottle,/obj/item/weapon/paper)
+	allowed = list(/obj/item/device/scanner/gas,/obj/item/stack/medical,/obj/item/reagent_containers/dropper,/obj/item/reagent_containers/syringe,/obj/item/reagent_containers/hypospray,/obj/item/device/scanner/health,/obj/item/device/flashlight/pen,/obj/item/reagent_containers/glass/bottle,/obj/item/reagent_containers/glass/beaker,/obj/item/reagent_containers/pill,/obj/item/storage/pill_bottle,/obj/item/paper)
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 50, rad = 0)
 
 //standart resomicloak
@@ -45,7 +45,7 @@
 	. = ..()
 	if(pockets)
 		qdel(pockets)
-	pockets = new/obj/item/weapon/storage/internal/pouch(src, slots*BASE_STORAGE_COST(ITEM_SIZE_SMALL))
+	pockets = new/obj/item/storage/internal/pouch(src, slots*BASE_STORAGE_COST(ITEM_SIZE_SMALL))
 
 /obj/item/clothing/suit/storage/resomicloak/standard/black_grey
 	name = "black and grey cloak"
@@ -291,7 +291,7 @@
 	)
 	if(pockets)
 		qdel(pockets)
-	pockets = new/obj/item/weapon/storage/internal/pouch(src, slots*BASE_STORAGE_COST(ITEM_SIZE_SMALL))
+	pockets = new/obj/item/storage/internal/pouch(src, slots*BASE_STORAGE_COST(ITEM_SIZE_SMALL))
 
 /obj/item/clothing/suit/storage/hooded/polychromic/verb/change_color()
 	set name = "Change Cloak Color"

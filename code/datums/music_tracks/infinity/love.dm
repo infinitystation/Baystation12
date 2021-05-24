@@ -1,6 +1,6 @@
-/music_track/love
-	artist = "Eminem (Eric Stanley's cover)"
+/decl/audio/track/love
+	author = "Eminem (Eric Stanley's cover)"
 	title = "Love the way you lie"
-	album = "Placeholder"
-	song = 'infinity/sound/music/newyear/eminem_lovethewayyoulie.ogg'
+	collection =  "Placeholder"
+	source = 'infinity/sound/music/newyear/eminem_lovethewayyoulie.ogg'
 	license =  /decl/license/grandfathered

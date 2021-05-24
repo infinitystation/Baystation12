@@ -87,8 +87,7 @@
 					continue
 				if(used == amount)
 					break
-				if(!do_mob(user, M, W.damage/5))
-					to_chat(user, SPAN_NOTICE("You must stand still to bandage wounds."))
+				if(!do_after(user, W.damage / 5, M))
 					break
 
 				if (W.current_stage <= W.max_bleeding_stage)
@@ -102,6 +101,8 @@
 					user.visible_message(SPAN_NOTICE("\The [user] places a bandaid over \a [W.desc] on [M]'s [affecting.name]."), \
 					                              SPAN_NOTICE("You place a bandaid over \a [W.desc] on [M]'s [affecting.name].") )
 				W.bandage()
+				if (M.stat == UNCONSCIOUS && prob(25))
+					to_chat(M, SPAN_NOTICE(SPAN_BOLD("... [pick("feels a little better", "hurts a little less")] ...")))
 				playsound(src, pick(apply_sounds), 25)
 				used++
 			affecting.update_damages()
@@ -139,7 +140,7 @@
 			user.visible_message("<span class='notice'>\The [user] starts salving wounds on [M]'s [affecting.name].</span>", \
 					             "<span class='notice'>You start salving the wounds on [M]'s [affecting.name].</span>" )
 			playsound(src, pick(apply_sounds), 25)
-			if(!do_mob(user, M, 10))
+			if(!do_after(user, 1 SECOND, M))
 				to_chat(user, "<span class='notice'>You must stand still to salve wounds.</span>")
 				return 1
 			user.visible_message("<span class='notice'>[user] salved wounds on [M]'s [affecting.name].</span>", \
@@ -151,7 +152,7 @@
 /obj/item/stack/medical/advanced/bruise_pack
 	name = "advanced trauma kit"
 	singular_name = "advanced trauma kit"
-	desc = "An advanced trauma kit for severe injuries."
+	desc = "A packet filled antibacterial bio-adhesive, used to quickly seal and disinfect cuts, bruises, and other physical trauma. Can be used to treat both limbs and internal organs."
 	icon_state = "traumakit"
 	heal_brute = 0
 	origin_tech = list(TECH_BIO = 1)
@@ -177,7 +178,7 @@
 					continue
 				if(used == amount)
 					break
-				if(!do_mob(user, M, W.damage/5))
+				if(!do_after(user, W.damage / 5, M))
 					to_chat(user, "<span class='notice'>You must stand still to bandage wounds.</span>")
 					break
 				if (W.current_stage <= W.max_bleeding_stage)
@@ -194,6 +195,8 @@
 				W.disinfect()
 				W.heal_damage(heal_brute)
 				used++
+				if (M.stat == UNCONSCIOUS && prob(25))
+					to_chat(M, SPAN_NOTICE(SPAN_BOLD("... [pick("feels better", "hurts less")] ...")))
 			affecting.update_damages()
 			if(used == amount)
 				if(affecting.is_bandaged())
@@ -205,7 +208,7 @@
 /obj/item/stack/medical/advanced/ointment
 	name = "advanced burn kit"
 	singular_name = "advanced burn kit"
-	desc = "An advanced treatment kit for severe burns."
+	desc = "A packet containing a delicate membrane used to salve and disinfect burn wounds. Can be used to treat both limbs and internal organs."
 	icon_state = "burnkit"
 	heal_burn = 5
 	origin_tech = list(TECH_BIO = 1)
@@ -228,7 +231,7 @@
 			user.visible_message("<span class='notice'>\The [user] starts salving wounds on [M]'s [affecting.name].</span>", \
 					             "<span class='notice'>You start salving the wounds on [M]'s [affecting.name].</span>" )
 			playsound(src, pick(apply_sounds), 25)
-			if(!do_mob(user, M, 10))
+			if(!do_after(user, 1 SECOND, M))
 				to_chat(user, "<span class='notice'>You must stand still to salve wounds.</span>")
 				return 1
 			user.visible_message( 	"<span class='notice'>[user] covers wounds on [M]'s [affecting.name] with regenerative membrane.</span>", \
@@ -237,6 +240,8 @@
 			use(1)
 			affecting.salve()
 			affecting.disinfect()
+			if (M.stat == UNCONSCIOUS && prob(25))
+				to_chat(M, SPAN_NOTICE(SPAN_BOLD("... [pick("feels better", "hurts less")] ...")))
 
 /obj/item/stack/medical/splint
 	name = "medical splints"
@@ -336,7 +341,7 @@
 			SPAN_NOTICE("\The [user] starts patching fractures on \the [M]'s [affecting.name]."), \
 			SPAN_NOTICE("You start patching fractures on \the [M]'s [affecting.name].") )
 		playsound(src, pick(apply_sounds), 25)
-		if(!do_mob(user, M, 10))
+		if(!do_after(user, 1 SECOND, M))
 			to_chat(user, SPAN_NOTICE("You must stand still to patch fractures."))
 			return 1
 		user.visible_message( \

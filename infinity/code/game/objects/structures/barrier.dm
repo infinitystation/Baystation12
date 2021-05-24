@@ -5,9 +5,9 @@
 	Also, demontage can be done with a crowbar. In case of structural damage, can be repaired with welding tool."
 	icon = 'infinity/icons/obj/barrier.dmi'
 	icon_state = "barrier_rised"
-	density = 1
+	density = TRUE
 	throwpass = 1
-	anchored = 1
+	anchored = TRUE
 	atom_flags = ATOM_FLAG_CLIMBABLE | ATOM_FLAG_CHECKS_BORDER
 	var/health = 200
 	var/maxhealth = 200
@@ -105,7 +105,7 @@
 
 /obj/structure/barrier/attackby(obj/item/W as obj, mob/user as mob)
 	if(isWelder(W))
-		var/obj/item/weapon/weldingtool/WT = W
+		var/obj/item/weldingtool/WT = W
 		if(health == maxhealth)
 			to_chat(user, "<span class='notice'>\The [src] is fully repaired.</span>")
 			return
@@ -141,7 +141,7 @@
 			visible_message("<span class='danger'>[user] is begins disassembling \the [src]...</span>")
 			playsound(src, 'sound/items/Crowbar.ogg', 100, 1)
 			if(do_after(user, 60, src))
-				var/obj/item/weapon/barrier/B = new /obj/item/weapon/barrier(get_turf(user))
+				var/obj/item/barrier/B = new /obj/item/barrier(get_turf(user))
 				visible_message("<span class='notice'>[user] dismantled \the [src].</span>")
 				playsound(src, 'sound/items/Deconstruct.ogg', 100, 1)
 				B.health = health
@@ -223,7 +223,7 @@
 		else
 	return
 
-/obj/item/weapon/barrier
+/obj/item/barrier
 	name = "portable barrier"
 	desc = "A portable barrier. Usually, you can see it on defensive positions or in storages at important areas. \
 	You can deploy it with a screwdriver for maximum protection, or keep it in mobile position. \
@@ -233,14 +233,14 @@
 	w_class = 4
 	health = 200
 
-/obj/item/weapon/barrier/proc/turf_check(mob/user as mob)
+/obj/item/barrier/proc/turf_check(mob/user as mob)
 	for(var/obj/structure/barrier/D in user.loc.contents)
 		if((D.dir == user.dir))
 			to_chat(user, "<span class='warning'>There is no more space.</span>")
 			return 1
 	return 0
 
-/obj/item/weapon/barrier/attack_self(mob/user as mob)
+/obj/item/barrier/attack_self(mob/user as mob)
 	if(!isturf(user.loc))
 		to_chat(user, "<span class='warning'>You can't place it here.</span>")
 		return
@@ -255,9 +255,9 @@
 		user.drop_item()
 		qdel(src)
 
-/obj/item/weapon/barrier/attackby(obj/item/W as obj, mob/user as mob)
+/obj/item/barrier/attackby(obj/item/W as obj, mob/user as mob)
 	if(health != 200 && isWelder(W))
-		var/obj/item/weapon/weldingtool/WT = W
+		var/obj/item/weldingtool/WT = W
 		if(!WT.isOn())
 			to_chat(user, "<span class='notice'>The [W] should be turned on firstly.</span>")
 			return

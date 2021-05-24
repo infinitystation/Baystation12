@@ -52,7 +52,7 @@
 # groups that already exists. Add it to the relevant run_xxx_tests function, and
 # if it introduces any new dependencies, add them to the check_xxx_deps
 # function. Some dependencies are guaranteed to be on CI platforms by outside
-# means (like .travis.yml), others will need to be installed by this script.
+# means (like .github/workflows/test.yml), others will need to be installed by this script.
 # You'll see plenty of examples of checking for CI and gating tests on that,
 # installing instead of checking when running on CI.
 #
@@ -199,7 +199,7 @@ function run_code_tests {
     pip install --user PyYaml -q
     pip install --user beautifulsoup4 -q
     shopt -s globstar
-#   run_test "check test workflow contains all maps" "scripts/validateTestingContainsAllMaps.sh" INF: temporary off due we don't use some maps
+    run_test "check unit tests contains all maps" "scripts/validateTestingContainsAllMaps.sh"
     run_test_fail "maps contain no step_[xy]" "grep 'step_[xy]' maps/**/*.dmm"
     run_test_fail "maps contain no layer adjustments" "grep 'layer = ' maps/**/*.dmm"
     run_test_fail "maps contain no plane adjustments" "grep 'plane = ' maps/**/*.dmm"
@@ -207,12 +207,12 @@ function run_code_tests {
     run_test_fail "no invalid spans" "grep -En \"<\s*span\s+class\s*=\s*('[^'>]+|[^'>]+')\s*>\" **/*.dm"
     run_test "code quality checks" "test/check-paths.sh"
     run_test "indentation check" "awk -f tools/indentation.awk **/*.dm"
-    run_test "check changelog example unchanged" "md5sum -c - <<< '683a3e0d21b90581ae6e4c95052d461e *html/changelogs/example.yml'"
+    run_test "check changelog example unchanged" "md5sum -c - <<< 'a4d3afef6ced70921c88d229b2c21af5 *html/changelogs_infinity/example.yml'"
     run_test "check tags" "python3 tools/TagMatcher/tag-matcher.py ."
     run_test "check color hex" "python3 tools/ColorHexChecker/color-hex-checker.py ."
     run_test "check punctuation" "python3 tools/PunctuationChecker/punctuation-checker.py ."
     run_test "check icon state limit" "python3 tools/dmitool/check_icon_state_limit.py ."
-    run_test_ci "check changelog builds" "python3 tools/GenerateChangelog/ss13_genchangelog.py html/changelog.html html/changelogs"
+    run_test_ci "check changelog builds" "python3 tools/changelog/ss13_ru_genchangelog.py html/changelog_infinity.html html/changelogs_infinity"
 }
 
 function run_byond_tests {
@@ -229,7 +229,7 @@ function run_byond_tests {
         source $HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}/byond/bin/byondsetup
     fi
     run_test_ci "check globals build" "python3 tools/GenerateGlobalVarAccess/gen_globals.py baystation12.dme code/_helpers/global_access.dm"
-    run_test "check globals unchanged" "md5sum -c - <<< '61cc7f34d345283ae9b0a7a018341353 *code/_helpers/global_access.dm'"
+    run_test "check globals unchanged" "md5sum -c - <<< '5a23d4ecfecc954ddd2556d8db48e1b2 *code/_helpers/global_access.dm'"
     run_test "build map unit tests" "scripts/dm.sh -DUNIT_TEST -M$MAP_PATH baystation12.dme"
     run_test "check no warnings in build" "grep ', 0 warnings' build_log.txt"
     run_test "run unit tests" "DreamDaemon baystation12.dmb -invisible -trusted -core 2>&1 | tee log.txt"

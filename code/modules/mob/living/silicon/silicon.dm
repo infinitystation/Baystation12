@@ -34,7 +34,9 @@
 	var/list/datum/alarm/queued_alarms = new()
 
 	var/list/access_rights
-	var/obj/item/weapon/card/id/idcard = /obj/item/weapon/card/id/synthetic
+	var/obj/item/card/id/idcard = /obj/item/card/id/synthetic
+
+	var/machine_restriction = TRUE // Whether or not the silicon mob is affected by the `silicon_restriction` var on machines
 
 	#define SEC_HUD 1 //Security HUD mode
 	#define MED_HUD 2 //Medical HUD mode
@@ -81,11 +83,11 @@
 /mob/living/silicon/emp_act(severity)
 	switch(severity)
 		if(1)
-			src.take_organ_damage(0,16,emp=1)
+			take_organ_damage(0, 16, ORGAN_DAMAGE_SILICON_EMP)
 			if(prob(50)) Stun(rand(5,10))
 			else confused = (min(confused + 2, 40))
 		if(2)
-			src.take_organ_damage(0,7,emp=1)
+			take_organ_damage(0, 7, ORGAN_DAMAGE_SILICON_EMP)
 			confused = (min(confused + 2, 30))
 	flash_eyes(affect_silicon = 1)
 	to_chat(src, "<span class='danger'><B>*BZZZT*</B></span>")

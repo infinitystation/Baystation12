@@ -2,8 +2,8 @@
 /atom/movable/lighting_overlay
 	name = ""
 	mouse_opacity = 0
-	simulated = 0
-	anchored = 1
+	simulated = FALSE
+	anchored = TRUE
 	icon = LIGHTING_ICON
 	plane = LIGHTING_PLANE
 	layer = LIGHTING_LAYER
@@ -22,6 +22,7 @@
 
 /atom/movable/lighting_overlay/Initialize()
 	// doesn't need special init
+	SHOULD_CALL_PARENT(FALSE)
 	atom_flags |= ATOM_FLAG_INITIALIZED
 	return INITIALIZE_HINT_NORMAL
 

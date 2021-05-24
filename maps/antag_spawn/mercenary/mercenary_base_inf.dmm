@@ -106,14 +106,14 @@
 /area/map_template/merc_shuttle)
 "aj" = (
 /obj/machinery/computer/ship/helm{
-	uncreated_component_parts = list(/obj/item/weapon/stock_parts/power/battery/buildable/responsive = 1, /obj/item/weapon/cell/high = 1)
+	uncreated_component_parts = list(/obj/item/stock_parts/power/battery/buildable/responsive = 1, /obj/item/cell/high = 1)
 	},
 /turf/simulated/floor/shuttle/darkred,
 /area/map_template/merc_shuttle)
 "ak" = (
 /obj/machinery/computer/shuttle_control/explore/merc_shuttle{
 	req_access = list("ACCESS_SYNDICATE");
-	uncreated_component_parts = list(/obj/item/weapon/stock_parts/power/battery/buildable/responsive = 1, /obj/item/weapon/cell/high = 1)
+	uncreated_component_parts = list(/obj/item/stock_parts/power/battery/buildable/responsive = 1, /obj/item/cell/high = 1)
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -127,12 +127,12 @@
 /area/map_template/merc_shuttle)
 "al" = (
 /obj/structure/table/rack,
-/obj/item/weapon/pinpointer,
-/obj/item/weapon/pinpointer,
-/obj/item/weapon/pinpointer,
-/obj/item/weapon/pinpointer,
-/obj/item/weapon/pinpointer,
-/obj/item/weapon/pinpointer,
+/obj/item/pinpointer,
+/obj/item/pinpointer,
+/obj/item/pinpointer,
+/obj/item/pinpointer,
+/obj/item/pinpointer,
+/obj/item/pinpointer,
 /obj/effect/landmark/delete_on_shuttle{
 	shuttle_name = "Desperado"
 	},
@@ -225,7 +225,7 @@
 	},
 /obj/machinery/computer/ship/engines{
 	dir = 8;
-	uncreated_component_parts = list(/obj/item/weapon/stock_parts/power/battery/buildable/responsive = 1, /obj/item/weapon/cell/high = 1)
+	uncreated_component_parts = list(/obj/item/stock_parts/power/battery/buildable/responsive = 1, /obj/item/cell/high = 1)
 	},
 /obj/machinery/turretid/lethal{
 	ailock = 1;
@@ -541,7 +541,7 @@
 /area/map_template/merc_shuttle)
 "aT" = (
 /obj/machinery/atmospherics/unary/freezer,
-/obj/item/weapon/reagent_containers/glass/beaker/cryoxadone,
+/obj/item/reagent_containers/glass/beaker/cryoxadone,
 /obj/structure/window/reinforced/crescent{
 	dir = 4
 	},
@@ -569,7 +569,7 @@
 	_input_on = 1;
 	_output_maxed = 1;
 	_output_on = 1;
-	uncreated_component_parts = list(/obj/item/weapon/stock_parts/smes_coil/super_io = 1, /obj/item/weapon/stock_parts/smes_coil/super_capacity = 1)
+	uncreated_component_parts = list(/obj/item/stock_parts/smes_coil/super_io = 1, /obj/item/stock_parts/smes_coil/super_capacity = 1)
 	},
 /obj/structure/cable,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -618,15 +618,15 @@
 /obj/structure/closet/medical_wall/filled{
 	pixel_x = -32
 	},
-/obj/item/weapon/reagent_containers/spray/cleaner,
-/obj/item/weapon/reagent_containers/spray/sterilizine,
-/obj/item/weapon/defibrillator/loaded,
-/obj/item/weapon/storage/firstaid/combat,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/item/reagent_containers/spray/sterilizine,
+/obj/item/defibrillator/loaded,
+/obj/item/storage/firstaid/combat,
 /obj/item/clothing/gloves/latex,
 /obj/item/clothing/mask/surgical,
 /obj/item/bodybag/cryobag,
-/obj/item/weapon/reagent_containers/ivbag/nanoblood,
-/obj/item/weapon/storage/firstaid/adv,
+/obj/item/reagent_containers/ivbag/nanoblood,
+/obj/item/storage/firstaid/adv,
 /obj/effect/gas_setup,
 /turf/simulated/floor/tiled/white,
 /area/map_template/merc_shuttle)
@@ -636,7 +636,7 @@
 	dir = 9
 	},
 /obj/structure/iv_drip,
-/obj/item/weapon/reagent_containers/ivbag/nanoblood,
+/obj/item/reagent_containers/ivbag/nanoblood,
 /obj/effect/gas_setup,
 /obj/machinery/door/window{
 	dir = 4
@@ -678,7 +678,7 @@
 /turf/simulated/wall/r_titanium,
 /area/map_template/merc_shuttle)
 "bh" = (
-/obj/structure/handrai{
+/obj/structure/handrail{
 	icon_state = "handrail";
 	dir = 1
 	},
@@ -875,14 +875,14 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/merc_shuttle)
 "bt" = (
-/obj/item/weapon/storage/firstaid/surgery,
+/obj/item/storage/firstaid/surgery,
 /obj/structure/table/standard,
 /obj/item/stack/nanopaste,
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube_map"
 	},
-/obj/item/weapon/storage/box/freezer,
+/obj/item/storage/box/freezer,
 /obj/machinery/body_scanconsole,
 /turf/simulated/floor/tiled/white,
 /area/map_template/merc_shuttle)
@@ -1092,7 +1092,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/merc_shuttle)
 "bJ" = (
-/obj/structure/handrai{
+/obj/structure/handrail{
 	icon_state = "handrail";
 	dir = 1
 	},
@@ -1421,8 +1421,8 @@
 /obj/structure/closet/crate{
 	dir = 1
 	},
-/obj/item/weapon/tank/hydrogen,
-/obj/item/weapon/tank/hydrogen,
+/obj/item/tank/hydrogen,
+/obj/item/tank/hydrogen,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -1437,9 +1437,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/item/weapon/storage/briefcase/inflatable,
-/obj/item/weapon/storage/briefcase/inflatable,
-/obj/item/weapon/inflatable_dispenser,
+/obj/item/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
+/obj/item/inflatable_dispenser,
 /obj/item/device/spaceflare,
 /obj/item/device/spaceflare,
 /obj/item/device/spaceflare,
@@ -1490,11 +1490,11 @@
 /turf/simulated/floor/plating,
 /area/map_template/merc_shuttle/rear)
 "cq" = (
-/obj/item/weapon/storage/box/smokes,
-/obj/item/weapon/storage/box/teargas,
-/obj/item/weapon/storage/box/flashbangs,
+/obj/item/storage/box/smokes,
+/obj/item/storage/box/teargas,
+/obj/item/storage/box/flashbangs,
 /obj/structure/table/rack,
-/obj/item/weapon/storage/box/handcuffs{
+/obj/item/storage/box/handcuffs{
 	pixel_x = 4;
 	pixel_y = 2
 	},
@@ -1586,12 +1586,12 @@
 	id_tag = "merc_shuttle";
 	pixel_x = 0
 	},
-/obj/item/weapon/crowbar/prybar,
-/obj/item/weapon/crowbar/prybar,
-/obj/item/weapon/crowbar/prybar,
-/obj/item/weapon/crowbar/prybar,
-/obj/item/weapon/crowbar/prybar,
-/obj/item/weapon/crowbar/prybar,
+/obj/item/crowbar/prybar,
+/obj/item/crowbar/prybar,
+/obj/item/crowbar/prybar,
+/obj/item/crowbar/prybar,
+/obj/item/crowbar/prybar,
+/obj/item/crowbar/prybar,
 /obj/machinery/button/blast_door{
 	id_tag = "merc_airlock";
 	req_access = list("ACCESS_SYNDICATE")
@@ -1610,7 +1610,7 @@
 	_input_on = 1;
 	_output_maxed = 1;
 	_output_on = 1;
-	uncreated_component_parts = list(/obj/item/weapon/stock_parts/smes_coil/super_io = 1, /obj/item/weapon/stock_parts/smes_coil/super_capacity = 1)
+	uncreated_component_parts = list(/obj/item/stock_parts/smes_coil/super_io = 1, /obj/item/stock_parts/smes_coil/super_capacity = 1)
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/merc_shuttle/rear)
@@ -1657,12 +1657,12 @@
 /area/map_template/merc_shuttle/rear)
 "cD" = (
 /obj/structure/table/rack,
-/obj/item/weapon/tank/jetpack/oxygen,
-/obj/item/weapon/tank/jetpack/oxygen,
-/obj/item/weapon/tank/jetpack/oxygen,
-/obj/item/weapon/tank/jetpack/carbondioxide,
-/obj/item/weapon/tank/jetpack/carbondioxide,
-/obj/item/weapon/tank/jetpack/carbondioxide,
+/obj/item/tank/jetpack/oxygen,
+/obj/item/tank/jetpack/oxygen,
+/obj/item/tank/jetpack/oxygen,
+/obj/item/tank/jetpack/carbondioxide,
+/obj/item/tank/jetpack/carbondioxide,
+/obj/item/tank/jetpack/carbondioxide,
 /turf/simulated/floor/plating,
 /area/map_template/merc_spawn)
 "cE" = (
@@ -1768,7 +1768,7 @@
 /turf/simulated/floor/plating,
 /area/map_template/merc_shuttle/rear)
 "cN" = (
-/obj/machinery/teleport/hub,
+ /obj/machinery/tele_pad,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 6
@@ -1776,7 +1776,7 @@
 /turf/simulated/floor/plating,
 /area/map_template/merc_shuttle/rear)
 "cO" = (
-/obj/machinery/teleport/station,
+/obj/machinery/tele_projector,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 4
@@ -1810,9 +1810,9 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/item/weapon/storage/toolbox/syndicate,
+/obj/item/storage/toolbox/syndicate,
 /obj/item/stack/material/phoron/fifty,
-/obj/item/weapon/storage/backpack/dufflebag/syndie/ammo,
+/obj/item/storage/backpack/dufflebag/syndie/ammo,
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 4
 	},
@@ -1873,11 +1873,11 @@
 /obj/item/clothing/glasses/night,
 /obj/item/clothing/glasses/night,
 /obj/item/clothing/glasses/night,
-/obj/item/weapon/storage/box/handcuffs{
+/obj/item/storage/box/handcuffs{
 	pixel_x = 4;
 	pixel_y = 2
 	},
-/obj/item/weapon/storage/box/handcuffs{
+/obj/item/storage/box/handcuffs{
 	pixel_x = 4;
 	pixel_y = 2
 	},
@@ -1903,7 +1903,7 @@
 /area/map_template/merc_spawn)
 "da" = (
 /obj/structure/table/rack,
-/obj/item/weapon/gun/energy/plasmacutter,
+/obj/item/gun/energy/plasmacutter,
 /obj/structure/window/reinforced{
 	icon_state = "rwindow";
 	dir = 4
@@ -1947,13 +1947,13 @@
 	icon_state = "railing0-1";
 	dir = 1
 	},
-/obj/item/weapon/defibrillator/compact/combat/loaded,
+/obj/item/defibrillator/compact/combat/loaded,
 /turf/simulated/floor/plating,
 /area/map_template/merc_spawn)
 "de" = (
 /obj/structure/table/rack,
-/obj/item/weapon/storage/belt/utility/full,
-/obj/item/weapon/storage/belt/utility/full,
+/obj/item/storage/belt/utility/full,
+/obj/item/storage/belt/utility/full,
 /turf/simulated/floor/plating,
 /area/map_template/merc_spawn)
 "df" = (
@@ -2046,12 +2046,12 @@
 	dir = 1
 	},
 /obj/structure/table/rack,
-/obj/item/weapon/storage/belt/medical/emt,
-/obj/item/weapon/storage/belt/medical/emt,
-/obj/item/weapon/storage/belt/holster/security/tactical,
-/obj/item/weapon/storage/belt/holster/security/tactical,
-/obj/item/weapon/storage/belt/holster/security/tactical,
-/obj/item/weapon/storage/belt/holster/security/tactical,
+/obj/item/storage/belt/medical/emt,
+/obj/item/storage/belt/medical/emt,
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/storage/belt/holster/security/tactical,
 /turf/simulated/floor/plating,
 /area/map_template/merc_spawn)
 "do" = (
@@ -2083,7 +2083,7 @@
 	icon_state = "rwindow";
 	dir = 1
 	},
-/obj/item/weapon/rig/medical/equipped,
+/obj/item/rig/medical/equipped,
 /obj/machinery/light/small/emergency,
 /turf/simulated/floor/plating,
 /area/map_template/merc_spawn)
@@ -2107,7 +2107,7 @@
 /area/map_template/merc_spawn)
 "du" = (
 /obj/structure/table/rack,
-/obj/item/weapon/pickaxe/diamonddrill,
+/obj/item/pickaxe/diamonddrill,
 /obj/structure/railing/mapped/no_density{
 	icon_state = "railing0-1";
 	dir = 4
@@ -2295,7 +2295,7 @@
 	_input_on = 1;
 	_output_maxed = 1;
 	_output_on = 1;
-	uncreated_component_parts = list(/obj/item/weapon/stock_parts/smes_coil/super_io = 1, /obj/item/weapon/stock_parts/smes_coil/super_capacity = 1)
+	uncreated_component_parts = list(/obj/item/stock_parts/smes_coil/super_io = 1, /obj/item/stock_parts/smes_coil/super_capacity = 1)
 	},
 /obj/structure/cable{
 	d2 = 8;
@@ -2333,7 +2333,7 @@
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/handrai{
+/obj/structure/handrail{
 	icon_state = "handrail";
 	dir = 8
 	},
@@ -2553,7 +2553,7 @@
 "fx" = (
 /obj/machinery/computer/ship/engines{
 	dir = 8;
-	uncreated_component_parts = list(/obj/item/weapon/stock_parts/power/battery/buildable/responsive = 1, /obj/item/weapon/cell/high = 1)
+	uncreated_component_parts = list(/obj/item/stock_parts/power/battery/buildable/responsive = 1, /obj/item/cell/high = 1)
 	},
 /turf/simulated/floor/tiled/airless,
 /area/space)
@@ -2606,8 +2606,8 @@
 /area/space)
 "hX" = (
 /obj/structure/table/rack,
-/obj/item/weapon/gun/projectile/revolver/medium,
-/obj/item/weapon/gun/projectile/revolver/medium,
+/obj/item/gun/projectile/revolver/medium,
+/obj/item/gun/projectile/revolver/medium,
 /obj/item/ammo_magazine/speedloader,
 /obj/item/ammo_magazine/speedloader,
 /obj/item/ammo_magazine/speedloader,
@@ -2630,8 +2630,8 @@
 /area/map_template/merc_spawn)
 "iB" = (
 /obj/structure/table/rack,
-/obj/item/weapon/gun/projectile/pistol/throwback,
-/obj/item/weapon/gun/projectile/pistol/throwback,
+/obj/item/gun/projectile/pistol/throwback,
+/obj/item/gun/projectile/pistol/throwback,
 /obj/item/ammo_magazine/pistol/throwback,
 /obj/item/ammo_magazine/pistol/throwback,
 /obj/item/ammo_magazine/pistol/throwback,
@@ -2688,8 +2688,8 @@
 /area/map_template/merc_spawn)
 "kf" = (
 /obj/structure/table/rack,
-/obj/item/weapon/gun/energy/gun,
-/obj/item/weapon/gun/energy/gun,
+/obj/item/gun/energy/gun,
+/obj/item/gun/energy/gun,
 /obj/effect/landmark/delete_on_shuttle{
 	shuttle_name = "Desperado"
 	},
@@ -2701,13 +2701,13 @@
 /area/map_template/merc_spawn)
 "kQ" = (
 /obj/structure/closet/crate/med_crate/toxin,
-/obj/item/weapon/storage/box/bodybags,
-/obj/item/weapon/storage/box/gloves,
-/obj/item/weapon/storage/box/masks,
-/obj/item/weapon/storage/belt/medical/emt,
-/obj/item/weapon/storage/belt/medical/emt,
-/obj/item/weapon/storage/belt/medical,
-/obj/item/weapon/storage/belt/medical,
+/obj/item/storage/box/bodybags,
+/obj/item/storage/box/gloves,
+/obj/item/storage/box/masks,
+/obj/item/storage/belt/medical/emt,
+/obj/item/storage/belt/medical/emt,
+/obj/item/storage/belt/medical,
+/obj/item/storage/belt/medical,
 /obj/structure/railing/mapped/no_density{
 	icon_state = "railing0-1";
 	dir = 4
@@ -2724,8 +2724,8 @@
 /area/space)
 "lh" = (
 /obj/structure/table/rack,
-/obj/item/weapon/gun/energy/gun/small,
-/obj/item/weapon/gun/energy/gun/small,
+/obj/item/gun/energy/gun/small,
+/obj/item/gun/energy/gun/small,
 /obj/effect/landmark/delete_on_shuttle{
 	shuttle_name = "Desperado"
 	},
@@ -2740,12 +2740,12 @@
 /area/space)
 "lQ" = (
 /obj/structure/table/rack,
-/obj/item/clothing/accessory/storage/drop_pouches/white,
-/obj/item/clothing/accessory/storage/drop_pouches/white,
-/obj/item/clothing/accessory/storage/drop_pouches/black,
-/obj/item/clothing/accessory/storage/drop_pouches/black,
-/obj/item/clothing/accessory/storage/drop_pouches/brown,
-/obj/item/clothing/accessory/storage/drop_pouches/brown,
+/obj/item/clothing/accessory/storage/white_drop,
+/obj/item/clothing/accessory/storage/white_drop,
+/obj/item/clothing/accessory/storage/black_drop,
+/obj/item/clothing/accessory/storage/black_drop,
+/obj/item/clothing/accessory/storage/brown_drop,
+/obj/item/clothing/accessory/storage/brown_drop,
 /obj/structure/railing/mapped/no_density{
 	icon_state = "railing0-1";
 	dir = 4
@@ -2823,7 +2823,7 @@
 "uv" = (
 /obj/machinery/computer/ship/helm{
 	dir = 1;
-	uncreated_component_parts = list(/obj/item/weapon/stock_parts/power/battery/buildable/responsive = 1, /obj/item/weapon/cell/high = 1)
+	uncreated_component_parts = list(/obj/item/stock_parts/power/battery/buildable/responsive = 1, /obj/item/cell/high = 1)
 	},
 /turf/simulated/floor/tiled/airless,
 /area/space)
@@ -2841,7 +2841,7 @@
 /area/map_template/merc_spawn)
 "vg" = (
 /obj/structure/table/standard,
-/obj/item/weapon/storage/backpack/dufflebag/syndie/ammo,
+/obj/item/storage/backpack/dufflebag/syndie/ammo,
 /turf/simulated/floor/tiled,
 /area/map_template/merc_spawn)
 "vU" = (
@@ -2886,7 +2886,7 @@
 	dir = 8;
 	name = "hacked cigarette machine";
 	prices = list();
-	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo/random = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	products = list(/obj/item/storage/fancy/cigarettes = 10, /obj/item/storage/box/matches = 10, /obj/item/flame/lighter/zippo/random = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
 /obj/structure/railing/mapped/no_density{
 	icon_state = "railing0-1";
@@ -2945,7 +2945,7 @@
 /area/map_template/merc_spawn)
 "IB" = (
 /obj/structure/table/rack,
-/obj/item/weapon/gun/energy/ionrifle/small,
+/obj/item/gun/energy/ionrifle/small,
 /obj/effect/landmark/delete_on_shuttle{
 	shuttle_name = "Desperado"
 	},
@@ -2957,8 +2957,8 @@
 /area/space)
 "Kz" = (
 /obj/structure/table/rack,
-/obj/item/weapon/rpd,
-/obj/item/weapon/rpd,
+/obj/item/rpd,
+/obj/item/rpd,
 /obj/structure/railing/mapped/no_density{
 	icon_state = "railing0-1";
 	dir = 4
@@ -3017,7 +3017,7 @@
 /turf/simulated/floor/plating,
 /area/map_template/merc_spawn)
 "NX" = (
-/obj/item/weapon/reagent_containers/ivbag/nanoblood,
+/obj/item/reagent_containers/ivbag/nanoblood,
 /turf/space,
 /area/space)
 "Or" = (
@@ -3139,8 +3139,8 @@
 /area/map_template/merc_spawn)
 "Zl" = (
 /obj/structure/table/rack,
-/obj/item/weapon/gun/projectile/pistol/military,
-/obj/item/weapon/gun/projectile/pistol/military/alt,
+/obj/item/gun/projectile/pistol/military,
+/obj/item/gun/projectile/pistol/military/alt,
 /obj/item/ammo_magazine/pistol/double,
 /obj/item/ammo_magazine/pistol/double,
 /obj/item/ammo_magazine/pistol/double,

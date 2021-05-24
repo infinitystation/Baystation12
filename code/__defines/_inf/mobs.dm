@@ -1,0 +1,32 @@
+#define TINT_NONE 0
+#define TINT_ONE 1
+#define TINT_TWO 2
+#define TINT_THREE 3
+#define TINT_MODERATE 3
+#define TINT_FOUR 4
+#define TINT_FIVE 5
+#define TINT_HEAVY 5
+#define TINT_SIX 6
+#define TINT_BLIND 7
+
+#define OBSERV_SPAWN_DELAY round(config.respawn_delay / 2)
+
+// Organs
+#define BP_FAKE    "fake_brain"
+#define BP_ZOMB    "festering ooze"
+
+// Species
+#define SPECIES_TAJARA			"Tajara"
+#define SPECIES_EROSAN			"Erosan'Unathi"
+#define SPECIES_RESOMI			"Resomi"
+#define SPECIES_XENO			"Xenophage"
+#define SPECIES_BIONIC			"Bionic"
+
+#define SPECIES_FBP				"Full Body Prosthesis"
+
+#define SPECIES_ABDUCTOR		"Abductor Agent"
+#define SPECIES_ABDUCTOR_SCI	"Abductor Scientist"
+
+#define HUMAN_SPECIES list(SPECIES_HUMAN, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_GRAVWORLDER, SPECIES_TRITONIAN, SPECIES_MULE)
+#define UNATHI_SPECIES list(SPECIES_UNATHI, SPECIES_EROSAN, SPECIES_YEOSA)
+#define SOUNDED_SPECIES list(SPECIES_HUMAN, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER, SPECIES_MULE, SPECIES_UNATHI, SPECIES_YEOSA, SPECIES_EROSAN, SPECIES_TAJARA, SPECIES_RESOMI, SPECIES_SKRELL)

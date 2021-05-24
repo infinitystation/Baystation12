@@ -28,7 +28,7 @@
 	slot_flags = SLOT_EARS | SLOT_TIE
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/clothingbag/zone
+/obj/item/clothingbag/zone
 	New()
 		new /obj/item/clothing/under/zonesweeater(src)
 		new /obj/item/clothing/shoes/zoneboots(src)

@@ -8,12 +8,12 @@
 	var/mins = minutes % 60
 	minutes = (minutes-mins) / 60
 	if(minutes == 0)
-		return "[mins][delimeter]0[delimeter]0"
+		return "0[delimeter]0[delimeter][mins]"
 	var/hours = minutes % 24
 	minutes = (minutes-hours) / 24
 	if(minutes == 0)
-		return "[mins][delimeter][hours][delimeter]0"
-	return "[mins][delimeter][hours][delimeter][minutes]"
+		return "0[delimeter][hours][delimeter][mins]"
+	return "[minutes][delimeter][hours][delimeter][mins]"
 
 /proc/DDHHMMtoText(var/line, var/delimeter = "-")
 	var/list/date = splittext(line, delimeter)
@@ -24,17 +24,17 @@
 		if(date[time] && date[time] != 0)
 			var/ending
 			switch(time)
-				if(1)
-					if((date[time] % 10) == 1)	ending = "Минута"
-					else if((date[time] % 10) in list(2,3,4))	ending = "Минуты"
+				if(3)
+					if(((date[time] % 100) != 11) && ((date[time] % 10) == 1))	ending = "Минута"
+					else if(!((date[time] % 100) in list(12,13,14)) && ((date[time] % 10) in list(2,3,4)))	ending = "Минуты"
 					else ending = "Минут"
 				if(2)
-					if((date[time] % 10) == 1)	ending = "Час"
-					else if((date[time] % 10) in list(2,3,4))	ending = "Часа"
+					if(((date[time] % 100) != 11) && ((date[time] % 10) == 1))	ending = "Час"
+					else if(!((date[time] % 100) in list(12,13,14)) && ((date[time] % 10) in list(2,3,4)))	ending = "Часа"
 					else ending = "Часов"
-				if(3)
-					if((date[time] % 10) == 1)	ending = "День"
-					else if((date[time] % 10) in list(2,3,4))	ending = "Дня"
+				if(1)
+					if(((date[time] % 100) != 11) && ((date[time] % 10) == 1))	ending = "День"
+					else if(!((date[time] % 100) in list(12,13,14)) && ((date[time] % 10) in list(2,3,4)))	ending = "Дня"
 					else ending = "Дней"
 			output += "[length(output) ? ", " : ""][date[time]] [ending]"
 	return output
@@ -140,7 +140,7 @@
 				)
 				desc.Add(list(
 					"title" = "СНЯТИЕ БАНА",
-					"description" = "Пользователь получил амнистию",
+					"description" = "Пользователь был разбанен",
 					"fields" = list(
 						banned, setter, banned_jobs
 					)
@@ -148,7 +148,7 @@
 			else
 				desc.Add(list(
 					"title" = "СНЯТИЕ БАНА",
-					"description" = "Пользователь получил амнистию",
+					"description" = "Пользователь был разбанен",
 					"fields" = list(
 						banned, setter
 					)
@@ -182,7 +182,7 @@
 					.["content"] = "Спецсимволы в измененном банризоне. Зачем?"
 					return
 				var/oldreason = list(
-					"name" = "Старая Причина",
+					"name" = "Старая причина",
 					"value" = reas[1]
 				)
 				reason["name"] = "Новая причина"

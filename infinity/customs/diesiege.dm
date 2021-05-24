@@ -34,7 +34,7 @@
 	thermostat = T0C + 36
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/storage/backpack/siegepack
+/obj/item/storage/backpack/siegepack
 	name = "Belt Poaches"
 	desc = "A belt designed to be a convenient way of carrying supplies in countless poaches while keeping the hands free. It is made out of durable material to survive the struggles a field researcher may face."
 	max_storage_space = DEFAULT_BACKPACK_STORAGE + 8
@@ -53,15 +53,15 @@
 	speed_mod = -0.18
 	allowed_ckeys = list("diesiege")
 
-/obj/item/weapon/clothingbag/diesiegeset
+/obj/item/clothingbag/diesiegeset
 	name = "IonLok outfit pack"
 	desc = "A utility bag. Simple as that"
 
-/obj/item/weapon/clothingbag/diesiegeset/New()
+/obj/item/clothingbag/diesiegeset/New()
 	. = ..()
 	new /obj/item/clothing/mask/gas/siegemask(src)
 	new /obj/item/clothing/under/thermal/siegeuni(src)
-	new /obj/item/weapon/storage/backpack/siegepack(src)
+	new /obj/item/storage/backpack/siegepack(src)
 	new /obj/item/clothing/head/siegehood(src)
 
 /obj/item/clothing/suit/storage/hooded/diesiege
@@ -74,12 +74,12 @@
 	item_flags = ITEM_FLAG_THICKMATERIAL
 	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB)
 	allowed = list(
-		/obj/item/weapon/pen,/obj/item/weapon/paper,
-		/obj/item/weapon/storage/fancy/cigarettes,
-		/obj/item/weapon/storage/box/matches,
-		/obj/item/weapon/reagent_containers/food/drinks/flask,
+		/obj/item/pen,/obj/item/paper,
+		/obj/item/storage/fancy/cigarettes,
+		/obj/item/storage/box/matches,
+		/obj/item/reagent_containers/food/drinks/flask,
 		/obj/item/device/flashlight,
-		/obj/item/weapon/tank)
+		/obj/item/tank)
 	action_button_name = "Toggle Hood"
 	hoodtype = /obj/item/clothing/head/siegecoathood
 	siemens_coefficient = 0.6
@@ -119,7 +119,7 @@
 	thermostat = T0C + 36
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/storage/backpack/siegesatchel
+/obj/item/storage/backpack/siegesatchel
 	name = "Leather satchel"
 	desc = "Leather satchel with a huge amount of synthetic patches. Looks expensive."
 	max_storage_space = DEFAULT_BACKPACK_STORAGE + 8
@@ -129,13 +129,13 @@
 	item_icons = list(slot_back_str = CUSTOM_ITEM_MOB)
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/clothingbag/diesiegekayset
+/obj/item/clothingbag/diesiegekayset
 	name = "CasualClothes outfit pack"
 	desc = "A utility bag. Simple as that"
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/clothingbag/diesiegekayset/New()
+/obj/item/clothingbag/diesiegekayset/New()
 	. = ..()
 	new /obj/item/clothing/suit/storage/hooded/diesiege(src)
 	new /obj/item/clothing/under/thermal/siegecyberuni(src)
-	new /obj/item/weapon/storage/backpack/siegesatchel(src)
+	new /obj/item/storage/backpack/siegesatchel(src)

@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/shotgun/magazine
+/obj/item/gun/projectile/shotgun/magazine
 	name = "AS-53 automatic shotgun"
 	desc = "The mass-produced by Aussec Armory, shotgun AS-53 'Striker' is an echo of the past in new package. Reborned assault shotgun usually can be saw in hands of mercenaries groups and Private Military Companies."
 	icon = 'infinity/icons/obj/guns.dmi'
@@ -23,17 +23,17 @@
 	w_class = ITEM_SIZE_HUGE
 	one_hand_penalty = 6
 
-/obj/item/weapon/gun/projectile/shotgun/magazine/on_update_icon()
+/obj/item/gun/projectile/shotgun/magazine/on_update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "bulldog"
 	else
 		icon_state = "bulldog-e"
 
-/obj/item/weapon/gun/projectile/shotgun/doublebarrel/empty
+/obj/item/gun/projectile/shotgun/doublebarrel/empty
 	ammo_type = null
 
-/obj/item/weapon/gun/projectile/shotgun/shotguntaj
+/obj/item/gun/projectile/shotgun/shotguntaj
 	name = "TS-12E"
 	desc = "TS-12E shotgun pistol designer for CCA EC. It has tremendous stopping power. This is the weapon of last chance."
 	icon = 'infinity/icons/obj/guns.dmi'
@@ -52,7 +52,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	one_hand_penalty = 3
 
-/obj/item/weapon/gun/projectile/shotgun/shotguntaj/special_check(user)
+/obj/item/gun/projectile/shotgun/shotguntaj/special_check(user)
 	if(istype(user,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = user
 		if(H.species?.get_bodytype(H) != SPECIES_TAJARA)
@@ -60,7 +60,7 @@
 			return 0
 	return ..()
 
-/obj/item/weapon/gun/projectile/shotgun/shotguntaj/on_update_icon()
+/obj/item/gun/projectile/shotgun/shotguntaj/on_update_icon()
 	if(ammo_magazine)
 		icon_state = "shotguntaj"
 	else
