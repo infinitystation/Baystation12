@@ -24457,10 +24457,6 @@
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 8
 	},
-/obj/machinery/computer/guestpass{
-	pixel_x = -29;
-	pixel_y = 2
-	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "aSw" = (
@@ -28892,12 +28888,7 @@
 	pixel_y = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/bed/padded{
-	pixel_y = 15
-	},
-/obj/item/bedsheet/brown{
-	pixel_y = 15
-	},
+/obj/structure/bed/chair/armchair/brown,
 /turf/simulated/floor/carpet/green,
 /area/crew_quarters/sleep/bunk_big)
 "bak" = (
@@ -30004,12 +29995,12 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/engine_room)
 "bcu" = (
-/obj/machinery/shield_diffuser,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/reinforced/airless,
 /area/space)
 "bcv" = (
@@ -33668,12 +33659,12 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/machinery/shield_diffuser,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/reinforced/airless,
 /area/space)
 "bWc" = (
@@ -33818,6 +33809,10 @@
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
+	},
+/obj/machinery/computer/guestpass{
+	pixel_x = -29;
+	pixel_y = 2
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/lounge_big)
@@ -36662,6 +36657,7 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
 	},
+/obj/structure/reagent_dispensers/water_cooler,
 /turf/simulated/floor/wood/mahogany,
 /area/crew_quarters/lounge_big)
 "ngY" = (
@@ -36773,6 +36769,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
+	},
+/obj/structure/holoplant,
+/obj/structure/sign/poster{
+	pixel_x = -32
 	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/sleep/bunk_big)
@@ -37463,9 +37463,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/uniform_vendor{
-	icon_state = "robotics"
-	},
 /obj/machinery/light{
 	dir = 1
 	},
@@ -37619,6 +37616,9 @@
 	pixel_x = -5;
 	pixel_y = 10
 	},
+/obj/structure/sign/poster{
+	pixel_x = -32
+	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/sleep/bunk_big/room_two)
 "qsB" = (
@@ -37704,12 +37704,12 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "qGU" = (
-/obj/machinery/shield_diffuser,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/reinforced/airless,
 /area/space)
 "qMf" = (
@@ -38950,6 +38950,10 @@
 	pixel_x = -5;
 	pixel_y = 2
 	},
+/obj/item/storage/box/cups{
+	pixel_x = 9;
+	pixel_y = 5
+	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/lounge_big)
 "uuJ" = (
@@ -39644,7 +39648,6 @@
 /obj/effect/floor_decal/corner/green/bordercorner{
 	dir = 8
 	},
-/obj/random/maintenance,
 /turf/simulated/floor/wood/mahogany,
 /area/crew_quarters/lounge_big)
 "xiq" = (
@@ -59362,7 +59365,7 @@ aam
 aam
 aam
 aam
-aam
+aaK
 aYL
 aYL
 voG
@@ -59555,15 +59558,15 @@ aam
 aam
 aam
 aam
-aam
-aam
-aam
-aam
-aam
-aam
-aam
-aam
-aam
+aaK
+aaK
+aah
+aah
+aah
+aah
+aaK
+aaK
+aaK
 aYL
 aYL
 aYL
@@ -59756,15 +59759,15 @@ aam
 aam
 aam
 aam
-aam
-aam
-aam
-aam
-aam
-aam
-aam
-aam
 aaK
+mue
+mue
+mue
+mue
+mue
+mue
+mue
+mue
 mue
 mue
 mue
@@ -59957,9 +59960,9 @@ aam
 aam
 aam
 aam
-aam
-aam
-aam
+aaK
+mue
+mue
 mue
 mue
 mue
@@ -60159,8 +60162,8 @@ aam
 aam
 aam
 aam
-aam
-aam
+aaK
+mue
 aaa
 aaa
 aaa
@@ -60361,7 +60364,7 @@ aam
 aam
 aam
 aam
-aam
+aah
 mue
 aaa
 xRQ
@@ -60563,7 +60566,7 @@ aam
 aam
 aam
 aam
-aam
+aah
 mue
 aaa
 pIt
@@ -60765,7 +60768,7 @@ aam
 aam
 aam
 aam
-aam
+aah
 mue
 aaa
 nDI
@@ -60967,7 +60970,7 @@ aam
 aam
 aam
 aam
-aam
+aah
 mue
 aaa
 gjF
@@ -63796,7 +63799,7 @@ aam
 aam
 aam
 aam
-aaK
+aah
 mXL
 obj
 ulR
@@ -63998,7 +64001,7 @@ aam
 aam
 aam
 aam
-aam
+aah
 mXL
 obj
 iEf
@@ -64200,7 +64203,7 @@ aam
 aam
 aam
 aam
-aam
+aaK
 mXL
 obj
 ilr
@@ -64402,7 +64405,7 @@ aam
 aam
 aam
 aam
-aam
+aaK
 mXL
 obj
 uoj
@@ -64604,7 +64607,7 @@ aam
 aam
 aam
 aam
-aam
+aaK
 mXL
 obj
 aar
@@ -64806,7 +64809,7 @@ aam
 aam
 aam
 aam
-aam
+aah
 mXL
 obj
 obj
@@ -65008,7 +65011,7 @@ aam
 aam
 aam
 aam
-aam
+aah
 mXL
 obj
 aek
@@ -65210,7 +65213,7 @@ aam
 aam
 aam
 aam
-aam
+aaK
 mXL
 obj
 obj
@@ -65412,7 +65415,7 @@ aam
 aam
 aam
 aam
-aam
+aaK
 mXL
 obj
 aek
@@ -65614,7 +65617,7 @@ aam
 aam
 aam
 aam
-aam
+aaK
 mXL
 obj
 obj
@@ -65816,7 +65819,7 @@ aam
 aam
 aam
 aam
-aam
+aah
 mXL
 obj
 aGw
@@ -66018,7 +66021,7 @@ aam
 aam
 aam
 aam
-aam
+aah
 mXL
 obj
 obj
