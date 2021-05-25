@@ -82,4 +82,5 @@
 /datum/uplink_item/item/tools/teleporter_circuit
 	name = "Teleporter Circuit Board"
 	item_cost = 40
+	antag_roles = list(MODE_MERCENARY)
 	path = /obj/item/stock_parts/circuitboard/teleporter
