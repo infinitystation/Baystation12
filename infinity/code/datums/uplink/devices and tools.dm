@@ -78,3 +78,8 @@
 	desc = "The Constrictor Harness will compress your torso upon activation, allowing you to enter narrow spaces. Using the Constrictor Harness prevents you from moving properly. Carefully look into which pipe you climb!"
 	item_cost = 60
 	path = /obj/item/storage/backpack/satchel/syndie_kit/constrictor_harness
+
+/datum/uplink_item/item/tools/teleporter_circuit
+	name = "Teleporter Circuit Board"
+	item_cost = 40
+	path = /obj/item/stock_parts/circuitboard/teleporter

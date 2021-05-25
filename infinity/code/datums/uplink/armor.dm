@@ -7,13 +7,13 @@
 
 /datum/uplink_item/item/armor
 	category = /datum/uplink_category/armor
-/* 
+
 /datum/uplink_item/item/armor/heavy_armor
 	name = "Heavy Armor Vest and Helmet"
 	item_cost = 30
 	antag_costs = list(MODE_MERCENARY = 20)
-	path = /obj/item/storage/backpack/dufflebag/syndie_kit/armor
- */
+	path = /obj/item/storage/backpack/satchel/syndie_kit/armor
+
 /datum/uplink_item/item/armor/space_suit
 	name = "Space Combat Suit"
 	item_cost = 50
