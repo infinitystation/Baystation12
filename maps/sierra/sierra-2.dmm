@@ -1797,6 +1797,9 @@
 /obj/effect/floor_decal/corner/lime/bordercorner2{
 	dir = 1
 	},
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "adT" = (
@@ -2542,6 +2545,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/machinery/light,
 /turf/simulated/floor/carpet/green,
 /area/crew_quarters/sleep/bunk_big)
 "afj" = (
@@ -12746,7 +12750,7 @@
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 4
 	},
-/obj/machinery/light{
+/obj/machinery/light/spot{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
@@ -13292,6 +13296,9 @@
 	dir = 5
 	},
 /obj/machinery/vending/cola,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "ayt" = (
@@ -13719,7 +13726,7 @@
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 4
 	},
-/obj/machinery/light{
+/obj/machinery/light/spot{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
@@ -27974,6 +27981,9 @@
 /obj/effect/floor_decal/corner/lime/bordercorner2{
 	dir = 4
 	},
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "aYL" = (
@@ -28185,6 +28195,9 @@
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
+	},
+/obj/machinery/light{
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
@@ -28864,9 +28877,6 @@
 /turf/simulated/floor/carpet,
 /area/crew_quarters/lounge_big)
 "baj" = (
-/obj/machinery/light/spot{
-	dir = 1
-	},
 /obj/machinery/button/alternate/door/bolts{
 	dir = 8;
 	id_tag = "privatedorm2.1";
@@ -34722,6 +34732,7 @@
 /obj/item/book/manual/stasis,
 /obj/item/device/flashlight/lamp/green,
 /obj/item/clothing/gloves/wristwatch,
+/obj/machinery/light,
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/sleep/bunk_big/room_two)
 "fIW" = (
@@ -34874,7 +34885,7 @@
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 8
 	},
-/obj/machinery/light{
+/obj/machinery/light/spot{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
@@ -35454,7 +35465,7 @@
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 8
 	},
-/obj/machinery/light{
+/obj/machinery/light/spot{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
@@ -35515,6 +35526,9 @@
 /obj/structure/closet/emcloset{
 	anchored = 1;
 	name = "anchored emergency closet"
+	},
+/obj/machinery/light{
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
@@ -37018,9 +37032,6 @@
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/lounge_big)
 "oIx" = (
-/obj/machinery/light/spot{
-	dir = 4
-	},
 /obj/structure/table/steel_reinforced,
 /obj/item/device/binoculars,
 /obj/effect/floor_decal/borderfloorblack{
