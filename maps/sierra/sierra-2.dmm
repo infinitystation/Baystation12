@@ -28893,12 +28893,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/bed/padded{
-	layer = 2.24;
-	pixel_y = 18
+	pixel_y = 15
 	},
 /obj/item/bedsheet/brown{
-	layer = 3.10;
-	pixel_y = 18
+	pixel_y = 15
 	},
 /turf/simulated/floor/carpet/green,
 /area/crew_quarters/sleep/bunk_big)
@@ -37682,7 +37680,9 @@
 /area/crew_quarters/galley)
 "qCK" = (
 /obj/structure/bed/padded,
-/obj/item/bedsheet/brown,
+/obj/item/bedsheet/brown{
+	pixel_y = 1
+	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
