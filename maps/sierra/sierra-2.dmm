@@ -1417,9 +1417,6 @@
 /obj/effect/floor_decal/spline/fancy/black/corner{
 	dir = 8
 	},
-/obj/effect/floor_decal/spline/fancy/black{
-	dir = 5
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
@@ -1428,6 +1425,9 @@
 	},
 /obj/item/device/radio/intercom{
 	pixel_y = 26
+	},
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/head_big)
@@ -2637,7 +2637,9 @@
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/seconddeck/aftstarboard)
 "afs" = (
@@ -26772,7 +26774,6 @@
 /obj/effect/floor_decal/techfloor/orange/corner{
 	dir = 8
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/seconddeck/aftstarboard)
 "aWt" = (
@@ -28037,7 +28038,6 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/seconddeck/aftstarboard)
 "aYT" = (
@@ -29727,8 +29727,6 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/seconddeck/aftstarboard)
 "bbW" = (
@@ -32543,8 +32541,12 @@
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/seconddeck/aftstarboard)
 "bhw" = (
@@ -33604,13 +33606,6 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/janitor)
-"bFv" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/maintenance/seconddeck/aftstarboard)
 "bFH" = (
 /obj/machinery/alarm{
 	dir = 8;
@@ -34041,6 +34036,9 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 6
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/head_big)
 "dox" = (
@@ -34091,12 +34089,6 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/galley)
 "dCT" = (
-/obj/effect/floor_decal/spline/fancy/black{
-	dir = 8
-	},
-/obj/effect/floor_decal/spline/fancy/black{
-	dir = 6
-	},
 /obj/item/reagent_containers/glass/bucket,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
@@ -34105,6 +34097,9 @@
 /obj/structure/table/rack,
 /obj/random/soap,
 /obj/item/storage/box/lights/led_neon,
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 10
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/head_big)
 "dDi" = (
@@ -34433,7 +34428,6 @@
 "ezl" = (
 /obj/machinery/floodlight,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/techmaint,
 /area/maintenance/seconddeck/aftstarboard)
 "eEJ" = (
@@ -34522,6 +34516,7 @@
 /obj/item/storage/box/lights/mixed,
 /obj/item/clothing/gloves/thick/duty,
 /obj/machinery/light/small,
+/obj/effect/floor_decal/spline/fancy/black,
 /turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/head_big)
 "eQS" = (
@@ -35131,7 +35126,6 @@
 /obj/random/maintenance,
 /obj/random/maintenance,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/techmaint,
 /area/maintenance/seconddeck/aftstarboard)
 "hsW" = (
@@ -35558,17 +35552,6 @@
 /obj/effect/fluid_mapped,
 /turf/simulated/floor/aquarium,
 /area/crew_quarters/cafe)
-"iTb" = (
-/obj/effect/floor_decal/techfloor{
-	dir = 8
-	},
-/obj/effect/floor_decal/techfloor{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/maintenance/seconddeck/aftstarboard)
 "iWB" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/crew_quarters/lounge_big)
@@ -36471,7 +36454,9 @@
 	dir = 4
 	},
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
 "mCp" = (
@@ -38036,12 +38021,6 @@
 "rSZ" = (
 /turf/simulated/floor/carpet/green,
 /area/crew_quarters/sleep/bunk_big)
-"rTb" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 9
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/maintenance/seconddeck/aftstarboard)
 "rYM" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/wall/prepainted,
@@ -39478,6 +39457,9 @@
 /obj/machinery/alarm{
 	pixel_y = 24
 	},
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/head_big)
 "wsO" = (
@@ -39742,6 +39724,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
+	},
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 5
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/head_big)
@@ -66043,9 +66028,9 @@ crE
 obj
 obj
 ezl
-bFv
+bbm
 bbV
-iTb
+aAp
 bhv
 aXe
 aVr
@@ -66245,7 +66230,7 @@ adi
 dCT
 obj
 hqS
-rTb
+bbm
 aYM
 alN
 bcY
