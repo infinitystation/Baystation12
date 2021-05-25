@@ -149,7 +149,7 @@
 	products = list(/obj/item/airlock_electronics = 4,/obj/item/airlock_electronics/secure = 2,
 					/obj/item/module/power_control = 4,
 					/obj/item/airalarm_electronics = 4, /obj/item/firealarm_electronics = 4,
-					/obj/item/cell = 4, /obj/item/light/tube = 10, /obj/item/light/bulb = 10, /obj/item/light/tube/large = 4,
+					/obj/item/cell/standard = 4, /obj/item/light/tube = 10, /obj/item/light/bulb = 10, /obj/item/light/tube/large = 4,
 					/obj/item/stock_parts/scanning_module = 5,/obj/item/stock_parts/micro_laser = 5,
 					/obj/item/stock_parts/matter_bin = 5,/obj/item/stock_parts/manipulator = 5,
 					/obj/item/stock_parts/console_screen = 5,/obj/item/stock_parts/capacitor = 5)
@@ -159,7 +159,7 @@
 /obj/machinery/vending/parts/research
 	name = "Wolfor-Spares Vendor"
 	req_access = list(access_research)
-	products = list(/obj/item/cell = 5,
+	products = list(/obj/item/cell/standard = 5,
 					/obj/item/stock_parts/capacitor = 8,/obj/item/stock_parts/scanning_module = 8,
 					/obj/item/stock_parts/micro_laser = 8,/obj/item/stock_parts/matter_bin = 8,
 					/obj/item/stock_parts/manipulator = 8,/obj/item/stock_parts/console_screen = 8)
@@ -168,7 +168,7 @@
 /obj/machinery/vending/parts/public
 	name = "Wolfor-Spares Vendor"
 	req_access = list()
-	products = list(/obj/item/cell = 4,
+	products = list(/obj/item/cell/standard = 4,
 					/obj/item/stock_parts/capacitor = 4,/obj/item/stock_parts/scanning_module = 4,
 					/obj/item/stock_parts/micro_laser = 4,/obj/item/stock_parts/matter_bin = 4,
 					/obj/item/stock_parts/manipulator = 4,/obj/item/stock_parts/console_screen = 4)
