@@ -1374,8 +1374,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/merc_shuttle/rear)
 "cj" = (
-/obj/machinery/atmospherics/valve/shutoff,
-/obj/effect/floor_decal/industrial/shutoff,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -1396,6 +1394,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/machinery/atmospherics/pipe/simple/visible/universal,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/merc_shuttle/rear)
 "ck" = (
@@ -1766,6 +1765,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 6
 	},
+/obj/machinery/tele_pad,
 /turf/simulated/floor/plating,
 /area/map_template/merc_shuttle/rear)
 "cO" = (
