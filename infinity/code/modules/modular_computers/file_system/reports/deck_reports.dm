@@ -80,3 +80,4 @@
     add_field(/datum/report_field/pencode_text, "Возвращённые объекты или материалы")
     add_field(/datum/report_field/pencode_text, "Рекомендуемые последующие мероприятия")
     add_field(/datum/report_field/pencode_text, "Дополнительные заметки")
+	
