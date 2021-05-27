@@ -24,7 +24,7 @@
 	#include "datums/uniforms_civilian.dm"
 	#include "datums/uniforms_contractor.dm"
 	#include "datums/uniforms_employee.dm"
-	
+
 	#include "datums/reports/command.dm"
 	#include "datums/reports/deck.dm"
 	#include "datums/reports/engineering.dm"
