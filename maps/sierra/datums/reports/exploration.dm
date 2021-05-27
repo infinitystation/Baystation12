@@ -1,25 +1,72 @@
-/datum/computer_file/report/recipient/exp
-	logo = "\[eclogo\]"
-	available_on_ntnet = 1
+/datum/computer_file/report/recipient/exp/mission_manifest
+	logo = "\[sierralogo\]"
+	form_name = "NT-EXP-19m"
+	title = "Манифест миссии на вылет челнока"
 
-/datum/computer_file/report/recipient/fauna
-	logo = "\[logo\]"
-	form_name = "NT-EXP-19f"
-	title = "Доклад об инопланетной фауне"
-
-/datum/computer_file/report/recipient/fauna/generate_fields()
+/datum/computer_file/report/recipient/exp/mission_manifest/generate_fields()
 	..()
-	add_field(/datum/report_field/text_label/header, "Экспедиционный департамент ИСН Сьерра")
-	add_field(/datum/report_field/text_label/instruction, "Следующая форма должна быть заполнена членами экспедиционной команды после открытия и изучения новой формы инопланетной жизни.")
+	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Экспедиционный департамент")
+	add_field(/datum/report_field/text_label/header, "Манифест Миссии")
+	add_field(/datum/report_field/text_label/instruction, "Следующие колонки должны быть заполнены лицами, которые входят в состав экспедиции\
+	для сохранения точного количества участников с последующим оформлением документов на них.")
+	add_field(/datum/report_field/people/from_manifest, "Лидер Экспедиционной команды", required = 1)
+	add_field(/datum/report_field/people/from_manifest, "Экспедиционный пилот", required = 1)
+	add_field(/datum/report_field/people/from_manifest, "Экспедитор", required = 1)
+	add_field(/datum/report_field/people/from_manifest, "Экспедитор", required = 1)
+	add_field(/datum/report_field/people/from_manifest, "Экспедитор", required = 1)
+	add_field(/datum/report_field/people/from_manifest, "Экспедитор", required = 1)
+	add_field(/datum/report_field/people/from_manifest, "Экспедитор", required = 1)
+	add_field(/datum/report_field/people/from_manifest, "Учёные, шахтёры и прочий персонал", required = 1)
+	add_field(/datum/report_field/text_label/instruction, "Манифест составляется для единоразового использования на одной миссии.")
+	set_access(access_explorer, access_explorer)
+
+/datum/computer_file/report/recipient/exp/planet
+	logo = "\[sierralogo\]"
+	form_name = "NT-EXP-19p"
+	title = "Отчет по экзопланете"
+
+/datum/computer_file/report/recipient/exp/planet/generate_fields()
+	..()
+	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Экспедиционный департамент")
+	add_field(/datum/report_field/text_label/header, "Отчет об экзопланете")
+	add_field(/datum/report_field/text_label/instruction, "Следующие колонки заполняются членом, входящего в состав экспедиционной команды, после возвращения с планеты на Сьерру.")
+	add_field(/datum/report_field/people/from_manifest, "Местоположение", required = 1)
 	add_field(/datum/report_field/date, "Дата")
-	add_field(/datum/report_field/people/list_from_manifest, "Вовлеченный персонал")
-	add_field(/datum/report_field/pencode_text, "Анатомия/внешность")
-	add_field(/datum/report_field/pencode_text, "Способ передвижения")
-	add_field(/datum/report_field/pencode_text, "Рацион")
-	add_field(/datum/report_field/pencode_text, "Ареал")
-	add_field(/datum/report_field/simple_text, "Планета происхождения")
-	add_field(/datum/report_field/pencode_text, "Поведение")
-	add_field(/datum/report_field/pencode_text, "Привычки нападения/обороны")
-	add_field(/datum/report_field/pencode_text, "Особые характеристики")
-	add_field(/datum/report_field/pencode_text, "Классификация")
-	add_field(/datum/report_field/text_label/instruction, "По заполнению и одобрению данной формы, Директор Исследований должен отправить ее по факсу и Агенту Внутренних Дел, и Капитану, а также сохранить копию в своем офисе наравне с другими докладами об экспедициях.")
+	add_field(/datum/report_field/people/from_manifest, "Участники экспедиции", required = 1)
+	add_field(/datum/report_field/pencode_text, "Информация по атмосфере", required = 1)
+	add_field(/datum/report_field/pencode_text, "Информация по местности", required = 1)
+	add_field(/datum/report_field/pencode_text, "Обитаемость планеты", required = 1)
+	add_field(/datum/report_field/pencode_text, "Наличие фауны", required = 1)
+	add_field(/datum/report_field/pencode_text, "Наличие флоры", required = 1)
+	add_field(/datum/report_field/pencode_text, "Материалы/Инструменты, которые были использованы", required = 1)
+	add_field(/datum/report_field/pencode_text, "Найденные предметы или материалы", required = 1)
+	add_field(/datum/report_field/pencode_text, "Наблюдения", required = 1)
+	add_field(/datum/report_field/signature,"Подпись ответственного, за заполнение документа", required = 1)
+	add_field(/datum/report_field/text_label/instruction, "После заполнения данного документы, а также последующего его утверждения,\
+	директор исследований должен отправить данный документ по факсу Центральному Командованию и Капитану, после чего занести этот документ в архив.")
+	set_access(access_explorer, access_explorer)
+
+/datum/computer_file/report/recipient/exp/fauna
+	logo = "\[sierralogo\]"
+	form_name = "NT-EXP-19f"
+	title = "Отчет по фауне"
+
+/datum/computer_file/report/recipient/exp/fauna/generate_fields()
+	..()
+	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Экспедиционный департамент")
+	add_field(/datum/report_field/text_label/header, "Рапорт об обнаружении инопланетной фауны")
+	add_field(/datum/report_field/text_label/instruction, "Следующие колонки заполняются членом, входящего в состав экспедиционной команды, после открытия и изучения инопланетной жизни.")
+	add_field(/datum/report_field/people/from_manifest, "Местоположение", required = 1)
+	add_field(/datum/report_field/date, "Дата")
+	add_field(/datum/report_field/people/from_manifest, "Участники экспедиции", required = 1)
+	add_field(/datum/report_field/pencode_text, "Анатомия/Внешний вид", required = 1)
+	add_field(/datum/report_field/pencode_text, "Локомоция", required = 1)
+	add_field(/datum/report_field/pencode_text, "Чем питается", required = 1)
+	add_field(/datum/report_field/pencode_text, "Среда обитания", required = 1)
+	add_field(/datum/report_field/pencode_text, "Поведение", required = 1)
+	add_field(/datum/report_field/pencode_text, "Защита/Нападение", required = 1)
+	add_field(/datum/report_field/pencode_text, "Специальная характеристика(и)", required = 1)
+	add_field(/datum/report_field/pencode_text, "Классификация", required = 1)
+	add_field(/datum/report_field/text_label/instruction, "После заполнения данного документы, а также последующего его утверждения,\
+	директор исследований должен отправить данный документ по факсу Центральному Командованию и Капитану, после чего занести этот документ в архив, закрепив его с документом об экзопланете.")
+	set_access(access_explorer, access_explorer)
