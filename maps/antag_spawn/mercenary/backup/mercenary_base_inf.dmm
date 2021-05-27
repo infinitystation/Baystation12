@@ -298,8 +298,8 @@
 /area/map_template/syndicate_mothership)
 "aJ" = (
 /obj/structure/table/rack,
-/obj/item/weapon/storage/briefcase/inflatable,
-/obj/item/weapon/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
 /turf/simulated/floor/tiled/dark,
 /area/map_template/syndicate_mothership)
 "aK" = (
@@ -350,12 +350,12 @@
 /area/map_template/syndicate_mothership)
 "aS" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen{
+/obj/item/paper_bin,
+/obj/item/pen{
 	pixel_y = 4
 	},
-/obj/item/weapon/folder/red,
-/obj/item/weapon/folder/red,
+/obj/item/folder/red,
+/obj/item/folder/red,
 /turf/simulated/floor/lino,
 /area/map_template/syndicate_mothership)
 "aT" = (
@@ -407,7 +407,7 @@
 	pixel_y = 32
 	},
 /obj/structure/table/steel_reinforced,
-/obj/item/weapon/storage/box/mixedglasses,
+/obj/item/storage/box/mixedglasses,
 /turf/simulated/floor/cult,
 /area/map_template/syndicate_mothership)
 "bb" = (
@@ -415,8 +415,8 @@
 	pixel_y = 32
 	},
 /obj/structure/table/steel_reinforced,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /turf/simulated/floor/cult,
 /area/map_template/syndicate_mothership)
 "bc" = (
@@ -444,7 +444,7 @@
 /area/map_template/syndicate_mothership)
 "bf" = (
 /obj/structure/table/standard,
-/obj/item/weapon/storage/box/glasses,
+/obj/item/storage/box/glasses,
 /turf/unsimulated/floor{
 	icon_state = "white"
 	},
@@ -577,7 +577,7 @@
 	icon_state = "tube_map";
 	dir = 8
 	},
-/obj/item/weapon/storage/box/sinpockets,
+/obj/item/storage/box/sinpockets,
 /obj/structure/table/steel,
 /obj/effect/floor_decal/techfloor{
 	icon_state = "techfloor_edges";
@@ -616,7 +616,7 @@
 /area/map_template/syndicate_mothership)
 "bA" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/storage/box/donkpockets{
+/obj/item/storage/box/donkpockets{
 	pixel_x = 3;
 	pixel_y = 3
 	},
@@ -656,7 +656,7 @@
 /obj/item/stack/material/glass{
 	amount = 15
 	},
-/obj/item/weapon/cell{
+/obj/item/cell{
 	charge = 100;
 	maxcharge = 15000
 	},
@@ -691,7 +691,7 @@
 /area/map_template/syndicate_mothership)
 "bI" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/tray{
+/obj/item/tray{
 	pixel_y = 5
 	},
 /turf/unsimulated/floor{
@@ -700,11 +700,11 @@
 /area/map_template/syndicate_mothership)
 "bJ" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/reagent_containers/food/drinks/bottle/vodka{
+/obj/item/reagent_containers/food/drinks/bottle/vodka{
 	pixel_x = 3;
 	pixel_y = 12
 	},
-/obj/item/weapon/reagent_containers/food/drinks/bottle/wine{
+/obj/item/reagent_containers/food/drinks/bottle/wine{
 	pixel_x = -1;
 	pixel_y = 8
 	},
@@ -741,8 +741,8 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/merc_shuttle)
 "bN" = (
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen{
+/obj/item/paper_bin,
+/obj/item/pen{
 	pixel_y = 4
 	},
 /obj/structure/table/steel_reinforced,
@@ -782,7 +782,7 @@
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
 	prices = list();
-	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	products = list(/obj/item/storage/fancy/cigarettes = 10, /obj/item/storage/box/matches = 10, /obj/item/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
 /turf/simulated/floor/cult,
 /area/map_template/syndicate_mothership)
@@ -837,7 +837,7 @@
 	icon_state = "shower";
 	pixel_x = -5
 	},
-/obj/item/weapon/soap,
+/obj/item/soap,
 /obj/machinery/door/window/southright,
 /turf/simulated/floor/tiled/freezer,
 /area/map_template/syndicate_mothership)
@@ -1002,7 +1002,7 @@
 /turf/space,
 /area/space)
 "cn" = (
-/obj/item/weapon/storage/mirror{
+/obj/item/storage/mirror{
 	pixel_x = -32
 	},
 /obj/structure/hygiene/sink{
@@ -1020,13 +1020,13 @@
 /area/map_template/syndicate_mothership)
 "cp" = (
 /obj/structure/closet,
-/obj/item/weapon/reagent_containers/food/snacks/tastybread,
-/obj/item/weapon/reagent_containers/food/snacks/tastybread,
-/obj/item/weapon/reagent_containers/food/snacks/tastybread,
-/obj/item/weapon/reagent_containers/food/snacks/tastybread,
-/obj/item/weapon/reagent_containers/food/snacks/tastybread,
-/obj/item/weapon/reagent_containers/food/snacks/tastybread,
-/obj/item/weapon/reagent_containers/food/snacks/tastybread,
+/obj/item/reagent_containers/food/snacks/tastybread,
+/obj/item/reagent_containers/food/snacks/tastybread,
+/obj/item/reagent_containers/food/snacks/tastybread,
+/obj/item/reagent_containers/food/snacks/tastybread,
+/obj/item/reagent_containers/food/snacks/tastybread,
+/obj/item/reagent_containers/food/snacks/tastybread,
+/obj/item/reagent_containers/food/snacks/tastybread,
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/merc_shuttle)
@@ -1062,12 +1062,12 @@
 /area/map_template/syndicate_mothership)
 "ct" = (
 /obj/structure/table/rack,
-/obj/item/weapon/storage/belt/utility/full_buy,
-/obj/item/weapon/storage/belt/utility/full_buy,
-/obj/item/weapon/storage/belt/utility/full_buy,
-/obj/item/weapon/storage/belt/utility/full_buy,
-/obj/item/weapon/storage/belt/utility/full_buy,
-/obj/item/weapon/storage/belt/utility/full_buy,
+/obj/item/storage/belt/utility/full_buy,
+/obj/item/storage/belt/utility/full_buy,
+/obj/item/storage/belt/utility/full_buy,
+/obj/item/storage/belt/utility/full_buy,
+/obj/item/storage/belt/utility/full_buy,
+/obj/item/storage/belt/utility/full_buy,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/light/spot{
 	dir = 1
@@ -1076,23 +1076,23 @@
 /area/map_template/syndicate_mothership)
 "cu" = (
 /obj/structure/table/rack,
-/obj/item/weapon/storage/belt/medical/emt,
-/obj/item/weapon/storage/belt/medical/emt,
-/obj/item/weapon/storage/belt/medical/emt,
-/obj/item/weapon/storage/belt/medical/emt,
-/obj/item/weapon/storage/belt/medical/emt,
-/obj/item/weapon/storage/belt/medical/emt,
+/obj/item/storage/belt/medical/emt,
+/obj/item/storage/belt/medical/emt,
+/obj/item/storage/belt/medical/emt,
+/obj/item/storage/belt/medical/emt,
+/obj/item/storage/belt/medical/emt,
+/obj/item/storage/belt/medical/emt,
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/syndicate_mothership)
 "cv" = (
 /obj/structure/table/rack,
-/obj/item/weapon/storage/belt/holster/security/tactical,
-/obj/item/weapon/storage/belt/holster/security/tactical,
-/obj/item/weapon/storage/belt/holster/security/tactical,
-/obj/item/weapon/storage/belt/holster/security/tactical,
-/obj/item/weapon/storage/belt/holster/security/tactical,
-/obj/item/weapon/storage/belt/holster/security/tactical,
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/storage/belt/holster/security/tactical,
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/syndicate_mothership)
@@ -1104,12 +1104,12 @@
 /obj/item/ammo_magazine/pistol,
 /obj/item/ammo_magazine/pistol,
 /obj/item/ammo_magazine/pistol,
-/obj/item/weapon/gun/projectile/pistol/throwback,
-/obj/item/weapon/gun/projectile/pistol/throwback,
-/obj/item/weapon/gun/projectile/pistol/throwback,
-/obj/item/weapon/gun/projectile/pistol/throwback,
-/obj/item/weapon/gun/projectile/pistol/throwback,
-/obj/item/weapon/gun/projectile/pistol/throwback,
+/obj/item/gun/projectile/pistol/throwback,
+/obj/item/gun/projectile/pistol/throwback,
+/obj/item/gun/projectile/pistol/throwback,
+/obj/item/gun/projectile/pistol/throwback,
+/obj/item/gun/projectile/pistol/throwback,
+/obj/item/gun/projectile/pistol/throwback,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/syndicate_mothership)
 "cx" = (
@@ -1205,12 +1205,12 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/syndicate_mothership)
 "cG" = (
-/obj/item/weapon/pinpointer/nukeop,
-/obj/item/weapon/pinpointer/nukeop,
-/obj/item/weapon/pinpointer/nukeop,
-/obj/item/weapon/pinpointer/nukeop,
-/obj/item/weapon/pinpointer/nukeop,
-/obj/item/weapon/pinpointer/nukeop,
+/obj/item/pinpointer/nukeop,
+/obj/item/pinpointer/nukeop,
+/obj/item/pinpointer/nukeop,
+/obj/item/pinpointer/nukeop,
+/obj/item/pinpointer/nukeop,
+/obj/item/pinpointer/nukeop,
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -1239,7 +1239,7 @@
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
 	prices = list();
-	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	products = list(/obj/item/storage/fancy/cigarettes = 10, /obj/item/storage/box/matches = 10, /obj/item/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/merc_shuttle)
@@ -1357,7 +1357,7 @@
 /area/map_template/merc_shuttle)
 "cR" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet,
+/obj/item/bedsheet,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/merc_shuttle)
 "cS" = (
@@ -1547,14 +1547,14 @@
 /area/map_template/merc_shuttle)
 "dm" = (
 /obj/structure/table/rack,
-/obj/item/weapon/storage/box/teargas,
-/obj/item/weapon/storage/box/flashbangs,
-/obj/item/weapon/storage/box/smokes,
-/obj/item/weapon/storage/box/handcuffs{
+/obj/item/storage/box/teargas,
+/obj/item/storage/box/flashbangs,
+/obj/item/storage/box/smokes,
+/obj/item/storage/box/handcuffs{
 	pixel_x = 4;
 	pixel_y = 2
 	},
-/obj/item/weapon/storage/box/handcuffs{
+/obj/item/storage/box/handcuffs{
 	pixel_x = 4;
 	pixel_y = 2
 	},
@@ -1564,7 +1564,7 @@
 "dn" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/item/weapon/gun/energy/ionrifle/small,
+/obj/item/gun/energy/ionrifle/small,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/syndicate_mothership)
 "do" = (
@@ -1582,12 +1582,12 @@
 /area/map_template/syndicate_mothership)
 "dp" = (
 /obj/structure/table/rack,
-/obj/item/weapon/tank/jetpack/oxygen,
-/obj/item/weapon/tank/jetpack/oxygen,
-/obj/item/weapon/tank/jetpack/oxygen,
-/obj/item/weapon/tank/jetpack/oxygen,
-/obj/item/weapon/tank/jetpack/oxygen,
-/obj/item/weapon/tank/jetpack/oxygen,
+/obj/item/tank/jetpack/oxygen,
+/obj/item/tank/jetpack/oxygen,
+/obj/item/tank/jetpack/oxygen,
+/obj/item/tank/jetpack/oxygen,
+/obj/item/tank/jetpack/oxygen,
+/obj/item/tank/jetpack/oxygen,
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/syndicate_mothership)
@@ -1621,8 +1621,8 @@
 /obj/item/stack/medical/bruise_pack,
 /obj/item/stack/medical/bruise_pack,
 /obj/item/stack/medical/bruise_pack,
-/obj/item/weapon/storage/belt/medical/emt/combat,
-/obj/item/weapon/storage/belt/medical/emt/combat,
+/obj/item/storage/belt/medical/emt/combat,
+/obj/item/storage/belt/medical/emt/combat,
 /obj/effect/floor_decal/techfloor{
 	icon_state = "techfloor_edges";
 	dir = 8
@@ -1713,15 +1713,15 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/merc_shuttle)
 "dA" = (
-/obj/item/weapon/reagent_containers/syringe/drugs{
+/obj/item/reagent_containers/syringe/drugs{
 	pixel_x = 3;
 	pixel_y = -1
 	},
-/obj/item/weapon/reagent_containers/syringe/drugs{
+/obj/item/reagent_containers/syringe/drugs{
 	pixel_x = 3;
 	pixel_y = 4
 	},
-/obj/item/weapon/reagent_containers/syringe/drugs{
+/obj/item/reagent_containers/syringe/drugs{
 	pixel_x = 3;
 	pixel_y = 9
 	},
@@ -1730,13 +1730,13 @@
 	dir = 8
 	},
 /obj/structure/table/glass,
-/obj/item/weapon/material/knife/combat,
-/obj/item/weapon/melee/telebaton,
+/obj/item/material/knife/combat,
+/obj/item/melee/telebaton,
 /obj/effect/floor_decal/techfloor{
 	icon_state = "techfloor_edges";
 	dir = 8
 	},
-/obj/item/weapon/handcuffs,
+/obj/item/handcuffs,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/merc_shuttle)
 "dB" = (
@@ -1821,9 +1821,9 @@
 /obj/structure/closet{
 	name = "custodial"
 	},
-/obj/item/weapon/reagent_containers/glass/bucket,
-/obj/item/weapon/mop,
-/obj/item/weapon/reagent_containers/spray/cleaner,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/mop,
+/obj/item/reagent_containers/spray/cleaner,
 /obj/effect/floor_decal/techfloor{
 	icon_state = "techfloor_edges";
 	dir = 8
@@ -1904,17 +1904,17 @@
 "dQ" = (
 /obj/effect/floor_decal/techfloor,
 /obj/structure/table/rack/dark,
-/obj/item/weapon/storage/toolbox/syndicate,
+/obj/item/storage/toolbox/syndicate,
 /obj/item/device/binoculars,
-/obj/item/weapon/shield_diffuser,
+/obj/item/shield_diffuser,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/merc_shuttle)
 "dR" = (
 /obj/effect/floor_decal/techfloor,
 /obj/structure/table/rack/dark,
-/obj/item/weapon/barrier,
-/obj/item/weapon/barrier,
-/obj/item/weapon/barrier,
+/obj/item/barrier,
+/obj/item/barrier,
+/obj/item/barrier,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/merc_shuttle)
 "dS" = (
@@ -1987,8 +1987,8 @@
 /area/map_template/syndicate_mothership)
 "dZ" = (
 /obj/structure/table/standard,
-/obj/item/weapon/storage/backpack/dufflebag/syndie/med,
-/obj/item/weapon/storage/firstaid/combat,
+/obj/item/storage/backpack/dufflebag/syndie/med,
+/obj/item/storage/firstaid/combat,
 /obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 8
@@ -2000,11 +2000,11 @@
 /area/map_template/merc_shuttle)
 "ea" = (
 /obj/structure/table/standard,
-/obj/item/weapon/storage/firstaid/toxin{
+/obj/item/storage/firstaid/toxin{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/weapon/storage/firstaid/adv{
+/obj/item/storage/firstaid/adv{
 	pixel_x = 1
 	},
 /obj/effect/floor_decal/corner/paleblue/diagonal,
@@ -2033,8 +2033,8 @@
 /area/map_template/syndicate_mothership)
 "ed" = (
 /obj/structure/table/standard,
-/obj/item/weapon/storage/firstaid/o2,
-/obj/item/weapon/storage/firstaid/fire{
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/fire{
 	pixel_x = 1
 	},
 /obj/effect/floor_decal/corner/paleblue/diagonal,
@@ -2044,7 +2044,7 @@
 /obj/machinery/atmospherics/portables_connector,
 /obj/machinery/portable_atmospherics/canister/oxygen/prechilled,
 /obj/effect/floor_decal/industrial/warning/full,
-/obj/item/weapon/reagent_containers/glass/beaker/large/cryolife,
+/obj/item/reagent_containers/glass/beaker/large/cryolife,
 /turf/simulated/floor/tiled/white,
 /area/map_template/merc_shuttle)
 "ef" = (
@@ -2096,8 +2096,8 @@
 /area/map_template/merc_shuttle)
 "ej" = (
 /obj/structure/table/rack/dark,
-/obj/item/weapon/storage/backpack/dufflebag/syndie,
-/obj/item/weapon/storage/backpack/dufflebag/syndie,
+/obj/item/storage/backpack/dufflebag/syndie,
+/obj/item/storage/backpack/dufflebag/syndie,
 /obj/effect/floor_decal/techfloor{
 	icon_state = "techfloor_edges";
 	dir = 1
@@ -2110,15 +2110,15 @@
 	icon_state = "techfloor_edges";
 	dir = 1
 	},
-/obj/item/weapon/storage/belt/utility/full_buy{
+/obj/item/storage/belt/utility/full_buy{
 	icon_state = "gearbelt";
 	item_state = "gearbelt"
 	},
-/obj/item/weapon/storage/belt/utility/full_buy{
+/obj/item/storage/belt/utility/full_buy{
 	icon_state = "gearbelt";
 	item_state = "gearbelt"
 	},
-/obj/item/weapon/storage/belt/utility/full_buy{
+/obj/item/storage/belt/utility/full_buy{
 	icon_state = "gearbelt";
 	item_state = "gearbelt"
 	},
@@ -2165,8 +2165,8 @@
 /area/map_template/merc_shuttle)
 "eo" = (
 /obj/structure/table/standard,
-/obj/item/weapon/defibrillator/loaded,
-/obj/item/weapon/defibrillator/compact/combat/loaded,
+/obj/item/defibrillator/loaded,
+/obj/item/defibrillator/compact/combat/loaded,
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/map_template/merc_shuttle)
@@ -2237,7 +2237,7 @@
 "ew" = (
 /obj/structure/table/steel,
 /obj/random/loot,
-/obj/item/weapon/aicard,
+/obj/item/aicard,
 /obj/effect/floor_decal/techfloor{
 	icon_state = "techfloor_edges";
 	dir = 4
@@ -2291,7 +2291,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/merc_shuttle)
 "eC" = (
-/obj/item/weapon/stool,
+/obj/item/stool,
 /obj/effect/floor_decal/techfloor{
 	icon_state = "techfloor_edges";
 	dir = 4
@@ -2300,7 +2300,7 @@
 /area/map_template/merc_shuttle)
 "eD" = (
 /obj/structure/table/steel,
-/obj/item/weapon/pickaxe/diamonddrill,
+/obj/item/pickaxe/diamonddrill,
 /obj/random/tech_supply,
 /obj/effect/floor_decal/techfloor{
 	icon_state = "techfloor_edges";
@@ -2373,10 +2373,10 @@
 /area/map_template/merc_shuttle)
 "eJ" = (
 /obj/structure/table/steel,
-/obj/item/weapon/plastique,
-/obj/item/weapon/plastique,
-/obj/item/weapon/plastique,
-/obj/item/weapon/plastique,
+/obj/item/plastique,
+/obj/item/plastique,
+/obj/item/plastique,
+/obj/item/plastique,
 /obj/item/device/multitool/hacktool,
 /obj/effect/floor_decal/techfloor{
 	icon_state = "techfloor_edges";
@@ -2408,11 +2408,11 @@
 "eN" = (
 /obj/effect/floor_decal/corner/beige/diagonal,
 /obj/structure/table/standard,
-/obj/item/weapon/storage/box/syringes{
+/obj/item/storage/box/syringes{
 	pixel_x = 3;
 	pixel_y = 2
 	},
-/obj/item/weapon/storage/box/beakers,
+/obj/item/storage/box/beakers,
 /turf/simulated/floor/tiled/white,
 /area/map_template/merc_shuttle)
 "eO" = (
@@ -2453,8 +2453,8 @@
 "eR" = (
 /obj/item/device/multitool,
 /obj/item/device/multitool,
-/obj/item/weapon/tape_roll,
-/obj/item/weapon/tape_roll,
+/obj/item/tape_roll,
+/obj/item/tape_roll,
 /obj/machinery/button/blast_door{
 	id_tag = "syndieshutters_telebay";
 	name = "remote shutter control";
@@ -2492,10 +2492,10 @@
 	dir = 4
 	},
 /obj/structure/table/steel,
-/obj/item/weapon/stock_parts/console_screen,
-/obj/item/weapon/stock_parts/keyboard,
-/obj/item/weapon/stock_parts/power/battery/buildable/stock,
-/obj/item/weapon/cell,
+/obj/item/stock_parts/console_screen,
+/obj/item/stock_parts/keyboard,
+/obj/item/stock_parts/power/battery/buildable/stock,
+/obj/item/cell,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/merc_shuttle)
 "eV" = (
@@ -2511,10 +2511,10 @@
 	pixel_x = -32;
 	req_access = list("ACCESS_SYNDICATE")
 	},
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
 /turf/simulated/floor/tiled/white,
 /area/map_template/merc_shuttle)
 "eW" = (
@@ -2571,10 +2571,10 @@
 /area/map_template/merc_shuttle)
 "fd" = (
 /obj/structure/table/standard,
-/obj/item/weapon/reagent_containers/spray/cleaner{
+/obj/item/reagent_containers/spray/cleaner{
 	pixel_x = -6
 	},
-/obj/item/weapon/reagent_containers/spray/sterilizine,
+/obj/item/reagent_containers/spray/sterilizine,
 /obj/structure/window/reinforced/crescent{
 	dir = 1
 	},
@@ -2603,9 +2603,9 @@
 	},
 /obj/item/clothing/gloves/latex,
 /obj/item/clothing/mask/surgical,
-/obj/item/weapon/reagent_containers/glass/bottle/stoxin,
-/obj/item/weapon/reagent_containers/glass/bottle/stoxin,
-/obj/item/weapon/reagent_containers/syringe,
+/obj/item/reagent_containers/glass/bottle/stoxin,
+/obj/item/reagent_containers/glass/bottle/stoxin,
+/obj/item/reagent_containers/syringe,
 /obj/structure/window/reinforced/crescent{
 	dir = 1
 	},
@@ -2672,8 +2672,8 @@
 "fn" = (
 /obj/structure/table/standard,
 /obj/item/stack/medical/advanced/bruise_pack,
-/obj/item/weapon/reagent_containers/syringe/antiviral,
-/obj/item/weapon/reagent_containers/syringe/antiviral,
+/obj/item/reagent_containers/syringe/antiviral,
+/obj/item/reagent_containers/syringe/antiviral,
 /obj/effect/floor_decal/corner/pink/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/map_template/merc_shuttle)
@@ -2684,7 +2684,7 @@
 /area/map_template/merc_shuttle)
 "fp" = (
 /obj/structure/table/standard,
-/obj/item/weapon/storage/firstaid/surgery,
+/obj/item/storage/firstaid/surgery,
 /obj/item/device/radio/intercom/syndicate{
 	dir = 8;
 	pixel_x = 22
@@ -2693,13 +2693,13 @@
 /turf/simulated/floor/tiled/white,
 /area/map_template/merc_shuttle)
 "fq" = (
-/obj/machinery/teleport/hub{
+ /obj/machinery/tele_pad{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/merc_shuttle)
 "fr" = (
-/obj/machinery/teleport/station{
+/obj/machinery/tele_projector{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor/grid,

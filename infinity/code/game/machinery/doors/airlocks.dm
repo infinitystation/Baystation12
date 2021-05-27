@@ -53,7 +53,7 @@
 	name = "Vault"
 	icon = 'icons/obj/doors/vault/door.dmi'
 	explosion_resistance = 20
-	opacity = 1
+	opacity = TRUE
 	secured_wires = 1
 	assembly_type = /obj/structure/door_assembly/door_assembly_highsecurity //Until somebody makes better sprites.
 

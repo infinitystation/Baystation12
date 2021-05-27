@@ -1,6 +1,6 @@
-/music_track/blue_moon
-	artist = "Frank Sinatra"
+/decl/audio/track/blue_moon
+	author = "Frank Sinatra"
 	title = "Blue Moon"
-	album = "Placeholder"
-	song = 'infinity/sound/music/newyear/franksinatra_bluemoon.ogg'
+	collection =  "Placeholder"
+	source = 'infinity/sound/music/newyear/franksinatra_bluemoon.ogg'
 	license =  /decl/license/grandfathered

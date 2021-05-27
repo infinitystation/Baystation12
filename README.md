@@ -78,7 +78,7 @@
   <ul>
 <a href="https://gitforwindows.org/">Git Bash</a>, 
 <a href="https://www.syntevo.com/smartgit/">SmartGit</a>, 
-<a href="https://www.sourcetreeapp.com/">Sourse Tree</a>, 
+<a href="https://www.sourcetreeapp.com/">Sourcetree</a>, 
 <a href="https://git-scm.com/">git-scm</a>, 
 <a href="https://tortoisegit.org/">TortoiseGit</a>, 
 или аналогичный на ваш выбор.

@@ -1,6 +1,6 @@
-/music_track/tonnes
-	artist = "Tennessee Ernie Ford"
+/decl/audio/track/tonnes
+	author = "Tennessee Ernie Ford"
 	title = "16 tonnes"
-	album = "Placeholder"
-	song = 'infinity/sound/music/newyear/tennesseeernieford_sixplusonetonns.ogg'
+	collection =  "Placeholder"
+	source = 'infinity/sound/music/newyear/tennesseeernieford_sixplusonetonns.ogg'
 	license =  /decl/license/grandfathered

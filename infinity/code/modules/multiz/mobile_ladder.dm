@@ -1,4 +1,4 @@
-/obj/item/weapon/ladder_mobile
+/obj/item/ladder_mobile
 	name = "mobile ladder"
 	desc = "A lightweight deployable ladder, which you can use to move up or down. Or alternatively, you can bash some faces in."
 	icon_state = "mobile_ladder"
@@ -14,7 +14,7 @@
 		slot_back_str = 'infinity/icons/mob/onmob/onmob_back.dmi'
 		)
 
-/obj/item/weapon/ladder_mobile/proc/place_ladder(atom/A, mob/user)
+/obj/item/ladder_mobile/proc/place_ladder(atom/A, mob/user)
 	if(istype(A, /turf/simulated/open))         //Place into open space
 		var/turf/below_loc = GetBelow(A)
 		if(!below_loc || (istype(/turf/space, below_loc)))
@@ -52,13 +52,13 @@
 		user.drop_item()
 		qdel(src)
 
-/obj/item/weapon/ladder_mobile/afterattack(atom/A, mob/user,proximity)
+/obj/item/ladder_mobile/afterattack(atom/A, mob/user,proximity)
 	if(!proximity)
 		return
 
 	place_ladder(A,user)
 
-/obj/item/weapon/ladder_mobile/proc/handle_action(atom/A, mob/user)
+/obj/item/ladder_mobile/proc/handle_action(atom/A, mob/user)
 	if(!do_after(user, 30, src))
 		to_chat(user, "Can't place ladder! You were interrupted!")
 		return FALSE
@@ -97,7 +97,7 @@
 	if(QDELETED(src))
 		return
 
-	var/obj/item/weapon/ladder_mobile/R = new(get_turf(H))
+	var/obj/item/ladder_mobile/R = new(get_turf(H))
 	transfer_fingerprints_to(R)
 
 	H.visible_message("<span class='notice'>[H] folds [src] up into [R]!</span>",

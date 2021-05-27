@@ -84,19 +84,11 @@
 		return 1
 
 /obj/item/device/scanner/proc/print_report(var/mob/living/user)
-//[INF]
-	if(cooldown < world.time - 150)
-		cooldown = world.time
-//[/INF] +1 tab ahead before a new [INF]
-		if(!scan_data)
-			to_chat(user, "There is no scan data to print.")
-			return
-		var/obj/item/weapon/paper/P = new(get_turf(src), scan_data, "paper - [scan_title]")
-		if(printout_color)
-			P.color = printout_color
-		user.put_in_hands(P)
-		user.visible_message("\The [src] spits out a piece of paper.")
-//[INF]
-	else
-		to_chat(user, "Please, wait a bit before a new copy.")
-//[/INF]
+	if(!scan_data)
+		to_chat(user, "There is no scan data to print.")
+		return
+	var/obj/item/paper/P = new(get_turf(src), scan_data, "paper - [scan_title]")
+	if(printout_color)
+		P.color = printout_color
+	user.put_in_hands(P)
+	user.visible_message("\The [src] spits out a piece of paper.")

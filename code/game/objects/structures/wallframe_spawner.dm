@@ -2,8 +2,8 @@
 	name = "wall frame window grille spawner"
 	icon = 'icons/obj/structures_inf.dmi'
 	icon_state = "wingrille"
-	density = 1
-	anchored = 1.0
+	density = TRUE
+	anchored = TRUE
 	var/win_path = /obj/structure/window/basic/full
 	var/frame_path = /obj/structure/wall_frame/standard
 	var/grille_path = /obj/structure/grille
@@ -43,13 +43,6 @@
 	if(locate(win_path) in loc)
 		warning("Frame Spawner: A window structure already exists at [loc.x]-[loc.y]-[loc.z]")
 
-	if(grille_path)
-		if(locate(grille_path) in loc)
-			warning("Frame Spawner: A grille already exists at [loc.x]-[loc.y]-[loc.z]")
-		else
-			var/obj/structure/grille/G = new grille_path (loc)
-			handle_grille_spawn(G)
-
 	var/list/neighbours = list()
 	if(fulltile)
 		var/obj/structure/window/new_win = new win_path(loc)
@@ -71,6 +64,14 @@
 					handle_window_spawn(new_win)
 			else
 				neighbours |= other
+
+	if(grille_path)
+		if(locate(grille_path) in loc)
+			warning("Frame Spawner: A grille already exists at [loc.x]-[loc.y]-[loc.z]")
+		else
+			var/obj/structure/grille/G = new grille_path (loc)
+			handle_grille_spawn(G)
+
 	activated = 1
 	for(var/obj/effect/wallframe_spawn/other in neighbours)
 		if(!other.activated) other.activate()
@@ -133,6 +134,14 @@
 	name = "reinforced vox hull wall frame window spawner"
 	frame_path = /obj/structure/wall_frame/hull/vox
 
+/obj/effect/wallframe_spawn/reinforced/hull/verne
+	name = "reinforced verne hull wall frame window spawner"
+	frame_path = /obj/structure/wall_frame/hull/verne
+
+/obj/effect/wallframe_spawn/reinforced/hull/ascent
+	name = "reinforced ascent hull wall frame window spawner"
+	frame_path = /obj/structure/wall_frame/hull/ascent
+
 /obj/effect/wallframe_spawn/reinforced/bare //standard type is used most often so its in the master type, this one is for away sites etc with unpainted walls
 	name = "bare metal reinforced wall frame window spawner"
 	frame_path = /obj/structure/wall_frame
@@ -148,6 +157,10 @@
 	name = "reinforced phoron wall frame window spawner"
 	icon_state = "pr-wingrille"
 	win_path = /obj/structure/window/phoronreinforced/full
+
+/obj/effect/wallframe_spawn/reinforced_phoron/ascent
+	name = "reinforced ascent reinforced phoron wall frame window spawner"
+	frame_path = /obj/structure/wall_frame/hull/ascent
 
 /obj/effect/wallframe_spawn/reinforced_phoron/titanium
 	name = "reinforced phoron titanium wall frame window spawner"

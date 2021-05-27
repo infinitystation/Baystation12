@@ -131,7 +131,7 @@
 /area/space)
 "ax" = (
 /obj/structure/table/steel,
-/obj/item/weapon/reagent_containers/glass/beaker/large,
+/obj/item/reagent_containers/glass/beaker/large,
 /obj/structure/hygiene/sink{
 	dir = 1;
 	pixel_y = 27
@@ -504,7 +504,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/space)
 "bt" = (
-/obj/item/weapon/storage/mirror{
+/obj/item/storage/mirror{
 	pixel_x = 2
 	},
 /turf/simulated/wall/r_wall,

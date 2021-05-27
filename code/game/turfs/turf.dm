@@ -32,6 +32,7 @@
 	var/obj/effect/flood/flood_object
 	var/fluid_blocked_dirs = 0
 	var/flooded // Whether or not this turf is absolutely flooded ie. a water source.
+	var/height = 0 // Determines if fluids can overflow onto next turf
 	var/footstep_type
 
 	var/tmp/changing_turf
@@ -121,9 +122,9 @@
 	if(Adjacent(user))
 		attack_hand(user)
 
-turf/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/weapon/storage))
-		var/obj/item/weapon/storage/S = W
+turf/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W, /obj/item/storage))
+		var/obj/item/storage/S = W
 		if(S.use_to_pickup && S.collection_mode)
 			S.gather_all(src, user)
 	return ..()

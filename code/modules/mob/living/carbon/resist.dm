@@ -18,11 +18,6 @@
 			ExtinguishMob()
 		return TRUE
 
-	if(istype(buckled, /obj/effect/vine))
-		var/obj/effect/vine/V = buckled
-		spawn() V.manual_unbuckle(src)
-		return TRUE
-
 	if(..())
 		return TRUE
 
@@ -40,9 +35,9 @@
 		break_handcuffs()
 		return
 
-	var/obj/item/weapon/handcuffs/HC = handcuffed
+	var/obj/item/handcuffs/HC = handcuffed
 
-	//A default in case you are somehow handcuffed with something that isn't an obj/item/weapon/handcuffs type
+	//A default in case you are somehow handcuffed with something that isn't an obj/item/handcuffs type
 	var/breakouttime = istype(HC) ? HC.breakouttime : 2 MINUTES
 
 	var/mob/living/carbon/human/H = src
@@ -153,7 +148,7 @@
 	if(unbuckle_time && buckled)
 		var/stages = 2
 		for(var/i = 1 to stages)
-			if(!unbuckle_time || do_after(usr, unbuckle_time*0.5, incapacitation_flags = INCAPACITATION_DEFAULT & ~(INCAPACITATION_RESTRAINED | INCAPACITATION_BUCKLED_FULLY)))
+			if(!unbuckle_time || do_after(usr, unbuckle_time*0.5, incapacitation_flags = INCAPACITATION_DISABLED))
 				if(!buckled)
 					return
 				visible_message(

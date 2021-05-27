@@ -7,7 +7,7 @@
 
 // SS_TICKER
 #define SS_PRIORITY_TIMER          20
-#define SS_PRIORITY_ICON_UPDATE    20	// Queued icon updates. Mostly used by APCs and tables.
+#define SS_PRIORITY_ICON_UPDATE    20  // Queued icon updates. Mostly used by APCs and tables.
 
 // Normal
 #define SS_PRIORITY_TICKER         100 // Gameticker.
@@ -15,6 +15,7 @@
 #define SS_PRIORITY_MACHINERY      95  // Machinery + powernet ticks.
 #define SS_PRIORITY_AIR            80  // ZAS processing.
 #define SS_PRIORITY_CHEMISTRY      60  // Multi-tick chemical reactions.
+#define SS_PRIORITY_CHAT           40  // Chat
 #define SS_PRIORITY_ALARM          20  // Alarm processing.
 #define SS_PRIORITY_EVENT          20  // Event processing and queue handling.
 #define SS_PRIORITY_SHUTTLE        20  // Shuttle movement.
@@ -28,7 +29,7 @@
 #define SS_PRIORITY_SUPPLY         10  // Supply point accumulation.
 #define SS_PRIORITY_TRADE          10  // Adds/removes traders.
 #define SS_PRIORITY_GHOST_IMAGES   10  // Updates ghost client images.
-#define SS_PRIORITY_ZCOPY          10   // Builds appearances for Z-Mimic.
+#define SS_PRIORITY_ZCOPY          10  // Builds appearances for Z-Mimic.
 
 // SS_BACKGROUND
 #define SS_PRIORITY_OBJECTS       100  // processing_objects processing.
@@ -43,7 +44,7 @@
 #define SS_PRIORITY_GRAPH         30   // Merging and splitting of graphs
 #define SS_PRIORITY_CHAR_SETUP    25   // Writes player preferences to savefiles.
 #define SS_PRIORITY_GARBAGE       20   // Garbage collection.
-
+#define SS_PRIORITY_KV            10   // \ref based arbitrary storage.
 
 // Subsystem fire priority, from lowest to highest priority
 // If the subsystem isn't listed here it's either DEFAULT or PROCESS (if it's a processing subsystem child)

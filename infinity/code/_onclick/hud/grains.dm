@@ -17,7 +17,7 @@
 	if(istype(owner))
 		if(!grain)
 			grain = owner.overlay_fullscreen(GRAIN_FULLSCREEN_CATEGORY, /obj/screen/fullscreen/grain)
-		if(istype(grain) && owner.screens.Find(GRAIN_FULLSCREEN_CATEGORY))
+		if(istype(grain) && list_find(owner.screens, GRAIN_FULLSCREEN_CATEGORY))
 			//grain.alpha = max_grain_alpha + (max_damage * log(5, clamp(damage, 1, max_damage)))
 			grain.alpha = max_grain_alpha + max_grain_alpha * (damage / max_damage)
 		else

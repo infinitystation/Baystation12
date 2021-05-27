@@ -47,3 +47,4 @@
 		"zhe", "zhei", "zhen", "zheng", "zhi", "zhong", "zhou", "zhu", "zhua", "zhuai", "zhuan", "zhuang", "zhui", "zhun", "zhuo", "zi",
 		"zong", "zou", "zuan", "zui", "zun", "zuo", "zu"
 	)
+	has_written_form = TRUE

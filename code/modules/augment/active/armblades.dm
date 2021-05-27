@@ -1,4 +1,4 @@
-/obj/item/weapon/material/armblade
+/obj/item/material/armblade
 	icon_state = "armblade"
 	item_state = null
 	name = "armblade"
@@ -8,10 +8,10 @@
 	base_parry_chance = 30
 	melee_accuracy_bonus = 10 ///INF
 	unbreakable = 1
-	force_divisor = 0.5 ///INF WAS 0.2
+	force_multiplier = 0.5 ///INF WAS 0.2
 	armor_penetration = 10 //INF
-	sharp = 1
-	edge = 1
+	sharp = TRUE
+	edge = TRUE
 	attack_verb = list("stabbed", "sliced", "cut")
 	applies_material_colour = 0
 
@@ -21,16 +21,16 @@
 	action_button_name = "Deploy blade"
 	icon_state = "armblade"
 	allowed_organs = list(BP_AUGMENT_R_ARM, BP_AUGMENT_L_ARM)
-	holding_type = /obj/item/weapon/material/armblade
+	holding_type = /obj/item/material/armblade
 	//Limited to robolimbs
 	augment_flags = AUGMENTATION_MECHANIC
 
-/obj/item/weapon/material/armblade/claws
+/obj/item/material/armblade/claws
 	icon_state = "wolverine"
 	name = "combat claws"
 	desc = "These do not grow back."
 	base_parry_chance = 40
-	force_divisor = 0.3
+	force_multiplier = 0.3
 
 //Alternate look
 /obj/item/organ/internal/augment/active/simple/wolverine
@@ -39,6 +39,6 @@
 	action_button_name = "Deploy claws"
 	icon_state = "wolverine"
 	allowed_organs = list(BP_AUGMENT_R_HAND, BP_AUGMENT_L_HAND)
-	holding_type = /obj/item/weapon/material/armblade/claws
+	holding_type = /obj/item/material/armblade/claws
 	//Limited to robolimbs
 	augment_flags = AUGMENTATION_MECHANIC

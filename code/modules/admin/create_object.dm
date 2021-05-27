@@ -2,8 +2,8 @@ var/create_object_html = null
 //[inf]
 GLOBAL_VAR_INIT(create_object_forms, list(
 /obj, /obj/structure, /obj/machinery, /obj/effect, /obj/item,
-/obj/item/weapon, /obj/item/clothing, /obj/item/stack,
-/obj/item/device, /obj/item/weapon/reagent_containers, /obj/item/weapon/gun, /obj/prefab))
+/obj/item/, /obj/item/clothing, /obj/item/stack,
+/obj/item/device, /obj/item/reagent_containers, /obj/item/gun, /obj/prefab))
 //[/inf]
 /datum/admins/proc/create_object(var/mob/user)
 	if (!create_object_html)

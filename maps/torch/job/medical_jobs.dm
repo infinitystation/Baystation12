@@ -9,7 +9,7 @@
 	spawn_positions = 2
 	supervisors = "the Chief Medical Officer"
 	selection_color = "#013d3b"
-	economic_power = 8
+	economic_power = 10
 	alt_titles = list(
 		"Surgeon")
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/medical/senior
@@ -35,9 +35,11 @@
 	                    SKILL_CHEMISTRY   = SKILL_MAX)
 	skill_points = 20
 
-	access = list(access_medical, access_morgue, access_virology, access_maint_tunnels, access_emergency_storage,
-			            access_crematorium, access_chemistry, access_surgery,
-			            access_medical_equip, access_solgov_crew, access_senmed)
+	access = list(
+		access_medical, access_morgue, access_virology, access_maint_tunnels, access_emergency_storage,
+		access_crematorium, access_chemistry, access_surgery,
+		access_medical_equip, access_solgov_crew, access_senmed, access_radio_med
+	)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
@@ -76,9 +78,11 @@
 	                    SKILL_CHEMISTRY   = SKILL_MAX)
 	skill_points = 16
 
-	access = list(access_medical, access_morgue, access_virology, access_maint_tunnels, access_emergency_storage,
-			            access_crematorium, access_chemistry, access_surgery,
-			            access_medical_equip, access_solgov_crew, access_senmed)
+	access = list(
+		access_medical, access_morgue, access_virology, access_maint_tunnels, access_emergency_storage,
+		access_crematorium, access_chemistry, access_surgery,
+		access_medical_equip, access_solgov_crew, access_senmed, access_radio_med
+	)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
@@ -117,8 +121,13 @@
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
 	                    SKILL_CHEMISTRY   = SKILL_MAX)
 
-	access = list(access_medical, access_morgue, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
-			            access_eva, access_surgery, access_medical_equip, access_solgov_crew, access_hangar)
+	access = list(
+		access_medical, access_morgue, access_maint_tunnels,
+		access_external_airlocks, access_emergency_storage,
+		access_eva, access_surgery, access_medical_equip,
+		access_solgov_crew, access_hangar, access_radio_med
+	)
+
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
@@ -160,8 +169,12 @@
 	                    SKILL_ANATOMY     = SKILL_MAX,
 	                    SKILL_CHEMISTRY   = SKILL_MAX)
 
-	access = list(access_medical, access_morgue, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
-			            access_surgery, access_medical_equip, access_solgov_crew)
+	access = list(
+		access_medical, access_morgue, access_maint_tunnels,
+		access_external_airlocks, access_emergency_storage,
+		access_surgery, access_medical_equip, access_solgov_crew,
+		access_radio_med
+	)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
@@ -184,20 +197,24 @@
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/medical/contractor/chemist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/contractor)
-	min_skill = list(   SKILL_MEDICAL   = SKILL_ADEPT,
+	min_skill = list(   SKILL_MEDICAL   = SKILL_BASIC,
 	                    SKILL_CHEMISTRY = SKILL_ADEPT)
 
-	max_skill = list(   SKILL_MEDICAL     = SKILL_ADEPT,
-						SKILL_ANATOMY	  = SKILL_ADEPT,
+	max_skill = list(   SKILL_MEDICAL     = SKILL_BASIC,
+						SKILL_ANATOMY	  = SKILL_BASIC,
 	                    SKILL_CHEMISTRY   = SKILL_MAX)
 	skill_points = 16
 
-	access = list(access_medical, access_maint_tunnels, access_emergency_storage, access_medical_equip, access_solgov_crew, access_chemistry,
-	 						access_virology, access_morgue, access_crematorium)
+	access = list(
+		access_medical, access_maint_tunnels, access_emergency_storage,
+		access_medical_equip, access_solgov_crew, access_chemistry,
+	 	access_virology, access_morgue, access_crematorium, access_radio_med
+	)
+
 	minimal_access = list()
 
 /datum/job/chemist/get_description_blurb()
-	return "You are a Laboratory Technician. You make medicine. You are not a doctor or medic, but have surface level knowledge in those fields. You should not be treating patients, but rather providing the the medicine to do so. You are subordinate to Physicians and Medical Techncians."	
+	return "You are a Laboratory Technician. You make medicine. You are not a doctor or medic, but have surface level knowledge in those fields. You should not be treating patients, but rather providing the the medicine to do so. You are subordinate to Physicians and Medical Techncians."
 
 /datum/job/psychiatrist
 	title = "Counselor"
@@ -213,7 +230,7 @@
 		"Psychiatrist",
 		"Psionic Counselor" = /decl/hierarchy/outfit/job/torch/crew/medical/counselor/mentalist,
 		"Mentalist" = /decl/hierarchy/outfit/job/torch/crew/medical/counselor/mentalist
-		
+
 	)
 
 	allowed_branches = list(
@@ -231,8 +248,13 @@
 	max_skill = list(
 		SKILL_MEDICAL     = SKILL_MAX
 	)
-	access = list(access_medical, access_psychiatrist, access_solgov_crew, access_medical_equip)
+	access = list(
+		access_medical, access_psychiatrist,
+		access_solgov_crew, access_medical_equip, access_radio_med
+	)
+
 	minimal_access = list()
+
 	software_on_spawn = list(
 		/datum/computer_file/program/suit_sensors,
 		/datum/computer_file/program/camera_monitor

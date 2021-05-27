@@ -1,4 +1,4 @@
-/obj/item/weapon/chainsword
+/obj/item/chainsword
 	name = "CS-9 \"Martha\""
 	desc = "The experimental chain sword version of CS-9. Reds with a black color give a special entourage. Most such swords use razor-sharp monomolecular teeth. When working, the chain sword emits an angry buzz that grows into a shrill scream when the chain begins to bite into something."
 
@@ -31,7 +31,7 @@
 	var/fuel = 50
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/chainsword/proc/set_status(new_status, mob/user)
+/obj/item/chainsword/proc/set_status(new_status, mob/user)
 	if (!new_status)
 		status = new_status
 		force = force_off
@@ -45,23 +45,23 @@
 		return
 	to_chat(user, "<span class='notice'>You need more fuel for this.</span>")
 
-/obj/item/weapon/chainsword/on_update_icon()
+/obj/item/chainsword/on_update_icon()
 	if (status)
 		icon_state = icon_state_on
 	else
 		icon_state = icon_state_off
 
-/obj/item/weapon/chainsword/attack_self(mob/user as mob)
+/obj/item/chainsword/attack_self(mob/user as mob)
 	set_status(!status, user)
 
-/obj/item/weapon/chainsword/afterattack(obj/O as obj, mob/user as mob)
+/obj/item/chainsword/afterattack(obj/O as obj, mob/user as mob)
 	if (!istype(O, /obj/structure/reagent_dispensers/fueltank) || (get_dist(src,O) > 1) || status)
 		return
 	fuel += O.reagents.remove_any(50 - fuel)
 	to_chat(user, "<span class='notice'>You refuel [name]</span>")
 	playsound(src.loc, 'sound/effects/refill.ogg', 50, 1, -6)
 
-/obj/item/weapon/chainsword/attack(mob/M, mob/user)
+/obj/item/chainsword/attack(mob/M, mob/user)
 	if (status)
 		fuel -= 1
 		if (fuel <= 0)
@@ -72,5 +72,5 @@
 
 /obj/item/custkit/chainsword
 	name = "CS-9 \"Martha\" customization kit"
-	input = /obj/item/weapon/material/hatchet/machete/deluxe
-	output = /obj/item/weapon/chainsword
+	input = /obj/item/material/hatchet/machete/deluxe
+	output = /obj/item/chainsword

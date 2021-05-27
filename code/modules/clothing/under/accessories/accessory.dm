@@ -7,6 +7,7 @@
 	slot_flags = SLOT_TIE
 	w_class = ITEM_SIZE_SMALL
 	var/slot = ACCESSORY_SLOT_DECOR
+	var/body_location = UPPER_TORSO //most accessories are here
 	var/obj/item/clothing/has_suit = null		//the suit the tie may be attached to
 	var/image/inv_overlay = null	//overlay used when attached to clothing.
 	var/list/mob_overlay = list()
@@ -31,10 +32,10 @@
 		var/tmp_icon_state = overlay_state? overlay_state : icon_state
 		if(icon_override && ("[tmp_icon_state]_tie" in icon_states(icon_override)))
 			inv_overlay = image(icon = icon_override, icon_state = "[tmp_icon_state]_tie", dir = SOUTH)
-		else if("[tmp_icon_state]_tie" in icon_states(default_onmob_icons[slot_tie_str]))
-			inv_overlay = image(icon = default_onmob_icons[slot_tie_str], icon_state = "[tmp_icon_state]_tie", dir = SOUTH)
+		else if("[tmp_icon_state]_tie" in icon_states(GLOB.default_onmob_icons[slot_tie_str]))
+			inv_overlay = image(icon = GLOB.default_onmob_icons[slot_tie_str], icon_state = "[tmp_icon_state]_tie", dir = SOUTH)
 		else
-			inv_overlay = image(icon = default_onmob_icons[slot_tie_str], icon_state = tmp_icon_state, dir = SOUTH)
+			inv_overlay = image(icon = GLOB.default_onmob_icons[slot_tie_str], icon_state = tmp_icon_state, dir = SOUTH)
 	inv_overlay.color = color
 	return inv_overlay
 
@@ -115,6 +116,7 @@
 	name = "kneepads"
 	desc = "A pair of synthetic kneepads. Doesn't provide protection from more than arthritis."
 	icon_state = "kneepads"
+	body_location = LEGS
 
 //Scarves
 /obj/item/clothing/accessory/scarf
@@ -127,3 +129,10 @@
 	name = "bracelet"
 	desc = "A simple bracelet with a clasp."
 	icon_state = "bracelet"
+	body_location = HANDS
+
+//Neckerchiefs
+/obj/item/clothing/accessory/neckerchief
+	name = "neckerchief"
+	desc = "A piece of cloth tied around the neck. A favorite of Scouts, Sailors and Partisans everywhere."
+	icon_state = "neckerchief"

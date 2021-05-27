@@ -15,6 +15,26 @@ var/list/sounds_cache = list()
 	uploaded_sound.priority = 250
 
 	sounds_cache += S
+	var/volume = 100
+
+	while (TRUE)
+		volume = input(src, "Sound volume (0 - 100)", "Volume", volume) as null|num
+		if (isnull(volume))
+			return
+
+		volume =  round(Clamp(volume, 0, 100))
+		to_chat(src, "Sound volume set to [volume]%")
+		uploaded_sound.volume =volume
+		var/choice = alert("Song: [S]", "Play Sound" , "Play", "Preview", "Cancel")
+
+		if (choice == "Cancel")
+			return
+
+		if (choice == "Preview")
+			sound_to(src, uploaded_sound)
+
+		if (choice == "Play")
+			break
 
 	if(alert("Song: [S].\nVolume: [vol]%.", "Confirmation request" ,"Play", "Cancel") == "Cancel")
 		return

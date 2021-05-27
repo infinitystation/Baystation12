@@ -1,6 +1,6 @@
 /obj/machinery/suit_storage_unit/emag_act()
 	if(!emagged)
-		emagged = 1
+		emagged = TRUE
 		safetieson = 0
 		return 1
 

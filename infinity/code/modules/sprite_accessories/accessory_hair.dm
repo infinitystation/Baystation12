@@ -98,6 +98,11 @@
 	icon_state = "hair_long_bedhead"
 	gender = FEMALE
 
+/datum/sprite_accessory/hair/infinity/long_bedhead_alt
+	name = "Very Long Bedhead (Alt)"
+	icon_state = "hair_long_bedhead_alt"
+	gender = FEMALE
+
 /datum/sprite_accessory/hair/infinity/jade
 	name = "Jaden"
 	icon_state = "hair_jade"

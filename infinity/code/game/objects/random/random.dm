@@ -11,7 +11,7 @@
 	spawn_nothing_percentage = 50
 
 /obj/random/trap/spawn_choices()
-	return list(/obj/item/weapon/beartrap/deployed = 3,
+	return list(/obj/item/beartrap/deployed = 3,
 				/*/obj/random/mine = 1 cannot be defused + old as shit*/)
 
 /obj/random/mine/spawn_choices()
@@ -26,25 +26,25 @@
 	icon_state = "cartridge"
 
 /obj/random/reagent_containers/chem/spawn_choices()
-	return list(/obj/item/weapon/reagent_containers/chem_disp_cartridge/hydrazine = 1,
-	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/lithium = 1,
-	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/carbon = 1,
-	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/ammonia = 1,
-	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/acetone = 1,
-	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/sodium = 1,
-	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/aluminium = 1,
-	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/silicon = 1,
-	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/phosphorus = 1,
-	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/sulfur = 1,
-	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/hclacid = 1,
-	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/potassium = 1,
-	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/iron = 1,
-	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/copper = 1,
-	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/mercury = 1,
-	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/radium = 1,
-	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/ethanol = 1,
-	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/sacid = 1,
-	 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/tungsten = 1,)
+	return list(/obj/item/reagent_containers/chem_disp_cartridge/hydrazine = 1,
+	 			/obj/item/reagent_containers/chem_disp_cartridge/lithium = 1,
+	 			/obj/item/reagent_containers/chem_disp_cartridge/carbon = 1,
+	 			/obj/item/reagent_containers/chem_disp_cartridge/ammonia = 1,
+	 			/obj/item/reagent_containers/chem_disp_cartridge/acetone = 1,
+	 			/obj/item/reagent_containers/chem_disp_cartridge/sodium = 1,
+	 			/obj/item/reagent_containers/chem_disp_cartridge/aluminium = 1,
+	 			/obj/item/reagent_containers/chem_disp_cartridge/silicon = 1,
+	 			/obj/item/reagent_containers/chem_disp_cartridge/phosphorus = 1,
+	 			/obj/item/reagent_containers/chem_disp_cartridge/sulfur = 1,
+	 			/obj/item/reagent_containers/chem_disp_cartridge/hclacid = 1,
+	 			/obj/item/reagent_containers/chem_disp_cartridge/potassium = 1,
+	 			/obj/item/reagent_containers/chem_disp_cartridge/iron = 1,
+	 			/obj/item/reagent_containers/chem_disp_cartridge/copper = 1,
+	 			/obj/item/reagent_containers/chem_disp_cartridge/mercury = 1,
+	 			/obj/item/reagent_containers/chem_disp_cartridge/radium = 1,
+	 			/obj/item/reagent_containers/chem_disp_cartridge/ethanol = 1,
+	 			/obj/item/reagent_containers/chem_disp_cartridge/sacid = 1,
+	 			/obj/item/reagent_containers/chem_disp_cartridge/tungsten = 1,)
 
 /obj/random/gloves/poor
 	name = "random poor gloves"
@@ -99,8 +99,8 @@
 	icon_state = "greenglow"
 
 /obj/random/trash/space/spawn_choices()
-	return list(/obj/item/weapon/ore/iron = 1,
-				/obj/item/weapon/ore/glass = 5,
+	return list(/obj/item/ore/iron = 1,
+				/obj/item/ore/glass = 5,
 				/obj/item/stack/material/rods = 2,
 				/obj/effect/decal/cleanable/ash = 5,
 				/obj/effect/decal/cleanable/dirt = 3,
@@ -236,12 +236,12 @@
 				)
 
 /obj/random/hardsuit/spawn_choices()
-	return list(/obj/item/weapon/rig/industrial,
-				/obj/item/weapon/rig/eva,
-				/obj/item/weapon/rig/light/hacker,
-				/obj/item/weapon/rig/light/stealth,
-				/obj/item/weapon/rig/light,
-				/obj/item/weapon/rig/unathi)
+	return list(/obj/item/rig/industrial,
+				/obj/item/rig/eva,
+				/obj/item/rig/light/hacker,
+				/obj/item/rig/light/stealth,
+				/obj/item/rig/light,
+				/obj/item/rig/unathi)
 
 /obj/random/hostile/asteroid
 	name = "Random Asteroid Hostile"

@@ -1,1 +1,1 @@
-/obj/item/weapon/gun/projectile/heavysniper/starts_loaded = 0
+/obj/item/gun/projectile/heavysniper/starts_loaded = 0

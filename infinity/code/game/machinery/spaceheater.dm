@@ -2,8 +2,8 @@
 	name = "stationary space heater"
 	icon = 'infinity/icons/obj/atmos.dmi'
 	icon_state = "stheater-off"
-	anchored = 1
-	density = 0
+	anchored = TRUE
+	density = FALSE
 	heating_power = 120 KILOWATTS
 	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE
 

@@ -4,7 +4,7 @@
 	id="rpd"
 	req_tech = list(TECH_ENGINEERING = 5, TECH_MATERIAL = 3)
 	materials = list(DEFAULT_WALL_MATERIAL = 50000)
-	build_path = /obj/item/weapon/rpd
+	build_path = /obj/item/rpd
 	sort_string = "VAGAK"
 
 /datum/design/item/tool/powersink

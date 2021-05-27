@@ -53,7 +53,7 @@
 	icon_state = "pzrwreck"
 	layer = 4 // so it overlaps other people
 	pixel_x = -16
-	anchored = 1 // It's fucking huge. You aren't moving it.
+	anchored = TRUE // It's fucking huge. You aren't moving it.
 
 /obj/mecha/combat/gorilla
 	name = "Gorilla"

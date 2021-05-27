@@ -1,8 +1,8 @@
-/obj/item/weapon/storage/part_replacer
+/obj/item/storage/part_replacer
 	var/remote_interaction = FALSE
 	var/pshoom_or_beepboopblorpzingshadashwoosh = 'infinity/sound/items/rped.ogg'
 
-/obj/item/weapon/storage/part_replacer/bluespace
+/obj/item/storage/part_replacer/bluespace
 	name = "bluespace rapid part exchange device"
 	desc = "A version of the RPED that allows for replacement of parts and scanning from a distance, along with higher capacity for parts."
 	icon = 'infinity/icons/obj/rped_bs.dmi'
@@ -14,11 +14,11 @@
 	remote_interaction = TRUE
 	pshoom_or_beepboopblorpzingshadashwoosh = 'infinity/sound/items/PSHOOM.ogg'
 
-/obj/item/weapon/storage/part_replacer/proc/part_replacement_sound()
+/obj/item/storage/part_replacer/proc/part_replacement_sound()
 	//Plays the sound for RPED exhanging or installing parts.
 	playsound(src, pshoom_or_beepboopblorpzingshadashwoosh, 40, 1)
 
-/obj/item/weapon/storage/part_replacer/afterattack(obj/machinery/machine as obj, mob/living/carbon/human/user as mob, flag, params)
+/obj/item/storage/part_replacer/afterattack(obj/machinery/machine as obj, mob/living/carbon/human/user as mob, flag, params)
 	if(flag) return
 	if(istype(machine) && remote_interaction)
 		if(machine.component_parts)

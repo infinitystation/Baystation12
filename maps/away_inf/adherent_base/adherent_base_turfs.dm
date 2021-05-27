@@ -42,4 +42,4 @@
 	icon_state = "rockwall3"
 	fluid_blocked_dirs = 1
 	opacity = 1
-	density = 1
+	density = TRUE

@@ -8,8 +8,8 @@ var/list/integrated_circuit_blacklist = list(/obj/item/integrated_circuit, /obj/
 	desc = "A large machine made to print tiny things out of metal."
 	icon = 'icons/obj/machines/research.dmi'
 	icon_state = "integrated"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	var/metal = 0
 	var/maxMetal = 100
 	var/metal_mult = 0.1
@@ -26,10 +26,10 @@ var/list/integrated_circuit_blacklist = list(/obj/item/integrated_circuit, /obj/
 						"Assemblies" = typesof(/obj/item/device/electronic_assembly))
 
 	component_parts = list()
-	component_parts += new /obj/item/weapon/stock_parts/circuitboard/integrated_printer(src)
-	component_parts += new /obj/item/weapon/stock_parts/matter_bin(src)
-	component_parts += new /obj/item/weapon/stock_parts/manipulator(src)
-	component_parts += new /obj/item/weapon/stock_parts/micro_laser(src)
+	component_parts += new /obj/item/stock_parts/circuitboard/integrated_printer(src)
+	component_parts += new /obj/item/stock_parts/matter_bin(src)
+	component_parts += new /obj/item/stock_parts/manipulator(src)
+	component_parts += new /obj/item/stock_parts/micro_laser(src)
 	RefreshParts()
 
 /obj/machinery/integrated_circuit_printer/attackby(var/obj/item/O, var/mob/user)
@@ -97,8 +97,8 @@ var/list/integrated_circuit_blacklist = list(/obj/item/integrated_circuit, /obj/
 /obj/machinery/integrated_circuit_printer/RefreshParts()
 	maxMetal = 0
 	metal_mult = 0
-	for(var/obj/item/weapon/stock_parts/S in component_parts)
-		if(istype(S,/obj/item/weapon/stock_parts/matter_bin))
+	for(var/obj/item/stock_parts/S in component_parts)
+		if(istype(S,/obj/item/stock_parts/matter_bin))
 			maxMetal += 100 * S.rating
 		else
 			metal_mult += 0.25/S.rating

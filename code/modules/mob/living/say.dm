@@ -19,6 +19,8 @@ var/list/department_radio_keys = list(
 	  ":y" = "Exploration",		".y" = "Exploration",
 	  ":f" = "SCG Patrol",	".f" = "SCG Patrol", //INF
 	  ":k" = "Recon",		".k" = "Recon",	//Skrell Recon ship
+	  ":o" = "Response Team",".o" = "Response Team", //ERT
+	  ":j" = "Hailing", ".j" = "Hailing",
 
 	  ":R" = "right ear",	".R" = "right ear",
 	  ":L" = "left ear",	".L" = "left ear",
@@ -39,6 +41,8 @@ var/list/department_radio_keys = list(
 	  ":Y" = "Exploration",		".Y" = "Exploration",
 	  ":F" = "SCG Patrol",	".F" = "SCG Patrol", //INF
 	  ":K" = "Recon",		".K" = "Recon",	//Skrell Recon ship
+	  ":O" = "Response Team", ".O" = "Response Team",
+	  ":J" = "Hailing", ".J" = "Hailing",
 
 	  //localized radio keys by ~KareTa
 	  ":к" = "right ear",	".к" = "right ear",
@@ -59,6 +63,8 @@ var/list/department_radio_keys = list(
 	  ":н" = "Exploration",		".н" = "Exploration",
 	  ":а" = "SCG Patrol",	".а" = "SCG Patrol", //INF
 	  ":л" = "Recon",		".л" = "Recon",	//Skrell Recon ship
+	  ":щ" = "Response Team", ".щ" = "Response Team",
+	  ":о" = "Hailing", ".о" = "Hailing",
 
 	  ":К" = "right ear",	".К" = "right ear",
 	  ":Д" = "left ear",	".Д" = "left ear",
@@ -78,6 +84,8 @@ var/list/department_radio_keys = list(
 	  ":Н" = "Exploration",		".Н" = "Exploration",
 	  ":А" = "SCG Patrol",	".А" = "SCG Patrol", //INF
 	  ":Л" = "Recon",		".Л" = "Recon",	//Skrell Recon ship
+	  ":Щ" = "Response Team", ".Щ" = "Response Team",
+	  ":О" = "Hailing", ".О" = "Hailing",
 
 	  /*
 	  //kinda localization -- rastaf0
@@ -191,7 +199,7 @@ proc/get_radio_key_from_channel(var/channel)
 	message = html_decode(message)
 
 	var/end_char = copytext_char(message, length_char(message), length_char(message) + 1) // INF Localiztion
-	if(!(end_char in list(".", "?", "!", "-", "~")))
+	if(!(end_char in list(".", "?", "!", "-", "~", ":")))
 		message += "."
 
 	message = html_encode(message)
@@ -215,6 +223,14 @@ proc/get_radio_key_from_channel(var/channel)
 	if(prefix == get_prefix_key(/decl/prefix/visible_emote))
 		return custom_emote(1, copytext(message,2))
 
+	//parse the language code and consume it
+	if(!speaking)
+		speaking = parse_language(message)
+		if(speaking)
+			message = copytext(message,2+length(speaking.key))
+		else
+			speaking = get_default_language()
+
 	//parse the radio code and consume it
 	var/message_mode = parse_message_mode(message, "headset")
 	if (message_mode)
@@ -224,14 +240,6 @@ proc/get_radio_key_from_channel(var/channel)
 			message = copytext_char(message,3)
 
 	message = trim_left(message)
-
-	//parse the language code and consume it
-	if(!speaking)
-		speaking = parse_language(message)
-		if(speaking)
-			message = copytext_char(message,2+length_char(speaking.key))
-		else
-			speaking = get_default_language()
 
 	// This is broadcast to all mobs with the language,
 	// irrespective of distance or anything else.
@@ -254,6 +262,7 @@ proc/get_radio_key_from_channel(var/channel)
 	message = trim_left(message)
 	message = handle_autohiss(message, speaking)
 	message = format_say_message(message)
+	message = process_chat_markup(message)
 
 	if(speaking && !speaking.can_be_spoken_properly_by(src))
 		message = speaking.muddle(message)
@@ -289,7 +298,7 @@ proc/get_radio_key_from_channel(var/channel)
 		if(speaking)
 			message_range = speaking.get_talkinto_msg_range(message)
 		if(!speaking || !(speaking.flags & NO_TALK_MSG))
-			src.visible_message(SPAN_NOTICE("\The [src] talks into \the [used_radios[1]]."), SPAN_NOTICE("You hear someone talk into their headset."), 5, exclude_mobs = list(src))
+			src.visible_message(SPAN_NOTICE("\The [src] talks into \the [used_radios[1]]."), blind_message = SPAN_NOTICE("You hear someone talk into their headset."), range = 5, exclude_mobs = list(src))
 			if (speech_sound)
 				sound_vol *= 0.5
 
@@ -325,6 +334,7 @@ proc/get_radio_key_from_channel(var/channel)
 	var/image/speech_bubble = image('icons/mob/talk.dmi',src,"h[speech_bubble_test]")
 	speech_bubble.layer = layer
 	speech_bubble.plane = plane
+	speech_bubble.alpha = 0
 	// VOREStation Port - Attempt Multi-Z Talking
 	// for (var/atom/movable/AM in get_above_oo())
 	// 	var/turf/ST = get_turf(AM)
@@ -348,6 +358,7 @@ proc/get_radio_key_from_channel(var/channel)
 			if(O) //It's possible that it could be deleted in the meantime.
 				O.hear_talk(src, message, verb, speaking)
 
+	var/list/eavesdroppers = list()
 	if(whispering)
 		var/eavesdroping_range = 5
 		var/list/eavesdroping = list()
@@ -365,10 +376,10 @@ proc/get_radio_key_from_channel(var/channel)
 					temp = (H.get_species() == SPECIES_RESOMI ? message : stars(message))
 				else
 					temp = stars(message)
-				show_image(M, speech_bubble)
+				image_to(M, speech_bubble)
 				M.hear_say(temp, verb, speaking, alt_name, italics, src, speech_sound, sound_vol)
 				if(M.client)
-					speech_bubble_recipients |= M.client
+					eavesdroppers |= M.client
 
 		for(var/obj/O in eavesdroping)
 			spawn(0)
@@ -377,14 +388,22 @@ proc/get_radio_key_from_channel(var/channel)
 
 //	flick_overlay(speech_bubble, speech_bubble_recipients, 30) inf-dev
 	//[INF]
-	INVOKE_ASYNC(GLOBAL_PROC, /.proc/animate_speech_bubble, speech_bubble, speech_bubble_recipients, 30)
-	INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, message, speaking, italics, speech_bubble_recipients, 30)
+	INVOKE_ASYNC(GLOBAL_PROC, .proc/animate_speech_bubble, speech_bubble, speech_bubble_recipients | eavesdroppers, 30)
+	INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, message, speaking, italics, speech_bubble_recipients)
+	if(length(eavesdroppers))
+		INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, stars(message), speaking, italics, eavesdroppers)
 	//[/INF]
 
 	if(whispering)
 		log_whisper("[name]/[key] : [message]")
 	else
 		log_say("[name]/[key] : [message]")
+
+	flick_overlay(speech_bubble, speech_bubble_recipients, 50)
+	animate(speech_bubble, alpha = 255, time = 10, easing = CIRCULAR_EASING)
+	animate(time = 20)
+	animate(alpha = 0, pixel_y = 12, time = 20, easing = CIRCULAR_EASING)
+
 	return 1
 
 /mob/living/proc/say_signlang(var/message, var/verb="gestures", var/datum/language/language)

@@ -1,13 +1,13 @@
-/obj/item/weapon/paper/talisman/wrath/attack_self(var/mob/living/user)
+/obj/item/paper/talisman/wrath/attack_self(var/mob/living/user)
 	if(iscultist(user))
 		to_chat(user, "This is an wrathburning talisman.")
 	..()
 
-/obj/item/weapon/paper/talisman/wrath/afterattack(var/mob/living/M, var/mob/living/user)
+/obj/item/paper/talisman/wrath/afterattack(var/mob/living/M, var/mob/living/user)
 	if(!iscultist(user))
 		return
 	user.say("Ощути гнев моего Бога!")
-	var/obj/item/weapon/nullrod/nrod = locate() in M
+	var/obj/item/nullrod/nrod = locate() in M
 	if(nrod)
 		user.visible_message("<span class='danger'>\The [user] invokes \the [src] at [M], but they are unaffected.</span>", "<span class='danger'>You invoke \the [src] at [M], but they are unaffected.</span>")
 		return
@@ -25,15 +25,15 @@
 	user.unEquip(src)
 	qdel(src)
 
-/obj/item/weapon/paper/talisman/burn/attack_self(var/mob/living/user)
+/obj/item/paper/talisman/burn/attack_self(var/mob/living/user)
 	if(iscultist(user))
 		to_chat(user, "This is an burning talisman.")
 	..()
 
-/obj/item/weapon/paper/talisman/burn/afterattack(var/mob/living/M, var/mob/living/user)
+/obj/item/paper/talisman/burn/afterattack(var/mob/living/M, var/mob/living/user)
 	if(!iscultist(user))
 		return
-	var/obj/item/weapon/nullrod/nrod = locate() in M
+	var/obj/item/nullrod/nrod = locate() in M
 	if(nrod)
 		return
 	else
@@ -46,7 +46,7 @@
 		user.unEquip(src)
 		qdel(src)
 
-/obj/item/weapon/reagent_containers/glass/bucket/wood/cult/New()
+/obj/item/reagent_containers/glass/bucket/wood/cult/New()
 	..()
 	reagents.add_reagent(/datum/reagent/hell_water, 120)
 	update_icon()
@@ -74,7 +74,7 @@
 	. = ..()
 	overlay = GLOB.global_hud.thermal
 
-/obj/item/weapon/melee/cultblade/dagger
+/obj/item/melee/cultblade/dagger
 	name = "shadow dagger"
 	desc = "A strange dagger, the blade of which is always covered with a thick dark haze."
 	icon = 'icons/obj/wizard.dmi'

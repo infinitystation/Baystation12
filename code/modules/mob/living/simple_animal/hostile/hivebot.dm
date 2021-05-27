@@ -7,11 +7,7 @@
 	icon_dead = "basic"
 	health = 55
 	maxHealth = 55
-	melee_damage_lower = 2
-	melee_damage_upper = 3
-	melee_damage_flags = DAM_SHARP|DAM_EDGE
-	attacktext = "clawed"
-	projectilesound = 'sound/weapons/gunshot/gunshot_pistol.ogg'
+	natural_weapon = /obj/item/natural_weapon/hivebot
 	projectiletype = /obj/item/projectile/beam/smalllaser
 	faction = "hivebot"
 	min_gas = null
@@ -30,6 +26,15 @@
 	skin_material = null
 	skin_amount =   0
 
+/obj/item/natural_weapon/hivebot
+	name = "sharpened leg"
+	gender = NEUTER
+	attack_verb = list("sliced")
+	force = 5
+	damtype = BRUTE
+	edge = TRUE
+	show_in_message = TRUE
+
 //[inf]
 /mob/living/simple_animal/hostile/hivebot/emp_act(severity)
 	health -= rand(10,25) * (severity + 1)
@@ -41,8 +46,6 @@
 	icon_state = "smallbot"
 	icon_living = "smallbot"
 	icon_dead = "smallbot"
-	melee_damage_lower = 3
-	melee_damage_upper = 5
 	ranged = 1
 	speed = 7
 	attack_delay = 6 //inf
@@ -51,8 +54,6 @@
 	icon_state = "smallbot"
 	icon_living = "smallbot"
 	icon_dead = "smallbot"
-	melee_damage_lower = 3
-	melee_damage_upper = 5
 	ranged = 1
 	rapid = 1
 	attack_delay = 6
@@ -63,10 +64,9 @@
 	icon_state = "bigbot"
 	icon_living = "bigbot"
 	icon_dead = "bigbot"
+	natural_weapon = /obj/item/natural_weapon/hivebot/strong
 	health = 150
 	maxHealth = 150
-	melee_damage_lower = 20
-	melee_damage_upper = 25
 	ranged = 1
 	can_escape = 1
 	natural_armor = list(
@@ -78,6 +78,9 @@
 	speed = 3
 //	var/resources = 0
 //	var/max_resources = 10
+
+/obj/item/natural_weapon/hivebot/strong
+	force = 15
 
 /mob/living/simple_animal/hostile/hivebot/CanPass(atom/movable/O)
 	if(istype(O, projectiletype))//Allows for swarmers to fight as a group without wasting their shots hitting each other
@@ -110,7 +113,7 @@ Teleporter beacon, and its subtypes
 	health = 200
 	maxHealth = 200
 	status_flags = 0
-	anchored = 1
+	anchored = TRUE
 	stop_automated_movement = 1
 
 	var/bot_type = /mob/living/simple_animal/hostile/hivebot
@@ -173,11 +176,6 @@ Teleporter beacon, and its subtypes
 /*
 Special projectiles
 */
-/obj/item/projectile/bullet/gyro/megabot
-	name = "microrocket"
-	gyro_light_impact = 1
-	distance_falloff = 1.3
-
 /obj/item/projectile/beam/megabot
 	damage = 45
 	distance_falloff = 0.5
@@ -187,7 +185,6 @@ The megabot
 */
 #define ATTACK_MODE_MELEE    "melee"
 #define ATTACK_MODE_LASER    "laser"
-#define ATTACK_MODE_ROCKET   "rocket"
 
 /mob/living/simple_animal/hostile/hivebot/mega
 	name = "hivemind"
@@ -198,13 +195,10 @@ The megabot
 	icon_dead = "megabot_dead"
 	health = 440
 	maxHealth = 440
-	melee_damage_lower = 15
-	melee_damage_upper = 19
-	melee_damage_flags = DAM_SHARP|DAM_EDGE
-	attacktext = "sawed"
+	natural_weapon = /obj/item/natural_weapon/circular_saw
 	speed = 0
 	natural_armor = list(
-		melee = ARMOR_MELEE_RESISTANT, 
+		melee = ARMOR_MELEE_RESISTANT,
 		bullet = ARMOR_BALLISTIC_PISTOL
 		)
 	can_escape = TRUE
@@ -218,17 +212,24 @@ The megabot
 	var/num_shots
 	var/deactivated
 
+/obj/item/natural_weapon/circular_saw
+	name = "giant circular saw"
+	attack_verb = list("sawed", "ripped")
+	force = 30
+	sharp = TRUE
+	edge = TRUE
+
 /mob/living/simple_animal/hostile/hivebot/mega/Initialize()
 	. = ..()
-	switch_mode(ATTACK_MODE_ROCKET)
+	switch_mode(ATTACK_MODE_LASER)
 
 /mob/living/simple_animal/hostile/hivebot/mega/Life()
 	. = ..()
 	if(!.)
 		return
-	
+
 	if(time_last_used_ability < world.time)
-		switch_mode(ATTACK_MODE_ROCKET)
+		switch_mode(ATTACK_MODE_LASER)
 
 /mob/living/simple_animal/hostile/hivebot/mega/emp_act(severity)
 	. = ..()
@@ -249,9 +250,7 @@ The megabot
 				overlays += image(icon, "melee")
 			if(ATTACK_MODE_LASER)
 				overlays += image(icon, "laser")
-			if(ATTACK_MODE_ROCKET)
-				overlays += image(icon, "rocket")
-		
+
 /mob/living/simple_animal/hostile/hivebot/mega/proc/switch_mode(var/new_mode)
 	if(!new_mode || new_mode == attack_mode)
 		return
@@ -273,15 +272,6 @@ The megabot
 			num_shots = 12
 			fire_desc = "fires a laser"
 			visible_message(SPAN_MFAUNA("\The [src]'s laser cannon whines!"))
-		if(ATTACK_MODE_ROCKET)
-			attack_mode = ATTACK_MODE_ROCKET
-			ranged = TRUE
-			projectilesound = 'sound/effects/Explosion1.ogg'
-			projectiletype = /obj/item/projectile/bullet/gyro/megabot
-			num_shots = 4
-			cooldown_ability(ability_cooldown)
-			fire_desc = "launches a microrocket"
-			visible_message(SPAN_MFAUNA("\The [src]'s missile pod rumbles!"))
 
 	update_icon()
 
@@ -306,9 +296,7 @@ The megabot
 
 /mob/living/simple_animal/hostile/hivebot/mega/OpenFire(target_mob)
 	if(num_shots <= 0)
-		if(attack_mode == ATTACK_MODE_ROCKET)
-			switch_mode(ATTACK_MODE_LASER)
-		else
+		if(attack_mode == ATTACK_MODE_LASER)
 			switch_mode(ATTACK_MODE_MELEE)
 		return
 	..()
@@ -319,4 +307,3 @@ The megabot
 
 #undef ATTACK_MODE_MELEE
 #undef ATTACK_MODE_LASER
-#undef ATTACK_MODE_ROCKET

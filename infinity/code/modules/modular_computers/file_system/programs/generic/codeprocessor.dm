@@ -34,7 +34,7 @@
 		F = create_file(filename, loaded_data, /datum/computer_file/data/text)
 		return !isnull(F)
 	var/datum/computer_file/data/backup = F.clone()
-	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD = computer.get_component(PART_HDD)
+	var/obj/item/stock_parts/computer/hard_drive/HDD = computer.get_component(PART_HDD)
 	if(!HDD)
 		return
 	HDD.remove_file(F)
@@ -77,16 +77,18 @@
 		\[grid\] - \[/grid\] : Table without visible borders, for layouts.
 		\[row\] - New table row.
 		\[cell\] - New table cell.
-		\[logo\] - Inserts EXO logo image.
-		\[ntlogo\] - Inserts the NT logo image.
-		\[bluelogo\] - Inserts blue NT logo image.
-		\[solcrest\] - Inserts SCG crest image.
+		\[logo\] - Inserts EXO logo.
+		\[sierralogo\] - Inserts the NSV Sierra logo.
+		\[ntlogo\] - Inserts the NT logo.
+		\[bluelogo\] - Inserts the blue NT logo.
+		\[solcrest\] - Inserts the SCG crest.
 		\[eclogo\] - Inserts the Expeditionary Corps logo.
+		\[foundlogo\] - Inserts the Cuchulain Foundation logo.
 		\[daislogo\] - Inserts the Deimos Advanced Information Systems logo.
-		\[xynlogo\] - Inserts the Xyngergy logo.
-		\[iccgseal\] - Inserts ICCG seal
-		\[fleetlogo\] - Inserts the logo of the SCG Fleet
-		\[ocielogo\] - Inserts the logo of the Office of Civil Investigation and Enforcement"}
+		\[xynlogo\] - Inserts the Xynergy logo.
+		\[iccgseal\] - Inserts the ICCG seal
+		\[fleetlogo\] - Inserts the SCG Fleet logo.
+		\[ocielogo\] - Inserts the Office of Civil Investigation and Enforcement logo."}
 
 		to_chat(usr, help)
 		return 1
@@ -180,7 +182,7 @@
 
 	if(href_list["PRG_printfile"])
 		. = 1
-		var/obj/item/weapon/stock_parts/computer/nano_printer/P = computer.get_component(PART_PRINTER)
+		var/obj/item/stock_parts/computer/nano_printer/P = computer.get_component(PART_PRINTER)
 		if(!P)
 			error = "Missing Hardware: Your computer does not have the required hardware to complete this operation."
 			return 1
@@ -196,8 +198,8 @@
 	var/datum/computer_file/program/codeprocessor/PRG
 	PRG = program
 
-	var/obj/item/weapon/stock_parts/computer/hard_drive/HDD
-	var/obj/item/weapon/stock_parts/computer/hard_drive/portable/RHDD
+	var/obj/item/stock_parts/computer/hard_drive/HDD
+	var/obj/item/stock_parts/computer/hard_drive/portable/RHDD
 	if(PRG.error)
 		data["error"] = PRG.error
 	if(PRG.browsing)

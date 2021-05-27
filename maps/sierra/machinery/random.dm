@@ -85,6 +85,6 @@ obj/random/hostile/xenobio/spawn_choices()
 	spawn_nothing_percentage = 0
 
 /obj/random/blood_packs/spawn_choices()
-	return list(/obj/item/weapon/reagent_containers/ivbag/blood/OMinus = 5,
-	/obj/item/weapon/reagent_containers/ivbag/blood = 3,
-	/obj/item/weapon/reagent_containers/ivbag/blood/BMinus = 2)
+	return list(/obj/item/reagent_containers/ivbag/blood/OMinus = 5,
+	/obj/item/reagent_containers/ivbag/blood = 3,
+	/obj/item/reagent_containers/ivbag/blood/BMinus = 2)

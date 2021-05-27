@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/energy/
+/obj/item/gun/projectile/energy/
 	item_state = "xray"
 	icon = 'infinity/icons/obj/p_weapon.dmi'
 	item_icons = list(
@@ -9,7 +9,7 @@
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 
-/obj/item/weapon/gun/projectile/energy/mg
+/obj/item/gun/projectile/energy/mg
 	name = "Ares EMG MK4"
 	desc = "The NT41 Enforcer is a self-defense weapon made on bullpup system. Produced by NanoTrasen for it's Security Force. Looks cool and stylish, but sometimes too uncomfortably to run with it. Uses 5.7x28mm rounds."
 	icon_state = "energy_machinegun"
@@ -29,11 +29,11 @@
 		list(mode_name="full auto",		can_autofire=1, burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=12, burst_accuracy = list(0, -1, -2, -2, -3, -3, -4, -4), dispersion = list(1.0, 1.0, 1.0, 1.0, 1.2)),
 		)
 
-/obj/item/weapon/gun/projectile/energy/mg/on_update_icon()
+/obj/item/gun/projectile/energy/mg/on_update_icon()
 	..()
 	icon_state = (ammo_magazine)? "energy_machinegun" : "energy_machinegun-e"
 
-/obj/item/weapon/gun/projectile/energy/rifle
+/obj/item/gun/projectile/energy/rifle
 	name = "Ares ER MK2"
 	desc = "The NT41 Enforcer is a self-defense weapon made on bullpup system. Produced by NanoTrasen for it's Security Force. Looks cool and stylish, but sometimes too uncomfortably to run with it. Uses 5.7x28mm rounds."
 	icon_state = "energy_rifle"
@@ -52,11 +52,11 @@
 		list(mode_name="2-short bursts",  burst=2, fire_delay=null, move_delay=1,    one_hand_penalty=6, burst_accuracy=list(0, - 0.5),       dispersion=list(0.0, 0.5)),
 		)
 
-/obj/item/weapon/gun/projectile/energy/rifle/on_update_icon()
+/obj/item/gun/projectile/energy/rifle/on_update_icon()
 	..()
 	icon_state = (ammo_magazine)? "energy_rifle" : "energy_rifle-e"
 
-/obj/item/weapon/gun/projectile/energy/carabine
+/obj/item/gun/projectile/energy/carabine
 	name = "Ares ER CQC MK2"
 	desc = "The NT41 Enforcer is a self-defense weapon made on bullpup system. Produced by NanoTrasen for it's Security Force. Looks cool and stylish, but sometimes too uncomfortably to run with it. Uses 5.7x28mm rounds."
 	icon_state = "energy_carabine"
@@ -74,11 +74,11 @@
 		list(mode_name="3-short bursts",  burst=3, fire_delay=null, move_delay=1,    one_hand_penalty=6, burst_accuracy=list(0, -0.5 , -1),       dispersion=list(0.0, 0.4, 0.8)),
 		)
 
-/obj/item/weapon/gun/projectile/energy/carabine/on_update_icon()
+/obj/item/gun/projectile/energy/carabine/on_update_icon()
 	..()
 	icon_state = (ammo_magazine)? "energy_carabine" : "energy_carabine-e"
 
-/obj/item/weapon/gun/projectile/energy/pistol
+/obj/item/gun/projectile/energy/pistol
 	name = "Ares EP \"Predator\""
 	desc = "The NT41 Enforcer is a self-defense weapon made on bullpup system. Produced by NanoTrasen for it's Security Force. Looks cool and stylish, but sometimes too uncomfortably to run with it. Uses 5.7x28mm rounds."
 	icon_state = "energy_pistol"
@@ -95,7 +95,7 @@
 		list(mode_name="3-short bursts",  burst=3, fire_delay=null, move_delay=1,    one_hand_penalty=4, burst_accuracy=list(0, -1 , -2),       dispersion=list(0.0, 1, 1)),
 		)
 
-/obj/item/weapon/gun/projectile/energy/pistol/on_update_icon()
+/obj/item/gun/projectile/energy/pistol/on_update_icon()
 	..()
 	icon_state = (ammo_magazine)? "energy_pistol" : "energy_pistol-e"
 

@@ -1,6 +1,6 @@
-/music_track/iron
-	artist = "Marty Robbins"
+/decl/audio/track/iron
+	author = "Marty Robbins"
 	title = "Big Iron"
-	album = "Placeholder"
-	song = 'infinity/sound/music/newyear/martyrobbins_bigiron.ogg'
+	collection =  "Placeholder"
+	source = 'infinity/sound/music/newyear/martyrobbins_bigiron.ogg'
 	license =  /decl/license/grandfathered

@@ -1,4 +1,4 @@
-/obj/item/weapon/storage/mirror/examine(mob/user)
+/obj/item/storage/mirror/examine(mob/user)
 	. = ..()
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
@@ -6,7 +6,7 @@
 	else
 		user.examine(user)
 
-/obj/item/weapon/mirror/examine(mob/user)
+/obj/item/mirror/examine(mob/user)
 	. = ..()
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user

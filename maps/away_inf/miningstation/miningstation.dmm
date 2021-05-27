@@ -812,7 +812,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/item/weapon/gun/projectile/shotgun/pump,
+/obj/item/gun/projectile/shotgun/pump,
 /turf/simulated/floor/tiled/techfloor,
 /area/miningstation/vault)
 "bX" = (
@@ -1184,8 +1184,8 @@
 /area/miningstation/power)
 "cU" = (
 /obj/structure/table/steel,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/paper/miner_note_6_2,
+/obj/item/paper_bin,
+/obj/item/paper/miner_note_6_2,
 /turf/simulated/floor/plating,
 /area/miningstation/power)
 "cV" = (
@@ -1380,7 +1380,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/obj/item/weapon/paper/miner_note_4,
+/obj/item/paper/miner_note_4,
 /turf/simulated/floor/tiled/techfloor,
 /area/miningstation/bridge)
 "dr" = (
@@ -1635,7 +1635,7 @@
 	},
 /obj/structure/table/rack,
 /obj/random/tool,
-/obj/item/weapon/inflatable_dispenser,
+/obj/item/inflatable_dispenser,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/miningstation/prep2)
 "dM" = (
@@ -1860,7 +1860,7 @@
 "eg" = (
 /obj/structure/table/rack,
 /obj/random/tool,
-/obj/item/weapon/inflatable_dispenser,
+/obj/item/inflatable_dispenser,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/miningstation/prep2)
 "eh" = (
@@ -1870,7 +1870,7 @@
 /area/miningstation/prep2)
 "ei" = (
 /obj/structure/table/steel,
-/obj/item/weapon/paper/solar,
+/obj/item/paper/solar,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
@@ -1981,7 +1981,7 @@
 /area/miningstation/operationshall2)
 "et" = (
 /obj/structure/bed/roller/ironingboard,
-/obj/item/weapon/ironingiron,
+/obj/item/ironingiron,
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 25;
@@ -2325,13 +2325,13 @@
 /obj/structure/table/rack,
 /obj/random/technology_scanner,
 /obj/random/tool,
-/obj/item/weapon/shovel,
+/obj/item/shovel,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/miningstation/prep2)
 "fa" = (
 /obj/structure/table/rack,
 /obj/random/toolbox,
-/obj/item/weapon/shovel,
+/obj/item/shovel,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/miningstation/prep2)
 "fb" = (
@@ -2724,7 +2724,7 @@
 /area/miningstation/prep2)
 "fU" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/purple,
+/obj/item/bedsheet/purple,
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 25
@@ -3057,8 +3057,8 @@
 /area/miningstation/hangar)
 "gG" = (
 /obj/structure/table/steel,
-/obj/item/weapon/storage/medical_lolli_jar,
-/obj/item/weapon/paper_bin,
+/obj/item/storage/medical_lolli_jar,
+/obj/item/paper_bin,
 /obj/machinery/alarm,
 /obj/effect/floor_decal/corner/blue{
 	dir = 9
@@ -3118,7 +3118,7 @@
 /area/miningstation/operationshall2)
 "gQ" = (
 /obj/structure/table/steel,
-/obj/item/weapon/paper/miner_note_2,
+/obj/item/paper/miner_note_2,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -3494,7 +3494,7 @@
 /area/miningstation/janitorcloset)
 "hy" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/hop,
+/obj/item/bedsheet/hop,
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 25
@@ -3623,7 +3623,7 @@
 /obj/structure/table/rack,
 /obj/item/stack/material/uranium/ten,
 /obj/item/stack/material/uranium/ten,
-/obj/item/weapon/gun/projectile/pistol/throwback,
+/obj/item/gun/projectile/pistol/throwback,
 /obj/machinery/light/small/red{
 	icon_state = "bulb_map";
 	dir = 4
@@ -3661,7 +3661,7 @@
 /area/miningstation/operationshall)
 "hP" = (
 /obj/structure/table/rack,
-/obj/item/weapon/inflatable_dispenser,
+/obj/item/inflatable_dispenser,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/miningstation/operationshall)
 "hQ" = (
@@ -3801,7 +3801,7 @@
 /area/miningstation/chief2)
 "ih" = (
 /obj/structure/table/standard,
-/obj/item/weapon/storage/box/detergent,
+/obj/item/storage/box/detergent,
 /obj/structure/bedsheetbin,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -3841,7 +3841,7 @@
 /area/miningstation/janitorcloset)
 "im" = (
 /obj/structure/mopbucket,
-/obj/item/weapon/mop,
+/obj/item/mop,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/miningstation/janitorcloset)
 "in" = (
@@ -3982,8 +3982,8 @@
 /area/miningstation/physician1)
 "iB" = (
 /obj/structure/table/steel,
-/obj/item/weapon/storage/firstaid/fire,
-/obj/item/weapon/storage/firstaid/toxin,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/toxin,
 /obj/effect/floor_decal/corner/blue{
 	dir = 9
 	},
@@ -4110,7 +4110,7 @@
 	dir = 6
 	},
 /obj/structure/table/steel,
-/obj/item/weapon/storage/firstaid/toxin,
+/obj/item/storage/firstaid/toxin,
 /turf/simulated/floor/tiled/white,
 /area/miningstation/intensive)
 "iP" = (
@@ -4228,7 +4228,7 @@
 	dir = 8
 	},
 /obj/structure/table/steel,
-/obj/item/weapon/storage/firstaid/trauma,
+/obj/item/storage/firstaid/trauma,
 /turf/simulated/floor/tiled/white,
 /area/miningstation/intensive)
 "je" = (
@@ -4489,8 +4489,8 @@
 /area/miningstation/janitorcloset)
 "jG" = (
 /obj/structure/table/steel,
-/obj/item/weapon/storage/firstaid/surgery,
-/obj/item/weapon/storage/firstaid/adv,
+/obj/item/storage/firstaid/surgery,
+/obj/item/storage/firstaid/adv,
 /obj/effect/floor_decal/corner/blue{
 	dir = 9
 	},
@@ -4610,9 +4610,9 @@
 /area/miningstation/chief2)
 "jU" = (
 /obj/structure/table/rack,
-/obj/item/weapon/shovel,
-/obj/item/weapon/shovel,
-/obj/item/weapon/shovel,
+/obj/item/shovel,
+/obj/item/shovel,
+/obj/item/shovel,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/miningstation/operationshall)
 "jV" = (
@@ -4694,7 +4694,7 @@
 /area/miningstation/chief2)
 "ki" = (
 /obj/structure/table/steel,
-/obj/item/weapon/storage/bible,
+/obj/item/storage/bible,
 /turf/simulated/floor/tiled/techfloor,
 /area/miningstation/chief)
 "kj" = (
@@ -4735,7 +4735,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/miningstation/chief)
 "km" = (
-/obj/item/weapon/storage/fancy/cigar{
+/obj/item/storage/fancy/cigar{
 	pixel_x = 31;
 	pixel_y = 7
 	},
@@ -4747,7 +4747,7 @@
 /area/miningstation/chief2)
 "ko" = (
 /obj/structure/table/steel,
-/obj/item/weapon/paper_bin,
+/obj/item/paper_bin,
 /obj/machinery/light{
 	icon_state = "tube_map";
 	dir = 4
@@ -4878,7 +4878,7 @@
 /area/miningstation/chief)
 "kI" = (
 /obj/structure/table/steel,
-/obj/item/weapon/paper_bin{
+/obj/item/paper_bin{
 	pixel_y = 3
 	},
 /obj/machinery/light{
@@ -5018,7 +5018,7 @@
 /area/miningstation/dorms3)
 "kZ" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/hos,
+/obj/item/bedsheet/hos,
 /obj/machinery/vending/wallmed1{
 	dir = 8;
 	name = "Emergency NanoMed";
@@ -5304,7 +5304,7 @@
 /turf/simulated/wall,
 /area/miningstation/dorms3)
 "lI" = (
-/obj/item/weapon/storage/mirror{
+/obj/item/storage/mirror{
 	icon_state = "mirror_broke";
 	pixel_y = 32
 	},
@@ -5328,7 +5328,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/miningstation/dormhall)
 "lL" = (
-/obj/item/weapon/storage/toolbox/electrical,
+/obj/item/storage/toolbox/electrical,
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
@@ -5343,7 +5343,7 @@
 /area/miningstation/dorms3)
 "lM" = (
 /obj/structure/bed/roller/ironingboard,
-/obj/item/weapon/ironingiron,
+/obj/item/ironingiron,
 /obj/item/device/radio/intercom{
 	dir = 8;
 	pixel_x = 21
@@ -5383,7 +5383,7 @@
 /area/miningstation/dormhall)
 "lQ" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/rainbow,
+/obj/item/bedsheet/rainbow,
 /obj/random/contraband,
 /obj/machinery/light/small{
 	dir = 4
@@ -5735,7 +5735,7 @@
 /area/miningstation/dorms2)
 "mH" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/brown,
+/obj/item/bedsheet/brown,
 /turf/simulated/floor/tiled/techfloor,
 /area/miningstation/dorms2)
 "mI" = (
@@ -6121,7 +6121,7 @@
 /area/miningstation/dorms)
 "nI" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/hop,
+/obj/item/bedsheet/hop,
 /obj/machinery/vending/wallmed1{
 	dir = 8;
 	name = "Emergency NanoMed";
@@ -6143,7 +6143,7 @@
 /area/miningstation/dorms)
 "nK" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/red,
+/obj/item/bedsheet/red,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -6179,7 +6179,7 @@
 /area/miningstation/dormhall)
 "nN" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/rd,
+/obj/item/bedsheet/rd,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
 	},
@@ -6196,7 +6196,7 @@
 /area/miningstation/dorms)
 "nQ" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/yellow,
+/obj/item/bedsheet/yellow,
 /turf/simulated/floor/tiled/techfloor,
 /area/miningstation/dorms)
 "nR" = (
@@ -6209,7 +6209,7 @@
 /area/miningstation/dorms)
 "nS" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/red,
+/obj/item/bedsheet/red,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -6393,7 +6393,7 @@
 /area/miningstation/kitchen)
 "oi" = (
 /obj/structure/table/marble,
-/obj/item/weapon/material/knife/kitchen,
+/obj/item/material/knife/kitchen,
 /obj/effect/floor_decal/corner/blue{
 	dir = 4
 	},
@@ -6463,7 +6463,7 @@
 /turf/simulated/floor/tiled/white,
 /area/miningstation/intensive)
 "ou" = (
-/obj/item/weapon/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/mechanical,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -6664,7 +6664,7 @@
 /area/miningstation/recroom)
 "oQ" = (
 /obj/structure/table/woodentable/maple,
-/obj/item/weapon/paper/miner_note_6_1,
+/obj/item/paper/miner_note_6_1,
 /turf/simulated/floor/carpet,
 /area/miningstation/recroom)
 "oR" = (
@@ -6688,7 +6688,7 @@
 	},
 /obj/effect/floor_decal/industrial/hatch,
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/item/weapon/gun/projectile/pistol/throwback,
+/obj/item/gun/projectile/pistol/throwback,
 /turf/simulated/floor/tiled/techfloor,
 /area/miningstation/dorms2)
 "oV" = (
@@ -6768,12 +6768,12 @@
 /area/miningstation/dormhall)
 "pa" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/ce,
+/obj/item/bedsheet/ce,
 /turf/simulated/floor/tiled/techfloor,
 /area/miningstation/dorms)
 "pb" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/purple,
+/obj/item/bedsheet/purple,
 /turf/simulated/floor/tiled/techfloor,
 /area/miningstation/dorms)
 "pc" = (
@@ -6810,7 +6810,7 @@
 /area/miningstation/kitchen)
 "pg" = (
 /obj/structure/table/marble,
-/obj/item/weapon/material/knife/kitchen/cleaver/bronze,
+/obj/item/material/knife/kitchen/cleaver/bronze,
 /obj/effect/floor_decal/corner/blue{
 	dir = 4
 	},
@@ -7054,7 +7054,7 @@
 /turf/simulated/floor/tiled/white,
 /area/miningstation/kitchen)
 "pH" = (
-/obj/item/weapon/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/mechanical,
 /obj/machinery/light/small{
 	icon_state = "bulb_map";
 	dir = 1
@@ -7130,7 +7130,7 @@
 /turf/simulated/floor/tiled/white,
 /area/miningstation/kitchen)
 "pQ" = (
-/obj/item/weapon/scalpel,
+/obj/item/scalpel,
 /obj/effect/floor_decal/corner/blue{
 	dir = 5
 	},
@@ -7209,7 +7209,7 @@
 /area/miningstation/recroom)
 "qa" = (
 /obj/structure/table/steel,
-/obj/item/weapon/paper_bin,
+/obj/item/paper_bin,
 /obj/effect/floor_decal/corner/blue{
 	dir = 5
 	},
@@ -7245,13 +7245,13 @@
 /area/miningstation/kitchen)
 "qc" = (
 /obj/structure/table/woodentable/maple,
-/obj/item/weapon/paper_bin,
+/obj/item/paper_bin,
 /obj/machinery/light/small,
 /turf/simulated/floor/carpet,
 /area/miningstation/recroom)
 "qd" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/brown,
+/obj/item/bedsheet/brown,
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -7367,7 +7367,7 @@
 /area/miningstation/physician1)
 "qn" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/green,
+/obj/item/bedsheet/green,
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/techfloor,
 /area/miningstation/dorms)
@@ -7396,7 +7396,7 @@
 /area/miningstation/bathroom)
 "qs" = (
 /obj/structure/table/steel,
-/obj/item/weapon/storage/firstaid/trauma,
+/obj/item/storage/firstaid/trauma,
 /obj/effect/floor_decal/corner/blue{
 	dir = 9
 	},
@@ -7576,7 +7576,7 @@
 /area/miningstation/chief2)
 "rb" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/orange,
+/obj/item/bedsheet/orange,
 /obj/structure/plushie/ian,
 /obj/item/device/radio/intercom{
 	dir = 1;
@@ -7649,7 +7649,7 @@
 /area/miningstation/power)
 "rp" = (
 /obj/structure/table/steel,
-/obj/item/weapon/paper/miner_note_1,
+/obj/item/paper/miner_note_1,
 /turf/simulated/floor/tiled/techfloor,
 /area/miningstation/chief)
 "rw" = (
@@ -7804,7 +7804,7 @@
 /obj/effect/floor_decal/corner/blue{
 	dir = 8
 	},
-/obj/item/weapon/paper/miner_note_5,
+/obj/item/paper/miner_note_5,
 /turf/simulated/floor/tiled/white,
 /area/miningstation/kitchen)
 "wa" = (
@@ -8146,7 +8146,7 @@
 /obj/structure/closet/emcloset,
 /obj/effect/floor_decal/industrial/hatch,
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/item/weapon/gun/projectile/pistol/throwback,
+/obj/item/gun/projectile/pistol/throwback,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/miningstation/hangarhall)
 "SA" = (

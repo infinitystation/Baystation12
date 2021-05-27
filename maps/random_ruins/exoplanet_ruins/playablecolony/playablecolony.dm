@@ -1,11 +1,15 @@
+#include "playablecolony_radio.dm"
+
 /datum/map_template/ruin/exoplanet/playablecolony
 	name = "established colony"
 	id = "playablecolony"
 	description = "a fully functional colony on the frontier of settled space"
 	suffixes = list("playablecolony/colony.dmm")
-	cost = 2
+	spawn_cost = 1
+	player_cost = 4 // Нынешнее значение основано на количестве игроков в авейке ~bear1ake
 	template_flags = TEMPLATE_FLAG_CLEAR_CONTENTS | TEMPLATE_FLAG_NO_RUINS | TEMPLATE_FLAG_NO_RADS
 	ruin_tags = RUIN_HUMAN|RUIN_HABITAT
+	ban_ruins = list(/datum/map_template/ruin/exoplanet/playablecolony2)
 	apc_test_exempt_areas = list(
 		/area/map_template/colony/mineralprocessing = NO_SCRUBBER|NO_VENT
 	)
@@ -17,13 +21,14 @@
 /datum/job/submap/colonist
 	title = "Colonist"
 	info = "You are a Colonist, living on the rim of explored, let alone inhabited, space in a reconstructed shelter made from the very ship that took you here."
-	total_positions = 6
+	total_positions = 4
 	outfit_type = /decl/hierarchy/outfit/job/colonist
 
 /decl/hierarchy/outfit/job/colonist
 	name = OUTFIT_JOB_NAME("Colonist")
-	id_type = null
+	id_types = null
 	pda_type = null
+	l_ear = /obj/item/device/radio/headset/map_preset/playablecolony
 
 /obj/effect/submap_landmark/spawnpoint/colonist_spawn
 	name = "Colonist"

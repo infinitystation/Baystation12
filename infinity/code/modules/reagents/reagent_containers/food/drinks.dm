@@ -1,13 +1,13 @@
-/obj/item/weapon/reagent_containers/food/drinks
+/obj/item/reagent_containers/food/drinks
 	var/open_sound = 'sound/effects/canopen.ogg'
 
 //ГЊГҐГµГ Г­ГЁГЄГ  ГЇГЁГІГјГї Г§Г Г«ГЇГ®Г¬
-/obj/item/weapon/reagent_containers/food/drinks/Initialize()
+/obj/item/reagent_containers/food/drinks/Initialize()
 	. = ..()
 	if(is_open_container())
-		verbs += /obj/item/weapon/reagent_containers/food/drinks/proc/gulp_whole
+		verbs += /obj/item/reagent_containers/food/drinks/proc/gulp_whole
 
-/obj/item/weapon/reagent_containers/food/drinks/proc/gulp_whole()
+/obj/item/reagent_containers/food/drinks/proc/gulp_whole()
 	set category = "Object"
 	set name = "Gulp Down"
 	set src in view(1)
@@ -44,13 +44,13 @@
 	else
 		to_chat(usr, SPAN_NOTICE("You need to open \the [src] first!"))
 
-obj/item/weapon/reagent_containers/food/drinks/sillycup/mob_can_equip(M as mob)
+obj/item/reagent_containers/food/drinks/sillycup/mob_can_equip(M as mob)
 	if(reagents.total_volume > 0)
 		to_chat(M, "<span class='warning'>You cannot put [src] on your ears, there is something in it.</span>")
 		return 0
 	. = ..()
 
-obj/item/weapon/reagent_containers/food/drinks/sillycup
+obj/item/reagent_containers/food/drinks/sillycup
 	possible_transfer_amounts = null
 	layer = ABOVE_OBJ_LAYER
 	slot_flags = SLOT_EARS
@@ -63,7 +63,7 @@ obj/item/weapon/reagent_containers/food/drinks/sillycup
 		SPECIES_IPC = 'infinity/icons/mob/onmob/onmob_ears.dmi'
 		)
 
-obj/item/weapon/reagent_containers/food/drinks/sillycup/equipped(var/M, var/slot)
+obj/item/reagent_containers/food/drinks/sillycup/equipped(var/M, var/slot)
 	..()
 	if(slot == slot_l_ear)
 		item_state = "watercup_l"
@@ -72,7 +72,7 @@ obj/item/weapon/reagent_containers/food/drinks/sillycup/equipped(var/M, var/slot
 	else
 		item_state = initial(item_state)
 
-/obj/item/weapon/reagent_containers/glass/beaker/large/mitoll
+/obj/item/reagent_containers/glass/beaker/large/mitoll
 	name = "iron beaker"
 	desc = "Large steel capacity made by own hands."
 	icon = 'infinity/icons/obj/items.dmi'

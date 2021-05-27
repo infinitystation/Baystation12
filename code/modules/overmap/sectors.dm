@@ -34,11 +34,14 @@
 
 	if(!GLOB.using_map.overmap_z)
 		build_overmap()
-		
+
 	start_x = start_x || rand(OVERMAP_EDGE, GLOB.using_map.overmap_size - OVERMAP_EDGE)
 	start_y = start_y || rand(OVERMAP_EDGE, GLOB.using_map.overmap_size - OVERMAP_EDGE)
 
 	forceMove(locate(start_x, start_y, GLOB.using_map.overmap_z))
+
+	for(var/obj/effect/overmap/event/E in loc)
+		qdel(E)
 
 	docking_codes = "[ascii2text(rand(65,90))][ascii2text(rand(65,90))][ascii2text(rand(65,90))][ascii2text(rand(65,90))]"
 
@@ -105,7 +108,22 @@
 	name = "generic sector"
 	desc = "Sector with some stuff in it."
 	icon_state = "sector"
-	anchored = 1
+	anchored = TRUE
+
+
+/obj/effect/overmap/visitable/sector/Initialize()
+	. = ..()
+
+	if(known)
+		update_known_connections(TRUE)
+
+
+/obj/effect/overmap/visitable/sector/update_known_connections(notify = FALSE)
+	. = ..()
+
+	for(var/obj/machinery/computer/ship/helm/H in SSmachines.machinery)
+		H.add_known_sector(src, notify)
+
 
 // Because of the way these are spawned, they will potentially have their invisibility adjusted by the turfs they are mapped on
 // prior to being moved to the overmap. This blocks that. Use set_invisibility to adjust invisibility as needed instead.
@@ -116,9 +134,9 @@
 		return 1
 
 	testing("Building overmap...")
-	world.maxz++
+	INCREMENT_WORLD_Z_SIZE
 	GLOB.using_map.overmap_z = world.maxz
-	
+
 	testing("Putting overmap on [GLOB.using_map.overmap_z]")
 	var/area/overmap/A = new
 	for (var/square in block(locate(1,1,GLOB.using_map.overmap_z), locate(GLOB.using_map.overmap_size,GLOB.using_map.overmap_size,GLOB.using_map.overmap_z)))

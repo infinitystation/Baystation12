@@ -293,6 +293,12 @@
 	name = "Second Deck - Living - Restroom"
 	icon_state = "toilet"
 	sound_env = SMALL_ENCLOSED
+
+/area/crew_quarters/head_big
+	name = "Second Deck - Living - Lounge - Restroom"
+	icon_state = "toilet"
+	sound_env = SMALL_ENCLOSED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 /*
 /area/crew_quarters/showers
 	name = "Second Deck - Living - Private Showers"
@@ -315,11 +321,26 @@
 	name = "Second Deck - Living - Lounge"
 	sound_env = MEDIUM_SOFTFLOOR
 
+/area/crew_quarters/lounge_big
+	name = "Second Deck - Living - Lounge - North"
+	icon_state = "Sleep"
+	sound_env = MEDIUM_SOFTFLOOR
+
 /area/crew_quarters/sleep/bunk
 	name = "Second Deck - Living - Dormitory"
 	icon_state = "Sleep"
 	sound_env = SMALL_SOFTFLOOR
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
+
+/area/crew_quarters/sleep/bunk_big
+	name = "Second Deck - Living - Dormitory - Big One"
+	icon_state = "Sleep"
+	sound_env = SMALL_SOFTFLOOR
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
+
+/area/crew_quarters/sleep/bunk_big/room_two
+	name = "Second Deck - Living - Dormitory - Big Two"
+	icon_state = "Sleep"
 
 /area/crew_quarters/sleep/cryo
 	name = "Second Deck - Living - Cryogenic Storage"

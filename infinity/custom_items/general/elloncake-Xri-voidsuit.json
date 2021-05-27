@@ -1,0 +1,9 @@
+{
+	"ckey" :            "elloncake",
+	"character_name" :  "Xri'luz Ziquamx",
+	"item_name" :       "skrellian exosuit operator",
+	"item_desc" :       "Commonly used by exosuit operators in skrellian space, this voidsuit is cheap but reliable.",
+	"item_icon_state" : "elloncake_skrell_explorerer",
+	"req_access" :      [ "ACCESS_EXPLORER" ],
+	"item_path" :       "/obj/item/device/kit/suit/elloncake"
+	}

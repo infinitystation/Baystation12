@@ -40,7 +40,7 @@
 		to_chat(user, "You have to open it first.")
 		return
 
-	if(istype(O,/obj/item/weapon/paper) || istype(O, /obj/item/weapon/photo))
+	if(istype(O,/obj/item/paper) || istype(O, /obj/item/photo))
 		if(held)
 			to_chat(usr, "\The [src] already has something inside it.")
 		else
@@ -50,7 +50,7 @@
 			src.held = O
 		return
 
-	if(istype(O,/obj/item/weapon/pen))
+	if(istype(O,/obj/item/pen))
 		var/new_message = sanitize(input("Enter the text which you want write here (leave field blank to remove)") as text, MAX_DESC_LEN)
 		if(!new_message)
 			message = null

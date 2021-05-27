@@ -15,7 +15,7 @@
 		rotate(user)
 	return TRUE
 
-/obj/structure/bed/chair/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/bed/chair/attackby(obj/item/W as obj, mob/user as mob)
 	..()
 	if(!padding_material && istype(W, /obj/item/assembly/shock_kit))
 		var/obj/item/assembly/shock_kit/SK = W
@@ -217,7 +217,7 @@
 	name = "office chair"
 	icon_state = "officechair_preview"
 	base_icon = "officechair"
-	anchored = 0
+	anchored = FALSE
 
 /obj/structure/bed/chair/office/Move()
 	. = ..()
@@ -365,8 +365,8 @@
 	var/chair_material = MATERIAL_WOOD
 	buckle_movable = FALSE
 
-/obj/structure/bed/chair/wood/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(istype(W,/obj/item/stack) || istype(W, /obj/item/weapon/wirecutters))
+/obj/structure/bed/chair/wood/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W,/obj/item/stack) || istype(W, /obj/item/wirecutters))
 		return
 	..()
 
@@ -437,42 +437,42 @@
 
 //[INF]
 	//Deconstruct
-/obj/structure/bed/chair/comfy/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/bed/chair/comfy/attackby(obj/item/W as obj, mob/user as mob)
 	if(isWrench(W))
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
 		to_chat(user, "<span class='notice'>You deconstruct comfy chair</span>")
 		new /obj/item/stack/material/steel(src.loc, 3)
 		qdel(src)
 
-/obj/structure/bed/chair/office/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/bed/chair/office/attackby(obj/item/W as obj, mob/user as mob)
 	if(isWrench(W))
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
 		to_chat(user, "<span class='notice'>You deconstruct office chair</span>")
 		new /obj/item/stack/material/steel(src.loc, 5)
 		qdel(src)
 
-/obj/structure/bed/chair/office/comfy/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/bed/chair/office/comfy/attackby(obj/item/W as obj, mob/user as mob)
 	if(isWrench(W))
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
 		to_chat(user, "<span class='notice'>You deconstruct office comfy chair</span>")
 		new /obj/item/stack/material/steel(src.loc, 7)
 		qdel(src)
 
-/obj/structure/bed/chair/padded/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/bed/chair/padded/attackby(obj/item/W as obj, mob/user as mob)
 	if(isWrench(W))
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
 		to_chat(user, "<span class='notice'>You deconstruct padded chair</span>")
 		new /obj/item/stack/material/steel(src.loc, 2)
 		qdel(src)
 
-/obj/structure/bed/chair/armchair/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/bed/chair/armchair/attackby(obj/item/W as obj, mob/user as mob)
 	if(isWrench(W))
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
 		to_chat(user, "<span class='notice'>You deconstruct comfy chair</span>")
 		new /obj/item/stack/material/steel(src.loc, 4)
 		qdel(src)
 
-/obj/structure/bed/chair/wood/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/bed/chair/wood/attackby(obj/item/W as obj, mob/user as mob)
 	if(isWrench(W))
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
 		to_chat(user, "<span class='notice'>You deconstruct wood chair</span>")
