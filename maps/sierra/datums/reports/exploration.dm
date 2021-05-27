@@ -1,5 +1,9 @@
-/datum/computer_file/report/recipient/exp/mission_manifest
+/datum/computer_file/report/recipient/exp/
 	logo = "\[sierralogo\]"
+	available_on_ntnet = 0
+	set_access(access_explorer)
+
+/datum/computer_file/report/recipient/exp/mission_manifest
 	form_name = "NT-EXP-19m"
 	title = "Манифест миссии на вылет челнока"
 
@@ -18,10 +22,8 @@
 	add_field(/datum/report_field/people/from_manifest, "Экспедитор", required = 1)
 	add_field(/datum/report_field/people/from_manifest, "Учёные, шахтёры и прочий персонал", required = 1)
 	add_field(/datum/report_field/text_label/instruction, "Манифест составляется для единоразового использования на одной миссии.")
-	set_access(access_explorer, access_explorer)
 
 /datum/computer_file/report/recipient/exp/planet
-	logo = "\[sierralogo\]"
 	form_name = "NT-EXP-19p"
 	title = "Отчет по экзопланете"
 
@@ -44,10 +46,8 @@
 	add_field(/datum/report_field/signature,"Подпись ответственного, за заполнение документа", required = 1)
 	add_field(/datum/report_field/text_label/instruction, "После заполнения данного документы, а также последующего его утверждения,\
 	директор исследований должен отправить данный документ по факсу Центральному Командованию и Капитану, после чего занести этот документ в архив.")
-	set_access(access_explorer, access_explorer)
 
 /datum/computer_file/report/recipient/exp/fauna
-	logo = "\[sierralogo\]"
 	form_name = "NT-EXP-19f"
 	title = "Отчет по фауне"
 
@@ -69,4 +69,3 @@
 	add_field(/datum/report_field/pencode_text, "Классификация", required = 1)
 	add_field(/datum/report_field/text_label/instruction, "После заполнения данного документы, а также последующего его утверждения,\
 	директор исследований должен отправить данный документ по факсу Центральному Командованию и Капитану, после чего занести этот документ в архив, закрепив его с документом об экзопланете.")
-	set_access(access_explorer, access_explorer)

@@ -1,10 +1,14 @@
-/datum/computer_file/report/recipient/shuttle
+/datum/computer_file/report/recipient/deck/
+	logo = "\[sierralogo\]"
+	available_on_ntnet = 0
+	set_access(access_cargo)
+
+/datum/computer_file/report/recipient/deck/shuttle
 	form_name = "NT-DEC-32"
 	title = "Предварительная проверка шаттла"
-	logo = "\[sierralogo\]"
 	available_on_ntnet = 1
 
-/datum/computer_file/report/recipient/shuttle/generate_fields()
+/datum/computer_file/report/recipient/deck/shuttle/generate_fields()
 	..()
 	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Департамент снабжения")
 	add_field(/datum/report_field/text_label/header, "Предварительная проверка шаттла")
@@ -39,7 +43,6 @@
 /datum/computer_file/report/recipient/deck/docking
 	form_name = "NT-DEC-33"
 	title = "Отчет о пристыкованном судне"
-	logo = "\[sierralogo\]"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/deck/docking/generate_fields()
@@ -69,7 +72,6 @@
 /datum/computer_file/report/recipient/deck/request
 	form_name = "NT-DEC-34"
 	title = "Форма запроса в отдел поставок"
-	logo = "\[sierralogo\]"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/deck/request/generate_fields()

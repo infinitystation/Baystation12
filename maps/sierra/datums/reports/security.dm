@@ -1,5 +1,9 @@
-/datum/computer_file/report/recipient/sec/report_detective
+/datum/computer_file/report/recipient/sec/
 	logo = "\[sierralogo\]"
+	available_on_ntnet = 0
+	set_access(access_security)
+
+/datum/computer_file/report/recipient/sec/report_detective
 	form_name = "NT-SEC-14"
 	title = "Отчет Детектива"
 
@@ -14,10 +18,8 @@
 	add_field(/datum/report_field/pencode_text, "Основная информация", required = 1)
 	add_field(/datum/report_field/pencode_text, "Вложения", required = 1)
 	add_field(/datum/report_field/pencode_text, "Наблюдения", required = 1)
-	set_access(access_security, access_security)
 
 /datum/computer_file/report/recipient/sec/report_incident
-	logo = "\[sierralogo\]"
 	form_name = "NT-SEC-16"
 	title = "Служба Безопасности: Отчет об происшествии"
 
@@ -36,26 +38,25 @@
 	add_field(/datum/report_field/text_label/instruction, "(П-Поврежденный, У-Улика, Пр-Потерянный, В-Восстановленный, Ук-Украденный)")
 	add_field(/datum/report_field/pencode_text, "Полное описание происшествия", required = 1)
 	add_field(/datum/report_field/signature, "Подпись офицера, составившего отчет", required = 1)
-	set_access(access_security, access_security)
 
 /datum/computer_file/report/recipient/sec/report_evidence
-	logo = "\[sierralogo\]"
 	form_name = "NT-SEC-02b"
 	title = "Безопасность: Отчет об уликах"
 
 /datum/computer_file/report/recipient/sec/report_evidence/generate_fields()
 	..()
+	var/list/det_fields = list()
 	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Охранный департамент")
 	add_field(/datum/report_field/text_label/header, "Вещественные доказательства")
 	add_field(/datum/report_field/date, "Дата")
 	add_field(/datum/report_field/people/from_manifest, "Конфисковано у", required = 1)
 	add_field(/datum/report_field/pencode_text, "Список конфискованных предметов", required = 1)
-	add_field(/datum/report_field/signature, "Подпись Смотрителя брига", required = 1)
-	add_field(/datum/report_field/signature, "Подпись Криминалиста", required = 1)
-	set_access(access_security, access_security)
+	add_field(/datum/report_field/signature, "Подпись Смотрителя брига")
+	det_fields += add_field(/datum/report_field/signature, "Подпись Криминалиста", required = 1)
+	for(var/datum/report_field/field in det_fields)
+		field.set_access(access_edit = access_forensics_lockers)
 
 /datum/computer_file/report/recipient/sec/patrol
-	logo = "\[sierralogo\]"
 	form_name = "NT-SEC-04"
 	title = "Служба Безопасности: Назначение патрулей"
 
@@ -71,10 +72,8 @@
 	add_field(/datum/report_field/text_label/instruction, "Для патрулирующего. Проведите полный осмотр назначенной палубы, включая тех. туннели.\
 	Отвечайте на вызовы с других палуб только при приказе. Вы ответственны за безопасность на закрепленной за вами палубе.")
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
-	set_access(access_security, access_security)
 
 /datum/computer_file/report/recipient/sec/armory
-	logo = "\[sierralogo\]"
 	form_name = "NT-SEC-05"
 	title = "Инвентаризация оружейной"
 
@@ -107,7 +106,6 @@
 	add_field(/datum/report_field/pencode_text, "Прочее оружие", required = 1)
 	add_field(/datum/report_field/time, "Опись арсенала проведена в")
 	add_field(/datum/report_field/signature, "Подпись сотрудника проводившего опись", required = 1)
-	set_access(access_armory, access_armory)
 
 /datum/computer_file/report/recipient/weapon
 	form_name = "NT-SEC-15"

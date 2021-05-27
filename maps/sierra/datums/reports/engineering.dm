@@ -1,7 +1,11 @@
+/datum/computer_file/report/recipient/eng/
+	logo = "\[sierralogo\]"
+	available_on_ntnet = 0
+	set_access(access_engine)
+
 /datum/computer_file/report/recipient/eng/construction_work
 	form_name = "NT-ENG-11"
 	title = "Запрос на проведение строительных работ"
-	logo = "\[sierralogo\]"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/eng/construction_work/generate_fields()
@@ -24,7 +28,6 @@
 /datum/computer_file/report/recipient/eng/report_work
 	form_name = "NT-ENG-11a"
 	title = "Отчёт о проведении ремонтных/строительных работ"
-	logo = "\[sierralogo\]"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/eng/report_work/generate_fields()
@@ -46,7 +49,6 @@
 /datum/computer_file/report/recipient/eng/request_eng
 	form_name = "NT-ENG-12"
 	title = "Запрос к инженерии"
-	logo = "\[sierralogo\]"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/eng/request_eng/generate_fields()
@@ -69,7 +71,6 @@
 /datum/computer_file/report/recipient/eng/startup_systems
 	form_name = "NT-ENG-13"
 	title = "Отчёт о подготовке судовых систем"
-	logo = "\[sierralogo\]"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/eng/startup_systems/generate_fields()
