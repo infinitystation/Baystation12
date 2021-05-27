@@ -1,6 +1,9 @@
-/datum/computer_file/report/recipient/command/
+/datum/computer_file/report/recipient
 	logo = "\[sierralogo\]"
 	available_on_ntnet = 0
+
+/datum/computer_file/report/recipient/command/generate_fields()
+	..()
 	set_access(access_hop)
 
 /datum/computer_file/report/recipient/command/crew_transfer

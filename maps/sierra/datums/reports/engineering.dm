@@ -1,6 +1,5 @@
-/datum/computer_file/report/recipient/eng/
-	logo = "\[sierralogo\]"
-	available_on_ntnet = 0
+/datum/computer_file/report/recipient/eng/generate_fields()
+	..()
 	set_access(access_engine)
 
 /datum/computer_file/report/recipient/eng/construction_work
@@ -23,7 +22,6 @@
 	add_field(/datum/report_field/pencode_text, "Необходимые ресурсы", required = 1)
 	add_field(/datum/report_field/signature, "Подпись ответственного", required = 1)
 	add_field(/datum/report_field/signature, "Подпись утвердившего работы", required = 1)
-	set_access(list(access_engine, access_ce), list(access_engine, access_ce))
 
 /datum/computer_file/report/recipient/eng/report_work
 	form_name = "NT-ENG-11a"
@@ -44,7 +42,6 @@
 	add_field(/datum/report_field/pencode_text, "Затраченные ресурсы", required = 1)
 	add_field(/datum/report_field/signature, "Подпись ответственного", required = 1)
 	add_field(/datum/report_field/signature, "Подпись изъявшего временный доступ", required = 1)
-	set_access(list(access_engine, access_ce), list(access_engine, access_ce))
 
 /datum/computer_file/report/recipient/eng/request_eng
 	form_name = "NT-ENG-12"
@@ -66,7 +63,6 @@
 	гостевой карты или обеспечен иным способом, без дополнительных документов при условии, что он будет изъят по окончанию проведения соответствующих работ.")
 	add_field(/datum/report_field/signature, "Подпись запросившего", required = 1)
 	add_field(/datum/report_field/signature, "Подпись ответственного", required = 1)
-	set_access(list(access_engine, access_ce), list(access_engine, access_ce))
 
 /datum/computer_file/report/recipient/eng/startup_systems
 	form_name = "NT-ENG-13"
@@ -82,4 +78,3 @@
 	add_field(/datum/report_field/people/from_manifest, "Список привлечённых работников", required = 1)
 	add_field(/datum/report_field/pencode_text,"Список систем судна и проведённое технического обслуживание", required = 1)
 	add_field(/datum/report_field/signature,"Подпись ответственного", required = 1)
-	set_access(list(access_engine, access_ce), list(access_engine, access_ce))

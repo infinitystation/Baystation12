@@ -1,6 +1,5 @@
-/datum/computer_file/report/recipient/sci/
-	logo = "\[sierralogo\]"
-	available_on_ntnet = 0
+/datum/computer_file/report/recipient/sci/generate_fields()
+	..()
 	set_access(access_research)
 
 /datum/computer_file/report/recipient/sci/anomaly

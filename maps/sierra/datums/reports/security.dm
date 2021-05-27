@@ -1,6 +1,5 @@
-/datum/computer_file/report/recipient/sec/
-	logo = "\[sierralogo\]"
-	available_on_ntnet = 0
+/datum/computer_file/report/recipient/sec/generate_fields()
+	..()
 	set_access(access_security)
 
 /datum/computer_file/report/recipient/sec/report_detective

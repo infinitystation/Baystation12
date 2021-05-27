@@ -1,6 +1,5 @@
-/datum/computer_file/report/recipient/med/
-	logo = "\[sierralogo\]"
-	available_on_ntnet = 0
+/datum/computer_file/report/recipient/med/generate_fields()
+	..()
 	set_access(access_medical)
 
 /datum/computer_file/report/recipient/med/recipe

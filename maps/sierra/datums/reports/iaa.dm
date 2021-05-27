@@ -1,10 +1,10 @@
-/datum/computer_file/report/recipient/iaa/
-	logo = "\[logo\]"
-	available_on_ntnet = 0
+/datum/computer_file/report/recipient/command/generate_fields()
+	..()
 	set_access(access_iaa)
 
 /datum/computer_file/report/recipient/iaa/incident
 	form_name = "IA-NTCO-01"
+	logo ="\[logo\]"
 	title = "Рапорт об инциденте на корабле"
 	available_on_ntnet = 1
 
@@ -22,6 +22,7 @@
 
 /datum/computer_file/report/recipient_staff/iaa/incident_staff
 	form_name = "HR-NTCO-01a"
+	logo ="\[logo\]"
 	title = "Рапорт об инцидентах, произошедших с сотрудниками"
 	available_on_ntnet = 1
 
@@ -40,6 +41,7 @@
 
 /datum/computer_file/report/recipient/iaa/incident_assets
 	form_name = "HR-NTCO-01b"
+	logo ="\[logo\]"
 	title = "Рапорт о происшествии с активами"
 	available_on_ntnet = 1
 
@@ -60,6 +62,7 @@
 
 /datum/computer_file/report/recipient/iaa/incident_repstaff
 	form_name = "HR-NTCO-01e"
+	logo ="\[logo\]"
 	title = "Отчет персонала о происшествии"
 	available_on_ntnet = 1
 
@@ -79,6 +82,7 @@
 
 /datum/computer_file/report/recipient/iaa/archive
 	form_name = "HR-NTCO-04a"
+	logo ="\[logo\]"
 	title = "Форма для архива"
 	available_on_ntnet = 1
 
@@ -92,6 +96,7 @@
 
 /datum/computer_file/report/recipient/iaa/memo
 	form_name = "HR-NTCO-04a"
+	logo ="\[logo\]"
 	title = "Межведомственная памятка"
 	available_on_ntnet = 1
 
@@ -105,6 +110,7 @@
 
 /datum/computer_file/report/recipient/iaa/work_visa
 	form_name = "HR-NTCO-03b"
+	logo ="\[logo\]"
 	title = "Форма запроса рабочей визы"
 	available_on_ntnet = 1
 
@@ -122,6 +128,7 @@
 
 /datum/computer_file/report/recipient/iaa/salary_deceased
 	form_name = "HR-NTCO-03c"
+	logo ="\[logo\]"
 	title = "Форма выплаты оставшегося оклада погибшему сотруднику"
 	available_on_ntnet = 1
 
@@ -142,6 +149,7 @@
 
 /datum/computer_file/report/recipient/iaa/check_citizenship
 	form_name = "HR-NTCO-02a"
+	logo ="\[logo\]"
 	title = "Форма запроса проверки гражданства сотрудника"
 	available_on_ntnet = 1
 
@@ -159,6 +167,7 @@
 
 /datum/computer_file/report/recipient/iaa/title_page
 	form_name = "HR-NTCO-00"
+	logo ="\[logo\]"
 	title = "Титульный лист для многостраничного отчета"
 	available_on_ntnet = 1
 

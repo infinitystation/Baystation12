@@ -1,6 +1,5 @@
-/datum/computer_file/report/recipient/deck/
-	logo = "\[sierralogo\]"
-	available_on_ntnet = 0
+/datum/computer_file/report/recipient/deck/generate_fields()
+	..()
 	set_access(access_cargo)
 
 /datum/computer_file/report/recipient/deck/shuttle
