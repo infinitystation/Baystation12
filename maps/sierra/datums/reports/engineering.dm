@@ -7,7 +7,7 @@
 	title = "Запрос на проведение строительных работ"
 	available_on_ntnet = 1
 
-/datum/computer_file/report/recipient/eng/construction_work/generate_fields()
+/datum/computer_file/report/recipient/construction_work/generate_fields()
 	..()
 	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Инженерный департамент")
 	add_field(/datum/report_field/text_label/header, "Запрос на проведение строительных работ")
@@ -43,7 +43,7 @@
 	add_field(/datum/report_field/signature, "Подпись ответственного", required = 1)
 	add_field(/datum/report_field/signature, "Подпись изъявшего временный доступ", required = 1)
 
-/datum/computer_file/report/recipient/eng/request_eng
+/datum/computer_file/report/recipient/request_eng
 	form_name = "NT-ENG-12"
 	title = "Запрос к инженерии"
 	available_on_ntnet = 1

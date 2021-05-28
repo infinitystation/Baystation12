@@ -1,4 +1,4 @@
-/datum/computer_file/report/recipient/command/generate_fields()
+/datum/computer_file/report/recipient/iaa/generate_fields()
 	..()
 	set_access(access_iaa)
 
@@ -126,7 +126,7 @@
 	for(var/datum/report_field/field in iaa_fields)
 		field.set_access(access_edit = access_iaa)
 
-/datum/computer_file/report/recipient/iaa/salary_deceased
+/datum/computer_file/report/recipient/salary_deceased
 	form_name = "HR-NTCO-03c"
 	logo ="\[logo\]"
 	title = "Форма выплаты оставшегося оклада погибшему сотруднику"
@@ -134,6 +134,7 @@
 
 /datum/computer_file/report/recipient/iaa/salary_deceased/generate_fields()
 	..()
+	var/list/iaahop_fields = list()
 	add_field(/datum/report_field/text_label/header, "Запрос на выплату оставшегося оклада")
 	add_field(/datum/report_field/date, "Дата")
 	add_field(/datum/report_field/text_label/instruction, "Данный документ разрешает выплату оставшегося оклада:")
@@ -143,11 +144,13 @@
 	add_field(/datum/report_field/text_label/instruction, "Должно быть немедленно отправлено ближайшему родственнику сотрудника.")
 	add_field(/datum/report_field/people/from_manifest, "Данный рапорт был составлен", required = 1)
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
-	add_field(/datum/report_field/people/from_manifest, "Данный рапорт был рассмотрен", required = 1)
-	add_field(/datum/report_field/signature, "Подпись", required = 1)
+	iaahop_fields += add_field(/datum/report_field/people/from_manifest, "Данный рапорт был рассмотрен", required = 1)
+	iaahop_fields += add_field(/datum/report_field/signature, "Подпись", required = 1)
 	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия печати НТ.")
+	for(var/datum/report_field/field in iaahop_fields)
+		field.set_access(access_edit = access_hop,access_iaa)
 
-/datum/computer_file/report/recipient/iaa/check_citizenship
+/datum/computer_file/report/recipient/check_citizenship
 	form_name = "HR-NTCO-02a"
 	logo ="\[logo\]"
 	title = "Форма запроса проверки гражданства сотрудника"
@@ -155,15 +158,19 @@
 
 /datum/computer_file/report/recipient/iaa/check_citizenship/generate_fields()
 	..()
+	var/list/iaahop_fields = list()
 	add_field(/datum/report_field/text_label/header, "Форма запроса проверки гражданства")
 	add_field(/datum/report_field/date, "Дата")
 	add_field(/datum/report_field/people/from_manifest, "Имя и должность сотрудника", required = 1)
 	add_field(/datum/report_field/text_label/instruction, "Фото обязательно.")
 	add_field(/datum/report_field/text_label/header, "Прошу вас выслать все личные записи на данного сотрудника.")
-	add_field(/datum/report_field/people/from_manifest, "Данная форма был рассмотрена", required = 1)
-	add_field(/datum/report_field/signature, "Подпись", required = 1)
-	add_field(/datum/report_field/options/yes_no, "Данная форма была одобрена/отклонена")
+	iaahop_fields += add_field(/datum/report_field/people/from_manifest, "Данная форма был рассмотрена", required = 1)
+	iaahop_fields += add_field(/datum/report_field/signature, "Подпись", required = 1)
+	iaahop_fields += add_field(/datum/report_field/options/yes_no, "Данная форма была одобрена/отклонена")
 	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия печати НТ.")
+	for(var/datum/report_field/field in iaahop_fields)
+		field.set_access(access_edit = access_hop,access_iaa)
+	set_access(access_heads)
 
 /datum/computer_file/report/recipient/iaa/title_page
 	form_name = "HR-NTCO-00"
@@ -185,3 +192,4 @@
 	add_field(/datum/report_field/text_label/instruction, "Настоящее сообщение и прилагаемые к нему документы предназначены только для адресата и могут содержать конфиденциальную информацию. Любое несанкционированное раскрытие информации строго запрещено.\
 	Если эта передача получена по ошибке, пожалуйста, немедленно уведомите об этом как отправителя, так и управление внутренних дел, чтобы можно было принять меры по исправлению положения.\
 	Несоблюдение этого требования является нарушением корпоративных регуляций и будет преследоваться по всей строгости закона, если это применимо.")
+	set_access(access_heads)

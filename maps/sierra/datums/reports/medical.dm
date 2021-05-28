@@ -66,4 +66,4 @@
 	add_field(/datum/report_field/time, "Время вскрытия", required = 1)
 	add_field(/datum/report_field/people/from_manifest, "Вскрытие проводил", required = 1)
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
-	set_access(list(access_security, access_medical), list(access_security, access_medical))
+	set_access(access_morgue)

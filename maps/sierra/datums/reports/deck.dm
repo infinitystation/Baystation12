@@ -2,13 +2,14 @@
 	..()
 	set_access(access_cargo)
 
-/datum/computer_file/report/recipient/deck/shuttle
+/datum/computer_file/report/recipient/shuttle
 	form_name = "NT-DEC-32"
 	title = "Предварительная проверка шаттла"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/deck/shuttle/generate_fields()
 	..()
+	var/list/permission_fields = list()
 	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Департамент снабжения")
 	add_field(/datum/report_field/text_label/header, "Предварительная проверка шаттла")
 	add_field(/datum/report_field/date, "Дата заполнения")
@@ -36,8 +37,10 @@
 	add_field(/datum/report_field/options/yes_no, "Все члены экспедиции на борту?", required = 1)
 	add_field(/datum/report_field/options/yes_no, "Герметичность шлюзов с обеих сторон?", required = 1)
 	add_field(/datum/report_field/options/yes_no, "Разрешение на вылет из ангара?", required = 1)
-	add_field(/datum/report_field/signature, "Для разрешения на вылет, поставьте подпись либо печать здесь", required = 1)
-	set_access(access_mining_office, access_mining_office)
+	permission_fields += add_field(/datum/report_field/signature, "Для разрешения на вылет, поставьте подпись либо печать здесь", required = 1)
+	for(var/datum/report_field/field in permission_fields)
+		field.set_access(access_edit=list(list(access_el, access_qm, access_heads)))
+	set_access(list(list(access_guppy, access_expedition_shuttle, access_petrov)),list(list(access_guppy_helm, access_expedition_shuttle_helm, access_petrov_helm)))
 	
 /datum/computer_file/report/recipient/deck/docking
 	form_name = "NT-DEC-33"
@@ -66,7 +69,6 @@
 	add_field(/datum/report_field/text_label/header, "ИНФОРМАЦИЯ ОБ ОПАСНОМ ГРУЗЕ СУДНА")
 	add_field(/datum/report_field/simple_text, "Время отстыковки")
 	add_field(/datum/report_field/pencode_text,"Дополнительные заметки во время отстыковки")
-	set_access(list(access_heads, access_qm),list(access_heads, access_qm))
 
 /datum/computer_file/report/recipient/deck/request
 	form_name = "NT-DEC-34"

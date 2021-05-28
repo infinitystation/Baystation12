@@ -8,18 +8,14 @@
 
 /datum/computer_file/report/recipient/sci/anomaly/generate_fields()
 	..()
-	var/list/rd_fields = list()
 	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Научный департамент")
 	add_field(/datum/report_field/text_label/header, "Отчет об аномальном объекте")
 	add_field(/datum/report_field/simple_text, "Кодовое название AO", required = 1)
 	add_field(/datum/report_field/people/from_manifest, "Отчет заполнял", required = 1)
-	rd_fields += add_field(/datum/report_field/pencode_text, "Заметки Директора Исследований", required = 1)
 	add_field(/datum/report_field/pencode_text, "Процедуры сдерживания", required = 1)
 	add_field(/datum/report_field/pencode_text, "Общее описание", required = 1)
 	add_field(/datum/report_field/simple_text, "Примерный возраст AO", required = 1)
 	add_field(/datum/report_field/simple_text, "Уровень угрозы AO", required = 1)
-	for(var/datum/report_field/field in rd_fields)
-		field.set_access(access_edit = access_rd)
 
 /datum/computer_file/report/recipient/sci/volunteer
 	form_name = "HR-NTCO-02b"
@@ -27,16 +23,20 @@
 
 /datum/computer_file/report/recipient/sci/volunteer/generate_fields()
 	..()
+	var/list/rd_fields = list()
 	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Научный департамент")
 	add_field(/datum/report_field/text_label/header, "Форма добровольца, участвующего в исследованиях")
 	add_field(/datum/report_field/date, "Дата")
+	add_field(/datum/report_field/time, "Время")
 	add_field(/datum/report_field/people/from_manifest, "Имя и должность добровольца", required = 1)
 	add_field(/datum/report_field/text_label/instruction, "Фото обязательно")
 	add_field(/datum/report_field/simple_text, "Область исследования", required = 1)
 	add_field(/datum/report_field/people/from_manifest, "Полное имя и должность ответственного за проведения исследования", required = 1)
+	rd_fields += add_field(/datum/report_field/signature, "Подпись Директора Исследований")
 	add_field(/datum/report_field/signature, "Подпись ответственного", required = 1)
 	add_field(/datum/report_field/signature, "Подпись добровольца", required = 1)
-	
+	for(var/datum/report_field/field in rd_fields)
+		field.set_access(access_edit = access_rd)
 
 /datum/computer_file/report/recipient/sci/volunteer_denied
 	form_name = "HR-NTCO-02b-D"
@@ -47,6 +47,7 @@
 	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Научный департамент")
 	add_field(/datum/report_field/text_label/header, "Прекращение добровольного исследования")
 	add_field(/datum/report_field/date, "Дата")
+	add_field(/datum/report_field/time, "Время")
 	add_field(/datum/report_field/people/from_manifest, "Имя и должность добровольца", required = 1)
 	add_field(/datum/report_field/simple_text, "Причина прекращения", required = 1)
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
@@ -89,6 +90,7 @@
 	add_field(/datum/report_field/date, "Дата аугментации")
 	add_field(/datum/report_field/time, "Время аугментации")
 	add_field(/datum/report_field/simple_text, "Причина аугментации", required = 1)
+	add_field(/datum/report_field/options/yes_no, "Добавить инфомацию об аугментациях в базу данных?")
 	add_field(/datum/report_field/pencode_text, "Список аугментаций", required = 1)
 	add_field(/datum/report_field/text_label/instruction, "Каждую аугментацию оформить в виде: часть тела, если протез - описать марку протеза, функционал, название\
 	При необходимости - вписать дополнительные пункты в списке. Пустые графы заполнить, как N/A.")
