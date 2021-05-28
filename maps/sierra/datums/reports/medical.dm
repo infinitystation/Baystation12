@@ -5,6 +5,7 @@
 /datum/computer_file/report/recipient/med/recipe
 	form_name = "NT-MED-01"
 	title = "Назначение рецепта медицинского препарата"
+	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/med/recipe/generate_fields()
 	..()
@@ -28,6 +29,7 @@
 	logo = "\[sierralogo\]"
 	form_name = "NT-MED-02"
 	title = "Постановление о невменяемости"
+	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/med/insanity_resolution/generate_fields()
 	..()
@@ -51,6 +53,7 @@
 	logo = "\[sierralogo\]"
 	form_name = "NT-MED-03"
 	title = "Отчет о вскрытии"
+	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/med/report_autopsy/generate_fields()
 	..()

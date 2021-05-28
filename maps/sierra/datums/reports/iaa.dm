@@ -24,7 +24,7 @@
 	for(var/datum/report_field/field in heads_fields)
 		field.set_access(access_edit = access_heads)
 
-/datum/computer_file/report/recipient_staff/iaa/incident_staff
+/datum/computer_file/report/recipient/iaa/incident_staff
 	form_name = "HR-NTCO-01a"
 	logo ="\[logo\]"
 	title = "Рапорт об инцидентах, произошедших с сотрудниками"
@@ -37,7 +37,7 @@
 	add_field(/datum/report_field/date, "Дата")
 	add_field(/datum/report_field/time, "Время")
 	add_field(/datum/report_field/pencode_text, "Описание происшествия", required = 1)
-	add_field(/datum/report_field/list_from_manifest, "Сотрудник(и) замеченные в прошествии (по возможности укажите должности и фотографии)", required = 1)
+	add_field(/datum/report_field/people/list_from_manifest, "Сотрудник(и) замеченные в прошествии (по возможности укажите должности и фотографии)", required = 1)
 	add_field(/datum/report_field/pencode_text, "Подробности происшествия", required = 1)
 	add_field(/datum/report_field/people/from_manifest, "Данный рапорт был составлен", required = 1)
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
@@ -96,7 +96,7 @@
 	for(var/datum/report_field/field in heads_fields)
 		field.set_access(access_edit = access_heads)
 
-/datum/computer_file/report/recipient/iaa/archive
+/datum/computer_file/report/recipient/archive
 	form_name = "HR-NTCO-04a"
 	logo ="\[logo\]"
 	title = "Форма для архива"
@@ -124,9 +124,9 @@
 	add_field(/datum/report_field/pencode_text, "Меморандум", required = 1)
 	capiaa_fields += add_field(/datum/report_field/signature, "Подпись", required = 1)
 	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия печати НТ или капитана.")
-	set_access(list(list(access_captain, access_iaa)), list(list(access_captian, access_iaa)))
+	set_access(list(list(access_captain, access_iaa)), list(list(access_captain, access_iaa)))
 	for(var/datum/report_field/field in capiaa_fields)
-		field.set_access(access_edit = list(list(access_captian, access_iaa)))
+		field.set_access(access_edit = list(list(access_captain, access_iaa)))
 
 /datum/computer_file/report/recipient/iaa/work_visa
 	form_name = "HR-NTCO-03b"
@@ -162,7 +162,7 @@
 	add_field(/datum/report_field/text_label/instruction, "Данный документ разрешает выплату оставшегося оклада:")
 	add_field(/datum/report_field/people/from_manifest, "Полное имя погибшего сотрудника NT", required = 1)
 	add_field(/datum/report_field/text_label, "Помимо полной выплаты оставшихся личных активов", required = 1)
-	add_field(/datum/report_field/pencode_text, "Включая личные вещи:", required = 1)
+	add_field(/datum/report_field/pencode_text, "Включая личные вещи", required = 1)
 	add_field(/datum/report_field/text_label/instruction, "Должно быть немедленно отправлено ближайшему родственнику сотрудника.")
 	add_field(/datum/report_field/people/from_manifest, "Данный рапорт был составлен", required = 1)
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
