@@ -36,11 +36,11 @@
 	add_field(/datum/report_field/options/yes_no, "Другая необходимая экипировка на борту?", required = 1)
 	add_field(/datum/report_field/options/yes_no, "Все члены экспедиции на борту?", required = 1)
 	add_field(/datum/report_field/options/yes_no, "Герметичность шлюзов с обеих сторон?", required = 1)
-	add_field(/datum/report_field/options/yes_no, "Разрешение на вылет из ангара?", required = 1)
+	permission_fields += add_field(/datum/report_field/options/yes_no, "Разрешение на вылет из ангара?", required = 1)
 	permission_fields += add_field(/datum/report_field/signature, "Для разрешения на вылет, поставьте подпись либо печать здесь", required = 1)
 	for(var/datum/report_field/field in permission_fields)
 		field.set_access(access_edit=list(list(access_el, access_qm, access_heads)))
-	set_access(list(list(access_guppy, access_expedition_shuttle, access_petrov)),list(list(access_guppy_helm, access_expedition_shuttle_helm, access_petrov_helm)))
+	set_access(list(list(access_guppy, access_expedition_shuttle, access_petrov)),list(list(access_guppy, access_expedition_shuttle, access_petrov)))
 	
 /datum/computer_file/report/recipient/deck/docking
 	form_name = "NT-DEC-33"
@@ -56,7 +56,7 @@
 	add_field(/datum/report_field/time, "Время заполнения")
 	add_field(/datum/report_field/simple_text, "Название судна", required = 1)
 	add_field(/datum/report_field/simple_text, "Владелец/Пилот судна", required = 1)
-	add_field(/datum/report_field/simple_text, "Владелец/Пилот судна", required = 1)
+	add_field(/datum/report_field/simple_text, "Назначение судна", required = 1)
 	add_field(/datum/report_field/people/from_manifest, "Состыковку произвел", required = 1)
 	add_field(/datum/report_field/text_label/header, "ОБЩАЯ ИНФОРМАЦИЯ ГРУЗА")
 	add_field(/datum/report_field/pencode_text, "Перечислите вид груза, находящегося на судне", required = 1)
@@ -69,14 +69,16 @@
 	add_field(/datum/report_field/text_label/header, "ИНФОРМАЦИЯ ОБ ОПАСНОМ ГРУЗЕ СУДНА")
 	add_field(/datum/report_field/simple_text, "Время отстыковки")
 	add_field(/datum/report_field/pencode_text,"Дополнительные заметки во время отстыковки")
+	set_access(access_security, override = 0)
 
 /datum/computer_file/report/recipient/deck/request
 	form_name = "NT-DEC-34"
 	title = "Форма запроса в отдел поставок"
 	available_on_ntnet = 1
 
-/datum/computer_file/report/recipient/deck/request/generate_fields()
+/datum/computer_file/report/recipient/request/generate_fields()
 	..()
+	var/list/cargo_fields = list()
 	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Департамент снабжения")
 	add_field(/datum/report_field/text_label/header, "Форма запроса в отдел поставок")
 	add_field(/datum/report_field/simple_text, "Наименование отдела, запрашивающего предметы или материалы", required = 1)
@@ -87,5 +89,7 @@
 	add_field(/datum/report_field/pencode_text, "Список запрашиваемых предметов или материалов", required = 1)
 	add_field(/datum/report_field/text_label/instruction, "При необходимости - вписать дополнительные пункты в списке. Пустые графы заполнить, как N/A.")
 	add_field(/datum/report_field/simple_text, "Причина запроса", required = 1)
-	add_field(/datum/report_field/signature, "Подпись квартирмейстера или работника карго", required = 1)
-	add_field(/datum/report_field/signature, "Подпись главы запрашивающего отдела")
+	add_field(/datum/report_field/signature, "Подпись запрашивающего")
+	cargo_fields+= add_field(/datum/report_field/signature, "Подпись квартирмейстера или работника карго", required = 1)
+	for(var/datum/report_field/field in cargo_fields)
+		field.set_access(access_edit = access_cargo)
