@@ -32,7 +32,8 @@
 /obj/item/melee/baton/New()
 	if(ispath(bcell))
 		bcell = new bcell(src)
-		update_icon()
+		// update_icon()  // ORIG
+	update_icon()  // INF
 	..()
 
 /obj/item/melee/baton/Destroy()
@@ -269,4 +270,3 @@
 	hitcost = 25
 	attack_verb = list("poked")
 	slot_flags = null
-	item_icons = null//inf
