@@ -5,6 +5,7 @@
 /datum/computer_file/report/recipient/exp/planet
 	form_name = "NT-EXP-19p"
 	title = "Отчет по экзопланете"
+	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/exp/planet/generate_fields()
 	..()
@@ -29,6 +30,7 @@
 /datum/computer_file/report/recipient/exp/fauna
 	form_name = "NT-EXP-19f"
 	title = "Отчет по фауне"
+	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/exp/fauna/generate_fields()
 	..()

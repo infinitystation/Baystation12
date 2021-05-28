@@ -2,7 +2,7 @@
 	..()
 	set_access(access_cargo)
 
-/datum/computer_file/report/recipient/shuttle
+/datum/computer_file/report/recipient/deck/shuttle
 	form_name = "NT-DEC-32"
 	title = "Предварительная проверка шаттла"
 	available_on_ntnet = 1
@@ -71,7 +71,7 @@
 	add_field(/datum/report_field/pencode_text,"Дополнительные заметки во время отстыковки")
 	set_access(access_security, override = 0)
 
-/datum/computer_file/report/recipient/deck/request
+/datum/computer_file/report/recipient/request
 	form_name = "NT-DEC-34"
 	title = "Форма запроса в отдел поставок"
 	available_on_ntnet = 1

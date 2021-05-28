@@ -1,8 +1,11 @@
 //Reports for the deck management program.
+/datum/computer_file/report
+	available_on_ntnet = 0
 
 /datum/computer_file/report/flight_plan
 	form_name = "DC109"
 	title = "Полётный план"
+	available_on_ntnet = 0
 
 /datum/computer_file/report/flight_plan/generate_fields()
 	add_field(/datum/report_field/text_label/instruction, "Эти поля являются обязательными к заполнению:")
@@ -24,6 +27,7 @@
 /datum/computer_file/report/recipient/shuttle/damage
 	form_name = "DC243"
 	title = "После полётная проверка повреждений"
+	available_on_ntnet = 0
 
 /datum/computer_file/report/recipient/shuttle/damage/generate_fields()
 	..()
@@ -36,6 +40,7 @@
 /datum/computer_file/report/recipient/shuttle/fuel
 	form_name = "DC12"
 	title = "После-полётная проверка уровня топлива"
+	available_on_ntnet = 0
 
 /datum/computer_file/report/recipient/shuttle/fuel/generate_fields()
 	..()
@@ -47,6 +52,7 @@
 /datum/computer_file/report/recipient/shuttle/atmos
 	form_name = "DC245"
 	title = "После-полётная проверка атмосферы"
+	available_on_ntnet = 0
 
 /datum/computer_file/report/recipient/shuttle/atmos/generate_fields()
 	..()
@@ -58,6 +64,7 @@
 /datum/computer_file/report/recipient/shuttle/gear
 	form_name = "DC248b"
 	title = "После-полётная проверка запасов для чрезвычайных ситуаций"
+	available_on_ntnet = 0
 
 /datum/computer_file/report/recipient/shuttle/gear/generate_fields()
 	..()
@@ -71,6 +78,7 @@
 /datum/computer_file/report/recipient/shuttle/post_flight
 	form_name = "DC102"
 	title = "Стандартный отчёт экспедиции"
+	available_on_ntnet = 0
 
 /datum/computer_file/report/recipient/shuttle/post_flight/generate_fields()
 	..()

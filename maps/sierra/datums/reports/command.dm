@@ -96,13 +96,13 @@
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
 	set_access(access_heads, access_heads)
 
-/datum/computer_file/report/recipient/request
+/datum/computer_file/report/recipient/request_corporate
 	form_name = "REQ-NTF"
 	title = "Корпоративный Запрос"
 	logo = "\[logo\]"
 	available_on_ntnet = 1
 
-/datum/computer_file/report/recipient/request/generate_fields()
+/datum/computer_file/report/recipient/request_corporate/generate_fields()
 	..()
 	add_field(/datum/report_field/text_label/header, "Корпоративный Запрос")
 	add_field(/datum/report_field/number, "Номер запроса ")
@@ -113,4 +113,4 @@
 	add_field(/datum/report_field/time, "Время заполнения")
 	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи или печати.")
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
-	set_access(list(list(access_heads, access_qm, access_el)),list(list(access_heads, access_qm, access_el)))
+	set_access(list(list(access_heads, access_qm, access_el)), list(list(access_heads, access_qm, access_el)))

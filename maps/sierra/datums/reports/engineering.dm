@@ -2,7 +2,7 @@
 	..()
 	set_access(access_engine)
 
-/datum/computer_file/report/recipient/eng/construction_work
+/datum/computer_file/report/recipient/construction_work
 	form_name = "NT-ENG-11"
 	title = "Запрос на проведение строительных работ"
 	available_on_ntnet = 1
@@ -51,7 +51,7 @@
 	for(var/datum/report_field/field in work_fields)
 		field.set_access(access_edit = access_engine)
 
-/datum/computer_file/report/recipient/eng/request_eng
+/datum/computer_file/report/recipient/request_eng
 	form_name = "NT-ENG-12"
 	title = "Запрос к инженерии"
 	available_on_ntnet = 1

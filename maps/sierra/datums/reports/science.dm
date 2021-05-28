@@ -5,6 +5,7 @@
 /datum/computer_file/report/recipient/sci/anomaly
 	form_name = "NT-SCI-05"
 	title = "Изучение Аномалий"
+	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sci/anomaly/generate_fields()
 	..()
@@ -20,6 +21,7 @@
 /datum/computer_file/report/recipient/sci/volunteer
 	form_name = "HR-NTCO-02b"
 	title = "Форма добровольца для исследований"
+	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sci/volunteer/generate_fields()
 	..()
@@ -44,6 +46,7 @@
 /datum/computer_file/report/recipient/sci/volunteer_denied
 	form_name = "HR-NTCO-02b-D"
 	title = "Форма добровольца о завершении исследований"
+	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sci/volunteer_denied/generate_fields()
 	..()
@@ -58,6 +61,7 @@
 /datum/computer_file/report/recipient/sci/prototype
 	form_name = "NT-SCI-07"
 	title = "Форма о передачи прототипов оборудования"
+	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sci/prototype/generate_fields()
 	..()
@@ -83,6 +87,7 @@
 /datum/computer_file/report/recipient/sci/augmentations
 	form_name = "AG17-N1"
 	title = "Форма об установке аугментаций"
+	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sci/augmentations/generate_fields()
 	..()
