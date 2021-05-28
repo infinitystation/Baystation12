@@ -26,11 +26,13 @@
 	#include "datums/uniforms_employee.dm"
 
 	#include "datums/reports/command.dm"
-	#include "datums/reports/corporate.dm"
-	#include "datums/reports/exploration.dm"
-	#include "datums/reports/science.dm"
-	#include "datums/reports/security.dm"
 	#include "datums/reports/deck.dm"
+	#include "datums/reports/engineering.dm"
+	#include "datums/reports/exploration.dm"
+	#include "datums/reports/iaa.dm"
+	#include "datums/reports/medical.dm"
+	#include "datums/reports/security.dm"
+	#include "datums/reports/science.dm"
 
 	#include "datums/shackle_law_sets.dm"
 	#include "datums/supplypacks/engineering.dm"

@@ -1,74 +1,126 @@
-/datum/computer_file/report/recipient/sec
-	logo = "\[logo\]"
-
-/datum/computer_file/report/recipient/sec/New()
+/datum/computer_file/report/recipient/sec/generate_fields()
 	..()
 	set_access(access_security)
-	set_access(access_heads, override = 0)
 
-/datum/computer_file/report/recipient/sec/investigation
-	form_name = "NT-SEC-43"
-	title = "Доклад о расследовании"
+/datum/computer_file/report/recipient/sec/report_detective
+	form_name = "NT-SEC-14"
+	title = "Служба Безопасности: Отчет о расследовании"
 	available_on_ntnet = 1
 
-/datum/computer_file/report/recipient/sec/investigation/generate_fields()
+/datum/computer_file/report/recipient/sec/report_detective/generate_fields()
 	..()
-	add_field(/datum/report_field/text_label/header, "Департамент охраны ИСН Сьерра")
-	add_field(/datum/report_field/text_label/instruction, "Только для внутреннего использования.")
-	add_field(/datum/report_field/people/from_manifest, "Имя")
-	add_field(/datum/report_field/date, "Дата")
-	add_field(/datum/report_field/time, "Время")
-	add_field(/datum/report_field/simple_text, "Название дела")
-	add_field(/datum/report_field/pencode_text, "Заключение")
-	add_field(/datum/report_field/pencode_text, "Наблюдения")
-	add_field(/datum/report_field/signature, "Подпись")
-	set_access(access_edit = access_security)
+	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Охранный департамент")
+	add_field(/datum/report_field/text_label/header, "Отчет о расследовании")
+	add_field(/datum/report_field/text_label/instruction, "Для ознакомления авторизованному персоналу.")
+	add_field(/datum/report_field/people/from_manifest, "Имя", required = 1)
+	add_field(/datum/report_field/date, "Дата", required = 1)
+	add_field(/datum/report_field/time, "Время", required = 1)
+	add_field(/datum/report_field/pencode_text, "Отчёт по делу", required = 1)
+	add_field(/datum/report_field/pencode_text, "Основная информация", required = 1)
+	add_field(/datum/report_field/pencode_text, "Вложения", required = 1)
+	add_field(/datum/report_field/pencode_text, "Наблюдения", required = 1)
 
-/datum/computer_file/report/recipient/sec/incident
-	form_name = "NT-SEC-12"
-	title = "Доклад об инциденте"
+/datum/computer_file/report/recipient/sec/report_incident
+	form_name = "NT-SEC-16"
+	title = "Служба Безопасности: Отчет об происшествии"
 	available_on_ntnet = 1
 
-/datum/computer_file/report/recipient/sec/incident/generate_fields()
+/datum/computer_file/report/recipient/sec/report_incident/generate_fields()
 	..()
-	add_field(/datum/report_field/text_label/header, "Департамент охраны ИСН Сьерра")
-	add_field(/datum/report_field/text_label/instruction, "Заполняется офицером при исполнении, реагировавшим на инцидент. Должно быть заполнено и зарегистрировано до конца смены!")
-	add_field(/datum/report_field/people/from_manifest, "Докладывающий офицер")
-	add_field(/datum/report_field/simple_text, "Тип инциденте/Преступления")
-	add_field(/datum/report_field/date, "Дата")
-	add_field(/datum/report_field/time, "Время инцидента")
-	add_field(/datum/report_field/people/list_from_manifest, "Офицер(ы), проводящие арест")
-	add_field(/datum/report_field/simple_text, "Location")
-	add_field(/datum/report_field/pencode_text, "Персонал вовлеченный в инцидент", "\[small\]\[i\](Ж-Жертва, Под-Подозреваемый, С-Свидетель, ПБВ-Пропавший без вести, А-Арестованный, Д-Докладывающий, Пог-Погибший)\[/i\]\[/small\]")
-	add_field(/datum/report_field/pencode_text, "Описание предметов/собственности", "\[small\]\[i\](Пов-Повреждено, Д-Докатательство, Пот-Потеряно, Н-Найдено, У-Украдено)\[/i\]\[/small\]")
-	add_field(/datum/report_field/pencode_text, "Изложение фактов")
-	add_field(/datum/report_field/signature, "Подпись докладывающего офицера")
+	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Охранный департамент")
+	add_field(/datum/report_field/text_label/header, "Отчет о происшествии")
+	add_field(/datum/report_field/text_label/instruction, "Заполняется дежурным офицером.")
+	add_field(/datum/report_field/time, "Время происшествия", required = 1)
+	add_field(/datum/report_field/simple_text, "Тип происшествия/преступления", required = 1)
+	add_field(/datum/report_field/simple_text, "Местоположение", required = 1)
+	add_field(/datum/report_field/people/from_manifest, "Отчет заполнил", required = 1)
+	add_field(/datum/report_field/people/list_from_manifest, "Офицер(ы), которые были на месте происшествия", required = 1)
+	add_field(/datum/report_field/pencode_text, "Персонал, участвующий в инциденте", required = 1)
+	add_field(/datum/report_field/text_label/instruction, "(Ж-Жертва, П-Подозреваемый, С-Свидетель, Пр-Пропавший, A-Арестованный, М-Мертвец)")
+	add_field(/datum/report_field/pencode_text, "Описание предметов/Материального ущерба", required = 1)
+	add_field(/datum/report_field/text_label/instruction, "(П-Поврежденный, У-Улика, Пр-Потерянный, В-Восстановленный, Ук-Украденный)")
+	add_field(/datum/report_field/pencode_text, "Полное описание происшествия", required = 1)
+	add_field(/datum/report_field/signature, "Подпись офицера, составившего отчет", required = 1)
 	set_access(access_edit = access_security)
 
-/datum/computer_file/report/recipient/sec/evidence
+/datum/computer_file/report/recipient/sec/report_evidence
 	form_name = "NT-SEC-02b"
-	title = "Форма Доказательств и Собственности"
+	title = "Служба Безопасности: Отчет об уликах"
 	available_on_ntnet = 1
 
-/datum/computer_file/report/recipient/sec/evidence/generate_fields()
+/datum/computer_file/report/recipient/sec/report_evidence/generate_fields()
 	..()
-	var/datum/report_field/temp_field
-	add_field(/datum/report_field/text_label/header, "Департамент охраны ИСН Сьерра")
+	var/list/det_fields = list()
+	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Охранный департамент")
+	add_field(/datum/report_field/text_label/header, "Вещественные доказательства")
 	add_field(/datum/report_field/date, "Дата")
 	add_field(/datum/report_field/time, "Время")
-	add_field(/datum/report_field/people/from_manifest, "Конфисковано у")
-	add_field(/datum/report_field/pencode_text, "Список предметов, взятых на хранение")
+	add_field(/datum/report_field/people/from_manifest, "Конфисковано у", required = 1)
+	add_field(/datum/report_field/pencode_text, "Список конфискованных предметов", required = 1)
+	add_field(/datum/report_field/signature, "Подпись офицера проводившего конфискацию")
+	det_fields += add_field(/datum/report_field/signature, "Подпись Смотрителя брига", required = 1)
 	set_access(access_edit = access_security)
-	temp_field = add_field(/datum/report_field/signature, "Подпись сержанта/надзирателя")
-	temp_field.set_access(access_edit = list(access_security, access_armory))
-	temp_field = add_field(/datum/report_field/signature, "Подпись детектива")
-	temp_field.set_access(access_edit = list(access_security, access_forensics_lockers))
+	for(var/datum/report_field/field in det_fields)
+		field.set_access(access_edit = access_armory)
+
+/datum/computer_file/report/recipient/sec/patrol
+	form_name = "NT-SEC-04"
+	title = "Служба Безопасности: Назначение патрулей"
+	available_on_ntnet = 1
+
+/datum/computer_file/report/recipient/sec/patrol/generate_fields()
+	..()
+	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Охранный департамент")
+	add_field(/datum/report_field/text_label/header, "Назначение патрулей")
+	add_field(/datum/report_field/date, "Дата утверждения")
+	add_field(/datum/report_field/time, "Время утверждения")
+	add_field(/datum/report_field/pencode_text, "Описание патрулей", required = 1)
+	add_field(/datum/report_field/text_label/instruction, "Сменные позывные. Для синего кода и выше.")
+	add_field(/datum/report_field/pencode_text, "Описание сменных позывных", required = 1)
+	add_field(/datum/report_field/text_label/instruction, "Для патрулирующего. Проведите полный осмотр назначенной палубы, включая тех. туннели.\
+	Отвечайте на вызовы с других палуб только при приказе. Вы ответственны за безопасность на закрепленной за вами палубе.")
+	add_field(/datum/report_field/signature, "Подпись", required = 1)
+	set_access(access_armory, access_armory)
+
+/datum/computer_file/report/recipient/sec/armory
+	form_name = "NT-SEC-05"
+	title = "Служба Безопасности: Инвентаризация оружейной"
+	available_on_ntnet = 1
+
+/datum/computer_file/report/recipient/sec/armory/generate_fields()
+	..()
+	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Охранный департамент")
+	add_field(/datum/report_field/text_label/header, "Инвентаризация оружейной")
+	add_field(/datum/report_field/text_label, "Снаряжение")
+	add_field(/datum/report_field/number, "Портативные укрепления")
+	add_field(/datum/report_field/number, "Фальшфейеры")
+	add_field(/datum/report_field/number, "Наручники")
+	add_field(/datum/report_field/number, "Гранаты с слезоточивым газом")
+	add_field(/datum/report_field/number, "Светошумовые гранаты")
+	add_field(/datum/report_field/text_label/header, "Броня")
+	add_field(/datum/report_field/number, "Противоударная броня")
+	add_field(/datum/report_field/number, "Пуленепробиваемая броня")
+	add_field(/datum/report_field/number, "Аблятивная броня")
+	add_field(/datum/report_field/number, "Противоударные шлемы")
+	add_field(/datum/report_field/number, "Пуленепробиваемае шлемы")
+	add_field(/datum/report_field/number, "Аблятивные шлемы")
+	add_field(/datum/report_field/number, "Бронещиты")
+	add_field(/datum/report_field/text_label/header, "Оружие")
+	add_field(/datum/report_field/number, "ЛАЕПЫ")
+	add_field(/datum/report_field/number, "Электрокарабины")
+	add_field(/datum/report_field/number, "Ионные ружья и пистолеты")
+	add_field(/datum/report_field/number, "Лазерные карабины")
+	add_field(/datum/report_field/number, "Боевой дробовик")
+	add_field(/datum/report_field/number, "Бронещиты")
+	add_field(/datum/report_field/pencode_text, "Прочее оружие", required = 1)
+	add_field(/datum/report_field/time, "Опись арсенала проведена в")
+	add_field(/datum/report_field/signature, "Подпись сотрудника проводившего опись", required = 1)
+	set_access(access_armory, access_armory)
 
 /datum/computer_file/report/recipient/weapon
 	form_name = "NT-SEC-15"
 	title = "Регистрация хранения и ношения личного оружия"
 	available_on_ntnet = 1
-	logo = "\[logo\]"
 
 /datum/computer_file/report/recipient/weapon/generate_fields()
 	..()
@@ -97,4 +149,3 @@
 	temp_field = add_field(/datum/report_field/signature, "Подпись ревизора")
 	temp_field.set_access(access_edit = access_security)
 	temp_field.required = TRUE
-
