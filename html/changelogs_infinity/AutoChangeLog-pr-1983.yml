@@ -1,0 +1,4 @@
+author: SidVeld
+delete-after: true
+changes:
+  - bugfix: Исправлена проблема с отображением станпрода в руках.
