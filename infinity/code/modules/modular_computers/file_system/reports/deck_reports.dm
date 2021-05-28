@@ -18,7 +18,7 @@
 	add_field(/datum/report_field/simple_text, "Количество топлива")
 
 /datum/computer_file/report/recipient/shuttle/generate_fields()
-	..()
+	recipients = add_field(/datum/report_field/people/list_from_manifest, "Отправить копии")
 	shuttle = add_field(/datum/report_field/simple_text, "Шаттл", required = 1)
 	shuttle.can_edit = 0
 	mission = add_field(/datum/report_field/simple_text, "Миссия", required = 1)
@@ -30,7 +30,7 @@
 	available_on_ntnet = 0
 
 /datum/computer_file/report/recipient/shuttle/damage/generate_fields()
-	..()
+	recipients = add_field(/datum/report_field/people/list_from_manifest, "Отправить копии")
 	add_field(/datum/report_field/text_label/instruction, "Оцените ущерб, нанесенный шаттлу, и его готовность к полету.")
 	add_field(/datum/report_field/pencode_text, "Состояние шаттла по прибитию")
 	add_field(/datum/report_field/simple_text, "Готовность к полету")
@@ -43,7 +43,7 @@
 	available_on_ntnet = 0
 
 /datum/computer_file/report/recipient/shuttle/fuel/generate_fields()
-	..()
+	recipients = add_field(/datum/report_field/people/list_from_manifest, "Отправить копии")
 	add_field(/datum/report_field/simple_text, "Предыдущий уровень топлива")
 	add_field(/datum/report_field/simple_text, "Текущий уровень топлива")
 	add_field(/datum/report_field/time, "Время дозаправки")
@@ -55,7 +55,7 @@
 	available_on_ntnet = 0
 
 /datum/computer_file/report/recipient/shuttle/atmos/generate_fields()
-	..()
+	recipients = add_field(/datum/report_field/people/list_from_manifest, "Отправить копии")
 	add_field(/datum/report_field/text_label/instruction, "Оцените состояние атмосферных систем шаттла.")
 	add_field(/datum/report_field/pencode_text, "Состояние атмосферных запасов")
 	add_field(/datum/report_field/time, "Планируемое время окончания запасов")
@@ -67,7 +67,7 @@
 	available_on_ntnet = 0
 
 /datum/computer_file/report/recipient/shuttle/gear/generate_fields()
-	..()
+	recipients = add_field(/datum/report_field/people/list_from_manifest, "Отправить копии")
 	add_field(/datum/report_field/text_label/instruction, "Оцените состояние запасов для чрезвычайных ситуаций шаттла.")
 	add_field(/datum/report_field/pencode_text, "Состояние запасов при прибытии")
 	add_field(/datum/report_field/pencode_text, "Пополненые запасы")
@@ -81,7 +81,7 @@
 	available_on_ntnet = 0
 
 /datum/computer_file/report/recipient/shuttle/post_flight/generate_fields()
-	..()
+	recipients = add_field(/datum/report_field/people/list_from_manifest, "Отправить копии")
 	add_field(/datum/report_field/text_label/instruction, "Отчёт о находках, открытиях и результатах экспедиции.")
 	add_field(/datum/report_field/simple_text, "Посещённые локации")
 	add_field(/datum/report_field/simple_text, "Основная цель миссии")
