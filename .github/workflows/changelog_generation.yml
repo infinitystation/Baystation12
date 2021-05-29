@@ -27,9 +27,9 @@ jobs:
         run: |
           python tools/changelog/ss13_ru_genchangelog.py html/changelog_infinity.html html/changelogs_infinity
       - name: Коммит и Пуш
-        if: git diff --cached --exit-code
         run: |
           git config --global user.email "${{ secrets.BOT_EMAIL }}"
           git config --global user.name "${{ secrets.BOT_NAME }}"
+          git diff --cached --exit-code && exit 0
           git commit -m "Автоматическая генерация чейнджлогов" -a
           git push
