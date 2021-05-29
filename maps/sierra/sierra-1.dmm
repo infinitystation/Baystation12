@@ -5566,7 +5566,7 @@
 	autoset_access = 0;
 	dir = 4;
 	name = "Cockpit";
-	req_access = list("ACCESS_EXPLORER")
+	req_access = list("ACCESS_EXPEDITION_SHUTTLE")
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -8827,10 +8827,6 @@
 /turf/simulated/wall/prepainted,
 /area/storage/primary)
 "nR" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
-	id_tag = "calypso_shuttle_pump_out_external"
-	},
-/obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/machinery/airlock_sensor/airlock_exterior{
 	frequency = 1331;
@@ -8840,6 +8836,11 @@
 	pixel_y = 27;
 	req_access = list("ACCESS_EXPEDITION_SHUTTLE")
 	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
+	id_tag = "calypso_shuttle_pump_out_external";
+	power_rating = 25000
+	},
+/obj/structure/catwalk,
 /turf/simulated/floor/reinforced,
 /area/exploration_shuttle/airlock)
 "nS" = (
@@ -19237,7 +19238,6 @@
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 8
 	},
-/obj/structure/catwalk,
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 1;
 	id_tag = "calypso_shuttle_pump_out_internal";
@@ -19246,6 +19246,7 @@
 /obj/structure/handrail{
 	dir = 1
 	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/airlock)
 "EK" = (
@@ -19282,7 +19283,7 @@
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 1;
-	id_tag = "calypso_shuttle_pump_out_internal";
+	id_tag = "calypso_shuttle_pump";
 	power_rating = 25000
 	},
 /obj/structure/handrail{
@@ -19305,7 +19306,7 @@
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 1;
-	id_tag = "calypso_shuttle_pump_out_internal";
+	id_tag = "calypso_shuttle_pump";
 	power_rating = 25000
 	},
 /obj/structure/handrail{
@@ -20552,6 +20553,7 @@
 	power_rating = 25000
 	},
 /obj/effect/floor_decal/industrial/warning/full,
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/airlock)
 "GV" = (
@@ -22371,7 +22373,7 @@
 "JH" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
-	id_tag = "calypso_shuttle_pump_out_internal";
+	id_tag = "calypso_shuttle_pump";
 	power_rating = 25000
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
@@ -22381,12 +22383,12 @@
 	id_tag = "calypso_shuttle";
 	pixel_x = 20;
 	req_access = list("ACCESS_EXPEDITION_SHUTTLE");
-	tag_airpump = "calypso_shuttle_pump_out_internal";
-	tag_chamber_sensor = "calypso_shuttle_sensor";
-	tag_exterior_door = "calypso_shuttle_outer";
+	tag_airpump = null;
+	tag_chamber_sensor = null;
+	tag_exterior_door = null;
 	tag_exterior_sensor = "calypso_shuttle_exterior_sensor";
-	tag_interior_door = "calypso_shuttle_inner";
-	tag_interior_sensor = "calypso_shuttle_interior_sensor"
+	tag_interior_door = null;
+	tag_interior_sensor = null
 	},
 /obj/effect/floor_decal/industrial/warning/full,
 /turf/simulated/floor/plating,
@@ -30754,15 +30756,16 @@
 /turf/simulated/wall/prepainted,
 /area/storage/airlock_canisters)
 "ZC" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
-	dir = 1;
-	id_tag = "calypso_shuttle_pump_out_external"
-	},
-/obj/structure/catwalk,
 /obj/machinery/air_sensor{
 	id_tag = "calypso_out"
 	},
 /obj/effect/floor_decal/industrial/warning/full,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
+	dir = 1;
+	id_tag = "calypso_shuttle_pump_out_external";
+	power_rating = 25000
+	},
+/obj/structure/catwalk,
 /turf/simulated/floor/reinforced,
 /area/exploration_shuttle/airlock)
 "ZD" = (
