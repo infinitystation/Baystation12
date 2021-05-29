@@ -264,6 +264,11 @@
 			. = TRUE
 			if(is_autenthicated(user) && ntn_comm)
 				post_status("toggle_alert_border")
+		// [INF]
+		// Расширить до полноценного списка индивидуальных проков карты. Как реализовано например с эвакуацией
+		if("change_lights_auto")
+			GLOB.using_map.reset_lights_automatics()
+		// [/INF]
 
 #undef STATE_DEFAULT
 #undef STATE_MESSAGELIST

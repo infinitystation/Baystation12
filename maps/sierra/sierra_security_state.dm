@@ -26,7 +26,7 @@
 
 /decl/security_level/default/sierradept/code_green
 	name = "код зелёный"
-	icon = 'icons/misc/security_state.dmi'
+	icon = 'infinity/icons/misc/security_state.dmi'
 
 	light_max_bright = 0.25
 	light_inner_range = 0.1
@@ -50,6 +50,7 @@
 
 /decl/security_level/default/sierradept/code_violet
 	name = "код фиолетовый"
+	icon = 'infinity/icons/misc/security_state.dmi'
 
 	light_max_bright = 0.25
 	light_inner_range = 1
@@ -81,6 +82,7 @@
 
 /decl/security_level/default/sierradept/code_orange
 	name = "код оранжевый"
+	icon = 'infinity/icons/misc/security_state.dmi'
 
 	light_max_bright = 0.25
 	light_inner_range = 1
@@ -114,7 +116,7 @@
 
 /decl/security_level/default/sierradept/code_blue
 	name = "код синий"
-	icon = 'icons/misc/security_state.dmi'
+	icon = 'infinity/icons/misc/security_state.dmi'
 
 	light_max_bright = 0.5
 	light_inner_range = 1
@@ -142,7 +144,7 @@
 
 /decl/security_level/default/sierradept/code_red
 	name = "код красный"
-	icon = 'icons/misc/security_state.dmi'
+	icon = 'infinity/icons/misc/security_state.dmi'
 
 	light_max_bright = 0.5
 	light_inner_range = 1
@@ -187,7 +189,7 @@
 	light_color_alarm = COLOR_RED
 	light_color_status_display = COLOR_NAVY_BLUE
 
-	icon = 'icons/misc/security_state.dmi'
+	icon = 'infinity/icons/misc/security_state.dmi'
 	overlay_alarm = "alarm_delta"
 	overlay_status_display = "status_display_delta"
 
