@@ -127,7 +127,6 @@ if failed_cache_read and os.path.isfile(args.targetFile):
 
 del_after = []
 errors = False
-nothingToRead = True
 print('Считываю чейнджлоги...')
 for fileName in glob.glob(os.path.join(args.ymlDir, "*.yml")):
     name, ext = os.path.splitext(os.path.basename(fileName))
@@ -135,7 +134,6 @@ for fileName in glob.glob(os.path.join(args.ymlDir, "*.yml")):
         continue
     if name == 'example':
         continue
-    nothingToRead = False
     fileName = os.path.abspath(fileName)
     print(' Читаю {}...'.format(fileName))
     cl = {}
@@ -172,10 +170,6 @@ for fileName in glob.glob(os.path.join(args.ymlDir, "*.yml")):
     cl['changes'] = []
     with open(fileName, 'w', encoding='utf-8') as f:
         yaml.dump(cl, f, default_flow_style=False)
-
-if nothingToRead:
-    print('Чейнджлоги не обнаружены, завершение работы.')
-    sys.exit(0)
 
 targetDir = os.path.dirname(args.targetFile)
 
