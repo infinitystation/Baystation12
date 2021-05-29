@@ -22383,12 +22383,7 @@
 	id_tag = "calypso_shuttle";
 	pixel_x = 20;
 	req_access = list("ACCESS_EXPEDITION_SHUTTLE");
-	tag_airpump = null;
-	tag_chamber_sensor = null;
-	tag_exterior_door = null;
 	tag_exterior_sensor = "calypso_shuttle_exterior_sensor";
-	tag_interior_door = null;
-	tag_interior_sensor = null
 	},
 /obj/effect/floor_decal/industrial/warning/full,
 /turf/simulated/floor/plating,
