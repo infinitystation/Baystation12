@@ -30,4 +30,4 @@ jobs:
         run: |
           git config --global user.email "${{ secrets.BOT_EMAIL }}"
           git config --global user.name "${{ secrets.BOT_NAME }}"
-          git diff --cached --exit-code && git commit -m "Автоматическая генерация чейнджлогов" -a && git push
+          ! git diff --cached --exit-code && git commit -m "Автоматическая генерация чейнджлогов" -a && git push
