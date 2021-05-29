@@ -12598,7 +12598,7 @@
 	dir = 1
 	},
 /turf/simulated/wall/r_titanium,
-/area/exploration_shuttle/airlock)
+/area/exploration_shuttle/power)
 "tD" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -16885,7 +16885,7 @@
 /obj/effect/paint/red,
 /obj/effect/paint_stripe/white,
 /turf/simulated/wall/r_titanium,
-/area/exploration_shuttle/airlock)
+/area/exploration_shuttle/power)
 "AO" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/red{
 	dir = 4
@@ -17812,14 +17812,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/exploration)
-"Cv" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/fuel{
-	dir = 1
-	},
-/obj/effect/paint/red,
-/obj/effect/paint_stripe/white,
-/turf/simulated/wall/r_titanium,
-/area/exploration_shuttle/airlock)
 "Cw" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -19080,7 +19072,7 @@
 /obj/effect/paint/red,
 /obj/effect/paint_stripe/white,
 /turf/simulated/wall/r_titanium,
-/area/exploration_shuttle/airlock)
+/area/exploration_shuttle/power)
 "Et" = (
 /obj/structure/cable/green{
 	d2 = 2;
@@ -22383,7 +22375,12 @@
 	id_tag = "calypso_shuttle";
 	pixel_x = 20;
 	req_access = list("ACCESS_EXPEDITION_SHUTTLE");
+	tag_airpump = null;
+	tag_chamber_sensor = null;
+	tag_exterior_door = null;
 	tag_exterior_sensor = "calypso_shuttle_exterior_sensor";
+	tag_interior_door = null;
+	tag_interior_sensor = null
 	},
 /obj/effect/floor_decal/industrial/warning/full,
 /turf/simulated/floor/plating,
@@ -28382,11 +28379,6 @@
 "TT" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d3starboard)
-"TV" = (
-/obj/effect/paint/red,
-/obj/effect/paint_stripe/white,
-/turf/simulated/wall/r_titanium,
-/area/exploration_shuttle/airlock)
 "TW" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -51840,7 +51832,7 @@ Aj
 yj
 BF
 EE
-TV
+WO
 hN
 VF
 Yr
@@ -52244,7 +52236,7 @@ xC
 yO
 Cd
 EO
-Cv
+FA
 FY
 VF
 PN
