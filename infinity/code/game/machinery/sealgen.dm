@@ -6,15 +6,15 @@
 
 	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
 
-	anchored = TRUE
+	anchored = FALSE
 	density = TRUE
 
-	active_power_usage = 2500
+	active_power_usage = 25000
 	idle_power_usage = 50
 
 	var/obj/effect/seal_field/current_field
 
-	var/fold_time = 2 SECONDS
+	var/fold_time = 7 SECONDS
 
 	var/field_color = COLOR_YELLOW
 	var/field_density = FALSE //It can be used to block movement via wires, though you can dispel it with hand
@@ -24,7 +24,7 @@
 
 	req_access = list(access_engine_equip)
 
-	var/locked = FALSE
+	var/locked = TRUE
 
 //General proc overrides
 
@@ -60,15 +60,17 @@
 //Machine-specific procs
 
 /obj/machinery/sealgen/proc/activate()
-	if(stat & NOPOWER) return
+	if((stat & NOPOWER) || !anchored) return
 	current_field = new(get_step(src,dir))
-	current_field.dir = NORTH //was dir
+	current_field.dir = dir
 	current_field.generator = src
 	colorize(field_color)
+	GLOB.moved_event.register(src, src, /obj/machinery/sealgen/proc/off)
 
 /obj/machinery/sealgen/proc/off()
 	qdel(current_field)
 	current_field = null
+	GLOB.moved_event.unregister(src, src, /obj/machinery/sealgen/proc/off)
 
 /obj/machinery/sealgen/proc/colorize()
 	if(!current_field) return
@@ -114,6 +116,13 @@
 		to_chat(user, "You [locked ? "lock" : "unlock"] \the [src].")
 		return
 
+	if(isWrench(W))
+		anchored = !anchored
+		to_chat(user, "You [anchored ? "wrench \the [src] to" : "unwrench \the [src] from"] \the [get_turf(src)]")
+		if(!anchored)
+			off()
+		return
+
 	..()
 
 //Actual field
@@ -121,7 +130,7 @@
 /obj/effect/seal_field
 	name = "atmospheric containment field"
 	desc = "An energy field, capable of blocking any gas as long as it's active."
-	icon = 'infinity/icons/obj/machines/shielding.dmi'
+	icon = 'icons/obj/machines/shielding.dmi'
 	icon_state = "shield_normal"
 
 	atmos_canpass = CANPASS_PROC //That's it. //FUCK YOU ZAS
@@ -200,7 +209,7 @@
 
 	w_class = ITEM_SIZE_HUGE
 
-	var/deploy_time = 2 SECONDS
+	var/deploy_time = 7 SECONDS
 
 /obj/item/sealgen_case/attack_self(var/mob/user)
 	. = ..()
@@ -218,6 +227,9 @@
 	if(istype(user) && Adjacent(user))
 		if(locked)
 			to_chat(user,SPAN_WARNING("You can't fold [src], it's locked!"))
+			return
+		if(anchored)
+			to_chat(user,SPAN_WARNING("You can't fold [src], it's sticks to \the floor!"))
 			return
 		if(over_object == user)
 			to_chat(user,SPAN_NOTICE("You start folding \the [src]."))
