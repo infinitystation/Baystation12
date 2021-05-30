@@ -1,10 +1,20 @@
 /obj/item/clothing/accessory/armguards/tactical
 	desc = "A pair of black arm pads reinforced with additional ablative coating. Attaches to a plate carrier."
 	armor = list(melee = 50, bullet = 50, laser = 60, energy = 35, bomb = 30, bio = 0, rad = 0)
+	icon_state = "armguards_tac"
+	icon_override = INF_SPRITE_ONMOB_CLOTHING_ACCESSORIES
+	icon = INF_SPRITE_OBJ_CLOTHING_ACCESSORIES
+	accessory_icons = list(slot_tie_str = INF_SPRITE_ONMOB_CLOTHING_ACCESSORIES,
+						   slot_wear_suit_str = INF_SPRITE_ONMOB_CLOTHING_ACCESSORIES)
 
 /obj/item/clothing/accessory/legguards/tactical
 	desc = "A pair of armored leg pads reinforced with additional ablative coating. Attaches to a plate carrier."
 	armor = list(melee = 50, bullet = 50, laser = 60, energy = 35, bomb = 30, bio = 0, rad = 0)
+	icon_state = "legguards_tac"
+	icon_override = INF_SPRITE_ONMOB_CLOTHING_ACCESSORIES
+	icon = INF_SPRITE_OBJ_CLOTHING_ACCESSORIES
+	accessory_icons = list(slot_tie_str = INF_SPRITE_ONMOB_CLOTHING_ACCESSORIES,
+						   slot_wear_suit_str = INF_SPRITE_ONMOB_CLOTHING_ACCESSORIES)
 
 /obj/item/clothing/accessory/armor/helmcover/scp_cover
 	name = "SCP cover"
@@ -65,3 +75,17 @@
 		bomb = ARMOR_BOMB_PADDED
 		)
 	slowdown = 0.75
+
+/obj/item/clothing/accessory/armguards/merc
+	icon_state = "armguards_merc"
+	icon_override = INF_SPRITE_ONMOB_CLOTHING_ACCESSORIES
+	icon = INF_SPRITE_OBJ_CLOTHING_ACCESSORIES
+	accessory_icons = list(slot_tie_str = INF_SPRITE_ONMOB_CLOTHING_ACCESSORIES,
+						   slot_wear_suit_str = INF_SPRITE_ONMOB_CLOTHING_ACCESSORIES)
+
+/obj/item/clothing/accessory/legguards/merc
+	icon_state = "legguards_merc"
+	icon_override = INF_SPRITE_ONMOB_CLOTHING_ACCESSORIES
+	icon = INF_SPRITE_OBJ_CLOTHING_ACCESSORIES
+	accessory_icons = list(slot_tie_str = INF_SPRITE_ONMOB_CLOTHING_ACCESSORIES,
+						   slot_wear_suit_str = INF_SPRITE_ONMOB_CLOTHING_ACCESSORIES)
