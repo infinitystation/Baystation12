@@ -2765,11 +2765,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/seconddeck/aftstarboard)
 "afv" = (
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 8
 	},
@@ -2781,6 +2776,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/engine_monitoring)
 "afw" = (
@@ -3225,15 +3225,6 @@
 /area/hallway/primary/seconddeck/aft)
 "agl" = (
 /obj/structure/table/steel_reinforced,
-/obj/structure/cable/cyan{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/machinery/power/apc/super/critical{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 24
-	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
@@ -3251,6 +3242,17 @@
 	},
 /obj/item/reagent_containers/chem_disp_cartridge/coffee,
 /obj/item/reagent_containers/food/drinks/glass2/coffeecup,
+/obj/machinery/embedded_controller/radio/airlock/advanced_airlock_controller{
+	id_tag = "engine_airlock";
+	name = "Engine Room Airlock Controlls";
+	pixel_x = 8;
+	pixel_y = 24;
+	req_access = list("ACCESS_ENGINE_EQUIP")
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -7;
+	pixel_y = 30
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/engine_monitoring)
 "agm" = (
@@ -4016,6 +4018,15 @@
 	},
 /obj/effect/floor_decal/corner/yellow/bordercorner2{
 	dir = 1
+	},
+/obj/machinery/power/apc/super/critical{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 24
+	},
+/obj/structure/cable/cyan{
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/engine_monitoring)
@@ -14018,10 +14029,6 @@
 /area/bridge/nano)
 "ayY" = (
 /obj/structure/table/steel_reinforced,
-/obj/structure/extinguisher_cabinet{
-	dir = 4;
-	pixel_y = 7
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 5
 	},
@@ -36946,19 +36953,6 @@
 	},
 /turf/simulated/floor/carpet/purple,
 /area/crew_quarters/cafe)
-"mCs" = (
-/obj/structure/bed/chair/padded/yellow{
-	dir = 4
-	},
-/obj/machinery/embedded_controller/radio/airlock/advanced_airlock_controller{
-	id_tag = "engine_airlock";
-	name = "Engine Room Airlock Controlls";
-	pixel_x = 16;
-	pixel_y = 32;
-	req_access = list("ACCESS_ENGINE_EQUIP")
-	},
-/turf/simulated/floor/tiled/steel_grid,
-/area/engineering/engine_monitoring)
 "mCE" = (
 /obj/random/date_based/christmas/xmaslights{
 	dir = 4
@@ -66070,7 +66064,7 @@ amD
 aUd
 aUd
 agl
-mCs
+axt
 azM
 axt
 aiU
