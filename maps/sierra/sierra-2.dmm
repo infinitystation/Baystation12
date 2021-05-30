@@ -193,6 +193,7 @@
 	pixel_x = -24;
 	req_access = list("ACCESS_ENGINEERING")
 	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/engineering/engine_smes)
 "aau" = (
@@ -414,6 +415,9 @@
 	name = "Emergency Exit"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_smes)
 "aaN" = (
@@ -835,17 +839,15 @@
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head_big)
 "abB" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/effect/floor_decal/techfloor{
-	dir = 5
-	},
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_techfloor_grid,
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/hardstorage)
 "abC" = (
@@ -1154,21 +1156,17 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/alarm{
-	dir = 4;
-	pixel_x = -24
-	},
-/obj/machinery/light/small{
-	dir = 8
-	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
+/obj/effect/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_techfloor_grid{
+	dir = 8
+	},
 /obj/structure/sign/warning/high_voltage{
 	pixel_y = 32
-	},
-/obj/effect/floor_decal/techfloor{
-	dir = 9
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/engine_monitoring)
@@ -2071,6 +2069,9 @@
 	icon_state = "2-8"
 	},
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
+	dir = 6
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/substation/seconddeck)
 "aen" = (
@@ -2093,6 +2094,7 @@
 	},
 /obj/structure/catwalk,
 /obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /turf/simulated/floor/plating,
 /area/maintenance/substation/seconddeck)
 "aeo" = (
@@ -2693,6 +2695,9 @@
 	dir = 4
 	},
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/engineering/engine_smes)
 "afp" = (
@@ -2776,7 +2781,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/engine_monitoring)
 "afw" = (
@@ -3126,17 +3130,14 @@
 /turf/simulated/floor/tiled/monotile,
 /area/holocontrol)
 "agg" = (
-/obj/machinery/door/airlock/engineering{
-	dir = 4;
-	name = "Engine Access";
-	req_access = newlist()
-	},
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/techfloor,
-/obj/effect/floor_decal/techfloor{
-	dir = 1
-	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/door/airlock/multi_tile/engineering{
+	dir = 8;
+	name = "Engineering Hard Storage";
+	req_access = newlist()
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_monitoring)
 "agh" = (
@@ -3150,9 +3151,6 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
-	},
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 4
 	},
@@ -3163,8 +3161,17 @@
 	dir = 1
 	},
 /obj/structure/disposalpipe/segment,
+/obj/machinery/airlock_sensor/airlock_exterior{
+	id_tag = "engine_airlock_exterior_sensor";
+	master_tag = "engine_airlock";
+	pixel_x = 24;
+	pixel_y = -24
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
-	dir = 6
+	dir = 5
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/engine_monitoring)
@@ -3230,20 +3237,20 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
-/obj/item/book/manual/supermatter_engine,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 1
 	},
-/obj/item/device/geiger,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/yellow/bordercorner2{
 	dir = 4
 	},
+/obj/item/reagent_containers/chem_disp_cartridge/coffee,
+/obj/item/reagent_containers/food/drinks/glass2/coffeecup,
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/engine_monitoring)
 "agm" = (
@@ -3627,10 +3634,9 @@
 /area/engineering/engine_room)
 "agN" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/effect/catwalk_plated,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/engineering/engine_monitoring)
 "agP" = (
@@ -4482,6 +4488,9 @@
 	dir = 2;
 	icon_state = "pipe-c"
 	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/engineering/engine_smes)
 "ais" = (
@@ -4714,6 +4723,9 @@
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/engineering/engine_smes)
 "aiN" = (
@@ -4745,6 +4757,9 @@
 	icon_state = "0-4"
 	},
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/engineering/engine_smes)
 "aiP" = (
@@ -4765,7 +4780,6 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/engineering/engine_smes)
 "aiR" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
@@ -4773,9 +4787,7 @@
 	dir = 8;
 	icon_state = "pipe-c"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
-	dir = 9
-	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/engine_monitoring)
 "aiS" = (
@@ -4806,7 +4818,8 @@
 /obj/machinery/light,
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/yellow/border,
-/obj/item/folder/yellow,
+/obj/item/book/manual/supermatter_engine,
+/obj/item/device/geiger,
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/engine_monitoring)
 "aiV" = (
@@ -5571,13 +5584,15 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
+/obj/effect/floor_decal/techfloor,
 /obj/effect/floor_decal/corner_techfloor_grid{
 	dir = 1
 	},
-/obj/effect/floor_decal/techfloor/corner{
-	dir = 1
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -20
 	},
-/obj/effect/floor_decal/techfloor,
+/obj/machinery/light/small,
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/engine_monitoring)
 "akA" = (
@@ -6451,6 +6466,10 @@
 	},
 /obj/structure/catwalk,
 /obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /turf/simulated/floor/plating,
 /area/engineering/engine_smes)
 "amf" = (
@@ -6465,6 +6484,9 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/light/small{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/hardstorage)
@@ -6642,6 +6664,9 @@
 	icon_state = "1-8"
 	},
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/universal{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/engineering/engine_smes)
 "amA" = (
@@ -6652,6 +6677,10 @@
 	},
 /obj/machinery/light/small,
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/binary/pump/on{
+	dir = 4;
+	target_pressure = 200
+	},
 /turf/simulated/floor/plating,
 /area/engineering/engine_smes)
 "amB" = (
@@ -6668,6 +6697,9 @@
 	pixel_y = -24
 	},
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
+	dir = 9
+	},
 /turf/simulated/floor/plating,
 /area/engineering/engine_smes)
 "amC" = (
@@ -6703,18 +6735,12 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor,
-/obj/effect/floor_decal/techfloor,
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
+/obj/effect/floor_decal/techfloor,
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/embedded_controller/radio/airlock/advanced_airlock_controller{
-	id_tag = "engine_airlock";
-	name = "Engine Room Airlock";
-	pixel_y = 21;
-	req_access = list("ACCESS_ENGINE_EQUIP")
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
+/obj/machinery/atmospherics/pipe/simple/hidden/universal{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -7086,14 +7112,28 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/effect/floor_decal/techfloor,
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
+/obj/effect/floor_decal/corner_techfloor_grid{
+	dir = 8
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/structure/noticeboard{
+	pixel_y = 32
+	},
+/obj/machinery/access_button/airlock_exterior{
+	master_tag = "engine_airlock";
+	name = "Cycle to Engineering";
+	pixel_x = -24;
+	pixel_y = 24
+	},
+/turf/simulated/floor/tiled/techfloor,
 /area/engineering/engine_room)
 "ano" = (
 /obj/machinery/hologram/holopad,
@@ -7751,16 +7791,11 @@
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/heads/captain/office_anteroom)
 "aoC" = (
-/obj/machinery/embedded_controller/radio/airlock/advanced_airlock_controller{
-	id_tag = "engine_airlock";
-	name = "Engine Room Airlock";
-	pixel_y = 21;
-	req_access = list("ACCESS_ENGINE_EQUIP")
-	},
 /obj/machinery/airlock_sensor{
 	id_tag = "engine_airlock_sensor";
 	master_tag = "engine_airlock";
-	pixel_x = -24;
+	name = "Cycle Airlock";
+	pixel_x = 14;
 	pixel_y = 24
 	},
 /obj/structure/cable/cyan{
@@ -7768,14 +7803,20 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/effect/floor_decal/techfloor,
-/obj/effect/floor_decal/techfloor{
+/obj/effect/floor_decal/industrial/warning/cee{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
-	dir = 10
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/binary/double_pump{
+	dir = 4;
+	id_tag = "engine_airlock_pump"
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/machinery/dummy_airlock_controller{
+	id_tag = "engine_airlock";
+	name = "Airlock Remote Terminal";
+	pixel_y = 20
+	},
+/turf/simulated/floor/plating,
 /area/engineering/engine_room)
 "aoD" = (
 /obj/structure/cable/green{
@@ -7802,11 +7843,21 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/effect/floor_decal/techfloor,
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/effect/floor_decal/corner_techfloor_grid,
+/obj/effect/floor_decal/techfloor/corner,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 1
+	},
+/obj/machinery/access_button/airlock_interior{
+	master_tag = "engine_airlock";
+	name = "Cycle to Core";
+	pixel_x = 24;
+	pixel_y = 24
+	},
+/turf/simulated/floor/tiled/techfloor,
 /area/engineering/engine_room)
 "aoF" = (
 /obj/structure/cable/cyan{
@@ -7828,7 +7879,10 @@
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
+/obj/structure/sign/warning/radioactive{
+	dir = 8;
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/engine_monitoring)
 "aoG" = (
@@ -7848,17 +7902,12 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
 "aoH" = (
-/obj/machinery/embedded_controller/radio/airlock/advanced_airlock_controller{
-	dir = 4;
-	id_tag = "engine_airlock";
-	name = "Engine Room Airlock";
-	pixel_x = -20;
-	pixel_y = 24;
-	req_access = list("ACCESS_ENGINE_EQUIP")
-	},
 /obj/machinery/atmospherics/pipe/simple/visible/cyan,
 /obj/structure/cable/cyan{
 	d1 = 2;
@@ -7873,6 +7922,22 @@
 	},
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 1
+	},
+/obj/machinery/airlock_sensor/airlock_interior{
+	id_tag = "engine_airlock";
+	master_tag = "engine_airlock_interior_sensor";
+	pixel_x = -24;
+	pixel_y = -24
+	},
+/obj/machinery/dummy_airlock_controller{
+	dir = 4;
+	id_tag = "engine_airlock";
+	name = "Airlock Remote Terminal";
+	pixel_x = -24;
+	pixel_y = 26
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/engine_room)
@@ -8357,9 +8422,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/engine_monitoring)
 "apy" = (
@@ -8477,39 +8539,38 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/engine_monitoring)
 "apF" = (
-/obj/effect/wallframe_spawn/reinforced/no_grille,
+/obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/firedoor,
-/turf/simulated/floor/plating,
-/area/engineering/engine_room)
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/engine_monitoring)
 "apG" = (
 /obj/structure/hygiene/shower{
 	dir = 4;
 	pixel_x = 5
 	},
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -20
+/obj/effect/floor_decal/techfloor{
+	dir = 10
 	},
-/obj/structure/catwalk,
-/obj/effect/floor_decal/industrial/warning/cee{
-	dir = 8
+/obj/structure/hygiene/drain,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
-	dir = 1;
-	id_tag = "sd_port_pump"
+/obj/machinery/oxygen_pump{
+	dir = 8;
+	pixel_x = -27
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor,
 /area/engineering/engine_room)
 "apH" = (
 /obj/machinery/camera/network/engine{
 	c_tag = "Engine - Access";
 	dir = 1
 	},
+/obj/effect/floor_decal/industrial/warning/cee,
 /obj/structure/catwalk,
-/obj/effect/floor_decal/industrial/warning/half,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
-	dir = 1;
-	id_tag = "sd_port_pump"
+/obj/machinery/atmospherics/binary/double_pump{
+	dir = 4;
+	id_tag = "engine_airlock_pump"
 	},
 /turf/simulated/floor/plating,
 /area/engineering/engine_room)
@@ -8517,11 +8578,17 @@
 /obj/structure/closet/radiation,
 /obj/item/clothing/glasses/meson,
 /obj/item/clothing/glasses/meson,
-/obj/structure/catwalk,
-/obj/effect/floor_decal/industrial/warning/cee{
-	dir = 4
+/obj/effect/floor_decal/techfloor{
+	dir = 6
 	},
-/turf/simulated/floor/plating,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/obj/machinery/oxygen_pump{
+	dir = 4;
+	pixel_x = 27
+	},
+/turf/simulated/floor/tiled/techfloor,
 /area/engineering/engine_room)
 "apJ" = (
 /turf/simulated/floor/carpet/blue,
@@ -8818,6 +8885,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/engine_room)
 "aqm" = (
@@ -8939,9 +9007,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/wallframe_spawn/reinforced/no_grille,
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/plating,
+/turf/simulated/wall/prepainted,
 /area/engineering/engine_monitoring)
 "aqA" = (
 /obj/structure/cable/green{
@@ -9445,6 +9511,9 @@
 	icon_state = "1-8"
 	},
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
+	dir = 10
+	},
 /turf/simulated/floor/plating,
 /area/engineering/engine_smes)
 "ary" = (
@@ -9856,6 +9925,7 @@
 /obj/structure/cable,
 /obj/structure/catwalk,
 /obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /turf/simulated/floor/plating,
 /area/maintenance/substation/seconddeck)
 "ass" = (
@@ -10105,6 +10175,7 @@
 	dir = 8;
 	pixel_x = 24
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /turf/simulated/floor/plating,
 /area/maintenance/substation/seconddeck)
 "asN" = (
@@ -11867,9 +11938,6 @@
 	dir = 4
 	},
 /obj/effect/catwalk_plated,
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
-	dir = 6
-	},
 /turf/simulated/floor/plating,
 /area/engineering/hallway)
 "avw" = (
@@ -12083,9 +12151,6 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/danger{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -13244,7 +13309,6 @@
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
 	},
-/obj/structure/catwalk,
 /obj/structure/disposalpipe/segment{
 	dir = 1;
 	icon_state = "pipe-c"
@@ -13253,6 +13317,10 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
+	dir = 5
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/substation/seconddeck)
@@ -13286,8 +13354,8 @@
 /obj/effect/floor_decal/borderfloor/corner2,
 /obj/effect/floor_decal/corner/yellow/bordercorner2,
 /obj/random/date_based/christmas/xmaslights,
-/obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
+	dir = 6
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/hallway)
@@ -13951,7 +14019,7 @@
 /obj/structure/table/steel_reinforced,
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
-	pixel_y = 29
+	pixel_y = 7
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 5
@@ -13959,8 +14027,6 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 5
 	},
-/obj/item/reagent_containers/chem_disp_cartridge/coffee,
-/obj/item/reagent_containers/food/drinks/glass2/coffeecup,
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/engine_monitoring)
 "ayZ" = (
@@ -14064,7 +14130,6 @@
 	dir = 1
 	},
 /obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_monitoring)
 "azg" = (
@@ -15098,6 +15163,7 @@
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/engine_room)
 "aAL" = (
@@ -16850,9 +16916,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
 /obj/machinery/computer/air_control/supermatter_core{
 	dir = 8;
 	input_tag = "cooling_in";
@@ -16866,6 +16929,9 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -17264,15 +17330,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 5
 	},
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/engine_room)
 "aEz" = (
@@ -18235,9 +18299,12 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/catwalk,
 /obj/machinery/light/small{
 	dir = 4
+	},
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
+	dir = 10
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/substation/seconddeck)
@@ -18499,6 +18566,7 @@
 	pixel_x = -24
 	},
 /obj/structure/cable/cyan,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/engine_room)
 "aGN" = (
@@ -19452,6 +19520,7 @@
 	},
 /obj/item/paper_bin,
 /obj/item/pen,
+/obj/item/folder/yellow,
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/engine_monitoring)
 "aIC" = (
@@ -19854,6 +19923,10 @@
 /area/space)
 "aJl" = (
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
+	dir = 1
+	},
+/obj/machinery/meter,
 /turf/simulated/floor/plating,
 /area/maintenance/substation/seconddeck)
 "aJm" = (
@@ -25352,6 +25425,8 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_smes)
 "aTB" = (
@@ -27829,9 +27904,16 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/catwalk,
-/obj/structure/table/steel_reinforced,
-/turf/simulated/floor/plating,
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/obj/machinery/portable_atmospherics/canister/air/airlock,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/window/northleft,
+/turf/simulated/floor/tiled/techfloor,
 /area/maintenance/substation/seconddeck)
 "aXM" = (
 /obj/structure/catwalk,
@@ -28071,9 +28153,13 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/structure/catwalk,
-/obj/structure/table/steel_reinforced,
-/turf/simulated/floor/plating,
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/obj/machinery/portable_atmospherics/canister/air/airlock,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/door/window/northright,
+/turf/simulated/floor/tiled/techfloor,
 /area/maintenance/substation/seconddeck)
 "aYu" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -28378,9 +28464,6 @@
 	},
 /obj/random/date_based/christmas/doorwreath{
 	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/engineering/engine_monitoring)
@@ -31365,16 +31448,13 @@
 /area/crew_quarters/sauna)
 "beM" = (
 /obj/effect/floor_decal/techfloor,
-/obj/effect/floor_decal/corner_techfloor_grid{
-	dir = 4
-	},
-/obj/effect/floor_decal/techfloor/corner{
-	dir = 4
-	},
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
+	},
+/obj/effect/floor_decal/corner_techfloor_grid{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/hardstorage)
@@ -35021,6 +35101,11 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/bar)
+"fKy" = (
+/obj/effect/wallframe_spawn/reinforced/no_grille,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/plating,
+/area/engineering/engine_room)
 "fKz" = (
 /obj/structure/bed/sofa/brown/left,
 /turf/simulated/floor/carpet/purple,
@@ -36859,6 +36944,19 @@
 	},
 /turf/simulated/floor/carpet/purple,
 /area/crew_quarters/cafe)
+"mCs" = (
+/obj/structure/bed/chair/padded/yellow{
+	dir = 4
+	},
+/obj/machinery/embedded_controller/radio/airlock/advanced_airlock_controller{
+	id_tag = "engine_airlock";
+	name = "Engine Room Airlock Controlls";
+	pixel_x = 16;
+	pixel_y = 32;
+	req_access = list("ACCESS_ENGINE_EQUIP")
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/engineering/engine_monitoring)
 "mCE" = (
 /obj/random/date_based/christmas/xmaslights{
 	dir = 4
@@ -65360,7 +65458,7 @@ aZf
 aaM
 aZf
 aeg
-bgX
+apF
 agg
 bgX
 bgX
@@ -65967,10 +66065,10 @@ aiM
 amz
 aZf
 amD
-apF
+aUd
 aUd
 agl
-axt
+mCs
 azM
 axt
 aiU
@@ -66170,7 +66268,7 @@ amA
 aZf
 ann
 apG
-aUd
+fKy
 ayY
 aQF
 aDK
