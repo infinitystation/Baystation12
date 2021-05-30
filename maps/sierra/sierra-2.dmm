@@ -13433,6 +13433,11 @@
 	id_tag = "eng_res_storage";
 	name = "Materials Storage"
 	},
+/obj/machinery/door/blast/regular/open{
+	dir = 2;
+	id_tag = "eng_lockdown";
+	name = "Engineering Lockdown"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/materials_storage)
 "ayk" = (
@@ -13488,6 +13493,11 @@
 	dir = 2;
 	id_tag = "eng_res_storage";
 	name = "Materials Storage"
+	},
+/obj/machinery/door/blast/regular/open{
+	dir = 2;
+	id_tag = "eng_lockdown";
+	name = "Engineering Lockdown"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/materials_storage)
@@ -18216,11 +18226,6 @@
 /obj/machinery/door/airlock/engineering/striped{
 	dir = 4;
 	name = "Materials Storage"
-	},
-/obj/machinery/door/blast/regular/open{
-	dir = 4;
-	id_tag = "eng_lockdown";
-	name = "Engineering Lockdown"
 	},
 /obj/effect/floor_decal/techfloor,
 /obj/effect/floor_decal/techfloor{
@@ -23737,6 +23742,11 @@
 	dir = 4;
 	name = "Materials Storage"
 	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	id_tag = "eng_lockdown";
+	name = "Engineering Lockdown"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/materials_storage)
 "aQp" = (
@@ -25133,6 +25143,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 8
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 5
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/locker_room)
 "aTc" = (
@@ -35453,6 +35469,11 @@
 /obj/machinery/door/airlock/engineering/striped{
 	name = "Materials Storage"
 	},
+/obj/machinery/door/blast/regular/open{
+	dir = 2;
+	id_tag = "eng_lockdown";
+	name = "Engineering Lockdown"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/materials_storage)
 "hdV" = (
@@ -36605,6 +36626,18 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
+"lll" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 6
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/engineering/locker_room)
 "llw" = (
 /obj/structure/flora/seaweed/mid,
 /obj/effect/fluid_mapped,
@@ -62232,7 +62265,7 @@ awT
 aMa
 axp
 aBA
-vkN
+lll
 aLZ
 aMa
 ajB
