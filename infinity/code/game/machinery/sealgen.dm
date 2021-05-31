@@ -60,7 +60,12 @@
 //Machine-specific procs
 
 /obj/machinery/sealgen/proc/activate()
-	if((stat & NOPOWER) || !anchored) return
+	if(stat & NOPOWER)
+		visible_message("\The [src] flicks the lights and goes dark.")
+		return
+	if(!anchored)
+		visible_message("\The [src] awakes and shakes uncontrolable, then goes silent. Maybe anchoring bolts need more attention?")
+		return
 	current_field = new(get_step(src,dir))
 	current_field.dir = dir
 	current_field.generator = src
@@ -81,7 +86,7 @@
 
 /obj/machinery/sealgen/attack_hand(var/mob/user)
 
-	if(locked)
+	if(locked && !allowed(user))
 		to_chat(user, SPAN_WARNING("It's locked! You can't [current_field ? "shut it down" : "turn it on"]."))
 		return
 
@@ -117,6 +122,9 @@
 		return
 
 	if(isWrench(W))
+		if(!anchored && (!isturf(src.loc) || is_space_turf(src.loc)))
+			to_chat(user, SPAN_WARNING("\The [src] can't be anchored here."))
+			return
 		anchored = !anchored
 		to_chat(user, "You [anchored ? "wrench \the [src] to" : "unwrench \the [src] from"] \the [get_turf(src)]")
 		if(!anchored)
@@ -202,7 +210,7 @@
 
 /obj/item/sealgen_case
 	name = "sealing field generator case"
-	desc = "A briefcase that contains a highly sophisticated generator, capable of projecting fields that will block any gas movement, still allowing to walk nearby."
+	desc = "A briefcase that contains a highly sophisticated generator, capable of projecting fields that will block any gas movement, still allowing to walk nearby. It has NT brand logo, so have your authentications ready."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "secure"
 	item_state = "briefcase"
@@ -229,7 +237,7 @@
 			to_chat(user,SPAN_WARNING("You can't fold [src], it's locked!"))
 			return
 		if(anchored)
-			to_chat(user,SPAN_WARNING("You can't fold [src], it's sticks to \the floor!"))
+			to_chat(user,SPAN_WARNING("You can't fold [src], it's anchor bolts doesn't fit."))
 			return
 		if(over_object == user)
 			to_chat(user,SPAN_NOTICE("You start folding \the [src]."))

@@ -36,6 +36,10 @@
 	add_field(/datum/report_field/simple_text, "Готовность к полету")
 	add_field(/datum/report_field/pencode_text, "Необходимый ремонт")
 	add_field(/datum/report_field/time, "Планируемое время окончания ремонта")
+	shuttle = add_field(/datum/report_field/simple_text, "Шаттл", required = 1)
+	shuttle.can_edit = 0
+	mission = add_field(/datum/report_field/simple_text, "Миссия", required = 1)
+	mission.can_edit = 0
 
 /datum/computer_file/report/recipient/shuttle/fuel
 	form_name = "DC12"
@@ -48,6 +52,10 @@
 	add_field(/datum/report_field/simple_text, "Текущий уровень топлива")
 	add_field(/datum/report_field/time, "Время дозаправки")
 	add_field(/datum/report_field/pencode_text, "Дополнительные заметки")
+	shuttle = add_field(/datum/report_field/simple_text, "Шаттл", required = 1)
+	shuttle.can_edit = 0
+	mission = add_field(/datum/report_field/simple_text, "Миссия", required = 1)
+	mission.can_edit = 0
 
 /datum/computer_file/report/recipient/shuttle/atmos
 	form_name = "DC245"
@@ -60,6 +68,10 @@
 	add_field(/datum/report_field/pencode_text, "Состояние атмосферных запасов")
 	add_field(/datum/report_field/time, "Планируемое время окончания запасов")
 	add_field(/datum/report_field/simple_text, "Необходимые запасы")
+	shuttle = add_field(/datum/report_field/simple_text, "Шаттл", required = 1)
+	shuttle.can_edit = 0
+	mission = add_field(/datum/report_field/simple_text, "Миссия", required = 1)
+	mission.can_edit = 0
 
 /datum/computer_file/report/recipient/shuttle/gear
 	form_name = "DC248b"
@@ -74,6 +86,10 @@
 	add_field(/datum/report_field/time, "Время пополнения запасов")
 	add_field(/datum/report_field/simple_text, "Готовность к полёту")
 	add_field(/datum/report_field/pencode_text, "Дополнительные заметки")
+	shuttle = add_field(/datum/report_field/simple_text, "Шаттл", required = 1)
+	shuttle.can_edit = 0
+	mission = add_field(/datum/report_field/simple_text, "Миссия", required = 1)
+	mission.can_edit = 0
 
 /datum/computer_file/report/recipient/shuttle/post_flight
 	form_name = "DC102"
@@ -90,3 +106,7 @@
 	add_field(/datum/report_field/pencode_text, "Возвращённые объекты или материалы")
 	add_field(/datum/report_field/pencode_text, "Рекомендуемые последующие мероприятия")
 	add_field(/datum/report_field/pencode_text, "Дополнительные заметки")
+	shuttle = add_field(/datum/report_field/simple_text, "Шаттл", required = 1)
+	shuttle.can_edit = 0
+	mission = add_field(/datum/report_field/simple_text, "Миссия", required = 1)
+	mission.can_edit = 0

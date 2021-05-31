@@ -3602,6 +3602,8 @@
 #include "infinity\code\modules\modular_computers\file_system\configuration_data.dm"
 #include "infinity\code\modules\modular_computers\file_system\programs\civilian\crusher_control.dm"
 #include "infinity\code\modules\modular_computers\file_system\programs\generic\codeprocessor.dm"
+#include "infinity\code\modules\modular_computers\file_system\reports\deck_reports.dm"
+#include "infinity\code\modules\modular_computers\file_system\reports\report_field.dm"
 #include "infinity\code\modules\modular_computers\hardware\network_card.dm"
 #include "infinity\code\modules\modular_computers\NTNet\NTNet.dm"
 #include "infinity\code\modules\modular_computers\terminal\terminal.dm"
