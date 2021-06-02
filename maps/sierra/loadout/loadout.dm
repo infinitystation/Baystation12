@@ -149,8 +149,22 @@
 	. = ..()
 	var/list/costume_bags_list = list(
 		"Witch" = /obj/item/clothingbag/costume/witch,
-		"Chaplain" = /obj/item/clothingbag/costume/chaplain,
-	)
+		"Chaplain" = /obj/item/clothingbag/costume/chaplain)
+	gear_tweaks += new /datum/gear_tweak/path(costume_bags_list)
+
+/datum/gear/premium_costume_bags
+	display_name = "costume bags - premium"
+	description = "time for some premium fashion"
+	path = /obj/item/clothingbag/costume
+	required_donate_level = 4
+	cost = 0
+	price = 10
+
+/datum/gear/premium_costume_bags/New()
+	. = ..()
+	var/list/costume_bags_list = list(
+		"White anime" = /obj/item/clothingbag/costume/anime_white,
+		"Blue anime" = /obj/item/clothingbag/costume/anime_blue)
 	gear_tweaks += new /datum/gear_tweak/path(costume_bags_list)
 
 /datum/gear/costume_clown

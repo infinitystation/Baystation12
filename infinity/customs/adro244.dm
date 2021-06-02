@@ -86,7 +86,7 @@
 
 
 // Edgy Furry suit
-/obj/item/clothing/suit/space/void/medical/adro
+/obj/item/clothing/suit/space/void/medical/alt/adro
 	name = "Trauma-Team Armour Carapace"
 	desc = "TBlack and red suit with Central Venus Trauma-Team logo on it, modified for Tajara."
 	icon = CUSTOM_ITEM_OBJ
@@ -110,16 +110,14 @@
 	max_pressure_protection = VOIDSUIT_MAX_PRESSURE
 	species_restricted = list(SPECIES_TAJARA)
 	trade_blacklisted = TRUE
+	slowdown_general = 0
 
-
-/obj/item/clothing/suit/space/void/medical/adro/Initialize()
+/obj/item/clothing/suit/space/void/medical/alt/adro/Initialize()
 	. = ..()
-
 	allowed += /obj/item/clothing/head/helmet/space/void/medical/adro
 	verbs -= /obj/item/clothing/suit/space/void/verb/toggle_helmet
 
-
-/obj/item/clothing/suit/space/void/medical/adro/attackby(obj/item/W as obj, mob/user as mob)
+/obj/item/clothing/suit/space/void/medical/alt/adro/attackby(obj/item/W as obj, mob/user as mob)
 	if ( !istype(user, /mob/living) )
 		return
 
@@ -132,7 +130,6 @@
 		return
 
 	..()
-
 
 /obj/item/clothing/head/helmet/space/void/medical/adro
 	name = "Trauma-Team Helmet"
@@ -159,7 +156,6 @@
 
 	var/edgy_mode = FALSE
 
-
 /obj/item/clothing/head/helmet/space/void/medical/adro/attack_self(mob/user)
 	if (edgy_mode)
 		edgy_mode = FALSE
@@ -176,7 +172,6 @@
 	update_icon()
 	update_clothing_icon()
 	user.update_action_buttons()
-
 
 /obj/item/clothing/gloves/latex/adro
 	name = "Cyber gloves"
@@ -200,7 +195,6 @@
 	max_pressure_protection = VOIDSUIT_MAX_PRESSURE
 	species_restricted = list(SPECIES_TAJARA)
 	trade_blacklisted = TRUE
-
 
 /obj/item/clothing/shoes/magboots/adro
 	name = "Cyber boots"
@@ -227,16 +221,14 @@
 	species_restricted = list(SPECIES_TAJARA)
 	trade_blacklisted = TRUE
 
-
 /obj/item/clothingbag/adro_edgy
 	name = "clothing bag"
 	desc = "This is clothing bag"
-
 
 /obj/item/clothingbag/adro_edgy/Initialize()
 	. = ..()
 
 	new /obj/item/clothing/head/helmet/space/void/medical/adro(src)
-	new /obj/item/clothing/suit/space/void/medical/adro(src)
+	new /obj/item/clothing/suit/space/void/medical/alt/adro(src)
 	new /obj/item/clothing/gloves/latex/adro(src)
 	new /obj/item/clothing/shoes/magboots/adro(src)
