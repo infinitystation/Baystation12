@@ -1,0 +1,5 @@
+author: SidVeld
+delete-after: true
+changes:
+  - rscadd: Добавлено два новых костюма для Patreon-лодаута.
+  - rscdel: Восхождение отключено.
