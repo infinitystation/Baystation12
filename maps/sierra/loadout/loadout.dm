@@ -150,7 +150,8 @@
 	var/list/costume_bags_list = list(
 		"Witch" = /obj/item/clothingbag/costume/witch,
 		"Chaplain" = /obj/item/clothingbag/costume/chaplain,
-	)
+		"White anime" = /obj/item/clothingbag/costume/anime_white,
+		"Blue anime" = /obj/item/clothingbag/costume/anime_blue)
 	gear_tweaks += new /datum/gear_tweak/path(costume_bags_list)
 
 /datum/gear/costume_clown

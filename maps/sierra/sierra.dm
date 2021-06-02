@@ -138,7 +138,6 @@
 //	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
 //  #include "../away_inf/tajsc/tajsciship.dm"
 
-	#include "../away/ascent_caulship/_ascent_caulship.dm"
 	#include "../away/casino/casino.dm"
 	#include "../away/derelict/derelict.dm"
 	#include "../away/errant_pisces/errant_pisces.dm"
@@ -151,6 +150,7 @@
 	#include "../away/slavers/slavers_base.dm"
 	#include "../away/verne/verne.dm"
 	#include "../away/voxship/voxship.dm"
+	// #include "../away/ascent_caulship/_ascent_caulship.dm"
 
 	#include "../random_ruins/exoplanet_ruins/playablecolony_inf/playablecolony.dm"
 
