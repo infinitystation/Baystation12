@@ -248,6 +248,8 @@
 /obj/item/reagent_containers/food/drinks/bottle/cognac,
 /obj/item/staff/anime_gun,
 /obj/item/staff/anime_crossbow,
+/obj/item/clothingbag/costume/anime_blue,
+/obj/item/clothingbag/costume/anime_white,
 /turf/unsimulated/floor{
 	icon_state = "lino"
 	},
