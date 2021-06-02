@@ -67,6 +67,7 @@
 	new /obj/item/weapon_case/custom/mixa(src)
 	new /obj/item/clothing/accessory/storage/holster/hip(src)
 
+// MDSF
 /obj/item/clothing/under/mixa
 	name = "MDSF Uniform"
 	desc = "Martian Special Defence Forces uniform, reshaped into PCRC design."
@@ -97,8 +98,7 @@
 	icon = CUSTOM_ITEM_OBJ
 	icon_override = CUSTOM_ITEM_MOB
 	icon_state = "novak_legguards"
-
-
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/accessory/armguards/mixa
 	accessory_icons = list(
@@ -107,16 +107,19 @@
 	icon = CUSTOM_ITEM_OBJ
 	icon_override = CUSTOM_ITEM_MOB
 	icon_state = "novak_armguards"
+	trade_blacklisted = TRUE
 
 /obj/item/custkit/legguard_mixa
 	name = "MDSF legguard custom kit"
 	input = /obj/item/clothing/accessory/legguards
 	output = /obj/item/clothing/accessory/legguards/mixa
+	trade_blacklisted = TRUE
 
 /obj/item/custkit/armguard_mixa
 	name = "MDSF armguard custom kit"
 	input = /obj/item/clothing/accessory/armguards
 	output = /obj/item/clothing/accessory/armguards/mixa
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/head/helmet/nt/mixa
 	name = "MDSF helmet"
@@ -137,6 +140,7 @@
 	name = "MDSF helmet custom kit"
 	input = /obj/item/clothing/head/helmet/nt
 	output = /obj/item/clothing/head/helmet/nt/mixa
+	trade_blacklisted = TRUE
 
 /obj/item/clothingbag/mdsf_mixa
 	name = "MDSF clothing bag"

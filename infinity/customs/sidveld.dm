@@ -13,6 +13,7 @@
 	vision_flags = null
 	see_invisible = -1
 	overlay = null
+	trade_blacklisted = TRUE
 
 	var/mode = 1
 	var/toggle_sound = 'infinity/sound/items/multitool_pulse.ogg'
@@ -128,7 +129,6 @@
 	update_icon()
 	update_clothing_icon()
 	update_vision()
-
 
 
 /obj/item/clothing/glasses/sidveld/attack_self(mob/user)
