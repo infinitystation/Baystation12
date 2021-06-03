@@ -13,8 +13,8 @@
 /obj/item/clothing/suit/armor/pcarrier/tactical
 	name = "tactical plate carrier"
 	desc = "A heavy plate carrier. It can be equipped with armor plates, but provides no protection of its own."
-	icon = INF_SPRITE_OBJ_CLOTHING_SUIT
-	item_icons = list(slot_wear_suit_str = INF_SPRITE_ONMOB_CLOTHING_SUIT)
+	icon = INF_CLOTHING_ICON_OBJ("suit")
+	item_icons = list(slot_wear_suit_str = INF_CLOTHING_ICON_MOB("suit"))
 	icon_state = "pcarrier_tac"
 	starting_accessories = list(
 		/obj/item/clothing/accessory/armorplate/tactical,
@@ -32,9 +32,9 @@
 	)
 
 /obj/item/clothing/suit/armor/pcarrier/merc
-	icon = INF_SPRITE_OBJ_CLOTHING_SUIT
+	icon = INF_CLOTHING_ICON_OBJ("suit")
 	icon_state = "pcarrier_merc"
-	item_icons = list(slot_wear_suit_str = INF_SPRITE_ONMOB_CLOTHING_SUIT)
+	item_icons = list(slot_wear_suit_str = INF_CLOTHING_ICON_MOB("suit"))
 	starting_accessories = list(
 		/obj/item/clothing/accessory/armorplate/merc,
 		/obj/item/clothing/accessory/armguards/merc,
