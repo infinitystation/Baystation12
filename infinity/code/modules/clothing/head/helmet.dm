@@ -1,8 +1,8 @@
 /obj/item/clothing/head/helmet/daft_punk //By KaReTa
 	name = "Daft Punk helm"
 	desc = "This fancy helm gives you the ability to see through clothes! Well, at least that's what rumors say.."
-	icon = 'infinity/icons/obj/clothing/obj_head.dmi'
-	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
+	icon = INF_CLOTHING_ICON_OBJ("head")
+	item_icons = list(slot_head_str = INF_CLOTHING_ICON_MOB("head"))
 	icon_state = "daft_helmet"
 
 /obj/item/clothing/head/helmet/pcrc/cover
@@ -51,14 +51,14 @@
 	name = "combat helmet"
 	desc = "A heavily reinforced helmet painted with red markings. Feels like it could take a lot of punishment."
 	icon_state = "helmet_merc"
-	icon = INF_SPRITE_OBJ_CLOTHING_HEAD
-	item_icons = list(slot_head_str = INF_SPRITE_ONMOB_CLOTHING_HEAD)
+	icon = INF_CLOTHING_ICON_OBJ("head")
+	item_icons = list(slot_head_str = INF_CLOTHING_ICON_MOB("head"))
 	body_parts_covered = HEAD | FACE  // bcs spites have masks
 
 /obj/item/clothing/head/helmet/tactical
 	name = "tactical helmet"
 	desc = "A tan helmet made from advanced ceramic. Comfortable and robust."
 	icon_state = "helmet_tac"
-	icon = INF_SPRITE_OBJ_CLOTHING_HEAD
-	item_icons = list(slot_head_str = INF_SPRITE_ONMOB_CLOTHING_HEAD)
+	icon = INF_CLOTHING_ICON_OBJ("head")
+	item_icons = list(slot_head_str = INF_CLOTHING_ICON_MOB("head"))
 	body_parts_covered = HEAD | FACE // bcs spites have masks
