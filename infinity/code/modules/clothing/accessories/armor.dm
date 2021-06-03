@@ -2,35 +2,35 @@
 	desc = "A pair of black arm pads reinforced with additional ablative coating. Attaches to a plate carrier."
 	armor = list(melee = 50, bullet = 50, laser = 60, energy = 35, bomb = 30, bio = 0, rad = 0)
 	icon_state = "armguards_tac"
-	icon_override = INF_SPRITE_ONMOB_CLOTHING_ACCESSORIES
-	icon = INF_SPRITE_OBJ_CLOTHING_ACCESSORIES
-	accessory_icons = list(slot_tie_str = INF_SPRITE_ONMOB_CLOTHING_ACCESSORIES,
-						   slot_wear_suit_str = INF_SPRITE_ONMOB_CLOTHING_ACCESSORIES)
+	icon_override = INF_CLOTHING_ICON_MOB("accessories")
+	icon = INF_CLOTHING_ICON_OBJ("accessories")
+	accessory_icons = list(slot_tie_str = INF_CLOTHING_ICON_MOB("accessories"),
+						   slot_wear_suit_str = INF_CLOTHING_ICON_MOB("accessories"))
 
 /obj/item/clothing/accessory/legguards/tactical
 	desc = "A pair of armored leg pads reinforced with additional ablative coating. Attaches to a plate carrier."
 	armor = list(melee = 50, bullet = 50, laser = 60, energy = 35, bomb = 30, bio = 0, rad = 0)
 	icon_state = "legguards_tac"
-	icon_override = INF_SPRITE_ONMOB_CLOTHING_ACCESSORIES
-	icon = INF_SPRITE_OBJ_CLOTHING_ACCESSORIES
-	accessory_icons = list(slot_tie_str = INF_SPRITE_ONMOB_CLOTHING_ACCESSORIES,
-						   slot_wear_suit_str = INF_SPRITE_ONMOB_CLOTHING_ACCESSORIES)
+	icon_override = INF_CLOTHING_ICON_MOB("accessories")
+	icon = INF_CLOTHING_ICON_OBJ("accessories")
+	accessory_icons = list(slot_tie_str = INF_CLOTHING_ICON_MOB("accessories"),
+						   slot_wear_suit_str = INF_CLOTHING_ICON_MOB("accessories"))
 
 /obj/item/clothing/accessory/armor/helmcover/scp_cover
 	name = "SCP cover"
 	desc = "A fabric cover for armored helmets. This one has SCP's colors."
-	icon_override = 'infinity/icons/mob/onmob/onmob_accessories.dmi'
-	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
+	icon_override = INF_CLOTHING_ICON_MOB("accessories")
+	icon = INF_CLOTHING_ICON_OBJ("accessories")
 	icon_state = "scp_cover"
-	accessory_icons = list(slot_tie_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', slot_head_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi')
+	accessory_icons = list(slot_tie_str = INF_CLOTHING_ICON_MOB("accessories"), slot_head_str = INF_CLOTHING_ICON_MOB("accessories"))
 
 /obj/item/clothing/accessory/armor/tag/scp
 	name = "SCP tag"
 	desc = "An armor tag with the words SECURITY CORPORATE PERSONAL printed in red lettering on it."
-	icon_override = 'infinity/icons/mob/onmob/onmob_accessories.dmi'
-	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
+	icon_override = INF_CLOTHING_ICON_MOB("accessories")
+	icon = INF_CLOTHING_ICON_OBJ("accessories")
 	icon_state = "scp_tag"
-	accessory_icons = list(slot_tie_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi')
+	accessory_icons = list(slot_tie_str = INF_CLOTHING_ICON_MOB("accessories"), slot_wear_suit_str = INF_CLOTHING_ICON_MOB("accessories"))
 
 /obj/item/clothing/accessory/armor/tag/zpci
 	name = "\improper ZPCI tag"
@@ -78,14 +78,14 @@
 
 /obj/item/clothing/accessory/armguards/merc
 	icon_state = "armguards_merc"
-	icon_override = INF_SPRITE_ONMOB_CLOTHING_ACCESSORIES
-	icon = INF_SPRITE_OBJ_CLOTHING_ACCESSORIES
-	accessory_icons = list(slot_tie_str = INF_SPRITE_ONMOB_CLOTHING_ACCESSORIES,
-						   slot_wear_suit_str = INF_SPRITE_ONMOB_CLOTHING_ACCESSORIES)
+	icon_override = INF_CLOTHING_ICON_MOB("accessories")
+	icon = INF_CLOTHING_ICON_OBJ("accessories")
+	accessory_icons = list(slot_tie_str = INF_CLOTHING_ICON_MOB("accessories"),
+						   slot_wear_suit_str = INF_CLOTHING_ICON_MOB("accessories"))
 
 /obj/item/clothing/accessory/legguards/merc
 	icon_state = "legguards_merc"
-	icon_override = INF_SPRITE_ONMOB_CLOTHING_ACCESSORIES
-	icon = INF_SPRITE_OBJ_CLOTHING_ACCESSORIES
-	accessory_icons = list(slot_tie_str = INF_SPRITE_ONMOB_CLOTHING_ACCESSORIES,
-						   slot_wear_suit_str = INF_SPRITE_ONMOB_CLOTHING_ACCESSORIES)
+	icon_override = INF_CLOTHING_ICON_MOB("accessories")
+	icon = INF_CLOTHING_ICON_OBJ("accessories")
+	accessory_icons = list(slot_tie_str = INF_CLOTHING_ICON_MOB("accessories"),
+						   slot_wear_suit_str = INF_CLOTHING_ICON_MOB("accessories"))
