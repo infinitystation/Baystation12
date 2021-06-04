@@ -1,1 +1,1 @@
-#define FABRICATOR_CLASS_COIN "coins"
+#define FABRICATOR_CLASS_COIN "Coins"
