@@ -1,6 +1,6 @@
 /datum/fabricator_recipe/coin
 	fabricator_types = list(FABRICATOR_CLASS_COIN)
-	category="coins"
+	category="Сoins"
 	path = /obj/item/material/coin/iron
 
 /datum/fabricator_recipe/coin/New()
