@@ -4,7 +4,7 @@
 
 /datum/computer_file/report/recipient/command/generate_fields()
 	..()
-	set_access(access_hop)
+	set_access(access_heads)
 
 /datum/computer_file/report/recipient/command/crew_transfer
 	form_name = "CTA-NTF-01"
@@ -77,13 +77,13 @@
 	for(var/datum/report_field/field in hop_fields)
 		field.set_access(access_edit = access_hop)
 
-/datum/computer_file/report/recipient/decree
+/datum/computer_file/report/recipient/command/decree
 	form_name = "DEC-NTF"
 	title = "Корпоративный Указ"
 	logo ="\[logo\]"
 	available_on_ntnet = 1
 
-/datum/computer_file/report/recipient/decree/generate_fields()
+/datum/computer_file/report/recipient/command/decree/generate_fields()
 	..()
 	add_field(/datum/report_field/text_label/header, "Корпоративный Указ")
 	add_field(/datum/report_field/number, "Номер указа")
@@ -94,7 +94,6 @@
 	add_field(/datum/report_field/time, "Время заполнения")
 	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи или печати.")
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
-	set_access(access_heads, access_heads)
 
 /datum/computer_file/report/recipient/request_corporate
 	form_name = "REQ-NTF"
