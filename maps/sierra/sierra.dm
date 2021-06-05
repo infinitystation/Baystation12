@@ -136,7 +136,6 @@
 	#include "../away_inf/yacht/yacht.dm"
 //	#include "../away_inf/ascent/ascent.dm"
 //	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
-//  #include "../away_inf/tajsc/tajsciship.dm"
 
 	#include "../away/casino/casino.dm"
 	#include "../away/derelict/derelict.dm"
