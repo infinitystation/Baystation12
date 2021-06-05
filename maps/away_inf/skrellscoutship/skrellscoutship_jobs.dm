@@ -23,26 +23,26 @@
  * ======
  */
 
-/var/const/access_skrellscoutship = "ACCESS_SKRELLSCOUT"
-/var/const/access_skrellscoutship_captain = "ACCESS_SKRELLSCOUT_CAPTAIN"
+/var/const/access_skrellscoutship_inf = "ACCESS_SKRELLSCOUT"
+/var/const/access_skrellscoutship_inf_captain = "ACCESS_SKRELLSCOUT_CAPTAIN"
 
 /datum/access/skrellscoutship
-	id = access_skrellscoutship
+	id = access_skrellscoutship_inf
 	desc = "SSV Crewman"
 	region = ACCESS_REGION_NONE
 
 /datum/access/skrellscoutship_captain
-	id = access_skrellscoutship_captain
+	id = access_skrellscoutship_inf_captain
 	desc = "SSV Captain"
 	region = ACCESS_REGION_NONE
 
 /obj/item/card/id/skrellscoutship
 	color = COLOR_GRAY40
 	detail_color = "#7331c4"
-	access = list(access_skrellscoutship)
+	access = list(access_skrellscoutship_inf)
 
 /obj/item/card/id/skrellscoutship/captain
-	access = list(access_skrellscoutship, access_skrellscoutship_captain)
+	access = list(access_skrellscoutship_inf, access_skrellscoutship_inf_captain)
 	extra_details = list("goldstripe")
 
 /*

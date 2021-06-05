@@ -18,7 +18,7 @@
 	#include "../away/casino/casino.dm"
 	#include "../away/magshield/magshield.dm"
 	#include "../away/slavers/slavers_base.dm"
-	#include "../away/blueriver/blueriver.dm"
+//	#include "../away/blueriver/blueriver.dm"	Conflicts with our INF version
 	#include "../away/mobius_rift/mobius_rift.dm"
 	#include "../away/errant_pisces/errant_pisces.dm"
 	#include "../away/lar_maria/lar_maria.dm"
