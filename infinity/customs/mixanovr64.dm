@@ -43,7 +43,7 @@
 // Pulse pistol "Venger"
 /obj/item/gun/energy/pulse_rifle/pistol/mixa
 	name = "Pulse pistol \"Venger\""
-	desc = "The Hel-Tec PS-03 pulse pistol, highly rare personal defence weapon."
+	desc = "The Hel-Tek PS-03 pulse pistol, highly rare personal defence weapon."
 	icon = CUSTOM_GUN_ICONS
 	item_icons = list(
 		slot_r_hand_str = CUSTOM_GUN_INHANDS_RIGHT,
