@@ -20,7 +20,7 @@
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
 	heads_fields += add_field(/datum/report_field/people/from_manifest, "Данный рапорт был рассмотрен и утвержден", required = 1)
 	heads_fields += add_field(/datum/report_field/signature, "Подпись", required = 1)
-	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подчиси и печати НТ или департамента.")
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи и печати НТ или департамента.")
 	for(var/datum/report_field/field in heads_fields)
 		field.set_access(access_edit = access_heads)
 
@@ -43,7 +43,7 @@
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
 	heads_fields += add_field(/datum/report_field/people/from_manifest, "Данный рапорт был рассмотрен и утвержден", required = 1)
 	heads_fields += add_field(/datum/report_field/signature, "Подпись", required = 1)
-	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подчиси и печати НТ или департамента.")
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи и печати НТ или департамента.")
 	for(var/datum/report_field/field in heads_fields)
 		field.set_access(access_edit = access_heads)
 
@@ -68,7 +68,7 @@
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
 	heads_fields += add_field(/datum/report_field/people/from_manifest, "Данный рапорт был рассмотрен и утвержден", required = 1)
 	heads_fields += add_field(/datum/report_field/signature, "Подпись", required = 1)
-	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подчиси и печати НТ или департамента.")
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи и печати НТ или департамента.")
 	for(var/datum/report_field/field in heads_fields)
 		field.set_access(access_edit = access_heads)
 
@@ -92,7 +92,7 @@
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
 	heads_fields += add_field(/datum/report_field/people/from_manifest, "Данный рапорт был рассмотрен и утвержден", required = 1)
 	heads_fields += add_field(/datum/report_field/signature, "Подпись", required = 1)
-	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подчиси и печати НТ или департамента.")
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи и печати НТ или департамента.")
 	for(var/datum/report_field/field in heads_fields)
 		field.set_access(access_edit = access_heads)
 
