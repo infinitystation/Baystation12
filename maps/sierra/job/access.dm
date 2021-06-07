@@ -110,6 +110,18 @@
 	desc = "Actor"
 	region = ACCESS_REGION_GENERAL
 
+/var/const/access_field_eng = "ACCESS_FIELD_ENG"//99
+/datum/access/field_eng
+	id = access_field_eng
+	desc = "Field Engineer"
+	region = ACCESS_REGION_RESEARCH
+
+/var/const/access_field_med = "ACCESS_FIELD_MED"//100
+/datum/access/field_med
+	id = access_field_med
+	desc = "Field Medic"
+	region = ACCESS_REGION_RESEARCH
+
 /************
 * NSV sierra *
 ************/
