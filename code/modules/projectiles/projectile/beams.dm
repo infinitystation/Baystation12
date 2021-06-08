@@ -5,7 +5,7 @@
 	fire_sound='sound/weapons/Laser.ogg'
 	impact_sounds = list(BULLET_IMPACT_MEAT = SOUNDS_LASER_MEAT, BULLET_IMPACT_METAL = SOUNDS_LASER_METAL)
 	pass_flags = PASS_FLAG_TABLE | PASS_FLAG_GLASS | PASS_FLAG_GRILLE
-	damage = 30 //INF, WAS 40
+	damage = 40
 	damage_type = BURN
 	sharp = TRUE
 	damage_flags = DAM_LASER
@@ -13,8 +13,7 @@
 	hitscan = TRUE
 	invisibility = 101	//beam projectiles are invisible as they are rendered by the effect engine
 	penetration_modifier = 0.3
-	armor_penetration = 10 //INF, WAS NOTHING (0)
-	//INF distance_falloff = 2.5
+	distance_falloff = 2.5
 
 	muzzle_type = /obj/effect/projectile/laser/muzzle
 	tracer_type = /obj/effect/projectile/laser/tracer
@@ -27,11 +26,12 @@
 
 /obj/item/projectile/beam/smalllaser
 	damage = 25
-	armor_penetration = 0 //INF, WAS 10
+	armor_penetration = 10
 
 /obj/item/projectile/beam/midlaser
-	damage = 40 //INF, WAS 50
+	damage = 50
 	armor_penetration = 20
+	distance_falloff = 1
 
 /obj/item/projectile/beam/heavylaser
 	name = "heavy laser"
@@ -39,7 +39,7 @@
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 	damage = 60
 	armor_penetration = 30
-	//INF distance_falloff = 0.5
+	distance_falloff = 0.5
 
 	muzzle_type = /obj/effect/projectile/laser/heavy/muzzle
 	tracer_type = /obj/effect/projectile/laser/heavy/tracer
@@ -61,24 +61,21 @@
 	damage = 30
 	armor_penetration = 50
 
-/obj/item/projectile/beam/pulse //pulse pistol
+/obj/item/projectile/beam/pulse
 	name = "pulse"
 	icon_state = "u_laser"
 	fire_sound='sound/weapons/pulse.ogg'
-	damage = 15
-	armor_penetration = 30
+	damage = 15 //lower damage, but fires in bursts
 
 	muzzle_type = /obj/effect/projectile/laser/pulse/muzzle
 	tracer_type = /obj/effect/projectile/laser/pulse/tracer
 	impact_type = /obj/effect/projectile/laser/pulse/impact
 
-/obj/item/projectile/beam/pulse/mid //pulse carabine
+/obj/item/projectile/beam/pulse/mid
 	damage = 20
-	armor_penetration = 40
 
-/obj/item/projectile/beam/pulse/heavy //pulse rifle
-	damage = 30
-	armor_penetration = 50
+/obj/item/projectile/beam/pulse/heavy
+	damage = 25
 
 /obj/item/projectile/beam/pulse/destroy
 	name = "destroyer pulse"
@@ -219,7 +216,7 @@
 	damage_type = BURN
 	life_span = 5
 	pass_flags = PASS_FLAG_TABLE
-	//INF distance_falloff = 4
+	distance_falloff = 4
 
 	muzzle_type = /obj/effect/projectile/trilaser/muzzle
 	tracer_type = /obj/effect/projectile/trilaser/tracer
@@ -238,7 +235,7 @@
 	damage = 2
 	agony = 7
 	sharp = FALSE
-	//INF distance_falloff = 5
+	distance_falloff = 5
 	damage_flags = 0
 	damage_type = STUN
 	life_span = 3
