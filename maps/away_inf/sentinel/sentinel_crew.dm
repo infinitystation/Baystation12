@@ -299,7 +299,7 @@
 
 /decl/hierarchy/outfit/job/patrol/engineer
 	name = PATROL_OUTFIT_JOB_NAME("Technician")
-	uniform = /obj/item/clothing/under/solgov/utility/fleet/engineering/away_solpatrol
+	uniform = /obj/item/clothing/under/rank/engineer/away_solpatrol
 	belt = /obj/item/storage/belt/holster/general/away_solpatrol
 	gloves = /obj/item/clothing/gloves/insulated/black
 
