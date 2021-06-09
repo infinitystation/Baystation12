@@ -91,9 +91,12 @@
 			skin_material = MATERIAL_SKIN_FUR_GRAY
 		if("white")
 			skin_material = MATERIAL_SKIN_FUR_WHITE
-	//единственный способ дать мышке языки
+	//единственный способ дать мышке языки. Работает только здесь
 	add_language(LANGUAGE_MOUSE)
 	add_language(LANGUAGE_HUMAN_EURO, 0)
+	only_species_language = 1;
+	species_language = LANGUAGE_MOUSE;
+	default_language = LANGUAGE_MOUSE;
 
 /mob/living/simple_animal/mouse/proc/splat()
 	icon_dead = "mouse_[body_color]_splat"
