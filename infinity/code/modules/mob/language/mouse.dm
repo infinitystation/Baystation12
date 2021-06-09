@@ -8,4 +8,4 @@
 	key = "m"
 	syllables = list("squee","peep","piip","squip","sh", "ki")
 	shorthand = "MST"
-	machine_understands = FALSE
+	machine_understands = TRUE
