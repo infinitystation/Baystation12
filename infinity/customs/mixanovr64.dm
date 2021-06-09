@@ -154,3 +154,15 @@
 	new /obj/item/custkit/armguard_mixa(src)
 	new /obj/item/custkit/helmet_mixa(src)
 	new /obj/item/custkit/legguard_mixa(src)
+	new /obj/item/clothing/mask/ai/mixa(src)
+
+/obj/item/clothing/mask/ai/mixa
+	name = "CAM UI balaclava"
+	desc = "Balaclava with connected to cameras glasses."
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(
+		slot_wear_mask_str = CUSTOM_ITEM_MOB
+	)
+	icon_state = "novak_mask"
+	item_state = "novak_mask"
+	flags_inv = BLOCKHAIR
