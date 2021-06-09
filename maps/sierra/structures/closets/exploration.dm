@@ -104,7 +104,7 @@
 
 /obj/structure/closet/secure_closet/explorer/medic
 	name = "field medic's locker"
-	req_access = list(access_explorer, list(access_el, access_medical))
+	req_access = list(access_explorer, list(access_el, access_field_med))
 
 /obj/structure/closet/secure_closet/explorer/medic/WillContain()
 	return list(
@@ -128,7 +128,7 @@
 
 /obj/structure/closet/secure_closet/explorer/engineer
 	name = "field engineer's locker"
-	req_access = list(access_explorer, list(access_el, access_engine))
+	req_access = list(access_explorer, list(access_el, access_field_eng))
 
 /obj/structure/closet/secure_closet/explorer/engineer/WillContain()
 	return list(
