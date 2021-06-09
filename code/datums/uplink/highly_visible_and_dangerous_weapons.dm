@@ -115,11 +115,13 @@
 	path = /obj/item/gun/energy/gun/nuclear
 	antag_roles = list(MODE_MERCENARY) //inf, was nothing
 
+/*
 /datum/uplink_item/item/visible_weapons/sniper
 	name = "Sniper Carabine"
 	item_cost = 100
 	antag_roles = list(MODE_MERCENARY)
 	path = /obj/item/gun/projectile/automatic/amrcarabine
+*/
 
 /datum/uplink_item/item/visible_weapons/heavysniper
 	name = "Anti-materiel Sniper Rifle"
