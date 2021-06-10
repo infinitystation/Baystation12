@@ -752,7 +752,7 @@ GLOBAL_LIST_EMPTY(compatable_genomes_owners)
 		return
 
 	var/turf/location = loc
-	
+
 	visible_message(SPAN_DANGER("\The [src] стошнило!"),SPAN_DANGER("Вас стошнило!"))
 	playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 	if(istype(location, /turf/simulated))
@@ -1788,8 +1788,7 @@ GLOBAL_LIST_EMPTY(compatable_genomes_owners)
 
 /mob/living/carbon/human/ranged_accuracy_mods()
 	. = ..()
-	//if(get_shock() > 10 && !skill_check(SKILL_WEAPONS, SKILL_ADEPT))
-	if(get_shock() > 25) //inf
+	if(get_shock() > 10 && !skill_check(SKILL_WEAPONS, SKILL_ADEPT))
 		. -= 1
 	if(get_shock() > 50)
 		. -= 1
@@ -1797,22 +1796,12 @@ GLOBAL_LIST_EMPTY(compatable_genomes_owners)
 		. -= 1
 	if(shock_stage > 30)
 		. -= 1
-	for(var/T in chem_doses)
-		var/datum/reagent/R = T
-		if(istype(R, /datum/reagent/hyperzine))
-			. -= 1
-		if(istype(R, /datum/reagent/adrenaline))
-			. += 2
-		if(istype(R, /datum/reagent/ethanol) && chem_doses[T] < 5 && chem_doses[T] > 1)
-			. += 1
-		if(istype(R, /datum/reagent/ethanol) && chem_doses[T] >= 5)
-			. -= 2
-//	if(skill_check(SKILL_WEAPONS, SKILL_ADEPT))
-//		. += 2 //inf, was 1.(+10% to hit)
+	if(skill_check(SKILL_WEAPONS, SKILL_ADEPT))
+		. += 2
 	if(skill_check(SKILL_WEAPONS, SKILL_EXPERT))
-		. += 4 //inf, was 1.(+20% to hit)
+		. += 4
 	if(skill_check(SKILL_WEAPONS, SKILL_PROF))
-		. += 4 //inf, was 1.(+40% to hit)
+		. += 4
 
 /mob/living/carbon/human/can_drown()
 	if(!internal && (!istype(wear_mask) || !wear_mask.filters_water()))

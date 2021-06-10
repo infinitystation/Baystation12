@@ -127,3 +127,10 @@
 	desc = "A stripper clip used to load bolt action rifles. Contains just 5 rounds."
 	item_cost = 2
 	path = /obj/item/ammo_magazine/speedloader/clip
+
+/datum/uplink_item/item/ammo/flechette
+	name = "Sniper Rifle Magazine"
+	desc = "A  rifle magazine loaded with sniper rounds. Contains 8 rounds."
+	item_cost = 6
+	path = /obj/item/ammo_magazine/c12755
+	antag_roles = list(MODE_MERCENARY)
