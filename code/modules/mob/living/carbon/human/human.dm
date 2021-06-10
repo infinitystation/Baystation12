@@ -1809,7 +1809,7 @@ GLOBAL_LIST_EMPTY(compatable_genomes_owners)
 	if(skill_check(SKILL_WEAPONS, SKILL_ADEPT))
 		. += 1
 	if(skill_check(SKILL_WEAPONS, SKILL_EXPERT))
-		. += 2
+		. += 1
 	if(skill_check(SKILL_WEAPONS, SKILL_PROF))
 		. += 2
 
