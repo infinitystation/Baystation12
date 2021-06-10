@@ -1797,11 +1797,11 @@ GLOBAL_LIST_EMPTY(compatable_genomes_owners)
 	if(shock_stage > 30)
 		. -= 1
 	if(skill_check(SKILL_WEAPONS, SKILL_ADEPT))
-		. += 2
+		. += 1
 	if(skill_check(SKILL_WEAPONS, SKILL_EXPERT))
-		. += 4
+		. += 2
 	if(skill_check(SKILL_WEAPONS, SKILL_PROF))
-		. += 4
+		. += 2
 
 /mob/living/carbon/human/can_drown()
 	if(!internal && (!istype(wear_mask) || !wear_mask.filters_water()))
