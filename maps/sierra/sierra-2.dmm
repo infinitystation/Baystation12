@@ -521,7 +521,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/fabricator,
+/obj/machinery/photocopier,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/hardstorage)
 "aaZ" = (
@@ -629,8 +629,8 @@
 /obj/item/device/radio/intercom{
 	pixel_y = 26
 	},
-/obj/machinery/vending/engivend,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/vending/assist,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/hardstorage)
 "abh" = (
@@ -651,6 +651,8 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/table/steel_reinforced,
 /obj/machinery/cell_charger,
+/obj/item/cell/high,
+/obj/item/cell/high,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/hardstorage)
 "abj" = (
@@ -791,9 +793,7 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/structure/table/rack,
-/obj/item/ladder_mobile,
-/obj/item/ladder_mobile,
+/obj/structure/closet/crate/solar,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/hardstorage)
 "abx" = (
@@ -821,6 +821,7 @@
 /obj/item/stack/material/glass{
 	amount = 30
 	},
+/obj/item/stack/material/glass/fifty,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/hardstorage)
 "abA" = (
@@ -1045,6 +1046,7 @@
 /obj/item/stack/material/steel{
 	amount = 30
 	},
+/obj/item/stack/material/steel/fifty,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/hardstorage)
 "ach" = (
@@ -1449,8 +1451,8 @@
 /obj/machinery/camera/network/engineering{
 	c_tag = "Engineering - Hard Storage"
 	},
-/obj/machinery/vending/parts,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/fabricator,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/hardstorage)
 "adi" = (
@@ -2805,7 +2807,7 @@
 /area/engineering/engine_room)
 "afz" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/vending/assist,
+/obj/machinery/papershredder,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/hardstorage)
 "afA" = (
@@ -3267,8 +3269,8 @@
 	},
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/table/steel_reinforced,
-/obj/item/cell/high,
-/obj/item/cell/high,
+/obj/item/ladder_mobile,
+/obj/item/ladder_mobile,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/hardstorage)
 "agq" = (
@@ -6062,8 +6064,8 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/machinery/vending/tool,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/vending/parts,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/hardstorage)
 "alp" = (
@@ -13414,6 +13416,13 @@
 	id_tag = "eng_lockdown";
 	name = "Engineering Lockdown"
 	},
+/obj/machinery/button/blast_door{
+	desc = "A remote control-switch for shutters.";
+	id_tag = "eng_QAW";
+	name = "Shutters Control";
+	pixel_x = -24;
+	req_access = list("ACCESS_ENGINEERING")
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/materials_storage)
 "ayk" = (
@@ -14189,14 +14198,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/floor_decal/techfloor{
 	dir = 8
-	},
-/obj/machinery/button/blast_door{
-	desc = "A remote control-switch for shutters.";
-	id_tag = "eng_QAW";
-	name = "Shutters Control";
-	pixel_x = -22;
-	pixel_y = 28;
-	req_access = list("ACCESS_ENGINEERING")
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/materials_storage)
@@ -19227,11 +19228,9 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
 "aIj" = (
-/obj/structure/table/rack{
-	dir = 8
-	},
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/light/small,
+/obj/machinery/shieldgen,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/materials_storage)
 "aIk" = (
@@ -20458,6 +20457,11 @@
 	c_tag = "Engineering - Resources";
 	dir = 1
 	},
+/obj/item/stack/material/rods/fifty,
+/obj/structure/window/reinforced{
+	dir = 8;
+	health = null
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/materials_storage)
 "aKC" = (
@@ -20522,6 +20526,11 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/outline/grey,
+/obj/item/stack/material/glass/reinforced/fifty,
+/obj/structure/window/reinforced{
+	dir = 8;
+	health = null
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/materials_storage)
 "aKG" = (
@@ -21778,8 +21787,10 @@
 "aMU" = (
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/yellow/border,
-/obj/machinery/photocopier,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/vending/tool{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/locker_room)
 "aMV" = (
@@ -21882,8 +21893,10 @@
 /obj/effect/floor_decal/corner/yellow/bordercorner2{
 	dir = 9
 	},
-/obj/machinery/papershredder,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/vending/engivend{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/locker_room)
 "aNb" = (
@@ -34968,6 +34981,19 @@
 /obj/machinery/light,
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/sleep/bunk_big/room_two)
+"fIG" = (
+/obj/structure/table/rack{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/machinery/light/small,
+/obj/item/stack/material/steel/fifty,
+/obj/structure/window/reinforced{
+	dir = 8;
+	health = null
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/materials_storage)
 "fIW" = (
 /obj/machinery/media/music_writer{
 	pixel_x = 28
@@ -61757,7 +61783,7 @@ nLf
 azv
 aBw
 aHo
-aIj
+fIG
 nLf
 ajB
 ajB
