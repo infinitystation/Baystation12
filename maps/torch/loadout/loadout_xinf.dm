@@ -12,8 +12,6 @@
 /datum/gear/head/skrell_helmet //overrides torch's loadout
 	whitelisted = list(SPECIES_SKRELL)
 
-/datum/gear/uniform/pmc/allowed_roles = list(/datum/job/bodyguard)
-
 /datum/gear/gloves/insulated
 	allowed_roles = ENGINEERING_ROLES
 /*
@@ -24,9 +22,6 @@
 /datum/gear/uniform/corpsi
 	allowed_branches = CIVILIAN_BRANCHES
 
-/datum/gear/uniform/corp_guard
-	allowed_roles = list(/datum/job/bodyguard)
-
 ///////////
 // ARMOR //
 ///////////
@@ -36,9 +31,6 @@
 
 /datum/gear/tactical/bloodpatch
 	allowed_roles = ARMORED_ROLES
-
-/datum/gear/tactical/armor_deco //tags
-	allowed_roles = list(/datum/job/bodyguard)
 
 ////////////
 // ALIENS //
