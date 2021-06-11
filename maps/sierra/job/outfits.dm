@@ -52,8 +52,8 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 
 /decl/hierarchy/outfit/job/sierra/crew/command/captain/New()
 	..()
-	backpack_overrides[/decl/backpack_outfit/backpack] = /obj/item/storage/backpack/captain
-	backpack_overrides[/decl/backpack_outfit/satchel] = /obj/item/storage/backpack/satchel/cap
+	backpack_overrides[/decl/backpack_outfit/backpack] = /obj/item/storage/backpack/command
+	backpack_overrides[/decl/backpack_outfit/satchel] = /obj/item/storage/backpack/satchel/com
 	backpack_overrides[/decl/backpack_outfit/messenger_bag] = /obj/item/storage/backpack/messenger/com
 
 /decl/hierarchy/outfit/job/sierra/crew/command/hop
@@ -552,4 +552,3 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 /decl/hierarchy/outfit/job/sierra/ert/leader
 	name = OUTFIT_JOB_NAME("ERT Leader - Sierra")
 	head = /obj/item/clothing/head/beret/centcom/captain
-

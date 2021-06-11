@@ -19357,7 +19357,7 @@
 	icon_state = "2-8"
 	},
 /obj/structure/dogbed,
-/mob/living/simple_animal/fox/renault,
+/mob/living/simple_animal/friendly/fox/renault,
 /turf/simulated/floor/carpet,
 /area/crew_quarters/heads/captain/office_anteroom)
 "aIt" = (
@@ -31487,7 +31487,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
-/mob/living/simple_animal/koala/samorey,
+/mob/living/simple_animal/friendly/koala/samorey,
 /turf/simulated/floor/tiled/dark,
 /area/chapel/office)
 "bfb" = (

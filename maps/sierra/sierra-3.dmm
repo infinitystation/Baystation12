@@ -23789,7 +23789,7 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/mob/living/simple_animal/corgi/Ian,
+/mob/living/simple_animal/friendly/corgi/Ian,
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
 	},
@@ -41495,7 +41495,7 @@
 	pixel_y = -6;
 	req_access = list("ACCESS_MEDICAL")
 	},
-/mob/living/simple_animal/cat/fluff/Runtime,
+/mob/living/simple_animal/friendly/cat/fluff/Runtime,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
 	},

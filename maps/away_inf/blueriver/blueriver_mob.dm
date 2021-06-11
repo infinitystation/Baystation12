@@ -11,21 +11,47 @@
 	speed = -1
 	health = 280
 	maxHealth = 280
-	can_escape = 1
+	can_escape = TRUE
 
 	harm_intent_damage = 8
-	natural_weapon = /obj/item/natural_weapon/hive_alien_defender
-
+	natural_weapon = /obj/item/natural_weapon/defender_blades
+	ai_holder_type = /datum/ai_holder/simple_animal/melee/defender
 	var/attack_mode = FALSE
 
 	var/transformation_delay_min = 4
 	var/transformation_delay_max = 8
 
-/obj/item/natural_weapon/hive_alien_defender
-	force = 35  // this is hive defender. Him must to be dangerous ~ SidVeld
+/datum/ai_holder/simple_animal/melee/defender/lose_target()
+	. = ..()
+	var/mob/living/simple_animal/hostile/hive_alien/defender/D = holder
+	if(D.attack_mode && !find_target()) //If we don't immediately find another target, switch to movement mode
+		D.mode_movement()
+
+	return ..()
+
+/datum/ai_holder/simple_animal/melee/defender/lose_target()
+	. = ..()
+	var/mob/living/simple_animal/hostile/hive_alien/defender/D = holder
+	if(D.attack_mode && !find_target()) //If we don't immediately find another target, switch to movement mode
+		D.mode_movement()
+
+	return ..()
+
+/datum/ai_holder/simple_animal/melee/defender/engage_target()
+	. = ..()
+	var/mob/living/simple_animal/hostile/hive_alien/defender/D = holder
+	if(!D.attack_mode)
+		return D.mode_attack()
+
+	flick("hive_executioner_attacking", src)
+
+	return ..()
+/obj/item/natural_weapon/defender_blades
+	name = "blades"
+	attack_verb = list("eviscerated")
+	force = 30
+	edge = TRUE
 	hitsound = 'sound/weapons/slash.ogg'
-	attack_verb = list("sliced", "cutted", "slashed")
-	show_in_message = TRUE
 
 /mob/living/simple_animal/hostile/hive_alien/defender/proc/mode_movement() //Slightly broken, but it's alien and unpredictable so w/e
 	set waitfor = 0
@@ -35,10 +61,10 @@
 	anchored = FALSE
 	speed = -1
 	move_to_delay = 8
-	attack_mode = FALSE
+	. = FALSE
 
 	//Immediately find a target so that we're not useless for 1 Life() tick!
-	FindTarget()
+	ai_holder.find_target()
 
 /mob/living/simple_animal/hostile/hive_alien/defender/proc/mode_attack()
 	set waitfor = 0
@@ -50,27 +76,7 @@
 	attack_mode = TRUE
 	walk(src, 0)
 
-/mob/living/simple_animal/hostile/hive_alien/defender/LostTarget()
-	if(attack_mode && !FindTarget()) //If we don't immediately find another target, switch to movement mode
-		mode_movement()
-
-	return ..()
-
-/mob/living/simple_animal/hostile/hive_alien/defender/LoseTarget()
-	if(attack_mode && !FindTarget()) //If we don't immediately find another target, switch to movement mode
-		mode_movement()
-
-	return ..()
-
-/mob/living/simple_animal/hostile/hive_alien/defender/AttackingTarget()
-	if(!attack_mode)
-		return mode_attack()
-
-	flick("hive_executioner_attacking", src)
-
-	return ..()
-
 /mob/living/simple_animal/hostile/hive_alien/defender/wounded
 	name = "wounded hive defender"
 	health = 80
-	can_escape = 0
+	can_escape = FALSE
