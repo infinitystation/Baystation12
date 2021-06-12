@@ -12,6 +12,7 @@
 	//first deck
 /area/bridge/hall/level_two
 	name = "Bridge - Hall - Upper"
+	req_access = list(access_sec_doors)
 	//second deck
 /area/bridge/hall/level_one
 	name = "Bridge - Hall - Lower"
