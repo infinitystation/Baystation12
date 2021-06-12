@@ -176,6 +176,10 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	shoes = /obj/item/clothing/shoes/brown
 	id_types = list(/obj/item/card/id/sierra/crew/engineering/comms)
 
+/decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/trainee
+	name = OUTFIT_JOB_NAME("Engineer Trainee - Sierra")
+	id_types = list(/obj/item/card/id/sierra/crew/engineering/trainee)
+
 	////////////
 	//SECURITY//
 	////////////

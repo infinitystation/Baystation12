@@ -24143,6 +24143,7 @@
 	dir = 4
 	},
 /obj/structure/anomaly_container,
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology/storage)
 "MG" = (
@@ -24279,6 +24280,7 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 4
 	},
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology/storage)
 "MS" = (
@@ -24394,6 +24396,7 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 10
 	},
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology/storage)
 "Nd" = (
@@ -24404,6 +24407,7 @@
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/purple/border,
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology/storage)
 "Ne" = (
@@ -24414,6 +24418,7 @@
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/purple/border,
 /obj/structure/stasis_cage,
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology/storage)
 "Nf" = (
@@ -24463,6 +24468,7 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 6
 	},
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology/storage)
 "Nj" = (
