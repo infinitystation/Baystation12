@@ -49,6 +49,8 @@ Civilian
 		/datum/mil_rank/civ/civ,
 		/datum/mil_rank/civ/contractor
 	)
+	min_goals = 2
+	max_goals = 7
 
 /datum/job/merchant
 	title = "Merchant"

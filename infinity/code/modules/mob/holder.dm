@@ -56,7 +56,7 @@
 	icon = 'icons/mob/Easter.dmi'
 	icon_state = "rabbit_white"
 
-/mob/living/simple_animal/fox
+/mob/living/simple_animal/friendly/fox
 	holder_type = /obj/item/holder/fox
 
 /obj/item/holder/fox
