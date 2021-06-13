@@ -1,6 +1,6 @@
 /var/server_name = "Infinity RU"
 
-#define RECOMMENDED_VERSION 513
+//inf #define RECOMMENDED_VERSION 513 // Определено в code/_macros_inf.dm и используется там же
 #define FAILED_DB_CONNECTION_CUTOFF 25
 #define THROTTLE_MAX_BURST 15 SECONDS
 #define SET_THROTTLE(TIME, REASON) throttle[1] = base_throttle + (TIME); throttle[2] = (REASON);
@@ -736,7 +736,7 @@ proc/establish_old_db_connection()
 	else
 		return 1
 
-#undef RECOMMENDED_VERSION
+//inf #undef RECOMMENDED_VERSION // Определено в code/_macros_inf.dm и используется там же
 #undef FAILED_DB_CONNECTION_CUTOFF
 #undef THROTTLE_MAX_BURST
 #undef SET_THROTTLE
