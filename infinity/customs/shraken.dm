@@ -242,17 +242,20 @@
 /obj/item/clothing/accessory/armor/helmcover/custom_saare
 	name = "spec ops cover"
 	desc = "A coloring of spec ops, as well as the set includes the NVD."
-	icon_override = 'infinity/icons/mob/onmob/onmob_accessories.dmi'
+	action_button_name = "Toggle Visor"
+	accessory_icons = list(
+    "slot_head" = 'infinity/icons/mob/onmob/onmob_accessories.dmi'
+  )
 	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
+	icon_override = 'infinity/icons/mob/onmob/onmob_accessories.dmi'
 	icon_state = "spec_ops_cover"
 	item_icons = list(
-		slot_head_str = CUSTOM_ITEM_MOB
+		slot_head_str = "spec_ops_cover"
 	)
 	item_state_slots = list(
 		slot_head_str = "spec_ops_cover"
 	)
 	trade_blacklisted = TRUE
-	action_button_name = "Toggle Visor"
 	var/isVisorUp = 0
 
 /obj/item/clothing/accessory/armor/helmcover/custom_saare/on_update_icon()
