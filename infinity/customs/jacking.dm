@@ -106,42 +106,13 @@
 //	starting_accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches)
 	trade_blacklisted = TRUE
 
-//a gun
-
-/obj/item/gun/projectile/automatic/nt41/jacking
-	name = "xr36"
-	desc = "XR36 - export version of the XR36K, characterized by installing a “high” picatinny rail instead of a carrying handle on top of the receiver. The guide is equipped with a 3x4 double sight, and then a thin longitudinal groove is used. In addition, on the XR36 modification, a “cheek” is installed on the standard frame stock."
-	icon_state = "xr36"
-	item_state = "xr36"
-	icon = 'infinity/icons/obj/guns/xr36.dmi'
-	wielded_item_state = "xr36-wielded"
-	item_icons = list(
-		slot_r_hand_str = 'infinity/icons/mob/onmob/righthand.dmi',
-		slot_l_hand_str = 'infinity/icons/mob/onmob/lefthand.dmi',
-		)
-	trade_blacklisted = TRUE
-
-/obj/item/gun/projectile/automatic/nt41/jacking/on_update_icon()
-	..()
-	if(ammo_magazine)
-		icon_state = "xr36"
-		wielded_item_state = "xr36-wielded"
-	else
-		icon_state = "xr36-empty"
-		wielded_item_state = "xr36-wielded-empty"
-
-/obj/item/custkit/custom_army
-	name = "NT41 customization kit"
-	input = /obj/item/gun/projectile/automatic/nt41/armory
-	output = /obj/item/gun/projectile/automatic/nt41/jacking
-
 /obj/item/clothingbag/custom_army/Initialize()
 	. = ..()
 	new /obj/item/clothing/under/custom_army_uniform(src)
 	new /obj/item/clothing/glasses/sunglasses/sechud/custom_ballistic(src)
 	new /obj/item/clothing/accessory/armor/helmcover/custom_army(src)
 	new /obj/item/clothing/suit/armor/pcarrier/custom_army(src)
-	new /obj/item/custkit/custom_army(src)
+
 
 /* ZPCI KNIGHT KIT
  * ================
@@ -260,16 +231,6 @@
  * ===============
  */
 
-/obj/item/clothing/under/custom_saare_uniform
-	name = "tactical SAARE uniform"
-	desc = "An old SAARE tactical uniform, how old is it at all?"
-	icon = 'infinity/icons/obj/clothing/obj_under.dmi'
-	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
-	icon_state = "saare_tactical"
-	item_state = "saare_tactical"
-	rolled_sleeves = -1
-	trade_blacklisted = TRUE
-
 /obj/item/clothing/glasses/sunglasses/sechud/custom_ballistic/orange
 	desc = "A ballistic glasses with medium shatter protection."
 	icon = CUSTOM_ITEM_OBJ
@@ -284,21 +245,73 @@
 	icon_override = 'infinity/icons/mob/onmob/onmob_accessories.dmi'
 	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
 	icon_state = "spec_ops_cover"
-	accessory_icons = list(slot_tie_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', slot_head_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi')
+	item_icons = list(
+		slot_head_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi'
+	)
+	item_state_slots = list(
+		slot_head_str = "spec_ops_cover"
+	)
 	trade_blacklisted = TRUE
+	action_button_name = "Toggle Visor"
+	var/isVisorUp = 0
+
+/obj/item/clothing/accessory/armor/helmcover/custom_saare/on_update_icon()
+	. = ..()
+	var/tmp = "[initial(icon_state)][isVisorUp ? "_up" : ""]"
+	item_state_slots = list(slot_head_str = tmp)
+	icon_state = tmp
+	update_clothing_icon()
+
+/obj/item/clothing/accessory/armor/helmcover/custom_saare/attack_self(mob/user as mob)
+	isVisorUp = !isVisorUp
+	to_chat(user, "You [isVisorUp ? "raise" : "lower"] the NVG on the [src].")
+	update_icon()
 
 /obj/item/clothing/suit/armor/pcarrier/custom_saare
 	name = "\improper DSH-116"
-	desc = "An old plate carrier of the special operations forces of the GCC. Apparently worn, how they still wear..."
+	desc = "An old plate carrier of the special operations forces. Apparently worn, how they still wear..."
 	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
 	item_icons = list(slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi')
 	icon_state = "gcc_spec_opc_carrier"
 	sprite_sheets = list()
 	trade_blacklisted = TRUE
 
+
+/obj/item/gun/projectile/automatic/nt41/jacking
+	name = "XR36 rifle"
+	desc = "XR36 - export version of the XR36K, characterized by installing a “high” picatinny rail instead of a carrying handle on top of the receiver. The guide is equipped with a 3x4 double sight, and then a thin longitudinal groove is used. In addition, on the XR36 modification, a “cheek” is installed on the standard frame stock."
+	icon_state = "xr36_icon_n"
+
+	item_state = "xr36"
+	icon = 'infinity/icons/obj/guns/xr36_icon.dmi'
+	wielded_item_state = "xr36-wielded"
+	item_icons = list(
+		slot_r_hand_str = 'infinity/icons/mob/onmob/righthand.dmi',
+		slot_l_hand_str = 'infinity/icons/mob/onmob/lefthand.dmi',
+		)
+	trade_blacklisted = TRUE
+	mag_insert_sound = 'sound/weapons/guns/interaction/ltrifle_magin.ogg'
+	mag_remove_sound = 'sound/weapons/guns/interaction/ltrifle_magout.ogg'
+
+/obj/item/gun/projectile/automatic/nt41/jacking/on_update_icon()
+	..()
+	if(ammo_magazine)
+		icon_state = "xr36_icon_f"
+		wielded_item_state = "xr36-wielded"
+	else
+		icon_state = "xr36_icon_n"
+		wielded_item_state = "xr36-wielded-empty"
+
+
+/obj/item/custkit/custom_saare
+	name = "NT41 customization kit"
+	input = /obj/item/gun/projectile/automatic/nt41/armory
+	output = /obj/item/gun/projectile/automatic/nt41/jacking
+
+
 /obj/item/clothingbag/custom_saare/Initialize()
 	. = ..()
-	new /obj/item/clothing/under/custom_saare_uniform(src)
 	new /obj/item/clothing/glasses/sunglasses/sechud/custom_ballistic/orange(src)
 	new /obj/item/clothing/accessory/armor/helmcover/custom_saare(src)
 	new /obj/item/clothing/suit/armor/pcarrier/custom_saare(src)
+	new /obj/item/custkit/custom_saare(src)
