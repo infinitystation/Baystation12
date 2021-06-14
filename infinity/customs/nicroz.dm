@@ -206,30 +206,30 @@
 			for(var/psi in psi_ranks)
 				user.set_psi_rank(psi, psi_ranks[psi], defer_update = TRUE)
 			user.psi.update(TRUE)
-			if(!silenced)
-				user.visible_message(SPAN_OCCULT("[user] вспыхивает ярким светом, и слегка приподнимается в воздух!"), SPAN_OCCULT("Ты чувствуешь как в тебе просыпаются новые силы!"))
-				var/turf/T = get_turf(user)
-				var/obj/effect/party_light/psi_briefcase/L = new /obj/effect/party_light/psi_briefcase(T)
-				var/datum/psi_complexus/psi = user.psi
-				var/image/aura = create_aura_image(L)
-				aura.pixel_x = -32
-				L.aura = aura
-				for(var/mob/player in GLOB.player_list)
-					player.client.images += aura
-				var/matrix/M = matrix()
-				M.Scale(3,3)
-				L.psi_owner = user
-				GLOB.moved_event.register(user, L, /obj/effect/party_light/psi_briefcase/proc/moving)
-				addtimer(CALLBACK(L, /obj/effect/party_light/psi_briefcase/proc/end), 3 SECONDS, TIMER_UNIQUE)
-				animate(aura, alpha = 100, transform = M, color = psi.aura_color, time = 30)
-				M = matrix()
-				M.Scale(4,4)
-				sleep(10)
-				animate(aura, transform = M, time = 15)
-				M = matrix()
-				M.Scale(5,5)
-				sleep(10)
-				animate(aura, alpha = 0, transform = M, time = 5)
+//			if(!silenced)	// Пафос вреден для кода. Лахеш, пора исправлять ~bear1ake
+//				user.visible_message(SPAN_OCCULT("[user] вспыхивает ярким светом, и слегка приподнимается в воздух!"), SPAN_OCCULT("Ты чувствуешь как в тебе просыпаются новые силы!"))
+//				var/turf/T = get_turf(user)
+//				var/obj/effect/party_light/psi_briefcase/L = new /obj/effect/party_light/psi_briefcase(T)
+//				var/datum/psi_complexus/psi = user.psi
+//				var/image/aura = create_aura_image(L)
+//				aura.pixel_x = -32
+//				L.aura = aura
+//				for(var/mob/player in GLOB.player_list)
+//					player.client.images += aura
+//				var/matrix/M = matrix()
+//				M.Scale(3,3)
+//				L.psi_owner = user
+//				GLOB.moved_event.register(user, L, /obj/effect/party_light/psi_briefcase/proc/moving)
+//				addtimer(CALLBACK(L, /obj/effect/party_light/psi_briefcase/proc/end), 3 SECONDS, TIMER_UNIQUE)
+//				animate(aura, alpha = 100, transform = M, color = psi.aura_color, time = 30)
+//				M = matrix()
+//				M.Scale(4,4)
+//				sleep(10)
+//				animate(aura, transform = M, time = 15)
+//				M = matrix()
+//				M.Scale(5,5)
+//				sleep(10)
+//				animate(aura, alpha = 0, transform = M, time = 5)
 	if(slot_flags & SLOT_POCKET)
 		slot_flags &= ~SLOT_POCKET
 	..(user, slot)

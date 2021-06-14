@@ -6,9 +6,6 @@
 	icon_living = "horror"
 	icon_dead = "horror_dead"
 	speak_emote = list("twitches.")
-	emote_hear = list("roars!", "groans..")
-	emote_see = list("snaps it's head at something..", "twitches", "stops suddenly")
-	speak_chance = 5
 	turns_per_move = 5
 	see_in_dark = 10
 	response_help  = "pets"
@@ -34,10 +31,14 @@
 		melee = ARMOR_MELEE_KNIVES
 		)
 
+	ai_holder_type = /datum/ai_holder/simple_animal/melee/meat
+	say_list = /datum/say_list/meat
+
 /obj/item/natural_weapon/meatbits
 	force = 30
 	sharp = TRUE
 	edge = TRUE
+	attack_cooldown = 1.5 SECONDS
 	attack_verb = list("mauled", "slashed")
 
 /mob/living/simple_animal/hostile/meat/abomination
@@ -48,9 +49,6 @@
 	icon_living = "abomination"
 	icon_dead = "abomination_dead"
 	speak_emote = list("twitches.")
-	emote_hear = list("roars!", "groans..")
-	emote_see = list("snaps it's head at something..", "twitches", "stops suddenly")
-	speak_chance = 5
 	turns_per_move = 5
 	see_in_dark = 10
 	response_help  = "pets"
@@ -84,9 +82,6 @@
 	icon_living = "horror"
 	icon_dead = "horror_dead"
 	speak_emote = list("twitches.")
-	emote_hear = list("roars!", "groans...")
-	emote_see = list("snaps it's head at something...", "twitches.", "stops suddenly.")
-	speak_chance = 5
 	turns_per_move = 5
 	see_in_dark = 10
 	response_help  = "pets"
@@ -120,9 +115,6 @@
 	icon_living = "horror_alt"
 	icon_dead = "horror_alt_dead"
 	speak_emote = list("twitches.")
-	emote_hear = list("roars!", "groans...")
-	emote_see = list("turns to the sound..", "twitches", "stops suddenly, it's intestines slowly spilling out")
-	speak_chance = 5
 	turns_per_move = 5
 	see_in_dark = 10
 	response_help  = "pets"
@@ -148,6 +140,8 @@
 		melee = ARMOR_MELEE_KNIVES
 		)
 
+	say_list = /datum/say_list/meat/human
+
 /mob/living/simple_animal/hostile/meat/humansecurity
 	name = "turned security"
 	desc = "What's left of a SAARE security guard. The only way you can tell is by the tatters of their uniform. That armor they wore in life now gives them a bit of hardiness in death..."
@@ -156,9 +150,6 @@
 	icon_living = "horror_security"
 	icon_dead = "horror_security_dead"
 	speak_emote = list("twitches.")
-	emote_hear = list("roars!", "groans...")
-	emote_see = list("snaps it's head at something...", "twitches.", "stops suddenly.")
-	speak_chance = 5
 	turns_per_move = 5
 	see_in_dark = 10
 	response_help  = "pets"
@@ -192,9 +183,6 @@
 	icon_living = "horror_miner"
 	icon_dead = "horror_miner_dead"
 	speak_emote = list("twitches.")
-	emote_hear = list("roars!", "groans...")
-	emote_see = list("snaps it's head at something...", "twitches.", "stops suddenly.")
-	speak_chance = 5
 	turns_per_move = 5
 	see_in_dark = 10
 	response_help  = "pets"
@@ -228,9 +216,6 @@
 	icon_living = "lesser_ling"
 	icon_dead = ""
 	speak_emote = list("twitches.")
-	emote_hear = list("roars!", "groans...")
-	emote_see = list("snaps it's head at something...", "twitches.", "stops suddenly.")
-	speak_chance = 5
 	turns_per_move = 5
 	see_in_dark = 10
 	response_help  = "pets"
@@ -255,3 +240,14 @@
 	natural_armor = list(
 		melee = ARMOR_MELEE_KNIVES
 		)
+
+/datum/ai_holder/simple_animal/melee/meat
+	speak_chance = 5
+
+/datum/say_list/meat
+	emote_hear = list("roars!", "groans..")
+	emote_see = list("snaps it's head at something..", "twitches", "stops suddenly")
+
+/datum/say_list/meat/human
+	emote_hear = list("roars!", "groans...")
+	emote_see = list("turns to the sound..", "twitches", "stops suddenly", "stops suddenly, it's intestines slowly spilling out")

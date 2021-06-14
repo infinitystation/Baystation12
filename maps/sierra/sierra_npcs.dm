@@ -21,4 +21,8 @@
 /mob/living/simple_animal/rabbit/space/sierra
 	name = "\improper Edwin"
 	desc = "The hippiest hop around. On it's back you can see a small black letters: Aldrin."
+
+	say_list_type = /datum/say_list/rabbit/sierra
+
+/datum/say_list/rabbit/sierra
 	emote_see = list("hops around","bounces up and down","says something in imaginated headset")

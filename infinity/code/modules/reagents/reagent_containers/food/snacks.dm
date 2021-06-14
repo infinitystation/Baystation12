@@ -4,15 +4,15 @@
 
 /obj/item/reagent_containers/food/snacks/monkeycube/mouse
 	name = "mouse cube"
-	monkey_type = /mob/living/simple_animal/mouse
+	monkey_type = /mob/living/simple_animal/friendly/mouse
 
 /obj/item/reagent_containers/food/snacks/monkeycube/corgi
 	name = "corgi cube"
-	monkey_type = /mob/living/simple_animal/corgi
+	monkey_type = /mob/living/simple_animal/friendly/corgi
 
 /obj/item/reagent_containers/food/snacks/monkeycube/cat
 	name = "cat cube"
-	monkey_type = /mob/living/simple_animal/cat
+	monkey_type = /mob/living/simple_animal/friendly/cat
 
 /obj/item/reagent_containers/food/snacks/sliceable/ryebread
 	name = "rye bread"

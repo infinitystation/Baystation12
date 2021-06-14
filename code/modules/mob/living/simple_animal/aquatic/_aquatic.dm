@@ -3,7 +3,6 @@
 	turns_per_move = 5
 	speed = 4
 	mob_size = MOB_SMALL
-	emote_see = list("glubs", "blubs", "bloops")
 
 	// They only really care if there's water around them or not.
 	max_gas = list()
@@ -16,6 +15,8 @@
 	skin_amount = 5
 	bone_material = MATERIAL_BONE_FISH
 	skin_material = MATERIAL_SKIN_FISH
+
+	say_list_type = /datum/say_list/aquatic
 
 /mob/living/simple_animal/aquatic/New()
 	..()
@@ -35,10 +36,12 @@
 /mob/living/simple_animal/aquatic/handle_atmos(var/atmos_suitable = 1)
 	. = ..(atmos_suitable = submerged())
 
-
 //[INF]
 /mob/living/simple_animal/aquatic/death()
 	pixel_x = initial(default_pixel_x)
 	pixel_y = initial(default_pixel_y)
 	. = ..()
 //[/INF]
+
+/datum/say_list/aquatic
+	emote_see = list("glubs", "blubs", "bloops")

@@ -31,6 +31,10 @@
 			return global.Master;
 		if("OOClog")
 			return global.OOClog;
+		if("SSai")
+			return global.SSai;
+		if("SSaifast")
+			return global.SSaifast;
 		if("SSair")
 			return global.SSair;
 		if("SSairflow")
@@ -67,6 +71,8 @@
 			return global.SSevac;
 		if("SSevent")
 			return global.SSevent;
+		if("SSexdata")
+			return global.SSexdata;
 		if("SSfabrication")
 			return global.SSfabrication;
 		if("SSfastprocess")
@@ -197,10 +203,8 @@
 			return global.admin_verbs_fun;
 		if("admin_verbs_hideable")
 			return global.admin_verbs_hideable;
-		if("admin_verbs_judge")						//INF WAS 	if("admin_verbs_possess")
-			return global.admin_verbs_judge;		//INF WAS 		return global.admin_verbs_possess;
-		if("admin_verbs_xeno")						//INF
-			return global.admin_verbs_xeno;			//INF
+		if("admin_verbs_judge")
+			return global.admin_verbs_judge;
 		if("admin_verbs_mod")
 			return global.admin_verbs_mod;
 		if("admin_verbs_paranoid_debug")
@@ -217,6 +221,8 @@
 			return global.admin_verbs_sounds;
 		if("admin_verbs_spawn")
 			return global.admin_verbs_spawn;
+		if("admin_verbs_xeno")
+			return global.admin_verbs_xeno;
 		if("adminhelp_ignored_words")
 			return global.adminhelp_ignored_words;
 		if("adminlog")
@@ -419,6 +425,8 @@
 			return global.failed_unit_tests;
 		if("file_uid")
 			return global.file_uid;
+		if("fileaccess_timer")
+			return global.fileaccess_timer;
 		if("finds_as_strings")
 			return global.finds_as_strings;
 		if("fire_alarm")
@@ -719,10 +727,14 @@
 			return global.rune_list;
 		if("same_wires")
 			return global.same_wires;
+		if("sdql3_precedence")
+			return global.sdql3_precedence;
 		if("send_emergency_team")
 			return global.send_emergency_team;
 		if("sent_spiders_to_station")
 			return global.sent_spiders_to_station;
+		if("serials")
+			return global.serials;
 		if("server_name")
 			return global.server_name;
 		if("severity_to_string")
@@ -883,7 +895,7 @@
 			return global.z_levels;
 		if("zone_blocked")
 			return global.zone_blocked;
-
+		
 /proc/writeglobal(which, newval)
 	switch(which)
 		if("ANTAG_FREQS")
@@ -916,6 +928,10 @@
 			global.Master=newval;
 		if("OOClog")
 			global.OOClog=newval;
+		if("SSai")
+			global.SSai=newval;
+		if("SSaifast")
+			global.SSaifast=newval;
 		if("SSair")
 			global.SSair=newval;
 		if("SSairflow")
@@ -952,6 +968,8 @@
 			global.SSevac=newval;
 		if("SSevent")
 			global.SSevent=newval;
+		if("SSexdata")
+			global.SSexdata=newval;
 		if("SSfabrication")
 			global.SSfabrication=newval;
 		if("SSfastprocess")
@@ -1082,10 +1100,8 @@
 			global.admin_verbs_fun=newval;
 		if("admin_verbs_hideable")
 			global.admin_verbs_hideable=newval;
-		if("admin_verbs_judge")					//INF WAS 	if("admin_verbs_possess")
-			global.admin_verbs_judge=newval;	//INF WAS		global.admin_verbs_possess=newval;
-		if("admin_verbs_xeno")					//INF
-			global.admin_verbs_xeno=newval;		//INF
+		if("admin_verbs_judge")
+			global.admin_verbs_judge=newval;
 		if("admin_verbs_mod")
 			global.admin_verbs_mod=newval;
 		if("admin_verbs_paranoid_debug")
@@ -1102,6 +1118,8 @@
 			global.admin_verbs_sounds=newval;
 		if("admin_verbs_spawn")
 			global.admin_verbs_spawn=newval;
+		if("admin_verbs_xeno")
+			global.admin_verbs_xeno=newval;
 		if("adminhelp_ignored_words")
 			global.adminhelp_ignored_words=newval;
 		if("adminlog")
@@ -1304,6 +1322,8 @@
 			global.failed_unit_tests=newval;
 		if("file_uid")
 			global.file_uid=newval;
+		if("fileaccess_timer")
+			global.fileaccess_timer=newval;
 		if("finds_as_strings")
 			global.finds_as_strings=newval;
 		if("fire_alarm")
@@ -1604,10 +1624,14 @@
 			global.rune_list=newval;
 		if("same_wires")
 			global.same_wires=newval;
+		if("sdql3_precedence")
+			global.sdql3_precedence=newval;
 		if("send_emergency_team")
 			global.send_emergency_team=newval;
 		if("sent_spiders_to_station")
 			global.sent_spiders_to_station=newval;
+		if("serials")
+			global.serials=newval;
 		if("server_name")
 			global.server_name=newval;
 		if("severity_to_string")
@@ -1768,7 +1792,7 @@
 			global.z_levels=newval;
 		if("zone_blocked")
 			global.zone_blocked=newval;
-
+		
 /var/list/_all_globals=list(
 	"ANTAG_FREQS",
 	"AWAY_FREQS_ASSIGNED",
@@ -1785,6 +1809,8 @@
 	"LIGHTING_CORNER_DIAGONAL",
 	"Master",
 	"OOClog",
+	"SSai",
+	"SSaifast",
 	"SSair",
 	"SSairflow",
 	"SSalarm",
@@ -1803,6 +1829,7 @@
 	"SSdisposals",
 	"SSevac",
 	"SSevent",
+	"SSexdata",
 	"SSfabrication",
 	"SSfastprocess",
 	"SSfluids",
@@ -1869,7 +1896,6 @@
 	"admin_verbs_fun",
 	"admin_verbs_hideable",
 	"admin_verbs_judge",
-	"admin_verbs_mentor",
 	"admin_verbs_mod",
 	"admin_verbs_paranoid_debug",
 	"admin_verbs_permissions",
@@ -1878,6 +1904,7 @@
 	"admin_verbs_server",
 	"admin_verbs_sounds",
 	"admin_verbs_spawn",
+	"admin_verbs_xeno",
 	"adminhelp_ignored_words",
 	"adminlog",
 	"ai_list",
@@ -1979,6 +2006,7 @@
 	"failed_old_db_connections",
 	"failed_unit_tests",
 	"file_uid",
+	"fileaccess_timer",
 	"finds_as_strings",
 	"fire_alarm",
 	"flesh_hud_colours",
@@ -2129,8 +2157,10 @@
 	"roundstart_hour",
 	"rune_list",
 	"same_wires",
+	"sdql3_precedence",
 	"send_emergency_team",
 	"sent_spiders_to_station",
+	"serials",
 	"server_name",
 	"severity_to_string",
 	"ship_engines",

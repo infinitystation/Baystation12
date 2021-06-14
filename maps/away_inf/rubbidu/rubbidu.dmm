@@ -11097,7 +11097,7 @@
 /turf/simulated/floor/tiled/white,
 /area/rubbidu/nt)
 "sE" = (
-/mob/living/simple_animal/corgi/Ian,
+/mob/living/simple_animal/friendly/corgi/Ian,
 /turf/simulated/floor/holofloor/wood,
 /area/rubbidu/command/quarters)
 "sF" = (

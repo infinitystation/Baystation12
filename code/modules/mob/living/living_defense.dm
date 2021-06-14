@@ -121,7 +121,7 @@
 	//Apply weapon damage
 	var/damage_flags = I.damage_flags()
 
-	return apply_damage(effective_force, I.damtype, hit_zone, damage_flags, used_weapon=I)
+	return apply_damage(effective_force, I.damtype, hit_zone, damage_flags, used_weapon=I, armor_pen=I.armor_penetration)
 
 //this proc handles being hit by a thrown atom
 /mob/living/hitby(var/atom/movable/AM, var/datum/thrownthing/TT)
@@ -369,3 +369,33 @@
 	fire_act(air, temperature)
 	FireBurn(0.4*vsc.fire_firelevel_multiplier, temperature, pressure)
 	. =  (health <= 0) ? ..() : FALSE
+
+// Applies direct "cold" damage while checking protection against the cold.
+/mob/living/proc/inflict_cold_damage(amount)
+	amount *= 1 - get_cold_protection(50) // Within spacesuit protection.
+	if(amount > 0)
+		adjustFireLoss(amount)
+
+// Ditto, but for "heat".
+/mob/living/proc/inflict_heat_damage(amount)
+	amount *= 1 - get_heat_protection(10000) // Within firesuit protection.
+	if(amount > 0)
+		adjustFireLoss(amount)
+
+// and one for electricity because why not
+/mob/living/proc/inflict_shock_damage(amount)
+	electrocute_act(amount, null, 1, pick(BP_HEAD, BP_CHEST, BP_GROIN))
+
+// also one for water (most things resist it entirely, except for slimes)
+/mob/living/proc/inflict_water_damage(amount)
+	amount *= 1
+	if(amount > 0)
+		adjustToxLoss(amount)
+
+// one for abstracted away ""poison"" (mostly because simplemobs shouldn't handle reagents)
+/mob/living/proc/inflict_poison_damage(amount)
+	if(isSynthetic())
+		return
+	amount *= 1
+	if(amount > 0)
+		adjustToxLoss(amount)

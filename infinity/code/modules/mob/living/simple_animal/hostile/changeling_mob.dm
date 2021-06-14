@@ -6,7 +6,6 @@
 	icon_state = "abomination"
 	icon_living = "abomination"
 	icon_dead = "abomination_dead"
-	stop_automated_movement = 1
 	universal_speak = 1
 	universal_understand = 1
 

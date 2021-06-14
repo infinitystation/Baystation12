@@ -21,7 +21,7 @@
 /obj/item/holder/fox/prepared
 	name = "fox"
 	desc = "It's a fox."
-	prepared_type = /mob/living/simple_animal/fox
+	prepared_type = /mob/living/simple_animal/friendly/fox
 
 /obj/item/holder/rabbit/prepared
 	name = "rabbit"

@@ -94,7 +94,7 @@ By design, d1 is the smallest direction and d2 is the highest
 
 /obj/structure/cable/attack_generic(mob/user)
 	if(ismouse(user))
-		var/mob/living/simple_animal/mouse/M = user
+		var/mob/living/simple_animal/friendly/mouse/M = user
 		if(M.last_special > world.time)
 			return
 
