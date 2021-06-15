@@ -898,17 +898,24 @@ var/global/floorIsLava = 0
 
 /datum/admins/proc/endnow()
 	set category = "Server"
-	set desc = "Ending game round"
+	set desc = "End the round immediately."
 	set name = "End Round"
+
 	if(!usr.client.holder || !check_rights(R_ADMIN))
 		return
 
-	var/confirm = alert("End the game round?", "Game Ending", "Yes", "Cancel")
-	if(confirm == "Yes")
+	var/check = alert("This will immediately end the current round. Are you sure?", "End Game", "Yes", "No") == "Yes"
+
+	if (!check)
+		return
+
+	if (GAME_STATE > RUNLEVEL_LOBBY)
+		SSticker.forced_end = TRUE
 		log_admin("[key_name(usr)] инициировал завершение раунда.")
 		to_world("<span class='danger'>Раунд завершен!</span> <span class='notice'>Инициировано [usr.key].</span>")
 		SSstatistics.add_field("admin_verb","ER") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-		SSticker.force_ending = 1
+	else
+		to_chat(usr, FONT_LARGE(SPAN_WARNING("You cannot end the round before it's begun!")))
 
 /datum/admins/proc/toggleenter()
 	set category = "Server"
@@ -1353,7 +1360,7 @@ var/global/floorIsLava = 0
 	if(!istype(M))
 		return
 	var/datum/nano_module/skill_ui/NM = /datum/nano_module/skill_ui
-	if(is_admin(usr))
+	if(isadmin(usr))
 		NM = /datum/nano_module/skill_ui/admin //They get the fancy version that lets you change skills and debug stuff.
 	NM = new NM(usr, override = M.skillset)
 	NM.ui_interact(usr)

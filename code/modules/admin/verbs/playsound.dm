@@ -42,7 +42,7 @@ var/list/sounds_cache = list()
 
 	// [inf]
 	if(check_rights(R_PERMISSIONS))
-		if(alert("Override sound prefs" ,"HELL YES", "HELL NO") == "HELL YES")
+		if(alert("Override sound prefs", "Prefs override", "HELL YES", "HELL NO") == "HELL YES")
 			log_and_message_admins("override to play [S]")
 			override = TRUE
 	// [/inf]
