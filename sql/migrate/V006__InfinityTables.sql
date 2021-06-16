@@ -51,7 +51,7 @@ CREATE TABLE `erro_admin_tickets` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Table structure for table `ckey_whitelist`
+-- Table structure for table `erro_connection_log`
 --
 DROP TABLE IF EXISTS `erro_connection_log`;
 CREATE TABLE IF NOT EXISTS `erro_connection_log`
