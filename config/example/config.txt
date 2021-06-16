@@ -216,6 +216,12 @@ SOCKET_TALK 0
 ## Malf and Rev will let the shuttle be called when the antags/protags are dead.
 #CONTINUOUS_ROUNDS
 
+## Uncomment to use ckey whitelist ticket system with SQL
+#USEWHITELIST_DATABASE
+
+## Server to reroute to. Used when USEWHITELIST_DATABASE enabled
+#OVERFLOW_SERVER_URL byond://example.com:1234
+
 ## Uncomment to restrict non-admins from using humanoid alien races
 USEALIENWHITELIST
 ## Uncomment to use the alien whitelist system with SQL instead. (requires the above uncommented aswell)
