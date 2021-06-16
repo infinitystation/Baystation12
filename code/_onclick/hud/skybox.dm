@@ -25,8 +25,9 @@
 		skybox.screen_loc = "CENTER:[-224 - T.x],CENTER:[-224 - T.y]"
 
 /mob/Login()
-	..()
-	client.update_skybox(1)
+	. = ..()
+	spawn(1)
+		client.update_skybox(1)
 
 /mob/Move()
 	var/old_z = get_z(src)
