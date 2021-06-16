@@ -134,11 +134,13 @@
 // Movement delay
 /datum/movement_handler/mob/delay
 	var/next_move
+	var/delay = 1
 
 /datum/movement_handler/mob/delay/DoMove(var/direction, var/mover, var/is_external)
 	if(is_external)
 		return
-	next_move = world.time + max(1, mob.movement_delay())
+	delay = max(1, mob.movement_delay())
+	next_move = world.time + delay
 
 /datum/movement_handler/mob/delay/MayMove(var/mover, var/is_external)
 	if(IS_NOT_SELF(mover) && is_external)
@@ -234,6 +236,10 @@
 	//We are now going to move
 	mob.moving = 1
 
+	var/delay = 1
+	var/datum/movement_handler/mob/delay/D = host.GetMovementHandler(/datum/movement_handler/mob/delay)
+	if(D)
+		delay = D.delay
 	direction = mob.AdjustMovementDirection(direction)
 	var/turf/old_turf = get_turf(mob)
 
@@ -242,6 +248,8 @@
 		old_turf.visible_message(SPAN_NOTICE("[mob] moves [txt_dir]."))
 		if(mob.pulling)
 			mob.zPull(direction)
+
+	host.set_glide_size(DELAY2GLIDESIZE(delay))
 
 	step(mob, direction)
 
