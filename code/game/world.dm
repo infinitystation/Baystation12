@@ -570,11 +570,11 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 //	s += "[game_version]"
 //	s += "Forum"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
 //	s += "</a>|"
-	s += "<a href=\"https://discord.gg/N4atUkH\">"
+	s += "<a href=\"http://discord.ss220.space\">"
 	s += "Discord"
 	s += "</a>"
 	s += ")"
-	s += " A medium/hard RP server with modified Bay12 code."
+	s += " MedRP, modified Bay12 code, redirect to main server if access denied"
 //	s += "<br><b>Map:</b> [station_name()]"
 	var/n = 0
 	for (var/mob/M in GLOB.player_list)
