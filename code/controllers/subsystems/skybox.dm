@@ -27,6 +27,7 @@ SUBSYSTEM_DEF(skybox)
 
 		var/mutable_appearance/space = new /mutable_appearance(/turf/space)
 		space.icon_state = "white"
+		space.plane = SKYBOX_PLANE	// INF нужно для того чтобы избежать белого космоса
 		space.overlays += dust
 		space_appearance_cache[i + 1] = space.appearance
 
