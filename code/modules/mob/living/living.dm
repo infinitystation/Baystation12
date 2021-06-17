@@ -576,7 +576,7 @@ default behaviour is:
 
 	if (!isliving(pulling))
 		if(pulling.loc != loc && pulling.loc != old_loc) //inf
-			step(pulling, get_dir(pulling.loc, old_loc))
+			step_glide(pulling, get_dir(pulling.loc, old_loc), glide_size)
 			handle_dir_after_pull() //inf
 	else
 		var/mob/living/M = pulling
@@ -592,7 +592,7 @@ default behaviour is:
 			var/atom/movable/t = M.pulling
 			M.stop_pulling()
 			if(pulling.loc != loc && pulling.loc != old_loc) //inf
-				step(M, get_dir(pulling.loc, old_loc))
+				step_glide(M, get_dir(pulling.loc, old_loc), glide_size)
 				handle_dir_after_pull() //inf
 			if(t)
 				M.start_pulling(t)

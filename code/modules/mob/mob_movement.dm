@@ -171,6 +171,10 @@
 		if ((A != src.loc && A && A.z == src.z))
 			src.last_move = get_dir(A, src.loc)
 
+/proc/step_glide(var/atom/movable/am, var/dir, var/glide_size_override)
+	am.set_glide_size(glide_size_override)
+	return step(am, dir)
+
 /client/Move(n, direction)
 	if(!user_acted(src))
 		return
