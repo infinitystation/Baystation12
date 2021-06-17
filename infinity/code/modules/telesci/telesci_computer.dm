@@ -292,6 +292,7 @@
 			temp_msg = "ERROR! Can not reach that sector. It's too far or need an upgrade!"
 			return
 		else
+			telepad.visible_message(SPAN_NOTICE("\The [telepad] shines brighter when it's diamond lens focuses bluespace power!"))
 			var/obj/effect/overmap/visitable/we = map_sectors["[telepad.z]"]
 			var/turf/T = get_turf(we)
 			var/located = FALSE
@@ -302,9 +303,7 @@
 					located = TRUE
 					break
 			// Мы не нашли цель в нашем секторе, попробуем более серьезные варианты.
-			if(located)
-				telepad.visible_message(SPAN_NOTICE("\The [telepad] shines brighter when it's diamond lens focuses bluespace power!"))
-			else
+			if(!located)
 				var/obj/item/stock_parts/power/battery/battery = telepad.get_component_of_type(/obj/item/stock_parts/power/battery)
 				// Больше чем advanced меньше чем enchanced и да мы тратим энергию независимо от успеха
 				if(!(battery && battery.can_use_power_oneoff(telepad, (1500 / CELLRATE), LOCAL) && battery.use_power_oneoff(telepad, (1500 / CELLRATE), LOCAL)))
