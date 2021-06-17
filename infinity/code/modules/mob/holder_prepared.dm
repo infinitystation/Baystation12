@@ -8,10 +8,18 @@
 		var/mob/living/S = new prepared_type(loc)
 		contents |= S
 
+/obj/item/holder/update_state()
+	if(prepared_type)
+		for(var/mob/M in contents)
+			M.SetName(name)
+			M.real_name = name
+
+	..()
+
 /obj/item/holder/crab/prepared
 	name = "crab"
 	desc = "A hard-shelled crustacean. Seems quite content to lounge around all the time."
-	prepared_type = /mob/living/simple_animal/crab
+	prepared_type = /mob/living/simple_animal/friendly/crab
 
 /obj/item/holder/crow/prepared
 	name = "crow"
