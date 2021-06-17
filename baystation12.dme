@@ -3372,6 +3372,7 @@
 #include "infinity\code\game\machinery\telecomms\broadcaster.dm"
 #include "infinity\code\game\objects\buckling.dm"
 #include "infinity\code\game\objects\cryo_spawner.dm"
+#include "infinity\code\game\objects\item_mob_overlay.dm"
 #include "infinity\code\game\objects\items.dm"
 #include "infinity\code\game\objects\noose.dm"
 #include "infinity\code\game\objects\objs.dm"

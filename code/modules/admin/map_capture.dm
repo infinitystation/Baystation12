@@ -35,7 +35,8 @@
 		to_chat(usr, "Saved capture in cache as [file_name].")
 		send_rsc(usr, cap, file_name)
 		currentx = currentx + 32
-		addtimer(CALLBACK(src, .proc/capture_map_capture_next, currentz, currentx, currenty, ligths), 0)
+		spawn(1)
+			.(currentz, currentx, currenty, ligths)
 	else
 		currenty = currenty + 32
 		currentx = 1
@@ -45,7 +46,8 @@
 			to_chat(usr, "Saved capture in cache as [file_name].")
 			send_rsc(usr, cap, file_name)
 			currentx = currentx + 32
-			addtimer(CALLBACK(src, .proc/capture_map_capture_next, currentz, currentx, currenty, ligths), 0)
+			spawn(1)
+				.(currentz, currentx, currenty, ligths)
 		else
 			to_chat(usr, "End of map, capture is done.")
 
