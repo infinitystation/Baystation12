@@ -3,6 +3,8 @@
 		/datum/species/adherent = list(),
 		/datum/species/nabber = list(),
 		/datum/species/vox = list(),
+		/datum/species/skrell = list(),
+		/datum/species/unathi = list(),
 		/datum/species/human/mule = list()	//No jobs for those machines of death
 	)
 

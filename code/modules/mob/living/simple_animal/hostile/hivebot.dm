@@ -7,8 +7,7 @@
 	icon_dead = "basic"
 	health = 55
 	maxHealth = 55
-	natural_weapon = /obj/item/natural_weapon/hivebot
-	projectiletype = /obj/item/projectile/beam/smalllaser
+	natural_weapon = /obj/item/natural_weapon/drone_slicer
 	faction = "hivebot"
 	min_gas = null
 	max_gas = null
@@ -26,14 +25,8 @@
 	skin_material = null
 	skin_amount =   0
 
-/obj/item/natural_weapon/hivebot
-	name = "sharpened leg"
-	gender = NEUTER
-	attack_verb = list("sliced")
-	force = 5
-	damtype = BRUTE
-	edge = TRUE
-	show_in_message = TRUE
+	ai_holder_type = /datum/ai_holder/simple_animal/hivebot
+	say_list_type = /datum/say_list/hivebot
 
 //[inf]
 /mob/living/simple_animal/hostile/hivebot/emp_act(severity)
@@ -48,7 +41,10 @@
 	icon_dead = "smallbot"
 	ranged = 1
 	speed = 7
-	attack_delay = 6 //inf
+	projectiletype = /obj/item/projectile/beam/smalllaser
+	base_attack_cooldown = 3 SECONDS
+
+	ai_holder_type = /datum/ai_holder/simple_animal/hivebot/ranged
 
 /mob/living/simple_animal/hostile/hivebot/rapid
 	icon_state = "smallbot"
@@ -146,15 +142,6 @@ Teleporter beacon, and its subtypes
 		qdel(src)
 		return
 
-/datum/ai_holder/simple_animal/hivebot/tele/find_target(list/possible_targets, has_targets_list)
-	. = ..()
-
-	var/mob/living/simple_animal/hostile/hivebot/tele/T = holder
-	if(..() && !T.spawn_time)
-		T.spawn_time = world.time + T.spawn_delay
-		T.visible_message("<span class='danger'>\The [src] turns on!</span>")
-		T.icon_state = "def_radar"
-	return null
 
 /mob/living/simple_animal/hostile/hivebot/tele/Life()
 	. = ..()
@@ -210,6 +197,7 @@ The megabot
 	can_escape = TRUE
 	armor_type = /datum/extension/armor/toggle
 	ability_cooldown = 3 MINUTES
+	base_attack_cooldown = 2 SECONDS
 
 	pixel_x = -32
 	default_pixel_x = -32
@@ -310,6 +298,46 @@ The megabot
 /mob/living/simple_animal/hostile/hivebot/mega/shoot(target, start, user, bullet)
 	..()
 	num_shots--
+
+/* AI */
+/datum/ai_holder/simple_animal/hivebot
+	threaten = TRUE
+	threaten_delay = 2 SECOND
+	threaten_timeout = 30 SECONDS
+
+/datum/ai_holder/simple_animal/hivebot/ranged
+	pointblank = TRUE
+
+/datum/ai_holder/simple_animal/hivebot/tele/find_target(list/possible_targets, has_targets_list)
+	. = ..()
+
+	var/mob/living/simple_animal/hostile/hivebot/tele/T = holder
+	if(..() && !T.spawn_time)
+		T.spawn_time = world.time + T.spawn_delay
+		T.visible_message(SPAN_DANGER("\The [src] turns on!"))
+		T.icon_state = "def_radar"
+	return null
+
+/* Say Lists */
+
+/datum/say_list/hivebot
+	speak = list(
+		"Sys-ys-ystem integrity at: 25%.",
+		"Divergent instances detected, resynchronizing protocols...",
+		"Hivelink corrupted, searching for secondary channels..."
+	)
+	say_threaten = list(
+		"T-t-t-target located, analyzing...",
+	 	"S-s-scanning tarrrrrget...",
+		 "Possible thrrrreat detected, obtaining classification..."
+	)
+	say_maybe_target = list("Possible threat detected. Investigating.", "Anomaly detected, commencing vis-visual sweep.", "Investigating.")
+	say_escalate = list(
+		"Target confirmed. Engaging.",
+		"Hossssstile class-classification confirmed. Pacifying.",
+		"Err-rr-ror, classification index corrupted. Assuming target as: Hostile."
+	)
+	say_stand_down = list("Visual lost.", "Error: Target lost.", "Error: Target parameter null.")
 
 #undef ATTACK_MODE_MELEE
 #undef ATTACK_MODE_LASER
