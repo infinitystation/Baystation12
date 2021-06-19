@@ -1,10 +1,6 @@
 /datum/map/forest
 	species_to_job_whitelist = list(
-		/datum/species/adherent = list(),
-		/datum/species/nabber = list(),
 		/datum/species/vox = list(),
-		/datum/species/skrell = list(),
-		/datum/species/unathi = list(),
 		/datum/species/human/mule = list()	//No jobs for those machines of death
 	)
 
