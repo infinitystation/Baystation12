@@ -29,9 +29,19 @@
 	max_ammo = 6
 	multiple_sprites = 1
 
+/obj/item/ammo_magazine/speedloader/pclip
+	name = "pistol stripper clip"
+	desc = "A stripper clip for pistol caliber weapons."
+	icon_state = "pclip"
+	caliber = CALIBER_PISTOL_MAGNUM
+	ammo_type = /obj/item/ammo_casing/pistol/magnum
+	matter = list(MATERIAL_STEEL = 1300)
+	max_ammo = 5
+	multiple_sprites = 1
+
 /obj/item/ammo_magazine/speedloader/clip
-	name = "stripper clip"
-	desc = "A stripper clip for bolt action rifles."
+	name = "rifle stripper clip"
+	desc = "A stripper clip for rifle caliber weapons."
 	icon_state = "clip"
 	caliber = CALIBER_RIFLE
 	ammo_type = /obj/item/ammo_casing/rifle
@@ -146,7 +156,7 @@
 
 /obj/item/ammo_magazine/pistol
 	name = "pistol magazine"
-	icon_state = "pistol"
+	icon_state = "pistol_mag"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
 	caliber = CALIBER_PISTOL
@@ -164,7 +174,7 @@
 
 /obj/item/ammo_magazine/pistol/double
 	name = "doublestack pistol magazine"
-	icon_state = "pistol"
+	icon_state = "pistol_mag"
 	matter = list(MATERIAL_STEEL = 1050)
 	max_ammo = 15
 

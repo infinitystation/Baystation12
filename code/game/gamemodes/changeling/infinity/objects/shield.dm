@@ -1,4 +1,4 @@
-/obj/item/weapon/shield/riot/changeling
+/obj/item/shield/riot/changeling
 	name = "shield-like mass"
 	desc = "A mass of tough, boney tissue. You can still see the fingers as a twisted pattern in the shield."
 	icon = 'infinity/icons/obj/changeling.dmi'
@@ -13,7 +13,7 @@
 	slot_flags = null
 	siemens_coefficient = 0.1
 	canremove = 0
-	anchored = 1
+	anchored = TRUE
 	throwforce = 0 //Just to be on the safe side
 	throw_range = 0
 	throw_speed = 0
@@ -21,13 +21,13 @@
 	can_block_lasers = TRUE
 	var/mob/living/creator
 
-/obj/item/weapon/shield/riot/changeling/dropped(var/mob/living/user)
+/obj/item/shield/riot/changeling/dropped(var/mob/living/user)
 	visible_message(SPAN_DANGER("With a sickening crunch, [user] reforms their shield into an arm!"),
 	SPAN_WARNING("You hear organic matter ripping and tearing!"))
 	playsound(loc, 'sound/effects/blobattack.ogg', 30, 1)
 	QDEL_IN(src, 1)
 
-/obj/item/weapon/shield/riot/changeling/Process()
+/obj/item/shield/riot/changeling/Process()
 	if(!creator || loc != creator || (creator.l_hand != src && creator.r_hand != src))
 		// Tidy up a bit.
 		if(istype(loc,/mob/living))
@@ -42,7 +42,7 @@
 			host.drop_from_inventory(src)
 		QDEL_IN(src, 1)
 
-/obj/item/weapon/bone_dart
+/obj/item/bone_dart
 	name = "bone dart"
 	desc = "A sharp piece of bone shapped as small dart."
 	icon = 'infinity/icons/obj/changeling.dmi'

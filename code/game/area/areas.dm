@@ -120,6 +120,7 @@
 		if(!all_doors)
 			return
 		for(var/obj/machinery/door/firedoor/E in all_doors)
+			E.locked = FALSE
 			if(!E.blocked)
 				if(E.operating)
 					E.nextstate = FIREDOOR_OPEN
@@ -152,6 +153,7 @@
 		if(!all_doors)
 			return
 		for(var/obj/machinery/door/firedoor/D in all_doors)
+			D.locked = FALSE
 			if(!D.blocked)
 				if(D.operating)
 					D.nextstate = FIREDOOR_OPEN
@@ -224,6 +226,7 @@
 var/list/mob/living/forced_ambiance_list = new
 
 /area/Entered(A)
+	..()
 	if(!istype(A,/mob/living))	return
 
 	var/mob/living/L = A
@@ -309,7 +312,7 @@ inf*/
 
 	if(istype(mob,/mob/living/carbon/human/))
 		var/mob/living/carbon/human/H = mob
-		if(prob(H.skill_fail_chance(SKILL_EVA, 100, SKILL_PROF)))
+		if(!H.buckled && prob(H.skill_fail_chance(SKILL_EVA, 100, SKILL_PROF)))
 			if(!MOVING_DELIBERATELY(H))
 				H.AdjustStunned(4)
 				H.AdjustWeakened(4)
@@ -324,9 +327,9 @@ inf*/
 		for(var/obj/machinery/power/apc/temp_apc in src)
 			temp_apc.overload_lighting(70)
 		for(var/obj/machinery/door/airlock/temp_airlock in src)
-			temp_airlock.prison_open()
+			INVOKE_ASYNC(temp_airlock, /obj/machinery/door/airlock/proc/prison_open)	// INF was	temp_airlock.prison_open()
 		for(var/obj/machinery/door/window/temp_windoor in src)
-			temp_windoor.open()
+			INVOKE_ASYNC(temp_windoor, /obj/machinery/door/proc/open)	// INF was	temp_windoor.open()
 
 /area/proc/has_gravity()
 	return has_gravity
@@ -361,3 +364,8 @@ inf*/
 
 /area/proc/has_turfs()
 	return !!(locate(/turf) in src)
+
+/area/proc/can_modify_area()
+	if (src && src.area_flags & AREA_FLAG_NO_MODIFY)
+		return FALSE
+	return TRUE

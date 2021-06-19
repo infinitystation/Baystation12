@@ -18,7 +18,7 @@
 		/area/maintenance/auxsolarbridge = NO_SCRUBBER|NO_VENT,
 		/area/maintenance/auxsolarport = NO_SCRUBBER|NO_VENT,
 		/area/maintenance/auxsolarstarboard = NO_SCRUBBER|NO_VENT,
-		/area/maintenance/exterior = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/torchexterior = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/maintenance/firstdeck/foreport = NO_SCRUBBER|NO_VENT,
 		/area/maintenance/firstdeck/forestarboard = NO_SCRUBBER|NO_VENT,
 		/area/maintenance/incinerator = NO_SCRUBBER,
@@ -49,8 +49,6 @@
 		/area/supply = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/thruster = NO_SCRUBBER,
 		/area/turbolift = NO_SCRUBBER|NO_VENT|NO_APC,
-		/area/turret_protected/ai = NO_SCRUBBER|NO_VENT,
-		/area/turret_protected/ai_outer_chamber = NO_SCRUBBER|NO_VENT,
 		/area/vacant/bar = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/vacant = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/vacant/brig = NO_SCRUBBER|NO_VENT,
@@ -65,7 +63,7 @@
 	area_coherency_test_exempt_areas = list(
 		/area/aquila/airlock,
 		/area/centcom/control,
-		/area/maintenance/exterior,
+		/area/torchexterior,
 		/area/space
 	)
 
@@ -86,10 +84,6 @@
 		/area/turbolift/fourthdeck,
 		/area/template_noop
 	)
-
-/datum/unit_test/zas_area_test/ai_chamber
-	name = "ZAS: AI Chamber"
-	area_path = /area/turret_protected/ai
 
 /datum/unit_test/zas_area_test/cargo_bay
 	name = "ZAS: Cargo Bay"

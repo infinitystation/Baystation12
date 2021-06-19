@@ -15,7 +15,7 @@
 	desc = "Has a valve and pump attached to it."
 	use_power = POWER_USE_OFF
 	idle_power_usage = 150		//internal circuitry, friction losses and stuff
-	power_rating = 10000			// 30000 W ~ 40 HP //inf, was 30000
+	power_rating = 30000			// 30000 W ~ 40 HP
 
 	connect_types = CONNECT_TYPE_REGULAR|CONNECT_TYPE_SUPPLY|CONNECT_TYPE_FUEL //connects to regular, supply pipes, and fuel pipes
 	level = 1
@@ -43,9 +43,9 @@
 	build_icon_state = "uvent"
 
 	uncreated_component_parts = list(
-		/obj/item/weapon/stock_parts/power/apc,
-		/obj/item/weapon/stock_parts/radio/receiver,
-		/obj/item/weapon/stock_parts/radio/transmitter/on_event,
+		/obj/item/stock_parts/power/apc,
+		/obj/item/stock_parts/radio/receiver,
+		/obj/item/stock_parts/radio/transmitter/on_event,
 	)
 	public_variables = list(
 		/decl/public_access/public_variable/input_toggle,
@@ -110,7 +110,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/high_volume
 	name = "Large Air Vent"
 	power_channel = EQUIP
-	power_rating = 15000 //inf, was 45000
+	power_rating = 45000
 
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/Initialize()
 	. = ..()
@@ -187,7 +187,6 @@
 
 	//Figure out the target pressure difference
 	var/pressure_delta = get_pressure_delta(environment)
-	//src.visible_message("DEBUG >>> [src]: pressure_delta = [pressure_delta]")
 
 	if((environment.temperature || air_contents.temperature) && pressure_delta > 0.5)
 		if(pump_direction) //internal -> external
@@ -262,7 +261,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/attackby(obj/item/W, mob/user)
 	if(isWelder(W))
 
-		var/obj/item/weapon/weldingtool/WT = W
+		var/obj/item/weldingtool/WT = W
 
 		if(!WT.isOn())
 			to_chat(user, "<span class='notice'>The welding tool needs to be on to start this task.</span>")
@@ -306,7 +305,7 @@
 	if(welded)
 		to_chat(user, "It seems welded shut.")
 
-/obj/machinery/atmospherics/unary/vent_pump/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
+/obj/machinery/atmospherics/unary/vent_pump/attackby(var/obj/item/W as obj, var/mob/user as mob)
 	if(isWrench(W))
 		if (!(stat & NOPOWER) && use_power)
 			to_chat(user, "<span class='warning'>You cannot unwrench \the [src], turn it off first.</span>")

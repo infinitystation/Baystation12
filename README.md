@@ -14,7 +14,7 @@
 
 <p align="center">
   <a href="https://github.com/infinitystation/Baystation12/actions">
-    <img src="https://github.com/infinitystation/Baystation12/workflows/Run%20Tests/badge.svg"
+    <img src="https://github.com/infinitystation/Baystation12/actions/workflows/test.yml/badge.svg"
          alt="Build Status">
   </a>
   <a href="https://www.codefactor.io/repository/github/infinitystation/baystation12">
@@ -78,7 +78,7 @@
   <ul>
 <a href="https://gitforwindows.org/">Git Bash</a>, 
 <a href="https://www.syntevo.com/smartgit/">SmartGit</a>, 
-<a href="https://www.sourcetreeapp.com/">Sourse Tree</a>, 
+<a href="https://www.sourcetreeapp.com/">Sourcetree</a>, 
 <a href="https://git-scm.com/">git-scm</a>, 
 <a href="https://tortoisegit.org/">TortoiseGit</a>, 
 или аналогичный на ваш выбор.

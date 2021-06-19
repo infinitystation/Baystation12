@@ -31,19 +31,19 @@
 
 /datum/edu/proc/compatible(datum/education/target)
 	for(var/datum/edu/ED in prim_reqs)
-		if(!target.primary.Find(ED))
+		if(!find_list(target.primary, ED))
 			return 0
 
 	for(var/datum/edu/ED in sec_reqs)
-		if(!target.primary.Find(ED))
+		if(!find_list(target.primary, ED))
 			return 0
 
 	for(var/datum/edu/ED in extra_reqs)
-		if(!target.primary.Find(ED))
+		if(!find_list(target.primary, ED))
 			return 0
 
 	for(var/datum/edu/ED in skills_reqs)
-		if(!target.primary.Find(ED))
+		if(!find_list(target.primary, ED))
 			return 0
 
 /datum/edu/school

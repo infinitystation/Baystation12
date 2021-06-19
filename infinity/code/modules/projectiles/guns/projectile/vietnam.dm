@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/m16
+/obj/item/gun/projectile/automatic/m16
 	name = "M16A1"
 	desc = "The assault rifle M16A1 made by Colt's Manufacturing LLC from blueprints of AR-15. A perfect choice for spreading democracy."
 	icon = 'icons/event/guns.dmi'
@@ -26,25 +26,25 @@
 		)
 
 	var/use_launcher = 0
-	var/obj/item/weapon/gun/launcher/grenade/underslung/launcher
+	var/obj/item/gun/launcher/grenade/underslung/launcher
 
-/obj/item/weapon/gun/projectile/automatic/m16/New()
+/obj/item/gun/projectile/automatic/m16/New()
 	..()
 	launcher = new(src)
 
-/obj/item/weapon/gun/projectile/automatic/m16/attackby(obj/item/I, mob/user)
-	if((istype(I, /obj/item/weapon/grenade)))
+/obj/item/gun/projectile/automatic/m16/attackby(obj/item/I, mob/user)
+	if((istype(I, /obj/item/grenade)))
 		launcher.load(I, user)
 	else
 		..()
 
-/obj/item/weapon/gun/projectile/automatic/m16/attack_hand(mob/user)
+/obj/item/gun/projectile/automatic/m16/attack_hand(mob/user)
 	if(user.get_inactive_hand() == src && use_launcher)
 		launcher.unload(user)
 	else
 		..()
 
-/obj/item/weapon/gun/projectile/automatic/m16/Fire(atom/target, mob/living/user, params, pointblank=0, reflex=0)
+/obj/item/gun/projectile/automatic/m16/Fire(atom/target, mob/living/user, params, pointblank=0, reflex=0)
 	if(use_launcher)
 		launcher.Fire(target, user, params, pointblank, reflex)
 		if(!launcher.chambered)
@@ -52,7 +52,7 @@
 	else
 		..()
 
-/obj/item/weapon/gun/projectile/automatic/m16/on_update_icon()
+/obj/item/gun/projectile/automatic/m16/on_update_icon()
 	icon_state = (ammo_magazine)? "m16a1gl" : "m16a1gl-empty"
 	item_state = (ammo_magazine)? "m16gl" : "m16gl-empty"
 	wielded_item_state = (ammo_magazine)? "m16gl-wielded" : "m16gl-wielded-empty"
@@ -60,7 +60,7 @@
 
 
 
-/obj/item/weapon/gun/projectile/automatic/m60
+/obj/item/gun/projectile/automatic/m60
 	name = "M60 machine gun"
 	desc = "A rather traditionally made M60 SAW with a pleasantly lacquered plastic pistol grip. Has 'Saco Defense - 1961' engraved on the reciever." //probably should refluff this
 	icon = 'icons/event/guns.dmi'
@@ -94,33 +94,33 @@
 
 	var/cover_open = 0
 
-/obj/item/weapon/gun/projectile/automatic/m60/mag
+/obj/item/gun/projectile/automatic/m60/mag
 	magazine_type = /obj/item/ammo_magazine/c556
 
-/obj/item/weapon/gun/projectile/automatic/m60/special_check(mob/user)
+/obj/item/gun/projectile/automatic/m60/special_check(mob/user)
 	if(cover_open)
 		to_chat(user, "<span class='warning'>[src]'s cover is open! Close it before firing!</span>")
 		return 0
 	return ..()
 
-/obj/item/weapon/gun/projectile/automatic/m60/proc/toggle_cover(mob/user)
+/obj/item/gun/projectile/automatic/m60/proc/toggle_cover(mob/user)
 	cover_open = !cover_open
 	to_chat(user, "<span class='notice'>You [cover_open ? "open" : "close"] [src]'s cover.</span>")
 	update_icon()
 
-/obj/item/weapon/gun/projectile/automatic/m60/attack_self(mob/user as mob)
+/obj/item/gun/projectile/automatic/m60/attack_self(mob/user as mob)
 	if(cover_open)
 		toggle_cover(user) //close the cover
 	else
 		return ..() //once closed, behave like normal
 
-/obj/item/weapon/gun/projectile/automatic/m60/attack_hand(mob/user as mob)
+/obj/item/gun/projectile/automatic/m60/attack_hand(mob/user as mob)
 	if(!cover_open && user.get_inactive_hand() == src)
 		toggle_cover(user) //open the cover
 	else
 		return ..() //once open, behave like normal
 
-/obj/item/weapon/gun/projectile/automatic/m60/on_update_icon()
+/obj/item/gun/projectile/automatic/m60/on_update_icon()
 	if(istype(ammo_magazine, /obj/item/ammo_magazine/box))
 		icon_state = "m60[cover_open ? "open" : "closed"][round(ammo_magazine.stored_ammo.len, 100)]"
 		item_state = "m60"
@@ -129,13 +129,13 @@
 		item_state = "m60-empty"
 	..()
 
-/obj/item/weapon/gun/projectile/automatic/m60/load_ammo(var/obj/item/A, mob/user)
+/obj/item/gun/projectile/automatic/m60/load_ammo(var/obj/item/A, mob/user)
 	if(!cover_open)
 		to_chat(user, "<span class='warning'>You need to open the cover to load that into [src].</span>")
 		return
 	..()
 
-/obj/item/weapon/gun/projectile/automatic/m60/unload_ammo(mob/user, var/allow_dump=1)
+/obj/item/gun/projectile/automatic/m60/unload_ammo(mob/user, var/allow_dump=1)
 	if(!cover_open)
 		to_chat(user, "<span class='warning'>You need to open the cover to unload [src].</span>")
 		return
@@ -143,7 +143,7 @@
 
 
 
-/obj/item/weapon/gun/projectile/automatic/m14
+/obj/item/gun/projectile/automatic/m14
 	name = "M14 rifle"
 	desc = "The M14 - rifle of the Vietnam War. Uses 7.62mm rounds."
 	icon = 'icons/event/guns.dmi'
@@ -151,7 +151,7 @@
 	slot_r_hand_str = 'icons/event/right1.dmi',
 	slot_l_hand_str = 'icons/event/left1.dmi',
 	)
-	var/obj/item/weapon/scope/scoped = null
+	var/obj/item/scope/scoped = null
 	icon_state = "m14"
 	item_state = "m14"
 	w_class = ITEM_SIZE_HUGE
@@ -173,7 +173,7 @@
 		list(mode_name="long bursts",   burst=5, fire_delay=null, move_delay=null,    one_hand_penalty=6, burst_accuracy=list(0,-1,-2,-3,-3), dispersion=list(1.0, 1.0, 1.2, 1.2, 1.5)),
 		)
 
-/obj/item/weapon/gun/projectile/automatic/m14/on_update_icon()
+/obj/item/gun/projectile/automatic/m14/on_update_icon()
 	if(scoped)
 		icon_state = (ammo_magazine)? "m14scoped" : "m14scoped-empty"
 	else
@@ -181,21 +181,21 @@
 	wielded_item_state = (ammo_magazine)? "m14-wielded" : "m14-wielded-empty"
 	..()
 
-/obj/item/weapon/gun/projectile/automatic/m14/attackby(var/obj/item/A as obj, mob/user as mob)
-	if (istype(A, /obj/item/weapon/attachment) && user.unEquip(A))
+/obj/item/gun/projectile/automatic/m14/attackby(var/obj/item/A as obj, mob/user as mob)
+	if (istype(A, /obj/item/attachment) && user.unEquip(A))
 		A.loc = src
 		scoped = A
 		update_icon()
 	..()
 
-/obj/item/weapon/gun/projectile/automatic/m14/verb/unscope()
+/obj/item/gun/projectile/automatic/m14/verb/unscope()
 	set category = "Object"
 	set name = "De-Scope"
 	set popup_menu = 1
 
 	De_scope()
 
-/obj/item/weapon/gun/projectile/automatic/m14/proc/De_scope()
+/obj/item/gun/projectile/automatic/m14/proc/De_scope()
 	toggle_scope(usr, 1)
 	if (!scoped)
 		to_chat(usr, "GDE PRICEL?!!!")
@@ -209,7 +209,7 @@
 	scoped = null
 	update_icon()
 
-/obj/item/weapon/gun/projectile/automatic/m14/verb/scope()
+/obj/item/gun/projectile/automatic/m14/verb/scope()
 	set category = "Object"
 	set name = "Use Scope"
 	set popup_menu = 1

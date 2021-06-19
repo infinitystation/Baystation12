@@ -27,7 +27,7 @@
 	name = "Bluespace River"
 	id = "awaysite_blue"
 	description = "Two z-level map with an arctic planet and an alien underground surface"
-	cost = 0.5
+	spawn_cost = 1 // WAS 0.5
 	generate_mining_by_z = 2
 	prefix = "maps/away_inf/"
 	suffixes = list("blueriver/blueriver-1.dmm", "blueriver/blueriver-2.dmm")
@@ -56,8 +56,8 @@
 	desc = "You feel a sense of dread from just looking at this wall. Its surface seems to be constantly moving, as if it were breathing."
 	icon = 'riverturfs.dmi'
 	icon_state = "evilwall_1"
-	opacity = 1
-	density = 1
+	opacity = TRUE
+	density = TRUE
 	temperature = 233
 
 /turf/unsimulated/wall/away/blueriver/livingwall/Initialize()

@@ -108,7 +108,7 @@
 
 //a gun
 
-/obj/item/weapon/gun/projectile/automatic/nt41/jacking
+/obj/item/gun/projectile/automatic/nt41/jacking
 	name = "xr36"
 	desc = "XR36 - export version of the XR36K, characterized by installing a “high” picatinny rail instead of a carrying handle on top of the receiver. The guide is equipped with a 3x4 double sight, and then a thin longitudinal groove is used. In addition, on the XR36 modification, a “cheek” is installed on the standard frame stock."
 	icon_state = "xr36"
@@ -121,7 +121,7 @@
 		)
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/gun/projectile/automatic/nt41/jacking/on_update_icon()
+/obj/item/gun/projectile/automatic/nt41/jacking/on_update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "xr36"
@@ -132,10 +132,11 @@
 
 /obj/item/custkit/custom_army
 	name = "NT41 customization kit"
-	input = /obj/item/weapon/gun/projectile/automatic/nt41/armory
-	output = /obj/item/weapon/gun/projectile/automatic/nt41/jacking
+	input = /obj/item/gun/projectile/automatic/nt41/armory
+	output = /obj/item/gun/projectile/automatic/nt41/jacking
 
-/obj/item/weapon/clothingbag/custom_army/Initialize()
+/obj/item/clothingbag/custom_army/Initialize()
+	. = ..()
 	new /obj/item/clothing/under/custom_army_uniform(src)
 	new /obj/item/clothing/glasses/sunglasses/sechud/custom_ballistic(src)
 	new /obj/item/clothing/accessory/armor/helmcover/custom_army(src)
@@ -164,7 +165,7 @@
 //	starting_accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches)
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/gun/energy/laser/secure/jacking
+/obj/item/gun/energy/laser/secure/jacking
 	name = "\improper RG-104"
 	desc = "RG-104 is one of the favorite weapons in its generation, a modified and improved weapon battery eliminates the facts of a quick discharge of a weapon, and a laser sight will point directly at the target and it remains to make a shot..."
 	icon_state = "custom_lasgun"
@@ -179,10 +180,11 @@
 
 /obj/item/custkit/custom_zpci_knight
 	name = "laser carabine customization kit"
-	input = /obj/item/weapon/gun/energy/laser/secure
-	output = /obj/item/weapon/gun/energy/laser/secure/jacking
+	input = /obj/item/gun/energy/laser/secure
+	output = /obj/item/gun/energy/laser/secure/jacking
 
-/obj/item/weapon/clothingbag/custom_zpci_knight/Initialize()
+/obj/item/clothingbag/custom_zpci_knight/Initialize()
+	. = ..()
 	new /obj/item/clothing/head/helmet/custom_zpci_knight(src)
 	new /obj/item/clothing/suit/armor/pcarrier/custom_zpci_knight(src)
 	new /obj/item/custkit/custom_zpci_knight(src)
@@ -218,8 +220,8 @@
 	trade_blacklisted = TRUE
 
 /obj/item/clothing/accessory/badge/holo/jacking/attackby(var/obj/item/O as obj, var/mob/user as mob)
-	if(istype(O, /obj/item/weapon/card/id) || istype(O, /obj/item/modular_computer))
-		var/obj/item/weapon/card/id/id_card = O.GetIdCard()
+	if(istype(O, /obj/item/card/id) || istype(O, /obj/item/modular_computer))
+		var/obj/item/card/id/id_card = O.GetIdCard()
 		if(!id_card)
 			return
 		if((badge_access in id_card.access) || emagged)
@@ -231,7 +233,7 @@
 		return
 	..()
 
-/obj/item/weapon/storage/backpack/dufflebag/biohazard
+/obj/item/storage/backpack/dufflebag/biohazard
 	name = "biohazard dufflebag"
 	desc = "A well-prepared kit for epidemiological analysis, planning anti-epidemic measures, epidemiological surveys of foci of infectious diseases."
 	icon = CUSTOM_ITEM_OBJ
@@ -243,12 +245,12 @@
 		)
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/storage/backpack/dufflebag/biohazard/jacking
+/obj/item/storage/backpack/dufflebag/biohazard/jacking
 	startswith = list(
-	/obj/item/weapon/clothingbag/biohazard
+	/obj/item/clothingbag/biohazard
 	)
 
-/obj/item/weapon/clothingbag/biohazard/Initialize()
+/obj/item/clothingbag/biohazard/Initialize()
 	new /obj/item/clothing/suit/bio_suit/virology/jacking(src)
 	new /obj/item/clothing/head/bio_hood/virology/jacking(src)
 	new /obj/item/clothing/accessory/badge/holo/jacking(src)
@@ -294,7 +296,8 @@
 	sprite_sheets = list()
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/clothingbag/custom_saare/Initialize()
+/obj/item/clothingbag/custom_saare/Initialize()
+	. = ..()
 	new /obj/item/clothing/under/custom_saare_uniform(src)
 	new /obj/item/clothing/glasses/sunglasses/sechud/custom_ballistic/orange(src)
 	new /obj/item/clothing/accessory/armor/helmcover/custom_saare(src)

@@ -47,13 +47,13 @@ var/list/gear_datums = list()
 	var/current_tab = "General"
 	var/hide_unavailable_gear = 0
 
-/datum/category_item/player_setup_item/loadout/load_character(var/savefile/S)
-	from_file(S["gear_list"], pref.gear_list)
-	from_file(S["gear_slot"], pref.gear_slot)
+/datum/category_item/player_setup_item/loadout/load_character(datum/pref_record_reader/R)
+	pref.gear_list = R.read("gear_list")
+	pref.gear_slot = R.read("gear_slot")
 
-/datum/category_item/player_setup_item/loadout/save_character(var/savefile/S)
-	to_file(S["gear_list"], pref.gear_list)
-	to_file(S["gear_slot"], pref.gear_slot)
+/datum/category_item/player_setup_item/loadout/save_character(datum/pref_record_writer/W)
+	W.write("gear_list", pref.gear_list)
+	W.write("gear_slot", pref.gear_slot)
 
 /datum/category_item/player_setup_item/loadout/proc/valid_gear_choices(var/max_cost)
 	. = list()
@@ -127,7 +127,7 @@ var/list/gear_datums = list()
 		fcolor = "#e67300"
 	. += "<table align = 'center' width = 100%>"
 	. += "<tr><td colspan=3><center>"
-	. += "<a href='?src=\ref[src];prev_slot=1'>\<\<</a><b><font color = '[fcolor]'>\[[pref.gear_slot]\]</font> </b><a href='?src=\ref[src];next_slot=1'>\>\></a>"
+	. += "<a href='?src=\ref[src];prev_slot=1'>\<=</a><b><font color = '[fcolor]'>\[[pref.gear_slot]\]</font> </b><a href='?src=\ref[src];next_slot=1'>=\></a>"
 
 	if(config.max_gear_cost < INFINITY)
 		. += "<b><font color = '[fcolor]'>[total_cost]/[config.max_gear_cost]</font> loadout points spent.</b>"
@@ -162,9 +162,17 @@ var/list/gear_datums = list()
 	. += "</b></center></td></tr>"
 
 	var/datum/loadout_category/LC = loadout_categories[current_tab]
+/*[BAY]
 	. += "<tr><td colspan=3><hr></td></tr>"
 	. += "<tr><td colspan=3><b><center>[LC.category]</center></b></td></tr>"
 	. += "<tr><td colspan=3><hr></td></tr>"
+[/BAY]*/
+//[INF]
+	. += "<tr><td colspan=5><hr></td></tr>"
+	. += "<tr><td colspan=5><b><center>[LC.category]</center></b></td></tr>"
+	. += "<tr><td colspan=5><hr></td></tr>"
+	. += "<tr><th>Name<th>Slots' Cost<th>Description<th>Premium Cost<th>Premium Level"
+//[/INF]
 	var/jobs = list()
 	for(var/job_title in (pref.job_medium|pref.job_low|pref.job_high))
 		var/datum/job/J = SSjobs.get_by_title(job_title)
@@ -172,13 +180,24 @@ var/list/gear_datums = list()
 			dd_insertObjectList(jobs, J)
 	var/list/valid_gear_list = valid_gear_choices() //INF
 	for(var/gear_name in LC.gear)
-		if(!(gear_name in valid_gear_list)) //INF, WAS if(!(gear_name in valid_gear_choices()))
+		if(!list_find(valid_gear_list, gear_name))//inf, was: if(!(gear_name in valid_gear_choices())) 
 			continue
 		var/list/entry = list()
 		var/datum/gear/G = LC.gear[gear_name]
 		var/ticked = (G.display_name in pref.gear_list[pref.gear_slot])
-		entry += "<tr style='vertical-align:top;'><td width=25%><a style='white-space:normal;' [ticked ? "class='linkOn' " : ""]href='?src=\ref[src];toggle_gear=\ref[G]'>[G.display_name]</a></td>"
-		entry += "<td width = 10% style='vertical-align:top'>[G.cost]</td>"
+		//[INF]
+
+		var/list/gear_link_class = list()
+		if(ticked)
+			gear_link_class.Add("linkOn")
+		if(G.price > 0 || G.required_donate_level > 0)
+			gear_link_class.Add("donate")
+		gear_link_class = jointext(gear_link_class, " ")
+
+		var/text_style = "vertical-align:top;text-align:center;"
+		//[/INF]
+		entry += "<tr style='vertical-align:top;'><td><a style='white-space:normal;' class='[gear_link_class]' href='?src=\ref[src];toggle_gear=\ref[G]'>[G.display_name]</a></td>" //inf, was: entry += "<tr style='vertical-align:top;'><td width=25%><a style='white-space:normal;' [ticked ? "class='linkOn' " : ""]href='?src=\ref[src];toggle_gear=\ref[G]'>[G.display_name]</a></td>"
+		entry += "<td style='[text_style]'>[G.cost]</td>"//inf, was: entry += "<td width = 10% style='vertical-align:top'>[G.cost]</td>"
 		entry += "<td><font size=2>[G.get_description(get_gear_metadata(G,1))]</font>"
 		var/allowed = 1
 		if(allowed && G.allowed_roles)
@@ -237,7 +256,10 @@ var/list/gear_datums = list()
 				skill_checks += skill_entry
 
 			entry += "[english_list(skill_checks)]</i>"
-
+		//[INF]
+		entry += "<td style='[text_style]'>[G.price]"
+		entry += "<td style='[text_style]'>[G.required_donate_level]"
+		//[/INF]
 		entry += "</tr>"
 		if(ticked)
 			entry += "<tr><td colspan=3>"
@@ -275,14 +297,14 @@ var/list/gear_datums = list()
 		var/datum/gear/TG = locate(href_list["toggle_gear"])
 		if(!istype(TG) || gear_datums[TG.display_name] != TG)
 			return TOPIC_REFRESH
-		if(TG.display_name in pref.gear_list[pref.gear_slot])
+		if((TG.display_name in pref.gear_list[pref.gear_slot]) || !gear_allowed_to_equip(TG, user)) //inf, was: if(TG.display_name in pref.gear_list[pref.gear_slot])
 			pref.gear_list[pref.gear_slot] -= TG.display_name
 		else
 			var/total_cost = 0
 			for(var/gear_name in pref.gear_list[pref.gear_slot])
 				var/datum/gear/G = gear_datums[gear_name]
 				if(istype(G)) total_cost += G.cost
-			if((total_cost+TG.cost) <= config.max_gear_cost)
+			if(((total_cost + TG.cost) <= config.max_gear_cost) && gear_allowed_to_equip(TG, user)) //inf, was: if((total_cost+TG.cost) <= config.max_gear_cost)
 				pref.gear_list[pref.gear_slot] += TG.display_name
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 	if(href_list["gear"] && href_list["tweak"])
@@ -316,29 +338,6 @@ var/list/gear_datums = list()
 		hide_unavailable_gear = !hide_unavailable_gear
 		return TOPIC_REFRESH
 	return ..()
-
-/datum/category_item/player_setup_item/loadout/update_setup(var/savefile/preferences, var/savefile/character)
-	if(preferences["version"] < 14)
-		var/list/old_gear = character["gear"]
-		if(istype(old_gear)) // During updates data isn't sanitized yet, we have to do manual checks
-			if(!istype(pref.gear_list)) pref.gear_list = list()
-			if(!pref.gear_list.len) pref.gear_list.len++
-			pref.gear_list[1] = old_gear
-		return 1
-
-	if(preferences["version"] < 15)
-		if(istype(pref.gear_list))
-			// Checks if the key of the pref.gear_list is a list.
-			// If not the key is replaced with the corresponding value.
-			// This will convert the loadout slot data to a reasonable and (more importantly) compatible format.
-			// I.e. list("1" = loadout_data1, "2" = loadout_data2, "3" = loadout_data3) becomes list(loadout_data1, loadout_data2, loadaout_data3)
-			for(var/index = 1 to pref.gear_list.len)
-				var/key = pref.gear_list[index]
-				if(islist(key))
-					continue
-				var/value = pref.gear_list[key]
-				pref.gear_list[index] = value
-		return 1
 
 /datum/gear
 	var/display_name       //Name/index. Must be unique.
@@ -402,12 +401,39 @@ var/list/gear_datums = list()
 	var/obj/item/item = spawn_item(H, H, metadata)
 	item.add_fingerprint(H)
 
-	var/atom/placed_in = H.equip_to_storage(item)
-	if(placed_in)
-		to_chat(H, "<span class='notice'>Placing \the [item] in your [placed_in.name]!</span>")
-	else if(H.equip_to_appropriate_slot(item))
-		to_chat(H, "<span class='notice'>Placing \the [item] in your inventory!</span>")
-	else if(H.put_in_hands(item))
-		to_chat(H, "<span class='notice'>Placing \the [item] in your hands!</span>")
+	// Roundstart augments require special handling in order to properly install
+	// Putting this in "spawn_on_mob" requires overriding a bunch of logic, so we hook into here instead
+	if (istype(item, /obj/item/organ/internal/augment))
+		var/obj/item/organ/internal/augment/A = item
+		var/obj/item/organ/external/affected = H.get_organ(A.parent_organ)
+		if (!affected)
+			to_chat(H, SPAN_WARNING("Failed to install \the [A]!"))
+			QDEL_NULL(A)
+		else
+			var/beep_boop = BP_IS_ROBOTIC(affected)
+			var/obj/item/organ/internal/I = H.internal_organs_by_name[A.organ_tag]
+			if (!(A.augment_flags & AUGMENTATION_MECHANIC) && beep_boop)
+				to_chat(H, SPAN_WARNING("\The [A] cannot be installed in a robotic part!"))
+				QDEL_NULL(A)
+			else if (!(A.augment_flags & AUGMENTATION_ORGANIC) && !beep_boop)
+				to_chat(H, SPAN_WARNING("\The [A] cannot be installed in an organic part!"))
+				QDEL_NULL(A)
+			else if(I && (I.parent_organ == A.parent_organ))
+				to_chat(H, SPAN_WARNING("\The [A] could not be installed because you can only have one [A.organ_tag] at a time."))
+				QDEL_NULL(A)
+			else
+				to_chat(H, SPAN_NOTICE("Installing \the [A] in your [affected.name]!"))
+				A.forceMove(H)
+				A.replaced(H, affected)
+				A.onRoundstart()
+				. = A
 	else
-		to_chat(H, "<span class='danger'>Dropping \the [item] on the ground!</span>")
+		var/atom/placed_in = H.equip_to_storage(item)
+		if(placed_in)
+			to_chat(H, SPAN_NOTICE("Placing \the [item] in your [placed_in.name]!"))
+		else if(H.equip_to_appropriate_slot(item))
+			to_chat(H, SPAN_NOTICE("Placing \the [item] in your inventory!"))
+		else if(H.put_in_hands(item))
+			to_chat(H, SPAN_NOTICE("Placing \the [item] in your hands!"))
+		else
+			to_chat(H, SPAN_DANGER("Dropping \the [item] on the ground!"))

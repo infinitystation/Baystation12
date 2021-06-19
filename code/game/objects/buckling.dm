@@ -13,10 +13,10 @@
 	if(can_buckle && buckled_mob)
 		user_unbuckle_mob(user)
 
-/obj/attack_robot(mob/living/user)
+/obj/attack_robot(mob/user)
 	. = ..()
-	if(can_buckle && buckled_mob && Adjacent(user)) // attack_robot is called on all ranges, so the Adjacent check is needed
-		return user_unbuckle_mob(user)
+	if (can_buckle && buckled_mob)
+		user_unbuckle_mob(user)
 
 /obj/MouseDrop_T(mob/living/M, mob/living/user)
 	. = ..()
@@ -32,14 +32,14 @@
 /obj/proc/buckle_mob(mob/living/M)
 	if(buckled_mob) //unless buckled_mob becomes a list this can cause problems
 		return 0
-	if(!istype(M) || (M.loc != loc) || M.buckled || M.pinned.len || (buckle_require_restraints && !M.restrained()))
+	if(!istype(M) || (M.loc != loc) || !M.can_be_buckled || M.buckled || M.pinned.len || (buckle_require_restraints && !M.restrained()))
 		return 0
 	if(ismob(src))
 		var/mob/living/carbon/C = src //Don't wanna forget the xenos.
 		if(M != src && C.incapacitated())
 			return 0
 
-	GLOB.moved_event.register(M, src, /obj/proc/unbuckle_mob)	// INF
+	GLOB.moved_event.register(M, src, /obj/proc/check_for_unbuckle)	// INF
 	M.buckled = src
 	M.facing_dir = null
 	M.set_dir(buckle_dir ? buckle_dir : dir)
@@ -53,7 +53,7 @@
 /obj/proc/unbuckle_mob()
 	if(buckled_mob && buckled_mob.buckled == src)
 		. = buckled_mob
-		GLOB.moved_event.unregister(buckled_mob, src, /obj/proc/unbuckle_mob)	// INF
+		GLOB.moved_event.unregister(buckled_mob, src, /obj/proc/check_for_unbuckle)	// INF
 		buckled_mob.buckled = null
 		buckled_mob.anchored = initial(buckled_mob.anchored)
 		buckled_mob.UpdateLyingBuckledAndVerbStatus()
@@ -75,6 +75,9 @@
 		return 0
 	if(M == buckled_mob)
 		return 0
+	if (M.grabbed_by.len)
+		to_chat(user, SPAN_WARNING("\The [M] is being grabbed and cannot be buckled."))
+		return FALSE
 	if(istype(M, /mob/living/carbon/slime))
 		to_chat(user, "<span class='warning'>\The [M] is too squishy to buckle in.</span>")
 		return 0
@@ -83,6 +86,9 @@
 		to_chat(M, SPAN_WARNING("You cannot buckle while grabbed!"))
 		return 0
 //[/INF]
+	if (!M.can_be_buckled)
+		to_chat(user, SPAN_WARNING("\The [M] cannot be buckled."))
+		return FALSE
 
 	add_fingerprint(user)
 	unbuckle_mob()
@@ -119,4 +125,3 @@
 				"<span class='notice'>You hear metal clanking.</span>")
 		add_fingerprint(user)
 	return M
-

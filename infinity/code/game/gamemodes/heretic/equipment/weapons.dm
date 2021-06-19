@@ -1,4 +1,4 @@
-/obj/item/weapon/melee/cult_spear
+/obj/item/melee/cult_spear
 	name = "blood halberd"
 	desc = "A sickening spear composed entirely of crystallized blood."
 	icon_state = "bloodspear0"
@@ -23,7 +23,7 @@
 
 	var/mob/living/owner
 
-/obj/item/weapon/melee/cult_spear/proc/recall()
+/obj/item/melee/cult_spear/proc/recall()
 	if(owner == src.loc)
 		return
 	var/ST = get_turf(src)
@@ -37,7 +37,7 @@
 			L.visible_message("<span class='warning'>An unseen force pulls [src] from [L]'s hands!</span>")
 		src.throw_at(owner, 10, 2, owner)
 
-/obj/item/weapon/melee/cult_spear/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+/obj/item/melee/cult_spear/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	var/turf/T = get_turf(hit_atom)
 	if(isliving(hit_atom))
 		var/mob/living/L = hit_atom
@@ -54,7 +54,7 @@
 		recall()
 		. = ..()
 
-/obj/item/weapon/melee/cult_spear/proc/break_spear(turf/T)
+/obj/item/melee/cult_spear/proc/break_spear(turf/T)
 	if(src)
 		if(!T)
 			T = get_turf(src)
@@ -64,7 +64,7 @@
 			playsound(T, 'sound/effects/glassbr3.ogg', 100)
 	qdel(src)
 
-/obj/item/weapon/melee/cult_spear/update_twohanding()
+/obj/item/melee/cult_spear/update_twohanding()
 	var/mob/living/M = loc
 	if(istype(M) && is_held_twohanded(M))
 		icon_state = "bloodspear1"
@@ -87,11 +87,11 @@
 
 	update_icon()
 
-/obj/item/weapon/melee/cult_spear/dropped()
+/obj/item/melee/cult_spear/dropped()
 	force = 17
 	throwforce = 40
 
-/obj/item/weapon/melee/cult_spear/pickup(mob/living/user as mob)
+/obj/item/melee/cult_spear/pickup(mob/living/user as mob)
 	if(iscultist(user))
 		if(!owner)
 			owner = user
@@ -108,7 +108,7 @@
 		recall()
 		to_chat(user, SPAN_WARNING("An unseen force suddenly rips [src] out of your hands!"))
 
-/obj/item/weapon/shield/mirror
+/obj/item/shield/mirror
 	name = "mirror shield"
 	desc = "An infamous shield used by Nar'Sien sects to confuse and disorient their enemies. Its edges are weighted for use as a throwing weapon - capable of disabling multiple foes with preternatural accuracy."
 	icon_state = "mirror_shield"
@@ -130,7 +130,7 @@
 
 	var/illusions = 3
 
-/obj/item/weapon/shield/mirror/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack") //Nar'Sien shield is special and magic, you can block while lying on the ground
+/obj/item/shield/mirror/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack") //Nar'Sien shield is special and magic, you can block while lying on the ground
 	if(iscultist(user) || (user.mind in GLOB.godcult.current_antagonists))
 		if(istype(damage_source, /obj/item/projectile))
 			var/obj/item/projectile/P = damage_source
@@ -166,14 +166,14 @@
 			to_chat(user, "<span class='danger'><b>[src] betrays you!</b></span>")
 		return FALSE
 
-/obj/item/weapon/shield/mirror/proc/readd()
+/obj/item/shield/mirror/proc/readd()
 	illusions++
 	if(illusions == initial(illusions) && isliving(loc))
 		var/mob/living/holder = loc
 		to_chat(holder, "<span class='cult italic'>The shield's illusions are back at full strength!</span>")
 
 
-/obj/item/weapon/shield/mirror/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+/obj/item/shield/mirror/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	var/turf/T = get_turf(hit_atom)
 	var/datum/thrownthing/D = throwingdatum
 	if(isliving(hit_atom))
@@ -196,7 +196,7 @@
 	else
 		..()
 
-/obj/item/weapon/melee/cultblade
+/obj/item/melee/cultblade
 	name = "cult blade"
 	desc = "An arcane weapon wielded by the followers of Nar-Sie."
 	icon = 'infinity/icons/obj/cult.dmi'
@@ -210,17 +210,17 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 
-/obj/item/weapon/melee/cultblade/ghost
+/obj/item/melee/cultblade/ghost
 	name = "eldritch longsword"
 	force = 19
-	anchored = 1
+	anchored = TRUE
 	canremove = 0
 
-/obj/item/weapon/melee/cultblade/ghost/dropped(mob/user)
+/obj/item/melee/cultblade/ghost/dropped(mob/user)
 	. = ..()
 	qdel(src)
 
-/obj/item/weapon/melee/cultblade/attack(mob/living/M, mob/living/user, var/target_zone)
+/obj/item/melee/cultblade/attack(mob/living/M, mob/living/user, var/target_zone)
 	if(iscultist(user) || (user.mind in GLOB.godcult.current_antagonists))
 		return ..()
 
@@ -248,12 +248,12 @@
 
 	return 1
 
-/obj/item/weapon/melee/cultblade/pickup(mob/living/user as mob)
+/obj/item/melee/cultblade/pickup(mob/living/user as mob)
 	if(!iscultist(user))
 		to_chat(user, "<span class='warning'>An overwhelming feeling of dread comes over you as you pick up the cultist's sword. It would be wise to be rid of this blade quickly.</span>")
 		user.make_dizzy(120)
 
-/obj/item/weapon/melee/cultblade/dagger
+/obj/item/melee/cultblade/dagger
 	name = "ritual dagger"
 	desc = "A strange dagger said to be used by sinister groups for \"preparing\" a corpse before sacrificing it to their dark gods."
 	icon = 'icons/obj/wizard.dmi'
@@ -264,7 +264,7 @@
 	throwforce = 10
 	armor_penetration = 35
 
-/obj/item/weapon/melee/cultblade/dagger/afterattack(var/mob/living/carbon/human/M, var/mob/living/carbon/human/user)
+/obj/item/melee/cultblade/dagger/afterattack(var/mob/living/carbon/human/M, var/mob/living/carbon/human/user)
 	if(!istype(M) || !istype(user))
 		return
 	for(var/datum/active_effect/cult_tattoo/tattoo in user.active_effects)
@@ -274,7 +274,7 @@
 				user.vessel.add_reagent(/datum/reagent/blood, 15)
 			break
 
-/obj/item/weapon/melee/cultbastard
+/obj/item/melee/cultbastard
 	name = "bloody bastard sword"
 	desc = "An eldritch sword used by Nar'Sien cultists to rapidly harvest the souls of non-believers. Use it on construct shells to put souls incide."
 	icon = 'infinity/icons/obj/cult.dmi'
@@ -293,14 +293,14 @@
 	var/dash_toggled = TRUE
 	var/dashcooldown = 0
 
-/obj/item/weapon/melee/cultbastard/examine(mob/user)
+/obj/item/melee/cultbastard/examine(mob/user)
 	. = ..()
 	if(contents.len)
 		. += "<b>There are [contents.len] souls trapped within the sword's core.</b>"
 	else
 		. += "The sword appears to be quite lifeless."
 
-/obj/item/weapon/melee/cultbastard/pickup(mob/living/user)
+/obj/item/melee/cultbastard/pickup(mob/living/user)
 	. = ..()
 	if(!iscultist(user))
 		to_chat(user, FONT_LARGE("<span class='cult italic'>\"I wouldn't advise that.\"</span>"))
@@ -308,7 +308,7 @@
 		return
 	force = initial(force)
 
-/obj/item/weapon/melee/cultbastard/afterattack(var/atom/A, var/mob/user, var/proximity)
+/obj/item/melee/cultbastard/afterattack(var/atom/A, var/mob/user, var/proximity)
 	if(!iscultist(user))
 		return
 
@@ -344,7 +344,7 @@
 				SS.attack(A, user)
 	. = ..()
 
-/obj/item/weapon/melee/cultbastard/attack_self(mob/user)
+/obj/item/melee/cultbastard/attack_self(mob/user)
 	dash_toggled = !dash_toggled
 	if(dash_toggled)
 		to_chat(loc, "<span class='notice'>You raise [src] and prepare to jaunt with it.</span>")

@@ -11,6 +11,7 @@
 	has_hardpoints = list(HARDPOINT_HEAD)
 	var/active_sensors = 0
 	power_use = 15
+	w_class = ITEM_SIZE_NORMAL
 
 /obj/item/mech_component/sensors/Destroy()
 	QDEL_NULL(camera)
@@ -35,18 +36,18 @@
 	camera = locate() in src
 	software = locate() in src
 
-/obj/item/mech_component/sensors/proc/get_sight()
+/obj/item/mech_component/sensors/proc/get_sight(powered)
 	var/flags = 0
-	if(total_damage >= 0.8 * max_damage)
+	if(total_damage >= 0.8 * max_damage || !powered)
 		flags |= BLIND
-	else if(active_sensors)
+	else if(active_sensors && powered)
 		flags |= vision_flags
 
 	return flags
 
-/obj/item/mech_component/sensors/proc/get_invisible()
+/obj/item/mech_component/sensors/proc/get_invisible(powered)
 	var/invisible = 0
-	if((total_damage <= 0.8 * max_damage) && active_sensors)
+	if((total_damage <= 0.8 * max_damage) && active_sensors && powered)
 		invisible = see_invisible
 	return invisible
 
@@ -74,6 +75,24 @@
 	else
 		return ..()
 
+/obj/item/mech_component/sensors/return_diagnostics(mob/user)
+	..()
+	if(software)
+		to_chat(user, SPAN_NOTICE(" Installed Software"))
+		for(var/exosystem_software in software.installed_software)
+			to_chat(user, SPAN_NOTICE(" - <b>[capitalize(exosystem_software)]</b>"))
+	else
+		to_chat(user, SPAN_WARNING(" Control Module Missing or Non-functional."))
+	if(radio)
+		to_chat(user, SPAN_NOTICE(" Radio Integrity: <b>[round((((radio.max_dam - radio.total_dam) / radio.max_dam)) * 100)]%</b>"))
+	else
+		to_chat(user, SPAN_WARNING(" Radio Missing or Non-functional."))
+	if(camera)
+		to_chat(user, SPAN_NOTICE(" Camera Integrity: <b>[round((((camera.max_dam - camera.total_dam) / camera.max_dam)) * 100)]%</b>"))
+	else
+		to_chat(user, SPAN_WARNING(" Camera Missing or Non-functional."))
+
+
 /obj/item/mech_component/control_module
 	name = "exosuit control module"
 	desc = "A clump of circuitry and software chip docks, used to program exosuits."
@@ -90,7 +109,7 @@
 
 /obj/item/mech_component/control_module/attackby(var/obj/item/thing, var/mob/user)
 
-	if(istype(thing, /obj/item/weapon/stock_parts/circuitboard/exosystem))
+	if(istype(thing, /obj/item/circuitboard/exosystem))
 		install_software(thing, user)
 		return
 
@@ -101,7 +120,7 @@
 	else
 		return ..()
 
-/obj/item/mech_component/control_module/proc/install_software(var/obj/item/weapon/stock_parts/circuitboard/exosystem/software, var/mob/user)
+/obj/item/mech_component/control_module/proc/install_software(var/obj/item/circuitboard/exosystem/software, var/mob/user)
 	if(installed_software.len >= max_installed_software)
 		if(user)
 			to_chat(user, SPAN_WARNING("\The [src] can only hold [max_installed_software] software modules."))
@@ -117,5 +136,5 @@
 
 /obj/item/mech_component/control_module/proc/update_software()
 	installed_software = list()
-	for(var/obj/item/weapon/stock_parts/circuitboard/exosystem/program in contents)
+	for(var/obj/item/circuitboard/exosystem/program in contents)
 		installed_software |= program.contains_software

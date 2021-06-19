@@ -10,19 +10,19 @@
 	name = "UI"
 	sort_order = 1
 
-/datum/category_item/player_setup_item/player_global/ui/load_preferences(var/savefile/S)
-	S["UI_style"]		>> pref.UI_style
-	S["UI_style_color"]	>> pref.UI_style_color
-	S["UI_style_alpha"]	>> pref.UI_style_alpha
-	S["ooccolor"]		>> pref.ooccolor
-	S["clientfps"]		>> pref.clientfps
+/datum/category_item/player_setup_item/player_global/ui/load_preferences(datum/pref_record_reader/R)
+	pref.UI_style = R.read("UI_style")
+	pref.UI_style_color = R.read("UI_style_color")
+	pref.UI_style_alpha = R.read("UI_style_alpha")
+	pref.ooccolor = R.read("ooccolor")
+	pref.clientfps = R.read("clientfps")
 
-/datum/category_item/player_setup_item/player_global/ui/save_preferences(var/savefile/S)
-	S["UI_style"]		<< pref.UI_style
-	S["UI_style_color"]	<< pref.UI_style_color
-	S["UI_style_alpha"]	<< pref.UI_style_alpha
-	S["ooccolor"]		<< pref.ooccolor
-	S["clientfps"]		<< pref.clientfps
+/datum/category_item/player_setup_item/player_global/ui/save_preferences(datum/pref_record_writer/W)
+	W.write("UI_style", pref.UI_style)
+	W.write("UI_style_color", pref.UI_style_color)
+	W.write("UI_style_alpha", pref.UI_style_alpha)
+	W.write("ooccolor", pref.ooccolor)
+	W.write("clientfps", pref.clientfps)
 
 /datum/category_item/player_setup_item/player_global/ui/sanitize_preferences()
 	pref.UI_style		= sanitize_inlist(pref.UI_style, all_ui_styles, initial(pref.UI_style))
@@ -67,7 +67,7 @@
 	else if(href_list["select_ooc_color"])
 		var/new_ooccolor = input(user, "Выберите цвет Вашего текста в OOC:", "Глобальные Предпочтения") as color|null
 		if(new_ooccolor && can_select_ooc_color(user) && CanUseTopic(user))
-			pref.ooccolor = new_ooccolor
+			pref.client.set_ooc_color(new_ooccolor) //inf, was: pref.ooccolor = new_ooccolor
 			return TOPIC_REFRESH
 
 	else if(href_list["select_fps"])

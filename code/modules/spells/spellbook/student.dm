@@ -1,6 +1,6 @@
 //wizard's training wheels. Basically. Same shit as in the general one.
 
-/obj/item/weapon/spellbook/student
+/obj/item/spellbook/student
 	spellbook_type = /datum/spellbook/student
 
 /datum/spellbook/student
@@ -18,12 +18,12 @@
 				/spell/targeted/projectile/magic_missile = 		1,
 				/spell/targeted/projectile/dumbfire/fireball =  1,
 				/spell/targeted/heal_target = 				    1,
-				/obj/item/weapon/gun/energy/staff/focus = 		2,
-				/obj/item/weapon/contract/wizard/xray = 		2
+				/obj/item/gun/energy/staff/focus = 		2,
+				/obj/item/contract/wizard/xray = 		2
 				)
 
 /datum/spellbook/student/apprentice
 	book_flags = CAN_MAKE_CONTRACTS|INVESTABLE|NOREVERT|NO_LOCKING
 
-/obj/item/weapon/spellbook/apprentice
+/obj/item/spellbook/apprentice
 	spellbook_type = /datum/spellbook/student/apprentice

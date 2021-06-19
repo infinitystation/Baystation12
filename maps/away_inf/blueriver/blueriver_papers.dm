@@ -1,4 +1,4 @@
-/obj/item/weapon/paper/blueriver/report
+/obj/item/paper/blueriver/report
 	name = "cometa's sensor array report"
 	info = {"<tt>
 	<h3>АВТОМАТИЧЕСКИЙ ОТЧЕТ. ЧЕЛНОК 'КОМЕТА'</h3>

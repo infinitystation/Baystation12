@@ -50,7 +50,7 @@
 		rad = ARMOR_RAD_RESISTANT
 		)
 
-	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit,/obj/item/weapon/gun,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/melee/energy/sword,/obj/item/weapon/handcuffs)
+	allowed = list(/obj/item/device/flashlight,/obj/item/tank,/obj/item/device/suit_cooling_unit,/obj/item/gun,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/melee/baton,/obj/item/melee/energy/sword,/obj/item/handcuffs)
 	siemens_coefficient = 0.3
 	species_restricted = list(SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_IPC)
 	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
@@ -84,7 +84,7 @@
 /obj/item/clothing/suit/space/void/merc/heavy/prepared
 	helmet = /obj/item/clothing/head/helmet/space/void/merc/heavy
 	boots = /obj/item/clothing/shoes/magboots
-	tank = /obj/item/weapon/tank/oxygen
+	tank = /obj/item/tank/oxygen
 
 /obj/item/clothing/suit/space/void/merc/heavy/verb/toggle_mode()
 

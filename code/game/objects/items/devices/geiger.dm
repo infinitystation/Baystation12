@@ -40,7 +40,7 @@
 
 /obj/item/device/geiger/examine(mob/user)
 	. = ..()
-	var/msg = "[scanning ? "ambient" : "stored"] Radiation level: [radiation_count ? radiation_count : "0"] Roentgen."
+	var/msg = "[scanning ? "ambient" : "stored"] Radiation level: [radiation_count ? radiation_count : "0"] IU/s."
 	if(radiation_count > RAD_LEVEL_LOW)
 		to_chat(user, "<span class='warning'>[msg]</span>")
 	else
@@ -53,7 +53,7 @@
 	else
 		STOP_PROCESSING(SSobj, src)
 	update_icon()
-	to_chat(user, "<span class='notice'>\icon[src] You switch [scanning ? "on" : "off"] [src].</span>")
+	to_chat(user, "<span class='notice'>[icon2html(src, user)] You switch [scanning ? "on" : "off"] [src].</span>")
 
 /obj/item/device/geiger/on_update_icon()
 	if(!scanning)

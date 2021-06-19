@@ -141,7 +141,7 @@
 /turf/simulated/floor/tiled/white,
 /area/outpost/abandoned)
 "aG" = (
-/obj/item/weapon/stool,
+/obj/item/stool,
 /turf/simulated/floor/tiled/white,
 /area/outpost/abandoned)
 "aH" = (
@@ -163,7 +163,7 @@
 /turf/simulated/floor/tiled/airless,
 /area/outpost/abandoned)
 "aL" = (
-/obj/item/weapon/stool,
+/obj/item/stool,
 /turf/simulated/floor/tiled/airless,
 /area/outpost/abandoned)
 "aM" = (
@@ -316,7 +316,7 @@
 /turf/simulated/floor/plating,
 /area/outpost/abandoned)
 "bh" = (
-/obj/item/weapon/stool,
+/obj/item/stool,
 /turf/simulated/floor/plating,
 /area/outpost/abandoned)
 "bi" = (

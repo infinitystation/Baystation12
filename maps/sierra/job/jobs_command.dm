@@ -148,7 +148,7 @@
 		access_mining_station, access_xenobiology, access_RC_announce,
 		access_keycard_auth, access_xenoarch, access_heads,
 		access_sec_doors, access_medical, access_network,
-		access_maint_tunnels, access_eva, access_expedition_shuttle,
+		access_maint_tunnels, access_eva, access_expedition_shuttle, access_expedition_shuttle_helm,
 		access_guppy, access_hangar, access_petrov, access_petrov_helm,
 		access_guppy_helm
 	)

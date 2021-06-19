@@ -1,0 +1,44 @@
+{
+	"ckey": "Deksters",
+	"character_name": "Dexter Steinhardt",
+	"item_name": "Caelestium commander hardsuit",
+	"item_desc": "Hardsuit with blue tree emblem on it.",
+	"item_path": "/obj/item/rig/hazmat",
+	"req_titles": ["Research Director", "Senior Researcher", "Research Supervisor"],
+	"item_icon_state": "caelestium_rig_back",
+	"additional_data":
+	{
+		"piece_icon_state_overrides":
+		{
+			"helmet": "caelestium_rig_head",
+			"chest": "caelestium_rig_chest",
+			"gloves": "caelestium_rig_gloves",
+			"boots": "caelestium_rig_boots"
+		},
+
+		"helmet":
+		{
+			"name": "Caelestium commander helmet",
+			"icon_state": "caelestium_rig_head",
+			"base_icon_state": "caelestium_rig_head"
+		},
+		"chest":
+		{
+			"name": "Caelestium commander suit",
+			"icon_state": "caelestium_rig_chest",
+			"base_icon_state": "caelestium_rig_chest"
+		},
+		"gloves":
+		{
+			"name": "Caelestium commander gloves",
+			"icon_state": "caelestium_rig_gloves",
+			"base_icon_state": "caelestium_rig_gloves"
+		},
+		"boots":
+		{
+			"name": "Caelestium commander boots",
+			"icon_state": "caelestium_rig_boots",
+			"base_icon_state": "caelestium_rig_boots"
+		}
+	}
+}

@@ -7,9 +7,9 @@
 	icon = 'icons/obj/wall_frame.dmi'
 	icon_state = "frame"
 
-	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
-	anchored = 1
-	density = 1
+	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE | ATOM_FLAG_CAN_BE_PAINTED | ATOM_FLAG_ADJACENT_EXCEPTION
+	anchored = TRUE
+	density = TRUE
 	throwpass = 1
 	layer = TABLE_LAYER
 	color = "#666666"
@@ -35,6 +35,14 @@
 	update_connections(1)
 	update_icon()
 
+/obj/structure/wall_frame/Destroy()
+	var/turf/location = loc
+	. = ..()
+	for(var/obj/structure/wall_frame/W in orange(1, location))
+		W.update_connections()
+		W.queue_icon_update()
+
+
 /obj/structure/wall_frame/examine(mob/user)
 	. = ..()
 
@@ -51,7 +59,7 @@
 	if(paint_color)
 		to_chat(user, "<span class='notice'>It has a smooth coat of paint applied.</span>")
 
-/obj/structure/wall_frame/attackby(var/obj/item/weapon/W, var/mob/user)
+/obj/structure/wall_frame/attackby(var/obj/item/W, var/mob/user)
 	src.add_fingerprint(user)
 
 	//grille placing
@@ -84,8 +92,8 @@
 			to_chat(user, "<span class='notice'>You dissasembled the low wall!</span>")
 			dismantle()
 
-	else if(istype(W, /obj/item/weapon/gun/energy/plasmacutter))
-		var/obj/item/weapon/gun/energy/plasmacutter/cutter = W
+	else if(istype(W, /obj/item/gun/energy/plasmacutter))
+		var/obj/item/gun/energy/plasmacutter/cutter = W
 		if(!cutter.slice(user))
 			return
 		playsound(src.loc, 'sound/items/Welder.ogg', 100, 1)
@@ -185,6 +193,13 @@
 	new /obj/item/stack/material/steel(get_turf(src), 2)
 	qdel(src)
 
+/obj/structure/wall_frame/get_color()
+	return paint_color
+
+/obj/structure/wall_frame/set_color(var/color)
+	paint_color = color
+	update_icon()
+
 //Subtypes
 /obj/structure/wall_frame/standard
 	paint_color = COLOR_WALL_GUNMETAL
@@ -193,7 +208,13 @@
 	material = MATERIAL_TITANIUM
 
 /obj/structure/wall_frame/hull
-	paint_color = COLOR_HULL
+	paint_color = COLOR_SOL
 
 /obj/structure/wall_frame/hull/vox
 	paint_color = COLOR_GREEN_GRAY
+
+/obj/structure/wall_frame/hull/ascent
+	paint_color = COLOR_PURPLE
+
+/obj/structure/wall_frame/hull/verne
+	paint_color = COLOR_GUNMETAL

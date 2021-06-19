@@ -207,32 +207,32 @@
 
 	updateUsrDialog()
 
-/*/obj/machinery/computer/telecomms/traffic/attackby(var/obj/item/weapon/D as obj, var/mob/user as mob)
+/*/obj/machinery/computer/telecomms/traffic/attackby(var/obj/item/D as obj, var/mob/user as mob)
 	if(isScrewdriver(D))
 		playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
 		if(do_after(user, 20, src))
 			if (src.stat & BROKEN)
 				to_chat(user, "<span class='notice'>The broken glass falls out.</span>")
 				var/obj/machinery/constructable_frame/computerframe/deconstruct/A = new frame_type(loc)
-				new /obj/item/weapon/material/shard( src.loc )
-				var/obj/item/weapon/stock_parts/circuitboard/comm_traffic/M = new /obj/item/weapon/stock_parts/circuitboard/comm_traffic( A )
+				new /obj/item/material/shard( src.loc )
+				var/obj/item/stock_parts/circuitboard/comm_traffic/M = new /obj/item/stock_parts/circuitboard/comm_traffic( A )
 				for (var/obj/C in src)
 					C.dropInto(loc)
 				A.circuit = M
 				A.state = 3
 				A.icon_state = "3"
-				A.anchored = 1
+				A.anchored = TRUE
 				qdel(src)
 			else
 				to_chat(user, "<span class='notice'>You disconnect the monitor.</span>")
 				var/obj/machinery/constructable_frame/computerframe/deconstruct/A = new frame_type(loc)
-				var/obj/item/weapon/stock_parts/circuitboard/comm_traffic/M = new /obj/item/weapon/stock_parts/circuitboard/comm_traffic( A )
+				var/obj/item/stock_parts/circuitboard/comm_traffic/M = new /obj/item/stock_parts/circuitboard/comm_traffic( A )
 				for (var/obj/C in src)
 					C.dropInto(loc)
 				A.circuit = M
 				A.state = 4
 				A.icon_state = "4"
-				A.anchored = 1
+				A.anchored = TRUE
 				qdel(src)
 	src.updateUsrDialog()
 	return*/
@@ -240,7 +240,7 @@
 /obj/machinery/computer/telecomms/traffic/emag_act(var/remaining_charges, var/mob/user)
 	if(!emagged)
 		playsound(src.loc, 'sound/effects/sparks4.ogg', 75, 1)
-		emagged = 1
+		emagged = TRUE
 		to_chat(user, "<span class='notice'>You you disable the security protocols</span>")
 		src.updateUsrDialog()
 		return 1

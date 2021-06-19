@@ -2,11 +2,11 @@
 GLOBAL_LIST_INIT(surgery_tool_exceptions, list(
 	/obj/item/auto_cpr,
 	/obj/item/device/scanner/health,
-	/obj/item/weapon/shockpaddles,
-	/obj/item/weapon/reagent_containers/hypospray,
+	/obj/item/shockpaddles,
+	/obj/item/reagent_containers/hypospray,
 	/obj/item/modular_computer,
-	/obj/item/weapon/reagent_containers/syringe,
-	/obj/item/weapon/reagent_containers/borghypo
+	/obj/item/reagent_containers/syringe,
+	/obj/item/reagent_containers/borghypo
 ))
 GLOBAL_LIST_INIT(surgery_tool_exception_cache, new)
 
@@ -66,11 +66,6 @@ GLOBAL_LIST_INIT(surgery_tool_exception_cache, new)
 	if(istype(target) && target_zone)
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
 		if(affected)
-			// Check if clothing is blocking access
-			var/obj/item/I = target.get_covering_equipped_item_by_zone(target_zone)
-			if(I && (I.item_flags & ITEM_FLAG_THICKMATERIAL))
-				to_chat(user,SPAN_NOTICE("The material covering this area is too thick for you to do surgery through!"))
-				return FALSE
 			// Check various conditional flags.
 			if(((surgery_candidate_flags & SURGERY_NO_ROBOTIC) && BP_IS_ROBOTIC(affected)) || \
 			 ((surgery_candidate_flags & SURGERY_NO_CRYSTAL) && BP_IS_CRYSTAL(affected))   || \
@@ -95,6 +90,11 @@ GLOBAL_LIST_INIT(surgery_tool_exception_cache, new)
 				if(open_threshold && ((strict_access_requirement && affected.how_open() != open_threshold) || \
 				 affected.how_open() < open_threshold))
 					return FALSE
+			// Check if clothing is blocking access
+			var/obj/item/I = target.get_covering_equipped_item_by_zone(target_zone)
+			if(I && (I.item_flags & ITEM_FLAG_THICKMATERIAL))
+				to_chat(user,SPAN_NOTICE("The material covering this area is too thick for you to do surgery through!"))
+				return FALSE
 			return affected
 	return FALSE
 
@@ -114,6 +114,8 @@ GLOBAL_LIST_INIT(surgery_tool_exception_cache, new)
 			H.bloody_body(target,0)
 	if(shock_level)
 		target.shock_stage = max(target.shock_stage, shock_level)
+	if (target.stat == UNCONSCIOUS && prob(20))
+		to_chat(target, SPAN_NOTICE(SPAN_BOLD("... [pick("bright light", "faraway pain", "something moving in you", "soft beeping")] ...")))
 	return
 
 // does stuff to end the step, which is normally print a message + do whatever this step changes
@@ -214,7 +216,7 @@ GLOBAL_LIST_INIT(surgery_tool_exception_cache, new)
 			return TRUE
 
 	// Otherwise we can make a start on surgery!
-	else if(istype(M) && !QDELETED(M) && user.a_intent != I_HURT && (user.get_active_hand() == src || istype(src.loc, /mob/living/silicon/) && istype(user.get_active_hand(), /obj/item/weapon/gripper/))) //INF
+	else if(istype(M) && !QDELETED(M) && user.a_intent != I_HURT && (user.get_active_hand() == src || istype(src.loc, /mob/living/silicon/) && istype(user.get_active_hand(), /obj/item/gripper/))) //INF
 		// Double-check this in case it changed between initial check and now.
 		if(zone in M.surgeries_in_progress)
 			to_chat(user, SPAN_WARNING("You can't operate on this area while surgery is already in progress."))
@@ -224,10 +226,14 @@ GLOBAL_LIST_INIT(surgery_tool_exception_cache, new)
 				LAZYSET(M.surgeries_in_progress, zone, operation_data)
 				S.begin_step(user, M, zone, src)
 				var/skill_reqs = S.get_skill_reqs(user, M, src, zone)
-				var/duration = user.skill_delay_mult(skill_reqs[1]) * rand(S.min_duration, S.max_duration) * surgery_speed
-				if(prob(S.success_chance(user, M, src, zone)) && do_mob(user, M, duration) * surgery_speed)
-					S.end_step(user, M, zone, src)
-					handle_post_surgery()
+				var/duration = user.skill_delay_mult(skill_reqs[1]) * rand(S.min_duration, S.max_duration * surgery_speed)
+				if(prob(S.success_chance(user, M, src, zone)) && do_after(user, duration, M) * surgery_speed)
+					if (S.can_use(user, M, zone, src))
+						S.end_step(user, M, zone, src)
+						handle_post_surgery()
+					else
+						to_chat(user, SPAN_WARNING("The patient lost the target organ before you could finish operating!"))
+
 				else if ((src in user.contents) && user.Adjacent(M))
 					S.fail_step(user, M, zone, src)
 				else

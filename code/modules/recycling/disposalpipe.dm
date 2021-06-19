@@ -4,15 +4,15 @@
 	icon = 'icons/obj/pipes/disposal.dmi'
 	name = "disposal pipe"
 	desc = "An underfloor disposal pipe."
-	anchored = 1
-	density = 0
+	anchored = TRUE
+	density = FALSE
 
 	level = 1			// underfloor only
 	var/dpdir = 0		// bitmask of pipe directions
 	dir = 0				// dir will contain dominant direction for junction pipes
 	var/health = 10 	// health points 0-10
 	alpha = 192 // Plane and alpha modified for mapping, reset to normal on spawn.
-	layer = DISPOSALS_PIPE_LAYER
+	layer = ABOVE_TILE_LAYER
 	var/base_icon_state	// initial icon state on map
 	var/sort_type = ""
 	var/turn = DISPOSAL_FLIP_NONE
@@ -22,7 +22,9 @@
 /obj/structure/disposalpipe/Initialize()
 	. = ..()
 	alpha = 255
+	layer = DISPOSALS_PIPE_LAYER
 	base_icon_state = icon_state
+	update_icon()
 
 // pipe is deleted
 // ensure if holder is present, it is expelled
@@ -96,6 +98,10 @@
 	if(!istype(H))
 		return
 
+	if (!T) //panic!
+		qdel(H)
+		return
+
 	// Empty the holder if it is expelled into a dense turf.
 	// Leaving it intact and sitting in a wall is stupid.
 	if(T.density)
@@ -129,7 +135,7 @@
 			H.vent_gas(T)
 
 			// throw out vomit
-			if(H.reagents.total_volume)
+			if(H.reagents?.total_volume)
 				visible_message(SPAN_DANGER("Vomit spews out of the disposal pipe!"))
 				playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 				if(istype(src.loc, /turf/simulated))
@@ -223,8 +229,8 @@
 	if(!T.is_plating())
 		return		// prevent interaction with T-scanner revealed pipes
 	src.add_fingerprint(user, 0, I)
-	if(istype(I, /obj/item/weapon/weldingtool))
-		var/obj/item/weapon/weldingtool/W = I
+	if(istype(I, /obj/item/weldingtool))
+		var/obj/item/weldingtool/W = I
 		if(W.remove_fuel(0,user))
 			playsound(src.loc, 'sound/items/Welder2.ogg', 100, 1)
 			// check if anything changed over 2 seconds
@@ -246,7 +252,7 @@
 	var/obj/structure/disposalconstruct/C = new (src.loc, src)
 	src.transfer_fingerprints_to(C)
 	C.set_density(0)
-	C.anchored = 1
+	C.anchored = TRUE
 	C.update()
 
 	qdel(src)
@@ -778,8 +784,8 @@
 	if(!T.is_plating())
 		return		// prevent interaction with T-scanner revealed pipes
 	src.add_fingerprint(user, 0, I)
-	if(istype(I, /obj/item/weapon/weldingtool))
-		var/obj/item/weapon/weldingtool/W = I
+	if(istype(I, /obj/item/weldingtool))
+		var/obj/item/weldingtool/W = I
 
 		if(W.remove_fuel(0,user))
 			playsound(src.loc, 'sound/items/Welder2.ogg', 100, 1)

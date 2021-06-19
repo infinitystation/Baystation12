@@ -6,7 +6,6 @@
 	icon_state = "abomination"
 	icon_living = "abomination"
 	icon_dead = "abomination_dead"
-	stop_automated_movement = 1
 	universal_speak = 1
 	universal_understand = 1
 
@@ -19,13 +18,12 @@
 	maxHealth = 750
 	health = 750
 	harm_intent_damage = 0
-	melee_damage_lower = 20
-	melee_damage_upper = 30
+	natural_weapon = /obj/item/natural_weapon/claws/strong
 	mob_size = 25
 	environment_smash = 2
 	break_stuff_probability = 85
-	attacktext = "mangled"
-	attack_sound = 'infinity/sound/weapons/bloodyslice.ogg'
+//	attacktext = "mangled"
+//	attack_sound = 'infinity/sound/weapons/bloodyslice.ogg'
 
 	see_in_dark = 8
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
@@ -137,7 +135,7 @@
 
 	target.adjustBruteLoss(35)
 
-	if(!do_mob(src, target, 150))
+	if(!do_after(src, 15 SECONDS, target))
 		to_chat(src, "<span class='warning'>You need to wait longer to devour \the [target]!</span>")
 		src.is_devouring = FALSE
 		return 0
@@ -146,7 +144,7 @@
 
 	target.adjustBruteLoss(35)
 
-	if(!do_mob(src, target, 150))
+	if(!do_after(src, 15 SECONDS, target))
 		to_chat(src, "<span class='warning'>You need to wait longer to devour \the [target]!</span>")
 		src.is_devouring = FALSE
 		return 0
@@ -177,6 +175,6 @@
 	visible_message("<span class='warning'>\The [src]'s skin bulges and tears, launching a bone-dart at [target]!</span>")
 
 	playsound(src.loc, 'infinity/sound/weapons/bloodyslice.ogg', 50, 1)
-	var/obj/item/weapon/bone_dart/A = new /obj/item/weapon/bone_dart(usr.loc)
+	var/obj/item/bone_dart/A = new /obj/item/bone_dart(usr.loc)
 	A.throw_at(target, 10, 20, usr)
 //	add_logs(src, target, "launched a bone dart at")

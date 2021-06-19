@@ -3,9 +3,9 @@
 	name = "Nav Point"
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "energynet"
-	anchored = 1
-	unacidable = 1
-	simulated = 0
+	anchored = TRUE
+	unacidable = TRUE
+	simulated = FALSE
 	invisibility = 101
 
 	var/landmark_tag
@@ -20,7 +20,7 @@
 	//Will also leave this type of turf behind if set.
 	var/turf/base_turf
 	//Name of the shuttle, null for generic waypoint
-	var/shuttle_restricted 
+	var/shuttle_restricted
 	var/flags = 0
 
 /obj/effect/shuttle_landmark/Initialize()
@@ -45,7 +45,7 @@
 	var/docking_tag = docking_controller
 	docking_controller = SSshuttle.docking_registry[docking_tag]
 	if(!istype(docking_controller))
-		log_error("Could not find docking controller for shuttle waypoint '[name]', docking tag was '[docking_tag]'.")
+		CRASH("Could not find docking controller for shuttle waypoint '[name]', docking tag was '[docking_tag]'.")
 	if(GLOB.using_map.use_overmap)
 		var/obj/effect/overmap/visitable/location = map_sectors["[z]"]
 		if(location && location.docking_codes)
@@ -71,7 +71,7 @@
 	for(var/area/A in shuttle.shuttle_area)
 		var/list/translation = get_turf_translation(get_turf(shuttle.current_location), get_turf(src), A.contents)
 		if(check_collision(base_area, list_values(translation)))
-			return FALSE		
+			return FALSE
 	var/conn = GetConnectedZlevels(z)
 	for(var/w in (z - shuttle.multiz) to z)
 		if(!(w in conn))
@@ -110,7 +110,7 @@
 
 //Subtype that calls explosion on init to clear space for shuttles
 /obj/effect/shuttle_landmark/automatic/clearing
-	var/radius = 10
+	var/radius = LANDING_ZONE_RADIUS
 
 /obj/effect/shuttle_landmark/automatic/clearing/Initialize()
 	..()
@@ -143,7 +143,7 @@
 		return
 
 	active = 1
-	anchored = 1
+	anchored = TRUE
 
 	var/obj/effect/shuttle_landmark/automatic/mark = new(T)
 	mark.SetName("Beacon signal ([T.x],[T.y])")

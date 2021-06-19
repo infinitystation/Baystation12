@@ -12,7 +12,7 @@
 	plane = HUD_PLANE
 	layer = HUD_BASE_LAYER
 	appearance_flags = NO_CLIENT_COLOR
-	unacidable = 1
+	unacidable = TRUE
 	var/obj/master = null    //A reference to the object in the slot. Grabs or items, generally.
 	var/globalscreen = FALSE //Global screens are not qdeled when the holding mob is destroyed.
 	var/use_additional_colors = FALSE //inf
@@ -39,8 +39,8 @@
 
 /obj/screen/close/Click()
 	if(master)
-		if(istype(master, /obj/item/weapon/storage))
-			var/obj/item/weapon/storage/S = master
+		if(istype(master, /obj/item/storage))
+			var/obj/item/storage/S = master
 			S.close(usr)
 	return 1
 
@@ -243,16 +243,16 @@
 								tankcheck = list(C.r_hand, C.l_hand, C.back)
 
 							// Rigs are a fucking pain since they keep an air tank in nullspace.
-							if(istype(C.back,/obj/item/weapon/rig))
-								var/obj/item/weapon/rig/rig = C.back
+							if(istype(C.back,/obj/item/rig))
+								var/obj/item/rig/rig = C.back
 								if(rig.air_supply)
 									from = "in"
 									nicename |= "hardsuit"
 									tankcheck |= rig.air_supply
 
 							for(var/i=1, i<tankcheck.len+1, ++i)
-								if(istype(tankcheck[i], /obj/item/weapon/tank))
-									var/obj/item/weapon/tank/t = tankcheck[i]
+								if(istype(tankcheck[i], /obj/item/tank))
+									var/obj/item/tank/t = tankcheck[i]
 									if (!isnull(t.manipulated_by) && t.manipulated_by != C.real_name && findtext(t.desc,breathes))
 										contents.Add(t.air_contents.total_moles)	//Someone messed with the tank and put unknown gasses
 										continue					//in it, so we're going to believe the tank is what it says it is
@@ -282,7 +282,12 @@
 								C.set_internals(tankcheck[best], "\the [tankcheck[best]] [from] your [nicename[best]]")
 
 							if(!C.internal)
-								to_chat(C, "<span class='notice'>You don't have \a [breathes] tank.</span>")
+								// Finally, check for an internal air system.
+								// We use this as an absolute last resort, so we don't include it in the above logic
+								// There's no need to check that the gas contents are safe, because its internal logic always make sure it is
+								var/obj/item/organ/internal/augment/active/internal_air_system/IAS = locate() in C.internal_organs
+								if (!IAS?.activate())
+									to_chat(C, SPAN_WARNING("You don't have \a [breathes] tank."))
 		if("act_intent")
 			usr.a_intent_change("right")
 
@@ -313,8 +318,8 @@
 					else
 						E.unholster(usr, TRUE)
 						return
-			if(istype(H.belt, /obj/item/weapon/storage/belt/holster))
-				var/obj/item/weapon/storage/belt/holster/B = H.belt
+			if(istype(H.belt, /obj/item/storage/belt/holster))
+				var/obj/item/storage/belt/holster/B = H.belt
 				var/datum/extension/holster/E = get_extension(B, /datum/extension/holster)
 				if(!E.holstered)
 					if(!usr.get_active_hand())

@@ -26,8 +26,6 @@
 	num_exoplanets = 1
 	away_site_budget = 4
 
-	playable = 0
-	recommended_players = 10
 //	minimum_players = 0 its already 0
 
 	welcome_sound = 'sound/effects/cowboysting.ogg'

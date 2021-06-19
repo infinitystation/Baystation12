@@ -102,7 +102,10 @@
 
 //Called when the mob is hit with an item in combat. Returns the blocked result
 /mob/living/proc/hit_with_weapon(obj/item/I, mob/living/user, var/effective_force, var/hit_zone)
-	visible_message("<span class='danger'>[src] has been [I.attack_verb.len? pick(I.attack_verb) : "attacked"] with [I.name] by [user]!</span>")
+	var/weapon_mention
+	if(I.attack_message_name())
+		weapon_mention = " with [I.attack_message_name()]"
+	visible_message(SPAN_DANGER("\The [src] has been [I.attack_verb.len? pick(I.attack_verb) : "attacked"][weapon_mention] by \the [user]!"))
 
 	. = standard_weapon_hit_effects(I, user, effective_force, hit_zone)
 
@@ -115,14 +118,10 @@
 	if(!effective_force)
 		return 0
 
-	//Hulk modifier
-	if(MUTATION_HULK in user.mutations)
-		effective_force *= 2
-
 	//Apply weapon damage
 	var/damage_flags = I.damage_flags()
 
-	return apply_damage(effective_force, I.damtype, hit_zone, damage_flags, used_weapon=I)
+	return apply_damage(effective_force, I.damtype, hit_zone, damage_flags, used_weapon=I, armor_pen=I.armor_penetration)
 
 //this proc handles being hit by a thrown atom
 /mob/living/hitby(var/atom/movable/AM, var/datum/thrownthing/TT)
@@ -136,7 +135,7 @@
 			M.Weaken(rand(4,8))
 		M.visible_message(SPAN_DANGER("\The [M] collides with \the [src]!"))
 
-	if(!aura_check(AURA_TYPE_THROWN, AM, TT.speed))
+	if (!aura_check(AURA_TYPE_THROWN, AM, TT))
 		return
 
 	if(istype(AM,/obj/))
@@ -182,7 +181,7 @@
 				if(T)
 					forceMove(T)
 					visible_message("<span class='warning'>[src] is pinned to the wall by [O]!</span>","<span class='warning'>You are pinned to the wall by [O]!</span>")
-					src.anchored = 1
+					src.anchored = TRUE
 					src.pinned += O
 
 /mob/living/proc/embed(var/obj/O, var/def_zone=null, var/datum/wound/supplied_wound)
@@ -370,3 +369,33 @@
 	fire_act(air, temperature)
 	FireBurn(0.4*vsc.fire_firelevel_multiplier, temperature, pressure)
 	. =  (health <= 0) ? ..() : FALSE
+
+// Applies direct "cold" damage while checking protection against the cold.
+/mob/living/proc/inflict_cold_damage(amount)
+	amount *= 1 - get_cold_protection(50) // Within spacesuit protection.
+	if(amount > 0)
+		adjustFireLoss(amount)
+
+// Ditto, but for "heat".
+/mob/living/proc/inflict_heat_damage(amount)
+	amount *= 1 - get_heat_protection(10000) // Within firesuit protection.
+	if(amount > 0)
+		adjustFireLoss(amount)
+
+// and one for electricity because why not
+/mob/living/proc/inflict_shock_damage(amount)
+	electrocute_act(amount, null, 1, pick(BP_HEAD, BP_CHEST, BP_GROIN))
+
+// also one for water (most things resist it entirely, except for slimes)
+/mob/living/proc/inflict_water_damage(amount)
+	amount *= 1
+	if(amount > 0)
+		adjustToxLoss(amount)
+
+// one for abstracted away ""poison"" (mostly because simplemobs shouldn't handle reagents)
+/mob/living/proc/inflict_poison_damage(amount)
+	if(isSynthetic())
+		return
+	amount *= 1
+	if(amount > 0)
+		adjustToxLoss(amount)

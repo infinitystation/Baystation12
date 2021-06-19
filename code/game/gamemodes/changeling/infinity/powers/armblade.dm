@@ -9,7 +9,7 @@
 
 	var/mob/living/M = src
 
-	var/obj/item/weapon/melee/arm_blade/blade = M
+	var/obj/item/melee/arm_blade/blade = M
 	for(blade in M.contents)
 		M.drop_from_inventory(blade)
 		return

@@ -1,72 +1,115 @@
-/datum/computer_file/report/recipient/crew_transfer
+/datum/computer_file/report/recipient
+	logo = "\[sierralogo\]"
+	available_on_ntnet = 0
+
+/datum/computer_file/report/recipient/command/generate_fields()
+	..()
+	set_access(access_heads)
+
+/datum/computer_file/report/recipient/command/crew_transfer
 	form_name = "CTA-NTF-01"
 	title = "Заявление на перевод"
-	logo = "\[logo\]"
 	available_on_ntnet = 1
 
-/datum/computer_file/report/recipient/crew_transfer/generate_fields()
+/datum/computer_file/report/recipient/command/crew_transfer/generate_fields()
 	..()
 	var/list/hop_fields = list()
-	add_field(/datum/report_field/text_label/header, "ИСН Сьерра - Офис Главы Персонала")
-	add_field(/datum/report_field/people/from_manifest, "Имя (ГП)")
-	add_field(/datum/report_field/people/from_manifest, "Имя (заявитель)", required = 1)
+	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Командный департамент")
+	add_field(/datum/report_field/people/from_manifest, "Полное имя Исполнителя (ГП/Капитан)", required = 1)
+	add_field(/datum/report_field/people/from_manifest, "Полное имя Заявителя", required = 1)
 	add_field(/datum/report_field/date, "Дата заполнения")
 	add_field(/datum/report_field/time, "Время заполнения")
-	add_field(/datum/report_field/simple_text, "Текущая должность")
-	add_field(/datum/report_field/simple_text, "Запрашиваемая должность")
-	add_field(/datum/report_field/pencode_text, "Причина перевода")
-	add_field(/datum/report_field/text_label/instruction, "Докупент является недействительным в случае некорректного заполнения следующих полей.")
-	add_field(/datum/report_field/signature, "Подпись заявителя")
-	hop_fields += add_field(/datum/report_field/signature, "Подпись Главы Персонала")
-	hop_fields += add_field(/datum/report_field/number, "Количество персонала на текущей должности")
-	hop_fields += add_field(/datum/report_field/number, "Количество персонала на запрашиваемой должности")
+	add_field(/datum/report_field/simple_text, "Текущая должность", required = 1)
+	add_field(/datum/report_field/simple_text, "Запрашиваемая должность", required = 1)
+	add_field(/datum/report_field/pencode_text, "Причина перевода", required = 1)
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи или печати.")
+	add_field(/datum/report_field/signature, "Подпись Заявителя", required = 1)
+	hop_fields += add_field(/datum/report_field/signature, "Подпись Исполнителя (ГП/Капитан)", required = 1)
 	hop_fields += add_field(/datum/report_field/options/yes_no, "Одобрено")
 	for(var/datum/report_field/field in hop_fields)
 		field.set_access(access_edit = access_hop)
 
-/datum/computer_file/report/recipient/access_modification
+/datum/computer_file/report/recipient/command/access_modification
 	form_name = "AMA-NTF-02"
 	title = "Заявление на изменение доступа"
-	logo = "\[logo\]"
 	available_on_ntnet = 1
 
-/datum/computer_file/report/recipient/access_modification/generate_fields()
+/datum/computer_file/report/recipient/command/access_modification/generate_fields()
 	..()
 	var/list/hop_fields = list()
-	add_field(/datum/report_field/text_label/header, "ИСН Сьерра - Офис Главы Персонала")
-	add_field(/datum/report_field/people/from_manifest, "Имя (ГП)")
-	add_field(/datum/report_field/people/from_manifest, "Имя (заявитель)", required = 1)
-	add_field(/datum/report_field/date, "Дата заполнения")
-	add_field(/datum/report_field/time, "Время заполнения")
-	add_field(/datum/report_field/simple_text, "Текущая должность")
-	add_field(/datum/report_field/simple_text, "Запрашиваемый доступ")
-	add_field(/datum/report_field/pencode_text, "Причина расширения доступа")
-	add_field(/datum/report_field/simple_text, "Срок расширения доступа")
-	add_field(/datum/report_field/text_label/instruction, "Докупент признается недействительным в случае некорректного заполнения следующих полей.")
-	add_field(/datum/report_field/signature, "Подпись заявителя")
-	hop_fields += add_field(/datum/report_field/signature, "Подпись Главы Персонала")
-	hop_fields += add_field(/datum/report_field/number, "Количество персонала с соответствующим доступом")
+	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Командный департамент")
+	add_field(/datum/report_field/people/from_manifest, "Полное имя Исполнителя (ГП/Капитан)", required = 1)
+	add_field(/datum/report_field/people/from_manifest, "Полное имя Заявителя", required = 1)
+	add_field(/datum/report_field/date, "Дата заполнения", required = 1)
+	add_field(/datum/report_field/time, "Время заполнения", required = 1)
+	add_field(/datum/report_field/simple_text, "Текущая должность", required = 1)
+	add_field(/datum/report_field/simple_text, "Запрашиваемый доступ", required = 1)
+	add_field(/datum/report_field/pencode_text, "Причина расширения доступа", required = 1)
+	add_field(/datum/report_field/simple_text, "Срок расширения доступа", required = 1)
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи или печати.")
+	add_field(/datum/report_field/signature, "Подпись Заявителя", required = 1)
+	hop_fields += add_field(/datum/report_field/signature, "Подпись Исполнителя (ГП/Капитан)", required = 1)
 	hop_fields += add_field(/datum/report_field/options/yes_no, "Одобрено")
 	for(var/datum/report_field/field in hop_fields)
 		field.set_access(access_edit = access_hop)
 
-/datum/computer_file/report/recipient/borging
-	form_name = "CC-NTF-09"
-	title = "Контракт на киборгинизацию"
-	logo = "\[logo\]"
+/datum/computer_file/report/recipient/command/fire
+	form_name = "D-NTF-01"
+	title = "Форма прекращения трудового контракта NT"
 	available_on_ntnet = 1
 
-/datum/computer_file/report/recipient/borging/generate_fields()
+/datum/computer_file/report/recipient/command/fire/generate_fields()
 	..()
 	var/list/hop_fields = list()
-	add_field(/datum/report_field/text_label/header, "ИСН Сьерра - Офис Главы Персонала")
-	add_field(/datum/report_field/people/from_manifest, "Имя (ГП)")
-	add_field(/datum/report_field/people/from_manifest, "Имя (субъект)", required = 1)
+	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Командный департамент")
+	add_field(/datum/report_field/text_label/instruction, "К документу должно быть прикрепленно личное дело сотрудника.")
+	add_field(/datum/report_field/people/from_manifest, "Полное имя Исполнителя (ГП/Капитан)", required = 1)
+	add_field(/datum/report_field/people/from_manifest, "Полное имя Уволенного", required = 1)
 	add_field(/datum/report_field/date, "Дата заполнения")
 	add_field(/datum/report_field/time, "Время заполнения")
-	add_field(/datum/report_field/text_label/instruction, "Я, нижеподписавшийся, настоящим соглашаюсь на прохождение Полной Лоботомии с целью киборгинизации или ассимиляции с ИИ. Я осведомлен обо всех рисках такого действия. Я также понимаю, что эта операция может быть необратимой, а мой трудовой контракт с NanoTrasen будет аннулирован.")
-	add_field(/datum/report_field/signature, "Подпись субъекта")
-	hop_fields += add_field(/datum/report_field/signature, "Подпись Главы Персонала")
+	add_field(/datum/report_field/simple_text, "Занимаемая должность Уволенного", required = 1)
+	add_field(/datum/report_field/simple_text, "Новая должность Уволенного", required = 1)
+	add_field(/datum/report_field/pencode_text, "Причина увольнения", required = 1)
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи или печати.")
+	add_field(/datum/report_field/signature, "Подпись Увольняемого (если требуется)")
+	hop_fields += add_field(/datum/report_field/signature, "Подпись Исполнителя (ГП/Капитан)", required = 1)
 	hop_fields += add_field(/datum/report_field/options/yes_no, "Одобрено")
 	for(var/datum/report_field/field in hop_fields)
 		field.set_access(access_edit = access_hop)
+
+/datum/computer_file/report/recipient/command/decree
+	form_name = "DEC-NTF"
+	title = "Корпоративный Указ"
+	logo ="\[logo\]"
+	available_on_ntnet = 1
+
+/datum/computer_file/report/recipient/command/decree/generate_fields()
+	..()
+	add_field(/datum/report_field/text_label/header, "Корпоративный Указ")
+	add_field(/datum/report_field/number, "Номер указа")
+	add_field(/datum/report_field/people/from_manifest, "Полное имя распорядителя", required = 1)
+	add_field(/datum/report_field/pencode_text, "Содержание распоряжения", required = 1)
+	add_field(/datum/report_field/pencode_text, "Причина распоряжения", required = 1)
+	add_field(/datum/report_field/date, "Дата заполнения")
+	add_field(/datum/report_field/time, "Время заполнения")
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи или печати.")
+	add_field(/datum/report_field/signature, "Подпись", required = 1)
+
+/datum/computer_file/report/recipient/request_corporate
+	form_name = "REQ-NTF"
+	title = "Корпоративный Запрос"
+	logo = "\[logo\]"
+	available_on_ntnet = 1
+
+/datum/computer_file/report/recipient/request_corporate/generate_fields()
+	..()
+	add_field(/datum/report_field/text_label/header, "Корпоративный Запрос")
+	add_field(/datum/report_field/number, "Номер запроса ")
+	add_field(/datum/report_field/people/from_manifest, "Полное имя запросившего", required = 1)
+	add_field(/datum/report_field/pencode_text, "Содержание запроса", required = 1)
+	add_field(/datum/report_field/pencode_text, "Причина запроса", required = 1)
+	add_field(/datum/report_field/date, "Дата заполнения")
+	add_field(/datum/report_field/time, "Время заполнения")
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи или печати.")
+	add_field(/datum/report_field/signature, "Подпись", required = 1)
+	set_access(list(list(access_heads, access_qm, access_el)), list(list(access_heads, access_qm, access_el)))

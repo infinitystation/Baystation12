@@ -1,4 +1,4 @@
-/obj/item/weapon/melee/claws
+/obj/item/melee/claws
 	name = "zombie claws"
 	desc = "Retractable claws hidden in your fingers. You can use them to infect other people."
 	icon = 'icons/mob/screen1.dmi'
@@ -10,24 +10,24 @@
 	canremove = 0
 	sharp = 0
 	edge = 0
-	anchored = 1
+	anchored = TRUE
 	throwforce = 0
 	throw_range = 0
 	throw_speed = 0
 	attack_verb = list("attacked", "slashed", "ripped", "diced")
 	var/mob/living/creator
 
-/obj/item/weapon/melee/claws/Initialize()
+/obj/item/melee/claws/Initialize()
 	. = ..()
 	create_reagents(2)
 
-/obj/item/weapon/melee/claws/dropped(var/mob/living/user)
+/obj/item/melee/claws/dropped(var/mob/living/user)
 	visible_message(SPAN_DANGER("[user] retracts their claws with strange sound"),
 	SPAN_WARNING("You hear strange noises of organic matter ripping and tearing!"))
 	playsound(loc, 'sound/effects/blobattack.ogg', 5, 1)
 	QDEL_IN(src, 1)
 
-/obj/item/weapon/melee/claws/attack(atom/target, mob/user, proximity)
+/obj/item/melee/claws/attack(atom/target, mob/user, proximity)
 	. = ..()
 	if(target.reagents)
 		if(istype(target, /mob/living/carbon/human))
@@ -54,7 +54,7 @@
 	if(incapacitated())
 		return
 
-	var/obj/item/weapon/melee/claws/claw = M
+	var/obj/item/melee/claws/claw = M
 	var/retracted = 0
 	for(claw in M.contents)
 		M.drop_from_inventory(claw)

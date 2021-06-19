@@ -4,8 +4,8 @@
 	program_icon_state = "uplink"
 	extended_desc = "An online tax filing software. It is a few years out of date."
 	size = 0 // it is cloud based
-	requires_ntnet = 1
-	available_on_ntnet = 1
+	requires_ntnet = TRUE // INF, было requires_ntnet = FALSE
+	available_on_ntnet = TRUE // INF, было available_on_ntnet = FALSE
 	usage_flags = PROGRAM_PDA | PROGRAM_TABLET
 	nanomodule_path = /datum/nano_module/program/uplink
 
@@ -28,7 +28,7 @@
 		return
 	var/datum/computer_file/program/uplink/prog = program
 	var/obj/item/modular_computer/computer = host
-	var/obj/item/weapon/stock_parts/computer/hard_drive/portable/uplink = computer.portable_drive
+	var/obj/item/stock_parts/computer/hard_drive/portable/uplink = computer.portable_drive
 	if(istype(computer) && istype(prog))
 		if(computer.hidden_uplink && prog.password)
 			if(prog.authenticated)

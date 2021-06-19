@@ -3,7 +3,7 @@ GLOBAL_LIST_EMPTY(hubs_id)
 	name = "bluespace snare hub"
 	icon = 'infinity/icons/obj/stationobjs.dmi'
 	icon_state = "silk_hub"
-	density = 0
+	density = FALSE
 
 	var/snare_id = ""
 	id_tag = ""

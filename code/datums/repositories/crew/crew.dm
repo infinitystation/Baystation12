@@ -9,7 +9,7 @@ var/global/datum/repository/crew/crew_repository = new()
 /datum/repository/crew/New()
 	cache_data = list()
 	cache_data_alert = list()
-	
+
 	var/PriorityQueue/general_modifiers = new/PriorityQueue(/proc/cmp_crew_sensor_modifier)
 	var/PriorityQueue/binary_modifiers = new/PriorityQueue(/proc/cmp_crew_sensor_modifier)
 	var/PriorityQueue/vital_modifiers = new/PriorityQueue(/proc/cmp_crew_sensor_modifier)
@@ -51,7 +51,7 @@ var/global/datum/repository/crew/crew_repository = new()
 	var/tracked = scan()
 	for(var/obj/item/clothing/under/C in tracked)
 		var/turf/pos = get_turf(C)
-		if(C.has_sensor && pos && pos.z == z_level && C.sensor_mode != SUIT_SENSOR_OFF)
+		if(C.has_sensor && C.sensor_mode != SUIT_SENSOR_OFF && pos && AreConnectedZLevels(pos.z, z_level))
 			if(istype(C.loc, /mob/living/carbon/human))
 				var/mob/living/carbon/human/H = C.loc
 				if(H.w_uniform != C)
@@ -60,7 +60,7 @@ var/global/datum/repository/crew/crew_repository = new()
 				var/list/crewmemberData = list("sensor_type"=C.sensor_mode, "stat"=H.stat, "area"="", "x"=-1, "y"=-1, "z"=-1, "ref"="\ref[H]")
 				if(!(run_queues(H, C, pos, crewmemberData) & MOD_SUIT_SENSORS_REJECTED))
 					crewmembers[++crewmembers.len] = crewmemberData
-					if (crewmemberData["alert"])
+					if (crewmemberData["alert"] && !istype(istype(H.loc, /obj/structure/closet/body_bag) ? H.loc.loc : H.loc, /obj/structure/morgue))	// INF WAS	if (crewmemberData["alert"])
 						cache_data_alert[num2text(z_level)] = TRUE
 
 	crewmembers = sortByKey(crewmembers, "name")

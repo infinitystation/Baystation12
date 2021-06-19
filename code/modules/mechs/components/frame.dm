@@ -11,8 +11,9 @@
 	desc = "The frame for an exosuit, apparently."
 	icon = 'icons/mecha/mech_parts.dmi'
 	icon_state = "backbone"
-	density = 1
+	density = TRUE
 	pixel_x = -8
+	atom_flags = ATOM_FLAG_CAN_BE_PAINTED
 
 	// Holders for the final product.
 	var/obj/item/mech_component/manipulators/arms
@@ -24,10 +25,10 @@
 	var/set_name
 	dir = SOUTH
 
-/obj/structure/heavy_vehicle_frame/proc/set_colour(var/new_colour)
+/obj/structure/heavy_vehicle_frame/set_color(var/new_colour)
 	var/painted_component = FALSE
 	for(var/obj/item/mech_component/comp in list(body, arms, legs, head))
-		if(comp.set_colour(new_colour))
+		if(comp.set_color(new_colour))
 			painted_component = TRUE
 	if(painted_component)
 		queue_icon_update()
@@ -235,7 +236,7 @@
 		is_reinforced = (is_reinforced == FRAME_REINFORCED_SECURE) ? FRAME_REINFORCED : FRAME_REINFORCED_SECURE
 	// Welding metal.
 	else if(isWelder(thing))
-		var/obj/item/weapon/weldingtool/WT = thing
+		var/obj/item/weldingtool/WT = thing
 		if(!is_reinforced)
 			to_chat(user, SPAN_WARNING("There is no metal to secure inside \the [src]."))
 			return
@@ -263,7 +264,7 @@
 		if(arms)
 			to_chat(user, SPAN_WARNING("\The [src] already has manipulators installed."))
 			return
-		if(install_component(thing, user)) 
+		if(install_component(thing, user))
 			if(arms)
 				thing.dropInto(loc)
 				return
@@ -272,7 +273,7 @@
 		if(legs)
 			to_chat(user, SPAN_WARNING("\The [src] already has a propulsion system installed."))
 			return
-		if(install_component(thing, user)) 
+		if(install_component(thing, user))
 			if(legs)
 				thing.dropInto(loc)
 				return
@@ -281,7 +282,7 @@
 		if(head)
 			to_chat(user, SPAN_WARNING("\The [src] already has a sensor array installed."))
 			return
-		if(install_component(thing, user)) 
+		if(install_component(thing, user))
 			if(head)
 				thing.dropInto(loc)
 				return

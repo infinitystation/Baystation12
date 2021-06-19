@@ -41,7 +41,7 @@
 /datum/access/nanotrasen
 	id = access_nanotrasen
 	desc = "Corporate Personnel"
-	region = ACCESS_REGION_RESEARCH
+	region = ACCESS_REGION_SERVICE
 
 /var/const/access_emergency_armory = "ACCESS_TORCH_ARMORY" //83
 /datum/access/emergency_armory
@@ -66,8 +66,8 @@
 /var/const/access_sec_guard = "ACCESS_TORCH_SECURITY_GUARD" //86
 /datum/access/sec_guard
 	id = access_sec_guard
-	desc = "Security Guard"
-	region = ACCESS_REGION_RESEARCH
+	desc = "Corporate Security"
+	region = ACCESS_REGION_SERVICE
 
 /var/const/access_gun = "ACCESS_TORCH_CANNON" //87
 /datum/access/gun
@@ -141,15 +141,38 @@
 /datum/access/qm
 	desc = "Deck Chief"
 
-/************
-* SEV Torch *
-************/
+/var/const/access_torch_fax = "ACCESS_TORCH_FAX"
+/datum/access/torch_fax
+	id = access_torch_fax
+	desc = "Fax Machines"
+	region = ACCESS_REGION_COMMAND
 
 /datum/access/robotics
 	region = ACCESS_REGION_ENGINEERING
 
 /datum/access/network
 	region = ACCESS_REGION_COMMAND
+	
+/datum/access/chapel_office
+	region = ACCESS_REGION_SERVICE
+	
+/datum/access/bar
+	region = ACCESS_REGION_SERVICE
+	
+/datum/access/kitchen
+	region = ACCESS_REGION_SERVICE
+	
+/datum/access/eva
+	region = ACCESS_REGION_GENERAL
+	
+/datum/access/crematorium
+	region = ACCESS_REGION_MEDBAY
+	
+/datum/access/janitor
+	region = ACCESS_REGION_SERVICE
+
+/datum/access/ai_upload
+	desc = "Cyborg Upload"
 
 /*************
 * NRV Petrov *
@@ -158,52 +181,108 @@
 /datum/access/petrov
 	id = access_petrov
 	desc = "Petrov"
-	region = ACCESS_REGION_NT
+	region = ACCESS_REGION_GENERAL
 
 /var/const/access_petrov_helm = "ACCESS_TORCH_PETROV_HELM" //201
 /datum/access/petrov_helm
 	id = access_petrov_helm
 	desc = "Petrov Helm"
-	region = ACCESS_REGION_NT
+	region = ACCESS_REGION_GENERAL
 
 /var/const/access_petrov_analysis = "ACCESS_TORCH_PETROV_ANALYSIS" //202
 /datum/access/petrov_analysis
 	id = access_petrov_analysis
 	desc = "Petrov Analysis Lab"
-	region = ACCESS_REGION_NT
+	region = ACCESS_REGION_RESEARCH
 
 /var/const/access_petrov_phoron = "ACCESS_TORCH_PETROV_PHORON" //203
 /datum/access/petrov_phoron
 	id = access_petrov_phoron
 	desc = "Petrov Phoron Sublimation Lab"
-	region = ACCESS_REGION_NT
+	region = ACCESS_REGION_RESEARCH
 
 /var/const/access_petrov_toxins = "ACCESS_TORCH_PETROV_TOXINS" //204
 /datum/access/petrov_toxins
 	id = access_petrov_toxins
 	desc = "Petrov Toxins Lab"
-	region = ACCESS_REGION_NT
+	region = ACCESS_REGION_RESEARCH
 
 /var/const/access_petrov_chemistry = "ACCESS_TORCH_PETROV_CHEMISTRY" //205
 /datum/access/petrov_chemistry
 	id = access_petrov_chemistry
 	desc = "Petrov Chemistry Lab"
-	region = ACCESS_REGION_NT
+	region = ACCESS_REGION_RESEARCH
 
 /var/const/access_petrov_rd = "ACCESS_TORCH_PETROV_RD" //206
 /datum/access/petrov_rd
 	id = access_petrov_rd
 	desc = "Petrov Chief Science Officer's Office"
-	region = ACCESS_REGION_NT
+	region = ACCESS_REGION_COMMAND
 
 /var/const/access_petrov_security = "ACCESS_TORCH_PETROV_SEC" //207
 /datum/access/petrov_security
 	id = access_petrov_security
 	desc = "Petrov Security Office"
-	region = ACCESS_REGION_NT
+	region = ACCESS_REGION_SECURITY
 
 /var/const/access_petrov_maint = "ACCESS_TORCH_PETROV_MAINT" //208
 /datum/access/petrov_maint
 	id = access_petrov_maint
 	desc = "Petrov Maintenance"
-	region = ACCESS_REGION_NT
+	region = ACCESS_REGION_GENERAL
+
+/var/const/access_torch_helm = "ACCESS_TORCH_HELM"
+/datum/access/torch_helm
+	id = access_torch_helm
+	desc = "Torch Helm"
+	region = ACCESS_REGION_COMMAND
+
+// Torch Radio Access
+
+/var/const/access_radio_comm = "ACCESS_RADIO_COMM"
+/datum/access/access_radio_comm
+	id = access_radio_comm
+	desc = "Command Radio"
+	region = ACCESS_REGION_COMMAND
+
+/var/const/access_radio_eng = "ACCESS_RADIO_ENG"
+/datum/access/access_radio_eng
+	id = access_radio_eng
+	desc = "Engineering Radio"
+	region = ACCESS_REGION_ENGINEERING
+
+/var/const/access_radio_med = "ACCESS_RADIO_MED"
+/datum/access/access_radio_med
+	id = access_radio_med
+	desc = "Medical Radio"
+	region = ACCESS_REGION_MEDBAY
+
+/var/const/access_radio_sec = "ACCESS_RADIO_SEC"
+/datum/access/access_radio_sec
+	id = access_radio_sec
+	desc = "Security Radio"
+	region = ACCESS_REGION_SECURITY
+
+/var/const/access_radio_sci = "ACCESS_RADIO_SCI"
+/datum/access/access_radio_sic
+	id = access_radio_sci
+	desc = "Science Radio"
+	region = ACCESS_REGION_RESEARCH
+
+/var/const/access_radio_sup = "ACCESS_RADIO_SUP"
+/datum/access/access_radio_sup
+	id = access_radio_sup
+	desc = "Supply Radio"
+	region = ACCESS_REGION_SUPPLY
+
+/var/const/access_radio_serv = "ACCESS_RADIO_SERV"
+/datum/access/access_radio_serv
+	id = access_radio_serv
+	desc = "Service Radio"
+	region = ACCESS_REGION_SERVICE
+
+/var/const/access_radio_exp = "ACCESS_RADIO_EXP"
+/datum/access/access_radio_exp
+	id = access_radio_exp
+	desc = "Exploration Radio"
+	region = ACCESS_REGION_GENERAL

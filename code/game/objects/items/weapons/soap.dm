@@ -1,4 +1,4 @@
-/obj/item/weapon/soap
+/obj/item/soap
 	name = "soap"
 	desc = "A cheap bar of soap. Doesn't smell."
 	gender = PLURAL
@@ -18,12 +18,12 @@
 	var/decal_name
 	var/list/decals = list("diamond", "heart", "circle", "triangle", "")
 
-/obj/item/weapon/soap/New()
+/obj/item/soap/New()
 	..()
 	create_reagents(30)
 	wet()
 
-/obj/item/weapon/soap/Initialize()
+/obj/item/soap/Initialize()
 	. = ..()
 	var/shape = pick(valid_shapes)
 	var/scent = pick(valid_scents)
@@ -34,17 +34,17 @@
 	desc = "\A [shape] bar of soap. It smells [smelly] of [scent]."
 	update_icon()
 
-/obj/item/weapon/soap/proc/wet()
+/obj/item/soap/proc/wet()
 	reagents.add_reagent(/datum/reagent/space_cleaner, 15)
 
-/obj/item/weapon/soap/Crossed(var/mob/living/AM)
+/obj/item/soap/Crossed(var/mob/living/AM)
 	if (istype(AM))
 		if(AM.pulledby)
 			return
 		if((!AM.weakened || !AM.resting) && prob(30 + (log(6, reagents.total_volume) * 5)) && reagents.reagent_list.len) //inf, was: if(!AM.weakened || !AM.resting)
 			AM.slip("the [src.name]",3)
 
-/obj/item/weapon/soap/afterattack(atom/target, mob/user as mob, proximity)
+/obj/item/soap/afterattack(atom/target, mob/user as mob, proximity)
 	if(!proximity) return
 	//I couldn't feasibly  fix the overlay bugs caused by cleaning items we are wearing.
 	//So this is a workaround. This also makes more sense from an IC standpoint. ~Carn
@@ -87,7 +87,7 @@
 		user.update_personal_goal(/datum/goal/clean, TRUE)
 
 //attack_as_weapon
-/obj/item/weapon/soap/attack(mob/living/target, mob/living/user, var/target_zone)
+/obj/item/soap/attack(mob/living/target, mob/living/user, var/target_zone)
 	if(target && user && ishuman(target) && ishuman(user) && !target.stat && !user.stat && user.zone_sel &&user.zone_sel.selecting == BP_MOUTH)
 		user.visible_message("<span class='danger'>\The [user] washes \the [target]'s mouth out with soap!</span>")
 		if(reagents)
@@ -96,17 +96,17 @@
 		return
 	..()
 
-/obj/item/weapon/soap/attackby(var/obj/item/I, var/mob/user)
-	if(istype(I, /obj/item/weapon/key))
+/obj/item/soap/attackby(var/obj/item/I, var/mob/user)
+	if(istype(I, /obj/item/key))
 		if(!key_data)
 			to_chat(user, "<span class='notice'>You imprint \the [I] into \the [src].</span>")
-			var/obj/item/weapon/key/K = I
+			var/obj/item/key/K = I
 			key_data = K.key_data
 			update_icon()
 		return
 	..()
 
-/obj/item/weapon/soap/on_update_icon()
+/obj/item/soap/on_update_icon()
 	overlays.Cut()
 	if(key_data)
 		overlays += image('icons/obj/items.dmi', icon_state = "soap_key_overlay")
@@ -114,21 +114,21 @@
 		overlays +=	overlay_image(icon, "decal-[decal_name]")
 
 /*INF@SAVE4SOMETHING
-/obj/item/weapon/soap/nanotrasen
+/obj/item/soap/nanotrasen
 	desc = "A NanoTrasen-brand bar of soap. Smells of phoron."
 	icon_state = "soapnt"
 
-/obj/item/weapon/soap/deluxe
+/obj/item/soap/deluxe
 	icon_state = "soapdeluxe"
 
-/obj/item/weapon/soap/deluxe/New()
+/obj/item/soap/deluxe/New()
 	desc = "A deluxe Waffle Co. brand bar of soap. Smells of [pick("lavender", "vanilla", "strawberry", "chocolate" ,"space")]."
 	..()
 
-/obj/item/weapon/soap/syndie
+/obj/item/soap/syndie
 	desc = "An untrustworthy bar of soap. Smells of fear."
 	icon_state = "soapsyndie"
 
-/obj/item/weapon/soap/gold
+/obj/item/soap/gold
 	desc = "One true soap to rule them all."
 	icon_state = "soapgold"*/

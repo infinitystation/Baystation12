@@ -26,7 +26,8 @@
 	item_state = "hybrids_mat"
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/clothingbag/custom_pcrc/Initialize()
+/obj/item/clothingbag/custom_pcrc/Initialize()
+	. = ..()
 	new /obj/item/clothing/suit/armor/pcarrier/custom_pcrc(src)
 	new /obj/item/clothing/under/custom_pcrc(src)
 	new /obj/item/clothing/glasses/hud/health/custom_pcrc(src)

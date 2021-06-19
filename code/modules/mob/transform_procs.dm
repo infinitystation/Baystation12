@@ -191,7 +191,7 @@
 	for(var/t in organs)	//this really should not be necessary
 		qdel(t)
 
-	var/mob/living/simple_animal/corgi/new_corgi = new /mob/living/simple_animal/corgi (loc)
+	var/mob/living/simple_animal/friendly/corgi/new_corgi = new /mob/living/simple_animal/friendly/corgi (loc)
 	new_corgi.a_intent = I_HURT
 	new_corgi.key = key
 
@@ -273,21 +273,21 @@
 		return 0 //Verbs do not appear for players. These constructs should really have their own class simple_animal/construct/subtype
 
 //Good mobs!
-	if(ispath(MP, /mob/living/simple_animal/cat))
+	if(ispath(MP, /mob/living/simple_animal/friendly/cat))
 		return 1
-	if(ispath(MP, /mob/living/simple_animal/corgi))
+	if(ispath(MP, /mob/living/simple_animal/friendly/corgi))
 		return 1
 	if(ispath(MP, /mob/living/simple_animal/crab))
 		return 1
 	if(ispath(MP, /mob/living/simple_animal/hostile/carp))
 		return 1
-	if(ispath(MP, /mob/living/simple_animal/mushroom))
+	if(ispath(MP, /mob/living/simple_animal/friendly/mushroom))
 		return 1
 	if(ispath(MP, /mob/living/simple_animal/shade))
 		return 1
-	if(ispath(MP, /mob/living/simple_animal/tomato))
+	if(ispath(MP, /mob/living/simple_animal/friendly/tomato))
 		return 1
-	if(ispath(MP, /mob/living/simple_animal/mouse))
+	if(ispath(MP, /mob/living/simple_animal/friendly/mouse))
 		return 1 //It is impossible to pull up the player panel for mice (Fixed! - Nodrak)
 	if(ispath(MP, /mob/living/simple_animal/hostile/bear))
 		return 1 //Bears will auto-attack mobs, even if they're player controlled (Fixed! - Nodrak)
@@ -296,28 +296,3 @@
 
 	//Not in here? Must be untested!
 	return 0
-
-
-/mob/living/carbon/human/proc/zombify()
-	ChangeToHusk()
-	mutations |= MUTATION_CLUMSY
-	src.visible_message("<span class='danger'>\The [src]'s skin decays before your very eyes!</span>", "<span class='danger'>Your entire body is ripe with pain as it is consumed down to flesh and bones. You ... hunger. Not only for flesh, but to spread this gift.</span>")
-	if (src.mind)
-		if (src.mind.special_role == "Zombie")
-			return
-		src.mind.special_role = "Zombie"
-	log_admin("[key_name(src)] has transformed into a zombie!")
-	Weaken(5)
-	if (should_have_organ(BP_HEART))
-		vessel.add_reagent(/datum/reagent/blood, species.blood_volume - vessel.total_volume)
-	for (var/o in organs)
-		var/obj/item/organ/organ = o
-		organ.vital = 0
-		if (!BP_IS_ROBOTIC(organ))
-			organ.rejuvenate(1)
-			organ.max_damage *= 3
-			organ.min_broken_damage = Floor(organ.max_damage * 0.75)
-	//INF verbs += /mob/living/proc/breath_death
-	verbs += /mob/living/proc/zombie_claws //INF
-	verbs += /mob/living/proc/consume
-	playsound(get_turf(src), 'sound/hallucinations/wail.ogg', 20, 1)

@@ -17,7 +17,7 @@
 	emag_file = 'icons/obj/doors/double/emag.dmi'
 	width = 2
 	appearance_flags = 0
-	opacity = 1
+	opacity = TRUE
 	assembly_type = /obj/structure/door_assembly/multi_tile
 
 /obj/machinery/door/airlock/multi_tile/New()
@@ -91,36 +91,6 @@
 			dirs |= direction
 	connections = dirs
 
-//We have to find these again since these doors are used on shuttles a lot so the turfs changes
-/obj/machinery/door/airlock/multi_tile/proc/update_filler_turfs()
-	for(var/i = 1, i < width, i++)
-		if(dir in list(NORTH, SOUTH))
-			var/turf/T = locate(x + i, y, z)
-			if(T) T.set_opacity(opacity)
-		else if(dir in list(EAST, WEST))
-			var/turf/T = locate(x, y + i, z)
-			if(T) T.set_opacity(opacity)
-
-
-/obj/machinery/door/airlock/multi_tile/proc/get_filler_turfs()
-	var/list/filler_turfs = list()
-	for(var/i = 1, i < width, i++)
-		if(dir in list(NORTH, SOUTH))
-			var/turf/T = locate(x + i, y, z)
-			if(T) filler_turfs += T
-		else if(dir in list(EAST, WEST))
-			var/turf/T = locate(x, y + i, z)
-			if(T) filler_turfs += T
-	return filler_turfs
-
-/obj/machinery/door/airlock/multi_tile/open()
-	. = ..()
-	update_filler_turfs()
-
-/obj/machinery/door/airlock/multi_tile/close()
-	. = ..()
-	update_filler_turfs()
-
 /obj/machinery/door/airlock/multi_tile/command
 	door_color = COLOR_COMMAND_BLUE
 
@@ -173,6 +143,7 @@
 /obj/machinery/door/airlock/multi_tile/glass
 	name = "Glass Airlock"
 	opacity = 0
+	hitsound = 'sound/effects/Glasshit.ogg'
 	glass = 1
 
 /obj/machinery/door/airlock/multi_tile/glass/command

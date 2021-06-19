@@ -1,0 +1,6 @@
+{
+    "ckey" :            "adro244",
+    "character_name" :  "Ir'rin Hadii",
+    "item_path" :       "/obj/item/clothingbag/adro_edgy",
+    "req_access" :      [ "ACCESS_MEDICAL" ]
+}

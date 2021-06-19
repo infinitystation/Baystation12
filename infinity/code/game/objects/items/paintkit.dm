@@ -9,7 +9,7 @@
 /obj/item/device/kit/egun/inherit_custom_item_data(var/datum/custom_item/citem)
 	. = ..()
 	new_icon_file = CUSTOM_GUN_ICONS
-	if(citem.additional_data.Find("gun_mob_icon"))
+	if(list_find(citem.additional_data, "gun_mob_icon"))
 		var/mob_icon_override = citem.additional_data["gun_mob_icon"]
 		for(var/side in list(slot_r_hand_str, slot_l_hand_str))
 			var/true_mob_icon_override = "[mob_icon_override]_[side].dmi"
@@ -23,7 +23,7 @@
 			else
 				new_item_icons[side] = true_mob_icon_override
 
-/obj/item/weapon/gun/energy/attackby(var/obj/item/device/kit/egun/W, mob/user)
+/obj/item/gun/energy/attackby(var/obj/item/device/kit/egun/W, mob/user)
 	. = ..()
 	if(istype(W, /obj/item/device/kit/egun))
 		var/check = TRUE
@@ -74,15 +74,15 @@
 	new_desc = "Hephaestus replica of old-Earth special forces qA rifle, adapted to submachine gun rounds."
 	new_icon = "mixa"
 
-/obj/item/weapon/gun/projectile/attackby(var/obj/item/W, mob/user)
+/obj/item/gun/projectile/attackby(var/obj/item/W, mob/user)
 	. = ..()
 	if(istype(W, /obj/item/device/kit/egun))
 		to_chat(user, SPAN_WARNING("Ты понимаешь что баллистика и еган это 2 разных типа пушки?"))
 	// Больше говнокода богу говнокода
-	else if(istype(W, /obj/item/device/kit/gun) && !istype(src, /obj/item/weapon/gun/projectile/automatic/nt41))
+	else if(istype(W, /obj/item/device/kit/gun) && !istype(src, /obj/item/gun/projectile/automatic/nt41))
 		to_chat(user, SPAN_WARNING("Ты понимаешь что такое НТ-41? Нет? Очень жаль!"))
 
-/obj/item/weapon/gun/projectile/automatic/nt41/attackby(var/obj/item/device/kit/gun/W, mob/user)
+/obj/item/gun/projectile/automatic/nt41/attackby(var/obj/item/device/kit/gun/W, mob/user)
 	. = ..()
 	if(istype(W))
 		if(ammo_magazine)
@@ -92,11 +92,11 @@
 			process_chambered()	// Give me that bullet
 			W.use(1, user)
 			user.drop_from_inventory(src)
-			var/gun = new /obj/item/weapon/gun/projectile/automatic/nt41/mixa_vintorez
+			var/gun = new /obj/item/gun/projectile/automatic/nt41/mixa_vintorez
 			user.put_in_hands(gun)
 			qdel(src)
 
-/obj/item/weapon/gun/projectile/automatic/nt41/mixa_vintorez
+/obj/item/gun/projectile/automatic/nt41/mixa_vintorez
 	name = "ARS-Val"
 	desc = "Hephaestus replica of old-Earth special forces qA rifle, adapted to submachine gun rounds."
 	icon_state = "mixant41"
@@ -109,7 +109,7 @@
 		slot_l_hand_str = 'infinity/icons/customs/infinity_custom_guns_slot_l_hand.dmi',
 		)
 
-/obj/item/weapon/gun/projectile/automatic/nt41/mixa_vintorez/on_update_icon()
+/obj/item/gun/projectile/automatic/nt41/mixa_vintorez/on_update_icon()
 	..()
 	var/mob/living/M = loc
 	if(istype(M))

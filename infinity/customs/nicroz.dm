@@ -1,4 +1,4 @@
-/obj/item/weapon/storage/briefcase/psi
+/obj/item/storage/briefcase/psi
 	name = "\improper Foundation briefcase"
 	desc = "A handsome black leather briefcase embossed with a stylized radio telescope."
 	icon_state = "fbriefcase"
@@ -11,20 +11,20 @@
 	var/list/psi_ranks = list()
 	trade_blacklisted = TRUE
 	startswith = list(
-		/obj/item/weapon/implantcase/explosive,
-		/obj/item/weapon/implantcase/tracking,
-		/obj/item/weapon/implanter/psi,
-		/obj/item/weapon/implanter,
-		/obj/item/weapon/implantpad,
-		/obj/item/weapon/reagent_containers/pill/b_pvp = 2,
-		/obj/item/weapon/paper/psi_briefcase
+		/obj/item/implantcase/explosive,
+		/obj/item/implantcase/tracking,
+		/obj/item/implanter/psi,
+		/obj/item/implanter,
+		/obj/item/implantpad,
+		/obj/item/reagent_containers/pill/b_pvp = 2,
+		/obj/item/paper/psi_briefcase
 		)
 
-/obj/item/weapon/storage/briefcase/psi/paramount
+/obj/item/storage/briefcase/psi/paramount
 	psi_ranks = list(PSI_REDACTION = 5, PSI_COERCION = 5, PSI_PSYCHOKINESIS = 5, PSI_ENERGISTICS = 5)
 
 // Ты не можешь посмотреть что внутри, не взяв его в руки.
-/obj/item/weapon/storage/briefcase/psi/open(mob/user as mob)
+/obj/item/storage/briefcase/psi/open(mob/user as mob)
 	if(used)
 		return ..(user)
 	else
@@ -35,7 +35,7 @@
 		else
 			to_chat(user, SPAN_NOTICE("Тебе не удалось открыть [src]. Похоже тебе все таки придется использовать руки."))
 
-/obj/item/weapon/storage/briefcase/psi/inherit_custom_item_data(var/datum/custom_item/citem)
+/obj/item/storage/briefcase/psi/inherit_custom_item_data(var/datum/custom_item/citem)
 	. = ..()
 	slot_flags |= SLOT_POCKET
 	if(citem.ckey)
@@ -47,36 +47,36 @@
 	if(citem.additional_data["code"])
 		code = citem.additional_data["code"]
 
-	for(var/obj/item/weapon/paper/psi_briefcase/P in contents)
-		addtimer(CALLBACK(P, /obj/item/weapon/paper/psi_briefcase/proc/set_info, src), 0, TIMER_UNIQUE)
+	for(var/obj/item/paper/psi_briefcase/P in contents)
+		addtimer(CALLBACK(P, /obj/item/paper/psi_briefcase/proc/set_info, src), 0, TIMER_UNIQUE)
 	used = FALSE
 	silenced = TRUE
 
-/obj/item/weapon/paper/psi_briefcase
+/obj/item/paper/psi_briefcase
 	var/user = "\[ДАННЫЕ УДАЛЕНЫ\]"
 	var/freqcode
 	var/rank = "\[ДАННЫЕ УДАЛЕНЫ\]"
 	var/schools = ""
 	var/job = "\[ДАННЫЕ УДАЛЕНЫ\]"
-	var/obj/item/weapon/storage/briefcase/psi/brief
+	var/obj/item/storage/briefcase/psi/brief
 	var/textform = @"[br][center]<img src = foundlogo.png>[/center][br][center][large][b]Разрешение на работу сотрудника Фонда Кучулейн[/b][/large][/center][br][hr][br][br][br][list][br][*][b]Полное имя сотрудника:[/b] %USER%[br][br][*][b]Псионический ранг:[/b] %RANK%[br][br][*][b]Псионические способности:[/b] %SCHOOL%[br][br][*][b]Способы котроля:[/b] Имплант отслеживания. Имплант пси-контроля. Взрывной имплант '[i][u]Для активации: частота %CODE%[/u][/i]' [br][small][b][u]Использовать только в случае крайней необходимости или с разрешения агентов Фонда[/u][/b][/small][br][br][/list][br][hr][br][list][br][br][*][b]Текущая должность:[/b] %JOB%[br][br][*][b]Разрешенное оборудование:[/b] Импланты: отслеживания, взрыва, пси-контроля. Оборудование для работы с имплантами. B-PVP.[br][br][*][b]Расширение разрешенных процедур:[/b] Развитие псионических способностей у перспективных кандидатов.[br][br][*][b]Дата составления:[/b] 2309.01.24[br][br][*][b]Срок действия:[/b] 2310.01.23[br][hr][br][br][br][/list][br][br][br][br][u]Место для печатей:[/u]"
 	icon = 'icons/obj/card.dmi'
 	icon_state = "warrantcard"
 
-/obj/item/weapon/paper/psi_briefcase/show_content(mob/user, forceshow)
+/obj/item/paper/psi_briefcase/show_content(mob/user, forceshow, editable)
 	if(brief)
 		set_info(brief)
-	. = ..(user, forceshow)
+	. = ..(user, forceshow, editable)
 
-/obj/item/weapon/paper/psi_briefcase/on_update_icon()
+/obj/item/paper/psi_briefcase/on_update_icon()
 	return
 
-/obj/item/weapon/paper/psi_briefcase/New(var/obj/item/weapon/storage/briefcase/psi/case)
+/obj/item/paper/psi_briefcase/New(var/obj/item/storage/briefcase/psi/case)
 	. = ..()
 	brief = case
-	preStampPaper(/obj/item/weapon/stamp/boss)
+	preStampPaper(/obj/item/stamp/boss)
 
-/obj/item/weapon/paper/psi_briefcase/proc/set_info(var/obj/item/weapon/storage/briefcase/psi/case)
+/obj/item/paper/psi_briefcase/proc/set_info(var/obj/item/storage/briefcase/psi/case)
 	if(!istype(case))
 		return
 	freqcode = "[format_frequency(case.freq)] код [case.code]"
@@ -127,7 +127,7 @@
 	set_content(textform, "Foundation License")
 	brief = null
 
-/obj/item/weapon/storage/briefcase/psi/New()
+/obj/item/storage/briefcase/psi/New()
 	if(freq)
 		var/check = sanitize_frequency(freq, RADIO_LOW_FREQ, RADIO_HIGH_FREQ)
 		if(freq != check)
@@ -144,10 +144,10 @@
 		code = rand(1, 100)
 	. = ..()
 
-/obj/item/weapon/storage/briefcase/psi/disrupts_psionics()
+/obj/item/storage/briefcase/psi/disrupts_psionics()
 	return FALSE
 
-/obj/item/weapon/storage/briefcase/psi/examine(var/mob/living/user, distance)
+/obj/item/storage/briefcase/psi/examine(var/mob/living/user, distance)
 	. = ..()
 	if(!used)
 		if(user.psi)
@@ -157,7 +157,7 @@
 	else if(used && user.psi)
 		to_chat(user, SPAN_NOTICE("[src] окутывает остаточная пси-энергия. Что бы там не было раньше, теперь это просто чемодан."))
 
-/obj/item/weapon/storage/briefcase/psi/equipped(var/mob/living/carbon/human/user, var/slot)
+/obj/item/storage/briefcase/psi/equipped(var/mob/living/carbon/human/user, var/slot)
 	if(!used && psi_ranks.len && istype(user))
 		if(!(slot == slot_l_hand || slot == slot_r_hand || slot == slot_l_store || slot == slot_r_store))
 			return ..(user, slot)
@@ -175,19 +175,19 @@
 		else
 			if(!silenced)	user.visible_message(SPAN_WARNING("Камень из узора на [src] взрывается и его осколки впиваются в тело [user]!"), user.psi ? SPAN_WARNING("Увидев твою ауру, устройство пробудилось, сейчас что то будет...") : SPAN_WARNING("Камень ярко вспыхивает! Ты ему по нраву!"))
 			used = TRUE
-			var/obj/item/weapon/implant/psi_control/imp = new
+			var/obj/item/implant/psi_control/imp = new
 			imp.psi_mode = PSI_IMPLANT_LOG
 			imp.implanted(user)
 			imp.forceMove(user)
 			imp.imp_in = user
 			imp.implanted = TRUE
-			var/obj/item/weapon/implant/tracking/trackImp = new
+			var/obj/item/implant/tracking/trackImp = new
 			trackImp.id = rand(1, 100)
 			trackImp.implanted(user)
 			trackImp.forceMove(user)
 			trackImp.imp_in = user
 			trackImp.implanted = TRUE
-			var/obj/item/weapon/implant/explosive/boomImp = new
+			var/obj/item/implant/explosive/boomImp = new
 			boomImp.elevel = "Localized Limb"
 			boomImp.forceMove(user)
 			boomImp.imp_in = user
@@ -206,30 +206,30 @@
 			for(var/psi in psi_ranks)
 				user.set_psi_rank(psi, psi_ranks[psi], defer_update = TRUE)
 			user.psi.update(TRUE)
-			if(!silenced)
-				user.visible_message(SPAN_OCCULT("[user] вспыхивает ярким светом, и слегка приподнимается в воздух!"), SPAN_OCCULT("Ты чувствуешь как в тебе просыпаются новые силы!"))
-				var/turf/T = get_turf(user)
-				var/obj/effect/party_light/psi_briefcase/L = new /obj/effect/party_light/psi_briefcase(T)
-				var/datum/psi_complexus/psi = user.psi
-				var/image/aura = create_aura_image(L)
-				aura.pixel_x = -32
-				L.aura = aura
-				for(var/mob/player in GLOB.player_list)
-					player.client.images += aura
-				var/matrix/M = matrix()
-				M.Scale(3,3)
-				L.psi_owner = user
-				GLOB.moved_event.register(user, L, /obj/effect/party_light/psi_briefcase/proc/moving)
-				addtimer(CALLBACK(L, /obj/effect/party_light/psi_briefcase/proc/end), 3 SECONDS, TIMER_UNIQUE)
-				animate(aura, alpha = 100, transform = M, color = psi.aura_color, time = 30)
-				M = matrix()
-				M.Scale(4,4)
-				sleep(10)
-				animate(aura, transform = M, time = 15)
-				M = matrix()
-				M.Scale(5,5)
-				sleep(10)
-				animate(aura, alpha = 0, transform = M, time = 5)
+//			if(!silenced)	// Пафос вреден для кода. Лахеш, пора исправлять ~bear1ake
+//				user.visible_message(SPAN_OCCULT("[user] вспыхивает ярким светом, и слегка приподнимается в воздух!"), SPAN_OCCULT("Ты чувствуешь как в тебе просыпаются новые силы!"))
+//				var/turf/T = get_turf(user)
+//				var/obj/effect/party_light/psi_briefcase/L = new /obj/effect/party_light/psi_briefcase(T)
+//				var/datum/psi_complexus/psi = user.psi
+//				var/image/aura = create_aura_image(L)
+//				aura.pixel_x = -32
+//				L.aura = aura
+//				for(var/mob/player in GLOB.player_list)
+//					player.client.images += aura
+//				var/matrix/M = matrix()
+//				M.Scale(3,3)
+//				L.psi_owner = user
+//				GLOB.moved_event.register(user, L, /obj/effect/party_light/psi_briefcase/proc/moving)
+//				addtimer(CALLBACK(L, /obj/effect/party_light/psi_briefcase/proc/end), 3 SECONDS, TIMER_UNIQUE)
+//				animate(aura, alpha = 100, transform = M, color = psi.aura_color, time = 30)
+//				M = matrix()
+//				M.Scale(4,4)
+//				sleep(10)
+//				animate(aura, transform = M, time = 15)
+//				M = matrix()
+//				M.Scale(5,5)
+//				sleep(10)
+//				animate(aura, alpha = 0, transform = M, time = 5)
 	if(slot_flags & SLOT_POCKET)
 		slot_flags &= ~SLOT_POCKET
 	..(user, slot)
@@ -320,12 +320,12 @@
 	if(M.psi)
 		M.psi.check_latency_trigger(80, "a B-PVP overdose", TRUE)
 
-/obj/item/weapon/reagent_containers/pill/b_pvp
+/obj/item/reagent_containers/pill/b_pvp
 	name = "B-PVP pill"
 	desc = "The surface of this pill crawls against your skin."
 	icon_state = "pill2"
 
-/obj/item/weapon/reagent_containers/pill/b_pvp/Initialize()
+/obj/item/reagent_containers/pill/b_pvp/Initialize()
 	. = ..()
 	reagents.add_reagent(/datum/reagent/b_pvp, 26)
 	color = reagents.get_color()

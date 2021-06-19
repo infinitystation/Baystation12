@@ -11,9 +11,9 @@
 	icon_state = "acid"
 	icon = 'infinity/icons/mob/alien.dmi'
 
-	density = 0
+	density = FALSE
 	opacity = 0
-	anchored = 1
+	anchored = TRUE
 //	plane = BLOB_PLANE
 	layer = BLOB_SHIELD_LAYER
 

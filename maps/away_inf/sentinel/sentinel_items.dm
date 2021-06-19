@@ -3,22 +3,22 @@
  * ========
  */
 
-/obj/item/weapon/card/id/awaycavalry/ops
+/obj/item/card/id/awaycavalry/ops
 	desc = "An identification card issued to SolGov crewmembers aboard the Sol Patrol Craft."
 	icon_state = "base"
 	access = list(access_away_cavalry, access_away_cavalry_ops)
 
-/obj/item/weapon/card/id/awaycavalry/ops/captain
+/obj/item/card/id/awaycavalry/ops/captain
 	desc = "An identification card issued to SolGov crewmembers aboard the Sol Patrol Craft."
 	icon_state = "base"
 	access = list(access_away_cavalry, access_away_cavalry_ops, access_away_cavalry_captain)
 
-/obj/item/weapon/card/id/awaycavalry/fleet
+/obj/item/card/id/awaycavalry/fleet
 	desc = "An identification card issued to SolGov crewmembers aboard the Sol Patrol Craft."
 	icon_state = "base"
 	access = list(access_away_cavalry)
 
-/obj/item/weapon/card/id/awaycavalry/fleet/commander
+/obj/item/card/id/awaycavalry/fleet/commander
 	desc = "An identification card issued to SolGov crewmembers aboard the Sol Patrol Craft."
 	icon_state = "base"
 	access = list(access_away_cavalry, access_away_cavalry_commander)
@@ -75,9 +75,9 @@
 /obj/item/clothing/under/solgov/utility/army/urban/away_solpatrol/captain
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/rank/army/officer/o3)
 
-/obj/item/weapon/storage/belt/holster/general/away_solpatrol/New()
+/obj/item/storage/belt/holster/general/away_solpatrol/New()
 	..()
-	new /obj/item/weapon/gun/projectile/pistol/military(src)
+	new /obj/item/gun/projectile/pistol/military(src)
 	new /obj/item/ammo_magazine/pistol/double(src)
 	new /obj/item/ammo_magazine/pistol/double(src)
 

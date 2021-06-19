@@ -11,7 +11,7 @@
 	if(L.len && nums) . = L["[min(nums)]"]
 	return
 
-/datum/ntnet/proc/get_connection_quality_for(var/obj/item/weapon/stock_parts/computer/network_card/A)
+/datum/ntnet/proc/get_connection_quality_for(var/obj/item/stock_parts/computer/network_card/A)
 	. = 0
 	var/atom/movable/At = get_turf(A)
 	var/obj/machinery/ntnet_relay/R = get_relay_for_atom(A)
@@ -23,7 +23,7 @@
 		if(adapter_quality <= 1) adapter_quality = 1
 		else adapter_quality /= 1.25
 
-		var/m = Clamp(R.total_component_rating_of_type(/obj/item/weapon/stock_parts/scanning_module), 1, 10)
+		var/m = Clamp(R.total_component_rating_of_type(/obj/item/stock_parts/scanning_module), 1, 10)
 		if(m <= 1) m = 1
 
 		else m /= 2

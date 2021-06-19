@@ -1,7 +1,7 @@
-/music_track/fluvialbeatdeposits
-	artist = "Simon Stalenhag"
+/decl/audio/track/fluvialbeatdeposits
+	author = "Simon Stalenhag"
 	title = "Fluvial Beat Deposits"
-	album = "SOUNDSHOCK 2: FM FUNK TERRROR!!"
-	song = 'infinity/sound/music/fluvial-beat-deposits.ogg'
+	collection =  "SOUNDSHOCK 2: FM FUNK TERRROR!!"
+	source = 'infinity/sound/music/fluvial-beat-deposits.ogg'
 	license = /decl/license/grandfathered
 	url = "https://soundcloud.com/simon-st-lenhag/fluvial-beat-deposits"

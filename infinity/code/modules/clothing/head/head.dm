@@ -57,3 +57,19 @@
 	flags_inv ^= BLOCKHEADHAIR
 	to_chat(user, "<span class='notice'>[src] will now [flags_inv & BLOCKHEADHAIR ? "hide" : "show"] hair.</span>")
 	..()
+
+/obj/item/clothing/head/anime_band
+	name = "white hair band"
+	desc = "Just a nice looking shoes."
+	icon = 'infinity/icons/obj/clothing/obj_head.dmi'
+	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
+	icon_state = "anime_white"
+	item_state = "anime_white"
+
+/obj/item/clothing/head/anime_band/blue
+	name = "blue hair band"
+	desc = "Just a nice looking dress."
+	icon = 'infinity/icons/obj/clothing/obj_head.dmi'
+	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
+	icon_state = "anime_blue"
+	item_state = "anime_blue"
