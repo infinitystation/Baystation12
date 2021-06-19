@@ -84,8 +84,8 @@
 	title = "Merchant Assistant"
 
 	var/requires_supervisor = "Merchant"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 5
+	spawn_positions = 5
 	supervisors = "Торговцем"
 	selection_color = "#515151"
 	ideal_character_age = 20
