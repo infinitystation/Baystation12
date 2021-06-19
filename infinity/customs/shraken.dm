@@ -244,8 +244,8 @@
 	desc = "A coloring of spec ops, as well as the set includes the NVD."
 	action_button_name = "Toggle Visor"
 	accessory_icons = list(
-    "slot_head" = 'infinity/icons/mob/onmob/onmob_accessories.dmi'
-  )
+		"slot_head" = 'infinity/icons/mob/onmob/onmob_accessories.dmi'
+	)
 	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
 	icon_override = 'infinity/icons/mob/onmob/onmob_accessories.dmi'
 	icon_state = "spec_ops_cover"
