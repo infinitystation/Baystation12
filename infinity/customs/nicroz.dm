@@ -419,4 +419,4 @@ GLOBAL_LIST_INIT(overdose_messages, list(
 
 /decl/surgery_step/restricting/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	user.visible_message("<span class='danger'>[user]'s [tool] can't quite seem to get through the metal...</span>", \
-	"<span class='danger'>Your [tool] can't quite seem to get through the metal. It's weakening, though - try again.
+	"<span class='danger'>Your [tool] can't quite seem to get through the metal. It's weakening, though - try again.")
