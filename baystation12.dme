@@ -3815,7 +3815,6 @@
 #include "infinity\customs\he11d1ver.dm"
 #include "infinity\customs\headphones-crypto.dm"
 #include "infinity\customs\heph_set.dm"
-#include "infinity\customs\Hodovoy.dm"
 #include "infinity\customs\hybrid_opt.dm"
 #include "infinity\customs\ic_custom_belt.dm"
 #include "infinity\customs\ilya2180.dm"

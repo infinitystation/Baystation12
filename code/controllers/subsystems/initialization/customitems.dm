@@ -127,9 +127,9 @@ SUBSYSTEM_DEF(customitems)
 	req_titles           = data["req_titles"]                      || list()
 	additional_data      = data["additional_data"]                 || list()
 	apply_to_target_type = text2path(data["apply_to_target_type"]) || data["apply_to_target_type"]
-	assoc_paper_title    = data["paper_title"]
-	assoc_paper_info     = data["paper_info"]
-	assoc_paper_stamp_type = data["paper_stamp_type"]
+	assoc_paper_title    = data["paper_title"]    	
+	assoc_paper_info     = data["paper_info"]    
+	assoc_paper_stamp_type = data["paper_stamp_type"]    
 
 /datum/custom_item/proc/validate()
 	if(!ispath(item_path, /obj/item))
