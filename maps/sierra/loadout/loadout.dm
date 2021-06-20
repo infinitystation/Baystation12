@@ -31,6 +31,7 @@
 		"Fox" = /obj/item/holder/fox/prepared,
 		"Rabbit" = /obj/item/holder/rabbit/prepared,
 		"Snake" = /obj/item/holder/snake/prepared/safe,
+		"Kitten" = /obj/item/holder/kitten/prepared,
 	)
 	gear_tweaks += new /datum/gear_tweak/path(pets)
 
@@ -183,3 +184,25 @@
 	required_donate_level = 1
 	cost = 0
 	price = 1
+
+/datum/gear/mre
+	display_name = "MRE"
+	path = /obj/item/storage/mre
+	required_donate_level = 1
+	cost = 0
+	price = 1
+
+/datum/gear/mre/New()
+	. = ..()
+	var/list/mre_list = list(
+		"Menu 1" = /obj/item/storage/mre,
+		"Menu 2" = /obj/item/storage/mre/menu2,
+		"Menu 3" = /obj/item/storage/mre/menu3,
+		"Menu 4" = /obj/item/storage/mre/menu4,
+		"Menu 5" = /obj/item/storage/mre/menu5,
+		"Menu 6" = /obj/item/storage/mre/menu6,
+		"Menu 7" = /obj/item/storage/mre/menu7,
+		"Menu 8" = /obj/item/storage/mre/menu8,
+		"Menu 9" = /obj/item/storage/mre/menu9,
+		"Menu 10" = /obj/item/storage/mre/menu10)
+	gear_tweaks += new /datum/gear_tweak/path(mre_list)

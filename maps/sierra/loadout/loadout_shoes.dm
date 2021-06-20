@@ -10,7 +10,19 @@
 /datum/gear/shoes/dress
 	display_name = "dress shoes"
 	path = /obj/item/clothing/shoes/dress
-	
+
 /datum/gear/shoes/lowworkboots
 	display_name = "low workboots"
 	path = /obj/item/clothing/shoes/workboots/alt
+
+/datum/gear/shoes/cowboy_selection
+	display_name = "cowboy boots selection"
+	path = /obj/item/clothing/shoes/cowboy
+
+/datum/gear/shoes/cowboy_selection/New()
+	..()
+	var/cowboy_selection_type = list()
+	cowboy_selection_type["cowboy boots"] = /obj/item/clothing/shoes/cowboy
+	cowboy_selection_type["classic cowboy boots"] = /obj/item/clothing/shoes/cowboy/classic
+	cowboy_selection_type["snakeskin cowboy boots"] = /obj/item/clothing/shoes/cowboy/snakeskin
+	gear_tweaks += new/datum/gear_tweak/path(cowboy_selection_type)
