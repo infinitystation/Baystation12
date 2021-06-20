@@ -14,22 +14,9 @@
 
 	var/efficiency
 
-/obj/machinery/telepad/New()
-	..()
-	component_parts = list(
-	new /obj/item/stock_parts/circuitboard/telesci_pad,
-	new /obj/item/bluespace_crystal/artificial,
-	new /obj/item/bluespace_crystal/artificial,
-	new /obj/item/stock_parts/capacitor,
-	new /obj/item/stock_parts/console_screen
-	)
-	RefreshParts()
-
 /obj/machinery/telepad/RefreshParts()
-	var/E
-	for(var/obj/item/stock_parts/capacitor/C in component_parts)
-		E += C.rating
-	efficiency = E
+	efficiency = total_component_rating_of_type(/obj/item/stock_parts/capacitor)
+
 
 /obj/machinery/telepad/components_are_accessible(path)
 	return panel_open
@@ -42,6 +29,15 @@
 			var/obj/item/device/multitool/M = I
 			M.buffer = src
 			to_chat(user, "<span class='caution'>You save the data in the [I.name]'s buffer.</span>")
+			return
+		// Алмазная фокусирующая линза. Гы-гы
+		if(istype(I, /obj/item/material/coin/diamond))
+			var/obj/item/stock_parts/building_material/material = get_component_of_type(/obj/item/stock_parts/building_material, TRUE)
+			if(material && material.number_of_type(/obj/item/material/coin/diamond)>0)
+				to_chat(user, "<span class='caution'>Machine have already installed \an [I.name]</span>")
+				return
+			if(user.drop_from_inventory(I))
+				install_component(I)
 			return
 
 	else
