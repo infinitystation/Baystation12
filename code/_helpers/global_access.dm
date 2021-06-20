@@ -483,6 +483,8 @@
 			return global.holder_mob_icon_cache;
 		if("human_icon_cache")
 			return global.human_icon_cache;
+		if("icon_state_cache")
+			return global.icon_state_cache;
 		if("id_card_states")
 			return global.id_card_states;
 		if("image_repository")
@@ -1380,6 +1382,8 @@
 			global.holder_mob_icon_cache=newval;
 		if("human_icon_cache")
 			global.human_icon_cache=newval;
+		if("icon_state_cache")
+			global.icon_state_cache=newval;
 		if("id_card_states")
 			global.id_card_states=newval;
 		if("image_repository")
@@ -2035,6 +2039,7 @@
 	"hivemind_bank",
 	"holder_mob_icon_cache",
 	"human_icon_cache",
+	"icon_state_cache",
 	"id_card_states",
 	"image_repository",
 	"init",
