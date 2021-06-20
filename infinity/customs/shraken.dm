@@ -239,45 +239,32 @@
 	item_icons = list(slot_glasses_str = CUSTOM_ITEM_MOB)
 	trade_blacklisted = TRUE
 
-/obj/item/clothing/accessory/armor/helmcover/custom_saare
-	name = "spec ops cover"
-	desc = "A coloring of spec ops, as well as the set includes the NVD."
-	action_button_name = "Toggle Visor"
-	accessory_icons = list(
-		"slot_head" = 'infinity/icons/mob/onmob/onmob_accessories.dmi'
-	)
-	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
-	icon_override = 'infinity/icons/mob/onmob/onmob_accessories.dmi'
-	icon_state = "spec_ops_cover"
+/obj/item/clothing/head/helmet/jackinghelm
+	name = "\improper Atlas helmet"
+	desc = "A typical helmet designed for stopping bullets, pretty heavy, this one have a bulletproof visor and place for rifle headset, looking pretty classy. It has little label with 'It got me more drugs' written on it"
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "jackinghelmet"
 	item_icons = list(
-		slot_head_str = "spec_ops_cover"
+		slot_head_str = CUSTOM_ITEM_MOB
 	)
 	item_state_slots = list(
-		slot_head_str = "spec_ops_cover"
+		slot_head_str = "jackinghelmet"
 	)
 	trade_blacklisted = TRUE
+	action_button_name = "Toggle Visor"
 	var/isVisorUp = 0
 
-/obj/item/clothing/accessory/armor/helmcover/custom_saare/on_update_icon()
+/obj/item/clothing/head/helmet/jackinghelm/on_update_icon()
 	. = ..()
 	var/tmp = "[initial(icon_state)][isVisorUp ? "_up" : ""]"
 	item_state_slots = list(slot_head_str = tmp)
 	icon_state = tmp
 	update_clothing_icon()
 
-/obj/item/clothing/accessory/armor/helmcover/custom_saare/attack_self(mob/user as mob)
+/obj/item/clothing/head/helmet/jackinghelm/attack_self(mob/user as mob)
 	isVisorUp = !isVisorUp
-	to_chat(user, "You [isVisorUp ? "raise" : "lower"] the NVG on the [src].")
+	to_chat(user, "You [isVisorUp ? "raise" : "lower"] the visor on the [src].")
 	update_icon()
-
-/obj/item/clothing/suit/armor/pcarrier/custom_saare
-	name = "\improper DSH-116"
-	desc = "An old plate carrier of the special operations forces. Apparently worn, how they still wear..."
-	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
-	item_icons = list(slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi')
-	icon_state = "gcc_spec_opc_carrier"
-	sprite_sheets = list()
-	trade_blacklisted = TRUE
 
 
 /obj/item/gun/projectile/automatic/nt41/jacking
@@ -311,10 +298,14 @@
 	input = /obj/item/gun/projectile/automatic/nt41/armory
 	output = /obj/item/gun/projectile/automatic/nt41/jacking
 
+/obj/item/clothingbag/custom_saare
+    name = "SAARE tactical ops"
+    desc = "Just bag"
+    trade_blacklisted = TRUE
 
 /obj/item/clothingbag/custom_saare/Initialize()
 	. = ..()
 	new /obj/item/clothing/glasses/sunglasses/sechud/custom_ballistic/orange(src)
-	new /obj/item/clothing/accessory/armor/helmcover/custom_saare(src)
-	new /obj/item/clothing/suit/armor/pcarrier/custom_saare(src)
+	new /obj/item/clothing/head/helmet/jackinghelm(src)
 	new /obj/item/custkit/custom_saare(src)
+	new /obj/item/clothing/suit/armor/pcarrier/green/heavy_saare(src)
