@@ -1,4 +1,4 @@
-/var/server_name = "Infinity RU"
+/var/server_name = "SS220 WL Prime"
 
 //inf #define RECOMMENDED_VERSION 513 // Определено в code/_macros_inf.dm и используется там же
 #define FAILED_DB_CONNECTION_CUTOFF 25
