@@ -74,7 +74,7 @@
 	update_icon()
 	update_clothing_icon()
 	update_vision()
-	user.update_action_buttons()
+	usr.update_action_buttons()
 
 
 /obj/item/clothing/glasses/sidveld/Initialize()
