@@ -341,6 +341,7 @@ GLOBAL_LIST_INIT(overdose_messages, list(
 	)
 	icon_state = "nicroz_helmet"
 	item_state = "nicroz_helmet"
+	item_flags = ITEM_FLAG_AIRTIGHT|ITEM_FLAG_FLEXIBLEMATERIAL|ITEM_FLAG_THICKMATERIAL
 	trade_blacklisted = TRUE
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
 	body_parts_covered = FACE|EYES

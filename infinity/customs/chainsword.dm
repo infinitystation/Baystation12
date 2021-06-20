@@ -72,5 +72,5 @@
 
 /obj/item/custkit/chainsword
 	name = "CS-9 \"Martha\" customization kit"
-	input = /obj/item/material/hatchet/machete/deluxe
+	input = /obj/item/material/hatchet/machete
 	output = /obj/item/chainsword
