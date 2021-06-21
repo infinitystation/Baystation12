@@ -78,7 +78,7 @@
 	title = "Отчет персонала о происшествии"
 	available_on_ntnet = 1
 
-/datum/computer_file/report/recipient/incident_repstaff/generate_fields()
+/datum/computer_file/report/recipient/iaa/incident_repstaff/generate_fields()
 	..()
 	var/list/heads_fields = list()
 	add_field(/datum/report_field/text_label/header, "Отчет персонала о происшествии")
@@ -201,7 +201,7 @@
 	title = "Титульный лист для многостраничного отчета"
 	available_on_ntnet = 1
 
-/datum/computer_file/report/recipient/title_page/generate_fields()
+/datum/computer_file/report/recipient/iaa/title_page/generate_fields()
 	..()
 	add_field(/datum/report_field/text_label/header, "Внутреняя связь Центрального Командования")
 	add_field(/datum/report_field/text_label/header, "ИКН Сьерра")
