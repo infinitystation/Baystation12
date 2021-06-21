@@ -201,6 +201,19 @@
 	req_access = list(list(access_sec_doors, access_engine, access_medical))
 	begins_closed = FALSE
 	icon_state = "pdoor0"
+	// Дальше только ад.
+	min_force = 50
+	maxhealth = 5000
+
+// Как я и обещал, бронестворки можно емагать.
+/obj/machinery/door/blast/regular/lockdown/emag_act(remaining_charges)
+	. = ..(remaining_charges, TRUE)
+	if(.)
+		// Если уж емагаются, то все сразу
+		for(var/obj/machinery/door/blast/regular/lockdown/door in SSmachines.machinery)
+			if(door.id_tag == id_tag && door.density && door.operable())
+				INVOKE_ASYNC(door, /obj/machinery/door/proc/do_animate, "emag")
+				addtimer(CALLBACK(door, /obj/machinery/door/proc/emag_open), 6)
 
 /obj/machinery/door/blast/regular/lockdown/attackby(obj/item/C as obj, mob/user as mob)
 	. = ..(C, user)
