@@ -1,0 +1,6 @@
+ {
+ "ckey" :            "hodovoy",
+  "character_name" :  "Daria Lane",
+  "item_path" :       "/obj/item/clothingbag/hodovoy",
+  "req_access" :      [ "ACCESS_MEDICAL" ]
+  }
