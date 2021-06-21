@@ -283,7 +283,7 @@
 		.["Violator"] += perpname
 
 		var/datum/computer_file/report/crew_record/CR = RecordByName(perpname)
-		if(check_records && !CR && !target.isMonkey())
+		if(check_records && !CR && !target.is_species(SPECIES_MONKEY))
 			.["level"] += 4
 			.["Unknown"] += TRUE
 

@@ -8,6 +8,7 @@ Thumbs.db
 *.backup
 *.before
 data/
+dmdoc/
 cfg/
 build_log.txt
 use_map
@@ -23,9 +24,11 @@ maps/*/backup/*.dmm
 config/*
 sql/test_db
 
-# vscode
-.vscode/
-.history/
+# VisualStudioCode
+.vscode/*
+!.vscode/settings.json
+*.code-workspace
+.history
 
 # swap
 [._]*.s[a-v][a-z]
@@ -42,7 +45,6 @@ Session.vim
 
 # auto-generated tag files
 tags
-baystation12.code-workspace
 
 # updater
 updater.bat
@@ -64,4 +66,3 @@ flyway.conf
 # linux
 nohup.out
 #/inf
-

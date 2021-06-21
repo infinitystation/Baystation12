@@ -37,7 +37,7 @@ GLOBAL_LIST_INIT(surgery_tool_exception_cache, new)
 
 // Checks if this step applies to the user mob at all
 /decl/surgery_step/proc/is_valid_target(mob/living/carbon/human/target)
-	if(!hasorgans(target))
+	if(!ishuman(target))
 		return 0
 
 	if(allowed_species)
@@ -226,10 +226,14 @@ GLOBAL_LIST_INIT(surgery_tool_exception_cache, new)
 				LAZYSET(M.surgeries_in_progress, zone, operation_data)
 				S.begin_step(user, M, zone, src)
 				var/skill_reqs = S.get_skill_reqs(user, M, src, zone)
-				var/duration = user.skill_delay_mult(skill_reqs[1]) * rand(S.min_duration, S.max_duration) * surgery_speed
+				var/duration = user.skill_delay_mult(skill_reqs[1]) * rand(S.min_duration, S.max_duration * surgery_speed)
 				if(prob(S.success_chance(user, M, src, zone)) && do_after(user, duration, M) * surgery_speed)
-					S.end_step(user, M, zone, src)
-					handle_post_surgery()
+					if (S.can_use(user, M, zone, src))
+						S.end_step(user, M, zone, src)
+						handle_post_surgery()
+					else
+						to_chat(user, SPAN_WARNING("The patient lost the target organ before you could finish operating!"))
+
 				else if ((src in user.contents) && user.Adjacent(M))
 					S.fail_step(user, M, zone, src)
 				else

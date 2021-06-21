@@ -24,13 +24,15 @@ SUBSYSTEM_DEF(ticker)
 	var/restart_timeout = 1.5 MINUTES
 
 	var/scheduled_map_change = 0
-	var/force_ending = 0            //Overriding this variable will force game end. Can be used for build update or adminbuse.
 
 	var/list/minds = list()         //Minds of everyone in the game.
 	var/list/antag_pool = list()
 	var/looking_for_antags = 0
 
 	var/secret_force_mode = "secret"
+
+	///Set to TRUE when an admin forcefully ends the round.
+	var/forced_end = FALSE
 
 /datum/controller/subsystem/ticker/Initialize()
 	to_world("<span class='info'><B>Добро пожаловать в лобби!</B></span>")
@@ -389,8 +391,9 @@ Helpers
 	return 0
 
 /datum/controller/subsystem/ticker/proc/game_finished()
-	if(force_ending)
-		return 1
+	if (forced_end)
+		return TRUE
+
 	if(mode.explosion_in_progress)
 		return 0
 	if(config.continous_rounds)
@@ -399,6 +402,9 @@ Helpers
 		return mode.check_finished() || evacuation_controller.round_over() || universe_has_ended // && evacuation_controller.emergency_evacuation - since transfer shuttle don't really use this variable, it don't allow end round
 
 /datum/controller/subsystem/ticker/proc/mode_finished()
+	if (forced_end)
+		return TRUE
+
 	if(config.continous_rounds)
 		return mode.check_finished()
 	else

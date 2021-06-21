@@ -80,7 +80,7 @@
 			stat("Players: [totalPlayers]", "Players Ready: [totalPlayersReady]")
 			totalPlayers = 0
 			totalPlayersReady = 0
-			var/we_are_admin = is_admin(src)
+			var/we_are_admin = isadmin(src)
 			for(var/mob/new_player/player in GLOB.player_list)
 				if(player.is_stealthed() && !we_are_admin)
 					continue
@@ -211,7 +211,7 @@
 			if(!whitelist_lookup(SPECIES_FBP, client.ckey) && client.prefs.species != SPECIES_IPC)
 				to_chat(usr, "Нельзя зайти за ППТ без вайтлиста.")
 				return 0
-		
+
 		for(var/M in client.prefs.body_markings)
 			var/datum/sprite_accessory/SA = GLOB.body_marking_styles_list[M]
 			if(istype(SA, /datum/sprite_accessory/marking/booster) && (client.DonateData?.level < 4))

@@ -206,30 +206,30 @@
 			for(var/psi in psi_ranks)
 				user.set_psi_rank(psi, psi_ranks[psi], defer_update = TRUE)
 			user.psi.update(TRUE)
-			if(!silenced)
-				user.visible_message(SPAN_OCCULT("[user] вспыхивает ярким светом, и слегка приподнимается в воздух!"), SPAN_OCCULT("Ты чувствуешь как в тебе просыпаются новые силы!"))
-				var/turf/T = get_turf(user)
-				var/obj/effect/party_light/psi_briefcase/L = new /obj/effect/party_light/psi_briefcase(T)
-				var/datum/psi_complexus/psi = user.psi
-				var/image/aura = create_aura_image(L)
-				aura.pixel_x = -32
-				L.aura = aura
-				for(var/mob/player in GLOB.player_list)
-					player.client.images += aura
-				var/matrix/M = matrix()
-				M.Scale(3,3)
-				L.psi_owner = user
-				GLOB.moved_event.register(user, L, /obj/effect/party_light/psi_briefcase/proc/moving)
-				addtimer(CALLBACK(L, /obj/effect/party_light/psi_briefcase/proc/end), 3 SECONDS, TIMER_UNIQUE)
-				animate(aura, alpha = 100, transform = M, color = psi.aura_color, time = 30)
-				M = matrix()
-				M.Scale(4,4)
-				sleep(10)
-				animate(aura, transform = M, time = 15)
-				M = matrix()
-				M.Scale(5,5)
-				sleep(10)
-				animate(aura, alpha = 0, transform = M, time = 5)
+//			if(!silenced)	// Пафос вреден для кода. Лахеш, пора исправлять ~bear1ake
+//				user.visible_message(SPAN_OCCULT("[user] вспыхивает ярким светом, и слегка приподнимается в воздух!"), SPAN_OCCULT("Ты чувствуешь как в тебе просыпаются новые силы!"))
+//				var/turf/T = get_turf(user)
+//				var/obj/effect/party_light/psi_briefcase/L = new /obj/effect/party_light/psi_briefcase(T)
+//				var/datum/psi_complexus/psi = user.psi
+//				var/image/aura = create_aura_image(L)
+//				aura.pixel_x = -32
+//				L.aura = aura
+//				for(var/mob/player in GLOB.player_list)
+//					player.client.images += aura
+//				var/matrix/M = matrix()
+//				M.Scale(3,3)
+//				L.psi_owner = user
+//				GLOB.moved_event.register(user, L, /obj/effect/party_light/psi_briefcase/proc/moving)
+//				addtimer(CALLBACK(L, /obj/effect/party_light/psi_briefcase/proc/end), 3 SECONDS, TIMER_UNIQUE)
+//				animate(aura, alpha = 100, transform = M, color = psi.aura_color, time = 30)
+//				M = matrix()
+//				M.Scale(4,4)
+//				sleep(10)
+//				animate(aura, transform = M, time = 15)
+//				M = matrix()
+//				M.Scale(5,5)
+//				sleep(10)
+//				animate(aura, alpha = 0, transform = M, time = 5)
 	if(slot_flags & SLOT_POCKET)
 		slot_flags &= ~SLOT_POCKET
 	..(user, slot)
@@ -251,6 +251,39 @@
 	var/turf/T = get_turf(who)
 	forceMove(T)
 
+// M A X I M U M C H E E S E | Oh shit i'm sorry ~Nyacroz
+
+GLOBAL_LIST_INIT(dose_messages, list(
+	"Твое имя оглашено. Твое время пришло.",
+	"Ты таешь. Твои руки сделаны из воска...",
+	"Все происходит одновременно. Все перемешалось.",
+	"Конец. Все кончено. Ты закончен. С тобой покончено.",
+	"Ты не забудешь. Не забудь. Не забудь.",
+	"Свет просачивается по краям твоего зрения...",
+	"Что-то скользит и дергается у тебя за пазухой...",
+	"Твой кишечник скрутило. Оно ждет внутри.",
+	"Твои внутренности полыхают. Ты весь заряжен потенциалом.",
+	"Твое сердце трепещит. Оно окрылено и сковано в твоей груди.",
+	"Там есть что то ценное, за твоими глазами.",
+	"Все заканчивается. Все начинается.",
+	"Ничего не заканчивается. Ничего не начинается.",
+	"Просыпайся. Молю, просыпайся.",
+	"Остановись! Ты вредишь им!",
+	"Твое время еще не пришло. Пожалуйста возвращайся.",
+	"Мы скучаем по тебе. Где же ты?",
+	"Возвращайся оттуда. Пожалуйста."
+))
+
+GLOBAL_LIST_INIT(overdose_messages, list(
+	"СИГНАЛ СИГНАЛ СИГНАЛ СИГНАЛ СИГНАЛ",
+	"ОНО ПЛАЧЕТ ОНО ПЛАЧЕТ ОНО ЖДЕТ ОНО ПЛАЧЕТ",
+	"НЕ ТВОЕ НЕ ТВОЕ НЕ ТВОЕ НЕ ТВОЕ НЕ ТВОЕ",
+	"ЭТО НЕ ДЛЯ ТЕБЯ",
+	"ОНО БЕЖИТ ОНО БЕЖИТ ОНО БЕЖИТ ОНО БЕЖИТ",
+	"КРОВЬ КРОВЬ КРОВЬ КРОВЬ КРОВЬ КРОВЬ",
+	"СВЕТ ТЬМА ЗВЕЗДА В ЦЕПЯХ"
+))
+
 /datum/reagent/b_pvp
 	name = "B-PVP"
 	taste_description = "жидкий звездный свет"
@@ -259,38 +292,6 @@
 	color = "#ccccff"
 	metabolism = REM
 	overdose = 25
-
-	// M A X I M U M C H E E S E
-	var/global/list/dose_messages = list(
-		"Твое имя оглашено. Твое время пришло.",
-		"Ты таешь. Твои руки сделаны из воска...",
-		"Все происходит одновременно. Все перемешалось.",
-		"Конец. Все кончено. Ты закончен. С тобой покончено.",
-		"Ты не забудешь. Не забудь. Не забудь.",
-		"Свет просачивается по краям твоего зрения...",
-		"Что-то скользит и дергается у тебя за пазухой...",
-		"Твой кишечник скрутило. Оно ждет внутри.",
-		"Твои внутренности полыхают. Ты весь заряжен потенциалом.",
-		"Твое сердце трепещит. Оно окрылено и сковано в твоей груди.",
-		"Там есть что то ценное, за твоими глазами.",
-		"Все заканчивается. Все начинается.",
-		"Ничего не заканчивается. Ничего не начинается.",
-		"Просыпайся. Молю, просыпайся.",
-		"Остановись! Ты вредишь им!",
-		"Твое время еще не пришло. Пожалуйста возвращайся.",
-		"Мы скучаем по тебе. Где же ты?",
-		"Возвращайся оттуда. Пожалуйста."
-	)
-
-	var/global/list/overdose_messages = list(
-		"СИГНАЛ СИГНАЛ СИГНАЛ СИГНАЛ СИГНАЛ",
-		"ОНО ПЛАЧЕТ ОНО ПЛАЧЕТ ОНО ЖДЕТ ОНО ПЛАЧЕТ",
-		"НЕ ТВОЕ НЕ ТВОЕ НЕ ТВОЕ НЕ ТВОЕ НЕ ТВОЕ",
-		"ЭТО НЕ ДЛЯ ТЕБЯ",
-		"ОНО БЕЖИТ ОНО БЕЖИТ ОНО БЕЖИТ ОНО БЕЖИТ",
-		"КРОВЬ КРОВЬ КРОВЬ КРОВЬ КРОВЬ КРОВЬ",
-		"СВЕТ ТЬМА ЗВЕЗДА В ЦЕПЯХ"
-	)
 
 /datum/reagent/b_pvp/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	M.add_client_color(/datum/client_color/thirdeye)
@@ -304,7 +305,7 @@
 		H.seizure()
 		H.adjustBrainLoss(rand(8, 12))
 	if(prob(5))
-		to_chat(M, SPAN_WARNING("<font size = [rand(1,3)]>[pick(dose_messages)]</font>"))
+		to_chat(M, SPAN_WARNING("<font size = [rand(1,3)]>[pick(GLOB.dose_messages)]</font>"))
 
 /datum/reagent/b_pvp/on_leaving_metabolism(var/mob/parent, var/metabolism_class)
 	parent.remove_client_color(/datum/client_color/thirdeye)
@@ -316,7 +317,7 @@
 		var/mob/living/carbon/human/H = M
 		H.seizure()
 	if(prob(10))
-		to_chat(M, SPAN_DANGER("<font size = [rand(2,4)]>[pick(overdose_messages)]</font>"))
+		to_chat(M, SPAN_DANGER("<font size = [rand(2,4)]>[pick(GLOB.overdose_messages)]</font>"))
 	if(M.psi)
 		M.psi.check_latency_trigger(80, "a B-PVP overdose", TRUE)
 
@@ -329,3 +330,94 @@
 	. = ..()
 	reagents.add_reagent(/datum/reagent/b_pvp, 26)
 	color = reagents.get_color()
+
+// Aue loh
+/obj/item/clothing/head/helmet/facecover/restricting
+	name = "restricting helmet"
+	desc = "A helmet made of polymer metal. It's completely opaque. This will stop the stare."
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(
+		slot_head_str = CUSTOM_ITEM_MOB
+	)
+	icon_state = "nicroz_helmet"
+	item_state = "nicroz_helmet"
+	item_flags = ITEM_FLAG_AIRTIGHT|ITEM_FLAG_FLEXIBLEMATERIAL|ITEM_FLAG_THICKMATERIAL
+	trade_blacklisted = TRUE
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
+	body_parts_covered = FACE|EYES
+
+/obj/item/clothing/head/helmet/facecover/restricting/equipped(var/mob/user, var/slot)
+	..()
+	if(slot == slot_head)
+		canremove = FALSE
+		START_PROCESSING(SSobj, src)
+
+/obj/item/clothing/head/helmet/facecover/restricting/Process()
+	if(!istype(loc, /mob/living/carbon/human))
+		return
+
+	var/mob/living/carbon/human/H = loc
+
+	if(!H.psi)
+		return
+
+	if(H.psi.suppressed)
+		tint = TINT_BLIND
+		H.remove_client_color(/datum/client_color/thirdeye)
+		return
+
+	tint = 0
+	H.add_client_color(/datum/client_color/thirdeye)
+
+	if(prob(5))
+		to_chat(H, SPAN_WARNING("<font size = [rand(1,3)]>[pick(GLOB.dose_messages)]</font>"))
+	else if(prob(1))
+		to_chat(H, SPAN_DANGER("<font size = [rand(2,4)]>[pick(GLOB.overdose_messages)]</font>"))
+
+/decl/surgery_step/restricting
+	name = "Remove restricting helmet"
+	allowed_tools = list(
+		/obj/item/weldingtool = 80,
+		/obj/item/circular_saw = 60,
+		/obj/item/psychic_power/psiblade/master/grand/paramount = 100,
+		/obj/item/psychic_power/psiblade = 75,
+		/obj/item/gun/energy/plasmacutter = 30
+	)
+	can_infect = 0
+	blood_level = 0
+	min_duration = 120
+	max_duration = 180
+	surgery_candidate_flags = 0
+
+/decl/surgery_step/restricting/assess_bodypart(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
+	return TRUE
+
+/decl/surgery_step/restricting/get_skill_reqs(mob/living/user, mob/living/carbon/human/target, obj/item/tool)
+	return list(SKILL_EVA = SKILL_BASIC)
+
+/decl/surgery_step/restricting/can_use(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
+	if(!istype(target))
+		return FALSE
+	if(isWelder(tool))
+		var/obj/item/weldingtool/welder = tool
+		if(!welder.isOn() || !welder.remove_fuel(1,user))
+			return FALSE
+	return (target_zone == BP_HEAD) && istype(target.head, /obj/item/clothing/head/helmet/facecover/restricting) && !(target.head.canremove)
+
+/decl/surgery_step/restricting/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
+	user.visible_message("[user] starts cutting through [target.head] with \the [tool]." , \
+	"You start cutting through [target.head] with \the [tool].")
+	..()
+
+/decl/surgery_step/restricting/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
+
+	var/obj/item/clothing/head/helmet/facecover/restricting = target.head
+	if(!istype(restricting))
+		return
+	restricting.canremove = 1
+	user.visible_message("<span class='notice'>[user] has cut through [target]'s [restricting] with \the [tool].</span>", \
+		"<span class='notice'>You have cut through of [target]'s [restricting] with \the [tool].</span>")
+
+/decl/surgery_step/restricting/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
+	user.visible_message("<span class='danger'>[user]'s [tool] can't quite seem to get through the metal...</span>", \
+	"<span class='danger'>Your [tool] can't quite seem to get through the metal. It's weakening, though - try again.</span>")

@@ -93,3 +93,24 @@
 /obj/item/clothing/suit/storage/toggle/agent_jacket/security
 	name = "private security jacket"
 	desc = "A black leather jacket with \"SECURITY\" inscription at back. Belonged to a guard in a warehouse."
+
+
+/obj/item/clothing/suit/anime_white
+	name = "white dress"
+	desc = "Just a nice looking dress."
+	icon = 'infinity/icons/obj/clothing/obj_under.dmi'
+	item_icons = list(
+		slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi',
+		slot_r_hand_str = 'infinity/icons/mob/onmob/righthand.dmi',
+		slot_l_hand_str = 'infinity/icons/mob/onmob/lefthand.dmi')
+	icon_state = "anime_white"
+	item_state = "anime_white"
+
+/obj/item/clothing/suit/anime_blue
+	name = "blue dress"
+	desc = "Just a nice looking dress."
+	icon = 'infinity/icons/obj/clothing/obj_under.dmi'
+	item_icons = list(
+		slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi')
+	icon_state = "anime_blue"
+	item_state = "anime_blue"

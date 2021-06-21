@@ -13,8 +13,8 @@
 		/datum/species/skrell  = list(HUMAN_ONLY_JOBS),
 		/datum/species/machine = list(HUMAN_ONLY_JOBS),
 		/datum/species/tajaran = list(HUMAN_ONLY_JOBS),
-		/datum/species/diona   = list(HUMAN_ONLY_JOBS, /datum/job/officer, /datum/job/bodyguard, /datum/job/rd, /datum/job/liaison, /datum/job/warden),
-		/datum/species/resomi  = list(HUMAN_ONLY_JOBS, /datum/job/officer, /datum/job/bodyguard, /datum/job/rd, /datum/job/liaison, /datum/job/warden),
+		/datum/species/diona   = list(HUMAN_ONLY_JOBS, /datum/job/officer, /datum/job/rd, /datum/job/liaison, /datum/job/warden),
+		/datum/species/resomi  = list(HUMAN_ONLY_JOBS, /datum/job/officer, /datum/job/rd, /datum/job/liaison, /datum/job/warden),
 	)
 #undef HUMAN_ONLY_JOBS
 	species_to_branch_whitelist = list(

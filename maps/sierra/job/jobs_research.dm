@@ -42,6 +42,7 @@
 		)
 	skill_points = 30
 	good_genome_prob = 40
+	possible_goals = list(/datum/goal/achievement/notslimefodder)
 
 /datum/job/senior_scientist/get_description_blurb()
 	return "Самый старший член исследовательской команды, старший научный сотрудник, отвечает за то,чтобы остальные сотрудники отдела знали, что они должны делать, и делать это быстро и профессионально.\
@@ -94,6 +95,7 @@
 
 	minimal_access = list()
 	skill_points = 22
+	possible_goals = list(/datum/goal/achievement/notslimefodder)
 
 /datum/job/scientist/get_description_blurb()
 	return "Ученый - одна из самых распространенных и разнообразных рабочих профессий на борту корабля.\
@@ -199,7 +201,8 @@
 		)
 
 	minimal_access = list()
-	
+	possible_goals = list(/datum/goal/achievement/notslimefodder)
+
 /datum/job/scientist_assistant/get_description_blurb()
 	return "Научный ассистент служит, в основном, для того, чтобы помогать ученым любыми способами, которые им нужны,\
 	и, благодаря этому, служит отличной отправной точкой для новых игроков, желающих узнать больше об исследованиях."

@@ -1,6 +1,6 @@
 /obj/item/chainsword
 	name = "CS-9 \"Martha\""
-	desc = "The experimental chain sword version of CS-9. Reds with a black color give a special entourage. Most such swords use razor-sharp monomolecular teeth. When working, the chain sword emits an angry buzz that grows into a shrill scream when the chain begins to bite into something."
+	desc = "The experimental chainsword CS-9 Gaian Conflict-era GCC shocktroop. Reds with a black color give a special entourage. Most such swords use razor-sharp monomolecular teeth. When working, the chain sword emits an angry buzz that grows into a shrill scream when the chain begins to bite into something."
 
 	icon = 'icons/obj/infinity_items/chainsword.dmi'
 	icon_state = "chainsword_off"
@@ -72,5 +72,5 @@
 
 /obj/item/custkit/chainsword
 	name = "CS-9 \"Martha\" customization kit"
-	input = /obj/item/material/hatchet/machete/deluxe
+	input = /obj/item/material/hatchet/machete
 	output = /obj/item/chainsword

@@ -12,6 +12,14 @@
 	build_path = /obj/item/stock_parts/circuitboard/telesci_pad
 	sort_string = "HAAAF"
 
+
+/datum/design/circuit/coinmachine
+	name = "coin making machine board"
+	id = "coinmachine"
+	req_tech = list(TECH_DATA = 1, TECH_ENGINEERING = 1)
+	build_path = /obj/item/stock_parts/circuitboard/autolathe/coinmachine
+	sort_string = "HABAL"
+
 /datum/design/circuit/bs_silk_control
 	name = "bluespace snare control"
 	id = "bsc"
