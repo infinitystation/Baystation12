@@ -3525,6 +3525,7 @@
 #include "infinity\code\modules\clothing\accessories\badge.dm"
 #include "infinity\code\modules\clothing\accessories\cloak.dm"
 #include "infinity\code\modules\clothing\accessories\collar.dm"
+#include "infinity\code\modules\clothing\accessories\locket_custom.dm"
 #include "infinity\code\modules\clothing\accessories\other.dm"
 #include "infinity\code\modules\clothing\accessories\pins.dm"
 #include "infinity\code\modules\clothing\accessories\torch.dm"

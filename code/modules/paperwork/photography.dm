@@ -36,6 +36,8 @@ var/global/photo_count = 0
 	var/scribble	//Scribble on the back.
 	var/image/tiny
 	var/photo_size = 3
+	var/prewiew_scale = 64 // INF, в целях правильного масштабирования кастомных фоток ~bear1ake
+	var/sprite_offset = 32 // INF, в целях правильного расчета спрайта
 
 /obj/item/photo/New()
 	id = photo_count++
@@ -45,18 +47,18 @@ var/global/photo_count = 0
 
 /obj/item/photo/on_update_icon()
 	overlays.Cut()
-	var/scale = 8/(photo_size*32)
+	var/scale = 8/(photo_size*sprite_offset) // INF, было var/scale = 8/(photo_size*32)
 	var/image/small_img = image(img)
 	small_img.transform *= scale
-	small_img.pixel_x = -32*(photo_size-1)/2 - 3
-	small_img.pixel_y = -32*(photo_size-1)/2
+	small_img.pixel_x = -sprite_offset*(photo_size-1)/2 - 3 // INF, было small_img.pixel_x = -32*(photo_size-1)/2 - 3
+	small_img.pixel_y = -sprite_offset*(photo_size-1)/2 // INF, было small_img.pixel_y = -32*(photo_size-1)/2
 	overlays |= small_img
 
 	tiny = image(img)
 	tiny.transform *= 0.5*scale
 	tiny.underlays += image('icons/obj/bureaucracy.dmi',"photo")
-	tiny.pixel_x = -32*(photo_size-1)/2 - 3
-	tiny.pixel_y = -32*(photo_size-1)/2 + 3
+	tiny.pixel_x = -sprite_offset*(photo_size-1)/2 - 3 // INF, было tiny.pixel_x = -32*(photo_size-1)/2 - 3
+	tiny.pixel_y = -sprite_offset*(photo_size-1)/2 + 3 // INF, было tiny.pixel_y = -32*(photo_size-1)/2 + 3
 
 /obj/item/photo/attackby(obj/item/P as obj, mob/user as mob)
 	if(istype(P, /obj/item/pen))
@@ -79,10 +81,10 @@ var/global/photo_count = 0
 	send_rsc(user, img, "tmp_photo_[id].png")
 	var/output = "<html><head><title>[name]</title></head>"
 	output += "<body style='overflow:hidden;margin:0;text-align:center'>"
-	output += "<img src='tmp_photo_[id].png' width='[64*photo_size]' style='-ms-interpolation-mode:nearest-neighbor' />"
+	output += "<img src='tmp_photo_[id].png' width='[prewiew_scale*photo_size]' style='-ms-interpolation-mode:nearest-neighbor' />" // INF, было output += "<img src='tmp_photo_[id].png' width='[64*photo_size]' style='-ms-interpolation-mode:nearest-neighbor' />"
 	output += "[scribble ? "<br>Written on the back:<br><i>[scribble]</i>" : ""]"
 	output += "</body></html>"
-	show_browser(user, output, "window=book;size=[64*photo_size]x[scribble ? 400 : 64*photo_size]")
+	show_browser(user, output, "window=book;size=[prewiew_scale*photo_size]x[scribble ? 400 : prewiew_scale*photo_size]") // INF, было show_browser(user, output, "window=book;size=[64*photo_size]x[scribble ? 400 : 64*photo_size]")
 	onclose(user, "[name]")
 	return
 

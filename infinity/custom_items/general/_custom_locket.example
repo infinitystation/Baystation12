@@ -1,0 +1,12 @@
+{
+	"ckey" :            "client",
+	"character_name" :  "Same Person",
+	"item_path" :       "/obj/item/clothing/accessory/locket",
+	"additional_data":
+	{
+		"photo_path": "path/to/photo.png",
+		"prewiew_scale": 64, | размер спрайта в ревью
+		"sprite_offset": 32, | подсчитывать вручную для фоток более 96*96. Обычно это значение занимает размер спрайта на фото + 16
+		"message": "message in locket"
+	}
+}
