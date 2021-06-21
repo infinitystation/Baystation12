@@ -6,6 +6,8 @@
 		P.sprite_offset = citem.additional_data["sprite_offset"]
 		P.prewiew_scale = citem.additional_data["prewiew_scale"]
 		P.update_icon()
+		if(list_find(citem.additional_data, "photo_desc"))
+			P.desc = citem.additional_data["photo_desc"]
 		held = P
 	if(list_find(citem.additional_data, "message"))
 		message = citem.additional_data["message"]
