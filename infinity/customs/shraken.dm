@@ -299,9 +299,9 @@
 	output = /obj/item/gun/projectile/automatic/nt41/jacking
 
 /obj/item/clothingbag/custom_saare
-    name = "SAARE tactical ops"
-    desc = "Just bag"
-    trade_blacklisted = TRUE
+	name = "SAARE tactical ops"
+	desc = "Just bag"
+	trade_blacklisted = TRUE
 
 /obj/item/clothingbag/custom_saare/Initialize()
 	. = ..()
