@@ -24,7 +24,9 @@
 			<div class="item">{{:helper.link('Bolt saferoom doors', null, {'action' : 'bolt_doors'})}}</div>
 			<!-- INF -->
 			<div class="item">{{:helper.link('Сменить режим освещения обьекта', null, {'action' : 'change_lights_auto'})}}</div>
-			<div class="item">{{:helper.link('Изменить режим карантина на обьекте', null, {'action' : 'change_lockdown'})}}</div>
+			{{if data.lockdown_support}}
+				<div class="item">{{:helper.link('Изменить режим карантина на обьекте', null, {'action' : 'change_lockdown'})}}</div>
+			{{/if}}
 			<!-- INF -->
 			{{for data.evac_options}}
 				<div class="item">

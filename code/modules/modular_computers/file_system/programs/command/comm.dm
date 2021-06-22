@@ -99,6 +99,7 @@
 			option["silicon_allowed"] = EO.silicon_allowed
 			processed_evac_options[++processed_evac_options.len] = option
 	data["evac_options"] = processed_evac_options
+	data["lockdown_support"] = GLOB.using_map.lockdown_support // INF, нужно для отображения кнопки локдауна
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
