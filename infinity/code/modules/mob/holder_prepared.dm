@@ -35,3 +35,8 @@
 	name = "rabbit"
 	desc = "The hippiest hop around."
 	prepared_type = /mob/living/simple_animal/rabbit
+
+/obj/item/holder/kitten/prepared
+	name = "kitten"
+	desc = "It's a kitten."
+	prepared_type = /mob/living/simple_animal/friendly/cat/kitten

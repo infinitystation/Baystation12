@@ -106,3 +106,11 @@
 		slot_l_hand_str = "fox_l",
 		slot_r_hand_str = "fox_r",
 	)
+
+/mob/living/simple_animal/friendly/cat/kitten
+	holder_type = /obj/item/holder/kitten
+
+/obj/item/holder/kitten
+	slot_flags = null
+	icon = 'infinity/icons/mob/mobs.dmi'
+	icon_state = "kitten"

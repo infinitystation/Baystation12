@@ -39164,7 +39164,7 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/turf/simulated/wall/r_wall/prepainted,
+/turf/simulated/floor/tiled/steel_grid,
 /area/engineering/locker_room)
 "tGi" = (
 /obj/machinery/hologram/holopad,
