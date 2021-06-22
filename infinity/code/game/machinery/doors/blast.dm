@@ -22,3 +22,9 @@
 
 /obj/machinery/door/blast/regular/admin/take_damage()
 	return
+
+// Бластдуры - гигантские стальные пластины БЕЗ ПАНЕЛИ УПРАВЛЕНИЯ. Ты чо емагаешь, чорт? Иди кнопку емагай.
+/obj/machinery/door/blast/emag_act(remaining_charges, var/override = FALSE)
+	if(!override)
+		return
+	. = ..()
