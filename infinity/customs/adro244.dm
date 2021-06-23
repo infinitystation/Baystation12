@@ -221,6 +221,43 @@
 	species_restricted = list(SPECIES_TAJARA)
 	trade_blacklisted = TRUE
 
+/obj/item/clothing/under/rank/medical/adro
+	name = "cyber suit"
+	desc = "Black comfortable uniform, modified for the user with a tail."
+	species_restricted = list(SPECIES_TAJARA)
+	icon_state = "adros"
+	item_state = "adros"
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(
+		slot_w_uniform_str = CUSTOM_ITEM_MOB,
+		)
+	worn_state = "adros"
+
+
+/obj/item/clothing/glasses/hud/health/adro
+	name = "cyber visor"
+	desc = "A modern modified Ahdomanian made visor that allows the user to see while obscuring their eyes. This one has an in-built medical HUD."
+	species_restricted = list(SPECIES_TAJARA)
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "adrov"
+	item_icons = list(
+		slot_glasses_str = CUSTOM_ITEM_MOB
+	)
+	item_state = "adrov"
+	off_state = "adrov_off"
+	hud_type = HUD_MEDICAL
+
+/obj/item/clothing/head/beret/adro
+	name = "trauma-Team Beret"
+	desc = "A modern beret with Venus Trauma-Team insiginia emblazoned on it. Also it looks like it was modified for Tajara needs."
+	species_restricted = list(SPECIES_TAJARA)
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "adrob"
+	item_icons = list(
+		slot_head_str = CUSTOM_ITEM_MOB
+	)
+	item_state = "adrob"
+
 /obj/item/clothingbag/adro_edgy
 	name = "clothing bag"
 	desc = "This is clothing bag"
@@ -232,3 +269,6 @@
 	new /obj/item/clothing/suit/space/void/medical/alt/adro(src)
 	new /obj/item/clothing/gloves/latex/adro(src)
 	new /obj/item/clothing/shoes/magboots/adro(src)
+	new /obj/item/clothing/glasses/hud/health/adro(src)
+	new /obj/item/clothing/head/beret/adro(src)
+	new /obj/item/clothing/under/rank/medical/adro(src)
