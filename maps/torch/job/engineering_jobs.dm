@@ -197,6 +197,7 @@
 	                    SKILL_ANATOMY       = SKILL_ADEPT,
 						SKILL_CONSTRUCTION  = SKILL_BASIC,
 						SKILL_ELECTRICAL    = SKILL_BASIC,
+						SKILL_MEDICAL       = SKILL_ADEPT
 	                    SKILL_MECH          = HAS_PERK)
 
 	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
