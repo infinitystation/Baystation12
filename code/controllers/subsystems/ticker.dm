@@ -416,14 +416,15 @@ Helpers
 	delay_notified = 1
 
 /datum/controller/subsystem/ticker/proc/handle_tickets()
-	for(var/datum/ticket/ticket in tickets)
-		if(ticket.is_active())
-			if(!delay_notified)
-				message_staff("<span class='warning'><b>Рестарт автоматичски приостановлен из-за активных тикетов администраторов.</b></span>")
-			notify_delay()
-			end_game_state = END_GAME_AWAITING_TICKETS
-			return
-	message_staff("<span class='warning'><b>Активных тикетов не осталось, рестарт через [restart_timeout/10] секунд если администраторы не приостановят его.</b></span>")
+	// for(var/datum/ticket/ticket in tickets)
+	// 	if(ticket.is_active())
+	// 		if(!delay_notified)
+	// 			message_staff("<span class='warning'><b>Рестарт автоматичски приостановлен из-за активных тикетов администраторов.</b></span>")
+	// 		notify_delay()
+	// 		end_game_state = END_GAME_AWAITING_TICKETS
+	// 		return
+	// message_staff("<span class='warning'><b>Активных тикетов не осталось, рестарт через [restart_timeout/10] секунд если администраторы не приостановят его.</b></span>")
+	message_staff("<span class='warning'><b>Рестарт через [restart_timeout/10] секунд если администраторы не приостановят его.</b></span>")
 	end_game_state = END_GAME_ENDING
 
 /datum/controller/subsystem/ticker/proc/declare_completion()
