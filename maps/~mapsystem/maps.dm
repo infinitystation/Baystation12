@@ -196,14 +196,27 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 			RELIGION_SPIRITUALISM,
 			RELIGION_SHINTO,
 			RELIGION_TAOISM
+		),
+		//[inf]
+		TAG_EDUCATION = list(
+			EDUCATION_NONE,
+			EDUCATION_DROPOUT,
+			EDUCATION_HIGH_SCHOOL,
+			EDUCATION_TRADE_SCHOOL,
+			EDUCATION_UNDERGRAD,
+			EDUCATION_MASTERS,
+			EDUCATION_DOCTORATE,
+			EDUCATION_MEDSCHOOL
 		)
+		//[/inf]
 	)
 
 	var/list/default_cultural_info = list(
 		TAG_HOMEWORLD = HOME_SYSTEM_MARS,
 		TAG_FACTION =   FACTION_SOL_CENTRAL,
 		TAG_CULTURE =   CULTURE_HUMAN_MARTIAN,
-		TAG_RELIGION =  RELIGION_AGNOSTICISM
+		TAG_RELIGION =  RELIGION_AGNOSTICISM,
+		TAG_EDUCATION = EDUCATION_HIGH_SCHOOL // inf
 	)
 
 	var/access_modify_region = list(
@@ -367,7 +380,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 			if ((site.template_flags & TEMPLATE_FLAG_ALLOW_DUPLICATES) && !(site.template_flags & TEMPLATE_FLAG_RUIN_STARTS_DISALLOWED))
 				/* Не знаю, кому в голову пришло запихивать всякие дробные числа, когда rand их не может поддерживать,
 				* но давайте мы улучшим ситуацию, умножив "массу" каждой авейки на 100 и округлив её до целых.
-				* Так мы сможем адекватнее подбирать и балансировать авейки и не ломать pickweight. 
+				* Так мы сможем адекватнее подбирать и балансировать авейки и не ломать pickweight.
 				* А ещё не нужно делать стоимость в 0. Иначе просто ничего не выберется ~bear1ake */
 				available[site] = round(site.spawn_weight * 100) // INF, было available[site] = site.spawn_weight
 		else if (!(site.template_flags & TEMPLATE_FLAG_RUIN_STARTS_DISALLOWED))
@@ -395,7 +408,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		points -= costs[1]
 		players -= costs[2]
 
-	report_progress("Finished selecting away sites ([english_list(selected)]) for [away_site_budget - points] cost of [away_site_budget] spawn and [players] of [players_budget] players budget.") // INF, было report_progress("Finished selecting away sites ([english_list(selected)]) for [away_site_budget - points] cost of [away_site_budget] budget.") 
+	report_progress("Finished selecting away sites ([english_list(selected)]) for [away_site_budget - points] cost of [away_site_budget] spawn and [players] of [players_budget] players budget.") // INF, было report_progress("Finished selecting away sites ([english_list(selected)]) for [away_site_budget - points] cost of [away_site_budget] budget.")
 
 	for (var/datum/map_template/template in selected)
 		if (template.load_new_z())

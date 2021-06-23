@@ -5,6 +5,7 @@
 
 #define ALL_CULTURAL_TAGS list( \
 	TAG_CULTURE =   "Культура", \
+	TAG_EDUCATION = "Образование", \
 	TAG_HOMEWORLD = "Место рождения", \
 	TAG_FACTION =   "Фракция", \
 	TAG_RELIGION =  "Верования" \
