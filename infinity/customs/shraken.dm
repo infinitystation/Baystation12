@@ -19,7 +19,7 @@
 
 //ZPCI armor vest
 
-/obj/item/clothing/suit/storage/vest/pcrc/custom
+/obj/item/clothing/suit/storage/vest/pcrc/custom //Заменяется на heavy_saare
 	name = "medium armor X4/2"
 	desc = " You can notice built-in pouches on the body armor belt. At the other side, you can see the inscription of Zone Protection Control Inc in red letters."
 	icon = CUSTOM_ITEM_OBJ
@@ -32,7 +32,7 @@
 
 //ZPCI helmet
 
-/obj/item/clothing/head/helmet/x_four
+/obj/item/clothing/head/helmet/x_four //Заменяется на шлем Алтын
 	name = "\improper X-4 helmet"
 	desc = "The glass of the helmet is made of armored glass, from the side you can see the laser designator. ZPCI inscription on back of helmet."
 	icon = CUSTOM_ITEM_OBJ
@@ -106,42 +106,13 @@
 //	starting_accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches)
 	trade_blacklisted = TRUE
 
-//a gun
-
-/obj/item/gun/projectile/automatic/nt41/jacking
-	name = "xr36"
-	desc = "XR36 - export version of the XR36K, characterized by installing a “high” picatinny rail instead of a carrying handle on top of the receiver. The guide is equipped with a 3x4 double sight, and then a thin longitudinal groove is used. In addition, on the XR36 modification, a “cheek” is installed on the standard frame stock."
-	icon_state = "xr36"
-	item_state = "xr36"
-	icon = 'infinity/icons/obj/guns/xr36.dmi'
-	wielded_item_state = "xr36-wielded"
-	item_icons = list(
-		slot_r_hand_str = 'infinity/icons/mob/onmob/righthand.dmi',
-		slot_l_hand_str = 'infinity/icons/mob/onmob/lefthand.dmi',
-		)
-	trade_blacklisted = TRUE
-
-/obj/item/gun/projectile/automatic/nt41/jacking/on_update_icon()
-	..()
-	if(ammo_magazine)
-		icon_state = "xr36"
-		wielded_item_state = "xr36-wielded"
-	else
-		icon_state = "xr36-empty"
-		wielded_item_state = "xr36-wielded-empty"
-
-/obj/item/custkit/custom_army
-	name = "NT41 customization kit"
-	input = /obj/item/gun/projectile/automatic/nt41/armory
-	output = /obj/item/gun/projectile/automatic/nt41/jacking
-
 /obj/item/clothingbag/custom_army/Initialize()
 	. = ..()
 	new /obj/item/clothing/under/custom_army_uniform(src)
 	new /obj/item/clothing/glasses/sunglasses/sechud/custom_ballistic(src)
 	new /obj/item/clothing/accessory/armor/helmcover/custom_army(src)
 	new /obj/item/clothing/suit/armor/pcarrier/custom_army(src)
-	new /obj/item/custkit/custom_army(src)
+
 
 /* ZPCI KNIGHT KIT
  * ================
@@ -260,16 +231,6 @@
  * ===============
  */
 
-/obj/item/clothing/under/custom_saare_uniform
-	name = "tactical SAARE uniform"
-	desc = "An old SAARE tactical uniform, how old is it at all?"
-	icon = 'infinity/icons/obj/clothing/obj_under.dmi'
-	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
-	icon_state = "saare_tactical"
-	item_state = "saare_tactical"
-	rolled_sleeves = -1
-	trade_blacklisted = TRUE
-
 /obj/item/clothing/glasses/sunglasses/sechud/custom_ballistic/orange
 	desc = "A ballistic glasses with medium shatter protection."
 	icon = CUSTOM_ITEM_OBJ
@@ -278,27 +239,73 @@
 	item_icons = list(slot_glasses_str = CUSTOM_ITEM_MOB)
 	trade_blacklisted = TRUE
 
-/obj/item/clothing/accessory/armor/helmcover/custom_saare
-	name = "spec ops cover"
-	desc = "A coloring of spec ops, as well as the set includes the NVD and the camera."
-	icon_override = 'infinity/icons/mob/onmob/onmob_accessories.dmi'
-	icon = 'infinity/icons/obj/clothing/obj_accessories.dmi'
-	icon_state = "spec_ops_cover"
-	accessory_icons = list(slot_tie_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi', slot_head_str = 'infinity/icons/mob/onmob/onmob_accessories.dmi')
+/obj/item/clothing/head/helmet/jackinghelm
+	name = "\improper Altyn P1"
+	desc = "It looks like a helmet of 2 protection class, you can see abrasions and scratches on the visor"
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "jackinghelmet"
+	item_icons = list(
+		slot_head_str = CUSTOM_ITEM_MOB
+	)
+	item_state_slots = list(
+		slot_head_str = "jackinghelmet"
+	)
 	trade_blacklisted = TRUE
+	action_button_name = "Toggle Visor"
+	var/isVisorUp = 0
 
-/obj/item/clothing/suit/armor/pcarrier/custom_saare
-	name = "\improper DSH-116"
-	desc = "An old plate carrier of the special operations forces of the GCC. Apparently worn, how they still wear..."
-	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
-	item_icons = list(slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi')
-	icon_state = "gcc_spec_opc_carrier"
-	sprite_sheets = list()
+/obj/item/clothing/head/helmet/jackinghelm/on_update_icon()
+	. = ..()
+	var/tmp = "[initial(icon_state)][isVisorUp ? "_up" : ""]"
+	item_state_slots = list(slot_head_str = tmp)
+	icon_state = tmp
+	update_clothing_icon()
+
+/obj/item/clothing/head/helmet/jackinghelm/attack_self(mob/user as mob)
+	isVisorUp = !isVisorUp
+	to_chat(user, "You [isVisorUp ? "raise" : "lower"] the visor on the [src].")
+	update_icon()
+
+
+/obj/item/gun/projectile/automatic/nt41/jacking
+	name = "AK105 rifle"
+	desc = "AK105 - export version of the AK, characterized by installing a “high” picatinny rail instead of a carrying handle on top of the receiver. The guide is equipped with a 3x4 double sight, and then a thin longitudinal groove is used. In addition, on the XR36 modification, a “cheek” is installed on the standard frame stock."
+	icon_state = "AK105-f"
+
+	item_state = "AK105-wielded"
+	icon = 'infinity/icons/obj/guns/AK105.dmi'
+	wielded_item_state = "AK105-wielded-f"
+	item_icons = list(
+		slot_r_hand_str = 'infinity/icons/customs/infinity_custom_guns_slot_r_hand.dmi',
+		slot_l_hand_str = 'infinity/icons/customs/infinity_custom_guns_slot_l_hand.dmi',
+		)
+	trade_blacklisted = TRUE
+	mag_insert_sound = 'sound/weapons/guns/interaction/ltrifle_magin.ogg'
+	mag_remove_sound = 'sound/weapons/guns/interaction/ltrifle_magout.ogg'
+
+/obj/item/gun/projectile/automatic/nt41/jacking/on_update_icon()
+	..()
+	if(ammo_magazine)
+		icon_state = "AK105-f"
+		wielded_item_state = "AK105-wielded-f"
+	else
+		icon_state = "AK105-e"
+		wielded_item_state = "AK105-wielded-e"
+
+
+/obj/item/custkit/custom_saare
+	name = "NT41 customization kit"
+	input = /obj/item/gun/projectile/automatic/nt41/armory
+	output = /obj/item/gun/projectile/automatic/nt41/jacking
+
+/obj/item/clothingbag/custom_saare
+	name = "SAARE tactical ops"
+	desc = "Just bag"
 	trade_blacklisted = TRUE
 
 /obj/item/clothingbag/custom_saare/Initialize()
 	. = ..()
-	new /obj/item/clothing/under/custom_saare_uniform(src)
 	new /obj/item/clothing/glasses/sunglasses/sechud/custom_ballistic/orange(src)
-	new /obj/item/clothing/accessory/armor/helmcover/custom_saare(src)
-	new /obj/item/clothing/suit/armor/pcarrier/custom_saare(src)
+	new /obj/item/clothing/head/helmet/jackinghelm(src)
+	new /obj/item/custkit/custom_saare(src)
+	new /obj/item/clothing/suit/armor/pcarrier/green/heavy_saare(src)
