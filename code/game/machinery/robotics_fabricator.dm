@@ -19,8 +19,19 @@
 
 	var/speed = 1
 	var/mat_efficiency = 1
+	
+	/* [ORIG]
+	
+	var/list/materials = list(MATERIAL_STEEL = 0, MATERIAL_ALUMINIUM = 0, MATERIAL_PLASTIC = 0, MATERIAL_GLASS = 0, MATERIAL_GOLD = 0, MATERIAL_SILVER = 0, MATERIAL_PHORON = 0, MATERIAL_URANIUM = 0, MATERIAL_DIAMOND = 0)
+	
+	[/ORIG] */
+	
+	// [INF]
+	
 	var/list/materials = list(MATERIAL_STEEL = 0, MATERIAL_TITANIUM = 0, MATERIAL_ALUMINIUM = 0, MATERIAL_PLASTIC = 0, MATERIAL_GLASS = 0, MATERIAL_GOLD = 0, MATERIAL_SILVER = 0, MATERIAL_PHORON = 0, MATERIAL_URANIUM = 0, MATERIAL_DIAMOND = 0)
 	var/res_max_amount = 200000
+
+	// [/INF]
 
 	var/datum/research/files
 	var/list/datum/design/queue = list()
@@ -293,8 +304,14 @@
 	switch(material)
 		if(MATERIAL_STEEL)
 			mattype = /obj/item/stack/material/steel
+			
+		// [INF]	
+			
 		if(MATERIAL_TITANIUM)
 			mattype = /obj/item/stack/material/titanium
+		
+		// [/INF]
+		
 		if(MATERIAL_GLASS)
 			mattype = /obj/item/stack/material/glass
 		if(MATERIAL_ALUMINIUM)
