@@ -272,7 +272,7 @@
 	desc = "AK105 - export version of the AK, characterized by installing a “high” picatinny rail instead of a carrying handle on top of the receiver. The guide is equipped with a 3x4 double sight, and then a thin longitudinal groove is used. In addition, on the XR36 modification, a “cheek” is installed on the standard frame stock."
 	icon_state = "AK105-f"
 
-	item_state = "AK105-wielded"
+	item_state = "AK105-wielded-f"
 	icon = 'infinity/icons/obj/guns/AK105.dmi'
 	wielded_item_state = "AK105-wielded-f"
 	item_icons = list(
@@ -289,7 +289,7 @@
 		icon_state = "AK105-f"
 		wielded_item_state = "AK105-wielded-f"
 	else
-		icon_state = "AK105-e"
+		icon_state = "AK105-n"
 		wielded_item_state = "AK105-wielded-e"
 
 
