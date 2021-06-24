@@ -20,7 +20,7 @@
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
 	heads_fields += add_field(/datum/report_field/people/from_manifest, "Данный рапорт был рассмотрен и утвержден", required = 1)
 	heads_fields += add_field(/datum/report_field/signature, "Подпись", required = 1)
-	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи и печати НТ или департамента.")
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи и печати Агента Внутренних Дел или департамента.")
 	for(var/datum/report_field/field in heads_fields)
 		field.set_access(access_edit = access_heads)
 
@@ -43,7 +43,7 @@
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
 	heads_fields += add_field(/datum/report_field/people/from_manifest, "Данный рапорт был рассмотрен и утвержден", required = 1)
 	heads_fields += add_field(/datum/report_field/signature, "Подпись", required = 1)
-	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи и печати НТ или департамента.")
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи и печати Агента Внутренних Дел или департамента.")
 	for(var/datum/report_field/field in heads_fields)
 		field.set_access(access_edit = access_heads)
 
@@ -68,7 +68,7 @@
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
 	heads_fields += add_field(/datum/report_field/people/from_manifest, "Данный рапорт был рассмотрен и утвержден", required = 1)
 	heads_fields += add_field(/datum/report_field/signature, "Подпись", required = 1)
-	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи и печати НТ или департамента.")
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи и печати Агента Внутренних Дел или департамента.")
 	for(var/datum/report_field/field in heads_fields)
 		field.set_access(access_edit = access_heads)
 
@@ -92,7 +92,7 @@
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
 	heads_fields += add_field(/datum/report_field/people/from_manifest, "Данный рапорт был рассмотрен и утвержден", required = 1)
 	heads_fields += add_field(/datum/report_field/signature, "Подпись", required = 1)
-	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи и печати НТ или департамента.")
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи и печати Агента Внутренних Дел или департамента.")
 	for(var/datum/report_field/field in heads_fields)
 		field.set_access(access_edit = access_heads)
 
@@ -108,7 +108,7 @@
 	add_field(/datum/report_field/date, "Дата")
 	add_field(/datum/report_field/pencode_text, "Меморандум", required = 1)
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
-	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия печати НТ или департамента.")
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия печати Агента Внутренних Дел или департамента.")
 
 /datum/computer_file/report/recipient/iaa/memo
 	form_name = "HR-NTCO-04a"
@@ -123,7 +123,7 @@
 	add_field(/datum/report_field/date, "Дата")
 	add_field(/datum/report_field/pencode_text, "Меморандум", required = 1)
 	capiaa_fields += add_field(/datum/report_field/signature, "Подпись", required = 1)
-	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия печати НТ или капитана.")
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия печати Агента Внутренних Дел или капитана.")
 	set_access(list(list(access_captain, access_iaa)), list(list(access_captain, access_iaa)))
 	for(var/datum/report_field/field in capiaa_fields)
 		field.set_access(access_edit = list(list(access_captain, access_iaa)))
@@ -143,7 +143,7 @@
 	add_field(/datum/report_field/simple_text, "Получатель визы", required = 1)
 	iaa_fields += add_field(/datum/report_field/signature, "Подпись, выписывающего визу", required = 1)
 	add_field(/datum/report_field/signature, "Подпись получателя", required = 1)
-	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия печати НТ.")
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия печати Агента Внутренних Дел.")
 	for(var/datum/report_field/field in iaa_fields)
 		field.set_access(access_edit = access_iaa)
 
@@ -168,7 +168,7 @@
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
 	iaahop_fields += add_field(/datum/report_field/people/from_manifest, "Данный рапорт был рассмотрен", required = 1)
 	iaahop_fields += add_field(/datum/report_field/signature, "Подпись", required = 1)
-	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия печати НТ.")
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия печати Агента Внутренних Дел.")
 	for(var/datum/report_field/field in iaahop_fields)
 		field.set_access(access_edit = list(list(access_hop, access_iaa)))
 
@@ -190,7 +190,7 @@
 	iaahop_fields += add_field(/datum/report_field/people/from_manifest, "Данная форма был рассмотрена", required = 1)
 	iaahop_fields += add_field(/datum/report_field/signature, "Подпись", required = 1)
 	iaahop_fields += add_field(/datum/report_field/options/yes_no, "Данная форма была одобрена/отклонена")
-	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия печати НТ.")
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия печати Агента Внутренних Дел.")
 	for(var/datum/report_field/field in iaahop_fields)
 		field.set_access(access_edit = list(access_hop, access_iaa))
 	set_access(access_security, override = 0)
