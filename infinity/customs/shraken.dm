@@ -62,7 +62,7 @@
 		icon_state = "AK105-f"
 		wielded_item_state = "AK105-wielded-f"
 	else
-		icon_state = "AK105-n"
+		icon_state = "AK105-e"
 		wielded_item_state = "AK105-wielded-e"
 
 
